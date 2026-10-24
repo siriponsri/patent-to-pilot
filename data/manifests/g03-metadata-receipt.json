@@ -1,0 +1,46 @@
+{
+  "record": "G03-METADATA-001",
+  "retrieved_utc": "2026-10-24T12:37:59Z",
+  "files": [
+    {
+      "path": "data\\raw\\metadata\\pls\\README.md",
+      "url": "https://raw.githubusercontent.com/boschresearch/pls_benchmark_emnlp2022/0a035ce46815b2aae5b7e49031c2975ba91fb0d1/Readme.md",
+      "revision": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+      "license_note": "CC BY 4.0 for patent_ls data; repository code terms are separate",
+      "bytes": 10761,
+      "sha256": "9db962cc5db31b8073e273545f5a191aa8153f14f8ad494359d5da9075f19764"
+    },
+    {
+      "path": "data\\raw\\metadata\\pls\\LICENSE",
+      "url": "https://raw.githubusercontent.com/boschresearch/pls_benchmark_emnlp2022/0a035ce46815b2aae5b7e49031c2975ba91fb0d1/LICENSE",
+      "revision": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+      "license_note": "repository license snapshot; data-specific terms remain as documented",
+      "bytes": 34522,
+      "sha256": "20b067f86de375aae6db0f283ab2e65de24d537733b89bd58432c101259d84cf"
+    },
+    {
+      "path": "data\\raw\\metadata\\enterprise\\README.md",
+      "url": "https://raw.githubusercontent.com/onyx-dot-app/EnterpriseRAG-Bench/main/README.md",
+      "revision": "v1.0.0 release; README source branch main",
+      "license_note": "README badge identifies the repository code license as MIT; it does not establish a separate data/release-asset license",
+      "bytes": 8302,
+      "sha256": "f38f53da1ce310a60ac6a6e49657d4815b006e9e967fdf6cbd7915d328c62bb7"
+    },
+    {
+      "path": "data\\raw\\metadata\\enterprise\\LICENSE",
+      "url": "https://raw.githubusercontent.com/onyx-dot-app/EnterpriseRAG-Bench/main/LICENSE",
+      "revision": "v1.0.0 release; LICENSE source branch main",
+      "license_note": "MIT License text for the repository/code; data terms are not separately asserted by this file",
+      "bytes": 1072,
+      "sha256": "9eab95dae84867fa8ba1450e4bf34addf74e841923f4b6877f4d2df82bed3508"
+    },
+    {
+      "path": "data\\raw\\metadata\\enterprise\\release-v1.0.0.json",
+      "url": "https://api.github.com/repos/onyx-dot-app/EnterpriseRAG-Bench/releases/tags/v1.0.0",
+      "revision": "v1.0.0",
+      "license_note": "release asset metadata only; contains no independent data-license grant",
+      "bytes": 175524,
+      "sha256": "cc309e327337934ac5c98106e7c6f4e4cfe16e1059d7902a1a6e6ce63e1d7d3d"
+    }
+  ]
+}

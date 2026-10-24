@@ -1,0 +1,79 @@
+# G03 data acquisition and inspection report
+
+Current repository publication status: the project now has a local Git checkout. Root and data ignore rules exclude raw/processed/derived payloads and evaluator-only material; only `data/manifests/g03-acquisition-receipt.json` and `data/manifests/g03-metadata-receipt.json` are intended for Git retention. The earlier no-repository wording below is historical pre-initialization context.
+
+**Work package:** G03 · bounded starter ingestion
+**Reviewed:** 24 October 2026
+**Scope:** `data/` plus G03 acquisition/analysis scripts only
+**Status:** `DATA_READY_FOR_REVIEW` for the verified bounded payloads below; not an AI experiment result and not final study-set selection
+
+## Boundary and method
+
+The work used sequential, 1 MiB chunked downloads. Each file was written to a `.partial` path, checked for HTML/error content or a Git LFS pointer, hashed while streaming, and promoted to `data/raw/` only after expected byte count and SHA-256 matched. No embeddings, indexing, model calls, paid compute, RunPod, gated dataset acceptance, or full-project audit was performed.
+
+The PLS GitHub Contents API returned 134-byte LFS pointers, so the actual CSV payloads were retrieved through the repository Git LFS batch endpoint using the OIDs embedded in those pointers.
+
+## Verified raw payloads
+
+| Dataset/file | Raw path | Revision | Bytes | SHA-256 | Use/limits |
+|---|---|---|---:|---|---|
+| PLS Atazanavir | `data/raw/pls/atazanavir.csv` | commit `0a035ce46815b2aae5b7e49031c2975ba91fb0d1`; LFS OID | 137,145,663 | `c5460ff1c1e96af7098c2bb54fe9d7a957cca11c05229edfd4d65abefbf22b49` | labeled pharma landscape subset; not final corpus |
+| PLS Ritonavir | `data/raw/pls/ritonavir.csv` | same commit; LFS OID | 121,948,387 | `4a65eb23472a7f631f0f5af12af6d9e6a89993f62e5439b876a5c0072d80d319` | labeled pharma landscape subset; not final corpus |
+| Enterprise questions | `data/raw/enterprise/questions.jsonl` | release `v1.0.0` | 764,927 | `f9524b9157cd43aae36b99333a124738804306ea6d07f332d49faa6d3d147905` | 500 questions; used to select closed GitHub sample |
+| Enterprise GitHub slice 1 | `data/raw/enterprise/github_slice_0001.zip` | release `v1.0.0` | 12,246,702 | `4e6d2f445ce56b98ba3ebf41de29f80f63d5eed87dd1c246aacfefb1c942303a` | 5,000 members; partial source slice |
+| Enterprise GitHub slice 2 | `data/raw/enterprise/github_slice_0002.zip` | release `v1.0.0` | 7,431,363 | `34e039f2359b36fee11ab212c981de567a7b21eee5bbe10af43c2d41960d1a12` | 3,052 members; partial source slice |
+
+Verified raw payload total: **279,537,042 bytes**. Small metadata/license snapshots are recorded in `data/raw/metadata/` and `data/manifests/g03-metadata-receipt.json`. PLS data is recorded as CC BY 4.0 for `patent_ls`; the EnterpriseRAG repository `LICENSE` snapshot is MIT for repository/code terms, while this snapshot does not establish separate data or release-asset terms. Per-file redistribution terms must still be checked before reuse.
+
+## PLS streaming inspection
+
+Both CSVs were parsed with Python's streaming `csv.DictReader` after raising the field-size limit for long patent text fields. No full CSV was loaded into memory.
+
+| File | Rows | Fields | Missing values observed | Duplicate/family check |
+|---|---:|---:|---|---|
+| Atazanavir | 640 | 10: Family Number, Patent Number, Kind Code, Title, Abstract, Claims, Description, CPC, IPC, labels | Claims 3; Description 3 | 0 duplicate groups by Family Number + Patent Number; 640 family values; no family repeated |
+| Ritonavir | 781 | same 10 fields | Abstract 1; Claims 10; Description 10 | 0 duplicate groups by Family Number + Patent Number; 781 family values; no family repeated |
+
+The combined observed total is **1,421 rows** with labels. This is an observed parse count, not an independent scientific sample count and not evidence of R&D feasibility.
+
+## EnterpriseRAG linked sample
+
+`questions.jsonl` contains 500 rows with these seven fields on every row: `question_id`, `question_type`, `source_types`, `question`, `expected_doc_ids`, `gold_answer`, and `answer_facts`. It contains 60 questions mentioning the GitHub source type; 30 questions have no source type.
+
+The two selected GitHub ZIPs contain 8,052 members and 8,052 `dsid_...` document IDs in total. Of the 138 expected GitHub document IDs referenced by the 60 GitHub questions, 65 are present in these two slices. Exactly **39 questions** have all expected document IDs present, so G03 extracted exactly **39 questions and 39 documents** to `data/processed/enterprise/github_closed_sample/`. The other **21 GitHub questions are excluded from this closed sample** because one or more expected documents are missing. This is a bounded closed sample, not the full EnterpriseRAG benchmark.
+
+`selected_questions.jsonl` is classified **EVALUATOR_ONLY** because it contains `expected_doc_ids`; it must not be sent to an evaluated agent. The agent-facing file is `agent_questions.jsonl`, generated by an explicit allowlist containing only `question_id`, `question_type`, `source_types`, and `question`. It excludes `expected_doc_ids`, `gold_answer`, and `answer_facts`; `agent_view_manifest.json` records this contract.
+
+The extracted documents total 188,305 uncompressed bytes. Each extracted document's byte count and SHA-256 are recorded in `data/processed/enterprise/github_closed_sample/sample-manifest.json`.
+
+## DAPFAM pre-existing data and coverage limits
+
+G03 checked the existing DAPFAM metadata, qrels, and first-five API samples before deciding not to download the 1.15 GB corpus or 62.7 MB queries parquet again. Existing paths remain unchanged:
+
+- `methodology/datasets/research-only-nc/qrels_all.parquet`: 828,375 bytes, existing SHA recorded in the prior manifest;
+- `methodology/datasets/samples/dapfam_queries_first5.json`: 5 API rows;
+- `methodology/datasets/samples/dapfam_corpus_first5.json`: 5 API rows;
+- `methodology/datasets/metadata/`: DAPFAM README/repository/tree metadata and license note.
+
+The metadata reports 1,247 query families and 45,336 target families, English family-level full text, IPC3-based IN/OUT domain labels, and title/abstract/claims/description views. The checked first-five samples expose jurisdiction, earliest-claim date/year, IPC3 prefixes, title, abstract, claims, and (in corpus rows) description fields.
+
+The available metadata and five-row samples do **not** provide a verified count of pharmaceutical, biomedical, or device families. Therefore this work records those coverage counts as **unknown**, rather than inferring them from a few IPC codes or titles. DAPFAM can support cross-domain patent-retrieval diagnostics; it does not by itself establish pharmaceutical/device coverage or an R&D gold standard. Its CC BY-NC-SA 4.0 research-only restriction remains in force.
+
+## Path mapping and exclusions
+
+The earlier project inventory used `methodology/datasets/` for DAPFAM preflight and proposed downloads. This G03 acquisition uses `data/raw/`, `data/processed/`, `data/derived/`, and `data/manifests/` as the active local data boundary, without moving or deleting the earlier files. This workspace has no `.git` repository, so `data/.gitignore` is only a future Git policy, not effective protection. It excludes raw/processed/derived payloads and evaluator-only material; if a repository is initialized, retain the small provenance receipts `g03-acquisition-receipt.json` and `g03-metadata-receipt.json`, while processed evaluator data remains excluded. EnterpriseBench/AST-FRI remains gated and was not accessed or accepted.
+
+## Checks and limitations
+
+- `python -m py_compile scripts/g03_acquire.py scripts/g03_analyze.py scripts/g03_fetch_metadata.py`: PASS.
+- Sequential acquisition receipts: `data/manifests/g03-acquisition-receipt.json`: PASS for five raw payloads and expected hashes/sizes.
+- Metadata/license receipt: `data/manifests/g03-metadata-receipt.json`: PASS for five small snapshots; EnterpriseRAG MIT wording is limited to the repository/code LICENSE snapshot and does not assert data/release-asset terms.
+- Streaming PLS/question analysis: `data/derived/g03-analysis-report.json`: PASS.
+- Enterprise ZIP member/expected-doc closure and extracted-doc hashes: PASS for 39 closed questions; 21 GitHub questions excluded.
+- Limitations: no full DAPFAM parquet parse, no verified domain-specific DAPFAM counts, no full EnterpriseRAG benchmark, no model/embedding/index run, no experiment result, no final study-set freeze, and no clinical/legal/regulatory validation.
+
+## Human-readable handoff
+
+โหลดและตรวจแล้วคือ PLS สิทธิบัตรยา Atazanavir/Ritonavir รวม 1,421 แถว และชุด EnterpriseRAG แบบปิดครบ 39 คำถาม/39 เอกสารจาก GitHub slices สองไฟล์ ชุดเหล่านี้ตอบได้ว่าไฟล์เป็นข้อมูลจริง มีโครงสร้างและ provenance อะไร และใช้สร้างงาน ingestion/grounding ต่อได้อย่างไร ส่วน DAPFAM ของเดิมยังช่วยยืนยันว่ามี corpus สิทธิบัตรข้ามโดเมนและ metadata แบบใด แต่ยังไม่มีตัวเลขที่ตรวจได้ว่ามียา biomedical หรือ device กี่รายการ และยังไม่มี full-corpus download รอบนี้
+
+`DATA_READY_FOR_REVIEW` หมายถึง payload, integrity, schema/closure และ provenance checks ผ่านตามขอบเขตนี้เท่านั้น ไม่ใช่ผลว่า AI retrieval, embeddings หรือแผน R&D ทำงานดีแล้ว

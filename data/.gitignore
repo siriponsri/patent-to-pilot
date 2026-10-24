@@ -1,0 +1,12 @@
+# This workspace currently has no .git repository. These are future repository
+# policies, not effective protection until a repository is initialized.
+# Raw/processed/derived payloads and evaluator material stay out of Git.
+raw/
+processed/
+derived/
+manifests/*.stdout.txt
+
+# Small provenance receipts intended to be retained if/when Git is initialized:
+#   manifests/g03-acquisition-receipt.json
+#   manifests/g03-metadata-receipt.json
+# Evaluator-only sample manifests remain under ignored processed/ data.
