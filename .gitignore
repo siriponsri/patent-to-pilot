@@ -1,0 +1,16 @@
+# Local scholarly reading copies: review individual licenses before redistribution.
+literature-review/pdfs/
+literature-review/metadata/
+literature-review/**/pdfs/
+literature-review/**/metadata/
+literature-review/g02-additions/manifest.json
+methodology/datasets/research-only-nc/
+methodology/datasets/samples/
+__pycache__/
+
+# Owner foundation is local-only pending publication/citation review.
+literature-review/internal/*.pdf
+
+# Evaluator-only answers/oracles must never be published from any evaluation case.
+**/evaluator-only/
+**/selected_questions.jsonl

@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-24T12:49:47.391354+00:00",
+  "scope": "One G02-focused document/link/claim/source-locator consistency pass plus integrity of only two newly acquired PDFs; not a global audit or experiment",
+  "method_review": "Selected original PDF methods, evaluation assumptions and limitations manually synthesized; positive and counterevidence retained in S01–S14",
+  "candidate_claims": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08"
+  ],
+  "selected_sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14"
+  ],
+  "local_links_checked": 60,
+  "new_pdf_count": 2,
+  "new_pdf_bytes": 1595993,
+  "new_pdf_validation": [
+    "actual pinned official URL",
+    "version/date/license note",
+    "SHA256/bytes/PDF magic",
+    "all-page text/page count",
+    "title presence",
+    "first-page visual title/affiliation review"
+  ],
+  "not_run": [
+    "model/API/GPU/paid runs",
+    "published method reproduction",
+    "dataset download/indexing",
+    "global asset verifier",
+    "clinical/legal/expert validation"
+  ],
+  "errors": []
+}
