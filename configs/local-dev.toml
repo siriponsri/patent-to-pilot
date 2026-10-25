@@ -1,0 +1,18 @@
+# Non-secret bounded local defaults for G07/G08.
+[core]
+schema_version = "0.1.0"
+repository = ":memory:"
+
+[ingestion]
+source_version = "pls-commit-0a035ce4"
+max_rows = 2000
+output_format = "jsonl"
+
+[retrieval]
+backend = "sqlite-fts5"
+limit = 10
+embeddings = false
+
+[extraction]
+default_method = "lexical_component_window"
+model_calls = false
