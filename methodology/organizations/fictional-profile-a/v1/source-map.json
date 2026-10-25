@@ -1,0 +1,30 @@
+{
+  "profile_id": "PTP-FIC-ORG-A",
+  "profile_version": "1.0.0",
+  "source_map_version": "1.0.0",
+  "sources": [
+    {
+      "source_ref": "ORG-SRC-NCATS-TRND-2023",
+      "source_type": "official_public_self_description",
+      "source_file": "methodology/datasets/organization-profile-example.json",
+      "url": "https://ncats.nih.gov/research/research-activities/trnd/scientific-capabilities",
+      "reviewed_date": "2026-10-24",
+      "locators": ["TRND Expertise list"],
+      "limits": ["not a validated capability card", "does not establish current service availability", "does not establish ownership, cost, capacity, or project fit"]
+    },
+    {
+      "source_ref": "STIP-A-001",
+      "source_type": "fictional_benchmark_stipulation",
+      "source_file": "fictional-profile-a/v1/profile.json",
+      "locators": ["profile.stipulations[0]"],
+      "limits": ["not an external organization fact"]
+    },
+    {
+      "source_ref": "STIP-A-002",
+      "source_type": "fictional_benchmark_stipulation",
+      "source_file": "fictional-profile-a/v1/profile.json",
+      "locators": ["profile.stipulations[1]"],
+      "limits": ["not a manufacturing, clinical, regulatory, or patent conclusion"]
+    }
+  ]
+}

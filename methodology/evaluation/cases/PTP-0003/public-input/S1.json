@@ -1,0 +1,106 @@
+{
+  "case_id": "PTP-0003",
+  "state_id": "S1",
+  "classification": "PUBLIC_CURRENT_PACKET_TRACK_B",
+  "project_display_name": "Stage review",
+  "brief": "Distinguish the abstract-reported intermediate-stage count from the number of stages using BTC, all manufacturing unit operations and numerical batch cost. No total unit-operation count or monetary cost is established in the allowed packet.",
+  "organization_ref": {
+    "profile_id": "PTP-FIC-ORG-C",
+    "profile_version": "1.0.0",
+    "path": "methodology/organizations/fictional-profile-c/v1/profile.json",
+    "binding": "versioned fictional context only; case-local stipulations below do not edit persistent org policy or assert capabilities",
+    "integration_status": "G04 fictional profile ID/version read from Luna handoff; no real-org approval inferred"
+  },
+  "case_stipulations": {
+    "origin": "benchmark_stipulation",
+    "status": "declared fictional task contract, no human confirmation needed",
+    "policy": {
+      "rule_id": "COUNT-001",
+      "origin": "benchmark_stipulation",
+      "operator": "max_document_reported_count",
+      "normalization": "five=5, two=2 in the explicitly named count field only",
+      "real_organization_rule": false,
+      "maximum": 4,
+      "count_kind": "reported_intermediate_stage_count"
+    },
+    "options": [
+      {
+        "option_id": "R",
+        "selected_route": "document-reported ritonavir process",
+        "basis": "benchmark_document_review_choice_not_endorsement"
+      }
+    ],
+    "unmeasured_fields": "Remain unknown relative to current packet; do not infer that evidence is absent worldwide"
+  },
+  "change_event": {
+    "type": "tighten_bound",
+    "scope": "affected explicit role/count check only",
+    "event_order": 1,
+    "effective_at": "development-event-S1"
+  },
+  "sources": [
+    {
+      "evidence_id": "PTP-0003-P01",
+      "text": "A process is described which permits the preparation of Ritonavir with only five intermediate stages",
+      "locator": {
+        "dataset_field": "Abstract",
+        "char_start": 1,
+        "char_end": 101,
+        "offset_unit": "Unicode code points, end-exclusive"
+      },
+      "text_sha256": "090b27debe7be2daf8af5ed5343bdc6d630d687a9239ed11be18077a360b070a",
+      "origin": "source_assertion",
+      "source_id": "pls_ritonavir",
+      "document_id": "pls_ritonavir:23355646.0:WO0121603",
+      "source_version": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+      "family_id": "23355646.0",
+      "source_locator": "data/raw/pls/ritonavir.csv#logical_record=86&field=Abstract&raw_char_start=1",
+      "g08_trimmed_component_offsets": {
+        "char_start": 0,
+        "char_end": 100,
+        "basis": "CSV Abstract.strip() used by current G08 ingester; verify before using on another normalization"
+      }
+    },
+    {
+      "evidence_id": "PTP-0003-P02",
+      "text": "Finally, the improvement afforded by this novel process is linked with the fact that an inexpensive reagent, such as bis-trichloromethyl carbonate (BTC), is used in two of the five stages.",
+      "locator": {
+        "dataset_field": "Abstract",
+        "char_start": 396,
+        "char_end": 584,
+        "offset_unit": "Unicode code points, end-exclusive"
+      },
+      "text_sha256": "c16b8141fe692c9e90de7e1770168163168bfb3a5f2c1c942310500dba788f9a",
+      "origin": "source_assertion",
+      "source_id": "pls_ritonavir",
+      "document_id": "pls_ritonavir:23355646.0:WO0121603",
+      "source_version": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+      "family_id": "23355646.0",
+      "source_locator": "data/raw/pls/ritonavir.csv#logical_record=86&field=Abstract&raw_char_start=396",
+      "g08_trimmed_component_offsets": {
+        "char_start": 395,
+        "char_end": 583,
+        "basis": "CSV Abstract.strip() used by current G08 ingester; verify before using on another normalization"
+      }
+    }
+  ],
+  "history_access": "Prior source archive/withdrawn text and evaluator-only files are not available as current evidence",
+  "output_contract": {
+    "source_fact_fields": [
+      "reported_intermediate_stage_count",
+      "BTC_stage_use_count",
+      "all_manufacturing_operations",
+      "numeric_total_batch_cost"
+    ],
+    "option_ids": [
+      "R"
+    ],
+    "option_states": [
+      "passes_this_explicit_check",
+      "fails_this_explicit_check",
+      "unknown"
+    ],
+    "handoff": "draft_process_document_review",
+    "ready_for_review_is_not_external_approval": true
+  }
+}

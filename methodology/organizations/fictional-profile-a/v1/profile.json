@@ -1,0 +1,64 @@
+{
+  "profile_id": "PTP-FIC-ORG-A",
+  "profile_version": "1.0.0",
+  "organization_kind": "fictional_benchmark_profile",
+  "status": "BOUNDED_G04_FIXTURE_NOT_VALIDATED_ORG_CARD",
+  "organization_label": "Fictional Formulation Pilot A",
+  "public_source_context": {
+    "source_ref": "ORG-SRC-NCATS-TRND-2023",
+    "description": "Uses the supplied NCATS TRND public self-description as a source-context example for formulation, analytical-method, and regulatory/clinical-planning expertise. It does not claim affiliation, ownership, availability, or endorsement.",
+    "source_file": "methodology/datasets/organization-profile-example.json"
+  },
+  "capabilities": [
+    {
+      "field": "formulation_development",
+      "state": "unknown",
+      "basis": "source_assertion",
+      "source_ref": "ORG-SRC-NCATS-TRND-2023",
+      "locator": "TRND Expertise list",
+      "confirmation_state": "pending",
+      "note": "Public expertise context does not establish that this fictional profile owns equipment or currently accepts the work."
+    },
+    {
+      "field": "analytical_method_development",
+      "state": "unknown",
+      "basis": "source_assertion",
+      "source_ref": "ORG-SRC-NCATS-TRND-2023",
+      "locator": "TRND Expertise list",
+      "confirmation_state": "pending"
+    },
+    {
+      "field": "regulatory_and_clinical_planning_support",
+      "state": "unknown",
+      "basis": "source_assertion",
+      "source_ref": "ORG-SRC-NCATS-TRND-2023",
+      "locator": "TRND Expertise list",
+      "confirmation_state": "pending"
+    }
+  ],
+  "stipulations": [
+    {
+      "stipulation_id": "STIP-A-001",
+      "statement": "The fictional project may consider an external formulation partner, but partner availability is not established.",
+      "basis": "stipulation",
+      "confirmation_state": "not_required",
+      "scope": "benchmark scenario only"
+    },
+    {
+      "stipulation_id": "STIP-A-002",
+      "statement": "A later scenario may prohibit silicon only when used as a substrate; the restriction must not be generalized to the needle material or unrelated routes.",
+      "basis": "stipulation",
+      "confirmation_state": "not_required",
+      "scope": "PTP-0001-style change fixture"
+    }
+  ],
+  "unknowns": [
+    "current capacity",
+    "cost",
+    "lead time",
+    "specific equipment",
+    "project eligibility/access",
+    "ownership versus external partner role"
+  ],
+  "source_refs": ["ORG-SRC-NCATS-TRND-2023"]
+}

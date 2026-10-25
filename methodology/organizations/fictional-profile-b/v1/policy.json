@@ -1,0 +1,8 @@
+{
+  "profile_id": "PTP-FIC-ORG-B", "profile_version": "1.0.0", "policy_version": "1.0.0", "status": "BOUNDED_STIPULATED_POLICY_FIXTURE",
+  "policies": [
+    {"policy_id": "POL-B-001", "scope": "formulation route", "state": "conditional", "statement": "The fictional scenario requires an external formulation provider; feasibility remains unknown until provider evidence is supplied.", "basis": "stipulation", "effective_date": "2026-10-24", "confirmation_state": "not_required", "source_refs": ["STIP-B-001"]},
+    {"policy_id": "POL-B-002", "scope": "analytical route", "state": "conditional", "statement": "An analytical route may proceed to draft testing, but service availability and project fit must remain pending.", "basis": "stipulation", "effective_date": "2026-10-24", "confirmation_state": "pending", "source_refs": ["STIP-B-002"]}
+  ],
+  "change_rule": "A provider or availability update changes only affected route fields and records a new policy version."
+}

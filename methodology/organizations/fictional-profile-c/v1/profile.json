@@ -1,0 +1,18 @@
+{
+  "profile_id": "PTP-FIC-ORG-C",
+  "profile_version": "1.0.0",
+  "organization_kind": "fictional_benchmark_profile",
+  "status": "BOUNDED_G04_FIXTURE_NOT_VALIDATED_ORG_CARD",
+  "organization_label": "Fictional Translational Gate C",
+  "public_source_context": {"source_ref": "ORG-SRC-NCATS-TRND-2023", "description": "Uses the supplied public source only as context for translational and planning expertise. It does not establish this fictional profile's current capacity, ownership, regulatory status, or clinical readiness.", "source_file": "methodology/datasets/organization-profile-example.json"},
+  "capabilities": [
+    {"field": "regulatory_and_clinical_planning_support", "state": "unknown", "basis": "source_assertion", "source_ref": "ORG-SRC-NCATS-TRND-2023", "locator": "TRND Expertise list", "confirmation_state": "pending"},
+    {"field": "formulation_development", "state": "unknown", "basis": "unknown", "confirmation_state": "not_required", "note": "No source or stipulation establishes in-house formulation capability for this scenario."}
+  ],
+  "stipulations": [
+    {"stipulation_id": "STIP-C-001", "statement": "The scenario cannot treat a route as clinical-ready or regulatory-approved; it may only draft questions for later review.", "basis": "stipulation", "confirmation_state": "not_required", "scope": "benchmark scenario only"},
+    {"stipulation_id": "STIP-C-002", "statement": "A route using a restricted external source is paused until a permitted source snapshot and locator are supplied.", "basis": "stipulation", "confirmation_state": "not_required", "scope": "source access boundary"}
+  ],
+  "unknowns": ["current capacity", "clinical readiness", "regulatory status", "cost", "lead time", "permitted source access"],
+  "source_refs": ["ORG-SRC-NCATS-TRND-2023"]
+}

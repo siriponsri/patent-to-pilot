@@ -1,0 +1,61 @@
+{
+  "case_id": "PTP-0003",
+  "state_id": "S4",
+  "classification": "PUBLIC_CURRENT_PACKET_TRACK_B",
+  "project_display_name": "Renamed stage review",
+  "brief": "Distinguish the abstract-reported intermediate-stage count from the number of stages using BTC, all manufacturing unit operations and numerical batch cost. No total unit-operation count or monetary cost is established in the allowed packet.",
+  "organization_ref": {
+    "profile_id": "PTP-FIC-ORG-C",
+    "profile_version": "1.0.0",
+    "path": "methodology/organizations/fictional-profile-c/v1/profile.json",
+    "binding": "versioned fictional context only; case-local stipulations below do not edit persistent org policy or assert capabilities",
+    "integration_status": "G04 fictional profile ID/version read from Luna handoff; no real-org approval inferred"
+  },
+  "case_stipulations": {
+    "origin": "benchmark_stipulation",
+    "status": "declared fictional task contract, no human confirmation needed",
+    "policy": {
+      "rule_id": "COUNT-001",
+      "origin": "benchmark_stipulation",
+      "operator": "max_document_reported_count",
+      "normalization": "five=5, two=2 in the explicitly named count field only",
+      "real_organization_rule": false,
+      "maximum": 4,
+      "count_kind": "all_manufacturing_operations"
+    },
+    "options": [
+      {
+        "option_id": "R",
+        "selected_route": "document-reported ritonavir process",
+        "basis": "benchmark_document_review_choice_not_endorsement"
+      }
+    ],
+    "unmeasured_fields": "Remain unknown relative to current packet; do not infer that evidence is absent worldwide"
+  },
+  "change_event": {
+    "type": "support_withdrawal",
+    "scope": "affected explicit role/count check only",
+    "event_order": 4,
+    "effective_at": "development-event-S4"
+  },
+  "sources": [],
+  "history_access": "Prior source archive/withdrawn text and evaluator-only files are not available as current evidence",
+  "output_contract": {
+    "source_fact_fields": [
+      "reported_intermediate_stage_count",
+      "BTC_stage_use_count",
+      "all_manufacturing_operations",
+      "numeric_total_batch_cost"
+    ],
+    "option_ids": [
+      "R"
+    ],
+    "option_states": [
+      "passes_this_explicit_check",
+      "fails_this_explicit_check",
+      "unknown"
+    ],
+    "handoff": "draft_process_document_review",
+    "ready_for_review_is_not_external_approval": true
+  }
+}

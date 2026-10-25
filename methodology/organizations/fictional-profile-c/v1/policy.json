@@ -1,0 +1,8 @@
+{
+  "profile_id": "PTP-FIC-ORG-C", "profile_version": "1.0.0", "policy_version": "1.0.0", "status": "BOUNDED_STIPULATED_POLICY_FIXTURE",
+  "policies": [
+    {"policy_id": "POL-C-001", "scope": "clinical and regulatory conclusion", "state": "prohibited", "statement": "The agent may not label a route clinical-ready, regulatory-approved, safe, or effective from this fictional profile.", "basis": "stipulation", "effective_date": "2026-10-24", "confirmation_state": "not_required", "source_refs": ["STIP-C-001"]},
+    {"policy_id": "POL-C-002", "scope": "restricted source route", "state": "conditional", "statement": "A route depending on a restricted source remains paused until permission and a resolvable source snapshot are recorded.", "basis": "stipulation", "effective_date": "2026-10-24", "confirmation_state": "not_required", "source_refs": ["STIP-C-002"]}
+  ],
+  "change_rule": "A permitted-source event may unblock only dependent route fields; it cannot create clinical or regulatory approval."
+}

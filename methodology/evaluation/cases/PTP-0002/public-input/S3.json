@@ -1,0 +1,141 @@
+{
+  "case_id": "PTP-0002",
+  "state_id": "S3",
+  "classification": "PUBLIC_CURRENT_PACKET_TRACK_B",
+  "project_display_name": "Renamed role review",
+  "brief": "Return source-stated component roles, explicit policy-check states and a draft role-review handoff. Passing the check is not manufacturability. Only the inhibitor role is covered by the material prohibition.",
+  "organization_ref": {
+    "profile_id": "PTP-FIC-ORG-B",
+    "profile_version": "1.0.0",
+    "path": "methodology/organizations/fictional-profile-b/v1/profile.json",
+    "binding": "versioned fictional context only; case-local stipulations below do not edit persistent org policy or assert capabilities",
+    "integration_status": "G04 fictional profile ID/version read from Luna handoff; no real-org approval inferred"
+  },
+  "case_stipulations": {
+    "origin": "benchmark_stipulation",
+    "status": "declared fictional task contract, no human confirmation needed",
+    "policy": {
+      "rule_id": "ROLE-001",
+      "origin": "benchmark_stipulation",
+      "role_scope": "crystallization_inhibitor",
+      "allowed_initial": [
+        "PVP",
+        "HPMC"
+      ],
+      "carrier_scope": "PEG remains permitted",
+      "real_organization_rule": false,
+      "forbidden_inhibitors": [
+        "PVP"
+      ]
+    },
+    "options": [
+      {
+        "option_id": "A",
+        "selected_carrier": "PEG",
+        "selected_inhibitor": "PVP",
+        "basis": "benchmark_design_choice_not_source_extraction"
+      },
+      {
+        "option_id": "B",
+        "selected_carrier": "PEG",
+        "selected_inhibitor": "HPMC",
+        "basis": "benchmark_design_choice_not_source_extraction"
+      }
+    ],
+    "unmeasured_fields": "Remain unknown relative to current packet; do not infer that evidence is absent worldwide"
+  },
+  "change_event": {
+    "type": "sole_support_withdrawal",
+    "scope": "affected explicit role/count check only",
+    "event_order": 3,
+    "effective_at": "development-event-S3"
+  },
+  "sources": [
+    {
+      "evidence_id": "PTP-0002-P01",
+      "text": "water soluble carrier, such as polyethylene glycol (PEG)",
+      "locator": {
+        "dataset_field": "Abstract",
+        "char_start": 112,
+        "char_end": 168,
+        "offset_unit": "Unicode code points, end-exclusive"
+      },
+      "text_sha256": "cf9e40fc7f2085b6c772e7f009b645826dfcb4512f40997964519e91ac4c5939",
+      "origin": "source_assertion",
+      "source_id": "pls_ritonavir",
+      "document_id": "pls_ritonavir:15973991.0:WO0134119",
+      "source_version": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+      "family_id": "15973991.0",
+      "source_locator": "data/raw/pls/ritonavir.csv#logical_record=60&field=Abstract&raw_char_start=112",
+      "g08_trimmed_component_offsets": {
+        "char_start": 111,
+        "char_end": 167,
+        "basis": "CSV Abstract.strip() used by current G08 ingester; verify before using on another normalization"
+      }
+    },
+    {
+      "evidence_id": "PTP-0002-P02",
+      "text": "a crystallization inhibitor, such as polyvinylpyrrolidone",
+      "locator": {
+        "dataset_field": "Abstract",
+        "char_start": 174,
+        "char_end": 231,
+        "offset_unit": "Unicode code points, end-exclusive"
+      },
+      "text_sha256": "df7aba526d172ee4e59d6e59a4b92a58b7018071677de1e000fae04582f56aec",
+      "origin": "source_assertion",
+      "source_id": "pls_ritonavir",
+      "document_id": "pls_ritonavir:15973991.0:WO0134119",
+      "source_version": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+      "family_id": "15973991.0",
+      "source_locator": "data/raw/pls/ritonavir.csv#logical_record=60&field=Abstract&raw_char_start=174",
+      "g08_trimmed_component_offsets": {
+        "char_start": 173,
+        "char_end": 230,
+        "basis": "CSV Abstract.strip() used by current G08 ingester; verify before using on another normalization"
+      }
+    },
+    {
+      "evidence_id": "PTP-0002-P04",
+      "text": "The solid dispersion may optionally be encapsulated in hard gelatin capsules, compressed into a tablet, or may be granulated with a pharmaceutically acceptable granulating agent.",
+      "locator": {
+        "dataset_field": "Abstract",
+        "char_start": 265,
+        "char_end": 443,
+        "offset_unit": "Unicode code points, end-exclusive"
+      },
+      "text_sha256": "a1ba0d46e4df57f16f41ccf0a3b9e9326f17f8d45c5d190d20f31d6892dd6bb8",
+      "origin": "source_assertion",
+      "source_id": "pls_ritonavir",
+      "document_id": "pls_ritonavir:15973991.0:WO0134119",
+      "source_version": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+      "family_id": "15973991.0",
+      "source_locator": "data/raw/pls/ritonavir.csv#logical_record=60&field=Abstract&raw_char_start=265",
+      "g08_trimmed_component_offsets": {
+        "char_start": 264,
+        "char_end": 442,
+        "basis": "CSV Abstract.strip() used by current G08 ingester; verify before using on another normalization"
+      }
+    }
+  ],
+  "history_access": "Prior source archive/withdrawn text and evaluator-only files are not available as current evidence",
+  "output_contract": {
+    "source_fact_fields": [
+      "PEG_role",
+      "PVP_role",
+      "HPMC_role",
+      "measured_production_yield"
+    ],
+    "option_ids": [
+      "A",
+      "B"
+    ],
+    "option_states": [
+      "passes_this_explicit_check",
+      "fails_this_explicit_check",
+      "unknown"
+    ],
+    "handoff": "draft_role_review",
+    "ready_for_review_is_not_external_approval": true
+  }
+}

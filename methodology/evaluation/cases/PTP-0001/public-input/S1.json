@@ -1,0 +1,132 @@
+{
+  "case_id": "PTP-0001",
+  "track": "B-open-text-fixed-source",
+  "split": "development",
+  "event_id": "S1",
+  "display_name": "Substrate document review",
+  "organization_brief": {
+    "fictional": true,
+    "goal": "Prepare a component-selection document handoff, not a fabrication protocol or clinical decision",
+    "capabilities": {
+      "document_review": true,
+      "fabrication_capability": "unknown"
+    },
+    "policy": {
+      "component": "substrate",
+      "permitted_materials": [
+        "silicon",
+        "glass"
+      ],
+      "forbidden_materials": [
+        "silicon"
+      ]
+    },
+    "required_unknown_fields": [
+      "measured_production_yield",
+      "final_needle_material_in_selected_complete_route"
+    ]
+  },
+  "candidate_choices": [
+    {
+      "candidate_id": "A",
+      "selected_component": "substrate",
+      "selected_material": "silicon",
+      "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route"
+    },
+    {
+      "candidate_id": "B",
+      "selected_component": "substrate",
+      "selected_material": "glass",
+      "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route"
+    }
+  ],
+  "change": "forbid silicon substrates; glass remains permitted",
+  "active_chunks": [
+    {
+      "chunk_id": "C01",
+      "source_id": "US20060086689A1",
+      "paragraph_id": "p-0017",
+      "printed_paragraph_num": "0016",
+      "start": 4401,
+      "end": 4481,
+      "text": "The substrate 1 can be constructed from a semiconductor material such as silicon",
+      "sha256": "7a0d36d5afae57df2083c9383211dc649b4dba449bde6fa12a90022d2132f2be",
+      "locator_basis": "normalized description.txt Unicode character offsets; end exclusive"
+    },
+    {
+      "chunk_id": "C02",
+      "source_id": "US20060086689A1",
+      "paragraph_id": "p-0017",
+      "printed_paragraph_num": "0016",
+      "start": 4483,
+      "end": 4521,
+      "text": "a nonconductive material such as glass",
+      "sha256": "245abbb3390fed1f92e8126963ee636a2955b42c353d8d192f4d7bdca7a679a9",
+      "locator_basis": "normalized description.txt Unicode character offsets; end exclusive"
+    },
+    {
+      "chunk_id": "C03",
+      "source_id": "US20060086689A1",
+      "paragraph_id": "p-0017",
+      "printed_paragraph_num": "0016",
+      "start": 4592,
+      "end": 4766,
+      "text": "The metal-containing seed layer 2 may be a thin layer of chrome, stainless steel, tantalum or gold, which is formed by sputtering or other conventional deposition techniques.",
+      "sha256": "d5143ad6f92da7f8653efd814fa322fc66d00b8852123dfe407c493e8701fdf7",
+      "locator_basis": "normalized description.txt Unicode character offsets; end exclusive"
+    },
+    {
+      "chunk_id": "C04",
+      "source_id": "US20060086689A1",
+      "paragraph_id": "p-0018",
+      "printed_paragraph_num": "0017",
+      "start": 5281,
+      "end": 5401,
+      "text": "Suitable materials for the nonconductive pattern 3 include silicon carbide, photoresist, silicon nitride, silicon oxide.",
+      "sha256": "1fe6db17c61aab297e5d0277a2f0e34dd1a49b417413851b71fdde2c91b9340a",
+      "locator_basis": "normalized description.txt Unicode character offsets; end exclusive"
+    },
+    {
+      "chunk_id": "C05",
+      "source_id": "US20060086689A1",
+      "paragraph_id": "p-0019",
+      "printed_paragraph_num": "0018",
+      "start": 6104,
+      "end": 6360,
+      "text": "The micromold 4 may be constructed of any metal that can be electroplated with good uniformity during plating and can be selectively etched away with respect to other metals. Suitable metals include nickel, tin, tin-lead all, aluminium and aluminum alloys.",
+      "sha256": "3e8f5b4af926fa9b3a6c5d11609e2bbc6260c8313d946f6c5b62a7e3212b7402",
+      "locator_basis": "normalized description.txt Unicode character offsets; end exclusive"
+    },
+    {
+      "chunk_id": "C06",
+      "source_id": "US20060086689A1",
+      "paragraph_id": "p-0020",
+      "printed_paragraph_num": "0019",
+      "start": 6613,
+      "end": 6833,
+      "text": "The microneedle may be constructed of a variety of metals depending on the intended use. For medical applications, the metal microneedle 7 may be made of palladium, silver, gold, nickel, brass, bronze, or alloys thereof.",
+      "sha256": "a90bfafce505b34022b9f4185e4b3c9ead5496e74898eff0fd1b21c310b04736",
+      "locator_basis": "normalized description.txt Unicode character offsets; end exclusive"
+    },
+    {
+      "chunk_id": "C07",
+      "source_id": "US20060086689A1",
+      "paragraph_id": "p-0020",
+      "printed_paragraph_num": "0019",
+      "start": 7135,
+      "end": 7261,
+      "text": "For example, nickel may be used for forming the micromold and silver may be used for forming the microneedle because palladium",
+      "sha256": "c509c8d9c14d62121e16dfd07a7aba1e44b8a9941c8d6340cbbe9eb015271c34",
+      "locator_basis": "normalized description.txt Unicode character offsets; end exclusive"
+    }
+  ],
+  "rules": {
+    "source_scope": "Only current active chunks are admissible evidence. Full source files are curator archives, not runtime context. No network retrieval in this fixed-source first case.",
+    "policy_scope": "substrate only; not final needle, seed layer, micromold or every silicon-containing compound",
+    "claim_boundary": "passes_this_explicit_check does not imply feasible/manufacturable/safe/effective/legal",
+    "missingness_scope": "unknown relative to this packet, not a claim that no evidence exists anywhere",
+    "source_ambiguity": "C07 switches silver and palladium in the original example. Preserve/report ambiguity; do not silently correct the source.",
+    "hidden_oracle": "Never pass evaluator-only, checked tuples or expected fixtures to open-text methods."
+  },
+  "output_schema": "output-schema.json"
+}

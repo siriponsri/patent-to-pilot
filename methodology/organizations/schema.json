@@ -1,0 +1,34 @@
+{
+  "schema_id": "ptp.organization-capability-policy",
+  "schema_version": "0.1.0",
+  "status": "BOUNDED_DEVELOPMENT_SCHEMA_NOT_IMPLEMENTATION",
+  "scope": "research/patent-to-pilot",
+  "description": "Schema for source-linked organization capability/policy fixtures. It keeps source assertions, fictional stipulations, unknowns, confirmation state, and effective dates distinct.",
+  "required_profile_fields": [
+    "profile_id",
+    "profile_version",
+    "organization_kind",
+    "status",
+    "capabilities",
+    "stipulations",
+    "unknowns",
+    "source_refs"
+  ],
+  "capability_record": {
+    "required": ["field", "state", "basis", "confirmation_state"],
+    "state_enum": ["owned", "external", "unknown"],
+    "basis_enum": ["source_assertion", "stipulation", "confirmed_interpretation", "unknown"],
+    "confirmation_state_enum": ["not_required", "pending", "confirmed", "rejected"]
+  },
+  "policy_record": {
+    "required": ["policy_id", "scope", "state", "basis", "effective_date", "confirmation_state"],
+    "state_enum": ["allowed", "prohibited", "conditional", "unknown"],
+    "basis_enum": ["stipulation", "source_assertion", "confirmed_interpretation", "unknown"]
+  },
+  "provenance_rules": [
+    "Every source_assertion has a source_ref and locator.",
+    "Every stipulation is explicitly marked and is not presented as an organizational fact.",
+    "Unknown availability, capacity, ownership, cost, and lead time are not inferred from public expertise descriptions.",
+    "A policy change records scope and effective_date; it does not silently rewrite prior versions."
+  ]
+}

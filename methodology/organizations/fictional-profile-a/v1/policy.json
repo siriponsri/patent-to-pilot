@@ -1,0 +1,30 @@
+{
+  "profile_id": "PTP-FIC-ORG-A",
+  "profile_version": "1.0.0",
+  "policy_version": "1.0.0",
+  "status": "BOUNDED_STIPULATED_POLICY_FIXTURE",
+  "policies": [
+    {
+      "policy_id": "POL-A-001",
+      "scope": "formulation route",
+      "state": "conditional",
+      "statement": "External formulation support may be considered, subject to later confirmation of partner availability and scope.",
+      "basis": "stipulation",
+      "effective_date": "2026-10-24",
+      "confirmation_state": "pending",
+      "source_refs": ["STIP-A-001"]
+    },
+    {
+      "policy_id": "POL-A-002",
+      "scope": "substrate material only",
+      "state": "allowed",
+      "statement": "Silicon and glass are allowed candidate substrate materials for the initial fictional comparison.",
+      "basis": "stipulation",
+      "effective_date": "2026-10-24",
+      "confirmation_state": "not_required",
+      "source_refs": ["STIP-A-002"],
+      "note": "This is a benchmark rule, not a source claim or manufacturing approval."
+    }
+  ],
+  "change_rule": "A future prohibition must record its effective date and substrate-only scope; it must not rewrite unrelated capabilities or route fields."
+}
