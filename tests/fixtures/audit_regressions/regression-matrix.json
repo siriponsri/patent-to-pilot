@@ -1,0 +1,18 @@
+{
+  "kind": "synthetic_g09_g10_regression_matrix",
+  "cases": [
+    {"id": "field-cost-100-supported", "path": "case-workflow", "class": "positive", "asserts": "numeric batch cost 100 is supported only by a witness of 100"},
+    {"id": "field-cost-999-rejected", "path": "case-workflow", "class": "negative", "asserts": "numeric batch cost 999 is rejected when witness is 100"},
+    {"id": "field-cost-phrase-tablet-count", "path": "case-workflow", "class": "positive-negative", "asserts": "in 'cost was 100 USD; 999 tablets' only 100 is the cost witness"},
+    {"id": "field-cost-phrase-batch-id", "path": "case-workflow", "class": "positive-negative", "asserts": "in 'batch 999; cost was 100 USD' only 100 is the cost witness"},
+    {"id": "field-cost-ambiguous", "path": "case-workflow", "class": "negative", "asserts": "multiple cost-linked values remain unsupported"},
+    {"id": "field-cost-unsupported", "path": "case-workflow", "class": "negative", "asserts": "five-stage evidence cannot support numeric batch cost"},
+    {"id": "silicon-compounds", "path": "case", "class": "negative", "asserts": "carbide/nitride/oxide are not elemental silicon"},
+    {"id": "silicon-elemental", "path": "case", "class": "positive", "asserts": "explicit elemental silicon substrate is recognized"},
+    {"id": "locator-canonical-span", "path": "case", "class": "negative", "asserts": "locator span length mismatch is invalid"},
+    {"id": "generic-policy-scope", "path": "generic", "class": "unknown", "asserts": "component mismatch remains route-local unknown with reason"},
+    {"id": "generic-count-form", "path": "generic", "class": "unknown", "asserts": "unsupported count form is explicit, not silently passed"},
+    {"id": "generic-invalid-evidence-route-isolation", "path": "generic-workflow", "class": "positive-negative", "asserts": "invalid evidence does not crash and affects only the related route"},
+    {"id": "revision-gap", "path": "generic", "class": "positive", "asserts": "0-to-3 events use stored versions 1-to-2"}
+  ]
+}

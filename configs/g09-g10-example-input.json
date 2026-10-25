@@ -1,0 +1,62 @@
+{
+  "states": [
+    {
+      "project_id": "NEW-PROJECT-ALPHA",
+      "brief": "Compare two fictional coating routes and identify what must be measured before a formulation handoff.",
+      "profile": {
+        "record_id": "NEW-ORG-Z",
+        "profile_id": "NEW-ORG-Z",
+        "profile_version": "2.0.0",
+        "organization_kind": "fictional_benchmark_profile",
+        "status": "fixture",
+        "organization_label": "New Fictional Lab Z",
+        "unknowns": ["capacity", "lead time"]
+      },
+      "policy": {
+        "rule_id": "NEW-POLICY-1",
+        "component": "coating",
+        "permitted_materials": ["polymer-x", "polymer-y"],
+        "forbidden_materials": []
+      },
+      "options": [
+        {"option_id": "NEW-A", "selected_component": "coating", "selected_material": "polymer-x", "evidence_ids": ["NEW-E1"]},
+        {"option_id": "NEW-B", "selected_component": "coating", "selected_material": "polymer-y", "evidence_ids": ["NEW-E2"]}
+      ],
+      "evidence": [
+        {"evidence_id": "NEW-E1", "text": "Polymer-X is described as a coating candidate.", "source_id": "NEW-SOURCE-1", "source_version": "v7", "source_locator": "new-source#paragraph-1", "locator": {"dataset_field": "text"}},
+        {"evidence_id": "NEW-E2", "text": "Polymer-Y is described as a coating candidate.", "source_id": "NEW-SOURCE-1", "source_version": "v7", "source_locator": "new-source#paragraph-2", "locator": {"dataset_field": "text"}}
+      ],
+      "event": {"type": "initial", "event_order": 0, "effective_at": "2026-10-25"},
+      "unknowns": ["coating uniformity", "pilot yield"]
+    },
+    {
+      "project_id": "NEW-PROJECT-ALPHA",
+      "brief": "Compare two fictional coating routes and identify what must be measured before a formulation handoff.",
+      "profile": {
+        "record_id": "NEW-ORG-Z",
+        "profile_id": "NEW-ORG-Z",
+        "profile_version": "2.0.0",
+        "organization_kind": "fictional_benchmark_profile",
+        "status": "fixture",
+        "organization_label": "New Fictional Lab Z",
+        "unknowns": ["capacity", "lead time"]
+      },
+      "policy": {
+        "rule_id": "NEW-POLICY-2",
+        "component": "coating",
+        "permitted_materials": ["polymer-x", "polymer-y"],
+        "forbidden_materials": ["polymer-x"]
+      },
+      "options": [
+        {"option_id": "NEW-A", "selected_component": "coating", "selected_material": "polymer-x", "evidence_ids": ["NEW-E1"]},
+        {"option_id": "NEW-B", "selected_component": "coating", "selected_material": "polymer-y", "evidence_ids": ["NEW-E2"]}
+      ],
+      "evidence": [
+        {"evidence_id": "NEW-E1", "text": "Polymer-X is described as a coating candidate.", "source_id": "NEW-SOURCE-1", "source_version": "v7", "source_locator": "new-source#paragraph-1", "locator": {"dataset_field": "text"}},
+        {"evidence_id": "NEW-E2", "text": "Polymer-Y is described as a coating candidate.", "source_id": "NEW-SOURCE-1", "source_version": "v7", "source_locator": "new-source#paragraph-2", "locator": {"dataset_field": "text"}}
+      ],
+      "event": {"type": "policy_change", "event_order": 1, "effective_at": "2026-10-25"},
+      "unknowns": ["coating uniformity", "pilot yield"]
+    }
+  ]
+}

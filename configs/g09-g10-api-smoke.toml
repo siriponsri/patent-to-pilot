@@ -1,0 +1,37 @@
+# Proposal only. No API call, key, token, or private endpoint is configured.
+[run]
+status = "NOT_RUN"
+cases = ["PTP-0001", "PTP-0002", "PTP-0003"]
+calls_per_case = 1
+max_bounded_retries_per_case = 1
+purpose = "Compare a future provider path with the same public-input packet and deterministic baseline"
+
+[provider]
+candidate = "To be checked at run time after explicit budget approval"
+model_version = "To be checked at run time"
+paid_api = false
+gpu = false
+runpod = false
+
+[budget]
+input_tokens_per_case = 4000
+output_tokens_per_case = 1500
+total_token_ceiling = 16500
+cost_ceiling_usd = 5.00
+note = "Planning ceiling only; no spend approval and no amount spent"
+
+[measurements]
+source_integrity = true
+required_changes = true
+preservation = true
+unknown_handling = true
+traceability = true
+elapsed_time = true
+provider_usage_and_retry_cost = true
+semantic_or_scientific_validity = false
+
+[stop]
+on_missing_model_or_auth = "NOT_RUN"
+on_budget_exceeded = "STOP"
+on_input_boundary_failure = "STOP"
+never_send = ["evaluator-only answers", "expected_doc_ids", "secrets", "private configuration"]
