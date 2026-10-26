@@ -1,0 +1,94 @@
+{
+  "version": "ptp-prefund-1",
+  "status": "READY_AWAITING_FUNDING_AND_BUDGET_APPROVAL",
+  "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+  "models": {
+    "google/gemini-2.5-flash-lite": {
+      "routing_only": [
+        "google-ai-studio"
+      ],
+      "context_length": 1048576,
+      "prompt_usd_per_million": 0.1,
+      "completion_usd_per_million": 0.4,
+      "supported_parameters": [
+        "max_tokens",
+        "structured_outputs",
+        "response_format"
+      ],
+      "source": "https://openrouter.ai/api/v1/models/google/gemini-2.5-flash-lite/endpoints",
+      "verified_at_utc": "2026-10-26T00:11:33.955480+00:00",
+      "status": 0
+    },
+    "openai/gpt-4.1-mini": {
+      "routing_only": [
+        "openai"
+      ],
+      "context_length": 1047576,
+      "prompt_usd_per_million": 0.4,
+      "completion_usd_per_million": 1.6,
+      "supported_parameters": [
+        "max_tokens",
+        "structured_outputs",
+        "response_format"
+      ],
+      "source": "https://openrouter.ai/api/v1/models/openai/gpt-4.1-mini/endpoints",
+      "verified_at_utc": "2026-10-26T00:11:33.955480+00:00",
+      "status": 0
+    }
+  },
+  "project_spend_cap_usd": 1.0,
+  "max_attempts_total": 10,
+  "output_tokens": 1500,
+  "nominal_input_tokens": 4000,
+  "nominal_schema_framing_allowance": 128,
+  "phases": {
+    "smoke": {
+      "attempts_max": 2,
+      "cumulative_spend_cap_usd": 0.6,
+      "jobs": [
+        {
+          "id": "smoke-1-1",
+          "model": "google/gemini-2.5-flash-lite",
+          "attempts_max": 1,
+          "instruction": "Public synthetic transport preparation, not scientific evaluation."
+        },
+        {
+          "id": "smoke-1-2",
+          "model": "openai/gpt-4.1-mini",
+          "attempts_max": 1,
+          "instruction": "Public synthetic transport preparation, not scientific evaluation."
+        }
+      ]
+    },
+    "pilot": {
+      "attempts_max": 8,
+      "cumulative_spend_cap_usd": 1.0,
+      "jobs": [
+        {
+          "id": "pilot-1-1",
+          "model": "google/gemini-2.5-flash-lite",
+          "attempts_max": 2,
+          "instruction": "Public synthetic transport preparation, not scientific evaluation."
+        },
+        {
+          "id": "pilot-1-2",
+          "model": "openai/gpt-4.1-mini",
+          "attempts_max": 2,
+          "instruction": "Public synthetic transport preparation, not scientific evaluation."
+        },
+        {
+          "id": "pilot-2-1",
+          "model": "google/gemini-2.5-flash-lite",
+          "attempts_max": 2,
+          "instruction": "A synthetic policy changed. Echo the case identifier without inferring research claims."
+        },
+        {
+          "id": "pilot-2-2",
+          "model": "openai/gpt-4.1-mini",
+          "attempts_max": 2,
+          "instruction": "A synthetic policy changed. Echo the case identifier without inferring research claims."
+        }
+      ]
+    }
+  }
+}

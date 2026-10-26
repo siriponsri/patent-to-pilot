@@ -1,0 +1,10 @@
+{
+  "approved": false,
+  "funding_confirmed": false,
+  "plan_sha256": "6cf9bd14059f1df9f11ff6f913d31bcc5e5c60f3f993ac4766621bf1c7c148b2",
+  "phase": "smoke",
+  "phase_spend_cap_usd": 0.6,
+  "phase_attempts_max": 2,
+  "owner_reference": "",
+  "state_path": "C:\\Users\\User\\Desktop\\myProject\\patent-to-pilot\\results\\development\\provider-pilot\\live.sqlite3"
+}

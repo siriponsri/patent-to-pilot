@@ -1,0 +1,12 @@
+flowchart TB
+  subgraph Local["Implemented local research workspace — bounded slices"]
+    A["Public packets + fictional profiles"] --> B["PublicCaseAdapter / typed staging"]
+    B --> C["integration/ + evaluation/ — deterministic / mocked"]
+    C --> D["Shared checks, evidence status + diffs"]
+    C <--> E["core/ — versioned records + SQLite"]
+    D --> F["JSON / Markdown / HTML artifacts"]
+  end
+  subgraph Transport["Separate provider-transport verification path"]
+    G["providers/ — adapter + attempt ledger"] --> H["Mock transport"]
+    G -. "explicit approval; synthetic echo only" .-> I["OpenRouter — pinned model / upstream"]
+  end

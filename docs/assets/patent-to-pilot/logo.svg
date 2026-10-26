@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 208" role="img" aria-labelledby="ptp-logo-title ptp-logo-desc">
+  <title id="ptp-logo-title">Patent-to-Pilot</title>
+  <desc id="ptp-logo-desc">An original document-and-route symbol for source-linked research planning, beside the Patent-to-Pilot wordmark.</desc>
+  <rect x="1" y="1" width="958" height="206" rx="10" fill="#f5f7f2" stroke="#d6ded5" stroke-width="2"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 42h68l32 32v92H56z" stroke="#123c3b" stroke-width="5"/>
+    <path d="M124 42v32h32" stroke="#123c3b" stroke-width="5"/>
+    <path d="M76 88h30M76 108h20M76 128h12" stroke="#6c817b" stroke-width="4"/>
+    <path d="M100 148h28V110h48" stroke="#123c3b" stroke-width="5"/>
+    <path d="M128 148h48" stroke="#ba6c28" stroke-width="5"/>
+    <path d="M166 138l12 10-12 10" stroke="#ba6c28" stroke-width="5"/>
+    <circle cx="100" cy="148" r="7" fill="#f5f7f2" stroke="#123c3b" stroke-width="4"/>
+    <circle cx="176" cy="110" r="7" fill="#f5f7f2" stroke="#123c3b" stroke-width="4"/>
+  </g>
+  <text x="222" y="95" fill="#123c3b" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="650" letter-spacing="-1.8">Patent-to-Pilot</text>
+  <rect x="224" y="117" width="44" height="4" rx="2" fill="#ba6c28"/>
+  <text x="282" y="129" fill="#435e57" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" letter-spacing=".2">Source-linked R&amp;D planning</text>
+  <text x="224" y="167" fill="#526a62" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="2.2">RESEARCH PROTOTYPE · EVIDENCE · REVISION</text>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "status": "POOL_NOT_READY",
+  "initial_active_evidence_ids": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07"
+  ],
+  "recoverable_evidence_ids": [],
+  "distractor_ids": [],
+  "reason": "No verified recoverable-evidence pool is available outside the current public packet."
+}

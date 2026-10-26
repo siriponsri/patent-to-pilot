@@ -1,0 +1,10 @@
+flowchart LR
+  A["Brief + permitted organization sources"] --> B["Reviewed capability / policy map"]
+  B --> C["Source-linked opportunities"]
+  C --> D["Route comparison + unknowns"]
+  D --> E["Draft pilot / R&D handoff"]
+  E --> F["Confirmed change"]
+  F --> G["Revision + evidence-linked diff"]
+  G --> D
+  E -. "future product capability" .-> H["Scoped confirmed-feedback memory — planned"]
+  H -. "future tasks only" .-> B

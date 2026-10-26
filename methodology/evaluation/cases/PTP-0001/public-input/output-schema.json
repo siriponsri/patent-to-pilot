@@ -1,0 +1,37 @@
+{
+  "schema_version": "PTP-0001-output-v1",
+  "required_top_level": [
+    "case_id",
+    "event_id",
+    "display_name",
+    "options",
+    "source_ambiguity_status",
+    "interpretation_limits"
+  ],
+  "required_option_fields": [
+    "candidate_id",
+    "component",
+    "selected_material",
+    "policy_check_state",
+    "current_support_ids",
+    "historical_support_ids",
+    "measured_production_yield",
+    "final_needle_material",
+    "next_action_code"
+  ],
+  "policy_states": [
+    "passes_this_explicit_check",
+    "fails_this_explicit_check",
+    "unknown"
+  ],
+  "unknown_measurement": {
+    "state": "unknown",
+    "value": null
+  },
+  "no_claim_fields": [
+    "clinical_validity",
+    "manufacturable",
+    "FTO_clear"
+  ],
+  "note": "Documentation schema, not an executed product API. An evaluator checks source provenance separately from semantic/scientific judgment."
+}

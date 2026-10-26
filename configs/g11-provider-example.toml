@@ -1,0 +1,34 @@
+# Secret-free example. Live calls remain disabled unless an explicitly
+# authorized caller changes the runtime configuration; this file does not do so.
+[provider]
+name = "openrouter"
+model = "provider/model-id-placeholder"
+base_url = "https://openrouter.ai/api/v1"
+routing_only = ["openai"]
+allow_fallbacks = false
+require_parameters = true
+max_price = { prompt = 0.40, completion = 1.60 }
+api_key_env = "OPENROUTER_API_KEY"
+live_enabled = false
+research_mode = true
+allow_auto_routing = false
+timeout_seconds = 30.0
+retries = 0
+max_input_tokens = 4000
+max_output_tokens = 1500
+max_total_tokens = 5500
+max_spend_usd = 0.0
+prompt_version = "g11-prompt-placeholder"
+config_version = "g11-provider-config-1"
+
+# Future extension points only; no native adapters are enabled here.
+[future_provider_extensions]
+openai = "not_implemented"
+anthropic = "not_implemented"
+google_gemini = "not_implemented"
+xai_grok = "not_implemented"
+
+[planned_model_targets]
+google_gemini = "google/gemini-2.5-flash-lite"
+openai = "openai/gpt-4.1-mini"
+status = "planned_only_no_key_no_live_call"

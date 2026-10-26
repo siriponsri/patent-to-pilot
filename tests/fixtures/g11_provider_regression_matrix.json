@@ -1,0 +1,70 @@
+{
+  "kind": "g11_provider_targeted_regression_matrix",
+  "scope": "offline mock transport and synthetic adaptation inputs",
+  "oracle": "none",
+  "cases": [
+    {
+      "id": "LEDGER-01",
+      "area": "attempt_ledger",
+      "input": "max_input_tokens=5, request total=8",
+      "expected": "accept one request within bounds",
+      "polarity": "positive"
+    },
+    {
+      "id": "LEDGER-02",
+      "area": "attempt_ledger",
+      "input": "two calls cost 0.006 each, spend cap 0.01",
+      "expected": "second reservation rejected before dispatch",
+      "polarity": "negative"
+    },
+    {
+      "id": "LEDGER-03",
+      "area": "attempt_ledger",
+      "input": "response omits usage and cost",
+      "expected": "reservation remains unknown_pending; values are not zero",
+      "polarity": "unknown"
+    },
+    {
+      "id": "LEDGER-04",
+      "area": "attempt_ledger",
+      "input": "timeout then retry",
+      "expected": "each attempt has a reservation and retry is counted",
+      "polarity": "positive"
+    },
+    {
+      "id": "SCHEMA-01",
+      "area": "response_schema",
+      "input": "integer minimum and additionalProperties=false",
+      "expected": "invalid response rejected",
+      "polarity": "negative"
+    },
+    {
+      "id": "MODEL-01",
+      "area": "model_identity",
+      "input": "requested Gemini, response reports OpenAI",
+      "expected": "research-mode model drift rejected",
+      "polarity": "negative"
+    },
+    {
+      "id": "ERROR-01",
+      "area": "error_sanitization",
+      "input": "fake Authorization secret in timeout exception",
+      "expected": "safe error code/class only; secret absent",
+      "polarity": "negative"
+    },
+    {
+      "id": "GRAPH-01",
+      "area": "qualified_dependency_ids",
+      "input": "same external ID used by evidence and policy",
+      "expected": "unqualified traversal rejected; qualified traversal works",
+      "polarity": "negative"
+    },
+    {
+      "id": "ADAPT-01",
+      "area": "recompute_accounting",
+      "input": "policy change with two options",
+      "expected": "full baseline equivalent; actual recomputation remains full",
+      "polarity": "positive"
+    }
+  ]
+}

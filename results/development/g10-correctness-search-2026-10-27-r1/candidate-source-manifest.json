@@ -1,0 +1,42 @@
+{
+  "kind": "g10_correctness_search_candidate_source_manifest",
+  "run_id": "g10-correctness-search-2026-10-27-r1",
+  "changed_source_hashes": {
+    "comparison": "019bf3e0b48993ff7d39693546d818fe0d9cc17db83bd078d4335cff3bdba12e",
+    "runner_script": "2f63eb67f0439571b2491382dc79bd200d6a0a46db3f58ea44a4062749efbeff",
+    "g10_tests": "f72129520c3149448d91c923f1bdd8dd2cb13d0517e2333249c509c1333b5e4b",
+    "integration_pipeline": "6e1c98eb8598cff2022d409942031f36ee7a294a03637aab17dad05017fa54b0",
+    "public_output_schema": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e"
+  },
+  "dependency_hashes": {
+    "integration_pipeline": "6e1c98eb8598cff2022d409942031f36ee7a294a03637aab17dad05017fa54b0",
+    "public_output_schema": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e"
+  },
+  "frozen_input_hashes": {
+    "S0": "1d430e035554462582f3892b72bd81ed3bc29f90f3dd70203c619b39e1edaaab",
+    "S1": "81c2f9779f772672a16939aae9d73d4a5fc10d1d8020b5dc1d01adba8bbb44ac",
+    "S2": "5f57d0cc0f13ea348db54153000e524d6a7a16f4da1abde09c33c9aaa4310455"
+  },
+  "documentation_schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+  "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+  "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+  "output_hashes": {
+    "comparison.json": "5ac1f917572a932771ad6a72106e141c7f0a9c1e0bb55a82d69fe012a212075c",
+    "comparison.md": "8c1df54f594d4fb524acf597729575bef6581014c993a12f6926a9865919082e",
+    "comparison.html": "fec146497debc74f50ddae9e54786572708dd7929e79214c319725a080081d7c",
+    "before-after-diff.json": "368744d24dca8fd743d15933865a7104f90dc00ce2aaf33cef9e3ff08c7ac559",
+    "validator-results.json": "7decfd5c828119644bf0c29a0c4a21ffba841806de390677bf4d0af9d7b7504d",
+    "method-traces.json": "9bd07f8a8628f802a42c3b03b16a26c3186fed6aec855ba6414c53ac98540c50",
+    "search-pool-readiness.json": "5ef17c2173fcd837e3990e1de85050a0d06ec32c08b19cc5f8df50fd2b3b5d82"
+  },
+  "protected_old_evidence_and_journal_hashes": {
+    "results\\development\\g10-offline-comparison\\before-after-diff.json": "3f7f4967c75ee28fa22223a3df56ac7de674bfb58aab325af7a421aa9f4c46f9",
+    "results\\development\\g10-offline-comparison\\comparison.html": "fec146497debc74f50ddae9e54786572708dd7929e79214c319725a080081d7c",
+    "results\\development\\g10-offline-comparison\\comparison.json": "cfd934e20105b24cdbcc4eef0f45a916dc3b78cac2d6697918f28c4fcc1adeae",
+    "results\\development\\g10-offline-comparison\\comparison.md": "0cc6cdc649b3baf626dd75ff95aefc5ff2d7c3c626e6687758b18b9cf63dd0da",
+    "results\\development\\g10-offline-comparison\\evidence-manifest.json": "3e66d68ff27e587006d507051115533688a9e10a08de8621a3dc0b4142edc3b8",
+    "results\\development\\g10-offline-comparison\\method-traces.json": "03143f47d7dc562cb8e599c484bc8ce12b792ecc64cbf3202b02832844acdf5f",
+    "results\\development\\g10-offline-comparison\\validator-results.json": "b8b7bed6e99c5b5ba5248a5e57c35870c615c031c5201c44b479adaa4823a759",
+    "results\\development\\provider-pilot\\live.sqlite3": "a10f81d79a37a39b53547cb4417437499aa81b69a896048f352ff3a8ba8e9d36"
+  }
+}
