@@ -58,8 +58,11 @@
     },
     "policy_id": {
       "enum": [
+        "HT-B0a",
         "HT-B0b",
-        "HT-B2"
+        "HT-B1",
+        "HT-B2",
+        "HT-B3"
       ],
       "title": "Policy Id",
       "type": "string"

@@ -1,0 +1,59 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "default": "dry_run",
+      "enum": [
+        "dry_run",
+        "mock",
+        "live"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "provider": {
+      "const": "openrouter",
+      "default": "openrouter",
+      "title": "Provider",
+      "type": "string"
+    },
+    "model": {
+      "default": "healthtech-not-used",
+      "minLength": 1,
+      "title": "Model",
+      "type": "string"
+    },
+    "max_input_tokens": {
+      "default": 2048,
+      "minimum": 1,
+      "title": "Max Input Tokens",
+      "type": "integer"
+    },
+    "max_output_tokens": {
+      "default": 256,
+      "minimum": 1,
+      "title": "Max Output Tokens",
+      "type": "integer"
+    },
+    "max_total_tokens": {
+      "default": 2304,
+      "minimum": 1,
+      "title": "Max Total Tokens",
+      "type": "integer"
+    },
+    "max_spend_usd": {
+      "default": 0.0,
+      "minimum": 0,
+      "title": "Max Spend Usd",
+      "type": "number"
+    },
+    "allow_evaluator_sources": {
+      "const": false,
+      "default": false,
+      "title": "Allow Evaluator Sources",
+      "type": "boolean"
+    }
+  },
+  "title": "HealthTechAPIConfig",
+  "type": "object"
+}

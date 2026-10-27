@@ -29,6 +29,8 @@ def main():
     args.output.mkdir(parents=True,exist_ok=False)
     (args.output/"dossier.json").write_text(dossier.model_dump_json(indent=2)+"\n",encoding="utf-8")
     (args.output/"dossier.md").write_text(export_markdown(dossier),encoding="utf-8")
+    (args.output/"dossier.en.md").write_text(export_markdown(dossier, language="en"),encoding="utf-8")
+    (args.output/"dossier.th.md").write_text(export_markdown(dossier, language="th"),encoding="utf-8")
     (args.output/"acquisition_events.jsonl").write_text("\n".join(e.model_dump_json() for e in events)+"\n",encoding="utf-8")
     (args.output/"manifest.json").write_text(manifest.model_dump_json(indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"status":"ENGINEERING_DRAFT","output":str(args.output),"candidates":len(dossier.candidates),

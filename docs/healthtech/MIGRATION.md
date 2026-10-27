@@ -11,7 +11,7 @@
 | W02 source/device/evidence/action/dossier | `healthtech/contracts.py`, `schemas/healthtech/` | reuse `SourceRecord`, `Closed`, `ProjectBrief`; contracts ปิดรับ unknown fields |
 | W05 official facts seam | `healthtech/sources.py` | normalize **local** 510(k) snapshot/field; ยังไม่ใช่ live connector หรือ PMA/recall adapter |
 | W06 / HT-T1 | `evaluation/healthtech/retrieval.py` | macro/micro known recall, canonical dedup ก่อน cutoff, failed-query denominator, unjudged status, shared-reference grouping |
-| W08 lexical / W10 action mechanics | `healthtech/engine.py` | reuse FTS5; HT-B0b single query และ HT-B2 fixed multi-query/RRF; cap counts ก่อน dispatch; event/manifest จริง |
+| W08 lexical / W10 action mechanics | `healthtech/engine.py`, `healthtech/policies.py` | reuse FTS5; HT-B0a company control, HT-B0b lexical, HT-B1 fixed lexical/token-overlap hybrid approximation, HT-B2 fixed multi-query/RRF, HT-B3 simple no-new-candidate heuristic; cap counts ก่อน dispatch; event/manifest จริง |
 | W12 dossier slice / HT-T3 | `healthtech/provenance.py`, `scripts/healthtech/run_dossier.py` | source hash/version/date/locator checks, JSON/Markdown export, unresolved/next requests; ไม่ประเมิน semantic truth |
 | Example/regressions | `examples/healthtech/synthetic-device/`, `tests/test_healthtech.py` | authored synthetic case; no real regulatory facts, provider calls หรือ scientific benchmark |
 | Provider protection | `src/patent_to_pilot/providers/`, provider tests | ใช้ของเดิม ไม่เปลี่ยน identity/ledger/secret handling หรือ spending authorization |
@@ -29,7 +29,7 @@
 
 HT-G1 main Bridge dataset: **BLOCKED_LOCAL** เฉพาะ reuse rights/cohort/full-corpus/split reproducibility; ยังไม่ได้ดาวน์โหลด payload หรือทำ audit ซ้ำ SciFact adapter/official evaluator ยัง **NOT_IMPLEMENTED** ตัวประเมินในรอบนี้เป็น HT-T1 และ deterministic HT-T3 ไม่ใช่ SciFact score
 
-HT-G2/G3: **PARTIAL engineering** ยังไม่มี strong hybrid reranker, adaptive policy, bounded LLM controller, 3 real public-case dossiers, source-viewer UI, edit-history persistence หรือ no-code journey JSON schema มี version/parent/user-edits contract แต่ยังไม่มี workflow สำหรับเก็บประวัติหลายรุ่น
+HT-G2/G3: **PARTIAL engineering** มี company control, lexical baseline, fixed lexical/token-overlap hybrid approximation, fixed multi-query, simple heuristic, 3 real public-source 510(k) dossiers, CLI source viewer, bilingual Markdown export และ local edit-history workflow; ยังไม่มี dense/learned reranker, bounded LLM execution, no-code UI หรือ scientific comparison
 
 HT-G4–G8: scientific comparison, customer evidence, manuscript readiness, deployment และ expansion ยัง **NOT_RUN/PLANNED** ผลทดสอบซอฟต์แวร์ไม่ทดแทนข้อเหล่านี้
 
@@ -37,4 +37,4 @@ HT-G4–G8: scientific comparison, customer evidence, manuscript readiness, depl
 
 ดูคำสั่งและผลจริงใน [verification](verification.json) พร้อม [runbook](RUNBOOK.md) รอบนี้ต้องรันตัวอย่างจาก fresh output directory, ตรวจ schema, regression ฝั่ง provider และ diff/secret/rights scope ก่อน push
 
-งานถัดไปคือ W04 SciFact adapter ตาม task/evaluator ต้นฉบับ หรือ W05 เพิ่ม snapshot ของ public device จริงพร้อม provenance แล้วทำ W12 public-case dossier แรก ทั้งสองงานเดินต่อได้ระหว่างรอ Bridge rights/cohort
+งานถัดไปคือ freeze protocol/configuration สำหรับ W14/W15 และแยก bounded-controller dry-run จาก live authorization; Bridge rights/cohort ยังเป็น BLOCKED_LOCAL เฉพาะ main study และยังห้ามตีความ engineering baselines เป็น scientific result

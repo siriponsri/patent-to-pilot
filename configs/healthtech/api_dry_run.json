@@ -1,0 +1,36 @@
+{
+  "config": {
+    "mode": "dry_run",
+    "provider": "openrouter",
+    "model": "healthtech-not-used",
+    "max_input_tokens": 2048,
+    "max_output_tokens": 256,
+    "max_total_tokens": 2304,
+    "max_spend_usd": 0,
+    "allow_evaluator_sources": false
+  },
+  "request": {
+    "request_id": "ht-dry-run-001",
+    "project_id": "healthtech-demo",
+    "query_id": "HT-SYN-001",
+    "action_type": "evidence_summary",
+    "prompt": "Return a structured evidence-summary acknowledgement for this offline pre-live request.",
+    "response_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {"type": "string", "enum": ["ready"]},
+        "request_id": {"type": "string"}
+      },
+      "required": ["status", "request_id"]
+    },
+    "visible_sources": [
+      {
+        "source_id": "synthetic-device-record",
+        "source_version": "authored-fixture-v1",
+        "payload_hash": "08d037a0c91e924c31c8df411942f063378fd4daf73b76c798cb98b67cc80dc7"
+      }
+    ],
+    "estimated_input_tokens": 24
+  }
+}

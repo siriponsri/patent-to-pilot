@@ -1,4 +1,4 @@
-"""Shared offline retrieval and dossier composition (HT-B0b / fixed HT-B2).
+"""Shared offline retrieval and dossier composition for HT-B0a..HT-B3.
 
 No labels, inference provider, network, secret loader or paid budget entry point.
 Action limits are measured local counts, not a claim of monetary savings.
@@ -15,6 +15,7 @@ from patent_to_pilot.healthtech.contracts import (AcquisitionBudget, Acquisition
     Contract, DeviceQuery, DossierVersion, EvidenceItem, PatentCandidate, RunManifest,
     SourcePayload, canonical_patent_id, content_hash)
 from patent_to_pilot.healthtech.provenance import check_evidence
+from patent_to_pilot.healthtech.policies import fixed_hybrid_rerank
 from patent_to_pilot.ingestion.pls import PatentDocument
 from patent_to_pilot.retrieval.fts import FTSIndex
 
@@ -37,7 +38,7 @@ class DossierInput(Contract):
     sources: list[SourcePayload] = Field(min_length=1)
     patents: list[PatentInput]
     evidence: list[EvidenceItem] = Field(default_factory=list)
-    policy_id: Literal["HT-B0b", "HT-B2"] = "HT-B0b"
+    policy_id: Literal["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"] = "HT-B0b"
     per_search_limit: int = Field(default=20, ge=1, le=1000)
 
     @model_validator(mode="after")
@@ -78,19 +79,30 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
     events: list[AcquisitionEvent] = []
     candidates: dict[str, PatentCandidate] = {}
     corpus = {canonical_patent_id(p.patent_id):p for p in data.patents}
-    schedule = [("technical_search", data.query.technical_description)]
-    if data.policy_id == "HT-B2":
-        schedule += [("feature_search", f) for f in data.query.features_of_interest]
+    if data.policy_id == "HT-B0a":
+        company_query = " ".join(value for value in data.query.company_metadata.values() if value.strip())
+        schedule = [("company_search", company_query)] if company_query else []
+    else:
+        schedule = [("technical_search", data.query.technical_description)]
+        if data.policy_id in {"HT-B1", "HT-B2"}:
+            schedule += [("feature_search", f) for f in data.query.features_of_interest]
+    feature_cursor = 0
+    if data.policy_id == "HT-B3":
+        schedule = [("technical_search", data.query.technical_description)]
     failures = False
     stop_reason = "fixed_schedule_complete"
     index = FTSIndex(source_id="ht-local-corpus", source_version=input_hash)
+    corpus_texts = {pid: f"{p.title} {p.source.payload}" for pid, p in corpus.items()}
     try:
         for pid, p in corpus.items():
             index.add(PatentDocument(document_id=pid, source_id="ht-local-corpus", source_version=input_hash,
                 publication_id=pid, title=p.title, abstract=p.source.payload, labels="[]",
                 source_locator=p.source.source.uri, source_sha256=p.source.source.sha256))
         index.connection.commit()
-        for action, query in schedule:
+        cursor = 0
+        while cursor < len(schedule):
+            action, query = schedule[cursor]
+            cursor += 1
             if remaining.max_search_calls == 0 or remaining.max_returned_candidates == 0:
                 stop_reason = "budget_exhausted"
                 break
@@ -108,21 +120,41 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
                 hits = []
                 errors = ["local_search_failed"]
                 failures = True
-            returned = [h.document_id for h in hits]
+            if data.policy_id == "HT-B1":
+                ranked_hits = fixed_hybrid_rerank(query, hits, corpus_texts, limit=len(hits))
+            else:
+                ranked_hits = [(hit, 1.0 / (60 + rank), 0.0) for rank, hit in enumerate(hits, 1)]
+            returned = [h.document_id for h, _, _ in ranked_hits]
             new = 0
-            for rank, h in enumerate(hits, 1):
+            for rank, (h, fused_score, overlap) in enumerate(ranked_hits, 1):
                 p = corpus[h.document_id]
                 if h.document_id not in candidates:
                     new += 1
+                    scores = {"rrf_fixed_k60": 1 / (60 + rank)}
+                    if data.policy_id == "HT-B1":
+                        scores["hybrid_fixed"] = fused_score
+                        scores["token_overlap"] = overlap
                     candidates[h.document_id] = PatentCandidate(patent_id_raw=p.patent_id,
                         patent_id_canonical=h.document_id, source_id=p.source.source.source_id,
                         source_revision=p.source.source.version_label, retrieval_action_ids=[step_id],
-                        scores={"rrf_fixed_k60":1/(60+rank), "sqlite_fts5_bm25_lower_is_better":h.rank})
+                        scores={**scores, "sqlite_fts5_bm25_lower_is_better":h.rank})
                 else:
                     old=candidates[h.document_id]
+                    scores = {**old.scores,
+                        "rrf_fixed_k60": old.scores["rrf_fixed_k60"] + 1/(60+rank)}
+                    if data.policy_id == "HT-B1":
+                        scores["hybrid_fixed"] = scores.get("hybrid_fixed", 0.0) + fused_score
+                        scores["token_overlap"] = max(scores.get("token_overlap", 0.0), overlap)
                     candidates[h.document_id]=PatentCandidate.model_validate({**old.model_dump(),
                         "retrieval_action_ids":[*old.retrieval_action_ids,step_id],
-                        "scores":{**old.scores,"rrf_fixed_k60":old.scores["rrf_fixed_k60"]+1/(60+rank)}})
+                        "scores":scores})
+            summary = {
+                "HT-B0a": "Company/metadata-only control",
+                "HT-B0b": "Declared single-query lexical baseline",
+                "HT-B1": "Fixed lexical plus token-overlap hybrid approximation",
+                "HT-B2": "Declared fixed multi-query reciprocal-rank schedule",
+                "HT-B3": "Simple no-new-candidate heuristic",
+            }[data.policy_id]
             remaining = AcquisitionBudget(max_search_calls=remaining.max_search_calls,
                 max_returned_candidates=before.max_returned_candidates-len(hits))
             events.append(AcquisitionEvent(run_id=run_id, query_id=data.query.query_id, step_id=step_id,
@@ -131,12 +163,22 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
                 ended_at=datetime.now(timezone.utc), elapsed_seconds=perf_counter()-step_started,
                 search_calls=1, returned_candidates=len(hits), errors=errors,
                 remaining_budget_before=before, remaining_budget_after=remaining,
-                configuration_hash=configuration_hash, decision_summary="Declared fixed query schedule"))
+                configuration_hash=configuration_hash, decision_summary=summary))
+            if data.policy_id == "HT-B3":
+                if new > 0:
+                    stop_reason = "policy_stop"
+                    break
+                if feature_cursor < len(data.query.features_of_interest):
+                    schedule.append(("feature_search", data.query.features_of_interest[feature_cursor]))
+                    feature_cursor += 1
+                else:
+                    stop_reason = "no_new_candidates_under_policy"
+                    break
     finally:
         index.close()
     if failures:
         stop_reason = "run_failure"
-    ranked = sorted(candidates.values(), key=lambda c:(-c.scores["rrf_fixed_k60"], c.patent_id_canonical))
+    ranked = sorted(candidates.values(), key=lambda c:(-c.scores.get("hybrid_fixed", c.scores["rrf_fixed_k60"]), c.patent_id_canonical))
     events.append(AcquisitionEvent(run_id=run_id, query_id=data.query.query_id, step_id=f"{run_id}-stop",
         policy_id=data.policy_id, action_type="stop", input_reference_ids=[], returned_candidate_ids=[],
         new_candidate_count=0, started_at=datetime.now(timezone.utc), ended_at=datetime.now(timezone.utc),
@@ -159,19 +201,22 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
         failed_query_ids=[data.query.query_id] if failures else [],budget=data.query.acquisition_budget,
         actual_search_calls=sum(e.search_calls for e in events),actual_returned_candidates=sum(e.returned_candidates for e in events),
         elapsed_seconds=perf_counter()-started,stop_reason=stop_reason,
-        artifacts={"dossier":"dossier.json","export":"dossier.md","events":"acquisition_events.jsonl","manifest":"manifest.json"},
+        artifacts={"dossier":"dossier.json","export":"dossier.md","export_en":"dossier.en.md",
+                   "export_th":"dossier.th.md","events":"acquisition_events.jsonl","manifest":"manifest.json"},
         limitations=["Offline lexical/fixed-schedule engineering only; no hybrid, adaptive or LLM comparison.",
                      "No scientific benchmark or user evaluation was executed.",
                      "Index construction is included in total elapsed time; action times cover searches only."])
     return dossier,events,manifest
 
 
-def export_markdown(dossier: DossierVersion) -> str:
+def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", "th"] = "auto") -> str:
     """Readable, editable export; literals escape table syntax and raw HTML."""
     import html
     def cell(value):
         return html.escape(str(value)).replace("|", "&#124;").replace("\n", " ").replace("\r", " ")
-    th = dossier.query.brief.language == "th"
+    if language not in {"auto", "en", "th"}:
+        raise ValueError("language must be auto, en, or th")
+    th = dossier.query.brief.language == "th" if language == "auto" else language == "th"
     lines=["# แฟ้มหลักฐาน HealthTech" if th else "# HealthTech evidence dossier",
         "",f"Device/comparator: {cell(dossier.query.device_id_raw)}",f"Run: {cell(dossier.run_id)}",
         f"Evidence cutoff: {dossier.query.evidence_cutoff}",

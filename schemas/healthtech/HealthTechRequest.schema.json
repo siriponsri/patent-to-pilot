@@ -1,0 +1,99 @@
+{
+  "$defs": {
+    "HealthTechVisibleSource": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_version": {
+          "minLength": 1,
+          "title": "Source Version",
+          "type": "string"
+        },
+        "payload_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Payload Hash",
+          "type": "string"
+        },
+        "visibility": {
+          "const": "runtime",
+          "default": "runtime",
+          "title": "Visibility",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_version",
+        "payload_hash"
+      ],
+      "title": "HealthTechVisibleSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {
+      "minLength": 1,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "project_id": {
+      "minLength": 1,
+      "title": "Project Id",
+      "type": "string"
+    },
+    "query_id": {
+      "minLength": 1,
+      "title": "Query Id",
+      "type": "string"
+    },
+    "action_type": {
+      "enum": [
+        "bounded_controller",
+        "evidence_summary",
+        "source_selection"
+      ],
+      "title": "Action Type",
+      "type": "string"
+    },
+    "prompt": {
+      "minLength": 1,
+      "title": "Prompt",
+      "type": "string"
+    },
+    "response_schema": {
+      "additionalProperties": true,
+      "title": "Response Schema",
+      "type": "object"
+    },
+    "visible_sources": {
+      "items": {
+        "$ref": "#/$defs/HealthTechVisibleSource"
+      },
+      "minItems": 1,
+      "title": "Visible Sources",
+      "type": "array"
+    },
+    "estimated_input_tokens": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Estimated Input Tokens",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "request_id",
+    "project_id",
+    "query_id",
+    "action_type",
+    "prompt",
+    "response_schema",
+    "visible_sources"
+  ],
+  "title": "HealthTechRequest",
+  "type": "object"
+}

@@ -9,7 +9,7 @@ python -B -m pytest -p no:cacheprovider tests/test_healthtech.py
 
 เลือก output directory ใหม่ทุกครั้ง Runner จะปฏิเสธ directory ที่มีอยู่แล้ว ผลประกอบด้วย `dossier.json`, `dossier.md`, `acquisition_events.jsonl` และ `manifest.json` แฟ้ม Markdown เปิดตรวจ/แก้ได้ตามปกติ ส่วน `user_edits`, parent/version เป็นสัญญาข้อมูลที่เตรียมไว้ ยังไม่มี UI หรือบริการจัดเก็บประวัติ
 
-Input แบ่ง `query`, แหล่งข้อมูลที่อนุญาต, corpus สิทธิบัตร, evidence และ policy `HT-B0b` ใช้ technical query ครั้งเดียว `HT-B2` ใช้ technical query แล้วตาม features ที่ให้ไว้ตามลำดับคงที่ ใช้ reciprocal-rank fusion (k=60) ไม่รวม raw BM25 ข้าม scale วิธีนี้ยังไม่ใช่ hybrid หรือ adaptive retrieval
+Input แบ่ง `query`, แหล่งข้อมูลที่อนุญาต, corpus สิทธิบัตร, evidence และ policy. `HT-B0a` ใช้ company/metadata query เป็น control, `HT-B0b` ใช้ technical query เดียว, `HT-B1` ใช้ fixed lexical plus token-overlap hybrid approximation, `HT-B2` ใช้ technical query แล้วตาม features ตามลำดับคงที่และ reciprocal-rank fusion (k=60), `HT-B3` ใช้ technical query แล้วเปิด feature search ต่อเมื่อรอบก่อนเพิ่ม candidate ใหม่ไม่ได้. `HT-B1` เป็น engineering approximation ไม่ใช่ reproduction ของ dense reranker และ `HT-B3` เป็น heuristic ไม่ใช่ scientific adaptive result
 
 Budget ใน slice นี้นับ calls และจำนวนผลที่คืนรวมทุกครั้ง แม้ผลซ้ำก็ใช้ทรัพยากร เหตุผลหยุดไม่สื่อว่าค้น patent ที่เกี่ยวข้องครบแล้ว `paid_cost_usd=0` เพราะไม่มี paid action ไม่ใช่การประมาณราคางานจริง เวลา total รวมสร้าง index; event times เป็นเวลาค้นเท่านั้น
 
@@ -25,7 +25,7 @@ Schema สร้างซ้ำได้ด้วย:
 python -B scripts/healthtech/export_schemas.py schemas/healthtech
 ```
 
-Live providers ต้องใช้ adapter/ledger/explicit env loader เดิมพร้อม authorization ที่ครอบคลุมรอบนั้น Runner HealthTech ไม่มี live option หากนำ provider มาเชื่อมภายหลัง ต้องเพิ่ม reservation/settlement ที่ทนต่อ failures และนับ controller/query/retry/rerank costs ครบก่อนเรียก paid action
+`scripts/healthtech/run_api_dry_run.py` ตรวจ HT request/config/schema/source visibility โดยไม่เปิด network. `HealthTechAPIConfig(mode="mock")` ใช้ได้เฉพาะ injected `MockHTTPTransport`; `mode="live"` ปิดตายในการ pre-live package. Live providers ต้องใช้ adapter/ledger/explicit env loader เดิมพร้อม authorization ที่ครอบคลุมรอบนั้น และต้องนับ controller/query/retry/rerank costs ครบก่อนเรียก paid action
 
 ตรวจ public release cohort จาก clean checkout ได้ด้วย `python -B scripts/healthtech/verify_offline.py <fresh-output>` ค่าเริ่มต้น `--suite public` ระบุ published test modules ทั้ง 17 modules รวม HealthTech และ provider budget/security regressions ครบ `--suite all` ใช้ pytest discovery ใน tests directory ของ checkout ปัจจุบัน ทั้งสองแบบควรให้ 262 tests ใน release นี้โดยไม่ใช้ local provider journals
 

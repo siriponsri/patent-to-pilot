@@ -1,0 +1,97 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "enum": [
+        "DRY_RUN_NOT_EXECUTED",
+        "MOCK_COMPLETE"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "dry_run",
+        "mock"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "request_id": {
+      "title": "Request Id",
+      "type": "string"
+    },
+    "request_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Request Hash",
+      "type": "string"
+    },
+    "visible_source_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Visible Source Ids",
+      "type": "array"
+    },
+    "visible_source_hashes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Visible Source Hashes",
+      "type": "object"
+    },
+    "network_attempts": {
+      "minimum": 0,
+      "title": "Network Attempts",
+      "type": "integer"
+    },
+    "provider_calls": {
+      "minimum": 0,
+      "title": "Provider Calls",
+      "type": "integer"
+    },
+    "paid_cost_usd": {
+      "default": 0.0,
+      "minimum": 0,
+      "title": "Paid Cost Usd",
+      "type": "number"
+    },
+    "response_schema_valid": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Response Schema Valid"
+    },
+    "response": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Response"
+    }
+  },
+  "required": [
+    "status",
+    "mode",
+    "request_id",
+    "request_hash",
+    "visible_source_ids",
+    "visible_source_hashes",
+    "network_attempts",
+    "provider_calls"
+  ],
+  "title": "HealthTechDispatchReceipt",
+  "type": "object"
+}

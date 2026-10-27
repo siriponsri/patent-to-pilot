@@ -26,13 +26,13 @@
     },
     {
       "id": "HT-W04",
-      "status": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "SciFact pinned source/task/rights plan; official evaluator not integrated"
+      "status": "IMPLEMENTED_ENGINEERING",
+      "evidence": "local SciFact reader/evaluator with runtime/gold split, format checks and official-style metrics; official evaluator integration and benchmark remain open"
     },
     {
       "id": "HT-W05",
-      "status": "PARTIAL",
-      "evidence": "local allowlisted 510k snapshot normalizer; no live network ingestion/PMA/UDI/recall adapter"
+      "status": "IMPLEMENTED_ENGINEERING_ONLY",
+      "evidence": "bounded allowlisted openFDA 510(k) snapshot for three public records with provenance and rights notes; no live ingestion/PMA/UDI/recall adapter"
     },
     {
       "id": "HT-W06",
@@ -41,18 +41,18 @@
     },
     {
       "id": "HT-W08",
-      "status": "SYNTHETIC_ENGINEERING_ONLY",
-      "evidence": "offline lexical HT-B0b and fixed HT-B2; no real-corpus baseline result"
+      "status": "ENGINEERING_BASELINES_ONLY",
+      "evidence": "offline HT-B0a/HT-B0b/HT-B1/HT-B2/HT-B3 controls with explicit labels; no real-corpus baseline result"
     },
     {
       "id": "HT-W10",
-      "status": "PARTIAL",
-      "evidence": "fixed search action events/local count caps; no adaptive/LLM controller or paid action"
+      "status": "IMPLEMENTED_ENGINEERING_ONLY",
+      "evidence": "fixed search action events, local count caps and HT-specific API dry-run seam; no adaptive/LLM controller or paid action"
     },
     {
       "id": "HT-W12",
-      "status": "PARTIAL",
-      "evidence": "synthetic JSON/Markdown dossier; exact-source checks; no real public cases/UI/history service"
+      "status": "IMPLEMENTED_ENGINEERING_ONLY",
+      "evidence": "three real public-source 510(k) dossier drafts, bilingual exports, exact-source viewer and local edit history; no UI/history service"
     },
     {
       "id": "HT-W13",
@@ -74,7 +74,7 @@
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
-  "next": "HT-W04 official-format SciFact adapter or HT-W05/HT-W12 first real public device dossier",
+  "next": "HT-W05/HT-W12 rights-cleared patent corpus for one named public device and disclosed-link dossier; keep HT-W04 official evaluator integration separate",
   "verification": "verification.json",
   "supplemental_data": "research/SUPPLEMENTAL_DATA.md",
   "reproducibility_audit": "REPRODUCIBILITY_AUDIT.md",

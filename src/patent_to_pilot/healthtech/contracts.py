@@ -151,8 +151,8 @@ class AcquisitionEvent(Contract):
     run_id: str
     query_id: str
     step_id: str
-    policy_id: Literal["HT-B0b", "HT-B2"]
-    action_type: Literal["technical_search", "feature_search", "stop"]
+    policy_id: Literal["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"]
+    action_type: Literal["technical_search", "feature_search", "company_search", "stop"]
     input_reference_ids: list[str]
     returned_candidate_ids: list[str]
     new_candidate_count: int = Field(ge=0)
@@ -222,7 +222,7 @@ class RunManifest(Contract):
     evidence_level: Literal["synthetic_engineering", "public_source_engineering"]
     code_commit: str
     input_hash: str
-    policy_id: Literal["HT-B0b", "HT-B2"]
+    policy_id: Literal["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"]
     configuration_hash: str
     data_revision: str
     corpus_hash: str

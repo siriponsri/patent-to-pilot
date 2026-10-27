@@ -14,8 +14,11 @@
   "grouping": "shared-reference patent connected components; sourced family joins when available; company sensitivity",
   "permitted_runtime_inputs": "device/comparator text and source-backed allowlisted metadata; no evaluator labels",
   "implemented_methods": [
+    "HT-B0a",
     "HT-B0b",
-    "HT-B2"
+    "HT-B1-local-hybrid-approximation",
+    "HT-B2",
+    "HT-B3-simple-heuristic"
   ],
   "planned_methods": [
     "HT-B0a",
