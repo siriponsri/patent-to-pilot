@@ -14,6 +14,13 @@ The aim is to reduce repeated reading and inconsistent revisions. Any benefit in
 
 ## Current status
 
+**Current planning direction (27 October 2026):** Capability-Constrained Cross-Domain Technology Transfer.
+The proposed first paper is *Transfer or Retest?* on measured solvent/material or operating-regime shifts.
+Read the [V3 proposal and budget options](docs/research/TRANSFER_OR_RETEST_PROPOSAL_20261027_V3_TH.md)
+and [current requirements](docs/product/REQUIREMENTS_DECISIONS_20261027_V3_TH.md).
+The direction is approved; the long run and $25/$50 campaign cap proposals are **not approved**.
+Existing engineering evidence below does not validate this new research hypothesis.
+
 This repository contains **bounded engineering slices**, not a complete autonomous R&D product.
 
 | Area | What exists | Limit |

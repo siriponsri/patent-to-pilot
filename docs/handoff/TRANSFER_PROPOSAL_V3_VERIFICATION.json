@@ -1,0 +1,90 @@
+{
+  "utc": "2026-10-27T06:40:21.420174+00:00",
+  "status": "PASS_DOCUMENTATION_CHECKS",
+  "base_commit": "4adcdf319fb9cb8e388879fdc217a40f92e84fee",
+  "scope": "versioned proposal/current requirements and narrow navigation only",
+  "proposal_only": true,
+  "approved_existing_api_cap_usd": 5,
+  "larger_cap_approved": false,
+  "long_run_launched": false,
+  "model_calls": 0,
+  "training": "NOT_RUN",
+  "dependency_installation": "NOT_RUN",
+  "deployment": "NOT_RUN",
+  "unit_tests_this_turn": "NOT_RUN; documentation-only; prior 142-test receipt cited as historical evidence",
+  "checks": {
+    "utf8": true,
+    "local_relative_links": 10,
+    "budget_arithmetic": "PASS Decimal recomputation",
+    "secret_patterns": "no matches in explicit doc scope; no .env read",
+    "historical_v2_and_unrelated_gitignore_hashes_unchanged": true
+  },
+  "request_price_arithmetic": {
+    "extract": {
+      "expected": "0.00032",
+      "reserve": "0.0008"
+    },
+    "audit": {
+      "expected": "0.00256",
+      "reserve": "0.0056"
+    },
+    "predictG": {
+      "expected": "0.00042",
+      "reserve": "0.001"
+    },
+    "predictM": {
+      "expected": "0.00168",
+      "reserve": "0.004"
+    }
+  },
+  "capacity_examples": [
+    {
+      "option": "LEAN",
+      "counts": [
+        3000,
+        250,
+        1500,
+        1500
+      ],
+      "matrix_expected_usd": "4.75000",
+      "base_reserve_usd": "11.3000",
+      "reserve_plus_retry_and_allocated_5_usd": "19.125000",
+      "proposed_total_cap_usd": 25,
+      "approved": false
+    },
+    {
+      "option": "RECOMMENDED",
+      "counts": [
+        6000,
+        500,
+        3000,
+        3000
+      ],
+      "matrix_expected_usd": "9.50000",
+      "base_reserve_usd": "22.6000",
+      "reserve_plus_retry_and_allocated_5_usd": "33.250000",
+      "proposed_total_cap_usd": 50,
+      "approved": false
+    }
+  ],
+  "file_sha256": {
+    "docs/research/TRANSFER_OR_RETEST_PROPOSAL_20261027_V3_TH.md": "f5803a1a7058d50367180b5176dae074d2d09c588f85c8fced5bb7d4e7acc1ba",
+    "docs/product/REQUIREMENTS_DECISIONS_20261027_V3_TH.md": "dad0222e27e20d715ece88f76eebb85bdc909ba38280e03d36a0d2aba18b85e1",
+    "README.md": "e356c1f3d88f5424d553bb510b80226f81ab4df7b9693be0d8202846b8ba588e",
+    "GOAL.md": "00c59d4f18be992422d06312897e886e94692909f5c23c581a76c204d45936f9"
+  },
+  "source_access_limits": [
+    "Chen publisher indexed text available; direct page403, no full reproduction claim",
+    "Zenodo license field blank in readable page; API unavailable, license UNKNOWN",
+    "OpenReview browser challenge stopped",
+    "Public GitHub asset metadata and root MIT inspected; CSV payload not acquired",
+    "Library report not materialized; essential direction supplied by parent"
+  ],
+  "source_snapshot": {
+    "catechol_commit": "0d8e3f41f33eb9e23e35854c9dbf12b3e99bf727",
+    "full_csv_git_blob": "c8df1b68faf66bfe2f3e349d7ba89bc140c748c7",
+    "full_csv_bytes": 520566,
+    "license_git_blob": "dc217c09cd688aab92d9cb0a02e860bf26359d90"
+  },
+  "publication_status_at_verification": "NOT_RUN"
+}

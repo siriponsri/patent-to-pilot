@@ -1,5 +1,7 @@
 # GOAL — Organization-Adaptive R&D Agent
 
+> **Current direction addendum — 27 October 2026:** อ่าน [requirements รุ่น 3](docs/product/REQUIREMENTS_DECISIONS_20261027_V3_TH.md) และ [Transfer or Retest proposal](docs/research/TRANSFER_OR_RETEST_PROPOSAL_20261027_V3_TH.md) ก่อนเริ่มงานใหม่ ทิศทางได้รับอนุมัติ แต่ long run และงบเกิน $5 ยังรอเจ้าของเลือก ข้อเสนอใหม่นี้ไม่เปลี่ยน IDs/ประวัติ G01–G22 ด้านล่างให้เป็นผล scientific success
+
 **Workspace:** Patent-to-Pilot · **ทบทวน:** 24 ตุลาคม 2026 · **รุ่นแผน:** 1
 **ชื่อวิจัยทำงาน:** Patent-to-Pilot: An Adaptive Agent for Patent-Grounded R&D Planning under Changing Organizational Constraints
 
