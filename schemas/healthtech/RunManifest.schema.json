@@ -1,0 +1,189 @@
+{
+  "$defs": {
+    "AcquisitionBudget": {
+      "additionalProperties": false,
+      "properties": {
+        "max_search_calls": {
+          "default": 3,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Max Search Calls",
+          "type": "integer"
+        },
+        "max_returned_candidates": {
+          "default": 60,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Max Returned Candidates",
+          "type": "integer"
+        },
+        "accounting": {
+          "const": "offline_counts",
+          "default": "offline_counts",
+          "title": "Accounting",
+          "type": "string"
+        }
+      },
+      "title": "AcquisitionBudget",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "track": {
+      "const": "healthtech",
+      "default": "healthtech",
+      "title": "Track",
+      "type": "string"
+    },
+    "evidence_level": {
+      "enum": [
+        "synthetic_engineering",
+        "public_source_engineering"
+      ],
+      "title": "Evidence Level",
+      "type": "string"
+    },
+    "code_commit": {
+      "title": "Code Commit",
+      "type": "string"
+    },
+    "input_hash": {
+      "title": "Input Hash",
+      "type": "string"
+    },
+    "policy_id": {
+      "enum": [
+        "HT-B0b",
+        "HT-B2"
+      ],
+      "title": "Policy Id",
+      "type": "string"
+    },
+    "configuration_hash": {
+      "title": "Configuration Hash",
+      "type": "string"
+    },
+    "data_revision": {
+      "title": "Data Revision",
+      "type": "string"
+    },
+    "corpus_hash": {
+      "title": "Corpus Hash",
+      "type": "string"
+    },
+    "expected_query_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Expected Query Ids",
+      "type": "array"
+    },
+    "completed_query_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Completed Query Ids",
+      "type": "array"
+    },
+    "failed_query_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Failed Query Ids",
+      "type": "array"
+    },
+    "budget": {
+      "$ref": "#/$defs/AcquisitionBudget"
+    },
+    "actual_search_calls": {
+      "title": "Actual Search Calls",
+      "type": "integer"
+    },
+    "actual_returned_candidates": {
+      "title": "Actual Returned Candidates",
+      "type": "integer"
+    },
+    "elapsed_seconds": {
+      "title": "Elapsed Seconds",
+      "type": "number"
+    },
+    "provider_calls": {
+      "const": 0,
+      "default": 0,
+      "title": "Provider Calls",
+      "type": "integer"
+    },
+    "paid_cost_usd": {
+      "const": 0,
+      "default": 0,
+      "title": "Paid Cost Usd",
+      "type": "integer"
+    },
+    "cost_accounting_version": {
+      "const": "ht-offline-v1",
+      "default": "ht-offline-v1",
+      "title": "Cost Accounting Version",
+      "type": "string"
+    },
+    "model": {
+      "const": "not_used",
+      "default": "not_used",
+      "title": "Model",
+      "type": "string"
+    },
+    "stop_reason": {
+      "enum": [
+        "budget_exhausted",
+        "fixed_schedule_complete",
+        "no_new_candidates_under_policy",
+        "policy_stop",
+        "source_unavailable",
+        "run_failure",
+        "user_cancelled"
+      ],
+      "title": "Stop Reason",
+      "type": "string"
+    },
+    "artifacts": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Artifacts",
+      "type": "object"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "run_id",
+    "evidence_level",
+    "code_commit",
+    "input_hash",
+    "policy_id",
+    "configuration_hash",
+    "data_revision",
+    "corpus_hash",
+    "expected_query_ids",
+    "completed_query_ids",
+    "failed_query_ids",
+    "budget",
+    "actual_search_calls",
+    "actual_returned_candidates",
+    "elapsed_seconds",
+    "stop_reason",
+    "artifacts",
+    "limitations"
+  ],
+  "title": "RunManifest",
+  "type": "object"
+}

@@ -1,224 +1,231 @@
 <p align="center">
-  <img src="docs/assets/patent-to-pilot/logo.svg" alt="Patent-to-Pilot — source-linked R&D planning" width="720">
+  <img src="assets/logo.svg" alt="Patent-to-Pilot" width="620">
 </p>
 
-# Patent-to-Pilot
+<h1 align="center">Patent-to-Pilot</h1>
 
-**A research prototype for source-linked R&D planning under changing organizational constraints.**
+<p align="center">
+  <strong>Traceable evidence for the next HealthTech decision.</strong>
+</p>
 
-Patent-to-Pilot explores how permitted patent and research evidence can become a reviewable development plan: what an organization can do, which routes remain plausible, what is unknown, and what must change when evidence or policy changes.
+<p align="center">
+  <a href="GOAL.md">Goals and operating contract</a> ·
+  <a href="PLAN.md">System and execution plan</a> ·
+  <a href="RELATED_PAPERS.md">Research library</a> ·
+  <a href="#healthtech-offline-quickstart">Quickstart</a>
+</p>
 
-The aim is to reduce repeated reading and inconsistent revisions. Any benefit in time, quality, or cost remains a research question—not an established result.
+Patent-to-Pilot is a public research workspace for turning patent, product, regulatory, and scientific sources into an inspectable technology evidence dossier. The proposed HealthTech workflow helps entrepreneurs and investor analysts prepare the next investigation: which evidence is available, where it comes from, and what information still needs to be requested.
 
-[Project goals](GOAL.md) · [Product contract](docs/product/PRODUCT_CONTRACT.md) · [Evaluation protocol](methodology/evaluation/PROTOCOL.md) · [Development handoffs](docs/handoff/) · [Diagram sources](docs/assets/patent-to-pilot/DIAGRAMS.md)
+The initial research case is **medical-device-to-patent retrieval**. The first product workflow starts from a named device or a comparator selected by the user. Pharmaceutical evidence extraction and biologics monitoring are later extensions with their own data and evaluation.
 
-## Current status
+**Status:** local HealthTech prototype with named-device contracts, source-integrity checks, lexical/fixed-query acquisition, JSON/Markdown dossier export, and a known-link evaluator. The supplied example is synthetic engineering evidence. Hybrid/adaptive/LLM retrieval, live FDA ingestion, a no-code interface, the scientific study, and customer validation remain planned. See [coverage and exact limitations](docs/healthtech/MIGRATION.md). Historical results retain their original task definitions.
 
-**Current planning direction (27 October 2026):** Capability-Constrained Cross-Domain Technology Transfer.
-The proposed first paper is *Transfer or Retest?* on measured solvent/material or operating-regime shifts.
-Read the [V3 proposal and budget options](docs/research/TRANSFER_OR_RETEST_PROPOSAL_20261027_V3_TH.md)
-and [current requirements](docs/product/REQUIREMENTS_DECISIONS_20261027_V3_TH.md).
-The direction is approved; the long run and $25/$50 campaign cap proposals are **not approved**.
-Existing engineering evidence below does not validate this new research hypothesis.
+## Migration source
 
-This repository contains **bounded engineering slices**, not a complete autonomous R&D product.
+The 27 October 2026 HealthTech Pack supplies the current requirements and a curated 27-paper library. All 44 input files passed their supplied SHA-256 checks. The original pack remains unchanged. This repository publishes citation metadata and original implementation, while paper PDFs and third-party datasets stay outside this migration’s Git scope. See [literature review](literature-review/README.md) and [pack provenance](docs/healthtech/pack-provenance.json).
 
-| Area | What exists | Limit |
+## Who it is for
+
+- **MedTech entrepreneurs** preparing a technology comparison, development discussion, or information request.
+- **Investor analysts** assembling public evidence before a deeper diligence review.
+- **Technology and regulatory consultants** testing a repeatable dossier workflow with those users.
+- **Researchers and developers** studying patent retrieval, evidence provenance, and adaptive search.
+
+The first workflow requires a public product/device identifier or a selected comparator. Idea-to-comparator discovery is a separate future capability.
+
+## The intended workflow
+
+1. Select a public device or comparator and define the questions that matter.
+2. Retrieve and rank candidate patents within a declared resource budget.
+3. Collect product and regulatory facts with source identifiers and dates.
+4. Assemble a feature–evidence table with exact source locations.
+5. Expose unresolved questions and prepare the next information requests.
+6. Inspect, edit, and export the project dossier.
+
+A disclosed device–patent relationship and a retrieval candidate have different meanings. The dossier should preserve that distinction, along with the difference between a source-reported fact and a system inference.
+
+## Current foundation and planned work
+
+The source audit for this documentation inspected [commit 70805d3](https://github.com/siriponsri/patent-to-pilot/commit/70805d30599dda723146390d39308c0faeb61ee7) on 27 October 2026. The table describes that snapshot; it is not a claim that the planned HealthTech workflow has been implemented.
+
+| Area | Present in the inspected source | HealthTech work to add |
 |---|---|---|
-| Organization and evidence records | Fictional profiles, typed records, source locators, explicit policy/evidence states and version history | Not a general organization-document extractor |
-| Local data utilities | Streaming ingestion, lexical retrieval and literal extraction slices | The fixed-packet comparison does not exercise a full corpus pipeline |
-| Planning and revision | Deterministic development workflows, structured draft packs and before/after checks | No semantic or scientific validation of the proposed R&D plan |
-| G10 comparison | Rules, regeneration/revision wrappers, runtime-contract validation and mocked comparison mechanics | Current bounded correctness slice passes; B4 remains conditional and this is not a benchmark result |
-| Provider transport | A bounded Gemini/GPT live echo pair is recorded, separately from the preserved earlier failed phase | Confirms transport/identity/schema/accounting only; no permission to repeat it |
-| Adaptive search | B4-RG/B4-DR are conditional on a verified shared evidence pool | Not established by the current one-case comparison |
-| Feedback learning | Contracts and research planning | G12 cross-task product learning is not demonstrated |
-| UI / product API | User journeys and proposed contracts for a later Claude UI | No completed product UI or HTTP API |
-| Scientific pilot / main study | Readiness planning | **NOT_RUN** |
-| Historical access issue | The earlier W2 evidence-file access issue remains **BLOCKED** | It is distinct from the new input-fairness W2 and does not stop independent offline work |
+| Records and persistence | Typed source/evidence records, identifiers, versions, locators, and SQLite persistence | Device, patent-link, retrieval-action, and dossier contracts |
+| Ingestion and retrieval | Bounded streaming ingestion and SQLite lexical retrieval | Versioned FDA/benchmark adapters, hybrid retrieval, and controlled candidate pools |
+| Evidence extraction | Literal span extraction with source locators | Task-specific extraction and evidence verification |
+| Workflow and revision | Deterministic fixture workflows, report generation, and dependency-guided revision mechanics | Named-device dossier workflow and update behavior |
+| Provider integration | Mockable transport and existing identity/budget/attempt bookkeeping | A bounded controller using an explicitly configured experiment model |
+| Product interface | Brief/evidence/job contracts, including audience and language fields | A usable TH/EN interface, source viewer, project history, and export journey |
+| Evaluation | Offline engineering comparison and readiness utilities | The new device–patent protocol, evidence metrics, full cost accounting, and user-task evaluation |
 
-No full G10 or G01–G22 completion is claimed. Status evolves with source changes: consult the [latest long-goal contract](docs/handoff/LUNA_GOAL_G10_CORRECTNESS_AND_SEARCH_READINESS_TH.md) and its eventual closeout rather than treating an older test count as the current result.
-
-## Product workflow
-
-The diagram describes the **product vision**. Implemented development slices cover only part of it; the dashed memory path is planned.
-
-~~~mermaid
-flowchart LR
-  A["Brief + permitted organization sources"] --> B["Reviewed capability / policy map"]
-  B --> C["Source-linked opportunities"]
-  C --> D["Route comparison + unknowns"]
-  D --> E["Draft pilot / R&D handoff"]
-  E --> F["Confirmed change"]
-  F --> G["Revision + evidence-linked diff"]
-  G --> D
-  E -. "future product capability" .-> H["Scoped confirmed-feedback memory — planned"]
-  H -. "future tasks only" .-> B
-~~~
-
-**Without a diagram:** brief and permitted sources → reviewed capability/policy map → evidence-linked opportunities → route comparison → draft pilot/handoff. Confirmed changes produce revisions and traceable diffs. Reusable confirmed-feedback memory is future product work.
+The source contains no completed HealthTech benchmark result or validated customer outcome. The existing model-extraction adapter is intentionally disabled in its bounded slice. Existing dependency-guided revision generates a full result before applying a scoped merge; this does not demonstrate saved generation cost.
 
 ## Architecture
 
-The current packet workflow and the provider-transport experiment are shown separately. A successful echo call does not establish a general R&D generator.
+![Target architecture: shared evidence engine for the product and scientific evaluation](assets/architecture.svg)
 
-~~~mermaid
-flowchart TB
-  subgraph Local["Implemented local research workspace — bounded slices"]
-    A["Public packets + fictional profiles"] --> B["PublicCaseAdapter / typed staging"]
-    B --> C["integration/ + evaluation/ — deterministic / mocked"]
-    C --> D["Shared checks, evidence status + diffs"]
-    C <--> E["core/ — versioned records + SQLite"]
-    D --> F["JSON / Markdown / HTML artifacts"]
-  end
-  subgraph Transport["Separate provider-transport verification path"]
-    G["providers/ — adapter + attempt ledger"] --> H["Mock transport"]
-    G -. "explicit approval; synthetic echo only" .-> I["OpenRouter — pinned model / upstream"]
-  end
-~~~
+*Target architecture. Existing records, local utilities, provider seams, and development workflows form the foundation. The local snapshot adapter, fixed lexical acquisition, dossier contracts and known-link evaluator now have engineering implementations. Live connectors, adaptive policies, the no-code dossier interface and the scientific evaluation remain implementation work.*
 
-**Without a diagram:** public packets and fictional profiles are staged into the integration/comparison layer. Typed records, shared checks and diffs support structured reports. The separate provider seam supplies mock transport and explicitly approved, budgeted echo verification.
+One acquisition engine should serve two uses:
 
-The standalone ingestion/retrieval/extraction modules are not a claim that this comparison searches a full patent corpus. No frontend, web service, or learning runtime is implied by the diagram.
+- **Product:** an editable dossier with inspectable source evidence and explicit unresolved items.
+- **Research:** ranked outputs, action logs, and measured resource use evaluated against a frozen protocol.
 
-## Quickstart: offline development
+The writer, source store, and evaluator must preserve those shared outputs. Evaluator-only labels never enter runtime search or report generation. The offline runner and evaluator are separate entry points.
 
-Run commands from the repository root. Python **3.12 or newer** is required. Node.js is not required for the bounded Python workflow.
+## Research direction
 
-### 1. Create a local environment
+The proposed study asks:
 
-PowerShell:
+1. When does adaptive retrieval recover more documented device–patent associations at matched realized budgets?
+2. How much of the result depends on company information, shared patents/families, or explicit identifiers?
+3. When does additional search discover useful known associations, and when does it add cost without doing so?
+
+Adaptive retrieval, cost-aware selection, and evidence-aware stopping already have substantial prior work. The candidate contribution is a patent-information study with careful cohort definitions, incomplete-judgment interpretation, grouped comparisons, and actual cost measurement. Novelty and benefit remain questions to establish through the study.
+
+### Initial data and evaluation
+
+| Resource | Intended role | Current planning constraint |
+|---|---|---|
+| Bridge-MedDevKG | Main device–patent retrieval candidate | Resolve reuse terms, cohort differences, and split construction before the affected study |
+| SciFact | Evidence-verification component benchmark | Follow its task, labels, evaluator, and component-specific rights |
+| FDA/openFDA | Public product and regulatory facts | Preserve record type, jurisdiction, source dates, and field-specific terms |
+| BioASQ | Optional biomedical document/snippet retrieval | Add when literature retrieval is required by the workflow |
+| ChEMU | Pharmaceutical extraction extension | Observe the dataset's noncommercial terms |
+| Purple Book snapshots | Biologics update extension | Compare against deterministic diff/update and full rebuild |
+
+Primary retrieval reporting should use **known-link recovery**, not exhaustive patent recall. Unlisted pairs are not automatically false relationships. SciFact results and valid source links do not by themselves establish the correctness of an entire dossier.
+
+The [research library](RELATED_PAPERS.md) connects each paper to the proposed method, dataset, evaluator, or extension. Paper access and dataset rights are tracked separately.
+
+### Comparison strategy
+
+Use the same permitted inputs, corpus, reranker where applicable, output contract, and evaluator across methods. Start with:
+
+- Company/lexical controls and strong fixed hybrid retrieval.
+- A fixed multi-query schedule.
+- A transparent adaptive policy.
+- A bounded LLM controller.
+
+Add a learned router only when the number of independent groups and the development results justify it. Include query generation, controller calls, embeddings, reranking, retries, and latency in measured cost. Record indexing costs separately.
+
+A simpler method may be the best product choice. Negative and inconclusive results should remain visible.
+
+## HealthTech offline quickstart
+
+Requirements: Python 3.12+, with the dependencies in `pyproject.toml` installed. No API key, network call, model download or Node.js is required by the runner.
+
+```powershell
+python -B scripts/healthtech/run_dossier.py examples/healthtech/synthetic-device/input.json results/healthtech/demo-001
+```
+
+Choose a fresh output directory. Open `dossier.md` for inspection/editing; `dossier.json` retains source payloads, versions, hashes, locators and unresolved items. `manifest.json` and `acquisition_events.jsonl` record actual local resources. This example uses fictional product/patent identifiers and authored text. It is not a real device–patent finding or a scientific result.
+
+```powershell
+python -B -m pytest -p no:cacheprovider tests/test_healthtech.py
+```
+
+The runtime accepts no gold labels. The independent evaluator lives in `evaluation/healthtech/`; generated schemas live in [schemas/healthtech](schemas/healthtech/). [Runbook](docs/healthtech/RUNBOOK.md) describes the contracts and remaining work.
+
+## Historical fixture quickstart
+
+These commands are checked against the inspected source interfaces. They were **not executed as part of this documentation pack**. The example runs an existing deterministic fixture workflow; it does not run the planned HealthTech benchmark.
+
+Requirements: **Python 3.12 or newer** and Git. Node.js and an API key are not required for this offline example.
+
+### Windows PowerShell
 
 ~~~powershell
+git clone https://github.com/siriponsri/patent-to-pilot.git
+cd patent-to-pilot
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -e ".[test]"
+.\.venv\Scripts\python.exe -m pip install -e .
+
+$ptpRun = Join-Path "results/development" ("quickstart-" + (Get-Date -Format "yyyyMMdd-HHmmss-fff"))
+if (Test-Path -LiteralPath $ptpRun) { throw "Choose a fresh output directory." }
+
+.\.venv\Scripts\python.exe -B scripts/run_g09_g10_workflow.py configs/g09-g10-example-input.json $ptpRun
 ~~~
 
-On macOS/Linux, use .venv/bin/python instead. The install step downloads the dependencies declared in [pyproject.toml](pyproject.toml); it does not configure a provider account.
+### macOS or Linux
 
-The examples use repository fixtures. Raw corpora, local source copies and licensed documents are not automatically bundled or authorized for redistribution. If a fixture reports missing source material, follow its provenance/rights instructions rather than inventing evidence or downloading a whole corpus.
+~~~bash
+git clone https://github.com/siriponsri/patent-to-pilot.git
+cd patent-to-pilot
+python3 -m venv .venv
+.venv/bin/python -m pip install -e .
 
-### 2. Run a caller-supplied offline workflow
-
-The existing workflow script accepts **positional** input and output paths. Choose a new output directory so earlier evidence is preserved:
-
-~~~powershell
-$run = Join-Path "results/development" ("workflow-" + (Get-Date -Format "yyyyMMdd-HHmmss-fff"))
-if (Test-Path -LiteralPath $run) { throw "Choose a new output directory." }
-.\.venv\Scripts\python.exe -B scripts/run_g09_g10_workflow.py configs/g09-g10-example-input.json $run
+ptp_run="results/development/quickstart-001"
+test ! -e "$ptp_run" || exit 1
+.venv/bin/python -B scripts/run_g09_g10_workflow.py configs/g09-g10-example-input.json "$ptp_run"
 ~~~
 
-This is a deterministic fixture workflow. It writes local structured/readable reports; it does not call a model or measure scientific quality.
+Choose a new output directory for each run. The example input describes fictional coating routes and a policy change. Its reports demonstrate software mechanics, not medical-device or scientific performance.
 
-### 3. Run focused offline checks
+The runtime requirements are declared in [pyproject.toml](https://github.com/siriponsri/patent-to-pilot/blob/70805d30599dda723146390d39308c0faeb61ee7/pyproject.toml). The workflow entry point accepts positional input/output paths: [run_g09_g10_workflow.py](https://github.com/siriponsri/patent-to-pilot/blob/70805d30599dda723146390d39308c0faeb61ee7/scripts/run_g09_g10_workflow.py).
 
-~~~powershell
-$testRun = Join-Path $env:TEMP ("ptp-checks-" + (Get-Date -Format "yyyyMMdd-HHmmss-fff"))
-.\.venv\Scripts\python.exe -B -m pytest -p no:cacheprovider tests/test_g10_offline_comparison.py tests/test_g09_g10_integration.py tests/test_g11_adaptation.py --basetemp $testRun
+### Focused development checks
+
+Install the optional test dependencies, then check the modules affected by your change. For the existing workflow/revision slice:
+
+~~~bash
+python -m pip install -e ".[test]"
+python -B -m pytest -p no:cacheprovider tests/test_g09_g10_integration.py tests/test_g11_adaptation.py
 ~~~
 
-These tests exercise engineering contracts. Passing them does not show that a generated research plan is feasible, safe, novel, or superior to a simpler method. Current test totals belong in dated execution receipts, not permanent badges.
+Run these commands with the virtual environment's Python. On Windows, use .\.venv\Scripts\python.exe; on macOS/Linux, use .venv/bin/python. Passing engineering checks does not constitute a scientific benchmark result.
 
-For a socket-denied release checkpoint from a clean, installed checkout, use
-`python -B scripts/verify_release_offline.py --source-commit <verified-commit> --output-dir <fresh-directory>`.
-It runs the documented offline commands and targeted regressions, denies credential-file reads,
-and returns a nonzero exit status on failure. Verify the Git ref separately; the script does not inspect `.git`.
-See the [dated reproducibility checkpoint](docs/handoff/RELEASE_REPRODUCIBILITY_20261027_R1_TH.md) for evidence and limits.
+### Provider configuration
 
-### Comparison reports
+The offline example needs no credentials. Live model use is a separate opt-in operation governed by the current authorized scope and remaining budget. Reuse valid authorization; do not treat an old completed run as a new spending allowance.
 
-[scripts/run_g10_offline_comparison.py](scripts/run_g10_offline_comparison.py) is the current comparison entry point. It accepts `--output-dir` and `--run-id`, defaults to a dated correctness/search run directory, and refuses the retained `results/development/g10-offline-comparison/` audit directory. Use a new output directory for each run and keep explicit source/output provenance.
+Keep real credentials out of chat, commands, logs, reports, and Git. The inspected repository's environment loader is explicit. Follow the existing adapter contract instead of adding a second implicit credential-loading path.
 
-Existing reports under results/development/ are development evidence. Mock costs and Python execution times must not be presented as real inference costs or measured algorithmic savings.
+## Goal-based development
 
-## Configuration and provider safety
+![Goal map showing parallel research and product work](assets/goal-map.svg)
 
-Offline examples need no API key. Default provider-plan preflight is read-only and does not authorize a live run:
+The project advances through observable outcomes rather than calendar milestones. The [GOAL](GOAL.md) document defines scope, success evidence, agent autonomy, and escalation defaults. The [PLAN](PLAN.md) document maps the whole system, work packages, interfaces, evaluation, and continuation paths.
 
-~~~powershell
-.\.venv\Scripts\python.exe -B scripts/dispatch_provider_pilot.py
-~~~
+A local blocker should affect the smallest relevant task. A missing optional paper, unavailable connector, or unresolved dataset permission should not stop unrelated interface work, licensed-data evaluation, documentation, or product discovery. Preserve result integrity and applicable access boundaries while continuing ready work.
 
-The resulting plan view is not an account-balance check. Historical approval files and consumed attempt slots do not authorize another call.
+The new HealthTech task and baseline identifiers are distinct from historical G10/B4 identifiers. Existing run receipts, failure evidence, and frozen protocols retain their original meanings.
 
-[.env.example](.env.example) contains a placeholder only:
+## Source map
 
-~~~dotenv
-OPENROUTER_API_KEY=REPLACE_WITH_YOUR_OPENROUTER_KEY
-~~~
-
-If a future run is explicitly authorized, enter the real value locally into an ignored .env without overwriting an existing credential file. Do not paste it into chat, logs, command arguments, screenshots, or Git. The existing loader is **explicit**, not automatic dotenv loading, and is entered only after live approval checks. An inherited process variable takes precedence.
-
-Live execution requires an exact reviewed plan, model/upstream routing, attempt and spend ceilings, a plan-bound approval, and durable accounting. Charges from failures remain charges. Unknown billing remains unknown and blocks continuation. Never reset journals to regain attempts. Funded account balance is not the project spending cap.
-
-No --live command is part of this quickstart.
-
-## Repository structure
-
-~~~text
-src/patent_to_pilot/
-  core/          Typed records, identities, versions and SQLite repository
-  ingestion/     Bounded streaming source ingestion
-  retrieval/     Local lexical retrieval
-  extraction/    Literal evidence/span extraction
-  integration/   Public-input development workflows and invariant checks
-  evaluation/    Bounded offline comparison mechanics
-  adaptation/    Existing dependency-guided adaptation slice
-  providers/     Mockable transport, identity, budget and attempt accounting
-configs/         Example inputs and explicit run contracts
-tests/           Targeted contracts and negative controls
-docs/            Product, research, architecture and handoff documentation
-methodology/     Dataset/evaluation contracts and source provenance
-results/         Local execution evidence; not a scientific publication
-~~~
-
-Planned components must remain labelled as planned. In particular, activity history and within-project revision are not proof of cross-task learning.
-
-## Reproducibility and evaluation
-
-- Use the same permitted inputs, evidence visibility, schema and validators across methods. Keep curator/evaluator answers out of method inputs.
-- Record source/input/schema/output hashes, run IDs, actual checks, raw outputs, failures and retry counts.
-- Separate execution, schema validation, evidence/policy validation and persistence verification. A default flag or schema hash is not a passed check.
-- Compare strong simple alternatives: rules, full regeneration, direct revision and deterministic invalidation with the same generator. Adaptive-search/proposed methods need their actual dependencies and evidence pool.
-- Preserve affected and unaffected fields explicitly. Full-generation-then-scoped-merge still incurs full generation work.
-- Treat mock mechanics, approved live transport echoes, development evaluation, scientific pilot and held-out study as different evidence levels.
-- NO_ADVANTAGE and INCONCLUSIVE are valid study outcomes. Experimental integrity does not require the proposed method to win.
-
-Start with the [evaluation protocol](methodology/evaluation/PROTOCOL.md), [pilot readiness](docs/research/PILOT_READINESS.md), [paired transport readiness](docs/provider-pilot/PAIRED_REVALIDATION_READINESS.md) and the [G10 handoff](docs/handoff/G10_OFFLINE_COMPARISON_HANDOFF.md).
-
-## Documentation
-
-| Topic | Start here |
+| Existing path | Reusable foundation |
 |---|---|
-| Product goals and scope | [GOAL.md](GOAL.md), [master plan](docs/product/PATENT_TO_PILOT_MASTER_PLAN_TH.md) |
-| User workflow and future UI | [User journeys](docs/product/USER_JOURNEYS.md), [Claude brief](docs/product/CLAUDE_UI_HANDOFF_TH.md) |
-| Core architecture and contracts | [ADR](docs/architecture/ADR-0001-bounded-core-and-local-search.md), [interfaces](docs/architecture/G04-G07-G08-interfaces.md) |
-| Dataset provenance and rights | [Data README](data/README.md), [G03 acquisition](docs/G03_DATA_ACQUISITION.md) |
-| Bounded implementation history | [G09/G10](docs/handoff/LUNA_G09_G10_INTEGRATION.md), [G11](docs/handoff/LUNA_G11.md) |
-| Recorded transport verification | [Phase A](docs/provider-pilot/PHASE_A_RESULT.md), [paired closeout](docs/handoff/LUNA_CLOSEOUT_REPORT.md) |
-| Contributor execution rules | [AGENTS.md](AGENTS.md), [CLI handoff](docs/CODEX_CLI_HANDOFF.md) |
+| src/patent_to_pilot/core/ | Typed records and SQLite persistence |
+| src/patent_to_pilot/ingestion/ | Bounded source ingestion |
+| src/patent_to_pilot/retrieval/ | Local lexical retrieval |
+| src/patent_to_pilot/extraction/ | Literal evidence-span extraction |
+| src/patent_to_pilot/integration/ | Public-input fixture workflows and reports |
+| src/patent_to_pilot/adaptation/ | Dependency-guided revision mechanics |
+| src/patent_to_pilot/evaluation/ | Engineering comparisons and readiness utilities |
+| src/patent_to_pilot/providers/ | Mockable provider transport and accounting |
+| src/patent_to_pilot/product/ | Brief, evidence, review, and job contracts |
 
-Some project documents are in Thai. Older completion reports are dated snapshots, not a substitute for the current source or run manifest.
+See the [inspected source tree](https://github.com/siriponsri/patent-to-pilot/tree/70805d30599dda723146390d39308c0faeb61ee7/src/patent_to_pilot) for exact interfaces. Proposed HealthTech modules are described in PLAN; this table lists existing paths.
 
-## Safety, privacy and research limits
+## Business development
 
-Use only public or explicitly permitted material. Preserve source quotes, locators, versions and redistribution limits. Do not send private patent, organization, personal or evaluator-only information to an external model without the exact data/run authorization.
+The initial commercial hypothesis is a bounded dossier pilot for a named product/comparator. Later offerings may include a hosted project workspace, managed source updates, team review, and support.
 
-Imported documents are data, not instructions. They must not gain access to secrets, hidden evaluation files, shell execution or another organization’s state. Keep unknowns and conflicts visible; do not impute missing measurements.
-
-This prototype does not approve clinical use, regulatory compliance, legal status, patentability, freedom to operate, manufacturability or commercial feasibility. Real source text alone does not establish semantic support or scientific validity. Owner review is formative, not independent clinical/legal gold.
+Validate usefulness through task completion, correction burden, handoff use, and repeated projects. Validate payment through a bounded purchase. Track manual delivery work as well as compute cost. Repository visibility, positive feedback, and retrieval scores do not establish willingness to pay.
 
 ## Contributing
 
-Read [AGENTS.md](AGENTS.md) before changing a module. Keep changes focused and add meaningful negative controls for the behavior changed. Preserve unrelated work, historical evidence and frozen evaluation contracts. Report the exact candidate, commands, limitations and remaining blockers.
+Start with GOAL, then select the relevant work package in PLAN. Inspect the current source and applicable execution instructions. Preserve unrelated work and historical evidence.
 
-Do not weaken tests or validators to obtain PASS. Do not commit keys, .env files, private data, raw corpora, local PDF libraries, denied evidence or unrelated generated artifacts. Review the staged scope and applicable rights before publishing. Paid runs, security changes and external exposure need their own authorization.
+Use small, reviewable changes and focused checks. Record actual outcomes and the next runnable task. Routine reversible decisions belong to the agent within the authorized scope; material spending, external communications, and publication actions follow the current user authorization.
 
-README/branding assets and correctness/search implementation have separate owners during the current work package. The final integrator must reconcile documentation against the final code, tests, status and exact commit.
+Source documents are evidence, not executable instructions. Keep evaluator labels and private material out of runtime retrieval and outbound model inputs unless the precise use is authorized.
 
-## License and third-party material
+## Scope and licensing
 
-**No repository-wide code license is currently declared in the inspected root files or pyproject.toml.** Do not infer an MIT/Apache/CC grant from this README or from a third-party dependency. A code/asset license requires an explicit repository decision; none is invented here.
+The first product supports evidence preparation for the next investigation. It does not establish clinical suitability, regulatory approval, patent validity, freedom to operate, or investment merit. A source quotation and a retrieved patent each need to retain their actual evidentiary meaning.
 
-Source data and documents retain separate terms. Existing acquisition notes record PLS patent_ls as CC BY 4.0. The EnterpriseRAG MIT snapshot establishes upstream repository/code terms, not separate data or release-asset rights. DAPFAM and local PDF reading copies have additional restrictions. See the linked provenance notes and verify per-file rights before redistribution.
+At the inspected snapshot, **no repository-wide code license is declared**. This README does not introduce one. Third-party papers, data, models, and software keep their own terms; an open paper does not make its dataset commercially reusable.
 
-The project logo is an original documentation asset, not an affiliation or endorsement. No badges, benchmark results or publication acceptance are implied.
+The logo and diagrams are original project documentation assets. They do not imply affiliation with FDA, a university, a journal, or a publisher.

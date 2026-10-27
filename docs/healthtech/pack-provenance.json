@@ -1,0 +1,235 @@
+{
+  "date": "2026-10-27",
+  "pack_name": "Patent-to-Pilot HealthTech Pack",
+  "pack_version": "1.0",
+  "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
+  "file_count": 44,
+  "pdf_count": 27,
+  "pdf_pages": 458,
+  "checksum_mismatches": [],
+  "inventory": [
+    {
+      "path": "assets/architecture.png",
+      "bytes": 398679,
+      "sha256": "d55d980f3ffca487383001407d94b709a0b62efdbf6b60f8724df54448917e5e"
+    },
+    {
+      "path": "assets/architecture.svg",
+      "bytes": 10326,
+      "sha256": "e46342c56d6d3bd3490080b2d224d521e42bf22facd76b1ab5a21e3c6dcdf50c"
+    },
+    {
+      "path": "assets/goal-map.png",
+      "bytes": 400894,
+      "sha256": "72595cd5742da2de133778f8c743ab9fe25b2025ada771bacf7bd7687d0d2b93"
+    },
+    {
+      "path": "assets/goal-map.svg",
+      "bytes": 10570,
+      "sha256": "e74fd659048fb546a32792321213c5e69bf2621f9fba156f1d0aaae0644bb948"
+    },
+    {
+      "path": "assets/logo.png",
+      "bytes": 48759,
+      "sha256": "1a75eae4b279e080af25141c74d2d5376ba1c72aec95f3a06341245097123acf"
+    },
+    {
+      "path": "assets/logo.svg",
+      "bytes": 1877,
+      "sha256": "8e730244314102972b55f329f17bff3f6e73a662fa16cad44d42dead4cb67645"
+    },
+    {
+      "path": "CHECKSUMS.sha256",
+      "bytes": 4000,
+      "sha256": "7ce81d0b08262de213b33db551f7d5bf184463e07da1a73deff9dd4df8f2ebd1"
+    },
+    {
+      "path": "evidence/bridge_release_audit.json",
+      "bytes": 7820,
+      "sha256": "bc13b3e2dbfed02f5b8c8dbb2e787af7c3862b2d387e42d77d4c6b184ffe93a0"
+    },
+    {
+      "path": "evidence/repository_snapshot.json",
+      "bytes": 59471,
+      "sha256": "d138056026136255d001d8ad67d78739a35c23b4dfa59942751231a3b89852a5"
+    },
+    {
+      "path": "GOAL.md",
+      "bytes": 48954,
+      "sha256": "d9a5f9783e4e6a1654c9989e6349a85b39446d803cdeda56e9df7fad16aa04d4"
+    },
+    {
+      "path": "PACK_MANIFEST.json",
+      "bytes": 8145,
+      "sha256": "0830495637f7b66630a20eb885950c4423b34b61f6f62a357d2574be24ac3ad6"
+    },
+    {
+      "path": "paper_manifest.json",
+      "bytes": 71506,
+      "sha256": "a050a6a3b04a679d33300b051528670e38ca32efc80d2c10c9d32d9ab23b69b2"
+    },
+    {
+      "path": "papers/P01_Bridge_MedDevKG_2026.pdf",
+      "bytes": 722979,
+      "sha256": "be6dcf2e9e9759cc856eae733c17aade204f534f7ca764d58c40628862934c7e"
+    },
+    {
+      "path": "papers/P02_SciFact_2020.pdf",
+      "bytes": 4114861,
+      "sha256": "e51a1fab569f2dcb00f7806fe95094e25a34c027140709725d3d05b7a0af9ac7"
+    },
+    {
+      "path": "papers/P03_NLI4CT_2023.pdf",
+      "bytes": 2295802,
+      "sha256": "17269d18a22d079631f8545064489880d8db5c886c34c0c5a51531f0a780ff08"
+    },
+    {
+      "path": "papers/P04_MIRAGE_2024.pdf",
+      "bytes": 771621,
+      "sha256": "b8f47826d8a20a02c81644ff6b1d43bea5c0e5b7187da590edb015cab28f4640"
+    },
+    {
+      "path": "papers/P05_ChEMU_2020_2021.pdf",
+      "bytes": 4996666,
+      "sha256": "fb1d2236d571f1cf7e90a803dd0b6b7c59487efd08c9d635fb38fb9a7971c405"
+    },
+    {
+      "path": "papers/P06_BioASQ_QA_2023.pdf",
+      "bytes": 3180668,
+      "sha256": "c0264dfa73922bb1f13bdddb778784a78a4b577c9879cdb6bf90aaae203033ac"
+    },
+    {
+      "path": "papers/P07_ChEMBL_2024.pdf",
+      "bytes": 1716340,
+      "sha256": "9142e824d7730e5259a373cb047d71676c5a613e92b47d940c7b4332d64f08f4"
+    },
+    {
+      "path": "papers/P08_LLM_FDA_device_2026.pdf",
+      "bytes": 1316907,
+      "sha256": "e931f6d98f4536d49f3ec8356e30a00347855fa253a21f1325e1bd903ecf6b86"
+    },
+    {
+      "path": "papers/P09_BindingDB_2025.pdf",
+      "bytes": 1834674,
+      "sha256": "fab79452f7d1d5018e401be35750c30def8ee2c54a51de8a62d93807055b6081"
+    },
+    {
+      "path": "papers/P10_SureChEMBL_2016.pdf",
+      "bytes": 2545116,
+      "sha256": "1ca6b8f8f590bbd656a572f593600caa500325d7e575e7519e72c9eb3f62e15a"
+    },
+    {
+      "path": "papers/P11_Device_Predicate_Genealogy_2021.pdf",
+      "bytes": 978043,
+      "sha256": "c9f3c36cec186bf5ef0338d42a60d4a33bef2a7aad6cef1f3ac959e19f81fba3"
+    },
+    {
+      "path": "papers/P12_Patent_Analysis_Survey_2025.pdf",
+      "bytes": 949262,
+      "sha256": "339e463a1cc7ae1c2b6b2f9a313e6c2ce794fe29ba247ce24c298307386f85ce"
+    },
+    {
+      "path": "papers/P13_FiNE_Patents_2026.pdf",
+      "bytes": 1145416,
+      "sha256": "6779b63130422fd24eec0ee11f67bcf1ac17af3441a0fbdef530110bddb901a9"
+    },
+    {
+      "path": "papers/P14_Adaptive_RAG_2024.pdf",
+      "bytes": 436634,
+      "sha256": "1e5abee712c5d8552416b2fd456bcf2c37a0ba518372e64302db2b7b7bdf643f"
+    },
+    {
+      "path": "papers/P15_MBA_RAG_2025.pdf",
+      "bytes": 432978,
+      "sha256": "17ceec03c4398bd6a99602ef37a26771ad5a94aac761a17aec6bf231853d364c"
+    },
+    {
+      "path": "papers/P16_DRAGIN_2024.pdf",
+      "bytes": 415967,
+      "sha256": "1496bd4a24b2a25a55a3d70edf4a78852879c23ee965c7b2a74d911bb0d5c223"
+    },
+    {
+      "path": "papers/P17_Cost_Aware_Evidence_2026.pdf",
+      "bytes": 3722784,
+      "sha256": "3e7c1285a7f0ae3feca84764b33610993b7b059f2ef4801703e357ff4a3695ce"
+    },
+    {
+      "path": "papers/P18_HALT_2026.pdf",
+      "bytes": 1017410,
+      "sha256": "b3a13b8d065884a83ea413eef36a94e5f6ce6199dccc45c461197c775761cabe"
+    },
+    {
+      "path": "papers/P19_BCAS_2026.pdf",
+      "bytes": 629833,
+      "sha256": "91d328eacecacc20f7b3a6da3d65be591422191d31a33a0984cd19fc34ebc89e"
+    },
+    {
+      "path": "papers/P20_ALCE_Citations_2023.pdf",
+      "bytes": 481920,
+      "sha256": "ae9868f07f0f7ffaae5346778f79b7827d9ec6b13b1e6aae4dff6b2ffc37a2e1"
+    },
+    {
+      "path": "papers/P21_ARES_2024.pdf",
+      "bytes": 717417,
+      "sha256": "5a585d88f7b63c06439a4ecb8fd3165615d637e2061f242bff3f6ec3a209bd34"
+    },
+    {
+      "path": "papers/P22_RAGAs_2024.pdf",
+      "bytes": 377888,
+      "sha256": "e2038b8cff7574bf5302e1ceb6bfbac6d2471c352073b27f21460910936febce"
+    },
+    {
+      "path": "papers/P23_IRCoT_2023.pdf",
+      "bytes": 6033829,
+      "sha256": "d307211b02415e5a590e4a13165a2006ea53548d11566d33fd781ee1db80e3b6"
+    },
+    {
+      "path": "papers/P24_FLARE_2023.pdf",
+      "bytes": 702939,
+      "sha256": "5536c9136a510c9430a02a3424963ef7e3c2338e8e421ff51c98e7db3480d34c"
+    },
+    {
+      "path": "papers/P25_RAGTruth_2024.pdf",
+      "bytes": 1020530,
+      "sha256": "17afb377ca5ea8cf672efa9a95fca5889713e94c6fd0355f89f8e01651ddfd4d"
+    },
+    {
+      "path": "papers/P26_Lost_In_The_Middle_2024.pdf",
+      "bytes": 2609413,
+      "sha256": "f37f6fabe0fe0d8c73b67579cd115dbf14e282cfb7b7af655ae8109638402c9b"
+    },
+    {
+      "path": "papers/P27_Fine_Grained_Citation_Rewards_2024.pdf",
+      "bytes": 1106967,
+      "sha256": "9d5a94f50e9b3a38058480f033c09b8f9bd8057d35da5fb29543d7a80039fa46"
+    },
+    {
+      "path": "PLAN.md",
+      "bytes": 55449,
+      "sha256": "64406e30d8c258bd7e37350b1e19db56185a8d684f190d41aed9342f1f730a7c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 15083,
+      "sha256": "1ae488534edb431663e71176bfcad6f910d148f89d76b608f6aea3dabad5e8ad"
+    },
+    {
+      "path": "references.bib",
+      "bytes": 17325,
+      "sha256": "ad5622ca2d3f813ca3e757c14aa531fb8d06851bc5eebe9c27d3ead09127a70b"
+    },
+    {
+      "path": "RELATED_PAPERS.md",
+      "bytes": 62502,
+      "sha256": "518955670eb49b189732015cbe20f827baa94f61856f026f7eaa011105e0ed9a"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 20314,
+      "sha256": "8303f374d3fbd3e79dcce399e79ae64f5368b726470bd1c987e2d4ddc883a0bd"
+    }
+  ],
+  "original_pack_modified": false,
+  "scope": "Input file identity/integrity only; not source truth, license clearance or scientific validity",
+  "evidence_attribution": "Bridge release audit and repository snapshot were supplied in the pack, not recomputed here"
+}

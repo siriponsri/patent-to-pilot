@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-27",
+  "track": "healthtech",
+  "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
+  "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
+  "governing_documents": [
+    "GOAL.md",
+    "PLAN.md",
+    "README.md"
+  ],
+  "work_packages": [
+    {
+      "id": "HT-W01",
+      "status": "IMPLEMENTED",
+      "evidence": "current docs, AGENTS, source/rights map and history recovery"
+    },
+    {
+      "id": "HT-W02",
+      "status": "IMPLEMENTED_ENGINEERING",
+      "evidence": "closed contracts, JSON schemas, regression tests; existing SourceRecord/ProjectBrief reused"
+    },
+    {
+      "id": "HT-W03",
+      "status": "BLOCKED_LOCAL_FOR_STUDY",
+      "evidence": "supplied Bridge release audit; rights/cohort/splits unresolved; no local dataset audit repeated"
+    },
+    {
+      "id": "HT-W04",
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "SciFact pinned source/task/rights plan; official evaluator not integrated"
+    },
+    {
+      "id": "HT-W05",
+      "status": "PARTIAL",
+      "evidence": "local allowlisted 510k snapshot normalizer; no live network ingestion/PMA/UDI/recall adapter"
+    },
+    {
+      "id": "HT-W06",
+      "status": "IMPLEMENTED_ENGINEERING",
+      "evidence": "known-link evaluator, failure denominator, canonical dedup and shared-reference groups; not a frozen final protocol"
+    },
+    {
+      "id": "HT-W08",
+      "status": "SYNTHETIC_ENGINEERING_ONLY",
+      "evidence": "offline lexical HT-B0b and fixed HT-B2; no real-corpus baseline result"
+    },
+    {
+      "id": "HT-W10",
+      "status": "PARTIAL",
+      "evidence": "fixed search action events/local count caps; no adaptive/LLM controller or paid action"
+    },
+    {
+      "id": "HT-W12",
+      "status": "PARTIAL",
+      "evidence": "synthetic JSON/Markdown dossier; exact-source checks; no real public cases/UI/history service"
+    },
+    {
+      "id": "HT-W13",
+      "status": "PLANNED",
+      "evidence": "no no-code interface implemented"
+    },
+    {
+      "id": "HT-W16",
+      "status": "TEMPLATE_ONLY",
+      "evidence": "public-case task template; no participants or offers sent"
+    },
+    {
+      "id": "HT-W18",
+      "status": "BACKGROUND_PREPARATION",
+      "evidence": "27 verified paper identities, methods/dataset/evaluator reading notes; no manuscript results"
+    }
+  ],
+  "scientific_healthtech_runs": "NOT_RUN",
+  "user_commercial_validation": "NOT_RUN",
+  "provider_calls": 0,
+  "paid_cost_usd": 0,
+  "next": "HT-W04 official-format SciFact adapter or HT-W05/HT-W12 first real public device dossier",
+  "verification": "verification.json",
+  "supplemental_data": "research/SUPPLEMENTAL_DATA.md"
+}

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "patent-to-pilot"
 version = "0.1.0"
-description = "Bounded local core, ingestion, retrieval, and extraction interfaces"
+description = "Traceable HealthTech device evidence dossiers and bounded retrieval evaluation"
 requires-python = ">=3.12"
 dependencies = ["pydantic>=2.0,<3.0", "jsonschema>=4.0,<5.0"]
 

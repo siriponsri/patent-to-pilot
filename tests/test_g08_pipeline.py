@@ -9,12 +9,13 @@ from patent_to_pilot.ingestion.pls import PLSIngester, PatentDocument
 from patent_to_pilot.retrieval.fts import FTSIndex
 
 ROOT = Path(__file__).parents[1]
-PLS = ROOT / "data" / "raw" / "pls" / "atazanavir.csv"
+# Project-authored CSV-shaped fixture: no external download or scientific claim.
+PLS = ROOT / "tests" / "fixtures" / "legacy_pls.csv"
 
 
 def test_streaming_pls_sample_preserves_locator_and_unknown_date():
     stream = io.StringIO()
-    count = PLSIngester().ingest_to_stream(PLS, stream, "PLS-ATAZANAVIR", "0a035ce4", max_rows=3)
+    count = PLSIngester().ingest_to_stream(PLS, stream, "PLS-AUTHORED-FIXTURE", "authored-v1", max_rows=3)
     lines = stream.getvalue().splitlines()
     assert count == 3 and len(lines) == 3
     assert all('"publication_date_status":"unknown_not_in_source"' in line for line in lines)
@@ -23,20 +24,20 @@ def test_streaming_pls_sample_preserves_locator_and_unknown_date():
 
 def test_fts_search_filter_and_lexical_extraction(tmp_path):
     normalized = tmp_path / "atazanavir.jsonl"
-    report = PLSIngester().ingest_jsonl(PLS, normalized, "PLS-ATAZANAVIR", "0a035ce4", max_rows=20)
+    report = PLSIngester().ingest_jsonl(PLS, normalized, "PLS-AUTHORED-FIXTURE", "authored-v1", max_rows=20)
     assert report.rows_written == 20
     index = FTSIndex(tmp_path / "index.sqlite")
     assert index.add_jsonl(normalized) == 20
-    hits = index.search("aryl piperazines", limit=3, source_id="PLS-ATAZANAVIR")
-    assert hits and all(hit.source_id == "PLS-ATAZANAVIR" for hit in hits)
-    document = next(PLSIngester().iter_documents(PLS, "PLS-ATAZANAVIR", "0a035ce4", max_rows=1))
+    hits = index.search("aryl piperazines", limit=3, source_id="PLS-AUTHORED-FIXTURE")
+    assert hits and all(hit.source_id == "PLS-AUTHORED-FIXTURE" for hit in hits)
+    document = next(PLSIngester().iter_documents(PLS, "PLS-AUTHORED-FIXTURE", "authored-v1", max_rows=1))
     fact = LexicalExtractor().extract(ExtractionRequest(document_id=document.document_id, role="source_fact", query="aryl piperazines", component="title"), document)
     assert fact.model_called is False and fact.state.value == "supported" and fact.source_locator == document.source_locator
     index.close()
 
 
 def test_missing_literal_is_unknown_and_model_adapter_is_disabled():
-    document = next(PLSIngester().iter_documents(PLS, "PLS-ATAZANAVIR", "0a035ce4", max_rows=1))
+    document = next(PLSIngester().iter_documents(PLS, "PLS-AUTHORED-FIXTURE", "authored-v1", max_rows=1))
     fact = LexicalExtractor().extract(ExtractionRequest(document_id=document.document_id, role="source_fact", query="term-not-present", component="abstract"), document)
     assert fact.state.value == "unknown"
     with pytest.raises(RuntimeError):
@@ -68,7 +69,7 @@ def test_missing_fields_and_duplicate_family_are_reported(tmp_path):
 
 
 def test_evaluator_fields_are_not_a_patent_document_contract():
-    document = next(PLSIngester().iter_documents(PLS, "PLS-ATAZANAVIR", "0a035ce4", max_rows=1))
+    document = next(PLSIngester().iter_documents(PLS, "PLS-AUTHORED-FIXTURE", "authored-v1", max_rows=1))
     payload = json.loads(document.model_dump_json())
     payload["expected_doc_ids"] = ["hidden"]
     with pytest.raises(Exception):

@@ -1,0 +1,543 @@
+{
+  "$defs": {
+    "AcquisitionBudget": {
+      "additionalProperties": false,
+      "properties": {
+        "max_search_calls": {
+          "default": 3,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Max Search Calls",
+          "type": "integer"
+        },
+        "max_returned_candidates": {
+          "default": 60,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Max Returned Candidates",
+          "type": "integer"
+        },
+        "accounting": {
+          "const": "offline_counts",
+          "default": "offline_counts",
+          "title": "Accounting",
+          "type": "string"
+        }
+      },
+      "title": "AcquisitionBudget",
+      "type": "object"
+    },
+    "DeviceQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "query_id": {
+          "minLength": 1,
+          "title": "Query Id",
+          "type": "string"
+        },
+        "brief": {
+          "$ref": "#/$defs/ProjectBrief"
+        },
+        "device_id_raw": {
+          "minLength": 1,
+          "title": "Device Id Raw",
+          "type": "string"
+        },
+        "device_id_canonical": {
+          "minLength": 1,
+          "title": "Device Id Canonical",
+          "type": "string"
+        },
+        "selected_comparator_source_id": {
+          "minLength": 1,
+          "title": "Selected Comparator Source Id",
+          "type": "string"
+        },
+        "technical_description": {
+          "minLength": 1,
+          "title": "Technical Description",
+          "type": "string"
+        },
+        "features_of_interest": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Features Of Interest",
+          "type": "array"
+        },
+        "user_questions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "User Questions",
+          "type": "array"
+        },
+        "company_metadata": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Company Metadata",
+          "type": "object"
+        },
+        "company_source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Company Source Id"
+        },
+        "jurisdiction": {
+          "minLength": 1,
+          "title": "Jurisdiction",
+          "type": "string"
+        },
+        "evidence_cutoff": {
+          "format": "date",
+          "title": "Evidence Cutoff",
+          "type": "string"
+        },
+        "permitted_inputs": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Permitted Inputs",
+          "type": "array"
+        },
+        "acquisition_budget": {
+          "$ref": "#/$defs/AcquisitionBudget"
+        }
+      },
+      "required": [
+        "query_id",
+        "brief",
+        "device_id_raw",
+        "device_id_canonical",
+        "selected_comparator_source_id",
+        "technical_description",
+        "jurisdiction",
+        "evidence_cutoff",
+        "permitted_inputs"
+      ],
+      "title": "DeviceQuery",
+      "type": "object"
+    },
+    "EvidenceItem": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "minLength": 1,
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_version": {
+          "minLength": 1,
+          "title": "Source Version",
+          "type": "string"
+        },
+        "payload_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Payload Hash",
+          "type": "string"
+        },
+        "locator": {
+          "minLength": 1,
+          "title": "Locator",
+          "type": "string"
+        },
+        "quoted_span": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quoted Span"
+        },
+        "structured_field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Structured Field"
+        },
+        "structured_value": {
+          "default": null,
+          "title": "Structured Value"
+        },
+        "evidence_kind": {
+          "enum": [
+            "source_fact",
+            "patent_disclosure",
+            "reported_experiment",
+            "regulatory_record",
+            "trial_record",
+            "system_inference",
+            "unresolved"
+          ],
+          "title": "Evidence Kind",
+          "type": "string"
+        },
+        "statement": {
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "support_basis": {
+          "minLength": 1,
+          "title": "Support Basis",
+          "type": "string"
+        },
+        "jurisdiction": {
+          "minLength": 1,
+          "title": "Jurisdiction",
+          "type": "string"
+        },
+        "source_date": {
+          "format": "date",
+          "title": "Source Date",
+          "type": "string"
+        },
+        "extraction_method": {
+          "enum": [
+            "literal_span",
+            "structured_field",
+            "authored_inference"
+          ],
+          "title": "Extraction Method",
+          "type": "string"
+        },
+        "verification_status": {
+          "default": "not_checked",
+          "enum": [
+            "not_checked",
+            "exact_span_checked",
+            "field_value_checked",
+            "not_independently_validated"
+          ],
+          "title": "Verification Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "source_id",
+        "source_version",
+        "payload_hash",
+        "locator",
+        "evidence_kind",
+        "statement",
+        "support_basis",
+        "jurisdiction",
+        "source_date",
+        "extraction_method"
+      ],
+      "title": "EvidenceItem",
+      "type": "object"
+    },
+    "PatentInput": {
+      "additionalProperties": false,
+      "properties": {
+        "patent_id": {
+          "title": "Patent Id",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourcePayload"
+        }
+      },
+      "required": [
+        "patent_id",
+        "title",
+        "source"
+      ],
+      "title": "PatentInput",
+      "type": "object"
+    },
+    "ProjectBrief": {
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "pattern": "^[A-Za-z0-9_-]{1,80}$",
+          "title": "Project Id",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "objective": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Objective",
+          "type": "string"
+        },
+        "audience": {
+          "enum": [
+            "entrepreneur",
+            "investor",
+            "researcher"
+          ],
+          "title": "Audience",
+          "type": "string"
+        },
+        "data_class": {
+          "enum": [
+            "synthetic",
+            "public",
+            "private"
+          ],
+          "title": "Data Class",
+          "type": "string"
+        },
+        "language": {
+          "default": "en",
+          "enum": [
+            "en",
+            "th"
+          ],
+          "title": "Language",
+          "type": "string"
+        },
+        "theme": {
+          "default": "formal-light",
+          "enum": [
+            "formal-light",
+            "formal-dark",
+            "kmitl-inspired",
+            "ict-inspired"
+          ],
+          "title": "Theme",
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "version",
+        "objective",
+        "audience",
+        "data_class"
+      ],
+      "title": "ProjectBrief",
+      "type": "object"
+    },
+    "SourcePayload": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/SourceRecord"
+        },
+        "payload": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          ],
+          "title": "Payload"
+        },
+        "jurisdiction": {
+          "minLength": 1,
+          "title": "Jurisdiction",
+          "type": "string"
+        },
+        "source_date": {
+          "format": "date",
+          "title": "Source Date",
+          "type": "string"
+        },
+        "synthetic": {
+          "title": "Synthetic",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "payload",
+        "jurisdiction",
+        "source_date",
+        "synthetic"
+      ],
+      "title": "SourcePayload",
+      "type": "object"
+    },
+    "SourceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_type": {
+          "minLength": 1,
+          "title": "Source Type",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "version_label": {
+          "minLength": 1,
+          "title": "Version Label",
+          "type": "string"
+        },
+        "license_note": {
+          "minLength": 1,
+          "title": "License Note",
+          "type": "string"
+        },
+        "locator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Locator"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        },
+        "retrieved_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retrieved At"
+        },
+        "limits": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limits",
+          "type": "array"
+        }
+      },
+      "required": [
+        "record_id",
+        "source_id",
+        "source_type",
+        "uri",
+        "version_label",
+        "license_note"
+      ],
+      "title": "SourceRecord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "query": {
+      "$ref": "#/$defs/DeviceQuery"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SourcePayload"
+      },
+      "minItems": 1,
+      "title": "Sources",
+      "type": "array"
+    },
+    "patents": {
+      "items": {
+        "$ref": "#/$defs/PatentInput"
+      },
+      "title": "Patents",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceItem"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "policy_id": {
+      "default": "HT-B0b",
+      "enum": [
+        "HT-B0b",
+        "HT-B2"
+      ],
+      "title": "Policy Id",
+      "type": "string"
+    },
+    "per_search_limit": {
+      "default": 20,
+      "maximum": 1000,
+      "minimum": 1,
+      "title": "Per Search Limit",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "query",
+    "sources",
+    "patents"
+  ],
+  "title": "DossierInput",
+  "type": "object"
+}

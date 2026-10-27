@@ -1,0 +1,230 @@
+{
+  "repository": "https://github.com/myqqhub/Bridge-MedDevKG",
+  "commit": "f3990a207949f25012d1070a08ac303e140387e6",
+  "audited_at_utc": "2026-10-27T12:00:34.009045+00:00",
+  "files": {
+    "baseline_gold_links.parquet": {
+      "source_url": "https://raw.githubusercontent.com/myqqhub/Bridge-MedDevKG/f3990a207949f25012d1070a08ac303e140387e6/data/baseline_gold_links.parquet",
+      "sha256": "8f557dce89e6e82981fd1f060e35117a1c1d7dee03da16f2a5a9f737ac2f3638",
+      "bytes": 7308,
+      "rows": 672,
+      "columns": [
+        "fda_id",
+        "pat_id"
+      ],
+      "duplicate_rows": 0,
+      "fda_id_unique": 79,
+      "pat_id_unique": 549,
+      "distinct_pairs": 672
+    },
+    "baseline_fda_docs.parquet": {
+      "source_url": "https://raw.githubusercontent.com/myqqhub/Bridge-MedDevKG/f3990a207949f25012d1070a08ac303e140387e6/data/baseline_fda_docs.parquet",
+      "sha256": "708979e06eb2e133ee188ab33a834d6b021d23dd45b81f32a08294354c29f35e",
+      "bytes": 86360,
+      "rows": 434,
+      "columns": [
+        "id",
+        "text",
+        "company"
+      ],
+      "duplicate_rows": 0,
+      "id_unique": 434
+    },
+    "baseline_patents.parquet": {
+      "source_url": "https://raw.githubusercontent.com/myqqhub/Bridge-MedDevKG/f3990a207949f25012d1070a08ac303e140387e6/data/baseline_patents.parquet",
+      "sha256": "c02beedbaeb02bda95e37527a0fa1ee11e2ac46669bd71de9efa1c5f99eac249",
+      "bytes": 6722129,
+      "rows": 50000,
+      "columns": [
+        "id",
+        "text",
+        "company"
+      ],
+      "duplicate_rows": 0,
+      "id_unique": 50000
+    },
+    "gold_standard.parquet": {
+      "source_url": "https://raw.githubusercontent.com/myqqhub/Bridge-MedDevKG/f3990a207949f25012d1070a08ac303e140387e6/data/gold_standard.parquet",
+      "sha256": "c6caa6d26dab68d1ece64eaf2d8a20fa9f38546d6b93c5767775d0aa9beb7528",
+      "bytes": 4156524,
+      "rows": 672,
+      "columns": [
+        "is_valid",
+        "fda_id",
+        "pat_id",
+        "kg_linked",
+        "comp_d",
+        "comp_p",
+        "vec_d",
+        "vec_p",
+        "ent_names_d",
+        "ent_names_p"
+      ],
+      "duplicate_rows": 0,
+      "fda_id_unique": 79,
+      "pat_id_unique": 549,
+      "is_valid_unique": 2,
+      "is_valid_counts": {
+        "True": 585,
+        "False": 87
+      },
+      "kg_linked_unique": 2,
+      "kg_linked_counts": {
+        "True": 584,
+        "False": 88
+      },
+      "distinct_pairs": 672
+    },
+    "evaluation_dataset.csv": {
+      "source_url": "https://raw.githubusercontent.com/myqqhub/Bridge-MedDevKG/f3990a207949f25012d1070a08ac303e140387e6/data/evaluation_dataset.csv",
+      "sha256": "ed4d81c807022fb6125a0d9b6ef2c219bc3af92a738cd0742b146707ab4bec3c",
+      "bytes": 3199036,
+      "rows": 2672,
+      "columns": [
+        "fda_id",
+        "pat_id",
+        "doc_full_text",
+        "pat_full_text",
+        "label"
+      ],
+      "duplicate_rows": 0,
+      "fda_id_unique": 358,
+      "pat_id_unique": 2522,
+      "label_unique": 2,
+      "label_counts": {
+        "0": 2000,
+        "1": 672
+      },
+      "distinct_pairs": 2672
+    },
+    "training_data_5a.parquet": {
+      "source_url": "https://raw.githubusercontent.com/myqqhub/Bridge-MedDevKG/f3990a207949f25012d1070a08ac303e140387e6/data/training_data_5a.parquet",
+      "sha256": "05ad3feaacb121d5ac68e353bf83feb4e12be4965899345a2c3b787d9a6806e0",
+      "bytes": 782580,
+      "rows": 2360,
+      "columns": [
+        "fda_id",
+        "pat_id",
+        "doc_text",
+        "pat_text",
+        "total_score",
+        "score_company",
+        "score_vector",
+        "score_entity",
+        "reasons",
+        "doc_company",
+        "pat_company",
+        "label"
+      ],
+      "duplicate_rows": 0,
+      "fda_id_unique": 121,
+      "pat_id_unique": 2185,
+      "label_unique": 2,
+      "label_counts": {
+        "0": 1770,
+        "1": 590
+      },
+      "distinct_pairs": 2360
+    }
+  },
+  "notes": [
+    "The paper/README headline 585 pairs and 88 devices differs from released records: 672 rows across 79 devices; 585 is_valid=true rows cover 74 devices.",
+    "is_valid is a boolean completeness flag, not a clinical/legal correctness label. local_export_all.py computes it from non-null patent abstract and device text plus presence of extracted entities and company links.",
+    "The 87 is_valid=false records must not be recoded as negative patent-device relations or silently discarded.",
+    "kg_linked records the original pipeline result, not independent ground truth.",
+    "Every one of the 590 positive training pairs occurs in evaluation_dataset.csv; these files are not disjoint train/test sets.",
+    "Export overlap does not demonstrate that the paper cross-validation protocol is invalid; the paper describes cross-validation, but its split IDs are not in this release.",
+    "Unlisted sampled pairs receive label=0 in export code, so negatives are not verified invalid relationships.",
+    "Released gold table contains no per-link disclosure URL, source date, or train/validation/test assignment.",
+    "Recursive repository tree at this commit has no code/hpc_run_all.py although README reproduction commands depend on it; no LICENSE file or split manifest was present.",
+    "README displays an MIT badge; GitHub repository license metadata is null and no distinct data license was verified.",
+    "50,000-patent released corpus includes all gold patent IDs plus sampled distractors; it is not the full 698,191-patent experiment corpus.",
+    "This script audits data availability/schema/overlap only. No retrieval baseline or model result was reproduced."
+  ],
+  "comparison": {
+    "all_gold_pairs": 672,
+    "detail_gold_pairs": 672,
+    "training_positive_pairs": 590,
+    "evaluation_positive_pairs": 672,
+    "training_positive_overlap_with_gold": 590,
+    "evaluation_positive_overlap_with_gold": 672,
+    "training_evaluation_positive_overlap": 590,
+    "all_training_evaluation_pair_overlap": 590,
+    "missing_gold_device_ids_in_docs": [],
+    "missing_gold_patent_ids_in_corpus": [],
+    "evaluation_positive_devices": 79,
+    "training_positive_devices": 74,
+    "is_valid_true_pairs": 585,
+    "is_valid_true_devices": 74,
+    "is_valid_true_patents": 474,
+    "all_gold_patent_ids_present_in_50k": 549,
+    "all_gold_device_ids_present_in_434": 79,
+    "valid_gold_patent_ids_present_in_50k": 474,
+    "valid_gold_device_ids_present_in_434": 74,
+    "valid_gold_pairs_with_both_ids_present": 585,
+    "all_gold_pairs_with_both_ids_present": 672,
+    "is_valid_true_kg_linked_counts": {
+      "True": 579,
+      "False": 6
+    },
+    "blank_embedding_counts": {
+      "vec_d": 0,
+      "vec_p": 82
+    },
+    "device_component_sizes_shared_exact_patent_id": [
+      7,
+      6,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "migration_status": "SUPPLIED_PACK_AUDIT_NOT_REEXECUTED",
+  "migration_verified": "Pinned upstream README and paper identity checked; no Bridge payload acquired or evaluated"
+}

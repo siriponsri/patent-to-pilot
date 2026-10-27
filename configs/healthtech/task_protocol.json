@@ -1,0 +1,36 @@
+{
+  "version": "ht-development-contract-v1",
+  "status": "ENGINEERING_ONLY_NOT_FROZEN_SCIENTIFIC_PROTOCOL",
+  "task": "HT-T1",
+  "primary_metric": "macro_known_link_recall",
+  "planned_primary_k": 20,
+  "secondary_k": [
+    10,
+    50
+  ],
+  "failure_rule": "expected eligible missing/failed queries score zero; count attempts and costs",
+  "dedup": "canonical document IDs before cutoff; preserve leading zeros, jurisdiction and kind",
+  "unjudged": "unlisted pairs are not false; no open-world precision/F1",
+  "grouping": "shared-reference patent connected components; sourced family joins when available; company sensitivity",
+  "permitted_runtime_inputs": "device/comparator text and source-backed allowlisted metadata; no evaluator labels",
+  "implemented_methods": [
+    "HT-B0b",
+    "HT-B2"
+  ],
+  "planned_methods": [
+    "HT-B0a",
+    "HT-B1",
+    "HT-B3",
+    "HT-B4",
+    "HT-B5-optional"
+  ],
+  "final_study_prerequisites": [
+    "rights-cleared corpus/cohort",
+    "eligible query and split hashes",
+    "independent group count",
+    "fixed hybrid comparison",
+    "predeclared meaningful effect/margin",
+    "complete actual cost definition",
+    "frozen code/config"
+  ]
+}

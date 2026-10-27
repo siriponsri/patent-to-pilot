@@ -1,0 +1,197 @@
+{
+  "$defs": {
+    "AcquisitionBudget": {
+      "additionalProperties": false,
+      "properties": {
+        "max_search_calls": {
+          "default": 3,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Max Search Calls",
+          "type": "integer"
+        },
+        "max_returned_candidates": {
+          "default": 60,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Max Returned Candidates",
+          "type": "integer"
+        },
+        "accounting": {
+          "const": "offline_counts",
+          "default": "offline_counts",
+          "title": "Accounting",
+          "type": "string"
+        }
+      },
+      "title": "AcquisitionBudget",
+      "type": "object"
+    },
+    "ProjectBrief": {
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "pattern": "^[A-Za-z0-9_-]{1,80}$",
+          "title": "Project Id",
+          "type": "string"
+        },
+        "version": {
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "objective": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Objective",
+          "type": "string"
+        },
+        "audience": {
+          "enum": [
+            "entrepreneur",
+            "investor",
+            "researcher"
+          ],
+          "title": "Audience",
+          "type": "string"
+        },
+        "data_class": {
+          "enum": [
+            "synthetic",
+            "public",
+            "private"
+          ],
+          "title": "Data Class",
+          "type": "string"
+        },
+        "language": {
+          "default": "en",
+          "enum": [
+            "en",
+            "th"
+          ],
+          "title": "Language",
+          "type": "string"
+        },
+        "theme": {
+          "default": "formal-light",
+          "enum": [
+            "formal-light",
+            "formal-dark",
+            "kmitl-inspired",
+            "ict-inspired"
+          ],
+          "title": "Theme",
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "version",
+        "objective",
+        "audience",
+        "data_class"
+      ],
+      "title": "ProjectBrief",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "query_id": {
+      "minLength": 1,
+      "title": "Query Id",
+      "type": "string"
+    },
+    "brief": {
+      "$ref": "#/$defs/ProjectBrief"
+    },
+    "device_id_raw": {
+      "minLength": 1,
+      "title": "Device Id Raw",
+      "type": "string"
+    },
+    "device_id_canonical": {
+      "minLength": 1,
+      "title": "Device Id Canonical",
+      "type": "string"
+    },
+    "selected_comparator_source_id": {
+      "minLength": 1,
+      "title": "Selected Comparator Source Id",
+      "type": "string"
+    },
+    "technical_description": {
+      "minLength": 1,
+      "title": "Technical Description",
+      "type": "string"
+    },
+    "features_of_interest": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Features Of Interest",
+      "type": "array"
+    },
+    "user_questions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "User Questions",
+      "type": "array"
+    },
+    "company_metadata": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Company Metadata",
+      "type": "object"
+    },
+    "company_source_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Company Source Id"
+    },
+    "jurisdiction": {
+      "minLength": 1,
+      "title": "Jurisdiction",
+      "type": "string"
+    },
+    "evidence_cutoff": {
+      "format": "date",
+      "title": "Evidence Cutoff",
+      "type": "string"
+    },
+    "permitted_inputs": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Permitted Inputs",
+      "type": "array"
+    },
+    "acquisition_budget": {
+      "$ref": "#/$defs/AcquisitionBudget"
+    }
+  },
+  "required": [
+    "query_id",
+    "brief",
+    "device_id_raw",
+    "device_id_canonical",
+    "selected_comparator_source_id",
+    "technical_description",
+    "jurisdiction",
+    "evidence_cutoff",
+    "permitted_inputs"
+  ],
+  "title": "DeviceQuery",
+  "type": "object"
+}

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1490" viewBox="0 0 1600 1490" role="img">
+<title>Patent-to-Pilot goal map</title><desc>Outcome-led parallel research and product work. Local blockers affect only their dependent tasks; customer evidence informs releases without blocking unrelated work.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#78909C"/></marker><marker id="teal-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#008F86"/></marker></defs>
+<rect width="1600" height="1490" rx="24" fill="white"/>
+<text x="70" y="64" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="2">GOAL-BASED DELIVERY</text>
+<text x="70" y="116" font-family="DejaVu Sans,Arial,sans-serif" font-size="40" font-weight="700" fill="#173744" text-anchor="start">Progress through evidence, not dates.</text>
+<rect x="450" y="165" width="700" height="126" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="450" y="183" width="5" height="90" rx="2" fill="#008F86"/>
+<text x="476" y="196" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">HT-G0</text>
+<text x="476" y="232" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">One product and research contract</text>
+<text x="476" y="267" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">A named-device dossier with a measurable research core</text>
+<rect x="450" y="360" width="700" height="126" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="450" y="378" width="5" height="90" rx="2" fill="#008F86"/>
+<text x="476" y="391" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">HT-G1</text>
+<text x="476" y="427" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Source readiness and study protocol</text>
+<text x="476" y="462" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Use ready sources; do not wait for every dataset</text>
+<rect x="80" y="590" width="650" height="156" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="80" y="608" width="5" height="120" rx="2" fill="#3269A8"/>
+<text x="106" y="621" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#3269A8" text-anchor="start" letter-spacing="1.5">HT-G2 · RESEARCH</text>
+<text x="106" y="657" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Baselines and evaluators</text>
+<text x="106" y="692" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Reproducible outputs and complete cost records</text>
+<text x="106" y="721" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Establish headroom before adding complexity</text>
+<rect x="870" y="590" width="650" height="156" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="870" y="608" width="5" height="120" rx="2" fill="#008F86"/>
+<text x="896" y="621" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">HT-G3 · PRODUCT</text>
+<text x="896" y="657" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">A complete public-case dossier</text>
+<text x="896" y="692" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Inspect sources, edit the table and export</text>
+<text x="896" y="721" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Use the simplest ready engine</text>
+<rect x="80" y="820" width="650" height="156" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="80" y="838" width="5" height="120" rx="2" fill="#3269A8"/>
+<text x="106" y="851" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#3269A8" text-anchor="start" letter-spacing="1.5">HT-G4 · RESEARCH</text>
+<text x="106" y="887" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Test adaptive acquisition</text>
+<text x="106" y="922" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Matched resources, grouping and ablations</text>
+<text x="106" y="951" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Keep positive, negative and uncertain findings</text>
+<rect x="870" y="820" width="650" height="156" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="870" y="838" width="5" height="120" rx="2" fill="#008F86"/>
+<text x="896" y="851" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">HT-G5 · USER EVIDENCE</text>
+<text x="896" y="887" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Validate usefulness and payment</text>
+<text x="896" y="922" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Task completion, correction burden and reuse</text>
+<text x="896" y="951" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Run alongside research when the demo is ready</text>
+<rect x="80" y="1050" width="650" height="156" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="80" y="1068" width="5" height="120" rx="2" fill="#3269A8"/>
+<text x="106" y="1081" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#3269A8" text-anchor="start" letter-spacing="1.5">HT-G6 · SCIENTIFIC RELEASE</text>
+<text x="106" y="1117" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Manuscript and reproducibility</text>
+<text x="106" y="1152" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Patent-central contribution and traceable results</text>
+<text x="106" y="1181" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Journal decisions are external outcomes</text>
+<rect x="870" y="1050" width="650" height="156" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="870" y="1068" width="5" height="120" rx="2" fill="#008F86"/>
+<text x="896" y="1081" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">HT-G7 · PRODUCT RELEASE</text>
+<text x="896" y="1117" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">An operable product</text>
+<text x="896" y="1152" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Setup, recovery, source history and no-code flow</text>
+<text x="896" y="1181" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Prepare a deployable build within authorization</text>
+<rect x="450" y="1290" width="700" height="126" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="450" y="1308" width="5" height="90" rx="2" fill="#008F86"/>
+<text x="476" y="1321" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">HT-G8 · EXPANSION</text>
+<text x="476" y="1357" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Add one validated domain at a time</text>
+<text x="476" y="1392" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Pharma · Biologics · IVD · jurisdiction-specific sources</text>
+<path d="M800 291 L800 350" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M800 486 L800 535 L405 535 L405 580" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M800 535 L1195 535 L1195 580" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M405 746 L405 810" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M405 976 L405 1040" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1195 746 L1195 810" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1520 666 L1560 666 L1560 1128 L1530 1128" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1195 976 L1195 1040" fill="none" stroke="#008F86" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal-arrow)" stroke-dasharray="8 7"/>
+<text x="1220" y="1017" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="600" fill="#008F86" text-anchor="start">informs</text>
+<path d="M405 1206 L405 1250 L670 1250 L670 1280" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1195 1206 L1195 1250 L930 1250 L930 1280" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="70" y="1460" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#58707B" text-anchor="start">Local blockers pause only affected work. Dashed links inform decisions; they do not create global approval gates.</text>
+</svg>

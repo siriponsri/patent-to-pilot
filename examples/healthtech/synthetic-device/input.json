@@ -1,0 +1,192 @@
+{
+  "query": {
+    "query_id": "HT-SYN-001",
+    "brief": {
+      "project_id": "healthtech-demo",
+      "version": 1,
+      "objective": "Inspect a synthetic named-device evidence dossier",
+      "audience": "entrepreneur",
+      "data_class": "synthetic",
+      "language": "th",
+      "theme": "formal-light"
+    },
+    "device_id_raw": "K000001 (synthetic)",
+    "device_id_canonical": "K000001",
+    "selected_comparator_source_id": "synthetic-device-record",
+    "technical_description": "balloon catheter",
+    "features_of_interest": [
+      "pressure sensor"
+    ],
+    "user_questions": [
+      "Request a real, dated product specification before any substantive review."
+    ],
+    "company_metadata": {},
+    "company_source_id": null,
+    "jurisdiction": "US",
+    "evidence_cutoff": "2026-10-27",
+    "permitted_inputs": [
+      "synthetic-device-record"
+    ],
+    "acquisition_budget": {
+      "max_search_calls": 3,
+      "max_returned_candidates": 20,
+      "accounting": "offline_counts"
+    }
+  },
+  "sources": [
+    {
+      "source": {
+        "record_id": "synthetic-device-record",
+        "version": 1,
+        "created_at": "2026-10-27T00:00:00Z",
+        "source_id": "synthetic-device-record",
+        "source_type": "regulatory_record",
+        "uri": "urn:synthetic:openfda-510k:K000001",
+        "version_label": "authored-fixture-v1",
+        "license_note": "openFDA/FDA terms and field-specific rights apply; preserve attribution",
+        "locator": null,
+        "sha256": "08d037a0c91e924c31c8df411942f063378fd4daf73b76c798cb98b67cc80dc7",
+        "retrieved_at": null,
+        "limits": []
+      },
+      "payload": {
+        "k_number": "K000001",
+        "device_name": "SYNTHETIC demonstration catheter",
+        "applicant": "Fictional Demo Co",
+        "decision_code": "SYNTHETIC_NOT_A_REAL_DECISION"
+      },
+      "jurisdiction": "US",
+      "source_date": "2026-10-27",
+      "synthetic": true
+    }
+  ],
+  "patents": [
+    {
+      "patent_id": "US000001A1",
+      "title": "SYNTHETIC balloon catheter",
+      "source": {
+        "source": {
+          "record_id": "synthetic-US000001A1",
+          "version": 1,
+          "created_at": "2026-10-27T00:00:00Z",
+          "source_id": "synthetic-US000001A1",
+          "source_type": "patent_document",
+          "uri": "urn:synthetic:US000001A1",
+          "version_label": "authored-fixture-v1",
+          "license_note": "Project-authored synthetic text; not a patent document",
+          "locator": null,
+          "sha256": "59a04a12a627fa6abc32fe410b39dbdba204dcb58c67960cd255cad68a2d5581",
+          "retrieved_at": null,
+          "limits": []
+        },
+        "payload": "An authored balloon catheter example. No real patent or device relationship.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "synthetic": true
+      }
+    },
+    {
+      "patent_id": "US000002A1",
+      "title": "SYNTHETIC pressure sensor",
+      "source": {
+        "source": {
+          "record_id": "synthetic-US000002A1",
+          "version": 1,
+          "created_at": "2026-10-27T00:00:00Z",
+          "source_id": "synthetic-US000002A1",
+          "source_type": "patent_document",
+          "uri": "urn:synthetic:US000002A1",
+          "version_label": "authored-fixture-v1",
+          "license_note": "Project-authored synthetic text; not a patent document",
+          "locator": null,
+          "sha256": "9fcd0d743cc1c74ed051e3e54c34f22b932724f5d13c8e188f67ea41b3c88477",
+          "retrieved_at": null,
+          "limits": []
+        },
+        "payload": "An authored pressure sensor example. No real patent or device relationship.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "synthetic": true
+      }
+    },
+    {
+      "patent_id": "US000003A1",
+      "title": "SYNTHETIC unrelated handle",
+      "source": {
+        "source": {
+          "record_id": "synthetic-US000003A1",
+          "version": 1,
+          "created_at": "2026-10-27T00:00:00Z",
+          "source_id": "synthetic-US000003A1",
+          "source_type": "patent_document",
+          "uri": "urn:synthetic:US000003A1",
+          "version_label": "authored-fixture-v1",
+          "license_note": "Project-authored synthetic text; not a patent document",
+          "locator": null,
+          "sha256": "3957383ac4897535892b9432b3324f51789471a92a1c4cc6e121b5554dbeb06a",
+          "retrieved_at": null,
+          "limits": []
+        },
+        "payload": "An authored handle example used as a distractor.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "synthetic": true
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e-device_name",
+      "source_id": "synthetic-device-record",
+      "source_version": "authored-fixture-v1",
+      "payload_hash": "08d037a0c91e924c31c8df411942f063378fd4daf73b76c798cb98b67cc80dc7",
+      "locator": "field:device_name",
+      "quoted_span": null,
+      "structured_field": "device_name",
+      "structured_value": "SYNTHETIC demonstration catheter",
+      "evidence_kind": "regulatory_record",
+      "statement": "device_name: SYNTHETIC demonstration catheter",
+      "support_basis": "Supplied source field; no interpretation of regulatory status",
+      "jurisdiction": "US",
+      "source_date": "2026-10-27",
+      "extraction_method": "structured_field",
+      "verification_status": "not_checked"
+    },
+    {
+      "evidence_id": "e-k_number",
+      "source_id": "synthetic-device-record",
+      "source_version": "authored-fixture-v1",
+      "payload_hash": "08d037a0c91e924c31c8df411942f063378fd4daf73b76c798cb98b67cc80dc7",
+      "locator": "field:k_number",
+      "quoted_span": null,
+      "structured_field": "k_number",
+      "structured_value": "K000001",
+      "evidence_kind": "regulatory_record",
+      "statement": "k_number: K000001",
+      "support_basis": "Supplied source field; no interpretation of regulatory status",
+      "jurisdiction": "US",
+      "source_date": "2026-10-27",
+      "extraction_method": "structured_field",
+      "verification_status": "not_checked"
+    },
+    {
+      "evidence_id": "e-decision_code",
+      "source_id": "synthetic-device-record",
+      "source_version": "authored-fixture-v1",
+      "payload_hash": "08d037a0c91e924c31c8df411942f063378fd4daf73b76c798cb98b67cc80dc7",
+      "locator": "field:decision_code",
+      "quoted_span": null,
+      "structured_field": "decision_code",
+      "structured_value": "SYNTHETIC_NOT_A_REAL_DECISION",
+      "evidence_kind": "regulatory_record",
+      "statement": "decision_code: SYNTHETIC_NOT_A_REAL_DECISION",
+      "support_basis": "Supplied source field; no interpretation of regulatory status",
+      "jurisdiction": "US",
+      "source_date": "2026-10-27",
+      "extraction_method": "structured_field",
+      "verification_status": "not_checked"
+    }
+  ],
+  "policy_id": "HT-B2",
+  "per_search_limit": 20
+}

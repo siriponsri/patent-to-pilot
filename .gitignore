@@ -14,3 +14,15 @@ literature-review/internal/*.pdf
 # Evaluator-only answers/oracles must never be published from any evaluation case.
 **/evaluator-only/
 **/selected_questions.jsonl
+
+# Plaintext local credentials and backups; template must stay secret-free.
+.env
+.env.*
+!.env.example
+
+# Local HealthTech runs, scholarly reading copies, caches and delivery workspaces.
+results/healthtech/
+literature-review/healthtech/papers/
+.pytest_cache/
+*.pyc
+deliverables/

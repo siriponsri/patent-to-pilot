@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1330" viewBox="0 0 1600 1330" role="img">
+<title>Patent-to-Pilot target architecture</title><desc>One acquisition engine connects versioned public sources to product dossiers and independent scientific evaluation. Gold labels are evaluator-only.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#78909C"/></marker><marker id="teal-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#008F86"/></marker></defs>
+<rect width="1600" height="1330" rx="24" fill="white"/>
+<text x="70" y="66" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="2">TARGET ARCHITECTURE</text>
+<text x="70" y="119" font-family="DejaVu Sans,Arial,sans-serif" font-size="43" font-weight="700" fill="#173744" text-anchor="start">One evidence engine. Two uses.</text>
+<text x="70" y="153" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="400" fill="#58707B" text-anchor="start">HealthTech blueprint — planned integration built on the existing Python foundations</text>
+<rect x="520" y="195" width="560" height="126" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="520" y="213" width="5" height="90" rx="2" fill="#008F86"/>
+<text x="546" y="226" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">PROJECT INPUT</text>
+<text x="546" y="262" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Named device or comparator</text>
+<text x="546" y="297" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Questions · features · jurisdiction · budget</text>
+<rect x="60" y="385" width="370" height="252" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="60" y="403" width="5" height="216" rx="2" fill="#008F86"/>
+<text x="86" y="416" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">VERSIONED SOURCES</text>
+<text x="86" y="452" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Public evidence</text>
+<text x="86" y="487" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Device and regulatory records</text>
+<text x="86" y="516" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Patent documents and metadata</text>
+<text x="86" y="545" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Scientific evidence</text>
+<text x="86" y="574" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Rights and snapshot registry</text>
+<rect x="520" y="385" width="560" height="164" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="520" y="403" width="5" height="128" rx="2" fill="#008F86"/>
+<text x="546" y="416" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">ACQUISITION</text>
+<text x="546" y="452" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Retrieve · inspect · select</text>
+<text x="546" y="487" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Fixed, simple adaptive or bounded agent</text>
+<text x="546" y="516" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">The same actions and output contract</text>
+<rect x="1200" y="385" width="340" height="223" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="1200" y="403" width="5" height="187" rx="2" fill="#008F86"/>
+<text x="1226" y="416" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">RESOURCE CONTROL</text>
+<text x="1226" y="452" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Budget and run log</text>
+<text x="1226" y="487" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Calls · tokens · reranking</text>
+<text x="1226" y="516" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Measured costs and failures</text>
+<text x="1226" y="545" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Configuration and source IDs</text>
+<rect x="520" y="655" width="560" height="176" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="520" y="673" width="5" height="140" rx="2" fill="#008F86"/>
+<text x="546" y="686" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">SHARED OUTPUT</text>
+<text x="546" y="722" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Evidence records</text>
+<text x="546" y="757" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Canonical IDs · spans · source versions</text>
+<text x="546" y="786" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Candidates · disclosed links · unresolved</text>
+<text x="546" y="815" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">No evaluator labels in runtime state</text>
+<rect x="80" y="980" width="660" height="238" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="80" y="998" width="5" height="202" rx="2" fill="#008F86"/>
+<text x="106" y="1011" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#008F86" text-anchor="start" letter-spacing="1.5">PRODUCT PATH</text>
+<text x="106" y="1047" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">An inspectable project dossier</text>
+<text x="106" y="1082" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Feature–evidence table and source viewer</text>
+<text x="106" y="1111" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Editable output, export and project history</text>
+<text x="106" y="1140" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Next information requests</text>
+<text x="106" y="1169" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Validate task success, reuse and purchase</text>
+<rect x="860" y="980" width="660" height="238" rx="18" fill="#F3F8FA" stroke="#C7D5DD" stroke-width="2"/>
+<rect x="860" y="998" width="5" height="202" rx="2" fill="#3269A8"/>
+<text x="886" y="1011" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#3269A8" text-anchor="start" letter-spacing="1.5">RESEARCH PATH</text>
+<text x="886" y="1047" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" fill="#173744" text-anchor="start">Independent scientific evaluation</text>
+<text x="886" y="1082" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Frozen corpus, cohort and grouped protocol</text>
+<text x="886" y="1111" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Known-link recovery and full cost accounting</text>
+<text x="886" y="1140" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Existing gold labels stay in the evaluator</text>
+<text x="886" y="1169" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#58707B" text-anchor="start">Report uncertainty and task-specific limits</text>
+<path d="M800 321 L800 375" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M430 465 L510 465" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1080 465 L1190 465" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M800 549 L800 645" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M520 735 L472 735 L472 515 L510 515" fill="none" stroke="#008F86" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal-arrow)" stroke-dasharray="8 7"/>
+<text x="438" y="780" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="600" fill="#008F86" text-anchor="end">State update</text>
+<path d="M800 831 L800 903 L410 903 L410 970" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M800 903 L1190 903 L1190 970" fill="none" stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="70" y="1270" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#58707B" text-anchor="start">Current foundation: typed records, SQLite, lexical retrieval, deterministic workflows and provider interfaces.</text>
+<text x="70" y="1301" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#58707B" text-anchor="start">Planned work: HealthTech adapters, adaptive policies, dossier UI and the new scientific study.</text>
+</svg>

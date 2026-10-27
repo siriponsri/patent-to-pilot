@@ -1,0 +1,126 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "evidence_id": {
+      "minLength": 1,
+      "title": "Evidence Id",
+      "type": "string"
+    },
+    "source_id": {
+      "minLength": 1,
+      "title": "Source Id",
+      "type": "string"
+    },
+    "source_version": {
+      "minLength": 1,
+      "title": "Source Version",
+      "type": "string"
+    },
+    "payload_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Payload Hash",
+      "type": "string"
+    },
+    "locator": {
+      "minLength": 1,
+      "title": "Locator",
+      "type": "string"
+    },
+    "quoted_span": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Quoted Span"
+    },
+    "structured_field": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Structured Field"
+    },
+    "structured_value": {
+      "default": null,
+      "title": "Structured Value"
+    },
+    "evidence_kind": {
+      "enum": [
+        "source_fact",
+        "patent_disclosure",
+        "reported_experiment",
+        "regulatory_record",
+        "trial_record",
+        "system_inference",
+        "unresolved"
+      ],
+      "title": "Evidence Kind",
+      "type": "string"
+    },
+    "statement": {
+      "minLength": 1,
+      "title": "Statement",
+      "type": "string"
+    },
+    "support_basis": {
+      "minLength": 1,
+      "title": "Support Basis",
+      "type": "string"
+    },
+    "jurisdiction": {
+      "minLength": 1,
+      "title": "Jurisdiction",
+      "type": "string"
+    },
+    "source_date": {
+      "format": "date",
+      "title": "Source Date",
+      "type": "string"
+    },
+    "extraction_method": {
+      "enum": [
+        "literal_span",
+        "structured_field",
+        "authored_inference"
+      ],
+      "title": "Extraction Method",
+      "type": "string"
+    },
+    "verification_status": {
+      "default": "not_checked",
+      "enum": [
+        "not_checked",
+        "exact_span_checked",
+        "field_value_checked",
+        "not_independently_validated"
+      ],
+      "title": "Verification Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "source_id",
+    "source_version",
+    "payload_hash",
+    "locator",
+    "evidence_kind",
+    "statement",
+    "support_basis",
+    "jurisdiction",
+    "source_date",
+    "extraction_method"
+  ],
+  "title": "EvidenceItem",
+  "type": "object"
+}

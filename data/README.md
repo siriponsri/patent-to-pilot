@@ -1,20 +1,9 @@
-# G03 data area
+# Data boundary — HealthTech
 
-Current repository publication status: the project now has a local Git checkout. The root and data ignore rules exclude raw/processed/derived payloads and evaluator-only material; only the small G03 provenance receipts listed below are intended for Git retention. The historical note below records the pre-initialization state and is not the current repository status.
+ข้อมูลหลักที่วางแผนใช้คือ Bridge-MedDevKG ภายใต้สิทธิ์/cohort ที่ยังต้องคลี่คลาย, SciFact สำหรับ evidence component และ official device/product records ดู [data registry](../configs/healthtech/data_registry.json)
 
-This directory is the local data boundary for the Patent-to-Pilot G03 acquisition work package. It is intentionally separate from the existing `methodology/datasets/` historical/preflight inventory. Raw downloads are kept under `data/raw/`; extracted, bounded samples and reports are under `data/processed/` and `data/derived/`; provenance and integrity receipts are under `data/manifests/`.
+รอบ migration ไม่ได้ดาวน์โหลด Bridge/SciFact payload หรือเผยแพร่ third-party raw data ตัวอย่างที่นำเข้า Git อยู่ใน `examples/healthtech/synthetic-device/` เป็นข้อความและรหัสที่ผู้พัฒนาแต่งขึ้นทั้งหมด
 
-This workspace currently has no `.git` repository. `data/.gitignore` records a future repository policy to exclude raw/processed/derived payloads and evaluator-only material; it is not effective Git protection yet. The small provenance receipts listed below are intended for retention if a repository is initialized. Do not move, delete, or replace the existing DAPFAM files under `methodology/datasets/`; G03 checked those files before deciding not to download the large DAPFAM corpus again.
+G03 manifests เก็บข้อเท็จจริงการดาวน์โหลดเดิม ไม่ใช่คำสั่งให้ใช้ PLS/EnterpriseRAG เป็น HealthTech benchmark ดู [history/cleanup](../docs/healthtech/HISTORY.md) ก่อนใช้ local raw files หรือกู้คืนไฟล์ที่ลบแบบ recoverable แล้ว ผล historical tests ไม่กลายเป็น scientific HealthTech evidence
 
-## Current G03 mapping
-
-| Area | Contents | Status |
-|---|---|---|
-| `raw/pls/` | PLS Atazanavir and Ritonavir CSV payloads retrieved through Git LFS | verified raw payloads; CC BY 4.0 data note |
-| `raw/enterprise/` | EnterpriseRAG v1.0.0 questions and two GitHub source slices | verified raw payloads; repository/code MIT LICENSE snapshot only; data/release-asset terms not separately established; not full benchmark |
-| `raw/metadata/` | README/license/release snapshots for the acquired sources | provenance snapshots |
-| `processed/enterprise/github_closed_sample/` | evaluator-only selected questions/documents plus allowlisted agent view | closed bounded sample; not full benchmark |
-| `derived/` | streaming analysis report | derived, reproducible from raw files |
-| `manifests/` | acquisition, metadata, and analysis receipts | provenance/integrity records; intended Git-retained receipts if a repository is initialized |
-
-DAPFAM remains at the pre-existing `methodology/datasets/research-only-nc/` qrels plus `methodology/datasets/samples/` first-five API rows and metadata snapshots. Its CC BY-NC-SA 4.0 research-only restriction remains applicable. No DAPFAM corpus/queries parquet was copied into this G03 data area.
+Raw/processed/derived payloads, evaluator-only labels และ credentials ยังคงถูกกันจาก Git สิทธิ์ MIT ของ repository code ไม่ได้ยืนยันสิทธิ์ data/release assets และ paper license ไม่ขยายสิทธิ์ dataset

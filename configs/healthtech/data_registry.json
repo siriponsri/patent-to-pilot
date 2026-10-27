@@ -1,0 +1,100 @@
+{
+  "version": "ht-data-registry-v1",
+  "resources": [
+    {
+      "id": "bridge-meddevkg",
+      "role": "conditional HT-T1 main retrieval candidate",
+      "revision": "f3990a207949f25012d1070a08ac303e140387e6",
+      "url": "https://github.com/myqqhub/Bridge-MedDevKG",
+      "status": "BLOCKED_LOCAL",
+      "rights": "dataset intended-use rights unresolved; MIT badge is insufficient",
+      "local_payload_acquired": false,
+      "cohort_note": "Pack audit 672/79 exported, 585/74 completeness-qualified; paper 585/88. Reconcile before study"
+    },
+    {
+      "id": "scifact",
+      "role": "HT-T2 evidence component",
+      "url": "https://github.com/allenai/scifact",
+      "status": "PLANNED",
+      "rights": "claims/annotations CC BY 4.0; abstracts ODC-By 1.0; code Apache 2.0",
+      "local_payload_acquired": false
+    },
+    {
+      "id": "openfda-510k",
+      "role": "official regulatory facts",
+      "url": "https://open.fda.gov/apis/device/510k/",
+      "status": "LOCAL_SNAPSHOT_ADAPTER_ONLY",
+      "rights": "Generally CC0 except stated fields/third-party rights; GMDN/D&B excluded; official service terms apply",
+      "live_fetch_implemented": false,
+      "field_policy": "Core 510k device/decision allowlist only; unknown enrichments dropped"
+    },
+    {
+      "id": "authored-synthetic-device",
+      "role": "engineering checks only",
+      "path": "examples/healthtech/synthetic-device/input.json",
+      "status": "IMPLEMENTED",
+      "rights": "project-authored fixture text; no third-party dataset/PDF",
+      "scientific_ground_truth": false
+    },
+    {
+      "id": "openfda-pma",
+      "role": "HT-G3 official facts; W05/W12",
+      "status": "PROPOSED",
+      "source": "https://api.fda.gov/download.json",
+      "snapshot_metadata_date": "2026-10-26",
+      "reported_records": 57373,
+      "reported_zip_mb": "21.17",
+      "keys": [
+        "pma_number",
+        "supplement_number"
+      ],
+      "rights": "openFDA terms/CC0 exceptions and source-document rights",
+      "limitations": "supplements are not unique device counts; no patent gold"
+    },
+    {
+      "id": "udi-selected-fields",
+      "role": "HT-G3/G5 named comparator enrichment",
+      "status": "OPTIONAL_PROPOSED",
+      "source": "https://api.fda.gov/download.json",
+      "snapshot_metadata_date": "2026-10-27",
+      "reported_records": 5182695,
+      "reported_zip_parts": 52,
+      "keys": [
+        "primary_di",
+        "submission_number_if_present"
+      ],
+      "excluded_fields": [
+        "GMDN terms/codes/definitions",
+        "D&B labeler DUNS"
+      ],
+      "rights_source": "https://accessgudid.nlm.nih.gov/terms",
+      "limitations": "AccessGUDID download/API inaccessible in check; field-specific rights and imperfect joins"
+    },
+    {
+      "id": "device-recall-context",
+      "role": "HT-G3/G5 source context; not a negative patent label",
+      "status": "OPTIONAL_PROPOSED",
+      "source": "https://open.fda.gov/apis/device/recall/",
+      "snapshot_metadata_date": "2026-10-27",
+      "reported_records": 59618,
+      "reported_zip_mb": "275.94",
+      "keys": [
+        "res_event_number",
+        "product_code"
+      ],
+      "limitations": "not alerts/lifecycle guarantee or comparative clinical safety"
+    },
+    {
+      "id": "target-user-task-records",
+      "role": "HT-G5 W16/W17 business evidence",
+      "status": "NO_DATA_COLLECTED",
+      "keys": [
+        "nonidentifying_task_id",
+        "project_id"
+      ],
+      "rights": "participant consent/authorization; no private raw records in public Git",
+      "limitations": "start with pack proposed 3 users; no sample-size or market-validation claim"
+    }
+  ],
+  "supplemental_proposal": "docs/healthtech/research/SUPPLEMENTAL_DATA.md"
+}

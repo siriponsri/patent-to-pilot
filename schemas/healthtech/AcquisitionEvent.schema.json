@@ -1,0 +1,190 @@
+{
+  "$defs": {
+    "AcquisitionBudget": {
+      "additionalProperties": false,
+      "properties": {
+        "max_search_calls": {
+          "default": 3,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Max Search Calls",
+          "type": "integer"
+        },
+        "max_returned_candidates": {
+          "default": 60,
+          "maximum": 10000,
+          "minimum": 0,
+          "title": "Max Returned Candidates",
+          "type": "integer"
+        },
+        "accounting": {
+          "const": "offline_counts",
+          "default": "offline_counts",
+          "title": "Accounting",
+          "type": "string"
+        }
+      },
+      "title": "AcquisitionBudget",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "query_id": {
+      "title": "Query Id",
+      "type": "string"
+    },
+    "step_id": {
+      "title": "Step Id",
+      "type": "string"
+    },
+    "policy_id": {
+      "enum": [
+        "HT-B0b",
+        "HT-B2"
+      ],
+      "title": "Policy Id",
+      "type": "string"
+    },
+    "action_type": {
+      "enum": [
+        "technical_search",
+        "feature_search",
+        "stop"
+      ],
+      "title": "Action Type",
+      "type": "string"
+    },
+    "input_reference_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Input Reference Ids",
+      "type": "array"
+    },
+    "returned_candidate_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Returned Candidate Ids",
+      "type": "array"
+    },
+    "new_candidate_count": {
+      "minimum": 0,
+      "title": "New Candidate Count",
+      "type": "integer"
+    },
+    "started_at": {
+      "format": "date-time",
+      "title": "Started At",
+      "type": "string"
+    },
+    "ended_at": {
+      "format": "date-time",
+      "title": "Ended At",
+      "type": "string"
+    },
+    "elapsed_seconds": {
+      "minimum": 0,
+      "title": "Elapsed Seconds",
+      "type": "number"
+    },
+    "search_calls": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Search Calls",
+      "type": "integer"
+    },
+    "returned_candidates": {
+      "minimum": 0,
+      "title": "Returned Candidates",
+      "type": "integer"
+    },
+    "retry_count": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Retry Count",
+      "type": "integer"
+    },
+    "errors": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Errors",
+      "type": "array"
+    },
+    "remaining_budget_before": {
+      "$ref": "#/$defs/AcquisitionBudget"
+    },
+    "remaining_budget_after": {
+      "$ref": "#/$defs/AcquisitionBudget"
+    },
+    "stop_reason": {
+      "anyOf": [
+        {
+          "enum": [
+            "budget_exhausted",
+            "fixed_schedule_complete",
+            "no_new_candidates_under_policy",
+            "policy_stop",
+            "source_unavailable",
+            "run_failure",
+            "user_cancelled"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Stop Reason"
+    },
+    "configuration_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Configuration Hash",
+      "type": "string"
+    },
+    "decision_summary": {
+      "title": "Decision Summary",
+      "type": "string"
+    },
+    "cost_basis": {
+      "const": "measured_local_resources",
+      "default": "measured_local_resources",
+      "title": "Cost Basis",
+      "type": "string"
+    },
+    "paid_cost_usd": {
+      "const": 0,
+      "default": 0,
+      "title": "Paid Cost Usd",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "run_id",
+    "query_id",
+    "step_id",
+    "policy_id",
+    "action_type",
+    "input_reference_ids",
+    "returned_candidate_ids",
+    "new_candidate_count",
+    "started_at",
+    "ended_at",
+    "elapsed_seconds",
+    "search_calls",
+    "returned_candidates",
+    "remaining_budget_before",
+    "remaining_budget_after",
+    "configuration_hash",
+    "decision_summary"
+  ],
+  "title": "AcquisitionEvent",
+  "type": "object"
+}
