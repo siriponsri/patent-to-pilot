@@ -55,6 +55,18 @@ Results:
 - API dry-run receipt: `status=DRY_RUN_NOT_EXECUTED`, `network_attempts=0`, `provider_calls=0`, `paid_cost_usd=0`.
 - No live/provider API call was started.
 
+Additional post-commit checks:
+
+```text
+rtk proxy python -B scripts/healthtech/run_dossier.py examples/healthtech/synthetic-device/input.json results/healthtech/smoke-20261027-r2
+rtk proxy python -B scripts/run_provider_pilot.py --dry-run --spend-cap 0
+rtk proxy python -B scripts/dispatch_provider_pilot.py
+```
+
+- Fresh synthetic smoke: `ENGINEERING_DRAFT`, `candidates=2`, `provider_calls=0`, `paid_cost_usd=0`, `stop_reason=fixed_schedule_complete`.
+- Historical provider dry-run: `DRY_RUN_NOT_EXECUTABLE`, `run_spend_cap_usd=0.0`, no key read, `actual_cost=null`.
+- Historical dispatch preflight: `READY_AWAITING_FUNDING_AND_BUDGET_APPROVAL`, `live=NOT_RUN`.
+
 ## Rights, limits, and unresolved work
 
 - The openFDA records are regulatory source facts only. They do not establish clinical suitability, FTO, patent validity, or investment merit.
