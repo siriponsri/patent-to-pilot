@@ -17,7 +17,8 @@ from patent_to_pilot.providers.paired import (
     run_paired,
     validate_pair_plan,
 )
-from patent_to_pilot.providers.pilot import exclusive_run
+from patent_to_pilot.providers.pilot import dispatch, exclusive_run
+from patent_to_pilot.providers.pilot import plan_hash as pilot_plan_hash
 from patent_to_pilot.providers.pilot import PilotError
 
 
@@ -26,8 +27,43 @@ PLAN_PATH = ROOT / "configs/provider-paired-revalidation-plan.json"
 
 
 @pytest.fixture
-def plan():
+def published_plan():
     return json.loads(PLAN_PATH.read_text(encoding="utf-8"))
+
+
+@pytest.fixture
+def plan(published_plan, tmp_path):
+    """Behavior tests bind to an isolated authored journal, never live receipts.
+
+    The published plan/hash contract is tested separately without changing it.
+    Seed the historical shape through the real ledger with mock-only transport;
+    no journal bytes, credentials, or untracked data are imported.
+    """
+    pilot = json.loads((ROOT / "configs/provider-pilot-plan.json").read_text(encoding="utf-8"))
+    original = tmp_path / "synthetic-prior.sqlite3"
+    seed_approval = dict(approved=True, funding_confirmed=True, phase="smoke",
+        phase_attempts_max=2, phase_spend_cap_usd=0.6, plan_sha256=pilot_plan_hash(pilot),
+        owner_reference="SYNTHETIC UNIT TEST ONLY", state_path=str(original.resolve()))
+
+    def history_response(job, *, wrong=False, cost=0.0000132):
+        return MockHTTPResponse(200, {
+            "model": "openai/gpt-4.1-mini" if wrong else job["model"],
+            "provider": "Google AI Studio" if job["model"].startswith("google/") else "OpenAI",
+            "choices": [{"message": {"content": json.dumps({"ack": "ready", "case_id": job["id"]})}}],
+            "usage": {"prompt_tokens": 32, "completion_tokens": 25, "total_tokens": 57, "cost": cost},
+        })
+
+    dispatch(pilot, original, "smoke", factory([], lambda job: history_response(job, wrong=True)),
+        live=True, approval=seed_approval)
+    seeded = dispatch(pilot, original, "smoke", factory([], lambda job: history_response(job, cost=0.00006)),
+        live=True, approval=seed_approval)
+    assert seeded["status"] == "PHASE_FAILED" and seeded["attempts"] == 2
+    assert seeded["actual_debit_usd"] == pytest.approx(0.0000732)
+    result = copy.deepcopy(published_plan)
+    result["prior_history"]["path"] = str(original)
+    result["prior_history"]["sha256"] = hashlib.sha256(original.read_bytes()).hexdigest()
+    result["inactive_recovery_paths"] = [str(tmp_path / "absent-recovery.sqlite3")]
+    return result
 
 
 def approval(plan, state):
@@ -76,7 +112,8 @@ def factory(calls, callback=None, on_send=None):
     return make
 
 
-def test_plan_and_payloads_match_approved_contract(plan):
+def test_plan_and_payloads_match_approved_contract(published_plan):
+    plan = published_plan
     validate_pair_plan(plan)
     assert plan_hash(plan) == "36a54d85884094a3e4a04c2ca149e8c3eb2b568af194446718751965e08f1ab2"
     assert [body_hash(config_for(plan, job, live=True), request_for(plan, job)) for job in plan["jobs"]] == [

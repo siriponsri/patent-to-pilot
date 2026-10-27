@@ -27,4 +27,6 @@ python -B scripts/healthtech/export_schemas.py schemas/healthtech
 
 Live providers ต้องใช้ adapter/ledger/explicit env loader เดิมพร้อม authorization ที่ครอบคลุมรอบนั้น Runner HealthTech ไม่มี live option หากนำ provider มาเชื่อมภายหลัง ต้องเพิ่ม reservation/settlement ที่ทนต่อ failures และนับ controller/query/retry/rerank costs ครบก่อนเรียก paid action
 
-ตรวจ public release cohort จาก clean checkout ได้ด้วย python -B scripts/healthtech/verify_offline.py <fresh-output> ส่วน --suite all รวม historical provider tests ที่ต้องมี local endpoint/history receipts ซึ่งไม่เผยแพร่ การแยก cohort ไม่ข้าม tests เงียบ ๆ; บันทึก test_files จริงใน receipt ทุกครั้ง
+ตรวจ public release cohort จาก clean checkout ได้ด้วย `python -B scripts/healthtech/verify_offline.py <fresh-output>` ค่าเริ่มต้น `--suite public` ระบุ published test modules ทั้ง 17 modules รวม HealthTech และ provider budget/security regressions ครบ `--suite all` ใช้ pytest discovery ใน tests directory ของ checkout ปัจจุบัน ทั้งสองแบบควรให้ 262 tests ใน release นี้โดยไม่ใช้ local provider journals
+
+Paired-provider behavior tests สร้าง prior journal จำลองผ่าน fake transport ใน tmp ของแต่ละ test ส่วน frozen plan/payload hash test ยังตรวจ config ต้นฉบับโดยไม่แก้ ไม่มีการเผยแพร่ journal เดิม ดู [reproducibility audit](REPRODUCIBILITY_AUDIT.md) สำหรับเหตุผลที่ receipt ก่อนหน้าเลือก 185 เทียบกับ 262 และ correction ที่ทำ

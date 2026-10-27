@@ -76,5 +76,7 @@
   "paid_cost_usd": 0,
   "next": "HT-W04 official-format SciFact adapter or HT-W05/HT-W12 first real public device dossier",
   "verification": "verification.json",
-  "supplemental_data": "research/SUPPLEMENTAL_DATA.md"
+  "supplemental_data": "research/SUPPLEMENTAL_DATA.md",
+  "reproducibility_audit": "REPRODUCIBILITY_AUDIT.md",
+  "reproducibility_correction": "Public cohort now includes all 17 published modules; paired-provider behavior tests use temporary mock-seeded history, not a local live journal"
 }

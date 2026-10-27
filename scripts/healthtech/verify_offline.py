@@ -15,7 +15,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('output',type=Path,help='fresh directory for logs, JUnit and receipt')
     parser.add_argument('--suite',choices=['public','all'],default='public',
-        help='public: self-contained release regressions; all: also local historical-provider receipt tests')
+        help='public: explicit published regression modules; all: discover tests in the local tests directory')
     args=parser.parse_args()
     repo=Path(__file__).resolve().parents[2]
     out=args.output.resolve()
@@ -46,7 +46,8 @@ def main():
     public_tests=['test_core','test_g04_profiles','test_g08_pipeline','test_g09_g10_integration',
         'test_g10_offline_comparison','test_g11_adaptation','test_g13_readiness',
         'test_g13_stage_boundary','test_longrun_offline_v2','test_provider_adapter',
-        'test_release_budget_process','test_healthtech']
+        'test_release_budget_process','test_healthtech','test_provider_env_file',
+        'test_provider_identity','test_provider_paired','test_provider_pilot','test_provider_recovery']
     targets=['tests'] if args.suite=='all' else [f'tests/{name}.py' for name in public_tests]
     argv=['-q','-p','no:cacheprovider','--basetemp',str(out/'tmp'),'--junitxml',str(out/'tests.xml'),*targets]
     with (out/'pytest.log').open('w',encoding='utf-8') as log,contextlib.redirect_stdout(log),contextlib.redirect_stderr(log):

@@ -11,3 +11,5 @@ Next ready package: W04 SciFact local adapter using official annotation/evaluato
 Main Bridge study: BLOCKED_LOCAL on reuse rights/cohort reconciliation/split reproducibility. Source: pack audit at upstream `f3990a207949f25012d1070a08ac303e140387e6` plus PDF P01; it was not reexecuted here Resume after permitted-use terms and chosen cohort/group rules are recorded. Other work continues
 
 Remaining: real public cases, SciFact evaluator integration, fixed hybrid/reranker, adaptive policies/LLM controller, full resource accounting for live inference, no-code TH/EN UI, persistent edit history, scientific/user/commercial evidence and manuscript. Do not infer DONE from file names or passing engineering tests
+
+Audit follow-up: public regression selection now includes all published provider security modules; paired tests use mock-seeded tmp journals. Original 262-local/185-clean receipt remains a dated record. See `docs/healthtech/REPRODUCIBILITY_AUDIT.md` for corrected clean-checkout evidence. Research/product next actions above are unchanged.
