@@ -111,6 +111,12 @@ $testRun = Join-Path $env:TEMP ("ptp-checks-" + (Get-Date -Format "yyyyMMdd-HHmm
 
 These tests exercise engineering contracts. Passing them does not show that a generated research plan is feasible, safe, novel, or superior to a simpler method. Current test totals belong in dated execution receipts, not permanent badges.
 
+For a socket-denied release checkpoint from a clean, installed checkout, use
+`python -B scripts/verify_release_offline.py --source-commit <verified-commit> --output-dir <fresh-directory>`.
+It runs the documented offline commands and targeted regressions, denies credential-file reads,
+and returns a nonzero exit status on failure. Verify the Git ref separately; the script does not inspect `.git`.
+See the [dated reproducibility checkpoint](docs/handoff/RELEASE_REPRODUCIBILITY_20261027_R1_TH.md) for evidence and limits.
+
 ### Comparison reports
 
 [scripts/run_g10_offline_comparison.py](scripts/run_g10_offline_comparison.py) is the current comparison entry point. It accepts `--output-dir` and `--run-id`, defaults to a dated correctness/search run directory, and refuses the retained `results/development/g10-offline-comparison/` audit directory. Use a new output directory for each run and keep explicit source/output provenance.

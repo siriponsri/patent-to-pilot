@@ -1,20 +1,22 @@
 import hashlib
 import json
 from pathlib import Path
-import shutil
 from unittest.mock import patch
 
 import pytest
 
-from patent_to_pilot.evaluation.pilot_readiness import ROOT
+from patent_to_pilot.evaluation.pilot_readiness import ROOT, current_stage
 from patent_to_pilot.evaluation.stage_boundary import verify_bundle
 
 
 @pytest.fixture
 def bundle(tmp_path):
-    source = ROOT / "results/development/g13-preflight-20261027-r1/curator-staged-current-inputs/PTP-0001/S0"
+    # Build from tracked public fixtures, never from a prior local run receipt.
     target = tmp_path / "stages/PTP-0001/S0"
-    shutil.copytree(source, target)
+    target.mkdir(parents=True)
+    (target / "runtime-input.json").write_text(json.dumps(current_stage("PTP-0001", "S0")[0]), encoding="utf-8")
+    schema = ROOT / "methodology/evaluation/cases/PTP-0001/public-input/output-schema.json"
+    (target / "output-contract.json").write_bytes(schema.read_bytes())
     return target, tmp_path / "stages"
 
 

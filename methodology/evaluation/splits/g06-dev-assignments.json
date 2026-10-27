@@ -1,0 +1,74 @@
+{
+  "record": "G06-DEV-ASSIGNMENTS-001",
+  "status": "DEVELOPMENT_ONLY_NOT_FINAL_SPLIT_FREEZE",
+  "assignments": [
+    {
+      "case_id": "PTP-0001",
+      "split": "development",
+      "base_group": "PTP-0001",
+      "source_publication": "US20060086689A1",
+      "family_id": null,
+      "family_mapping_status": "UNVERIFIED",
+      "template_cluster": "role_scoped_material_toggle",
+      "organization_binding": "original case-local stipulations; no retroactive G04 binding asserted",
+      "all_variants_same_split": true
+    },
+    {
+      "case_id": "PTP-0002",
+      "split": "development",
+      "base_group": "PTP-0002",
+      "source_publication_crosscheck": "WO2001034119A2",
+      "family_id": "PLS:15973991",
+      "family_id_authority": "PLS release, not cross-database equivalence",
+      "template_cluster": "role_scoped_material_toggle",
+      "organization_binding": "PTP-FIC-ORG-B@1.0.0 context + explicit case-local stipulations",
+      "all_variants_same_split": true
+    },
+    {
+      "case_id": "PTP-0003",
+      "split": "development",
+      "base_group": "PTP-0003",
+      "source_publication_crosscheck": "WO2001021603A1",
+      "family_id": "PLS:23355646",
+      "family_id_authority": "PLS release, not cross-database equivalence",
+      "template_cluster": "count_definition_threshold",
+      "organization_binding": "PTP-FIC-ORG-C@1.0.0 context + explicit case-local stipulations",
+      "all_variants_same_split": true
+    }
+  ],
+  "conservative_dependence_components": [
+    {
+      "component_id": "DEV-ROLE-TEMPLATE",
+      "case_ids": [
+        "PTP-0001",
+        "PTP-0002"
+      ],
+      "reason": "Shared role-scoped material-toggle template; keep related variants together."
+    },
+    {
+      "component_id": "DEV-COUNT-TEMPLATE",
+      "case_ids": [
+        "PTP-0003"
+      ],
+      "reason": "Count-definition/threshold template; still exposed dev, not a held-out statistical sample."
+    }
+  ],
+  "validation": [],
+  "final_test": [],
+  "held_out_organizations": [],
+  "final_freeze_requires": [
+    "broader G05 independent task groups",
+    "versioned G04 organization profiles",
+    "G13 calibration/sample-size and cost information",
+    "source/family/template overlap checks for proposed final tasks",
+    "frozen model/budgets/endpoints before hidden final outcomes"
+  ],
+  "family_disjoint_final_claim": false,
+  "variants_are_independent_samples": false,
+  "available_fictional_profiles": [
+    "PTP-FIC-ORG-A@1.0.0",
+    "PTP-FIC-ORG-B@1.0.0",
+    "PTP-FIC-ORG-C@1.0.0"
+  ],
+  "organization_context_limit": "Profiles share NCATS source context; fictional policy differences are not independent real-company validation."
+}

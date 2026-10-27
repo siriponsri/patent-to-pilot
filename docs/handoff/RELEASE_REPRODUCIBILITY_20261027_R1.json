@@ -1,0 +1,106 @@
+{
+  "utc": "2026-10-27T05:34:12.299229+00:00",
+  "baseline_remote_commit": "66be5b2a086a273d0a9110cae01349e4c9d44cb3",
+  "baseline": "FAIL",
+  "baseline_tests": {
+    "tests": 137,
+    "failures": 4,
+    "errors": 16,
+    "skipped": 0
+  },
+  "candidate": "PASS_WITH_OVERLAY_NOT_YET_REMOTE_REPLAY",
+  "candidate_tests": {
+    "tests": 142,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "candidate_commands": [
+    {
+      "name": "readme-workflow",
+      "script": "scripts/run_g09_g10_workflow.py",
+      "arguments": [
+        "configs/g09-g10-example-input.json",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-24\\task-6\\clean-release-candidate-20261027-r5\\workflow"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "readme-comparison",
+      "script": "scripts/run_g10_offline_comparison.py",
+      "arguments": [
+        "--output-dir",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-24\\task-6\\clean-release-candidate-20261027-r5\\comparison",
+        "--run-id",
+        "clean-release-66be5b2"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "readme-provider-dryrun",
+      "script": "scripts/dispatch_provider_pilot.py",
+      "arguments": [],
+      "exit_code": 0
+    },
+    {
+      "name": "goal-preflight-v2",
+      "script": "scripts/prepare_long_run_offline.py",
+      "arguments": [
+        "--output-dir",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-24\\task-6\\clean-release-candidate-20261027-r5\\preflight-v2",
+        "--corpus-dir",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-24\\task-6\\clean-release-candidate-20261027-r5\\synthetic"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "g13-preflight-v1",
+      "script": "scripts/run_g13_offline_preflight.py",
+      "arguments": [
+        "--output-dir",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-24\\task-6\\clean-release-candidate-20261027-r5\\preflight-v1"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "stage-boundary",
+      "script": "scripts/verify_g13_stage_boundary.py",
+      "arguments": [
+        "--preflight",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-24\\task-6\\clean-release-candidate-20261027-r5\\preflight-v1\\preflight.json",
+        "--output",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-24\\task-6\\clean-release-candidate-20261027-r5\\stage-boundary.json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "source_changes": {
+    "README.md": "a79edcd3448078eec54ff3c349d48f06b1450c4b2d7da87b9eb6ac9b4bc6f6a6",
+    "docs/handoff/RELEASE_REPRODUCIBILITY_20261027_R1_TH.md": "39efe313ddeffa3efcc64bbac1495b00605e4d4b0575f5b0bad8cb2682bb42a2",
+    "scripts/verify_release_offline.py": "c968ba33eb0ed028d50cb390a01c73c4aa2492243029911df65b0d3487297c94",
+    "tests/test_release_budget_process.py": "ee50e76b9da7cf6a7b7f55bdf026e764a2ab2e14b7c72dd03f801f302856d76a",
+    "tests/test_g13_stage_boundary.py": "37ca136138e5ac999cc55373a501b24c0902338410e8b2efb2794473262c7164",
+    "methodology/evaluation/splits/g06-dev-assignments.json": "0d3fa638f83d91337dbe5908bc7b1cfef42692bcf1243a020bc1a833428bc168",
+    "methodology/evaluation/cases/PTP-0002/public-input/output-schema.json": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b",
+    "methodology/evaluation/cases/PTP-0003/public-input/output-schema.json": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+  },
+  "independently_domain_validated": false,
+  "api_cost_usd": 0,
+  "provider_calls": 0,
+  "socket_gate_attempts": 0,
+  "forbidden_file_read_attempts": 0,
+  "remote_repair_replay": "PENDING_AFTER_PUBLICATION",
+  "limits": [
+    "Python gates, not OS packet capture",
+    "Git metadata in test process blocked by ownership; no trust/ACL change",
+    "Dependency installation used official PyPI network; offline tests did not"
+  ],
+  "local_evidence": {
+    "results/development/release-reproducibility-20261027-r1/baseline/pytest.log": "257eb1c91c96c112aad7dcc4a14549fff5e77717342ad639f5fcb6e4dff70f22",
+    "results/development/release-reproducibility-20261027-r1/baseline/tests.xml": "3cbf4c5fcf8c9ccc6b38ed23e015df2bb5638756145da0d30fc6ca31f68d3b50",
+    "results/development/release-reproducibility-20261027-r1/baseline/verification.json": "365c2cbe148a98fd3a6ad008bd8bfbeb088978b9e5cf449182864d1e14111595",
+    "results/development/release-reproducibility-20261027-r1/candidate/pytest.log": "9716f0596d534886ad2452baed766040e33f719241021d2f5f900b80fa7da387",
+    "results/development/release-reproducibility-20261027-r1/candidate/tests.xml": "ef1d912030dbd48a991e369226892a05b7ad9513f0406e7088c609ed6ee84631",
+    "results/development/release-reproducibility-20261027-r1/candidate/verification.json": "c74b7776b93ad711286e1166fc23bceb17cf84eebae40a21d69dcad0214ec178"
+  }
+}
