@@ -1,0 +1,121 @@
+{
+  "record": "G05-G06-READINESS-20261027-V1",
+  "status": "DEVELOPMENT_CALIBRATION_ONLY_NOT_FINAL_FREEZE",
+  "cases": [
+    {
+      "case_id": "PTP-0001",
+      "split": "development",
+      "base_group": "PTP-0001",
+      "source_publication": "US20060086689A1",
+      "family_id": null,
+      "family_mapping_status": "UNVERIFIED",
+      "template_cluster": "role_scoped_material_toggle",
+      "organization_binding": "original case-local stipulations; no retroactive G04 binding asserted",
+      "all_variants_same_split": true
+    },
+    {
+      "case_id": "PTP-0002",
+      "split": "development",
+      "base_group": "PTP-0002",
+      "source_publication_crosscheck": "WO2001034119A2",
+      "family_id": "PLS:15973991",
+      "family_id_authority": "PLS release, not cross-database equivalence",
+      "template_cluster": "role_scoped_material_toggle",
+      "organization_binding": "PTP-FIC-ORG-B@1.0.0 context + explicit case-local stipulations",
+      "all_variants_same_split": true
+    },
+    {
+      "case_id": "PTP-0003",
+      "split": "development",
+      "base_group": "PTP-0003",
+      "source_publication_crosscheck": "WO2001021603A1",
+      "family_id": "PLS:23355646",
+      "family_id_authority": "PLS release, not cross-database equivalence",
+      "template_cluster": "count_definition_threshold",
+      "organization_binding": "PTP-FIC-ORG-C@1.0.0 context + explicit case-local stipulations",
+      "all_variants_same_split": true
+    }
+  ],
+  "dependence_components": [
+    {
+      "component_id": "DEV-ROLE-TEMPLATE",
+      "case_ids": [
+        "PTP-0001",
+        "PTP-0002"
+      ],
+      "reason": "Shared role-scoped material-toggle template; keep related variants together."
+    },
+    {
+      "component_id": "DEV-COUNT-TEMPLATE",
+      "case_ids": [
+        "PTP-0003"
+      ],
+      "reason": "Count-definition/threshold template; still exposed dev, not a held-out statistical sample."
+    }
+  ],
+  "new_independent_cases_added": 0,
+  "new_calibration_test_cases": 16,
+  "validation": [],
+  "final_test": [],
+  "held_out_organizations": [],
+  "raw_corpus_reparsed": false,
+  "datasets": [
+    {
+      "id": "PLS_EMNLP2022",
+      "revision": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+      "reported_verified_g03_rows": 1421,
+      "atazanavir_rows": 640,
+      "ritonavir_rows": 781,
+      "data_license": "CC-BY-4.0 patent_ls",
+      "code_license_separate": "AGPL-3.0 upstream",
+      "source": "docs/G03_DATA_ACQUISITION.md"
+    },
+    {
+      "id": "EnterpriseRAG-Bench",
+      "revision": "v1.0.0",
+      "raw_questions": 500,
+      "selected_questions": 39,
+      "selected_documents": 39,
+      "excluded_GitHub_questions": 21,
+      "full_benchmark": false,
+      "data_redistribution_rights": "NOT_ESTABLISHED_BY_CODE_MIT_SNAPSHOT",
+      "source": "docs/G03_DATA_ACQUISITION.md"
+    },
+    {
+      "id": "DAPFAM",
+      "metadata_query_families": 1247,
+      "metadata_target_families": 45336,
+      "available": "metadata, qrels, first-five API samples only",
+      "full_corpus_parsed": false,
+      "pharma_device_counts": null,
+      "license": "CC-BY-NC-SA-4.0",
+      "source": "methodology/datasets/metadata/DAPFAM_README.md"
+    }
+  ],
+  "scope_limits": [
+    "Current cases were already exposed to developers; never relabel them held-out",
+    "PTP-0001 family mapping unverified",
+    "PTP-0001 and PTP-0002 share role-toggle template component",
+    "Three fictional profiles share public NCATS context; no independent real-org validation",
+    "No expert scientific/clinical/legal gold",
+    "No new held-out source text or labels inspected"
+  ],
+  "packet_hashes": {
+    "methodology\\evaluation\\cases\\PTP-0001\\public-input\\S0.json": "2303b9b680787eb5ad8caf0233cc5537c621d95c3c384ea2e13b7a454a52120c",
+    "methodology\\evaluation\\cases\\PTP-0001\\public-input\\S1.json": "5cf75c7b22022b81e4e09e4be43c329c0f043d1d4ee8150022c183e5787bfc86",
+    "methodology\\evaluation\\cases\\PTP-0001\\public-input\\S2.json": "87627688730b7394fdaa117905d659ceb2332c6f93c311936031c8fed062000e",
+    "methodology\\evaluation\\cases\\PTP-0001\\public-input\\S3.json": "2e7e165a4ef956f7cefbbf058c419649b0a8378dd82fa957be4db8d93bdd7b3b",
+    "methodology\\evaluation\\cases\\PTP-0001\\public-input\\S4.json": "b1ebc78cd8b0a12da1d10a00d38d942ef425ff02d39f4e1b3090c429a3e88441",
+    "methodology\\evaluation\\cases\\PTP-0002\\public-input\\S0.json": "51247844fe23784ff0fe4fc6a16cdde8dc883c8cc6452f6ac8a633f2371d6465",
+    "methodology\\evaluation\\cases\\PTP-0002\\public-input\\S1.json": "e12e2b02a1ce9ff3db5518cbded27b683f29b0cbd9faa4f099a903ea103ab2f2",
+    "methodology\\evaluation\\cases\\PTP-0002\\public-input\\S2.json": "07f7da0de1d42dcc563d578f46b1f477c9077f0ab9f5fb1cbeb285a5a546daab",
+    "methodology\\evaluation\\cases\\PTP-0002\\public-input\\S3.json": "d4f65b8018c28146cd5d6b91ca529124f196e71e583bd46f49f4c38eca225541",
+    "methodology\\evaluation\\cases\\PTP-0002\\public-input\\S4.json": "8d98d1317a501f4ad4e6b4b4844ff5a3b2ded6be86d4e9dcd9d7fd1f9d4c7285",
+    "methodology\\evaluation\\cases\\PTP-0003\\public-input\\S0.json": "1a9fe3423a392701c1940114b07e21195fc71296688d88e076c5f097469b58b7",
+    "methodology\\evaluation\\cases\\PTP-0003\\public-input\\S1.json": "d2d51f743da3766dc7200f0cf96360d22ce300cd819186ed527d2bff6a3e579f",
+    "methodology\\evaluation\\cases\\PTP-0003\\public-input\\S2.json": "03ff52cde8539267f608566e452ac4c6429d5c5da5d6f48b4c12e4a1fddfcfe4",
+    "methodology\\evaluation\\cases\\PTP-0003\\public-input\\S3.json": "c01274d298c43fe9783b49df506220b1eae6ca2ef8dda8026faedc44ab4b83c5",
+    "methodology\\evaluation\\cases\\PTP-0003\\public-input\\S4.json": "b77b149d6526bd9071d2b7162a7020c9cf304c90c96d9ab5b7fb0df648fd3efc"
+  },
+  "read_utc": "2026-10-27T04:24:49.880383+00:00"
+}

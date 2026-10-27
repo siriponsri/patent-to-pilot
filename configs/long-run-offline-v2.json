@@ -1,0 +1,26 @@
+{
+  "version": "ptp-longrun-offline-20261027-v2",
+  "owner_reference": "Sentinel_724546b367448191abc0389ac1968fa8",
+  "incremental_cap_usd": 5,
+  "phase_caps_usd": {"calibration": 1, "subsequent": 4},
+  "data_classes": ["public", "synthetic"],
+  "models": {
+    "google/gemini-2.5-flash-lite": {"provider": "google-ai-studio", "historical_context_length": 1048576, "historical_input_per_million": "0.10", "historical_output_per_million": "0.40", "source": "https://openrouter.ai/api/v1/models/google/gemini-2.5-flash-lite/endpoints"},
+    "openai/gpt-4.1-mini": {"provider": "openai", "historical_context_length": 1047576, "historical_input_per_million": "0.40", "historical_output_per_million": "1.60", "source": "https://openrouter.ai/api/v1/models/openai/gpt-4.1-mini/endpoints"}
+  },
+  "calibration_candidate": {"case_id": "PTP-0001", "state_id": "S0", "method": "B1", "models_each": 1, "repetitions": 1, "max_output_tokens": 1500, "maximum_attempts_total": 2, "retries": 0, "purpose": "structured-output feasibility only; no comparative effectiveness inference"},
+  "subsequent_matrix": null,
+  "synthetic": {"seed": 20261027, "families": 24},
+  "technical_gates": {
+    "fresh_endpoint_and_price_verified": false,
+    "full_request_token_bound_verified": false,
+    "common_scientific_generation_adapter_verified": false,
+    "isolated_worker_verified": false,
+    "exact_payload_manifest_verified": false,
+    "shared_budget_all_dispatch_paths_verified": false,
+    "calibration_readiness_release": false
+  },
+  "live_enabled": false,
+  "historical_ledger_policy": "Never reset; new incremental envelope excludes prior spend, prior journals immutable",
+  "historical_debit_usd_source_reported": "0.0001464"
+}

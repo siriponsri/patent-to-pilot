@@ -1,0 +1,54 @@
+{
+  "plan_id": "G13-PREPARATION-20261027-V1",
+  "status": "PROPOSED_NOT_SCIENTIFICALLY_FROZEN",
+  "mode": "offline-preflight",
+  "live_enabled": false,
+  "case_ids": ["PTP-0001", "PTP-0002", "PTP-0003"],
+  "state_ids": ["S0", "S1", "S2", "S3", "S4"],
+  "split_rows": [
+    {"case_id":"PTP-0001","split":"development","already_exposed":true,"family_id":null,"source_publication":"US20060086689A1","template_cluster":"role_scoped_material_toggle","component_id":"DEV-ROLE-TEMPLATE","organization_id":"PTP-FIC-ORG-A"},
+    {"case_id":"PTP-0002","split":"development","already_exposed":true,"family_id":"PLS:15973991","source_publication":"WO2001034119A2","template_cluster":"role_scoped_material_toggle","component_id":"DEV-ROLE-TEMPLATE","organization_id":"PTP-FIC-ORG-B"},
+    {"case_id":"PTP-0003","split":"development","already_exposed":true,"family_id":"PLS:23355646","source_publication":"WO2001021603A1","template_cluster":"count_definition_threshold","component_id":"DEV-COUNT-TEMPLATE","organization_id":"PTP-FIC-ORG-C"}
+  ],
+  "validation": [],
+  "final_test": [],
+  "held_out_organizations": [],
+  "future_panel_requirements": [
+    "Unseen base source/family, template/brief component and permitted provenance before new variants",
+    "No final-test outputs or answer keys used for calibration",
+    "Family mapping must be verified before family-disjoint claims",
+    "Shared source/template components stay in one split",
+    "Cross-organization claims require held-out organizations, not merely fictional policy differences"
+  ],
+  "offline_methods": ["B0_rules_only","B1_full_regeneration","B2_direct_revision","B3_invalidation_same_generator","P_existing_workflow"],
+  "common_comparison_scope": {"case_id":"PTP-0001","state_ids":["S0","S1","S2"]},
+  "b4_status": "NOT_IMPLEMENTED_POOL_NOT_READY",
+  "later_model_calibration_proposal": {
+    "status":"NOT_APPROVED_NOT_IMPLEMENTED",
+    "purpose":"response binding and dev error/cost calibration; no algorithm superiority or generalization claim",
+    "case_id":"PTP-0001",
+    "state_ids":["S0","S1","S2"],
+    "provider_methods":["B1_full_regeneration","B2_direct_revision","B3_invalidation_same_generator"],
+    "local_diagnostics":["B0_rules_only","P_existing_workflow"],
+    "repetitions":1,
+    "models":[
+      {"model":"google/gemini-2.5-flash-lite","provider_only":"google-ai-studio","allow_fallbacks":false,"require_parameters":true,"fresh_endpoint_snapshot":"REQUIRED"},
+      {"model":"openai/gpt-4.1-mini","provider_only":"openai","allow_fallbacks":false,"require_parameters":true,"fresh_endpoint_snapshot":"RECHECK_AT_DISPATCH"}
+    ],
+    "max_dispatched_attempts":18,
+    "max_retries":0,
+    "input_token_upper_bound_target":4000,
+    "output_max_tokens":1500,
+    "input_bound_status":"NOT_VERIFIED_INCLUDE_SCHEMA_AND_FRAMING",
+    "hard_incremental_cap_usd_proposed":"1.00",
+    "budget_authorized":false,
+    "external_transmission_authorized":false,
+    "tools_web_reasoning_overrides":false,
+    "completion_not_guaranteed_by_cap":true
+  },
+  "primary_endpoints":["required-update recall","unchanged-field preservation","residual explicit violation rate"],
+  "secondary_endpoints":["required-update precision","unnecessary-change rate","source integrity","obsolete-source reuse","unknown and conflict handling","schema-valid handoffs","total cost and cost per valid revision","latency and failed attempts"],
+  "analysis":"paired per base component; report counts and NA; pilot is descriptive, not powered held-out inference",
+  "stop_rules":["any oracle or future-information leak","unknown_pending billing","reservation or cumulative cap breach","model/provider identity drift","missing token upper bound","schema/validation failures retained without automatic repair","source/code hash drift","unapproved payload or matrix"],
+  "acceptable_outcomes":["NO_ADVANTAGE","INCONCLUSIVE","NEGATIVE_RESULT","PROCEED_WITH_JUSTIFIED_SCOPE"]
+}

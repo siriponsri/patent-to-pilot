@@ -1,0 +1,11 @@
+{
+  "version": "deployment-proposal-20261027-v1",
+  "enabled": false,
+  "destination": null,
+  "public_access": false,
+  "authentication": "OWNER_DECISION_PENDING",
+  "hosting_budget_usd": null,
+  "required_before_enable": ["reviewed Claude branch integrated", "implemented backend/API", "auth and authorization E2E", "privacy and retention policy", "secret injection outside repo", "backup/restore", "hosting price and destination approved", "HTTPS and access testing", "release security review"],
+  "inference_default": "disabled",
+  "openrouter_budget_shared": true
+}
