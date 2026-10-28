@@ -102,7 +102,7 @@ G1 is not globally complete because Bridge rights/cohort/split evidence remains 
 
 ## Post-release revalidation
 
-The current release pointer was revalidated on 2026-10-28. The final pushed commit for this package is `209210c71497ff64806b524235df4dafdc4701fc`; the clean tracked suite and guarded dry-run were run from that exact commit.
+The current release pointer was revalidated on 2026-10-28. The clean tracked suite and guarded dry-run were run from the release candidate, and the final handoff verified that local `HEAD` and `git ls-remote origin refs/heads/main` matched exactly.
 
 - Focused HealthTech regressions: 40 passed.
 - Clean tracked worktree, `verify_offline.py <fresh-output> --suite all`: 275 tests, 0 failures, 0 errors, 0 skipped, 0 network attempts, 0 credential-file reads, source unchanged.
