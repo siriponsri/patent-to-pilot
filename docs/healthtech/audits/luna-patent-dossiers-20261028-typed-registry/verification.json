@@ -1,0 +1,42 @@
+{
+  "format": "ht-typed-registry-audit-v1",
+  "date": "2026-10-28",
+  "status": "PASS_ENGINEERING",
+  "candidate_commit": "aecc7f3",
+  "base_commit": "dfa219372fab908c38a9df51faa39402d64ef7a0",
+  "changed_files": [
+    "scripts/healthtech/fetch_public_device_cohort.py",
+    "tests/test_healthtech_repairs.py"
+  ],
+  "policy_bindings": {
+    "regulatory_record": "openfda-pma-records",
+    "independent_disclosure": "abbott-product-patent-disclosures",
+    "patent_document": "google-patents-pages"
+  },
+  "checks": [
+    {
+      "command": "rtk python -B -m pytest -q tests/test_healthtech_repairs.py",
+      "status": "PASS",
+      "result": "18 passed; one existing fitz deprecation warning"
+    },
+    {
+      "command": "rtk python -B -m compileall -q src scripts tests",
+      "status": "PASS",
+      "result": "no compile errors"
+    },
+    {
+      "command": "rtk git diff --check",
+      "status": "PASS",
+      "result": "no whitespace errors"
+    }
+  ],
+  "network_acquisition": "NOT_RUN",
+  "paid_provider_calls": 0,
+  "legacy_fixture_regeneration": "NOT_RUN",
+  "limitations": [
+    "The existing ignored Abbott cohort remains legacy-text-only until regenerated or explicitly migrated.",
+    "Typed policy IDs provide provenance binding and do not grant redistribution rights.",
+    "This is engineering evidence only; no semantic relevance, clinical, FTO, validity, investment, or generalization claim is established."
+  ],
+  "next_action": "When a fresh public cohort acquisition is authorized, run the builder and provenance verifier, then record a new typed-policy receipt before using the cohort as a typed rights-aware artifact."
+}
