@@ -12,6 +12,10 @@ from patent_to_pilot.evaluation.healthtech.local_retrieval import (
     PatentRecord,
     _OnnxTokenizer,
 )
+from patent_to_pilot.evaluation.healthtech.provenance import (
+    CohortProvenanceError,
+    verify_cohort_provenance,
+)
 from patent_to_pilot.healthtech.engine import DossierInput, export_markdown, run_dossier
 from patent_to_pilot.healthtech import history as history_module
 from patent_to_pilot.healthtech.abbott import (
@@ -423,3 +427,37 @@ def test_abbott_development_protocol_freezes_unjudged_distractors_and_groups():
     assert protocol["split"]["final_holdout"] == []
     assert protocol["groups"]["family_mapping"]["status"] == "UNKNOWN_NOT_ASSUMED"
     assert all(protocol["distractors_by_query"][query_id] for query_id in protocol["eligible_query_ids"])
+
+
+def test_development_cohorts_have_per_link_disclosure_provenance():
+    for relative, expected_pairs in (
+        ("results/healthtech/ht-public-cohort-20261028-r1", 61),
+        ("results/healthtech/ht-boston-watchman-20261028-r4", 13),
+    ):
+        report = verify_cohort_provenance(ROOT / relative)
+        assert report["status"] in {"PASS", "PASS_WITH_LEGACY_RIGHTS"}
+        assert report["counts"]["disclosed_pairs"] == expected_pairs
+        assert report["counts"]["covered_pairs"] == expected_pairs
+        assert report["counts"]["final_holdout_queries"] == 0
+
+    boston = verify_cohort_provenance(ROOT / "results/healthtech/ht-boston-watchman-20261028-r4")
+    assert boston["rights_binding"] == "TYPED_POLICY_ID"
+    abbott = verify_cohort_provenance(ROOT / "results/healthtech/ht-public-cohort-20261028-r1")
+    assert abbott["rights_binding"] == "LEGACY_TEXT_ONLY"
+
+
+def test_provenance_verifier_rejects_an_uncovered_reference_pair(tmp_path):
+    source = ROOT / "results/healthtech/ht-boston-watchman-20261028-r4"
+    cohort = tmp_path / "cohort"
+    cohort.mkdir()
+    for relative in ("manifest.json", "runtime.json", "source_registry.json", "split_manifest.json", "distractors.json"):
+        destination = cohort / relative
+        destination.write_text((source / relative).read_text(encoding="utf-8"), encoding="utf-8")
+    references_path = source / "evaluator/references.json"
+    references = json.loads(references_path.read_text(encoding="utf-8"))
+    references["disclosure_evidence"][0]["patent_id_canonical"] = references["disclosure_evidence"][0]["patent_id_canonical"][1:]
+    evaluator_dir = cohort / "evaluator"
+    evaluator_dir.mkdir()
+    (evaluator_dir / "references.json").write_text(json.dumps(references), encoding="utf-8")
+    with pytest.raises(CohortProvenanceError, match="without disclosure evidence"):
+        verify_cohort_provenance(cohort)

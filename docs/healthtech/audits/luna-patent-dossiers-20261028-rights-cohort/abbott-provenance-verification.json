@@ -1,0 +1,38 @@
+{
+  "cohort_status": "PUBLIC_DEVICE_DISCLOSURE_COHORT_ACQUIRED",
+  "counts": {
+    "covered_pairs": 61,
+    "disclosed_pairs": 61,
+    "disclosure_sources": 1,
+    "distractor_pairs": 0,
+    "eligible_queries": 3,
+    "evidence_rows": 61,
+    "final_holdout_queries": 0,
+    "runtime_devices": 3,
+    "runtime_patents": 41
+  },
+  "disclosure_source_ids": [
+    "abbott-product-patent-disclosures"
+  ],
+  "format": "ht-cohort-provenance-verification-v1",
+  "hashes": {
+    "manifest": "aaa88e10162d208b9b707f32f2f4f0095d28541d0acb9997b338c2331b6c581f",
+    "references": "a0f15c9accbe374ce9e918c09398869d8937096cd6f6809f94ece4f7e3fcd7c2",
+    "runtime": "6414ae59d79972fbffbf5557d378156a2c5b6daae7ff061ce3121515e58a5cad",
+    "source_registry": "94c5dcebf1083d4b010dc741e7cb66dead9f9646dae1b408b5f413d25fa15a17",
+    "split": "884302a3cb813e7ef1fa34d2afe29ec5b8c1524dda9f8fd104e9e7df8f30fa57"
+  },
+  "legacy_rights_source_ids": [
+    "abbott-product-patent-disclosures"
+  ],
+  "limitations": [
+    "This verifies structural source-backed disclosure coverage only.",
+    "Product-level disclosure is not an independent semantic relevance judgment.",
+    "Unlisted pairs remain unjudged and are not recoded as negatives.",
+    "Recorded rights policies govern use; this report does not grant redistribution rights."
+  ],
+  "query_ids_hash": "ff801929637097be8e3949d749a6787555f0fa3e5191d183df6ddc281b76fd13",
+  "rights_binding": "LEGACY_TEXT_ONLY",
+  "rights_policy_ids": [],
+  "status": "PASS_WITH_LEGACY_RIGHTS"
+}
