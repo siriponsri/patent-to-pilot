@@ -36,8 +36,9 @@
       "id": "full_offline_suite",
       "status": "REUSED_PRIOR_PASS",
       "outcome": "281 tests; 0 failures; 0 errors; 0 skips; 0 network attempts; 0 credential reads; 0 provider calls; paid_cost_usd=0",
-      "evidence": "docs/healthtech/evidence/luna-g1-g3-20261028/revalidation-203003.json",
-      "reason": "This handoff changes documentation only; the current code path is unchanged from the recorded full-suite run."
+      "evidence": "docs/healthtech/evidence/luna-g1-g3-20261028/current-head-210230.json",
+      "current_head": "62e96ae9649da842ddead2c1d80e82658b054634",
+      "reason": "This handoff changes documentation only; the current-head full-suite run confirms the unchanged backend code path."
     },
     {
       "id": "public_case_backend_walkthrough",

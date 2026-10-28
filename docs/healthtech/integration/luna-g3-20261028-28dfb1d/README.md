@@ -39,7 +39,7 @@ The current public cases are `K121849`, `K163345`, and `K190167`. Each has one p
 ## Verification evidence
 
 - Backend repair tests: `tests/test_healthtech_repairs.py::test_history_rejects_stale_parent_and_export_includes_user_edits` and `tests/test_healthtech_repairs.py::test_history_two_simultaneous_writers_have_one_commit_and_one_conflict`.
-- Current revalidation: [`LUNA_G1_G3_REVALIDATION_20261028-203003.md`](../../LUNA_G1_G3_REVALIDATION_20261028-203003.md) and [`revalidation-203003.json`](../../evidence/luna-g1-g3-20261028/revalidation-203003.json).
+- Current-head revalidation: [`LUNA_G1_G3_CURRENT_HEAD_20261028-210230.md`](../../LUNA_G1_G3_CURRENT_HEAD_20261028-210230.md) and [`current-head-210230.json`](../../evidence/luna-g1-g3-20261028/current-head-210230.json).
 - The current offline suite is recorded at 281 tests with zero failures, errors, and skips; network attempts, credential reads, provider calls, and paid cost are all zero. This is engineering evidence only.
 - The actual no-code UI walkthrough remains `NOT_RUN / PENDING_CLAUDE_PAUSED`; do not promote this handoff to full HT-G3 completion.
 
