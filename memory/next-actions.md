@@ -1,17 +1,17 @@
 # Next actions — HealthTech
 
-Record: HT-NEXT-001 · Scope: research/patent-to-pilot · Date: 2026-10-27 · Status: OBSERVED_LOCAL / DECISION
+Record: HT-NEXT-002 · Scope: research/patent-to-pilot · Date: 2026-10-28 · Status: OBSERVED_LOCAL / DECISION
 
-Supersedes NEXT-004 as the current work order. Owner supplied the HealthTech Pack and authorized migration, recoverable cleanup and commit/push to main. Paid model runs/deployment remain outside this task
+Supersedes HT-NEXT-001 as the current work order. Owner supplied the HealthTech Pack and authorized migration, recoverable cleanup and commit/push to main. Paid model runs/deployment remain outside this task
 
-Implemented: HT-W01 alignment, HT-W02 contracts/schema, HT-W06 known-link evaluator/source integrity, local 510(k) snapshot adapter, offline lexical/fixed-query synthetic dossier runner. These are engineering slices, not completed HT-G2/G3 or a scientific benchmark See [progress](../docs/healthtech/progress.json) and [verification](../docs/healthtech/verification.json)
+Implemented package: strict SciFact input validation plus pinned official differential (3 valid cases), public FDA/Abbott/Google-Patents development cohort, frozen HT-G1/G2 protocol, HT-T1 real-data denominator/ID/group validation, and real HT-B0a/B0b/B1/B2/B3 runs with raw rankings and resource receipts. See [G1/G2 receipt](../docs/healthtech/G1_G2_RECEIPT.md)
 
-Completed package: local SciFact reader/evaluator with runtime/gold split, bounded openFDA 510(k) inputs for K190167/K163345/K121849, three fresh bilingual public-source dossier drafts, local source/history inspection, and an HT-specific API dry-run. Guarded public and all suites both pass 269/269 with zero network attempts, credential-file reads, provider calls, and paid cost. See [pre-live receipt](../docs/healthtech/PRELIVE_OFFLINE_RECEIPT_2026-10-27.md). These are engineering outputs, not scientific benchmark or publication results
+Verification: the clean tracked candidate at `679ff5a` passes 275/275 tests with zero failures/errors/skips, zero network attempts, zero credential-file reads, zero provider calls and zero paid cost; synthetic smoke and the guarded HT API dry-run also pass their declared boundaries. These are development outputs, not final scientific generalization or publication results
 
-Next ready package: W05/W12 rights-cleared patent corpus for one real public named device, with frozen cohort/provenance rules and disclosed-link evidence. Keep W04 official evaluator integration as a separate engineering package. Do not reuse the synthetic fixture as a real device result
+Next ready package: resolve the Bridge rights/cohort/split blocker or obtain a licensed replacement with per-link disclosure provenance. Keep the three-device Abbott branch development-only; do not treat product-level disclosure as component-level expert gold or reuse the synthetic fixture as a real device result
 
-Main Bridge study: BLOCKED_LOCAL on reuse rights/cohort reconciliation/split reproducibility. Source: pack audit at upstream `f3990a207949f25012d1070a08ac303e140387e6` plus PDF P01; it was not reexecuted here Resume after permitted-use terms and chosen cohort/group rules are recorded. Other work continues
+Main Bridge study: `BLOCKED_LOCAL` on reuse rights/cohort reconciliation/split reproducibility. Source: pinned upstream `f3990a207949f25012d1070a08ac303e140387e6`, README SHA-256 recorded in `BRIDGE_RIGHTS_COHORT.md`, and supplied pack audit. Other work can continue without substituting the Abbott branch for Bridge gold
 
-Remaining: rights-cleared patent corpus and disclosed-link cases, official SciFact evaluator integration, fixed hybrid/reranker validation, adaptive policies/LLM controller, full resource accounting for live inference, no-code TH/EN UI, persistent service-backed edit history, scientific/user/commercial evidence and manuscript. Do not infer DONE from file names or passing engineering tests
+Remaining: Bridge or equivalent rights-cleared main corpus, final holdout/generalization design, broader independent groups, live-provider B4 (not authorized), clinical/FTO analysis, deployment, UI/service work, customer validation and manuscript. Do not infer COMPLETE from file names or passing development tests
 
 Audit follow-up: public regression selection now includes all published provider security modules; paired tests use mock-seeded tmp journals. Original 262-local/185-clean receipt remains a dated record. See `docs/healthtech/REPRODUCIBILITY_AUDIT.md` for corrected clean-checkout evidence. Research/product next actions above are unchanged.

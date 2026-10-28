@@ -3,6 +3,13 @@
   "track": "healthtech",
   "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
   "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
+  "g1_g2_run_start_commit": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
+  "latest_release_candidate": "679ff5a",
+  "root_statuses": {
+    "HT-G1": "PARTIAL",
+    "HT-G2": "PARTIAL",
+    "main_bridge_branch": "BLOCKED_LOCAL"
+  },
   "governing_documents": [
     "GOAL.md",
     "PLAN.md",
@@ -22,32 +29,47 @@
     {
       "id": "HT-W03",
       "status": "BLOCKED_LOCAL_FOR_STUDY",
-      "evidence": "supplied Bridge release audit; rights/cohort/splits unresolved; no local dataset audit repeated"
+      "evidence": "docs/healthtech/research/BRIDGE_RIGHTS_COHORT.md; pinned README hash and supplied audit reconciled; no Bridge payload downloaded"
     },
     {
       "id": "HT-W04",
-      "status": "IMPLEMENTED_ENGINEERING",
-      "evidence": "local SciFact reader/evaluator with runtime/gold split, format checks and official-style metrics; official evaluator integration and benchmark remain open"
+      "status": "IMPLEMENTED_PARITY_AND_STRICT_VALIDATION",
+      "evidence": "strict runtime/gold split, malformed-input guards, pinned official differential PASS on 3 valid cases, and release hash manifest"
     },
     {
       "id": "HT-W05",
-      "status": "IMPLEMENTED_ENGINEERING_ONLY",
-      "evidence": "bounded allowlisted openFDA 510(k) snapshot for three public records with provenance and rights notes; no live ingestion/PMA/UDI/recall adapter"
+      "status": "IMPLEMENTED_PUBLIC_COHORT_ACQUISITION",
+      "evidence": "bounded openFDA PMA acquisition for P100009/P230007/P240042 plus source registry, hashes, raw/normalized separation and rights notes"
     },
     {
       "id": "HT-W06",
-      "status": "IMPLEMENTED_ENGINEERING",
-      "evidence": "known-link evaluator, failure denominator, canonical dedup and shared-reference groups; not a frozen final protocol"
+      "status": "IMPLEMENTED_AND_REAL_DATA_VALIDATED",
+      "evidence": "HT-T1 denominator/ID/group validation over 3 queries, 41 canonical IDs and 61 references; failures remain in denominator"
+    },
+    {
+      "id": "HT-W07",
+      "status": "FROZEN_DEVELOPMENT_PROTOCOL",
+      "evidence": "configs/healthtech/g1_g2_public_cohort_protocol.json and docs/healthtech/research/G1_G2_PROTOCOL.md; exact groups, split, K and leakage rules"
     },
     {
       "id": "HT-W08",
-      "status": "ENGINEERING_BASELINES_ONLY",
-      "evidence": "offline HT-B0a/HT-B0b/HT-B1/HT-B2/HT-B3 controls with explicit labels; no real-corpus baseline result"
+      "status": "REAL_DEVELOPMENT_RUN",
+      "evidence": "HT-B0a company control and HT-B0b BM25 ran on the shared 3-device/41-patent public cohort with raw rankings and resources"
+    },
+    {
+      "id": "HT-W09",
+      "status": "REAL_DEVELOPMENT_RUN",
+      "evidence": "HT-B1 dense+fixed fusion+local reranker and HT-B2 fixed multi-query ran with pinned ONNX revisions and rerank resource accounting"
     },
     {
       "id": "HT-W10",
-      "status": "IMPLEMENTED_ENGINEERING_ONLY",
-      "evidence": "fixed search action events, local count caps and HT-specific API dry-run seam; no adaptive/LLM controller or paid action"
+      "status": "IMPLEMENTED_ENGINEERING_AND_OFFLINE_RUN",
+      "evidence": "shared local retrieval/action accounting, raw attempt logs, candidate/rerank/token/time units, zero provider calls"
+    },
+    {
+      "id": "HT-W11",
+      "status": "REAL_DEVELOPMENT_HEURISTIC",
+      "evidence": "HT-B3 observable continuation/stop heuristic ran under the same frozen representations and caps; not a final G4 adaptive comparison"
     },
     {
       "id": "HT-W12",
@@ -70,12 +92,13 @@
       "evidence": "27 verified paper identities, methods/dataset/evaluator reading notes; no manuscript results"
     }
   ],
-  "scientific_healthtech_runs": "NOT_RUN",
+  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN",
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
-  "next": "HT-W05/HT-W12 rights-cleared patent corpus for one named public device and disclosed-link dossier; keep HT-W04 official evaluator integration separate",
-  "verification": "verification.json",
+  "next": "Resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance; keep this Abbott branch development-only and do not tune a final holdout",
+  "verification": "docs/healthtech/G1_G2_RECEIPT.md",
+  "closeout_receipt": "docs/healthtech/G1_G2_RECEIPT.md",
   "supplemental_data": "research/SUPPLEMENTAL_DATA.md",
   "reproducibility_audit": "REPRODUCIBILITY_AUDIT.md",
   "reproducibility_correction": "Public cohort now includes all 17 published modules; paired-provider behavior tests use temporary mock-seeded history, not a local live journal"
