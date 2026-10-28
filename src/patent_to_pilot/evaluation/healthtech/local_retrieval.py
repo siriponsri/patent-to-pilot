@@ -336,6 +336,7 @@ class SharedRetriever:
                 "fusion_candidates": len(fused_ids),
                 "rerank_pairs": len(fused_ids),
                 "query_calls": 1,
+                "returned_candidates": len(fused_ids),
                 "embedding_query_tokens": dense_tokens,
                 "rerank_tokens": rerank_tokens,
                 "wall_seconds": perf_counter() - started,
