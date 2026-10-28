@@ -64,7 +64,7 @@
     {
       "id": "HT-W10",
       "status": "REPAIRED_AND_OFFLINE_VERIFIED",
-      "evidence": "Native masks/type IDs, durable attempt preservation, fixed-prefix controls, resource/error diagnostics and 280-test offline verification; zero provider calls"
+      "evidence": "Native masks/type IDs, durable attempt preservation, fixed-prefix controls, resource/error diagnostics and 281-test offline verification in regression-g3; zero provider calls"
     },
     {
       "id": "HT-W11",
@@ -74,7 +74,7 @@
     {
       "id": "HT-W12",
       "status": "BACKEND_COMPLETE_UI_PENDING",
-      "evidence": "Typed dossier/history backend with exclusive version creation, expected-parent checks, selected-version JSON/EN/TH export, exact-source viewer and user-edit preservation; Claude UX/UI remains paused"
+      "evidence": "Typed dossier/history backend with exclusive version creation, expected-parent checks, simultaneous-writer regression, selected-version JSON/EN/TH export, exact-source viewer, user-edit preservation, and bilingual no-code journey contract; Claude UX/UI remains paused"
     },
     {
       "id": "HT-W13",

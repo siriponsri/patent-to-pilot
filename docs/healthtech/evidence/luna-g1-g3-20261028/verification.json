@@ -27,13 +27,13 @@
     },
     "G3_history_export": {
       "status": "PASS",
-      "details": "Exclusive version creation, expected-parent checks, selected-version export, and user-edit preservation are implemented and tested."
+      "details": "Exclusive version creation, expected-parent checks, simultaneous-writer conflict detection, selected-version export, user-edit preservation, and a bilingual no-code journey contract are implemented and tested."
     }
   },
   "tests": {
     "focused_repairs": {
       "command": "rtk proxy python -B -m pytest -p no:cacheprovider tests/test_healthtech_repairs.py",
-      "passed": 5,
+      "passed": 6,
       "failed": 0,
       "skipped": 0
     },
@@ -44,8 +44,8 @@
       "skipped": 0
     },
     "full_offline_suite": {
-      "artifact": "results/healthtech/luna-g1-g3-20261028-200041/regression-final/verification.json",
-      "passed": 280,
+      "artifact": "results/healthtech/luna-g1-g3-20261028-200041/regression-g3/verification.json",
+      "passed": 281,
       "failures": 0,
       "errors": 0,
       "skipped": 0,
@@ -102,6 +102,19 @@
     "source_view": "synthetic-device-record#device_name",
     "user_edits_present_in_json_and_en_th_markdown": true,
     "ui_status": "Claude UX branch paused; no frontend changes made"
+  },
+  "G3_no_code_journey": {
+    "artifact": "docs/healthtech/G3_NO_CODE_JOURNEY_TH_EN.md",
+    "status": "BACKEND_INTEGRATION_READY_UI_PENDING",
+    "public_case_count": 3,
+    "public_cases": ["K121849", "K163345", "K190167"],
+    "each_case_sources": 1,
+    "each_case_evidence_items": 7,
+    "each_case_candidates": 0,
+    "each_case_unresolved_items": 3,
+    "each_case_next_information_requests": 3,
+    "bilingual": ["en", "th"],
+    "frontend_status": "NOT_IMPLEMENTED_IN_LUNA_SCOPE"
   },
   "api_boundary": {
     "status": "DRY_RUN_NOT_EXECUTED",

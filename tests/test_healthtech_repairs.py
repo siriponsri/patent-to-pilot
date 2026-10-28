@@ -2,7 +2,9 @@ from __future__ import annotations
 
 from pathlib import Path
 from types import SimpleNamespace
+from concurrent.futures import ThreadPoolExecutor
 import json
+import threading
 
 import pytest
 
@@ -14,6 +16,7 @@ from patent_to_pilot.healthtech.engine import DossierInput, export_markdown, run
 from patent_to_pilot.healthtech.history import (
     DossierHistoryError,
     append_user_edits,
+    load_versions,
     save_version,
 )
 from scripts.healthtech import run_real_baselines as baselines
@@ -152,3 +155,26 @@ def test_history_rejects_stale_parent_and_export_includes_user_edits(tmp_path):
     markdown = export_markdown(edited, language="en")
     assert "## User edits" in markdown
     assert "keep this in export" in markdown
+
+
+def test_history_two_simultaneous_writers_have_one_commit_and_one_conflict(tmp_path):
+    example = json.loads((ROOT / "examples/healthtech/synthetic-device/input.json").read_text(encoding="utf-8"))
+    dossier, _, _ = run_dossier(DossierInput.model_validate(example), run_id="concurrent-history", code_commit="test")
+    history = tmp_path / "history"
+    save_version(history, dossier)
+    barrier = threading.Barrier(2)
+
+    def writer(key: str):
+        barrier.wait()
+        try:
+            version = append_user_edits(history, {key: f"pending-{key}"}, expected_parent_version=1)
+            return {"status": "committed", "key": key, "version": version.version}
+        except DossierHistoryError as exc:
+            return {"status": "conflict", "key": key, "pending_text": f"pending-{key}", "error": str(exc)}
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        results = list(pool.map(writer, ["writer-a", "writer-b"]))
+
+    assert sorted(item["status"] for item in results) == ["committed", "conflict"]
+    assert [item.version for item in load_versions(history)] == [1, 2]
+    assert any(item.get("pending_text") == "pending-writer-a" for item in results) or any(item.get("pending_text") == "pending-writer-b" for item in results)
