@@ -1,0 +1,72 @@
+{
+  "run_id": "luna-g3-integration-20261028-28dfb1d",
+  "date": "2026-10-28",
+  "tested_code_head": "28dfb1dcaf0f4794d74ba80c2fea09b0108f3f86",
+  "status": "PASS_BACKEND_HANDOFF_UI_PENDING",
+  "scope": "Luna-owned backend integration handoff; no frontend or Claude worktree mutation",
+  "claude_worktree": {
+    "path": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-claude-ux-20261028",
+    "branch": "claude/healthtech-ux-local-20261028",
+    "head": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
+    "status": "paused_untouched"
+  },
+  "checks": [
+    {
+      "id": "targeted_repair_history_export",
+      "status": "PASS",
+      "command": "rtk proxy python -B -m pytest -p no:cacheprovider tests/test_healthtech_repairs.py -q",
+      "outcome": "6 passed; 0 failed; 0 skipped",
+      "covers": [
+        "native tokenizer repair",
+        "durable later-action failure preservation",
+        "fixed-query prefix parity",
+        "stale-parent rejection",
+        "user_edits export",
+        "simultaneous-writer conflict"
+      ]
+    },
+    {
+      "id": "adapter_contract_json",
+      "status": "PASS",
+      "command": "Python JSON parse plus exact fixture SHA-256 comparison",
+      "outcome": "adapter-contract.json parsed; 3 of 3 tracked fixture/schema hashes matched",
+      "artifact": "docs/healthtech/integration/luna-g3-20261028-28dfb1d/adapter-contract.json"
+    },
+    {
+      "id": "full_offline_suite",
+      "status": "REUSED_PRIOR_PASS",
+      "outcome": "281 tests; 0 failures; 0 errors; 0 skips; 0 network attempts; 0 credential reads; 0 provider calls; paid_cost_usd=0",
+      "evidence": "docs/healthtech/evidence/luna-g1-g3-20261028/revalidation-203003.json",
+      "reason": "This handoff changes documentation only; the current code path is unchanged from the recorded full-suite run."
+    },
+    {
+      "id": "public_case_backend_walkthrough",
+      "status": "PASS_BACKEND_ONLY",
+      "cases": ["K121849", "K163345", "K190167"],
+      "outcome": "Each case has 1 source, 7 evidence items, 0 candidates, 3 unresolved items, 3 next requests, version 1->2 history, source view, and TH/EN selected-version export.",
+      "evidence": "results/healthtech/luna-g1-g3-20261028-203003-revalidation/g3-three-public-cases"
+    }
+  ],
+  "implemented_capabilities": [
+    "closed DossierInput and DossierVersion validation",
+    "pinned source inspection for exact top-level fields",
+    "exclusive local version creation",
+    "expected-parent conflict detection",
+    "selected-version JSON/English/Thai export with separate user_edits",
+    "backend adapter contract and capability delta"
+  ],
+  "not_run_or_unavailable": [
+    "actual no-code browser UI walkthrough",
+    "browser-local transaction and two-tab persistence checks",
+    "HTTP job/history service",
+    "live provider or paid inference",
+    "deployment, outreach, credential/.env/session reads",
+    "Bridge rights/cohort/split resolution and final holdout",
+    "clinical, FTO, patent-validity, investment, publication, or production-readiness evaluation"
+  ],
+  "claim_limits": [
+    "The public cases are regulatory facts-only dossiers with empty patent input pools.",
+    "Unlisted device-patent pairs remain unjudged, never negatives.",
+    "Backend PASS does not imply HT-G3 COMPLETE while UI integration is pending."
+  ]
+}

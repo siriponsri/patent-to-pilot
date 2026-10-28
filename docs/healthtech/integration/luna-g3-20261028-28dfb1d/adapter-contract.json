@@ -1,0 +1,220 @@
+{
+  "handoff_id": "luna-g3-20261028-28dfb1d",
+  "date": "2026-10-28",
+  "tested_code_head": "28dfb1dcaf0f4794d74ba80c2fea09b0108f3f86",
+  "status": "BACKEND_COMPLETE_UI_PENDING",
+  "ownership": {
+    "luna_paths": [
+      "src/patent_to_pilot/healthtech/**",
+      "src/patent_to_pilot/evaluation/healthtech/**",
+      "scripts/healthtech/**",
+      "schemas/healthtech/**",
+      "docs/healthtech/integration/luna-g3-20261028-28dfb1d/**"
+    ],
+    "claude_worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-claude-ux-20261028",
+    "claude_branch": "claude/healthtech-ux-local-20261028",
+    "claude_head": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
+    "claude_status": "paused_untouched"
+  },
+  "actual_interfaces": [
+    {
+      "name": "DossierInput.model_validate_json",
+      "source": "src/patent_to_pilot/healthtech/engine.py",
+      "kind": "closed_input_validation",
+      "guarantees": [
+        "rejects extra fields through the closed contract",
+        "rejects evaluator-only runtime sources",
+        "rejects synthetic sources in public cases",
+        "rejects sources newer than the evidence cutoff",
+        "rejects duplicate canonical patent documents"
+      ],
+      "limitation": "Python validation surface; no browser adapter is implemented here"
+    },
+    {
+      "name": "run_dossier",
+      "source": "src/patent_to_pilot/healthtech/engine.py",
+      "signature": "run_dossier(data, run_id, code_commit) -> (DossierVersion, AcquisitionEvent[], RunManifest)",
+      "kind": "synchronous_local_run",
+      "guarantees": [
+        "declared HT-B0a/HT-B0b/HT-B1/HT-B2/HT-B3 policy is recorded",
+        "events and manifest preserve bounded local resource counts",
+        "provider_calls and paid_cost_usd remain zero in this offline surface"
+      ],
+      "limitation": "not an HTTP job service; no live provider, cancellation, resume, or background progress endpoint"
+    },
+    {
+      "name": "save_version",
+      "source": "src/patent_to_pilot/healthtech/history.py",
+      "signature": "save_version(history_dir, dossier) -> Path",
+      "kind": "exclusive_file_commit",
+      "guarantees": [
+        "uses exclusive file creation so one same-version writer wins",
+        "flushes and fsyncs the JSON payload",
+        "removes a partial destination after a write exception"
+      ],
+      "limitation": "local file history only; no server authorization, idempotency key, or multi-user merge"
+    },
+    {
+      "name": "append_user_edits",
+      "source": "src/patent_to_pilot/healthtech/history.py",
+      "signature": "append_user_edits(history_dir, edits, expected_parent_version=None) -> DossierVersion",
+      "kind": "expected_parent_versioned_edit",
+      "guarantees": [
+        "rejects a stale expected parent",
+        "creates a contiguous next dossier version",
+        "preserves prior user edits in the next version"
+      ],
+      "limitation": "the caller must preserve rejected text as base/theirs/yours recovery; conflicts are not automatically merged"
+    },
+    {
+      "name": "source_view",
+      "source": "src/patent_to_pilot/healthtech/history.py",
+      "signature": "source_view(dossier, source_id, field=None) -> dict",
+      "kind": "pinned_source_inspection",
+      "guarantees": [
+        "returns source ID/type/URI/revision/jurisdiction/date/hash",
+        "preserves the synthetic flag",
+        "returns an exact requested top-level structured field"
+      ],
+      "limitation": "the CLI viewer is not a general nested locator renderer and never fetches links"
+    },
+    {
+      "name": "manage_dossier_history.py export",
+      "source": "scripts/healthtech/manage_dossier_history.py",
+      "signature": "export history_dir output_dir --version N",
+      "kind": "selected_version_export",
+      "guarantees": [
+        "writes selected-version dossier.json",
+        "writes English and Thai Markdown",
+        "keeps user_edits in JSON and a separate Markdown section"
+      ],
+      "limitation": "no PDF/DOCX export and no browser download adapter"
+    }
+  ],
+  "capability_delta": [
+    {
+      "id": "CAP-BE-01",
+      "name": "closed_dossier_contract",
+      "state": "implemented_backend",
+      "basis": "DossierVersion and DossierInput are frozen closed Pydantic contracts with source/reference validation"
+    },
+    {
+      "id": "CAP-BE-02",
+      "name": "pinned_source_inspection",
+      "state": "implemented_backend",
+      "basis": "source_view returns source identity, revision, hash, date, jurisdiction, and requested top-level field"
+    },
+    {
+      "id": "CAP-BE-03",
+      "name": "local_expected_parent_history",
+      "state": "implemented_backend_tested",
+      "basis": "exclusive version creation plus expected-parent validation and simultaneous-writer regression"
+    },
+    {
+      "id": "CAP-BE-04",
+      "name": "edited_json_en_th_export",
+      "state": "implemented_backend_tested",
+      "basis": "selected version export preserves version, source basis, unresolved items, requests, and separate user_edits"
+    },
+    {
+      "id": "CAP-BE-05",
+      "name": "three_public_fact_dossiers",
+      "state": "verified_backend_only",
+      "basis": "K121849, K163345, and K190167 walkthroughs; each has an empty patent input pool"
+    },
+    {
+      "id": "CAP-UI-01",
+      "name": "no_code_frontend",
+      "state": "pending_claude_paused",
+      "basis": "Claude UX/UI worktree exists but is paused and was not modified or merged"
+    },
+    {
+      "id": "CAP-UI-02",
+      "name": "browser_local_snapshot_persistence",
+      "state": "not_implemented",
+      "basis": "no browser transaction, local snapshot namespace, or two-tab UI regression exists in Luna"
+    },
+    {
+      "id": "CAP-SVC-01",
+      "name": "http_job_and_history_service",
+      "state": "not_implemented",
+      "basis": "api.py is a guarded dry-run seam, not a running HTTP service"
+    },
+    {
+      "id": "CAP-RESEARCH-01",
+      "name": "complete_device_patent_coverage",
+      "state": "blocked_local",
+      "basis": "Bridge rights/cohort/split and per-link disclosure provenance remain unresolved"
+    }
+  ],
+  "proposed_frontend_adapter": {
+    "status": "proposal_not_implemented",
+    "result_shape": {
+      "success": "{ ok: true, value, receiptId }",
+      "failure": "{ ok: false, code, outcome, retryable, preservedRefs, diagnosticId }"
+    },
+    "methods": [
+      "capabilities()",
+      "importPackage(bytes)",
+      "listDevices(text)",
+      "openDossier(ref)",
+      "inspectSource(ref)",
+      "saveLocal(snapshot, expectedParent)",
+      "exportSnapshot(ref, language, format)"
+    ],
+    "rules": [
+      "keep DossierVersion, browser-local LocalSnapshot, and incomplete ProjectDraft as separate namespaces",
+      "return explicit unavailable or unknown outcomes instead of fake success",
+      "preserve source facts and user overlays separately",
+      "never dispatch a provider or fetch a source from the browser adapter"
+    ]
+  },
+  "sanitized_fixture_hashes": [
+    {
+      "path": "examples/healthtech/synthetic-device/input.json",
+      "sha256": "e8e7fc012a61d2c29fa10a472c391fde0277c3c913d119842034c8e074520693",
+      "bytes": 7105,
+      "data_class": "authored_synthetic_engineering",
+      "use": "positive import/history/export fixture only; never a public device or patent result"
+    },
+    {
+      "path": "schemas/healthtech/DossierVersion.schema.json",
+      "sha256": "927d2db3ecf3c5101bedeaf47647e76d3c607b18443ee7728d5a47d7d6a52294",
+      "bytes": 16085,
+      "data_class": "tracked_closed_schema",
+      "use": "domain JSON validation reference"
+    },
+    {
+      "path": "docs/healthtech/G3_NO_CODE_JOURNEY_TH_EN.md",
+      "sha256": "5e487b673764c8587e4aef08d5a11a0b1ab4ec3708c39a1aeb8485deba5f7408",
+      "bytes": 7911,
+      "data_class": "tracked_bilingual_journey_contract",
+      "use": "TH/EN journey and capability boundary"
+    }
+  ],
+  "backend_source_hashes": {
+    "src/patent_to_pilot/healthtech/contracts.py": "384f0b15eb2840127eadee9f91c748ab55ee0598347c28528daf9395bd5cd729",
+    "src/patent_to_pilot/healthtech/engine.py": "4cd1d6106b4ab78217a404d9a3540abc7990e5023d35833f8a09b7c4f966f900",
+    "src/patent_to_pilot/healthtech/history.py": "167268773a967655ca81c05b8556710f3c28bddfd9233773783f712f585234ef",
+    "scripts/healthtech/run_dossier.py": "68bf95e6cff27c012a2b922f02607bdadb7e72e8fbc5c8c0ea36be5392c3330e",
+    "scripts/healthtech/manage_dossier_history.py": "29dcfa2d2bda06e27b9eab7b74271f447e678a83539f0d31356c1e5d6531bf9e",
+    "scripts/healthtech/view_dossier_source.py": "6662ce973f826f332ff653ea10aeb18b59ca8194d369e2e303680a9c34fb526e"
+  },
+  "evidence": {
+    "repair_receipt": "docs/healthtech/LUNA_G1_G3_RECEIPT_20261028-200041.md",
+    "current_revalidation": "docs/healthtech/LUNA_G1_G3_REVALIDATION_20261028-203003.md",
+    "current_revalidation_json": "docs/healthtech/evidence/luna-g1-g3-20261028/revalidation-203003.json",
+    "public_case_walkthrough_root": "results/healthtech/luna-g1-g3-20261028-203003-revalidation/g3-three-public-cases",
+    "full_offline_suite_artifact": "results/healthtech/luna-g1-g3-20261028-203003-revalidation/regression/verification.json",
+    "targeted_tests": [
+      "tests/test_healthtech_repairs.py::test_history_rejects_stale_parent_and_export_includes_user_edits",
+      "tests/test_healthtech_repairs.py::test_history_two_simultaneous_writers_have_one_commit_and_one_conflict"
+    ]
+  },
+  "limitations": [
+    "The three public cases are regulatory facts-only dossiers with empty patent inputs.",
+    "Unlisted device-patent pairs remain unjudged, never negatives.",
+    "This handoff does not establish clinical suitability, FTO, patent validity, investment merit, publication readiness, or production readiness.",
+    "Actual browser UI integration, accessibility, responsive behavior, and user validation are pending or not run."
+  ]
+}
