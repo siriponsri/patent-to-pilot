@@ -1,0 +1,119 @@
+{
+  "run_id": "luna-g1-g3-20261028-203003-revalidation",
+  "date": "2026-10-28",
+  "tested_code_head": "68dbbde83921223d2e4d07352b10bc25a597670d",
+  "tested_origin_main": "68dbbde83921223d2e4d07352b10bc25a597670d",
+  "working_tree_start": "tracked_clean_untracked_owner_artifacts_preserved",
+  "working_tree_end": "tracked_clean_untracked_owner_artifacts_preserved",
+  "worktrees": {
+    "luna": "C:/Users/User/Desktop/myProject/patent-to-pilot",
+    "claude_ux": {
+      "path": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-claude-ux-20261028",
+      "branch": "claude/healthtech-ux-local-20261028",
+      "head": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
+      "status": "paused_untouched"
+    },
+    "clean_audit_worktree": {
+      "path": "C:/Users/User/AppData/Local/Temp/ptp-ht-clean-7b15ed8",
+      "head": "679ff5a",
+      "status": "untouched"
+    }
+  },
+  "environment": {
+    "free_disk_gb_at_start": 201.93,
+    "python_processes_observed": "persistent local runtime processes; not modified",
+    "network_policy": "offline verifier and dry-run guards"
+  },
+  "full_offline_suite": {
+    "status": "PASS",
+    "artifact": "results/healthtech/luna-g1-g3-20261028-203003-revalidation/regression/verification.json",
+    "tests": 281,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "forbidden_credential_read_attempts": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "source_unchanged": true
+  },
+  "synthetic_smoke": {
+    "status": "ENGINEERING_DRAFT",
+    "artifact": "results/healthtech/luna-g1-g3-20261028-203003-revalidation/synthetic-smoke",
+    "candidates": 2,
+    "provider_calls": 0,
+    "paid_cost_usd": 0
+  },
+  "api_boundary": {
+    "status": "DRY_RUN_NOT_EXECUTED",
+    "network_attempts": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0
+  },
+  "g3_three_public_cases": {
+    "status": "PASS_BACKEND_ONLY",
+    "source_root": "results/healthtech/public-dossiers-20261027-r3",
+    "output_root": "results/healthtech/luna-g1-g3-20261028-203003-revalidation/g3-three-public-cases",
+    "evaluator_relations_loaded": false,
+    "cases": [
+      {
+        "case": "K121849",
+        "sources": 1,
+        "evidence_items": 7,
+        "candidates": 0,
+        "unresolved_items": 3,
+        "next_information_requests": 3,
+        "history_versions": [1, 2],
+        "expected_parent_checked": true,
+        "source_view": "openfda-510k-k121849:device_name",
+        "edited_en_th_export": true
+      },
+      {
+        "case": "K163345",
+        "sources": 1,
+        "evidence_items": 7,
+        "candidates": 0,
+        "unresolved_items": 3,
+        "next_information_requests": 3,
+        "history_versions": [1, 2],
+        "expected_parent_checked": true,
+        "source_view": "openfda-510k-k163345:device_name",
+        "edited_en_th_export": true
+      },
+      {
+        "case": "K190167",
+        "sources": 1,
+        "evidence_items": 7,
+        "candidates": 0,
+        "unresolved_items": 3,
+        "next_information_requests": 3,
+        "history_versions": [1, 2],
+        "expected_parent_checked": true,
+        "source_view": "openfda-510k-k190167:device_name",
+        "edited_en_th_export": true
+      }
+    ],
+    "limitations": [
+      "These are public regulatory fact dossiers with empty patent input pools.",
+      "They do not establish complete device-patent coverage or exhaustive patent absence.",
+      "Actual no-code UI walkthrough remains pending while the Claude UX branch is paused."
+    ]
+  },
+  "reused_prior_artifacts": {
+    "parser_replay": "docs/healthtech/evidence/luna-g1-g3-20261028/parser-replay-and-source-checks.json",
+    "corrected_baselines": "results/healthtech/luna-g1-g3-20261028-200041/corrected-baselines",
+    "prior_g3_repair_receipt": "docs/healthtech/LUNA_G1_G3_RECEIPT_20261028-200041.md"
+  },
+  "statuses": {
+    "HT-G1": "PARTIAL",
+    "HT-G2": "PARTIAL_DEVELOPMENT_ONLY",
+    "main_bridge_branch": "BLOCKED_LOCAL",
+    "HT-G3_backend": "BACKEND_COMPLETE_UI_PENDING"
+  },
+  "source_hashes": {
+    "src/patent_to_pilot/healthtech/history.py": "167268773a967655ca81c05b8556710f3c28bddfd9233773783f712f585234ef",
+    "src/patent_to_pilot/healthtech/engine.py": "4cd1d6106b4ab78217a404d9a3540abc7990e5023d35833f8a09b7c4f966f900",
+    "tests/test_healthtech_repairs.py": "d19354941c8b718b6da09c6f7be1b6632556af7bf5fbee27ec2f8e09329f14e5",
+    "docs/healthtech/G3_NO_CODE_JOURNEY_TH_EN.md": "5e487b673764c8587e4aef08d5a11a0b1ab4ec3708c39a1aeb8485deba5f7408"
+  }
+}
