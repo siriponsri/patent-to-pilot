@@ -32,6 +32,7 @@ from patent_to_pilot.healthtech.history import (
 )
 from patent_to_pilot.healthtech.rights import RightsBoundaryError
 from scripts.healthtech.fetch_boston_watchman_cohort import PRODUCTS, _validate_product_rows
+from scripts.healthtech.fetch_public_device_cohort import _rights_policy_id, _source_registry_row
 from scripts.healthtech import run_real_baselines as baselines
 
 
@@ -412,6 +413,32 @@ def test_boston_marking_parser_is_score_independent_and_row_bounded():
 
     with pytest.raises(ValueError, match="unexpected Boston patent row"):
         _validate_product_rows(text.replace("11484320", "9999999"))
+
+
+def test_public_cohort_registry_binds_typed_rights_policy_ids():
+    rows = [
+        _source_registry_row({
+            "source_id": "openfda-pma-p100009-base",
+            "source_type": "regulatory_record",
+        }),
+        _source_registry_row({
+            "source_id": "abbott-product-patent-disclosures",
+            "source_type": "independent_disclosure",
+        }),
+        _source_registry_row({
+            "source_id": "google-patents-us1234567b2",
+            "source_type": "patent_document",
+        }),
+    ]
+
+    assert [row["rights_policy_id"] for row in rows] == [
+        "openfda-pma-records",
+        "abbott-product-patent-disclosures",
+        "google-patents-pages",
+    ]
+    assert _rights_policy_id("openfda-pma-p230007-base", "regulatory_record") == "openfda-pma-records"
+    with pytest.raises(ValueError, match="no typed rights policy"):
+        _source_registry_row({"source_id": "unknown-source", "source_type": "other"})
 
 
 def test_abbott_development_protocol_freezes_unjudged_distractors_and_groups():

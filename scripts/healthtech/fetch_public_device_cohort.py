@@ -29,6 +29,27 @@ PRODUCTS = (
 )
 
 
+def _rights_policy_id(source_id: str, source_type: str) -> str:
+    """Resolve this builder's source rows to the canonical typed policy IDs."""
+    if source_type == "regulatory_record" and source_id.startswith("openfda-pma-"):
+        return "openfda-pma-records"
+    if source_type == "independent_disclosure" and source_id == "abbott-product-patent-disclosures":
+        return "abbott-product-patent-disclosures"
+    if source_type == "patent_document" and source_id.startswith("google-patents-"):
+        return "google-patents-pages"
+    raise ValueError(f"no typed rights policy for source {source_id} ({source_type})")
+
+
+def _source_registry_row(source: dict[str, object]) -> dict[str, object]:
+    """Attach a typed rights-policy ID while preserving the source registry row."""
+    row = dict(source)
+    row["rights_policy_id"] = _rights_policy_id(
+        str(row.get("source_id") or ""),
+        str(row.get("source_type") or ""),
+    )
+    return row
+
+
 class Accounting:
     def __init__(self, transfer_cap: int, storage_cap: int) -> None:
         self.transfer_cap = transfer_cap
@@ -278,7 +299,7 @@ def main() -> None:
             raise ValueError(f"PMA response malformed: {pma}")
         selected = _selected_pma_record(rows)
         source = _pma_source(selected, pma_number=pma, retrieved=retrieved)
-        sources.append(source)
+        sources.append(_source_registry_row(source))
         supplement = str(selected.get("supplement_number") or "BASE")
         query_id = f"HT-DEV-{product['label'].upper()}"
         device_id = f"{pma}:{supplement}"
@@ -316,7 +337,7 @@ def main() -> None:
         "rights": "Public legal notice page; local research evidence only, redistribution and claim-level use remain unresolved.",
         "runtime_allowed": False,
     }
-    sources.append(disclosure_source)
+    sources.append(_source_registry_row(disclosure_source))
     all_numbers: list[str] = []
     for section in disclosure_sections.values():
         for number in section["raw_patent_numbers"]:
@@ -328,7 +349,7 @@ def main() -> None:
         patent, raw_file = _fetch_patent(number, output, accounting, retrieved, args.max_file_bytes)
         patents.append(patent)
         patent_files[patent["patent_id_canonical"]] = raw_file | {"role": "patent-page"}
-        sources.append({
+        sources.append(_source_registry_row({
             "source_id": patent["source_id"],
             "source_type": "patent_document",
             "url": patent["source_url"],
@@ -339,7 +360,7 @@ def main() -> None:
             "normalized_sha256": patent["normalized_sha256"],
             "rights": "Public patent page accessed for local research; raw page and extracted text remain local-only.",
             "runtime_allowed": True,
-        })
+        }))
     patents.sort(key=lambda row: row["patent_id_canonical"])
     references: dict[str, list[str]] = {}
     disclosure_evidence: list[dict] = []
@@ -462,6 +483,7 @@ def main() -> None:
         "references_sha256": content_hash(references_payload),
         "universe_sha256": content_hash([patent["patent_id_canonical"] for patent in patents]),
         "cohort_sha256": content_hash(device_ids),
+        "rights_policy_ids": sorted({str(source["rights_policy_id"]) for source in sources}),
         "accounting": {
             "transfer_cap_bytes": accounting.transfer_cap,
             "storage_cap_bytes": accounting.storage_cap,
