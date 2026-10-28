@@ -10,7 +10,12 @@ import time
 from typing import Any, Mapping
 
 from patent_to_pilot.healthtech.contracts import DossierVersion
-from patent_to_pilot.healthtech.rights import ExportPurpose, enforce_source_rights
+from patent_to_pilot.healthtech.rights import (
+    ExportPurpose,
+    enforce_displayable_field,
+    enforce_source_rights,
+    limit_displayable_payload,
+)
 
 
 class DossierHistoryError(ValueError):
@@ -163,8 +168,9 @@ def source_view(dossier: DossierVersion, source_id: str, field: str | None = Non
         if source.source.source_id != source_id:
             continue
         enforce_source_rights(source, purpose=purpose)
-        payload: Any = source.payload
+        payload: Any = limit_displayable_payload(source, source.payload, purpose=purpose)
         if field is not None:
+            enforce_displayable_field(source, field, purpose=purpose)
             if not isinstance(payload, dict) or field not in payload:
                 raise DossierHistoryError(f"field not available in source {source_id}: {field}")
             payload = {field: payload[field]}

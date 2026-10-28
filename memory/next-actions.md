@@ -2,6 +2,8 @@
 
 Record: HT-NEXT-004 · Scope: research/patent-to-pilot · Date: 2026-10-28 · Status: OBSERVED_LOCAL / DECISION
 
+Follow-up package: HT-NEXT-005 · Date: 2026-10-29 · Status: PASS_ENGINEERING. Canonical audit: [clean-checkout backend reproducibility](../docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/README.md)
+
 Supersedes HT-NEXT-002 as the current work order. Owner supplied the HealthTech Pack and authorized migration, recoverable cleanup and commit/push to main. Paid model runs/deployment remain outside this task
 
 Implemented package: R1 native tokenizer repair, R2 durable baseline-attempt preservation, R3 fixed-prefix/frontier controls, 41/41 local patent parser replay with source-specific checks, corrected CPU-local HT-B0a/B0b/B1/B2/B3 development run, G3 backend history/export repair, atomic history publication, deterministic Abbott patent-linked dossier construction, the development-only universe/distractor/group/split freeze, the r7 query-matched quality/resource frontier, typed rights-aware source/export boundaries, an independent Boston Scientific WATCHMAN development cohort with a fresh offline frontier, a structural per-link disclosure-provenance verifier, current-head revalidation with fresh three-case dossier artifacts, typed rights-policy binding for future public-cohort registries, and current-head A/B/C closeout at `9eba00f`. The canonical handoff is [the current-head closeout audit](../docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md); current source and rights boundaries remain in [the rights-aware independent-cohort audit](../docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/README.md)
@@ -15,3 +17,5 @@ Main Bridge study: `BLOCKED_LOCAL` on reuse rights/cohort reconciliation/split r
 Remaining: Bridge or equivalent rights-cleared main corpus, final holdout/generalization design, broader independent groups, live-provider B4 (not authorized), Claude UI integration, clinical/FTO analysis, deployment, customer validation and manuscript. Do not infer COMPLETE from file names or passing development tests
 
 Audit follow-up: public regression selection now includes all published provider security modules; paired tests use mock-seeded tmp journals. Original 262-local/185-clean receipt remains a dated record. See `docs/healthtech/REPRODUCIBILITY_AUDIT.md` for corrected clean-checkout evidence. Research/product next actions above are unchanged.
+
+HT-NEXT-005 outcome: the clean-checkout A/B/C backend suite passes with authored temporary Abbott and provenance fixtures, without ignored `results/healthtech` data or the model cache. The `displayable_fields` source-view leak is fixed and covered. Malformed manifest/evaluator surfaces are intentionally ignored by the adapter. Real local-corpus integration is `NOT_RUN`; this engineering result does not change Bridge, final-holdout, scientific, licensing, clinical/FTO, deployment, provider, or UI boundaries.

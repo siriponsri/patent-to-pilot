@@ -40,6 +40,204 @@ ROOT = Path(__file__).resolve().parents[1]
 TOKENIZER = ROOT / "data/raw/healthtech/models/sentence-transformers-all-MiniLM-L6-v2/tokenizer.json"
 
 
+def _write_json(path: Path, payload: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _write_synthetic_abbott_cohort(tmp_path: Path) -> Path:
+    """Create a tiny authored cohort with the same adapter contracts as Abbott."""
+    cohort = tmp_path / "abbott-cohort"
+    (cohort / "raw" / "pma").mkdir(parents=True)
+    (cohort / "evaluator").mkdir()
+    products = [
+        ("MitraClip", "P100009", "mitral valve repair", ["1234567", "2345678"]),
+        ("Tendyne", "P240042", "mitral valve replacement", ["3456789"]),
+        ("TriClip", "P230007", "tricuspid valve repair", ["1234567"]),
+    ]
+    numbers_by_label = {label: numbers for label, _, _, numbers in products}
+    devices = []
+    registry = []
+    html_sections = []
+    for label, pma_number, generic_name, _ in products:
+        source_id = f"openfda-pma-{pma_number.lower()}-base"
+        devices.append({
+            "query_id": f"HT-DEV-{label.upper()}",
+            "device_id_raw": f"{label} ({pma_number}:BASE)",
+            "device_id_canonical": f"{pma_number}:BASE",
+            "pma_number": pma_number,
+            "supplement_number": "BASE",
+            "company": "ABBOTT MEDICAL",
+            "trade_name": label,
+            "generic_name": generic_name,
+            "product_code": "FIX",
+            "technical_description": f"{label}; {generic_name}",
+            "features_of_interest": ["valve", "implant"],
+            "source_id": source_id,
+            "evidence_cutoff": "2026-10-28",
+        })
+        _write_json(cohort / "raw" / "pma" / f"{pma_number}.json", {"results": [{
+            "pma_number": pma_number,
+            "supplement_number": None,
+            "applicant": "ABBOTT MEDICAL",
+            "generic_name": generic_name,
+            "trade_name": label,
+            "product_code": "FIX",
+            "openfda": {"device_name": f"restricted-{label}"},
+            "decision_date": "2026-01-01",
+            "decision_code": "APPR",
+        }]})
+        registry.append({
+            "source_id": source_id,
+            "source_type": "regulatory_record",
+            "url": f"https://api.fda.gov/device/pma.json?search=pma_number:{pma_number}",
+            "revision": "openFDA-fixture-v1",
+            "retrieved_at_utc": "2026-10-28T00:00:00+00:00",
+            "jurisdiction": "US",
+            "rights_policy_id": "openfda-pma-records",
+            "runtime_allowed": True,
+        })
+        numbers = " ".join(numbers_by_label[label])
+        html_sections.append(
+            f'<abbott-accordion-item><span slot="title">{label}</span><p>{numbers}</p>'
+            "</abbott-accordion-item>"
+        )
+    patents = []
+    for raw_number in ("1234567", "2345678", "3456789"):
+        canonical = f"US{raw_number}B2"
+        source_id = f"google-patents-{canonical.lower()}"
+        text = f"Synthetic patent {raw_number}; mitral tricuspid valve implant fixture claim."
+        patents.append({
+            "patent_id_raw": raw_number,
+            "patent_id_canonical": canonical,
+            "document_kind": "US-grant",
+            "jurisdiction": "US",
+            "title": f"Synthetic valve implant {raw_number}",
+            "abstract": text,
+            "claims": text,
+            "text": text,
+            "source_id": source_id,
+            "source_revision": "fixture-v1",
+            "source_url": f"https://patents.google.com/patent/{canonical}/en",
+            "raw_html_sha256": "a" * 64,
+            "normalized_sha256": "b" * 64,
+            "source_date": "2026-10-27",
+            "company_metadata": "ABBOTT MEDICAL",
+            "company_metadata_basis": "authored synthetic fixture",
+        })
+        registry.append({
+            "source_id": source_id,
+            "source_type": "patent_document",
+            "url": f"https://patents.google.com/patent/{canonical}/en",
+            "revision": "fixture-v1",
+            "retrieved_at_utc": "2026-10-28T00:00:00+00:00",
+            "jurisdiction": "US",
+            "raw_html_sha256": "a" * 64,
+            "normalized_sha256": "b" * 64,
+            "rights_policy_id": "google-patents-pages",
+            "runtime_allowed": True,
+        })
+    registry.append({
+        "source_id": "abbott-product-patent-disclosures",
+        "source_type": "independent_disclosure",
+        "url": "https://www.abbott.com/en-us/patents/legal-notices-patents/patents",
+        "revision": "page-retrieved-2026-10-28",
+        "retrieved_at_utc": "2026-10-28T00:00:00+00:00",
+        "jurisdiction": "US",
+        "rights_policy_id": "abbott-product-patent-disclosures",
+        "raw_html_sha256": "c" * 64,
+        "runtime_allowed": False,
+    })
+    (cohort / "raw" / "abbott-patents.html").write_text("".join(html_sections), encoding="utf-8")
+    _write_json(cohort / "runtime.json", {
+        "format": "ht-runtime-public-device-cohort-v1",
+        "retrieved_at_utc": "2026-10-28T00:00:00+00:00",
+        "devices": devices,
+        "patents": patents,
+        "permitted_metadata": ["PMA facts", "patent title/abstract/claims"],
+        "runtime_exclusions": ["disclosure references", "evaluator gold/reference links", "family labels", "split answers"],
+    })
+    _write_json(cohort / "source_registry.json", {
+        "format": "ht-source-registry-v1",
+        "sources": registry,
+        "separation": "evaluator-only disclosure source is not included in runtime.json",
+    })
+    # Deliberately malformed: the adapter contract excludes both surfaces.
+    (cohort / "manifest.json").write_text("manifest is not an adapter input", encoding="utf-8")
+    (cohort / "evaluator" / "references.json").write_text("evaluator gold is not an adapter input", encoding="utf-8")
+    return cohort
+
+
+def _write_synthetic_provenance_cohort(tmp_path: Path, *, typed_rights: bool) -> Path:
+    """Create a tiny evaluator fixture for provenance and negative-path checks."""
+    cohort = tmp_path / ("typed-cohort" if typed_rights else "legacy-cohort")
+    (cohort / "evaluator").mkdir(parents=True)
+    disclosure = {
+        "source_id": "synthetic-product-disclosure",
+        "source_type": "independent_disclosure",
+        "url": "urn:synthetic:disclosure",
+        "revision": "fixture-v1",
+        "jurisdiction": "US",
+    }
+    disclosure["rights_policy_id" if typed_rights else "rights"] = (
+        "abbott-product-patent-disclosures" if typed_rights else "authored local fixture rights note"
+    )
+    registry = [disclosure]
+    for canonical in ("US1234567B2", "US2345678B2"):
+        registry.append({
+            "source_id": f"google-patents-{canonical.lower()}",
+            "source_type": "patent_document",
+            "url": f"urn:synthetic:patent:{canonical}",
+            "revision": "fixture-v1",
+            "jurisdiction": "US",
+            "rights_policy_id": "google-patents-pages",
+        })
+    _write_json(cohort / "runtime.json", {
+        "format": "ht-runtime-public-device-cohort-v1",
+        "devices": [{"query_id": "Q1"}],
+        "patents": [
+            {"patent_id_canonical": "US1234567B2", "source_id": "google-patents-us1234567b2"},
+            {"patent_id_canonical": "US2345678B2", "source_id": "google-patents-us2345678b2"},
+        ],
+        "runtime_exclusions": ["disclosure references", "evaluator gold/reference links", "split answers"],
+    })
+    _write_json(cohort / "source_registry.json", {"format": "ht-source-registry-v1", "sources": registry})
+    _write_json(cohort / "evaluator" / "references.json", {
+        "format": "ht-evaluator-disclosures-v1",
+        "references": {"Q1": ["US1234567B2"]},
+        "disclosure_evidence": [{
+            "evidence_id": "DISC-Q1-US1234567B2",
+            "query_id": "Q1",
+            "source_id": "synthetic-product-disclosure",
+            "locator": "row:Q1",
+            "quoted_span": "Product lists US1234567B2",
+            "support_basis": "Authored synthetic fixture",
+            "patent_id_canonical": "US1234567B2",
+        }],
+    })
+    _write_json(cohort / "split_manifest.json", {
+        "format": "ht-development-split-v1",
+        "rows": [{"query_id": "Q1", "split": "development", "group_id": "0"}],
+        "final_holdout": [],
+    })
+    _write_json(cohort / "distractors.json", {
+        "format": "ht-unjudged-distractors-v1",
+        "status": "UNJUDGED_NOT_NEGATIVE",
+        "by_query": {"Q1": ["US2345678B2"]},
+    })
+    _write_json(cohort / "manifest.json", {
+        "status": "SYNTHETIC_FIXTURE",
+        "source_registry": "source_registry.json",
+        "runtime_path": "runtime.json",
+        "evaluator_path": "evaluator/references.json",
+        "split_path": "split_manifest.json",
+        "distractors_path": "distractors.json",
+        "reference_pairs": 1,
+        "unjudged_distractor_pairs": 1,
+    })
+    return cohort
+
+
 @pytest.mark.skipif(not TOKENIZER.exists(), reason="pinned local tokenizer artifact is unavailable")
 def test_onnx_tokenizer_uses_native_masks_types_and_deterministic_padding():
     tokenizer = _OnnxTokenizer(str(TOKENIZER), max_length=256)
@@ -361,12 +559,12 @@ def test_history_interruption_after_publish_leaves_recoverable_staging(tmp_path,
     assert [item.version for item in load_versions(history)] == [1, 2]
 
 
-def test_abbott_adapter_builds_real_public_linked_inputs_without_evaluator_reads():
-    cohort = ROOT / "results/healthtech/ht-public-cohort-20261028-r1"
+def test_abbott_adapter_builds_real_public_linked_inputs_without_evaluator_reads(tmp_path):
+    cohort = _write_synthetic_abbott_cohort(tmp_path)
     cases = build_abbott_case_inputs(cohort)
     assert sorted(cases) == ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"]
     for query_id, input_data in cases.items():
-        assert len(input_data.patents) == 41
+        assert len(input_data.patents) == 3
         assert input_data.query.selected_comparator_source_id in input_data.query.permitted_inputs
         assert all(source.rights is not None for source in input_data.sources + [patent.source for patent in input_data.patents])
         disclosure = [item for item in input_data.evidence if item.evidence_kind == "patent_disclosure"]
@@ -381,9 +579,18 @@ def test_abbott_adapter_builds_real_public_linked_inputs_without_evaluator_reads
         assert all(item.source_id in {source.source.source_id for source in linked.sources} for item in linked.candidates)
 
 
-def test_rights_boundary_blocks_restricted_product_surfaces_and_preserves_local_view():
-    cohort = ROOT / "results/healthtech/ht-public-cohort-20261028-r1"
-    input_data = next(iter(build_abbott_case_inputs(cohort).values()))
+def test_rights_boundary_blocks_restricted_product_surfaces_and_preserves_local_view(tmp_path):
+    cohort = _write_synthetic_abbott_cohort(tmp_path)
+    rights_matrix = json.loads(
+        (ROOT / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json")
+        .read_text(encoding="utf-8")
+    )
+    for policy in rights_matrix["sources"]:
+        if policy["source_id"] == "openfda-pma-records":
+            policy["displayable_fields"] = ["trade_name"]
+    rights_matrix_path = tmp_path / "rights-matrix.json"
+    _write_json(rights_matrix_path, rights_matrix)
+    input_data = next(iter(build_abbott_case_inputs(cohort, rights_matrix_path=rights_matrix_path).values()))
     dossier, _, _ = run_dossier(input_data, run_id="rights-boundary", code_commit="test")
 
     with pytest.raises(RightsBoundaryError, match="product_display blocked"):
@@ -393,6 +600,17 @@ def test_rights_boundary_blocks_restricted_product_surfaces_and_preserves_local_
         history_module.source_view(dossier, restricted_source.source.source_id, purpose="redistribution")
     local_view = history_module.source_view(dossier, restricted_source.source.source_id)
     assert local_view["rights"]["product_display"] == "BLOCKED_LOCAL"
+    pma_source = next(source for source in dossier.sources if source.source.source_type == "regulatory_record")
+    product_view = history_module.source_view(dossier, pma_source.source.source_id, purpose="product_display")
+    assert product_view["payload"] == {"trade_name": input_data.query.device_id_raw.split(" (")[0]}
+    with pytest.raises(RightsBoundaryError, match="displayable_fields"):
+        history_module.source_view(
+            dossier,
+            pma_source.source.source_id,
+            field="openfda",
+            purpose="product_display",
+        )
+    assert "openfda" in history_module.source_view(dossier, pma_source.source.source_id)["payload"]
     assert "Rights basis" in export_markdown(dossier)
 
 
@@ -441,50 +659,43 @@ def test_public_cohort_registry_binds_typed_rights_policy_ids():
         _source_registry_row({"source_id": "unknown-source", "source_type": "other"})
 
 
-def test_abbott_development_protocol_freezes_unjudged_distractors_and_groups():
-    cohort = ROOT / "results/healthtech/ht-public-cohort-20261028-r1"
+def test_abbott_development_protocol_freezes_unjudged_distractors_and_groups(tmp_path):
+    cohort = _write_synthetic_abbott_cohort(tmp_path)
     protocol = build_abbott_development_protocol(cohort)
     assert protocol["status"] == "DEVELOPMENT_ONLY_FREEZE_NO_HOLDOUT"
     assert protocol["counts"] == {
         "eligible_devices": 3,
-        "universe_patents": 41,
-        "disclosed_pairs": 61,
-        "unjudged_distractor_pairs": 62,
+        "universe_patents": 3,
+        "disclosed_pairs": 4,
+        "unjudged_distractor_pairs": 5,
     }
     assert protocol["split"]["final_holdout"] == []
     assert protocol["groups"]["family_mapping"]["status"] == "UNKNOWN_NOT_ASSUMED"
     assert all(protocol["distractors_by_query"][query_id] for query_id in protocol["eligible_query_ids"])
 
 
-def test_development_cohorts_have_per_link_disclosure_provenance():
-    for relative, expected_pairs in (
-        ("results/healthtech/ht-public-cohort-20261028-r1", 61),
-        ("results/healthtech/ht-boston-watchman-20261028-r4", 13),
+def test_development_cohorts_have_per_link_disclosure_provenance(tmp_path):
+    for cohort, expected_pairs, expected_status, expected_binding in (
+        (_write_synthetic_provenance_cohort(tmp_path, typed_rights=True), 1, "PASS", "TYPED_POLICY_ID"),
+        (_write_synthetic_provenance_cohort(tmp_path, typed_rights=False), 1, "PASS_WITH_LEGACY_RIGHTS", "LEGACY_TEXT_ONLY"),
     ):
-        report = verify_cohort_provenance(ROOT / relative)
-        assert report["status"] in {"PASS", "PASS_WITH_LEGACY_RIGHTS"}
+        report = verify_cohort_provenance(cohort)
+        assert report["status"] == expected_status
         assert report["counts"]["disclosed_pairs"] == expected_pairs
         assert report["counts"]["covered_pairs"] == expected_pairs
         assert report["counts"]["final_holdout_queries"] == 0
-
-    boston = verify_cohort_provenance(ROOT / "results/healthtech/ht-boston-watchman-20261028-r4")
-    assert boston["rights_binding"] == "TYPED_POLICY_ID"
-    abbott = verify_cohort_provenance(ROOT / "results/healthtech/ht-public-cohort-20261028-r1")
-    assert abbott["rights_binding"] == "LEGACY_TEXT_ONLY"
+        assert report["rights_binding"] == expected_binding
 
 
 def test_provenance_verifier_rejects_an_uncovered_reference_pair(tmp_path):
-    source = ROOT / "results/healthtech/ht-boston-watchman-20261028-r4"
-    cohort = tmp_path / "cohort"
-    cohort.mkdir()
-    for relative in ("manifest.json", "runtime.json", "source_registry.json", "split_manifest.json", "distractors.json"):
-        destination = cohort / relative
-        destination.write_text((source / relative).read_text(encoding="utf-8"), encoding="utf-8")
-    references_path = source / "evaluator/references.json"
+    cohort = _write_synthetic_provenance_cohort(tmp_path, typed_rights=True)
+    references_path = cohort / "evaluator" / "references.json"
     references = json.loads(references_path.read_text(encoding="utf-8"))
-    references["disclosure_evidence"][0]["patent_id_canonical"] = references["disclosure_evidence"][0]["patent_id_canonical"][1:]
-    evaluator_dir = cohort / "evaluator"
-    evaluator_dir.mkdir()
-    (evaluator_dir / "references.json").write_text(json.dumps(references), encoding="utf-8")
+    references["references"]["Q1"].append("US2345678B2")
+    _write_json(references_path, references)
+    manifest_path = cohort / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["reference_pairs"] = 2
+    _write_json(manifest_path, manifest)
     with pytest.raises(CohortProvenanceError, match="without disclosure evidence"):
         verify_cohort_provenance(cohort)

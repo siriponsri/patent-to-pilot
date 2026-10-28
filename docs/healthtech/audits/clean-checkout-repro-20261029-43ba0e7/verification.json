@@ -1,0 +1,99 @@
+{
+  "format": "ht-clean-checkout-repro-audit-v1",
+  "date": "2026-10-29",
+  "timezone": "Asia/Bangkok",
+  "status": "PASS_ENGINEERING",
+  "tested_base_commit": "43ba0e7d637ed5ee1ae601b75addb947f4db48d0",
+  "origin_main_before_change": "43ba0e7d637ed5ee1ae601b75addb947f4db48d0",
+  "candidate_commit": null,
+  "scope": "HealthTech backend A/B/C only",
+  "changed_files": [
+    "src/patent_to_pilot/healthtech/history.py",
+    "src/patent_to_pilot/healthtech/rights.py",
+    "tests/test_healthtech_repairs.py",
+    "docs/healthtech/progress.json",
+    "memory/next-actions.md",
+    "docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/README.md",
+    "docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/NEXT_ACTIONS.md",
+    "docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/verification.json"
+  ],
+  "baseline": {
+    "command": "rtk python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_repairs.py",
+    "status": "FAIL_EXPECTED_IGNORED_ARTIFACT_DEPENDENCY",
+    "result": "s..........FF..FFF; exit code 1",
+    "failures": [
+      "test_abbott_adapter_builds_real_public_linked_inputs_without_evaluator_reads",
+      "test_rights_boundary_blocks_restricted_product_surfaces_and_preserves_local_view",
+      "test_abbott_development_protocol_freezes_unjudged_distractors_and_groups",
+      "test_development_cohorts_have_per_link_disclosure_provenance",
+      "test_provenance_verifier_rejects_an_uncovered_reference_pair"
+    ],
+    "cause": "Tests read ignored results/healthtech cohort artifacts absent from a clean checkout"
+  },
+  "checks": [
+    {
+      "command": "rtk python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_repairs.py -rs",
+      "status": "PASS",
+      "result": "18 passed; one existing fitz deprecation warning"
+    },
+    {
+      "command": "rtk python -B -m pytest -q -p no:cacheprovider tests/test_healthtech.py tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py -rs",
+      "status": "PASS",
+      "result": "58 passed; one existing fitz deprecation warning"
+    },
+    {
+      "command": "rtk python -B -m compileall -q src tests scripts",
+      "status": "PASS",
+      "result": "no compile errors"
+    },
+    {
+      "command": "rtk git diff --check",
+      "status": "PASS",
+      "result": "no whitespace errors"
+    }
+  ],
+  "contract_checks": {
+    "authored_abbott_fixture": {
+      "eligible_devices": 3,
+      "universe_patents": 3,
+      "disclosed_pairs": 4,
+      "unjudged_distractor_pairs": 5,
+      "final_holdout": [],
+      "family_mapping": "UNKNOWN_NOT_ASSUMED"
+    },
+    "provenance": {
+      "typed_policy_fixture": "PASS",
+      "legacy_text_fixture": "PASS_WITH_LEGACY_RIGHTS",
+      "negative_uncovered_reference_pair": "PASS_REJECTED"
+    },
+    "rights_boundary": {
+      "product_display_filters_restricted_fields": "PASS",
+      "explicit_restricted_field_request_rejected": "PASS",
+      "local_research_view_preserves_full_payload": "PASS"
+    },
+    "manifest_evaluator_boundary": {
+      "malformed_manifest_ignored_by_adapter": "PASS_INTENTIONAL",
+      "malformed_evaluator_references_ignored_by_adapter": "PASS_INTENTIONAL"
+    }
+  },
+  "source_hashes": {
+    "src/patent_to_pilot/healthtech/history.py": "a5424af7bff3a943b9f1d3f786a14863595e29099a0fd935d8b78c5697d7c0e2",
+    "src/patent_to_pilot/healthtech/rights.py": "aae544fdb9c16b87d7a2c394b3294623bff2c85b30a9db3bb47e442afc4b50b4",
+    "tests/test_healthtech_repairs.py": "beaaf616427a450fe64c04df280a7932be3e04ead64370e46810733d602aad0d",
+    "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json": "0893a4630280089c41f29bd88a1c3b695e70d5d21d8a1a5069c7ecfcd6842fa7"
+  },
+  "resource_use": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "network_acquisition": "NOT_RUN",
+    "ignored_real_corpus_integration": "NOT_RUN",
+    "model_cache_dependency": "NOT_REQUIRED_FOR_SCOPED_SUITE"
+  },
+  "limitations": [
+    "The synthetic fixture is authored test data, not a real device cohort or scientific result.",
+    "The tokenizer test skips when the pinned local tokenizer artifact is absent.",
+    "Engineering PASS does not imply semantic entailment, clinical suitability, approval, FTO, patent validity, investment merit, publication readiness, or generalization.",
+    "Bridge, final holdout, provider inference, deployment, outreach, and UI remain outside scope."
+  ],
+  "next_action": "Preserve this audit pointer and obtain explicit authorization plus available local corpus/model-cache inputs before separately running real-corpus integration."
+}

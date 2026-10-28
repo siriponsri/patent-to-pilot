@@ -135,6 +135,39 @@ def enforce_source_rights(source: SourcePayload, *, purpose: ExportPurpose) -> N
         )
 
 
+def enforce_displayable_field(source: SourcePayload, field: str, *, purpose: ExportPurpose) -> None:
+    """Reject fields that are not reviewed for externally visible surfaces."""
+    if purpose == "local_research" or source.synthetic:
+        return
+    rights = source.rights
+    if rights is None:
+        raise RightsBoundaryError(
+            f"{purpose} blocked: source {source.source.source_id} has no rights policy"
+        )
+    if field not in rights.displayable_fields:
+        raise RightsBoundaryError(
+            f"{purpose} blocked for source {source.source.source_id}: "
+            f"field {field} is not listed in displayable_fields"
+        )
+
+
+def limit_displayable_payload(source: SourcePayload, payload: Any, *, purpose: ExportPurpose) -> Any:
+    """Keep externally visible mapping payloads to reviewed top-level fields."""
+    if purpose == "local_research" or source.synthetic:
+        return payload
+    rights = source.rights
+    if rights is None:
+        raise RightsBoundaryError(
+            f"{purpose} blocked: source {source.source.source_id} has no rights policy"
+        )
+    if not isinstance(payload, dict):
+        raise RightsBoundaryError(
+            f"{purpose} blocked for source {source.source.source_id}: "
+            "displayable_fields require a mapping payload"
+        )
+    return {key: value for key, value in payload.items() if key in rights.displayable_fields}
+
+
 def enforce_dossier_rights(dossier: DossierVersion, *, purpose: ExportPurpose) -> None:
     for source in dossier.sources:
         enforce_source_rights(source, purpose=purpose)
