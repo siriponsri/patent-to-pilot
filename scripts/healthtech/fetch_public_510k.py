@@ -15,6 +15,7 @@ from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 from patent_to_pilot.healthtech.engine import DossierInput
+from patent_to_pilot.healthtech.rights import load_rights_matrix, select_rights_policy
 from patent_to_pilot.healthtech.sources import field_evidence, normalize_510k_record
 
 
@@ -151,6 +152,9 @@ def main() -> None:
     raw_dir.mkdir()
     input_dir.mkdir()
     accounting = AcquisitionAccounting(args.max_transfer_bytes * len(args.k_number), args.max_storage_bytes)
+    rights_matrix = load_rights_matrix(
+        Path(__file__).resolve().parents[2] / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json"
+    )
     retrieved_at = datetime.now(timezone.utc)
     retrieved_date = retrieved_at.date()
     records = []
@@ -166,7 +170,15 @@ def main() -> None:
             raise ValueError(f"openFDA returned no unique record for {k_number}")
         record = results[0]
         source_id = f"openfda-510k-{k_number.lower()}"
-        source = normalize_510k_record(record, source_id=source_id, snapshot_revision=f"openfda-retrieved-{retrieved_date}", retrieved_date=retrieved_date)
+        source = normalize_510k_record(
+            record,
+            source_id=source_id,
+            snapshot_revision=f"openfda-retrieved-{retrieved_date}",
+            retrieved_date=retrieved_date,
+            rights=select_rights_policy(
+                rights_matrix, source_id=source_id, source_type="regulatory_record"
+            ),
+        )
         input_path = input_dir / f"{k_number}.json"
         input_payload = _input_for(record, source, retrieved=retrieved_date, language=args.language)
         normalized_text = json.dumps(input_payload, ensure_ascii=False, indent=2) + "\n"

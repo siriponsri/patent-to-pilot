@@ -20,6 +20,7 @@ from patent_to_pilot.healthtech.contracts import (
     content_hash,
 )
 from patent_to_pilot.healthtech.engine import DossierInput, PatentInput
+from patent_to_pilot.healthtech.rights import attach_rights, load_rights_matrix, select_rights_policy
 from patent_to_pilot.healthtech.sources import field_evidence, source_payload
 from patent_to_pilot.product.contracts import ProjectBrief
 from scripts.healthtech.fetch_public_device_cohort import PRODUCTS, _product_disclosures, _selected_pma_record
@@ -59,7 +60,7 @@ def _registry_by_id(registry: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {str(item["source_id"]): item for item in sources}
 
 
-def _pma_source(cohort: Path, device: dict[str, Any], registry: dict[str, Any]) -> SourcePayload:
+def _pma_source(cohort: Path, device: dict[str, Any], registry: dict[str, Any], rights) -> SourcePayload:
     pma_number = str(device["pma_number"])
     raw_path = cohort / "raw" / "pma" / f"{pma_number}.json"
     raw_payload = _read_json(raw_path)
@@ -88,14 +89,16 @@ def _pma_source(cohort: Path, device: dict[str, Any], registry: dict[str, Any]) 
         synthetic=False,
     )
     return _source_with_metadata(
-        source,
+        attach_rights(source, select_rights_policy(
+            rights, source_id=source_id, source_type=source.source.source_type
+        )),
         locator=f"openFDA:pma_number={pma_number}",
         retrieved_at_utc=entry.get("retrieved_at_utc"),
         limits=["raw snapshot retained locally", "preserve FDA attribution"],
     )
 
 
-def _disclosure_source(cohort: Path, registry: dict[str, Any]) -> tuple[SourcePayload, dict[str, dict[str, Any]]]:
+def _disclosure_source(cohort: Path, registry: dict[str, Any], rights) -> tuple[SourcePayload, dict[str, dict[str, Any]]]:
     raw_path = cohort / "raw" / "abbott-patents.html"
     html = raw_path.read_bytes()
     sections = _product_disclosures(html)
@@ -113,7 +116,9 @@ def _disclosure_source(cohort: Path, registry: dict[str, Any]) -> tuple[SourcePa
         synthetic=False,
     )
     source = _source_with_metadata(
-        source,
+        attach_rights(source, select_rights_policy(
+            rights, source_id=DISCLOSURE_SOURCE_ID, source_type=source.source.source_type
+        )),
         locator="product-sections:Abbott patent legal notice",
         retrieved_at_utc=entry.get("retrieved_at_utc"),
         limits=[
@@ -125,7 +130,7 @@ def _disclosure_source(cohort: Path, registry: dict[str, Any]) -> tuple[SourcePa
     return source, sections
 
 
-def _patent_inputs(cohort: Path, runtime: dict[str, Any], registry: dict[str, Any]) -> list[PatentInput]:
+def _patent_inputs(cohort: Path, runtime: dict[str, Any], registry: dict[str, Any], rights) -> list[PatentInput]:
     patents = runtime.get("patents")
     if not isinstance(patents, list) or not all(isinstance(item, dict) for item in patents):
         raise ValueError("runtime cohort is missing patents")
@@ -149,7 +154,9 @@ def _patent_inputs(cohort: Path, runtime: dict[str, Any], registry: dict[str, An
             synthetic=False,
         )
         source = _source_with_metadata(
-            source,
+            attach_rights(source, select_rights_policy(
+                rights, source_id=source_id, source_type=source.source.source_type
+            )),
             locator=f"disclosure-raw-number:{raw_number}",
             retrieved_at_utc=entry.get("retrieved_at_utc"),
             limits=[
@@ -205,7 +212,9 @@ def _search_description(device: dict[str, Any]) -> str:
     return " ".join(generic.split()[:2])
 
 
-def build_abbott_case_inputs(cohort_dir: str | Path) -> dict[str, DossierInput]:
+def build_abbott_case_inputs(
+    cohort_dir: str | Path, *, rights_matrix_path: str | Path | None = None
+) -> dict[str, DossierInput]:
     """Build one public-source DossierInput per Abbott device without evaluator reads."""
     cohort = Path(cohort_dir)
     runtime = _read_json(cohort / "runtime.json")
@@ -215,8 +224,19 @@ def build_abbott_case_inputs(cohort_dir: str | Path) -> dict[str, DossierInput]:
     devices = runtime.get("devices")
     if not isinstance(devices, list) or not all(isinstance(item, dict) for item in devices):
         raise ValueError("runtime cohort is missing devices")
-    disclosure_source, disclosure_sections = _disclosure_source(cohort, registry)
-    patents = _patent_inputs(cohort, runtime, registry)
+    root = Path(__file__).resolve().parents[3]
+    default_paths = [
+        root / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
+        root / "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/rights-matrix.json",
+    ]
+    matrix_path = Path(rights_matrix_path) if rights_matrix_path else next(
+        (path for path in default_paths if path.exists()), None
+    )
+    if matrix_path is None:
+        raise ValueError("Abbott adapter requires a source-specific rights matrix")
+    rights = load_rights_matrix(matrix_path)
+    disclosure_source, disclosure_sections = _disclosure_source(cohort, registry, rights)
+    patents = _patent_inputs(cohort, runtime, registry, rights)
     by_patent_raw = {
         str(item["patent_id_raw"]): canonical_patent_id(str(item["patent_id_canonical"]))
         for item in runtime["patents"]
@@ -224,7 +244,7 @@ def build_abbott_case_inputs(cohort_dir: str | Path) -> dict[str, DossierInput]:
     cases: dict[str, DossierInput] = {}
     for device in devices:
         product_key, product = _product_for_device(device)
-        pma_source = _pma_source(cohort, device, registry)
+        pma_source = _pma_source(cohort, device, registry, rights)
         query_id = str(device["query_id"])
         section = disclosure_sections[product_key]
         disclosed_ids = [by_patent_raw[str(raw)] for raw in section["raw_patent_numbers"]]

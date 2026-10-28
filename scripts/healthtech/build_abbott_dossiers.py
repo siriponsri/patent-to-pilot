@@ -13,6 +13,7 @@ sys.path.insert(0, str(_REPO_ROOT / "src"))
 from patent_to_pilot.healthtech.abbott import build_abbott_case_inputs, promote_disclosed_links
 from patent_to_pilot.healthtech.engine import export_markdown, run_dossier
 from patent_to_pilot.healthtech.history import append_user_edits, history_manifest, save_version, select_version, source_view
+from patent_to_pilot.healthtech.rights import source_rights_summary
 
 
 def _write_json(path: Path, payload: object) -> None:
@@ -70,9 +71,15 @@ def _case_manifest(dossier, events, manifest, input_data, history_dir: Path, pro
         },
         "gaps": dossier.unresolved_items,
         "rights_boundary": {
-            "local_evaluation": "ALLOWED_LOCAL_RESEARCH",
-            "product_display": "BLOCKED_LOCAL",
-            "redistribution": "BLOCKED_LOCAL",
+            "sources": [source_rights_summary(source) for source in dossier.sources],
+            "product_display": "BLOCKED_LOCAL" if any(
+                source.rights is None or source.rights.product_display not in {"ALLOWED", "ALLOWED_WITH_ATTRIBUTION"}
+                for source in dossier.sources
+            ) else "ALLOWED",
+            "redistribution": "BLOCKED_LOCAL" if any(
+                source.rights is None or source.rights.redistribution not in {"ALLOWED", "ALLOWED_WITH_ATTRIBUTION"}
+                for source in dossier.sources
+            ) else "ALLOWED",
         },
         "cohort_freeze": None if protocol is None else {
             "status": protocol["status"],
@@ -100,12 +107,13 @@ def main() -> None:
     parser.add_argument("--cohort", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--protocol", type=Path)
+    parser.add_argument("--rights-matrix", type=Path)
     parser.add_argument("--code-commit", default="working-tree")
     args = parser.parse_args()
     if args.output.exists():
         parser.error("output already exists; choose a fresh directory")
     args.output.mkdir(parents=True)
-    cases = build_abbott_case_inputs(args.cohort)
+    cases = build_abbott_case_inputs(args.cohort, rights_matrix_path=args.rights_matrix)
     protocol = json.loads(args.protocol.read_text(encoding="utf-8")) if args.protocol else None
     for query_id, input_data in sorted(cases.items()):
         case_dir = args.output / query_id

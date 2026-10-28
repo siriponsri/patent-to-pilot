@@ -26,6 +26,8 @@ from patent_to_pilot.healthtech.history import (
     recover_staging_files,
     save_version,
 )
+from patent_to_pilot.healthtech.rights import RightsBoundaryError
+from scripts.healthtech.fetch_boston_watchman_cohort import PRODUCTS, _validate_product_rows
 from scripts.healthtech import run_real_baselines as baselines
 
 
@@ -361,6 +363,7 @@ def test_abbott_adapter_builds_real_public_linked_inputs_without_evaluator_reads
     for query_id, input_data in cases.items():
         assert len(input_data.patents) == 41
         assert input_data.query.selected_comparator_source_id in input_data.query.permitted_inputs
+        assert all(source.rights is not None for source in input_data.sources + [patent.source for patent in input_data.patents])
         disclosure = [item for item in input_data.evidence if item.evidence_kind == "patent_disclosure"]
         assert len(disclosure) == 1
         assert all("evaluator" not in source.source.uri.lower() for source in input_data.sources)
@@ -371,6 +374,40 @@ def test_abbott_adapter_builds_real_public_linked_inputs_without_evaluator_reads
         assert any(item.association_status == "retrieved_candidate" for item in linked.candidates)
         assert any(item.association_status == "disclosed_link" for item in linked.candidates)
         assert all(item.source_id in {source.source.source_id for source in linked.sources} for item in linked.candidates)
+
+
+def test_rights_boundary_blocks_restricted_product_surfaces_and_preserves_local_view():
+    cohort = ROOT / "results/healthtech/ht-public-cohort-20261028-r1"
+    input_data = next(iter(build_abbott_case_inputs(cohort).values()))
+    dossier, _, _ = run_dossier(input_data, run_id="rights-boundary", code_commit="test")
+
+    with pytest.raises(RightsBoundaryError, match="product_display blocked"):
+        export_markdown(dossier, purpose="product_display")
+    restricted_source = next(source for source in dossier.sources if source.source.source_type == "patent_document")
+    with pytest.raises(RightsBoundaryError, match="redistribution blocked"):
+        history_module.source_view(dossier, restricted_source.source.source_id, purpose="redistribution")
+    local_view = history_module.source_view(dossier, restricted_source.source.source_id)
+    assert local_view["rights"]["product_display"] == "BLOCKED_LOCAL"
+    assert "Rights basis" in export_markdown(dossier)
+
+
+def test_boston_marking_parser_is_score_independent_and_row_bounded():
+    text = (
+        "WATCHMAN FLX LAAC Device\n"
+        "9883936\n10463377\n10751158\n11241237\n11413047\n11432809\n"
+        "M635WU50200\n"
+        "WATCHMAN FLX Pro LAAC Device\n"
+        "9883936\n10463377\n10751158\n11241237\n11413047\n11432809\n11484320\n"
+        "M635WU60200\n"
+        "Zero Tip Airway Retrieval Basket\n6159220\n"
+    )
+    rows = _validate_product_rows(text)
+    assert rows["watchman-flx"]["raw_patent_numbers"] == PRODUCTS[0]["patent_numbers"]
+    assert rows["watchman-flx-pro"]["raw_patent_numbers"] == PRODUCTS[1]["patent_numbers"]
+    assert "Zero Tip" not in str(rows["watchman-flx-pro"]["disclosure_text"])
+
+    with pytest.raises(ValueError, match="unexpected Boston patent row"):
+        _validate_product_rows(text.replace("11484320", "9999999"))
 
 
 def test_abbott_development_protocol_freezes_unjudged_distractors_and_groups():

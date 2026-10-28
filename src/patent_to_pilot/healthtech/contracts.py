@@ -73,7 +73,40 @@ class DeviceQuery(Contract):
         return self
 
 
+RightsDecision = Literal[
+    "ALLOWED",
+    "ALLOWED_WITH_ATTRIBUTION",
+    "ALLOWED_LOCAL_SNAPSHOT",
+    "ALLOWED_LOCAL_RESEARCH",
+    "ALLOWED_ONLY_FOR_REVIEWED_PUBLIC_DOMAIN_FIELDS",
+    "BLOCKED_LOCAL",
+    "UNRESOLVED",
+]
+
+
+class SourceRights(Contract):
+    """Auditable rights basis carried with every non-synthetic source."""
+
+    rights_id: str = Field(min_length=1)
+    source_id_prefixes: list[str] = Field(default_factory=list)
+    source_types: list[str] = Field(default_factory=list)
+    basis_url: str = Field(min_length=1)
+    checked_date: date
+    basis_revision: str = Field(min_length=1)
+    basis_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    clause_locator: str = Field(min_length=1)
+    clause: str = Field(min_length=1)
+    interpretation: str = Field(min_length=1)
+    acquisition: RightsDecision
+    local_evaluation: RightsDecision
+    product_display: RightsDecision
+    redistribution: RightsDecision
+    displayable_fields: list[str] = Field(default_factory=list)
+    limits: list[str] = Field(default_factory=list)
+
+
 class SourcePayload(Contract):
+    rights: SourceRights | None = None
     source: SourceRecord
     payload: str | dict[str, Any]
     jurisdiction: str = Field(min_length=1)
@@ -203,6 +236,10 @@ class DossierVersion(Contract):
             raise ValueError("duplicate source/evidence IDs")
         if self.query.selected_comparator_source_id not in sources:
             raise ValueError("missing comparator source")
+        if self.query.brief.data_class == "public" and any(
+            not source.synthetic and source.rights is None for source in self.sources
+        ):
+            raise ValueError("public dossier sources require a typed rights policy")
         for e in self.evidence:
             if e.source_id not in sources:
                 raise ValueError("dangling evidence source")
@@ -240,3 +277,4 @@ class RunManifest(Contract):
     stop_reason: StopReason
     artifacts: dict[str, str]
     limitations: list[str]
+    rights_summary: list[dict[str, Any]] = Field(default_factory=list)

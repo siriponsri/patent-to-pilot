@@ -16,6 +16,7 @@ from patent_to_pilot.healthtech.contracts import (AcquisitionBudget, Acquisition
     SourcePayload, canonical_patent_id, content_hash)
 from patent_to_pilot.healthtech.provenance import check_evidence
 from patent_to_pilot.healthtech.policies import fixed_hybrid_rerank
+from patent_to_pilot.healthtech.rights import ExportPurpose, enforce_dossier_rights, source_rights_summary
 from patent_to_pilot.ingestion.pls import PatentDocument
 from patent_to_pilot.retrieval.fts import FTSIndex
 
@@ -54,6 +55,10 @@ class DossierInput(Contract):
             raise ValueError("source is newer than query evidence cutoff")
         if self.query.brief.data_class == "public" and any(s.synthetic for s in all_sources):
             raise ValueError("synthetic sources cannot be presented as a public case")
+        if self.query.brief.data_class == "public" and any(
+            not s.synthetic and s.rights is None for s in all_sources
+        ):
+            raise ValueError("public runtime sources require a typed rights policy")
         for s in all_sources:
             if s.source.source_type not in {"product_record", "patent_document", "regulatory_record",
                     "literature", "independent_disclosure", "synthetic_record"}:
@@ -205,13 +210,16 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
                    "export_th":"dossier.th.md","events":"acquisition_events.jsonl","manifest":"manifest.json"},
         limitations=["Offline lexical/fixed-schedule engineering only; no hybrid, adaptive or LLM comparison.",
                      "No scientific benchmark or user evaluation was executed.",
-                     "Index construction is included in total elapsed time; action times cover searches only."])
+                     "Index construction is included in total elapsed time; action times cover searches only."],
+        rights_summary=[source_rights_summary(source) for source in data.sources + [p.source for p in data.patents]])
     return dossier,events,manifest
 
 
-def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", "th"] = "auto") -> str:
+def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", "th"] = "auto",
+                    purpose: ExportPurpose = "local_research") -> str:
     """Readable, editable export; literals escape table syntax and raw HTML."""
     import html
+    enforce_dossier_rights(dossier, purpose=purpose)
     def cell(value):
         return html.escape(str(value)).replace("|", "&#124;").replace("\n", " ").replace("\r", " ")
     if language not in {"auto", "en", "th"}:
@@ -241,4 +249,17 @@ def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", 
         lines.append("_(none)_" if not th else "_(ไม่มี)_")
     lines += ["", "## Source manifest", ""]
     lines += [f"- {cell(s.source.source_id)}: {cell(s.source.uri)}; type {cell(s.source.source_type)}; revision {cell(s.source.version_label)}; {cell(s.jurisdiction)}; {s.source_date}; synthetic {str(s.synthetic).lower()}; sha256 {s.source.sha256}" for s in dossier.sources]
+    lines += ["", "## Rights basis", "", "| Source | Product display | Redistribution | Basis | Limits |", "|---|---|---|---|---|"]
+    for source in dossier.sources:
+        rights = source.rights
+        if rights is None:
+            lines.append(f"| {cell(source.source.source_id)} | MISSING_POLICY | MISSING_POLICY |  |  |")
+            continue
+        lines.append("| " + " | ".join(map(cell, [
+            source.source.source_id,
+            rights.product_display,
+            rights.redistribution,
+            f"{rights.basis_url}#{rights.clause_locator} ({rights.checked_date})",
+            "; ".join(rights.limits) or "(none)",
+        ])) + " |")
     return "\n".join(lines)+"\n"

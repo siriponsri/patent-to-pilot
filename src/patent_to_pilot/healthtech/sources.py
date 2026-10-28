@@ -5,20 +5,22 @@ from datetime import date
 from typing import Any
 
 from patent_to_pilot.core.models import SourceRecord
-from patent_to_pilot.healthtech.contracts import EvidenceItem, SourcePayload, content_hash
+from patent_to_pilot.healthtech.contracts import EvidenceItem, SourcePayload, SourceRights, content_hash
 
 
 def source_payload(source_id: str, payload: str | dict[str, Any], *, uri: str,
                    revision: str, source_date: date, jurisdiction: str,
-                   source_type: str, license_note: str, synthetic: bool) -> SourcePayload:
+                   source_type: str, license_note: str, synthetic: bool,
+                   rights: SourceRights | None = None) -> SourcePayload:
     return SourcePayload(source=SourceRecord(record_id=source_id, source_id=source_id,
         source_type=source_type, uri=uri, version_label=revision, license_note=license_note,
         sha256=content_hash(payload)), payload=payload, source_date=source_date,
-        jurisdiction=jurisdiction, synthetic=synthetic)
+        jurisdiction=jurisdiction, synthetic=synthetic, rights=rights)
 
 
 def normalize_510k_record(record: dict[str, Any], *, source_id: str, snapshot_revision: str,
-                          retrieved_date: date, synthetic: bool = False) -> SourcePayload:
+                          retrieved_date: date, synthetic: bool = False,
+                          rights: SourceRights | None = None) -> SourcePayload:
     """Normalize one supplied openFDA 510(k) object without inventing approval.
 
     Only the declared device/decision fields are retained. Third-party GMDN/D&B
@@ -44,7 +46,7 @@ def normalize_510k_record(record: dict[str, Any], *, source_id: str, snapshot_re
     return source_payload(source_id, normalized, uri=uri,
         revision=snapshot_revision, source_date=retrieved_date, jurisdiction="US",
         source_type="regulatory_record", license_note="openFDA/FDA terms and field-specific rights apply; preserve attribution",
-        synthetic=synthetic)
+        synthetic=synthetic, rights=rights)
 
 
 def field_evidence(source: SourcePayload, field: str, evidence_id: str) -> EvidenceItem:

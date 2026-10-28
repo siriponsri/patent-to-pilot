@@ -16,9 +16,10 @@ def main() -> None:
     parser.add_argument("dossier", type=Path)
     parser.add_argument("source_id")
     parser.add_argument("--field")
+    parser.add_argument("--purpose", choices=("local_research", "product_display", "redistribution"), default="local_research")
     args = parser.parse_args()
     dossier = DossierVersion.model_validate_json(args.dossier.read_text(encoding="utf-8"))
-    print(json.dumps(source_view(dossier, args.source_id, args.field), ensure_ascii=False, indent=2))
+    print(json.dumps(source_view(dossier, args.source_id, args.field, purpose=args.purpose), ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

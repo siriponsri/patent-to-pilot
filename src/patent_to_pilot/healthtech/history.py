@@ -10,6 +10,7 @@ import time
 from typing import Any, Mapping
 
 from patent_to_pilot.healthtech.contracts import DossierVersion
+from patent_to_pilot.healthtech.rights import ExportPurpose, enforce_source_rights
 
 
 class DossierHistoryError(ValueError):
@@ -156,10 +157,12 @@ def append_user_edits(history_dir: str | Path, edits: Mapping[str, str], *, expe
     return next_version
 
 
-def source_view(dossier: DossierVersion, source_id: str, field: str | None = None) -> dict[str, Any]:
+def source_view(dossier: DossierVersion, source_id: str, field: str | None = None,
+                *, purpose: ExportPurpose = "local_research") -> dict[str, Any]:
     for source in dossier.sources:
         if source.source.source_id != source_id:
             continue
+        enforce_source_rights(source, purpose=purpose)
         payload: Any = source.payload
         if field is not None:
             if not isinstance(payload, dict) or field not in payload:
@@ -174,6 +177,7 @@ def source_view(dossier: DossierVersion, source_id: str, field: str | None = Non
             "source_date": str(source.source_date),
             "sha256": source.source.sha256,
             "synthetic": source.synthetic,
+            "rights": None if source.rights is None else source.rights.model_dump(mode="json"),
             "payload": payload,
         }
     raise DossierHistoryError(f"source not found: {source_id}")
