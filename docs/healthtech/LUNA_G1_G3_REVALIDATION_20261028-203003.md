@@ -28,6 +28,15 @@ DRY_RUN_NOT_EXECUTED; network_attempts=0; provider_calls=0; paid_cost_usd=0
 
 The machine-readable suite receipt is `docs/healthtech/evidence/luna-g1-g3-20261028/revalidation-203003.json` and the full-suite artifact is `results/healthtech/luna-g1-g3-20261028-203003-revalidation/regression/verification.json`.
 
+## Follow-on clean-checkout verification
+
+A second offline-only verification ran from disposable clean worktree `C:/Users/User/AppData/Local/Temp/ptp-ht-clean-a449cca` at commit `a449ccad7f93771a23018e1abccf28f486f466cd`; its tracked status was clean. The initial clean run completed 281 tests with one expected skip because the pinned local tokenizer artifact was unavailable in the clean checkout. The rerun exposed the existing local model snapshot through a junction at `data/raw/healthtech/models` pointing to `C:/Users/User/Desktop/myProject/patent-to-pilot/data/raw/healthtech/models`; no weights were copied or staged.
+
+Rerun artifact: `C:/Users/User/AppData/Local/Temp/ptp-ht-clean-a449cca/results/healthtech/clean-revalidation-a449cca-with-model/verification.json`  
+Result: `PASS`; 281 tests; 0 failures; 0 errors; 0 skipped; zero network attempts; zero credential-file reads; zero provider calls; `$0` paid cost. The local model snapshot manifest is `C:/Users/User/Desktop/myProject/patent-to-pilot/data/raw/healthtech/models/manifest.json`, SHA-256 `1ee112fe8d1fe086185ba9bf1fd7d032afe974535fd8e6014752b65f90f6684c`.
+
+The clean verifier hashes raw checkout bytes. The raw hashes for `history.py` and `test_healthtech_repairs.py` differ from the main working copy only because global `core.autocrlf=true` yields LF in the main checkout and CRLF in the clean worktree; `git hash-object` and EOL-normalized SHA-256 match for both files, while `engine.py` matches byte-for-byte. This is a checkout-format difference, not a code or test mutation.
+
 ## G3 backend walkthrough
 
 The three existing public dossiers were re-opened from `results/healthtech/public-dossiers-20261027-r3/` without loading evaluator relations or copying raw source pages:

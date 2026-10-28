@@ -115,5 +115,61 @@
     "src/patent_to_pilot/healthtech/engine.py": "4cd1d6106b4ab78217a404d9a3540abc7990e5023d35833f8a09b7c4f966f900",
     "tests/test_healthtech_repairs.py": "d19354941c8b718b6da09c6f7be1b6632556af7bf5fbee27ec2f8e09329f14e5",
     "docs/healthtech/G3_NO_CODE_JOURNEY_TH_EN.md": "5e487b673764c8587e4aef08d5a11a0b1ab4ec3708c39a1aeb8485deba5f7408"
+  },
+  "clean_checkout_follow_on": {
+    "status": "PASS",
+    "checked_at": "2026-10-28T20:45:18.792917+07:00",
+    "worktree": "C:/Users/User/AppData/Local/Temp/ptp-ht-clean-a449cca",
+    "head": "a449ccad7f93771a23018e1abccf28f486f466cd",
+    "tracked_status": "clean",
+    "initial_run": {
+      "status": "PASS_WITH_EXPECTED_SKIP",
+      "tests": 281,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "skip_reason": "pinned local tokenizer artifact unavailable in the clean checkout",
+      "artifact": "not retained separately"
+    },
+    "rerun": {
+      "status": "PASS",
+      "tests": 281,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "network_attempts": 0,
+      "forbidden_credential_read_attempts": 0,
+      "provider_calls": 0,
+      "paid_cost_usd": 0,
+      "artifact": "C:/Users/User/AppData/Local/Temp/ptp-ht-clean-a449cca/results/healthtech/clean-revalidation-a449cca-with-model/verification.json"
+    },
+    "model_snapshot": {
+      "junction": "C:/Users/User/AppData/Local/Temp/ptp-ht-clean-a449cca/data/raw/healthtech/models",
+      "target": "C:/Users/User/Desktop/myProject/patent-to-pilot/data/raw/healthtech/models",
+      "provenance": "existing local snapshot exposed by junction; no weights copied or staged",
+      "manifest": "C:/Users/User/Desktop/myProject/patent-to-pilot/data/raw/healthtech/models/manifest.json",
+      "manifest_sha256": "1ee112fe8d1fe086185ba9bf1fd7d032afe974535fd8e6014752b65f90f6684c"
+    },
+    "source_hash_reconciliation": {
+      "global_core_autocrlf": true,
+      "main_worktree_line_endings": "LF",
+      "clean_worktree_line_endings": "CRLF",
+      "git_hash_object_match": true,
+      "normalized_sha256_match": true,
+      "raw_sha256": {
+        "src/patent_to_pilot/healthtech/history.py": {
+          "main": "167268773a967655ca81c05b8556710f3c28bddfd9233773783f712f585234ef",
+          "clean": "c2bf0eea5611d3f1cf94e61351c4b4dcaff93cd8707d5cfa29b84b3cd8bb623f"
+        },
+        "tests/test_healthtech_repairs.py": {
+          "main": "d19354941c8b718b6da09c6f7be1b6632556af7bf5fbee27ec2f8e09329f14e5",
+          "clean": "19bbe28ea467057a450278dc52c3983cf2fa1be0532ab645df2c4089e83ce236"
+        },
+        "src/patent_to_pilot/healthtech/engine.py": {
+          "main": "4cd1d6106b4ab78217a404d9a3540abc7990e5023d35833f8a09b7c4f966f900",
+          "clean": "4cd1d6106b4ab78217a404d9a3540abc7990e5023d35833f8a09b7c4f966f900"
+        }
+      }
+    }
   }
 }

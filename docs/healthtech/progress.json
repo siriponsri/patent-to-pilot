@@ -4,7 +4,7 @@
   "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
   "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
   "g1_g2_run_start_commit": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
-  "latest_release_candidate": "68dbbde83921223d2e4d07352b10bc25a597670d",
+  "latest_release_candidate": "a449ccad7f93771a23018e1abccf28f486f466cd",
   "root_statuses": {
     "HT-G1": "PARTIAL",
     "HT-G2": "PARTIAL",
@@ -97,7 +97,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "Keep the corrected Abbott branch development-only, review the backend package for integration, and resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout; current-HEAD revalidation is recorded at the 203003 receipt",
+  "next": "Keep the corrected Abbott branch development-only, review the backend package for integration, and resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout; the 203003 receipt now includes clean-checkout revalidation at current HEAD",
   "verification": "docs/healthtech/evidence/luna-g1-g3-20261028/revalidation-203003.json",
   "closeout_receipt": "docs/healthtech/LUNA_G1_G3_REVALIDATION_20261028-203003.md",
   "supplemental_data": "research/SUPPLEMENTAL_DATA.md",
