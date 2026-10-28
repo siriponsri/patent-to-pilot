@@ -26,6 +26,7 @@ def main():
     os.environ['PYTEST_DISABLE_PLUGIN_AUTOLOAD']='1'
     os.environ['PYTHONDONTWRITEBYTECODE']='1'
     sys.dont_write_bytecode=True
+    sys.path.insert(0,str(repo))
     sys.path.insert(0,str(repo/'src'))
     code_files=sorted(p for folder in ['src','scripts','tests'] for p in (repo/folder).rglob('*.py'))
     before={p.relative_to(repo).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in code_files}
