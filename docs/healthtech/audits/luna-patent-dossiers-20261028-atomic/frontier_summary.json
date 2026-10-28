@@ -1,0 +1,73 @@
+{
+  "status": "PASS_DEVELOPMENT_ONLY",
+  "run_root": "results/healthtech/ht-real-baselines-20261028-r7",
+  "code_commit": "1ce0443f7e972b19942336cadcd46294bde82c41",
+  "scoring_script_sha256": "f82232a2cf129610aece51eeab88ef49757506016b0493ec57492499ba0b8f01",
+  "protocol_hash": "f9b1fdf43d2bfd1fc94bee58e4c91738195456202dcd0f8e228af41887f938b8",
+  "cohort_manifest_hash": "6e793d3b40da983c8829ee88ed96e42df0d5b65109d4e6c8144901d2f6d42787",
+  "runtime_hash": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121",
+  "reference_hash": "4024eb9ce949ad1e6d6c683c1762c87e29eef3814a9fb8cbf64cdc7f28df77ae",
+  "group_hash": "bfb1d8288283d801eb4c8db3200266ab0a8845f4206084fae56c4d91a806ac84",
+  "counts": {
+    "eligible_devices": 3,
+    "universe_patents": 41,
+    "disclosed_pairs": 61,
+    "unjudged_distractor_pairs": 62,
+    "final_holdout": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0
+  },
+  "primary_k": 20,
+  "terminal_method_summary": {
+    "HT-B0a": {"macro_known_link_recall": 0.442739, "query_calls": 3, "rerank_pairs": 0, "embedding_query_tokens": 0, "rerank_tokens": 0, "not_realized_queries": 0},
+    "HT-B0b": {"macro_known_link_recall": 0.662242, "query_calls": 3, "rerank_pairs": 0, "embedding_query_tokens": 0, "rerank_tokens": 0, "not_realized_queries": 0},
+    "HT-B1": {"macro_known_link_recall": 0.498802, "query_calls": 3, "rerank_pairs": 123, "embedding_query_tokens": 75, "rerank_tokens": 31488, "not_realized_queries": 0},
+    "HT-B2": {"macro_known_link_recall": 0.568912, "query_calls": 9, "rerank_pairs": 369, "embedding_query_tokens": 123, "rerank_tokens": 94464, "not_realized_queries": 0},
+    "HT-B3": {"macro_known_link_recall": 0.498802, "query_calls": 5, "rerank_pairs": 205, "embedding_query_tokens": 96, "rerank_tokens": 52480, "not_realized_queries": 0}
+  },
+  "prefix_rows": [
+    {"method": "HT-B0a", "prefix": 1, "macro_known_link_recall_all_devices": 0.442739, "reached_queries": 3, "not_realized_queries": 0, "query_calls": 3, "rerank_pairs": 0, "embedding_query_tokens": 0, "rerank_tokens": 0},
+    {"method": "HT-B0b", "prefix": 1, "macro_known_link_recall_all_devices": 0.662242, "reached_queries": 3, "not_realized_queries": 0, "query_calls": 3, "rerank_pairs": 0, "embedding_query_tokens": 0, "rerank_tokens": 0},
+    {"method": "HT-B1", "prefix": 1, "macro_known_link_recall_all_devices": 0.498802, "reached_queries": 3, "not_realized_queries": 0, "query_calls": 3, "rerank_pairs": 123, "embedding_query_tokens": 75, "rerank_tokens": 31488},
+    {"method": "HT-B2", "prefix": 1, "macro_known_link_recall_all_devices": 0.498802, "reached_queries": 3, "not_realized_queries": 0, "query_calls": 3, "rerank_pairs": 123, "embedding_query_tokens": 75, "rerank_tokens": 31488},
+    {"method": "HT-B2", "prefix": 2, "macro_known_link_recall_all_devices": 0.498802, "reached_queries": 3, "not_realized_queries": 0, "query_calls": 6, "rerank_pairs": 246, "embedding_query_tokens": 111, "rerank_tokens": 62976},
+    {"method": "HT-B2", "prefix": 3, "macro_known_link_recall_all_devices": 0.568912, "reached_queries": 3, "not_realized_queries": 0, "query_calls": 9, "rerank_pairs": 369, "embedding_query_tokens": 123, "rerank_tokens": 94464},
+    {"method": "HT-B3", "prefix": 1, "macro_known_link_recall_all_devices": 0.498802, "reached_queries": 3, "not_realized_queries": 0, "query_calls": 3, "rerank_pairs": 123, "embedding_query_tokens": 75, "rerank_tokens": 31488},
+    {"method": "HT-B3", "prefix": 2, "macro_known_link_recall_all_devices": 0.224293, "macro_known_link_recall_reached_devices": 0.336439, "reached_queries": 2, "not_realized_queries": 1, "not_realized_query_ids": ["HT-DEV-TENDYNE"], "query_calls": 5, "rerank_pairs": 205, "embedding_query_tokens": 96, "rerank_tokens": 52480}
+  ],
+  "group_diagnostics_terminal": {
+    "exact_shared_group_0": ["HT-DEV-MITRACLIP", "HT-DEV-TRICLIP"],
+    "exact_shared_group_1": ["HT-DEV-TENDYNE"],
+    "macro_known_link_recall_by_method": {
+      "HT-B0a": [0.340580, 0.647059],
+      "HT-B0b": [0.522774, 0.941176],
+      "HT-B1": [0.336439, 0.823529],
+      "HT-B2": [0.471014, 0.764706],
+      "HT-B3": [0.336439, 0.823529]
+    }
+  },
+  "fixed_prefix_alignment": {
+    "methods": ["HT-B1", "HT-B2", "HT-B3"],
+    "first_query_match_across_fixed_methods": true,
+    "shared_action": "SharedRetriever.fixed_bundle with the same candidate and rerank depths."
+  },
+  "uncertainty": {
+    "status": "NOT_ESTIMABLE",
+    "confidence_intervals": "NOT_ESTIMABLE",
+    "reason": [
+      "Three eligible queries, two exact-patent groups, and no final holdout.",
+      "All queries belong to one Abbott company group, so company-held-out sensitivity is not estimable.",
+      "Family mapping is UNKNOWN_NOT_ASSUMED; shared-patent groups are descriptive and not independent family samples."
+    ],
+    "reported_instead": [
+      "All-device per-prefix quality/resource rows with actual reached and not-realized counts.",
+      "Descriptive exact-patent group rows at each observed prefix."
+    ]
+  },
+  "full_artifact": "results/healthtech/ht-real-baselines-20261028-r7/frontier_diagnostics.json",
+  "interpretation_limits": [
+    "Known-link recovery only; not exhaustive recall or an established lower bound.",
+    "Unlisted pairs remain unjudged and are not negative labels.",
+    "The Abbott branch remains development-only; no generalization, clinical, FTO, validity, investment, or publication-readiness claim is made."
+  ]
+}

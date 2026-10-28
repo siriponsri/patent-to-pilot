@@ -10,8 +10,8 @@
 | Root item | Status | Evidence |
 |---|---|---|
 | HT-G1 data/source registry and usable development cohort | `PARTIAL` / Bridge `BLOCKED_LOCAL` | `docs/healthtech/research/BRIDGE_RIGHTS_COHORT.md`; tracked manifest `data/manifests/healthtech/ht-public-cohort-20261028.json`; local source registry, runtime/evaluator files, groups, split and data card under `results/healthtech/ht-public-cohort-20261028-r1/` |
-| HT-G2 evaluator correctness | `PASS` for accepted development contract | 40 focused HealthTech tests; SciFact differential `results/healthtech/g1-g2-scifact-differential-r2/receipt.json`; HT-T1 real-data validation in `ht-real-baselines-20261028-r4/evaluator_validation.json` |
-| HT-G2 real development baselines | `PARTIAL` / no final generalization claim | `results/healthtech/ht-real-baselines-20261028-r4/` with raw rankings, attempts, per-device/group metrics, costs, and headroom |
+| HT-G2 evaluator correctness | `PASS` for accepted development contract | Focused HealthTech tests; SciFact differential `results/healthtech/g1-g2-scifact-differential-r2/receipt.json`; HT-T1 real-data validation in `ht-real-baselines-20261028-r7/evaluator_validation.json` |
+| HT-G2 real development baselines | `PARTIAL` / no final generalization claim | Current `results/healthtech/ht-real-baselines-20261028-r7/` with raw rankings, attempts, per-device/group metrics, per-prefix frontier, costs, and headroom |
 | Clean engineering verification | `PASS` | Clean tracked worktree at `679ff5a`: 275 tests, 0 failures/errors/skips, 0 network attempts, 0 credential-file reads |
 | HT API boundary | `DRY_RUN_NOT_EXECUTED` | Guarded dry-run returned no response and zero network/provider calls |
 
@@ -42,13 +42,13 @@ All five methods ran on the same 3-device / 41-patent universe, with candidate a
 |---|---:|---:|---:|---:|---:|
 | HT-B0a company control | 0.208744 | 0.442739 | 1.000000 | 3 | 0 |
 | HT-B0b BM25 lexical | 0.346933 | 0.662242 | 1.000000 | 3 | 0 |
-| HT-B1 dense + fixed fusion + local reranker | 0.298908 | 0.493687 | 1.000000 | 3 | 123 |
-| HT-B2 fixed multi-query | 0.287703 | 0.584785 | 1.000000 | 9 | 369 |
-| HT-B3 observable heuristic | 0.284415 | 0.498802 | 1.000000 | 6 | 246 |
+| HT-B1 dense + fixed fusion + local reranker | 0.298908 | 0.498802 | 1.000000 | 3 | 123 |
+| HT-B2 fixed multi-query | 0.286323 | 0.568912 | 1.000000 | 9 | 369 |
+| HT-B3 observable heuristic | 0.284415 | 0.498802 | 1.000000 | 5 | 205 |
 
-The result is a valid development null/negative finding: BM25 exceeds the fixed dense/reranker hybrid at K=20 on this cohort, while the simple heuristic is only 0.005115 macro recall above B1 and costs twice the B1 query/rerank work. No superiority claim is made; the simplest useful product method remains a live option.
+The result is a valid development null/negative finding: BM25 exceeds the fixed dense/reranker hybrid at K=20 on this cohort, while the simple heuristic matches B1 at the terminal prefix and realizes fewer actions than the fixed three-query schedule. No superiority claim is made; the simplest useful product method remains a live option.
 
-Resources are recorded as offline units, not dollars. B1 used 384 dense query tokens and 31,488 reranker tokens; B2 used 1,152 and 94,464; B3 used 768 and 62,976. The model snapshots total 47,442,652 bytes and are pinned in `data/manifests/healthtech/ht-models-20261028.json`; both model cards declare Apache-2.0. Model pretraining contamination and medical-domain adequacy are unresolved.
+Resources are recorded as offline units, not dollars. B1 used 75 dense query tokens and 31,488 reranker tokens; B2 used 123 and 94,464; B3 used 96 and 52,480. The model snapshots total 47,442,652 bytes and are pinned in `data/manifests/healthtech/ht-models-20261028.json`; both model cards declare Apache-2.0. Model pretraining contamination and medical-domain adequacy are unresolved. The r7 frontier additionally records prefix-1/2/3 quality and realized resources; confidence intervals remain `NOT_ESTIMABLE` for this three-query, single-company development slice.
 
 ## Correctness and commands
 
@@ -71,7 +71,7 @@ Real public acquisition and scoring:
 ```text
 python -B scripts/healthtech/acquire_model_artifacts.py
 python -B scripts/healthtech/fetch_public_device_cohort.py --output results/healthtech/ht-public-cohort-20261028-r1
-rtk proxy python -B scripts/healthtech/run_real_baselines.py --runtime results/healthtech/ht-public-cohort-20261028-r1/runtime.json --references results/healthtech/ht-public-cohort-20261028-r1/evaluator/references.json --groups results/healthtech/ht-public-cohort-20261028-r1/groups.json --model-root data/raw/healthtech/models --output results/healthtech/ht-real-baselines-20261028-r4 --code-commit 7b15ed8 --protocol-hash 7dab96b735c70bcf60b99f191477c5add04d95c337d437c2d17b546e8b226cf2 --cohort-manifest-hash 6e793d3b40da983c8829ee88ed96e42df0d5b65109d4e6c8144901d2f6d42787
+rtk proxy python -B scripts/healthtech/run_real_baselines.py --runtime results/healthtech/ht-public-cohort-20261028-r1/runtime.json --references results/healthtech/ht-public-cohort-20261028-r1/evaluator/references.json --groups results/healthtech/ht-public-cohort-20261028-r1/groups.json --model-root data/raw/healthtech/models --output results/healthtech/ht-real-baselines-20261028-r7 --code-commit 1ce0443f7e972b19942336cadcd46294bde82c41 --protocol-hash f9b1fdf43d2bfd1fc94bee58e4c91738195456202dcd0f8e228af41887f938b8 --cohort-manifest-hash 6e793d3b40da983c8829ee88ed96e42df0d5b65109d4e6c8144901d2f6d42787
 REAL_PUBLIC_DEVELOPMENT_RUN; provider_calls=0; paid_cost_usd=0
 ```
 

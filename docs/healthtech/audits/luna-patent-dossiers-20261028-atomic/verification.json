@@ -1,0 +1,81 @@
+{
+  "run_id": "luna-patent-dossiers-20261028-atomic",
+  "checked_date": "2026-10-28",
+  "base_head": "1ce0443f7e972b19942336cadcd46294bde82c41",
+  "end_head": "1ce0443f7e972b19942336cadcd46294bde82c41",
+  "tree_state": "DIRTY_PRESERVED_UNRELATED_OWNER_ARTIFACTS",
+  "changed_paths": [
+    "src/patent_to_pilot/healthtech/history.py",
+    "src/patent_to_pilot/healthtech/abbott.py",
+    "scripts/healthtech/run_real_baselines.py",
+    "scripts/healthtech/build_abbott_dossiers.py",
+    "scripts/healthtech/freeze_abbott_development.py",
+    "tests/test_healthtech_repairs.py",
+    "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/frontier_summary.json"
+  ],
+  "package_results": {
+    "A_atomic_history": {
+      "status": "PASS",
+      "publication": "same-directory staging plus atomic hard-link creation; no unconditional replace",
+      "reader_during_staging": "committed chain [1] only",
+      "final_chain": [1, 2],
+      "same_base_concurrency": "one commit, one recoverable stale-parent conflict",
+      "interruption_cases": ["before publish", "after payload fsync before publish", "after publish with hidden staging recovery"],
+      "reproduction_artifact": "history-after.json"
+    },
+    "B_real_cases": {
+      "status": "PASS_LOCAL_DEVELOPMENT_BACKEND",
+      "cohort": "results/healthtech/ht-public-cohort-20261028-r1",
+      "artifact_root": "results/healthtech/ht-abbott-dossiers-20261028-atomic-r3",
+      "cases": [
+        {"query_id": "HT-DEV-MITRACLIP", "candidate_count": 35, "retrieved_candidate_count": 14, "disclosed_link_count": 21, "patent_inputs": 41},
+        {"query_id": "HT-DEV-TENDYNE", "candidate_count": 20, "retrieved_candidate_count": 3, "disclosed_link_count": 17, "patent_inputs": 41},
+        {"query_id": "HT-DEV-TRICLIP", "candidate_count": 28, "retrieved_candidate_count": 5, "disclosed_link_count": 23, "patent_inputs": 41}
+      ],
+      "per_case_artifacts": ["source-view.json", "history/version-0001.json", "history/version-0002.json", "export-v2/dossier.json", "export-v2/dossier.en.md", "export-v2/dossier.th.md"]
+    },
+    "C_development_freeze": {
+      "status": "PASS_DEVELOPMENT_ONLY_WITH_FRONTIER",
+      "protocol": "results/healthtech/ht-abbott-development-20261028-r1/protocol.json",
+      "frontier": "results/healthtech/ht-real-baselines-20261028-r7/frontier_diagnostics.json",
+      "eligible_devices": 3,
+      "universe_patents": 41,
+      "disclosed_pairs": 61,
+      "unjudged_distractor_pairs": 62,
+      "final_holdout": [],
+      "family_mapping": "UNKNOWN_NOT_ASSUMED",
+      "frontier_uncertainty": "NOT_ESTIMABLE"
+    }
+  },
+  "source_and_config_hashes": {
+    "src/patent_to_pilot/healthtech/history.py": "9d91d1807137b523ec8b083c74a3798ab2b5cb95d37bf429a154a904d502ae84",
+    "src/patent_to_pilot/healthtech/abbott.py": "3185880dddb2efdddd6d7dd6d5dffe2d911491edac982fa6f1191b51a10365fe",
+    "scripts/healthtech/build_abbott_dossiers.py": "e23f3e992da1968fe7fb0450a4be028979660effe489f6f47cb9a478239f34a7",
+    "scripts/healthtech/freeze_abbott_development.py": "c2cf08d7b6b26e5a081c0ad775f224077f308deb133c67e00f970a052588dd51",
+    "scripts/healthtech/run_real_baselines.py": "f82232a2cf129610aece51eeab88ef49757506016b0493ec57492499ba0b8f01",
+    "tests/test_healthtech_repairs.py": "8ca9ac4f390c029567bb3e24a7188b2291b374adc27b110850ca6f518a87659d",
+    "results/healthtech/ht-public-cohort-20261028-r1/runtime.json": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121",
+    "results/healthtech/ht-public-cohort-20261028-r1/source_registry.json": "bb22c176849415cd7a86c9aec5bc6a22fd62c547afb53d1b7f74205517cd5eba",
+    "results/healthtech/ht-abbott-development-20261028-r1/protocol.json": "f9b1fdf43d2bfd1fc94bee58e4c91738195456202dcd0f8e228af41887f938b8",
+    "results/healthtech/ht-real-baselines-20261028-r7/receipt.json": "f5d689ddb720ebf658699e2ed141b5cb483565e1d4449578353e1fde94e769c7",
+    "results/healthtech/ht-real-baselines-20261028-r7/frontier_diagnostics.json": "c8d7d41bf8f696042125a54f7cf13e59a087b3305dc6f3f3584aed7037deef20",
+    "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/frontier_summary.json": "6ff3312823d190f405a943e71d97cc7648613de871612ee70b52dcb84b7d9194"
+  },
+  "commands": [
+    {"command": "pytest focused HealthTech suite", "result": "PASS: 52 passed in 7.25s"},
+    {"command": "full offline pytest suite", "result": "285 passed, 2 failed in pre-existing release-budget child-process tests because spawned workers cannot import patent_to_pilot in this checkout; direct reproduction: ModuleNotFoundError: No module named 'patent_to_pilot'"},
+    {"command": "compileall healthtech code and scripts", "result": "PASS: exit 0"},
+    {"command": "portable history publication reproduction", "result": "PASS: READER_SAW_COMMITTED_CHAIN"},
+    {"command": "freeze Abbott development protocol", "result": "PASS: 3 devices, 41 patents, 61 disclosed pairs, 62 unjudged distractor pairs"},
+    {"command": "run fixed-prefix quality/resource frontier", "result": "PASS: r7; 5 methods, 3 devices, 41 patents, 61 disclosed pairs, zero provider calls; first-query alignment true; uncertainty NOT_ESTIMABLE"},
+    {"command": "build three Abbott dossiers", "result": "PASS: 35/21, 20/17, 28/23 candidates/disclosed links"},
+    {"command": "source viewer CLI", "result": "PASS: PMA trade_name field returned"},
+    {"command": "history export CLI", "result": "PASS: version 2 exported"}
+  ],
+  "boundaries": {
+    "implemented": ["atomic history publication", "staging recovery", "Abbott runtime adapter", "real local dossier artifacts", "development distractor/group/split freeze"],
+    "mocked": [],
+    "not_run": ["paid/free remote provider inference", "scientific final holdout", "adaptive superiority", "clinical validation", "FTO", "patent validity", "investment merit", "deployment", "public redistribution", "frontend/UI integration"],
+    "environment_blocked": ["Two unrelated release-budget subprocess tests require an installed/editable package or explicit child-process import path; no repository packaging change was made in this scoped task."]
+  }
+}

@@ -13,10 +13,17 @@ from patent_to_pilot.evaluation.healthtech.local_retrieval import (
     _OnnxTokenizer,
 )
 from patent_to_pilot.healthtech.engine import DossierInput, export_markdown, run_dossier
+from patent_to_pilot.healthtech import history as history_module
+from patent_to_pilot.healthtech.abbott import (
+    build_abbott_case_inputs,
+    build_abbott_development_protocol,
+    promote_disclosed_links,
+)
 from patent_to_pilot.healthtech.history import (
     DossierHistoryError,
     append_user_edits,
     load_versions,
+    recover_staging_files,
     save_version,
 )
 from scripts.healthtech import run_real_baselines as baselines
@@ -140,6 +147,55 @@ def test_b1_and_fixed_multiquery_methods_share_first_query_text():
     assert b1_retriever.calls[0] == b2_retriever.calls[0] == "first fixed query"
 
 
+def test_frontier_reports_prefix_quality_resources_and_nonrealized_queries():
+    def attempt(attempt_id: int, ranking: list[str], *, query_calls: int = 1):
+        return {
+            "attempt_id": attempt_id,
+            "status": "completed",
+            "query": f"query-{attempt_id}",
+            "ranking": [
+                {"patent_id_canonical": patent_id, "score": 1.0, "rank": rank}
+                for rank, patent_id in enumerate(ranking, 1)
+            ],
+            "resources": {
+                "query_calls": query_calls,
+                "returned_candidates": len(ranking),
+                "rerank_pairs": len(ranking),
+            },
+        }
+
+    rows = []
+    for method in baselines.METHODS:
+        for query_id, first_query_hash, attempts in (
+            ("q1", "shared-q1", [attempt(1, ["US000002A1", "US000001A1"]), attempt(2, ["US000001A1", "US000002A1"])]),
+            ("q2", "shared-q2", [attempt(1, ["US000001A1", "US000002A1"])]) if method == "HT-B3" else
+            ("q2", "shared-q2", [attempt(1, ["US000002A1", "US000001A1"]), attempt(2, ["US000001A1", "US000002A1"])]),
+        ):
+            rows.append({
+                "method": method,
+                "query_id": query_id,
+                "status": "completed",
+                "attempts": attempts,
+                "prefix_diagnostics": {"first_query_hash": first_query_hash, "scheduled_queries": ["a", "b"]},
+            })
+
+    frontier = baselines._quality_resource_frontier(
+        rows,
+        {"q1": ["US000001A1"], "q2": ["US000002A1"]},
+        ["US000001A1", "US000002A1"],
+        [["q1", "q2"]],
+        ["q1", "q2"],
+    )
+
+    b2_rows = [row for row in frontier["rows"] if row["method"] == "HT-B2"]
+    b3_rows = [row for row in frontier["rows"] if row["method"] == "HT-B3"]
+    assert [row["prefix"] for row in b2_rows] == [1, 2]
+    assert b2_rows[1]["query_calls"] == 4
+    assert b3_rows[1]["not_realized_query_count"] == 1
+    assert frontier["fixed_prefix_alignment"]["first_query_match_across_fixed_methods"] is True
+    assert frontier["uncertainty"]["status"] == "NOT_ESTIMABLE"
+
+
 def test_history_rejects_stale_parent_and_export_includes_user_edits(tmp_path):
     example = json.loads((ROOT / "examples/healthtech/synthetic-device/input.json").read_text(encoding="utf-8"))
     dossier, _, _ = run_dossier(DossierInput.model_validate(example), run_id="repair-history", code_commit="test")
@@ -190,3 +246,143 @@ def test_history_two_simultaneous_writers_have_one_commit_and_one_conflict(tmp_p
     assert sorted(item["status"] for item in results) == ["committed", "conflict"]
     assert [item.version for item in load_versions(history)] == [1, 2]
     assert any(item.get("pending_text") == "pending-writer-a" for item in results) or any(item.get("pending_text") == "pending-writer-b" for item in results)
+
+
+def test_history_reader_never_sees_partial_published_version(tmp_path, monkeypatch):
+    example = json.loads((ROOT / "examples/healthtech/synthetic-device/input.json").read_text(encoding="utf-8"))
+    dossier, _, _ = run_dossier(DossierInput.model_validate(example), run_id="atomic-reader", code_commit="test")
+    history = tmp_path / "history"
+    save_version(history, dossier)
+    updated = dossier.model_copy(update={"version": 2, "parent_version": 1})
+    staged = threading.Event()
+    release = threading.Event()
+    original_fdopen = history_module.os.fdopen
+
+    def paused_fdopen(*args, **kwargs):
+        staged.set()
+        assert release.wait(5)
+        return original_fdopen(*args, **kwargs)
+
+    monkeypatch.setattr("patent_to_pilot.healthtech.history.os.fdopen", paused_fdopen)
+    errors = []
+
+    def writer():
+        try:
+            save_version(history, updated)
+        except BaseException as exc:
+            errors.append(exc)
+
+    thread = threading.Thread(target=writer, daemon=True)
+    thread.start()
+    assert staged.wait(5)
+    assert not (history / "version-0002.json").exists()
+    assert [item.version for item in load_versions(history)] == [1]
+    assert list(history.glob(".version-*.staging"))
+    release.set()
+    thread.join(5)
+    assert not thread.is_alive()
+    assert errors == []
+    assert [item.version for item in load_versions(history)] == [1, 2]
+
+
+def test_history_interruption_before_publish_preserves_last_committed_chain(tmp_path, monkeypatch):
+    example = json.loads((ROOT / "examples/healthtech/synthetic-device/input.json").read_text(encoding="utf-8"))
+    dossier, _, _ = run_dossier(DossierInput.model_validate(example), run_id="atomic-before", code_commit="test")
+    history = tmp_path / "history"
+    save_version(history, dossier)
+    updated = dossier.model_copy(update={"version": 2, "parent_version": 1})
+
+    def interrupt(_source, _destination):
+        raise KeyboardInterrupt("interrupted before publication")
+
+    monkeypatch.setattr("patent_to_pilot.healthtech.history.os.link", interrupt)
+    with pytest.raises(KeyboardInterrupt, match="before publication"):
+        save_version(history, updated)
+    assert [item.version for item in load_versions(history)] == [1]
+    assert not (history / "version-0002.json").exists()
+    assert list(history.glob(".version-*.staging")) == []
+
+
+def test_history_interruption_after_payload_fsync_before_publish_cleans_staging(tmp_path, monkeypatch):
+    example = json.loads((ROOT / "examples/healthtech/synthetic-device/input.json").read_text(encoding="utf-8"))
+    dossier, _, _ = run_dossier(DossierInput.model_validate(example), run_id="atomic-fsync", code_commit="test")
+    history = tmp_path / "history"
+    save_version(history, dossier)
+    updated = dossier.model_copy(update={"version": 2, "parent_version": 1})
+    fsync_calls = []
+    original_fsync = history_module.os.fsync
+
+    def track_fsync(descriptor):
+        fsync_calls.append(descriptor)
+        return original_fsync(descriptor)
+
+    def fail_publish(_source, _destination):
+        assert fsync_calls
+        raise OSError("injected publication interruption")
+
+    monkeypatch.setattr("patent_to_pilot.healthtech.history.os.fsync", track_fsync)
+    monkeypatch.setattr("patent_to_pilot.healthtech.history.os.link", fail_publish)
+    with pytest.raises(DossierHistoryError, match="could not publish version atomically"):
+        save_version(history, updated)
+    assert [item.version for item in load_versions(history)] == [1]
+    assert not (history / "version-0002.json").exists()
+    assert list(history.glob(".version-*.staging")) == []
+
+
+def test_history_interruption_after_publish_leaves_recoverable_staging(tmp_path, monkeypatch):
+    example = json.loads((ROOT / "examples/healthtech/synthetic-device/input.json").read_text(encoding="utf-8"))
+    dossier, _, _ = run_dossier(DossierInput.model_validate(example), run_id="atomic-after", code_commit="test")
+    history = tmp_path / "history"
+    save_version(history, dossier)
+    updated = dossier.model_copy(update={"version": 2, "parent_version": 1})
+    original_unlink = history_module.os.unlink
+
+    def interrupt_cleanup(path, *args, **kwargs):
+        if str(path).endswith(".staging"):
+            raise OSError("interrupted after publication")
+        return original_unlink(path, *args, **kwargs)
+
+    monkeypatch.setattr("patent_to_pilot.healthtech.history.os.unlink", interrupt_cleanup)
+    save_version(history, updated)
+    monkeypatch.setattr("patent_to_pilot.healthtech.history.os.unlink", original_unlink)
+    assert [item.version for item in load_versions(history)] == [1, 2]
+    abandoned = list(history.glob(".version-*.staging"))
+    assert len(abandoned) == 1
+    recovered = recover_staging_files(history, older_than_seconds=0)
+    assert recovered == abandoned
+    assert list(history.glob(".version-*.staging")) == []
+    assert [item.version for item in load_versions(history)] == [1, 2]
+
+
+def test_abbott_adapter_builds_real_public_linked_inputs_without_evaluator_reads():
+    cohort = ROOT / "results/healthtech/ht-public-cohort-20261028-r1"
+    cases = build_abbott_case_inputs(cohort)
+    assert sorted(cases) == ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"]
+    for query_id, input_data in cases.items():
+        assert len(input_data.patents) == 41
+        assert input_data.query.selected_comparator_source_id in input_data.query.permitted_inputs
+        disclosure = [item for item in input_data.evidence if item.evidence_kind == "patent_disclosure"]
+        assert len(disclosure) == 1
+        assert all("evaluator" not in source.source.uri.lower() for source in input_data.sources)
+        dossier, _, _ = run_dossier(input_data, run_id=f"adapter-{query_id}", code_commit="test")
+        assert dossier.candidates
+        linked = promote_disclosed_links(dossier, input_data)
+        assert linked.candidates
+        assert any(item.association_status == "retrieved_candidate" for item in linked.candidates)
+        assert any(item.association_status == "disclosed_link" for item in linked.candidates)
+        assert all(item.source_id in {source.source.source_id for source in linked.sources} for item in linked.candidates)
+
+
+def test_abbott_development_protocol_freezes_unjudged_distractors_and_groups():
+    cohort = ROOT / "results/healthtech/ht-public-cohort-20261028-r1"
+    protocol = build_abbott_development_protocol(cohort)
+    assert protocol["status"] == "DEVELOPMENT_ONLY_FREEZE_NO_HOLDOUT"
+    assert protocol["counts"] == {
+        "eligible_devices": 3,
+        "universe_patents": 41,
+        "disclosed_pairs": 61,
+        "unjudged_distractor_pairs": 62,
+    }
+    assert protocol["split"]["final_holdout"] == []
+    assert protocol["groups"]["family_mapping"]["status"] == "UNKNOWN_NOT_ASSUMED"
+    assert all(protocol["distractors_by_query"][query_id] for query_id in protocol["eligible_query_ids"])

@@ -5,6 +5,8 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import tempfile
+import time
 from typing import Any, Mapping
 
 from patent_to_pilot.healthtech.contracts import DossierVersion
@@ -18,29 +20,95 @@ def _version_path(history_dir: Path, version: int) -> Path:
     return history_dir / f"version-{version:04d}.json"
 
 
+def _staging_paths(history_dir: Path) -> list[Path]:
+    return sorted(history_dir.glob(".version-*.staging"))
+
+
+def _fsync_directory(history_dir: Path) -> None:
+    """Flush directory metadata where the host filesystem exposes that boundary."""
+    flags = os.O_RDONLY | getattr(os, "O_DIRECTORY", 0)
+    try:
+        descriptor = os.open(history_dir, flags)
+    except OSError:
+        return
+    try:
+        try:
+            os.fsync(descriptor)
+        except OSError:
+            return
+    finally:
+        os.close(descriptor)
+
+
 def save_version(history_dir: str | Path, dossier: DossierVersion) -> Path:
     root = Path(history_dir)
     root.mkdir(parents=True, exist_ok=True)
     destination = _version_path(root, dossier.version)
     payload = dossier.model_dump_json(indent=2) + "\n"
-    flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
-    flags |= getattr(os, "O_BINARY", 0)
-    try:
-        descriptor = os.open(destination, flags)
-    except FileExistsError as exc:
-        raise DossierHistoryError(f"version already exists or concurrent writer won: {destination}") from exc
+    descriptor, staging_name = tempfile.mkstemp(
+        prefix=f".version-{dossier.version:04d}.",
+        suffix=".staging",
+        dir=root,
+    )
+    staging = Path(staging_name)
+    published = False
     try:
         with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as handle:
             handle.write(payload)
             handle.flush()
             os.fsync(handle.fileno())
-    except Exception:
         try:
-            destination.unlink()
-        except FileNotFoundError:
-            pass
-        raise
+            # A hard link publishes the complete staged inode atomically and
+            # fails if another writer already claimed the version path.
+            os.link(staging, destination)
+        except FileExistsError as exc:
+            raise DossierHistoryError(
+                f"version already exists or concurrent writer won: {destination}"
+            ) from exc
+        except OSError as exc:
+            raise DossierHistoryError(f"could not publish version atomically: {destination}") from exc
+        published = True
+        _fsync_directory(root)
+    finally:
+        if not published or staging.exists():
+            try:
+                staging.unlink()
+            except FileNotFoundError:
+                pass
+            except OSError:
+                # The committed version is already durable after publication;
+                # leave an invisible staging file for explicit recovery.
+                pass
     return destination
+
+
+def recover_staging_files(
+    history_dir: str | Path,
+    *,
+    older_than_seconds: float = 3600.0,
+    now: float | None = None,
+) -> list[Path]:
+    """Remove old, hidden staging files without touching committed versions."""
+    root = Path(history_dir)
+    cutoff = time.time() if now is None else now
+    recovered: list[Path] = []
+    for path in _staging_paths(root):
+        try:
+            age = cutoff - path.stat().st_mtime
+        except FileNotFoundError:
+            continue
+        if age < older_than_seconds:
+            continue
+        try:
+            path.unlink()
+        except FileNotFoundError:
+            continue
+        except OSError as exc:
+            raise DossierHistoryError(f"could not recover staging file: {path}") from exc
+        recovered.append(path)
+    if recovered:
+        _fsync_directory(root)
+    return recovered
 
 
 def load_versions(history_dir: str | Path) -> list[DossierVersion]:

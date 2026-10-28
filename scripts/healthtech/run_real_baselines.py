@@ -37,6 +37,10 @@ def _read_json(path: Path) -> dict:
     return value
 
 
+def _file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
 def _write_json(path: Path, payload: object) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
@@ -301,7 +305,178 @@ def _group_results(metrics: dict, groups: list[list[str]], *, k: int) -> list[di
     return rows
 
 
-def _frontier_diagnostics(rankings: list[dict], evaluations: dict[str, dict], groups: list[list[str]]) -> dict:
+def _prefix_status(row: dict, prefix: int) -> str:
+    attempts = {int(attempt.get("attempt_id", 0)): attempt for attempt in row.get("attempts", [])}
+    statuses = [attempts.get(index, {}).get("status") for index in range(1, prefix + 1)]
+    if any(status == "failed" for status in statuses):
+        return "failed"
+    if all(status == "completed" for status in statuses):
+        return "completed"
+    return "not_realized"
+
+
+def _prefix_ranking(row: dict, prefix: int) -> list[dict]:
+    if _prefix_status(row, prefix) != "completed":
+        return []
+    attempts = [
+        attempt for attempt in row.get("attempts", [])
+        if int(attempt.get("attempt_id", 0)) <= prefix and attempt.get("status") == "completed"
+    ]
+    if not attempts:
+        return []
+    if row["method"] in {"HT-B2", "HT-B3"}:
+        bundles = [{"reranked": attempt["ranking"]} for attempt in attempts]
+        limit = max(len(bundle["reranked"]) for bundle in bundles)
+        return combine_reranked_bundles(bundles, limit=limit)
+    return list(attempts[-1]["ranking"])
+
+
+def _quality_resource_frontier(
+    rankings: list[dict],
+    references: dict[str, list[str]],
+    universe: list[str],
+    groups: list[list[str]],
+    expected_query_ids: list[str],
+    *,
+    primary_k: int = 20,
+) -> dict:
+    rows_by_method_query = {(row["method"], row["query_id"]): row for row in rankings}
+    frontier_rows = []
+    alignment = {}
+    for query_id in expected_query_ids:
+        alignment[query_id] = {
+            method: rows_by_method_query.get((method, query_id), {}).get("prefix_diagnostics", {}).get("first_query_hash")
+            for method in ("HT-B1", "HT-B2", "HT-B3")
+        }
+    first_query_match = all(
+        len(hashes) == 3 and None not in hashes.values() and len(set(hashes.values())) == 1
+        for hashes in alignment.values()
+    )
+    for method in METHODS:
+        method_rows = [row for row in rankings if row["method"] == method]
+        max_prefix = max((len(row.get("attempts", [])) for row in method_rows), default=0)
+        for prefix in range(1, max_prefix + 1):
+            predictions: dict[str, list[str]] = {}
+            statuses: dict[str, str] = {}
+            per_query = []
+            resources: dict[str, float] = {}
+            for query_id in expected_query_ids:
+                row = rows_by_method_query.get((method, query_id), {})
+                prefix_status = _prefix_status(row, prefix)
+                ranking = _prefix_ranking(row, prefix)
+                predictions[query_id] = [item["patent_id_canonical"] for item in ranking]
+                statuses[query_id] = "completed" if prefix_status == "completed" else "failed"
+                gold = set(references.get(query_id, []))
+                hits = len(set(predictions[query_id][:primary_k]) & gold) if prefix_status == "completed" else 0
+                attempt_resources = _sum_attempt_resources([
+                    attempt for attempt in row.get("attempts", [])
+                    if int(attempt.get("attempt_id", 0)) <= prefix
+                ])
+                for key, value in attempt_resources.items():
+                    resources[key] = resources.get(key, 0.0) + float(value)
+                per_query.append({
+                    "query_id": query_id,
+                    "prefix": prefix,
+                    "status": prefix_status,
+                    "known_links": len(gold),
+                    "hits_at_k": hits,
+                    "known_recall_at_k": hits / len(gold) if gold else None,
+                    "returned_candidates": len(predictions[query_id]),
+                })
+            metric = evaluate_known_links(
+                expected_query_ids=expected_query_ids,
+                references=references,
+                predictions=predictions,
+                universe=universe,
+                k=primary_k,
+                statuses=statuses,
+            )
+            reached = [item for item in per_query if item["status"] == "completed"]
+            group_rows = []
+            per_query_by_id = {item["query_id"]: item for item in per_query}
+            for group_index, group in enumerate(groups):
+                group_items = [per_query_by_id[query_id] for query_id in group if query_id in per_query_by_id]
+                group_reached = [item for item in group_items if item["status"] == "completed"]
+                group_rows.append({
+                    "group_id": str(group_index),
+                    "query_ids": group,
+                    "query_count": len(group_items),
+                    "reached_query_count": len(group_reached),
+                    "failed_query_count": sum(item["status"] == "failed" for item in group_items),
+                    "not_realized_query_count": sum(item["status"] == "not_realized" for item in group_items),
+                    "macro_known_link_recall_at_k_all_devices": sum(
+                        (item["known_recall_at_k"] or 0.0) for item in group_items
+                    ) / len(group_items) if group_items else None,
+                    "macro_known_link_recall_at_k_reached_devices": sum(
+                        (item["known_recall_at_k"] or 0.0) for item in group_reached
+                    ) / len(group_reached) if group_reached else None,
+                    "k": primary_k,
+                })
+            frontier_rows.append({
+                "method": method,
+                "prefix": prefix,
+                "scheduled_query_count": max(
+                    len(row.get("prefix_diagnostics", {}).get("scheduled_queries", [])) for row in method_rows
+                ) if method_rows else 0,
+                "expected_query_count": len(expected_query_ids),
+                "reached_query_count": len(reached),
+                "failed_query_count": sum(item["status"] == "failed" for item in per_query),
+                "not_realized_query_count": sum(item["status"] == "not_realized" for item in per_query),
+                "macro_known_link_recall_at_20_all_devices": metric["macro_known_link_recall"],
+                "macro_known_link_recall_at_20_reached_devices": sum(
+                    (item["known_recall_at_k"] or 0.0) for item in reached
+                ) / len(reached) if reached else None,
+                "micro_known_link_recall_at_20_all_devices": metric["micro_known_link_recall"],
+                "query_calls": resources.get("query_calls", 0.0),
+                "rerank_pairs": resources.get("rerank_pairs", 0.0),
+                "embedding_query_tokens": resources.get("embedding_query_tokens", 0.0),
+                "rerank_tokens": resources.get("rerank_tokens", 0.0),
+                "returned_candidates": resources.get("returned_candidates", 0.0),
+                "cpu_seconds": resources.get("cpu_seconds", 0.0),
+                "wall_seconds": resources.get("wall_seconds", 0.0),
+                "reached_query_ids": [item["query_id"] for item in reached],
+                "failed_query_ids": [item["query_id"] for item in per_query if item["status"] == "failed"],
+                "not_realized_query_ids": [item["query_id"] for item in per_query if item["status"] == "not_realized"],
+                "per_query": per_query,
+                "group_results": group_rows,
+            })
+    return {
+        "status": "DESCRIPTIVE_DEVELOPMENT_FRONTIER",
+        "primary_k": primary_k,
+        "quality_definition": "Known-link recall at K; failed and not-realized queries score zero in all-device rows.",
+        "resource_definition": "Realized local query calls, rerank pairs, embedding/rerank tokens, CPU seconds, wall seconds, and returned candidates.",
+        "fixed_prefix_alignment": {
+            "methods": ["HT-B1", "HT-B2", "HT-B3"],
+            "first_query_hashes_by_query": alignment,
+            "first_query_match_across_fixed_methods": first_query_match,
+            "shared_action": "SharedRetriever.fixed_bundle with the same candidate and rerank depths.",
+        },
+        "rows": frontier_rows,
+        "uncertainty": {
+            "status": "NOT_ESTIMABLE",
+            "confidence_intervals": "NOT_ESTIMABLE",
+            "reason": [
+                "The frozen slice has three eligible queries, two exact-patent groups, and no final holdout.",
+                "The company group contains all three Abbott queries, so company-held-out sensitivity is not estimable.",
+                "Family mapping is UNKNOWN_NOT_ASSUMED; shared-patent groups are descriptive and not independent family samples.",
+            ],
+            "reported_instead": [
+                "All-device per-prefix quality/resource rows with actual reached and not-realized counts.",
+                "Descriptive exact-patent group rows at each observed prefix.",
+            ],
+        },
+    }
+
+
+def _frontier_diagnostics(
+    rankings: list[dict],
+    evaluations: dict[str, dict],
+    groups: list[list[str]],
+    *,
+    references: dict[str, list[str]],
+    universe: list[str],
+    expected_query_ids: list[str],
+) -> dict:
     per_device = []
     errors = []
     for row in rankings:
@@ -373,6 +548,13 @@ def _frontier_diagnostics(rankings: list[dict], evaluations: dict[str, dict], gr
         "per_device": per_device,
         "by_method": by_method,
         "groups": group_rows,
+        "quality_resource_frontier": _quality_resource_frontier(
+            rankings,
+            references,
+            universe,
+            groups,
+            expected_query_ids,
+        ),
         "headroom": headroom,
         "errors": errors,
         "error_count": len(errors),
@@ -503,7 +685,14 @@ def main() -> None:
             k_metrics[str(cutoff)] = metric
         evaluations[method] = {"method": method, "by_k": k_metrics, "status": "PASS" if method_summaries[method]["failed_query_count"] == 0 else "PARTIAL_FAILURE"}
     _write_json(args.output / "per_device_group_results.json", evaluations)
-    frontier = _frontier_diagnostics(rankings, evaluations, groups)
+    frontier = _frontier_diagnostics(
+        rankings,
+        evaluations,
+        groups,
+        references=references,
+        universe=[patent.patent_id_canonical for patent in patents],
+        expected_query_ids=expected,
+    )
     _write_json(args.output / "frontier_diagnostics.json", frontier)
     primary = {method: evaluations[method]["by_k"]["20"]["macro_known_link_recall"] for method in METHODS}
     headroom = {
@@ -523,6 +712,7 @@ def main() -> None:
         "status": "REAL_PUBLIC_DEVELOPMENT_RUN",
         "run_at_utc": datetime.now(timezone.utc).isoformat(),
         "code_commit": args.code_commit,
+        "scoring_script_sha256": _file_sha256(Path(__file__)),
         "protocol_hash": args.protocol_hash,
         "cohort_manifest_hash": args.cohort_manifest_hash,
         "runtime_path": str(args.runtime),

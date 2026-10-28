@@ -1,0 +1,54 @@
+{
+  "checked_date": "2026-10-28",
+  "purpose": "Local research and engineering evidence only; not a redistribution or product-license determination.",
+  "sources": [
+    {
+      "source_id": "abbott-product-patent-disclosures",
+      "url": "https://www.abbott.com/en-us/patents/legal-notices-patents/patents",
+      "source_revision": "page-retrieved-2026-10-27",
+      "source_sha256": "5aac619496563a6c46c6d0ff3119e44a5f2084b00e72cf1657e3b03f7f36bd34",
+      "clause_locator": "normalized visible-text offset 282 in local raw/abbott-patents.html snapshot",
+      "clause": "Products listed here may not be approved in all countries. Listing of the patent information does not mean to confer approval status.",
+      "interpretation": "The page is a product-level legal notice and does not grant a patent-text redistribution license or claim-level evidence right.",
+      "intended_use": {
+        "acquisition": "ALLOWED_LOCAL_SNAPSHOT",
+        "local_evaluation": "ALLOWED_LOCAL_RESEARCH",
+        "product_display": "BLOCKED_LOCAL",
+        "redistribution": "BLOCKED_LOCAL"
+      }
+    },
+    {
+      "source_id": "openfda-pma-records",
+      "url": "https://open.fda.gov/terms/",
+      "source_revision": "page-checked-2026-10-28",
+      "source_sha256": "b11f712bfb11d03319675fc04e6948133a83c57aa2913b7f18d3677d0209f723",
+      "clause_locator": "Data Rights and Usage; Attribution",
+      "clause": "Unless otherwise noted, the content, data, documentation, code, and related materials on openFDA is public domain and made available with a Creative Commons CC0 1.0 Universal dedication.",
+      "exception_clause": "Some data on openFDA may not be public domain, such as copies of copyrightable works made available to the FDA by private entities.",
+      "attribution_clause": "While not required, when using content, data, documentation, code, and related materials from openFDA in your own work, we ask that proper credit be given.",
+      "intended_use": {
+        "acquisition": "ALLOWED",
+        "local_evaluation": "ALLOWED_WITH_ATTRIBUTION",
+        "product_display": "ALLOWED_ONLY_FOR_REVIEWED_PUBLIC_DOMAIN_FIELDS",
+        "redistribution": "ALLOWED_ONLY_FOR_REVIEWED_PUBLIC_DOMAIN_FIELDS"
+      },
+      "limits": ["Field-specific exceptions remain possible.", "openFDA service limits and anti-abuse terms still apply."]
+    },
+    {
+      "source_id": "google-patents-pages",
+      "url": "https://patents.google.com/",
+      "source_revision": "page-checked-2026-10-28",
+      "source_sha256": "d83512a2ba313ddc0d00b332b2377959f0a3091ca48f70b63b2b337ab1bce7be",
+      "clause_locator": "official landing page checked; no source-specific redistribution clause identified",
+      "clause": "No source-specific redistribution license was identified in the checked official page/terms surface for the extracted patent page text.",
+      "interpretation": "The project keeps raw Google Patents HTML and extracted text local-only until a source-specific rights basis is confirmed.",
+      "intended_use": {
+        "acquisition": "ALLOWED_LOCAL_SNAPSHOT",
+        "local_evaluation": "ALLOWED_LOCAL_RESEARCH",
+        "product_display": "BLOCKED_LOCAL",
+        "redistribution": "BLOCKED_LOCAL"
+      }
+    }
+  ],
+  "overall_boundary": "The generated dossiers are local public-source engineering drafts. They are not cleared for public product display or redistribution of third-party disclosure/patent text."
+}

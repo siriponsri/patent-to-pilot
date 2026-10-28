@@ -74,7 +74,27 @@
     {
       "id": "HT-W12",
       "status": "BACKEND_COMPLETE_UI_PENDING",
-      "evidence": "Typed dossier/history backend with exclusive version creation, expected-parent checks, simultaneous-writer regression, selected-version JSON/EN/TH export with dossier and source-manifest context, exact-source viewer, user-edit preservation, bilingual no-code journey contract, and Luna integration handoff at docs/healthtech/integration/luna-g3-20261028-28dfb1d; Claude UX/UI remains paused"
+      "evidence": "Typed dossier/history backend with atomic staged publication, expected-parent checks, simultaneous-writer regression, selected-version JSON/EN/TH export with dossier and source-manifest context, exact-source viewer, user-edit preservation, bilingual no-code journey contract, and Luna integration handoff at docs/healthtech/integration/luna-g3-20261028-28dfb1d; Claude UX/UI remains paused"
+    },
+    {
+      "id": "HT-W19",
+      "status": "IMPLEMENTED_ATOMIC_HISTORY_PUBLICATION",
+      "evidence": "Same-directory staging plus atomic no-overwrite hard-link publication, interruption/recovery tests, and fixed reader-race reproduction in docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/"
+    },
+    {
+      "id": "HT-W20",
+      "status": "IMPLEMENTED_REAL_PATENT_LINKED_DOSSIER_SLICE",
+      "evidence": "Deterministic Abbott adapter and three local public-source case artifacts with PMA facts, 41 patent inputs, BM25 candidates, independent Abbott disclosure evidence, source viewer, user edits, history, and JSON/EN/TH export"
+    },
+    {
+      "id": "HT-W21",
+      "status": "FROZEN_DEVELOPMENT_UNIVERSE_WITH_UNJUDGED_DISTRACTORS",
+      "evidence": "Development-only freeze records 3 eligible devices, 41 patents, 61 disclosed pairs, 62 unjudged distractor pairs, exact-overlap/company groups, unknown family mapping, and no final holdout at results/healthtech/ht-abbott-development-20261028-r1/"
+    },
+    {
+      "id": "HT-W22",
+      "status": "IMPLEMENTED_CURRENT_DEVELOPMENT_FRONTIER",
+      "evidence": "Fresh offline r7 fixed-prefix frontier tied to the Abbott freeze records per-prefix quality, actual query/rerank/embedding resources, failed and not-realized queries, exact-patent group diagnostics, first-query alignment across HT-B1/B2/B3, and NOT_ESTIMABLE uncertainty at results/healthtech/ht-real-baselines-20261028-r7/ with sanitized audit summary"
     },
     {
       "id": "HT-W13",
@@ -97,8 +117,11 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "Keep the corrected Abbott branch development-only, review the Luna backend integration handoff with the paused Claude UX branch when ownership resumes, and resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout; clean-head offline revalidation is recorded at the b26f913 receipt",
-  "verification": "docs/healthtech/evidence/luna-g1-g3-20261028/current-head-b26f913.json",
+  "next": "Review the atomic-history and Abbott dossier slice, obtain source-specific rights decisions, add an independent non-Abbott cohort, and resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout; Claude UX/UI remains paused",
+  "verification": "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/verification.json",
+  "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/README.md",
+  "latest_healthtech_frontier": "results/healthtech/ht-real-baselines-20261028-r7/frontier_diagnostics.json",
+  "latest_healthtech_frontier_summary": "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/frontier_summary.json",
   "closeout_receipt": "docs/healthtech/LUNA_G1_G3_CURRENT_HEAD_20261028-b26f913.md",
   "g3_integration_handoff": "docs/healthtech/evidence/luna-g3-integration-20261028/verification.json",
   "g3_integration_contract": "docs/healthtech/integration/luna-g3-20261028-28dfb1d/adapter-contract.json",
