@@ -1,0 +1,161 @@
+{
+  "format": "ht-patent-dossiers-goal-audit-v1",
+  "run_id": "luna-patent-dossiers-20261028-final-9eba00f",
+  "checked_date": "2026-10-28",
+  "start_head": "9eba00f89c7c8430c19465de5b49aadffa0a2887",
+  "end_head": "9eba00f89c7c8430c19465de5b49aadffa0a2887",
+  "remote_head": "9eba00f89c7c8430c19465de5b49aadffa0a2887",
+  "tree_state": "DIRTY_PRESERVED_UNRELATED_OWNER_ARTIFACTS",
+  "package_results": {
+    "A_atomic_history": {
+      "status": "PASS",
+      "reproduction": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/history-current.json",
+      "reader_during_staging": "committed chain [1] only; version-0002.json absent",
+      "visible_version2_bytes_during_pause": null,
+      "final_chain": [1, 2],
+      "same_base_concurrency": "one commit and one recoverable stale-parent conflict",
+      "interruption_and_recovery": "focused regression suite covers before-publish, after-payload-fsync-before-publish, after-publish, staging cleanup/recovery, stale parents, and partial readers",
+      "history_source_sha256": "4d60bc79cd7177f90ca9dbbb344557c8812d065eb9f9fb47cdbe4d833b487cfc"
+    },
+    "B_real_dossiers": {
+      "status": "PASS_LOCAL_DEVELOPMENT_BACKEND",
+      "cohort": "results/healthtech/ht-public-cohort-20261028-r1",
+      "artifact_root": "results/healthtech/ht-abbott-dossiers-20261028-final-9eba00f",
+      "cases": [
+        {
+          "query_id": "HT-DEV-MITRACLIP",
+          "candidate_count": 35,
+          "retrieved_candidate_count": 14,
+          "disclosed_link_count": 21,
+          "patent_input_count": 41,
+          "dossier_sha256": "0dd0aad49b30b6ea850b828b25371bdaa199cb07b48bccd2149834f271aaf416",
+          "case_manifest_sha256": "3857a9975ef0aebfd8476ddb342ed333b88edb2be2636d621f6a83c772c947e0",
+          "history": [1, 2],
+          "source_view_rights_id": "openfda-pma-records",
+          "selected_export_languages": ["json", "en", "th"],
+          "user_edit_preserved": true
+        },
+        {
+          "query_id": "HT-DEV-TENDYNE",
+          "candidate_count": 20,
+          "retrieved_candidate_count": 3,
+          "disclosed_link_count": 17,
+          "patent_input_count": 41,
+          "dossier_sha256": "c4dca959934d652f8343895ef0c783eedc0ee5a6bf52cfa8f323f9ee1c38fccb",
+          "case_manifest_sha256": "209823bcb0c16849df9dda5de14909b6f3142af2b441498bdd95332f554d8fcd",
+          "history": [1, 2],
+          "source_view_rights_id": "openfda-pma-records",
+          "selected_export_languages": ["json", "en", "th"],
+          "user_edit_preserved": true
+        },
+        {
+          "query_id": "HT-DEV-TRICLIP",
+          "candidate_count": 28,
+          "retrieved_candidate_count": 5,
+          "disclosed_link_count": 23,
+          "patent_input_count": 41,
+          "dossier_sha256": "d59795bb7dcffb9104c4ce004134bef5807bb7d8614f179b396e89744525a02b",
+          "case_manifest_sha256": "ecd905661ed74e7432457fecbaf6d5348aa3df406e76ca5ff49d7913972032a8",
+          "history": [1, 2],
+          "source_view_rights_id": "openfda-pma-records",
+          "selected_export_languages": ["json", "en", "th"],
+          "user_edit_preserved": true
+        }
+      ],
+      "runtime_evaluator_boundary": "runtime adapter reads runtime.json/source_registry.json; evaluator references remain evaluator-only",
+      "rights_boundary": "Abbott disclosure and Google-derived patent text remain local research only"
+    },
+    "C_development_frontier": {
+      "status": "PASS_DEVELOPMENT_ONLY_WITH_FRONTIER",
+      "protocol": "results/healthtech/ht-abbott-development-20261028-r1/protocol.json",
+      "frontier": "results/healthtech/ht-real-baselines-20261028-r7/frontier_diagnostics.json",
+      "counts": {
+        "eligible_devices": 3,
+        "universe_patents": 41,
+        "disclosed_pairs": 61,
+        "unjudged_distractor_pairs": 62
+      },
+      "final_holdout": [],
+      "family_mapping": "UNKNOWN_NOT_ASSUMED",
+      "methods": ["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"],
+      "frontier_status": "DESCRIPTIVE_DEVELOPMENT_FRONTIER",
+      "errors": 0,
+      "provider_calls": 0,
+      "paid_cost_usd": 0,
+      "uncertainty": {
+        "status": "NOT_ESTIMABLE",
+        "reason": "three queries, two exact-patent groups, one company, unknown family mapping, and no final holdout"
+      }
+    }
+  },
+  "rights_and_provenance": {
+    "rights_matrix": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
+    "abbott_receipt": {
+      "path": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/abbott-provenance-verification.json",
+      "status": "PASS_WITH_LEGACY_RIGHTS",
+      "covered_pairs": 61,
+      "rights_binding": "LEGACY_TEXT_ONLY"
+    },
+    "boston_receipt": {
+      "path": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/boston-provenance-verification.json",
+      "status": "PASS",
+      "covered_pairs": 13,
+      "rights_binding": "TYPED_POLICY_ID"
+    },
+    "future_registry_builder": {
+      "typed_policy_ids": ["openfda-pma-records", "abbott-product-patent-disclosures", "google-patents-pages"],
+      "audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-typed-registry/verification.json"
+    }
+  },
+  "checks": [
+    {
+      "command": "rtk python -B docs/healthtech/audits/pepo-followup-20261028-1ce0443/reproduce_history_publication.py --output docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/history-current.json",
+      "status": "PASS",
+      "result": "READER_SAW_COMMITTED_CHAIN; visible version-2 bytes null; final versions [1, 2]"
+    },
+    {
+      "command": "rtk python -B scripts/healthtech/build_abbott_dossiers.py --cohort results/healthtech/ht-public-cohort-20261028-r1 --protocol results/healthtech/ht-abbott-development-20261028-r1/protocol.json --rights-matrix docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json --output results/healthtech/ht-abbott-dossiers-20261028-final-9eba00f --code-commit 9eba00f",
+      "status": "PASS",
+      "result": "three real cases rebuilt with 35/21, 20/17, and 28/23 candidates/disclosed links"
+    },
+    {
+      "command": "rtk python -B -m pytest -q -p no:cacheprovider tests/test_healthtech.py tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py",
+      "status": "PASS",
+      "result": "57 passed; one existing fitz deprecation warning"
+    },
+    {
+      "command": "rtk python -B -m compileall -q src/patent_to_pilot/healthtech src/patent_to_pilot/evaluation/healthtech scripts/healthtech",
+      "status": "PASS",
+      "result": "no compile errors"
+    },
+    {
+      "command": "rtk python -B scripts/healthtech/verify_cohort_provenance.py --cohort results/healthtech/ht-public-cohort-20261028-r1 --output docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/abbott-provenance-verification.json",
+      "status": "PASS_WITH_LEGACY_RIGHTS",
+      "result": "61/61 disclosed pairs structurally covered; old registry remains legacy text-only"
+    },
+    {
+      "command": "rtk python -B scripts/healthtech/verify_cohort_provenance.py --cohort results/healthtech/ht-boston-watchman-20261028-r4 --output docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/boston-provenance-verification.json",
+      "status": "PASS",
+      "result": "13/13 disclosed pairs covered under typed policy"
+    }
+  ],
+  "source_and_artifact_hashes": {
+    "src/patent_to_pilot/healthtech/history.py": "4d60bc79cd7177f90ca9dbbb344557c8812d065eb9f9fb47cdbe4d833b487cfc",
+    "src/patent_to_pilot/healthtech/abbott.py": "24bb939d6ee222b71ddbce0f80f6d605a0cb64cdd96fea7a6e6b0c196c0c7dd1",
+    "scripts/healthtech/build_abbott_dossiers.py": "2d650c8fc5f36f1885803738b2e1b7eece5d607fc562961b6ee0b6b8b5b680b5",
+    "scripts/healthtech/fetch_public_device_cohort.py": "6044967cb3700afb2796a5d079d70f368e1d6f8151faf80f2fb4ece44c826bcb",
+    "tests/test_healthtech_repairs.py": "3a5323c660794984619ff3ca8c39051244e70ad91f2466417b0a84b4c6a03ee3",
+    "history_current.json": "cd888e4245b6dbdbb5ea9b53fb902d587c3615b9cec19d2ccad71049e8e0b07d",
+    "results/healthtech/ht-abbott-development-20261028-r1/protocol.json": "f9b1fdf43d2bfd1fc94bee58e4c91738195456202dcd0f8e228af41887f938b8",
+    "results/healthtech/ht-real-baselines-20261028-r7/frontier_diagnostics.json": "c8d7d41bf8f696042125a54f7cf13e59a087b3305dc6f3f3584aed7037deef20"
+  },
+  "not_run": [
+    "Bridge payload acquisition or main-study substitution",
+    "scientific final holdout or independent relevance judgments",
+    "paid or free remote provider inference",
+    "frontend/UI integration",
+    "deployment, outreach, customer validation, clinical/FTO/validity/investment analysis",
+    "public redistribution of restricted patent/disclosure text"
+  ],
+  "status_boundary": "A/B/C backend development package complete at current head; root G1/G2 remain partial/development-only and G3 remains backend subset complete/UI pending."
+}

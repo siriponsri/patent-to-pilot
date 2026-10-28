@@ -1,0 +1,23 @@
+{
+  "status": "READER_SAW_COMMITTED_CHAIN",
+  "checked_utc": "2026-10-28T16:47:09.531812+00:00",
+  "history_source_sha256": "4d60bc79cd7177f90ca9dbbb344557c8812d065eb9f9fb47cdbe4d833b487cfc",
+  "hook": "pause at history.os.fdopen after file creation before write",
+  "hook_exercised": true,
+  "visible_version2_bytes_during_pause": null,
+  "concurrent_reader": {
+    "status": "readable",
+    "versions": [
+      1
+    ]
+  },
+  "writer_errors": [],
+  "final_versions": [
+    1,
+    2
+  ],
+  "guard_events": [],
+  "model_inference_calls": 0,
+  "provider_calls": 0,
+  "scope": "Authored fixture and temporary local history only; not crash-recovery proof or a full suite."
+}

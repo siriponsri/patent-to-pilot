@@ -1,0 +1,38 @@
+{
+  "cohort_status": "PUBLIC_BOSTON_WATCHMAN_COHORT_ACQUIRED",
+  "counts": {
+    "covered_pairs": 13,
+    "disclosed_pairs": 13,
+    "disclosure_sources": 1,
+    "distractor_pairs": 1,
+    "eligible_queries": 2,
+    "evidence_rows": 2,
+    "final_holdout_queries": 0,
+    "runtime_devices": 2,
+    "runtime_patents": 7
+  },
+  "disclosure_source_ids": [
+    "boston-watchman-patent-disclosures"
+  ],
+  "format": "ht-cohort-provenance-verification-v1",
+  "hashes": {
+    "manifest": "e375a2bf0631243ccedcc5c3e4e1fdae321d8958897fd8eb2961d4924f54f21b",
+    "references": "c0d06831bf8f3bbf15ee65bf81dd72692f31cb91c90ed582272ef7538071aa4e",
+    "runtime": "6d436f5208f44f1260e8334183c795332e9530a734c5586399c9f19d90543b4b",
+    "source_registry": "c118a8524c04f72791b08d0d857af83dfd7c5c12e1aa479d01e227c87d4fa6a2",
+    "split": "f4a1db35b5cedd4889a1274bd0ea66186190c61e6b2d9f39576751f7d5b67849"
+  },
+  "legacy_rights_source_ids": [],
+  "limitations": [
+    "This verifies structural source-backed disclosure coverage only.",
+    "Product-level disclosure is not an independent semantic relevance judgment.",
+    "Unlisted pairs remain unjudged and are not recoded as negatives.",
+    "Recorded rights policies govern use; this report does not grant redistribution rights."
+  ],
+  "query_ids_hash": "ccb56dc3045a462421959cc930735589e81eae4d962f30530b0b76cd81da6f7f",
+  "rights_binding": "TYPED_POLICY_ID",
+  "rights_policy_ids": [
+    "boston-scientific-virtual-patent-marking"
+  ],
+  "status": "PASS"
+}

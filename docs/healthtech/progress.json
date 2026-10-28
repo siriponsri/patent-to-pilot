@@ -4,7 +4,7 @@
   "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
   "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
   "g1_g2_run_start_commit": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
-  "latest_release_candidate": "aecc7f3",
+  "latest_release_candidate": "9eba00f",
   "root_statuses": {
     "HT-G1": "PARTIAL",
     "HT-G2": "PARTIAL_DEVELOPMENT_ONLY",
@@ -127,15 +127,16 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "Typed public-cohort registry binding is implemented at aecc7f3; next resolve Bridge reuse rights/cohort/split or obtain a licensed replacement before any final holdout, then predeclare independent relevance judgments while keeping Abbott/Boston development-only and Claude UX/UI paused",
+  "next": "Current-head A/B/C backend package is revalidated at 9eba00f with fresh three-case dossiers, atomic publication evidence, and the development frontier; next resolve Bridge reuse rights/cohort/split or obtain a licensed replacement before any final holdout, then predeclare independent relevance judgments while keeping Abbott/Boston development-only and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/verification.json",
-  "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-current-head-d23da02/README.md",
+  "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
   "latest_healthtech_frontier": "results/healthtech/ht-boston-baselines-20261028-r3/frontier_diagnostics.json",
   "latest_healthtech_frontier_summary": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/frontier_summary.json",
   "latest_independent_cohort": "results/healthtech/ht-boston-watchman-20261028-r4/manifest.json",
-  "latest_current_head_revalidation": "docs/healthtech/audits/luna-patent-dossiers-20261028-current-head-d23da02/verification.json",
+  "latest_current_head_revalidation": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/verification.json",
   "latest_typed_registry_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-typed-registry/verification.json",
+  "latest_goal_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/verification.json",
   "latest_cohort_provenance_verification": [
     "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/boston-provenance-verification.json",
     "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/abbott-provenance-verification.json"
