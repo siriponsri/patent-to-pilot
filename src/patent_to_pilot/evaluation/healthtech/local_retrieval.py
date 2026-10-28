@@ -183,40 +183,40 @@ class _OnnxTokenizer:
         self.tokenizer = tokenizer_type.from_file(tokenizer_path)
         self.max_length = max_length
         self.pad_id = self.tokenizer.token_to_id("[PAD]") or 0
+        padding = self.tokenizer.padding or {}
+        self.pad_type_id = int(padding.get("pad_type_id", 0))
+        self.pad_token = str(padding.get("pad_token", "[PAD]"))
+        self.tokenizer.enable_truncation(max_length=self.max_length)
+        self.tokenizer.enable_padding(
+            direction="right",
+            pad_id=self.pad_id,
+            pad_type_id=self.pad_type_id,
+            pad_token=self.pad_token,
+            length=self.max_length,
+        )
+
+    def _arrays(self, encoded: list[Any]) -> tuple[Any, Any, Any, int]:
+        np, _, _ = _load_model_dependencies()
+        if not encoded:
+            empty = np.empty((0, self.max_length), dtype=np.int64)
+            return empty.copy(), empty.copy(), empty.copy(), 0
+        lengths = {len(item.ids) for item in encoded}
+        if lengths != {self.max_length}:
+            raise RuntimeError("native tokenizer did not return the configured padded length")
+        ids = np.asarray([item.ids for item in encoded], dtype=np.int64)
+        masks = np.asarray([item.attention_mask for item in encoded], dtype=np.int64)
+        types = np.asarray([item.type_ids for item in encoded], dtype=np.int64)
+        if ids.shape != masks.shape or ids.shape != types.shape:
+            raise RuntimeError("native tokenizer arrays have inconsistent shapes")
+        return ids, masks, types, int(masks.sum())
 
     def encode_texts(self, texts: list[str]) -> tuple[Any, Any, Any, int]:
-        np, _, _ = _load_model_dependencies()
         encoded = [self.tokenizer.encode(text) for text in texts]
-        width = min(self.max_length, max((len(item.ids) for item in encoded), default=1))
-        ids = np.full((len(encoded), width), self.pad_id, dtype=np.int64)
-        masks = np.zeros((len(encoded), width), dtype=np.int64)
-        types = np.zeros((len(encoded), width), dtype=np.int64)
-        token_count = 0
-        for row, item in enumerate(encoded):
-            length = min(width, len(item.ids))
-            token_count += length
-            ids[row, :length] = item.ids[:length]
-            masks[row, :length] = 1
-            if item.type_ids:
-                types[row, :length] = item.type_ids[:length]
-        return ids, masks, types, token_count
+        return self._arrays(encoded)
 
     def encode_pairs(self, pairs: list[tuple[str, str]]) -> tuple[Any, Any, Any, int]:
-        np, _, _ = _load_model_dependencies()
         encoded = [self.tokenizer.encode(query, document) for query, document in pairs]
-        width = min(self.max_length, max((len(item.ids) for item in encoded), default=1))
-        ids = np.full((len(encoded), width), self.pad_id, dtype=np.int64)
-        masks = np.zeros((len(encoded), width), dtype=np.int64)
-        types = np.zeros((len(encoded), width), dtype=np.int64)
-        token_count = 0
-        for row, item in enumerate(encoded):
-            length = min(width, len(item.ids))
-            token_count += length
-            ids[row, :length] = item.ids[:length]
-            masks[row, :length] = 1
-            if item.type_ids:
-                types[row, :length] = item.type_ids[:length]
-        return ids, masks, types, token_count
+        return self._arrays(encoded)
 
 
 class DenseEncoder:

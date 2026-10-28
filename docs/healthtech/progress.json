@@ -58,13 +58,13 @@
     },
     {
       "id": "HT-W09",
-      "status": "REAL_DEVELOPMENT_RUN",
-      "evidence": "HT-B1 dense+fixed fusion+local reranker and HT-B2 fixed multi-query ran with pinned ONNX revisions and rerank resource accounting"
+      "status": "CORRECTED_REAL_DEVELOPMENT_RUN",
+      "evidence": "Corrected CPU-local HT-B1/HT-B2 run after native tokenizer repair, with frozen protocol/cohort hashes, raw rankings, prefix parity and frontier diagnostics in results/healthtech/luna-g1-g3-20261028-200041/corrected-baselines/"
     },
     {
       "id": "HT-W10",
-      "status": "IMPLEMENTED_ENGINEERING_AND_OFFLINE_RUN",
-      "evidence": "shared local retrieval/action accounting, raw attempt logs, candidate/rerank/token/time units, zero provider calls"
+      "status": "REPAIRED_AND_OFFLINE_VERIFIED",
+      "evidence": "Native masks/type IDs, durable attempt preservation, fixed-prefix controls, resource/error diagnostics and 280-test offline verification; zero provider calls"
     },
     {
       "id": "HT-W11",
@@ -73,8 +73,8 @@
     },
     {
       "id": "HT-W12",
-      "status": "IMPLEMENTED_ENGINEERING_ONLY",
-      "evidence": "three real public-source 510(k) dossier drafts, bilingual exports, exact-source viewer and local edit history; no UI/history service"
+      "status": "BACKEND_COMPLETE_UI_PENDING",
+      "evidence": "Typed dossier/history backend with exclusive version creation, expected-parent checks, selected-version JSON/EN/TH export, exact-source viewer and user-edit preservation; Claude UX/UI remains paused"
     },
     {
       "id": "HT-W13",
@@ -96,9 +96,10 @@
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
-  "next": "Resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance; keep this Abbott branch development-only and do not tune a final holdout",
-  "verification": "docs/healthtech/G1_G2_RECEIPT.md",
-  "closeout_receipt": "docs/healthtech/G1_G2_RECEIPT.md",
+  "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
+  "next": "Keep the corrected Abbott branch development-only, review the backend package for integration, and resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout",
+  "verification": "docs/healthtech/evidence/luna-g1-g3-20261028/verification.json",
+  "closeout_receipt": "docs/healthtech/LUNA_G1_G3_RECEIPT_20261028-200041.md",
   "supplemental_data": "research/SUPPLEMENTAL_DATA.md",
   "reproducibility_audit": "REPRODUCIBILITY_AUDIT.md",
   "reproducibility_correction": "Public cohort now includes all 17 published modules; paired-provider behavior tests use temporary mock-seeded history, not a local live journal"

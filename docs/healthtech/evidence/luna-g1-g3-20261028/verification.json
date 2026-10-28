@@ -1,0 +1,126 @@
+{
+  "run_id": "luna-g1-g3-20261028-200041",
+  "date": "2026-10-28",
+  "verified_code_head": "a5113fa1ea24dced3c98db39be9d2f00ee25f5d4",
+  "local_origin_main": "a5113fa1ea24dced3c98db39be9d2f00ee25f5d4",
+  "remote_main_at_check": "a5113fa1ea24dced3c98db39be9d2f00ee25f5d4",
+  "scope": "HealthTech backend, local retrieval repair, corrected development baselines, source replay, and offline verification",
+  "working_tree_repairs": true,
+  "statuses": {
+    "HT-G1": "PARTIAL",
+    "HT-G2": "PARTIAL",
+    "main_bridge_branch": "BLOCKED_LOCAL",
+    "HT-G3_backend": "BACKEND_COMPLETE_UI_PENDING"
+  },
+  "repairs": {
+    "R1_native_tokenizer": {
+      "status": "PASS",
+      "details": "Explicit native truncation/padding; native attention masks and type IDs preserved for single, mixed, long, and pair inputs."
+    },
+    "R2_attempt_preservation": {
+      "status": "PASS",
+      "details": "Completed attempts remain when a later action fails; actual failed query and resources are retained; failed devices remain in the denominator."
+    },
+    "R3_fixed_prefix_frontier": {
+      "status": "PASS",
+      "details": "HT-B1/B2/B3 share identical first-query text and local bundle action; per-device, group, headroom, frontier, and error diagnostics are emitted."
+    },
+    "G3_history_export": {
+      "status": "PASS",
+      "details": "Exclusive version creation, expected-parent checks, selected-version export, and user-edit preservation are implemented and tested."
+    }
+  },
+  "tests": {
+    "focused_repairs": {
+      "command": "rtk proxy python -B -m pytest -p no:cacheprovider tests/test_healthtech_repairs.py",
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    "healthtech_regressions": {
+      "command": "rtk proxy python -B -m pytest -p no:cacheprovider tests/test_healthtech.py tests/test_healthtech_prelive.py",
+      "passed": 40,
+      "failed": 0,
+      "skipped": 0
+    },
+    "full_offline_suite": {
+      "artifact": "results/healthtech/luna-g1-g3-20261028-200041/regression-final/verification.json",
+      "passed": 280,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "network_attempts": 0,
+      "credential_read_attempts": 0,
+      "provider_calls": 0,
+      "paid_cost_usd": 0
+    }
+  },
+  "G1_parser_and_source_replay": {
+    "artifact": "docs/healthtech/evidence/luna-g1-g3-20261028/parser-replay-and-source-checks.json",
+    "patents_processed": 41,
+    "raw_hash_mismatches": 0,
+    "normalized_hash_mismatches": 0,
+    "field_mismatch_files": 0,
+    "title_abstract_claims_all_nonempty": true,
+    "openfda_files_checked": 3,
+    "abbott_disclosure_sections_checked": 3,
+    "abbott_disclosed_patent_counts": {
+      "mitraclip": 21,
+      "triclip": 23,
+      "tendyne": 17
+    }
+  },
+  "G2_corrected_baselines": {
+    "output": "results/healthtech/luna-g1-g3-20261028-200041/corrected-baselines",
+    "protocol_hash": "7dab96b735c70bcf60b99f191477c5add04d95c337d437c2d17b546e8b226cf2",
+    "cohort_manifest_hash": "6e793d3b40da983c8829ee88ed96e42df0d5b65109d4e6c8144901d2f6d42787",
+    "methods": ["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"],
+    "devices": 3,
+    "patents": 41,
+    "reference_pairs": 61,
+    "macro_known_link_recall_at_20": {
+      "HT-B0a": 0.4427394146064223,
+      "HT-B0b": 0.6622417082775139,
+      "HT-B1": 0.49880241951853205,
+      "HT-B2": 0.5689116226200625,
+      "HT-B3": 0.49880241951853205
+    },
+    "realized_frontier": {
+      "HT-B0a": {"query_calls": 3, "rerank_pairs": 0, "embedding_query_tokens": 0, "rerank_tokens": 0},
+      "HT-B0b": {"query_calls": 3, "rerank_pairs": 0, "embedding_query_tokens": 0, "rerank_tokens": 0},
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123, "embedding_query_tokens": 75, "rerank_tokens": 31488},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369, "embedding_query_tokens": 123, "rerank_tokens": 94464},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205, "embedding_query_tokens": 96, "rerank_tokens": 52480}
+    },
+    "failed_attempts": 0,
+    "prefix_equality": "HT-B1/B2/B3 first-query text matched for all 3 devices"
+  },
+  "G3_backend_smoke": {
+    "synthetic_dossier": "results/healthtech/luna-g1-g3-20261028-200041/synthetic-smoke",
+    "history": "results/healthtech/luna-g1-g3-20261028-200041/history-smoke",
+    "edited_export": "results/healthtech/luna-g1-g3-20261028-200041/edited-export",
+    "source_view": "synthetic-device-record#device_name",
+    "user_edits_present_in_json_and_en_th_markdown": true,
+    "ui_status": "Claude UX branch paused; no frontend changes made"
+  },
+  "api_boundary": {
+    "status": "DRY_RUN_NOT_EXECUTED",
+    "network_attempts": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0
+  },
+  "limitations": [
+    "Bridge rights, per-link disclosure provenance, cohort reconciliation, and final split remain unresolved; no Bridge payload was downloaded.",
+    "The Abbott cohort is a three-device, one-applicant development setting with no final holdout; results are descriptive known-link recovery only.",
+    "No live provider/B4, adaptive G4, clinical, FTO, deployment, customer validation, publication, or production-readiness claim was made.",
+    "Public source access and local research retention do not establish redistribution or legal-use rights."
+  ],
+  "source_hashes": {
+    "local_retrieval.py": "3c28b313021a46ef90a2b05185914bdefc6895880f5c3643c8a474f6a424076d",
+    "run_real_baselines.py": "f09c94c37e642222171a5c9613dcfdfe42f370b8a57a95624e77af55a60a4ac9",
+    "history.py": "167268773a967655ca81c05b8556710f3c28bddfd9233773783f712f585234ef",
+    "engine.py": "4cd1d6106b4ab78217a404d9a3540abc7990e5023d35833f8a09b7c4f966f900",
+    "manage_dossier_history.py": "29dcfa2d2bda06e27b9eab7b74271f447e678a83539f0d31356c1e5d6531bf9e",
+    "test_healthtech_repairs.py": "fb18de0c7864ea08171d38d44dda167b358b03611b50d2a9da645ebbb159521c"
+  }
+}

@@ -17,7 +17,6 @@ from patent_to_pilot.evaluation.healthtech.local_retrieval import (
     DenseEncoder,
     PatentRecord,
     SharedRetriever,
-    bundle_resources,
     combine_reranked_bundles,
     explicit_patent_id_tokens,
     final_ranking,
@@ -115,6 +114,76 @@ def _fixed_queries(device) -> list[str]:
     return queries
 
 
+def _fixed_first_query(device) -> str:
+    queries = _fixed_queries(device)
+    return queries[0] if queries else _device_text(device)
+
+
+def _sum_attempt_resources(attempts: list[dict]) -> dict[str, float]:
+    totals: dict[str, float] = {}
+    for attempt in attempts:
+        for key, value in attempt.get("resources", {}).items():
+            if isinstance(value, (int, float)) and not isinstance(value, bool):
+                totals[key] = totals.get(key, 0.0) + float(value)
+    return totals
+
+
+def _start_attempt(attempts: list[dict], attempt_id: int, query: str) -> dict:
+    attempt = {
+        "attempt_id": attempt_id,
+        "query": query,
+        "query_hash": stable_json_hash(query),
+        "status": "started",
+        "resources": {"query_calls": 1},
+        "observables": {},
+    }
+    attempts.append(attempt)
+    return attempt
+
+
+def _finish_failed_attempt(attempt: dict, exc: Exception, *, query_calls: int = 1) -> None:
+    resources = {"query_calls": query_calls}
+    extra = getattr(exc, "resources", None)
+    if isinstance(extra, dict):
+        resources.update(extra)
+    attempt.update({
+        "status": "failed",
+        "error_type": type(exc).__name__,
+        "error": str(exc),
+        "resources": resources,
+    })
+
+
+def _run_control_attempt(attempts: list[dict], attempt_id: int, query: str, action) -> list[dict] | None:
+    attempt = _start_attempt(attempts, attempt_id, query)
+    try:
+        ranking, resources = action()
+    except Exception as exc:
+        _finish_failed_attempt(attempt, exc)
+        return None
+    attempt.update({"status": "completed", "ranking": ranking, "resources": resources})
+    return ranking
+
+
+def _run_bundle_attempt(attempts: list[dict], attempt_id: int, query: str, retriever: SharedRetriever,
+                        *, candidate_depth: int, rerank_depth: int) -> dict | None:
+    attempt = _start_attempt(attempts, attempt_id, query)
+    try:
+        bundle = retriever.fixed_bundle(query, candidate_depth=candidate_depth, rerank_depth=rerank_depth)
+        ranking = final_ranking(bundle)
+    except Exception as exc:
+        _finish_failed_attempt(attempt, exc)
+        return None
+    attempt.update({
+        "status": "completed",
+        "query_hash": bundle.get("query_hash", stable_json_hash(query)),
+        "ranking": ranking,
+        "resources": bundle["resources"],
+        "observables": bundle["observables"],
+    })
+    return bundle
+
+
 def _run_method(device, patents, *, method: str, lexical: BM25Index, retriever: SharedRetriever,
                 candidate_depth: int, rerank_depth: int) -> dict:
     patents_by_id = {patent.patent_id_canonical: patent for patent in patents}
@@ -122,62 +191,85 @@ def _run_method(device, patents, *, method: str, lexical: BM25Index, retriever: 
     bundles: list[dict] = []
     method_started = perf_counter()
     method_cpu_started = process_time()
-    if method == "HT-B0a":
-        ranking, resources = _company_control(device, patents)
-        attempts.append({"attempt_id": 1, "query": device.company, "query_hash": stable_json_hash(device.company), "status": "completed", "ranking": ranking, "resources": resources, "observables": {}})
-        final = ranking
-        stop_reason = "fixed_schedule_complete"
-    elif method == "HT-B0b":
-        ranking, resources = _lexical_control(device, lexical, limit=candidate_depth)
-        attempts.append({"attempt_id": 1, "query": _device_text(device), "query_hash": stable_json_hash(_device_text(device)), "status": "completed", "ranking": ranking, "resources": resources, "observables": {}})
-        final = ranking
-        stop_reason = "fixed_schedule_complete"
-    elif method == "HT-B1":
-        query = _device_text(device)
-        bundle = retriever.fixed_bundle(query, candidate_depth=candidate_depth, rerank_depth=rerank_depth)
-        bundles.append(bundle)
-        attempts.append({"attempt_id": 1, "query": query, "query_hash": bundle["query_hash"], "status": "completed", "ranking": final_ranking(bundle), "resources": bundle["resources"], "observables": bundle["observables"]})
-        final = final_ranking(bundle)
-        stop_reason = "fixed_schedule_complete"
-    elif method == "HT-B2":
-        queries = _fixed_queries(device)
-        for attempt_id, query in enumerate(queries, 1):
-            bundle = retriever.fixed_bundle(query, candidate_depth=candidate_depth, rerank_depth=rerank_depth)
-            bundles.append(bundle)
-            attempts.append({"attempt_id": attempt_id, "query": query, "query_hash": bundle["query_hash"], "status": "completed", "ranking": final_ranking(bundle), "resources": bundle["resources"], "observables": bundle["observables"]})
-        final = combine_reranked_bundles(bundles, limit=rerank_depth)
-        stop_reason = "fixed_schedule_complete"
-    elif method == "HT-B3":
-        queries = _fixed_queries(device)
-        for attempt_id, query in enumerate(queries, 1):
-            bundle = retriever.fixed_bundle(query, candidate_depth=candidate_depth, rerank_depth=rerank_depth)
-            bundles.append(bundle)
-            current_ids = {row["patent_id_canonical"] for row in final_ranking(bundle)}
-            prior_ids = {row["patent_id_canonical"] for prior in bundles[:-1] for row in final_ranking(prior)}
-            new_count = len(current_ids - prior_ids)
-            observables = {**bundle["observables"], "new_candidate_count": new_count}
-            attempts.append({"attempt_id": attempt_id, "query": query, "query_hash": bundle["query_hash"], "status": "completed", "ranking": final_ranking(bundle), "resources": bundle["resources"], "observables": observables})
-            if attempt_id == 1 and len(queries) > 1:
-                if new_count >= 5 and bundle["observables"]["lexical_dense_disagreement"] < 0.5:
-                    stop_reason = "policy_stop"
+    final: list[dict] = []
+    status = "completed"
+    stop_reason = "fixed_schedule_complete"
+    scheduled_queries: list[str] = []
+    try:
+        if method == "HT-B0a":
+            scheduled_queries = [str(device.company)]
+            ranking = _run_control_attempt(attempts, 1, scheduled_queries[0], lambda: _company_control(device, patents))
+            if ranking is None:
+                status, stop_reason = "failed", "run_failure"
+            else:
+                final = ranking
+        elif method == "HT-B0b":
+            scheduled_queries = [_device_text(device)]
+            ranking = _run_control_attempt(attempts, 1, scheduled_queries[0], lambda: _lexical_control(device, lexical, limit=candidate_depth))
+            if ranking is None:
+                status, stop_reason = "failed", "run_failure"
+            else:
+                final = ranking
+        elif method == "HT-B1":
+            scheduled_queries = [_fixed_first_query(device)]
+            bundle = _run_bundle_attempt(attempts, 1, scheduled_queries[0], retriever, candidate_depth=candidate_depth, rerank_depth=rerank_depth)
+            if bundle is None:
+                status, stop_reason = "failed", "run_failure"
+            else:
+                bundles.append(bundle)
+                final = final_ranking(bundle)
+        elif method == "HT-B2":
+            scheduled_queries = _fixed_queries(device)
+            for attempt_id, query in enumerate(scheduled_queries, 1):
+                bundle = _run_bundle_attempt(attempts, attempt_id, query, retriever, candidate_depth=candidate_depth, rerank_depth=rerank_depth)
+                if bundle is None:
+                    status, stop_reason = "failed", "run_failure"
                     break
-            elif new_count == 0:
-                stop_reason = "no_new_candidates_under_policy"
-                break
+                bundles.append(bundle)
+            final = combine_reranked_bundles(bundles, limit=rerank_depth)
+        elif method == "HT-B3":
+            scheduled_queries = _fixed_queries(device)
+            for attempt_id, query in enumerate(scheduled_queries, 1):
+                bundle = _run_bundle_attempt(attempts, attempt_id, query, retriever, candidate_depth=candidate_depth, rerank_depth=rerank_depth)
+                if bundle is None:
+                    status, stop_reason = "failed", "run_failure"
+                    break
+                bundles.append(bundle)
+                current_ids = {row["patent_id_canonical"] for row in final_ranking(bundle)}
+                prior_ids = {row["patent_id_canonical"] for prior in bundles[:-1] for row in final_ranking(prior)}
+                new_count = len(current_ids - prior_ids)
+                attempts[-1]["observables"] = {**bundle["observables"], "new_candidate_count": new_count}
+                if attempt_id == 1 and len(scheduled_queries) > 1:
+                    if new_count >= 5 and bundle["observables"]["lexical_dense_disagreement"] < 0.5:
+                        stop_reason = "policy_stop"
+                        break
+                elif new_count == 0:
+                    stop_reason = "no_new_candidates_under_policy"
+                    break
+            else:
+                stop_reason = "fixed_schedule_complete"
+            final = combine_reranked_bundles(bundles, limit=rerank_depth)
         else:
-            stop_reason = "fixed_schedule_complete"
-        final = combine_reranked_bundles(bundles, limit=rerank_depth)
-    else:
-        raise ValueError(f"unsupported method: {method}")
+            raise ValueError(f"unsupported method: {method}")
+    except Exception as exc:
+        status, stop_reason = "failed", "run_failure"
+        if len(attempts) < len(scheduled_queries):
+            fallback_query = scheduled_queries[len(attempts)]
+        elif method in {"HT-B1", "HT-B2", "HT-B3"}:
+            fallback_query = str(getattr(device, "technical_description", "")).strip() or _device_text(device)
+        else:
+            fallback_query = _device_text(device)
+        failed_attempt = _start_attempt(attempts, len(attempts) + 1, fallback_query)
+        _finish_failed_attempt(failed_attempt, exc, query_calls=0)
     return {
         "query_id": device.query_id,
         "method": method,
-        "status": "completed",
+        "status": status,
         "stop_reason": stop_reason,
         "attempts": attempts,
         "final_ranking": _raw_ranking(final, patents_by_id),
         "resources": {
-            **bundle_resources(bundles),
+            **_sum_attempt_resources(attempts),
             "method_wall_seconds": perf_counter() - method_started,
             "method_cpu_seconds": process_time() - method_cpu_started,
             "attempt_count": len(attempts),
@@ -187,6 +279,15 @@ def _run_method(device, patents, *, method: str, lexical: BM25Index, retriever: 
             "explicit_patent_id_tokens": explicit_patent_id_tokens(_device_text(device)),
             "masked_query": mask_explicit_patent_ids(_device_text(device)),
             "masked_query_equals_original": mask_explicit_patent_ids(_device_text(device)) == _device_text(device),
+        },
+        "prefix_diagnostics": {
+            "schedule_type": "fixed_query_prefix" if method in {"HT-B1", "HT-B2", "HT-B3"} else "single_control_query",
+            "scheduled_queries": scheduled_queries,
+            "first_query": scheduled_queries[0] if scheduled_queries else None,
+            "first_query_hash": stable_json_hash(scheduled_queries[0]) if scheduled_queries else None,
+            "realized_attempt_count": len(attempts),
+            "completed_attempt_count": sum(attempt["status"] == "completed" for attempt in attempts),
+            "failed_attempt_count": sum(attempt["status"] == "failed" for attempt in attempts),
         },
     }
 
@@ -198,6 +299,89 @@ def _group_results(metrics: dict, groups: list[list[str]], *, k: int) -> list[di
         values = [per_query[query_id]["known_recall"] for query_id in group if query_id in per_query]
         rows.append({"group_id": str(index), "query_ids": group, "query_count": len(values), "macro_known_link_recall": sum(values) / len(values) if values else None, "k": k})
     return rows
+
+
+def _frontier_diagnostics(rankings: list[dict], evaluations: dict[str, dict], groups: list[list[str]]) -> dict:
+    per_device = []
+    errors = []
+    for row in rankings:
+        resource_totals = _sum_attempt_resources(row.get("attempts", []))
+        prefix = row.get("prefix_diagnostics", {})
+        per_device.append({
+            "query_id": row["query_id"],
+            "method": row["method"],
+            "status": row["status"],
+            "scheduled_query_count": len(prefix.get("scheduled_queries", [])),
+            "realized_query_count": len(row.get("attempts", [])),
+            "completed_attempt_count": prefix.get("completed_attempt_count", 0),
+            "failed_attempt_count": prefix.get("failed_attempt_count", 0),
+            "first_query": prefix.get("first_query"),
+            "first_query_hash": prefix.get("first_query_hash"),
+            "query_calls": resource_totals.get("query_calls", 0.0),
+            "rerank_pairs": resource_totals.get("rerank_pairs", 0.0),
+            "embedding_query_tokens": resource_totals.get("embedding_query_tokens", 0.0),
+            "rerank_tokens": resource_totals.get("rerank_tokens", 0.0),
+            "returned_candidates": resource_totals.get("returned_candidates", 0.0),
+            "method_wall_seconds": row.get("resources", {}).get("method_wall_seconds", 0.0),
+            "method_cpu_seconds": row.get("resources", {}).get("method_cpu_seconds", 0.0),
+        })
+        for attempt in row.get("attempts", []):
+            if attempt.get("status") == "failed":
+                errors.append({
+                    "query_id": row["query_id"],
+                    "method": row["method"],
+                    "attempt_id": attempt.get("attempt_id"),
+                    "query": attempt.get("query"),
+                    "query_hash": attempt.get("query_hash"),
+                    "error_type": attempt.get("error_type"),
+                    "error": attempt.get("error"),
+                    "resources": attempt.get("resources", {}),
+                })
+    by_method = {}
+    for method in METHODS:
+        rows = [item for item in per_device if item["method"] == method]
+        metric = evaluations[method]["by_k"]["20"]
+        by_method[method] = {
+            "device_count": len(rows),
+            "failed_device_count": sum(item["status"] == "failed" for item in rows),
+            "realized_query_count": sum(item["realized_query_count"] for item in rows),
+            "query_calls": sum(item["query_calls"] for item in rows),
+            "rerank_pairs": sum(item["rerank_pairs"] for item in rows),
+            "embedding_query_tokens": sum(item["embedding_query_tokens"] for item in rows),
+            "rerank_tokens": sum(item["rerank_tokens"] for item in rows),
+            "returned_candidates": sum(item["returned_candidates"] for item in rows),
+            "macro_known_link_recall_at_20": metric["macro_known_link_recall"],
+            "failed_query_ids": metric["failed_query_ids"],
+        }
+    group_rows = []
+    for method in METHODS:
+        for group in evaluations[method]["by_k"]["20"]["group_results"]:
+            group_rows.append({"method": method, **group})
+    headroom = {
+        method: {
+            "macro_known_link_recall_at_20": by_method[method]["macro_known_link_recall_at_20"],
+            "query_calls": by_method[method]["query_calls"],
+            "rerank_pairs": by_method[method]["rerank_pairs"],
+            "failed_device_count": by_method[method]["failed_device_count"],
+        }
+        for method in METHODS
+    }
+    return {
+        "status": "DESCRIPTIVE_DEVELOPMENT_FRONTIER",
+        "primary_k": 20,
+        "fixed_prefix_contract": "HT-B1, HT-B2 and HT-B3 share the same first query text and fixed local bundle action",
+        "per_device": per_device,
+        "by_method": by_method,
+        "groups": group_rows,
+        "headroom": headroom,
+        "errors": errors,
+        "error_count": len(errors),
+        "limitations": [
+            "Frontier values are realized local resource units, not dollars.",
+            "Group rows are descriptive because the development cohort has two exact-patent components and no final holdout.",
+            "Failed devices remain in the evaluator denominator and score zero under the declared failure rule.",
+        ],
+    }
 
 
 def _validate_references(runtime_devices, patents, reference_payload: dict) -> tuple[list[str], dict[str, list[str]]]:
@@ -319,6 +503,8 @@ def main() -> None:
             k_metrics[str(cutoff)] = metric
         evaluations[method] = {"method": method, "by_k": k_metrics, "status": "PASS" if method_summaries[method]["failed_query_count"] == 0 else "PARTIAL_FAILURE"}
     _write_json(args.output / "per_device_group_results.json", evaluations)
+    frontier = _frontier_diagnostics(rankings, evaluations, groups)
+    _write_json(args.output / "frontier_diagnostics.json", frontier)
     primary = {method: evaluations[method]["by_k"]["20"]["macro_known_link_recall"] for method in METHODS}
     headroom = {
         "primary_k": 20,
@@ -358,6 +544,7 @@ def main() -> None:
             "evaluator_validation": "evaluator_validation.json",
             "per_device_group_results": "per_device_group_results.json",
             "development_headroom": "development_headroom.json",
+            "frontier_diagnostics": "frontier_diagnostics.json",
         },
         "provider_calls": 0,
         "paid_cost_usd": 0,

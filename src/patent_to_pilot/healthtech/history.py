@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -21,9 +22,24 @@ def save_version(history_dir: str | Path, dossier: DossierVersion) -> Path:
     root = Path(history_dir)
     root.mkdir(parents=True, exist_ok=True)
     destination = _version_path(root, dossier.version)
-    if destination.exists():
-        raise DossierHistoryError(f"version already exists: {destination}")
-    destination.write_text(dossier.model_dump_json(indent=2) + "\n", encoding="utf-8")
+    payload = dossier.model_dump_json(indent=2) + "\n"
+    flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
+    flags |= getattr(os, "O_BINARY", 0)
+    try:
+        descriptor = os.open(destination, flags)
+    except FileExistsError as exc:
+        raise DossierHistoryError(f"version already exists or concurrent writer won: {destination}") from exc
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as handle:
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+    except Exception:
+        try:
+            destination.unlink()
+        except FileNotFoundError:
+            pass
+        raise
     return destination
 
 
@@ -40,11 +56,27 @@ def load_versions(history_dir: str | Path) -> list[DossierVersion]:
     return versions
 
 
-def append_user_edits(history_dir: str | Path, edits: Mapping[str, str]) -> DossierVersion:
+def select_version(history_dir: str | Path, version: int | None = None) -> DossierVersion:
+    versions = load_versions(history_dir)
+    if not versions:
+        raise DossierHistoryError("history has no versions")
+    if version is None:
+        return versions[-1]
+    for item in versions:
+        if item.version == version:
+            return item
+    raise DossierHistoryError(f"version not found: {version}")
+
+
+def append_user_edits(history_dir: str | Path, edits: Mapping[str, str], *, expected_parent_version: int | None = None) -> DossierVersion:
     versions = load_versions(history_dir)
     if not versions:
         raise DossierHistoryError("cannot append edits before saving version 1")
     current = versions[-1]
+    if expected_parent_version is not None and current.version != expected_parent_version:
+        raise DossierHistoryError(
+            f"expected parent version {expected_parent_version}, current version is {current.version}"
+        )
     merged = {**current.user_edits, **{str(key): str(value) for key, value in edits.items()}}
     next_version = current.model_copy(update={
         "version": current.version + 1,

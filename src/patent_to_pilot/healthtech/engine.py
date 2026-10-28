@@ -230,6 +230,12 @@ def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", 
     lines += [f"| {cell(c.patent_id_canonical)} | {c.association_status} | {cell(c.source_id)} |" for c in dossier.candidates]
     lines += ["", "## ข้อมูลที่ยังขาด" if th else "## Unresolved", ""]+[f"- {cell(s)}" for s in dossier.unresolved_items]
     lines += ["", "## ข้อมูลที่ควรขอเพิ่ม" if th else "## Next information requests", ""]+[f"- {cell(s)}" for s in dossier.next_information_requests]
+    lines += ["", "## การแก้ไขของผู้ใช้" if th else "## User edits", ""]
+    if dossier.user_edits:
+        lines += ["| Field | Value |", "|---|---|"]
+        lines += [f"| {cell(key)} | {cell(value)} |" for key, value in sorted(dossier.user_edits.items())]
+    else:
+        lines.append("_(none)_" if not th else "_(ไม่มี)_")
     lines += ["", "## Source manifest", ""]
     lines += [f"- {cell(s.source.source_id)}: {cell(s.source.uri)}; revision {cell(s.source.version_label)}; {cell(s.jurisdiction)}; {s.source_date}; sha256 {s.source.sha256}" for s in dossier.sources]
     return "\n".join(lines)+"\n"
