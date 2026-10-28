@@ -1,0 +1,70 @@
+{
+  "protocol_id": "ht-g1-g2-public-disclosure-development-v1",
+  "status": "FROZEN_DEVELOPMENT_ONLY",
+  "task": "HT-T1",
+  "cohort_builder": "scripts/healthtech/fetch_public_device_cohort.py",
+  "runtime_input": "runtime.json",
+  "evaluator_reference_input": "evaluator/references.json",
+  "cohort_rule": "Three predeclared Abbott cardiovascular products from P100009, P230007 and P240042; patent universe is the union of U.S. patents listed under those product sections on Abbott's public patent disclosure page.",
+  "eligible_queries": "All three selected devices with at least one disclosed product-level patent relationship; reference-empty queries would be excluded as unjudged, never negative.",
+  "universe_rule": "Deduplicated canonical U.S. publication/grant IDs resolved from public patent pages; preserve the Abbott raw number and page-derived kind code.",
+  "primary_k": 20,
+  "secondary_k": [
+    10,
+    50
+  ],
+  "methods": {
+    "HT-B0a": "Company/metadata-only control using source-backed Abbott applicant/disclosure metadata with deterministic ID tie-break.",
+    "HT-B0b": "Deterministic BM25 over normalized patent title, abstract and claims text.",
+    "HT-B1": "Fixed BM25 plus all-MiniLM-L6-v2 dense retrieval, reciprocal-rank fusion, and cross-encoder/ms-marco-MiniLM-L-6-v2 reranking over the same frozen candidate pool.",
+    "HT-B2": "Fixed schedule of technical description plus declared PMA generic-name/product-code features using the same dense retriever, fusion and reranker as HT-B1.",
+    "HT-B3": "Observable heuristic: continue from the technical query to the next fixed feature only when first-pass new-candidate yield or lexical/dense disagreement indicates unresolved search state; never reads references."
+  },
+  "retrieval": {
+    "candidate_depth": 50,
+    "rerank_depth": 50,
+    "max_model_length": 256,
+    "fusion": "reciprocal_rank_fusion_k60",
+    "document_text": "title + abstract + claims in source order, tokenizer truncation is fixed at 256 tokens",
+    "tie_break": "descending score then canonical patent ID"
+  },
+  "models": {
+    "encoder": "sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2@233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "license": "Apache-2.0 model-card declarations; weights remain local-only"
+  },
+  "failure_and_cost_rules": {
+    "missing_or_failed_query": "score zero while remaining in the eligible denominator",
+    "unlisted_pairs": "unjudged, not negatives",
+    "unknown_prediction_id": "retains rank position and cannot count as a hit",
+    "offline_cost_units": [
+      "query_calls",
+      "returned_candidates",
+      "unique_candidates",
+      "embedding_query_tokens",
+      "rerank_pairs",
+      "rerank_tokens",
+      "local_cpu_seconds",
+      "wall_seconds"
+    ],
+    "monetary_cost": "paid_cost_usd=0 because no provider action is dispatched; this is not an estimate of future spend"
+  },
+  "groups_and_splits": {
+    "exact_patent_groups": "Connected components over shared disclosed canonical patent IDs",
+    "family_groups": "No family join without independent source; absence is unknown, not independence",
+    "company_groups": "Report all-Abbott sensitivity; company-held-out is not estimable",
+    "split": "Development only for all three queries; no final holdout or generalization claim",
+    "seed": 0
+  },
+  "diagnostics": {
+    "explicit_patent_ids": "Count and mask patent-like tokens in runtime device text before scoring; disclosure references are never runtime inputs",
+    "company_shortcut": "Report metadata-only control and company overlap explicitly",
+    "leakage": "Runtime payload rejects references, gold, split answers, family labels and disclosed_by fields"
+  },
+  "limitations": [
+    "This cohort is a public product-level disclosure development setting, not Bridge gold and not component-level expert judgment.",
+    "All devices share one applicant and one disclosure source; independent-group uncertainty is small.",
+    "The model cards describe general web/MS MARCO training; medical-device patent adequacy is not established.",
+    "No final held-out evaluation, adaptive LLM run, clinical/FTO assessment, production readiness or publication claim is made."
+  ]
+}

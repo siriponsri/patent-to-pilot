@@ -10,6 +10,7 @@ from collections import Counter
 from dataclasses import dataclass
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any, Iterable, Literal, Mapping
 
@@ -34,7 +35,6 @@ class SciFactDocument:
 class SciFactRuntimeClaim:
     claim_id: int
     claim: str
-    cited_doc_ids: tuple[str, ...]
 
 
 @dataclass(frozen=True)
@@ -118,15 +118,15 @@ def _claim_header(row: Mapping[str, Any]) -> tuple[int, str, tuple[str, ...]]:
 
 
 def load_runtime_claims(path: str | Path) -> list[SciFactRuntimeClaim]:
-    """Load claim text and citation metadata without reading gold evidence."""
+    """Load open-retrieval claim text without citation or evidence metadata."""
     claims: list[SciFactRuntimeClaim] = []
     seen: set[int] = set()
     for row in _read_jsonl(path):
-        claim_id, claim, cited = _claim_header(row)
+        claim_id, claim, _ = _claim_header(row)
         if claim_id in seen:
             raise SciFactFormatError(f"duplicate claim {claim_id}")
         seen.add(claim_id)
-        claims.append(SciFactRuntimeClaim(claim_id, claim, cited))
+        claims.append(SciFactRuntimeClaim(claim_id, claim))
     return sorted(claims, key=lambda item: item.claim_id)
 
 
@@ -180,26 +180,40 @@ def validate_against_corpus(
 ) -> None:
     """Check cited/evidence document and rationale sentence references."""
     for claim in claims:
-        for doc_id in claim.cited_doc_ids:
-            if doc_id not in corpus:
-                raise SciFactFormatError(f"claim {claim.claim_id} cites missing document {doc_id}")
         if isinstance(claim, SciFactGoldClaim):
+            for doc_id in claim.cited_doc_ids:
+                if doc_id not in corpus:
+                    raise SciFactFormatError(f"claim {claim.claim_id} cites missing document {doc_id}")
             for doc_id, evidence in claim.evidence.items():
                 if doc_id not in corpus:
                     raise SciFactFormatError(f"claim {claim.claim_id} has missing evidence document {doc_id}")
                 sentence_count = len(corpus[doc_id].sentences)
-                if any(sentence >= sentence_count for rationale in evidence.rationales for sentence in rationale):
+                seen_sentences: set[int] = set()
+                for rationale in evidence.rationales:
+                    if seen_sentences.intersection(rationale):
+                        raise SciFactFormatError(
+                            f"claim {claim.claim_id} evidence {doc_id} has overlapping rationales"
+                        )
+                    seen_sentences.update(rationale)
+                if any(sentence >= sentence_count for sentence in seen_sentences):
                     raise SciFactFormatError(f"claim {claim.claim_id} references an out-of-range sentence")
 
 
 def _f1(correct: int, retrieved: int, relevant: int) -> dict[str, float]:
     precision = correct / retrieved if retrieved else 0.0
     recall = correct / relevant if relevant else 0.0
-    return {"precision": precision, "recall": recall,
-            "f1": (2 * precision * recall / (precision + recall)) if precision + recall else 0.0}
+    f1 = (2 * precision * recall / (precision + recall)) if precision + recall else 0.0
+    values = {"precision": precision, "recall": recall, "f1": f1}
+    if any(not math.isfinite(value) or not 0.0 <= value <= 1.0 for value in values.values()):
+        raise SciFactFormatError("metric out of bounds")
+    return values
 
 
-def _prediction_map(predictions: Mapping[int, Mapping[str, Any]] | Iterable[Mapping[str, Any]]) -> dict[int, dict[str, Any]]:
+def _prediction_map(
+    predictions: Mapping[int, Mapping[str, Any]] | Iterable[Mapping[str, Any]],
+    *,
+    corpus: Mapping[str, SciFactDocument] | None = None,
+) -> dict[int, dict[str, Any]]:
     rows = predictions.values() if isinstance(predictions, Mapping) else predictions
     result: dict[int, dict[str, Any]] = {}
     for row in rows:
@@ -219,10 +233,26 @@ def _prediction_map(predictions: Mapping[int, Mapping[str, Any]] | Iterable[Mapp
             label = value.get("label")
             if label not in {"SUPPORT", "CONTRADICT"}:
                 raise SciFactFormatError("predictions must use SUPPORT or CONTRADICT")
-            sentences = value.get("sentences", [])
-            if not isinstance(sentences, list) or any(_integer(item, "prediction sentence") < 0 for item in sentences):
+            if "sentences" not in value or not isinstance(value["sentences"], list):
                 raise SciFactFormatError(f"prediction {claim_id} document {doc_id} has invalid sentences")
-            normalized[doc_id] = {"label": label, "sentences": list(sentences)}
+            sentences = [_integer(item, "prediction sentence") for item in value["sentences"]]
+            if any(item < 0 for item in sentences):
+                raise SciFactFormatError(f"prediction {claim_id} document {doc_id} has invalid sentences")
+            if len(set(sentences)) != len(sentences):
+                raise SciFactFormatError(
+                    f"prediction {claim_id} document {doc_id} repeats a sentence ID"
+                )
+            if corpus is not None:
+                if doc_id not in corpus:
+                    raise SciFactFormatError(
+                        f"prediction {claim_id} references unknown document {doc_id}"
+                    )
+                sentence_count = len(corpus[doc_id].sentences)
+                if any(sentence >= sentence_count for sentence in sentences):
+                    raise SciFactFormatError(
+                        f"prediction {claim_id} document {doc_id} references an out-of-range sentence"
+                    )
+            normalized[doc_id] = {"label": label, "sentences": sentences}
         result[claim_id] = {"id": claim_id, "evidence": normalized}
     return result
 
@@ -230,12 +260,31 @@ def _prediction_map(predictions: Mapping[int, Mapping[str, Any]] | Iterable[Mapp
 def evaluate_predictions(
     gold_claims: Iterable[SciFactGoldClaim],
     predictions: Mapping[int, Mapping[str, Any]] | Iterable[Mapping[str, Any]],
+    *,
+    corpus: Mapping[str, SciFactDocument] | None = None,
+    missing_policy: Literal["empty", "error"] = "empty",
 ) -> dict[str, Any]:
-    """Mirror the pinned SciFact abstract/sentence scoring semantics."""
+    """Mirror pinned SciFact semantics behind a strict local input contract.
+
+    Missing claim rows are scored as empty evidence by default so they remain in
+    the denominator. Unexpected claim IDs, duplicate rows/sentence IDs, invalid
+    labels/types, and corpus/sentence-bound violations are format errors.
+    """
+    if missing_policy not in {"empty", "error"}:
+        raise SciFactFormatError("missing_policy must be empty or error")
     gold = list(gold_claims)
-    if len({claim.claim_id for claim in gold}) != len(gold):
+    expected_ids = [claim.claim_id for claim in gold]
+    if len(set(expected_ids)) != len(expected_ids):
         raise SciFactFormatError("duplicate gold claim")
-    predicted = _prediction_map(predictions)
+    if any(isinstance(claim.claim_id, bool) or not isinstance(claim.claim_id, int) for claim in gold):
+        raise SciFactFormatError("gold claim IDs must be integers")
+    predicted = _prediction_map(predictions, corpus=corpus)
+    unexpected = sorted(set(predicted) - set(expected_ids))
+    if unexpected:
+        raise SciFactFormatError(f"unexpected prediction claim IDs: {unexpected}")
+    missing = sorted(set(expected_ids) - set(predicted))
+    if missing_policy == "error" and missing:
+        raise SciFactFormatError(f"missing prediction claim IDs: {missing}")
     abstract = Counter(relevant=0, retrieved=0, correct_label_only=0, correct_rationalized=0)
     sentence = Counter(relevant=0, retrieved=0, correct_selection=0, correct_label=0)
     per_claim: list[dict[str, Any]] = []
@@ -267,7 +316,7 @@ def evaluate_predictions(
                                      for gold_rationale in gold_evidence.rationales):
                 abstract["correct_rationalized"] += 1
                 claim_abstract["correct_rationalized"] += 1
-            for sentence_id in rationale:
+            for sentence_id in rationale_set:
                 matching = [gold_rationale for gold_rationale in gold_evidence.rationales if sentence_id in gold_rationale]
                 if len(matching) > 1:
                     raise SciFactFormatError("a gold sentence appears in multiple rationale sets")
@@ -280,6 +329,7 @@ def evaluate_predictions(
         per_claim.append({"claim_id": claim.claim_id, "abstract": dict(claim_abstract), "sentence": dict(claim_sentence)})
     return {
         "claim_count": len(gold),
+        "missing_prediction_claim_ids": missing,
         "abstract_label_only": _f1(abstract["correct_label_only"], abstract["retrieved"], abstract["relevant"]),
         "abstract_rationalized": _f1(abstract["correct_rationalized"], abstract["retrieved"], abstract["relevant"]),
         "sentence_selection": _f1(sentence["correct_selection"], sentence["retrieved"], sentence["relevant"]),
@@ -308,7 +358,7 @@ def summarize_release(data_dir: str | Path) -> dict[str, Any]:
     train = load_gold_claims(train_path)
     dev = load_gold_claims(dev_path)
     test = load_runtime_claims(test_path)
-    validate_against_corpus([*train, *dev, *test], corpus)
+    validate_against_corpus([*train, *dev], corpus)
     labels = Counter(evidence.label for claim in [*train, *dev] for evidence in claim.evidence.values())
     return {
         "corpus_documents": len(corpus),

@@ -14,9 +14,17 @@ from patent_to_pilot.evaluation.healthtech.scifact import (
     SciFactGoldClaim,
     SciFactEvidence,
     SciFactFormatError,
+    SciFactDocument,
     evaluate_predictions,
     load_gold_claims,
     load_runtime_claims,
+    validate_against_corpus,
+)
+from patent_to_pilot.evaluation.healthtech.local_retrieval import (
+    BM25Index,
+    PatentRecord,
+    reciprocal_rank_fusion,
+    validate_runtime_payload,
 )
 from patent_to_pilot.healthtech.api import (
     HealthTechAPIConfig,
@@ -27,6 +35,7 @@ from patent_to_pilot.healthtech.api import (
 from patent_to_pilot.healthtech.engine import DossierInput, run_dossier
 from patent_to_pilot.healthtech.history import append_user_edits, load_versions, save_version, source_view
 from patent_to_pilot.providers import MockHTTPResponse, MockHTTPTransport
+from scripts.healthtech.fetch_public_510k import AcquisitionAccounting
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -59,6 +68,7 @@ def test_runtime_scifact_reader_drops_gold_fields_and_gold_loader_preserves_them
     runtime = load_runtime_claims(path)
     gold = load_gold_claims(path)
     assert runtime[0].claim_id == 1 and not hasattr(runtime[0], "evidence")
+    assert not hasattr(runtime[0], "cited_doc_ids")
     assert gold[0].evidence["10"].label == "SUPPORT"
 
 
@@ -89,6 +99,128 @@ def test_scifact_prediction_rejects_nei_and_runtime_loader_does_not_promote_labe
     assert load_runtime_claims(path)[0].claim == "A claim"
     with pytest.raises(SciFactFormatError):
         evaluate_predictions([SciFactGoldClaim(1, "A claim", {}, ())], [{"id": 1, "evidence": {"1": {"label": "NEI", "sentences": []}}}])
+
+
+def test_scifact_strict_contract_rejects_duplicate_sentences_and_unexpected_claims():
+    gold = [SciFactGoldClaim(1, "A claim", {"10": SciFactEvidence("SUPPORT", ((0,),))}, ("10",))]
+    with pytest.raises(SciFactFormatError, match="repeats a sentence ID"):
+        evaluate_predictions(gold, [{"id": 1, "evidence": {"10": {"label": "SUPPORT", "sentences": [0, 0]}}}])
+    with pytest.raises(SciFactFormatError, match="unexpected prediction claim IDs"):
+        evaluate_predictions(gold, [
+            {"id": 1, "evidence": {}},
+            {"id": 999, "evidence": {}},
+        ])
+
+
+def test_scifact_missing_rows_are_explicit_empty_failures_and_bounds_are_checked():
+    gold = [
+        SciFactGoldClaim(1, "A claim", {"10": SciFactEvidence("SUPPORT", ((0,),))}, ("10",)),
+        SciFactGoldClaim(2, "Another claim", {}, ()),
+    ]
+    corpus = {"10": SciFactDocument("10", "Title", ("Sentence",), False), "11": SciFactDocument("11", "Other", ("Other",), False)}
+    metrics = evaluate_predictions(gold, [{"id": 1, "evidence": {"11": {"label": "SUPPORT", "sentences": [0]}}}], corpus=corpus)
+    assert metrics["missing_prediction_claim_ids"] == [2]
+    assert metrics["sentence_selection"]["recall"] == 0.0
+    with pytest.raises(SciFactFormatError, match="out-of-range"):
+        evaluate_predictions(gold, [{"id": 1, "evidence": {"10": {"label": "SUPPORT", "sentences": [1]}}}], corpus=corpus)
+
+
+def test_scifact_gold_overlapping_rationales_are_rejected():
+    corpus = {"10": SciFactDocument("10", "Title", ("Sentence", "Other"), False)}
+    gold = [SciFactGoldClaim(1, "A claim", {"10": SciFactEvidence("SUPPORT", ((0,), (0, 1)))}, ("10",))]
+    with pytest.raises(SciFactFormatError, match="overlapping rationales"):
+        validate_against_corpus(gold, corpus)
+
+
+def test_public_acquisition_accounting_enforces_cumulative_transfer_and_storage_caps():
+    accounting = AcquisitionAccounting(transfer_cap_bytes=5, storage_cap_bytes=7)
+    accounting.record_transfer(5)
+    with pytest.raises(ValueError, match="cumulative transfer cap"):
+        accounting.record_transfer(1)
+    accounting.record_storage(7)
+    with pytest.raises(ValueError, match="cumulative storage cap"):
+        accounting.record_storage(1)
+
+
+def test_public_acquisition_manifest_accounting_is_self_consistent(tmp_path, monkeypatch):
+    from scripts.healthtech import fetch_public_510k as fetcher
+
+    payload = {
+        "results": [{
+            "k_number": "K123456",
+            "device_name": "Example Device",
+            "applicant": "Example Co",
+            "product_code": "ABC",
+            "decision_code": "SESE",
+            "decision_date": "2026-01-01",
+            "date_received": "2025-12-01",
+        }],
+        "meta": {"last_updated": "2026-01-01"},
+    }
+
+    class Response:
+        headers = {"Content-Length": str(len(json.dumps(payload).encode("utf-8")))}
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+        def read(self, size=-1):
+            data = json.dumps(payload).encode("utf-8")
+            if not hasattr(self, "sent"):
+                self.sent = True
+                return data
+            return b""
+
+    monkeypatch.setattr(fetcher, "urlopen", lambda *args, **kwargs: Response())
+    output = tmp_path / "snapshot"
+    monkeypatch.setattr(
+        "sys.argv",
+        [
+            "fetch_public_510k.py",
+            "--k-number",
+            "K123456",
+            "--output",
+            str(output),
+            "--max-transfer-bytes",
+            "10000",
+            "--max-storage-bytes",
+            "100000",
+        ],
+    )
+    fetcher.main()
+    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+    actual_file_bytes = sum(p.stat().st_size for p in output.rglob("*") if p.is_file())
+    assert manifest["accounting"]["manifest_bytes"] == (output / "manifest.json").stat().st_size
+    assert manifest["accounting"]["actual_stored_bytes"] == actual_file_bytes
+
+
+def test_local_retrieval_contract_rejects_evaluator_shortcuts_and_has_stable_fusion():
+    base = {
+        "format": "ht-runtime-public-device-cohort-v1",
+        "status": "RUNTIME_INPUTS_ONLY_NO_EVALUATOR_LABELS",
+        "devices": [{
+            "query_id": "q1", "device_id_raw": "Device", "device_id_canonical": "P1:BASE",
+            "company": "Example", "trade_name": "Device", "generic_name": "Valve",
+            "product_code": "ABC", "technical_description": "mitral valve delivery",
+            "features_of_interest": ["valve"], "source_id": "s1", "evidence_cutoff": "2026-01-01",
+        }],
+        "patents": [],
+    }
+    poisoned = json.loads(json.dumps(base))
+    poisoned["devices"][0]["references"] = ["US000001A1"]
+    with pytest.raises(ValueError, match="evaluator fields"):
+        validate_runtime_payload(poisoned)
+    patents = [
+        PatentRecord("1", "US000001A1", "US-grant", "US", "Valve", "mitral valve", "claim", "mitral valve", "s1", "v1", "u", "a" * 64, "b" * 64, "2026-01-01", "Example", "source"),
+        PatentRecord("2", "US000002A1", "US-grant", "US", "Pump", "pump", "claim", "pump", "s2", "v1", "u", "c" * 64, "d" * 64, "2026-01-01", "Example", "source"),
+    ]
+    ranked = BM25Index(patents).search("mitral valve", limit=2)
+    assert ranked[0]["patent_id_canonical"] == "US000001A1"
+    fused = reciprocal_rank_fusion([["US000001A1", "US000002A1"], ["US000002A1", "US000001A1"]])
+    assert fused["US000001A1"] == pytest.approx(fused["US000002A1"])
 
 
 def test_dossier_history_and_source_view_are_local_and_editable(tmp_path):

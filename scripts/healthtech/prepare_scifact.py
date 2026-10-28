@@ -14,9 +14,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("data_dir", type=Path)
     parser.add_argument("output", type=Path)
-    parser.add_argument("--repo-commit", default="68b98a56d93e0f9da0d2aab4e6c3294699a0f72")
+    parser.add_argument("--repo-commit", default="68b98a56d93e0f9da0d2aab4e6c3294699a0f72e")
     parser.add_argument("--data-url", default="https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz")
-    parser.add_argument("--license-url", default="https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72/LICENSE.md")
+    parser.add_argument("--license-url", default="https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/LICENSE.md")
     parser.add_argument("--archive", type=Path, help="local release archive used before extraction")
     args = parser.parse_args()
     if args.output.exists():

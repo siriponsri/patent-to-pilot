@@ -1,0 +1,31 @@
+{
+  "status": "PUBLIC_DEVICE_DISCLOSURE_COHORT_ACQUIRED",
+  "retrieved_at_utc": "2026-10-27T23:52:57.270487+00:00",
+  "local_result_dir": "results/healthtech/ht-public-cohort-20261028-r1",
+  "runtime_path": "runtime.json",
+  "evaluator_path": "evaluator/references.json",
+  "source_registry_path": "source_registry.json",
+  "groups_path": "groups.json",
+  "split_path": "split_manifest.json",
+  "data_card_path": "data_card.json",
+  "devices": 3,
+  "patent_universe_documents": 41,
+  "disclosed_reference_pairs": 61,
+  "exact_patent_groups": 2,
+  "company_groups": 1,
+  "final_holdout_devices": 0,
+  "runtime_sha256": "6414ae59d79972fbffbf5557d378156a2c5b6daae7ff061ce3121515e58a5cad",
+  "references_sha256": "a0f15c9accbe374ce9e918c09398869d8937096cd6f6809f94ece4f7e3fcd7c2",
+  "universe_sha256": "642a3f5873f2a4b2e8f5321c705f3dd442440cfd8382f088f96b2a1b9986152b",
+  "cohort_sha256": "b92b50716599ad6ea3cdeb5b6a692990a52ae8dd113bfc0bb5cad2cdd2148715",
+  "manifest_sha256": "6e793d3b40da983c8829ee88ed96e42df0d5b65109d4e6c8144901d2f6d42787",
+  "actual_transferred_bytes": 63333809,
+  "actual_stored_bytes": 64388112,
+  "parser_sha256": "0343617ac0e248ac9ba19ffde4e7ebd4257a9f398ef366fbdb2efa72b354376d",
+  "rights": "openFDA facts and public patent/disclosure pages are retained for local research development; raw third-party files remain ignored and are not redistributed.",
+  "limitations": [
+    "Bridge-MedDevKG remains BLOCKED_LOCAL and is not substituted by this cohort.",
+    "Product-level disclosure is not claim-level expert relevance or verified negative evidence.",
+    "The cohort is development-only with no final holdout or generalization claim."
+  ]
+}
