@@ -284,11 +284,11 @@ def main() -> None:
                 "method_wall_seconds": sum(float(row["resources"].get("method_wall_seconds", 0.0)) for row in method_rows),
                 "method_cpu_seconds": sum(float(row["resources"].get("method_cpu_seconds", 0.0)) for row in method_rows),
                 "attempt_count": sum(int(row["resources"].get("attempt_count", 0)) for row in method_rows),
-                "query_calls": sum(float(row["resources"].get("query_calls", 0.0)) for row in method_rows),
-                "returned_candidates": sum(float(row["resources"].get("returned_candidates", 0.0)) for row in method_rows),
-                "rerank_pairs": sum(float(row["resources"].get("rerank_pairs", 0.0)) for row in method_rows),
-                "embedding_query_tokens": sum(float(row["resources"].get("embedding_query_tokens", 0.0)) for row in method_rows),
-                "rerank_tokens": sum(float(row["resources"].get("rerank_tokens", 0.0)) for row in method_rows),
+                "query_calls": sum(float(attempt.get("resources", {}).get("query_calls", 0.0)) for row in method_rows for attempt in row.get("attempts", [])),
+                "returned_candidates": sum(float(attempt.get("resources", {}).get("returned_candidates", 0.0)) for row in method_rows for attempt in row.get("attempts", [])),
+                "rerank_pairs": sum(float(attempt.get("resources", {}).get("rerank_pairs", 0.0)) for row in method_rows for attempt in row.get("attempts", [])),
+                "embedding_query_tokens": sum(float(attempt.get("resources", {}).get("embedding_query_tokens", 0.0)) for row in method_rows for attempt in row.get("attempts", [])),
+                "rerank_tokens": sum(float(attempt.get("resources", {}).get("rerank_tokens", 0.0)) for row in method_rows for attempt in row.get("attempts", [])),
             },
         }
     _write_jsonl(args.output / "raw_rankings.jsonl", rankings)
