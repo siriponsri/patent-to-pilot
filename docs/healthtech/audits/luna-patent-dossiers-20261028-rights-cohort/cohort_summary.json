@@ -1,0 +1,27 @@
+{
+  "format": "ht-boston-watchman-cohort-audit-v1",
+  "status": "DEVELOPMENT_ONLY_FREEZE_NO_HOLDOUT",
+  "selection_rule": "Predeclared WATCHMAN FLX and WATCHMAN FLX Pro rows on Boston Scientific's official 12 November 2025 patent-marking spreadsheet, joined to PMA P130013; retrieval scores and evaluator labels were not used for selection.",
+  "devices": ["HT-DEV-WATCHMAN-FLX", "HT-DEV-WATCHMAN-FLX-PRO"],
+  "patent_count": 7,
+  "disclosed_pair_count": 13,
+  "unjudged_distractor_pair_count": 1,
+  "company_count": 1,
+  "pma_count": 1,
+  "family_mapping": "UNKNOWN_NOT_ASSUMED",
+  "final_holdout": [],
+  "runtime_manifest_sha256": "cf2d0b6775b2b68a39b55f7023a805184a36b52b3a7f47cd02977c550d69104a",
+  "runtime_sha256": "dfb5021d74cc07328ce1b0d7bdaab20267ca74d1ad9b8df49e6a1bb50340cfef",
+  "references_sha256": "8a3f4620cdbb0ad48a40a2b743f6602fb9db5b8817260e561f3fc4ef6625b4f9",
+  "source_basis": {
+    "pma": "openFDA PMA P130013",
+    "product_disclosure": "Boston Scientific Virtual Patent Marking page and linked patent-marking spreadsheet, PDF page 30",
+    "patent_text": "Google Patents pages retained locally; no source-specific redistribution license established"
+  },
+  "limitations": [
+    "Product-level virtual marking is not claim-level semantic relevance or patent validity.",
+    "Unlisted device-patent pairs remain unjudged and are never recoded as negatives.",
+    "One applicant/PMA family prevents company-held-out sensitivity analysis.",
+    "No final holdout or generalization claim is supported."
+  ]
+}

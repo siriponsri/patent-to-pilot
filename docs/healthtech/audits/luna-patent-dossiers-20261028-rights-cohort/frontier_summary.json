@@ -1,0 +1,29 @@
+{
+  "format": "ht-development-frontier-summary-v1",
+  "status": "DEVELOPMENT_ONLY_NOT_ESTIMABLE",
+  "cohort": "results/healthtech/ht-boston-watchman-20261028-r4",
+  "baseline_run": "results/healthtech/ht-boston-baselines-20261028-r3",
+  "methods": ["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"],
+  "k": 20,
+  "rows": [
+    {"method": "HT-B0a", "macro_known_link_recall": 1.0, "query_calls": 2.0, "rerank_pairs": 0.0},
+    {"method": "HT-B0b", "macro_known_link_recall": 1.0, "query_calls": 2.0, "rerank_pairs": 0.0},
+    {"method": "HT-B1", "macro_known_link_recall": 1.0, "query_calls": 2.0, "rerank_pairs": 14.0},
+    {"method": "HT-B2", "macro_known_link_recall": 1.0, "query_calls": 8.0, "rerank_pairs": 56.0},
+    {"method": "HT-B3", "macro_known_link_recall": 1.0, "query_calls": 2.0, "rerank_pairs": 14.0}
+  ],
+  "quality_resource_interpretation": "All observed methods recover every listed product-level pair in this small development universe by K=20. The result is descriptive and cannot distinguish methods scientifically.",
+  "uncertainty": {
+    "status": "NOT_ESTIMABLE",
+    "reasons": [
+      "two exact-patent-overlap devices",
+      "one applicant/PMA family",
+      "no final holdout",
+      "product-level marking relationships rather than independent expert relevance judgments"
+    ]
+  },
+  "raw_ranking_written_before_reference_load": true,
+  "provider_calls": 0,
+  "paid_cost_usd": 0,
+  "frontier_sha256": "21f5ed31810a65fb54f7905113dfa26f17cbbead3d2c3668186e7be991bf0156"
+}

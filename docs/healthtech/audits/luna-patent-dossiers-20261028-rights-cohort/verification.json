@@ -1,0 +1,77 @@
+{
+  "run_id": "luna-patent-dossiers-20261028-rights-cohort",
+  "checked_date": "2026-10-28",
+  "base_commit": "630a6772463f7473bac48bb62037a53f745d8a03",
+  "implementation_commit": "fae952e0cc519dd9e471faafbbd6cec77b5ef7dd",
+  "rights_matrix": {
+    "path": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
+    "sha256": "0893a4630280089c41f29bd88a1c3b695e70d5d21d8a1a5069c7ecfcd6842fa7",
+    "sources": [
+      "openFDA terms",
+      "Abbott product patent notice",
+      "Google Patents landing/general terms surface",
+      "Boston Scientific virtual patent marking page"
+    ]
+  },
+  "commands": [
+    {
+      "command": "rtk python -B -m pytest -q -p no:cacheprovider tests/test_healthtech.py tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py",
+      "status": "PASS",
+      "result": "55 passed"
+    },
+    {
+      "command": "rtk python -B -m compileall -q src/patent_to_pilot/healthtech scripts/healthtech",
+      "status": "PASS",
+      "result": "exit 0"
+    },
+    {
+      "command": "rtk python -B scripts/healthtech/fetch_boston_watchman_cohort.py --output results/healthtech/ht-boston-watchman-20261028-r4",
+      "status": "PASS",
+      "result": "2 devices, 7 patents, 13 disclosed pairs, 1 unjudged distractor pair"
+    },
+    {
+      "command": "rtk python -B scripts/healthtech/run_real_baselines.py --output results/healthtech/ht-boston-baselines-20261028-r3",
+      "status": "PASS",
+      "result": "5 methods, 2 devices, 7 patents, 13 pairs, 0 provider calls, 0 paid cost"
+    }
+  ],
+  "artifacts": {
+    "cohort_manifest": {
+      "path": "results/healthtech/ht-boston-watchman-20261028-r4/manifest.json",
+      "sha256": "cf2d0b6775b2b68a39b55f7023a805184a36b52b3a7f47cd02977c550d69104a"
+    },
+    "runtime": {
+      "path": "results/healthtech/ht-boston-watchman-20261028-r4/runtime.json",
+      "sha256": "dfb5021d74cc07328ce1b0d7bdaab20267ca74d1ad9b8df49e6a1bb50340cfef"
+    },
+    "evaluator_references": {
+      "path": "results/healthtech/ht-boston-watchman-20261028-r4/evaluator/references.json",
+      "sha256": "8a3f4620cdbb0ad48a40a2b743f6602fb9db5b8817260e561f3fc4ef6625b4f9"
+    },
+    "groups": {
+      "path": "results/healthtech/ht-boston-watchman-20261028-r4/groups.json",
+      "sha256": "c436978b32af31412407c4e2420938e80f502167c9112a8a36aa03a7449e54ef"
+    },
+    "split": {
+      "path": "results/healthtech/ht-boston-watchman-20261028-r4/split_manifest.json",
+      "sha256": "fa8c6b531c59e5b330fb28f86207e2590cf25a9fcdd6f7bcb2b2b2b8343c9528"
+    },
+    "baseline_receipt": {
+      "path": "results/healthtech/ht-boston-baselines-20261028-r3/receipt.json",
+      "sha256": "f194fdce6bd44f42d932374ab80e05799a66d824209b87bd056464b2d5cffd25"
+    },
+    "frontier": {
+      "path": "results/healthtech/ht-boston-baselines-20261028-r3/frontier_diagnostics.json",
+      "sha256": "21f5ed31810a65fb54f7905113dfa26f17cbbead3d2c3668186e7be991bf0156"
+    }
+  },
+  "boundaries": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "raw_third_party_data_staged": false,
+    "product_display": "BLOCKED_LOCAL_FOR_RESTRICTED_SOURCES",
+    "redistribution": "BLOCKED_LOCAL_FOR_RESTRICTED_SOURCES",
+    "scientific_final_holdout": "NOT_RUN",
+    "bridge_main_study": "BLOCKED_LOCAL"
+  }
+}

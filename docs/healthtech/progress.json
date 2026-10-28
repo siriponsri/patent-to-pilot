@@ -4,7 +4,7 @@
   "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
   "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
   "g1_g2_run_start_commit": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
-  "latest_release_candidate": "b26f9138d2c36e36195755162c092088f23e9be4",
+  "latest_release_candidate": "fae952e0cc519dd9e471faafbbd6cec77b5ef7dd",
   "root_statuses": {
     "HT-G1": "PARTIAL",
     "HT-G2": "PARTIAL_DEVELOPMENT_ONLY",
@@ -97,6 +97,11 @@
       "evidence": "Fresh offline r7 fixed-prefix frontier tied to the Abbott freeze records per-prefix quality, actual query/rerank/embedding resources, failed and not-realized queries, exact-patent group diagnostics, first-query alignment across HT-B1/B2/B3, and NOT_ESTIMABLE uncertainty at results/healthtech/ht-real-baselines-20261028-r7/ with sanitized audit summary"
     },
     {
+      "id": "HT-W23",
+      "status": "IMPLEMENTED_RIGHTS_AWARE_AND_INDEPENDENT_COHORT_DEVELOPMENT",
+      "evidence": "Typed SourceRights policy, purpose-aware export/source-view boundary, rights-aware manifests, official clause matrix, and bounded Boston Scientific WATCHMAN FLX/FLX Pro cohort with PMA P130013, 7 patents, 13 disclosed pairs, 1 unjudged distractor pair, and fresh offline HT-B0a/B0b/B1/B2/B3 frontier at docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/"
+    },
+    {
       "id": "HT-W13",
       "status": "PLANNED",
       "evidence": "no no-code interface implemented"
@@ -112,16 +117,18 @@
       "evidence": "27 verified paper identities, methods/dataset/evaluator reading notes; no manuscript results"
     }
   ],
-  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN",
+  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_INDEPENDENT_NON_ABBOTT_COHORT",
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "Review the atomic-history and Abbott dossier slice, obtain source-specific rights decisions, add an independent non-Abbott cohort, and resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout; Claude UX/UI remains paused",
-  "verification": "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/verification.json",
-  "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/README.md",
-  "latest_healthtech_frontier": "results/healthtech/ht-real-baselines-20261028-r7/frontier_diagnostics.json",
-  "latest_healthtech_frontier_summary": "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/frontier_summary.json",
+  "next": "Resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout; keep Abbott and Boston branches development-only, obtain independent relevance judgments, and keep Claude UX/UI paused",
+  "verification": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/verification.json",
+  "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/README.md",
+  "latest_rights_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
+  "latest_healthtech_frontier": "results/healthtech/ht-boston-baselines-20261028-r3/frontier_diagnostics.json",
+  "latest_healthtech_frontier_summary": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/frontier_summary.json",
+  "latest_independent_cohort": "results/healthtech/ht-boston-watchman-20261028-r4/manifest.json",
   "closeout_receipt": "docs/healthtech/LUNA_G1_G3_CURRENT_HEAD_20261028-b26f913.md",
   "g3_integration_handoff": "docs/healthtech/evidence/luna-g3-integration-20261028/verification.json",
   "g3_integration_contract": "docs/healthtech/integration/luna-g3-20261028-28dfb1d/adapter-contract.json",
