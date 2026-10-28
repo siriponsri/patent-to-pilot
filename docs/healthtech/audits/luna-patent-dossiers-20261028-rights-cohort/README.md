@@ -17,6 +17,7 @@ This continuation package has two bounded outcomes:
 | Typed product boundary | PASS | `SourceRights`, public-source validation, `RunManifest.rights_summary`, purpose-aware Markdown export, and purpose-aware source view. Restricted Abbott patent/disclosure surfaces raise `RightsBoundaryError`. |
 | Independent non-Abbott cohort | PASS for development-only use | Two Boston WATCHMAN rows, one PMA family, seven patent documents, thirteen product-level disclosed pairs, one unjudged distractor pair, exact-overlap grouping, unknown family mapping, and no final holdout. |
 | Offline frontier | PASS for bounded development run | Five methods, two devices, zero failed queries, zero provider calls, zero paid cost, raw rankings written before evaluator references were loaded. |
+| Per-link disclosure provenance | PASS for Boston; legacy-only for Abbott | Boston: 13/13 reference pairs covered by exact disclosure evidence under a typed rights policy. Abbott: 61/61 pairs structurally covered, but the older cohort registry records free-text rights only. |
 | Scientific generalization/public release | NOT_RUN | One company/PMA family, product-level marking only, no final holdout, Google-derived patent text remains local-only, Bridge reuse rights/cohort/split remain unresolved, and no redistribution is authorized. |
 
 ## Rights decisions
@@ -27,6 +28,23 @@ This continuation package has two bounded outcomes:
 - Boston Scientific virtual patent marking: local snapshot/evaluation only; the official page documents a product-level marking relationship but does not grant a redistribution license.
 
 The raw HTML, PDF, PMA response, and extracted patent pages remain in ignored local result folders. They are referenced by hashes and are not copied into this audit folder.
+
+## Per-link provenance gate
+
+`src/patent_to_pilot/evaluation/healthtech/provenance.py` and
+`scripts/healthtech/verify_cohort_provenance.py` now verify the evaluator-only
+boundary for each cohort. The gate checks that every disclosed pair maps to an
+exact locator and quote/field, an `independent_disclosure` source, a registered
+rights basis, and a patent in the frozen runtime universe. It also rejects
+runtime leakage, duplicate IDs, extra or missing evidence pairs, and distractors
+that overlap disclosed links.
+
+- Boston receipt: `boston-provenance-verification.json` — `PASS`, 13/13 pairs, `TYPED_POLICY_ID`.
+- Abbott receipt: `abbott-provenance-verification.json` — `PASS_WITH_LEGACY_RIGHTS`, 61/61 pairs, `LEGACY_TEXT_ONLY`.
+- The Abbott receipt is structural provenance evidence only. Its older source registry must be regenerated or explicitly migrated before it is treated as a typed rights-aware artifact.
+
+The verifier does not establish semantic relevance, claim scope, patent validity,
+or redistribution permission. Unlisted pairs remain unjudged.
 
 ## Cohort and frontier
 
@@ -48,10 +66,16 @@ These are realized development-slice values, not a generalization result. The co
 
 ```text
 rtk python -B -m pytest -q -p no:cacheprovider tests/test_healthtech.py tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py
-PASS: 55 passed
+PASS: 57 passed
 
-rtk python -B -m compileall -q src/patent_to_pilot/healthtech scripts/healthtech
+rtk python -B -m compileall -q src/patent_to_pilot/evaluation/healthtech scripts/healthtech
 PASS: exit 0
+
+rtk python -B scripts/healthtech/verify_cohort_provenance.py --cohort results/healthtech/ht-boston-watchman-20261028-r4 --output docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/boston-provenance-verification.json
+PASS: 13/13 Boston reference pairs covered; typed rights policy present
+
+rtk python -B scripts/healthtech/verify_cohort_provenance.py --cohort results/healthtech/ht-public-cohort-20261028-r1 --output docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/abbott-provenance-verification.json
+PASS_WITH_LEGACY_RIGHTS: 61/61 Abbott reference pairs covered; legacy free-text rights note only
 
 rtk python -B scripts/healthtech/fetch_boston_watchman_cohort.py --output results/healthtech/ht-boston-watchman-20261028-r4
 PASS: 2 devices, 7 patents, 13 disclosed pairs, 1 unjudged distractor pair

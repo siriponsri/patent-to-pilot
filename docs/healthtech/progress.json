@@ -99,7 +99,7 @@
     {
       "id": "HT-W23",
       "status": "IMPLEMENTED_RIGHTS_AWARE_AND_INDEPENDENT_COHORT_DEVELOPMENT",
-      "evidence": "Typed SourceRights policy, purpose-aware export/source-view boundary, rights-aware manifests, official clause matrix, and bounded Boston Scientific WATCHMAN FLX/FLX Pro cohort with PMA P130013, 7 patents, 13 disclosed pairs, 1 unjudged distractor pair, and fresh offline HT-B0a/B0b/B1/B2/B3 frontier at docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/"
+      "evidence": "Typed SourceRights policy, purpose-aware export/source-view boundary, rights-aware manifests, official clause matrix, bounded Boston Scientific WATCHMAN FLX/FLX Pro cohort with PMA P130013, 7 patents, 13 disclosed pairs, 1 unjudged distractor pair, fresh offline HT-B0a/B0b/B1/B2/B3 frontier, and per-link provenance receipts at docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/"
     },
     {
       "id": "HT-W13",
@@ -122,13 +122,17 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "Resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout; keep Abbott and Boston branches development-only, obtain independent relevance judgments, and keep Claude UX/UI paused",
+  "next": "Resolve Bridge reuse rights/cohort/split or obtain a licensed replacement before any final holdout; Boston per-link provenance is typed and passes 13/13, while the older Abbott receipt is structural PASS_WITH_LEGACY_RIGHTS over 61/61 pairs; keep both branches development-only, obtain independent relevance judgments, and keep Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
   "latest_healthtech_frontier": "results/healthtech/ht-boston-baselines-20261028-r3/frontier_diagnostics.json",
   "latest_healthtech_frontier_summary": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/frontier_summary.json",
   "latest_independent_cohort": "results/healthtech/ht-boston-watchman-20261028-r4/manifest.json",
+  "latest_cohort_provenance_verification": [
+    "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/boston-provenance-verification.json",
+    "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/abbott-provenance-verification.json"
+  ],
   "closeout_receipt": "docs/healthtech/LUNA_G1_G3_CURRENT_HEAD_20261028-b26f913.md",
   "g3_integration_handoff": "docs/healthtech/evidence/luna-g3-integration-20261028/verification.json",
   "g3_integration_contract": "docs/healthtech/integration/luna-g3-20261028-28dfb1d/adapter-contract.json",
