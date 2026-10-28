@@ -6,6 +6,8 @@ Status: `PASS_ENGINEERING`; real ignored-corpus integration `NOT_RUN`
 
 Tested base commit: `43ba0e7d637ed5ee1ae601b75addb947f4db48d0`
 
+Implementation commit: `3177478c67f654f3f4d7c891e055a8ae72541162`
+
 ## Finding and repair
 
 The clean-checkout baseline used:
@@ -31,9 +33,12 @@ payload.
 
 ## Verification
 
-- Focused repairs: `18 passed`; one existing `fitz` deprecation warning.
-- Scoped backend suite: `58 passed`; one existing `fitz` deprecation warning.
-- Compile checks: PASS for `src`, `tests`, and `scripts`.
+- Main-worktree focused repairs: `18 passed`; one existing `fitz` deprecation warning.
+- Main-worktree scoped backend suite: `58 passed`; one existing `fitz` deprecation warning.
+- Fresh clean-worktree focused repairs: `17 passed`, `1 skipped` because the pinned tokenizer is absent.
+- Fresh clean-worktree scoped backend suite: `57 passed`, `1 skipped` for the same tokenizer condition.
+- Compile checks: PASS for `src`, `tests`, and `scripts` in both worktrees.
+- Fresh clean-worktree status: CLEAN; `results/healthtech` absent; model cache absent.
 - `rtk git diff --check`: PASS.
 - Provider calls, paid inference, network acquisition, deployment, Bridge, final
   holdout, and UI work: `NOT_RUN`.

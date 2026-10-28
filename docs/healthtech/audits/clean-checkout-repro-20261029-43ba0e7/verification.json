@@ -5,7 +5,7 @@
   "status": "PASS_ENGINEERING",
   "tested_base_commit": "43ba0e7d637ed5ee1ae601b75addb947f4db48d0",
   "origin_main_before_change": "43ba0e7d637ed5ee1ae601b75addb947f4db48d0",
-  "candidate_commit": null,
+  "candidate_commit": "3177478c67f654f3f4d7c891e055a8ae72541162",
   "scope": "HealthTech backend A/B/C only",
   "changed_files": [
     "src/patent_to_pilot/healthtech/history.py",
@@ -34,12 +34,12 @@
     {
       "command": "rtk python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_repairs.py -rs",
       "status": "PASS",
-      "result": "18 passed; one existing fitz deprecation warning"
+      "result": "Main worktree: 18 passed; one existing fitz deprecation warning"
     },
     {
       "command": "rtk python -B -m pytest -q -p no:cacheprovider tests/test_healthtech.py tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py -rs",
       "status": "PASS",
-      "result": "58 passed; one existing fitz deprecation warning"
+      "result": "Main worktree: 58 passed; one existing fitz deprecation warning"
     },
     {
       "command": "rtk python -B -m compileall -q src tests scripts",
@@ -52,6 +52,15 @@
       "result": "no whitespace errors"
     }
   ],
+  "fresh_clean_worktree": {
+    "implementation_commit": "3177478c67f654f3f4d7c891e055a8ae72541162",
+    "worktree_status": "CLEAN",
+    "results_healthtech_exists": false,
+    "model_cache_exists": false,
+    "focused_repairs": "17 passed, 1 skipped; tokenizer skip is explicit",
+    "scoped_backend_suite": "57 passed, 1 skipped; tokenizer skip is explicit",
+    "compileall": "PASS"
+  },
   "contract_checks": {
     "authored_abbott_fixture": {
       "eligible_devices": 3,

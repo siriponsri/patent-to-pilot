@@ -109,7 +109,7 @@
     {
       "id": "HT-W25",
       "status": "PASS_CLEAN_CHECKOUT_BACKEND_REPRODUCIBILITY",
-      "evidence": "Authored temporary fixtures remove ignored results/healthtech dependencies from the A/B/C backend suite; displayable_fields enforcement is regression-tested; canonical audit at docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/"
+      "evidence": "Authored temporary fixtures remove ignored results/healthtech dependencies from the A/B/C backend suite; displayable_fields enforcement is regression-tested; implementation commit 3177478c67f654f3f4d7c891e055a8ae72541162; canonical audit at docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/"
     },
     {
       "id": "HT-W13",
