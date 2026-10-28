@@ -1,0 +1,149 @@
+{
+  "run_id": "luna-patent-dossiers-20261028-current-head-d23da02",
+  "checked_date": "2026-10-28",
+  "base_head": "d23da02ece90b6e776e7fa0e23e64b7b974dd8d8",
+  "end_head": "d23da02ece90b6e776e7fa0e23e64b7b974dd8d8",
+  "remote_head": "d23da02ece90b6e776e7fa0e23e64b7b974dd8d8",
+  "tree_state": "DIRTY_PRESERVED_UNRELATED_OWNER_ARTIFACTS",
+  "package_results": {
+    "A_atomic_history": {
+      "status": "PASS",
+      "publication": "same-directory fsynced staging plus atomic hard-link publication; no unconditional replace",
+      "current_head_reproduction": "docs/healthtech/audits/luna-patent-dossiers-20261028-current-head-d23da02/history-current.json",
+      "reader_during_staging": "committed chain [1] only; version-0002.json absent",
+      "final_chain": [1, 2],
+      "same_base_concurrency": "one commit and one recoverable stale-parent conflict",
+      "interruption_coverage": "current focused tests cover before publish, after payload fsync before publish, after publish, staging recovery, stale parent, and partial-reader behavior",
+      "current_history_sha256": "4d60bc79cd7177f90ca9dbbb344557c8812d065eb9f9fb47cdbe4d833b487cfc"
+    },
+    "B_real_cases": {
+      "status": "PASS_LOCAL_DEVELOPMENT_BACKEND",
+      "cohort": "results/healthtech/ht-public-cohort-20261028-r1",
+      "artifact_root": "results/healthtech/ht-abbott-dossiers-20261028-current-d23da02",
+      "cases": [
+        {
+          "query_id": "HT-DEV-MITRACLIP",
+          "candidate_count": 35,
+          "retrieved_candidate_count": 14,
+          "disclosed_link_count": 21,
+          "patent_inputs": 41,
+          "dossier_sha256": "fb20e147c99401d63ad42e94eb97ada7cbf8710a3b5fe1c743a4f3354411602b",
+          "case_manifest_sha256": "37c90a9aca0be57e5191f3c7afdef2c01f4ad81796c18a4ef558752b555c253b",
+          "source_view": "PASS: openfda-pma-p100009-base trade_name returned",
+          "history_export": "PASS: version 2, parent 1, review-note preserved"
+        },
+        {
+          "query_id": "HT-DEV-TENDYNE",
+          "candidate_count": 20,
+          "retrieved_candidate_count": 3,
+          "disclosed_link_count": 17,
+          "patent_inputs": 41,
+          "dossier_sha256": "0065e079c72fb5a03d5a8146f0901af59856a0045991c8a54084c3cda97ab13e",
+          "case_manifest_sha256": "45731b29bcb7ee445feec946b598b204f73172ef5d8d7eaaebcf57635460ea9a",
+          "source_view": "PASS: openfda-pma-p240042-base trade_name returned",
+          "history_export": "PASS: version 2, parent 1, review-note preserved"
+        },
+        {
+          "query_id": "HT-DEV-TRICLIP",
+          "candidate_count": 28,
+          "retrieved_candidate_count": 5,
+          "disclosed_link_count": 23,
+          "patent_inputs": 41,
+          "dossier_sha256": "dfa13ba7e6a47a5901d0dd82af1c9b79093ae7e3c1dd9f0227e4cf0ad39fac0f",
+          "case_manifest_sha256": "6bc9694f59cbc3329090696367a2d9854419466fa8178ab5224887bc10f682e6",
+          "source_view": "PASS: openfda-pma-p230007-base trade_name returned",
+          "history_export": "PASS: version 2, parent 1, review-note preserved"
+        }
+      ],
+      "runtime_evaluator_boundary": "Adapter reads runtime.json and source_registry.json; evaluator references remain evaluator-only. Product disclosure evidence is source-backed and separate from retrieved candidates.",
+      "rights_boundary": "Restricted Abbott disclosure and Google-derived patent text remain local research only; product display and redistribution are BLOCKED_LOCAL."
+    },
+    "C_development_freeze": {
+      "status": "PASS_DEVELOPMENT_ONLY_WITH_FRONTIER",
+      "cohort_protocol": "results/healthtech/ht-abbott-development-20261028-r1/protocol.json",
+      "frontier": "results/healthtech/ht-real-baselines-20261028-r7/frontier_diagnostics.json",
+      "eligible_devices": 3,
+      "universe_patents": 41,
+      "disclosed_pairs": 61,
+      "unjudged_distractor_pairs": 62,
+      "final_holdout": [],
+      "family_mapping": "UNKNOWN_NOT_ASSUMED",
+      "frontier_status": "DESCRIPTIVE_DEVELOPMENT_FRONTIER",
+      "methods": ["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"],
+      "provider_calls": 0,
+      "paid_cost_usd": 0,
+      "errors": 0,
+      "uncertainty": "NOT_ESTIMABLE",
+      "current_script_hashes": {
+        "run_real_baselines.py": "f82232a2cf129610aece51eeab88ef49757506016b0493ec57492499ba0b8f01",
+        "freeze_abbott_development.py": "c2cf08d7b6b26e5a081c0ad775f224077f308deb133c67e00f970a052588dd51",
+        "fetch_public_device_cohort.py": "0343617ac0e248ac9ba19ffde4e7ebd4257a9f398ef366fbdb2efa72b354376d"
+      }
+    }
+  },
+  "commands": [
+    {
+      "command": "rtk python -B docs/healthtech/audits/pepo-followup-20261028-1ce0443/reproduce_history_publication.py --output docs/healthtech/audits/luna-patent-dossiers-20261028-current-head-d23da02/history-current.json",
+      "result": "PASS: READER_SAW_COMMITTED_CHAIN; visible version 2 bytes during pause = null; final versions [1, 2]"
+    },
+    {
+      "command": "rtk python -B scripts/healthtech/build_abbott_dossiers.py --cohort results/healthtech/ht-public-cohort-20261028-r1 --protocol results/healthtech/ht-abbott-development-20261028-r1/protocol.json --rights-matrix docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json --output results/healthtech/ht-abbott-dossiers-20261028-current-d23da02 --code-commit d23da02",
+      "result": "PASS: three cases rebuilt; 35/21, 20/17, and 28/23 total candidates/disclosed links"
+    },
+    {
+      "command": "rtk python -B scripts/healthtech/view_dossier_source.py ... --field trade_name",
+      "result": "PASS: all three PMA source views returned a typed rights policy and trade_name field"
+    },
+    {
+      "command": "rtk python -B scripts/healthtech/manage_dossier_history.py export ... --version 2",
+      "result": "PASS: all three selected-version CLI exports completed at version 2"
+    },
+    {
+      "command": "rtk python -B -m pytest -q -p no:cacheprovider tests/test_healthtech.py tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py",
+      "result": "PASS: 57 passed"
+    },
+    {
+      "command": "rtk python -B -m compileall -q src/patent_to_pilot/healthtech src/patent_to_pilot/evaluation/healthtech scripts/healthtech",
+      "result": "PASS: exit 0"
+    },
+    {
+      "command": "rtk git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "source_and_config_hashes": {
+    "src/patent_to_pilot/healthtech/history.py": "4d60bc79cd7177f90ca9dbbb344557c8812d065eb9f9fb47cdbe4d833b487cfc",
+    "src/patent_to_pilot/healthtech/abbott.py": "24bb939d6ee222b71ddbce0f80f6d605a0cb64cdd96fea7a6e6b0c196c0c7dd1",
+    "scripts/healthtech/build_abbott_dossiers.py": "2d650c8fc5f36f1885803738b2e1b7eece5d607fc562961b6ee0b6b8b5b680b5",
+    "scripts/healthtech/manage_dossier_history.py": "29dcfa2d2bda06e27b9eab7b74271f447e678a83539f0d31356c1e5d6531bf9e",
+    "tests/test_healthtech_repairs.py": "da4b444a3c0f95a3139cfed69ca0cad60b1d214c02913f51eba92817a4f2990f",
+    "results/healthtech/ht-public-cohort-20261028-r1/runtime.json": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121",
+    "results/healthtech/ht-public-cohort-20261028-r1/source_registry.json": "bb22c176849415cd7a86c9aec5bc6a22fd62c547afb53d1b7f74205517cd5eba",
+    "results/healthtech/ht-abbott-development-20261028-r1/protocol.json": "f9b1fdf43d2bfd1fc94bee58e4c91738195456202dcd0f8e228af41887f938b8",
+    "results/healthtech/ht-real-baselines-20261028-r7/receipt.json": "f5d689ddb720ebf658699e2ed141b5cb483565e1d4449578353e1fde94e769c7",
+    "results/healthtech/ht-real-baselines-20261028-r7/frontier_diagnostics.json": "c8d7d41bf8f696042125a54f7cf13e59a087b3305dc6f3f3584aed7037deef20",
+    "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json": "0893a4630280089c41f29bd88a1c3b695e70d5d21d8a1a5069c7ecfcd6842fa7"
+  },
+  "boundaries": {
+    "implemented": [
+      "current-head atomic publication revalidation",
+      "fresh three-case real patent-linked dossier rebuild",
+      "source viewer and selected-version CLI export checks",
+      "current development cohort/frontier hash revalidation"
+    ],
+    "not_run": [
+      "paid or free remote provider inference",
+      "Bridge payload acquisition or main-study substitution",
+      "scientific final holdout or independent relevance judgments",
+      "adaptive superiority claim",
+      "clinical validation",
+      "FTO",
+      "patent validity",
+      "investment merit",
+      "deployment",
+      "public redistribution",
+      "frontend/UI integration"
+    ],
+    "known_environment_gap": "The broader release-budget subprocess tests remain a separate packaging/importability issue; they were not used as evidence for this scoped package."
+  }
+}
