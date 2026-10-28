@@ -155,6 +155,18 @@ def test_history_rejects_stale_parent_and_export_includes_user_edits(tmp_path):
     markdown = export_markdown(edited, language="en")
     assert "## User edits" in markdown
     assert "keep this in export" in markdown
+    assert "Dossier version: 2" in markdown
+    assert "Parent version: 1" in markdown
+    assert "Validation scope: source_integrity_only" in markdown
+    assert "type regulatory_record" in markdown
+    assert "type patent_document" in markdown
+    assert "synthetic true" in markdown
+
+    thai = export_markdown(edited, language="th")
+    assert "Dossier version: 2" in thai
+    assert "Parent version: 1" in thai
+    assert "## Source manifest" in thai
+    assert "sha256" in thai
 
 
 def test_history_two_simultaneous_writers_have_one_commit_and_one_conflict(tmp_path):

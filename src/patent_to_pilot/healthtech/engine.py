@@ -217,8 +217,11 @@ def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", 
     if language not in {"auto", "en", "th"}:
         raise ValueError("language must be auto, en, or th")
     th = dossier.query.brief.language == "th" if language == "auto" else language == "th"
+    parent_version = "(none)" if dossier.parent_version is None else str(dossier.parent_version)
     lines=["# แฟ้มหลักฐาน HealthTech" if th else "# HealthTech evidence dossier",
         "",f"Device/comparator: {cell(dossier.query.device_id_raw)}",f"Run: {cell(dossier.run_id)}",
+        f"Dossier version: {dossier.version}", f"Parent version: {parent_version}",
+        f"Validation scope: {cell(dossier.validation_scope)}",
         f"Evidence cutoff: {dossier.query.evidence_cutoff}",
         "", "**SYNTHETIC ENGINEERING EXAMPLE**" if dossier.query.brief.data_class=="synthetic" else "**PUBLIC-SOURCE ENGINEERING DRAFT**",
         "", "## หลักฐานจากต้นทาง" if th else "## Source evidence", "",
@@ -237,5 +240,5 @@ def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", 
     else:
         lines.append("_(none)_" if not th else "_(ไม่มี)_")
     lines += ["", "## Source manifest", ""]
-    lines += [f"- {cell(s.source.source_id)}: {cell(s.source.uri)}; revision {cell(s.source.version_label)}; {cell(s.jurisdiction)}; {s.source_date}; sha256 {s.source.sha256}" for s in dossier.sources]
+    lines += [f"- {cell(s.source.source_id)}: {cell(s.source.uri)}; type {cell(s.source.source_type)}; revision {cell(s.source.version_label)}; {cell(s.jurisdiction)}; {s.source_date}; synthetic {str(s.synthetic).lower()}; sha256 {s.source.sha256}" for s in dossier.sources]
     return "\n".join(lines)+"\n"
