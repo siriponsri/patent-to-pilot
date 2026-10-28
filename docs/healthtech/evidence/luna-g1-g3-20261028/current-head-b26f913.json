@@ -5,12 +5,33 @@
   "tested_origin_main": "b26f9138d2c36e36195755162c092088f23e9be4",
   "working_tree_start": "tracked_clean_untracked_owner_artifacts_preserved",
   "working_tree_end": "tracked_clean_untracked_owner_artifacts_preserved",
+  "environment": {
+    "python": "3.12.10",
+    "current_revalidation_local_model_inference": false,
+    "corrected_baseline_local_encoder": "sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "corrected_baseline_local_reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2@233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "protocol_hash": "7dab96b735c70bcf60b99f191477c5add04d95c337d437c2d17b546e8b226cf2",
+    "cohort_manifest_hash": "6e793d3b40da983c8829ee88ed96e42df0d5b65109d4e6c8144901d2f6d42787"
+  },
+  "worktrees": {
+    "main": "b26f9138d2c36e36195755162c092088f23e9be4",
+    "claude_ux": {
+      "branch": "claude/healthtech-ux-local-20261028",
+      "head": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
+      "status": "paused_untouched"
+    }
+  },
   "targeted_repair_tests": {
     "status": "PASS",
     "tests": 6,
     "failures": 0,
     "skipped": 0,
     "scope": "R1-R3 repair regressions plus dossier history/export concurrency"
+  },
+  "repairs": {
+    "R1": "native attention masks/type IDs, fixed truncation/padding, special-token and deterministic short/long/batch/pair coverage",
+    "R2": "completed attempts and resources survive later action failure; failed query and pre-dispatch failure remain explicit",
+    "R3": "fixed first-query/prefix parity plus realized-budget frontier, per-device/group/headroom/resource/error diagnostics"
   },
   "full_offline_suite": {
     "status": "PASS",
@@ -46,6 +67,68 @@
     "provider_calls": 0,
     "paid_cost_usd": 0,
     "response_schema_valid": null
+  },
+  "G1_parser_and_source_replay": {
+    "status": "PARTIAL_DEVELOPMENT_ONLY",
+    "patent_files_expected": 41,
+    "patent_files_processed": 41,
+    "raw_hash_mismatches": 0,
+    "normalized_hash_mismatches": 0,
+    "field_mismatches": 0,
+    "all_title_abstract_claims_nonempty": true,
+    "openfda_pma_records_checked": 3,
+    "abbott_disclosure_sections_checked": 3,
+    "disclosed_patent_counts": {"mitraclip": 21, "triclip": 23, "tendyne": 17},
+    "evidence": "docs/healthtech/evidence/luna-g1-g3-20261028/parser-replay-and-source-checks.json",
+    "limits": [
+      "Abbott is product-level development evidence, not component-level expert gold.",
+      "Bridge rights, per-link disclosure provenance, cohort reconciliation, and final split remain BLOCKED_LOCAL."
+    ]
+  },
+  "G2_corrected_baselines": {
+    "status": "PARTIAL_DEVELOPMENT_ONLY",
+    "methods": ["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"],
+    "devices": 3,
+    "patents": 41,
+    "reference_pairs": 61,
+    "macro_known_link_recall_at_20": {
+      "HT-B0a": 0.442739,
+      "HT-B0b": 0.662242,
+      "HT-B1": 0.498802,
+      "HT-B2": 0.568912,
+      "HT-B3": 0.498802
+    },
+    "realized_frontier": {
+      "HT-B0a": {"query_calls": 3, "rerank_pairs": 0},
+      "HT-B0b": {"query_calls": 3, "rerank_pairs": 0},
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205}
+    },
+    "failed_attempts": 0,
+    "evidence": "results/healthtech/luna-g1-g3-20261028-200041/corrected-baselines/",
+    "limits": ["No final holdout; two exact-patent components; one company group; no generalization claim."]
+  },
+  "G3_three_public_cases": {
+    "status": "PASS_BACKEND_ONLY",
+    "source_root": "results/healthtech/public-dossiers-20261027-r3",
+    "output_root": "results/healthtech/luna-g1-g3-20261028-203003-revalidation/g3-three-public-cases",
+    "evaluator_relations_loaded": false,
+    "cases": [
+      {"case": "K121849", "sources": 1, "evidence_items": 7, "candidates": 0, "unresolved_items": 3, "next_information_requests": 3, "history_versions": [1, 2], "expected_parent_checked": true, "source_view": "openfda-510k-k121849:device_name", "edited_en_th_export": true},
+      {"case": "K163345", "sources": 1, "evidence_items": 7, "candidates": 0, "unresolved_items": 3, "next_information_requests": 3, "history_versions": [1, 2], "expected_parent_checked": true, "source_view": "openfda-510k-k163345:device_name", "edited_en_th_export": true},
+      {"case": "K190167", "sources": 1, "evidence_items": 7, "candidates": 0, "unresolved_items": 3, "next_information_requests": 3, "history_versions": [1, 2], "expected_parent_checked": true, "source_view": "openfda-510k-k190167:device_name", "edited_en_th_export": true}
+    ],
+    "manifest_evidence": "docs/healthtech/evidence/luna-g1-g3-20261028/revalidation-203003.json",
+    "limits": ["All three cases have empty patent input pools; actual no-code UI walkthrough remains pending."]
+  },
+  "G3_cli_smoke": {
+    "status": "PASS_BACKEND_ONLY",
+    "operations": ["init", "edit --expected-version 1", "manifest", "export --version 2", "exact source view"],
+    "history_versions": [1, 2],
+    "user_edit_keys": ["audit-note"],
+    "export_languages": ["json", "en", "th"],
+    "artifact": "docs/healthtech/evidence/luna-g1-g3-20261028/current-head-b26f913/cli-history-smoke/"
   },
   "reused_prior_artifacts": {
     "parser_replay": "docs/healthtech/evidence/luna-g1-g3-20261028/parser-replay-and-source-checks.json",
