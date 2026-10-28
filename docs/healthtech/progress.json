@@ -4,10 +4,10 @@
   "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
   "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
   "g1_g2_run_start_commit": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
-  "latest_release_candidate": "62e96ae9649da842ddead2c1d80e82658b054634",
+  "latest_release_candidate": "b26f9138d2c36e36195755162c092088f23e9be4",
   "root_statuses": {
     "HT-G1": "PARTIAL",
-    "HT-G2": "PARTIAL",
+    "HT-G2": "PARTIAL_DEVELOPMENT_ONLY",
     "main_bridge_branch": "BLOCKED_LOCAL"
   },
   "governing_documents": [
@@ -74,7 +74,7 @@
     {
       "id": "HT-W12",
       "status": "BACKEND_COMPLETE_UI_PENDING",
-      "evidence": "Typed dossier/history backend with exclusive version creation, expected-parent checks, simultaneous-writer regression, selected-version JSON/EN/TH export, exact-source viewer, user-edit preservation, bilingual no-code journey contract, and Luna integration handoff at docs/healthtech/integration/luna-g3-20261028-28dfb1d; Claude UX/UI remains paused"
+      "evidence": "Typed dossier/history backend with exclusive version creation, expected-parent checks, simultaneous-writer regression, selected-version JSON/EN/TH export with dossier and source-manifest context, exact-source viewer, user-edit preservation, bilingual no-code journey contract, and Luna integration handoff at docs/healthtech/integration/luna-g3-20261028-28dfb1d; Claude UX/UI remains paused"
     },
     {
       "id": "HT-W13",
@@ -97,9 +97,9 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "Keep the corrected Abbott branch development-only, review the Luna backend integration handoff with the paused Claude UX branch when ownership resumes, and resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout; current-head offline revalidation is recorded at the 210230 receipt",
-  "verification": "docs/healthtech/evidence/luna-g1-g3-20261028/current-head-210230.json",
-  "closeout_receipt": "docs/healthtech/LUNA_G1_G3_CURRENT_HEAD_20261028-210230.md",
+  "next": "Keep the corrected Abbott branch development-only, review the Luna backend integration handoff with the paused Claude UX branch when ownership resumes, and resolve Bridge reuse rights/cohort/split or obtain a licensed replacement with per-link disclosure provenance before any final holdout; clean-head offline revalidation is recorded at the b26f913 receipt",
+  "verification": "docs/healthtech/evidence/luna-g1-g3-20261028/current-head-b26f913.json",
+  "closeout_receipt": "docs/healthtech/LUNA_G1_G3_CURRENT_HEAD_20261028-b26f913.md",
   "g3_integration_handoff": "docs/healthtech/evidence/luna-g3-integration-20261028/verification.json",
   "g3_integration_contract": "docs/healthtech/integration/luna-g3-20261028-28dfb1d/adapter-contract.json",
   "supplemental_data": "research/SUPPLEMENTAL_DATA.md",

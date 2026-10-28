@@ -1,0 +1,68 @@
+{
+  "run_id": "luna-g1-g3-20261028-b26f913-current-head",
+  "date": "2026-10-28",
+  "tested_code_head": "b26f9138d2c36e36195755162c092088f23e9be4",
+  "tested_origin_main": "b26f9138d2c36e36195755162c092088f23e9be4",
+  "working_tree_start": "tracked_clean_untracked_owner_artifacts_preserved",
+  "working_tree_end": "tracked_clean_untracked_owner_artifacts_preserved",
+  "targeted_repair_tests": {
+    "status": "PASS",
+    "tests": 6,
+    "failures": 0,
+    "skipped": 0,
+    "scope": "R1-R3 repair regressions plus dossier history/export concurrency"
+  },
+  "full_offline_suite": {
+    "status": "PASS",
+    "checked_utc": "2026-10-28T14:10:30.913811+00:00",
+    "artifact": "docs/healthtech/evidence/luna-g1-g3-20261028/current-head-b26f913/verification.json",
+    "tests": 281,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "network_attempts": 0,
+    "forbidden_credential_read_attempts": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "source_unchanged": true
+  },
+  "synthetic_smoke": {
+    "status": "ENGINEERING_DRAFT",
+    "artifact": "docs/healthtech/evidence/luna-g1-g3-20261028/current-head-b26f913/synthetic-smoke",
+    "candidates": 2,
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "stop_reason": "fixed_schedule_complete"
+  },
+  "api_boundary": {
+    "status": "DRY_RUN_NOT_EXECUTED",
+    "request_id": "ht-dry-run-001",
+    "request_hash": "d2a1ee43e6382c3dccd2455dde75bdda705c46aabaa632756021036ba41df230",
+    "visible_source_ids": ["synthetic-device-record"],
+    "visible_source_hashes": {
+      "synthetic-device-record": "08d037a0c91e924c31c8df411942f063378fd4daf73b76c798cb98b67cc80dc7"
+    },
+    "network_attempts": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "response_schema_valid": null
+  },
+  "reused_prior_artifacts": {
+    "parser_replay": "docs/healthtech/evidence/luna-g1-g3-20261028/parser-replay-and-source-checks.json",
+    "corrected_baselines": "results/healthtech/luna-g1-g3-20261028-200041/corrected-baselines",
+    "g3_backend_walkthrough": "results/healthtech/luna-g1-g3-20261028-203003-revalidation/g3-three-public-cases",
+    "integration_handoff": "docs/healthtech/integration/luna-g3-20261028-28dfb1d"
+  },
+  "statuses": {
+    "HT-G1": "PARTIAL",
+    "HT-G2": "PARTIAL_DEVELOPMENT_ONLY",
+    "main_bridge_branch": "BLOCKED_LOCAL",
+    "HT-G3_backend": "BACKEND_COMPLETE_UI_PENDING"
+  },
+  "limitations": [
+    "The three public cases are regulatory facts-only dossiers with empty patent input pools.",
+    "Unlisted device-patent pairs remain unjudged, never negatives.",
+    "The current-head run validates engineering boundaries; it does not establish final scientific generalization or product readiness.",
+    "The synthetic smoke is an authored engineering fixture, not a public device or patent result."
+  ]
+}

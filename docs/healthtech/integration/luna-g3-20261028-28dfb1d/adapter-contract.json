@@ -1,7 +1,7 @@
 {
   "handoff_id": "luna-g3-20261028-28dfb1d",
   "date": "2026-10-28",
-  "tested_code_head": "28dfb1dcaf0f4794d74ba80c2fea09b0108f3f86",
+  "tested_code_head": "b26f9138d2c36e36195755162c092088f23e9be4",
   "status": "BACKEND_COMPLETE_UI_PENDING",
   "ownership": {
     "luna_paths": [
@@ -86,7 +86,7 @@
       "guarantees": [
         "writes selected-version dossier.json",
         "writes English and Thai Markdown",
-        "keeps user_edits in JSON and a separate Markdown section"
+        "keeps dossier version, parent version, validation scope, source type/synthetic/hash context, and user_edits in the selected-version exports"
       ],
       "limitation": "no PDF/DOCX export and no browser download adapter"
     }
@@ -114,7 +114,7 @@
       "id": "CAP-BE-04",
       "name": "edited_json_en_th_export",
       "state": "implemented_backend_tested",
-      "basis": "selected version export preserves version, source basis, unresolved items, requests, and separate user_edits"
+      "basis": "selected version export preserves dossier/parent/validation context, source basis, unresolved items, requests, and separate user_edits in JSON and bilingual Markdown"
     },
     {
       "id": "CAP-BE-05",
@@ -194,7 +194,7 @@
   ],
   "backend_source_hashes": {
     "src/patent_to_pilot/healthtech/contracts.py": "384f0b15eb2840127eadee9f91c748ab55ee0598347c28528daf9395bd5cd729",
-    "src/patent_to_pilot/healthtech/engine.py": "4cd1d6106b4ab78217a404d9a3540abc7990e5023d35833f8a09b7c4f966f900",
+    "src/patent_to_pilot/healthtech/engine.py": "23878e50b46ea9b1f5dfa1cffaeadf6585da51a9b7b26839bb2df56a4dbbb0ff",
     "src/patent_to_pilot/healthtech/history.py": "167268773a967655ca81c05b8556710f3c28bddfd9233773783f712f585234ef",
     "scripts/healthtech/run_dossier.py": "68bf95e6cff27c012a2b922f02607bdadb7e72e8fbc5c8c0ea36be5392c3330e",
     "scripts/healthtech/manage_dossier_history.py": "29dcfa2d2bda06e27b9eab7b74271f447e678a83539f0d31356c1e5d6531bf9e",

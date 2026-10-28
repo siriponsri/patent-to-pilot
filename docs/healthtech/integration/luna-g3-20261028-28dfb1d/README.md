@@ -2,7 +2,7 @@
 
 Run: `luna-g3-20261028-28dfb1d`  
 Date: 2026-10-28  
-Tested code HEAD: `28dfb1dcaf0f4794d74ba80c2fea09b0108f3f86`  
+Tested code HEAD: `b26f9138d2c36e36195755162c092088f23e9be4`  
 Status: `BACKEND_COMPLETE_UI_PENDING`
 
 ## Purpose and boundary
@@ -20,7 +20,7 @@ The current Python surface is local and synchronous:
 - `save_version(history_dir, dossier)` creates `version-####.json` with exclusive creation, flush/fsync, and cleanup after an interrupted write.
 - `append_user_edits(history_dir, edits, expected_parent_version=...)` creates the next contiguous version and rejects a stale parent. A caller must preserve the rejected writer's text as a recoverable conflict; the backend does not merge conflicts or provide idempotency keys.
 - `select_version(...)`, `load_versions(...)`, and `history_manifest(...)` read a contiguous local chain. `source_view(...)` returns the pinned source identity, revision, jurisdiction, date, hash, synthetic flag, and requested top-level field when available.
-- `manage_dossier_history.py export ... --version N` writes selected-version JSON plus English and Thai Markdown. `export_markdown(...)` keeps source evidence, unresolved items, next requests, version context, and a separate `User edits` section.
+- `manage_dossier_history.py export ... --version N` writes selected-version JSON plus English and Thai Markdown. `export_markdown(...)` keeps source evidence, unresolved items, next requests, dossier/parent/validation context, source type/synthetic/hash context, and a separate `User edits` section.
 
 Exact signatures, capability states, and file hashes are in [`adapter-contract.json`](adapter-contract.json). The proposed frontend adapter names in that JSON are integration seams, not current Python exports or HTTP endpoints.
 
@@ -39,7 +39,7 @@ The current public cases are `K121849`, `K163345`, and `K190167`. Each has one p
 ## Verification evidence
 
 - Backend repair tests: `tests/test_healthtech_repairs.py::test_history_rejects_stale_parent_and_export_includes_user_edits` and `tests/test_healthtech_repairs.py::test_history_two_simultaneous_writers_have_one_commit_and_one_conflict`.
-- Current-head revalidation: [`LUNA_G1_G3_CURRENT_HEAD_20261028-210230.md`](../../LUNA_G1_G3_CURRENT_HEAD_20261028-210230.md) and [`current-head-210230.json`](../../evidence/luna-g1-g3-20261028/current-head-210230.json).
+- Current-head revalidation: [`LUNA_G1_G3_CURRENT_HEAD_20261028-b26f913.md`](../../LUNA_G1_G3_CURRENT_HEAD_20261028-b26f913.md) and [`current-head-b26f913.json`](../../evidence/luna-g1-g3-20261028/current-head-b26f913.json).
 - The current offline suite is recorded at 281 tests with zero failures, errors, and skips; network attempts, credential reads, provider calls, and paid cost are all zero. This is engineering evidence only.
 - The actual no-code UI walkthrough remains `NOT_RUN / PENDING_CLAUDE_PAUSED`; do not promote this handoff to full HT-G3 completion.
 

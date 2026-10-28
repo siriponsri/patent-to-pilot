@@ -1,7 +1,7 @@
 {
   "run_id": "luna-g3-integration-20261028-28dfb1d",
   "date": "2026-10-28",
-  "tested_code_head": "28dfb1dcaf0f4794d74ba80c2fea09b0108f3f86",
+  "tested_code_head": "b26f9138d2c36e36195755162c092088f23e9be4",
   "status": "PASS_BACKEND_HANDOFF_UI_PENDING",
   "scope": "Luna-owned backend integration handoff; no frontend or Claude worktree mutation",
   "claude_worktree": {
@@ -34,11 +34,11 @@
     },
     {
       "id": "full_offline_suite",
-      "status": "REUSED_PRIOR_PASS",
+      "status": "PASS",
       "outcome": "281 tests; 0 failures; 0 errors; 0 skips; 0 network attempts; 0 credential reads; 0 provider calls; paid_cost_usd=0",
-      "evidence": "docs/healthtech/evidence/luna-g1-g3-20261028/current-head-210230.json",
-      "current_head": "62e96ae9649da842ddead2c1d80e82658b054634",
-      "reason": "This handoff changes documentation only; the current-head full-suite run confirms the unchanged backend code path."
+      "evidence": "docs/healthtech/evidence/luna-g1-g3-20261028/current-head-b26f913.json",
+      "current_head": "b26f9138d2c36e36195755162c092088f23e9be4",
+      "reason": "Clean-head revalidation after the bilingual Markdown export contract repair."
     },
     {
       "id": "public_case_backend_walkthrough",
@@ -53,7 +53,7 @@
     "pinned source inspection for exact top-level fields",
     "exclusive local version creation",
     "expected-parent conflict detection",
-    "selected-version JSON/English/Thai export with separate user_edits",
+    "selected-version JSON/English/Thai export with dossier context, source manifest fields, and separate user_edits",
     "backend adapter contract and capability delta"
   ],
   "not_run_or_unavailable": [
