@@ -99,3 +99,13 @@ DRY_RUN_NOT_EXECUTED; network_attempts=0; provider_calls=0; paid_cost_usd=0
 ## Remaining work
 
 G1 is not globally complete because Bridge rights/cohort/split evidence remains unresolved. G2 is not a final scientific study because the permitted branch is development-only, has three devices from one applicant/disclosure source, and has no final holdout. HT-B4 live provider comparison, G4 adaptive evaluation, clinical/FTO analysis, deployment, UI/service work, customer validation, and publication readiness remain out of scope and `NOT_RUN`.
+
+## Post-release revalidation
+
+The current release pointer was revalidated on 2026-10-28 at `HEAD` and `origin/main` `3937d9debe2a27908d923a760926f52bbc43c949`.
+
+- Focused HealthTech regressions: 40 passed.
+- Clean tracked worktree, `verify_offline.py <fresh-output> --suite all`: 275 tests, 0 failures, 0 errors, 0 skipped, 0 network attempts, 0 credential-file reads, source unchanged.
+- Data/model audit: cohort hashes, runtime/evaluator separation, 15 raw method-query rows, 41-document universe, 61 disclosed pairs, 12 pinned model files, and 4 SciFact release files all verified against their manifests.
+- Guarded API boundary: `DRY_RUN_NOT_EXECUTED`, 0 network attempts, 0 provider calls, `paid_cost_usd=0`.
+- Status is unchanged: HT-G1 and HT-G2 remain `PARTIAL`; the Bridge main branch remains `BLOCKED_LOCAL` pending rights, per-link provenance, and recoverable cohort/split evidence.

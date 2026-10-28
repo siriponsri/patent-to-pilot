@@ -15,9 +15,17 @@
       "id": "scifact",
       "role": "HT-T2 evidence component",
       "url": "https://github.com/allenai/scifact",
-      "status": "PLANNED",
+      "revision": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72",
+      "status": "LOCAL_SNAPSHOT_ACQUIRED_AND_VERIFIED",
       "rights": "claims/annotations CC BY 4.0; abstracts ODC-By 1.0; code Apache 2.0",
-      "local_payload_acquired": false
+      "allowed_use": {
+        "acquisition": "public pinned archive acquired locally",
+        "evaluation": "local SciFact component evaluation and parity checks",
+        "product_redistribution": "raw third-party files are not redistributed from this repository"
+      },
+      "local_payload_acquired": true,
+      "local_manifest": "data/manifests/healthtech/scifact-release-20261027-r1.json",
+      "test_labels": "not present in the public release; held-out test score not claimed"
     },
     {
       "id": "openfda-510k",
@@ -38,18 +46,65 @@
     },
     {
       "id": "openfda-pma",
-      "role": "HT-G3 official facts; W05/W12",
-      "status": "PROPOSED",
-      "source": "https://api.fda.gov/download.json",
-      "snapshot_metadata_date": "2026-10-26",
-      "reported_records": 57373,
-      "reported_zip_mb": "21.17",
+      "role": "HT-G1 public development cohort; W05/W08/W12",
+      "status": "LOCAL_DEVELOPMENT_SNAPSHOT",
+      "source": "https://api.fda.gov/device/pma.json",
+      "snapshot_metadata_date": "2026-10-27",
+      "local_manifest": "data/manifests/healthtech/ht-public-cohort-20261028.json",
+      "local_source_registry": "results/healthtech/ht-public-cohort-20261028-r1/source_registry.json",
+      "selected_records": [
+        "P100009",
+        "P230007",
+        "P240042"
+      ],
       "keys": [
         "pma_number",
         "supplement_number"
       ],
       "rights": "openFDA terms/CC0 exceptions and source-document rights",
-      "limitations": "supplements are not unique device counts; no patent gold"
+      "allowed_use": {
+        "acquisition": "public openFDA PMA endpoint",
+        "evaluation": "local development retrieval cohort only",
+        "product_redistribution": "raw source responses remain local; field-specific rights unresolved"
+      },
+      "limitations": "three predeclared records only; supplements are not unique device counts; no patent gold"
+    },
+    {
+      "id": "ht-public-device-disclosure-cohort",
+      "role": "HT-T1 development retrieval cohort; W05-W11",
+      "status": "LOCAL_DEVELOPMENT_SNAPSHOT",
+      "revision": "2026-10-27 public-source acquisition",
+      "sources": [
+        "https://www.abbott.com/en-us/patents/legal-notices-patents/patents",
+        "https://patents.google.com/"
+      ],
+      "local_manifest": "data/manifests/healthtech/ht-public-cohort-20261028.json",
+      "local_source_registry": "results/healthtech/ht-public-cohort-20261028-r1/source_registry.json",
+      "scope": "3 Abbott cardiovascular devices, 41 canonical U.S. patent documents, 61 product-level disclosed pairs",
+      "rights": "local research development only; raw third-party pages and redistribution rights remain unresolved",
+      "allowed_use": {
+        "acquisition": "public Abbott and Google Patents pages accessed locally",
+        "evaluation": "bounded local development retrieval and provenance checks",
+        "product_redistribution": "unresolved; raw pages and evaluator-only relations are not published"
+      },
+      "limitations": "product-level disclosure is not claim-level expert relevance; all unlisted pairs are unjudged; no final holdout"
+    },
+    {
+      "id": "healthtech-local-models",
+      "role": "HT-G2 local dense and reranker baselines; W09",
+      "status": "LOCAL_SNAPSHOT_ACQUIRED_AND_HASHED",
+      "sources": [
+        "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+        "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2"
+      ],
+      "local_manifest": "data/manifests/healthtech/ht-models-20261028.json",
+      "rights": "model cards declare Apache-2.0; weights remain local-only and are excluded from Git",
+      "allowed_use": {
+        "acquisition": "ungated public model snapshots",
+        "evaluation": "local offline baseline execution",
+        "product_redistribution": "weights excluded from Git; downstream product terms require separate review"
+      },
+      "limitations": "general web/MS MARCO training and quantized short-context ONNX variants do not establish medical-device patent adequacy"
     },
     {
       "id": "udi-selected-fields",
