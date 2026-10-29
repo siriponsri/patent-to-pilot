@@ -310,15 +310,20 @@
       "id": "HT-M22-SOURCE-LANDSCAPE",
       "status": "PASS_OFFLINE_SOURCE_SCREENING_NOT_ADMISSIBLE",
       "evidence": "Screened the pinned Bridge release and the public PatSnap PatentBench candidate without downloading corpus payloads. Bridge remains BLOCKED_LOCAL on the existing rights/cohort/split audit; PatSnap is rejected for HT-T1 task mismatch because it is a patent-query prior-art/design-FTO benchmark, not named device-product relevance. No runtime inputs, semantic labels, provider calls, network acquisition, or paid cost changed. Canonical audit: docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/"
+    },
+    {
+      "id": "HT-M23-SOURCE-AUTHORIZATION-PREFLIGHT",
+      "status": "PASS_ENGINEERING_OFFLINE_AUTHORIZATION_PREFLIGHT",
+      "evidence": "Added a fail-closed semantic source authorization validator and CLI at implementation commit 567bbd1. The preflight requires source revision/hash, rights clause and local-use decision, explicit no-transfer/no-redistribution flags, resumable acquisition, byte/file/storage bounds, safe paths, exact relevant/not_relevant labels, unjudged policy, adjudicator/locator requirements, independent company/family groups, leakage rejection, and a predeclared holdout. Focused validator/judgment/submission/G6 tests pass 24/24; compilation and CLI smoke pass; no corpus, labels, provider calls, network acquisition, or paid cost occurred. Canonical audit: docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/"
     }
   ],
-  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE",
+  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT",
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M22 completed a bounded public source screen: Bridge remains blocked under the existing rights/cohort audit, and PatSnap PatentBench is not admitted because its patent-query prior-art/design-FTO task does not match named device-product relevance. No corpus payload, semantic label, provider call, network acquisition, or paid cost was added. The next scientific discriminator remains an owner-authorized rights-cleared device-patent judgment source with explicit labels, multiple company/family groups, frozen denominators, and a predeclared untouched holdout. Keep Bridge, live/provider HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
-  "verification": "docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/verification.json",
+  "next": "M23 added the owner-ready semantic source authorization preflight. It validates source identity/hash, rights clauses and local-use decisions, no-transfer/no-redistribution flags, resumable bounds, exact label and unjudged policies, locators/adjudicators, independent company/family groups, leakage rejection, and a predeclared holdout; 24 focused tests pass and no corpus or labels were acquired. The next scientific discriminator remains an owner-authorized rights-cleared device-patent judgment source. Keep Bridge, live/provider HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
+  "verification": "docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
   "latest_healthtech_frontier": "results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-holdout/frontier_diagnostics.json",
@@ -369,6 +374,7 @@
   "latest_company_holdout_sensitivity_output": "results/healthtech/ht-company-holdout-sensitivity-20261029-r1/summary.json",
   "latest_g6_m20_integration_audit": "docs/healthtech/audits/luna-long-run-20261030-g6-m20-integration-20261030/README.md",
   "latest_source_landscape_audit": "docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/README.md",
+  "latest_source_authorization_preflight": "docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/README.md",
   "latest_scifact_error_analysis": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/README.md",
   "latest_scifact_error_analysis_output": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r4-error-analysis/analysis.json",
   "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/README.md",

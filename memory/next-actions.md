@@ -397,3 +397,11 @@ Status: `PASS_OFFLINE_SOURCE_SCREENING_NOT_ADMISSIBLE`; canonical audit: `docs/h
 Screened the pinned Bridge release and the public PatSnap PatentBench candidate without downloading corpus payloads. Bridge remains `BLOCKED_LOCAL` under the existing rights/cohort/split audit. PatSnap PatentBench is rejected for HT-T1 task mismatch: it is a patent-query prior-art/design-FTO benchmark, not named medical-device/product-to-patent relevance. No runtime inputs, semantic labels, provider calls, network acquisition, or paid cost changed.
 
 This is a bounded source screen, not an exhaustive dataset review or license opinion. Next: obtain or authorize a semantically aligned rights-cleared device-patent judgment source with explicit labels, source revision/hash, rights/intended-use decisions, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched holdout. Apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or unjudged policy, then rerun HT-B0a/B0b/B1/B2/B3.
+
+## HT-NEXT-044 — 2026-10-30 M23 semantic source authorization preflight
+
+Status: `PASS_ENGINEERING_OFFLINE_AUTHORIZATION_PREFLIGHT`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/README.md`.
+
+Added a fail-closed source authorization validator and CLI at implementation commit `567bbd1`. The preflight requires pinned source identity/hash, source-specific rights clause, intended-use decision, explicit no-transfer/no-redistribution flags, resumable acquisition, byte/file/storage bounds, safe relative paths, exact `relevant` / `not_relevant` labels, `unjudged_not_negative`, exact locators, adjudicator roles, independent company/family groups, reject-on-leakage policy, and a predeclared final holdout. The focused validator/judgment/submission/G6 suite passes `24/24`; compilation and synthetic CLI smoke pass.
+
+No corpus, semantic labels, provider calls, network acquisition, or paid cost occurred. Next: obtain an owner-authorized manifest for a semantically aligned rights-cleared source, validate it, acquire only within its bounds, apply `ht-relevance-judgment-cohort-v1`, and rerun HT-B0a/B0b/B1/B2/B3 while preserving the frozen denominator, holdout, and unjudged pairs.

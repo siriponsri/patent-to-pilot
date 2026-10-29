@@ -1,0 +1,54 @@
+{
+  "schema_version": "healthtech-audit-v1",
+  "run_id": "luna-long-run-20261030-source-authorization-preflight-20261030",
+  "run_date": "2026-10-30",
+  "status": "PASS_ENGINEERING_OFFLINE_AUTHORIZATION_PREFLIGHT",
+  "source_head_before": "0a24db1c2dc9419a5373950f2e0ba63b058ac772",
+  "implementation_commit": "567bbd1",
+  "scope": {
+    "manifest_validation_only": true,
+    "corpus_acquired": false,
+    "semantic_labels_created": 0,
+    "provider_calls": 0,
+    "network_acquisition_calls": 0,
+    "paid_cost_usd": 0.0,
+    "public_redistribution_authorized": false
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_source_authorization.py tests/test_healthtech_judgments.py tests/test_healthtech_judgment_submission.py tests/test_healthtech_g6_skeleton.py",
+      "outcome": "PASS: 24 passed"
+    },
+    {
+      "command": "rtk proxy python -m py_compile src/patent_to_pilot/evaluation/healthtech/source_authorization.py scripts/healthtech/validate_semantic_source_authorization.py tests/test_healthtech_source_authorization.py",
+      "outcome": "PASS: exit 0"
+    },
+    {
+      "command": "rtk proxy python -c '<synthetic manifest through scripts/healthtech/validate_semantic_source_authorization.py>'",
+      "outcome": "PASS: CLI returned status PASS; temporary output only"
+    },
+    {
+      "command": "rtk proxy git diff --check",
+      "outcome": "PASS: exit 0"
+    }
+  ],
+  "artifact_hashes": {
+    "src/patent_to_pilot/evaluation/healthtech/source_authorization.py": "0e00d4be99646bcd45fe595aeb87ba1685f936485aa3875cc6616ad76d6e78f1",
+    "scripts/healthtech/validate_semantic_source_authorization.py": "a1997e8d0677e0fcb6dbf5ae1e3d1d10814988e40b4a50d358a4219cd8b7d93c",
+    "tests/test_healthtech_source_authorization.py": "0e1de0bc42f3638e2025a2f5ad80d2cd1015d0018231f6ee9ca484f647c3f973",
+    "docs/healthtech/research/SEMANTIC_JUDGMENT_SOURCE_AUTHORIZATION.md": "7b43c40336df1dbbe860de88d6203a3d9e94cdb709f9925310209e7e88061f59"
+  },
+  "implemented": [
+    "Fail-closed source identity, rights, intended-use, transfer, and attribution checks.",
+    "Resumable acquisition and byte/file/storage-bound checks with safe relative paths.",
+    "Exact semantic label, locator, adjudicator, unjudged, group, leakage, and holdout prerequisites.",
+    "CLI preflight that writes only a validation report."
+  ],
+  "not_run": [
+    "real source acquisition",
+    "semantic adjudication",
+    "HT-B0a/B0b/B1/B2/B3 rerun",
+    "provider or paid execution"
+  ],
+  "next_action": "Obtain and authorize a semantically aligned rights-cleared source, validate its authorization manifest, then acquire and ingest explicit labels without changing the frozen denominator or holdout."
+}
