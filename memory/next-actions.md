@@ -413,3 +413,11 @@ Status: `PASS_ENGINEERING_OFFLINE_AUTHORIZATION_BOUND_INGEST`; canonical audit: 
 Bound `ingest_relevance_judgments.py` and `build_relevance_judgment_manifest` to the M23 authorization manifest at implementation commit `a25cd4f`. The CLI now requires `--authorization-manifest`, validates source identity/revision/SHA-256/rights-policy alignment, records the authorization-manifest hash, and rejects missing or mismatched authorization. The focused validator/judgment/submission/G6 suite passes `25/25`; the synthetic ingest smoke returns 1 judged plus 3 unjudged pairs.
 
 No real corpus, semantic labels, provider calls, network acquisition, or paid cost occurred. Next: use the authorization-bound ingest path only after an owner-authorized source passes M23, then rerun the frozen controls without changing the denominator, holdout, or unjudged policy.
+
+## HT-NEXT-046 — 2026-10-30 M25 bounded semantic source staging
+
+Status: `PASS_ENGINEERING_OFFLINE_BOUNDED_LOCAL_STAGING`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-bounded-semantic-source-staging-20261030/README.md`.
+
+Added the local-only `source_acquisition.py` boundary and `acquire_semantic_source.py` CLI at implementation commit `6e6eb0deb0a51ee9883165f124992c7e7d57cf38`. The helper validates M23 authorization first, binds the exact `ht-semantic-source-snapshot-v1` file-inventory hash, enforces exact byte/file counts and maxima, rejects source/destination overlap, stages atomically under the declared storage path, resumes matching partial files, and records per-file hashes/checkpoints. Focused authorization/acquisition/judgment/submission/G6 tests pass `25/25`; compilation and `git diff --check` pass.
+
+The synthetic smoke used two authored files totaling 12 bytes and passed complete staging, verified-file reuse, interrupted partial resume, and CLI execution. No real source, semantic labels, provider/network calls, or paid cost occurred. Next: obtain an owner-authorized source, pass M23 and M25, run M24 ingest, inspect the real validation report, and only then rerun the frozen controls. Keep Bridge, paid HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused or blocked.

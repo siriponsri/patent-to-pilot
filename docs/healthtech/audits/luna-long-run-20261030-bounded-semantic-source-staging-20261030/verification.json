@@ -1,0 +1,53 @@
+{
+  "format": "ht-healthtech-audit-verification-v1",
+  "run_id": "luna-long-run-20261030-bounded-semantic-source-staging-20261030",
+  "status": "PASS_ENGINEERING_OFFLINE_BOUNDED_LOCAL_STAGING",
+  "run_date": "2026-10-30",
+  "base_commit": "e44b6584cab96bc9936c9ae39cad224dc61c900f",
+  "implementation_commit": "6e6eb0deb0a51ee9883165f124992c7e7d57cf38",
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest tests/test_healthtech_source_acquisition.py tests/test_healthtech_source_authorization.py tests/test_healthtech_judgment_submission.py tests/test_healthtech_g6_skeleton.py -q",
+      "status": "PASS",
+      "exit_code": 0,
+      "result": "25 passed"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q src/patent_to_pilot/evaluation/healthtech scripts/healthtech/acquire_semantic_source.py tests/test_healthtech_source_acquisition.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "result": "clean compilation"
+    },
+    {
+      "command": "rtk proxy git diff --check",
+      "status": "PASS",
+      "exit_code": 0,
+      "result": "no whitespace errors"
+    }
+  ],
+  "artifacts": [
+    "src/patent_to_pilot/evaluation/healthtech/source_acquisition.py",
+    "scripts/healthtech/acquire_semantic_source.py",
+    "tests/test_healthtech_source_acquisition.py",
+    "docs/healthtech/research/SEMANTIC_SOURCE_ACQUISITION.md"
+  ],
+  "real_source_acquired": false,
+  "real_semantic_labels_created": 0,
+  "provider_calls": 0,
+  "network_calls": 0,
+  "paid_cost_usd": 0.0,
+  "synthetic_fixture": {
+    "file_count": 2,
+    "bytes": 12,
+    "staging": "PASS",
+    "verified_reuse": "PASS",
+    "partial_resume": "PASS",
+    "cli": "PASS"
+  },
+  "limitations": [
+    "No owner-authorized real semantic source was available in this run.",
+    "No semantic judgment manifest was created or updated.",
+    "No retrieval baseline was rerun because the semantic source gate remains unresolved."
+  ],
+  "next_action": "Acquire an owner-authorized source, pass M23 and M25, then run M24 ingest before rerunning the frozen controls."
+}
