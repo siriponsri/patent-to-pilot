@@ -1,0 +1,159 @@
+{
+  "format": "ht-healthtech-audit-verification-v1",
+  "run_id": "luna-long-run-20261029-m4-b4-offline-eea0fb4",
+  "status": "PASS_OFFLINE_DEVELOPMENT",
+  "recorded_date": "2026-10-29",
+  "base_commit": "bd07d29a04420fd45d30ae328cbfe55aee13432d",
+  "implementation_commit": "eea0fb43df35014210097585940f865e2ba3d67b",
+  "origin_main_before_push": "bd07d29a04420fd45d30ae328cbfe55aee13432d",
+  "scope": {
+    "implemented": [
+      "strict bounded HT-B4 controller observation/action contract",
+      "deterministic offline observation-based policy",
+      "offline frozen-cohort runner with runtime/evaluator separation",
+      "focused controller regression tests"
+    ],
+    "offline_runs": true,
+    "live_provider_run": false,
+    "paid_inference": false,
+    "deployment": false,
+    "external_outreach": false,
+    "raw_data_release": false
+  },
+  "source_hashes": {
+    "src/patent_to_pilot/healthtech/controller.py": "96bb940a022392b23e27aff7e8a46827405d22bc94ef080187b107283cbdc2d0",
+    "scripts/healthtech/run_bounded_controller.py": "86d37e91184295b00e809b8c983b87ce64bcfa616f918f95adec2f63145268be",
+    "tests/test_healthtech_controller.py": "872f0552867588afff485be18672ba83f5fbdde9988cd8b02f9613f210836fb0"
+  },
+  "cohorts": {
+    "boston": {
+      "manifest": "results/healthtech/ht-boston-watchman-20261028-r4/manifest.json",
+      "runtime": "results/healthtech/ht-boston-watchman-20261028-r4/runtime.json",
+      "references": "results/healthtech/ht-boston-watchman-20261028-r4/evaluator/references.json",
+      "groups": "results/healthtech/ht-boston-watchman-20261028-r4/groups.json",
+      "cohort_manifest_hash": "ccb56dc3045a462421959cc930735589e81eae4d962f30530b0b76cd81da6f7f",
+      "runtime_sha256": "dfb5021d74cc07328ce1b0d7bdaab20267ca74d1ad9b8df49e6a1bb50340cfef",
+      "references_sha256": "8a3f4620cdbb0ad48a40a2b743f6602fb9db5b8817260e561f3fc4ef6625b4f9",
+      "groups_sha256": "c436978b32af31412407c4e2420938e80f502167c9112a8a36aa03a7449e54ef",
+      "devices": 2,
+      "patents": 7,
+      "declared_pairs": 13,
+      "exact_patent_group_count": 1,
+      "protocol_hash": "fa8c6b531c59e5b330fb28f86207e2590cf25a9fcdd6f7bcb2b2b2b8343c9528",
+      "output": "results/healthtech/ht-bounded-controller-20261029-boston-r1",
+      "output_hashes": {
+        "controller_frontier.json": "c892dd236e1ae6a6658a89dc6546b87280cd9600a59b2d4161638d2b68d3208c",
+        "controller_policy.json": "568a8bfb7cbb316834e5ae2f738e172dd17b550da0199dfbe671db12c4de98d7",
+        "evaluator_validation.json": "e93db60928a370bcaaf2103ae4e8b2b49b70503aaddc34aec4ebc3800a364960",
+        "raw_rankings.jsonl": "ba0c25bafe86fc1c40217b7f0f6cf328349712726ed716bce78bb16c1dc3c988",
+        "receipt.json": "541cf3a305ec78f29175648d145c1e8c6b9579e3bb77539674f3b17d7628cdaf",
+        "runtime_predictions.json": "773182d9f38893ec66c5358d643d78d3f654709fd00e317f2e427984449adbd1"
+      },
+      "metrics": {
+        "macro_known_link_recall_at_20": 1.0,
+        "micro_known_link_recall_at_20": 1.0,
+        "query_calls": 2,
+        "returned_candidates": 14,
+        "controller_steps": 4,
+        "failed_devices": 0,
+        "provider_calls": 0,
+        "paid_cost_usd": 0
+      }
+    },
+    "abbott": {
+      "manifest": "results/healthtech/ht-public-cohort-20261029-frozen-r1/manifest.json",
+      "runtime": "results/healthtech/ht-public-cohort-20261029-frozen-r1/runtime.json",
+      "references": "results/healthtech/ht-public-cohort-20261029-frozen-r1/evaluator/references.json",
+      "groups": "results/healthtech/ht-public-cohort-20261029-frozen-r1/groups.json",
+      "cohort_manifest_hash": "b92b50716599ad6ea3cdeb5b6a692990a52ae8dd113bfc0bb5cad2cdd2148715",
+      "runtime_sha256": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121",
+      "references_sha256": "4024eb9ce949ad1e6d6c683c1762c87e29eef3814a9fb8cbf64cdc7f28df77ae",
+      "groups_sha256": "bfb1d8288283d801eb4c8db3200266ab0a8845f4206084fae56c4d91a806ac84",
+      "devices": 3,
+      "patents": 41,
+      "declared_pairs": 61,
+      "exact_patent_group_count": 2,
+      "protocol_hash": "a87acaa448f97eabccae0f1fecc5378720ecf1178869336f68b42174eb828b0f",
+      "output": "results/healthtech/ht-bounded-controller-20261029-abbott-r1",
+      "output_hashes": {
+        "controller_frontier.json": "7baf92b51a9944f5d03d36535bd2b0fba68a4854d15dea562ca50fc2c344ee9d",
+        "controller_policy.json": "568a8bfb7cbb316834e5ae2f738e172dd17b550da0199dfbe671db12c4de98d7",
+        "evaluator_validation.json": "b8d18c3b0d37a30a36b9ef68e688e21772839161016e6110c26279ffcd5c1951",
+        "raw_rankings.jsonl": "0bc8dad22436289a7e552cad72b901ed02443aef4c56096170eea8aa2b3ae49e",
+        "receipt.json": "5c5fab96faf584ccd87b7a269eae4a316b7dd86da87d81ed683fd84bf2871a55",
+        "runtime_predictions.json": "0a9bfdddc69fa29df773c5f16b3d54111a7d410808ec4754b40c555af08ebbec"
+      },
+      "metrics": {
+        "macro_known_link_recall_at_20": 0.49880241951853205,
+        "micro_known_link_recall_at_20": 0.47540983606557374,
+        "query_calls": 5,
+        "returned_candidates": 205,
+        "controller_steps": 8,
+        "failed_devices": 0,
+        "provider_calls": 0,
+        "paid_cost_usd": 0,
+        "group_macro_known_link_recall_at_20": {
+          "MitraClip/TriClip": 0.3364389233954451,
+          "Tendyne": 0.8235294117647058
+        }
+      }
+    }
+  },
+  "checks": {
+    "focused_tests": {
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_controller.py tests/test_healthtech_cross_cohort.py",
+      "outcome": "5 passed"
+    },
+    "compile": {
+      "status": "PASS",
+      "command": "rtk proxy python -m compileall -q src scripts tests",
+      "outcome": "exit code 0"
+    },
+    "full_suite": {
+      "status": "PASS",
+      "command": "rtk proxy powershell -NoProfile -Command '$env:PYTHONPATH=\"src\"; python -m pytest -q --disable-warnings'",
+      "outcome": "exit code 0; all tests reached 100%"
+    },
+    "working_tree_whitespace": {
+      "status": "PASS",
+      "command": "rtk proxy git diff --check",
+      "outcome": "exit code 0"
+    },
+    "runtime_before_evaluator": {
+      "status": "PASS",
+      "outcome": "runtime_predictions.json and raw_rankings.jsonl were written before evaluator_validation.json in both runs"
+    },
+    "controller_observation_boundary": {
+      "status": "PASS",
+      "outcome": "no evaluator, gold, family, split, label, reference, or oracle observation fields"
+    },
+    "provider_and_cost_boundary": {
+      "status": "PASS",
+      "outcome": "0 provider calls and $0 paid cost in both runs"
+    }
+  },
+  "not_run": [
+    "live or paid LLM controller execution",
+    "HT-T2 component score",
+    "final holdout evaluation",
+    "pooled statistical comparison or generalization estimate",
+    "Bridge corpus acquisition or rights reconciliation",
+    "deployment, outreach, clinical/FTO analysis, customer validation, public raw-data release"
+  ],
+  "limitations": [
+    "offline deterministic controller only",
+    "Abbott and Boston are development-only public disclosure cohorts",
+    "Boston K=20 exceeds its seven-patent universe and is ceiling-limited",
+    "product-level disclosed links are not claim-level semantic gold",
+    "unjudged links are not negatives",
+    "no final holdout and insufficient independent groups for generalization uncertainty"
+  ],
+  "preserved_unrelated_changes": true,
+  "audit_artifacts": [
+    "README.md",
+    "REPORT.md",
+    "verification.json",
+    "NEXT_ACTIONS.md"
+  ]
+}

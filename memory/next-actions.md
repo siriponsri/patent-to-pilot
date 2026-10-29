@@ -55,3 +55,13 @@ Status: `PASS_OFFLINE_ANALYSIS`; canonical audit: `docs/healthtech/audits/luna-l
 Added a deterministic comparator and regression tests at `37a3b2d`. The current Abbott and Boston Scientific WATCHMAN frontiers share the five offline methods and fixed-prefix contract, but remain non-comparable for pooled scientific claims: Abbott is a three-device/two-group descriptive slice, while Boston's `K=20` exceeds its seven-patent candidate universe and therefore produces ceiling-limited `1.0` recall rows. The audit records raw source hashes, per-device resource deltas, zero source-frontier failures, zero provider calls, and the exact validation commands.
 
 Next: freeze the HT-T2 prediction manifest and denominator rules only if component predictions are available; otherwise keep component scoring `NOT_RUN`. Then add a rights-cleared cohort with multiple independent company/family groups and a final holdout before any pooled comparison. Keep the paid branch `BLOCKED_LOCAL` and do not reopen Bridge, UI, deployment, outreach, clinical/FTO, or public raw-data release.
+
+## HT-NEXT-010 — 2026-10-29 bounded HT-B4 offline controller
+
+Status: `PASS_OFFLINE_DEVELOPMENT`; implementation commit `eea0fb43df35014210097585940f865e2ba3d67b`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/README.md`.
+
+Added the strict controller observation/action contract, deterministic bounded policy, and an offline runner that reuses the HT-B1/B2/B3 local dense/lexical/reranker stack. Focused controller/cross-cohort tests pass, the full suite reaches 100% with explicit `PYTHONPATH=src`, and compile checks pass. Fresh frozen-cohort runs completed for Boston Scientific WATCHMAN (2 devices, 7 patents, 13 declared pairs) and Abbott (3 devices, 41 patents, 61 declared pairs) with zero provider calls, zero paid cost, zero failed devices, and evaluator references loaded only after runtime outputs were written.
+
+The observed offline controller is engineering evidence only. Boston is ceiling-limited because K=20 exceeds its seven-patent universe; Abbott remains a development-only three-device/two-group slice with no final holdout. Do not treat the results as an LLM-controller comparison, semantic relevance gold, exhaustive recall, generalization, clinical/FTO, patent-validity, investment, or publication evidence.
+
+Next: keep live/provider HT-B4 `BLOCKED_LOCAL`; freeze HT-T2 predictions/denominators only if predictions exist, otherwise keep scoring `NOT_RUN`; then add a rights-cleared cohort with multiple independent company/family groups and a predeclared final holdout. Do not reopen Bridge, UI, deployment, outreach, clinical/FTO, customer validation, or public raw-data release.

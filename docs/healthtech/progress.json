@@ -4,7 +4,7 @@
   "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
   "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
   "g1_g2_run_start_commit": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
-  "latest_release_candidate": "37a3b2d",
+  "latest_release_candidate": "eea0fb4",
   "root_statuses": {
     "HT-G1": "PARTIAL",
     "HT-G2": "PARTIAL_DEVELOPMENT_ONLY",
@@ -127,6 +127,11 @@
       "evidence": "Versioned USD8 R1 policy with USD7 admission threshold, exact model/provider and pricing-snapshot binding, durable SQLite reservation runner, and synthetic crash/unknown/replay/concurrency/billing/identity/schema regressions at docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/"
     },
     {
+      "id": "HT-W11-B4-OFFLINE",
+      "status": "IMPLEMENTED_OFFLINE_CONTROLLER",
+      "evidence": "Strict bounded controller observation/action contract, deterministic stop/continue policy, runtime/evaluator separation, and fresh Abbott/Boston offline runs with 0 provider calls and $0 paid cost at docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/"
+    },
+    {
       "id": "HT-T2-SCIFACT",
       "status": "PASS_CURRENT_HEAD_DIFFERENTIAL",
       "evidence": "Pinned local SciFact release receipt plus 3 valid-case/4-metric parity against upstream evaluator commit 68b98a56d93e0f9da0d2aab4e6c3294699a0f72e at docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/"
@@ -152,7 +157,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "HT-M4-R1, HT-T2 SciFact differential, and the current-head M3 Abbott/Boston cross-cohort receipt are offline-verified; live provider/canary remains NOT_RUN pending current OpenRouter metadata, credential/credit, transfer-rights, and readiness gates. Next freeze the HT-T2 prediction manifest if predictions exist, otherwise keep component scoring NOT_RUN, then expand rights-cleared independent groups while keeping Abbott/Boston development-only and Claude UX/UI paused",
+  "next": "HT-M4-R1, HT-T2 SciFact differential, M3 Abbott/Boston cross-cohort comparison, and the bounded offline HT-B4 controller seam are verified; live provider/canary remains NOT_RUN pending current OpenRouter metadata, credential/credit, transfer-rights, and readiness gates. Next freeze the HT-T2 prediction manifest if predictions exist, otherwise keep component scoring NOT_RUN, then add a rights-cleared cohort with multiple independent company/family groups and a final holdout while keeping Abbott/Boston development-only and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
@@ -166,6 +171,7 @@
   "latest_clean_checkout_reproducibility_audit": "docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/verification.json",
   "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/README.md",
   "latest_m4_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/README.md",
+  "latest_b4_offline_controller_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/README.md",
   "latest_scifact_differential": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/README.md",
   "latest_cohort_provenance_verification": [
     "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/boston-provenance-verification.json",
