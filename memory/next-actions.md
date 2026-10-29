@@ -249,3 +249,13 @@ The prepared G5 packet at `docs/healthtech/business/PILOT_TASK_PACKET_20261029.m
 Verification: report fixture `1 passed`; adjacent provider/controller selection `77 passed`; compile checks `exit 0`; report generation `PASS` with `11` rows and `12` B4 mock calls. Endpoint metadata is now recorded in the budget request as `openai/gpt-4.1-mini` via `openai`, prompt `$0.40/M`, completion `$1.60/M`, snapshot hash `a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267`, timestamp `2026-10-29T11:18:41.615320Z`, while paid cost remains `$0.00` and incremental request remains `$0.00`.
 
 Next: obtain or authorize the rights-cleared semantic judgment source with multiple independent company/family groups and a predeclared untouched holdout. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve unjudged pairs, and do not treat the report or mock result as semantic gold, exhaustive recall, clinical/FTO, validity, investment, generalization, or publication evidence.
+
+## HT-NEXT-029 — 2026-10-29 descriptive frontier analysis and figures
+
+Status: `PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/README.md`.
+
+Added `scripts/healthtech/analyze_long_run.py` and `tests/test_healthtech_long_run_analysis.py`. The analysis consumes the frozen M7 summary and family-aware HT-B0a/B0b/B1/B2/B3 frontiers, reports K=20 group-level min/max/range, holdout-minus-development deltas, observed Pareto flags, and deterministic JSON/CSV/Markdown/SVG outputs. In both development and final holdout, HT-B0a and HT-B0b are the observed wall-time/recall frontier; HT-B1/B2/B3 are dominated on these descriptive coordinates. The B4 mock matches HT-B0b/B2 on development recall but remains mock-only, with simulated debit USD0.0012 and paid cost $0.00.
+
+Verification: combined report/analysis fixtures pass `3/3`; compile checks pass; real generation returns development and holdout frontiers `HT-B0a/HT-B0b`. No network/provider call or paid spend occurred. G6 now links the actual CSV and SVG figures; significance, semantic gold, user/commercial validation, live-provider behavior, clinical/FTO, validity, investment, and publication claims remain NOT_RUN/NOT_VALIDATED.
+
+Next: obtain or authorize a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched holdout. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve unjudged pairs, and do not tune on the current holdout.

@@ -22,6 +22,7 @@ Current endpoint: descriptive macro known-link recall at `K=20` over product-lev
 - Protocol hash: `1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b`.
 - Cohort manifest hash: `1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75`.
 - Report receipt: [`luna-long-run-20261029-m7-report-20261029`](../audits/luna-long-run-20261029-m7-report-20261029/REPORT.md).
+- Descriptive analysis and figures: [`luna-long-run-20261029-m8-analysis-20261029-r2`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/ANALYSIS.md).
 
 The final holdout was not used for policy tuning. No semantic reviewer labels were available in this package. The Bridge branch remains `BLOCKED_LOCAL`.
 
@@ -33,6 +34,15 @@ The final holdout was not used for policy tuning. No semantic reviewer labels we
 | Final holdout macro known-link R@20 | 0.8190 | 0.9524 | 0.9333 | 0.9333 | 0.8857 |
 
 The development rows used 5 queries; the holdout rows used 3 queries. Realized query calls were method-dependent because HT-B2 and HT-B3 use multiple queries/actions. Full resource and hash detail is in `summary_tables.json` and `frontier_table.csv` in the linked report audit.
+
+## Reproducible analysis and figures
+
+The M8 analysis package computes the observed Pareto frontier from macro known-link recall and realized wall time, adds K=20 group-level min/max/range, and reports holdout-minus-development deltas. HT-B0a and HT-B0b are on the observed frontier in both frozen views; HT-B1, HT-B2, and HT-B3 are dominated on these descriptive coordinates. This is not a superiority claim because the labels are product-level disclosures, the pair universe is incomplete, and effective group uncertainty remains `NOT_ESTIMABLE`.
+
+- Analysis table: [`quality_cost_frontier.csv`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_frontier.csv)
+- Development quality-resource plot: [`quality_cost_development.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_development.svg)
+- Holdout quality-resource plot: [`quality_cost_holdout.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_holdout.svg)
+- Development/holdout recall comparison: [`recall_comparison.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/recall_comparison.svg)
 
 ## Provider-shaped mock table
 
@@ -81,4 +91,4 @@ SciFact is a separate evidence-verification component with its own source releas
 
 ## Reproducibility and next test
 
-Reproduce the report with the command recorded in the audit verification file and the frozen input hashes in `receipt.json`. The next discriminating test is a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout. Do not tune on the current holdout or recode unjudged pairs as negatives.
+Reproduce the report and figures with the commands recorded in the M7/M8 audit verification files and the frozen input hashes in `receipt.json` / `analysis.json`. The next discriminating test is a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout. Do not tune on the current holdout or recode unjudged pairs as negatives.
