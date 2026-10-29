@@ -5,7 +5,7 @@
 - Scope: deterministic offline SciFact component baseline on the pinned local development split
 - Provider calls: `0`; paid cost: `$0`
 - Source head before this package: `393ce5bc7b6328abf9998c4cc377dfb720c4ab6a`
-- Final source head: recorded in `verification.json` after commit
+- Final source head: `d66dbbd`
 
 This package adds a reproducible HT-T2 prediction source and evaluator-only scoring
 command. The generator reads the corpus and a runtime projection containing only

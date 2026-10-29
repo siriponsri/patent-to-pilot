@@ -5,7 +5,7 @@
   "run_id": "luna-long-run-20261029-ht-t2-lexical-dev-20261029",
   "status": "PASS_COMPONENT_SCORE_DEV_ONLY",
   "start_source_head": "393ce5bc7b6328abf9998c4cc377dfb720c4ab6a",
-  "end_source_head": "PENDING_COMMIT",
+  "end_source_head": "d66dbbd",
   "protocol": {
     "id": "ht-t2-scifact-lexical-dev-v1",
     "path": "configs/healthtech/ht_t2_scifact_lexical_dev_v1.json",
