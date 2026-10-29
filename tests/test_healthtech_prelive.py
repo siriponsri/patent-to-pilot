@@ -72,6 +72,15 @@ def test_runtime_scifact_reader_drops_gold_fields_and_gold_loader_preserves_them
     assert gold[0].evidence["10"].label == "SUPPORT"
 
 
+def test_runtime_scifact_reader_ignores_malformed_evaluator_fields(tmp_path):
+    path = tmp_path / "claims.jsonl"
+    path.write_text(json.dumps({"id": 1, "claim": "A claim", "cited_doc_ids": "not-a-list", "evidence": "not-a-map"}) + "\n", encoding="utf-8")
+    runtime = load_runtime_claims(path)
+    assert runtime[0].claim_id == 1 and runtime[0].claim == "A claim"
+    with pytest.raises(SciFactFormatError):
+        load_gold_claims(path)
+
+
 def test_scifact_metrics_match_official_abstract_and_sentence_example():
     gold = [SciFactGoldClaim(
         claim_id=52,

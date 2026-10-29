@@ -93,3 +93,13 @@ Filled `docs/healthtech/goals/luna-long-run-20261028-889958e/BUDGET_EXPANSION_RE
 The draft recommends rights-cleared cohort expansion with multiple independent company/family groups and a predeclared final holdout before any future paid request. HT-T2 remains `NOT_RUN`; Abbott and Boston remain development-only; no extra spend was dispatched.
 
 Next: execute only the offline rights/cohort/holdout package, then revisit a paid request after exact current pricing, provider identity, transfer rights, payload bounds, and ledger reconciliation are evidenced.
+
+## HT-NEXT-014 — 2026-10-29 HT-T2 lexical development score
+
+Status: `PASS_COMPONENT_SCORE_DEV_ONLY`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/README.md`.
+
+Added a frozen deterministic BM25 plus sentence-overlap SciFact baseline, a runtime-only claim projection, and a separate evaluator-only scoring command. The corrected run covers all 300 dev claims over 5,183 documents, writes 300 prediction rows, has no missing prediction IDs, and reports abstract label-only F1 `0.203787`, abstract rationalized F1 `0.167719`, sentence selection F1 `0.107071`, and sentence label F1 `0.073401`. Focused tests pass 17/17 and compile checks pass. Provider calls and paid cost are both `0`.
+
+This is component engineering/scientific development evidence only. It is not an official hidden-test score, HT-T1 device-patent evidence, clinical truth, or an adaptive-method result. Preserve the historical SciFact parity receipt separately, keep Abbott/Boston development-only, and keep live/provider HT-B4 `BLOCKED_LOCAL`.
+
+Next: add a rights-cleared device cohort with multiple independent company/family groups and a predeclared final holdout before the next pooled comparison.

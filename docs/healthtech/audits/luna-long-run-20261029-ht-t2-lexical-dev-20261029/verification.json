@@ -1,0 +1,104 @@
+{
+  "format": "ht-t2-scifact-lexical-dev-verification-v1",
+  "date": "2026-10-29",
+  "timezone": "Asia/Bangkok",
+  "run_id": "luna-long-run-20261029-ht-t2-lexical-dev-20261029",
+  "status": "PASS_COMPONENT_SCORE_DEV_ONLY",
+  "start_source_head": "393ce5bc7b6328abf9998c4cc377dfb720c4ab6a",
+  "end_source_head": "PENDING_COMMIT",
+  "protocol": {
+    "id": "ht-t2-scifact-lexical-dev-v1",
+    "path": "configs/healthtech/ht_t2_scifact_lexical_dev_v1.json",
+    "sha256": "39bed6da45a67229888a6fb17f51983a15af070fd51193506419898d1e58ac40",
+    "split": "dev",
+    "denominator_claims": 300,
+    "missing_prediction_policy": "error",
+    "unknown_prediction_claim_ids": "error",
+    "unknown_document_ids": "error"
+  },
+  "release": {
+    "manifest": "data/manifests/healthtech/scifact-release-20261027-r1.json",
+    "source_repo": "https://github.com/allenai/scifact",
+    "source_commit": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+    "archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "data_root": "data/raw/healthtech/scifact/release/data",
+    "corpus_documents": 5183,
+    "corpus_sha256": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62",
+    "claims_dev": 300,
+    "claims_dev_sha256": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217",
+    "test_labels_present": false
+  },
+  "prediction_run": {
+    "result_root": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3",
+    "runtime_claim_projection": "runtime_claims.jsonl",
+    "predictions": "predictions.jsonl",
+    "prediction_rows": 300,
+    "rows_with_evidence": 300,
+    "runtime_claim_projection_sha256": "89ac1cbe47758ad95af56d6032594a815c98f8e7bd935474507fae900e0a2260",
+    "predictions_sha256": "1d191fcd1e86a92caf57c93abbaec3c0a8da7b8a2e6c6b0fbad5a60138b4a1ee",
+    "prediction_manifest_sha256": "9cd257aac49156a34a646037cc75714be8832a49af0b6da48d41677c52da3067"
+  },
+  "score": {
+    "path": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3/score.json",
+    "sha256": "7c88a182af2c1d3fe3a2074337abf0e1be5b567870f99ad6e4e0373ad613a730",
+    "per_claim_metrics_path": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3/per_claim_metrics.json",
+    "per_claim_metrics_sha256": "fdab33cfccbe3081e60f8a8320a76f9df0f865b332ec2a1f622245c73683832d",
+    "claim_count": 300,
+    "prediction_row_count": 300,
+    "missing_prediction_claim_ids": [],
+    "metrics": {
+      "abstract_label_only": {"precision": 0.12555555555555556, "recall": 0.5406698564593302, "f1": 0.20378719567177642},
+      "abstract_rationalized": {"precision": 0.10333333333333333, "recall": 0.4449760765550239, "f1": 0.16771866546438233},
+      "sentence_selection": {"precision": 0.06105990783410138, "recall": 0.4344262295081967, "f1": 0.10707070707070707},
+      "sentence_label": {"precision": 0.04185867895545315, "recall": 0.2978142076502732, "f1": 0.0734006734006734}
+    }
+  },
+  "code_sha256": {
+    "src/patent_to_pilot/evaluation/healthtech/scifact.py": "0c8efd75a118a8050131c6f0a446bb62ed15b5efd6b174237b10dedc165afeb1",
+    "scripts/healthtech/run_scifact_lexical_baseline.py": "a84143eeac29b958cbb87aca224b88263f3b32506672407246a320a4229e5958",
+    "scripts/healthtech/score_scifact_predictions.py": "a631b07e1e5c06b9b7a5b823efdbce86e6250798be909c3ff89e55636e5f4dce",
+    "tests/test_healthtech_prelive.py": "754834f06794ad59065cf10e309cbb1792d566739e967cdaafdfa104c1ef1db6",
+    "tests/test_healthtech_scifact_baseline.py": "9d61efc972813c0be87b89aec1f12bd75a4d25ec0e82df59cd0bba150e943db5"
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_prelive.py tests/test_healthtech_scifact_baseline.py",
+      "exit_code": 0,
+      "outcome": "17 passed"
+    },
+    {
+      "command": "rtk proxy python -B -m compileall -q src scripts tests",
+      "exit_code": 0,
+      "outcome": "completed successfully"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_scifact_lexical_baseline.py --release-root data/raw/healthtech/scifact/release --config configs/healthtech/ht_t2_scifact_lexical_dev_v1.json --output results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3",
+      "exit_code": 0,
+      "outcome": "300 predictions written over 5,183 documents; provider_calls=0; paid_cost_usd=0"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/score_scifact_predictions.py --manifest results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3/prediction_manifest.json --release-root data/raw/healthtech/scifact/release --output results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3/score.json",
+      "exit_code": 0,
+      "outcome": "PASS_COMPONENT_SCORE; denominator=300; provider_calls=0; paid_cost_usd=0"
+    }
+  ],
+  "boundaries": {
+    "runtime_generator_read_evaluator_labels": false,
+    "scorer_read_evaluator_labels_after_predictions": true,
+    "hidden_test_score": "NOT_RUN",
+    "adaptive_method": "NOT_RUN",
+    "provider_inference": "NOT_RUN",
+    "ht_t1_device_patent_evidence": "NOT_APPLICABLE"
+  },
+  "resource_use": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "network_calls": 0
+  },
+  "limitations": [
+    "Development split only; no hidden or official test score.",
+    "SciFact is a separate evidence-verification component, not device-patent gold or clinical truth.",
+    "The lexical predictor is a deterministic baseline control, not the proposed adaptive method.",
+    "Abbott and Boston device cohorts remain development-only and the live HT-B4 branch remains BLOCKED_LOCAL."
+  ]
+}

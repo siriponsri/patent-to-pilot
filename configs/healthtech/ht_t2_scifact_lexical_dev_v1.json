@@ -1,0 +1,39 @@
+{
+  "protocol_id": "ht-t2-scifact-lexical-dev-v1",
+  "status": "FROZEN_DEVELOPMENT_SCORE",
+  "task": "HT-T2",
+  "split": "dev",
+  "prediction_method": "deterministic_bm25_document_rank_plus_sentence_overlap_v1",
+  "runtime_inputs": [
+    "corpus.jsonl",
+    "claims_dev.jsonl projected to id/claim only"
+  ],
+  "evaluator_inputs": [
+    "claims_dev.jsonl loaded only by the separate scoring command after predictions exist"
+  ],
+  "selection": {
+    "top_k_documents": 3,
+    "minimum_document_score": 0.0,
+    "maximum_rationale_sentences": 3,
+    "default_label": "SUPPORT",
+    "tokenization": "lowercase alphanumeric tokens; fixed stopword list; no stemming"
+  },
+  "denominator": {
+    "unit": "all 300 dev claims in the pinned release",
+    "missing_prediction_policy": "error",
+    "unknown_prediction_claim_ids": "error",
+    "unknown_document_ids": "error",
+    "test_labels": "absent and not scored"
+  },
+  "primary_metrics": [
+    "abstract_label_only",
+    "abstract_rationalized",
+    "sentence_selection",
+    "sentence_label"
+  ],
+  "limitations": [
+    "Development split only; no hidden or official test score.",
+    "This component evaluates scientific-claim evidence semantics and is not patent-device gold or clinical truth.",
+    "The lexical predictor is a baseline control, not a proposed adaptive method."
+  ]
+}

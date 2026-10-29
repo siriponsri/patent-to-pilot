@@ -117,12 +117,21 @@ def _claim_header(row: Mapping[str, Any]) -> tuple[int, str, tuple[str, ...]]:
     return claim_id, claim, _cited_doc_ids(row, claim_id)
 
 
+def _runtime_claim_header(row: Mapping[str, Any]) -> tuple[int, str]:
+    """Read only the open-retrieval fields from a claim row."""
+    claim_id = _integer(row.get("id"), "claim id")
+    claim = row.get("claim")
+    if not isinstance(claim, str) or not claim.strip():
+        raise SciFactFormatError(f"claim {claim_id} has no text")
+    return claim_id, claim
+
+
 def load_runtime_claims(path: str | Path) -> list[SciFactRuntimeClaim]:
     """Load open-retrieval claim text without citation or evidence metadata."""
     claims: list[SciFactRuntimeClaim] = []
     seen: set[int] = set()
     for row in _read_jsonl(path):
-        claim_id, claim, _ = _claim_header(row)
+        claim_id, claim = _runtime_claim_header(row)
         if claim_id in seen:
             raise SciFactFormatError(f"duplicate claim {claim_id}")
         seen.add(claim_id)
