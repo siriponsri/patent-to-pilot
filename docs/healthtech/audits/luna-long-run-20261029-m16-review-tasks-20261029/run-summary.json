@@ -1,0 +1,18 @@
+{
+  "format": "ht-m16-sanitized-run-summary-v1",
+  "run_id": "luna-long-run-20261029-m16-review-tasks-20261029",
+  "status": "PASS_OFFLINE_REVIEW_TASK_EXPORT",
+  "code_commit": "23acfd468570ea2eac47d0f5790b7362268aa2d1",
+  "input_packet_sha256": "21df358e9b1f387d4b4f1a6c33c94e38abff7ccf15b39df746fba3acec05a206",
+  "task_count": 341,
+  "response_count": 0,
+  "semantic_label_count": 0,
+  "forbidden_field_hits": 0,
+  "manifest_sha256": "bf4ee05fc76f26f5be891866843e7f4a24a01d0fab8249c9db8c339ce09ce6d6",
+  "tasks_sha256": "7274129bd3cbe01449ae046e75c89b9d099aa4f78311e3b8db69ed9ab7382d8c",
+  "distribution": "LOCAL_REVIEW_ONLY",
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "patent_text_copied": false,
+  "evaluator_metadata_exposed": false
+}

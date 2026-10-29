@@ -333,3 +333,13 @@ Implemented and committed the declared `rights_policy_id` seam at `35ee0728a8b47
 The committed Philips r5 receipt records 3 cases, 7 product-level disclosed links, history versions 1 and 2, 3 search calls, 0 returned lexical candidates, 0 provider calls, and USD 0.00 paid cost. The corrected local review packet uses `family-mapping.json` and records 11 queries, 31 patents, 341 explicitly unjudged pairs, 0 semantic labels, 4 company groups, and the 3-query Stryker final holdout. Packet SHA-256 is `21df358e9b1f387d4b4f1a6c33c94e38abff7ccf15b39df746fba3acec05a206`; r5 manifest/receipt hashes are recorded in the canonical audit.
 
 This package remains offline engineering and review preparation only. Product-level disclosures are not semantic gold, unlisted pairs remain unjudged, family mapping is evaluator-side local metadata, and Philips/Google source material remains local-only. Next: obtain or authorize the rights-cleared semantic judgment source, apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or holdout, and rerun controls before any pooled scientific claim. Keep paid HT-B4 `BLOCKED_LOCAL`, Bridge blocked, and Claude UX/UI paused.
+
+## HT-NEXT-037 — 2026-10-29 M16 local semantic-review task export
+
+Status: `PASS_OFFLINE_REVIEW_TASK_EXPORT`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m16-review-tasks-20261029/README.md`.
+
+Added `review_tasks.py` and `build_review_tasks.py` at implementation commit `23acfd468570ea2eac47d0f5790b7362268aa2d1`. The exporter revalidates the corrected 11-query/31-patent packet and writes 341 deterministic reviewer-visible task rows. Every response field is empty; no semantic labels, product-disclosure flags, evaluator split/family metadata, or patent text are copied. Focused task/packet tests pass `11/11`, compile checks pass, and the real export has 0 provider calls and USD 0.00 paid cost.
+
+Artifacts: `results/healthtech/ht-relevance-review-tasks-20261029-r1/manifest.json` SHA-256 `bf4ee05fc76f26f5be891866843e7f4a24a01d0fab8249c9db8c339ce09ce6d6`; `tasks.jsonl` SHA-256 `7274129bd3cbe01449ae046e75c89b9d099aa4f78311e3b8db69ed9ab7382d8c`. This is local review preparation, not semantic gold or provider-transfer approval.
+
+Next: obtain or authorize the rights-cleared judgment source and ingest only explicit labels with source revision/hash, locator, basis, and adjudicator role. Preserve the 341-pair denominator, unjudged policy, and untouched Stryker holdout. Keep paid HT-B4 `BLOCKED_LOCAL`, Bridge blocked, and Claude UX/UI paused.
