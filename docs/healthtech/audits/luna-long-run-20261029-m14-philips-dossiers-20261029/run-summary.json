@@ -1,0 +1,25 @@
+{
+  "format": "ht-philips-dossier-run-summary-v1",
+  "run_id": "luna-long-run-20261029-m14-philips-dossiers-20261029",
+  "code_commit": "c6494370fad1c263eed169a7bd6a8c5718ed3427",
+  "cohort": "results/healthtech/ht-philips-cardiovascular-20261029-r2",
+  "cohort_manifest_sha256": "60b37a6df4e5f84c87220c00e2a6e243507ee7214c54f1870047486aa462273f",
+  "output": "results/healthtech/ht-philips-dossiers-20261029-r3",
+  "run_manifest_sha256": "e0acaa3d9852ddee96bce73d9b7527c77998a613925c81feca60f1aeb0837f60",
+  "receipt_sha256": "1bdfd218f90e681892723544fbe38cdcde81fd2c8e09c10de9654e019c2321af",
+  "case_count": 3,
+  "disclosed_link_count": 7,
+  "actual_search_calls": 3,
+  "actual_returned_candidates": 0,
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "case_ids": [
+    "HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON",
+    "HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM",
+    "HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER"
+  ],
+  "local_only_sources": [
+    "Philips product marking material",
+    "Google-derived patent text"
+  ]
+}

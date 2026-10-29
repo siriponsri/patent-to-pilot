@@ -1,0 +1,50 @@
+{
+  "format": "ht-m14-philips-dossiers-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-m14-philips-dossiers-20261029",
+  "date": "2026-10-29",
+  "base_commit": "7dae0a8ac9ff790714d640e94889459529512073",
+  "tested_code_commit": "c6494370fad1c263eed169a7bd6a8c5718ed3427",
+  "entries": [
+    {
+      "id": "philips-dossier-r1",
+      "kind": "offline_dossier_run",
+      "status": "FAIL_CORRECTED",
+      "output": "results/healthtech/ht-philips-dossiers-20261029-r1",
+      "outcome": "The adapter rejected the cohort because it used an incorrect patent content-hash assumption. The output was not used for claims."
+    },
+    {
+      "id": "philips-dossier-r2",
+      "kind": "offline_dossier_run",
+      "status": "PASS_WORKING_TREE",
+      "output": "results/healthtech/ht-philips-dossiers-20261029-r2",
+      "outcome": "The hash contract was corrected to content_hash({title, abstract, claims}); the working-tree run completed all three cases with zero provider calls and zero paid cost."
+    },
+    {
+      "id": "philips-dossier-r3",
+      "kind": "offline_dossier_run",
+      "status": "PASS_COMMITTED_CODE",
+      "output": "results/healthtech/ht-philips-dossiers-20261029-r3",
+      "outcome": "The committed code at c649437 completed three local dossiers, seven disclosed links, three search calls, zero returned lexical candidates, zero provider calls, and USD 0.00 paid cost."
+    },
+    {
+      "id": "philips-dossier-regressions",
+      "kind": "regression_verification",
+      "status": "PASS",
+      "output": "tests/test_healthtech_philips_dossiers.py; tests/test_healthtech_philips_cohort.py",
+      "outcome": "10 synthetic tests passed; compile checks passed; broader focused HealthTech suite exited 0 with only the existing fitz deprecation warning."
+    },
+    {
+      "id": "m1-current-head-revalidation",
+      "kind": "dependent_engineering_evidence",
+      "status": "PASS_CURRENT_HEAD_ENGINEERING",
+      "output": "results/healthtech/ht-m1-current-head-revalidation-20261029.json",
+      "outcome": "Current-head M1 revalidation remained green with synthetic external-rights and runtime-text mutation rejection, zero network attempts, zero provider calls, and zero neural calls."
+    }
+  ],
+  "resource_summary": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "network_attempts": 0
+  },
+  "decision": "Retain the Philips local dossiers as inspectable offline engineering evidence. Do not treat product-level disclosure rows as semantic relevance gold; next obtain a rights-cleared semantic judgment cohort before any scientific or product claim."
+}

@@ -1,0 +1,98 @@
+{
+  "format": "ht-m14-philips-dossiers-verification-v1",
+  "run_id": "luna-long-run-20261029-m14-philips-dossiers-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_OFFLINE_ENGINEERING_DOSSIERS",
+  "base_commit": "7dae0a8ac9ff790714d640e94889459529512073",
+  "tested_code_commit": "c6494370fad1c263eed169a7bd6a8c5718ed3427",
+  "parent_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/README.md",
+  "checks": {
+    "frozen_runtime_source_registry_and_raw_inputs": true,
+    "runtime_source_registry_raw_mutation_rejected": true,
+    "evaluator_leakage_rejected": true,
+    "independent_philips_html_validation": true,
+    "typed_rights_matrix_enforced": true,
+    "product_level_disclosure_reconstruction": true,
+    "three_dossiers_completed": true,
+    "history_versions_one_and_two_present_for_all_cases": true,
+    "synthetic_regressions": "10 passed",
+    "compile_checks": "passed",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_philips_dossiers.py tests/test_healthtech_philips_cohort.py",
+      "exit_code": 0,
+      "outcome": "10 tests passed."
+    },
+    {
+      "command": "rtk proxy python -m py_compile src/patent_to_pilot/healthtech/philips.py scripts/healthtech/run_philips_dossiers.py tests/test_healthtech_philips_dossiers.py",
+      "exit_code": 0,
+      "outcome": "Compile checks passed."
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_philips_dossiers.py --cohort results/healthtech/ht-philips-cardiovascular-20261029-r2 --output results/healthtech/ht-philips-dossiers-20261029-r3 --rights-matrix docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json --code-commit c649437",
+      "exit_code": 0,
+      "outcome": "3 cases completed; 3 search calls; 0 returned lexical candidates; 0 provider calls; USD 0.00 paid cost."
+    }
+  ],
+  "artifacts": {
+    "cohort_manifest": {
+      "path": "results/healthtech/ht-philips-cardiovascular-20261029-r2/manifest.json",
+      "sha256": "60b37a6df4e5f84c87220c00e2a6e243507ee7214c54f1870047486aa462273f"
+    },
+    "run_manifest": {
+      "path": "results/healthtech/ht-philips-dossiers-20261029-r3/manifest.json",
+      "sha256": "e0acaa3d9852ddee96bce73d9b7527c77998a613925c81feca60f1aeb0837f60"
+    },
+    "receipt": {
+      "path": "results/healthtech/ht-philips-dossiers-20261029-r3/receipt.json",
+      "sha256": "1bdfd218f90e681892723544fbe38cdcde81fd2c8e09c10de9654e019c2321af"
+    },
+    "rights_matrix": {
+      "path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
+      "sha256": "e74748fb16c8f44debb922ee4bfb334438c2d66fb70b96af40cedbfb1e24a044"
+    },
+    "implementation": [
+      {
+        "path": "src/patent_to_pilot/healthtech/philips.py",
+        "sha256": "e72dd6770e4b700a1571cb307483913e6864a4d0173619e0de59a77f0d764370"
+      },
+      {
+        "path": "scripts/healthtech/run_philips_dossiers.py",
+        "sha256": "9ac9d8939e647ee0f9ea6a94d56ab37457e497522cf37760c81dfd32875303c5"
+      },
+      {
+        "path": "tests/test_healthtech_philips_dossiers.py",
+        "sha256": "8a03848ecfc5cac128e47eeee506ebcf48117db01b872cb89f32a30e051796f9"
+      }
+    ],
+    "m1_current_head_revalidation": {
+      "path": "results/healthtech/ht-m1-current-head-revalidation-20261029.json",
+      "sha256": "5e301ad332f2c5fb6ef3935149a5962f4d500ff2e00dfeee23fbfe1e67314703"
+    }
+  },
+  "resource_summary": {
+    "cases": 3,
+    "disclosed_links": 7,
+    "actual_search_calls": 3,
+    "actual_returned_candidates": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "not_run": [
+    "Rights-cleared semantic relevance judgments",
+    "Live/provider HT-B4 dispatch or paid inference",
+    "Statistical significance or stable generalization estimate",
+    "Clinical suitability, FTO, patent validity, investment merit",
+    "User/commercial validation or publication acceptance",
+    "Public redistribution of Philips marking material or Google-derived patent text"
+  ],
+  "limitations": [
+    "Product-level disclosed associations are not claim-level semantic relevance gold.",
+    "Unlisted device-patent pairs remain unjudged and are not negatives.",
+    "Family identity is unknown and not inferred by the dossier adapter.",
+    "The local run is an inspectable engineering artifact, not an exhaustive recall study."
+  ]
+}
