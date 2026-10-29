@@ -43,7 +43,10 @@ def start(tmp_path, aid, action='normal'):
     script=tmp_path/'budget-worker.py'
     if not script.exists():script.write_text(WORKER,encoding='utf-8')
     ready=tmp_path/(aid+'.ready')
-    p=subprocess.Popen([sys.executable,'-B',str(script),str(tmp_path/'budget.sqlite'),aid,str(tmp_path/'go'),str(ready),action],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+    project_src = str(Path(__file__).resolve().parents[1] / 'src')
+    child_env = os.environ.copy()
+    child_env['PYTHONPATH'] = os.pathsep.join(filter(None, [project_src, child_env.get('PYTHONPATH')]))
+    p=subprocess.Popen([sys.executable,'-B',str(script),str(tmp_path/'budget.sqlite'),aid,str(tmp_path/'go'),str(ready),action],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,env=child_env)
     return p,ready
 
 
