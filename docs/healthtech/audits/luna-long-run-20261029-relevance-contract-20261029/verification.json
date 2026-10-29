@@ -4,7 +4,7 @@
   "date": "2026-10-29",
   "status": "PASS_ENGINEERING_OFFLINE",
   "tested_source_commit": "2af198af8635f28c0d0b8ad8ed9be852b6e7bd98",
-  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "candidate_package_commit": "a194045d316d60951b914dd2d1ac61a481b7b043",
   "tree_state_at_test": "dirty_with_scoped_relevance_contract_files_and_unrelated_owner_artifacts_preserved",
   "implementation_files": {
     "src/patent_to_pilot/evaluation/healthtech/judgments.py": "521b38efe5dd7b8abbe487d2a0be0083be6fa6a44b8d0bf78384f08939aab7a0",

@@ -3,7 +3,7 @@
 - Run ID: `luna-long-run-20261029-relevance-contract-20261029`
 - Date: `2026-10-29`
 - Tested source commit: `2af198af8635f28c0d0b8ad8ed9be852b6e7bd98`
-- Candidate package commit: `PENDING_FIRST_COMMIT`
+- Candidate package commit: `a194045d316d60951b914dd2d1ac61a481b7b043`
 - Status: `PASS_ENGINEERING_OFFLINE`
 - Scope: fail-closed intake and validation for a future rights-cleared semantic relevance-judgment cohort.
 
