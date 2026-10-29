@@ -250,6 +250,11 @@
       "id": "HT-M10-B4-HOLDOUT-MOCK",
       "status": "PASS_B4_PROVIDER_SHAPED_HOLDOUT_DESCRIPTIVE",
       "evidence": "Added the HT-B4 holdout comparison at implementation commit b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3 and ran it on the untouched 3-device/24-patent Stryker holdout. The provider-shaped mock completed 8 calls, reached macro/micro known-link recall@20 of 0.8857142857142857/0.8461538461538461, matched HT-B3, remained below HT-B0b/HT-B1/HT-B2, incurred USD0.0008 simulated debit and USD0.00 paid cost, and left 0 unknown/pending billing items with no ledger breach. Audit at docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/. This remains mock-only descriptive evidence, not live-provider or semantic-gold evidence."
+    },
+    {
+      "id": "HT-M11-REPORT-BUDGET-REFRESH",
+      "status": "PASS_REPORT_AND_BUDGET_REFRESH_NO_EXTRA_SPEND",
+      "evidence": "Refreshed the reproducible long-run report to 12 rows covering development and final-holdout HT-B0a/B0b/B1/B2/B3 controls plus both HT-B4 provider-shaped mock rows at docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/. Corrected and revalidated the frontier_table.csv SHA-256 receipt. The holdout B4 mock remains descriptive, matches HT-B3 at macro known-link recall@20 0.8857142857142857, remains below HT-B0b/HT-B1/HT-B2, uses 8 provider-shaped calls with USD0.0008 simulated debit, and has USD0.00 paid cost with 0 unknown/pending billing items. Updated the non-submitted budget request to retain USD0.00 incremental authorization; canonical budget-refresh audit at docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/."
     }
   ],
   "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_AND_B4_PROVIDER_SHAPED_MOCK_HOLDOUT",
@@ -257,8 +262,8 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "The family-aware baselines, semantic review contract/adapter, HT-M4/B4 provider-shaped mock, reproducible long-run report, G5 packet, G6 skeleton, M8 descriptive frontier analysis, M9 SciFact component integration, and M10 B4 holdout comparison are complete with no extra spend. The observed HT-B0a/HT-B0b frontier and the B4 holdout comparison remain descriptive; product-level disclosures and SciFact component scores are not HT-T1 semantic gold; G5 is NOT_VALIDATED; G6 publication/significance claims are NOT_RUN. Live provider/canary remains BLOCKED_LOCAL pending credential/credit, transfer-rights, payload, pricing/identity, bound, and reconciliation gates. Next prioritize a rights-cleared semantic device-patent judgment source with multiple independent company/family groups, explicit labels, source revision/hash, adjudicator role, locators, and a predeclared untouched final holdout while keeping Bridge blocked and Claude UX/UI paused",
-  "verification": "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/verification.json",
+  "next": "The family-aware baselines, semantic review contract/adapter, HT-M4/B4 provider-shaped mock, reproducible long-run report, G5 packet, G6 skeleton, M8 descriptive frontier analysis, M9 SciFact component integration, M10 B4 holdout comparison, and M11 report/budget refresh are complete with no extra spend. The consolidated 12-row report remains descriptive; on the untouched holdout B4 matches HT-B3 and remains below HT-B0b/HT-B1/HT-B2. Product-level disclosures and SciFact component scores are not HT-T1 semantic gold; G5 is NOT_VALIDATED; G6 publication/significance claims are NOT_RUN. Live provider/canary remains BLOCKED_LOCAL pending credential/credit, transfer-rights, payload, pricing/identity, bound, and reconciliation gates. The recommendation remains USD0.00 incremental authorization. Next prioritize a rights-cleared semantic device-patent judgment source with multiple independent company/family groups, explicit labels, source revision/hash, adjudicator role, locators, and a predeclared untouched final holdout while keeping Bridge blocked and Claude UX/UI paused",
+  "verification": "docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json",
   "latest_healthtech_frontier": "results/healthtech/ht-multicompany-baselines-20261029-r2-holdout-cook-k10/frontier_diagnostics.json",
@@ -285,11 +290,13 @@
   "latest_typed_registry_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-typed-registry/verification.json",
   "latest_goal_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/verification.json",
   "latest_clean_checkout_reproducibility_audit": "docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/verification.json",
-  "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/README.md",
+  "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/README.md",
   "latest_m4_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/README.md",
   "latest_b4_offline_controller_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/README.md",
   "latest_b4_provider_shaped_mock_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/README.md",
   "latest_b4_holdout_comparison_audit": "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/README.md",
+  "latest_long_run_report_refresh_audit": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/README.md",
+  "latest_budget_refresh_audit": "docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/README.md",
   "latest_scifact_differential": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/README.md",
   "latest_scifact_dev_score": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/README.md",
   "latest_budget_data_request": "docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/README.md",

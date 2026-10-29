@@ -281,3 +281,13 @@ The untouched 3-device/24-patent holdout records HT-B4-MOCK macro/micro known-li
 This remains mock-only engineering/descriptive evidence. It does not create live-provider evidence, semantic relevance gold, exhaustive recall, stable generalization, statistical significance, clinical/FTO, patent-validity, investment, or publication evidence. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
 
 Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or holdout, then rerun the frozen controls before any pooled scientific claim.
+
+## HT-NEXT-032 — 2026-10-29 M11 report and budget refresh
+
+Status: `PASS_REPORT_AND_BUDGET_REFRESH_NO_EXTRA_SPEND`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/README.md`; consolidated report: `docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/README.md`.
+
+Corrected and revalidated the M11 output receipt so all four report artifacts have exact SHA-256 hashes. The consolidated report has 12 rows covering development and untouched final-holdout controls plus both HT-B4 provider-shaped mock rows. On holdout, B4 records macro/micro known-link Recall@20 `0.8857142857142857/0.8461538461538461`, matches HT-B3, remains below HT-B0b/HT-B1/HT-B2, uses 8 provider-shaped calls and `USD0.0008` simulated debit, and has `$0.00` paid cost with 0 unknown/pending billing items.
+
+Updated `BUDGET_EXPANSION_REQUEST_TH.md` with the M10/M11 decision impact. The recommendation remains `$0.00` incremental authorization and no paid branch; the result is mock-only descriptive evidence and does not establish semantic relevance gold, adaptive superiority, generalization, clinical/FTO, validity, investment, or publication readiness.
+
+Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or holdout, then rerun the frozen controls before any pooled scientific claim. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve unjudged pairs, and keep Bridge, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.

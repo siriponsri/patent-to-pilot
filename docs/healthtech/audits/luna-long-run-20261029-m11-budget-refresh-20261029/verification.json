@@ -1,0 +1,88 @@
+{
+  "format": "healthtech-audit-verification-v1",
+  "run_id": "luna-long-run-20261029-m11-budget-refresh-20261029",
+  "status": "PASS_REPORT_AND_BUDGET_REFRESH_NO_EXTRA_SPEND",
+  "start_code_commit": "5e7bbeaeed136fdf5a022f9eee887facbb8a9be6",
+  "implementation_code_commit": "5e7bbeaeed136fdf5a022f9eee887facbb8a9be6",
+  "parent_audit": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/verification.json",
+  "commands": [
+    {
+      "command": "rtk proxy python -c \"sha256 compare for the four M11 report outputs\"",
+      "status": "PASS",
+      "outcome": "Detected and corrected a truncated 60-character frontier_table.csv digest; the exact file digest is 4eef5e98971daffb4323e64a398f755113b590dd05ca05cfec3cd3aa79ca9101"
+    },
+    {
+      "command": "rtk proxy python -m json.tool docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/verification.json",
+      "status": "PASS",
+      "outcome": "M11 report verification JSON parses after hash correction"
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_long_run_report.py",
+      "status": "PASS",
+      "outcome": "1 passed"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q scripts/healthtech/build_long_run_report.py tests/test_healthtech_long_run_report.py",
+      "status": "PASS",
+      "outcome": "exit 0"
+    },
+    {
+      "command": "rtk proxy python -c \"parse docs/healthtech/progress.json and both M11 verification.json files\"",
+      "status": "PASS",
+      "outcome": "3 JSON files parsed"
+    },
+    {
+      "command": "rtk proxy python -c \"check relative Markdown links in the six changed M11/budget documents\"",
+      "status": "PASS",
+      "outcome": "all relative Markdown targets exist"
+    },
+    {
+      "command": "rtk proxy rg -n -i \"OPENAI_API_KEY|ANTHROPIC_API_KEY|sk-[A-Za-z0-9]|Bearer [A-Za-z0-9]|-----BEGIN\" docs/healthtech/goals/luna-long-run-20261028-889958e/BUDGET_EXPANSION_REQUEST_TH.md docs/healthtech/progress.json memory/next-actions.md docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2 docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029",
+      "status": "PASS",
+      "outcome": "no credential, token, or private-key pattern matched"
+    },
+    {
+      "command": "rtk proxy git diff --cached --check",
+      "status": "PASS",
+      "outcome": "no staged whitespace errors"
+    },
+    {
+      "command": "rtk proxy python -c \"assert staged paths are within the named M11 scope\"",
+      "status": "PASS",
+      "outcome": "13 staged paths; no unrelated staged files"
+    }
+  ],
+  "decision": {
+    "holdout_b4_macro_known_link_recall_at_20": 0.8857142857142857,
+    "holdout_b4_micro_known_link_recall_at_20": 0.8461538461538461,
+    "holdout_b4_matches": "HT-B3",
+    "holdout_b4_below": ["HT-B0b", "HT-B1", "HT-B2"],
+    "holdout_b4_provider_shaped_calls": 8,
+    "holdout_b4_simulated_cost_usd": 0.0008,
+    "paid_cost_usd": 0.0,
+    "unknown_or_pending_billing_items": 0,
+    "incremental_authorization_usd": 0.0,
+    "paid_branch": "BLOCKED_LOCAL"
+  },
+  "source_output_hashes": {
+    "REPORT.md": "a429a40c8c27e277e1320d3b21911c4136b194612eeb209ba349086902bad54c",
+    "summary_tables.json": "d7997be560a47796afd0a590d61462ff69a262225f97985819c81c21c8a12a02",
+    "frontier_table.csv": "4eef5e98971daffb4323e64a398f755113b590dd05ca05cfec3cd3aa79ca9101",
+    "receipt.json": "5f01b9c5fc3149c072684167ada4587479efe4e4bff22cc38709fed93edaffd8"
+  },
+  "boundaries": {
+    "live_provider_request": "NOT_RUN",
+    "paid_canary": "NOT_RUN",
+    "semantic_relevance_gold": "NOT_RUN",
+    "generalization": "NOT_ESTIMABLE",
+    "user_commercial_validation": "NOT_VALIDATED",
+    "publication_readiness": "NOT_RUN",
+    "unjudged_pairs_as_negatives": false
+  },
+  "output_paths": [
+    "docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/README.md",
+    "docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/NEXT_ACTIONS.md",
+    "docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/verification.json"
+  ],
+  "tree_state": "Existing owner dirty artifacts and unrelated untracked evidence were preserved; only named M11 report, budget-request, progress, memory, and budget-refresh audit files are intended for staging."
+}

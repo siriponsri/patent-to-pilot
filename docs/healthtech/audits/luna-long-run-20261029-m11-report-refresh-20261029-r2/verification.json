@@ -1,0 +1,92 @@
+{
+  "format": "healthtech-audit-verification-v1",
+  "run_id": "luna-long-run-20261029-m11-report-refresh-20261029-r2",
+  "status": "PASS_REPORT_GENERATED_WITH_DEV_AND_HOLDOUT_B4",
+  "start_code_commit": "43a2604602d310f63e5b77d1c6987c6463019533",
+  "implementation_code_commit": "5e7bbeaeed136fdf5a022f9eee887facbb8a9be6",
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "cohort_manifest_hash": "1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_long_run_report.py",
+      "status": "PASS",
+      "outcome": "1 passed"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q scripts/healthtech/build_long_run_report.py tests/test_healthtech_long_run_report.py",
+      "status": "PASS",
+      "outcome": "exit 0"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/build_long_run_report.py --output docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029 ... --dev-receipt results/healthtech/ht-multicompany-baselines-20260929-family-r1-dev/receipt.json",
+      "status": "FAIL_NOT_EVIDENCE",
+      "outcome": "FileNotFoundError from a mistyped 20260929 path; no report rows were generated"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/build_long_run_report.py --output docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2 --code-commit 5e7bbeaeed136fdf5a022f9eee887facbb8a9be6 --protocol-hash 1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b --cohort-manifest-hash 1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75 --dev-frontier results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/frontier_diagnostics.json --dev-summary results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/method_summary.json --dev-receipt results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/receipt.json --holdout-frontier results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/frontier_diagnostics.json --holdout-summary results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/method_summary.json --holdout-receipt results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/receipt.json --b4-frontier results/healthtech/ht-b4-r1-mock-20261029-r4/controller_frontier.json --b4-receipt results/healthtech/ht-b4-r1-mock-20261029-r4/receipt.json --b4-raw-rankings results/healthtech/ht-b4-r1-mock-20261029-r4/raw_rankings.jsonl --b4-verification docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json --b4-holdout-frontier results/healthtech/ht-b4-r1-mock-20261029-holdout-r2/controller_frontier.json --b4-holdout-receipt results/healthtech/ht-b4-r1-mock-20261029-holdout-r2/receipt.json --b4-holdout-raw-rankings results/healthtech/ht-b4-r1-mock-20261029-holdout-r2/raw_rankings.jsonl --b4-holdout-verification docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/verification.json",
+      "status": "PASS",
+      "outcome": "12 rows written; both B4 mock splits included"
+    }
+  ],
+  "input_hashes": {
+    "results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/frontier_diagnostics.json": "f32f8dfa2eb4f3f180ab62a3dbc531a8bbee9e01a46ad78f6f93fd7c5b112b39",
+    "results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/method_summary.json": "2a15ab72034201c4d81678626d51b0d85b8a4c5d092f5b2ce22e1b61d0e4ad74",
+    "results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/receipt.json": "56522cb3322c4a69158a2601b26381a9f9eef36a91503a82c2f404f9d0282338",
+    "results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/frontier_diagnostics.json": "fec5cb5ea30423998068cd54de20045f6e44322e8444ec3c2d4019f9d2fd365b",
+    "results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/method_summary.json": "b97c138e03fb51ec192d18432cf1974a8301ab5467d58d20643e3c9a8a3da50f",
+    "results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/receipt.json": "62809d07af8b798d6d13a9e720005131a50c813b407e04ac6b23848b443f21ec",
+    "results/healthtech/ht-b4-r1-mock-20261029-r4/controller_frontier.json": "539c286299d7386b49113b4f8303da21b99c1733446fb09a19958e33e377619f",
+    "results/healthtech/ht-b4-r1-mock-20261029-r4/receipt.json": "506fee66b80c84c800915cf2c1597aa56bd7ab5c7540376f6450f7a359357d1f",
+    "results/healthtech/ht-b4-r1-mock-20261029-r4/raw_rankings.jsonl": "d92de8043420dbbc225d82b99368e2dcc5454c0a51c2a58b7c32269ec4f2b271",
+    "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json": "20cfdcca7bf9475694534bba53ac8cacba694f9dfaf08baa23187c0b732f6f37",
+    "results/healthtech/ht-b4-r1-mock-20261029-holdout-r2/controller_frontier.json": "993ba149dde503edf3795bf5fc1cb9d6b862937a765efd5692c5e1abefbe6911",
+    "results/healthtech/ht-b4-r1-mock-20261029-holdout-r2/receipt.json": "d46d15423ab9e9c8d718a143f80a1a835094e6a8f8fb8ecb938d8179017528df",
+    "results/healthtech/ht-b4-r1-mock-20261029-holdout-r2/raw_rankings.jsonl": "e9dc523102cb81677b2bae5983d17c00e4f995f36a719c42bac9d4ebb7541db4",
+    "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/verification.json": "a9020e34aa06d15a65b40d44e96aef89eaf2dafcc6f73a3ab457717a1a0d6c19"
+  },
+  "result": {
+    "offline_control_rows": 10,
+    "development_b4_macro_known_link_recall_at_20": 1.0,
+    "development_b4_provider_shaped_calls": 12,
+    "holdout_b4_macro_known_link_recall_at_20": 0.8857142857142857,
+    "holdout_b4_micro_known_link_recall_at_20": 0.8461538461538461,
+    "holdout_b4_provider_shaped_calls": 8,
+    "holdout_b4_simulated_cost_usd": 0.0008,
+    "paid_cost_usd": 0.0,
+    "unknown_or_pending_billing_items": 0,
+    "rows_written": 12
+  },
+  "boundaries": {
+    "live_provider_request": "NOT_RUN",
+    "paid_canary": "NOT_RUN",
+    "semantic_relevance_gold": "NOT_RUN",
+    "known_link_metrics": "DESCRIPTIVE_PRODUCT_DISCLOSURE_RECOVERY",
+    "unjudged_pairs_as_negatives": false,
+    "generalization": "NOT_ESTIMABLE",
+    "publication_readiness": "NOT_RUN"
+  },
+  "output_paths": [
+    "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/REPORT.md",
+    "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/summary_tables.json",
+    "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/frontier_table.csv",
+    "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/receipt.json"
+  ],
+  "output_hashes": {
+    "REPORT.md": {
+      "bytes": 6148,
+      "sha256": "a429a40c8c27e277e1320d3b21911c4136b194612eeb209ba349086902bad54c"
+    },
+    "summary_tables.json": {
+      "bytes": 33911,
+      "sha256": "d7997be560a47796afd0a590d61462ff69a262225f97985819c81c21c8a12a02"
+    },
+    "frontier_table.csv": {
+      "bytes": 2090,
+      "sha256": "4eef5e98971daffb4323e64a398f755113b590dd05ca05cfec3cd3aa79ca9101"
+    },
+    "receipt.json": {
+      "bytes": 3056,
+      "sha256": "5f01b9c5fc3149c072684167ada4587479efe4e4bff22cc38709fed93edaffd8"
+    }
+  }
+}
