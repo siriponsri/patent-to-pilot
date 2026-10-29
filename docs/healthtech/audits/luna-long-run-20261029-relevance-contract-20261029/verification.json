@@ -7,9 +7,9 @@
   "candidate_package_commit": "a194045d316d60951b914dd2d1ac61a481b7b043",
   "tree_state_at_test": "dirty_with_scoped_relevance_contract_files_and_unrelated_owner_artifacts_preserved",
   "implementation_files": {
-    "src/patent_to_pilot/evaluation/healthtech/judgments.py": "521b38efe5dd7b8abbe487d2a0be0083be6fa6a44b8d0bf78384f08939aab7a0",
-    "scripts/healthtech/validate_relevance_judgments.py": "8097a161f46d8882dee15e7cbe5e5df33821142004f7e282e11cc3e062c6343f",
-    "tests/test_healthtech_judgments.py": "f1340a137d147d9a785cf6d3bead3ef27abe7c241a01b1d313d5ed780dbad10c"
+    "src/patent_to_pilot/evaluation/healthtech/judgments.py": "4e1b84e71162da489d6a5c66eaf5817d36355915f1803ac682934971be8e2021",
+    "scripts/healthtech/validate_relevance_judgments.py": "06f72a768424f2b05391f7c50d491d4c0a2087d2655c47255e4603f5b36fa361",
+    "tests/test_healthtech_judgments.py": "db9c8d96b6080226eadbc10bd08f2dab6f014204e085e7750014b41b301e0438"
   },
   "contract": {
     "format": "ht-relevance-judgment-cohort-v1",
