@@ -6,6 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 G6 = ROOT / "docs/healthtech/research/G6_MANUSCRIPT_METHODS_SKELETON_20261029.md"
 SCIFACT_VERIFICATION = ROOT / "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/verification.json"
 M20_AUDIT = ROOT / "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md"
+M30_AUDIT = ROOT / "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/README.md"
+M30_REPORT = ROOT / "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/REPORT.md"
+BUDGET_REQUEST = ROOT / "docs/healthtech/goals/luna-long-run-20261028-889958e/BUDGET_EXPANSION_REQUEST_TH.md"
 
 
 def test_g6_keeps_scifact_separate_and_matches_component_receipt():
@@ -41,3 +44,26 @@ def test_g6_integrates_m20_company_holdout_sensitivity():
     assert "All eight baseline splits" in audit
     assert "zero provider calls" in audit
     assert "not semantic relevance gold" in audit
+
+
+def test_g6_and_budget_request_bind_to_current_head_m30():
+    g6 = G6.read_text(encoding="utf-8")
+    budget = BUDGET_REQUEST.read_text(encoding="utf-8")
+    audit = M30_AUDIT.read_text(encoding="utf-8")
+    report = M30_REPORT.read_text(encoding="utf-8")
+
+    for text in (g6, budget):
+        assert "luna-long-run-20261030-current-head-baseline-b4-20261030" in text
+        assert "0.9613" in text
+        assert "0.5429" in text
+        assert "0.8381" in text
+        assert "0.8857" in text
+        assert "semantic relevance gold" in text or "semantic labels" in text
+
+    assert "8 devices" in audit
+    assert "31 patents" in audit
+    assert "19 provider-shaped calls" in audit
+    assert "0.9688" in report
+    assert "0.8381" in report
+    assert "matches HT-B1, HT-B3" in report
+    assert "POWER_NOT_ESTIMABLE" in budget

@@ -467,3 +467,13 @@ The current-head report and descriptive analysis are generated from these output
 No credentials were read, no live provider or network acquisition occurred, paid cost is USD 0.00, semantic gold remains `NOT_RUN`, Bridge remains `BLOCKED_LOCAL`, Zenodo record `21101400` remains restricted, and Claude UX/UI remains paused.
 
 Next: obtain or authorize a rights-cleared semantic judgment source with explicit labels, locators, adjudicator role, source revision/hash, independent company/family groups, and an untouched holdout; then run M23, M25, and M24 before rerunning frozen controls. Preserve current denominators, holdout membership, and the `UNJUDGED` policy.
+
+## HT-NEXT-052 — 2026-10-30 M31 current-head report, budget, and G6 refresh
+
+Status: `PASS_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-current-head-report-budget-g6-20261030/README.md`.
+
+Refreshed `docs/healthtech/research/G6_MANUSCRIPT_METHODS_SKELETON_20261029.md` and `docs/healthtech/goals/luna-long-run-20261028-889958e/BUDGET_EXPANSION_REQUEST_TH.md` from the M30 current-head report. G6 now binds the 8-device/31-patent development view, untouched 3-device/31-patent Stryker holdout, current HT-B0a/B0b/B1/B2/B3 rows, current HT-B4 mock, current paired-group diagnostics, and current report/analysis links. The budget request records M30 evidence and preserves USD 0.00 incremental authorization with no paid dispatch.
+
+The focused G6/current-head documentation regression passes `3/3`; adjacent report/analysis regressions pass `4/4`; compileall and `git diff --check` pass. No new retrieval run, source acquisition, semantic labels, provider/network calls, external transfer, or paid cost occurred. Historical M3/M10/M11 values remain only where explicitly labeled as historical.
+
+Next: obtain or authorize a rights-cleared semantic judgment source with explicit `relevant` / `not_relevant` labels, source revision/hash, exact locators, adjudicator role, independent company/family groups, and an untouched holdout. Run M23, M25, and M24 in sequence, then rerun frozen controls without changing denominators, holdout membership, or the `UNJUDGED` policy. Keep live HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI blocked or paused.

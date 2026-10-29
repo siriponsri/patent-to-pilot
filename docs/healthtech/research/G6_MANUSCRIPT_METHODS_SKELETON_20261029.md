@@ -16,14 +16,14 @@ Current endpoint: descriptive macro known-link recall at `K=20` over product-lev
 
 ## Data and protocol
 
-- Development view: 5 devices/queries, 24 patents, 3 family-aware groups.
-- Final holdout view: 3 untouched Stryker queries, the same 24-patent universe, 3 family-aware groups.
-- Composite context: 8 devices, 24 patents, 31 product-level disclosed pairs, 161 unjudged distractors, and 6 full-cohort family groups.
+- Development view: 8 devices/queries, 31 patents, 25 disclosed pairs, and 6 exact/family-aware groups.
+- Final holdout view: 3 untouched Stryker queries, the same 31-patent universe, 13 disclosed pairs, and 3 exact/family-aware groups.
+- Composite context: 8 devices, 31 patents, 38 product-level disclosed pairs, 303 explicitly unjudged distractors, and 9 full-cohort family groups.
 - Protocol hash: `1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b`.
-- Cohort manifest hash: `1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75`.
-- Report receipt: [`luna-long-run-20261029-m7-report-20261029`](../audits/luna-long-run-20261029-m7-report-20261029/REPORT.md).
-- Descriptive analysis and figures: [`luna-long-run-20261029-m8-analysis-20261029-r2`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/ANALYSIS.md).
-- HT-B4 mock holdout comparison: [`luna-long-run-20261029-m10-b4-holdout-20261029`](../audits/luna-long-run-20261029-m10-b4-holdout-20261029/COMPARISON.md).
+- Cohort manifest hash: `d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267`.
+- Current-head report and receipt: [`luna-long-run-20261030-current-head-baseline-b4-20261030`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/REPORT.md).
+- Current-head descriptive analysis and figures: [`luna-long-run-20261030-current-head-baseline-b4-20261030`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/ANALYSIS.md).
+- Current-head B4 mock verification: [`luna-long-run-20261030-current-head-baseline-b4-20261030`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/README.md).
 
 The final holdout was not used for policy tuning. No semantic reviewer labels were available in this package. The Bridge branch remains `BLOCKED_LOCAL`.
 
@@ -31,45 +31,45 @@ The final holdout was not used for policy tuning. No semantic reviewer labels we
 
 | Split | HT-B0a | HT-B0b | HT-B1 | HT-B2 | HT-B3 |
 |---|---:|---:|---:|---:|---:|
-| Development macro known-link R@20 | 0.9381 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
-| Final holdout macro known-link R@20 | 0.8190 | 0.9524 | 0.9333 | 0.9333 | 0.8857 |
+| Development macro known-link R@20 | 0.9613 | 1.0000 | 0.9688 | 0.9063 | 0.9688 |
+| Final holdout macro known-link R@20 | 0.5429 | 0.8095 | 0.8381 | 0.8857 | 0.8381 |
 
-The development rows used 5 queries; the holdout rows used 3 queries. Realized query calls were method-dependent because HT-B2 and HT-B3 use multiple queries/actions. Full resource and hash detail is in `summary_tables.json` and `frontier_table.csv` in the linked report audit.
+The development rows used 8 queries; the holdout rows used 3 queries. Realized query calls were method-dependent because HT-B2 and HT-B3 use multiple queries/actions. Full resource and hash detail is in `summary_tables.json` and `frontier_table.csv` in the linked report audit.
 
 ## HT-B4 provider-shaped mock holdout comparison
 
-The fixed-policy HT-B4 provider-shaped mock was run once on the untouched final holdout after the control outputs were frozen. It completed 3 devices, 24 patents, 8 provider-shaped calls, 120 rerank pairs, macro known-link R@20 of `0.8857`, micro known-link R@20 of `0.8462`, simulated debit of USD `0.0008`, paid cost of USD `0.00`, zero unknown/pending billing items, and no ledger breach.
+The fixed-policy HT-B4 provider-shaped mock was run once on the untouched final holdout after the control outputs were frozen. It completed 3 devices, 31 patents, 8 provider-shaped calls, 155 rerank pairs, macro known-link R@20 of `0.8381`, micro known-link R@20 of `0.7692`, simulated debit of USD `0.0008`, paid cost of USD `0.00`, zero unknown/pending billing items, and no ledger breach.
 
 | Method | Final holdout macro known-link R@20 | B4 mock minus control |
 |---|---:|---:|
-| HT-B0a | 0.8190 | +0.0667 |
-| HT-B0b | 0.9524 | -0.0667 |
-| HT-B1 | 0.9333 | -0.0476 |
-| HT-B2 | 0.9333 | -0.0476 |
-| HT-B3 | 0.8857 | 0.0000 |
-| HT-B4-MOCK | 0.8857 | — |
+| HT-B0a | 0.5429 | +0.2952 |
+| HT-B0b | 0.8095 | +0.0286 |
+| HT-B1 | 0.8381 | 0.0000 |
+| HT-B2 | 0.8857 | -0.0476 |
+| HT-B3 | 0.8381 | 0.0000 |
+| HT-B4-MOCK | 0.8381 | — |
 
-In this descriptive holdout comparison, HT-B4-MOCK matches HT-B3 and is below HT-B0b, HT-B1, and HT-B2. Provider-shaped calls exercise the action schema and accounting path only; they are not live-provider evidence. The result remains `DESCRIPTIVE_NOT_ESTIMABLE` because the cohort uses product-level disclosures, unjudged pairs, and a small company-level transfer check rather than rights-cleared semantic relevance gold.
+In this descriptive holdout comparison, HT-B4-MOCK matches HT-B1 and HT-B3, is above HT-B0a and HT-B0b, and is below HT-B2. Provider-shaped calls exercise the action schema and accounting path only; they are not live-provider evidence. The result remains `DESCRIPTIVE_NOT_ESTIMABLE` because the cohort uses product-level disclosures, unjudged pairs, and a small company-level transfer check rather than rights-cleared semantic relevance gold.
 
 ## Reproducible analysis and figures
 
-The M8 analysis package computes the observed Pareto frontier from macro known-link recall and realized wall time, adds K=20 group-level min/max/range, and reports holdout-minus-development deltas. HT-B0a and HT-B0b are on the observed frontier in both frozen views; HT-B1, HT-B2, and HT-B3 are dominated on these descriptive coordinates. This is not a superiority claim because the labels are product-level disclosures, the pair universe is incomplete, and effective group uncertainty remains `NOT_ESTIMABLE`.
+The current-head analysis package computes the observed Pareto frontier from macro known-link recall and realized wall time, adds K=20 group-level min/max/range, and reports holdout-minus-development deltas. HT-B0a and HT-B0b are on the observed development frontier; HT-B0a, HT-B0b, HT-B1, and HT-B2 are on the observed holdout frontier. HT-B3 is not on the holdout frontier because HT-B1 has the same observed recall at lower wall time. This is not a superiority claim because the labels are product-level disclosures, the pair universe is incomplete, and effective group uncertainty remains `NOT_ESTIMABLE`.
 
-- Analysis table: [`quality_cost_frontier.csv`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_frontier.csv)
-- Development quality-resource plot: [`quality_cost_development.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_development.svg)
-- Holdout quality-resource plot: [`quality_cost_holdout.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_holdout.svg)
-- Development/holdout recall comparison: [`recall_comparison.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/recall_comparison.svg)
+- Analysis table: [`quality_cost_frontier.csv`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_frontier.csv)
+- Development quality-resource plot: [`quality_cost_development.svg`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_development.svg)
+- Holdout quality-resource plot: [`quality_cost_holdout.svg`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_holdout.svg)
+- Development/holdout recall comparison: [`recall_comparison.svg`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/recall_comparison.svg)
 
 ## Paired group uncertainty diagnostic
 
-The M12 diagnostic aligns methods by frozen `group_id` against `HT-B0b` at `K=20` and reports descriptive mean deltas, population standard deviation, and min/max deltas. The predeclared minimum effective group threshold is `5`; both the development and final-holdout views contain `3` effective family-aware groups, so every paired comparison remains `NOT_ESTIMABLE`.
+The current-head diagnostic aligns methods by frozen `group_id` against `HT-B0b` at `K=20` and reports descriptive mean deltas, population standard deviation, and min/max deltas. The predeclared minimum effective group threshold is `5`; the development view contains `6` effective family-aware groups and is descriptive-only, while the final holdout contains `3` and remains `NOT_ESTIMABLE`.
 
 | Split | HT-B0a minus HT-B0b | HT-B1 minus HT-B0b | HT-B2 minus HT-B0b | HT-B3 minus HT-B0b |
 |---|---:|---:|---:|---:|
-| Development mean delta | -0.0516 | 0.0000 | 0.0000 | 0.0000 |
-| Final holdout mean delta | -0.1333 | -0.0190 | -0.0190 | -0.0667 |
+| Development mean delta | -0.0258 | -0.0417 | -0.1250 | -0.0417 |
+| Final holdout mean delta | -0.2667 | 0.0286 | 0.0762 | 0.0286 |
 
-These values are descriptive diagnostics only. They do not estimate statistical significance, confidence intervals, or generalization beyond the frozen groups. The canonical M12 audit contains the machine-readable analysis, exact hashes, reproduction command, and continuation note: [`luna-long-run-20261029-m12-group-uncertainty-20261029`](../audits/luna-long-run-20261029-m12-group-uncertainty-20261029/README.md).
+These values are descriptive diagnostics only. They do not estimate statistical significance, confidence intervals, or generalization beyond the frozen groups. The current-head audit contains the machine-readable analysis, exact hashes, reproduction commands, and continuation note: [`luna-long-run-20261030-current-head-baseline-b4-20261030`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/README.md).
 
 ## Separate HT-T2 SciFact component
 
@@ -104,12 +104,12 @@ This profile separates retrieval failure from rationale/label mismatch and keeps
 
 | Metric | Actual value |
 |---|---:|
-| Development devices | 5 |
-| Patents | 24 |
-| Provider-shaped calls | 12 |
-| Schema-valid calls | 12 |
-| Macro known-link R@20 | 1.0000 |
-| Simulated mock debit | USD 0.0012 |
+| Development devices | 8 |
+| Patents | 31 |
+| Provider-shaped calls | 19 |
+| Schema-valid calls | 19 |
+| Macro known-link R@20 | 0.9688 |
+| Simulated mock debit | USD 0.0019 |
 | Paid cost | USD 0.00 |
 | Unknown/pending billing items | 0 |
 
@@ -117,15 +117,15 @@ The mock transport exercised the action schema and R1 reservation/settlement pat
 
 ## Sources, model, and system-card references
 
-- Frozen report and machine-readable outputs: [`docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/`](../audits/luna-long-run-20261029-m7-report-20261029/).
-- Holdout comparison and machine-readable outputs: [`docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/`](../audits/luna-long-run-20261029-m10-b4-holdout-20261029/).
+- Current-head report and machine-readable outputs: [`docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/).
+- Current-head family frontier and B4 verification: [`docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/verification.json`](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/verification.json).
 - Paired group diagnostic and verification: [`docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/`](../audits/luna-long-run-20261029-m12-group-uncertainty-20261029/).
 - Frozen B4 verification: [`docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json`](../audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json).
 - HT-T2 SciFact development audit: [`luna-long-run-20261029-ht-t2-lexical-dev-20261029`](../audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/README.md).
 - Model snapshot: `results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json`.
 - Endpoint metadata: `results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/endpoint_metadata.json`.
-- Long-run report code tested: `237fc669a4b7829be420c48547f36a69e28f64f0`.
-- Holdout comparison code tested: `b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3`.
+- Current-head baseline code tested: `aeaa8aa20c7840ebcf63f9f92b9d3e4d2f52ef83`.
+- Current-head report/analysis renderer fixes: `3b2e5cd9a9437a9db3fed8f2632e251aa738487a`.
 - R1 policy and accounting limits: `docs/healthtech/goals/luna-long-run-20261028-889958e/OPENROUTER_ROUND1_TH.md` and the filled budget request.
 
 The system-card section must preserve model/provider identity, pricing snapshot, structured-output/action restrictions, no-fallback/no-retry policy, transfer-rights gates, and the distinction between mocked transport and live execution.

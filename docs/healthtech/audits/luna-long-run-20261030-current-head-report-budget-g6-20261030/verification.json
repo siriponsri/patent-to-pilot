@@ -1,0 +1,107 @@
+{
+  "bound_results": {
+    "b4_mock": {
+      "development_macro_recall_at_20": 0.96875,
+      "development_provider_shaped_calls": 19,
+      "development_simulated_cost_usd": 0.0019,
+      "holdout_macro_recall_at_20": 0.8380952380952381,
+      "holdout_provider_shaped_calls": 8,
+      "holdout_simulated_cost_usd": 0.0008,
+      "paid_cost_usd": 0.0,
+      "unknown_or_pending_billing_items": 0
+    },
+    "development": {
+      "devices": 8,
+      "disclosed_pairs": 25,
+      "family_aware_groups": 6,
+      "macro_recall_at_20": {
+        "HT-B0a": 0.9613095238095238,
+        "HT-B0b": 1.0,
+        "HT-B1": 0.96875,
+        "HT-B2": 0.90625,
+        "HT-B3": 0.96875
+      },
+      "patents": 31
+    },
+    "final_holdout": {
+      "devices": 3,
+      "disclosed_pairs": 13,
+      "family_aware_groups": 3,
+      "macro_recall_at_20": {
+        "HT-B0a": 0.5428571428571428,
+        "HT-B0b": 0.8095238095238094,
+        "HT-B1": 0.8380952380952381,
+        "HT-B2": 0.8857142857142857,
+        "HT-B3": 0.8380952380952381,
+        "HT-B4-MOCK": 0.8380952380952381
+      },
+      "patents": 31
+    }
+  },
+  "boundaries": {
+    "bridge": "BLOCKED_LOCAL",
+    "claude_ux_ui": "PAUSED",
+    "generalization": "NOT_ESTIMABLE",
+    "live_provider_behavior": "BLOCKED_LOCAL",
+    "semantic_relevance_gold": "NOT_RUN",
+    "unjudged_pairs_as_negatives": false,
+    "zenodo_21101400": "RESTRICTED_OWNER_ACCESS_REQUIRED"
+  },
+  "changed_artifact_hashes": {
+    "budget_request": "93def3875b0310ba5e79ad543a0da994efef14a7a08097241920fdc724257640",
+    "g6_skeleton": "525fe9addd0456a5d11b313e301fe4ae7fbde73ac81a51c413eb8d0da9d8f1ab",
+    "g6_test": "4b35e85bb6b5a5c656c07458aeef587f475fb4fdbbed2689a5f80770876fd27c"
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_g6_skeleton.py",
+      "outcome": "PASS: 3 passed"
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_long_run_report.py tests/test_healthtech_long_run_analysis.py",
+      "outcome": "PASS: 4 passed"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q src scripts tests",
+      "outcome": "PASS: exit 0"
+    },
+    {
+      "command": "rtk proxy git diff --check",
+      "outcome": "PASS: exit 0"
+    }
+  ],
+  "documentation_hashes": {
+    "NEXT_ACTIONS.md": "ce3f2d4a1076a7254be0e8b41e439098a662a931a5a81467b0a7d1fcee69110f",
+    "README.md": "5006f7d8f8040131074ad1e1d8b8295feda7197d5b33e3f6a29a6480c4053397",
+    "docs/healthtech/progress.json": "8b3de5866bf2e6cff028f4360d7ad974eb31b1232e8d3e4c76aa7f24abe606be",
+    "memory/next-actions.md": "313e0b34ad2d6bd3f65b44dfb3dec598dc1c854ea28d605df47ad3950f3e5d09"
+  },
+  "format": "healthtech-audit-verification-v1",
+  "input_hashes": {
+    "m30_analysis": "f9d01d55c4c17d66eb5af343f5556d952782106abb640c4d975d7d125a39ee2a",
+    "m30_report": "2ffec095c4f0a0ea18a72a359ad16bf66d0402a672cac596cd34aecddabada30",
+    "m30_summary": "db53ff1e90126920974310ab5d9ed83cb133884b773aeba42721fd49e395f304",
+    "m30_verification": "b19c1a3e041e132529a5970e742118744146852bfe61723ef3fbfba9292198f5"
+  },
+  "link_checks": {
+    "g6_relative_links_checked": 21,
+    "missing_links": [],
+    "placeholders_found": false
+  },
+  "next_action": "Obtain an owner-authorized rights-cleared semantic judgment source, validate through M23/M25/M24, and rerun frozen controls without changing denominator or holdout.",
+  "run_date": "2026-10-30",
+  "run_id": "luna-long-run-20261030-current-head-report-budget-g6-20261030",
+  "scope": {
+    "external_transfer": false,
+    "incremental_budget_request_usd": 0.0,
+    "network_calls": 0,
+    "new_data_acquisition": false,
+    "new_scientific_run": false,
+    "new_semantic_labels": 0,
+    "paid_cost_usd": 0.0,
+    "private_budget_journal": "NOT_INSPECTED",
+    "provider_calls": 0
+  },
+  "source_head_before": "1c468994ad603287007bde761ab15fbd37ffeffa",
+  "status": "PASS_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH"
+}
