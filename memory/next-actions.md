@@ -75,3 +75,11 @@ The current-head regression gap is closed at implementation commit `00bca8edf3ba
 The corrected probe copies all 45 manifest-pinned raw files, builds 3 real cases with 41 patents each, and records only hashes/counts in the audit package. No provider calls, neural inference, network access, paid cost, Bridge acquisition, deployment, clinical/FTO work, or public raw-data release occurred. Historical stale probes remain immutable; this receipt is the current-head replacement evidence.
 
 Next: keep provider HT-B4 `BLOCKED_LOCAL`, freeze HT-T2 prediction/denominator rules only if predictions exist, and continue toward a rights-cleared cohort with multiple independent groups and a predeclared final holdout. Preserve Abbott/Boston as development-only and do not infer scientific generalization or publication readiness from this engineering pass.
+
+## HT-NEXT-012 — 2026-10-29 M3 current-head freeze receipt
+
+Status: `PASS_OFFLINE_ANALYSIS`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0/README.md`.
+
+At pushed source head `cf613c08c9eeee340645cd6eb46d2aebe0c983ac`, the deterministic Abbott/Boston comparator reran over the existing frozen HT-B0a/B0b/B1/B2/B3 artifacts with zero validation issues. It verified the common five-method set, primary `K=20`, fixed-prefix alignment, input hashes, zero frontier failures, and descriptive-only cross-cohort interpretation. No neural inference, acquisition, provider call, or paid cost was incurred.
+
+HT-T2 remains `NOT_RUN`: the repository contains SciFact evaluator parity receipts but no current-run prediction source plus denominator manifest. The next scientific discriminator is a rights-cleared cohort with multiple independent company/family groups and a predeclared final holdout. Keep Abbott/Boston development-only, keep unjudged links out of negative labels, and keep live/provider HT-B4 `BLOCKED_LOCAL`.

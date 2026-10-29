@@ -1,0 +1,56 @@
+{
+  "format": "ht-m3-current-head-freeze-verification-v1",
+  "date": "2026-10-29",
+  "timezone": "Asia/Bangkok",
+  "status": "PASS_OFFLINE_ANALYSIS",
+  "tested_source_head": "cf613c08c9eeee340645cd6eb46d2aebe0c983ac",
+  "run_id": "luna-long-run-20261029-m3-current-head-cf613c0",
+  "checks": {
+    "cross_cohort_scores_not_promoted": true,
+    "fixed_prefix_alignment": true,
+    "input_hashes_recorded": true,
+    "same_primary_k": true,
+    "shared_method_set": true,
+    "source_validation_errors": []
+  },
+  "implemented_boundary": "offline descriptive analysis and freeze receipt only",
+  "commands": [
+    {
+      "command": "rtk proxy python -B scripts/healthtech/compare_cross_cohort.py --run-id luna-long-run-20261029-m3-current-head-cf613c0 --output docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0 <frozen Abbott/Boston inputs>",
+      "exit_code": 0,
+      "outcome": "PASS; zero validation issues; no inference rerun"
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_cross_cohort.py",
+      "exit_code": 0,
+      "outcome": "2 passed"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q scripts/healthtech/compare_cross_cohort.py tests/test_healthtech_cross_cohort.py",
+      "exit_code": 0,
+      "outcome": "completed successfully"
+    }
+  ],
+  "script_sha256": {
+    "scripts/healthtech/compare_cross_cohort.py": "2680d845ca62231437eee8573b83e671f2b51d8dc6c6f3da62b7570a80cbd3ad",
+    "tests/test_healthtech_cross_cohort.py": "7a7799d03c79b84a73a9b4635993575901c4126eba43faad420155c0aee0d48a"
+  },
+  "input_receipt_sha256": {
+    "results/healthtech/ht-real-baselines-20261029-frozen-r1/receipt.json": "9ec66c0316e99219987220c6fc68a52da8f43f22ac548823ae8ac4fd0c5e3571",
+    "results/healthtech/ht-real-baselines-20261029-frozen-r1/frontier_diagnostics.json": "ffdd10689c48ebdefee94ed8abef7a9099b5b44b11a24c8e20225a882baf2c0d",
+    "results/healthtech/ht-boston-baselines-20261028-r3/receipt.json": "f194fdce6bd44f42d932374ab80e05799a66d824209b87bd056464b2d5cffd25",
+    "results/healthtech/ht-boston-baselines-20261028-r3/frontier_diagnostics.json": "21f5ed31810a65fb54f7905113dfa26f17cbbead3d2c3668186e7be991bf0156"
+  },
+  "ht_t2_scifact": {
+    "prediction_artifact": "NOT_PRESENT",
+    "scoring": "NOT_RUN",
+    "reason": "Only evaluator parity receipts exist; no declared current-run prediction source and denominator manifest."
+  },
+  "not_run": [
+    "final holdout evaluation",
+    "confidence intervals or significance testing",
+    "adaptive HT-B4 live/provider run"
+  ],
+  "paid_cost_usd": 0,
+  "provider_calls": 0
+}
