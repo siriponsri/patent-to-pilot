@@ -163,13 +163,16 @@ def compose_cohort(
     stryker_cohort: Path,
     output: Path,
     holdout_company: str = "Stryker Neurovascular",
+    additional_cohorts: list[tuple[str, Path]] | None = None,
 ) -> dict:
     if output.exists():
         raise ValueError(f"output already exists; choose a fresh directory: {output}")
-    parents = [
-        _load_parent("boston", boston_cohort.resolve()),
-        _load_parent("stryker", stryker_cohort.resolve()),
-    ]
+    parent_specs = [("boston", boston_cohort), ("stryker", stryker_cohort)]
+    parent_specs.extend(additional_cohorts or [])
+    aliases = [alias for alias, _ in parent_specs]
+    if len(aliases) != len(set(aliases)):
+        raise ValueError("parent cohort aliases must be unique")
+    parents = [_load_parent(alias, root.resolve()) for alias, root in parent_specs]
     freeze_timestamp = max(
         str(parent["manifest"].get("retrieved_at_utc") or "")
         for parent in parents
@@ -307,15 +310,15 @@ def compose_cohort(
             "basis": "Parent cohorts did not provide a sourced family mapping; no family merge is inferred.",
         },
         "overlap_notes": [
-            "Boston Scientific and Stryker Neurovascular are independent company groups in the composite.",
+            f"{', '.join(sorted({str(device.get('company') or '') for device in devices}))} are independent company groups in the composite.",
             "Exact-patent groups are carried forward from product-marking rows; family identity remains unknown.",
-            "The Stryker company group is predeclared as the untouched final holdout.",
+            f"The {holdout_company} company group is predeclared as the untouched final holdout.",
         ],
     }
     split = {
         "format": "ht-development-final-holdout-split-v1",
         "status": "PREDECLARED_FINAL_HOLDOUT_NO_TUNING",
-        "assignment_rule": "Hold out the full Stryker Neurovascular company group; no query or group reassignment is permitted after freeze.",
+        "assignment_rule": f"Hold out the full {holdout_company} company group; no query or group reassignment is permitted after freeze.",
         "seed": 0,
         "final_holdout_company_groups": [holdout_company],
         "final_holdout_group_ids": sorted({query_group_ids[query_id] for query_id in holdout_query_ids}),
@@ -390,7 +393,7 @@ def compose_cohort(
             "new_raw_acquisition": False,
         },
         "limitations": [
-            "This is a derived local composite of two previously acquired typed-policy cohorts.",
+            f"This is a derived local composite of {len(parents)} previously acquired typed-policy cohorts.",
             "Family mapping is unknown and not inferred.",
             "Product-level disclosure is not independent semantic relevance gold.",
             "Google-derived patent text and marking-page evidence remain local-only.",
@@ -405,14 +408,28 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--boston-cohort", type=Path, required=True)
     parser.add_argument("--stryker-cohort", type=Path, required=True)
+    parser.add_argument(
+        "--additional-cohort",
+        action="append",
+        default=[],
+        metavar="ALIAS=PATH",
+        help="additional parent cohort, repeatable",
+    )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--holdout-company", default="Stryker Neurovascular")
     args = parser.parse_args()
+    additional_cohorts: list[tuple[str, Path]] = []
+    for value in args.additional_cohort:
+        alias, separator, raw_path = value.partition("=")
+        if not separator or not alias.strip() or not raw_path.strip():
+            parser.error(f"--additional-cohort must use ALIAS=PATH: {value}")
+        additional_cohorts.append((alias.strip(), Path(raw_path.strip())))
     manifest = compose_cohort(
         boston_cohort=args.boston_cohort,
         stryker_cohort=args.stryker_cohort,
         output=args.output,
         holdout_company=args.holdout_company,
+        additional_cohorts=additional_cohorts,
     )
     print(json.dumps({
         "status": manifest["status"],

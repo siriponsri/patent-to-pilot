@@ -127,3 +127,13 @@ Typed provenance passes with 26/26 disclosed pairs covered, 2 independent disclo
 At `K=10`, the development macro known-link recall is `0.8452 / 1.0000 / 1.0000 / 0.6905 / 1.0000` and the untouched Stryker holdout is `0.4952 / 0.7619 / 0.7905 / 0.7905 / 0.8381` for HT-B0a/B0b/B1/B2/B3. `K=20` is ceiling-limited because the universe has exactly 20 patents. Both runs use implementation commit `dbcac2f`, complete all scheduled queries with 0 failures, 0 provider calls, and `$0.00` paid cost.
 
 This is descriptive offline development evidence only: product-level marking is not independent semantic gold, family uncertainty remains, and one held-out company is not enough for a stable generalization estimate. Next add a third typed-policy company or licensed replacement and source family mappings where available before any pooled scientific claim. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO work, deployment, outreach, and UI takeover blocked or paused.
+
+## HT-NEXT-017 — 2026-10-29 Cook third-company expansion
+
+Status: `PASS_OFFLINE_DEVELOPMENT_WITH_THIRD_COMPANY`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/README.md`.
+
+Added `scripts/healthtech/fetch_cook_zenith_cohort.py` for a bounded Cook Medical Zenith cohort using the official Cook patent page/PDF, PMA `P020018`/`P180001` anchors, raw and normalized hashes, typed `cook-medical-patent-marking` rights, evaluator/runtime separation, and `UNKNOWN_NOT_ASSUMED` family mapping. Focused parser, malformed-input, separation, overlap, and three-parent composition regressions pass `39` tests; compile checks pass.
+
+The frozen Boston/Stryker/Cook composite has `8` devices, `24` patents, `31` product-level disclosed pairs, `161` unjudged distractors, `3` company groups, and a predeclared full-company Stryker holdout. Typed provenance passes for `31/31` pairs with `0` unresolved policies. At `K=10`, development macro known-link recall is `0.9381 / 1.0000 / 0.9000 / 0.7762 / 0.9000`, and the untouched Stryker holdout is `0.3333 / 0.6667 / 0.7429 / 0.7905 / 0.7905` for HT-B0a/B0b/B1/B2/B3. Both runs have `0` failed queries, `0` provider calls, and `$0.00` paid cost.
+
+This remains descriptive offline evidence only. Keep live/provider HT-B4, Bridge acquisition, public raw-data release, family/semantic gold claims, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused. Next add sourced family mappings or a licensed relevance-judgment cohort before any pooled scientific claim.

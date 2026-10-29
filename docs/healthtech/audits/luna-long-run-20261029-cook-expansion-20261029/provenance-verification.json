@@ -1,0 +1,60 @@
+{
+  "cohort_status": "PUBLIC_COOK_ZENITH_COHORT_ACQUIRED",
+  "counts": {
+    "covered_pairs": 5,
+    "disclosed_pairs": 5,
+    "disclosure_sources": 1,
+    "distractor_pairs": 7,
+    "eligible_queries": 3,
+    "evidence_rows": 3,
+    "final_holdout_queries": 0,
+    "runtime_devices": 3,
+    "runtime_patents": 4
+  },
+  "disclosure_source_ids": [
+    "cook-medical-patent-marking"
+  ],
+  "format": "ht-cohort-provenance-verification-v1",
+  "hashes": {
+    "manifest": "cfeba2e8e5b5573f594cfc4267ee3c0cba214483f85a646ceabc2afc4a2dd97b",
+    "references": "58df91333fb69231406c0ac164fe02266abebfe00bb645dbc4fbf946c720883d",
+    "runtime": "4d5c116223fd0f083f267e8a590b7dcf4393be0ec0a678ddff9c458bf59b760a",
+    "source_registry": "b29da889830dc17772671da05a25d1a14ba1aba1ae3a90ac7c1e2197de40b0be",
+    "split": "be32bf1f4e33fc2c1e2bba9adccb8af25546a3ccd9143f8a0e65c0c065982ff5"
+  },
+  "legacy_rights_source_ids": [],
+  "limitations": [
+    "This verifies structural source-backed disclosure coverage only.",
+    "Product-level disclosure is not an independent semantic relevance judgment.",
+    "Unlisted pairs remain unjudged and are not recoded as negatives.",
+    "Recorded rights policies govern use; this report does not grant redistribution rights."
+  ],
+  "query_ids_hash": "95fcf9137324485b02fb82caacf60284ba477b59ec7c1b1b2616bb14aa6a0b72",
+  "rights_binding": "TYPED_POLICY_ID",
+  "rights_policy_ids": [
+    "cook-medical-patent-marking"
+  ],
+  "rights_policy_resolutions": [
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "cook-medical-patent-marking",
+      "source_id": "cook-medical-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "cook-medical-patent-marking",
+      "source_id": "cook-medical-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "cook-medical-patent-marking",
+      "source_id": "cook-medical-patent-marking",
+      "status": "RESOLVED"
+    }
+  ],
+  "status": "PASS",
+  "unresolved_rights": [],
+  "unresolved_rights_policy_ids": []
+}

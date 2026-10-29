@@ -1,0 +1,83 @@
+{
+  "artifacts": {
+    "baseline_summary": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/baseline-summary.json",
+    "composite_manifest": "results/healthtech/ht-multicompany-20261029-r2/manifest.json",
+    "composite_provenance": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/composite-provenance-verification.json",
+    "cook_parent_manifest": "results/healthtech/ht-cook-zenith-20261029-r1/manifest.json",
+    "cook_parent_provenance": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/provenance-verification.json",
+    "rights_matrix": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json"
+  },
+  "checks": {
+    "compile_checks": "passed",
+    "composite_typed_provenance_pass": true,
+    "cook_pdf_http_200": true,
+    "cook_pdf_rows_validated": true,
+    "cook_source_page_http_200": true,
+    "cook_typed_provenance_pass": true,
+    "focused_tests": "39 passed",
+    "full_suite": "passed with explicit PYTHONPATH=src",
+    "offline_baselines_completed": true,
+    "paid_cost_usd": 0,
+    "provider_calls": 0,
+    "runtime_evaluator_separation": true,
+    "third_company_composite_frozen": true
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_cook.py tests/test_healthtech_multicompany.py tests/test_healthtech_repairs.py",
+      "outcome": "39 passed; one fitz deprecation warning"
+    },
+    {
+      "command": "rtk proxy powershell -NoProfile -Command PYTHONPATH=src; python -m pytest -q",
+      "outcome": "full suite passed"
+    },
+    {
+      "command": "rtk proxy python -m py_compile scripts/healthtech/fetch_cook_zenith_cohort.py scripts/healthtech/compose_multicompany_cohort.py tests/test_healthtech_cook.py tests/test_healthtech_multicompany.py",
+      "outcome": "completed successfully"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/fetch_cook_zenith_cohort.py --output results/healthtech/ht-cook-zenith-20261029-r1",
+      "outcome": "3 devices, 4 patents, 5 pairs, 7 distractors, 0 provider calls,  paid cost"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/compose_multicompany_cohort.py --additional-cohort cook=results/healthtech/ht-cook-zenith-20261029-r1 ...",
+      "outcome": "8 devices, 24 patents, 31 pairs, 161 distractors, Stryker holdout"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/verify_cohort_provenance.py --cohort results/healthtech/ht-cook-zenith-20261029-r1 ...",
+      "outcome": "PASS; 5/5 Cook pairs; typed Cook policy resolved"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/verify_cohort_provenance.py --cohort results/healthtech/ht-multicompany-20261029-r2 ...",
+      "outcome": "PASS; 31/31 pairs; 3 disclosure sources; 0 unresolved policies"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_real_baselines.py ... --k 10",
+      "outcome": "development and final holdout completed; 0 failed queries/provider calls;  paid cost"
+    }
+  ],
+  "date": "2026-10-29",
+  "format": "ht-cook-expansion-verification-v1",
+  "not_run": [
+    "Live/provider HT-B4 canary or pilot",
+    "Bridge acquisition or scientific gold reconciliation",
+    "Claim-level semantic relevance judgments",
+    "Family mapping inference",
+    "Clinical/FTO/investment analysis",
+    "Public redistribution of raw Cook/PDF/patent text"
+  ],
+  "run_id": "luna-long-run-20261029-cook-expansion-20261029",
+  "source_facts": {
+    "cook_page_url": "https://www.cookmedical.com/patents/",
+    "cook_pdf_pages": 6,
+    "cook_pdf_sha256": "dc01b073cf89518825d276956527f88ead9eee0a9a204ccd8fd2e3153898442c",
+    "cook_pdf_update_label": "6January2025",
+    "cook_pdf_url": "https://www.cookmedical.com/wp-content/uploads/2025/01/US-Patents-List-for-US-website-2025.2.pdf",
+    "openfda_last_updated": "2026-10-19",
+    "pma_ids": [
+      "P020018",
+      "P180001"
+    ]
+  },
+  "status": "PASS"
+}

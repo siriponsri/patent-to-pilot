@@ -133,3 +133,25 @@ def test_composite_rejects_untyped_parent_source(tmp_path: Path):
 
     with pytest.raises(ValueError, match="typed rights_policy_id"):
         compose_cohort(boston_cohort=boston, stryker_cohort=stryker, output=tmp_path / "composite")
+
+
+def test_composite_accepts_additional_typed_parent(tmp_path: Path):
+    boston = tmp_path / "boston"
+    stryker = tmp_path / "stryker"
+    cook = tmp_path / "cook"
+    _write_parent(boston, alias="boston", company="Boston Scientific Corp", query_id="Q-B", patent_id="US10000001B2")
+    _write_parent(stryker, alias="stryker", company="Stryker Neurovascular", query_id="Q-S", patent_id="US10000002B2")
+    _write_parent(cook, alias="cook", company="Cook Medical", query_id="Q-C", patent_id="US10000003B2")
+
+    output = tmp_path / "composite"
+    manifest = compose_cohort(
+        boston_cohort=boston,
+        stryker_cohort=stryker,
+        output=output,
+        additional_cohorts=[("cook", cook)],
+    )
+
+    assert manifest["devices"] == 3
+    assert manifest["final_holdout_query_ids"] == ["Q-S"]
+    assert manifest["development_query_ids"] == ["Q-B", "Q-C"]
+    assert any(row["company"] == "Cook Medical" for row in json.loads((output / "groups.json").read_text(encoding="utf-8"))["company_groups"])

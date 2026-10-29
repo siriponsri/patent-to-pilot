@@ -1,0 +1,134 @@
+{
+  "cohort": {
+    "cohort_sha256": "9f78187b6dbe4c6f7d7967da1a5f96af35e2b0297edf16bab423072d92b25536",
+    "company_groups": [
+      {
+        "basis": "PMA applicant field",
+        "company": "BOSTON SCIENTIFIC CORP",
+        "query_ids": [
+          "HT-DEV-WATCHMAN-FLX",
+          "HT-DEV-WATCHMAN-FLX-PRO"
+        ],
+        "source_ids": [
+          "openfda-pma-p130013-base"
+        ]
+      },
+      {
+        "basis": "Cook Medical official patent-marking source, with FDA applicants retained on device rows",
+        "company": "Cook Medical",
+        "query_ids": [
+          "HT-DEV-COOK-ZENITH-DISSECTION-STENT",
+          "HT-DEV-COOK-ZENITH-FLEX-AAA",
+          "HT-DEV-COOK-ZENITH-RENU-CONVERTER"
+        ],
+        "source_ids": [
+          "cook-medical-patent-marking"
+        ]
+      },
+      {
+        "basis": "FDA applicant fields",
+        "company": "STRYKER NEUROVASCULAR",
+        "query_ids": [
+          "HT-DEV-NEUROFORM-ATLAS",
+          "HT-DEV-TARGET-XL-360-SOFT",
+          "HT-DEV-TREVO-PROVUE"
+        ],
+        "source_ids": [
+          "openfda-pma-p180031-base",
+          "openfda-510k-k252694",
+          "openfda-510k-k223305"
+        ]
+      }
+    ],
+    "development_query_count": 5,
+    "devices": 8,
+    "final_holdout_company_groups": [
+      "Stryker Neurovascular"
+    ],
+    "final_holdout_query_count": 3,
+    "manifest_sha256": "18bd9401c0aaac795a4fbaa697ab438d0440f881b46ad208db51b444a0c667e7",
+    "patents": 24,
+    "path": "results/healthtech/ht-multicompany-20261029-r2",
+    "reference_pairs": 31,
+    "rights_policy_ids": [
+      "boston-scientific-virtual-patent-marking",
+      "cook-medical-patent-marking",
+      "google-patents-pages",
+      "openfda-510k-records",
+      "openfda-pma-records",
+      "stryker-neurovascular-product-marking"
+    ],
+    "unjudged_distractor_pairs": 161
+  },
+  "cook_parent": {
+    "devices": 3,
+    "manifest_sha256": "9799092e125ec37c08cf37e62f6f13c39b88c6180d93a41040164f0f9b36e834",
+    "patents": 4,
+    "path": "results/healthtech/ht-cook-zenith-20261029-r1",
+    "provenance_status": "PASS",
+    "raw_files": 8,
+    "reference_pairs": 5
+  },
+  "format": "ht-cook-expansion-baseline-summary-v1",
+  "interpretation": [
+    "Cook adds a third typed-policy company group while Stryker remains the untouched full-company final holdout.",
+    "K=10 is the discriminating view; K=20 is ceiling-limited by the 24-patent candidate universe.",
+    "Scores are known-link recovery over product-level marking relations; unlisted pairs remain unjudged.",
+    "This is descriptive offline evidence, not semantic relevance gold or a stable generalization estimate."
+  ],
+  "limitations": [
+    "Family mapping remains UNKNOWN_NOT_ASSUMED.",
+    "Cook product-marking evidence and Google-derived patent text remain local-only.",
+    "Live/provider HT-B4 was not run; no paid inference or credentials were used."
+  ],
+  "run_id": "luna-long-run-20261029-cook-expansion-20261029",
+  "runs": {
+    "development": {
+      "candidate_depth": 24,
+      "cohort_manifest_hash": "18bd9401c0aaac795a4fbaa697ab438d0440f881b46ad208db51b444a0c667e7",
+      "devices": 5,
+      "evaluator_validation_sha256": "741c6fb615dc64e2a8d4ee1ba8b74d4a45ef81b99537f84a20dc0b76acc01779",
+      "failed_query_count": 0,
+      "frontier_sha256": "4492e0fcf7443e953d8a64ff0ef4492e6c8bdf53854336c45548632ded63120d",
+      "k": 10,
+      "metrics": {
+        "HT-B0a": 0.9380952380952381,
+        "HT-B0b": 1.0,
+        "HT-B1": 0.9,
+        "HT-B2": 0.7761904761904762,
+        "HT-B3": 0.9
+      },
+      "paid_cost_usd": 0,
+      "path": "results/healthtech/ht-multicompany-baselines-20261029-r2-dev-cook-k10",
+      "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+      "provider_calls": 0,
+      "receipt_sha256": "32ccae0f83d584f5ae38170e364f0d9f2f26cb349ff9f60b5ec4c81ffc55076d",
+      "reference_pairs": 18,
+      "rerank_depth": 24
+    },
+    "final_holdout": {
+      "candidate_depth": 24,
+      "cohort_manifest_hash": "18bd9401c0aaac795a4fbaa697ab438d0440f881b46ad208db51b444a0c667e7",
+      "devices": 3,
+      "evaluator_validation_sha256": "36006fd46955d85cb49886b9dff6dbd98e3d5263a4db73fe2897745fe3559567",
+      "failed_query_count": 0,
+      "frontier_sha256": "f1b06ec15aa3eeafc19c8c8e8c3d3e4471946c45e53803b883e7dd48ec221d4f",
+      "k": 10,
+      "metrics": {
+        "HT-B0a": 0.3333333333333333,
+        "HT-B0b": 0.6666666666666666,
+        "HT-B1": 0.7428571428571429,
+        "HT-B2": 0.7904761904761904,
+        "HT-B3": 0.7904761904761904
+      },
+      "paid_cost_usd": 0,
+      "path": "results/healthtech/ht-multicompany-baselines-20261029-r2-holdout-cook-k10",
+      "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+      "provider_calls": 0,
+      "receipt_sha256": "de8b567da8a688f22d120622a79340a6554e19db68507e15b33d0e092d42cdf0",
+      "reference_pairs": 13,
+      "rerank_depth": 24
+    }
+  },
+  "status": "PASS_OFFLINE_DEVELOPMENT_WITH_THIRD_COMPANY"
+}
