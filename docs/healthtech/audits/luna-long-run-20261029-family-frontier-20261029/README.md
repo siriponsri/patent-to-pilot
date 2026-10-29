@@ -3,6 +3,7 @@
 - Run ID: `luna-long-run-20261029-family-frontier-20261029`
 - Date: `2026-10-29`
 - Tested source commit: `4f4ed62a2649d720d3840aea2e1a8132b11617f2`
+- Committed package revision: `0db213fe46d591bb5c3f83a7d3d188256fe14f0c`
 - Status: `PASS_OFFLINE_FAMILY_FRONTIER_ANALYSIS`
 - Scope: evaluator-side re-projection of the frozen Boston Scientific/Cook development frontier and Stryker company holdout frontier onto the sourced Google family mapping.
 

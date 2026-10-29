@@ -4,6 +4,7 @@
   "date": "2026-10-29",
   "status": "PASS_OFFLINE_FAMILY_FRONTIER_ANALYSIS",
   "tested_source_commit": "4f4ed62a2649d720d3840aea2e1a8132b11617f2",
+  "committed_package_revision": "0db213fe46d591bb5c3f83a7d3d188256fe14f0c",
   "tree_state_at_test": "dirty_with_unrelated_owner_artifacts_preserved",
   "implementation_files": {
     "scripts/healthtech/analyze_family_frontier.py": "2cf79cde78230950b190e8c7a15ff2f9e92e8e9f8d99afdd8b4c574e24c943a3",
