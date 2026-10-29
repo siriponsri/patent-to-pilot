@@ -389,3 +389,11 @@ Integrated the completed M20 four-company leave-one-company-out sensitivity into
 No new retrieval run, data acquisition, semantic label, provider call, network call, or paid cost occurred. This is an evidence-integration package, not semantic gold, pooled inference, generalization proof, or publication readiness.
 
 Next: obtain or authorize the rights-cleared semantic judgment source with explicit labels, source revision/hash, rights/intended-use decisions, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched holdout. Apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or unjudged policy, then rerun HT-B0a/B0b/B1/B2/B3. Keep paid HT-B4 `BLOCKED_LOCAL`, Bridge blocked, and deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused.
+
+## HT-NEXT-043 — 2026-10-30 M22 source landscape screen
+
+Status: `PASS_OFFLINE_SOURCE_SCREENING_NOT_ADMISSIBLE`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/README.md`.
+
+Screened the pinned Bridge release and the public PatSnap PatentBench candidate without downloading corpus payloads. Bridge remains `BLOCKED_LOCAL` under the existing rights/cohort/split audit. PatSnap PatentBench is rejected for HT-T1 task mismatch: it is a patent-query prior-art/design-FTO benchmark, not named medical-device/product-to-patent relevance. No runtime inputs, semantic labels, provider calls, network acquisition, or paid cost changed.
+
+This is a bounded source screen, not an exhaustive dataset review or license opinion. Next: obtain or authorize a semantically aligned rights-cleared device-patent judgment source with explicit labels, source revision/hash, rights/intended-use decisions, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched holdout. Apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or unjudged policy, then rerun HT-B0a/B0b/B1/B2/B3.

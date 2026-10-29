@@ -1,0 +1,56 @@
+{
+  "schema_version": "healthtech-audit-v1",
+  "run_id": "luna-long-run-20261030-source-landscape-20261030",
+  "run_date": "2026-10-30",
+  "status": "PASS_OFFLINE_SOURCE_SCREENING_NOT_ADMISSIBLE",
+  "source_head": "991e9720e04fbf73d8ff29a0e9cf6452fbb81f1e",
+  "scope": {
+    "bounded_public_screen": true,
+    "corpus_downloaded": false,
+    "runtime_inputs_changed": false,
+    "semantic_labels_created": 0,
+    "provider_calls": 0,
+    "network_acquisition_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "candidates": [
+    {
+      "source_id": "bridge-meddevkg",
+      "source_url": "https://github.com/myqqhub/Bridge-MedDevKG/tree/f3990a207949f25012d1070a08ac303e140387e6",
+      "source_revision": "f3990a207949f25012d1070a08ac303e140387e6",
+      "source_kind": "device_patent_knowledge_graph",
+      "decision": "BLOCKED_LOCAL",
+      "reason": "Existing local audit records missing distinct data-license verification, unresolved cohort reconciliation, and absent final split rules."
+    },
+    {
+      "source_id": "patsnap-patent-bench",
+      "source_url": "https://github.com/patsnap/patent-bench/tree/b8e059081883fe2411c308221434842950846f8c",
+      "license_url": "https://github.com/patsnap/patent-bench/blob/b8e059081883fe2411c308221434842950846f8c/LICENSE",
+      "source_revision": "b8e059081883fe2411c308221434842950846f8c",
+      "source_kind": "patent_query_retrieval_benchmark",
+      "decision": "REJECTED_FOR_HT_T1_TASK_MISMATCH",
+      "reason": "The reviewed task is patent-query prior-art/design-FTO retrieval, not named medical-device/product-to-patent relevance. No data was downloaded."
+    },
+    {
+      "source_id": "typed-public-device-cohorts",
+      "source_url": "docs/healthtech/research/SUPPLEMENTAL_DATA.md",
+      "source_revision": "current repo records",
+      "source_kind": "product_disclosure_development_cohort",
+      "decision": "DEVELOPMENT_ONLY",
+      "reason": "Product-level disclosure relations are known-link proxy evidence, not independent semantic relevance gold."
+    }
+  ],
+  "commands": [
+    {
+      "command": "rtk proxy git ls-remote https://github.com/patsnap/patent-bench.git refs/heads/main",
+      "outcome": "PASS: b8e059081883fe2411c308221434842950846f8c"
+    },
+    {
+      "command": "rtk proxy git ls-remote https://github.com/myqqhub/Bridge-MedDevKG.git refs/heads/main refs/tags/*",
+      "outcome": "PASS: f3990a207949f25012d1070a08ac303e140387e6"
+    }
+  ],
+  "existing_rights_evidence": "docs/healthtech/research/BRIDGE_RIGHTS_COHORT.md",
+  "decision": "No admissible replacement was identified in this bounded screen. Do not promote any candidate to HT-T1 runtime or evaluator gold.",
+  "next_action": "Obtain or authorize a semantically aligned rights-cleared device-patent judgment source, then apply ht-relevance-judgment-cohort-v1 without changing the frozen denominator or holdout."
+}

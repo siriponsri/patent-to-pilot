@@ -12,6 +12,10 @@
 | Optional; G2/G6, W04/W18 | [BioASQ participants data](https://participants-area.bioasq.org/datasets/), annual Task b expert questions; paperอธิบายการเพิ่มราว 500 คำถามต่อปี เลือก edition ก่อนใช้ | Portal ระบุ CC BY 2.5; training downloads ต้อง registered user ไม่ลงทะเบียน/รับเงื่อนไขแทน owner ในรอบนี้; rights ของ abstracts/full-text แยก | Question ID, PMID, snippet offsets; pin annual edition, กันคำถาม/บทความซ้ำข้าม dev/final | Biomedical document/snippet retrieval เมื่อ dossier ต้องใช้ literature จริง ไม่รับรอง dossier ทั้งฉบับหรือแทน HT-T1; ไม่ขยายเป็น main QA study |
 | Optional later; G8, W20 | ChEMU, NLI4CT, FiNE-Patents ตาม [paper notes](../../../literature-review/healthtech/READING_NOTES.md) | ChEMU data มี NC restriction; NLI4CT reuse terms ยังต้องตรวจ; FiNE data release/version/license ต้องตรวจเฉพาะก่อนใช้ | Patent/application/family หรือ trial IDs; keep related variants in same split | ใช้เมื่อ branch/task ตรงเท่านั้น ไม่เพิ่มเป็น prerequisite ของ medical-device dossier และไม่ยืม scores ข้าม task |
 
+## Screened but not admitted to HT-T1
+
+PatSnap PatentBench was screened at public commit `b8e059081883fe2411c308221434842950846f8c`. Its repository provides a public non-commercial license notice and human-verified patent-query tasks, but the reviewed task is prior-art/design-FTO retrieval rather than named medical-device/product-to-patent relevance. It is therefore not a semantic HT-T1 replacement, and no dataset payload was downloaded. The source decision is recorded in [`luna-long-run-20261030-source-landscape-20261030`](../audits/luna-long-run-20261030-source-landscape-20261030/README.md).
+
 Negative cases ต้องแยกสามชนิด: verified negative ที่มี annotation ตาม task, unjudged relation ที่ห้ามเรียก negative และ authored corruption สำหรับ software controls SciFact REFUTES/NOINFO ก็ไม่ได้เป็น patent-device non-association ห้ามสร้าง clinical/patent truth ใหม่ด้วย LLM แล้วเรียก independent gold
 
 ## ข้อมูลรองรับ public dossier และบริบทธุรกิจ
