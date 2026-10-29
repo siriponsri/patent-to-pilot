@@ -58,7 +58,8 @@ def _fixed_queries(device) -> list[str]:
     return BASELINES._fixed_queries(device)
 
 
-def _run_controller_device(device, retriever, *, candidate_depth: int, rerank_depth: int, max_steps: int) -> dict:
+def _run_controller_device(device, retriever, *, candidate_depth: int, rerank_depth: int, max_steps: int,
+                           action_selector=None, method_name: str = "HT-B4-OFFLINE") -> dict:
     queries = _fixed_queries(device)
     feature_indices = list(range(1, len(queries)))
     used_features: list[int] = []
@@ -87,8 +88,18 @@ def _run_controller_device(device, retriever, *, candidate_depth: int, rerank_de
             last_disagreement=last_disagreement,
             last_action=actions[-1]["action_type"] if actions else None,
         )
-        action = validate_controller_action(deterministic_controller_action(observation), observation)
-        actions.append({"step_index": step_index, **action.model_dump(mode="json"), "observation": observation.model_dump(mode="json")})
+        raw_action = (
+            deterministic_controller_action(observation)
+            if action_selector is None
+            else action_selector.select(observation)
+        )
+        action = validate_controller_action(raw_action, observation)
+        action_row = {"step_index": step_index, **action.model_dump(mode="json"), "observation": observation.model_dump(mode="json")}
+        if action_selector is not None:
+            receipt = action_selector.take_last_receipt()
+            if receipt is not None:
+                action_row["controller_call"] = receipt
+        actions.append(action_row)
         if action.action_type == "stop":
             stop_reason = action.reason_code
             break
@@ -119,7 +130,7 @@ def _run_controller_device(device, retriever, *, candidate_depth: int, rerank_de
     patents_by_id = {patent.patent_id_canonical: patent for patent in retriever.patents}
     return {
         "query_id": device.query_id,
-        "method": "HT-B4-OFFLINE",
+        "method": method_name,
         "status": status,
         "stop_reason": stop_reason,
         "actions": actions,
