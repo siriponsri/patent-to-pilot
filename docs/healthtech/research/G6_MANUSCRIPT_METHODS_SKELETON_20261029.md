@@ -84,6 +84,22 @@ HT-T2 is a separate evidence-verification component, not device-patent gold. The
 
 Source and evaluator details are in the [HT-T2 audit](../audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/REPORT.md) and its [verification record](../audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/verification.json). These scores are development-only component evidence. They must not be pooled with HT-T1 patent-association recall, used as clinical truth, or presented as an adaptive-method or hidden-test result.
 
+### HT-T2 evaluator-only error profile
+
+The same frozen 300-claim development run was analyzed after scoring using only the evaluator-derived per-claim metrics. The analysis is non-exclusive: one claim can contribute to a partial-retrieval bucket and a rationale or label-mismatch bucket in the same split.
+
+| Failure mode | Claims | Rate |
+|---|---:|---:|
+| Abstract retrieval miss | 78 | 0.2600 |
+| Abstract partial retrieval | 5 | 0.0167 |
+| Abstract rationale mismatch | 20 | 0.0667 |
+| Sentence retrieval miss | 59 | 0.1967 |
+| Sentence partial selection | 46 | 0.1533 |
+| Sentence label mismatch | 38 | 0.1267 |
+| Claims with no abstract/sentence gold evidence | 112 | 0.3733 |
+
+This profile separates retrieval failure from rationale/label mismatch and keeps no-gold-evidence claims out of the retrieval-miss bucket. It is a descriptive development diagnostic, not a new metric, a patent-device label source, or evidence of clinical truth. The reproducible analysis artifact is [`luna-long-run-20261029-ht-t2-error-analysis-20261029`](../audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/README.md).
+
 ## Provider-shaped mock table
 
 | Metric | Actual value |

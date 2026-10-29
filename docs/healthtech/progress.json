@@ -285,14 +285,19 @@
       "id": "HT-M17-TYPED-RIGHTS-OFFLINE-BASELINES",
       "status": "PASS_OFFLINE_DEVELOPMENT_TYPED_RIGHTS",
       "evidence": "Added the recoverable legacy-cohort typed-rights migration and explicit all-channel boundary matrix at implementation commit 7def4ff. The derived Abbott cohort changes 45/45 registry rows, preserves the original cohort, and binds abbott-product-patent-disclosures, google-patents-pages, and openfda-pma-records. The exact-head focused suite passes 57 tests and in-memory syntax compilation covers 147 Python files. Corrected HT-B0a/B0b/B1/B2/B3 development baselines complete for 3 devices, 41 patents, 61 reference pairs, and 62 unjudged distractors with 0 errors, 0 provider calls, and USD 0.00 paid cost. Canonical audit: docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/"
+    },
+    {
+      "id": "HT-M18-SCIFACT-ERROR-ANALYSIS",
+      "status": "PASS_COMPONENT_ERROR_ANALYSIS_DEV_ONLY",
+      "evidence": "Added a deterministic evaluator-only HT-T2 error analyzer and regression suite. The current 300-claim/5,183-document dev run is hash-bound to its prediction manifest, score, corpus, and claims; it reports non-exclusive abstract and sentence retrieval/rationale/label failure buckets, makes no patent-device labels, and uses 0 provider calls with USD 0.00 paid cost. The G6 skeleton and budget request now reflect the actual current HT-T2 score and diagnostic. Canonical audit: docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/"
     }
   ],
-  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_AND_M17_TYPED_RIGHTS_OFFLINE_BASELINES",
+  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_AND_M18_SCIFACT_ERROR_ANALYSIS",
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M17 typed-rights migration and the corrected Abbott HT-B0a/B0b/B1/B2/B3 offline development frontier are complete with no extra spend. Results remain descriptive only: 3 devices, 41 patents, 61 disclosed pairs, 62 unjudged distractors, two exact groups, and no final holdout. Next obtain or authorize a rights-cleared independent cohort with multiple company/family groups and a predeclared untouched holdout, then ingest explicit semantic labels through ht-relevance-judgment-cohort-v1 before any pooled scientific claim. Keep Bridge, live/provider HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
+  "next": "M18 added a hash-bound evaluator-only HT-T2 error profile over the existing 300-claim SciFact dev run with no extra spend. It remains a separate component diagnostic, not HT-T1 gold or a hidden-test score. The next scientific discriminator is still a rights-cleared device-patent judgment source with explicit labels, multiple company/family groups, frozen denominators, and a predeclared untouched holdout. Keep Bridge, live/provider HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
@@ -337,6 +342,8 @@
   "latest_typed_rights_cohort": "results/healthtech/ht-public-cohort-20261029-frozen-r2-typed/manifest.json",
   "latest_m17_baseline_receipt": "results/healthtech/ht-real-baselines-20261029-m17-r2/receipt.json",
   "latest_m17_baseline_frontier": "results/healthtech/ht-real-baselines-20261029-m17-r2/frontier_diagnostics.json",
+  "latest_scifact_error_analysis": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/README.md",
+  "latest_scifact_error_analysis_output": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r4-error-analysis/analysis.json",
   "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/README.md",
   "latest_group_uncertainty_audit": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/README.md",
   "latest_group_uncertainty_analysis": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/analysis.json",

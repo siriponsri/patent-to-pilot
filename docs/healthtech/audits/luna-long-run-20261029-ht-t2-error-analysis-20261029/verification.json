@@ -1,0 +1,84 @@
+{
+  "format": "ht-m18-scifact-error-analysis-verification-v1",
+  "run_id": "luna-long-run-20261029-ht-t2-error-analysis-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_COMPONENT_ERROR_ANALYSIS_DEV_ONLY",
+  "parent_audit": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/verification.json",
+  "checks": {
+    "prediction_manifest_bound": true,
+    "score_bound": true,
+    "corpus_bound": true,
+    "dev_labels_loaded_after_prediction": true,
+    "claim_count": 300,
+    "corpus_documents": 5183,
+    "missing_prediction_claim_ids": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "network_calls": 0,
+    "bucket_counts_non_exclusive": true,
+    "claim_text_staged": false,
+    "patent_device_gold_created": false
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_scifact_error_analysis.py",
+      "exit_code": 0,
+      "outcome": "3 passed"
+    },
+    {
+      "command": "rtk proxy python -B -c \"compile the new analyzer and test in memory\"",
+      "exit_code": 0,
+      "outcome": "2 targeted Python files compiled"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/analyze_scifact_errors.py --manifest results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3/prediction_manifest.json --score results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3/score.json --release-root data/raw/healthtech/scifact/release --output results/healthtech/ht-t2-scifact-lexical-dev-20261029-r4-error-analysis",
+      "exit_code": 0,
+      "outcome": "PASS_COMPONENT_ERROR_ANALYSIS_DEV_ONLY; 300 claims analyzed"
+    }
+  ],
+  "inputs": {
+    "prediction_manifest": {
+      "path": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3/prediction_manifest.json",
+      "sha256": "9cd257aac49156a34a646037cc75714be8832a49af0b6da48d41677c52da3067"
+    },
+    "score": {
+      "path": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3/score.json",
+      "sha256": "7c88a182af2c1d3fe3a2074337abf0e1be5b567870f99ad6e4e0373ad613a730"
+    },
+    "predictions": {
+      "path": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r3/predictions.jsonl",
+      "sha256": "1d191fcd1e86a92caf57c93abbaec3c0a8da7b8a2e6c6b0fbad5a60138b4a1ee"
+    },
+    "corpus": {
+      "sha256": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62"
+    },
+    "claims_dev": {
+      "sha256": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217"
+    }
+  },
+  "outputs": {
+    "analysis": {
+      "path": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r4-error-analysis/analysis.json",
+      "sha256": "05392470ba6389383e6f3bf5e193df8f66b646af99e9ef660469741bd11f147f"
+    },
+    "claim_buckets": {
+      "path": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r4-error-analysis/claim_buckets.jsonl",
+      "sha256": "4d48757618051595a7009e7510625c16b582124e844c84a83c4e9b1cc25d6c50"
+    }
+  },
+  "error_buckets": {
+    "abstract_retrieval_miss": {"count": 78, "rate": 0.26},
+    "abstract_partial_retrieval": {"count": 5, "rate": 0.016666666666666666},
+    "abstract_rationale_mismatch": {"count": 20, "rate": 0.06666666666666667},
+    "sentence_retrieval_miss": {"count": 59, "rate": 0.19666666666666667},
+    "sentence_partial_selection": {"count": 46, "rate": 0.15333333333333332},
+    "sentence_label_mismatch": {"count": 38, "rate": 0.12666666666666668},
+    "no_gold_evidence": {"count": 112, "rate": 0.37333333333333335}
+  },
+  "not_run": [
+    "Official hidden/test score",
+    "Adaptive or provider inference",
+    "Device-patent semantic relevance gold",
+    "Clinical, FTO, validity, investment, or publication conclusions"
+  ]
+}
