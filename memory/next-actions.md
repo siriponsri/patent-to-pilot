@@ -83,3 +83,13 @@ Status: `PASS_OFFLINE_ANALYSIS`; canonical audit: `docs/healthtech/audits/luna-l
 At pushed source head `cf613c08c9eeee340645cd6eb46d2aebe0c983ac`, the deterministic Abbott/Boston comparator reran over the existing frozen HT-B0a/B0b/B1/B2/B3 artifacts with zero validation issues. It verified the common five-method set, primary `K=20`, fixed-prefix alignment, input hashes, zero frontier failures, and descriptive-only cross-cohort interpretation. No neural inference, acquisition, provider call, or paid cost was incurred.
 
 HT-T2 remains `NOT_RUN`: the repository contains SciFact evaluator parity receipts but no current-run prediction source plus denominator manifest. The next scientific discriminator is a rights-cleared cohort with multiple independent company/family groups and a predeclared final holdout. Keep Abbott/Boston development-only, keep unjudged links out of negative labels, and keep live/provider HT-B4 `BLOCKED_LOCAL`.
+
+## HT-NEXT-013 — 2026-10-29 budget/data expansion request
+
+Status: `PASS_DOCUMENTATION_DRAFT_NO_EXTRA_SPEND`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/README.md`.
+
+Filled `docs/healthtech/goals/luna-long-run-20261028-889958e/BUDGET_EXPANSION_REQUEST_TH.md` from the current M1/M3/M4 and offline HT-B4 evidence. The draft requests `$0.00` incremental API authorization now, preserves the existing R1 `$8.00` policy, and records that current provider calls and paid cost are `0` while live pricing/identity/credit/transfer/reconciliation gates remain `NOT_RUN` or `BLOCKED_LOCAL`. It does not inspect or mutate the private budget journal.
+
+The draft recommends rights-cleared cohort expansion with multiple independent company/family groups and a predeclared final holdout before any future paid request. HT-T2 remains `NOT_RUN`; Abbott and Boston remain development-only; no extra spend was dispatched.
+
+Next: execute only the offline rights/cohort/holdout package, then revisit a paid request after exact current pricing, provider identity, transfer rights, payload bounds, and ledger reconciliation are evidenced.

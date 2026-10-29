@@ -1,0 +1,76 @@
+{
+  "format": "healthtech-budget-expansion-request-receipt-v1",
+  "run_id": "luna-long-run-20261029-budget-expansion-request-20261029",
+  "status": "PASS_DOCUMENTATION_DRAFT",
+  "candidate_source_head": "7568fd94257a72665c862926e61bc628aa430924",
+  "remote_main_before_edit": "7568fd94257a72665c862926e61bc628aa430924",
+  "scope": "filled non-submitted budget/data expansion request; no provider or paid action",
+  "authorization": {
+    "preserved_round1_id": "PTP-HT-OR-R1-20261028-USD8",
+    "preserved_total_cap_usd": "8.00",
+    "preserved_admission_threshold_usd": "7.00",
+    "incremental_request_usd": "0.00",
+    "extra_spend_dispatched": false,
+    "private_budget_journal": "NOT_INSPECTED",
+    "new_reservation_created_by_package": false
+  },
+  "observed_evidence": {
+    "provider_calls": 0,
+    "paid_cost_usd": "0.00",
+    "abbott_devices": 3,
+    "abbott_patents": 41,
+    "abbott_disclosed_pairs": 61,
+    "abbott_unjudged_distractor_pairs": 62,
+    "abbott_exact_patent_groups": 2,
+    "abbott_company_groups": 1,
+    "boston_devices": 2,
+    "boston_patents": 7,
+    "boston_disclosed_pairs": 13,
+    "boston_unjudged_distractor_pairs": 1,
+    "boston_exact_patent_groups": 1,
+    "boston_company_groups": 1,
+    "final_holdout": "NONE_IN_CURRENT_DEVELOPMENT_COHORTS",
+    "ht_t2_scoring": "NOT_RUN",
+    "live_ht_b4": "BLOCKED_LOCAL"
+  },
+  "source_paths": [
+    "docs/healthtech/goals/luna-long-run-20261028-889958e/BUDGET_EXPANSION_REQUEST_TH.md",
+    "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/REPORT.md",
+    "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/verification.json",
+    "docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0/comparison.json",
+    "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/REPORT.md",
+    "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/README.md",
+    "memory/next-actions.md",
+    "docs/healthtech/progress.json"
+  ],
+  "artifact_sha256": {
+    "docs/healthtech/goals/luna-long-run-20261028-889958e/BUDGET_EXPANSION_REQUEST_TH.md": "21431b0b53ff0fc7a5f3e57ba26b7a2643aeba2a77d4372371c57e28a4243d3c",
+    "docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/README.md": "fa41680d16c918d0f7a07b523f69e918b75b51f8f0711ff44a1b4ac1a0d30c8e",
+    "docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/NEXT_ACTIONS.md": "ccf5cb8621760a18d550e7cf1e7cab15d69af500cb917003c4f0b2df4b9e2182",
+    "docs/healthtech/progress.json": "781cb4d2ca616d431d7ad29d2298e5a496bdc12bef18656d65bd7a0307ac21ad",
+    "memory/next-actions.md": "282bdf97f3622d86c2b8a168bc0b2ba36fc45c192a460184c91552e65f6d71b5"
+  },
+  "checks": [
+    {
+      "name": "template_filled_without_placeholders",
+      "status": "PASS",
+      "observed": "No template placeholder tokens were found in the filled request."
+    },
+    {
+      "name": "json_parse",
+      "status": "PASS",
+      "observed": "progress.json and verification.json parsed successfully."
+    },
+    {
+      "name": "link_and_scope_review",
+      "status": "PASS",
+      "observed": "All referenced local evidence paths exist; git diff --check returned exit code 0."
+    }
+  ],
+  "limits": [
+    "No current OpenRouter pricing or model/provider metadata was asserted.",
+    "No private ledger balance or unresolved reservation amount was asserted.",
+    "Current Abbott and Boston cohorts remain development-only and non-comparable for pooled scientific claims.",
+    "No semantic relevance gold, exhaustive recall, clinical/FTO, patent validity, investment merit, or publication readiness claim is made."
+  ]
+}

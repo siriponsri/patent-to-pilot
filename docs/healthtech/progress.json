@@ -147,6 +147,11 @@
       "evidence": "Pinned local SciFact release receipt plus 3 valid-case/4-metric parity against upstream evaluator commit 68b98a56d93e0f9da0d2aab4e6c3294699a0f72e at docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/"
     },
     {
+      "id": "HT-DATA-EXPANSION-REQUEST",
+      "status": "PASS_DOCUMENTATION_DRAFT_NO_EXTRA_SPEND",
+      "evidence": "Filled non-submitted budget/data expansion request grounded in current offline cohort, M4 policy, M1 revalidation, and M3 freeze evidence; incremental API request is USD 0.00 pending rights-cleared groups, final holdout, current pricing/identity, and transfer gates at docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/"
+    },
+    {
       "id": "HT-W13",
       "status": "PLANNED",
       "evidence": "no no-code interface implemented"
@@ -167,7 +172,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M1 current-head revalidation and M3 deterministic freeze receipt are PASS_ENGINEERING/PASS_OFFLINE_ANALYSIS; HT-T2 scoring remains NOT_RUN because no current prediction artifact and denominator manifest exist. Live provider/canary remains NOT_RUN pending current OpenRouter metadata, credential/credit, transfer-rights, and readiness gates. Next add a rights-cleared cohort with multiple independent company/family groups and a final holdout while keeping Abbott/Boston development-only and Claude UX/UI paused",
+  "next": "M1 current-head revalidation, M3 deterministic freeze, and the filled non-submitted budget/data expansion request are complete with no extra spend. HT-T2 scoring remains NOT_RUN because no current prediction artifact and denominator manifest exist. Live provider/canary remains BLOCKED_LOCAL pending current OpenRouter metadata, credential/credit, transfer-rights, payload, and reconciliation gates. Next add a rights-cleared cohort with multiple independent company/family groups and a final holdout while keeping Abbott/Boston development-only and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
@@ -185,6 +190,7 @@
   "latest_m4_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/README.md",
   "latest_b4_offline_controller_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/README.md",
   "latest_scifact_differential": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/README.md",
+  "latest_budget_data_request": "docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/README.md",
   "latest_cohort_provenance_verification": [
     "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/boston-provenance-verification.json",
     "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/abbott-provenance-verification.json",
