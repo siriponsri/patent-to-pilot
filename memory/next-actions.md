@@ -16,6 +16,16 @@ Main Bridge study: `BLOCKED_LOCAL` on reuse rights/cohort reconciliation/split r
 
 Remaining: Bridge or equivalent rights-cleared main corpus, final holdout/generalization design, broader independent groups, live-provider B4 (not authorized), Claude UI integration, clinical/FTO analysis, deployment, customer validation and manuscript. Do not infer COMPLETE from file names or passing development tests
 
+## HT-NEXT-007 — 2026-10-29 M4 R1 policy seam
+
+Status: `PASS_ENGINEERING_OFFLINE`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/README.md`.
+
+Implemented a separate versioned OpenRouter R1 policy/runner with an $8.00 total authorization, $7.00 admission threshold, $0.40/$5.40/$1.20 phase caps, exact model/provider and pricing-snapshot binding, zero retries, concurrency-one assumptions, and durable pre-send SQLite reservations. The historical `ptp-owner-5usd-20261027` policy/hash path remains unchanged and old-policy databases fail closed under R1.
+
+Synthetic regressions cover two-writer reservation races, commit-before-send, crash-after-reservation, timeout/unknown billing, duplicate attempt replay, malformed/negative/NaN/infinite costs, observed-cost overruns, model/provider drift, billed schema failure, and policy-version mismatch. Full tests pass with explicit `PYTHONPATH=src`; no provider calls, credentials, paid inference, or dataset transfers occurred.
+
+Next: produce a current-head SciFact differential and M3 freeze/evaluator receipts; only consider the sequential canary after current OpenRouter metadata/pricing, approved credential/credit, public-transfer rights, exact payload bounds, and balance/reconciliation gates pass. Keep paid branch `BLOCKED_LOCAL` until those gates are evidenced.
+
 Audit follow-up: public regression selection now includes all published provider security modules; paired tests use mock-seeded tmp journals. Original 262-local/185-clean receipt remains a dated record. See `docs/healthtech/REPRODUCIBILITY_AUDIT.md` for corrected clean-checkout evidence. Research/product next actions above are unchanged.
 
 HT-NEXT-005 outcome: implementation commit `3177478c67f654f3f4d7c891e055a8ae72541162` passes the clean-checkout A/B/C backend suite with authored temporary Abbott and provenance fixtures, without ignored `results/healthtech` data or the model cache. The `displayable_fields` source-view leak is fixed and covered. Malformed manifest/evaluator surfaces are intentionally ignored by the adapter. Real local-corpus integration is `NOT_RUN`; this engineering result does not change Bridge, final-holdout, scientific, licensing, clinical/FTO, deployment, provider, or UI boundaries.

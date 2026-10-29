@@ -1,0 +1,44 @@
+{
+  "run_id": "luna-long-run-20261029-m4-r1-4c863d0",
+  "base_commit": "4c863d0a01d8fc7211682745786a35f1474963f5",
+  "candidate_commit": "PENDING_SCOPED_COMMIT",
+  "status": "PASS_ENGINEERING_OFFLINE",
+  "provider_calls": 0,
+  "paid_cost_usd": 0,
+  "policy": {
+    "version": "ptp-ht-openrouter-r1-20261028-usd8-v1",
+    "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+    "total_cap_nano_usd": 8000000000,
+    "admission_threshold_nano_usd": 7000000000,
+    "phase_caps_nano_usd": {
+      "canary": 400000000,
+      "paired_pilot": 5400000000,
+      "robustness": 1200000000
+    },
+    "max_concurrency": 1,
+    "retries": 0,
+    "unknown_billing": "block"
+  },
+  "source_sha256": {
+    "src/patent_to_pilot/providers/__init__.py": "572a46b8e02a5a2f213c9ba75237a8aea7c2cc0b5ff82313e9dc7b9762f22bd4",
+    "src/patent_to_pilot/providers/project_budget.py": "30daeb9e91d895727400ecd011b206c7ba914b975d296866ece76d97a9a4e9b0",
+    "src/patent_to_pilot/providers/round1.py": "af64aad7e2212446e518b02a15c3fba6c85094ef816013e415ece05d25c381cc",
+    "tests/test_healthtech_round1_budget.py": "2c6b2a3fff447b65ad15eafa8fa4319dc56052d8f2ea1e710ff47430c4074b48"
+  },
+  "checks": [
+    {"name": "focused_r1_and_legacy_budget", "command": "python -m pytest -q tests/test_healthtech_round1_budget.py tests/test_longrun_offline_v2.py", "status": "PASS", "observed": "40 passed"},
+    {"name": "provider_regressions", "command": "python -m pytest -q tests/test_provider_adapter.py tests/test_provider_identity.py tests/test_release_budget_process.py tests/test_provider_env_file.py tests/test_provider_recovery.py tests/test_provider_pilot.py tests/test_provider_paired.py with PYTHONPATH=src", "status": "PASS"},
+    {"name": "full_suite", "command": "python -m pytest -q tests with PYTHONPATH=src propagated", "status": "PASS"},
+    {"name": "compileall", "command": "python -m compileall -q src tests", "status": "PASS"},
+    {"name": "diff_check", "command": "git diff --check", "status": "PASS"},
+    {"name": "historical_policy_hash", "command": "ProjectBudget POLICY hash recomputation", "status": "PASS"}
+  ],
+  "boundaries": {
+    "live_canary": "NOT_RUN",
+    "paid_pilot": "NOT_RUN",
+    "current_openrouter_metadata": "NOT_RUN",
+    "credential_or_balance_check": "NOT_RUN",
+    "scifact_current_head_differential": "NOT_RUN",
+    "bridge_study": "BLOCKED_LOCAL"
+  }
+}

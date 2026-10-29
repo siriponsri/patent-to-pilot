@@ -42,16 +42,20 @@ class ProjectBudget:
     never duplicates a charge; reserve replay never authorizes another send.
     No raw prompt, key, response body or exception text is stored here.
     """
-    def __init__(self, path: Path):
+    def __init__(self, path: Path, *, policy: dict | None = None):
         self.path = Path(path)
+        self.policy = json.loads(json.dumps(POLICY if policy is None else policy, sort_keys=True))
+        self.policy_hash = hashlib.sha256(json.dumps(self.policy, sort_keys=True).encode()).hexdigest()
+        self.models = dict(self.policy["models"])
+        self.admission_threshold_nano_usd = int(self.policy.get("admission_threshold_nano_usd", self.policy["incremental_cap_nano_usd"]))
         self.db = sqlite3.connect(self.path, timeout=10, isolation_level=None)
         self.db.execute("PRAGMA busy_timeout=10000")
         self.db.executescript("CREATE TABLE IF NOT EXISTS budget_meta(policy_hash TEXT NOT NULL); CREATE TABLE IF NOT EXISTS budget_attempts(attempt_id TEXT PRIMARY KEY, phase TEXT NOT NULL, model TEXT NOT NULL, payload_sha256 TEXT NOT NULL, reserved INTEGER NOT NULL, actual INTEGER, state TEXT NOT NULL, breach INTEGER NOT NULL DEFAULT 0);")
         with self.transaction():
             hashes = self.db.execute("SELECT policy_hash FROM budget_meta").fetchall()
             if not hashes:
-                self.db.execute("INSERT INTO budget_meta VALUES(?)", (POLICY_HASH,))
-            elif hashes != [(POLICY_HASH,)]:
+                self.db.execute("INSERT INTO budget_meta VALUES(?)", (self.policy_hash,))
+            elif hashes != [(self.policy_hash,)]:
                 raise ValueError("budget policy mismatch; cannot reset/rebind history")
 
     def close(self):
@@ -69,7 +73,7 @@ class ProjectBudget:
 
     def _snapshot(self):
         rows = self.db.execute("SELECT attempt_id,phase,model,payload_sha256,reserved,actual,state,breach FROM budget_attempts ORDER BY attempt_id").fetchall()
-        usage = {p: 0 for p in POLICY["phase_caps_nano_usd"]}
+        usage = {p: 0 for p in self.policy["phase_caps_nano_usd"]}
         actual, pending, breach = 0, [], False
         for aid, phase, model, sha, reserved, cost, state, overrun in rows:
             usage[phase] += reserved if state != "settled" else cost
@@ -77,9 +81,17 @@ class ProjectBudget:
             if state != "settled":
                 pending.append(aid)
             breach |= bool(overrun)
-        return {"policy_sha256": POLICY_HASH, "attempts": len(rows), "actual_nano_usd": actual,
-            "committed_nano_usd": sum(usage.values()), "phase_committed_nano_usd": usage,
-            "unknown_or_pending": pending, "breach": breach, "dispatch_blocked": breach or bool(pending)}
+        committed = sum(usage.values())
+        admission_closed = committed > self.admission_threshold_nano_usd
+        return {"policy_sha256": self.policy_hash, "policy_version": self.policy["version"],
+            "authorization_id": self.policy.get("authorization_id"), "attempts": len(rows), "actual_nano_usd": actual,
+            "committed_nano_usd": committed, "phase_committed_nano_usd": usage,
+            "admission_threshold_nano_usd": self.admission_threshold_nano_usd,
+            "authorization_cap_nano_usd": self.policy["incremental_cap_nano_usd"],
+            "remaining_to_admission_nano_usd": max(self.admission_threshold_nano_usd - committed, 0),
+            "remaining_to_authorization_nano_usd": max(self.policy["incremental_cap_nano_usd"] - committed, 0),
+            "unknown_or_pending": pending, "breach": breach, "admission_closed": admission_closed,
+            "dispatch_blocked": breach or bool(pending) or admission_closed}
 
     def snapshot(self):
         with self.transaction():
@@ -90,7 +102,7 @@ class ProjectBudget:
                 data_class: str, subsequent_released: bool = False):
         if not re.fullmatch(r"[A-Za-z0-9_-]{1,100}", attempt_id) or not re.fullmatch(r"[a-f0-9]{64}", payload_sha256):
             raise ValueError("safe attempt ID and exact payload hash required")
-        if phase not in POLICY["phase_caps_nano_usd"] or MODELS.get(model) != provider or data_class not in {"synthetic", "public"}:
+        if phase not in self.policy["phase_caps_nano_usd"] or self.models.get(model) != provider or data_class not in {"synthetic", "public"}:
             raise ValueError("unapproved phase, model, provider or data class")
         if bound_verified is not True:
             raise BudgetExceededError("verified full-request price/token bound required")
@@ -105,7 +117,7 @@ class ProjectBudget:
             state = self._snapshot()
             if state["dispatch_blocked"]:
                 raise BudgetExceededError("dispatch blocked by pending billing or breach")
-            if state["committed_nano_usd"] + reserved > POLICY["incremental_cap_nano_usd"] or state["phase_committed_nano_usd"][phase] + reserved > POLICY["phase_caps_nano_usd"][phase]:
+            if state["committed_nano_usd"] + reserved > self.admission_threshold_nano_usd or state["phase_committed_nano_usd"][phase] + reserved > self.policy["phase_caps_nano_usd"][phase]:
                 raise BudgetExceededError("shared project/phase cap exceeded")
             self.db.execute("INSERT INTO budget_attempts(attempt_id,phase,model,payload_sha256,reserved,state) VALUES(?,?,?,?,?,'pending')", (attempt_id,phase,model,payload_sha256,reserved))
         return attempt_id
@@ -125,7 +137,7 @@ class ProjectBudget:
             else:
                 self.db.execute("UPDATE budget_attempts SET actual=?,state=? WHERE attempt_id=?", (cost, "settled" if cost is not None else "unknown_pending", attempt_id))
                 totals = self._snapshot()
-                breach = cost is not None and (cost > reserved or totals["committed_nano_usd"] > POLICY["incremental_cap_nano_usd"] or any(totals["phase_committed_nano_usd"][p] > cap for p,cap in POLICY["phase_caps_nano_usd"].items()))
+                breach = cost is not None and (cost > reserved or totals["committed_nano_usd"] > self.policy["incremental_cap_nano_usd"] or any(totals["phase_committed_nano_usd"][p] > cap for p,cap in self.policy["phase_caps_nano_usd"].items()))
                 if breach:
                     self.db.execute("UPDATE budget_attempts SET breach=1 WHERE attempt_id=?", (attempt_id,))
         if breach:
@@ -153,7 +165,8 @@ class BudgetedTransport:
     def send(self, *, config, request):
         from .paired import body_hash
         binding = self.binding
-        if config.retries != 0 or config.routing_only != [MODELS.get(config.model)] or config.allow_fallbacks or not config.require_parameters:
+        expected_provider = self.budget.models.get(config.model)
+        if config.retries != 0 or config.routing_only != [expected_provider] or config.allow_fallbacks or not config.require_parameters:
             raise ValueError("exact route, no fallback/retries and required parameters mandatory")
         if request.cost_upper_bound_usd is None or money(request.cost_upper_bound_usd) != money(binding["upper_bound_usd"]):
             raise ValueError("request reservation differs from bound manifest")
