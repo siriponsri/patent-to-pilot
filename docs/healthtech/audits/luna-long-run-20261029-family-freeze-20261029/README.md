@@ -3,7 +3,7 @@
 - Run ID: `luna-long-run-20261029-family-freeze-20261029`
 - Date: `2026-10-29`
 - Tested source commit: `1e1c463787bf1a494c6d9c99367cebda5a2bfea5`
-- Candidate package commit: `PENDING_FIRST_COMMIT`
+- Candidate package commit: `1e72bfe3f9d30683847212ca7d8a5a096829f9f5`
 - Status: `PASS_OFFLINE_ANALYSIS`
 - Scope: deterministic family-aware freeze of the Boston Scientific, Stryker Neurovascular, and Cook Medical composite cohort.
 - Parent context: sourced family mapping and family-aware frontier re-projection remain evaluator-side sensitivity packages; Bridge acquisition and live/provider HT-B4 remain `BLOCKED_LOCAL`.

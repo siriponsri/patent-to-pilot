@@ -4,7 +4,7 @@
   "date": "2026-10-29",
   "status": "PASS_OFFLINE_ANALYSIS",
   "tested_source_commit": "1e1c463787bf1a494c6d9c99367cebda5a2bfea5",
-  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "candidate_package_commit": "1e72bfe3f9d30683847212ca7d8a5a096829f9f5",
   "tree_state_at_test": "dirty_with_scoped_family_freeze_changes_and_unrelated_owner_artifacts_preserved",
   "implementation_files": {
     "scripts/healthtech/compose_multicompany_cohort.py": "ebed14ef5a9699b2db556a35921549b5cc6ea074abaf3a052b5792d6e17d04f7",
