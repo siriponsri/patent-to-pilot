@@ -1,0 +1,55 @@
+{
+  "format": "ht-current-head-integration-contract-refresh-v1",
+  "run_id": "luna-long-run-20261030-integration-contract-refresh-20261030",
+  "run_date": "2026-10-30",
+  "status": "PASS_CURRENT_HEAD_BACKEND_CONTRACT_UI_PENDING",
+  "parent_contract": "docs/healthtech/integration/luna-g3-20261028-28dfb1d/adapter-contract.json",
+  "parent_contract_head": "b26f9138d2c36e36195755162c092088f23e9be4",
+  "candidate_commit": "8f2e0fe1c913ab3acc78869c82bd6f729e01b596",
+  "current_contract": "docs/healthtech/integration/luna-g3-current-head-20261030-8f2e0fe/adapter-contract.json",
+  "current_contract_sha256": "a199bf3bb71b82e3f55629af1c278b580c339131543a06790c549dd87e974fb9",
+  "drift": {
+    "parent_head_stale": true,
+    "backend_source_hashes_drifted": 6,
+    "sanitized_fixture_hashes_drifted": 0,
+    "historical_parent_mutated": false
+  },
+  "checks": [
+    {
+      "name": "contract_refresh_tests",
+      "command": "rtk proxy python -B -m pytest -q tests/test_healthtech_integration_contract.py",
+      "status": "PASS",
+      "observed": "4 passed"
+    },
+    {
+      "name": "backend_regressions",
+      "command": "rtk proxy python -B -m pytest tests/test_healthtech.py tests/test_healthtech_repairs.py tests/test_healthtech_pilot_task.py tests/test_healthtech_cook.py tests/test_healthtech_philips_dossiers.py --disable-warnings",
+      "status": "PASS",
+      "observed": "82 passed, 1 warning in 9.47s"
+    },
+    {
+      "name": "cli_refresh",
+      "command": "rtk proxy python -B scripts/healthtech/refresh_integration_contract.py --parent-contract docs/healthtech/integration/luna-g3-20261028-28dfb1d/adapter-contract.json --output docs/healthtech/integration/luna-g3-current-head-20261030-8f2e0fe/adapter-contract.json --code-head 8f2e0fe1c913ab3acc78869c82bd6f729e01b596 --date 2026-10-30",
+      "status": "PASS",
+      "observed": "6 backend hashes recomputed; 3 fixture hashes verified"
+    },
+    {
+      "name": "compile_and_diff",
+      "command": "rtk proxy python -B -m compileall -q scripts/healthtech/refresh_integration_contract.py tests/test_healthtech_integration_contract.py; rtk proxy powershell -NoProfile -Command \"git diff --check\"",
+      "status": "PASS",
+      "observed": "exit code 0"
+    }
+  ],
+  "boundaries": {
+    "provider_calls": 0,
+    "network_calls_for_project_execution": 0,
+    "credentials_read": 0,
+    "paid_cost_usd": 0.0,
+    "claude_ui_worktree_modified": false,
+    "http_service_implemented": false,
+    "browser_validation": "NOT_RUN",
+    "semantic_judgment_source": "BLOCKED_LOCAL",
+    "live_ht_b4": "BLOCKED_LOCAL"
+  },
+  "next_action": "Use the refreshed current-head contract for any future backend/UI integration review, while keeping the paused UI, live provider branch, and semantic judgment source blockers separate."
+}

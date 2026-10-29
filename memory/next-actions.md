@@ -447,3 +447,11 @@ Revalidated the versioned OpenRouter R1 policy and durable budget seam at candid
 No credentials were read, no provider or network calls were made, no restricted payload was acquired, and paid cost is `USD 0.00`. This closes offline engineering readiness only; it does not verify current model/provider metadata, pricing, credits, credentials, transfer rights, live compatibility, billing reconciliation, scientific HT-B4 benefit, or semantic device-patent gold.
 
 Next: keep live/provider HT-B4 `BLOCKED_LOCAL`; obtain current metadata/pricing and explicit live admission only if later needed. The primary scientific next action remains owner authorization and exact schema access for Zenodo record `21101400` or another admissible semantic source, followed by M23, M25, M24, and frozen-control reruns without changing the denominator, holdout, or unjudged policy.
+
+## HT-NEXT-050 — 2026-10-30 M29 current-head backend integration contract refresh
+
+Status: `PASS_CURRENT_HEAD_BACKEND_CONTRACT_UI_PENDING`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-integration-contract-refresh-20261030/README.md`.
+
+Refreshed the historical G3 integration contract without mutating the parent handoff. The current contract at `docs/healthtech/integration/luna-g3-current-head-20261030-8f2e0fe/adapter-contract.json` binds tested backend commit `8f2e0fe1c913ab3acc78869c82bd6f729e01b596`, recomputes six backend source hashes, and verifies three unchanged sanitized fixture hashes. The utility fails closed on unsafe paths, malformed hashes, missing files, fixture drift, invalid Git heads, and output overwrite. Focused contract tests pass `4/4`; backend/repair/dossier/pilot regressions pass `82` tests with one warning; compile and diff checks pass.
+
+No provider calls, network acquisition, credential reads, restricted payload acquisition, or paid cost occurred. Use the refreshed contract for future backend/UI integration review. Keep Claude UX/UI paused, live/provider HT-B4 `BLOCKED_LOCAL`, and semantic device-patent evaluation blocked pending owner authorization and exact schema access for Zenodo record `21101400` or another admissible source.
