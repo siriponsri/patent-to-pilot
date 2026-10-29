@@ -421,3 +421,11 @@ Status: `PASS_ENGINEERING_OFFLINE_BOUNDED_LOCAL_STAGING`; canonical audit: `docs
 Added the local-only `source_acquisition.py` boundary and `acquire_semantic_source.py` CLI at implementation commit `6e6eb0deb0a51ee9883165f124992c7e7d57cf38`. The helper validates M23 authorization first, binds the exact `ht-semantic-source-snapshot-v1` file-inventory hash, enforces exact byte/file counts and maxima, rejects source/destination overlap, stages atomically under the declared storage path, resumes matching partial files, and records per-file hashes/checkpoints. Focused authorization/acquisition/judgment/submission/G6 tests pass `25/25`; compilation and `git diff --check` pass.
 
 The synthetic smoke used two authored files totaling 12 bytes and passed complete staging, verified-file reuse, interrupted partial resume, and CLI execution. No real source, semantic labels, provider/network calls, or paid cost occurred. Next: obtain an owner-authorized source, pass M23 and M25, run M24 ingest, inspect the real validation report, and only then rerun the frozen controls. Keep Bridge, paid HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused or blocked.
+
+## HT-NEXT-047 — 2026-10-30 M26 semantic source landscape expansion
+
+Status: `PASS_OFFLINE_SOURCE_SCREENING_NO_ADMISSIBLE_REPLACEMENT`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-semantic-source-landscape-expansion-20261030/README.md`.
+
+Expanded the public source screen without downloading restricted payloads. PatentMatch and PatentBench are rejected for HT-T1 task mismatch. A 2026 Zenodo sharps-disposal-device patent landscape is the closest domain-aligned lead, but its files are restricted and the public record does not establish the M23 rights, explicit label, adjudicator, company/family, and holdout requirements. No runtime inputs, semantic labels, provider/network calls, or paid cost changed.
+
+Next: obtain owner-authorized access and source-specific terms for the sharps-disposal lead or another aligned source, inspect its actual schema, and only then run M23, M25, and M24 in sequence before rerunning frozen controls. Keep Bridge, paid HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused or blocked.

@@ -1,0 +1,56 @@
+{
+  "format": "ht-healthtech-source-screen-v1",
+  "run_id": "luna-long-run-20261030-semantic-source-landscape-expansion-20261030",
+  "status": "PASS_OFFLINE_SOURCE_SCREENING_NO_ADMISSIBLE_REPLACEMENT",
+  "run_date": "2026-10-30",
+  "source_head": "d1f166027225789f3044289f223c48aca798bb96",
+  "parent_audit": "docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/README.md",
+  "search_scope": {
+    "queries": [
+      "medical device patent relevance annotated dataset device patent linking benchmark",
+      "medical device product patent association dataset labeled relevant not relevant",
+      "medical technology patent linkage benchmark annotated dataset",
+      "medical device patent retrieval semantic relevance judgments dataset"
+    ],
+    "source_types": ["public landing pages", "public repository metadata", "public paper abstracts"],
+    "payload_downloaded": false
+  },
+  "candidates": [
+    {
+      "id": "patentmatch",
+      "source_url": "https://github.com/julian-risch/PatentMatch",
+      "paper_id": "arXiv:2012.13919",
+      "decision": "REJECTED_FOR_HT_T1_TASK_MISMATCH",
+      "task_observed": "Patent claim to cited prior-art passage matching with examiner-derived semantic correspondence",
+      "missing_ht_t1_requirements": ["named device/product query unit", "company/family holdout contract"]
+    },
+    {
+      "id": "patentbench",
+      "source_url": "https://github.com/rhahn28/patentbench",
+      "decision": "REJECTED_FOR_HT_T1_TASK_MISMATCH",
+      "task_observed": "Patent prosecution benchmark covering prior-art and claim-mapping workflows",
+      "missing_ht_t1_requirements": ["device-product relevance labels", "device-product source provenance", "company/family holdout contract"]
+    },
+    {
+      "id": "sharps-disposal-landscape",
+      "source_url": "https://zenodo.org/records/21101400",
+      "doi": "10.5281/zenodo.21101400",
+      "decision": "PROMISING_DOMAIN_BUT_BLOCKED_LOCAL",
+      "task_observed": "Healthcare sharps disposal device patent landscape with screening and feature extraction files",
+      "blocking_evidence": ["files restricted", "rights clause not established from public record", "judgment schema/group/holdout not established"]
+    },
+    {
+      "id": "bridge-meddevkg",
+      "source_url": "https://github.com/myqqhub/Bridge-MedDevKG/tree/f3990a207949f25012d1070a08ac303e140387e6",
+      "decision": "BLOCKED_LOCAL",
+      "blocking_evidence": ["existing rights/cohort/split audit"]
+    }
+  ],
+  "runtime_inputs_added": 0,
+  "semantic_labels_created": 0,
+  "provider_calls": 0,
+  "network_calls_for_project_execution": 0,
+  "paid_cost_usd": 0.0,
+  "decision": "No candidate passes M23 authorization. The sharps-disposal lead merits owner-authorized follow-up, but no payload or label source is admissible now.",
+  "next_action": "Obtain owner-authorized access and terms for the sharps-disposal lead or another semantically aligned source, then run M23, M25, and M24 in sequence."
+}
