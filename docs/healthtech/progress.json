@@ -122,6 +122,11 @@
       "evidence": "F1/F2/F3 adversarial export, frozen-cohort, and typed-rights repairs; 28 focused HealthTech tests pass; 298 non-budget-suite tests pass; frozen real Abbott copy yields 3 devices, 41 patents, 61 disclosed pairs, fresh dossiers, and HT-B0a/B0b/B1/B2/B3 results at docs/healthtech/audits/luna-long-run-20261029-f123-889958e/"
     },
     {
+      "id": "HT-M1-CURRENT-HEAD-REVALIDATION",
+      "status": "PASS_CURRENT_HEAD_ENGINEERING",
+      "evidence": "Current-head regression closure at implementation commit 00bca8edf3baedb2212085d4bda091f780c7ecb4: 42 focused tests pass in the main and detached clean worktrees, compile checks pass, external evidence projection is adversarially covered, and the real frozen Abbott manifest probe rejects runtime patent-text mutation at docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/"
+    },
+    {
       "id": "HT-M4-R1",
       "status": "IMPLEMENTED_OFFLINE_VERIFIED",
       "evidence": "Versioned USD8 R1 policy with USD7 admission threshold, exact model/provider and pricing-snapshot binding, durable SQLite reservation runner, and synthetic crash/unknown/replay/concurrency/billing/identity/schema regressions at docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/"
@@ -157,7 +162,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "HT-M4-R1, HT-T2 SciFact differential, M3 Abbott/Boston cross-cohort comparison, and the bounded offline HT-B4 controller seam are verified; live provider/canary remains NOT_RUN pending current OpenRouter metadata, credential/credit, transfer-rights, and readiness gates. Next freeze the HT-T2 prediction manifest if predictions exist, otherwise keep component scoring NOT_RUN, then add a rights-cleared cohort with multiple independent company/family groups and a final holdout while keeping Abbott/Boston development-only and Claude UX/UI paused",
+  "next": "M1 current-head revalidation is PASS_ENGINEERING at 00bca8e with 42 focused tests, exact-head clean-worktree verification, and corrected synthetic/real frozen-manifest probes. Live provider/canary remains NOT_RUN pending current OpenRouter metadata, credential/credit, transfer-rights, and readiness gates. Next freeze the HT-T2 prediction manifest if predictions exist, otherwise keep component scoring NOT_RUN, then add a rights-cleared cohort with multiple independent company/family groups and a final holdout while keeping Abbott/Boston development-only and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
@@ -165,7 +170,8 @@
   "latest_cross_cohort_analysis": "docs/healthtech/audits/luna-long-run-20261029-m3-cross-cohort-adad901/README.md",
   "latest_healthtech_frontier_summary": "docs/healthtech/audits/luna-long-run-20261029-f123-889958e/README.md",
   "latest_independent_cohort": "results/healthtech/ht-boston-watchman-20261028-r4/manifest.json",
-  "latest_current_head_revalidation": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/verification.json",
+  "latest_current_head_revalidation": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/verification.json",
+  "latest_m1_revalidation": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/README.md",
   "latest_typed_registry_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-typed-registry/verification.json",
   "latest_goal_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/verification.json",
   "latest_clean_checkout_reproducibility_audit": "docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/verification.json",

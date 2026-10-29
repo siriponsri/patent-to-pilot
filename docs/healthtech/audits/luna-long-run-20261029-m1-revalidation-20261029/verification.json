@@ -1,0 +1,82 @@
+{
+  "format": "ht-m1-current-head-revalidation-v1",
+  "date": "2026-10-29",
+  "timezone": "Asia/Bangkok",
+  "status": "PASS_ENGINEERING",
+  "tested_source_commit": "00bca8edf3baedb2212085d4bda091f780c7ecb4",
+  "parent_source_commit": "759b93726f25e0ace0e267a4ab7c4938ecb8ba3c",
+  "origin_main_before": "759b93726f25e0ace0e267a4ab7c4938ecb8ba3c",
+  "scope": "HealthTech M1 F1/F2/F3 current-head regression closure",
+  "changed_source_files": [
+    "tests/test_healthtech_repairs.py"
+  ],
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py",
+      "environment": "main worktree at tested source commit",
+      "exit_code": 0,
+      "collected": 42,
+      "passed": 42,
+      "failed": 0,
+      "warnings": ["fitz FutureWarning"]
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py",
+      "environment": "detached clean worktree at tested source commit",
+      "worktree": "C:/Users/User/AppData/Local/Temp/ptp-ht-clean-m1-00bca8e",
+      "exit_code": 0,
+      "collected": 42,
+      "passed": 42,
+      "failed": 0,
+      "warnings": ["fitz FutureWarning"]
+    },
+    {
+      "command": "rtk proxy python -m compileall -q src scripts tests",
+      "environment": "main worktree and detached clean worktree",
+      "exit_code": 0
+    },
+    {
+      "command": "rtk proxy python -B docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/reproduction/reproduce_current_head.py . results/healthtech/ht-public-cohort-20261029-frozen-r1 results/healthtech/luna-long-run-20261029-m1-revalidation-probe-00bca8e docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/reproduction-summary.json --source-commit 00bca8edf3baedb2212085d4bda091f780c7ecb4",
+      "environment": "offline current-head probe",
+      "exit_code": 0,
+      "network_attempts_blocked": 0,
+      "provider_calls": 0,
+      "neural_model_calls": 0
+    }
+  ],
+  "reproduction": {
+    "summary": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/reproduction-summary.json",
+    "script": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/reproduction/reproduce_current_head.py",
+    "synthetic_rights_projection": "PASS",
+    "synthetic_runtime_text_mutation": "PASS_REJECTED",
+    "real_cohort": "results/healthtech/ht-public-cohort-20261029-frozen-r1",
+    "real_manifest_integrity_format": "ht-runtime-integrity-v1",
+    "real_raw_files_declared": 45,
+    "real_files_copied": 48,
+    "real_copied_bytes": 64332457,
+    "real_baseline_case_count": 3,
+    "real_baseline_patents_per_case": 41,
+    "real_runtime_text_mutation": "PASS_REJECTED",
+    "rejection": "CohortIntegrityError: runtime JSON hash does not match manifest"
+  },
+  "source_sha256": {
+    "src/patent_to_pilot/healthtech/rights.py": "a9b54a9e7dfecb468fb6fea8c5fa8b4c91192f9449d27e865f0da5c9c0f9dc1d",
+    "src/patent_to_pilot/healthtech/abbott.py": "12d0a8f2d60ae9a515fff1d83f70c34d8ae9926080fdbdcd2ed836386899b808",
+    "src/patent_to_pilot/evaluation/healthtech/provenance.py": "fcbf92ad45ec282d69503c29d423792274b8c667a7e40277c25e15ffd0e33b2a",
+    "src/patent_to_pilot/healthtech/engine.py": "65bda16e9aefe319c4a909690b6ec1f91119d451779ccd22706828f092461df4",
+    "src/patent_to_pilot/healthtech/history.py": "a5424af7bff3a943b9f1d3f786a14863595e29099a0fd935d8b78c5697d7c0e2",
+    "tests/test_healthtech_repairs.py": "e1ddc217e9aecbcc6effba10fa7d715310cfe4adc7659be3d4cbc6138f623ab2",
+    "tests/test_healthtech_prelive.py": "7d2af11d84113545c578c5d2a41442af103b9f4331c5e7f0f94311207aec5517"
+  },
+  "implemented": [
+    "External exports rebuild reviewed structured evidence from source payloads.",
+    "External exports omit quote-only evidence and restricted payload values.",
+    "The real Abbott adapter rejects runtime patent-text mutations against the frozen manifest."
+  ],
+  "not_run": [
+    "Paid or live provider inference",
+    "Bridge corpus acquisition or rights-cleared replacement",
+    "Clinical, FTO, patent-validity, investment, or customer studies",
+    "Public raw-data release or deployment"
+  ]
+}

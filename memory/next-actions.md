@@ -65,3 +65,13 @@ Added the strict controller observation/action contract, deterministic bounded p
 The observed offline controller is engineering evidence only. Boston is ceiling-limited because K=20 exceeds its seven-patent universe; Abbott remains a development-only three-device/two-group slice with no final holdout. Do not treat the results as an LLM-controller comparison, semantic relevance gold, exhaustive recall, generalization, clinical/FTO, patent-validity, investment, or publication evidence.
 
 Next: keep live/provider HT-B4 `BLOCKED_LOCAL`; freeze HT-T2 predictions/denominators only if predictions exist, otherwise keep scoring `NOT_RUN`; then add a rights-cleared cohort with multiple independent company/family groups and a predeclared final holdout. Do not reopen Bridge, UI, deployment, outreach, clinical/FTO, customer validation, or public raw-data release.
+
+## HT-NEXT-011 — 2026-10-29 M1 current-head revalidation
+
+Status: `PASS_ENGINEERING`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/README.md`.
+
+The current-head regression gap is closed at implementation commit `00bca8edf3baedb2212085d4bda091f780c7ecb4`. The focused repair/pre-live suite passes 42/42 in the main worktree and in a detached clean worktree at the exact commit; compile checks pass. The suite now injects tampered allowed-field and literal-only evidence at the export boundary, proving that external Markdown/JSON rebuild reviewed structured values from the source payload and omit quote-only evidence. The frozen Abbott adapter rejects a runtime patent-text mutation with the manifest hash mismatch on both authored synthetic data and a local copy of the frozen cohort.
+
+The corrected probe copies all 45 manifest-pinned raw files, builds 3 real cases with 41 patents each, and records only hashes/counts in the audit package. No provider calls, neural inference, network access, paid cost, Bridge acquisition, deployment, clinical/FTO work, or public raw-data release occurred. Historical stale probes remain immutable; this receipt is the current-head replacement evidence.
+
+Next: keep provider HT-B4 `BLOCKED_LOCAL`, freeze HT-T2 prediction/denominator rules only if predictions exist, and continue toward a rights-cleared cohort with multiple independent groups and a predeclared final holdout. Preserve Abbott/Boston as development-only and do not infer scientific generalization or publication readiness from this engineering pass.
