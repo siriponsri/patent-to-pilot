@@ -1,0 +1,34 @@
+{
+  "format": "ht-m1-closure-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-m1-closure-20261029",
+  "experiments": [
+    {
+      "id": "baseline-stale-portable-probe",
+      "hypothesis": "The historical portable probe reaches the current F1/F2/F3 boundaries.",
+      "command": "rtk proxy python -B docs/healthtech/audits/pepo-audit-20261028T2240Z-889958e/reproduction/reproduce_boundaries.py . C:\\Users\\User\\AppData\\Local\\Temp\\ptp-m1-boundaries-20261029-r1",
+      "outcome": "NOT_INTERPRETABLE",
+      "observed": "The script rewrites manifest.json to runtime_sha256/runtime_path only; the current Abbott builder rejects the stale shape before the intended probes.",
+      "decision": "Do not use this run as evidence of current F1/F2/F3 behavior; preserve the historical script unchanged."
+    },
+    {
+      "id": "current-head-f1",
+      "hypothesis": "External export and source-view paths do not release restricted nested, encoded, quote-only, or tampered structured values.",
+      "outcome": "PASS",
+      "observed": "External Markdown, redistribution JSON, and product-display source view exclude the restricted values and project the reviewed trade_name field only; local research retains the authored adversarial evidence."
+    },
+    {
+      "id": "current-head-f2",
+      "hypothesis": "A frozen Abbott runtime patent-text mutation is rejected by the real adapter path.",
+      "outcome": "PASS_REJECTED",
+      "observed": "Synthetic and real disposable copies reject the mutation with CohortIntegrityError: runtime JSON hash does not match manifest; the real baseline has 3 cases with 41 patents each."
+    },
+    {
+      "id": "current-head-f3",
+      "hypothesis": "Unknown, blank, ambiguous, and mismatched typed rights policies never appear verified.",
+      "outcome": "PASS_WITH_UNRESOLVED_RIGHTS",
+      "observed": "All four cases report UNRESOLVED_TYPED_POLICY and no resolved policy IDs."
+    }
+  ],
+  "stopping_condition": "All three current-head M1 boundaries pass, focused/full regressions pass, and no paid/provider branch is opened.",
+  "next_step": "Continue the offline rights-cleared cohort/family-mapping path; keep paid HT-B4 and Bridge blocked locally."
+}

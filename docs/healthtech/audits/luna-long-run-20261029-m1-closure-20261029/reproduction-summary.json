@@ -1,0 +1,88 @@
+{
+  "fixture_import": "tests/test_healthtech_repairs.py",
+  "format": "ht-m1-closure-reproduction-v1",
+  "network_attempts_blocked": 0,
+  "neural_model_calls": 0,
+  "real_manifest": {
+    "baseline_case_count": 3,
+    "baseline_patents_per_case": {
+      "HT-DEV-MITRACLIP": 41,
+      "HT-DEV-TENDYNE": 41,
+      "HT-DEV-TRICLIP": 41
+    },
+    "cohort_label": "local frozen Abbott development copy",
+    "copied_bytes": 64332457,
+    "files_copied": 48,
+    "manifest_integrity_format": "ht-runtime-integrity-v1",
+    "raw_files_declared": 45,
+    "runtime_patent_text_mutation": {
+      "error_type": "CohortIntegrityError",
+      "message": "runtime JSON hash does not match manifest",
+      "rejected": true,
+      "status": "PASS"
+    }
+  },
+  "remote_provider_calls": 0,
+  "restricted_raw_payloads_persisted_in_audit": false,
+  "rights_projection": {
+    "external_evidence_ids": [
+      "AUDIT-TRADE",
+      "AUDIT-STRUCTURED"
+    ],
+    "external_json_excludes_secret": true,
+    "external_markdown_excludes_secret": true,
+    "external_source_view_excludes_secret": true,
+    "local_retains_secret": true,
+    "projected_payload": {
+      "trade_name": "MitraClip"
+    },
+    "status": "PASS"
+  },
+  "source_commit": "82e2bd5258eba5da0f582d9e2c2ab75f9abca645",
+  "status": "PASS",
+  "synthetic_runtime_mutation": {
+    "error_type": "CohortIntegrityError",
+    "message": "runtime JSON hash does not match manifest",
+    "rejected": true,
+    "status": "PASS"
+  },
+  "typed_policy": {
+    "ambiguous": {
+      "report": {
+        "resolved_policy_ids": [],
+        "rights_binding": "UNRESOLVED_TYPED_POLICY",
+        "status": "PASS_WITH_UNRESOLVED_RIGHTS",
+        "unresolved_policy_ids": [
+          "shared-policy-id"
+        ]
+      }
+    },
+    "cases": {
+      "blank": {
+        "resolved_policy_ids": [],
+        "rights_binding": "UNRESOLVED_TYPED_POLICY",
+        "status": "PASS_WITH_UNRESOLVED_RIGHTS",
+        "unresolved_policy_ids": [
+          "<blank>"
+        ]
+      },
+      "mismatched": {
+        "resolved_policy_ids": [],
+        "rights_binding": "UNRESOLVED_TYPED_POLICY",
+        "status": "PASS_WITH_UNRESOLVED_RIGHTS",
+        "unresolved_policy_ids": [
+          "google-patents-pages"
+        ]
+      },
+      "unknown": {
+        "resolved_policy_ids": [],
+        "rights_binding": "UNRESOLVED_TYPED_POLICY",
+        "status": "PASS_WITH_UNRESOLVED_RIGHTS",
+        "unresolved_policy_ids": [
+          "unknown-policy"
+        ]
+      }
+    },
+    "status": "PASS"
+  }
+}

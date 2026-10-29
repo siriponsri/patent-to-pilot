@@ -1,0 +1,74 @@
+{
+  "format": "ht-m1-closure-verification-v1",
+  "date": "2026-10-29",
+  "timezone": "Asia/Bangkok",
+  "status": "PASS_ENGINEERING",
+  "run_id": "luna-long-run-20261029-m1-closure-20261029",
+  "tested_source_commit": "82e2bd5258eba5da0f582d9e2c2ab75f9abca645",
+  "audit_commit": "see the repository commit for the final audit receipt; self-reference intentionally omitted",
+  "tree_state": {
+    "before": "dirty with unrelated owner artifacts preserved",
+    "scoped_changes": [
+      "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/",
+      "docs/healthtech/progress.json",
+      "memory/next-actions.md"
+    ],
+    "unrelated_changes_reverted": false
+  },
+  "scope": "HealthTech M1 F1/F2/F3 current-head closure audit",
+  "commands": [
+    {
+      "command": "rtk proxy python -B docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/reproduction/reproduce_current_head.py . results/healthtech/ht-public-cohort-20261029-frozen-r1 <scratch-temp> docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/reproduction-summary.json --source-commit 82e2bd5258eba5da0f582d9e2c2ab75f9abca645",
+      "exit_code": 0,
+      "status": "PASS",
+      "network_attempts": 0,
+      "provider_calls": 0,
+      "neural_model_calls": 0,
+      "paid_cost_usd": 0
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py --disable-warnings --maxfail=1",
+      "exit_code": 0,
+      "status": "PASS",
+      "collected": 46,
+      "passed": 46
+    },
+    {
+      "command": "rtk proxy python -m compileall -q src scripts tests",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "rtk proxy python -c \"import os, sys; from pathlib import Path; src=str(Path('src').resolve()); os.environ['PYTHONPATH']=src + os.pathsep + os.environ.get('PYTHONPATH',''); sys.path.insert(0,src); import pytest; raise SystemExit(pytest.main(['-q','--disable-warnings','--maxfail=1']))\"",
+      "exit_code": 0,
+      "status": "PASS",
+      "collected": 346,
+      "passed": 346
+    }
+  ],
+  "probe_results": {
+    "f1_external_projection": "PASS",
+    "f2_synthetic_runtime_mutation": "PASS_REJECTED",
+    "f2_real_runtime_mutation": "PASS_REJECTED",
+    "f3_unknown_policy": "PASS_WITH_UNRESOLVED_RIGHTS",
+    "f3_blank_policy": "PASS_WITH_UNRESOLVED_RIGHTS",
+    "f3_mismatched_policy": "PASS_WITH_UNRESOLVED_RIGHTS",
+    "f3_ambiguous_policy": "PASS_WITH_UNRESOLVED_RIGHTS"
+  },
+  "source_sha256": {
+    "src/patent_to_pilot/healthtech/rights.py": "a9b54a9e7dfecb468fb6fea8c5fa8b4c91192f9449d27e865f0da5c9c0f9dc1d",
+    "src/patent_to_pilot/healthtech/engine.py": "65bda16e9aefe319c4a909690b6ec1f91119d451779ccd22706828f092461df4",
+    "src/patent_to_pilot/healthtech/history.py": "a5424af7bff3a943b9f1d3f786a14863595e29099a0fd935d8b78c5697d7c0e2",
+    "src/patent_to_pilot/healthtech/abbott.py": "12d0a8f2d60ae9a515fff1d83f70c34d8ae9926080fdbdcd2ed836386899b808",
+    "src/patent_to_pilot/evaluation/healthtech/provenance.py": "fcbf92ad45ec282d69503c29d423792274b8c667a7e40277c25e15ffd0e33b2a",
+    "tests/test_healthtech_repairs.py": "4f51dfd1f50ba834f8286cebedded6f134ac0d4a9b06a392cebb462f122ad981",
+    "tests/test_healthtech_prelive.py": "754834f06794ad59065cf10e309cbb1792d566739e967cdaafdfa104c1ef1db6",
+    "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/reproduction/reproduce_current_head.py": "6bc5278dd31c76f49150f7ba2ae3ce974de22f94482b7a34ef1637b1acad0ad9"
+  },
+  "not_run": [
+    "Paid or live provider inference",
+    "Bridge corpus acquisition or rights-cleared replacement",
+    "Clinical, FTO, patent-validity, investment, or customer studies",
+    "Public raw-data release or deployment"
+  ]
+}

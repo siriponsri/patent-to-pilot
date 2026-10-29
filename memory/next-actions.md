@@ -147,3 +147,13 @@ Added `src/patent_to_pilot/healthtech/cook.py` and `scripts/healthtech/run_cook_
 Focused Cook tests pass `11/11`; the Cook/adapter regression selection passes `19/19`; the explicit `PYTHONPATH=src` full suite passes. The real dossier run made `3` offline search calls, returned `0` lexical candidates, promoted `5` official product-level disclosure links, made `0` provider calls, and incurred `$0.00` paid cost. Product display and redistribution remain `BLOCKED_LOCAL`; evaluator references were not read or leaked into outputs.
 
 This remains engineering evidence, not semantic relevance gold, exhaustive recall, FTO, clinical, validity, investment, publication, or generalization evidence. Keep live/provider HT-B4, Bridge acquisition, public raw-data release, family inference, clinical/FTO work, deployment, outreach, and Claude UX/UI blocked or paused. Next add sourced family mappings or a licensed relevance-judgment cohort before any pooled scientific claim.
+
+## HT-NEXT-019 - 2026-10-29 M1 closure audit
+
+Status: `PASS_ENGINEERING`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/README.md`.
+
+Fresh current-head probes close F1/F2/F3 at commit `82e2bd5258eba5da0f582d9e2c2ab75f9abca645`. External Markdown, redistribution JSON, and product-display source view exclude nested and encoded restricted evidence values while local research retains the authored adversarial payload. Synthetic and real frozen Abbott copies reject runtime patent-text mutation with `CohortIntegrityError: runtime JSON hash does not match manifest`. Unknown, blank, mismatched, and ambiguous typed policies all report `PASS_WITH_UNRESOLVED_RIGHTS` and `UNRESOLVED_TYPED_POLICY` with no resolved policy IDs.
+
+The focused repair/pre-live suite passes `46/46`; the full suite passes `346/346`; compile checks pass; network attempts, provider calls, neural model calls, and paid cost are all zero. The historical stale portable probe remains unchanged and is recorded only as a setup diagnosis because it rewrites the fixture manifest to a legacy shape before probing.
+
+This is engineering evidence only. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused. Next continue with sourced family mappings or a licensed relevance-judgment cohort spanning multiple independent groups and a predeclared final holdout.
