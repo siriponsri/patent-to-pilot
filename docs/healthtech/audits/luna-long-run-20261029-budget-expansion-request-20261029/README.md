@@ -2,8 +2,9 @@
 
 - Run ID: `luna-long-run-20261029-budget-expansion-request-20261029`
 - Scope: filled, non-submitted budget/data expansion request grounded in current offline evidence
-- Candidate source head: `7568fd94257a72665c862926e61bc628aa430924`
-- Remote verification: `origin/main` matched the candidate head before this documentation-only change
+- Source head before documentation: `7568fd94257a72665c862926e61bc628aa430924`
+- Documentation commit: `80535a3` (pushed to `origin/main`)
+- Remote verification: `origin/main` matched `80535a3` after push
 - Status: `PASS_DOCUMENTATION_DRAFT`
 - Extra spend dispatched: `NO`
 - Provider calls in this package: `0`
