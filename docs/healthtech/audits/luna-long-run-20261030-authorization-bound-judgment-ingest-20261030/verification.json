@@ -1,0 +1,59 @@
+{
+  "schema_version": "healthtech-audit-v1",
+  "run_id": "luna-long-run-20261030-authorization-bound-judgment-ingest-20261030",
+  "run_date": "2026-10-30",
+  "status": "PASS_ENGINEERING_OFFLINE_AUTHORIZATION_BOUND_INGEST",
+  "source_head_before": "f2cfcf8d34eaa480612cc2e66ddfff45a396450e",
+  "implementation_commit": "a25cd4f",
+  "scope": {
+    "authorization_required_for_ingest": true,
+    "corpus_acquired": false,
+    "real_semantic_labels_created": 0,
+    "provider_calls": 0,
+    "network_acquisition_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_source_authorization.py tests/test_healthtech_judgments.py tests/test_healthtech_judgment_submission.py tests/test_healthtech_g6_skeleton.py",
+      "outcome": "PASS: 25 passed"
+    },
+    {
+      "command": "rtk proxy python -m py_compile src/patent_to_pilot/evaluation/healthtech/source_authorization.py src/patent_to_pilot/evaluation/healthtech/judgment_submission.py scripts/healthtech/validate_semantic_source_authorization.py scripts/healthtech/ingest_relevance_judgments.py tests/test_healthtech_source_authorization.py tests/test_healthtech_judgment_submission.py",
+      "outcome": "PASS: exit 0"
+    },
+    {
+      "command": "rtk proxy python -c '<synthetic packet/source/authorization/submission through ingest_relevance_judgments.py>'",
+      "outcome": "PASS: 1 judged pair; 3 unjudged pairs; authorization binding recorded"
+    },
+    {
+      "command": "rtk proxy git diff --check",
+      "outcome": "PASS: exit 0"
+    }
+  ],
+  "artifact_hashes": {
+    "src/patent_to_pilot/evaluation/healthtech/judgment_submission.py": "139de7bf96b95cd61c476d35f7379d7f86d96f89b5adb5025a255acc5a993fe9",
+    "scripts/healthtech/ingest_relevance_judgments.py": "d8ef0e33723d28edb992c6bf86932574b96eb641e6e52cee221b908b9b78febe",
+    "tests/test_healthtech_judgment_submission.py": "a37b8102c18c7a47ab34bfcfc378ca75b46e4512973aa6576bfd52e358515614",
+    "docs/healthtech/research/SEMANTIC_JUDGMENT_SOURCE_AUTHORIZATION.md": "6011f27cf1781d7bc09884948ab3b841ddcc0711e743a0c726b2cfd0328aeeae"
+  },
+  "bound_preflight": {
+    "validator": "src/patent_to_pilot/evaluation/healthtech/source_authorization.py",
+    "authorization_format": "ht-semantic-source-authorization-v1",
+    "missing_authorization_behavior": "fail_closed",
+    "mismatched_source_behavior": "fail_closed"
+  },
+  "implemented": [
+    "Required authorization manifest CLI input.",
+    "Source identity, revision, SHA-256, rights-policy binding.",
+    "Authorization-manifest hash recorded in the judgment output.",
+    "Open-world unjudged-pair preservation remains enforced."
+  ],
+  "not_run": [
+    "real reviewer submission",
+    "real semantic adjudication",
+    "real source acquisition",
+    "HT-B0a/B0b/B1/B2/B3 scientific rerun"
+  ],
+  "next_action": "Use the authorization-bound ingest path after a real owner-authorized source passes M23, then rerun the frozen controls only after the validation report passes."
+}

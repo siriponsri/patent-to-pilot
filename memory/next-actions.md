@@ -405,3 +405,11 @@ Status: `PASS_ENGINEERING_OFFLINE_AUTHORIZATION_PREFLIGHT`; canonical audit: `do
 Added a fail-closed source authorization validator and CLI at implementation commit `567bbd1`. The preflight requires pinned source identity/hash, source-specific rights clause, intended-use decision, explicit no-transfer/no-redistribution flags, resumable acquisition, byte/file/storage bounds, safe relative paths, exact `relevant` / `not_relevant` labels, `unjudged_not_negative`, exact locators, adjudicator roles, independent company/family groups, reject-on-leakage policy, and a predeclared final holdout. The focused validator/judgment/submission/G6 suite passes `24/24`; compilation and synthetic CLI smoke pass.
 
 No corpus, semantic labels, provider calls, network acquisition, or paid cost occurred. Next: obtain an owner-authorized manifest for a semantically aligned rights-cleared source, validate it, acquire only within its bounds, apply `ht-relevance-judgment-cohort-v1`, and rerun HT-B0a/B0b/B1/B2/B3 while preserving the frozen denominator, holdout, and unjudged pairs.
+
+## HT-NEXT-045 — 2026-10-30 M24 authorization-bound judgment ingest
+
+Status: `PASS_ENGINEERING_OFFLINE_AUTHORIZATION_BOUND_INGEST`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-authorization-bound-judgment-ingest-20261030/README.md`.
+
+Bound `ingest_relevance_judgments.py` and `build_relevance_judgment_manifest` to the M23 authorization manifest at implementation commit `a25cd4f`. The CLI now requires `--authorization-manifest`, validates source identity/revision/SHA-256/rights-policy alignment, records the authorization-manifest hash, and rejects missing or mismatched authorization. The focused validator/judgment/submission/G6 suite passes `25/25`; the synthetic ingest smoke returns 1 judged plus 3 unjudged pairs.
+
+No real corpus, semantic labels, provider calls, network acquisition, or paid cost occurred. Next: use the authorization-bound ingest path only after an owner-authorized source passes M23, then rerun the frozen controls without changing the denominator, holdout, or unjudged policy.

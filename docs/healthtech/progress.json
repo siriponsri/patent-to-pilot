@@ -315,15 +315,20 @@
       "id": "HT-M23-SOURCE-AUTHORIZATION-PREFLIGHT",
       "status": "PASS_ENGINEERING_OFFLINE_AUTHORIZATION_PREFLIGHT",
       "evidence": "Added a fail-closed semantic source authorization validator and CLI at implementation commit 567bbd1. The preflight requires source revision/hash, rights clause and local-use decision, explicit no-transfer/no-redistribution flags, resumable acquisition, byte/file/storage bounds, safe paths, exact relevant/not_relevant labels, unjudged policy, adjudicator/locator requirements, independent company/family groups, leakage rejection, and a predeclared holdout. Focused validator/judgment/submission/G6 tests pass 24/24; compilation and CLI smoke pass; no corpus, labels, provider calls, network acquisition, or paid cost occurred. Canonical audit: docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/"
+    },
+    {
+      "id": "HT-M24-AUTHORIZATION-BOUND-JUDGMENT-INGEST",
+      "status": "PASS_ENGINEERING_OFFLINE_AUTHORIZATION_BOUND_INGEST",
+      "evidence": "Bound the judgment submission adapter and ingest CLI to the M23 authorization manifest at implementation commit a25cd4f. Ingestion now requires --authorization-manifest, validates source identity/revision/SHA-256/rights-policy alignment, records authorization-manifest hashes, and fails closed on missing or mismatched authorization. Focused validator/judgment/submission/G6 tests pass 25/25; compilation and synthetic ingest CLI smoke pass with 1 judged plus 3 unjudged pairs; no real corpus, labels, provider calls, network acquisition, or paid cost occurred. Canonical audit: docs/healthtech/audits/luna-long-run-20261030-authorization-bound-judgment-ingest-20261030/"
     }
   ],
-  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT",
+  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT_AND_M24_AUTHORIZATION_BOUND_JUDGMENT_INGEST",
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M23 added the owner-ready semantic source authorization preflight. It validates source identity/hash, rights clauses and local-use decisions, no-transfer/no-redistribution flags, resumable bounds, exact label and unjudged policies, locators/adjudicators, independent company/family groups, leakage rejection, and a predeclared holdout; 24 focused tests pass and no corpus or labels were acquired. The next scientific discriminator remains an owner-authorized rights-cleared device-patent judgment source. Keep Bridge, live/provider HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
-  "verification": "docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/verification.json",
+  "next": "M24 bound the judgment ingest path to the M23 authorization manifest. The CLI now fails closed without a matching source identity/revision/SHA-256/rights policy, records the authorization hash, and preserves omitted pairs as unjudged; 25 focused tests pass and no real source or labels were acquired. The next scientific discriminator remains an owner-authorized rights-cleared device-patent judgment source. Keep Bridge, live/provider HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
+  "verification": "docs/healthtech/audits/luna-long-run-20261030-authorization-bound-judgment-ingest-20261030/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
   "latest_healthtech_frontier": "results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-holdout/frontier_diagnostics.json",
@@ -375,6 +380,7 @@
   "latest_g6_m20_integration_audit": "docs/healthtech/audits/luna-long-run-20261030-g6-m20-integration-20261030/README.md",
   "latest_source_landscape_audit": "docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/README.md",
   "latest_source_authorization_preflight": "docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/README.md",
+  "latest_authorization_bound_ingest_audit": "docs/healthtech/audits/luna-long-run-20261030-authorization-bound-judgment-ingest-20261030/README.md",
   "latest_scifact_error_analysis": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/README.md",
   "latest_scifact_error_analysis_output": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r4-error-analysis/analysis.json",
   "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/README.md",
