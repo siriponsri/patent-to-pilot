@@ -136,3 +136,53 @@ def test_long_run_report_aggregates_frozen_inputs_and_renders_boundaries(tmp_pat
     assert "HT-B4 provider-shaped mock" in report
     assert "NOT_RUN / BLOCKED_LOCAL" in report
     assert "semantic relevance gold" in report
+
+    holdout_b4_frontier = _write_json(
+        tmp_path / "b4-holdout-frontier.json",
+        {
+            "device_count": 1,
+            "failed_device_count": 0,
+            "macro_known_link_recall_at_20": 0.8,
+            "per_device": [{"resources": {"query_calls": 3, "rerank_pairs": 4}}],
+        },
+    )
+    holdout_b4_receipt = _write_json(
+        tmp_path / "b4-holdout-receipt.json",
+        {
+            "patents": 2,
+            "paid_cost_usd": 0.0,
+            "simulated_cost_usd": 0.002,
+            "ledger_snapshot": {"unknown_or_pending": [], "actual_nano_usd": 2000000},
+            "policy": {
+                "models": {"openai/gpt-4.1-mini": "openai"},
+                "pricing_snapshot_sha256": "pricing-hash",
+                "pricing_snapshot_utc": "2026-10-29T00:00:00Z",
+            },
+        },
+    )
+    holdout_b4_raw_rankings = tmp_path / "b4-holdout-raw-rankings.jsonl"
+    holdout_b4_raw_rankings.write_text(b4_raw_rankings.read_text(encoding="utf-8"), encoding="utf-8")
+    holdout_b4_verification = _write_json(tmp_path / "b4-holdout-verification.json", {"status": "MOCK_HOLDOUT"})
+    holdout_summary = build_summary(
+        dev_frontier=dev_frontier,
+        dev_summary=dev_summary,
+        dev_receipt=dev_receipt,
+        holdout_frontier=holdout_frontier,
+        holdout_summary=holdout_summary,
+        holdout_receipt=holdout_receipt,
+        b4_frontier=b4_frontier,
+        b4_receipt=b4_receipt,
+        b4_raw_rankings=b4_raw_rankings,
+        b4_verification=b4_verification,
+        b4_holdout_frontier=holdout_b4_frontier,
+        b4_holdout_receipt=holdout_b4_receipt,
+        b4_holdout_raw_rankings=holdout_b4_raw_rankings,
+        b4_holdout_verification=holdout_b4_verification,
+        code_commit="test-commit",
+        protocol_hash="protocol-hash",
+        cohort_manifest_hash="cohort-hash",
+    )
+    assert holdout_summary["b4_provider_shaped_holdout"]["row"]["split"] == "final_holdout"
+    assert holdout_summary["b4_provider_shaped_holdout"]["row"]["macro_known_link_recall_at_20"] == 0.8
+    assert len(holdout_summary["input_hashes"]) == 14
+    assert "Final holdout B4 mock" in render_report(holdout_summary)

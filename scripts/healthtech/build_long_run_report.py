@@ -69,7 +69,13 @@ def _read_jsonl(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
-def _b4_row(frontier: dict[str, Any], receipt: dict[str, Any], raw_rankings: list[dict[str, Any]]) -> dict[str, Any]:
+def _b4_row(
+    frontier: dict[str, Any],
+    receipt: dict[str, Any],
+    raw_rankings: list[dict[str, Any]],
+    *,
+    split: str,
+) -> dict[str, Any]:
     calls = [
         action["controller_call"]
         for row in raw_rankings
@@ -77,7 +83,7 @@ def _b4_row(frontier: dict[str, Any], receipt: dict[str, Any], raw_rankings: lis
         if isinstance(action, dict) and isinstance(action.get("controller_call"), dict)
     ]
     return {
-        "split": "development",
+        "split": split,
         "method": "HT-B4-MOCK",
         "query_count": frontier.get("device_count", 0),
         "group_count": None,
@@ -120,6 +126,10 @@ def build_summary(
     code_commit: str,
     protocol_hash: str,
     cohort_manifest_hash: str,
+    b4_holdout_frontier: Path | None = None,
+    b4_holdout_receipt: Path | None = None,
+    b4_holdout_raw_rankings: Path | None = None,
+    b4_holdout_verification: Path | None = None,
 ) -> dict[str, Any]:
     dev_frontier_payload = _read_json(dev_frontier)
     dev_summary_payload = _read_json(dev_summary)
@@ -130,7 +140,15 @@ def build_summary(
     b4_frontier_payload = _read_json(b4_frontier)
     b4_receipt_payload = _read_json(b4_receipt)
     b4_verification_payload = _read_json(b4_verification)
-    return {
+    holdout_paths = (
+        b4_holdout_frontier,
+        b4_holdout_receipt,
+        b4_holdout_raw_rankings,
+        b4_holdout_verification,
+    )
+    if any(path is not None for path in holdout_paths) and not all(path is not None for path in holdout_paths):
+        raise ValueError("holdout B4 inputs must be provided together")
+    summary = {
         "format": "ht-long-run-summary-v1",
         "code_commit": code_commit,
         "protocol_hash": protocol_hash,
@@ -146,7 +164,12 @@ def build_summary(
         "b4_provider_shaped_mock": {
             "receipt": b4_receipt_payload,
             "verification": b4_verification_payload,
-            "row": _b4_row(b4_frontier_payload, b4_receipt_payload, _read_jsonl(b4_raw_rankings)),
+            "row": _b4_row(
+                b4_frontier_payload,
+                b4_receipt_payload,
+                _read_jsonl(b4_raw_rankings),
+                split="development",
+            ),
         },
         "input_hashes": {
             str(path): _sha256(path)
@@ -164,6 +187,36 @@ def build_summary(
             )
         },
     }
+    if all(path is not None for path in holdout_paths):
+        assert b4_holdout_frontier is not None
+        assert b4_holdout_receipt is not None
+        assert b4_holdout_raw_rankings is not None
+        assert b4_holdout_verification is not None
+        holdout_frontier_payload = _read_json(b4_holdout_frontier)
+        holdout_receipt_payload = _read_json(b4_holdout_receipt)
+        holdout_verification_payload = _read_json(b4_holdout_verification)
+        summary["b4_provider_shaped_holdout"] = {
+            "receipt": holdout_receipt_payload,
+            "verification": holdout_verification_payload,
+            "row": _b4_row(
+                holdout_frontier_payload,
+                holdout_receipt_payload,
+                _read_jsonl(b4_holdout_raw_rankings),
+                split="final_holdout",
+            ),
+        }
+        summary["input_hashes"].update(
+            {
+                str(path): _sha256(path)
+                for path in (
+                    b4_holdout_frontier,
+                    b4_holdout_receipt,
+                    b4_holdout_raw_rankings,
+                    b4_holdout_verification,
+                )
+            }
+        )
+    return summary
 
 
 def _fmt(value: Any) -> str:
@@ -230,6 +283,29 @@ def render_report(summary: dict[str, Any]) -> str:
         f"| Paid cost | ${summary['b4_provider_shaped_mock']['row']['paid_cost_usd']:.4f} |",
         f"| Simulated mock debit | ${summary['b4_provider_shaped_mock']['row']['simulated_cost_usd']:.4f} |",
         f"| Unknown/pending ledger items | {summary['b4_provider_shaped_mock']['row']['unknown_billing']} |",
+    ])
+    if "b4_provider_shaped_holdout" in summary:
+        holdout = summary["b4_provider_shaped_holdout"]
+        holdout_row = holdout["row"]
+        lines.extend([
+            "",
+            "### Final holdout B4 mock",
+            "",
+            "| Metric | Actual value |",
+            "|---|---:|",
+            f"| Holdout devices | {holdout_row['query_count']} |",
+            f"| Patents | {holdout['receipt'].get('patents')} |",
+            f"| Provider-shaped calls | {holdout_row['provider_shaped_calls']} |",
+            f"| Macro known-link R@20 | {_fmt(holdout_row['macro_known_link_recall_at_20'])} |",
+            f"| Total latency seconds | {_fmt(holdout_row['latency_seconds'])} |",
+            f"| Schema-valid calls | {holdout_row['schema_valid_calls']} |",
+            f"| Paid cost | ${holdout_row['paid_cost_usd']:.4f} |",
+            f"| Simulated mock debit | ${holdout_row['simulated_cost_usd']:.4f} |",
+            f"| Unknown/pending ledger items | {holdout_row['unknown_billing']} |",
+            "",
+            "The fixed-policy holdout mock matches HT-B3 on macro known-link recall in this run and remains below HT-B0b, HT-B1, and HT-B2. This is a descriptive company-level transfer check, not live-provider evidence or semantic gold.",
+        ])
+    lines.extend([
         "",
         "The mock transport exercised the exact action schema and R1 reservation/settlement path but did not create provider evidence. Live mode remains blocked without an explicit source-transfer manifest and approved current paid readiness.",
         "",
@@ -275,6 +351,10 @@ def main() -> int:
     parser.add_argument("--b4-receipt", type=Path, required=True)
     parser.add_argument("--b4-raw-rankings", type=Path, required=True)
     parser.add_argument("--b4-verification", type=Path, required=True)
+    parser.add_argument("--b4-holdout-frontier", type=Path)
+    parser.add_argument("--b4-holdout-receipt", type=Path)
+    parser.add_argument("--b4-holdout-raw-rankings", type=Path)
+    parser.add_argument("--b4-holdout-verification", type=Path)
     args = parser.parse_args()
     if args.output.exists():
         parser.error("output already exists; choose a fresh directory")
@@ -290,12 +370,18 @@ def main() -> int:
         b4_receipt=args.b4_receipt,
         b4_raw_rankings=args.b4_raw_rankings,
         b4_verification=args.b4_verification,
+        b4_holdout_frontier=args.b4_holdout_frontier,
+        b4_holdout_receipt=args.b4_holdout_receipt,
+        b4_holdout_raw_rankings=args.b4_holdout_raw_rankings,
+        b4_holdout_verification=args.b4_holdout_verification,
         code_commit=args.code_commit,
         protocol_hash=args.protocol_hash,
         cohort_manifest_hash=args.cohort_manifest_hash,
     )
     (args.output / "summary_tables.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     rows = summary["development"]["rows"] + summary["final_holdout"]["rows"] + [summary["b4_provider_shaped_mock"]["row"]]
+    if "b4_provider_shaped_holdout" in summary:
+        rows.append(summary["b4_provider_shaped_holdout"]["row"])
     _write_csv(args.output / "frontier_table.csv", rows)
     (args.output / "REPORT.md").write_text(render_report(summary), encoding="utf-8")
     receipt = {
@@ -310,6 +396,7 @@ def main() -> int:
             "summary_tables": "summary_tables.json",
             "frontier_table": "frontier_table.csv",
         },
+        "b4_holdout_included": "b4_provider_shaped_holdout" in summary,
         "limitations": [
             "No live provider request or paid canary was run.",
             "Known-link metrics are descriptive product-disclosure recovery, not semantic gold.",
