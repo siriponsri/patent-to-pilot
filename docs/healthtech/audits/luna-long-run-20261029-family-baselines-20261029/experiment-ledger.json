@@ -1,0 +1,52 @@
+{
+  "format": "ht-family-aware-baseline-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-family-baselines-20261029",
+  "date": "2026-10-29",
+  "tested_source_commit": "e84c3c57df2d404aba8b79d89f94e9866002d7df",
+  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "entries": [
+    {
+      "id": "family-aware-development-baseline",
+      "kind": "offline_experiment",
+      "status": "PASS",
+      "input": "Family-aware development runtime, references, groups, 24-patent universe, local model snapshots",
+      "output": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev",
+      "outcome": "25/25 method/query rows completed; 0 frontier errors; provider calls 0; paid cost 0"
+    },
+    {
+      "id": "family-aware-final-holdout-baseline",
+      "kind": "offline_experiment",
+      "status": "PASS",
+      "input": "Untouched Stryker company holdout view under the same family-aware manifest",
+      "output": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout",
+      "outcome": "15/15 method/query rows completed; 0 frontier errors; provider calls 0; paid cost 0"
+    },
+    {
+      "id": "family-group-frontier-projection",
+      "kind": "evaluator_side_analysis",
+      "status": "PASS",
+      "input": "Fresh baseline outputs plus sourced Google family mapping",
+      "output": "results/healthtech/ht-family-frontier-20261029-r2-development and results/healthtech/ht-family-frontier-20261029-r2-final-holdout",
+      "outcome": "Both splits retain 3 exact groups, 3 family groups, and 0 cross-group merges"
+    },
+    {
+      "id": "runtime_evaluator_separation_check",
+      "kind": "invariant_check",
+      "status": "PASS",
+      "input": "Raw rankings and runtime predictions written before evaluator reference load",
+      "output": "runtime_predictions.json and evaluator_validation.json in both baseline directories",
+      "outcome": "No evaluator relations supplied to runtime retrieval"
+    }
+  ],
+  "resource_summary": {
+    "provider_calls": 0,
+    "network_acquisition": 0,
+    "neural_provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "development_wall_seconds": 74.48058160000073,
+    "development_cpu_seconds": 459.546875,
+    "holdout_wall_seconds": 58.78375170000072,
+    "holdout_cpu_seconds": 316.9375
+  },
+  "decision": "Retain the fresh family-aware baseline outputs as descriptive development evidence and move next to rights-cleared relevance judgments rather than paid inference or semantic claims."
+}

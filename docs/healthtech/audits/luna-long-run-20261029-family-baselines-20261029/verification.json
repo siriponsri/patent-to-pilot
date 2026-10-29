@@ -1,0 +1,141 @@
+{
+  "format": "ht-family-aware-baseline-audit-verification-v1",
+  "run_id": "luna-long-run-20261029-family-baselines-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_OFFLINE_DEVELOPMENT_WITH_FINAL_HOLDOUT",
+  "tested_source_commit": "e84c3c57df2d404aba8b79d89f94e9866002d7df",
+  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "tree_state_at_test": "dirty_with_unrelated_owner_artifacts_preserved",
+  "source_hashes": {
+    "scripts/healthtech/run_real_baselines.py": "fd2f5275214d50b9129fed28f76fbbb7a8a8c15d517bf587185feac5689f7fcb",
+    "scripts/healthtech/analyze_family_frontier.py": "2cf79cde78230950b190e8c7a15ff2f9e92e8e9f8d99afdd8b4c574e24c943a3"
+  },
+  "frozen_inputs": {
+    "cohort": "results/healthtech/ht-multicompany-20261029-r3-family-r2",
+    "cohort_manifest_sha256": "1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+    "cohort_sha256": "0f35a29ccc08ce5980f22dc0a3de9b1ce834a67165efa66796c157da0927d52b",
+    "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+    "family_mapping": "results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json",
+    "family_mapping_sha256": "e4baa2e4eb1295c4abf9314fe5f2a60dd853151c7089f032801dc7fdef31f898",
+    "development_runtime_sha256": "928ccf1fff6d874a0d383708024dd50a59544a21c02686565fdefad8e9d0d409",
+    "development_references_sha256": "ea36bc67c77785edb690907517e2f2bc83dd23a5a1bea0a8e7401ff6072b755e",
+    "development_groups_sha256": "aa14105b07f3f0e30af744fe431110d36432b335f892da38292ea218ab6fb2c7",
+    "holdout_runtime_sha256": "ec808b4ba459c5e4bb9decd3b68fcfe08fbe076c5731002ac463d64b16a632ca",
+    "holdout_references_sha256": "2c59211ec99bde2655cc70050d3617fc20914ad99d5e03524e04cf49b513a165",
+    "holdout_groups_sha256": "b5174c1110736abbc3f826bcd6660264c86d0a5667b9456cb0448b19412001c1"
+  },
+  "runs": {
+    "development": {
+      "path": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev",
+      "status": "REAL_PUBLIC_DEVELOPMENT_RUN",
+      "receipt_sha256": "56522cb3322c4a69158a2601b26381a9f9eef36a91503a82c2f404f9d0282338",
+      "runtime_predictions_sha256": "f1bf7b549632292b0f6b09090486f764d82673c3d1d0b44e80b21db1429cbf88",
+      "per_device_group_results_sha256": "e597e85f7879878380d5a989f029bed246ef8b13be0a858720410ae4c16a8cc4",
+      "frontier_diagnostics_sha256": "f32f8dfa2eb4f3f180ab62a3dbc531a8bbee9e01a46ad78f6f93fd7c5b112b39",
+      "method_summary_sha256": "2a15ab72034201c4d81678626d51b0d85b8a4c5d092f5b2ce22e1b61d0e4ad74",
+      "queries": 5,
+      "patents": 24,
+      "reference_pairs": 18,
+      "all_rows_completed": true,
+      "frontier_error_count": 0,
+      "wall_seconds": 74.48058160000073,
+      "cpu_seconds": 459.546875,
+      "query_calls": 42,
+      "rerank_pairs": 768,
+      "embedding_query_tokens": 624,
+      "rerank_tokens": 196608,
+      "k10_exact_macro_recall": {"HT-B0a": 0.9380952380952381, "HT-B0b": 1.0, "HT-B1": 0.9, "HT-B2": 0.7761904761904762, "HT-B3": 0.9},
+      "k10_family_group_macro_recall": {"HT-B0a": 0.9484126984126985, "HT-B0b": 1.0, "HT-B1": 0.8333333333333334, "HT-B2": 0.7301587301587302, "HT-B3": 0.8333333333333334}
+    },
+    "final_holdout": {
+      "path": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout",
+      "status": "REAL_PUBLIC_DEVELOPMENT_RUN",
+      "receipt_sha256": "62809d07af8b798d6d13a9e720005131a50c813b407e04ac6b23848b443f21ec",
+      "runtime_predictions_sha256": "a098b7805c47896db8d54db3433cb96149a5d37c43a964585c82cbec58e86477",
+      "per_device_group_results_sha256": "ef44b98cdeb79487caef65c26e7415ee72e898e826b66a19e9caa49adfcb1307",
+      "frontier_diagnostics_sha256": "fec5cb5ea30423998068cd54de20045f6e44322e8444ec3c2d4019f9d2fd365b",
+      "method_summary_sha256": "b97c138e03fb51ec192d18432cf1974a8301ab5467d58d20643e3c9a8a3da50f",
+      "queries": 3,
+      "patents": 24,
+      "reference_pairs": 13,
+      "all_rows_completed": true,
+      "frontier_error_count": 0,
+      "wall_seconds": 58.78375170000072,
+      "cpu_seconds": 316.9375,
+      "query_calls": 26,
+      "rerank_pairs": 480,
+      "embedding_query_tokens": 289,
+      "rerank_tokens": 122880,
+      "k10_exact_macro_recall": {"HT-B0a": 0.3333333333333333, "HT-B0b": 0.6666666666666666, "HT-B1": 0.7428571428571429, "HT-B2": 0.7904761904761904, "HT-B3": 0.7904761904761904},
+      "k10_family_group_macro_recall": {"HT-B0a": 0.3333333333333333, "HT-B0b": 0.6666666666666666, "HT-B1": 0.7428571428571429, "HT-B2": 0.7904761904761904, "HT-B3": 0.7904761904761904}
+    }
+  },
+  "family_projections": {
+    "development": {
+      "path": "results/healthtech/ht-family-frontier-20261029-r2-development",
+      "sha256": "bd39d06e48d3b756a25e00bb149c8bc697ef74ac49ce609067470e336b2bb8b2",
+      "status": "PASS_OFFLINE_FAMILY_FRONTIER_ANALYSIS",
+      "reference_queries": 5,
+      "exact_group_count": 3,
+      "family_aware_group_count": 3,
+      "family_merged_exact_group_count": 0
+    },
+    "final_holdout": {
+      "path": "results/healthtech/ht-family-frontier-20261029-r2-final-holdout",
+      "sha256": "b44ec45941c4cbf5daed486f9c76a435cd0469f6e925fbbe8d684de5707779d3",
+      "status": "PASS_OFFLINE_FAMILY_FRONTIER_ANALYSIS",
+      "reference_queries": 3,
+      "exact_group_count": 3,
+      "family_aware_group_count": 3,
+      "family_merged_exact_group_count": 0
+    }
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_real_baselines.py --runtime results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/runtime.json --references results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/references.json --groups results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/groups.json --model-root data/raw/healthtech/models --output results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev --code-commit e84c3c57df2d404aba8b79d89f94e9866002d7df --protocol-hash 1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b --cohort-manifest-hash 1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+      "status": "PASS",
+      "outcome": "5 queries, 24 patents, all 25 method/query rows completed"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_real_baselines.py --runtime results/healthtech/ht-multicompany-20261029-r3-family-r2/views/final_holdout/runtime.json --references results/healthtech/ht-multicompany-20261029-r3-family-r2/views/final_holdout/references.json --groups results/healthtech/ht-multicompany-20261029-r3-family-r2/views/final_holdout/groups.json --model-root data/raw/healthtech/models --output results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout --code-commit e84c3c57df2d404aba8b79d89f94e9866002d7df --protocol-hash 1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b --cohort-manifest-hash 1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+      "status": "PASS",
+      "outcome": "3 queries, 24 patents, all 15 method/query rows completed"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/analyze_family_frontier.py --baseline results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev --references results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/references.json --family-mapping results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json --split development --output results/healthtech/ht-family-frontier-20261029-r2-development",
+      "status": "PASS",
+      "outcome": "3 exact groups, 3 family groups, 0 merges"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/analyze_family_frontier.py --baseline results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout --references results/healthtech/ht-multicompany-20261029-r3-family-r2/views/final_holdout/references.json --family-mapping results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json --split final_holdout --output results/healthtech/ht-family-frontier-20261029-r2-final-holdout",
+      "status": "PASS",
+      "outcome": "3 exact groups, 3 family groups, 0 merges"
+    },
+    {
+      "command": "rtk proxy python -c \"assert all runtime prediction rows completed, all method summaries PASS, frontier error_count is zero, and family projection merge count is zero\"",
+      "status": "PASS",
+      "outcome": "development 25/25 and holdout 15/15 rows completed"
+    }
+  ],
+  "boundaries": {
+    "runtime_inputs_changed": false,
+    "evaluator_relations_read_by_runtime": false,
+    "unlisted_pairs_recoded_negative": false,
+    "provider_calls": 0,
+    "network_acquisition": 0,
+    "neural_provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "raw_restricted_payloads_staged": false,
+    "credentials_staged": false,
+    "private_paths_staged": false,
+    "semantic_relevance_gold_created": false
+  },
+  "limitations": [
+    "Product-level disclosure is not independent semantic relevance gold.",
+    "Family IDs are sourced Google Patents metadata, not legal family adjudication.",
+    "The final holdout is a single-company transfer check with descriptive uncertainty only.",
+    "No paid or provider-backed HT-B4 evidence was generated.",
+    "No pooled scientific or publication claim is supported by this package."
+  ],
+  "next_action": "Obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups, frozen denominators, and a predeclared untouched final holdout before any pooled scientific claim."
+}

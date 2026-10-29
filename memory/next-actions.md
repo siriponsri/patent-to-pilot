@@ -168,16 +168,6 @@ Focused family/HealthTech regressions pass `80/80`, the full suite passes `350/3
 
 Next: obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout before any pooled scientific claim. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
 
-## HT-NEXT-022 — 2026-10-29 family-aware cohort freeze
-
-Status: `PASS_OFFLINE_ANALYSIS`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029/README.md`.
-
-Added an optional sourced-family binding to the multi-company cohort composer. The derived family-aware composite freezes `8` devices, `24` patents, `31` disclosed pairs, `161` unjudged distractors, `6` full-cohort family groups, `3` development family groups, `3` final-holdout family groups, and `0` family split overlaps. Typed provenance covers `31/31` disclosed pairs with `0` unresolved rights policies.
-
-Focused regressions pass `10/10`; the controlled full suite passes `353/353` with one existing warning; compile checks pass; provider calls, network acquisition, neural inference, and paid cost remain `0` / `0` / `0` / `$0.00`. This is a cohort freeze and evaluator-side provenance package only. Existing HT-B0a/B0b/B1/B2/B3 outputs remain bound to the earlier composite manifest, so no new baseline result is claimed under the family-aware manifest.
-
-Next: obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout before any pooled scientific claim. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
-
 ## HT-NEXT-021 — 2026-10-29 family-aware frontier re-projection
 
 Status: `PASS_OFFLINE_ANALYSIS`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/README.md`.
@@ -187,3 +177,23 @@ Added `scripts/healthtech/analyze_family_frontier.py` to reproject frozen HT-B0a
 The focused family-mapping tests pass `5/5`, compile checks pass, and provider/network/paid activity remain `0` / `$0.00`. Both outputs remain `NOT_ESTIMABLE`: family metadata improves uncertainty visibility but does not create semantic relevance gold or stable generalization evidence.
 
 Next: obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout before any pooled scientific claim. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-022 — 2026-10-29 family-aware cohort freeze
+
+Status: `PASS_OFFLINE_ANALYSIS`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029/README.md`.
+
+Added an optional sourced-family binding to the multi-company cohort composer. The derived family-aware composite freezes `8` devices, `24` disclosed patents, `31` disclosed pairs, `161` unjudged distractors, `6` full-cohort family groups, `3` development family groups, `3` final-holdout family groups, and `0` family split overlaps. Typed provenance covers `31/31` disclosed pairs with `0` unresolved rights policies.
+
+Focused regressions pass `10/10`; the controlled full suite passes `353/353` with one existing warning; compile checks pass; provider calls, network acquisition, neural inference, and paid cost remain `0` / `0` / `0` / `$0.00`. This is a cohort freeze and evaluator-side provenance package only. Existing HT-B0a/B0b/B1/B2/B3 outputs remained bound to the earlier composite manifest until the fresh family-aware baseline rerun in `HT-NEXT-023`.
+
+Next: use the fresh family-aware baselines for descriptive analysis, then obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout before any pooled scientific claim. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-023 — 2026-10-29 family-aware baseline rerun
+
+Status: `PASS_OFFLINE_DEVELOPMENT_WITH_FINAL_HOLDOUT`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-family-baselines-20261029/README.md`.
+
+Reran HT-B0a/B0b/B1/B2/B3 on the family-aware Boston/Stryker/Cook composite with source commit `e84c3c57df2d404aba8b79d89f94e9866002d7df`, protocol hash `1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b`, and cohort manifest hash `1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75`. Development completed `25/25` method/query rows and the untouched Stryker holdout completed `15/15`, with `0` frontier errors, `0` provider calls, and `$0.00` paid cost.
+
+At `K=10`, exact-patent macro known-link recall is `0.9381 / 1.0000 / 0.9000 / 0.7762 / 0.9000` on development and `0.3333 / 0.6667 / 0.7429 / 0.7905 / 0.7905` on holdout for HT-B0a/B0b/B1/B2/B3. Family-group rows are sensitivity diagnostics only: development is `0.9484 / 1.0000 / 0.8333 / 0.7302 / 0.8333`, while holdout rows equal exact rows because no family merges cross groups. These results remain descriptive offline evidence, not semantic relevance gold, legal family adjudication, generalization, publication, clinical/FTO, or investment evidence.
+
+Next: obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups, auditable positive judgments, frozen denominators, and a predeclared untouched final holdout. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
