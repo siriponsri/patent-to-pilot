@@ -4,6 +4,7 @@
   "date": "2026-10-29",
   "status": "PASS_OFFLINE_FAMILY_SENSITIVITY",
   "tested_source_commit": "c0610110bfd8962948445cd525713f9d58e219fd",
+  "committed_package_revision": "e556daab79a97c9829ff88f97d8c3dd288ae784b",
   "tree_state_at_test": "dirty_with_scoped_family_mapping_files_and_unrelated_owner_artifacts_preserved",
   "implementation_files": {
     "scripts/healthtech/build_google_family_mapping.py": "c19ded56246688440ea2208ea8d3a378eba08f5568e9aa3b725b6f5a2a963a04",

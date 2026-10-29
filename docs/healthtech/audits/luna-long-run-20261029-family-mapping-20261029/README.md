@@ -3,6 +3,7 @@
 - Run ID: `luna-long-run-20261029-family-mapping-20261029`
 - Date: `2026-10-29`
 - Tested source commit: `c0610110bfd8962948445cd525713f9d58e219fd`
+- Committed package revision: `e556daab79a97c9829ff88f97d8c3dd288ae784b`
 - Status: `PASS_OFFLINE_FAMILY_SENSITIVITY`
 - Scope: local, evaluator-side family metadata recovery and group-structure sensitivity for the Boston Scientific, Stryker Neurovascular, and Cook Medical cohorts.
 - Parent context: current offline device-patent development package; live/provider HT-B4 and Bridge acquisition remain `BLOCKED_LOCAL`.
