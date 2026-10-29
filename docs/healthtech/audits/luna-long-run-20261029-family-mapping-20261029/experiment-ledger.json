@@ -1,0 +1,44 @@
+{
+  "format": "ht-family-mapping-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-family-mapping-20261029",
+  "entries": [
+    {
+      "id": "FM-01",
+      "type": "source_integrity",
+      "question": "Can explicit family IDs be recovered without trusting mutated local pages?",
+      "inputs": "Three manifest-pinned local device-patent cohorts and their typed source registries",
+      "expected": "Reject missing, unsupported, or mutated raw pages before parsing",
+      "outcome": "PASS: 24/24 pages mapped; raw size/hash and registry raw hash checks are enforced; mutation regression passes",
+      "evidence": "scripts/healthtech/build_google_family_mapping.py; tests/test_healthtech_family_mapping.py; results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json"
+    },
+    {
+      "id": "FM-02",
+      "type": "boundary",
+      "question": "Can family metadata remain evaluator-side without altering runtime inputs?",
+      "inputs": "Separate mapping artifact, reference queries, and existing exact-group artifact",
+      "expected": "Family analysis reads a separate mapping and emits no runtime or evaluator relation payload",
+      "outcome": "PASS: runtime inputs unchanged; mapping builder emits no evaluator path or disclosure evidence fields; separation regression passes",
+      "evidence": "scripts/healthtech/analyze_family_groups.py; tests/test_healthtech_family_mapping.py"
+    },
+    {
+      "id": "FM-03",
+      "type": "sensitivity",
+      "question": "Does sourced family grouping change the current group partition?",
+      "inputs": "Five development reference queries and three final-holdout reference queries",
+      "expected": "Report exact and family-aware groups plus any cross-exact-group merges",
+      "outcome": "PASS: both splits retain 3 exact and 3 family-aware groups; 0 cross-group merges",
+      "evidence": "results/healthtech/ht-family-group-analysis-20261029-r1/development.json; results/healthtech/ht-family-group-analysis-20261029-r1/final_holdout.json"
+    },
+    {
+      "id": "FM-04",
+      "type": "resource_boundary",
+      "question": "Did this package consume paid or provider resources?",
+      "inputs": "Offline local files and deterministic scripts only",
+      "expected": "Zero provider/network/paid activity",
+      "outcome": "PASS: 0 provider calls, 0 network acquisition, 0 neural calls, $0.00 paid cost",
+      "evidence": "docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/verification.json"
+    }
+  ],
+  "decision": "Family metadata is useful for provenance and uncertainty visibility, but this cohort does not support a changed group structure or a pooled scientific claim.",
+  "status": "READY_FOR_REVIEW"
+}

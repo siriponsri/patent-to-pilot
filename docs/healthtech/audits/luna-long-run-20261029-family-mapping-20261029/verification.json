@@ -1,0 +1,98 @@
+{
+  "format": "ht-family-mapping-audit-verification-v1",
+  "run_id": "luna-long-run-20261029-family-mapping-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_OFFLINE_FAMILY_SENSITIVITY",
+  "tested_source_commit": "c0610110bfd8962948445cd525713f9d58e219fd",
+  "tree_state_at_test": "dirty_with_scoped_family_mapping_files_and_unrelated_owner_artifacts_preserved",
+  "implementation_files": {
+    "scripts/healthtech/build_google_family_mapping.py": "c19ded56246688440ea2208ea8d3a378eba08f5568e9aa3b725b6f5a2a963a04",
+    "scripts/healthtech/analyze_family_groups.py": "22b4530956f169af4359274b54537e4be497078d586b298205381987048f23d8",
+    "tests/test_healthtech_family_mapping.py": "d173fa89258cf4ca0082edcd2e11f0416019dc6b5b234b3d37605c6004078bec",
+    "src/patent_to_pilot/evaluation/healthtech/retrieval.py": "179657a381702f230d4eafcaf73ff66429e8db6a927a60dcff5f3696eef37366",
+    "scripts/healthtech/run_real_baselines.py": "fd2f5275214d50b9129fed28f76fbbb7a8a8c15d517bf587185feac5689f7fcb"
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech.py tests/test_healthtech_family_mapping.py tests/test_healthtech_multicompany.py tests/test_healthtech_prelive.py tests/test_healthtech_repairs.py",
+      "status": "PASS",
+      "outcome": "80 passed"
+    },
+    {
+      "command": "rtk proxy python -c \"import os,sys; from pathlib import Path; src=str(Path('src').resolve()); os.environ['PYTHONPATH']=src + os.pathsep + os.environ.get('PYTHONPATH',''); sys.path.insert(0,src); import pytest; raise SystemExit(pytest.main(['--disable-warnings']))\"",
+      "status": "PASS",
+      "outcome": "350 passed, 1 warning"
+    },
+    {
+      "command": "rtk proxy python -m pytest -q",
+      "status": "SETUP_DISTINCTION",
+      "outcome": "Two pre-existing subprocess tests fail before readiness because the uninstalled checkout does not propagate PYTHONPATH to child workers; controlled PYTHONPATH rerun passes"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q src scripts tests",
+      "status": "PASS",
+      "outcome": "exit 0"
+    }
+  ],
+  "mapping_artifact": {
+    "path": "results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json",
+    "file_sha256": "7510b2f3fc18cef00419297e73f05985ed4aac25c58f6374274b98ff43d89dfd",
+    "mapping_sha256": "e4baa2e4eb1295c4abf9314fe5f2a60dd853151c7089f032801dc7fdef31f898",
+    "status": "SOURCED_LOCAL_EVALUATOR_MAPPING",
+    "counts": {
+      "patents_mapped": 24,
+      "families_observed": 19,
+      "unmapped_patents": 0
+    },
+    "source_cohorts": [
+      {"cohort_id": "ht-boston-watchman-20261028-r4", "patent_count": 7, "family_count": 5},
+      {"cohort_id": "ht-stryker-neurovascular-20261029-r1", "patent_count": 13, "family_count": 10},
+      {"cohort_id": "ht-cook-zenith-20261029-r1", "patent_count": 4, "family_count": 4}
+    ]
+  },
+  "group_analysis": [
+    {
+      "split": "development",
+      "path": "results/healthtech/ht-family-group-analysis-20261029-r1/development.json",
+      "file_sha256": "b3f8defec34daf2af7c73e108bcd4586fa7fbfdfc98e69afda971988ea77dba8",
+      "status": "PASS_OFFLINE_FAMILY_SENSITIVITY",
+      "reference_queries": 5,
+      "exact_group_count": 3,
+      "family_aware_group_count": 3,
+      "family_merged_exact_group_count": 0,
+      "family_mapped_patents": 24,
+      "families_observed": 19
+    },
+    {
+      "split": "final_holdout",
+      "path": "results/healthtech/ht-family-group-analysis-20261029-r1/final_holdout.json",
+      "file_sha256": "3eb727e18828f8924ae769a69f3295ed2f0342f7ba4137ae6128c6a9431ffe82",
+      "status": "PASS_OFFLINE_FAMILY_SENSITIVITY",
+      "reference_queries": 3,
+      "exact_group_count": 3,
+      "family_aware_group_count": 3,
+      "family_merged_exact_group_count": 0,
+      "family_mapped_patents": 24,
+      "families_observed": 19
+    }
+  ],
+  "boundaries": {
+    "runtime_inputs_changed": false,
+    "evaluator_relations_read_by_runtime": false,
+    "unlisted_pairs_recoded_negative": false,
+    "provider_calls": 0,
+    "network_acquisition": 0,
+    "neural_model_calls": 0,
+    "paid_cost_usd": 0.0,
+    "raw_html_staged": false,
+    "credentials_staged": false,
+    "private_paths_staged": false
+  },
+  "limitations": [
+    "Family IDs are explicit Google Patents page metadata, not semantic relevance or legal family adjudication.",
+    "Product-level disclosure links are not independent relevance gold.",
+    "The result is a family sensitivity analysis for the current development and holdout artifacts, not a generalization study.",
+    "Local Google-derived pages remain subject to the recorded local-research rights policy."
+  ],
+  "next_action": "Obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout before any pooled scientific claim."
+}

@@ -190,6 +190,11 @@
       "id": "HT-M1-CLOSURE",
       "status": "PASS_ENGINEERING",
       "evidence": "Fresh current-head F1/F2/F3 closure probe passes: external Markdown/JSON/source-view projection excludes nested and encoded restricted values; synthetic and real frozen Abbott runtime-text mutations are rejected; unknown, blank, mismatched, and ambiguous typed rights remain unresolved. Focused 46/46 and full 346/346 tests pass with 0 provider calls and $0 paid cost at docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/"
+    },
+    {
+      "id": "HT-M2-FAMILY-MAPPING",
+      "status": "PASS_OFFLINE_FAMILY_SENSITIVITY",
+      "evidence": "Sourced local Google Patents family-section mapping covers 24/24 patents across Boston/Stryker/Cook with 19 observed families; evaluator-only family-aware grouping leaves development at 3 groups over 5 queries and the final holdout at 3 groups over 3 queries, with 0 cross-group merges. Focused selection passes 80/80 and the full suite passes 350/350 with PYTHONPATH=src propagated to subprocesses; canonical audit at docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/"
     }
   ],
   "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_COHORTS_AND_TYPED_BOSTON_STRYKER_HOLDOUT",
@@ -197,7 +202,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M1 current-head revalidation and closure, M3 deterministic freeze, the filled non-submitted budget/data expansion request, the HT-T2 SciFact lexical dev score, the Stryker M2/M3 offline package, the typed Boston/Stryker multi-company holdout package, the Cook third-company expansion, and the Cook source-backed dossier run are complete with no extra spend. HT-T2 and all device-patent cohorts remain development-only evidence. Live provider/canary remains BLOCKED_LOCAL pending current OpenRouter metadata, credential/credit, transfer-rights, payload, and reconciliation gates. Next add sourced family mappings or a licensed relevance-judgment cohort while keeping Bridge blocked and Claude UX/UI paused",
+  "next": "M1 current-head revalidation and closure, M3 deterministic freeze, the filled non-submitted budget/data expansion request, the HT-T2 SciFact lexical dev score, the Stryker M2/M3 offline package, the typed Boston/Stryker multi-company holdout package, the Cook third-company expansion, the Cook source-backed dossier run, and the sourced family-mapping sensitivity package are complete with no extra spend. HT-T2 and all device-patent cohorts remain development-only evidence. Live provider/canary remains BLOCKED_LOCAL pending current OpenRouter metadata, credential/credit, transfer-rights, payload, and reconciliation gates. Next prioritize a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout while keeping Bridge blocked and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json",
@@ -211,6 +216,7 @@
   "latest_current_head_revalidation": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/verification.json",
   "latest_m1_revalidation": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/README.md",
   "latest_m1_closure": "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/verification.json",
+  "latest_family_mapping_audit": "docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/README.md",
   "latest_typed_registry_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-typed-registry/verification.json",
   "latest_goal_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/verification.json",
   "latest_clean_checkout_reproducibility_audit": "docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/verification.json",

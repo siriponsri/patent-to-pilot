@@ -157,3 +157,13 @@ Fresh current-head probes close F1/F2/F3 at commit `82e2bd5258eba5da0f582d9e2c2a
 The focused repair/pre-live suite passes `46/46`; the full suite passes `346/346`; compile checks pass; network attempts, provider calls, neural model calls, and paid cost are all zero. The historical stale portable probe remains unchanged and is recorded only as a setup diagnosis because it rewrites the fixture manifest to a legacy shape before probing.
 
 This is engineering evidence only. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused. Next continue with sourced family mappings or a licensed relevance-judgment cohort spanning multiple independent groups and a predeclared final holdout.
+
+## HT-NEXT-020 — 2026-10-29 sourced Google family mapping
+
+Status: `PASS_OFFLINE_FAMILY_SENSITIVITY`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/README.md`.
+
+Added evaluator-only family metadata recovery from explicit Google Patents family-section IDs for the cached Boston Scientific, Stryker Neurovascular, and Cook Medical cohorts. The mapping covers `24/24` patents across `19` observed families with `0` unmapped patents. Family-aware group analysis leaves the development split at `3` groups over `5` queries and the final holdout at `3` groups over `3` queries, with `0` cross-group merges.
+
+Focused family/HealthTech regressions pass `80/80`, the full suite passes `350/350` with `PYTHONPATH=src` propagated to subprocesses, compile checks pass, and provider/network/paid activity remain `0` / `$0.00`. The unqualified full-suite invocation still has the known two-child-process import setup failure in this uninstalled checkout. The mapping is sourced local evaluator metadata only; it does not change runtime inputs, create semantic relevance gold, recode unlisted pairs, or establish legal family, FTO, clinical, validity, investment, publication, or generalization claims.
+
+Next: obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout before any pooled scientific claim. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
