@@ -343,3 +343,11 @@ Added `review_tasks.py` and `build_review_tasks.py` at implementation commit `23
 Artifacts: `results/healthtech/ht-relevance-review-tasks-20261029-r1/manifest.json` SHA-256 `bf4ee05fc76f26f5be891866843e7f4a24a01d0fab8249c9db8c339ce09ce6d6`; `tasks.jsonl` SHA-256 `7274129bd3cbe01449ae046e75c89b9d099aa4f78311e3b8db69ed9ab7382d8c`. This is local review preparation, not semantic gold or provider-transfer approval.
 
 Next: obtain or authorize the rights-cleared judgment source and ingest only explicit labels with source revision/hash, locator, basis, and adjudicator role. Preserve the 341-pair denominator, unjudged policy, and untouched Stryker holdout. Keep paid HT-B4 `BLOCKED_LOCAL`, Bridge blocked, and Claude UX/UI paused.
+
+## HT-NEXT-038 — 2026-10-29 M17 typed-rights migration and offline Abbott baselines
+
+Status: `PASS_OFFLINE_DEVELOPMENT_TYPED_RIGHTS`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/README.md`.
+
+Implemented and committed the recoverable legacy-cohort migration and explicit all-channel boundary matrix at `7def4ff`. The derived Abbott cohort changes 45/45 registry rows to typed policy IDs while preserving the original legacy cohort. Exact-head verification passes 57 focused tests and compiles 147 Python files in memory. The corrected offline HT-B0a/B0b/B1/B2/B3 run covers 3 devices, 41 patents, 61 disclosed product-level pairs, and 62 explicitly unjudged distractors with 0 errors, 0 provider calls, and USD 0.00 paid cost. The earlier `r1` attempt used `group_evidence.json` instead of the required `groups.json` and is retained as a failed input-contract attempt, not a result.
+
+This remains development-only evidence: one company, two exact-patent groups, no final holdout, no semantic labels, and no generalization estimate. Next: obtain or authorize a rights-cleared independent cohort with multiple company/family groups and a predeclared untouched holdout, then ingest explicit labels through `ht-relevance-judgment-cohort-v1` before any pooled scientific claim. Keep live/provider HT-B4 `BLOCKED_LOCAL`, Bridge blocked, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused.

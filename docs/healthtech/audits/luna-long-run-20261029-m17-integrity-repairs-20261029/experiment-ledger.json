@@ -1,0 +1,68 @@
+{
+  "format": "ht-m17-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-m17-integrity-repairs-20261029",
+  "date": "2026-10-29",
+  "entries": [
+    {
+      "id": "m17-typed-rights-migration",
+      "kind": "offline_local_migration",
+      "status": "PASS",
+      "input": "results/healthtech/ht-public-cohort-20261029-frozen-r1",
+      "output": "results/healthtech/ht-public-cohort-20261029-frozen-r2-typed",
+      "source_rows": 45,
+      "changed_rows": 45,
+      "copied_bytes": 64389947,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "notes": "Fresh derived copy; original legacy cohort left untouched."
+    },
+    {
+      "id": "m17-boundary-matrix",
+      "kind": "offline_regression",
+      "status": "PASS",
+      "tests": 57,
+      "channels": ["markdown_en", "markdown_th", "product_display", "redistribution", "json", "source_view", "history_reload"],
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    {
+      "id": "m17-baseline-r1",
+      "kind": "offline_baseline_attempt",
+      "status": "FAILED_INPUT_CONTRACT",
+      "output": "results/healthtech/ht-real-baselines-20261029-m17-r1",
+      "reason": "group_evidence.json was supplied where the runner requires groups.json; no score is claimed.",
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "retained_for_audit": true
+    },
+    {
+      "id": "m17-baseline-r2",
+      "kind": "offline_baseline_run",
+      "status": "PASS",
+      "output": "results/healthtech/ht-real-baselines-20261029-m17-r2",
+      "methods": ["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"],
+      "devices": 3,
+      "patents": 41,
+      "reference_pairs": 61,
+      "errors": 0,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "limitations": ["development-only", "no-final-holdout", "two-exact-groups", "unjudged-distractors-not-negatives"]
+    },
+    {
+      "id": "m17-clean-head-verification",
+      "kind": "clean_checkout_verification",
+      "status": "PASS",
+      "commit": "7def4ff",
+      "focused_tests": 57,
+      "python_files_compiled_in_memory": 147,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    }
+  ],
+  "totals": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "live_network_attempts": 0
+  }
+}

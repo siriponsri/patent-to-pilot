@@ -1,0 +1,122 @@
+{
+  "format": "ht-m17-integrity-repairs-verification-v1",
+  "run_id": "luna-long-run-20261029-m17-integrity-repairs-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_OFFLINE_DEVELOPMENT_TYPED_RIGHTS",
+  "audit_head": "7def4ff",
+  "parent_audit": "docs/healthtech/audits/luna-long-run-20261029-m16-review-tasks-20261029/verification.json",
+  "checks": {
+    "typed_rights_migration": true,
+    "original_legacy_cohort_untouched": true,
+    "all_channel_boundary_matrix": true,
+    "exact_head_focused_tests": true,
+    "in_memory_syntax_compile": true,
+    "corrected_m1_reproduction": true,
+    "real_offline_baselines_completed": true,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "network_attempts": 0,
+    "final_holdout": false,
+    "semantic_labels": false,
+    "publication_readiness": false
+  },
+  "test_commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py tests/test_healthtech_cook.py tests/test_healthtech_philips_dossiers.py tests/test_healthtech_philips_cohort.py tests/test_healthtech_cohort_migration.py tests/test_healthtech_boundary_matrix.py",
+      "worktree": "disposable clean checkout at audit head 7def4ff",
+      "exit_code": 0,
+      "outcome": "57 tests passed; one existing fitz deprecation warning."
+    },
+    {
+      "command": "rtk proxy python -B -c \"compile all .py files under src, scripts, and tests in memory\"",
+      "worktree": "disposable clean checkout at audit head 7def4ff",
+      "exit_code": 0,
+      "outcome": "147 Python files compiled in memory without writing bytecode."
+    }
+  ],
+  "artifacts": {
+    "typed_cohort_manifest": {
+      "path": "results/healthtech/ht-public-cohort-20261029-frozen-r2-typed/manifest.json",
+      "sha256": "3578060eb33d2da710a48c4c4071c38360840f3a0df38112dd46b710013ee532"
+    },
+    "rights_migration": {
+      "path": "results/healthtech/ht-public-cohort-20261029-frozen-r2-typed/rights-migration.json",
+      "sha256": "7d1c22c2f14d679ad4124d51d445beeb7bbd91a4dfcd8cba93350a41c72b7a6e"
+    },
+    "development_protocol": {
+      "path": "results/healthtech/ht-abbott-development-20261029-m17-r1/protocol.json",
+      "sha256": "92bf376853dcb93c50ef934f6a99cb3753088aec6770afcc70c2704e87f8b0e5"
+    },
+    "baseline_receipt": {
+      "path": "results/healthtech/ht-real-baselines-20261029-m17-r2/receipt.json",
+      "sha256": "1f09435183660272be38af473ec9bec68251bc609ffcc0e98646a9c1712d1b51"
+    },
+    "baseline_method_summary": {
+      "path": "results/healthtech/ht-real-baselines-20261029-m17-r2/method_summary.json",
+      "sha256": "2681352509a25fa650372496ce2f4a2bd53258d6698e7be581d249b2c3f2db57"
+    },
+    "baseline_frontier": {
+      "path": "results/healthtech/ht-real-baselines-20261029-m17-r2/frontier_diagnostics.json",
+      "sha256": "5d990a480dc1e99ae1ed25999feaa0c96eb41e8133d91bfe7362caabcab2ce92"
+    },
+    "baseline_evaluator_validation": {
+      "path": "results/healthtech/ht-real-baselines-20261029-m17-r2/evaluator_validation.json",
+      "sha256": "e6fc1ef48fb6269bf56e714bb3f59dc1de102ed2373715a35bd11fcdc2275568"
+    },
+    "baseline_headroom": {
+      "path": "results/healthtech/ht-real-baselines-20261029-m17-r2/development_headroom.json",
+      "sha256": "1b6bf7f65c602fe60106cb3286fbb1c274f46901cde19d02d4e3b63dd34a781d"
+    },
+    "m1_reproduction": {
+      "path": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/after-reproduction-summary.json",
+      "sha256": "924ddbfd328ff85ad8e8bac648314fbe65f11377c53d1c7764c9b65baa078114"
+    }
+  },
+  "counts": {
+    "devices": 3,
+    "patents": 41,
+    "reference_pairs": 61,
+    "unjudged_distractor_pairs": 62,
+    "exact_patent_groups": 2,
+    "focused_tests_passed": 57,
+    "python_files_compiled_in_memory": 147
+  },
+  "metrics": {
+    "primary_k": 20,
+    "macro_known_link_recall_at_20": {
+      "HT-B0a": 0.4427394146064223,
+      "HT-B0b": 0.6622417082775139,
+      "HT-B1": 0.49880241951853205,
+      "HT-B2": 0.5689116226200625,
+      "HT-B3": 0.49880241951853205
+    },
+    "query_calls": {
+      "HT-B0a": 3,
+      "HT-B0b": 3,
+      "HT-B1": 3,
+      "HT-B2": 9,
+      "HT-B3": 5
+    },
+    "rerank_pairs": {
+      "HT-B0a": 0,
+      "HT-B0b": 0,
+      "HT-B1": 123,
+      "HT-B2": 369,
+      "HT-B3": 205
+    },
+    "rerank_tokens": {
+      "HT-B0a": 0,
+      "HT-B0b": 0,
+      "HT-B1": 31488,
+      "HT-B2": 94464,
+      "HT-B3": 52480
+    }
+  },
+  "not_run": [
+    "Rights-cleared independent semantic judgment source",
+    "Final holdout or stable group uncertainty estimate",
+    "Live/provider HT-B4 or paid inference",
+    "Bridge acquisition or reuse-rights resolution",
+    "Clinical/FTO, patent-validity, investment, deployment, outreach, or publication claims"
+  ]
+}
