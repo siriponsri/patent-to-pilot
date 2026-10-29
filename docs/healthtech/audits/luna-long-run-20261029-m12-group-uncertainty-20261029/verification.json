@@ -1,0 +1,100 @@
+{
+  "format": "ht-healthtech-audit-verification-v1",
+  "audit_id": "luna-long-run-20261029-m12-group-uncertainty-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
+  "scope": {
+    "endpoint": "macro known-link recall at K=20 over product-level disclosed links",
+    "baseline_method": "HT-B0b",
+    "minimum_effective_groups": 5,
+    "development_effective_groups": 3,
+    "final_holdout_effective_groups": 3,
+    "semantic_relevance_gold": "NOT_RUN",
+    "generalization": "NOT_ESTIMABLE",
+    "statistical_significance": "NOT_RUN",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "commits": {
+    "start_code_commit": "fa507ec44fd40ee216b5d92c39ef2c86054cfe9b",
+    "implementation_code_commit": "d4f4881c6192a0107fac6702909d6970920e3067"
+  },
+  "commands": [
+    {
+      "name": "focused regression tests",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_long_run_analysis.py tests/test_healthtech_long_run_report.py",
+      "result": "PASS",
+      "exit_code": 0,
+      "observed": "4 passed"
+    },
+    {
+      "name": "compile checks",
+      "command": "rtk proxy python -m compileall -q scripts/healthtech/analyze_long_run.py tests/test_healthtech_long_run_analysis.py",
+      "result": "PASS",
+      "exit_code": 0,
+      "observed": "exit 0"
+    },
+    {
+      "name": "real M12 generation",
+      "command": "rtk proxy python -B scripts/healthtech/analyze_long_run.py --summary docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/summary_tables.json --dev-frontier results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/frontier_diagnostics.json --holdout-frontier results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/frontier_diagnostics.json --output docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029 --code-commit d4f4881c6192a0107fac6702909d6970920e3067",
+      "result": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
+      "exit_code": 0,
+      "observed": "Six deterministic analysis artifacts written; all paired comparisons remain NOT_ESTIMABLE"
+    }
+  ],
+  "input_hashes": {
+    "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/summary_tables.json": "d7997be560a47796afd0a590d61462ff69a262225f97985819c81c21c8a12a02",
+    "results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/frontier_diagnostics.json": "f32f8dfa2eb4f3f180ab62a3dbc531a8bbee9e01a46ad78f6f93fd7c5b112b39",
+    "results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/frontier_diagnostics.json": "fec5cb5ea30423998068cd54de20045f6e44322e8444ec3c2d4019f9d2fd365b"
+  },
+  "output_hashes": {
+    "analysis.json": {
+      "bytes": 17798,
+      "sha256": "a3054710ef6eaeef4e15a877e294f044332bf3d26152f541af82f86f1a705d70"
+    },
+    "ANALYSIS.md": {
+      "bytes": 4110,
+      "sha256": "410f1c4c5a007851f8034b89e7694e837f553654af52126220920e5442bf22b8"
+    },
+    "quality_cost_frontier.csv": {
+      "bytes": 2174,
+      "sha256": "126c1ff97477e516c8e34b0b8114fe431689e1c0f02a4785a4acacffc4b7cf5d"
+    },
+    "quality_cost_development.svg": {
+      "bytes": 1792,
+      "sha256": "355dd0d1bb537f09cdcd817182919474caf2a1b69d85d0e9234eb6067b041bd6"
+    },
+    "quality_cost_holdout.svg": {
+      "bytes": 1797,
+      "sha256": "aecd53ca909805f3e77233e6d7703d231353f6d2f94d11dcbf4907f4ee009d5c"
+    },
+    "recall_comparison.svg": {
+      "bytes": 2302,
+      "sha256": "5e06777c534b2d5bd4a237184d5e4ab04debf8153d6697b3e8b64d3730e14917"
+    }
+  },
+  "paired_group_summary": {
+    "development": {
+      "HT-B0a_minus_HT-B0b_mean_delta": -0.05158730158730159,
+      "HT-B1_minus_HT-B0b_mean_delta": 0.0,
+      "HT-B2_minus_HT-B0b_mean_delta": 0.0,
+      "HT-B3_minus_HT-B0b_mean_delta": 0.0
+    },
+    "final_holdout": {
+      "HT-B0a_minus_HT-B0b_mean_delta": -0.13333333333333333,
+      "HT-B1_minus_HT-B0b_mean_delta": -0.019047619047619018,
+      "HT-B2_minus_HT-B0b_mean_delta": -0.019047619047619018,
+      "HT-B3_minus_HT-B0b_mean_delta": -0.06666666666666665
+    }
+  },
+  "boundaries": {
+    "semantic_gold": "NOT_RUN",
+    "statistical_significance": "NOT_RUN",
+    "generalization": "NOT_ESTIMABLE",
+    "live_provider_execution": "BLOCKED_LOCAL",
+    "user_commercial_validation": "NOT_VALIDATED",
+    "clinical_f_to_investment_publication": "OUT_OF_SCOPE_OR_NOT_RUN",
+    "paid_cost": "$0.00"
+  },
+  "next_action": "Obtain a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout; then apply ht-relevance-judgment-cohort-v1 and rerun the frozen controls."
+}

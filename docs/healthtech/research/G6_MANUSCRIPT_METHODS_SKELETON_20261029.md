@@ -60,6 +60,17 @@ The M8 analysis package computes the observed Pareto frontier from macro known-l
 - Holdout quality-resource plot: [`quality_cost_holdout.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_holdout.svg)
 - Development/holdout recall comparison: [`recall_comparison.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/recall_comparison.svg)
 
+## Paired group uncertainty diagnostic
+
+The M12 diagnostic aligns methods by frozen `group_id` against `HT-B0b` at `K=20` and reports descriptive mean deltas, population standard deviation, and min/max deltas. The predeclared minimum effective group threshold is `5`; both the development and final-holdout views contain `3` effective family-aware groups, so every paired comparison remains `NOT_ESTIMABLE`.
+
+| Split | HT-B0a minus HT-B0b | HT-B1 minus HT-B0b | HT-B2 minus HT-B0b | HT-B3 minus HT-B0b |
+|---|---:|---:|---:|---:|
+| Development mean delta | -0.0516 | 0.0000 | 0.0000 | 0.0000 |
+| Final holdout mean delta | -0.1333 | -0.0190 | -0.0190 | -0.0667 |
+
+These values are descriptive diagnostics only. They do not estimate statistical significance, confidence intervals, or generalization beyond the frozen groups. The canonical M12 audit contains the machine-readable analysis, exact hashes, reproduction command, and continuation note: [`luna-long-run-20261029-m12-group-uncertainty-20261029`](../audits/luna-long-run-20261029-m12-group-uncertainty-20261029/README.md).
+
 ## Separate HT-T2 SciFact component
 
 HT-T2 is a separate evidence-verification component, not device-patent gold. The current deterministic lexical development run covers the full 300-claim development denominator over 5,183 corpus documents, writes 300 prediction rows, includes lexical evidence for all 300 rows, and has no missing prediction claim IDs. The pinned release records claims/annotations under CC BY 4.0, abstracts under ODC-By 1.0, and code under Apache 2.0. Official hidden/test labels are absent from the pinned release.
@@ -92,6 +103,7 @@ The mock transport exercised the action schema and R1 reservation/settlement pat
 
 - Frozen report and machine-readable outputs: [`docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/`](../audits/luna-long-run-20261029-m7-report-20261029/).
 - Holdout comparison and machine-readable outputs: [`docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/`](../audits/luna-long-run-20261029-m10-b4-holdout-20261029/).
+- Paired group diagnostic and verification: [`docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/`](../audits/luna-long-run-20261029-m12-group-uncertainty-20261029/).
 - Frozen B4 verification: [`docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json`](../audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json).
 - HT-T2 SciFact development audit: [`luna-long-run-20261029-ht-t2-lexical-dev-20261029`](../audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/README.md).
 - Model snapshot: `results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json`.
@@ -123,4 +135,4 @@ SciFact is a separate evidence-verification component with its own source releas
 
 ## Reproducibility and next test
 
-Reproduce the report and figures with the commands recorded in the M7/M8 audit verification files and reproduce the holdout comparison with the M10 audit command and frozen input hashes in `comparison.json`. The next discriminating test is a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout. Do not tune on the current holdout or recode unjudged pairs as negatives.
+Reproduce the report and figures with the commands recorded in the M7/M8 audit verification files, reproduce the holdout comparison with the M10 audit command and frozen input hashes in `comparison.json`, and reproduce the paired group diagnostic with the M12 command and hashes in `verification.json`. The next discriminating test is a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout. Do not tune on the current holdout or recode unjudged pairs as negatives.

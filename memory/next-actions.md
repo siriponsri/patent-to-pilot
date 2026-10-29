@@ -291,3 +291,13 @@ Corrected and revalidated the M11 output receipt so all four report artifacts ha
 Updated `BUDGET_EXPANSION_REQUEST_TH.md` with the M10/M11 decision impact. The recommendation remains `$0.00` incremental authorization and no paid branch; the result is mock-only descriptive evidence and does not establish semantic relevance gold, adaptive superiority, generalization, clinical/FTO, validity, investment, or publication readiness.
 
 Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or holdout, then rerun the frozen controls before any pooled scientific claim. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve unjudged pairs, and keep Bridge, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-033 - 2026-10-29 M12 paired group uncertainty diagnostic
+
+Status: `PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/README.md`.
+
+Added the paired group diagnostic at implementation commit `d4f4881c6192a0107fac6702909d6970920e3067`. Methods are aligned by frozen `group_id` against `HT-B0b` at `K=20`, with mean delta, population standard deviation, and min/max delta outputs. Both development and final holdout have `3` effective family-aware groups against the predeclared minimum of `5`, so all paired comparisons remain `NOT_ESTIMABLE`.
+
+Focused tests pass `4/4`; compile checks pass; real generation completed with `PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE`; the six generated artifacts have recorded SHA-256 hashes; provider calls and paid cost remain `0` / `$0.00`. This does not add semantic relevance gold, statistical significance, generalization, live-provider evidence, user/commercial validation, clinical/FTO, validity, investment, or publication evidence.
+
+Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or holdout, then rerun the frozen controls. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve unjudged pairs, and keep Bridge, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.

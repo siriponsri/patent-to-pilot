@@ -1,0 +1,522 @@
+{
+  "b4_provider_shaped_mock": {
+    "macro_recall_delta_vs_HT-B0b": 0.0,
+    "macro_recall_delta_vs_HT-B2": 0.0,
+    "paid_cost_usd": 0.0,
+    "simulated_cost_usd": 0.0012000000000000001,
+    "status": "MOCK_ONLY_NOT_PROVIDER_EVIDENCE"
+  },
+  "code_commit": "d4f4881c6192a0107fac6702909d6970920e3067",
+  "cohort_manifest_hash": "1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+  "development": {
+    "pareto_frontier_methods": [
+      "HT-B0a",
+      "HT-B0b"
+    ],
+    "rows": [
+      {
+        "cpu_seconds": 0.0,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.8452380952380952,
+        "group_macro_known_link_recall_range": 0.15476190476190477,
+        "group_macro_known_link_recall_values": [
+          0.8452380952380952,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 0.9380952380952381,
+        "method": "HT-B0a",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 5.0,
+        "query_count": 5,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 120.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 0.0010631999975885265
+      },
+      {
+        "cpu_seconds": 0.203125,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 1.0,
+        "group_macro_known_link_recall_range": 0.0,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 1.0,
+        "method": "HT-B0b",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 5.0,
+        "query_count": 5,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 120.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 0.033436099998652935
+      },
+      {
+        "cpu_seconds": 77.109375,
+        "embedding_query_tokens": 150.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 1.0,
+        "group_macro_known_link_recall_range": 0.0,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 1.0,
+        "method": "HT-B1",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 5.0,
+        "query_count": 5,
+        "rerank_pairs": 120.0,
+        "rerank_tokens": 30720.0,
+        "returned_candidates": 120.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 14.172028800003318
+      },
+      {
+        "cpu_seconds": 303.0625,
+        "embedding_query_tokens": 300.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 1.0,
+        "group_macro_known_link_recall_range": 0.0,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 1.0,
+        "method": "HT-B2",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 20.0,
+        "query_count": 20,
+        "rerank_pairs": 480.0,
+        "rerank_tokens": 122880.0,
+        "returned_candidates": 480.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 52.0173917999964
+      },
+      {
+        "cpu_seconds": 79.171875,
+        "embedding_query_tokens": 174.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 1.0,
+        "group_macro_known_link_recall_range": 0.0,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 1.0,
+        "method": "HT-B3",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 7.0,
+        "query_count": 7,
+        "rerank_pairs": 168.0,
+        "rerank_tokens": 43008.0,
+        "returned_candidates": 168.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 8.25666170000477
+      }
+    ]
+  },
+  "final_holdout": {
+    "pareto_frontier_methods": [
+      "HT-B0a",
+      "HT-B0b"
+    ],
+    "rows": [
+      {
+        "cpu_seconds": 0.0,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.6,
+        "group_macro_known_link_recall_range": 0.4,
+        "group_macro_known_link_recall_values": [
+          0.8571428571428571,
+          1.0,
+          0.6
+        ],
+        "macro_known_link_recall_at_20": 0.8190476190476191,
+        "method": "HT-B0a",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 3.0,
+        "query_count": 3,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 72.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 0.0007776000056765042
+      },
+      {
+        "cpu_seconds": 0.078125,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.8571428571428571,
+        "group_macro_known_link_recall_range": 0.1428571428571429,
+        "group_macro_known_link_recall_values": [
+          0.8571428571428571,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 0.9523809523809524,
+        "method": "HT-B0b",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 3.0,
+        "query_count": 3,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 72.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 0.009692999999970198
+      },
+      {
+        "cpu_seconds": 46.984375,
+        "embedding_query_tokens": 67.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.8,
+        "group_macro_known_link_recall_range": 0.19999999999999996,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          0.8
+        ],
+        "macro_known_link_recall_at_20": 0.9333333333333332,
+        "method": "HT-B1",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 3.0,
+        "query_count": 3,
+        "rerank_pairs": 72.0,
+        "rerank_tokens": 18432.0,
+        "returned_candidates": 72.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 9.092900099996768
+      },
+      {
+        "cpu_seconds": 195.046875,
+        "embedding_query_tokens": 135.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.8,
+        "group_macro_known_link_recall_range": 0.19999999999999996,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          0.8
+        ],
+        "macro_known_link_recall_at_20": 0.9333333333333332,
+        "method": "HT-B2",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 12.0,
+        "query_count": 12,
+        "rerank_pairs": 288.0,
+        "rerank_tokens": 73728.0,
+        "returned_candidates": 288.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 36.099212299999635
+      },
+      {
+        "cpu_seconds": 74.828125,
+        "embedding_query_tokens": 87.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.8,
+        "group_macro_known_link_recall_range": 0.19999999999999996,
+        "group_macro_known_link_recall_values": [
+          0.8571428571428571,
+          1.0,
+          0.8
+        ],
+        "macro_known_link_recall_at_20": 0.8857142857142857,
+        "method": "HT-B3",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 5.0,
+        "query_count": 5,
+        "rerank_pairs": 120.0,
+        "rerank_tokens": 30720.0,
+        "returned_candidates": 120.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 13.58116869999867
+      }
+    ]
+  },
+  "format": "ht-long-run-analysis-v1",
+  "holdout_minus_development": [
+    {
+      "macro_recall_delta_holdout_minus_development": -0.11904761904761896,
+      "method": "HT-B0a",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": -0.00028559999191202223
+    },
+    {
+      "macro_recall_delta_holdout_minus_development": -0.04761904761904756,
+      "method": "HT-B0b",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": -0.023743099998682737
+    },
+    {
+      "macro_recall_delta_holdout_minus_development": -0.06666666666666676,
+      "method": "HT-B1",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": -5.0791287000065495
+    },
+    {
+      "macro_recall_delta_holdout_minus_development": -0.06666666666666676,
+      "method": "HT-B2",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": -15.918179499996768
+    },
+    {
+      "macro_recall_delta_holdout_minus_development": -0.11428571428571432,
+      "method": "HT-B3",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": 5.3245069999939005
+    }
+  ],
+  "input_hashes": {
+    "docs\\healthtech\\audits\\luna-long-run-20261029-m11-report-refresh-20261029-r2\\summary_tables.json": "d7997be560a47796afd0a590d61462ff69a262225f97985819c81c21c8a12a02",
+    "results\\healthtech\\ht-multicompany-baselines-20261029-family-r1-dev\\frontier_diagnostics.json": "f32f8dfa2eb4f3f180ab62a3dbc531a8bbee9e01a46ad78f6f93fd7c5b112b39",
+    "results\\healthtech\\ht-multicompany-baselines-20261029-family-r1-holdout\\frontier_diagnostics.json": "fec5cb5ea30423998068cd54de20045f6e44322e8444ec3c2d4019f9d2fd365b"
+  },
+  "interpretation": [
+    "HT-B0b is on the observed quality-resource frontier in both frozen views; this is descriptive and does not establish scientific superiority.",
+    "HT-B1, HT-B2, and HT-B3 are dominated by HT-B0b on the observed wall-time/recall coordinates in these views.",
+    "HT-B4 mock recall matches HT-B0b and HT-B2 on development, but the transport was mocked and therefore is not provider evidence.",
+    "Small group counts, product-level disclosure labels, unjudged pairs, and the K=20 ceiling keep confirmatory uncertainty NOT_ESTIMABLE.",
+    "Paired group diagnostics align methods by frozen group_id and report deltas/population SD only; the current effective group count is below the predeclared threshold of five, so uncertainty remains NOT_ESTIMABLE."
+  ],
+  "paired_group_uncertainty": {
+    "baseline_method": "HT-B0b",
+    "development": {
+      "baseline_method": "HT-B0b",
+      "methods": {
+        "HT-B0a": {
+          "comparison": "HT-B0a minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": -0.05158730158730159,
+          "min_delta": -0.15476190476190477,
+          "paired_delta_values": [
+            -0.15476190476190477,
+            0.0,
+            0.0
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.072955461550993,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        },
+        "HT-B1": {
+          "comparison": "HT-B1 minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": 0.0,
+          "min_delta": 0.0,
+          "paired_delta_values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.0,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        },
+        "HT-B2": {
+          "comparison": "HT-B2 minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": 0.0,
+          "min_delta": 0.0,
+          "paired_delta_values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.0,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        },
+        "HT-B3": {
+          "comparison": "HT-B3 minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": 0.0,
+          "min_delta": 0.0,
+          "paired_delta_values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.0,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        }
+      },
+      "minimum_effective_groups": 5,
+      "status": "NOT_ESTIMABLE"
+    },
+    "final_holdout": {
+      "baseline_method": "HT-B0b",
+      "methods": {
+        "HT-B0a": {
+          "comparison": "HT-B0a minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": -0.13333333333333333,
+          "min_delta": -0.4,
+          "paired_delta_values": [
+            0.0,
+            0.0,
+            -0.4
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.1885618083164127,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        },
+        "HT-B1": {
+          "comparison": "HT-B1 minus HT-B0b",
+          "max_delta": 0.1428571428571429,
+          "mean_delta": -0.019047619047619018,
+          "min_delta": -0.19999999999999996,
+          "paired_delta_values": [
+            0.1428571428571429,
+            0.0,
+            -0.19999999999999996
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.14061736247841333,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        },
+        "HT-B2": {
+          "comparison": "HT-B2 minus HT-B0b",
+          "max_delta": 0.1428571428571429,
+          "mean_delta": -0.019047619047619018,
+          "min_delta": -0.19999999999999996,
+          "paired_delta_values": [
+            0.1428571428571429,
+            0.0,
+            -0.19999999999999996
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.14061736247841333,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        },
+        "HT-B3": {
+          "comparison": "HT-B3 minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": -0.06666666666666665,
+          "min_delta": -0.19999999999999996,
+          "paired_delta_values": [
+            0.0,
+            0.0,
+            -0.19999999999999996
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.09428090415820632,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        }
+      },
+      "minimum_effective_groups": 5,
+      "status": "NOT_ESTIMABLE"
+    },
+    "minimum_effective_groups": 5
+  },
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE"
+}
