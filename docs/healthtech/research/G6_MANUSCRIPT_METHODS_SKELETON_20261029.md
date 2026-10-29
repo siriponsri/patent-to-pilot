@@ -44,6 +44,19 @@ The M8 analysis package computes the observed Pareto frontier from macro known-l
 - Holdout quality-resource plot: [`quality_cost_holdout.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_holdout.svg)
 - Development/holdout recall comparison: [`recall_comparison.svg`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/recall_comparison.svg)
 
+## Separate HT-T2 SciFact component
+
+HT-T2 is a separate evidence-verification component, not device-patent gold. The current deterministic lexical development run covers the full 300-claim development denominator over 5,183 corpus documents, writes 300 prediction rows, includes lexical evidence for all 300 rows, and has no missing prediction claim IDs. The pinned release records claims/annotations under CC BY 4.0, abstracts under ODC-By 1.0, and code under Apache 2.0. Official hidden/test labels are absent from the pinned release.
+
+| Metric | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| Abstract label-only | 0.125556 | 0.540670 | 0.203787 |
+| Abstract rationalized | 0.103333 | 0.444976 | 0.167719 |
+| Sentence selection | 0.061060 | 0.434426 | 0.107071 |
+| Sentence label | 0.041859 | 0.297814 | 0.073401 |
+
+Source and evaluator details are in the [HT-T2 audit](../audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/REPORT.md) and its [verification record](../audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/verification.json). These scores are development-only component evidence. They must not be pooled with HT-T1 patent-association recall, used as clinical truth, or presented as an adaptive-method or hidden-test result.
+
 ## Provider-shaped mock table
 
 | Metric | Actual value |
@@ -63,6 +76,7 @@ The mock transport exercised the action schema and R1 reservation/settlement pat
 
 - Frozen report and machine-readable outputs: [`docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/`](../audits/luna-long-run-20261029-m7-report-20261029/).
 - Frozen B4 verification: [`docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json`](../audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json).
+- HT-T2 SciFact development audit: [`luna-long-run-20261029-ht-t2-lexical-dev-20261029`](../audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/README.md).
 - Model snapshot: `results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json`.
 - Endpoint metadata: `results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/endpoint_metadata.json`.
 - Current code tested: `237fc669a4b7829be420c48547f36a69e28f64f0`.
