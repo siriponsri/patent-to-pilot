@@ -259,7 +259,10 @@ def _510k_source(cohort: Path, device: dict[str, Any], registry: dict[str, Any],
         synthetic=False,
     )
     return _source_with_metadata(
-        attach_rights(source, select_rights_policy(rights, source_id=source_id, source_type="regulatory_record")),
+        attach_rights(source, select_rights_policy(
+            rights, source_id=source_id, source_type="regulatory_record",
+            declared_policy_id=str(entry["rights_policy_id"]),
+        )),
         locator=f"openFDA:510k_number={identifier}",
         retrieved_at_utc=entry.get("retrieved_at_utc"),
         limits=["raw snapshot retained locally", "preserve FDA attribution"],
@@ -294,7 +297,8 @@ def _disclosure_source(
         attach_rights(
             source,
             select_rights_policy(
-                rights, source_id=PHILIPS_DISCLOSURE_SOURCE_ID, source_type="independent_disclosure"
+                rights, source_id=PHILIPS_DISCLOSURE_SOURCE_ID, source_type="independent_disclosure",
+                declared_policy_id=str(entry["rights_policy_id"]),
             ),
         ),
         locator="html-table:Philips cardiovascular product rows",
@@ -327,7 +331,10 @@ def _patent_inputs(runtime: dict[str, Any], registry: dict[str, Any], rights) ->
             synthetic=False,
         )
         source = _source_with_metadata(
-            attach_rights(source, select_rights_policy(rights, source_id=source_id, source_type="patent_document")),
+            attach_rights(source, select_rights_policy(
+                rights, source_id=source_id, source_type="patent_document",
+                declared_policy_id=str(entry["rights_policy_id"]),
+            )),
             locator=f"disclosure-raw-number:{patent['patent_id_raw']}",
             retrieved_at_utc=entry.get("retrieved_at_utc"),
             limits=[

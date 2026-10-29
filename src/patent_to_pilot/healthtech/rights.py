@@ -57,8 +57,34 @@ def load_rights_matrix(path: str | Path) -> dict[str, SourceRights]:
 
 
 def select_rights_policy(
-    policies: dict[str, SourceRights], *, source_id: str, source_type: str
+    policies: dict[str, SourceRights], *, source_id: str, source_type: str,
+    declared_policy_id: str | None = None,
 ) -> SourceRights:
+    if declared_policy_id is not None:
+        if not isinstance(declared_policy_id, str) or not declared_policy_id.strip():
+            raise RightsBoundaryError(
+                f"typed rights policy ID is blank for source {source_id} ({source_type})"
+            )
+        policy = policies.get(declared_policy_id)
+        if policy is None:
+            raise RightsBoundaryError(
+                f"unknown typed rights policy {declared_policy_id} for source {source_id} ({source_type})"
+            )
+        if policy.source_id_prefixes and not any(
+            source_id.startswith(prefix) for prefix in policy.source_id_prefixes
+        ):
+            raise RightsBoundaryError(
+                f"typed rights policy {declared_policy_id} mismatches source {source_id}"
+            )
+        if policy.source_types and source_type not in policy.source_types:
+            raise RightsBoundaryError(
+                f"typed rights policy {declared_policy_id} mismatches source type {source_type}"
+            )
+        if not policy.source_id_prefixes and not policy.source_types and policy.rights_id != source_id:
+            raise RightsBoundaryError(
+                f"typed rights policy {declared_policy_id} mismatches source {source_id}"
+            )
+        return policy
     exact = policies.get(source_id)
     if exact is not None:
         return exact

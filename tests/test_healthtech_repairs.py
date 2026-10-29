@@ -707,6 +707,80 @@ def test_external_exports_project_evidence_and_source_payloads_by_field_rights(t
     assert all(item["evidence_id"] != "FACT-MALICIOUS-LITERAL" for item in external_json["evidence"])
 
 
+def test_external_rights_projection_survives_history_reload_across_all_channels(tmp_path):
+    cohort = _write_synthetic_abbott_cohort(tmp_path)
+    rights_matrix = json.loads(
+        (ROOT / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json")
+        .read_text(encoding="utf-8")
+    )
+    for policy in rights_matrix["sources"]:
+        policy["intended_use"]["product_display"] = "ALLOWED"
+        policy["intended_use"]["redistribution"] = "ALLOWED"
+        policy["displayable_fields"] = ["trade_name"] if policy["source_id"] == "openfda-pma-records" else []
+    rights_matrix_path = tmp_path / "rights-matrix.json"
+    _write_json(rights_matrix_path, rights_matrix)
+    input_data = next(iter(build_abbott_case_inputs(cohort, rights_matrix_path=rights_matrix_path).values()))
+    pma_source = next(source for source in input_data.sources if source.source.source_type == "regulatory_record")
+    dossier, _, _ = run_dossier(input_data, run_id="history-external-rights", code_commit="test")
+    malicious_structured = field_evidence(pma_source, "trade_name", "HISTORY-MALICIOUS-STRUCTURED").model_copy(
+        update={"statement": "restricted-history-value", "structured_value": "restricted-history-value"}
+    )
+    malicious_literal = field_evidence(pma_source, "trade_name", "HISTORY-MALICIOUS-LITERAL").model_copy(
+        update={
+            "locator": "chars:0:20",
+            "quoted_span": "restricted-history-literal",
+            "structured_field": None,
+            "structured_value": None,
+            "extraction_method": "literal_span",
+            "statement": "restricted-history-literal",
+        }
+    )
+    dossier = dossier.model_copy(update={"evidence": dossier.evidence + [malicious_structured, malicious_literal]})
+    history_dir = tmp_path / "history"
+    save_version(history_dir, dossier)
+    reloaded = history_module.select_version(history_dir)
+
+    for language in ("en", "th"):
+        markdown = export_markdown(reloaded, language=language, purpose="product_display")
+        assert "restricted-history-value" not in markdown
+        assert "restricted-history-literal" not in markdown
+        assert "trade_name: MitraClip" in markdown
+    external_json = serialize_dossier(reloaded, purpose="redistribution")
+    encoded = json.dumps(external_json, ensure_ascii=False)
+    assert "restricted-history-value" not in encoded
+    assert "restricted-history-literal" not in encoded
+    assert history_module.source_view(
+        reloaded, pma_source.source.source_id, purpose="product_display"
+    )["payload"] == {"trade_name": "MitraClip"}
+    with pytest.raises(RightsBoundaryError, match="displayable_fields"):
+        history_module.source_view(
+            reloaded, pma_source.source.source_id, field="openfda", purpose="product_display"
+        )
+
+
+@pytest.mark.parametrize(
+    ("policy_id", "message"),
+    [
+        ("unknown-policy", "unknown typed rights policy"),
+        ("google-patents-pages", "mismatches source"),
+        ("", "lacks typed rights"),
+    ],
+)
+def test_abbott_adapter_rejects_unknown_or_mismatched_declared_policy_ids(tmp_path, policy_id, message):
+    cohort = _write_synthetic_abbott_cohort(tmp_path)
+    registry_path = cohort / "source_registry.json"
+    registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    registry["sources"][0]["rights_policy_id"] = policy_id
+    _write_json(registry_path, registry)
+    manifest_path = cohort / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["source_registry_sha256"] = content_hash(registry)
+    _write_json(manifest_path, manifest)
+
+    with pytest.raises((RightsBoundaryError, ValueError), match=message):
+        build_abbott_case_inputs(cohort)
+
+
 @pytest.mark.parametrize(
     ("mutation", "message"),
     [

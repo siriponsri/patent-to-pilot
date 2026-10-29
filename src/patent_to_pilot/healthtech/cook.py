@@ -210,7 +210,10 @@ def _pma_source(cohort: Path, device: dict[str, Any], registry: dict[str, Any], 
         synthetic=False,
     )
     return _source_with_metadata(
-        attach_rights(source, select_rights_policy(rights, source_id=source_id, source_type="regulatory_record")),
+        attach_rights(source, select_rights_policy(
+            rights, source_id=source_id, source_type="regulatory_record",
+            declared_policy_id=str(entry["rights_policy_id"]),
+        )),
         locator=f"openFDA:pma_number={pma_number}",
         retrieved_at_utc=entry.get("retrieved_at_utc"),
         limits=["raw snapshot retained locally", "preserve FDA attribution"],
@@ -236,7 +239,10 @@ def _disclosure_source(cohort: Path, registry: dict[str, Any], raw_by_path: dict
         synthetic=False,
     )
     source = _source_with_metadata(
-        attach_rights(source, select_rights_policy(rights, source_id=COOK_DISCLOSURE_SOURCE_ID, source_type="independent_disclosure")),
+        attach_rights(source, select_rights_policy(
+            rights, source_id=COOK_DISCLOSURE_SOURCE_ID, source_type="independent_disclosure",
+            declared_policy_id=str(entry["rights_policy_id"]),
+        )),
         locator="linked-pdf:US Patents; product rows",
         retrieved_at_utc=entry.get("retrieved_at_utc"),
         limits=[
@@ -267,7 +273,10 @@ def _patent_inputs(runtime: dict[str, Any], registry: dict[str, Any], rights) ->
             synthetic=False,
         )
         source = _source_with_metadata(
-            attach_rights(source, select_rights_policy(rights, source_id=source_id, source_type="patent_document")),
+            attach_rights(source, select_rights_policy(
+                rights, source_id=source_id, source_type="patent_document",
+                declared_policy_id=str(entry["rights_policy_id"]),
+            )),
             locator=f"disclosure-raw-number:{patent['patent_id_raw']}",
             retrieved_at_utc=entry.get("retrieved_at_utc"),
             limits=[

@@ -75,6 +75,8 @@ def _registry_by_id(registry: dict[str, Any]) -> dict[str, dict[str, Any]]:
             raise CohortIntegrityError("source registry contains an invalid source_id")
         if source_id in result:
             raise CohortIntegrityError(f"source registry repeats {source_id}")
+        if not isinstance(item.get("rights_policy_id"), str) or not item["rights_policy_id"].strip():
+            raise CohortIntegrityError(f"source registry lacks typed rights for {source_id}")
         result[source_id] = item
     return result
 
@@ -253,7 +255,8 @@ def _pma_source(cohort: Path, device: dict[str, Any], registry: dict[str, Any], 
     )
     return _source_with_metadata(
         attach_rights(source, select_rights_policy(
-            rights, source_id=source_id, source_type=source.source.source_type
+            rights, source_id=source_id, source_type=source.source.source_type,
+            declared_policy_id=str(entry["rights_policy_id"]),
         )),
         locator=f"openFDA:pma_number={pma_number}",
         retrieved_at_utc=entry.get("retrieved_at_utc"),
@@ -280,7 +283,8 @@ def _disclosure_source(cohort: Path, registry: dict[str, Any], rights) -> tuple[
     )
     source = _source_with_metadata(
         attach_rights(source, select_rights_policy(
-            rights, source_id=DISCLOSURE_SOURCE_ID, source_type=source.source.source_type
+            rights, source_id=DISCLOSURE_SOURCE_ID, source_type=source.source.source_type,
+            declared_policy_id=str(entry["rights_policy_id"]),
         )),
         locator="product-sections:Abbott patent legal notice",
         retrieved_at_utc=entry.get("retrieved_at_utc"),
@@ -318,7 +322,8 @@ def _patent_inputs(cohort: Path, runtime: dict[str, Any], registry: dict[str, An
         )
         source = _source_with_metadata(
             attach_rights(source, select_rights_policy(
-                rights, source_id=source_id, source_type=source.source.source_type
+                rights, source_id=source_id, source_type=source.source.source_type,
+                declared_policy_id=str(entry["rights_policy_id"]),
             )),
             locator=f"disclosure-raw-number:{raw_number}",
             retrieved_at_utc=entry.get("retrieved_at_utc"),
