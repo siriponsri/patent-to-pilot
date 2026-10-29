@@ -12,7 +12,8 @@ _ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_ROOT))
 sys.path.insert(0, str(_ROOT / "src"))
 
-from patent_to_pilot.healthtech.contracts import content_hash
+from patent_to_pilot.evaluation.healthtech.retrieval import shared_reference_groups
+from patent_to_pilot.healthtech.contracts import canonical_patent_id, content_hash
 
 
 def _read_json(path: Path) -> dict:
@@ -29,6 +30,44 @@ def _write_json(path: Path, payload: object) -> None:
 
 def _file_sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _load_family_mapping(path: Path | None) -> tuple[dict[str, str], dict]:
+    if path is None:
+        return {}, {
+            "status": "UNKNOWN_NOT_ASSUMED",
+            "mappings": [],
+            "basis": "No sourced family mapping was supplied; no family merge is inferred.",
+        }
+    payload = _read_json(path)
+    rows = payload.get("mappings")
+    if not isinstance(rows, list) or not rows:
+        raise ValueError("family mapping must contain a nonempty mappings list")
+    mapping: dict[str, str] = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            raise ValueError("family mapping contains an invalid row")
+        patent_id = canonical_patent_id(str(row.get("patent_id_canonical") or ""))
+        family_id = str(row.get("family_id") or "").strip()
+        if not patent_id or not family_id:
+            raise ValueError("family mapping row lacks patent_id_canonical or family_id")
+        prior = mapping.get(patent_id)
+        if prior is not None and prior != family_id:
+            raise ValueError(f"family mapping conflicts for {patent_id}")
+        mapping[patent_id] = family_id
+    metadata = {
+        "status": str(payload.get("status") or "SOURCED_LOCAL_EVALUATOR_MAPPING"),
+        "mapping_sha256": payload.get("mapping_sha256"),
+        "mapping_path": str(path),
+        "mapped_patent_count": len(mapping),
+        "families_observed": len(set(mapping.values())),
+        "mappings": sorted(
+            [{"patent_id_canonical": patent_id, "family_id": family_id} for patent_id, family_id in mapping.items()],
+            key=lambda row: row["patent_id_canonical"],
+        ),
+        "basis": "Sourced family metadata is evaluator-side and does not change runtime inputs.",
+    }
+    return mapping, metadata
 
 
 def _load_parent(alias: str, root: Path) -> dict:
@@ -121,6 +160,11 @@ def _subset_groups(groups: dict, query_ids: set[str]) -> dict:
         for row in result.get("company_groups", [])
         if set(row.get("query_ids", [])) & query_ids
     ]
+    result["shared_family_groups"] = [
+        sorted(set(group) & query_ids)
+        for group in result.get("shared_family_groups", [])
+        if set(group) <= query_ids
+    ]
     return result
 
 
@@ -164,6 +208,7 @@ def compose_cohort(
     output: Path,
     holdout_company: str = "Stryker Neurovascular",
     additional_cohorts: list[tuple[str, Path]] | None = None,
+    family_mapping: Path | None = None,
 ) -> dict:
     if output.exists():
         raise ValueError(f"output already exists; choose a fresh directory: {output}")
@@ -260,6 +305,24 @@ def compose_cohort(
     if not holdout_query_ids or len(holdout_query_ids) == len(devices):
         raise ValueError("holdout company must match a non-exhaustive device subset")
     development_query_ids = sorted(all_query_ids - set(holdout_query_ids))
+    family_map, family_metadata = _load_family_mapping(family_mapping)
+    family_groups = shared_reference_groups(references, families=family_map) if family_map else []
+    query_split = {
+        query_id: "final_holdout" if query_id in set(holdout_query_ids) else "development"
+        for query_id in sorted(all_query_ids)
+    }
+    family_split_overlaps = [
+        sorted(group)
+        for group in family_groups
+        if len({query_split[query_id] for query_id in group}) > 1
+    ]
+    if family_split_overlaps:
+        raise ValueError(f"sourced family group crosses development/final_holdout split: {family_split_overlaps[0]}")
+    family_overlap_note = (
+        "Sourced family groups are included as evaluator-side uncertainty structure."
+        if family_map
+        else "Family identity remains unknown and no family merge is inferred."
+    )
 
     runtime = {
         "format": "ht-runtime-input-v1",
@@ -304,14 +367,11 @@ def compose_cohort(
             for row in sorted(group_evidence, key=lambda row: row["group_id"])
         ],
         "company_groups": sorted(company_groups, key=lambda row: str(row.get("company"))),
-        "family_mapping": {
-            "status": "UNKNOWN_NOT_ASSUMED",
-            "mappings": [],
-            "basis": "Parent cohorts did not provide a sourced family mapping; no family merge is inferred.",
-        },
+        "shared_family_groups": family_groups,
+        "family_mapping": family_metadata,
         "overlap_notes": [
             f"{', '.join(sorted({str(device.get('company') or '') for device in devices}))} are independent company groups in the composite.",
-            "Exact-patent groups are carried forward from product-marking rows; family identity remains unknown.",
+            family_overlap_note,
             f"The {holdout_company} company group is predeclared as the untouched final holdout.",
         ],
     }
@@ -322,6 +382,8 @@ def compose_cohort(
         "seed": 0,
         "final_holdout_company_groups": [holdout_company],
         "final_holdout_group_ids": sorted({query_group_ids[query_id] for query_id in holdout_query_ids}),
+        "family_group_count": len(family_groups),
+        "family_split_overlap_count": len(family_split_overlaps),
         "rows": [
             {
                 "query_id": query_id,
@@ -383,6 +445,9 @@ def compose_cohort(
         }),
         "final_holdout_query_ids": holdout_query_ids,
         "development_query_ids": development_query_ids,
+        "family_mapping": family_metadata,
+        "family_group_count": len(family_groups),
+        "family_split_overlap_count": len(family_split_overlaps),
         "views": {
             "development": development_view,
             "final_holdout": holdout_view,
@@ -394,7 +459,7 @@ def compose_cohort(
         },
         "limitations": [
             f"This is a derived local composite of {len(parents)} previously acquired typed-policy cohorts.",
-            "Family mapping is unknown and not inferred.",
+            family_overlap_note,
             "Product-level disclosure is not independent semantic relevance gold.",
             "Google-derived patent text and marking-page evidence remain local-only.",
             "One company is held out; this is a single-company transfer check, not a stable generalization estimate.",
@@ -417,6 +482,7 @@ def main() -> None:
     )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--holdout-company", default="Stryker Neurovascular")
+    parser.add_argument("--family-mapping", type=Path, default=None, help="optional sourced evaluator-only family mapping")
     args = parser.parse_args()
     additional_cohorts: list[tuple[str, Path]] = []
     for value in args.additional_cohort:
@@ -430,6 +496,7 @@ def main() -> None:
         output=args.output,
         holdout_company=args.holdout_company,
         additional_cohorts=additional_cohorts,
+        family_mapping=args.family_mapping,
     )
     print(json.dumps({
         "status": manifest["status"],

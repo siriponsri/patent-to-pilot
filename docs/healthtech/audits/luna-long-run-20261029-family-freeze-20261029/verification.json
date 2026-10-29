@@ -1,0 +1,106 @@
+{
+  "format": "ht-family-aware-freeze-audit-verification-v1",
+  "run_id": "luna-long-run-20261029-family-freeze-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_OFFLINE_ANALYSIS",
+  "tested_source_commit": "1e1c463787bf1a494c6d9c99367cebda5a2bfea5",
+  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "tree_state_at_test": "dirty_with_scoped_family_freeze_changes_and_unrelated_owner_artifacts_preserved",
+  "implementation_files": {
+    "scripts/healthtech/compose_multicompany_cohort.py": "ebed14ef5a9699b2db556a35921549b5cc6ea074abaf3a052b5792d6e17d04f7",
+    "tests/test_healthtech_multicompany.py": "a105a9c6b2b06d8579a28346192c81aad8da13355c65902d49b9952ee27a598b"
+  },
+  "inputs": {
+    "family_mapping": {
+      "path": "results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json",
+      "file_sha256": "7510b2f3fc18cef00419297e73f05985ed4aac25c58f6374274b98ff43d89dfd",
+      "mapping_sha256": "e4baa2e4eb1295c4abf9314fe5f2a60dd853151c7089f032801dc7fdef31f898",
+      "patents_mapped": 24,
+      "families_observed": 19,
+      "unmapped_patents": 0
+    },
+    "parent_cohorts": [
+      {"alias": "boston", "path": "results/healthtech/ht-boston-watchman-20261028-r4", "devices": 2, "patents": 7, "reference_pairs": 13},
+      {"alias": "stryker", "path": "results/healthtech/ht-stryker-neurovascular-20261029-r1", "devices": 3, "patents": 13, "reference_pairs": 13},
+      {"alias": "cook", "path": "results/healthtech/ht-cook-zenith-20261029-r1", "devices": 3, "patents": 4, "reference_pairs": 5}
+    ],
+    "rights_matrix": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json"
+  },
+  "output_cohort": {
+    "path": "results/healthtech/ht-multicompany-20261029-r3-family-r2",
+    "status": "PUBLIC_MULTI_COMPANY_COHORT_FROZEN",
+    "manifest_sha256": "1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+    "cohort_sha256": "0f35a29ccc08ce5980f22dc0a3de9b1ce834a67165efa66796c157da0927d52b",
+    "devices": 8,
+    "patents": 24,
+    "disclosed_pairs": 31,
+    "unjudged_distractor_pairs": 161,
+    "full_cohort_family_groups": 6,
+    "development_family_groups": 3,
+    "final_holdout_family_groups": 3,
+    "family_split_overlap_count": 0,
+    "new_raw_acquisition": false,
+    "actual_transferred_bytes": 0
+  },
+  "provenance_verification": {
+    "path": "results/healthtech/ht-multicompany-20261029-r3-family-r2/provenance-verification-reviewed.json",
+    "status": "PASS",
+    "rights_binding": "TYPED_POLICY_ID",
+    "covered_pairs": 31,
+    "disclosed_pairs": 31,
+    "unresolved_rights": 0,
+    "manifest_hash": "a961c551d094f70720420e53023e806b7fa248c6b30da248ff9332a1d319a5e5",
+    "runtime_hash": "f9f61277ec95557ffd9c87528311378bdd30a83f1ea937cf30ccdb9b4de5024f",
+    "references_hash": "3f99c4e6791bf68ebd133d76960836e217de9ba51111b2d622003ab096c00e11",
+    "source_registry_hash": "beb557571fd716e5f62f1a7c672e1229712fd3375b0ee8baeb912c2b775204a8",
+    "split_hash": "ae522ba91f6eca3f38f104fe30e1f97fb368ff7ab82ccb2280315bd93b6b4d1a"
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_multicompany.py tests/test_healthtech_family_mapping.py",
+      "status": "PASS",
+      "outcome": "10 passed"
+    },
+    {
+      "command": "rtk proxy python -c \"import os,sys; from pathlib import Path; src=str(Path('src').resolve()); os.environ['PYTHONPATH']=src + os.pathsep + os.environ.get('PYTHONPATH',''); sys.path.insert(0,src); import pytest; raise SystemExit(pytest.main(['--disable-warnings']))\"",
+      "status": "PASS",
+      "outcome": "353 passed, 1 warning"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/compose_multicompany_cohort.py --boston-cohort results/healthtech/ht-boston-watchman-20261028-r4 --stryker-cohort results/healthtech/ht-stryker-neurovascular-20261029-r1 --additional-cohort cook=results/healthtech/ht-cook-zenith-20261029-r1 --output results/healthtech/ht-multicompany-20261029-r3-family-r2 --holdout-company \"Stryker Neurovascular\" --family-mapping results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json",
+      "status": "PASS",
+      "outcome": "8 devices, 24 patents, 31 disclosed pairs, 161 unjudged distractors, 0 family split overlaps"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/verify_cohort_provenance.py --cohort results/healthtech/ht-multicompany-20261029-r3-family-r2 --rights-matrix docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json --output results/healthtech/ht-multicompany-20261029-r3-family-r2/provenance-verification-reviewed.json",
+      "status": "PASS",
+      "outcome": "31/31 disclosed pairs covered; 0 unresolved rights"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q src scripts tests",
+      "status": "PASS",
+      "outcome": "exit 0"
+    }
+  ],
+  "boundaries": {
+    "runtime_inputs_changed": false,
+    "evaluator_relations_read_by_runtime": false,
+    "unlisted_pairs_recoded_negative": false,
+    "new_baseline_run_under_family_manifest": false,
+    "provider_calls": 0,
+    "network_acquisition": 0,
+    "neural_model_calls": 0,
+    "paid_cost_usd": 0.0,
+    "raw_restricted_payloads_staged": false,
+    "credentials_staged": false,
+    "private_paths_staged": false
+  },
+  "limitations": [
+    "Family IDs are sourced Google Patents metadata, not semantic relevance or legal family adjudication.",
+    "Product-level disclosure links are structural source-backed references, not independent expert gold.",
+    "The final holdout is a single-company transfer check and does not support a stable generalization estimate.",
+    "Existing baseline metrics remain bound to the earlier composite manifest and are not reinterpreted as family-aware baseline results.",
+    "Local third-party source rights remain governed by the reviewed rights matrix and are not expanded by this audit."
+  ],
+  "next_action": "Obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout before any pooled scientific claim."
+}

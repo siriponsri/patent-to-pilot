@@ -1,0 +1,66 @@
+{
+  "format": "ht-family-aware-freeze-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-family-freeze-20261029",
+  "date": "2026-10-29",
+  "tested_source_commit": "1e1c463787bf1a494c6d9c99367cebda5a2bfea5",
+  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "entries": [
+    {
+      "id": "family-aware-cohort-composition",
+      "kind": "offline_analysis",
+      "status": "PASS",
+      "input": "Three existing typed-policy cohorts plus sourced evaluator-only Google family mapping",
+      "output": "results/healthtech/ht-multicompany-20261029-r3-family-r2",
+      "outcome": "8 devices, 24 patents, 31 disclosed pairs, 161 unjudged distractors, 6 family groups, 0 split overlaps",
+      "interpretation": "Freeze-only artifact; no baseline rankings or runtime inputs changed"
+    },
+    {
+      "id": "family-split-leakage-regression",
+      "kind": "regression_test",
+      "status": "PASS",
+      "input": "Authored cross-split family mapping fixture",
+      "output": "tests/test_healthtech_multicompany.py",
+      "outcome": "Cross-split family groups are rejected before publication"
+    },
+    {
+      "id": "typed-rights-provenance",
+      "kind": "provenance_check",
+      "status": "PASS",
+      "input": "Reviewed Cook expansion rights matrix",
+      "output": "results/healthtech/ht-multicompany-20261029-r3-family-r2/provenance-verification-reviewed.json",
+      "outcome": "31/31 disclosed pairs covered; 0 unresolved policies"
+    },
+    {
+      "id": "focused-regression-suite",
+      "kind": "test",
+      "status": "PASS",
+      "input": "Family mapping and multi-company composition tests",
+      "output": "10 passed",
+      "outcome": "No focused regressions"
+    },
+    {
+      "id": "controlled-full-suite",
+      "kind": "test",
+      "status": "PASS",
+      "input": "Repository suite with PYTHONPATH=src propagated",
+      "output": "353 passed, 1 warning",
+      "outcome": "No source regressions observed"
+    },
+    {
+      "id": "compile-check",
+      "kind": "static_check",
+      "status": "PASS",
+      "input": "src scripts tests",
+      "output": "python compileall exit 0",
+      "outcome": "No syntax errors"
+    }
+  ],
+  "resource_summary": {
+    "provider_calls": 0,
+    "network_acquisition": 0,
+    "neural_model_calls": 0,
+    "paid_cost_usd": 0.0,
+    "new_raw_bytes": 0
+  },
+  "decision": "Freeze the derived family-aware cohort for evaluator-side analysis, then wait for a rights-cleared relevance-judgment cohort before any fresh baseline or pooled claim."
+}

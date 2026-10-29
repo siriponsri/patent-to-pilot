@@ -200,6 +200,11 @@
       "id": "HT-M3-FAMILY-FRONTIER",
       "status": "PASS_OFFLINE_ANALYSIS",
       "evidence": "Family-aware evaluator re-projection covers the 5-query Boston/Cook development frontier and 3-query Stryker final holdout across HT-B0a/B0b/B1/B2/B3, K=10/20/50, and 9 frontier rows per split. Exact and family-aware group metrics match by normalized query-set identity; both splits remain 3 groups with 0 merges and NOT_ESTIMABLE uncertainty at docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/"
+    },
+    {
+      "id": "HT-M3-FAMILY-FREEZE",
+      "status": "PASS_OFFLINE_ANALYSIS",
+      "evidence": "Current family-aware composite freeze binds sourced evaluator-only family metadata to the Boston/Stryker/Cook composite, records 8 devices, 24 patents, 31 disclosed pairs, 161 unjudged distractors, 6 full-cohort family groups, 0 split overlaps, and typed provenance for 31/31 disclosed pairs. Existing baselines remain bound to the earlier manifest; no new baseline run is claimed at docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029/"
     }
   ],
   "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_COHORTS_AND_TYPED_BOSTON_STRYKER_HOLDOUT",
@@ -207,7 +212,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M1 current-head revalidation and closure, M3 deterministic freeze, the filled non-submitted budget/data expansion request, the HT-T2 SciFact lexical dev score, the Stryker M2/M3 offline package, the typed Boston/Stryker multi-company holdout package, the Cook third-company expansion, the Cook source-backed dossier run, the sourced family-mapping sensitivity package, and the family-aware frontier re-projection are complete with no extra spend. HT-T2 and all device-patent cohorts remain development-only evidence. Live provider/canary remains BLOCKED_LOCAL pending current OpenRouter metadata, credential/credit, transfer-rights, payload, and reconciliation gates. Next prioritize a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout while keeping Bridge blocked and Claude UX/UI paused",
+  "next": "M1 current-head revalidation and closure, M3 deterministic freeze, the filled non-submitted budget/data expansion request, the HT-T2 SciFact lexical dev score, the Stryker M2/M3 offline package, the typed Boston/Stryker multi-company holdout package, the Cook third-company expansion, the Cook source-backed dossier run, the sourced family-mapping sensitivity package, the family-aware frontier re-projection, and the family-aware cohort freeze are complete with no extra spend. HT-T2 and all device-patent cohorts remain development-only evidence, and existing baseline metrics remain bound to their prior composite manifest. Live provider/canary remains BLOCKED_LOCAL pending current OpenRouter metadata, credential/credit, transfer-rights, payload, and reconciliation gates. Next prioritize a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout while keeping Bridge blocked and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json",
@@ -223,6 +228,7 @@
   "latest_m1_closure": "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/verification.json",
   "latest_family_mapping_audit": "docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/README.md",
   "latest_family_frontier_audit": "docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/README.md",
+  "latest_family_freeze_audit": "docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029/README.md",
   "latest_typed_registry_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-typed-registry/verification.json",
   "latest_goal_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/verification.json",
   "latest_clean_checkout_reproducibility_audit": "docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/verification.json",

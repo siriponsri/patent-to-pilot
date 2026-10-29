@@ -155,3 +155,57 @@ def test_composite_accepts_additional_typed_parent(tmp_path: Path):
     assert manifest["final_holdout_query_ids"] == ["Q-S"]
     assert manifest["development_query_ids"] == ["Q-B", "Q-C"]
     assert any(row["company"] == "Cook Medical" for row in json.loads((output / "groups.json").read_text(encoding="utf-8"))["company_groups"])
+
+
+def _write_family_mapping(path: Path, rows: list[dict]) -> Path:
+    path.write_text(json.dumps({
+        "status": "SOURCED_LOCAL_EVALUATOR_MAPPING",
+        "mapping_sha256": "c" * 64,
+        "mappings": rows,
+    }), encoding="utf-8")
+    return path
+
+
+def test_composite_binds_sourced_family_mapping_and_freezes_family_groups(tmp_path: Path):
+    boston = tmp_path / "boston"
+    stryker = tmp_path / "stryker"
+    _write_parent(boston, alias="boston", company="Boston Scientific Corp", query_id="Q-B", patent_id="US10000001B2")
+    _write_parent(stryker, alias="stryker", company="Stryker Neurovascular", query_id="Q-S", patent_id="US10000002B2")
+    mapping = _write_family_mapping(tmp_path / "family-mapping.json", [
+        {"patent_id_canonical": "US10000001B2", "family_id": "google-docdb-1"},
+        {"patent_id_canonical": "US10000002B2", "family_id": "google-docdb-2"},
+    ])
+
+    output = tmp_path / "composite"
+    manifest = compose_cohort(
+        boston_cohort=boston,
+        stryker_cohort=stryker,
+        output=output,
+        family_mapping=mapping,
+    )
+
+    groups = json.loads((output / "groups.json").read_text(encoding="utf-8"))
+    split = json.loads((output / "split_manifest.json").read_text(encoding="utf-8"))
+    assert manifest["family_mapping"]["status"] == "SOURCED_LOCAL_EVALUATOR_MAPPING"
+    assert manifest["family_group_count"] == 2
+    assert split["family_split_overlap_count"] == 0
+    assert groups["shared_family_groups"] == [["Q-B"], ["Q-S"]]
+
+
+def test_composite_rejects_family_leakage_across_company_holdout(tmp_path: Path):
+    boston = tmp_path / "boston"
+    stryker = tmp_path / "stryker"
+    _write_parent(boston, alias="boston", company="Boston Scientific Corp", query_id="Q-B", patent_id="US10000001B2")
+    _write_parent(stryker, alias="stryker", company="Stryker Neurovascular", query_id="Q-S", patent_id="US10000002B2")
+    mapping = _write_family_mapping(tmp_path / "family-mapping.json", [
+        {"patent_id_canonical": "US10000001B2", "family_id": "google-docdb-shared"},
+        {"patent_id_canonical": "US10000002B2", "family_id": "google-docdb-shared"},
+    ])
+
+    with pytest.raises(ValueError, match="crosses development/final_holdout split"):
+        compose_cohort(
+            boston_cohort=boston,
+            stryker_cohort=stryker,
+            output=tmp_path / "composite",
+            family_mapping=mapping,
+        )
