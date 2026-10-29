@@ -229,7 +229,7 @@ def _run(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
         "phase": args.phase,
         "mode": args.mode,
         "evaluator_visibility": "none",
-        "provider_transfer_summary": sorted({item["source_id"] for item in runtime_sources}),
+        "provider_transfer_summary": sorted({item.source_id for item in runtime_sources}),
     })
     _write_json(args.output / "evaluator_validation.json", {
         "method": method,
