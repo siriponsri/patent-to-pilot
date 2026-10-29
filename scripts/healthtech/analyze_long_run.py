@@ -100,6 +100,7 @@ def build_analysis(
     dev_frontier: dict[str, Any],
     holdout_frontier: dict[str, Any],
     input_hashes: dict[str, str] | None = None,
+    code_commit: str | None = None,
 ) -> dict[str, Any]:
     development_rows = _enrich_rows(
         summary["development"]["rows"], _group_stats(dev_frontier)
@@ -138,20 +139,26 @@ def build_analysis(
         "paid_cost_usd": b4_row["paid_cost_usd"],
         "status": "MOCK_ONLY_NOT_PROVIDER_EVIDENCE",
     }
+    development_frontier = _pareto_frontier(development_rows)
+    holdout_frontier = _pareto_frontier(holdout_rows)
+    for row in development_rows:
+        row["pareto_frontier"] = row["method"] in development_frontier
+    for row in holdout_rows:
+        row["pareto_frontier"] = row["method"] in holdout_frontier
 
     return {
         "format": "ht-long-run-analysis-v1",
         "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
-        "code_commit": summary["code_commit"],
+        "code_commit": code_commit or summary["code_commit"],
         "protocol_hash": summary["protocol_hash"],
         "cohort_manifest_hash": summary["cohort_manifest_hash"],
         "development": {
             "rows": development_rows,
-            "pareto_frontier_methods": _pareto_frontier(development_rows),
+            "pareto_frontier_methods": development_frontier,
         },
         "final_holdout": {
             "rows": holdout_rows,
-            "pareto_frontier_methods": _pareto_frontier(holdout_rows),
+            "pareto_frontier_methods": holdout_frontier,
         },
         "holdout_minus_development": holdout_minus_development,
         "b4_provider_shaped_mock": b4_comparison,
@@ -338,6 +345,7 @@ def main() -> int:
     parser.add_argument("--dev-frontier", type=Path, required=True)
     parser.add_argument("--holdout-frontier", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--code-commit", required=True)
     args = parser.parse_args()
     if args.output.exists():
         parser.error("output already exists; choose a fresh directory")
@@ -351,6 +359,7 @@ def main() -> int:
         dev_frontier=_read_json(args.dev_frontier),
         holdout_frontier=_read_json(args.holdout_frontier),
         input_hashes=input_hashes,
+        code_commit=args.code_commit,
     )
     write_outputs(args.output, analysis)
     print(

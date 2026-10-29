@@ -83,6 +83,8 @@ def test_analysis_marks_observed_frontier_and_holdout_delta():
     )
 
     assert analysis["status"] == "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE"
+    assert analysis["code_commit"] == "test-commit"
+    assert analysis["development"]["rows"][0]["pareto_frontier"] is True
     assert analysis["development"]["pareto_frontier_methods"] == ["HT-B0a"]
     assert analysis["final_holdout"]["pareto_frontier_methods"] == ["HT-B0a", "HT-B0b"]
     assert analysis["holdout_minus_development"][1]["macro_recall_delta_holdout_minus_development"] == pytest.approx(-0.1)
