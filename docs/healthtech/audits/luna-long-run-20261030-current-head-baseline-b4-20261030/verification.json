@@ -41,6 +41,10 @@
     "rtk proxy python -m compileall -q src scripts tests",
     "rtk proxy python -B docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/reproduction/reproduce_current_head.py <detached-typed-rights-cohort> ... --source-commit aeaa8aa20c7840ebcf63f9f92b9d3e4d2f52ef83"
   ],
+  "component_verification_hashes": {
+    "b4-development-verification.json": "24bfc4c3fbf3007c1827d3ab0b93cb234c7803015b144e8b98caf62214a0b722",
+    "b4-holdout-verification.json": "132ea209dae92629f9c0e370a42435b63d985f821804f314a383dc2b7b858c5f"
+  },
   "development": {
     "control_macro_recall_at_20": {
       "HT-B0a": 0.9613095238095238,
