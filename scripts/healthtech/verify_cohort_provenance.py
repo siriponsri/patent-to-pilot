@@ -16,9 +16,10 @@ from patent_to_pilot.evaluation.healthtech.provenance import verify_cohort_prove
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cohort", type=Path, required=True)
+    parser.add_argument("--rights-matrix", type=Path)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    report = verify_cohort_provenance(args.cohort)
+    report = verify_cohort_provenance(args.cohort, rights_matrix_path=args.rights_matrix)
     rendered = json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     if args.output:
         if args.output.exists():

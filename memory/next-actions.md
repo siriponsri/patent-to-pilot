@@ -103,3 +103,15 @@ Added a frozen deterministic BM25 plus sentence-overlap SciFact baseline, a runt
 This is component engineering/scientific development evidence only. It is not an official hidden-test score, HT-T1 device-patent evidence, clinical truth, or an adaptive-method result. Preserve the historical SciFact parity receipt separately, keep Abbott/Boston development-only, and keep live/provider HT-B4 `BLOCKED_LOCAL`.
 
 Next: add a rights-cleared device cohort with multiple independent company/family groups and a predeclared final holdout before the next pooled comparison.
+
+## HT-NEXT-015 - 2026-10-29 Stryker M2/M3 offline expansion
+
+Status: `PASS_OFFLINE_DEVELOPMENT`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m2-m3-stryker-20261029/README.md`.
+
+Added and acquired a bounded Stryker Neurovascular product-marking cohort from the official Stryker page, joined to PMA `P180031` and 510(k) `K252694` / `K223305` records plus 13 local patent documents. The ignored local cohort contains 3 devices, 13 unique patents, 13 product-level disclosed pairs, 26 unjudged distractors, 3 exact-patent groups, one company group, unknown family mapping, and no final holdout. Typed provenance passes with 13/13 covered pairs and no unresolved rights policies.
+
+The corrected HT-B0a/B0b/B1/B2/B3 development run completed all 15 method/query combinations with zero failures, zero provider calls, and `$0.00` paid cost. Macro known-link recall at `K=10` is 0.8190 / 0.9524 / 0.8381 / 0.8381 / 0.8857 for HT-B0a/B0b/B1/B2/B3; `K=20` is ceiling-limited because it exceeds the 13-document universe. Results are descriptive development evidence only, not exhaustive recall, semantic gold, clinical/FTO, investment, publication, or generalization evidence.
+
+Implementation adds `scripts/healthtech/fetch_stryker_neurovascular_cohort.py`, an optional `--rights-matrix` argument to the provenance CLI, a runtime/evaluator leakage guard, cohort-specific frontier reporting, and focused parser/policy/boundary regressions. No raw third-party files, credentials, evaluator-only relations, or model artifacts were staged.
+
+Next: add a rights-cleared cohort with multiple independent company/family groups and a predeclared untouched holdout before pooled scientific comparison. Keep Bridge and live/provider branches `BLOCKED_LOCAL`.

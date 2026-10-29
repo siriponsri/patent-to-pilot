@@ -339,7 +339,21 @@ def _quality_resource_frontier(
     expected_query_ids: list[str],
     *,
     primary_k: int = 20,
+    company_names: list[str] | None = None,
 ) -> dict:
+    company_names = sorted({name.strip() for name in (company_names or []) if name.strip()})
+    if len(company_names) == 1:
+        company_reason = (
+            f"The company group contains all {len(expected_query_ids)} queries for "
+            f"{company_names[0]}, so company-held-out sensitivity is not estimable."
+        )
+    elif company_names:
+        company_reason = (
+            f"The slice contains {len(company_names)} company groups; this receipt does not claim "
+            "company-held-out generalization."
+        )
+    else:
+        company_reason = "Company metadata is unavailable, so company-held-out sensitivity is not estimable."
     rows_by_method_query = {(row["method"], row["query_id"]): row for row in rankings}
     frontier_rows = []
     alignment = {}
@@ -456,8 +470,8 @@ def _quality_resource_frontier(
             "status": "NOT_ESTIMABLE",
             "confidence_intervals": "NOT_ESTIMABLE",
             "reason": [
-                "The frozen slice has three eligible queries, two exact-patent groups, and no final holdout.",
-                "The company group contains all three Abbott queries, so company-held-out sensitivity is not estimable.",
+                f"The frozen slice has {len(expected_query_ids)} eligible queries, {len(groups)} exact-patent groups, and no final holdout.",
+                company_reason,
                 "Family mapping is UNKNOWN_NOT_ASSUMED; shared-patent groups are descriptive and not independent family samples.",
             ],
             "reported_instead": [
@@ -476,7 +490,9 @@ def _frontier_diagnostics(
     references: dict[str, list[str]],
     universe: list[str],
     expected_query_ids: list[str],
+    company_names: list[str] | None = None,
 ) -> dict:
+    company_names = sorted({name.strip() for name in (company_names or []) if name.strip()})
     per_device = []
     errors = []
     for row in rankings:
@@ -554,13 +570,14 @@ def _frontier_diagnostics(
             universe,
             groups,
             expected_query_ids,
+            company_names=company_names,
         ),
         "headroom": headroom,
         "errors": errors,
         "error_count": len(errors),
         "limitations": [
             "Frontier values are realized local resource units, not dollars.",
-            "Group rows are descriptive because the development cohort has two exact-patent components and no final holdout.",
+            f"Group rows are descriptive because the development cohort has {len(groups)} exact-patent groups and no final holdout.",
             "Failed devices remain in the evaluator denominator and score zero under the declared failure rule.",
         ],
     }
@@ -685,6 +702,7 @@ def main() -> None:
             k_metrics[str(cutoff)] = metric
         evaluations[method] = {"method": method, "by_k": k_metrics, "status": "PASS" if method_summaries[method]["failed_query_count"] == 0 else "PARTIAL_FAILURE"}
     _write_json(args.output / "per_device_group_results.json", evaluations)
+    company_names = sorted({str(device.company).strip() for device in devices if str(device.company).strip()})
     frontier = _frontier_diagnostics(
         rankings,
         evaluations,
@@ -692,6 +710,7 @@ def main() -> None:
         references=references,
         universe=[patent.patent_id_canonical for patent in patents],
         expected_query_ids=expected,
+        company_names=company_names,
     )
     _write_json(args.output / "frontier_diagnostics.json", frontier)
     primary = {method: evaluations[method]["by_k"]["20"]["macro_known_link_recall"] for method in METHODS}
@@ -700,7 +719,11 @@ def main() -> None:
         "macro_known_link_recall": primary,
         "null_findings": [
             "This is a development-only public disclosure cohort; no held-out generalization claim is made.",
-            "The company-only control is not company-held-out because every device is ABBOTT MEDICAL.",
+            (
+                f"The company-only control is not company-held-out because every device maps to {company_names[0]}."
+                if len(company_names) == 1
+                else "The company-only control remains descriptive; no company-held-out generalization claim is made."
+            ),
             "Unlisted pairs are unjudged; the metric is known-link recovery only.",
         ],
         "method_order": list(METHODS),

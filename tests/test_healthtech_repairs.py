@@ -40,6 +40,12 @@ from patent_to_pilot.healthtech.history import (
 from patent_to_pilot.healthtech.rights import RightsBoundaryError
 from patent_to_pilot.healthtech.sources import field_evidence
 from scripts.healthtech.fetch_boston_watchman_cohort import PRODUCTS, _validate_product_rows
+from scripts.healthtech.fetch_stryker_neurovascular_cohort import (
+    PRODUCTS as STRYKER_PRODUCTS,
+    _source_policy_id,
+    _validate_product_rows as _validate_stryker_product_rows,
+    _validate_runtime_separation,
+)
 from scripts.healthtech.fetch_public_device_cohort import _rights_policy_id, _source_registry_row
 from scripts.healthtech import run_real_baselines as baselines
 
@@ -417,6 +423,7 @@ def test_frontier_reports_prefix_quality_resources_and_nonrealized_queries():
         ["US000001A1", "US000002A1"],
         [["q1", "q2"]],
         ["q1", "q2"],
+        company_names=["Example Co"],
     )
 
     b2_rows = [row for row in frontier["rows"] if row["method"] == "HT-B2"]
@@ -426,6 +433,7 @@ def test_frontier_reports_prefix_quality_resources_and_nonrealized_queries():
     assert b3_rows[1]["not_realized_query_count"] == 1
     assert frontier["fixed_prefix_alignment"]["first_query_match_across_fixed_methods"] is True
     assert frontier["uncertainty"]["status"] == "NOT_ESTIMABLE"
+    assert "Example Co" in frontier["uncertainty"]["reason"][1]
 
 
 def test_history_rejects_stale_parent_and_export_includes_user_edits(tmp_path):
@@ -773,6 +781,48 @@ def test_boston_marking_parser_is_score_independent_and_row_bounded():
 
     with pytest.raises(ValueError, match="unexpected Boston patent row"):
         _validate_product_rows(text.replace("11484320", "9999999"))
+
+
+def test_stryker_marking_parser_is_exact_row_bounded_and_score_independent():
+    rows = "".join(
+        f"<tr><td>Neurovascular</td><td>{product['label']}</td><td>codes</td><td>{'; '.join(product['patent_numbers'])}</td></tr>"
+        for product in STRYKER_PRODUCTS
+    )
+    parsed = _validate_stryker_product_rows(f"<table>{rows}</table>".encode())
+    assert parsed["neuroform-atlas"]["raw_patent_numbers"] == ["7037330"]
+    assert parsed["target-xl-360-soft"]["raw_patent_numbers"] == STRYKER_PRODUCTS[1]["patent_numbers"]
+    assert parsed["trevo-provue"]["raw_patent_numbers"] == STRYKER_PRODUCTS[2]["patent_numbers"]
+
+    with pytest.raises(ValueError, match="unexpected Stryker patent row"):
+        _validate_stryker_product_rows(
+            f"<table>{rows.replace('7037330', '9999999')}</table>".encode()
+        )
+
+
+def test_stryker_regulatory_sources_bind_distinct_typed_policies():
+    assert _source_policy_id("pma") == "openfda-pma-records"
+    assert _source_policy_id("510k") == "openfda-510k-records"
+    with pytest.raises(ValueError, match="unsupported regulatory kind"):
+        _source_policy_id("unknown")
+
+
+def test_stryker_runtime_boundary_rejects_evaluator_leaks():
+    runtime = {
+        "devices": [{"source_id": "openfda-510k-k123456"}],
+        "patents": [{"source_id": "google-patents-us1234567b2"}],
+        "runtime_exclusions": ["disclosure references", "evaluator labels", "split answers"],
+    }
+    _validate_runtime_separation(runtime, "stryker-neurovascular-patent-marking")
+
+    leaked = dict(runtime)
+    leaked["references"] = {"Q1": ["US1234567B2"]}
+    with pytest.raises(ValueError, match="evaluator fields leaked"):
+        _validate_runtime_separation(leaked, "stryker-neurovascular-patent-marking")
+
+    source_leak = dict(runtime)
+    source_leak["devices"] = [{"source_id": "stryker-neurovascular-patent-marking"}]
+    with pytest.raises(ValueError, match="disclosure source leaked"):
+        _validate_runtime_separation(source_leak, "stryker-neurovascular-patent-marking")
 
 
 def test_public_cohort_registry_binds_typed_rights_policy_ids():

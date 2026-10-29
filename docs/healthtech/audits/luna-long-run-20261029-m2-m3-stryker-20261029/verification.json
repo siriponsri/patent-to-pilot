@@ -1,0 +1,88 @@
+{
+  "format": "ht-healthtech-audit-verification-v1",
+  "status": "PASS_OFFLINE_DEVELOPMENT",
+  "run_id": "luna-long-run-20261029-m2-m3-stryker-20261029",
+  "date": "2026-10-29",
+  "base_revision": "c8c5dfc09270053c5a0082aaed495dfb044288f0",
+  "candidate_revision": "working-tree-pre-commit",
+  "scope": "M2/M3 lawful public cohort expansion and HT-B0a/B0b/B1/B2/B3 offline development runs",
+  "cohort": {
+    "name": "Stryker Neurovascular product-marking development cohort",
+    "devices": 3,
+    "patents": 13,
+    "disclosed_pairs": 13,
+    "unjudged_distractor_pairs": 26,
+    "exact_patent_groups": 3,
+    "company_groups": 1,
+    "family_mapping": "UNKNOWN_NOT_ASSUMED",
+    "final_holdout_queries": 0,
+    "runtime_manifest_sha256": "25dcace7fd248ad9dc0c9f05eeefdfcd9c45d9bc1dfcc6274b9733bf129aa25b",
+    "runtime_sha256": "c2008a1bb74a0e083c2da29fa3a5f5d7733f5e0ec7b6dc3cc91b721cf9c5632f",
+    "references_sha256": "8ac2a74d17e7e31a577c7d0d3f1d384d731f3c0b8da73f8c6fc6b55ab8fac800",
+    "source_registry_sha256": "936bfcb124f8e2efebb14c68c4b2ee76b131230e8a21792a210dc290b68ecaa7"
+  },
+  "rights": {
+    "status": "PASS",
+    "binding": "TYPED_POLICY_ID",
+    "policy_ids": [
+      "openfda-pma-records",
+      "openfda-510k-records",
+      "stryker-neurovascular-product-marking",
+      "google-patents-pages"
+    ],
+    "disclosure_pairs_covered": 13,
+    "disclosure_evidence_rows": 13,
+    "unresolved_policy_ids": []
+  },
+  "sources": {
+    "stryker_marking_page_sha256": "0d73fb654d86315ec95b2aa7069e325687f5e9ce4f4187e889cae5fc1aaa095d",
+    "pma_p180031_sha256": "9fee95111608177cb74bb6627453766842ee0a6e25123834febf5abdc9e0585c",
+    "510k_k252694_sha256": "e6bf7bf9f4de8db8265e310cc524ad7ad0a6854dc8b656f172ccef808a929a02",
+    "510k_k223305_sha256": "fe7597c431e1c38548757bedfe893e95f7e3db2c3436dcd426f620bfebc74779"
+  },
+  "baseline": {
+    "status": "REAL_PUBLIC_DEVELOPMENT_RUN",
+    "methods": ["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"],
+    "queries": 3,
+    "failed_queries": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "candidate_depth": 13,
+    "rerank_depth": 13,
+    "protocol_hash": "7dab96b735c70bcf60b99f191477c5add04d95c337d437c2d17b546e8b226cf2",
+    "receipt_sha256": "f3c91c3ff7d84ff50eaa1cde1c8ed69282c9c58e553ba495eac0d96caf593f0b"
+  },
+  "metrics": {
+    "macro_known_link_recall_at_10": {
+      "HT-B0a": 0.8190476190476191,
+      "HT-B0b": 0.9523809523809524,
+      "HT-B1": 0.8380952380952381,
+      "HT-B2": 0.8380952380952381,
+      "HT-B3": 0.8857142857142857
+    },
+    "macro_known_link_recall_at_20": {
+      "HT-B0a": 1.0,
+      "HT-B0b": 1.0,
+      "HT-B1": 1.0,
+      "HT-B2": 1.0,
+      "HT-B3": 1.0
+    },
+    "k20_interpretation": "CEILING_LIMITED_K_EXCEEDS_13_DOCUMENT_UNIVERSE"
+  },
+  "tests": {
+    "focused_parser_boundary": "PASS",
+    "repair_and_prelive": "PASS",
+    "compileall": "PASS",
+    "git_diff_check": "PASS_WITH_LINE_ENDING_WARNINGS_ONLY"
+  },
+  "boundaries": {
+    "raw_third_party_files_staged": false,
+    "credentials_read": false,
+    "paid_calls": false,
+    "clinical_or_fto_claim": false,
+    "publication_readiness": false,
+    "main_bridge_status": "BLOCKED_LOCAL",
+    "provider_branch_status": "BLOCKED_LOCAL"
+  },
+  "next_action": "Acquire a rights-cleared multi-company cohort, source family/group mappings where available, and predeclare an untouched final holdout before pooled scientific comparison."
+}
