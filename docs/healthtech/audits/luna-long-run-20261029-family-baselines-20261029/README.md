@@ -3,7 +3,7 @@
 - Run ID: `luna-long-run-20261029-family-baselines-20261029`
 - Date: `2026-10-29`
 - Tested source commit: `e84c3c57df2d404aba8b79d89f94e9866002d7df`
-- Candidate package commit: `PENDING_FIRST_COMMIT`
+- Candidate package commit: `c0887f6a210d598b0f604badd5a4e6fbd8911852`
 - Status: `PASS_OFFLINE_DEVELOPMENT_WITH_FINAL_HOLDOUT`
 - Scope: fresh HT-B0a/B0b/B1/B2/B3 runs on the family-aware Boston/Stryker/Cook composite, followed by sourced family-group re-projection.
 

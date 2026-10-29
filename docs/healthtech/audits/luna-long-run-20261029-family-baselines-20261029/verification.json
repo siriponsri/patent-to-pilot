@@ -4,7 +4,7 @@
   "date": "2026-10-29",
   "status": "PASS_OFFLINE_DEVELOPMENT_WITH_FINAL_HOLDOUT",
   "tested_source_commit": "e84c3c57df2d404aba8b79d89f94e9866002d7df",
-  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "candidate_package_commit": "c0887f6a210d598b0f604badd5a4e6fbd8911852",
   "tree_state_at_test": "dirty_with_unrelated_owner_artifacts_preserved",
   "source_hashes": {
     "scripts/healthtech/run_real_baselines.py": "fd2f5275214d50b9129fed28f76fbbb7a8a8c15d517bf587185feac5689f7fcb",

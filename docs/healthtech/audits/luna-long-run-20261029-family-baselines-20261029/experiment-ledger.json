@@ -3,7 +3,7 @@
   "run_id": "luna-long-run-20261029-family-baselines-20261029",
   "date": "2026-10-29",
   "tested_source_commit": "e84c3c57df2d404aba8b79d89f94e9866002d7df",
-  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "candidate_package_commit": "c0887f6a210d598b0f604badd5a4e6fbd8911852",
   "entries": [
     {
       "id": "family-aware-development-baseline",
