@@ -1,0 +1,21 @@
+{
+  "format": "ht-m2-m3-multicompany-protocol-v1",
+  "cohort_manifest_sha256": "678cd54c672e70ce9223ee08d19dcc6e24c1ab7663234a19e986951719415af8",
+  "cohort_sha256": "26e9f0ebc16721a3d6a85de8f7fad6a03a4ddb3701869bdfc84f309b03bf0dd7",
+  "split_sha256": "298d55f46a05191dc4afbbd071957e4adf9a62247df1317399aae8690e866b4e",
+  "candidate_universe": "20 unique canonical US grant documents from the frozen Boston Scientific and Stryker parent snapshots",
+  "methods": ["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"],
+  "primary_k": 20,
+  "secondary_k": [10, 50],
+  "candidate_depth": 50,
+  "rerank_depth": 50,
+  "fixed_query_contract": "HT-B1/B2/B3 share the first query text and fixed query-prefix order",
+  "failure_rule": "Failed queries remain in the denominator and receive zero known-link recall",
+  "unjudged_rule": "Unlisted pairs remain unjudged and are never recoded as negatives",
+  "development_view": "results/healthtech/ht-multicompany-20261029-r1/views/development",
+  "final_holdout_view": "results/healthtech/ht-multicompany-20261029-r1/views/final_holdout",
+  "holdout_rule": "The full Stryker Neurovascular company group is final holdout; no tuning or query reassignment after freeze",
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "tuning": "No method, query, cutoff, or split tuning after holdout declaration"
+}

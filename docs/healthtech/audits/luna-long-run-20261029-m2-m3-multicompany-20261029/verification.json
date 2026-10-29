@@ -1,0 +1,69 @@
+{
+  "format": "ht-healthtech-audit-verification-v1",
+  "status": "PASS_OFFLINE_DEVELOPMENT_WITH_FINAL_HOLDOUT",
+  "run_id": "luna-long-run-20261029-m2-m3-multicompany-20261029",
+  "date": "2026-10-29",
+  "base_revision": "9c741fe847f4ed44782b348f69791bd8a4b83995",
+  "candidate_revision": "dbcac2f",
+  "scope": "Derived typed-policy Boston Scientific and Stryker cohort composition, predeclared company holdout, and shared HT-B0a/B0b/B1/B2/B3 offline runs",
+  "cohort": {
+    "devices": 5,
+    "patents": 20,
+    "disclosed_pairs": 26,
+    "unjudged_distractor_pairs": 74,
+    "exact_patent_groups": 4,
+    "company_groups": 2,
+    "family_mapping": "UNKNOWN_NOT_ASSUMED",
+    "development_queries": 2,
+    "final_holdout_queries": 3,
+    "final_holdout_company": "Stryker Neurovascular",
+    "cohort_sha256": "26e9f0ebc16721a3d6a85de8f7fad6a03a4ddb3701869bdfc84f309b03bf0dd7",
+    "manifest_sha256": "678cd54c672e70ce9223ee08d19dcc6e24c1ab7663234a19e986951719415af8",
+    "runtime_sha256": "57ada7ecb01250e551f3dd001d6fb2afc926899a81a0ddcb6febc7e290a151f5",
+    "references_sha256": "fd7ff520e0dcd09f010617c08916cab82e6ca114c5cb1264b151e6a372730bc3",
+    "split_sha256": "298d55f46a05191dc4afbbd071957e4adf9a62247df1317399aae8690e866b4e"
+  },
+  "rights": {
+    "status": "PASS",
+    "binding": "TYPED_POLICY_ID",
+    "policy_ids": [
+      "openfda-pma-records",
+      "openfda-510k-records",
+      "google-patents-pages",
+      "boston-scientific-virtual-patent-marking",
+      "stryker-neurovascular-product-marking"
+    ],
+    "disclosure_sources": 2,
+    "disclosure_pairs_covered": 26,
+    "unresolved_policy_ids": []
+  },
+  "baseline": {
+    "status": "REAL_PUBLIC_DEVELOPMENT_RUN",
+    "methods": ["HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3"],
+    "failed_queries": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+    "development_receipt_sha256": "5d611187ac0601a75039f7c8ddcd4eb41630b3cb356d7ab51b725c35afa5518d",
+    "holdout_receipt_sha256": "4170f92d6712cd626177cebbf76e21685dd1dae74cba2c47531ddb061570ede2"
+  },
+  "checks": {
+    "focused_multicompany_tests": "PASS",
+    "compile": "PASS",
+    "typed_provenance": "PASS",
+    "runtime_evaluator_separation": "PASS",
+    "deterministic_rebuild_hash": "PASS",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "boundaries": {
+    "raw_third_party_files_staged": false,
+    "credentials_read": false,
+    "paid_calls": false,
+    "clinical_or_fto_claim": false,
+    "publication_readiness": false,
+    "main_bridge_status": "BLOCKED_LOCAL",
+    "provider_branch_status": "BLOCKED_LOCAL"
+  },
+  "next_action": "Expand beyond two companies or obtain sourced family mappings, then repeat the frozen protocol with a larger untouched holdout before any pooled scientific claim."
+}

@@ -1,0 +1,72 @@
+{
+  "format": "ht-m2-m3-multicompany-baseline-summary-v1",
+  "implementation_revision": "dbcac2f",
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "cohort_manifest_sha256": "678cd54c672e70ce9223ee08d19dcc6e24c1ab7663234a19e986951719415af8",
+  "candidate_universe_patents": 20,
+  "development": {
+    "queries": 2,
+    "disclosed_pairs": 13,
+    "failed_queries": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "macro_known_link_recall_at_10": {
+      "HT-B0a": 0.845238,
+      "HT-B0b": 1.0,
+      "HT-B1": 1.0,
+      "HT-B2": 0.690476,
+      "HT-B3": 1.0
+    },
+    "macro_known_link_recall_at_20": {
+      "HT-B0a": 1.0,
+      "HT-B0b": 1.0,
+      "HT-B1": 1.0,
+      "HT-B2": 1.0,
+      "HT-B3": 1.0
+    },
+    "resource_summary": {
+      "HT-B0a": {"query_calls": 2, "rerank_pairs": 0, "rerank_tokens": 0},
+      "HT-B0b": {"query_calls": 2, "rerank_pairs": 0, "rerank_tokens": 0},
+      "HT-B1": {"query_calls": 2, "rerank_pairs": 40, "rerank_tokens": 10240},
+      "HT-B2": {"query_calls": 8, "rerank_pairs": 160, "rerank_tokens": 40960},
+      "HT-B3": {"query_calls": 2, "rerank_pairs": 40, "rerank_tokens": 10240}
+    },
+    "receipt_sha256": "5d611187ac0601a75039f7c8ddcd4eb41630b3cb356d7ab51b725c35afa5518d"
+  },
+  "final_holdout": {
+    "company": "Stryker Neurovascular",
+    "queries": 3,
+    "disclosed_pairs": 13,
+    "failed_queries": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "macro_known_link_recall_at_10": {
+      "HT-B0a": 0.495238,
+      "HT-B0b": 0.761905,
+      "HT-B1": 0.790476,
+      "HT-B2": 0.790476,
+      "HT-B3": 0.838095
+    },
+    "macro_known_link_recall_at_20": {
+      "HT-B0a": 1.0,
+      "HT-B0b": 1.0,
+      "HT-B1": 1.0,
+      "HT-B2": 1.0,
+      "HT-B3": 1.0
+    },
+    "resource_summary": {
+      "HT-B0a": {"query_calls": 3, "rerank_pairs": 0, "rerank_tokens": 0},
+      "HT-B0b": {"query_calls": 3, "rerank_pairs": 0, "rerank_tokens": 0},
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 60, "rerank_tokens": 15360},
+      "HT-B2": {"query_calls": 12, "rerank_pairs": 240, "rerank_tokens": 61440},
+      "HT-B3": {"query_calls": 6, "rerank_pairs": 120, "rerank_tokens": 30720}
+    },
+    "receipt_sha256": "4170f92d6712cd626177cebbf76e21685dd1dae74cba2c47531ddb061570ede2"
+  },
+  "interpretation": [
+    "K=20 is ceiling-limited because the frozen candidate universe contains exactly 20 patents.",
+    "K=10 is the more informative descriptive cutoff for this composite.",
+    "The holdout is a single-company transfer check, not a stable estimate of cross-company generalization.",
+    "Product-level marking links are documented associations, not independent semantic relevance judgments."
+  ]
+}

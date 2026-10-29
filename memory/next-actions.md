@@ -115,3 +115,15 @@ The corrected HT-B0a/B0b/B1/B2/B3 development run completed all 15 method/query 
 Implementation adds `scripts/healthtech/fetch_stryker_neurovascular_cohort.py`, an optional `--rights-matrix` argument to the provenance CLI, a runtime/evaluator leakage guard, cohort-specific frontier reporting, and focused parser/policy/boundary regressions. No raw third-party files, credentials, evaluator-only relations, or model artifacts were staged.
 
 Next: add a rights-cleared cohort with multiple independent company/family groups and a predeclared untouched holdout before pooled scientific comparison. Keep Bridge and live/provider branches `BLOCKED_LOCAL`.
+
+## HT-NEXT-016 — 2026-10-29 multi-company typed holdout
+
+Status: `PASS_OFFLINE_DEVELOPMENT_WITH_FINAL_HOLDOUT`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/README.md`.
+
+Composed a deterministic local cohort from the typed-policy Boston Scientific WATCHMAN and Stryker Neurovascular snapshots. The frozen composite has 5 devices, 20 unique patents, 26 product-level disclosed pairs, 74 unjudged distractors, 4 exact-patent groups, 2 company groups, and a predeclared full-company Stryker final holdout. Family mapping remains `UNKNOWN_NOT_ASSUMED`; no family merge was inferred.
+
+Typed provenance passes with 26/26 disclosed pairs covered, 2 independent disclosure sources, and 0 unresolved policy IDs. The development and final-holdout views exclude evaluator relations from runtime inputs and preserve the same 20-patent candidate universe. The composite rebuild is deterministic with cohort hash `26e9f0ebc16721a3d6a85de8f7fad6a03a4ddb3701869bdfc84f309b03bf0dd7`.
+
+At `K=10`, the development macro known-link recall is `0.8452 / 1.0000 / 1.0000 / 0.6905 / 1.0000` and the untouched Stryker holdout is `0.4952 / 0.7619 / 0.7905 / 0.7905 / 0.8381` for HT-B0a/B0b/B1/B2/B3. `K=20` is ceiling-limited because the universe has exactly 20 patents. Both runs use implementation commit `dbcac2f`, complete all scheduled queries with 0 failures, 0 provider calls, and `$0.00` paid cost.
+
+This is descriptive offline development evidence only: product-level marking is not independent semantic gold, family uncertainty remains, and one held-out company is not enough for a stable generalization estimate. Next add a third typed-policy company or licensed replacement and source family mappings where available before any pooled scientific claim. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO work, deployment, outreach, and UI takeover blocked or paused.

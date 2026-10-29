@@ -1,0 +1,99 @@
+{
+  "checked_date": "2026-10-29",
+  "purpose": "Source-specific rights evidence for a derived Boston Scientific and Stryker multi-company cohort used in local research and offline evaluation.",
+  "sources": [
+    {
+      "source_id": "openfda-pma-records",
+      "source_id_prefixes": ["openfda-pma-"],
+      "source_types": ["regulatory_record"],
+      "url": "https://open.fda.gov/terms/",
+      "source_revision": "page-checked-2026-10-28",
+      "source_sha256": "b11f712bfb11d03319675fc04e6948133a83c57aa2913b7f18d3677d0209f723",
+      "clause_locator": "Data Rights and Usage; Attribution; Right to Limit",
+      "clause": "Unless otherwise noted, openFDA content, data, documentation, code, and related materials are public domain under CC0; some data may not be public domain, attribution is requested, and service limits apply.",
+      "interpretation": "Only normalized PMA fields selected by the adapter are treated as reviewed public-domain fields; third-party or warning-marked fields remain excluded or restricted.",
+      "intended_use": {
+        "acquisition": "ALLOWED",
+        "local_evaluation": "ALLOWED_WITH_ATTRIBUTION",
+        "product_display": "ALLOWED_WITH_ATTRIBUTION",
+        "redistribution": "ALLOWED_WITH_ATTRIBUTION"
+      },
+      "displayable_fields": ["pma_number", "supplement_number", "applicant", "generic_name", "trade_name", "product_code", "advisory_committee", "advisory_committee_description", "decision_date", "decision_code", "date_received", "supplement_reason", "supplement_type", "ao_statement"],
+      "limits": ["Field-specific exceptions remain possible.", "Third-party openFDA enrichment fields remain excluded from the normalized PMA payload.", "openFDA service limits and anti-abuse terms apply.", "Attribution requested: Data provided by the U.S. Food and Drug Administration."]
+    },
+    {
+      "source_id": "openfda-510k-records",
+      "source_id_prefixes": ["openfda-510k-"],
+      "source_types": ["regulatory_record"],
+      "url": "https://open.fda.gov/terms/",
+      "source_revision": "page-checked-2026-10-28",
+      "source_sha256": "b11f712bfb11d03319675fc04e6948133a83c57aa2913b7f18d3677d0209f723",
+      "clause_locator": "Data Rights and Usage; Attribution; Right to Limit",
+      "clause": "Unless otherwise noted, openFDA content, data, documentation, code, and related materials are public domain under CC0; some data may not be public domain, attribution is requested, and service limits apply.",
+      "interpretation": "Only normalized 510(k) fields selected by the adapter are treated as reviewed public-domain fields; third-party or warning-marked fields remain excluded or restricted.",
+      "intended_use": {
+        "acquisition": "ALLOWED",
+        "local_evaluation": "ALLOWED_WITH_ATTRIBUTION",
+        "product_display": "ALLOWED_WITH_ATTRIBUTION",
+        "redistribution": "ALLOWED_WITH_ATTRIBUTION"
+      },
+      "displayable_fields": ["k_number", "device_name", "applicant", "product_code", "decision_code", "decision_date", "date_received", "statement_or_summary", "clearance_type", "review_advisory_committee"],
+      "limits": ["Field-specific exceptions remain possible.", "Third-party openFDA enrichment fields remain excluded from the normalized 510(k) payload.", "openFDA service limits and anti-abuse terms apply.", "A 510(k) decision code is a regulatory source fact, not clinical endorsement or patent linkage."]
+    },
+    {
+      "source_id": "google-patents-pages",
+      "source_id_prefixes": ["google-patents-"],
+      "source_types": ["patent_document"],
+      "url": "https://patents.google.com/",
+      "source_revision": "landing-page-and-terms-checked-2026-10-28",
+      "source_sha256": "d83512a2ba313ddc0d00b332b2377959f0a3091ca48f70b63b2b337ab1bce7be",
+      "clause_locator": "official landing page and general Google Terms checked; no source-specific patent-text license located",
+      "clause": "No source-specific redistribution license was identified for extracted Google Patents page text in the checked official source and general terms surface.",
+      "interpretation": "Google-derived patent HTML and extracted text are retained for local research only; this does not decide underlying patent-document rights.",
+      "intended_use": {
+        "acquisition": "ALLOWED_LOCAL_SNAPSHOT",
+        "local_evaluation": "ALLOWED_LOCAL_RESEARCH",
+        "product_display": "BLOCKED_LOCAL",
+        "redistribution": "BLOCKED_LOCAL"
+      },
+      "limits": ["No USPTO-derived patent-text backend is implemented in this package.", "Raw HTML and extracted text remain local-only."]
+    },
+    {
+      "source_id": "boston-scientific-virtual-patent-marking",
+      "source_id_prefixes": ["boston-watchman-"],
+      "source_types": ["independent_disclosure"],
+      "url": "https://www.bostonscientific.com/en-US/patents.html",
+      "source_revision": "page-and-linked-list-retrieved-2026-10-28",
+      "source_sha256": "c5e1bf08ca9f9904669dd98fc7d7a9cc08137a6f0f7f5c810a544f4bdf90a78c",
+      "clause_locator": "visible text: Boston Scientific Virtual Patent Marking",
+      "clause": "Boston Scientific patent information is provided to satisfy the notice requirement for the virtual patent marking provision of the America Invents Act; the product list may not be all inclusive.",
+      "interpretation": "The page documents a product-level patent marking relationship but does not establish a redistribution license for the linked patent list or extracted patent text.",
+      "intended_use": {
+        "acquisition": "ALLOWED_LOCAL_SNAPSHOT",
+        "local_evaluation": "ALLOWED_LOCAL_RESEARCH",
+        "product_display": "BLOCKED_LOCAL",
+        "redistribution": "BLOCKED_LOCAL"
+      },
+      "limits": ["WATCHMAN rows are product-level documented associations, not claim-level semantic judgments.", "The list may not be all inclusive; unlisted pairs remain unjudged.", "Raw page, PDF, and extracted patent text remain local-only."]
+    },
+    {
+      "source_id": "stryker-neurovascular-product-marking",
+      "source_id_prefixes": ["stryker-neurovascular-patent-marking"],
+      "source_types": ["independent_disclosure"],
+      "url": "https://www.stryker.com/us/en/about/patents/neurovascular-intervention-patents.html",
+      "source_revision": "page-retrieved-2026-10-29",
+      "source_sha256": "0d73fb654d86315ec95b2aa7069e325687f5e9ce4f4187e889cae5fc1aaa095d",
+      "clause_locator": "HTML table: business unit, product, product code, U.S. patent number",
+      "clause": "The official Stryker page presents product rows paired with U.S. patent numbers.",
+      "interpretation": "This is product-level patent-marking evidence for local research and offline evaluation; it does not grant a redistribution license or establish claim-level semantic relevance.",
+      "intended_use": {
+        "acquisition": "ALLOWED_LOCAL_SNAPSHOT",
+        "local_evaluation": "ALLOWED_LOCAL_RESEARCH",
+        "product_display": "BLOCKED_LOCAL",
+        "redistribution": "BLOCKED_LOCAL"
+      },
+      "limits": ["The marking list may not be exhaustive; unlisted pairs remain unjudged.", "Raw HTML and extracted patent text remain local-only.", "No patent-text redistribution license was identified."]
+    }
+  ],
+  "overall_boundary": "Only local research and offline evaluation are in scope. Product display and redistribution fail closed for third-party marking evidence and Google-derived patent text."
+}

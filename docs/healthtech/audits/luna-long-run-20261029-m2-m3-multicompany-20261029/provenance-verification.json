@@ -1,0 +1,134 @@
+{
+  "cohort_status": "PUBLIC_MULTI_COMPANY_COHORT_FROZEN",
+  "counts": {
+    "covered_pairs": 26,
+    "disclosed_pairs": 26,
+    "disclosure_sources": 2,
+    "distractor_pairs": 74,
+    "eligible_queries": 5,
+    "evidence_rows": 15,
+    "final_holdout_queries": 3,
+    "runtime_devices": 5,
+    "runtime_patents": 20
+  },
+  "disclosure_source_ids": [
+    "boston-watchman-patent-disclosures",
+    "stryker-neurovascular-patent-marking"
+  ],
+  "format": "ht-cohort-provenance-verification-v1",
+  "hashes": {
+    "manifest": "f0930ae300ecf25386e6b6af6582b8b38570c3da1e0d8627dbd77c1db38e3727",
+    "references": "8fc52c65573c25c054e5ba0b9d79a977125b242b20dc1977ab749f65700e5eab",
+    "runtime": "9036c3f480f15da9b7227bd6fd1e4d41f07061b822d3fbe46eec80b15a59621f",
+    "source_registry": "18c2397f337e1d42baba93e790407814ac5e30678f9dcd0911f7177334bff2e0",
+    "split": "cf34dc85c53543ff2e14f4156cb1e61be16ee6096003d6da3b410ba1da69338a"
+  },
+  "legacy_rights_source_ids": [],
+  "limitations": [
+    "This verifies structural source-backed disclosure coverage only.",
+    "Product-level disclosure is not an independent semantic relevance judgment.",
+    "Unlisted pairs remain unjudged and are not recoded as negatives.",
+    "Recorded rights policies govern use; this report does not grant redistribution rights."
+  ],
+  "query_ids_hash": "31430e97c98aaa5c611ebbc690cca9c3ed9ff0eab4e8afce81f58768bda4dff3",
+  "rights_binding": "TYPED_POLICY_ID",
+  "rights_policy_ids": [
+    "boston-scientific-virtual-patent-marking",
+    "stryker-neurovascular-product-marking"
+  ],
+  "rights_policy_resolutions": [
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "stryker-neurovascular-product-marking",
+      "source_id": "stryker-neurovascular-patent-marking",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "boston-scientific-virtual-patent-marking",
+      "source_id": "boston-watchman-patent-disclosures",
+      "status": "RESOLVED"
+    },
+    {
+      "reason": "resolved against the reviewed rights matrix",
+      "rights_policy_id": "boston-scientific-virtual-patent-marking",
+      "source_id": "boston-watchman-patent-disclosures",
+      "status": "RESOLVED"
+    }
+  ],
+  "status": "PASS",
+  "unresolved_rights": [],
+  "unresolved_rights_policy_ids": []
+}
