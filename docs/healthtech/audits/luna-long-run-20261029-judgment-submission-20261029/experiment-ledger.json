@@ -1,0 +1,29 @@
+{
+  "format": "ht-relevance-submission-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-judgment-submission-20261029",
+  "source_commit": "3b3dd85861122b29d446993352167c54e3718d9e",
+  "experiments": [
+    {
+      "id": "submission-contract-regressions",
+      "status": "PASS",
+      "input": "Frozen review packet plus synthetic unsafe mutations",
+      "outcome": "Unknown rows, disclosure promotion, missing expert roles, and source hash drift fail closed",
+      "cost_usd": 0.0
+    },
+    {
+      "id": "submission-cli-smoke",
+      "status": "PASS_SYNTHETIC_ONLY",
+      "input": "One authored fixture label against the real 192-pair packet",
+      "outcome": "Validated one explicit label and preserved 191 unjudged pairs",
+      "cost_usd": 0.0
+    },
+    {
+      "id": "real_semantic_source_intake",
+      "status": "NOT_RUN",
+      "input": "Rights-cleared expert or licensed semantic source",
+      "outcome": "No source or authorization is available in this package",
+      "cost_usd": 0.0
+    }
+  ],
+  "decision": "Keep the adapter ready but do not create or claim real semantic gold until source rights, intended use, adjudicator role, and locators are supplied."
+}

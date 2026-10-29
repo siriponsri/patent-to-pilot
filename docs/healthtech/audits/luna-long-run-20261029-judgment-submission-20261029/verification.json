@@ -1,0 +1,66 @@
+{
+  "format": "ht-relevance-submission-audit-verification-v1",
+  "run_id": "luna-long-run-20261029-judgment-submission-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_ENGINEERING_OFFLINE_NO_REAL_LABELS",
+  "start_commit": "35e82edebb3e2979bc70f5b136c4bfbb66f23a6d",
+  "tested_source_commit": "3b3dd85861122b29d446993352167c54e3718d9e",
+  "candidate_package_commit": "3b3dd85861122b29d446993352167c54e3718d9e",
+  "tree_state_at_test": "dirty_with_local_cohort_artifacts_and_unrelated_owner_artifacts_preserved",
+  "implementation_files": {
+    "src/patent_to_pilot/evaluation/healthtech/judgment_submission.py": "ec86395bb87b42f9338afcd27f861751c45f55d6ba7c8cc9b0bc42a9667b5819",
+    "scripts/healthtech/ingest_relevance_judgments.py": "7d82b2369d76aee41860fb7e61b0da8817255139ac1a9fa14a089bcd61b4dde6",
+    "tests/test_healthtech_judgment_submission.py": "d216d3c2debd110f267f4060c315c3b262bc81228f2b9909fe17e244f825a7b1"
+  },
+  "frozen_packet": {
+    "path": "results/healthtech/ht-relevance-review-20261029-r1/packet.json",
+    "sha256": "95211ef2164b0c7a573a86a0a3b46294cb63d3fbbfeda60cd1f7c09f47219338",
+    "query_count": 8,
+    "patent_count": 24,
+    "pair_denominator": 192,
+    "final_holdout_query_count": 3
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_judgment_submission.py tests/test_healthtech_review_packet.py tests/test_healthtech_judgments.py",
+      "status": "PASS",
+      "outcome": "20 passed"
+    },
+    {
+      "command": "rtk proxy python -c \"import os,sys; from pathlib import Path; src=str(Path('src').resolve()); os.environ['PYTHONPATH']=src + os.pathsep + os.environ.get('PYTHONPATH',''); sys.path.insert(0,src); import pytest; raise SystemExit(pytest.main(['--disable-warnings']))\"",
+      "status": "PASS",
+      "outcome": "373 passed, 1 warning"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q src scripts tests",
+      "status": "PASS",
+      "outcome": "exit 0"
+    },
+    {
+      "command": "temporary synthetic CLI submission through scripts/healthtech/ingest_relevance_judgments.py",
+      "status": "PASS",
+      "outcome": "1 judged pair; 191 unjudged pairs; generalization_status=NOT_ESTIMABLE"
+    }
+  ],
+  "boundaries": {
+    "real_semantic_labels_acquired": false,
+    "synthetic_fixture_labels_persisted": false,
+    "product_disclosure_promoted_to_semantic_gold": false,
+    "unlisted_pairs_recoded_negative": false,
+    "runtime_evaluator_fields_read": false,
+    "provider_calls": 0,
+    "network_acquisition": 0,
+    "neural_provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "raw_restricted_payloads_staged": false,
+    "credentials_staged": false,
+    "private_paths_staged": false
+  },
+  "limitations": [
+    "The synthetic smoke validates code paths only and cannot support a scientific claim.",
+    "No authorized reviewer or rights-cleared semantic source is present in the current worktree.",
+    "The adapter defaults family-disjoint and final-holdout family requirements to false until sourced family groups are explicitly bound to the judgment split.",
+    "The SciFact branch still has no official test labels in the pinned local release, so no held-out SciFact score was claimed."
+  ],
+  "next_action": "Run the adapter only after a real rights-cleared semantic source is authorized; preserve the 192-pair denominator and untouched holdout, then rerun HT-B0a/B0b/B1/B2/B3 with group-level uncertainty."
+}

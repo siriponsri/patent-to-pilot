@@ -217,3 +217,13 @@ Added a local-only review-packet builder and generated a metadata-only packet fr
 Focused review-packet/relevance-contract tests pass `15/15`; the controlled full suite passes `368/368` with one warning; compile checks pass; the real CLI build passes with `0` provider calls, `0` network acquisition, and `$0.00` paid cost. This is review readiness and denominator freeze only, not expert gold or a scientific comparison.
 
 Next: obtain or authorize a rights-cleared semantic judgment source with explicit labels, source revision/hash, adjudicator role, and locators; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or holdout, then rerun HT-B0a/B0b/B1/B2/B3. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-026 — 2026-10-29 judgment-submission adapter
+
+Status: `PASS_ENGINEERING_OFFLINE_NO_REAL_LABELS`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-judgment-submission-20261029/README.md`.
+
+Added `src/patent_to_pilot/evaluation/healthtech/judgment_submission.py` and `scripts/healthtech/ingest_relevance_judgments.py` as a fail-closed intake boundary for authorized reviewer JSONL. Partial submissions bind only to existing rows in the frozen 192-pair packet and preserve every omitted pair as `UNJUDGED`; numeric runtime patent tokens retain `patent_id_runtime_raw` while the contract uses the canonicalizable identity. Unknown rows, duplicate pairs, source-hash drift, missing adjudicator roles, unsupported bases, and product-disclosure promotion are rejected.
+
+Focused submission/packet/contract tests pass `20/20`; the controlled full suite passes `373/373` with one warning; compile checks pass; and the temporary synthetic CLI smoke yields `1` judged pair plus `191` unjudged pairs with `generalization_status=NOT_ESTIMABLE`. No real semantic labels, evaluator labels, network acquisition, provider calls, neural inference, or paid cost were added. The synthetic label was not persisted as gold.
+
+Next: obtain or authorize a rights-cleared semantic source with explicit `relevant` / `not_relevant` labels, source revision and SHA-256, rights policy, semantic intended use, adjudicator role, exact locators, multiple independent company/family groups, and a frozen untouched holdout. Run the adapter only after that source is authorized, inspect its validation report, then rerun HT-B0a/B0b/B1/B2/B3. Keep missing labels unjudged and family-aware generalization `NOT_ESTIMABLE`; Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI remain blocked or paused.
