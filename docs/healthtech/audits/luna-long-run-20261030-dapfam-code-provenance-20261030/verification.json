@@ -1,0 +1,78 @@
+{
+  "run_id": "luna-long-run-20261030-dapfam-code-provenance-20261030",
+  "status": "PASS_OFFLINE_REPRODUCIBILITY_PROVENANCE",
+  "date_local": "2026-10-30",
+  "parent_audit": "docs/healthtech/audits/luna-long-run-20261030-dapfam-bm25-20261030/README.md",
+  "source_head": "7edf2f4adf013787d0db5f3a028c5d0ac58ae7f4",
+  "changed_files": {
+    "scripts/healthtech/run_dapfam_bm25.py": {
+      "bytes": 15739,
+      "sha256": "15b6ddedda892221b7fefff1ebbc198e35f7e886f22a8695fc93c7ae6df52573"
+    },
+    "tests/test_healthtech_dapfam_bm25.py": {
+      "bytes": 2293,
+      "sha256": "a6a808ee1e5340d18c41d642102fdf72e543270f7b838a0f805c1f4682c34eee"
+    }
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_dapfam_bm25.py",
+      "status": "PASS",
+      "outcome": "6 passed"
+    },
+    {
+      "command": "rtk proxy python -B -m py_compile scripts/healthtech/run_dapfam_bm25.py tests/test_healthtech_dapfam_bm25.py",
+      "status": "PASS",
+      "outcome": "exit code 0"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_dapfam_bm25.py --duckdb C:\\Users\\User\\AppData\\Local\\duckdb\\cli\\2.0.0\\duckdb.exe --corpus results/healthtech/dapfam-smoke-inputs-20261030-r3/corpus.parquet --queries results/healthtech/dapfam-smoke-inputs-20261030-r3/queries.parquet --qrels results/healthtech/dapfam-smoke-inputs-20261030-r3/qrels.parquet --output results/healthtech/ht-dapfam-bm25-smoke-20261030-r3 --k 3",
+      "status": "PASS",
+      "outcome": "4 candidates, 2 queries, 3 qrel pairs; code SHA bound"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_dapfam_bm25.py --duckdb C:\\Users\\User\\AppData\\Local\\duckdb\\cli\\2.0.0\\duckdb.exe --output results/healthtech/ht-dapfam-bm25-20261030-r3",
+      "status": "PASS",
+      "outcome": "45,336 candidates, 1,247 queries, 49,869 qrel pairs, 1,247 ranking rows"
+    },
+    {
+      "command": "post-run integrity checker over summary.json, manifest.json, and rankings.jsonl",
+      "status": "PASS",
+      "outcome": "all checks true; code SHA and dirty-tree state recorded"
+    }
+  ],
+  "outputs": {
+    "full_run": "results/healthtech/ht-dapfam-bm25-20261030-r3",
+    "smoke_run": "results/healthtech/ht-dapfam-bm25-smoke-20261030-r3",
+    "full_summary_sha256": "ceef6000775ddeefa57fbc37755326271979657ef0698a06c11de4e5d41dec2d",
+    "full_manifest_sha256": "5bace10ccf6ed40ad3a6a61c09bf60306132af517103c2cbb78d342e38d14eb1",
+    "smoke_manifest_sha256": "9c1ecb8b75eaef59390e66f53e084b29a4dcd63a6fcd93dd6696c9c3aed6e39e"
+  },
+  "metrics": {
+    "candidate_count": 45336,
+    "query_count": 1247,
+    "qrel_pair_count": 49869,
+    "ranking_rows": 1247,
+    "k": 100,
+    "macro_recall_at_100": 0.21398467432950194,
+    "micro_recall_at_100": 0.2136868707128244,
+    "macro_ndcg_at_100": 0.19229519072532472,
+    "positive_qrels": 24929,
+    "hits_at_100": 5327
+  },
+  "code_provenance": {
+    "entrypoint": "scripts/healthtech/run_dapfam_bm25.py",
+    "sha256": "15b6ddedda892221b7fefff1ebbc198e35f7e886f22a8695fc93c7ae6df52573",
+    "git_revision": "7edf2f4adf013787d0db5f3a028c5d0ac58ae7f4",
+    "working_tree_dirty": true
+  },
+  "boundaries": {
+    "provider_calls": 0,
+    "network_calls_for_project_execution": 0,
+    "paid_cost_usd": 0.0,
+    "semantic_device_product_gold": "NOT_RUN",
+    "exhaustive_recall": "NOT_ESTIMABLE",
+    "unjudged_policy": "unlisted pairs are not treated as negatives"
+  },
+  "initial_test_note": "The first post-patch assertion used POSIX separators and failed on Windows; the assertion was corrected to normalize separators before the final 6/6 PASS."
+}

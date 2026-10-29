@@ -245,6 +245,28 @@ def git_revision() -> str:
     return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
 
 
+def git_worktree_dirty() -> bool:
+    result = subprocess.run(
+        ["git", "status", "--porcelain", "--untracked-files=all"],
+        cwd=ROOT,
+        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+    return bool(result.stdout.strip())
+
+
+def code_provenance() -> dict[str, object]:
+    entrypoint = Path(__file__).resolve()
+    return {
+        "entrypoint": display_path(entrypoint),
+        "sha256": sha256_file(entrypoint),
+        "git_revision": git_revision(),
+        "working_tree_dirty": git_worktree_dirty(),
+    }
+
+
 def run(args: argparse.Namespace) -> dict[str, object]:
     output = args.output.resolve()
     if output.exists() and any(output.iterdir()):
@@ -324,6 +346,7 @@ def run(args: argparse.Namespace) -> dict[str, object]:
         "run_id": output.name,
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "code_revision": git_revision(),
+        "code_provenance": code_provenance(),
         "inputs": {
             "corpus": {"path": display_path(corpus_path), "bytes": corpus_path.stat().st_size, "sha256": sha256_file(corpus_path)},
             "queries": {"path": display_path(queries_path), "bytes": queries_path.stat().st_size, "sha256": sha256_file(queries_path)},

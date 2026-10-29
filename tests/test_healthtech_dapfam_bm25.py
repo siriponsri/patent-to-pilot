@@ -59,3 +59,12 @@ def test_duplicate_qrels_are_rejected(tmp_path):
 def test_display_path_supports_external_smoke_inputs(tmp_path):
     path = tmp_path / "fixture.parquet"
     assert MODULE.display_path(path) == str(path)
+
+
+def test_manifest_code_provenance_binds_working_tree_source():
+    provenance = MODULE.code_provenance()
+
+    assert provenance["entrypoint"].replace("\\", "/").endswith("scripts/healthtech/run_dapfam_bm25.py")
+    assert len(provenance["sha256"]) == 64
+    assert provenance["git_revision"]
+    assert isinstance(provenance["working_tree_dirty"], bool)
