@@ -3,7 +3,7 @@
   "run_id": "luna-long-run-20261029-family-freeze-20261029",
   "date": "2026-10-29",
   "tested_source_commit": "1e1c463787bf1a494c6d9c99367cebda5a2bfea5",
-  "candidate_package_commit": "1e72bfe3f9d30683847212ca7d8a5a096829f9f5",
+  "candidate_package_commit": "1e72bfece8b3b9da06b318162289bf61fe8cac7f",
   "entries": [
     {
       "id": "family-aware-cohort-composition",
