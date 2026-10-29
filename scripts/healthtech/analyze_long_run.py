@@ -155,6 +155,20 @@ def _pareto_frontier(rows: list[dict[str, Any]]) -> list[str]:
     return frontier
 
 
+def _join_methods(methods: list[str]) -> str:
+    return ", ".join(methods) if methods else "none"
+
+
+def _b4_interpretation(b4_recall: float, dev_rows: list[dict[str, Any]]) -> str:
+    matches = [row["method"] for row in dev_rows if row["macro_known_link_recall_at_20"] == b4_recall]
+    above = [row["method"] for row in dev_rows if row["macro_known_link_recall_at_20"] < b4_recall]
+    below = [row["method"] for row in dev_rows if row["macro_known_link_recall_at_20"] > b4_recall]
+    return (
+        f"HT-B4 mock recall matches {_join_methods(matches)} on development; it is above "
+        f"{_join_methods(above)} and below {_join_methods(below)}. The transport was mocked and therefore is not provider evidence."
+    )
+
+
 def build_analysis(
     *,
     summary: dict[str, Any],
@@ -209,6 +223,14 @@ def build_analysis(
     for row in holdout_rows:
         row["pareto_frontier"] = row["method"] in holdout_frontier_methods
 
+    interpretation = [
+        f"Observed development quality-resource frontier methods are {_join_methods(development_frontier_methods)}; this is descriptive and does not establish scientific superiority.",
+        f"Observed final-holdout quality-resource frontier methods are {_join_methods(holdout_frontier_methods)}; frontier membership is descriptive for the frozen groups.",
+        _b4_interpretation(b4_row["macro_known_link_recall_at_20"], development_rows),
+        "Small group counts, product-level disclosure labels, unjudged pairs, and the K=20 ceiling keep confirmatory uncertainty NOT_ESTIMABLE.",
+        "Paired group diagnostics align methods by frozen group_id and report deltas/population SD only; the current effective group count is below the predeclared threshold of five, so uncertainty remains NOT_ESTIMABLE.",
+    ]
+
     return {
         "format": "ht-long-run-analysis-v1",
         "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
@@ -225,13 +247,7 @@ def build_analysis(
         },
         "holdout_minus_development": holdout_minus_development,
         "b4_provider_shaped_mock": b4_comparison,
-        "interpretation": [
-            "HT-B0b is on the observed quality-resource frontier in both frozen views; this is descriptive and does not establish scientific superiority.",
-            "HT-B1, HT-B2, and HT-B3 are dominated by HT-B0b on the observed wall-time/recall coordinates in these views.",
-            "HT-B4 mock recall matches HT-B0b and HT-B2 on development, but the transport was mocked and therefore is not provider evidence.",
-            "Small group counts, product-level disclosure labels, unjudged pairs, and the K=20 ceiling keep confirmatory uncertainty NOT_ESTIMABLE.",
-            "Paired group diagnostics align methods by frozen group_id and report deltas/population SD only; the current effective group count is below the predeclared threshold of five, so uncertainty remains NOT_ESTIMABLE.",
-        ],
+        "interpretation": interpretation,
         "paired_group_uncertainty": {
             "baseline_method": PAIRED_BASELINE_METHOD,
             "minimum_effective_groups": MIN_EFFECTIVE_GROUPS,

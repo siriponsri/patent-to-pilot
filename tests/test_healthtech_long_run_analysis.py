@@ -86,6 +86,7 @@ def test_analysis_marks_observed_frontier_and_holdout_delta():
     assert analysis["final_holdout"]["pareto_frontier_methods"] == ["HT-B0a", "HT-B0b"]
     assert analysis["holdout_minus_development"][1]["macro_recall_delta_holdout_minus_development"] == pytest.approx(-0.1)
     assert analysis["b4_provider_shaped_mock"]["status"] == "MOCK_ONLY_NOT_PROVIDER_EVIDENCE"
+    assert "matches HT-B0a, HT-B0b, HT-B1, HT-B2, HT-B3" in analysis["interpretation"][2]
     paired = analysis["paired_group_uncertainty"]["development"]["methods"]["HT-B0a"]
     assert paired["paired_group_count"] == 2
     assert paired["mean_delta"] == pytest.approx(-0.55)

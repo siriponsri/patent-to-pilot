@@ -227,6 +227,34 @@ def _fmt(value: Any) -> str:
     return str(value)
 
 
+def _cohort_count(summary: dict[str, Any], split: str, key: str, fallback: int | None = None) -> Any:
+    receipt = summary.get(split, {}).get("receipt", {})
+    value = receipt.get(key) if isinstance(receipt, dict) else None
+    if value is not None:
+        return value
+    rows = summary.get(split, {}).get("rows", [])
+    if rows and fallback is None:
+        return rows[0].get("query_count") if key == "devices" else "NOT_REPORTED"
+    return fallback if fallback is not None else "NOT_REPORTED"
+
+
+def _b4_holdout_comparison(summary: dict[str, Any]) -> str:
+    b4_recall = summary["b4_provider_shaped_holdout"]["row"]["macro_known_link_recall_at_20"]
+    baseline_rows = summary["final_holdout"]["rows"]
+    matches = [row["method"] for row in baseline_rows if row["macro_known_link_recall_at_20"] == b4_recall]
+    above = [row["method"] for row in baseline_rows if row["macro_known_link_recall_at_20"] < b4_recall]
+    below = [row["method"] for row in baseline_rows if row["macro_known_link_recall_at_20"] > b4_recall]
+
+    def join_methods(methods: list[str]) -> str:
+        return ", ".join(methods) if methods else "none"
+
+    return (
+        f"The fixed-policy holdout mock matches {join_methods(matches)} on macro known-link recall in this run; "
+        f"it is above {join_methods(above)} and below {join_methods(below)}. "
+        "This is a descriptive company-level transfer check, not live-provider evidence or semantic gold."
+    )
+
+
 def render_report(summary: dict[str, Any]) -> str:
     lines = [
         "# HealthTech long-run report",
@@ -252,7 +280,7 @@ def render_report(summary: dict[str, Any]) -> str:
         "",
         "## 2. Frozen cohort and rights",
         "",
-        "The main development view contains 5 queries/devices and 24 patents; the final holdout view contains 3 queries and the same 24-patent universe. The composite contains product-level disclosed relationships plus unjudged distractors. Unlisted pairs remain unjudged and are not treated as negatives. Product-level disclosure is not claim-level semantic relevance gold.",
+        f"The main development view contains {_cohort_count(summary, 'development', 'devices')} queries/devices and {_cohort_count(summary, 'development', 'patents')} patents; the final holdout view contains {_cohort_count(summary, 'final_holdout', 'devices')} queries and {_cohort_count(summary, 'final_holdout', 'patents')} patents. The composite contains product-level disclosed relationships plus unjudged distractors. Unlisted pairs remain unjudged and are not treated as negatives. Product-level disclosure is not claim-level semantic relevance gold.",
         "",
         "No new raw-source acquisition or provider transfer occurred in this report package. Existing source registries, revisions, hashes, rights policies, split manifests, and family sensitivity artifacts remain the source of truth.",
         "",
@@ -303,7 +331,7 @@ def render_report(summary: dict[str, Any]) -> str:
             f"| Simulated mock debit | ${holdout_row['simulated_cost_usd']:.4f} |",
             f"| Unknown/pending ledger items | {holdout_row['unknown_billing']} |",
             "",
-            "The fixed-policy holdout mock matches HT-B3 on macro known-link recall in this run and remains below HT-B0b, HT-B1, and HT-B2. This is a descriptive company-level transfer check, not live-provider evidence or semantic gold.",
+            _b4_holdout_comparison(summary),
         ])
     lines.extend([
         "",

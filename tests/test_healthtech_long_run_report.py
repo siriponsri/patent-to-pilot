@@ -61,8 +61,8 @@ def test_long_run_report_aggregates_frozen_inputs_and_renders_boundaries(tmp_pat
     holdout_frontier = _write_json(tmp_path / "holdout-frontier.json", _frontier(0.4))
     dev_summary = _write_json(tmp_path / "dev-summary.json", _method_summary())
     holdout_summary = _write_json(tmp_path / "holdout-summary.json", _method_summary())
-    dev_receipt = _write_json(tmp_path / "dev-receipt.json", {"status": "DEV"})
-    holdout_receipt = _write_json(tmp_path / "holdout-receipt.json", {"status": "HOLDOUT"})
+    dev_receipt = _write_json(tmp_path / "dev-receipt.json", {"status": "DEV", "devices": 7, "patents": 9})
+    holdout_receipt = _write_json(tmp_path / "holdout-receipt.json", {"status": "HOLDOUT", "devices": 2, "patents": 9})
     b4_frontier = _write_json(
         tmp_path / "b4-frontier.json",
         {
@@ -136,6 +136,8 @@ def test_long_run_report_aggregates_frozen_inputs_and_renders_boundaries(tmp_pat
     assert "HT-B4 provider-shaped mock" in report
     assert "NOT_RUN / BLOCKED_LOCAL" in report
     assert "semantic relevance gold" in report
+    assert "7 queries/devices and 9 patents" in report
+    assert "2 queries and 9 patents" in report
 
     holdout_b4_frontier = _write_json(
         tmp_path / "b4-holdout-frontier.json",
@@ -185,4 +187,7 @@ def test_long_run_report_aggregates_frozen_inputs_and_renders_boundaries(tmp_pat
     assert holdout_summary["b4_provider_shaped_holdout"]["row"]["split"] == "final_holdout"
     assert holdout_summary["b4_provider_shaped_holdout"]["row"]["macro_known_link_recall_at_20"] == 0.8
     assert len(holdout_summary["input_hashes"]) == 14
-    assert "Final holdout B4 mock" in render_report(holdout_summary)
+    holdout_report = render_report(holdout_summary)
+    assert "Final holdout B4 mock" in holdout_report
+    assert "matches none" in holdout_report
+    assert "above HT-B0a, HT-B0b" in holdout_report

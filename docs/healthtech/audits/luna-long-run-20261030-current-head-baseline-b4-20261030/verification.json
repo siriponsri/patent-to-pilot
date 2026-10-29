@@ -1,0 +1,437 @@
+{
+  "artifact_hashes": {
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/ANALYSIS.md": "f9d01d55c4c17d66eb5af343f5556d952782106abb640c4d975d7d125a39ee2a",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/analysis.json": "85e23ae0593fea9ef4061452f2c5cacacbf6e701bb46c7466709044ea8f03b97",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_development.svg": "87a6e1948fd4841a7f1ff5621855fd1ed91236f5a7ca6c79edd687158e5d06c1",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_frontier.csv": "a355a008d2473cd3ee9ccc996c4eb6f7239cdeea6a9e250318b0017d93c1a56a",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_holdout.svg": "410ad8daca59e871b10306172b02ee5f38150c2b872660a8f02f8695358409c1",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/recall_comparison.svg": "cca44fe6ac34b80fb4376953d0e323879aac611f2535d9da12959aa37a98e020",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/REPORT.md": "2ffec095c4f0a0ea18a72a359ad16bf66d0402a672cac596cd34aecddabada30",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/frontier_table.csv": "cf04857f88c8a48303f82877ed4c8edb2d185107c1c6f3d138b0860516a5e04c",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/receipt.json": "4b8758b9966cb924474e89c7fd5b240360c125a00d7025d2f4e104d266b6f022",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/summary_tables.json": "db53ff1e90126920974310ab5d9ed83cb133884b773aeba42721fd49e395f304"
+  },
+  "artifacts": {
+    "analysis": "analysis/ANALYSIS.md",
+    "analysis_json": "analysis/analysis.json",
+    "b4_development_verification": "b4-development-verification.json",
+    "b4_holdout_verification": "b4-holdout-verification.json",
+    "report": "report/REPORT.md",
+    "report_summary": "report/summary_tables.json"
+  },
+  "boundaries": {
+    "bridge": "BLOCKED_LOCAL",
+    "claude_ux_ui": "PAUSED",
+    "live_provider": "BLOCKED_LOCAL",
+    "paid_cost_usd": 0.0,
+    "provider_calls_are_mock_only": true,
+    "semantic_gold": "NOT_RUN"
+  },
+  "code_commit": "aeaa8aa20c7840ebcf63f9f92b9d3e4d2f52ef83",
+  "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+  "commands": [
+    "rtk proxy python -B scripts/healthtech/analyze_family_frontier.py --baseline results/healthtech/ht-current-head-baselines-20261030-r1-development ... --split development --output results/healthtech/ht-current-head-family-frontier-20261030-r1-development",
+    "rtk proxy python -B scripts/healthtech/analyze_family_frontier.py --baseline results/healthtech/ht-current-head-baselines-20261030-r1-holdout ... --split final_holdout --output results/healthtech/ht-current-head-family-frontier-20261030-r1-holdout",
+    "rtk proxy python -B scripts/healthtech/run_b4_controller.py ... --output results/healthtech/ht-current-head-b4-mock-20261030-r1-development ... --mode mock --phase paired_pilot --max-steps 3 --max-output-tokens 256",
+    "rtk proxy python -B scripts/healthtech/run_b4_controller.py ... --output results/healthtech/ht-current-head-b4-mock-20261030-r1-holdout ... --mode mock --phase paired_pilot --max-steps 3 --max-output-tokens 256",
+    "rtk proxy python -B scripts/healthtech/build_long_run_report.py --output docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report ...",
+    "rtk proxy python -B scripts/healthtech/analyze_long_run.py --summary docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/summary_tables.json ... --output docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis ...",
+    "rtk proxy python -m pytest -q tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py",
+    "rtk proxy python -m pytest -q tests/test_healthtech_long_run_report.py tests/test_healthtech_long_run_analysis.py",
+    "rtk proxy python -m compileall -q src scripts tests",
+    "rtk proxy python -B docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/reproduction/reproduce_current_head.py <detached-typed-rights-cohort> ... --source-commit aeaa8aa20c7840ebcf63f9f92b9d3e4d2f52ef83"
+  ],
+  "development": {
+    "control_macro_recall_at_20": {
+      "HT-B0a": 0.9613095238095238,
+      "HT-B0b": 1.0,
+      "HT-B1": 0.96875,
+      "HT-B2": 0.90625,
+      "HT-B3": 0.96875
+    },
+    "devices": 8,
+    "ledger_breach": false,
+    "macro_known_link_recall_at_20": 0.96875,
+    "micro_known_link_recall_at_20": 0.96,
+    "paid_cost_usd": 0.0,
+    "patents": 31,
+    "provider_shaped_calls": 19,
+    "resources": {
+      "embedding_query_tokens": 279.0,
+      "method_cpu_seconds": 250.796875,
+      "method_wall_seconds": 132.53300470001705,
+      "query_calls": 11.0,
+      "rerank_pairs": 341.0,
+      "rerank_tokens": 87296.0,
+      "returned_candidates": 341.0
+    },
+    "schema_valid_calls": 19,
+    "simulated_cost_usd": 0.0019,
+    "unknown_or_pending_billing_items": 0
+  },
+  "exact_head": {
+    "format": "ht-m1-current-head-reproduction-v1",
+    "network_attempts_blocked": 0,
+    "neural_model_calls": 0,
+    "real_manifest": {
+      "baseline_case_count": 3,
+      "baseline_patents_per_case": {
+        "HT-DEV-MITRACLIP": 41,
+        "HT-DEV-TENDYNE": 41,
+        "HT-DEV-TRICLIP": 41
+      },
+      "cohort_label": "local frozen Abbott development copy",
+      "copied_bytes": 64335997,
+      "copied_file_hashes": [
+        {
+          "bytes": 15469,
+          "path": "manifest.json",
+          "sha256": "3578060eb33d2da710a48c4c4071c38360840f3a0df38112dd46b710013ee532"
+        },
+        {
+          "bytes": 949261,
+          "path": "runtime.json",
+          "sha256": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121"
+        },
+        {
+          "bytes": 37458,
+          "path": "source_registry.json",
+          "sha256": "cd4d724cba736e0a24b2d31255e14ff5f82c61da45892536a3a3166585e9af96"
+        },
+        {
+          "bytes": 177273,
+          "path": "raw/pma/P100009.json",
+          "sha256": "cd3fedd0f0f3cbf393690e72a9d090ac4bbe459fa4177b2f3888834dacf68b50"
+        },
+        {
+          "bytes": 34710,
+          "path": "raw/pma/P230007.json",
+          "sha256": "24af9835f1f71b4aa746f3c42428352ca5140d76f9b7bcdcf5d69bbe753b38b1"
+        },
+        {
+          "bytes": 11422,
+          "path": "raw/pma/P240042.json",
+          "sha256": "206b09ef5be5ff00ac21a8ef1bb43f702e700107660c496ceb11d149ff0a3a73"
+        },
+        {
+          "bytes": 184092,
+          "path": "raw/abbott-patents.html",
+          "sha256": "5aac619496563a6c46c6d0ff3119e44a5f2084b00e72cf1657e3b03f7f36bd34"
+        },
+        {
+          "bytes": 522237,
+          "path": "raw/patents/US9700445B2.html",
+          "sha256": "07a8eb0fc42f3fbf533417338a4f1ff3f2329cd412298dd3639d727152408a06"
+        },
+        {
+          "bytes": 1370030,
+          "path": "raw/patents/US10667815B2.html",
+          "sha256": "33e51e29fd9eb4118999ee65a2472c8294f0d02da61af7acec3ab2444f00d4ec"
+        },
+        {
+          "bytes": 474799,
+          "path": "raw/patents/US10660625B2.html",
+          "sha256": "887a0d5f28070a4b724f538850e2116e6f5e0045fb79cb351af594c3af4897ed"
+        },
+        {
+          "bytes": 1219533,
+          "path": "raw/patents/US11065119B2.html",
+          "sha256": "5cafd44272c07812bc4f221c2feddda35adae2041d97ed9e6276c3eeffb2abed"
+        },
+        {
+          "bytes": 1401586,
+          "path": "raw/patents/US11141158B2.html",
+          "sha256": "623a010519387548e105fa5b6f1a0a36f5b679d812d48f14243e8b19f7723cd2"
+        },
+        {
+          "bytes": 1156802,
+          "path": "raw/patents/US10856988B2.html",
+          "sha256": "9f1b8c8325d73431f921d5d7aea23647f37ef26a9c7875552905e98325722d62"
+        },
+        {
+          "bytes": 3034709,
+          "path": "raw/patents/US10743876B2.html",
+          "sha256": "e5841de6b26af38c0655fd70656169fb121d8781fee809ddb89250697bb1755c"
+        },
+        {
+          "bytes": 1431700,
+          "path": "raw/patents/US11096691B2.html",
+          "sha256": "30318c0bb408fedf863cab46afbd2580221ca1171ced3f60b3cccc2fc5e41436"
+        },
+        {
+          "bytes": 719266,
+          "path": "raw/patents/US11660189B2.html",
+          "sha256": "e834f284df6007e036b26e0fc25f4137084e562a32c03f63a89d9484a1a9a608"
+        },
+        {
+          "bytes": 1597084,
+          "path": "raw/patents/US11850151B2.html",
+          "sha256": "6e805204d090c92c0a0d4807e16301321afecf51419adb943a1b28c7dbb139bd"
+        },
+        {
+          "bytes": 2816274,
+          "path": "raw/patents/US12016561B2.html",
+          "sha256": "382500916e87d331a23760d71f0dafebe87e93d82a6083f379ad1681dae13552"
+        },
+        {
+          "bytes": 1439099,
+          "path": "raw/patents/US11759209B2.html",
+          "sha256": "c015d5cc05f3b25ec6cc301568d4c3fab63886f976f9dc2121447bc65547dc87"
+        },
+        {
+          "bytes": 1521444,
+          "path": "raw/patents/US12029425B2.html",
+          "sha256": "74d4a1f00a0f4991f5de45be7690b46475c7e417ec45a816a24fd70556081181"
+        },
+        {
+          "bytes": 3106033,
+          "path": "raw/patents/US12048624B2.html",
+          "sha256": "1eb646677516c48218cfce2d9bbd4c63e873d197a95ad988662e9befc2301405"
+        },
+        {
+          "bytes": 1456493,
+          "path": "raw/patents/US12137910B2.html",
+          "sha256": "45fae96ab26644ad0976afa5df96a5ed327c918dfb84bfdedc4f635283eac198"
+        },
+        {
+          "bytes": 1182788,
+          "path": "raw/patents/US12295846B2.html",
+          "sha256": "272300b5b2fb7e8cf0b6f7961a868f10e9a58af4ce35a787cd17ac370f89a9b9"
+        },
+        {
+          "bytes": 847569,
+          "path": "raw/patents/US11622859B2.html",
+          "sha256": "49d8b20c77add456e66e3a9b67eb981f1cb5e979452dbc0c234ec822d3bc1049"
+        },
+        {
+          "bytes": 828074,
+          "path": "raw/patents/US12090053B2.html",
+          "sha256": "d7f7ac7788e047a7cd0c1a26e9e8c4c27643984b98c04a3f420c4e00efb4ff9e"
+        },
+        {
+          "bytes": 611079,
+          "path": "raw/patents/US12102534B2.html",
+          "sha256": "2f011e494195ab9b8c40e6048a76fe977c00755028eda84bc023778d74ab8a50"
+        },
+        {
+          "bytes": 719147,
+          "path": "raw/patents/US12178704B2.html",
+          "sha256": "b5bebf084b675d472cb01f022a1328852b405a140f6a5cca856a81278df456dd"
+        },
+        {
+          "bytes": 790417,
+          "path": "raw/patents/US12588908B2.html",
+          "sha256": "a71340e70aee626f1fa90162805280728ce09e98a696676eecfe260c9ecd720e"
+        },
+        {
+          "bytes": 1496759,
+          "path": "raw/patents/US10376673B2.html",
+          "sha256": "513dbf71b8fb98792105087a2cb8d57dc6312b7b495be333f0891f3b67dcef5b"
+        },
+        {
+          "bytes": 791521,
+          "path": "raw/patents/US11534303B2.html",
+          "sha256": "d6317620fa655342c5f34a8bdc1795086f7d7cfae8f627620d7cb7036ec452a6"
+        },
+        {
+          "bytes": 695096,
+          "path": "raw/patents/US12514573B2.html",
+          "sha256": "522833027c273700b5c29aa468ab7d3052f9d479b1462ad36b29798e18660baa"
+        },
+        {
+          "bytes": 1490837,
+          "path": "raw/patents/US9078749B2.html",
+          "sha256": "594121e50adf5f6efd0341df458c686d9d485221149d10f61c563f2e46dfb92c"
+        },
+        {
+          "bytes": 1273505,
+          "path": "raw/patents/US9095433B2.html",
+          "sha256": "8f3bbb5d789180dd13300e7df9df55408ac5665cf752fb85543a4a852b53a141"
+        },
+        {
+          "bytes": 2483745,
+          "path": "raw/patents/US9480559B2.html",
+          "sha256": "71c2b4a0522565d38d2d560d1b65f4f2b4412e12650254fdd635973ac40375c8"
+        },
+        {
+          "bytes": 1524605,
+          "path": "raw/patents/US9610159B2.html",
+          "sha256": "4e93162e4d399185a979bda2d998aa79f7699f5d8fe274e86ab942a058139c3b"
+        },
+        {
+          "bytes": 1434559,
+          "path": "raw/patents/US10363135B2.html",
+          "sha256": "6816344fe2ee14f11b24b322a9a0b3789b01be7c0f31d25840aae57f4a863fa7"
+        },
+        {
+          "bytes": 1619662,
+          "path": "raw/patents/US10405976B2.html",
+          "sha256": "a31eda8576f58e563648cdcc3548874867178c4c949daf61334112e3fa1524f6"
+        },
+        {
+          "bytes": 1810690,
+          "path": "raw/patents/US10517728B2.html",
+          "sha256": "7c63493414b5c24eadc30ae15a0d653980ee5e150eb8702128c358c0a6638e60"
+        },
+        {
+          "bytes": 1652454,
+          "path": "raw/patents/US10610354B2.html",
+          "sha256": "cf319375d5e6069fd1483fc3c5451c22c899136f8cdf04280496c3e8680fe9dc"
+        },
+        {
+          "bytes": 2485171,
+          "path": "raw/patents/US10617519B2.html",
+          "sha256": "e4fd75a81fa7aa5053ac3793ca2daa78563c5feaff0fa00851eedc263b52297b"
+        },
+        {
+          "bytes": 2081071,
+          "path": "raw/patents/US10667905B2.html",
+          "sha256": "459c74065ffbe13b1bb64433c4917070509a8d2a88109262c262ce8f3e3726d4"
+        },
+        {
+          "bytes": 1434922,
+          "path": "raw/patents/US11096783B2.html",
+          "sha256": "c09b0b5a79efaa623b454c558d9283afcba5348fee2953cf6745a21f4d6e0b03"
+        },
+        {
+          "bytes": 2508300,
+          "path": "raw/patents/US11123181B2.html",
+          "sha256": "318aca6c440fb288b16eb6ae00698d54989ef8f66b25cc6cdec3847e0072a82e"
+        },
+        {
+          "bytes": 2511618,
+          "path": "raw/patents/US11135055B2.html",
+          "sha256": "23e3b6442899a720015cb12c5bee631ac14a3644533d93353dda4deb3426103c"
+        },
+        {
+          "bytes": 1753822,
+          "path": "raw/patents/US11382753B2.html",
+          "sha256": "69da28fbb151ee3c454ee44ee296a538a229ce4545a01c0fe37049ec61794834"
+        },
+        {
+          "bytes": 2082776,
+          "path": "raw/patents/US11523902B2.html",
+          "sha256": "5c12f0ac66f0c79c1dc1ff1765c6d46a8907ee1a79f558cf0f075c6e2530b2e8"
+        },
+        {
+          "bytes": 1951122,
+          "path": "raw/patents/US11759318B2.html",
+          "sha256": "5fd6e93e845319c6d31e5b24bfec529408a7f72dfd11a1f7b13bb8a13671f748"
+        },
+        {
+          "bytes": 1597914,
+          "path": "raw/patents/US12274615B2.html",
+          "sha256": "801d63608e17c5bae5bbf6200d4f1f0aff57feebc550e94b4f586a2359654fa2"
+        }
+      ],
+      "files_copied": 48,
+      "manifest_integrity_format": "ht-runtime-integrity-v1",
+      "raw_files_declared": 45,
+      "runtime_patent_text_mutation": {
+        "error_type": "CohortIntegrityError",
+        "message": "runtime JSON hash does not match manifest",
+        "rejected": true,
+        "status": "PASS"
+      }
+    },
+    "remote_provider_calls": 0,
+    "restricted_raw_payloads_persisted_in_audit": false,
+    "source_commit": "aeaa8aa20c7840ebcf63f9f92b9d3e4d2f52ef83",
+    "status": "PASS",
+    "synthetic": {
+      "rights_projection": {
+        "local_payload_keys": [
+          "applicant",
+          "decision_code",
+          "decision_date",
+          "generic_name",
+          "openfda",
+          "pma_number",
+          "product_code",
+          "supplement_number",
+          "trade_name"
+        ],
+        "projected_payload_keys": [
+          "trade_name"
+        ],
+        "restricted_value_excluded": true,
+        "status": "PASS"
+      },
+      "runtime_patent_text_mutation": {
+        "error_type": "CohortIntegrityError",
+        "message": "runtime JSON hash does not match manifest",
+        "rejected": true,
+        "status": "PASS"
+      }
+    }
+  },
+  "family_frontier": {
+    "development": "results/healthtech/ht-current-head-family-frontier-20261030-r1-development",
+    "final_holdout": "results/healthtech/ht-current-head-family-frontier-20261030-r1-holdout",
+    "mapping": "results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json",
+    "mapping_sha256": "f9637b3c7ea43bed86139293453bee95ecdaa717400f7266b3f5e2ca2bb470d2"
+  },
+  "final_holdout": {
+    "control_macro_recall_at_20": {
+      "HT-B0a": 0.5428571428571428,
+      "HT-B0b": 0.8095238095238094,
+      "HT-B1": 0.8380952380952381,
+      "HT-B2": 0.8857142857142857,
+      "HT-B3": 0.8380952380952381
+    },
+    "devices": 3,
+    "ledger_breach": false,
+    "macro_known_link_recall_at_20": 0.8380952380952381,
+    "micro_known_link_recall_at_20": 0.7692307692307693,
+    "paid_cost_usd": 0.0,
+    "patents": 31,
+    "provider_shaped_calls": 8,
+    "resources": {
+      "embedding_query_tokens": 87.0,
+      "method_cpu_seconds": 113.578125,
+      "method_wall_seconds": 80.23381569997582,
+      "query_calls": 5.0,
+      "rerank_pairs": 155.0,
+      "rerank_tokens": 39680.0,
+      "returned_candidates": 155.0
+    },
+    "schema_valid_calls": 8,
+    "simulated_cost_usd": 0.0008,
+    "unknown_or_pending_billing_items": 0
+  },
+  "format": "healthtech-current-head-baseline-b4-package-v1",
+  "generated_at_utc": "2026-10-29T19:40:37.979663+00:00",
+  "next_action": "Obtain or authorize a rights-cleared semantic judgment source, validate schema and rights, then rerun frozen controls without changing denominators or holdout.",
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "run_id": "luna-long-run-20261030-current-head-baseline-b4-20261030",
+  "source_hashes": {
+    "m1_exact_head_reproduction_summary.json": "09a9a08a8c589097acd6a014f78430fa97dbbb08df636f5f2430976b37099a3d",
+    "scripts/healthtech/analyze_long_run.py": "7dc08c0a8c97f478b9212e315949b8640756e3bf27c5701fcf9c8fac92d5a0c5",
+    "scripts/healthtech/build_long_run_report.py": "aa3f41f04e0b86772c528ae45e4729219c0ac527a8b5a8e89baaca141b4ced31",
+    "tests/test_healthtech_long_run_analysis.py": "fd180f8e6faa7155fca8c253599d1a0fa206b5801694f345266a44093be499fd",
+    "tests/test_healthtech_long_run_report.py": "af1754a6b372fe4bccbbc1079ae0b2f3471d99a4f8fbac479ed265d94cad30a7"
+  },
+  "stale_input_diagnosis": {
+    "error": "CohortIntegrityError: source registry lacks typed rights for abbott-product-patent-disclosures",
+    "input": "results/healthtech/ht-public-cohort-20261029-frozen-r1",
+    "interpretation": "Expected fail-closed behavior for the pre-typed-rights cohort; not a current-head regression.",
+    "status": "REJECTED_AS_STALE_INPUT_CONTRACT",
+    "valid_replacement": "results/healthtech/ht-public-cohort-20261029-frozen-r2-typed"
+  },
+  "status": "PASS_OFFLINE_BASELINES_AND_PROVIDER_SHAPED_MOCKS",
+  "test_results": {
+    "analysis_regression": "3 passed",
+    "compileall": "exit 0",
+    "detached_exact_head": "focused M1 tests passed; compileall exit 0; typed-rights reproduction PASS",
+    "m1_repair_pre_live": "50 passed; one existing fitz deprecation warning",
+    "report_regression": "1 passed"
+  },
+  "tree_state": {
+    "network_acquisition": 0,
+    "no_credentials_or_env_files_read": true,
+    "paid_cost_usd": 0.0,
+    "scratch_probe_outputs": "preserved locally outside the canonical audit; sanitized receipt retained",
+    "temporary_detached_worktree_removed": true,
+    "unrelated_dirty_and_untracked_files_preserved": true
+  }
+}
