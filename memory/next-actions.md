@@ -259,3 +259,13 @@ Added `scripts/healthtech/analyze_long_run.py` and `tests/test_healthtech_long_r
 Verification: combined report/analysis fixtures pass `3/3`; compile checks pass; real generation returns development and holdout frontiers `HT-B0a/HT-B0b`. No network/provider call or paid spend occurred. G6 now links the actual CSV and SVG figures; significance, semantic gold, user/commercial validation, live-provider behavior, clinical/FTO, validity, investment, and publication claims remain NOT_RUN/NOT_VALIDATED.
 
 Next: obtain or authorize a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched holdout. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve unjudged pairs, and do not tune on the current holdout.
+
+## HT-NEXT-030 — 2026-10-29 G6 SciFact component integration
+
+Status: `PASS_G6_COMPONENT_INTEGRATED`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m9-g6-scifact-20261029/README.md`.
+
+Integrated the existing HT-T2 SciFact lexical development result into `docs/healthtech/research/G6_MANUSCRIPT_METHODS_SKELETON_20261029.md` and added `tests/test_healthtech_g6_skeleton.py`. The manuscript now records the 300-claim development denominator, 5,183-document corpus, 300 complete predictions, release rights, and actual component metrics: abstract label-only F1 `0.203787`, abstract rationalized F1 `0.167719`, sentence-selection F1 `0.107071`, and sentence-label F1 `0.073401`. It explicitly keeps SciFact separate from HT-T1 patent-association recall and clinical truth.
+
+Verification: G6 regression `1 passed`; combined G6/M8/M7 selection `4 passed`; link targets exist; provider calls and paid cost remain `0` / `$0.00`. Hidden/test scoring, adaptive/provider inference, statistical significance, user/commercial validation, clinical/FTO, validity, investment, and publication acceptance remain NOT_RUN or NOT_VALIDATED.
+
+Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout.

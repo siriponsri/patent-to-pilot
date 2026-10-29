@@ -1,0 +1,68 @@
+{
+  "format": "ht-g6-scifact-integration-audit-v1",
+  "run_id": "luna-long-run-20261029-m9-g6-scifact-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_G6_COMPONENT_INTEGRATED",
+  "implementation_commit": "8a20e60",
+  "tree_state": "dirty_with_unrelated_owner_artifacts_preserved",
+  "inputs": {
+    "g6_manuscript": {
+      "path": "docs/healthtech/research/G6_MANUSCRIPT_METHODS_SKELETON_20261029.md",
+      "sha256": "b6599849874f83f96ed65d37a9a379a8a584186396b1c7290a5d3bc68194533f"
+    },
+    "scifact_verification": {
+      "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/verification.json",
+      "sha256": "b00543a0340761d139e0cb427781e20c669d2bcb161fa3d9f9d9891c47ee4d2e"
+    },
+    "scifact_report": {
+      "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/REPORT.md",
+      "sha256": "67219851e2e1f8b4f6693bb59752fe24903f463af8d264b43973728a4544b4a7"
+    }
+  },
+  "component_result": {
+    "denominator_claims": 300,
+    "corpus_documents": 5183,
+    "prediction_rows": 300,
+    "rows_with_evidence": 300,
+    "missing_prediction_claim_ids": [],
+    "metrics": {
+      "abstract_label_only": {"precision": 0.125556, "recall": 0.54067, "f1": 0.203787},
+      "abstract_rationalized": {"precision": 0.103333, "recall": 0.444976, "f1": 0.167719},
+      "sentence_selection": {"precision": 0.06106, "recall": 0.434426, "f1": 0.107071},
+      "sentence_label": {"precision": 0.041859, "recall": 0.297814, "f1": 0.073401}
+    },
+    "status": "PASS_COMPONENT_SCORE_DEV_ONLY"
+  },
+  "checks": [
+    {
+      "id": "g6_component_regression",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_g6_skeleton.py",
+      "outcome": "1 passed"
+    },
+    {
+      "id": "g6_related_regressions",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_g6_skeleton.py tests/test_healthtech_long_run_analysis.py tests/test_healthtech_long_run_report.py",
+      "outcome": "4 passed"
+    },
+    {
+      "id": "link_presence_check",
+      "status": "PASS",
+      "command": "rtk proxy python -c <scoped G6 link existence check>",
+      "outcome": "HT-T2 report, verification, and M8 analysis targets exist"
+    }
+  ],
+  "boundaries": {
+    "runtime_generator_read_evaluator_labels": false,
+    "hidden_test_score": "NOT_RUN",
+    "adaptive_method": "NOT_RUN",
+    "provider_inference": "NOT_RUN",
+    "ht_t1_device_patent_evidence": "NOT_APPLICABLE",
+    "user_commercial_validation": "NOT_VALIDATED",
+    "publication_acceptance": "NOT_RUN",
+    "network_provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "next_action": "Keep SciFact metrics separate in any manuscript draft and obtain the rights-cleared semantic device-patent judgment source before making pooled HT-T1 claims."
+}
