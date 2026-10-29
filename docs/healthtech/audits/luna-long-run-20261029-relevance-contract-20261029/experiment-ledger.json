@@ -1,0 +1,44 @@
+{
+  "format": "ht-relevance-contract-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-relevance-contract-20261029",
+  "date": "2026-10-29",
+  "tested_source_commit": "2af198af8635f28c0d0b8ad8ed9be852b6e7bd98",
+  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "entries": [
+    {
+      "id": "valid-open-world-fixture",
+      "kind": "contract_regression",
+      "status": "PASS",
+      "question": "Does a valid judgment manifest preserve the distinction between judged and unjudged pairs?",
+      "outcome": "PASS: explicit labels are counted and absent pairs remain unjudged"
+    },
+    {
+      "id": "source-and-basis-guards",
+      "kind": "contract_regression",
+      "status": "PASS",
+      "question": "Can product disclosure, source drift, or missing provenance be promoted into semantic gold?",
+      "outcome": "PASS: product-disclosure basis, source-hash mismatch, and missing exclusions fail closed"
+    },
+    {
+      "id": "split-leakage-guards",
+      "kind": "contract_regression",
+      "status": "PASS",
+      "question": "Can company or family groups cross the final holdout boundary?",
+      "outcome": "PASS: company and family cross-split overlaps are rejected"
+    },
+    {
+      "id": "cli-runtime-binding",
+      "kind": "integration_smoke",
+      "status": "PASS",
+      "question": "Does the CLI bind judgments to an actual runtime hash and universe?",
+      "outcome": "PASS: temporary authored fixture validated against the existing runtime and reported 118 unjudged pairs"
+    }
+  ],
+  "resource_summary": {
+    "provider_calls": 0,
+    "network_acquisition": 0,
+    "neural_provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "decision": "Keep the contract as offline readiness infrastructure and wait for a rights-cleared semantic judgment source before scientific scoring."
+}

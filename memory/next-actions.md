@@ -197,3 +197,13 @@ Reran HT-B0a/B0b/B1/B2/B3 on the family-aware Boston/Stryker/Cook composite with
 At `K=10`, exact-patent macro known-link recall is `0.9381 / 1.0000 / 0.9000 / 0.7762 / 0.9000` on development and `0.3333 / 0.6667 / 0.7429 / 0.7905 / 0.7905` on holdout for HT-B0a/B0b/B1/B2/B3. Family-group rows are sensitivity diagnostics only: development is `0.9484 / 1.0000 / 0.8333 / 0.7302 / 0.8333`, while holdout rows equal exact rows because no family merges cross groups. These results remain descriptive offline evidence, not semantic relevance gold, legal family adjudication, generalization, publication, clinical/FTO, or investment evidence.
 
 Next: obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups, auditable positive judgments, frozen denominators, and a predeclared untouched final holdout. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-024 — 2026-10-29 semantic relevance-judgment intake contract
+
+Status: `PASS_ENGINEERING_OFFLINE`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-relevance-contract-20261029/README.md`.
+
+Added `ht-relevance-judgment-cohort-v1` validation in `src/patent_to_pilot/evaluation/healthtech/judgments.py` plus the CLI `scripts/healthtech/validate_relevance_judgments.py`. The contract binds explicit `relevant` / `not_relevant` labels to source revision, SHA-256, rights policy, intended use, and locator; rejects product-disclosure promotion, duplicate/conflicting pairs, source drift, missing runtime exclusions, and company/family split leakage; and reports every absent query-patent pair as unjudged rather than negative.
+
+Focused tests pass `35/35`; the controlled full suite passes `361/361` with one warning; compile checks pass; the CLI smoke validates `2` authored fixture labels and preserves `118` unjudged pairs. No real semantic labels, provider calls, network acquisition, or paid cost were added. This is readiness infrastructure, not expert gold or a scientific result.
+
+Next: apply the contract to a rights-cleared semantic judgment source, freeze the denominator and group/split policy, then rerun HT-B0a/B0b/B1/B2/B3 on that new cohort. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.

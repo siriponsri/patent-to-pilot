@@ -1,0 +1,73 @@
+{
+  "format": "ht-relevance-contract-audit-verification-v1",
+  "run_id": "luna-long-run-20261029-relevance-contract-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_ENGINEERING_OFFLINE",
+  "tested_source_commit": "2af198af8635f28c0d0b8ad8ed9be852b6e7bd98",
+  "candidate_package_commit": "PENDING_FIRST_COMMIT",
+  "tree_state_at_test": "dirty_with_scoped_relevance_contract_files_and_unrelated_owner_artifacts_preserved",
+  "implementation_files": {
+    "src/patent_to_pilot/evaluation/healthtech/judgments.py": "521b38efe5dd7b8abbe487d2a0be0083be6fa6a44b8d0bf78384f08939aab7a0",
+    "scripts/healthtech/validate_relevance_judgments.py": "8097a161f46d8882dee15e7cbe5e5df33821142004f7e282e11cc3e062c6343f",
+    "tests/test_healthtech_judgments.py": "f1340a137d147d9a785cf6d3bead3ef27abe7c241a01b1d313d5ed780dbad10c"
+  },
+  "contract": {
+    "format": "ht-relevance-judgment-cohort-v1",
+    "accepted_labels": ["not_relevant", "relevant"],
+    "accepted_bases": ["authored_fixture", "benchmark_gold", "expert_adjudication"],
+    "unlisted_pair_policy": "UNJUDGED_NOT_NEGATIVE",
+    "required_runtime_exclusions": ["family_labels", "gold_derived_query_variants", "semantic_judgments", "split_answers"],
+    "source_binding": ["source_revision", "source_sha256", "rights_policy_id", "intended_use", "use_decision", "locator"],
+    "split_checks": ["company_split_overlap", "family_split_overlap", "final_holdout_family_mapping_policy"]
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_judgments.py tests/test_healthtech.py",
+      "status": "PASS",
+      "outcome": "35 passed"
+    },
+    {
+      "command": "rtk proxy python -c \"import os,sys; from pathlib import Path; src=str(Path('src').resolve()); os.environ['PYTHONPATH']=src + os.pathsep + os.environ.get('PYTHONPATH',''); sys.path.insert(0,src); import pytest; raise SystemExit(pytest.main(['--disable-warnings']))\"",
+      "status": "PASS",
+      "outcome": "361 passed, 1 warning"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q src scripts tests",
+      "status": "PASS",
+      "outcome": "exit 0"
+    },
+    {
+      "command": "rtk proxy python -c \"temporary runtime-derived authored fixture -> scripts/healthtech/validate_relevance_judgments.py\"",
+      "status": "PASS",
+      "outcome": "CLI report PASS; 2 judged pairs; 118 unjudged pairs; no external data"
+    }
+  ],
+  "fixture_smoke": {
+    "status": "PASS",
+    "runtime_source": "results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/runtime.json",
+    "judged_pairs": 2,
+    "unjudged_pairs": 118,
+    "synthetic_fixture_labels": true,
+    "semantic_gold_created": false
+  },
+  "boundaries": {
+    "runtime_inputs_changed": false,
+    "evaluator_relations_read_by_runtime": false,
+    "product_disclosure_promoted_to_semantic_gold": false,
+    "unlisted_pairs_recoded_negative": false,
+    "provider_calls": 0,
+    "network_acquisition": 0,
+    "neural_provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "raw_restricted_payloads_staged": false,
+    "credentials_staged": false,
+    "private_paths_staged": false
+  },
+  "limitations": [
+    "No real expert or licensed semantic relevance labels were acquired.",
+    "Authored fixtures validate code paths only and cannot support scientific claims.",
+    "The validator does not estimate statistical power or confidence intervals.",
+    "Bridge rights, cohort reconciliation, and final-study readiness remain unresolved."
+  ],
+  "next_action": "Apply the contract to a rights-cleared semantic judgment source, freeze the denominator and group/split policy, and then rerun shared baselines on that new cohort."
+}
