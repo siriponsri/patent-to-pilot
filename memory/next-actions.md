@@ -359,3 +359,13 @@ Status: `PASS_COMPONENT_ERROR_ANALYSIS_DEV_ONLY`; canonical audit: `docs/healtht
 Added `scripts/healthtech/analyze_scifact_errors.py` and a focused regression suite. The analyzer verifies the existing HT-T2 prediction manifest, score, corpus, and dev-label hashes after runtime generation, then reports non-exclusive abstract and sentence retrieval/rationale/label failure buckets over all 300 dev claims. The real run covers 5,183 documents, uses 0 provider calls and USD 0.00 paid cost, and creates no device-patent labels. The G6 skeleton and budget request now reflect the current HT-T2 score and diagnostic rather than `NOT_RUN`.
 
 Next: obtain or authorize a rights-cleared device-patent semantic judgment source with multiple independent company/family groups, frozen denominators, and a predeclared untouched holdout. Keep HT-T2 separate from HT-T1, keep live/provider HT-B4 `BLOCKED_LOCAL`, and preserve Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI as blocked or paused.
+
+## HT-NEXT-040 — 2026-10-29 M19 HT-G5 offline pilot task runner
+
+Status: `PASS_OFFLINE_ENGINEERING_TASK`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/README.md`.
+
+Added `run_pilot_task.py` and its focused regression at implementation commit `4b811892eea2112df8a9f49738fc474ec2300b47`. The committed-code run over the Cook Zenith dissection dossier inspected the permitted FDA `pma_number` field, recorded two disclosed candidates, seeded and corrected one edit, published history versions 1 and 2, and exported selected version 2 in local-research JSON/English/Thai. Engineering execution was `0.1291642999931355` seconds with 0 provider calls, 0 network calls, and USD 0.00 paid cost. The separate product-display projection remained `BLOCKED_LOCAL` for Cook marking and Google-derived patent sources; the receipt contains no raw patent body and all five artifact hashes match.
+
+This is backend engineering evidence only. It does not establish participant usability, correction burden, willingness to pay, repeat use, commercial demand, semantic device-patent gold, final-holdout generalization, live/provider HT-B4, clinical/FTO, validity, investment, or publication readiness.
+
+Next: obtain or authorize the rights-cleared semantic device-patent judgment source with multiple independent company/family groups, frozen denominators, and a predeclared untouched holdout; use the task packet only after separately authorized participant consent. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve unjudged pairs, and keep Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused.

@@ -1,0 +1,79 @@
+{
+  "format": "ht-g5-pilot-task-verification-v1",
+  "run_id": "luna-long-run-20261029-ht-g5-pilot-task-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_OFFLINE_ENGINEERING_TASK",
+  "code_commit": "4b811892eea2112df8a9f49738fc474ec2300b47",
+  "inputs": {
+    "dossier": {
+      "path": "results/healthtech/ht-cook-dossiers-20261029-r1/HT-DEV-COOK-ZENITH-DISSECTION-STENT/dossier.json",
+      "sha256": "2de41b3e02761e8a83ce7ada6b9b445caf2d3b6bf6f830ed05af49c0d8af7567"
+    },
+    "runner_sha256": "fffd050f5a5c4c35c1dc9468da14ccb2b94afd6148987818ffabed5659048803",
+    "test_sha256": "9558befc88053bb0aaa9fbc28fbe6aa8c4d8f627906a9aaa29df90930dd96067"
+  },
+  "outputs": {
+    "root": "results/healthtech/ht-g5-pilot-task-20261029-r2",
+    "receipt": {
+      "path": "results/healthtech/ht-g5-pilot-task-20261029-r2/task_receipt.json",
+      "sha256": "90863e868732cbef1c2e9ad618e3bf61aa58da4514ca98b24c2040344dc21260"
+    },
+    "artifacts": {
+      "export-v2/dossier.en.md": "ddbfa207a53d75596b5abb09d9e8073b9dd060c665978068e59d28723842e3aa",
+      "export-v2/dossier.json": "9a31e04e041481ee15aa86f0af7fa6c6e343a9c23a158db6f402ebde85978ff2",
+      "export-v2/dossier.th.md": "02eade944f9244a7d7635bcdf7433c9ee23092c8b5eca0a093bd2ce374cf88fe",
+      "history_manifest.json": "72b7f8e6969d673f5bc338acd9480849d0a3592c70ac40ba5c900535aafcad55",
+      "source_inspection.json": "3ab5cdc60963a1866010ad85db3a02e08db4b3d2898ad9f4eab0c436f9500c58"
+    }
+  },
+  "checks": {
+    "query_id": "HT-DEV-COOK-ZENITH-DISSECTION-STENT",
+    "device_id_canonical": "P180001:ZENITH-DISSECTION-STENT",
+    "source_id": "openfda-pma-p180001-base",
+    "source_field": "pma_number",
+    "source_inspection": "PASS",
+    "candidate_counts": {
+      "disclosed_link": 2,
+      "retrieved_candidate": 0,
+      "total": 2
+    },
+    "history_versions": [1, 2],
+    "selected_version": 2,
+    "external_projection_status": "BLOCKED_LOCAL",
+    "external_payload_written": false,
+    "receipt_hashes_match": true,
+    "raw_patent_body_in_receipt": false,
+    "provider_calls": 0,
+    "network_calls": 0,
+    "paid_cost_usd": 0.0,
+    "engineering_execution_seconds": 0.1291642999931355
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_pilot_task.py",
+      "exit_code": 0,
+      "outcome": "2 passed"
+    },
+    {
+      "command": "rtk proxy python -B -c \"compile runner and test in memory\"",
+      "exit_code": 0,
+      "outcome": "2 targeted files compiled"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_pilot_task.py results/healthtech/ht-cook-dossiers-20261029-r1/HT-DEV-COOK-ZENITH-DISSECTION-STENT/dossier.json results/healthtech/ht-g5-pilot-task-20261029-r2 --source-id openfda-pma-p180001-base --field pma_number --purpose local_research",
+      "exit_code": 0,
+      "outcome": "PASS_OFFLINE_ENGINEERING_TASK; selected version 2; 0 provider/network calls; USD 0.00"
+    },
+    {
+      "command": "read receipt, compare five artifact hashes, and inspect external projection status",
+      "exit_code": 0,
+      "outcome": "all hashes match; external projection BLOCKED_LOCAL; sanitized receipt contains no raw patent body"
+    }
+  ],
+  "not_run": [
+    "participant usability or correction-time study",
+    "user/commercial validation, purchase, repeat use, or willingness-to-pay measurement",
+    "semantic device-patent labels or final scientific holdout",
+    "live/provider HT-B4, Bridge, deployment, outreach, clinical/FTO, validity, investment, or publication conclusions"
+  ]
+}

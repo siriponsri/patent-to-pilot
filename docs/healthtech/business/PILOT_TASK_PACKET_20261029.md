@@ -1,6 +1,6 @@
 # Public-case pilot task packet
 
-Status: `PREPARED / NOT_VALIDATED`. This packet is a reversible preparation artifact for HT-G5 / HT-W16. It contains no participant data, no outreach, no completed timings, no purchase, and no customer claim.
+Status: `PREPARED / ENGINEERING_DRY_RUN_ONLY / NOT_VALIDATED`. This packet is a reversible preparation artifact for HT-G5 / HT-W16. It contains no participant data, no outreach, no participant timings, no purchase, and no customer claim.
 
 ## Purpose
 
@@ -23,6 +23,22 @@ Test whether an entrepreneur or investment analyst can inspect and correct a nam
 6. Export the corrected dossier and state whether it is ready for the next discussion.
 
 Planned task duration is `30-45 minutes`; this is a target for study design, not an observed result.
+
+## Engineering dry-run evidence
+
+The committed local runner at `scripts/healthtech/run_pilot_task.py` completed one
+Cook Zenith dissection case from the local public dossier cohort. It inspected
+the FDA `pma_number` field, seeded and corrected one edit, published history
+versions `1` and `2`, and exported selected version `2` in local-research JSON,
+English, and Thai forms. Engineering execution time was `0.1291642999931355`
+seconds with `0` provider calls, `0` network calls, and `USD 0.00` paid cost.
+
+The product-display projection was checked separately and returned
+`BLOCKED_LOCAL` for Cook marking and Google-derived patent sources without
+writing an external payload. This is backend engineering evidence only; it is
+not participant task time, usability evidence, commercial validation, or a
+service-level promise. Canonical audit:
+`docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/`.
 
 ## Correction and time form
 
