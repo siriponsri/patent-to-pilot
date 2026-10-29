@@ -1,0 +1,105 @@
+{
+  "format": "ht-long-run-report-audit-v1",
+  "run_id": "luna-long-run-20261029-m7-report-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_REPORT_GENERATED_PARTIAL_LONG_RUN",
+  "implementation_commit": "237fc669a4b7829be420c48547f36a69e28f64f0",
+  "tree_state": "dirty_with_unrelated_owner_artifacts_preserved",
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "cohort_manifest_hash": "1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+  "generated_outputs": {
+    "REPORT.md": {
+      "bytes": 5578,
+      "sha256": "fa28f1908eb76f44f03a124e0eb965f72f0cf57915bc88f9e4ba249b61d504bb"
+    },
+    "summary_tables.json": {
+      "bytes": 24350,
+      "sha256": "226a0f2206f31e417eaf7aaaa64f70543099f7743a1022146824e1bc0f0ac184"
+    },
+    "frontier_table.csv": {
+      "bytes": 1802,
+      "sha256": "829c16856bb156ee315b3336aa9a3c071890bc137716bd05adb541ae834e4eb5"
+    },
+    "receipt.json": {
+      "bytes": 2403,
+      "sha256": "a81c77c828208efd1d3236bcc01951204d1a0c8ce0d6d80961da0e40e21f2f5f"
+    }
+  },
+  "checks": [
+    {
+      "id": "report_fixture_test",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_long_run_report.py",
+      "outcome": "1 passed"
+    },
+    {
+      "id": "b4_provider_regressions",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_b4_live.py tests/test_healthtech_round1_budget.py tests/test_healthtech_prelive.py tests/test_healthtech_controller.py tests/test_provider_env_file.py tests/test_provider_adapter.py",
+      "outcome": "77 passed"
+    },
+    {
+      "id": "compile_check",
+      "status": "PASS",
+      "command": "rtk proxy python -m compileall -q scripts/healthtech/build_long_run_report.py tests/test_healthtech_long_run_report.py",
+      "outcome": "exit 0"
+    },
+    {
+      "id": "report_generation",
+      "status": "PASS",
+      "command": "rtk proxy python -B scripts/healthtech/build_long_run_report.py --output docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029 ...",
+      "outcome": "11 rows written; 12 provider-shaped calls summarized"
+    }
+  ],
+  "frozen_inputs": {
+    "development_frontier": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/frontier_diagnostics.json",
+    "development_summary": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/method_summary.json",
+    "development_receipt": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-dev/receipt.json",
+    "final_holdout_frontier": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/frontier_diagnostics.json",
+    "final_holdout_summary": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/method_summary.json",
+    "final_holdout_receipt": "results/healthtech/ht-multicompany-baselines-20261029-family-r1-holdout/receipt.json",
+    "b4_frontier": "results/healthtech/ht-b4-r1-mock-20261029-r4/controller_frontier.json",
+    "b4_receipt": "results/healthtech/ht-b4-r1-mock-20261029-r4/receipt.json",
+    "b4_raw_rankings": "results/healthtech/ht-b4-r1-mock-20261029-r4/raw_rankings.jsonl",
+    "b4_verification": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json"
+  },
+  "boundaries": {
+    "implemented": [
+      "reproducible aggregation of frozen baseline and B4 mock artifacts",
+      "input and output SHA-256 receipt generation",
+      "compact Markdown, JSON, and CSV report surfaces",
+      "prepared G5 task/correction/offer packet",
+      "prepared G6 methods/results/system-card skeleton",
+      "budget request refreshed with exact endpoint pricing metadata"
+    ],
+    "mocked": [
+      "provider transport and reported usage in the B4 source artifacts"
+    ],
+    "not_run": [
+      "live provider request",
+      "paid canary or paired pilot",
+      "semantic relevance gold intake",
+      "statistical significance or confirmatory superiority test",
+      "publication submission or acceptance"
+    ],
+    "not_validated": [
+      "user usability",
+      "commercial demand or willingness to pay",
+      "clinical suitability",
+      "FTO, patent validity, or investment merit"
+    ],
+    "paid_cost_usd": 0.0,
+    "network_provider_calls": 0,
+    "credentials_staged": false,
+    "raw_restricted_payloads_staged": false
+  },
+  "endpoint_snapshot": {
+    "model": "openai/gpt-4.1-mini",
+    "upstream_provider": "openai",
+    "prompt_usd_per_million": 0.4,
+    "completion_usd_per_million": 1.6,
+    "snapshot_sha256": "a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267",
+    "snapshot_utc": "2026-10-29T11:18:41.615320Z"
+  },
+  "next_action": "Obtain or authorize a rights-cleared semantic relevance-judgment source with explicit labels, multiple independent company/family groups, and a predeclared untouched holdout; keep live/provider HT-B4 blocked until transfer, credential, pricing, bound, and reconciliation gates are evidenced."
+}

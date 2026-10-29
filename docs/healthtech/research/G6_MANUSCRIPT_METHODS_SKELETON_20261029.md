@@ -1,0 +1,84 @@
+# G6 manuscript and reproducibility skeleton
+
+Status: `PREPARED METHODS/RESULTS SKELETON; DESCRIPTIVE DEVELOPMENT EVIDENCE ONLY`.
+
+Working title: *Evaluating Adaptive Evidence Acquisition for Medical-Device Patent Screening under Incomplete Judgments*.
+
+## Abstract boundary
+
+This manuscript will report a bounded retrieval/evidence-acquisition study over named public medical-device cases. The current package supports a reproducible offline baseline comparison and a provider-shaped mock seam. It does not yet support a claim of adaptive superiority, semantic relevance gold, live-provider behavior, clinical suitability, FTO, patent validity, investment merit, or publication readiness.
+
+## Research question and estimand
+
+Primary question: under a frozen device-patent candidate universe and incomplete documented links, how do fixed company/lexical/hybrid/multi-query controls and a bounded adaptive policy differ in known-link recovery and resource use?
+
+Current endpoint: descriptive macro known-link recall at `K=20` over product-level disclosed relationships. Unlisted query-patent pairs remain `UNJUDGED` and are not negatives. Family-aware rows are evaluator-side sensitivity diagnostics, not legal family adjudication or semantic relevance labels.
+
+## Data and protocol
+
+- Development view: 5 devices/queries, 24 patents, 3 family-aware groups.
+- Final holdout view: 3 untouched Stryker queries, the same 24-patent universe, 3 family-aware groups.
+- Composite context: 8 devices, 24 patents, 31 product-level disclosed pairs, 161 unjudged distractors, and 6 full-cohort family groups.
+- Protocol hash: `1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b`.
+- Cohort manifest hash: `1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75`.
+- Report receipt: [`luna-long-run-20261029-m7-report-20261029`](../audits/luna-long-run-20261029-m7-report-20261029/REPORT.md).
+
+The final holdout was not used for policy tuning. No semantic reviewer labels were available in this package. The Bridge branch remains `BLOCKED_LOCAL`.
+
+## Actual baseline table
+
+| Split | HT-B0a | HT-B0b | HT-B1 | HT-B2 | HT-B3 |
+|---|---:|---:|---:|---:|---:|
+| Development macro known-link R@20 | 0.9381 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Final holdout macro known-link R@20 | 0.8190 | 0.9524 | 0.9333 | 0.9333 | 0.8857 |
+
+The development rows used 5 queries; the holdout rows used 3 queries. Realized query calls were method-dependent because HT-B2 and HT-B3 use multiple queries/actions. Full resource and hash detail is in `summary_tables.json` and `frontier_table.csv` in the linked report audit.
+
+## Provider-shaped mock table
+
+| Metric | Actual value |
+|---|---:|
+| Development devices | 5 |
+| Patents | 24 |
+| Provider-shaped calls | 12 |
+| Schema-valid calls | 12 |
+| Macro known-link R@20 | 1.0000 |
+| Simulated mock debit | USD 0.0012 |
+| Paid cost | USD 0.00 |
+| Unknown/pending billing items | 0 |
+
+The mock transport exercised the action schema and R1 reservation/settlement path. It did not create provider evidence. Live/provider HT-B4 remains `BLOCKED_LOCAL` pending explicit transfer rights, credentials/credit, and reconciliation gates.
+
+## Sources, model, and system-card references
+
+- Frozen report and machine-readable outputs: [`docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/`](../audits/luna-long-run-20261029-m7-report-20261029/).
+- Frozen B4 verification: [`docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json`](../audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json).
+- Model snapshot: `results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json`.
+- Endpoint metadata: `results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/endpoint_metadata.json`.
+- Current code tested: `237fc669a4b7829be420c48547f36a69e28f64f0`.
+- R1 policy and accounting limits: `docs/healthtech/goals/luna-long-run-20261028-889958e/OPENROUTER_ROUND1_TH.md` and the filled budget request.
+
+The system-card section must preserve model/provider identity, pricing snapshot, structured-output/action restrictions, no-fallback/no-retry policy, transfer-rights gates, and the distinction between mocked transport and live execution.
+
+## Claims kept separate
+
+### Patent-association branch
+
+The current outputs measure recovery of documented product-level device-patent associations under a frozen local candidate universe. They do not establish claim-level semantic relevance, exhaustive recall, patent validity, FTO, clinical suitability, investment merit, or generalization beyond the frozen groups.
+
+### SciFact component branch
+
+SciFact is a separate evidence-verification component with its own source release, labels, split, evaluator, and denominator. Component parity or lexical development scores must not be presented as proof of patent association quality or clinical truth. A current pooled claim remains `NOT_RUN` unless its prediction manifest, denominator, and permitted labels are present.
+
+## Explicitly not run or not validated
+
+- Live OpenRouter request, paid canary, paired pilot, and robustness round: `NOT_RUN / BLOCKED_LOCAL`.
+- Rights-cleared semantic relevance gold and expert adjudication: `NOT_RUN`.
+- Statistical significance, power, confidence intervals, or confirmatory superiority test: `NOT_RUN` / `NOT_ESTIMABLE`.
+- Independent user study, correction burden, repeat use, willingness to pay, purchase, and ROI: `NOT_VALIDATED`.
+- Journal submission, peer review, acceptance, and publication readiness: `NOT_RUN`.
+- Clinical, legal, regulatory, FTO, patent-validity, and investment conclusions: out of scope.
+
+## Reproducibility and next test
+
+Reproduce the report with the command recorded in the audit verification file and the frozen input hashes in `receipt.json`. The next discriminating test is a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout. Do not tune on the current holdout or recode unjudged pairs as negatives.

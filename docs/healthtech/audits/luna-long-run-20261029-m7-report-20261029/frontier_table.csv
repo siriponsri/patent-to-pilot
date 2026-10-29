@@ -1,0 +1,12 @@
+cpu_seconds,embedding_query_tokens,failed_query_count,group_count,input_token_bound,latency_seconds,ledger_actual_nano_usd,macro_known_link_recall_at_20,method,model,output_token_bound,paid_cost_usd,pricing_snapshot_sha256,pricing_snapshot_utc,provider_shaped_calls,query_calls,query_count,rerank_pairs,rerank_tokens,returned_candidates,schema_valid_calls,simulated_cost_usd,split,unknown_billing,wall_seconds
+0.0,0.0,0,3,,,,0.9380952380952381,HT-B0a,,,0.0,,,,5.0,5,0.0,0.0,120.0,,,development,0,0.0010631999975885265
+0.203125,0.0,0,3,,,,1.0,HT-B0b,,,0.0,,,,5.0,5,0.0,0.0,120.0,,,development,0,0.033436099998652935
+77.109375,150.0,0,3,,,,1.0,HT-B1,,,0.0,,,,5.0,5,120.0,30720.0,120.0,,,development,0,14.172028800003318
+303.0625,300.0,0,3,,,,1.0,HT-B2,,,0.0,,,,20.0,20,480.0,122880.0,480.0,,,development,0,52.0173917999964
+79.171875,174.0,0,3,,,,1.0,HT-B3,,,0.0,,,,7.0,7,168.0,43008.0,168.0,,,development,0,8.25666170000477
+0.0,0.0,0,3,,,,0.8190476190476191,HT-B0a,,,0.0,,,,3.0,3,0.0,0.0,72.0,,,final_holdout,0,0.0007776000056765042
+0.078125,0.0,0,3,,,,0.9523809523809524,HT-B0b,,,0.0,,,,3.0,3,0.0,0.0,72.0,,,final_holdout,0,0.009692999999970198
+46.984375,67.0,0,3,,,,0.9333333333333332,HT-B1,,,0.0,,,,3.0,3,72.0,18432.0,72.0,,,final_holdout,0,9.092900099996768
+195.046875,135.0,0,3,,,,0.9333333333333332,HT-B2,,,0.0,,,,12.0,12,288.0,73728.0,288.0,,,final_holdout,0,36.099212299999635
+74.828125,87.0,0,3,,,,0.8857142857142857,HT-B3,,,0.0,,,,5.0,5,120.0,30720.0,120.0,,,final_holdout,0,13.58116869999867
+170.21875,174.0,0,,12281,1.0226061000066693,1200000,1.0,HT-B4-MOCK,{'openai/gpt-4.1-mini': 'openai'},3072,0.0,a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267,2026-10-29T11:18:41.615320Z,12,7.0,5,168.0,43008.0,168.0,12,0.0012000000000000001,development,0,96.25801600000705
