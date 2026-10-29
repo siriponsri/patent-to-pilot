@@ -655,29 +655,55 @@ def test_external_exports_project_evidence_and_source_payloads_by_field_rights(t
     _write_json(rights_matrix_path, rights_matrix)
     input_data = next(iter(build_abbott_case_inputs(cohort, rights_matrix_path=rights_matrix_path).values()))
     pma_source = next(source for source in input_data.sources if source.source.source_type == "regulatory_record")
-    input_data = input_data.model_copy(update={
-        "evidence": input_data.evidence + [field_evidence(pma_source, "openfda", "FACT-RESTRICTED-OPENFDA")]
-    })
     dossier, _, _ = run_dossier(input_data, run_id="external-rights", code_commit="test")
+    restricted_structured = field_evidence(pma_source, "trade_name", "FACT-MALICIOUS-TRADE").model_copy(
+        update={
+            "statement": "restricted-MitraClip",
+            "structured_value": "restricted-MitraClip",
+        }
+    )
+    restricted_literal = field_evidence(pma_source, "trade_name", "FACT-MALICIOUS-LITERAL").model_copy(
+        update={
+            "locator": "chars:0:20",
+            "quoted_span": "restricted-literal-MitraClip",
+            "structured_field": None,
+            "structured_value": None,
+            "extraction_method": "literal_span",
+            "statement": "restricted-literal-MitraClip",
+        }
+    )
+    dossier = dossier.model_copy(update={
+        "evidence": dossier.evidence + [restricted_structured, restricted_literal]
+    })
 
     local_markdown = export_markdown(dossier, language="en")
     assert "restricted-MitraClip" in local_markdown
+    assert "restricted-literal-MitraClip" in local_markdown
     for language in ("en", "th"):
         external_markdown = export_markdown(dossier, language=language, purpose="product_display")
         assert "restricted-MitraClip" not in external_markdown
+        assert "restricted-literal-MitraClip" not in external_markdown
         assert "trade_name: MitraClip" in external_markdown
     external_json = serialize_dossier(dossier, purpose="redistribution")
     encoded = json.dumps(external_json, ensure_ascii=False)
     assert "restricted-MitraClip" not in encoded
+    assert "restricted-literal-MitraClip" not in encoded
     assert external_json["sources"][0]["payload"] == {"trade_name": "MitraClip"}
-    assert any(item["structured_field"] == "trade_name" for item in external_json["evidence"])
-    assert all(item["evidence_id"] != "FACT-RESTRICTED-OPENFDA" for item in external_json["evidence"])
+    projected_trade = next(
+        item for item in external_json["evidence"] if item["evidence_id"] == "FACT-MALICIOUS-TRADE"
+    )
+    assert projected_trade["structured_field"] == "trade_name"
+    assert projected_trade["structured_value"] == "MitraClip"
+    assert projected_trade["statement"] == "trade_name: MitraClip"
+    assert projected_trade["quoted_span"] is None
+    assert all(item["evidence_id"] != "FACT-MALICIOUS-LITERAL" for item in external_json["evidence"])
 
 
 @pytest.mark.parametrize(
     ("mutation", "message"),
     [
         ("runtime", "runtime JSON hash"),
+        ("runtime_text", "runtime JSON hash"),
         ("raw", "raw file (size|hash)"),
         ("registry", "source registry hash"),
         ("missing", "raw file is missing"),
@@ -690,6 +716,11 @@ def test_abbott_adapter_rejects_frozen_cohort_mutations(tmp_path, mutation, mess
         runtime_path = cohort / "runtime.json"
         runtime = json.loads(runtime_path.read_text(encoding="utf-8"))
         runtime["devices"][0]["trade_name"] = "MUTATED DEVICE"
+        _write_json(runtime_path, runtime)
+    elif mutation == "runtime_text":
+        runtime_path = cohort / "runtime.json"
+        runtime = json.loads(runtime_path.read_text(encoding="utf-8"))
+        runtime["patents"][0]["text"] = "MUTATED PATENT TEXT"
         _write_json(runtime_path, runtime)
     elif mutation == "raw":
         raw_path = cohort / "raw" / "pma" / "P100009.json"
