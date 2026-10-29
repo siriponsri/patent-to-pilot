@@ -31,21 +31,18 @@ def _rows(recall_values):
 
 
 def _frontier():
+    values = {
+        "HT-B0a": (0.2, 0.4),
+        "HT-B0b": (0.8, 0.9),
+        "HT-B1": (0.7, 0.8),
+        "HT-B2": (0.7, 0.8),
+        "HT-B3": (0.6, 0.7),
+    }
     return {
         "groups": [
-            {"method": method, "k": 20, "macro_known_link_recall": value}
-            for method, value in (
-                ("HT-B0a", 0.2),
-                ("HT-B0a", 0.4),
-                ("HT-B0b", 0.8),
-                ("HT-B0b", 0.9),
-                ("HT-B1", 0.7),
-                ("HT-B1", 0.8),
-                ("HT-B2", 0.7),
-                ("HT-B2", 0.8),
-                ("HT-B3", 0.6),
-                ("HT-B3", 0.7),
-            )
+            {"group_id": str(group_id), "method": method, "k": 20, "macro_known_link_recall": value}
+            for method, method_values in values.items()
+            for group_id, value in enumerate(method_values)
         ]
     }
 
@@ -89,6 +86,11 @@ def test_analysis_marks_observed_frontier_and_holdout_delta():
     assert analysis["final_holdout"]["pareto_frontier_methods"] == ["HT-B0a", "HT-B0b"]
     assert analysis["holdout_minus_development"][1]["macro_recall_delta_holdout_minus_development"] == pytest.approx(-0.1)
     assert analysis["b4_provider_shaped_mock"]["status"] == "MOCK_ONLY_NOT_PROVIDER_EVIDENCE"
+    paired = analysis["paired_group_uncertainty"]["development"]["methods"]["HT-B0a"]
+    assert paired["paired_group_count"] == 2
+    assert paired["mean_delta"] == pytest.approx(-0.55)
+    assert paired["population_sd"] == pytest.approx(0.05)
+    assert paired["status"] == "NOT_ESTIMABLE"
 
 
 def test_analysis_writes_reproducible_tables_and_svg_plots(tmp_path):
@@ -114,3 +116,11 @@ def test_analysis_writes_reproducible_tables_and_svg_plots(tmp_path):
     assert (output / "quality_cost_frontier.csv").read_text(encoding="utf-8").count("HT-B0a") == 2
     assert "<svg" in (output / "quality_cost_development.svg").read_text(encoding="utf-8")
     assert "final-holdout" in (output / "recall_comparison.svg").read_text(encoding="utf-8")
+    assert "Paired group diagnostic" in (output / "ANALYSIS.md").read_text(encoding="utf-8")
+
+
+def test_paired_group_diagnostic_rejects_duplicate_group_rows():
+    frontier = _frontier()
+    frontier["groups"].append({"method": "HT-B0a", "k": 20, "group_id": "0", "macro_known_link_recall": 0.3})
+    with pytest.raises(ValueError, match="duplicate group_id"):
+        _MODULE._paired_group_uncertainty(frontier)

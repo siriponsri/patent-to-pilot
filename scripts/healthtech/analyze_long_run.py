@@ -11,6 +11,8 @@ from typing import Any
 
 
 METHODS = ("HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3")
+PAIRED_BASELINE_METHOD = "HT-B0b"
+MIN_EFFECTIVE_GROUPS = 5
 COLORS = {
     "HT-B0a": "#4c78a8",
     "HT-B0b": "#f58518",
@@ -51,6 +53,65 @@ def _group_stats(frontier: dict[str, Any]) -> dict[str, dict[str, Any]]:
             "group_macro_known_link_recall_range": (max(values) - min(values)) if values else None,
         }
     return result
+
+
+def _paired_group_uncertainty(
+    frontier: dict[str, Any],
+    *,
+    baseline_method: str = PAIRED_BASELINE_METHOD,
+    minimum_effective_groups: int = MIN_EFFECTIVE_GROUPS,
+) -> dict[str, Any]:
+    """Return paired group deltas without treating them as inferential evidence."""
+    grouped: dict[str, dict[str, float]] = {method: {} for method in METHODS}
+    for row in frontier.get("groups", []):
+        if not isinstance(row, dict) or row.get("k") != 20:
+            continue
+        method = row.get("method")
+        group_id = row.get("group_id")
+        value = row.get("macro_known_link_recall")
+        if method not in grouped or not isinstance(group_id, str) or not isinstance(value, (int, float)):
+            continue
+        if group_id in grouped[method]:
+            raise ValueError(f"duplicate group_id for {method}: {group_id}")
+        grouped[method][group_id] = float(value)
+
+    baseline = grouped.get(baseline_method, {})
+    methods: dict[str, dict[str, Any]] = {}
+    for method in METHODS:
+        if method == baseline_method:
+            continue
+        common_group_ids = sorted(set(baseline).intersection(grouped[method]))
+        deltas = [grouped[method][group_id] - baseline[group_id] for group_id in common_group_ids]
+        count = len(deltas)
+        mean_delta = sum(deltas) / count if count else None
+        population_sd = (
+            (sum((value - mean_delta) ** 2 for value in deltas) / count) ** 0.5
+            if count and mean_delta is not None
+            else None
+        )
+        estimable = count >= minimum_effective_groups
+        methods[method] = {
+            "comparison": f"{method} minus {baseline_method}",
+            "paired_group_ids": common_group_ids,
+            "paired_group_count": count,
+            "paired_delta_values": deltas,
+            "mean_delta": mean_delta,
+            "population_sd": population_sd,
+            "min_delta": min(deltas) if deltas else None,
+            "max_delta": max(deltas) if deltas else None,
+            "status": "DESCRIPTIVE_ONLY" if estimable else "NOT_ESTIMABLE",
+            "reason": (
+                "paired group count meets the diagnostic threshold; no inferential interval estimated"
+                if estimable
+                else f"paired group count {count} is below minimum effective group threshold {minimum_effective_groups}"
+            ),
+        }
+    return {
+        "baseline_method": baseline_method,
+        "minimum_effective_groups": minimum_effective_groups,
+        "status": "NOT_ESTIMABLE" if any(item["status"] == "NOT_ESTIMABLE" for item in methods.values()) else "DESCRIPTIVE_ONLY",
+        "methods": methods,
+    }
 
 
 def _enrich_rows(
@@ -139,12 +200,14 @@ def build_analysis(
         "paid_cost_usd": b4_row["paid_cost_usd"],
         "status": "MOCK_ONLY_NOT_PROVIDER_EVIDENCE",
     }
-    development_frontier = _pareto_frontier(development_rows)
-    holdout_frontier = _pareto_frontier(holdout_rows)
+    development_frontier_methods = _pareto_frontier(development_rows)
+    holdout_frontier_methods = _pareto_frontier(holdout_rows)
+    development_uncertainty = _paired_group_uncertainty(dev_frontier)
+    holdout_uncertainty = _paired_group_uncertainty(holdout_frontier)
     for row in development_rows:
-        row["pareto_frontier"] = row["method"] in development_frontier
+        row["pareto_frontier"] = row["method"] in development_frontier_methods
     for row in holdout_rows:
-        row["pareto_frontier"] = row["method"] in holdout_frontier
+        row["pareto_frontier"] = row["method"] in holdout_frontier_methods
 
     return {
         "format": "ht-long-run-analysis-v1",
@@ -154,11 +217,11 @@ def build_analysis(
         "cohort_manifest_hash": summary["cohort_manifest_hash"],
         "development": {
             "rows": development_rows,
-            "pareto_frontier_methods": development_frontier,
+            "pareto_frontier_methods": development_frontier_methods,
         },
         "final_holdout": {
             "rows": holdout_rows,
-            "pareto_frontier_methods": holdout_frontier,
+            "pareto_frontier_methods": holdout_frontier_methods,
         },
         "holdout_minus_development": holdout_minus_development,
         "b4_provider_shaped_mock": b4_comparison,
@@ -167,7 +230,14 @@ def build_analysis(
             "HT-B1, HT-B2, and HT-B3 are dominated by HT-B0b on the observed wall-time/recall coordinates in these views.",
             "HT-B4 mock recall matches HT-B0b and HT-B2 on development, but the transport was mocked and therefore is not provider evidence.",
             "Small group counts, product-level disclosure labels, unjudged pairs, and the K=20 ceiling keep confirmatory uncertainty NOT_ESTIMABLE.",
+            "Paired group diagnostics align methods by frozen group_id and report deltas/population SD only; the current effective group count is below the predeclared threshold of five, so uncertainty remains NOT_ESTIMABLE.",
         ],
+        "paired_group_uncertainty": {
+            "baseline_method": PAIRED_BASELINE_METHOD,
+            "minimum_effective_groups": MIN_EFFECTIVE_GROUPS,
+            "development": development_uncertainty,
+            "final_holdout": holdout_uncertainty,
+        },
         "input_hashes": input_hashes or {},
     }
 
@@ -216,6 +286,26 @@ def render_analysis(analysis: dict[str, Any]) -> str:
         lines.append(
             f"| {row['method']} | {_fmt(row['macro_recall_delta_holdout_minus_development'])} | {_fmt(row['wall_seconds_delta_holdout_minus_development'])} | {row['status']} |"
         )
+    uncertainty = analysis["paired_group_uncertainty"]
+    lines.extend(
+        [
+            "",
+            "## Paired group diagnostic",
+            "",
+            f"Methods are paired by `group_id` against `{uncertainty['baseline_method']}`. The predeclared minimum effective group threshold is `{uncertainty['minimum_effective_groups']}`; this diagnostic does not estimate significance or a confirmatory interval.",
+            "",
+            "| Split | Comparison | Groups | Mean delta | Population SD | Min delta | Max delta | Status |",
+            "|---|---|---:|---:|---:|---:|---:|---|",
+        ]
+    )
+    for split in ("development", "final_holdout"):
+        for method in METHODS:
+            if method == uncertainty["baseline_method"]:
+                continue
+            row = uncertainty[split]["methods"][method]
+            lines.append(
+                f"| {split} | {row['comparison']} | {row['paired_group_count']} | {_fmt(row['mean_delta'])} | {_fmt(row['population_sd'])} | {_fmt(row['min_delta'])} | {_fmt(row['max_delta'])} | {row['status']} |"
+            )
     b4 = analysis["b4_provider_shaped_mock"]
     lines.extend(
         [
