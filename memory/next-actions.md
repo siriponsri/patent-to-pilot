@@ -167,3 +167,13 @@ Added evaluator-only family metadata recovery from explicit Google Patents famil
 Focused family/HealthTech regressions pass `80/80`, the full suite passes `350/350` with `PYTHONPATH=src` propagated to subprocesses, compile checks pass, and provider/network/paid activity remain `0` / `$0.00`. The unqualified full-suite invocation still has the known two-child-process import setup failure in this uninstalled checkout. The mapping is sourced local evaluator metadata only; it does not change runtime inputs, create semantic relevance gold, recode unlisted pairs, or establish legal family, FTO, clinical, validity, investment, publication, or generalization claims.
 
 Next: obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout before any pooled scientific claim. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-021 — 2026-10-29 family-aware frontier re-projection
+
+Status: `PASS_OFFLINE_ANALYSIS`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/README.md`.
+
+Added `scripts/healthtech/analyze_family_frontier.py` to reproject frozen HT-B0a/B0b/B1/B2/B3 baseline outputs onto the sourced Google family mapping without changing rankings, runtime inputs, exact-patent metrics, or evaluator relations. The Boston/Cook development view covers 5 queries and the Stryker final holdout covers 3 queries. Both retain 3 exact groups, 3 family-aware groups, 0 merges, and 9 frontier rows; normalized group metrics match exactly.
+
+The focused family-mapping tests pass `5/5`, compile checks pass, and provider/network/paid activity remain `0` / `$0.00`. Both outputs remain `NOT_ESTIMABLE`: family metadata improves uncertainty visibility but does not create semantic relevance gold or stable generalization evidence.
+
+Next: obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout before any pooled scientific claim. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.

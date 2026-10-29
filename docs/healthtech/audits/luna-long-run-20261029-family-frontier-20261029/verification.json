@@ -1,0 +1,92 @@
+{
+  "format": "ht-family-aware-frontier-audit-verification-v1",
+  "run_id": "luna-long-run-20261029-family-frontier-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_OFFLINE_FAMILY_FRONTIER_ANALYSIS",
+  "tested_source_commit": "4f4ed62a2649d720d3840aea2e1a8132b11617f2",
+  "tree_state_at_test": "dirty_with_unrelated_owner_artifacts_preserved",
+  "implementation_files": {
+    "scripts/healthtech/analyze_family_frontier.py": "2cf79cde78230950b190e8c7a15ff2f9e92e8e9f8d99afdd8b4c574e24c943a3",
+    "tests/test_healthtech_family_mapping.py": "1b74709a479dfd2b00e0b13db7e3b154dba17bb720779552822c580ccef1d5f6"
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_family_mapping.py",
+      "status": "PASS",
+      "outcome": "5 passed"
+    },
+    {
+      "command": "rtk proxy python -c \"import os,sys; from pathlib import Path; src=str(Path('src').resolve()); os.environ['PYTHONPATH']=src + os.pathsep + os.environ.get('PYTHONPATH',''); sys.path.insert(0,src); import pytest; raise SystemExit(pytest.main(['--disable-warnings']))\"",
+      "status": "PASS",
+      "outcome": "351 passed, 1 warning"
+    },
+    {
+      "command": "rtk proxy python -m compileall -q src scripts tests",
+      "status": "PASS",
+      "outcome": "exit 0"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/analyze_family_frontier.py --baseline results/healthtech/ht-multicompany-baselines-20261029-r2-dev-cook --references results/healthtech/ht-multicompany-20261029-r2/views/development/references.json --family-mapping results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json --split development --output results/healthtech/ht-family-frontier-analysis-20261029-r1/development.json",
+      "status": "PASS",
+      "outcome": "5 queries, 3 exact groups, 3 family-aware groups, 0 merges, 9 frontier rows"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/analyze_family_frontier.py --baseline results/healthtech/ht-multicompany-baselines-20261029-r2-holdout-cook --references results/healthtech/ht-multicompany-20261029-r2/views/final_holdout/references.json --family-mapping results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json --split final_holdout --output results/healthtech/ht-family-frontier-analysis-20261029-r1/final_holdout.json",
+      "status": "PASS",
+      "outcome": "3 queries, 3 exact groups, 3 family-aware groups, 0 merges, 9 frontier rows"
+    }
+  ],
+  "family_mapping": {
+    "path": "results/healthtech/ht-google-family-mapping-20261029-r1/family-mapping.json",
+    "file_sha256": "7510b2f3fc18cef00419297e73f05985ed4aac25c58f6374274b98ff43d89dfd",
+    "mapping_sha256": "e4baa2e4eb1295c4abf9314fe5f2a60dd853151c7089f032801dc7fdef31f898",
+    "patents_mapped": 24,
+    "families_observed": 19
+  },
+  "splits": [
+    {
+      "name": "development",
+      "baseline_receipt_sha256": "aaa27d7125d60a41cbe2574b0aaab3032b1d00ce56a6c2843308c3fd05c3b5b9",
+      "output_path": "results/healthtech/ht-family-frontier-analysis-20261029-r1/development.json",
+      "output_sha256": "b0e2edf4088fe0c95bc505a23f68c6354e6e5e9bb0de177aa2380592faadbb7d",
+      "reference_queries": 5,
+      "exact_group_count": 3,
+      "family_aware_group_count": 3,
+      "family_merged_exact_group_count": 0,
+      "frontier_rows": 9,
+      "metric_group_sets_match": true,
+      "frontier_group_sets_match": true
+    },
+    {
+      "name": "final_holdout",
+      "baseline_receipt_sha256": "8c3871678fa6c83a69ca52688c0bb2d4eeecc1e9dea092ba157070cdff13e78e",
+      "output_path": "results/healthtech/ht-family-frontier-analysis-20261029-r1/final_holdout.json",
+      "output_sha256": "675451f9cf0b4cdfb05a0e135698cefac0a486f88bf6691e821fac65eddfdda3",
+      "reference_queries": 3,
+      "exact_group_count": 3,
+      "family_aware_group_count": 3,
+      "family_merged_exact_group_count": 0,
+      "frontier_rows": 9,
+      "metric_group_sets_match": true,
+      "frontier_group_sets_match": true
+    }
+  ],
+  "boundaries": {
+    "runtime_inputs_changed": false,
+    "rankings_recomputed": false,
+    "evaluator_relations_written": false,
+    "unlisted_pairs_recoded_negative": false,
+    "provider_calls": 0,
+    "network_acquisition": 0,
+    "neural_model_calls": 0,
+    "paid_cost_usd": 0.0,
+    "raw_html_staged": false,
+    "credentials_staged": false,
+    "private_paths_staged": false
+  },
+  "uncertainty": {
+    "status": "NOT_ESTIMABLE",
+    "reason": "The family-aware view has only 3 groups in each split and remains a sensitivity/provenance analysis over product-level disclosure relationships."
+  },
+  "next_action": "Obtain a rights-cleared relevance-judgment cohort with multiple independent company/family groups and a predeclared untouched final holdout."
+}

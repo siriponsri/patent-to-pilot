@@ -1,0 +1,39 @@
+{
+  "format": "ht-family-aware-frontier-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-family-frontier-20261029",
+  "entries": [
+    {
+      "id": "FF-01",
+      "type": "implementation",
+      "question": "Can family-aware group rows be derived without changing the frozen baseline?",
+      "expected": "Read baseline outputs after prediction write, consume a separate family mapping, and preserve exact rows",
+      "outcome": "PASS: analyzer is evaluator-side and emits exact plus family-aware rows without mutating runtime or rankings",
+      "evidence": "scripts/healthtech/analyze_family_frontier.py; tests/test_healthtech_family_mapping.py"
+    },
+    {
+      "id": "FF-02",
+      "type": "development_analysis",
+      "question": "Does the sourced family mapping change the Boston/Cook development frontier grouping?",
+      "expected": "Compare 5-query exact and family-aware group rows across all methods, cutoffs, and prefixes",
+      "outcome": "PASS: 3 exact groups, 3 family-aware groups, 0 merges, 9 frontier rows; normalized group metrics match",
+      "evidence": "results/healthtech/ht-family-frontier-analysis-20261029-r1/development.json"
+    },
+    {
+      "id": "FF-03",
+      "type": "holdout_analysis",
+      "question": "Does the sourced family mapping change the Stryker final-holdout frontier grouping?",
+      "expected": "Compare 3-query exact and family-aware group rows across all methods, cutoffs, and prefixes",
+      "outcome": "PASS: 3 exact groups, 3 family-aware groups, 0 merges, 9 frontier rows; normalized group metrics match",
+      "evidence": "results/healthtech/ht-family-frontier-analysis-20261029-r1/final_holdout.json"
+    },
+    {
+      "id": "FF-04",
+      "type": "uncertainty",
+      "question": "Can this package support a stable inferential claim?",
+      "expected": "Report NOT_ESTIMABLE when group count and gold scope remain insufficient",
+      "outcome": "PASS: both outputs retain NOT_ESTIMABLE and preserve unjudged-pair limitations",
+      "evidence": "docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/verification.json"
+    }
+  ],
+  "status": "READY_FOR_REVIEW"
+}
