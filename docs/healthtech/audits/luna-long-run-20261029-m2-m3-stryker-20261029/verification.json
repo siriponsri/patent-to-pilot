@@ -4,7 +4,7 @@
   "run_id": "luna-long-run-20261029-m2-m3-stryker-20261029",
   "date": "2026-10-29",
   "base_revision": "c8c5dfc09270053c5a0082aaed495dfb044288f0",
-  "candidate_revision": "working-tree-pre-commit",
+  "candidate_revision": "71c8d66",
   "scope": "M2/M3 lawful public cohort expansion and HT-B0a/B0b/B1/B2/B3 offline development runs",
   "cohort": {
     "name": "Stryker Neurovascular product-marking development cohort",
