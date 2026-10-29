@@ -1,0 +1,129 @@
+{
+  "run_id": "luna-long-run-20261030-dapfam-qrels-parse-20261030",
+  "parent_run_id": "luna-long-run-20261030-dapfam-preflight-20261030",
+  "date": "2026-10-30",
+  "status": "PASS_QRELS_PARSE_RETRIEVAL_BLOCKED",
+  "base_commit": "a1a187c",
+  "candidate_commit": "a1a187c",
+  "source": {
+    "dataset_id": "datalyes/DAPFAM_patent",
+    "release_revision": "a59a74ce31384165065af1823a83c6f94ccafd48",
+    "license": "CC BY-NC-SA 4.0",
+    "qrels_path": "methodology/datasets/research-only-nc/qrels_all.parquet",
+    "qrels_bytes": 828375,
+    "qrels_sha256": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74",
+    "qrels_magic": {
+      "header": "PAR1",
+      "footer": "PAR1"
+    }
+  },
+  "schema": [
+    {
+      "name": "query_id",
+      "type": "VARCHAR",
+      "nullable": true
+    },
+    {
+      "name": "relevant_id",
+      "type": "VARCHAR",
+      "nullable": true
+    },
+    {
+      "name": "relevance_score",
+      "type": "DOUBLE",
+      "nullable": true
+    },
+    {
+      "name": "domain_rel",
+      "type": "VARCHAR",
+      "nullable": true
+    }
+  ],
+  "qrels_summary": {
+    "rows": 49869,
+    "unique_query_ids": 1247,
+    "unique_relevant_ids": 45336,
+    "min_relevance_score": 0.0,
+    "max_relevance_score": 1.0,
+    "null_query_ids": 0,
+    "null_relevant_ids": 0,
+    "duplicate_query_relevant_groups": 0,
+    "per_query_rows": {
+      "min": 29,
+      "mean": 39.991,
+      "max": 40
+    },
+    "domain_rel": [
+      {
+        "value": "IN",
+        "rows": 19736,
+        "unique_query_ids": 1217,
+        "unique_relevant_ids": 17580
+      },
+      {
+        "value": "NC",
+        "rows": 24940,
+        "unique_query_ids": 1247,
+        "unique_relevant_ids": 24918
+      },
+      {
+        "value": "OUT",
+        "rows": 5193,
+        "unique_query_ids": 905,
+        "unique_relevant_ids": 3653
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "qrels_schema",
+      "status": "PASS",
+      "command": "DuckDB DESCRIBE over read_parquet(qrels_all.parquet)",
+      "result": "Four expected fields were returned: query_id, relevant_id, relevance_score, domain_rel"
+    },
+    {
+      "id": "qrels_aggregate_counts",
+      "status": "PASS",
+      "command": "DuckDB aggregate counts over read_parquet(qrels_all.parquet)",
+      "result": "49,869 rows; 1,247 queries; 45,336 unique target IDs; score range 0.0-1.0"
+    },
+    {
+      "id": "qrels_integrity_checks",
+      "status": "PASS",
+      "command": "DuckDB null and duplicate-group checks",
+      "result": "Zero null IDs and zero duplicate query-target groups"
+    },
+    {
+      "id": "published_positive_count_reconciliation",
+      "status": "PASS",
+      "command": "Compare local domain_rel counts with pinned README metadata",
+      "result": "IN 19,736 and OUT 5,193 match the published approximate positive counts exactly"
+    },
+    {
+      "id": "full_retrieval_run",
+      "status": "BLOCKED_LOCAL",
+      "command": null,
+      "result": "Full corpus.parquet and queries.parquet remain unacquired; no index or metric was produced"
+    },
+    {
+      "id": "ht_t1_task_fit",
+      "status": "REJECTED_TASK_MISMATCH",
+      "command": "Review DAPFAM task definition and HT-T1 contract",
+      "result": "Citation-based family retrieval is not named medical-device/product semantic relevance gold"
+    }
+  ],
+  "resource_use": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "semantic_labels_created": 0,
+    "full_dataset_acquisitions": 0,
+    "credentials_read": false,
+    "private_journals_read": false
+  },
+  "decision": {
+    "dapfam_qrels_parse": "PASS",
+    "separate_patent_retrieval_component": "POTENTIALLY_ADMISSIBLE_AFTER_FULL_INPUT_AND_PROTOCOL_FREEZE",
+    "primary_ht_t1_source": "NOT_ADMISSIBLE",
+    "next_discriminating_action": "Owner-authorized semantic judgment source intake through M23/M25/M24; keep DAPFAM separate"
+  }
+}
