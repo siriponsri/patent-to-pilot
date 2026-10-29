@@ -1,0 +1,38 @@
+{
+  "format": "ht-m15-sanitized-run-summary-v1",
+  "run_id": "luna-long-run-20261029-m15-rights-packet-20261029",
+  "status": "PASS_OFFLINE_M1_F3_AND_REVIEW_PACKET",
+  "code_commit": "35ee0728a8b470029ea993d3362a5f9d8ef2bcbf",
+  "rights_policy_repair": {
+    "declared_policy_required": true,
+    "unknown_blank_mismatched_fail_closed": true,
+    "adapters": ["abbott", "cook", "philips"]
+  },
+  "philips_r5": {
+    "cases": 3,
+    "disclosed_links": 7,
+    "history_versions": [1, 2],
+    "search_calls": 3,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "manifest_sha256": "c5a7fce38d02f805f0a651e443c605838c2204aa44cf6ba4268915b4bc7387b5",
+    "receipt_sha256": "17d7703a4651e5253e3ee5f77bf948c7834a110cf0aa7e30c045e6ab802a1f4a"
+  },
+  "review_packet": {
+    "queries": 11,
+    "patents": 31,
+    "pairs": 341,
+    "unjudged_pairs": 341,
+    "semantic_labels": 0,
+    "company_groups": 4,
+    "final_holdout_queries": 3,
+    "family_status": "SOURCED_LOCAL_EVALUATOR_MAPPING_ONLY",
+    "packet_sha256": "21df358e9b1f387d4b4f1a6c33c94e38abff7ccf15b39df746fba3acec05a206"
+  },
+  "privacy_and_rights": {
+    "philips_marking_material_publicly_redistributed": false,
+    "google_patent_text_publicly_redistributed": false,
+    "credentials_or_env_read": false,
+    "semantic_gold_created": false
+  }
+}

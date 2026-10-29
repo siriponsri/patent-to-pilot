@@ -1,0 +1,112 @@
+{
+  "format": "ht-m15-rights-packet-verification-v1",
+  "run_id": "luna-long-run-20261029-m15-rights-packet-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_OFFLINE_M1_F3_AND_REVIEW_PACKET",
+  "base_commit": "e15ce7283091408b198929fc6fb33ad5920919a5",
+  "tested_code_commit": "35ee0728a8b470029ea993d3362a5f9d8ef2bcbf",
+  "parent_audits": [
+    "docs/healthtech/audits/luna-long-run-20261029-m14-philips-dossiers-20261029/README.md",
+    "docs/healthtech/audits/luna-long-run-20261029-review-packet-20261029/README.md",
+    "docs/healthtech/audits/luna-long-run-20261029-judgment-submission-20261029/README.md"
+  ],
+  "checks": {
+    "declared_policy_id_validation": true,
+    "abbott_typed_policy_binding": true,
+    "cook_typed_policy_binding": true,
+    "philips_typed_policy_binding": true,
+    "history_reload_all_channel_rights_projection": true,
+    "unknown_mismatched_blank_policy_rejections": true,
+    "stale_abbott_registry_rejected": true,
+    "philips_r5_dossiers_complete": true,
+    "review_packet_uses_correct_family_mapping": true,
+    "compile_checks": "passed",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_repairs.py",
+      "exit_code": 0,
+      "outcome": "All collected repair tests passed; existing fitz deprecation warning only."
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_cook.py tests/test_healthtech_philips_dossiers.py tests/test_healthtech_philips_cohort.py tests/test_healthtech_review_packet.py tests/test_healthtech_judgment_submission.py",
+      "exit_code": 0,
+      "outcome": "All selected Cook, Philips, review-packet, and judgment-submission tests passed; existing fitz deprecation warning only."
+    },
+    {
+      "command": "rtk proxy python -m py_compile src/patent_to_pilot/healthtech/rights.py src/patent_to_pilot/healthtech/abbott.py src/patent_to_pilot/healthtech/cook.py src/patent_to_pilot/healthtech/philips.py tests/test_healthtech_repairs.py",
+      "exit_code": 0,
+      "outcome": "Compile checks passed."
+    },
+    {
+      "command": "temporary clean exact-head worktree at 35ee072",
+      "exit_code": 0,
+      "outcome": "Recorded 11-test M1/F3 check passed; worktree removed after verification."
+    }
+  ],
+  "artifacts": {
+    "philips_cohort_manifest": {
+      "path": "results/healthtech/ht-philips-cardiovascular-20261029-r2/manifest.json",
+      "sha256": "60b37a6df4e5f84c87220c00e2a6e243507ee7214c54f1870047486aa462273f"
+    },
+    "philips_r5_manifest": {
+      "path": "results/healthtech/ht-philips-dossiers-20261029-r5/manifest.json",
+      "sha256": "c5a7fce38d02f805f0a651e443c605838c2204aa44cf6ba4268915b4bc7387b5"
+    },
+    "philips_r5_receipt": {
+      "path": "results/healthtech/ht-philips-dossiers-20261029-r5/receipt.json",
+      "sha256": "17d7703a4651e5253e3ee5f77bf948c7834a110cf0aa7e30c045e6ab802a1f4a"
+    },
+    "review_packet": {
+      "path": "results/healthtech/ht-relevance-review-20261029-r2-philips/packet.json",
+      "sha256": "21df358e9b1f387d4b4f1a6c33c94e38abff7ccf15b39df746fba3acec05a206"
+    },
+    "review_family_mapping": {
+      "path": "results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json",
+      "sha256": "f9637b3c7ea43bed86139293453bee95ecdaa717400f7266b3f5e2ca2bb470d2"
+    },
+    "source_hashes": {
+      "src/patent_to_pilot/healthtech/rights.py": "8ed61de970d2afa416b57d4fba70f6ca08955fe90045db66b80700236bf85385",
+      "src/patent_to_pilot/healthtech/abbott.py": "e1bb25420620808987379cc602352754ecd6bd09968625c9c67aed7d55ffd13d",
+      "src/patent_to_pilot/healthtech/cook.py": "82dc43602d1434226f72984a9f31a725d6b4d5e0dfb4fa9fbf1e017368100074",
+      "src/patent_to_pilot/healthtech/philips.py": "b0dbcd5e0e4e6ea37d011809af67c968648ce4f2f513a8b3f228e591d105b410",
+      "tests/test_healthtech_repairs.py": "0291d6e3453e85e9d16c4f3bf38d038b9a94c12a2d86a5924ba1032468f109f7"
+    }
+  },
+  "counts": {
+    "philips_cases": 3,
+    "philips_disclosed_links": 7,
+    "philips_history_versions_per_case": [1, 2],
+    "review_queries": 11,
+    "review_patents": 31,
+    "review_pairs": 341,
+    "review_unjudged_pairs": 341,
+    "review_semantic_labels": 0,
+    "review_company_groups": 4,
+    "review_final_holdout_queries": 3
+  },
+  "resource_summary": {
+    "search_calls": 3,
+    "returned_lexical_candidates": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "network_attempts": 0
+  },
+  "not_run": [
+    "Rights-cleared semantic relevance adjudication",
+    "Live/provider HT-B4 dispatch or paid inference",
+    "Statistical significance or stable generalization estimate",
+    "Clinical suitability, FTO, patent validity, investment merit",
+    "User/commercial validation or publication acceptance",
+    "Public redistribution of Philips marking material or Google-derived patent text"
+  ],
+  "limitations": [
+    "Product-level disclosures are not claim-level semantic relevance gold.",
+    "Unlisted query-patent pairs remain unjudged and are not negatives.",
+    "Family mapping is evaluator-side local metadata only.",
+    "The final holdout is the three Stryker queries and remains untouched for this packet.",
+    "The Philips dossier run is inspectable offline engineering evidence, not exhaustive recall."
+  ]
+}

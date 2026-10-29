@@ -1,0 +1,57 @@
+{
+  "format": "ht-m15-rights-packet-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-m15-rights-packet-20261029",
+  "date": "2026-10-29",
+  "base_commit": "e15ce7283091408b198929fc6fb33ad5920919a5",
+  "tested_code_commit": "35ee0728a8b470029ea993d3362a5f9d8ef2bcbf",
+  "entries": [
+    {
+      "id": "m15-rights-policy-repair",
+      "kind": "implementation",
+      "status": "PASS_COMMITTED",
+      "output": "src/patent_to_pilot/healthtech/{rights,abbott,cook,philips}.py",
+      "outcome": "Declared typed rights policy IDs are required and bound to source rows; unknown, blank, mismatched, and structurally incompatible declarations fail closed."
+    },
+    {
+      "id": "m15-adversarial-regressions",
+      "kind": "offline_regression",
+      "status": "PASS",
+      "output": "tests/test_healthtech_repairs.py",
+      "outcome": "History-reload all-channel projection and adapter-level unknown/mismatched/blank policy cases pass; stale Abbott policy-free input is rejected."
+    },
+    {
+      "id": "m15-clean-exact-head",
+      "kind": "clean_worktree_regression",
+      "status": "PASS_RECORDED",
+      "output": "temporary clean exact-head worktree at 35ee072",
+      "outcome": "11-test M1/F3 check passed; temporary worktree was removed after verification."
+    },
+    {
+      "id": "philips-dossier-r5",
+      "kind": "offline_dossier_run",
+      "status": "PASS_COMMITTED_CODE",
+      "output": "results/healthtech/ht-philips-dossiers-20261029-r5",
+      "outcome": "Three cases completed with seven product-level disclosed links, history versions 1 and 2, three search calls, zero returned lexical candidates, zero provider calls, and USD 0.00 paid cost."
+    },
+    {
+      "id": "review-packet-r2-philips",
+      "kind": "offline_review_packet",
+      "status": "PASS_CORRECTED_INPUT_MAPPING",
+      "output": "results/healthtech/ht-relevance-review-20261029-r2-philips/packet.json",
+      "outcome": "The rejected first attempt using groups.json was corrected to use family-mapping.json; the final packet has 11 queries, 31 patents, 341 unjudged pairs, zero semantic labels, four company groups, and a three-query Stryker holdout."
+    },
+    {
+      "id": "m15-boundary",
+      "kind": "scope_decision",
+      "status": "PASS_LIMITED_CLAIM",
+      "output": "NEXT_ACTIONS.md",
+      "outcome": "No semantic gold, provider evidence, public redistribution permission, clinical/FTO conclusion, publication claim, or business validation is inferred from the engineering outputs."
+    }
+  ],
+  "resource_summary": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "network_attempts": 0
+  },
+  "decision": "Retain the rights-policy repair and Philips r5/review-packet outputs as inspectable offline engineering evidence. Next obtain or authorize the rights-cleared semantic judgment source while preserving the frozen denominator and unjudged pairs."
+}
