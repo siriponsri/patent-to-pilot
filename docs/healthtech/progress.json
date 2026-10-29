@@ -4,7 +4,7 @@
   "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
   "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
   "g1_g2_run_start_commit": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
-  "latest_release_candidate": "b12ef95",
+  "latest_release_candidate": "1e4cc62",
   "root_statuses": {
     "HT-G1": "PARTIAL",
     "HT-G2": "PARTIAL_DEVELOPMENT_ONLY",
