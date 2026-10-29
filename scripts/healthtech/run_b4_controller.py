@@ -75,7 +75,12 @@ def _sources(runtime: dict, registry: dict) -> list[ProviderVisibleSource]:
         row = by_id.get(source_id)
         if row is None:
             raise ValueError(f"runtime source is absent from registry: {source_id}")
-        source_hash = row.get("payload_sha256") or row.get("normalized_sha256") or row.get("raw_html_sha256")
+        source_hash = (
+            row.get("payload_sha256")
+            or row.get("raw_json_sha256")
+            or row.get("normalized_sha256")
+            or row.get("raw_html_sha256")
+        )
         if not isinstance(source_hash, str) or len(source_hash) != 64:
             raise ValueError(f"runtime source lacks a usable hash: {source_id}")
         result.append(ProviderVisibleSource(
