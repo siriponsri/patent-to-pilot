@@ -1,0 +1,69 @@
+{
+  "status": "LOCAL_FORMAT_VERIFIED",
+  "source_repo": "https://github.com/allenai/scifact",
+  "repo_commit": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+  "data_url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz",
+  "license_url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/LICENSE.md",
+  "summary": {
+    "corpus_documents": 5183,
+    "claims_train": 809,
+    "claims_dev": 300,
+    "claims_test": 300,
+    "gold_label_counts_train_dev": {
+      "CONTRADICT": 265,
+      "SUPPORT": 508
+    },
+    "test_labels_present": false,
+    "files": {
+      "corpus.jsonl": {
+        "path": "data\\raw\\healthtech\\scifact\\release\\data\\corpus.jsonl",
+        "bytes": 8307875,
+        "sha256": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62"
+      },
+      "claims_train.jsonl": {
+        "path": "data\\raw\\healthtech\\scifact\\release\\data\\claims_train.jsonl",
+        "bytes": 175616,
+        "sha256": "f4c8fa82d8bd0653a9cc8d61a6ea48c25eacea64e90af5dbf390ebb1b74372f0"
+      },
+      "claims_dev.jsonl": {
+        "path": "data\\raw\\healthtech\\scifact\\release\\data\\claims_dev.jsonl",
+        "bytes": 65007,
+        "sha256": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217"
+      },
+      "claims_test.jsonl": {
+        "path": "data\\raw\\healthtech\\scifact\\release\\data\\claims_test.jsonl",
+        "bytes": 33769,
+        "sha256": "558930d75215c73f84a28fe538307d6d397c9de1ec7239514cf45f80d75d2ca3"
+      }
+    },
+    "rights": {
+      "claims_and_annotations": "CC BY 4.0",
+      "abstracts": "ODC-By 1.0",
+      "code": "Apache 2.0"
+    },
+    "limitations": [
+      "Official test labels are not present in the release.",
+      "SciFact evidence verification is a component task, not a device-patent truth label.",
+      "Runtime readers expose claim text and corpus documents, never gold evidence."
+    ]
+  },
+  "archive": {
+    "path": "data\\raw\\healthtech\\scifact\\data.tar.gz",
+    "bytes": 3115079,
+    "sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be"
+  },
+  "runtime_files": [
+    "corpus.jsonl",
+    "claims_test.jsonl"
+  ],
+  "evaluator_files": [
+    "claims_train.jsonl",
+    "claims_dev.jsonl"
+  ],
+  "rights_and_limits": [
+    "Claims and annotations are CC BY 4.0; abstracts are ODC-By 1.0; code is Apache 2.0.",
+    "The latest release URL is mutable; the local tarball and extracted file hashes are the pinned evidence.",
+    "Official test labels are absent, so this receipt does not claim reproduced held-out test scores.",
+    "SciFact verifies evidence claims as a component task and is not patent-device gold."
+  ]
+}

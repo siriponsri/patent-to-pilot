@@ -26,6 +26,14 @@ Synthetic regressions cover two-writer reservation races, commit-before-send, cr
 
 Next: produce a current-head SciFact differential and M3 freeze/evaluator receipts; only consider the sequential canary after current OpenRouter metadata/pricing, approved credential/credit, public-transfer rights, exact payload bounds, and balance/reconciliation gates pass. Keep paid branch `BLOCKED_LOCAL` until those gates are evidenced.
 
+## HT-NEXT-008 — 2026-10-29 SciFact current-head differential
+
+Status: `PASS_COMPONENT_ENGINEERING`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/README.md`.
+
+The pinned local SciFact release receipt passes with 5,183 corpus documents, 809 train claims, 300 dev claims, 300 test claims, and no public test labels. The local wrapper matches the exact pinned upstream evaluator on 3 authored valid cases across abstract label-only, abstract rationalized, sentence selection, and sentence label metrics. The upstream code was used from commit `68b98a56d93e0f9da0d2aab4e6c3294699a0f72e`; no third-party source or raw data was staged.
+
+This is evaluator parity only. It is not a held-out score, not patent-device semantic gold, and not clinical truth. Next freeze the HT-T2 prediction manifest and denominator rules before any component metrics are reported; continue M3 protocol/evaluator receipts offline.
+
 Audit follow-up: public regression selection now includes all published provider security modules; paired tests use mock-seeded tmp journals. Original 262-local/185-clean receipt remains a dated record. See `docs/healthtech/REPRODUCIBILITY_AUDIT.md` for corrected clean-checkout evidence. Research/product next actions above are unchanged.
 
 HT-NEXT-005 outcome: implementation commit `3177478c67f654f3f4d7c891e055a8ae72541162` passes the clean-checkout A/B/C backend suite with authored temporary Abbott and provenance fixtures, without ignored `results/healthtech` data or the model cache. The `displayable_fields` source-view leak is fixed and covered. Malformed manifest/evaluator surfaces are intentionally ignored by the adapter. Real local-corpus integration is `NOT_RUN`; this engineering result does not change Bridge, final-holdout, scientific, licensing, clinical/FTO, deployment, provider, or UI boundaries.

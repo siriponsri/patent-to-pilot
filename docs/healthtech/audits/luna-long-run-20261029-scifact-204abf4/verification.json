@@ -1,0 +1,45 @@
+{
+  "run_id": "luna-long-run-20261029-scifact-204abf4",
+  "tested_source_commit": "204abf415fe751c39d8f94684cfc123a7c64ae7a",
+  "status": "PASS_COMPONENT_ENGINEERING",
+  "provider_calls": 0,
+  "paid_cost_usd": 0,
+  "official_revision": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+  "official_license_sha256": "a253253598ed93afe5ea8f96be2bcbf6a7caf745ad3f0145ac847df8d13377fc",
+  "official_files": {
+    "verisci/evaluate/lib/data.py": "90d1c0d6c52a78c2893f13906095de544f8b3218965fe0bf1e7d874622732ce8",
+    "verisci/evaluate/lib/metrics.py": "b8669a1d36a05c76d2f5a06691cde4c4d81b939f42edd37b6703b58b6ee9946d"
+  },
+  "local_source_sha256": {
+    "scripts/healthtech/run_scifact_differential.py": "1b7b5e38430d5c2e056b777c215725331ee0f0b521282064cc40bdbe127725ae",
+    "scripts/healthtech/prepare_scifact.py": "891704ec23592da5285de678f03a58195a272e6595db7cc4917b5db582e5a4bc",
+    "src/patent_to_pilot/evaluation/healthtech/scifact.py": "fbbe881297d979fc057c882c1f2284d4faaea02537d850a6af089225d0774ff0",
+    "data/manifests/healthtech/scifact-release-20261027-r1.json": "2e555b6ce83f4b43f2343cc159949b12f89382d4adbf1066b62aacc26cd8b9fe",
+    "data/raw/healthtech/scifact/data.tar.gz": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be"
+  },
+  "checks": [
+    {
+      "name": "local_release_receipt",
+      "command": "python -B scripts/healthtech/prepare_scifact.py data/raw/healthtech/scifact/release/data ... --archive data/raw/healthtech/scifact/data.tar.gz",
+      "status": "PASS",
+      "observed": "5183 corpus documents; 809 train; 300 dev; 300 test; test labels absent"
+    },
+    {
+      "name": "official_differential",
+      "command": "python -B scripts/healthtech/run_scifact_differential.py --official-root <temporary exact pinned checkout> --output receipt.json",
+      "status": "PASS",
+      "observed": "3 valid cases; 4 metrics per case; all parity flags true"
+    }
+  ],
+  "rights": {
+    "claims_and_annotations": "CC BY 4.0",
+    "abstracts": "ODC-By 1.0",
+    "code": "Apache 2.0",
+    "redistribution": "raw third-party files not staged"
+  },
+  "limitations": [
+    "Valid-input differential only; local strict malformed-input guards are intentionally stricter.",
+    "No official test labels in the pinned release; no held-out test score claimed.",
+    "SciFact remains a separate evidence-verification component, not patent-device semantic gold."
+  ]
+}
