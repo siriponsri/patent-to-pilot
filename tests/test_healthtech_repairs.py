@@ -4,6 +4,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from concurrent.futures import ThreadPoolExecutor
 import json
+import hashlib
 import threading
 
 import pytest
@@ -16,7 +17,13 @@ from patent_to_pilot.evaluation.healthtech.provenance import (
     CohortProvenanceError,
     verify_cohort_provenance,
 )
-from patent_to_pilot.healthtech.engine import DossierInput, export_markdown, run_dossier
+from patent_to_pilot.healthtech.contracts import content_hash
+from patent_to_pilot.healthtech.engine import (
+    DossierInput,
+    export_markdown,
+    run_dossier,
+    serialize_dossier,
+)
 from patent_to_pilot.healthtech import history as history_module
 from patent_to_pilot.healthtech.abbott import (
     build_abbott_case_inputs,
@@ -31,6 +38,7 @@ from patent_to_pilot.healthtech.history import (
     save_version,
 )
 from patent_to_pilot.healthtech.rights import RightsBoundaryError
+from patent_to_pilot.healthtech.sources import field_evidence
 from scripts.healthtech.fetch_boston_watchman_cohort import PRODUCTS, _validate_product_rows
 from scripts.healthtech.fetch_public_device_cohort import _rights_policy_id, _source_registry_row
 from scripts.healthtech import run_real_baselines as baselines
@@ -148,22 +156,41 @@ def _write_synthetic_abbott_cohort(tmp_path: Path) -> Path:
         "raw_html_sha256": "c" * 64,
         "runtime_allowed": False,
     })
-    (cohort / "raw" / "abbott-patents.html").write_text("".join(html_sections), encoding="utf-8")
-    _write_json(cohort / "runtime.json", {
+    disclosure_path = cohort / "raw" / "abbott-patents.html"
+    disclosure_path.write_text("".join(html_sections), encoding="utf-8")
+    registry[-1]["raw_html_sha256"] = hashlib.sha256(disclosure_path.read_bytes()).hexdigest()
+    runtime = {
         "format": "ht-runtime-public-device-cohort-v1",
         "retrieved_at_utc": "2026-10-28T00:00:00+00:00",
         "devices": devices,
         "patents": patents,
         "permitted_metadata": ["PMA facts", "patent title/abstract/claims"],
         "runtime_exclusions": ["disclosure references", "evaluator gold/reference links", "family labels", "split answers"],
-    })
-    _write_json(cohort / "source_registry.json", {
+    }
+    registry_payload = {
         "format": "ht-source-registry-v1",
         "sources": registry,
         "separation": "evaluator-only disclosure source is not included in runtime.json",
+    }
+    _write_json(cohort / "runtime.json", runtime)
+    _write_json(cohort / "source_registry.json", registry_payload)
+    raw_files = []
+    for path in [*(cohort / "raw" / "pma").glob("*.json"), disclosure_path]:
+        payload = path.read_bytes()
+        raw_files.append({
+            "path": path.relative_to(cohort).as_posix(),
+            "size_bytes": len(payload),
+            "sha256": hashlib.sha256(payload).hexdigest(),
+        })
+    _write_json(cohort / "manifest.json", {
+        "status": "SYNTHETIC_FIXTURE",
+        "integrity_format": "ht-runtime-integrity-v1",
+        "source_registry": "source_registry.json",
+        "runtime_path": "runtime.json",
+        "runtime_sha256": content_hash(runtime),
+        "source_registry_sha256": content_hash(registry_payload),
+        "raw_files": raw_files,
     })
-    # Deliberately malformed: the adapter contract excludes both surfaces.
-    (cohort / "manifest.json").write_text("manifest is not an adapter input", encoding="utf-8")
     (cohort / "evaluator" / "references.json").write_text("evaluator gold is not an adapter input", encoding="utf-8")
     return cohort
 
@@ -173,7 +200,7 @@ def _write_synthetic_provenance_cohort(tmp_path: Path, *, typed_rights: bool) ->
     cohort = tmp_path / ("typed-cohort" if typed_rights else "legacy-cohort")
     (cohort / "evaluator").mkdir(parents=True)
     disclosure = {
-        "source_id": "synthetic-product-disclosure",
+        "source_id": "abbott-product-patent-disclosures",
         "source_type": "independent_disclosure",
         "url": "urn:synthetic:disclosure",
         "revision": "fixture-v1",
@@ -208,7 +235,7 @@ def _write_synthetic_provenance_cohort(tmp_path: Path, *, typed_rights: bool) ->
         "disclosure_evidence": [{
             "evidence_id": "DISC-Q1-US1234567B2",
             "query_id": "Q1",
-            "source_id": "synthetic-product-disclosure",
+            "source_id": "abbott-product-patent-disclosures",
             "locator": "row:Q1",
             "quoted_span": "Product lists US1234567B2",
             "support_basis": "Authored synthetic fixture",
@@ -614,6 +641,90 @@ def test_rights_boundary_blocks_restricted_product_surfaces_and_preserves_local_
     assert "Rights basis" in export_markdown(dossier)
 
 
+def test_external_exports_project_evidence_and_source_payloads_by_field_rights(tmp_path):
+    cohort = _write_synthetic_abbott_cohort(tmp_path)
+    rights_matrix = json.loads(
+        (ROOT / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json")
+        .read_text(encoding="utf-8")
+    )
+    for policy in rights_matrix["sources"]:
+        policy["intended_use"]["product_display"] = "ALLOWED"
+        policy["intended_use"]["redistribution"] = "ALLOWED"
+        policy["displayable_fields"] = ["trade_name"] if policy["source_id"] == "openfda-pma-records" else []
+    rights_matrix_path = tmp_path / "rights-matrix.json"
+    _write_json(rights_matrix_path, rights_matrix)
+    input_data = next(iter(build_abbott_case_inputs(cohort, rights_matrix_path=rights_matrix_path).values()))
+    pma_source = next(source for source in input_data.sources if source.source.source_type == "regulatory_record")
+    input_data = input_data.model_copy(update={
+        "evidence": input_data.evidence + [field_evidence(pma_source, "openfda", "FACT-RESTRICTED-OPENFDA")]
+    })
+    dossier, _, _ = run_dossier(input_data, run_id="external-rights", code_commit="test")
+
+    local_markdown = export_markdown(dossier, language="en")
+    assert "restricted-MitraClip" in local_markdown
+    for language in ("en", "th"):
+        external_markdown = export_markdown(dossier, language=language, purpose="product_display")
+        assert "restricted-MitraClip" not in external_markdown
+        assert "trade_name: MitraClip" in external_markdown
+    external_json = serialize_dossier(dossier, purpose="redistribution")
+    encoded = json.dumps(external_json, ensure_ascii=False)
+    assert "restricted-MitraClip" not in encoded
+    assert external_json["sources"][0]["payload"] == {"trade_name": "MitraClip"}
+    assert any(item["structured_field"] == "trade_name" for item in external_json["evidence"])
+    assert all(item["evidence_id"] != "FACT-RESTRICTED-OPENFDA" for item in external_json["evidence"])
+
+
+@pytest.mark.parametrize(
+    ("mutation", "message"),
+    [
+        ("runtime", "runtime JSON hash"),
+        ("raw", "raw file (size|hash)"),
+        ("registry", "source registry hash"),
+        ("missing", "raw file is missing"),
+        ("metadata", "source_registry_sha256"),
+    ],
+)
+def test_abbott_adapter_rejects_frozen_cohort_mutations(tmp_path, mutation, message):
+    cohort = _write_synthetic_abbott_cohort(tmp_path)
+    if mutation == "runtime":
+        runtime_path = cohort / "runtime.json"
+        runtime = json.loads(runtime_path.read_text(encoding="utf-8"))
+        runtime["devices"][0]["trade_name"] = "MUTATED DEVICE"
+        _write_json(runtime_path, runtime)
+    elif mutation == "raw":
+        raw_path = cohort / "raw" / "pma" / "P100009.json"
+        raw_path.write_bytes(raw_path.read_bytes() + b"\nmutated")
+    elif mutation == "registry":
+        registry_path = cohort / "source_registry.json"
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        registry["sources"][0]["revision"] = "stale-revision"
+        _write_json(registry_path, registry)
+    elif mutation == "missing":
+        (cohort / "raw" / "abbott-patents.html").unlink()
+    else:
+        manifest_path = cohort / "manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest.pop("source_registry_sha256")
+        _write_json(manifest_path, manifest)
+
+    with pytest.raises(ValueError, match=message):
+        build_abbott_case_inputs(cohort)
+
+
+def test_abbott_adapter_rejects_duplicate_ids_after_manifest_reseal(tmp_path):
+    cohort = _write_synthetic_abbott_cohort(tmp_path)
+    runtime_path = cohort / "runtime.json"
+    runtime = json.loads(runtime_path.read_text(encoding="utf-8"))
+    runtime["devices"].append(dict(runtime["devices"][0]))
+    _write_json(runtime_path, runtime)
+    manifest_path = cohort / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["runtime_sha256"] = content_hash(runtime)
+    _write_json(manifest_path, manifest)
+    with pytest.raises(ValueError, match="runtime devices repeat"):
+        build_abbott_case_inputs(cohort)
+
+
 def test_boston_marking_parser_is_score_independent_and_row_bounded():
     text = (
         "WATCHMAN FLX LAAC Device\n"
@@ -685,6 +796,21 @@ def test_development_cohorts_have_per_link_disclosure_provenance(tmp_path):
         assert report["counts"]["covered_pairs"] == expected_pairs
         assert report["counts"]["final_holdout_queries"] == 0
         assert report["rights_binding"] == expected_binding
+
+
+@pytest.mark.parametrize("policy_id", ["unknown-policy", "google-patents-pages", ""])
+def test_provenance_does_not_verify_unknown_or_mismatched_typed_rights(tmp_path, policy_id):
+    cohort = _write_synthetic_provenance_cohort(tmp_path, typed_rights=True)
+    registry_path = cohort / "source_registry.json"
+    registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    registry["sources"][0]["rights_policy_id"] = policy_id
+    _write_json(registry_path, registry)
+    report = verify_cohort_provenance(cohort)
+    assert report["status"] == "PASS_WITH_UNRESOLVED_RIGHTS"
+    assert report["rights_binding"] == "UNRESOLVED_TYPED_POLICY"
+    assert report["rights_policy_ids"] == []
+    assert report["unresolved_rights"]
+    assert report["unresolved_rights"][0]["source_id"] == "abbott-product-patent-disclosures"
 
 
 def test_provenance_verifier_rejects_an_uncovered_reference_pair(tmp_path):

@@ -6,8 +6,11 @@ public source snapshots. It never reads evaluator reference relations.
 from __future__ import annotations
 
 from datetime import date, datetime, timezone
+import hashlib
 import json
 from pathlib import Path
+from pathlib import PurePosixPath
+import re
 from typing import Any
 
 from patent_to_pilot.healthtech.contracts import (
@@ -28,10 +31,18 @@ from scripts.healthtech.fetch_public_device_cohort import PRODUCTS, _product_dis
 
 DISCLOSURE_SOURCE_ID = "abbott-product-patent-disclosures"
 COHORT_FORMAT = "ht-runtime-public-device-cohort-v1"
+INTEGRITY_FORMAT = "ht-runtime-integrity-v1"
+
+
+class CohortIntegrityError(ValueError):
+    """Raised when a frozen runtime cohort does not match its manifest."""
 
 
 def _read_json(path: Path) -> dict[str, Any]:
-    value = json.loads(path.read_text(encoding="utf-8"))
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise CohortIntegrityError(f"could not read JSON artifact: {path}") from exc
     if not isinstance(value, dict):
         raise ValueError(f"expected JSON object: {path}")
     return value
@@ -57,7 +68,159 @@ def _registry_by_id(registry: dict[str, Any]) -> dict[str, dict[str, Any]]:
     sources = registry.get("sources")
     if not isinstance(sources, list) or not all(isinstance(item, dict) for item in sources):
         raise ValueError("source registry is missing sources")
-    return {str(item["source_id"]): item for item in sources}
+    result: dict[str, dict[str, Any]] = {}
+    for item in sources:
+        source_id = item.get("source_id")
+        if not isinstance(source_id, str) or not source_id:
+            raise CohortIntegrityError("source registry contains an invalid source_id")
+        if source_id in result:
+            raise CohortIntegrityError(f"source registry repeats {source_id}")
+        result[source_id] = item
+    return result
+
+
+def _safe_runtime_path(cohort: Path, value: Any, *, label: str) -> Path:
+    if not isinstance(value, str) or not value.strip():
+        raise CohortIntegrityError(f"{label} must be a nonempty relative path")
+    normalized = value.replace("\\", "/")
+    relative = PurePosixPath(normalized)
+    blocked_parts = {"evaluator", "gold", "reference", "references", "split", "holdout"}
+    if (
+        relative.is_absolute()
+        or not relative.parts
+        or ":" in relative.parts[0]
+        or ".." in relative.parts
+        or any(part.lower() in blocked_parts for part in relative.parts)
+    ):
+        raise CohortIntegrityError(f"{label} is outside the runtime input boundary: {value}")
+    root = cohort.resolve()
+    path = (root / Path(*relative.parts)).resolve()
+    try:
+        path.relative_to(root)
+    except ValueError as exc:
+        raise CohortIntegrityError(f"{label} escapes the cohort root: {value}") from exc
+    return path
+
+
+def _validate_sha256(value: Any, *, label: str) -> str:
+    if not isinstance(value, str) or not re.fullmatch(r"[a-f0-9]{64}", value):
+        raise CohortIntegrityError(f"{label} must be a lowercase SHA-256")
+    return value
+
+
+def _validate_runtime_integrity(cohort: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    manifest = _read_json(cohort / "manifest.json")
+    if manifest.get("integrity_format") != INTEGRITY_FORMAT:
+        raise CohortIntegrityError("manifest is missing the required runtime integrity format")
+    runtime_path = _safe_runtime_path(cohort, manifest.get("runtime_path", "runtime.json"), label="runtime_path")
+    registry_path = _safe_runtime_path(
+        cohort, manifest.get("source_registry", "source_registry.json"), label="source_registry"
+    )
+    runtime = _read_json(runtime_path)
+    registry = _read_json(registry_path)
+    expected_runtime = _validate_sha256(manifest.get("runtime_sha256"), label="runtime_sha256")
+    expected_registry = _validate_sha256(
+        manifest.get("source_registry_sha256"), label="source_registry_sha256"
+    )
+    if content_hash(runtime) != expected_runtime:
+        raise CohortIntegrityError("runtime JSON hash does not match manifest")
+    if content_hash(registry) != expected_registry:
+        raise CohortIntegrityError("source registry hash does not match manifest")
+
+    raw_files = manifest.get("raw_files")
+    if not isinstance(raw_files, list) or not raw_files:
+        raise CohortIntegrityError("manifest raw_files must be a nonempty list")
+    raw_by_path: dict[str, dict[str, Any]] = {}
+    for index, item in enumerate(raw_files):
+        if not isinstance(item, dict):
+            raise CohortIntegrityError(f"manifest raw_files[{index}] must be an object")
+        raw_path = _safe_runtime_path(cohort, item.get("path"), label=f"raw_files[{index}].path")
+        relative = raw_path.relative_to(cohort.resolve()).as_posix()
+        if relative in raw_by_path:
+            raise CohortIntegrityError(f"manifest raw_files repeats {relative}")
+        size = item.get("size_bytes", item.get("bytes"))
+        if not isinstance(size, int) or isinstance(size, bool) or size < 0:
+            raise CohortIntegrityError(f"manifest raw_files[{index}] has invalid size")
+        expected_sha = _validate_sha256(item.get("sha256"), label=f"raw_files[{index}].sha256")
+        if not raw_path.is_file():
+            raise CohortIntegrityError(f"manifest raw file is missing: {relative}")
+        payload = raw_path.read_bytes()
+        if len(payload) != size:
+            raise CohortIntegrityError(f"raw file size does not match manifest: {relative}")
+        actual_sha = hashlib.sha256(payload).hexdigest()
+        if actual_sha != expected_sha:
+            raise CohortIntegrityError(f"raw file hash does not match manifest: {relative}")
+        raw_by_path[relative] = {**item, "path": relative, "sha256": expected_sha}
+
+    if runtime.get("format") != COHORT_FORMAT:
+        raise ValueError("unsupported runtime cohort format")
+    devices = runtime.get("devices")
+    patents = runtime.get("patents")
+    if not isinstance(devices, list) or not all(isinstance(item, dict) for item in devices):
+        raise ValueError("runtime cohort is missing devices")
+    if not isinstance(patents, list) or not all(isinstance(item, dict) for item in patents):
+        raise ValueError("runtime cohort is missing patents")
+    registry_by_id = _registry_by_id(registry)
+    query_ids: set[str] = set()
+    runtime_source_ids: set[str] = set()
+    for device in devices:
+        query_id = device.get("query_id")
+        source_id = device.get("source_id")
+        if not isinstance(query_id, str) or not query_id:
+            raise CohortIntegrityError("runtime device is missing query_id")
+        if query_id in query_ids:
+            raise CohortIntegrityError(f"runtime devices repeat {query_id}")
+        query_ids.add(query_id)
+        if not isinstance(source_id, str) or not source_id:
+            raise CohortIntegrityError(f"runtime device {query_id} is missing source_id")
+        if source_id in runtime_source_ids:
+            raise CohortIntegrityError(f"runtime inputs repeat source_id {source_id}")
+        runtime_source_ids.add(source_id)
+        row = registry_by_id.get(source_id)
+        if row is None or row.get("source_type") != "regulatory_record":
+            raise CohortIntegrityError(f"runtime device source is not a registered regulatory record: {source_id}")
+        pma_number = device.get("pma_number")
+        if not isinstance(pma_number, str) or not pma_number:
+            raise CohortIntegrityError(f"runtime device {query_id} is missing pma_number")
+        if f"raw/pma/{pma_number}.json" not in raw_by_path:
+            raise CohortIntegrityError(f"manifest does not pin PMA raw input: {pma_number}")
+
+    patent_ids: set[str] = set()
+    for patent in patents:
+        try:
+            canonical = canonical_patent_id(str(patent.get("patent_id_canonical")))
+        except ValueError as exc:
+            raise CohortIntegrityError("runtime patent has an invalid canonical ID") from exc
+        if canonical in patent_ids:
+            raise CohortIntegrityError(f"runtime patents repeat {canonical}")
+        patent_ids.add(canonical)
+        source_id = patent.get("source_id")
+        if not isinstance(source_id, str) or not source_id:
+            raise CohortIntegrityError(f"runtime patent {canonical} is missing source_id")
+        if source_id in runtime_source_ids:
+            raise CohortIntegrityError(f"runtime inputs repeat source_id {source_id}")
+        runtime_source_ids.add(source_id)
+        row = registry_by_id.get(source_id)
+        if row is None or row.get("source_type") != "patent_document":
+            raise CohortIntegrityError(f"runtime patent source is not a registered patent document: {source_id}")
+        for field in ("source_revision", "source_url", "raw_html_sha256", "normalized_sha256"):
+            if patent.get(field) != row.get({
+                "source_revision": "revision",
+                "source_url": "url",
+                "raw_html_sha256": "raw_html_sha256",
+                "normalized_sha256": "normalized_sha256",
+            }[field]):
+                raise CohortIntegrityError(f"runtime patent {canonical} disagrees with registry field {field}")
+
+    disclosure = registry_by_id.get(DISCLOSURE_SOURCE_ID)
+    if disclosure is None or disclosure.get("source_type") != "independent_disclosure":
+        raise CohortIntegrityError("source registry is missing the Abbott disclosure source")
+    disclosure_file = raw_by_path.get("raw/abbott-patents.html")
+    if disclosure_file is None:
+        raise CohortIntegrityError("manifest does not pin the Abbott disclosure page")
+    if disclosure.get("raw_html_sha256") != disclosure_file["sha256"]:
+        raise CohortIntegrityError("Abbott disclosure registry hash disagrees with manifest raw file")
+    return manifest, runtime, registry
 
 
 def _pma_source(cohort: Path, device: dict[str, Any], registry: dict[str, Any], rights) -> SourcePayload:
@@ -217,10 +380,7 @@ def build_abbott_case_inputs(
 ) -> dict[str, DossierInput]:
     """Build one public-source DossierInput per Abbott device without evaluator reads."""
     cohort = Path(cohort_dir)
-    runtime = _read_json(cohort / "runtime.json")
-    registry = _read_json(cohort / "source_registry.json")
-    if runtime.get("format") != COHORT_FORMAT:
-        raise ValueError("unsupported runtime cohort format")
+    _, runtime, registry = _validate_runtime_integrity(cohort)
     devices = runtime.get("devices")
     if not isinstance(devices, list) or not all(isinstance(item, dict) for item in devices):
         raise ValueError("runtime cohort is missing devices")
@@ -350,8 +510,7 @@ def promote_disclosed_links(dossier: DossierVersion, dossier_input: DossierInput
 def build_abbott_development_protocol(cohort_dir: str | Path) -> dict[str, Any]:
     """Freeze a development-only universe, distractor rule, groups, and split."""
     cohort = Path(cohort_dir)
-    runtime = _read_json(cohort / "runtime.json")
-    registry = _read_json(cohort / "source_registry.json")
+    _, runtime, registry = _validate_runtime_integrity(cohort)
     cases = build_abbott_case_inputs(cohort)
     universe = sorted(canonical_patent_id(str(item["patent_id_canonical"])) for item in runtime["patents"])
     disclosed_by_query = {query_id: sorted(disclosed_patent_ids(case)) for query_id, case in sorted(cases.items())}

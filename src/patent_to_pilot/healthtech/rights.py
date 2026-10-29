@@ -5,7 +5,12 @@ from pathlib import Path
 import json
 from typing import Any, Literal
 
-from patent_to_pilot.healthtech.contracts import DossierVersion, SourcePayload, SourceRights
+from patent_to_pilot.healthtech.contracts import (
+    DossierVersion,
+    EvidenceItem,
+    SourcePayload,
+    SourceRights,
+)
 
 
 ExportPurpose = Literal["local_research", "product_display", "redistribution"]
@@ -166,6 +171,78 @@ def limit_displayable_payload(source: SourcePayload, payload: Any, *, purpose: E
             "displayable_fields require a mapping payload"
         )
     return {key: value for key, value in payload.items() if key in rights.displayable_fields}
+
+
+def _field_value(payload: Any, field: str) -> Any:
+    value = payload
+    for part in field.split("."):
+        if not part or not isinstance(value, dict) or part not in value:
+            raise KeyError(field)
+        value = value[part]
+    return value
+
+
+def _evidence_field(evidence: EvidenceItem) -> str | None:
+    if evidence.structured_field:
+        return evidence.structured_field
+    if evidence.locator.startswith("field:"):
+        field = evidence.locator.removeprefix("field:").strip()
+        return field or None
+    return None
+
+
+def project_evidence(
+    evidence: list[EvidenceItem],
+    sources: list[SourcePayload],
+    *,
+    purpose: ExportPurpose,
+) -> tuple[list[EvidenceItem], list[str]]:
+    """Project evidence for an export without releasing unreviewed values.
+
+    Local research preserves the complete evidence payload. External purposes
+    require a reviewed structured field, rebuild the statement from the source
+    payload, and omit quote-only or otherwise unsupported evidence.
+    """
+    if purpose == "local_research":
+        return list(evidence), []
+
+    source_by_id = {source.source.source_id: source for source in sources}
+    projected: list[EvidenceItem] = []
+    diagnostics: list[str] = []
+    for item in evidence:
+        source = source_by_id.get(item.source_id)
+        if source is None:
+            diagnostics.append(
+                f"External export omitted evidence {item.evidence_id}: source is unavailable."
+            )
+            continue
+        field = _evidence_field(item)
+        if field is None:
+            diagnostics.append(
+                f"External export omitted evidence {item.evidence_id}: no reviewed field basis."
+            )
+            continue
+        try:
+            enforce_displayable_field(source, field, purpose=purpose)
+            value = _field_value(source.payload, field)
+        except (KeyError, RightsBoundaryError):
+            diagnostics.append(
+                f"External export omitted evidence {item.evidence_id}: field {field} is not reviewed for {purpose}."
+            )
+            continue
+        if isinstance(value, str):
+            rendered = value
+        else:
+            rendered = json.dumps(value, ensure_ascii=False, sort_keys=True)
+        projected.append(item.model_copy(update={
+            "quoted_span": None,
+            "structured_field": field,
+            "structured_value": value,
+            "statement": f"{field}: {rendered}",
+            "support_basis": f"Reviewed structured source field: {field}.",
+            "extraction_method": "structured_field",
+        }))
+    return projected, diagnostics
 
 
 def enforce_dossier_rights(dossier: DossierVersion, *, purpose: ExportPurpose) -> None:

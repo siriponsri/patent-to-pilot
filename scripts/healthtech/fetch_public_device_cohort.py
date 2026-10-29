@@ -468,18 +468,23 @@ def main() -> None:
         _write_json(output / relative, payload, accounting)
     manifest = {
         "status": "PUBLIC_DEVICE_DISCLOSURE_COHORT_ACQUIRED",
+        "integrity_format": "ht-runtime-integrity-v1",
         "retrieved_at_utc": retrieved_at.isoformat(),
         "products": [product["label"] for product in PRODUCTS],
         "devices": len(pma_devices),
         "patents": len(patents),
         "reference_pairs": sum(len(ids) for ids in references.values()),
-        "raw_files": raw_files + list(patent_files.values()),
+        "raw_files": [
+            {**item, "size_bytes": int(item["bytes"])}
+            for item in raw_files + list(patent_files.values())
+        ],
         "source_registry": "source_registry.json",
         "runtime_path": "runtime.json",
         "evaluator_path": "evaluator/references.json",
         "groups_path": "groups.json",
         "split_path": "split_manifest.json",
         "runtime_sha256": content_hash(runtime),
+        "source_registry_sha256": content_hash(source_registry),
         "references_sha256": content_hash(references_payload),
         "universe_sha256": content_hash([patent["patent_id_canonical"] for patent in patents]),
         "cohort_sha256": content_hash(device_ids),

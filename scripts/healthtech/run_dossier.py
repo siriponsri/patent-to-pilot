@@ -6,13 +6,14 @@ import subprocess
 import sys
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[2]/"src"))
-from patent_to_pilot.healthtech.engine import DossierInput, export_markdown, run_dossier
+from patent_to_pilot.healthtech.engine import DossierInput, export_markdown, run_dossier, serialize_dossier
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input",type=Path)
     parser.add_argument("output",type=Path,help="fresh directory; existing outputs are never overwritten")
+    parser.add_argument("--purpose", choices=("local_research", "product_display", "redistribution"), default="local_research")
     args=parser.parse_args()
     data=DossierInput.model_validate_json(args.input.read_text(encoding="utf-8"))
     if args.output.exists():
@@ -27,10 +28,10 @@ def main():
     dossier,events,manifest=run_dossier(data,run_id=args.output.name,code_commit=commit)
     # Exclusive mkdir: a concurrent run cannot overwrite an existing project.
     args.output.mkdir(parents=True,exist_ok=False)
-    (args.output/"dossier.json").write_text(dossier.model_dump_json(indent=2)+"\n",encoding="utf-8")
-    (args.output/"dossier.md").write_text(export_markdown(dossier),encoding="utf-8")
-    (args.output/"dossier.en.md").write_text(export_markdown(dossier, language="en"),encoding="utf-8")
-    (args.output/"dossier.th.md").write_text(export_markdown(dossier, language="th"),encoding="utf-8")
+    (args.output/"dossier.json").write_text(json.dumps(serialize_dossier(dossier, purpose=args.purpose), ensure_ascii=False, indent=2)+"\n",encoding="utf-8")
+    (args.output/"dossier.md").write_text(export_markdown(dossier, purpose=args.purpose),encoding="utf-8")
+    (args.output/"dossier.en.md").write_text(export_markdown(dossier, language="en", purpose=args.purpose),encoding="utf-8")
+    (args.output/"dossier.th.md").write_text(export_markdown(dossier, language="th", purpose=args.purpose),encoding="utf-8")
     (args.output/"acquisition_events.jsonl").write_text("\n".join(e.model_dump_json() for e in events)+"\n",encoding="utf-8")
     (args.output/"manifest.json").write_text(manifest.model_dump_json(indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"status":"ENGINEERING_DRAFT","output":str(args.output),"candidates":len(dossier.candidates),

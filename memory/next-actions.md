@@ -19,3 +19,13 @@ Remaining: Bridge or equivalent rights-cleared main corpus, final holdout/genera
 Audit follow-up: public regression selection now includes all published provider security modules; paired tests use mock-seeded tmp journals. Original 262-local/185-clean receipt remains a dated record. See `docs/healthtech/REPRODUCIBILITY_AUDIT.md` for corrected clean-checkout evidence. Research/product next actions above are unchanged.
 
 HT-NEXT-005 outcome: implementation commit `3177478c67f654f3f4d7c891e055a8ae72541162` passes the clean-checkout A/B/C backend suite with authored temporary Abbott and provenance fixtures, without ignored `results/healthtech` data or the model cache. The `displayable_fields` source-view leak is fixed and covered. Malformed manifest/evaluator surfaces are intentionally ignored by the adapter. Real local-corpus integration is `NOT_RUN`; this engineering result does not change Bridge, final-holdout, scientific, licensing, clinical/FTO, deployment, provider, or UI boundaries.
+
+## HT-NEXT-006 — 2026-10-29 long-run continuation
+
+Status: `PASS_ENGINEERING` for M1 plus offline M3/M6 development work. Canonical audit: `docs/healthtech/audits/luna-long-run-20261029-f123-889958e/README.md`.
+
+Implemented F1/F2/F3: external Markdown/JSON/CLI exports now project source fields and evidence by purpose; Abbott builders require a versioned frozen runtime/source/raw-file integrity envelope and reject runtime, registry, raw-file, missing-file, malformed-metadata, and duplicate-ID mutations; provenance resolves typed policy IDs against the reviewed rights matrix and reports unknown/blank/mismatched IDs as unresolved instead of verified.
+
+Fresh real local work used a derived frozen copy of the ignored Abbott cohort, leaving the original untouched. The adapter built 3 cases with 41 patents each; provenance covered 61/61 disclosed pairs but remained `PASS_WITH_LEGACY_RIGHTS` for the old cohort registry. Fresh dossiers and an offline HT-B0a/B0b/B1/B2/B3 frontier ran with 0 provider calls and $0 paid cost. Results remain development-only: 3 devices, 41 patents, 61 disclosed pairs, no final holdout, two exact-patent groups, one company, and `NOT_ESTIMABLE` generalization uncertainty.
+
+Remaining: review the M4 OpenRouter readiness seam and approved credential/credit state without reading secrets, then stop or run only the sequential canary within the cumulative $8 authorization if all gates pass. Do not treat the offline frontier as a final study, do not reopen the Bridge blocker, and do not start Claude UI, deployment, outreach, clinical/FTO, or public data release.

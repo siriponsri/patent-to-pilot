@@ -11,7 +11,7 @@ _REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_REPO_ROOT))
 sys.path.insert(0, str(_REPO_ROOT / "src"))
 from patent_to_pilot.healthtech.abbott import build_abbott_case_inputs, promote_disclosed_links
-from patent_to_pilot.healthtech.engine import export_markdown, run_dossier
+from patent_to_pilot.healthtech.engine import export_markdown, run_dossier, serialize_dossier
 from patent_to_pilot.healthtech.history import append_user_edits, history_manifest, save_version, select_version, source_view
 from patent_to_pilot.healthtech.rights import source_rights_summary
 
@@ -109,6 +109,7 @@ def main() -> None:
     parser.add_argument("--protocol", type=Path)
     parser.add_argument("--rights-matrix", type=Path)
     parser.add_argument("--code-commit", default="working-tree")
+    parser.add_argument("--purpose", choices=("local_research", "product_display", "redistribution"), default="local_research")
     args = parser.parse_args()
     if args.output.exists():
         parser.error("output already exists; choose a fresh directory")
@@ -120,16 +121,16 @@ def main() -> None:
         case_dir.mkdir()
         dossier, events, engine_manifest = run_dossier(input_data, run_id=f"{args.output.name}-{query_id}", code_commit=args.code_commit)
         dossier = promote_disclosed_links(dossier, input_data)
-        _write_json(case_dir / "dossier.json", dossier.model_dump(mode="json"))
+        _write_json(case_dir / "dossier.json", serialize_dossier(dossier, purpose=args.purpose))
         _write_json(case_dir / "engine_manifest.json", engine_manifest.model_dump(mode="json"))
         (case_dir / "acquisition_events.jsonl").write_text(
             "".join(json.dumps(event.model_dump(mode="json"), ensure_ascii=False, sort_keys=True) + "\n" for event in events),
             encoding="utf-8",
         )
         for language, filename in (("auto", "dossier.md"), ("en", "dossier.en.md"), ("th", "dossier.th.md")):
-            (case_dir / filename).write_text(export_markdown(dossier, language=language), encoding="utf-8")
+            (case_dir / filename).write_text(export_markdown(dossier, language=language, purpose=args.purpose), encoding="utf-8")
         source_id = input_data.query.selected_comparator_source_id
-        _write_json(case_dir / "source-view.json", source_view(dossier, source_id))
+        _write_json(case_dir / "source-view.json", source_view(dossier, source_id, purpose=args.purpose))
         history_dir = case_dir / "history"
         save_version(history_dir, dossier)
         edited = append_user_edits(
@@ -140,10 +141,10 @@ def main() -> None:
         export_dir = case_dir / "export-v2"
         export_dir.mkdir()
         selected = select_version(history_dir, 2)
-        _write_json(export_dir / "dossier.json", selected.model_dump(mode="json"))
-        (export_dir / "dossier.md").write_text(export_markdown(selected), encoding="utf-8")
-        (export_dir / "dossier.en.md").write_text(export_markdown(selected, language="en"), encoding="utf-8")
-        (export_dir / "dossier.th.md").write_text(export_markdown(selected, language="th"), encoding="utf-8")
+        _write_json(export_dir / "dossier.json", serialize_dossier(selected, purpose=args.purpose))
+        (export_dir / "dossier.md").write_text(export_markdown(selected, purpose=args.purpose), encoding="utf-8")
+        (export_dir / "dossier.en.md").write_text(export_markdown(selected, language="en", purpose=args.purpose), encoding="utf-8")
+        (export_dir / "dossier.th.md").write_text(export_markdown(selected, language="th", purpose=args.purpose), encoding="utf-8")
         _write_json(case_dir / "case-manifest.json", _case_manifest(dossier, events, engine_manifest, input_data, history_dir, protocol))
         print(json.dumps({
             "query_id": query_id,

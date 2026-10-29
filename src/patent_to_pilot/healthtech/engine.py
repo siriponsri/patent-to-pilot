@@ -16,7 +16,14 @@ from patent_to_pilot.healthtech.contracts import (AcquisitionBudget, Acquisition
     SourcePayload, canonical_patent_id, content_hash)
 from patent_to_pilot.healthtech.provenance import check_evidence
 from patent_to_pilot.healthtech.policies import fixed_hybrid_rerank
-from patent_to_pilot.healthtech.rights import ExportPurpose, enforce_dossier_rights, source_rights_summary
+from patent_to_pilot.healthtech.rights import (
+    ExportPurpose,
+    RightsBoundaryError,
+    enforce_dossier_rights,
+    limit_displayable_payload,
+    project_evidence,
+    source_rights_summary,
+)
 from patent_to_pilot.ingestion.pls import PatentDocument
 from patent_to_pilot.retrieval.fts import FTSIndex
 
@@ -220,6 +227,9 @@ def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", 
     """Readable, editable export; literals escape table syntax and raw HTML."""
     import html
     enforce_dossier_rights(dossier, purpose=purpose)
+    evidence, evidence_diagnostics = project_evidence(
+        dossier.evidence, dossier.sources, purpose=purpose
+    )
     def cell(value):
         return html.escape(str(value)).replace("|", "&#124;").replace("\n", " ").replace("\r", " ")
     if language not in {"auto", "en", "th"}:
@@ -235,11 +245,12 @@ def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", 
         "", "## หลักฐานจากต้นทาง" if th else "## Source evidence", "",
         "| Statement | Kind | Source / revision | Locator | Integrity check |",
         "|---|---|---|---|---|"]
-    for e in dossier.evidence:
+    for e in evidence:
         lines.append("| "+" | ".join(map(cell,[e.statement,e.evidence_kind,f"{e.source_id} / {e.source_version}",e.locator,e.verification_status]))+" |")
     lines += ["", "## Patent candidates", "", "| Patent document | Association status | Source |", "|---|---|---|"]
     lines += [f"| {cell(c.patent_id_canonical)} | {c.association_status} | {cell(c.source_id)} |" for c in dossier.candidates]
-    lines += ["", "## ข้อมูลที่ยังขาด" if th else "## Unresolved", ""]+[f"- {cell(s)}" for s in dossier.unresolved_items]
+    unresolved = list(dossier.unresolved_items) + evidence_diagnostics
+    lines += ["", "## ข้อมูลที่ยังขาด" if th else "## Unresolved", ""]+[f"- {cell(s)}" for s in unresolved]
     lines += ["", "## ข้อมูลที่ควรขอเพิ่ม" if th else "## Next information requests", ""]+[f"- {cell(s)}" for s in dossier.next_information_requests]
     lines += ["", "## การแก้ไขของผู้ใช้" if th else "## User edits", ""]
     if dossier.user_edits:
@@ -263,3 +274,40 @@ def export_markdown(dossier: DossierVersion, *, language: Literal["auto", "en", 
             "; ".join(rights.limits) or "(none)",
         ])) + " |")
     return "\n".join(lines)+"\n"
+
+
+def serialize_dossier(
+    dossier: DossierVersion,
+    *,
+    purpose: ExportPurpose = "local_research",
+) -> dict:
+    """Serialize a dossier with an explicit rights-aware export purpose.
+
+    Local research returns the complete dossier. Product-display and
+    redistribution projections retain source metadata and hashes, filter source
+    payloads to reviewed fields, and omit evidence without a reviewed field basis.
+    """
+    enforce_dossier_rights(dossier, purpose=purpose)
+    if purpose == "local_research":
+        return dossier.model_dump(mode="json")
+
+    evidence, evidence_diagnostics = project_evidence(
+        dossier.evidence, dossier.sources, purpose=purpose
+    )
+    payload = dossier.model_dump(mode="json")
+    source_diagnostics: list[str] = []
+    for source_data, source in zip(payload["sources"], dossier.sources):
+        try:
+            source_data["payload"] = limit_displayable_payload(
+                source, source.payload, purpose=purpose
+            )
+        except RightsBoundaryError:
+            source_data["payload"] = {}
+            source_diagnostics.append(
+                f"External export omitted payload for source {source.source.source_id}: no reviewed displayable mapping."
+            )
+    payload["evidence"] = [item.model_dump(mode="json") for item in evidence]
+    payload["unresolved_items"] = (
+        list(payload["unresolved_items"]) + evidence_diagnostics + source_diagnostics
+    )
+    return payload

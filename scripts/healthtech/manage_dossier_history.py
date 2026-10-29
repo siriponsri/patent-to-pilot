@@ -27,6 +27,7 @@ def main() -> None:
     export.add_argument("history_dir", type=Path)
     export.add_argument("output_dir", type=Path)
     export.add_argument("--version", type=int, help="export this version; defaults to the latest")
+    export.add_argument("--purpose", choices=("local_research", "product_display", "redistribution"), default="local_research")
     manifest = sub.add_parser("manifest")
     manifest.add_argument("history_dir", type=Path)
     args = parser.parse_args()
@@ -42,10 +43,11 @@ def main() -> None:
             parser.error("output already exists; choose a fresh directory")
         dossier = select_version(args.history_dir, args.version)
         args.output_dir.mkdir(parents=True)
-        (args.output_dir / "dossier.json").write_text(dossier.model_dump_json(indent=2) + "\n", encoding="utf-8")
-        (args.output_dir / "dossier.md").write_text(export_markdown(dossier), encoding="utf-8")
-        (args.output_dir / "dossier.en.md").write_text(export_markdown(dossier, language="en"), encoding="utf-8")
-        (args.output_dir / "dossier.th.md").write_text(export_markdown(dossier, language="th"), encoding="utf-8")
+        from patent_to_pilot.healthtech.engine import serialize_dossier
+        (args.output_dir / "dossier.json").write_text(json.dumps(serialize_dossier(dossier, purpose=args.purpose), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        (args.output_dir / "dossier.md").write_text(export_markdown(dossier, purpose=args.purpose), encoding="utf-8")
+        (args.output_dir / "dossier.en.md").write_text(export_markdown(dossier, language="en", purpose=args.purpose), encoding="utf-8")
+        (args.output_dir / "dossier.th.md").write_text(export_markdown(dossier, language="th", purpose=args.purpose), encoding="utf-8")
         print(json.dumps({"status": "EXPORTED", "version": dossier.version, "output": str(args.output_dir)}))
     else:
         print(json.dumps(history_manifest(args.history_dir), ensure_ascii=False, indent=2))

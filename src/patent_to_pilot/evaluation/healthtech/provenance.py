@@ -5,7 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from patent_to_pilot.healthtech.contracts import canonical_patent_id, content_hash
+from patent_to_pilot.healthtech.contracts import SourceRights, canonical_patent_id, content_hash
+from patent_to_pilot.healthtech.rights import load_rights_matrix
 
 
 class CohortProvenanceError(ValueError):
@@ -52,7 +53,52 @@ def _reference_pairs(references: dict[str, Any]) -> dict[str, list[str]]:
     return result
 
 
-def verify_cohort_provenance(cohort_dir: str | Path) -> dict[str, Any]:
+def _rights_matrix_path(path: str | Path | None) -> Path:
+    if path is not None:
+        return Path(path)
+    root = Path(__file__).resolve().parents[4]
+    candidates = [
+        root / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json",
+        root / "docs/healthtech/audits/luna-patent-dossiers-20261028-atomic/rights-matrix.json",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    raise CohortProvenanceError("no reviewed HealthTech rights matrix is available")
+
+
+def _resolve_typed_policy(
+    policies: dict[str, SourceRights],
+    *,
+    policy_id: str,
+    source_id: str,
+    source_type: str,
+) -> tuple[bool, str]:
+    matches = [
+        (key, policy)
+        for key, policy in policies.items()
+        if key == policy_id or policy.rights_id == policy_id
+    ]
+    if not matches:
+        return False, "policy ID is absent from the reviewed rights matrix"
+    if len(matches) != 1:
+        return False, "policy ID is ambiguous in the reviewed rights matrix"
+    key, policy = matches[0]
+    if policy.source_types and source_type not in policy.source_types:
+        return False, f"source type {source_type} does not match the policy catalog"
+    if policy.source_id_prefixes:
+        if not any(source_id.startswith(prefix) for prefix in policy.source_id_prefixes):
+            return False, f"source ID {source_id} does not match the policy prefix"
+    elif source_id not in {key, policy.rights_id}:
+        return False, f"source ID {source_id} does not match the exact policy source"
+    return True, "resolved against the reviewed rights matrix"
+
+
+def verify_cohort_provenance(
+    cohort_dir: str | Path,
+    *,
+    rights_matrix_path: str | Path | None = None,
+) -> dict[str, Any]:
     """Verify source-backed disclosure coverage without reading raw third-party pages.
 
     The verifier checks the JSON boundary between runtime inputs and evaluator-only
@@ -61,6 +107,10 @@ def verify_cohort_provenance(cohort_dir: str | Path) -> dict[str, Any]:
     """
     cohort = Path(cohort_dir)
     manifest = _read_json(cohort / "manifest.json")
+    try:
+        rights_policies = load_rights_matrix(_rights_matrix_path(rights_matrix_path))
+    except (OSError, ValueError, TypeError) as exc:
+        raise CohortProvenanceError("reviewed rights matrix could not be loaded") from exc
 
     runtime = _read_json(cohort / str(manifest.get("runtime_path", "runtime.json")))
     references_payload = _read_json(
@@ -131,6 +181,10 @@ def verify_cohort_provenance(cohort_dir: str | Path) -> dict[str, Any]:
     covered_pairs: dict[tuple[str, str], list[str]] = {}
     disclosure_source_ids: set[str] = set()
     legacy_rights_source_ids: set[str] = set()
+    resolved_rights_policy_ids: set[str] = set()
+    unresolved_rights_policy_ids: set[str] = set()
+    unresolved_rights: list[dict[str, str | None]] = []
+    rights_resolutions: list[dict[str, str | None]] = []
     for row in evidence_rows:
         if not isinstance(row, dict):
             raise CohortProvenanceError("disclosure_evidence contains a non-object")
@@ -152,8 +206,42 @@ def verify_cohort_provenance(cohort_dir: str | Path) -> dict[str, Any]:
         if source.get("source_type") != "independent_disclosure":
             raise CohortProvenanceError(f"evidence {evidence_id} source is not an independent disclosure")
         rights_policy_id = source.get("rights_policy_id")
-        if isinstance(rights_policy_id, str) and rights_policy_id:
-            pass
+        if isinstance(rights_policy_id, str) and rights_policy_id.strip():
+            normalized_policy_id = rights_policy_id.strip()
+            resolved, reason = _resolve_typed_policy(
+                rights_policies,
+                policy_id=normalized_policy_id,
+                source_id=source_id,
+                source_type=str(source.get("source_type")),
+            )
+            rights_resolutions.append({
+                "source_id": source_id,
+                "rights_policy_id": normalized_policy_id,
+                "status": "RESOLVED" if resolved else "UNRESOLVED",
+                "reason": reason,
+            })
+            if resolved:
+                resolved_rights_policy_ids.add(normalized_policy_id)
+            else:
+                unresolved_rights_policy_ids.add(normalized_policy_id)
+                unresolved_rights.append({
+                    "source_id": source_id,
+                    "rights_policy_id": normalized_policy_id,
+                    "reason": reason,
+                })
+        elif "rights_policy_id" in source:
+            rights_resolutions.append({
+                "source_id": source_id,
+                "rights_policy_id": None,
+                "status": "UNRESOLVED",
+                "reason": "rights_policy_id is blank or not a string",
+            })
+            unresolved_rights_policy_ids.add("<blank>")
+            unresolved_rights.append({
+                "source_id": source_id,
+                "rights_policy_id": None,
+                "reason": "rights_policy_id is blank or not a string",
+            })
         elif isinstance(source.get("rights"), str) and source["rights"].strip():
             legacy_rights_source_ids.add(source_id)
         else:
@@ -223,11 +311,19 @@ def verify_cohort_provenance(cohort_dir: str | Path) -> dict[str, Any]:
     if manifest.get("unjudged_distractor_pairs") is not None and manifest["unjudged_distractor_pairs"] != distractor_pairs:
         raise CohortProvenanceError("manifest unjudged_distractor_pairs disagrees with distractors")
 
-    status = "PASS_WITH_LEGACY_RIGHTS" if legacy_rights_source_ids else "PASS"
+    if unresolved_rights:
+        status = "PASS_WITH_UNRESOLVED_RIGHTS"
+        rights_binding = "UNRESOLVED_TYPED_POLICY"
+    elif legacy_rights_source_ids:
+        status = "PASS_WITH_LEGACY_RIGHTS"
+        rights_binding = "LEGACY_TEXT_ONLY"
+    else:
+        status = "PASS"
+        rights_binding = "TYPED_POLICY_ID"
     return {
         "format": "ht-cohort-provenance-verification-v1",
         "status": status,
-        "rights_binding": "LEGACY_TEXT_ONLY" if legacy_rights_source_ids else "TYPED_POLICY_ID",
+        "rights_binding": rights_binding,
         "cohort_status": manifest.get("status"),
         "counts": {
             "runtime_devices": len(devices),
@@ -249,11 +345,10 @@ def verify_cohort_provenance(cohort_dir: str | Path) -> dict[str, Any]:
             "split": content_hash(split),
         },
         "disclosure_source_ids": sorted(disclosure_source_ids),
-        "rights_policy_ids": sorted({
-            registry_by_id[source_id]["rights_policy_id"]
-            for source_id in disclosure_source_ids
-            if isinstance(registry_by_id[source_id].get("rights_policy_id"), str)
-        }),
+        "rights_policy_ids": sorted(resolved_rights_policy_ids),
+        "rights_policy_resolutions": rights_resolutions,
+        "unresolved_rights_policy_ids": sorted(unresolved_rights_policy_ids),
+        "unresolved_rights": unresolved_rights,
         "legacy_rights_source_ids": sorted(legacy_rights_source_ids),
         "limitations": [
             "This verifies structural source-backed disclosure coverage only.",
