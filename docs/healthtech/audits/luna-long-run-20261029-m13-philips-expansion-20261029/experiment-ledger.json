@@ -1,0 +1,72 @@
+{
+  "format": "ht-m13-philips-expansion-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-m13-philips-expansion-20261029",
+  "date": "2026-10-29",
+  "base_commit": "fa5b85a9c782ef7d1d0d70606df8c42f845f7248",
+  "code_commit": "working-tree",
+  "entries": [
+    {
+      "id": "philips-acquisition-r1",
+      "kind": "source_acquisition",
+      "status": "FAIL_CORRECTED",
+      "output": "results/healthtech/ht-philips-cardiovascular-20261029-r1",
+      "outcome": "Acquisition completed, but the manifest omitted distractors_path; provenance acceptance was rejected and the output was not used as the valid cohort."
+    },
+    {
+      "id": "philips-acquisition-r2",
+      "kind": "source_acquisition",
+      "status": "PASS",
+      "output": "results/healthtech/ht-philips-cardiovascular-20261029-r2",
+      "outcome": "3 devices, 7 patents, 7 disclosed pairs, 14 unjudged distractors, typed Philips policy resolved, 0 provider calls, and $0.00 paid cost."
+    },
+    {
+      "id": "family-aware-composite",
+      "kind": "cohort_composition",
+      "status": "PASS",
+      "output": "results/healthtech/ht-multicompany-20261029-r4-philips-family",
+      "outcome": "11 devices, 31 patents, 38 disclosed pairs, 303 unjudged distractors, 9 family-aware groups, 0 split overlaps, untouched 3-query Stryker holdout."
+    },
+    {
+      "id": "composite-provenance",
+      "kind": "invariant_check",
+      "status": "PASS",
+      "output": "results/healthtech/ht-multicompany-20261029-r4-philips-family/provenance-verification-typed.json",
+      "outcome": "All 38 disclosed pairs are covered by four independent disclosure sources under typed policy IDs; no unresolved rights remain."
+    },
+    {
+      "id": "family-aware-development-baseline",
+      "kind": "offline_experiment",
+      "status": "PASS",
+      "output": "results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-dev",
+      "outcome": "40/40 method-query rows completed with 0 failures, 0 provider calls, and $0.00 paid cost."
+    },
+    {
+      "id": "family-aware-final-holdout-baseline",
+      "kind": "offline_experiment",
+      "status": "PASS",
+      "output": "results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-holdout",
+      "outcome": "15/15 method-query rows completed with 0 failures, 0 provider calls, and $0.00 paid cost."
+    },
+    {
+      "id": "family-frontier-projection",
+      "kind": "evaluator_side_analysis",
+      "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
+      "output": [
+        "results/healthtech/ht-family-frontier-20261029-r3-philips-development",
+        "results/healthtech/ht-family-frontier-20261029-r3-philips-holdout"
+      ],
+      "outcome": "Development retains 6 exact and family-aware groups; holdout retains 3; no exact groups merge through the sourced family mapping."
+    }
+  ],
+  "resource_summary": {
+    "philips_transferred_bytes": 4709140,
+    "philips_stored_bytes": 4927625,
+    "development_wall_seconds": 834.9033655000094,
+    "development_cpu_seconds": 1162.8125,
+    "holdout_wall_seconds": 391.4456531999822,
+    "holdout_cpu_seconds": 464.390625,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "decision": "Retain the Philips-expanded family-aware baselines as descriptive offline evidence and continue toward a rights-cleared semantic relevance cohort; do not claim semantic superiority or stable generalization."
+}

@@ -1,0 +1,89 @@
+{
+  "format": "ht-m13-philips-expansion-verification-v1",
+  "run_id": "luna-long-run-20261029-m13-philips-expansion-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
+  "base_commit": "fa5b85a9c782ef7d1d0d70606df8c42f845f7248",
+  "code_commit": "working-tree",
+  "checks": {
+    "philips_r1_manifest_bug_recorded": true,
+    "philips_r2_typed_provenance_pass": true,
+    "composite_typed_provenance_pass": true,
+    "family_mapping_covers_all_31_patents": true,
+    "family_split_overlap_count_zero": true,
+    "development_baseline_completed": true,
+    "final_holdout_baseline_completed": true,
+    "runtime_evaluator_separation": true,
+    "focused_tests": "39 passed; one fitz deprecation warning",
+    "compile_checks": "passed",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -B scripts/healthtech/compose_multicompany_cohort.py --boston-cohort results/healthtech/ht-boston-watchman-20261028-r4 --stryker-cohort results/healthtech/ht-stryker-neurovascular-20261029-r1 --additional-cohort cook=results/healthtech/ht-cook-zenith-20261029-r1 --additional-cohort philips=results/healthtech/ht-philips-cardiovascular-20261029-r2 --output results/healthtech/ht-multicompany-20261029-r4-philips-family --holdout-company \"Stryker Neurovascular\" --family-mapping results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json",
+      "exit_code": 0,
+      "outcome": "11 devices, 31 patents, 38 disclosed pairs, 3-query Stryker holdout."
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/verify_cohort_provenance.py --cohort results/healthtech/ht-multicompany-20261029-r4-philips-family --rights-matrix docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json --output results/healthtech/ht-multicompany-20261029-r4-philips-family/provenance-verification-typed.json",
+      "exit_code": 0,
+      "outcome": "PASS; 38/38 covered pairs; 4 disclosure sources; no unresolved typed policies."
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_real_baselines.py --runtime results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/runtime.json --references results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/references.json --groups results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/groups.json --model-root data/raw/healthtech/models --output results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-dev --code-commit working-tree --protocol-hash 1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b --cohort-manifest-hash d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267 --candidate-depth 31 --rerank-depth 31",
+      "exit_code": 0,
+      "outcome": "40/40 method-query rows completed; 0 provider calls; $0.00 paid cost."
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_real_baselines.py --runtime results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/runtime.json --references results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/references.json --groups results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/groups.json --model-root data/raw/healthtech/models --output results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-holdout --code-commit working-tree --protocol-hash 1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b --cohort-manifest-hash d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267 --candidate-depth 31 --rerank-depth 31",
+      "exit_code": 0,
+      "outcome": "15/15 method-query rows completed; 0 provider calls; $0.00 paid cost."
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/analyze_family_frontier.py --baseline results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-dev --references results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/references.json --family-mapping results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json --split development --output results/healthtech/ht-family-frontier-20261029-r3-philips-development",
+      "exit_code": 0,
+      "outcome": "6 exact groups, 6 family-aware groups, 0 merged groups."
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/analyze_family_frontier.py --baseline results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-holdout --references results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/references.json --family-mapping results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json --split final_holdout --output results/healthtech/ht-family-frontier-20261029-r3-philips-holdout",
+      "exit_code": 0,
+      "outcome": "3 exact groups, 3 family-aware groups, 0 merged groups."
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_philips_cohort.py tests/test_healthtech_multicompany.py tests/test_healthtech_repairs.py",
+      "exit_code": 0,
+      "outcome": "39 tests passed with one fitz deprecation warning."
+    },
+    {
+      "command": "rtk proxy python -m py_compile scripts/healthtech/fetch_philips_cardiovascular_cohort.py scripts/healthtech/compose_multicompany_cohort.py scripts/healthtech/verify_cohort_provenance.py scripts/healthtech/run_real_baselines.py scripts/healthtech/analyze_family_frontier.py tests/test_healthtech_philips_cohort.py",
+      "exit_code": 0,
+      "outcome": "Compile checks passed."
+    }
+  ],
+  "artifacts": {
+    "rights_matrix": {"path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json", "sha256": "e74748fb16c8f44debb922ee4bfb334438c2d66fb70b96af40cedbfb1e24a044"},
+    "baseline_summary": {"path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/baseline-summary.json"},
+    "composite_manifest": {"path": "results/healthtech/ht-multicompany-20261029-r4-philips-family/manifest.json", "sha256": "771f77873b6f5f284b794b20085bd37ee203ea65b28136b084e4fa7cd13eb6c4"},
+    "composite_provenance": {"path": "results/healthtech/ht-multicompany-20261029-r4-philips-family/provenance-verification-typed.json", "sha256": "d9ce8f2ae634b737abfe4d0fc22a651d1be362eaf39ae6153e4140b2f3c1d1c5"},
+    "development_receipt": {"path": "results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-dev/receipt.json", "sha256": "dd1a2f7d85719fb07bc28323ef6a58636eb3cf9200f9e48db8b7a222cf4228ce"},
+    "development_frontier": {"path": "results/healthtech/ht-family-frontier-20261029-r3-philips-development", "sha256": "4470812061df8a3945ea173e303651df7537fb3af95ef0ea0ce2b719b09e20f8"},
+    "holdout_receipt": {"path": "results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-holdout/receipt.json", "sha256": "0a1933c0ee0b3b0e280a1f5f239eaf24f60e4fb58a8fa6dabfc56bce9028ed84"},
+    "holdout_frontier": {"path": "results/healthtech/ht-family-frontier-20261029-r3-philips-holdout", "sha256": "bce0d8113d4349a1859a84b359b460be524fc419dc07ac37df36ad6bd87e3ffd"}
+  },
+  "not_run": [
+    "Rights-cleared semantic relevance judgments",
+    "Statistical significance or stable generalization estimate",
+    "Live/provider HT-B4 dispatch or paid inference",
+    "Clinical suitability, FTO, patent validity, investment merit",
+    "User/commercial validation or publication acceptance",
+    "Public redistribution of raw Philips, Cook, Stryker, Boston, or Google-derived source payloads"
+  ],
+  "limitations": [
+    "Product-level disclosure is not semantic relevance gold.",
+    "Family mapping is evaluator-only metadata and does not alter runtime retrieval.",
+    "The final holdout remains a single-company 3-query transfer check.",
+    "K=50 is ceiling-limited by the 31-patent universe.",
+    "This is an offline descriptive package, not a publication-ready scientific comparison."
+  ]
+}

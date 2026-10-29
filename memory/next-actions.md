@@ -301,3 +301,15 @@ Added the paired group diagnostic at implementation commit `d4f4881c6192a0107fac
 Focused tests pass `4/4`; compile checks pass; real generation completed with `PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE`; the six generated artifacts have recorded SHA-256 hashes; provider calls and paid cost remain `0` / `$0.00`. This does not add semantic relevance gold, statistical significance, generalization, live-provider evidence, user/commercial validation, clinical/FTO, validity, investment, or publication evidence.
 
 Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or holdout, then rerun the frozen controls. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve unjudged pairs, and keep Bridge, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-034 — 2026-10-29 M13 Philips expansion
+
+Status: `PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/README.md`.
+
+Added a bounded Philips cardiovascular cohort from three official product-marking rows, corrected the r1 manifest omission in fresh r2, and bound the cohort to typed Philips/openFDA/Google rights policies. The fresh four-company family-aware composite contains `11` devices, `31` patents, `38` disclosed pairs, `303` unjudged distractors, `9` full-cohort family groups, and `0` split overlaps. Typed composite provenance passes for `38/38` pairs with no unresolved rights.
+
+Reran the frozen offline HT-B0a/B0b/B1/B2/B3 methods at full 31-patent depth: `40/40` development and `15/15` untouched Stryker holdout method/query rows completed with `0` failures, `0` provider calls, and `$0.00` paid cost. At `K=20`, development macro recall is `0.9613/1.0000/0.9688/0.9063/0.9688` and holdout macro recall is `0.5429/0.8095/0.8381/0.8857/0.8381` for HT-B0a/B0b/B1/B2/B3. Family projection retains `6` development and `3` holdout groups with `0` exact-group merges; uncertainty/generalization remain `NOT_ESTIMABLE`.
+
+Focused HealthTech tests pass `39` with one existing fitz deprecation warning; compile checks pass. No semantic relevance gold, significance, stable generalization, live/provider HT-B4, user/commercial validation, clinical/FTO, patent-validity, investment, or publication evidence was added.
+
+Next: obtain or authorize a rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, adjudicator role, exact locators, multiple independent family-aware groups, and a frozen untouched final holdout; apply `ht-relevance-judgment-cohort-v1` without changing the current denominator or holdout, then rerun the frozen controls. Keep Philips/Google raw payloads local-only, preserve unjudged pairs, keep paid HT-B4 `BLOCKED_LOCAL`, and keep Bridge, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI paused.

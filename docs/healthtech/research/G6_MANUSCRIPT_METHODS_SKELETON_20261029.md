@@ -136,3 +136,19 @@ SciFact is a separate evidence-verification component with its own source releas
 ## Reproducibility and next test
 
 Reproduce the report and figures with the commands recorded in the M7/M8 audit verification files, reproduce the holdout comparison with the M10 audit command and frozen input hashes in `comparison.json`, and reproduce the paired group diagnostic with the M12 command and hashes in `verification.json`. The next discriminating test is a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout. Do not tune on the current holdout or recode unjudged pairs as negatives.
+
+## M13 Philips-expanded offline sensitivity
+
+M13 adds a bounded Philips cardiovascular development cohort to the Boston Scientific, Stryker Neurovascular, and Cook Medical composite. The resulting family-aware composite contains `11` devices, `31` patents, `38` product-level disclosed pairs, and `303` unjudged distractor pairs. Eight queries remain in development and the untouched Stryker company group remains the three-query final holdout. The family mapping is evaluator-side metadata only; it covers all `31` runtime patents, yields `24` observed families, and produces zero exact-group merges or split overlaps.
+
+Fresh HT-B0a/B0b/B1/B2/B3 runs use the frozen protocol hash, local model snapshots, and candidate/rerank depth `31`. All `40/40` development and `15/15` holdout method-query rows complete with zero provider calls, zero paid cost, and no failed queries. At `K=20`, exact and family-aware macro recall are identical because the sourced family mapping does not merge an exact reference group in either split:
+
+| Method | Development macro R@20 | Holdout macro R@20 |
+|---|---:|---:|
+| HT-B0a | 0.9613 | 0.5429 |
+| HT-B0b | 1.0000 | 0.8095 |
+| HT-B1 | 0.9688 | 0.8381 |
+| HT-B2 | 0.9063 | 0.8857 |
+| HT-B3 | 0.9688 | 0.8381 |
+
+The M13 results are descriptive offline sensitivity evidence only. Product-level marking rows are not semantic relevance gold, unlisted pairs remain unjudged, K=50 is ceiling-limited by the 31-patent universe, and the three-query single-company holdout does not support stable generalization, statistical significance, clinical/FTO, validity, investment, or publication claims. The canonical M13 audit, summary, receipts, and continuation note are in [`luna-long-run-20261029-m13-philips-expansion-20261029`](../audits/luna-long-run-20261029-m13-philips-expansion-20261029/README.md).

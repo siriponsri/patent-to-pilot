@@ -1,0 +1,139 @@
+{
+  "format": "ht-m13-philips-family-baseline-summary-v1",
+  "run_id": "luna-long-run-20261029-m13-philips-expansion-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
+  "base_commit": "fa5b85a9c782ef7d1d0d70606df8c42f845f7248",
+  "code_commit": "working-tree",
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+  "cohort": {
+    "devices_total": 11,
+    "patents": 31,
+    "disclosed_pairs": 38,
+    "unjudged_distractor_pairs": 303,
+    "development_queries": 8,
+    "final_holdout_queries": 3,
+    "family_groups_total": 9,
+    "families_observed": 24,
+    "family_mapped_patents": 31,
+    "family_split_overlap_count": 0,
+    "family_merged_exact_group_count": 0,
+    "composite_manifest": "results/healthtech/ht-multicompany-20261029-r4-philips-family/manifest.json",
+    "composite_manifest_sha256": "771f77873b6f5f284b794b20085bd37ee203ea65b28136b084e4fa7cd13eb6c4",
+    "family_mapping": "results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json",
+    "family_mapping_content_sha256": "425c64f1878a69626bf732c931b0c73e5ca618274b07f877d4c74447467d881c",
+    "family_mapping_file_sha256": "f9637b3c7ea43bed86139293453bee95ecdaa717400f7266b3f5e2ca2bb470d2"
+  },
+  "rights": {
+    "matrix": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
+    "matrix_sha256": "e74748fb16c8f44debb922ee4bfb334438c2d66fb70b96af40cedbfb1e24a044",
+    "binding": "TYPED_POLICY_ID",
+    "disclosure_sources": [
+      "boston-watchman-patent-disclosures",
+      "cook-medical-patent-marking",
+      "philips-cardiovascular-patent-marking",
+      "stryker-neurovascular-patent-marking"
+    ],
+    "covered_pairs": 38,
+    "unresolved_policies": []
+  },
+  "splits": {
+    "development": {
+      "runtime": "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/runtime.json",
+      "references": "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/references.json",
+      "groups": "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/groups.json",
+      "baseline": "results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-dev",
+      "family_frontier": "results/healthtech/ht-family-frontier-20261029-r3-philips-development",
+      "queries": 8,
+      "reference_pairs": 25,
+      "exact_groups": 6,
+      "family_groups": 6,
+      "candidate_depth": 31,
+      "rerank_depth": 31,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "wall_seconds": 834.9033655000094,
+      "cpu_seconds": 1162.8125,
+      "metrics": {
+        "K10": {
+          "HT-B0a": {"macro": 0.9613095238095238, "micro": 0.92},
+          "HT-B0b": {"macro": 1.0, "micro": 1.0},
+          "HT-B1": {"macro": 0.90625, "micro": 0.92},
+          "HT-B2": {"macro": 0.8288690476190477, "micro": 0.76},
+          "HT-B3": {"macro": 0.90625, "micro": 0.92}
+        },
+        "K20": {
+          "HT-B0a": {"macro": 0.9613095238095238, "micro": 0.92},
+          "HT-B0b": {"macro": 1.0, "micro": 1.0},
+          "HT-B1": {"macro": 0.96875, "micro": 0.96},
+          "HT-B2": {"macro": 0.90625, "micro": 0.92},
+          "HT-B3": {"macro": 0.96875, "micro": 0.96}
+        },
+        "K50": {
+          "HT-B0a": {"macro": 1.0, "micro": 1.0},
+          "HT-B0b": {"macro": 1.0, "micro": 1.0},
+          "HT-B1": {"macro": 1.0, "micro": 1.0},
+          "HT-B2": {"macro": 1.0, "micro": 1.0},
+          "HT-B3": {"macro": 1.0, "micro": 1.0}
+        }
+      },
+      "receipt_sha256": "dd1a2f7d85719fb07bc28323ef6a58636eb3cf9200f9e48db8b7a222cf4228ce",
+      "method_summary_sha256": "ef8a30b91ca600a683dfb1aabe55bebf66c628f26b86d0fd72aec2dd4a69b268",
+      "frontier_diagnostics_sha256": "cef0963727380abfd604feb65cfcd64a122798818d55a090fa900a7f896ef4c5",
+      "family_frontier_sha256": "4470812061df8a3945ea173e303651df7537fb3af95ef0ea0ce2b719b09e20f8"
+    },
+    "final_holdout": {
+      "runtime": "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/runtime.json",
+      "references": "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/references.json",
+      "groups": "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/groups.json",
+      "baseline": "results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-holdout",
+      "family_frontier": "results/healthtech/ht-family-frontier-20261029-r3-philips-holdout",
+      "queries": 3,
+      "reference_pairs": 13,
+      "exact_groups": 3,
+      "family_groups": 3,
+      "candidate_depth": 31,
+      "rerank_depth": 31,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "wall_seconds": 391.4456531999822,
+      "cpu_seconds": 464.390625,
+      "metrics": {
+        "K10": {
+          "HT-B0a": {"macro": 0.3333333333333333, "micro": 0.07692307692307693},
+          "HT-B0b": {"macro": 0.6666666666666666, "micro": 0.46153846153846156},
+          "HT-B1": {"macro": 0.7904761904761904, "micro": 0.6923076923076923},
+          "HT-B2": {"macro": 0.7904761904761904, "micro": 0.6923076923076923},
+          "HT-B3": {"macro": 0.7904761904761904, "micro": 0.6923076923076923}
+        },
+        "K20": {
+          "HT-B0a": {"macro": 0.5428571428571428, "micro": 0.38461538461538464},
+          "HT-B0b": {"macro": 0.8095238095238094, "micro": 0.6923076923076923},
+          "HT-B1": {"macro": 0.8380952380952381, "micro": 0.7692307692307693},
+          "HT-B2": {"macro": 0.8857142857142857, "micro": 0.8461538461538461},
+          "HT-B3": {"macro": 0.8380952380952381, "micro": 0.7692307692307693}
+        },
+        "K50": {
+          "HT-B0a": {"macro": 1.0, "micro": 1.0},
+          "HT-B0b": {"macro": 1.0, "micro": 1.0},
+          "HT-B1": {"macro": 1.0, "micro": 1.0},
+          "HT-B2": {"macro": 1.0, "micro": 1.0},
+          "HT-B3": {"macro": 1.0, "micro": 1.0}
+        }
+      },
+      "receipt_sha256": "0a1933c0ee0b3b0e280a1f5f239eaf24f60e4fb58a8fa6dabfc56bce9028ed84",
+      "method_summary_sha256": "b4fd8107705151bc5bd5a646df77b918f6c1e0a7080147d218dd1d8f3f6bafd5",
+      "frontier_diagnostics_sha256": "edd5b82a17341bf9228ba37709d96ae9443674b728e26caafc8d51c733f7079c",
+      "family_frontier_sha256": "bce0d8113d4349a1859a84b359b460be524fc419dc07ac37df36ad6bd87e3ffd"
+    }
+  },
+  "limitations": [
+    "Product-level marking rows are structural disclosure evidence, not independent semantic relevance gold.",
+    "Unlisted device-patent pairs remain unjudged and are not negatives.",
+    "Family IDs are evaluator-side Google metadata and do not establish legal family identity.",
+    "The 3-query Stryker final holdout is a single-company transfer check; uncertainty remains NOT_ESTIMABLE.",
+    "K=50 is ceiling-limited by the 31-patent universe and is not a meaningful discrimination point.",
+    "No clinical suitability, FTO, patent validity, investment, live provider, user, or publication claim is supported."
+  ]
+}

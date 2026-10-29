@@ -140,6 +140,36 @@
       "limitations": "not alerts/lifecycle guarantee or comparative clinical safety"
     },
     {
+      "id": "ht-philips-cardiovascular-cohort",
+      "role": "HT-M13 Philips cardiovascular development expansion",
+      "status": "LOCAL_DEVELOPMENT_SNAPSHOT",
+      "sources": [
+        "https://www.philips.com/a-w/about/innovation/ips/contact-and-support/patent-marking",
+        "https://open.fda.gov/apis/device/510k/",
+        "https://patents.google.com/"
+      ],
+      "local_manifest": "results/healthtech/ht-philips-cardiovascular-20261029-r2/manifest.json",
+      "local_source_registry": "results/healthtech/ht-philips-cardiovascular-20261029-r2/source_registry.json",
+      "scope": "3 Philips cardiovascular devices, 7 canonical U.S. patent documents, 7 product-level disclosed pairs, and 14 unjudged distractors",
+      "rights": "local research and offline evaluation only; Philips marking evidence and Google-derived patent text remain blocked for product display and redistribution",
+      "allowed_use": {
+        "acquisition": "bounded local snapshot with typed Philips/openFDA/Google policy records",
+        "evaluation": "offline development retrieval and provenance checks",
+        "product_redistribution": "blocked for raw marking and patent-text payloads"
+      },
+      "limitations": "product-level disclosure is not semantic relevance gold; unlisted pairs remain unjudged; no final holdout in the single-company Philips parent cohort"
+    },
+    {
+      "id": "ht-multicompany-philips-family-composite",
+      "role": "HT-M13 family-aware offline baseline composite",
+      "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
+      "local_manifest": "results/healthtech/ht-multicompany-20261029-r4-philips-family/manifest.json",
+      "baseline_summary": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/baseline-summary.json",
+      "scope": "11 devices, 31 patents, 38 disclosed pairs, 303 unjudged distractors, 8 development queries, and untouched 3-query Stryker holdout",
+      "rights": "typed policy IDs resolved for Boston, Stryker, Cook, Philips, openFDA, and Google-derived patent pages; raw third-party payloads remain local-only",
+      "limitations": "family mapping is evaluator-side metadata; holdout is a single-company transfer check; semantic relevance, statistical significance, and stable generalization remain not estimable"
+    },
+    {
       "id": "target-user-task-records",
       "role": "HT-G5 W16/W17 business evidence",
       "status": "NO_DATA_COLLECTED",
