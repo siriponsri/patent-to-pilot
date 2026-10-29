@@ -167,6 +167,11 @@
       "evidence": "Bounded Cook Medical Zenith acquisition from the official patent page and linked six-page PDF: 3 devices, 4 patents, 5 disclosed pairs, 7 unjudged distractors, typed Cook rights policy, and 0 provider calls; the derived Boston/Stryker/Cook composite freezes 8 devices, 24 patents, 31 disclosed pairs, 161 unjudged distractors, and a predeclared Stryker company holdout at docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/"
     },
     {
+      "id": "HT-M2-M3-COOK-DOSSIERS",
+      "status": "PASS_ENGINEERING_OFFLINE_DOSSIERS",
+      "evidence": "Cook-specific public-source adapter and runner build three source-backed dossiers from the frozen Zenith cohort, reconstruct five product-level disclosure links from the official PDF, preserve acquisition/resource/source/history artifacts, create contiguous v1/v2 EN/TH/local JSON exports, and pass the full suite at zero provider calls and $0.00 paid cost; audit at docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/dossier-run-report.md"
+    },
+    {
       "id": "HT-W13",
       "status": "PLANNED",
       "evidence": "no no-code interface implemented"
@@ -187,7 +192,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M1 current-head revalidation, M3 deterministic freeze, the filled non-submitted budget/data expansion request, the HT-T2 SciFact lexical dev score, the Stryker M2/M3 offline package, the typed Boston/Stryker multi-company holdout package, and the Cook third-company expansion are complete with no extra spend. HT-T2 and all device-patent cohorts remain development-only evidence. Live provider/canary remains BLOCKED_LOCAL pending current OpenRouter metadata, credential/credit, transfer-rights, payload, and reconciliation gates. Next add sourced family mappings or a licensed relevance-judgment cohort while keeping Bridge blocked and Claude UX/UI paused",
+  "next": "M1 current-head revalidation, M3 deterministic freeze, the filled non-submitted budget/data expansion request, the HT-T2 SciFact lexical dev score, the Stryker M2/M3 offline package, the typed Boston/Stryker multi-company holdout package, the Cook third-company expansion, and the Cook source-backed dossier run are complete with no extra spend. HT-T2 and all device-patent cohorts remain development-only evidence. Live provider/canary remains BLOCKED_LOCAL pending current OpenRouter metadata, credential/credit, transfer-rights, payload, and reconciliation gates. Next add sourced family mappings or a licensed relevance-judgment cohort while keeping Bridge blocked and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json",
@@ -197,6 +202,7 @@
   "latest_m3_freeze": "docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0/verification.json",
   "latest_healthtech_frontier_summary": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/REPORT.md",
   "latest_independent_cohort": "results/healthtech/ht-cook-zenith-20261029-r1/manifest.json",
+  "latest_healthtech_dossier_run": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/dossier-run-verification.json",
   "latest_current_head_revalidation": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/verification.json",
   "latest_m1_revalidation": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/README.md",
   "latest_typed_registry_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-typed-registry/verification.json",

@@ -1,0 +1,159 @@
+{
+  "artifacts": {
+    "output_manifest": "results/healthtech/ht-cook-dossiers-20261029-r1/manifest.json",
+    "output_receipt": "results/healthtech/ht-cook-dossiers-20261029-r1/receipt.json",
+    "runner": "scripts/healthtech/run_cook_dossiers.py",
+    "adapter": "src/patent_to_pilot/healthtech/cook.py",
+    "focused_tests": "tests/test_healthtech_cook.py"
+  },
+  "candidate_revision": {
+    "head_before_commit": "03df1c443bdec580bde4e7a26b3410fc48a405cf",
+    "tree_state": "dirty_with_unrelated_owner_artifacts_and_scoped_cook_changes"
+  },
+  "checks": {
+    "adapter_builds_three_cases": true,
+    "cook_pdf_disclosures_reconstructed": true,
+    "disclosed_links_promoted_from_source_evidence": true,
+    "runtime_source_raw_integrity_mutation_rejection": true,
+    "history_versions_contiguous": true,
+    "en_th_local_json_exports": true,
+    "evaluator_reference_leakage_absent": true,
+    "product_display_blocked": true,
+    "redistribution_blocked": true,
+    "provider_calls_zero": true,
+    "paid_cost_usd_zero": true
+  },
+  "command_outcomes": [
+    {
+      "command": "rtk proxy python -m py_compile src/patent_to_pilot/healthtech/cook.py scripts/healthtech/run_cook_dossiers.py tests/test_healthtech_cook.py",
+      "outcome": "passed"
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_cook.py",
+      "outcome": "11 passed; one fitz deprecation warning"
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_cook.py tests/test_healthtech_repairs.py -k 'cook or abbott_adapter' --disable-warnings",
+      "outcome": "19 passed"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_cook_dossiers.py --cohort results/healthtech/ht-cook-zenith-20261029-r1 --output results/healthtech/ht-cook-dossiers-20261029-r1 --rights-matrix docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json --code-commit 03df1c4+dirty-cook-dossier",
+      "outcome": "3 dossiers written; 5 disclosed links promoted; 3 offline search calls; 0 provider calls; $0.00 paid cost"
+    },
+    {
+      "command": "rtk proxy python -B -c <Cook dossier artifact assertions>",
+      "outcome": "PASS; three cases, contiguous histories, bilingual exports, no evaluator-reference leakage, external rights blocked"
+    },
+    {
+      "command": "rtk proxy powershell -NoProfile -Command '$env:PYTHONPATH=\"src\"; python -m pytest -q'",
+      "outcome": "full suite passed; one fitz deprecation warning"
+    }
+  ],
+  "counts": {
+    "cases": 3,
+    "patent_universe_per_case": 4,
+    "disclosed_links_by_query": {
+      "HT-DEV-COOK-ZENITH-DISSECTION-STENT": 2,
+      "HT-DEV-COOK-ZENITH-FLEX-AAA": 2,
+      "HT-DEV-COOK-ZENITH-RENU-CONVERTER": 1
+    },
+    "history_versions_per_case": [1, 2],
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "offline_search_calls": 3,
+    "offline_returned_candidates": 0
+  },
+  "source_hashes": {
+    "cook_cohort_manifest_sha256": "9799092e125ec37c08cf37e62f6f13c39b88c6180d93a41040164f0f9b36e834",
+    "rights_matrix_sha256": "a2b136eae027365acbad250b2c98690a9a33607aaf2f7a2011e281804dd251d6",
+    "adapter_sha256": "4d5d38ac1f06ac08513b96c5a96f62d272e2458e0ae4242bf1cb3d1c4de3bda3",
+    "runner_sha256": "ba179d9507cf2ffef6138784d0878e906255a85cd18c95199f6b323aed57537a",
+    "focused_test_sha256": "28684b36b6c3cd8d2a647efa19e95b694ba700a5aab3f5a27eef41ca18cd4824"
+  },
+  "output_hashes": {
+    "manifest.json": {
+      "bytes": 2146,
+      "sha256": "533aa3bd5736dd9317307cd7b3aa6f823c7f90f8c421d2c54cf4c3e71290f091"
+    },
+    "receipt.json": {
+      "bytes": 727,
+      "sha256": "beafea2ea3270d1a6cede5ae925eb58568dac556ffc2985d3626318f2448cbdc"
+    },
+    "HT-DEV-COOK-ZENITH-DISSECTION-STENT/dossier.json": {
+      "bytes": 74358,
+      "sha256": "2de41b3e02761e8a83ce7ada6b9b445caf2d3b6bf6f830ed05af49c0d8af7567"
+    },
+    "HT-DEV-COOK-ZENITH-DISSECTION-STENT/engine_manifest.json": {
+      "bytes": 8008,
+      "sha256": "6e66161dc7d4b6287ce4c0e1f4e0a5875266bf3a7e6fa9f774bbeba50d09e522"
+    },
+    "HT-DEV-COOK-ZENITH-DISSECTION-STENT/source-summary.json": {
+      "bytes": 10797,
+      "sha256": "5e8462e3924f8f526233f712b5f2f1e29ecfc6e02c0ac653e39fbb1fabdba825"
+    },
+    "HT-DEV-COOK-ZENITH-DISSECTION-STENT/history/manifest.json": {
+      "bytes": 424,
+      "sha256": "4a96730157f1dc65b074b506d1bcd306925ba82d3045ff99149d352c6cdf7c05"
+    },
+    "HT-DEV-COOK-ZENITH-DISSECTION-STENT/export-v2/dossier.json": {
+      "bytes": 74492,
+      "sha256": "00b6e5c87b2507493e2e51fb38d8ab8ddf4a4e7776fa2fac971698332b33f121"
+    },
+    "HT-DEV-COOK-ZENITH-FLEX-AAA/dossier.json": {
+      "bytes": 73075,
+      "sha256": "e3bfd2e455b0f1a2b14271ae76518295382131b2ca4811c0a17190881e346999"
+    },
+    "HT-DEV-COOK-ZENITH-FLEX-AAA/engine_manifest.json": {
+      "bytes": 7984,
+      "sha256": "956d41251c8ee4c1b9a678fcff8df041bdadc3aa03694e2518b96886968edaab"
+    },
+    "HT-DEV-COOK-ZENITH-FLEX-AAA/source-summary.json": {
+      "bytes": 10797,
+      "sha256": "dc3fabed08d658dcc9f68e66a39a3aaff9efc1d4100cc6c6d1dfcb619ce1a446"
+    },
+    "HT-DEV-COOK-ZENITH-FLEX-AAA/history/manifest.json": {
+      "bytes": 416,
+      "sha256": "3e862ba31972e4af1838c198955246dd1612fdab66866f5af8aabd0f5f66b88d"
+    },
+    "HT-DEV-COOK-ZENITH-FLEX-AAA/export-v2/dossier.json": {
+      "bytes": 73209,
+      "sha256": "f07622e67d9afaa3d2d807175b982bff538617e0b5d5b761b9244978be67005f"
+    },
+    "HT-DEV-COOK-ZENITH-RENU-CONVERTER/dossier.json": {
+      "bytes": 72594,
+      "sha256": "27f7a47ba9c557fa247dcb20814c1876e3fc5c0ae36f5cbc1fedfcbf45c9d22e"
+    },
+    "HT-DEV-COOK-ZENITH-RENU-CONVERTER/engine_manifest.json": {
+      "bytes": 8003,
+      "sha256": "a7847f18654c5d13959af15d9f422e3a7c341b348cb8a315882bb50a8d3517f6"
+    },
+    "HT-DEV-COOK-ZENITH-RENU-CONVERTER/source-summary.json": {
+      "bytes": 10797,
+      "sha256": "dc3fabed08d658dcc9f68e66a39a3aaff9efc1d4100cc6c6d1dfcb619ce1a446"
+    },
+    "HT-DEV-COOK-ZENITH-RENU-CONVERTER/history/manifest.json": {
+      "bytes": 422,
+      "sha256": "a80526ed503e319a0dd83d79ba91c4789b195caa9ea345cdd87f3d9a5d5f4a0e"
+    },
+    "HT-DEV-COOK-ZENITH-RENU-CONVERTER/export-v2/dossier.json": {
+      "bytes": 72728,
+      "sha256": "f7ec31fce577675b4dcb474e3f0de5f79f61c6d07a6b62ed93d5f1beebb09824"
+    }
+  },
+  "limitations": [
+    "Cook product-level marking rows are disclosed associations, not independent claim-level semantic judgments.",
+    "Unlisted device-patent pairs remain unjudged and are not negatives.",
+    "Patent family identity remains UNKNOWN_NOT_ASSUMED.",
+    "Raw Cook page/PDF and Google-derived patent text remain local-only; public display and redistribution are blocked.",
+    "No live/provider HT-B4, clinical, FTO, validity, investment, Bridge, or publication-readiness work was run."
+  ],
+  "not_run": [
+    "Live/provider HT-B4 canary or pilot",
+    "Claim-level semantic relevance judgment",
+    "Family mapping inference",
+    "Public redistribution of raw or extracted third-party source material"
+  ],
+  "format": "ht-cook-dossier-verification-v1",
+  "run_id": "luna-long-run-20261029-cook-expansion-20261029",
+  "status": "PASS_ENGINEERING_OFFLINE_DOSSIERS"
+}

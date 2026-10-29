@@ -137,3 +137,13 @@ Added `scripts/healthtech/fetch_cook_zenith_cohort.py` for a bounded Cook Medica
 The frozen Boston/Stryker/Cook composite has `8` devices, `24` patents, `31` product-level disclosed pairs, `161` unjudged distractors, `3` company groups, and a predeclared full-company Stryker holdout. Typed provenance passes for `31/31` pairs with `0` unresolved policies. At `K=10`, development macro known-link recall is `0.9381 / 1.0000 / 0.9000 / 0.7762 / 0.9000`, and the untouched Stryker holdout is `0.3333 / 0.6667 / 0.7429 / 0.7905 / 0.7905` for HT-B0a/B0b/B1/B2/B3. Both runs have `0` failed queries, `0` provider calls, and `$0.00` paid cost.
 
 This remains descriptive offline evidence only. Keep live/provider HT-B4, Bridge acquisition, public raw-data release, family/semantic gold claims, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused. Next add sourced family mappings or a licensed relevance-judgment cohort before any pooled scientific claim.
+
+## HT-NEXT-018 — 2026-10-29 Cook source-backed dossier run
+
+Status: `PASS_ENGINEERING_OFFLINE_DOSSIERS`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/dossier-run-report.md`.
+
+Added `src/patent_to_pilot/healthtech/cook.py` and `scripts/healthtech/run_cook_dossiers.py`. The Cook adapter reads only the frozen runtime, typed source registry, pinned PMA/PDF/patent inputs, and reviewed rights matrix; it reconstructs product-level disclosure evidence from the official Cook PDF and promotes only source-backed links. The runner produced three local dossiers for Zenith Flex AAA, Zenith Renu AAA Ancillary Graft Converter, and Zenith Dissection Endovascular Stent, with 4 patent inputs per case, 5 disclosed links total, acquisition events, engine/resource/source receipts, contiguous history versions `1 -> 2`, and local JSON/EN/TH exports.
+
+Focused Cook tests pass `11/11`; the Cook/adapter regression selection passes `19/19`; the explicit `PYTHONPATH=src` full suite passes. The real dossier run made `3` offline search calls, returned `0` lexical candidates, promoted `5` official product-level disclosure links, made `0` provider calls, and incurred `$0.00` paid cost. Product display and redistribution remain `BLOCKED_LOCAL`; evaluator references were not read or leaked into outputs.
+
+This remains engineering evidence, not semantic relevance gold, exhaustive recall, FTO, clinical, validity, investment, publication, or generalization evidence. Keep live/provider HT-B4, Bridge acquisition, public raw-data release, family inference, clinical/FTO work, deployment, outreach, and Claude UX/UI blocked or paused. Next add sourced family mappings or a licensed relevance-judgment cohort before any pooled scientific claim.
