@@ -66,3 +66,52 @@ def test_external_boundary_matrix_rebuilds_evidence_after_history_reload(tmp_pat
         }
         with pytest.raises(RightsBoundaryError, match="displayable_fields"):
             source_view(reloaded, pma.source.source_id, field="openfda", purpose=purpose)
+
+
+def test_external_boundary_matrix_drops_nested_and_encoded_values_across_all_channels(tmp_path: Path):
+    cohort = _write_synthetic_abbott_cohort(tmp_path)
+    rights = json.loads(RIGHTS_MATRIX.read_text(encoding="utf-8"))
+    for policy in rights["sources"]:
+        policy["intended_use"]["product_display"] = "ALLOWED"
+        policy["intended_use"]["redistribution"] = "ALLOWED"
+        policy["displayable_fields"] = ["trade_name"] if policy["source_id"] == "openfda-pma-records" else []
+    rights_path = tmp_path / "rights-matrix.json"
+    _write_json(rights_path, rights)
+
+    input_data = next(iter(build_abbott_case_inputs(cohort, rights_matrix_path=rights_path).values()))
+    pma = next(source for source in input_data.sources if source.source.source_type == "regulatory_record")
+    dossier, _, _ = run_dossier(input_data, run_id="boundary-nested-encoded", code_commit="test")
+    nested_sentinel = "NESTED-RESTRICTED-VALUE"
+    encoded_sentinel = "ENCODED-RESTRICTED-VALUE"
+    dossier = dossier.model_copy(update={
+        "evidence": dossier.evidence + [
+            field_evidence(pma, "openfda", "MATRIX-NESTED").model_copy(update={
+                "statement": f"nested={nested_sentinel}",
+                "structured_value": {"device_name": nested_sentinel},
+            }),
+            field_evidence(pma, "trade_name", "MATRIX-ENCODED").model_copy(update={
+                "statement": f"encoded={encoded_sentinel}",
+                "structured_value": json.dumps({"value": encoded_sentinel}),
+            }),
+        ]
+    })
+    history = tmp_path / "history"
+    save_version(history, dossier)
+    reloaded = select_version(history)
+
+    for purpose in ("product_display", "redistribution"):
+        for language in ("en", "th"):
+            markdown = export_markdown(reloaded, language=language, purpose=purpose)
+            assert nested_sentinel not in markdown
+            assert encoded_sentinel not in markdown
+            assert "trade_name: MitraClip" in markdown
+        serialized = serialize_dossier(reloaded, purpose=purpose)
+        encoded = json.dumps(serialized, ensure_ascii=False)
+        assert nested_sentinel not in encoded
+        assert encoded_sentinel not in encoded
+        assert serialized["sources"][0]["payload"] == {"trade_name": "MitraClip"}
+        projected = {item["evidence_id"]: item for item in serialized["evidence"]}
+        assert "MATRIX-NESTED" not in projected
+        assert projected["MATRIX-ENCODED"]["structured_value"] == "MitraClip"
+        with pytest.raises(RightsBoundaryError, match="displayable_fields"):
+            source_view(reloaded, pma.source.source_id, field="openfda", purpose=purpose)

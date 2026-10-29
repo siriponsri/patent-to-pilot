@@ -1,0 +1,52 @@
+{
+  "format": "healthtech-audit-verification-v1",
+  "run_id": "luna-long-run-20261030-m32-adversarial-boundary-regression-20261030",
+  "status": "PASS_ENGINEERING_ADVERSARIAL_REGRESSION",
+  "run_date": "2026-10-30",
+  "source_head_before": "b602311a018e479d894db7c33d9662961a857940",
+  "changed_files": [
+    "tests/test_healthtech_boundary_matrix.py",
+    "docs/healthtech/audits/luna-long-run-20261030-m32-adversarial-boundary-regression-20261030/README.md",
+    "docs/healthtech/audits/luna-long-run-20261030-m32-adversarial-boundary-regression-20261030/NEXT_ACTIONS.md",
+    "docs/healthtech/audits/luna-long-run-20261030-m32-adversarial-boundary-regression-20261030/verification.json",
+    "docs/healthtech/progress.json",
+    "memory/next-actions.md"
+  ],
+  "test_change": {
+    "path": "tests/test_healthtech_boundary_matrix.py",
+    "sha256": "8cd93b77320ebba98d3d53aaff70a5461d369f8d0f1bc4b329b992315155dde1",
+    "behavior": "nested restricted payload and encoded restricted evidence are removed or rebuilt across external Markdown, redistribution JSON, and source-view paths after history reload"
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -B -m pytest -q -p no:cacheprovider tests/test_healthtech.py tests/test_healthtech_repairs.py tests/test_healthtech_boundary_matrix.py tests/test_healthtech_cohort_migration.py tests/test_healthtech_source_authorization.py tests/test_healthtech_source_acquisition.py tests/test_healthtech_judgments.py tests/test_healthtech_judgment_submission.py tests/test_healthtech_long_run_report.py tests/test_healthtech_long_run_analysis.py tests/test_healthtech_g6_skeleton.py",
+      "outcome": "PASS: 106 passed; 1 pre-existing fitz deprecation warning"
+    },
+    {
+      "command": "rtk proxy python -B -m compileall -q src scripts tests",
+      "outcome": "PASS: exit 0"
+    },
+    {
+      "command": "rtk git diff --check",
+      "outcome": "PASS: exit 0"
+    }
+  ],
+  "scope": {
+    "provider_calls": 0,
+    "network_calls": 0,
+    "semantic_labels": 0,
+    "restricted_payload_acquisition": 0,
+    "external_transfer": false,
+    "paid_cost_usd": 0.0
+  },
+  "boundaries": {
+    "f1_external_rights_boundary": "PASS_WITH_ADDITIONAL_REGRESSION",
+    "f2_frozen_identity": "PASS_CURRENT_HEAD",
+    "f3_typed_policy_assurance": "PASS_CURRENT_HEAD",
+    "semantic_relevance_gold": "NOT_RUN",
+    "bridge": "BLOCKED_LOCAL",
+    "live_provider_behavior": "BLOCKED_LOCAL",
+    "zenodo_21101400": "RESTRICTED_OWNER_ACCESS_REQUIRED"
+  },
+  "next_action": "Obtain an owner-authorized rights-cleared semantic judgment source, validate through M23, stage through M25, ingest through M24, and rerun frozen controls without changing denominator or holdout."
+}

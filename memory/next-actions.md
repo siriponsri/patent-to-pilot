@@ -477,3 +477,13 @@ Refreshed `docs/healthtech/research/G6_MANUSCRIPT_METHODS_SKELETON_20261029.md` 
 The focused G6/current-head documentation regression passes `3/3`; adjacent report/analysis regressions pass `4/4`; compileall and `git diff --check` pass. No new retrieval run, source acquisition, semantic labels, provider/network calls, external transfer, or paid cost occurred. Historical M3/M10/M11 values remain only where explicitly labeled as historical.
 
 Next: obtain or authorize a rights-cleared semantic judgment source with explicit `relevant` / `not_relevant` labels, source revision/hash, exact locators, adjudicator role, independent company/family groups, and an untouched holdout. Run M23, M25, and M24 in sequence, then rerun frozen controls without changing denominators, holdout membership, or the `UNJUDGED` policy. Keep live HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-053 — 2026-10-30 M32 adversarial boundary regression
+
+Status: `PASS_ENGINEERING_ADVERSARIAL_REGRESSION`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-m32-adversarial-boundary-regression-20261030/README.md`.
+
+Added a current-head all-channel F1 regression that combines a nested restricted source payload with an encoded restricted evidence value after history reload. English/Thai Markdown, redistribution JSON, and purpose-aware source view retain only the reviewed `trade_name` field, omit the nested `openfda` field, and fail closed on direct unreviewed field access. The scoped HealthTech suite passes `106/106`; compileall and `git diff --check` pass.
+
+No provider/network calls, semantic labels, restricted source acquisition, external transfer, or paid cost occurred. F2/F3 remain green from the current-head M1 reproduction; M30 remains the descriptive retrieval baseline, not semantic gold.
+
+Next: obtain owner authorization and exact rights/schema terms for an admissible semantic judgment source, then run M23, M25, and M24 before rerunning frozen controls without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy. Keep live HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI blocked or paused.
