@@ -379,3 +379,13 @@ Added `run_company_holdout_sensitivity.py` and its focused regression. The real 
 This reduces dependence on the prior single Stryker transfer check but remains descriptive sensitivity evidence: the four rows reuse the same local companies, product-level disclosure relations are not semantic relevance gold, unlisted pairs remain unjudged, and no pooled statistical/generalization claim is supported. The command-log path renderer was hardened after the run; scientific outputs were not recomputed because that change affects only local path presentation.
 
 Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, exact locators, multiple independent company/family groups, and a predeclared untouched holdout; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or unjudged policy, then rerun the controls. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve raw third-party payloads locally, and keep Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused.
+
+## HT-NEXT-042 — 2026-10-30 M21 G6 M20 sensitivity integration
+
+Status: `PASS_REPORT_INTEGRATION`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-g6-m20-integration-20261030/README.md`.
+
+Integrated the completed M20 four-company leave-one-company-out sensitivity into `docs/healthtech/research/G6_MANUSCRIPT_METHODS_SKELETON_20261029.md` at implementation commit `aaecb92`. The manuscript now records the exact Boston/Stryker/Cook/Philips macro known-link Recall@20 rows, the frozen 11-device/31-patent/38-disclosed-pair composite, the 303 unjudged distractor policy, and the non-independent/descriptive-only interpretation limits. A focused G6 regression passes `2/2`; adjacent report/analysis/holdout regressions pass `8/8`; targeted compilation and `git diff --check` pass.
+
+No new retrieval run, data acquisition, semantic label, provider call, network call, or paid cost occurred. This is an evidence-integration package, not semantic gold, pooled inference, generalization proof, or publication readiness.
+
+Next: obtain or authorize the rights-cleared semantic judgment source with explicit labels, source revision/hash, rights/intended-use decisions, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched holdout. Apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or unjudged policy, then rerun HT-B0a/B0b/B1/B2/B3. Keep paid HT-B4 `BLOCKED_LOCAL`, Bridge blocked, and deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused.

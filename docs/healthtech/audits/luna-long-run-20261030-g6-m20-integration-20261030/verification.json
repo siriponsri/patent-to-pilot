@@ -1,0 +1,57 @@
+{
+  "schema_version": "healthtech-audit-v1",
+  "run_id": "luna-long-run-20261030-g6-m20-integration-20261030",
+  "run_date": "2026-10-30",
+  "status": "PASS_REPORT_INTEGRATION",
+  "source_head_before": "4e1210ae2a5a08ec40036b4ac31d6e25d3c13b57",
+  "implementation_commit": "aaecb92",
+  "parent_audit": "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md",
+  "scope": {
+    "new_scientific_run": false,
+    "new_data_acquisition": false,
+    "provider_calls": 0,
+    "network_calls": 0,
+    "paid_cost_usd": 0.0,
+    "semantic_labels_created": 0,
+    "external_transfer": false
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_g6_skeleton.py",
+      "outcome": "PASS: 2 passed"
+    },
+    {
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_g6_skeleton.py tests/test_healthtech_long_run_report.py tests/test_healthtech_long_run_analysis.py tests/test_healthtech_company_holdout_sensitivity.py",
+      "outcome": "PASS: 8 passed"
+    },
+    {
+      "command": "rtk proxy python -m py_compile tests/test_healthtech_g6_skeleton.py scripts/healthtech/run_company_holdout_sensitivity.py",
+      "outcome": "PASS: exit 0"
+    },
+    {
+      "command": "rtk proxy git diff --check",
+      "outcome": "PASS: exit 0"
+    }
+  ],
+  "changed_artifacts": {
+    "docs/healthtech/research/G6_MANUSCRIPT_METHODS_SKELETON_20261029.md": "842015386575a163f0b611b84d47b08e049bcc5a80e583a66ba81c244f5603c4",
+    "tests/test_healthtech_g6_skeleton.py": "bc3ccea48a654822bad0d9cddcaefe5c39cec13af593e117653e9abb00135dd9"
+  },
+  "bound_inputs": {
+    "m20_readme": "e0fc5c4cf2e8c5ef5380324218198b68121fb815743d3ca0d9edf00df175c8c0",
+    "m20_report": "d8dc385e348ba8f84b9985928303cc4ce86bad0562ee43225817d7fe6f5475c7",
+    "m20_verification": "5de8f0fc3216b3763d9cb01cda6850bd0cbc0e7256d5292f7ab7ddf9ad7856a6"
+  },
+  "implemented": [
+    "G6 records M20's four company-held-out macro known-link Recall@20 rows.",
+    "G6 preserves the unjudged-pair, non-independent-sample, and descriptive-only limits.",
+    "A focused regression binds the narrative to the canonical M20 audit."
+  ],
+  "not_run": [
+    "rights-cleared semantic adjudication",
+    "pooled statistical inference",
+    "live/provider HT-B4",
+    "clinical/FTO, deployment, outreach, public raw-data release, and user/commercial validation"
+  ],
+  "next_action": "Obtain or authorize the rights-cleared semantic judgment source, validate it with ht-relevance-judgment-cohort-v1, preserve the frozen denominator and holdout, then rerun HT-B0a/B0b/B1/B2/B3."
+}
