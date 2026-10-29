@@ -429,3 +429,11 @@ Status: `PASS_OFFLINE_SOURCE_SCREENING_NO_ADMISSIBLE_REPLACEMENT`; canonical aud
 Expanded the public source screen without downloading restricted payloads. PatentMatch and PatentBench are rejected for HT-T1 task mismatch. A 2026 Zenodo sharps-disposal-device patent landscape is the closest domain-aligned lead, but its files are restricted and the public record does not establish the M23 rights, explicit label, adjudicator, company/family, and holdout requirements. No runtime inputs, semantic labels, provider/network calls, or paid cost changed.
 
 Next: obtain owner-authorized access and source-specific terms for the sharps-disposal lead or another aligned source, inspect its actual schema, and only then run M23, M25, and M24 in sequence before rerunning frozen controls. Keep Bridge, paid HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused or blocked.
+
+## HT-NEXT-048 — 2026-10-30 M27 sharps source metadata preflight
+
+Status: `PASS_METADATA_PREFLIGHT_OWNER_ACCESS_REQUIRED`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-sharps-source-metadata-preflight-20261030/README.md`.
+
+Read the public Zenodo API metadata for record `21101400` without downloading restricted files. The record is version `1.0`, marked `access_right: restricted`, reports metadata license `cc-by-4.0`, and describes raw search exports, screening support, reviewer/AI decision fields, and technical extraction for sharps-disposal devices. The API exposed no file inventory or hashes. This is now a concrete owner-access intake target, not an admissible source. No runtime inputs, labels, provider/network calls, or paid cost changed.
+
+Next: obtain owner authorization and exact restricted-file terms, inspect the real schema, and then run M23, M25, and M24 in sequence before rerunning frozen controls. Keep Bridge, paid HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused or blocked.

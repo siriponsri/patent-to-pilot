@@ -1,0 +1,40 @@
+{
+  "format": "ht-healthtech-source-metadata-preflight-v1",
+  "run_id": "luna-long-run-20261030-sharps-source-metadata-preflight-20261030",
+  "status": "PASS_METADATA_PREFLIGHT_OWNER_ACCESS_REQUIRED",
+  "run_date": "2026-10-30",
+  "source_head": "147382e323b6881fad244a3683b9703d391a9d94",
+  "record": {
+    "record_id": "21101400",
+    "doi": "10.5281/zenodo.21101400",
+    "title": "Global Patent Landscape Review of Sharps Disposal Devices in Healthcare: Code and Dataset",
+    "version": "1.0",
+    "created": "2026-07-01T15:37:11.360144+00:00",
+    "updated": "2026-07-09T14:39:07.388207+00:00",
+    "access_right": "restricted",
+    "metadata_license": "cc-by-4.0",
+    "files_visible": 0
+  },
+  "metadata_observations": [
+    "Description names raw WIPO, USPTO, Google Patents, and Espacenet exports.",
+    "Description names screening support and a processed patent dataset.",
+    "Description names reviewer-decision and AI-decision fields.",
+    "Description names technical feature extraction for sharps-disposal devices."
+  ],
+  "requirements_not_yet_verified": [
+    "per-file rights and intended-use terms",
+    "source file inventory and SHA-256 hashes",
+    "exact reviewer label vocabulary",
+    "row-level locator and adjudicator role",
+    "independent company and family groups",
+    "predeclared untouched final holdout"
+  ],
+  "payload_downloaded": 0,
+  "runtime_inputs_added": 0,
+  "semantic_labels_created": 0,
+  "provider_calls": 0,
+  "network_calls_for_project_execution": 0,
+  "paid_cost_usd": 0.0,
+  "decision": "PROMISING_DRAFT_AUTHORIZATION_SOURCE_REQUIRES_OWNER_ACCESS",
+  "next_action": "Obtain owner authorization and exact restricted-file terms, then inspect schema before M23/M25/M24."
+}
