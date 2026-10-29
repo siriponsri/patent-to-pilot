@@ -47,3 +47,11 @@ Implemented F1/F2/F3: external Markdown/JSON/CLI exports now project source fiel
 Fresh real local work used a derived frozen copy of the ignored Abbott cohort, leaving the original untouched. The adapter built 3 cases with 41 patents each; provenance covered 61/61 disclosed pairs but remained `PASS_WITH_LEGACY_RIGHTS` for the old cohort registry. Fresh dossiers and an offline HT-B0a/B0b/B1/B2/B3 frontier ran with 0 provider calls and $0 paid cost. Results remain development-only: 3 devices, 41 patents, 61 disclosed pairs, no final holdout, two exact-patent groups, one company, and `NOT_ESTIMABLE` generalization uncertainty.
 
 Remaining: review the M4 OpenRouter readiness seam and approved credential/credit state without reading secrets, then stop or run only the sequential canary within the cumulative $8 authorization if all gates pass. Do not treat the offline frontier as a final study, do not reopen the Bridge blocker, and do not start Claude UI, deployment, outreach, clinical/FTO, or public data release.
+
+## HT-NEXT-009 — 2026-10-29 M3 cross-cohort frontier comparison
+
+Status: `PASS_OFFLINE_ANALYSIS`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m3-cross-cohort-adad901/README.md`.
+
+Added a deterministic comparator and regression tests at `37a3b2d`. The current Abbott and Boston Scientific WATCHMAN frontiers share the five offline methods and fixed-prefix contract, but remain non-comparable for pooled scientific claims: Abbott is a three-device/two-group descriptive slice, while Boston's `K=20` exceeds its seven-patent candidate universe and therefore produces ceiling-limited `1.0` recall rows. The audit records raw source hashes, per-device resource deltas, zero source-frontier failures, zero provider calls, and the exact validation commands.
+
+Next: freeze the HT-T2 prediction manifest and denominator rules only if component predictions are available; otherwise keep component scoring `NOT_RUN`. Then add a rights-cleared cohort with multiple independent company/family groups and a final holdout before any pooled comparison. Keep the paid branch `BLOCKED_LOCAL` and do not reopen Bridge, UI, deployment, outreach, clinical/FTO, or public raw-data release.
