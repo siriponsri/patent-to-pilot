@@ -23,6 +23,7 @@ Current endpoint: descriptive macro known-link recall at `K=20` over product-lev
 - Cohort manifest hash: `1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75`.
 - Report receipt: [`luna-long-run-20261029-m7-report-20261029`](../audits/luna-long-run-20261029-m7-report-20261029/REPORT.md).
 - Descriptive analysis and figures: [`luna-long-run-20261029-m8-analysis-20261029-r2`](../audits/luna-long-run-20261029-m8-analysis-20261029-r2/ANALYSIS.md).
+- HT-B4 mock holdout comparison: [`luna-long-run-20261029-m10-b4-holdout-20261029`](../audits/luna-long-run-20261029-m10-b4-holdout-20261029/COMPARISON.md).
 
 The final holdout was not used for policy tuning. No semantic reviewer labels were available in this package. The Bridge branch remains `BLOCKED_LOCAL`.
 
@@ -34,6 +35,21 @@ The final holdout was not used for policy tuning. No semantic reviewer labels we
 | Final holdout macro known-link R@20 | 0.8190 | 0.9524 | 0.9333 | 0.9333 | 0.8857 |
 
 The development rows used 5 queries; the holdout rows used 3 queries. Realized query calls were method-dependent because HT-B2 and HT-B3 use multiple queries/actions. Full resource and hash detail is in `summary_tables.json` and `frontier_table.csv` in the linked report audit.
+
+## HT-B4 provider-shaped mock holdout comparison
+
+The fixed-policy HT-B4 provider-shaped mock was run once on the untouched final holdout after the control outputs were frozen. It completed 3 devices, 24 patents, 8 provider-shaped calls, 120 rerank pairs, macro known-link R@20 of `0.8857`, micro known-link R@20 of `0.8462`, simulated debit of USD `0.0008`, paid cost of USD `0.00`, zero unknown/pending billing items, and no ledger breach.
+
+| Method | Final holdout macro known-link R@20 | B4 mock minus control |
+|---|---:|---:|
+| HT-B0a | 0.8190 | +0.0667 |
+| HT-B0b | 0.9524 | -0.0667 |
+| HT-B1 | 0.9333 | -0.0476 |
+| HT-B2 | 0.9333 | -0.0476 |
+| HT-B3 | 0.8857 | 0.0000 |
+| HT-B4-MOCK | 0.8857 | — |
+
+In this descriptive holdout comparison, HT-B4-MOCK matches HT-B3 and is below HT-B0b, HT-B1, and HT-B2. Provider-shaped calls exercise the action schema and accounting path only; they are not live-provider evidence. The result remains `DESCRIPTIVE_NOT_ESTIMABLE` because the cohort uses product-level disclosures, unjudged pairs, and a small company-level transfer check rather than rights-cleared semantic relevance gold.
 
 ## Reproducible analysis and figures
 
@@ -75,11 +91,13 @@ The mock transport exercised the action schema and R1 reservation/settlement pat
 ## Sources, model, and system-card references
 
 - Frozen report and machine-readable outputs: [`docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/`](../audits/luna-long-run-20261029-m7-report-20261029/).
+- Holdout comparison and machine-readable outputs: [`docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/`](../audits/luna-long-run-20261029-m10-b4-holdout-20261029/).
 - Frozen B4 verification: [`docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json`](../audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json).
 - HT-T2 SciFact development audit: [`luna-long-run-20261029-ht-t2-lexical-dev-20261029`](../audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/README.md).
 - Model snapshot: `results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json`.
 - Endpoint metadata: `results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/endpoint_metadata.json`.
-- Current code tested: `237fc669a4b7829be420c48547f36a69e28f64f0`.
+- Long-run report code tested: `237fc669a4b7829be420c48547f36a69e28f64f0`.
+- Holdout comparison code tested: `b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3`.
 - R1 policy and accounting limits: `docs/healthtech/goals/luna-long-run-20261028-889958e/OPENROUTER_ROUND1_TH.md` and the filled budget request.
 
 The system-card section must preserve model/provider identity, pricing snapshot, structured-output/action restrictions, no-fallback/no-retry policy, transfer-rights gates, and the distinction between mocked transport and live execution.
@@ -105,4 +123,4 @@ SciFact is a separate evidence-verification component with its own source releas
 
 ## Reproducibility and next test
 
-Reproduce the report and figures with the commands recorded in the M7/M8 audit verification files and the frozen input hashes in `receipt.json` / `analysis.json`. The next discriminating test is a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout. Do not tune on the current holdout or recode unjudged pairs as negatives.
+Reproduce the report and figures with the commands recorded in the M7/M8 audit verification files and reproduce the holdout comparison with the M10 audit command and frozen input hashes in `comparison.json`. The next discriminating test is a rights-cleared semantic judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout. Do not tune on the current holdout or recode unjudged pairs as negatives.

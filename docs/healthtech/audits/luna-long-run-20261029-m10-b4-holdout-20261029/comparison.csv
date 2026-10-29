@@ -1,0 +1,7 @@
+cpu_seconds,device_count,failed_device_count,ledger_breach,macro_known_link_recall_at_20,method,micro_known_link_recall_at_20,model,paid_cost_usd,pricing_snapshot_sha256,pricing_snapshot_utc,provider_shaped_calls,query_calls,rerank_pairs,simulated_cost_usd,status,unknown_billing,wall_seconds
+,3,0,,0.8190476190476191,HT-B0a,,,0.0,,,,3.0,0.0,,OFFLINE_CONTROL,,
+,3,0,,0.9523809523809524,HT-B0b,,,0.0,,,,3.0,0.0,,OFFLINE_CONTROL,,
+,3,0,,0.9333333333333332,HT-B1,,,0.0,,,,3.0,72.0,,OFFLINE_CONTROL,,
+,3,0,,0.9333333333333332,HT-B2,,,0.0,,,,12.0,288.0,,OFFLINE_CONTROL,,
+,3,0,,0.8857142857142857,HT-B3,,,0.0,,,,5.0,120.0,,OFFLINE_CONTROL,,
+104.53125,3,0,False,0.8857142857142857,HT-B4-MOCK,0.8461538461538461,{'openai/gpt-4.1-mini': 'openai'},0.0,a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267,2026-10-29T11:18:41.615320Z,8,5.0,120.0,0.0008,MOCK_ONLY_NOT_PROVIDER_EVIDENCE,0,51.014066299998376

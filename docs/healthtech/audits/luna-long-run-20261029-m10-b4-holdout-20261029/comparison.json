@@ -1,0 +1,125 @@
+{
+  "b4_provider_shaped_mock": {
+    "cpu_seconds": 104.53125,
+    "device_count": 3,
+    "failed_device_count": 0,
+    "ledger_breach": false,
+    "macro_known_link_recall_at_20": 0.8857142857142857,
+    "method": "HT-B4-MOCK",
+    "micro_known_link_recall_at_20": 0.8461538461538461,
+    "model": {
+      "openai/gpt-4.1-mini": "openai"
+    },
+    "paid_cost_usd": 0.0,
+    "pricing_snapshot_sha256": "a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267",
+    "pricing_snapshot_utc": "2026-10-29T11:18:41.615320Z",
+    "provider_shaped_calls": 8,
+    "query_calls": 5.0,
+    "rerank_pairs": 120.0,
+    "simulated_cost_usd": 0.0008,
+    "status": "MOCK_ONLY_NOT_PROVIDER_EVIDENCE",
+    "unknown_billing": 0,
+    "wall_seconds": 51.014066299998376
+  },
+  "code_commit": "b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3",
+  "cohort_manifest_hash": "1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+  "deltas_vs_controls": [
+    {
+      "b4_minus_control_macro_recall": 0.06666666666666654,
+      "method": "HT-B0a",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+    },
+    {
+      "b4_minus_control_macro_recall": -0.06666666666666676,
+      "method": "HT-B0b",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+    },
+    {
+      "b4_minus_control_macro_recall": -0.04761904761904756,
+      "method": "HT-B1",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+    },
+    {
+      "b4_minus_control_macro_recall": -0.04761904761904756,
+      "method": "HT-B2",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+    },
+    {
+      "b4_minus_control_macro_recall": 0.0,
+      "method": "HT-B3",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+    }
+  ],
+  "format": "ht-b4-holdout-comparison-v1",
+  "input_hashes": {
+    "results\\healthtech\\ht-b4-r1-mock-20261029-holdout-r2\\controller_frontier.json": "993ba149dde503edf3795bf5fc1cb9d6b862937a765efd5692c5e1abefbe6911",
+    "results\\healthtech\\ht-b4-r1-mock-20261029-holdout-r2\\receipt.json": "d46d15423ab9e9c8d718a143f80a1a835094e6a8f8fb8ecb938d8179017528df",
+    "results\\healthtech\\ht-multicompany-baselines-20261029-family-r1-holdout\\frontier_diagnostics.json": "fec5cb5ea30423998068cd54de20045f6e44322e8444ec3c2d4019f9d2fd365b"
+  },
+  "interpretation": [
+    "The fixed-policy HT-B4 mock matches HT-B3 on holdout macro known-link recall in this run.",
+    "The HT-B4 mock is below HT-B0b, HT-B1, and HT-B2 on holdout macro known-link recall in this run.",
+    "Mock provider-shaped calls exercise the action schema and accounting path but are not live-provider evidence.",
+    "The holdout remains a small company-level transfer check with product-level disclosures, unjudged pairs, and NOT_ESTIMABLE generalization."
+  ],
+  "offline_controls": [
+    {
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.8190476190476191,
+      "method": "HT-B0a",
+      "paid_cost_usd": 0.0,
+      "query_calls": 3.0,
+      "rerank_pairs": 0.0,
+      "status": "OFFLINE_CONTROL",
+      "wall_seconds": null
+    },
+    {
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.9523809523809524,
+      "method": "HT-B0b",
+      "paid_cost_usd": 0.0,
+      "query_calls": 3.0,
+      "rerank_pairs": 0.0,
+      "status": "OFFLINE_CONTROL",
+      "wall_seconds": null
+    },
+    {
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.9333333333333332,
+      "method": "HT-B1",
+      "paid_cost_usd": 0.0,
+      "query_calls": 3.0,
+      "rerank_pairs": 72.0,
+      "status": "OFFLINE_CONTROL",
+      "wall_seconds": null
+    },
+    {
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.9333333333333332,
+      "method": "HT-B2",
+      "paid_cost_usd": 0.0,
+      "query_calls": 12.0,
+      "rerank_pairs": 288.0,
+      "status": "OFFLINE_CONTROL",
+      "wall_seconds": null
+    },
+    {
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.8857142857142857,
+      "method": "HT-B3",
+      "paid_cost_usd": 0.0,
+      "query_calls": 5.0,
+      "rerank_pairs": 120.0,
+      "status": "OFFLINE_CONTROL",
+      "wall_seconds": null
+    }
+  ],
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "split": "final_holdout",
+  "status": "PASS_B4_PROVIDER_SHAPED_HOLDOUT_DESCRIPTIVE"
+}

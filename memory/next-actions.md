@@ -269,3 +269,15 @@ Integrated the existing HT-T2 SciFact lexical development result into `docs/heal
 Verification: G6 regression `1 passed`; combined G6/M8/M7 selection `4 passed`; link targets exist; provider calls and paid cost remain `0` / `$0.00`. Hidden/test scoring, adaptive/provider inference, statistical significance, user/commercial validation, clinical/FTO, validity, investment, and publication acceptance remain NOT_RUN or NOT_VALIDATED.
 
 Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout.
+
+## HT-NEXT-031 — 2026-10-29 HT-B4 provider-shaped mock holdout comparison
+
+Status: `PASS_B4_PROVIDER_SHAPED_HOLDOUT_DESCRIPTIVE`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/README.md`.
+
+Added `scripts/healthtech/compare_b4_holdout.py` and `tests/test_healthtech_b4_holdout_comparison.py` at implementation commit `b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3`. The comparison binds the frozen family-aware HT-B0a/B0b/B1/B2/B3 holdout frontier to the successful `ht-b4-r1-mock-20261029-holdout-r2` receipt and writes JSON/CSV/Markdown outputs. Focused tests pass `2/2`; compile checks pass; the real generator returns `PASS_B4_PROVIDER_SHAPED_HOLDOUT_DESCRIPTIVE`.
+
+The untouched 3-device/24-patent holdout records HT-B4-MOCK macro/micro known-link recall@20 of `0.8857142857142857` / `0.8461538461538461` across 8 provider-shaped calls and 120 rerank pairs, with simulated debit `USD0.0008`, paid cost `$0.00`, 0 unknown/pending billing items, and no ledger breach. B4 matches HT-B3 and is below HT-B0b/HT-B1/HT-B2 on macro recall; it is above HT-B0a in this descriptive run.
+
+This remains mock-only engineering/descriptive evidence. It does not create live-provider evidence, semantic relevance gold, exhaustive recall, stable generalization, statistical significance, clinical/FTO, patent-validity, investment, or publication evidence. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
+
+Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, rights policy, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or holdout, then rerun the frozen controls before any pooled scientific claim.
