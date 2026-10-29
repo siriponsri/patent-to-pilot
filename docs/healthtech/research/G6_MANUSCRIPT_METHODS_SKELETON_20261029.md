@@ -194,3 +194,33 @@ M16 adds a deterministic local-only task exporter at implementation commit `23ac
 The real export is `results/healthtech/ht-relevance-review-tasks-20261029-r1/`, with manifest SHA-256 `bf4ee05fc76f26f5be891866843e7f4a24a01d0fab8249c9db8c339ce09ce6d6` and task-row SHA-256 `7274129bd3cbe01449ae046e75c89b9d099aa4f78311e3b8db69ed9ab7382d8c`. Focused task/packet tests pass `11/11`; all `341` responses remain empty; semantic label count and forbidden field/text hits are both `0`.
 
 This export is reviewer preparation, not semantic relevance gold. It does not authorize external distribution, provider transfer, or final scoring. The Stryker holdout remains untouched, and absent pairs remain `UNJUDGED`. The canonical M16 audit is [`luna-long-run-20261029-m16-review-tasks-20261029`](../audits/luna-long-run-20261029-m16-review-tasks-20261029/README.md).
+
+## M20 company-holdout sensitivity
+
+M20 reran the unchanged offline controls in four leave-one-company-out views
+over the typed Boston Scientific, Stryker Neurovascular, Cook Medical, and
+Philips composite. The frozen corpus contains `11` devices, `31` patents,
+`38` product-level disclosed pairs, and `303` explicitly unjudged distractor
+pairs. Each view used candidate and rerank depth `31`, `K=20`, the existing
+family-aware evaluator projection, and the same HT-B0a/B0b/B1/B2/B3 method set.
+All `8` development/holdout splits completed with zero failed devices, zero
+provider or network calls, and USD `0.00` paid cost.
+
+| Held-out company | HT-B0a | HT-B0b | HT-B1 | HT-B2 | HT-B3 |
+|---|---:|---:|---:|---:|---:|
+| Boston Scientific Corp | 0.845238 | 1.000000 | 1.000000 | 1.000000 | 1.000000 |
+| Stryker Neurovascular | 0.542857 | 0.809524 | 0.838095 | 0.885714 | 0.838095 |
+| Cook Medical | 1.000000 | 1.000000 | 1.000000 | 0.833333 | 1.000000 |
+| Philips Image Guided Therapy | 1.000000 | 1.000000 | 0.916667 | 0.916667 | 0.916667 |
+
+These are macro known-link Recall@20 values against product-level disclosure
+relationships. The repeated company rows reuse the same local corpus and are
+not independent samples. The Stryker view is the lowest observed transfer case
+for HT-B0a, HT-B0b, HT-B1, and HT-B3; Cook is lowest for HT-B2. Those patterns
+are descriptive sensitivity evidence only and do not establish method
+superiority, semantic claim relevance, exhaustive recall, stable
+generalization, statistical significance, clinical suitability, FTO, patent
+validity, investment merit, or publication readiness. Unlisted pairs remain
+unjudged and are not negatives.
+
+The canonical M20 record is [`luna-long-run-20261030-company-holdout-sensitivity-20261030`](../audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md). The next discriminating test remains an authorized rights-cleared semantic judgment source with explicit `relevant` / `not_relevant` labels, source revision and SHA-256, adjudicator role, exact locators, multiple independent company/family groups, and a predeclared untouched final holdout.
