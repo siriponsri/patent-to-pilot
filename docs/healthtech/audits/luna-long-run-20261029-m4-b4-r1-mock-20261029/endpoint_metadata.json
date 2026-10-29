@@ -1,0 +1,42 @@
+{
+  "format": "ht-openrouter-endpoint-snapshot-v1",
+  "retrieved_at_utc": "2026-10-29T11:18:41.615320Z",
+  "selected_endpoint": {
+    "context_length": 1047576,
+    "endpoint_name": "OpenAI: GPT-4.1 Mini",
+    "model": "openai/gpt-4.1-mini",
+    "native_tools": {
+      "openrouter:web_search": {
+        "type": "web_search"
+      }
+    },
+    "pricing": {
+      "completion": "0.0000016",
+      "discount": 0,
+      "input_cache_read": "0.0000001",
+      "prompt": "0.0000004",
+      "web_search": "0.01"
+    },
+    "provider_name": "OpenAI",
+    "status": 0,
+    "supported_parameters": [
+      "seed",
+      "max_tokens",
+      "response_format",
+      "structured_outputs",
+      "tools",
+      "tool_choice",
+      "temperature",
+      "top_p"
+    ],
+    "supports_implicit_caching": true,
+    "tag": "openai"
+  },
+  "selected_endpoint_sha256": "a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267",
+  "source_url": "https://openrouter.ai/api/v1/models/openai/gpt-4.1-mini/endpoints",
+  "request_scope": "text-only structured-output requests with tools disabled; prompt and completion pricing only",
+  "excluded_endpoint_components": [
+    "web_search",
+    "input_cache_read"
+  ]
+}

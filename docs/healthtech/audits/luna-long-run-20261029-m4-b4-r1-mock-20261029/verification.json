@@ -1,0 +1,108 @@
+{
+  "format": "ht-b4-r1-provider-shaped-audit-v1",
+  "run_id": "luna-long-run-20261029-m4-b4-r1-mock-20261029",
+  "date": "2026-10-29",
+  "status": "PASS_PROVIDER_SHAPED_MOCK_LIVE_BLOCKED_LOCAL",
+  "implementation_commit": "4e4ce3ed96d494ac903587d72d80ce21a4466d31",
+  "tree_state": "dirty_with_unrelated_owner_artifacts_preserved",
+  "frozen_inputs": {
+    "runtime": "results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/runtime.json",
+    "runtime_sha256": "928ccf1fff6d874a0d383708024dd50a59544a21c02686565fdefad8e9d0d409",
+    "references": "results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/references.json",
+    "references_sha256": "ea36bc67c77785edb690907517e2f2bc83dd23a5a1bea0a8e7401ff6072b755e",
+    "groups": "results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/groups.json",
+    "groups_sha256": "aa14105b07f3f0e30af744fe431110d36432b335f892da38292ea218ab6fb2c7",
+    "source_registry": "results/healthtech/ht-multicompany-20261029-r3-family-r2/source_registry.json",
+    "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+    "cohort_manifest_hash": "1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75"
+  },
+  "endpoint_snapshot": {
+    "model": "openai/gpt-4.1-mini",
+    "upstream_provider": "openai",
+    "snapshot_sha256": "a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267",
+    "snapshot_utc": "2026-10-29T11:18:41.615320Z",
+    "model_snapshot_path": "results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json",
+    "model_snapshot_file_sha256": "cf8b3dddf522dddd66143e9b3f463ce9fce038868c0235bb0726b8b309a67811",
+    "endpoint_metadata_path": "results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/endpoint_metadata.json",
+    "endpoint_metadata_file_sha256": "27557b25e9a805d2aebd4e844cfd36007d9b88d626bc9ed5026eda585ea96514"
+  },
+  "checks": [
+    {
+      "id": "focused_b4_tests",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_b4_live.py",
+      "outcome": "5 passed"
+    },
+    {
+      "id": "focused_provider_regressions",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_b4_live.py tests/test_healthtech_round1_budget.py tests/test_healthtech_prelive.py tests/test_healthtech_controller.py tests/test_provider_env_file.py tests/test_provider_adapter.py",
+      "outcome": "77 passed"
+    },
+    {
+      "id": "compile_check",
+      "status": "PASS",
+      "command": "rtk proxy python -m compileall -q src/patent_to_pilot/healthtech/provider_transfer.py src/patent_to_pilot/healthtech/b4_live.py scripts/healthtech/run_bounded_controller.py scripts/healthtech/run_b4_controller.py tests/test_healthtech_b4_live.py",
+      "outcome": "exit 0"
+    },
+    {
+      "id": "mock_cohort_run",
+      "status": "PASS",
+      "command": "rtk proxy python -B scripts/healthtech/run_b4_controller.py --runtime results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/runtime.json --references results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/references.json --groups results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/groups.json --source-registry results/healthtech/ht-multicompany-20261029-r3-family-r2/source_registry.json --model-root data/raw/healthtech/models --output results/healthtech/ht-b4-r1-mock-20261029-r4 --code-commit 4e4ce3e --protocol-hash 1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b --cohort-manifest-hash 1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75 --model-snapshot results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json --budget-path results/healthtech/ht-b4-r1-mock-20261029-r4/round1.sqlite3 --run-id ht-b4-r1-mock-20261029-r4 --mode mock --phase paired_pilot --max-steps 3 --max-output-tokens 256",
+      "outcome": "5 devices completed; 12 provider-shaped calls; macro/micro known-link recall@20 1.0/1.0; paid cost 0.0"
+    },
+    {
+      "id": "live_transfer_preflight",
+      "status": "BLOCKED",
+      "command": "rtk proxy python -B scripts/healthtech/run_b4_controller.py --runtime results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/runtime.json --references results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/references.json --groups results/healthtech/ht-multicompany-20261029-r3-family-r2/views/development/groups.json --source-registry results/healthtech/ht-multicompany-20261029-r3-family-r2/source_registry.json --model-root data/raw/healthtech/models --output results/healthtech/ht-b4-r1-live-preflight-20261029-r1 --code-commit 4e4ce3e --protocol-hash 1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b --cohort-manifest-hash 1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75 --model-snapshot results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json --budget-path results/healthtech/ht-b4-r1-live-preflight-20261029-r1/round1.sqlite3 --run-id ht-b4-r1-live-preflight-20261029-r1 --mode live --phase canary --max-steps 1 --max-output-tokens 128",
+      "exit_code": 1,
+      "outcome": "CLI rejected before dispatch because --transfer-manifest was not supplied; no credential file was read and no provider request was sent"
+    }
+  ],
+  "mock_run": {
+    "output": "results/healthtech/ht-b4-r1-mock-20261029-r4",
+    "receipt_sha256": "506fee66b80c84c800915cf2c1597aa56bd7ab5c7540376f6450f7a359357d1f",
+    "frontier_sha256": "539c286299d7386b49113b4f8303da21b99c1733446fb09a19958e33e377619f",
+    "runtime_predictions_sha256": "7a6c8f4cce053703733d63e84499659fc393e67c6ef477fce4d72670795a8592",
+    "evaluator_validation_sha256": "03e6acd020a282c899adb7b5e76edf51c78dd5984d36fa9a6b54e524982bd6a7",
+    "raw_rankings_sha256": "d92de8043420dbbc225d82b99368e2dcc5454c0a51c2a58b7c32269ec4f2b271",
+    "devices": 5,
+    "patents": 24,
+    "provider_shaped_calls": 12,
+    "paid_cost_usd": 0.0,
+    "simulated_cost_usd": 0.0012,
+    "runtime_outputs_before_reference_load": true,
+    "all_device_rows_completed": true,
+    "all_response_schemas_valid": true,
+    "ledger_unknown_or_pending": [],
+    "ledger_breach": false,
+    "ledger_actual_nano_usd": 1200000,
+    "r1_policy_sha256": "6c24e158dc91a13e9a6b11267db336a81c961eba8671300bb66357b071a53d34"
+  },
+  "boundaries": {
+    "implemented": [
+      "structured HT-B4 observation/action provider seam",
+      "exact model/provider and endpoint snapshot binding",
+      "provider-transfer manifest fail-closed validation",
+      "R1 durable reservation and settlement reuse",
+      "sanitized prompt/response receipts and schema validation",
+      "runtime-before-evaluator output ordering",
+      "mock cohort execution over the frozen development view"
+    ],
+    "mocked": [
+      "provider response transport",
+      "reported usage and simulated debit"
+    ],
+    "not_run": [
+      "live OpenRouter request",
+      "semantic relevance evaluation",
+      "final scientific pooled comparison",
+      "clinical, FTO, patent-validity, investment, or publication claims"
+    ],
+    "paid_cost_usd": 0.0,
+    "network_provider_calls": 0,
+    "credentials_staged": false,
+    "raw_restricted_payloads_staged": false
+  },
+  "next_action": "Obtain explicit transfer rights and current live authorization for a tiny synthetic canary, or prioritize the rights-cleared semantic relevance-judgment cohort; keep this mock receipt descriptive and do not treat it as live-provider evidence."
+}

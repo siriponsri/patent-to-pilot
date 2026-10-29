@@ -1,0 +1,11 @@
+{
+  "completion_usd_per_million": "1.6",
+  "max_price_completion": 1.6,
+  "max_price_prompt": 0.4,
+  "model": "openai/gpt-4.1-mini",
+  "prompt_usd_per_million": "0.4",
+  "snapshot_sha256": "a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267",
+  "snapshot_utc": "2026-10-29T11:18:41.615320Z",
+  "unsupported_billable_components": [],
+  "upstream_provider": "openai"
+}

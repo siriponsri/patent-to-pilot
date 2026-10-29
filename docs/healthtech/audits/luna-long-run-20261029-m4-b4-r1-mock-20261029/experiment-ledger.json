@@ -1,0 +1,42 @@
+{
+  "format": "ht-b4-r1-provider-shaped-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-m4-b4-r1-mock-20261029",
+  "implementation_commit": "4e4ce3ed96d494ac903587d72d80ce21a4466d31",
+  "entries": [
+    {
+      "id": "b4-provider-seam",
+      "kind": "implementation",
+      "status": "PASS",
+      "inputs": ["src/patent_to_pilot/healthtech/b4_live.py", "src/patent_to_pilot/healthtech/provider_transfer.py", "scripts/healthtech/run_b4_controller.py"],
+      "outcome": "Structured observation/action provider seam bound to current endpoint snapshot, R1 ledger, transfer manifest, and schema validation."
+    },
+    {
+      "id": "b4-focused-tests",
+      "kind": "regression",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_b4_live.py tests/test_healthtech_round1_budget.py tests/test_healthtech_prelive.py tests/test_healthtech_controller.py tests/test_provider_env_file.py tests/test_provider_adapter.py",
+      "outcome": "77 passed"
+    },
+    {
+      "id": "current-endpoint-snapshot",
+      "kind": "public-metadata-capture",
+      "status": "PASS",
+      "output": "results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/",
+      "outcome": "Exact OpenAI route selected; model snapshot hash a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267; prompt/completion prices 0.4/1.6 USD per million."
+    },
+    {
+      "id": "b4-development-mock",
+      "kind": "provider-shaped_local_experiment",
+      "status": "PASS",
+      "output": "results/healthtech/ht-b4-r1-mock-20261029-r4/",
+      "outcome": "5 devices, 24 patents, 12 mock provider-shaped calls, all rows completed, schema valid, macro/micro known-link recall@20 1.0/1.0, paid cost 0.0."
+    },
+    {
+      "id": "live-transfer-gate",
+      "kind": "admission_preflight",
+      "status": "BLOCKED_LOCAL",
+      "outcome": "Live CLI rejected before transport without an explicit provider-transfer manifest for the public cohort; no credential or source payload was used."
+    }
+  ],
+  "decision": "Retain the mock run as engineering evidence for the provider-shaped controller seam. Do not promote it to live-provider, semantic-gold, clinical, FTO, investment, or publication evidence."
+}

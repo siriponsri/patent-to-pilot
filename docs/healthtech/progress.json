@@ -225,6 +225,11 @@
       "id": "HT-M3-JUDGMENT-SUBMISSION",
       "status": "PASS_ENGINEERING_OFFLINE_NO_REAL_LABELS",
       "evidence": "Added a fail-closed authorized-submission adapter and CLI for ht-relevance-judgment-cohort-v1: partial submissions preserve omitted rows as unjudged, runtime numeric patent tokens retain patent_id_runtime_raw, and unknown rows, duplicates, source drift, missing adjudicator roles, unsupported bases, and product-disclosure promotion are rejected. Focused submission/packet/contract tests pass 20/20, the controlled full suite passes 373/373 with one warning, compile checks pass, and the synthetic smoke yields 1 judged plus 191 unjudged pairs with NOT_ESTIMABLE generalization at docs/healthtech/audits/luna-long-run-20261029-judgment-submission-20261029/"
+    },
+    {
+      "id": "HT-M4-B4-R1-MOCK",
+      "status": "PASS_PROVIDER_SHAPED_MOCK_LIVE_BLOCKED_LOCAL",
+      "evidence": "Added the structured HT-B4 provider-shaped runner with exact current OpenRouter endpoint snapshot binding, fail-closed provider-transfer manifest validation, durable USD8 R1 ledger settlement, sanitized prompt/response receipts, and runtime-before-evaluator ordering. The frozen 5-device/24-patent development view completed 12 mock provider-shaped calls with all schemas valid, macro/micro known-link recall@20 of 1.0/1.0, simulated cost USD0.0012, paid cost USD0.00, and no pending or unknown billing at docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/. Live dispatch remains blocked before transport without an explicit transfer manifest."
     }
   ],
   "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_COHORTS_AND_TYPED_BOSTON_STRYKER_HOLDOUT",
@@ -232,7 +237,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M1 current-head revalidation and closure, M3 deterministic freeze, the filled non-submitted budget/data expansion request, the HT-T2 SciFact lexical dev score, the Stryker M2/M3 offline package, the typed Boston/Stryker multi-company holdout package, the Cook third-company expansion, the Cook source-backed dossier run, the sourced family-mapping sensitivity package, the family-aware frontier re-projection, the family-aware cohort freeze, the fresh family-aware HT-B0a/B0b/B1/B2/B3 baseline runs, the semantic relevance-judgment intake contract, the metadata-only review packet, and the fail-closed judgment-submission adapter are complete with no extra spend. HT-T2 and all device-patent cohorts remain development-only evidence; family rows remain sensitivity diagnostics, and the review packet plus adapter create no semantic labels. Live provider/canary remains BLOCKED_LOCAL pending current OpenRouter metadata, credential/credit, transfer-rights, payload, and reconciliation gates. Next prioritize a rights-cleared relevance-judgment source with multiple independent company/family groups, explicit labels, source revision/hash, adjudicator role, locators, and a predeclared untouched final holdout while keeping Bridge blocked and Claude UX/UI paused",
+  "next": "M1 current-head revalidation and closure, M3 deterministic freeze, the filled non-submitted budget/data expansion request, the HT-T2 SciFact lexical dev score, the Stryker M2/M3 offline package, the typed Boston/Stryker multi-company holdout package, the Cook third-company expansion, the Cook source-backed dossier run, the sourced family-mapping sensitivity package, the family-aware frontier re-projection, the family-aware cohort freeze, the fresh family-aware HT-B0a/B0b/B1/B2/B3 baseline runs, the semantic relevance-judgment intake contract, the metadata-only review packet, the fail-closed judgment-submission adapter, and the HT-M4/B4 provider-shaped mock runner are complete with no extra spend. HT-T2, all device-patent cohorts, and the mock provider-shaped run remain development-only evidence; family rows remain sensitivity diagnostics, and the review packet plus adapter create no semantic labels. Live provider/canary remains BLOCKED_LOCAL pending credential/credit, transfer-rights, payload, and reconciliation gates. Next prioritize a rights-cleared relevance-judgment source with multiple independent company/family groups, explicit labels, source revision/hash, adjudicator role, locators, and a predeclared untouched final holdout while keeping Bridge blocked and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json",
@@ -263,6 +268,7 @@
   "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/README.md",
   "latest_m4_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/README.md",
   "latest_b4_offline_controller_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/README.md",
+  "latest_b4_provider_shaped_mock_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/README.md",
   "latest_scifact_differential": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/README.md",
   "latest_scifact_dev_score": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/README.md",
   "latest_budget_data_request": "docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/README.md",
