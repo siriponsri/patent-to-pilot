@@ -335,15 +335,20 @@
       "id": "HT-M27-SHARPS-SOURCE-METADATA-PREFLIGHT",
       "status": "PASS_METADATA_PREFLIGHT_OWNER_ACCESS_REQUIRED",
       "evidence": "Read public Zenodo API metadata for record 21101400 without downloading restricted files. The version-1.0 record reports access_right restricted, metadata license cc-by-4.0, raw WIPO/USPTO/Google/Espacenet exports, screening support, reviewer/AI decision fields, and technical extraction for sharps-disposal devices; no file inventory or hashes were exposed. This is a concrete owner-access intake target, not an admissible judgment source. No runtime inputs, labels, provider/network calls, or paid cost changed. Canonical audit: docs/healthtech/audits/luna-long-run-20261030-sharps-source-metadata-preflight-20261030/"
+    },
+    {
+      "id": "HT-M28-OPENROUTER-R1-READINESS-REVALIDATION",
+      "status": "PASS_OFFLINE_R1_READINESS_LIVE_BLOCKED",
+      "evidence": "Revalidated the versioned OpenRouter R1 policy and durable budget boundary at candidate commit 74d6b7e. The focused R1/provider suite passes 122 tests and the full repository suite passes 433 tests with one fitz deprecation warning; compile and diff checks pass. Dry-run remains approval-gated; mock smoke/pilot/resume complete without duplicate jobs; an unapproved live invocation blocks before transport creation. The only code change propagates src to cross-process budget-test workers so the declared pytest command passes without an external PYTHONPATH. No credentials, provider calls, network acquisition, or paid cost occurred. Canonical audit: docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-20261030/"
     }
   ],
-  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT_AND_M24_AUTHORIZATION_BOUND_JUDGMENT_INGEST_AND_M25_BOUNDED_SEMANTIC_SOURCE_STAGING_AND_M26_SEMANTIC_SOURCE_LANDSCAPE_EXPANSION_AND_M27_SHARPS_SOURCE_METADATA_PREFLIGHT",
+  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT_AND_M24_AUTHORIZATION_BOUND_JUDGMENT_INGEST_AND_M25_BOUNDED_SEMANTIC_SOURCE_STAGING_AND_M26_SEMANTIC_SOURCE_LANDSCAPE_EXPANSION_AND_M27_SHARPS_SOURCE_METADATA_PREFLIGHT_AND_M28_OPENROUTER_R1_READINESS_REVALIDATION",
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M27 converted the sharps-disposal lead into a source-specific owner intake target: public metadata shows restricted access, CC-BY-4.0 record metadata, reviewer/AI decision fields, and no exposed file hashes. No payload or labels were acquired. The next scientific discriminator remains owner authorization and exact schema access. Keep Bridge, live/provider HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
-  "verification": "docs/healthtech/audits/luna-long-run-20261030-sharps-source-metadata-preflight-20261030/verification.json",
+  "next": "M28 closed the offline OpenRouter R1 readiness revalidation: the versioned USD8/USD7 policy seam, provider regressions, durable mock smoke/pilot/resume, dry-run gate, and unapproved-live block pass at candidate 74d6b7e. No credentials, provider calls, network acquisition, or paid cost occurred. Keep live/provider HT-B4 BLOCKED_LOCAL; the next scientific discriminator remains owner authorization and exact schema access for Zenodo record 21101400 or another admissible semantic source. Keep Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
+  "verification": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-20261030/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
   "latest_healthtech_frontier": "results/healthtech/ht-multicompany-baselines-20261029-philips-family-r1-holdout/frontier_diagnostics.json",
@@ -399,6 +404,8 @@
   "latest_bounded_semantic_source_staging_audit": "docs/healthtech/audits/luna-long-run-20261030-bounded-semantic-source-staging-20261030/README.md",
   "latest_semantic_source_landscape_expansion_audit": "docs/healthtech/audits/luna-long-run-20261030-semantic-source-landscape-expansion-20261030/README.md",
   "latest_sharps_source_metadata_preflight_audit": "docs/healthtech/audits/luna-long-run-20261030-sharps-source-metadata-preflight-20261030/README.md",
+  "latest_openrouter_r1_readiness_audit": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-20261030/README.md",
+  "latest_openrouter_r1_readiness_verification": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-20261030/verification.json",
   "latest_scifact_error_analysis": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/README.md",
   "latest_scifact_error_analysis_output": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r4-error-analysis/analysis.json",
   "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/README.md",

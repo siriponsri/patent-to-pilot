@@ -1,0 +1,120 @@
+{
+  "format": "ht-openrouter-r1-readiness-revalidation-v1",
+  "run_id": "luna-long-run-20261030-openrouter-r1-readiness-20261030",
+  "run_date": "2026-10-30",
+  "status": "PASS_OFFLINE_R1_READINESS_LIVE_BLOCKED",
+  "parent_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/README.md",
+  "source_head_at_start": "e71ab26689b2a93da5b20a052aeeefe9df582363",
+  "candidate_commit": "74d6b7e",
+  "origin_main_at_start": "e71ab26689b2a93da5b20a052aeeefe9df582363",
+  "working_tree_context": "Unrelated owner-owned dirty and untracked artifacts were preserved; only the named test harness file was committed by this package.",
+  "policy": {
+    "version": "ptp-ht-openrouter-r1-20261028-usd8-v1",
+    "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+    "total_cap_nano_usd": 8000000000,
+    "admission_threshold_nano_usd": 7000000000,
+    "phase_caps_nano_usd": {
+      "canary": 400000000,
+      "paired_pilot": 5400000000,
+      "robustness": 1200000000
+    },
+    "max_concurrency": 1,
+    "automatic_retries": 0,
+    "unknown_billing": "block",
+    "exact_model_provider_and_pricing_snapshot": "caller-supplied and required by build_round1_policy; current refresh NOT_RUN"
+  },
+  "checks": [
+    {
+      "name": "focused_r1_provider_regressions",
+      "command": "rtk proxy python -B -m pytest tests/test_healthtech_round1_budget.py tests/test_provider_adapter.py tests/test_provider_identity.py tests/test_provider_env_file.py tests/test_provider_recovery.py tests/test_provider_pilot.py tests/test_provider_paired.py tests/test_release_budget_process.py --disable-warnings",
+      "status": "PASS",
+      "observed": "122 passed in 9.76s",
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    {
+      "name": "full_repository_suite",
+      "command": "rtk proxy python -B -m pytest tests --disable-warnings",
+      "status": "PASS",
+      "observed": "433 passed, 1 warning in 31.24s",
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    {
+      "name": "compile_checks",
+      "command": "rtk proxy python -B -m compileall -q src tests scripts/healthtech",
+      "status": "PASS",
+      "observed": "exit code 0"
+    },
+    {
+      "name": "diff_check",
+      "command": "rtk proxy powershell -NoProfile -Command \"git diff --check\"",
+      "status": "PASS",
+      "observed": "exit code 0"
+    },
+    {
+      "name": "dispatcher_dry_run",
+      "command": "rtk proxy python -B scripts/dispatch_provider_pilot.py",
+      "status": "PASS",
+      "observed": "READY_AWAITING_FUNDING_AND_BUDGET_APPROVAL; live NOT_RUN; plan SHA-256 6cf9bd14059f1df9f11ff6f913d31bcc5e5c60f3f993ac4766621bf1c7c148b2"
+    },
+    {
+      "name": "unapproved_live_gate",
+      "command": "rtk proxy python -B scripts/dispatch_provider_pilot.py --live --phase smoke",
+      "status": "PASS_BLOCKED",
+      "observed": "status BLOCKED, PilotError; wrapper returned non-zero before transport creation"
+    }
+  ],
+  "mock_receipts": {
+    "smoke": {
+      "status": "PHASE_COMPLETE",
+      "attempts": 2,
+      "actual_debit_usd": 0.0002,
+      "unknown_pending": [],
+      "completed_jobs": ["smoke-1-1", "smoke-1-2"]
+    },
+    "pilot_continuation": {
+      "status": "PHASE_COMPLETE",
+      "attempts": 6,
+      "actual_debit_usd": 0.0006,
+      "unknown_pending": [],
+      "completed_jobs": ["smoke-1-1", "smoke-1-2", "pilot-1-1", "pilot-1-2", "pilot-2-1", "pilot-2-2"]
+    },
+    "pilot_resume": {
+      "status": "PHASE_COMPLETE",
+      "attempts": 6,
+      "actual_debit_usd": 0.0006,
+      "unknown_pending": [],
+      "new_attempts_on_resume": 0
+    }
+  },
+  "source_sha256": {
+    "configs/provider-pilot-plan.json": "92af480ccfc25798382501c4e8ad86ccc8f1bf1bd171ee7ce64548eb7292fb23",
+    "scripts/dispatch_provider_pilot.py": "5d0176e520cbc17b4ce418b51235e39d13a628495dcb5104b15529af60d8b7d6",
+    "src/patent_to_pilot/providers/openrouter.py": "0105f14482bc217973bf55e011f6614e54ca2444d04d40599b7e66b9825bcaa5",
+    "src/patent_to_pilot/providers/project_budget.py": "30daeb9e91d895727400ecd011b206c7ba914b975d296866ece76d97a9a4e9b0",
+    "src/patent_to_pilot/providers/round1.py": "1fc575e161e4673aac7fdc1c926f20512d58a743fc87d0ff7174f58bb09a20e7",
+    "tests/test_healthtech_round1_budget.py": "655b565c3eddd4899ad61d135330572618703a5234f62ddad13361ef87775abb",
+    "tests/test_release_budget_process.py": "9ae172c90396f41b300339700b18886d2aa3c2e5568d8aa245bda24786086924"
+  },
+  "boundaries": {
+    "credentials_read": 0,
+    "provider_calls": 0,
+    "network_calls_for_project_execution": 0,
+    "paid_cost_usd": 0.0,
+    "current_model_provider_metadata_refresh": "NOT_RUN",
+    "current_pricing_snapshot_refresh": "NOT_RUN",
+    "account_balance_or_credit_check": "NOT_RUN",
+    "live_provider_compatibility": "NOT_RUN",
+    "provider_transfer_rights_for_future_payload": "NOT_RUN",
+    "scientific_ht_b4_run": "NOT_RUN",
+    "semantic_device_patent_judgment_source": "BLOCKED_LOCAL"
+  },
+  "next_action": "Keep live HT-B4 blocked; obtain current metadata/pricing, approved existing-credit and credential evidence, payload-transfer rights, and explicit live admission before any paid call. The primary scientific branch still requires owner authorization and schema access for the restricted semantic source.",
+  "limitations": [
+    "Mock debit is synthetic transport accounting, not provider billing.",
+    "Offline test PASS does not prove live compatibility or account readiness.",
+    "The R1 envelope is not new spend authorization beyond the declared owner scope.",
+    "No scientific adaptive-benefit or clinical/legal/FTO claim is supported."
+  ]
+}

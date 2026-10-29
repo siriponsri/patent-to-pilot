@@ -437,3 +437,13 @@ Status: `PASS_METADATA_PREFLIGHT_OWNER_ACCESS_REQUIRED`; canonical audit: `docs/
 Read the public Zenodo API metadata for record `21101400` without downloading restricted files. The record is version `1.0`, marked `access_right: restricted`, reports metadata license `cc-by-4.0`, and describes raw search exports, screening support, reviewer/AI decision fields, and technical extraction for sharps-disposal devices. The API exposed no file inventory or hashes. This is now a concrete owner-access intake target, not an admissible source. No runtime inputs, labels, provider/network calls, or paid cost changed.
 
 Next: obtain owner authorization and exact restricted-file terms, inspect the real schema, and then run M23, M25, and M24 in sequence before rerunning frozen controls. Keep Bridge, paid HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused or blocked.
+
+## HT-NEXT-049 — 2026-10-30 M28 offline OpenRouter R1 readiness revalidation
+
+Status: `PASS_OFFLINE_R1_READINESS_LIVE_BLOCKED`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-20261030/README.md`.
+
+Revalidated the versioned OpenRouter R1 policy and durable budget seam at candidate commit `74d6b7e`. The focused R1/provider suite passes `122` tests; the full repository suite passes `433` tests with one existing `fitz` deprecation warning; compile and diff checks pass. Dry-run remains `READY_AWAITING_FUNDING_AND_BUDGET_APPROVAL`; mock smoke/pilot/resume complete with `2` then `6` cumulative attempts and `0` new attempts on resume; an unapproved live invocation blocks before transport creation. The only code change propagates the repository `src` path to cross-process budget-test workers so the default pytest command is reproducible.
+
+No credentials were read, no provider or network calls were made, no restricted payload was acquired, and paid cost is `USD 0.00`. This closes offline engineering readiness only; it does not verify current model/provider metadata, pricing, credits, credentials, transfer rights, live compatibility, billing reconciliation, scientific HT-B4 benefit, or semantic device-patent gold.
+
+Next: keep live/provider HT-B4 `BLOCKED_LOCAL`; obtain current metadata/pricing and explicit live admission only if later needed. The primary scientific next action remains owner authorization and exact schema access for Zenodo record `21101400` or another admissible semantic source, followed by M23, M25, M24, and frozen-control reruns without changing the denominator, holdout, or unjudged policy.
