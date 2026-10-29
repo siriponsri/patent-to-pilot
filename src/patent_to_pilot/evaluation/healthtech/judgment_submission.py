@@ -8,6 +8,10 @@ from patent_to_pilot.evaluation.healthtech.judgments import (
     JudgmentValidationError,
     validate_relevance_judgment_manifest,
 )
+from patent_to_pilot.evaluation.healthtech.source_authorization import (
+    SourceAuthorizationError,
+    validate_semantic_source_authorization,
+)
 from patent_to_pilot.evaluation.healthtech.review_packet import (
     ReviewPacketValidationError,
     validate_relevance_review_packet,
@@ -35,6 +39,8 @@ def build_relevance_judgment_manifest(
     submissions: list[Mapping[str, Any]],
     source_manifest: Mapping[str, Any],
     *,
+    authorization_manifest: Mapping[str, Any],
+    authorization_sha256: str | None = None,
     packet_path: str | None = None,
     packet_sha256: str | None = None,
     holdout_policy: Mapping[str, Any] | None = None,
@@ -50,6 +56,10 @@ def build_relevance_judgment_manifest(
         raise JudgmentSubmissionError(str(exc)) from exc
     if not isinstance(source_manifest, dict):
         raise JudgmentSubmissionError("source manifest must be an object")
+    try:
+        authorization = validate_semantic_source_authorization(dict(authorization_manifest))
+    except (SourceAuthorizationError, TypeError) as exc:
+        raise JudgmentSubmissionError(f"source authorization failed: {exc}") from exc
     source_rows = source_manifest.get("sources")
     if not isinstance(source_rows, list) or not source_rows:
         raise JudgmentSubmissionError("source manifest must contain sources")
@@ -61,6 +71,16 @@ def build_relevance_judgment_manifest(
         if source_id in source_by_id:
             raise JudgmentSubmissionError(f"duplicate source_id: {source_id}")
         source_by_id[source_id] = source
+    authorized_source = source_by_id.get(authorization["source_id"])
+    if authorized_source is None:
+        raise JudgmentSubmissionError("authorized source is absent from source manifest")
+    for field in ("source_revision", "source_sha256"):
+        if authorized_source.get(field) != authorization[field]:
+            raise JudgmentSubmissionError(f"authorized source {field} does not match source manifest")
+    if authorized_source.get("rights_policy_id") != authorization["rights_policy_id"]:
+        raise JudgmentSubmissionError("authorized rights policy does not match source manifest")
+    if authorized_source.get("intended_use") != "semantic_relevance_judgment":
+        raise JudgmentSubmissionError("source manifest intended use is not semantic relevance judgment")
 
     review_by_id = {
         row["review_row_id"]: row
@@ -159,6 +179,14 @@ def build_relevance_judgment_manifest(
             "format": packet["format"],
             "path": packet_path,
             "sha256": packet_sha256,
+        },
+        "authorization_binding": {
+            "format": "ht-semantic-source-authorization-v1",
+            "source_id": authorization["source_id"],
+            "source_revision": authorization["source_revision"],
+            "source_sha256": authorization["source_sha256"],
+            "rights_policy_id": authorization["rights_policy_id"],
+            "manifest_sha256": authorization_sha256,
         },
         "sources": [dict(source) for source in source_rows],
         "judgments": judgments,

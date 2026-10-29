@@ -41,6 +41,7 @@ def main() -> None:
     parser.add_argument("--packet", type=Path, required=True)
     parser.add_argument("--submission", type=Path, required=True, help="JSONL rows supplied by an authorized reviewer")
     parser.add_argument("--source-manifest", type=Path, required=True)
+    parser.add_argument("--authorization-manifest", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
@@ -49,10 +50,13 @@ def main() -> None:
     packet = _read_json(args.packet)
     submission = _read_jsonl(args.submission)
     source_manifest = _read_json(args.source_manifest)
+    authorization_manifest = _read_json(args.authorization_manifest)
     manifest = build_relevance_judgment_manifest(
         packet,
         submission,
         source_manifest,
+        authorization_manifest=authorization_manifest,
+        authorization_sha256=_sha256(args.authorization_manifest),
         packet_path=str(args.packet),
         packet_sha256=_sha256(args.packet),
     )
@@ -71,6 +75,8 @@ def main() -> None:
         "packet_sha256": _sha256(args.packet),
         "submission_path": str(args.submission),
         "submission_sha256": _sha256(args.submission),
+        "authorization_manifest_path": str(args.authorization_manifest),
+        "authorization_manifest_sha256": _sha256(args.authorization_manifest),
     })
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.report.parent.mkdir(parents=True, exist_ok=True)

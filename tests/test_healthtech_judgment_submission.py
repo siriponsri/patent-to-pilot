@@ -66,6 +66,53 @@ def _source_manifest() -> dict:
     }]}
 
 
+def _authorization_manifest() -> dict:
+    return {
+        "format": "ht-semantic-source-authorization-v1",
+        "status": "APPROVED_LOCAL_RESEARCH_SOURCE",
+        "source": {
+            "source_id": "expert-fixture",
+            "source_revision": "expert-v1",
+            "source_sha256": "1" * 64,
+            "locator": "fixture://expert-v1",
+            "source_class": "licensed_reviewer_export",
+        },
+        "rights": {
+            "rights_policy_id": "fixture-expert-local",
+            "rights_basis": "authored fixture authorization",
+            "rights_clause": "local research only",
+            "intended_use": "semantic_relevance_judgment",
+            "use_decision": "ALLOWED_LOCAL_RESEARCH",
+            "provider_transfer_allowed": False,
+            "public_redistribution_allowed": False,
+            "attribution_required": True,
+        },
+        "acquisition": {
+            "retrieval_method": "authorized_local_copy",
+            "resumable": True,
+            "expected_bytes": 1,
+            "max_bytes": 2,
+            "expected_files": 1,
+            "max_files": 2,
+            "storage_relpath": "fixture/semantic-source",
+            "raw_relpath": "fixture/semantic-source/raw.jsonl",
+            "normalized_relpath": "fixture/semantic-source/normalized.jsonl",
+        },
+        "judgment_contract": {
+            "allowed_labels": ["relevant", "not_relevant"],
+            "absent_pair_policy": "unjudged_not_negative",
+            "exact_locator_required": True,
+            "adjudicator_role_required": True,
+        },
+        "cohort_requirements": {
+            "minimum_independent_company_groups": 2,
+            "minimum_independent_family_groups": 2,
+            "final_holdout_predeclared": True,
+            "cross_split_leakage_policy": "reject",
+        },
+    }
+
+
 def _submission(**overrides) -> list[dict]:
     row = {
         "review_row_id": "Q-DEV::US1234567B2",
@@ -83,7 +130,13 @@ def _submission(**overrides) -> list[dict]:
 
 
 def test_submission_binds_to_packet_and_preserves_unjudged_pairs():
-    manifest = build_relevance_judgment_manifest(_packet(), _submission(), _source_manifest())
+    manifest = build_relevance_judgment_manifest(
+        _packet(),
+        _submission(),
+        _source_manifest(),
+        authorization_manifest=_authorization_manifest(),
+        authorization_sha256="2" * 64,
+    )
     report = validate_relevance_judgment_manifest(
         manifest,
         runtime_query_ids=["Q-DEV", "Q-HOLD"],
@@ -94,6 +147,8 @@ def test_submission_binds_to_packet_and_preserves_unjudged_pairs():
     assert report["unjudged_pair_count"] == 3
     assert report["generalization_status"] == "NOT_ESTIMABLE"
     assert manifest["judgments"][0]["patent_id_runtime_raw"] == "1234567"
+    assert manifest["authorization_binding"]["source_id"] == "expert-fixture"
+    assert manifest["authorization_binding"]["manifest_sha256"] == "2" * 64
 
 
 @pytest.mark.parametrize("mutation", ["unknown_row", "product_disclosure", "missing_role", "wrong_source_hash"])
@@ -108,4 +163,26 @@ def test_submission_rejects_unsafe_or_unbound_rows(mutation: str):
     elif mutation == "wrong_source_hash":
         submission[0]["source_sha256"] = "2" * 64
     with pytest.raises(JudgmentSubmissionError):
-        build_relevance_judgment_manifest(_packet(), submission, _source_manifest())
+        build_relevance_judgment_manifest(
+            _packet(),
+            submission,
+            _source_manifest(),
+            authorization_manifest=_authorization_manifest(),
+            authorization_sha256="2" * 64,
+        )
+
+
+def test_submission_requires_and_binds_authorization_manifest():
+    with pytest.raises(TypeError):
+        build_relevance_judgment_manifest(_packet(), _submission(), _source_manifest())
+
+    authorization = _authorization_manifest()
+    authorization["source"]["source_sha256"] = "3" * 64
+    with pytest.raises(JudgmentSubmissionError, match="does not match"):
+        build_relevance_judgment_manifest(
+            _packet(),
+            _submission(),
+            _source_manifest(),
+            authorization_manifest=authorization,
+            authorization_sha256="2" * 64,
+        )

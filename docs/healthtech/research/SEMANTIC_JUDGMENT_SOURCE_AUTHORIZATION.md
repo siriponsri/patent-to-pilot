@@ -20,7 +20,7 @@ Use `ht-semantic-source-authorization-v1` and provide:
 1. Validate the authorization manifest with `scripts/healthtech/validate_semantic_source_authorization.py`.
 2. Acquire only within the approved storage and byte/file bounds; record raw and normalized hashes plus resumable attempt receipts.
 3. Bind the source manifest to `ht-relevance-judgment-cohort-v1`.
-4. Ingest explicit reviewer rows through `scripts/healthtech/ingest_relevance_judgments.py`.
+4. Ingest explicit reviewer rows through `scripts/healthtech/ingest_relevance_judgments.py` with the same authorization manifest; the CLI rejects missing or mismatched authorization bindings.
 5. Rerun HT-B0a/B0b/B1/B2/B3 only after the judgment manifest, frozen denominator, groups, and untouched holdout validate.
 
 The preflight does not authorize paid inference, provider transfer, public
