@@ -369,3 +369,13 @@ Added `run_pilot_task.py` and its focused regression at implementation commit `4
 This is backend engineering evidence only. It does not establish participant usability, correction burden, willingness to pay, repeat use, commercial demand, semantic device-patent gold, final-holdout generalization, live/provider HT-B4, clinical/FTO, validity, investment, or publication readiness.
 
 Next: obtain or authorize the rights-cleared semantic device-patent judgment source with multiple independent company/family groups, frozen denominators, and a predeclared untouched holdout; use the task packet only after separately authorized participant consent. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve unjudged pairs, and keep Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused.
+
+## HT-NEXT-041 — 2026-10-30 M20 company holdout sensitivity
+
+Status: `PASS_OFFLINE_COMPANY_HOLDOUT_SENSITIVITY`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md`.
+
+Added `run_company_holdout_sensitivity.py` and its focused regression. The real run reused the typed Boston Scientific, Stryker Neurovascular, Cook Medical, and Philips local snapshots, composed four leave-one-company-out views, and reran HT-B0a/B0b/B1/B2/B3 on 8 development/holdout splits over 11 devices, 31 patents, 38 product-level disclosed pairs, and 303 unjudged distractors. All splits completed with 0 failed devices, 0 provider/network calls, and USD 0.00 paid cost. Holdout macro known-link Recall@20 ranges are B0a `0.542857–1.000000`, B0b `0.809524–1.000000`, B1 `0.838095–1.000000`, B2 `0.833333–1.000000`, and B3 `0.838095–1.000000`.
+
+This reduces dependence on the prior single Stryker transfer check but remains descriptive sensitivity evidence: the four rows reuse the same local companies, product-level disclosure relations are not semantic relevance gold, unlisted pairs remain unjudged, and no pooled statistical/generalization claim is supported. The command-log path renderer was hardened after the run; scientific outputs were not recomputed because that change affects only local path presentation.
+
+Next: obtain or authorize the rights-cleared semantic device-patent judgment source with explicit labels, source revision/hash, exact locators, multiple independent company/family groups, and a predeclared untouched holdout; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or unjudged policy, then rerun the controls. Keep paid HT-B4 `BLOCKED_LOCAL`, preserve raw third-party payloads locally, and keep Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused.

@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "track": "healthtech",
   "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
   "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
@@ -295,14 +295,19 @@
       "id": "HT-M19-G5-OFFLINE-PILOT-TASK",
       "status": "PASS_OFFLINE_ENGINEERING_TASK",
       "evidence": "Added the executable HT-G5/HT-W16 local task runner and focused regression at implementation commit 4b81189. The committed-code Cook Zenith run inspected the typed FDA pma_number field, recorded 2 disclosed product-level candidates, seeded and corrected one edit, published history versions 1 and 2, exported selected version 2 in local-research JSON/EN/TH, and separately verified the product-display projection as BLOCKED_LOCAL for Cook/Google-derived patent sources. Execution was 0.1291642999931355 seconds with 0 provider/network calls and USD 0.00 paid cost. Canonical audit: docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/"
+    },
+    {
+      "id": "HT-M20-COMPANY-HOLDOUT-SENSITIVITY",
+      "status": "PASS_OFFLINE_COMPANY_HOLDOUT_SENSITIVITY",
+      "evidence": "Added a reusable leave-one-company-out runner and focused regression, then ran four frozen Boston/Stryker/Cook/Philips holdout views over 11 devices, 31 patents, 38 product-level disclosed pairs, and 303 unjudged distractors. All 8 HT-B0a/B0b/B1/B2/B3 development/holdout splits completed with 0 failed devices, 0 provider/network calls, and USD 0.00 paid cost. Holdout macro known-link Recall@20 ranges were B0a 0.542857–1.000000, B0b 0.809524–1.000000, B1 0.838095–1.000000, B2 0.833333–1.000000, and B3 0.838095–1.000000. This is descriptive sensitivity evidence, not semantic gold or pooled generalization. Canonical audit: docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/"
     }
   ],
-  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK",
+  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY",
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M19 added a committed-code HT-G5/HT-W16 offline task runner and real Cook-case engineering dry-run with no extra spend. It proves source inspection, seeded correction, durable history, selected-version exports, and external rights blocking, but not participant usability or commercial validation. The next scientific discriminator remains a rights-cleared device-patent judgment source with explicit labels, multiple company/family groups, frozen denominators, and a predeclared untouched holdout. Keep Bridge, live/provider HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
+  "next": "M20 added a real four-company leave-one-company-out sensitivity run over the frozen 11-device/31-patent typed cohort. All 8 HT-B0a/B0b/B1/B2/B3 splits completed with 0 failures, 0 provider/network calls, and USD 0.00 paid cost; results remain descriptive known-link proxy evidence because product disclosures are not semantic gold and repeated company rows are not independent samples. The next scientific discriminator remains a rights-cleared device-patent judgment source with explicit labels, multiple company/family groups, frozen denominators, and a predeclared untouched holdout. Keep Bridge, live/provider HT-B4, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI paused",
   "verification": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
@@ -350,6 +355,8 @@
   "latest_g5_pilot_task_audit": "docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/README.md",
   "latest_g5_pilot_task_receipt": "results/healthtech/ht-g5-pilot-task-20261029-r2/task_receipt.json",
   "latest_g5_pilot_task_output": "results/healthtech/ht-g5-pilot-task-20261029-r2",
+  "latest_company_holdout_sensitivity_audit": "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md",
+  "latest_company_holdout_sensitivity_output": "results/healthtech/ht-company-holdout-sensitivity-20261029-r1/summary.json",
   "latest_scifact_error_analysis": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/README.md",
   "latest_scifact_error_analysis_output": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r4-error-analysis/analysis.json",
   "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/README.md",

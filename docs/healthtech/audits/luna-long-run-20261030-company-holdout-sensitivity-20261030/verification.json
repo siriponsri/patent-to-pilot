@@ -1,0 +1,104 @@
+{
+  "format": "ht-audit-verification-v1",
+  "run_id": "luna-long-run-20261030-company-holdout-sensitivity-20261030",
+  "status": "PASS_OFFLINE_COMPANY_HOLDOUT_SENSITIVITY",
+  "run_date": "2026-10-29",
+  "handoff_date": "2026-10-30",
+  "source_head_at_experiment_start": "47aeefcd190ee109f9fb9b9f1ac5c8f37e9bdafe",
+  "implementation": {
+    "orchestrator": "scripts/healthtech/run_company_holdout_sensitivity.py",
+    "orchestrator_postrun_sha256": "ca5dc806b319d379f6327a19a6b4ad1335b32fabd76a69abec0bdfd7cff5e7f8",
+    "focused_test": "tests/test_healthtech_company_holdout_sensitivity.py",
+    "focused_test_sha256": "524ab899c38f9b460f17d686377bb7ada4d07a46adbd6a62728425dc9f76b050",
+    "compose_script_sha256": "ebed14ef5a9699b2db556a35921549b5cc6ea074abaf3a052b5792d6e17d04f7",
+    "baseline_script_sha256": "fd2f5275214d50b9129fed28f76fbbb7a8a8c15d517bf587185feac5689f7fcb",
+    "postrun_change_note": "After the experiment, command-log path rendering was hardened to remove absolute local paths; scientific outputs were not recomputed because the change does not affect cohort composition or baseline scoring."
+  },
+  "frozen_inputs": {
+    "boston_cohort": "results/healthtech/ht-boston-watchman-20261028-r4/manifest.json",
+    "stryker_cohort": "results/healthtech/ht-stryker-neurovascular-20261029-r1/manifest.json",
+    "cook_cohort": "results/healthtech/ht-cook-zenith-20261029-r1/manifest.json",
+    "philips_cohort": "results/healthtech/ht-philips-cardiovascular-20261029-r2/manifest.json",
+    "family_mapping": "results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json",
+    "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+    "candidate_depth": 31,
+    "rerank_depth": 31,
+    "primary_k": 20
+  },
+  "cohort_summary": {
+    "devices": 11,
+    "patents": 31,
+    "disclosed_pairs": 38,
+    "unjudged_distractor_pairs": 303,
+    "holdout_views": 4,
+    "baseline_splits": 8,
+    "failed_devices": 0,
+    "provider_calls": 0,
+    "network_calls": 0,
+    "paid_cost_usd": 0
+  },
+  "holdouts": [
+    {
+      "company": "BOSTON SCIENTIFIC CORP",
+      "cohort_manifest_sha256": "b163dfe13e9915bef6ba2121972389c36788060c1cd176fff8cfffeeb37d04af",
+      "development_devices": 9,
+      "final_holdout_devices": 2,
+      "development_receipt_sha256": "d9689fdfefbde494f870db3bbbe4aa2eb1967ce3796ffd9473707138d1e40b52",
+      "development_frontier_sha256": "1db5f30939d5e150624eba49eda9fbf806a1dcf20292497fe27a4299e3b0218f",
+      "holdout_receipt_sha256": "2a2326abdb1e29dd397fabd0ac02e949b3c229f405138f87bbf5f58e4d7906f6",
+      "holdout_frontier_sha256": "612b92a207cfdb7b3a2d30a50e3fe49c34f5d1cbddf93aa857254b2d9253be36",
+      "holdout_macro_recall_at_20": {"HT-B0a": 0.845238, "HT-B0b": 1.0, "HT-B1": 1.0, "HT-B2": 1.0, "HT-B3": 1.0}
+    },
+    {
+      "company": "STRYKER NEUROVASCULAR",
+      "cohort_manifest_sha256": "e4af59ca34240a14bfb1eb08825a1a19b520690b10f9502a324ee3d872aa611d",
+      "development_devices": 8,
+      "final_holdout_devices": 3,
+      "development_receipt_sha256": "b46755b06f4ecdb37e2ba80e56c1652deef9161da8e9805505086290250b4daa",
+      "development_frontier_sha256": "3e5d7fd8abf5def29e4017ae1ce469f788393f5411da2820b71abee5c55cf27d",
+      "holdout_receipt_sha256": "1f5a739ba3bf35b92ca4bada37849a4f887717d86e9365847c4f098eeb75a487",
+      "holdout_frontier_sha256": "bd3492c5b6d8b09788eebc463f8abf82f7d53199b26f854824d4a85ecc658b4b",
+      "holdout_macro_recall_at_20": {"HT-B0a": 0.542857, "HT-B0b": 0.809524, "HT-B1": 0.838095, "HT-B2": 0.885714, "HT-B3": 0.838095}
+    },
+    {
+      "company": "Cook Medical",
+      "cohort_manifest_sha256": "29e98c3d1adfd8dcc2d2f74932d24b21cd9a9617bb1b0ea7881d4ca9f03a47c9",
+      "development_devices": 8,
+      "final_holdout_devices": 3,
+      "development_receipt_sha256": "95469d7b502860317c49b3fe9320e3deaefa87496e49f04a866393106c34742d",
+      "development_frontier_sha256": "710eb10e3e769f6c96ea2e0e24095aa0e5fdde0751c61bd5f877b9e8be8718e6",
+      "holdout_receipt_sha256": "a52ff91d8d6e3d3bf1ebb9c6ce732e5cacef8cc16d74702043824aa600f56ce7",
+      "holdout_frontier_sha256": "46e352109bc306c4873af2b92e12a9fce0fba8af5937039c5718ab666d3b1114",
+      "holdout_macro_recall_at_20": {"HT-B0a": 1.0, "HT-B0b": 1.0, "HT-B1": 1.0, "HT-B2": 0.833333, "HT-B3": 1.0}
+    },
+    {
+      "company": "PHILIPS IMAGE GUIDED THERAPY",
+      "cohort_manifest_sha256": "61cf036f116c041ab489684b91f6254adb0a69e91fa7c3e41726a65c9aba3b49",
+      "development_devices": 8,
+      "final_holdout_devices": 3,
+      "development_receipt_sha256": "6cdb03336f2c28c78e0101de56a661293b7844d983aa0537d6e390c7d3b54e28",
+      "development_frontier_sha256": "984f7db96a7a033113ea775e7d77039cf645e69b39930a2ab1d7b603f0d28a58",
+      "holdout_receipt_sha256": "b00037b434f7b0b7d1cdc5905f9d01e320b3d78eed4db8acfdbca084156c4ba4",
+      "holdout_frontier_sha256": "a915b78c7a38efe9837f96b6b6171875cf40b5f1d9e493ba6495c3151b1cfb6e",
+      "holdout_macro_recall_at_20": {"HT-B0a": 1.0, "HT-B0b": 1.0, "HT-B1": 0.916667, "HT-B2": 0.916667, "HT-B3": 0.916667}
+    }
+  ],
+  "generated_artifacts": {
+    "result_summary": "results/healthtech/ht-company-holdout-sensitivity-20261029-r1/summary.json",
+    "result_summary_sha256": "a9b3976422be3438790f3df10203610f044ea092c8f208b7c975a6d6a1fabf6a",
+    "command_log": "results/healthtech/ht-company-holdout-sensitivity-20261029-r1/commands.json",
+    "command_log_sha256": "c4b53bf83a7e534f5765b0645dbdacee919117abf82ebc74660ea4a15f6877a6"
+  },
+  "checks": [
+    {"command": "rtk proxy python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_company_holdout_sensitivity.py", "outcome": "2 passed"},
+    {"command": "rtk proxy python -B -m py_compile scripts/healthtech/run_company_holdout_sensitivity.py tests/test_healthtech_company_holdout_sensitivity.py", "outcome": "PASS"},
+    {"command": "rtk proxy git diff --check -- scripts/healthtech/run_company_holdout_sensitivity.py tests/test_healthtech_company_holdout_sensitivity.py", "outcome": "PASS"}
+  ],
+  "not_run": [
+    "Rights-cleared semantic device-patent labels",
+    "Pooled scientific inference or stable generalization",
+    "Live/provider HT-B4 or paid inference",
+    "Participant usability or commercial validation",
+    "Clinical/FTO, patent validity, investment, deployment, outreach, or publication acceptance"
+  ]
+}
