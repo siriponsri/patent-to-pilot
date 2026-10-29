@@ -3,7 +3,7 @@
 - Run ID: `luna-long-run-20261029-m4-r1-4c863d0`
 - Scope: versioned OpenRouter Round 1 budget seam and offline fault closure
 - Base commit: `4c863d0a01d8fc7211682745786a35f1474963f5`
-- Candidate commit: recorded after the scoped commit/push
+- Candidate commit: `7395b92` (`healthtech: add versioned R1 budget seam`)
 - Working tree rule: unrelated owner artifacts and paused Claude worktree preserved
 - Provider calls: `0`
 - Paid cost: `$0`
