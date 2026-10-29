@@ -487,3 +487,11 @@ Added a current-head all-channel F1 regression that combines a nested restricted
 No provider/network calls, semantic labels, restricted source acquisition, external transfer, or paid cost occurred. F2/F3 remain green from the current-head M1 reproduction; M30 remains the descriptive retrieval baseline, not semantic gold.
 
 Next: obtain owner authorization and exact rights/schema terms for an admissible semantic judgment source, then run M23, M25, and M24 before rerunning frozen controls without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy. Keep live HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-054 — 2026-10-30 M33 DAPFAM retrieval-diagnostic preflight
+
+Status: `PASS_DIAGNOSTIC_PREFLIGHT_BLOCKED_FOR_RETRIEVAL`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-dapfam-preflight-20261030/README.md`.
+
+Inspected the existing local DAPFAM metadata, qrels, and five-row query/corpus samples. The qrels file is `828,375` bytes, has `PAR1` framing, and recomputes to SHA-256 `e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74`, matching the pinned release metadata. The published task is citation-based family retrieval with IPC3 IN/OUT partitions under CC BY-NC-SA 4.0 research-only terms; it is not named medical-device/product semantic relevance gold.
+
+Local qrels schema parsing and retrieval metrics remain `NOT_RUN`: no parquet reader is installed, an ephemeral DuckDB install attempt failed at DNS/PyPI resolution, and the full corpus/queries parquet were not acquired. This package creates no semantic labels and does not change the HT-T1 denominator, holdout, family/company grouping, or `UNJUDGED` policy. Keep DAPFAM separate from the main HealthTech branch. Next: obtain or authorize the rights-cleared semantic judgment source and run M23, M25, and M24 before rerunning frozen controls. Keep live/provider HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI blocked or paused.

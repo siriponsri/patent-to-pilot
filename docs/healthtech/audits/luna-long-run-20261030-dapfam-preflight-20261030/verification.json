@@ -1,0 +1,119 @@
+{
+  "run_id": "luna-long-run-20261030-dapfam-preflight-20261030",
+  "date": "2026-10-30",
+  "status": "PASS_DIAGNOSTIC_PREFLIGHT_BLOCKED_FOR_RETRIEVAL",
+  "base_commit": "55b5394eaf4c57c0de9b601ecfa8b91b1fc7f80b",
+  "candidate_commit": "55b5394eaf4c57c0de9b601ecfa8b91b1fc7f80b",
+  "scope": "Local DAPFAM integrity/task-fit preflight; no full corpus or query acquisition",
+  "source": {
+    "dataset_id": "datalyes/DAPFAM_patent",
+    "release_revision": "a59a74ce31384165065af1823a83c6f94ccafd48",
+    "license": "CC BY-NC-SA 4.0",
+    "published_counts": {
+      "query_families": 1247,
+      "target_families": 45336,
+      "qrels_all_approx": 49869,
+      "positive_qrels_in_approx": 19736,
+      "positive_qrels_out_approx": 5193
+    },
+    "local_files": [
+      {
+        "path": "methodology/datasets/research-only-nc/qrels_all.parquet",
+        "bytes": 828375,
+        "sha256": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74",
+        "parquet_magic": {
+          "header": "PAR1",
+          "footer": "PAR1"
+        }
+      },
+      {
+        "path": "methodology/datasets/metadata/DAPFAM_README.md",
+        "bytes": 6180,
+        "sha256": "f0e30bde8e02457c03ea4c13bb3b2f110d808834b66070a94070cf3fb911f038"
+      },
+      {
+        "path": "methodology/datasets/metadata/dapfam_repo.json",
+        "bytes": 1948,
+        "sha256": "ce1e5917f45632b2543af20a007d2d5edcef048c113cdc40b715318260447a85"
+      },
+      {
+        "path": "methodology/datasets/metadata/dapfam_tree.json",
+        "bytes": 1093,
+        "sha256": "1566a986dbc3681695ef18bbc2466fdb0992d42b20fe7c358bd29efa26d9ad4e"
+      },
+      {
+        "path": "methodology/datasets/samples/dapfam_queries_first5.json",
+        "bytes": 1106804,
+        "sha256": "e77e3cb560616302819cfc4ac660c5a7df657123b03750262014e6027a01ab1c"
+      },
+      {
+        "path": "methodology/datasets/samples/dapfam_corpus_first5.json",
+        "bytes": 460922,
+        "sha256": "ae0cfe4dd8626120435b5a69811e32e79377f784d77cb7d416d1670b0c3e2004"
+      }
+    ],
+    "missing_inputs": [
+      {
+        "path": "corpus.parquet",
+        "release_bytes": 1149928014,
+        "status": "NOT_ACQUIRED"
+      },
+      {
+        "path": "queries.parquet",
+        "release_bytes": 62667355,
+        "status": "NOT_ACQUIRED"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "source_hashes",
+      "status": "PASS",
+      "command": "rtk python -c hash verification over local DAPFAM files",
+      "result": "Qrels and metadata/sample hashes recorded and matched the pinned local receipts"
+    },
+    {
+      "id": "reader_availability",
+      "status": "PASS",
+      "command": "rtk python -c importlib.util.find_spec check",
+      "result": "pyarrow, duckdb, polars, pandas, and fastparquet were absent"
+    },
+    {
+      "id": "ephemeral_reader_install",
+      "status": "FAIL_ENVIRONMENT",
+      "command": "rtk python -m pip install --target <temporary-directory> duckdb",
+      "result": "PyPI/DNS resolution failed; no package was installed or retained"
+    },
+    {
+      "id": "qrels_schema_parse",
+      "status": "NOT_RUN",
+      "command": null,
+      "result": "No local parquet reader was available"
+    },
+    {
+      "id": "retrieval_experiment",
+      "status": "BLOCKED_LOCAL",
+      "command": null,
+      "result": "Full corpus and queries parquet are absent; no ranking or metric was produced"
+    },
+    {
+      "id": "ht_t1_admissibility",
+      "status": "REJECTED_TASK_MISMATCH",
+      "command": "Local metadata and task description review",
+      "result": "Citation-based family retrieval is not named medical-device/product semantic relevance gold"
+    }
+  ],
+  "resource_use": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "semantic_labels_created": 0,
+    "full_dataset_acquisitions": 0,
+    "credentials_read": false,
+    "private_journals_read": false
+  },
+  "decision": {
+    "primary_ht_t1_source": "NOT_ADMISSIBLE",
+    "separate_patent_retrieval_component": "POTENTIALLY_ADMISSIBLE_AFTER_RIGHTS_AND_INPUT_FREEZE",
+    "next_discriminating_action": "Owner-authorized semantic judgment source intake through M23/M25/M24; keep DAPFAM separate"
+  }
+}
