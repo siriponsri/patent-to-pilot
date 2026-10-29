@@ -207,3 +207,13 @@ Added `ht-relevance-judgment-cohort-v1` validation in `src/patent_to_pilot/evalu
 Focused tests pass `35/35`; the controlled full suite passes `361/361` with one warning; compile checks pass; the CLI smoke validates `2` authored fixture labels and preserves `118` unjudged pairs. No real semantic labels, provider calls, network acquisition, or paid cost were added. This is readiness infrastructure, not expert gold or a scientific result.
 
 Next: apply the contract to a rights-cleared semantic judgment source, freeze the denominator and group/split policy, then rerun HT-B0a/B0b/B1/B2/B3 on that new cohort. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-025 — 2026-10-29 semantic review packet freeze
+
+Status: `PASS_OFFLINE_REVIEW_PACKET_NOT_GOLD`; canonical audit: `docs/healthtech/audits/luna-long-run-20261029-review-packet-20261029/README.md`.
+
+Added a local-only review-packet builder and generated a metadata-only packet from the frozen Boston Scientific, Stryker Neurovascular, and Cook Medical runtime. The packet binds the current runtime, split, company/family metadata, source registry, and hashes; it covers `8` queries, `24` patents, and the full `192` query-patent denominator. All `192` rows remain `UNJUDGED`, with `0` semantic labels, no copied patent text, and no product-disclosure promotion. The predeclared Stryker final holdout remains untouched.
+
+Focused review-packet/relevance-contract tests pass `15/15`; the controlled full suite passes `368/368` with one warning; compile checks pass; the real CLI build passes with `0` provider calls, `0` network acquisition, and `$0.00` paid cost. This is review readiness and denominator freeze only, not expert gold or a scientific comparison.
+
+Next: obtain or authorize a rights-cleared semantic judgment source with explicit labels, source revision/hash, adjudicator role, and locators; apply `ht-relevance-judgment-cohort-v1` without changing the frozen denominator or holdout, then rerun HT-B0a/B0b/B1/B2/B3. Keep Bridge, live/provider HT-B4, public raw-data release, clinical/FTO, deployment, outreach, and Claude UX/UI blocked or paused.

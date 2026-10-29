@@ -215,6 +215,11 @@
       "id": "HT-M3-RELEVANCE-CONTRACT",
       "status": "PASS_ENGINEERING_OFFLINE",
       "evidence": "Fail-closed ht-relevance-judgment-cohort-v1 intake requires source/hash/rights/intended-use provenance, rejects product-disclosure promotion and cross-split company/family leakage, preserves absent pairs as unjudged, and passes 35 focused tests, 361 controlled full-suite tests, compile checks, and CLI smoke at docs/healthtech/audits/luna-long-run-20261029-relevance-contract-20261029/"
+    },
+    {
+      "id": "HT-M3-REVIEW-PACKET",
+      "status": "PASS_OFFLINE_REVIEW_PACKET_NOT_GOLD",
+      "evidence": "Added a provenance-bound local review-packet builder and froze 8 queries, 24 runtime patents, and 192 unjudged query-patent pairs over the Boston/Cook development view and untouched Stryker holdout. The packet contains no semantic labels, copied patent text, or product-disclosure gold; focused tests pass 15/15 and the controlled full suite passes 368/368 at docs/healthtech/audits/luna-long-run-20261029-review-packet-20261029/"
     }
   ],
   "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_COHORTS_AND_TYPED_BOSTON_STRYKER_HOLDOUT",
@@ -245,6 +250,7 @@
   "latest_family_frontier_development": "results/healthtech/ht-family-frontier-20261029-r2-development",
   "latest_family_frontier_holdout": "results/healthtech/ht-family-frontier-20261029-r2-final-holdout",
   "latest_relevance_judgment_contract_audit": "docs/healthtech/audits/luna-long-run-20261029-relevance-contract-20261029/README.md",
+  "latest_relevance_review_packet_audit": "docs/healthtech/audits/luna-long-run-20261029-review-packet-20261029/README.md",
   "latest_typed_registry_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-typed-registry/verification.json",
   "latest_goal_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/verification.json",
   "latest_clean_checkout_reproducibility_audit": "docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/verification.json",

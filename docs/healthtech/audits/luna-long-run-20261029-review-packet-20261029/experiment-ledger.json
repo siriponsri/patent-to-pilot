@@ -1,0 +1,29 @@
+{
+  "format": "ht-relevance-review-packet-experiment-ledger-v1",
+  "run_id": "luna-long-run-20261029-review-packet-20261029",
+  "source_commit": "dd4b01d24c67c51f9493fc2d16c191703775d43b",
+  "experiments": [
+    {
+      "id": "review-packet-contract",
+      "status": "PASS",
+      "input": "Current runtime-only cohort, split manifest, company/family metadata, and typed source registry",
+      "outcome": "Built a deterministic metadata-only packet covering 8 queries, 24 patents, and 192 query-patent pairs",
+      "cost_usd": 0.0
+    },
+    {
+      "id": "review-packet-boundary-regressions",
+      "status": "PASS",
+      "input": "Synthetic positive/negative mutations over packet rows and group/split assignments",
+      "outcome": "15 focused tests pass; labels, disclosure promotion, duplicate pairs, split overlap, and missing exclusions fail closed",
+      "cost_usd": 0.0
+    },
+    {
+      "id": "semantic-label-intake",
+      "status": "NOT_RUN",
+      "input": "Rights-cleared expert or licensed semantic judgment source",
+      "outcome": "Not available in this package; no semantic gold was fabricated",
+      "cost_usd": 0.0
+    }
+  ],
+  "decision": "Freeze the 192-pair review denominator and keep every pair unjudged until a separately rights-cleared semantic source is supplied."
+}
