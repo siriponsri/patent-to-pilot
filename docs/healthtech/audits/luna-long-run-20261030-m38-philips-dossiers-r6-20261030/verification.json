@@ -1,0 +1,120 @@
+{
+  "artifacts": {
+    "cohort_manifest": "results/healthtech/ht-philips-cardiovascular-20261029-r2/manifest.json",
+    "result_manifest": "results/healthtech/ht-philips-dossiers-20261030-r6/manifest.json",
+    "result_receipt": "results/healthtech/ht-philips-dossiers-20261030-r6/receipt.json",
+    "rights_matrix": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json"
+  },
+  "boundaries": {
+    "clinical_f_to_validity_investment": "OUT_OF_SCOPE",
+    "live_provider": "BLOCKED_LOCAL",
+    "product_display": "BLOCKED_LOCAL for Philips marking and Google-derived patent sources",
+    "purpose": "local_research",
+    "redistribution": "BLOCKED_LOCAL for Philips marking and Google-derived patent sources",
+    "semantic_relevance_gold": "NOT_RUN",
+    "unlisted_pairs_as_negatives": false,
+    "user_commercial_validation": "NOT_RUN"
+  },
+  "code_commit": "285eb74ee0d45321867b618b0aa5d28a7fb38534",
+  "commands": [
+    "rtk proxy python -B scripts/healthtech/run_philips_dossiers.py --cohort results/healthtech/ht-philips-cardiovascular-20261029-r2 --output results/healthtech/ht-philips-dossiers-20261030-r6 --rights-matrix docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json --code-commit 285eb74ee0d45321867b618b0aa5d28a7fb38534",
+    "rtk proxy python -m pytest -q tests/test_healthtech_philips_dossiers.py tests/test_healthtech_philips_cohort.py tests/test_healthtech_repairs.py tests/test_healthtech_prelive.py",
+    "rtk proxy python -m compileall -q src scripts tests",
+    "Python current-head dossier/output and rights-aware source-view validator"
+  ],
+  "format": "healthtech-audit-verification-v1",
+  "generated_at_utc": "2026-10-30T12:20:01.323879+00:00",
+  "input_hashes": {
+    "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json": "e74748fb16c8f44debb922ee4bfb334438c2d66fb70b96af40cedbfb1e24a044",
+    "results/healthtech/ht-philips-cardiovascular-20261029-r2/manifest.json": "60b37a6df4e5f84c87220c00e2a6e243507ee7214c54f1870047486aa462273f"
+  },
+  "next_action": "Obtain an owner-authorized rights-cleared semantic device-patent judgment source, validate it through M23/M25/M24, and keep current dossiers as local product-level disclosure evidence only.",
+  "output_hashes": {
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/case-manifest.json": "c469ca584f2a3a717cdf73ba2aba7a97a810ef8647f265c194f667097879717e",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/dossier.json": "cc6e96edfcdb79db0ce42783076d825a5c390f04c2cd46b814dea974c1de8a79",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/export-v2/dossier.en.md": "fa52eec939c4a39988236e1bf3307f231ae51971df242287ac50b57348048934",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/export-v2/dossier.json": "49462eb1a97e9f7fd037d047493e215ebc163ca58f0113afd3cf62cf771334b1",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/export-v2/dossier.th.md": "e591376cdc6abfc4e979abff4296d3456832f2bf2ed4c92cfcdbd782314acf2e",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/history/manifest.json": "097e1dbd9b167686fbf425a55688f68c33a93c0450a02631f0ef73a60c8eb659",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/history/version-0001.json": "3c69286268194e9f96e0f5459ec087a7ee21b01640ab879f3a0035c658379aa9",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/history/version-0002.json": "cc0c3e2b90914d5f7ac03182077232bb4e9c3695f65a440bb3d5db3bba9fbe29",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/resource-receipt.json": "a31c6b0cf4d4b06b31b0739a373fef00115afc39faeeecbc2d6d0b96e5b5c13b",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/source-summary.json": "cb3d0f04193e9afc08f47d18918df12383c7a974cd8b8d6e78844c7781873f7a",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/source-view.json": "e50a8811efabe1fd9eb0383daeca5f9f1c1acf3357b2a73b6c3a404226eb9937",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/case-manifest.json": "b87774367da08df4b87bc220ca7db14dcb95e6cb57cbd1e4f43db28faa78a69e",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/dossier.json": "1bd9f613e0205cff83c483e1219398f0edeed36830701a8d2b9d8d19695e294f",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/export-v2/dossier.en.md": "b18f664b5e020c55a254f3997db3bdcec74b9076ea4c957cf547d9306202a62e",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/export-v2/dossier.json": "2b247e1e51060c74f73525fcf2379552b7085ac701a070102dbb65cdf8eb9c14",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/export-v2/dossier.th.md": "3de4cd77f28dd704c6e172fc88ddbec006ff11d843892774fd16d61b94e3f58e",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/history/manifest.json": "ba750177c2c5b45e4a6e20cc5ce44da003b7f55140c0c5ad7c2cdf20e6374aa1",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/history/version-0001.json": "224ad7dfed387164d0b692807183ab7cc391650b1545229da3bcabf1763d57f6",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/history/version-0002.json": "35cd418bf76970cbee391f1f3c08869020c54cf2f4f53439d7edb7be1a07a982",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/resource-receipt.json": "a17373372d007af5896544cbd3a77033f1d8832bf90a842caee2d464343902a6",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/source-summary.json": "89762225daa12ae68c429ddd0587024859795a313f2f3a1f42fc5ad37d752b61",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/source-view.json": "2f33cb664de049ccdcee5d2798635985be24445a27ee9f5aeb11731addaca1d7",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/case-manifest.json": "a5b1d1af167b4cb5a71473ae06b4e9683608901f82ee19c334798005a9e8e4a7",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/dossier.json": "440481916ee846a556f4c80888bb8d990243a25d78f93643ecf4c0e7e9de7a3f",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/export-v2/dossier.en.md": "dc08471f41156471d42e0a42d8bc5528fdd5f58ba49af0979fc93fa542b019bf",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/export-v2/dossier.json": "e9f4d135af7268582decdc0c17bb0da09a870e46fcd320ed6a8110fa16917e72",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/export-v2/dossier.th.md": "1c270e8c17ec2add65b1920ccdb4365506b5bc3cd0d430e01792126984d3608a",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/history/manifest.json": "c4251b531b1bc123a0dff4f425c1e6374c2c25428a85664e6987354f664a51c0",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/history/version-0001.json": "212bed675ced787e9d8f46dd342f7da9a11908bf1a653565fb5ab1810ea1a69d",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/history/version-0002.json": "c53e0b5df6592e843c6f276fa25775d1a262e83566d2ee57304d9e0b9352ef68",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/resource-receipt.json": "47f7b007c51394c765bd82dc6e349dc634ee14c359707edcadb99b4925e04e96",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/source-summary.json": "6aa14f0c7daac1678e8d7f717b5220c50176f396b312e0ac5357870865781db8",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/source-view.json": "754f5f8acc1440e7acb03f57d7338bd5fe1085b72dc3de0f261ce90081eb0bab",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/manifest.json": "16722af3e72ee10aaec18ee22593d2dc5741b4b6f06be9d9b7784dea2520af36",
+    "results/healthtech/ht-philips-dossiers-20261030-r6/receipt.json": "db57c3865833c8b1bce1138c525fa494a8b10ce42e321d2bf4189af93fdcac3a"
+  },
+  "results": {
+    "actual_returned_candidates": 0,
+    "actual_search_calls": 3,
+    "case_count": 3,
+    "history_versions_per_case": [
+      1,
+      2
+    ],
+    "paid_cost_usd": 0.0,
+    "provider_calls": 0,
+    "query_ids": [
+      "HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON",
+      "HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM",
+      "HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER"
+    ],
+    "rights_view_checks": {
+      "allowed_views": 6,
+      "blocked_views_fail_closed": 48
+    },
+    "total_disclosed_links": 7,
+    "unjudged_policy": "preserved"
+  },
+  "run_date": "2026-10-30",
+  "run_id": "luna-long-run-20261030-m38-philips-dossiers-r6-20261030",
+  "source_hashes": {
+    "scripts/healthtech/run_philips_dossiers.py": "9ac9d8939e647ee0f9ea6a94d56ab37457e497522cf37760c81dfd32875303c5",
+    "src/patent_to_pilot/healthtech/engine.py": "65bda16e9aefe319c4a909690b6ec1f91119d451779ccd22706828f092461df4",
+    "src/patent_to_pilot/healthtech/history.py": "a5424af7bff3a943b9f1d3f786a14863595e29099a0fd935d8b78c5697d7c0e2",
+    "src/patent_to_pilot/healthtech/philips.py": "b0dbcd5e0e4e6ea37d011809af67c968648ce4f2f513a8b3f228e591d105b410",
+    "src/patent_to_pilot/healthtech/rights.py": "8ed61de970d2afa416b57d4fba70f6ca08955fe90045db66b80700236bf85385",
+    "tests/test_healthtech_philips_cohort.py": "98faf11018120c7602e3f707ca10d4c0db47df8bb2370576c0685c56bae4a22a",
+    "tests/test_healthtech_philips_dossiers.py": "8a03848ecfc5cac128e47eeee506ebcf48117db01b872cb89f32a30e051796f9",
+    "tests/test_healthtech_repairs.py": "9209c8cfe61713d15ddf64c8cbde02dbdf32d712302bdfa98fba4b42dbd106a0"
+  },
+  "status": "PASS_CURRENT_HEAD_PHILIPS_DOSSIERS",
+  "tree_state": {
+    "restricted_raw_payloads_copied_into_audit": false,
+    "result_output_remains_local": true,
+    "unrelated_dirty_and_untracked_files_preserved": true
+  },
+  "verification": {
+    "compileall": "PASS",
+    "credentials_read": false,
+    "current_head_runner": "PASS",
+    "live_provider_calls": 0,
+    "network_calls": 0,
+    "paid_cost_usd": 0.0,
+    "philips_dossier_regressions": "PASS",
+    "required_artifacts": "PASS",
+    "rights_positive_and_negative_views": "PASS"
+  }
+}

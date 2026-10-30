@@ -187,6 +187,12 @@ The corrected semantic-review packet is a reviewer-input artifact, not gold. It 
 
 M15 adds no semantic relevance gold, exhaustive-recall estimate, stable-generalization result, provider evidence, clinical/FTO conclusion, patent-validity conclusion, investment conclusion, customer validation, or publication-readiness evidence. The canonical audit is [`luna-long-run-20261029-m15-rights-packet-20261029`](../audits/luna-long-run-20261029-m15-rights-packet-20261029/README.md).
 
+## M38 current-head Philips dossier revalidation
+
+M38 reruns the Philips local dossier pipeline at current HEAD `285eb74ee0d45321867b618b0aa5d28a7fb38534` over the unchanged frozen Philips cardiovascular cohort and reviewed M13 rights matrix. The run produces three inspectable cases, seven product-level disclosed links, history versions `1` and `2` for every case, three local search calls, zero returned lexical candidates, zero provider calls, and USD `0.00` paid cost. The output is `results/healthtech/ht-philips-dossiers-20261030-r6/`; its manifest SHA-256 is `16722af3e72ee10aaec18ee22593d2dc5741b4b6f06be9d9b7784dea2520af36` and receipt SHA-256 is `db57c3865833c8b1bce1138c525fa494a8b10ce42e321d2bf4189af93fdcac3a`.
+
+Current-head validation confirms every case has JSON, English/Thai Markdown, source summary/view, case manifest, resource receipt, history chain, and selected version-2 export. Six allowed source views return only declared displayable fields; forty-eight product-display/redistribution requests for Philips marking or Google-derived patent sources fail closed. This is local backend engineering evidence only: product-level disclosures remain distinct from semantic relevance gold, unlisted pairs remain `UNJUDGED`, and restricted marking/patent content remains local-only. The canonical M38 audit is [`luna-long-run-20261030-m38-philips-dossiers-r6-20261030`](../audits/luna-long-run-20261030-m38-philips-dossiers-r6-20261030/README.md).
+
 ## M16 local semantic-review task export
 
 M16 adds a deterministic local-only task exporter at implementation commit `23acfd468570ea2eac47d0f5790b7362268aa2d1`. The exporter consumes the corrected M15 review packet and writes `341` reviewer-visible metadata rows. Each row retains the named device, patent identity/title, source revision/hash/date/URL, and an empty response object. It omits evaluator split/family metadata, product-disclosure flags, evaluator relations, patent abstract/claims/text, and any semantic label.
