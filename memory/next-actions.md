@@ -565,3 +565,11 @@ Added `scripts/healthtech/analyze_pilot_tasks.py` and a focused regression suite
 Updated `docs/healthtech/business/PILOT_TASK_PACKET_20261029.md` with the aggregate engineering result. This remains a backend/product-preparation analysis only; it does not establish participant task time, usability, willingness to pay, commercial demand, semantic patent relevance, clinical/FTO, or publication readiness.
 
 Next: keep HT-W16 `ENGINEERING_DRY_RUN_READY_NOT_VALIDATED`; obtain an owner-authorized rights-cleared semantic judgment source, validate M23/M25/M24, and rerun frozen controls only after the source passes rights/schema checks without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy.
+
+## HT-NEXT-063 — 2026-10-30 M42 DAPFAM lexical coverage screen
+
+Status: `PASS_OFFLINE_DAPFAM_COVERAGE_SCREEN`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-m42-dapfam-coverage-20261030/README.md`.
+
+Added a deterministic DuckDB-backed coverage analyzer over the existing DAPFAM research-only parquet inputs. The run verified the pinned corpus/query/qrels hashes and scanned 45,336 corpus rows, 1,247 query rows, and 49,869 qrels. The declared lexical medical-device screen matched 2,859 corpus rows and 86 query rows; positive qrels where both query and target matched were 836 IN-domain and 65 OUT-domain pairs. All title and abstract fields were present. No raw payload was exported, provider/network calls were 0, and paid cost was USD 0.00.
+
+This is a separate citation-based retrieval coverage diagnostic, not semantic device-patent gold and not a substitute for M23/M25/M24. Keep DAPFAM out of the HT-T1 denominator and keep unlisted pairs `UNJUDGED`. Next: obtain owner-authorized rights/schema access for an admissible semantic judgment source, then run M23, M25, and M24 before frozen-control reruns.

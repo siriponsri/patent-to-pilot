@@ -1,0 +1,89 @@
+{
+  "run_id": "luna-long-run-20261030-m42-dapfam-coverage-20261030",
+  "status": "PASS_OFFLINE_DAPFAM_COVERAGE_SCREEN",
+  "date_local": "2026-10-30",
+  "tested_working_tree_base": "799a2e4b6d1f5ebb27d086f7ef6c36b649267689",
+  "source_revision": "a59a74ce31384165065af1823a83c6f94ccafd48",
+  "license_boundary": "CC-BY-NC-SA-4.0 research-only local diagnostic",
+  "code_files": {
+    "scripts/healthtech/analyze_dapfam_coverage.py": {
+      "sha256": "c0fab42f382ee5e0a8a68931565b8599ca5203e933e6263fd403482a1aa6ceaa"
+    },
+    "tests/test_healthtech_dapfam_coverage.py": {
+      "sha256": "c2358e94ea2d408f7e059697bdfb28a359a2ebaeb4487aa1a33e13ae1e3ab1f2"
+    }
+  },
+  "inputs": {
+    "corpus.parquet": {
+      "path": "methodology/datasets/research-only-nc/corpus.parquet",
+      "rows": 45336,
+      "bytes": 1149928014,
+      "sha256": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6"
+    },
+    "queries.parquet": {
+      "path": "methodology/datasets/research-only-nc/queries.parquet",
+      "rows": 1247,
+      "bytes": 62667355,
+      "sha256": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe"
+    },
+    "qrels_all.parquet": {
+      "path": "methodology/datasets/research-only-nc/qrels_all.parquet",
+      "rows": 49869,
+      "bytes": 828375,
+      "sha256": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74"
+    }
+  },
+  "screening": {
+    "match": "case-insensitive substring over title_en + abstract_en",
+    "medical_device_corpus_rows": 2859,
+    "medical_device_query_rows": 86,
+    "positive_qrels": 24929,
+    "medical_device_both_screened_positive_pairs": {
+      "IN": 836,
+      "OUT": 65
+    },
+    "semantic_claim": false,
+    "unjudged_policy": "unlisted query-target pairs remain unjudged"
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_dapfam_coverage.py",
+      "outcome": "PASS: 5 passed"
+    },
+    {
+      "command": "rtk proxy python -B -m py_compile scripts/healthtech/analyze_dapfam_coverage.py tests/test_healthtech_dapfam_coverage.py",
+      "outcome": "PASS"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/analyze_dapfam_coverage.py --duckdb C:\\Users\\User\\AppData\\Local\\duckdb\\cli\\2.0.0\\duckdb.exe --corpus methodology/datasets/research-only-nc/corpus.parquet --queries methodology/datasets/research-only-nc/queries.parquet --qrels methodology/datasets/research-only-nc/qrels_all.parquet --output results/healthtech/ht-dapfam-coverage-20261030-r1",
+      "outcome": "PASS: 45336 corpus rows, 1247 query rows, 24929 positive qrel rows"
+    },
+    {
+      "command": "rtk git diff --check",
+      "outcome": "PASS"
+    },
+    {
+      "command": "rtk proxy python -B -m pytest -q -p no:cacheprovider",
+      "outcome": "PASS: exit 0; 459 tests; two existing warnings"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/verify_offline.py <fresh-output-outside-repository> --suite all",
+      "outcome": "PASS: 459 passed, 0 failures/errors/skips, 0 network attempts, 0 credential-file reads, 0 provider calls, USD 0.00"
+    }
+  ],
+  "boundaries": {
+    "raw_payload_exported": false,
+    "provider_calls": 0,
+    "network_calls": 0,
+    "paid_cost_usd": 0.0,
+    "semantic_device_patent_gold": "NOT_RUN",
+    "participant_or_commercial_validation": "NOT_RUN",
+    "live_provider_ht_b4": "BLOCKED_LOCAL"
+  },
+  "outputs": {
+    "summary": "results/healthtech/ht-dapfam-coverage-20261030-r1/summary.json",
+    "report": "results/healthtech/ht-dapfam-coverage-20261030-r1/REPORT.md",
+    "manifest": "results/healthtech/ht-dapfam-coverage-20261030-r1/manifest.json"
+  },
+  "next_action": "Obtain an owner-authorized rights-cleared semantic judgment source, then run M23, M25, and M24 before frozen-control reruns."
+}
