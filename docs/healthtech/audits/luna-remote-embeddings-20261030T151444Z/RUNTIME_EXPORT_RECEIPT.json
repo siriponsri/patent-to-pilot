@@ -1,0 +1,23 @@
+{
+  "format": "ht-runtime-export-receipt-v1",
+  "status": "PASS_RUNTIME_INPUT_EXPORT",
+  "code_revision": "68c4fdf92150e8c8753033027b1c8cfa26beebb2",
+  "counts": {"corpus_rows": 45336, "query_rows": 1247, "qrels_included": false},
+  "source_files": {
+    "corpus_parquet": {"bytes": 1149928014, "sha256": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6"},
+    "queries_parquet": {"bytes": 62667355, "sha256": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe"}
+  },
+  "export_files": {
+    "corpus.jsonl": {"bytes": 48968001, "sha256": "3e67817b72f372171b116a53369b7fefd996482261938f85ff647b3d0cad3252"},
+    "queries.jsonl": {"bytes": 1349311, "sha256": "006c76d67dc1fcdab0cb937be1b8af752e71408dba875e3a512c553c2bd575c4"},
+    "manifest.json": {"bytes": 2266, "sha256": "cb84f72dbcc0dea9d78aed5ee0b8083845ade4557e516cc912057c6c54920e53"}
+  },
+  "validation": {
+    "runtime_status": "RUNTIME_INPUTS_ONLY_NO_EVALUATOR_LABELS",
+    "stable_ids_unique": true,
+    "text_hashes_checked": true,
+    "output_members": ["corpus.jsonl", "queries.jsonl", "manifest.json"],
+    "qrels_or_gold_exported": false
+  },
+  "storage": "local_temp_only_not_staged"
+}

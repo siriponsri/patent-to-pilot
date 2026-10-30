@@ -581,3 +581,11 @@ Status: `PASS_LOCAL_PACKAGE_REMOTE_EXECUTION_NOT_RUN`; canonical audit: `docs/he
 Implemented the runtime-only JSONL/vector-bundle contract, resumable atomic shards, strict import/order/hash validation, exact deterministic retrieval, optional dossier vector augmentation, DAPFAM evaluator guards, clean-checkout authored cross-cohort fixtures, and external-parent integration-contract handling. Targeted vector/DAPFAM tests pass 15/15 and the full repository suite passes. Remote SSH encoding, transfer, real dense evaluation, and real vector-backed dossier cases remain `NOT_RUN` because host verification and resource allocation are not established.
 
 Next: verify strict SSH trust state and obtain only the bounded remote facts required for a 32-100 document canary, then resume the full job if the canary passes. Keep qrels/gold out of runtime inputs and preserve the existing unjudged/failure-denominator policy.
+
+## HT-NEXT-065 — 2026-10-30 Luna runtime export and SSH canary
+
+Status: `PASS_RUNTIME_EXPORT_SSH_CANARY_ALLOCATION_PENDING`; canonical audit: `docs/healthtech/audits/luna-remote-embeddings-20261030T151444Z/README.md`.
+
+Verified strict SSH/authentication to `dr-train` with no remote job started, and exported the permitted DAPFAM corpus/query runtime bundle outside the repository: 45,336 corpus rows and 1,247 query rows, unique IDs, text hashes checked, and no qrels/gold fields. The current blocker is only the missing authorized job root/allocation/window/quota facts; visible idle GPU state is not treated as allocation.
+
+Next: obtain those bounded allocation facts once, then run the 32-100 document canary and continue the resumable remote encoding path.

@@ -532,5 +532,5 @@
   "latest_current_head_philips_dossier_audit": "docs/healthtech/audits/luna-long-run-20261030-m38-philips-dossiers-r6-20261030/README.md",
   "latest_current_head_philips_dossier_verification": "docs/healthtech/audits/luna-long-run-20261030-m38-philips-dossiers-r6-20261030/verification.json",
   "latest_remote_embeddings_audit": "docs/healthtech/audits/luna-remote-embeddings-20261030T151444Z/README.md",
-  "latest_remote_embeddings_status": "PASS_LOCAL_PACKAGE_REMOTE_EXECUTION_NOT_RUN"
+  "latest_remote_embeddings_status": "PASS_RUNTIME_EXPORT_SSH_CANARY_ALLOCATION_PENDING"
 }

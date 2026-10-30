@@ -6,6 +6,8 @@
 - ทำแล้ว: runtime-only JSONL export, stable dataset-scoped IDs, source/text hashes, resumable shards, atomic publication, strict importer, exact deterministic retrieval, `SharedRetriever` injection, optional dossier vector path และ DAPFAM evaluator repairs
 - ทำแล้ว: เปลี่ยน cross-cohort regression ให้ใช้ authored fixtures ใน default suite และทำให้ integration-contract refresh รองรับ parent contract ที่อยู่นอก repo โดยไม่แก้ historical contract
 - ตรวจแล้ว: targeted vector/DAPFAM tests `15 passed`; full repository suite ผ่าน; `git diff --check` และ `compileall` ผ่าน; provider calls `0`; paid cost `USD 0.00`
-- ยังไม่ทำ: SSH canary/full remote encoder, vector transfer, real dense evaluation, และ real vector-backed dossier cases เพราะยังไม่มีหลักฐาน host key/allocation/job root/window ที่ตรวจสอบได้
+- ทำแล้ว: strict read-only SSH canary ผ่านไปยัง `dr-train`; host-key verification ผ่าน, authentication ผ่าน, GPU snapshot ถูกบันทึก และไม่มี compute process ตอนตรวจ
+- ทำแล้ว: runtime-only export จริงของ DAPFAM เป็น 45,336 corpus rows + 1,247 query rows; output อยู่นอก repo, ไม่มี qrels/gold, IDs unique และ text hashes ผ่าน
+- ยังไม่ทำ: full remote encoder, vector transfer, real dense evaluation, และ real vector-backed dossier cases เพราะยังไม่มี allocation/job root/window ที่อนุญาตและตรวจสอบได้
 - ห้ามตีความ artifact/test PASS นี้เป็น semantic gold, exhaustive recall, clinical/FTO, patent validity, investment merit, publication readiness หรือ production readiness
-- next action ที่ resume ได้: ตรวจ trust state แบบ strict แล้วขอเฉพาะ host/job root + GPU UUID หรือ CPU quota + window + VRAM/RAM/disk limits + shared-service restrictions ก่อนเริ่ม canary
+- next action ที่ resume ได้: ขอ/ยืนยันเฉพาะ job root + GPU UUID หรือ CPU quota + execution window + VRAM/RAM/disk limits + shared-service restrictions ก่อนเริ่ม canary
