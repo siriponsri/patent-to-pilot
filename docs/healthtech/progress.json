@@ -178,8 +178,8 @@
     },
     {
       "id": "HT-W16",
-      "status": "TEMPLATE_ONLY",
-      "evidence": "public-case task template; no participants or offers sent"
+      "status": "ENGINEERING_DRY_RUN_READY_NOT_VALIDATED",
+      "evidence": "Bounded public-case task packet plus executable local runner over one Cook and three Philips dossiers; seeded correction, timing receipt, v1/v2 history, JSON/EN/TH export, and rights-aware external blocking are verified, but no participants, offers, or commercial validation exist"
     },
     {
       "id": "HT-W18",
@@ -390,15 +390,20 @@
       "id": "HT-M38-CURRENT-HEAD-PHILIPS-DOSSIERS",
       "status": "PASS_CURRENT_HEAD_PHILIPS_DOSSIERS",
       "evidence": "Reran the real Philips local dossier pipeline at code commit 285eb74ee0d45321867b618b0aa5d28a7fb38534 over the unchanged frozen cohort and reviewed M13 rights matrix. The run produced 3 dossiers, 7 product-level disclosed links, history versions 1 and 2 per case, 3 local search calls, 0 returned lexical candidates, 0 provider calls, and USD 0.00 paid cost. Current-head validation passed for required artifacts, 6 allowed source views, and 48 blocked product-display/redistribution views. Canonical audit: docs/healthtech/audits/luna-long-run-20261030-m38-philips-dossiers-r6-20261030/"
+    },
+    {
+      "id": "HT-M40-PHILIPS-G5-OFFLINE-PILOT",
+      "status": "PASS_OFFLINE_ENGINEERING_TASK_3_PHILIPS_CASES",
+      "evidence": "Expanded the executable G5 task runner over all three current Philips dossiers using case-specific FDA 510(k) k_number fields under local_research. Each case passed seeded correction, history 1 to 2, selected version-2 JSON/EN/TH export, artifact-hash verification, and external product-display blocking. Provider/network calls and paid cost were zero; participant and commercial validation remain NOT_RUN. Canonical audit: docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/"
     }
   ],
-  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT_AND_M24_AUTHORIZATION_BOUND_JUDGMENT_INGEST_AND_M25_BOUNDED_SEMANTIC_SOURCE_STAGING_AND_M26_SEMANTIC_SOURCE_LANDSCAPE_EXPANSION_AND_M27_SHARPS_SOURCE_METADATA_PREFLIGHT_AND_M28_OPENROUTER_R1_READINESS_REVALIDATION_AND_M29_CURRENT_HEAD_BACKEND_INTEGRATION_CONTRACT_REFRESH_AND_M30_CURRENT_HEAD_OFFLINE_BASELINE_B4_MOCK_AND_M31_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH_AND_M32_ADVERSARIAL_BOUNDARY_REGRESSION_AND_M33_DAPFAM_RETRIEVAL_DIAGNOSTIC_PREFLIGHT_AND_M34_DAPFAM_QRELS_PARSE_REVALIDATION_AND_M35_DAPFAM_BM25_FULL_BASELINE_AND_M36_DAPFAM_CODE_PROVENANCE_AND_M37_CURRENT_HEAD_B4_R2_AUDIT_AND_M38_CURRENT_HEAD_PHILIPS_DOSSIERS_AND_M39_CURRENT_HEAD_OPENROUTER_R1_READINESS",
+  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT_AND_M24_AUTHORIZATION_BOUND_JUDGMENT_INGEST_AND_M25_BOUNDED_SEMANTIC_SOURCE_STAGING_AND_M26_SEMANTIC_SOURCE_LANDSCAPE_EXPANSION_AND_M27_SHARPS_SOURCE_METADATA_PREFLIGHT_AND_M28_OPENROUTER_R1_READINESS_REVALIDATION_AND_M29_CURRENT_HEAD_BACKEND_INTEGRATION_CONTRACT_REFRESH_AND_M30_CURRENT_HEAD_OFFLINE_BASELINE_B4_MOCK_AND_M31_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH_AND_M32_ADVERSARIAL_BOUNDARY_REGRESSION_AND_M33_DAPFAM_RETRIEVAL_DIAGNOSTIC_PREFLIGHT_AND_M34_DAPFAM_QRELS_PARSE_REVALIDATION_AND_M35_DAPFAM_BM25_FULL_BASELINE_AND_M36_DAPFAM_CODE_PROVENANCE_AND_M37_CURRENT_HEAD_B4_R2_AUDIT_AND_M38_CURRENT_HEAD_PHILIPS_DOSSIERS_AND_M39_CURRENT_HEAD_OPENROUTER_R1_READINESS_AND_M40_PHILIPS_G5_OFFLINE_PILOT",
   "user_commercial_validation": "NOT_RUN",
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M39 revalidated the existing OpenRouter R1 policy and offline provider/budget boundaries at current HEAD 23886b2194704ae521470f8e2af7e1024790e1b0: focused R1 tests 122 passed, guarded all-suite 451 passed, network/provider calls 0, and paid cost USD 0.00. The live branch remains BLOCKED_LOCAL because current metadata/pricing, credits, credential readiness, transfer rights, live compatibility, and billing reconciliation were not verified. Semantic gold remains NOT_RUN, unlisted pairs remain UNJUDGED, Bridge remains BLOCKED_LOCAL, Zenodo record 21101400 remains restricted, and Claude UX/UI remains paused. Next information-gaining step: obtain an owner-authorized rights-cleared semantic judgment source, validate through M23/M25/M24, then rerun frozen controls without changing denominators, holdout membership, family/company grouping, or the UNJUDGED policy.",
-  "verification": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-current-head-20261030/verification.json",
+  "next": "M40 expanded the executable G5 task runner over all three Philips dossiers using case-specific FDA k_number fields under local_research. All three cases passed correction/history/export and artifact-hash checks, and product_display probes failed closed for Philips marking and Google-derived patent sources; provider/network calls and paid cost were zero. This remains engineering evidence only: participant/commercial validation, semantic gold, live/provider HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI remain NOT_RUN, blocked, or paused. Next information-gaining step: obtain an owner-authorized rights-cleared semantic judgment source, validate through M23/M25/M24, then rerun frozen controls without changing denominators, holdout membership, family/company grouping, or the UNJUDGED policy.",
+  "verification": "docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
   "latest_healthtech_frontier": "results/healthtech/ht-current-head-baselines-20261030-r2-holdout/frontier_diagnostics.json",
@@ -442,9 +447,15 @@
   "latest_typed_rights_cohort": "results/healthtech/ht-public-cohort-20261029-frozen-r2-typed/manifest.json",
   "latest_m17_baseline_receipt": "results/healthtech/ht-real-baselines-20261029-m17-r2/receipt.json",
   "latest_m17_baseline_frontier": "results/healthtech/ht-real-baselines-20261029-m17-r2/frontier_diagnostics.json",
-  "latest_g5_pilot_task_audit": "docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/README.md",
+  "latest_g5_pilot_task_audit": "docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/README.md",
   "latest_g5_pilot_task_receipt": "results/healthtech/ht-g5-pilot-task-20261029-r2/task_receipt.json",
-  "latest_g5_pilot_task_output": "results/healthtech/ht-g5-pilot-task-20261029-r2",
+  "latest_g5_pilot_task_output": "results/healthtech/ht-g5-philips-pilot-20261030-r2",
+  "latest_g5_philips_pilot_verification": "docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/verification.json",
+  "latest_g5_philips_pilot_receipts": [
+    "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/task_receipt.json",
+    "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/task_receipt.json",
+    "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/task_receipt.json"
+  ],
   "latest_company_holdout_sensitivity_audit": "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md",
   "latest_company_holdout_sensitivity_output": "results/healthtech/ht-company-holdout-sensitivity-20261029-r1/summary.json",
   "latest_g6_m20_integration_audit": "docs/healthtech/audits/luna-long-run-20261030-g6-m20-integration-20261030/README.md",
@@ -461,7 +472,7 @@
   "latest_current_head_integration_contract": "docs/healthtech/integration/luna-g3-current-head-20261030-8f2e0fe/adapter-contract.json",
   "latest_scifact_error_analysis": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/README.md",
   "latest_scifact_error_analysis_output": "results/healthtech/ht-t2-scifact-lexical-dev-20261029-r4-error-analysis/analysis.json",
-  "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261030-m38-philips-dossiers-r6-20261030/README.md",
+  "latest_long_run_audit": "docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/README.md",
   "latest_group_uncertainty_audit": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/README.md",
   "latest_group_uncertainty_analysis": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/analysis.json",
   "latest_m4_audit": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/README.md",

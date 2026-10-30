@@ -545,3 +545,13 @@ No credentials were read, no provider request was sent, no restricted payload wa
 Next: keep live/provider HT-B4 `BLOCKED_LOCAL`; obtain owner authorization and exact schema/rights access for Zenodo record `21101400` or another admissible semantic source, then run M23/M25/M24 and frozen-control reruns without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy.
 
 This is current-head backend engineering evidence only. Philips marking and Google-derived patent content remain local-only, disclosed links are not semantic gold, and unlisted pairs remain `UNJUDGED`. Next: obtain an owner-authorized rights-cleared semantic judgment source, validate M23/M25/M24, and rerun frozen controls without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy. Keep live/provider HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-061 — 2026-10-30 M40 Philips G5 offline pilot-task expansion
+
+Status: `PASS_OFFLINE_ENGINEERING_TASK_3_PHILIPS_CASES`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/README.md`.
+
+Expanded the executable G5 task runner from one Cook case to all three current Philips dossiers using the case-specific FDA `k_number` field under `local_research`. All three cases passed source inspection, seeded correction, history versions `1` and `2`, selected version-2 JSON/English/Thai exports, artifact-hash verification, and external product-display blocking. Engineering execution was approximately `0.1144s`, `0.1154s`, and `0.1240s`; provider calls, network calls, and paid cost were all zero.
+
+This remains backend engineering evidence only. The initial product-display probe correctly failed closed because each dossier includes Philips marking and Google-derived patent sources with `BLOCKED_LOCAL` intended use; the successful task path therefore keeps the task in local research and checks the external projection separately. No participant timing, usability, willingness-to-pay, commercial validation, semantic labels, or live/provider result was created.
+
+Next: keep HT-W16 `ENGINEERING_DRY_RUN_READY_NOT_VALIDATED`, obtain owner authorization and exact schema/rights terms for Zenodo record `21101400` or another admissible semantic source, then run M23/M25/M24 and frozen-control reruns without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy. Keep live/provider HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI blocked or paused.

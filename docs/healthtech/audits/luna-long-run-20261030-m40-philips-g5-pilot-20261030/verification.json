@@ -1,0 +1,92 @@
+{
+  "format": "ht-m40-philips-g5-pilot-v1",
+  "run_id": "luna-long-run-20261030-m40-philips-g5-pilot-20261030",
+  "date": "2026-10-30",
+  "status": "PASS_OFFLINE_ENGINEERING_TASK_3_PHILIPS_CASES",
+  "tested_code_commit": "66b2fafe11938276b33b89006d8032d8514a97eb",
+  "origin_main": "66b2fafe11938276b33b89006d8032d8514a97eb",
+  "input": {
+    "dossier_run": "results/healthtech/ht-philips-dossiers-20261030-r6/",
+    "dossier_manifest_sha256": "16722af3e72ee10aaec18ee22593d2dc5741b4b6f06be9d9b7784dea2520af36",
+    "cohort_manifest_sha256": "60b37a6df4e5f84c87220c00e2a6e243507ee7214c54f1870047486aa462273f",
+    "purpose": "local_research",
+    "field": "k_number"
+  },
+  "cases": [
+    {
+      "query_id": "HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON",
+      "source_id": "openfda-510k-k050629",
+      "status": "PASS_OFFLINE_ENGINEERING_TASK",
+      "history_versions": [1, 2],
+      "selected_version": 2,
+      "external_projection": "BLOCKED_LOCAL",
+      "engineering_execution_seconds": 0.11435879999771714,
+      "provider_calls": 0,
+      "network_calls": 0,
+      "paid_cost_usd": 0.0,
+      "output": "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON",
+      "receipt_sha256": "aa93aa1098a420debe7d6c4d3ce97dec2be6168d52e8055f6975132dd7e95e24",
+      "source_inspection_sha256": "34b295f27542902f51f0e3b7f22f12d19c4ac39c2fb09bc857ed73655af6a373",
+      "history_manifest_sha256": "7803af5a4d184ab7504eabc25d16edb8e58524074d6ba0908f407ee61f61d8f2",
+      "export_json_sha256": "3612010e96664b214e8372953c4fb24dc67453010b65e08f18f4d8c10a5347a1"
+    },
+    {
+      "query_id": "HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM",
+      "source_id": "openfda-510k-k060016",
+      "status": "PASS_OFFLINE_ENGINEERING_TASK",
+      "history_versions": [1, 2],
+      "selected_version": 2,
+      "external_projection": "BLOCKED_LOCAL",
+      "engineering_execution_seconds": 0.115407100005541,
+      "provider_calls": 0,
+      "network_calls": 0,
+      "paid_cost_usd": 0.0,
+      "output": "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM",
+      "receipt_sha256": "48dce85ae4d0589d720a54367325b02d2e7c6e018cf055f9c686ead4efc3be29",
+      "source_inspection_sha256": "6805a29b70b0a7f99c1ec66a75fb8c8c311d8d6de3cd64675bc7de60dd6518d4",
+      "history_manifest_sha256": "28726eca6b5b51655d40add004ab2e7674d60ffc9faa45efc1ed09a175f07cf7",
+      "export_json_sha256": "81c6c4fe16ea8d14bb8ee7263bffa43cbe8ea0016095c63a0350afca1d54804f"
+    },
+    {
+      "query_id": "HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER",
+      "source_id": "openfda-510k-k170059",
+      "status": "PASS_OFFLINE_ENGINEERING_TASK",
+      "history_versions": [1, 2],
+      "selected_version": 2,
+      "external_projection": "BLOCKED_LOCAL",
+      "engineering_execution_seconds": 0.1240123999887146,
+      "provider_calls": 0,
+      "network_calls": 0,
+      "paid_cost_usd": 0.0,
+      "output": "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER",
+      "receipt_sha256": "32ffa3e2743e135c4be23ac1ca3971aefe77a0b1584e6ecb5c720d2bff09a172",
+      "source_inspection_sha256": "74424e29e3e57114299ef7637a92cc0b4f34b09dacf3761868c3706f9ba1518b",
+      "history_manifest_sha256": "c6205379f8f7ca70fde938feaf98abf0d50bcaa118e02813c59e271eea936db0",
+      "export_json_sha256": "34f5577a190042bc7c7aa253bd2f3ba31869e3ee997eaefe78bc4c02584a1dab"
+    }
+  ],
+  "product_display_boundary_probe": [
+    {"query_id": "HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON", "status": "BLOCKED_LOCAL", "error_type": "RightsBoundaryError"},
+    {"query_id": "HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM", "status": "BLOCKED_LOCAL", "error_type": "RightsBoundaryError"},
+    {"query_id": "HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER", "status": "BLOCKED_LOCAL", "error_type": "RightsBoundaryError"}
+  ],
+  "checks": {
+    "case_count": 3,
+    "all_receipts_pass": true,
+    "all_artifact_hashes_match": true,
+    "all_histories_are_1_to_2": true,
+    "all_external_projections_blocked": true,
+    "participant_validation": "NOT_RUN",
+    "commercial_validation": "NOT_RUN",
+    "semantic_labels": "NOT_RUN",
+    "provider_calls": 0,
+    "network_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "limitations": [
+    "Engineering execution time is not participant task time or a service-level claim.",
+    "Product-level disclosed links are not semantic relevance gold.",
+    "Unlisted device-patent pairs remain UNJUDGED and are not negatives.",
+    "Philips marking and Google-derived patent payloads remain local-only."
+  ]
+}
