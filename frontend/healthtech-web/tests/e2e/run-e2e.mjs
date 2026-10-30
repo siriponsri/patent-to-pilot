@@ -44,6 +44,9 @@ async function allowDownloads(browser, dir) {
 }
 
 async function a11yAudit(page, label) {
+  // Let the real pipeline run and its decorative animations settle first.
+  await page.waitFor('!window.__healthtechApp.state.current?.pipe?.running && document.getAnimations().filter((a) => a.playState === "running").length === 0', 12000);
+  await textAudit(page, label);
   const r = await page.eval(`(() => {
     const issues = [];
     document.querySelectorAll('input, select, textarea').forEach((el) => {
@@ -56,11 +59,38 @@ async function a11yAudit(page, label) {
     if (h1 !== 1) issues.push('h1 count ' + h1);
     const ids = [...document.querySelectorAll('[id]')].map((e) => e.id); const dup = ids.filter((x, i) => ids.indexOf(x) !== i);
     if (dup.length) issues.push('duplicate ids ' + [...new Set(dup)].join(','));
-    if (document.documentElement.scrollWidth > document.documentElement.clientWidth + 1) issues.push('horizontal overflow ' + document.documentElement.scrollWidth + '>' + document.documentElement.clientWidth);
+    if (document.documentElement.scrollWidth > document.documentElement.clientWidth + 1) issues.push('horizontal overflow ' + document.documentElement.scrollWidth + '>' + document.documentElement.clientWidth + ' by ' + [...document.querySelectorAll('body *')].filter((e) => e.getBoundingClientRect().right > document.documentElement.clientWidth + 1 && e.getBoundingClientRect().width > 0).slice(-4).map((e) => e.tagName + '.' + String(e.className).slice(0, 24) + '#' + e.id + '[' + e.textContent.trim().slice(0, 24) + ']').join(' | '));
     if (document.getAnimations().length) issues.push('animations running');
     return { issues, lang: document.documentElement.lang, theme: document.documentElement.dataset.theme };
   })()`);
   assert(!r.issues.length, `${label}: ${r.issues.join('; ')}`);
+  return r;
+}
+
+/** Text fit: no mid-word break rules, nothing clipped, short labels stay within their line budget. */
+async function textAudit(page, label) {
+  const r = await page.eval(`(() => {
+    const issues = [];
+    const visible = (el) => el.getClientRects().length && getComputedStyle(el).visibility !== 'hidden';
+    for (const el of document.querySelectorAll('body *')) {
+      if (!visible(el) || el.closest('pre, .wrap, .mono, code')) continue;
+      const cs = getComputedStyle(el);
+      if (cs.overflowWrap === 'anywhere' || cs.wordBreak === 'break-all') issues.push('mid-word break rule on ' + el.tagName + '.' + el.className);
+    }
+    for (const el of document.querySelectorAll('.btn, [role=tab], .badge, .save-status, .tab-count, .ws-tech summary')) {
+      if (visible(el) && el.scrollWidth > el.clientWidth + 1) issues.push('clipped: ' + el.textContent.trim().slice(0, 40));
+    }
+    for (const el of document.querySelectorAll('.node-title, .node-summary')) {
+      if (visible(el) && el.scrollHeight > el.clientHeight + 1) issues.push('node text cut: ' + el.textContent.trim().slice(0, 40));
+    }
+    for (const el of document.querySelectorAll('.tile-label, .panel-tabs [role=tab], .btn')) {
+      if (!visible(el)) continue;
+      const lh = parseFloat(getComputedStyle(el).lineHeight) || 24;
+      if (el.getBoundingClientRect().height > lh * 2.3 + 20) issues.push('too many lines: ' + el.textContent.trim().slice(0, 40));
+    }
+    return [...new Set(issues)];
+  })()`);
+  assert(!r.length, `${label} text audit: ${r.slice(0, 6).join('; ')}`);
   return r;
 }
 
@@ -132,8 +162,8 @@ const scenarios = [
     // ARIA tabs: arrow key moves selection and focus to the candidates tab.
     await page.eval('document.getElementById("tab-evidence").focus()');
     await page.key('ArrowRight', 'ArrowRight', 39);
-    const tabState = await page.eval(`({ selected: document.querySelector('[role=tab][aria-selected=true]').id, focus: document.activeElement.id,
-      panel: document.querySelector('[role=tabpanel]').getAttribute('aria-labelledby'), stops: [...document.querySelectorAll('[role=tab]')].filter(t => t.tabIndex === 0).length })`);
+    const tabState = await page.eval(`({ selected: document.querySelector('.tablist [role=tab][aria-selected=true]').id, focus: document.activeElement.id,
+      panel: document.querySelector('.tabpanel[role=tabpanel]').getAttribute('aria-labelledby'), stops: [...document.querySelectorAll('.tablist [role=tab]')].filter(t => t.tabIndex === 0).length })`);
     assert(tabState.selected === 'tab-candidates' && tabState.focus === 'tab-candidates' && tabState.panel === 'tab-candidates' && tabState.stops === 1, `tabs keyboard: ${JSON.stringify(tabState)}`);
     await page.click('[id="cmp-US99000002B2"]');
     await page.waitFor('document.getElementById("compare-table")');
@@ -238,7 +268,7 @@ const scenarios = [
     await page.send('Input.insertText', { text: 'ขอเอกสารเปิดเผยที่ลงวันที่ / Request a dated disclosure' });
     const reqId = await page.eval('document.activeElement.id');
     // Switch locale and every theme while the text is still unsaved: text and focus must survive.
-    await page.eval('document.getElementById("pref-locale").focus()');
+    await page.eval('document.getElementById("layout-menu")?.setAttribute("open", ""); window.__healthtechApp.state.openMenus = { "layout-menu": true }; document.getElementById("pref-locale").focus()');
     await page.eval('var s = document.getElementById("pref-locale"); s.value = "en"; s.dispatchEvent(new Event("change"))');
     const afterLocale = await page.eval(`({ lang: document.documentElement.lang, focus: document.activeElement.id, text: document.getElementById(${JSON.stringify(reqId)}).value, h1: document.querySelector('main h1').textContent })`);
     assert(afterLocale.lang === 'en' && afterLocale.focus === 'pref-locale' && afterLocale.text.startsWith('ขอเอกสาร') && afterLocale.h1 === 'Next information requests', 'locale switch keeps unsaved text and focus; quotes not translated');
@@ -441,7 +471,7 @@ const scenarios = [
 
   record('E12-keyboard-path', ['US-27', 'US-14', 'US-21'], async ({ page }) => {
     await page.goto(`${base}/`);
-    const tabTo = async (pred, max = 120, back = false) => {
+    const tabTo = async (pred, max = 250, back = false) => {
       for (let i = 0; i < max; i++) {
         await page.key('Tab', 'Tab', 9, back ? 8 : 0);
         if (await page.eval(`(() => { const el = document.activeElement; return ${pred}; })()`)) return true;
@@ -464,10 +494,10 @@ const scenarios = [
     await page.key('Enter');
     await page.waitFor('document.activeElement?.tagName === "TEXTAREA"');
     await page.send('Input.insertText', { text: EN_NOTE });
-    await tabTo('el.id === "save-now"', 80, true);
+    await tabTo('el.id === "save-now"', 250, true);
     await page.key('Enter');
     await waitSaved(page);
-    await tabTo('el.id === "source-back"', 80, true);
+    await tabTo('el.id === "source-back"', 250, true);
     await page.key('Enter');
     await page.waitFor('document.activeElement?.id === "row-ux-e-unicode"');
     await tabTo('el.getAttribute("href")?.endsWith("/export") && el.closest("nav")');
@@ -539,6 +569,80 @@ const scenarios = [
     return { emptyScope, corrupt: r.status, recoveryOmissions: rec.omissions ?? null, deleteMessage: msg, remaining: remaining.length };
   }),
 ];
+
+scenarios.push(record('E17-navigation-tour-tutorial', ['US-26', 'US-27'], async ({ page }) => {
+  await page.setViewport(1280, 900); // independent of any earlier scenario's viewport
+  await page.goto(`${base}/#/project/${state.pid}`);
+  await page.waitFor('document.querySelector(".journey")');
+  await page.waitFor('!window.__healthtechApp.state.current.pipe.running', 15000);
+  const j = await page.eval(`({ current: document.querySelector('.jstep[aria-current=step]')?.id, done: [...document.querySelectorAll('.jstep')].map(s => s.dataset.done),
+    crumbs: [...document.querySelectorAll('.breadcrumb li')].map(l => l.textContent), next: document.getElementById('journey-next')?.getAttribute('href') })`);
+  assert(j.current === 'jstep-review' && j.done[0] === 'true' && j.crumbs.length === 3, `journey: ${JSON.stringify(j)}`);
+  // Real pointer drag: open issue → Requests node creates a draft; Esc mid-drag changes nothing.
+  const center = (sel) => page.eval(`(() => { const el = document.querySelector(${JSON.stringify(sel)}); el.scrollIntoView({ block: 'center' }); const b = el.getBoundingClientRect(); return { x: b.left + b.width / 2, y: b.top + b.height / 2 }; })()`);
+  const mouse = (type, p) => page.send('Input.dispatchMouseEvent', { type, x: p.x, y: p.y, button: 'left', buttons: type === 'mouseReleased' ? 0 : 1, clickCount: type === 'mouseMoved' ? 0 : 1 });
+  const drafts = () => page.eval('window.__healthtechApp.state.current.overlay.requestDrafts.length');
+  const dragTo = async (fromSel, toSel, cancel = false) => {
+    const a = await center(fromSel), b = await center(toSel);
+    a.hit = await page.eval(`String(document.elementFromPoint(${a.x}, ${a.y})?.className || 'none') + ' @' + ${Math.round(a.x)} + ',' + ${Math.round(a.y)} + ' vw=' + innerWidth + 'x' + innerHeight`);
+    await mouse('mousePressed', a);
+    for (let i = 1; i <= 12; i++) await mouse('mouseMoved', { x: a.x + ((b.x - a.x) * i) / 12, y: a.y + ((b.y - a.y) * i) / 12 });
+    const hover = await page.eval('({ over: !!document.querySelector(".drop-over"), ghost: !!document.querySelector(".drag-ghost"), valid: document.querySelectorAll(".drop-valid").length })');
+    hover.hit = a.hit;
+    if (cancel) await page.key('Escape', 'Escape', 27);
+    await mouse('mouseReleased', b);
+    await sleep(500);
+    return hover;
+  };
+  const d0 = await drafts();
+  const cancelled = await dragTo('.lib-card.lib-gap .lib-handle', '#node-requests', true);
+  const d1 = await drafts();
+  const dropped = await dragTo('.lib-card.lib-gap .lib-handle', '#node-requests');
+  const d2 = await drafts();
+  assert(cancelled.ghost && cancelled.over && d1 === d0, `Esc cancels drag: ${JSON.stringify({ cancelled, d0, d1 })}`);
+  assert(dropped.ghost && dropped.over && dropped.valid >= 1 && d2 === d0 + 1, `pointer drop adds a request: ${JSON.stringify({ dropped, d0, d2 })}`);
+  // Panels: keyboard splitter resize, float via menu, dock back.
+  const left0 = await page.eval('window.__healthtechApp.layout.zones.left.size');
+  await page.eval('document.querySelector(".splitter-left").focus()');
+  await page.key('ArrowRight', 'ArrowRight', 39);
+  const left1 = await page.eval('window.__healthtechApp.layout.zones.left.size');
+  await page.click('#move-timeline-float');
+  const floated = await page.eval('({ float: !!window.__healthtechApp.layout.floating.timeline, win: !!document.querySelector(".float-window") })');
+  await page.click('#move-timeline-bottom');
+  const docked = await page.eval('window.__healthtechApp.layout.zones.bottom.panels.includes("timeline") && !document.querySelector(".float-window")');
+  assert(left1 === left0 + 24 && floated.float && floated.win && docked, `panels: ${JSON.stringify({ left0, left1, floated, docked })}`);
+  await page.eval('window.__healthtechApp.resetLayout()');
+  // Guided tour: keyboard through steps, Esc closes, focus returns to the opener.
+  await page.eval('document.getElementById("tour-start").focus()');
+  await page.key('Enter');
+  await page.waitFor('document.querySelector(".tour-pop")');
+  const t1 = await page.eval('({ title: document.getElementById("tour-title").textContent, focus: document.activeElement.id, count: document.querySelector(".tour-count").textContent })');
+  await page.key('ArrowRight', 'ArrowRight', 39);
+  await page.key('ArrowRight', 'ArrowRight', 39);
+  const t3 = await page.eval('({ step: document.querySelector(".tour").dataset.step, spot: (() => { const r = document.querySelector(".tour-spot").getBoundingClientRect(); return r.width > 0 && r.height > 0; })() })');
+  await page.screenshot(join(SHOTS, 'E17-tour.jpg'));
+  await page.key('Escape', 'Escape', 27);
+  const after = await page.eval('({ open: !!document.querySelector(".tour"), focus: document.activeElement.id })');
+  assert(t1.focus === 'tour-title' && t1.title && t3.step === 'node' && t3.spot && !after.open && after.focus === 'tour-start', `tour: ${JSON.stringify({ t1, t3, after })}`);
+  // Tutorial dialog: opens modally, chapters listed, chapter seeks the video when it exists.
+  await page.click('#tutorial-open');
+  await page.waitFor('document.querySelector("dialog.tutorial[open]")');
+  const tut = await page.eval('({ chapters: document.querySelectorAll(".chapter").length, video: !!document.getElementById("tutorial-video"), missing: !!document.getElementById("tutorial-missing") })');
+  assert(tut.chapters === 5 && (tut.video || tut.missing), `tutorial: ${JSON.stringify(tut)}`);
+  let seek = null;
+  if (tut.video) {
+    await page.waitFor('document.getElementById("tutorial-video").readyState >= 1', 10000);
+    await page.eval('document.querySelectorAll(".chapter")[2].click(); document.getElementById("tutorial-video").pause()');
+    await sleep(300);
+    seek = await page.eval('({ t: document.getElementById("tutorial-video").currentTime, start: Number(document.querySelectorAll(".chapter")[2].dataset.start), dur: document.getElementById("tutorial-video").duration })');
+    assert(Math.abs(seek.t - seek.start) < 1 && seek.dur > 30, `chapter seek: ${JSON.stringify(seek)}`);
+  }
+  await page.screenshot(join(SHOTS, 'E17-tutorial.jpg'));
+  await page.key('Escape', 'Escape', 27);
+  const closed = await page.eval('({ open: !!document.querySelector("dialog.tutorial"), focus: document.activeElement.id })');
+  assert(!closed.open && closed.focus === 'tutorial-open', `tutorial close: ${JSON.stringify(closed)}`);
+  return { journey: j, tour: { t1, t3, after }, tutorial: { ...tut, seek } };
+}));
 
 // Fault-injection scenarios use their own clean profiles.
 const isolated = [

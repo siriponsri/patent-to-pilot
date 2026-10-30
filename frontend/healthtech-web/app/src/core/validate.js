@@ -115,87 +115,136 @@ export async function checkEvidence(item, source) {
 function err(code, path, message) { return { code, path, message }; }
 
 /**
+ * Validation stages, in order. Each stage really performs its checks and
+ * records errors plus per-item outcomes, so the UI can show genuine progress
+ * (the pipeline canvas) instead of a scripted animation.
+ */
+export const DOSSIER_STAGES = [
+  { id: 'schema', run: async (ctx) => {
+    const problems = schemaErrors(ctx.schema, ctx.raw);
+    problems.forEach((p) => ctx.errors.push(err('schema', p.path, p.message)));
+    if (!problems.length) ctx.checks.push({ check: 'closed_schema', result: 'pass' });
+    return { stop: problems.length > 0, items: [] };
+  } },
+  { id: 'query', run: async (ctx) => {
+    const d = ctx.raw, q = d.query, brief = q.brief;
+    const before = ctx.errors.length;
+    if (brief.data_class === 'private') ctx.errors.push(err('private_data', '$.query.brief.data_class', 'private inputs are not accepted by this local public/synthetic workflow'));
+    if (d.project_id !== brief.project_id) ctx.errors.push(err('project_mismatch', '$.project_id', 'project_id differs from query.brief.project_id'));
+    const version = Number(d.version);
+    const parent = d.parent_version === null ? null : Number(d.parent_version);
+    if ((version === 1) !== (parent === null) || (parent !== null && parent !== version - 1)) {
+      ctx.errors.push(err('version_chain', '$.parent_version', 'initial version has no parent; later versions require the preceding one'));
+    }
+    const required = new Set([q.selected_comparator_source_id]);
+    if (Object.keys(q.company_metadata).length) {
+      if (!q.company_source_id) ctx.errors.push(err('company_basis', '$.query.company_source_id', 'company metadata requires a source basis'));
+      else required.add(q.company_source_id);
+    }
+    for (const r of required) if (!q.permitted_inputs.includes(r)) ctx.errors.push(err('comparator_not_permitted', '$.query.permitted_inputs', `${r} must be a permitted input`));
+    [...q.features_of_interest, ...q.user_questions].forEach((s, k) => { if (!s.trim()) ctx.errors.push(err('blank_item', `$.query[${k}]`, 'features/questions must not be blank')); });
+    return { items: [{ id: q.device_id_canonical, ok: ctx.errors.length === before }] };
+  } },
+  { id: 'sources', run: async (ctx) => {
+    const d = ctx.raw, q = d.query, brief = q.brief;
+    const items = [];
+    for (const [k, s] of d.sources.entries()) {
+      const before = ctx.errors.length;
+      const id = s.source.source_id;
+      if (ctx.sources.has(id)) ctx.errors.push(err('duplicate_ids', `$.sources[${k}]`, `duplicate source ID ${id}`));
+      ctx.sources.set(id, s);
+      const h = await contentHash(s.payload);
+      if (s.source.sha256 !== h) ctx.errors.push(err('source_hash_mismatch', `$.sources[${k}].source.sha256`, `payload hash ${h} does not match recorded ${s.source.sha256}`));
+      if (s.source_date > q.evidence_cutoff) ctx.errors.push(err('late_source', `$.sources[${k}].source_date`, `source date ${s.source_date} is after evidence cutoff ${q.evidence_cutoff}`));
+      const looksSynthetic = s.synthetic === true || String(s.source.uri).startsWith('urn:synthetic:');
+      if (brief.data_class === 'public' && looksSynthetic) ctx.errors.push(err('synthetic_in_public', `$.sources[${k}].synthetic`, 'synthetic source cannot be presented as public evidence'));
+      if (brief.data_class === 'synthetic' && !s.synthetic) ctx.errors.push(err('public_in_synthetic', `$.sources[${k}].synthetic`, 'a synthetic dossier may not carry unlabelled real sources'));
+      items.push({ id, ok: ctx.errors.length === before });
+    }
+    ctx.checks.push({ check: 'source_payload_hashes', result: ctx.errors.some((e) => e.code === 'source_hash_mismatch') ? 'fail' : 'pass' });
+    if (!ctx.sources.has(q.selected_comparator_source_id)) ctx.errors.push(err('dangling_source', '$.query.selected_comparator_source_id', 'comparator source is missing from the package'));
+    return { items };
+  } },
+  { id: 'evidence', run: async (ctx) => {
+    const items = [];
+    for (const [k, e] of ctx.raw.evidence.entries()) {
+      const before = ctx.errors.length;
+      const p = `$.evidence[${k}]`;
+      if (ctx.evidence.has(e.evidence_id)) ctx.errors.push(err('duplicate_ids', p, `duplicate evidence ID ${e.evidence_id}`));
+      ctx.evidence.set(e.evidence_id, e);
+      if (e.extraction_method === 'literal_span' && (!e.quoted_span || e.structured_field)) ctx.errors.push(err('evidence_basis', p, 'literal evidence needs only a nonempty quoted span'));
+      if (e.extraction_method === 'structured_field' && (!e.structured_field || e.quoted_span)) ctx.errors.push(err('evidence_basis', p, 'field evidence needs only a field path'));
+      if (e.evidence_kind === 'system_inference' || e.evidence_kind === 'unresolved') {
+        if (e.verification_status !== 'not_independently_validated') ctx.errors.push(err('evidence_basis', p, 'inferences/unknowns cannot be promoted by exact-source checks'));
+      } else if (e.extraction_method === 'authored_inference') ctx.errors.push(err('evidence_basis', p, 'authored inference cannot be a source fact'));
+      const src = ctx.sources.get(e.source_id);
+      if (!src) ctx.errors.push(err('dangling_source', `${p}.source_id`, `evidence cites missing source ${e.source_id}`));
+      else {
+        const res = await checkEvidence(e, src);
+        if (!res.ok) ctx.errors.push(err(res.code, p, `${e.evidence_id}: ${res.message}`));
+        else if (res.status !== e.verification_status) ctx.errors.push(err('badge_not_reproducible', `${p}.verification_status`, `recorded ${e.verification_status} but recomputed ${res.status}`));
+      }
+      items.push({ id: e.evidence_id, ok: ctx.errors.length === before });
+    }
+    ctx.checks.push({ check: 'evidence_integrity', result: ctx.errors.some((e) => e.path?.startsWith('$.evidence')) ? 'fail' : 'pass' });
+    return { items };
+  } },
+  { id: 'candidates', run: async (ctx) => {
+    const items = [];
+    for (const [k, c] of ctx.raw.candidates.entries()) {
+      const before = ctx.errors.length;
+      const p = `$.candidates[${k}]`;
+      if (canonicalPatentId(c.patent_id_raw) !== c.patent_id_canonical) ctx.errors.push(err('raw_canonical_mismatch', p, `raw ${c.patent_id_raw} does not normalize to ${c.patent_id_canonical}`));
+      if (c.family_id && !c.family_source_id) ctx.errors.push(err('unsourced_family', p, 'family identity requires provenance'));
+      const src = ctx.sources.get(c.source_id);
+      if (!src) ctx.errors.push(err('dangling_source', `${p}.source_id`, `candidate cites missing source ${c.source_id}`));
+      else if (c.source_revision !== src.source.version_label) ctx.errors.push(err('candidate_revision_mismatch', p, 'candidate revision differs from the pinned source revision'));
+      if (c.association_status === 'disclosed_link') {
+        const e = c.disclosure_evidence_id ? ctx.evidence.get(c.disclosure_evidence_id) : undefined;
+        if (!e || e.evidence_kind !== 'patent_disclosure') ctx.errors.push(err('missing_disclosure', p, 'a disclosed link needs source-backed patent_disclosure evidence'));
+        else if (e.source_id === c.source_id || ctx.sources.get(e.source_id)?.source.source_type !== 'independent_disclosure') {
+          ctx.errors.push(err('disclosure_not_independent', p, 'disclosure must come from an independent_disclosure source'));
+        }
+      }
+      items.push({ id: c.patent_id_canonical, ok: ctx.errors.length === before });
+    }
+    ctx.checks.push({ check: 'candidate_identity_and_disclosure', result: ctx.errors.some((e) => e.path?.startsWith('$.candidates')) ? 'fail' : 'pass' });
+    return { items };
+  } },
+];
+
+/**
+ * Run the stages in order. onStage(event) receives {stage, phase:'start'|'end'|'skipped',
+ * errors (this stage's only), items, ms (measured)}. Optional `pace` lets the UI slow
+ * the *display* between stages; it never changes results.
+ */
+export async function runDossierStages(raw, schema, { onStage, pace } = {}) {
+  const ctx = { raw, schema, errors: [], checks: [], sources: new Map(), evidence: new Map() };
+  for (const [i, stage] of DOSSIER_STAGES.entries()) {
+    await onStage?.({ stage: stage.id, phase: 'start' });
+    // Display pacing sits between "start" and the work so a running step is visible;
+    // the measured duration below covers only the real checks.
+    if (pace) await pace(stage.id);
+    const before = ctx.errors.length;
+    const t0 = globalThis.performance.now();
+    const out = await stage.run(ctx);
+    const ms = globalThis.performance.now() - t0;
+    await onStage?.({ stage: stage.id, phase: 'end', errors: ctx.errors.slice(before), items: out.items, ms });
+    if (out.stop) {
+      for (const rest of DOSSIER_STAGES.slice(i + 1)) await onStage?.({ stage: rest.id, phase: 'skipped' });
+      return { ok: false, errors: ctx.errors, checks: ctx.checks };
+    }
+  }
+  const mode = raw.query.brief.data_class === 'synthetic' ? 'synthetic_demo' : 'imported_public';
+  return { ok: ctx.errors.length === 0, errors: ctx.errors, checks: ctx.checks, mode, hash: await contentHash(raw) };
+}
+
+/**
  * Full import validation of a lossless DossierVersion tree.
  * Returns {ok, errors[], checks[], mode, hash}. Never mutates `raw`.
  */
 export async function validateDossier(raw, schema) {
-  const errors = [];
-  const checks = [];
-  const schemaProblems = schemaErrors(schema, raw);
-  if (schemaProblems.length) {
-    return { ok: false, errors: schemaProblems.map((p) => err('schema', p.path, p.message)), checks };
-  }
-  checks.push({ check: 'closed_schema', result: 'pass' });
-  const d = raw;
-  const q = d.query;
-  const brief = q.brief;
-  if (brief.data_class === 'private') errors.push(err('private_data', '$.query.brief.data_class', 'private inputs are not accepted by this local public/synthetic workflow'));
-  if (d.project_id !== brief.project_id) errors.push(err('project_mismatch', '$.project_id', 'project_id differs from query.brief.project_id'));
-  const version = Number(d.version);
-  const parent = d.parent_version === null ? null : Number(d.parent_version);
-  if ((version === 1) !== (parent === null) || (parent !== null && parent !== version - 1)) {
-    errors.push(err('version_chain', '$.parent_version', 'initial version has no parent; later versions require the preceding one'));
-  }
-  // DeviceQuery rules
-  const required = new Set([q.selected_comparator_source_id]);
-  if (Object.keys(q.company_metadata).length) {
-    if (!q.company_source_id) errors.push(err('company_basis', '$.query.company_source_id', 'company metadata requires a source basis'));
-    else required.add(q.company_source_id);
-  }
-  for (const r of required) if (!q.permitted_inputs.includes(r)) errors.push(err('comparator_not_permitted', '$.query.permitted_inputs', `${r} must be a permitted input`));
-  [...q.features_of_interest, ...q.user_questions].forEach((s, k) => { if (!s.trim()) errors.push(err('blank_item', `$.query[${k}]`, 'features/questions must not be blank')); });
-
-  const sources = new Map();
-  for (const [k, s] of d.sources.entries()) {
-    const id = s.source.source_id;
-    if (sources.has(id)) errors.push(err('duplicate_ids', `$.sources[${k}]`, `duplicate source ID ${id}`));
-    sources.set(id, s);
-    const h = await contentHash(s.payload);
-    if (s.source.sha256 !== h) errors.push(err('source_hash_mismatch', `$.sources[${k}].source.sha256`, `payload hash ${h} does not match recorded ${s.source.sha256}`));
-    if (s.source_date > q.evidence_cutoff) errors.push(err('late_source', `$.sources[${k}].source_date`, `source date ${s.source_date} is after evidence cutoff ${q.evidence_cutoff}`));
-    const looksSynthetic = s.synthetic === true || String(s.source.uri).startsWith('urn:synthetic:');
-    if (brief.data_class === 'public' && looksSynthetic) errors.push(err('synthetic_in_public', `$.sources[${k}].synthetic`, 'synthetic source cannot be presented as public evidence'));
-    if (brief.data_class === 'synthetic' && !s.synthetic) errors.push(err('public_in_synthetic', `$.sources[${k}].synthetic`, 'a synthetic dossier may not carry unlabelled real sources'));
-  }
-  checks.push({ check: 'source_payload_hashes', result: errors.some((e) => e.code === 'source_hash_mismatch') ? 'fail' : 'pass' });
-  if (!sources.has(q.selected_comparator_source_id)) errors.push(err('dangling_source', '$.query.selected_comparator_source_id', 'comparator source is missing from the package'));
-
-  const evidence = new Map();
-  for (const [k, e] of d.evidence.entries()) {
-    const p = `$.evidence[${k}]`;
-    if (evidence.has(e.evidence_id)) errors.push(err('duplicate_ids', p, `duplicate evidence ID ${e.evidence_id}`));
-    evidence.set(e.evidence_id, e);
-    if (e.extraction_method === 'literal_span' && (!e.quoted_span || e.structured_field)) errors.push(err('evidence_basis', p, 'literal evidence needs only a nonempty quoted span'));
-    if (e.extraction_method === 'structured_field' && (!e.structured_field || e.quoted_span)) errors.push(err('evidence_basis', p, 'field evidence needs only a field path'));
-    if (e.evidence_kind === 'system_inference' || e.evidence_kind === 'unresolved') {
-      if (e.verification_status !== 'not_independently_validated') errors.push(err('evidence_basis', p, 'inferences/unknowns cannot be promoted by exact-source checks'));
-    } else if (e.extraction_method === 'authored_inference') errors.push(err('evidence_basis', p, 'authored inference cannot be a source fact'));
-    const src = sources.get(e.source_id);
-    if (!src) { errors.push(err('dangling_source', `${p}.source_id`, `evidence cites missing source ${e.source_id}`)); continue; }
-    const res = await checkEvidence(e, src);
-    if (!res.ok) errors.push(err(res.code, p, `${e.evidence_id}: ${res.message}`));
-    else if (res.status !== e.verification_status) errors.push(err('badge_not_reproducible', `${p}.verification_status`, `recorded ${e.verification_status} but recomputed ${res.status}`));
-  }
-  checks.push({ check: 'evidence_integrity', result: errors.some((e) => e.path?.startsWith('$.evidence')) ? 'fail' : 'pass' });
-
-  for (const [k, c] of d.candidates.entries()) {
-    const p = `$.candidates[${k}]`;
-    if (canonicalPatentId(c.patent_id_raw) !== c.patent_id_canonical) errors.push(err('raw_canonical_mismatch', p, `raw ${c.patent_id_raw} does not normalize to ${c.patent_id_canonical}`));
-    if (c.family_id && !c.family_source_id) errors.push(err('unsourced_family', p, 'family identity requires provenance'));
-    const src = sources.get(c.source_id);
-    if (!src) errors.push(err('dangling_source', `${p}.source_id`, `candidate cites missing source ${c.source_id}`));
-    else if (c.source_revision !== src.source.version_label) errors.push(err('candidate_revision_mismatch', p, 'candidate revision differs from the pinned source revision'));
-    if (c.association_status === 'disclosed_link') {
-      const e = c.disclosure_evidence_id ? evidence.get(c.disclosure_evidence_id) : undefined;
-      if (!e || e.evidence_kind !== 'patent_disclosure') errors.push(err('missing_disclosure', p, 'a disclosed link needs source-backed patent_disclosure evidence'));
-      else if (e.source_id === c.source_id || sources.get(e.source_id)?.source.source_type !== 'independent_disclosure') {
-        errors.push(err('disclosure_not_independent', p, 'disclosure must come from an independent_disclosure source'));
-      }
-    }
-  }
-  checks.push({ check: 'candidate_identity_and_disclosure', result: errors.some((e) => e.path?.startsWith('$.candidates')) ? 'fail' : 'pass' });
-  const mode = brief.data_class === 'synthetic' ? 'synthetic_demo' : 'imported_public';
-  return { ok: errors.length === 0, errors, checks, mode, hash: await contentHash(raw) };
+  return runDossierStages(raw, schema);
 }
 
 /** Light consistency checks for completed CLI run artifacts. */

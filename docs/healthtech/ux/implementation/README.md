@@ -4,9 +4,11 @@ Status: **READY_FOR_REVIEW (local frontend slice)**. This is engineering evidenc
 
 ## สรุปสำหรับเจ้าของโครงการ
 
-หน้าเว็บนี้รันในเครื่องได้ทันที ผู้ใช้เลือกอุปกรณ์หรือนำเข้าแฟ้มหลักฐาน แล้วเทียบข้อเท็จจริงกับแหล่งที่มาได้ตรงตำแหน่งอักขระ จดบันทึก เตรียมคำถาม และส่งออกรายงานภาษาไทยหรืออังกฤษที่รวมข้อความที่แก้ไว้ด้วย งานบันทึกในเบราว์เซอร์ พอปิดแล้วเปิดใหม่ข้อความก็ยังอยู่ ถ้าสองแท็บแก้พร้อมกัน ระบบเก็บข้อความไว้ทั้งสองฝั่ง ไม่รายงานว่าบันทึกสำเร็จทั้งคู่
+หน้าเว็บนี้รันในเครื่องได้ทันที รอบล่าสุดเปลี่ยนหน้าแฟ้มหลักฐานเป็นพื้นที่ทำงานแบบ node canvas คล้าย n8n หรือ Make แต่ละโหนดคือขั้นตอนที่รันจริงในเบราว์เซอร์ ตั้งแต่โหลดแฟ้ม ตรวจโครงสร้าง ตรวจ hash ไปจนถึงตรวจตำแหน่งอ้างอิง โหนดสว่างทีละขั้นตามงานที่ทำเสร็จจริง ไม่ใช่ภาพเคลื่อนไหวที่เขียนบทไว้ แผงทุกแผงปรับขนาด ย้าย หรือแยกเป็นหน้าต่างลอยได้ ลากการ์ดหลักฐานไปวางบนโหนดเพื่อจดบันทึกหรือร่างคำขอได้ และทุกการลากมีปุ่มหรือคีย์บอร์ดที่ทำแบบเดียวกัน
 
-ผลทดสอบล่าสุด: unit 61/61 ผ่าน และ browser acceptance 16/16 ผ่านบน Chrome headless จริง หลักฐานอยู่ใน [evidence/e2e](evidence/e2e/results.json) แต่การค้นข้อมูลจริง การแชร์กับทีม และบริการฝั่ง backend ยังไม่มีในรุ่นนี้ ปุ่มที่เกี่ยวข้องจึงถูกปิดพร้อมเหตุผล
+ด้านการนำทาง มีแถบห้าขั้น (โหลด ตรวจ ทบทวน ถามต่อ ส่งออก) ที่ขึ้นเครื่องหมายถูกเมื่องานเสร็จจริง มี breadcrumb ทัวร์แนะนำทีละจุด และวิดีโอสอนใช้ 56 วินาทีทั้งภาษาไทยและอังกฤษ สร้างด้วย HyperFrames จากภาพหน้าจอจริงของแอป แบ่งเป็นบทตามขั้นตอน วิดีโอยังไม่มีเสียง เพราะในเครื่องนี้ไม่มีแหล่งเพลงที่มีสิทธิ์ใช้ แต่เตรียมช่องใส่เพลงไว้แล้ว
+
+ส่วนที่ยังเหมือนเดิม: บันทึกในเบราว์เซอร์ ปิดแล้วเปิดใหม่ข้อความยังอยู่ สองแท็บแก้พร้อมกันก็ไม่มีข้อความหาย และส่งออกรายงานไทยหรืออังกฤษที่รวมข้อความที่แก้ไว้ ผลทดสอบล่าสุดดูได้ที่ [ตารางผลทดสอบ](#test-commands-and-actual-outcomes) ส่วนการค้นข้อมูลจริง เอเจนต์ AI การแชร์กับทีม และบริการ backend ยังไม่มีในรุ่นนี้ โหนดและปุ่มที่เกี่ยวข้องจึงแสดงว่ายังไม่เชื่อมต่อ
 
 ## Branch, base and paths
 
@@ -67,14 +69,38 @@ Storage: projects live in this browser profile's IndexedDB (`p2p-healthtech-ux`)
 
 Local snapshot IDs (`snap-…`) are a separate namespace from backend `DossierVersion.version`, which the frontend never changes.
 
+## Workspace redesign (owner request 2026-10-30/31)
+
+The owner asked for a drag-and-drop, n8n/Make/Zapier-style workspace that shows the agent's work step by step, with HyperFrames motion, freely resizable and movable panels, navigation and step-by-step tutorial video. Decisions the owner chose (recommended options): HyperFrames renders the tutorial **video**, with in-app motion done in Web Animations/CSS; the canvas shows **real local steps plus replays** of recorded runs, never a scripted fake agent; the canvas is a fixed pipeline with **meaningful drops**; panels form a **dockable workspace**; the video follows **one demo case start to finish** with **music and clicks** (see the sound limitation below).
+
+| Piece | What it does | Where |
+|---|---|---|
+| Real pipeline stages | `validateDossier` split into `DOSSIER_STAGES` (schema → query → sources → evidence → candidates); each stage emits start/end with its own errors, per-item results and measured ms. Display pacing sits *between* start and work, so it never changes results or measured time | [core/validate.js](../../../../frontend/healthtech-web/app/src/core/validate.js), [core/pipeline.js](../../../../frontend/healthtech-web/app/src/core/pipeline.js) |
+| Node canvas | 12 nodes (input, 5 checks, run receipt, AI agent = always *not connected*, review, requests, history, export). Pan, wheel zoom, fit, reset; drag nodes (Alt+Arrow from the keyboard); nodes are links in an ordered `<nav>` list; flowing edges and particles only while a step runs | [ui/canvas.js](../../../../frontend/healthtech-web/app/src/ui/canvas.js) |
+| Dockable panels | Library / Inspector / Timeline in left, right and bottom zones; tabbed when shared; splitters resize by pointer or arrow keys (Enter collapses); grip-drag onto dock targets or float as a movable, resizable window; every move also in the ⋯ menu; layout saved per browser with safe fallback | [ui/workspace.js](../../../../frontend/healthtech-web/app/src/ui/workspace.js), [core/layout.js](../../../../frontend/healthtech-web/app/src/core/layout.js) |
+| Drag and drop | Evidence → Review node (new note) or Requests node (new draft); open issue → Requests; evidence → feature slot (user link); request cards reorder; OS files → import drop zone. Handles, valid targets lit, ghost, landing highlight, bounce, fly-back on Esc, live announcements; each drag has a button alternative | [ui/dnd.js](../../../../frontend/healthtech-web/app/src/ui/dnd.js) |
+| Timeline + replay | What ran, in order, with measured ms; "Replay recorded run" walks a CLI run's events with their recorded timestamps, labelled *replay* | [ui/screens.js](../../../../frontend/healthtech-web/app/src/ui/screens.js) |
+| Navigation | Breadcrumb; 5-step journey stepper whose ✓ comes only from real state (passed checks, a non-blank note, a request draft, a started export); "Next" button; 9-stop guided tour (non-modal, ←/→, Esc, focus returns) | [core/journey.js](../../../../frontend/healthtech-web/app/src/core/journey.js), [ui/tour.js](../../../../frontend/healthtech-web/app/src/ui/tour.js) |
+| Tutorial video | 56 s, TH and EN, 1920×1080, rendered with HyperFrames 0.8.221 from **real screenshots of this app** (demo dossier, real drags) with push-ins, highlight rings, cursor and captions; 5 chapters; dialog with chapter buttons that seek, transcript and WebVTT chapter track | [tutorial-video/build.mjs](../../../../frontend/healthtech-web/tutorial-video/build.mjs), [ui/tutorial.js](../../../../frontend/healthtech-web/app/src/ui/tutorial.js), `app/media/` |
+| Motion | Web Animations API only; stops under OS reduced-motion or the in-app *Reduced motion* setting; state is always also text | [ui/motion.js](../../../../frontend/healthtech-web/app/src/ui/motion.js) |
+| Text/density audit | No mid-word breaks (`overflow-wrap: break-word`, `text-wrap: balance/pretty`), shorter Thai labels, 2-line clamps with full-text tooltips, stacked layout under 900 px; an automated e2e audit fails on clipped buttons/tabs/badges, cut node text or over-long labels | [styles.css](../../../../frontend/healthtech-web/app/styles.css), `textAudit` in [run-e2e.mjs](../../../../frontend/healthtech-web/tests/e2e/run-e2e.mjs) |
+
+Before/after captures of the page layout versus the workspace: [before](evidence/workspace-redesign/before/), [after](evidence/workspace-redesign/after/) (including the guided tour and the tutorial dialog). These are screenshots from the e2e runs, not mock-ups.
+
+Rebuild the tutorial: `node tutorial-video/build.mjs --render` (`TUTORIAL_LOCALES=en` renders one language) (from `frontend/healthtech-web`). It captures the screens in headless Chrome, writes the HyperFrames projects to the ignored `tutorial-video/out/`, fetches a pinned render-time GSAP 3.13.0 into the ignored `tutorial-video/.cache/` (GSAP standard no-charge licence; not shipped in the app), and renders `app/media/tutorial-{th,en}.mp4`.
+
+**Sound limitation:** the owner chose soft music and click sounds, but this machine has no licensed music or effects source (HyperFrames reports no signed-in catalog), and the HyperFrames guidance forbids synthesising tones. The videos are therefore **silent**; each project's `index.html` has a commented `<audio id="bgm">` slot. Supply a licensed track (and click effects) and re-render.
+
 ## Test commands and actual outcomes
 
-Final run on 2026-10-30, Windows 11, Node v24.19.0, Python 3.12.10, Chrome 156.0.8078.74 (headless, fresh temporary profile deleted after the run).
+Final run on 2026-10-31 after the workspace redesign, Windows 11, Node v24.19.0, Python 3.12.10, Chrome 156.0.8078.74 (headless, fresh temporary profile deleted after the run). The receipt's `candidate.head` names the commit it ran against.
 
 | Command | Result | Evidence |
 |---|---|---|
-| `npm test` | 62 tests, 62 pass, 0 fail, 0 skipped. Includes a live cross-check against Python `json.dumps`, the K190167 public run read in place, and the doc link check | console output |
-| `npm run test:e2e` | 16 scenarios, 16 PASS, 0 FAIL, 0 page errors | [results.json](evidence/e2e/results.json), [screenshots](evidence/e2e/screenshots/), [synthetic downloads](evidence/e2e/downloads/) |
+| `npm test` | 69 tests, 69 pass, 0 fail, 0 skipped. Adds staged-validation equivalence (stage errors sum to `validateDossier`), layout model, journey state and HTTP byte-range tests to the earlier set (Python `json.dumps` cross-check, K190167 read in place, doc links) | console output |
+| `npm run test:e2e` | 17 scenarios, 17 PASS, 0 FAIL, 0 page errors. Every audited screen also passes the text-fit audit. E17 covers journey stepper, real pointer drag and Esc-cancel, keyboard splitter resize, float/re-dock, guided tour and video chapter seeking | [results.json](evidence/e2e/results.json), [screenshots](evidence/e2e/screenshots/), [synthetic downloads](evidence/e2e/downloads/) |
+| `npx hyperframes@0.8.221 lint` / `check --json` (TH project) | 0 errors, 0 warnings / `ok: true`; remaining notes: `film_silent`, `audio_none` (see sound limitation), 2 `panel_out_of_canvas` infos from the push-in | generated project under the ignored `tutorial-video/out/` |
+| `node tutorial-video/build.mjs --render` | TH and EN: H.264 1920×1080, 30 fps, 56.0 s each (ffprobe); web encodes about 7 MB each | `app/media/` |
 
 Downloads in the evidence folder are synthetic-fixture exports only. The public K190167 import was checked in the UI, but no file derived from it is stored.
 
@@ -113,7 +139,7 @@ IMPLEMENTED means the behaviour works in this local build. SIMULATED means a lab
 | US-10 Cancel/resume | SIMULATED | FX-10 pending → acknowledged (E11); service behaviour PROPOSED |
 | US-11 Overview honesty | IMPLEMENTED | E02, E09 (public empty corpus), E14 (FX-02) |
 | US-12 Compare candidates | IMPLEMENTED | E03. ≤3 compare, hidden-by-filter retained, named sort; no invented family merge |
-| US-13 Features ↔ evidence | IMPLEMENTED | E03. Unlinked = unresolved; local links labelled "linked by you" |
+| US-13 Features ↔ evidence | IMPLEMENTED | E03. Unlinked = unresolved; local links labelled "linked by you"; evidence can also be dropped on a feature slot |
 | US-14 Exact provenance | IMPLEMENTED | E03; unit locator tests |
 | US-15 Relationship vs integrity | IMPLEMENTED | E02, E03; unit `missing_disclosure`, `disclosure_not_independent` |
 | US-16 Record ambiguity | IMPLEMENTED | E04 (marker does not promote), note → request draft available. Note-to-request click path is not separately automated |
@@ -123,11 +149,11 @@ IMPLEMENTED means the behaviour works in this local build. SIMULATED means a lab
 | US-20 Facts immutable | IMPLEMENTED | E04 hash/version unchanged; E06 locale switch does not translate notes |
 | US-21 Edited TH/EN export | IMPLEMENTED | E07; unit export |
 | US-22 Export failure recovery | IMPLEMENTED | E07 "Download started" wording; E08 inert. Forced renderer failure path NOT_RUN |
-| US-23 Information requests | IMPLEMENTED | E06 draft; E07 included in both exports; copy only, nothing sent |
+| US-23 Information requests | IMPLEMENTED | E06 draft; E07 included in both exports; copy only, nothing sent; drafts can be created by dropping evidence or an open issue on the Requests node and reordered by drag or ↑ ↓ |
 | US-24 Local handoff | IMPLEMENTED (local) / PROPOSED (team) | Download/copy only; no invite or share UI |
 | US-25 Errors preserve work | IMPLEMENTED | E09 field/code errors with diagnostic IDs; E08 inert source/notes; repeated saves are idempotent per op ID (unit) |
-| US-26 Capabilities and modes | IMPLEMENTED | E01 capability panel; mode label persists into exports (E07) |
-| US-27 TH/EN, 4 themes, a11y | IMPLEMENTED (automated) | E06, E12, E13. Screen-reader and manual zoom NOT_RUN |
+| US-26 Capabilities and modes | IMPLEMENTED | E01 capability panel; mode label persists into exports (E07); canvas shows the AI agent node as not connected and real runs as receipts only |
+| US-27 TH/EN, 4 themes, a11y | IMPLEMENTED (automated) | E06, E12, E13, E17 (journey stepper, tour, tutorial dialog). Text-fit audit on every audited screen. Screen-reader, touch drag and manual zoom NOT_RUN |
 | US-28 Storage limits/privacy | IMPLEMENTED + SIMULATED | E14 delete targets one project; E15/E16 simulated faults; no telemetry/auth |
 
 Definition-of-completion reading: all P0 behaviours that a local build can deliver pass with real browser state or labelled simulation. Service-backed run control and team collaboration stay unavailable by design.
@@ -163,5 +189,7 @@ Not adopted: skeleton screens (loads are near-instant, and they need motion), in
 ## Remaining blockers and next action
 
 - **BLOCKED_LOCAL (not this package):** real device–patent evidence, service endpoints, team collaboration and user studies all need separate owners or authorisation.
-- **NOT_RUN:** real screen-reader session (NVDA/VoiceOver), manual 200%/400% browser zoom (approximated by the 320 px viewport), usability sessions with entrepreneurs/investor analysts, Firefox/Safari.
+- **NOT_RUN:** real screen-reader session (NVDA/VoiceOver), including on the canvas and drag targets; manual 200%/400% browser zoom (approximated by the 320 px viewport); touch drag on a real phone/tablet (pointer events are exercised only with mouse input in headless Chrome); usability sessions with entrepreneurs/investor analysts; Firefox/Safari.
+- **Owner-chosen but not delivered:** music and click sounds in the tutorial video (no licensed source here; silent render, audio slot prepared).
+- **By design, not connected:** the AI research agent node. It needs a run service, explicit authorisation, a cost ledger and its own tests before it can turn on.
 - **Next action:** owner reviews the branch diff and evidence. If accepted, the control plane decides integration and updates `progress.json`/`next-actions.md`. Next frontend step: run a short usability session with the HT-W16 task script using the demo and the K190167 import.

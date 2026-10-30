@@ -7,6 +7,40 @@ import { summarizeRun, costView } from '../core/run.js';
 import { listErrors, draftToQuery } from '../core/brief.js';
 import { searchCatalog } from '../adapters.js';
 import { sliceCodePoints, parseLocator } from '../core/locator.js';
+import { nodeForView } from '../core/pipeline.js';
+import { renderWorkspace, workspaceCanvas, resetWorkspace } from './workspace.js';
+import { draggable, fileDropZone } from './dnd.js';
+import { journeyState } from '../core/journey.js';
+import { startTour, tourSeen } from './tour.js';
+import { openTutorial } from './tutorial.js';
+
+const VIEW_TITLE = { overview: 'nav.overview', brief: 'nav.overview', evidence: 'nav.evidence', source: 'source.title', runs: 'nav.runs', history: 'nav.history', requests: 'nav.requests', export: 'nav.export', checks: 'checks.title', sources: 'sources.title', agent: 'node.agent' };
+
+function journeyBar(app) {
+  const t = app.t;
+  const c = app.state.current;
+  const route = app.state.route.name;
+  const pid = enc(c.project.projectId);
+  const j = journeyState(c, route);
+  const fill = h('span', { class: 'journey-fill' });
+  fill.style.width = `${Math.round(j.progress * 100)}%`;
+  const crumbs = h('nav', { class: 'breadcrumb', 'aria-label': t('nav.breadcrumb') },
+    h('ol', {},
+      h('li', {}, h('a', { href: '#/' }, t('nav.home'))),
+      h('li', {}, h('a', { href: `#/project/${pid}` }, c.dossier.query.device_id_canonical)),
+      h('li', { 'aria-current': 'page' }, t(VIEW_TITLE[route] || 'nav.overview'))));
+  const steps = h('nav', { class: 'journey', 'aria-label': t('journey.label') },
+    h('div', { class: 'journey-track', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(j.steps.length), 'aria-valuenow': String(j.doneCount), 'aria-label': t('journey.progress', { n: j.doneCount, total: j.steps.length }) }, fill),
+    h('ol', {}, j.steps.map((s, i) => h('li', {},
+      h('a', { class: 'jstep', href: `#/project/${pid}/${s.view}`, id: `jstep-${s.id}`, 'data-done': String(s.done), 'aria-current': s.current ? 'step' : null },
+        h('span', { class: 'jnum', 'aria-hidden': 'true' }, s.done ? '✓' : String(i + 1)),
+        h('span', { class: 'jtext' }, h('span', { class: 'jlabel' }, t(`journey.${s.id}`)), h('span', { class: 'visually-hidden' }, ` — ${t(s.done ? 'journey.done' : 'journey.todo')}`)))))));
+  const actions = h('div', { class: 'journey-actions' },
+    h('button', { type: 'button', class: `btn btn-small${tourSeen() ? '' : ' btn-glow'}`, id: 'tour-start', title: t('tour.prompt'), onClick: (e) => startTour(app, e.currentTarget) }, `🧭 ${t(tourSeen() ? 'tour.start' : 'tour.prompt')}`),
+    h('button', { type: 'button', class: 'btn btn-small', id: 'tutorial-open', onClick: (e) => openTutorial(app, e.currentTarget) }, `🎬 ${t('tutorial.open')}`),
+    j.next ? h('a', { class: 'btn btn-small btn-primary', id: 'journey-next', href: `#/project/${pid}/${j.next.view}` }, `${t('journey.next')}: ${t(`journey.${j.next.id}`)} →`) : h('span', { class: 'badge badge-success' }, `✓ ${t('journey.complete')}`));
+  return h('div', { class: 'journey-bar' }, crumbs, steps, actions);
+}
 
 const MODE_KEY = { synthetic_demo: 'mode.synthetic', imported_public: 'mode.public', simulation: 'mode.simulation', draft: 'mode.draft' };
 const enc = encodeURIComponent;
@@ -71,6 +105,18 @@ function relationExplain(t, c) {
   return t(c.association_status === 'disclosed_link' ? 'patent.disclosed.explain' : 'patent.candidate.explain');
 }
 
+/** Top-bar popover that stays open across re-renders (e.g. while switching language). */
+function menuDetails(app, id, summary, ...content) {
+  const menus = app.state.openMenus || (app.state.openMenus = {});
+  return h('details', { class: 'tech ws-tech', id, open: menus[id] || null, onToggle: (e) => { menus[id] = e.currentTarget.open; } }, summary, ...content);
+}
+
+/** Mark an element as a drop target; `fn(item)` performs the same action as its button alternative. */
+function dropOn(el, fn) {
+  el.ondropitem = fn;
+  return el;
+}
+
 function panel(title, ...children) {
   return h('section', { class: 'panel' }, title ? h('h2', {}, title) : null, ...children);
 }
@@ -104,18 +150,58 @@ function storageInfo(app) {
 }
 
 // ------------------------------------------------------------------ shell
-export function renderApp(app, opts) {
+function prefsControls(app) {
   const t = app.t;
   const s = app.state;
-  const root = document.getElementById('app');
-  const prefs = h('div', { class: 'prefs' },
+  return h('div', { class: 'prefs' },
     field(t('pref.language'), h('select', { id: 'pref-locale', onChange: (e) => app.setLocale(e.target.value) },
       h('option', { value: 'th', selected: s.locale === 'th', lang: 'th' }, 'ไทย'), h('option', { value: 'en', selected: s.locale === 'en', lang: 'en' }, 'English'))),
     field(t('pref.theme'), h('select', { id: 'pref-theme', onChange: (e) => app.setTheme(e.target.value) },
-      THEME_KEYS.map((k) => h('option', { value: k, selected: s.theme === k }, t(`theme.${k}`))))));
-  const header = h('header', { class: 'topbar' },
-    h('a', { class: 'brand', href: '#/' }, t('app.name')), prefs);
+      THEME_KEYS.map((k) => h('option', { value: k, selected: s.theme === k }, t(`theme.${k}`))))),
+    field(t('pref.motion'), h('select', { id: 'pref-motion', onChange: (e) => app.setMotion(e.target.value) },
+      ['full', 'reduced'].map((k) => h('option', { value: k, selected: s.motion === k }, t(`motion.${k}`))))));
+}
+
+function globalBanners(app) {
+  const t = app.t;
+  const s = app.state;
   const banners = [];
+  if (s.simulate) banners.push(callout('warning', `${t('mode.simulation')} — ?simulate=${s.simulate}`, h('p', {}, 'Fault injection for acceptance tests (FX-07 / FX-09).')));
+  if (s.storageError) {
+    banners.push(errorBanner(t, { title: t('save.memory'), action: 'open IndexedDB', target: 'this browser profile', outcome: `${s.storageError.code}: ${s.storageError.message}`, preserved: t('storage.scope.memory'), next: t('save.recovery'), diag: s.storageError.diag }));
+  }
+  if (s.notice) {
+    banners.push(s.notice.kind === 'error' ? errorBanner(t, { title: s.notice.text, action: s.notice.action, outcome: s.notice.code, diag: s.notice.diag })
+      : h('div', { class: 'callout callout-info', role: 'status' }, s.notice.text));
+    s.notice = null;
+  }
+  return banners;
+}
+
+export function renderApp(app, opts = {}) {
+  const s = app.state;
+  if (opts.importPipeOnly) {
+    const old = document.getElementById('import-pipe');
+    if (old) old.replaceWith(importPipe(app));
+    return;
+  }
+  if (!s.booting && s.route.project && s.current?.kind === 'dossier') {
+    if (opts.pipeOnly && !workspaceCanvas()) return;
+    renderWorkspace(app, workspaceParts(app, opts));
+    return;
+  }
+  if (opts.pipeOnly) return;
+  resetWorkspace();
+  renderPage(app, opts);
+}
+
+function renderPage(app, opts) {
+  const t = app.t;
+  const s = app.state;
+  const root = document.getElementById('app');
+  const header = h('header', { class: 'topbar' },
+    h('a', { class: 'brand', href: '#/' }, h('span', { class: 'brand-mark', 'aria-hidden': 'true' }, '◆'), t('app.name')), prefsControls(app));
+  const banners = globalBanners(app);
   if (s.simulate) banners.push(callout('warning', `${t('mode.simulation')} — ?simulate=${s.simulate}`, h('p', {}, 'Fault injection for acceptance tests (FX-07 / FX-09).')));
   if (s.storageError) {
     banners.push(errorBanner(t, { title: t('save.memory'), action: 'open IndexedDB', target: 'this browser profile', outcome: `${s.storageError.code}: ${s.storageError.message}`, preserved: t('storage.scope.memory'), next: t('save.recovery'), diag: s.storageError.diag }));
@@ -158,7 +244,9 @@ function homeScreen(app) {
     h('p', { class: 'lede' }, t('app.tagline')),
     h('section', { class: 'how', 'aria-labelledby': 'how-title' },
       h('h2', { id: 'how-title' }, t('how.title')),
-      h('ol', { class: 'how-steps' }, ['how.1', 'how.2', 'how.3', 'how.4'].map((k) => h('li', {}, t(k))))),
+      h('ol', { class: 'how-steps' }, ['how.1', 'how.2', 'how.3', 'how.4'].map((k) => h('li', {}, t(k)))),
+      h('div', { class: 'actions' },
+        h('button', { type: 'button', class: 'btn btn-primary btn-glow', id: 'tutorial-open-home', onClick: (e) => openTutorial(app, e.currentTarget) }, `🎬 ${t('tutorial.openLong')}`))),
     s.staticError ? errorBanner(t, { title: 'Catalog and demo unavailable', action: 'load fixtures/schemas', outcome: s.staticError.message, preserved: t('storage.scope.idb'), next: 'Restart the local server and reload.', diag: s.staticError.diag }) : null,
     starts,
     h('h2', {}, t('home.recent')),
@@ -323,12 +411,19 @@ function importScreen(app) {
         h('ul', { class: 'error-list' }, p.errors.map((e) => h('li', { 'data-code': e.code }, h('code', {}, e.code), ' ', h('span', { class: 'mono' }, e.path || ''), ' — ', e.message))),
         files);
   }
+  const zone = h('div', { class: 'dropzone', 'data-drop': 'files' },
+    h('span', { class: 'dropzone-icon', 'aria-hidden': 'true' }, '⇣'),
+    h('p', { class: 'dropzone-title' }, t('import.drop')),
+    field(t('import.pick'), fileInput),
+    h('p', { class: 'muted' }, t('import.help', { mb: 5 })));
+  fileDropZone(zone, (files) => app.importFiles(files));
   return h('section', {},
     h('h1', { tabindex: '-1' }, t('import.title')),
-    h('p', {}, t('import.help', { mb: 5 })),
+    zone,
+    h('h2', {}, t('import.pipe')),
+    importPipe(app),
     h('p', { class: 'muted' }, t('import.notSupported')),
     h('p', { class: 'muted' }, t('privacy.scope')),
-    field(t('import.pick'), fileInput),
     result);
 }
 
@@ -343,33 +438,189 @@ function projectShell(app) {
   }
   const c = s.current;
   const pid = enc(c.project.projectId);
-  if (c.kind === 'draft') {
-    return h('div', {}, saveBar(app), briefScreen(app, true));
-  }
-  const name = s.route.name;
+  void pid;
+  return h('div', {}, saveBar(app), briefScreen(app, true));
+}
+
+// ------------------------------------------------------------------ dossier workspace (canvas + dockable panels)
+const VIEWS = () => ({ overview: overviewScreen, evidence: evidenceScreen, source: sourceScreen, runs: runsScreen, history: historyScreen, requests: requestsScreen, export: exportScreen, brief: overviewScreen, checks: checksScreen, sources: sourcesScreen, agent: agentScreen });
+
+function workspaceParts(app, opts) {
+  const s = app.state;
+  const c = s.current;
+  const t = app.t;
+  const view = VIEWS()[s.route.name] || overviewScreen;
+  const selectedNode = nodeForView(s.route.name === 'brief' ? 'overview' : s.route.name, s.route.name === 'evidence' ? c.ui.tab : null);
+  return {
+    pipeOnly: opts.pipeOnly,
+    pipe: c.pipe,
+    selectedNode,
+    topbar: () => wsTopbar(app),
+    modeStrip: () => wsModeStrip(app),
+    journey: () => journeyBar(app),
+    statusbar: () => h('footer', { class: 'ws-status' }, h('span', {}, t('scope.help')), h('span', {}, t('privacy.scope'))),
+    inspector: () => [...globalBanners(app), conflictPanel(app), corruptPanel(app), saveErrorPanel(app), view(app)].filter(Boolean),
+    library: () => libraryPanel(app),
+    timeline: () => timelinePanel(app),
+    onCanvas: (canvas) => {
+      canvas.dropTarget('requests', 'evidence gap', t('node.requests'), (item) => app.addRequestFrom(item));
+      canvas.dropTarget('review', 'evidence', t('node.review'), (item) => app.addNoteFor(item.payload));
+    },
+  };
+}
+
+function wsTopbar(app) {
+  const t = app.t;
+  const c = app.state.current;
   const d = c.dossier;
-  const navItems = [['overview', t('nav.overview'), ''], ['evidence', t('nav.evidence'), '/evidence'], ['requests', t('nav.requests'), '/requests'],
-    ['history', t('nav.history'), '/history'], ['export', t('nav.export'), '/export'], ['runs', t('nav.runs'), '/runs']];
-  const nav = h('nav', { class: 'project-nav', 'aria-label': t('nav.project') },
-    h('ul', {}, navItems.map(([key, label, path]) => h('li', {}, h('a', { href: `#/project/${pid}${path}`, 'aria-current': name === key || (key === 'evidence' && name === 'source') ? 'page' : null }, label)))));
-  const deviceName = c.dossier.sources.find((s) => s.source.source_id === d.query.selected_comparator_source_id)?.payload?.device_name;
-  const header = h('div', { class: 'context-header' },
-    h('div', { class: `mode-banner mode-${c.mode}`, 'data-mode': c.mode, role: 'note' }, modeBadge(t, c.mode),
-      c.manifest ? [' ', badge(t('mode.importedRun'), 'neutral')] : null,
-      c.mode === 'synthetic_demo' ? h('span', {}, ` ${t('start.demo.help')}`) : null),
-    h('div', { class: 'header-row' },
-      h('div', { class: 'device-title' },
-        h('p', { class: 'device-name' }, d.query.device_id_raw),
-        deviceName && deviceName !== d.query.device_id_raw ? h('p', { class: 'device-sub' }, deviceName) : null,
-        h('p', { class: 'muted' }, [d.query.jurisdiction, `${t('overview.cutoff')} ${d.query.evidence_cutoff}`, t('header.dossierVersion', { v: d.version })].join(' · '))),
-      saveBar(app)),
-    h('details', { class: 'tech' }, h('summary', {}, t('common.details')),
-      kv([['device_id_canonical', h('span', { class: 'mono' }, d.query.device_id_canonical)], ['dossier_id', h('span', { class: 'mono' }, d.dossier_id)],
+  return h('header', { class: 'ws-top' },
+    h('a', { class: 'brand', href: '#/', title: t('nav.home') }, h('span', { class: 'brand-mark', 'aria-hidden': 'true' }, '◆'), h('span', { class: 'brand-text' }, t('app.name'))),
+    h('div', { class: 'ws-title' },
+      h('span', { class: 'device-name' }, d.query.device_id_raw),
+      h('span', { class: 'muted ws-sub' }, [d.query.jurisdiction, `${t('overview.cutoff')} ${d.query.evidence_cutoff}`, t('header.dossierVersion', { v: d.version })].join(' · '))),
+    saveBar(app),
+    menuDetails(app, 'info-menu', h('summary', {}, 'ⓘ ', t('evidence.detail')),
+      h('div', { class: 'ws-pop' }, kv([['device_id_canonical', h('span', { class: 'mono' }, d.query.device_id_canonical)], ['dossier_id', h('span', { class: 'mono' }, d.dossier_id)],
         [t('overview.snapshot'), h('span', { id: 'save-snapshot', class: 'mono' }, c.base.snapshotId || t('value.unknown'))],
         [t('home.storage'), t(c.storageScope === 'indexeddb' ? 'storage.scope.idb' : 'storage.scope.memory')],
-        ['SHA-256', h('span', { class: 'mono wrap' }, c.dossierHash)]])));
-  const screen = { overview: overviewScreen, evidence: evidenceScreen, source: sourceScreen, runs: runsScreen, history: historyScreen, requests: requestsScreen, export: exportScreen, brief: overviewScreen }[name] || overviewScreen;
-  return h('div', { class: 'project-layout' }, nav, h('div', { class: 'project-main' }, header, conflictPanel(app), corruptPanel(app), saveErrorPanel(app), screen(app)));
+        ['SHA-256', h('span', { class: 'mono wrap' }, c.dossierHash)]]))),
+    menuDetails(app, 'layout-menu', h('summary', {}, t('layout.title')),
+      h('div', { class: 'ws-pop' },
+        prefsControls(app),
+        h('p', { class: 'help' }, t('layout.help')),
+        h('button', { type: 'button', class: 'btn btn-small', id: 'layout-reset', onClick: () => app.resetLayout() }, t('layout.reset')))));
+}
+
+function wsModeStrip(app) {
+  const t = app.t;
+  const c = app.state.current;
+  return h('div', { class: `mode-banner mode-${c.mode}`, 'data-mode': c.mode, role: 'note' }, modeBadge(t, c.mode),
+    c.manifest ? [' ', badge(t('mode.importedRun'), 'neutral')] : null,
+    c.mode === 'synthetic_demo' ? h('span', {}, ` ${t('start.demo.help')}`) : null);
+}
+
+// ---- library panel: draggable evidence and gaps (each with button alternatives)
+function libraryPanel(app) {
+  const t = app.t;
+  const c = app.state.current;
+  const d = c.dossier;
+  const pid = enc(c.project.projectId);
+  const ro = Boolean(c.corrupt);
+  const say = (m) => app.announce(m);
+  const evCards = d.evidence.map((e) => {
+    const handle = h('span', { class: 'lib-handle', title: t('lib.dragHint'), 'aria-hidden': 'true' }, '⠿');
+    const card = h('li', { class: 'lib-card', 'data-evidence': e.evidence_id },
+      handle,
+      h('div', { class: 'lib-body' },
+        h('p', { class: 'lib-title' }, e.statement),
+        h('p', { class: 'lib-meta' }, integrityBadge(t, e.verification_status), ' ', h('span', { class: 'mono muted' }, e.source_id)),
+        h('div', { class: 'lib-actions' },
+          h('a', { class: 'btn btn-tiny', href: `#/project/${pid}/source/${enc(e.source_id)}?evidenceId=${enc(e.evidence_id)}` }, t('overview.inspect')),
+          h('button', { type: 'button', class: 'btn btn-tiny', disabled: ro, id: `lib-note-${e.evidence_id}`, onClick: () => app.addNoteFor(e.evidence_id) }, `＋ ${t('lib.note')}`),
+          h('button', { type: 'button', class: 'btn btn-tiny', disabled: ro, id: `lib-req-${e.evidence_id}`, onClick: () => app.addRequestFrom({ type: 'evidence', payload: e.evidence_id }) }, `＋ ${t('lib.request')}`))));
+    if (!ro) draggable(handle, card, { type: 'evidence', payload: e.evidence_id, label: e.statement }, say);
+    return card;
+  });
+  const gapCards = d.unresolved_items.map((u, i) => {
+    const handle = h('span', { class: 'lib-handle', title: t('lib.dragHint'), 'aria-hidden': 'true' }, '⠿');
+    const card = h('li', { class: 'lib-card lib-gap', 'data-gap': String(i) },
+      handle,
+      h('div', { class: 'lib-body' }, h('p', { class: 'lib-title' }, u),
+        h('div', { class: 'lib-actions' }, h('button', { type: 'button', class: 'btn btn-tiny', disabled: ro, id: `lib-gap-${i}`, onClick: () => app.addRequestFrom({ type: 'gap', payload: i }) }, `＋ ${t('lib.request')}`))));
+    if (!ro) draggable(handle, card, { type: 'gap', payload: i, label: u }, say);
+    return card;
+  });
+  return h('div', { class: 'library' },
+    h('p', { class: 'tip' }, h('span', { class: 'tip-icon', 'aria-hidden': 'true' }, '💡'), h('span', {}, t('lib.hint'))),
+    h('h2', { class: 'lib-h' }, t('lib.evidence'), ' ', h('span', { class: 'tab-count' }, String(d.evidence.length))),
+    h('ul', { class: 'lib-list' }, evCards),
+    h('h2', { class: 'lib-h' }, t('lib.gaps'), ' ', h('span', { class: 'tab-count' }, String(d.unresolved_items.length))),
+    h('ul', { class: 'lib-list' }, gapCards),
+    h('h2', { class: 'lib-h' }, t('lib.sources'), ' ', h('span', { class: 'tab-count' }, String(d.sources.length))),
+    h('ul', { class: 'plain-list lib-sources' }, d.sources.map((s) => h('li', {}, h('span', { class: 'mono wrap' }, s.source.source_id), ' ', s.synthetic ? badge(t('source.synthetic'), 'synthetic') : badge(t('source.public'), 'info')))));
+}
+
+// ---- timeline panel: what actually ran, with measured durations
+function timelinePanel(app) {
+  const t = app.t;
+  const c = app.state.current;
+  const p = c.pipe;
+  const time = (iso) => { try { return new Date(iso).toLocaleTimeString(app.state.locale === 'th' ? 'th-TH-u-ca-gregory' : 'en-GB'); } catch { return iso; } };
+  return h('div', { class: 'timeline-wrap' },
+    h('div', { class: 'timeline-actions' },
+      h('button', { type: 'button', class: 'btn btn-small btn-primary', id: 'run-checks', disabled: p.running || Boolean(c.corrupt), onClick: () => app.runPipeline() }, `▶ ${t('tl.run')}`),
+      c.events?.length ? h('button', { type: 'button', class: 'btn btn-small', id: 'replay-run', disabled: p.running, onClick: () => app.replayRun() }, `⟲ ${t('tl.replay')}`) : null,
+      h('span', { class: 'muted tl-note' }, t('tl.note')),
+      h('span', { class: 'tl-status', 'data-running': String(p.running), id: 'pipeline-status' }, p.running ? t('tl.running') : (p.lastResult ? (p.lastResult.ok ? t('tl.doneOk') : t('tl.doneFail', { n: p.lastResult.errors })) : ''))),
+    p.timeline.length
+      ? h('ol', { class: 'timeline', 'aria-label': t('panel.timeline') }, p.timeline.map((e) => h('li', { class: `tl-item${e.errors ? ' tl-bad' : ''}${e.replay ? ' tl-replay' : ''}`, 'data-node': e.node },
+        h('span', { class: 'tl-time mono' }, time(e.at)),
+        h('span', { class: 'tl-node' }, t(`node.${e.node}`)),
+        h('span', { class: 'tl-text' }, e.replay ? `${t('tl.replayTag')} ` : '', e.text, e.recordedAt ? h('span', { class: 'muted' }, ` · ${t('tl.recordedAt')} ${e.recordedAt}`) : null),
+        h('span', { class: 'tl-ms mono muted' }, typeof e.ms === 'number' ? `${e.ms < 1 ? e.ms.toFixed(2) : e.ms.toFixed(1)} ms` : ''))))
+      : h('p', { class: 'muted' }, t('tl.empty')));
+}
+
+// ---- views opened from nodes that had no screen before
+function checksScreen(app) {
+  const t = app.t;
+  const c = app.state.current;
+  const p = c.pipe;
+  const rows = ['input', 'schema', 'query', 'sources', 'evidence', 'candidates', 'run'];
+  return h('section', {},
+    h('h1', { tabindex: '-1' }, t('checks.title')),
+    h('p', { class: 'note-line' }, t('checks.help')),
+    tableWrap(t('checks.title'), h('table', { id: 'checks-table' },
+      h('caption', {}, t('checks.title')),
+      h('thead', {}, h('tr', {}, [t('checks.step'), t('checks.result'), t('checks.detail')].map((x) => h('th', { scope: 'col' }, x)))),
+      h('tbody', {}, rows.map((id) => h('tr', { 'data-node': id },
+        h('th', { scope: 'row' }, t(`node.${id}`), h('span', { class: 'cell-sub' }, t(`node.${id}.desc`))),
+        h('td', {}, badge(t(`nstate.${p.states[id]}`), { pass: 'success', fail: 'danger', warn: 'warning', running: 'info' }[p.states[id]] || 'neutral', { 'data-state': p.states[id] })),
+        h('td', {}, p.info[id]?.summary || '—')))))),
+    c.validation?.checks?.length ? h('p', { class: 'muted' }, c.validation.checks.map((x) => `${x.check}: ${x.result}`).join(' · ')) : null,
+    h('p', {}, h('button', { type: 'button', class: 'btn btn-primary', id: 'checks-run', disabled: p.running || Boolean(c.corrupt), onClick: () => app.runPipeline() }, `▶ ${t('tl.run')}`)));
+}
+
+function sourcesScreen(app) {
+  const t = app.t;
+  const c = app.state.current;
+  const pid = enc(c.project.projectId);
+  return h('section', {},
+    h('h1', { tabindex: '-1' }, t('sources.title')),
+    h('p', { class: 'note-line' }, t('sources.help')),
+    h('ul', { class: 'fact-list' }, c.dossier.sources.map((s) => {
+      const ev = c.dossier.evidence.find((e) => e.source_id === s.source.source_id);
+      return h('li', {},
+        h('p', { class: 'fact-statement' }, h('span', { class: 'mono wrap' }, s.source.source_id), ' ', s.synthetic ? badge(t('source.synthetic'), 'synthetic') : badge(t('source.public'), 'info')),
+        h('p', { class: 'fact-meta' }, h('span', { class: 'muted' }, `${s.source.source_type} · ${s.source.version_label} · ${s.jurisdiction} · ${s.source_date}`)),
+        h('p', { class: 'muted mono wrap' }, `sha256 ${s.source.sha256}`),
+        h('p', { class: 'muted' }, s.source.license_note),
+        ev ? h('a', { class: 'btn btn-small', href: `#/project/${pid}/source/${enc(s.source.source_id)}?evidenceId=${enc(ev.evidence_id)}` }, t('overview.inspect')) : null);
+    })));
+}
+
+function agentScreen(app) {
+  const t = app.t;
+  return h('section', {},
+    h('h1', { tabindex: '-1' }, t('node.agent')),
+    callout('info', t('agent.title'), h('p', {}, t('agent.body')), h('p', {}, t('cap.reason.runStart'))),
+    h('p', { class: 'muted' }, t('agent.future')));
+}
+
+// ---- import page mini pipeline (live)
+function importPipe(app) {
+  const t = app.t;
+  const ip = app.state.importPipe;
+  const stages = ['schema', 'query', 'sources', 'evidence', 'candidates'];
+  return h('ol', { class: 'mini-pipe', id: 'import-pipe', 'aria-label': t('import.pipe') },
+    stages.map((s) => {
+      const st = ip?.states[s] || 'idle';
+      const info = ip?.info[s];
+      return h('li', { class: 'mini-node', 'data-state': st },
+        h('span', { class: 'mini-title' }, t(`node.${s}`)),
+        h('span', { class: 'mini-state' }, t(`nstate.${st}`)),
+        info ? h('span', { class: 'mini-sub muted' }, `${info.ok}/${info.n} · ${info.ms.toFixed(1)} ms`) : null);
+    }));
 }
 
 export function savedTimeText(app) {
@@ -596,8 +847,9 @@ function evidenceScreen(app) {
     features.length ? h('ul', { class: 'feature-list' }, features.map((f, fi) => {
       const link = c.overlay.featureLinks.find((x) => x.feature === f);
       const ids = link?.evidenceIds || [];
-      return h('li', { class: 'feature' },
+      return dropOn(h('li', { class: 'feature', 'data-drop': 'evidence', 'data-drop-label': f },
         h('h3', {}, f),
+        h('p', { class: 'drop-hint muted' }, t('lib.dropFeature')),
         ids.length ? h('p', {}, badge(t('evidence.userLinked'), 'synthetic'), ' ', ids.join(', ')) : h('p', {}, badge(t('evidence.featureUnresolved'), 'warning')),
         h('fieldset', { class: 'checks' }, h('legend', {}, t('evidence.featureLink')),
           d.evidence.map((e) => h('div', {}, h('input', { type: 'checkbox', id: `fl-${fi}-${e.evidence_id}`, checked: ids.includes(e.evidence_id), disabled: Boolean(c.corrupt),
@@ -605,7 +857,7 @@ function evidenceScreen(app) {
               let l = o.featureLinks.find((x) => x.feature === f);
               if (!l) { l = { feature: f, evidenceIds: [], basis: 'user_authored' }; o.featureLinks.push(l); }
               l.evidenceIds = ev.target.checked ? [...new Set([...l.evidenceIds, e.evidence_id])] : l.evidenceIds.filter((x) => x !== e.evidence_id);
-            }, { rerender: true }) }), h('label', { for: `fl-${fi}-${e.evidence_id}` }, e.evidence_id)))));
+            }, { rerender: true }) }), h('label', { for: `fl-${fi}-${e.evidence_id}` }, e.evidence_id))))), (item) => app.linkFeature(f, item.payload));
     })) : h('p', {}, t('evidence.notSupplied')));
   // WAI-ARIA tabs: one tab stop, arrow/Home/End move between tabs, panels labelled by their tab.
   const tabs = [['evidence', t('evidence.tabEvidence'), d.evidence.length], ['candidates', t('evidence.tabCandidates'), d.candidates.length], ['features', t('evidence.tabFeatures'), features.length]];
@@ -800,6 +1052,21 @@ function requestsText(app) {
   return lines.join('\n');
 }
 
+/** Reorderable request card: drag handle + up/down buttons; dropping another request moves it here. */
+function requestCard(app, r, index, ro, li) {
+  const t = app.t;
+  const count = app.state.current.overlay.requestDrafts.length;
+  const handle = h('span', { class: 'lib-handle', title: t('lib.dragHint'), 'aria-hidden': 'true' }, '⠿');
+  li.dataset.drop = 'request';
+  li.dataset.dropLabel = `#${index + 1}`;
+  li.ondropitem = (item) => (item.payload === r.requestId ? false : app.moveRequest(item.payload, index));
+  li.prepend(h('div', { class: 'request-head' }, handle, h('span', { class: 'muted' }, `#${index + 1}`),
+    h('button', { type: 'button', class: 'btn btn-tiny', id: `req-up-${r.requestId}`, disabled: ro || index === 0, 'aria-label': t('requests.moveUp'), title: t('requests.moveUp'), onClick: () => { app.moveRequest(r.requestId, index - 1); app.announce(t('requests.moved', { n: index }), { toast: true }); } }, '↑'),
+    h('button', { type: 'button', class: 'btn btn-tiny', id: `req-down-${r.requestId}`, disabled: ro || index === count - 1, 'aria-label': t('requests.moveDown'), title: t('requests.moveDown'), onClick: () => { app.moveRequest(r.requestId, index + 1); app.announce(t('requests.moved', { n: index + 2 }), { toast: true }); } }, '↓')));
+  if (!ro) draggable(handle, li, { type: 'request', payload: r.requestId, label: r.question || `#${index + 1}` }, (m) => app.announce(m));
+  return li;
+}
+
 function requestsScreen(app) {
   const t = app.t;
   const c = app.state.current;
@@ -813,7 +1080,8 @@ function requestsScreen(app) {
     h('h2', {}, t('requests.imported')),
     h('ul', {}, d.next_information_requests.map((r) => h('li', {}, r))),
     h('h2', {}, t('requests.local')),
-    c.overlay.requestDrafts.length ? h('ul', { class: 'request-list' }, c.overlay.requestDrafts.map((r) => h('li', { class: 'request', id: `row-${r.requestId}`, tabindex: '-1' },
+    h('p', { class: 'note-line' }, t('lib.dropRequests')),
+    c.overlay.requestDrafts.length ? dropOn(h('ul', { class: 'request-list', 'data-drop': 'evidence gap', 'data-drop-label': t('requests.local') }, c.overlay.requestDrafts.map((r, ri) => requestCard(app, r, ri, ro, h('li', { class: 'request', id: `row-${r.requestId}`, tabindex: '-1' },
       field(t('requests.question'), h('textarea', { id: `req-q-${r.requestId}`, rows: 2, disabled: ro, onInput: (e) => upd(r.requestId, 'question', e.target.value) }, r.question)),
       field(t('requests.role'), h('input', { id: `req-role-${r.requestId}`, value: r.intendedRole || '', disabled: ro, onInput: (e) => upd(r.requestId, 'intendedRole', e.target.value || null) })),
       field(t('requests.priority'), h('select', { id: `req-p-${r.requestId}`, disabled: ro, onChange: (e) => upd(r.requestId, 'priority', e.target.value) }, ['normal', 'high'].map((p) => h('option', { value: p, selected: r.priority === p }, t(`requests.priority.${p}`))))),
@@ -821,7 +1089,8 @@ function requestsScreen(app) {
       h('fieldset', { class: 'checks' }, h('legend', {}, t('requests.refs')), refs.map((ref) => h('div', {},
         h('input', { type: 'checkbox', id: `req-ref-${r.requestId}-${ref}`, checked: r.evidenceRefs.includes(ref), disabled: ro, onChange: (e) => upd(r.requestId, 'evidenceRefs', e.target.checked ? [...r.evidenceRefs, ref] : r.evidenceRefs.filter((x) => x !== ref)) }),
         h('label', { for: `req-ref-${r.requestId}-${ref}`, class: 'mono' }, ref)))),
-      h('button', { type: 'button', class: 'btn btn-small btn-quiet', disabled: ro, onClick: () => app.edit((o) => { o.requestDrafts = o.requestDrafts.filter((x) => x.requestId !== r.requestId); }, { rerender: true }) }, t('note.delete'))))) : h('p', {}, t('requests.empty')),
+      h('button', { type: 'button', class: 'btn btn-small btn-quiet', disabled: ro, onClick: () => app.edit((o) => { o.requestDrafts = o.requestDrafts.filter((x) => x.requestId !== r.requestId); }, { rerender: true }) }, t('note.delete')))))), (item) => app.addRequestFrom(item))
+      : dropOn(h('p', { class: 'drop-empty', 'data-drop': 'evidence gap', 'data-drop-label': t('requests.local') }, t('requests.empty')), (item) => app.addRequestFrom(item)),
     h('div', { class: 'actions' },
       h('button', { type: 'button', class: 'btn', id: 'add-request', disabled: ro, onClick: () => {
         const requestId = newId('request');

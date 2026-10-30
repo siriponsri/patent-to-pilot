@@ -3,6 +3,7 @@
 // that forbids inline/remote scripts and any cross-origin fetch.
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
+import { createReadStream } from 'node:fs';
 import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -16,9 +17,9 @@ const MAPPED = {
   '/schemas/RunManifest.schema.json': join(REPO, 'schemas/healthtech/RunManifest.schema.json'),
   '/schemas/AcquisitionEvent.schema.json': join(REPO, 'schemas/healthtech/AcquisitionEvent.schema.json'),
 };
-const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json' };
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.vtt': 'text/vtt', '.mp4': 'video/mp4', '.jpg': 'image/jpeg', '.png': 'image/png' };
 const HEADERS = {
-  'Content-Security-Policy': "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+  'Content-Security-Policy': "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'no-referrer',
   'Cache-Control': 'no-store',
@@ -40,9 +41,25 @@ export function startServer(port = Number(process.env.PORT || 5178), host = '127
     try { file = resolvePath(req.url); } catch { file = null; }
     if (!file) { res.writeHead(404, HEADERS).end('Not found'); return; }
     try {
-      if (!(await stat(file)).isFile()) throw new Error('not a file');
+      const info = await stat(file);
+      if (!info.isFile()) throw new Error('not a file');
+      const type = TYPES[extname(file)];
+      const textual = /^(text|application\/json)/.test(type);
+      const headers = { ...HEADERS, 'Content-Type': textual ? `${type}; charset=utf-8` : type, 'Accept-Ranges': 'bytes' };
+      // Byte ranges let the video player seek to a chapter.
+      const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+      if (range && (range[1] || range[2])) {
+        const size = info.size;
+        const start = range[1] ? Number(range[1]) : Math.max(0, size - Number(range[2]));
+        const end = range[1] && range[2] ? Math.min(Number(range[2]), size - 1) : size - 1;
+        if (start >= size || start > end) { res.writeHead(416, { ...headers, 'Content-Range': `bytes */${size}` }).end(); return; }
+        res.writeHead(206, { ...headers, 'Content-Range': `bytes ${start}-${end}/${size}`, 'Content-Length': String(end - start + 1) });
+        if (req.method === 'HEAD') { res.end(); return; }
+        createReadStream(file, { start, end }).pipe(res);
+        return;
+      }
       const body = await readFile(file);
-      res.writeHead(200, { ...HEADERS, 'Content-Type': `${TYPES[extname(file)]}; charset=utf-8` });
+      res.writeHead(200, { ...headers, 'Content-Length': String(body.length) });
       res.end(req.method === 'HEAD' ? undefined : body);
     } catch {
       res.writeHead(404, HEADERS).end('Not found');

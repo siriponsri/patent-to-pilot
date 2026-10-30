@@ -147,8 +147,8 @@ export class Page {
     await sleep(150);
   }
 
-  async screenshot(file) {
-    const { data } = await this.send('Page.captureScreenshot', { format: 'jpeg', quality: 72, captureBeyondViewport: true });
+  async screenshot(file, { full = true, quality = 72 } = {}) {
+    const { data } = await this.send('Page.captureScreenshot', { format: 'jpeg', quality, captureBeyondViewport: full });
     const { writeFileSync } = await import('node:fs');
     writeFileSync(file, Buffer.from(data, 'base64'));
     return file;

@@ -11,6 +11,15 @@ import { emptyDraft } from '../core/brief.js';
 import { capabilities, loadStatic, fixtureTree, buildCatalog, comparatorOf } from '../adapters.js';
 import { download } from './dom.js';
 import { renderApp, savedTimeText } from './screens.js';
+import { runDossierStages } from '../core/validate.js';
+import { initialStates, STAGE_TO_NODE, stateForStageEvent } from '../core/pipeline.js';
+import { normalizeLayout } from '../core/layout.js';
+import { summarizeRun } from '../core/run.js';
+import { setMotionPreference, pace } from './motion.js';
+import { applyLayout, workspaceCanvas } from './workspace.js';
+
+const LAYOUT_KEY = 'p2p-healthtech-ux-layout';
+const STAGE_PACE_MS = 420;
 
 export const MAX_FILE_BYTES = 5 * 1024 * 1024;
 const AUTOSAVE_MS = 1000;
@@ -39,6 +48,8 @@ export const app = {
     const params = new URLSearchParams(location.search);
     this.state.locale = prefs.locale === 'en' ? 'en' : 'th';
     this.state.theme = THEME_KEYS.includes(prefs.theme) ? prefs.theme : 'formal-light';
+    this.state.motion = prefs.motion === 'reduced' ? 'reduced' : 'full';
+    try { this.layout = normalizeLayout(JSON.parse(localStorage.getItem(LAYOUT_KEY) || 'null')); } catch { this.layout = normalizeLayout(null); }
     // Explicit, labelled fault simulation for acceptance tests (FX-07 / FX-09).
     this.state.simulate = ['storage-denied', 'quota'].includes(params.get('simulate')) ? params.get('simulate') : null;
     this.applyPrefs();
@@ -77,10 +88,20 @@ export const app = {
     this.t = translator(this.state.locale);
     document.documentElement.lang = this.state.locale;
     applyTheme(document.documentElement, this.state.theme);
-    writePrefs({ locale: this.state.locale, theme: this.state.theme });
+    setMotionPreference(this.state.motion);
+    writePrefs({ locale: this.state.locale, theme: this.state.theme, motion: this.state.motion });
   },
   setLocale(locale) { this.state.locale = locale; this.applyPrefs(); this.render({ keepFocus: true }); },
   setTheme(theme) { this.state.theme = theme; this.applyPrefs(); this.render({ keepFocus: true }); },
+  setMotion(motion) { this.state.motion = motion; this.applyPrefs(); this.render({ keepFocus: true }); },
+
+  /** Workspace layout is a per-browser convenience; storage failure only loses the preference. */
+  setLayout(layout) {
+    this.layout = layout;
+    try { localStorage.setItem(LAYOUT_KEY, JSON.stringify(layout)); } catch { /* preference only */ }
+    applyLayout(this);
+  },
+  resetLayout() { this.setLayout(normalizeLayout(null)); this.announce(this.t('layout.resetDone'), { toast: true }); },
 
   /**
    * Status message. `toast` is for explicit user actions (download, copy): a
@@ -127,7 +148,7 @@ export const app = {
       const id = parts[1];
       const sub = parts[2] || 'overview';
       if (sub === 'source' && parts[3]) return { name: 'source', params: { id, sourceId: parts[3] }, query };
-      if (['overview', 'evidence', 'runs', 'history', 'requests', 'export', 'brief'].includes(sub)) return { name: sub, params: { id }, query, project: true };
+      if (['overview', 'evidence', 'runs', 'history', 'requests', 'export', 'brief', 'checks', 'sources', 'agent'].includes(sub)) return { name: sub, params: { id }, query, project: true };
     }
     return { name: 'notfound', params: {}, query };
   },
@@ -141,6 +162,15 @@ export const app = {
       await this.openProject(r.params.id);
     }
     if (r.name === 'source') await this.prepareSource(r);
+    if (r.query.tab && this.state.current?.ui) this.state.current.ui.tab = r.query.tab;
+    const c = this.state.current;
+    if (r.project && c?.kind === 'dossier' && !c.corrupt && !c.pipe.started) {
+      c.pipe.started = true;
+      // Render first so the canvas exists, then run the real checks step by step.
+      this.render({ routeChanged: true });
+      this.runPipeline();
+      return;
+    }
     this.render({ routeChanged: prev.name !== r.name || prev.params.id !== r.params.id || prev.params.sourceId !== r.params.sourceId });
   },
 
@@ -149,8 +179,12 @@ export const app = {
   render(opts = {}) {
     const focusId = opts.keepFocus ? document.activeElement?.id : null;
     renderApp(this, opts);
-    if (focusId && document.getElementById(focusId)) document.getElementById(focusId).focus();
-    else if (opts.routeChanged) {
+    if (this.state.focusAfter && document.getElementById(this.state.focusAfter)) {
+      document.getElementById(this.state.focusAfter).focus();
+      this.state.focusAfter = null;
+    } else if (focusId && document.getElementById(focusId)) {
+      if (document.activeElement?.id !== focusId) document.getElementById(focusId).focus({ preventScroll: true });
+    } else if (opts.routeChanged) {
       const target = this.state.route.query.focus && document.getElementById(`row-${this.state.route.query.focus}`);
       (target || document.querySelector('main h1'))?.focus();
     }
@@ -212,6 +246,9 @@ export const app = {
       cur.base = { snapshotId: head.snapshotId, overlay: cloneOverlay(head.overlay), savedAt: head.savedAt };
     }
     cur.overlay = cloneOverlay(cur.base.overlay);
+    cur.ui = { filter: '', sort: 'imported', compare: [], tab: 'evidence' };
+    cur.pipe = { states: initialStates(), info: {}, timeline: [], running: false, started: false };
+    if (cur.corrupt) cur.pipe.states = { ...cur.pipe.states, input: 'fail' };
     this.state.current = cur;
     if (!problem) await this.state.store.touch(projectId, new Date().toISOString());
   },
@@ -275,7 +312,183 @@ export const app = {
       this.saveTimer = setTimeout(() => this.save(), AUTOSAVE_MS);
     }
     this.updateSaveIndicator();
+    if (c.kind === 'dossier') this.updateHumanNodes(c);
     if (rerender) this.render({ keepFocus: true });
+    else if (c.kind === 'dossier') this.refreshPipe();
+  },
+
+  // ------------------------------------------------------------------ pipeline: real local work, shown step by step
+  log(c, node, text, extra = {}) {
+    c.pipe.timeline.push({ at: new Date().toISOString(), node, text, ...extra });
+    if (c.pipe.timeline.length > 300) c.pipe.timeline.shift();
+  },
+
+  /** Update the canvas and timeline only; inspector content and focus are untouched. */
+  refreshPipe() {
+    if (this.state.route.project && this.state.current?.kind === 'dossier') renderApp(this, { pipeOnly: true });
+  },
+
+  stageSummary(stage, ev, c) {
+    const t = this.t;
+    const ok = ev.items.filter((i) => i.ok).length;
+    const n = ev.items.length;
+    if (stage === 'schema') return ev.errors.length ? t('nsum.schemaFail', { n: ev.errors.length }) : t('nsum.schema');
+    if (stage === 'query') return t('nsum.query', { device: c.dossier.query.device_id_canonical, cutoff: c.dossier.query.evidence_cutoff });
+    if (stage === 'sources') return t('nsum.sources', { ok, n });
+    if (stage === 'evidence') return t('nsum.evidence', { ok, n });
+    if (!n) return t(c.candidateScope === 'empty_corpus' ? 'nsum.candidatesEmpty' : 'nsum.candidatesNone');
+    return t('nsum.candidates', { n, linked: c.dossier.candidates.filter((x) => x.association_status === 'disclosed_link').length });
+  },
+
+  updateHumanNodes(c) {
+    const t = this.t;
+    const p = c.pipe;
+    p.info.review = { summary: t('nsum.review', { n: c.overlay.notes.length }) };
+    p.info.requests = { summary: t('nsum.requests', { n: c.overlay.requestDrafts.length, m: c.dossier.next_information_requests.length }) };
+    p.info.history = { summary: t('nsum.history', { n: c.snapshots.length }) };
+    p.info.export = { summary: t('nsum.export') };
+    p.info.agent = { summary: t('nsum.agent') };
+    if (c.corrupt) for (const k of ['review', 'requests', 'history']) p.states[k] = 'warn';
+  },
+
+  async runPipeline() {
+    const c = this.state.current;
+    if (!c || c.kind !== 'dossier' || c.pipe.running || !this.state.staticData) return;
+    const t = this.t;
+    const p = c.pipe;
+    p.running = true;
+    for (const k of ['input', 'schema', 'query', 'sources', 'evidence', 'candidates', 'run']) p.states[k] = 'idle';
+    p.info = {};
+    this.updateHumanNodes(c);
+    this.log(c, 'input', t('tl.start'));
+    p.states.input = 'running';
+    this.refreshPipe();
+    await pace(STAGE_PACE_MS);
+    const t0 = performance.now();
+    let tree;
+    try { tree = parseLossless(c.project.dossierText); } catch (e) {
+      p.states.input = 'fail';
+      this.log(c, 'input', e.message, { errors: 1 });
+      p.running = false;
+      this.refreshPipe();
+      return;
+    }
+    p.states.input = 'pass';
+    p.info.input = { summary: t('nsum.input', { n: tree.sources.length, kb: (c.project.dossierText.length / 1024).toFixed(1) }) };
+    this.log(c, 'input', p.info.input.summary, { ms: performance.now() - t0 });
+    this.refreshPipe();
+    const result = await runDossierStages(tree, this.state.staticData.schemas.dossier, {
+      onStage: (ev) => {
+        const node = STAGE_TO_NODE[ev.stage];
+        p.states[node] = stateForStageEvent(ev);
+        if (ev.phase === 'end') {
+          p.info[node] = { items: ev.items, summary: this.stageSummary(ev.stage, ev, c) };
+          this.log(c, node, ev.errors.length ? `${p.info[node].summary} — ${[...new Set(ev.errors.map((e) => e.code))].join(', ')}` : p.info[node].summary, { ms: ev.ms, errors: ev.errors.length });
+        } else if (ev.phase === 'skipped') this.log(c, node, t('tl.skipped'));
+        this.refreshPipe();
+      },
+      pace: () => pace(STAGE_PACE_MS),
+    });
+    // Run receipt: only recorded artifacts, never inferred.
+    let sumStop = null;
+    p.states.run = 'running';
+    this.refreshPipe();
+    await pace(STAGE_PACE_MS);
+    if (c.manifest || c.events) {
+      const sum = summarizeRun(c.dossier, c.manifest, c.events);
+      sumStop = sum.stopReason;
+      const errs = validateRunArtifacts(c.dossier, c.manifest, c.events, this.state.staticData.schemas);
+      p.states.run = errs.length ? 'fail' : sum.consistent ? 'pass' : 'warn';
+      p.info.run = { summary: t('nsum.run', { calls: sum.callsUsed.status === 'known' ? sum.callsUsed.value : '?', cap: sum.callsCap.value, stop: sum.stopReason || t('value.unknown') }), items: sum.events.map((e) => ({ id: e.stepId, ok: !e.errors.length })) };
+    } else {
+      p.states.run = 'skipped';
+      p.info.run = { summary: t('nsum.runNone') };
+    }
+    this.log(c, 'run', sumStop ? `${p.info.run.summary} · stop: ${sumStop}` : p.info.run.summary);
+    p.running = false;
+    p.lastResult = { ok: result.ok, errors: result.errors.length };
+    const done = result.ok ? t('tl.doneOk') : t('tl.doneFail', { n: result.errors.length });
+    this.log(c, 'export', done);
+    this.announce(done);
+    this.refreshPipe();
+  },
+
+  /** Replay a completed CLI run's recorded events; labelled, timestamps are the recorded ones. */
+  async replayRun() {
+    const c = this.state.current;
+    if (!c?.events?.length || c.pipe.running) return;
+    const t = this.t;
+    const p = c.pipe;
+    const before = p.states.run;
+    p.running = true;
+    p.states.run = 'running';
+    this.log(c, 'run', t('tl.replayStart'), { replay: true });
+    this.refreshPipe();
+    for (const e of c.events) {
+      await pace(650);
+      this.log(c, 'run', t('tl.replayEvent', { step: e.step_id, action: e.action_type, calls: e.search_calls, returned: e.returned_candidates, stop: e.stop_reason || '—' }), { replay: true, recordedAt: e.started_at });
+      workspaceCanvas()?.pulse('run');
+      this.refreshPipe();
+    }
+    p.states.run = before === 'running' ? 'pass' : before;
+    p.running = false;
+    this.log(c, 'run', t('tl.replayEnd'), { replay: true });
+    this.refreshPipe();
+  },
+
+  // ------------------------------------------------------------------ drop actions (each also has a button)
+  addNoteFor(evidenceId) {
+    const c = this.state.current;
+    const ev = c?.dossier.evidence.find((e) => e.evidence_id === evidenceId);
+    if (!ev || c.corrupt) return false;
+    const noteId = newId('note');
+    this.edit((o) => o.notes.push({ noteId, targetRef: evidenceId, baseDossierVersion: c.dossier.version, text: '', basis: 'user_note', reviewMarker: 'none' }));
+    this.state.focusAfter = `note-${noteId}`;
+    this.go(`#/project/${encodeURIComponent(c.project.projectId)}/source/${encodeURIComponent(ev.source_id)}?evidenceId=${encodeURIComponent(evidenceId)}`);
+    return true;
+  },
+
+  addRequestFrom(item) {
+    const c = this.state.current;
+    if (!c || c.corrupt) return false;
+    let question, refs;
+    if (item.type === 'evidence') {
+      const ev = c.dossier.evidence.find((e) => e.evidence_id === item.payload);
+      if (!ev) return false;
+      question = this.t('req.fromEvidence', { statement: ev.statement });
+      refs = [ev.evidence_id];
+    } else if (item.type === 'gap') {
+      question = c.dossier.unresolved_items[item.payload];
+      refs = [`unresolved:${item.payload}`];
+    } else return false;
+    const requestId = newId('request');
+    this.edit((o) => o.requestDrafts.push({ requestId, question, evidenceRefs: refs, priority: 'normal', intendedRole: null, status: 'draft' }), { rerender: true });
+    workspaceCanvas()?.pulse('requests');
+    this.announce(this.t('req.added'), { toast: true });
+    return true;
+  },
+
+  linkFeature(feature, evidenceId) {
+    const c = this.state.current;
+    if (!c || c.corrupt || !c.dossier.evidence.some((e) => e.evidence_id === evidenceId)) return false;
+    this.edit((o) => {
+      let l = o.featureLinks.find((x) => x.feature === feature);
+      if (!l) { l = { feature, evidenceIds: [], basis: 'user_authored' }; o.featureLinks.push(l); }
+      l.evidenceIds = [...new Set([...l.evidenceIds, evidenceId])];
+    }, { rerender: true });
+    return true;
+  },
+
+  moveRequest(requestId, toIndex) {
+    const c = this.state.current;
+    if (!c || c.corrupt) return false;
+    this.edit((o) => {
+      const from = o.requestDrafts.findIndex((r) => r.requestId === requestId);
+      if (from < 0) return;
+      const [r] = o.requestDrafts.splice(from, 1);
+      o.requestDrafts.splice(Math.max(0, Math.min(toIndex, o.requestDrafts.length)), 0, r);
+    }, { rerender: true });
+    return true;
   },
 
   async save() {
@@ -310,6 +523,7 @@ export const app = {
       c.dirty = c.counter !== counterAtStart;
       c.saveState = c.dirty ? 'unsaved' : (c.storageScope === 'memory' ? 'memory' : 'saved');
       this.updateSaveIndicator(true);
+      if (c.kind === 'dossier') { this.updateHumanNodes(c); this.refreshPipe(); }
       this.broadcast(c.project.projectId);
       if (c.dirty || this.saveAgain) { this.saveAgain = false; this.saveTimer = setTimeout(() => this.save(), AUTOSAVE_MS); }
     } else if (res.code === 'conflict') {
@@ -476,8 +690,23 @@ export const app = {
   },
 
   // ------------------------------------------------------------------ import
+  /** Validation with live per-stage display on the import page (same checks as validateDossier). */
+  async stagedImportCheck(tree, schema) {
+    const ip = { states: { schema: 'idle', query: 'idle', sources: 'idle', evidence: 'idle', candidates: 'idle' }, info: {} };
+    this.state.importPipe = ip;
+    return runDossierStages(tree, schema, {
+      onStage: (ev) => {
+        ip.states[ev.stage] = stateForStageEvent(ev);
+        if (ev.phase === 'end') ip.info[ev.stage] = { ok: ev.items.filter((i) => i.ok).length, n: ev.items.length, errors: ev.errors.length, ms: ev.ms };
+        renderApp(this, { importPipeOnly: true });
+      },
+      pace: () => pace(260),
+    });
+  },
+
   async importFiles(files) {
     const preview = { files: [], errors: [], checks: [], kind: null, ok: false, diag: newId('diag') };
+    this.state.importPipe = null;
     this.state.importPreview = { loading: true };
     this.render();
     const parsed = { dossier: [], manifest: [], events: [], recovery: [] };
@@ -506,13 +735,16 @@ export const app = {
     const schemas = this.state.staticData.schemas;
     if (!preview.errors.length) {
       if (parsed.recovery.length === 1 && !parsed.dossier.length && !parsed.manifest.length && !parsed.events.length) {
+        // Show the embedded dossier's stages live; the verdict still comes from parseRecovery.
+        const embedded = parseLossless(parsed.recovery[0].text).dossier;
+        if (embedded) await this.stagedImportCheck(embedded, schemas.dossier);
         const r = await parseRecovery(parsed.recovery[0].text, schemas);
         preview.kind = 'recovery';
         if (r.ok) Object.assign(preview, { ok: true, dossierTree: r.dossierTree, validation: r.validation, manifestTree: r.manifestTree, eventTrees: r.eventTrees, overlay: r.overlay, recoveredSnapshot: r.snapshot, checks: r.validation.checks });
         else preview.errors.push(...r.errors);
       } else if (parsed.dossier.length === 1 && !parsed.recovery.length && parsed.manifest.length <= 1 && parsed.events.length <= 1) {
         preview.kind = 'dossier';
-        const v = await validateDossier(parsed.dossier[0].tree, schemas.dossier);
+        const v = await this.stagedImportCheck(parsed.dossier[0].tree, schemas.dossier);
         preview.checks = v.checks;
         if (!v.ok) preview.errors.push(...v.errors);
         else {

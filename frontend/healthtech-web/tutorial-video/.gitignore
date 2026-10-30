@@ -1,0 +1,6 @@
+# Generated HyperFrames projects and screenshots; recreate with `node tutorial-video/build.mjs`.
+out/
+# Render-time GSAP (npm pack gsap@3.13.0, GSAP standard no-charge licence); not shipped in the app.
+.cache/
+# Render logs
+*.log

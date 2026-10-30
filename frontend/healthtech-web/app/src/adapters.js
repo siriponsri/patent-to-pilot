@@ -42,6 +42,11 @@ export async function loadStatic() {
   };
 }
 
+/** Tutorial video manifest (chapters, files, captions); null-safe when not yet rendered. */
+export async function loadTutorialManifest() {
+  return JSON.parse(await getText('media/tutorial.json'));
+}
+
 /** Lossless subtree of the authored fixture bundle (fresh copy each call). */
 export function fixtureTree(fixtureText, key) {
   return parseLossless(fixtureText)[key];
