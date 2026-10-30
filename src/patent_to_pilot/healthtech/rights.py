@@ -7,6 +7,7 @@ from typing import Any, Literal
 
 from patent_to_pilot.healthtech.contracts import (
     DossierVersion,
+    DeviceQuery,
     EvidenceItem,
     SourcePayload,
     SourceRights,
@@ -274,3 +275,39 @@ def project_evidence(
 def enforce_dossier_rights(dossier: DossierVersion, *, purpose: ExportPurpose) -> None:
     for source in dossier.sources:
         enforce_source_rights(source, purpose=purpose)
+
+
+def project_company_metadata(
+    query: DeviceQuery,
+    sources: list[SourcePayload],
+    *,
+    purpose: ExportPurpose,
+) -> tuple[dict[str, str], list[str]]:
+    """Keep external source-derived query fields within the source policy.
+
+    Company metadata has an explicit source basis; a copied value must not
+    bypass the same field boundary applied to that source's payload/evidence.
+    User edits have their own authored origin and are left untouched.
+    """
+    metadata = dict(query.company_metadata)
+    if purpose == "local_research" or not metadata:
+        return metadata, []
+    source = next((item for item in sources if item.source.source_id == query.company_source_id), None)
+    if source is None:
+        return {}, ["External export omitted company metadata: source basis is unavailable."]
+    if source.synthetic:
+        return metadata, []
+    enforce_source_rights(source, purpose=purpose)
+    projected: dict[str, str] = {}
+    diagnostics: list[str] = []
+    for field, value in metadata.items():
+        try:
+            enforce_displayable_field(source, field, purpose=purpose)
+            source_value = _field_value(source.payload, field)
+            if not isinstance(source_value, str) or source_value != value:
+                raise KeyError(field)
+        except (KeyError, RightsBoundaryError):
+            diagnostics.append("External export omitted company metadata field: no matching reviewed source field.")
+            continue
+        projected[field] = source_value
+    return projected, diagnostics

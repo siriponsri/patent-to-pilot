@@ -1,0 +1,135 @@
+{
+  "format": "p2p-healthtech-ux-recovery",
+  "formatVersion": 1,
+  "exporter": {
+    "id": "healthtech-web-recovery",
+    "version": "1.0.0"
+  },
+  "generatedAt": "2026-10-30T18:03:28.107Z",
+  "mode": "synthetic_demo",
+  "project": {
+    "localProjectId": "proj-mvva6dir-1p2us8i10tz28o",
+    "title": "UX-DEMO-001 empty corpus (synthetic)",
+    "storageScope": "indexeddb"
+  },
+  "snapshot": {
+    "snapshotId": "snap-mvva6dir-1nkhmpw43ljat",
+    "parentSnapshotId": null,
+    "savedAt": "2026-10-30T18:03:27.603Z",
+    "acknowledged": false,
+    "lineage": []
+  },
+  "backendDossierVersion": 1,
+  "sourceDossierSha256": "228f8693806ddd849a12d04d965dbd15c543ce973a3360ecc697dcf0521ea5f1",
+  "dossier": {
+    "project_id": "ux-demo-001",
+    "dossier_id": "ux-synthetic-empty-corpus",
+    "version": 1,
+    "parent_version": null,
+    "query": {
+      "query_id": "UX-SYN-QUERY-001",
+      "brief": {
+        "project_id": "ux-demo-001",
+        "version": 1,
+        "objective": "Inspect an authored synthetic UX dossier; no real evidence finding.",
+        "audience": "entrepreneur",
+        "data_class": "synthetic",
+        "language": "th",
+        "theme": "formal-light"
+      },
+      "device_id_raw": "UX-DEMO-001 (synthetic)",
+      "device_id_canonical": "UX-DEMO-001",
+      "selected_comparator_source_id": "ux-synthetic-device",
+      "technical_description": "SYNTHETIC balloon sensor comparator",
+      "features_of_interest": [
+        "SYNTHETIC sensor"
+      ],
+      "user_questions": [
+        "Which real dated source would be needed before substantive review?"
+      ],
+      "company_metadata": {},
+      "company_source_id": null,
+      "jurisdiction": "US",
+      "evidence_cutoff": "2026-10-27",
+      "permitted_inputs": [
+        "ux-synthetic-device"
+      ],
+      "acquisition_budget": {
+        "max_search_calls": 3,
+        "max_returned_candidates": 60,
+        "accounting": "offline_counts"
+      }
+    },
+    "input_hash": "085a7f748985d9c628488a07a47054cae1414f0fa791b069b789bc2b03c8c4da",
+    "sources": [
+      {
+        "source": {
+          "record_id": "ux-synthetic-device",
+          "version": 1,
+          "created_at": "2026-10-27T00:00:00Z",
+          "source_id": "ux-synthetic-device",
+          "source_type": "synthetic_record",
+          "uri": "urn:synthetic:ux-synthetic-device",
+          "version_label": "ux-authored-v1",
+          "license_note": "Project-authored synthetic fixture; no real device, patent or disclosure.",
+          "locator": null,
+          "sha256": "65ae11daa06998a6b2daba3aeff3f74b062052ec0aa38cb380a9221bad2839f9",
+          "retrieved_at": null,
+          "limits": []
+        },
+        "payload": {
+          "device_name": "SYNTHETIC demonstration comparator",
+          "device_id": "UX-DEMO-001",
+          "decision_code": "SYNTHETIC_NO_REGULATORY_MEANING"
+        },
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "synthetic": true
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "ux-e-device",
+        "source_id": "ux-synthetic-device",
+        "source_version": "ux-authored-v1",
+        "payload_hash": "65ae11daa06998a6b2daba3aeff3f74b062052ec0aa38cb380a9221bad2839f9",
+        "locator": "field:device_name",
+        "quoted_span": null,
+        "structured_field": "device_name",
+        "structured_value": "SYNTHETIC demonstration comparator",
+        "evidence_kind": "source_fact",
+        "statement": "SYNTHETIC source field: SYNTHETIC demonstration comparator",
+        "support_basis": "Authored fixture field only.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "extraction_method": "structured_field",
+        "verification_status": "field_value_checked"
+      }
+    ],
+    "candidates": [],
+    "unresolved_items": [
+      "SYNTHETIC empty-pool scenario: no patent corpus supplied; coverage unknown."
+    ],
+    "next_information_requests": [
+      "Request an independently sourced, dated real device-patent disclosure."
+    ],
+    "user_edits": {
+      "review_note": "ข้อความทดสอบการส่งออก / User note must survive export"
+    },
+    "run_id": "ux-simulated-run",
+    "created_at": "2026-10-27T00:00:00Z",
+    "validation_scope": "source_integrity_only"
+  },
+  "runArtifacts": {
+    "manifest": null,
+    "events": null
+  },
+  "overlay": {
+    "notes": [],
+    "featureLinks": [],
+    "requestDrafts": []
+  },
+  "omissions": [
+    "history_corrupt: snapshot snap-corrupt cites missing parent snap-missing; snapshot lineage omitted"
+  ]
+}

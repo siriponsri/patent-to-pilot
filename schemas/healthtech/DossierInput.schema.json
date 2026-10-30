@@ -348,6 +348,17 @@
     "SourcePayload": {
       "additionalProperties": false,
       "properties": {
+        "rights": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceRights"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
         "source": {
           "$ref": "#/$defs/SourceRecord"
         },
@@ -486,6 +497,148 @@
         "license_note"
       ],
       "title": "SourceRecord",
+      "type": "object"
+    },
+    "SourceRights": {
+      "additionalProperties": false,
+      "description": "Auditable rights basis carried with every non-synthetic source.",
+      "properties": {
+        "rights_id": {
+          "minLength": 1,
+          "title": "Rights Id",
+          "type": "string"
+        },
+        "source_id_prefixes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Id Prefixes",
+          "type": "array"
+        },
+        "source_types": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Types",
+          "type": "array"
+        },
+        "basis_url": {
+          "minLength": 1,
+          "title": "Basis Url",
+          "type": "string"
+        },
+        "checked_date": {
+          "format": "date",
+          "title": "Checked Date",
+          "type": "string"
+        },
+        "basis_revision": {
+          "minLength": 1,
+          "title": "Basis Revision",
+          "type": "string"
+        },
+        "basis_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Basis Sha256",
+          "type": "string"
+        },
+        "clause_locator": {
+          "minLength": 1,
+          "title": "Clause Locator",
+          "type": "string"
+        },
+        "clause": {
+          "minLength": 1,
+          "title": "Clause",
+          "type": "string"
+        },
+        "interpretation": {
+          "minLength": 1,
+          "title": "Interpretation",
+          "type": "string"
+        },
+        "acquisition": {
+          "enum": [
+            "ALLOWED",
+            "ALLOWED_WITH_ATTRIBUTION",
+            "ALLOWED_LOCAL_SNAPSHOT",
+            "ALLOWED_LOCAL_RESEARCH",
+            "ALLOWED_ONLY_FOR_REVIEWED_PUBLIC_DOMAIN_FIELDS",
+            "BLOCKED_LOCAL",
+            "UNRESOLVED"
+          ],
+          "title": "Acquisition",
+          "type": "string"
+        },
+        "local_evaluation": {
+          "enum": [
+            "ALLOWED",
+            "ALLOWED_WITH_ATTRIBUTION",
+            "ALLOWED_LOCAL_SNAPSHOT",
+            "ALLOWED_LOCAL_RESEARCH",
+            "ALLOWED_ONLY_FOR_REVIEWED_PUBLIC_DOMAIN_FIELDS",
+            "BLOCKED_LOCAL",
+            "UNRESOLVED"
+          ],
+          "title": "Local Evaluation",
+          "type": "string"
+        },
+        "product_display": {
+          "enum": [
+            "ALLOWED",
+            "ALLOWED_WITH_ATTRIBUTION",
+            "ALLOWED_LOCAL_SNAPSHOT",
+            "ALLOWED_LOCAL_RESEARCH",
+            "ALLOWED_ONLY_FOR_REVIEWED_PUBLIC_DOMAIN_FIELDS",
+            "BLOCKED_LOCAL",
+            "UNRESOLVED"
+          ],
+          "title": "Product Display",
+          "type": "string"
+        },
+        "redistribution": {
+          "enum": [
+            "ALLOWED",
+            "ALLOWED_WITH_ATTRIBUTION",
+            "ALLOWED_LOCAL_SNAPSHOT",
+            "ALLOWED_LOCAL_RESEARCH",
+            "ALLOWED_ONLY_FOR_REVIEWED_PUBLIC_DOMAIN_FIELDS",
+            "BLOCKED_LOCAL",
+            "UNRESOLVED"
+          ],
+          "title": "Redistribution",
+          "type": "string"
+        },
+        "displayable_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Displayable Fields",
+          "type": "array"
+        },
+        "limits": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limits",
+          "type": "array"
+        }
+      },
+      "required": [
+        "rights_id",
+        "basis_url",
+        "checked_date",
+        "basis_revision",
+        "basis_sha256",
+        "clause_locator",
+        "clause",
+        "interpretation",
+        "acquisition",
+        "local_evaluation",
+        "product_display",
+        "redistribution"
+      ],
+      "title": "SourceRights",
       "type": "object"
     }
   },

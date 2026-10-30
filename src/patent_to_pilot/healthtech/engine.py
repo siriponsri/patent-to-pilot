@@ -22,6 +22,7 @@ from patent_to_pilot.healthtech.rights import (
     enforce_dossier_rights,
     limit_displayable_payload,
     project_evidence,
+    project_company_metadata,
     source_rights_summary,
 )
 from patent_to_pilot.ingestion.pls import PatentDocument
@@ -374,7 +375,11 @@ def serialize_dossier(
                 f"External export omitted payload for source {source.source.source_id}: no reviewed displayable mapping."
             )
     payload["evidence"] = [item.model_dump(mode="json") for item in evidence]
+    company_metadata, company_diagnostics = project_company_metadata(
+        dossier.query, dossier.sources, purpose=purpose
+    )
+    payload["query"]["company_metadata"] = company_metadata
     payload["unresolved_items"] = (
-        list(payload["unresolved_items"]) + evidence_diagnostics + source_diagnostics
+        list(payload["unresolved_items"]) + evidence_diagnostics + source_diagnostics + company_diagnostics
     )
     return payload

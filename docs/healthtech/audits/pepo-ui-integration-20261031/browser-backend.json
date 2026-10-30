@@ -1,0 +1,39 @@
+{
+  "status": "PASS_REAL_BACKEND_BROWSER_IMPORT",
+  "cases": [
+    {
+      "query_id": "HT-DEV-MITRACLIP",
+      "result": "PASS",
+      "imported_candidates": 35,
+      "backend_version": 2,
+      "import": "real-file-input",
+      "persistence": "IndexedDB save and page reload",
+      "th_en_export": "backend edits and UI note retained",
+      "page_errors": 0
+    },
+    {
+      "query_id": "HT-DEV-TENDYNE",
+      "result": "PASS",
+      "imported_candidates": 20,
+      "backend_version": 2,
+      "import": "real-file-input",
+      "persistence": "IndexedDB save and page reload",
+      "th_en_export": "backend edits and UI note retained",
+      "page_errors": 0
+    },
+    {
+      "query_id": "HT-DEV-TRICLIP",
+      "result": "PASS",
+      "imported_candidates": 28,
+      "backend_version": 2,
+      "import": "real-file-input",
+      "persistence": "IndexedDB save and page reload",
+      "th_en_export": "backend edits and UI note retained",
+      "page_errors": 0
+    }
+  ],
+  "live_search_api": "NOT_IMPLEMENTED",
+  "dense_encoding": "NOT_RUN",
+  "provider_calls": 0,
+  "paid_cost_usd": 0
+}

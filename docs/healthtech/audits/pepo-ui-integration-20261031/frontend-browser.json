@@ -1,0 +1,201 @@
+{
+  "generatedAt": "2026-10-30T22:58:37.653Z",
+  "command": "HEALTHTECH_E2E_OUT=<fresh-audit-output> HEALTHTECH_PUBLIC_RUN_DIR=<existing-owner-public-case> rtk proxy npm run test:e2e",
+  "totals": {
+    "pass": 17,
+    "fail": 0
+  },
+  "browser": {
+    "product": "Chrome/156.0.8078.74",
+    "headless": true
+  },
+  "node": "v24.19.0",
+  "results": [
+    {
+      "id": "E01-home-capabilities",
+      "stories": [
+        "US-01",
+        "US-26",
+        "US-28"
+      ],
+      "result": "PASS",
+      "ms": 7551,
+      "pageErrors": []
+    },
+    {
+      "id": "E02-demo-overview",
+      "stories": [
+        "US-11",
+        "US-15",
+        "US-26"
+      ],
+      "result": "PASS",
+      "ms": 11135,
+      "pageErrors": []
+    },
+    {
+      "id": "E03-source-viewer-locators",
+      "stories": [
+        "US-14",
+        "US-15",
+        "US-25"
+      ],
+      "result": "PASS",
+      "ms": 8712,
+      "pageErrors": []
+    },
+    {
+      "id": "E04-save-close-reopen",
+      "stories": [
+        "US-16",
+        "US-17",
+        "US-19",
+        "US-20"
+      ],
+      "result": "PASS",
+      "ms": 2823,
+      "pageErrors": []
+    },
+    {
+      "id": "E05-two-writer-conflict",
+      "stories": [
+        "US-18",
+        "US-19"
+      ],
+      "result": "PASS",
+      "ms": 2004,
+      "pageErrors": []
+    },
+    {
+      "id": "E06-requests-and-locale-theme",
+      "stories": [
+        "US-23",
+        "US-27",
+        "US-20"
+      ],
+      "result": "PASS",
+      "ms": 1205,
+      "pageErrors": []
+    },
+    {
+      "id": "E07-export-th-en-and-recovery-roundtrip",
+      "stories": [
+        "US-21",
+        "US-22",
+        "US-24"
+      ],
+      "result": "PASS",
+      "ms": 4068,
+      "pageErrors": []
+    },
+    {
+      "id": "E08-safe-rendering",
+      "stories": [
+        "US-22",
+        "US-25"
+      ],
+      "result": "PASS",
+      "ms": 1483,
+      "pageErrors": []
+    },
+    {
+      "id": "E09-import-negatives-and-public",
+      "stories": [
+        "US-05",
+        "US-06",
+        "US-25",
+        "US-08",
+        "US-11"
+      ],
+      "result": "PASS",
+      "ms": 12502,
+      "pageErrors": []
+    },
+    {
+      "id": "E10-brief-flow",
+      "stories": [
+        "US-02",
+        "US-03",
+        "US-04"
+      ],
+      "result": "PASS",
+      "ms": 718,
+      "pageErrors": []
+    },
+    {
+      "id": "E11-runs-simulation",
+      "stories": [
+        "US-07",
+        "US-08",
+        "US-09",
+        "US-10"
+      ],
+      "result": "PASS",
+      "ms": 1821,
+      "pageErrors": []
+    },
+    {
+      "id": "E12-keyboard-path",
+      "stories": [
+        "US-27",
+        "US-14",
+        "US-21"
+      ],
+      "result": "PASS",
+      "ms": 7318,
+      "pageErrors": []
+    },
+    {
+      "id": "E13-responsive-themes-screens",
+      "stories": [
+        "US-27"
+      ],
+      "result": "PASS",
+      "ms": 118223,
+      "pageErrors": []
+    },
+    {
+      "id": "E14-corrupt-history-and-delete",
+      "stories": [
+        "US-19",
+        "US-28"
+      ],
+      "result": "PASS",
+      "ms": 1060,
+      "pageErrors": []
+    },
+    {
+      "id": "E17-navigation-tour-tutorial",
+      "stories": [
+        "US-26",
+        "US-27"
+      ],
+      "result": "PASS",
+      "ms": 5947,
+      "pageErrors": []
+    },
+    {
+      "id": "E15-storage-denied-FX07",
+      "stories": [
+        "US-17",
+        "US-28",
+        "US-25"
+      ],
+      "result": "PASS",
+      "ms": 1277,
+      "pageErrors": []
+    },
+    {
+      "id": "E16-quota-FX09",
+      "stories": [
+        "US-28",
+        "US-17",
+        "US-25"
+      ],
+      "result": "PASS",
+      "ms": 1250,
+      "pageErrors": []
+    }
+  ],
+  "raw_evidence": "Run-local e2e directory; original Claude evidence unchanged. Only authored/sanitized summaries staged."
+}

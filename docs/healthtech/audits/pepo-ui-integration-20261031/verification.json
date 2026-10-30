@@ -1,0 +1,67 @@
+{
+  "status": "PASS_LOCAL_FILE_INTEGRATION_READY_FOR_PUBLICATION",
+  "main_before": "a0ec9ceaf381ebbce6e6c340a8b420189eb8474c",
+  "pr_head": "7ca0f2eab4a157d208fe0b9b949b83814e4fbcb2",
+  "checks": {
+    "backend": {
+      "collected": 476,
+      "passed": 475,
+      "skipped": 1,
+      "failed": 0,
+      "command": "rtk proxy python -B scripts/healthtech/verify_offline.py <fresh-private-output> --suite all"
+    },
+    "frontend_unit": {
+      "passed": 72,
+      "skipped": 0,
+      "failed": 0,
+      "command": "HEALTHTECH_PUBLIC_RUN_DIR=<existing-public-case> rtk proxy npm test"
+    },
+    "browser_acceptance": {
+      "passed": 17,
+      "failed": 0,
+      "page_errors": 0
+    },
+    "real_backend_browser": {
+      "passed": 3,
+      "failed": 0,
+      "command": "HEALTHTECH_BACKEND_CASES=<fresh-private-generated-cases> rtk proxy npm run test:integration"
+    },
+    "ux_docs": {
+      "passed": 8,
+      "command": "rtk proxy python docs/healthtech/ux/validate_docs.py --repo-root ."
+    },
+    "javascript_syntax": {
+      "passed_files": 40,
+      "command": "node --check <each JS/MJS file>"
+    },
+    "diff_check": "PASS"
+  },
+  "before_fix_regression": "New current-Python cross-language tests rejected sources[].rights and detected stale SourceRights/rights_summary schemas; both pass after regeneration.",
+  "initial_default_pytest": {
+    "exit_code": 1,
+    "passed": 257,
+    "skipped": 1,
+    "setup_errors": 216,
+    "reason": "sandbox pytest default temporary-root permissions",
+    "resolution": "fresh permitted basetemp; no ACL change"
+  },
+  "resolved_attempts": [
+    "Python preparation import root missing, corrected before final guard",
+    "Browser harness captured previous project ID before async import completion, corrected to require expected query ID",
+    "One exec process not created due transport disconnection; known-not-started retry succeeded",
+    "Intermediate unit documentation-link check ran before the new audit README existed; final 72/72 passes after creation"
+  ],
+  "mode": "local research/file import; no HTTP run/history service",
+  "remote_jobs": "NOT_RUN",
+  "new_dense_encoding": "NOT_RUN",
+  "actual_provider_calls": 0,
+  "api_cost_usd": 0,
+  "guarded_network_attempts": 0,
+  "credential_file_read_attempts": 0,
+  "existing_cumulative_openrouter_limit_usd": 8,
+  "budget_reset": false,
+  "unrelated_worktrees_modified": false,
+  "claude_branch_modified": false,
+  "deployment": "NOT_RUN",
+  "private_artifacts": "Owner-supplied canonical source dossiers and generated real dossiers/downloads remain in private local storage; source/output hashes are in backend-cases.json."
+}

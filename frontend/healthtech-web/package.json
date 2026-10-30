@@ -1,0 +1,16 @@
+{
+  "name": "healthtech-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Patent-to-Pilot HealthTech local TH/EN dossier frontend (no build step, no runtime dependencies).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node serve.mjs",
+    "test": "node --test \"tests/unit/*.test.mjs\"",
+    "test:e2e": "node tests/e2e/run-e2e.mjs",
+    "test:integration": "node tests/e2e/backend-integration.mjs"
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "package": "HT-W13-UX-DOCUMENTATION",
+  "status": "PASS",
+  "verified_at_utc": "2026-10-30T23:01:46.443053+00:00",
+  "checks": [
+    {
+      "check": "local_markdown_links",
+      "status": "PASS",
+      "detail": {
+        "local_links": 46,
+        "network_link_checks": "NOT_RUN (local-only scope)"
+      }
+    },
+    {
+      "check": "cross_document_ids_and_fixture_references",
+      "status": "PASS",
+      "detail": {
+        "J": 9,
+        "US": 28,
+        "SCR": 11,
+        "CMP": 14,
+        "ST": 15,
+        "CAP": 10,
+        "FX": 15
+      }
+    },
+    {
+      "check": "story_mapping_and_dependencies",
+      "status": "PASS",
+      "detail": {
+        "stories": 28,
+        "dependencies": "acyclic",
+        "acceptance": "Given/When/Then and HT mapping present"
+      }
+    },
+    {
+      "check": "fixture_envelope_json_schema",
+      "status": "PASS",
+      "detail": {
+        "envelope": "ux-fixtures-v1",
+        "scenarios": 15
+      }
+    },
+    {
+      "check": "embedded_dossiers_schema_pydantic_source_integrity",
+      "status": "PASS",
+      "detail": [
+        {
+          "payload": "synthetic_dossier",
+          "sources": 5,
+          "evidence": 3,
+          "candidates": 2
+        },
+        {
+          "payload": "empty_corpus_dossier",
+          "sources": 1,
+          "evidence": 1,
+          "candidates": 0
+        }
+      ]
+    },
+    {
+      "check": "hand_computable_negative_imports",
+      "status": "PASS",
+      "detail": [
+        {
+          "case": "payload_hash_mismatch",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "locator_mismatch",
+          "rejected_by": "ValueError"
+        },
+        {
+          "case": "source_revision_mismatch",
+          "rejected_by": "ValueError"
+        },
+        {
+          "case": "dangling_evidence_source",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "missing_disclosure",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "raw_canonical_mismatch",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "synthetic_presented_as_public",
+          "rejected_by": "AssertionError"
+        },
+        {
+          "case": "source_after_cutoff",
+          "rejected_by": "AssertionError"
+        },
+        {
+          "case": "candidate_revision_mismatch",
+          "rejected_by": "AssertionError"
+        },
+        {
+          "case": "unsourced_family",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "runtime_gold_extra_field",
+          "rejected_by": "closed_DossierInput"
+        }
+      ]
+    },
+    {
+      "check": "read_only_current_public_empty_pool_observation",
+      "status": "PASS",
+      "detail": [
+        {
+          "device_id": "K190167",
+          "status": "NOT_AVAILABLE_IN_THIS_CHECKOUT"
+        },
+        {
+          "device_id": "K163345",
+          "status": "NOT_AVAILABLE_IN_THIS_CHECKOUT"
+        },
+        {
+          "device_id": "K121849",
+          "status": "NOT_AVAILABLE_IN_THIS_CHECKOUT"
+        }
+      ]
+    },
+    {
+      "check": "proposed_theme_token_contrast",
+      "status": "PASS",
+      "detail": {
+        "token_pairs": [
+          {
+            "theme": "formal-light",
+            "pair": "text/canvas",
+            "ratio": 15.16,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "text/surface",
+            "ratio": 16.27,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "mutedText/canvas",
+            "ratio": 7.06,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "mutedText/surface",
+            "ratio": 7.58,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "onPrimary/primary",
+            "ratio": 10.72,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "focusRing/canvas",
+            "ratio": 5.94,
+            "minimum": 3
+          },
+          {
+            "theme": "formal-light",
+            "pair": "focusRing/surface",
+            "ratio": 6.38,
+            "minimum": 3
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "text/canvas",
+            "ratio": 15.93,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "text/surface",
+            "ratio": 13.89,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "mutedText/canvas",
+            "ratio": 10.61,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "mutedText/surface",
+            "ratio": 9.26,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "onPrimary/primary",
+            "ratio": 10.49,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "focusRing/canvas",
+            "ratio": 10.49,
+            "minimum": 3
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "focusRing/surface",
+            "ratio": 9.15,
+            "minimum": 3
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "text/canvas",
+            "ratio": 14.98,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "text/surface",
+            "ratio": 16.0,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "mutedText/canvas",
+            "ratio": 6.81,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "mutedText/surface",
+            "ratio": 7.28,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "onPrimary/primary",
+            "ratio": 7.05,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "focusRing/canvas",
+            "ratio": 6.6,
+            "minimum": 3
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "focusRing/surface",
+            "ratio": 7.05,
+            "minimum": 3
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "text/canvas",
+            "ratio": 13.36,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "text/surface",
+            "ratio": 14.29,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "mutedText/canvas",
+            "ratio": 6.58,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "mutedText/surface",
+            "ratio": 7.03,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "onPrimary/primary",
+            "ratio": 7.96,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "focusRing/canvas",
+            "ratio": 7.45,
+            "minimum": 3
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "focusRing/surface",
+            "ratio": 7.96,
+            "minimum": 3
+          }
+        ],
+        "scope": "proposed colors only; rendered UI/semantic states NOT_RUN"
+      }
+    }
+  ],
+  "source_fingerprints": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1f18ab28f7508a3f9479342ab11df18bf992ed3275699acf96d23eb8cf04da6b"
+    },
+    {
+      "path": "GOAL.md",
+      "sha256": "ddff924d0aab7b061d0b892e93fbabdd4dafbfb344e4ba08dcdffb370abd4545"
+    },
+    {
+      "path": "PLAN.md",
+      "sha256": "576334a392d9cc07e0ecfcd7df365da2c5b1eb039f7d22fda7b6284ce864817d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "79a05b7b9e35a19dbd592a506948eff7043fbd454088e9f97e5c71e20a7cdffd"
+    },
+    {
+      "path": "docs/healthtech/progress.json",
+      "sha256": "7f6ffdfb65e3fd944baf19b9fd466373f0594ff4a38ec10fc3fd47bce3fd398b"
+    },
+    {
+      "path": "memory/next-actions.md",
+      "sha256": "92e68e99fe1c11be677df909d663a09075faf84896b79c4beda3c2f61b616d56"
+    },
+    {
+      "path": "src/patent_to_pilot/product/contracts.py",
+      "sha256": "b253ccbeb91f0aa140c24752b5e7a8e0ec57213f9ef597f92fd5148613ce149d"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/contracts.py",
+      "sha256": "c708c9e647ed27ee762508f618d3baf5fb78ae1ed70b7c3a99ae6b161a2acd40"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/engine.py",
+      "sha256": "119c1589aea13417d73062043640af4465f6842b617740f4099387eeb16a5aae"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/history.py",
+      "sha256": "3d91e6e2cbae8ff58d3e15c4379d5a03040e074a44dd7d02bd2954d844a85971"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/provenance.py",
+      "sha256": "97a98e9b06ede7801fb337abe9037ef0de58055a95a7889ac7a0253ccf3087e7"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/sources.py",
+      "sha256": "fb5c71010e8df018012602063ef791a20f71c2f2e7b55b87a38b06830a45a0e3"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/api.py",
+      "sha256": "46d58c2eb279fd0b9b02bb1e40a5de4b06bf24925bf29113b1a18d70339c274a"
+    },
+    {
+      "path": "schemas/healthtech/DossierVersion.schema.json",
+      "sha256": "91c5b182f7a24f4826f83d64fac2b4c041ebf91e5e046b93de30b9142830db2f"
+    },
+    {
+      "path": "scripts/healthtech/run_dossier.py",
+      "sha256": "e9861b0f72561361cf1146f9523c8fcaae8000a77537a90ba2b69997fadb9f21"
+    },
+    {
+      "path": "scripts/healthtech/manage_dossier_history.py",
+      "sha256": "e196854c8979dd2cfd208e41463cc08a2ab507e634b6ff797889666d061d25a9"
+    },
+    {
+      "path": "scripts/healthtech/view_dossier_source.py",
+      "sha256": "eb7decba7d5f4a22a0a3074432fc289d9aaaa2bbba1293cfc1f5453211a07242"
+    },
+    {
+      "path": "scripts/healthtech/run_api_dry_run.py",
+      "sha256": "9498a42231d692f44455ffb4b8b64f7b5ee0f637c69a7819d532d7301ced8bfc"
+    }
+  ]
+}

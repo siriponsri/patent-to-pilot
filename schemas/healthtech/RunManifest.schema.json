@@ -165,6 +165,14 @@
       },
       "title": "Limitations",
       "type": "array"
+    },
+    "rights_summary": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Rights Summary",
+      "type": "array"
     }
   },
   "required": [

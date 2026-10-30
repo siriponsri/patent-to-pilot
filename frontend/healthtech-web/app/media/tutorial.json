@@ -1,0 +1,88 @@
+{
+  "format": "healthtech-web-tutorial",
+  "version": 1,
+  "durationSec": 56,
+  "videos": {
+    "th": "media/tutorial-th.mp4",
+    "en": "media/tutorial-en.mp4"
+  },
+  "posters": {
+    "th": "media/tutorial-th.jpg",
+    "en": "media/tutorial-en.jpg"
+  },
+  "chapterTracks": {
+    "th": "media/tutorial-th.chapters.vtt",
+    "en": "media/tutorial-en.chapters.vtt"
+  },
+  "note": {
+    "th": "ข้อมูลในวิดีโอเป็นข้อมูลสมมติ ไม่ใช่หลักฐานจริง · ไม่มีเสียงบรรยาย",
+    "en": "Synthetic demo data. Not real evidence. · No narration"
+  },
+  "chapters": [
+    {
+      "id": "step1",
+      "start": 0,
+      "end": 13,
+      "th": {
+        "title": "โหลด — เปิดแฟ้มตัวอย่าง",
+        "body": "เปิดแฟ้มตัวอย่างแล้วดูระบบเริ่มตรวจ"
+      },
+      "en": {
+        "title": "Load — Open the demo dossier",
+        "body": "Open the demo and watch checks start"
+      }
+    },
+    {
+      "id": "step2",
+      "start": 13,
+      "end": 22,
+      "th": {
+        "title": "ตรวจ — ดูการตรวจทำงานจริง",
+        "body": "โหนดแต่ละขั้นตรวจ hash และตำแหน่งอ้างอิงจริง"
+      },
+      "en": {
+        "title": "Check — Watch real checks run",
+        "body": "Each node verifies hashes and locators for real"
+      }
+    },
+    {
+      "id": "step3",
+      "start": 22,
+      "end": 33,
+      "th": {
+        "title": "ทบทวน — ลากหลักฐานไปจดบันทึก",
+        "body": "ลากการ์ดหลักฐานไปที่การทบทวนแล้วจดบันทึก"
+      },
+      "en": {
+        "title": "Review — Drag evidence into a note",
+        "body": "Drag an evidence card to Review and write a note"
+      }
+    },
+    {
+      "id": "step4",
+      "start": 33,
+      "end": 42,
+      "th": {
+        "title": "ถามต่อ — เตรียมคำถามที่ต้องขอเพิ่ม",
+        "body": "ลากประเด็นที่ยังค้างไปเป็นคำขอข้อมูล"
+      },
+      "en": {
+        "title": "Ask — Draft what to ask next",
+        "body": "Turn an open issue into an information request"
+      }
+    },
+    {
+      "id": "step5",
+      "start": 42,
+      "end": 56,
+      "th": {
+        "title": "ส่งออก — ส่งออกรายงานไทยหรืออังกฤษ",
+        "body": "ดูตัวอย่างแล้วดาวน์โหลดรายงาน"
+      },
+      "en": {
+        "title": "Export — Export a Thai or English report",
+        "body": "Preview and download the report"
+      }
+    }
+  ]
+}

@@ -1,0 +1,504 @@
+{
+  "generatedAt": "2026-10-30T18:03:40.480Z",
+  "command": "npm run test:e2e (frontend/healthtech-web)",
+  "candidate": {
+    "branch": "claude/healthtech-ux-local-20261028",
+    "head": "3d58ca8486801127e3d9888529ebea322ab5b854",
+    "dirtyFrontend": false
+  },
+  "browser": {
+    "product": "Chrome/156.0.8078.74",
+    "executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "headless": true
+  },
+  "node": "v24.19.0",
+  "profile": "fresh temporary Chrome profile (deleted after run); real IndexedDB",
+  "publicRunDir": "C:\\Users\\User\\Desktop\\myProject\\patent-to-pilot\\results\\healthtech\\public-dossiers-20261027-r3\\K190167",
+  "totals": {
+    "pass": 17,
+    "fail": 0
+  },
+  "results": [
+    {
+      "id": "E01-home-capabilities",
+      "stories": [
+        "US-01",
+        "US-26",
+        "US-28"
+      ],
+      "result": "PASS",
+      "ms": 7618,
+      "details": {
+        "starts": true,
+        "email": 0,
+        "caps": "สิ่งที่รุ่นนี้ทำได้ตัวเชื่อมข้อมูล: healthtech-web-local 0.1.0ใช้ได้ บันทึกเวอร์ชันในเบราว์เซอร์นี้ใช้ได้ ส่งออกไฟล์ JSON กู้คืนใช้ได้ ส่งออก Markdown ที่รวมข้อความที่แก้ (จากแอปนี้)ยังใช้ไม่ได้ เริ่มการค้นรอบใหม่ — ยังไม่มีบริการรันงาน โมดูล api.py ของ HealthTech เป็นเพียงจุดเชื่อมแบบ dry-run/mock ไม่ใช่บริการ HTTP โปรดนำเข้าผลจาก CLI ที่รันเสร็จแล้วแทนยังใช้ไม่ได้ หยุด / ทำต่อ / ลองใหม่ ในรอบงานจริง — ยังไม่มีบริการรันงาน โมดูล api.py ของ HealthTech เป็นเพียงจุดเชื่อมแบบ dry-run/mock ไม่ใช่บริการ HTTP โปรดนำเข้าผลจาก CLI ที่รันเสร็จแล้วแทนยังใช้ไม่ได้ ประวัติร่วมบนเซิร์ฟเวอร์ — ประวัติแบบไฟล์ที่ผ่านการตรวจสอบ (audit) อาจทำข้อความที่แก้พร้อมกันหายได้ จึงไม่นำมาใช้ยังใช้ไม่ได้ ส่งออก PDF / DOCX — ยังไม่ได้พัฒนายังใช้ไม่ได้ แชร์กับทีม / เชิญผู้ร่วมงาน — ส่งต่อได้ด้วยการดาวน์โหลดไฟล์เท่านั้นยังใช้ไม่ได้ การเก็บสถิติการใช้งาน — ระบบไม่เก็บข้อมูลการใช้งาน",
+        "scope": "indexeddb",
+        "lang": "th"
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E02-demo-overview",
+      "stories": [
+        "US-11",
+        "US-15",
+        "US-26"
+      ],
+      "result": "PASS",
+      "ms": 10995,
+      "details": {
+        "projectId": "proj-mvva2jjo-cb0wqxem3cet",
+        "mode": "synthetic_demo",
+        "banner": "ตัวอย่างข้อมูลสมมติสำหรับตรวจการทำงานของระบบ ข้อมูลสมมติที่ทีมเขียนขึ้น ไม่ใช่หลักฐานจริงของอุปกรณ์ สิทธิบัตร หรือการเปิดเผยข้อมูล",
+        "statuses": [
+          "retrieved_candidate",
+          "disclosed_link"
+        ],
+        "approved": false
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E03-source-viewer-locators",
+      "stories": [
+        "US-14",
+        "US-15",
+        "US-25"
+      ],
+      "result": "PASS",
+      "ms": 8999,
+      "details": {
+        "span": "🙂",
+        "codepoints": true,
+        "fx12": {
+          "code": "span_mismatch",
+          "span": false,
+          "matched": false,
+          "locatorKept": true
+        },
+        "field": "\"SYNTHETIC demonstration comparator\"",
+        "discHref": "#/project/proj-mvva2jjo-cb0wqxem3cet/source/ux-synthetic-independent-disclosure?evidenceId=ux-e-disclosure",
+        "tabState": {
+          "selected": "tab-candidates",
+          "focus": "tab-candidates",
+          "panel": "tab-candidates",
+          "stops": 1
+        },
+        "feature": {
+          "before": "ยังหาข้อสรุปไม่ได้ ยังไม่มีหลักฐานเชื่อมโยง (ไม่ได้แปลว่าขัดแย้งหรือเป็นศูนย์)",
+          "after": "เชื่อมโยงโดยคุณ ระบบไม่ได้ตรวจยืนยัน"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E04-save-close-reopen",
+      "stories": [
+        "US-16",
+        "US-17",
+        "US-19",
+        "US-20"
+      ],
+      "result": "PASS",
+      "ms": 2755,
+      "details": {
+        "before": "snap-mvva2jjp-8sq8ybvz2n02",
+        "saved": "snap-mvva2zzq-13ggixi1ejrsux",
+        "reopened": {
+          "text": "บันทึกผู้ใช้ทดสอบ: ต้องขอเอกสารเปิดเผยที่ลงวันที่จริง 🙂",
+          "snap": "snap-mvva2zzq-13ggixi1ejrsux",
+          "status": "saved",
+          "hash": "287757968b8d3b879cb64ecd62ec5a9ed28fd2bbdb08d86905cc6aebdd375e50",
+          "backendVersion": 1,
+          "srcPayload": "SYNTHETIC demonstration comparator"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E05-two-writer-conflict",
+      "stories": [
+        "US-18",
+        "US-19"
+      ],
+      "result": "PASS",
+      "ms": 2523,
+      "details": {
+        "firstConflict": {
+          "before": "snap-mvva2zzq-13ggixi1ejrsux",
+          "winner": "snap-mvva31ir-iwfhca94io0b",
+          "merged": "snap-mvva31t4-6fd86k10vejiz"
+        },
+        "race": {
+          "states": [
+            "conflict",
+            "saved"
+          ],
+          "before": "snap-mvva31t4-6fd86k10vejiz",
+          "after": "snap-mvva32n5-74784oahuds2",
+          "finalTexts": [
+            "ยังต้องขอหลักฐานเพิ่มเติม / Request more evidence",
+            "RACE_B",
+            "EDIT_FROM_TAB_B",
+            "RACE_A"
+          ]
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E06-requests-and-locale-theme",
+      "stories": [
+        "US-23",
+        "US-27",
+        "US-20"
+      ],
+      "result": "PASS",
+      "ms": 1327,
+      "details": {
+        "afterLocale": {
+          "lang": "en",
+          "focus": "pref-locale",
+          "text": "ขอเอกสารเปิดเผยที่ลงวันที่ / Request a dated disclosure",
+          "h1": "Next information requests"
+        },
+        "themes": [
+          {
+            "theme": "formal-dark",
+            "bg": "rgb(11, 18, 32)",
+            "text": 55
+          },
+          {
+            "theme": "kmitl-inspired",
+            "bg": "rgb(250, 247, 243)",
+            "text": 55
+          },
+          {
+            "theme": "ict-inspired",
+            "bg": "rgb(244, 248, 249)",
+            "text": 55
+          },
+          {
+            "theme": "formal-light",
+            "bg": "rgb(245, 247, 250)",
+            "text": 55
+          }
+        ]
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E07-export-th-en-and-recovery-roundtrip",
+      "stories": [
+        "US-21",
+        "US-22",
+        "US-24"
+      ],
+      "result": "PASS",
+      "ms": 4862,
+      "details": {
+        "status": "Download started: UX-DEMO-001-recovery.json",
+        "mdBytes": {
+          "th": 5646,
+          "en": 5379
+        },
+        "recoveryBytes": 12133,
+        "reimportedProject": "proj-mvva36w1-14q83iu1hriy3e"
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E08-safe-rendering",
+      "stories": [
+        "US-22",
+        "US-25"
+      ],
+      "result": "PASS",
+      "ms": 1557,
+      "details": {
+        "pwned": null,
+        "scripts": 0,
+        "preview": true,
+        "noteInert": true
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E09-import-negatives-and-public",
+      "stories": [
+        "US-05",
+        "US-06",
+        "US-25",
+        "US-08",
+        "US-11"
+      ],
+      "result": "PASS",
+      "ms": 12751,
+      "details": {
+        "rejected": [
+          {
+            "name": "hash mismatch",
+            "expected": "source_hash_mismatch",
+            "result": "rejected",
+            "codes": [
+              "source_hash_mismatch",
+              "hash_mismatch"
+            ]
+          },
+          {
+            "name": "FX-06 missing comparator source",
+            "expected": "dangling_source",
+            "result": "rejected",
+            "codes": [
+              "dangling_source",
+              "dangling_source"
+            ]
+          },
+          {
+            "name": "missing disclosure",
+            "expected": "missing_disclosure",
+            "result": "rejected",
+            "codes": [
+              "missing_disclosure"
+            ]
+          },
+          {
+            "name": "late source",
+            "expected": "late_source",
+            "result": "rejected",
+            "codes": [
+              "late_source",
+              "late_source",
+              "late_source",
+              "late_source",
+              "late_source"
+            ]
+          },
+          {
+            "name": "synthetic as public (mixed)",
+            "expected": "synthetic_in_public",
+            "result": "rejected",
+            "codes": [
+              "synthetic_in_public",
+              "synthetic_in_public",
+              "synthetic_in_public",
+              "synthetic_in_public",
+              "synthetic_in_public"
+            ]
+          },
+          {
+            "name": "wrong mode recovery",
+            "expected": "wrong_mode",
+            "result": "rejected",
+            "codes": [
+              "wrong_mode"
+            ]
+          },
+          {
+            "name": "unsupported schema",
+            "expected": "unsupported_schema",
+            "result": "rejected",
+            "codes": [
+              "unsupported_schema"
+            ]
+          },
+          {
+            "name": "unsupported type",
+            "expected": "unsupported_type",
+            "result": "rejected",
+            "codes": [
+              "unsupported_type"
+            ]
+          },
+          {
+            "name": "too large",
+            "expected": "too_large",
+            "result": "rejected",
+            "codes": [
+              "too_large"
+            ]
+          }
+        ],
+        "publicRun": {
+          "projectId": "proj-mvva3ifb-1l85lbzcrkwh0",
+          "mode": "imported_public",
+          "scope": "empty_corpus",
+          "run": {
+            "consistent": "true",
+            "simButtons": false,
+            "startButtons": 0
+          }
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E10-brief-flow",
+      "stories": [
+        "US-02",
+        "US-03",
+        "US-04"
+      ],
+      "result": "PASS",
+      "ms": 1257,
+      "details": {
+        "results": 5,
+        "query": "WEB-DRAFT-unsaved",
+        "draftPid": "proj-mvva3j8e-1q1mgrm1kpdskl"
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E11-runs-simulation",
+      "stories": [
+        "US-07",
+        "US-08",
+        "US-09",
+        "US-10"
+      ],
+      "result": "PASS",
+      "ms": 2038,
+      "details": {
+        "pending": "pending",
+        "partial": true
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E12-keyboard-path",
+      "stories": [
+        "US-27",
+        "US-14",
+        "US-21"
+      ],
+      "result": "PASS",
+      "ms": 8786,
+      "details": {
+        "firstStop": "skip-link",
+        "focusOutline": "solid",
+        "focusRestoredTo": "row-ux-e-unicode"
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E13-responsive-themes-screens",
+      "stories": [
+        "US-27"
+      ],
+      "result": "PASS",
+      "ms": 120615,
+      "details": {
+        "screenshots": 17,
+        "widths": [
+          320,
+          768,
+          1280
+        ],
+        "note": "320 CSS px approximates 400% zoom of 1280; 640 is not separately measured"
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E14-corrupt-history-and-delete",
+      "stories": [
+        "US-19",
+        "US-28"
+      ],
+      "result": "PASS",
+      "ms": 1782,
+      "details": {
+        "emptyScope": "unknown",
+        "corrupt": "readonly",
+        "recoveryOmissions": [
+          "history_corrupt: snapshot snap-corrupt cites missing parent snap-missing; snapshot lineage omitted"
+        ],
+        "deleteMessage": "Delete only the local browser copy of “UX-DEMO-001 empty corpus (synthetic)” (2 snapshots)? Imported original files and other projects are not touched. Download a recovery file first if you may need it.",
+        "remaining": 4
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E17-navigation-tour-tutorial",
+      "stories": [
+        "US-26",
+        "US-27"
+      ],
+      "result": "PASS",
+      "ms": 6865,
+      "details": {
+        "journey": {
+          "current": "jstep-review",
+          "done": [
+            "true",
+            "true",
+            "true",
+            "true",
+            "false"
+          ],
+          "crumbs": [
+            "Home",
+            "UX-DEMO-001",
+            "Overview"
+          ],
+          "next": "#/project/proj-mvva2jjo-cb0wqxem3cet/export"
+        },
+        "tour": {
+          "t1": {
+            "title": "Your five steps",
+            "focus": "tour-title",
+            "count": "Step 1 of 9"
+          },
+          "t3": {
+            "step": "node",
+            "spot": true
+          },
+          "after": {
+            "open": false,
+            "focus": "tour-start"
+          }
+        },
+        "tutorial": {
+          "chapters": 5,
+          "video": true,
+          "missing": false,
+          "seek": {
+            "t": 22,
+            "start": 22,
+            "dur": 56
+          }
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E15-storage-denied-FX07",
+      "stories": [
+        "US-17",
+        "US-28",
+        "US-25"
+      ],
+      "result": "PASS",
+      "ms": 1283,
+      "details": {
+        "scope": "memory",
+        "label": "ข้อมูลยังอยู่เฉพาะแท็บนี้ โปรดดาวน์โหลดไฟล์กู้คืน"
+      },
+      "pageErrors": []
+    },
+    {
+      "id": "E16-quota-FX09",
+      "stories": [
+        "US-28",
+        "US-17",
+        "US-25"
+      ],
+      "result": "PASS",
+      "ms": 1295,
+      "details": {
+        "state": "quota",
+        "storedSnapshots": 1
+      },
+      "pageErrors": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "PASS_CURRENT_BACKEND_LOCAL_CASES",
+  "generated_at": "2026-10-30T22:56:29.136741+00:00",
+  "cases": [
+    {
+      "query_id": "HT-DEV-MITRACLIP",
+      "source_dossier_sha256": "9b90199ecc3be1f227225bde50ec5f87e2552a202f4dd4a114e0da4ea152ead5",
+      "dossier_sha256": "2f3a2f5e011717e22c1d4988010492e81380f0945de15fa1bd18adf96b8349c1",
+      "patent_inputs": 41,
+      "candidates": 35,
+      "disclosed_links": 21,
+      "history_versions": [
+        1,
+        2
+      ],
+      "events": 2,
+      "search_calls": 1,
+      "product_display": "BLOCKED_EXPECTED_LOCAL_RESEARCH_ONLY"
+    },
+    {
+      "query_id": "HT-DEV-TENDYNE",
+      "source_dossier_sha256": "714e186fcf219b193a7963be2b031c453fe08278c0d49caae0b7984b1b77264c",
+      "dossier_sha256": "7bdfe6e7132258b3ca2bc0d644ef1cded5b4aa419bba2da86793df1dfff0d11f",
+      "patent_inputs": 41,
+      "candidates": 20,
+      "disclosed_links": 17,
+      "history_versions": [
+        1,
+        2
+      ],
+      "events": 2,
+      "search_calls": 1,
+      "product_display": "BLOCKED_EXPECTED_LOCAL_RESEARCH_ONLY"
+    },
+    {
+      "query_id": "HT-DEV-TRICLIP",
+      "source_dossier_sha256": "2bc18de76a2a3643a79f4a210e9af0f3361fcb2482d980b82f27473441acba00",
+      "dossier_sha256": "2d4cb46ddbd99a5eb6f42b70fd12c2d441c5678a29e5b1997d4bec610bd6d791",
+      "patent_inputs": 41,
+      "candidates": 28,
+      "disclosed_links": 23,
+      "history_versions": [
+        1,
+        2
+      ],
+      "events": 2,
+      "search_calls": 1,
+      "product_display": "BLOCKED_EXPECTED_LOCAL_RESEARCH_ONLY"
+    }
+  ],
+  "provider_calls": 0,
+  "paid_cost_usd": 0,
+  "retrieval": "current offline lexical backend; original patent IDs used as title labels; no new dense encoding or scientific comparison"
+}

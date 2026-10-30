@@ -173,8 +173,8 @@
     },
     {
       "id": "HT-W13",
-      "status": "PLANNED",
-      "evidence": "no no-code interface implemented"
+      "status": "PASS_LOCAL_FILE_UI_BACKEND_INTEGRATION",
+      "evidence": "docs/healthtech/audits/pepo-ui-integration-20261031/README.md; current backend schema/dossier import, IndexedDB notes/save/reopen and edited TH/EN exports verified; HTTP run/history service remains unavailable"
     },
     {
       "id": "HT-W16",
@@ -540,5 +540,8 @@
   "latest_remote_embeddings_eval_status": "PASS_LOCAL_MATCHED_EVAL_RUNNER_SMOKE_REMOTE_NOT_RUN",
   "latest_luna_merge_audit": "docs/healthtech/audits/luna-main-merge-20261030/README.md",
   "latest_luna_merge_status": "PASS_LUNA_ANCESTOR_VERIFIED",
-  "latest_luna_merge_base": "a34a228891332d27ec34112a68a02666507f3ddb"
+  "latest_luna_merge_base": "a34a228891332d27ec34112a68a02666507f3ddb",
+  "latest_ui_backend_integration_audit": "docs/healthtech/audits/pepo-ui-integration-20261031/README.md",
+  "latest_ui_backend_integration_status": "PASS_LOCAL_FILE_INTEGRATION",
+  "latest_ui_backend_integration_publication_receipt": "docs/healthtech/audits/pepo-ui-integration-20261031/MERGE_RECEIPT.json"
 }
