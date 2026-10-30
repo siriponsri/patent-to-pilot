@@ -3,7 +3,7 @@
 - Run ID: `luna-long-run-20261030-m41-g5-pilot-analysis-20261030`
 - Date: `2026-10-30` (Asia/Bangkok local execution)
 - Parent evidence: `docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/`
-- Tested working-tree base: `e7dc58142998983c4229dc43b2214ed35dfec5bf`
+- Implementation/tested code commit: `65386b72404d3b4b0b3b67a72bcb6ef06003a4b5`
 - Status: `PASS_G5_PILOT_ANALYSIS_ENGINEERING_ONLY`
 
 ## Scope
