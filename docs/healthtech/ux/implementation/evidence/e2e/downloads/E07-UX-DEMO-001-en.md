@@ -8,7 +8,7 @@
 |---|---|
 | Device (raw / canonical) | UX-DEMO-001 (synthetic) / UX-DEMO-001 |
 | Dossier ID / backend version | ux-synthetic-dossier / 1 |
-| Local snapshot | snap-mvv1mujt-uvvwef3jl2v4 (acknowledged save in this browser) |
+| Local snapshot | snap-mvva3409-1a5nzj916pz28s (acknowledged save in this browser) |
 | Mode | synthetic_demo — Synthetic engineering example |
 | Evidence cutoff | 2026-10-27 |
 | Jurisdiction | US |
@@ -62,15 +62,15 @@ _Not a freedom-to-operate, validity, clinical or investment conclusion._
 
 > ยังต้องขอหลักฐานเพิ่มเติม / Request more evidence
 
-### note-mvv1mmkv-178asv3ghzv1d — about dossier (review marker: Reviewed by me (user review only))
+### note-mvva2z5g-1a6jnsd1cvn4jb — about dossier (review marker: Reviewed by me (user review only))
 
 > RACE_B
 
-### note-mvv1msjf-6zoz6n50mmxm — about dossier (review marker: Reviewed by me (user review only))
+### note-mvva31t4-1ycyjmf17ud119 — about dossier (review marker: Reviewed by me (user review only))
 
 > EDIT_FROM_TAB_B
 
-### note-mvv1mtil-upnt3w1qlri8a — about dossier (review marker: Reviewed by me (user review only))
+### note-mvva32xy-1ndi97n1sbnwsa — about dossier (review marker: Reviewed by me (user review only))
 
 > RACE_A
 

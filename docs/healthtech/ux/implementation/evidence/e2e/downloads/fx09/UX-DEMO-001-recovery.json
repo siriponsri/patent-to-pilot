@@ -5,20 +5,20 @@
     "id": "healthtech-web-recovery",
     "version": "1.0.0"
   },
-  "generatedAt": "2026-10-30T14:04:52.113Z",
+  "generatedAt": "2026-10-30T18:03:39.595Z",
   "mode": "synthetic_demo",
   "project": {
-    "localProjectId": "proj-mvv1njhm-15qfnf7s7zf0q",
+    "localProjectId": "proj-mvva6mgb-fwuu9d16a4u70",
     "title": "UX-DEMO-001 (synthetic)",
     "storageScope": "indexeddb"
   },
   "snapshot": {
     "snapshotId": null,
-    "parentSnapshotId": "snap-mvv1njho-1ctblgs1h5i5e5",
+    "parentSnapshotId": "snap-mvva6mgd-1fujoay72o8sn",
     "savedAt": null,
     "acknowledged": false,
     "lineage": [
-      "snap-mvv1njho-1ctblgs1h5i5e5"
+      "snap-mvva6mgd-1fujoay72o8sn"
     ]
   },
   "backendDossierVersion": 1,
@@ -284,7 +284,7 @@
         "reviewMarker": "needs_clarification"
       },
       {
-        "noteId": "note-mvv1njkx-10qikf616odwbv",
+        "noteId": "note-mvva6mn6-1pu9q3bln0387",
         "targetRef": "dossier",
         "baseDossierVersion": 1,
         "text": "QUOTA_RECOVERY_NOTE",

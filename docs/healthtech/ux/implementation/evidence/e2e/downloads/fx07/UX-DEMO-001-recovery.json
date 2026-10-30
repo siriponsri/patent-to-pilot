@@ -5,21 +5,21 @@
     "id": "healthtech-web-recovery",
     "version": "1.0.0"
   },
-  "generatedAt": "2026-10-30T14:04:50.186Z",
+  "generatedAt": "2026-10-30T18:03:37.179Z",
   "mode": "synthetic_demo",
   "project": {
-    "localProjectId": "proj-mvv1ni15-18qu5fkn8k32x",
+    "localProjectId": "proj-mvva6ko0-17e2u0z1kdy4mf",
     "title": "UX-DEMO-001 (synthetic)",
     "storageScope": "memory"
   },
   "snapshot": {
-    "snapshotId": "snap-mvv1ni4k-w7qioqhb28le",
-    "parentSnapshotId": "snap-mvv1ni16-1sug90v19u1dyw",
-    "savedAt": "2026-10-30T14:04:50.180Z",
+    "snapshotId": "snap-mvva6kwh-5j82l4oznv40",
+    "parentSnapshotId": "snap-mvva6ko1-3jihygwf0omy",
+    "savedAt": "2026-10-30T18:03:37.169Z",
     "acknowledged": false,
     "lineage": [
-      "snap-mvv1ni4k-w7qioqhb28le",
-      "snap-mvv1ni16-1sug90v19u1dyw"
+      "snap-mvva6kwh-5j82l4oznv40",
+      "snap-mvva6ko1-3jihygwf0omy"
     ]
   },
   "backendDossierVersion": 1,
@@ -285,7 +285,7 @@
         "reviewMarker": "needs_clarification"
       },
       {
-        "noteId": "note-mvv1ni3t-9jtvpvplfcdl",
+        "noteId": "note-mvva6kuz-2s1pvu6jdcr",
         "targetRef": "dossier",
         "baseDossierVersion": 1,
         "text": "LOCAL_UNSAVED_NOTE",

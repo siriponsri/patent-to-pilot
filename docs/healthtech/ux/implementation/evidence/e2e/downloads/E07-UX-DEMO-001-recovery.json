@@ -5,21 +5,21 @@
     "id": "healthtech-web-recovery",
     "version": "1.0.0"
   },
-  "generatedAt": "2026-10-30T14:04:21.299Z",
+  "generatedAt": "2026-10-30T18:00:56.974Z",
   "mode": "synthetic_demo",
   "project": {
-    "localProjectId": "proj-mvv1mld8-1kk2n88yvn6sy",
+    "localProjectId": "proj-mvva2jjo-cb0wqxem3cet",
     "title": "UX-DEMO-001 (synthetic)",
     "storageScope": "indexeddb"
   },
   "snapshot": {
-    "snapshotId": "snap-mvv1mujt-uvvwef3jl2v4",
-    "parentSnapshotId": "snap-mvv1mtil-1gn8ibi1libayo",
-    "savedAt": "2026-10-30T14:04:19.625Z",
+    "snapshotId": "snap-mvva3409-1a5nzj916pz28s",
+    "parentSnapshotId": "snap-mvva32xy-8r4ou313rj0w4",
+    "savedAt": "2026-10-30T18:00:55.305Z",
     "acknowledged": true,
     "lineage": [
-      "snap-mvv1mujt-uvvwef3jl2v4",
-      "snap-mvv1mtil-1gn8ibi1libayo"
+      "snap-mvva3409-1a5nzj916pz28s",
+      "snap-mvva32xy-8r4ou313rj0w4"
     ]
   },
   "backendDossierVersion": 1,
@@ -285,7 +285,7 @@
         "reviewMarker": "needs_clarification"
       },
       {
-        "noteId": "note-mvv1mmkv-178asv3ghzv1d",
+        "noteId": "note-mvva2z5g-1a6jnsd1cvn4jb",
         "targetRef": "dossier",
         "baseDossierVersion": 1,
         "text": "RACE_B",
@@ -293,7 +293,7 @@
         "reviewMarker": "reviewed_by_user"
       },
       {
-        "noteId": "note-mvv1msjf-6zoz6n50mmxm",
+        "noteId": "note-mvva31t4-1ycyjmf17ud119",
         "targetRef": "dossier",
         "baseDossierVersion": 1,
         "text": "EDIT_FROM_TAB_B",
@@ -301,7 +301,7 @@
         "reviewMarker": "reviewed_by_user"
       },
       {
-        "noteId": "note-mvv1mtil-upnt3w1qlri8a",
+        "noteId": "note-mvva32xy-1ndi97n1sbnwsa",
         "targetRef": "dossier",
         "baseDossierVersion": 1,
         "text": "RACE_A",
@@ -330,7 +330,7 @@
         "status": "draft"
       },
       {
-        "requestId": "request-mvv1mtre-5wc80c6ptocj",
+        "requestId": "request-mvva3377-1p7l6901f007ir",
         "question": "ขอเอกสารเปิดเผยที่ลงวันที่ / Request a dated disclosure",
         "evidenceRefs": [],
         "priority": "normal",

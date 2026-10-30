@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-30T14:04:53.737Z",
+  "generatedAt": "2026-10-30T18:03:40.480Z",
   "command": "npm run test:e2e (frontend/healthtech-web)",
   "candidate": {
     "branch": "claude/healthtech-ux-local-20261028",
-    "head": "cc736b1c5470cd5b07b0d756302ed688e5679bd0",
+    "head": "3d58ca8486801127e3d9888529ebea322ab5b854",
     "dirtyFrontend": false
   },
   "browser": {
@@ -15,7 +15,7 @@
   "profile": "fresh temporary Chrome profile (deleted after run); real IndexedDB",
   "publicRunDir": "C:\\Users\\User\\Desktop\\myProject\\patent-to-pilot\\results\\healthtech\\public-dossiers-20261027-r3\\K190167",
   "totals": {
-    "pass": 16,
+    "pass": 17,
     "fail": 0
   },
   "results": [
@@ -27,7 +27,7 @@
         "US-28"
       ],
       "result": "PASS",
-      "ms": 476,
+      "ms": 7618,
       "details": {
         "starts": true,
         "email": 0,
@@ -45,9 +45,9 @@
         "US-26"
       ],
       "result": "PASS",
-      "ms": 261,
+      "ms": 10995,
       "details": {
-        "projectId": "proj-mvv1mld8-1kk2n88yvn6sy",
+        "projectId": "proj-mvva2jjo-cb0wqxem3cet",
         "mode": "synthetic_demo",
         "banner": "ตัวอย่างข้อมูลสมมติสำหรับตรวจการทำงานของระบบ ข้อมูลสมมติที่ทีมเขียนขึ้น ไม่ใช่หลักฐานจริงของอุปกรณ์ สิทธิบัตร หรือการเปิดเผยข้อมูล",
         "statuses": [
@@ -66,7 +66,7 @@
         "US-25"
       ],
       "result": "PASS",
-      "ms": 1152,
+      "ms": 8999,
       "details": {
         "span": "🙂",
         "codepoints": true,
@@ -77,7 +77,7 @@
           "locatorKept": true
         },
         "field": "\"SYNTHETIC demonstration comparator\"",
-        "discHref": "#/project/proj-mvv1mld8-1kk2n88yvn6sy/source/ux-synthetic-independent-disclosure?evidenceId=ux-e-disclosure",
+        "discHref": "#/project/proj-mvva2jjo-cb0wqxem3cet/source/ux-synthetic-independent-disclosure?evidenceId=ux-e-disclosure",
         "tabState": {
           "selected": "tab-candidates",
           "focus": "tab-candidates",
@@ -100,13 +100,13 @@
         "US-20"
       ],
       "result": "PASS",
-      "ms": 2688,
+      "ms": 2755,
       "details": {
-        "before": "snap-mvv1mld9-12jv8hrf5cf5h",
-        "saved": "snap-mvv1mndw-1967c2p1o1lrji",
+        "before": "snap-mvva2jjp-8sq8ybvz2n02",
+        "saved": "snap-mvva2zzq-13ggixi1ejrsux",
         "reopened": {
           "text": "บันทึกผู้ใช้ทดสอบ: ต้องขอเอกสารเปิดเผยที่ลงวันที่จริง 🙂",
-          "snap": "snap-mvv1mndw-1967c2p1o1lrji",
+          "snap": "snap-mvva2zzq-13ggixi1ejrsux",
           "status": "saved",
           "hash": "287757968b8d3b879cb64ecd62ec5a9ed28fd2bbdb08d86905cc6aebdd375e50",
           "backendVersion": 1,
@@ -122,20 +122,20 @@
         "US-19"
       ],
       "result": "PASS",
-      "ms": 6583,
+      "ms": 2523,
       "details": {
         "firstConflict": {
-          "before": "snap-mvv1mndw-1967c2p1o1lrji",
-          "winner": "snap-mvv1ms7e-161ljxgg909nf",
-          "merged": "snap-mvv1msjf-1clb28b1hr7tfm"
+          "before": "snap-mvva2zzq-13ggixi1ejrsux",
+          "winner": "snap-mvva31ir-iwfhca94io0b",
+          "merged": "snap-mvva31t4-6fd86k10vejiz"
         },
         "race": {
           "states": [
             "conflict",
             "saved"
           ],
-          "before": "snap-mvv1msjf-1clb28b1hr7tfm",
-          "after": "snap-mvv1mspy-nxgl3lj73i5o",
+          "before": "snap-mvva31t4-6fd86k10vejiz",
+          "after": "snap-mvva32n5-74784oahuds2",
           "finalTexts": [
             "ยังต้องขอหลักฐานเพิ่มเติม / Request more evidence",
             "RACE_B",
@@ -154,7 +154,7 @@
         "US-20"
       ],
       "result": "PASS",
-      "ms": 1335,
+      "ms": 1327,
       "details": {
         "afterLocale": {
           "lang": "en",
@@ -195,15 +195,15 @@
         "US-24"
       ],
       "result": "PASS",
-      "ms": 3108,
+      "ms": 4862,
       "details": {
         "status": "Download started: UX-DEMO-001-recovery.json",
         "mdBytes": {
-          "th": 5640,
-          "en": 5373
+          "th": 5646,
+          "en": 5379
         },
-        "recoveryBytes": 12126,
-        "reimportedProject": "proj-mvv1mw8f-sha1a21cpllg1"
+        "recoveryBytes": 12133,
+        "reimportedProject": "proj-mvva36w1-14q83iu1hriy3e"
       },
       "pageErrors": []
     },
@@ -214,7 +214,7 @@
         "US-25"
       ],
       "result": "PASS",
-      "ms": 1525,
+      "ms": 1557,
       "details": {
         "pwned": null,
         "scripts": 0,
@@ -233,7 +233,7 @@
         "US-11"
       ],
       "result": "PASS",
-      "ms": 3039,
+      "ms": 12751,
       "details": {
         "rejected": [
           {
@@ -320,7 +320,7 @@
           }
         ],
         "publicRun": {
-          "projectId": "proj-mvv1n08h-pzjx75ms37bw",
+          "projectId": "proj-mvva3ifb-1l85lbzcrkwh0",
           "mode": "imported_public",
           "scope": "empty_corpus",
           "run": {
@@ -340,11 +340,11 @@
         "US-04"
       ],
       "result": "PASS",
-      "ms": 1157,
+      "ms": 1257,
       "details": {
         "results": 5,
         "query": "WEB-DRAFT-unsaved",
-        "draftPid": "proj-mvv1n0vx-g5vfivygsrt"
+        "draftPid": "proj-mvva3j8e-1q1mgrm1kpdskl"
       },
       "pageErrors": []
     },
@@ -357,7 +357,7 @@
         "US-10"
       ],
       "result": "PASS",
-      "ms": 1889,
+      "ms": 2038,
       "details": {
         "pending": "pending",
         "partial": true
@@ -372,7 +372,7 @@
         "US-21"
       ],
       "result": "PASS",
-      "ms": 5519,
+      "ms": 8786,
       "details": {
         "firstStop": "skip-link",
         "focusOutline": "solid",
@@ -386,7 +386,7 @@
         "US-27"
       ],
       "result": "PASS",
-      "ms": 11448,
+      "ms": 120615,
       "details": {
         "screenshots": 17,
         "widths": [
@@ -405,7 +405,7 @@
         "US-28"
       ],
       "result": "PASS",
-      "ms": 1661,
+      "ms": 1782,
       "details": {
         "emptyScope": "unknown",
         "corrupt": "readonly",
@@ -418,6 +418,59 @@
       "pageErrors": []
     },
     {
+      "id": "E17-navigation-tour-tutorial",
+      "stories": [
+        "US-26",
+        "US-27"
+      ],
+      "result": "PASS",
+      "ms": 6865,
+      "details": {
+        "journey": {
+          "current": "jstep-review",
+          "done": [
+            "true",
+            "true",
+            "true",
+            "true",
+            "false"
+          ],
+          "crumbs": [
+            "Home",
+            "UX-DEMO-001",
+            "Overview"
+          ],
+          "next": "#/project/proj-mvva2jjo-cb0wqxem3cet/export"
+        },
+        "tour": {
+          "t1": {
+            "title": "Your five steps",
+            "focus": "tour-title",
+            "count": "Step 1 of 9"
+          },
+          "t3": {
+            "step": "node",
+            "spot": true
+          },
+          "after": {
+            "open": false,
+            "focus": "tour-start"
+          }
+        },
+        "tutorial": {
+          "chapters": 5,
+          "video": true,
+          "missing": false,
+          "seek": {
+            "t": 22,
+            "start": 22,
+            "dur": 56
+          }
+        }
+      },
+      "pageErrors": []
+    },
+    {
       "id": "E15-storage-denied-FX07",
       "stories": [
         "US-17",
@@ -425,7 +478,7 @@
         "US-25"
       ],
       "result": "PASS",
-      "ms": 983,
+      "ms": 1283,
       "details": {
         "scope": "memory",
         "label": "ข้อมูลยังอยู่เฉพาะแท็บนี้ โปรดดาวน์โหลดไฟล์กู้คืน"
@@ -440,7 +493,7 @@
         "US-25"
       ],
       "result": "PASS",
-      "ms": 942,
+      "ms": 1295,
       "details": {
         "state": "quota",
         "storedSnapshots": 1

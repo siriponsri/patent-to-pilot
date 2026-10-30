@@ -5,17 +5,17 @@
     "id": "healthtech-web-recovery",
     "version": "1.0.0"
   },
-  "generatedAt": "2026-10-30T14:04:48.161Z",
+  "generatedAt": "2026-10-30T18:03:28.107Z",
   "mode": "synthetic_demo",
   "project": {
-    "localProjectId": "proj-mvv1ngaf-phxxbj185c1z7",
+    "localProjectId": "proj-mvva6dir-1p2us8i10tz28o",
     "title": "UX-DEMO-001 empty corpus (synthetic)",
     "storageScope": "indexeddb"
   },
   "snapshot": {
-    "snapshotId": "snap-mvv1ngag-20g3w17a6gdi",
+    "snapshotId": "snap-mvva6dir-1nkhmpw43ljat",
     "parentSnapshotId": null,
-    "savedAt": "2026-10-30T14:04:47.799Z",
+    "savedAt": "2026-10-30T18:03:27.603Z",
     "acknowledged": false,
     "lineage": []
   },
