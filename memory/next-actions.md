@@ -534,4 +534,14 @@ Status: `PASS_CURRENT_HEAD_PHILIPS_DOSSIERS`; canonical audit: `docs/healthtech/
 
 Reran the real Philips local dossier pipeline at current HEAD `285eb74ee0d45321867b618b0aa5d28a7fb38534` over the frozen `ht-philips-cardiovascular-20261029-r2` cohort and reviewed M13 rights matrix. The r6 output contains 3 dossiers, 7 product-level disclosed links, history versions `1` and `2` for every case, 3 local search calls, 0 returned lexical candidates, 0 provider calls, and USD `0.00` paid cost. Required JSON/Markdown/source/history/export artifacts are present. Six allowed source views return only declared displayable fields; 48 blocked product-display/redistribution requests fail closed.
 
+## HT-NEXT-060 — 2026-10-30 M39 current-head OpenRouter R1 offline readiness
+
+Status: `PASS_CURRENT_HEAD_OFFLINE_R1_READINESS_LIVE_BLOCKED`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-current-head-20261030/README.md`.
+
+Revalidated the existing OpenRouter R1 policy and durable budget boundary at current HEAD `23886b2194704ae521470f8e2af7e1024790e1b0`, with `origin/main` at the same SHA. The focused R1/provider suite passes `122` tests; the direct full repository suite passes `451` tests with two warnings; guarded `verify_offline.py --suite all` passes `451/451` with zero network attempts and zero credential-file read attempts. Compile and diff checks pass, the dispatcher dry-run remains `READY_AWAITING_FUNDING_AND_BUDGET_APPROVAL`, and an explicit unapproved live invocation returns `BLOCKED` before any live provider result.
+
+No credentials were read, no provider request was sent, no restricted payload was acquired, and paid cost is `USD 0.00`. This closes current-head offline engineering readiness only. Current model/provider metadata, pricing, account credit, credential readiness, transfer rights, live compatibility, billing reconciliation, scientific HT-B4 benefit, and semantic device-patent gold remain unverified or blocked.
+
+Next: keep live/provider HT-B4 `BLOCKED_LOCAL`; obtain owner authorization and exact schema/rights access for Zenodo record `21101400` or another admissible semantic source, then run M23/M25/M24 and frozen-control reruns without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy.
+
 This is current-head backend engineering evidence only. Philips marking and Google-derived patent content remain local-only, disclosed links are not semantic gold, and unlisted pairs remain `UNJUDGED`. Next: obtain an owner-authorized rights-cleared semantic judgment source, validate M23/M25/M24, and rerun frozen controls without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy. Keep live/provider HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI blocked or paused.

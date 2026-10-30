@@ -1,0 +1,73 @@
+{
+  "format": "ht-openrouter-r1-current-head-checks-v1",
+  "run_id": "luna-long-run-20261030-openrouter-r1-readiness-current-head-20261030",
+  "date": "2026-10-30",
+  "head": "23886b2194704ae521470f8e2af7e1024790e1b0",
+  "origin_main": "23886b2194704ae521470f8e2af7e1024790e1b0",
+  "working_tree": "dirty_with_preserved_owner_changes",
+  "checks": [
+    {
+      "name": "focused_r1_provider_regressions",
+      "command": "rtk proxy python -B -m pytest tests/test_healthtech_round1_budget.py tests/test_provider_adapter.py tests/test_provider_identity.py tests/test_provider_env_file.py tests/test_provider_recovery.py tests/test_provider_pilot.py tests/test_provider_paired.py tests/test_release_budget_process.py --disable-warnings",
+      "status": "PASS",
+      "observed": "122 passed in 18.35s",
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    {
+      "name": "full_repository_suite_direct",
+      "command": "rtk proxy python -B -m pytest tests --disable-warnings",
+      "status": "PASS",
+      "observed": "451 passed, 2 warnings in 53.29s",
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    {
+      "name": "guarded_offline_suite",
+      "command": "rtk proxy python -B scripts/healthtech/verify_offline.py <fresh-output-outside-repository> --suite all",
+      "status": "PASS",
+      "observed": "451 passed, 0 failures, 0 errors, 0 skipped; 0 network attempts; 0 credential-file read attempts",
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "compiled_python_files": 164
+    },
+    {
+      "name": "compile_checks",
+      "command": "rtk proxy python -B -m compileall -q src tests scripts/healthtech",
+      "status": "PASS",
+      "observed": "exit code 0"
+    },
+    {
+      "name": "diff_check",
+      "command": "rtk proxy powershell -NoProfile -Command \"git diff --check\"",
+      "status": "PASS",
+      "observed": "exit code 0"
+    },
+    {
+      "name": "dispatcher_dry_run",
+      "command": "rtk proxy python -B scripts/dispatch_provider_pilot.py",
+      "status": "PASS",
+      "observed": "READY_AWAITING_FUNDING_AND_BUDGET_APPROVAL; live NOT_RUN; plan SHA-256 6cf9bd14059f1df9f11ff6f913d31bcc5e5c60f3f993ac4766621bf1c7c148b2"
+    },
+    {
+      "name": "unapproved_live_gate",
+      "command": "rtk proxy python -B scripts/dispatch_provider_pilot.py --live --phase smoke",
+      "status": "PASS_BLOCKED",
+      "observed": "status BLOCKED, PilotError; no live provider result"
+    }
+  ],
+  "scratch_path_note": "An initial guarded run with output under results/healthtech failed the external-path smoke assertion; the rerun used C:/Users/User/AppData/Local/Temp/... outside the repository and passed. This is a test-harness path condition, not a production regression.",
+  "boundaries": {
+    "credentials_read": 0,
+    "provider_calls": 0,
+    "network_calls_for_project_execution": 0,
+    "paid_cost_usd": 0.0,
+    "current_model_provider_metadata_refresh": "NOT_RUN",
+    "current_pricing_snapshot_refresh": "NOT_RUN",
+    "account_balance_or_credit_check": "NOT_RUN",
+    "live_provider_compatibility": "NOT_RUN",
+    "provider_transfer_rights_for_future_payload": "NOT_RUN",
+    "scientific_ht_b4_run": "NOT_RUN",
+    "semantic_device_patent_judgment_source": "BLOCKED_LOCAL"
+  }
+}
