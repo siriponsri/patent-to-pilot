@@ -271,7 +271,7 @@ def render_report(summary: dict[str, Any]) -> str:
         "| Area | Status | Evidence boundary |",
         "|---|---|---|",
         "| M1 integrity | PASS in current-head audit | Adversarial source/export, frozen-identity, and typed-policy probes are recorded separately; this report does not re-run them. |",
-        "| M2 data/cohort | PASS development package | Boston/Stryker/Cook public disclosure cohort is typed and frozen; Bridge remains BLOCKED_LOCAL. |",
+        "| M2 data/cohort | PASS development package | Typed multi-company public disclosure cohort is frozen; Bridge remains BLOCKED_LOCAL. |",
         "| M3 methods/evaluator | PASS descriptive development | HT-B0a/B0b/B1/B2/B3 have fresh development and company holdout outputs; group uncertainty remains NOT_ESTIMABLE. |",
         "| M4 provider seam | PASS engineering | Versioned R1 policy, durable ledger, structured B4 seam, and mock fault tests pass. |",
         "| M5 paid provider | NOT_RUN / BLOCKED_LOCAL | No live request, paid canary, or paired pilot was dispatched. |",

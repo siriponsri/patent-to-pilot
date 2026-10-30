@@ -1,0 +1,145 @@
+{
+  "artifact_hashes": {
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/ANALYSIS.md": "f47e0063f78740311d0d5fcb1dc07ea57de3b8cd6d0589c47bd04652fd23d10d",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/analysis.json": "dd5ac66082efdebcc9043658595fd665f58acc8ebd640f35e2bd000449940b39",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/quality_cost_development.svg": "5c5651b16b12957d4ce775b2d2c51cc0991d755b44fc3cb5a2347d0580316308",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/quality_cost_frontier.csv": "9c9e57d670f7af62f96fee21cabe73b550bf633144918c554c311b741b9cb130",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/quality_cost_holdout.svg": "0cd99f536dce38568611e206c21a98834000e98ad1b62c491c3db84f338ef2a2",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/recall_comparison.svg": "cca44fe6ac34b80fb4376953d0e323879aac611f2535d9da12959aa37a98e020",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/b4-development-verification.json": "34cc39cfc12a505ac04f0279ce559dece17c29c945fce3995611f83a7b821e24",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/b4-holdout-verification.json": "bb813d6bc4cc7cd4a75ca65464ffd4093888a879ede96878c5d7bc8fe9644fa4",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/report/REPORT.md": "547c4a639c2ba8147b1fb292b69b1c7cce70f42bb020758fc68d37b05d458e30",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/report/frontier_table.csv": "2de325a267e018d9d1fafada7293ba6cecbde6b7ec5f2b7d99f5caa81037293f",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/report/receipt.json": "1d06922c651daa38681e1e7aa314691e19699326b2281dc75cd4642a3bf04650",
+    "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/report/summary_tables.json": "0f04a32be4bf956df6539db52cd293029101dc811206069f9f72d065989761d1"
+  },
+  "artifacts": {
+    "analysis": "analysis/ANALYSIS.md",
+    "analysis_json": "analysis/analysis.json",
+    "b4_development_verification": "b4-development-verification.json",
+    "b4_holdout_verification": "b4-holdout-verification.json",
+    "report": "report/REPORT.md",
+    "report_frontier_table": "report/frontier_table.csv",
+    "report_receipt": "report/receipt.json",
+    "report_summary": "report/summary_tables.json"
+  },
+  "boundaries": {
+    "bridge": "BLOCKED_LOCAL",
+    "claude_ux_ui": "PAUSED",
+    "clinical_legal_regulatory_f_to_validity_investment": "OUT_OF_SCOPE",
+    "exhaustive_recall": "NOT_ESTABLISHED",
+    "generalization": "NOT_ESTIMABLE",
+    "live_provider_behavior": "BLOCKED_LOCAL",
+    "provider_calls_are_mock_only": true,
+    "semantic_relevance_gold": "NOT_RUN",
+    "unjudged_pairs_as_negatives": false,
+    "zenodo_21101400": "RESTRICTED_OWNER_ACCESS_REQUIRED"
+  },
+  "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+  "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+  "commands": [
+    "rtk proxy python -B scripts/healthtech/build_long_run_report.py ...",
+    "rtk proxy python -B scripts/healthtech/analyze_long_run.py ...",
+    "rtk proxy python -m pytest -q tests/test_healthtech_boundary_matrix.py tests/test_healthtech_judgments.py tests/test_healthtech_repairs.py tests/test_healthtech_long_run_report.py tests/test_healthtech_long_run_analysis.py tests/test_healthtech_prelive.py",
+    "rtk proxy python -m compileall -q src scripts tests",
+    "rtk proxy git diff --check",
+    "python JSON parse validation over current B4/report/analysis artifacts",
+    "rg secret-pattern scan over canonical audit and B4 outputs"
+  ],
+  "format": "healthtech-audit-verification-v1",
+  "generated_at_utc": "2026-10-30T12:12:46.364421+00:00",
+  "input_hashes": {
+    "results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json": "cf8b3dddf522dddd66143e9b3f463ce9fce038868c0235bb0726b8b309a67811",
+    "results/healthtech/ht-current-head-b4-mock-20261030-r2-development/controller_frontier.json": "db48e3e979d1667d7fd6b136dc05bcba4bb653d3b32b937f5c70dfdf7fbef929",
+    "results/healthtech/ht-current-head-b4-mock-20261030-r2-development/raw_rankings.jsonl": "a86fcdac8b4996bf925cd9aa7bbc199b5f036be8a6e0faaac636201c4f082994",
+    "results/healthtech/ht-current-head-b4-mock-20261030-r2-development/receipt.json": "da1cdede2f9e5570452855b08e2efb3257099e642fc6e9b357aa96cf630edd99",
+    "results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/controller_frontier.json": "95ac65188d34f45edd7d1a10cb25ba1dc5b1c8bd143852814a7f87b24969fe10",
+    "results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/raw_rankings.jsonl": "3634ee6706a7fc2b11a7362418420e0f53db63638f7dc574db739f58af7c1d0f",
+    "results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/receipt.json": "f2d2b4f5a4c31cf47e3d804a1945f60850abccb205a3edfcdef680a0a96e26b2",
+    "results/healthtech/ht-current-head-baselines-20261030-r2-development/frontier_diagnostics.json": "bbc402a0348d4490e65fd797fc9f9875dc8a8fff96ed85a2d92cceff43d8ec0b",
+    "results/healthtech/ht-current-head-baselines-20261030-r2-development/method_summary.json": "03c1b747e13846d1ba1d7431bcc5eb1f11b2c42632ca4a801b79914fd7a2b9c7",
+    "results/healthtech/ht-current-head-baselines-20261030-r2-development/receipt.json": "1db68f29c4e7753dc145bdd5efc3e879cdacfe6d2cc86cc8f22cd32962e9149d",
+    "results/healthtech/ht-current-head-baselines-20261030-r2-holdout/frontier_diagnostics.json": "611b533a2c5d363364a8992a2cb9c06d1c344db21a2a03958c3f7a979f9ee7ea",
+    "results/healthtech/ht-current-head-baselines-20261030-r2-holdout/method_summary.json": "8c6f5840433d7178d9286b5e71e6891f00bdd642593425ab5f03a39c7c91d996",
+    "results/healthtech/ht-current-head-baselines-20261030-r2-holdout/receipt.json": "a5ceb433acc0569a9a766b5b339ece025a7f6721161701d3a56134613ae35f31",
+    "results/healthtech/ht-current-head-family-frontier-20261030-r2-development": "0633994ab9cba648aca0cfa083edb6cdc6f783cfcc0e8e118814c1a0e148d89a",
+    "results/healthtech/ht-current-head-family-frontier-20261030-r2-holdout": "a23996ec8985182c153ebbf5a2fd7126be1e653df597eaec99c87ad3934a8860",
+    "results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json": "f9637b3c7ea43bed86139293453bee95ecdaa717400f7266b3f5e2ca2bb470d2"
+  },
+  "next_action": "Obtain an owner-authorized rights-cleared semantic device-patent judgment source, validate it through M23/M25/M24, then rerun frozen controls without changing denominators, holdout membership, or the UNJUDGED policy.",
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "results": {
+    "development": {
+      "control_macro_recall_at_20": {
+        "HT-B0a": 0.9613095238095238,
+        "HT-B0b": 1.0,
+        "HT-B1": 0.96875,
+        "HT-B2": 0.90625,
+        "HT-B3": 0.96875
+      },
+      "devices": 8,
+      "disclosed_pairs": 25,
+      "ledger_breach": false,
+      "macro_known_link_recall_at_20": 0.96875,
+      "micro_known_link_recall_at_20": 0.96,
+      "paid_cost_usd": 0.0,
+      "patents": 31,
+      "provider_shaped_calls": 19,
+      "simulated_cost_usd": 0.0019,
+      "unknown_or_pending_billing_items": 0
+    },
+    "family_frontier": {
+      "development_artifact": "results/healthtech/ht-current-head-family-frontier-20261030-r2-development",
+      "final_holdout_artifact": "results/healthtech/ht-current-head-family-frontier-20261030-r2-holdout",
+      "mapping": "results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json"
+    },
+    "final_holdout": {
+      "control_macro_recall_at_20": {
+        "HT-B0a": 0.5428571428571428,
+        "HT-B0b": 0.8095238095238094,
+        "HT-B1": 0.8380952380952381,
+        "HT-B2": 0.8857142857142857,
+        "HT-B3": 0.8380952380952381
+      },
+      "devices": 3,
+      "disclosed_pairs": 13,
+      "ledger_breach": false,
+      "macro_known_link_recall_at_20": 0.8380952380952381,
+      "micro_known_link_recall_at_20": 0.7692307692307693,
+      "paid_cost_usd": 0.0,
+      "patents": 31,
+      "provider_shaped_calls": 8,
+      "simulated_cost_usd": 0.0008,
+      "unknown_or_pending_billing_items": 0
+    }
+  },
+  "run_date": "2026-10-30",
+  "run_id": "luna-long-run-20261030-current-head-b4-r2c-20261030",
+  "source_hashes": {
+    "scripts/healthtech/analyze_long_run.py": "7dc08c0a8c97f478b9212e315949b8640756e3bf27c5701fcf9c8fac92d5a0c5",
+    "scripts/healthtech/build_long_run_report.py": "f5f84e2e0af58de3343191fb58a52b29e59b24c95f91af882a6f8cb8e4062a7f",
+    "tests/test_healthtech_boundary_matrix.py": "782bd4acbca7cf2dd050cbf7a41b4ca7462a0b4a8f8f11ac172ceb490c135561",
+    "tests/test_healthtech_judgments.py": "deb37ad3f1f4ae647c9c20a1854183dca010319eb3dc2019aad074c5499a1107",
+    "tests/test_healthtech_long_run_analysis.py": "fd180f8e6faa7155fca8c253599d1a0fa206b5801694f345266a44093be499fd",
+    "tests/test_healthtech_long_run_report.py": "af1754a6b372fe4bccbbc1079ae0b2f3471d99a4f8fbac479ed265d94cad30a7",
+    "tests/test_healthtech_repairs.py": "9209c8cfe61713d15ddf64c8cbde02dbdf32d712302bdfa98fba4b42dbd106a0"
+  },
+  "status": "PASS_CURRENT_HEAD_OFFLINE_BASELINES_B4_REPORT",
+  "tree_state": {
+    "no_credentials_or_env_files_read": true,
+    "restricted_raw_payloads_persisted_in_audit": false,
+    "temporary_failed_builder_directories": "removed after verifying they were empty and created only by this run",
+    "unrelated_dirty_and_untracked_files_preserved": true
+  },
+  "verification": {
+    "compileall": "PASS",
+    "focused_healthtech_tests": "PASS",
+    "git_diff_check": "PASS",
+    "json_validation": "PASS",
+    "live_provider_calls": 0,
+    "network_calls": 0,
+    "new_semantic_labels": 0,
+    "paid_cost_usd": 0.0,
+    "secret_pattern_scan": "PASS_NO_MATCHES"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "b4_holdout_included": true,
+  "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+  "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+  "format": "ht-long-run-report-receipt-v1",
+  "input_hashes": {
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-development\\controller_frontier.json": "db48e3e979d1667d7fd6b136dc05bcba4bb653d3b32b937f5c70dfdf7fbef929",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-development\\raw_rankings.jsonl": "a86fcdac8b4996bf925cd9aa7bbc199b5f036be8a6e0faaac636201c4f082994",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-development\\receipt.json": "da1cdede2f9e5570452855b08e2efb3257099e642fc6e9b357aa96cf630edd99",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-development\\verification.json": "34cc39cfc12a505ac04f0279ce559dece17c29c945fce3995611f83a7b821e24",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-holdout\\controller_frontier.json": "95ac65188d34f45edd7d1a10cb25ba1dc5b1c8bd143852814a7f87b24969fe10",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-holdout\\raw_rankings.jsonl": "3634ee6706a7fc2b11a7362418420e0f53db63638f7dc574db739f58af7c1d0f",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-holdout\\receipt.json": "f2d2b4f5a4c31cf47e3d804a1945f60850abccb205a3edfcdef680a0a96e26b2",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-holdout\\verification.json": "bb813d6bc4cc7cd4a75ca65464ffd4093888a879ede96878c5d7bc8fe9644fa4",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-development\\frontier_diagnostics.json": "bbc402a0348d4490e65fd797fc9f9875dc8a8fff96ed85a2d92cceff43d8ec0b",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-development\\method_summary.json": "03c1b747e13846d1ba1d7431bcc5eb1f11b2c42632ca4a801b79914fd7a2b9c7",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-development\\receipt.json": "1db68f29c4e7753dc145bdd5efc3e879cdacfe6d2cc86cc8f22cd32962e9149d",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-holdout\\frontier_diagnostics.json": "611b533a2c5d363364a8992a2cb9c06d1c344db21a2a03958c3f7a979f9ee7ea",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-holdout\\method_summary.json": "8c6f5840433d7178d9286b5e71e6891f00bdd642593425ab5f03a39c7c91d996",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-holdout\\receipt.json": "a5ceb433acc0569a9a766b5b339ece025a7f6721161701d3a56134613ae35f31"
+  },
+  "limitations": [
+    "No live provider request or paid canary was run.",
+    "Known-link metrics are descriptive product-disclosure recovery, not semantic gold.",
+    "G5 user/commercial validation and G6 publication readiness remain NOT_VALIDATED or NOT_RUN."
+  ],
+  "outputs": {
+    "frontier_table": "frontier_table.csv",
+    "report": "REPORT.md",
+    "summary_tables": "summary_tables.json"
+  },
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "status": "PASS_REPORT_GENERATED_FROM_FROZEN_ARTIFACTS"
+}

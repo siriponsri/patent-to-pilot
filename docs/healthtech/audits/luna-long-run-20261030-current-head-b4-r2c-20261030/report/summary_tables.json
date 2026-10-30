@@ -1,0 +1,644 @@
+{
+  "b4_provider_shaped_holdout": {
+    "receipt": {
+      "artifacts": {
+        "controller_frontier": "controller_frontier.json",
+        "controller_policy": "controller_policy.json",
+        "evaluator_validation": "evaluator_validation.json",
+        "raw_rankings": "raw_rankings.jsonl",
+        "runtime_predictions": "runtime_predictions.json"
+      },
+      "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+      "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+      "devices": 3,
+      "groups_sha256": "0a1a71f6d7154b2763a81fc5d26c4004fea7816338f1d782855ef060218879ae",
+      "index_prep_seconds": 2.4751360999944154,
+      "ledger_snapshot": {
+        "actual_nano_usd": 800000,
+        "admission_closed": false,
+        "admission_threshold_nano_usd": 7000000000,
+        "attempts": 8,
+        "authorization_cap_nano_usd": 8000000000,
+        "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+        "breach": false,
+        "committed_nano_usd": 800000,
+        "dispatch_blocked": false,
+        "phase_committed_nano_usd": {
+          "canary": 0,
+          "paired_pilot": 800000,
+          "robustness": 0
+        },
+        "policy_sha256": "6c24e158dc91a13e9a6b11267db336a81c961eba8671300bb66357b071a53d34",
+        "policy_version": "ptp-ht-openrouter-r1-20261028-usd8-v1",
+        "remaining_to_admission_nano_usd": 6999200000,
+        "remaining_to_authorization_nano_usd": 7999200000,
+        "unknown_or_pending": []
+      },
+      "limitations": [
+        "Mock mode is provider-shaped engineering evidence and incurs no paid cost.",
+        "Live mode requires separately reviewed provider-transfer rights for every non-synthetic source.",
+        "Development-only public disclosure cohort; no semantic relevance gold or generalization claim.",
+        "Product-level disclosed links are not claim-level semantic gold."
+      ],
+      "method": "HT-B4-MOCK",
+      "mode": "mock",
+      "model_snapshot_sha256": "cf8b3dddf522dddd66143e9b3f463ce9fce038868c0235bb0726b8b309a67811",
+      "paid_cost_usd": 0.0,
+      "patents": 31,
+      "policy": {
+        "admission_threshold_nano_usd": 7000000000,
+        "allow_fallbacks": false,
+        "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+        "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+        "incremental_cap_nano_usd": 8000000000,
+        "max_concurrency": 1,
+        "models": {
+          "openai/gpt-4.1-mini": "openai"
+        },
+        "phase_caps_nano_usd": {
+          "canary": 400000000,
+          "paired_pilot": 5400000000,
+          "robustness": 1200000000
+        },
+        "pricing_snapshot_sha256": "a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267",
+        "pricing_snapshot_utc": "2026-10-29T11:18:41.615320Z",
+        "private_data": false,
+        "provider": "openrouter",
+        "require_parameters": true,
+        "retries": 0,
+        "unknown_billing": "block",
+        "version": "ptp-ht-openrouter-r1-20261028-usd8-v1"
+      },
+      "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+      "provider_calls": 8,
+      "references_sha256": "ebac2e726cfe4d605cef97b2ef74c1df38463639b84de750a77dc51af5da61d7",
+      "runtime_sha256": "210e6099a65a7372686156b9e31bea17ebe42ce9cb6d02e118af859dd1392481",
+      "simulated_cost_usd": 0.0008,
+      "source_registry_sha256": "d051d78faa3a2204ed414fd3cb8fabaea3730a7a9fd9974cf7ed6ba9d701bb01",
+      "status": "REAL_PUBLIC_PROVIDER_SHAPED_MOCK_RUN"
+    },
+    "row": {
+      "cpu_seconds": 71.484375,
+      "embedding_query_tokens": 87.0,
+      "failed_query_count": 0,
+      "group_count": null,
+      "input_token_bound": 8107,
+      "latency_seconds": 0.11469840002246201,
+      "ledger_actual_nano_usd": 800000,
+      "macro_known_link_recall_at_20": 0.8380952380952381,
+      "method": "HT-B4-MOCK",
+      "model": {
+        "openai/gpt-4.1-mini": "openai"
+      },
+      "output_token_bound": 2048,
+      "paid_cost_usd": 0.0,
+      "pricing_snapshot_sha256": "a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267",
+      "pricing_snapshot_utc": "2026-10-29T11:18:41.615320Z",
+      "provider_shaped_calls": 8,
+      "query_calls": 5.0,
+      "query_count": 3,
+      "rerank_pairs": 155.0,
+      "rerank_tokens": 39680.0,
+      "returned_candidates": 155.0,
+      "schema_valid_calls": 8,
+      "simulated_cost_usd": 0.0008,
+      "split": "final_holdout",
+      "unknown_billing": 0,
+      "wall_seconds": 8.034248300013132
+    },
+    "verification": {
+      "boundaries": {
+        "clinical_legal_regulatory_f_to_validity_investment": "OUT_OF_SCOPE",
+        "exhaustive_recall": "NOT_ESTABLISHED",
+        "generalization": "NOT_ESTIMABLE",
+        "live_provider_behavior": "BLOCKED_LOCAL",
+        "mock_only_not_provider_evidence": true,
+        "semantic_relevance_gold": "NOT_RUN",
+        "unjudged_pairs_as_negatives": false
+      },
+      "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+      "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+      "commands": [
+        "rtk proxy python -B scripts/healthtech/run_b4_controller.py --runtime results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/runtime.json --references results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/references.json --groups results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/groups.json --source-registry results/healthtech/ht-multicompany-20261029-r4-philips-family/source_registry.json --model-root data/raw/healthtech/models --output results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout --code-commit d45faab3bf0fa08bf2818243249b77920401f6f5 --protocol-hash 1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b --cohort-manifest-hash d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267 --model-snapshot results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json --budget-path results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/round1.sqlite3 --run-id ht-current-head-b4-mock-20261030-r2-holdout --mode mock --phase paired_pilot --max-steps 3 --max-output-tokens 256"
+      ],
+      "format": "healthtech-audit-verification-v1",
+      "generated_at_utc": "2026-10-30T12:05:17.879512+00:00",
+      "input_hashes": {
+        "results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/endpoint_metadata.json": "27557b25e9a805d2aebd4e844cfd36007d9b88d626bc9ed5026eda585ea96514",
+        "results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json": "cf8b3dddf522dddd66143e9b3f463ce9fce038868c0235bb0726b8b309a67811",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/controller_frontier.json": "95ac65188d34f45edd7d1a10cb25ba1dc5b1c8bd143852814a7f87b24969fe10",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/controller_policy.json": "3fef5ffc509facd8d618d7c5db926419df442c66c78a5b4e79ef43ad5103d293",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/evaluator_validation.json": "637e554ec026cf6f12c0e139dbccf304601b501727a640cd2a21e7ccb2d8c343",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/raw_rankings.jsonl": "3634ee6706a7fc2b11a7362418420e0f53db63638f7dc574db739f58af7c1d0f",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/receipt.json": "f2d2b4f5a4c31cf47e3d804a1945f60850abccb205a3edfcdef680a0a96e26b2",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-holdout/runtime_predictions.json": "bde185b98ac2ec8e569afd41498a890c9fd0afb2750b59810d57af6f3c89d37d",
+        "results/healthtech/ht-current-head-baselines-20261030-r2-holdout/frontier_diagnostics.json": "611b533a2c5d363364a8992a2cb9c06d1c344db21a2a03958c3f7a979f9ee7ea",
+        "results/healthtech/ht-current-head-baselines-20261030-r2-holdout/receipt.json": "a5ceb433acc0569a9a766b5b339ece025a7f6721161701d3a56134613ae35f31",
+        "results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json": "f9637b3c7ea43bed86139293453bee95ecdaa717400f7266b3f5e2ca2bb470d2",
+        "results/healthtech/ht-multicompany-20261029-r4-philips-family/source_registry.json": "d051d78faa3a2204ed414fd3cb8fabaea3730a7a9fd9974cf7ed6ba9d701bb01",
+        "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/groups.json": "0a1a71f6d7154b2763a81fc5d26c4004fea7816338f1d782855ef060218879ae",
+        "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/references.json": "ebac2e726cfe4d605cef97b2ef74c1df38463639b84de750a77dc51af5da61d7",
+        "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/final_holdout/runtime.json": "210e6099a65a7372686156b9e31bea17ebe42ce9cb6d02e118af859dd1392481"
+      },
+      "mode": "mock",
+      "model": {
+        "openai/gpt-4.1-mini": "openai"
+      },
+      "next_action": "Keep live/provider HT-B4 blocked; obtain owner-authorized rights-cleared semantic judgment source before any pooled scientific claim.",
+      "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+      "provider": "openrouter-shaped-mock",
+      "result": {
+        "control_macro_recall_at_20": {
+          "HT-B0a": 0.5428571428571428,
+          "HT-B0b": 0.8095238095238094,
+          "HT-B1": 0.8380952380952381,
+          "HT-B2": 0.8857142857142857,
+          "HT-B3": 0.8380952380952381
+        },
+        "devices": 3,
+        "ledger_breach": false,
+        "macro_known_link_recall_at_20": 0.8380952380952381,
+        "micro_known_link_recall_at_20": 0.7692307692307693,
+        "paid_cost_usd": 0.0,
+        "patents": 31,
+        "provider_shaped_calls": 8,
+        "resources": {
+          "controller_steps": 8,
+          "embedding_query_tokens": 87.0,
+          "query_calls": 5.0,
+          "rerank_pairs": 155.0,
+          "rerank_tokens": 39680.0,
+          "returned_candidates": 155.0
+        },
+        "schema_valid_calls": 8,
+        "simulated_cost_usd": 0.0008,
+        "unknown_or_pending_billing_items": 0
+      },
+      "run_id": "luna-long-run-20261030-current-head-b4-holdout-r2-20261030",
+      "split": "final_holdout",
+      "status": "PASS_B4_PROVIDER_SHAPED_MOCK"
+    }
+  },
+  "b4_provider_shaped_mock": {
+    "receipt": {
+      "artifacts": {
+        "controller_frontier": "controller_frontier.json",
+        "controller_policy": "controller_policy.json",
+        "evaluator_validation": "evaluator_validation.json",
+        "raw_rankings": "raw_rankings.jsonl",
+        "runtime_predictions": "runtime_predictions.json"
+      },
+      "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+      "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+      "devices": 8,
+      "groups_sha256": "81f063bb18bf4ae9bb5733fbb1c11a3aaa23ff6c68f52a140b0f4e1566318381",
+      "index_prep_seconds": 2.1030011999828275,
+      "ledger_snapshot": {
+        "actual_nano_usd": 1900000,
+        "admission_closed": false,
+        "admission_threshold_nano_usd": 7000000000,
+        "attempts": 19,
+        "authorization_cap_nano_usd": 8000000000,
+        "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+        "breach": false,
+        "committed_nano_usd": 1900000,
+        "dispatch_blocked": false,
+        "phase_committed_nano_usd": {
+          "canary": 0,
+          "paired_pilot": 1900000,
+          "robustness": 0
+        },
+        "policy_sha256": "6c24e158dc91a13e9a6b11267db336a81c961eba8671300bb66357b071a53d34",
+        "policy_version": "ptp-ht-openrouter-r1-20261028-usd8-v1",
+        "remaining_to_admission_nano_usd": 6998100000,
+        "remaining_to_authorization_nano_usd": 7998100000,
+        "unknown_or_pending": []
+      },
+      "limitations": [
+        "Mock mode is provider-shaped engineering evidence and incurs no paid cost.",
+        "Live mode requires separately reviewed provider-transfer rights for every non-synthetic source.",
+        "Development-only public disclosure cohort; no semantic relevance gold or generalization claim.",
+        "Product-level disclosed links are not claim-level semantic gold."
+      ],
+      "method": "HT-B4-MOCK",
+      "mode": "mock",
+      "model_snapshot_sha256": "cf8b3dddf522dddd66143e9b3f463ce9fce038868c0235bb0726b8b309a67811",
+      "paid_cost_usd": 0.0,
+      "patents": 31,
+      "policy": {
+        "admission_threshold_nano_usd": 7000000000,
+        "allow_fallbacks": false,
+        "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+        "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+        "incremental_cap_nano_usd": 8000000000,
+        "max_concurrency": 1,
+        "models": {
+          "openai/gpt-4.1-mini": "openai"
+        },
+        "phase_caps_nano_usd": {
+          "canary": 400000000,
+          "paired_pilot": 5400000000,
+          "robustness": 1200000000
+        },
+        "pricing_snapshot_sha256": "a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267",
+        "pricing_snapshot_utc": "2026-10-29T11:18:41.615320Z",
+        "private_data": false,
+        "provider": "openrouter",
+        "require_parameters": true,
+        "retries": 0,
+        "unknown_billing": "block",
+        "version": "ptp-ht-openrouter-r1-20261028-usd8-v1"
+      },
+      "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+      "provider_calls": 19,
+      "references_sha256": "44537952b0629c4d0dd871f62071ecf2abf447f046e750d42a75459a778c30bf",
+      "runtime_sha256": "0da939513a9e664678633f8384f611cb5b01593369ff1bd9094349a64709ba10",
+      "simulated_cost_usd": 0.0019,
+      "source_registry_sha256": "d051d78faa3a2204ed414fd3cb8fabaea3730a7a9fd9974cf7ed6ba9d701bb01",
+      "status": "REAL_PUBLIC_PROVIDER_SHAPED_MOCK_RUN"
+    },
+    "row": {
+      "cpu_seconds": 158.8125,
+      "embedding_query_tokens": 279.0,
+      "failed_query_count": 0,
+      "group_count": null,
+      "input_token_bound": 19570,
+      "latency_seconds": 0.2560362000949681,
+      "ledger_actual_nano_usd": 1900000,
+      "macro_known_link_recall_at_20": 0.96875,
+      "method": "HT-B4-MOCK",
+      "model": {
+        "openai/gpt-4.1-mini": "openai"
+      },
+      "output_token_bound": 4864,
+      "paid_cost_usd": 0.0,
+      "pricing_snapshot_sha256": "a990baa4d0ac46e188981b3c8b400c84da38250c5d2ab9fb23eb420ffeb8a267",
+      "pricing_snapshot_utc": "2026-10-29T11:18:41.615320Z",
+      "provider_shaped_calls": 19,
+      "query_calls": 11.0,
+      "query_count": 8,
+      "rerank_pairs": 341.0,
+      "rerank_tokens": 87296.0,
+      "returned_candidates": 341.0,
+      "schema_valid_calls": 19,
+      "simulated_cost_usd": 0.0019,
+      "split": "development",
+      "unknown_billing": 0,
+      "wall_seconds": 17.671661200001836
+    },
+    "verification": {
+      "boundaries": {
+        "clinical_legal_regulatory_f_to_validity_investment": "OUT_OF_SCOPE",
+        "exhaustive_recall": "NOT_ESTABLISHED",
+        "generalization": "NOT_ESTIMABLE",
+        "live_provider_behavior": "BLOCKED_LOCAL",
+        "mock_only_not_provider_evidence": true,
+        "semantic_relevance_gold": "NOT_RUN",
+        "unjudged_pairs_as_negatives": false
+      },
+      "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+      "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+      "commands": [
+        "rtk proxy python -B scripts/healthtech/run_b4_controller.py --runtime results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/runtime.json --references results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/references.json --groups results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/groups.json --source-registry results/healthtech/ht-multicompany-20261029-r4-philips-family/source_registry.json --model-root data/raw/healthtech/models --output results/healthtech/ht-current-head-b4-mock-20261030-r2-development --code-commit d45faab3bf0fa08bf2818243249b77920401f6f5 --protocol-hash 1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b --cohort-manifest-hash d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267 --model-snapshot results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json --budget-path results/healthtech/ht-current-head-b4-mock-20261030-r2-development/round1.sqlite3 --run-id ht-current-head-b4-mock-20261030-r2-development --mode mock --phase paired_pilot --max-steps 3 --max-output-tokens 256"
+      ],
+      "format": "healthtech-audit-verification-v1",
+      "generated_at_utc": "2026-10-30T12:05:17.879512+00:00",
+      "input_hashes": {
+        "results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/endpoint_metadata.json": "27557b25e9a805d2aebd4e844cfd36007d9b88d626bc9ed5026eda585ea96514",
+        "results/healthtech/ht-b4-r1-inputs-20261029-gpt41mini/model_snapshot.json": "cf8b3dddf522dddd66143e9b3f463ce9fce038868c0235bb0726b8b309a67811",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-development/controller_frontier.json": "db48e3e979d1667d7fd6b136dc05bcba4bb653d3b32b937f5c70dfdf7fbef929",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-development/controller_policy.json": "294e4e4b6aab062589c2313afe809a67fdc1b0c987b3e645f30e510f0caed41a",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-development/evaluator_validation.json": "f116ee38480a15aee0c435a3c017de00e10c2eba99f30d54a100c2ee5d7fef8a",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-development/raw_rankings.jsonl": "a86fcdac8b4996bf925cd9aa7bbc199b5f036be8a6e0faaac636201c4f082994",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-development/receipt.json": "da1cdede2f9e5570452855b08e2efb3257099e642fc6e9b357aa96cf630edd99",
+        "results/healthtech/ht-current-head-b4-mock-20261030-r2-development/runtime_predictions.json": "3816a98249f017914a756f24d6d1171fa66506151b7565d5c7269985cfccd848",
+        "results/healthtech/ht-current-head-baselines-20261030-r2-development/frontier_diagnostics.json": "bbc402a0348d4490e65fd797fc9f9875dc8a8fff96ed85a2d92cceff43d8ec0b",
+        "results/healthtech/ht-current-head-baselines-20261030-r2-development/receipt.json": "1db68f29c4e7753dc145bdd5efc3e879cdacfe6d2cc86cc8f22cd32962e9149d",
+        "results/healthtech/ht-google-family-mapping-20261029-r2-philips/family-mapping.json": "f9637b3c7ea43bed86139293453bee95ecdaa717400f7266b3f5e2ca2bb470d2",
+        "results/healthtech/ht-multicompany-20261029-r4-philips-family/source_registry.json": "d051d78faa3a2204ed414fd3cb8fabaea3730a7a9fd9974cf7ed6ba9d701bb01",
+        "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/groups.json": "81f063bb18bf4ae9bb5733fbb1c11a3aaa23ff6c68f52a140b0f4e1566318381",
+        "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/references.json": "44537952b0629c4d0dd871f62071ecf2abf447f046e750d42a75459a778c30bf",
+        "results/healthtech/ht-multicompany-20261029-r4-philips-family/views/development/runtime.json": "0da939513a9e664678633f8384f611cb5b01593369ff1bd9094349a64709ba10"
+      },
+      "mode": "mock",
+      "model": {
+        "openai/gpt-4.1-mini": "openai"
+      },
+      "next_action": "Keep live/provider HT-B4 blocked; obtain owner-authorized rights-cleared semantic judgment source before any pooled scientific claim.",
+      "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+      "provider": "openrouter-shaped-mock",
+      "result": {
+        "control_macro_recall_at_20": {
+          "HT-B0a": 0.9613095238095238,
+          "HT-B0b": 1.0,
+          "HT-B1": 0.96875,
+          "HT-B2": 0.90625,
+          "HT-B3": 0.96875
+        },
+        "devices": 8,
+        "ledger_breach": false,
+        "macro_known_link_recall_at_20": 0.96875,
+        "micro_known_link_recall_at_20": 0.96,
+        "paid_cost_usd": 0.0,
+        "patents": 31,
+        "provider_shaped_calls": 19,
+        "resources": {
+          "controller_steps": 19,
+          "embedding_query_tokens": 279.0,
+          "query_calls": 11.0,
+          "rerank_pairs": 341.0,
+          "rerank_tokens": 87296.0,
+          "returned_candidates": 341.0
+        },
+        "schema_valid_calls": 19,
+        "simulated_cost_usd": 0.0019,
+        "unknown_or_pending_billing_items": 0
+      },
+      "run_id": "luna-long-run-20261030-current-head-b4-development-r2-20261030",
+      "split": "development",
+      "status": "PASS_B4_PROVIDER_SHAPED_MOCK"
+    }
+  },
+  "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+  "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+  "development": {
+    "receipt": {
+      "artifacts": {
+        "development_headroom": "development_headroom.json",
+        "evaluator_validation": "evaluator_validation.json",
+        "frontier_diagnostics": "frontier_diagnostics.json",
+        "per_device_group_results": "per_device_group_results.json",
+        "raw_rankings": "raw_rankings.jsonl",
+        "runtime_predictions": "runtime_predictions.json"
+      },
+      "candidate_depth": 31,
+      "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+      "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+      "devices": 8,
+      "evaluator_path": "results\\healthtech\\ht-multicompany-20261029-r4-philips-family\\views\\development\\references.json",
+      "index_prep_seconds": 2.679001699987566,
+      "limitations": [
+        "Development-only public disclosure cohort; no final holdout or publication claim.",
+        "Model pretraining contamination cannot be ruled out; short-context quantized ONNX variants are used.",
+        "Product disclosure is a source-backed relationship and not claim-level patent validity, FTO, clinical or investment evidence."
+      ],
+      "methods": [
+        "HT-B0a",
+        "HT-B0b",
+        "HT-B1",
+        "HT-B2",
+        "HT-B3"
+      ],
+      "model_revisions": {
+        "encoder": "sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2@233902d25c440f23af6f7d6e94d2946bac0bee0a"
+      },
+      "paid_cost_usd": 0,
+      "patents": 31,
+      "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+      "provider_calls": 0,
+      "reference_pairs": 25,
+      "rerank_depth": 31,
+      "run_at_utc": "2026-10-30T11:56:26.606103+00:00",
+      "runtime_path": "results\\healthtech\\ht-multicompany-20261029-r4-philips-family\\views\\development\\runtime.json",
+      "scoring_script_sha256": "fd2f5275214d50b9129fed28f76fbbb7a8a8c15d517bf587185feac5689f7fcb",
+      "status": "REAL_PUBLIC_DEVELOPMENT_RUN"
+    },
+    "rows": [
+      {
+        "cpu_seconds": 0.0,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "macro_known_link_recall_at_20": 0.9613095238095238,
+        "method": "HT-B0a",
+        "paid_cost_usd": 0.0,
+        "query_calls": 8.0,
+        "query_count": 8,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 248.0,
+        "split": "development",
+        "unknown_billing": 0,
+        "wall_seconds": 0.0019792999664787203
+      },
+      {
+        "cpu_seconds": 0.59375,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "macro_known_link_recall_at_20": 1.0,
+        "method": "HT-B0b",
+        "paid_cost_usd": 0.0,
+        "query_calls": 8.0,
+        "query_count": 8,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 248.0,
+        "split": "development",
+        "unknown_billing": 0,
+        "wall_seconds": 0.07605470003909431
+      },
+      {
+        "cpu_seconds": 114.96875,
+        "embedding_query_tokens": 243.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "macro_known_link_recall_at_20": 0.96875,
+        "method": "HT-B1",
+        "paid_cost_usd": 0.0,
+        "query_calls": 8.0,
+        "query_count": 8,
+        "rerank_pairs": 248.0,
+        "rerank_tokens": 63488.0,
+        "returned_candidates": 248.0,
+        "split": "development",
+        "unknown_billing": 0,
+        "wall_seconds": 12.36308729997836
+      },
+      {
+        "cpu_seconds": 461.546875,
+        "embedding_query_tokens": 486.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "macro_known_link_recall_at_20": 0.90625,
+        "method": "HT-B2",
+        "paid_cost_usd": 0.0,
+        "query_calls": 32.0,
+        "query_count": 32,
+        "rerank_pairs": 992.0,
+        "rerank_tokens": 253952.0,
+        "returned_candidates": 992.0,
+        "split": "development",
+        "unknown_billing": 0,
+        "wall_seconds": 49.143651199992746
+      },
+      {
+        "cpu_seconds": 158.140625,
+        "embedding_query_tokens": 279.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "macro_known_link_recall_at_20": 0.96875,
+        "method": "HT-B3",
+        "paid_cost_usd": 0.0,
+        "query_calls": 11.0,
+        "query_count": 11,
+        "rerank_pairs": 341.0,
+        "rerank_tokens": 87296.0,
+        "returned_candidates": 341.0,
+        "split": "development",
+        "unknown_billing": 0,
+        "wall_seconds": 16.750648099987302
+      }
+    ]
+  },
+  "final_holdout": {
+    "receipt": {
+      "artifacts": {
+        "development_headroom": "development_headroom.json",
+        "evaluator_validation": "evaluator_validation.json",
+        "frontier_diagnostics": "frontier_diagnostics.json",
+        "per_device_group_results": "per_device_group_results.json",
+        "raw_rankings": "raw_rankings.jsonl",
+        "runtime_predictions": "runtime_predictions.json"
+      },
+      "candidate_depth": 31,
+      "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+      "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+      "devices": 3,
+      "evaluator_path": "results\\healthtech\\ht-multicompany-20261029-r4-philips-family\\views\\final_holdout\\references.json",
+      "index_prep_seconds": 2.2700399000023026,
+      "limitations": [
+        "Development-only public disclosure cohort; no final holdout or publication claim.",
+        "Model pretraining contamination cannot be ruled out; short-context quantized ONNX variants are used.",
+        "Product disclosure is a source-backed relationship and not claim-level patent validity, FTO, clinical or investment evidence."
+      ],
+      "methods": [
+        "HT-B0a",
+        "HT-B0b",
+        "HT-B1",
+        "HT-B2",
+        "HT-B3"
+      ],
+      "model_revisions": {
+        "encoder": "sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2@233902d25c440f23af6f7d6e94d2946bac0bee0a"
+      },
+      "paid_cost_usd": 0,
+      "patents": 31,
+      "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+      "provider_calls": 0,
+      "reference_pairs": 13,
+      "rerank_depth": 31,
+      "run_at_utc": "2026-10-30T11:57:14.847144+00:00",
+      "runtime_path": "results\\healthtech\\ht-multicompany-20261029-r4-philips-family\\views\\final_holdout\\runtime.json",
+      "scoring_script_sha256": "fd2f5275214d50b9129fed28f76fbbb7a8a8c15d517bf587185feac5689f7fcb",
+      "status": "REAL_PUBLIC_DEVELOPMENT_RUN"
+    },
+    "rows": [
+      {
+        "cpu_seconds": 0.0,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "macro_known_link_recall_at_20": 0.5428571428571428,
+        "method": "HT-B0a",
+        "paid_cost_usd": 0.0,
+        "query_calls": 3.0,
+        "query_count": 3,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 93.0,
+        "split": "final_holdout",
+        "unknown_billing": 0,
+        "wall_seconds": 0.001535500050522387
+      },
+      {
+        "cpu_seconds": 0.203125,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "macro_known_link_recall_at_20": 0.8095238095238094,
+        "method": "HT-B0b",
+        "paid_cost_usd": 0.0,
+        "query_calls": 3.0,
+        "query_count": 3,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 93.0,
+        "split": "final_holdout",
+        "unknown_billing": 0,
+        "wall_seconds": 0.02221990001271479
+      },
+      {
+        "cpu_seconds": 43.921875,
+        "embedding_query_tokens": 67.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "macro_known_link_recall_at_20": 0.8380952380952381,
+        "method": "HT-B1",
+        "paid_cost_usd": 0.0,
+        "query_calls": 3.0,
+        "query_count": 3,
+        "rerank_pairs": 93.0,
+        "rerank_tokens": 23808.0,
+        "returned_candidates": 93.0,
+        "split": "final_holdout",
+        "unknown_billing": 0,
+        "wall_seconds": 4.9745862999989185
+      },
+      {
+        "cpu_seconds": 174.40625,
+        "embedding_query_tokens": 135.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "macro_known_link_recall_at_20": 0.8857142857142857,
+        "method": "HT-B2",
+        "paid_cost_usd": 0.0,
+        "query_calls": 12.0,
+        "query_count": 12,
+        "rerank_pairs": 372.0,
+        "rerank_tokens": 95232.0,
+        "returned_candidates": 372.0,
+        "split": "final_holdout",
+        "unknown_billing": 0,
+        "wall_seconds": 18.748159399983706
+      },
+      {
+        "cpu_seconds": 72.78125,
+        "embedding_query_tokens": 87.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "macro_known_link_recall_at_20": 0.8380952380952381,
+        "method": "HT-B3",
+        "paid_cost_usd": 0.0,
+        "query_calls": 5.0,
+        "query_count": 5,
+        "rerank_pairs": 155.0,
+        "rerank_tokens": 39680.0,
+        "returned_candidates": 155.0,
+        "split": "final_holdout",
+        "unknown_billing": 0,
+        "wall_seconds": 7.937144899973646
+      }
+    ]
+  },
+  "format": "ht-long-run-summary-v1",
+  "input_hashes": {
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-development\\controller_frontier.json": "db48e3e979d1667d7fd6b136dc05bcba4bb653d3b32b937f5c70dfdf7fbef929",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-development\\raw_rankings.jsonl": "a86fcdac8b4996bf925cd9aa7bbc199b5f036be8a6e0faaac636201c4f082994",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-development\\receipt.json": "da1cdede2f9e5570452855b08e2efb3257099e642fc6e9b357aa96cf630edd99",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-development\\verification.json": "34cc39cfc12a505ac04f0279ce559dece17c29c945fce3995611f83a7b821e24",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-holdout\\controller_frontier.json": "95ac65188d34f45edd7d1a10cb25ba1dc5b1c8bd143852814a7f87b24969fe10",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-holdout\\raw_rankings.jsonl": "3634ee6706a7fc2b11a7362418420e0f53db63638f7dc574db739f58af7c1d0f",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-holdout\\receipt.json": "f2d2b4f5a4c31cf47e3d804a1945f60850abccb205a3edfcdef680a0a96e26b2",
+    "results\\healthtech\\ht-current-head-b4-mock-20261030-r2-holdout\\verification.json": "bb813d6bc4cc7cd4a75ca65464ffd4093888a879ede96878c5d7bc8fe9644fa4",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-development\\frontier_diagnostics.json": "bbc402a0348d4490e65fd797fc9f9875dc8a8fff96ed85a2d92cceff43d8ec0b",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-development\\method_summary.json": "03c1b747e13846d1ba1d7431bcc5eb1f11b2c42632ca4a801b79914fd7a2b9c7",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-development\\receipt.json": "1db68f29c4e7753dc145bdd5efc3e879cdacfe6d2cc86cc8f22cd32962e9149d",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-holdout\\frontier_diagnostics.json": "611b533a2c5d363364a8992a2cb9c06d1c344db21a2a03958c3f7a979f9ee7ea",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-holdout\\method_summary.json": "8c6f5840433d7178d9286b5e71e6891f00bdd642593425ab5f03a39c7c91d996",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-holdout\\receipt.json": "a5ceb433acc0569a9a766b5b339ece025a7f6721161701d3a56134613ae35f31"
+  },
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b"
+}

@@ -127,3 +127,20 @@ def test_runtime_hash_mismatch_is_rejected():
             runtime_universe=["US1234567B2", "US7654321B2"],
             runtime_sha256="d" * 64,
         )
+
+
+@pytest.mark.parametrize("mutation", ["unknown_query", "unknown_patent"])
+def test_judgments_reject_runtime_boundary_escapes(mutation: str):
+    payload = _manifest()
+    if mutation == "unknown_query":
+        payload["judgments"][0]["query_id"] = "Q-UNKNOWN"
+    else:
+        payload["judgments"][0]["patent_id_raw"] = "US0000000B2"
+        payload["judgments"][0]["patent_id_canonical"] = "US0000000B2"
+    with pytest.raises(JudgmentValidationError):
+        validate_relevance_judgment_manifest(
+            payload,
+            runtime_query_ids=["Q1", "Q2"],
+            runtime_universe=["US1234567B2", "US7654321B2", "US9999999B2"],
+            runtime_sha256=RUNTIME_SHA,
+        )

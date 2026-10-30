@@ -980,3 +980,17 @@ def test_provenance_verifier_rejects_an_uncovered_reference_pair(tmp_path):
     _write_json(manifest_path, manifest)
     with pytest.raises(CohortProvenanceError, match="without disclosure evidence"):
         verify_cohort_provenance(cohort)
+
+
+@pytest.mark.parametrize("mutation", ["unknown_query", "overlap"])
+def test_provenance_verifier_rejects_invalid_unjudged_distractors(tmp_path, mutation):
+    cohort = _write_synthetic_provenance_cohort(tmp_path, typed_rights=True)
+    distractors_path = cohort / "distractors.json"
+    distractors = json.loads(distractors_path.read_text(encoding="utf-8"))
+    if mutation == "unknown_query":
+        distractors["by_query"]["Q-UNKNOWN"] = ["US2345678B2"]
+    else:
+        distractors["by_query"]["Q1"] = ["US1234567B2"]
+    _write_json(distractors_path, distractors)
+    with pytest.raises(CohortProvenanceError, match="(unknown query|overlaps a disclosed reference)"):
+        verify_cohort_provenance(cohort)

@@ -1,0 +1,563 @@
+{
+  "b4_provider_shaped_mock": {
+    "macro_recall_delta_vs_HT-B0b": -0.03125,
+    "macro_recall_delta_vs_HT-B2": 0.0625,
+    "paid_cost_usd": 0.0,
+    "simulated_cost_usd": 0.0019,
+    "status": "MOCK_ONLY_NOT_PROVIDER_EVIDENCE"
+  },
+  "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+  "cohort_manifest_hash": "d00d12ad7ebb8f37938e094f89b9dd9cedb288eb108718c7947caa991dcfc267",
+  "development": {
+    "pareto_frontier_methods": [
+      "HT-B0a",
+      "HT-B0b"
+    ],
+    "rows": [
+      {
+        "cpu_seconds": 0.0,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.8452380952380952,
+        "group_macro_known_link_recall_range": 0.15476190476190477,
+        "group_macro_known_link_recall_values": [
+          0.8452380952380952,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 0.9613095238095238,
+        "method": "HT-B0a",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 8.0,
+        "query_count": 8,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 248.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 0.0019792999664787203
+      },
+      {
+        "cpu_seconds": 0.59375,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 1.0,
+        "group_macro_known_link_recall_range": 0.0,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 1.0,
+        "method": "HT-B0b",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 8.0,
+        "query_count": 8,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 248.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 0.07605470003909431
+      },
+      {
+        "cpu_seconds": 114.96875,
+        "embedding_query_tokens": 243.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.75,
+        "group_macro_known_link_recall_range": 0.25,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          1.0,
+          0.75,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 0.96875,
+        "method": "HT-B1",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 8.0,
+        "query_count": 8,
+        "rerank_pairs": 248.0,
+        "rerank_tokens": 63488.0,
+        "returned_candidates": 248.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 12.36308729997836
+      },
+      {
+        "cpu_seconds": 461.546875,
+        "embedding_query_tokens": 486.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.5,
+        "group_macro_known_link_recall_range": 0.5,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          0.5,
+          0.75,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 0.90625,
+        "method": "HT-B2",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 32.0,
+        "query_count": 32,
+        "rerank_pairs": 992.0,
+        "rerank_tokens": 253952.0,
+        "returned_candidates": 992.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 49.143651199992746
+      },
+      {
+        "cpu_seconds": 158.140625,
+        "embedding_query_tokens": 279.0,
+        "failed_query_count": 0,
+        "group_count": 6,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.75,
+        "group_macro_known_link_recall_range": 0.25,
+        "group_macro_known_link_recall_values": [
+          1.0,
+          1.0,
+          1.0,
+          0.75,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 0.96875,
+        "method": "HT-B3",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 11.0,
+        "query_count": 11,
+        "rerank_pairs": 341.0,
+        "rerank_tokens": 87296.0,
+        "returned_candidates": 341.0,
+        "split": "development",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 16.750648099987302
+      }
+    ]
+  },
+  "final_holdout": {
+    "pareto_frontier_methods": [
+      "HT-B0a",
+      "HT-B0b",
+      "HT-B1",
+      "HT-B2"
+    ],
+    "rows": [
+      {
+        "cpu_seconds": 0.0,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.2,
+        "group_macro_known_link_recall_range": 0.8,
+        "group_macro_known_link_recall_values": [
+          0.42857142857142855,
+          1.0,
+          0.2
+        ],
+        "macro_known_link_recall_at_20": 0.5428571428571428,
+        "method": "HT-B0a",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 3.0,
+        "query_count": 3,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 93.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 0.001535500050522387
+      },
+      {
+        "cpu_seconds": 0.203125,
+        "embedding_query_tokens": 0.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.42857142857142855,
+        "group_macro_known_link_recall_range": 0.5714285714285714,
+        "group_macro_known_link_recall_values": [
+          0.42857142857142855,
+          1.0,
+          1.0
+        ],
+        "macro_known_link_recall_at_20": 0.8095238095238094,
+        "method": "HT-B0b",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 3.0,
+        "query_count": 3,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "returned_candidates": 93.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 0.02221990001271479
+      },
+      {
+        "cpu_seconds": 43.921875,
+        "embedding_query_tokens": 67.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.7142857142857143,
+        "group_macro_known_link_recall_range": 0.2857142857142857,
+        "group_macro_known_link_recall_values": [
+          0.7142857142857143,
+          1.0,
+          0.8
+        ],
+        "macro_known_link_recall_at_20": 0.8380952380952381,
+        "method": "HT-B1",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 3.0,
+        "query_count": 3,
+        "rerank_pairs": 93.0,
+        "rerank_tokens": 23808.0,
+        "returned_candidates": 93.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 4.9745862999989185
+      },
+      {
+        "cpu_seconds": 174.40625,
+        "embedding_query_tokens": 135.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.8,
+        "group_macro_known_link_recall_range": 0.19999999999999996,
+        "group_macro_known_link_recall_values": [
+          0.8571428571428571,
+          1.0,
+          0.8
+        ],
+        "macro_known_link_recall_at_20": 0.8857142857142857,
+        "method": "HT-B2",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": true,
+        "query_calls": 12.0,
+        "query_count": 12,
+        "rerank_pairs": 372.0,
+        "rerank_tokens": 95232.0,
+        "returned_candidates": 372.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 18.748159399983706
+      },
+      {
+        "cpu_seconds": 72.78125,
+        "embedding_query_tokens": 87.0,
+        "failed_query_count": 0,
+        "group_count": 3,
+        "group_macro_known_link_recall_max": 1.0,
+        "group_macro_known_link_recall_min": 0.7142857142857143,
+        "group_macro_known_link_recall_range": 0.2857142857142857,
+        "group_macro_known_link_recall_values": [
+          0.7142857142857143,
+          1.0,
+          0.8
+        ],
+        "macro_known_link_recall_at_20": 0.8380952380952381,
+        "method": "HT-B3",
+        "paid_cost_usd": 0.0,
+        "pareto_frontier": false,
+        "query_calls": 5.0,
+        "query_count": 5,
+        "rerank_pairs": 155.0,
+        "rerank_tokens": 39680.0,
+        "returned_candidates": 155.0,
+        "split": "final_holdout",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+        "unknown_billing": 0,
+        "wall_seconds": 7.937144899973646
+      }
+    ]
+  },
+  "format": "ht-long-run-analysis-v1",
+  "holdout_minus_development": [
+    {
+      "macro_recall_delta_holdout_minus_development": -0.418452380952381,
+      "method": "HT-B0a",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": -0.0004437999159563333
+    },
+    {
+      "macro_recall_delta_holdout_minus_development": -0.19047619047619058,
+      "method": "HT-B0b",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": -0.053834800026379526
+    },
+    {
+      "macro_recall_delta_holdout_minus_development": -0.13065476190476188,
+      "method": "HT-B1",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": -7.388500999979442
+    },
+    {
+      "macro_recall_delta_holdout_minus_development": -0.020535714285714324,
+      "method": "HT-B2",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": -30.39549180000904
+    },
+    {
+      "macro_recall_delta_holdout_minus_development": -0.13065476190476188,
+      "method": "HT-B3",
+      "status": "DESCRIPTIVE_NOT_ESTIMABLE",
+      "wall_seconds_delta_holdout_minus_development": -8.813503200013656
+    }
+  ],
+  "input_hashes": {
+    "docs\\healthtech\\audits\\luna-long-run-20261030-current-head-b4-r2c-20261030\\report\\summary_tables.json": "0f04a32be4bf956df6539db52cd293029101dc811206069f9f72d065989761d1",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-development\\frontier_diagnostics.json": "bbc402a0348d4490e65fd797fc9f9875dc8a8fff96ed85a2d92cceff43d8ec0b",
+    "results\\healthtech\\ht-current-head-baselines-20261030-r2-holdout\\frontier_diagnostics.json": "611b533a2c5d363364a8992a2cb9c06d1c344db21a2a03958c3f7a979f9ee7ea"
+  },
+  "interpretation": [
+    "Observed development quality-resource frontier methods are HT-B0a, HT-B0b; this is descriptive and does not establish scientific superiority.",
+    "Observed final-holdout quality-resource frontier methods are HT-B0a, HT-B0b, HT-B1, HT-B2; frontier membership is descriptive for the frozen groups.",
+    "HT-B4 mock recall matches HT-B1, HT-B3 on development; it is above HT-B0a, HT-B2 and below HT-B0b. The transport was mocked and therefore is not provider evidence.",
+    "Small group counts, product-level disclosure labels, unjudged pairs, and the K=20 ceiling keep confirmatory uncertainty NOT_ESTIMABLE.",
+    "Paired group diagnostics align methods by frozen group_id and report deltas/population SD only; the current effective group count is below the predeclared threshold of five, so uncertainty remains NOT_ESTIMABLE."
+  ],
+  "paired_group_uncertainty": {
+    "baseline_method": "HT-B0b",
+    "development": {
+      "baseline_method": "HT-B0b",
+      "methods": {
+        "HT-B0a": {
+          "comparison": "HT-B0a minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": -0.025793650793650796,
+          "min_delta": -0.15476190476190477,
+          "paired_delta_values": [
+            -0.15476190476190477,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "paired_group_count": 6,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "population_sd": 0.05767635656249458,
+          "reason": "paired group count meets the diagnostic threshold; no inferential interval estimated",
+          "status": "DESCRIPTIVE_ONLY"
+        },
+        "HT-B1": {
+          "comparison": "HT-B1 minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": -0.041666666666666664,
+          "min_delta": -0.25,
+          "paired_delta_values": [
+            0.0,
+            0.0,
+            0.0,
+            -0.25,
+            0.0,
+            0.0
+          ],
+          "paired_group_count": 6,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "population_sd": 0.09316949906249124,
+          "reason": "paired group count meets the diagnostic threshold; no inferential interval estimated",
+          "status": "DESCRIPTIVE_ONLY"
+        },
+        "HT-B2": {
+          "comparison": "HT-B2 minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": -0.125,
+          "min_delta": -0.5,
+          "paired_delta_values": [
+            0.0,
+            0.0,
+            -0.5,
+            -0.25,
+            0.0,
+            0.0
+          ],
+          "paired_group_count": 6,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "population_sd": 0.19094065395649334,
+          "reason": "paired group count meets the diagnostic threshold; no inferential interval estimated",
+          "status": "DESCRIPTIVE_ONLY"
+        },
+        "HT-B3": {
+          "comparison": "HT-B3 minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": -0.041666666666666664,
+          "min_delta": -0.25,
+          "paired_delta_values": [
+            0.0,
+            0.0,
+            0.0,
+            -0.25,
+            0.0,
+            0.0
+          ],
+          "paired_group_count": 6,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "population_sd": 0.09316949906249124,
+          "reason": "paired group count meets the diagnostic threshold; no inferential interval estimated",
+          "status": "DESCRIPTIVE_ONLY"
+        }
+      },
+      "minimum_effective_groups": 5,
+      "status": "DESCRIPTIVE_ONLY"
+    },
+    "final_holdout": {
+      "baseline_method": "HT-B0b",
+      "methods": {
+        "HT-B0a": {
+          "comparison": "HT-B0a minus HT-B0b",
+          "max_delta": 0.0,
+          "mean_delta": -0.26666666666666666,
+          "min_delta": -0.8,
+          "paired_delta_values": [
+            0.0,
+            0.0,
+            -0.8
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.3771236166328254,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        },
+        "HT-B1": {
+          "comparison": "HT-B1 minus HT-B0b",
+          "max_delta": 0.28571428571428575,
+          "mean_delta": 0.0285714285714286,
+          "min_delta": -0.19999999999999996,
+          "paired_delta_values": [
+            0.28571428571428575,
+            0.0,
+            -0.19999999999999996
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.19931856701387,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        },
+        "HT-B2": {
+          "comparison": "HT-B2 minus HT-B0b",
+          "max_delta": 0.42857142857142855,
+          "mean_delta": 0.0761904761904762,
+          "min_delta": -0.19999999999999996,
+          "paired_delta_values": [
+            0.42857142857142855,
+            0.0,
+            -0.19999999999999996
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.26220761710354673,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        },
+        "HT-B3": {
+          "comparison": "HT-B3 minus HT-B0b",
+          "max_delta": 0.28571428571428575,
+          "mean_delta": 0.0285714285714286,
+          "min_delta": -0.19999999999999996,
+          "paired_delta_values": [
+            0.28571428571428575,
+            0.0,
+            -0.19999999999999996
+          ],
+          "paired_group_count": 3,
+          "paired_group_ids": [
+            "0",
+            "1",
+            "2"
+          ],
+          "population_sd": 0.19931856701387,
+          "reason": "paired group count 3 is below minimum effective group threshold 5",
+          "status": "NOT_ESTIMABLE"
+        }
+      },
+      "minimum_effective_groups": 5,
+      "status": "NOT_ESTIMABLE"
+    },
+    "minimum_effective_groups": 5
+  },
+  "protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+  "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE"
+}
