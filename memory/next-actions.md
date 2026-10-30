@@ -589,3 +589,11 @@ Status: `PASS_RUNTIME_EXPORT_SSH_CANARY_ALLOCATION_PENDING`; canonical audit: `d
 Verified strict SSH/authentication to `dr-train` with no remote job started, and exported the permitted DAPFAM corpus/query runtime bundle outside the repository: 45,336 corpus rows and 1,247 query rows, unique IDs, text hashes checked, and no qrels/gold fields. The current blocker is only the missing authorized job root/allocation/window/quota facts; visible idle GPU state is not treated as allocation.
 
 Next: obtain those bounded allocation facts once, then run the 32-100 document canary and continue the resumable remote encoding path.
+
+## HT-NEXT-067 — 2026-10-30 Luna real local canary and allocation preflight
+
+Status: `PASS_LOCAL_REAL_CANARY_REMOTE_BLOCKED_ALLOCATION`; canonical audit: `docs/healthtech/audits/luna-remote-embeddings-20261030T155013Z/README.md`.
+
+Fixed the vector manifest portability defect by replacing host-specific model/tokenizer paths with stable model identity and immutable artifact hashes. The real local ONNX canary encoded 64 runtime-only DAPFAM rows into two 384-dimensional float32 shards, resumed after a partial first shard, imported the completed bundle, and returned deterministic exact-search results. Targeted tests pass 22/22 and no evaluator labels were included.
+
+Strict SSH to `chaw@100.77.149.83` passed and read-only capacity was observed, but the remote parent job root was absent and no authorized GPU/CPU allocation, window, limits, shared-service restrictions, or transfer authorization was available. Do not start the remote job from idle capacity. Next action is one combined allocation confirmation, then a bounded 32-100 row remote canary.
