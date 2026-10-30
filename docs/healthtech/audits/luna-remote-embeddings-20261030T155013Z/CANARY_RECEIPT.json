@@ -1,0 +1,45 @@
+{
+  "run_id": "luna-remote-embeddings-20261030T155013Z",
+  "status": "PASS_LOCAL_REAL_CANARY",
+  "execution": "Windows local ONNX CPU preflight; not remote execution",
+  "input": {
+    "dataset": "dapfam-corpus",
+    "rows": 64,
+    "input_sha256": "55811c5ba634e1128a04b7c2e6905c0c20d0e33184dc547e5e041c0f7cb30c9a",
+    "qrels_included": false,
+    "gold_or_evaluator_fields_included": false
+  },
+  "model": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "model_artifact_sha256": "b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21",
+    "tokenizer_artifact_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+  },
+  "config": {
+    "representation": "mean_pool_l2_normalized",
+    "max_length": 256,
+    "dtype": "<f4",
+    "norm_policy": "l2",
+    "batch_size": 8,
+    "shard_size": 32,
+    "dimension": 384
+  },
+  "resume": {
+    "interrupted_after_shard_index": 0,
+    "completed_shards_after_resume": 2,
+    "partial_manifest_after_completion": false
+  },
+  "import_and_search": {
+    "imported_rows": 64,
+    "query_tokens": 9,
+    "finite_query_vector": true,
+    "top1_document_id": "000-008-740-297-724",
+    "top1_score": 0.7081069946289062,
+    "returned_limit": 5
+  },
+  "tests": {
+    "targeted_suite": "22 passed",
+    "compile": "PASS",
+    "diff_check": "PASS"
+  }
+}

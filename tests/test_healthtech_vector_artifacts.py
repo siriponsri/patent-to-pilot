@@ -4,6 +4,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
+from scripts.healthtech.encode_vector_shards import build_model_binding
 from patent_to_pilot.evaluation.healthtech.local_retrieval import PatentRecord, SharedRetriever
 from patent_to_pilot.evaluation.healthtech.vector_artifacts import (
     VectorArtifactError,
@@ -52,6 +53,28 @@ def _rows():
         {"item_id": "p1", "document_id": "US000001A1", "text": "first valve", "source_id": "src", "source_revision": "r1"},
         {"item_id": "p3", "document_id": "US000003A1", "text": "third pump", "source_id": "src", "source_revision": "r1"},
     ]
+
+
+def test_encoder_model_binding_is_host_independent(tmp_path: Path):
+    first_root = tmp_path / "first"
+    second_root = tmp_path / "second"
+    first_root.mkdir()
+    second_root.mkdir()
+    first_model = first_root / "model.onnx"
+    first_tokenizer = first_root / "tokenizer.json"
+    second_model = second_root / "model.onnx"
+    second_tokenizer = second_root / "tokenizer.json"
+    first_model.write_bytes(b"model-bytes")
+    first_tokenizer.write_bytes(b"tokenizer-bytes")
+    second_model.write_bytes(b"model-bytes")
+    second_tokenizer.write_bytes(b"tokenizer-bytes")
+
+    first = build_model_binding(first_model, first_tokenizer, model_id="fixture", revision="r1")
+    second = build_model_binding(second_model, second_tokenizer, model_id="fixture", revision="r1")
+
+    assert first == second
+    assert "model_path" not in first
+    assert "tokenizer_path" not in first
 
 
 def test_runtime_export_is_ordered_and_rejects_evaluator_fields(tmp_path: Path):
