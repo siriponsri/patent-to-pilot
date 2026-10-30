@@ -1,6 +1,25 @@
 {
-  "status": "PREPARED_NOT_PUBLISHED",
-  "expected_main": "a0ec9ceaf381ebbce6e6c340a8b420189eb8474c",
-  "expected_pr_head": "7ca0f2eab4a157d208fe0b9b949b83814e4fbcb2",
-  "pr": "https://github.com/siriponsri/patent-to-pilot/pull/1"
+  "status": "VERIFIED_PR_MERGED",
+  "main_before": "a0ec9ceaf381ebbce6e6c340a8b420189eb8474c",
+  "pr_head_unchanged": "7ca0f2eab4a157d208fe0b9b949b83814e4fbcb2",
+  "merge_commit": "3289cc0cd336b1006b9eecdf7499c87aede18131",
+  "merge_parents": [
+    "a0ec9ceaf381ebbce6e6c340a8b420189eb8474c",
+    "7ca0f2eab4a157d208fe0b9b949b83814e4fbcb2"
+  ],
+  "pr": "https://github.com/siriponsri/patent-to-pilot/pull/1",
+  "github_state": "closed",
+  "github_merged": true,
+  "github_merged_at": "2026-10-30T23:06:06Z",
+  "remote_main_verified_at_merge": "3289cc0cd336b1006b9eecdf7499c87aede18131",
+  "publication": "Normal non-forced fast-forward push of the tested two-parent merge commit to main; GitHub independently confirmed PR #1 merged with this SHA.",
+  "guard": "Both remote main and PR branch head checked before publication; main update was non-forced and would reject divergence.",
+  "branch_protection_bypassed": false,
+  "github_review_submitted": false,
+  "claude_branch_modified": false,
+  "tested_python_source_hashes_rechecked": 176,
+  "tested_integration_source_hashes_rechecked": 59,
+  "tested_sources_unchanged_at_publication": true,
+  "prior_prepared_record_preserved_in_commit": "3289cc0cd336b1006b9eecdf7499c87aede18131",
+  "closeout": "This subsequent documentation commit records verification; runtime source is unchanged from the tested merge."
 }

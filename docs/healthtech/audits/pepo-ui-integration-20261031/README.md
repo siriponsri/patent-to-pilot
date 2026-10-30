@@ -1,6 +1,6 @@
 # PR #1 backend/UI integration
 
-Outcome: **PASS_LOCAL_FILE_INTEGRATION** on the combined main/Claude candidate. Publication status is recorded separately in `MERGE_RECEIPT.json` when verified; a test PASS alone is not a merge claim.
+Outcome: **PASS_LOCAL_FILE_INTEGRATION; PR #1 MERGED**. GitHub confirmed merge commit `3289cc0cd336b1006b9eecdf7499c87aede18131` at `2026-10-30T23:06:06Z`; remote main agreed. [Merge receipt](MERGE_RECEIPT.json) separates publication evidence from tests. The closeout commit only records these results; tested runtime source is unchanged.
 
 The owner explicitly requested backend compatibility review and merge of PR #1 into current main. This supersedes the previous overnight task's no-main-publication direction for this package only. Remote encoding, paid inference, deployment and outreach remain outside this package.
 

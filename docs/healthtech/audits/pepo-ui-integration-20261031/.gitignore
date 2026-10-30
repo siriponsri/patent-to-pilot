@@ -1,0 +1,3 @@
+# Private operational references and raw run artifacts are not public deliverables.
+PRIVATE_ARTIFACTS.local.json
+e2e/
