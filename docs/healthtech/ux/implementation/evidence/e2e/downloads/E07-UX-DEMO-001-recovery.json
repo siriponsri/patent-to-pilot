@@ -1,0 +1,343 @@
+{
+  "format": "p2p-healthtech-ux-recovery",
+  "formatVersion": 1,
+  "exporter": {
+    "id": "healthtech-web-recovery",
+    "version": "1.0.0"
+  },
+  "generatedAt": "2026-10-30T14:04:21.299Z",
+  "mode": "synthetic_demo",
+  "project": {
+    "localProjectId": "proj-mvv1mld8-1kk2n88yvn6sy",
+    "title": "UX-DEMO-001 (synthetic)",
+    "storageScope": "indexeddb"
+  },
+  "snapshot": {
+    "snapshotId": "snap-mvv1mujt-uvvwef3jl2v4",
+    "parentSnapshotId": "snap-mvv1mtil-1gn8ibi1libayo",
+    "savedAt": "2026-10-30T14:04:19.625Z",
+    "acknowledged": true,
+    "lineage": [
+      "snap-mvv1mujt-uvvwef3jl2v4",
+      "snap-mvv1mtil-1gn8ibi1libayo"
+    ]
+  },
+  "backendDossierVersion": 1,
+  "sourceDossierSha256": "287757968b8d3b879cb64ecd62ec5a9ed28fd2bbdb08d86905cc6aebdd375e50",
+  "dossier": {
+    "project_id": "ux-demo-001",
+    "dossier_id": "ux-synthetic-dossier",
+    "version": 1,
+    "parent_version": null,
+    "query": {
+      "query_id": "UX-SYN-QUERY-001",
+      "brief": {
+        "project_id": "ux-demo-001",
+        "version": 1,
+        "objective": "Inspect an authored synthetic UX dossier; no real evidence finding.",
+        "audience": "entrepreneur",
+        "data_class": "synthetic",
+        "language": "th",
+        "theme": "formal-light"
+      },
+      "device_id_raw": "UX-DEMO-001 (synthetic)",
+      "device_id_canonical": "UX-DEMO-001",
+      "selected_comparator_source_id": "ux-synthetic-device",
+      "technical_description": "SYNTHETIC balloon sensor comparator",
+      "features_of_interest": [
+        "SYNTHETIC sensor"
+      ],
+      "user_questions": [
+        "Which real dated source would be needed before substantive review?"
+      ],
+      "company_metadata": {},
+      "company_source_id": null,
+      "jurisdiction": "US",
+      "evidence_cutoff": "2026-10-27",
+      "permitted_inputs": [
+        "ux-synthetic-device"
+      ],
+      "acquisition_budget": {
+        "max_search_calls": 3,
+        "max_returned_candidates": 60,
+        "accounting": "offline_counts"
+      }
+    },
+    "input_hash": "085a7f748985d9c628488a07a47054cae1414f0fa791b069b789bc2b03c8c4da",
+    "sources": [
+      {
+        "source": {
+          "record_id": "ux-synthetic-device",
+          "version": 1,
+          "created_at": "2026-10-27T00:00:00Z",
+          "source_id": "ux-synthetic-device",
+          "source_type": "synthetic_record",
+          "uri": "urn:synthetic:ux-synthetic-device",
+          "version_label": "ux-authored-v1",
+          "license_note": "Project-authored synthetic fixture; no real device, patent or disclosure.",
+          "locator": null,
+          "sha256": "65ae11daa06998a6b2daba3aeff3f74b062052ec0aa38cb380a9221bad2839f9",
+          "retrieved_at": null,
+          "limits": []
+        },
+        "payload": {
+          "device_name": "SYNTHETIC demonstration comparator",
+          "device_id": "UX-DEMO-001",
+          "decision_code": "SYNTHETIC_NO_REGULATORY_MEANING"
+        },
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "synthetic": true
+      },
+      {
+        "source": {
+          "record_id": "ux-synthetic-patent-a",
+          "version": 1,
+          "created_at": "2026-10-27T00:00:00Z",
+          "source_id": "ux-synthetic-patent-a",
+          "source_type": "patent_document",
+          "uri": "urn:synthetic:ux-synthetic-patent-a",
+          "version_label": "ux-authored-v1",
+          "license_note": "Project-authored synthetic fixture; no real device, patent or disclosure.",
+          "locator": null,
+          "sha256": "17c5d17d46fb16a8885af7bf0e566fbdce17137911e83e1c796c6f3a09270031",
+          "retrieved_at": null,
+          "limits": []
+        },
+        "payload": "SYNTHETIC balloon sensor example. No real patent or medical finding.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "synthetic": true
+      },
+      {
+        "source": {
+          "record_id": "ux-synthetic-patent-b",
+          "version": 1,
+          "created_at": "2026-10-27T00:00:00Z",
+          "source_id": "ux-synthetic-patent-b",
+          "source_type": "patent_document",
+          "uri": "urn:synthetic:ux-synthetic-patent-b",
+          "version_label": "ux-authored-v1",
+          "license_note": "Project-authored synthetic fixture; no real device, patent or disclosure.",
+          "locator": null,
+          "sha256": "4f2042bba28f5fca61bf4a01aeca568293199207348aafb80341c5ffc4fffc2e",
+          "retrieved_at": null,
+          "limits": []
+        },
+        "payload": "SYNTHETIC catheter example. No real patent or medical finding.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "synthetic": true
+      },
+      {
+        "source": {
+          "record_id": "ux-synthetic-independent-disclosure",
+          "version": 1,
+          "created_at": "2026-10-27T00:00:00Z",
+          "source_id": "ux-synthetic-independent-disclosure",
+          "source_type": "independent_disclosure",
+          "uri": "urn:synthetic:ux-synthetic-independent-disclosure",
+          "version_label": "ux-authored-v1",
+          "license_note": "Project-authored synthetic fixture; no real device, patent or disclosure.",
+          "locator": null,
+          "sha256": "4bdf5ac7134e2257eb5242d4bcf4fdd2f45e75d7319ec383a400a0629e76afad",
+          "retrieved_at": null,
+          "limits": []
+        },
+        "payload": "SYNTHETIC ONLY: the fictional UX-DEMO-001 record reports US99000002B2 as an association. This is authored demonstration text.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "synthetic": true
+      },
+      {
+        "source": {
+          "record_id": "ux-synthetic-unicode",
+          "version": 1,
+          "created_at": "2026-10-27T00:00:00Z",
+          "source_id": "ux-synthetic-unicode",
+          "source_type": "synthetic_record",
+          "uri": "urn:synthetic:ux-synthetic-unicode",
+          "version_label": "ux-authored-v1",
+          "license_note": "Project-authored synthetic fixture; no real device, patent or disclosure.",
+          "locator": null,
+          "sha256": "dfdf39721a3e57d17bb6ed6503cfc8e6f1fef718c58e184d1ac1c903cbc20d39",
+          "retrieved_at": null,
+          "limits": []
+        },
+        "payload": "ก🙂 ทดลองอ้างอิงภาษาไทย",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "synthetic": true
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "ux-e-device",
+        "source_id": "ux-synthetic-device",
+        "source_version": "ux-authored-v1",
+        "payload_hash": "65ae11daa06998a6b2daba3aeff3f74b062052ec0aa38cb380a9221bad2839f9",
+        "locator": "field:device_name",
+        "quoted_span": null,
+        "structured_field": "device_name",
+        "structured_value": "SYNTHETIC demonstration comparator",
+        "evidence_kind": "source_fact",
+        "statement": "SYNTHETIC source field: SYNTHETIC demonstration comparator",
+        "support_basis": "Authored fixture field only.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "extraction_method": "structured_field",
+        "verification_status": "field_value_checked"
+      },
+      {
+        "evidence_id": "ux-e-disclosure",
+        "source_id": "ux-synthetic-independent-disclosure",
+        "source_version": "ux-authored-v1",
+        "payload_hash": "4bdf5ac7134e2257eb5242d4bcf4fdd2f45e75d7319ec383a400a0629e76afad",
+        "locator": "chars:0:125",
+        "quoted_span": "SYNTHETIC ONLY: the fictional UX-DEMO-001 record reports US99000002B2 as an association. This is authored demonstration text.",
+        "structured_field": null,
+        "structured_value": null,
+        "evidence_kind": "patent_disclosure",
+        "statement": "SYNTHETIC authored span demonstration.",
+        "support_basis": "Authored fixture text only; not a real disclosure or clinical/legal conclusion.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "extraction_method": "literal_span",
+        "verification_status": "exact_span_checked"
+      },
+      {
+        "evidence_id": "ux-e-unicode",
+        "source_id": "ux-synthetic-unicode",
+        "source_version": "ux-authored-v1",
+        "payload_hash": "dfdf39721a3e57d17bb6ed6503cfc8e6f1fef718c58e184d1ac1c903cbc20d39",
+        "locator": "chars:1:2",
+        "quoted_span": "🙂",
+        "structured_field": null,
+        "structured_value": null,
+        "evidence_kind": "source_fact",
+        "statement": "SYNTHETIC authored span demonstration.",
+        "support_basis": "Authored fixture text only; not a real disclosure or clinical/legal conclusion.",
+        "jurisdiction": "US",
+        "source_date": "2026-10-27",
+        "extraction_method": "literal_span",
+        "verification_status": "exact_span_checked"
+      }
+    ],
+    "candidates": [
+      {
+        "patent_id_raw": "US 99000001 A1",
+        "patent_id_canonical": "US99000001A1",
+        "source_id": "ux-synthetic-patent-a",
+        "source_revision": "ux-authored-v1",
+        "retrieval_action_ids": [
+          "ux-simulated-step-1"
+        ],
+        "scores": {
+          "authored_demo_rank": 1.0
+        },
+        "association_status": "retrieved_candidate",
+        "disclosure_evidence_id": null,
+        "family_id": null,
+        "family_source_id": null
+      },
+      {
+        "patent_id_raw": "US 99000002 B2",
+        "patent_id_canonical": "US99000002B2",
+        "source_id": "ux-synthetic-patent-b",
+        "source_revision": "ux-authored-v1",
+        "retrieval_action_ids": [
+          "ux-simulated-step-1"
+        ],
+        "scores": {
+          "authored_demo_rank": 1.0
+        },
+        "association_status": "disclosed_link",
+        "disclosure_evidence_id": "ux-e-disclosure",
+        "family_id": null,
+        "family_source_id": null
+      }
+    ],
+    "unresolved_items": [
+      "SYNTHETIC example only; real evidence and coverage are unknown."
+    ],
+    "next_information_requests": [
+      "Request an independently sourced, dated real device-patent disclosure."
+    ],
+    "user_edits": {
+      "review_note": "ข้อความทดสอบการส่งออก / User note must survive export"
+    },
+    "run_id": "ux-simulated-run",
+    "created_at": "2026-10-27T00:00:00Z",
+    "validation_scope": "source_integrity_only"
+  },
+  "runArtifacts": {
+    "manifest": null,
+    "events": null
+  },
+  "overlay": {
+    "notes": [
+      {
+        "noteId": "ux-note-1",
+        "targetRef": "ux-e-device",
+        "baseDossierVersion": 1,
+        "text": "ยังต้องขอหลักฐานเพิ่มเติม / Request more evidence",
+        "basis": "user_note",
+        "reviewMarker": "needs_clarification"
+      },
+      {
+        "noteId": "note-mvv1mmkv-178asv3ghzv1d",
+        "targetRef": "dossier",
+        "baseDossierVersion": 1,
+        "text": "RACE_B",
+        "basis": "user_note",
+        "reviewMarker": "reviewed_by_user"
+      },
+      {
+        "noteId": "note-mvv1msjf-6zoz6n50mmxm",
+        "targetRef": "dossier",
+        "baseDossierVersion": 1,
+        "text": "EDIT_FROM_TAB_B",
+        "basis": "user_note",
+        "reviewMarker": "reviewed_by_user"
+      },
+      {
+        "noteId": "note-mvv1mtil-upnt3w1qlri8a",
+        "targetRef": "dossier",
+        "baseDossierVersion": 1,
+        "text": "RACE_A",
+        "basis": "user_note",
+        "reviewMarker": "reviewed_by_user"
+      }
+    ],
+    "featureLinks": [
+      {
+        "feature": "SYNTHETIC sensor",
+        "evidenceIds": [
+          "ux-e-device"
+        ],
+        "basis": "user_authored"
+      }
+    ],
+    "requestDrafts": [
+      {
+        "requestId": "ux-request-1",
+        "question": "What dated source supports this association?",
+        "evidenceRefs": [
+          "ux-e-disclosure"
+        ],
+        "priority": "normal",
+        "intendedRole": "technology reviewer",
+        "status": "draft"
+      },
+      {
+        "requestId": "request-mvv1mtre-5wc80c6ptocj",
+        "question": "ขอเอกสารเปิดเผยที่ลงวันที่ / Request a dated disclosure",
+        "evidenceRefs": [],
+        "priority": "normal",
+        "intendedRole": null,
+        "status": "draft"
+      }
+    ]
+  },
+  "omissions": []
+}
