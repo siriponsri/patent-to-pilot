@@ -68,3 +68,36 @@ def test_manifest_code_provenance_binds_working_tree_source():
     assert len(provenance["sha256"]) == 64
     assert provenance["git_revision"]
     assert isinstance(provenance["working_tree_dirty"], bool)
+
+
+def test_evaluator_rejects_duplicate_rankings_instead_of_inflating_ndcg():
+    with pytest.raises(ValueError, match="duplicate candidate IDs"):
+        MODULE.evaluate(
+            {"q1": ["p1", "p1"]},
+            {"q1": {"p1": 1.0}},
+            k=2,
+            universe={"p1"},
+        )
+
+
+def test_evaluator_rejects_unknown_queries_and_candidates():
+    with pytest.raises(ValueError, match="unknown query IDs"):
+        MODULE.evaluate({"q2": ["p1"]}, {"q1": {"p1": 1.0}}, k=1, universe={"p1"})
+    with pytest.raises(ValueError, match="unknown candidate IDs"):
+        MODULE.evaluate({"q1": ["unknown"]}, {"q1": {"p1": 1.0}}, k=1, universe={"p1"})
+
+
+def test_evaluator_preserves_missing_and_failure_denominators():
+    result = MODULE.evaluate(
+        {"q1": ["p1"]},
+        {"q1": {"p1": 1.0}, "q2": {"p2": 1.0}},
+        k=1,
+        universe={"p1", "p2"},
+        statuses={"q1": "completed", "q2": "failed"},
+    )
+    assert result["completed_query_count"] == 1
+    assert result["failed_query_count"] == 1
+    assert result["missing_query_count"] == 1
+    assert result["macro_recall_at_k"] == pytest.approx(0.5)
+    assert result["micro_recall_at_k"] == pytest.approx(0.5)
+    assert result["failed_query_ids"] == ["q2"]

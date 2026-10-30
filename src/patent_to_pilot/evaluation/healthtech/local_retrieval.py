@@ -9,6 +9,7 @@ from time import perf_counter, process_time
 from typing import Any, Iterable, Mapping
 
 from patent_to_pilot.healthtech.contracts import canonical_patent_id, content_hash
+from patent_to_pilot.evaluation.healthtech.vector_artifacts import VectorBundle
 
 
 _TOKEN_RE = re.compile(r"[\w-]+", flags=re.UNICODE)
@@ -284,17 +285,41 @@ def mask_explicit_patent_ids(text: str) -> str:
 class SharedRetriever:
     """Shared lexical, dense and reranker components used by B1/B2/B3."""
 
-    def __init__(self, patents: list[PatentRecord], *, encoder: DenseEncoder, reranker: CrossEncoderReranker) -> None:
+    def __init__(
+        self,
+        patents: list[PatentRecord],
+        *,
+        encoder: DenseEncoder,
+        reranker: CrossEncoderReranker,
+        precomputed_vectors: VectorBundle | None = None,
+    ) -> None:
         self.patents = patents
         self.by_id = {patent.patent_id_canonical: patent for patent in patents}
         self.lexical = BM25Index(patents)
         self.encoder = encoder
         self.reranker = reranker
         self.document_ids = [patent.patent_id_canonical for patent in patents]
-        self.document_vectors, self.index_tokens = encoder.encode([patent.text for patent in patents])
+        self.precomputed_vectors = precomputed_vectors
+        if precomputed_vectors is None:
+            self.document_vectors, self.index_tokens = encoder.encode([patent.text for patent in patents])
+        else:
+            if list(precomputed_vectors.document_ids) != self.document_ids:
+                raise ValueError("precomputed vector document order does not match patent order")
+            self.document_vectors = precomputed_vectors
+            self.index_tokens = 0
 
     def dense_search(self, query: str, *, limit: int) -> tuple[list[dict[str, Any]], int]:
         query_vector, query_tokens = self.encoder.encode([query])
+        if self.precomputed_vectors is not None:
+            rows = self.precomputed_vectors.search(query_vector[0], limit=limit)
+            return [
+                {
+                    "patent_id_canonical": row["document_id"],
+                    "score": row["score"],
+                    "rank": row["rank"],
+                }
+                for row in rows
+            ], query_tokens
         scores = cosine_scores(query_vector[0], self.document_vectors, self.document_ids)
         return [
             {"patent_id_canonical": patent_id, "score": score, "rank": rank}

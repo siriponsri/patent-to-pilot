@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 from time import perf_counter
-from typing import Literal
+from typing import Any, Literal, Protocol
 
 from pydantic import Field, model_validator
 
@@ -39,6 +39,12 @@ class PatentInput(Contract):
         if not isinstance(self.source.payload, str) or not self.source.payload.strip():
             raise ValueError("patent corpus requires nonempty text")
         return self
+
+
+class VectorSearchProvider(Protocol):
+    """Optional dense provider; lexical retrieval remains the default path."""
+
+    def search(self, query: str, *, limit: int) -> tuple[list[dict[str, Any]], int]: ...
 
 
 class DossierInput(Contract):
@@ -80,7 +86,13 @@ class DossierInput(Contract):
         return self
 
 
-def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[DossierVersion, list[AcquisitionEvent], RunManifest]:
+def run_dossier(
+    data: DossierInput,
+    *,
+    run_id: str,
+    code_commit: str,
+    vector_search: VectorSearchProvider | None = None,
+) -> tuple[DossierVersion, list[AcquisitionEvent], RunManifest]:
     started = perf_counter()
     input_hash = content_hash(data.model_dump(mode="json"))
     configuration_hash = content_hash({"policy_id": data.policy_id, "limit":data.per_search_limit,
@@ -132,6 +144,18 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
                 hits = []
                 errors = ["local_search_failed"]
                 failures = True
+            dense_hits: list[dict[str, Any]] = []
+            if vector_search is not None:
+                remaining_slots = max(before.max_returned_candidates - len(hits), 0)
+                if remaining_slots:
+                    try:
+                        dense_hits, _ = vector_search.search(
+                            query,
+                            limit=min(data.per_search_limit, remaining_slots),
+                        )
+                    except (ValueError, RuntimeError):
+                        errors.append("vector_search_failed")
+                        failures = True
             if data.policy_id == "HT-B1":
                 ranked_hits = fixed_hybrid_rerank(query, hits, corpus_texts, limit=len(hits))
             else:
@@ -153,13 +177,46 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
                 else:
                     old=candidates[h.document_id]
                     scores = {**old.scores,
-                        "rrf_fixed_k60": old.scores["rrf_fixed_k60"] + 1/(60+rank)}
+                            "rrf_fixed_k60": old.scores.get("rrf_fixed_k60", 0.0) + 1/(60+rank)}
                     if data.policy_id == "HT-B1":
                         scores["hybrid_fixed"] = scores.get("hybrid_fixed", 0.0) + fused_score
                         scores["token_overlap"] = max(scores.get("token_overlap", 0.0), overlap)
                     candidates[h.document_id]=PatentCandidate.model_validate({**old.model_dump(),
                         "retrieval_action_ids":[*old.retrieval_action_ids,step_id],
                         "scores":scores})
+            for dense_rank, dense_hit in enumerate(dense_hits, 1):
+                try:
+                    dense_id = canonical_patent_id(str(dense_hit["patent_id_canonical"]))
+                    dense_score = float(dense_hit["score"])
+                except (KeyError, TypeError, ValueError):
+                    errors.append("vector_candidate_invalid")
+                    failures = True
+                    continue
+                if dense_id not in corpus:
+                    errors.append("vector_candidate_outside_corpus")
+                    failures = True
+                    continue
+                if dense_id not in returned:
+                    returned.append(dense_id)
+                patent = corpus[dense_id]
+                if dense_id not in candidates:
+                    new += 1
+                    candidates[dense_id] = PatentCandidate(
+                        patent_id_raw=patent.patent_id,
+                        patent_id_canonical=dense_id,
+                        source_id=patent.source.source.source_id,
+                        source_revision=patent.source.source.version_label,
+                        retrieval_action_ids=[step_id],
+                        scores={"dense_cosine": dense_score, "dense_rank": float(dense_rank)},
+                    )
+                else:
+                    old = candidates[dense_id]
+                    scores = {**old.scores, "dense_cosine": dense_score, "dense_rank": float(dense_rank)}
+                    candidates[dense_id] = PatentCandidate.model_validate({
+                        **old.model_dump(),
+                        "retrieval_action_ids": [*old.retrieval_action_ids, step_id],
+                        "scores": scores,
+                    })
             summary = {
                 "HT-B0a": "Company/metadata-only control",
                 "HT-B0b": "Declared single-query lexical baseline",
@@ -168,12 +225,12 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
                 "HT-B3": "Simple no-new-candidate heuristic",
             }[data.policy_id]
             remaining = AcquisitionBudget(max_search_calls=remaining.max_search_calls,
-                max_returned_candidates=before.max_returned_candidates-len(hits))
+                max_returned_candidates=before.max_returned_candidates-len(returned))
             events.append(AcquisitionEvent(run_id=run_id, query_id=data.query.query_id, step_id=step_id,
                 policy_id=data.policy_id, action_type=action, input_reference_ids=data.query.permitted_inputs,
                 returned_candidate_ids=returned, new_candidate_count=new, started_at=timestamp,
                 ended_at=datetime.now(timezone.utc), elapsed_seconds=perf_counter()-step_started,
-                search_calls=1, returned_candidates=len(hits), errors=errors,
+                search_calls=1, returned_candidates=len(returned), errors=errors,
                 remaining_budget_before=before, remaining_budget_after=remaining,
                 configuration_hash=configuration_hash, decision_summary=summary))
             if data.policy_id == "HT-B3":
@@ -190,7 +247,14 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
         index.close()
     if failures:
         stop_reason = "run_failure"
-    ranked = sorted(candidates.values(), key=lambda c:(-c.scores.get("hybrid_fixed", c.scores["rrf_fixed_k60"]), c.patent_id_canonical))
+    if vector_search is None:
+        ranked = sorted(candidates.values(), key=lambda c:(-c.scores.get("hybrid_fixed", c.scores["rrf_fixed_k60"]), c.patent_id_canonical))
+    else:
+        ranked = sorted(candidates.values(), key=lambda c:(
+            -c.scores.get("dense_cosine", float("-inf")),
+            -c.scores.get("hybrid_fixed", c.scores.get("rrf_fixed_k60", 0.0)),
+            c.patent_id_canonical,
+        ))
     events.append(AcquisitionEvent(run_id=run_id, query_id=data.query.query_id, step_id=f"{run_id}-stop",
         policy_id=data.policy_id, action_type="stop", input_reference_ids=[], returned_candidate_ids=[],
         new_candidate_count=0, started_at=datetime.now(timezone.utc), ended_at=datetime.now(timezone.utc),
@@ -217,7 +281,10 @@ def run_dossier(data: DossierInput, *, run_id: str, code_commit: str) -> tuple[D
                    "export_th":"dossier.th.md","events":"acquisition_events.jsonl","manifest":"manifest.json"},
         limitations=["Offline lexical/fixed-schedule engineering only; no hybrid, adaptive or LLM comparison.",
                      "No scientific benchmark or user evaluation was executed.",
-                     "Index construction is included in total elapsed time; action times cover searches only."],
+                     "Index construction is included in total elapsed time; action times cover searches only."] + (
+                         ["Optional precomputed dense vectors were used for candidate augmentation; vector provenance is carried by the bundle manifest."]
+                         if vector_search is not None else []
+                     ),
         rights_summary=[source_rights_summary(source) for source in data.sources + [p.source for p in data.patents]])
     return dossier,events,manifest
 

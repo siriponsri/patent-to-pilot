@@ -13,24 +13,71 @@ build_comparison = _MODULE.build_comparison
 render_report = _MODULE.render_report
 
 
-def _load(relative: str) -> dict:
-    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
-
-
 def _inputs():
+    methods = ("HT-B0a", "HT-B0b", "HT-B1", "HT-B2", "HT-B3")
+
+    def frontier(device_count: int, values: dict[str, float]) -> dict:
+        return {
+            "status": "DESCRIPTIVE_DEVELOPMENT_FRONTIER",
+            "primary_k": 20,
+            "error_count": 0,
+            "by_method": {
+                method: {
+                    "macro_known_link_recall_at_20": values[method],
+                    "device_count": device_count,
+                    "failed_device_count": 0,
+                    "realized_query_count": float(device_count),
+                }
+                for method in methods
+            },
+            "quality_resource_frontier": {
+                "fixed_prefix_alignment": {"first_query_match_across_fixed_methods": True},
+                "rows": [],
+            },
+        }
+
+    model_revisions = {"encoder": "fixture-encoder@r1", "reranker": "fixture-reranker@r1"}
     return {
-        "abbott_protocol": _load("results/healthtech/ht-abbott-development-20261028-r1/protocol.json"),
-        "abbott_receipt": _load("results/healthtech/ht-real-baselines-20261029-frozen-r1/receipt.json"),
-        "abbott_frontier": _load("results/healthtech/ht-real-baselines-20261029-frozen-r1/frontier_diagnostics.json"),
-        "abbott_groups": _load("results/healthtech/ht-abbott-development-20261028-r1/protocol.json")["groups"],
-        "abbott_split": _load("results/healthtech/ht-abbott-development-20261028-r1/split_manifest.json"),
-        "abbott_distractors": _load("results/healthtech/ht-abbott-development-20261028-r1/distractors.json"),
-        "boston_manifest": _load("results/healthtech/ht-boston-watchman-20261028-r4/manifest.json"),
-        "boston_receipt": _load("results/healthtech/ht-boston-baselines-20261028-r3/receipt.json"),
-        "boston_frontier": _load("results/healthtech/ht-boston-baselines-20261028-r3/frontier_diagnostics.json"),
-        "boston_groups": _load("results/healthtech/ht-boston-watchman-20261028-r4/groups.json"),
-        "boston_split": _load("results/healthtech/ht-boston-watchman-20261028-r4/split_manifest.json"),
-        "boston_distractors": _load("results/healthtech/ht-boston-watchman-20261028-r4/distractors.json"),
+        "abbott_protocol": {
+            "status": "FIXTURE_DEVELOPMENT_ONLY",
+            "counts": {"eligible_devices": 3, "universe_patents": 41, "disclosed_pairs": 61, "unjudged_distractor_pairs": 4},
+            "split": {"final_holdout": []},
+            "source_refs": {"fixture": "authored"},
+        },
+        "abbott_receipt": {"model_revisions": model_revisions},
+        "abbott_frontier": frontier(3, {
+            "HT-B0a": 0.442739,
+            "HT-B0b": 0.6622417082775139,
+            "HT-B1": 0.498802,
+            "HT-B2": 0.568912,
+            "HT-B3": 0.498802,
+        }),
+        "abbott_groups": {
+            "company_groups": ["fixture-company"],
+            "shared_exact_patent_groups": ["fixture-patent-1", "fixture-patent-2"],
+            "family_mapping": {"status": "UNKNOWN"},
+            "group_evidence": [],
+        },
+        "abbott_split": {"final_holdout": []},
+        "abbott_distractors": {"status": "AUTHORED_FIXTURE"},
+        "boston_manifest": {
+            "status": "FIXTURE_DEVELOPMENT_ONLY",
+            "devices": 2,
+            "patents": 7,
+            "reference_pairs": 8,
+            "unjudged_distractor_pairs": 2,
+            "cohort_sha256": "fixture",
+        },
+        "boston_receipt": {"model_revisions": model_revisions},
+        "boston_frontier": frontier(2, {method: 1.0 for method in methods}),
+        "boston_groups": {
+            "company_groups": ["fixture-company"],
+            "shared_exact_patent_groups": ["fixture-patent-1"],
+            "family_mapping": {"status": "UNKNOWN"},
+            "group_evidence": [],
+        },
+        "boston_split": {"final_holdout": []},
+        "boston_distractors": {"status": "AUTHORED_FIXTURE"},
     }
 
 

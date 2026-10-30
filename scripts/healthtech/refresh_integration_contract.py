@@ -48,6 +48,13 @@ def _load_json(path: Path) -> dict[str, Any]:
     return value
 
 
+def _display_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT)).replace("\\", "/")
+    except ValueError:
+        return str(path).replace("\\", "/")
+
+
 def _current_head() -> str:
     try:
         value = subprocess.check_output(
@@ -116,7 +123,7 @@ def refresh_contract(
     refreshed["refresh"] = {
         "type": "current_head_backend_hash_refresh",
         "date": resolved_date,
-        "parent_contract": str(parent_contract.relative_to(ROOT)).replace("\\", "/"),
+        "parent_contract": _display_path(parent_contract),
         "fixture_hashes_verified": len(verified_fixtures),
         "backend_hashes_recomputed": len(current_backend_hashes),
         "historical_parent_unchanged": True,

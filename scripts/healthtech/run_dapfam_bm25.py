@@ -183,7 +183,33 @@ def read_qrels(path: Path) -> tuple[dict[str, dict[str, float]], dict[str, dict[
     return qrels, domain_positives
 
 
+def _validate_ranking_ids(
+    ranked_by_query: dict[str, list[str]],
+    qrels: dict[str, dict[str, float]],
+    *,
+    universe: set[str] | None,
+) -> None:
+    unknown_queries = set(ranked_by_query) - set(qrels)
+    if unknown_queries:
+        raise ValueError(f"ranking contains unknown query IDs: {sorted(unknown_queries)}")
+    for query_id, ranked_ids in ranked_by_query.items():
+        if len(ranked_ids) != len(set(ranked_ids)):
+            raise ValueError(f"ranking contains duplicate candidate IDs: {query_id}")
+        if universe is not None:
+            unknown_candidates = set(ranked_ids) - universe
+            if unknown_candidates:
+                raise ValueError(
+                    f"ranking contains unknown candidate IDs for {query_id}: {sorted(unknown_candidates)}"
+                )
+    if universe is not None:
+        qrel_candidates = {candidate for labels in qrels.values() for candidate in labels}
+        if not qrel_candidates <= universe:
+            raise ValueError("qrels contain candidate IDs outside the declared corpus")
+
+
 def dcg_at_k(ranked_ids: list[str], labels: dict[str, float], k: int) -> float:
+    if len(ranked_ids) != len(set(ranked_ids)):
+        raise ValueError("ranking contains duplicate candidate IDs")
     total = 0.0
     for rank, relevant_id in enumerate(ranked_ids[:k], start=1):
         relevance = labels.get(relevant_id, 0.0)
@@ -202,27 +228,53 @@ def evaluate(
     qrels: dict[str, dict[str, float]],
     *,
     k: int,
+    universe: set[str] | None = None,
+    statuses: dict[str, str] | None = None,
 ) -> dict[str, float | int]:
+    _validate_ranking_ids(ranked_by_query, qrels, universe=universe)
+    statuses = statuses or {}
+    if not set(statuses) <= set(qrels):
+        raise ValueError("status contains unknown query IDs")
+    invalid_statuses = set(statuses.values()) - {"completed", "failed"}
+    if invalid_statuses:
+        raise ValueError(f"unknown query status: {sorted(invalid_statuses)}")
     recalls: list[float] = []
     ndcgs: list[float] = []
     total_hits = 0
     total_positives = 0
+    failed_query_ids: list[str] = []
+    missing_query_ids: list[str] = []
     for query_id, labels in qrels.items():
         ranked = ranked_by_query.get(query_id, [])
+        status = statuses.get(query_id, "completed" if query_id in ranked_by_query else "failed")
+        if status == "failed":
+            failed_query_ids.append(query_id)
+        if query_id not in ranked_by_query:
+            missing_query_ids.append(query_id)
         positives = {relevant_id for relevant_id, relevance in labels.items() if relevance > 0}
-        hits = len(set(ranked[:k]) & positives)
-        recalls.append(hits / len(positives) if positives else 0.0)
-        ndcgs.append(ndcg_at_k(ranked, labels, k))
+        hits = len(set(ranked[:k]) & positives) if status == "completed" else 0
+        recall = hits / len(positives) if positives else 0.0
+        ndcg = ndcg_at_k(ranked, labels, k) if status == "completed" else 0.0
+        if not 0.0 <= recall <= 1.0 or not 0.0 <= ndcg <= 1.0 + 1e-12:
+            raise ValueError("metric is outside the [0, 1] bounds")
+        recalls.append(recall)
+        ndcgs.append(ndcg)
         total_hits += hits
         total_positives += len(positives)
     return {
         "query_count": len(qrels),
+        "completed_query_count": len(qrels) - len(failed_query_ids),
+        "failed_query_count": len(failed_query_ids),
+        "missing_query_count": len(missing_query_ids),
         "macro_recall_at_k": sum(recalls) / len(recalls) if recalls else 0.0,
         "micro_recall_at_k": total_hits / total_positives if total_positives else 0.0,
         "macro_ndcg_at_k": sum(ndcgs) / len(ndcgs) if ndcgs else 0.0,
         "positive_qrels": total_positives,
         "hits_at_k": total_hits,
         "k": k,
+        "failed_query_ids": failed_query_ids,
+        "missing_query_ids": missing_query_ids,
+        "failure_denominator_policy": "failed and missing queries remain in macro denominator; missing positives remain in micro denominator",
     }
 
 
@@ -316,12 +368,13 @@ def run(args: argparse.Namespace) -> dict[str, object]:
             score_by_query[query_id] = ranked_scores
             handle.write(json.dumps({"query_id": query_id, "ranked_ids": ranked, "scores": ranked_scores}) + "\n")
 
-    metrics = evaluate(ranked_by_query, qrels, k=args.k)
+    metrics = evaluate(ranked_by_query, qrels, k=args.k, universe=corpus_id_set)
     domain_metrics = {
         domain: evaluate(
-            ranked_by_query,
+            {query_id: ranked_by_query.get(query_id, []) for query_id in per_query},
             {query_id: {relevant_id: 1.0 for relevant_id in ids} for query_id, ids in per_query.items()},
             k=args.k,
+            universe=corpus_id_set,
         )
         for domain, per_query in domain_positives.items()
         if domain != "NC"
