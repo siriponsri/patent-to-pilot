@@ -1,0 +1,50 @@
+{
+  "run_id": "luna-remote-embeddings-eval-20261030T160039Z",
+  "status": "PASS_LOCAL_MATCHED_EVAL_RUNNER_SMOKE",
+  "code_revision": "cd09fbc",
+  "inputs": {
+    "runtime_corpus_rows": 64,
+    "runtime_corpus_sha256": "55811c5ba634e1128a04b7c2e6905c0c20d0e33184dc547e5e041c0f7cb30c9a",
+    "runtime_query_rows": 2,
+    "runtime_queries_sha256": "fb7fbe22910819235b1c35f7a09aae6ac77b9838394cdfe25b52f6b65b4af1bb",
+    "authored_qrel_rows": 2,
+    "authored_qrels_sha256": "afde4c221396321cd9b9099e5081811f09ef6b8df76f0ef452455753bc685d1d",
+    "vector_manifest_sha256": "696f3f3fc2e45fa1c9debb86a970d81d078a70b014803b3da0bab68969472f20"
+  },
+  "methods": {
+    "bm25": {
+      "macro_recall_at_5": 0.0,
+      "micro_recall_at_5": 0.0,
+      "macro_ndcg_at_5": 0.0,
+      "failed_queries": 0
+    },
+    "dense": {
+      "macro_recall_at_5": 0.5,
+      "micro_recall_at_5": 0.5,
+      "macro_ndcg_at_5": 0.31546487678572877,
+      "failed_queries": 0
+    },
+    "hybrid_rrf": {
+      "macro_recall_at_5": 0.5,
+      "micro_recall_at_5": 0.5,
+      "macro_ndcg_at_5": 0.25,
+      "failed_queries": 0
+    }
+  },
+  "runtime": {
+    "elapsed_seconds": 0.07960199998342432,
+    "provider_calls": 0,
+    "paid_cost_usd": 0
+  },
+  "checks": {
+    "targeted_tests": "19 passed",
+    "compile": "PASS",
+    "diff_check": "PASS",
+    "model_tokenizer_hash_binding": "PASS"
+  },
+  "boundaries": [
+    "Authored qrels were used only to exercise the evaluation contract.",
+    "This smoke does not establish DAPFAM dense quality or semantic device-patent relevance.",
+    "Full remote encoding, transfer, real qrels evaluation, and vector-backed real dossiers remain NOT_RUN."
+  ]
+}

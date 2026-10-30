@@ -574,6 +574,14 @@ Added a deterministic DuckDB-backed coverage analyzer over the existing DAPFAM r
 
 This is a separate citation-based retrieval coverage diagnostic, not semantic device-patent gold and not a substitute for M23/M25/M24. Keep DAPFAM out of the HT-T1 denominator and keep unlisted pairs `UNJUDGED`. Next: obtain owner-authorized rights/schema access for an admissible semantic judgment source, then run M23, M25, and M24 before frozen-control reruns.
 
+## HT-NEXT-068 — 2026-10-30 M43 matched vector evaluation runner
+
+Status: `PASS_LOCAL_MATCHED_EVAL_RUNNER_SMOKE_REMOTE_NOT_RUN`; canonical audit: `docs/healthtech/audits/luna-remote-embeddings-eval-20261030T160039Z/README.md`.
+
+Added a local-only matched evaluation runner that consumes the validated vector bundle, binds query encoding to the model/tokenizer artifact hashes, and evaluates BM25, dense, and RRF-hybrid rankings through the existing DAPFAM evaluator contract. The authored 64-row canary smoke used 2 query rows and 2 qrel rows: BM25 macro Recall@5 `0.0`, dense `0.5`, and hybrid `0.5`; provider calls and paid cost were zero. Targeted evaluation/vector tests pass `19/19`, compile and diff checks pass, and qrels remain outside runtime inputs and result outputs.
+
+This smoke is a contract check only; it does not establish full DAPFAM dense quality, semantic device-patent relevance, or real vector-backed dossiers. Remote encoding, shard transfer, full real-qrels evaluation, and three real vector-backed dossiers remain `NOT_RUN` pending the combined allocation and controlled-transfer authorization. Next: run the bounded remote canary, complete resumable encoding, validate/import the returned bundle, run full matched evaluation, and encode any separate permitted dossier corpus without substituting DAPFAM IDs.
+
 ## HT-NEXT-064 — 2026-10-30 Luna remote embeddings local package
 
 Status: `PASS_LOCAL_PACKAGE_REMOTE_EXECUTION_NOT_RUN`; canonical audit: `docs/healthtech/audits/luna-remote-embeddings-20261030T151444Z/README.md`.

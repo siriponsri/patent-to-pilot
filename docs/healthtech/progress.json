@@ -534,5 +534,8 @@
   "latest_remote_embeddings_audit": "docs/healthtech/audits/luna-remote-embeddings-20261030T151444Z/README.md",
   "latest_remote_embeddings_status": "PASS_LOCAL_REAL_CANARY_REMOTE_BLOCKED_ALLOCATION",
   "latest_remote_embeddings_continuation_audit": "docs/healthtech/audits/luna-remote-embeddings-20261030T155013Z/README.md",
-  "latest_remote_embeddings_code_revision": "7812c8f"
+  "latest_remote_embeddings_code_revision": "cd09fbc",
+  "latest_remote_embeddings_eval_audit": "docs/healthtech/audits/luna-remote-embeddings-eval-20261030T160039Z/README.md",
+  "latest_remote_embeddings_eval_receipt": "docs/healthtech/audits/luna-remote-embeddings-eval-20261030T160039Z/EVAL_RUNNER_RECEIPT.json",
+  "latest_remote_embeddings_eval_status": "PASS_LOCAL_MATCHED_EVAL_RUNNER_SMOKE_REMOTE_NOT_RUN"
 }
