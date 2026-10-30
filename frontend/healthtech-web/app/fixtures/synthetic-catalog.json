@@ -1,0 +1,35 @@
+{
+  "schema_version": "healthtech-web-catalog-v1",
+  "authored_synthetic": true,
+  "disclaimer": "AUTHORED SYNTHETIC catalog records for the HealthTech web frontend. They exercise similar-name disambiguation only; no real device, applicant, patent or regulatory meaning.",
+  "records": [
+    {
+      "source_id": "ux-synthetic-catalog-near-1",
+      "version_label": "web-authored-v1",
+      "source_type": "synthetic_record",
+      "uri": "urn:synthetic:ux-synthetic-catalog-near-1",
+      "jurisdiction": "US",
+      "source_date": "2026-10-20",
+      "payload": {
+        "device_name": "SYNTHETIC demonstration comparator II",
+        "device_id": "UX-DEMO-002",
+        "applicant": "SYNTHETIC Applicant A",
+        "decision_code": "SYNTHETIC_NO_REGULATORY_MEANING"
+      }
+    },
+    {
+      "source_id": "ux-synthetic-catalog-near-2",
+      "version_label": "web-authored-v1",
+      "source_type": "synthetic_record",
+      "uri": "urn:synthetic:ux-synthetic-catalog-near-2",
+      "jurisdiction": "US",
+      "source_date": "2026-10-29",
+      "payload": {
+        "device_name": "SYNTHETIC demonstration comparator",
+        "device_id": "UX-DEMO-003",
+        "applicant": "SYNTHETIC Applicant B",
+        "decision_code": "SYNTHETIC_NO_REGULATORY_MEANING"
+      }
+    }
+  ]
+}
