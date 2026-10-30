@@ -574,14 +574,6 @@ Added a deterministic DuckDB-backed coverage analyzer over the existing DAPFAM r
 
 This is a separate citation-based retrieval coverage diagnostic, not semantic device-patent gold and not a substitute for M23/M25/M24. Keep DAPFAM out of the HT-T1 denominator and keep unlisted pairs `UNJUDGED`. Next: obtain owner-authorized rights/schema access for an admissible semantic judgment source, then run M23, M25, and M24 before frozen-control reruns.
 
-## HT-NEXT-068 — 2026-10-30 M43 matched vector evaluation runner
-
-Status: `PASS_LOCAL_MATCHED_EVAL_RUNNER_SMOKE_REMOTE_NOT_RUN`; canonical audit: `docs/healthtech/audits/luna-remote-embeddings-eval-20261030T160039Z/README.md`.
-
-Added a local-only matched evaluation runner that consumes the validated vector bundle, binds query encoding to the model/tokenizer artifact hashes, and evaluates BM25, dense, and RRF-hybrid rankings through the existing DAPFAM evaluator contract. The authored 64-row canary smoke used 2 query rows and 2 qrel rows: BM25 macro Recall@5 `0.0`, dense `0.5`, and hybrid `0.5`; provider calls and paid cost were zero. Targeted evaluation/vector tests pass `19/19`, compile and diff checks pass, and qrels remain outside runtime inputs and result outputs.
-
-This smoke is a contract check only; it does not establish full DAPFAM dense quality, semantic device-patent relevance, or real vector-backed dossiers. Remote encoding, shard transfer, full real-qrels evaluation, and three real vector-backed dossiers remain `NOT_RUN` pending the combined allocation and controlled-transfer authorization. Next: run the bounded remote canary, complete resumable encoding, validate/import the returned bundle, run full matched evaluation, and encode any separate permitted dossier corpus without substituting DAPFAM IDs.
-
 ## HT-NEXT-064 — 2026-10-30 Luna remote embeddings local package
 
 Status: `PASS_LOCAL_PACKAGE_REMOTE_EXECUTION_NOT_RUN`; canonical audit: `docs/healthtech/audits/luna-remote-embeddings-20261030T151444Z/README.md`.
@@ -613,3 +605,11 @@ Status: `PASS_LOCAL_REAL_CANARY_REMOTE_BLOCKED_ALLOCATION`; canonical audit: `do
 Fixed the vector manifest portability defect by replacing host-specific model/tokenizer paths with stable model identity and immutable artifact hashes. The real local ONNX canary encoded 64 runtime-only DAPFAM rows into two 384-dimensional float32 shards, resumed after a partial first shard, imported the completed bundle, and returned deterministic exact-search results. Targeted tests pass 22/22 and no evaluator labels were included.
 
 Strict SSH to `chaw@100.77.149.83` passed and read-only capacity was observed, but the remote parent job root was absent and no authorized GPU/CPU allocation, window, limits, shared-service restrictions, or transfer authorization was available. Do not start the remote job from idle capacity. Next action is one combined allocation confirmation, then a bounded 32-100 row remote canary.
+
+## HT-NEXT-068 — 2026-10-30 M43 matched vector evaluation runner
+
+Status: `PASS_LOCAL_MATCHED_EVAL_RUNNER_SMOKE_REMOTE_NOT_RUN`; canonical audit: `docs/healthtech/audits/luna-remote-embeddings-eval-20261030T160039Z/README.md`.
+
+Added a local-only matched evaluation runner that consumes the validated vector bundle, binds query encoding to the model/tokenizer artifact hashes, and evaluates BM25, dense, and RRF-hybrid rankings through the existing DAPFAM evaluator contract. The authored 64-row canary smoke used 2 query rows and 2 qrel rows: BM25 macro Recall@5 `0.0`, dense `0.5`, and hybrid `0.5`; provider calls and paid cost were zero. Targeted evaluation/vector tests pass `19/19`, compile and diff checks pass, and qrels remain outside runtime inputs and result outputs.
+
+This smoke is a contract check only; it does not establish full DAPFAM dense quality, semantic device-patent relevance, or real vector-backed dossiers. Remote encoding, shard transfer, full real-qrels evaluation, and three real vector-backed dossiers remain `NOT_RUN` pending the combined allocation and controlled-transfer authorization. Next: run the bounded remote canary, complete resumable encoding, validate/import the returned bundle, run full matched evaluation, and encode any separate permitted dossier corpus without substituting DAPFAM IDs.
