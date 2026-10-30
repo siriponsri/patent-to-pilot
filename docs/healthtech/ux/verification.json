@@ -1,0 +1,476 @@
+{
+  "package": "HT-W13-UX-DOCUMENTATION",
+  "status": "PASS",
+  "verified_at_utc": "2026-10-27T23:16:35.270986+00:00",
+  "base_commit_observed": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
+  "command_argv": [
+    "docs/healthtech/ux/validate_docs.py",
+    "--repo-root",
+    ".",
+    "--receipt",
+    "docs/healthtech/ux/verification.json"
+  ],
+  "checks": [
+    {
+      "check": "local_markdown_links",
+      "status": "PASS",
+      "detail": {
+        "local_links": 46,
+        "network_link_checks": "NOT_RUN (local-only scope)"
+      }
+    },
+    {
+      "check": "cross_document_ids_and_fixture_references",
+      "status": "PASS",
+      "detail": {
+        "J": 9,
+        "US": 28,
+        "SCR": 11,
+        "CMP": 14,
+        "ST": 15,
+        "CAP": 10,
+        "FX": 15
+      }
+    },
+    {
+      "check": "story_mapping_and_dependencies",
+      "status": "PASS",
+      "detail": {
+        "stories": 28,
+        "dependencies": "acyclic",
+        "acceptance": "Given/When/Then and HT mapping present"
+      }
+    },
+    {
+      "check": "fixture_envelope_json_schema",
+      "status": "PASS",
+      "detail": {
+        "envelope": "ux-fixtures-v1",
+        "scenarios": 15
+      }
+    },
+    {
+      "check": "embedded_dossiers_schema_pydantic_source_integrity",
+      "status": "PASS",
+      "detail": [
+        {
+          "payload": "synthetic_dossier",
+          "sources": 5,
+          "evidence": 3,
+          "candidates": 2
+        },
+        {
+          "payload": "empty_corpus_dossier",
+          "sources": 1,
+          "evidence": 1,
+          "candidates": 0
+        }
+      ]
+    },
+    {
+      "check": "hand_computable_negative_imports",
+      "status": "PASS",
+      "detail": [
+        {
+          "case": "payload_hash_mismatch",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "locator_mismatch",
+          "rejected_by": "ValueError"
+        },
+        {
+          "case": "source_revision_mismatch",
+          "rejected_by": "ValueError"
+        },
+        {
+          "case": "dangling_evidence_source",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "missing_disclosure",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "raw_canonical_mismatch",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "synthetic_presented_as_public",
+          "rejected_by": "AssertionError"
+        },
+        {
+          "case": "source_after_cutoff",
+          "rejected_by": "AssertionError"
+        },
+        {
+          "case": "candidate_revision_mismatch",
+          "rejected_by": "AssertionError"
+        },
+        {
+          "case": "unsourced_family",
+          "rejected_by": "ValidationError"
+        },
+        {
+          "case": "runtime_gold_extra_field",
+          "rejected_by": "closed_DossierInput"
+        }
+      ]
+    },
+    {
+      "check": "read_only_current_public_empty_pool_observation",
+      "status": "PASS",
+      "detail": [
+        {
+          "device_id": "K190167",
+          "patent_input_count": 0,
+          "candidate_count": 0,
+          "evidence_count": 7,
+          "input_sha256": "0581145db28dd18468d13a8982f3973b509733ea822647cda1a33089db01f002",
+          "dossier_sha256": "4e32965e54a680a0b3b7a3cdda538e87a814b913242ef628836d43c508d4863d",
+          "scope": "public_source_engineering_only"
+        },
+        {
+          "device_id": "K163345",
+          "patent_input_count": 0,
+          "candidate_count": 0,
+          "evidence_count": 7,
+          "input_sha256": "fe92559e4e0a3683be3fbbb8dd1f34e60baf0c96a115d92db3694ab6bd7a5f40",
+          "dossier_sha256": "8ea2d9f859a40af1e7f373e6b33933fbfbc5a9e4ffe605fe6caeea5912a87362",
+          "scope": "public_source_engineering_only"
+        },
+        {
+          "device_id": "K121849",
+          "patent_input_count": 0,
+          "candidate_count": 0,
+          "evidence_count": 7,
+          "input_sha256": "b6990cb17ce41cc04d664e3f65ed37e4835dcfcf4f92912a45f8eb4466b688c8",
+          "dossier_sha256": "4ba004c5e6970e95f5098d66099d28a76374df6aea0847ef758f561c1ab5c29f",
+          "scope": "public_source_engineering_only"
+        }
+      ]
+    },
+    {
+      "check": "proposed_theme_token_contrast",
+      "status": "PASS",
+      "detail": {
+        "token_pairs": [
+          {
+            "theme": "formal-light",
+            "pair": "text/canvas",
+            "ratio": 15.16,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "text/surface",
+            "ratio": 16.27,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "mutedText/canvas",
+            "ratio": 7.06,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "mutedText/surface",
+            "ratio": 7.58,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "onPrimary/primary",
+            "ratio": 10.72,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-light",
+            "pair": "focusRing/canvas",
+            "ratio": 5.94,
+            "minimum": 3
+          },
+          {
+            "theme": "formal-light",
+            "pair": "focusRing/surface",
+            "ratio": 6.38,
+            "minimum": 3
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "text/canvas",
+            "ratio": 15.93,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "text/surface",
+            "ratio": 13.89,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "mutedText/canvas",
+            "ratio": 10.61,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "mutedText/surface",
+            "ratio": 9.26,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "onPrimary/primary",
+            "ratio": 10.49,
+            "minimum": 4.5
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "focusRing/canvas",
+            "ratio": 10.49,
+            "minimum": 3
+          },
+          {
+            "theme": "formal-dark",
+            "pair": "focusRing/surface",
+            "ratio": 9.15,
+            "minimum": 3
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "text/canvas",
+            "ratio": 14.98,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "text/surface",
+            "ratio": 16.0,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "mutedText/canvas",
+            "ratio": 6.81,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "mutedText/surface",
+            "ratio": 7.28,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "onPrimary/primary",
+            "ratio": 7.05,
+            "minimum": 4.5
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "focusRing/canvas",
+            "ratio": 6.6,
+            "minimum": 3
+          },
+          {
+            "theme": "kmitl-inspired",
+            "pair": "focusRing/surface",
+            "ratio": 7.05,
+            "minimum": 3
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "text/canvas",
+            "ratio": 13.36,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "text/surface",
+            "ratio": 14.29,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "mutedText/canvas",
+            "ratio": 6.58,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "mutedText/surface",
+            "ratio": 7.03,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "onPrimary/primary",
+            "ratio": 7.96,
+            "minimum": 4.5
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "focusRing/canvas",
+            "ratio": 7.45,
+            "minimum": 3
+          },
+          {
+            "theme": "ict-inspired",
+            "pair": "focusRing/surface",
+            "ratio": 7.96,
+            "minimum": 3
+          }
+        ],
+        "scope": "proposed colors only; rendered UI/semantic states NOT_RUN"
+      }
+    }
+  ],
+  "source_fingerprints": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "30fa94bb7738bfb287edb4d31f6f21b50369a55e946ee419e9a4809dfbe10b7f"
+    },
+    {
+      "path": "GOAL.md",
+      "sha256": "ddff924d0aab7b061d0b892e93fbabdd4dafbfb344e4ba08dcdffb370abd4545"
+    },
+    {
+      "path": "PLAN.md",
+      "sha256": "576334a392d9cc07e0ecfcd7df365da2c5b1eb039f7d22fda7b6284ce864817d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "79a05b7b9e35a19dbd592a506948eff7043fbd454088e9f97e5c71e20a7cdffd"
+    },
+    {
+      "path": "docs/healthtech/progress.json",
+      "sha256": "2638ad190d5414ce60884f13b55367e15ab7904b2895d3de8aca3ba2342613c9"
+    },
+    {
+      "path": "memory/next-actions.md",
+      "sha256": "7d67b0258abd83c2a9dfb808911b4f12da9b24ec444025b69b84c740ab76bd3b"
+    },
+    {
+      "path": "src/patent_to_pilot/product/contracts.py",
+      "sha256": "3a77100a2ac246a9f9c6ae8c073cba58ce2b9951796cf8c88ab8237a8c416c26"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/contracts.py",
+      "sha256": "384f0b15eb2840127eadee9f91c748ab55ee0598347c28528daf9395bd5cd729"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/engine.py",
+      "sha256": "586cd998b20317b45c64d2692714569689f3e984159e71c06f386ea66a3850c3"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/history.py",
+      "sha256": "9a8f6bf165e2b7eec955ff803329f2418c7b28165022fdca0de7f7970bf2343a"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/provenance.py",
+      "sha256": "97a98e9b06ede7801fb337abe9037ef0de58055a95a7889ac7a0253ccf3087e7"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/sources.py",
+      "sha256": "621d09045d7ec4af2eb5f29c2b614992ffffa2a1abe480e72cff8288e8224376"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/api.py",
+      "sha256": "110da7c6f919bbe3582370d3238b8e3b852c4c2de86248ef1a3fc674e302a965"
+    },
+    {
+      "path": "schemas/healthtech/DossierVersion.schema.json",
+      "sha256": "927d2db3ecf3c5101bedeaf47647e76d3c607b18443ee7728d5a47d7d6a52294"
+    },
+    {
+      "path": "scripts/healthtech/run_dossier.py",
+      "sha256": "68bf95e6cff27c012a2b922f02607bdadb7e72e8fbc5c8c0ea36be5392c3330e"
+    },
+    {
+      "path": "scripts/healthtech/manage_dossier_history.py",
+      "sha256": "9d1aa7416d2ea81ec9566a50bf72dbc6c2c0225fa52423b44641890e6b8c9a4b"
+    },
+    {
+      "path": "scripts/healthtech/view_dossier_source.py",
+      "sha256": "6662ce973f826f332ff653ea10aeb18b59ca8194d369e2e303680a9c34fb526e"
+    },
+    {
+      "path": "scripts/healthtech/run_api_dry_run.py",
+      "sha256": "3fb46f26326af095e13a509dfc4410459da9a0ab2eca0e30f5049f057f168fde"
+    }
+  ],
+  "supplied_audit": {
+    "path": "C:\\Users\\User\\Documents\\Codex\\2026-10-27\\task-3\\pepo-luna-readonly-audit-r1\\AUDIT_TH.md",
+    "sha256": "6a2dd179e547e7061064aaf636351887c2c00c05f96414e6cd90512729cc5e8a",
+    "status": "supplied_read_only_audit_not_repeated",
+    "reported_verdict": "CHANGES_REQUIRED",
+    "reported_clean_tests": 269
+  },
+  "authored_files": [
+    {
+      "path": "01_PERSONAS_JOURNEYS.md",
+      "bytes": 21175,
+      "sha256": "d424ac217603eafb2aec7c5a63b8397192de79fe441d4742f261892f1d85d7bd"
+    },
+    {
+      "path": "02_STORY_BACKLOG.md",
+      "bytes": 23191,
+      "sha256": "7fa488848ee02b9fc734f4dc80442b3ec99b1fe5d4d950e4710655a110cd0fff"
+    },
+    {
+      "path": "03_SCREENS_DESIGN.md",
+      "bytes": 24666,
+      "sha256": "84e6cc13f79ef173fd320e398426e48e6173061a6f3f05d8177671f89dc68075"
+    },
+    {
+      "path": "04_INTEGRATION_STATES.md",
+      "bytes": 22199,
+      "sha256": "1077bd02bfea05dc10117f4506689bf96e699a58d05c0bb3d97c63c9970f467d"
+    },
+    {
+      "path": "05_CLAUDE_HANDOFF.md",
+      "bytes": 16132,
+      "sha256": "7090248e31c5aae214bf0a41685998fee1ccb793aa60dcf00ca67aeed216508a"
+    },
+    {
+      "path": "CLAUDE_STARTER_PROMPT.md",
+      "bytes": 4661,
+      "sha256": "0da40f10a49ce452e1dfb6d620b0dc52c56ccd31855aa8040b20aff8bef92579"
+    },
+    {
+      "path": "fixtures/ui-fixtures.json",
+      "bytes": 22965,
+      "sha256": "e2513dd1826639f3cd4ce1adeb5b20e8bb6234506d257b54c286fda5654099bf"
+    },
+    {
+      "path": "fixtures/ui-fixtures.schema.json",
+      "bytes": 7847,
+      "sha256": "596cacc077c0b1b451b8f8acd3fd7553c956989be34651e5efe2f1cd42f98fe8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4279,
+      "sha256": "8ab55bc03bb61ac2c0d15df0c28135b97ce5d6bce2f5707f1eeabd19d0f87c51"
+    },
+    {
+      "path": "validate_docs.py",
+      "bytes": 15080,
+      "sha256": "957561669087b113fd5c07f0059037204be33b80ebca33384e763fab81ff49cb"
+    }
+  ],
+  "not_run": [
+    "UI implementation",
+    "screenshots",
+    "frontend browser/build tests",
+    "live APIs/providers",
+    "scientific benchmarks",
+    "new user/commercial study",
+    "deployment",
+    "backend fixes",
+    "commit/push"
+  ],
+  "source_directory_changes": "none by validator; only optional receipt path is written"
+}
