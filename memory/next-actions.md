@@ -589,3 +589,11 @@ Status: `PASS_RUNTIME_EXPORT_SSH_CANARY_ALLOCATION_PENDING`; canonical audit: `d
 Verified strict SSH/authentication to `dr-train` with no remote job started, and exported the permitted DAPFAM corpus/query runtime bundle outside the repository: 45,336 corpus rows and 1,247 query rows, unique IDs, text hashes checked, and no qrels/gold fields. The current blocker is only the missing authorized job root/allocation/window/quota facts; visible idle GPU state is not treated as allocation.
 
 Next: obtain those bounded allocation facts once, then run the 32-100 document canary and continue the resumable remote encoding path.
+
+## HT-NEXT-066 — 2026-10-30 Luna main merge verification
+
+Status: `PASS_LUNA_ANCESTOR_VERIFIED`; canonical audit: `docs/healthtech/audits/luna-main-merge-20261030/README.md`.
+
+Verified in a clean worktree that Luna publication commit `bf416e9` is already an ancestor of `origin/main` at `a34a228`. The remote-embedding implementation and runtime export/SSH canary commits are descendants of that Luna commit. Targeted tests pass 21/21, the full suite passes 451 with one optional tokenizer skip, `git diff --check` passes, and DuckDB v2.0.0 is available.
+
+This package does not claim remote encoding completion. GPU/CPU allocation, remote job root, execution window, resource limits, vector transfer, dense evaluation, and vector-backed dossier runs remain `NOT_RUN`. Preserve the existing runtime-export blocker and continue only after bounded allocation facts are authorized and recorded.

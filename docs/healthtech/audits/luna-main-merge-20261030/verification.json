@@ -1,0 +1,75 @@
+{
+  "run_id": "luna-main-merge-20261030",
+  "date": "2026-10-30",
+  "status": "PASS_LUNA_ANCESTOR_VERIFIED",
+  "base_revision": "a34a228891332d27ec34112a68a02666507f3ddb",
+  "luna_publication_revision": "bf416e9ab6b6d2d031e885d4b6bb0a2d08bf9ebc",
+  "remote_embedding_revisions": [
+    "fd32ef8",
+    "b30ddff",
+    "68c4fdf",
+    "a34a228"
+  ],
+  "checks": [
+    {
+      "name": "luna_ancestry",
+      "command": "git merge-base --is-ancestor bf416e9 origin/main",
+      "result": "PASS"
+    },
+    {
+      "name": "clean_verification_worktree",
+      "command": "git status --short --branch",
+      "result": "PASS",
+      "details": "Detached worktree clean"
+    },
+    {
+      "name": "diff_check",
+      "command": "git diff --check origin/main^ origin/main",
+      "result": "PASS"
+    },
+    {
+      "name": "targeted_tests",
+      "command": "python -m pytest -q tests/test_healthtech_vector_artifacts.py tests/test_healthtech_runtime_export.py tests/test_healthtech_dapfam_bm25.py tests/test_healthtech_integration_contract.py",
+      "result": "PASS",
+      "details": "21 passed"
+    },
+    {
+      "name": "full_suite",
+      "command": "python -m pytest -q -rA",
+      "result": "PASS",
+      "details": "451 passed, 1 skipped, 2 warnings"
+    },
+    {
+      "name": "duckdb_cli",
+      "command": "duckdb --version",
+      "result": "PASS",
+      "details": "v2.0.0"
+    },
+    {
+      "name": "remote_embedding_execution",
+      "result": "NOT_RUN",
+      "details": "Authorized remote job root, allocation, window, and quota facts are not established"
+    }
+  ],
+  "non_blocking_environment_note": "The direct pytest executable omitted the repository root from sys.path during collection; python -m pytest was the passing canonical invocation.",
+  "scope": {
+    "implemented": [
+      "Luna publication ancestry verification",
+      "Clean candidate checks",
+      "Regression verification",
+      "DuckDB availability verification"
+    ],
+    "not_run": [
+      "Remote GPU/CPU encoding",
+      "Vector shard transfer",
+      "Dense evaluation",
+      "Vector-backed dossier execution"
+    ]
+  },
+  "privacy": {
+    "credentials_read": false,
+    "runtime_bundle_published": false,
+    "model_artifacts_published": false,
+    "user_dirty_checkout_modified": false
+  }
+}
