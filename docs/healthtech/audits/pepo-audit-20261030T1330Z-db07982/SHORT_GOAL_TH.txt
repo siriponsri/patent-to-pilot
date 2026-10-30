@@ -1,0 +1,11 @@
+โหมด NEW GOAL สำหรับ Luna Max — overnight Patent-to-Pilot
+ทำงานใน C:/Users/User/Desktop/myProject/patent-to-pilot
+อ่าน AGENTS และ docs/healthtech/audits/pepo-audit-20261030T1330Z-db07982/OVERNIGHT_REMOTE_EMBEDDINGS_GOAL_TH.md ให้ครบ แล้วตรวจ checkpoint, HEAD และ ownership ก่อนเริ่ม
+
+ลงมือแก้ audit findings ที่เกี่ยวข้อง สร้างเส้นทาง embedding บน dr-train ผ่าน SSH → shards ที่ resume ได้ → vectors กลับ Windows → shared retrieval/evaluation และ dossier จริง 3 กรณี ต้องมีผลรันและ import จริง ไม่จบด้วย scripts/receipts อย่างเดียว
+
+SSH เดิม chaw@100.77.149.83 ยังไม่ได้ตรวจสด ใช้ host verification และ resource allocation ที่ได้รับอนุญาต ห้ามเดาว่า GPU0 ว่าง ถ้าขาด allocation ให้เตรียม code/tests/export/import ต่อ และขอเฉพาะข้อมูลที่ขาดครั้งเดียว ไม่รอ expert gold ใหม่
+
+Claude กำลังทำ UX/UI ใช้ branch/worktree ของ Luna แยก ไม่แตะงาน Claude ไม่ merge/push main อัตโนมัติ ไม่ต้องใช้ paid API; งบ OpenRouter เดิมสะสมรวมไม่เกิน USD8 ห้ามรีเซ็ตวงเงิน
+
+ทำต่อข้ามคืนตามงบทรัพยากรและ stop conditions ในเอกสาร เก็บ checkpoint/หลักฐานใน repo และส่ง morning report แยก COMPLETE/PARTIAL/BLOCKED_LOCAL ตามจริง

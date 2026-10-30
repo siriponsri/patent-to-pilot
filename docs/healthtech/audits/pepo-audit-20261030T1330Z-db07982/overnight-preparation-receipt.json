@@ -1,0 +1,62 @@
+{
+  "format": "overnight-remote-embedding-doc-preparation-v1",
+  "prepared_utc": "2026-10-30T14:30:48.031477+00:00",
+  "mode": "NEW_GOAL",
+  "scope": "DOCUMENT_PREPARATION_ONLY_NOT_EXECUTION",
+  "recovered_partial_document_write": true,
+  "recovery_note": "Initial link validation occurred before receipt creation; existing authored document/short-prompt bytes verified before finishing. No permission denial or remote execution.",
+  "source_audit": "receipt.json",
+  "start": {
+    "head": "db0798276e3158b04131b4e910abc0a11511e94c",
+    "tracked_status": "M AGENTS.md"
+  },
+  "end": {
+    "head": "db0798276e3158b04131b4e910abc0a11511e94c",
+    "tracked_status": "M AGENTS.md"
+  },
+  "short_goal_characters_unicode_codepoints_including_newlines": 1102,
+  "short_goal_characters_utf16_code_units_including_newlines": 1102,
+  "short_goal_utf8_bytes": 1926,
+  "short_goal_limit": 4000,
+  "preferred_limit": 1500,
+  "short_goal_sha256": "f07989a00f2e3f8f406a3856205fdf85ef4008ff2a393d32724005650ca7d82a",
+  "detailed_goal_characters": 25014,
+  "relative_links_checked": 40,
+  "missing_or_non_ascii_relative_links": [],
+  "ssh_details_source": "Parent-relayed owner previous successful connection; not independently verified live or from additional project metadata",
+  "previous_destination": "chaw@100.77.149.83",
+  "previous_key_location": "~/.ssh/id_ed25519_dr_train; path only, contents NOT_READ",
+  "remote_jobroot": "PROPOSED_NOT_CREATED_OR_VERIFIED",
+  "gpu_allocation": "NOT_VERIFIED; reuse existing applicable authorization, otherwise ask only missing consolidated allocation",
+  "command_templates": "NOT_RUN; proposed embedding interfaces not implemented in audit snapshot",
+  "document_source_check_network": [
+    "https://man.openbsd.org/ssh",
+    "https://man.openbsd.org/scp",
+    "https://man.openbsd.org/sftp",
+    "https://man.openbsd.org/ssh_config"
+  ],
+  "implementation_changes": false,
+  "model_inference_calls": 0,
+  "provider_calls": 0,
+  "api_spend_usd": 0,
+  "ssh_connections": 0,
+  "remote_jobs": 0,
+  "downloaded_corpora_or_weights": 0,
+  "commit_push": false,
+  "preserved": [
+    "All prior audit/reproduction data",
+    "Existing STARTER_TH.txt and detailed Goal",
+    "Pre-existing AGENTS edit and all unrelated/untracked/Claude work"
+  ],
+  "publication": "Luna branch scoped commit only; no automatic merge/push main; authority/checks separate",
+  "budget": "Original cumulative USD8 across agents/resumes/retries/pending; no fresh grant; goal does not need paid API",
+  "files_created": [
+    "OVERNIGHT_REMOTE_EMBEDDINGS_GOAL_TH.md",
+    "SHORT_GOAL_TH.txt",
+    "overnight-preparation-receipt.json"
+  ],
+  "files_modified": [
+    "README.md",
+    "manifest.json"
+  ]
+}

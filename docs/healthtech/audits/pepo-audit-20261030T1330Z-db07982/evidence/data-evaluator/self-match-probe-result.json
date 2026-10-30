@@ -1,0 +1,7 @@
+{
+  "duckdb_aggregate_output": "[{\"category\":\"self_qrel\",\"domain_rel\":\"IN\",\"relevance_score\":1.0,\"n\":40}]\n[{\"same_family_id\":135,\"exact_ta_matches\":\"135\"}]\n",
+  "self_in_saved_top100_rows": 135,
+  "self_rank1_rows": 134,
+  "self_rank_min": 1,
+  "self_rank_max": 2
+}

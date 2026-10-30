@@ -1,0 +1,45 @@
+{
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "budget-scope-probe.json",
+      "bytes": 1294,
+      "sha256": "2f95e9359dffaaf6e644c6d4034806dea9e32bc87cba3d1cd32d8815159ac3b3"
+    },
+    {
+      "path": "budget_scope_probe.py",
+      "bytes": 3138,
+      "sha256": "dd6621f84ada6133ef69c8ed66b702c5108cead7bd5cb722f9aa7ab6a1e666ef"
+    },
+    {
+      "path": "FINDINGS.md",
+      "bytes": 6836,
+      "sha256": "e237f88ff24167f2cceb610d24b42ce6fce192f63d3be7e29266fcadfa6257ce"
+    },
+    {
+      "path": "probe_and_tests.py",
+      "bytes": 3681,
+      "sha256": "1af55de77f781bf2cec12ce38bc9e42d700854614599f1f1a136b65b689ffa7b"
+    },
+    {
+      "path": "query-projection-probe.json",
+      "bytes": 816,
+      "sha256": "4fd60e23e6a64f9d78e18faef075c5b4078537488720f76f4cbff8bd2a069462"
+    },
+    {
+      "path": "run.log",
+      "bytes": 2780,
+      "sha256": "46a7bb4de1ed9927b1b1b50f304382907f0d64f186bbb6d9f37abec9b5f4f697"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 1515,
+      "sha256": "c32ce313cc284fa795c7e91eb149fbdf7f2e12729862fbb71ff3e9d5efab2de3"
+    },
+    {
+      "path": "tests.xml",
+      "bytes": 9495,
+      "sha256": "db5e720bec2244ecc0e75ea04505525152f96e084fb55a1fc033001313a457a2"
+    }
+  ]
+}

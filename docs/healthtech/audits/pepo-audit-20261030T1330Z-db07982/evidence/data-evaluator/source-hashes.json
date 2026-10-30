@@ -1,0 +1,45 @@
+{
+  "end_head": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "source_hashes": [
+    {
+      "path": "GOAL.md",
+      "sha256": "ddff924d0aab7b061d0b892e93fbabdd4dafbfb344e4ba08dcdffb370abd4545"
+    },
+    {
+      "path": "PLAN.md",
+      "sha256": "576334a392d9cc07e0ecfcd7df365da2c5b1eb039f7d22fda7b6284ce864817d"
+    },
+    {
+      "path": "scripts/healthtech/analyze_dapfam_coverage.py",
+      "sha256": "c0fab42f382ee5e0a8a68931565b8599ca5203e933e6263fd403482a1aa6ceaa"
+    },
+    {
+      "path": "scripts/healthtech/run_dapfam_bm25.py",
+      "sha256": "15b6ddedda892221b7fefff1ebbc198e35f7e886f22a8695fc93c7ae6df52573"
+    },
+    {
+      "path": "scripts/healthtech/compose_multicompany_cohort.py",
+      "sha256": "ebed14ef5a9699b2db556a35921549b5cc6ea074abaf3a052b5792d6e17d04f7"
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/healthtech/source_authorization.py",
+      "sha256": "0e00d4be99646bcd45fe595aeb87ba1685f936485aa3875cc6616ad76d6e78f1"
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/healthtech/source_acquisition.py",
+      "sha256": "22010a9e162ffb25d723d21badd8d4b7be9db48f66614b7217973b23e4afd514"
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/healthtech/judgment_submission.py",
+      "sha256": "139de7bf96b95cd61c476d35f7379d7f86d96f89b5adb5025a255acc5a993fe9"
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/healthtech/judgments.py",
+      "sha256": "4e1b84e71162da489d6a5c66eaf5817d36355915f1803ac682934971be8e2021"
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/healthtech/retrieval.py",
+      "sha256": "179657a381702f230d4eafcaf73ff66429e8db6a927a60dcff5f3696eef37366"
+    }
+  ]
+}

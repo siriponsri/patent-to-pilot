@@ -1,0 +1,512 @@
+[
+  {
+    "sha": "4c863d0a01d8fc7211682745786a35f1474963f5",
+    "utc": "2026-10-29T07:05:17+07:00",
+    "subject": "healthtech: close long-run backend audit"
+  },
+  {
+    "sha": "7395b92824d3b90b157a35564487f6a73a8c5a4d",
+    "utc": "2026-10-29T07:23:07+07:00",
+    "subject": "healthtech: add versioned R1 budget seam"
+  },
+  {
+    "sha": "204abf415fe751c39d8f94684cfc123a7c64ae7a",
+    "utc": "2026-10-29T07:23:32+07:00",
+    "subject": "healthtech: stamp M4 R1 audit"
+  },
+  {
+    "sha": "adad9017f86e995abd2b943d50a00718961f4627",
+    "utc": "2026-10-29T07:30:24+07:00",
+    "subject": "healthtech: add SciFact parity receipt"
+  },
+  {
+    "sha": "37a3b2df25cf05bbffc2b5800c2458f20726c613",
+    "utc": "2026-10-29T07:38:57+07:00",
+    "subject": "healthtech: add cross-cohort frontier comparator"
+  },
+  {
+    "sha": "bd07d29a04420fd45d30ae328cbfe55aee13432d",
+    "utc": "2026-10-29T07:43:23+07:00",
+    "subject": "healthtech: record M3 cohort comparison"
+  },
+  {
+    "sha": "eea0fb43df35014210097585940f865e2ba3d67b",
+    "utc": "2026-10-29T08:02:36+07:00",
+    "subject": "Add bounded offline HealthTech controller"
+  },
+  {
+    "sha": "759b93726f25e0ace0e267a4ab7c4938ecb8ba3c",
+    "utc": "2026-10-29T08:06:28+07:00",
+    "subject": "Record bounded HT-B4 offline audit"
+  },
+  {
+    "sha": "00bca8edf3baedb2212085d4bda091f780c7ecb4",
+    "utc": "2026-10-29T08:18:38+07:00",
+    "subject": "test: harden HealthTech repair regressions"
+  },
+  {
+    "sha": "cf613c08c9eeee340645cd6eb46d2aebe0c983ac",
+    "utc": "2026-10-29T08:23:33+07:00",
+    "subject": "docs: record current-head HealthTech revalidation"
+  },
+  {
+    "sha": "7568fd94257a72665c862926e61bc628aa430924",
+    "utc": "2026-10-29T08:27:45+07:00",
+    "subject": "docs: record current-head M3 freeze"
+  },
+  {
+    "sha": "80535a35c34a4724e62fff1db9805e8a5afb27fe",
+    "utc": "2026-10-29T08:36:10+07:00",
+    "subject": "docs: record HealthTech budget expansion request"
+  },
+  {
+    "sha": "dd455080cbd5d22eb4f3d7b118bb08db7dad03e6",
+    "utc": "2026-10-29T08:37:17+07:00",
+    "subject": "docs: finalize HealthTech request receipt"
+  },
+  {
+    "sha": "393ce5bc7b6328abf9998c4cc377dfb720c4ab6a",
+    "utc": "2026-10-29T08:38:27+07:00",
+    "subject": "docs: align HealthTech receipt revision"
+  },
+  {
+    "sha": "d66dbbd17da327b33bc3ff18771de2c283d119be",
+    "utc": "2026-10-29T08:52:06+07:00",
+    "subject": "healthtech: add HT-T2 lexical dev score"
+  },
+  {
+    "sha": "c8c5dfc09270053c5a0082aaed495dfb044288f0",
+    "utc": "2026-10-29T08:52:24+07:00",
+    "subject": "healthtech: stamp HT-T2 audit revision"
+  },
+  {
+    "sha": "71c8d6658ad2e115cfa61a0c8b768ae02cefe94a",
+    "utc": "2026-10-29T09:20:07+07:00",
+    "subject": "healthtech: add Stryker offline cohort"
+  },
+  {
+    "sha": "9c741fe847f4ed44782b348f69791bd8a4b83995",
+    "utc": "2026-10-29T09:20:38+07:00",
+    "subject": "docs: stamp Stryker audit revision"
+  },
+  {
+    "sha": "dbcac2f10be1bcac8e492d4b76056e79a48da8d8",
+    "utc": "2026-10-29T09:36:05+07:00",
+    "subject": "healthtech: compose multi-company holdout cohort"
+  },
+  {
+    "sha": "2ac12505b1e7676c1edce00411eab9e1b1340818",
+    "utc": "2026-10-29T09:44:23+07:00",
+    "subject": "docs: finalize multi-company healthtech audit"
+  },
+  {
+    "sha": "03df1c443bdec580bde4e7a26b3410fc48a405cf",
+    "utc": "2026-10-29T10:07:24+07:00",
+    "subject": "healthtech: add Cook Zenith cohort expansion"
+  },
+  {
+    "sha": "82e2bd5258eba5da0f582d9e2c2ab75f9abca645",
+    "utc": "2026-10-29T10:23:22+07:00",
+    "subject": "Add Cook source-backed dossier runner"
+  },
+  {
+    "sha": "c0610110bfd8962948445cd525713f9d58e219fd",
+    "utc": "2026-10-29T10:39:27+07:00",
+    "subject": "healthtech: record M1 closure audit"
+  },
+  {
+    "sha": "e556daab79a97c9829ff88f97d8c3dd288ae784b",
+    "utc": "2026-10-29T11:01:06+07:00",
+    "subject": "healthtech: record family mapping sensitivity"
+  },
+  {
+    "sha": "4f4ed62a2649d720d3840aea2e1a8132b11617f2",
+    "utc": "2026-10-29T11:01:42+07:00",
+    "subject": "docs: stamp family mapping audit revision"
+  },
+  {
+    "sha": "0db213fe46d591bb5c3f83a7d3d188256fe14f0c",
+    "utc": "2026-10-29T11:09:48+07:00",
+    "subject": "healthtech: add family-aware frontier analysis"
+  },
+  {
+    "sha": "1e1c463787bf1a494c6d9c99367cebda5a2bfea5",
+    "utc": "2026-10-29T11:10:26+07:00",
+    "subject": "docs: stamp family frontier audit revision"
+  },
+  {
+    "sha": "1e72bfece8b3b9da06b318162289bf61fe8cac7f",
+    "utc": "2026-10-29T11:20:04+07:00",
+    "subject": "HT-M3: freeze family-aware cohort"
+  },
+  {
+    "sha": "73097ea6f3b4fc9ebdbbcdf17ba97a80ce94acc0",
+    "utc": "2026-10-29T11:20:30+07:00",
+    "subject": "HT-M3: stamp family freeze receipt"
+  },
+  {
+    "sha": "e84c3c57df2d404aba8b79d89f94e9866002d7df",
+    "utc": "2026-10-29T11:21:22+07:00",
+    "subject": "HT-M3: correct family freeze SHA"
+  },
+  {
+    "sha": "c0887f6a210d598b0f604badd5a4e6fbd8911852",
+    "utc": "2026-10-29T11:31:35+07:00",
+    "subject": "HT-M3: record family-aware baselines"
+  },
+  {
+    "sha": "2af198af8635f28c0d0b8ad8ed9be852b6e7bd98",
+    "utc": "2026-10-29T11:32:06+07:00",
+    "subject": "HT-M3: stamp baseline audit receipt"
+  },
+  {
+    "sha": "a194045d316d60951b914dd2d1ac61a481b7b043",
+    "utc": "2026-10-29T11:38:34+07:00",
+    "subject": "HT-T1: add relevance judgment contract"
+  },
+  {
+    "sha": "6fc5dd877030b9d160d1802c272083005dedb6b4",
+    "utc": "2026-10-29T11:39:08+07:00",
+    "subject": "HT-T1: stamp relevance contract receipt"
+  },
+  {
+    "sha": "31b51f0926033b47b3914aa81e21af543d9957af",
+    "utc": "2026-10-29T11:41:32+07:00",
+    "subject": "HT-T2: correct relevance receipt hashes"
+  },
+  {
+    "sha": "dd4b01d24c67c51f9493fc2d16c191703775d43b",
+    "utc": "2026-10-29T11:51:09+07:00",
+    "subject": "HT-T3: build relevance review packet"
+  },
+  {
+    "sha": "35e82edebb3e2979bc70f5b136c4bfbb66f23a6d",
+    "utc": "2026-10-29T17:54:06+07:00",
+    "subject": "HT-T3: record relevance review packet"
+  },
+  {
+    "sha": "3b3dd85861122b29d446993352167c54e3718d9e",
+    "utc": "2026-10-29T17:59:07+07:00",
+    "subject": "HT-T4: ingest relevance submissions"
+  },
+  {
+    "sha": "c1e073c2d8aafab971b38cd2addeb6bb72812f96",
+    "utc": "2026-10-29T18:02:38+07:00",
+    "subject": "HT-T4: record judgment submission audit"
+  },
+  {
+    "sha": "30a84959e1a710fa69d65f6c4a523a9fbc5ccffc",
+    "utc": "2026-10-29T18:19:57+07:00",
+    "subject": "Add HealthTech B4 provider-shaped runner"
+  },
+  {
+    "sha": "82e2ae3bb1e59a4a713ea0036d24416901b1fe5a",
+    "utc": "2026-10-29T18:22:08+07:00",
+    "subject": "Support regulatory source hashes in B4 runner"
+  },
+  {
+    "sha": "4e4ce3ed96d494ac903587d72d80ce21a4466d31",
+    "utc": "2026-10-29T18:24:41+07:00",
+    "subject": "Fix B4 provider transfer receipt serialization"
+  },
+  {
+    "sha": "0309fe297715f6d8158d582ff5507c2111111901",
+    "utc": "2026-10-29T18:32:35+07:00",
+    "subject": "Record HealthTech B4 mock runner audit"
+  },
+  {
+    "sha": "237fc669a4b7829be420c48547f36a69e28f64f0",
+    "utc": "2026-10-29T18:41:06+07:00",
+    "subject": "Add HealthTech long-run report builder"
+  },
+  {
+    "sha": "59eed333b767931b8890fe089472bb5d434738d2",
+    "utc": "2026-10-29T18:45:51+07:00",
+    "subject": "Record HealthTech long-run report package"
+  },
+  {
+    "sha": "310f507a6b5a3607cf1145892df97d7f937093be",
+    "utc": "2026-10-29T18:49:39+07:00",
+    "subject": "Add HealthTech descriptive frontier analysis"
+  },
+  {
+    "sha": "862e74c0267d27f5d90c92a4d8d198d5d4b6682f",
+    "utc": "2026-10-29T18:51:05+07:00",
+    "subject": "Bind analysis outputs to current code"
+  },
+  {
+    "sha": "fbe8b5c0b0250a083d24e65f84e8decaceb04ca4",
+    "utc": "2026-10-29T18:54:23+07:00",
+    "subject": "Add HealthTech frontier analysis package"
+  },
+  {
+    "sha": "8a20e6042c4be2a01d2e389b5648271513c83c79",
+    "utc": "2026-10-29T18:56:38+07:00",
+    "subject": "Integrate SciFact into G6 manuscript"
+  },
+  {
+    "sha": "c817d3c2c44f57bed8ba6e1d8adff4ef9b1c300e",
+    "utc": "2026-10-29T18:59:33+07:00",
+    "subject": "Record G6 SciFact integration audit"
+  },
+  {
+    "sha": "b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3",
+    "utc": "2026-10-29T19:14:03+07:00",
+    "subject": "Add HT-B4 holdout comparison"
+  },
+  {
+    "sha": "1e4cc629a865f75b61a908e5287fb90c10b600e7",
+    "utc": "2026-10-29T19:20:58+07:00",
+    "subject": "Record HT-B4 holdout comparison"
+  },
+  {
+    "sha": "43a2604602d310f63e5b77d1c6987c6463019533",
+    "utc": "2026-10-29T19:22:13+07:00",
+    "subject": "Point progress to M10 release candidate"
+  },
+  {
+    "sha": "5e7bbeaeed136fdf5a022f9eee887facbb8a9be6",
+    "utc": "2026-10-29T19:29:32+07:00",
+    "subject": "Add holdout B4 report support"
+  },
+  {
+    "sha": "fa507ec44fd40ee216b5d92c39ef2c86054cfe9b",
+    "utc": "2026-10-29T19:43:27+07:00",
+    "subject": "Record M11 report and budget refresh"
+  },
+  {
+    "sha": "d4f4881c6192a0107fac6702909d6970920e3067",
+    "utc": "2026-10-29T19:49:56+07:00",
+    "subject": "Add paired group uncertainty diagnostics"
+  },
+  {
+    "sha": "fa5b85a9c782ef7d1d0d70606df8c42f845f7248",
+    "utc": "2026-10-29T19:57:57+07:00",
+    "subject": "Record M12 paired group diagnostic"
+  },
+  {
+    "sha": "7dae0a8ac9ff790714d640e94889459529512073",
+    "utc": "2026-10-29T20:47:15+07:00",
+    "subject": "HealthTech: add Philips cardiovascular M13 cohort"
+  },
+  {
+    "sha": "c6494370fad1c263eed169a7bd6a8c5718ed3427",
+    "utc": "2026-10-29T21:00:59+07:00",
+    "subject": "HealthTech: add Philips dossier pipeline"
+  },
+  {
+    "sha": "e15ce7283091408b198929fc6fb33ad5920919a5",
+    "utc": "2026-10-29T21:08:25+07:00",
+    "subject": "Record Philips dossier audit"
+  },
+  {
+    "sha": "35ee0728a8b470029ea993d3362a5f9d8ef2bcbf",
+    "utc": "2026-10-29T21:20:07+07:00",
+    "subject": "Enforce declared HealthTech rights policies"
+  },
+  {
+    "sha": "dd1cecd1d7295f3ffcf53dabfd781f8f20e98dae",
+    "utc": "2026-10-29T21:30:40+07:00",
+    "subject": "Record M15 rights-policy repair and review packet"
+  },
+  {
+    "sha": "23acfd468570ea2eac47d0f5790b7362268aa2d1",
+    "utc": "2026-10-29T21:38:56+07:00",
+    "subject": "Build local semantic review task export"
+  },
+  {
+    "sha": "1ed830a7ece7f0a851b24c18815deb4c73b27366",
+    "utc": "2026-10-29T21:43:46+07:00",
+    "subject": "docs(healthtech): record M16 review task export"
+  },
+  {
+    "sha": "7def4ffb2503a2ea2c5e24f46603fd9903d54e43",
+    "utc": "2026-10-29T22:04:51+07:00",
+    "subject": "healthtech: migrate legacy cohorts to typed rights"
+  },
+  {
+    "sha": "f39b9ef1fd31954a4b67cb027dc03aa30775737b",
+    "utc": "2026-10-29T22:13:22+07:00",
+    "subject": "docs(healthtech): record M17 typed-rights baselines"
+  },
+  {
+    "sha": "9038f84f673585ebba32be29f5ff0913a6718ecc",
+    "utc": "2026-10-29T22:24:11+07:00",
+    "subject": "healthtech: add SciFact error analysis"
+  },
+  {
+    "sha": "58957d3f48877349b1a7d4f56f585b1f6f6289b3",
+    "utc": "2026-10-29T22:25:18+07:00",
+    "subject": "docs(healthtech): record M18 SciFact analysis"
+  },
+  {
+    "sha": "4b811892eea2112df8a9f49738fc474ec2300b47",
+    "utc": "2026-10-29T22:50:11+07:00",
+    "subject": "healthtech: add offline G5 pilot task runner"
+  },
+  {
+    "sha": "47aeefcd190ee109f9fb9b9f1ac5c8f37e9bdafe",
+    "utc": "2026-10-29T22:57:35+07:00",
+    "subject": "docs(healthtech): record M19 offline G5 pilot task"
+  },
+  {
+    "sha": "4e1210ae2a5a08ec40036b4ac31d6e25d3c13b57",
+    "utc": "2026-10-30T00:03:02+07:00",
+    "subject": "healthtech: add company holdout sensitivity experiment"
+  },
+  {
+    "sha": "aaecb92f4bb4ec19d20d05ed470c1d3ac226d06f",
+    "utc": "2026-10-30T00:09:28+07:00",
+    "subject": "docs(healthtech): integrate M20 sensitivity into G6"
+  },
+  {
+    "sha": "991e9720e04fbf73d8ff29a0e9cf6452fbb81f1e",
+    "utc": "2026-10-30T00:11:55+07:00",
+    "subject": "docs(healthtech): record M21 G6 integration"
+  },
+  {
+    "sha": "0a24db1c2dc9419a5373950f2e0ba63b058ac772",
+    "utc": "2026-10-30T00:18:33+07:00",
+    "subject": "docs(healthtech): record source landscape screen"
+  },
+  {
+    "sha": "567bbd112520ce1886b929e9e117c21909d6d097",
+    "utc": "2026-10-30T00:26:26+07:00",
+    "subject": "feat(healthtech): add semantic source authorization preflight"
+  },
+  {
+    "sha": "f2cfcf8d34eaa480612cc2e66ddfff45a396450e",
+    "utc": "2026-10-30T00:31:12+07:00",
+    "subject": "docs(healthtech): record source authorization preflight"
+  },
+  {
+    "sha": "a25cd4fab20e2b6dd7a9ff1802b6aeadb6f198ee",
+    "utc": "2026-10-30T00:36:41+07:00",
+    "subject": "feat(healthtech): bind judgment ingest to authorization"
+  },
+  {
+    "sha": "e44b6584cab96bc9936c9ae39cad224dc61c900f",
+    "utc": "2026-10-30T00:40:44+07:00",
+    "subject": "docs(healthtech): record authorization-bound ingest"
+  },
+  {
+    "sha": "6e6eb0deb0a51ee9883165f124992c7e7d57cf38",
+    "utc": "2026-10-30T01:00:46+07:00",
+    "subject": "feat(healthtech): add bounded semantic source staging"
+  },
+  {
+    "sha": "d1f166027225789f3044289f223c48aca798bb96",
+    "utc": "2026-10-30T01:07:17+07:00",
+    "subject": "docs(healthtech): record bounded source staging"
+  },
+  {
+    "sha": "147382e323b6881fad244a3683b9703d391a9d94",
+    "utc": "2026-10-30T01:16:07+07:00",
+    "subject": "docs(healthtech): expand semantic source screen"
+  },
+  {
+    "sha": "e71ab26689b2a93da5b20a052aeeefe9df582363",
+    "utc": "2026-10-30T01:22:52+07:00",
+    "subject": "docs(healthtech): prepare sharps source intake"
+  },
+  {
+    "sha": "74d6b7ef21d2d2bf9ab348783f310c6cf49923b0",
+    "utc": "2026-10-30T01:41:03+07:00",
+    "subject": "test: propagate source path to budget workers"
+  },
+  {
+    "sha": "4a1ec5be7c39b633ab3beec908cfc5e35f5e500d",
+    "utc": "2026-10-30T01:45:54+07:00",
+    "subject": "docs(healthtech): record OpenRouter R1 readiness revalidation"
+  },
+  {
+    "sha": "8f2e0fe1c913ab3acc78869c82bd6f729e01b596",
+    "utc": "2026-10-30T01:59:30+07:00",
+    "subject": "feat(healthtech): refresh backend integration contracts"
+  },
+  {
+    "sha": "aeaa8aa20c7840ebcf63f9f92b9d3e4d2f52ef83",
+    "utc": "2026-10-30T02:08:19+07:00",
+    "subject": "docs(healthtech): record current-head integration contract"
+  },
+  {
+    "sha": "3b2e5cd9a9437a9db3fed8f2632e251aa738487a",
+    "utc": "2026-10-30T02:59:06+07:00",
+    "subject": "docs(healthtech): record current-head baseline and b4 audit"
+  },
+  {
+    "sha": "1c468994ad603287007bde761ab15fbd37ffeffa",
+    "utc": "2026-10-30T03:03:14+07:00",
+    "subject": "docs(healthtech): record exact audit commands"
+  },
+  {
+    "sha": "b602311a018e479d894db7c33d9662961a857940",
+    "utc": "2026-10-30T03:25:47+07:00",
+    "subject": "docs(healthtech): refresh current-head report and budget surfaces"
+  },
+  {
+    "sha": "55b5394eaf4c57c0de9b601ecfa8b91b1fc7f80b",
+    "utc": "2026-10-30T03:49:30+07:00",
+    "subject": "test(healthtech): expand external boundary regressions"
+  },
+  {
+    "sha": "a1a187c582ef0c8f0b9cd0a36f6d7628eeadfe2b",
+    "utc": "2026-10-30T05:28:39+07:00",
+    "subject": "docs(healthtech): record DAPFAM diagnostic preflight"
+  },
+  {
+    "sha": "b20844f1dcf1eb98ef2639ef88dac8a3900f47b2",
+    "utc": "2026-10-30T05:33:33+07:00",
+    "subject": "docs(healthtech): revalidate DAPFAM qrels"
+  },
+  {
+    "sha": "7edf2f4adf013787d0db5f3a028c5d0ac58ae7f4",
+    "utc": "2026-10-30T06:14:44+07:00",
+    "subject": "healthtech: add DAPFAM BM25 baseline diagnostic"
+  },
+  {
+    "sha": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+    "utc": "2026-10-30T06:26:43+07:00",
+    "subject": "healthtech: record DAPFAM code provenance"
+  },
+  {
+    "sha": "285eb74ee0d45321867b618b0aa5d28a7fb38534",
+    "utc": "2026-10-30T19:14:05+07:00",
+    "subject": "Complete current-head HealthTech audit package"
+  },
+  {
+    "sha": "23886b2194704ae521470f8e2af7e1024790e1b0",
+    "utc": "2026-10-30T19:22:36+07:00",
+    "subject": "Add current-head Philips dossier audit"
+  },
+  {
+    "sha": "66b2fafe11938276b33b89006d8032d8514a97eb",
+    "utc": "2026-10-30T19:33:32+07:00",
+    "subject": "healthtech: revalidate current-head R1 readiness"
+  },
+  {
+    "sha": "e7dc58142998983c4229dc43b2214ed35dfec5bf",
+    "utc": "2026-10-30T19:44:22+07:00",
+    "subject": "healthtech: expand Philips offline pilot task"
+  },
+  {
+    "sha": "65386b72404d3b4b0b3b67a72bcb6ef06003a4b5",
+    "utc": "2026-10-30T19:55:10+07:00",
+    "subject": "healthtech: analyze G5 pilot task receipts"
+  },
+  {
+    "sha": "799a2e4b6d1f5ebb27d086f7ef6c36b649267689",
+    "utc": "2026-10-30T19:56:42+07:00",
+    "subject": "healthtech: bind M41 audit to implementation commit"
+  },
+  {
+    "sha": "d42fc36a9bf238b4b14281e0961dc5e7aa55df31",
+    "utc": "2026-10-30T20:20:10+07:00",
+    "subject": "healthtech: add DAPFAM coverage screen"
+  },
+  {
+    "sha": "db0798276e3158b04131b4e910abc0a11511e94c",
+    "utc": "2026-10-30T20:21:06+07:00",
+    "subject": "healthtech: bind M42 audit to implementation commit"
+  }
+]

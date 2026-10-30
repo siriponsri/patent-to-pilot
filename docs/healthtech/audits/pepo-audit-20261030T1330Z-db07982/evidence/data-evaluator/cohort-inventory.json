@@ -1,0 +1,88 @@
+[
+  {
+    "name": "ht-public-cohort-20261028-r1",
+    "devices": 3,
+    "patents": 41,
+    "companies": [
+      "ABBOTT MEDICAL"
+    ],
+    "disclosed_pairs": 61,
+    "manifest_status": "PUBLIC_DEVICE_DISCLOSURE_COHORT_ACQUIRED",
+    "family_mapping": null,
+    "holdout": null
+  },
+  {
+    "name": "ht-boston-watchman-20261028-r4",
+    "devices": 2,
+    "patents": 7,
+    "companies": [
+      "Boston Scientific Corp"
+    ],
+    "disclosed_pairs": 13,
+    "manifest_status": "PUBLIC_BOSTON_WATCHMAN_COHORT_ACQUIRED",
+    "family_mapping": null,
+    "holdout": null
+  },
+  {
+    "name": "ht-stryker-neurovascular-20261029-r1",
+    "devices": 3,
+    "patents": 13,
+    "companies": [
+      "Stryker Neurovascular"
+    ],
+    "disclosed_pairs": 13,
+    "manifest_status": "PUBLIC_STRYKER_NEUROVASCULAR_COHORT_ACQUIRED",
+    "family_mapping": null,
+    "holdout": null
+  },
+  {
+    "name": "ht-cook-zenith-20261029-r1",
+    "devices": 3,
+    "patents": 4,
+    "companies": [
+      "Cook Medical"
+    ],
+    "disclosed_pairs": 5,
+    "manifest_status": "PUBLIC_COOK_ZENITH_COHORT_ACQUIRED",
+    "family_mapping": null,
+    "holdout": null
+  },
+  {
+    "name": "ht-philips-cardiovascular-20261029-r1",
+    "devices": 3,
+    "patents": 7,
+    "companies": [
+      "PHILIPS IMAGE GUIDED THERAPY"
+    ],
+    "disclosed_pairs": 7,
+    "manifest_status": "PUBLIC_PHILIPS_CARDIOVASCULAR_COHORT_ACQUIRED",
+    "family_mapping": null,
+    "holdout": null
+  },
+  {
+    "name": "ht-multicompany-20261029-r4-philips-family",
+    "devices": 11,
+    "patents": 31,
+    "companies": [
+      "Boston Scientific Corp",
+      "Cook Medical",
+      "PHILIPS IMAGE GUIDED THERAPY",
+      "Stryker Neurovascular"
+    ],
+    "disclosed_pairs": 38,
+    "manifest_status": "PUBLIC_MULTI_COMPANY_COHORT_FROZEN",
+    "family_mapping": {
+      "basis": "Sourced family metadata is evaluator-side and does not change runtime inputs.",
+      "families_observed": 24,
+      "mapped_patent_count": 31,
+      "mapping_path": "results\\healthtech\\ht-google-family-mapping-20261029-r2-philips\\family-mapping.json",
+      "mapping_sha256": "425c64f1878a69626bf732c931b0c73e5ca618274b07f877d4c74447467d881c",
+      "status": "SOURCED_LOCAL_EVALUATOR_MAPPING"
+    },
+    "holdout": [
+      "HT-DEV-NEUROFORM-ATLAS",
+      "HT-DEV-TARGET-XL-360-SOFT",
+      "HT-DEV-TREVO-PROVUE"
+    ]
+  }
+]

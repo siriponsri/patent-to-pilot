@@ -1,0 +1,122 @@
+{
+  "format": "pepo-comprehensive-luna-audit-v1",
+  "run_id": "pepo-audit-20261030T1330Z-db07982",
+  "audit_status": "COMPLETE_WITH_DECLARED_COVERAGE",
+  "project_status": "NOT_COMPLETE",
+  "verdict": "CHANGES_REQUIRED",
+  "start_utc": "2026-10-30T13:30:04Z",
+  "prepared_utc": "2026-10-30T14:00:15.294631+00:00",
+  "base_sha": "889958eeb3174a09df9ef3840231a0f0577f00f2",
+  "start_sha": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "end_sha": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "remote_main_verified_start": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "local_origin_main_start": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "tracked_status_start": [
+    " M AGENTS.md"
+  ],
+  "concurrent_changed_manifest_files": [],
+  "inventory": {
+    "commits": 102,
+    "changed_paths": 397,
+    "changed_python_files": 88,
+    "luna_audit_folders": 58
+  },
+  "coverage_limit": "All milestone/commit inventory; selected deep source review, isolated guarded suite and focused independent probes. Not every line or historical model run reverified.",
+  "foundational_chat": {
+    "title": "Pepo patent-to-pilot",
+    "url": "https://chatgpt.com/c/6ae0869b-c23c-83ec-9dee-465b4e592612",
+    "access": "authorized thread API relevant turns + parent/source reviewer complete13message trace; no session-store access"
+  },
+  "clean_git_checkout_tests": {
+    "status": "FAIL",
+    "pytest": {
+      "tests": 459,
+      "failures": 3,
+      "errors": 0,
+      "skipped": 1
+    },
+    "test_exit_code": 1,
+    "network_attempts": 0,
+    "forbidden_credential_read_attempts": 0,
+    "source_unchanged": true
+  },
+  "clean_git_checkout_pass_count": 455,
+  "archive_tests": {
+    "tests": 459,
+    "failures": 4,
+    "errors": 0,
+    "skipped": 1
+  },
+  "archive_only_artifact": "Git provenance test requires.git; proper checkout resolves this one failure",
+  "optional_dependency": "pinned tokenizer absent in clean checkout;1skip separated from3reproducibilityfailures",
+  "independent_focused_tests": {
+    "passed": 62,
+    "skipped": 1,
+    "failed": 0
+  },
+  "independent_data": [
+    "3DAPFAMparquethashes/aggregatesmatch",
+    "saved1247rankingsunique/finite",
+    "SciFact300savedpredictionsmetricsmatch",
+    "G5fourreceipts20artifacthashesmatch",
+    "fourlocalmodelartifacthashesmatch"
+  ],
+  "confirmed_findings": [
+    "multi-ledgercumulativecapgapbeforelive",
+    "duplicateDAPFAMrankingnDCG>1andunknownqueryignored",
+    "externalquerymetadatafieldpolicygap",
+    "cleancheckoutignoredfixtures/newlinehashdependencies",
+    "over-scopedsemantic-work-ordergate",
+    "draftauthorizationstages",
+    "untouchedholdoutclaimoverstatement"
+  ],
+  "unresolved_or_limited": [
+    "DAPFAMself-identicalIDofficialeligibilitypolicy",
+    "selectorpricingconstructorbindingnotdemonstratedCLIexploit",
+    "noevidencehistoricalDAPFAMscoresinflated",
+    "nofoundtune-on-testproof"
+  ],
+  "no_implementation_changes": true,
+  "commit_push": false,
+  "remote_ssh_execution": false,
+  "gpu_execution": false,
+  "provider_calls": 0,
+  "model_inference_calls": 0,
+  "paid_cost_usd": 0,
+  "downloads_of_corpora_or_weights": 0,
+  "audit_source_check_network": [
+    "anonymousGitremoteidentity",
+    "publicprimarydocumentation"
+  ],
+  "historical_actual_R1_spend": "NOT_INDEPENDENTLY_RECONCILED_PRIVATE_JOURNAL_NOT_READ; originalcumulative8USDnotnewallowance",
+  "remote_compute_action_time_dependencies": [
+    "explicitexistingSSHhost/jobroot/resourceallocationnotfoundinprojectownedrefs",
+    "source-specificcontrolledremoteprocessingrights"
+  ],
+  "not_remote_compute_prerequisite": [
+    "newhumansemanticgold",
+    "newownerexpertadjudicationqueue",
+    "OpenRouterlive",
+    "UIcompletion"
+  ],
+  "recommended_prompt_mode": "NEW_GOAL_CHANGED_SCOPE_NOT_UNCHANGED_M42_RESUME",
+  "claude_ui": {
+    "status": "ACTIVE_BY_LATEST_OWNER_INSTRUCTION",
+    "branch": "claude/healthtech-ux-local-20261028",
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-claude-ux-20261028",
+    "head_observed": "96c63b14a1a2df8e8f8b816edee0dff7feddc3d3",
+    "tracked_status_observed": [],
+    "untracked_not_inspected_or_modified": true,
+    "clean_status_not_idle_evidence": true,
+    "luna_plan": "isolatedbackenddatavectorworktree;stablecontracthandoff;noautomaticUImerge"
+  },
+  "starter_characters": 3908,
+  "unresolved_permission_denials": [],
+  "excluded_inaccessible_paths": "Two historical docs/healthtech/evidence/.../tmp directories rejected enumeration; not retried or needed for scoped current source/data audit.",
+  "documentation_correction_utc": "2026-10-30T14:10:37.431487+00:00",
+  "documentation_corrections": {
+    "publication": "Scoped commit on isolated Luna branch; no automatic merge/push to main or Claude branch changes; publication authority/checks recorded separately",
+    "representation": "MiniLM256 is integration baseline, not patent semantic ceiling; truncation/chunking explicit; alternative comparisons separately specified",
+    "scope": "Documents only; no implementation, tests, inference, SSH or Git mutation in this correction"
+  }
+}

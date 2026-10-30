@@ -38,3 +38,11 @@ Read root [GOAL.md](GOAL.md) sections 0–4, the selected HT-W in [PLAN.md](PLAN
 - Relevant user skills: `research-synthesis`, `document-ingestion`, `technical-writing`; read their SKILL.md before use. Thai deliverables follow `kien-thai` when available. Presence of an installation file does not prove live integration.
 - Test changed behavior with hand-computable positive/negative fixtures. Documentation needs link/schema checks. Run provider regressions when integrating with shared components; do not rerun paid or old scientific benchmarks as a test substitute.
 - Report actual commands and outcomes, implemented/mocked/planned/NOT_RUN boundaries, exact blockers and next action. Update progress and next-actions once per completed package. Engineering PASS never means publication readiness.
+
+
+## Project-local HealthTech audit records
+
+- For future HealthTech task audits, keep all audit reports, receipts, audit manifests, verification summaries and continuation/next-action notes needed to resume work in `docs/healthtech/audits/<run-id>/`. Follow [the audit convention](docs/healthtech/audits/README.md); do not leave a Codex or temp directory as their sole source. Existing progress and memory entry points may summarize and link to the canonical run record.
+- Tests and scratch artifacts may use temporary directories, but persist key sanitized reproduction evidence, command outcomes and source/config hashes in the run folder before handoff or cleanup. Preserve historical receipts; do not mass-migrate or overwrite them.
+- Large raw/restricted corpora, source pages, model weights, evaluator-only relations and private journals stay in permitted local storage with provenance/hashes/references in the audit manifest. Local-repo storage does not authorize public Git redistribution; never copy credentials, private paths/content or restricted raw data into staged audit files.
+- This is a project-local evidence-location rule only. It does not override higher-priority instructions, owner/runtime authority, data rights, privacy rules or scoped writer ownership, and it does not grant new acquisition/publishing permissions.

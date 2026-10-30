@@ -1,0 +1,61 @@
+{
+  "revision": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "scope": "bounded source/config and model file byte-hash review; no inference or SSH",
+  "provider_calls": 0,
+  "model_calls": 0,
+  "ssh_connections": 0,
+  "tests_executed": 0,
+  "repo_writes": 0,
+  "model_artifact_hash_matches": 4,
+  "doc_vector_f32_bytes": 69636096,
+  "query_vector_f32_bytes": 1915392,
+  "unbatched_token_output_f32_bytes": 17826840576,
+  "sources": [
+    {
+      "path": "src/patent_to_pilot/evaluation/healthtech/local_retrieval.py",
+      "sha256": "3c28b313021a46ef90a2b05185914bdefc6895880f5c3643c8a474f6a424076d"
+    },
+    {
+      "path": "scripts/healthtech/run_real_baselines.py",
+      "sha256": "fd2f5275214d50b9129fed28f76fbbb7a8a8c15d517bf587185feac5689f7fcb"
+    },
+    {
+      "path": "scripts/healthtech/run_b4_controller.py",
+      "sha256": "8d94024b1db43c44a4267d7b0a75302c01a3263bdad78a5a71ea2d511a071e2b"
+    },
+    {
+      "path": "scripts/healthtech/run_bounded_controller.py",
+      "sha256": "76aa626612d27e046f4b6c6aa6a772028e9eaa170f39703f50379d8282bdd6c0"
+    },
+    {
+      "path": "scripts/healthtech/run_dapfam_bm25.py",
+      "sha256": "15b6ddedda892221b7fefff1ebbc198e35f7e886f22a8695fc93c7ae6df52573"
+    },
+    {
+      "path": "scripts/healthtech/acquire_model_artifacts.py",
+      "sha256": "d5a4593a1ed36297270631c2ed335997411866f8f6d444e3860444b0b46e181f"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/engine.py",
+      "sha256": "65bda16e9aefe319c4a909690b6ec1f91119d451779ccd22706828f092461df4"
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/policies.py",
+      "sha256": "7861c7fd82b516b1fa804cdceddfc4c9a1d8b23282867f8d575b1433f983f5ad"
+    },
+    {
+      "path": "configs/healthtech/g1_g2_public_cohort_protocol.json",
+      "sha256": "7dab96b735c70bcf60b99f191477c5add04d95c337d437c2d17b546e8b226cf2"
+    },
+    {
+      "path": "data/manifests/healthtech/ht-models-20261028.json",
+      "sha256": "59fcf5e8c72da79c29afbb6860e598030a10a694eba1cc1fb9c5355340a85fea"
+    }
+  ],
+  "pending": [
+    "specific GPU allocation/quota and Podi coexistence",
+    "remote host/user/job directory and environment inventory",
+    "source-specific controlled remote processing/vector-return rights"
+  ],
+  "report": "EMBEDDING_REVIEW.md"
+}

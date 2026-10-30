@@ -1,0 +1,19 @@
+ใช้ Goal ใหม่ที่ C:\Users\User\Desktop\myProject\patent-to-pilot ไม่ใช้ Resume Goal ของ M42 เดิม เพราะเปลี่ยน objective จาก coverage เป็น remote vectors
+
+อ่าน docs/healthtech/audits/pepo-audit-20261030T1330Z-db07982/LUNA_REMOTE_EMBEDDINGS_GOAL_TH.md และเอกสารที่ลิงก์ไว้ ร่วมกับ AGENTS/GOAL/PLAN/README ตามลำดับอำนาจ runtime ตรวจ HEAD/status/ownership ก่อนเริ่ม เก็บ M42 เป็น historical checkpoint
+
+Owner ต้องการ SSH ไปทำ embedding compute บน dr-train แล้วเอา vectors กลับมาใช้บน local Windows ไม่ได้ขอให้ย้าย semantic gold creation ไป server แชต “Pepo patent-to-pilot” ระบุว่าไม่มีผู้เชี่ยวชาญ/organizational data ห้ามตั้ง new expert-gold queue เป็น gate ก่อน compute, existing-label retrieval, SciFact/FDA หรือ backend ใช้ labels ตาม semantics จริง ไม่ fabricate gold
+
+Implement ให้ได้จริง: runtime-only export → bounded batched remote encoder → resumable vector shards → secure transfer → validated local import/exact index → shared retrieval ที่ทั้ง evaluator และ dossier backend ใช้ได้ ไม่จบด้วย coverage audit หรือ receipts ใหม่ Current SharedRetriever ยัง encode corpus ทั้งชุดใน memory; product engine ยังเป็น FTS/token-overlap อีกเส้นทาง ต้องต่อ seam ให้ครบ
+
+เริ่ม reuse verified DAPFAM 45,336 corpus/1,247 queries และ local device corpus ไม่ต้องโหลด 1.21GB เดิมซ้ำ ไม่ส่ง qrels/gold/split answers ไป encoder แยก opaque family IDs จาก patent publication IDs Pin model/revision/tokenizer/prefix/truncation/chunking/pooling/L2/dimension/dtype/text hashes MiniLM 384dim/max_length256 เป็น integration baseline ไม่ใช่เพดาน patent semantics ระบุ truncation/chunking และแยก alternative model/backend เป็นคนละ condition ไม่ silent mix query/doc vectors
+
+ใช้ existing approved SSH/host verification ตรวจ environment/disk/jobs/GPU UUID แบบ read-only ก่อน ใช้ allocation ที่มีอยู่ หากยังไม่ระบุ host/jobroot/GPU หรือ CPUquota/wall/VRAM/disk ให้เตรียม code/local fixtures ต่อแล้วขอเฉพาะ resource window ที่ไม่ชน Podi ห้ามเดา GPU0 ว่าง ไม่ kill/restart shared services ไม่อ่าน/print credentials หรือเปลี่ยน security
+
+Canary แล้ว encode จริงเป็น batches/shards พร้อม ID-order/text/config/source checksums, atomic partial→commit และ restart/resume ที่ไม่ duplicate/miss rows ส่งเฉพาะ permitted non-sensitive inputs/outputs ตรวจ SHA256 ก่อน local publish ไม่เอา rawNC/restricted data หรือ derived vectors เข้า public Git โดยไม่มีสิทธิ์ Importer ต้อง reject swapped/missing/duplicate IDs, wrong model/dimension/dtype/NaN/partial bundle Dynamic local queries ใช้ compatible encoder; document vectors แทน cross-encoder ไม่ได้
+
+แก้ confirmed gaps แบบเจาะจง: external JSON ยังรั่ว source-derived query.company_metadata; DAPFAM duplicate ranking ทำ nDCG เกิน1/unknownquery ถูกละเลย; clean tests พึ่ง ignored results/newline hashes จัด self-ID policy ให้ตรง BM25/dense และไม่ clamp metrics Current saved ranks ไม่มี duplicates อย่าอ้างว่า score เดิมพอง แก้ “untouched” claim ตามประวัติ ไม่กล่าวหา tune-on-test ที่ไม่พบ
+
+รัน matched BM25/dense/hybrid ด้วย corrected evaluator และ returned vectors เก็บ raw ranks/metrics/resources/failures/latency DAPFAM เป็น citation-family diagnostic ไม่ใช่ device-patent semantic gold ใช้ known-link/components แยกกัน Freeze ก่อน new heldout ส่ง3 real permitted backend cases ที่ใช้ vectors พร้อม source/edit/history/JSON/TH/EN exports Claude UX/UI ACTIVE ให้แยก Luna backend/data/vector worktree รักษา UI branch ไม่ takeover/merge อัตโนมัติ ส่ง stable API/schema handoff ไม่อ้าง business/clinical/FTO/publication readiness
+
+เก็บ audit/receipts/manifests/report/next actions ใน docs/healthtech/audits/<run-id>/ OpenRouter ไม่จำเป็นต่อ goal นี้ งบเดิม cumulativeUSD8 ไม่ใช่งบใหม่ แก้ canonical-ledger gap ก่อน futurelive ไม่ resetjournals/topup/newkeys Commit งาน Luna บน branch ของตัวเอง ไม่ merge/push main อัตโนมัติ บันทึก publication authority/checks แยก รักษา dirty/untracked/Claude งานอื่น ไม่ forcepush ทำ independent ready work ต่อเมื่อ branch หนึ่งติด ไม่วนจบแค่ audit/gate อีก

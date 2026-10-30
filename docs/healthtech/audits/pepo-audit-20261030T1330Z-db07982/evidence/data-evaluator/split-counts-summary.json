@@ -1,0 +1,200 @@
+[
+  {
+    "cohort": "ht-multicompany-20261029-r1",
+    "view": "full",
+    "runtime_q": 5,
+    "patents": 20,
+    "reference_q": 5,
+    "eligible_q": 5,
+    "pairs": 26,
+    "exact_groups": 4,
+    "family_groups": 0
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r1",
+    "view": "development",
+    "runtime_q": 2,
+    "patents": 20,
+    "reference_q": 2,
+    "eligible_q": 2,
+    "pairs": 13,
+    "exact_groups": 1,
+    "family_groups": 0
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r1",
+    "view": "final_holdout",
+    "runtime_q": 3,
+    "patents": 20,
+    "reference_q": 3,
+    "eligible_q": 3,
+    "pairs": 13,
+    "exact_groups": 3,
+    "family_groups": 0
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r2",
+    "view": "full",
+    "runtime_q": 8,
+    "patents": 24,
+    "reference_q": 8,
+    "eligible_q": 8,
+    "pairs": 31,
+    "exact_groups": 6,
+    "family_groups": 0
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r2",
+    "view": "development",
+    "runtime_q": 5,
+    "patents": 24,
+    "reference_q": 5,
+    "eligible_q": 5,
+    "pairs": 18,
+    "exact_groups": 3,
+    "family_groups": 0
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r2",
+    "view": "final_holdout",
+    "runtime_q": 3,
+    "patents": 24,
+    "reference_q": 3,
+    "eligible_q": 3,
+    "pairs": 13,
+    "exact_groups": 3,
+    "family_groups": 0
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r3-family",
+    "view": "full",
+    "runtime_q": 8,
+    "patents": 24,
+    "reference_q": 8,
+    "eligible_q": 8,
+    "pairs": 31,
+    "exact_groups": 6,
+    "family_groups": 6
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r3-family",
+    "view": "development",
+    "runtime_q": 5,
+    "patents": 24,
+    "reference_q": 5,
+    "eligible_q": 5,
+    "pairs": 18,
+    "exact_groups": 3,
+    "family_groups": 3
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r3-family",
+    "view": "final_holdout",
+    "runtime_q": 3,
+    "patents": 24,
+    "reference_q": 3,
+    "eligible_q": 3,
+    "pairs": 13,
+    "exact_groups": 3,
+    "family_groups": 3
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r3-family-r2",
+    "view": "full",
+    "runtime_q": 8,
+    "patents": 24,
+    "reference_q": 8,
+    "eligible_q": 8,
+    "pairs": 31,
+    "exact_groups": 6,
+    "family_groups": 6
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r3-family-r2",
+    "view": "development",
+    "runtime_q": 5,
+    "patents": 24,
+    "reference_q": 5,
+    "eligible_q": 5,
+    "pairs": 18,
+    "exact_groups": 3,
+    "family_groups": 3
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r3-family-r2",
+    "view": "final_holdout",
+    "runtime_q": 3,
+    "patents": 24,
+    "reference_q": 3,
+    "eligible_q": 3,
+    "pairs": 13,
+    "exact_groups": 3,
+    "family_groups": 3
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r4-philips",
+    "view": "full",
+    "runtime_q": 11,
+    "patents": 31,
+    "reference_q": 11,
+    "eligible_q": 11,
+    "pairs": 38,
+    "exact_groups": 9,
+    "family_groups": 0
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r4-philips",
+    "view": "development",
+    "runtime_q": 8,
+    "patents": 31,
+    "reference_q": 8,
+    "eligible_q": 8,
+    "pairs": 25,
+    "exact_groups": 6,
+    "family_groups": 0
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r4-philips",
+    "view": "final_holdout",
+    "runtime_q": 3,
+    "patents": 31,
+    "reference_q": 3,
+    "eligible_q": 3,
+    "pairs": 13,
+    "exact_groups": 3,
+    "family_groups": 0
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r4-philips-family",
+    "view": "full",
+    "runtime_q": 11,
+    "patents": 31,
+    "reference_q": 11,
+    "eligible_q": 11,
+    "pairs": 38,
+    "exact_groups": 9,
+    "family_groups": 9
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r4-philips-family",
+    "view": "development",
+    "runtime_q": 8,
+    "patents": 31,
+    "reference_q": 8,
+    "eligible_q": 8,
+    "pairs": 25,
+    "exact_groups": 6,
+    "family_groups": 6
+  },
+  {
+    "cohort": "ht-multicompany-20261029-r4-philips-family",
+    "view": "final_holdout",
+    "runtime_q": 3,
+    "patents": 31,
+    "reference_q": 3,
+    "eligible_q": 3,
+    "pairs": 13,
+    "exact_groups": 3,
+    "family_groups": 3
+  }
+]

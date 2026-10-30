@@ -1,0 +1,13 @@
+{
+  "receipt_count": 4,
+  "pass_count": 4,
+  "failure_count": 0,
+  "artifact_hashes": {
+    "checked": 20,
+    "passed": 20
+  },
+  "provider_calls": 0,
+  "network_calls": 0,
+  "paid_cost_usd": 0.0,
+  "matches_saved_aggregate": true
+}

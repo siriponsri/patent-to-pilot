@@ -1,0 +1,396 @@
+{
+  "snapshot": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "started_unix": 1793367245.8516145,
+  "duckdb_sha256": "eceaa6b943fc868b26daf6e0fe96cc9d6d2ecf89f043df6c1bb5b2946e995d6e",
+  "input_files": {
+    "corpus": {
+      "path": "methodology/datasets/research-only-nc/corpus.parquet",
+      "bytes": 1149928014,
+      "sha256": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6"
+    },
+    "queries": {
+      "path": "methodology/datasets/research-only-nc/queries.parquet",
+      "bytes": 62667355,
+      "sha256": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe"
+    },
+    "qrels": {
+      "path": "methodology/datasets/research-only-nc/qrels_all.parquet",
+      "bytes": 828375,
+      "sha256": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74"
+    }
+  },
+  "counts": [
+    {
+      "dataset": "corpus",
+      "row_count": 45336,
+      "unique_id_count": 45336
+    },
+    {
+      "dataset": "queries",
+      "row_count": 1247,
+      "unique_id_count": 1247
+    },
+    {
+      "dataset": "qrels",
+      "row_count": 49869,
+      "unique_id_count": 49869
+    }
+  ],
+  "screening": [
+    {
+      "dataset": "corpus",
+      "row_count": 45336,
+      "medical_device_rows": 2859,
+      "pharma_biologics_rows": 12163,
+      "missing_title_rows": 0,
+      "missing_abstract_rows": 0,
+      "missing_both_rows": 0
+    },
+    {
+      "dataset": "queries",
+      "row_count": 1247,
+      "medical_device_rows": 86,
+      "pharma_biologics_rows": 304,
+      "missing_title_rows": 0,
+      "missing_abstract_rows": 0,
+      "missing_both_rows": 0
+    }
+  ],
+  "positive_qrels": [
+    {
+      "domain_rel": "IN",
+      "positive_pairs": 19736,
+      "medical_device_query_screened_positive_pairs": 1508,
+      "medical_device_target_screened_positive_pairs": 1760,
+      "medical_device_both_screened_positive_pairs": 836,
+      "medical_device_screened_queries": 84,
+      "medical_device_screened_targets": 1358,
+      "pharma_biologics_query_screened_positive_pairs": 5086,
+      "pharma_biologics_target_screened_positive_pairs": 5183,
+      "pharma_biologics_both_screened_positive_pairs": 2012,
+      "pharma_biologics_screened_queries": 302,
+      "pharma_biologics_screened_targets": 4811
+    },
+    {
+      "domain_rel": "OUT",
+      "positive_pairs": 5193,
+      "medical_device_query_screened_positive_pairs": 212,
+      "medical_device_target_screened_positive_pairs": 1439,
+      "medical_device_both_screened_positive_pairs": 65,
+      "medical_device_screened_queries": 48,
+      "medical_device_screened_targets": 528,
+      "pharma_biologics_query_screened_positive_pairs": 994,
+      "pharma_biologics_target_screened_positive_pairs": 999,
+      "pharma_biologics_both_screened_positive_pairs": 234,
+      "pharma_biologics_screened_queries": 205,
+      "pharma_biologics_screened_targets": 862
+    }
+  ],
+  "schema": {
+    "corpus": [
+      {
+        "column_name": "relevant_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "earliest_claim_jusrisdiction",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "jurisdiction",
+        "column_type": "VARCHAR[]",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "ipcr_codes_str",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "earliest_claim_date",
+        "column_type": "TIMESTAMP",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "earliest_claim_year",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "classifications_ipcr_list_first_three_chars_list",
+        "column_type": "VARCHAR[]",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "title_en",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "abstract_en",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "claims_text",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "description_en",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      }
+    ],
+    "queries": [
+      {
+        "column_name": "query_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "earliest_claim_jusrisdiction",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "jurisdiction",
+        "column_type": "VARCHAR[]",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "ipcr_codes_str",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "earliest_claim_date",
+        "column_type": "TIMESTAMP",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "earliest_claim_year",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "classifications_ipcr_list_first_three_chars_list",
+        "column_type": "VARCHAR[]",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "title_en",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "abstract_en",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "claims_text",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "description_en",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "abstract_keywords",
+        "column_type": "VARCHAR[]",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      }
+    ],
+    "qrels": [
+      {
+        "column_name": "query_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "relevant_id",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "relevance_score",
+        "column_type": "DOUBLE",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      },
+      {
+        "column_name": "domain_rel",
+        "column_type": "VARCHAR",
+        "null": "YES",
+        "key": null,
+        "default": null,
+        "extra": null
+      }
+    ]
+  },
+  "label_histogram": [
+    {
+      "domain_rel": "IN",
+      "relevance_score": 1.0,
+      "n": 19736
+    },
+    {
+      "domain_rel": "NC",
+      "relevance_score": 0.0,
+      "n": 24940
+    },
+    {
+      "domain_rel": "OUT",
+      "relevance_score": 1.0,
+      "n": 5193
+    }
+  ],
+  "joins": [
+    {
+      "missing_targets": 0,
+      "missing_queries": 0,
+      "query_target_id_overlap": 135,
+      "null_keys_or_labels": 0
+    }
+  ],
+  "saved_rankings": {
+    "path": "results/healthtech/ht-dapfam-bm25-20261030-r3/rankings.jsonl",
+    "sha256": "0d2cb52b1325f23853280077a765cf8c7710d013d3cec6ae60fa93f4c9f64d77",
+    "rows": 1247,
+    "unique_queries": 1247,
+    "widths": [
+      100
+    ],
+    "duplicate_ids_rows": 0,
+    "nonfinite_score_rows": 0
+  },
+  "authored_evaluator_probe": {
+    "duplicate_rank": {
+      "query_count": 1,
+      "macro_recall_at_k": 1.0,
+      "micro_recall_at_k": 1.0,
+      "macro_ndcg_at_k": 1.6309297535714575,
+      "positive_qrels": 1,
+      "hits_at_k": 1,
+      "k": 2
+    },
+    "unknown_prediction_query_accepted": {
+      "query_count": 1,
+      "macro_recall_at_k": 1.0,
+      "micro_recall_at_k": 1.0,
+      "macro_ndcg_at_k": 1.0,
+      "positive_qrels": 1,
+      "hits_at_k": 1,
+      "k": 2
+    },
+    "missing_prediction_scores_zero": {
+      "query_count": 1,
+      "macro_recall_at_k": 0.0,
+      "micro_recall_at_k": 0.0,
+      "macro_ndcg_at_k": 0.0,
+      "positive_qrels": 1,
+      "hits_at_k": 0,
+      "k": 2
+    },
+    "note": "Helper accepts invalid external rankings; current saved runner-generated rankings checked separately. No claim current reported metrics are inflated."
+  },
+  "owner_coverage_matches": {
+    "screening": true,
+    "positive_qrels": true
+  },
+  "input_owner_hashes_match": {
+    "corpus": true,
+    "queries": true,
+    "qrels": true
+  },
+  "elapsed_seconds": 4.284858465194702,
+  "resources": {
+    "provider_calls": 0,
+    "model_inference_calls": 0,
+    "network_calls": 0,
+    "paid_cost_usd": 0,
+    "repo_writes": 0
+  }
+}

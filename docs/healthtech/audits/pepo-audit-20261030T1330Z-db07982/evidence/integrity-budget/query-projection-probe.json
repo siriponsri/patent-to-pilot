@@ -1,0 +1,30 @@
+{
+  "product_display": {
+    "reviewed_fields": [
+      "trade_name"
+    ],
+    "external_source_payload": {
+      "trade_name": "MitraClip"
+    },
+    "external_query_company_metadata": {
+      "applicant": "ABBOTT MEDICAL"
+    },
+    "company_source_id": "openfda-pma-p100009-base",
+    "restricted_source_applicant_retained_in_query": true,
+    "restricted_field_evidence_omitted": true
+  },
+  "redistribution": {
+    "reviewed_fields": [
+      "trade_name"
+    ],
+    "external_source_payload": {
+      "trade_name": "MitraClip"
+    },
+    "external_query_company_metadata": {
+      "applicant": "ABBOTT MEDICAL"
+    },
+    "company_source_id": "openfda-pma-p100009-base",
+    "restricted_source_applicant_retained_in_query": true,
+    "restricted_field_evidence_omitted": true
+  }
+}

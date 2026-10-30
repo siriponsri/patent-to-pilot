@@ -1,0 +1,2384 @@
+[
+  {
+    "path": "configs/healthtech/data_registry.json",
+    "exists": true,
+    "bytes": 9491,
+    "sha256": "a9688f9f8dabf1885d365a14fa1d8618e5c12cb970514ad9f82c6b3c6d2978a2"
+  },
+  {
+    "path": "configs/healthtech/ht_t2_scifact_lexical_dev_v1.json",
+    "exists": true,
+    "bytes": 1336,
+    "sha256": "39bed6da45a67229888a6fb17f51983a15af070fd51193506419898d1e58ac40"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 872,
+    "sha256": "ccf5cb8621760a18d550e7cf1e7cab15d69af500cb917003c4f0b2df4b9e2182"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/README.md",
+    "exists": true,
+    "bytes": 2234,
+    "sha256": "4614bf1af4fa69ff037cdc0c1f5033d83e6e9db210833e4edffbd7b58ae03bc2"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029/verification.json",
+    "exists": true,
+    "bytes": 3701,
+    "sha256": "ab033a78fad1a62544d1143f5d6279fc694411c54fc6c88a7c06a15f0f9ae597"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 836,
+    "sha256": "2313bce04d0aab84ee9484e502e6f0f171a4367d162ba7727828016f23a0fb3a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/README.md",
+    "exists": true,
+    "bytes": 2294,
+    "sha256": "5c1b1303c1321c8e7f0048d4afc9309b844c21d25f3fcdfd5f6c7d5c5034e674"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 2379,
+    "sha256": "f5426f30533a6c0108ae974aec16ca13d88a7f51a35b243a021cc16dae6564cc"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/baseline-summary.json",
+    "exists": true,
+    "bytes": 5160,
+    "sha256": "7f8811701df6b2bb759004d14b3def7d0725af37324bd0958acadf00bbb0b8e3"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/composite-provenance-verification.json",
+    "exists": true,
+    "bytes": 5979,
+    "sha256": "c5116602cab45b9c73a710df93fb37b9597c6a821fc34984d79b59e0517d8ed2"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/dossier-run-report.md",
+    "exists": true,
+    "bytes": 2245,
+    "sha256": "a4f776e6ec2cf2465abf27210afa23fc6d73275b9bbb3965796be241120d0dfc"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/dossier-run-verification.json",
+    "exists": true,
+    "bytes": 7181,
+    "sha256": "3235761809549ce525ee8aaa55667b3d8e192237e2fe28e228481da179a5903b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/provenance-verification.json",
+    "exists": true,
+    "bytes": 2263,
+    "sha256": "582cef7e22641ed95e0b34823e09a94c2a13f1b0f8b55e3cfa78fcedc46e49a4"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/rights-matrix.json",
+    "exists": true,
+    "bytes": 9680,
+    "sha256": "a2b136eae027365acbad250b2c98690a9a33607aaf2f7a2011e281804dd251d6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029/verification.json",
+    "exists": true,
+    "bytes": 4071,
+    "sha256": "ce6d4716725beb14342407f0e73943387ffcbfba11e786aaf8bc5d26cbf7e02d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-f123-889958e/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 1781,
+    "sha256": "678b83e695c4884b4e14ed81f70746a4fdaf49169b183465751af602560d5f06"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-f123-889958e/README.md",
+    "exists": true,
+    "bytes": 2908,
+    "sha256": "febe3eec079a6628fd5e1d847ffb6c2769eefaba863f46cb3e4613ae531e485b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-f123-889958e/REPORT.md",
+    "exists": true,
+    "bytes": 7682,
+    "sha256": "e30565524bae6b68ae367e375f3b15b5909d2a5b47e9498a713cdeb20209a6a3"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-f123-889958e/abbott-provenance-verification.json",
+    "exists": true,
+    "bytes": 1654,
+    "sha256": "06a3e89eed81d4dee4f628c43af2557ccf22fa4bd60fb96e1e08844a632d8d7b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-f123-889958e/reproduction/frozen_integrity_probe.py",
+    "exists": true,
+    "bytes": 4371,
+    "sha256": "be3b30febd24adc2a15a72f7dbfb28eeb6c9af3d1a89e2d5f9d544c1faf7594d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-f123-889958e/verification.json",
+    "exists": true,
+    "bytes": 5829,
+    "sha256": "1a4474015b728c62517868ab4fb245d357a225d92fe8e63b21af96de5251763a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-baselines-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 916,
+    "sha256": "0898a770007d7ee61d128451cb2aa6a3afc19e8867eb9e53360455316893f834"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-baselines-20261029/README.md",
+    "exists": true,
+    "bytes": 3387,
+    "sha256": "e1bf6146953ceffad9c24a505a125b43c5e9ca4c73632dd01ffd6303c49326c1"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-baselines-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 3230,
+    "sha256": "492b0a5006e4f6e7872c598e4e9c63bb11a08b806f0fa20e49c0accdc13e2044"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-baselines-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 2508,
+    "sha256": "de623e6e389f7b5c3401975a51f61a0092dc7e89c7a4e4b4e07da3f7deaabeb5"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-baselines-20261029/verification.json",
+    "exists": true,
+    "bytes": 9549,
+    "sha256": "a5f7d547e53d3271322673990cdd41f9717f4c2fade2071d0cbff66e39593a6a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 900,
+    "sha256": "1647d4aec039621247666ac95f4d1391c9eb8336381a0258001eb391b738124a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029/README.md",
+    "exists": true,
+    "bytes": 3372,
+    "sha256": "b6f24d6fa92bd65f581f0ec14cb178252bef89c20fb20bd4c005f4a6564d3734"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 3278,
+    "sha256": "00aae4023df98b6fe2aa0cc3572834111f9bc7671c69556382241578edd642e6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 2542,
+    "sha256": "370c35ad901c861d7cd928e082cc605fdea02c8ccb52e56e4f3094f0c8384d88"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029/verification.json",
+    "exists": true,
+    "bytes": 6139,
+    "sha256": "06a12f6fd081287cd6fbaf7164abac344a204021c8dff211dfb75ebb62e1658d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 751,
+    "sha256": "840fbbe280288b8ab3d6dbad401ad4cf0deb482d966875a56165715627364e3d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/README.md",
+    "exists": true,
+    "bytes": 2692,
+    "sha256": "f3dc27c8a9aa49b51de95a5b97596085c0be9a5f0dba8336dcd907b85276ce67"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 4607,
+    "sha256": "aa8df6f4e05ba77103049e6242bb03733d7a87fc4f3974c1a0bda867976877df"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 2161,
+    "sha256": "74d86db3dfef7e5760bc1d5e4eb60c10a036c20dc572034a513bbec0b35b706e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029/verification.json",
+    "exists": true,
+    "bytes": 4849,
+    "sha256": "1da79c0fb27b253e68f13319a7d8a30104ed5cc486accfd769c6f2cb8560491b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 731,
+    "sha256": "143bfb0379ae28d3fb25cd891d514755c0f623ccf268cdf07cd14cc58e6467f3"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/README.md",
+    "exists": true,
+    "bytes": 3085,
+    "sha256": "0bb8146edef9d7cea36c2ee958e8223f0cabcbe788660fab950bb2d5474f2512"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 5715,
+    "sha256": "c08c29a1617204cdfa176133e9514139af696bdd6752615e809f7bcf89c01ad6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 2725,
+    "sha256": "715cb593806b3f0a49aa7aba9ecee789bd2ce6a9391db30538273d0df57cd233"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029/verification.json",
+    "exists": true,
+    "bytes": 4927,
+    "sha256": "65b8cb0714e74f4a20b289b8d8cca3a58b69cfbac64764414005ec947b3f6809"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 572,
+    "sha256": "4b424a12582ee67994ab1e0c6e28d8e2d768a1283259c93fb013cb032cfe7c05"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/README.md",
+    "exists": true,
+    "bytes": 1994,
+    "sha256": "3af933f95066775d699ac72169727742ccaddfebf658f6225f1b2bdf703db2fb"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 1663,
+    "sha256": "f0b643eb5be140b9e497a56489571fd51a25fc39ea4db5b65e9885e2bcaa8ca4"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/verification.json",
+    "exists": true,
+    "bytes": 3572,
+    "sha256": "174e5117070044afa4ad91f0e481d52e70dd987d485b23ebaf0622b277d56b03"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 522,
+    "sha256": "a88949f3418a5d9643beacf502216bf007fba4cccdf3e591a7727afdc2d73e1e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/README.md",
+    "exists": true,
+    "bytes": 2487,
+    "sha256": "4f5b74428f9c7dc2578f034091545ff10d8acdcfe3a53503363eb5fe700a8a72"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 1139,
+    "sha256": "01a87c99caf8772bda3e8ee48ebbd8d6c5b9c40d738e59e132ebc4a235f1b52d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029/verification.json",
+    "exists": true,
+    "bytes": 3685,
+    "sha256": "cef945faef48d5b14403834c714f11e6d72a67c59561eb9fff3e5b17b5027494"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 525,
+    "sha256": "33b833a6592aa03918f593a7928f52717f3ea4dc884cff9a1f255c82981b1d5b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/README.md",
+    "exists": true,
+    "bytes": 1239,
+    "sha256": "0fbf33c3941ef32d44aad7d2c1d7049da915f0973e0f3558aa4a757957b19233"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 3798,
+    "sha256": "67219851e2e1f8b4f6693bb59752fe24903f463af8d264b43973728a4544b4a7"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029/verification.json",
+    "exists": true,
+    "bytes": 5558,
+    "sha256": "b00543a0340761d139e0cb427781e20c669d2bcb161fa3d9f9d9891c47ee4d2e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-judgment-submission-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 655,
+    "sha256": "3749bb9e5d9aa7bd2c7a8e0eeac178c90bc4e2b3f4c3e104c4754f765288bf2b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-judgment-submission-20261029/README.md",
+    "exists": true,
+    "bytes": 2186,
+    "sha256": "b9ae9ef5e04bd030f6b49f1abfe979ca58581771c29f16a50ae7e63e7ccab714"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-judgment-submission-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 1190,
+    "sha256": "675cf2383b7901d301e6af6c85b3a2ef8dfd983dd3288d3373e438d5193e1bc8"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-judgment-submission-20261029/verification.json",
+    "exists": true,
+    "bytes": 3440,
+    "sha256": "e3946aaaddf29fd2a80c61348d9117c2f0663af07d3b9b94a9b66bd6087dedeb"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 596,
+    "sha256": "a615d897723062d4809b6a71c9a6a86fcabdbf233d9d579bd3dbfb54d746383b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/README.md",
+    "exists": true,
+    "bytes": 2898,
+    "sha256": "e989ae3ff9e220d935a1f12bd60d6bc07837782b0772d0590294bb3ba98c9e7e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 2213,
+    "sha256": "134b2fa95e3dad6b5ede9b1db11b340e80a1df16a1f7ac0ddee05075ad9001a9"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/reproduction-summary.json",
+    "exists": true,
+    "bytes": 2604,
+    "sha256": "25a677f0a14ca8d6a93d8f963468096c9f13fe926f2b5915e17119c0e91259b4"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/reproduction/reproduce_current_head.py",
+    "exists": true,
+    "bytes": 12462,
+    "sha256": "6bc5278dd31c76f49150f7ba2ae3ce974de22f94482b7a34ef1637b1acad0ad9"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029/verification.json",
+    "exists": true,
+    "bytes": 3735,
+    "sha256": "a25488f4eac12f71dc79015f5fda2d34cc48b3d90616e4b7c544537664d92ea2"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 668,
+    "sha256": "ccfd34ab70efe81f313f6b854e9640c490ee6796c9b457703fa57cacd3adf67a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/README.md",
+    "exists": true,
+    "bytes": 2451,
+    "sha256": "cf7a28407743ae5f4bb8eb61edc8f9c95e38194cc10c691ec2009501a0f2d7d9"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 2403,
+    "sha256": "3131def1b5a29e13e37fb2f7984dada8edf8f5961643c1239e9d41de3f15c8b9"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/reproduction-summary.json",
+    "exists": true,
+    "bytes": 10220,
+    "sha256": "45e481ad1063ea1544e332d8134c089325a5ca66e4aab43600e439302010994e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/reproduction/reproduce_current_head.py",
+    "exists": true,
+    "bytes": 7607,
+    "sha256": "e326b9767b088d91c42d1c7f471e56acfa338d0ba923790f81c03a8f3fe3b2e6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029/verification.json",
+    "exists": true,
+    "bytes": 4189,
+    "sha256": "3ba15e2b50923d21d44d54a1fb4ce6198550d75843dff11fd10a882f5e635239"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/COMPARISON.md",
+    "exists": true,
+    "bytes": 1820,
+    "sha256": "77336a74a73ff965d759fd58c0f4dfa0a43309ba70e8c1a90a988177bed080a3"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 823,
+    "sha256": "df5ef8ee4f8e6a8337878dfd15b42a5bc2a44ab8dead79197af561ef5fcb404e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/README.md",
+    "exists": true,
+    "bytes": 2809,
+    "sha256": "58c01f7490e13449dcac08e05b73bae1e195286064a5466f9cab23fd5bd19d79"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/comparison.csv",
+    "exists": true,
+    "bytes": 915,
+    "sha256": "2294eb7cfd8bdf26f72cb6a7a86de955e1baf4ba7d0f21d8d6a66d0bcacaad34"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/comparison.json",
+    "exists": true,
+    "bytes": 4504,
+    "sha256": "9eff088870901920a571d77dcf014745815be0b01fe5efd99b1865a8a574a19d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/verification.json",
+    "exists": true,
+    "bytes": 3928,
+    "sha256": "a9020e34aa06d15a65b40d44e96aef89eaf2dafcc6f73a3ab457717a1a0d6c19"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 893,
+    "sha256": "9d372f7e37c77976f7db820eaa47d75e9967befc5a8de770dc8b8aad826fd572"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/README.md",
+    "exists": true,
+    "bytes": 2063,
+    "sha256": "f025dc5fb41f504370a5bab2271f7576a07ce9b8ec79a500b3dcb6d3691b2884"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029/verification.json",
+    "exists": true,
+    "bytes": 4341,
+    "sha256": "0a35a7427713c2c1ac7c25cb20f75d93923b35024f5911db8dc7aab38c241d96"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 717,
+    "sha256": "88e8572dbfc30894a790806662ca5ebd42a09ee3223a5d2b63784353bcb65a8d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/README.md",
+    "exists": true,
+    "bytes": 2317,
+    "sha256": "f9d79f70b0e129c32af6596f94c77c884a32c858c904c40dd3da3ec55f15d219"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/REPORT.md",
+    "exists": true,
+    "bytes": 6148,
+    "sha256": "a429a40c8c27e277e1320d3b21911c4136b194612eeb209ba349086902bad54c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/frontier_table.csv",
+    "exists": true,
+    "bytes": 2090,
+    "sha256": "4eef5e98971daffb4323e64a398f755113b590dd05ca05cfec3cd3aa79ca9101"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/receipt.json",
+    "exists": true,
+    "bytes": 3056,
+    "sha256": "5f01b9c5fc3149c072684167ada4587479efe4e4bff22cc38709fed93edaffd8"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/summary_tables.json",
+    "exists": true,
+    "bytes": 33911,
+    "sha256": "d7997be560a47796afd0a590d61462ff69a262225f97985819c81c21c8a12a02"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2/verification.json",
+    "exists": true,
+    "bytes": 7151,
+    "sha256": "9941d3c909b5e613adb722121cb4b906ea14d8b95b546b6945c4a3613e762ed9"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/ANALYSIS.md",
+    "exists": true,
+    "bytes": 4110,
+    "sha256": "410f1c4c5a007851f8034b89e7694e837f553654af52126220920e5442bf22b8"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 1341,
+    "sha256": "82f6025afd7a5764cd86c2ea510bbaab150667a9b8a1534577e0028b033475c7"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/README.md",
+    "exists": true,
+    "bytes": 4767,
+    "sha256": "160ff4230e6e67726eb51e12c7802fc6f738cbf971af4be5fc2404f55be95c34"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/analysis.json",
+    "exists": true,
+    "bytes": 17798,
+    "sha256": "a3054710ef6eaeef4e15a877e294f044332bf3d26152f541af82f86f1a705d70"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/quality_cost_development.svg",
+    "exists": true,
+    "bytes": 1792,
+    "sha256": "355dd0d1bb537f09cdcd817182919474caf2a1b69d85d0e9234eb6067b041bd6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/quality_cost_frontier.csv",
+    "exists": true,
+    "bytes": 2174,
+    "sha256": "126c1ff97477e516c8e34b0b8114fe431689e1c0f02a4785a4acacffc4b7cf5d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/quality_cost_holdout.svg",
+    "exists": true,
+    "bytes": 1797,
+    "sha256": "aecd53ca909805f3e77233e6d7703d231353f6d2f94d11dcbf4907f4ee009d5c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/recall_comparison.svg",
+    "exists": true,
+    "bytes": 2302,
+    "sha256": "5e06777c534b2d5bd4a237184d5e4ab04debf8153d6697b3e8b64d3730e14917"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029/verification.json",
+    "exists": true,
+    "bytes": 4724,
+    "sha256": "4a5d8dd782f234b1a70587c99e0692a683fc795dad3d9be7c384c25b40083431"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 1001,
+    "sha256": "0d658f0bb1787487c840ebaae1993e0b416db1260a46c5b07e6c2ea90f8fa42f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/README.md",
+    "exists": true,
+    "bytes": 4634,
+    "sha256": "462f712ebb8da75ba82e0421eb6a72f6ecfdb87aff0351c571bcba8ffb95a98a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/baseline-summary.json",
+    "exists": true,
+    "bytes": 7115,
+    "sha256": "d831b209bd7bcde62240de7b8f4e190e2b2d42230e73125aec030f59f62c11dd"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 3410,
+    "sha256": "82b0f44ada48bd7f3131c2b9ed65b5b78f6a11cddc4ef802762fafeab874f048"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
+    "exists": true,
+    "bytes": 10119,
+    "sha256": "e74748fb16c8f44debb922ee4bfb334438c2d66fb70b96af40cedbfb1e24a044"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/verification.json",
+    "exists": true,
+    "bytes": 8091,
+    "sha256": "9f1f4f5fcac922a9f1d00686079978308271639846511b85d92d6af4709d2545"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m14-philips-dossiers-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 1253,
+    "sha256": "e04788aefaa931555a5c2560157d0365c5a2758e58664c40e8915ee13b9e4d3f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m14-philips-dossiers-20261029/README.md",
+    "exists": true,
+    "bytes": 5049,
+    "sha256": "d5cfec0ad671c3e5e3710e021df760d991576934858eac66f57c971ed3ef3d20"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m14-philips-dossiers-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 2599,
+    "sha256": "5161960585a92300b81c5e4abd7e4e6f409920f70a4d629d883916469c27575d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m14-philips-dossiers-20261029/run-summary.json",
+    "exists": true,
+    "bytes": 1028,
+    "sha256": "54f4b34fe4e9e6242197b839b83a8d39a625c7f9a9759046246ac01cef03e17b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m14-philips-dossiers-20261029/verification.json",
+    "exists": true,
+    "bytes": 4472,
+    "sha256": "3d5e753ac88a0b7a411d20c3d4a08ed7549a533209f10fc673955222269926f5"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m15-rights-packet-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 1105,
+    "sha256": "7980436abca30facdf310685dae613b325639bbd32891750af3230ae30314e86"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m15-rights-packet-20261029/README.md",
+    "exists": true,
+    "bytes": 6497,
+    "sha256": "4ce6c8a5312d86b0afcdd87ceb91cb18c9a7f1347d1b90bd459a5ed3ba512f8d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m15-rights-packet-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 2884,
+    "sha256": "4845f75d430dcae7df080c653910125a00ddbe8d1c5b056a33271cd48ef7e85e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m15-rights-packet-20261029/run-summary.json",
+    "exists": true,
+    "bytes": 1309,
+    "sha256": "946c93491038efc9fe03418e6cf76f24f9cbe947f5c06e0e758d82cd09041b28"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m15-rights-packet-20261029/verification.json",
+    "exists": true,
+    "bytes": 5322,
+    "sha256": "c1bc217198356f4a899c21c1b0d1c3b820f88288b513b2e62990a4e083e1bcb6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m16-review-tasks-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 845,
+    "sha256": "6809bf959eeeb6a47d2e9262eae1c0eb6aa93d5636cb17ed2b62d51379151505"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m16-review-tasks-20261029/README.md",
+    "exists": true,
+    "bytes": 4490,
+    "sha256": "6a9d6790dcc9d337cd811fee4849449ddbce42b553ac62af26abf098b7b2d854"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m16-review-tasks-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 1799,
+    "sha256": "798282878f7aa34e20497ff77cf6623b9444a7cb369ba1e4af58c088cf407d03"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m16-review-tasks-20261029/run-summary.json",
+    "exists": true,
+    "bytes": 748,
+    "sha256": "db6ef7f33aef9ef0be7756f9179bdd6956c814c1f6c0ee0acd116b8847c3961a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m16-review-tasks-20261029/verification.json",
+    "exists": true,
+    "bytes": 3533,
+    "sha256": "9d3d5d4d424175f4964f0c74f7a0090b81d11ab63f0dcb092de984bdecf027de"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 690,
+    "sha256": "3356b0ffaae31aa1c6cb5fa356b96181adeb597557b3f8a438612adf6e3e4cac"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/README.md",
+    "exists": true,
+    "bytes": 4484,
+    "sha256": "42917053c108529f456c6498a873da749ff8efa9e5ddb821e5be08e43bd66abe"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 1387,
+    "sha256": "38aef6385c9bf75bf7a7469ba9b377c84871e4e9b7c8aba6b3199d09a1475d71"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/after-reproduction-summary.json",
+    "exists": true,
+    "bytes": 10220,
+    "sha256": "924ddbfd328ff85ad8e8bac648314fbe65f11377c53d1c7764c9b65baa078114"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 2241,
+    "sha256": "0a0795b8b04da01fdb9e6d347ed205aa4c226e19947c8ad7af8f1f1288b960a3"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029/verification.json",
+    "exists": true,
+    "bytes": 4783,
+    "sha256": "c276081c36ca0408ec07f1bdea1daabd2ec98152663115c9d50b0089bc79f150"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 717,
+    "sha256": "57ecd6a4c5d7a4291069dc6723b6bcfdd64a814f6cbf7f931456e003fee2a09c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/README.md",
+    "exists": true,
+    "bytes": 4576,
+    "sha256": "86ce5defef6f5aa69cd43634a91512969341b087c515105b58a470088d57aefc"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 2800,
+    "sha256": "fdc3afce7571534ab75202f4de0a5fb48acd4d0c3afac240c1ae36861682aa24"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/baseline-summary.json",
+    "exists": true,
+    "bytes": 2713,
+    "sha256": "cc29243cbe63ef27bc8b60568f628f81704e63132554d76ae29ad0d9156c6479"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/protocol.json",
+    "exists": true,
+    "bytes": 1330,
+    "sha256": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/provenance-verification.json",
+    "exists": true,
+    "bytes": 5258,
+    "sha256": "83eed9fdc9990138620207a8d2eeb23a9912592df49d6ffe91f1555d9c7910c4"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/pytest-healthtech-bundle.log",
+    "exists": true,
+    "bytes": 706,
+    "sha256": "ae83fb9599854020193f4b6e31a0a8232d6a77b5d4d6265515c6b697b4e6eb2e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/rights-matrix.json",
+    "exists": true,
+    "bytes": 7436,
+    "sha256": "f30fb5c18719ddf31e3cf489270a3983ba9cd8b8b4ffd087d6cce95854d40da3"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029/verification.json",
+    "exists": true,
+    "bytes": 2841,
+    "sha256": "e92c0ecd79288b19a6b4e1120fb4448b84b8c1fda4fcdb7e4a787e8fbf0a52e1"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-stryker-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 608,
+    "sha256": "bc43d23bb4eeb09473763baa96b0a275a6290b0f8f91a39ae578c6928e7dc023"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-stryker-20261029/README.md",
+    "exists": true,
+    "bytes": 4095,
+    "sha256": "a51ce5816d2d72734c429be58b26071c3803892fb11fce70970dcb28dd354458"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-stryker-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 4186,
+    "sha256": "59d2301106b8ab3d9f670f4f3d9d8daf518d4ff7f8c639d1cb036f795287988c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-stryker-20261029/rights-matrix.json",
+    "exists": true,
+    "bytes": 6504,
+    "sha256": "620ba8a454e35d0173e896f18d07ca6a8b40651abd4a58223f86f1110f02a116"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-stryker-20261029/stryker-provenance-verification.json",
+    "exists": true,
+    "bytes": 4704,
+    "sha256": "ebd70405afbbe39a00efa920868cb3426c7eadaec3bbbe0fd8d603bdaa85d75b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-stryker-20261029/verification.json",
+    "exists": true,
+    "bytes": 3394,
+    "sha256": "190d6d27f5f90445e1b49c78e8a68ccb24411d445681e82f9fe44926c9c70a0d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-cross-cohort-adad901/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 633,
+    "sha256": "492cd3d214507dc38c1bb44869331a6e1f1b9069c846addd33784d70f88b1c15"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-cross-cohort-adad901/README.md",
+    "exists": true,
+    "bytes": 3216,
+    "sha256": "59b5817cca5efdcb897d0d2ca6a33c33468680bc0104d7a507ae23622d588312"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-cross-cohort-adad901/REPORT.md",
+    "exists": true,
+    "bytes": 5266,
+    "sha256": "400860fa60ff7352e82cd5b50010bc83a22351da9918be12aa7a58fff9d92720"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-cross-cohort-adad901/comparison.json",
+    "exists": true,
+    "bytes": 22120,
+    "sha256": "870cc3f05afb944b77a7409050572aa0f5a4d56729e75843a81cda6c7296a9d9"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-cross-cohort-adad901/verification.json",
+    "exists": true,
+    "bytes": 1461,
+    "sha256": "824c524e754fb6adabfa99543d345166ba181574ff08b5152747ea7f26df4a78"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 507,
+    "sha256": "118a98cb03cc55d349ead206c33dbad0501f7065250b30c8a26377839502376e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0/README.md",
+    "exists": true,
+    "bytes": 2394,
+    "sha256": "f82d915644b068f3ecda8555ae2c6466956292d815b218454d3faae7e5ab0e52"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0/REPORT.md",
+    "exists": true,
+    "bytes": 5266,
+    "sha256": "48e3d008f9113b5795a0181dadc1a894f600440f4e2a489ac7061c9d5f523c42"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0/comparison.json",
+    "exists": true,
+    "bytes": 22120,
+    "sha256": "7b197d0f048737c2f646d54ae975daeee7130a80be56e6e8e6932e22842d1bc8"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0/verification.json",
+    "exists": true,
+    "bytes": 2667,
+    "sha256": "92f4469ef0f55e382ef29729a8e5a06e9b6b4cae3c2485f1c56976c81688f77e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 976,
+    "sha256": "4502846e6d4c160139a05fe07c4352afbb203fe63d02f2cdba8b6c3d4938a3cd"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/README.md",
+    "exists": true,
+    "bytes": 3541,
+    "sha256": "a76279973bed35a273903e89f81ffac9238d29ee8f2a21becd2a9a13de9a3afa"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/REPORT.md",
+    "exists": true,
+    "bytes": 3691,
+    "sha256": "bf9e4eff277557e27560d53f025c5b7042ade5009f7bec5b58bdc9d93c854c3b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/verification.json",
+    "exists": true,
+    "bytes": 7522,
+    "sha256": "d54938209ab8176e70eb44f81d18e82cc9fea4841756a10e50ff1984422959d5"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 1052,
+    "sha256": "8a6d84b7a05fde8ac8ceaa9f9da1f1cc5cb47f7b45a22050c2ae4a673ae61585"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/README.md",
+    "exists": true,
+    "bytes": 3062,
+    "sha256": "689a45bbadcbea82912ecc242b3db8673ce1ede9b1a3d18d9700f69039cbfe78"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/endpoint_metadata.json",
+    "exists": true,
+    "bytes": 1202,
+    "sha256": "3386eb10d04ac0f18aa5d25cdabef579a127ad7cf74a23c50e7938699b89c434"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 2225,
+    "sha256": "b8a7a199ba223559159b90a14dc7b7976dcefb27bc64d9b94ddd96de22a9f372"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/model_snapshot.json",
+    "exists": true,
+    "bytes": 381,
+    "sha256": "4016c0f0501e6bdb1e486cd174eda063895c27317387fa129a76f3b86036d4a9"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029/verification.json",
+    "exists": true,
+    "bytes": 7551,
+    "sha256": "20cfdcca7bf9475694534bba53ac8cacba694f9dfaf08baa23187c0b732f6f37"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 625,
+    "sha256": "e365b2fb024e6fec32b85a6640e7cecbcc665724bd0672fe0d3e0141ebbca823"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/README.md",
+    "exists": true,
+    "bytes": 1346,
+    "sha256": "376ca3c9b0341d0a79bac7ccac02040e54b68c3848f081957cfcda214ef0e3bb"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/REPORT.md",
+    "exists": true,
+    "bytes": 1943,
+    "sha256": "3196a093490f3d689ea6bf0f3d537253888bf2b0ae4dc240ead446c8af3f3ce7"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0/verification.json",
+    "exists": true,
+    "bytes": 2354,
+    "sha256": "a4ae149da99ef6b11ab0c613e9464fe55e8c9226e69eb49a9d5ffa76899a3add"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 1083,
+    "sha256": "493952a4c13a5390df0efff3d846f7669e2d515da110c3ab570a4576fbebee75"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/README.md",
+    "exists": true,
+    "bytes": 2424,
+    "sha256": "4f89f2dc23a2c94a35e5b609745e634572fcb551f1a5b4b03cd013f2486ae4c2"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 5578,
+    "sha256": "fa28f1908eb76f44f03a124e0eb965f72f0cf57915bc88f9e4ba249b61d504bb"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/frontier_table.csv",
+    "exists": true,
+    "bytes": 1802,
+    "sha256": "829c16856bb156ee315b3336aa9a3c071890bc137716bd05adb541ae834e4eb5"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/receipt.json",
+    "exists": true,
+    "bytes": 2403,
+    "sha256": "a81c77c828208efd1d3236bcc01951204d1a0c8ce0d6d80961da0e40e21f2f5f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/summary_tables.json",
+    "exists": true,
+    "bytes": 24350,
+    "sha256": "226a0f2206f31e417eaf7aaaa64f70543099f7743a1022146824e1bc0f0ac184"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029/verification.json",
+    "exists": true,
+    "bytes": 5000,
+    "sha256": "83d2807693c8523f29c91b7f8585622cbb8e4b727fbd3994d3838c9031d0636b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/ANALYSIS.md",
+    "exists": true,
+    "bytes": 2769,
+    "sha256": "2ce2799c9b5dcef5d297a6d2dbb0e71dcf5017ce78c8990cb743436cd47dbc8e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 775,
+    "sha256": "61833b3908ae987b22fbd36703350d64b9b74f5477d6413f4a9d1748447856d5"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/README.md",
+    "exists": true,
+    "bytes": 2192,
+    "sha256": "db735bbad3b529bf172cc4372123f39e752f49a8c9f22b7b610ee67225204e20"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/analysis.json",
+    "exists": true,
+    "bytes": 12230,
+    "sha256": "ed43742e7dfcbf222a30915cc8072a5d14d672a3adb65dd7ffcd424c5dc90ea6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_development.svg",
+    "exists": true,
+    "bytes": 1792,
+    "sha256": "355dd0d1bb537f09cdcd817182919474caf2a1b69d85d0e9234eb6067b041bd6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_frontier.csv",
+    "exists": true,
+    "bytes": 2174,
+    "sha256": "126c1ff97477e516c8e34b0b8114fe431689e1c0f02a4785a4acacffc4b7cf5d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/quality_cost_holdout.svg",
+    "exists": true,
+    "bytes": 1797,
+    "sha256": "aecd53ca909805f3e77233e6d7703d231353f6d2f94d11dcbf4907f4ee009d5c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/recall_comparison.svg",
+    "exists": true,
+    "bytes": 2302,
+    "sha256": "5e06777c534b2d5bd4a237184d5e4ab04debf8153d6697b3e8b64d3730e14917"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2/verification.json",
+    "exists": true,
+    "bytes": 3903,
+    "sha256": "654ff5c965449aad0c4c9abec3d5446e457935bbe00454a1cecef0bde5379c6b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m9-g6-scifact-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 589,
+    "sha256": "b43de56db5ebc6a034e1b09a2b52a4f07245e04b594ff43681114872a4a352b8"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m9-g6-scifact-20261029/README.md",
+    "exists": true,
+    "bytes": 1751,
+    "sha256": "139d3fb517ec7ee1f9830d04ed400f6a4a1233a9d514f166429d94f2e99b5c95"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m9-g6-scifact-20261029/verification.json",
+    "exists": true,
+    "bytes": 2827,
+    "sha256": "f7207c6816dd06cf27c2d45eaa595aea8c9b750e0a063a303b4500bc92e04863"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-relevance-contract-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 798,
+    "sha256": "a5cb87a55443ea3af261e5774d93d135e28912ad2cf8be64b73d455d2373091d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-relevance-contract-20261029/README.md",
+    "exists": true,
+    "bytes": 2651,
+    "sha256": "6f85e32a630cfee03df605a1ac9979c5aba20c8e3de6b7bfa9414be6878b82e8"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-relevance-contract-20261029/REPORT.md",
+    "exists": true,
+    "bytes": 2448,
+    "sha256": "c0123c615f8ff084cef7ff64a5b0f22f49f347bcf8526fa6321d2760aeaf580f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-relevance-contract-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 1845,
+    "sha256": "4fe4cc6cc4c853663d106f6efc90057126a0725208fea0d6d3ea8ce1e9451be2"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-relevance-contract-20261029/verification.json",
+    "exists": true,
+    "bytes": 3690,
+    "sha256": "7fe8abb83036b0e405f6ffeffe6d9c10457a484f1a243bc7fe12ae03345d746e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-review-packet-20261029/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 827,
+    "sha256": "012dce6e99bf735195bd5b9d8d8d2805c9996824344427a08007335aab4f0a08"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-review-packet-20261029/README.md",
+    "exists": true,
+    "bytes": 2557,
+    "sha256": "e9a8b6e9c401dcaadb34e85bab68426ce030e73f3d357d4e6b3f807853d3309f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-review-packet-20261029/experiment-ledger.json",
+    "exists": true,
+    "bytes": 1303,
+    "sha256": "c05157654e95f65e0b8c2de512e7c57f0aac9ec69cef2901ceb924990c02445d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-review-packet-20261029/verification.json",
+    "exists": true,
+    "bytes": 5426,
+    "sha256": "a9ca10eb7d1c93db985c7d96fd897413a5ecd29712afdeb8e016edb661347bb6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 423,
+    "sha256": "afcbd95f0f4bb4c5549b47927be0e2b8432fe6a556dcaf1d4fe421ca3ab12be6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/README.md",
+    "exists": true,
+    "bytes": 867,
+    "sha256": "471e66c71f5047868eab6b3fbefe83cfab1f45e3807002394d973900ba9b54bd"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/REPORT.md",
+    "exists": true,
+    "bytes": 2827,
+    "sha256": "d51528d67d703a2e4af558f2fec517cf54d1476bb4310f91a94a307fbeb3e9f0"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/receipt.json",
+    "exists": true,
+    "bytes": 4797,
+    "sha256": "012d9e23e01b071ccb4dbce9f71fe1898004760609a78fdf6515c2fb514c3f33"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/scifact-release-receipt.json",
+    "exists": true,
+    "bytes": 2768,
+    "sha256": "363f8e0a0a3f962dbe26b00886c25ae460eb35b4156082501100250d1d06dc5c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4/verification.json",
+    "exists": true,
+    "bytes": 2396,
+    "sha256": "05b1dd87978679716c1a93037eabdd84c206a6f6dba520419ff56db0482b9caa"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-authorization-bound-judgment-ingest-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 465,
+    "sha256": "8c5df75eddbb73356091392eae876d12fc2ce1bb9851252029e3e159db3f4f13"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-authorization-bound-judgment-ingest-20261030/README.md",
+    "exists": true,
+    "bytes": 1947,
+    "sha256": "e1611d87b0b1a72d6219b0ea9a48ee98db5a1c6e3e9d32b450198d8ee1185075"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-authorization-bound-judgment-ingest-20261030/REPORT.md",
+    "exists": true,
+    "bytes": 1135,
+    "sha256": "2db3cb998b762efba5b74377e424f473b2a4a7e311651135429ed85a160844cc"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-authorization-bound-judgment-ingest-20261030/verification.json",
+    "exists": true,
+    "bytes": 3030,
+    "sha256": "545e536bd6effa3344bcea38551d79aa3c337870c44bde8e834c843210cab58d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-bounded-semantic-source-staging-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 520,
+    "sha256": "114d93c0405c6e6336c1a555795a04eaa3c833b6ffd22532687e439595f91240"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-bounded-semantic-source-staging-20261030/README.md",
+    "exists": true,
+    "bytes": 2570,
+    "sha256": "22bf3617ccb9bef8b3c2644b8d0be3cee6809e40930187ae10ed05a1f7667b5c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-bounded-semantic-source-staging-20261030/verification.json",
+    "exists": true,
+    "bytes": 2060,
+    "sha256": "ba0be10c86de4e5c1caa653949e2c797e4b78ea650941b0ba09642ef29a65d8e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 615,
+    "sha256": "73d209ffd172afcadb552afebc352e12ffbdb89df2c12e4570c7a12ae755376e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md",
+    "exists": true,
+    "bytes": 3327,
+    "sha256": "e0fc5c4cf2e8c5ef5380324218198b68121fb815743d3ca0d9edf00df175c8c0"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/REPORT.md",
+    "exists": true,
+    "bytes": 2396,
+    "sha256": "d8dc385e348ba8f84b9985928303cc4ce86bad0562ee43225817d7fe6f5475c7"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/verification.json",
+    "exists": true,
+    "bytes": 6358,
+    "sha256": "5de8f0fc3216b3763d9cb01cda6850bd0cbc0e7256d5292f7ab7ddf9ad7856a6"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 839,
+    "sha256": "68ffe26b43e2e1842f882dc8f27ecb345b0bbb4730a0314f0b798cc0ecebc49b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/README.md",
+    "exists": true,
+    "bytes": 3056,
+    "sha256": "693b82066d74e37af5363cf9308dc8ffabaa8ef50ccf237c9c24923c98d72824"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/ANALYSIS.md",
+    "exists": true,
+    "bytes": 4207,
+    "sha256": "f47e0063f78740311d0d5fcb1dc07ea57de3b8cd6d0589c47bd04652fd23d10d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/analysis.json",
+    "exists": true,
+    "bytes": 18864,
+    "sha256": "dd5ac66082efdebcc9043658595fd665f58acc8ebd640f35e2bd000449940b39"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/quality_cost_development.svg",
+    "exists": true,
+    "bytes": 1792,
+    "sha256": "5c5651b16b12957d4ce775b2d2c51cc0991d755b44fc3cb5a2347d0580316308"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/quality_cost_frontier.csv",
+    "exists": true,
+    "bytes": 2330,
+    "sha256": "9c9e57d670f7af62f96fee21cabe73b550bf633144918c554c311b741b9cb130"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/quality_cost_holdout.svg",
+    "exists": true,
+    "bytes": 1803,
+    "sha256": "0cd99f536dce38568611e206c21a98834000e98ad1b62c491c3db84f338ef2a2"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/analysis/recall_comparison.svg",
+    "exists": true,
+    "bytes": 2305,
+    "sha256": "cca44fe6ac34b80fb4376953d0e323879aac611f2535d9da12959aa37a98e020"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/b4-development-verification.json",
+    "exists": true,
+    "bytes": 5533,
+    "sha256": "34cc39cfc12a505ac04f0279ce559dece17c29c945fce3995611f83a7b821e24"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/b4-holdout-verification.json",
+    "exists": true,
+    "bytes": 5567,
+    "sha256": "bb813d6bc4cc7cd4a75ca65464ffd4093888a879ede96878c5d7bc8fe9644fa4"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/report/REPORT.md",
+    "exists": true,
+    "bytes": 6131,
+    "sha256": "547c4a639c2ba8147b1fb292b69b1c7cce70f42bb020758fc68d37b05d458e30"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/report/frontier_table.csv",
+    "exists": true,
+    "bytes": 2095,
+    "sha256": "2de325a267e018d9d1fafada7293ba6cecbde6b7ec5f2b7d99f5caa81037293f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/report/receipt.json",
+    "exists": true,
+    "bytes": 3123,
+    "sha256": "1d06922c651daa38681e1e7aa314691e19699326b2281dc75cd4642a3bf04650"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/report/summary_tables.json",
+    "exists": true,
+    "bytes": 33330,
+    "sha256": "0f04a32be4bf956df6539db52cd293029101dc811206069f9f72d065989761d1"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030/verification.json",
+    "exists": true,
+    "bytes": 10143,
+    "sha256": "b40e244be7a1a6609ec9d02530cdadf2805c41f54fca4a171b4e4a72ce66ef45"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 831,
+    "sha256": "4bd2585b0feabbaa6c21f7b6c09d5a39b3d644527d488209920935a2eca0a0c0"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/README.md",
+    "exists": true,
+    "bytes": 4073,
+    "sha256": "bae7472f609d263f3d7cae9362d8c125554d99725cc5782dbf0ec202395c63a5"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/ANALYSIS.md",
+    "exists": true,
+    "bytes": 4214,
+    "sha256": "f9d01d55c4c17d66eb5af343f5556d952782106abb640c4d975d7d125a39ee2a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/analysis.json",
+    "exists": true,
+    "bytes": 18858,
+    "sha256": "85e23ae0593fea9ef4061452f2c5cacacbf6e701bb46c7466709044ea8f03b97"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_development.svg",
+    "exists": true,
+    "bytes": 1792,
+    "sha256": "87a6e1948fd4841a7f1ff5621855fd1ed91236f5a7ca6c79edd687158e5d06c1"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_frontier.csv",
+    "exists": true,
+    "bytes": 2330,
+    "sha256": "a355a008d2473cd3ee9ccc996c4eb6f7239cdeea6a9e250318b0017d93c1a56a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_holdout.svg",
+    "exists": true,
+    "bytes": 1803,
+    "sha256": "410ad8daca59e871b10306172b02ee5f38150c2b872660a8f02f8695358409c1"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/recall_comparison.svg",
+    "exists": true,
+    "bytes": 2305,
+    "sha256": "cca44fe6ac34b80fb4376953d0e323879aac611f2535d9da12959aa37a98e020"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/b4-development-verification.json",
+    "exists": true,
+    "bytes": 5226,
+    "sha256": "24bfc4c3fbf3007c1827d3ab0b93cb234c7803015b144e8b98caf62214a0b722"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/b4-holdout-verification.json",
+    "exists": true,
+    "bytes": 5276,
+    "sha256": "132ea209dae92629f9c0e370a42435b63d985f821804f314a383dc2b7b858c5f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/m1-exact-head-reproduction-summary.json",
+    "exists": true,
+    "bytes": 10220,
+    "sha256": "09a9a08a8c589097acd6a014f78430fa97dbbb08df636f5f2430976b37099a3d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/REPORT.md",
+    "exists": true,
+    "bytes": 6145,
+    "sha256": "2ffec095c4f0a0ea18a72a359ad16bf66d0402a672cac596cd34aecddabada30"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/frontier_table.csv",
+    "exists": true,
+    "bytes": 2097,
+    "sha256": "cf04857f88c8a48303f82877ed4c8edb2d185107c1c6f3d138b0860516a5e04c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/receipt.json",
+    "exists": true,
+    "bytes": 3181,
+    "sha256": "4b8758b9966cb924474e89c7fd5b240360c125a00d7025d2f4e104d266b6f022"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/report/summary_tables.json",
+    "exists": true,
+    "bytes": 31991,
+    "sha256": "db53ff1e90126920974310ab5d9ed83cb133884b773aeba42721fd49e395f304"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030/verification.json",
+    "exists": true,
+    "bytes": 20044,
+    "sha256": "b19c1a3e041e132529a5970e742118744146852bfe61723ef3fbfba9292198f5"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-report-budget-g6-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 732,
+    "sha256": "ce3f2d4a1076a7254be0e8b41e439098a662a931a5a81467b0a7d1fcee69110f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-report-budget-g6-20261030/README.md",
+    "exists": true,
+    "bytes": 2864,
+    "sha256": "5006f7d8f8040131074ad1e1d8b8295feda7197d5b33e3f6a29a6480c4053397"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-report-budget-g6-20261030/verification.json",
+    "exists": true,
+    "bytes": 4054,
+    "sha256": "1212352911e454690822cf02f17b36d853b5c71953f7d0515d200d62bb3b8fe0"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-bm25-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 953,
+    "sha256": "f56b9c845b17214ade8288ca8ded3d89c44d0ac103098d3d8f52b983d34abb24"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-bm25-20261030/README.md",
+    "exists": true,
+    "bytes": 3585,
+    "sha256": "02abf1822984afeb4df621cc1bb228cab69bf7a202f60f15eb1969eae2929310"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-bm25-20261030/REPORT.md",
+    "exists": true,
+    "bytes": 809,
+    "sha256": "a44ff0a2eb3ef465effc0a97724aad8c9b53b0d5e1c86e0a5038ba0d65232f26"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-bm25-20261030/verification.json",
+    "exists": true,
+    "bytes": 4577,
+    "sha256": "e9a380c33f3358345585e6ac6b4b99860703335b4a7d74d8f929cb458b119aa8"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-code-provenance-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 667,
+    "sha256": "05a4189f0bc24f889724c3c5096cbbc74658f051de0b38de437e87e2bce358c0"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-code-provenance-20261030/README.md",
+    "exists": true,
+    "bytes": 2344,
+    "sha256": "d08d0a1dd89b26dd10d76bfd4ff9f86cc5e24d22683ba19974907d38fa2ec0c0"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-code-provenance-20261030/REPORT.md",
+    "exists": true,
+    "bytes": 466,
+    "sha256": "37cb95bafa435264f299a681be1bb5c1ec6e2c3e0d1b8d39965f0c86a4d502f3"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-code-provenance-20261030/verification.json",
+    "exists": true,
+    "bytes": 3632,
+    "sha256": "9355f7d7f05796c1af8a47de2ec676a479195f214c10e19e48124a04bb212b7e"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-preflight-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 917,
+    "sha256": "f3d70859dd9fcba893a98c3cdb704f969c69b24b950b012bcd1edb34e8d514e9"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-preflight-20261030/README.md",
+    "exists": true,
+    "bytes": 6048,
+    "sha256": "ffe8483bf7f51871d4311c56ab5472cd3400be453d4c7f8a902a4782322c9838"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-preflight-20261030/verification.json",
+    "exists": true,
+    "bytes": 4169,
+    "sha256": "56d6155c60578ba59162d0dc4a6ede2a20e8d24c08653b0db66a3064b70b2ccc"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-qrels-parse-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 884,
+    "sha256": "813d77fd92bb364e2a4815a7a2eeefc61bb73e79123d885f78e46faeaa0ade4f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-qrels-parse-20261030/README.md",
+    "exists": true,
+    "bytes": 2851,
+    "sha256": "d32516c7bb31f56000f76887ccf1ebf3066d545c8f21919583f2f72008277047"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-qrels-parse-20261030/verification.json",
+    "exists": true,
+    "bytes": 3868,
+    "sha256": "59e5b0575f03945cb3c9ba99484b9da00589d3eebad71483d74bfe4c143da0b1"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-g6-m20-integration-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 685,
+    "sha256": "579c20a6860faecfc2c4770b96ccce8ac585f6c0d1440426c1dc495cae9729e3"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-g6-m20-integration-20261030/README.md",
+    "exists": true,
+    "bytes": 2705,
+    "sha256": "f7a369d996a9fa5c6191ff993a3532a7fcfa232f39953167ee6e1462d4c7645b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-g6-m20-integration-20261030/REPORT.md",
+    "exists": true,
+    "bytes": 1590,
+    "sha256": "5176f4d691d20ce2c6e37bb1d911e7dd8b7a34f821375db9e7fd2a9e632561af"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-g6-m20-integration-20261030/verification.json",
+    "exists": true,
+    "bytes": 2608,
+    "sha256": "567cc8246f8020e6be0f286e42597f55e616f9ec1d5d055620d7ca7f7d98a412"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-integration-contract-refresh-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 686,
+    "sha256": "1d2cbddffa647c93baed87b7d2db2a2573ba94f048e15950efef4916c6b74a89"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-integration-contract-refresh-20261030/README.md",
+    "exists": true,
+    "bytes": 2359,
+    "sha256": "3ddf4e90e928c17547d653800d0116b8d6ba7c768d0885bef7d13684f25f910d"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-integration-contract-refresh-20261030/verification.json",
+    "exists": true,
+    "bytes": 2795,
+    "sha256": "a4a13d083446553f95b5f63cc1c1a2190bba4f04852063c3f50f053ff1d99e78"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m32-adversarial-boundary-regression-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 552,
+    "sha256": "86b8ad27e93c8014c5ae379df1bd2f0f6000adb20b621f93cd37ed086e7aab86"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m32-adversarial-boundary-regression-20261030/README.md",
+    "exists": true,
+    "bytes": 1894,
+    "sha256": "c3049a6f1dbf29404f750b88951fb21ca328e8103f13b78c9ea92de39be1018f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m32-adversarial-boundary-regression-20261030/verification.json",
+    "exists": true,
+    "bytes": 2714,
+    "sha256": "56553bc19f1bea0b15542ac1c51b1e58fb3f0afb57579fa66dfa9ef3ceb6ccdd"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m38-philips-dossiers-r6-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 692,
+    "sha256": "2244a1aedfe54c7287de634588185bca2abd18f65d881a59524bc177b20154a5"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m38-philips-dossiers-r6-20261030/README.md",
+    "exists": true,
+    "bytes": 2854,
+    "sha256": "c760a5dd9b25c80ca2d2fb74a49b0d7bc3ffaab4b3eddc616d22f65fd81691f4"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m38-philips-dossiers-r6-20261030/verification.json",
+    "exists": true,
+    "bytes": 11186,
+    "sha256": "9c8df445f4fb9c58a5279fb4427a4cd0286a28ef46ecdce71237827de25e5e36"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 796,
+    "sha256": "8e7baa3a5ca878e5d5d3127d961675ff6a5e7f2ea33f8ebc2bc28d1c5deee5df"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/README.md",
+    "exists": true,
+    "bytes": 3187,
+    "sha256": "8ad4e3bab76568176d92c774ecadcc43346de433cd49f89107c7f68aef76fb02"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030/verification.json",
+    "exists": true,
+    "bytes": 4596,
+    "sha256": "960aca9f7910bd265c7ec03da7c3b90a774d9630c727f8f4fddf0c507ea14c02"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m41-g5-pilot-analysis-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 753,
+    "sha256": "303efaa62bc8ba0f1609d4e5acd0a90f9ece089b3084ad8e8a13e74052d8d486"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m41-g5-pilot-analysis-20261030/README.md",
+    "exists": true,
+    "bytes": 2803,
+    "sha256": "73d51b12c4eae3e3d2ea721c93ad80b59d77e23b8e49314aca9c2810a9bd4eb1"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m41-g5-pilot-analysis-20261030/analysis.json",
+    "exists": true,
+    "bytes": 4697,
+    "sha256": "617dd55eaa1169258b6f6addbd1f9e3b886fbcc5ac5bbd2a444efa6f084eae41"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m41-g5-pilot-analysis-20261030/verification.json",
+    "exists": true,
+    "bytes": 3773,
+    "sha256": "1848adc697cfb101dcb1e8268bde2dc87474f2c064dc16e9341b488f0ed8caa1"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m42-dapfam-coverage-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 626,
+    "sha256": "58e451abf2f251de02af0fe48266a8ec780bafa7c360d82f2a2d8868603f610a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m42-dapfam-coverage-20261030/README.md",
+    "exists": true,
+    "bytes": 3257,
+    "sha256": "2a6c281c924ff16c688118f6338994d630ca60a75f9bf50bfe4ade571289e3d1"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m42-dapfam-coverage-20261030/verification.json",
+    "exists": true,
+    "bytes": 3893,
+    "sha256": "816dd5c68c4e3887a9d691c8273546a7ffb46fbcda8cdba1c8fbf0ec45f21907"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 983,
+    "sha256": "2fecd5c144fe60957beda2a04fadaa44224adce5beaea5c7938dc64f39cee79b"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-20261030/README.md",
+    "exists": true,
+    "bytes": 2607,
+    "sha256": "f5885f7f30dff50ef88b92f86ae699dfaa43d8112824c679a8fb977b845f689f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-20261030/verification.json",
+    "exists": true,
+    "bytes": 5595,
+    "sha256": "9e0c97f29fed861a293a5cbce1eba1317bf0db6079b31cd93ea67e54baa74d86"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-current-head-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 810,
+    "sha256": "2034018caa88342f130dadcaacc424ca31c2983cfcc5d67db4e71513d11cd93a"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-current-head-20261030/README.md",
+    "exists": true,
+    "bytes": 3317,
+    "sha256": "db2585a543c0a162dc18a378d71ccedb8feb16ba841148a66c73e1f9e1e246c8"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-current-head-20261030/checks.json",
+    "exists": true,
+    "bytes": 3260,
+    "sha256": "57c110c54e301ed8b4fafb748031dc56df852ef836661e488bb2b92da2b658e7"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-current-head-20261030/verification.json",
+    "exists": true,
+    "bytes": 20106,
+    "sha256": "fdcda7b2a75b94bbaa6c740f8a7e699a720d693428d87ead3a5d2b342807debf"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-semantic-source-landscape-expansion-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 637,
+    "sha256": "e82fa212fa51c43164f591305ef9c36845665c3dab770a2950b89a212fe94837"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-semantic-source-landscape-expansion-20261030/README.md",
+    "exists": true,
+    "bytes": 1881,
+    "sha256": "d34d2602dcc23b8966f7ee129987a63d4908464b43830bbd49589c94df7aca7c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-semantic-source-landscape-expansion-20261030/verification.json",
+    "exists": true,
+    "bytes": 2980,
+    "sha256": "e65e6dde8672a2df3c0a092ac31f50b3e6baef1fa1b96197c0abf0f1cc5fadfd"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-sharps-source-metadata-preflight-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 479,
+    "sha256": "d56bc07f0d7c84ea28d804506c27e007dbc3ae55319592ebc1bb811a1de981cb"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-sharps-source-metadata-preflight-20261030/README.md",
+    "exists": true,
+    "bytes": 2024,
+    "sha256": "19232e7af3d41983b0b06c027c081fccc15ff3ec0e4167b50512c374fbb7d5dc"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-sharps-source-metadata-preflight-20261030/verification.json",
+    "exists": true,
+    "bytes": 1723,
+    "sha256": "f68cd1c48e38d228ef927a1fc37171c954506117301cee7232ddbd8180909ccc"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 587,
+    "sha256": "2e056497a9a7aa4738b9c6b76958b97d55baf60568f63e20dd36abe19b41aba8"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/README.md",
+    "exists": true,
+    "bytes": 2380,
+    "sha256": "2a4a38c5a38487a654a13fc807c7ad6bb194ed089fc2e85e2128ad507ef51711"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/REPORT.md",
+    "exists": true,
+    "bytes": 1341,
+    "sha256": "30e369ef66e089ce2fd4f4539e17c7b7f06d4ce289a9dc3ea5cc49df77135e15"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030/verification.json",
+    "exists": true,
+    "bytes": 2732,
+    "sha256": "a8159c84bcdebbfe72579edc16ee65725ec82fa1a64f4a01233addbd17e5ca8f"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/NEXT_ACTIONS.md",
+    "exists": true,
+    "bytes": 659,
+    "sha256": "6ff9267a113e5911e4aac34d4dee8d6799958446f178ac45f02a1a482403823c"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/README.md",
+    "exists": true,
+    "bytes": 2697,
+    "sha256": "85dd52bd3ba0ed8801014f6f91b0fad848d9e627c6fc89b4c400338ff9c04891"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/REPORT.md",
+    "exists": true,
+    "bytes": 1326,
+    "sha256": "9db68b0e3a650ee6daf67fa8a945ebdf2365ae7bc1f318c5ef57ead484df6f80"
+  },
+  {
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030/verification.json",
+    "exists": true,
+    "bytes": 2864,
+    "sha256": "f5f089f5e504063dc063f39b024063ddcba6c4001cba02f4cd22a6ba8be26612"
+  },
+  {
+    "path": "docs/healthtech/business/PILOT_TASK_PACKET_20261029.md",
+    "exists": true,
+    "bytes": 5199,
+    "sha256": "2b99b9eb1bd23ec71e6b2ca2d5bbe13d691d3279c7241c3562dda09d1352ada7"
+  },
+  {
+    "path": "docs/healthtech/business/SEMANTIC_REVIEW_TASK_EXPORT_20261029.md",
+    "exists": true,
+    "bytes": 2131,
+    "sha256": "3e8cf949b26880257d9ae11e7b24d029d7d2d67b9b4bda904b3668f3190d78ed"
+  },
+  {
+    "path": "docs/healthtech/goals/luna-long-run-20261028-889958e/BUDGET_EXPANSION_REQUEST_TH.md",
+    "exists": true,
+    "bytes": 15419,
+    "sha256": "93def3875b0310ba5e79ad543a0da994efef14a7a08097241920fdc724257640"
+  },
+  {
+    "path": "docs/healthtech/integration/luna-g3-current-head-20261030-8f2e0fe/adapter-contract.json",
+    "exists": true,
+    "bytes": 10563,
+    "sha256": "a199bf3bb71b82e3f55629af1c278b580c339131543a06790c549dd87e974fb9"
+  },
+  {
+    "path": "docs/healthtech/progress.json",
+    "exists": true,
+    "bytes": 63186,
+    "sha256": "45c20f2516ecbe983021cbed348bc86069cecd08b95bad7a594ee34cc3f0374d"
+  },
+  {
+    "path": "docs/healthtech/research/G6_MANUSCRIPT_METHODS_SKELETON_20261029.md",
+    "exists": true,
+    "bytes": 24439,
+    "sha256": "770cafdf53b137ce1ae6031553c0f50a0ad122ac07bb3a66b7b93023f7ed5619"
+  },
+  {
+    "path": "docs/healthtech/research/SEMANTIC_JUDGMENT_SOURCE_AUTHORIZATION.md",
+    "exists": true,
+    "bytes": 2073,
+    "sha256": "6011f27cf1781d7bc09884948ab3b841ddcc0711e743a0c726b2cfd0328aeeae"
+  },
+  {
+    "path": "docs/healthtech/research/SEMANTIC_JUDGMENT_SOURCE_LANDSCAPE_20261030.md",
+    "exists": true,
+    "bytes": 3153,
+    "sha256": "0cdd45afb3ea4b791295c53c748862424020d205b2055a560acb98d73fb6a984"
+  },
+  {
+    "path": "docs/healthtech/research/SEMANTIC_SOURCE_ACQUISITION.md",
+    "exists": true,
+    "bytes": 2252,
+    "sha256": "471655d612d0531c809c4a11da46627ef9da315def7b0c4f90f1fcd5642bf676"
+  },
+  {
+    "path": "docs/healthtech/research/SHARPS_DISPOSAL_SOURCE_INTAKE_20261030.md",
+    "exists": true,
+    "bytes": 2988,
+    "sha256": "aed1fd58add706242291d7dc560fb9dce975524509bfa013b2fbfeffa84e3b42"
+  },
+  {
+    "path": "docs/healthtech/research/SUPPLEMENTAL_DATA.md",
+    "exists": true,
+    "bytes": 14966,
+    "sha256": "d9ea9332607820e80fe88211877650b125cb9685227d2f85c6803123fa7490ac"
+  },
+  {
+    "path": "memory/next-actions.md",
+    "exists": true,
+    "bytes": 93024,
+    "sha256": "d76880649676daab58c78a1e7cdfc85d35be79d4206b5ff40270ecc14fe53449"
+  },
+  {
+    "path": "scripts/healthtech/acquire_semantic_source.py",
+    "exists": true,
+    "bytes": 1751,
+    "sha256": "559087862f1e59aec6f4d744897bc6bf4ed49f64772231819a1a4839246a39a8"
+  },
+  {
+    "path": "scripts/healthtech/analyze_dapfam_coverage.py",
+    "exists": true,
+    "bytes": 13973,
+    "sha256": "c0fab42f382ee5e0a8a68931565b8599ca5203e933e6263fd403482a1aa6ceaa"
+  },
+  {
+    "path": "scripts/healthtech/analyze_family_frontier.py",
+    "exists": true,
+    "bytes": 10984,
+    "sha256": "2cf79cde78230950b190e8c7a15ff2f9e92e8e9f8d99afdd8b4c574e24c943a3"
+  },
+  {
+    "path": "scripts/healthtech/analyze_family_groups.py",
+    "exists": true,
+    "bytes": 4254,
+    "sha256": "22b4530956f169af4359274b54537e4be497078d586b298205381987048f23d8"
+  },
+  {
+    "path": "scripts/healthtech/analyze_long_run.py",
+    "exists": true,
+    "bytes": 22155,
+    "sha256": "7dc08c0a8c97f478b9212e315949b8640756e3bf27c5701fcf9c8fac92d5a0c5"
+  },
+  {
+    "path": "scripts/healthtech/analyze_pilot_tasks.py",
+    "exists": true,
+    "bytes": 11366,
+    "sha256": "e0016d12a036445ae842b9e329bddb65ee689d6376ea595c690cccfd847abf1d"
+  },
+  {
+    "path": "scripts/healthtech/analyze_scifact_errors.py",
+    "exists": true,
+    "bytes": 10460,
+    "sha256": "4f2b5af4a0cedc1eecb2d6a843c93aaa9218a11b852a025bb839c7adc5fc8bd4"
+  },
+  {
+    "path": "scripts/healthtech/build_abbott_dossiers.py",
+    "exists": true,
+    "bytes": 8260,
+    "sha256": "675920ed4c4c3e3faab4e1ba287cb56c2c6afdfe7795fb93b77639932ae832be"
+  },
+  {
+    "path": "scripts/healthtech/build_google_family_mapping.py",
+    "exists": true,
+    "bytes": 9303,
+    "sha256": "c19ded56246688440ea2208ea8d3a378eba08f5568e9aa3b725b6f5a2a963a04"
+  },
+  {
+    "path": "scripts/healthtech/build_long_run_report.py",
+    "exists": true,
+    "bytes": 22796,
+    "sha256": "f5f84e2e0af58de3343191fb58a52b29e59b24c95f91af882a6f8cb8e4062a7f"
+  },
+  {
+    "path": "scripts/healthtech/build_review_tasks.py",
+    "exists": true,
+    "bytes": 2500,
+    "sha256": "fab43312e88c8b6d08978ee0bb9e34770ba68717f17d4b98f61c8bf13ffd0687"
+  },
+  {
+    "path": "scripts/healthtech/compare_b4_holdout.py",
+    "exists": true,
+    "bytes": 8669,
+    "sha256": "62e4049074f18349ad07f15e79ab2edb4fe158dd777fba25d9f41133756c8b99"
+  },
+  {
+    "path": "scripts/healthtech/compare_cross_cohort.py",
+    "exists": true,
+    "bytes": 22770,
+    "sha256": "2680d845ca62231437eee8573b83e671f2b51d8dc6c6f3da62b7570a80cbd3ad"
+  },
+  {
+    "path": "scripts/healthtech/compose_multicompany_cohort.py",
+    "exists": true,
+    "bytes": 23036,
+    "sha256": "ebed14ef5a9699b2db556a35921549b5cc6ea074abaf3a052b5792d6e17d04f7"
+  },
+  {
+    "path": "scripts/healthtech/fetch_cook_zenith_cohort.py",
+    "exists": true,
+    "bytes": 25335,
+    "sha256": "e24fe2c2732b12d728ffd854f4596f3ed639d363148f38abcdb9de548d8f3173"
+  },
+  {
+    "path": "scripts/healthtech/fetch_philips_cardiovascular_cohort.py",
+    "exists": true,
+    "bytes": 24361,
+    "sha256": "4a4f0b8af05331d5b895f18e8d621e6ccc77da8832bf79b23a5b095d14e561df"
+  },
+  {
+    "path": "scripts/healthtech/fetch_public_device_cohort.py",
+    "exists": true,
+    "bytes": 25118,
+    "sha256": "8352a2beb632285c2158169ddf0b88763bde466b0f9d41e7b45fee97c2705998"
+  },
+  {
+    "path": "scripts/healthtech/fetch_stryker_neurovascular_cohort.py",
+    "exists": true,
+    "bytes": 25817,
+    "sha256": "be27ee2641081ecae8a1e65153501e4771a8fbcaf209559289ad0539ac34bc08"
+  },
+  {
+    "path": "scripts/healthtech/ingest_relevance_judgments.py",
+    "exists": true,
+    "bytes": 4026,
+    "sha256": "d8ef0e33723d28edb992c6bf86932574b96eb641e6e52cee221b908b9b78febe"
+  },
+  {
+    "path": "scripts/healthtech/manage_dossier_history.py",
+    "exists": true,
+    "bytes": 3232,
+    "sha256": "bb4199283d0adc213ad51e9570a81b90f538059ddd57a513022f60fd7a1a1947"
+  },
+  {
+    "path": "scripts/healthtech/migrate_legacy_cohort_rights.py",
+    "exists": true,
+    "bytes": 11471,
+    "sha256": "e6deeba39856b88572599493d558833b1717e5da10412b4251c5cacb08bc85ba"
+  },
+  {
+    "path": "scripts/healthtech/prepare_relevance_review_packet.py",
+    "exists": true,
+    "bytes": 2963,
+    "sha256": "271cd2ace9a24463d5479ed78599549997f1c286f0a51427aed9a5475c4345c4"
+  },
+  {
+    "path": "scripts/healthtech/refresh_integration_contract.py",
+    "exists": true,
+    "bytes": 6504,
+    "sha256": "0d7fea7c667df2c838c55bcd6ff6c8d189f97e614b3566bb739a9ee056fda470"
+  },
+  {
+    "path": "scripts/healthtech/run_b4_controller.py",
+    "exists": true,
+    "bytes": 16261,
+    "sha256": "8d94024b1db43c44a4267d7b0a75302c01a3263bdad78a5a71ea2d511a071e2b"
+  },
+  {
+    "path": "scripts/healthtech/run_bounded_controller.py",
+    "exists": true,
+    "bytes": 13400,
+    "sha256": "76aa626612d27e046f4b6c6aa6a772028e9eaa170f39703f50379d8282bdd6c0"
+  },
+  {
+    "path": "scripts/healthtech/run_company_holdout_sensitivity.py",
+    "exists": true,
+    "bytes": 13524,
+    "sha256": "ca5dc806b319d379f6327a19a6b4ad1335b32fabd76a69abec0bdfd7cff5e7f8"
+  },
+  {
+    "path": "scripts/healthtech/run_cook_dossiers.py",
+    "exists": true,
+    "bytes": 12718,
+    "sha256": "ba179d9507cf2ffef6138784d0878e906255a85cd18c95199f6b323aed57537a"
+  },
+  {
+    "path": "scripts/healthtech/run_dapfam_bm25.py",
+    "exists": true,
+    "bytes": 15739,
+    "sha256": "15b6ddedda892221b7fefff1ebbc198e35f7e886f22a8695fc93c7ae6df52573"
+  },
+  {
+    "path": "scripts/healthtech/run_dossier.py",
+    "exists": true,
+    "bytes": 2537,
+    "sha256": "e9861b0f72561361cf1146f9523c8fcaae8000a77537a90ba2b69997fadb9f21"
+  },
+  {
+    "path": "scripts/healthtech/run_philips_dossiers.py",
+    "exists": true,
+    "bytes": 12191,
+    "sha256": "9ac9d8939e647ee0f9ea6a94d56ab37457e497522cf37760c81dfd32875303c5"
+  },
+  {
+    "path": "scripts/healthtech/run_pilot_task.py",
+    "exists": true,
+    "bytes": 13235,
+    "sha256": "fffd050f5a5c4c35c1dc9468da14ccb2b94afd6148987818ffabed5659048803"
+  },
+  {
+    "path": "scripts/healthtech/run_real_baselines.py",
+    "exists": true,
+    "bytes": 39076,
+    "sha256": "fd2f5275214d50b9129fed28f76fbbb7a8a8c15d517bf587185feac5689f7fcb"
+  },
+  {
+    "path": "scripts/healthtech/run_scifact_lexical_baseline.py",
+    "exists": true,
+    "bytes": 8172,
+    "sha256": "a84143eeac29b958cbb87aca224b88263f3b32506672407246a320a4229e5958"
+  },
+  {
+    "path": "scripts/healthtech/score_scifact_predictions.py",
+    "exists": true,
+    "bytes": 4082,
+    "sha256": "a631b07e1e5c06b9b7a5b823efdbce86e6250798be909c3ff89e55636e5f4dce"
+  },
+  {
+    "path": "scripts/healthtech/validate_relevance_judgments.py",
+    "exists": true,
+    "bytes": 2110,
+    "sha256": "06f72a768424f2b05391f7c50d491d4c0a2087d2655c47255e4603f5b36fa361"
+  },
+  {
+    "path": "scripts/healthtech/validate_semantic_source_authorization.py",
+    "exists": true,
+    "bytes": 1390,
+    "sha256": "a1997e8d0677e0fcb6dbf5ae1e3d1d10814988e40b4a50d358a4219cd8b7d93c"
+  },
+  {
+    "path": "scripts/healthtech/verify_cohort_provenance.py",
+    "exists": true,
+    "bytes": 1158,
+    "sha256": "a4d1f5abc0bc4c1bca7348ae1d0c914fe765d363f2a7c0cfbeeac6ba7b739546"
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/judgment_submission.py",
+    "exists": true,
+    "bytes": 9844,
+    "sha256": "139de7bf96b95cd61c476d35f7379d7f86d96f89b5adb5025a255acc5a993fe9"
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/judgments.py",
+    "exists": true,
+    "bytes": 14078,
+    "sha256": "4e1b84e71162da489d6a5c66eaf5817d36355915f1803ac682934971be8e2021"
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/provenance.py",
+    "exists": true,
+    "bytes": 18152,
+    "sha256": "fcbf92ad45ec282d69503c29d423792274b8c667a7e40277c25e15ffd0e33b2a"
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/review_packet.py",
+    "exists": true,
+    "bytes": 20114,
+    "sha256": "2ea909f97137b6f638727c4323c42189cffd49b5f87c049958e15f5924ed01f2"
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/review_tasks.py",
+    "exists": true,
+    "bytes": 11178,
+    "sha256": "37b7ef46982bf5bdf9e904d74e374622a80a5926fba8f58a68416c2f6503b9fb"
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/scifact.py",
+    "exists": true,
+    "bytes": 18446,
+    "sha256": "0c8efd75a118a8050131c6f0a446bb62ed15b5efd6b174237b10dedc165afeb1"
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/source_acquisition.py",
+    "exists": true,
+    "bytes": 11363,
+    "sha256": "22010a9e162ffb25d723d21badd8d4b7be9db48f66614b7217973b23e4afd514"
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/source_authorization.py",
+    "exists": true,
+    "bytes": 8970,
+    "sha256": "0e00d4be99646bcd45fe595aeb87ba1685f936485aa3875cc6616ad76d6e78f1"
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/abbott.py",
+    "exists": true,
+    "bytes": 30026,
+    "sha256": "e1bb25420620808987379cc602352754ecd6bd09968625c9c67aed7d55ffd13d"
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/b4_live.py",
+    "exists": true,
+    "bytes": 9456,
+    "sha256": "d5f37e0fb52d0f7fad5ca0e6ea93c0642a071fee2a63330859d5cb1378b8d130"
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/controller.py",
+    "exists": true,
+    "bytes": 5852,
+    "sha256": "96bb940a022392b23e27aff7e8a46827405d22bc94ef080187b107283cbdc2d0"
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/cook.py",
+    "exists": true,
+    "bytes": 21970,
+    "sha256": "82dc43602d1434226f72984a9f31a725d6b4d5e0dfb4fa9fbf1e017368100074"
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/engine.py",
+    "exists": true,
+    "bytes": 18939,
+    "sha256": "65bda16e9aefe319c4a909690b6ec1f91119d451779ccd22706828f092461df4"
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/philips.py",
+    "exists": true,
+    "bytes": 24508,
+    "sha256": "b0dbcd5e0e4e6ea37d011809af67c968648ce4f2f513a8b3f228e591d105b410"
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/provider_transfer.py",
+    "exists": true,
+    "bytes": 4126,
+    "sha256": "5cdad746d957465d41ead6e4dd57d881c9d4daf72bb622d75b0b942bb5f61818"
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/rights.py",
+    "exists": true,
+    "bytes": 11173,
+    "sha256": "8ed61de970d2afa416b57d4fba70f6ca08955fe90045db66b80700236bf85385"
+  },
+  {
+    "path": "src/patent_to_pilot/providers/__init__.py",
+    "exists": true,
+    "bytes": 1584,
+    "sha256": "572a46b8e02a5a2f213c9ba75237a8aea7c2cc0b5ff82313e9dc7b9762f22bd4"
+  },
+  {
+    "path": "src/patent_to_pilot/providers/project_budget.py",
+    "exists": true,
+    "bytes": 11050,
+    "sha256": "30daeb9e91d895727400ecd011b206c7ba914b975d296866ece76d97a9a4e9b0"
+  },
+  {
+    "path": "src/patent_to_pilot/providers/round1.py",
+    "exists": true,
+    "bytes": 7628,
+    "sha256": "1fc575e161e4673aac7fdc1c926f20512d58a743fc87d0ff7174f58bb09a20e7"
+  },
+  {
+    "path": "tests/test_healthtech_b4_holdout_comparison.py",
+    "exists": true,
+    "bytes": 2876,
+    "sha256": "596692058b06d7a6beb8bc0b76cfcb91dca25a14eeed3bf2dec63494b87478a3"
+  },
+  {
+    "path": "tests/test_healthtech_b4_live.py",
+    "exists": true,
+    "bytes": 5642,
+    "sha256": "e7b6a08fdc86d4333c73b7008af433f5c18028b6575a535643ff50959cd18d87"
+  },
+  {
+    "path": "tests/test_healthtech_boundary_matrix.py",
+    "exists": true,
+    "bytes": 9139,
+    "sha256": "782bd4acbca7cf2dd050cbf7a41b4ca7462a0b4a8f8f11ac172ceb490c135561"
+  },
+  {
+    "path": "tests/test_healthtech_cohort_migration.py",
+    "exists": true,
+    "bytes": 3532,
+    "sha256": "b8c2ab221749b5fa9499a52194ab6329782ef474edfe7271d184b1eb3f6331e7"
+  },
+  {
+    "path": "tests/test_healthtech_company_holdout_sensitivity.py",
+    "exists": true,
+    "bytes": 2747,
+    "sha256": "524ab899c38f9b460f17d686377bb7ada4d07a46adbd6a62728425dc9f76b050"
+  },
+  {
+    "path": "tests/test_healthtech_controller.py",
+    "exists": true,
+    "bytes": 2437,
+    "sha256": "872f0552867588afff485be18672ba83f5fbdde9988cd8b02f9613f210836fb0"
+  },
+  {
+    "path": "tests/test_healthtech_cook.py",
+    "exists": true,
+    "bytes": 14707,
+    "sha256": "28684b36b6c3cd8d2a647efa19e95b694ba700a5aab3f5a27eef41ca18cd4824"
+  },
+  {
+    "path": "tests/test_healthtech_cross_cohort.py",
+    "exists": true,
+    "bytes": 3442,
+    "sha256": "7a7799d03c79b84a73a9b4635993575901c4126eba43faad420155c0aee0d48a"
+  },
+  {
+    "path": "tests/test_healthtech_dapfam_bm25.py",
+    "exists": true,
+    "bytes": 2293,
+    "sha256": "a6a808ee1e5340d18c41d642102fdf72e543270f7b838a0f805c1f4682c34eee"
+  },
+  {
+    "path": "tests/test_healthtech_dapfam_coverage.py",
+    "exists": true,
+    "bytes": 1509,
+    "sha256": "c2358e94ea2d408f7e059697bdfb28a359a2ebaeb4487aa1a33e13ae1e3ab1f2"
+  },
+  {
+    "path": "tests/test_healthtech_family_mapping.py",
+    "exists": true,
+    "bytes": 6435,
+    "sha256": "1b74709a479dfd2b00e0b13db7e3b154dba17bb720779552822c580ccef1d5f6"
+  },
+  {
+    "path": "tests/test_healthtech_g6_skeleton.py",
+    "exists": true,
+    "bytes": 3153,
+    "sha256": "4b35e85bb6b5a5c656c07458aeef587f475fb4fdbbed2689a5f80770876fd27c"
+  },
+  {
+    "path": "tests/test_healthtech_integration_contract.py",
+    "exists": true,
+    "bytes": 2298,
+    "sha256": "2e8a0c05b73fcc5e322b55b24ff2ee8ed3a4c11b2b72db1ee70520ff42a20459"
+  },
+  {
+    "path": "tests/test_healthtech_judgment_submission.py",
+    "exists": true,
+    "bytes": 8712,
+    "sha256": "a37b8102c18c7a47ab34bfcfc378ca75b46e4512973aa6576bfd52e358515614"
+  },
+  {
+    "path": "tests/test_healthtech_judgments.py",
+    "exists": true,
+    "bytes": 5415,
+    "sha256": "deb37ad3f1f4ae647c9c20a1854183dca010319eb3dc2019aad074c5499a1107"
+  },
+  {
+    "path": "tests/test_healthtech_long_run_analysis.py",
+    "exists": true,
+    "bytes": 4632,
+    "sha256": "fd180f8e6faa7155fca8c253599d1a0fa206b5801694f345266a44093be499fd"
+  },
+  {
+    "path": "tests/test_healthtech_long_run_report.py",
+    "exists": true,
+    "bytes": 7254,
+    "sha256": "af1754a6b372fe4bccbbc1079ae0b2f3471d99a4f8fbac479ed265d94cad30a7"
+  },
+  {
+    "path": "tests/test_healthtech_multicompany.py",
+    "exists": true,
+    "bytes": 9116,
+    "sha256": "a105a9c6b2b06d8579a28346192c81aad8da13355c65902d49b9952ee27a598b"
+  },
+  {
+    "path": "tests/test_healthtech_philips_cohort.py",
+    "exists": true,
+    "bytes": 1996,
+    "sha256": "98faf11018120c7602e3f707ca10d4c0db47df8bb2370576c0685c56bae4a22a"
+  },
+  {
+    "path": "tests/test_healthtech_philips_dossiers.py",
+    "exists": true,
+    "bytes": 10691,
+    "sha256": "8a03848ecfc5cac128e47eeee506ebcf48117db01b872cb89f32a30e051796f9"
+  },
+  {
+    "path": "tests/test_healthtech_pilot_analysis.py",
+    "exists": true,
+    "bytes": 2910,
+    "sha256": "923c91c5f2a47762a0bc9e63f2f7ddf9d9b7c34a767173e48c4cee28c240f317"
+  },
+  {
+    "path": "tests/test_healthtech_pilot_task.py",
+    "exists": true,
+    "bytes": 9495,
+    "sha256": "9558befc88053bb0aaa9fbc28fbe6aa8c4d8f627906a9aaa29df90930dd96067"
+  },
+  {
+    "path": "tests/test_healthtech_prelive.py",
+    "exists": true,
+    "bytes": 13437,
+    "sha256": "754834f06794ad59065cf10e309cbb1792d566739e967cdaafdfa104c1ef1db6"
+  },
+  {
+    "path": "tests/test_healthtech_repairs.py",
+    "exists": true,
+    "bytes": 46332,
+    "sha256": "9209c8cfe61713d15ddf64c8cbde02dbdf32d712302bdfa98fba4b42dbd106a0"
+  },
+  {
+    "path": "tests/test_healthtech_review_packet.py",
+    "exists": true,
+    "bytes": 5461,
+    "sha256": "5c042e4455952e278f96f11903545c407098a72456e348b64147be3b67968947"
+  },
+  {
+    "path": "tests/test_healthtech_review_tasks.py",
+    "exists": true,
+    "bytes": 5054,
+    "sha256": "499ce54cbdd1add8c38b7f8f7c8da1ba63e6f7cbeb3f03fa4a8e89c3d1655eba"
+  },
+  {
+    "path": "tests/test_healthtech_round1_budget.py",
+    "exists": true,
+    "bytes": 11826,
+    "sha256": "655b565c3eddd4899ad61d135330572618703a5234f62ddad13361ef87775abb"
+  },
+  {
+    "path": "tests/test_healthtech_scifact_baseline.py",
+    "exists": true,
+    "bytes": 1697,
+    "sha256": "e759e92f6c0056d832c58e0ae3200323566b44c43552c97edc11a06f3c1d769f"
+  },
+  {
+    "path": "tests/test_healthtech_scifact_error_analysis.py",
+    "exists": true,
+    "bytes": 2442,
+    "sha256": "ecfe414ea53cf47568e179dc10e9dd9c29778b21c5404d335fec9e6512a26539"
+  },
+  {
+    "path": "tests/test_healthtech_source_acquisition.py",
+    "exists": true,
+    "bytes": 7385,
+    "sha256": "a0d9511ed858bdc45b9359ee3c0153fa3381d2c9cc7748b9590dd1976b40c57d"
+  },
+  {
+    "path": "tests/test_healthtech_source_authorization.py",
+    "exists": true,
+    "bytes": 3826,
+    "sha256": "0e1de0bc42f3638e2025a2f5ad80d2cd1015d0018231f6ee9ca484f647c3f973"
+  },
+  {
+    "path": "tests/test_release_budget_process.py",
+    "exists": true,
+    "bytes": 5920,
+    "sha256": "9ae172c90396f41b300339700b18886d2aa3c2e5568d8aa245bda24786086924"
+  }
+]

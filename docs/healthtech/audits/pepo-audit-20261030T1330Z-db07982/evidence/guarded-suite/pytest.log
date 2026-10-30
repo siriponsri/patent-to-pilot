@@ -1,0 +1,251 @@
+........................................................................ [ 15%]
+........................................................................ [ 31%]
+..................FF.....F.............F................................ [ 47%]
+.........................s.............................................. [ 62%]
+........................................................................ [ 78%]
+........................................................................ [ 94%]
+...........................                                              [100%]
+================================== FAILURES ===================================
+_______ test_cross_cohort_comparison_flags_ceiling_and_low_group_status _______
+
+    def test_cross_cohort_comparison_flags_ceiling_and_low_group_status():
+>       data = _inputs()
+               ^^^^^^^^^
+
+tests\test_healthtech_cross_cohort.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cross_cohort.py:22: in _inputs
+    "abbott_protocol": _load("results/healthtech/ht-abbott-development-20261028-r1/protocol.json"),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_cross_cohort.py:17: in _load
+    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('<audit-scratch>/snapshot/results/healthtech/ht-abbott-development-20261028-r1/protocol.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Codex\\2026-10-28\\task-2\\audit-20261030\\snapshot\\results\\healthtech\\ht-abbott-development-20261028-r1\\protocol.json'
+
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____________ test_cross_cohort_comparison_rejects_method_set_drift ____________
+
+    def test_cross_cohort_comparison_rejects_method_set_drift():
+>       data = _inputs()
+               ^^^^^^^^^
+
+tests\test_healthtech_cross_cohort.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cross_cohort.py:22: in _inputs
+    "abbott_protocol": _load("results/healthtech/ht-abbott-development-20261028-r1/protocol.json"),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_cross_cohort.py:17: in _load
+    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('<audit-scratch>/snapshot/results/healthtech/ht-abbott-development-20261028-r1/protocol.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Codex\\2026-10-28\\task-2\\audit-20261030\\snapshot\\results\\healthtech\\ht-abbott-development-20261028-r1\\protocol.json'
+
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+___________ test_manifest_code_provenance_binds_working_tree_source ___________
+
+    def test_manifest_code_provenance_binds_working_tree_source():
+>       provenance = MODULE.code_provenance()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_dapfam_bm25.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\healthtech\run_dapfam_bm25.py:265: in code_provenance
+    "git_revision": git_revision(),
+                    ^^^^^^^^^^^^^^
+scripts\healthtech\run_dapfam_bm25.py:245: in git_revision
+    return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['git', 'rev-parse', 'HEAD'],)
+kwargs = {'cwd': WindowsPath('<audit-scratch>/snapshot'), 'stdout': -1, 'text': True}
+process = <Popen: returncode: 128 args: ['git', 'rev-parse', 'HEAD']>
+stdout = '', stderr = None, retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'rev-parse', 'HEAD']' returned non-zero exit status 128.
+
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:571: CalledProcessError
+---------------------------- Captured stderr call -----------------------------
+fatal: not a git repository (or any of the parent directories): .git
+_________ test_refresh_rebinds_backend_hashes_without_mutating_parent _________
+
+tmp_path = WindowsPath('<audit-scratch>/guarded-suite/tmp/test_refresh_rebinds_backend_h0')
+
+    def test_refresh_rebinds_backend_hashes_without_mutating_parent(tmp_path):
+        output = tmp_path / "current-head" / "adapter-contract.json"
+>       refreshed = refresh_contract(PARENT, output, code_head="a" * 40, refresh_date="2026-10-30")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_integration_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+parent_contract = WindowsPath('<audit-scratch>/snapshot/docs/healthtech/integration/luna-g3-20261028-28dfb1d/adapter-contract.json')
+output_contract = WindowsPath('<audit-scratch>/guarded-suite/tmp/test_refresh_rebinds_backend_h0/current-head/adapter-contract.json')
+
+    def refresh_contract(
+        parent_contract: Path,
+        output_contract: Path,
+        *,
+        code_head: str | None = None,
+        refresh_date: str | None = None,
+    ) -> dict[str, Any]:
+        """Create a new contract with current backend hashes; never overwrite output."""
+        parent_contract = parent_contract if parent_contract.is_absolute() else ROOT / parent_contract
+        output_contract = output_contract if output_contract.is_absolute() else ROOT / output_contract
+        if output_contract.exists():
+            raise IntegrationContractError(f"refusing to overwrite existing contract: {output_contract}")
+    
+        contract = _load_json(parent_contract)
+        backend_hashes = contract.get("backend_source_hashes")
+        if not isinstance(backend_hashes, dict) or not backend_hashes:
+            raise IntegrationContractError("parent contract lacks backend_source_hashes")
+        current_backend_hashes: dict[str, str] = {}
+        for relative_path, expected_hash in backend_hashes.items():
+            if not isinstance(relative_path, str) or not isinstance(expected_hash, str) or not SHA256_RE.fullmatch(expected_hash):
+                raise IntegrationContractError("parent backend hash entries are malformed")
+            path = _repo_path(relative_path, "backend_source_hashes path")
+            if not path.is_file():
+                raise IntegrationContractError(f"backend source is missing: {relative_path}")
+            current_backend_hashes[relative_path] = _sha256(path)
+    
+        fixture_hashes = contract.get("sanitized_fixture_hashes", [])
+        if not isinstance(fixture_hashes, list):
+            raise IntegrationContractError("sanitized_fixture_hashes must be a list")
+        verified_fixtures = []
+        for row in fixture_hashes:
+            if not isinstance(row, dict) or not isinstance(row.get("path"), str) or not isinstance(row.get("sha256"), str):
+                raise IntegrationContractError("sanitized fixture entries are malformed")
+            if not SHA256_RE.fullmatch(row["sha256"]):
+                raise IntegrationContractError(f"invalid fixture hash: {row['path']}")
+            path = _repo_path(row["path"], "sanitized fixture path")
+            if not path.is_file():
+                raise IntegrationContractError(f"sanitized fixture is missing: {row['path']}")
+            actual_hash = _sha256(path)
+            if actual_hash != row["sha256"]:
+>               raise IntegrationContractError(f"sanitized fixture hash drift: {row['path']}")
+E               scripts.healthtech.refresh_integration_contract.IntegrationContractError: sanitized fixture hash drift: docs/healthtech/G3_NO_CODE_JOURNEY_TH_EN.md
+
+scripts\healthtech\refresh_integration_contract.py:103: IntegrationContractError
+============================== warnings summary ===============================
+..\..\..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\fitz\__init__.py:17
+  <python-site-packages>\fitz\__init__.py:17: FutureWarning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+    warnings.warn(
+
+tests/test_healthtech_boundary_matrix.py::test_external_boundary_rejects_non_mapping_payload
+  <python-site-packages>\pydantic\main.py:475: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `str` - serialized value may not be as expected [field_name='payload', input_value=['unsafe', 'non-mapping', 'payload'], input_type=list])
+    PydanticSerializationUnexpectedValue(Expected `dict[str, any]` - serialized value may not be as expected [field_name='payload', input_value=['unsafe', 'non-mapping', 'payload'], input_type=list])
+    return self.__pydantic_serializer__.to_python(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: <audit-scratch>\guarded-suite\tests.xml -
+=========================== short test summary info ===========================
+FAILED tests/test_healthtech_cross_cohort.py::test_cross_cohort_comparison_flags_ceiling_and_low_group_status
+FAILED tests/test_healthtech_cross_cohort.py::test_cross_cohort_comparison_rejects_method_set_drift
+FAILED tests/test_healthtech_dapfam_bm25.py::test_manifest_code_provenance_binds_working_tree_source
+FAILED tests/test_healthtech_integration_contract.py::test_refresh_rebinds_backend_hashes_without_mutating_parent

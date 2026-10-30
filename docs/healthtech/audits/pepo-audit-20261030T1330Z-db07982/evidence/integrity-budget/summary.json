@@ -1,0 +1,52 @@
+{
+  "snapshot": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "scope": [
+    "tests/test_healthtech_repairs.py",
+    "tests/test_healthtech_boundary_matrix.py",
+    "tests/test_healthtech_round1_budget.py",
+    "tests/test_healthtech_b4_live.py"
+  ],
+  "total": 63,
+  "failures": [],
+  "skips": [
+    {
+      "name": "test_onnx_tokenizer_uses_native_masks_types_and_deterministic_padding",
+      "reason": "pinned local tokenizer artifact is unavailable"
+    }
+  ],
+  "pytest_exit_code": 0,
+  "network_attempts": 0,
+  "remote_provider_calls": 0,
+  "neural_model_calls": 0,
+  "query_projection_probe": {
+    "product_display": {
+      "reviewed_fields": [
+        "trade_name"
+      ],
+      "external_source_payload": {
+        "trade_name": "MitraClip"
+      },
+      "external_query_company_metadata": {
+        "applicant": "ABBOTT MEDICAL"
+      },
+      "company_source_id": "openfda-pma-p100009-base",
+      "restricted_source_applicant_retained_in_query": true,
+      "restricted_field_evidence_omitted": true
+    },
+    "redistribution": {
+      "reviewed_fields": [
+        "trade_name"
+      ],
+      "external_source_payload": {
+        "trade_name": "MitraClip"
+      },
+      "external_query_company_metadata": {
+        "applicant": "ABBOTT MEDICAL"
+      },
+      "company_source_id": "openfda-pma-p100009-base",
+      "restricted_source_applicant_retained_in_query": true,
+      "restricted_field_evidence_omitted": true
+    }
+  },
+  "passed": 62
+}

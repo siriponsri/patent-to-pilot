@@ -1,0 +1,47 @@
+{
+  "claim_count": 300,
+  "prediction_row_count": 300,
+  "corpus_documents": 5183,
+  "prediction_sha256": "1d191fcd1e86a92caf57c93abbaec3c0a8da7b8a2e6c6b0fbad5a60138b4a1ee",
+  "gold_sha256": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217",
+  "corpus_sha256": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62",
+  "metrics": {
+    "claim_count": 300,
+    "missing_prediction_claim_ids": [],
+    "abstract_label_only": {
+      "precision": 0.12555555555555556,
+      "recall": 0.5406698564593302,
+      "f1": 0.20378719567177642
+    },
+    "abstract_rationalized": {
+      "precision": 0.10333333333333333,
+      "recall": 0.4449760765550239,
+      "f1": 0.16771866546438233
+    },
+    "sentence_selection": {
+      "precision": 0.06105990783410138,
+      "recall": 0.4344262295081967,
+      "f1": 0.10707070707070707
+    },
+    "sentence_label": {
+      "precision": 0.04185867895545315,
+      "recall": 0.2978142076502732,
+      "f1": 0.0734006734006734
+    },
+    "counts": {
+      "abstract": {
+        "relevant": 209,
+        "retrieved": 900,
+        "correct_label_only": 113,
+        "correct_rationalized": 93
+      },
+      "sentence": {
+        "relevant": 366,
+        "retrieved": 2604,
+        "correct_selection": 159,
+        "correct_label": 109
+      }
+    }
+  },
+  "matches_saved_metrics": true
+}

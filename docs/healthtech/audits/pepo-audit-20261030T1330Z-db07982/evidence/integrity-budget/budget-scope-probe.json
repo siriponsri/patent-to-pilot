@@ -1,0 +1,33 @@
+{
+  "snapshot": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "kind": "authored offline simulation; no actual costs",
+  "separate_ledgers_same_authorization": [
+    {
+      "ledger": "ledger-A",
+      "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+      "simulated_committed_nano_usd": 7000000000,
+      "breach": false,
+      "dispatch_blocked": false
+    },
+    {
+      "ledger": "ledger-B",
+      "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+      "simulated_committed_nano_usd": 7000000000,
+      "breach": false,
+      "dispatch_blocked": false
+    }
+  ],
+  "aggregate_simulated_committed_usd": 14.0,
+  "single_authorization_total_usd": 8,
+  "canonical_path_enforcement": "not found in actual CLI/library",
+  "pricing_selector_constructor_accepted_mismatched_snapshot_time_provider": true,
+  "pricing_probe_scope": "constructor accepted; no complete/select/transport call executed",
+  "policy_snapshot_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "pricing_snapshot_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "policy_provider": "audit-provider",
+  "pricing_provider": "different-provider",
+  "transport_factory_calls": 0,
+  "network_calls": 0,
+  "provider_calls": 0,
+  "paid_usd": 0
+}

@@ -1,0 +1,942 @@
+[
+  {
+    "run": "luna-long-run-20261029-budget-expansion-request-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-budget-expansion-request-20261029",
+    "title": "# HealthTech budget/data expansion request receipt",
+    "status_lines": [
+      "- Status: `PASS_DOCUMENTATION_DRAFT`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_DOCUMENTATION_DRAFT",
+      "source_head_before_documentation": "7568fd94257a72665c862926e61bc628aa430924",
+      "initial_documentation_commit": "80535a3",
+      "final_receipt_commit": "dd45508"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "4614bf1af4fa69ff037cdc0c1f5033d83e6e9db210833e4edffbd7b58ae03bc2",
+    "verification_sha256": "ab033a78fad1a62544d1143f5d6279fc694411c54fc6c88a7c06a15f0f9ae597",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-cook-expansion-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-cook-expansion-20261029",
+    "title": "# Cook Zenith cohort expansion",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_DEVELOPMENT_WITH_THIRD_COMPANY`"
+    ],
+    "receipt_fields": {
+      "status": "PASS"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "5c1b1303c1321c8e7f0048d4afc9309b844c21d25f3fcdfd5f6c7d5c5034e674",
+    "verification_sha256": "ce6d4716725beb14342407f0e73943387ffcbfba11e786aaf8bc5d26cbf7e02d",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-f123-889958e",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-f123-889958e",
+    "title": "# HT-W26 Long-Run Audit",
+    "status_lines": [
+      "Status: `PASS_ENGINEERING`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_ENGINEERING",
+      "base_commit": "889958eeb3174a09df9ef3840231a0f0577f00f2",
+      "handoff_status": "READY_FOR_REVIEW"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "febe3eec079a6628fd5e1d847ffb6c2769eefaba863f46cb3e4613ae531e485b",
+    "verification_sha256": "1a4474015b728c62517868ab4fb245d357a225d92fe8e63b21af96de5251763a",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-family-baselines-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-baselines-20261029",
+    "title": "# HT-M3 family-aware baseline audit",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_DEVELOPMENT_WITH_FINAL_HOLDOUT`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_DEVELOPMENT_WITH_FINAL_HOLDOUT",
+      "tested_source_commit": "e84c3c57df2d404aba8b79d89f94e9866002d7df",
+      "candidate_package_commit": "c0887f6a210d598b0f604badd5a4e6fbd8911852"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "e1bf6146953ceffad9c24a505a125b43c5e9ca4c73632dd01ffd6303c49326c1",
+    "verification_sha256": "a5f7d547e53d3271322673990cdd41f9717f4c2fade2071d0cbff66e39593a6a",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-family-freeze-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-freeze-20261029",
+    "title": "# HT-M3 family-aware cohort freeze audit",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_ANALYSIS`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_ANALYSIS",
+      "tested_source_commit": "1e1c463787bf1a494c6d9c99367cebda5a2bfea5",
+      "candidate_package_commit": "1e72bfece8b3b9da06b318162289bf61fe8cac7f"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "b6f24d6fa92bd65f581f0ec14cb178252bef89c20fb20bd4c005f4a6564d3734",
+    "verification_sha256": "06a12f6fd081287cd6fbaf7164abac344a204021c8dff211dfb75ebb62e1658d",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-family-frontier-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-frontier-20261029",
+    "title": "# HT-M3 family-aware frontier audit",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_FAMILY_FRONTIER_ANALYSIS`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_FAMILY_FRONTIER_ANALYSIS",
+      "tested_source_commit": "4f4ed62a2649d720d3840aea2e1a8132b11617f2",
+      "committed_package_revision": "0db213fe46d591bb5c3f83a7d3d188256fe14f0c"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "f3dc27c8a9aa49b51de95a5b97596085c0be9a5f0dba8336dcd907b85276ce67",
+    "verification_sha256": "1da79c0fb27b253e68f13319a7d8a30104ed5cc486accfd769c6f2cb8560491b",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-family-mapping-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-family-mapping-20261029",
+    "title": "# HT-M2 family-mapping sensitivity audit",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_FAMILY_SENSITIVITY`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_FAMILY_SENSITIVITY",
+      "tested_source_commit": "c0610110bfd8962948445cd525713f9d58e219fd",
+      "committed_package_revision": "e556daab79a97c9829ff88f97d8c3dd288ae784b"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "0bb8146edef9d7cea36c2ee958e8223f0cabcbe788660fab950bb2d5474f2512",
+    "verification_sha256": "65b8cb0714e74f4a20b289b8d8cca3a58b69cfbac64764414005ec947b3f6809",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-ht-g5-pilot-task-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029",
+    "title": "# HT-G5 offline pilot task",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_ENGINEERING_TASK`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_ENGINEERING_TASK",
+      "code_commit": "4b811892eea2112df8a9f49738fc474ec2300b47"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "3af933f95066775d699ac72169727742ccaddfebf658f6225f1b2bdf703db2fb",
+    "verification_sha256": "174e5117070044afa4ad91f0e481d52e70dd987d485b23ebaf0622b277d56b03",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-ht-t2-error-analysis-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-error-analysis-20261029",
+    "title": "# HT-M18 SciFact error analysis",
+    "status_lines": [
+      "- Status: `PASS_COMPONENT_ERROR_ANALYSIS_DEV_ONLY`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_COMPONENT_ERROR_ANALYSIS_DEV_ONLY"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "4f5b74428f9c7dc2578f034091545ff10d8acdcfe3a53503363eb5fe700a8a72",
+    "verification_sha256": "cef945faef48d5b14403834c714f11e6d72a67c59561eb9fff3e5b17b5027494",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-ht-t2-lexical-dev-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-ht-t2-lexical-dev-20261029",
+    "title": "# HT-T2 SciFact lexical development score",
+    "status_lines": [
+      "- Status: `PASS_COMPONENT_SCORE_DEV_ONLY`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_COMPONENT_SCORE_DEV_ONLY",
+      "start_source_head": "393ce5bc7b6328abf9998c4cc377dfb720c4ab6a",
+      "end_source_head": "d66dbbd"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "0fbf33c3941ef32d44aad7d2c1d7049da915f0973e0f3558aa4a757957b19233",
+    "verification_sha256": "b00543a0340761d139e0cb427781e20c669d2bcb161fa3d9f9d9891c47ee4d2e",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-judgment-submission-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-judgment-submission-20261029",
+    "title": "# HT-T4 relevance-submission adapter audit",
+    "status_lines": [],
+    "receipt_fields": {
+      "status": "PASS_ENGINEERING_OFFLINE_NO_REAL_LABELS",
+      "start_commit": "35e82edebb3e2979bc70f5b136c4bfbb66f23a6d",
+      "tested_source_commit": "3b3dd85861122b29d446993352167c54e3718d9e",
+      "candidate_package_commit": "3b3dd85861122b29d446993352167c54e3718d9e"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "b9ae9ef5e04bd030f6b49f1abfe979ca58581771c29f16a50ae7e63e7ccab714",
+    "verification_sha256": "e3946aaaddf29fd2a80c61348d9117c2f0663af07d3b9b94a9b66bd6087dedeb",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m1-closure-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-closure-20261029",
+    "title": "# HT M1 closure audit",
+    "status_lines": [],
+    "receipt_fields": {
+      "status": "PASS_ENGINEERING",
+      "tested_source_commit": "82e2bd5258eba5da0f582d9e2c2ab75f9abca645",
+      "audit_commit": "see the repository commit for the final audit receipt; self-reference intentionally omitted"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "e989ae3ff9e220d935a1f12bd60d6bc07837782b0772d0590294bb3ba98c9e7e",
+    "verification_sha256": "a25488f4eac12f71dc79015f5fda2d34cc48b3d90616e4b7c544537664d92ea2",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m1-revalidation-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m1-revalidation-20261029",
+    "title": "# HT M1 current-head revalidation",
+    "status_lines": [],
+    "receipt_fields": {
+      "status": "PASS_ENGINEERING",
+      "tested_source_commit": "00bca8edf3baedb2212085d4bda091f780c7ecb4",
+      "parent_source_commit": "759b93726f25e0ace0e267a4ab7c4938ecb8ba3c"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "cf7a28407743ae5f4bb8eb61edc8f9c95e38194cc10c691ec2009501a0f2d7d9",
+    "verification_sha256": "3ba15e2b50923d21d44d54a1fb4ce6198550d75843dff11fd10a882f5e635239",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m10-b4-holdout-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029",
+    "title": "# HT-M10 B4 provider-shaped holdout comparison",
+    "status_lines": [
+      "Status: `PASS_B4_PROVIDER_SHAPED_HOLDOUT_DESCRIPTIVE`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_B4_PROVIDER_SHAPED_HOLDOUT_DESCRIPTIVE",
+      "start_code_commit": "c817d3c2c44f57bed8ba6e1d8adff4ef9b1c300e",
+      "implementation_code_commit": "b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "58c01f7490e13449dcac08e05b73bae1e195286064a5466f9cab23fd5bd19d79",
+    "verification_sha256": "a9020e34aa06d15a65b40d44e96aef89eaf2dafcc6f73a3ab457717a1a0d6c19",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m11-budget-refresh-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-budget-refresh-20261029",
+    "title": "# HT-M11 budget refresh",
+    "status_lines": [
+      "Status: `PASS_REPORT_AND_BUDGET_REFRESH_NO_EXTRA_SPEND`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_REPORT_AND_BUDGET_REFRESH_NO_EXTRA_SPEND",
+      "start_code_commit": "5e7bbeaeed136fdf5a022f9eee887facbb8a9be6",
+      "implementation_code_commit": "5e7bbeaeed136fdf5a022f9eee887facbb8a9be6"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "f025dc5fb41f504370a5bab2271f7576a07ce9b8ec79a500b3dcb6d3691b2884",
+    "verification_sha256": "0a35a7427713c2c1ac7c25cb20f75d93923b35024f5911db8dc7aab38c241d96",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m11-report-refresh-20261029-r2",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m11-report-refresh-20261029-r2",
+    "title": "# HT-M11 consolidated long-run report refresh",
+    "status_lines": [
+      "Status: `PASS_REPORT_GENERATED_WITH_DEV_AND_HOLDOUT_B4`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_REPORT_GENERATED_WITH_DEV_AND_HOLDOUT_B4",
+      "start_code_commit": "43a2604602d310f63e5b77d1c6987c6463019533",
+      "implementation_code_commit": "5e7bbeaeed136fdf5a022f9eee887facbb8a9be6"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "f9d79f70b0e129c32af6596f94c77c884a32c858c904c40dd3da3ec55f15d219",
+    "verification_sha256": "9941d3c909b5e613adb722121cb4b906ea14d8b95b546b6945c4a3613e762ed9",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m12-group-uncertainty-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m12-group-uncertainty-20261029",
+    "title": "# M12 paired group uncertainty diagnostic",
+    "status_lines": [
+      "Status: `PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "160ff4230e6e67726eb51e12c7802fc6f738cbf971af4be5fc2404f55be95c34",
+    "verification_sha256": "4a5d8dd782f234b1a70587c99e0692a683fc795dad3d9be7c384c25b40083431",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m13-philips-expansion-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029",
+    "title": "# HT-M13 Philips expansion audit",
+    "status_lines": [
+      "- Status: `PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
+      "base_commit": "fa5b85a9c782ef7d1d0d70606df8c42f845f7248",
+      "code_commit": "working-tree"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "462f712ebb8da75ba82e0421eb6a72f6ecfdb87aff0351c571bcba8ffb95a98a",
+    "verification_sha256": "9f1f4f5fcac922a9f1d00686079978308271639846511b85d92d6af4709d2545",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m14-philips-dossiers-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m14-philips-dossiers-20261029",
+    "title": "# HT-M14 Philips local dossier pipeline",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_ENGINEERING_DOSSIERS`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_ENGINEERING_DOSSIERS",
+      "base_commit": "7dae0a8ac9ff790714d640e94889459529512073",
+      "tested_code_commit": "c6494370fad1c263eed169a7bd6a8c5718ed3427"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "d5cfec0ad671c3e5e3710e021df760d991576934858eac66f57c971ed3ef3d20",
+    "verification_sha256": "3d5e753ac88a0b7a411d20c3d4a08ed7549a533209f10fc673955222269926f5",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m15-rights-packet-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m15-rights-packet-20261029",
+    "title": "# HT-M15 declared rights policies and Philips review packet",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_M1_F3_AND_REVIEW_PACKET`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_M1_F3_AND_REVIEW_PACKET",
+      "base_commit": "e15ce7283091408b198929fc6fb33ad5920919a5",
+      "tested_code_commit": "35ee0728a8b470029ea993d3362a5f9d8ef2bcbf"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "4ce6c8a5312d86b0afcdd87ceb91cb18c9a7f1347d1b90bd459a5ed3ba512f8d",
+    "verification_sha256": "c1bc217198356f4a899c21c1b0d1c3b820f88288b513b2e62990a4e083e1bcb6",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m16-review-tasks-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m16-review-tasks-20261029",
+    "title": "# HT-M16 local semantic-review task export",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_REVIEW_TASK_EXPORT`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_REVIEW_TASK_EXPORT",
+      "base_commit": "dd1cecd1d7295f3ffcf53dabfd781f8f20e98dae",
+      "tested_code_commit": "23acfd468570ea2eac47d0f5790b7362268aa2d1"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "6a9d6790dcc9d337cd811fee4849449ddbce42b553ac62af26abf098b7b2d854",
+    "verification_sha256": "9d3d5d4d424175f4964f0c74f7a0090b81d11ab63f0dcb092de984bdecf027de",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m17-integrity-repairs-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m17-integrity-repairs-20261029",
+    "title": "# HT-M17 typed-rights migration and offline baseline",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_DEVELOPMENT_TYPED_RIGHTS`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_DEVELOPMENT_TYPED_RIGHTS",
+      "audit_head": "7def4ff"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "42917053c108529f456c6498a873da749ff8efa9e5ddb821e5be08e43bd66abe",
+    "verification_sha256": "c276081c36ca0408ec07f1bdea1daabd2ec98152663115c9d50b0089bc79f150",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m2-m3-multicompany-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-multicompany-20261029",
+    "title": "# Audit: multi-company cohort and final holdout",
+    "status_lines": [],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_DEVELOPMENT_WITH_FINAL_HOLDOUT",
+      "base_revision": "9c741fe847f4ed44782b348f69791bd8a4b83995"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "86ce5defef6f5aa69cd43634a91512969341b087c515105b58a470088d57aefc",
+    "verification_sha256": "e92c0ecd79288b19a6b4e1120fb4448b84b8c1fda4fcdb7e4a787e8fbf0a52e1",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m2-m3-stryker-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m2-m3-stryker-20261029",
+    "title": "# Stryker Neurovascular cohort expansion",
+    "status_lines": [
+      "Status: `PASS_OFFLINE_DEVELOPMENT`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_DEVELOPMENT",
+      "base_revision": "c8c5dfc09270053c5a0082aaed495dfb044288f0"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "a51ce5816d2d72734c429be58b26071c3803892fb11fce70970dcb28dd354458",
+    "verification_sha256": "190d6d27f5f90445e1b49c78e8a68ccb24411d445681e82f9fe44926c9c70a0d",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m3-cross-cohort-adad901",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-cross-cohort-adad901",
+    "title": "# HealthTech M3 cross-cohort frontier audit",
+    "status_lines": [],
+    "receipt_fields": {
+      "base_commit": "adad9017f86e995abd2b943d50a00718961f4627",
+      "candidate_commit": "37a3b2df25cf05bbffc2b5800c2458f20726c613",
+      "status": "PASS"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "59b5817cca5efdcb897d0d2ca6a33c33468680bc0104d7a507ae23622d588312",
+    "verification_sha256": "824c524e754fb6adabfa99543d345166ba181574ff08b5152747ea7f26df4a78",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m3-current-head-cf613c0",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m3-current-head-cf613c0",
+    "title": "# HT M3 current-head freeze receipt",
+    "status_lines": [],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_ANALYSIS",
+      "tested_source_head": "cf613c08c9eeee340645cd6eb46d2aebe0c983ac"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "f82d915644b068f3ecda8555ae2c6466956292d815b218454d3faae7e5ab0e52",
+    "verification_sha256": "92f4469ef0f55e382ef29729a8e5a06e9b6b4cae3c2485f1c56976c81688f77e",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m4-b4-offline-eea0fb4",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4",
+    "title": "# HealthTech HT-B4 offline controller audit",
+    "status_lines": [],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_DEVELOPMENT",
+      "base_commit": "bd07d29a04420fd45d30ae328cbfe55aee13432d",
+      "implementation_commit": "eea0fb43df35014210097585940f865e2ba3d67b"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "a76279973bed35a273903e89f81ffac9238d29ee8f2a21becd2a9a13de9a3afa",
+    "verification_sha256": "d54938209ab8176e70eb44f81d18e82cc9fea4841756a10e50ff1984422959d5",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m4-b4-r1-mock-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-b4-r1-mock-20261029",
+    "title": "# HT-M4/B4 R1 provider-shaped mock audit",
+    "status_lines": [
+      "- Status: `PASS_PROVIDER_SHAPED_MOCK; LIVE_BLOCKED_LOCAL`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_PROVIDER_SHAPED_MOCK_LIVE_BLOCKED_LOCAL",
+      "implementation_commit": "4e4ce3ed96d494ac903587d72d80ce21a4466d31"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "689a45bbadcbea82912ecc242b3db8673ce1ede9b1a3d18d9700f69039cbfe78",
+    "verification_sha256": "20cfdcca7bf9475694534bba53ac8cacba694f9dfaf08baa23187c0b732f6f37",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m4-r1-4c863d0",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m4-r1-4c863d0",
+    "title": "# HealthTech M4 R1 policy/runner audit",
+    "status_lines": [],
+    "receipt_fields": {
+      "base_commit": "4c863d0a01d8fc7211682745786a35f1474963f5",
+      "candidate_commit": "7395b92",
+      "status": "PASS_ENGINEERING_OFFLINE"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "376ca3c9b0341d0a79bac7ccac02040e54b68c3848f081957cfcda214ef0e3bb",
+    "verification_sha256": "a4ae149da99ef6b11ab0c613e9464fe55e8c9226e69eb49a9d5ffa76899a3add",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m7-report-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m7-report-20261029",
+    "title": "# HealthTech long-run report audit",
+    "status_lines": [
+      "- Status: `PASS_REPORT_GENERATED_PARTIAL_LONG_RUN`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_REPORT_GENERATED_PARTIAL_LONG_RUN",
+      "implementation_commit": "237fc669a4b7829be420c48547f36a69e28f64f0"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "4f89f2dc23a2c94a35e5b609745e634572fcb551f1a5b4b03cd013f2486ae4c2",
+    "verification_sha256": "83d2807693c8523f29c91b7f8585622cbb8e4b727fbd3994d3838c9031d0636b",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m8-analysis-20261029-r2",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m8-analysis-20261029-r2",
+    "title": "# HealthTech long-run descriptive analysis audit",
+    "status_lines": [
+      "- Status: `PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_DESCRIPTIVE_ANALYSIS_NOT_ESTIMABLE",
+      "implementation_commit": "862e74c0267d27f5d90c92a4d8d198d5d4b6682f"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "db735bbad3b529bf172cc4372123f39e752f49a8c9f22b7b610ee67225204e20",
+    "verification_sha256": "654ff5c965449aad0c4c9abec3d5446e457935bbe00454a1cecef0bde5379c6b",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-m9-g6-scifact-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-m9-g6-scifact-20261029",
+    "title": "# G6 SciFact component integration audit",
+    "status_lines": [
+      "- Status: `PASS_G6_COMPONENT_INTEGRATED`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_G6_COMPONENT_INTEGRATED",
+      "implementation_commit": "8a20e60"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "139d3fb517ec7ee1f9830d04ed400f6a4a1233a9d514f166429d94f2e99b5c95",
+    "verification_sha256": "f7207c6816dd06cf27c2d45eaa595aea8c9b750e0a063a303b4500bc92e04863",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-relevance-contract-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-relevance-contract-20261029",
+    "title": "# HT-T1 relevance-judgment intake contract audit",
+    "status_lines": [
+      "- Status: `PASS_ENGINEERING_OFFLINE`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_ENGINEERING_OFFLINE",
+      "tested_source_commit": "2af198af8635f28c0d0b8ad8ed9be852b6e7bd98",
+      "candidate_package_commit": "a194045d316d60951b914dd2d1ac61a481b7b043"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "6f85e32a630cfee03df605a1ac9979c5aba20c8e3de6b7bfa9414be6878b82e8",
+    "verification_sha256": "7fe8abb83036b0e405f6ffeffe6d9c10457a484f1a243bc7fe12ae03345d746e",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-review-packet-20261029",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-review-packet-20261029",
+    "title": "# HT-T3 relevance review packet audit",
+    "status_lines": [],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_REVIEW_PACKET_NOT_GOLD",
+      "start_commit": "31b51f0926033b47b3914aa81e21af543d9957af",
+      "tested_source_commit": "dd4b01d24c67c51f9493fc2d16c191703775d43b",
+      "candidate_package_commit": "dd4b01d24c67c51f9493fc2d16c191703775d43b"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "e9a8b6e9c401dcaadb34e85bab68426ce030e73f3d357d4e6b3f807853d3309f",
+    "verification_sha256": "a9ca10eb7d1c93db985c7d96fd897413a5ecd29712afdeb8e016edb661347bb6",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261029-scifact-204abf4",
+    "path": "docs/healthtech/audits/luna-long-run-20261029-scifact-204abf4",
+    "title": "# HT-T2 SciFact current-head differential audit",
+    "status_lines": [],
+    "receipt_fields": {
+      "tested_source_commit": "204abf415fe751c39d8f94684cfc123a7c64ae7a",
+      "status": "PASS_COMPONENT_ENGINEERING"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "471e66c71f5047868eab6b3fbefe83cfab1f45e3807002394d973900ba9b54bd",
+    "verification_sha256": "05b1dd87978679716c1a93037eabdd84c206a6f6dba520419ff56db0482b9caa",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-authorization-bound-judgment-ingest-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-authorization-bound-judgment-ingest-20261030",
+    "title": "# HT-M24 authorization-bound judgment ingest",
+    "status_lines": [
+      "- Status: `PASS_ENGINEERING_OFFLINE_AUTHORIZATION_BOUND_INGEST`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_ENGINEERING_OFFLINE_AUTHORIZATION_BOUND_INGEST",
+      "source_head_before": "f2cfcf8d34eaa480612cc2e66ddfff45a396450e",
+      "implementation_commit": "a25cd4f"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "e1611d87b0b1a72d6219b0ea9a48ee98db5a1c6e3e9d32b450198d8ee1185075",
+    "verification_sha256": "545e536bd6effa3344bcea38551d79aa3c337870c44bde8e834c843210cab58d",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-bounded-semantic-source-staging-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-bounded-semantic-source-staging-20261030",
+    "title": "# HT-M25 bounded semantic source staging",
+    "status_lines": [
+      "- Status: `PASS_ENGINEERING_OFFLINE_BOUNDED_LOCAL_STAGING`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_ENGINEERING_OFFLINE_BOUNDED_LOCAL_STAGING",
+      "base_commit": "e44b6584cab96bc9936c9ae39cad224dc61c900f",
+      "implementation_commit": "6e6eb0deb0a51ee9883165f124992c7e7d57cf38"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "22bf3617ccb9bef8b3c2644b8d0be3cee6809e40930187ae10ed05a1f7667b5c",
+    "verification_sha256": "ba0be10c86de4e5c1caa653949e2c797e4b78ea650941b0ba09642ef29a65d8e",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-company-holdout-sensitivity-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030",
+    "title": "# HT-M20 company holdout sensitivity",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_COMPANY_HOLDOUT_SENSITIVITY`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_COMPANY_HOLDOUT_SENSITIVITY",
+      "source_head_at_experiment_start": "47aeefcd190ee109f9fb9b9f1ac5c8f37e9bdafe"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "e0fc5c4cf2e8c5ef5380324218198b68121fb815743d3ca0d9edf00df175c8c0",
+    "verification_sha256": "5de8f0fc3216b3763d9cb01cda6850bd0cbc0e7256d5292f7ab7ddf9ad7856a6",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-current-head-b4-r2c-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-b4-r2c-20261030",
+    "title": "# HT current-head r2 offline baseline and B4 mock audit",
+    "status_lines": [
+      "- Status: `PASS_CURRENT_HEAD_OFFLINE_BASELINES_B4_REPORT`"
+    ],
+    "receipt_fields": {
+      "code_commit": "d45faab3bf0fa08bf2818243249b77920401f6f5",
+      "status": "PASS_CURRENT_HEAD_OFFLINE_BASELINES_B4_REPORT"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "693b82066d74e37af5363cf9308dc8ffabaa8ef50ccf237c9c24923c98d72824",
+    "verification_sha256": "b40e244be7a1a6609ec9d02530cdadf2805c41f54fca4a171b4e4a72ce66ef45",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-current-head-baseline-b4-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-baseline-b4-20261030",
+    "title": "# HT current-head offline baseline and B4 mock audit",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_BASELINES_AND_PROVIDER_SHAPED_MOCKS`"
+    ],
+    "receipt_fields": {
+      "code_commit": "aeaa8aa20c7840ebcf63f9f92b9d3e4d2f52ef83",
+      "status": "PASS_OFFLINE_BASELINES_AND_PROVIDER_SHAPED_MOCKS"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "bae7472f609d263f3d7cae9362d8c125554d99725cc5782dbf0ec202395c63a5",
+    "verification_sha256": "b19c1a3e041e132529a5970e742118744146852bfe61723ef3fbfba9292198f5",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-current-head-report-budget-g6-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-current-head-report-budget-g6-20261030",
+    "title": "# HT current-head report, budget, and G6 refresh",
+    "status_lines": [
+      "- Status: `PASS_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH`"
+    ],
+    "receipt_fields": {
+      "source_head_before": "1c468994ad603287007bde761ab15fbd37ffeffa",
+      "status": "PASS_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "5006f7d8f8040131074ad1e1d8b8295feda7197d5b33e3f6a29a6480c4053397",
+    "verification_sha256": "1212352911e454690822cf02f17b36d853b5c71953f7d0515d200d62bb3b8fe0",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-dapfam-bm25-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-bm25-20261030",
+    "title": "# HT-NEXT-056 — DAPFAM BM25 full baseline",
+    "status_lines": [
+      "Status: `PASS_OFFLINE_DAPFAM_RETRIEVAL_DIAGNOSTIC`",
+      "- Status: `PASS`."
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_DAPFAM_RETRIEVAL_DIAGNOSTIC",
+      "source_revision": "a59a74ce31384165065af1823a83c6f94ccafd48"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "02abf1822984afeb4df621cc1bb228cab69bf7a202f60f15eb1969eae2929310",
+    "verification_sha256": "e9a380c33f3358345585e6ac6b4b99860703335b4a7d74d8f929cb458b119aa8",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-dapfam-code-provenance-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-code-provenance-20261030",
+    "title": "# HT-M36 DAPFAM runner code provenance binding",
+    "status_lines": [
+      "Status: `PASS_OFFLINE_REPRODUCIBILITY_PROVENANCE`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_REPRODUCIBILITY_PROVENANCE",
+      "source_head": "7edf2f4adf013787d0db5f3a028c5d0ac58ae7f4"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "d08d0a1dd89b26dd10d76bfd4ff9f86cc5e24d22683ba19974907d38fa2ec0c0",
+    "verification_sha256": "9355f7d7f05796c1af8a47de2ec676a479195f214c10e19e48124a04bb212b7e",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-dapfam-preflight-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-preflight-20261030",
+    "title": "# HT M33 DAPFAM retrieval-diagnostic preflight",
+    "status_lines": [
+      "- Status: `PASS_DIAGNOSTIC_PREFLIGHT_BLOCKED_FOR_RETRIEVAL`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_DIAGNOSTIC_PREFLIGHT_BLOCKED_FOR_RETRIEVAL",
+      "base_commit": "55b5394eaf4c57c0de9b601ecfa8b91b1fc7f80b",
+      "candidate_commit": "55b5394eaf4c57c0de9b601ecfa8b91b1fc7f80b"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "ffe8483bf7f51871d4311c56ab5472cd3400be453d4c7f8a902a4782322c9838",
+    "verification_sha256": "56d6155c60578ba59162d0dc4a6ede2a20e8d24c08653b0db66a3064b70b2ccc",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-dapfam-qrels-parse-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-dapfam-qrels-parse-20261030",
+    "title": "# HT M34 DAPFAM qrels parse revalidation",
+    "status_lines": [
+      "- Status: `PASS_QRELS_PARSE_RETRIEVAL_BLOCKED`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_QRELS_PARSE_RETRIEVAL_BLOCKED",
+      "base_commit": "a1a187c",
+      "candidate_commit": "a1a187c"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "d32516c7bb31f56000f76887ccf1ebf3066d545c8f21919583f2f72008277047",
+    "verification_sha256": "59e5b0575f03945cb3c9ba99484b9da00589d3eebad71483d74bfe4c143da0b1",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-g6-m20-integration-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-g6-m20-integration-20261030",
+    "title": "# HT-M21 G6 M20 sensitivity integration",
+    "status_lines": [
+      "- Status: `PASS_REPORT_INTEGRATION`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_REPORT_INTEGRATION",
+      "source_head_before": "4e1210ae2a5a08ec40036b4ac31d6e25d3c13b57",
+      "implementation_commit": "aaecb92"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "f7a369d996a9fa5c6191ff993a3532a7fcfa232f39953167ee6e1462d4c7645b",
+    "verification_sha256": "567cc8246f8020e6be0f286e42597f55e616f9ec1d5d055620d7ca7f7d98a412",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-integration-contract-refresh-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-integration-contract-refresh-20261030",
+    "title": "# HT-M29 current-head backend integration contract refresh",
+    "status_lines": [
+      "- Status: `PASS_CURRENT_HEAD_BACKEND_CONTRACT_UI_PENDING`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_CURRENT_HEAD_BACKEND_CONTRACT_UI_PENDING",
+      "parent_contract_head": "b26f9138d2c36e36195755162c092088f23e9be4",
+      "candidate_commit": "8f2e0fe1c913ab3acc78869c82bd6f729e01b596"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "3ddf4e90e928c17547d653800d0116b8d6ba7c768d0885bef7d13684f25f910d",
+    "verification_sha256": "a4a13d083446553f95b5f63cc1c1a2190bba4f04852063c3f50f053ff1d99e78",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-m32-adversarial-boundary-regression-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m32-adversarial-boundary-regression-20261030",
+    "title": "# HT M32 adversarial boundary regression",
+    "status_lines": [
+      "- Status: `PASS_ENGINEERING_ADVERSARIAL_REGRESSION`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_ENGINEERING_ADVERSARIAL_REGRESSION",
+      "source_head_before": "b602311a018e479d894db7c33d9662961a857940"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "c3049a6f1dbf29404f750b88951fb21ca328e8103f13b78c9ea92de39be1018f",
+    "verification_sha256": "56553bc19f1bea0b15542ac1c51b1e58fb3f0afb57579fa66dfa9ef3ceb6ccdd",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-m38-philips-dossiers-r6-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m38-philips-dossiers-r6-20261030",
+    "title": "# HT-M38 current-head Philips dossier audit",
+    "status_lines": [
+      "- Status: `PASS_CURRENT_HEAD_PHILIPS_DOSSIERS`"
+    ],
+    "receipt_fields": {
+      "code_commit": "285eb74ee0d45321867b618b0aa5d28a7fb38534",
+      "status": "PASS_CURRENT_HEAD_PHILIPS_DOSSIERS"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "c760a5dd9b25c80ca2d2fb74a49b0d7bc3ffaab4b3eddc616d22f65fd81691f4",
+    "verification_sha256": "9c8df445f4fb9c58a5279fb4427a4cd0286a28ef46ecdce71237827de25e5e36",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-m40-philips-g5-pilot-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m40-philips-g5-pilot-20261030",
+    "title": "# HT-M40 Philips G5 offline pilot-task expansion",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_ENGINEERING_TASK_3_PHILIPS_CASES`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_ENGINEERING_TASK_3_PHILIPS_CASES",
+      "tested_code_commit": "66b2fafe11938276b33b89006d8032d8514a97eb"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "8ad4e3bab76568176d92c774ecadcc43346de433cd49f89107c7f68aef76fb02",
+    "verification_sha256": "960aca9f7910bd265c7ec03da7c3b90a774d9630c727f8f4fddf0c507ea14c02",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-m41-g5-pilot-analysis-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m41-g5-pilot-analysis-20261030",
+    "title": "# HT-M41 deterministic G5 pilot-task analysis",
+    "status_lines": [
+      "- Status: `PASS_G5_PILOT_ANALYSIS_ENGINEERING_ONLY`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_G5_PILOT_ANALYSIS_ENGINEERING_ONLY",
+      "implementation_commit": "65386b72404d3b4b0b3b67a72bcb6ef06003a4b5"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "73d51b12c4eae3e3d2ea721c93ad80b59d77e23b8e49314aca9c2810a9bd4eb1",
+    "verification_sha256": "1848adc697cfb101dcb1e8268bde2dc87474f2c064dc16e9341b488f0ed8caa1",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-m42-dapfam-coverage-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-m42-dapfam-coverage-20261030",
+    "title": "# HT-M42 DAPFAM lexical coverage screen",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_DAPFAM_COVERAGE_SCREEN`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_DAPFAM_COVERAGE_SCREEN",
+      "tested_working_tree_base": "799a2e4b6d1f5ebb27d086f7ef6c36b649267689",
+      "implementation_commit": "d42fc36a9bf238b4b14281e0961dc5e7aa55df31",
+      "source_revision": "a59a74ce31384165065af1823a83c6f94ccafd48"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "2a6c281c924ff16c688118f6338994d630ca60a75f9bf50bfe4ade571289e3d1",
+    "verification_sha256": "816dd5c68c4e3887a9d691c8273546a7ffb46fbcda8cdba1c8fbf0ec45f21907",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-openrouter-r1-readiness-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-20261030",
+    "title": "# HT-M28 OpenRouter R1 offline readiness revalidation",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_R1_READINESS_LIVE_BLOCKED`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_R1_READINESS_LIVE_BLOCKED",
+      "source_head_at_start": "e71ab26689b2a93da5b20a052aeeefe9df582363",
+      "candidate_commit": "74d6b7e"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "f5885f7f30dff50ef88b92f86ae699dfaa43d8112824c679a8fb977b845f689f",
+    "verification_sha256": "9e0c97f29fed861a293a5cbce1eba1317bf0db6079b31cd93ea67e54baa74d86",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-openrouter-r1-readiness-current-head-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-openrouter-r1-readiness-current-head-20261030",
+    "title": "# HT-M39 current-head OpenRouter R1 offline readiness revalidation",
+    "status_lines": [
+      "- Status: `PASS_CURRENT_HEAD_OFFLINE_R1_READINESS_LIVE_BLOCKED`"
+    ],
+    "receipt_fields": {
+      "status": "PASS"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "db2585a543c0a162dc18a378d71ccedb8feb16ba841148a66c73e1f9e1e246c8",
+    "verification_sha256": "fdcda7b2a75b94bbaa6c740f8a7e699a720d693428d87ead3a5d2b342807debf",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-semantic-source-landscape-expansion-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-semantic-source-landscape-expansion-20261030",
+    "title": "# HT-M26 semantic source landscape expansion",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_SOURCE_SCREENING_NO_ADMISSIBLE_REPLACEMENT`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_SOURCE_SCREENING_NO_ADMISSIBLE_REPLACEMENT",
+      "source_head": "d1f166027225789f3044289f223c48aca798bb96"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "d34d2602dcc23b8966f7ee129987a63d4908464b43830bbd49589c94df7aca7c",
+    "verification_sha256": "e65e6dde8672a2df3c0a092ac31f50b3e6baef1fa1b96197c0abf0f1cc5fadfd",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-sharps-source-metadata-preflight-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-sharps-source-metadata-preflight-20261030",
+    "title": "# HT-M27 sharps source metadata preflight",
+    "status_lines": [
+      "- Status: `PASS_METADATA_PREFLIGHT_OWNER_ACCESS_REQUIRED`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_METADATA_PREFLIGHT_OWNER_ACCESS_REQUIRED",
+      "source_head": "147382e323b6881fad244a3683b9703d391a9d94"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "19232e7af3d41983b0b06c027c081fccc15ff3ec0e4167b50512c374fbb7d5dc",
+    "verification_sha256": "f68cd1c48e38d228ef927a1fc37171c954506117301cee7232ddbd8180909ccc",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-source-authorization-preflight-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-authorization-preflight-20261030",
+    "title": "# HT-M23 semantic source authorization preflight",
+    "status_lines": [
+      "- Status: `PASS_ENGINEERING_OFFLINE_AUTHORIZATION_PREFLIGHT`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_ENGINEERING_OFFLINE_AUTHORIZATION_PREFLIGHT",
+      "source_head_before": "0a24db1c2dc9419a5373950f2e0ba63b058ac772",
+      "implementation_commit": "567bbd1"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "2a4a38c5a38487a654a13fc807c7ad6bb194ed089fc2e85e2128ad507ef51711",
+    "verification_sha256": "a8159c84bcdebbfe72579edc16ee65725ec82fa1a64f4a01233addbd17e5ca8f",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  },
+  {
+    "run": "luna-long-run-20261030-source-landscape-20261030",
+    "path": "docs/healthtech/audits/luna-long-run-20261030-source-landscape-20261030",
+    "title": "# HT-M22 source landscape screen",
+    "status_lines": [
+      "- Status: `PASS_OFFLINE_SOURCE_SCREENING_NOT_ADMISSIBLE`"
+    ],
+    "receipt_fields": {
+      "status": "PASS_OFFLINE_SOURCE_SCREENING_NOT_ADMISSIBLE",
+      "source_head": "991e9720e04fbf73d8ff29a0e9cf6452fbb81f1e"
+    },
+    "receipt_exists": true,
+    "readme_sha256": "85dd52bd3ba0ed8801014f6f91b0fad848d9e627c6fc89b4c400338ff9c04891",
+    "verification_sha256": "f5f089f5e504063dc063f39b024063ddcba6c4001cba02f4cd22a6ba8be26612",
+    "independent_verification": "receipt/source inventory only; substantive checks identified separately in AUDIT"
+  }
+]

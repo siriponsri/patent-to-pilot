@@ -1,0 +1,136 @@
+FF.F                                                                     [100%]
+================================== FAILURES ===================================
+_______ test_cross_cohort_comparison_flags_ceiling_and_low_group_status _______
+
+    def test_cross_cohort_comparison_flags_ceiling_and_low_group_status():
+>       data = _inputs()
+               ^^^^^^^^^
+
+tests\test_healthtech_cross_cohort.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cross_cohort.py:22: in _inputs
+    "abbott_protocol": _load("results/healthtech/ht-abbott-development-20261028-r1/protocol.json"),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_cross_cohort.py:17: in _load
+    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('<audit-scratch>/git-snapshot/results/healthtech/ht-abbott-development-20261028-r1/protocol.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Codex\\2026-10-28\\task-2\\audit-20261030\\git-snapshot\\results\\healthtech\\ht-abbott-development-20261028-r1\\protocol.json'
+
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+____________ test_cross_cohort_comparison_rejects_method_set_drift ____________
+
+    def test_cross_cohort_comparison_rejects_method_set_drift():
+>       data = _inputs()
+               ^^^^^^^^^
+
+tests\test_healthtech_cross_cohort.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cross_cohort.py:22: in _inputs
+    "abbott_protocol": _load("results/healthtech/ht-abbott-development-20261028-r1/protocol.json"),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_cross_cohort.py:17: in _load
+    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('<audit-scratch>/git-snapshot/results/healthtech/ht-abbott-development-20261028-r1/protocol.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Codex\\2026-10-28\\task-2\\audit-20261030\\git-snapshot\\results\\healthtech\\ht-abbott-development-20261028-r1\\protocol.json'
+
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_________ test_refresh_rebinds_backend_hashes_without_mutating_parent _________
+
+tmp_path = WindowsPath('<audit-scratch>/checkout-subset/tmp/test_refresh_rebinds_backend_h0')
+
+    def test_refresh_rebinds_backend_hashes_without_mutating_parent(tmp_path):
+        output = tmp_path / "current-head" / "adapter-contract.json"
+>       refreshed = refresh_contract(PARENT, output, code_head="a" * 40, refresh_date="2026-10-30")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_integration_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+parent_contract = WindowsPath('<audit-scratch>/git-snapshot/docs/healthtech/integration/luna-g3-20261028-28dfb1d/adapter-contract.json')
+output_contract = WindowsPath('<audit-scratch>/checkout-subset/tmp/test_refresh_rebinds_backend_h0/current-head/adapter-contract.json')
+
+    def refresh_contract(
+        parent_contract: Path,
+        output_contract: Path,
+        *,
+        code_head: str | None = None,
+        refresh_date: str | None = None,
+    ) -> dict[str, Any]:
+        """Create a new contract with current backend hashes; never overwrite output."""
+        parent_contract = parent_contract if parent_contract.is_absolute() else ROOT / parent_contract
+        output_contract = output_contract if output_contract.is_absolute() else ROOT / output_contract
+        if output_contract.exists():
+            raise IntegrationContractError(f"refusing to overwrite existing contract: {output_contract}")
+    
+        contract = _load_json(parent_contract)
+        backend_hashes = contract.get("backend_source_hashes")
+        if not isinstance(backend_hashes, dict) or not backend_hashes:
+            raise IntegrationContractError("parent contract lacks backend_source_hashes")
+        current_backend_hashes: dict[str, str] = {}
+        for relative_path, expected_hash in backend_hashes.items():
+            if not isinstance(relative_path, str) or not isinstance(expected_hash, str) or not SHA256_RE.fullmatch(expected_hash):
+                raise IntegrationContractError("parent backend hash entries are malformed")
+            path = _repo_path(relative_path, "backend_source_hashes path")
+            if not path.is_file():
+                raise IntegrationContractError(f"backend source is missing: {relative_path}")
+            current_backend_hashes[relative_path] = _sha256(path)
+    
+        fixture_hashes = contract.get("sanitized_fixture_hashes", [])
+        if not isinstance(fixture_hashes, list):
+            raise IntegrationContractError("sanitized_fixture_hashes must be a list")
+        verified_fixtures = []
+        for row in fixture_hashes:
+            if not isinstance(row, dict) or not isinstance(row.get("path"), str) or not isinstance(row.get("sha256"), str):
+                raise IntegrationContractError("sanitized fixture entries are malformed")
+            if not SHA256_RE.fullmatch(row["sha256"]):
+                raise IntegrationContractError(f"invalid fixture hash: {row['path']}")
+            path = _repo_path(row["path"], "sanitized fixture path")
+            if not path.is_file():
+                raise IntegrationContractError(f"sanitized fixture is missing: {row['path']}")
+            actual_hash = _sha256(path)
+            if actual_hash != row["sha256"]:
+>               raise IntegrationContractError(f"sanitized fixture hash drift: {row['path']}")
+E               scripts.healthtech.refresh_integration_contract.IntegrationContractError: sanitized fixture hash drift: docs/healthtech/G3_NO_CODE_JOURNEY_TH_EN.md
+
+scripts\healthtech\refresh_integration_contract.py:103: IntegrationContractError
+- generated xml file: <audit-scratch>\checkout-subset\tests.xml -
+=========================== short test summary info ===========================
+FAILED tests/test_healthtech_cross_cohort.py::test_cross_cohort_comparison_flags_ceiling_and_low_group_status
+FAILED tests/test_healthtech_cross_cohort.py::test_cross_cohort_comparison_rejects_method_set_drift
+FAILED tests/test_healthtech_integration_contract.py::test_refresh_rebinds_backend_hashes_without_mutating_parent

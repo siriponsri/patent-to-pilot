@@ -1,0 +1,14 @@
+{
+  "snapshot": "db0798276e3158b04131b4e910abc0a11511e94c",
+  "input_status": "DRAFT_SOURCE_AUTHORIZATION",
+  "validation_status": "PASS",
+  "validation_authorization_status": "DRAFT_SOURCE_AUTHORIZATION",
+  "stage_status": "PASS",
+  "completed_files": 2,
+  "staged_bytes": 12,
+  "real_sources_used": false,
+  "provider_calls": 0,
+  "network_calls": 0,
+  "model_calls": 0,
+  "note": "Proves DRAFT is accepted by local staging helper; this is not authority to access any real source. CLI integration policy and caller authority must remain separate."
+}
