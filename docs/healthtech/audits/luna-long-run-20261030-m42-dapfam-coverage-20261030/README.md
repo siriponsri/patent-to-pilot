@@ -4,6 +4,7 @@
 - Date: `2026-10-30` (Asia/Bangkok)
 - Status: `PASS_OFFLINE_DAPFAM_COVERAGE_SCREEN`
 - Tested working-tree base: `799a2e4b6d1f5ebb27d086f7ef6c36b649267689`
+- Implementation commit: `d42fc36a9bf238b4b14281e0961dc5e7aa55df31`
 - Parent package: `docs/healthtech/audits/luna-long-run-20261030-dapfam-code-provenance-20261030/README.md`
 
 ## Objective

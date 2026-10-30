@@ -3,6 +3,7 @@
   "status": "PASS_OFFLINE_DAPFAM_COVERAGE_SCREEN",
   "date_local": "2026-10-30",
   "tested_working_tree_base": "799a2e4b6d1f5ebb27d086f7ef6c36b649267689",
+  "implementation_commit": "d42fc36a9bf238b4b14281e0961dc5e7aa55df31",
   "source_revision": "a59a74ce31384165065af1823a83c6f94ccafd48",
   "license_boundary": "CC-BY-NC-SA-4.0 research-only local diagnostic",
   "code_files": {
