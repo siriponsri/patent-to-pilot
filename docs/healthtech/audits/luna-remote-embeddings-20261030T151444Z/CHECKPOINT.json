@@ -1,0 +1,41 @@
+{
+  "format": "ht-healthtech-audit-checkpoint-v1",
+  "run_id": "luna-remote-embeddings-20261030T151444Z",
+  "date": "2026-10-30",
+  "status": "PASS_LOCAL_PACKAGE_REMOTE_EXECUTION_NOT_RUN",
+  "base_revision": "bf416e9ab6b6d2d031e885d4b6bb0a2d08bf9ebc",
+  "candidate_revision": "fd32ef8a94cf6a06d9b96ec5483758e7fb6cc3a7",
+  "branch": "codex/remote-embeddings-20261030",
+  "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-codex-remote-embeddings",
+  "implemented": [
+    "runtime-only JSONL export with stable dataset-scoped IDs and source/text hashes",
+    "resumable sharded little-endian float32 vector encoding and strict import validation",
+    "atomic partial-to-complete artifact publication and resume binding checks",
+    "exact deterministic vector search with document-order validation",
+    "SharedRetriever precomputed-vector injection",
+    "optional vector-backed dossier candidate augmentation",
+    "DAPFAM duplicate/unknown-ID/bounds/failure-denominator guards",
+    "clean-checkout authored cross-cohort fixtures",
+    "integration-contract support for external parent paths"
+  ],
+  "verified": {
+    "targeted_vector_and_dapfam_tests": "15 passed",
+    "full_pytest_suite": "PASS",
+    "diff_check": "PASS",
+    "compileall": "PASS",
+    "paid_provider_calls": 0,
+    "paid_cost_usd": 0
+  },
+  "not_run": [
+    "strict SSH canary/full remote encoder job",
+    "remote vector transfer",
+    "real 45,336-corpus/1,247-query dense evaluation",
+    "real vector-backed dossier cases"
+  ],
+  "blockers": [
+    "audited host key and trusted known_hosts entry not established",
+    "remote allocation/job root/GPU or CPU quota/window not established",
+    "remote input/model rights and storage limits not re-verified"
+  ],
+  "next_action": "Obtain the bounded remote execution facts, then run a 32-100 document canary before the full resumable job."
+}

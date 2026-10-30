@@ -573,3 +573,11 @@ Status: `PASS_OFFLINE_DAPFAM_COVERAGE_SCREEN`; canonical audit: `docs/healthtech
 Added a deterministic DuckDB-backed coverage analyzer over the existing DAPFAM research-only parquet inputs. The run verified the pinned corpus/query/qrels hashes and scanned 45,336 corpus rows, 1,247 query rows, and 49,869 qrels. The declared lexical medical-device screen matched 2,859 corpus rows and 86 query rows; positive qrels where both query and target matched were 836 IN-domain and 65 OUT-domain pairs. All title and abstract fields were present. No raw payload was exported, provider/network calls were 0, and paid cost was USD 0.00.
 
 This is a separate citation-based retrieval coverage diagnostic, not semantic device-patent gold and not a substitute for M23/M25/M24. Keep DAPFAM out of the HT-T1 denominator and keep unlisted pairs `UNJUDGED`. Next: obtain owner-authorized rights/schema access for an admissible semantic judgment source, then run M23, M25, and M24 before frozen-control reruns.
+
+## HT-NEXT-064 — 2026-10-30 Luna remote embeddings local package
+
+Status: `PASS_LOCAL_PACKAGE_REMOTE_EXECUTION_NOT_RUN`; canonical audit: `docs/healthtech/audits/luna-remote-embeddings-20261030T151444Z/README.md`.
+
+Implemented the runtime-only JSONL/vector-bundle contract, resumable atomic shards, strict import/order/hash validation, exact deterministic retrieval, optional dossier vector augmentation, DAPFAM evaluator guards, clean-checkout authored cross-cohort fixtures, and external-parent integration-contract handling. Targeted vector/DAPFAM tests pass 15/15 and the full repository suite passes. Remote SSH encoding, transfer, real dense evaluation, and real vector-backed dossier cases remain `NOT_RUN` because host verification and resource allocation are not established.
+
+Next: verify strict SSH trust state and obtain only the bounded remote facts required for a 32-100 document canary, then resume the full job if the canary passes. Keep qrels/gold out of runtime inputs and preserve the existing unjudged/failure-denominator policy.
