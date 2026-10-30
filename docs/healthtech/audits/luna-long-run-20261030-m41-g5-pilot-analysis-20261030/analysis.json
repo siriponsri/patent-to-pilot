@@ -1,0 +1,121 @@
+{
+  "artifact_hashes": {
+    "checked": 20,
+    "passed": 20
+  },
+  "candidate_counts": {
+    "disclosed_link": 9,
+    "retrieved_candidate": 0,
+    "total": 9
+  },
+  "cases": [
+    {
+      "artifact_hashes_checked": 5,
+      "artifact_hashes_passed": 5,
+      "company": {
+        "company": "Cook Medical",
+        "regulatory_applicant": "William Cook Europe Aps"
+      },
+      "device_id_canonical": "P180001:ZENITH-DISSECTION-STENT",
+      "engineering_execution_seconds": 0.1291642999931355,
+      "external_projection_status": "BLOCKED_LOCAL",
+      "field": "pma_number",
+      "network_calls": 0,
+      "paid_cost_usd": 0.0,
+      "provider_calls": 0,
+      "purpose": "local_research",
+      "query_id": "HT-DEV-COOK-ZENITH-DISSECTION-STENT",
+      "source_id": "openfda-pma-p180001-base",
+      "status": "PASS_OFFLINE_ENGINEERING_TASK"
+    },
+    {
+      "artifact_hashes_checked": 5,
+      "artifact_hashes_passed": 5,
+      "company": {
+        "company": "PHILIPS IMAGE GUIDED THERAPY",
+        "regulatory_applicant": "Angioscore, Inc."
+      },
+      "device_id_canonical": "K050629",
+      "engineering_execution_seconds": 0.11435879999771714,
+      "external_projection_status": "BLOCKED_LOCAL",
+      "field": "k_number",
+      "network_calls": 0,
+      "paid_cost_usd": 0.0,
+      "provider_calls": 0,
+      "purpose": "local_research",
+      "query_id": "HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON",
+      "source_id": "openfda-510k-k050629",
+      "status": "PASS_OFFLINE_ENGINEERING_TASK"
+    },
+    {
+      "artifact_hashes_checked": 5,
+      "artifact_hashes_passed": 5,
+      "company": {
+        "company": "PHILIPS IMAGE GUIDED THERAPY",
+        "regulatory_applicant": "Kensey Nash Corp."
+      },
+      "device_id_canonical": "K060016",
+      "engineering_execution_seconds": 0.115407100005541,
+      "external_projection_status": "BLOCKED_LOCAL",
+      "field": "k_number",
+      "network_calls": 0,
+      "paid_cost_usd": 0.0,
+      "provider_calls": 0,
+      "purpose": "local_research",
+      "query_id": "HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM",
+      "source_id": "openfda-510k-k060016",
+      "status": "PASS_OFFLINE_ENGINEERING_TASK"
+    },
+    {
+      "artifact_hashes_checked": 5,
+      "artifact_hashes_passed": 5,
+      "company": {
+        "company": "PHILIPS IMAGE GUIDED THERAPY",
+        "regulatory_applicant": "Spectranetics, Inc."
+      },
+      "device_id_canonical": "K170059",
+      "engineering_execution_seconds": 0.1240123999887146,
+      "external_projection_status": "BLOCKED_LOCAL",
+      "field": "k_number",
+      "network_calls": 0,
+      "paid_cost_usd": 0.0,
+      "provider_calls": 0,
+      "purpose": "local_research",
+      "query_id": "HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER",
+      "source_id": "openfda-510k-k170059",
+      "status": "PASS_OFFLINE_ENGINEERING_TASK"
+    }
+  ],
+  "engineering_execution_seconds": {
+    "max": 0.1291642999931355,
+    "median": 0.1197097499971278,
+    "min": 0.11435879999771714,
+    "total": 0.48294259998510825
+  },
+  "external_projection_status_counts": {
+    "BLOCKED_LOCAL": 4
+  },
+  "failure_count": 0,
+  "failure_stage_counts": {},
+  "failure_type_counts": {},
+  "format": "ht-g5-pilot-task-analysis-v1",
+  "limitations": [
+    "This is an engineering dry-run analysis, not participant task time or a service-level claim.",
+    "No participant, usability, willingness-to-pay, repeat-use, or commercial validation is inferred.",
+    "Product-level disclosed links are not semantic relevance gold; unlisted pairs remain UNJUDGED.",
+    "No provider request, restricted payload transfer, or paid inference is represented by this analysis."
+  ],
+  "network_calls": 0,
+  "paid_cost_usd": 0.0,
+  "pass_count": 4,
+  "provider_calls": 0,
+  "receipt_count": 4,
+  "receipt_hashes": {
+    "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/task_receipt.json": "aa93aa1098a420debe7d6c4d3ce97dec2be6168d52e8055f6975132dd7e95e24",
+    "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/task_receipt.json": "48dce85ae4d0589d720a54367325b02d2e7c6e018cf055f9c686ead4efc3be29",
+    "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/task_receipt.json": "32ffa3e2743e135c4be23ac1ca3971aefe77a0b1584e6ecb5c720d2bff09a172",
+    "results/healthtech/ht-g5-pilot-task-20261029-r2/task_receipt.json": "90863e868732cbef1c2e9ad618e3bf61aa58da4514ca98b24c2040344dc21260"
+  },
+  "status": "PASS_G5_PILOT_ANALYSIS_ENGINEERING_ONLY",
+  "success_rate": 1.0
+}

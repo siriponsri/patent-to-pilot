@@ -555,3 +555,13 @@ Expanded the executable G5 task runner from one Cook case to all three current P
 This remains backend engineering evidence only. The initial product-display probe correctly failed closed because each dossier includes Philips marking and Google-derived patent sources with `BLOCKED_LOCAL` intended use; the successful task path therefore keeps the task in local research and checks the external projection separately. No participant timing, usability, willingness-to-pay, commercial validation, semantic labels, or live/provider result was created.
 
 Next: keep HT-W16 `ENGINEERING_DRY_RUN_READY_NOT_VALIDATED`, obtain owner authorization and exact schema/rights terms for Zenodo record `21101400` or another admissible semantic source, then run M23/M25/M24 and frozen-control reruns without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy. Keep live/provider HT-B4, Bridge, deployment, outreach, clinical/FTO, public raw-data release, and Claude UX/UI blocked or paused.
+
+## HT-NEXT-062 — 2026-10-30 M41 deterministic G5 pilot-task analysis
+
+Status: `PASS_G5_PILOT_ANALYSIS_ENGINEERING_ONLY`; canonical audit: `docs/healthtech/audits/luna-long-run-20261030-m41-g5-pilot-analysis-20261030/README.md`.
+
+Added `scripts/healthtech/analyze_pilot_tasks.py` and a focused regression suite. The analyzer accepts hash-bound pass or sanitized failure receipts, rejects duplicate cases, unsafe artifact paths, missing files, and hash mismatches, and writes deterministic JSON/Markdown summaries without loading raw restricted payloads. The actual aggregate over one Cook and three Philips receipts has `4/4` pass, `20/20` artifact hashes, total engineering execution `0.4829` seconds, median `0.1197` seconds, `9` disclosed candidates, `0` retrieved-only candidates, `4` `BLOCKED_LOCAL` external projections, `0` provider/network calls, and USD `0.00` paid cost.
+
+Updated `docs/healthtech/business/PILOT_TASK_PACKET_20261029.md` with the aggregate engineering result. This remains a backend/product-preparation analysis only; it does not establish participant task time, usability, willingness to pay, commercial demand, semantic patent relevance, clinical/FTO, or publication readiness.
+
+Next: keep HT-W16 `ENGINEERING_DRY_RUN_READY_NOT_VALIDATED`; obtain an owner-authorized rights-cleared semantic judgment source, validate M23/M25/M24, and rerun frozen controls only after the source passes rights/schema checks without changing the denominator, holdout membership, family/company grouping, or `UNJUDGED` policy.

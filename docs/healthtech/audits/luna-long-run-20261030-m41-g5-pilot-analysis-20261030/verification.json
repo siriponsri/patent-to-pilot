@@ -1,0 +1,90 @@
+{
+  "format": "ht-m41-g5-pilot-analysis-v1",
+  "run_id": "luna-long-run-20261030-m41-g5-pilot-analysis-20261030",
+  "date": "2026-10-30",
+  "status": "PASS_G5_PILOT_ANALYSIS_ENGINEERING_ONLY",
+  "tested_working_tree_base": "e7dc58142998983c4229dc43b2214ed35dfec5bf",
+  "input_receipts": [
+    "results/healthtech/ht-g5-pilot-task-20261029-r2/task_receipt.json",
+    "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-ANGIOSCULPT-SCORING-BALLOON/task_receipt.json",
+    "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-THROMCAT-THROMBECTOMY-SYSTEM/task_receipt.json",
+    "results/healthtech/ht-g5-philips-pilot-20261030-r2/HT-DEV-PHILIPS-TURBO-ELITE-LASER-CATHETER/task_receipt.json"
+  ],
+  "input_source_hashes": {
+    "scripts/healthtech/analyze_pilot_tasks.py": "e0016d12a036445ae842b9e329bddb65ee689d6376ea595c690cccfd847abf1d",
+    "tests/test_healthtech_pilot_analysis.py": "923c91c5f2a47762a0bc9e63f2f7ddf9d9b7c34a767173e48c4cee28c240f317",
+    "docs/healthtech/business/PILOT_TASK_PACKET_20261029.md": "2b99b9eb1bd23ec71e6b2ca2d5bbe13d691d3279c7241c3562dda09d1352ada7",
+    "results/healthtech/ht-g5-pilot-task-analysis-20261030-r1/analysis.json": "617dd55eaa1169258b6f6addbd1f9e3b886fbcc5ac5bbd2a444efa6f084eae41"
+  },
+  "checks": [
+    {
+      "name": "analyzer_regression",
+      "command": "rtk proxy python -B -m pytest tests/test_healthtech_pilot_analysis.py --disable-warnings",
+      "status": "PASS",
+      "observed": "3 passed"
+    },
+    {
+      "name": "existing_g5_philips_regression",
+      "command": "rtk proxy python -B -m pytest tests/test_healthtech_pilot_task.py tests/test_healthtech_philips_dossiers.py --disable-warnings",
+      "status": "PASS",
+      "observed": "8 passed"
+    },
+    {
+      "name": "full_repository_suite",
+      "command": "rtk proxy python -B -m pytest tests --disable-warnings",
+      "status": "PASS",
+      "observed": "454 passed, 2 warnings"
+    },
+    {
+      "name": "guarded_offline_suite",
+      "command": "rtk proxy python -B scripts/healthtech/verify_offline.py <fresh-output-outside-repository> --suite all",
+      "status": "PASS",
+      "observed": "454 passed, 0 failures, 0 errors, 0 skipped; 0 network attempts; 0 credential-file read attempts; 0 provider calls; USD 0.00 paid cost",
+      "compiled_python_files": 166
+    },
+    {
+      "name": "actual_aggregate_analysis",
+      "command": "rtk proxy python -B scripts/healthtech/analyze_pilot_tasks.py --output results/healthtech/ht-g5-pilot-task-analysis-20261030-r1 <four task receipts>",
+      "status": "PASS",
+      "observed": "4 receipts; 4 passed; 20/20 artifact hashes; 0 provider/network calls; USD 0.00 paid cost"
+    },
+    {
+      "name": "compile",
+      "command": "rtk proxy python -B -m compileall -q scripts/healthtech/analyze_pilot_tasks.py tests/test_healthtech_pilot_analysis.py",
+      "status": "PASS",
+      "observed": "exit code 0"
+    }
+  ],
+  "aggregate": {
+    "receipt_count": 4,
+    "pass_count": 4,
+    "failure_count": 0,
+    "success_rate": 1.0,
+    "engineering_execution_seconds": {
+      "total": 0.48294259998510825,
+      "median": 0.1197097499971278,
+      "min": 0.11435879999771714,
+      "max": 0.1291642999931355
+    },
+    "artifact_hashes_checked": 20,
+    "artifact_hashes_passed": 20,
+    "candidate_counts": {
+      "disclosed_link": 9,
+      "retrieved_candidate": 0,
+      "total": 9
+    },
+    "external_projection_status_counts": {
+      "BLOCKED_LOCAL": 4
+    },
+    "provider_calls": 0,
+    "network_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "boundaries": {
+    "participant_validation": "NOT_RUN",
+    "commercial_validation": "NOT_RUN",
+    "semantic_labels": "NOT_RUN",
+    "live_provider_run": "NOT_RUN",
+    "restricted_payload_transfer": "NOT_RUN"
+  }
+}

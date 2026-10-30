@@ -40,6 +40,16 @@ not participant task time, usability evidence, commercial validation, or a
 service-level promise. Canonical audit:
 `docs/healthtech/audits/luna-long-run-20261029-ht-g5-pilot-task-20261029/`.
 
+The current aggregate engineering analysis covers the Cook case plus all three
+Philips dossiers. It contains `4` successful receipts, `20/20` artifact hashes
+passing, total engineering execution time of `0.4829` seconds, median time of
+`0.1197` seconds, `0` provider calls, `0` network calls, and `USD 0.00` paid
+cost. All four external projections are `BLOCKED_LOCAL` where local-only
+marking or Google-derived patent sources are present. The analysis is at
+`results/healthtech/ht-g5-pilot-task-analysis-20261030-r1/` and is a
+reproducible engineering summary, not participant timing or commercial
+validation.
+
 ## Correction and time form
 
 | Field | Record |
