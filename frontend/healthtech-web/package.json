@@ -11,6 +11,7 @@
     "start": "node serve.mjs",
     "test": "node --test \"tests/unit/*.test.mjs\"",
     "test:e2e": "node tests/e2e/run-e2e.mjs",
-    "test:integration": "node tests/e2e/backend-integration.mjs"
+    "test:integration": "node tests/e2e/backend-integration.mjs",
+    "test:integration:http": "node tests/e2e/backend-http-integration.mjs"
   }
 }
