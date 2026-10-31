@@ -28,6 +28,7 @@
     "current_account_credit_verified": false,
     "search_mode": "read_only_sanitized_path_and_record_search_plus_metadata_scan",
     "search_receipt": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-search-20261031.json",
+    "search_recheck_receipt": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-search-recheck-20261031.json",
     "historical_recovery_receipt": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-recovery-20261031.json",
     "historical_recovered_journals": 2,
     "r1_canonical_journal_found": false,

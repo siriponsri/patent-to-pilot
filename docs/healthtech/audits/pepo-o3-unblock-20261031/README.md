@@ -47,8 +47,12 @@ policy instead of binding them as a false canonical ledger.
 
 The search still did not find the current R1 canonical journal or an
 integration-bound current account-credit snapshot. The earlier metadata-only
-search receipt remains at `journal-search-20261031.json`. No private journal
-contents or credentials were copied into this audit.
+search receipt remains at `journal-search-20261031.json`; the later scoped
+filename/reference recheck is recorded at
+`journal-search-recheck-20261031.json`. The recheck classifies the two
+recovered legacy journals and three synthetic audit databases without
+binding or copying any private journal contents. No credentials were copied
+into this audit.
 
 The paid branch remains closed. No credential was read, no provider request was
 sent, and no current account credit was inferred from shared-account metadata.

@@ -1,0 +1,42 @@
+{
+  "format": "ptp-o3-journal-search-recheck-v1",
+  "captured_at_utc": "2026-10-31T11:27:43.4887279Z",
+  "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+  "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+  "search_mode": "READ_ONLY_FILENAME_AND_SANITIZED_REFERENCE_SCAN",
+  "roots_scanned": [
+    "C:/Users/User/Documents/Codex/2026-10-31/task-5",
+    "C:/Users/User/Documents/Codex/2026-10-31/task/ptp-integration",
+    "C:/Users/User/Desktop/myProject/_worktrees",
+    "C:/Users/User/Desktop/myProject/_preserved-main-untracked-20261030"
+  ],
+  "excluded_from_scan": [
+    "credentials and .env contents",
+    "node_modules, virtual environments, and .git metadata",
+    "private journal contents",
+    "unrelated project databases"
+  ],
+  "findings": {
+    "r1_canonical_journal_candidates": [],
+    "sanitized_all_attempt_exports": [],
+    "recovered_legacy_journals": [
+      "C:/Users/User/Desktop/myProject/_preserved-main-untracked-20261030/results-development-provider-pilot/live.sqlite3",
+      "C:/Users/User/Desktop/myProject/_preserved-main-untracked-20261030/results-development-provider-pilot/paired-revalidation-1.sqlite3"
+    ],
+    "synthetic_audit_databases_excluded": [
+      "C:/Users/User/Documents/Codex/2026-10-31/task-5/docs/healthtech/audits/pepo-o3-unblock-20261031/synthetic-only/A.sqlite3",
+      "C:/Users/User/Documents/Codex/2026-10-31/task-5/docs/healthtech/audits/pepo-o3-unblock-20261031/synthetic-only/B.sqlite3",
+      "C:/Users/User/Documents/Codex/2026-10-31/task-5/docs/healthtech/audits/pepo-o3-unblock-20261031/synthetic-only/pricing.sqlite3"
+    ],
+    "current_account_credit_verified": false
+  },
+  "reconciliation": {
+    "historical_actual_debit_usd": 0.0001464,
+    "historical_unknown_pending_attempts": 0,
+    "r1_registration_attempted": false,
+    "replacement_journal_created": false,
+    "credential_read": false,
+    "paid_dispatch": "NOT_RUN"
+  },
+  "status": "BLOCKED_LOCAL_MISSING_R1_JOURNAL_AND_CREDIT_EVIDENCE"
+}
