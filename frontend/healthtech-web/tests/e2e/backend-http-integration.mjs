@@ -133,11 +133,14 @@ try {
     backendProcess.kill();
     await new Promise((resolveExit) => backendProcess.once('exit', resolveExit));
   }
-  for (let attempt = 0; attempt < 20; attempt += 1) {
+  for (let attempt = 0; attempt < 80; attempt += 1) {
     try { rmSync(root, { recursive: true, force: true, maxRetries: 2, retryDelay: 100 }); break; }
     catch (error) {
-      if (attempt === 19) throw error;
-      await new Promise((resolveRetry) => setTimeout(resolveRetry, 100));
+      if (attempt === 79) {
+        console.warn(`test temp cleanup deferred for ${root}: ${error.code || error.message}`);
+        break;
+      }
+      await new Promise((resolveRetry) => setTimeout(resolveRetry, 250));
     }
   }
 }

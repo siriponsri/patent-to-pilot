@@ -28,6 +28,12 @@ def main() -> None:
     parser.add_argument("--data-dir", type=Path, default=ROOT / ".local" / "healthtech-http")
     parser.add_argument("--code-commit", default=None)
     parser.add_argument("--delay-ms", type=int, default=0, help="test-only delay before local execution")
+    parser.add_argument(
+        "--vector-config",
+        type=Path,
+        default=None,
+        help="server-owned JSON config for a validated vector corpus/query bundle pair",
+    )
     args = parser.parse_args()
     if args.delay_ms < 0:
         parser.error("--delay-ms must be non-negative")
@@ -37,6 +43,7 @@ def main() -> None:
         args.data_dir,
         code_commit=args.code_commit or _head(),
         execution_delay_seconds=args.delay_ms / 1000,
+        vector_config=args.vector_config,
     )
     bound_host, bound_port = server.server_address[:2]
     print(f"healthtech local HTTP listening on http://{bound_host}:{bound_port}", flush=True)

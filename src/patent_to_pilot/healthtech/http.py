@@ -38,6 +38,7 @@ from patent_to_pilot.healthtech.history import (
     source_view,
 )
 from patent_to_pilot.healthtech.rights import RightsBoundaryError
+from patent_to_pilot.healthtech.vector_http import ConfiguredVectorSearch
 
 
 JOB_ID = re.compile(r"^[a-f0-9]{32}$")
@@ -193,7 +194,8 @@ class HealthTechJobService:
 
     def __init__(self, root: str | Path, *, code_commit: str = "unknown", max_workers: int = 1,
                  runner: Callable[..., tuple[Any, list[Any], Any]] = run_dossier,
-                 execution_delay_seconds: float = 0.0):
+                 execution_delay_seconds: float = 0.0,
+                 vector_search: ConfiguredVectorSearch | None = None):
         if max_workers != 1:
             raise ValueError("HealthTech local service requires one worker")
         if execution_delay_seconds < 0:
@@ -202,26 +204,30 @@ class HealthTechJobService:
         self.code_commit = code_commit
         self.runner = runner
         self.execution_delay_seconds = execution_delay_seconds
+        self.vector_search = vector_search
         self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="healthtech-job")
 
     def close(self) -> None:
         self.executor.shutdown(wait=True, cancel_futures=False)
 
-    @staticmethod
-    def provider_catalog() -> dict[str, Any]:
-        return {
-            "providers": [
+    def provider_catalog(self) -> dict[str, Any]:
+        providers = [
                 {
                     "id": "local",
                     "label": "Local offline engine",
-                    "available": True,
-                    "model": "offline-lexical-v1",
+                    "available": self.vector_search is None,
+                    "model": "offline-lexical-v1" if self.vector_search is None else None,
                     "billing_status": "not_billable_local",
                     "actual_usd": 0.0,
                     "reserved_usd": 0.0,
                     "unknown_usd": 0.0,
                     "resource_usage": "measured_local_resources",
+                    **({"reason": "vector engine configured; use local-vector"} if self.vector_search else {}),
                 },
+            ]
+        if self.vector_search is not None:
+            providers.insert(0, self.vector_search.describe())
+        providers.append(
                 {
                     "id": "openrouter",
                     "label": "OpenRouter",
@@ -233,7 +239,9 @@ class HealthTechJobService:
                     "unknown_usd": None,
                     "reason": "paid ledger reconciliation and explicit dispatch authorization are required",
                 },
-            ],
+        )
+        return {
+            "providers": providers,
             "budget_gate": {
                 "paid_dispatch": "closed",
                 "authorized_ceiling_usd": "unknown",
@@ -253,9 +261,13 @@ class HealthTechJobService:
         key = header_idempotency_key or body.get("idempotency_key")
         if not isinstance(key, str) or not IDEMPOTENCY_KEY.fullmatch(key):
             raise HTTPJobError(400, "invalid_idempotency_key", "a bounded idempotency key is required")
-        provider = body.get("provider") or {"id": "local", "model": "offline-lexical-v1"}
-        if not isinstance(provider, dict) or provider.get("id") != "local":
-            raise HTTPJobError(409, "provider_blocked", "only the local provider is available; paid dispatch is fail-closed")
+        provider = body.get("provider") or {"id": "local"}
+        if not isinstance(provider, dict) or provider.get("id") not in {"local", "local-vector"}:
+            raise HTTPJobError(409, "provider_blocked", "only configured local providers are available; paid dispatch is fail-closed")
+        if provider.get("id") == "local-vector" and self.vector_search is None:
+            raise HTTPJobError(409, "provider_unavailable", "local-vector is not configured on this server")
+        if provider.get("id") == "local" and self.vector_search is not None:
+            raise HTTPJobError(409, "provider_unavailable", "the configured server requires the local-vector provider")
         raw_input = body.get("input")
         if not isinstance(raw_input, dict):
             raise HTTPJobError(400, "invalid_input", "input must be a DossierInput object")
@@ -263,15 +275,23 @@ class HealthTechJobService:
             parsed = DossierInput.model_validate(raw_input)
         except Exception as exc:
             raise HTTPJobError(422, "invalid_input", "input failed HealthTech contract validation", details=str(exc)) from exc
+        if self.vector_search is not None:
+            try:
+                self.vector_search.validate_input(parsed)
+            except Exception as exc:
+                raise HTTPJobError(422, "vector_input_mismatch", "input does not match the configured vector runtime", details=str(exc)) from exc
         input_payload = parsed.model_dump(mode="json")
         request_hash = _json_hash({"input": input_payload, "provider": provider})
         job_id = uuid4().hex
+        provider_record = self.vector_search.describe() if self.vector_search is not None else {
+            "id": "local", "model": "offline-lexical-v1"
+        }
         record = self.store.create(
             job_id=job_id,
             idempotency_key=key,
             request_hash=request_hash,
             project_id=parsed.query.brief.project_id,
-            provider={"id": "local", "model": "offline-lexical-v1"},
+            provider=provider_record,
             input_payload=input_payload,
         )
         if not record.get("duplicate"):
@@ -316,7 +336,17 @@ class HealthTechJobService:
                 time.sleep(self.execution_delay_seconds)
             input_path = self.store._job_dir(job_id) / "input.json"
             data = DossierInput.model_validate_json(input_path.read_text(encoding="utf-8"))
-            dossier, events, manifest = self.runner(data, run_id=f"job-{job_id}-a{record['attempt']}", code_commit=self.code_commit)
+            if self.vector_search is None:
+                dossier, events, manifest = self.runner(
+                    data, run_id=f"job-{job_id}-a{record['attempt']}", code_commit=self.code_commit
+                )
+            else:
+                dossier, events, manifest = self.runner(
+                    data,
+                    run_id=f"job-{job_id}-a{record['attempt']}",
+                    code_commit=self.code_commit,
+                    vector_search=self.vector_search.for_input(data),
+                )
             current = self.store.read(job_id)
             if current.get("cancel_requested"):
                 ended = _utc()
@@ -576,8 +606,22 @@ class _Handler(BaseHTTPRequestHandler):
         return
 
 
-def create_server(host: str, port: int, root: str | Path, *, code_commit: str = "unknown", execution_delay_seconds: float = 0.0) -> ThreadingHTTPServer:
-    service = HealthTechJobService(root, code_commit=code_commit, execution_delay_seconds=execution_delay_seconds)
+def create_server(
+    host: str,
+    port: int,
+    root: str | Path,
+    *,
+    code_commit: str = "unknown",
+    execution_delay_seconds: float = 0.0,
+    vector_config: str | Path | None = None,
+) -> ThreadingHTTPServer:
+    configured_vectors = None if vector_config is None else ConfiguredVectorSearch.from_config(vector_config)
+    service = HealthTechJobService(
+        root,
+        code_commit=code_commit,
+        execution_delay_seconds=execution_delay_seconds,
+        vector_search=configured_vectors,
+    )
 
     class BoundHandler(_Handler):
         pass

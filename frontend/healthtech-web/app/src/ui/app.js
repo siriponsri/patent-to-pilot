@@ -805,7 +805,10 @@ export const app = {
     if (!input) { this.state.backendJob = { state: 'unavailable', reason: 'backend_input_unavailable' }; this.render(); return; }
     try {
       const key = `web-${(await sha256Hex(stringifyLossless(input))).slice(0, 48)}`;
-      const result = await this.state.backend.submit(input, { idempotencyKey: key });
+      const providerId = document.getElementById('backend-provider')?.value
+        || this.state.backend.providerCatalog?.providers?.find((provider) => provider.available)?.id
+        || 'local';
+      const result = await this.state.backend.submit(input, { idempotencyKey: key, provider: { id: providerId } });
       this.state.backendJob = result.job;
       this.render();
       await this.watchBackendJob(result.job.job_id);
@@ -835,7 +838,9 @@ export const app = {
       const created = await this.createProject({
         kind: 'dossier', dossierTree: bundle.dossier, validation, manifestTree: bundle.manifest, eventTrees: bundle.events,
         overlay: emptyOverlay(), origin: { type: 'backend-http', jobId }, backendJobId: jobId,
-        backendProvider: this.state.backend.providerCatalog?.providers?.find((p) => p.id === 'local') || { id: 'local' },
+        backendProvider: this.state.backend.providerCatalog?.providers?.find((p) => p.id === this.state.backendJob?.provider?.id)
+          || this.state.backend.providerCatalog?.providers?.find((p) => p.available)
+          || { id: 'local' },
       });
       if (!created.ok) throw new Error(created.message || 'local project creation failed');
       this.state.backendJob = null;

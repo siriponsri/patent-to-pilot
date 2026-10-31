@@ -351,10 +351,11 @@ function briefScreen(app, projectDraft) {
     const backend = s.backend;
     const backendJob = s.backendJob;
     const providers = backend?.providerCatalog?.providers || [];
+    const defaultProviderId = providers.find((p) => p.available)?.id || 'local';
     const active = ['queued', 'running', 'cancel_requested'].includes(backendJob?.state);
     const backendPanel = backend ? h('section', { class: 'callout callout-info', id: 'backend-run', 'data-state': backendJob?.state || 'ready' },
       h('h3', {}, t('backend.title')),
-      field(t('backend.provider'), h('select', { id: 'backend-provider', disabled: active }, providers.map((p) => h('option', { value: p.id, disabled: !p.available, selected: p.id === 'local' }, `${p.label} — ${p.available ? t('cap.available') : t('cap.unavailable')}`)))),
+      field(t('backend.provider'), h('select', { id: 'backend-provider', disabled: active }, providers.map((p) => h('option', { value: p.id, disabled: !p.available, selected: p.id === defaultProviderId }, `${p.label} — ${p.available ? t('cap.available') : t('cap.unavailable')}`)))),
       h('p', { id: 'backend-status' }, `${t('backend.status')}: ${backendJob?.state || 'ready'}`),
       backendJob?.cost ? h('p', { class: 'muted' }, t('backend.cost', { usd: backendJob.cost.actual_usd ?? 'unknown', seconds: backendJob.cost.local_elapsed_seconds ?? 'unknown' })) : null,
       !backendInput ? h('p', { class: 'muted' }, t('backend.unavailable')) : null,
