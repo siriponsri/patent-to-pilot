@@ -447,7 +447,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M49 completed the real three-case Abbott browser -> HTTP -> PatEmbed -> local Qwen3-8B generation -> history/export path. Keep O3 API comparison BLOCKED_LOCAL until canonical ledger identity, current account credit, exact comparison authorization, and outbound dossier-prompt rights are evidenced; keep paid provider dispatch closed.",
+  "next": "M49 completed the real three-case Abbott browser -> HTTP -> PatEmbed -> local Qwen3-8B generation -> history/export path. O3 offline engineering preparation is now complete: the original owner scope is recorded as approved, canonical ledger registry/path-substitution protection, rights-cleared paired payload, API runner, and candidate/disclosed-link validation are implemented and tested. Keep the API comparison BLOCKED_LOCAL until the real journal is reconciled, current account credit, fresh route/parameter/pricing checks, and rights-cleared outbound dossier prompts are evidenced; keep paid provider dispatch closed.",
   "verification": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",

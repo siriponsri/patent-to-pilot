@@ -717,3 +717,11 @@ Status: `PASS_O4_RESEARCH_HANDOFF_O3_API_BLOCKED_LOCAL`; canonical audit: `docs/
 Added the current English and Thai O4 research handoff. It binds the three-case browser receipt to the PatEmbed/e5 vector receipts, gives grouped MitraClip/Tendyne versus TriClip retrieval analysis, records the fixed-control macro Recall@20 frontier and cost/query trade-offs, and separates observed failures from unresolved O3/API limitations. The report explicitly states that candidate counts and DAPFAM metrics are diagnostic/product-path evidence, not semantic patent gold or exhaustive recall.
 
 Next: keep the Draft PR reviewable, keep paid dispatch closed, and resolve O3 ledger/credit/authorization/prompt-rights gates before any API comparison or final merge/branch deletion.
+
+## HT-NEXT-080 — 2026-10-31 O3 offline engineering unblock
+
+Status: `PASS_ENGINEERING_PREPARATION_O3_PAID_RESEARCH_PARTIAL`; canonical audit: `docs/healthtech/audits/pepo-o3-unblock-20261031/README.md`.
+
+Corrected the current authorization summary so the existing `PTP-HT-OR-R1-20261028-USD8` owner scope is recorded as approved without creating a new grant or resetting the 24-hour clock. Added the per-user canonical ledger registry and live path-substitution guard, explicit mock namespace, non-creating journal registration CLI, rights-cleared paired payload manifest, API generation runner, and candidate/disclosed-link provenance validation. Focused O3 tests pass `35/35`; full repository tests pass `506/506` with one existing optional skip; compile and diff checks pass. No paid provider request was sent.
+
+Read-only search found historical receipts totaling `USD0.0001464` with zero unknown-pending attempts, but no current canonical journal path or sanitized current account-credit snapshot. The research comparison remains `BLOCKED_LOCAL` until those facts plus fresh route/parameter/pricing and outbound prompt-rights evidence are available. Next owner input, if needed, is only the real journal location or a sanitized all-attempt export, plus a sanitized current credit/billing snapshot if the approved integration cannot provide it; do not re-ask for the existing USD8 authorization.

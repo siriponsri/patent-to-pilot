@@ -1,0 +1,45 @@
+{
+  "tracked_search": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "scoped_tracked_and_untracked_search": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "",
+    "arguments": [
+      "rg",
+      "-n",
+      "-i",
+      "--glob",
+      "*.md",
+      "--glob",
+      "*.json",
+      "--glob",
+      "*.py",
+      "--glob",
+      "*.toml",
+      "--glob",
+      "!**/tmp/**",
+      "--glob",
+      "!**/evidence/**",
+      "--glob",
+      "!**/.env*",
+      "pat[-_ ]?embed|patentsberta|bert-for-patents",
+      "docs",
+      "configs",
+      "scripts",
+      "src",
+      "memory",
+      "methodology"
+    ]
+  },
+  "local_healthtech_model_directories": [
+    "all-MiniLM-L6-v2",
+    "cross-encoder-ms-marco-MiniLM-L-6-v2",
+    "sentence-transformers-all-MiniLM-L6-v2"
+  ],
+  "actual_patembed_model_id_revision_checkpoint": "NOT_FOUND_IN_INSPECTED_REPO_SCOPE",
+  "not_claimed": "No claim that PatEmbed is absent from the entire Windows machine or every remote/custom cache/environment"
+}

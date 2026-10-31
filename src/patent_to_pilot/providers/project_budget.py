@@ -1,4 +1,4 @@
-"""Atomic shared USD 5 envelope for new work; historical ledgers are untouched.
+"""Atomic durable budget envelope; historical ledgers are untouched.
 
 This module never loads credentials. Every future scientific/UI dispatch must use
 this same database and policy, not the older engineering pilot ledgers.
@@ -42,21 +42,75 @@ class ProjectBudget:
     never duplicates a charge; reserve replay never authorizes another send.
     No raw prompt, key, response body or exception text is stored here.
     """
-    def __init__(self, path: Path, *, policy: dict | None = None):
-        self.path = Path(path)
+    def __init__(
+        self,
+        path: Path,
+        *,
+        policy: dict | None = None,
+        ledger_id: str | None = None,
+        authorization_id: str | None = None,
+        namespace: str = "legacy",
+        canonical_path: Path | None = None,
+        pricing_snapshot_sha256: str | None = None,
+        pricing_snapshot_utc: str | None = None,
+    ):
+        if namespace not in {"legacy", "canonical", "mock"}:
+            raise ValueError("unsupported budget ledger namespace")
+        self.path = Path(path).expanduser().resolve(strict=False)
+        self.ledger_id = ledger_id or f"{namespace}:{hashlib.sha256(str(self.path).encode('utf-8')).hexdigest()[:24]}"
+        self.authorization_id = authorization_id or (policy or POLICY).get("authorization_id")
+        self.namespace = namespace
+        self.canonical_path = Path(canonical_path or self.path).expanduser().resolve(strict=False)
+        self.pricing_snapshot_sha256 = pricing_snapshot_sha256 or (policy or {}).get("pricing_snapshot_sha256")
+        self.pricing_snapshot_utc = pricing_snapshot_utc or (policy or {}).get("pricing_snapshot_utc")
         self.policy = json.loads(json.dumps(POLICY if policy is None else policy, sort_keys=True))
         self.policy_hash = hashlib.sha256(json.dumps(self.policy, sort_keys=True).encode()).hexdigest()
         self.models = dict(self.policy["models"])
         self.admission_threshold_nano_usd = int(self.policy.get("admission_threshold_nano_usd", self.policy["incremental_cap_nano_usd"]))
+        self.path.parent.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(self.path, timeout=10, isolation_level=None)
         self.db.execute("PRAGMA busy_timeout=10000")
-        self.db.executescript("CREATE TABLE IF NOT EXISTS budget_meta(policy_hash TEXT NOT NULL); CREATE TABLE IF NOT EXISTS budget_attempts(attempt_id TEXT PRIMARY KEY, phase TEXT NOT NULL, model TEXT NOT NULL, payload_sha256 TEXT NOT NULL, reserved INTEGER NOT NULL, actual INTEGER, state TEXT NOT NULL, breach INTEGER NOT NULL DEFAULT 0);")
+        self.db.executescript(
+            "CREATE TABLE IF NOT EXISTS budget_meta(policy_hash TEXT NOT NULL);"
+            "CREATE TABLE IF NOT EXISTS budget_ledger_meta("
+            "singleton INTEGER PRIMARY KEY CHECK(singleton=1),"
+            "ledger_id TEXT NOT NULL, authorization_id TEXT, namespace TEXT NOT NULL,"
+            "canonical_path TEXT NOT NULL, policy_hash TEXT NOT NULL,"
+            "pricing_snapshot_sha256 TEXT, pricing_snapshot_utc TEXT"
+            ");"
+            "CREATE TABLE IF NOT EXISTS budget_attempts("
+            "attempt_id TEXT PRIMARY KEY, phase TEXT NOT NULL, model TEXT NOT NULL,"
+            "payload_sha256 TEXT NOT NULL, reserved INTEGER NOT NULL, actual INTEGER,"
+            "state TEXT NOT NULL, breach INTEGER NOT NULL DEFAULT 0"
+            ");"
+        )
         with self.transaction():
             hashes = self.db.execute("SELECT policy_hash FROM budget_meta").fetchall()
             if not hashes:
                 self.db.execute("INSERT INTO budget_meta VALUES(?)", (self.policy_hash,))
             elif hashes != [(self.policy_hash,)]:
                 raise ValueError("budget policy mismatch; cannot reset/rebind history")
+            expected_meta = (
+                self.ledger_id,
+                self.authorization_id,
+                self.namespace,
+                str(self.canonical_path),
+                self.policy_hash,
+                self.pricing_snapshot_sha256,
+                self.pricing_snapshot_utc,
+            )
+            meta = self.db.execute(
+                "SELECT ledger_id,authorization_id,namespace,canonical_path,policy_hash,pricing_snapshot_sha256,pricing_snapshot_utc "
+                "FROM budget_ledger_meta WHERE singleton=1"
+            ).fetchone()
+            if meta is None:
+                self.db.execute(
+                    "INSERT INTO budget_ledger_meta(singleton,ledger_id,authorization_id,namespace,canonical_path,policy_hash,pricing_snapshot_sha256,pricing_snapshot_utc) "
+                    "VALUES(1,?,?,?,?,?,?,?)",
+                    expected_meta,
+                )
+            elif tuple(meta) != expected_meta:
+                raise ValueError("budget ledger identity or namespace mismatch; cannot rebind history")
 
     def close(self):
         self.db.close()
@@ -84,7 +138,11 @@ class ProjectBudget:
         committed = sum(usage.values())
         admission_closed = committed > self.admission_threshold_nano_usd
         return {"policy_sha256": self.policy_hash, "policy_version": self.policy["version"],
-            "authorization_id": self.policy.get("authorization_id"), "attempts": len(rows), "actual_nano_usd": actual,
+            "authorization_id": self.authorization_id, "ledger_id": self.ledger_id,
+            "ledger_namespace": self.namespace, "ledger_path": str(self.canonical_path),
+            "pricing_snapshot_sha256": self.pricing_snapshot_sha256,
+            "pricing_snapshot_utc": self.pricing_snapshot_utc,
+            "attempts": len(rows), "actual_nano_usd": actual,
             "committed_nano_usd": committed, "phase_committed_nano_usd": usage,
             "admission_threshold_nano_usd": self.admission_threshold_nano_usd,
             "authorization_cap_nano_usd": self.policy["incremental_cap_nano_usd"],

@@ -22,6 +22,12 @@ from .openrouter import (
     ProviderRequest,
     ProviderResponse,
 )
+from .ledger_registry import (
+    CanonicalLedgerBinding,
+    CanonicalLedgerError,
+    ephemeral_ledger_id,
+    resolve_canonical_ledger,
+)
 from .project_budget import BudgetedTransport, NANO, ProjectBudget
 
 
@@ -140,18 +146,53 @@ class Round1ProjectBudget(ProjectBudget):
 
     def __init__(
         self,
-        path: Path,
+        path: Path | None = None,
         *,
         model_provider_map: Mapping[str, str],
         pricing_snapshot_sha256: str,
         pricing_snapshot_utc: str,
+        namespace: str = "canonical",
     ) -> None:
         policy = build_round1_policy(
             model_provider_map,
             pricing_snapshot_sha256=pricing_snapshot_sha256,
             pricing_snapshot_utc=pricing_snapshot_utc,
         )
-        super().__init__(path, policy=policy)
+        policy_hash = round1_policy_hash(policy)
+        if namespace == "canonical":
+            try:
+                binding = resolve_canonical_ledger(
+                    authorization_id=R1_AUTHORIZATION_ID,
+                    policy_hash=policy_hash,
+                    pricing_snapshot_sha256=pricing_snapshot_sha256,
+                    pricing_snapshot_utc=pricing_snapshot_utc,
+                    requested_path=path,
+                )
+            except CanonicalLedgerError:
+                raise
+            path = binding.ledger_path
+            ledger_id = binding.ledger_id
+            canonical_path = binding.ledger_path
+        elif namespace == "mock":
+            if path is None:
+                raise ValueError("mock R1 ledgers require an explicit isolated path")
+            binding = None
+            path = Path(path)
+            ledger_id = ephemeral_ledger_id(path, namespace="mock")
+            canonical_path = path
+        else:
+            raise ValueError("R1 budget namespace must be canonical or mock")
+        super().__init__(
+            path,
+            policy=policy,
+            ledger_id=ledger_id,
+            authorization_id=R1_AUTHORIZATION_ID,
+            namespace=namespace,
+            canonical_path=canonical_path,
+            pricing_snapshot_sha256=pricing_snapshot_sha256,
+            pricing_snapshot_utc=pricing_snapshot_utc,
+        )
+        self.canonical_binding: CanonicalLedgerBinding | None = binding
 
 
 def request_payload_hash(config: ProviderConfig, request: ProviderRequest) -> str:
@@ -188,6 +229,8 @@ class Round1Runner:
             or config.config_version != round1_policy_hash(self.budget.policy)
         ):
             raise BudgetExceededError("R1 config is not bound to the verified policy")
+        if config.live_enabled and self.budget.namespace != "canonical":
+            raise BudgetExceededError("live R1 dispatch requires the canonical authorization ledger")
         if request.cost_upper_bound_usd is None:
             raise BudgetExceededError("R1 requires an explicit conservative request bound")
         binding = {

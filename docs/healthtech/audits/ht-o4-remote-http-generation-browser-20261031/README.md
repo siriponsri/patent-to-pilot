@@ -48,9 +48,10 @@ This is real product-path engineering evidence for the named cases. It is not
 semantic device–patent gold, exhaustive recall, clinical suitability, FTO,
 patent validity, investment merit, deployment readiness, publication evidence,
 or commercial/user validation. O3 remains `BLOCKED_LOCAL`: canonical ledger
-identity, current account credit, exact comparison authorization, and
-rights-cleared outbound dossier prompts are still unresolved. No OpenRouter
-request was dispatched.
+identity, current account credit, fresh route/parameter/pricing checks, and
+rights-cleared outbound dossier prompts are still unresolved. The existing USD8
+owner scope already authorizes one local generator plus one API generator. No
+OpenRouter request was dispatched.
 
 ## Verification
 

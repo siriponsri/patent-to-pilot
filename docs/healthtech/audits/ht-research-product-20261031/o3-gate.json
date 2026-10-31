@@ -54,12 +54,25 @@
   "paid_gate": {
     "canonical_cumulative_ledger_identity": "UNRESOLVED",
     "account_credit_state": "NOT_RUN_NO_CREDENTIAL_READ",
-    "exact_paid_call_authorization_for_this_comparison": "NOT_GRANTED",
+    "exact_paid_call_authorization_for_this_comparison": "APPROVED_EXISTING_OWNER_SCOPE",
     "dossier_prompt_transfer_rights": "UNRESOLVED",
     "local_qwen3_8b_revision_freeze": "PASS_IMMUTABLE_HF_REVISION_AND_LICENSE_RECORDED",
     "provider_calls_in_this_package": 0,
     "paid_cost_usd_in_this_package": 0.0,
-    "decision": "Do not dispatch Qwen3-8B versus qwen/qwen3-32b generation comparison."
+    "decision": "Do not dispatch Qwen3-8B versus qwen/qwen3-32b generation comparison until ledger, credit, rights, and fresh route checks pass."
+  },
+  "offline_engineering": {
+    "status": "PASS_ENGINEERING_PREPARATION",
+    "authorization_gate": "APPROVED_EXISTING_OWNER_SCOPE",
+    "canonical_ledger_registry": "IMPLEMENTED_REQUIRES_REAL_JOURNAL_BINDING",
+    "mock_namespace_isolation": "PASS",
+    "rights_cleared_paired_payload": "IMPLEMENTED_SYNTHETIC_CANARY_COVERED",
+    "api_generation_runner": "IMPLEMENTED_DRY_RUN_AND_MOCK_ONLY",
+    "candidate_disclosed_link_validation": "PASS_SOURCE_BACKED_PROVENANCE",
+    "focused_tests": "35 passed",
+    "full_repository_tests": "506 passed, 1 skipped",
+    "paid_provider_calls": 0,
+    "paid_cost_usd": 0.0
   },
   "local_qwen3_8b_receipt": {
     "status": "PASS_OFFLINE_SNAPSHOT_TOKENIZER_SMOKE_AND_FROZEN_PACK_GENERATION",
@@ -85,7 +98,7 @@
   "next_required_evidence": [
     "one approved integration-bound canonical ledger identity covering the existing USD8 authorization",
     "current account credit and billing reconciliation without exposing credentials",
-    "explicit route/provider, attempt, token, and spend authorization for this comparison",
+    "fresh route/provider/parameter/pricing snapshot and per-attempt bound at dispatch time",
     "rights-cleared outbound prompt manifest for the dossier inputs",
     "current remote allocation/window evidence if a further local run is required"
   ]

@@ -98,8 +98,20 @@
     {
       "id": "o3_paid_gate",
       "status": "BLOCKED_LOCAL",
-      "result": "Local Qwen3-8B frozen-pack generation passed 3/3 schema-valid cases with zero provider calls; the separate qwen/qwen3-32b API comparison remains blocked because canonical USD8 ledger identity, current account credit, outbound dossier-prompt rights, and explicit comparison authorization are not all verified. No provider request was sent.",
+      "result": "Local Qwen3-8B frozen-pack generation passed 3/3 schema-valid cases with zero provider calls; the separate qwen/qwen3-32b API comparison remains blocked because the real canonical USD8 journal, current account credit, outbound dossier-prompt rights, and fresh route/parameter/pricing evidence are not all verified. The original owner scope already authorizes one local generator plus one API generator. No provider request was sent.",
       "evidence": "docs/healthtech/audits/ht-research-product-20261031/o3-gate.json"
+    },
+    {
+      "id": "o3_offline_preparation",
+      "status": "PASS_ENGINEERING_PREPARATION",
+      "result": "Canonical ledger registry, mock namespace isolation, rights-cleared paired payload manifest, API runner, candidate/disclosed-link validation, and live-before-dispatch gates are implemented. Focused O3 tests pass 35/35; full repository tests pass 506/506 with one existing optional skip. No paid request was sent.",
+      "evidence": [
+        "tests/test_healthtech_ledger_registry.py",
+        "tests/test_healthtech_generation_payload.py",
+        "tests/test_healthtech_api_generation.py",
+        "scripts/healthtech/register_canonical_openrouter_ledger.py",
+        "docs/healthtech/audits/pepo-o3-unblock-20261031/verification.json"
+      ]
     },
     {
       "id": "full_repository_regression",

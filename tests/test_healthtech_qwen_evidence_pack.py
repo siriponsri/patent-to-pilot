@@ -135,3 +135,42 @@ def test_runner_rejects_unknown_source_locator(tmp_path: Path) -> None:
     invalid["findings"][0]["locator"] = "field:wrong"
     with pytest.raises(ValueError, match="source_id/locator mismatch"):
         runner._validate_output(invalid, case, max_findings=6)
+
+
+def test_runner_rejects_candidate_classification_drift(tmp_path: Path) -> None:
+    builder = _load(SCRIPT, "qwen_pack_builder_for_candidate_classification")
+    runner = _load(RUNNER, "qwen_pack_runner_candidate_classification")
+    for index, case_id in enumerate(builder.CASE_ORDER, start=1):
+        _write_dossier(tmp_path / "dossiers", case_id, index)
+    pack = builder.build_pack(tmp_path / "dossiers", tmp_path / "pack.json", captured_at_utc="2026-10-31T00:00:00Z")
+    case = pack["cases"][0]
+    candidate = case["candidates"][0]
+    finding = {
+        "record_type": "candidate",
+        "record_id": candidate["patent_id_canonical"],
+        "source_id": candidate["source_id"],
+        "locator": candidate["locator"],
+        "classification": "disclosed_link",
+        "summary": "Synthetic candidate",
+        "support_basis": "Synthetic source",
+    }
+    output = {
+        "device_id": case["query"]["device_id_canonical"],
+        "device_name": case["query"]["device_id_raw"],
+        "findings": [finding],
+        "unresolved": [],
+    }
+    with pytest.raises(ValueError, match="does not match association_status"):
+        runner._validate_output(output, case, max_findings=6)
+    disclosed_case = json.loads(json.dumps(case))
+    disclosed_case["evidence"].append({
+        "evidence_id": "disclosure-evidence",
+        "evidence_kind": "patent_disclosure",
+        "source_id": candidate["source_id"],
+        "locator": "field:patent_numbers",
+    })
+    disclosed_case["candidates"][0]["association_status"] = "disclosed_link"
+    disclosed_case["candidates"][0]["disclosure_evidence_id"] = "disclosure-evidence"
+    output["findings"][0]["classification"] = "retrieved_candidate"
+    with pytest.raises(ValueError, match="does not match association_status"):
+        runner._validate_output(output, disclosed_case, max_findings=6)

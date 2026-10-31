@@ -153,12 +153,23 @@ def _run(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
         pricing_snapshot_sha256=pricing.snapshot_sha256,
         pricing_snapshot_utc=pricing.snapshot_utc,
     )
-    budget = Round1ProjectBudget(
-        args.budget_path,
-        model_provider_map={pricing.model: pricing.upstream_provider},
-        pricing_snapshot_sha256=pricing.snapshot_sha256,
-        pricing_snapshot_utc=pricing.snapshot_utc,
-    )
+    if args.mode == "mock":
+        mock_path = args.budget_path or (args.output / "mock-round1.sqlite3")
+        budget = Round1ProjectBudget(
+            mock_path,
+            model_provider_map={pricing.model: pricing.upstream_provider},
+            pricing_snapshot_sha256=pricing.snapshot_sha256,
+            pricing_snapshot_utc=pricing.snapshot_utc,
+            namespace="mock",
+        )
+    else:
+        budget = Round1ProjectBudget(
+            args.budget_path,
+            model_provider_map={pricing.model: pricing.upstream_provider},
+            pricing_snapshot_sha256=pricing.snapshot_sha256,
+            pricing_snapshot_utc=pricing.snapshot_utc,
+            namespace="canonical",
+        )
     transfer_manifest = None if args.transfer_manifest is None else ProviderTransferManifest.model_validate(_read_json(args.transfer_manifest))
     runtime_sources = _sources(runtime, registry)
     devices, patents = BASELINES.validate_runtime_payload(runtime)
@@ -310,7 +321,12 @@ def main() -> int:
     parser.add_argument("--protocol-hash", required=True)
     parser.add_argument("--cohort-manifest-hash", required=True)
     parser.add_argument("--model-snapshot", type=Path, required=True)
-    parser.add_argument("--budget-path", type=Path, required=True)
+    parser.add_argument(
+        "--budget-path",
+        type=Path,
+        default=None,
+        help="isolated mock journal path; live mode accepts only the registered canonical path",
+    )
     parser.add_argument("--transfer-manifest", type=Path)
     parser.add_argument("--env-file", type=Path)
     parser.add_argument("--run-id", required=True)

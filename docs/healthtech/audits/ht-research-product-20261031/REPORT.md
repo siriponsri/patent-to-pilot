@@ -64,11 +64,21 @@ unknown-pending attempts. The public Qwen3-32B endpoint snapshot at
 `0.28` per million prompt/completion tokens, Tenstorrent at USD `0.14` /
 `0.40`, and SiliconFlow at USD `0.14` / `0.57`. This is public catalog
 metadata only; it does not establish account credit, billing state, or a route
-choice. The API comparison remains closed because the USD8 authorization still
-lacks a single canonical ledger identity, current account credit is unverified,
-exact comparison authorization is not granted, and outbound dossier-prompt
-rights are unresolved. No provider request or paid cost occurred in this
-package. See `o3-gate.json` and the local generation receipt.
+  choice. The original USD8 owner scope already approves one local generator
+  plus one API generator. The API comparison remains closed because a single
+  canonical ledger identity, current account credit, outbound dossier-prompt
+  rights, and fresh route/parameter checks are unresolved. No provider request
+  or paid cost occurred in this package. See `o3-gate.json` and the local
+  generation receipt.
+
+Offline preparation for this branch is now engineering-complete: the existing
+owner scope is recorded as approved, all live callers resolve through one
+per-user canonical ledger registry, mock ledgers use a separate namespace, and
+the runner reserves before dispatch with exact route, payload, and per-attempt
+bound checks. The paired payload builder emits a sanitized manifest and rejects
+raw source payloads, unresolved remote rights, hidden candidate references,
+and candidate-to-`disclosed_link` classification drift. The API runner is
+covered by dry-run and mock tests; it has not sent a paid request.
 
 ## Reproduction anchors
 

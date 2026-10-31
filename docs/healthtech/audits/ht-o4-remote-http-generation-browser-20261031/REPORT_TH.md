@@ -45,8 +45,16 @@ cohort/grouping/candidate ceiling และ `UNJUDGED` policy แตกต่า
 
 Qwen3-8B local ให้ schema-valid `3/3` ที่ latency ประมาณ 32.888–33.121 วินาที
 และไม่มีค่าใช้จ่ายแบบ paid provider ส่วน OpenRouter qwen3-32b ยัง
-`BLOCKED_LOCAL` เพราะ canonical ledger, current credit, exact authorization
-และ rights-cleared prompt manifest ยังไม่ครบ จึงไม่มีการเรียก API
+`BLOCKED_LOCAL` เพราะ canonical ledger, current credit, fresh route/parameter
+checks และ rights-cleared prompt manifest ยังไม่ครบ จึงไม่มีการเรียก API โดย
+สิทธิ์เดิม USD8 อนุมัติ local generator 1 ตัวและ API generator 1 ตัวอยู่แล้ว
+
+ส่วน engineering ที่ทำต่อแบบ offline เสร็จแล้ว: แก้ gate ไม่ให้ตีความสิทธิ์เดิม
+เป็น `NOT_GRANTED`, เพิ่ม canonical ledger registry ที่ปฏิเสธการสลับ path และไม่
+สร้าง journal ใหม่, ต่อ paired payload/API runner พร้อม mock/dry-run tests และ
+เพิ่ม validation ไม่ให้ `retrieved_candidate` ถูกยกระดับเป็น `disclosed_link`
+โดยไม่มี disclosure provenance. ส่วนนี้ยังไม่ปลด paid branch เพราะยังไม่มี
+journal จริงและหลักฐานเครดิตปัจจุบันสำหรับ reconcile.
 
 ผลนี้เป็น engineering/research handoff ไม่ใช่ semantic patent gold, exhaustive
 recall, clinical/FTO, patent validity, investment, deployment หรือ commercial

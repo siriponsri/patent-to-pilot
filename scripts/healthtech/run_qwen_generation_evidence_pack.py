@@ -7,13 +7,33 @@ import json
 import os
 from pathlib import Path
 import platform
-import resource
+import sys
 import time
 from typing import Any
 
-import torch
-import transformers
-from transformers import AutoModelForCausalLM, AutoTokenizer
+try:
+    import resource
+except ImportError:  # pragma: no cover - Windows has no stdlib resource module.
+    resource = None
+
+try:
+    import torch
+    import transformers
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+except ImportError:  # pragma: no cover - optional local-model runtime dependency.
+    torch = None
+    transformers = None
+    AutoModelForCausalLM = None
+    AutoTokenizer = None
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "src"))
+
+from patent_to_pilot.healthtech.generation_payload import (  # noqa: E402
+    build_generation_messages,
+    strip_fence,
+    validate_generation_output,
+)
 
 
 APPROVED_GPU_UUID = "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089"
@@ -58,131 +78,20 @@ def _load_pack(path: Path) -> dict[str, Any]:
 
 
 def _strip_fence(text: str) -> str:
-    text = text.strip()
-    if text.startswith("```") and text.endswith("```"):
-        lines = text.splitlines()
-        if len(lines) >= 3:
-            return "\n".join(lines[1:-1]).strip()
-    return text
+    return strip_fence(text)
 
 
 def _validate_output(parsed: Any, case: dict[str, Any], max_findings: int) -> None:
-    if not isinstance(parsed, dict) or set(parsed) != {"device_id", "device_name", "findings", "unresolved"}:
-        raise ValueError("output keys do not match frozen schema")
-    if parsed["device_id"] != case["query"]["device_id_canonical"]:
-        raise ValueError("device_id does not match case")
-    if not isinstance(parsed["device_name"], str):
-        raise ValueError("device_name is not a string")
-    findings = parsed["findings"]
-    if not isinstance(findings, list) or len(findings) > max_findings:
-        raise ValueError("findings violates maxItems")
-    evidence_by_id = {row["evidence_id"]: row for row in case["evidence"]}
-    candidate_by_id = {row["patent_id_canonical"]: row for row in case["candidates"]}
-    allowed_types = {"source_fact", "disclosed_link", "retrieved_candidate", "unresolved"}
-    for finding in findings:
-        if not isinstance(finding, dict):
-            raise ValueError("finding is not an object")
-        required = {
-            "record_type",
-            "record_id",
-            "source_id",
-            "locator",
-            "classification",
-            "summary",
-            "support_basis",
-        }
-        if set(finding) != required:
-            raise ValueError("finding keys do not match frozen schema")
-        if finding["record_type"] == "evidence":
-            row = evidence_by_id.get(finding["record_id"])
-            if row is None:
-                raise ValueError("finding references unknown evidence_id")
-            if finding["source_id"] != row["source_id"] or finding["locator"] != row["locator"]:
-                raise ValueError("evidence source_id/locator mismatch")
-        elif finding["record_type"] == "candidate":
-            row = candidate_by_id.get(finding["record_id"])
-            if row is None:
-                raise ValueError("finding references unknown candidate")
-            if finding["source_id"] != row["source_id"] or finding["locator"] != row["locator"]:
-                raise ValueError("candidate source_id/locator mismatch")
-        else:
-            raise ValueError("unknown record_type")
-        if finding["classification"] not in allowed_types:
-            raise ValueError("unknown classification")
-        if not isinstance(finding["summary"], str) or not isinstance(finding["support_basis"], str):
-            raise ValueError("finding text fields are not strings")
-    if not isinstance(parsed["unresolved"], list) or any(not isinstance(item, str) for item in parsed["unresolved"]):
-        raise ValueError("unresolved must be a string array")
+    validate_generation_output(parsed, case, max_findings)
 
 
 def _build_messages(pack: dict[str, Any], case: dict[str, Any]) -> list[dict[str, str]]:
-    contract = pack["prompt_contract"]
-    system_text = "\n".join(contract["system_instructions"])
-    query = case["query"]
-    compact_evidence = []
-    for row in case["evidence"]:
-        compact_row = dict(row)
-        value = compact_row.get("structured_value")
-        if isinstance(value, list) and len(value) > 8:
-            compact_row["structured_value"] = {
-                "count": len(value),
-                "values_omitted_from_model_view": True,
-            }
-        compact_evidence.append(compact_row)
-    compact_case = {
-        "case_id": case["case_id"],
-        "query": {
-            key: query.get(key)
-            for key in (
-                "query_id",
-                "device_id_canonical",
-                "device_id_raw",
-                "jurisdiction",
-                "brief",
-                "technical_description",
-                "features_of_interest",
-                "user_questions",
-                "evidence_cutoff",
-            )
-        },
-        "evidence": compact_evidence,
-        "candidates": [
-            {
-                key: candidate.get(key)
-                for key in (
-                    "rank",
-                    "association_status",
-                    "disclosure_evidence_id",
-                    "patent_id_canonical",
-                    "patent_id_raw",
-                    "source_id",
-                    "source_revision",
-                    "locator",
-                )
-            }
-            for candidate in case["candidates"][:6]
-        ],
-        "candidate_preview": "first six candidates only; complete ordered candidate list remains in the frozen pack",
-        "unresolved_items": case.get("unresolved_items", [])[:1],
-    }
-    compact_schema = (
-        "Return one JSON object with exactly these top-level keys: device_id, device_name, findings, unresolved. "
-        "Each finding must have exactly: record_type, record_id, source_id, locator, classification, summary, support_basis. "
-        "record_type is evidence or candidate; classification is source_fact, disclosed_link, retrieved_candidate, or unresolved. "
-        "Use exact IDs and locators from the case. unresolved must contain zero or one concise string."
-    )
-    user_payload = {
-        "task": "Extract an auditable evidence summary for one named device.",
-        "output_schema": compact_schema,
-        "case": compact_case,
-    }
-    return [
-        {"role": "system", "content": system_text},
-        {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False, sort_keys=True)},
-    ]
+    return build_generation_messages(pack, case)
 
 
 def run_generation(pack: dict[str, Any], model_root: Path, output_path: Path, max_new_tokens: int, max_findings: int) -> dict[str, Any]:
+    if torch is None or transformers is None or AutoModelForCausalLM is None or AutoTokenizer is None:
+        raise RuntimeError("local generation runtime dependencies are unavailable")
     if not torch.cuda.is_available() or torch.cuda.device_count() != 1:
         raise RuntimeError("expected exactly one visible CUDA device")
     device_name = torch.cuda.get_device_name(0)
@@ -272,7 +181,10 @@ def run_generation(pack: dict[str, Any], model_root: Path, output_path: Path, ma
         "load_seconds": load_seconds,
         "gpu_peak_allocated_bytes": int(torch.cuda.max_memory_allocated()),
         "gpu_peak_reserved_bytes": int(torch.cuda.max_memory_reserved()),
-        "rss_peak_bytes": int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024),
+        "rss_peak_bytes": (
+            int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024)
+            if resource is not None else None
+        ),
         "provider_calls": 0,
         "paid_cost_usd": 0.0,
         "cases": case_receipts,

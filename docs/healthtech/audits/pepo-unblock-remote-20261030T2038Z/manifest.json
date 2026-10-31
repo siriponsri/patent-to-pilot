@@ -1,0 +1,71 @@
+{
+  "format": "audit-file-sha256-manifest-v1",
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "CHECKPOINT.json",
+      "bytes": 819,
+      "sha256": "63449ae7758936e0972109514096ce74acdb4f9bbf7a3fad227a00540ab813ea"
+    },
+    {
+      "path": "DIAGNOSIS_TH.md",
+      "bytes": 3224,
+      "sha256": "f45b4f74ebbdb0bb7d5fe4e715a0090e321a5062100a2f56f71995aef706ef28"
+    },
+    {
+      "path": "evidence/baseline/tests.xml",
+      "bytes": 8868,
+      "sha256": "8f245c5fa3738b370e0c8da847809b60471541b516f293e0f43c050436c48c1b"
+    },
+    {
+      "path": "evidence/baseline/verification.json",
+      "bytes": 683,
+      "sha256": "2714e25190c00ec70596329283352264ab627e8962eb6209879f5213c2544b4d"
+    },
+    {
+      "path": "evidence/repair/tests.xml",
+      "bytes": 9116,
+      "sha256": "77212df35ead5ee28d4d88a1c5f8c831a6aa93904e4ce8832c44b9cced8dc455"
+    },
+    {
+      "path": "evidence/repair/verification.json",
+      "bytes": 959,
+      "sha256": "86aa60c2f21e43c658d5588da086b68af92eb1b725dbe97030bdee256694636c"
+    },
+    {
+      "path": "evidence/run_unblock_local_cases.py",
+      "bytes": 8201,
+      "sha256": "2649f65fe1b5ce87f656ef6bb27112da61f3e82c9f08c10f661385aa65434beb"
+    },
+    {
+      "path": "evidence/run_unblock_tests.py",
+      "bytes": 2938,
+      "sha256": "fd97b1faa0f9e54a5ef4dd2c6c543a58fc2b24b41363fdef573bbd5bad79babc"
+    },
+    {
+      "path": "LOCAL_CASES_RECEIPT.json",
+      "bytes": 3598,
+      "sha256": "22325b55540a984751e8913a96689638a9f48fb4f4e059ca2a4ad0b92705bd56"
+    },
+    {
+      "path": "NEXT_ACTIONS.md",
+      "bytes": 3576,
+      "sha256": "0880f335fcdef2c007fd3e0c3f0859f93e14655373802f163cb3a9db54876d73"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4499,
+      "sha256": "58ae537f5f57daadbfbe18b50a86a65881541297584e88ad275a0c849d95ea68"
+    },
+    {
+      "path": "repair.patch",
+      "bytes": 16281,
+      "sha256": "01c8ba6856cd780f09a80a8f007e24eec996607d8e2196247485b37cbf835a09"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 4697,
+      "sha256": "6f745e71408e840025b06ea6ba5086c30d3fcc29df07164c2e50212e9dbea094"
+    }
+  ]
+}

@@ -100,10 +100,20 @@ than a larger API model.
 
 The OpenRouter `qwen/qwen3-32b` branch is `BLOCKED_LOCAL` and was not called.
 The missing gates are one canonical cumulative ledger identity, current
-account credit, exact route/spend authorization, exact comparison
-authorization, and a rights-cleared outbound dossier-prompt manifest. The
-absence of an API result is therefore a known blocker, not a zero-quality or
-zero-cost observation.
+account credit, a fresh route/parameter/pricing snapshot, and a rights-cleared
+outbound dossier-prompt manifest. The original USD8 owner scope already
+authorizes one local generator plus one API generator. The absence of an API
+result is therefore a known blocker, not a zero-quality or zero-cost
+observation.
+
+The follow-on offline engineering package is complete: the existing owner
+authorization is no longer represented as `NOT_GRANTED`; the shared ledger
+registry rejects path substitution and refuses to create a replacement journal;
+the paired payload and API runner are implemented with mock/dry-run coverage;
+and candidate output validation preserves `retrieved_candidate` versus
+source-backed `disclosed_link` semantics. These checks do not clear the paid
+branch because the real journal and current account credit were not available
+for reconciliation.
 
 ## 5. Failure analysis and boundaries
 
@@ -127,4 +137,5 @@ O1 and O2 are complete engineering packages. O4 is a verified three-case
 product-path and research handoff with grouped retrieval, failure, and
 cost-quality analysis. O3 remains the only material blocker to a complete
 four-outcome goal. Keep paid dispatch closed and resume only after the O3
-authorization, ledger, credit, route, and prompt-rights gates are recorded.
+ledger, credit, fresh route/parameter, and prompt-rights gates are recorded;
+the original owner authorization is already present.

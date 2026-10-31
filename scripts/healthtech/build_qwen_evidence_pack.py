@@ -54,10 +54,13 @@ def _source_descriptor(source: dict[str, Any]) -> dict[str, Any]:
         "retrieved_at": registry.get("retrieved_at"),
         "limits": registry.get("limits", []),
         "rights_id": rights.get("rights_id"),
+        "basis_url": rights.get("basis_url"),
+        "clause_locator": rights.get("clause_locator"),
         "local_evaluation": rights.get("local_evaluation"),
         "product_display": rights.get("product_display"),
         "redistribution": rights.get("redistribution"),
         "displayable_fields": rights.get("displayable_fields", []),
+        "synthetic": bool(source.get("synthetic", False)),
     }
 
 

@@ -1,0 +1,38 @@
+{
+  "format": "ptp-o3-journal-search-receipt-v1",
+  "captured_at_utc": "2026-10-31T10:45:25.2857671Z",
+  "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+  "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+  "search_mode": "READ_ONLY_METADATA_AND_TEXT_REFERENCE_SCAN",
+  "roots_scanned": [
+    "C:/Users/User/Desktop/myProject",
+    "C:/Users/User/Documents/Codex/2026-10-31"
+  ],
+  "excluded_from_scan": [
+    "credentials and .env contents",
+    "secret/key-named files",
+    "node_modules, virtual environments, .git metadata",
+    "private journal contents"
+  ],
+  "findings": {
+    "sqlite3_files_found_in_scanned_roots": 0,
+    "sanitized_all_attempt_export_found": false,
+    "current_canonical_journal_path_found": false,
+    "path_or_hash_references_found": true,
+    "historical_actual_debit_usd": 0.0001464,
+    "historical_unknown_pending_attempts": 0,
+    "current_account_credit_verified": false
+  },
+  "reference_evidence": [
+    "docs/handoff/LUNA_CLOSEOUT_EVIDENCE.json",
+    "docs/healthtech/audits/pepo-o3-unblock-20261031/verification.json"
+  ],
+  "actions_not_taken": [
+    "canonical registry registration",
+    "replacement journal creation",
+    "credential read",
+    "provider request",
+    "paid dispatch"
+  ],
+  "status": "BLOCKED_LOCAL_MISSING_JOURNAL_AND_CREDIT_EVIDENCE"
+}

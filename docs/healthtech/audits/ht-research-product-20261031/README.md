@@ -87,9 +87,15 @@ prefixes. Prompt policy for this run is the predeclared PatEmbed
   and `NOT_RUN`. Historical OpenRouter receipts reconcile to cumulative actual
   debit USD 0.0001464 with zero unknown-pending attempts, and public Qwen3-32B
   route/pricing metadata was refreshed without credentials. The paid gate stays
-  closed because the USD8 authorization lacks one canonical ledger identity,
-  current account credit is unverified, exact comparison authorization is not
-  granted, and outbound dossier-prompt rights are unresolved. See `o3-gate.json`.
+  closed only because canonical ledger identity, current account credit,
+  outbound dossier-prompt rights, and fresh route/parameter checks are
+  unresolved. The original USD8 owner scope already approves one local
+  generator plus one API generator. See `o3-gate.json`.
+
+Offline O3 engineering preparation is complete: the canonical ledger registry,
+mock namespace, rights-cleared payload manifest, API runner, and
+candidate/disclosed-link validation are implemented and covered by focused
+tests. This does not count as a paid comparison or research completion.
 
 ## Completed O2/O4 evidence
 
