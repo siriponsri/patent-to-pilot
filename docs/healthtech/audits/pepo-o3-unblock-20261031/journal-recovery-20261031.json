@@ -1,0 +1,53 @@
+{
+  "format": "ptp-o3-journal-recovery-receipt-v1",
+  "captured_at_utc": "2026-10-31T11:13:33.2610177Z",
+  "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+  "recovery_root_alias": "_preserved-main-untracked-20261030/results-development-provider-pilot",
+  "source_files_not_copied": true,
+  "journals": [
+    {
+      "locator": "live.sqlite3",
+      "sha256": "a10f81d79a37a39b53547cb4417437499aa81b69a896048f352ff3a8ba8e9d36",
+      "bytes": 24576,
+      "mode": "live",
+      "schema": ["attempts", "meta", "reconciliations"],
+      "attempt_count": 2,
+      "actual_debit_usd": 0.0000732,
+      "unknown_pending_attempts": 0,
+      "policy_class": "legacy_provider_pilot_policy",
+      "r1_compatible": false
+    },
+    {
+      "locator": "paired-revalidation-1.sqlite3",
+      "sha256": "f6943c6b99b999f88e5df839e35c15bd86119cb19a89ab4507d61b40d7de9fcb",
+      "bytes": 20480,
+      "mode": "live",
+      "schema": ["attempts", "meta"],
+      "attempt_count": 2,
+      "actual_debit_usd": 0.0000732,
+      "unknown_pending_attempts": 0,
+      "policy_class": "legacy_provider_pilot_policy",
+      "r1_compatible": false,
+      "prior_journal_sha256": "a10f81d79a37a39b53547cb4417437499aa81b69a896048f352ff3a8ba8e9d36"
+    }
+  ],
+  "reconciled_summary": {
+    "historical_actual_debit_usd": 0.0001464,
+    "historical_unknown_pending_attempts": 0,
+    "historical_receipt_chain_verified": true,
+    "r1_policy_hash_for_current_snapshot": "92da62e763c27872132d0c14137a549a7d6a0b12dd1f81807b13f3f3b5911f3b",
+    "r1_canonical_journal_found": false,
+    "account_credit_verified": false
+  },
+  "registration_probe": {
+    "status": "REJECTED_FAIL_CLOSED",
+    "reason": "Recovered files use the legacy attempts/meta schema and cannot be bound as the current R1 canonical ledger without a sourced migration/reconciliation contract.",
+    "registry_created": false,
+    "paid_dispatch": "NOT_RUN"
+  },
+  "limitations": [
+    "Historical journal contents remain outside the repository.",
+    "The recovered journals prove historical debit only; they do not prove current account credit or remaining R1 admission.",
+    "No R1 canonical journal or sanitized all-attempt export for the current authorization was found."
+  ]
+}

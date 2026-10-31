@@ -28,8 +28,12 @@
     "current_account_credit_verified": false,
     "search_mode": "read_only_sanitized_path_and_record_search_plus_metadata_scan",
     "search_receipt": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-search-20261031.json",
+    "historical_recovery_receipt": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-recovery-20261031.json",
+    "historical_recovered_journals": 2,
+    "r1_canonical_journal_found": false,
+    "r1_registration_probe": "REJECTED_FAIL_CLOSED_LEGACY_POLICY_SCHEMA",
     "paid_dispatch": "NOT_RUN",
-    "owner_input_required": "journal location or sanitized all-attempt export; current credit/billing snapshot if approved integration cannot provide it"
+    "owner_input_required": "R1 canonical journal location or sanitized all-attempt export; current credit/billing snapshot if approved integration cannot provide it"
   },
   "public_endpoint_refresh": {
     "status": "PASS_PUBLIC_METADATA_ONLY",
@@ -48,17 +52,23 @@
     "rights_cleared_paired_payload": "PASS_SYNTHETIC_CANARY_CONTRACT",
     "api_generation_runner": "PASS_DRY_RUN_AND_MOCK_CONTRACT",
     "candidate_disclosed_link_validation": "PASS",
+    "legacy_sqlite_journal_guard": "PASS_FAIL_CLOSED_BEFORE_REGISTRY_CREATION",
     "authorization_gate_summary": "PASS_EXISTING_SCOPE_RECORDED_AS_APPROVED"
   },
   "checks": {
     "focused_o3": {
       "command": "python -m pytest -p no:cacheprovider tests/test_healthtech_ledger_registry.py tests/test_healthtech_generation_payload.py tests/test_healthtech_api_generation.py tests/test_healthtech_round1_budget.py tests/test_healthtech_b4_live.py tests/test_healthtech_qwen_evidence_pack.py",
-      "result": "35 passed",
+      "result": "37 passed",
+      "exit_code": 0
+    },
+    "journal_guard_regression": {
+      "command": "rtk proxy python -m pytest -p no:cacheprovider tests/test_healthtech_ledger_registry.py tests/test_healthtech_round1_budget.py tests/test_healthtech_b4_live.py",
+      "result": "29 passed",
       "exit_code": 0
     },
     "full_python": {
       "command": "python -m pytest -p no:cacheprovider",
-      "result": "506 passed, 1 skipped, 2 warnings",
+      "result": "508 passed, 1 skipped, 2 warnings",
       "exit_code": 0
     },
     "compileall": {
@@ -87,5 +97,5 @@
     "semantic_device_patent_gold": "not_run",
     "clinical_fot_validity_investment": "not_run"
   },
-  "next_action": "Obtain the real journal location or sanitized all-attempt export and current credit/billing snapshot; do not ask for the existing USD8 authorization again. Route metadata is refreshed but remains non-dispatch evidence."
+  "next_action": "Obtain the R1 canonical journal location or sanitized all-attempt export and current credit/billing snapshot; do not ask for the existing USD8 authorization again. Recovered legacy receipts are reconciled but cannot be rebound as R1."
 }

@@ -3,7 +3,8 @@
 1. Provide only the exact location of the existing OpenRouter R1 journal, or a
    sanitized export containing every attempt ID, generation ID, reservation,
    actual/unknown billing state, and reconciliation status after the known
-   historical receipts.
+   historical receipts. The recovered legacy journals are receipt evidence,
+   not an R1-compatible canonical ledger.
 2. Provide a sanitized current account-credit/billing snapshot with timestamp,
    or expose the already-approved integration that can return it. Do not send
    credentials or create a new key; do not re-approve the existing USD8 scope.

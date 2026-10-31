@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import sqlite3
+
 import pytest
 
 from patent_to_pilot.providers.ledger_registry import (
@@ -72,6 +74,43 @@ def test_registry_does_not_rebind_existing_authorization(tmp_path):
             pricing_snapshot_sha256=PRICE_HASH,
             pricing_snapshot_utc=PRICE_TIME,
             registry_path=registry,
+        )
+
+
+def test_registry_rejects_legacy_sqlite_journal(tmp_path):
+    ledger = tmp_path / "legacy.sqlite3"
+    with sqlite3.connect(ledger) as db:
+        db.execute("CREATE TABLE meta(id INTEGER PRIMARY KEY, mode TEXT NOT NULL)")
+    with pytest.raises(CanonicalLedgerError, match="compatible R1 budget ledger"):
+        register_canonical_ledger(
+            ledger,
+            authorization_id=AUTH,
+            policy_hash=POLICY_HASH,
+            pricing_snapshot_sha256=PRICE_HASH,
+            pricing_snapshot_utc=PRICE_TIME,
+            registry_path=tmp_path / "registry.json",
+        )
+
+
+def test_registry_rejects_mock_sqlite_namespace(tmp_path):
+    ledger = tmp_path / "mock.sqlite3"
+    budget = Round1ProjectBudget(
+        ledger,
+        model_provider_map={MODEL: PROVIDER},
+        pricing_snapshot_sha256=PRICE_HASH,
+        pricing_snapshot_utc=PRICE_TIME,
+        namespace="mock",
+    )
+    policy_hash = budget.policy_hash
+    budget.close()
+    with pytest.raises(CanonicalLedgerError, match="mock or non-canonical"):
+        register_canonical_ledger(
+            ledger,
+            authorization_id=AUTH,
+            policy_hash=policy_hash,
+            pricing_snapshot_sha256=PRICE_HASH,
+            pricing_snapshot_utc=PRICE_TIME,
+            registry_path=tmp_path / "registry.json",
         )
 
 

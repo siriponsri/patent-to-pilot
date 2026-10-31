@@ -14,6 +14,7 @@ import json
 import os
 from pathlib import Path
 import re
+import sqlite3
 from typing import Any
 
 
@@ -73,6 +74,42 @@ def _validate_digest(value: Any, label: str) -> str:
     return value
 
 
+def _validate_existing_sqlite_journal(path: Path, *, authorization_id: str, policy_hash: str) -> None:
+    """Reject a readable SQLite journal from the wrong policy or namespace.
+
+    Non-SQLite files remain bindable for registry-only tests and future storage
+    adapters; the live SQLite budget path is checked before a registry write.
+    """
+    try:
+        with path.open("rb") as handle:
+            if handle.read(16) != b"SQLite format 3\x00":
+                return
+    except OSError as exc:
+        raise CanonicalLedgerError("canonical ledger journal is unreadable") from exc
+    try:
+        with sqlite3.connect(f"file:{path.as_posix()}?mode=ro", uri=True) as db:
+            tables = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+            if "budget_meta" not in tables:
+                raise CanonicalLedgerError("existing SQLite journal is not a compatible R1 budget ledger")
+            hashes = db.execute("SELECT policy_hash FROM budget_meta").fetchall()
+            if hashes != [(policy_hash,)]:
+                raise CanonicalLedgerError("existing SQLite journal policy hash differs from the requested authorization")
+            if "budget_ledger_meta" in tables:
+                row = db.execute(
+                    "SELECT authorization_id, namespace FROM budget_ledger_meta WHERE singleton=1"
+                ).fetchone()
+                if row is not None:
+                    journal_authorization, namespace = row
+                    if journal_authorization not in {None, authorization_id}:
+                        raise CanonicalLedgerError("existing SQLite journal authorization differs from the requested authorization")
+                    if namespace != "canonical":
+                        raise CanonicalLedgerError("mock or non-canonical SQLite journal cannot be bound for live dispatch")
+    except CanonicalLedgerError:
+        raise
+    except sqlite3.Error as exc:
+        raise CanonicalLedgerError("existing SQLite journal is unreadable") from exc
+
+
 def _binding_from_dict(raw: dict[str, Any], registry_path: Path, expected_authorization: str) -> CanonicalLedgerBinding:
     if raw.get("format") != REGISTRY_FORMAT:
         raise CanonicalLedgerError("unsupported canonical ledger registry format")
@@ -112,6 +149,7 @@ def register_canonical_ledger(
     path = _absolute(ledger_path)
     if not path.is_file():
         raise CanonicalLedgerError("cannot register a missing ledger journal")
+    _validate_existing_sqlite_journal(path, authorization_id=authorization_id, policy_hash=policy_hash)
     registry = _absolute(registry_path or default_registry_path(authorization_id))
     binding = CanonicalLedgerBinding(
         authorization_id=authorization_id,
@@ -174,6 +212,11 @@ def resolve_canonical_ledger(
     binding = _binding_from_dict(raw, registry, authorization_id)
     if not binding.ledger_path.is_file():
         raise CanonicalLedgerError("canonical ledger journal is missing; do not create a replacement")
+    _validate_existing_sqlite_journal(
+        binding.ledger_path,
+        authorization_id=authorization_id,
+        policy_hash=policy_hash,
+    )
     if requested_path is not None and _absolute(requested_path) != binding.ledger_path:
         raise CanonicalLedgerError("requested budget path is not the registered canonical ledger")
     if binding.policy_hash != _validate_digest(policy_hash, "policy hash"):

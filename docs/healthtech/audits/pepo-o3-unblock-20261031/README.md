@@ -37,16 +37,18 @@ scope. No new grant, top-up, ledger reset, or 24-hour clock reset was created.
 
 ## Journal and billing boundary
 
-Read-only search recovered historical receipts totaling `USD0.0001464` actual
-debit with zero unknown-pending attempts. The search did not find the current
-canonical journal file or an integration-bound current account-credit snapshot
-in the scoped project/worktree records. Historical receipts are retained as
-evidence but are not treated as proof of current remaining budget.
+Read-only recovery inspection found the two historical live journals behind the
+preserved Phase A and paired-revalidation receipts. Their hashes, schemas, and
+reconciled debit are recorded in `journal-recovery-20261031.json`; the files
+remain outside the repository. The chain totals `USD0.0001464` actual debit
+with zero unknown-pending attempts. Both journals use the legacy `attempts/meta`
+schema, so the new registry rejects them as incompatible with the current R1
+policy instead of binding them as a false canonical ledger.
 
-A subsequent metadata-only scan across the project and dated Codex task roots
-also found no `*.sqlite3` journal and no sanitized all-attempt export; its
-sanitized receipt is `journal-search-20261031.json`. No private journal
-contents or credentials were read.
+The search still did not find the current R1 canonical journal or an
+integration-bound current account-credit snapshot. The earlier metadata-only
+search receipt remains at `journal-search-20261031.json`. No private journal
+contents or credentials were copied into this audit.
 
 The paid branch remains closed. No credential was read, no provider request was
 sent, and no current account credit was inferred from shared-account metadata.
@@ -55,8 +57,9 @@ journal, credit, or transfer-rights gates.
 
 ## Verification
 
-- Focused O3 suite: `35 passed`.
-- Full Python suite: `506 passed, 1 skipped`, exit code `0`.
+- Focused O3 suite: `37 passed`.
+- Journal compatibility/provider guard suite: `29 passed`.
+- Full Python suite: `508 passed, 1 skipped`, exit code `0`.
 - `compileall`: exit code `0`.
 - `git diff --check`: exit code `0`.
 - Paid/provider calls in this package: `0`.

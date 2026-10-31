@@ -605,5 +605,9 @@
   "latest_o4_remote_http_generation_browser_checkpoint": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/CHECKPOINT.json",
   "latest_o4_remote_http_generation_browser_verification": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/verification.json",
   "latest_o4_remote_http_generation_browser_report": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT.md",
-  "latest_o4_remote_http_generation_browser_report_th": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT_TH.md"
+  "latest_o4_remote_http_generation_browser_report_th": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT_TH.md",
+  "latest_pepo_o3_unblock_audit": "docs/healthtech/audits/pepo-o3-unblock-20261031/README.md",
+  "latest_pepo_o3_unblock_verification": "docs/healthtech/audits/pepo-o3-unblock-20261031/verification.json",
+  "latest_pepo_o3_journal_recovery": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-recovery-20261031.json",
+  "latest_pepo_o3_status": "PASS_ENGINEERING_PREPARATION_O3_PAID_RESEARCH_PARTIAL_LEGACY_JOURNAL_RECONCILED"
 }
