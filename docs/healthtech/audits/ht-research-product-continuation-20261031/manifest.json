@@ -1,0 +1,13 @@
+{
+  "format": "ht-research-product-continuation-manifest-v1",
+  "self_excluded": true,
+  "files": [
+    {"path": "README.md", "bytes": 1954, "sha256": "adf250f1af51ecdedfb66d6887269a8ccab485955b9150119d5b6a20481350dc"},
+    {"path": "CHECKPOINT.json", "bytes": 2655, "sha256": "3d9f3e8be94eae06b7a18ef680eab629c94cef3522fcbbdd3f2c8a3874329696"},
+    {"path": "NEXT_ACTIONS.md", "bytes": 700, "sha256": "f2ebeb7640d959877dff139464689421b2b272eea460c084183459a6ff8519ef"},
+    {"path": "o3-local-model-preflight.json", "bytes": 1192, "sha256": "a4ec1bf7cf770904ab9086ca837214de70a57778c3783e497ff33bb9d281ea9b"},
+    {"path": "adaptive-policy-report.json", "bytes": 9142, "sha256": "811d8f2a2cb036c03b3b470628aa0e5075752614bd6b95f8bbc9ba2129e2de19"},
+    {"path": "ADAPTIVE_POLICY_REPORT.md", "bytes": 2513, "sha256": "fd4efacdcc0861a655d6a00288a62a0906f0c0d8f208d785a7329b6a12c4a2a9"},
+    {"path": "verification.json", "bytes": 4227, "sha256": "6c6020e68a976bdcdd4ae6937c19aaf90683d8ef9dd69f6403dbaa6c5429eb9c"}
+  ]
+}

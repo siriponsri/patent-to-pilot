@@ -1,0 +1,51 @@
+{
+  "format": "documentation-sha256-manifest-v1",
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "AUTHORIZATION_AND_BUDGET.md",
+      "bytes": 9517,
+      "sha256": "156a8c95a491270ab0346a722e6ede27e8da3d5ffd8cce5b392ec35fdd118748"
+    },
+    {
+      "path": "CHECKPOINT_AND_REPORTING.md",
+      "bytes": 8235,
+      "sha256": "599696dc6a3cbd7bae75473ac0c8e6f80279a5b1417cc82400aa3a2093b353e3"
+    },
+    {
+      "path": "EXECUTION_PLAN.md",
+      "bytes": 14776,
+      "sha256": "b0e857e7a2fb348310d10ab144d9594244b7724a39f913647c03b1aa5ff56feb"
+    },
+    {
+      "path": "LONG_RUN_GOAL.md",
+      "bytes": 9456,
+      "sha256": "551d5eb6812f779ea8041e31ff9597a5060d1f9bcfc0cb655fb4e02ea2d75a10"
+    },
+    {
+      "path": "MODEL_AND_DATA_PROTOCOL.md",
+      "bytes": 12723,
+      "sha256": "bc8e58b01e8ad2f1942d6cbf6fc04cac1e35b6df8e6168caf6f48a7ea9f68ed1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2198,
+      "sha256": "9b9b7fb304ecec4e44f676d4148432437d055474e763242b13eac86d27187b68"
+    },
+    {
+      "path": "REQUIREMENTS_RECEIPT.json",
+      "bytes": 6427,
+      "sha256": "9456f19949d350c4c2ef72e87179a9aeec4f2da08719d33225752f2e2a8abbe3"
+    },
+    {
+      "path": "SHORT_GOAL_TH.txt",
+      "bytes": 2201,
+      "sha256": "d8e0dece596ca1ec5242fd5bc77108944145127f27a347948ab0271b7a287f97"
+    },
+    {
+      "path": "VALIDATION.json",
+      "bytes": 7216,
+      "sha256": "b4ad6ba3ef6d9299817ff58a5d8df102cc7eb3c8197e96349d2b7b2bbd6ff133"
+    }
+  ]
+}

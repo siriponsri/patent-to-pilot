@@ -8,7 +8,7 @@ import { IdbDraftStore, MemoryDraftStore, lineage } from '../core/store.js';
 import { renderMarkdown, buildRecovery, parseRecovery, RECOVERY_FORMAT } from '../core/export.js';
 import { candidateScope } from '../core/run.js';
 import { emptyDraft } from '../core/brief.js';
-import { capabilities, loadStatic, fixtureTree, buildCatalog, comparatorOf } from '../adapters.js';
+import { capabilities, loadStatic, fixtureTree, buildCatalog, comparatorOf, createBackendAdapterFromLocation } from '../adapters.js';
 import { download } from './dom.js';
 import { renderApp, savedTimeText } from './screens.js';
 import { runDossierStages } from '../core/validate.js';
@@ -37,7 +37,7 @@ export const app = {
   state: {
     locale: 'th', theme: 'formal-light', booting: true, staticError: null, staticData: null,
     store: null, storageScope: 'indexeddb', storageError: null, simulate: null,
-    projects: [], projectProblems: {}, catalog: [], current: null, importPreview: null,
+    projects: [], projectProblems: {}, catalog: [], current: null, importPreview: null, backend: null, backendError: null, backendJob: null,
     draft: null, notice: null, route: { name: 'home', params: {}, query: {} },
   },
   t: translator('th'),
@@ -52,6 +52,13 @@ export const app = {
     try { this.layout = normalizeLayout(JSON.parse(localStorage.getItem(LAYOUT_KEY) || 'null')); } catch { this.layout = normalizeLayout(null); }
     // Explicit, labelled fault simulation for acceptance tests (FX-07 / FX-09).
     this.state.simulate = ['storage-denied', 'quota'].includes(params.get('simulate')) ? params.get('simulate') : null;
+    try {
+      this.state.backend = createBackendAdapterFromLocation(location);
+      if (this.state.backend) this.state.backend.providerCatalog = await this.state.backend.providers();
+    } catch (e) {
+      this.state.backend = null;
+      this.state.backendError = { code: e.code || 'backend_unavailable', message: e.message, diag: newId('diag') };
+    }
     this.applyPrefs();
     window.addEventListener('hashchange', () => this.route());
     window.addEventListener('beforeunload', (e) => {
@@ -82,7 +89,7 @@ export const app = {
     this.state.storageScope = store.scope;
   },
 
-  caps() { return capabilities(this.state.storageScope); },
+  caps() { return capabilities(this.state.storageScope, this.state.backend); },
 
   applyPrefs() {
     this.t = translator(this.state.locale);
@@ -162,6 +169,7 @@ export const app = {
       await this.openProject(r.params.id);
     }
     if (r.name === 'source') await this.prepareSource(r);
+    if (r.project && ['history', 'export'].includes(r.name)) await this.ensureBackendHistory();
     if (r.query.tab && this.state.current?.ui) this.state.current.ui.tab = r.query.tab;
     const c = this.state.current;
     if (r.project && c?.kind === 'dossier' && !c.corrupt && !c.pipe.started) {
@@ -213,6 +221,7 @@ export const app = {
     const head = snapshots.find((s) => s.snapshotId === project.headSnapshotId);
     const cur = {
       project, snapshots, kind: project.kind, mode: project.mode, storageScope: this.state.store.scope,
+      backendJobId: project.backendJobId || null,
       dirty: false, overlayTouched: false, counter: 0, saveState: this.state.store.scope === 'memory' ? 'memory' : 'saved',
       conflict: null, corrupt: null, pendingOp: null, sim: {},
     };
@@ -253,7 +262,7 @@ export const app = {
     if (!problem) await this.state.store.touch(projectId, new Date().toISOString());
   },
 
-  async createProject({ kind, dossierTree, validation, manifestTree, eventTrees, overlay, origin, title }) {
+  async createProject({ kind, dossierTree, validation, manifestTree, eventTrees, overlay, origin, title, backendJobId = null, backendProvider = null, backendGeneration = null }) {
     const now = new Date().toISOString();
     const projectId = newId('proj');
     const dossier = dossierTree ? toPlain(dossierTree) : null;
@@ -267,6 +276,7 @@ export const app = {
         comparator: comparatorOf(dossier), dossierHash: validation.hash, backendDossierVersion: dossier.version,
         dossierText: stringifyLossless(dossierTree), manifestText: manifestTree ? stringifyLossless(manifestTree) : null,
         eventsText: eventTrees ? stringifyLossless(eventTrees) : null,
+        backendJobId, backendProvider, backendGeneration,
       });
     }
     const snapshot = {
@@ -775,6 +785,162 @@ export const app = {
       : { type: 'import', files: p.files };
     const res = await this.createProject({ kind: 'dossier', dossierTree: p.dossierTree, validation: p.validation, manifestTree: p.manifestTree, eventTrees: p.eventTrees, overlay: p.overlay, origin });
     if (res.ok) { this.state.importPreview = null; this.go(`#/project/${encodeURIComponent(res.projectId)}`); } else this.storageFailure('import', res);
+  },
+
+  backendInputFor(query) {
+    if (!query || query.brief.data_class !== 'synthetic' || !this.state.staticData) return null;
+    const fixture = toPlain(fixtureTree(this.state.staticData.fixtureText, 'synthetic_dossier'));
+    const sources = fixture.sources.filter((source) => source.source.source_type !== 'patent_document' && query.permitted_inputs.includes(source.source.source_id));
+    if (!sources.length) return null;
+    const patents = fixture.sources.filter((source) => source.source.source_type === 'patent_document').map((source) => {
+      const candidate = fixture.candidates.find((item) => item.source_id === source.source.source_id);
+      return { patent_id: candidate?.patent_id_raw || source.source.source_id, title: candidate?.patent_id_canonical || source.source.source_id, source };
+    });
+    return { query, sources, patents, evidence: fixture.evidence.filter((item) => query.permitted_inputs.includes(item.source_id)), policy_id: 'HT-B0b', per_search_limit: 20 };
+  },
+
+  async startBackendJob(query) {
+    if (!this.state.backend || ['running', 'queued', 'cancel_requested'].includes(this.state.backendJob?.state)) return;
+    const input = this.backendInputFor(query);
+    if (!input) { this.state.backendJob = { state: 'unavailable', reason: 'backend_input_unavailable' }; this.render(); return; }
+    const providerId = document.getElementById('backend-provider')?.value
+      || this.state.backend.providerCatalog?.providers?.find((provider) => provider.available)?.id
+      || 'local';
+    await this.startBackendInput(input, { providerId });
+  },
+
+  // Used by public-case acceptance and future case catalogs that already own a
+  // validated DossierInput; the normal UI still uses startBackendJob(query).
+  async startBackendInput(input, { providerId = 'local' } = {}) {
+    if (!this.state.backend || ['running', 'queued', 'cancel_requested'].includes(this.state.backendJob?.state)) return;
+    try {
+      const key = `web-${(await sha256Hex(stringifyLossless(input))).slice(0, 48)}`;
+      const result = await this.state.backend.submit(input, { idempotencyKey: key, provider: { id: providerId } });
+      this.state.backendJob = result.job;
+      this.render();
+      await this.watchBackendJob(result.job.job_id);
+    } catch (e) {
+      this.state.backendJob = { state: 'failed', reason: e.code || 'backend_submit_failed', error: e.message };
+      this.render();
+    }
+  },
+
+  async watchBackendJob(jobId) {
+    if (!this.state.backend || this._backendWatch === jobId) return;
+    this._backendWatch = jobId;
+    try {
+      for (;;) {
+        const result = await this.state.backend.status(jobId);
+        if (this.state.backendJob?.job_id !== jobId) return;
+        this.state.backendJob = result.job;
+        this.render();
+        if (['succeeded', 'failed', 'cancelled'].includes(result.job.state)) break;
+        await new Promise((resolve) => setTimeout(resolve, 250));
+      }
+      if (this.state.backendJob?.state !== 'succeeded') return;
+      const bundle = await this.state.backend.result(jobId);
+      const validation = await validateDossier(bundle.dossier, this.state.staticData.schemas.dossier);
+      const runErrors = validateRunArtifacts(toPlain(bundle.dossier), bundle.manifest, bundle.events, this.state.staticData.schemas);
+      if (!validation.ok || runErrors.length) throw new Error(validation.ok ? runErrors[0].message : validation.errors[0].message);
+      const created = await this.createProject({
+        kind: 'dossier', dossierTree: bundle.dossier, validation, manifestTree: bundle.manifest, eventTrees: bundle.events,
+        overlay: emptyOverlay(), origin: { type: 'backend-http', jobId }, backendJobId: jobId, backendGeneration: bundle.generation || null,
+        backendProvider: this.state.backend.providerCatalog?.providers?.find((p) => p.id === this.state.backendJob?.provider?.id)
+          || this.state.backend.providerCatalog?.providers?.find((p) => p.available)
+          || { id: 'local' },
+      });
+      if (!created.ok) throw new Error(created.message || 'local project creation failed');
+      this.state.backendJob = null;
+      this.go(`#/project/${encodeURIComponent(created.projectId)}`);
+    } catch (e) {
+      this.state.backendJob = { ...(this.state.backendJob || {}), state: 'failed', reason: 'backend_result_invalid', error: e.message };
+      this.render();
+    } finally { this._backendWatch = null; }
+  },
+
+  async cancelBackendJob() {
+    const jobId = this.state.backendJob?.job_id;
+    if (!jobId || !this.state.backend) return;
+    try { this.state.backendJob = (await this.state.backend.cancel(jobId)).job; }
+    catch (e) { this.state.backendJob = { ...this.state.backendJob, reason: e.code || 'cancel_failed', error: e.message }; }
+    this.render();
+  },
+
+  async resumeBackendJob() {
+    const jobId = this.state.backendJob?.job_id;
+    if (!jobId || !this.state.backend) return;
+    try {
+      this.state.backendJob = (await this.state.backend.resume(jobId)).job;
+      this.render();
+      await this.watchBackendJob(jobId);
+    } catch (e) { this.state.backendJob = { ...this.state.backendJob, reason: e.code || 'resume_failed', error: e.message }; this.render(); }
+  },
+
+  async ensureBackendHistory() {
+    const c = this.state.current;
+    if (!c?.backendJobId || !this.state.backend || c.backendHistory || c.backendHistoryLoading) return;
+    c.backendHistoryLoading = true;
+    c.backendHistoryError = null;
+    try {
+      c.backendHistory = await this.state.backend.history(c.backendJobId);
+      const versions = c.backendHistory.history?.versions || [];
+      const selected = c.backendSelectedVersion || versions.at(-1)?.version || c.dossier.version;
+      if (versions.some((item) => item.version === selected)) await this.openBackendVersion(selected, false);
+    } catch (e) {
+      c.backendHistoryError = { code: e.code || 'backend_history_failed', message: e.message };
+    } finally {
+      c.backendHistoryLoading = false;
+    }
+  },
+
+  async openBackendVersion(version, rerender = true) {
+    const c = this.state.current;
+    if (!c?.backendJobId || !this.state.backend) return;
+    try {
+      c.backendSelectedVersion = Number(version);
+      c.backendVersionView = await this.state.backend.version(c.backendJobId, c.backendSelectedVersion);
+      c.backendHistoryError = null;
+    } catch (e) {
+      c.backendHistoryError = { code: e.code || 'backend_version_failed', message: e.message };
+    }
+    if (rerender) this.render({ keepFocus: true });
+  },
+
+  async editBackendVersion() {
+    const c = this.state.current;
+    const note = String(c?.backendEditNote || '').trim();
+    if (!c?.backendJobId || !this.state.backend || !c.backendSelectedVersion || !note) return;
+    try {
+      const result = await this.state.backend.edit(c.backendJobId, c.backendSelectedVersion, { review_note: note });
+      c.backendEditNote = '';
+      c.backendSelectedVersion = result.version;
+      c.backendVersionView = result.dossier;
+      c.backendHistory = null;
+      c.backendHistoryError = null;
+      await this.ensureBackendHistory();
+    } catch (e) {
+      c.backendHistoryError = { code: e.code || 'backend_edit_failed', message: e.message };
+    }
+    this.render({ keepFocus: true });
+  },
+
+  async downloadBackendExport(format, language = 'auto') {
+    const c = this.state.current;
+    if (!c?.backendJobId || !this.state.backend) return;
+    const version = c.backendSelectedVersion || c.dossier.version;
+    try {
+      const value = await this.state.backend.export(c.backendJobId, { version, format, language, purpose: 'local_research' });
+      const isJson = format === 'json';
+      const suffix = isJson ? 'json' : language;
+      const name = `${this.fileStem()}-backend-v${version}-${suffix}.${isJson ? 'json' : 'md'}`;
+      const body = isJson ? `${JSON.stringify(value, null, 2)}\n` : String(value);
+      download(name, body, isJson ? 'application/json' : 'text/markdown');
+      c.backendExportStatus = this.t('backend.exported', { name });
+      c.backendExportError = null;
+    } catch (e) {
+      c.backendExportError = { code: e.code || 'backend_export_failed', message: e.message };
+    }
+    this.render({ keepFocus: true });
   },
 
   // ------------------------------------------------------------------ brief drafts

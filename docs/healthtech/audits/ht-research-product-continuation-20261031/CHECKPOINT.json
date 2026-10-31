@@ -1,0 +1,60 @@
+{
+  "format": "ht-research-product-goal-checkpoint-v1",
+  "run_id": "ht-research-product-continuation-20261031",
+  "parent_goal": "docs/healthtech/long-runs",
+  "parent_audit": "docs/healthtech/audits/ht-research-product-20261031",
+  "status": "PARTIAL_O4_OFFLINE_ADAPTIVE_REPORT_O3_BLOCKED_LOCAL",
+  "base_revision": "4f45b991025c5dbc8f7bf53b03ffcb6158feb8a2",
+  "candidate_revision": "bf3f279",
+  "working_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+  "single_writer": "current continuation worktree only",
+  "outcomes": {
+    "O1": {"status": "COMPLETE", "evidence": "../ht-research-product-20261031"},
+    "O2": {"status": "COMPLETE", "evidence": "../ht-research-product-20261031"},
+    "O3": {"status": "BLOCKED_LOCAL", "evidence": "../ht-research-product-20261031/o3-gate.json"},
+    "O4": {"status": "PARTIAL", "evidence": "adaptive-policy-report.json"}
+  },
+  "canonical_ledger": {
+    "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+    "canonical_identity": "UNRESOLVED",
+    "historical_settled_usd": 0.0001464,
+    "this_package_settled_usd": 0.0,
+    "reserved_usd": "UNKNOWN_NOT_QUERIED",
+    "unknown_billing_attempts": 0,
+    "account_credit_state": "NOT_RUN_NO_CREDENTIAL_READ",
+    "exact_comparison_authorization": "APPROVED_EXISTING_OWNER_SCOPE"
+  },
+  "rights_and_models": {
+    "dossier_prompt_transfer_rights": "UNRESOLVED",
+    "local_qwen3_8b_revision": "NOT_RECORDED",
+    "local_model_preflight": "o3-local-model-preflight.json"
+  },
+  "resources": {
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "cpu_threads_max": 8,
+    "ram_bytes_max": 34359738368,
+    "concurrency": 1,
+    "additional_disk_max_bytes": 42949672960,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "first_runtime_job_utc": "NOT_STARTED",
+    "deadline_utc": "PENDING_FIRST_RUNTIME_JOB"
+  },
+  "job_state": {
+    "owned_job_identity": "NONE",
+    "heartbeat": "NOT_APPLICABLE",
+    "status": "OFFLINE_REPORT_ONLY",
+    "completed_shards": 0,
+    "failed_rows": 0,
+    "retry_count": 0
+  },
+  "next_actual_command": "rtk git diff --check; rtk git status --short --branch",
+  "next_action": "Focused and full regression passed; inspect the candidate diff, commit the O4 report package, then remain blocked on the O3 paid/model/rights gates.",
+  "preserved_untracked_paths": [
+    "docs/healthtech/audits/dr-train-resource-preflight-20261031/",
+    "docs/healthtech/audits/pepo-unblock-remote-20261030T2038Z/",
+    "docs/healthtech/long-runs/"
+  ]
+}

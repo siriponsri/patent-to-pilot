@@ -79,6 +79,7 @@ test('server sends CSP/no-store headers and binds to loopback', async () => {
     const res = await fetch(`http://127.0.0.1:${port}/`);
     assert.equal(res.status, 200);
     assert.match(res.headers.get('content-security-policy'), /connect-src 'self'/);
+    assert.match(res.headers.get('content-security-policy'), /http:\/\/127\.0\.0\.1:\*/);
     assert.match(res.headers.get('content-security-policy'), /script-src 'self'/);
     assert.equal((await fetch(`http://127.0.0.1:${port}/../GOAL.md`)).status, 404);
     // Byte ranges (video chapter seeking): exact slice, correct headers, 416 past the end.

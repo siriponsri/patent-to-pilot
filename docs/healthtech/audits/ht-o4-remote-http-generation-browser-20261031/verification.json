@@ -1,0 +1,93 @@
+{
+  "format": "ht-o4-remote-http-generation-browser-verification-v1",
+  "run_id": "ht-o4-remote-http-generation-browser-20261031",
+  "base_revision": "79580d2b36a505b717718cc22b1d11298888ef12",
+  "research_report": "REPORT.md",
+  "thai_report": "REPORT_TH.md",
+  "commands": [
+    {
+      "id": "named_abbott_browser",
+      "status": "PASS",
+      "command": "rtk npm run test:integration:abbott",
+      "working_directory": "frontend/healthtech-web",
+      "result": "PASS_BROWSER_HTTP_VECTOR_GENERATION_HISTORY_EXPORT; 3/3 cases; source inspection PASS; history 1->2 PASS; JSON export v2 PASS"
+    },
+    {
+      "id": "providers_gate",
+      "status": "PASS",
+      "command": "GET http://127.0.0.1:18787/providers",
+      "result": "local-vector and local-generation available; OpenRouter unavailable; paid_dispatch closed"
+    },
+    {
+      "id": "harness_syntax",
+      "status": "PASS",
+      "command": "rtk node --check tests/e2e/backend-http-abbott-integration.mjs",
+      "result": "exit code 0"
+    },
+    {
+      "id": "frontend_unit",
+      "status": "PASS",
+      "command": "rtk npm test",
+      "working_directory": "frontend/healthtech-web",
+      "result": "74 passed, 0 failed"
+    },
+    {
+      "id": "browser_loopback_existing",
+      "status": "PASS",
+      "command": "rtk npm run test:integration:http",
+      "working_directory": "frontend/healthtech-web",
+      "result": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT; provider calls 0; paid cost USD 0.00"
+    },
+    {
+      "id": "python_full_suite",
+      "status": "PASS",
+      "command": "rtk python -m pytest -q -p no:cacheprovider",
+      "result": "exit code 0; two existing optional skips; warnings only"
+    },
+    {
+      "id": "diff_check",
+      "status": "PASS",
+      "command": "rtk git diff --check",
+      "result": "exit code 0"
+    }
+  ],
+  "privacy": {
+    "credentials_read": false,
+    "paid_provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "raw_case_bundle_committed": false,
+    "generated_text_committed": false,
+    "model_weights_staged": false,
+    "evaluator_labels_in_runtime": false
+  },
+  "boundaries": {
+    "verified": [
+      "real three-case browser to HTTP generation lifecycle",
+      "PatEmbed retrieval binding",
+      "schema-valid local Qwen generation",
+      "source inspection",
+      "history edit and selected-version JSON export"
+    ],
+    "not_run_or_blocked": [
+      "OpenRouter qwen/qwen3-32b comparison",
+      "paid provider dispatch",
+      "semantic device-patent judgment",
+      "clinical/FTO/patent-validity assessment",
+      "deployment/publication/commercial validation"
+    ]
+  },
+  "report_provenance": {
+    "reference_frontier_cohort": "Stryker final holdout",
+    "reference_frontier_source": "../luna-long-run-20261029-m10-b4-holdout-20261029/comparison.json",
+    "reference_frontier_protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+    "reference_frontier_cohort_manifest_hash": "1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+    "reference_frontier_comparison_code_commit": "b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3",
+    "abbott_controller_source": "../ht-research-product-continuation-20261031/adaptive-policy-report.json",
+    "abbott_controller_macro_known_link_recall_at_20": 0.49880241951853205,
+    "abbott_controller_devices": 3,
+    "abbott_controller_runtime_patents": 41,
+    "abbott_controller_query_calls": 5,
+    "abbott_controller_steps": 8,
+    "matched_abbott_fixed_control_frontier_rerun": false
+  }
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="3" time="7.911" timestamp="2026-10-31T03:43:49.885313+07:00" hostname="DESKTOP-C8EHASQ"><testcase classname="tests.test_healthtech_query_projection" name="test_external_query_metadata_follows_source_field_policy_after_reload[product_display]" time="0.557"><failure message="AssertionError: assert {'applicant':...TED-SENTINEL'} == {'trade_name': 'MitraClip'}&#10;  &#10;  Omitting 1 identical items, use -vv to show&#10;  Left contains 2 more items:&#10;  {'applicant': 'ABBOTT MEDICAL', 'unknown': 'RESTRICTED-SENTINEL'}&#10;  Use -v to get more diff">tmp_path = WindowsPath('C:/Users/User/Documents/Codex/2026-10-28/task-2/audit-20261030/unblock-baseline/tmp/test_external_query_metadata_f0')
+purpose = 'product_display'
+
+    @pytest.mark.parametrize("purpose", ["product_display", "redistribution"])
+    def test_external_query_metadata_follows_source_field_policy_after_reload(tmp_path, purpose):
+        cohort = _write_synthetic_abbott_cohort(tmp_path)
+        policies = json.loads((ROOT / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json").read_text())
+        for policy in policies["sources"]:
+            policy["intended_use"]["product_display"] = "ALLOWED"
+            policy["intended_use"]["redistribution"] = "ALLOWED"
+            policy["displayable_fields"] = ["trade_name"] if policy["source_id"] == "openfda-pma-records" else []
+        path = tmp_path / "rights.json"
+        _write_json(path, policies)
+        data = next(iter(build_abbott_case_inputs(cohort, rights_matrix_path=path).values()))
+        original = dict(data.query.company_metadata)
+        assert original["applicant"] == "ABBOTT MEDICAL"
+        query = data.query.model_copy(update={"company_metadata": {**original, "trade_name": "MitraClip", "unknown": "RESTRICTED-SENTINEL"}})
+        data = data.model_copy(update={"query": query})
+        dossier, _, _ = run_dossier(data, run_id="query-boundary", code_commit="test")
+        dossier = dossier.model_copy(update={"user_edits": {"notes": "independently authored note"}})
+        history = tmp_path / "history"
+        save_version(history, dossier)
+        restored = select_version(history)
+        local = serialize_dossier(restored)
+        external = serialize_dossier(restored, purpose=purpose)
+        assert local["query"]["company_metadata"] == dict(query.company_metadata)
+&gt;       assert external["query"]["company_metadata"] == {"trade_name": "MitraClip"}
+E       AssertionError: assert {'applicant':...TED-SENTINEL'} == {'trade_name': 'MitraClip'}
+E
+E         Omitting 1 identical items, use -vv to show
+E         Left contains 2 more items:
+E         {'applicant': 'ABBOTT MEDICAL', 'unknown': 'RESTRICTED-SENTINEL'}
+E         Use -v to get more diff
+
+tests\test_healthtech_query_projection.py:38: AssertionError</failure></testcase><testcase classname="tests.test_healthtech_query_projection" name="test_external_query_metadata_follows_source_field_policy_after_reload[redistribution]" time="0.077"><failure message="AssertionError: assert {'applicant':...TED-SENTINEL'} == {'trade_name': 'MitraClip'}&#10;  &#10;  Omitting 1 identical items, use -vv to show&#10;  Left contains 2 more items:&#10;  {'applicant': 'ABBOTT MEDICAL', 'unknown': 'RESTRICTED-SENTINEL'}&#10;  Use -v to get more diff">tmp_path = WindowsPath('C:/Users/User/Documents/Codex/2026-10-28/task-2/audit-20261030/unblock-baseline/tmp/test_external_query_metadata_f1')
+purpose = 'redistribution'
+
+    @pytest.mark.parametrize("purpose", ["product_display", "redistribution"])
+    def test_external_query_metadata_follows_source_field_policy_after_reload(tmp_path, purpose):
+        cohort = _write_synthetic_abbott_cohort(tmp_path)
+        policies = json.loads((ROOT / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json").read_text())
+        for policy in policies["sources"]:
+            policy["intended_use"]["product_display"] = "ALLOWED"
+            policy["intended_use"]["redistribution"] = "ALLOWED"
+            policy["displayable_fields"] = ["trade_name"] if policy["source_id"] == "openfda-pma-records" else []
+        path = tmp_path / "rights.json"
+        _write_json(path, policies)
+        data = next(iter(build_abbott_case_inputs(cohort, rights_matrix_path=path).values()))
+        original = dict(data.query.company_metadata)
+        assert original["applicant"] == "ABBOTT MEDICAL"
+        query = data.query.model_copy(update={"company_metadata": {**original, "trade_name": "MitraClip", "unknown": "RESTRICTED-SENTINEL"}})
+        data = data.model_copy(update={"query": query})
+        dossier, _, _ = run_dossier(data, run_id="query-boundary", code_commit="test")
+        dossier = dossier.model_copy(update={"user_edits": {"notes": "independently authored note"}})
+        history = tmp_path / "history"
+        save_version(history, dossier)
+        restored = select_version(history)
+        local = serialize_dossier(restored)
+        external = serialize_dossier(restored, purpose=purpose)
+        assert local["query"]["company_metadata"] == dict(query.company_metadata)
+&gt;       assert external["query"]["company_metadata"] == {"trade_name": "MitraClip"}
+E       AssertionError: assert {'applicant':...TED-SENTINEL'} == {'trade_name': 'MitraClip'}
+E
+E         Omitting 1 identical items, use -vv to show
+E         Left contains 2 more items:
+E         {'applicant': 'ABBOTT MEDICAL', 'unknown': 'RESTRICTED-SENTINEL'}
+E         Use -v to get more diff
+
+tests\test_healthtech_query_projection.py:38: AssertionError</failure></testcase><testcase classname="tests.test_healthtech_vector_restart" name="test_resume_after_final_commit_before_checkpoint_cleanup" time="0.133"><failure message="patent_to_pilot.evaluation.healthtech.vector_artifacts.VectorArtifactError: partial bundle artifacts are not importable">tmp_path = WindowsPath('C:/Users/User/Documents/Codex/2026-10-28/task-2/audit-20261030/unblock-baseline/tmp/test_resume_after_final_commit0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0000028769D7FEC0&gt;
+
+    def test_resume_after_final_commit_before_checkpoint_cleanup(tmp_path, monkeypatch):
+        runtime = _input(tmp_path)
+        bundle = tmp_path / "bundle"
+        writer = artifacts._atomic_write_json
+
+        def interrupted(path, payload):
+            writer(path, payload)
+            if path.name == "manifest.json":
+                raise RuntimeError("crash after final commit")
+
+        with monkeypatch.context() as patch:
+            patch.setattr(artifacts, "_atomic_write_json", interrupted)
+            with pytest.raises(RuntimeError, match="after final commit"):
+                _encode(runtime, bundle, Encoder())
+        assert (bundle / "manifest.partial.json").exists()
+        resumed = Encoder()
+&gt;       assert _encode(runtime, bundle, resumed)["status"] == "complete"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_vector_restart.py:49:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_vector_restart.py:30: in _encode
+    return artifacts.encode_vector_shards(runtime, bundle, encoder, model={"id": "fixture"}, config={"norm_policy": "none"})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\patent-to-pilot\src\patent_to_pilot\evaluation\healthtech\vector_artifacts.py:453: in encode_vector_shards
+    load_vector_bundle(root)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+bundle_dir = WindowsPath('C:/Users/User/Documents/Codex/2026-10-28/task-2/audit-20261030/unblock-baseline/tmp/test_resume_after_final_commit0/bundle')
+
+    def load_vector_bundle(bundle_dir: str | Path) -&gt; VectorBundle:
+        """Validate and load a completed bundle for exact NumPy/memmap search."""
+        np = _numpy()
+        root = Path(bundle_dir).resolve()
+        manifest_path = root / "manifest.json"
+        if not manifest_path.is_file():
+            raise VectorArtifactError("bundle manifest is missing")
+        if list(root.glob("*.partial")) or list(root.glob("*.partial.*")) or (root / "manifest.partial.json").exists():
+&gt;           raise VectorArtifactError("partial bundle artifacts are not importable")
+E           patent_to_pilot.evaluation.healthtech.vector_artifacts.VectorArtifactError: partial bundle artifacts are not importable
+
+..\..\patent-to-pilot\src\patent_to_pilot\evaluation\healthtech\vector_artifacts.py:371: VectorArtifactError</failure></testcase></testsuite></testsuites>

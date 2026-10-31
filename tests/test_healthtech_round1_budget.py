@@ -38,6 +38,7 @@ def budget(tmp_path):
         model_provider_map={MODEL: PROVIDER},
         pricing_snapshot_sha256=PRICE_HASH,
         pricing_snapshot_utc=PRICE_TIME,
+        namespace="mock",
     )
 
 
@@ -118,6 +119,7 @@ def test_round1_rejects_old_policy_database_without_rebinding(tmp_path):
             model_provider_map={MODEL: PROVIDER},
             pricing_snapshot_sha256=PRICE_HASH,
             pricing_snapshot_utc=PRICE_TIME,
+            namespace="mock",
         )
     with sqlite3.connect(path) as db:
         assert db.execute("SELECT COUNT(*) FROM budget_attempts").fetchone()[0] == 0
@@ -134,6 +136,7 @@ def test_round1_two_writers_compete_atomically_near_cap(tmp_path):
             model_provider_map={MODEL: PROVIDER},
             pricing_snapshot_sha256=PRICE_HASH,
             pricing_snapshot_utc=PRICE_TIME,
+            namespace="mock",
         )
         try:
             reserve(local, f"near-cap-{index}", phase="paired_pilot", amount="3.5")

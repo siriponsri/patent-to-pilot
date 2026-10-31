@@ -1,0 +1,23 @@
+{
+  "format": "ht-o4-local-generation-http-checkpoint-v1",
+  "run_id": "ht-o4-local-generation-http-20261031",
+  "status": "PARTIAL_O4_HTTP_GENERATION_HARNESS_READY_O3_API_BLOCKED_LOCAL",
+  "base_revision": "79580d2b36a505b717718cc22b1d11298888ef12",
+  "candidate_revision": "working-tree-uncommitted",
+  "single_writer": true,
+  "outcomes": {
+    "O1": "COMPLETE_PARENT_REVALIDATED",
+    "O2": "COMPLETE_PARENT_REVALIDATED",
+    "O3": "BLOCKED_LOCAL",
+    "O4": "PARTIAL_HTTP_GENERATION_HARNESS_READY"
+  },
+  "accounting": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "named_abbott_browser_harness": "NOT_RUN_ASSET_GATED",
+    "real_qwen_http_generation": "NOT_RUN",
+    "openrouter_comparison": "BLOCKED_LOCAL"
+  },
+  "next_action": "Run the named Abbott browser harness after the permitted vector and generation configs are available; preserve a sanitized receipt.",
+  "review_status": "READY_FOR_REVIEW"
+}

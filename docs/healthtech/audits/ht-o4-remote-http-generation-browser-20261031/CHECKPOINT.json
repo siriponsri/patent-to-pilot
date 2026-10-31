@@ -1,0 +1,22 @@
+{
+  "format": "ht-o4-remote-http-generation-browser-checkpoint-v1",
+  "run_id": "ht-o4-remote-http-generation-browser-20261031",
+  "status": "PASS_O4_REAL_HTTP_GENERATION_BROWSER_O3_API_BLOCKED_LOCAL",
+  "base_revision": "79580d2b36a505b717718cc22b1d11298888ef12",
+  "candidate_revision": "20e38974ed32bc6fca9760b9f1974b3c3f8dfa34",
+  "single_writer": true,
+  "outcomes": {
+    "O1": "COMPLETE_PARENT_REVALIDATED",
+    "O2": "COMPLETE_PARENT_REVALIDATED",
+    "O3": "BLOCKED_LOCAL",
+    "O4": "PASS_ENGINEERING_REAL_THREE_CASE_HTTP_GENERATION_BROWSER"
+  },
+  "accounting": {
+    "local_generation_jobs": 3,
+    "paid_provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "openrouter_comparison": "BLOCKED_LOCAL"
+  },
+  "next_action": "Keep paid dispatch closed; resolve O3 ledger, credit, authorization, and prompt-rights gates before any comparison request.",
+  "review_status": "READY_FOR_REVIEW"
+}

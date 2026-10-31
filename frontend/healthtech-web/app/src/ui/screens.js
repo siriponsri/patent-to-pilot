@@ -347,17 +347,35 @@ function briefScreen(app, projectDraft) {
   if (check) {
     const errs = [...check.featureBlank.map((n) => `${t('brief.features')}: ${t('brief.blank', { n })}`), ...check.questionBlank.map((n) => `${t('brief.questions')}: ${t('brief.blank', { n })}`)];
     const existing = app.existingDossierFor(c);
+    const backendInput = check.query.ok ? app.backendInputFor(check.query.value) : null;
+    const backend = s.backend;
+    const backendJob = s.backendJob;
+    const providers = backend?.providerCatalog?.providers || [];
+    const defaultProviderId = providers.find((p) => p.available)?.id || 'local';
+    const active = ['queued', 'running', 'cancel_requested'].includes(backendJob?.state);
+    const backendPanel = backend ? h('section', { class: 'callout callout-info', id: 'backend-run', 'data-state': backendJob?.state || 'ready' },
+      h('h3', {}, t('backend.title')),
+      field(t('backend.provider'), h('select', { id: 'backend-provider', disabled: active }, providers.map((p) => h('option', { value: p.id, disabled: !p.available, selected: p.id === defaultProviderId }, `${p.label} — ${p.available ? t('cap.available') : t('cap.unavailable')}`)))),
+      h('p', { id: 'backend-status' }, `${t('backend.status')}: ${backendJob?.state || 'ready'}`),
+      backendJob?.cost ? h('p', { class: 'muted' }, t('backend.cost', { usd: backendJob.cost.actual_usd ?? 'unknown', seconds: backendJob.cost.local_elapsed_seconds ?? 'unknown' })) : null,
+      !backendInput ? h('p', { class: 'muted' }, t('backend.unavailable')) : null,
+      h('div', { class: 'actions' },
+        !active && (!backendJob || ['unavailable', 'failed', 'cancelled'].includes(backendJob.state))
+          ? h('button', { type: 'button', class: 'btn btn-primary', id: 'backend-start', disabled: !backendInput, onClick: () => ['failed', 'cancelled'].includes(backendJob?.state) ? app.resumeBackendJob() : app.startBackendJob(check.query.value) }, ['failed', 'cancelled'].includes(backendJob?.state) ? t('backend.resume') : t('backend.start'))
+          : null,
+        active ? h('button', { type: 'button', class: 'btn', id: 'backend-cancel', onClick: () => app.cancelBackendJob() }, t('backend.cancel')) : null))
+      : callout('info', t('cap.runStart'), h('p', { id: 'run-unavailable' }, t('brief.runUnavailable')),
+        h('div', { class: 'actions' },
+          existing?.projectId ? h('a', { class: 'btn btn-primary', href: `#/project/${enc(existing.projectId)}` }, t('brief.openExisting')) : null,
+          existing?.demo ? h('button', { type: 'button', class: 'btn btn-primary', onClick: () => app.startDemo(existing.demo) }, t('brief.openExisting')) : null,
+          h('a', { class: 'btn', href: '#/import' }, t('start.import'))));
     result = h('div', { id: 'brief-result', tabindex: '-1', class: 'stack' },
       errs.length ? callout('danger', t('brief.queryInvalid', { reason: check.query.reason || '' }), h('ul', {}, errs.map((e) => h('li', {}, e)))) : null,
       !c ? callout('warning', t('brief.missingComparator')) : null,
       check.query.ok
         ? h('details', { class: 'disclosure', open: true }, h('summary', {}, t('brief.queryPreview')), h('pre', { class: 'code', id: 'query-preview' }, JSON.stringify(check.query.value, null, 2)))
         : (!errs.length ? callout('danger', t('brief.queryInvalid', { reason: check.query.reason })) : null),
-      callout('info', t('cap.runStart'), h('p', { id: 'run-unavailable' }, t('brief.runUnavailable')),
-        h('div', { class: 'actions' },
-          existing?.projectId ? h('a', { class: 'btn btn-primary', href: `#/project/${enc(existing.projectId)}` }, t('brief.openExisting')) : null,
-          existing?.demo ? h('button', { type: 'button', class: 'btn btn-primary', onClick: () => app.startDemo(existing.demo) }, t('brief.openExisting')) : null,
-          h('a', { class: 'btn', href: '#/import' }, t('start.import')))));
+      backendPanel);
   }
   return h('section', {},
     h('h1', { tabindex: '-1' }, t('brief.title'), ' ', modeBadge(t, 'draft')),
@@ -1022,10 +1040,45 @@ function historyScreen(app) {
   const c = app.state.current;
   const snaps = [...c.snapshots].sort((a, b) => String(b.savedAt).localeCompare(String(a.savedAt)));
   const byId = new Map(c.snapshots.map((s) => [s.snapshotId, s]));
+  const backendVersions = c.backendHistory?.history?.versions || [];
+  let backendBody;
+  if (!app.state.backend) {
+    backendBody = h('p', { id: 'backend-history-unavailable', class: 'muted' }, t('backend.noConnection'));
+  } else if (c.backendHistoryLoading) {
+    backendBody = h('p', { id: 'backend-history-loading', role: 'status' }, t('backend.historyLoading'));
+  } else if (c.backendHistoryError) {
+    backendBody = callout('danger', t('backend.historyTitle'), h('p', { id: 'backend-history-error' }, t('backend.historyError', { message: c.backendHistoryError.message })));
+  } else {
+    const rows = backendVersions.map((v) => h('tr', { 'data-backend-version': String(v.version) },
+      h('th', { scope: 'row', class: 'mono' }, v.version, c.backendSelectedVersion === v.version ? [' ', badge('selected', 'info')] : null),
+      h('td', { class: 'mono' }, v.parent_version === null ? '—' : String(v.parent_version)),
+      h('td', {}, h('button', { type: 'button', class: 'btn btn-small', id: `backend-open-${v.version}`, onClick: () => app.openBackendVersion(v.version) }, t('backend.openVersion', { v: v.version })))));
+    backendBody = h('div', { class: 'stack' },
+      backendVersions.length ? tableWrap(t('backend.historyTitle'), h('table', { id: 'backend-history-table' },
+        h('caption', {}, t('backend.historyTitle')),
+        h('thead', {}, h('tr', {}, ['Version', t('history.parent'), ''].map((x) => h('th', { scope: 'col' }, x)))),
+        h('tbody', {}, rows))) : h('p', {}, t('history.none')),
+      c.backendVersionView ? h('div', { class: 'stack' },
+        h('p', { id: 'backend-selected-version' }, t('backend.selectedVersion', { v: c.backendSelectedVersion })),
+        h('pre', { id: 'backend-version-view', class: 'payload', tabindex: '0' }, JSON.stringify(c.backendVersionView, null, 2)),
+        field(t('backend.editLabel'), h('input', { id: 'backend-edit-note', value: c.backendEditNote || '', placeholder: t('backend.editPlaceholder'), onInput: (e) => { c.backendEditNote = e.target.value; app.render({ keepFocus: true }); } })),
+        h('button', { type: 'button', class: 'btn btn-primary', id: 'backend-edit', disabled: !String(c.backendEditNote || '').trim(), onClick: () => app.editBackendVersion() }, t('backend.saveEdit')))
+        : null);
+  }
+  const generation = c.project.backendGeneration;
+  const generationPanel = generation ? h('div', { id: 'backend-generation', class: 'callout callout-success' },
+    h('strong', {}, t('backend.generationTitle')),
+    h('p', {}, t('backend.generationSummary', {
+      model: generation.model || '—',
+      status: generation.status || '—',
+      latency: generation.generation_latency_seconds ?? '—',
+    })),
+    generation.parsed_output ? h('pre', { class: 'payload', tabindex: '0' }, JSON.stringify(generation.parsed_output, null, 2)) : null) : null;
+  const backendPanel = c.project.backendJobId ? h('section', { id: 'backend-history-panel' }, h('h2', {}, t('backend.historyTitle')), generationPanel, backendBody) : null;
   return h('section', {},
     h('h1', { tabindex: '-1' }, t('history.title')),
-    h('h2', {}, t('history.backend')),
-    kv([['dossier_id', c.dossier.dossier_id], ['version', String(c.dossier.version)], ['parent_version', c.dossier.parent_version === null ? 'null' : String(c.dossier.parent_version)], ['sha256 (canonical)', h('span', { class: 'mono wrap' }, c.dossierHash)], [t('cap.backendHistory'), `${t('cap.unavailable')} — ${t('cap.reason.backendHistory')}`]]),
+    backendPanel || h('div', {}, h('h2', {}, t('history.backend')),
+      kv([['dossier_id', c.dossier.dossier_id], ['version', String(c.dossier.version)], ['parent_version', c.dossier.parent_version === null ? 'null' : String(c.dossier.parent_version)], ['sha256 (canonical)', h('span', { class: 'mono wrap' }, c.dossierHash)], [t('cap.backendHistory'), `${t('cap.unavailable')} — ${t('cap.reason.backendHistory')}`]])),
     h('h2', {}, t('history.local')),
     h('p', { class: 'muted' }, t('history.author'), ' ', t('history.limit')),
     c.project.origin?.type === 'recovery' ? h('p', { class: 'muted' }, `Recovered from snapshot ${c.project.origin.recoveredSnapshot || '—'} (lineage ${c.project.origin.recoveredLineage?.join(' ← ') || '—'})`) : null,
@@ -1126,10 +1179,27 @@ function exportScreen(app) {
     try { const f = make(); download(f.name, f.text, f.type); c.exportStarted = f.name; c.exportError = null; app.announce(t('export.started'), { toast: true }); } catch (e) { c.exportError = { message: e.message, diag: newId('diag') }; }
     app.render({ keepFocus: true });
   };
+  const backendVersions = c.backendHistory?.history?.versions || [];
+  const backendExport = c.project.backendJobId
+    ? h('section', { id: 'backend-exports', class: 'callout callout-info' },
+      h('h2', {}, t('backend.exportTitle')),
+      !app.state.backend ? h('p', { id: 'backend-export-unavailable' }, t('backend.noConnection'))
+        : c.backendHistoryLoading ? h('p', { id: 'backend-export-loading', role: 'status' }, t('backend.historyLoading'))
+          : c.backendHistoryError ? h('p', { id: 'backend-export-error', class: 'field-error' }, t('backend.historyError', { message: c.backendHistoryError.message }))
+            : h('div', { class: 'stack' },
+              field(t('backend.exportVersion'), h('select', { id: 'backend-export-version', value: String(c.backendSelectedVersion || c.dossier.version), onChange: (e) => app.openBackendVersion(Number(e.target.value)) }, backendVersions.map((v) => h('option', { value: String(v.version), selected: c.backendSelectedVersion === v.version }, String(v.version))))),
+              h('div', { class: 'actions' },
+                h('button', { type: 'button', class: 'btn', id: 'backend-export-json', onClick: () => app.downloadBackendExport('json') }, t('backend.exportJson')),
+                h('button', { type: 'button', class: 'btn', id: 'backend-export-th', onClick: () => app.downloadBackendExport('markdown', 'th') }, t('backend.exportTh')),
+                h('button', { type: 'button', class: 'btn', id: 'backend-export-en', onClick: () => app.downloadBackendExport('markdown', 'en') }, t('backend.exportEn'))),
+              c.backendExportStatus ? h('p', { id: 'backend-export-status', role: 'status' }, c.backendExportStatus) : null,
+              c.backendExportError ? h('p', { id: 'backend-export-error', class: 'field-error' }, c.backendExportError.message) : null))
+    : null;
   const radio = (name, value, label, cur, onPick) => h('div', {}, h('input', { type: 'radio', name, id: `${name}-${value}`, value, checked: cur === value, onChange: () => { onPick(value); c.exportPreview = null; app.render({ keepFocus: true }); } }), h('label', { for: `${name}-${value}` }, label));
   const p = c.exportPreview;
   return h('section', {},
     h('h1', { tabindex: '-1' }, t('export.title')),
+    backendExport,
     callout('info', null, h('p', {}, t('export.backendNote')), h('p', {}, t('export.noPdf'))),
     field(t('export.snapshot'), h('select', { id: 'export-snapshot', onChange: (e) => { sel.snapshot = e.target.value; c.exportPreview = null; app.render({ keepFocus: true }); } },
       h('option', { value: 'current', selected: sel.snapshot === 'current' }, t('export.current', { state: stateText })),

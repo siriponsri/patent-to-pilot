@@ -1,0 +1,119 @@
+{
+  "status": "PASS_REAL_LOCAL_PATENT_VECTORS_THREE_DOSSIERS_REMOTE_NOT_RUN",
+  "execution_location": "Windows local CPU only; not dr-train/returned vectors",
+  "base_revision": "a0ec9ceaf381ebbce6e6c340a8b420189eb8474c",
+  "output_local_storage": "C:\\Users\\User\\AppData\\Local\\Temp\\pepo-unblock-local-patents-20261030T2038Z",
+  "input_rows": 41,
+  "runtime_input_sha256": "d1c254d054982566418b55355f45ab7cd2d38145312653b2b91dbacd075383a3",
+  "qrels_or_gold_exported": false,
+  "model": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "model_artifact": {
+      "filename": "model_quint8_avx2.onnx",
+      "sha256": "b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21"
+    },
+    "tokenizer_artifact": {
+      "filename": "tokenizer.json",
+      "sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+    }
+  },
+  "config": {
+    "representation": "mean_pool_l2_normalized",
+    "max_length": 256,
+    "dtype": "<f4",
+    "norm_policy": "l2",
+    "batch_size": 4,
+    "shard_size": 20,
+    "backend": "onnx_cpu_quantized_avx2",
+    "intra_op_threads": 1
+  },
+  "vector_manifest_sha256": "0969acdfe583601d1c4be9f04eadb8aa71ebea741bcc7c2573aabfa8c82ef881",
+  "vector_rows": 41,
+  "dimension": 384,
+  "shards": 3,
+  "resume": {
+    "first_shard_calls": 5,
+    "completed_document_calls": 11,
+    "encoded_document_rows_total": 41,
+    "no_completed_row_reencoding": true
+  },
+  "prior_luna_real_canary_import_rows": 64,
+  "cases": [
+    {
+      "query_id": "HT-DEV-MITRACLIP",
+      "patent_inputs": 41,
+      "candidates": 41,
+      "dense_scored_candidates": 33,
+      "dense_search_calls": 1,
+      "history_versions": [
+        1,
+        2
+      ],
+      "selected_export_version": 2,
+      "languages": [
+        "json",
+        "en",
+        "th"
+      ],
+      "source_view": "PASS",
+      "external_projection": "BLOCKED_EXPECTED_LOCAL_ONLY",
+      "errors": []
+    },
+    {
+      "query_id": "HT-DEV-TENDYNE",
+      "patent_inputs": 41,
+      "candidates": 34,
+      "dense_scored_candidates": 33,
+      "dense_search_calls": 1,
+      "history_versions": [
+        1,
+        2
+      ],
+      "selected_export_version": 2,
+      "languages": [
+        "json",
+        "en",
+        "th"
+      ],
+      "source_view": "PASS",
+      "external_projection": "BLOCKED_EXPECTED_LOCAL_ONLY",
+      "errors": []
+    },
+    {
+      "query_id": "HT-DEV-TRICLIP",
+      "patent_inputs": 41,
+      "candidates": 41,
+      "dense_scored_candidates": 41,
+      "dense_search_calls": 1,
+      "history_versions": [
+        1,
+        2
+      ],
+      "selected_export_version": 2,
+      "languages": [
+        "json",
+        "en",
+        "th"
+      ],
+      "source_view": "PASS",
+      "external_projection": "BLOCKED_EXPECTED_LOCAL_ONLY",
+      "errors": []
+    }
+  ],
+  "actual_local_neural_calls": 14,
+  "actual_local_encoded_rows_including_queries": 44,
+  "tokens": 10512,
+  "elapsed_seconds": 10.65600000001723,
+  "network_attempts": 0,
+  "provider_calls": 0,
+  "api_cost_usd": 0,
+  "remote_connections": 0,
+  "remote_encoding": "NOT_RUN_ALLOCATION_UNRESOLVED",
+  "remote_transfer": "NOT_RUN",
+  "limits": [
+    "Small Abbott local development corpus; no final quality/scientific/generalization claim",
+    "Not remote-produced or transferred vectors",
+    "Derived text/vectors/dossiers kept in permitted private local storage, not public audit artifacts"
+  ]
+}

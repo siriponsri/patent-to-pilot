@@ -1,0 +1,81 @@
+{
+  "format": "ht-o3-qwen3-evidence-pack-contract-v1",
+  "status": "PASS_FROZEN_LOCAL_RESEARCH_PACK",
+  "captured_at_utc": "2026-10-31T00:00:00Z",
+  "purpose": "local_research_only",
+  "source_artifacts": "private-local-artifacts:ht-abbott-dossiers-20261029-frozen-r1",
+  "pack": {
+    "logical_path": "private-local-artifacts:ht-o3-evidence-pack-20261031/evidence-pack.json",
+    "bytes": 220768,
+    "file_sha256": "2594295d4bbc82c7707365e4a0f372be5c0da6b88264a7c1bd76df5f22f0043a",
+    "pack_sha256": "d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932"
+  },
+  "case_order": [
+    "HT-DEV-MITRACLIP",
+    "HT-DEV-TENDYNE",
+    "HT-DEV-TRICLIP"
+  ],
+  "cases": [
+    {
+      "case_id": "HT-DEV-MITRACLIP",
+      "input_dossier_sha256": "cf26ff847d32f532f769f308ffa4e8ecf67029f1101975e4b1c7f92b6f8384a6",
+      "evidence_count": 5,
+      "candidate_count": 35,
+      "source_count": 43
+    },
+    {
+      "case_id": "HT-DEV-TENDYNE",
+      "input_dossier_sha256": "dfb2566b5f2d0e6997129e518dd9dd20b70b30532f8bdeeef1651a53b4d1334c",
+      "evidence_count": 5,
+      "candidate_count": 20,
+      "source_count": 43
+    },
+    {
+      "case_id": "HT-DEV-TRICLIP",
+      "input_dossier_sha256": "ef1e1d1fdc6255e36c11d1ebb866e995cd5612e069523c1b159c06d452f85f58",
+      "evidence_count": 5,
+      "candidate_count": 28,
+      "source_count": 43
+    }
+  ],
+  "model_condition": {
+    "model_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "license": "apache-2.0",
+    "dtype": "float16",
+    "attention": "eager",
+    "thinking": false,
+    "do_sample": false,
+    "max_new_tokens": 512,
+    "max_findings": 4
+  },
+  "input_policy": {
+    "evidence_order": "preserved from dossier JSON",
+    "candidate_order": "preserved from dossier JSON in the frozen pack",
+    "retained": [
+      "source IDs",
+      "source revisions and hashes",
+      "exact locators",
+      "evidence statements and support basis",
+      "candidate IDs and association statuses"
+    ],
+    "excluded": [
+      "evaluator labels",
+      "qrels and gold-derived queries",
+      "hidden oracles",
+      "raw HTML and source payloads",
+      "provider credentials"
+    ]
+  },
+  "rights_boundary": {
+    "local_research_execution": "ALLOWED_LOCAL_RESEARCH_FOR_EXISTING_LOCAL_SOURCES",
+    "provider_outbound_prompt_rights": "UNRESOLVED",
+    "product_display_or_redistribution": "NOT_GRANTED_BY_THIS_RECEIPT",
+    "google_patent_raw_text": "LOCAL_ONLY"
+  },
+  "remote_storage": {
+    "logical_job_root": "permitted-remote-job-root:research-product-o1-o4-20261031",
+    "remote_pack_file_sha256": "2594295d4bbc82c7707365e4a0f372be5c0da6b88264a7c1bd76df5f22f0043a",
+    "runner_sha256": "1f06727144a2918c643f50b5c1938e39ff80c370669a9f64814c429c7b7ef671"
+  }
+}

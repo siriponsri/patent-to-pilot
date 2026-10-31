@@ -1,0 +1,134 @@
+{
+  "format": "ht-research-product-audit-v1",
+  "run_id": "ht-research-product-20261031",
+  "status": "PASS_O2_FULL_ENCODING_EVAL_DEVICE_DOSSIER_E2E_QWEN3_LOCAL_GENERATION_API_COMPARISON_BLOCKED_LOCAL",
+  "started_at_local": "2026-10-31",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "base_commit": "257037a",
+  "candidate_commit": null,
+  "windows_model_manifest": {
+    "path": "permitted-local-storage:models-v1/manifest.json",
+    "sha256": "fc8df4227c41efc25d5eac7f4c4c2d0f533c8fd90f4b033e02fc506eb900ce78",
+    "bytes": 6274
+  },
+  "models": [
+    {
+      "model_id": "datalyes/patembed-base",
+      "revision": "244ba452908a3093be11efb8a44396652317fb14",
+      "license": "cc-by-nc-sa-4.0",
+      "windows_bytes": 778662281
+    },
+    {
+      "model_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "license": "mit",
+      "windows_bytes": 1134535908
+    }
+  ],
+  "remote": {
+    "host": "dr-train",
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "job_root": "permitted-remote-job-root:research-product-o1-o4-20261031",
+    "runtime_input_files": [
+      "inputs/corpus.jsonl",
+      "inputs/queries.jsonl",
+      "inputs/manifest.json",
+      "inputs/device-runtime/corpus.jsonl",
+      "inputs/device-runtime/queries.jsonl",
+      "inputs/device-runtime/manifest.json"
+    ],
+    "qrels_or_gold_transferred": false,
+    "first_runtime_deadline_started": true,
+    "runtime_start_utc": "2026-10-31T02:47:23Z",
+    "self_checks": {
+      "patembed": {
+        "status": "PASS",
+        "created_at_utc": "2026-10-31T02:47:31.262323+00:00",
+        "device": "Tesla V100-SXM2-32GB",
+        "cuda_device_count": 1,
+        "torch_threads": 8,
+        "shape": [4, 768],
+        "dtype": "<f4",
+        "max_rss_kib": 1545276
+      },
+      "e5": {
+        "status": "PASS",
+        "created_at_utc": "2026-10-31T02:47:40.913115+00:00",
+        "device": "Tesla V100-SXM2-32GB",
+        "cuda_device_count": 1,
+        "torch_threads": 8,
+        "shape": [4, 768],
+        "dtype": "<f4",
+        "max_rss_kib": 2155156
+      }
+    }
+  },
+  "local_changes": [
+    "src/patent_to_pilot/evaluation/healthtech/transformer_encoders.py",
+    "scripts/healthtech/encode_transformer_shards.py",
+    "scripts/healthtech/run_transformer_vector_retrieval_eval.py",
+    "tests/test_healthtech_transformer_encoders.py"
+  ],
+  "verification": {
+    "focused_tests": "PASS 15/15",
+    "compile_checks": "PASS",
+    "remote_layout_self_check": "PASS",
+    "remote_canary": "PASS_64_ROWS_INTERRUPTED_AND_RESUMED",
+    "vector_import": "PASS_CANARY_BUNDLES",
+    "full_encoding": "PASS_45336_ROWS_10_SHARDS_PER_MODEL",
+    "matched_dapfam_evaluation": "PASS_1247_QUERIES_49869_QREL_PAIRS_ZERO_DENSE_FAILURES",
+    "vector_backed_dossier_cases": "PASS_6_CASES_3_DEVICES_X_2_MODELS",
+    "local_qwen3_generation": "PASS_3_CASES_SCHEMA_VALID_ZERO_PROVIDER_CALLS",
+    "qwen3_generation_comparison": "BLOCKED_LOCAL_NOT_RUN_CANONICAL_LEDGER_ACCOUNT_RIGHTS_AND_PROMPT_RIGHTS_PENDING"
+  },
+  "full_encoding": {
+    "rows": 45336,
+    "queries": 1247,
+    "dimension": 768,
+    "patembed_corpus_manifest_sha256": "db5196ef239d79ef7a108f2c596881308e3f52e832c5bad136a244631af2abcd",
+    "patembed_queries_manifest_sha256": "6bacd6b8def0906101157c8c1ff80bab8fe05d1c416f18c554832abcdfaef8d0",
+    "e5_corpus_manifest_sha256": "94b2246b19cf481842cfd85a2757745c6f52c867b23030485778e8710adb1089",
+    "e5_queries_manifest_sha256": "53342cbfd55387aa2de07c5c487a75f627eced243e87324b6eb1f7db4449c9ac"
+  },
+  "matched_dapfam_evaluation": {
+    "k": 100,
+    "rrf_k": 60,
+    "query_count": 1247,
+    "qrel_pair_count": 49869,
+    "positive_qrels": 24929,
+    "dense_failed_query_count": 0,
+    "bm25_macro_recall_at_100": 0.2142252517152277,
+    "patembed_macro_recall_at_100": 0.42252517152276575,
+    "patembed_micro_recall_at_100": 0.42231938705924826,
+    "patembed_macro_ndcg_at_100": 0.34882988642862867,
+    "e5_macro_recall_at_100": 0.28741423861712556,
+    "e5_micro_recall_at_100": 0.28729592041397567,
+    "e5_macro_ndcg_at_100": 0.24478123282756506,
+    "patembed_output": "results/healthtech/ht-transformer-eval-20261031-patembed/summary.json",
+    "e5_output": "results/healthtech/ht-transformer-eval-20261031-e5/summary.json"
+  },
+  "device_runtime": {
+    "corpus_rows": 41,
+    "query_rows": 3,
+    "corpus_sha256": "5965b7b51006d9d64d05250848300dee68d80a0b69324213a5ccac25a1c44e9d",
+    "queries_sha256": "7e0e29b6b7e8f19dcbd28c775e8b518255b5fdcfa0846307acb5dd7f5b1381a8",
+    "patembed_corpus_manifest_sha256": "75348afa4fede2535c09970d70353ecf9477f306a48fa46c71a445677f2302f1",
+    "patembed_queries_manifest_sha256": "45da46ee7dbd755f8ca8dd4c244ff6b9063f16253c27907e92ff0291c61c7e54",
+    "e5_corpus_manifest_sha256": "643ab8856a1bcd72d2c2e4745d02bdfe46bed0190f16ab8834c3870249fdcc7b",
+    "e5_queries_manifest_sha256": "8e0a933f34c26a7f1370809c5220911cf6ed1b318bd02e7b4b60cc25ce76494c",
+    "case_ids": ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"],
+    "case_count": 6,
+    "provider_calls": 0,
+    "paid_cost_usd": 0
+  },
+  "cost": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "openrouter_ledger_reconciled": true,
+    "historical_cumulative_actual_debit_usd": 0.0001464,
+    "historical_unknown_pending_attempts": 0,
+    "current_account_state": "NOT_RUN_NO_CREDENTIAL_READ",
+    "current_paid_gate": "BLOCKED_LOCAL",
+    "o3_gate_receipt": "docs/healthtech/audits/ht-research-product-20261031/o3-gate.json"
+  }
+}

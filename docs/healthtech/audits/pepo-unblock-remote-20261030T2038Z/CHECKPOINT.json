@@ -1,0 +1,17 @@
+{
+  "status": "LOCAL_REPAIRS_AND_REAL_LOCAL_CASES_PASS_REMOTE_BLOCKED_ALLOCATION",
+  "start_head": "a0ec9ceaf381ebbce6e6c340a8b420189eb8474c",
+  "prepared_utc": "2026-10-30T20:40:55.918180+00:00",
+  "repair_branch": "codex/pepo-unblock-remote-20261030",
+  "no_remote_job_started": true,
+  "provider_calls": 0,
+  "cost_usd": 0,
+  "owner_minimum_missing": "Existing applicable allocation reference or CPU/GPU quota+window+limits/shared-service scope",
+  "end_main_head": "a0ec9ceaf381ebbce6e6c340a8b420189eb8474c",
+  "verification": "verification.json",
+  "repair_patch_sha256": "01c8ba6856cd780f09a80a8f007e24eec996607d8e2196247485b37cbf835a09",
+  "remote_blocker_state": "PENDING_MISSING_ALLOCATION_NOT_DENIED",
+  "next_actions": "NEXT_ACTIONS.md",
+  "local_real_cases": 3,
+  "local_model_calls": 14
+}

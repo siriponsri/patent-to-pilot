@@ -1,0 +1,173 @@
+{
+  "local_start_utc": "2026-10-31T00:50:59.6107828Z",
+  "local_finish_utc": "2026-10-31T00:51:00.5322255Z",
+  "snapshot": 2,
+  "destination": "chaw@100.77.149.83",
+  "ssh_exit_code": 0,
+  "strict_host_key_checking": "yes",
+  "batch_mode": true,
+  "probe_sha256": "0b6615350fd386466ef3450b7d9cdf50361ff4409a7311839017a116999e1573",
+  "remote": {
+    "format": "dr-train-read-only-resource-preflight-v1",
+    "timestamp_utc": "2026-10-31T07:51:00.341841+07:00",
+    "host": "dr-train",
+    "user_id": 1000,
+    "working_directory": "/home/chaw",
+    "platform": {
+      "system": "Linux",
+      "kernel": "7.0.0-38-generic",
+      "machine": "x86_64"
+    },
+    "gpu": {
+      "units": {
+        "memory": "MiB",
+        "utilization.gpu": "percent"
+      },
+      "gpus": [
+        {
+          "index": "0",
+          "uuid": "GPU-044a8b11-4729-458b-a07b-297e45439419",
+          "name": "NVIDIA GeForce RTX 2080 Ti",
+          "driver_version": "580.178.04",
+          "memory.total": "11264",
+          "memory.free": "10818",
+          "memory.used": "1",
+          "utilization.gpu": "0",
+          "compute_mode": "Default"
+        },
+        {
+          "index": "1",
+          "uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+          "name": "Tesla V100-SXM2-32GB",
+          "driver_version": "580.178.04",
+          "memory.total": "32768",
+          "memory.free": "32495",
+          "memory.used": "0",
+          "utilization.gpu": "0",
+          "compute_mode": "Default"
+        }
+      ],
+      "query": {
+        "exit_code": 0,
+        "stdout": "0, GPU-044a8b11-4729-458b-a07b-297e45439419, NVIDIA GeForce RTX 2080 Ti, 580.178.04, 11264, 10818, 1, 0, Default\n1, GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089, Tesla V100-SXM2-32GB, 580.178.04, 32768, 32495, 0, 0, Default",
+        "stderr": ""
+      }
+    },
+    "cpu": {
+      "lscpu": {
+        "Architecture": "x86_64",
+        "CPU(s)": "72",
+        "On-line CPU(s) list": "0-71",
+        "Model name": "Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz",
+        "Thread(s) per core": "2",
+        "Core(s) per socket": "18",
+        "Socket(s)": "2",
+        "CPU max MHz": "3800.0000",
+        "CPU min MHz": "1200.0000"
+      },
+      "logical_cpu_count": 72,
+      "affinity_cpu_count": 72,
+      "load_averages_1_5_15_min": [
+        0.36767578125,
+        0.4560546875,
+        0.4404296875
+      ],
+      "allocation": "UNKNOWN_NOT_GRANTED"
+    },
+    "memory": {
+      "units": "KiB",
+      "MemTotal": 131870916,
+      "MemFree": 8616440,
+      "MemAvailable": 122712320,
+      "SwapTotal": 8388604,
+      "SwapFree": 8378792
+    },
+    "storage": [
+      {
+        "path": "/home/chaw",
+        "exists": true,
+        "total_bytes": 315926315008,
+        "used_bytes": 138005585920,
+        "free_bytes": 161797824512,
+        "writable_observed": true,
+        "is_directory": true
+      },
+      {
+        "path": "/tmp",
+        "exists": true,
+        "total_bytes": 315926315008,
+        "used_bytes": 138005585920,
+        "free_bytes": 161797824512,
+        "writable_observed": true,
+        "is_directory": true
+      },
+      {
+        "path": "/home/chaw/patent-to-pilot-jobs",
+        "exists": false
+      }
+    ],
+    "runtimes": {
+      "python_version": "3.12.3",
+      "python_executable": "/usr/bin/python3",
+      "packages": {
+        "torch": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "onnxruntime": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "onnxruntime-gpu": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "sentence-transformers": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "transformers": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "tokenizers": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "numpy": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "safetensors": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "huggingface-hub": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "accelerate": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "faiss-cpu": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+        "faiss-gpu": "NOT_INSTALLED_IN_THIS_INTERPRETER"
+      },
+      "owned_environment_metadata": [],
+      "torch_cuda_runtime": "NOT_IMPORTED_OR_TESTED",
+      "cuda_compiler": {
+        "status": "NOT_ON_PATH"
+      }
+    },
+    "embedding_cache_metadata": {
+      "root": "/home/chaw/.cache/huggingface/hub",
+      "exists": true,
+      "models": [],
+      "scope": "Owned default HF cache metadata for embedding/patent models only; no weight contents, tokens or arbitrary cache roots read",
+      "matching_model_count": 0
+    },
+    "other_named_owned_model_roots": [
+      {
+        "path": "/home/chaw/models",
+        "exists": false,
+        "embedding_or_patent_named_children": []
+      },
+      {
+        "path": "/home/chaw/model-cache",
+        "exists": false,
+        "embedding_or_patent_named_children": []
+      },
+      {
+        "path": "/home/chaw/hf-cache",
+        "exists": false,
+        "embedding_or_patent_named_children": []
+      },
+      {
+        "path": "/home/chaw/.cache/torch/sentence_transformers",
+        "exists": false,
+        "embedding_or_patent_named_children": []
+      }
+    ],
+    "allocation": "UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY",
+    "actions": {
+      "compute_or_model_inference": 0,
+      "download": 0,
+      "install": 0,
+      "remote_files_written": 0,
+      "settings_changed": 0,
+      "services_touched": 0,
+      "credential_content_reads": 0
+    },
+    "finished_utc": "2026-10-31T07:51:00.418327+07:00"
+  }
+}

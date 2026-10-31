@@ -1,0 +1,30 @@
+{
+  "format": "ht-o1-local-http-browser-verification-v1",
+  "generated_at": "2026-10-31T09:09:04.2872584+07:00",
+  "command": "rtk proxy npm run test:integration:http",
+  "working_directory": "frontend/healthtech-web",
+  "candidate": {
+    "branch": "codex/research-product-o1-20261031",
+    "head": "0d049802d36bc2eebe60331ec444d62469fd767f",
+    "working_tree": "dirty"
+  },
+  "browser": {
+    "driver": "frontend/healthtech-web/tests/e2e/cdp.mjs",
+    "profile": "temporary fresh Chrome profile",
+    "frontend_origin": "http://127.0.0.1:<ephemeral-port>",
+    "backend_origin": "http://127.0.0.1:<ephemeral-port>"
+  },
+  "status": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+  "acceptance": {
+    "job_start": "PASS",
+    "running_cancel": "PASS",
+    "resume_retry": "PASS",
+    "source_inspection": "PASS",
+    "history_versions": [1, 2],
+    "history_edit": "PASS",
+    "reload_reopen": "PASS",
+    "exports": ["json", "th", "en"]
+  },
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0
+}

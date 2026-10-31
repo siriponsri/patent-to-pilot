@@ -621,3 +621,115 @@ Status: `PASS_LOCAL_FILE_UI_BACKEND_INTEGRATION`; canonical audit: `docs/healtht
 Combined main `a0ec9ce` with PR #1 head `7ca0f2e` in an isolated worktree. Regenerated stale rights/manifest schemas, fixed external company-metadata projection, rejected mixed-query/duplicate-step/policy receipts, preserved historical browser evidence and added executable current-Python/backend-to-UI regressions. Final guarded backend suite: 475 passed/1 optional skip; frontend: 72/72; original browser acceptance: 17/17; fresh MitraClip/Tendyne/TriClip backend-to-browser cases: 3/3, including source inspection, IndexedDB reload and edited TH/EN downloads. No live API, paid call or remote job occurred.
 
 Next: verify publication via the merge receipt, then choose a separate HTTP run/history adapter package if desired. Remote allocation remains an independent blocker; vector/shard crash-resume repairs remain in their original Pepo worktree. Do not treat file-based UI integration as service deployment, scientific validation, or completion of the remote-embedding goal.
+
+## HT-NEXT-070 — 2026-10-31 O1 local HTTP backend
+
+Status: `PARTIAL_LOCAL_BACKEND`; canonical audit: `docs/healthtech/audits/ht-o1-local-http-20261031/README.md`.
+
+Added the loopback `healthtech-local-http-v1` service and CLI around the existing offline dossier engine. `POST /jobs` now validates a canonical `DossierInput`, enforces a bounded idempotency key, persists durable job state/attempts, runs one local worker, acknowledges cancellation, and exposes fail-closed resume. History reads/edits use the existing atomic version chain and expected-parent check; source inspection and selected-version JSON/Markdown exports reuse the rights boundary. `/providers` exposes local resource accounting and keeps the paid provider gate closed without guessing the historical ledger balance.
+
+Focused HTTP plus pre-live/history/rights regressions pass with one existing optional tokenizer skip; compile, CLI help, and diff checks pass. No live provider, paid call, browser HTTP acceptance, remote embedding, model comparison, or real-device E2E run occurred. Next: wire the frontend adapter and run browser acceptance against the service while preserving the existing file-import and IndexedDB namespace.
+
+## HT-NEXT-071 — 2026-10-31 O1 local HTTP browser integration
+
+Status: `PASS_LOCAL_HTTP_BROWSER_INTEGRATION`; canonical audit: `docs/healthtech/audits/ht-o1-local-http-20261031/README.md`.
+
+Completed the loopback frontend adapter/provider selector and real Chrome acceptance against the temporary Python service. The browser flow starts a synthetic job, cancels it while running, resumes/retries to success, inspects a source, edits history from version 1 to version 2, reloads the project, and exports selected version 2 as JSON, Thai Markdown, and English Markdown. Frontend unit tests pass 74/74; the focused Python suite and full repository suite pass with one existing optional tokenizer skip; provider calls and paid cost are zero.
+
+This closes the local HTTP package only. Live OpenRouter execution, remote embeddings, generation-model comparison, real-device HTTP cases, semantic device-patent gold, deployment, public release, and commercial/user validation remain NOT_RUN or blocked. Next: review the isolated candidate and create the authorized commit/push path if accepted.
+
+## HT-NEXT-072 — 2026-10-31 M43 transformer full evaluation and device E2E
+
+Status: `PASS_O2_FULL_ENCODING_EVAL_DEVICE_DOSSIER_E2E_QWEN3_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-research-product-20261031/README.md`.
+
+Completed the remote PatEmbed and multilingual-e5 package with imported query bundles. Each model has 45,336 DAPFAM passage vectors in 10 shards and 1,247 query vectors, with remote/local manifest validation and matching hashes. Matched evaluation covers 1,247 queries and 49,869 qrel pairs with zero dense failures. PatEmbed dense Recall@100 is `0.42252517152276575` macro / `0.42231938705924826` micro; e5 is `0.28741423861712556` macro / `0.28729592041397567` micro; shared BM25 is `0.2142252517152277` macro / `0.21392755425408158`.
+
+Encoded a separate 41-patent / 3-query Abbott runtime pack for MitraClip, Tendyne, and TriClip. Imported PatEmbed and e5 vectors powered six local dossier-engine runs with one bounded search per case, zero vector/provider errors, zero provider calls, and USD `0.00` paid cost. This remains product-path engineering evidence and a separate citation-based DAPFAM diagnostic, not semantic device-patent gold, exhaustive recall, clinical/FTO, patent validity, investment, or publication evidence. The two mitral cases share the current adapter's declared `mitral valve` technical query and therefore share dense query vectors.
+
+Historical OpenRouter receipts reconcile to cumulative actual debit USD `0.0001464` with zero unknown-pending attempts, and a public unauthenticated Qwen3-32B route/pricing snapshot was captured. O3 remains `BLOCKED_LOCAL`: the USD8 authorization still lacks one canonical ledger identity, current account credit is unverified, dossier prompt transfer rights are unresolved, the exact comparison authorization is not granted, and the local Qwen3-8B revision is not frozen. Full repository regression, compile, and diff checks pass; no provider request occurred. See `docs/healthtech/audits/ht-research-product-20261031/o3-gate.json`.
+
+## HT-NEXT-073 — 2026-10-31 adaptive-policy continuation report
+
+Status: `PARTIAL_O4_OFFLINE_ADAPTIVE_REPORT_O3_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-research-product-continuation-20261031/README.md`.
+
+Added a strict goal-specific adaptive-policy report builder and checkpoint. It reuses the audited HT-B0a/B0b/B1/B2/B3 fixed controls, deterministic offline controller receipts, cross-cohort comparability flags, and the provider-shaped HT-B4 mock holdout. The report preserves `MOCK_ONLY_NOT_PROVIDER_EVIDENCE`, marks the endpoint `DESCRIPTIVE_ONLY_NOT_ESTIMABLE`, and records Abbott/Boston group limitations. Focused adaptive/controller regressions pass 14/14; the full repository suite exits 0 with one existing optional tokenizer skip. No provider call, model download, remote job, or paid cost occurred.
+
+The scoped local Qwen3-8B preflight found only the existing MiniLM ONNX embedding artifacts and no Qwen3-8B checkpoint or immutable revision record in the inspected permitted paths. Keep O3 blocked until the canonical ledger identity, current account credit, exact comparison authorization, rights-cleared outbound evidence manifest, and local Qwen3-8B revision are all recorded. Next: inspect the candidate diff, commit the continuation package, and then stop at the O3 gate.
+
+## HT-NEXT-074 — 2026-10-31 Qwen3-8B local model preflight
+
+Status: `PASS_MODEL_ACQUIRED_OFFLINE_SMOKE_REMOTE_GENERATION_PENDING`; canonical audit: `docs/healthtech/audits/ht-o3-local-model-preflight-20261031/README.md`.
+
+Downloaded the pinned `Qwen/Qwen3-8B` revision `b968826d9c46dd6066d109eabc6255188de91218` into private Windows storage using the existing allowlist-based downloader. The manifest is Apache-2.0, contains 15 allowlisted files, and records `16,397,461,266` model bytes. An independent streaming verifier matched all 15 SHA-256 values with no missing or extra files; the manifest SHA-256 is `f9a1820ac27cd6dfa3253f78f41004bb9cdee31e60686a4698ac3d0ebabec014`.
+
+Installed an isolated validation environment with `torch==2.8.0+cpu`, `transformers==4.51.3`, `safetensors==0.5.3`, and `accelerate==1.6.0`. Offline Qwen3 config/tokenizer loading passed with `trust_remote_code=false`. Full Windows weight loading was not attempted because the host snapshot has `16,824,262,656` RAM bytes and no CUDA; this is a runtime boundary, not a model-integrity failure. Known local setup plus a future remote Qwen copy is estimated at `38,186,418,222` bytes against the `42,949,672,960` hard bound, leaving `4,763,254,738` bytes before any additional remote runtime/storage overhead.
+
+O3 remains blocked on canonical cumulative ledger identity, current account credit, exact comparison authorization, rights-cleared outbound dossier prompts, and remote-V100 local-generation compatibility. Next: inspect remote storage/allocation, transfer only the pinned model if the measured peak remains within the bound, run a bounded non-thinking local-generation canary, and keep the API branch closed until all paid gates are evidenced.
+
+## HT-NEXT-075 — 2026-10-31 Qwen3-8B frozen-pack local generation
+
+Status: `PASS_LOCAL_GENERATION_API_COMPARISON_BLOCKED`; canonical audit: `docs/healthtech/audits/ht-o3-local-model-preflight-20261031/`.
+
+Completed the bounded local generation branch with the frozen evidence pack and immutable `Qwen/Qwen3-8B` revision `b968826d9c46dd6066d109eabc6255188de91218` under Apache-2.0. The ordered MitraClip, Tendyne, and TriClip cases all returned schema-valid outputs (`3/3`) from pack SHA-256 `d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932`; provider calls and paid cost were `0` / `$0.00`. Formal remote allocation remains `UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY` even though the bounded job completed on the approved GPU UUID.
+
+The API comparison against `qwen/qwen3-32b` remains closed. Do not dispatch until the canonical cumulative ledger identity, current account credit, exact route/provider and spend authorization, and rights-cleared outbound dossier-prompt manifest are all evidenced. Keep semantic judgment, clinical/FTO, deployment, publication, and commercial branches separate.
+
+## HT-NEXT-076 — 2026-10-31 O1-O4 HTTP/vector package
+
+Status: `READY_FOR_REVIEW_PARTIAL_O4_O3_API_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-o1-o4-http-vector-20261031/README.md`.
+
+Committed the server-owned `ht-http-vector-config-v1` binding and real Abbott
+HTTP/vector/history/export runner at implementation commit
+`928729ee1381280cc11d85439e63a71dff91432f`. Full Python checks pass with two
+existing optional skips; frontend tests pass `74/74`; real Chrome loopback
+acceptance passes. PatEmbed and multilingual-e5 each complete the three named
+device jobs with zero vector errors, zero provider calls, and USD `0.00` paid
+cost. The adaptive report keeps HT-B0a/B0b/B1/B2/B3, the deterministic offline
+controller, and HT-B4-MOCK separate from live/provider evidence.
+
+O3 local Qwen3-8B generation is schema-valid for `3/3` frozen-pack cases, but
+the `qwen/qwen3-32b` API comparison remains `BLOCKED_LOCAL`. Next: clear the
+ledger/credit/authorization/prompt-rights gates, then integrate local generation
+into the same HTTP job lifecycle and rerun one rights-cleared hash-frozen
+comparison. Keep paid dispatch, clinical/FTO, deployment, and publication
+claims closed.
+
+## HT-NEXT-077 — 2026-10-31 local-generation HTTP action and Abbott browser harness
+
+Status: `PARTIAL_O4_HTTP_GENERATION_HARNESS_READY_O3_API_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-o4-local-generation-http-20261031/README.md`.
+
+Added the server-owned `local-generation` HTTP provider, bound it to the existing frozen Qwen evidence-pack contract, persisted `generation.json` with the same job/history/export lifecycle, and exposed the structured result in the frontend. The single-case pack smoke excludes source payloads. The injected-provider lifecycle regression passes `6/6` HTTP tests; vector regressions pass `5/5`; frontend passes `74/74`; existing Chrome loopback acceptance passes. A named Abbott browser harness is ready and keeps its temporary case bundle outside Git, but it is `NOT_RUN_ASSET_GATED` because the current checkout has no permitted vector/generation runtime config paths. No provider call or paid cost occurred.
+
+Next: run `npm run test:integration:abbott` when the named cohort, rights matrix, server-owned vector config, and optional local-generation config are available; preserve a sanitized receipt. Keep the OpenRouter comparison blocked until the cumulative ledger, current credit, exact authorization, and outbound prompt-rights gates are evidenced.
+
+## HT-NEXT-078 — 2026-10-31 real Abbott HTTP generation browser acceptance
+
+Status: `PASS_O4_REAL_HTTP_GENERATION_BROWSER_O3_API_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/README.md`.
+
+Completed the named `HT-DEV-MITRACLIP`, `HT-DEV-TENDYNE`, and `HT-DEV-TRICLIP` cases through Chrome, loopback HTTP, server-owned PatEmbed retrieval, pinned local `Qwen/Qwen3-8B` generation, source inspection, history version `1 -> 2` editing, and selected-version JSON export. Generation was schema-valid for `3/3` jobs. The browser receipt records three local generation jobs, zero paid/provider calls, USD `0.00` paid cost, and no raw case bundle or generated text committed. Final Node, frontend (`74/74`), existing HTTP browser, full Python (exit `0`, two existing optional skips), and diff checks pass.
+
+O3 remains `BLOCKED_LOCAL`: do not dispatch `qwen/qwen3-32b` until the canonical cumulative ledger identity, current account credit, exact route/spend authorization, and rights-cleared outbound dossier-prompt manifest are all evidenced. Keep semantic judgment, clinical/FTO, patent-validity, deployment, publication, and commercial claims separate from this engineering-path pass.
+
+## HT-NEXT-079 — 2026-10-31 O4 research report completion
+
+Status: `PASS_O4_RESEARCH_HANDOFF_O3_API_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT.md`.
+
+Added the current English and Thai O4 research handoff. It binds the three-case browser receipt to the PatEmbed/e5 vector receipts, gives grouped MitraClip/Tendyne versus TriClip retrieval analysis, records the fixed-control macro Recall@20 frontier and cost/query trade-offs, and separates observed failures from unresolved O3/API limitations. The report explicitly states that candidate counts and DAPFAM metrics are diagnostic/product-path evidence, not semantic patent gold or exhaustive recall.
+
+Next: keep the Draft PR reviewable, keep paid dispatch closed, and resolve O3 ledger/credit/authorization/prompt-rights gates before any API comparison or final merge/branch deletion.
+
+## HT-NEXT-080 — 2026-10-31 O3 offline engineering unblock
+
+Status: `PASS_ENGINEERING_PREPARATION_O3_PAID_RESEARCH_PARTIAL`; canonical audit: `docs/healthtech/audits/pepo-o3-unblock-20261031/README.md`.
+
+Corrected the current authorization summary so the existing `PTP-HT-OR-R1-20261028-USD8` owner scope is recorded as approved without creating a new grant or resetting the 24-hour clock. Added the per-user canonical ledger registry and live path-substitution guard, explicit mock namespace, non-creating journal registration CLI, rights-cleared paired payload manifest, API generation runner, and candidate/disclosed-link provenance validation. Focused O3 tests pass `35/35`; full repository tests pass `506/506` with one existing optional skip; compile and diff checks pass. No paid provider request was sent.
+
+Read-only search found historical receipts totaling `USD0.0001464` with zero unknown-pending attempts, but no current canonical journal path or sanitized current account-credit snapshot. The research comparison remains `BLOCKED_LOCAL` until those facts plus fresh route/parameter/pricing and outbound prompt-rights evidence are available. Next owner input, if needed, is only the real journal location or a sanitized all-attempt export, plus a sanitized current credit/billing snapshot if the approved integration cannot provide it; do not re-ask for the existing USD8 authorization.
+
+## HT-NEXT-081 — 2026-10-31 journal recovery and registry guard
+
+Status: `PASS_HISTORICAL_JOURNAL_RECONCILED_R1_CANONICAL_STILL_BLOCKED`; canonical audit: `docs/healthtech/audits/pepo-o3-unblock-20261031/README.md`.
+
+Recovered the preserved Phase A and paired-revalidation SQLite journals in read-only mode. Their hashes and receipt chain reconcile to `USD0.0001464` actual debit with zero unknown-pending attempts, but both use the legacy `attempts/meta` schema and are not the current R1 canonical ledger. Added a fail-closed registry check that rejects legacy-policy SQLite journals and mock namespaces before registry creation; focused ledger/provider regressions pass `29/29`, and the full repository suite passes `508/508` with one existing optional skip. No journal was copied, rewritten, rebound, or used for paid dispatch.
+
+Next: obtain only the current R1 canonical journal location or sanitized all-attempt export plus the current credit/billing snapshot. Do not request the existing USD8 authorization again; keep paid dispatch closed until the R1 ledger, credit, rights, and exact request-bound gates pass.

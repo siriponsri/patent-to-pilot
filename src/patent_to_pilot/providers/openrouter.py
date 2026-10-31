@@ -99,6 +99,9 @@ class ProviderConfig(BaseModel):
 class ProviderRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     prompt: str = Field(min_length=1)
+    # When present, this exact message list is sent to the provider. The
+    # legacy single-prompt path remains available for existing controllers.
+    messages: list[dict[str, str]] | None = None
     response_schema: dict[str, Any] | None = None
     tools: list[dict[str, Any]] = Field(default_factory=list)
     parameters: dict[str, Any] = Field(default_factory=dict)
@@ -255,7 +258,7 @@ class OpenRouterHTTPTransport:
         output_limit = request.max_output_tokens or config.max_output_tokens
         payload: dict[str, Any] = {
             "model": config.model,
-            "messages": [{"role": "user", "content": request.prompt}],
+            "messages": request.messages or [{"role": "user", "content": request.prompt}],
             "stream": False,
             "max_tokens": output_limit,
         }

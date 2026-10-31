@@ -145,6 +145,10 @@ class B4ProviderSelector:
     ) -> None:
         if pricing.model not in policy.get("models", {}):
             raise ValueError("pricing model is not bound to the R1 policy")
+        if policy.get("models", {}).get(pricing.model) != pricing.upstream_provider:
+            raise ValueError("pricing upstream provider is not bound to the R1 policy")
+        if policy.get("pricing_snapshot_sha256") != pricing.snapshot_sha256 or policy.get("pricing_snapshot_utc") != pricing.snapshot_utc:
+            raise ValueError("pricing snapshot is not bound to the R1 policy")
         self.run_id = run_id
         self.query_id = query_id
         self.phase = phase
@@ -186,7 +190,7 @@ class B4ProviderSelector:
             raise ValueError("structured controller prompt exceeds the configured input bound")
         output_bound = self.config.max_output_tokens
         upper_bound = conservative_request_bound_usd(
-            input_tokens=input_bound,
+            input_tokens=input_bound + self._schema_bound,
             output_tokens=output_bound,
             pricing=self.pricing,
         )
