@@ -52,6 +52,7 @@
     "mock_namespace_isolation": "PASS",
     "rights_cleared_paired_payload": "PASS_SYNTHETIC_CANARY_CONTRACT",
     "api_generation_runner": "PASS_DRY_RUN_AND_MOCK_CONTRACT",
+    "api_generation_credit_gate": "PASS_SANITIZED_SNAPSHOT_REQUIRED_AND_BOUND_BEFORE_LIVE_RUN",
     "candidate_disclosed_link_validation": "PASS",
     "legacy_sqlite_journal_guard": "PASS_FAIL_CLOSED_BEFORE_REGISTRY_CREATION",
     "authorization_gate_summary": "PASS_EXISTING_SCOPE_RECORDED_AS_APPROVED"
@@ -80,6 +81,11 @@
     "diff_check": {
       "command": "git diff --check",
       "result": "PASS",
+      "exit_code": 0
+    },
+    "credit_gate_regression": {
+      "command": "python -m pytest -p no:cacheprovider tests/test_healthtech_api_generation.py tests/test_healthtech_ledger_registry.py tests/test_healthtech_round1_budget.py tests/test_healthtech_b4_live.py tests/test_healthtech_generation_payload.py tests/test_healthtech_qwen_evidence_pack.py",
+      "result": "41 passed",
       "exit_code": 0
     }
   },

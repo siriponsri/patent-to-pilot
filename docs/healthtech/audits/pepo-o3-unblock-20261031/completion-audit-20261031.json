@@ -84,13 +84,15 @@
     },
     {
       "id": "api_generation_runner",
-      "status": "PASS_DRY_RUN_AND_MOCK_NOT_LIVE",
+      "status": "PASS_DRY_RUN_MOCK_AND_CREDIT_PREFLIGHT_NOT_LIVE",
       "evidence": [
         "src/patent_to_pilot/healthtech/api_generation.py",
         "scripts/healthtech/run_openrouter_generation_evidence_pack.py",
         "tests/test_healthtech_api_generation.py"
       ],
       "facts": {
+        "live_requires_sanitized_credit_snapshot": true,
+        "credit_snapshot_bound_to_receipt": true,
         "paid_dispatch": "NOT_RUN",
         "provider_calls": 0,
         "paid_cost_usd": 0.0

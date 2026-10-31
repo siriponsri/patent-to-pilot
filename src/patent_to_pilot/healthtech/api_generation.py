@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime
+import math
 from pathlib import Path
 import re
 import time
@@ -33,6 +35,7 @@ from patent_to_pilot.providers.round1 import (
 
 
 MODEL_ID = "qwen/qwen3-32b"
+CREDIT_SNAPSHOT_FORMAT = "ptp-openrouter-credit-snapshot-v1"
 
 
 class APIGenerationError(RuntimeError):
@@ -54,6 +57,45 @@ def _load_json(path: Path) -> dict[str, Any]:
     return value
 
 
+def normalize_account_credit_snapshot(raw: dict[str, Any]) -> dict[str, Any]:
+    """Validate the sanitized account-credit fact used by live preflight."""
+    if not isinstance(raw, dict):
+        raise APIGenerationError("account credit snapshot must be a JSON object")
+    if raw.get("format") != CREDIT_SNAPSHOT_FORMAT:
+        raise APIGenerationError("account credit snapshot format is unsupported")
+    if raw.get("provider") != "openrouter":
+        raise APIGenerationError("account credit snapshot provider must be openrouter")
+    source = raw.get("source")
+    if source not in {"approved_integration", "owner_sanitized_snapshot"}:
+        raise APIGenerationError("account credit snapshot source is not approved")
+    as_of_utc = raw.get("as_of_utc")
+    if not isinstance(as_of_utc, str) or not as_of_utc.strip():
+        raise APIGenerationError("account credit snapshot timestamp is required")
+    try:
+        parsed_time = datetime.fromisoformat(as_of_utc.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise APIGenerationError("account credit snapshot timestamp is invalid") from exc
+    if parsed_time.tzinfo is None:
+        raise APIGenerationError("account credit snapshot timestamp must include timezone")
+    remaining = raw.get("remaining_credits_usd")
+    if isinstance(remaining, bool) or not isinstance(remaining, (int, float)) or not math.isfinite(float(remaining)):
+        raise APIGenerationError("remaining_credits_usd must be a finite number")
+    if float(remaining) < 0:
+        raise APIGenerationError("remaining_credits_usd cannot be negative")
+    unsigned = {
+        "format": CREDIT_SNAPSHOT_FORMAT,
+        "provider": "openrouter",
+        "source": source,
+        "as_of_utc": as_of_utc,
+        "remaining_credits_usd": float(remaining),
+    }
+    declared_hash = raw.get("snapshot_sha256")
+    expected_hash = sha256_json(unsigned)
+    if declared_hash is not None and declared_hash != expected_hash:
+        raise APIGenerationError("account credit snapshot hash mismatch")
+    return unsigned | {"snapshot_sha256": expected_hash}
+
+
 class OpenRouterQwenGenerationRunner:
     """Run one sequential, exact-route generation attempt per frozen case."""
 
@@ -64,6 +106,7 @@ class OpenRouterQwenGenerationRunner:
         pricing: B4Pricing,
         transport_factory: Callable[[], Any] | None = None,
         live_enabled: bool = False,
+        account_credit_snapshot: dict[str, Any] | None = None,
         run_id: str,
         max_output_tokens: int = 512,
         max_findings: int = 6,
@@ -81,9 +124,16 @@ class OpenRouterQwenGenerationRunner:
             raise APIGenerationError("max_input_tokens must be positive")
         if live_enabled and budget.namespace != "canonical":
             raise BudgetExceededError("paid generation requires the canonical authorization ledger")
+        if live_enabled and account_credit_snapshot is None:
+            raise APIGenerationError("live generation requires a sanitized account credit snapshot")
         self.budget = budget
         self.pricing = pricing
         self.live_enabled = live_enabled
+        self.account_credit_snapshot = (
+            normalize_account_credit_snapshot(account_credit_snapshot)
+            if account_credit_snapshot is not None
+            else None
+        )
         self.run_id = run_id
         self.max_output_tokens = max_output_tokens
         self.max_findings = max_findings
@@ -159,9 +209,17 @@ class OpenRouterQwenGenerationRunner:
             route=self.pricing.upstream_provider,
             max_output_tokens=self.max_output_tokens,
         )
-        result_cases: list[dict[str, Any]] = []
+        prepared_cases = []
         for payload_case, source_case in zip(payload["cases"], pack["cases"]):
             request, input_tokens, schema_tokens, upper_bound = self._request_for_case(payload_case)
+            prepared_cases.append((payload_case, source_case, request, input_tokens, schema_tokens, upper_bound))
+        total_bound = sum(item[5] for item in prepared_cases)
+        if self.live_enabled:
+            assert self.account_credit_snapshot is not None
+            if self.account_credit_snapshot["remaining_credits_usd"] < total_bound:
+                raise BudgetExceededError("account credit snapshot is below the conservative run bound")
+        result_cases: list[dict[str, Any]] = []
+        for payload_case, source_case, request, input_tokens, schema_tokens, upper_bound in prepared_cases:
             attempt_id = request.request_id
             started = time.perf_counter()
             case_result: dict[str, Any] = {
@@ -235,6 +293,8 @@ class OpenRouterQwenGenerationRunner:
             "pack_sha256": payload["pack_sha256"],
             "manifest": payload["manifest"],
             "thinking": False,
+            "account_credit_snapshot": self.account_credit_snapshot,
+            "conservative_run_bound_usd": total_bound,
             "provider_calls": sum(case["status"] in {"SUCCESS", "FAILED"} for case in result_cases),
             "paid_cost_usd": sum(float(case.get("actual_debit_usd") or 0.0) for case in result_cases),
             "ledger_snapshot": snapshot,
@@ -262,6 +322,7 @@ class OpenRouterQwenGenerationRunner:
         snapshot_path: Path,
         transport_factory: Callable[[], Any] | None,
         live_enabled: bool,
+        account_credit_snapshot: dict[str, Any] | None = None,
         run_id: str,
         max_output_tokens: int = 512,
         max_findings: int = 6,
@@ -279,6 +340,7 @@ class OpenRouterQwenGenerationRunner:
             pricing=pricing,
             transport_factory=transport_factory,
             live_enabled=live_enabled,
+            account_credit_snapshot=account_credit_snapshot,
             run_id=run_id,
             max_output_tokens=max_output_tokens,
             max_findings=max_findings,

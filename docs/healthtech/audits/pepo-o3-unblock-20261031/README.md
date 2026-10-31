@@ -22,7 +22,10 @@ scope. No new grant, top-up, ledger reset, or 24-hour clock reset was created.
 - Added the rights-cleared paired payload and API generation runner. The
   payload retains exact source/revision/hash/locator metadata, excludes raw
   source payloads and evaluator material, and is shared by local/API message
-  construction.
+  construction. Live runner preflight now also requires a sanitized,
+  timestamped account-credit snapshot, binds its hash to the receipt, and
+  rejects a run whose remaining credit is below the conservative request
+  bound before reserve/transport.
 - Tightened output validation so hidden candidate rows are rejected and a
   `retrieved_candidate` cannot become `disclosed_link` without source-backed
   patent-disclosure evidence.

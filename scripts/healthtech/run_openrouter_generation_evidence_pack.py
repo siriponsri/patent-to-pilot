@@ -14,6 +14,7 @@ from patent_to_pilot.healthtech.api_generation import (  # noqa: E402
     MODEL_ID,
     APIGenerationError,
     OpenRouterQwenGenerationRunner,
+    normalize_account_credit_snapshot,
     write_sanitized_receipt,
 )
 from patent_to_pilot.healthtech.b4_live import B4Pricing  # noqa: E402
@@ -81,6 +82,7 @@ def main() -> int:
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--mode", choices=["dry-run", "mock", "live"], default="dry-run")
     parser.add_argument("--budget-path", type=Path, default=None, help="mock-only isolated journal; live accepts only canonical path")
+    parser.add_argument("--credit-snapshot", type=Path, default=None, help="sanitized current OpenRouter credit snapshot; required for live mode")
     parser.add_argument("--max-output-tokens", type=int, default=512)
     parser.add_argument("--max-findings", type=int, default=6)
     args = parser.parse_args()
@@ -90,6 +92,15 @@ def main() -> int:
     pricing = _pricing(args.model_snapshot)
     if pricing.model != MODEL_ID:
         parser.error("model snapshot must pin qwen/qwen3-32b")
+    if args.mode == "live" and args.budget_path is None:
+        parser.error("--budget-path is required for live mode")
+    if args.mode == "live" and args.credit_snapshot is None:
+        parser.error("--credit-snapshot is required for live mode")
+    account_credit_snapshot = (
+        normalize_account_credit_snapshot(_read_json(args.credit_snapshot))
+        if args.credit_snapshot is not None
+        else None
+    )
     if args.mode == "dry-run":
         payload = build_rights_cleared_paired_payload(
             pack,
@@ -137,6 +148,7 @@ def main() -> int:
             snapshot_path=args.model_snapshot,
             transport_factory=transport_factory,
             live_enabled=live_enabled,
+            account_credit_snapshot=account_credit_snapshot,
             run_id=args.run_id,
             max_output_tokens=args.max_output_tokens,
             max_findings=args.max_findings,
