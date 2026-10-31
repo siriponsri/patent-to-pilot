@@ -603,5 +603,7 @@
   "latest_o4_abbott_browser_harness": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/browser-receipt.json",
   "latest_o4_remote_http_generation_browser_audit": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/README.md",
   "latest_o4_remote_http_generation_browser_checkpoint": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/CHECKPOINT.json",
-  "latest_o4_remote_http_generation_browser_verification": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/verification.json"
+  "latest_o4_remote_http_generation_browser_verification": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/verification.json",
+  "latest_o4_remote_http_generation_browser_report": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT.md",
+  "latest_o4_remote_http_generation_browser_report_th": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT_TH.md"
 }

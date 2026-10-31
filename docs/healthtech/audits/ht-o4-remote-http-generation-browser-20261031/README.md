@@ -54,6 +54,10 @@ request was dispatched.
 
 ## Verification
 
+The research handoff is in `REPORT.md`, with a Thai summary in `REPORT_TH.md`.
+It records grouped retrieval behavior, the fixed-budget control frontier,
+generation latency/cost, observed failures, and the O3 comparison boundary.
+
 See `verification.json` for the command receipt and `CHECKPOINT.json` for the
 resume boundary. The SSH loopback tunnel used for the acceptance is transient
 and is not a required project artifact.

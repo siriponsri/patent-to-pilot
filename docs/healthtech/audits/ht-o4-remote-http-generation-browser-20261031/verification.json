@@ -2,6 +2,8 @@
   "format": "ht-o4-remote-http-generation-browser-verification-v1",
   "run_id": "ht-o4-remote-http-generation-browser-20261031",
   "base_revision": "79580d2b36a505b717718cc22b1d11298888ef12",
+  "research_report": "REPORT.md",
+  "thai_report": "REPORT_TH.md",
   "commands": [
     {
       "id": "named_abbott_browser",

@@ -709,3 +709,11 @@ Status: `PASS_O4_REAL_HTTP_GENERATION_BROWSER_O3_API_BLOCKED_LOCAL`; canonical a
 Completed the named `HT-DEV-MITRACLIP`, `HT-DEV-TENDYNE`, and `HT-DEV-TRICLIP` cases through Chrome, loopback HTTP, server-owned PatEmbed retrieval, pinned local `Qwen/Qwen3-8B` generation, source inspection, history version `1 -> 2` editing, and selected-version JSON export. Generation was schema-valid for `3/3` jobs. The browser receipt records three local generation jobs, zero paid/provider calls, USD `0.00` paid cost, and no raw case bundle or generated text committed. Final Node, frontend (`74/74`), existing HTTP browser, full Python (exit `0`, two existing optional skips), and diff checks pass.
 
 O3 remains `BLOCKED_LOCAL`: do not dispatch `qwen/qwen3-32b` until the canonical cumulative ledger identity, current account credit, exact route/spend authorization, and rights-cleared outbound dossier-prompt manifest are all evidenced. Keep semantic judgment, clinical/FTO, patent-validity, deployment, publication, and commercial claims separate from this engineering-path pass.
+
+## HT-NEXT-079 — 2026-10-31 O4 research report completion
+
+Status: `PASS_O4_RESEARCH_HANDOFF_O3_API_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT.md`.
+
+Added the current English and Thai O4 research handoff. It binds the three-case browser receipt to the PatEmbed/e5 vector receipts, gives grouped MitraClip/Tendyne versus TriClip retrieval analysis, records the fixed-control macro Recall@20 frontier and cost/query trade-offs, and separates observed failures from unresolved O3/API limitations. The report explicitly states that candidate counts and DAPFAM metrics are diagnostic/product-path evidence, not semantic patent gold or exhaustive recall.
+
+Next: keep the Draft PR reviewable, keep paid dispatch closed, and resolve O3 ledger/credit/authorization/prompt-rights gates before any API comparison or final merge/branch deletion.

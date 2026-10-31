@@ -1,0 +1,53 @@
+# รายงานวิจัยและผลิตภัณฑ์ HealthTech — O1-O4 — 31 ตุลาคม 2026
+
+สถานะ: `PARTIAL_O4_ENGINEERING_PASS_O3_BLOCKED_LOCAL`
+
+รายงานนี้เป็น handoff ปัจจุบันของ 3 named Abbott cases และแก้ขอบเขตที่
+เอกสาร parent เดิมยังระบุว่า HTTP generation ยังไม่ถูกทดสอบ
+
+## ผล E2E
+
+| Case | PatEmbed candidates | e5 candidates | HTTP | Generation | History/export |
+|---|---:|---:|---|---|---|
+| MitraClip | 33 | 33 | succeeded | schema-valid, 32.888s | `1 -> 2`, JSON v2 |
+| Tendyne | 33 | 33 | succeeded | schema-valid, 33.059s | `1 -> 2`, JSON v2 |
+| TriClip | 41 | 41 | succeeded | schema-valid, 33.121s | `1 -> 2`, JSON v2 |
+
+ทั้ง 3 cases ผ่าน browser → HTTP → vector retrieval → local Qwen3-8B →
+source inspection → history → export ครบถ้วน ไม่มี vector errors, paid calls
+หรือ paid cost (`USD 0.00`)
+
+## Grouped retrieval
+
+- **Mitral pair:** MitraClip และ Tendyne มี candidate count 33 ต่อ caseสำหรับ
+  encoder ทั้งสองตัว และไม่พบ runtime failure
+- **Tricuspid:** TriClip มี candidate count 41 และไม่พบ runtime failure
+
+Candidate count ที่เท่ากันเป็นเพียง execution receipt ไม่ใช่หลักฐานว่า
+ranking หรือ quality ของ encoder ทั้งสองเท่ากัน
+
+## Fixed-budget frontier
+
+ผล development แบบ descriptive ที่ macro known-link Recall@20:
+
+- HT-B0a: `0.8190`, 3 query calls
+- HT-B0b: `0.9524`, 3 query calls
+- HT-B1: `0.9333`, 3 calls, 72 rerank pairs
+- HT-B2: `0.9333`, 12 calls, 288 rerank pairs
+- HT-B3: `0.8857`, 5 calls, 120 rerank pairs
+- HT-B4-MOCK: `0.8857`, simulated cost `USD 0.0008`, mock-only
+
+ใน slice นี้ B0b ให้ Recall สูงสุดด้วยจำนวน query ต่ำกว่า B2 จึงยังไม่มี
+หลักฐานว่า adaptive ชนะ fixed controls และห้ามสรุป generalization เพราะ
+cohort/grouping/candidate ceiling และ `UNJUDGED` policy แตกต่างกัน
+
+## O3 และข้อจำกัด
+
+Qwen3-8B local ให้ schema-valid `3/3` ที่ latency ประมาณ 32.888–33.121 วินาที
+และไม่มีค่าใช้จ่ายแบบ paid provider ส่วน OpenRouter qwen3-32b ยัง
+`BLOCKED_LOCAL` เพราะ canonical ledger, current credit, exact authorization
+และ rights-cleared prompt manifest ยังไม่ครบ จึงไม่มีการเรียก API
+
+ผลนี้เป็น engineering/research handoff ไม่ใช่ semantic patent gold, exhaustive
+recall, clinical/FTO, patent validity, investment, deployment หรือ commercial
+validation
