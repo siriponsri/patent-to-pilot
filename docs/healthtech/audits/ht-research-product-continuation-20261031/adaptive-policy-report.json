@@ -1,0 +1,232 @@
+{
+  "adaptive_evidence": {
+    "offline_deterministic_controller": {
+      "cohorts": [
+        {
+          "cohort": "abbott",
+          "controller_steps": 8.0,
+          "devices": 3,
+          "failed_devices": 0,
+          "group_macro_known_link_recall_at_20": {
+            "MitraClip/TriClip": 0.3364389233954451,
+            "Tendyne": 0.8235294117647058
+          },
+          "macro_known_link_recall_at_20": 0.49880241951853205,
+          "micro_known_link_recall_at_20": 0.47540983606557374,
+          "paid_cost_usd": 0.0,
+          "patents": 41,
+          "provider_calls": 0,
+          "query_calls": 5.0
+        },
+        {
+          "cohort": "boston",
+          "controller_steps": 4.0,
+          "devices": 2,
+          "failed_devices": 0,
+          "group_macro_known_link_recall_at_20": {},
+          "macro_known_link_recall_at_20": 1.0,
+          "micro_known_link_recall_at_20": 1.0,
+          "paid_cost_usd": 0.0,
+          "patents": 7,
+          "provider_calls": 0,
+          "query_calls": 2.0
+        }
+      ],
+      "is_llm": false,
+      "not_claimed": [
+        "live LLM controller behavior",
+        "scientific superiority",
+        "generalization beyond the audited cohorts"
+      ],
+      "paid_cost_usd": 0.0,
+      "provider_calls": 0,
+      "status": "PASS_OFFLINE_DEVELOPMENT"
+    },
+    "provider_shaped_mock": {
+      "adaptive": true,
+      "device_count": 3,
+      "failed_device_count": 0,
+      "ledger_breach": false,
+      "macro_known_link_recall_at_20": 0.8857142857142857,
+      "method": "HT-B4-MOCK",
+      "micro_known_link_recall_at_20": 0.8461538461538461,
+      "paid_cost_usd": 0.0,
+      "provider_shaped_calls": 8,
+      "query_calls": 5.0,
+      "rerank_pairs": 120.0,
+      "simulated_cost_usd": 0.0008,
+      "status": "MOCK_ONLY_NOT_PROVIDER_EVIDENCE",
+      "unknown_billing": 0
+    }
+  },
+  "boundaries": {
+    "clinical_f_to_validity_investment": "OUT_OF_SCOPE",
+    "exhaustive_recall": "NOT_ESTABLISHED",
+    "live_qwen3_controller": "NOT_RUN_BLOCKED_LOCAL",
+    "publication_readiness": "NOT_ESTABLISHED",
+    "semantic_relevance_gold": "NOT_RUN"
+  },
+  "cross_cohort": {
+    "cohort_flags": {
+      "Abbott": {
+        "descriptive_low_effective_group_status": true,
+        "k_exceeds_candidate_universe": false
+      },
+      "Boston Scientific WATCHMAN": {
+        "descriptive_low_effective_group_status": true,
+        "k_exceeds_candidate_universe": true
+      }
+    },
+    "comparability": {
+      "cross_cohort_score_comparison_allowed": false,
+      "reason": "Cohort sizes, candidate universes, company/group structure, and K ceiling differ; use deltas descriptively only.",
+      "same_fixed_prefix_alignment_contract": true,
+      "same_method_set": true,
+      "same_model_revisions": true,
+      "same_primary_k": true
+    },
+    "limitations": [
+      "Both cohorts are development-only and have no final holdout; uncertainty and generalization are not estimable.",
+      "Abbott has three devices but only two exact-patent groups, one company group, and unknown family mapping.",
+      "Boston has two devices, one exact-patent group, one company group, and unknown family mapping.",
+      "Boston's K=20 exceeds its seven-patent candidate universe, so every method's 1.0 recall is ceiling-limited.",
+      "Known-link recall measures recovery of source-disclosed product-level links, not semantic claim relevance, clinical suitability, FTO, validity, or investment merit.",
+      "Resource values are realized local units, not dollars; no provider calls or paid inference occurred.",
+      "Unjudged distractors are not negative labels and family identity is not inferred from overlap."
+    ],
+    "methods": [
+      "HT-B0a",
+      "HT-B0b",
+      "HT-B1",
+      "HT-B2",
+      "HT-B3"
+    ],
+    "status": "PASS"
+  },
+  "fixed_controls": [
+    {
+      "adaptive": false,
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.8190476190476191,
+      "method": "HT-B0a",
+      "micro_known_link_recall_at_20": null,
+      "paid_cost_usd": 0.0,
+      "query_calls": 3.0,
+      "rerank_pairs": 0.0,
+      "status": "OFFLINE_CONTROL"
+    },
+    {
+      "adaptive": false,
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.9523809523809524,
+      "method": "HT-B0b",
+      "micro_known_link_recall_at_20": null,
+      "paid_cost_usd": 0.0,
+      "query_calls": 3.0,
+      "rerank_pairs": 0.0,
+      "status": "OFFLINE_CONTROL"
+    },
+    {
+      "adaptive": false,
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.9333333333333332,
+      "method": "HT-B1",
+      "micro_known_link_recall_at_20": null,
+      "paid_cost_usd": 0.0,
+      "query_calls": 3.0,
+      "rerank_pairs": 72.0,
+      "status": "OFFLINE_CONTROL"
+    },
+    {
+      "adaptive": false,
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.9333333333333332,
+      "method": "HT-B2",
+      "micro_known_link_recall_at_20": null,
+      "paid_cost_usd": 0.0,
+      "query_calls": 12.0,
+      "rerank_pairs": 288.0,
+      "status": "OFFLINE_CONTROL"
+    },
+    {
+      "adaptive": false,
+      "device_count": 3,
+      "failed_device_count": 0,
+      "macro_known_link_recall_at_20": 0.8857142857142857,
+      "method": "HT-B3",
+      "micro_known_link_recall_at_20": null,
+      "paid_cost_usd": 0.0,
+      "query_calls": 5.0,
+      "rerank_pairs": 120.0,
+      "status": "OFFLINE_CONTROL"
+    }
+  ],
+  "format": "ht-research-product-adaptive-policy-report-v1",
+  "holdout_comparison": {
+    "b4_minus_controls": [
+      {
+        "b4_minus_control_macro_recall": 0.06666666666666654,
+        "method": "HT-B0a",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+      },
+      {
+        "b4_minus_control_macro_recall": -0.06666666666666676,
+        "method": "HT-B0b",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+      },
+      {
+        "b4_minus_control_macro_recall": -0.04761904761904756,
+        "method": "HT-B1",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+      },
+      {
+        "b4_minus_control_macro_recall": -0.04761904761904756,
+        "method": "HT-B2",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+      },
+      {
+        "b4_minus_control_macro_recall": 0.0,
+        "method": "HT-B3",
+        "status": "DESCRIPTIVE_NOT_ESTIMABLE"
+      }
+    ],
+    "interpretation": [
+      "The fixed-policy HT-B4 mock matches HT-B3 on holdout macro known-link recall in this run.",
+      "The HT-B4 mock is below HT-B0b, HT-B1, and HT-B2 on holdout macro known-link recall in this run.",
+      "Mock provider-shaped calls exercise the action schema and accounting path but are not live-provider evidence.",
+      "The holdout remains a small company-level transfer check with product-level disclosures, unjudged pairs, and NOT_ESTIMABLE generalization."
+    ],
+    "split": "final_holdout",
+    "status": "PASS_B4_PROVIDER_SHAPED_HOLDOUT_DESCRIPTIVE"
+  },
+  "limitations": [
+    "The adaptive provider-shaped row is a mock transport and is not live-provider evidence.",
+    "The offline controller is deterministic; it is not a Qwen3 controller.",
+    "Product-level disclosed links are not claim-level semantic relevance gold.",
+    "The effective independent group count is small and cohort candidate universes differ.",
+    "The current O3 Qwen3-8B versus qwen/qwen3-32b generation comparison remains blocked locally."
+  ],
+  "next_discriminating_test": "Freeze a rights-cleared cohort and local Qwen3-8B revision, then compare a live or locally executed bounded controller against the same fixed controls under a frozen protocol.",
+  "primary_endpoint": {
+    "denominator": "declared known-link references with failed/missing queries retained",
+    "metric": "macro known-link recall at K=20",
+    "scientific_claim": "DESCRIPTIVE_ONLY_NOT_ESTIMABLE",
+    "unjudged_policy": "unlisted links remain unjudged; they are not negatives"
+  },
+  "provenance": {
+    "code_commit": "4f45b991025c5dbc8f7bf53b03ffcb6158feb8a2",
+    "input_hashes": {
+      "docs\\healthtech\\audits\\luna-long-run-20261029-m10-b4-holdout-20261029\\comparison.json": "9eff088870901920a571d77dcf014745815be0b01fe5efd99b1865a8a574a19d",
+      "docs\\healthtech\\audits\\luna-long-run-20261029-m3-cross-cohort-adad901\\comparison.json": "870cc3f05afb944b77a7409050572aa0f5a4d56729e75843a81cda6c7296a9d9",
+      "docs\\healthtech\\audits\\luna-long-run-20261029-m4-b4-offline-eea0fb4\\verification.json": "8487ba36b775c287fe8b604245dfa5b8e35c52242b2880a772163d118e5986d2"
+    },
+    "parent_audit": "docs/healthtech/audits/ht-research-product-20261031",
+    "source_status": "AUDITED_INPUTS_REUSED; NO_PROVIDER_CALLS"
+  },
+  "scope": "Bounded acquisition-policy comparison over previously audited public disclosure cohorts.",
+  "status": "PARTIAL_OFFLINE_ADAPTIVE_POLICY_REPORT"
+}

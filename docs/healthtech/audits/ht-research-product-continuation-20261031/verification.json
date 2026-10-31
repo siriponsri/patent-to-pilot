@@ -1,0 +1,75 @@
+{
+  "format": "ht-research-product-continuation-verification-v1",
+  "run_id": "ht-research-product-continuation-20261031",
+  "status": "PARTIAL_O4_OFFLINE_ADAPTIVE_REPORT_O3_BLOCKED_LOCAL",
+  "base_revision": "4f45b991025c5dbc8f7bf53b03ffcb6158feb8a2",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+  "parent_audit": "docs/healthtech/audits/ht-research-product-20261031",
+  "commands": [
+    {
+      "id": "adaptive_report_tests",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q tests/test_healthtech_adaptive_report.py tests/test_healthtech_controller.py tests/test_healthtech_b4_live.py tests/test_healthtech_b4_holdout_comparison.py",
+      "outcome": "14 passed"
+    },
+    {
+      "id": "adaptive_report_compile",
+      "status": "PASS",
+      "command": "rtk proxy python -m compileall -q src/patent_to_pilot/healthtech/adaptive_report.py scripts/healthtech/build_adaptive_policy_report.py tests/test_healthtech_adaptive_report.py",
+      "outcome": "exit code 0"
+    },
+    {
+      "id": "adaptive_report_build",
+      "status": "PASS",
+      "command": "rtk proxy python scripts/healthtech/build_adaptive_policy_report.py --holdout-comparison docs/healthtech/audits/luna-long-run-20261029-m10-b4-holdout-20261029/comparison.json --offline-verification docs/healthtech/audits/luna-long-run-20261029-m4-b4-offline-eea0fb4/verification.json --cross-cohort-comparison docs/healthtech/audits/luna-long-run-20261029-m3-cross-cohort-adad901/comparison.json --output docs/healthtech/audits/ht-research-product-continuation-20261031 --code-commit 4f45b991025c5dbc8f7bf53b03ffcb6158feb8a2 --parent-audit docs/healthtech/audits/ht-research-product-20261031",
+      "outcome": "PARTIAL_OFFLINE_ADAPTIVE_POLICY_REPORT"
+    },
+    {
+      "id": "working_tree_whitespace",
+      "status": "PASS",
+      "command": "rtk git diff --check",
+      "outcome": "exit code 0"
+    },
+    {
+      "id": "full_repository_regression",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest -q --disable-warnings",
+      "outcome": "exit code 0; one existing optional tokenizer skip; warnings suppressed"
+    },
+    {
+      "id": "local_qwen3_preflight",
+      "status": "BLOCKED",
+      "command": "Scoped read-only inspection of permitted local model paths",
+      "outcome": "No Qwen3-8B checkpoint or immutable revision record found in inspected paths; see o3-local-model-preflight.json"
+    }
+  ],
+  "outcomes": {
+    "O1": {"status": "COMPLETE", "evidence": "../ht-research-product-20261031"},
+    "O2": {"status": "COMPLETE", "evidence": "../ht-research-product-20261031"},
+    "O3": {"status": "BLOCKED_LOCAL", "evidence": "../ht-research-product-20261031/o3-gate.json"},
+    "O4": {"status": "PARTIAL", "evidence": "adaptive-policy-report.json"}
+  },
+  "boundaries": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "remote_jobs": 0,
+    "model_downloads": 0,
+    "live_qwen3_controller": "NOT_RUN",
+    "semantic_relevance_gold": "NOT_RUN",
+    "scientific_superiority": "NOT_CLAIMED"
+  },
+  "source_hashes": {
+    "src/patent_to_pilot/healthtech/adaptive_report.py": "e9ef9bf5bd1626e2b54726379da33ed72f9f9dc9a7d8b9ed0f3f0ae9d7c3bc8f",
+    "scripts/healthtech/build_adaptive_policy_report.py": "231dd2374243075e453f749666dae0eceae589a7a415bdd669dcd3542fb19d18",
+    "tests/test_healthtech_adaptive_report.py": "6a3a9666594bdb01e1d45a9d9400ca9a3e9376d66845bfcfa446ce31fbcb8dc2",
+    "adaptive-policy-report.json": "a8e7a2ff2eba2f6038d294099cd251801a495e56c3cddfb93dde48ba7f08b59d",
+    "ADAPTIVE_POLICY_REPORT.md": "b1c021af52056877cc6fd9a24d9a97d8a7c69bba193c268afbaa861b1ec9cdab"
+  },
+  "next_actual_command": "rtk proxy python -m pytest -q tests/test_healthtech_adaptive_report.py tests/test_healthtech_controller.py tests/test_healthtech_b4_live.py tests/test_healthtech_b4_holdout_comparison.py",
+  "limitations": [
+    "The O4 report reuses audited inputs and is descriptive only.",
+    "The provider-shaped adaptive row is mock-only, not live-provider evidence.",
+    "O3 remains blocked by the existing paid and model-rights gates."
+  ]
+}

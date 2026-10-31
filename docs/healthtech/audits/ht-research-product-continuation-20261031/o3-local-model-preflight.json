@@ -1,0 +1,30 @@
+{
+  "format": "ht-research-product-o3-local-model-preflight-v1",
+  "status": "BLOCKED_LOCAL_MODEL_NOT_FOUND_IN_INSPECTED_PATHS",
+  "model_id": "Qwen/Qwen3-8B",
+  "inspected_paths": [
+    "C:/Users/User/.cache/huggingface",
+    "C:/Users/User/AppData/Local/huggingface",
+    "C:/Users/User/Desktop/myProject/patent-to-pilot-local-artifacts",
+    "C:/Users/User/Desktop/myProject/patent-to-pilot-local-artifacts/luna-remote-embeddings-20261030T161655Z/model"
+  ],
+  "observed_model_cache": {
+    "huggingface_cache": "present_without_Qwen3_checkpoint",
+    "local_huggingface_appdata": "missing",
+    "research_product_model_directory": "missing",
+    "embedding_artifact_directory": {
+      "files": [
+        {"name": "model_quint8_avx2.onnx", "bytes": 23046789},
+        {"name": "tokenizer.json", "bytes": 466247}
+      ],
+      "model_family": "historical MiniLM ONNX embedding artifact",
+      "not_Qwen3": true
+    }
+  },
+  "revision": "NOT_RECORDED",
+  "license": "NOT_RECORDED",
+  "downloaded": false,
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "not_claimed": "This scoped preflight does not prove absence from every Windows path, remote cache, or permitted storage location."
+}
