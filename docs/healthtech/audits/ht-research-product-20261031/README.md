@@ -1,6 +1,6 @@
 # HealthTech research-product long run — 2026-10-31
 
-Status: `PASS_O2_FULL_ENCODING_EVAL_DEVICE_DOSSIER_E2E_QWEN3_BLOCKED_LOCAL`
+Status: `PASS_O2_FULL_ENCODING_EVAL_DEVICE_DOSSIER_E2E_QWEN3_LOCAL_GENERATION_API_COMPARISON_BLOCKED_LOCAL`
 
 This is the canonical continuation record for the bounded O1–O4 package. The
 private remote job root is owned by this run; model weights, runtime JSONL and
@@ -78,14 +78,18 @@ prefixes. Prompt policy for this run is the predeclared PatEmbed
   MitraClip, Tendyne, and TriClip. Imported PatEmbed and e5 bundles powered
   six real local dossier-engine runs with one search call per case, no vector
   errors, zero provider calls, and USD 0.00 paid cost.
-- Qwen3-8B versus `qwen/qwen3-32b` generation comparison is `BLOCKED_LOCAL` and
-  remains `NOT_RUN`. Historical OpenRouter receipts reconcile to cumulative
-  actual debit USD 0.0001464 with zero unknown-pending attempts, and public
-  Qwen3-32B route/pricing metadata was refreshed without credentials. The paid
-  gate is still closed because the USD8 authorization lacks one canonical ledger
-  identity, current account credit is unverified, dossier prompt transfer rights
-  are unresolved, and the local Qwen3-8B revision is not frozen. See
-  `o3-gate.json`.
+- The frozen local Qwen3-8B evidence-pack generation passed for MitraClip,
+  Tendyne, and TriClip: 3/3 outputs were schema-valid, with zero provider
+  calls and USD 0.00 paid cost. The pinned revision, pack hash, output hashes,
+  token counts, resource metrics, and formal allocation boundary are recorded
+  in `docs/healthtech/audits/ht-o3-local-model-preflight-20261031/`.
+- The Qwen3-8B versus `qwen/qwen3-32b` API comparison remains `BLOCKED_LOCAL`
+  and `NOT_RUN`. Historical OpenRouter receipts reconcile to cumulative actual
+  debit USD 0.0001464 with zero unknown-pending attempts, and public Qwen3-32B
+  route/pricing metadata was refreshed without credentials. The paid gate stays
+  closed because the USD8 authorization lacks one canonical ledger identity,
+  current account credit is unverified, exact comparison authorization is not
+  granted, and outbound dossier-prompt rights are unresolved. See `o3-gate.json`.
 
 ## Completed O2/O4 evidence
 

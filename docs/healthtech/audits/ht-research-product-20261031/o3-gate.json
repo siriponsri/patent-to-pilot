@@ -3,6 +3,7 @@
   "run_id": "ht-research-product-20261031",
   "captured_at_utc": "2026-10-31T03:51:43.8254719Z",
   "status": "BLOCKED_LOCAL",
+  "local_generation_status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
   "historical_openrouter_receipts": {
     "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
     "authorization_scope": "old_round1_cumulative_usd8; no new grant",
@@ -55,16 +56,37 @@
     "account_credit_state": "NOT_RUN_NO_CREDENTIAL_READ",
     "exact_paid_call_authorization_for_this_comparison": "NOT_GRANTED",
     "dossier_prompt_transfer_rights": "UNRESOLVED",
-    "local_qwen3_8b_revision_freeze": "NOT_RECORDED",
+    "local_qwen3_8b_revision_freeze": "PASS_IMMUTABLE_HF_REVISION_AND_LICENSE_RECORDED",
     "provider_calls_in_this_package": 0,
     "paid_cost_usd_in_this_package": 0.0,
     "decision": "Do not dispatch Qwen3-8B versus qwen/qwen3-32b generation comparison."
+  },
+  "local_qwen3_8b_receipt": {
+    "status": "PASS_OFFLINE_SNAPSHOT_TOKENIZER_SMOKE_AND_FROZEN_PACK_GENERATION",
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "license": "apache-2.0",
+    "payload_bytes": 16397461266,
+    "manifest_sha256": "f9a1820ac27cd6dfa3253f78f41004bb9cdee31e60686a4698ac3d0ebabec014",
+    "evidence": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/",
+    "windows_full_weight_load": "NOT_ATTEMPTED_HOST_RAM_16824262656_BYTES_NO_CUDA",
+    "remote_generation_canary": "PASS_LOCAL_QWEN3_GENERATION_CANARY",
+    "frozen_evidence_pack_generation": {
+      "status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
+      "audit": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/generation-canary.json",
+      "pack_contract": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/evidence-pack-contract.json",
+      "pack_sha256": "d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932",
+      "cases": 3,
+      "schema_valid_cases": 3,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    }
   },
   "next_required_evidence": [
     "one approved integration-bound canonical ledger identity covering the existing USD8 authorization",
     "current account credit and billing reconciliation without exposing credentials",
     "explicit route/provider, attempt, token, and spend authorization for this comparison",
     "rights-cleared outbound prompt manifest for the dossier inputs",
-    "immutable local Qwen3-8B model revision and license record"
+    "current remote allocation/window evidence if a further local run is required"
   ]
 }

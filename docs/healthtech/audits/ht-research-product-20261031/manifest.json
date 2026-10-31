@@ -1,7 +1,7 @@
 {
   "format": "ht-research-product-audit-v1",
   "run_id": "ht-research-product-20261031",
-  "status": "PASS_O2_FULL_ENCODING_EVAL_DEVICE_DOSSIER_E2E_QWEN3_BLOCKED_LOCAL",
+  "status": "PASS_O2_FULL_ENCODING_EVAL_DEVICE_DOSSIER_E2E_QWEN3_LOCAL_GENERATION_API_COMPARISON_BLOCKED_LOCAL",
   "started_at_local": "2026-10-31",
   "branch": "codex/research-product-o1-o4-20261031",
   "base_commit": "257037a",
@@ -78,7 +78,8 @@
     "full_encoding": "PASS_45336_ROWS_10_SHARDS_PER_MODEL",
     "matched_dapfam_evaluation": "PASS_1247_QUERIES_49869_QREL_PAIRS_ZERO_DENSE_FAILURES",
     "vector_backed_dossier_cases": "PASS_6_CASES_3_DEVICES_X_2_MODELS",
-    "qwen3_generation_comparison": "BLOCKED_LOCAL_NOT_RUN_CANONICAL_LEDGER_ACCOUNT_RIGHTS_AND_MODEL_FREEZE_PENDING"
+    "local_qwen3_generation": "PASS_3_CASES_SCHEMA_VALID_ZERO_PROVIDER_CALLS",
+    "qwen3_generation_comparison": "BLOCKED_LOCAL_NOT_RUN_CANONICAL_LEDGER_ACCOUNT_RIGHTS_AND_PROMPT_RIGHTS_PENDING"
   },
   "full_encoding": {
     "rows": 45336,

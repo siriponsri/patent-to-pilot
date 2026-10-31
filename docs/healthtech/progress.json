@@ -420,6 +420,16 @@
       "id": "HT-M44-ADAPTIVE-POLICY-REPORT-CONTINUATION",
       "status": "PARTIAL_O4_OFFLINE_ADAPTIVE_REPORT_O3_BLOCKED_LOCAL",
       "evidence": "Added a strict goal-specific adaptive-policy report builder and generated a sanitized O4 report from the audited HT-B0a/B0b/B1/B2/B3 controls, deterministic offline controller receipts, and provider-shaped HT-B4 mock holdout comparison. Focused adaptive/controller regressions pass 14/14; the full repository suite exits 0 with one existing optional tokenizer skip. No provider call, model download, remote job, or paid cost occurred. O3 remains blocked because the canonical ledger identity, current account credit, exact comparison authorization, outbound prompt rights, and immutable local Qwen3-8B revision are unresolved. Canonical audit: docs/healthtech/audits/ht-research-product-continuation-20261031/"
+    },
+    {
+      "id": "HT-M45-QWEN3-LOCAL-MODEL-PREFLIGHT",
+      "status": "PASS_MODEL_ACQUIRED_OFFLINE_SMOKE_REMOTE_GENERATION_PENDING",
+      "evidence": "Downloaded the pinned Qwen/Qwen3-8B revision b968826d9c46dd6066d109eabc6255188de91218 into private Windows storage with Apache-2.0 metadata. Independent streaming verification matched all 15 allowlisted file hashes and 16,397,461,266 payload bytes; the isolated torch/transformers/safetensors/accelerate runtime passed offline config/tokenizer smoke. Windows full-weight load was not attempted because the host has 16,824,262,656 RAM bytes and no CUDA. Provider calls and paid cost were zero; remote-V100 generation remains a separate canary gate. Canonical audit: docs/healthtech/audits/ht-o3-local-model-preflight-20261031/"
+    },
+    {
+      "id": "HT-M46-O3-LOCAL-QWEN3-GENERATION",
+      "status": "PASS_LOCAL_GENERATION_API_COMPARISON_BLOCKED",
+      "evidence": "Ran the frozen local-research evidence pack through Qwen/Qwen3-8B at immutable revision b968826d9c46dd6066d109eabc6255188de91218. MitraClip, Tendyne, and TriClip all produced schema-valid outputs (3/3) from pack SHA-256 d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932, with zero provider calls and USD 0.00 paid cost. Formal remote allocation remains UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY. The Qwen3-8B versus qwen/qwen3-32b API comparison remains BLOCKED_LOCAL on canonical ledger identity, current account credit, exact comparison authorization, and outbound prompt rights. Canonical audit: docs/healthtech/audits/ht-o3-local-model-preflight-20261031/"
     }
   ],
   "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT_AND_M24_AUTHORIZATION_BOUND_JUDGMENT_INGEST_AND_M25_BOUNDED_SEMANTIC_SOURCE_STAGING_AND_M26_SEMANTIC_SOURCE_LANDSCAPE_EXPANSION_AND_M27_SHARPS_SOURCE_METADATA_PREFLIGHT_AND_M28_OPENROUTER_R1_READINESS_REVALIDATION_AND_M29_CURRENT_HEAD_BACKEND_INTEGRATION_CONTRACT_REFRESH_AND_M30_CURRENT_HEAD_OFFLINE_BASELINE_B4_MOCK_AND_M31_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH_AND_M32_ADVERSARIAL_BOUNDARY_REGRESSION_AND_M33_DAPFAM_RETRIEVAL_DIAGNOSTIC_PREFLIGHT_AND_M34_DAPFAM_QRELS_PARSE_REVALIDATION_AND_M35_DAPFAM_BM25_FULL_BASELINE_AND_M36_DAPFAM_CODE_PROVENANCE_AND_M37_CURRENT_HEAD_B4_R2_AUDIT_AND_M38_CURRENT_HEAD_PHILIPS_DOSSIERS_AND_M39_CURRENT_HEAD_OPENROUTER_R1_READINESS_AND_M40_PHILIPS_G5_OFFLINE_PILOT_AND_M41_G5_PILOT_ANALYSIS_AND_M42_DAPFAM_COVERAGE_SCREEN_AND_M43_TRANSFORMER_ENCODING_EVAL_DEVICE_DOSSIER_E2E",
@@ -427,7 +437,7 @@
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "M44 added a strict goal-specific adaptive-policy report and checkpoint from audited fixed controls plus deterministic/provider-shaped adaptive evidence; focused adaptive/controller regressions pass 14/14 and the full suite exits 0 with one existing optional tokenizer skip. No provider call, model download, remote job, or paid cost occurred. O3 remains BLOCKED_LOCAL until one canonical USD8 ledger identity, current account credit, dossier prompt transfer rights, exact comparison authorization, and local Qwen3-8B revision are verified. Keep the O4 report descriptive, semantic gold and live/provider HT-B4 separate, and deployment, outreach, clinical/FTO, public raw-data release, and commercial validation blocked/unrun.",
+  "next": "M46 completed the bounded local Qwen3-8B generation branch over the frozen evidence pack: 3/3 cases were schema-valid with zero provider calls and USD 0.00 paid cost. Formal remote allocation remains UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY. O3 API comparison stays BLOCKED_LOCAL until the canonical USD8 ledger identity, current account credit, exact comparison authorization, and outbound dossier-prompt rights are evidenced; keep the provider branch closed.",
   "verification": "docs/healthtech/audits/ht-research-product-20261031/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
@@ -567,5 +577,10 @@
   "latest_ht_research_product_verification": "docs/healthtech/audits/ht-research-product-20261031/verification.json",
   "latest_ht_research_product_continuation_audit": "docs/healthtech/audits/ht-research-product-continuation-20261031/README.md",
   "latest_ht_research_product_adaptive_report": "docs/healthtech/audits/ht-research-product-continuation-20261031/adaptive-policy-report.json",
-  "latest_ht_research_product_checkpoint": "docs/healthtech/audits/ht-research-product-continuation-20261031/CHECKPOINT.json"
+  "latest_ht_research_product_checkpoint": "docs/healthtech/audits/ht-research-product-continuation-20261031/CHECKPOINT.json",
+  "latest_o3_local_model_preflight_audit": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/README.md",
+  "latest_o3_local_model_download_verification": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/download-verification.json",
+  "latest_o3_local_model_runtime_smoke": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/runtime-smoke.json",
+  "latest_o3_local_generation_audit": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/generation-canary.json",
+  "latest_o3_local_generation_pack_contract": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/evidence-pack-contract.json"
 }

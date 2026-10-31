@@ -71,6 +71,15 @@
       "output": "permitted-local-storage:device-dossier-results.json"
     },
     {
+      "id": "local_qwen3_frozen_pack_generation",
+      "status": "PASS",
+      "result": "Qwen/Qwen3-8B at immutable revision b968826d9c46dd6066d109eabc6255188de91218 processed the frozen MitraClip, Tendyne, and TriClip evidence pack; 3/3 outputs were schema-valid with zero provider calls and USD 0.00 paid cost",
+      "evidence": [
+        "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/evidence-pack-contract.json",
+        "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/generation-canary.json"
+      ]
+    },
+    {
       "id": "historical_openrouter_receipt_reconciliation",
       "status": "PASS",
       "method": "Existing read-only provider recovery integration validated the preserved Phase A journal; the paired revalidation receipt was checked from the authored handoff evidence.",
@@ -89,7 +98,7 @@
     {
       "id": "o3_paid_gate",
       "status": "BLOCKED_LOCAL",
-      "result": "Canonical USD8 ledger identity, current account credit, dossier prompt transfer rights, explicit comparison authorization, and local Qwen3-8B revision are not all verified. No provider request was sent.",
+      "result": "Local Qwen3-8B frozen-pack generation passed 3/3 schema-valid cases with zero provider calls; the separate qwen/qwen3-32b API comparison remains blocked because canonical USD8 ledger identity, current account credit, outbound dossier-prompt rights, and explicit comparison authorization are not all verified. No provider request was sent.",
       "evidence": "docs/healthtech/audits/ht-research-product-20261031/o3-gate.json"
     },
     {

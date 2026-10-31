@@ -655,3 +655,21 @@ Status: `PARTIAL_O4_OFFLINE_ADAPTIVE_REPORT_O3_BLOCKED_LOCAL`; canonical audit: 
 Added a strict goal-specific adaptive-policy report builder and checkpoint. It reuses the audited HT-B0a/B0b/B1/B2/B3 fixed controls, deterministic offline controller receipts, cross-cohort comparability flags, and the provider-shaped HT-B4 mock holdout. The report preserves `MOCK_ONLY_NOT_PROVIDER_EVIDENCE`, marks the endpoint `DESCRIPTIVE_ONLY_NOT_ESTIMABLE`, and records Abbott/Boston group limitations. Focused adaptive/controller regressions pass 14/14; the full repository suite exits 0 with one existing optional tokenizer skip. No provider call, model download, remote job, or paid cost occurred.
 
 The scoped local Qwen3-8B preflight found only the existing MiniLM ONNX embedding artifacts and no Qwen3-8B checkpoint or immutable revision record in the inspected permitted paths. Keep O3 blocked until the canonical ledger identity, current account credit, exact comparison authorization, rights-cleared outbound evidence manifest, and local Qwen3-8B revision are all recorded. Next: inspect the candidate diff, commit the continuation package, and then stop at the O3 gate.
+
+## HT-NEXT-074 — 2026-10-31 Qwen3-8B local model preflight
+
+Status: `PASS_MODEL_ACQUIRED_OFFLINE_SMOKE_REMOTE_GENERATION_PENDING`; canonical audit: `docs/healthtech/audits/ht-o3-local-model-preflight-20261031/README.md`.
+
+Downloaded the pinned `Qwen/Qwen3-8B` revision `b968826d9c46dd6066d109eabc6255188de91218` into private Windows storage using the existing allowlist-based downloader. The manifest is Apache-2.0, contains 15 allowlisted files, and records `16,397,461,266` model bytes. An independent streaming verifier matched all 15 SHA-256 values with no missing or extra files; the manifest SHA-256 is `f9a1820ac27cd6dfa3253f78f41004bb9cdee31e60686a4698ac3d0ebabec014`.
+
+Installed an isolated validation environment with `torch==2.8.0+cpu`, `transformers==4.51.3`, `safetensors==0.5.3`, and `accelerate==1.6.0`. Offline Qwen3 config/tokenizer loading passed with `trust_remote_code=false`. Full Windows weight loading was not attempted because the host snapshot has `16,824,262,656` RAM bytes and no CUDA; this is a runtime boundary, not a model-integrity failure. Known local setup plus a future remote Qwen copy is estimated at `38,186,418,222` bytes against the `42,949,672,960` hard bound, leaving `4,763,254,738` bytes before any additional remote runtime/storage overhead.
+
+O3 remains blocked on canonical cumulative ledger identity, current account credit, exact comparison authorization, rights-cleared outbound dossier prompts, and remote-V100 local-generation compatibility. Next: inspect remote storage/allocation, transfer only the pinned model if the measured peak remains within the bound, run a bounded non-thinking local-generation canary, and keep the API branch closed until all paid gates are evidenced.
+
+## HT-NEXT-075 — 2026-10-31 Qwen3-8B frozen-pack local generation
+
+Status: `PASS_LOCAL_GENERATION_API_COMPARISON_BLOCKED`; canonical audit: `docs/healthtech/audits/ht-o3-local-model-preflight-20261031/`.
+
+Completed the bounded local generation branch with the frozen evidence pack and immutable `Qwen/Qwen3-8B` revision `b968826d9c46dd6066d109eabc6255188de91218` under Apache-2.0. The ordered MitraClip, Tendyne, and TriClip cases all returned schema-valid outputs (`3/3`) from pack SHA-256 `d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932`; provider calls and paid cost were `0` / `$0.00`. Formal remote allocation remains `UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY` even though the bounded job completed on the approved GPU UUID.
+
+The API comparison against `qwen/qwen3-32b` remains closed. Do not dispatch until the canonical cumulative ledger identity, current account credit, exact route/provider and spend authorization, and rights-cleared outbound dossier-prompt manifest are all evidenced. Keep semantic judgment, clinical/FTO, deployment, publication, and commercial branches separate.

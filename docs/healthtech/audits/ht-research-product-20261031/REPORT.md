@@ -46,26 +46,37 @@ Each case completed one bounded technical search and stopped with
 lexical technical description (`mitral valve`) in the current Abbott adapter;
 their identical dense query vectors are therefore expected under this fixture.
 
-## Generation comparison
+## Generation comparison gate
 
-Qwen3-8B local versus `qwen/qwen3-32b` OpenRouter is `BLOCKED_LOCAL` and
-`NOT_RUN`. The preserved Phase A and paired-revalidation receipts reconcile to
-USD `0.0001464` cumulative actual debit with zero unknown-pending attempts. The
-public Qwen3-32B endpoint snapshot at `2026-10-31T03:51:43.8254719Z` lists three
-routes: DeepInfra at USD `0.08` / `0.28` per million prompt/completion tokens,
-Tenstorrent at USD `0.14` / `0.40`, and SiliconFlow at USD `0.14` / `0.57`.
-This is public catalog metadata only; it does not establish account credit,
-billing state, or a route choice. The comparison remains closed because the
-USD8 authorization still lacks a single canonical ledger identity, dossier
-prompt transfer rights are unresolved, and the local Qwen3-8B revision is not
-frozen. No provider request or paid cost occurred in this package. See
-`o3-gate.json` for the sanitized gate receipt.
+The local Qwen3-8B branch is `PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION`.
+The pinned revision `b968826d9c46dd6066d109eabc6255188de91218` processed the
+frozen local-research pack for MitraClip, Tendyne, and TriClip; all 3/3 outputs
+were schema-valid. The generation receipt records prompt/output token counts,
+latency, output hashes, resource metrics, zero provider calls, and USD `0.00`
+paid cost. Formal remote allocation remains
+`UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY`.
+
+The Qwen3-8B versus `qwen/qwen3-32b` OpenRouter comparison remains
+`BLOCKED_LOCAL` and `NOT_RUN`. The preserved Phase A and paired-revalidation
+receipts reconcile to USD `0.0001464` cumulative actual debit with zero
+unknown-pending attempts. The public Qwen3-32B endpoint snapshot at
+`2026-10-31T03:51:43.8254719Z` lists three routes: DeepInfra at USD `0.08` /
+`0.28` per million prompt/completion tokens, Tenstorrent at USD `0.14` /
+`0.40`, and SiliconFlow at USD `0.14` / `0.57`. This is public catalog
+metadata only; it does not establish account credit, billing state, or a route
+choice. The API comparison remains closed because the USD8 authorization still
+lacks a single canonical ledger identity, current account credit is unverified,
+exact comparison authorization is not granted, and outbound dossier-prompt
+rights are unresolved. No provider request or paid cost occurred in this
+package. See `o3-gate.json` and the local generation receipt.
 
 ## Reproduction anchors
 
 - Canonical audit: `docs/healthtech/audits/ht-research-product-20261031/`.
 - PatEmbed evaluation: `results/healthtech/ht-transformer-eval-20261031-patembed/`.
 - e5 evaluation: `results/healthtech/ht-transformer-eval-20261031-e5/`.
+- Local Qwen3-8B generation receipt: `docs/healthtech/audits/ht-o3-local-model-preflight-20261031/generation-canary.json`.
+- Frozen evidence-pack contract: `docs/healthtech/audits/ht-o3-local-model-preflight-20261031/evidence-pack-contract.json`.
 - Remote job root: `permitted-remote-job-root:research-product-o1-o4-20261031`.
 - Code revision used by the runs: `257037ab349ec88e5600c074deccfc8a62fe5fc2`.
 - Full repository regression suite: exit `0`; one existing optional tokenizer
