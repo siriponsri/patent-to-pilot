@@ -10,9 +10,12 @@
 3. Bind the verified journal with
    `scripts/healthtech/register_canonical_openrouter_ledger.py`, then rerun the
    API dry-run and live preflight on the same canonical registry path.
-4. Freeze fresh route/provider/parameter/pricing metadata and a rights-cleared
-   outbound pack. Only then run the sequential paired comparison within the
-   original cumulative cap and existing deadline.
+4. Use the refreshed public route/provider/parameter/pricing snapshot at
+   `openrouter-qwen3-32b-endpoint-snapshot-20261031.json`; keep DeepInfra as a
+   candidate only until the journal, credit, and rights gates pass.
+5. Freeze the rights-cleared outbound pack and exact request bound. Only then
+   run the sequential paired comparison within the original cumulative cap and
+   existing deadline.
 
 Independent offline engineering and O4 report work is complete and can proceed
 without these inputs. Do not treat this audit as a paid-run receipt or as

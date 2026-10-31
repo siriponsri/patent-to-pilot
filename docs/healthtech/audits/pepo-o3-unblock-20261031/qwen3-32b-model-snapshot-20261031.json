@@ -1,0 +1,11 @@
+{
+  "model": "qwen/qwen3-32b",
+  "upstream_provider": "DeepInfra",
+  "snapshot_sha256": "792dbe941f25b9bcabc9d3758de11336ca5ee78e90328573dc310819245507b5",
+  "snapshot_utc": "2026-10-31T10:57:23.2417019Z",
+  "prompt_usd_per_million": 0.08,
+  "completion_usd_per_million": 0.28,
+  "max_price_prompt": 0.08,
+  "max_price_completion": 0.28,
+  "unsupported_billable_components": []
+}

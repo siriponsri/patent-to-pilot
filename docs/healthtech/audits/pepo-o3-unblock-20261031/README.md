@@ -28,6 +28,12 @@ scope. No new grant, top-up, ledger reset, or 24-hour clock reset was created.
   patent-disclosure evidence.
 - Updated the O4 English/Thai handoff and the O3 gate to distinguish
   engineering complete from paid research partial.
+- Refreshed the public unauthenticated `qwen/qwen3-32b` endpoint metadata.
+  DeepInfra is recorded as a non-dispatched route candidate because it
+  supports the required structured response parameters at the lowest listed
+  text prices among the compatible routes.
+- Kept the detailed public snapshot separate from the compact `B4Pricing`
+  model snapshot; both reference the same immutable pricing hash.
 
 ## Journal and billing boundary
 
@@ -44,6 +50,8 @@ contents or credentials were read.
 
 The paid branch remains closed. No credential was read, no provider request was
 sent, and no current account credit was inferred from shared-account metadata.
+The public route snapshot is catalog evidence only and does not satisfy the
+journal, credit, or transfer-rights gates.
 
 ## Verification
 

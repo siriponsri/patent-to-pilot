@@ -31,6 +31,17 @@
     "paid_dispatch": "NOT_RUN",
     "owner_input_required": "journal location or sanitized all-attempt export; current credit/billing snapshot if approved integration cannot provide it"
   },
+  "public_endpoint_refresh": {
+    "status": "PASS_PUBLIC_METADATA_ONLY",
+    "model": "qwen/qwen3-32b",
+    "snapshot": "docs/healthtech/audits/pepo-o3-unblock-20261031/openrouter-qwen3-32b-endpoint-snapshot-20261031.json",
+    "model_snapshot": "docs/healthtech/audits/pepo-o3-unblock-20261031/qwen3-32b-model-snapshot-20261031.json",
+    "snapshot_sha256": "792dbe941f25b9bcabc9d3758de11336ca5ee78e90328573dc310819245507b5",
+    "route_candidate": "DeepInfra",
+    "route_status": "CANDIDATE_NOT_DISPATCHED",
+    "credential_used": false,
+    "account_credit_queried": false
+  },
   "implementation": {
     "canonical_ledger_registry": "PASS_PATH_SUBSTITUTION_REJECTED_AND_NO_REPLACEMENT_CREATED",
     "mock_namespace_isolation": "PASS",
@@ -76,5 +87,5 @@
     "semantic_device_patent_gold": "not_run",
     "clinical_fot_validity_investment": "not_run"
   },
-  "next_action": "Obtain the real journal location or sanitized all-attempt export and current credit/billing snapshot; do not ask for the existing USD8 authorization again."
+  "next_action": "Obtain the real journal location or sanitized all-attempt export and current credit/billing snapshot; do not ask for the existing USD8 authorization again. Route metadata is refreshed but remains non-dispatch evidence."
 }
