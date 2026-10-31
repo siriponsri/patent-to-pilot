@@ -75,5 +75,19 @@
       "clinical/FTO/patent-validity assessment",
       "deployment/publication/commercial validation"
     ]
+  },
+  "report_provenance": {
+    "reference_frontier_cohort": "Stryker final holdout",
+    "reference_frontier_source": "../luna-long-run-20261029-m10-b4-holdout-20261029/comparison.json",
+    "reference_frontier_protocol_hash": "1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b",
+    "reference_frontier_cohort_manifest_hash": "1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75",
+    "reference_frontier_comparison_code_commit": "b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3",
+    "abbott_controller_source": "../ht-research-product-continuation-20261031/adaptive-policy-report.json",
+    "abbott_controller_macro_known_link_recall_at_20": 0.49880241951853205,
+    "abbott_controller_devices": 3,
+    "abbott_controller_runtime_patents": 41,
+    "abbott_controller_query_calls": 5,
+    "abbott_controller_steps": 8,
+    "matched_abbott_fixed_control_frontier_rerun": false
   }
 }

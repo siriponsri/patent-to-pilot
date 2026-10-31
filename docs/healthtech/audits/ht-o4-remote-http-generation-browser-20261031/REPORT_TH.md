@@ -26,9 +26,15 @@ source inspection → history → export ครบถ้วน ไม่มี v
 Candidate count ที่เท่ากันเป็นเพียง execution receipt ไม่ใช่หลักฐานว่า
 ranking หรือ quality ของ encoder ทั้งสองเท่ากัน
 
-## Fixed-budget frontier
+## Reference fixed-budget frontier
 
-ผล development แบบ descriptive ที่ macro known-link Recall@20:
+ตารางนี้เป็น **Stryker final holdout ที่นำมาอ้างซ้ำ** ไม่ใช่ผลของ Abbott
+browser cohort ปัจจุบัน โดยอ้างจาก comparison ที่มี 3 queries, 24 patents,
+3 family-aware groups, protocol hash
+`1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b`, cohort
+manifest hash `1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75`
+และ comparison code commit
+`b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3`:
 
 - HT-B0a: `0.8190`, 3 query calls
 - HT-B0b: `0.9524`, 3 query calls
@@ -37,9 +43,15 @@ ranking หรือ quality ของ encoder ทั้งสองเท่า
 - HT-B3: `0.8857`, 5 calls, 120 rerank pairs
 - HT-B4-MOCK: `0.8857`, simulated cost `USD 0.0008`, mock-only
 
-ใน slice นี้ B0b ให้ Recall สูงสุดด้วยจำนวน query ต่ำกว่า B2 จึงยังไม่มี
-หลักฐานว่า adaptive ชนะ fixed controls และห้ามสรุป generalization เพราะ
-cohort/grouping/candidate ceiling และ `UNJUDGED` policy แตกต่างกัน
+ใน Stryker reference comparison นี้ B0b ให้ Recall สูงสุดด้วยจำนวน query ต่ำกว่า
+B2 แต่เป็นผล descriptive เฉพาะ holdout นั้น ไม่ใช่ผลของ Abbott และไม่ใช่
+หลักฐานว่า adaptive แย่กว่า fixed controls โดยทั่วไป
+
+สำหรับ Abbott development cohort ปัจจุบัน deterministic controller report ให้
+macro known-link Recall@20 เท่ากับ `0.498802` จาก 3 devices, 41 runtime patents,
+5 query calls และ 8 controller steps โดยยังไม่มีการ rerun fixed controls แบบ
+matched บน Abbott ใน browser package นี้ จึงห้ามจัดอันดับค่านี้เทียบกับตาราง
+Stryker ด้านบน
 
 ## O3 และข้อจำกัด
 

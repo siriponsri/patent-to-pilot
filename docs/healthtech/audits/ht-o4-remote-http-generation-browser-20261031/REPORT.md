@@ -70,11 +70,18 @@ metrics over its frozen benchmark inputs:
 These values are not semantic device–patent gold and are not a claim of
 exhaustive recall, clinical suitability, FTO, or investment merit.
 
-## 3. Fixed-budget research frontier
+## 3. Reference fixed-budget frontier
 
-The adaptive report keeps the method classes separate and reports the current
-development frontier descriptively at macro known-link Recall@20. These rows
-are not per-case browser metrics and are not pooled scientific estimates.
+The table below is a reused **Stryker final-holdout reference**, not an Abbott
+browser-cohort result. It comes from the audited 3-query / 24-patent / 3
+family-aware-group comparison at
+`../luna-long-run-20261029-m10-b4-holdout-20261029/comparison.json`, with
+protocol hash `1ac535330960bd86fd3d5720671309411844dab24a922cf18b4684fba7c06a7b`,
+cohort manifest hash
+`1b42b7c4a52b697d9c5c4f7db4f9236b7d5d239d83584863a6ba844591adef75`, and
+comparison code commit `b12ef954a22f30c33e87c6ed78d8d40cc97d4fe3`.
+These rows are not per-case browser metrics and are not pooled scientific
+estimates.
 
 | Method | Macro Recall@20 | Query calls | Rerank pairs | Cost | Evidence class |
 |---|---:|---:|---:|---:|---|
@@ -85,11 +92,19 @@ are not per-case browser metrics and are not pooled scientific estimates.
 | HT-B3 simple adaptive heuristic | 0.8857 | 5 | 120 | USD 0.00 | offline control |
 | HT-B4-MOCK | 0.8857 | 8 shaped calls | n/a | USD 0.0008 simulated | mock only |
 
-Within this bounded development slice, HT-B0b has the highest reported
-Recall@20 with fewer query calls than B2 and no reranking. The result is a
-negative adaptive finding for this slice, not evidence that adaptive
-acquisition is generally worse. Cohort size, candidate-universe ceilings,
-grouping, and the `UNJUDGED` policy prevent a pooled generalization claim.
+Within this Stryker reference comparison, HT-B0b has the highest reported
+Recall@20 with fewer query calls than B2 and no reranking. This is a
+holdout-specific descriptive result, not an Abbott result and not evidence
+that adaptive acquisition is generally worse. Cohort size,
+candidate-universe ceilings, grouping, and the `UNJUDGED` policy prevent a
+pooled generalization claim.
+
+For the current Abbott development cohort, the separate deterministic
+controller report records macro known-link Recall@20 of `0.498802` across
+3 devices and 41 runtime patents, with 5 query calls and 8 controller steps
+(`../ht-research-product-continuation-20261031/adaptive-policy-report.json`).
+No matched Abbott fixed-control frontier was rerun in this browser package,
+so the Abbott value must not be ranked against the Stryker reference table.
 
 ## 4. Generation and cost-quality trade-off
 
@@ -118,6 +133,8 @@ for reconciliation.
 ## 5. Failure analysis and boundaries
 
 - Named-device HTTP jobs: `3/3` succeeded for each encoder receipt.
+- The fixed-control frontier above is a reused Stryker final-holdout reference;
+  no matched Abbott fixed-control comparison is claimed here.
 - Vector errors: `0` for all six retrieval jobs.
 - Source inspection: HTTP `200` / browser source check PASS for all three
   cases.
