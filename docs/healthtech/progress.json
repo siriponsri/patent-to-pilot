@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-30",
+  "date": "2026-10-31",
   "track": "healthtech",
   "base_commit": "70805d30599dda723146390d39308c0faeb61ee7",
   "authorized_scope": "local migration, recoverable cleanup, tested commit and push to main; no paid batch or deploy",
@@ -175,6 +175,11 @@
       "id": "HT-W13",
       "status": "PASS_LOCAL_FILE_UI_BACKEND_INTEGRATION",
       "evidence": "docs/healthtech/audits/pepo-ui-integration-20261031/README.md; current backend schema/dossier import, IndexedDB notes/save/reopen and edited TH/EN exports verified; HTTP run/history service remains unavailable"
+    },
+    {
+      "id": "HT-O1-LOCAL-HTTP",
+      "status": "PASS_LOCAL_HTTP_BROWSER_INTEGRATION",
+      "evidence": "docs/healthtech/audits/ht-o1-local-http-20261031/README.md; backend contract, frontend loopback adapter/provider selector, real Chrome start/cancel/resume, source inspection, history v1->v2 edit/reopen, reload, and selected-version JSON/TH/EN exports pass with 0 provider calls and USD 0.00 paid cost; broader live/remote/semantic/commercial branches remain separate"
     },
     {
       "id": "HT-W16",
@@ -543,5 +548,8 @@
   "latest_luna_merge_base": "a34a228891332d27ec34112a68a02666507f3ddb",
   "latest_ui_backend_integration_audit": "docs/healthtech/audits/pepo-ui-integration-20261031/README.md",
   "latest_ui_backend_integration_status": "PASS_LOCAL_FILE_INTEGRATION",
-  "latest_ui_backend_integration_publication_receipt": "docs/healthtech/audits/pepo-ui-integration-20261031/MERGE_RECEIPT.json"
+  "latest_ui_backend_integration_publication_receipt": "docs/healthtech/audits/pepo-ui-integration-20261031/MERGE_RECEIPT.json",
+  "latest_o1_local_http_audit": "docs/healthtech/audits/ht-o1-local-http-20261031/README.md",
+  "latest_o1_local_http_status": "PASS_LOCAL_HTTP_BROWSER_INTEGRATION",
+  "latest_o1_local_http_verification": "docs/healthtech/audits/ht-o1-local-http-20261031/verification.json"
 }

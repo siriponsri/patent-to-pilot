@@ -1,0 +1,65 @@
+{
+  "format": "ht-o1-local-http-verification-v1",
+  "status": "PASS_LOCAL_HTTP_BROWSER_INTEGRATION",
+  "base_commit": "0d049802d36bc2eebe60331ec444d62469fd767f",
+  "branch": "codex/research-product-o1-20261031",
+  "candidate_head": "0d049802d36bc2eebe60331ec444d62469fd767f",
+  "working_tree": "dirty",
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "implemented": [
+    "local loopback HTTP jobs",
+    "idempotent submit",
+    "durable job state and attempts",
+    "cancel acknowledgment",
+    "fail-closed resume",
+    "versioned history edit with expected-parent conflict",
+    "source inspection",
+    "selected-version JSON/Markdown export",
+    "provider availability and paid budget gate",
+    "frontend loopback adapter and provider selector",
+    "real Chrome loopback browser acceptance"
+  ],
+  "commands": [
+    {
+      "command": "rtk proxy python -B -m pytest -q -rA -p no:cacheprovider tests/test_healthtech_http.py tests/test_healthtech_prelive.py tests/test_healthtech_repairs.py",
+      "outcome": "PASS; one existing optional tokenizer skip"
+    },
+    {
+      "command": "rtk proxy npm test (frontend/healthtech-web)",
+      "outcome": "PASS; 74 frontend unit tests"
+    },
+    {
+      "command": "rtk proxy npm run test:integration:http (frontend/healthtech-web)",
+      "outcome": "PASS; real Chrome loopback acceptance; cancel/resume, history edit/reopen, source inspection, and JSON/TH/EN export"
+    },
+    {
+      "command": "rtk proxy python -B -m pytest -q -p no:cacheprovider",
+      "outcome": "PASS; one existing optional tokenizer skip"
+    },
+    {
+      "command": "rtk proxy python -B -m compileall -q src/patent_to_pilot/healthtech/http.py scripts/healthtech/serve_http.py tests/test_healthtech_http.py",
+      "outcome": "PASS"
+    },
+    {
+      "command": "rtk proxy python scripts/healthtech/serve_http.py --help",
+      "outcome": "PASS"
+    },
+    {
+      "command": "rtk proxy git diff --check",
+      "outcome": "PASS"
+    }
+  ],
+  "not_run": [
+    "live provider execution",
+    "remote embeddings",
+    "Qwen3-8B versus qwen/qwen3-32b comparison",
+    "three real device cases"
+  ],
+  "canonical_sources": [
+    "src/patent_to_pilot/healthtech/http.py",
+    "scripts/healthtech/serve_http.py",
+    "tests/test_healthtech_http.py"
+  ]
+}
+

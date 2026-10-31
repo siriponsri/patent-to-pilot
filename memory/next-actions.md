@@ -621,3 +621,19 @@ Status: `PASS_LOCAL_FILE_UI_BACKEND_INTEGRATION`; canonical audit: `docs/healtht
 Combined main `a0ec9ce` with PR #1 head `7ca0f2e` in an isolated worktree. Regenerated stale rights/manifest schemas, fixed external company-metadata projection, rejected mixed-query/duplicate-step/policy receipts, preserved historical browser evidence and added executable current-Python/backend-to-UI regressions. Final guarded backend suite: 475 passed/1 optional skip; frontend: 72/72; original browser acceptance: 17/17; fresh MitraClip/Tendyne/TriClip backend-to-browser cases: 3/3, including source inspection, IndexedDB reload and edited TH/EN downloads. No live API, paid call or remote job occurred.
 
 Next: verify publication via the merge receipt, then choose a separate HTTP run/history adapter package if desired. Remote allocation remains an independent blocker; vector/shard crash-resume repairs remain in their original Pepo worktree. Do not treat file-based UI integration as service deployment, scientific validation, or completion of the remote-embedding goal.
+
+## HT-NEXT-070 — 2026-10-31 O1 local HTTP backend
+
+Status: `PARTIAL_LOCAL_BACKEND`; canonical audit: `docs/healthtech/audits/ht-o1-local-http-20261031/README.md`.
+
+Added the loopback `healthtech-local-http-v1` service and CLI around the existing offline dossier engine. `POST /jobs` now validates a canonical `DossierInput`, enforces a bounded idempotency key, persists durable job state/attempts, runs one local worker, acknowledges cancellation, and exposes fail-closed resume. History reads/edits use the existing atomic version chain and expected-parent check; source inspection and selected-version JSON/Markdown exports reuse the rights boundary. `/providers` exposes local resource accounting and keeps the paid provider gate closed without guessing the historical ledger balance.
+
+Focused HTTP plus pre-live/history/rights regressions pass with one existing optional tokenizer skip; compile, CLI help, and diff checks pass. No live provider, paid call, browser HTTP acceptance, remote embedding, model comparison, or real-device E2E run occurred. Next: wire the frontend adapter and run browser acceptance against the service while preserving the existing file-import and IndexedDB namespace.
+
+## HT-NEXT-071 — 2026-10-31 O1 local HTTP browser integration
+
+Status: `PASS_LOCAL_HTTP_BROWSER_INTEGRATION`; canonical audit: `docs/healthtech/audits/ht-o1-local-http-20261031/README.md`.
+
+Completed the loopback frontend adapter/provider selector and real Chrome acceptance against the temporary Python service. The browser flow starts a synthetic job, cancels it while running, resumes/retries to success, inspects a source, edits history from version 1 to version 2, reloads the project, and exports selected version 2 as JSON, Thai Markdown, and English Markdown. Frontend unit tests pass 74/74; the focused Python suite and full repository suite pass with one existing optional tokenizer skip; provider calls and paid cost are zero.
+
+This closes the local HTTP package only. Live OpenRouter execution, remote embeddings, generation-model comparison, real-device HTTP cases, semantic device-patent gold, deployment, public release, and commercial/user validation remain NOT_RUN or blocked. Next: review the isolated candidate and create the authorized commit/push path if accepted.

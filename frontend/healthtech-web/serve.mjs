@@ -1,6 +1,7 @@
 // Local static server for the HealthTech web frontend. Zero dependencies.
 // Binds to 127.0.0.1 only, serves an explicit file allowlist, and sets a CSP
-// that forbids inline/remote scripts and any cross-origin fetch.
+// that forbids inline/remote scripts while permitting the explicitly loopback
+// HTTP job adapter used by the local research workflow.
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { createReadStream } from 'node:fs';
@@ -19,7 +20,7 @@ const MAPPED = {
 };
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.vtt': 'text/vtt', '.mp4': 'video/mp4', '.jpg': 'image/jpeg', '.png': 'image/png' };
 const HEADERS = {
-  'Content-Security-Policy': "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+  'Content-Security-Policy': "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; media-src 'self'; connect-src 'self' http://127.0.0.1:* http://localhost:* http://[::1]:*; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'no-referrer',
   'Cache-Control': 'no-store',
