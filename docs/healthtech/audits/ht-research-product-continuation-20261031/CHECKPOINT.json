@@ -5,7 +5,7 @@
   "parent_audit": "docs/healthtech/audits/ht-research-product-20261031",
   "status": "PARTIAL_O4_OFFLINE_ADAPTIVE_REPORT_O3_BLOCKED_LOCAL",
   "base_revision": "4f45b991025c5dbc8f7bf53b03ffcb6158feb8a2",
-  "candidate_revision": "UNCOMMITTED_WORKTREE",
+  "candidate_revision": "4f15a2075e3d21c10479daffd4da5bbd932b0d02",
   "working_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "branch": "codex/research-product-o1-o4-20261031",
   "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",

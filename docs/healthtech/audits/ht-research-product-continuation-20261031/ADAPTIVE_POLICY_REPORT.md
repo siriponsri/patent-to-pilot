@@ -1,7 +1,7 @@
 # Adaptive acquisition policy report
 
 - Status: `PARTIAL_OFFLINE_ADAPTIVE_POLICY_REPORT`
-- Code commit: `4f45b991025c5dbc8f7bf53b03ffcb6158feb8a2`
+- Code commit: `4f15a2075e3d21c10479daffd4da5bbd932b0d02`
 - Parent audit: `docs/healthtech/audits/ht-research-product-20261031`
 - Endpoint: macro known-link recall at K=20; descriptive only.
 

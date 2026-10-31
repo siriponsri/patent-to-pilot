@@ -3,11 +3,11 @@
   "self_excluded": true,
   "files": [
     {"path": "README.md", "bytes": 1954, "sha256": "adf250f1af51ecdedfb66d6887269a8ccab485955b9150119d5b6a20481350dc"},
-    {"path": "CHECKPOINT.json", "bytes": 2668, "sha256": "7e3cb27cec6e5e65d40378b28565ae5d931e965c415a0a93a01ccb7405ebec06"},
+    {"path": "CHECKPOINT.json", "bytes": 2688, "sha256": "b4fef02d75e5194dea3c03cb97a5daa7a0abd384f405789c96bcf2c0d0098144"},
     {"path": "NEXT_ACTIONS.md", "bytes": 700, "sha256": "f2ebeb7640d959877dff139464689421b2b272eea460c084183459a6ff8519ef"},
     {"path": "o3-local-model-preflight.json", "bytes": 1192, "sha256": "a4ec1bf7cf770904ab9086ca837214de70a57778c3783e497ff33bb9d281ea9b"},
-    {"path": "adaptive-policy-report.json", "bytes": 9142, "sha256": "a8e7a2ff2eba2f6038d294099cd251801a495e56c3cddfb93dde48ba7f08b59d"},
-    {"path": "ADAPTIVE_POLICY_REPORT.md", "bytes": 2513, "sha256": "b1c021af52056877cc6fd9a24d9a97d8a7c69bba193c268afbaa861b1ec9cdab"},
-    {"path": "verification.json", "bytes": 4192, "sha256": "9f4bacb42a2de4b79909443a114b4de172bfc1ca83ef8d6505f6376f5433e76c"}
+    {"path": "adaptive-policy-report.json", "bytes": 9142, "sha256": "811d8f2a2cb036c03b3b470628aa0e5075752614bd6b95f8bbc9ba2129e2de19"},
+    {"path": "ADAPTIVE_POLICY_REPORT.md", "bytes": 2513, "sha256": "fd4efacdcc0861a655d6a00288a62a0906f0c0d8f208d785a7329b6a12c4a2a9"},
+    {"path": "verification.json", "bytes": 4260, "sha256": "fd801d144c223555f19be2585ba9c8fed79c09207b5bcbb835f338d987373959"}
   ]
 }
