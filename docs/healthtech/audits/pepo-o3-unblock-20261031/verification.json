@@ -1,13 +1,13 @@
 {
   "format": "ptp-healthtech-pepo-o3-unblock-verification-v1",
   "run_id": "pepo-o3-unblock-20261031",
-  "captured_at_utc": "2026-10-31T10:45:25.2857671Z",
+  "captured_at_utc": "2026-10-31T11:19:51.9621432Z",
   "status": "PASS_ENGINEERING_PREPARATION_O3_PAID_RESEARCH_PARTIAL",
   "repository": {
     "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
     "branch": "codex/research-product-o1-o4-20261031",
     "head_before_new_audit": "6e404d8cb43570e2f54fcaa04b9e85946cc685dd",
-    "candidate_revision": "5c2bc533b5d953b622b345db03a59f2531bc7d1f",
+    "candidate_revision": "ea26eef",
     "remote_branch": "origin/codex/research-product-o1-o4-20261031",
     "pull_request": "https://github.com/siriponsri/patent-to-pilot/pull/2",
     "owner_scope_preserved": true,
