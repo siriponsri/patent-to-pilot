@@ -4,7 +4,7 @@
   "repository": {
     "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
     "branch": "codex/research-product-o1-o4-20261031",
-    "head": "15e6da64b769b7ac90c75d2450f48ea564ec97eb",
+    "head": "aa6c5c40ec84166b93734625a951eeb738ea3562",
     "remote_head_matches": true,
     "worktree_clean_before_audit_write": true
   },
@@ -130,7 +130,8 @@
       "status": "PASS",
       "evidence": [
         "current focused command: python -m pytest -p no:cacheprovider tests/test_healthtech_ledger_registry.py tests/test_healthtech_generation_payload.py tests/test_healthtech_api_generation.py tests/test_healthtech_round1_budget.py tests/test_healthtech_b4_live.py tests/test_healthtech_qwen_evidence_pack.py tests/test_healthtech_adaptive_report.py tests/test_healthtech_controller.py tests/test_healthtech_b4_holdout_comparison.py",
-        "result: 46 passed",
+        "result: 47 passed",
+        "full_repository_regression: 512 passed, 1 skipped, 2 warnings",
         "JSON parse checks",
         "git diff --check"
       ]
