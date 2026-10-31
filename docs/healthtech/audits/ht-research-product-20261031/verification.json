@@ -1,0 +1,125 @@
+{
+  "format": "ht-research-product-verification-v1",
+  "run_id": "ht-research-product-20261031",
+  "runtime_start_utc": "2026-10-31T02:47:23Z",
+  "commands": [
+    {
+      "id": "local_focused_tests",
+      "status": "PASS",
+      "command": "rtk proxy python -m pytest tests/test_healthtech_transformer_encoders.py tests/test_healthtech_vector_artifacts.py tests/test_healthtech_vector_eval.py",
+      "result": "15 passed"
+    },
+    {
+      "id": "remote_patembed_self_check",
+      "status": "PASS",
+      "result": "one visible Tesla V100, torch 2.8.0+cu128, 4x768 little-endian float32, retrieval_MIXED prompt, max RSS 1545276 KiB"
+    },
+    {
+      "id": "remote_e5_self_check",
+      "status": "PASS",
+      "result": "one visible Tesla V100, torch 2.8.0+cu128, 4x768 little-endian float32, max RSS 2155156 KiB"
+    },
+    {
+      "id": "remote_canary_packaging_recovery",
+      "status": "PASS_WITH_RECOVERY",
+      "result": "two pre-inference package-import failures repaired with remote-only no-op initializers; no repository source changed"
+    },
+    {
+      "id": "remote_patembed_canary",
+      "status": "PASS",
+      "result": "64 rows, shard 0 published then injected interruption, resume completed 2 shards, dimension 768",
+      "manifest_sha256": "70026eba06fee6b1e5640e42d775830370179eca6fd4006a6576de676a2d1ec6"
+    },
+    {
+      "id": "remote_e5_canary",
+      "status": "PASS",
+      "result": "64 rows, shard 0 published then injected interruption, resume completed 2 shards, dimension 768",
+      "manifest_sha256": "4e7335a7b47ad3de988d8609b68ce80bc1b11cbd980e53f9ecc7cfdfb858f895"
+    },
+    {
+      "id": "local_canary_import",
+      "status": "PASS",
+      "result": "remote bundles copied back and load_vector_bundle accepted both complete bundles with matching manifest hashes"
+    },
+    {
+      "id": "remote_full_encoding",
+      "status": "PASS",
+      "result": "PatEmbed and multilingual-e5 each encoded 45,336 passage rows into 10 resumable shards and 1,247 query rows into one imported query bundle; remote validation passed",
+      "manifest_sha256": {
+        "patembed_corpus": "db5196ef239d79ef7a108f2c596881308e3f52e832c5bad136a244631af2abcd",
+        "patembed_queries": "6bacd6b8def0906101157c8c1ff80bab8fe05d1c416f18c554832abcdfaef8d0",
+        "e5_corpus": "94b2246b19cf481842cfd85a2757745c6f52c867b23030485778e8710adb1089",
+        "e5_queries": "53342cbfd55387aa2de07c5c487a75f627eced243e87324b6eb1f7db4449c9ac"
+      }
+    },
+    {
+      "id": "matched_dapfam_patembed",
+      "status": "PASS",
+      "result": "1,247 queries, 49,869 qrel pairs, zero dense failures; dense macro Recall@100 0.42252517152276575, micro Recall@100 0.42231938705924826, macro nDCG@100 0.34882988642862867",
+      "output": "results/healthtech/ht-transformer-eval-20261031-patembed/summary.json"
+    },
+    {
+      "id": "matched_dapfam_e5",
+      "status": "PASS",
+      "result": "1,247 queries, 49,869 qrel pairs, zero dense failures; dense macro Recall@100 0.28741423861712556, micro Recall@100 0.28729592041397567, macro nDCG@100 0.24478123282756506",
+      "output": "results/healthtech/ht-transformer-eval-20261031-e5/summary.json"
+    },
+    {
+      "id": "device_vector_dossier_e2e",
+      "status": "PASS",
+      "result": "Six real local dossier-engine runs completed for MitraClip, Tendyne, and TriClip using imported PatEmbed/e5 vectors; each used one bounded search call, had zero vector errors, zero provider calls, and USD 0.00 paid cost",
+      "output": "permitted-local-storage:device-dossier-results.json"
+    },
+    {
+      "id": "historical_openrouter_receipt_reconciliation",
+      "status": "PASS",
+      "method": "Existing read-only provider recovery integration validated the preserved Phase A journal; the paired revalidation receipt was checked from the authored handoff evidence.",
+      "result": "Historical Phase A debit USD 0.0000732 plus paired revalidation debit USD 0.0000732 equals USD 0.0001464 cumulative actual debit; unknown-pending attempts 0.",
+      "evidence": [
+        "docs/handoff/LUNA_CLOSEOUT_EVIDENCE.json",
+        "docs/healthtech/audits/ht-research-product-20261031/o3-gate.json"
+      ]
+    },
+    {
+      "id": "public_qwen3_32b_endpoint_preflight",
+      "status": "PASS",
+      "result": "Unauthenticated endpoint metadata returned three routes with current context and pricing fields; route selection remains unresolved and account credit was not queried.",
+      "evidence": "docs/healthtech/audits/ht-research-product-20261031/o3-gate.json"
+    },
+    {
+      "id": "o3_paid_gate",
+      "status": "BLOCKED_LOCAL",
+      "result": "Canonical USD8 ledger identity, current account credit, dossier prompt transfer rights, explicit comparison authorization, and local Qwen3-8B revision are not all verified. No provider request was sent.",
+      "evidence": "docs/healthtech/audits/ht-research-product-20261031/o3-gate.json"
+    },
+    {
+      "id": "full_repository_regression",
+      "status": "PASS",
+      "result": "pytest exit code 0; one existing optional tokenizer skip and two warnings"
+    },
+    {
+      "id": "source_compile_and_diff_checks",
+      "status": "PASS",
+      "result": "compileall exit code 0; git diff --check exit code 0"
+    }
+  ],
+  "canary_input": {
+    "rows": 64,
+    "runtime_sha256": "ca26dda6a4cbd4f0bc5b076e01dc762df9ead9697405bfb08edffa7ac01ed258",
+    "item_order_sha256": "99e56c2cc47feaea409de1a3ee2923869ba4f1d4efec5a000c42b4e032cebc50",
+    "document_order_sha256": "8dae864ca213b0f82df6dc9af03253678cd5a4a97ccde999c13febe19c3e6da5",
+    "text_hashes_sha256": "64d720c9b185ed3b1ddd8da2c9d080dcf294b0c4e14fda3c846778fc3ea85b23"
+  },
+  "limits": {
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "cpu_threads_max": 8,
+    "ram_bytes_max": 34359738368,
+    "provider_calls": 0,
+    "paid_cost_usd": 0,
+    "remote_device_runtime_corpus_rows": 41,
+    "remote_device_runtime_query_rows": 3
+  },
+  "not_run": [
+    "Qwen3-8B vs qwen/qwen3-32b generation comparison (BLOCKED_LOCAL: see o3-gate.json)"
+  ]
+}
