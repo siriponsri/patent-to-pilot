@@ -3,7 +3,7 @@
   "run_id": "ht-o4-remote-http-generation-browser-20261031",
   "status": "PASS_O4_REAL_HTTP_GENERATION_BROWSER_O3_API_BLOCKED_LOCAL",
   "base_revision": "79580d2b36a505b717718cc22b1d11298888ef12",
-  "candidate_revision": "5c2bc533b5d953b622b345db03a59f2531bc7d1f",
+  "candidate_revision": "20e38974ed32bc6fca9760b9f1974b3c3f8dfa34",
   "single_writer": true,
   "outcomes": {
     "O1": "COMPLETE_PARENT_REVALIDATED",
