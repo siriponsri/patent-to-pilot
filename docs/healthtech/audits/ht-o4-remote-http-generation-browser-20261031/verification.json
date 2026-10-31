@@ -1,0 +1,77 @@
+{
+  "format": "ht-o4-remote-http-generation-browser-verification-v1",
+  "run_id": "ht-o4-remote-http-generation-browser-20261031",
+  "base_revision": "79580d2b36a505b717718cc22b1d11298888ef12",
+  "commands": [
+    {
+      "id": "named_abbott_browser",
+      "status": "PASS",
+      "command": "rtk npm run test:integration:abbott",
+      "working_directory": "frontend/healthtech-web",
+      "result": "PASS_BROWSER_HTTP_VECTOR_GENERATION_HISTORY_EXPORT; 3/3 cases; source inspection PASS; history 1->2 PASS; JSON export v2 PASS"
+    },
+    {
+      "id": "providers_gate",
+      "status": "PASS",
+      "command": "GET http://127.0.0.1:18787/providers",
+      "result": "local-vector and local-generation available; OpenRouter unavailable; paid_dispatch closed"
+    },
+    {
+      "id": "harness_syntax",
+      "status": "PASS",
+      "command": "rtk node --check tests/e2e/backend-http-abbott-integration.mjs",
+      "result": "exit code 0"
+    },
+    {
+      "id": "frontend_unit",
+      "status": "PASS",
+      "command": "rtk npm test",
+      "working_directory": "frontend/healthtech-web",
+      "result": "74 passed, 0 failed"
+    },
+    {
+      "id": "browser_loopback_existing",
+      "status": "PASS",
+      "command": "rtk npm run test:integration:http",
+      "working_directory": "frontend/healthtech-web",
+      "result": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT; provider calls 0; paid cost USD 0.00"
+    },
+    {
+      "id": "python_full_suite",
+      "status": "PASS",
+      "command": "rtk python -m pytest -q -p no:cacheprovider",
+      "result": "exit code 0; two existing optional skips; warnings only"
+    },
+    {
+      "id": "diff_check",
+      "status": "PASS",
+      "command": "rtk git diff --check",
+      "result": "exit code 0"
+    }
+  ],
+  "privacy": {
+    "credentials_read": false,
+    "paid_provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "raw_case_bundle_committed": false,
+    "generated_text_committed": false,
+    "model_weights_staged": false,
+    "evaluator_labels_in_runtime": false
+  },
+  "boundaries": {
+    "verified": [
+      "real three-case browser to HTTP generation lifecycle",
+      "PatEmbed retrieval binding",
+      "schema-valid local Qwen generation",
+      "source inspection",
+      "history edit and selected-version JSON export"
+    ],
+    "not_run_or_blocked": [
+      "OpenRouter qwen/qwen3-32b comparison",
+      "paid provider dispatch",
+      "semantic device-patent judgment",
+      "clinical/FTO/patent-validity assessment",
+      "deployment/publication/commercial validation"
+    ]
+  }
+}

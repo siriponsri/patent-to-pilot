@@ -1,0 +1,30 @@
+{
+  "format": "ht-o4-local-generation-http-verification-v1",
+  "run_id": "ht-o4-local-generation-http-20261031",
+  "base_revision": "79580d2b36a505b717718cc22b1d11298888ef12",
+  "commands": [
+    {"id": "http_regression", "status": "PASS", "command": "rtk python -m pytest -q -p no:cacheprovider tests/test_healthtech_http.py", "result": "6 passed"},
+    {"id": "vector_regression", "status": "PASS", "command": "rtk python -m pytest -q -p no:cacheprovider tests/test_healthtech_vector_http.py tests/test_healthtech_vector_eval.py", "result": "5 passed"},
+    {"id": "frontend_unit", "status": "PASS", "command": "rtk npm test", "working_directory": "frontend/healthtech-web", "result": "74 passed, 0 failed"},
+    {"id": "browser_loopback_existing", "status": "PASS", "command": "rtk npm run test:integration:http", "working_directory": "frontend/healthtech-web", "result": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT"},
+    {"id": "compile", "status": "PASS", "command": "rtk python -m py_compile scripts/healthtech/prepare_http_browser_cases.py src/patent_to_pilot/healthtech/generation.py src/patent_to_pilot/healthtech/http.py scripts/healthtech/build_qwen_evidence_pack.py", "result": "exit code 0"},
+    {"id": "pack_single_case_smoke", "status": "PASS", "command": "rtk python scripts/healthtech/build_qwen_evidence_pack.py --dossier <temporary dossier> --case-id HT-SYN-001 --output <temporary pack>", "result": "single-case frozen pack created; source payloads excluded"},
+    {"id": "named_abbott_browser", "status": "NOT_RUN", "command": "rtk npm run test:integration:abbott", "working_directory": "frontend/healthtech-web", "result": "asset-gated; no permitted runtime config paths present in this checkout"},
+    {"id": "real_qwen_http_generation", "status": "NOT_RUN", "result": "no server-owned local-generation config was available"},
+    {"id": "openrouter_comparison", "status": "BLOCKED_LOCAL", "result": "canonical ledger, current credit, exact authorization, and outbound prompt-rights gates remain unresolved"}
+  ],
+  "privacy": {
+    "credentials_read": false,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "raw_case_bundle_committed": false,
+    "model_weights_staged": false,
+    "evaluator_labels_in_runtime": false
+  },
+  "boundaries": {
+    "implemented": ["local-generation provider contract", "durable generation artifact", "generation result route", "frontend generation display", "named Abbott browser harness"],
+    "tested_with_injected_provider": ["HTTP retrieval to generation to history/export lifecycle"],
+    "not_model_evidence": ["injected provider test", "single-case pack smoke"],
+    "not_run": ["real named Abbott browser harness", "real local Qwen HTTP action", "OpenRouter comparison", "live adaptive controller"]
+  }
+}

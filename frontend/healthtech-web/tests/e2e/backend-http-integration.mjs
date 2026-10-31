@@ -65,6 +65,7 @@ try {
   await page.waitFor('document.getElementById("backend-run")');
   assert.equal(await page.eval('document.getElementById("backend-provider").value'), 'local');
   assert.equal(await page.eval('document.querySelector("#backend-provider option[value=openrouter]").disabled'), true);
+  assert.equal(await page.eval('document.querySelector("#backend-provider option[value=local-generation]").disabled'), true);
 
   await page.click('#backend-start');
   await page.waitFor('window.__healthtechApp.state.backendJob?.job_id');

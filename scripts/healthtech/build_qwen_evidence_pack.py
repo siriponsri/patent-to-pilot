@@ -198,13 +198,9 @@ def _prompt_contract() -> dict[str, Any]:
     }
 
 
-def build_pack(dossier_root: Path, output_path: Path, captured_at_utc: str | None = None) -> dict[str, Any]:
-    cases = []
-    for case_id in CASE_ORDER:
-        dossier_path = dossier_root / case_id / "dossier.json"
-        if not dossier_path.is_file():
-            raise FileNotFoundError(dossier_path)
-        cases.append(_case_view(case_id, dossier_path))
+def _write_pack(cases: list[dict[str, Any]], output_path: Path, captured_at_utc: str | None = None) -> dict[str, Any]:
+    if not cases:
+        raise ValueError("at least one dossier case is required")
     pack: dict[str, Any] = {
         "format": "ht-o3-qwen3-frozen-evidence-pack-v1",
         "status": "PASS_FROZEN_LOCAL_RESEARCH_PACK",
@@ -228,7 +224,7 @@ def build_pack(dossier_root: Path, output_path: Path, captured_at_utc: str | Non
             "provider credentials",
         ],
         "evidence_policy": {
-            "case_order": CASE_ORDER,
+            "case_order": [case["case_id"] for case in cases],
             "evidence_order": "preserve dossier JSON order",
             "candidate_order": "preserve dossier JSON order and assign one-based rank",
             "source_payloads": "excluded; source IDs, hashes, locators, and rights metadata retained",
@@ -243,13 +239,37 @@ def build_pack(dossier_root: Path, output_path: Path, captured_at_utc: str | Non
     return pack
 
 
+def build_pack(dossier_root: Path, output_path: Path, captured_at_utc: str | None = None) -> dict[str, Any]:
+    cases = []
+    for case_id in CASE_ORDER:
+        dossier_path = dossier_root / case_id / "dossier.json"
+        if not dossier_path.is_file():
+            raise FileNotFoundError(dossier_path)
+        cases.append(_case_view(case_id, dossier_path))
+    return _write_pack(cases, output_path, captured_at_utc=captured_at_utc)
+
+
+def build_single_pack(dossier_path: Path, case_id: str, output_path: Path, captured_at_utc: str | None = None) -> dict[str, Any]:
+    if not dossier_path.is_file():
+        raise FileNotFoundError(dossier_path)
+    return _write_pack([_case_view(case_id, dossier_path)], output_path, captured_at_utc=captured_at_utc)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--dossier-root", type=Path, required=True)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--dossier-root", type=Path)
+    source.add_argument("--dossier", type=Path)
+    parser.add_argument("--case-id")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--captured-at-utc")
     args = parser.parse_args()
-    pack = build_pack(args.dossier_root, args.output, captured_at_utc=args.captured_at_utc)
+    if args.dossier is not None:
+        if not args.case_id:
+            parser.error("--case-id is required with --dossier")
+        pack = build_single_pack(args.dossier, args.case_id, args.output, captured_at_utc=args.captured_at_utc)
+    else:
+        pack = build_pack(args.dossier_root, args.output, captured_at_utc=args.captured_at_utc)
     print(json.dumps({
         "status": pack["status"],
         "pack_sha256": pack["pack_sha256"],

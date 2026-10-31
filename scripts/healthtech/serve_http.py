@@ -34,6 +34,12 @@ def main() -> None:
         default=None,
         help="server-owned JSON config for a validated vector corpus/query bundle pair",
     )
+    parser.add_argument(
+        "--generation-config",
+        type=Path,
+        default=None,
+        help="server-owned JSON config for the pinned local generation provider",
+    )
     args = parser.parse_args()
     if args.delay_ms < 0:
         parser.error("--delay-ms must be non-negative")
@@ -44,6 +50,7 @@ def main() -> None:
         code_commit=args.code_commit or _head(),
         execution_delay_seconds=args.delay_ms / 1000,
         vector_config=args.vector_config,
+        generation_config=args.generation_config,
     )
     bound_host, bound_port = server.server_address[:2]
     print(f"healthtech local HTTP listening on http://{bound_host}:{bound_port}", flush=True)

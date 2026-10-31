@@ -78,6 +78,7 @@ export function createBackendAdapter(baseUrl, fetchImpl = globalThis.fetch) {
     resume: (jobId) => request(jobPath(jobId, '/resume'), { method: 'POST', body: {} }),
     history: (jobId) => request(jobPath(jobId, '/history')),
     result: (jobId) => request(jobPath(jobId, '/result')),
+    generation: (jobId) => request(jobPath(jobId, '/generation')),
     version: (jobId, version) => request(jobPath(jobId, `/history/${encodeURIComponent(version)}`)),
     edit: (jobId, version, edits) => request(jobPath(jobId, `/history/${encodeURIComponent(version)}/edits`), {
       method: 'POST', body: { edits, expected_parent_version: version },

@@ -1065,7 +1065,16 @@ function historyScreen(app) {
         h('button', { type: 'button', class: 'btn btn-primary', id: 'backend-edit', disabled: !String(c.backendEditNote || '').trim(), onClick: () => app.editBackendVersion() }, t('backend.saveEdit')))
         : null);
   }
-  const backendPanel = c.project.backendJobId ? h('section', { id: 'backend-history-panel' }, h('h2', {}, t('backend.historyTitle')), backendBody) : null;
+  const generation = c.project.backendGeneration;
+  const generationPanel = generation ? h('div', { id: 'backend-generation', class: 'callout callout-success' },
+    h('strong', {}, t('backend.generationTitle')),
+    h('p', {}, t('backend.generationSummary', {
+      model: generation.model || '—',
+      status: generation.status || '—',
+      latency: generation.generation_latency_seconds ?? '—',
+    })),
+    generation.parsed_output ? h('pre', { class: 'payload', tabindex: '0' }, JSON.stringify(generation.parsed_output, null, 2)) : null) : null;
+  const backendPanel = c.project.backendJobId ? h('section', { id: 'backend-history-panel' }, h('h2', {}, t('backend.historyTitle')), generationPanel, backendBody) : null;
   return h('section', {},
     h('h1', { tabindex: '-1' }, t('history.title')),
     backendPanel || h('div', {}, h('h2', {}, t('history.backend')),

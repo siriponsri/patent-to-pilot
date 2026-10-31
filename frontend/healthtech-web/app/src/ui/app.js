@@ -262,7 +262,7 @@ export const app = {
     if (!problem) await this.state.store.touch(projectId, new Date().toISOString());
   },
 
-  async createProject({ kind, dossierTree, validation, manifestTree, eventTrees, overlay, origin, title, backendJobId = null, backendProvider = null }) {
+  async createProject({ kind, dossierTree, validation, manifestTree, eventTrees, overlay, origin, title, backendJobId = null, backendProvider = null, backendGeneration = null }) {
     const now = new Date().toISOString();
     const projectId = newId('proj');
     const dossier = dossierTree ? toPlain(dossierTree) : null;
@@ -276,7 +276,7 @@ export const app = {
         comparator: comparatorOf(dossier), dossierHash: validation.hash, backendDossierVersion: dossier.version,
         dossierText: stringifyLossless(dossierTree), manifestText: manifestTree ? stringifyLossless(manifestTree) : null,
         eventsText: eventTrees ? stringifyLossless(eventTrees) : null,
-        backendJobId, backendProvider,
+        backendJobId, backendProvider, backendGeneration,
       });
     }
     const snapshot = {
@@ -803,11 +803,18 @@ export const app = {
     if (!this.state.backend || ['running', 'queued', 'cancel_requested'].includes(this.state.backendJob?.state)) return;
     const input = this.backendInputFor(query);
     if (!input) { this.state.backendJob = { state: 'unavailable', reason: 'backend_input_unavailable' }; this.render(); return; }
+    const providerId = document.getElementById('backend-provider')?.value
+      || this.state.backend.providerCatalog?.providers?.find((provider) => provider.available)?.id
+      || 'local';
+    await this.startBackendInput(input, { providerId });
+  },
+
+  // Used by public-case acceptance and future case catalogs that already own a
+  // validated DossierInput; the normal UI still uses startBackendJob(query).
+  async startBackendInput(input, { providerId = 'local' } = {}) {
+    if (!this.state.backend || ['running', 'queued', 'cancel_requested'].includes(this.state.backendJob?.state)) return;
     try {
       const key = `web-${(await sha256Hex(stringifyLossless(input))).slice(0, 48)}`;
-      const providerId = document.getElementById('backend-provider')?.value
-        || this.state.backend.providerCatalog?.providers?.find((provider) => provider.available)?.id
-        || 'local';
       const result = await this.state.backend.submit(input, { idempotencyKey: key, provider: { id: providerId } });
       this.state.backendJob = result.job;
       this.render();
@@ -837,7 +844,7 @@ export const app = {
       if (!validation.ok || runErrors.length) throw new Error(validation.ok ? runErrors[0].message : validation.errors[0].message);
       const created = await this.createProject({
         kind: 'dossier', dossierTree: bundle.dossier, validation, manifestTree: bundle.manifest, eventTrees: bundle.events,
-        overlay: emptyOverlay(), origin: { type: 'backend-http', jobId }, backendJobId: jobId,
+        overlay: emptyOverlay(), origin: { type: 'backend-http', jobId }, backendJobId: jobId, backendGeneration: bundle.generation || null,
         backendProvider: this.state.backend.providerCatalog?.providers?.find((p) => p.id === this.state.backendJob?.provider?.id)
           || this.state.backend.providerCatalog?.providers?.find((p) => p.available)
           || { id: 'local' },

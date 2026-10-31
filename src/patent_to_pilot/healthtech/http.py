@@ -28,6 +28,7 @@ from patent_to_pilot.healthtech.engine import (
     run_dossier,
     serialize_dossier,
 )
+from patent_to_pilot.healthtech.generation import GenerationProvider, LocalQwenGenerationProvider
 from patent_to_pilot.healthtech.history import (
     DossierHistoryError,
     append_user_edits,
@@ -195,7 +196,8 @@ class HealthTechJobService:
     def __init__(self, root: str | Path, *, code_commit: str = "unknown", max_workers: int = 1,
                  runner: Callable[..., tuple[Any, list[Any], Any]] = run_dossier,
                  execution_delay_seconds: float = 0.0,
-                 vector_search: ConfiguredVectorSearch | None = None):
+                 vector_search: ConfiguredVectorSearch | None = None,
+                 generation_provider: GenerationProvider | None = None):
         if max_workers != 1:
             raise ValueError("HealthTech local service requires one worker")
         if execution_delay_seconds < 0:
@@ -205,6 +207,7 @@ class HealthTechJobService:
         self.runner = runner
         self.execution_delay_seconds = execution_delay_seconds
         self.vector_search = vector_search
+        self.generation_provider = generation_provider
         self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="healthtech-job")
 
     def close(self) -> None:
@@ -227,6 +230,20 @@ class HealthTechJobService:
             ]
         if self.vector_search is not None:
             providers.insert(0, self.vector_search.describe())
+        if self.generation_provider is not None:
+            providers.insert(0, self.generation_provider.describe())
+        else:
+            providers.append({
+                "id": "local-generation",
+                "label": "Local Qwen evidence generator",
+                "available": False,
+                "model": "Qwen/Qwen3-8B",
+                "billing_status": "not_billable_local",
+                "actual_usd": 0.0,
+                "reserved_usd": 0.0,
+                "unknown_usd": 0.0,
+                "reason": "a server-owned local generation config is required",
+            })
         providers.append(
                 {
                     "id": "openrouter",
@@ -262,12 +279,14 @@ class HealthTechJobService:
         if not isinstance(key, str) or not IDEMPOTENCY_KEY.fullmatch(key):
             raise HTTPJobError(400, "invalid_idempotency_key", "a bounded idempotency key is required")
         provider = body.get("provider") or {"id": "local"}
-        if not isinstance(provider, dict) or provider.get("id") not in {"local", "local-vector"}:
+        if not isinstance(provider, dict) or provider.get("id") not in {"local", "local-vector", "local-generation"}:
             raise HTTPJobError(409, "provider_blocked", "only configured local providers are available; paid dispatch is fail-closed")
         if provider.get("id") == "local-vector" and self.vector_search is None:
             raise HTTPJobError(409, "provider_unavailable", "local-vector is not configured on this server")
         if provider.get("id") == "local" and self.vector_search is not None:
             raise HTTPJobError(409, "provider_unavailable", "the configured server requires the local-vector provider")
+        if provider.get("id") == "local-generation" and self.generation_provider is None:
+            raise HTTPJobError(409, "provider_unavailable", "local-generation is not configured on this server")
         raw_input = body.get("input")
         if not isinstance(raw_input, dict):
             raise HTTPJobError(400, "invalid_input", "input must be a DossierInput object")
@@ -283,9 +302,14 @@ class HealthTechJobService:
         input_payload = parsed.model_dump(mode="json")
         request_hash = _json_hash({"input": input_payload, "provider": provider})
         job_id = uuid4().hex
-        provider_record = self.vector_search.describe() if self.vector_search is not None else {
-            "id": "local", "model": "offline-lexical-v1"
-        }
+        if provider["id"] == "local-generation":
+            provider_record = self.generation_provider.describe()  # type: ignore[union-attr]
+            if self.vector_search is not None:
+                provider_record = {**provider_record, "retrieval_provider": self.vector_search.describe()}
+        elif provider["id"] == "local-vector":
+            provider_record = self.vector_search.describe()  # type: ignore[union-attr]
+        else:
+            provider_record = {"id": "local", "model": "offline-lexical-v1"}
         record = self.store.create(
             job_id=job_id,
             idempotency_key=key,
@@ -357,12 +381,29 @@ class HealthTechJobService:
                 current["attempts"][-1].update({"state": "cancelled", "ended_at": ended})
                 self.store.write(current)
                 return
+            generation_result = None
+            if current.get("provider", {}).get("id") == "local-generation":
+                if self.generation_provider is None:
+                    raise RuntimeError("local-generation provider is not configured")
+                generation_result = self.generation_provider.generate(dossier)
+                current = self.store.read(job_id)
+                if current.get("cancel_requested"):
+                    ended = _utc()
+                    current["state"] = "cancelled"
+                    current["reason"] = "cancelled_before_commit"
+                    current["preserved_result"] = False
+                    current["cost"]["local_elapsed_seconds"] = manifest.elapsed_seconds
+                    current["attempts"][-1].update({"state": "cancelled", "ended_at": ended})
+                    self.store.write(current)
+                    return
             job_dir = self.store._job_dir(job_id)
             history_dir = job_dir / "history"
             save_version(history_dir, dossier)
             _atomic_write_json(job_dir / "manifest.json", manifest.model_dump(mode="json"))
             events_path = job_dir / "acquisition_events.jsonl"
             events_path.write_text("".join(item.model_dump_json() + "\n" for item in events), encoding="utf-8")
+            if generation_result is not None:
+                _atomic_write_json(job_dir / "generation.json", generation_result)
             current = self.store.read(job_id)
             cancelled = bool(current.get("cancel_requested"))
             ended = _utc()
@@ -375,6 +416,15 @@ class HealthTechJobService:
                 "events": "acquisition_events.jsonl",
                 "history": "history",
             }
+            if generation_result is not None:
+                current["artifacts"]["generation"] = "generation.json"
+                current["generation"] = {
+                    "status": generation_result.get("status"),
+                    "schema_valid": generation_result.get("schema_valid"),
+                    "model": generation_result.get("model_id"),
+                    "model_revision": generation_result.get("model_revision"),
+                    "generation_latency_seconds": generation_result.get("generation_latency_seconds"),
+                }
             current["attempts"][-1].update({"state": current["state"], "ended_at": ended})
             self.store.write(current)
         except Exception as exc:  # durable failure, sanitized in the public record
@@ -443,12 +493,25 @@ class HealthTechJobService:
         dossier = select_version(root / record["artifacts"]["history"])
         manifest = json.loads((root / record["artifacts"]["manifest"]).read_text(encoding="utf-8"))
         events = [json.loads(line) for line in (root / record["artifacts"]["events"]).read_text(encoding="utf-8").splitlines() if line.strip()]
-        return {
+        result = {
             "job": self._public(record),
             "dossier": serialize_dossier(dossier),
             "manifest": manifest,
             "events": events,
         }
+        if record.get("artifacts", {}).get("generation"):
+            result["generation"] = json.loads(
+                (root / record["artifacts"]["generation"]).read_text(encoding="utf-8")
+            )
+        return result
+
+    def generation(self, job_id: str) -> dict[str, Any]:
+        record = self._require_result(job_id)
+        generation_path = record.get("artifacts", {}).get("generation")
+        if not generation_path:
+            raise HTTPJobError(404, "generation_not_found", "job has no generation result")
+        root = self.store._job_dir(job_id)
+        return {"job": self._public(record), "generation": json.loads((root / generation_path).read_text(encoding="utf-8"))}
 
     def edit(self, job_id: str, body: dict[str, Any]) -> dict[str, Any]:
         if not isinstance(body, dict) or set(body) - {"edits", "expected_parent_version"}:
@@ -518,6 +581,8 @@ class HealthTechJobService:
                 return 200, self.version(job_id, int(path[3])), "application/json; charset=utf-8"
             if method == "GET" and path[2:] == ["result"]:
                 return 200, self.result(job_id), "application/json; charset=utf-8"
+            if method == "GET" and path[2:] == ["generation"]:
+                return 200, self.generation(job_id), "application/json; charset=utf-8"
             if method == "POST" and len(path) == 5 and path[2] == "history" and path[4] == "edits":
                 return 200, self.edit(job_id, body), "application/json; charset=utf-8"
             if method == "GET" and len(path) == 3 and path[2] == "export":
@@ -614,13 +679,21 @@ def create_server(
     code_commit: str = "unknown",
     execution_delay_seconds: float = 0.0,
     vector_config: str | Path | None = None,
+    generation_config: str | Path | None = None,
+    generation_provider: GenerationProvider | None = None,
 ) -> ThreadingHTTPServer:
     configured_vectors = None if vector_config is None else ConfiguredVectorSearch.from_config(vector_config)
+    if generation_provider is not None and generation_config is not None:
+        raise ValueError("generation_provider and generation_config are mutually exclusive")
+    configured_generation = generation_provider if generation_provider is not None else (
+        None if generation_config is None else LocalQwenGenerationProvider.from_config(generation_config)
+    )
     service = HealthTechJobService(
         root,
         code_commit=code_commit,
         execution_delay_seconds=execution_delay_seconds,
         vector_search=configured_vectors,
+        generation_provider=configured_generation,
     )
 
     class BoundHandler(_Handler):

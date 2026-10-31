@@ -1,0 +1,18 @@
+{
+  "format": "ht-browser-abbott-harness-receipt-v1",
+  "status": "NOT_RUN_ASSET_GATED",
+  "command": "npm run test:integration:abbott",
+  "required_environment": [
+    "HEALTHTECH_ABBOTT_COHORT",
+    "HEALTHTECH_ABBOTT_RIGHTS_MATRIX",
+    "HEALTHTECH_ABBOTT_VECTOR_CONFIG"
+  ],
+  "optional_environment": [
+    "HEALTHTECH_ABBOTT_PROVIDER=local-generation",
+    "HEALTHTECH_ABBOTT_GENERATION_CONFIG"
+  ],
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "raw_case_bundle_committed": false,
+  "reason": "The current checkout has no permitted server-owned vector/generation runtime config paths for a real named-device browser run."
+}

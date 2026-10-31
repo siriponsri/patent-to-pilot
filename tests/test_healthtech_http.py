@@ -9,6 +9,7 @@ import time
 import pytest
 
 from patent_to_pilot.healthtech.http import HealthTechJobService, create_server
+from patent_to_pilot.healthtech.generation import CallableGenerationProvider
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -112,6 +113,89 @@ def test_provider_gate_and_version_conflict_are_fail_closed(server):
     })
     assert status == 409
     assert conflict["error"]["code"] == "version_conflict"
+
+
+def test_local_generation_provider_stays_in_http_history_and_export_lifecycle(tmp_path):
+    def generate(dossier):
+        return {
+            "format": "ht-http-local-generation-result-v1",
+            "status": "PASS_TEST_GENERATION",
+            "case_id": dossier.query.query_id,
+            "model_id": "test-local-model",
+            "model_revision": "test-revision",
+            "schema_valid": True,
+            "generation_latency_seconds": 0.01,
+            "parsed_output": {
+                "device_id": dossier.query.device_id_canonical,
+                "device_name": dossier.query.device_id_raw,
+                "findings": [],
+                "unresolved": ["test provider only"],
+            },
+            "provider_calls": 0,
+            "paid_cost_usd": 0.0,
+            "billing_status": "not_billable_local",
+        }
+
+    provider = CallableGenerationProvider(
+        {
+            "id": "local-generation",
+            "label": "Test local generation",
+            "available": True,
+            "model": "test-local-model",
+            "model_revision": "test-revision",
+            "billing_status": "not_billable_local",
+            "actual_usd": 0.0,
+            "reserved_usd": 0.0,
+            "unknown_usd": 0.0,
+        },
+        generate,
+    )
+    server = create_server("127.0.0.1", 0, tmp_path / "data", code_commit="test-head", generation_provider=provider)
+    thread = Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        status, catalog = _request(server, "GET", "/providers")
+        assert status == 200
+        assert next(item for item in catalog["providers"] if item["id"] == "local-generation")["available"] is True
+
+        status, submitted = _request(
+            server,
+            "POST",
+            "/jobs",
+            {"input": INPUT, "provider": {"id": "local-generation"}},
+            {"Idempotency-Key": "generation-1"},
+        )
+        assert status == 202
+        job_id = submitted["job"]["job_id"]
+        job = _wait_for(server, job_id)
+        assert job["state"] == "succeeded"
+        assert job["provider"]["id"] == "local-generation"
+        assert job["generation"]["schema_valid"] is True
+
+        status, result = _request(server, "GET", f"/jobs/{job_id}/result")
+        assert status == 200
+        assert result["generation"]["parsed_output"]["device_id"] == INPUT["query"]["device_id_canonical"]
+        status, generation = _request(server, "GET", f"/jobs/{job_id}/generation")
+        assert status == 200
+        assert generation["generation"]["status"] == "PASS_TEST_GENERATION"
+
+        status, history = _request(server, "GET", f"/jobs/{job_id}/history")
+        assert status == 200
+        assert history["history"]["versions"][0]["version"] == 1
+        status, edit = _request(server, "POST", f"/jobs/{job_id}/history/1/edits", {
+            "edits": {"review_note": "generation stayed auditable"},
+            "expected_parent_version": 1,
+        })
+        assert status == 200
+        assert edit["version"] == 2
+        status, exported = _request(server, "GET", f"/jobs/{job_id}/export?version=2&format=json")
+        assert status == 200
+        assert exported["version"] == 2
+        assert exported["user_edits"]["review_note"] == "generation stayed auditable"
+    finally:
+        server.shutdown()
+        thread.join(timeout=5)
+        server.healthtech_service.close()
 
 
 def test_loopback_browser_cors_allows_preflight_and_blocks_non_loopback_origin(server):

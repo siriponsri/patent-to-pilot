@@ -693,3 +693,19 @@ ledger/credit/authorization/prompt-rights gates, then integrate local generation
 into the same HTTP job lifecycle and rerun one rights-cleared hash-frozen
 comparison. Keep paid dispatch, clinical/FTO, deployment, and publication
 claims closed.
+
+## HT-NEXT-077 — 2026-10-31 local-generation HTTP action and Abbott browser harness
+
+Status: `PARTIAL_O4_HTTP_GENERATION_HARNESS_READY_O3_API_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-o4-local-generation-http-20261031/README.md`.
+
+Added the server-owned `local-generation` HTTP provider, bound it to the existing frozen Qwen evidence-pack contract, persisted `generation.json` with the same job/history/export lifecycle, and exposed the structured result in the frontend. The single-case pack smoke excludes source payloads. The injected-provider lifecycle regression passes `6/6` HTTP tests; vector regressions pass `5/5`; frontend passes `74/74`; existing Chrome loopback acceptance passes. A named Abbott browser harness is ready and keeps its temporary case bundle outside Git, but it is `NOT_RUN_ASSET_GATED` because the current checkout has no permitted vector/generation runtime config paths. No provider call or paid cost occurred.
+
+Next: run `npm run test:integration:abbott` when the named cohort, rights matrix, server-owned vector config, and optional local-generation config are available; preserve a sanitized receipt. Keep the OpenRouter comparison blocked until the cumulative ledger, current credit, exact authorization, and outbound prompt-rights gates are evidenced.
+
+## HT-NEXT-078 — 2026-10-31 real Abbott HTTP generation browser acceptance
+
+Status: `PASS_O4_REAL_HTTP_GENERATION_BROWSER_O3_API_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/README.md`.
+
+Completed the named `HT-DEV-MITRACLIP`, `HT-DEV-TENDYNE`, and `HT-DEV-TRICLIP` cases through Chrome, loopback HTTP, server-owned PatEmbed retrieval, pinned local `Qwen/Qwen3-8B` generation, source inspection, history version `1 -> 2` editing, and selected-version JSON export. Generation was schema-valid for `3/3` jobs. The browser receipt records three local generation jobs, zero paid/provider calls, USD `0.00` paid cost, and no raw case bundle or generated text committed. Final Node, frontend (`74/74`), existing HTTP browser, full Python (exit `0`, two existing optional skips), and diff checks pass.
+
+O3 remains `BLOCKED_LOCAL`: do not dispatch `qwen/qwen3-32b` until the canonical cumulative ledger identity, current account credit, exact route/spend authorization, and rights-cleared outbound dossier-prompt manifest are all evidenced. Keep semantic judgment, clinical/FTO, patent-validity, deployment, publication, and commercial claims separate from this engineering-path pass.
