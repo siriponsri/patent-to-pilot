@@ -1,0 +1,28 @@
+{
+  "format": "ht-o1-o4-http-vector-checkpoint-v1",
+  "run_id": "ht-o1-o4-http-vector-20261031",
+  "status": "PARTIAL_O4_REAL_HTTP_VECTOR_O3_API_BLOCKED_LOCAL",
+  "base_revision": "cec3cc4cd122dba2e33d5fbea02adfba57b89b32",
+  "candidate_revision": "928729ee1381280cc11d85439e63a71dff91432f",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "single_writer": true,
+  "outcomes": {
+    "O1": {"status": "COMPLETE", "evidence": "browser-http-integration and verification.json"},
+    "O2": {"status": "COMPLETE", "evidence": "patembed-http-receipt.json; e5-http-receipt.json"},
+    "O3": {"status": "BLOCKED_LOCAL", "evidence": "../ht-o3-local-model-preflight-20261031/generation-canary.json"},
+    "O4": {"status": "PARTIAL", "evidence": "adaptive-acquisition-report.json"}
+  },
+  "accounting": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "openrouter_comparison": "BLOCKED_LOCAL",
+    "live_adaptive_controller": "NOT_RUN"
+  },
+  "runtime_inputs": {
+    "device_corpus_sha256": "5965b7b51006d9d64d05250848300dee68d80a0b69324213a5ccac25a1c44e9d",
+    "device_queries_sha256": "7e0e29b6b7e8f19dcbd28c775e8b518255b5fdcfa0846307ac5bdd7f5b1381a8",
+    "cohort_runtime_sha256": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121"
+  },
+  "next_action": "Clear O3 ledger/credit/authorization/prompt-rights gates, then integrate local generation as an HTTP action and rerun the frozen comparison.",
+  "review_status": "READY_FOR_REVIEW"
+}

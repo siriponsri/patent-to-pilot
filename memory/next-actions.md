@@ -673,3 +673,23 @@ Status: `PASS_LOCAL_GENERATION_API_COMPARISON_BLOCKED`; canonical audit: `docs/h
 Completed the bounded local generation branch with the frozen evidence pack and immutable `Qwen/Qwen3-8B` revision `b968826d9c46dd6066d109eabc6255188de91218` under Apache-2.0. The ordered MitraClip, Tendyne, and TriClip cases all returned schema-valid outputs (`3/3`) from pack SHA-256 `d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932`; provider calls and paid cost were `0` / `$0.00`. Formal remote allocation remains `UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY` even though the bounded job completed on the approved GPU UUID.
 
 The API comparison against `qwen/qwen3-32b` remains closed. Do not dispatch until the canonical cumulative ledger identity, current account credit, exact route/provider and spend authorization, and rights-cleared outbound dossier-prompt manifest are all evidenced. Keep semantic judgment, clinical/FTO, deployment, publication, and commercial branches separate.
+
+## HT-NEXT-076 — 2026-10-31 O1-O4 HTTP/vector package
+
+Status: `READY_FOR_REVIEW_PARTIAL_O4_O3_API_BLOCKED_LOCAL`; canonical audit: `docs/healthtech/audits/ht-o1-o4-http-vector-20261031/README.md`.
+
+Committed the server-owned `ht-http-vector-config-v1` binding and real Abbott
+HTTP/vector/history/export runner at implementation commit
+`928729ee1381280cc11d85439e63a71dff91432f`. Full Python checks pass with two
+existing optional skips; frontend tests pass `74/74`; real Chrome loopback
+acceptance passes. PatEmbed and multilingual-e5 each complete the three named
+device jobs with zero vector errors, zero provider calls, and USD `0.00` paid
+cost. The adaptive report keeps HT-B0a/B0b/B1/B2/B3, the deterministic offline
+controller, and HT-B4-MOCK separate from live/provider evidence.
+
+O3 local Qwen3-8B generation is schema-valid for `3/3` frozen-pack cases, but
+the `qwen/qwen3-32b` API comparison remains `BLOCKED_LOCAL`. Next: clear the
+ledger/credit/authorization/prompt-rights gates, then integrate local generation
+into the same HTTP job lifecycle and rerun one rights-cleared hash-frozen
+comparison. Keep paid dispatch, clinical/FTO, deployment, and publication
+claims closed.

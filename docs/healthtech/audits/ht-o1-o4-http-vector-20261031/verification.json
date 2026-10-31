@@ -1,0 +1,27 @@
+{
+  "format": "ht-o1-o4-http-vector-verification-v1",
+  "run_id": "ht-o1-o4-http-vector-20261031",
+  "candidate_revision": "928729ee1381280cc11d85439e63a71dff91432f",
+  "commands": [
+    {"id": "full_python_suite", "status": "PASS", "command": "rtk python -m pytest -q -p no:cacheprovider", "result": "exit code 0; two existing optional skips; warnings only"},
+    {"id": "compileall", "status": "PASS", "command": "rtk python -m compileall -q src scripts tests", "result": "exit code 0"},
+    {"id": "diff_check", "status": "PASS", "command": "rtk git diff --check", "result": "exit code 0 after audit-doc creation"},
+    {"id": "frontend_unit", "status": "PASS", "command": "rtk npm test", "working_directory": "frontend/healthtech-web", "result": "74 passed, 0 failed"},
+    {"id": "browser_http_integration", "status": "PASS", "command": "rtk npm run test:integration:http", "working_directory": "frontend/healthtech-web", "result": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT; exit code 0; temp cleanup deferred after EPERM"},
+    {"id": "cli_help", "status": "PASS", "command": "rtk python scripts/healthtech/serve_http.py --help", "result": "CLI smoke passed"},
+    {"id": "vector_contract_tests", "status": "PASS", "command": "rtk python -m pytest -q -p no:cacheprovider tests/test_healthtech_vector_http.py", "result": "2 passed; exact-binding and mismatch tests pass"}
+  ],
+  "package_receipts": [
+    {"path": "patembed-http-receipt.json", "status": "PASS_REAL_HTTP_VECTOR_DEVICE_CASES", "jobs": 3, "provider_calls": 0, "paid_cost_usd": 0.0},
+    {"path": "e5-http-receipt.json", "status": "PASS_REAL_HTTP_VECTOR_DEVICE_CASES", "jobs": 3, "provider_calls": 0, "paid_cost_usd": 0.0},
+    {"path": "../ht-o3-local-model-preflight-20261031/generation-canary.json", "status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION", "cases": 3, "provider_calls": 0, "paid_cost_usd": 0.0},
+    {"path": "adaptive-acquisition-report.json", "status": "PARTIAL_OFFLINE_DESCRIPTIVE_O3_API_BLOCKED_LOCAL", "provider_calls": 0, "paid_cost_usd": 0.0}
+  ],
+  "boundaries": {
+    "implemented": ["loopback HTTP vector provider binding", "exact bundle/runtime validation", "real device HTTP/vector runner", "provider-aware frontend selection"],
+    "mocked_or_offline": ["HT-B4 provider-shaped adaptive row", "offline deterministic controller", "DAPFAM diagnostic interpretation"],
+    "not_run_or_blocked": ["qwen/qwen3-32b API comparison", "live adaptive LLM controller", "semantic relevance judgment study", "deployment", "commercial validation"]
+  },
+  "privacy": {"credentials_read": false, "raw_payloads_staged": false, "model_weights_staged": false, "private_absolute_paths_staged": false, "evaluator_labels_in_runtime": false},
+  "final_status": "READY_FOR_REVIEW"
+}
