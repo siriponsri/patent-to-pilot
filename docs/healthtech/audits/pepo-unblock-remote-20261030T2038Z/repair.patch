@@ -1,1 +1,363 @@
-diff --git a/src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py b/src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py\nindex 83a2c69..ae8388e 100644\n--- a/src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py\n+++ b/src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py\n@@ -8,6 +8,7 @@ accepted only by the encoder resume path and rejected by the importer.\n from __future__ import annotations\n\n from dataclasses import dataclass\n+from contextlib import contextmanager\n import hashlib\n import json\n import os\n@@ -53,6 +54,42 @@ def sha256_file(path: Path) -> str:\n     return digest.hexdigest()\n\n\n+@contextmanager\n+def _writer_lock(root: Path):\n+    """Process-owned OS lock: a crash releases it without deleting evidence.\n+\n+    The persistent marker is not a lease. The kernel lock, rather than a PID\n+    or file age, decides whether another writer may enter.\n+    """\n+    with (root / ".writer.lock").open("a+b") as handle:\n+        handle.seek(0, os.SEEK_END)\n+        if handle.tell() == 0:\n+            handle.write(b"0")\n+            handle.flush()\n+        handle.seek(0)\n+        if os.name == "nt":\n+            import msvcrt\n+            try:\n+                msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)\n+            except OSError as exc:\n+                raise VectorArtifactError("vector bundle already has an active writer") from exc\n+            try:\n+                yield\n+            finally:\n+                handle.seek(0)\n+                msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)\n+        else:\n+            import fcntl\n+            try:\n+                fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)\n+            except OSError as exc:\n+                raise VectorArtifactError("vector bundle already has an active writer") from exc\n+            try:\n+                yield\n+            finally:\n+                fcntl.flock(handle.fileno(), fcntl.LOCK_UN)\n+\n+\n def _atomic_write_bytes(path: Path, payload: bytes) -> None:\n     path.parent.mkdir(parents=True, exist_ok=True)\n     temporary = path.with_name(path.name + ".partial")\n@@ -302,6 +339,9 @@ def _read_ids(path: Path) -> list[dict[str, str]]:\n\n def _shard_binding(root: Path, shard: Mapping[str, Any], parent: Mapping[str, Any]) -> tuple[list[dict[str, str]], Any]:\n     np = _numpy()\n+    for child_key, parent_key in (("parent_input_sha256", "input_sha256"), ("model_sha256", "model_sha256"), ("config_sha256", "config_sha256")):\n+        if shard.get(child_key) != parent.get(parent_key):\n+            raise VectorArtifactError(f"shard parent binding mismatch: {child_key}")\n     ids_path = _safe_child(root, str(shard["ids_file"]))\n     vectors_path = _safe_child(root, str(shard["vectors_file"]))\n     manifest_path = _safe_child(root, str(shard["manifest_file"]))\n@@ -367,9 +407,15 @@ def load_vector_bundle(bundle_dir: str | Path) -> VectorBundle:\n     manifest_path = root / "manifest.json"\n     if not manifest_path.is_file():\n         raise VectorArtifactError("bundle manifest is missing")\n-    if list(root.glob("*.partial")) or list(root.glob("*.partial.*")) or (root / "manifest.partial.json").exists():\n+    checkpoint_path = root / "manifest.partial.json"\n+    partial_artifacts = set(root.glob("*.partial")) | set(root.glob("*.partial.*"))\n+    if partial_artifacts - {checkpoint_path}:\n         raise VectorArtifactError("partial bundle artifacts are not importable")\n     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))\n+    if checkpoint_path.exists():\n+        checkpoint = json.loads(checkpoint_path.read_text(encoding="utf-8"))\n+        if not isinstance(checkpoint, dict) or checkpoint.get("status") != "partial" or {**checkpoint, "status": "complete"} != manifest:\n+            raise VectorArtifactError("partial checkpoint does not match committed bundle")\n     if manifest.get("format") != FORMAT or manifest.get("status") != "complete":\n         raise VectorArtifactError("bundle manifest is not a completed vector bundle")\n     if not isinstance(manifest.get("shards"), list) or not manifest["shards"]:\n@@ -420,7 +466,7 @@ def _verify_existing_shard(root: Path, shard: Mapping[str, Any], parent: Mapping\n     _shard_binding(root, shard, parent)\n\n\n-def encode_vector_shards(\n+def _encode_vector_shards_locked(\n     input_path: str | Path,\n     output_dir: str | Path,\n     encoder: Encoder,\n@@ -451,6 +497,9 @@ def encode_vector_shards(\n             if existing.get(key) != parent.get(key):\n                 raise VectorArtifactError(f"existing bundle binding mismatch: {key}")\n         load_vector_bundle(root)\n+        # A crash may occur after the atomic final commit but before cleanup.\n+        # The loader has checked that the leftover checkpoint matches exactly.\n+        partial_manifest_path.unlink(missing_ok=True)\n         return existing\n     if partial_manifest_path.exists():\n         existing = json.loads(partial_manifest_path.read_text(encoding="utf-8"))\n@@ -554,3 +603,25 @@ class PrecomputedVectorRetriever:\n             }\n             for row in rows\n         ], int(token_count)\n+\n+\n+def encode_vector_shards(\n+    input_path: str | Path,\n+    output_dir: str | Path,\n+    encoder: Encoder,\n+    *,\n+    model: Mapping[str, Any],\n+    config: Mapping[str, Any],\n+    batch_size: int = 32,\n+    shard_size: int = 5000,\n+    stop_after_shards: int | None = None,\n+) -> dict[str, Any]:\n+    """Encode/resume with one process-owned writer for the entire bundle."""\n+    root = Path(output_dir).resolve()\n+    root.mkdir(parents=True, exist_ok=True)\n+    with _writer_lock(root):\n+        return _encode_vector_shards_locked(\n+            input_path, root, encoder, model=model, config=config,\n+            batch_size=batch_size, shard_size=shard_size,\n+            stop_after_shards=stop_after_shards,\n+        )\ndiff --git a/src/patent_to_pilot/healthtech/engine.py b/src/patent_to_pilot/healthtech/engine.py\nindex b876d58..4ac6a6d 100644\n--- a/src/patent_to_pilot/healthtech/engine.py\n+++ b/src/patent_to_pilot/healthtech/engine.py\n@@ -22,6 +22,7 @@ from patent_to_pilot.healthtech.rights import (\n     enforce_dossier_rights,\n     limit_displayable_payload,\n     project_evidence,\n+    project_company_metadata,\n     source_rights_summary,\n )\n from patent_to_pilot.ingestion.pls import PatentDocument\n@@ -374,7 +375,11 @@ def serialize_dossier(\n                 f"External export omitted payload for source {source.source.source_id}: no reviewed displayable mapping."\n             )\n     payload["evidence"] = [item.model_dump(mode="json") for item in evidence]\n+    company_metadata, company_diagnostics = project_company_metadata(\n+        dossier.query, dossier.sources, purpose=purpose\n+    )\n+    payload["query"]["company_metadata"] = company_metadata\n     payload["unresolved_items"] = (\n-        list(payload["unresolved_items"]) + evidence_diagnostics + source_diagnostics\n+        list(payload["unresolved_items"]) + evidence_diagnostics + source_diagnostics + company_diagnostics\n     )\n     return payload\ndiff --git a/src/patent_to_pilot/healthtech/rights.py b/src/patent_to_pilot/healthtech/rights.py\nindex 23b64a6..edeab50 100644\n--- a/src/patent_to_pilot/healthtech/rights.py\n+++ b/src/patent_to_pilot/healthtech/rights.py\n@@ -7,6 +7,7 @@ from typing import Any, Literal\n\n from patent_to_pilot.healthtech.contracts import (\n     DossierVersion,\n+    DeviceQuery,\n     EvidenceItem,\n     SourcePayload,\n     SourceRights,\n@@ -274,3 +275,39 @@ def project_evidence(\n def enforce_dossier_rights(dossier: DossierVersion, *, purpose: ExportPurpose) -> None:\n     for source in dossier.sources:\n         enforce_source_rights(source, purpose=purpose)\n+\n+\n+def project_company_metadata(\n+    query: DeviceQuery,\n+    sources: list[SourcePayload],\n+    *,\n+    purpose: ExportPurpose,\n+) -> tuple[dict[str, str], list[str]]:\n+    """Keep external source-derived query fields within the source policy.\n+\n+    Company metadata has an explicit source basis; a copied value must not\n+    bypass the same field boundary applied to that source's payload/evidence.\n+    User edits have their own authored origin and are left untouched.\n+    """\n+    metadata = dict(query.company_metadata)\n+    if purpose == "local_research" or not metadata:\n+        return metadata, []\n+    source = next((item for item in sources if item.source.source_id == query.company_source_id), None)\n+    if source is None:\n+        return {}, ["External export omitted company metadata: source basis is unavailable."]\n+    if source.synthetic:\n+        return metadata, []\n+    enforce_source_rights(source, purpose=purpose)\n+    projected: dict[str, str] = {}\n+    diagnostics: list[str] = []\n+    for field, value in metadata.items():\n+        try:\n+            enforce_displayable_field(source, field, purpose=purpose)\n+            source_value = _field_value(source.payload, field)\n+            if not isinstance(source_value, str) or source_value != value:\n+                raise KeyError(field)\n+        except (KeyError, RightsBoundaryError):\n+            diagnostics.append("External export omitted company metadata field: no matching reviewed source field.")\n+            continue\n+        projected[field] = source_value\n+    return projected, diagnostics\ndiff --git a/tests/test_healthtech_query_projection.py b/tests/test_healthtech_query_projection.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_healthtech_query_projection.py\n@@ -0,0 +1,47 @@\n+"""Offline regressions for the source-derived query metadata channel."""\n+import json\n+from pathlib import Path\n+\n+import pytest\n+\n+from patent_to_pilot.healthtech.abbott import build_abbott_case_inputs\n+from patent_to_pilot.healthtech.engine import run_dossier, serialize_dossier, export_markdown\n+from patent_to_pilot.healthtech.history import save_version, select_version\n+from test_healthtech_repairs import _write_synthetic_abbott_cohort, _write_json\n+\n+ROOT = Path(__file__).resolve().parents[1]\n+\n+\n+@pytest.mark.parametrize("purpose", ["product_display", "redistribution"])\n+def test_external_query_metadata_follows_source_field_policy_after_reload(tmp_path, purpose):\n+    cohort = _write_synthetic_abbott_cohort(tmp_path)\n+    policies = json.loads((ROOT / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json").read_text())\n+    for policy in policies["sources"]:\n+        policy["intended_use"]["product_display"] = "ALLOWED"\n+        policy["intended_use"]["redistribution"] = "ALLOWED"\n+        policy["displayable_fields"] = ["trade_name"] if policy["source_id"] == "openfda-pma-records" else []\n+    path = tmp_path / "rights.json"\n+    _write_json(path, policies)\n+    data = next(iter(build_abbott_case_inputs(cohort, rights_matrix_path=path).values()))\n+    original = dict(data.query.company_metadata)\n+    assert original["applicant"] == "ABBOTT MEDICAL"\n+    query = data.query.model_copy(update={"company_metadata": {**original, "trade_name": "MitraClip", "unknown": "RESTRICTED-SENTINEL"}})\n+    data = data.model_copy(update={"query": query})\n+    dossier, _, _ = run_dossier(data, run_id="query-boundary", code_commit="test")\n+    dossier = dossier.model_copy(update={"user_edits": {"notes": "independently authored note"}})\n+    history = tmp_path / "history"\n+    save_version(history, dossier)\n+    restored = select_version(history)\n+    local = serialize_dossier(restored)\n+    external = serialize_dossier(restored, purpose=purpose)\n+    assert local["query"]["company_metadata"] == dict(query.company_metadata)\n+    assert external["query"]["company_metadata"] == {"trade_name": "MitraClip"}\n+    assert external["user_edits"] == local["user_edits"]\n+    assert "RESTRICTED-SENTINEL" not in json.dumps(external)\n+    for language in ("en", "th"):\n+        assert "RESTRICTED-SENTINEL" not in export_markdown(restored, language=language, purpose=purpose)\n+\n+    forged = restored.model_copy(update={"query": query.model_copy(update={"company_metadata": {"trade_name": "wrong source value"}})})\n+    assert serialize_dossier(forged, purpose=purpose)["query"]["company_metadata"] == {}\n+    missing = restored.model_copy(update={"query": query.model_copy(update={"company_source_id": "missing"})})\n+    assert serialize_dossier(missing, purpose=purpose)["query"]["company_metadata"] == {}\ndiff --git a/tests/test_healthtech_vector_restart.py b/tests/test_healthtech_vector_restart.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_healthtech_vector_restart.py\n@@ -0,0 +1,102 @@\n+"""Authored offline crash/concurrency cases for actual publication boundaries."""\n+import json\n+import multiprocessing\n+\n+import numpy as np\n+import pytest\n+\n+from patent_to_pilot.evaluation.healthtech import vector_artifacts as artifacts\n+\n+\n+class Encoder:\n+    def __init__(self):\n+        self.calls = 0\n+\n+    def encode(self, texts):\n+        self.calls += 1\n+        return np.asarray([[1.0, 0.0] for _ in texts], dtype="<f4"), len(texts)\n+\n+\n+def _input(tmp_path):\n+    path = tmp_path / "runtime.jsonl"\n+    artifacts.export_runtime_text(\n+        [{"item_id": "a", "text": "authored public test"}], path,\n+        dataset_id="fixture", source_revision="r1", representation="text",\n+    )\n+    return path\n+\n+\n+def _encode(runtime, bundle, encoder):\n+    return artifacts.encode_vector_shards(runtime, bundle, encoder, model={"id": "fixture"}, config={"norm_policy": "none"})\n+\n+\n+def test_resume_after_final_commit_before_checkpoint_cleanup(tmp_path, monkeypatch):\n+    runtime = _input(tmp_path)\n+    bundle = tmp_path / "bundle"\n+    writer = artifacts._atomic_write_json\n+\n+    def interrupted(path, payload):\n+        writer(path, payload)\n+        if path.name == "manifest.json":\n+            raise RuntimeError("crash after final commit")\n+\n+    with monkeypatch.context() as patch:\n+        patch.setattr(artifacts, "_atomic_write_json", interrupted)\n+        with pytest.raises(RuntimeError, match="after final commit"):\n+            _encode(runtime, bundle, Encoder())\n+    assert (bundle / "manifest.partial.json").exists()\n+    resumed = Encoder()\n+    assert _encode(runtime, bundle, resumed)["status"] == "complete"\n+    assert resumed.calls == 0\n+    assert not (bundle / "manifest.partial.json").exists()\n+    assert artifacts.load_vector_bundle(bundle).document_ids == ("a",)\n+\n+\n+def test_committed_bundle_rejects_foreign_checkpoint_and_parent(tmp_path):\n+    runtime = _input(tmp_path)\n+    bundle = tmp_path / "bundle"\n+    _encode(runtime, bundle, Encoder())\n+    path = bundle / "manifest.json"\n+    manifest = json.loads(path.read_text())\n+    checkpoint = {**manifest, "status": "partial", "input_sha256": "0" * 64}\n+    (bundle / "manifest.partial.json").write_text(json.dumps(checkpoint))\n+    with pytest.raises(artifacts.VectorArtifactError, match="partial"):\n+        artifacts.load_vector_bundle(bundle)\n+    (bundle / "manifest.partial.json").unlink()\n+    shard = manifest["shards"][0]\n+    shard["model_sha256"] = "0" * 64\n+    (bundle / shard["manifest_file"]).write_text(json.dumps(shard))\n+    path.write_text(json.dumps(manifest))\n+    with pytest.raises(artifacts.VectorArtifactError, match="binding"):\n+        artifacts.load_vector_bundle(bundle)\n+\n+\n+def _hold_writer_lock(root, ready):\n+    from pathlib import Path\n+    with artifacts._writer_lock(Path(root)):\n+        ready.set()\n+        # Parent terminates this owned process to simulate a crash.\n+        ready.wait(20)\n+        import time\n+        time.sleep(20)\n+\n+\n+def test_writer_collision_and_process_crash_release(tmp_path):\n+    runtime = _input(tmp_path)\n+    bundle = tmp_path / "bundle"\n+    bundle.mkdir()\n+    context = multiprocessing.get_context("spawn")\n+    ready = context.Event()\n+    worker = context.Process(target=_hold_writer_lock, args=(str(bundle), ready))\n+    worker.start()\n+    try:\n+        assert ready.wait(10), "child writer did not acquire lock"\n+        untouched = Encoder()\n+        with pytest.raises(artifacts.VectorArtifactError, match="active writer"):\n+            _encode(runtime, bundle, untouched)\n+        assert untouched.calls == 0\n+    finally:\n+        worker.terminate()\n+        worker.join(10)\n+    assert not worker.is_alive()\n+    assert _encode(runtime, bundle, Encoder())["status"] == "complete"\n
+diff --git a/src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py b/src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py
+index 83a2c69..ae8388e 100644
+--- a/src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py
++++ b/src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py
+@@ -8,6 +8,7 @@ accepted only by the encoder resume path and rejected by the importer.
+ from __future__ import annotations
+
+ from dataclasses import dataclass
++from contextlib import contextmanager
+ import hashlib
+ import json
+ import os
+@@ -53,6 +54,42 @@ def sha256_file(path: Path) -> str:
+     return digest.hexdigest()
+
+
++@contextmanager
++def _writer_lock(root: Path):
++    """Process-owned OS lock: a crash releases it without deleting evidence.
++
++    The persistent marker is not a lease. The kernel lock, rather than a PID
++    or file age, decides whether another writer may enter.
++    """
++    with (root / ".writer.lock").open("a+b") as handle:
++        handle.seek(0, os.SEEK_END)
++        if handle.tell() == 0:
++            handle.write(b"0")
++            handle.flush()
++        handle.seek(0)
++        if os.name == "nt":
++            import msvcrt
++            try:
++                msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
++            except OSError as exc:
++                raise VectorArtifactError("vector bundle already has an active writer") from exc
++            try:
++                yield
++            finally:
++                handle.seek(0)
++                msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
++        else:
++            import fcntl
++            try:
++                fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
++            except OSError as exc:
++                raise VectorArtifactError("vector bundle already has an active writer") from exc
++            try:
++                yield
++            finally:
++                fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
++
++
+ def _atomic_write_bytes(path: Path, payload: bytes) -> None:
+     path.parent.mkdir(parents=True, exist_ok=True)
+     temporary = path.with_name(path.name + ".partial")
+@@ -302,6 +339,9 @@ def _read_ids(path: Path) -> list[dict[str, str]]:
+
+ def _shard_binding(root: Path, shard: Mapping[str, Any], parent: Mapping[str, Any]) -> tuple[list[dict[str, str]], Any]:
+     np = _numpy()
++    for child_key, parent_key in (("parent_input_sha256", "input_sha256"), ("model_sha256", "model_sha256"), ("config_sha256", "config_sha256")):
++        if shard.get(child_key) != parent.get(parent_key):
++            raise VectorArtifactError(f"shard parent binding mismatch: {child_key}")
+     ids_path = _safe_child(root, str(shard["ids_file"]))
+     vectors_path = _safe_child(root, str(shard["vectors_file"]))
+     manifest_path = _safe_child(root, str(shard["manifest_file"]))
+@@ -367,9 +407,15 @@ def load_vector_bundle(bundle_dir: str | Path) -> VectorBundle:
+     manifest_path = root / "manifest.json"
+     if not manifest_path.is_file():
+         raise VectorArtifactError("bundle manifest is missing")
+-    if list(root.glob("*.partial")) or list(root.glob("*.partial.*")) or (root / "manifest.partial.json").exists():
++    checkpoint_path = root / "manifest.partial.json"
++    partial_artifacts = set(root.glob("*.partial")) | set(root.glob("*.partial.*"))
++    if partial_artifacts - {checkpoint_path}:
+         raise VectorArtifactError("partial bundle artifacts are not importable")
+     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
++    if checkpoint_path.exists():
++        checkpoint = json.loads(checkpoint_path.read_text(encoding="utf-8"))
++        if not isinstance(checkpoint, dict) or checkpoint.get("status") != "partial" or {**checkpoint, "status": "complete"} != manifest:
++            raise VectorArtifactError("partial checkpoint does not match committed bundle")
+     if manifest.get("format") != FORMAT or manifest.get("status") != "complete":
+         raise VectorArtifactError("bundle manifest is not a completed vector bundle")
+     if not isinstance(manifest.get("shards"), list) or not manifest["shards"]:
+@@ -420,7 +466,7 @@ def _verify_existing_shard(root: Path, shard: Mapping[str, Any], parent: Mapping
+     _shard_binding(root, shard, parent)
+
+
+-def encode_vector_shards(
++def _encode_vector_shards_locked(
+     input_path: str | Path,
+     output_dir: str | Path,
+     encoder: Encoder,
+@@ -451,6 +497,9 @@ def encode_vector_shards(
+             if existing.get(key) != parent.get(key):
+                 raise VectorArtifactError(f"existing bundle binding mismatch: {key}")
+         load_vector_bundle(root)
++        # A crash may occur after the atomic final commit but before cleanup.
++        # The loader has checked that the leftover checkpoint matches exactly.
++        partial_manifest_path.unlink(missing_ok=True)
+         return existing
+     if partial_manifest_path.exists():
+         existing = json.loads(partial_manifest_path.read_text(encoding="utf-8"))
+@@ -554,3 +603,25 @@ class PrecomputedVectorRetriever:
+             }
+             for row in rows
+         ], int(token_count)
++
++
++def encode_vector_shards(
++    input_path: str | Path,
++    output_dir: str | Path,
++    encoder: Encoder,
++    *,
++    model: Mapping[str, Any],
++    config: Mapping[str, Any],
++    batch_size: int = 32,
++    shard_size: int = 5000,
++    stop_after_shards: int | None = None,
++) -> dict[str, Any]:
++    """Encode/resume with one process-owned writer for the entire bundle."""
++    root = Path(output_dir).resolve()
++    root.mkdir(parents=True, exist_ok=True)
++    with _writer_lock(root):
++        return _encode_vector_shards_locked(
++            input_path, root, encoder, model=model, config=config,
++            batch_size=batch_size, shard_size=shard_size,
++            stop_after_shards=stop_after_shards,
++        )
+diff --git a/src/patent_to_pilot/healthtech/engine.py b/src/patent_to_pilot/healthtech/engine.py
+index b876d58..4ac6a6d 100644
+--- a/src/patent_to_pilot/healthtech/engine.py
++++ b/src/patent_to_pilot/healthtech/engine.py
+@@ -22,6 +22,7 @@ from patent_to_pilot.healthtech.rights import (
+     enforce_dossier_rights,
+     limit_displayable_payload,
+     project_evidence,
++    project_company_metadata,
+     source_rights_summary,
+ )
+ from patent_to_pilot.ingestion.pls import PatentDocument
+@@ -374,7 +375,11 @@ def serialize_dossier(
+                 f"External export omitted payload for source {source.source.source_id}: no reviewed displayable mapping."
+             )
+     payload["evidence"] = [item.model_dump(mode="json") for item in evidence]
++    company_metadata, company_diagnostics = project_company_metadata(
++        dossier.query, dossier.sources, purpose=purpose
++    )
++    payload["query"]["company_metadata"] = company_metadata
+     payload["unresolved_items"] = (
+-        list(payload["unresolved_items"]) + evidence_diagnostics + source_diagnostics
++        list(payload["unresolved_items"]) + evidence_diagnostics + source_diagnostics + company_diagnostics
+     )
+     return payload
+diff --git a/src/patent_to_pilot/healthtech/rights.py b/src/patent_to_pilot/healthtech/rights.py
+index 23b64a6..edeab50 100644
+--- a/src/patent_to_pilot/healthtech/rights.py
++++ b/src/patent_to_pilot/healthtech/rights.py
+@@ -7,6 +7,7 @@ from typing import Any, Literal
+
+ from patent_to_pilot.healthtech.contracts import (
+     DossierVersion,
++    DeviceQuery,
+     EvidenceItem,
+     SourcePayload,
+     SourceRights,
+@@ -274,3 +275,39 @@ def project_evidence(
+ def enforce_dossier_rights(dossier: DossierVersion, *, purpose: ExportPurpose) -> None:
+     for source in dossier.sources:
+         enforce_source_rights(source, purpose=purpose)
++
++
++def project_company_metadata(
++    query: DeviceQuery,
++    sources: list[SourcePayload],
++    *,
++    purpose: ExportPurpose,
++) -> tuple[dict[str, str], list[str]]:
++    """Keep external source-derived query fields within the source policy.
++
++    Company metadata has an explicit source basis; a copied value must not
++    bypass the same field boundary applied to that source's payload/evidence.
++    User edits have their own authored origin and are left untouched.
++    """
++    metadata = dict(query.company_metadata)
++    if purpose == "local_research" or not metadata:
++        return metadata, []
++    source = next((item for item in sources if item.source.source_id == query.company_source_id), None)
++    if source is None:
++        return {}, ["External export omitted company metadata: source basis is unavailable."]
++    if source.synthetic:
++        return metadata, []
++    enforce_source_rights(source, purpose=purpose)
++    projected: dict[str, str] = {}
++    diagnostics: list[str] = []
++    for field, value in metadata.items():
++        try:
++            enforce_displayable_field(source, field, purpose=purpose)
++            source_value = _field_value(source.payload, field)
++            if not isinstance(source_value, str) or source_value != value:
++                raise KeyError(field)
++        except (KeyError, RightsBoundaryError):
++            diagnostics.append("External export omitted company metadata field: no matching reviewed source field.")
++            continue
++        projected[field] = source_value
++    return projected, diagnostics
+diff --git a/tests/test_healthtech_query_projection.py b/tests/test_healthtech_query_projection.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_healthtech_query_projection.py
+@@ -0,0 +1,47 @@
++"""Offline regressions for the source-derived query metadata channel."""
++import json
++from pathlib import Path
++
++import pytest
++
++from patent_to_pilot.healthtech.abbott import build_abbott_case_inputs
++from patent_to_pilot.healthtech.engine import run_dossier, serialize_dossier, export_markdown
++from patent_to_pilot.healthtech.history import save_version, select_version
++from test_healthtech_repairs import _write_synthetic_abbott_cohort, _write_json
++
++ROOT = Path(__file__).resolve().parents[1]
++
++
++@pytest.mark.parametrize("purpose", ["product_display", "redistribution"])
++def test_external_query_metadata_follows_source_field_policy_after_reload(tmp_path, purpose):
++    cohort = _write_synthetic_abbott_cohort(tmp_path)
++    policies = json.loads((ROOT / "docs/healthtech/audits/luna-patent-dossiers-20261028-rights-cohort/rights-matrix.json").read_text())
++    for policy in policies["sources"]:
++        policy["intended_use"]["product_display"] = "ALLOWED"
++        policy["intended_use"]["redistribution"] = "ALLOWED"
++        policy["displayable_fields"] = ["trade_name"] if policy["source_id"] == "openfda-pma-records" else []
++    path = tmp_path / "rights.json"
++    _write_json(path, policies)
++    data = next(iter(build_abbott_case_inputs(cohort, rights_matrix_path=path).values()))
++    original = dict(data.query.company_metadata)
++    assert original["applicant"] == "ABBOTT MEDICAL"
++    query = data.query.model_copy(update={"company_metadata": {**original, "trade_name": "MitraClip", "unknown": "RESTRICTED-SENTINEL"}})
++    data = data.model_copy(update={"query": query})
++    dossier, _, _ = run_dossier(data, run_id="query-boundary", code_commit="test")
++    dossier = dossier.model_copy(update={"user_edits": {"notes": "independently authored note"}})
++    history = tmp_path / "history"
++    save_version(history, dossier)
++    restored = select_version(history)
++    local = serialize_dossier(restored)
++    external = serialize_dossier(restored, purpose=purpose)
++    assert local["query"]["company_metadata"] == dict(query.company_metadata)
++    assert external["query"]["company_metadata"] == {"trade_name": "MitraClip"}
++    assert external["user_edits"] == local["user_edits"]
++    assert "RESTRICTED-SENTINEL" not in json.dumps(external)
++    for language in ("en", "th"):
++        assert "RESTRICTED-SENTINEL" not in export_markdown(restored, language=language, purpose=purpose)
++
++    forged = restored.model_copy(update={"query": query.model_copy(update={"company_metadata": {"trade_name": "wrong source value"}})})
++    assert serialize_dossier(forged, purpose=purpose)["query"]["company_metadata"] == {}
++    missing = restored.model_copy(update={"query": query.model_copy(update={"company_source_id": "missing"})})
++    assert serialize_dossier(missing, purpose=purpose)["query"]["company_metadata"] == {}
+diff --git a/tests/test_healthtech_vector_restart.py b/tests/test_healthtech_vector_restart.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_healthtech_vector_restart.py
+@@ -0,0 +1,102 @@
++"""Authored offline crash/concurrency cases for actual publication boundaries."""
++import json
++import multiprocessing
++
++import numpy as np
++import pytest
++
++from patent_to_pilot.evaluation.healthtech import vector_artifacts as artifacts
++
++
++class Encoder:
++    def __init__(self):
++        self.calls = 0
++
++    def encode(self, texts):
++        self.calls += 1
++        return np.asarray([[1.0, 0.0] for _ in texts], dtype="<f4"), len(texts)
++
++
++def _input(tmp_path):
++    path = tmp_path / "runtime.jsonl"
++    artifacts.export_runtime_text(
++        [{"item_id": "a", "text": "authored public test"}], path,
++        dataset_id="fixture", source_revision="r1", representation="text",
++    )
++    return path
++
++
++def _encode(runtime, bundle, encoder):
++    return artifacts.encode_vector_shards(runtime, bundle, encoder, model={"id": "fixture"}, config={"norm_policy": "none"})
++
++
++def test_resume_after_final_commit_before_checkpoint_cleanup(tmp_path, monkeypatch):
++    runtime = _input(tmp_path)
++    bundle = tmp_path / "bundle"
++    writer = artifacts._atomic_write_json
++
++    def interrupted(path, payload):
++        writer(path, payload)
++        if path.name == "manifest.json":
++            raise RuntimeError("crash after final commit")
++
++    with monkeypatch.context() as patch:
++        patch.setattr(artifacts, "_atomic_write_json", interrupted)
++        with pytest.raises(RuntimeError, match="after final commit"):
++            _encode(runtime, bundle, Encoder())
++    assert (bundle / "manifest.partial.json").exists()
++    resumed = Encoder()
++    assert _encode(runtime, bundle, resumed)["status"] == "complete"
++    assert resumed.calls == 0
++    assert not (bundle / "manifest.partial.json").exists()
++    assert artifacts.load_vector_bundle(bundle).document_ids == ("a",)
++
++
++def test_committed_bundle_rejects_foreign_checkpoint_and_parent(tmp_path):
++    runtime = _input(tmp_path)
++    bundle = tmp_path / "bundle"
++    _encode(runtime, bundle, Encoder())
++    path = bundle / "manifest.json"
++    manifest = json.loads(path.read_text())
++    checkpoint = {**manifest, "status": "partial", "input_sha256": "0" * 64}
++    (bundle / "manifest.partial.json").write_text(json.dumps(checkpoint))
++    with pytest.raises(artifacts.VectorArtifactError, match="partial"):
++        artifacts.load_vector_bundle(bundle)
++    (bundle / "manifest.partial.json").unlink()
++    shard = manifest["shards"][0]
++    shard["model_sha256"] = "0" * 64
++    (bundle / shard["manifest_file"]).write_text(json.dumps(shard))
++    path.write_text(json.dumps(manifest))
++    with pytest.raises(artifacts.VectorArtifactError, match="binding"):
++        artifacts.load_vector_bundle(bundle)
++
++
++def _hold_writer_lock(root, ready):
++    from pathlib import Path
++    with artifacts._writer_lock(Path(root)):
++        ready.set()
++        # Parent terminates this owned process to simulate a crash.
++        ready.wait(20)
++        import time
++        time.sleep(20)
++
++
++def test_writer_collision_and_process_crash_release(tmp_path):
++    runtime = _input(tmp_path)
++    bundle = tmp_path / "bundle"
++    bundle.mkdir()
++    context = multiprocessing.get_context("spawn")
++    ready = context.Event()
++    worker = context.Process(target=_hold_writer_lock, args=(str(bundle), ready))
++    worker.start()
++    try:
++        assert ready.wait(10), "child writer did not acquire lock"
++        untouched = Encoder()
++        with pytest.raises(artifacts.VectorArtifactError, match="active writer"):
++            _encode(runtime, bundle, untouched)
++        assert untouched.calls == 0
++    finally:
++        worker.terminate()
++        worker.join(10)
++    assert not worker.is_alive()
++    assert _encode(runtime, bundle, Encoder())["status"] == "complete"

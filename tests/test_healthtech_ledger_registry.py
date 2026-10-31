@@ -119,4 +119,4 @@ def test_default_registry_is_worktree_independent_and_live_missing_registry_fail
             pricing_snapshot_utc=PRICE_TIME,
             namespace="canonical",
         )
-    assert not missing.exists()\n
+    assert not missing.exists()

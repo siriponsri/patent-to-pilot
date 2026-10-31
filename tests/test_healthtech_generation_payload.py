@@ -165,4 +165,4 @@ def test_disclosed_candidate_requires_patent_disclosure_evidence(tmp_path):
             "device_name": case["query"]["device_id_raw"],
             "findings": [],
             "unresolved": [],
-        }, case, max_findings=6)\n
+        }, case, max_findings=6)

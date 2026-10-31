@@ -151,4 +151,4 @@ def test_live_api_runner_rejects_mock_namespace_before_dispatch(tmp_path):
                 run_id="live-gate-test",
             )
     finally:
-        budget.close()\n
+        budget.close()
