@@ -29,6 +29,17 @@
       "summary": "job/source/history 1->2/edit/export; 0 provider calls; USD0.00 paid cost; cleanup EPERM deferred"
     },
     {
+      "command": "npm run test:integration:abbott",
+      "workdir": "frontend/healthtech-web",
+      "status": "BLOCKED_ASSET_GATED",
+      "summary": "HEALTHTECH_ABBOTT_COHORT is missing; no new browser run started"
+    },
+    {
+      "command": "Existing company holdout sensitivity audit",
+      "status": "PASS_DESCRIPTIVE",
+      "summary": "4 leave-one-company-out views; 11 devices; 31 patents; 38 disclosed pairs; 303 unjudged; 0 provider/network calls; USD0.00 paid cost"
+    },
+    {
       "command": "python -c '<relative-link-check>'",
       "status": "PASS",
       "summary": "5 manuscript relative links resolved"

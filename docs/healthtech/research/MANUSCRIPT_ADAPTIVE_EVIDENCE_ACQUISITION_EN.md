@@ -6,7 +6,7 @@ Target venue: *World Patent Information* (fit and author requirements must be re
 
 ## Abstract
 
-Patent-information workflows for medical devices must connect regulatory or product evidence to patent records without silently treating a retrieved candidate as a disclosed relationship. This study evaluates whether adaptive evidence acquisition improves the auditability and resource efficiency of device-patent screening when documented links are incomplete. We compare metadata, lexical, strong fixed hybrid, fixed multi-query, and simple adaptive policies under shared evidence access, candidate universes, cutoffs, group splits, and budget units. The primary endpoint is macro known-link Recall@K over source-backed documented relationships; unlisted pairs remain unjudged rather than negative. A separate dossier application uses at least three permitted real device cases and tests source inspection, editing, history, and export. The current repository contains descriptive offline results and a verified local engineering path, but not a rights-cleared semantic relevance gold set, a powered confirmatory comparison, a live provider comparison, or independent user validation. In the frozen descriptive audit, HT-B2 has the highest final-holdout macro Recall@20 (0.8857), while HT-B1 and HT-B4-MOCK each record 0.8381; the observed result is not a superiority claim because the cohort is small, group uncertainty is limited, and the reference relations are product-level disclosures. The practical contribution is a reproducible patent-information protocol and evidence-dossier workflow that makes provenance, unknowns, costs, and failure modes inspectable.
+Patent-information workflows for medical devices must connect regulatory or product evidence to patent records without silently treating a retrieved candidate as a disclosed relationship. This study evaluates whether adaptive evidence acquisition improves the auditability and resource efficiency of device-patent screening when documented links are incomplete. We compare metadata, lexical, strong fixed hybrid, fixed multi-query, and simple adaptive policies under shared evidence access, candidate universes, cutoffs, group splits, and budget units. The primary endpoint is macro known-link Recall@K over source-backed documented relationships; unlisted pairs remain unjudged rather than negative. A separate dossier application uses at least three permitted real device cases and tests source inspection, editing, history, and export. The current repository contains descriptive offline results and a verified local engineering path, but not a rights-cleared semantic relevance gold set, a powered confirmatory comparison, a live provider comparison, or independent user validation. In the frozen descriptive audit, HT-B2 has the highest final-holdout macro Recall@20 (0.8857), while HT-B1 and HT-B4-MOCK each record 0.8381; a four-company sensitivity audit shows that observed rankings vary by held-out company. These results are not superiority claims because the cohort is small, repeated across local relations, and based on product-level disclosures. The practical contribution is a reproducible patent-information protocol and evidence-dossier workflow that makes provenance, unknowns, costs, and failure modes inspectable.
 
 Keywords: patent information; medical devices; evidence acquisition; adaptive retrieval; incomplete judgments; provenance; cost-quality trade-off; reproducible research
 
@@ -104,7 +104,20 @@ The tables below reproduce the frozen descriptive audit already stored in the re
 
 The holdout row is descriptive and small. HT-B2 is highest in this artifact, but the table does not establish adaptive superiority, semantic relevance, exhaustive recall, or stable generalization.
 
-### 7.2 Provider-shaped mock control
+### 7.2 Leave-one-company-out sensitivity
+
+To reduce dependence on the single Stryker holdout, a separate sensitivity audit reran the same HT-B0a/B0b/B1/B2/B3 controls in four leave-one-company-out views. The frozen local composite contains 11 devices, 31 patents, 38 product-level disclosed pairs, and 303 explicitly unjudged distractor pairs. Each view uses candidate and rerank depth 31 and K=20; the held-out company is untouched until scoring.
+
+| Held-out company | Holdout devices | HT-B0a | HT-B0b | HT-B1 | HT-B2 | HT-B3 |
+|---|---:|---:|---:|---:|---:|---:|
+| Boston Scientific Corp | 2 | 0.845238 | 1.000000 | 1.000000 | 1.000000 | 1.000000 |
+| Stryker Neurovascular | 3 | 0.542857 | 0.809524 | 0.838095 | 0.885714 | 0.838095 |
+| Cook Medical | 3 | 1.000000 | 1.000000 | 1.000000 | 0.833333 | 1.000000 |
+| Philips Image Guided Therapy | 3 | 1.000000 | 1.000000 | 0.916667 | 0.916667 | 0.916667 |
+
+Across these four views, the observed macro Recall@20 ranges are 0.542857–1.000000 for HT-B0a, 0.809524–1.000000 for HT-B0b, 0.838095–1.000000 for HT-B1, 0.833333–1.000000 for HT-B2, and 0.838095–1.000000 for HT-B3. All eight development/holdout splits completed with zero failed devices, zero provider/network calls, and USD0.00 paid cost. The Stryker view is the lowest observed transfer case for HT-B0a, HT-B0b, HT-B1, and HT-B3; Cook is lowest for HT-B2. These repeated rows reuse the same local companies and source relations, so they are sensitivity diagnostics rather than independent samples or confirmatory inference. The source and machine-readable receipt are in [`luna-long-run-20261030-company-holdout-sensitivity-20261030`](../audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md).
+
+### 7.3 Provider-shaped mock control
 
 | Method | Final holdout macro Recall@20 |
 |---|---:|
@@ -117,18 +130,19 @@ The holdout row is descriptive and small. HT-B2 is highest in this artifact, but
 
 HT-B4-MOCK exercised action schemas and accounting paths. It was not live-provider evidence and its simulated debit is not paid cost.
 
-### 7.3 Engineering application slice
+### 7.4 Engineering application slice
 
 The current O1-O4 engineering receipts cover three named real-device cases through browser/HTTP job start, retrieval, local generation, source inspection, edit/history, reopen, and export. Local generation was schema-valid for `3/3` cases in the recorded receipt; provider calls were `0` and paid cost was `USD0.00`. This is engineering and application evidence, not a user study or a three-case scientific benchmark.
 
-### 7.4 Figures and machine-readable outputs
+### 7.5 Figures and machine-readable outputs
 
-The current frozen descriptive audit provides the following actual figure and table inputs:
+The current frozen descriptive audits provide the following actual figure and table inputs:
 
 - [Development quality-cost frontier](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_development.svg)
 - [Holdout quality-cost frontier](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_holdout.svg)
 - [Recall comparison](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/recall_comparison.svg)
 - [Quality-cost table](../audits/luna-long-run-20261030-current-head-baseline-b4-20261030/analysis/quality_cost_frontier.csv)
+- [Four-company holdout sensitivity audit](../audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md)
 - [Current O1-O4 browser report](../audits/ht-o4-remote-http-generation-browser-20261031/REPORT.md)
 
 ## 8. Practical business value as potential
@@ -161,7 +175,7 @@ The exact current continuation candidate, test commands, and limitations must be
 
 ## 12. Conclusion
 
-The current evidence supports a reproducible patent-information workflow and a disciplined computational study design for adaptive evidence acquisition under incomplete judgments. The frozen descriptive comparison shows that a fixed multi-query schedule can outperform the simple adaptive conditions in the available holdout artifact, which is a useful negative or boundary finding rather than a failure of the project. The strongest defensible contribution is the combination of provenance-aware state separation, matched resource accounting, explicit unknowns, reproducible dossier operations, and honest quality-cost reporting. A stronger scientific conclusion requires a rights-cleared semantic judgment source or suitable benchmark, more independent groups, and a fully rerun final protocol. A stronger business conclusion requires future authorized user or customer evidence.
+The current evidence supports a reproducible patent-information workflow and a disciplined computational study design for adaptive evidence acquisition under incomplete judgments. The four-company sensitivity audit shows that the observed ranking varies by held-out company and that the simple fixed multi-query schedule is not uniformly dominant, but this is still a descriptive boundary finding rather than a superiority claim. The strongest defensible contribution is the combination of provenance-aware state separation, matched resource accounting, explicit unknowns, reproducible dossier operations, and honest quality-cost reporting. A stronger scientific conclusion requires a rights-cleared semantic judgment source or suitable benchmark, more independent groups, and a fully rerun final protocol. A stronger business conclusion requires future authorized user or customer evidence.
 
 ## Declarations
 

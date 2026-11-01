@@ -28,6 +28,8 @@ The three real device cases demonstrate an engineering/application path. They do
 - Full Python suite: PASS, `562 passed, 1 skipped` in the current candidate run.
 - Frontend unit suite: PASS, `74/74`.
 - Loopback HTTP integration: PASS; job, source inspection, history `1 -> 2`, edit, JSON/TH/EN export; `0` provider calls and `USD0.00` paid cost. Temporary cleanup reported `EPERM` after acceptance and the test process exited successfully.
+- Named Abbott browser recheck: `BLOCKED_ASSET_GATED`; the harness requires `HEALTHTECH_ABBOTT_COHORT`, `HEALTHTECH_ABBOTT_RIGHTS_MATRIX`, and `HEALTHTECH_ABBOTT_VECTOR_CONFIG`, which are not present in this checkout. Existing prior three-case browser receipt remains the authoritative O4 engineering evidence.
+- Scientific sensitivity: four leave-one-company-out views over 11 devices, 31 patents, 38 disclosed pairs, and 303 unjudged pairs are recorded in `luna-long-run-20261030-company-holdout-sensitivity-20261030`; all eight splits completed with zero provider/network calls and USD0.00 paid cost.
 - Markdown relative-link check for the manuscript: PASS.
 - JSON parse check for `docs/healthtech/**/*.json`: PASS, `269` files.
 

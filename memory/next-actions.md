@@ -813,3 +813,26 @@ focused O3/recovery and documentation checks, then keep scientific comparison an
 paid branches separately labeled until their remaining evidence gates are satisfied.
 
 Canonical checkpoint: `docs/healthtech/audits/solo-computational-design-20261101/README.md`.
+
+## HT-NEXT-085 — 2026-11-01 four-company sensitivity and Abbott rerun boundary
+
+Status: `PASS_DESCRIPTIVE_SENSITIVITY_ABBOTT_RECHECK_ASSET_GATED`; canonical audit:
+`docs/healthtech/audits/solo-computational-design-20261101/README.md`.
+
+Added the existing four-company leave-one-out sensitivity to the current English
+manuscript. The receipt covers 11 devices, 31 patents, 38 disclosed pairs, and 303
+unjudged pairs across Boston Scientific, Stryker Neurovascular, Cook Medical, and
+Philips Image Guided Therapy holdouts. All eight baseline splits completed with zero
+failed devices, zero provider/network calls, and USD0.00 paid cost. The result remains
+descriptive because the rows reuse the same local relations and product-level
+disclosures are not semantic gold.
+
+The named Abbott browser harness was rechecked and stopped before case preparation
+because `HEALTHTECH_ABBOTT_COHORT` is absent; the rights matrix and server-owned
+vector configuration are also not available in this checkout. No new browser or
+provider run was started. The prior three-case browser receipt remains the
+authoritative O4 engineering evidence.
+
+Next: keep O4 engineering separate from scientific evidence, retain the sensitivity
+table in the manuscript, and continue only the independent offline or evidence-bound
+work while the paid and asset-gated branches remain closed.
