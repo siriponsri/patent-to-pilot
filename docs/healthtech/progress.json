@@ -450,14 +450,19 @@
       "id": "HT-O1-O4-ACCEPTANCE-20261101",
       "status": "PARTIAL_O1_O2_O4_ENGINEERING_O3_PAID_BLOCKED_EXACT_HEAD_REVIEW_REQUIRED",
       "evidence": "Fresh exact-head acceptance checks pass: frontend 74/74, loopback HTTP jobs/source/history 1->2/JSON-TH-EN export, O1/O2/O3 contract groups, full Python suite exit 0, and diff check. O1 is exact-head engineering complete; O2/O4 retain prior runtime boundaries; O3 local generation is complete for 3/3 schema-valid cases but live qwen/qwen3-32b remains blocked on canonical R1 ledger, current credit, route/pricing, and outbound prompt-rights evidence. Canonical audit: docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/README.md."
+    },
+    {
+      "id": "HT-M49-O4-OFFLINE-CURRENT-HEAD",
+      "status": "PASS_O4_OFFLINE_REVALIDATION_DESCRIPTIVE_O3_BLOCKED_LOCAL",
+      "evidence": "Reran deterministic HT-B4 offline on the existing Abbott and Boston frozen cohorts at candidate 94ce5b1 with K=20, candidate depth 50, rerank depth 50 and max-steps 3. Abbott macro Recall@20 0.498802; Boston 1.000000; zero failed devices, zero provider calls and USD0.00 paid cost. Controller tests pass 5/5. Canonical audit: docs/healthtech/audits/ht-o4-offline-current-head-20261101/"
     }
   ],
-  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT_AND_M24_AUTHORIZATION_BOUND_JUDGMENT_INGEST_AND_M25_BOUNDED_SEMANTIC_SOURCE_STAGING_AND_M26_SEMANTIC_SOURCE_LANDSCAPE_EXPANSION_AND_M27_SHARPS_SOURCE_METADATA_PREFLIGHT_AND_M28_OPENROUTER_R1_READINESS_REVALIDATION_AND_M29_CURRENT_HEAD_BACKEND_INTEGRATION_CONTRACT_REFRESH_AND_M30_CURRENT_HEAD_OFFLINE_BASELINE_B4_MOCK_AND_M31_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH_AND_M32_ADVERSARIAL_BOUNDARY_REGRESSION_AND_M33_DAPFAM_RETRIEVAL_DIAGNOSTIC_PREFLIGHT_AND_M34_DAPFAM_QRELS_PARSE_REVALIDATION_AND_M35_DAPFAM_BM25_FULL_BASELINE_AND_M36_DAPFAM_CODE_PROVENANCE_AND_M37_CURRENT_HEAD_B4_R2_AUDIT_AND_M38_CURRENT_HEAD_PHILIPS_DOSSIERS_AND_M39_CURRENT_HEAD_OPENROUTER_R1_READINESS_AND_M40_PHILIPS_G5_OFFLINE_PILOT_AND_M41_G5_PILOT_ANALYSIS_AND_M42_DAPFAM_COVERAGE_SCREEN_AND_M43_TRANSFORMER_ENCODING_EVAL_DEVICE_DOSSIER_E2E_AND_M47_O1_O4_HTTP_VECTOR_PACKAGE_AND_M48_O4_LOCAL_GENERATION_HTTP_AND_BENCHMARK_EXPANSION_COMPONENT_BINDING_AND_O1_O4_EXACT_HEAD_ACCEPTANCE",
+  "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT_AND_M24_AUTHORIZATION_BOUND_JUDGMENT_INGEST_AND_M25_BOUNDED_SEMANTIC_SOURCE_STAGING_AND_M26_SEMANTIC_SOURCE_LANDSCAPE_EXPANSION_AND_M27_SHARPS_SOURCE_METADATA_PREFLIGHT_AND_M28_OPENROUTER_R1_READINESS_REVALIDATION_AND_M29_CURRENT_HEAD_BACKEND_INTEGRATION_CONTRACT_REFRESH_AND_M30_CURRENT_HEAD_OFFLINE_BASELINE_B4_MOCK_AND_M31_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH_AND_M32_ADVERSARIAL_BOUNDARY_REGRESSION_AND_M33_DAPFAM_RETRIEVAL_DIAGNOSTIC_PREFLIGHT_AND_M34_DAPFAM_QRELS_PARSE_REVALIDATION_AND_M35_DAPFAM_BM25_FULL_BASELINE_AND_M36_DAPFAM_CODE_PROVENANCE_AND_M37_CURRENT_HEAD_B4_R2_AUDIT_AND_M38_CURRENT_HEAD_PHILIPS_DOSSIERS_AND_M39_CURRENT_HEAD_OPENROUTER_R1_READINESS_AND_M40_PHILIPS_G5_OFFLINE_PILOT_AND_M41_G5_PILOT_ANALYSIS_AND_M42_DAPFAM_COVERAGE_SCREEN_AND_M43_TRANSFORMER_ENCODING_EVAL_DEVICE_DOSSIER_E2E_AND_M47_O1_O4_HTTP_VECTOR_PACKAGE_AND_M48_O4_LOCAL_GENERATION_HTTP_AND_BENCHMARK_EXPANSION_COMPONENT_BINDING_AND_M49_O4_OFFLINE_CURRENT_HEAD_REVALIDATION_AND_O1_O4_EXACT_HEAD_ACCEPTANCE",
   "user_commercial_validation": "NOT_VALIDATED_SOLO_PROJECT",
   "provider_calls": 0,
   "paid_cost_usd": 0,
   "overnight_run": "results/healthtech/luna-g1-g3-20261028-200041",
-  "next": "Review committed candidate 80da253969f7973cc630ce03ac83da9900f16628 before any main merge. Keep the main adaptive dossier study and live qwen/qwen3-32b comparison separately labeled until the matched evaluator inputs and canonical R1 ledger/credit/route/prompt-rights gates are evidenced; do not reset the ledger, top up, or merge mixed candidates.",
+  "next": "Review committed candidate 94ce5b10f7b787677ebd11d8c3f193753e4b7d8c before any main merge. Keep the main semantic adaptive study and live qwen/qwen3-32b comparison separately labeled until matched evaluator inputs and canonical R1 ledger/credit/route/prompt-rights gates are evidenced; do not reset the ledger, top up, or merge mixed candidates.",
   "verification": "docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/verification.json",
   "latest_patent_dossier_audit": "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
   "latest_rights_audit": "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
@@ -660,5 +665,10 @@
   "latest_wpi_venue_check_status": "PASS_SCOPE_CHECKED_GUIDE_RECHECK_REQUIRED_NOT_SUBMITTED",
   "latest_o1_o4_current_head_checkpoint": "docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/CHECKPOINT_CURRENT_HEAD.json",
   "latest_o1_o4_current_head_status": "PARTIAL_O1_O2_O4_ENGINEERING_O3_PAID_BLOCKED_CURRENT_HEAD",
-  "latest_o1_o4_completion_matrix": "docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/COMPLETION_MATRIX.md"
+  "latest_o1_o4_completion_matrix": "docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/COMPLETION_MATRIX.md",
+  "latest_o4_offline_current_head_audit": "docs/healthtech/audits/ht-o4-offline-current-head-20261101/README.md",
+  "latest_o4_offline_current_head_report_th": "docs/healthtech/audits/ht-o4-offline-current-head-20261101/REPORT_TH.md",
+  "latest_o4_offline_current_head_checkpoint": "docs/healthtech/audits/ht-o4-offline-current-head-20261101/CHECKPOINT.json",
+  "latest_o4_offline_current_head_verification": "docs/healthtech/audits/ht-o4-offline-current-head-20261101/verification.json",
+  "latest_o4_offline_current_head_status": "PASS_CURRENT_HEAD_OFFLINE_ADAPTIVE_REVALIDATION_DESCRIPTIVE_O3_BLOCKED_LOCAL"
 }

@@ -403,6 +403,8 @@ Helmers ใช้เป็น external relevance diagnostic หลัง freeze 
 
 การ revalidation บน current candidate `ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd` ถูกบันทึกแยกใน [current-head component results](docs/healthtech/audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json) และ [checkpoint V10](docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V10_CURRENT_HEAD.json) เพื่อไม่รวมผลต่างรุ่นเป็น PASS เดียว ผลรอบนี้ยืนยันค่า PAR4PC/PI4PC และ Helmers ตาม receipt จริง โดยยังคง `NOT_EVALUATED` สำหรับ main adaptive dossier superiority, `NOT_VALIDATED` สำหรับ external business value และ `BLOCKED_LOCAL` สำหรับ paid/API comparison
 
+O4 offline controller ถูก rerun บน current candidate `94ce5b10f7b787677ebd11d8c3f193753e4b7d8c` ด้วย Abbott/Boston frozen cohorts เดิม ผล macro Recall@20 คือ `0.498802` และ `1.000000` ตามลำดับ โดย failed devices เป็นศูนย์และ paid cost เป็น USD0.00 หลักฐานนี้ปิดเฉพาะ reproducible descriptive offline revalidation; ไม่ปิด semantic adaptive superiority, generalization, business validation หรือ O3 API comparison ดู [O4 current-head checkpoint](docs/healthtech/audits/ht-o4-offline-current-head-20261101/CHECKPOINT.json)
+
 ## Migration support records — 27 October 2026
 
 แหล่งข้อมูลเสริมที่เสนอเพื่อรองรับ goals เดิม: [supplemental data](docs/healthtech/research/SUPPLEMENTAL_DATA.md) สถานะ implementation จริง: [coverage](docs/healthtech/MIGRATION.md) ข้อเสนอนี้ไม่เปลี่ยน scientific thesis, success criteria หรือ product scope ในเอกสารนี้

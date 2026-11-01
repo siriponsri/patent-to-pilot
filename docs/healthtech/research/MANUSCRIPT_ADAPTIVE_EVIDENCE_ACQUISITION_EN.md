@@ -149,6 +149,16 @@ The observed wall-time/recall frontier remains HT-B0a and HT-B0b in both frozen 
 
 HT-B4-MOCK exercised action schemas and accounting paths. It was not live-provider evidence and its simulated debit is not paid cost.
 
+A current-head reproducibility rerun of the deterministic offline HT-B4 controller
+used the same frozen Abbott and Boston cohorts, K=20, candidate depth 50,
+rerank depth 50, and maximum three controller steps. Abbott achieved macro and
+micro Recall@20 of 0.498802 and 0.475410 over three devices; Boston achieved
+1.000000 and 1.000000 over two devices. No device failed, provider calls were
+zero, and paid cost was USD0.00. Boston is ceiling-limited because K=20 exceeds
+its seven-patent candidate universe. The rerun is reproducibility evidence for
+the offline controller, not a semantic adaptive-superiority result; its exact
+input/output hashes are recorded in [`ht-o4-offline-current-head-20261101`](../audits/ht-o4-offline-current-head-20261101/README.md).
+
 ### 7.4 Engineering application slice
 
 The current O1-O4 engineering receipts cover three named real-device cases through browser/HTTP job start, retrieval, local generation, source inspection, edit/history, reopen, and export. Local generation was schema-valid for `3/3` cases in the recorded receipt; provider calls were `0` and paid cost was `USD0.00`. This is engineering and application evidence, not a user study or a three-case scientific benchmark.

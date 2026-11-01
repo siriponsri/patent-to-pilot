@@ -1075,6 +1075,32 @@ The requirement audit confirms real progress but does not close the objective:
 API Qwen3-32B comparison, matched adaptive scientific evaluation, live ledger/
 credit binding, owner WPI review, and main merge remain incomplete or gated.
 
+## HT-NEXT-099 — 2026-11-01 O4 offline current-head revalidation
+
+Status: `PASS_DESCRIPTIVE_OFFLINE_REVALIDATION_O3_PAID_BLOCKED`; checkpoint:
+`docs/healthtech/audits/ht-o4-offline-current-head-20261101/CHECKPOINT.json`.
+
+Reran the deterministic HT-B4 controller on the existing frozen Abbott and
+Boston cohorts at candidate `94ce5b10f7b787677ebd11d8c3f193753e4b7d8c`, using
+the pre-existing local MiniLM ONNX assets and the same K=20, candidate depth
+50, rerank depth 50 and max-steps 3. Abbott macro/micro Recall@20 were
+`0.498802`/`0.475410`; Boston was `1.000000`/`1.000000`; failed devices were
+zero, provider calls were zero and paid cost was `USD0.00`. Controller tests
+passed `5/5`, and the runtime/evaluator boundary remained intact.
+
+This is reproducibility and descriptive O4 evidence only. It does not close
+the semantic adaptive comparison, generalization, external business
+validation, or live qwen/qwen3-32b branch. The benchmark-expansion source pack
+remains a continuation of the existing goal: existing DAPFAM/PatEmbed/e5
+vectors/rankings and rights-checked payloads were reused, with no duplicate
+download, re-embedding, ledger reset, top-up, GPU job, paid call, or participant
+contact in this checkpoint.
+
+Next: owner review the current candidate and keep the paid/API branch gated
+until canonical R1, current credit, route/pricing, transfer-rights and
+writer-quiescence evidence are current; continue manuscript and offline
+matched-study preparation in parallel.
+
 ## HT-NEXT-098 — 2026-11-01 current-head benchmark component revalidation
 
 Status: `PASS_CURRENT_HEAD_COMPONENT_BASELINE_PARTIAL_MAIN_ADAPTIVE`; checkpoint:
