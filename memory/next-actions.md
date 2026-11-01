@@ -1003,3 +1003,18 @@ participant state remain unchanged.
 Next: keep O3 API and main adaptive scientific branches separately gated; owner
 review the current-head documentation binding and provide only the unresolved
 R1/credit evidence if a paid comparison is still desired.
+
+## HT-NEXT-094 — 2026-11-01 O1-O4 completion matrix
+
+Status: `PASS_REQUIREMENT_AUDIT_EXTERNAL_GATES_REMAIN`;
+canonical artifact: `docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/COMPLETION_MATRIX.md`.
+
+Added a requirement-by-requirement matrix that distinguishes current-head
+engineering checks, prior remote/runtime receipts, descriptive research evidence,
+business-value potential, manuscript readiness, and external owner gates. It
+confirms that the current candidate has no new paid/API result and that the main
+adaptive scientific comparison is still not evaluated by an admissible semantic
+judgment source.
+
+Next: use the matrix for owner review; do not merge or close the goal while the
+R1/credit/rights gates or the matched adaptive study remain unresolved.

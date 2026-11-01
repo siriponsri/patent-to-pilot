@@ -69,3 +69,8 @@ payloads, vector bundles, model configuration, ledger state, or endpoint rules.
 The current-head browser integration and focused O1/O2/O3/benchmark contract set
 were rerun after that documentation continuation. The machine-readable binding is
 [`CHECKPOINT_CURRENT_HEAD.json`](CHECKPOINT_CURRENT_HEAD.json).
+
+The requirement-by-requirement completion view is in
+[`COMPLETION_MATRIX.md`](COMPLETION_MATRIX.md). It intentionally keeps prior
+runtime receipts, current-head contract evidence, research evidence, business
+validation, and external owner gates as separate evidence classes.
