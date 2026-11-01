@@ -1,6 +1,6 @@
 # Patent-to-Pilot O1-O4 completion matrix — current head
 
-Candidate: `94ce5b10f7b787677ebd11d8c3f193753e4b7d8c`  
+Candidate: `891f3b3`  
 Runtime-equivalent candidate: `ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd`  
 Reviewed implementation candidate: `80da253969f7973cc630ce03ac83da9900f16628`
 
@@ -9,8 +9,10 @@ receipts into current reruns, turn unknowns into zeros, or promote descriptive
 evidence into scientific or commercial validation.
 
 The current-head delta after `ab7ad34` is documentation and audit-only. The
-new O4 offline controller rerun is bound to the current candidate in
-`docs/healthtech/audits/ht-o4-offline-current-head-20261101/CHECKPOINT.json`.
+O4 offline controller rerun and the matched fixed/adaptive frontier are bound
+to the current candidate in
+`docs/healthtech/audits/ht-o4-offline-current-head-20261101/CHECKPOINT.json`
+and `docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/CHECKPOINT.json`.
 
 | Requirement | Status | Authoritative evidence | Boundary / missing proof |
 |---|---|---|---|
@@ -23,13 +25,13 @@ new O4 offline controller rerun is bound to the current candidate in
 | USD100/V100 resource boundary and no-reset rule | `RECORDED_AUTHORIZATION / LIVE_CREDIT_PENDING` | `GOAL.md`, `PLAN.md`, benchmark expansion pack, current-head checkpoint | USD100 is a cumulative ceiling, not proof of available credit; no spend, top-up or ledger reset is claimed |
 | Candidate vs disclosed-link validation | `COMPLETE_ENGINEERING` | O3 generation payload tests and source-backed provenance receipts | Does not create semantic gold or legal relevance |
 | Three real device cases through product path | `COMPLETE_PRIOR_REAL_CASE_ENGINEERING` | [`ht-o4-remote-http-generation-browser-20261031`](../ht-o4-remote-http-generation-browser-20261031/REPORT.md) | Prior MitraClip/Tendyne/TriClip receipt; current-head synthetic route is separate |
-| Adaptive vs fixed/multi-query/heuristic scientific comparison | `PARTIAL / DESCRIPTIVE_OFFLINE_REVALIDATED` | [`ht-o4-offline-current-head-20261101`](../ht-o4-offline-current-head-20261101/README.md); [`COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md`](../../research/COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md) | Current-head HT-B4 offline rerun is reproducible, but known-link/product-disclosure diagnostics remain non-semantic; no powered confirmatory claim |
+| Adaptive vs fixed/multi-query/heuristic scientific comparison | `PARTIAL / MATCHED_OFFLINE_DESCRIPTIVE` | [`ht-o4-matched-offline-current-head-20261101`](../ht-o4-matched-offline-current-head-20261101/README.md); [`COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md`](../../research/COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md) | Abbott B0b is strongest observed condition and B4 ties B1/B3; only two exact-patent groups, no final holdout, product-disclosure labels are non-semantic, and no powered confirmatory claim |
 | Group uncertainty and failure analysis | `PASS_DESCRIPTIVE_NOT_ESTIMABLE` | [`luna-long-run-20261029-m12-group-uncertainty-20261029`](../luna-long-run-20261029-m12-group-uncertainty-20261029/README.md) | Three effective groups are below predeclared threshold five |
 | Business value evidence | `OPERATIONAL_POTENTIAL_ONLY` | Manuscript business-value section and three-case machine receipts | No external user validation, human-time measurement, WTP, revenue or ROI |
 | Solo pilot protocol/task set/rubric/result form/consent | `COMPLETE_FOR_FUTURE_USE` | `docs/healthtech/business/` package and owner one-time input | No participant route is active in this round |
 | WPI venue fit and submission preparation | `PASS_SCOPE_CHECKED / GUIDE_RECHECK_REQUIRED` | [`wpi-venue-check-20261101`](../wpi-venue-check-20261101/README.md) | Journal-specific author page returned HTTP 403 locally; owner must recheck before submission |
 | Reproducible artifacts and rights boundary | `PARTIAL_READY_FOR_OWNER_REVIEW` | Benchmark binding, private-artifact receipts, rights manifests and manuscript supplement | Restricted payloads/private journals remain outside Git; unresolved dataset rights remain excluded |
-| Tested commit / push / PR / merge lifecycle | `COMPLETE_TESTED_COMMIT / PUSH_MERGE_PENDING` | Current branch `94ce5b1`; targeted controller `5/5`, prior full Python/frontend/HTTP/benchmark receipts | Push, PR review and main merge remain intentionally pending owner review and external gates |
+| Tested commit / push / PR / merge lifecycle | `COMPLETE_TESTED_COMMIT / PUSH_MERGE_PENDING` | Current branch `891f3b3`; targeted controller `5/5`, matched frontier zero failed devices, prior full Python/frontend/HTTP/benchmark receipts | Push, PR review and main merge remain intentionally pending owner review and external gates |
 
 ## Owner-only external gates
 

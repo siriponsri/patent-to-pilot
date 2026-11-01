@@ -1101,6 +1101,28 @@ until canonical R1, current credit, route/pricing, transfer-rights and
 writer-quiescence evidence are current; continue manuscript and offline
 matched-study preparation in parallel.
 
+## HT-NEXT-100 — 2026-11-01 matched offline Abbott frontier
+
+Status: `PASS_MATCHED_OFFLINE_DESCRIPTIVE_O4_O3_PAID_BLOCKED`; checkpoint:
+`docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/CHECKPOINT.json`.
+
+Reran HT-B0a/B0b/B1/B2/B3 and deterministic HT-B4 on the same frozen Abbott
+cohort at candidate `891f3b3`, with K=20 and candidate/rerank depth 41. Macro
+Recall@20 was B0a `0.442739`, B0b `0.662242`, B1 `0.498802`, B2 `0.568912`,
+B3 `0.498802`, and B4 offline `0.498802`; every method-device row completed,
+controller micro Recall@20 was `0.475410`, and failed devices were zero.
+
+This closes the current-head matched offline frontier package for O4
+descriptive evidence, not the semantic adaptive study: the cohort has two
+exact-patent groups, one company group, no final holdout, and product-level
+disclosure labels. Paid cost, provider calls, GPU jobs, ledger state, top-up,
+and participant state were unchanged.
+
+Next: bind the table into the manuscript and owner review packet; keep the
+adaptive claim `NOT_ESTABLISHED` and the live API branch gated until canonical
+R1, current credit, route/pricing, transfer-rights and writer-quiescence
+evidence are current.
+
 ## HT-NEXT-098 — 2026-11-01 current-head benchmark component revalidation
 
 Status: `PASS_CURRENT_HEAD_COMPONENT_BASELINE_PARTIAL_MAIN_ADAPTIVE`; checkpoint:

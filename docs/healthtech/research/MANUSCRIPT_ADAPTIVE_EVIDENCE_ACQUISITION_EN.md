@@ -159,11 +159,37 @@ its seven-patent candidate universe. The rerun is reproducibility evidence for
 the offline controller, not a semantic adaptive-superiority result; its exact
 input/output hashes are recorded in [`ht-o4-offline-current-head-20261101`](../audits/ht-o4-offline-current-head-20261101/README.md).
 
-### 7.4 Engineering application slice
+### 7.4 Matched current-head offline frontier
+
+To make the O4 comparison explicit on one frozen cohort, the current candidate
+`891f3b3` reran HT-B0a/B0b/B1/B2/B3 and the deterministic offline HT-B4
+controller on the same Abbott runtime, references, groups, encoder/reranker
+bundle, candidate depth 41, rerank depth 41, and K=20. All fifteen
+method-device rows and all controller devices completed without failure.
+
+| Method | Macro Recall@20 | Query calls | Rerank pairs | Evidence class |
+|---|---:|---:|---:|---|
+| HT-B0a | 0.442739 | 3 | 0 | offline metadata control |
+| HT-B0b | 0.662242 | 3 | 0 | offline lexical control |
+| HT-B1 | 0.498802 | 3 | 123 | offline fixed hybrid |
+| HT-B2 | 0.568912 | 9 | 369 | offline fixed multi-query |
+| HT-B3 | 0.498802 | 5 | 205 | offline heuristic |
+| HT-B4 offline | 0.498802 | 5 | 205 | deterministic controller |
+
+The controller also recorded micro Recall@20 `0.475410` and eight controller
+steps. B0b is the strongest observed condition in this development slice;
+B4 ties B1 and B3 at the macro endpoint. This is a matched descriptive
+quality-resource frontier, not evidence that adaptive acquisition is generally
+better or worse. The cohort has two exact-patent groups, one company group, no
+final holdout, and product-level disclosed-link labels rather than semantic
+relevance gold. The raw/evaluator receipts and hashes are in
+[`ht-o4-matched-offline-current-head-20261101`](../audits/ht-o4-matched-offline-current-head-20261101/README.md).
+
+### 7.5 Engineering application slice
 
 The current O1-O4 engineering receipts cover three named real-device cases through browser/HTTP job start, retrieval, local generation, source inspection, edit/history, reopen, and export. Local generation was schema-valid for `3/3` cases in the recorded receipt; provider calls were `0` and paid cost was `USD0.00`. This is engineering and application evidence, not a user study or a three-case scientific benchmark.
 
-### 7.5 Figures and machine-readable outputs
+### 7.6 Figures and machine-readable outputs
 
 The current frozen descriptive audits provide the following actual figure and table inputs:
 
@@ -174,7 +200,7 @@ The current frozen descriptive audits provide the following actual figure and ta
 - [Four-company holdout sensitivity audit](../audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md)
 - [Current O1-O4 browser report](../audits/ht-o4-remote-http-generation-browser-20261031/REPORT.md)
 
-### 7.6 Benchmark-expansion component diagnostics
+### 7.7 Benchmark-expansion component diagnostics
 
 The post-freeze continuation acquired and verified five files from the staged manifest, then ran a deterministic CPU lexical baseline on the four official PANORAMA validation/test splits. The runtime did not read `gold_answers`, `silver_answers`, or `negative_answers` when ranking; all rows remained in the denominator and failed-output rate was zero.
 

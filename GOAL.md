@@ -405,6 +405,8 @@ Helmers ใช้เป็น external relevance diagnostic หลัง freeze 
 
 O4 offline controller ถูก rerun บน current candidate `94ce5b10f7b787677ebd11d8c3f193753e4b7d8c` ด้วย Abbott/Boston frozen cohorts เดิม ผล macro Recall@20 คือ `0.498802` และ `1.000000` ตามลำดับ โดย failed devices เป็นศูนย์และ paid cost เป็น USD0.00 หลักฐานนี้ปิดเฉพาะ reproducible descriptive offline revalidation; ไม่ปิด semantic adaptive superiority, generalization, business validation หรือ O3 API comparison ดู [O4 current-head checkpoint](docs/healthtech/audits/ht-o4-offline-current-head-20261101/CHECKPOINT.json)
 
+จากนั้นจึงรัน matched offline frontier บน Abbott frozen cohort เดิมที่ candidate `891f3b3` ด้วย fixed controls และ deterministic HT-B4 ภายใต้ K=20, candidate/rerank depth 41 เดียวกัน ผล macro Recall@20 คือ B0a `0.442739`, B0b `0.662242`, B1 `0.498802`, B2 `0.568912`, B3 `0.498802` และ B4 offline `0.498802` โดยทุกวิธีมี failed devices เป็นศูนย์ ผลนี้เป็น descriptive development evidence ที่ช่วยตอบ cost-quality trade-off ของ O4 แต่ไม่ปิด superiority, generalization หรือ semantic gold ดู [matched frontier audit](docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/README.md)
+
 ## Migration support records — 27 October 2026
 
 แหล่งข้อมูลเสริมที่เสนอเพื่อรองรับ goals เดิม: [supplemental data](docs/healthtech/research/SUPPLEMENTAL_DATA.md) สถานะ implementation จริง: [coverage](docs/healthtech/MIGRATION.md) ข้อเสนอนี้ไม่เปลี่ยน scientific thesis, success criteria หรือ product scope ในเอกสารนี้

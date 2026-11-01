@@ -1,0 +1,44 @@
+{
+  "format": "ht-o4-matched-offline-current-head-verification-v1",
+  "status": "PASS",
+  "candidate_head": "891f3b3",
+  "commands": [
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_real_baselines.py --runtime <frozen Abbott runtime> --references <frozen Abbott references> --groups <frozen Abbott groups> --model-root <existing MiniLM bundle> --output <private>/abbott-baselines --candidate-depth 41 --rerank-depth 41 --k 20",
+      "scope": "HT-B0a/HT-B0b/HT-B1/HT-B2/HT-B3 on frozen Abbott cohort",
+      "exit_code": 0,
+      "outcome": "PASS; all 15 method-device rows completed; macro Recall@20 B0a 0.442739, B0b 0.662242, B1 0.498802, B2 0.568912, B3 0.498802; error count 0"
+    },
+    {
+      "command": "rtk proxy python -B scripts/healthtech/run_bounded_controller.py --runtime <frozen Abbott runtime> --references <frozen Abbott references> --groups <frozen Abbott groups> --model-root <existing MiniLM bundle> --output <private>/abbott-b4-offline --candidate-depth 41 --rerank-depth 41 --max-steps 3",
+      "scope": "deterministic HT-B4 offline controller on frozen Abbott cohort",
+      "exit_code": 0,
+      "outcome": "PASS; macro Recall@20 0.498802, micro Recall@20 0.475410, 8 controller steps, zero failed devices"
+    },
+    {
+      "command": "rtk proxy python -B -m pytest -q tests/test_healthtech_controller.py tests/test_healthtech_cross_cohort.py",
+      "exit_code": 0,
+      "outcome": "5 passed"
+    },
+    {
+      "command": "rtk git diff --check",
+      "exit_code": 0,
+      "outcome": "PASS before audit write"
+    }
+  ],
+  "runtime_boundary": {
+    "evaluator_labels_visible_to_runtime": false,
+    "gold_loaded_after_runtime_outputs": true,
+    "unjudged_links_as_negative": false,
+    "automatic_retries": false,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "gpu_jobs": 0
+  },
+  "not_run": [
+    "live qwen/qwen3-32b API comparison",
+    "semantic device-patent gold evaluation",
+    "powered confirmatory inference",
+    "external user/customer validation"
+  ]
+}

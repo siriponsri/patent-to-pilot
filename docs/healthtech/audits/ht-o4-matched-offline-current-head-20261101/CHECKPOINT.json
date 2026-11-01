@@ -1,0 +1,69 @@
+{
+  "format": "ht-o4-matched-offline-current-head-checkpoint-v1",
+  "created_utc": "2026-11-01T06:20:26Z",
+  "status": "PASS_DESCRIPTIVE_MATCHED_OFFLINE_FRONTIER_O3_BLOCKED",
+  "goal_reused": true,
+  "candidate": {
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head": "891f3b3",
+    "worktree_state_before_run": "clean"
+  },
+  "protocol": {
+    "baseline_runner": "scripts/healthtech/run_real_baselines.py",
+    "controller_runner": "scripts/healthtech/run_bounded_controller.py",
+    "protocol_hash": "a87acaa448f97eabccae0f1fecc5378720ecf1178869336f68b42174eb828b0f",
+    "candidate_depth": 41,
+    "rerank_depth": 41,
+    "primary_k": 20,
+    "runtime_evaluator_separation": "PASS"
+  },
+  "inputs": {
+    "cohort": "ht-public-cohort-20261029-frozen-r1",
+    "devices": 3,
+    "patents": 41,
+    "disclosed_reference_pairs": 61,
+    "exact_patent_groups": 2,
+    "company_groups": 1,
+    "runtime_sha256": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121",
+    "references_sha256": "4024eb9ce949ad1e6d6c683c1762c87e29eef3814a9fb8cbf64cdc7f28df77ae",
+    "groups_sha256": "bfb1d8288283d801eb4c8db3200266ab0a8845f4206084fae56c4d91a806ac84",
+    "cohort_manifest_sha256": "b92b50716599ad6ea3cdeb5b6a692990a52ae8dd113bfc0bb5cad2cdd2148715"
+  },
+  "model_assets": {
+    "encoder": "sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2@233902d25c440f23af6f7d6e94d2946bac0bee0a"
+  },
+  "results": {
+    "HT-B0a": {"macro_recall_at_20": 0.4427394146064223, "query_calls": 3, "rerank_pairs": 0, "failed_devices": 0},
+    "HT-B0b": {"macro_recall_at_20": 0.6622417082775139, "query_calls": 3, "rerank_pairs": 0, "failed_devices": 0},
+    "HT-B1": {"macro_recall_at_20": 0.49880241951853205, "query_calls": 3, "rerank_pairs": 123, "failed_devices": 0},
+    "HT-B2": {"macro_recall_at_20": 0.5689116226200625, "query_calls": 9, "rerank_pairs": 369, "failed_devices": 0},
+    "HT-B3": {"macro_recall_at_20": 0.49880241951853205, "query_calls": 5, "rerank_pairs": 205, "failed_devices": 0},
+    "HT-B4-OFFLINE": {"macro_recall_at_20": 0.49880241951853205, "micro_recall_at_20": 0.47540983606557374, "query_calls": 5, "rerank_pairs": 205, "controller_steps": 8, "failed_devices": 0}
+  },
+  "resource_and_safety": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "gpu_jobs": 0,
+    "ledger_reset": false,
+    "automatic_top_up": false,
+    "participant_contact": false,
+    "claude_luna_owner_worktrees_touched": false
+  },
+  "private_artifact_root": "C:/Users/User/Documents/Codex/2026-10-31/task/ptp-o4-matched-20261101",
+  "raw_artifact_hashes": {
+    "abbott-baselines/frontier_diagnostics.json": "5bbccccb10ae21679679efc29041cc00ec52581bda1bbb50a983c97f90626647",
+    "abbott-baselines/receipt.json": "dcc674fd89903a3c73c74a2bdf6a7a9a192045af8bfbb636b3a7baedeaefb235",
+    "abbott-b4-offline/controller_frontier.json": "f67321d6f8be72167714c77b41c5951b531fabbfdeb708e4ca71a07e657549ac",
+    "abbott-b4-offline/receipt.json": "6c3fef9a6e07e34ea64c0d5b960c5dc04613f45ce97f90cc873b1c646e96d650"
+  },
+  "interpretation": {
+    "engineering": "PASS",
+    "matched_offline_frontier": "PASS_DESCRIPTIVE",
+    "adaptive_superiority": "NOT_ESTABLISHED",
+    "generalization": "NOT_ESTIMABLE",
+    "business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "paid_api_comparison": "BLOCKED_LOCAL"
+  },
+  "next_action": "Use the matched frontier in the manuscript; keep the live API branch gated and retain the main adaptive claim as not established."
+}
