@@ -1,0 +1,152 @@
+{
+  "format": "benchmark-expansion-current-head-component-results-v1",
+  "created_utc": "2026-11-01T05:47:07.5636443Z",
+  "status": "PASS_CURRENT_HEAD_COMPONENT_BASELINE_PARTIAL_MAIN_ADAPTIVE",
+  "goal": "Patent-to-Pilot O1-O4 existing goal continuation",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head": "ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd",
+    "working_tree_state_before_receipt": "clean"
+  },
+  "source_and_protocol": {
+    "source_pack": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101",
+    "manifest_sha256": "67c36586aec4e3ccc7834dd8c2869a563fda5a9fcf58043b138325285dcf3a79",
+    "protocol": "docs/healthtech/research/DATASET_BENCHMARK_EXPANSION_PROTOCOL_20261101_TH_EN.md",
+    "protocol_sha256": "f8da1a15b4d2b1bcf93dd9e24a4edcd6ec154529d625266fb197b70b8ac1275e",
+    "freeze": "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_FREEZE.json",
+    "freeze_sha256": "42fdd9b7d505943f940b834f34e522b761d3651b6f7df44c51a509371c0e9f24",
+    "historical_freeze_candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+    "current_head_revalidation_rule": "Results in this receipt were executed against ab7ad34; historical component results from other candidates are not merged into this PASS surface."
+  },
+  "acquisition_reuse": {
+    "receipt": "docs/healthtech/audits/benchmark-expansion-20261101/ACQUISITION_RECEIPT.json",
+    "status": "PASS_CORE_ACQUISITION_REUSED_EXISTING",
+    "verified_core_files": 5,
+    "new_downloads_this_resume": 0,
+    "duplicate_downloads": false,
+    "raw_payload_storage": "outside_git",
+    "rights_boundary": "Helmers CC BY 4.0 diagnostic; PANORAMA CC BY-NC 4.0 local research/evaluation only under recorded receipt"
+  },
+  "runs": [
+    {
+      "task": "PAR4PC",
+      "split": "validation",
+      "rows": 3029,
+      "failed_rows": 0,
+      "failed_output_rate": 0.0,
+      "macro_gold_option_hit_at_1": 0.7335754374380984,
+      "macro_gold_option_hit_at_8": 1.0,
+      "singleton_exact_top1": 0.6815834767641996,
+      "wall_seconds": 39.643043700023554,
+      "machine_time_per_row_seconds": 0.013087832188848979,
+      "source_sha256": "d84d34779c2d741b9eb3aebd7db009836dc0d78ba4c78aee1cfa410f5092594d",
+      "summary_sha256": "fb98bef5078e613cf44381458c25669361e08a922d4a468ddfb74eaa5a88208f",
+      "predictions_sha256": "48ea158dfbceee23b8436531e7230e0d989b0b15431e5116d9b2f124c9ab4951"
+    },
+    {
+      "task": "PAR4PC",
+      "split": "test",
+      "rows": 2896,
+      "failed_rows": 0,
+      "failed_output_rate": 0.0,
+      "macro_gold_option_hit_at_1": 0.7151243093922652,
+      "macro_gold_option_hit_at_8": 1.0,
+      "singleton_exact_top1": 0.6977018267530937,
+      "wall_seconds": 35.49079019995406,
+      "machine_time_per_row_seconds": 0.012255107113243806,
+      "source_sha256": "f1f8e33d32bfd2a6a2a7f1e740e94a6512c5d79598fdfb6b431829b21b6565e3",
+      "summary_sha256": "a9a382a1e5b1fff664b21162f4346f6bd87be499ef7c16ef3c74b900c79d2e80",
+      "predictions_sha256": "1703eaf0e6ac14f98f2ffbbd986e474c50efb39d8451f1604b022499430874f7"
+    },
+    {
+      "task": "PI4PC",
+      "split": "validation",
+      "rows": 3937,
+      "failed_rows": 0,
+      "failed_output_rate": 0.0,
+      "macro_gold_paragraph_hit_at_1": 0.3776987553975108,
+      "macro_gold_paragraph_hit_at_8": 1.0,
+      "singleton_exact_top1": 0.3776987553975108,
+      "wall_seconds": 7.604367200052366,
+      "machine_time_per_row_seconds": 0.0019315131318395646,
+      "source_sha256": "692032d44a48d352430b9a22abab272f08fd429688402647b5f2180e9aeb35b0",
+      "summary_sha256": "a36d5429f4784d46b67e1ecd28248a78668e283fe7890ab8f4bb64813ee4f698",
+      "predictions_sha256": "c1ccf07dc1b4d4349a887689a52da886e4a8b11512f518f3b9d9f68938bd2d11"
+    },
+    {
+      "task": "PI4PC",
+      "split": "test",
+      "rows": 3402,
+      "failed_rows": 0,
+      "failed_output_rate": 0.0,
+      "macro_gold_paragraph_hit_at_1": 0.4012345679012346,
+      "macro_gold_paragraph_hit_at_8": 1.0,
+      "singleton_exact_top1": 0.4012345679012346,
+      "wall_seconds": 9.275603299960494,
+      "machine_time_per_row_seconds": 0.0027265147854087283,
+      "source_sha256": "fb3b5928018a0a8016f6d9ac913a00fae30f28042cfe71a9354860fccc41e10c",
+      "summary_sha256": "053c5688aa325962aca058c42a573970fe9fc9a958dbc8442cba305095ac11e1",
+      "predictions_sha256": "1eb73b2d60d0ad6eface0d87b773dc2d1a0481ba729eed03d95076c61b5287bc"
+    }
+  ],
+  "helmers_diagnostic": {
+    "status": "PASS_DESCRIPTIVE_DIAGNOSTIC",
+    "targets": 10,
+    "judged_pairs": 450,
+    "positive_pairs": 258,
+    "macro_average_precision": 0.885450432614385,
+    "macro_auc": 0.880011844305422,
+    "summary_sha256": "6e603ddf74c521a1c4122e5734603a381a4d37211983f1d9038a5f430dcdb89b",
+    "interpretation": "Selected judged pool; no modern official dev/test split; not semantic device-patent gold or exhaustive recall."
+  },
+  "fair_budget_and_failures": {
+    "methods": ["deterministic lexical baseline"],
+    "same_inputs": true,
+    "same_budget": "one decision per row; all candidate options inspected equally by the deterministic baseline",
+    "retry_policy": "none",
+    "failed_rows_retained_in_denominator": true,
+    "failure_artifacts": "private baseline directory contains prediction and summary files with empty failure_reasons arrays",
+    "primary_holdout": "official PANORAMA test split",
+    "uncertainty": "component descriptive; application-group bootstrap not claimed for this baseline receipt"
+  },
+  "resource_and_safety": {
+    "paid_api_calls": 0,
+    "paid_cost_usd": 0.0,
+    "gpu_jobs_this_resume": 0,
+    "gpu_preflight": "PASS_READ_ONLY_OBSERVATION",
+    "gpu_uuid_observed": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "gpu_free_mib_observed": 32495,
+    "gpu_compute_apps_observed": 0,
+    "ledger_reset": false,
+    "automatic_top_up": false,
+    "participant_contact": false,
+    "root_main_touched": false,
+    "claude_luna_owner_worktrees_touched": false
+  },
+  "claims": {
+    "component_benchmark": "SUPPORTED",
+    "main_adaptive_dossier_superiority": "NOT_EVALUATED",
+    "semantic_device_patent_gold": "NOT_ESTABLISHED",
+    "external_business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "paid_api_comparison": "BLOCKED_LOCAL_CURRENT_CREDIT_LEDGER_ROUTE_RIGHTS_GATES",
+    "journal_readiness": "PARTIAL_OWNER_REVIEW_REQUIRED"
+  },
+  "private_artifacts": {
+    "logical_root": "permitted-local-storage:healthtech/benchmark-expansion-20261101/baseline-20261101",
+    "summary_files": [
+      "PAR4PC_validation_summary.json",
+      "PAR4PC_test_summary.json",
+      "PI4PC_validation_summary.json",
+      "PI4PC_test_summary.json",
+      "HELMERS_summary.json"
+    ],
+    "prediction_files": [
+      "PAR4PC_validation_predictions.json",
+      "PAR4PC_test_predictions.json",
+      "PI4PC_validation_predictions.json",
+      "PI4PC_test_predictions.json"
+    ],
+    "secrets_or_restricted_raw_payloads_in_git": false
+  }
+}

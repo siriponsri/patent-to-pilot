@@ -401,6 +401,8 @@ Helmers ใช้เป็น external relevance diagnostic หลัง freeze 
 
 ผล component หลัง freeze ถูกผูกกับ candidate/protocol/result hashes ใน [final evaluation binding](docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json) และ [checkpoint V6](docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V6.json) แล้ว: PANORAMA validation/test ทั้ง 4 runs ผ่านโดยไม่มี failed rows และ Helmers ผ่านในฐานะ selected-pool diagnostic ผลนี้เป็นหลักฐาน component เท่านั้น; main adaptive dossier study, paid API comparison, external business validation และ journal submission ยังไม่ใช่ COMPLETE
 
+การ revalidation บน current candidate `ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd` ถูกบันทึกแยกใน [current-head component results](docs/healthtech/audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json) และ [checkpoint V10](docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V10_CURRENT_HEAD.json) เพื่อไม่รวมผลต่างรุ่นเป็น PASS เดียว ผลรอบนี้ยืนยันค่า PAR4PC/PI4PC และ Helmers ตาม receipt จริง โดยยังคง `NOT_EVALUATED` สำหรับ main adaptive dossier superiority, `NOT_VALIDATED` สำหรับ external business value และ `BLOCKED_LOCAL` สำหรับ paid/API comparison
+
 ## Migration support records — 27 October 2026
 
 แหล่งข้อมูลเสริมที่เสนอเพื่อรองรับ goals เดิม: [supplemental data](docs/healthtech/research/SUPPLEMENTAL_DATA.md) สถานะ implementation จริง: [coverage](docs/healthtech/MIGRATION.md) ข้อเสนอนี้ไม่เปลี่ยน scientific thesis, success criteria หรือ product scope ในเอกสารนี้

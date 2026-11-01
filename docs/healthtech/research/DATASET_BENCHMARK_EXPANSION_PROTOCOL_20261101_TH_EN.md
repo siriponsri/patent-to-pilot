@@ -70,12 +70,14 @@ The primary comparison is quality at a fixed resource budget. Cost-quality front
 
 ## Current status and next action
 
-- Stage 0: `READY`
-- Stage 1: `READY_FOR_CORE_DOWNLOAD`
-- Stage 2: `NOT_RUN`
-- Stage 3: `NOT_FROZEN`
-- Stage 4: `NOT_RUN`
-- Stage 5: `BLOCKED_UNTIL_FREEZE_AND_LIVE_GATES`
+- Stage 0: `PASS_CURRENT_HEAD_BOUND`
+- Stage 1: `PASS_CORE_ACQUISITION_REUSED_EXISTING`
+- Stage 2: `PASS_HASH_SCHEMA_RIGHTS_RECEIPT`
+- Stage 3: `PASS_COMPONENT_FREEZE`
+- Stage 4: `PASS_CPU_BASELINE_HELMERS_DIAGNOSTIC`
+- Stage 5: `PARTIAL_COMPONENT_HOLDOUT; MAIN_ADAPTIVE_AND_PAID_BRANCHES_GATED`
 - Stage 6: `PARTIAL / OWNER REVIEW`
 
-Next action: acquire and verify Helmers human subset and the four pinned PANORAMA validation/test files, then write the acquisition receipt and schema report before touching final evaluation.
+The current-head component receipt is [`CURRENT_HEAD_COMPONENT_RESULTS.json`](../audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json) with checkpoint [`CHECKPOINT_V10_CURRENT_HEAD.json`](../audits/benchmark-expansion-20261101/CHECKPOINT_V10_CURRENT_HEAD.json). It records four PANORAMA baseline runs and one Helmers diagnostic on candidate `ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd`. The verified five-file payload was reused; no duplicate download, re-embedding, paid call, or GPU job occurred in this resume.
+
+Next action: keep the test results as component evidence only, complete the matched adaptive dossier study when an admissible semantic or documented-link judgment cohort is available, and open paid/API or new GPU compute only after the canonical journal, current credit, route/pricing, transfer-rights and writer-quiescence gates are evidenced.

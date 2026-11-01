@@ -1074,3 +1074,28 @@ commits are documentation-only.
 The requirement audit confirms real progress but does not close the objective:
 API Qwen3-32B comparison, matched adaptive scientific evaluation, live ledger/
 credit binding, owner WPI review, and main merge remain incomplete or gated.
+
+## HT-NEXT-098 — 2026-11-01 current-head benchmark component revalidation
+
+Status: `PASS_CURRENT_HEAD_COMPONENT_BASELINE_PARTIAL_MAIN_ADAPTIVE`; checkpoint:
+`docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V10_CURRENT_HEAD.json`.
+
+Reused the already verified Helmers/PANORAMA payloads without duplicate download
+or re-embedding, then ran the frozen deterministic lexical baseline on all four
+official PANORAMA validation/test splits plus the post-freeze Helmers diagnostic.
+All 13,264 PANORAMA rows completed with failed-output rate `0.0`; PAR4PC test
+macro option hit@1 was `0.715124`, PI4PC test macro paragraph hit@1 was
+`0.401235`, and Helmers macro AP/AUC were `0.885450`/`0.880012` over 10
+targets and 450 judged pairs. Exact summary/prediction hashes and private
+artifact paths are in `CURRENT_HEAD_COMPONENT_RESULTS.json`.
+
+The current-head receipt is component evidence only. The main adaptive dossier
+study is still `NOT_EVALUATED`, external business validation is still
+`NOT_VALIDATED_SOLO_PROJECT`, and paid/API comparison remains `BLOCKED_LOCAL`.
+The read-only V100 preflight saw the approved UUID with 32,495 MiB free and no
+compute app; no new GPU job, paid call, ledger mutation, top-up, participant
+contact, push, or merge occurred.
+
+Next: preserve this checkpoint, continue offline manuscript/reproducibility work,
+and open paid or new GPU execution only after current journal, credit,
+route/pricing, transfer-rights, and writer-quiescence evidence is current.
