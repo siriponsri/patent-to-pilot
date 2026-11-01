@@ -1,0 +1,18 @@
+{
+  "failure_record_version": "benchmark-expansion-selected-acquisition-failures-v1",
+  "created_date": "2026-11-01",
+  "status": "RECOVERED",
+  "failure_type": "verifier_checksum_semantics",
+  "affected_files": [
+    "pv_evaluation/data/assignee/air-umass-assignees-benchmark.csv",
+    "pv_evaluation/data/assignee/nber-subset-assignees-benchmark.csv"
+  ],
+  "observed_failure": "Initial verifier treated manifest git_blob_sha1 values as raw file SHA-1 values and rejected both files after download.",
+  "observed_raw_sha1": {
+    "air-umass-assignees-benchmark.csv": "b6e8379561e4c19a2a9bcb5d0b7f5a4537c8e9c1",
+    "nber-subset-assignees-benchmark.csv": "60508bd5e289d2ea5a072b202d338db6d7424fee"
+  },
+  "resolution": "Updated the verifier to compute Git blob SHA-1 as sha1('blob <bytes>\\0' + payload), reran against the existing bytes, and passed hash/schema checks.",
+  "final_receipt": "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json",
+  "data_use_during_failed_attempt": "No failed file was used in scoring or manuscript claims."
+}

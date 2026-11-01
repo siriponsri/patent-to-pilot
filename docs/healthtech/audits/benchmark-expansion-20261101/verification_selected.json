@@ -1,0 +1,47 @@
+{
+  "verification_version": "benchmark-expansion-selected-v1",
+  "verified_date": "2026-11-01",
+  "candidate_base": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+  "candidate_state": "working_tree_uncommitted",
+  "status": "PASS_SELECTED_ACQUISITION_READY_FOR_OWNER_REVIEW",
+  "commands": [
+    {
+      "command": "python scripts/healthtech/acquire_manifest_datasets.py --manifest <source-pack>/download_manifest.json --output-dir <private-artifacts> --receipt docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json --dataset PatSnap claim-charting-bench --dataset PatentsView AIR-UMASS/NBER assignee benchmarks --dataset AffRoDB",
+      "result": "PASS_SELECTED_ACQUISITION; 4 files; 0 failures; receipt revalidated after non-commercial rights gate fix"
+    },
+    {
+      "command": "python -m pytest -q tests/test_healthtech_benchmark_expansion.py",
+      "result": "PASS; 6 passed"
+    },
+    {
+      "command": "python -m pytest -q",
+      "result": "PASS; exit code 0; one existing skip"
+    },
+    {
+      "command": "python -m py_compile scripts/healthtech/acquire_manifest_datasets.py scripts/healthtech/acquire_benchmark_expansion.py scripts/healthtech/run_panorama_lexical_baseline.py scripts/healthtech/run_helmers_diagnostic.py",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "rights_boundary": {
+    "PatSnap": "local research diagnostic only; CC BY-NC metadata is not cleared for commercial release",
+    "PatentsView": "not used because standalone benchmark-data rights are unresolved",
+    "AffRoDB": "not scored until pinned ROR v1.40 snapshot is available"
+  },
+  "not_run": [
+    "paid API generation",
+    "GPU embedding/LLM job",
+    "new adaptive final endpoint",
+    "participant or customer validation"
+  ],
+  "resource_usage": {
+    "paid_api_usd": 0,
+    "gpu_jobs": 0,
+    "ledger_reset": false,
+    "existing_vectors_redownloaded": false,
+    "new_payload_bytes_verified": 27024143
+  }
+}

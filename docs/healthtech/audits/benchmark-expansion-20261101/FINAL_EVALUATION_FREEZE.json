@@ -1,0 +1,96 @@
+{
+  "freeze_version": "benchmark-expansion-final-freeze-v1",
+  "created_utc": "2026-11-01T03:01:06.8860302Z",
+  "status": "FROZEN_COMPONENT_BENCHMARK_NOT_MAIN_ADAPTIVE",
+  "candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "protocol": {
+    "path": "docs/healthtech/research/DATASET_BENCHMARK_EXPANSION_PROTOCOL_20261101_TH_EN.md",
+    "sha256": "f8da1a15b4d2b1bcf93dd9e24a4edcd6ec154529d625266fb197b70b8ac1275e"
+  },
+  "acquisition": {
+    "receipt": "docs/healthtech/audits/benchmark-expansion-20261101/ACQUISITION_RECEIPT.json",
+    "receipt_sha256": "cfda1577f52a0165cdcfaddc979ade6aba179c6d6481ad54cc2dbeaf97ca4217",
+    "manifest_sha256": "67c36586aec4e3ccc7834dd8c2869a563fda5a9fcf58043b138325285dcf3a79",
+    "payload_storage": "outside_git",
+    "files_verified": 5,
+    "failures": 0
+  },
+  "research_role": {
+    "main_adaptive_claim": "NOT_EVALUATED_BY_THIS_PACK",
+    "role": "external component benchmark and robustness diagnostic",
+    "reason": "PANORAMA exposes fixed option-selection tasks rather than the full evidence-acquisition loop; Helmers is a judged diagnostic without an official modern dev/test split. Neither alone proves dossier-level adaptive superiority or business value."
+  },
+  "datasets": {
+    "PAR4PC": {
+      "validation_path": "PANORAMA PAR4PC_PI4PC validation+test/PAR4PC/validation.parquet",
+      "test_path": "PANORAMA PAR4PC_PI4PC validation+test/PAR4PC/test.parquet",
+      "validation_rows": 3029,
+      "test_rows": 2896,
+      "validation_applications": 221,
+      "test_applications": 222,
+      "cross_split_application_overlap": 0,
+      "duplicate_app_claim_validation": 0,
+      "duplicate_app_claim_test": 0,
+      "candidate_option_count": 8,
+      "gold_cardinality_observed": [1, 2, 3, 4, 5],
+      "primary_endpoint": "macro_gold_option_hit_at_1",
+      "secondary_endpoints": ["exact_gold_option_set_match", "macro_gold_option_hit_at_8", "failed_output_rate", "machine_time_per_row"],
+      "silver_usage": "diagnostic_only_after_primary_freeze",
+      "final_holdout": "test"
+    },
+    "PI4PC": {
+      "validation_path": "PANORAMA PAR4PC_PI4PC validation+test/PI4PC/validation.parquet",
+      "test_path": "PANORAMA PAR4PC_PI4PC validation+test/PI4PC/test.parquet",
+      "validation_rows": 3937,
+      "test_rows": 3402,
+      "validation_applications": 308,
+      "test_applications": 306,
+      "cross_split_application_overlap": 0,
+      "duplicate_app_claim_validation": 551,
+      "duplicate_app_claim_test": 480,
+      "candidate_option_count": 5,
+      "gold_cardinality_observed": [1],
+      "primary_endpoint": "macro_gold_paragraph_hit_at_1",
+      "secondary_endpoints": ["exact_gold_paragraph_set_match", "failed_output_rate", "machine_time_per_row"],
+      "silver_usage": "diagnostic_only_after_primary_freeze",
+      "final_holdout": "test"
+    }
+  },
+  "grouping_and_leakage": {
+    "primary_split_rule": "Use official validation/test assignment; application_number must not cross validation/test.",
+    "within_split_unit": "application_number plus claim_number; duplicate keys are retained and reported because they are present in the pinned payload.",
+    "candidate_overlap_diagnostic": {
+      "PAR4PC_shared_option_ids_across_splits": 149,
+      "PI4PC_shared_option_ids_across_splits": 38,
+      "interpretation": "Shared prior-art/paragraph candidates are reported as a sensitivity diagnostic; they are not silently relabeled as leakage or removed from the primary official split."
+    },
+    "runtime_exclusions": ["gold_answers", "silver_answers", "negative_answers", "post-examination outcomes", "answer-derived queries"]
+  },
+  "methods_and_fair_budget": {
+    "first_run": "CPU lexical option-ranking baseline",
+    "later_controls": ["fixed lexical", "fixed multi-query if defined on validation", "simple adaptive only if a non-gold controller is specified", "bounded LLM configuration only after paid gates"],
+    "same_inputs": "same context and candidate options per row",
+    "same_budget": "one selection decision per row; all candidate text inspected equally by deterministic baseline; no method receives gold/silver/negative fields",
+    "retry_rule": "zero automatic retries for deterministic baseline; every failed row stays in denominator",
+    "selection_rule": "no method or threshold may be changed after reading final test metrics",
+    "uncertainty_unit": "application-level grouped bootstrap or descriptive per-application summaries; row-level counts are not treated as independent if grouped",
+    "cost_accounting": "wall time, CPU time where available, peak memory, and any paid/API/GPU tokens or dollars recorded separately",
+    "stopping_rule": "stop final evaluation if candidate, protocol hash, dataset hash, split rule, or endpoint changes"
+  },
+  "helmers": {
+    "role": "post-freeze external diagnostic",
+    "labels": "human_label_pairs and binary_label_pairs remain evaluator-only",
+    "split": "no modern official dev/test split; do not tune on Helmers",
+    "planned_metrics": ["AP", "AUC", "per-target summary"],
+    "independence_warning": "450 judged pairs from 10 target patents are a selected judged pool; pairs and targets are not independent global samples"
+  },
+  "execution_status": {
+    "integrity_and_schema": "PASS",
+    "freeze": "PASS",
+    "cpu_baseline": "NOT_RUN",
+    "final_test": "NOT_RUN",
+    "paid_api": "BLOCKED_UNTIL_CANONICAL_LEDGER_CREDIT_ROUTE_RIGHTS_GATES",
+    "external_business_validation": "NOT_VALIDATED"
+  }
+}

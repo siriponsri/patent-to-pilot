@@ -10,6 +10,8 @@ Official pages to recheck:
 - Aims and scope: https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope
 - Guide for authors: https://www.sciencedirect.com/journal/world-patent-information/about/authors
 
+Verification note: the live Aims and Scope and Guide for Authors pages returned HTTP 403 during the 1 November 2026 environment check. Treat the local checklist as preparation only; the owner must recheck the official pages in an authorized browser/session immediately before submission.
+
 ## Journal fit
 
 - The research question is centered on patent information, medical-device patent evidence, provenance, retrieval, and decision support.
@@ -25,6 +27,7 @@ Official pages to recheck:
 - Do not use an agent judge or similarity score as semantic gold.
 - Report failures, retries, blocked branches, missing judgments, denominators, and group counts.
 - Keep local/API model-size and provider confounds visible.
+- Treat the 1 November 2026 PANORAMA/Helmers results as component diagnostics only; do not present them as adaptive dossier superiority or device-patent semantic gold.
 
 ## Required manuscript sections to confirm against the live guide
 

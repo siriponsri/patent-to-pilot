@@ -19,6 +19,14 @@ Project: Patent-to-Pilot HealthTech O1-O4
 - Preserve the existing OpenRouter authorization, cumulative USD8 cap, admission ceiling, ledger identity, and 24-hour timing. Do not create a new budget, zero ledger, key, or time window.
 - If additional USD, GPU time, or datasets become necessary, report the amount and reason to the owner before using them. No expansion is requested or recorded here.
 
+## Append-only resource extension recorded 2026-11-01
+
+- The owner authorized continuation of the benchmark-expansion plan in `pepo-dataset-benchmark-expansion-20261101`.
+- The cumulative project API ceiling for this continuation is USD100 across providers, including historical spend, pending/unknown reservations, and retries. This does not create a new ledger, reset the existing journal, or authorize automatic top-up.
+- The existing V100 may be used at concurrency 1 through 2026-11-15 23:59 Asia/Bangkok, subject to live ownership/resource checks and the existing CPU/RAM/disk limits.
+- Dataset downloads may proceed only for manifest-listed files after source, rights, expected size, checksum, and schema checks. NC or unresolved-rights data remains restricted to the permitted local research use and is not treated as commercial-release material.
+- This extension supersedes only the earlier resource-ceiling sentence for new benchmark-expansion work. The solo-project, no-participant, no-repeat-needed decision and all historical receipts remain unchanged.
+
 ## Consequences for this round
 
 Engineering O1-O4 may continue independently. Offline retrieval/evaluation, rights-aware dossier work, reproducibility artifacts, protocol, manuscript, and submission materials are not blocked by the absence of participants.

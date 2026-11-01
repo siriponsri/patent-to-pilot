@@ -2,7 +2,7 @@
 
 > Implementation checkpoint (27 October 2026): [migration and coverage](docs/healthtech/MIGRATION.md), [actual progress](docs/healthtech/progress.json). The pack’s starting statuses below are historical starting points; the full HealthTech study and product are not complete.
 
-**Version:** 1.1 · **วันที่:** 1 พฤศจิกายน 2026 (Asia/Bangkok) <br>
+**Version:** 1.2 · **วันที่:** 1 พฤศจิกายน 2026 (Asia/Bangkok) <br>
 **รูปแบบ:** Goal-based execution contract สำหรับ owner และ coding/research agents <br>
 **สถานะ:** solo reproducible computational study + product engineering; external business validation ยังไม่ทำ และเอกสารนี้ไม่ใช่หลักฐานว่าได้พิสูจน์ตลาดหรือได้รับการตอบรับจากวารสารแล้ว <br>
 **อ่านร่วมกับ:** [PLAN.md](PLAN.md), [README.md](README.md), [RELATED_PAPERS.md](RELATED_PAPERS.md)
@@ -118,6 +118,10 @@ Root GOAL.md และ PLAN.md เป็นจุดเริ่มอ่าน�
 ### 2.1.1 Owner one-time decision
 
 ข้อมูลจาก owner ครั้งเดียวถูกบันทึกไว้ที่ [OWNER_ONE_TIME_INPUT_TH_EN.md](docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md) สถานะมีผลคือไม่ต้องรอ participant route, ไม่ต้องถามข้อมูลนี้ซ้ำ, deadline โครงการคือ 15 พฤศจิกายน 2026 (Asia/Bangkok), และไม่มีการขยายงบ USD8, GPU window หรือ dataset โดยอัตโนมัติ
+
+### 2.1.2 Owner resource extension for benchmark expansion
+
+คำสั่ง owner ล่าสุดวันที่ 1 พฤศจิกายน 2026 อนุญาตให้เดินแผน benchmark expansion ตาม [dataset audit pack](docs/healthtech/audits/benchmark-expansion-20261101/README.md) ภายใต้ cumulative API ceiling **USD100 ทั้งโครงการรวมยอดเก่า ยอดค้าง และ retry**, ใช้ V100 ใบเดิมแบบ concurrency 1 ได้ถึง 15 พฤศจิกายน 2026 เวลา 23:59 Asia/Bangkok และดาวน์โหลดเฉพาะชุดข้อมูลที่ manifest ระบุและสิทธิ์/แฮช/schema ผ่านการตรวจแล้ว การขยายนี้ **ไม่รีเซ็ต** ledger, ไม่สร้าง zero ledger, ไม่เติมเงินอัตโนมัติ และไม่เปลี่ยน historical receipts หรือ 24-hour history เดิม หาก resource จริงหรือสิทธิ์ไม่พอ ให้พักเฉพาะ branch ที่ได้รับผลกระทบและทำ offline work ต่อ
 
 ### 2.4 สิ่งที่ต้องบันทึกแทนการถาม
 
@@ -384,6 +388,18 @@ Paper PDFs, datasets, source records, software, model weights และ generate
 Agent ไม่ต้องอ่าน PDF ทั้งหมดก่อนเริ่มทุกงาน ให้ใช้ reading routes ใน RELATED_PAPERS.md และเปิดเฉพาะ papers ที่มีผลกับการตัดสินใจปัจจุบัน เมื่อจะ implement หรืออ้างรายละเอียด method จึงอ่านส่วนที่เกี่ยวข้องจากต้นฉบับ
 
 **เป้าหมายของเอกสารชุดนี้คือให้ agent รับภาระการเตรียม ลงมือ ตรวจ และแก้ปัญหาแทน owner โดยรักษาข้อเท็จจริงของงานให้ชัดเจนและเดินหน้าได้ต่อเนื่อง**
+
+## 11. Benchmark expansion package — 1 พฤศจิกายน 2026
+
+รอบนี้เพิ่ม staged protocol สำหรับคำถามวิจัยเดิมเรื่องคุณภาพและความคุ้มค่าของ adaptive evidence acquisition โดยใช้ DAPFAM, PatEmbed และ multilingual-e5 ที่มีอยู่แล้วก่อน ไม่ดาวน์โหลดหรือ embed ซ้ำ จากนั้นจึงเพิ่ม **Helmers expert human-evaluation subset** และ **PANORAMA PAR4PC/PI4PC validation+test** ตาม manifest ที่มี source revision, license, expected bytes และ checksum การใช้ชุด NC จำกัดอยู่ที่ local research/evaluation ตามสิทธิ์ที่ตรวจได้ และไม่ถือเป็น commercial redistribution authorization
+
+ลำดับที่ตรึงไว้คือ (1) integrity/schema/rights receipt, (2) CPU/BM25 และ existing-ranking analysis, (3) development-only encoder/parameter contrast, (4) freeze eligible units, group splits, budget controls, primary endpoint และ failure/retry rules, (5) final holdout evaluation, แล้วจึง (6) external robustness/paired generation เฉพาะเมื่อ paid/API/compute gates ผ่านจริง การเลือกวิธีต้องไม่อ่าน labels หรือ test outcomes เพื่อเปลี่ยน controller และห้ามรวมผลจากคนละ candidate/protocol manifest เป็น PASS เดียว
+
+Helmers ใช้เป็น external relevance diagnostic หลัง freeze หาก split semantics รองรับ; PANORAMA ใช้ validation สำหรับ development และ test เป็น untouched final holdout โดยตรวจ application/patent-family overlap ตาม fields ที่พบจริงก่อน scoring ชุด AIR/NBER, AffRoDB, PatSnap, USPTO, GCPD, PatentMatch และ CLEF-IP ยังเป็น conditional/optional จนกว่าจะตรวจสิทธิ์และความสอดคล้องกับ task เพิ่มเติม ผลการศึกษาเป็น solo computational evidence; external business validation, willingness-to-pay, revenue และ ROI ยังคง `NOT_VALIDATED`
+
+การ continuation รอบเดียวกันรับ PatSnap, PatentsView AIR-UMASS/NBER และ AffRoDB ตาม manifest เพิ่มแล้ว โดยแยก schema/hash receipt ออกจากผลหลัก: PatSnap และ AffRoDB ยังไม่ score ส่วน PatentsView ถูกเก็บเป็น local inventory ที่ rights ยังไม่ชัดและไม่ถูกใช้สร้าง claim ใด การขยายนี้ไม่เปลี่ยน endpoint, split, fair-budget freeze หรือสถานะ O1-O4 เดิม
+
+ผล component หลัง freeze ถูกผูกกับ candidate/protocol/result hashes ใน [final evaluation binding](docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json) และ [checkpoint V4](docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V4.json) แล้ว: PANORAMA validation/test ทั้ง 4 runs ผ่านโดยไม่มี failed rows และ Helmers ผ่านในฐานะ selected-pool diagnostic ผลนี้เป็นหลักฐาน component เท่านั้น; main adaptive dossier study, paid API comparison, external business validation และ journal submission ยังไม่ใช่ COMPLETE
 
 ## Migration support records — 27 October 2026
 

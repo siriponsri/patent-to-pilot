@@ -1,0 +1,368 @@
+{
+  "receipt_version": "benchmark-expansion-acquisition-v1",
+  "created_utc": "2026-11-01T02:57:32.181497+00:00",
+  "status": "PASS_CORE_ACQUISITION",
+  "manifest_path": "C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-o3-safety-repair-20261031\\docs\\healthtech\\audits\\pepo-dataset-benchmark-expansion-20261101\\download_manifest.json",
+  "manifest_sha256": "67c36586aec4e3ccc7834dd8c2869a563fda5a9fcf58043b138325285dcf3a79",
+  "payload_storage": "outside_git",
+  "datasets_selected": [
+    "Helmers expert human-evaluation",
+    "PANORAMA PAR4PC/PI4PC validation+test"
+  ],
+  "files": [
+    {
+      "dataset": "Helmers expert human-evaluation",
+      "path": "human_eval.zip",
+      "url": "https://ndownloader.figshare.com/files/13383059",
+      "license": "CC BY 4.0",
+      "source_version": 1,
+      "observed_utc": "2026-11-01T02:57:06.734140+00:00",
+      "local_path": "C:\\Users\\User\\Desktop\\myProject\\_private_artifacts\\healthtech\\benchmark-expansion-20261101\\Helmers expert human-evaluation\\human_eval.zip",
+      "head": {
+        "status": "PASS",
+        "http_status": 200,
+        "content_type": "application/zip",
+        "content_length": 13962880,
+        "resolved_host": "s3-eu-west-1.amazonaws.com"
+      },
+      "download_action": "REUSED_EXISTING",
+      "expected_bytes": 13962880,
+      "actual_bytes": 13962880,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "83465f1a95805d963d4aabe085e2af98",
+      "actual_checksum": "83465f1a95805d963d4aabe085e2af98",
+      "archive": {
+        "status": "PASS",
+        "member_count": 27,
+        "members": [
+          {
+            "name": "human_eval/",
+            "compressed_bytes": 0,
+            "uncompressed_bytes": 0
+          },
+          {
+            "name": "human_eval/.DS_Store",
+            "compressed_bytes": 238,
+            "uncompressed_bytes": 6148
+          },
+          {
+            "name": "__MACOSX/",
+            "compressed_bytes": 0,
+            "uncompressed_bytes": 0
+          },
+          {
+            "name": "__MACOSX/human_eval/",
+            "compressed_bytes": 0,
+            "uncompressed_bytes": 0
+          },
+          {
+            "name": "__MACOSX/human_eval/._.DS_Store",
+            "compressed_bytes": 53,
+            "uncompressed_bytes": 120
+          },
+          {
+            "name": "human_eval/corpus_info/",
+            "compressed_bytes": 0,
+            "uncompressed_bytes": 0
+          },
+          {
+            "name": "human_eval/corpus_info/patcorpus_claims.npy",
+            "compressed_bytes": 111881,
+            "uncompressed_bytes": 441141
+          },
+          {
+            "name": "human_eval/corpus_info/binary_label_pairs.npy",
+            "compressed_bytes": 6892,
+            "uncompressed_bytes": 21039
+          },
+          {
+            "name": "human_eval/corpus_info/single_pat_corpus.npy",
+            "compressed_bytes": 6593255,
+            "uncompressed_bytes": 28003039
+          },
+          {
+            "name": "human_eval/corpus_info/patfeats_human_eval.npy",
+            "compressed_bytes": 6296781,
+            "uncompressed_bytes": 14223463
+          },
+          {
+            "name": "human_eval/corpus_info/combis.npy",
+            "compressed_bytes": 2575,
+            "uncompressed_bytes": 11780
+          },
+          {
+            "name": "human_eval/corpus_info/patfeats_abstract.npy",
+            "compressed_bytes": 358381,
+            "uncompressed_bytes": 778027
+          },
+          {
+            "name": "human_eval/corpus_info/patcorpus_abstract.npy",
+            "compressed_bytes": 103342,
+            "uncompressed_bytes": 353359
+          },
+          {
+            "name": "human_eval/corpus_info/pat_ids.npy",
+            "compressed_bytes": 2207,
+            "uncompressed_bytes": 6060
+          },
+          {
+            "name": "human_eval/corpus_info/human_label_pairs.npy",
+            "compressed_bytes": 7005,
+            "uncompressed_bytes": 21039
+          },
+          {
+            "name": "human_eval/corpus_info/patfeats_claims.npy",
+            "compressed_bytes": 354396,
+            "uncompressed_bytes": 768841
+          },
+          {
+            "name": "human_eval/patent_sheets/",
+            "compressed_bytes": 0,
+            "uncompressed_bytes": 0
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150025584_human_eval.csv",
+            "compressed_bytes": 9285,
+            "uncompressed_bytes": 29492
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150190084_human_eval.csv",
+            "compressed_bytes": 9576,
+            "uncompressed_bytes": 30458
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150238345_human_eval.csv",
+            "compressed_bytes": 10899,
+            "uncompressed_bytes": 33396
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150085993_human_eval.csv",
+            "compressed_bytes": 12945,
+            "uncompressed_bytes": 40521
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150119992_human_eval.csv",
+            "compressed_bytes": 18139,
+            "uncompressed_bytes": 62129
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150018885_human_eval.csv",
+            "compressed_bytes": 13982,
+            "uncompressed_bytes": 47071
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150073767_human_eval.csv",
+            "compressed_bytes": 9550,
+            "uncompressed_bytes": 33809
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150066086_human_eval.csv",
+            "compressed_bytes": 9834,
+            "uncompressed_bytes": 31072
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150029821_human_eval.csv",
+            "compressed_bytes": 11970,
+            "uncompressed_bytes": 40526
+          },
+          {
+            "name": "human_eval/patent_sheets/US20150066087_human_eval.csv",
+            "compressed_bytes": 14334,
+            "uncompressed_bytes": 50467
+          }
+        ],
+        "total_uncompressed_bytes": 45032997
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "PANORAMA PAR4PC/PI4PC validation+test",
+      "path": "PAR4PC/test.parquet",
+      "url": "https://huggingface.co/datasets/LG-AI-Research/PANORAMA/resolve/5c40de5fb1de842d3a44ec4b9f5bb9c44d47a77d/PAR4PC/test.parquet",
+      "license": "cc-by-nc-4.0",
+      "source_version": "5c40de5fb1de842d3a44ec4b9f5bb9c44d47a77d",
+      "observed_utc": "2026-11-01T02:57:15.218372+00:00",
+      "local_path": "C:\\Users\\User\\Desktop\\myProject\\_private_artifacts\\healthtech\\benchmark-expansion-20261101\\PANORAMA PAR4PC_PI4PC validation+test\\PAR4PC\\test.parquet",
+      "head": {
+        "status": "PASS",
+        "http_status": 200,
+        "content_type": "application/octet-stream",
+        "content_length": 12198380,
+        "resolved_host": "us.aws.cdn.hf.co"
+      },
+      "download_action": "REUSED_EXISTING",
+      "expected_bytes": 12198380,
+      "actual_bytes": 12198380,
+      "checksum_algorithm": "sha256",
+      "expected_checksum": "f1f8e33d32bfd2a6a2a7f1e740e94a6512c5d79598fdfb6b431829b21b6565e3",
+      "actual_checksum": "f1f8e33d32bfd2a6a2a7f1e740e94a6512c5d79598fdfb6b431829b21b6565e3",
+      "schema": {
+        "status": "PASS",
+        "num_rows": 2896,
+        "num_row_groups": 1,
+        "columns": [
+          "application_number",
+          "claim_number",
+          "context",
+          "options",
+          "gold_answers",
+          "silver_answers",
+          "negative_answers"
+        ],
+        "types": {
+          "application_number": "string",
+          "claim_number": "int64",
+          "context": "struct<abstract: string, claims: list<element: string>, title: string>",
+          "options": "struct<A: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, B: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, C: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, D: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, E: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, F: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, G: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, H: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>>",
+          "gold_answers": "list<element: string>",
+          "silver_answers": "list<element: string>",
+          "negative_answers": "list<element: string>"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "PANORAMA PAR4PC/PI4PC validation+test",
+      "path": "PAR4PC/validation.parquet",
+      "url": "https://huggingface.co/datasets/LG-AI-Research/PANORAMA/resolve/5c40de5fb1de842d3a44ec4b9f5bb9c44d47a77d/PAR4PC/validation.parquet",
+      "license": "cc-by-nc-4.0",
+      "source_version": "5c40de5fb1de842d3a44ec4b9f5bb9c44d47a77d",
+      "observed_utc": "2026-11-01T02:57:19.292436+00:00",
+      "local_path": "C:\\Users\\User\\Desktop\\myProject\\_private_artifacts\\healthtech\\benchmark-expansion-20261101\\PANORAMA PAR4PC_PI4PC validation+test\\PAR4PC\\validation.parquet",
+      "head": {
+        "status": "PASS",
+        "http_status": 200,
+        "content_type": "application/octet-stream",
+        "content_length": 13105739,
+        "resolved_host": "us.aws.cdn.hf.co"
+      },
+      "download_action": "REUSED_EXISTING",
+      "expected_bytes": 13105739,
+      "actual_bytes": 13105739,
+      "checksum_algorithm": "sha256",
+      "expected_checksum": "d84d34779c2d741b9eb3aebd7db009836dc0d78ba4c78aee1cfa410f5092594d",
+      "actual_checksum": "d84d34779c2d741b9eb3aebd7db009836dc0d78ba4c78aee1cfa410f5092594d",
+      "schema": {
+        "status": "PASS",
+        "num_rows": 3029,
+        "num_row_groups": 1,
+        "columns": [
+          "application_number",
+          "claim_number",
+          "context",
+          "options",
+          "gold_answers",
+          "silver_answers",
+          "negative_answers"
+        ],
+        "types": {
+          "application_number": "string",
+          "claim_number": "int64",
+          "context": "struct<abstract: string, claims: list<element: string>, title: string>",
+          "options": "struct<A: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, B: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, C: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, D: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, E: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, F: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, G: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>, H: struct<abstract: string, claims: list<element: string>, patent_id: string, title: string>>",
+          "gold_answers": "list<element: string>",
+          "silver_answers": "list<element: string>",
+          "negative_answers": "list<element: string>"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "PANORAMA PAR4PC/PI4PC validation+test",
+      "path": "PI4PC/test.parquet",
+      "url": "https://huggingface.co/datasets/LG-AI-Research/PANORAMA/resolve/5c40de5fb1de842d3a44ec4b9f5bb9c44d47a77d/PI4PC/test.parquet",
+      "license": "cc-by-nc-4.0",
+      "source_version": "5c40de5fb1de842d3a44ec4b9f5bb9c44d47a77d",
+      "observed_utc": "2026-11-01T02:57:24.074286+00:00",
+      "local_path": "C:\\Users\\User\\Desktop\\myProject\\_private_artifacts\\healthtech\\benchmark-expansion-20261101\\PANORAMA PAR4PC_PI4PC validation+test\\PI4PC\\test.parquet",
+      "head": {
+        "status": "PASS",
+        "http_status": 200,
+        "content_type": "application/octet-stream",
+        "content_length": 62087505,
+        "resolved_host": "us.aws.cdn.hf.co"
+      },
+      "download_action": "REUSED_EXISTING",
+      "expected_bytes": 62087505,
+      "actual_bytes": 62087505,
+      "checksum_algorithm": "sha256",
+      "expected_checksum": "fb3b5928018a0a8016f6d9ac913a00fae30f28042cfe71a9354860fccc41e10c",
+      "actual_checksum": "fb3b5928018a0a8016f6d9ac913a00fae30f28042cfe71a9354860fccc41e10c",
+      "schema": {
+        "status": "PASS",
+        "num_rows": 3402,
+        "num_row_groups": 1,
+        "columns": [
+          "application_number",
+          "claim_number",
+          "context",
+          "prior_art_specification",
+          "options",
+          "gold_answers",
+          "silver_answers",
+          "negative_answers"
+        ],
+        "types": {
+          "application_number": "string",
+          "claim_number": "int64",
+          "context": "string",
+          "prior_art_specification": "string",
+          "options": "string",
+          "gold_answers": "list<element: int64>",
+          "silver_answers": "list<element: int64>",
+          "negative_answers": "list<element: int64>"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "PANORAMA PAR4PC/PI4PC validation+test",
+      "path": "PI4PC/validation.parquet",
+      "url": "https://huggingface.co/datasets/LG-AI-Research/PANORAMA/resolve/5c40de5fb1de842d3a44ec4b9f5bb9c44d47a77d/PI4PC/validation.parquet",
+      "license": "cc-by-nc-4.0",
+      "source_version": "5c40de5fb1de842d3a44ec4b9f5bb9c44d47a77d",
+      "observed_utc": "2026-11-01T02:57:28.298227+00:00",
+      "local_path": "C:\\Users\\User\\Desktop\\myProject\\_private_artifacts\\healthtech\\benchmark-expansion-20261101\\PANORAMA PAR4PC_PI4PC validation+test\\PI4PC\\validation.parquet",
+      "head": {
+        "status": "PASS",
+        "http_status": 200,
+        "content_type": "application/octet-stream",
+        "content_length": 78702260,
+        "resolved_host": "us.aws.cdn.hf.co"
+      },
+      "download_action": "REUSED_EXISTING",
+      "expected_bytes": 78702260,
+      "actual_bytes": 78702260,
+      "checksum_algorithm": "sha256",
+      "expected_checksum": "692032d44a48d352430b9a22abab272f08fd429688402647b5f2180e9aeb35b0",
+      "actual_checksum": "692032d44a48d352430b9a22abab272f08fd429688402647b5f2180e9aeb35b0",
+      "schema": {
+        "status": "PASS",
+        "num_rows": 3937,
+        "num_row_groups": 1,
+        "columns": [
+          "application_number",
+          "claim_number",
+          "context",
+          "prior_art_specification",
+          "options",
+          "gold_answers",
+          "silver_answers",
+          "negative_answers"
+        ],
+        "types": {
+          "application_number": "string",
+          "claim_number": "int64",
+          "context": "string",
+          "prior_art_specification": "string",
+          "options": "string",
+          "gold_answers": "list<element: int64>",
+          "silver_answers": "list<element: int64>",
+          "negative_answers": "list<element: int64>"
+        }
+      },
+      "status": "PASS"
+    }
+  ],
+  "failure_count": 0
+}

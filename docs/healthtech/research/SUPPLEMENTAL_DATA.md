@@ -37,10 +37,44 @@ Negative cases ต้องแยกสามชนิด: verified negative ท
 4. **W03 + W07:** ใช้ Bridge เฉพาะเมื่อ reuse terms/cohort พร้อม จัด groups จาก reference patents/families, pin eligible-query universe/split และ preregister endpoint/margin ก่อน held-out run ห้าม tune จาก final queries ไม่มีแหล่งเสริมใดในตารางนี้แทน independent HT-T1 labels ที่ขาดได้โดยอัตโนมัติ
 5. **W16:** ใช้ [task template](../business/PILOT_TASK_TEMPLATE.md) เตรียมเทียบงานจริงกับ baseline workflow เมื่อมี public dossiers ไม่เพิ่ม experts เป็น gate ของ engineering แต่จำกัด claims ตามหลักฐาน ห้ามเปลี่ยน owner formative review เป็น expert gold
 
-ค่าดึง public metadata/official API ที่เสนอไม่มี subscription charge ที่พบในแหล่งอ้างอิง แต่ยังมีค่าแรง/storage/network และเงื่อนไขบริการ งบ paid inference รอบนี้ **$0** ไม่ได้อนุมัติ embedding/controller/judge batches ขนาด zip ด้านบนเป็นตัวเลขต้นทาง ไม่ใช่ actual download หรือ expanded storage; ไม่เสนอ full UDI/recall download เป็นก้าวแรก
+ใน migration/source-landscape pass เดิม ค่าดึง public metadata/official API ที่เสนอไม่มี subscription charge ที่พบในแหล่งอ้างอิง แต่ยังมีค่าแรง/storage/network และเงื่อนไขบริการ และงบ paid inference ถูกบันทึกเป็น **$0** ในรอบนั้น ข้อความนี้เป็น historical boundary; benchmark-expansion continuation ภายหลังมีเพดานสะสม USD100 ตาม owner record โดยไม่ reset ledger และไม่ใช่การอนุมัติให้ใช้จ่ายอัตโนมัติ ขนาด zip ด้านบนเป็นตัวเลขต้นทาง ไม่ใช่ actual download หรือ expanded storage
 
 ไม่มี owner decision ที่ต้องรอก่อนเดิน W04/local adapters ต่อ หากจะใช้ BioASQ ที่ต้องสมัคร, ติดต่อ Bridge ผู้ให้ข้อมูล, เก็บผู้ใช้จริง หรือใช้ paid service ให้เสนอ action/terms/cost ที่ชัดในรอบนั้น สิ่งที่ยังไม่พร้อมเหล่านี้ไม่บล็อก migration หรือ public synthetic engineering release
 
 ## Verification limits
 
-ตรวจ primary pages/repository metadata/selected paper passages เท่านั้น ยังไม่ได้ acquire หรือ profile แถวข้อมูลใหม่ ไม่มี independent cross-dataset medical-device patent benchmark ที่ยืนยันแล้วในรอบนี้ ClinicalTrials.gov เป็น candidate สำหรับ NLI4CT branch แต่ API terms page อ่านไม่ได้อย่างน่าเชื่อถือ จึงไม่รวมเป็น must-have หรือยืนยัน redistribution rights จนกว่าจะตรวจได้ หยุด retry แหล่งที่ติดแทนการอ้างว่าพร้อม
+ใน source-landscape pass ก่อน benchmark expansion ตรวจ primary pages/repository metadata/selected paper passages เท่านั้น และยังไม่ได้ acquire หรือ profile แถวข้อมูลใหม่ใน pass นั้น ClinicalTrials.gov เป็น candidate สำหรับ NLI4CT branch แต่ API terms page อ่านไม่ได้อย่างน่าเชื่อถือ จึงไม่รวมเป็น must-have หรือยืนยัน redistribution rights จนกว่าจะตรวจได้ หยุด retry แหล่งที่ติดแทนการอ้างว่าพร้อม; สถานะ acquisition ล่าสุดอยู่ใน addendum ด้านล่าง
+
+## Benchmark-expansion reproducibility addendum — 2026-11-01
+
+The staged benchmark-expansion continuation is now partially executed on candidate `cd7e5d364d529a001fc51f78c217c10d7d9c8945`.
+
+### Verified acquisition
+
+- Helmers `human_eval.zip`: 13,962,880 bytes; MD5 `83465f1a95805d963d4aabe085e2af98`.
+- PANORAMA PAR4PC and PI4PC validation/test: four Parquet files, 166,093,884 bytes total, all parsed with `pyarrow`.
+- All five files passed manifest/version, size/hash, archive/Parquet schema and rights checks. Raw payloads and full row-level predictions remain outside Git.
+- Existing DAPFAM, PatEmbed and multilingual-e5 vectors/rankings were reused; no re-download or re-embedding was performed.
+
+### Frozen split and runtime contract
+
+- Official validation/test assignment was retained. Cross-split application overlap was zero for PAR4PC and PI4PC.
+- Shared candidate IDs across official splits were reported as diagnostics (149 PAR4PC; 38 PI4PC) and not silently removed.
+- Ranking excluded `gold_answers`, `silver_answers`, `negative_answers`, post-examination outcomes and answer-derived queries.
+- Deterministic baseline used zero automatic retries and kept every failed row in the denominator.
+
+### Observed component results
+
+| Run | Rows / judged pairs | Primary result | Failures |
+|---|---:|---:|---:|
+| PAR4PC validation | 3,029 | macro gold hit@1 0.733575 | 0 |
+| PAR4PC test | 2,896 | macro gold hit@1 0.715124 | 0 |
+| PI4PC validation | 3,937 | macro gold hit@1 0.377699 | 0 |
+| PI4PC test | 3,402 | macro gold hit@1 0.401235 | 0 |
+| Helmers diagnostic | 10 targets / 450 pairs | macro AP 0.885450; macro AUC 0.880012 | not applicable |
+
+These metrics are component diagnostics. They do not establish adaptive dossier superiority, exhaustive device-patent recall, independent global relevance, user validation, revenue or ROI. The authoritative receipts are in `docs/healthtech/audits/benchmark-expansion-20261101/`.
+
+### Selected manifest extension
+
+Three additional small manifest-listed packages were acquired after the core component runs. PatSnap `data/test.parquet` passed SHA-256 and Parquet schema checks for 30 rows but was not scored. PatentsView AIR-UMASS/NBER passed Git blob SHA-1 and CSV schema checks for 185,250 and 216,847 rows, but standalone benchmark-data rights remain unresolved and the files were not used for scoring or release claims. AffRoDB passed MD5 and JSONL parsing for 1,374 rows; the required ROR v1.40 snapshot was not acquired, so no linkage score was run. These packages expand traceable inventory only and do not change the primary endpoint, split, fair-budget freeze, adaptive claim, or business-validation status.

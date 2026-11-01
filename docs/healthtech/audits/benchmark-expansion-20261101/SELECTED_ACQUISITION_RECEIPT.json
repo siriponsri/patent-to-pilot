@@ -1,0 +1,187 @@
+{
+  "receipt_version": "benchmark-expansion-selected-acquisition-v1",
+  "created_utc": "2026-11-01T04:21:43.574491+00:00",
+  "status": "PASS_SELECTED_ACQUISITION",
+  "manifest_path": "C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-o3-safety-repair-20261031\\docs\\healthtech\\audits\\pepo-dataset-benchmark-expansion-20261101\\download_manifest.json",
+  "manifest_sha256": "67c36586aec4e3ccc7834dd8c2869a563fda5a9fcf58043b138325285dcf3a79",
+  "payload_storage": "outside_git",
+  "datasets_selected": [
+    "AffRoDB",
+    "PatSnap claim-charting-bench",
+    "PatentsView AIR-UMASS/NBER assignee benchmarks"
+  ],
+  "files": [
+    {
+      "dataset": "PatSnap claim-charting-bench",
+      "path": "data\\test.parquet",
+      "url": "https://huggingface.co/datasets/PatSnap/claim-charting-bench/resolve/d89be100990c82d3425e23ad94dfd625906ce411/data/test.parquet",
+      "license": "cc-by-nc-4.0",
+      "source_version": "d89be100990c82d3425e23ad94dfd625906ce411",
+      "observed_utc": "2026-11-01T04:21:38.338417+00:00",
+      "local_path": "outside_git:_private_artifacts/healthtech/benchmark-expansion-20261101/PatSnap claim-charting-bench/data/test.parquet",
+      "rights": {
+        "metadata_reported_license": "cc-by-nc-4.0",
+        "source_rights_status": "NON_COMMERCIAL_LICENSE_REPORTED",
+        "permitted_scope": "local_research_only_until_rights_review",
+        "commercial_release": "NOT_CLEARED"
+      },
+      "head": {
+        "status": "PASS",
+        "http_status": 200,
+        "content_type": "application/octet-stream",
+        "content_length": 606434,
+        "resolved_host": "us.aws.cdn.hf.co"
+      },
+      "download_action": "REUSED_EXISTING",
+      "expected_bytes": 606434,
+      "actual_bytes": 606434,
+      "checksum_algorithm": "sha256",
+      "expected_checksum": "dfc132d52463865f5b453e7e7d7ddefcaeb94484539b1ef06e5e06654b23616a",
+      "actual_checksum": "dfc132d52463865f5b453e7e7d7ddefcaeb94484539b1ef06e5e06654b23616a",
+      "schema": {
+        "status": "PASS",
+        "num_rows": 30,
+        "num_row_groups": 1,
+        "columns": [
+          "data_id",
+          "lang",
+          "ipc_main",
+          "claim",
+          "target_paragraph",
+          "compare_paragraph",
+          "feature_res"
+        ],
+        "types": {
+          "data_id": "string",
+          "lang": "string",
+          "ipc_main": "string",
+          "claim": "string",
+          "target_paragraph": "string",
+          "compare_paragraph": "string",
+          "feature_res": "list<element: struct<claim_num: string, compare_feature: string, differ: string, feature_num: string, feature_weight: string, is_public: int64, reason: string, score: int64, target_feature: string, words: list<element: struct<compare_word: string, target_word: string>>>>"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "PatentsView AIR-UMASS/NBER assignee benchmarks",
+      "path": "pv_evaluation\\data\\assignee\\air-umass-assignees-benchmark.csv",
+      "url": "https://raw.githubusercontent.com/PatentsView/PatentsView-Evaluation/302fe8a8573b8fe552949843d2fb117400294e77/pv_evaluation/data/assignee/air-umass-assignees-benchmark.csv",
+      "license": "GPL-3.0 code; standalone benchmark-data rights not established by this task",
+      "source_version": "302fe8a8573b8fe552949843d2fb117400294e77",
+      "observed_utc": "2026-11-01T04:21:39.603965+00:00",
+      "local_path": "outside_git:_private_artifacts/healthtech/benchmark-expansion-20261101/PatentsView AIR-UMASS_NBER assignee benchmarks/pv_evaluation/data/assignee/air-umass-assignees-benchmark.csv",
+      "rights": {
+        "metadata_reported_license": "GPL-3.0 code; standalone benchmark-data rights not established by this task",
+        "source_rights_status": "UNRESOLVED_STANDALONE_DATA_RIGHTS",
+        "permitted_scope": "local_research_only_until_rights_review",
+        "commercial_release": "NOT_CLEARED"
+      },
+      "head": {
+        "status": "PASS",
+        "http_status": 200,
+        "content_type": "text/plain; charset=utf-8",
+        "content_length": 10128377,
+        "resolved_host": "raw.githubusercontent.com"
+      },
+      "download_action": "REUSED_EXISTING",
+      "expected_bytes": 10128377,
+      "actual_bytes": 10128377,
+      "checksum_algorithm": "git_blob_sha1",
+      "expected_checksum": "6e6d0a65bb1bf1b136ff429ac1483e935178dfe5",
+      "actual_checksum": "6e6d0a65bb1bf1b136ff429ac1483e935178dfe5",
+      "schema": {
+        "status": "PASS",
+        "num_rows": 185250,
+        "columns": [
+          "mention_id",
+          "unique_id",
+          "organization"
+        ],
+        "column_count": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "PatentsView AIR-UMASS/NBER assignee benchmarks",
+      "path": "pv_evaluation\\data\\assignee\\nber-subset-assignees-benchmark.csv",
+      "url": "https://raw.githubusercontent.com/PatentsView/PatentsView-Evaluation/302fe8a8573b8fe552949843d2fb117400294e77/pv_evaluation/data/assignee/nber-subset-assignees-benchmark.csv",
+      "license": "GPL-3.0 code; standalone benchmark-data rights not established by this task",
+      "source_version": "302fe8a8573b8fe552949843d2fb117400294e77",
+      "observed_utc": "2026-11-01T04:21:40.857338+00:00",
+      "local_path": "outside_git:_private_artifacts/healthtech/benchmark-expansion-20261101/PatentsView AIR-UMASS_NBER assignee benchmarks/pv_evaluation/data/assignee/nber-subset-assignees-benchmark.csv",
+      "rights": {
+        "metadata_reported_license": "GPL-3.0 code; standalone benchmark-data rights not established by this task",
+        "source_rights_status": "UNRESOLVED_STANDALONE_DATA_RIGHTS",
+        "permitted_scope": "local_research_only_until_rights_review",
+        "commercial_release": "NOT_CLEARED"
+      },
+      "head": {
+        "status": "PASS",
+        "http_status": 200,
+        "content_type": "text/plain; charset=utf-8",
+        "content_length": 15675077,
+        "resolved_host": "raw.githubusercontent.com"
+      },
+      "download_action": "REUSED_EXISTING",
+      "expected_bytes": 15675077,
+      "actual_bytes": 15675077,
+      "checksum_algorithm": "git_blob_sha1",
+      "expected_checksum": "3cd75b3275238a92974b627266351d8b304ee7e6",
+      "actual_checksum": "3cd75b3275238a92974b627266351d8b304ee7e6",
+      "schema": {
+        "status": "PASS",
+        "num_rows": 216847,
+        "columns": [
+          "mention_id",
+          "unique_id",
+          "organization"
+        ],
+        "column_count": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "AffRoDB",
+      "path": "datafile.json",
+      "url": "https://zenodo.org/api/records/15322098/files/datafile.json/content",
+      "license": "cc-zero",
+      "source_version": "1.0",
+      "observed_utc": "2026-11-01T04:21:42.603668+00:00",
+      "local_path": "outside_git:_private_artifacts/healthtech/benchmark-expansion-20261101/AffRoDB/datafile.json",
+      "rights": {
+        "metadata_reported_license": "cc-zero",
+        "source_rights_status": "SOURCE_METADATA_REPORTED",
+        "permitted_scope": "local_research_with_attribution",
+        "commercial_release": "REQUIRES_SEPARATE_REVIEW"
+      },
+      "head": {
+        "status": "PASS",
+        "http_status": 200,
+        "content_type": "text/plain; charset=utf-8",
+        "content_length": 614255,
+        "resolved_host": "zenodo.org"
+      },
+      "download_action": "REUSED_EXISTING",
+      "expected_bytes": 614255,
+      "actual_bytes": 614255,
+      "checksum_algorithm": "md5",
+      "expected_checksum": "09a570ea34ebfbb5f2348da866fc2331",
+      "actual_checksum": "09a570ea34ebfbb5f2348da866fc2331",
+      "schema": {
+        "status": "PASS",
+        "format": "jsonl",
+        "num_rows": 1374,
+        "sample_keys": [
+          "experts_judgements",
+          "extracted_dois",
+          "final_judgment",
+          "raw_affiliation_string"
+        ]
+      },
+      "status": "PASS"
+    }
+  ],
+  "failure_count": 0,
+  "failures": []
+}

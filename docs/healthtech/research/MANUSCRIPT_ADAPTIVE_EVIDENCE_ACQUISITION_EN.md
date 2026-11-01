@@ -47,6 +47,8 @@ Each input record preserves raw and canonical IDs, kind codes, source revision/h
 
 PatEmbed-base and multilingual-e5-base are used under the recorded model revisions and import receipts. DAPFAM is retained as a diagnostic component and is not a semantic device-patent gold set. SciFact is a separate evidence-verification component with its own labels, denominator, rights, and evaluation contract; its scores are not pooled with patent-association recall.
 
+The 1 November 2026 benchmark-expansion continuation adds a rights-checked Helmers human-evaluation archive and four PANORAMA validation/test files. A later selected-manifest extension also inspects PatSnap, PatentsView AIR-UMASS/NBER, and AffRoDB under separate rights and task-fit boundaries. Helmers is used only as a post-freeze selected-pool relevance diagnostic, while PANORAMA is used as a closed-candidate option/paragraph-selection component benchmark. None of these resources is treated as device-patent linkage gold or as a substitute for the matched adaptive dossier study.
+
 ## 5. Experimental design
 
 ### 5.1 Methods
@@ -145,6 +147,20 @@ The current frozen descriptive audits provide the following actual figure and ta
 - [Four-company holdout sensitivity audit](../audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md)
 - [Current O1-O4 browser report](../audits/ht-o4-remote-http-generation-browser-20261031/REPORT.md)
 
+### 7.6 Benchmark-expansion component diagnostics
+
+The post-freeze continuation acquired and verified five files from the staged manifest, then ran a deterministic CPU lexical baseline on the four official PANORAMA validation/test splits. The runtime did not read `gold_answers`, `silver_answers`, or `negative_answers` when ranking; all rows remained in the denominator and failed-output rate was zero.
+
+| Component | Split / pool | Units | Primary descriptive result | Failed-output rate |
+|---|---|---:|---:|---:|
+| PANORAMA PAR4PC | validation | 3,029 rows | macro gold option hit@1 = 0.733575 | 0.0 |
+| PANORAMA PAR4PC | test | 2,896 rows | macro gold option hit@1 = 0.715124 | 0.0 |
+| PANORAMA PI4PC | validation | 3,937 rows | macro gold paragraph hit@1 = 0.377699 | 0.0 |
+| PANORAMA PI4PC | test | 3,402 rows | macro gold paragraph hit@1 = 0.401235 | 0.0 |
+| Helmers | 10 targets / 450 judged pairs | 258 positive pairs | macro AP = 0.885450; macro AUC = 0.880012 | not applicable |
+
+The PANORAMA test rows are final component holdouts under the official application split, but shared candidate IDs across official splits are reported as a diagnostic (149 for PAR4PC and 38 for PI4PC) rather than silently removed. The Helmers judged pool was selected by the source authors and has no modern official dev/test split. These results therefore provide robustness and component evidence only; they do not estimate adaptive dossier superiority, exhaustive device-patent recall, or independent global relevance.
+
 ## 8. Practical business value as potential
 
 The system provides a plausible operational path for entrepreneurs and investor analysts because it exposes source locators, evidence states, unresolved items, editable history, and exportable dossiers. The evidence currently supports potential value in four measurable dimensions: citation/locator quality, evidence coverage, machine/GPU time, and cost-quality trade-off.
@@ -173,7 +189,11 @@ Data rights are handled per source and purpose. Restricted source text, private 
 
 The code, schemas, authored fixtures, audit manifests, protocol, model/configuration identifiers, and reproduction commands are stored in the repository. Private artifacts contain the exact prompts/messages, input/output hashes, errors, retries, latency, token/cost receipts, source hashes, and ledger state; they are not published when rights or privacy do not permit it. The public release should provide IDs, URLs, hashes, and acquisition instructions instead of restricted payloads.
 
-The exact current continuation candidate, test commands, and limitations must be recorded in the final audit checkpoint. Results from different candidates or different protocol manifests must not be combined into one PASS claim.
+The benchmark-expansion reproducibility addendum and machine-readable receipts are in [`SUPPLEMENTAL_DATA.md`](SUPPLEMENTAL_DATA.md) and [`benchmark-expansion-20261101`](../audits/benchmark-expansion-20261101/README.md). They bind the five acquired files, freeze rules, component metrics, and cleanup limitation to the continuation candidate.
+
+An additional manifest extension was inspected without changing the primary experiment: a 30-row PatSnap claim-charting file, two PatentsView assignee benchmark CSVs, and a 1,374-row AffRoDB JSONL file passed the recorded byte/hash/schema checks. PatSnap and AffRoDB remain unscored diagnostics; PatentsView remains excluded because standalone data rights were not established, and AffRoDB lacks the pinned ROR v1.40 registry needed for a valid linkage evaluation. These assets therefore do not add evidence for adaptive dossier superiority and are retained only as rights-aware reproducibility inventory.
+
+The exact current continuation candidate, test commands, and limitations are bound in the [`FINAL_EVALUATION_BINDING.json`](../audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json) and [`CHECKPOINT_V4.json`](../audits/benchmark-expansion-20261101/CHECKPOINT_V4.json) records. Results from different candidates or different protocol manifests must not be combined into one PASS claim.
 
 ## 11. Limitations
 
@@ -183,11 +203,13 @@ The exact current continuation candidate, test commands, and limitations must be
 4. Local `Qwen/Qwen3-8B` and API `qwen/qwen3-32b` differ in size and provider, so any comparison is configuration-level.
 5. Live paid API evidence remains conditional on the canonical ledger, current credit, route, rights, and reconciliation gates.
 6. DAPFAM is diagnostic and is not a device-patent gold set.
-7. No independent user validation, willingness-to-pay, revenue, ROI, clinical, legal, FTO, patent-validity, or investment conclusion is supported.
+7. PANORAMA measures closed-candidate examination choices, not the full evidence-acquisition loop; Helmers is a selected judged-pool diagnostic, not independent global gold.
+8. No independent user validation, willingness-to-pay, revenue, ROI, clinical, legal, FTO, patent-validity, or investment conclusion is supported.
+9. The selected optional/conditional manifest extension is not a new final benchmark: PatentsView rights remain unresolved, AffRoDB lacks its required registry snapshot, and the PatSnap file is too small and task-misaligned for the primary claim.
 
 ## 12. Conclusion
 
-The current evidence supports a reproducible patent-information workflow and a disciplined computational study design for adaptive evidence acquisition under incomplete judgments. The four-company sensitivity audit shows that the observed ranking varies by held-out company and that the simple fixed multi-query schedule is not uniformly dominant, but this is still a descriptive boundary finding rather than a superiority claim. The strongest defensible contribution is the combination of provenance-aware state separation, matched resource accounting, explicit unknowns, reproducible dossier operations, and honest quality-cost reporting. A stronger scientific conclusion requires a rights-cleared semantic judgment source or suitable benchmark, more independent groups, and a fully rerun final protocol. A stronger business conclusion requires future authorized user or customer evidence.
+The current evidence supports a reproducible patent-information workflow and a disciplined computational study design for adaptive evidence acquisition under incomplete judgments. The four-company sensitivity audit and the new PANORAMA/Helmers component results show that the pipeline can be evaluated against multiple task-shaped signals, while also exposing the limits of transferring option-selection or selected-pool relevance metrics into device-patent dossier claims. The strongest defensible contribution is the combination of provenance-aware state separation, matched resource accounting, explicit unknowns, reproducible dossier operations, and honest quality-cost reporting. A stronger scientific conclusion requires a matched final adaptive dossier study on independent groups with an appropriate semantic judgment source or benchmark. A stronger business conclusion requires future authorized user or customer evidence.
 
 ## Declarations
 
@@ -214,6 +236,9 @@ The following references are drawn from the checked local bibliography at `liter
 7. Su, W., Tang, Y., Ai, Q., Wu, Z., and Liu, Y. (2024). DRAGIN: Dynamic Retrieval Augmented Generation based on the Information Needs of Large Language Models. Proceedings of ACL 2024, 12991–13013. doi:10.18653/v1/2024.acl-long.702.
 8. Wu, M., Yang, H., Ben-Porat, O., and Ziser, Y. (2026). When Knowledge Is Not Free: Cost-Aware Evidence Selection in Retrieval-Augmented Generation. Findings of EMNLP 2026, 8713–8739. https://aclanthology.org/2026.findings-emnlp.413/.
 9. Poce, S., and Cerro, G. (2026). A survey on automated and AI-based tools for patent retrieval with a special focus on the life sciences domain. World Patent Information. doi:10.1016/j.wpi.2026.102439.
+10. Helmers, L., Horn, F., Biegler, F., Oppermann, T., and Müller, K.-R. (2019). Automating the search for a patent's prior art with a full text similarity search. PLOS ONE, 14(3), e0212103. doi:10.1371/journal.pone.0212103.
+11. Ayaou, I., Cavallucci, D., and Chibane, H. (2025). DAPFAM: A Domain-Aware Family-level Dataset to benchmark cross domain patent retrieval. arXiv:2506.22141.
+12. Lim, H., Nam, S., Na, S., Cho, J. Y., Yang, J. Y., Shin, H., Lee, Y., Kim, J., Lee, M., and Hong, H. (2025). PANORAMA: A Dataset and Benchmarks Capturing Decision Trails and Rationales in Patent Examination. NeurIPS 2025 Datasets and Benchmarks; arXiv:2510.24774.
 
 ## Author-review checklist
 

@@ -1,0 +1,79 @@
+{
+  "checkpoint_version": "ptp-o1-o4-acceptance-v1",
+  "created_date": "2026-11-01",
+  "status": "PARTIAL_O1_O2_O4_ENGINEERING_O3_PAID_BLOCKED_EXACT_HEAD_REVIEW_REQUIRED",
+  "goal": "Patent-to-Pilot O1-O4 long-run continuation",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+    "working_tree_state": "uncommitted_changes_present",
+    "tracked_diff_sha256": "b16872c4b4e7b540f3bd4e4db4b847e45021870bce8f1a8ac6d9e719cd1f97b9",
+    "root_main_merged": false,
+    "push_performed": false
+  },
+  "ownership": {
+    "filesystem_owner": "DESKTOP-C8EHASQ\\User",
+    "concurrent_worktrees_modified": [],
+    "scope_note": "Claude, Luna and owner worktrees preserved"
+  },
+  "outcomes": {
+    "O1": {
+      "status": "COMPLETE_EXACT_HEAD_ENGINEERING",
+      "fresh_checks": ["frontend unit 74/74", "loopback HTTP browser integration PASS", "backend HTTP/vector/history contract pytest PASS"]
+    },
+    "O2": {
+      "status": "COMPLETE_PRIOR_RUNTIME_PARTIAL_EXACT_HEAD",
+      "historical_receipt": "docs/healthtech/audits/ht-research-product-20261031/README.md",
+      "fresh_checks": ["transformer/vector/evaluation/cross-cohort pytest PASS"],
+      "remote_full_rerun": "NOT_RUN"
+    },
+    "O3": {
+      "status": "PARTIAL_LOCAL_COMPLETE_API_BLOCKED_LOCAL",
+      "local_receipt": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/generation-canary.json",
+      "local_schema_valid_cases": 3,
+      "api_provider_calls": 0,
+      "api_paid_cost_usd": 0.0,
+      "blockers": [
+        "canonical R1 ledger identity unresolved",
+        "current account credit/billing snapshot unresolved",
+        "outbound dossier-prompt rights unresolved",
+        "fresh route/parameter/pricing binding required"
+      ]
+    },
+    "O4": {
+      "status": "COMPLETE_PRIOR_REAL_CASE_ENGINEERING_PARTIAL_EXACT_HEAD",
+      "historical_receipt": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/browser-receipt.json",
+      "cases": ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"],
+      "schema_valid_cases": 3,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "fresh_exact_head_synthetic_acceptance": "PASS"
+    }
+  },
+  "research": {
+    "main_adaptive_dossier_study": "PARTIAL_NOT_EVALUATED_BY_THIS_PACK",
+    "benchmark_expansion": "PASS_OFFLINE_COMPONENT_RESULTS_BOUND_TO_PRE_RUN_FREEZE",
+    "external_business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED"
+  },
+  "fresh_verification": {
+    "frontend_unit": "PASS_74",
+    "browser_http_integration": "PASS_LOOPBACK_HISTORY_EXPORT",
+    "o1_contracts": "PASS_EXIT_0",
+    "o2_contracts": "PASS_EXIT_0",
+    "o3_contracts": "PASS_EXIT_0",
+    "full_python_suite": "PASS_EXIT_0",
+    "diff_check": "PASS",
+    "benchmark_rights_gate_regression": "PASS_6"
+  },
+  "resource_usage": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "gpu_jobs": 0,
+    "ledger_reset": false,
+    "top_up": false,
+    "participant_contact": false
+  },
+  "next_actual_action": "Do not dispatch paid API until the real R1 journal/all-attempt export and current authorized credit/billing evidence are available; otherwise continue offline closeout and prepare reviewed commit."
+}

@@ -2,7 +2,7 @@
 
 > Implementation checkpoint (27 October 2026): [migration and coverage](docs/healthtech/MIGRATION.md), [actual progress](docs/healthtech/progress.json). The pack’s starting statuses below are historical starting points; the full HealthTech study and product are not complete.
 
-**Version:** 1.1 · **วันที่:** 1 พฤศจิกายน 2026 (Asia/Bangkok) <br>
+**Version:** 1.2 · **วันที่:** 1 พฤศจิกายน 2026 (Asia/Bangkok) <br>
 **ประเภท:** System blueprint + work packages สำหรับ agent <br>
 **สถานะ:** Solo computational study + engineering continuation plan; external business validation ยังไม่ทำ และไม่มีผลทดลองใหม่ถูกอ้างว่ารันแล้วจนกว่าจะมี receipt ผูกกับ candidate เดียว <br>
 **เอกสารร่วม:** [GOAL.md](GOAL.md) · [README.md](README.md) · [RELATED_PAPERS.md](RELATED_PAPERS.md)
@@ -629,3 +629,27 @@ README ต้องบอก current foundation และ planned features ต�
 ## Migration support records — 27 October 2026
 
 แหล่งข้อมูลเสริมที่เสนอเพื่อรองรับ goals เดิม: [supplemental data](docs/healthtech/research/SUPPLEMENTAL_DATA.md) สถานะ implementation จริง: [coverage](docs/healthtech/MIGRATION.md) ข้อเสนอนี้ไม่เปลี่ยน scientific thesis, success criteria หรือ product scope ในเอกสารนี้
+
+## 18. Staged benchmark expansion — existing goal continuation
+
+**Source pack:** `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101/` (parent audit basis `f826069dddb74d4df9ca820a33c07355bec8b357`).
+
+**Authorization boundary:** owner has extended the project resource ceiling for this continuation to cumulative USD100 across providers, with the historical ledger preserved, the existing V100 and concurrency-one constraint preserved, and the deadline fixed at 2026-11-15 23:59 Asia/Bangkok. This is an execution boundary for new work, not a ledger reset or automatic credit/top-up grant.
+
+**Staged protocol:**
+
+1. Reuse existing DAPFAM, PatEmbed and multilingual-e5 vectors/rankings; verify hashes and source/config identity without re-downloading or re-embedding.
+2. Acquire only manifest-approved core-new files first: Helmers `human_eval.zip` and the four pinned PANORAMA PAR4PC/PI4PC validation/test Parquet files. Keep raw payloads outside Git.
+3. Verify each file against expected size/checksum, record acquisition timestamp and source response metadata, inspect archive/Parquet schema, and reject mismatches. Rights receipts must distinguish local research use from commercial redistribution.
+4. Run CPU integrity/BM25 and existing-ranking checks before any new representation or paid generation. Keep failures, missing fields, duplicate IDs and excluded rows in the denominator and receipts.
+5. Freeze eligible units, group keys, development/final splits, K, primary/secondary endpoints, budget accounting, retry rules and stopping criteria in a machine-readable manifest before touching final holdout results. Use validation for development and test as untouched final holdout; do not tune on test.
+6. Compare fixed, fixed multi-query, simple adaptive and bounded LLM adaptive controls with the same corpus, candidate universe, action library, generator, accounting and evidence order. Use existing vectors first; treat model-size/provider differences as configuration comparisons.
+7. Add Helmers as post-freeze relevance diagnostics and add optional organization/claim-charting datasets only after separate rights and task-fit review. Keep conditional or unresolved datasets out of the main claim.
+
+**Work packages:** `HT-W19` acquisition and receipts; `HT-W20` schema/group/split freeze; `HT-W21` CPU baseline and calibration; `HT-W22` final holdout evaluation; `HT-W23` manuscript tables, limitations and WPI reproducibility appendix.
+
+**Stopping rules:** stop a dataset branch on rights/hash/schema failure, stop new compute at the authorized USD100 cumulative ceiling or resource conflict, and stop final evaluation if the frozen candidate changes. A blocked paid branch does not block offline integrity, baseline, manuscript, or audit work.
+
+**Executed continuation checkpoint (2026-11-01):** the small manifest-listed extension acquired PatSnap, PatentsView AIR-UMASS/NBER, and AffRoDB after the core freeze. Hash/schema checks passed after correcting Git blob SHA-1 verification semantics; unresolved PatentsView rights and the missing ROR v1.40 snapshot keep these packages outside the primary final endpoint. Existing vectors/rankings, ledger identity, API cap, and GPU boundary were preserved.
+
+**Post-run binding:** actual component results after the pre-run freeze are recorded in `docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json` and `CHECKPOINT_V4.json`, bound to candidate base `cd7e5d364d529a001fc51f78c217c10d7d9c8945`, the protocol hash, freeze hash, and every split summary hash. Engineering for the component package is `COMPLETE`; scientific evidence is `PARTIAL`; the main adaptive claim is `NOT_EVALUATED_BY_THIS_PACK`; the paid/API branch remains gated.

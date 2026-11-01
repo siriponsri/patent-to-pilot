@@ -1,0 +1,68 @@
+{
+  "scope_version": "benchmark-expansion-selected-datasets-v1",
+  "created_date": "2026-11-01",
+  "goal": "Patent-to-Pilot O1-O4 continuation",
+  "manifest": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101/download_manifest.json",
+  "manifest_sha256": "67c36586aec4e3ccc7834dd8c2869a563fda5a9fcf58043b138325285dcf3a79",
+  "receipt": "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json",
+  "payload_storage": "outside_git",
+  "existing_assets_reused": [
+    "DAPFAM vectors/rankings",
+    "PatEmbed vectors",
+    "multilingual-e5 vectors"
+  ],
+  "datasets": [
+    {
+      "dataset": "PatSnap claim-charting-bench",
+      "status": "SCHEMA_VERIFIED_NOT_SCORED",
+      "bytes": 606434,
+      "sha256": "dfc132d52463865f5b453e7e7d7ddefcaeb94484539b1ef06e5e06654b23616a",
+      "schema": {
+        "format": "parquet",
+        "rows": 30,
+        "columns": ["data_id", "lang", "ipc_main", "claim", "target_paragraph", "compare_paragraph", "feature_res"]
+      },
+      "rights": "CC BY-NC 4.0 metadata reported; local research only and separate release review",
+      "scientific_role": "optional claim-charting diagnostic; not device-patent gold and not part of the primary adaptive endpoint"
+    },
+    {
+      "dataset": "PatentsView AIR-UMASS/NBER assignee benchmarks",
+      "status": "SCHEMA_VERIFIED_RIGHTS_UNRESOLVED_NOT_USED",
+      "files": [
+        {
+          "path": "air-umass-assignees-benchmark.csv",
+          "bytes": 10128377,
+          "git_blob_sha1": "6e6d0a65bb1bf1b136ff429ac1483e935178dfe5",
+          "rows": 185250
+        },
+        {
+          "path": "nber-subset-assignees-benchmark.csv",
+          "bytes": 15675077,
+          "git_blob_sha1": "3cd75b3275238a92974b627266351d8b304ee7e6",
+          "rows": 216847
+        }
+      ],
+      "schema_columns": ["mention_id", "unique_id", "organization"],
+      "rights": "Standalone benchmark-data rights are unresolved; repository GPL-3.0 code notice is not data authorization",
+      "scientific_role": "local schema/inventory only until rights and name-join protocol are separately cleared"
+    },
+    {
+      "dataset": "AffRoDB",
+      "status": "SCHEMA_VERIFIED_NOT_SCORED",
+      "bytes": 614255,
+      "md5": "09a570ea34ebfbb5f2348da866fc2331",
+      "schema": {
+        "format": "jsonl",
+        "rows": 1374,
+        "sample_keys": ["experts_judgements", "extracted_dois", "final_judgment", "raw_affiliation_string"]
+      },
+      "rights": "CC0 metadata reported; ROR v1.40 snapshot required before evaluation",
+      "scientific_role": "organization-linkage inventory/diagnostic only; no ROR-based score was run"
+    }
+  ],
+  "final_evaluation": {
+    "status": "NOT_RUN_FOR_SELECTED_DATASETS",
+    "reason": "No new endpoint or split was scored after the existing PANORAMA freeze; unresolved rights and missing ROR v1.40 block additional claims",
+    "fair_budget": "No paid/API/GPU budget consumed by this extension"
+  }
+}

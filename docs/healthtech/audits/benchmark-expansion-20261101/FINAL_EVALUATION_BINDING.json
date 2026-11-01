@@ -1,0 +1,139 @@
+{
+  "binding_version": "benchmark-expansion-final-binding-v1",
+  "bound_utc": "2026-11-01T04:00:06.9661687Z",
+  "goal": "Patent-to-Pilot O1-O4 continuation",
+  "candidate": {
+    "base_commit": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "state": "working_tree_uncommitted",
+    "dirty_file_count_at_binding": 16,
+    "push_or_merge_performed": false
+  },
+  "source_pack": {
+    "path": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101/",
+    "parent_commit": "f826069dddb74d4df9ca820a33c07355bec8b357",
+    "manifest_sha256": "67c36586aec4e3ccc7834dd8c2869a563fda5a9fcf58043b138325285dcf3a79"
+  },
+  "protocol": {
+    "path": "docs/healthtech/research/DATASET_BENCHMARK_EXPANSION_PROTOCOL_20261101_TH_EN.md",
+    "sha256": "f8da1a15b4d2b1bcf93dd9e24a4edcd6ec154529d625266fb197b70b8ac1275e"
+  },
+  "freeze": {
+    "path": "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_FREEZE.json",
+    "sha256": "42fdd9b7d505943f940b834f34e522b761d3651b6f7df44c51a509371c0e9f24",
+    "status": "FROZEN_COMPONENT_BENCHMARK_NOT_MAIN_ADAPTIVE",
+    "created_utc": "2026-11-01T03:01:06.8860302Z",
+    "applied_before_component_scoring": true,
+    "final_component_holdouts": ["PANORAMA PAR4PC test", "PANORAMA PI4PC test"],
+    "runtime_label_exclusions": ["gold_answers", "silver_answers", "negative_answers", "answer-derived queries"],
+    "retry_policy": "zero automatic retries for deterministic baseline",
+    "stopping_rule": "stop if candidate, protocol hash, dataset hash, split rule, or endpoint changes"
+  },
+  "staged_results": {
+    "core_acquisition": {
+      "status": "PASS",
+      "files_verified": 5,
+      "failures": 0,
+      "receipt": "docs/healthtech/audits/benchmark-expansion-20261101/ACQUISITION_RECEIPT.json",
+      "receipt_sha256": "cfda1577f52a0165cdcfaddc979ade6aba179c6d6481ad54cc2dbeaf97ca4217"
+    },
+    "panorama": {
+      "status": "PASS_COMPONENT_BASELINE",
+      "failed_output_rate_all_splits": 0.0,
+      "runs": [
+        {
+          "task": "PAR4PC",
+          "split": "validation",
+          "rows": 3029,
+          "failed_rows": 0,
+          "macro_gold_hit_at_1": 0.7335754374380984,
+          "summary": "docs/healthtech/audits/benchmark-expansion-20261101/PAR4PC_validation.json",
+          "summary_sha256": "a17a5d5ebc6f376268b9caeee985ed77747396ff9225164a6cd7021b8b902f2a"
+        },
+        {
+          "task": "PAR4PC",
+          "split": "test",
+          "rows": 2896,
+          "failed_rows": 0,
+          "macro_gold_hit_at_1": 0.7151243093922652,
+          "summary": "docs/healthtech/audits/benchmark-expansion-20261101/PAR4PC_test.json",
+          "summary_sha256": "030f64f5bd3f4750fe9aa53c08a23933159041bb865e96843838b754d62b0e83"
+        },
+        {
+          "task": "PI4PC",
+          "split": "validation",
+          "rows": 3937,
+          "failed_rows": 0,
+          "macro_gold_hit_at_1": 0.3776987553975108,
+          "summary": "docs/healthtech/audits/benchmark-expansion-20261101/PI4PC_validation.json",
+          "summary_sha256": "3f02c6b1b6f0df89612226b0e17e6154dff30876f3ec459781ca80f5d703ab71"
+        },
+        {
+          "task": "PI4PC",
+          "split": "test",
+          "rows": 3402,
+          "failed_rows": 0,
+          "macro_gold_hit_at_1": 0.4012345679012346,
+          "summary": "docs/healthtech/audits/benchmark-expansion-20261101/PI4PC_test.json",
+          "summary_sha256": "4979af246cdd077e299ce5cdc20463f735f729b40894b1b3821bb9ba0fb65f62"
+        }
+      ]
+    },
+    "helmers": {
+      "status": "PASS_DESCRIPTIVE_DIAGNOSTIC",
+      "targets": 10,
+      "judged_pairs": 450,
+      "positive_pairs": 258,
+      "macro_average_precision": 0.885450432614385,
+      "macro_auc": 0.880011844305422,
+      "summary": "docs/healthtech/audits/benchmark-expansion-20261101/HELMERS_DIAGNOSTIC.json",
+      "summary_sha256": "6e603ddf74c521a1c4122e5734603a381a4d37211983f1d9038a5f430dcdb89b",
+      "interpretation": "selected judged pool; post-freeze diagnostic, not independent global gold"
+    },
+    "selected_manifest_extension": {
+      "status": "PASS_SCHEMA_ONLY_OUT_OF_PRIMARY_ENDPOINT",
+      "files_verified": 4,
+      "rights_boundary": {
+        "PatSnap": "local research diagnostic only",
+        "PatentsView": "standalone benchmark-data rights unresolved; not scored",
+        "AffRoDB": "not scored without pinned ROR v1.40 snapshot"
+      },
+      "receipt": "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json",
+      "receipt_sha256": "7caa453fc480cb44a4481cf377b0435d4f16856e15714531faded4da479eb10e",
+      "receipt_revalidated_after_rights_gate_fix": true
+    }
+  },
+  "verification": {
+    "focused_benchmark_tests": "PASS; 6 passed",
+    "new_script_compile": "PASS",
+    "full_python_suite": "PASS; exit code 0; existing warnings and one existing skip only",
+    "git_diff_check": "PASS"
+  },
+  "resource_usage": {
+    "existing_vectors_redownloaded": false,
+    "existing_vectors_or_rankings_reused": true,
+    "paid_api_usd": 0.0,
+    "gpu_jobs": 0,
+    "ledger_reset": false,
+    "automatic_top_up": false,
+    "owner_authorized_cumulative_ceiling_usd": 100,
+    "deadline_bangkok": "2026-11-15T23:59:00+07:00"
+  },
+  "retained_failures_and_limits": [
+    "Initial PatentsView verifier failure used raw SHA-1 instead of Git blob semantics; corrected receipt and failure record are preserved, and failed bytes were not scored.",
+    "A 35,309,248-byte partial PI4PC test file remains outside Git and was not used as input.",
+    "The component package does not evaluate adaptive dossier superiority or exhaustive device-patent recall.",
+    "External business validation, user validation, willingness-to-pay, revenue, and ROI remain NOT_VALIDATED.",
+    "Paid API and GPU branches remain separately gated and were not started."
+  ],
+  "claim_boundary": {
+    "engineering": "COMPLETE_FOR_STAGED_COMPONENT_PACKAGE",
+    "scientific_evidence": "PARTIAL_COMPONENT_EVIDENCE_ONLY",
+    "main_adaptive_dossier_study": "NOT_EVALUATED_BY_THIS_PACK",
+    "business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED",
+    "submission_sent": false
+  },
+  "next_action": "Owner review the bound candidate, recheck official World Patent Information author instructions, then create a separate matched adaptive-study audit only if a rights-cleared cohort and current resource/ledger gates are available."
+}

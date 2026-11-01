@@ -1,0 +1,44 @@
+{
+  "checkpoint_version": "benchmark-expansion-v4-final-binding",
+  "created_date": "2026-11-01",
+  "status": "PASS_OFFLINE_COMPONENT_RESULTS_BOUND_TO_PRE_RUN_FREEZE_READY_FOR_OWNER_REVIEW",
+  "candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+  "candidate_state": "working_tree_uncommitted",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "binding": "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json",
+  "freeze": "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_FREEZE.json",
+  "protocol": "docs/healthtech/research/DATASET_BENCHMARK_EXPANSION_PROTOCOL_20261101_TH_EN.md",
+  "stages": {
+    "inventory": "PASS",
+    "core_acquisition": "PASS",
+    "rights_hash_schema": "PASS",
+    "pre_run_freeze": "PASS",
+    "panorama_validation": "PASS",
+    "panorama_test_holdout": "PASS_COMPONENT_ONLY",
+    "helmers_post_freeze_diagnostic": "PASS_DESCRIPTIVE",
+    "selected_manifest_extension": "PASS_SCHEMA_ONLY",
+    "main_adaptive_dossier_study": "NOT_EVALUATED_BY_THIS_PACK",
+    "paid_api": "BLOCKED_UNTIL_CANONICAL_LEDGER_CREDIT_ROUTE_RIGHTS_GATES",
+    "gpu": "NOT_RUN",
+    "external_business_validation": "NOT_VALIDATED"
+  },
+  "verification": {
+    "focused_benchmark_tests": "5 passed",
+    "full_python_suite": "exit code 0",
+    "compile": "PASS",
+    "diff_check": "PASS"
+  },
+  "resource_usage": {
+    "paid_api_usd": 0.0,
+    "gpu_jobs": 0,
+    "ledger_reset": false,
+    "existing_vectors_redownloaded": false,
+    "owner_authorized_cumulative_ceiling_usd": 100,
+    "deadline_bangkok": "2026-11-15T23:59:00+07:00"
+  },
+  "owner_review_required": [
+    "Recheck current official World Patent Information Aims and Scope and Guide for Authors.",
+    "Confirm author, funding, conflict, contribution, and AI-use declarations.",
+    "Do not treat component metrics as adaptive superiority, market validation, or journal acceptance."
+  ]
+}

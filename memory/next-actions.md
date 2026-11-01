@@ -836,3 +836,106 @@ authoritative O4 engineering evidence.
 Next: keep O4 engineering separate from scientific evidence, retain the sensitivity
 table in the manuscript, and continue only the independent offline or evidence-bound
 work while the paid and asset-gated branches remain closed.
+
+## HT-NEXT-086 — 2026-11-01 staged benchmark expansion component results
+
+Status: `PASS_OFFLINE_COMPONENT_RESULTS_READY_FOR_OWNER_REVIEW`; canonical audit:
+`docs/healthtech/audits/benchmark-expansion-20261101/README.md`.
+
+Completed the staged acquisition from the Pepo benchmark-expansion pack without
+reloading DAPFAM/PatEmbed/multilingual-e5 assets. Five files passed rights/version,
+size/hash, archive/Parquet schema and freeze checks. The deterministic PANORAMA
+baseline completed four validation/test runs with zero failed rows and the Helmers
+selected-pool diagnostic completed on 10 targets and 450 judged pairs. Results are
+component evidence only: the pack does not evaluate adaptive dossier superiority,
+exhaustive device-patent recall, user validation, revenue, willingness-to-pay or ROI.
+
+Focused benchmark tests pass `5/5`, new scripts compile, and `git diff --check`
+passes. No paid API call, GPU job, ledger change, or participant contact occurred.
+A stale partial download remains outside Git because shell cleanup was blocked; it
+was not used as an input.
+
+Next: owner review the uncommitted candidate and recheck the official World Patent
+Information author instructions before submission. If the main adaptive study is
+continued, create a separate matched protocol/audit with independent groups and
+appropriate semantic evaluation; keep paid/API and canonical-ledger gates intact.
+
+## HT-NEXT-087 - 2026-11-01 selected manifest datasets
+
+Status: `PASS_OFFLINE_ACQUISITION_SCOPE_EXTENDED_READY_FOR_OWNER_REVIEW`; checkpoint:
+`docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V3.json`.
+
+Acquired and verified the manifest-listed PatSnap claim-charting file, PatentsView
+AIR-UMASS/NBER assignee CSVs, and AffRoDB JSONL without reloading DAPFAM or
+re-embedding existing vectors. PatSnap and AffRoDB remain unscored diagnostics;
+PatentsView remains local inventory only because standalone benchmark-data rights
+are unresolved. The initial git-blob checksum interpretation failure is preserved
+in `SELECTED_ACQUISITION_FAILURES.json` and the corrected receipt is
+`SELECTED_ACQUISITION_RECEIPT.json`.
+
+No paid API call, GPU job, ledger mutation, or participant contact occurred.
+Next: bind any new adaptive final study only after rights-cleared groups, endpoint,
+split, and fair-budget controls are frozen; keep current API and ledger gates.
+
+## HT-NEXT-088 — 2026-11-01 post-freeze component binding
+
+Status: `PASS_OFFLINE_COMPONENT_RESULTS_BOUND_TO_PRE_RUN_FREEZE_READY_FOR_OWNER_REVIEW`;
+canonical binding: `docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json`;
+checkpoint: `docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V4.json`.
+
+Reconciled the staged benchmark continuation to candidate base
+`cd7e5d364d529a001fc51f78c217c10d7d9c8945` and the pre-run freeze. The four
+PANORAMA validation/test summaries and the Helmers diagnostic are now bound by
+protocol/freeze/result hashes. The focused benchmark suite is `5/5`, the full
+Python suite exits `0`, and the selected-manifest extension remains schema-only
+with PatentsView rights unresolved and AffRoDB unscored without ROR v1.40.
+
+The main adaptive dossier study remains `NOT_EVALUATED_BY_THIS_PACK`; paid API,
+GPU, external business validation, and submission remain gated or owner-review
+items. No ledger reset, top-up, participant contact, or push/merge occurred.
+
+## HT-NEXT-089 — 2026-11-01 exact-head O1-O4 acceptance and goal binding
+
+Status: `PARTIAL_O1_O2_O4_ENGINEERING_O3_PAID_BLOCKED_EXACT_HEAD_REVIEW_REQUIRED`;
+canonical audit: `docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/README.md`.
+
+The Pepo benchmark-expansion plan is now recorded as continuation work inside
+the existing Patent-to-Pilot goal. The source package was read first, existing
+DAPFAM/PatEmbed/multilingual-e5 vectors and rankings were reused, new manifest
+files were acquired only after rights/version/hash/schema checks, and the
+component results were bound to a pre-run freeze. PANORAMA validation/test
+baselines pass with zero failed rows; Helmers is a selected-pool diagnostic;
+PatentsView rights remain unresolved and AffRoDB is unscored without pinned ROR
+v1.40. No paid call, GPU job, ledger mutation, participant contact, top-up,
+push, or merge occurred.
+
+Fresh exact-head acceptance is recorded at the canonical audit above: frontend
+`74/74`, loopback HTTP history/export flow passes, O1/O2/O3 contract groups pass,
+full Python exits `0`, and `git diff --check` passes. O1 is exact-head
+engineering complete; O2/O4 retain their prior receipt boundaries; local O3
+generation is schema-valid for `3/3` cases, while live API comparison remains
+blocked on the canonical R1 journal, current credit, fresh route/pricing, and
+rights-cleared outbound prompt evidence. External business validation remains
+`NOT_VALIDATED_SOLO_PROJECT`; manuscript and WPI submission remain owner-review
+items.
+
+Next: review the bound candidate, commit only the intended changes, rerun exact-
+head acceptance on the committed candidate, and keep paid/GPU branches closed
+until their existing gates are met.
+
+## HT-NEXT-090 — 2026-11-01 rights-gate revalidation
+
+Status: `PASS_RIGHTS_CLASSIFICATION_REVALIDATED`; checkpoint:
+`docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V5.json`.
+
+The selected-manifest acquisition helper now treats `CC BY-NC` metadata as
+local-research-only and `NOT_CLEARED` for commercial release. The regression
+suite passes `6/6`, the four payloads were reused without redownload, and the
+selected receipt was regenerated with SHA-256
+`7caa453fc480cb44a4481cf377b0435d4f16856e15714531faded4da479eb10e`. V4 is
+preserved as the pre-fix checkpoint. No primary endpoint, vector/ranking asset,
+ledger, paid API, GPU job, participant route, push, or merge changed.
+
+Next: commit the reviewed candidate and rerun exact-head acceptance on the
+committed revision; keep optional selected datasets out of commercial and
+primary endpoint claims until their separate rights conditions are cleared.

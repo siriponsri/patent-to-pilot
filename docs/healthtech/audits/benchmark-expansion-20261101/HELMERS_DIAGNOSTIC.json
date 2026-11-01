@@ -1,0 +1,80 @@
+{
+  "run_version": "helmers-post-freeze-diagnostic-v1",
+  "status": "PASS_DESCRIPTIVE_DIAGNOSTIC",
+  "archive": "C:\\Users\\User\\Desktop\\myProject\\_private_artifacts\\healthtech\\benchmark-expansion-20261101\\Helmers expert human-evaluation\\human_eval.zip",
+  "targets": 10,
+  "judged_pairs": 450,
+  "positive_pairs": 258,
+  "macro_average_precision": 0.885450432614385,
+  "macro_auc": 0.880011844305422,
+  "method": "cosine similarity over pinned patfeats_human_eval term-count features",
+  "selection_bias": "judged pool selected by the source authors; target/pair rows are not independent global samples",
+  "not_claimed": [
+    "exhaustive recall",
+    "semantic device-patent gold",
+    "adaptive superiority",
+    "business validation"
+  ],
+  "per_target": {
+    "US20150018885": {
+      "pair_count": 48,
+      "positive_count": 30,
+      "average_precision": 0.9812201830518478,
+      "auc": 0.9648148148148148
+    },
+    "US20150025584": {
+      "pair_count": 33,
+      "positive_count": 19,
+      "average_precision": 0.8689160961357446,
+      "auc": 0.8646616541353384
+    },
+    "US20150029821": {
+      "pair_count": 40,
+      "positive_count": 28,
+      "average_precision": 0.9658555413819494,
+      "auc": 0.9077380952380952
+    },
+    "US20150066086": {
+      "pair_count": 37,
+      "positive_count": 18,
+      "average_precision": 0.9170791717360345,
+      "auc": 0.9269005847953217
+    },
+    "US20150066087": {
+      "pair_count": 64,
+      "positive_count": 35,
+      "average_precision": 0.8441302174244549,
+      "auc": 0.8886699507389163
+    },
+    "US20150073767": {
+      "pair_count": 40,
+      "positive_count": 24,
+      "average_precision": 0.8618463674066298,
+      "auc": 0.7942708333333334
+    },
+    "US20150085993": {
+      "pair_count": 46,
+      "positive_count": 25,
+      "average_precision": 0.9317153137307337,
+      "auc": 0.9238095238095239
+    },
+    "US20150119992": {
+      "pair_count": 71,
+      "positive_count": 47,
+      "average_precision": 0.9216868392009955,
+      "auc": 0.8519503546099291
+    },
+    "US20150190084": {
+      "pair_count": 36,
+      "positive_count": 16,
+      "average_precision": 0.7393852805268879,
+      "auc": 0.81875
+    },
+    "US20150238345": {
+      "pair_count": 35,
+      "positive_count": 16,
+      "average_precision": 0.8226693155485726,
+      "auc": 0.8585526315789473
+    }
+  }
+}
