@@ -1041,3 +1041,20 @@ remains owner-review required.
 Next: continue offline manuscript and reproducibility work. Open paid/GPU work
 only after the existing R1 journal, current credit, route/pricing, prompt-rights,
 and matched-evaluation gates are evidenced.
+
+## HT-NEXT-096 — 2026-11-01 current-head binding after checkpoint commit
+
+Status: `PASS_CURRENT_HEAD_DOCS_ONLY_BINDING_EXTERNAL_GATES_REMAIN`; checkpoint:
+`docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V8_CURRENT_HEAD.json`.
+
+Bound the checkpoint commit `47aa8ad2bcdc2cf32005de7f00ef904377fdc30e` to the
+prior runtime-equivalent `c2ec673d375f8ed8badfffeb115bed31c0cac526`. The commit
+changes only audit/report and next-action documentation; it does not change
+runtime code, vectors/rankings, payloads, ledger, provider configuration or GPU
+state. Full Python, frontend `74/74`, HTTP integration, benchmark `6/6`, compile,
+JSON and diff checks therefore remain valid under the documented docs-only rule.
+
+The objective is still active. Engineering is complete for the staged package,
+but the live API comparison, matched adaptive scientific study, external business
+validation and WPI submission remain incomplete or gated. Continue offline work;
+do not push/merge main until owner review and the external gates are complete.

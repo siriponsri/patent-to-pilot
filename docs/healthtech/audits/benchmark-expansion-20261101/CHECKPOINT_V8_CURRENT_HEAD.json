@@ -1,0 +1,63 @@
+{
+  "checkpoint_version": "benchmark-expansion-v8-current-head-docs-only-binding",
+  "created_utc": "2026-11-01T05:10:01.8254660Z",
+  "status": "PASS_CURRENT_HEAD_DOCS_ONLY_BINDING_EXTERNAL_GATES_REMAIN",
+  "goal": "Patent-to-Pilot O1-O4 existing goal continuation",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head": "47aa8ad2bcdc2cf32005de7f00ef904377fdc30e",
+    "parent_runtime_equivalent_head": "c2ec673d375f8ed8badfffeb115bed31c0cac526",
+    "working_tree_state": "clean",
+    "root_main_merged": false,
+    "push_performed": false
+  },
+  "change_scope": {
+    "runtime_code_changed_since_parent": false,
+    "changed_files": [
+      "docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V7_RESUME.json",
+      "docs/healthtech/audits/benchmark-expansion-20261101/RESUME_REPORT_TH.md",
+      "memory/next-actions.md"
+    ],
+    "payload_or_model_changed": false,
+    "ledger_changed": false,
+    "provider_or_gpu_state_changed": false
+  },
+  "verification": {
+    "full_python_suite": "PASS at parent runtime-equivalent head; exit code 0, 100% completion, existing warnings/skip only",
+    "frontend_unit": "PASS; 74 passed",
+    "http_integration": "PASS; history 1->2; source inspection; edit; JSON/TH/EN export; provider calls 0; paid USD0.00",
+    "benchmark_rights_suite": "PASS; 6 passed",
+    "compile_checks": "PASS",
+    "json_readback": "PASS",
+    "git_diff_check": "PASS",
+    "verification_rule": "Documentation-only HEAD delta; runtime-equivalent checks are carried forward without rerunning provider/GPU work"
+  },
+  "resource_and_safety_state": {
+    "paid_api_calls_this_continuation": 0,
+    "gpu_jobs_this_continuation": 0,
+    "ledger_reset": false,
+    "automatic_top_up": false,
+    "participant_contact": false,
+    "root_main_touched": false,
+    "claude_luna_owner_worktrees_touched": false
+  },
+  "status_by_dimension": {
+    "engineering": "COMPLETE_FOR_STAGED_COMPONENT_PACKAGE",
+    "scientific_evidence": "PARTIAL_COMPONENT_EVIDENCE_ONLY",
+    "main_adaptive_dossier_study": "NOT_EVALUATED",
+    "business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED",
+    "o3_api_comparison": "BLOCKED_LOCAL",
+    "o4_local_generation": "PRIOR_REMOTE_RECEIPT_ONLY_CURRENT_RUNTIME_NOT_AVAILABLE"
+  },
+  "remaining_gates": [
+    "current R1 canonical journal or sanitized all-attempt export plus writer-quiescence evidence",
+    "current authorized account-credit or billing snapshot",
+    "fresh route/parameter/pricing binding",
+    "rights-cleared outbound dossier-prompt manifest",
+    "matched adaptive evaluation cohort with admissible semantic or documented-link judgment source",
+    "owner review before push/merge and WPI author-page recheck"
+  ],
+  "next_action": "Continue independent offline manuscript, reproducibility and acceptance work; do not start paid/GPU work or merge main until the listed external gates are evidenced."
+}
