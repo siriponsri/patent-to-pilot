@@ -1,0 +1,28 @@
+{
+  "status": "PASS_OFFLINE_HTTP_QUEUE_REPAIR",
+  "base_head": "0cf41e0d37cac75bc9475c8604ab3dabb5c5fd66",
+  "branch": "codex/pepo-paused-audit-20261101",
+  "source_sha256": {
+    "src/patent_to_pilot/healthtech/http.py": "34e8ce2f1c284e69c107e3fafd892445c3f3b35fbc6b1966fe01d7a54f5f8115",
+    "tests/test_healthtech_http_queued_resume.py": "79b31897371c711bedcc328f1d1751ae59f3d9282ff163ea7cac0052aa354c43"
+  },
+  "tests": {
+    "passed": 481,
+    "skipped": [
+      {
+        "test": "tests.test_healthtech_repairs.test_onnx_tokenizer_uses_native_masks_types_and_deterministic_padding",
+        "reason": "pinned local tokenizer artifact is unavailable"
+      }
+    ],
+    "failed": 0,
+    "errors": 0,
+    "xml_sha256": "6ddaf5da4fb44ec370dfef1ce8533536c447b5a9d0b27fb315cc3040a95d51d6"
+  },
+  "verification_command": "python run_offline_tests.py --repo publish-http --output publish-suite (audit harness; direct reproduction: python -m pytest -p no:cacheprovider tests)",
+  "python": "3.12.10",
+  "pytest": "8.4.2",
+  "pydantic": "2.13.5",
+  "jsonschema": "4.26.0",
+  "resource_scope": "This repair validation only: no new paid/provider inference, GPU jobs, production-ledger mutation, credentials, or network acquisition. Synthetic temporary test ledgers are exercised.",
+  "owner_dirty_tree_included": false
+}

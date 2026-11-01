@@ -290,10 +290,16 @@ class HealthTechJobService:
 
     def _execute(self, job_id: str) -> None:
         started = _utc()
+        claimed = False
 
         def start(record: dict[str, Any]) -> dict[str, Any]:
-            if record["state"] == "cancelled":
+            nonlocal claimed
+            # A queued cancellation followed by resume can leave two callbacks
+            # in the executor. Only the first callback may claim queued work;
+            # a stale callback must not rerun a completed or failed attempt.
+            if record["state"] != "queued":
                 return record
+            claimed = True
             record["state"] = "running"
             record["attempt"] += 1
             record["cancel_requested"] = False
@@ -309,7 +315,7 @@ class HealthTechJobService:
             return record
 
         record = self.store.mutate(job_id, start)
-        if record["state"] == "cancelled":
+        if not claimed:
             return
         try:
             if self.execution_delay_seconds:
