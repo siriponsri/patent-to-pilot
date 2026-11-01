@@ -1,0 +1,38 @@
+{
+  "checkpoint_version": "benchmark-expansion-v6-committed-candidate",
+  "created_utc": "2026-11-01T04:32:24.0333459Z",
+  "status": "PASS_COMMITTED_CANDIDATE_EXACT_HEAD_REVALIDATED_READY_FOR_REVIEW",
+  "goal": "Patent-to-Pilot O1-O4 continuation",
+  "candidate": {
+    "commit": "80da253969f7973cc630ce03ac83da9900f16628",
+    "pre_run_scoring_commit": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "working_tree_state": "clean",
+    "root_main_merged": false,
+    "push_performed": false
+  },
+  "exact_head_checks": {
+    "full_python_suite": "PASS; exit code 0; one existing skip and existing warnings only",
+    "benchmark_rights_suite": "PASS; 6 passed",
+    "frontend_unit": "PASS; 74 passed",
+    "http_integration": "PASS; history 1->2; source inspection; JSON/TH/EN export; provider calls 0; paid USD 0.00",
+    "commit_secret_scan": "PASS; no credential-like patterns",
+    "staged_diff_check": "PASS before commit"
+  },
+  "rights_revalidation": {
+    "selected_receipt": "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json",
+    "selected_receipt_sha256": "7caa453fc480cb44a4481cf377b0435d4f16856e15714531faded4da479eb10e",
+    "payloads_redownloaded": false,
+    "cc_by_nc_commercial_release": "NOT_CLEARED"
+  },
+  "claim_boundary": {
+    "engineering": "COMPLETE_FOR_COMMITTED_STAGED_COMPONENT_PACKAGE",
+    "scientific_evidence": "PARTIAL_COMPONENT_EVIDENCE_ONLY",
+    "main_adaptive_dossier_study": "NOT_EVALUATED_BY_THIS_PACK",
+    "external_business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED",
+    "paid_api": "BLOCKED_LOCAL",
+    "gpu": "NOT_RUN"
+  },
+  "next_action": "Owner review the committed candidate; do not merge main until the remaining O3 and review gates are resolved."
+}

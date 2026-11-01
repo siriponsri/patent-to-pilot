@@ -12,8 +12,8 @@ benchmark receipts referenced with their original candidate boundaries.
 
 - Worktree: `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031`
 - Branch: `codex/research-product-o1-o4-20261031`
-- HEAD: `cd7e5d364d529a001fc51f78c217c10d7d9c8945`
-- Working tree: intentionally uncommitted; tracked diff SHA-256 `b16872c4b4e7b540f3bd4e4db4b847e45021870bce8f1a8ac6d9e719cd1f97b9`
+- HEAD: `80da253969f7973cc630ce03ac83da9900f16628`
+- Working tree: clean after reviewed commit; empty tracked diff SHA-256 `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`
 - Owner: `DESKTOP-C8EHASQ\\User`; concurrent Claude/Luna/owner worktrees were not modified
 - Root `main` was not merged, pushed, reset, cleaned, or force-updated
 
@@ -44,7 +44,7 @@ benchmark receipts referenced with their original candidate boundaries.
 | O3 API/ledger/repair pytest set | PASS, exit code 0 |
 | `python -m pytest -q` | PASS, exit code 0; existing warning/skip boundary preserved |
 | `python -m pytest -q tests/test_healthtech_benchmark_expansion.py` | PASS, 6 tests; CC BY-NC rights gate fail-closed regression included |
-| `git diff --check` | PASS with line-ending warnings only |
+| `git diff --check` | PASS; committed candidate is clean |
 
 ## Remaining gates
 
@@ -55,9 +55,8 @@ benchmark receipts referenced with their original candidate boundaries.
    rights, and single-account reservation at dispatch time.
 3. If those gates pass, run one bounded live API comparison on the exact frozen
    messages and record every attempt/cost; otherwise keep O3 API `BLOCKED_LOCAL`.
-4. Before merge, create a committed candidate, rerun exact-head acceptance,
-   perform required review checks, and only then integrate to `main` if the
-   acceptance policy remains satisfied.
+4. Before merge, perform required review checks on the committed candidate and
+   only then integrate to `main` if the acceptance policy remains satisfied.
 
 No paid call, GPU job, participant contact, ledger mutation, top-up, or branch
 cleanup occurred in this checkpoint.

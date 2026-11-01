@@ -1,9 +1,10 @@
 {
   "verification_version": "ptp-o1-o4-acceptance-v1",
   "verified_date": "2026-11-01",
-  "candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+  "candidate": "80da253969f7973cc630ce03ac83da9900f16628",
+  "pre_commit_candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
   "branch": "codex/research-product-o1-o4-20261031",
-  "working_tree_state": "uncommitted_changes_present",
+  "working_tree_state": "clean_committed",
   "checks": [
     {
       "name": "frontend_unit",

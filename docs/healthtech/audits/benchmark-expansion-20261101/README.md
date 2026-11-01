@@ -8,7 +8,8 @@ This audit continues the existing Patent-to-Pilot O1–O4 goal. It records the s
 
 - Source pack: `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101/`
 - Source pack report/manifest basis: parent audit commit `f826069dddb74d4df9ca820a33c07355bec8b357`
-- Candidate under test: `cd7e5d364d529a001fc51f78c217c10d7d9c8945`
+- Candidate under test: `80da253969f7973cc630ce03ac83da9900f16628`
+- Pre-run scoring candidate: `cd7e5d364d529a001fc51f78c217c10d7d9c8945`; the post-run rights classification fix is behaviorally isolated and committed in the candidate above.
 - Worktree: `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031`
 - Raw payload root: `C:/Users/User/Desktop/myProject/_private_artifacts/healthtech/benchmark-expansion-20261101` (outside Git)
 
@@ -32,7 +33,8 @@ The owner authorized cumulative USD100 across providers for this continuation, p
 - `FINAL_EVALUATION_FREEZE.json` — must be created only after schema/group review and before any final holdout score.
 - `FINAL_EVALUATION_BINDING.json` — post-run binding of the pre-run freeze, candidate base, protocol hash and every component result hash.
 - `CHECKPOINT_V5.json` — rights-gate revalidation after the selected-manifest receipt was regenerated without redownloading payloads.
-- `CHECKPOINT_V4.json` — current continuation checkpoint after the component results were bound.
+- `CHECKPOINT_V4.json` — preserved pre-fix continuation checkpoint after the component results were bound.
+- `CHECKPOINT_V6.json` — committed-candidate acceptance checkpoint after exact-head reruns.
 - `CHECKPOINT.json` — preserved core-acquisition checkpoint.
 - `CHECKPOINT_V3.json` — current selected-dataset continuation checkpoint and next action.
 - `REPORT_TH.md` — Thai checkpoint report with engineering, scientific, business and manuscript status.

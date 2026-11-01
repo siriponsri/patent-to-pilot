@@ -939,3 +939,24 @@ ledger, paid API, GPU job, participant route, push, or merge changed.
 Next: commit the reviewed candidate and rerun exact-head acceptance on the
 committed revision; keep optional selected datasets out of commercial and
 primary endpoint claims until their separate rights conditions are cleared.
+
+## HT-NEXT-091 — 2026-11-01 committed candidate acceptance
+
+Status: `PASS_COMMITTED_CANDIDATE_EXACT_HEAD_REVALIDATED_READY_FOR_REVIEW`;
+checkpoint: `docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V6.json`.
+
+Committed the reviewed candidate as `80da253969f7973cc630ce03ac83da9900f16628`
+on `codex/research-product-o1-o4-20261031`. Exact-head reruns pass: full Python
+suite exit `0`, benchmark rights suite `6/6`, frontend `74/74`, and loopback
+HTTP integration with source inspection, history `1 -> 2`, and JSON/TH/EN export.
+The working tree is clean and root `main` remains untouched.
+
+The benchmark freeze/scoring receipts remain tied to pre-run commit `cd7e5d3…`;
+the committed candidate adds only the reviewed non-commercial rights gate and
+documentation binding, with no vector/ranking, endpoint, ledger, paid API or
+GPU change. Main adaptive evaluation, live API comparison, external business
+validation, and WPI submission remain incomplete or gated.
+
+Next: perform owner/reviewer checks on the committed candidate; do not merge
+`main` while O3 canonical journal/credit/route/prompt-rights evidence and the
+matched adaptive study remain unresolved.

@@ -1,13 +1,15 @@
 {
-  "binding_version": "benchmark-expansion-final-binding-v1",
-  "bound_utc": "2026-11-01T04:00:06.9661687Z",
+  "binding_version": "benchmark-expansion-final-binding-v2-committed-candidate",
+  "bound_utc": "2026-11-01T04:32:24.0333459Z",
   "goal": "Patent-to-Pilot O1-O4 continuation",
   "candidate": {
-    "base_commit": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+    "base_commit": "80da253969f7973cc630ce03ac83da9900f16628",
+    "pre_run_scoring_commit": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+    "post_run_rights_fix_commit": "80da253969f7973cc630ce03ac83da9900f16628",
     "branch": "codex/research-product-o1-o4-20261031",
     "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
-    "state": "working_tree_uncommitted",
-    "dirty_file_count_at_binding": 16,
+    "state": "committed_clean",
+    "dirty_file_count_at_binding": 0,
     "push_or_merge_performed": false
   },
   "source_pack": {
@@ -135,5 +137,5 @@
     "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED",
     "submission_sent": false
   },
-  "next_action": "Owner review the bound candidate, recheck official World Patent Information author instructions, then create a separate matched adaptive-study audit only if a rights-cleared cohort and current resource/ledger gates are available."
+  "next_action": "Owner review the committed candidate and recheck official World Patent Information author instructions; create a separate matched adaptive-study audit only if a rights-cleared cohort and current resource/ledger gates are available."
 }

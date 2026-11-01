@@ -1,8 +1,9 @@
 {
   "verification_version": "benchmark-expansion-selected-v1",
   "verified_date": "2026-11-01",
-  "candidate_base": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
-  "candidate_state": "working_tree_uncommitted",
+  "candidate_base": "80da253969f7973cc630ce03ac83da9900f16628",
+  "pre_run_scoring_candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+  "candidate_state": "clean_committed",
   "status": "PASS_SELECTED_ACQUISITION_READY_FOR_OWNER_REVIEW",
   "commands": [
     {
