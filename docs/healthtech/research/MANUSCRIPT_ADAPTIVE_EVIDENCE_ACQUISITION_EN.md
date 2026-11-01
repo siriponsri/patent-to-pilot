@@ -2,7 +2,7 @@
 
 Status: `DRAFT_FOR_OWNER_REVIEW / SOLO_COMPUTATIONAL_STUDY / NOT_SUBMITTED`
 
-Target venue: *World Patent Information* (fit and author requirements must be rechecked by the owner immediately before submission).
+Target venue: *World Patent Information* (official scope checked on 2026-11-01; journal-specific author requirements still require owner recheck immediately before submission).
 
 ## Abstract
 
@@ -119,6 +119,23 @@ To reduce dependence on the single Stryker holdout, a separate sensitivity audit
 
 Across these four views, the observed macro Recall@20 ranges are 0.542857–1.000000 for HT-B0a, 0.809524–1.000000 for HT-B0b, 0.838095–1.000000 for HT-B1, 0.833333–1.000000 for HT-B2, and 0.838095–1.000000 for HT-B3. All eight development/holdout splits completed with zero failed devices, zero provider/network calls, and USD0.00 paid cost. The Stryker view is the lowest observed transfer case for HT-B0a, HT-B0b, HT-B1, and HT-B3; Cook is lowest for HT-B2. These repeated rows reuse the same local companies and source relations, so they are sensitivity diagnostics rather than independent samples or confirmatory inference. The source and machine-readable receipt are in [`luna-long-run-20261030-company-holdout-sensitivity-20261030`](../audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/README.md).
 
+### 7.2.1 Paired group uncertainty diagnostic
+
+A separate diagnostic aligned methods by the frozen `group_id` and compared each method with the lexical baseline HT-B0b. The predeclared minimum effective group threshold was five, but both development and final holdout contained only three effective groups. The diagnostic therefore reports descriptive mean deltas, population standard deviations, and ranges, with status `NOT_ESTIMABLE`; it does not report confidence intervals, significance, or a superiority claim.
+
+| Split | Comparison vs HT-B0b | Mean delta | Population SD | Min to max | Status |
+|---|---|---:|---:|---:|---|
+| Development | HT-B0a | -0.0516 | 0.0730 | -0.1548 to 0.0000 | NOT_ESTIMABLE |
+| Development | HT-B1 | 0.0000 | 0.0000 | 0.0000 to 0.0000 | NOT_ESTIMABLE |
+| Development | HT-B2 | 0.0000 | 0.0000 | 0.0000 to 0.0000 | NOT_ESTIMABLE |
+| Development | HT-B3 | 0.0000 | 0.0000 | 0.0000 to 0.0000 | NOT_ESTIMABLE |
+| Final holdout | HT-B0a | -0.1333 | 0.1886 | -0.4000 to 0.0000 | NOT_ESTIMABLE |
+| Final holdout | HT-B1 | -0.0190 | 0.1406 | -0.2000 to 0.1429 | NOT_ESTIMABLE |
+| Final holdout | HT-B2 | -0.0190 | 0.1406 | -0.2000 to 0.1429 | NOT_ESTIMABLE |
+| Final holdout | HT-B3 | -0.0667 | 0.0943 | -0.2000 to 0.0000 | NOT_ESTIMABLE |
+
+The observed wall-time/recall frontier remains HT-B0a and HT-B0b in both frozen views. This diagnostic strengthens uncertainty reporting but does not create semantic relevance gold or independent samples. Reproduction and machine-readable values are in [`luna-long-run-20261029-m12-group-uncertainty-20261029`](../audits/luna-long-run-20261029-m12-group-uncertainty-20261029/README.md).
+
 ### 7.3 Provider-shaped mock control
 
 | Method | Final holdout macro Recall@20 |
@@ -193,7 +210,7 @@ The benchmark-expansion reproducibility addendum and machine-readable receipts a
 
 An additional manifest extension was inspected without changing the primary experiment: a 30-row PatSnap claim-charting file, two PatentsView assignee benchmark CSVs, and a 1,374-row AffRoDB JSONL file passed the recorded byte/hash/schema checks. PatSnap and AffRoDB remain unscored diagnostics; PatentsView remains excluded because standalone data rights were not established, and AffRoDB lacks the pinned ROR v1.40 registry needed for a valid linkage evaluation. These assets therefore do not add evidence for adaptive dossier superiority and are retained only as rights-aware reproducibility inventory.
 
-The component scores were run on pre-run candidate `cd7e5d364d529a001fc51f78c217c10d7d9c8945`. The reviewed implementation candidate is `80da253969f7973cc630ce03ac83da9900f16628`; the current `41e5923664921ba5d0b34d2084d015dadf6ab5ea` commit adds audit/acceptance metadata only and does not change the scored implementation. The exact candidate binding, test commands, and limitations are recorded in [`FINAL_EVALUATION_BINDING.json`](../audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json) and [`CHECKPOINT_V6.json`](../audits/benchmark-expansion-20261101/CHECKPOINT_V6.json). Results from different candidates or different protocol manifests must not be combined into one PASS claim.
+The component scores were run on pre-run candidate `cd7e5d364d529a001fc51f78c217c10d7d9c8945`. The reviewed implementation candidate is `80da253969f7973cc630ce03ac83da9900f16628`; the later `41e5923664921ba5d0b34d2084d015dadf6ab5ea` commit added audit/acceptance metadata only, and subsequent continuation commits change documentation only. The exact candidate binding, test commands, and limitations are recorded in [`FINAL_EVALUATION_BINDING.json`](../audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json) and [`CHECKPOINT_V6.json`](../audits/benchmark-expansion-20261101/CHECKPOINT_V6.json). Results from different candidates or different protocol manifests must not be combined into one PASS claim.
 
 ## 11. Limitations
 
@@ -243,7 +260,7 @@ The following references are drawn from the checked local bibliography at `liter
 ## Author-review checklist
 
 - Confirm author names, affiliations, funding, conflicts, and contribution statement.
-- Recheck the official World Patent Information aims and scope and Guide for Authors immediately before submission.
+- Recheck the official World Patent Information Guide for Authors and journal-specific submission fields immediately before submission; the scope check is recorded in [`WPI_SUBMISSION_CHECKLIST_20261101_EN.md`](WPI_SUBMISSION_CHECKLIST_20261101_EN.md).
 - Rebind every table and figure to the final candidate revision and one protocol manifest.
 - Confirm whether the final paper includes only published/permitted aggregate outputs and source identifiers.
 - Keep human pilot, customer validation, revenue, willingness-to-pay, and ROI as future work unless new evidence is added.

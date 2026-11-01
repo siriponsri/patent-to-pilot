@@ -47,7 +47,7 @@ Negative cases ต้องแยกสามชนิด: verified negative ท
 
 ## Benchmark-expansion reproducibility addendum — 2026-11-01
 
-The staged benchmark-expansion component scores were run on pre-run candidate `cd7e5d364d529a001fc51f78c217c10d7d9c8945`. The reviewed implementation candidate is `80da253969f7973cc630ce03ac83da9900f16628`; the current `41e5923664921ba5d0b34d2084d015dadf6ab5ea` commit adds audit/acceptance metadata only and does not change the scored implementation. The reviewed candidate is clean and bound by `CHECKPOINT_V6.json` and `FINAL_EVALUATION_BINDING.json`.
+The staged benchmark-expansion component scores were run on pre-run candidate `cd7e5d364d529a001fc51f78c217c10d7d9c8945`. The reviewed implementation candidate is `80da253969f7973cc630ce03ac83da9900f16628`; the later `41e5923664921ba5d0b34d2084d015dadf6ab5ea` commit added audit/acceptance metadata only, and subsequent continuation commits change documentation only. The reviewed candidate is clean and bound by `CHECKPOINT_V6.json` and `FINAL_EVALUATION_BINDING.json`.
 
 ### Verified acquisition
 
@@ -78,3 +78,7 @@ These metrics are component diagnostics. They do not establish adaptive dossier 
 ### Selected manifest extension
 
 Three additional small manifest-listed packages were acquired after the core component runs. PatSnap `data/test.parquet` passed SHA-256 and Parquet schema checks for 30 rows but was not scored. PatentsView AIR-UMASS/NBER passed Git blob SHA-1 and CSV schema checks for 185,250 and 216,847 rows, but standalone benchmark-data rights remain unresolved and the files were not used for scoring or release claims. AffRoDB passed MD5 and JSONL parsing for 1,374 rows; the required ROR v1.40 snapshot was not acquired, so no linkage score was run. These packages expand traceable inventory only and do not change the primary endpoint, split, fair-budget freeze, adaptive claim, or business-validation status.
+
+### Existing uncertainty diagnostic
+
+The manuscript also cites the earlier paired group uncertainty diagnostic at [`luna-long-run-20261029-m12-group-uncertainty-20261029`](../audits/luna-long-run-20261029-m12-group-uncertainty-20261029/README.md). It aligns methods by frozen group ID, compares against HT-B0b, and reports descriptive deltas only because the effective group count is three versus the predeclared minimum of five. The diagnostic is `NOT_ESTIMABLE` and does not support confidence intervals, significance, or adaptive superiority.

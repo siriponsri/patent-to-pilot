@@ -960,3 +960,25 @@ validation, and WPI submission remain incomplete or gated.
 Next: perform owner/reviewer checks on the committed candidate; do not merge
 `main` while O3 canonical journal/credit/route/prompt-rights evidence and the
 matched adaptive study remain unresolved.
+
+## HT-NEXT-092 — 2026-11-01 official WPI venue check
+
+Status: `PASS_SCOPE_CHECKED_GUIDE_RECHECK_REQUIRED / NOT_SUBMITTED`;
+canonical audit: `docs/healthtech/audits/wpi-venue-check-20261101/README.md`.
+
+Reviewed the official Elsevier journal profile for *World Patent Information*.
+The stated interdisciplinary patent-information scope is conditionally aligned
+with the manuscript's patent-information evidence-acquisition question and
+medical-device application setting. The journal-specific ScienceDirect aims/scope
+and author pages returned HTTP 403 in the local environment, so the checklist
+now records a scope pass with an owner recheck gate for article type, formatting,
+word limits, declarations, and submission fields. The manuscript, checklist,
+cover-letter draft, and supplemental data were updated accordingly.
+
+No manuscript was submitted, no publisher terms were accepted, and no paid API,
+GPU, ledger, participant, code-runtime, or dataset state changed.
+
+Next: owner recheck the journal-specific author page in an authorized session,
+confirm final author/declaration details, and review the committed documentation
+candidate before any push or merge. Keep the main adaptive study and paid branch
+separately labeled until their own evidence gates are satisfied.

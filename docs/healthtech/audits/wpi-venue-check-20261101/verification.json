@@ -1,0 +1,48 @@
+{
+  "checkpoint_version": "wpi-venue-check-v1",
+  "checked_date": "2026-11-01",
+  "status": "PASS_SCOPE_CHECKED_GUIDE_RECHECK_REQUIRED",
+  "goal": "Patent-to-Pilot O1-O4 continuation",
+  "venue": "World Patent Information",
+  "scope": {
+    "source": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+    "finding": "conditionally_fit_patent_information_interdisciplinary_medical_device_application",
+    "submission_sent": false
+  },
+  "journal_specific_pages": {
+    "aims_and_scope": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope",
+      "observed": "HTTP_403_LOCAL_ENVIRONMENT",
+      "owner_recheck_required": true
+    },
+    "guide_for_authors": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/about/authors",
+      "observed": "HTTP_403_LOCAL_ENVIRONMENT",
+      "owner_recheck_required": true
+    }
+  },
+  "general_policy_source": {
+    "url": "https://www.elsevier.com/authors/policies-and-guidelines",
+    "use": "broad_submission_obligations_only",
+    "not_substitute_for_journal_specific_guide": true
+  },
+  "package_paths": [
+    "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md",
+    "docs/healthtech/research/WPI_COVER_LETTER_DRAFT_20261101_EN.md",
+    "docs/healthtech/research/SUPPLEMENTAL_DATA.md"
+  ],
+  "claims_not_supported": [
+    "journal_acceptance",
+    "submission_on_behalf_of_owner",
+    "external_business_validation",
+    "independent_user_validation",
+    "revenue_or_roi"
+  ],
+  "side_effects": {
+    "paid_api_calls": 0,
+    "gpu_jobs": 0,
+    "ledger_reset": false,
+    "participant_contact": false
+  }
+}

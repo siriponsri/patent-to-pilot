@@ -399,7 +399,7 @@ Helmers ใช้เป็น external relevance diagnostic หลัง freeze 
 
 การ continuation รอบเดียวกันรับ PatSnap, PatentsView AIR-UMASS/NBER และ AffRoDB ตาม manifest เพิ่มแล้ว โดยแยก schema/hash receipt ออกจากผลหลัก: PatSnap และ AffRoDB ยังไม่ score ส่วน PatentsView ถูกเก็บเป็น local inventory ที่ rights ยังไม่ชัดและไม่ถูกใช้สร้าง claim ใด การขยายนี้ไม่เปลี่ยน endpoint, split, fair-budget freeze หรือสถานะ O1-O4 เดิม
 
-ผล component หลัง freeze ถูกผูกกับ candidate/protocol/result hashes ใน [final evaluation binding](docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json) และ [checkpoint V4](docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V4.json) แล้ว: PANORAMA validation/test ทั้ง 4 runs ผ่านโดยไม่มี failed rows และ Helmers ผ่านในฐานะ selected-pool diagnostic ผลนี้เป็นหลักฐาน component เท่านั้น; main adaptive dossier study, paid API comparison, external business validation และ journal submission ยังไม่ใช่ COMPLETE
+ผล component หลัง freeze ถูกผูกกับ candidate/protocol/result hashes ใน [final evaluation binding](docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json) และ [checkpoint V6](docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V6.json) แล้ว: PANORAMA validation/test ทั้ง 4 runs ผ่านโดยไม่มี failed rows และ Helmers ผ่านในฐานะ selected-pool diagnostic ผลนี้เป็นหลักฐาน component เท่านั้น; main adaptive dossier study, paid API comparison, external business validation และ journal submission ยังไม่ใช่ COMPLETE
 
 ## Migration support records — 27 October 2026
 

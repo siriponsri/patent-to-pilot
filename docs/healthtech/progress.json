@@ -652,5 +652,8 @@
   "latest_benchmark_expansion_binding": "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json",
   "latest_benchmark_expansion_status": "PASS_COMMITTED_CANDIDATE_EXACT_HEAD_REVALIDATED_READY_FOR_REVIEW",
   "latest_benchmark_expansion_candidate": "80da253969f7973cc630ce03ac83da9900f16628",
-  "latest_benchmark_expansion_selected_receipt": "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json"
+  "latest_benchmark_expansion_selected_receipt": "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json",
+  "latest_wpi_venue_check_audit": "docs/healthtech/audits/wpi-venue-check-20261101/README.md",
+  "latest_wpi_venue_check_verification": "docs/healthtech/audits/wpi-venue-check-20261101/verification.json",
+  "latest_wpi_venue_check_status": "PASS_SCOPE_CHECKED_GUIDE_RECHECK_REQUIRED_NOT_SUBMITTED"
 }
