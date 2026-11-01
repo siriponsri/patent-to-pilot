@@ -8,6 +8,7 @@ never resolve through the live registry.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from contextlib import closing
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -74,36 +75,40 @@ def _validate_digest(value: Any, label: str) -> str:
     return value
 
 
-def _validate_existing_sqlite_journal(path: Path, *, authorization_id: str, policy_hash: str) -> None:
+def _validate_existing_sqlite_journal(path: Path, *, authorization_id: str, policy_hash: str) -> str:
     """Reject a readable SQLite journal from the wrong policy or namespace.
 
-    Non-SQLite files remain bindable for registry-only tests and future storage
-    adapters; the live SQLite budget path is checked before a registry write.
+    A binding cannot manufacture history or promote a mock/empty file.
     """
     try:
         with path.open("rb") as handle:
             if handle.read(16) != b"SQLite format 3\x00":
-                return
+                raise CanonicalLedgerError("canonical ledger must be an existing SQLite R1 journal")
     except OSError as exc:
         raise CanonicalLedgerError("canonical ledger journal is unreadable") from exc
     try:
-        with sqlite3.connect(f"file:{path.as_posix()}?mode=ro", uri=True) as db:
+        with closing(sqlite3.connect(path.as_uri() + "?mode=ro", uri=True)) as db:
             tables = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
             if "budget_meta" not in tables:
                 raise CanonicalLedgerError("existing SQLite journal is not a compatible R1 budget ledger")
             hashes = db.execute("SELECT policy_hash FROM budget_meta").fetchall()
             if hashes != [(policy_hash,)]:
                 raise CanonicalLedgerError("existing SQLite journal policy hash differs from the requested authorization")
-            if "budget_ledger_meta" in tables:
-                row = db.execute(
-                    "SELECT authorization_id, namespace FROM budget_ledger_meta WHERE singleton=1"
-                ).fetchone()
-                if row is not None:
-                    journal_authorization, namespace = row
-                    if journal_authorization not in {None, authorization_id}:
-                        raise CanonicalLedgerError("existing SQLite journal authorization differs from the requested authorization")
-                    if namespace != "canonical":
-                        raise CanonicalLedgerError("mock or non-canonical SQLite journal cannot be bound for live dispatch")
+            if "budget_ledger_meta" not in tables:
+                raise CanonicalLedgerError("journal has no canonical identity; recovery review required")
+            row = db.execute(
+                "SELECT authorization_id,namespace,ledger_id,canonical_path FROM budget_ledger_meta WHERE singleton=1"
+            ).fetchone()
+            if row is None or row[0] != authorization_id or row[1] != "canonical":
+                raise CanonicalLedgerError("mock or non-canonical SQLite journal cannot be bound for live dispatch")
+            if _absolute(row[3]) != path:
+                raise CanonicalLedgerError("copied or relocated journal requires explicit recovery review")
+            from .history_review import read_history_anchor
+            try:
+                read_history_anchor(db, authorization_id, row[2])
+            except ValueError as exc:
+                raise CanonicalLedgerError(str(exc)) from None
+            return row[2]
     except CanonicalLedgerError:
         raise
     except sqlite3.Error as exc:
@@ -149,11 +154,15 @@ def register_canonical_ledger(
     path = _absolute(ledger_path)
     if not path.is_file():
         raise CanonicalLedgerError("cannot register a missing ledger journal")
-    _validate_existing_sqlite_journal(path, authorization_id=authorization_id, policy_hash=policy_hash)
-    registry = _absolute(registry_path or default_registry_path(authorization_id))
+    recorded_id = _validate_existing_sqlite_journal(path, authorization_id=authorization_id, policy_hash=policy_hash)
+    if ledger_id is not None and ledger_id != recorded_id:
+        raise CanonicalLedgerError("ledger ID differs from the reviewed journal")
+    registry = _absolute(default_registry_path(authorization_id))
+    if registry_path is not None and _absolute(registry_path) != registry:
+        raise CanonicalLedgerError("alternate registry paths cannot mint another authorization")
     binding = CanonicalLedgerBinding(
         authorization_id=authorization_id,
-        ledger_id=ledger_id or f"{authorization_id}:canonical",
+        ledger_id=recorded_id,
         ledger_path=path,
         policy_hash=_validate_digest(policy_hash, "policy hash"),
         pricing_snapshot_sha256=_validate_digest(pricing_snapshot_sha256, "pricing snapshot hash"),
@@ -167,7 +176,7 @@ def register_canonical_ledger(
             existing = _binding_from_dict(json.loads(registry.read_text(encoding="utf-8")), registry, authorization_id)
         except (OSError, json.JSONDecodeError) as exc:
             raise CanonicalLedgerError("canonical ledger registry is unreadable") from exc
-        if existing != binding:
+        if (existing.authorization_id, existing.ledger_id, existing.ledger_path, existing.policy_hash) != (binding.authorization_id, binding.ledger_id, binding.ledger_path, binding.policy_hash):
             raise CanonicalLedgerError("authorization is already bound to a different ledger or pricing snapshot")
         return existing
     registry.parent.mkdir(parents=True, exist_ok=True)
@@ -184,6 +193,7 @@ def register_canonical_ledger(
             pricing_snapshot_sha256=pricing_snapshot_sha256,
             pricing_snapshot_utc=pricing_snapshot_utc,
             registry_path=registry,
+            requested_path=path,
         )
     return binding
 
@@ -198,7 +208,9 @@ def resolve_canonical_ledger(
     registry_path: str | Path | None = None,
 ) -> CanonicalLedgerBinding:
     """Resolve the one live ledger and reject path substitution."""
-    registry = _absolute(registry_path or default_registry_path(authorization_id))
+    registry = _absolute(default_registry_path(authorization_id))
+    if registry_path is not None and _absolute(registry_path) != registry:
+        raise CanonicalLedgerError("alternate registry paths cannot mint another authorization")
     if not registry.is_file():
         raise CanonicalLedgerError(
             f"canonical ledger registry is missing for {authorization_id}; reconcile the existing journal before paid dispatch"
@@ -212,19 +224,17 @@ def resolve_canonical_ledger(
     binding = _binding_from_dict(raw, registry, authorization_id)
     if not binding.ledger_path.is_file():
         raise CanonicalLedgerError("canonical ledger journal is missing; do not create a replacement")
-    _validate_existing_sqlite_journal(
+    recorded_id = _validate_existing_sqlite_journal(
         binding.ledger_path,
         authorization_id=authorization_id,
         policy_hash=policy_hash,
     )
+    if recorded_id != binding.ledger_id:
+        raise CanonicalLedgerError("registry identity differs from reviewed journal")
     if requested_path is not None and _absolute(requested_path) != binding.ledger_path:
         raise CanonicalLedgerError("requested budget path is not the registered canonical ledger")
     if binding.policy_hash != _validate_digest(policy_hash, "policy hash"):
         raise CanonicalLedgerError("canonical ledger policy hash differs from the verified R1 policy")
-    if binding.pricing_snapshot_sha256 != _validate_digest(pricing_snapshot_sha256, "pricing snapshot hash"):
-        raise CanonicalLedgerError("canonical ledger pricing snapshot differs from the verified R1 policy")
-    if binding.pricing_snapshot_utc != pricing_snapshot_utc:
-        raise CanonicalLedgerError("canonical ledger pricing snapshot time differs from the verified R1 policy")
     return binding
 
 

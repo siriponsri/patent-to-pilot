@@ -733,3 +733,83 @@ Status: `PASS_HISTORICAL_JOURNAL_RECONCILED_R1_CANONICAL_STILL_BLOCKED`; canonic
 Recovered the preserved Phase A and paired-revalidation SQLite journals in read-only mode. Their hashes and receipt chain reconcile to `USD0.0001464` actual debit with zero unknown-pending attempts, but both use the legacy `attempts/meta` schema and are not the current R1 canonical ledger. Added a fail-closed registry check that rejects legacy-policy SQLite journals and mock namespaces before registry creation; focused ledger/provider regressions pass `29/29`, and the full repository suite passes `508/508` with one existing optional skip. No journal was copied, rewritten, rebound, or used for paid dispatch.
 
 Next: obtain only the current R1 canonical journal location or sanitized all-attempt export plus the current credit/billing snapshot. Do not request the existing USD8 authorization again; keep paid dispatch closed until the R1 ledger, credit, rights, and exact request-bound gates pass.
+
+
+## Pepo O3 safety repair — 2026-10-31
+
+Review and integrate the isolated repair patch before resuming paid preparation.
+The candidate closes ledger bootstrapping, availability timing/scope, request
+override and failed-output accounting gaps. The original USD8 authorization
+remains approved. Full R1 history, old-writer control and current scoped
+availability are still external/runtime facts; keep only paid dispatch blocked.
+O4 research also needs a matched current-cohort comparison and per-job hashes.
+See `docs/healthtech/audits/pepo-o3-safety-repair-20261031/AUDIT_TH.md`,
+`verification.json` and `RESUME_GOAL_TH.txt` in that folder. No provider/GPU,
+credential, original ledger, push, merge or PR mutation occurred in this repair.
+## HT-NEXT-082 — 2026-10-31 O1-O4 closeout binding
+
+Status: `PARTIAL_O1_O4_ENGINEERING_COMPLETE_O3_PAID_BLOCKED_LOCAL`; canonical audit:
+`docs/healthtech/audits/ht-o1-o4-closeout-20261031/README.md`.
+
+Bound the existing O1/O2/O4 receipts and the O3 safety-repair candidate to
+candidate HEAD `3731bdbf25e26d08c3ffa9530893c9f843d3631d`. O1 and O2 remain
+parent-audited complete engineering packages; O4 remains a verified three-case
+engineering path and descriptive research handoff. Current candidate Python
+verification is `562 passed, 1 skipped` out of `563` tests, with compile and
+diff checks passing; frontend unit tests pass `74/74` and HTTP integration
+passes jobs/source/history `1 -> 2` plus JSON/TH/EN export. The fresh full
+browser E2E run was incomplete after `E03` and is not claimed as a new PASS.
+No paid call, credential read, journal mutation, push, or merge occurred.
+
+The only external evidence requested remains the real R1 canonical journal or
+sanitized all-attempt export and the sanitized current account/key credit
+snapshot. Do not request the existing USD8 authorization again, reset its
+24-hour clock, or create a replacement ledger. Full four-outcome completion is
+not proven while O3 is blocked.
+
+## HT-NEXT-083 — 2026-10-31 R1 long-run continuation and reviewed migration
+
+Status: `PASS_ENGINEERING_MIGRATION_PAID_RESEARCH_BLOCKED`; canonical audit:
+`docs/healthtech/audits/pepo-r1-long-run-continuation-20261031/README.md`.
+
+Accepted the owner-evidence recovery patch once on isolated branch
+`codex/r1-owner-evidence-20261031`. Added and tested an append-only reviewed
+migration that keeps `USD0.0001464` as a separately typed pre-R1 carryover,
+counts it against the existing USD8 cap, and refuses live dispatch without a
+complete history anchor, verified writer quiescence, matching scopes, and the
+single canonical registry. Full Python checks pass with one skip; the focused
+migration/ledger/budget/generation/metadata set passes `115` tests.
+
+No real R1 journal was mutated and no paid call or GPU job was started. The
+current rights-cleared pack has three cases and three exact messages, but this
+executor lacks the local Qwen runtime/model files and the pack has no evaluator
+references/groups for matched fixed/adaptive research. Keep API and matched
+research branches partial until the exact journal/export, quiescence evidence,
+current authorized credit, and current-cohort evaluator inputs exist. Do not
+re-ask for USD8, reset the 24-hour clock, create a zero ledger, or substitute
+the old Stryker frontier.
+
+## HT-NEXT-084 — 2026-11-01 solo computational design and manuscript package
+
+Status: `PASS_DESIGN_PACKAGE_EXTERNAL_VALIDATION_NOT_VALIDATED`; canonical owner record:
+`docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md`.
+
+Recorded the owner's one-time decision that this is a solo project with no external
+participants or recruitment route. Reframed the current round as a reproducible
+computational study with permitted real-data case studies; human pilot and customer
+validation are future work and do not block engineering, offline experiments, or the
+manuscript package. Added the frozen computational protocol, future-use task set and
+rubric, inactive consent template, result form, English manuscript, WPI checklist,
+and cover-letter draft. Updated GOAL, PLAN, the historical manuscript skeleton, and
+the pilot packet/template to separate operational potential from external validation.
+
+No participant was contacted, no consent was collected, no paid API was called, and
+no USD8/GPU/dataset expansion was requested. Current comparative claims remain
+descriptive and audit-bound; the three real cases demonstrate the workflow but do not
+replace a benchmark, user study, or market validation.
+
+Next: bind the new documentation package to the final committed candidate, run the
+focused O3/recovery and documentation checks, then keep scientific comparison and
+paid branches separately labeled until their remaining evidence gates are satisfied.
+
+Canonical checkpoint: `docs/healthtech/audits/solo-computational-design-20261101/README.md`.

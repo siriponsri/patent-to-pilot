@@ -1,0 +1,23 @@
+{
+  "status": "SOLE_KEY_SETTLED_USAGE_RECONCILED_WRITER_STATE_UNVERIFIED",
+  "settled_usage_observations_utc": [
+    "2026-10-31T13:52:45.803728+00:00",
+    "2026-10-31T14:17:41.976279+00:00"
+  ],
+  "settled_usage_usd": "0.0001464",
+  "delta_between_observations_usd": "0",
+  "matched_legacy_attempts": 4,
+  "known_legacy_unresolved_attempts": 0,
+  "known_legacy_failed_attempts_still_billed": 1,
+  "scope": "sole key per owner; totals equal all four known legacy attempt debits; no claim of provider-ID row matching",
+  "observed_unallocated_settled_usage_usd": "0",
+  "unresolved_exposure_outside_legacy_records_usd": null,
+  "live_process_check": "Get-CimInstance Win32_Process project-filtered query returned Access denied",
+  "paid_http_queue_support": "Current http.py lines 247-283 lists OpenRouter unavailable and rejects paid provider submissions",
+  "known_http_job_store_locator": "dynamic temporary root; no current service root located through allowed records; not scanned broadly",
+  "owner_registry_path_checked": "C:/Users/User/AppData/Local/PatentToPilot/healthtech/budget-ledgers/PTP-HT-OR-R1-20261028-USD8.json",
+  "registry_file_exists": false,
+  "new_registry_or_ledger_created": false,
+  "provider_generation_lookup_calls": 0,
+  "paid_calls": 0
+}

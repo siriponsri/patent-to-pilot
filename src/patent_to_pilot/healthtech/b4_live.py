@@ -35,7 +35,7 @@ from patent_to_pilot.providers.round1 import (
 
 
 class B4Pricing(BaseModel):
-    model_config = ConfigDict(extra="forbid", frozen=True)
+    model_config = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
 
     model: str = Field(min_length=1)
     upstream_provider: str = Field(min_length=1)
@@ -46,6 +46,14 @@ class B4Pricing(BaseModel):
     max_price_prompt: float = Field(gt=0)
     max_price_completion: float = Field(gt=0)
     unsupported_billable_components: list[str] = Field(default_factory=list)
+
+
+def validate_pricing_freshness(pricing, *, now=None):
+    from datetime import datetime, timezone
+    from patent_to_pilot.providers.credit import utc_time
+    age = ((now or datetime.now(timezone.utc)) - utc_time(pricing.snapshot_utc)).total_seconds()
+    if age < 0 or age > 300:
+        raise ValueError("route pricing observation is future-dated or stale")
 
 
 def _canonical(value: Any) -> str:
@@ -85,8 +93,8 @@ def conservative_request_bound_usd(
     if pricing.unsupported_billable_components:
         raise ValueError("unsupported billable components prevent a verified bound")
     base = (
-        Decimal(input_tokens) * pricing.prompt_usd_per_million / Decimal(1_000_000)
-        + Decimal(output_tokens) * pricing.completion_usd_per_million / Decimal(1_000_000)
+        Decimal(input_tokens) * max(pricing.prompt_usd_per_million, Decimal(str(pricing.max_price_prompt))) / Decimal(1_000_000)
+        + Decimal(output_tokens) * max(pricing.completion_usd_per_million, Decimal(str(pricing.max_price_completion))) / Decimal(1_000_000)
     )
     gross = base * (Decimal(10_000 + margin_bps) / Decimal(10_000))
     return float(gross.quantize(Decimal("0.000000001"), rounding=ROUND_CEILING))
@@ -184,6 +192,8 @@ class B4ProviderSelector:
         self._schema_bound = schema_bound
 
     def select(self, observation: ControllerObservation) -> ControllerAction:
+        if self.config.live_enabled:
+            validate_pricing_freshness(self.pricing)
         prompt = build_b4_prompt(observation)
         input_bound = len(prompt.encode("utf-8"))
         if input_bound + self._schema_bound > self.config.max_input_tokens:

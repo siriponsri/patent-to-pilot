@@ -1,0 +1,21 @@
+{
+  "format": "ptp-process-quiescence-observation-v1",
+  "status": "UNVERIFIED_NO_PROVIDER_DISPATCHER_CONFIRMED",
+  "scope": "project-filtered local process metadata and repository entrypoint scan only",
+  "observed": [
+    {
+      "name": "ssh.exe",
+      "parent_name": "rtk.exe",
+      "classification": "tool_transport_observation",
+      "command_line_logged": false,
+      "action": "left_running"
+    }
+  ],
+  "not_claimed": [
+    "no global process absence",
+    "no remote-job absence",
+    "no external-writer quiescence",
+    "no paid-dispatch absence outside inspected entrypoints"
+  ],
+  "safety": {"killed_processes": 0, "acl_changed": false, "safe_directory_changed": false}
+}

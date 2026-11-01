@@ -2,9 +2,9 @@
 
 > Implementation checkpoint (27 October 2026): [migration and coverage](docs/healthtech/MIGRATION.md), [actual progress](docs/healthtech/progress.json). The pack’s starting statuses below are historical starting points; the full HealthTech study and product are not complete.
 
-**Version:** 1.0 · **วันที่:** 27 ตุลาคม 2026 (Asia/Bangkok) <br>
+**Version:** 1.1 · **วันที่:** 1 พฤศจิกายน 2026 (Asia/Bangkok) <br>
 **ประเภท:** System blueprint + work packages สำหรับ agent <br>
-**สถานะ:** Proposed implementation plan; ไม่มีผลทดลองใหม่ถูกอ้างว่ารันแล้ว <br>
+**สถานะ:** Solo computational study + engineering continuation plan; external business validation ยังไม่ทำ และไม่มีผลทดลองใหม่ถูกอ้างว่ารันแล้วจนกว่าจะมี receipt ผูกกับ candidate เดียว <br>
 **เอกสารร่วม:** [GOAL.md](GOAL.md) · [README.md](README.md) · [RELATED_PAPERS.md](RELATED_PAPERS.md)
 
 ## 0. วิธีใช้แผนนี้
@@ -431,11 +431,13 @@ Oracle ที่เห็น gold ใช้เพื่อ development headroom 
 
 ## 10. Business validation plan
 
+รอบปัจจุบันไม่ใช่ human pilot และไม่มี participant route ตาม owner decision ที่ [OWNER_ONE_TIME_INPUT_TH_EN.md](docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md) การทดลองหลักเป็น reproducible computational study; business value รายงานเป็น operational potential จากคุณภาพหลักฐานและทรัพยากรที่วัดได้ ส่วน external validation เป็น future work
+
 ### 10.1 Hypotheses
 
-- BH1: ผู้ใช้ได้ usable dossier ด้วยภาระรวมที่เหมาะสมกว่าวิธีปัจจุบัน
-- BH2: ผู้ใช้กลับมาใช้กับ case/project ใหม่
-- BH3: มีการซื้อ offering ที่กำหนด และต้นทุนส่งมอบตรวจได้
+- BH1: adaptive evidence acquisition อาจเพิ่ม citation quality/evidence coverage หรือสร้าง quality-cost frontier ที่ดีกว่า fixed baselines ภายใต้ evidence access และงบเดียวกัน
+- BH2: dossier ที่มี source/locator/history/export ครบอาจลดภาระการตรวจแก้ใน workflow จริง แต่รอบนี้ยังไม่มี independent user measurement
+- BH3: repeat use, willingness-to-pay, purchase, revenue และ ROI เป็น future hypotheses; ห้ามสรุปจาก demo, self-evaluation หรือ scenario assumptions
 
 ### 10.2 Public-case task script
 
@@ -449,17 +451,19 @@ Oracle ที่เห็น gold ใช้เพื่อ development headroom 
 
 เก็บ task completion, time including correction, edits, missing fields, rejected evidence และ perceived usefulness แยกกัน หากทำ within-user comparison ให้จัดลำดับ/กรณีเพื่อลด practice effect และรายงานขนาด/ข้อจำกัดของกลุ่มตัวอย่าง
 
+สำหรับรอบ solo ให้ใช้ชุดเอกสารที่เตรียมไว้โดยไม่เปิด participant route: [computational protocol](docs/healthtech/research/COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md), [task set/rubric](docs/healthtech/business/SOLO_PILOT_TASK_SET_RUBRIC_20261101_TH_EN.md), [result form](docs/healthtech/business/RESULT_COLLECTION_FORM_20261101_TH_EN.md) และ [future consent template](docs/healthtech/business/CONSENT_TEMPLATE_FUTURE_HUMAN_STUDY_20261101_TH_EN.md)
+
 ### 10.3 Commercial evidence
 
-เริ่มจาก bounded project offer ที่มี input/output และขอบเขต support ชัด ไม่ตั้งราคาขายจากราคาคู่แข่งโดยไม่มีข้อมูลต้นทุนหรือ willingness to pay
+จัดทำ bounded project offer เป็น draft ได้ แต่ยังไม่ส่งและยังไม่ตั้งเป็นผล commercial evidence ไม่ตั้งราคาขายจากราคาคู่แข่งหรือ scenario labor assumptions แล้วเรียกว่า willingness to pay
 
 บันทึกสิ่งที่ลูกค้าซื้อจริง เช่น workspace/software, managed ingestion, integration หรือ manual research service แยก manual effort จาก compute เสมอ เพื่อไม่ตีความยอดซื้อบริการคนเป็น product-market evidence ของ software อัตโนมัติ
 
-GitHub เป็น distribution/trust channel วัด activation, completed example/workflow และ repeat use แยกจาก stars/downloads ไม่อ้าง ROI จนมีการวัดในงานจริง
+GitHub เป็น distribution/trust channel เท่านั้นในรอบนี้; activation, repeat use, purchase, revenue และ ROI เป็น `NOT_VALIDATED` จนมีการวัดในงานจริง
 
 ### 10.4 Owner burden
 
-Agent เตรียม demo, task script, invitation draft, offer และผลที่ตรวจได้ก่อนขอ owner ช่วยเปิดทางหาผู้ใช้ การส่งข้อความจริงต้องมี authorization ที่ครอบคลุม หากยังไม่มี ให้ทำงานเตรียมและงานอิสระต่อ
+Agent เตรียม demo, task script, consent template, invitation draft และ offer ก่อนขอ owner ช่วยเปิดทางหาผู้ใช้ แต่ตาม owner decision รอบนี้ไม่มี participant route และไม่มีการส่งข้อความ หากอนาคตจะติดต่อบุคคลภายนอก ต้องเสนอข้อความและรายชื่อให้ owner ตรวจและขอ authorization ก่อน
 
 ## 11. Work package map
 
@@ -482,9 +486,9 @@ Agent เตรียม demo, task script, invitation draft, offer และผ
 | HT-W13 | Build no-code inspection/export | Dossier output | TH/EN workflow/source viewer | W12 |
 | HT-W14 | Run final scientific comparison | Frozen data/config/rights | Raw results/plots/analysis | W07/W09/W11 |
 | HT-W15 | Verify evidence component | Existing benchmark labels | SciFact/component results | W04/W06 |
-| HT-W16 | Prepare user/pilot package | Working public cases | Task script/demo/offer | W12/W13 |
-| HT-W17 | Collect user/commercial evidence | Authorized participants/pilot | Workflow/reuse/purchase records | W16 + actual access |
-| HT-W18 | Draft research manuscript | Verified sources/protocol/results | Manuscript and reproducibility materials | Sections can start early; results depend W14/W15 |
+| HT-W16 | Prepare validation package | Working public cases | Task set/rubric/form/consent/demo/offer draft | W12/W13 |
+| HT-W17 | Future external validation | Owner-authorized participants/access | User/reuse/purchase records; current round remains NOT_VALIDATED | W16 + future access |
+| HT-W18 | Draft research manuscript | Verified sources/protocol/results | Solo computational manuscript and reproducibility materials | Sections can start early; results depend W14/W15 |
 | HT-W19 | Prepare operable release | Working workflow/config | Setup/runbook/build/checks | W13 + needed engineering |
 | HT-W20 | Evaluate one expansion branch | Source/buyer/task evidence | Branch decision and bounded prototype | Core contract stable |
 
@@ -498,7 +502,7 @@ Agent เตรียม demo, task script, invitation draft, offer และผ
 
 - W03 และ W04/W05/W06 เดินคู่กันได้
 - Product W12/W13 ใช้ ready baseline ได้ ไม่ต้องรอ W14
-- W16 เริ่มเมื่อมี dossier ที่ทดสอบได้ ไม่ต้องรอ manuscript
+- W16 เริ่มเมื่อมี dossier ที่ทดสอบได้ ไม่ต้องรอ manuscript และไม่ต้องมี participant route ในรอบ solo
 - W18 เขียนส่วน background/data/protocol ได้ตามหลักฐานที่พร้อม แต่ results ต้องมาจาก execution จริง
 
 ## 12. Deliverable structure เมื่อเริ่ม implementation
@@ -597,6 +601,8 @@ docs/healthtech/
 7. Diagnostics: company/entity signals, shared groups, stopping failures
 8. Dossier application and separate user evidence if available
 9. Limitations and reproducibility
+
+รอบปัจจุบันต้องระบุ solo computational design, developer self-evaluation หากมี, external business validation เป็น future work, และแยก machine time จาก human time อย่างชัดเจน
 
 ไม่ใช้จำนวน agents หรือความซับซ้อนของ UI เป็น scientific contribution ไม่รับประกัน acceptance และไม่เขียนผลที่ยัง NOT_RUN
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sqlite3
+from o3_test_support import reviewed_fixture
 
 import pytest
 
@@ -21,14 +22,15 @@ POLICY_HASH = "b" * 64
 AUTH = "PTP-HT-OR-R1-20261028-USD8"
 
 
-def test_registry_binds_one_existing_path_and_rejects_substitution(tmp_path):
+def test_registry_binds_one_existing_path_and_rejects_substitution(tmp_path, monkeypatch):
     ledger = tmp_path / "existing.sqlite3"
-    ledger.write_bytes(b"not-yet-opened")
+    policy_hash = reviewed_fixture(ledger)
     registry = tmp_path / "registry.json"
+    monkeypatch.setattr("patent_to_pilot.providers.ledger_registry.default_registry_path", lambda _: registry)
     binding = register_canonical_ledger(
         ledger,
         authorization_id=AUTH,
-        policy_hash=POLICY_HASH,
+        policy_hash=policy_hash,
         pricing_snapshot_sha256=PRICE_HASH,
         pricing_snapshot_utc=PRICE_TIME,
         registry_path=registry,
@@ -36,7 +38,7 @@ def test_registry_binds_one_existing_path_and_rejects_substitution(tmp_path):
     assert binding.ledger_path == ledger.resolve()
     assert resolve_canonical_ledger(
         authorization_id=AUTH,
-        policy_hash=POLICY_HASH,
+        policy_hash=policy_hash,
         pricing_snapshot_sha256=PRICE_HASH,
         pricing_snapshot_utc=PRICE_TIME,
         registry_path=registry,
@@ -44,7 +46,7 @@ def test_registry_binds_one_existing_path_and_rejects_substitution(tmp_path):
     with pytest.raises(CanonicalLedgerError, match="not the registered canonical ledger"):
         resolve_canonical_ledger(
             authorization_id=AUTH,
-            policy_hash=POLICY_HASH,
+            policy_hash=policy_hash,
             pricing_snapshot_sha256=PRICE_HASH,
             pricing_snapshot_utc=PRICE_TIME,
             requested_path=tmp_path / "substitute.sqlite3",
@@ -52,16 +54,17 @@ def test_registry_binds_one_existing_path_and_rejects_substitution(tmp_path):
         )
 
 
-def test_registry_does_not_rebind_existing_authorization(tmp_path):
+def test_registry_does_not_rebind_existing_authorization(tmp_path, monkeypatch):
     first = tmp_path / "first.sqlite3"
     second = tmp_path / "second.sqlite3"
-    first.write_bytes(b"journal")
-    second.write_bytes(b"journal")
+    policy_hash = reviewed_fixture(first)
+    reviewed_fixture(second)
     registry = tmp_path / "registry.json"
+    monkeypatch.setattr("patent_to_pilot.providers.ledger_registry.default_registry_path", lambda _: registry)
     register_canonical_ledger(
         first,
         authorization_id=AUTH,
-        policy_hash=POLICY_HASH,
+        policy_hash=policy_hash,
         pricing_snapshot_sha256=PRICE_HASH,
         pricing_snapshot_utc=PRICE_TIME,
         registry_path=registry,
@@ -70,7 +73,7 @@ def test_registry_does_not_rebind_existing_authorization(tmp_path):
         register_canonical_ledger(
             second,
             authorization_id=AUTH,
-            policy_hash=POLICY_HASH,
+            policy_hash=policy_hash,
             pricing_snapshot_sha256=PRICE_HASH,
             pricing_snapshot_utc=PRICE_TIME,
             registry_path=registry,
@@ -78,6 +81,7 @@ def test_registry_does_not_rebind_existing_authorization(tmp_path):
 
 
 def test_registry_rejects_legacy_sqlite_journal(tmp_path):
+    policy_hash = POLICY_HASH
     ledger = tmp_path / "legacy.sqlite3"
     with sqlite3.connect(ledger) as db:
         db.execute("CREATE TABLE meta(id INTEGER PRIMARY KEY, mode TEXT NOT NULL)")
@@ -85,7 +89,7 @@ def test_registry_rejects_legacy_sqlite_journal(tmp_path):
         register_canonical_ledger(
             ledger,
             authorization_id=AUTH,
-            policy_hash=POLICY_HASH,
+            policy_hash=policy_hash,
             pricing_snapshot_sha256=PRICE_HASH,
             pricing_snapshot_utc=PRICE_TIME,
             registry_path=tmp_path / "registry.json",

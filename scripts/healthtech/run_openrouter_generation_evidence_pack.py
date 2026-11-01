@@ -15,6 +15,7 @@ from patent_to_pilot.healthtech.api_generation import (  # noqa: E402
     APIGenerationError,
     OpenRouterQwenGenerationRunner,
     normalize_account_credit_snapshot,
+    pricing_from_snapshot,
     write_sanitized_receipt,
 )
 from patent_to_pilot.healthtech.b4_live import B4Pricing  # noqa: E402
@@ -45,7 +46,7 @@ def _load_pack(path: Path) -> dict[str, Any]:
 
 
 def _pricing(path: Path) -> B4Pricing:
-    return B4Pricing.model_validate(_read_json(path))
+    return pricing_from_snapshot(_read_json(path))
 
 
 class MockGenerationTransport:
@@ -172,4 +173,4 @@ if __name__ == "__main__":
     try:
         raise SystemExit(main())
     except (APIGenerationError, ValueError) as exc:
-        raise SystemExit(f"ERROR: {exc}") from None
+        raise SystemExit(f"ERROR: {type(exc).__name__}; inspect sanitized preflight checks") from None

@@ -1,0 +1,30 @@
+{
+  "format": "ptp-r1-long-run-continuation-verification-v1",
+  "status": "PASS_ENGINEERING_PARTIAL_RESEARCH_PAID_BLOCKED",
+  "candidate_base_revision": "9ac38720d219b83acccaa92dcabc4480283914c4",
+  "checks": [
+    {"id": "patch_apply_check", "status": "PASS", "detail": "r1-owner-evidence-recovery.patch checked and applied once on isolated branch"},
+    {"id": "python_full_suite", "status": "PASS", "detail": "558 collected; 557 passed; 1 skipped; exit 0"},
+    {"id": "focused_safety_generation_suite", "status": "PASS", "detail": "115 passed"},
+    {"id": "compileall", "status": "PASS", "detail": "src, scripts, and tests compile"},
+    {"id": "diff_check", "status": "PASS", "detail": "git diff --check"},
+    {"id": "reviewed_migration_real_ledger", "status": "NOT_RUN", "detail": "real R1 journal path and complete review anchor are not available"},
+    {"id": "local_qwen_current_pack", "status": "NOT_RUN", "detail": "torch/transformers unavailable and visible model root has no model files"},
+    {"id": "openrouter_api_qwen32b", "status": "BLOCKED", "detail": "live history/quiescence and current authorized credit gates are incomplete"},
+    {"id": "o4_matched_fixed_adaptive", "status": "NOT_RUN", "detail": "current pack has no evaluator references/groups; Stryker is excluded"}
+  ],
+  "privacy": {
+    "credentials_read": false,
+    "raw_messages_committed": false,
+    "raw_source_payloads_committed": false,
+    "private_journal_read_in_this_run": false,
+    "provider_calls": 0,
+    "paid_cost_usd": "0.00"
+  },
+  "limitations": [
+    "Legacy usage reconciliation is not R1 completeness proof.",
+    "An rtk-owned SSH transport observation is not global writer quiescence proof.",
+    "Parent local-generation/O4 receipts are not rerun as a scientific comparison substitute.",
+    "Engineering PASS does not imply research, publication, clinical, FTO, or investment readiness."
+  ]
+}

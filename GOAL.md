@@ -2,9 +2,9 @@
 
 > Implementation checkpoint (27 October 2026): [migration and coverage](docs/healthtech/MIGRATION.md), [actual progress](docs/healthtech/progress.json). The pack’s starting statuses below are historical starting points; the full HealthTech study and product are not complete.
 
-**Version:** 1.0 · **วันที่:** 27 ตุลาคม 2026 (Asia/Bangkok) <br>
+**Version:** 1.1 · **วันที่:** 1 พฤศจิกายน 2026 (Asia/Bangkok) <br>
 **รูปแบบ:** Goal-based execution contract สำหรับ owner และ coding/research agents <br>
-**สถานะ:** แผนที่พร้อมนำไปดำเนินงาน; เอกสารนี้ไม่ใช่หลักฐานว่าได้รันการทดลองใหม่หรือพิสูจน์ตลาดแล้ว <br>
+**สถานะ:** solo reproducible computational study + product engineering; external business validation ยังไม่ทำ และเอกสารนี้ไม่ใช่หลักฐานว่าได้พิสูจน์ตลาดหรือได้รับการตอบรับจากวารสารแล้ว <br>
 **อ่านร่วมกับ:** [PLAN.md](PLAN.md), [README.md](README.md), [RELATED_PAPERS.md](RELATED_PAPERS.md)
 
 ## 0. อ่านส่วนนี้ก่อนเริ่มงาน
@@ -49,7 +49,7 @@ Agent ต้องอ่านบริบทที่จำเป็น เล�
 | แหล่งข้อมูลเริ่มต้น | ข้อมูลสาธารณะและแหล่งที่มีสิทธิ์ใช้ตามงานที่ทำ |
 | ภาษาผลิตภัณฑ์ | ไทยและอังกฤษ; ใช้ข้อความที่ผู้ประกอบการเข้าใจได้ |
 | รูปแบบ UI | Minimal, formal, no-code journey; รักษา theme choices ที่โครงการมีไว้ |
-| รูปแบบรายได้ที่ทดสอบ | Bounded project pilot; ต่อด้วย hosted active-project/team offering เมื่อมีการใช้ซ้ำ |
+| รูปแบบรายได้ที่ทดสอบ | ยังไม่ทดสอบในรอบนี้; เก็บเป็น future commercial validation หลังมีหลักฐานผู้ใช้/การซื้อจริง |
 
 ### 1.2 Output contract ของ dossier
 
@@ -79,6 +79,8 @@ Agent ต้องอ่านบริบทที่จำเป็น เล�
 คำถามหลักคือ adaptive acquisition ช่วย recovery ของ known device–patent links หรือช่วยลดต้นทุนได้ในเงื่อนไขใด เมื่อเทียบกับวิธี fixed และวิธี adaptive ที่เรียบง่าย โดยคำนึงถึง company information, shared patents/families และคำตอบอ้างอิงที่มีไม่ครบ
 
 Generic adaptive RAG, cost-aware selection และ evidence-aware stopping มี prior art แล้ว ห้ามอ้างสิ่งเหล่านี้เป็นความใหม่โดยอัตโนมัติ Contribution ต้องมาจาก patent-specific questions, rigorous comparisons, substantive findings และ reproducible resources ดู literature map ใน RELATED_PAPERS.md
+
+**Current-round design decision (2026-11-01):** owner ยืนยันทำโครงการคนเดียว ไม่มีผู้เข้าร่วมภายนอกหรือช่องทางรับสมัคร จึงปรับรอบนี้เป็น reproducible computational study พร้อมกรณีศึกษาจากข้อมูลจริงที่มีสิทธิ์ใช้ ไม่ตั้ง human pilot หรือ customer validation เป็นเกณฑ์บังคับของ engineering, offline experiment หรือ manuscript package เก็บ business value เป็นศักยภาพเชิงปฏิบัติจาก citation quality, evidence coverage, machine/GPU time, latency และ cost; developer self-evaluation หากมีให้ติดป้ายแยก และห้ามอ้าง independent user validation, willingness-to-pay, revenue หรือ ROI ที่ยังไม่ได้วัด ดู [owner one-time input](docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md) และ [computational protocol](docs/healthtech/research/COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md)
 
 ## 2. กติกาความต่อเนื่องและอำนาจตัดสินใจ
 
@@ -112,6 +114,10 @@ Root GOAL.md และ PLAN.md เป็นจุดเริ่มอ่าน�
 ก่อนถาม ให้ทำงานเตรียมที่ได้รับอนุญาตให้เสร็จ และส่งคำถามพร้อมทางเลือกที่แนะนำ ผลกระทบ และสิ่งที่พร้อมตรวจแล้ว ถ้าคำสั่งก่อนหน้าครอบคลุมการกระทำนั้นอยู่แล้ว ให้ดำเนินการตาม authorization เดิมโดยไม่ขอซ้ำ
 
 การเตรียม draft, code, benchmark configuration, demo, PR หรือแพ็กเอกสารที่ย้อนกลับได้ ไม่ควรกลายเป็น approval step เพิ่มโดยไม่มีเหตุผลเฉพาะ
+
+### 2.1.1 Owner one-time decision
+
+ข้อมูลจาก owner ครั้งเดียวถูกบันทึกไว้ที่ [OWNER_ONE_TIME_INPUT_TH_EN.md](docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md) สถานะมีผลคือไม่ต้องรอ participant route, ไม่ต้องถามข้อมูลนี้ซ้ำ, deadline โครงการคือ 15 พฤศจิกายน 2026 (Asia/Bangkok), และไม่มีการขยายงบ USD8, GPU window หรือ dataset โดยอัตโนมัติ
 
 ### 2.4 สิ่งที่ต้องบันทึกแทนการถาม
 
@@ -240,25 +246,25 @@ Bridge release audit มีข้อมูลเบื้องต้นแล�
 
 **สถานะตั้งต้น:** NOT_RUN
 
-### HT-G5 — ได้หลักฐานคุณค่าต่อผู้ใช้และทิศทางรายได้
+### HT-G5 — ประเมินศักยภาพคุณค่าเชิงปฏิบัติและเตรียม validation package
 
-**Outcome:** รู้ว่าผู้ใช้ทำงานต่อได้จริง แฟ้มช่วยหรือเพิ่มภาระตรงไหน และมีคนซื้อบริการส่วนใด
+**Outcome:** วัดคุณภาพ citation, ความครอบคลุมหลักฐาน, เวลา/ต้นทุนเครื่อง และภาระแก้ไขที่สังเกตได้ พร้อมเตรียม task/rubric/form สำหรับ future user study โดยไม่อ้างว่ามีผู้ใช้ภายนอกหรือการซื้อแล้ว
 
-**ผลส่งมอบขั้นต่ำ:** task script, public-case demo, feedback/results record, correction burden, repeat-use record และ bounded pilot offer
+**ผลส่งมอบขั้นต่ำ:** computational business-value metrics, real-case demo, task set, rubric, results form, future consent template และ scenario/sensitivity analysis ที่แยกจากผลจริง
 
-**เริ่มได้ทันทีเมื่อ HT-G3 มีตัวอย่าง:** เตรียม usability tasks และ offer โดยไม่ต้องรอ HT-G4 จบ การเตรียมเหล่านี้ไม่ต้องมีข้อมูลภายในองค์กร
+**เริ่มได้ทันทีเมื่อ HT-G3 มีตัวอย่าง:** เดิน solo computational evaluation และจัดทำ future-user materials โดยไม่ต้องรอ participant route หรือ HT-G4 จบ
 
-**Usability evidence:** ผู้ใช้เปิดหาหลักฐาน เปรียบเทียบข้อมูล แก้แฟ้ม และเตรียมคำขอข้อมูลได้; นับเวลารวมการตรวจ/แก้ ไม่รายงานเฉพาะเวลาที่โมเดลสร้างคำตอบ
+**Operational evidence:** รายงาน citation support, locator resolution, evidence coverage, unresolved visibility, machine/GPU time, latency, tokens และ cost; ถ้า owner ทดลองเองให้ติดป้าย `developer_self_evaluation` และแยก human time จาก machine time
 
-**Commercial evidence:** มีการใช้กับ case ใหม่และ bounded paid pilot หรือ purchase ที่ตรวจได้; แยกการซื้อ software/workspace ออกจากการซื้อบริการคนทำรายงาน และบันทึก manual work ทุกส่วน
+**External business validation:** รอบนี้เป็น `NOT_VALIDATED`; ห้ามอ้าง independent user validation, repeat use, willingness-to-pay, purchase, revenue หรือ ROI โดยไม่มีหลักฐานที่วัดจริง
 
-**ค่าเริ่มต้น discovery:** ใช้ผู้ใช้เป้าหมายอย่างน้อย 3 คนเป็นจุดเริ่มเรียนรู้ ไม่ตีความว่าเป็น sample size ที่พิสูจน์ตลาดทั้งหมด ไม่ต้องให้ผู้ใช้เหล่านี้สร้าง expert labels สำหรับ paper
+**กรณีศึกษาจริง:** คงอย่างน้อย 3 named cases เพื่อแสดงการใช้งาน แต่ไม่ถือว่า 3 cases เพียงพอแทน benchmark, user study หรือ market validation; จำนวนข้อมูลสำหรับข้อสรุปเชิงเปรียบเทียบต้องมาจาก protocol
 
-**เมื่อยังไม่มีผู้ใช้:** ทำ demo, task script, comparison package และ offer ให้พร้อม; ตั้ง demand เป็น NOT_VALIDATED และทำ research/engineering ต่อ
+**เมื่อยังไม่มีผู้ใช้:** ทำ demo, task script, comparison package, consent template และ offer draft ให้พร้อม; ตั้ง external business validation เป็น `NOT_VALIDATED` และทำ research/engineering ต่อ
 
 **Owner involvement:** การแนะนำผู้ใช้หรืออนุญาต outreach เมื่อจำเป็น; agent ต้องเตรียมสิ่งที่จะส่งให้ตรวจได้ก่อน ไม่ส่งข้อความเองหากยังไม่มี authorization
 
-**สถานะตั้งต้น:** NOT_VALIDATED
+**สถานะตั้งต้น:** OPERATIONAL_POTENTIAL_ONLY / EXTERNAL_VALIDATION_NOT_VALIDATED
 
 ### HT-G6 — มี manuscript และ reproducible research release ที่พร้อมส่งพิจารณา
 
@@ -266,7 +272,7 @@ Bridge release audit มีข้อมูลเบื้องต้นแล�
 
 **ผลส่งมอบขั้นต่ำ:** manuscript draft, related-work matrix, configurations, evaluator, per-query results ที่เผยแพร่ได้, source/data/model/system cards, limitations และ citation metadata
 
-**Definition of done:** paper มี patent-central research question; method comparisons ถูกต้อง; figures/tables สืบกลับไป raw output ได้; research code และ data rights แยกชัด; ไม่มี placeholder result หรือ claimed improvement ที่ไม่เคยรัน
+**Definition of done:** paper มี patent-central research question; method comparisons ถูกต้อง; figures/tables สืบกลับไป raw output ได้; research code และ data rights แยกชัด; ไม่มี placeholder result หรือ claimed improvement ที่ไม่เคยรัน; human pilot/customer validation ถูกระบุเป็น future work หากยังไม่มี
 
 **Agent ทำเอง:** เขียน introduction/method/data/protocol ที่ข้อเท็จจริงพร้อมแล้วก่อนผลทดลองได้ โดยติดป้ายส่วนผลที่ยัง NOT_RUN; จัด reproducibility package เป็นงานต่อเนื่อง ไม่รอจนเขียน paper เสร็จค่อยสร้าง provenance
 
@@ -274,7 +280,7 @@ Bridge release audit มีข้อมูลเบื้องต้นแล�
 
 **เกณฑ์ venue:** ถ้าถอด patent component แล้วคำถามและผลหลักยังเหมือนเดิม ให้ทบทวน fit กับ WPI โดยรักษา research integrity ไม่เพิ่มศัพท์ patent เพื่อให้ดูเข้าวารสาร
 
-**สถานะตั้งต้น:** Literature/documentation pack พร้อมเตรียมงาน; scientific results/manuscript readiness ยังต้องทำ
+**สถานะตั้งต้น:** Computational manuscript package กำลังจัดทำ; scientific comparison และ manuscript readiness ให้รายงานเป็น COMPLETE/PARTIAL ตามผลจริง; external business validation ไม่ใช่ gate ของรอบนี้
 
 ### HT-G7 — มีผลิตภัณฑ์ที่พร้อมติดตั้ง ใช้ และดูแล
 

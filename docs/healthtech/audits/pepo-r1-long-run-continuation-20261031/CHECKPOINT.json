@@ -1,0 +1,41 @@
+{
+  "format": "ptp-r1-long-run-continuation-checkpoint-v1",
+  "run_id": "pepo-r1-long-run-continuation-20261031",
+  "candidate_base_revision": "9ac38720d219b83acccaa92dcabc4480283914c4",
+  "candidate_revision": "05f0356989adc65977bb89f9a04c4d1855604268",
+  "candidate_branch": "codex/r1-owner-evidence-20261031",
+  "patch": "r1-owner-evidence-recovery.patch",
+  "patch_apply": "PASS_ONCE",
+  "single_writer": true,
+  "authorization": {
+    "id": "PTP-HT-OR-R1-20261028-USD8",
+    "cap_usd": "8",
+    "admission_ceiling_usd": "7",
+    "new_grant": false,
+    "clock_reset": false,
+    "carryover_usd": "0.0001464",
+    "carryover_kind": "conservative_pre_r1_carryover"
+  },
+  "outcomes": {
+    "engineering_migration": "PASS_TESTED_NOT_INSTALLED_ON_OWNER_LEDGER",
+    "O3_api": "NOT_RUN_BLOCKED_LOCAL",
+    "O4_product_path": "PARENT_ENGINEERING_RECEIPT_RETAINED",
+    "O4_matched_fixed_adaptive": "NOT_RUN_MISSING_EVALUATOR_REFERENCES_AND_GROUPS"
+  },
+  "accounting": {
+    "provider_calls": 0,
+    "paid_cost_usd": "0.00",
+    "production_ledger_mutations": 0,
+    "gpu_jobs_started": 0,
+    "api_embeddings": 0
+  },
+  "resource_limits": {
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "concurrency": 1,
+    "cpu_limit": 8,
+    "ram_limit_gib": 32,
+    "additional_disk_limit_gib": 40,
+    "deadline_utc": "2026-11-01T02:47:23Z"
+  },
+  "next_gate": "real R1 all-attempt evidence plus verified writer quiescence, then current authorized credit and evaluator references/groups"
+}

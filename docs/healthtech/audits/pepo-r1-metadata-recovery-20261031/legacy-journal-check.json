@@ -1,0 +1,304 @@
+[
+  {
+    "file": "live.sqlite3",
+    "sha256": "a10f81d79a37a39b53547cb4417437499aa81b69a896048f352ff3a8ba8e9d36",
+    "unchanged": true,
+    "attempts": [
+      {
+        "sequence": 1,
+        "provider_ids": [],
+        "numeric_cost_fields": [
+          {
+            "field": "reservation.reserved_cost_usd",
+            "value": "0.10545760000000001"
+          },
+          {
+            "field": "reservation.observed_cost_usd",
+            "value": "0.0000132"
+          }
+        ],
+        "json_keys": {
+          "reservation": [
+            "attempt",
+            "error",
+            "error_class",
+            "error_code",
+            "latency_seconds",
+            "observed_cost_usd",
+            "observed_input_tokens",
+            "observed_output_tokens",
+            "observed_total_tokens",
+            "request_id",
+            "reservation_id",
+            "reservation_status",
+            "reserved_cost_usd",
+            "reserved_input_tokens",
+            "reserved_output_tokens",
+            "reserved_total_tokens",
+            "status"
+          ]
+        }
+      },
+      {
+        "sequence": 2,
+        "provider_ids": [],
+        "numeric_cost_fields": [
+          {
+            "field": "reservation.reserved_cost_usd",
+            "value": "0.42143040000000004"
+          },
+          {
+            "field": "reservation.observed_cost_usd",
+            "value": "0.00006"
+          },
+          {
+            "field": "response.cost_usd",
+            "value": "0.00006"
+          },
+          {
+            "field": "response.actual_debit_usd",
+            "value": "0.0000732"
+          },
+          {
+            "field": "response.attempts[0].reserved_cost_usd",
+            "value": "0.42143040000000004"
+          },
+          {
+            "field": "response.attempts[0].observed_cost_usd",
+            "value": "0.00006"
+          }
+        ],
+        "json_keys": {
+          "reservation": [
+            "attempt",
+            "error",
+            "error_class",
+            "error_code",
+            "identity_error",
+            "latency_seconds",
+            "observed_cost_usd",
+            "observed_input_tokens",
+            "observed_output_tokens",
+            "observed_total_tokens",
+            "reported_model",
+            "reported_provider",
+            "reported_upstream_provider",
+            "request_id",
+            "requested_model",
+            "requested_provider",
+            "requested_upstream_providers",
+            "reservation_id",
+            "reservation_status",
+            "reserved_cost_usd",
+            "reserved_input_tokens",
+            "reserved_output_tokens",
+            "reserved_total_tokens",
+            "status"
+          ],
+          "response": [
+            "actual_debit_usd",
+            "attempts",
+            "budget_breach",
+            "budget_breach_reasons",
+            "cost_usd",
+            "dispatch_blocked",
+            "finish_reason",
+            "latency_seconds",
+            "model",
+            "model_drift",
+            "provider",
+            "provider_drift",
+            "reported_model",
+            "reported_provider",
+            "reported_upstream_provider",
+            "request_id",
+            "requested_model",
+            "requested_provider",
+            "requested_upstream_providers",
+            "response_schema_valid",
+            "retry_count",
+            "text",
+            "usage"
+          ]
+        }
+      }
+    ],
+    "r1_scope": "NOT_PROVEN_LEGACY_PILOT",
+    "completeness": "NOT_PROVEN"
+  },
+  {
+    "file": "paired-revalidation-1.sqlite3",
+    "sha256": "f6943c6b99b999f88e5df839e35c15bd86119cb19a89ab4507d61b40d7de9fcb",
+    "unchanged": true,
+    "attempts": [
+      {
+        "sequence": 1,
+        "provider_ids": [],
+        "numeric_cost_fields": [
+          {
+            "field": "reservation.reserved_cost_usd",
+            "value": "0.1054576"
+          },
+          {
+            "field": "reservation.observed_cost_usd",
+            "value": "0.0000132"
+          },
+          {
+            "field": "response.cost_usd",
+            "value": "0.0000132"
+          },
+          {
+            "field": "response.actual_debit_usd",
+            "value": "0.0000132"
+          },
+          {
+            "field": "response.attempts[0].reserved_cost_usd",
+            "value": "0.1054576"
+          },
+          {
+            "field": "response.attempts[0].observed_cost_usd",
+            "value": "0.0000132"
+          }
+        ],
+        "json_keys": {
+          "reservation": [
+            "attempt",
+            "error",
+            "error_class",
+            "error_code",
+            "identity_error",
+            "latency_seconds",
+            "observed_cost_usd",
+            "observed_input_tokens",
+            "observed_output_tokens",
+            "observed_total_tokens",
+            "reported_model",
+            "reported_provider",
+            "reported_upstream_provider",
+            "request_id",
+            "requested_model",
+            "requested_provider",
+            "requested_upstream_providers",
+            "reservation_id",
+            "reservation_status",
+            "reserved_cost_usd",
+            "reserved_input_tokens",
+            "reserved_output_tokens",
+            "reserved_total_tokens",
+            "status"
+          ],
+          "response": [
+            "actual_debit_usd",
+            "attempts",
+            "budget_breach",
+            "budget_breach_reasons",
+            "cost_usd",
+            "dispatch_blocked",
+            "finish_reason",
+            "latency_seconds",
+            "model",
+            "model_drift",
+            "provider",
+            "provider_drift",
+            "reported_model",
+            "reported_provider",
+            "reported_upstream_provider",
+            "request_id",
+            "requested_model",
+            "requested_provider",
+            "requested_upstream_providers",
+            "response_schema_valid",
+            "retry_count",
+            "text",
+            "usage"
+          ]
+        }
+      },
+      {
+        "sequence": 2,
+        "provider_ids": [],
+        "numeric_cost_fields": [
+          {
+            "field": "reservation.reserved_cost_usd",
+            "value": "0.4214304"
+          },
+          {
+            "field": "reservation.observed_cost_usd",
+            "value": "0.00006"
+          },
+          {
+            "field": "response.cost_usd",
+            "value": "0.00006"
+          },
+          {
+            "field": "response.actual_debit_usd",
+            "value": "0.0000732"
+          },
+          {
+            "field": "response.attempts[0].reserved_cost_usd",
+            "value": "0.4214304"
+          },
+          {
+            "field": "response.attempts[0].observed_cost_usd",
+            "value": "0.00006"
+          }
+        ],
+        "json_keys": {
+          "reservation": [
+            "attempt",
+            "error",
+            "error_class",
+            "error_code",
+            "identity_error",
+            "latency_seconds",
+            "observed_cost_usd",
+            "observed_input_tokens",
+            "observed_output_tokens",
+            "observed_total_tokens",
+            "reported_model",
+            "reported_provider",
+            "reported_upstream_provider",
+            "request_id",
+            "requested_model",
+            "requested_provider",
+            "requested_upstream_providers",
+            "reservation_id",
+            "reservation_status",
+            "reserved_cost_usd",
+            "reserved_input_tokens",
+            "reserved_output_tokens",
+            "reserved_total_tokens",
+            "status"
+          ],
+          "response": [
+            "actual_debit_usd",
+            "attempts",
+            "budget_breach",
+            "budget_breach_reasons",
+            "cost_usd",
+            "dispatch_blocked",
+            "finish_reason",
+            "latency_seconds",
+            "model",
+            "model_drift",
+            "provider",
+            "provider_drift",
+            "reported_model",
+            "reported_provider",
+            "reported_upstream_provider",
+            "request_id",
+            "requested_model",
+            "requested_provider",
+            "requested_upstream_providers",
+            "response_schema_valid",
+            "retry_count",
+            "text",
+            "usage"
+          ]
+        }
+      }
+    ],
+    "r1_scope": "NOT_PROVEN_LEGACY_PILOT",
+    "completeness": "NOT_PROVEN"
+  }
+]

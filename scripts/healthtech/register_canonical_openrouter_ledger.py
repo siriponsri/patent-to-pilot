@@ -10,7 +10,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
 from patent_to_pilot.providers.ledger_registry import register_canonical_ledger  # noqa: E402
-from patent_to_pilot.providers.round1 import build_round1_policy, round1_policy_hash  # noqa: E402
+from patent_to_pilot.providers.project_budget import policy_identity_hash
+from patent_to_pilot.providers.round1 import build_round1_policy  # noqa: E402
 
 
 def main() -> int:
@@ -31,7 +32,7 @@ def main() -> int:
     binding = register_canonical_ledger(
         args.ledger_path,
         authorization_id=policy["authorization_id"],
-        policy_hash=round1_policy_hash(policy),
+        policy_hash=policy_identity_hash(policy),
         pricing_snapshot_sha256=args.pricing_snapshot_sha256,
         pricing_snapshot_utc=args.pricing_snapshot_utc,
         registry_path=args.registry_path,

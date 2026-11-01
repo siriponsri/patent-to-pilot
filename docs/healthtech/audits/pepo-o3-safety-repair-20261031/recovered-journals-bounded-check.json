@@ -1,0 +1,39 @@
+[
+  {
+    "locator": "live.sqlite3",
+    "sha256": "a10f81d79a37a39b53547cb4417437499aa81b69a896048f352ff3a8ba8e9d36",
+    "attempt_columns": [
+      "seq",
+      "phase",
+      "job",
+      "config",
+      "request",
+      "reservation",
+      "finished",
+      "response"
+    ],
+    "attempt_count": 2,
+    "provider_generation_ids_in_reservation": [],
+    "unchanged": true,
+    "response_id_fields": []
+  },
+  {
+    "locator": "paired-revalidation-1.sqlite3",
+    "sha256": "f6943c6b99b999f88e5df839e35c15bd86119cb19a89ab4507d61b40d7de9fcb",
+    "attempt_columns": [
+      "seq",
+      "job_id",
+      "model",
+      "config",
+      "request",
+      "payload_sha256",
+      "reservation",
+      "finished",
+      "response"
+    ],
+    "attempt_count": 2,
+    "provider_generation_ids_in_reservation": [],
+    "unchanged": true,
+    "response_id_fields": []
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "status": "CONDITIONAL_PLAN_NOT_APPLIED",
+  "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+  "cap_usd": "8",
+  "admission_ceiling_usd": "7",
+  "proposed_historical_carryover_usd": "0.0001464",
+  "accounting_kind": "CONSERVATIVE_PRE_R1_SPEND_INCLUDED_AGAINST_EXISTING_CAP",
+  "is_claimed_as_new_r1_generation_cost": false,
+  "dates": "retain original Oct26 pilot records; do not rewrite them to Oct28 R1 phases or times",
+  "conditional_remaining_to_admission_if_no_other_pending_usd": "6.9998536",
+  "conditional_remaining_to_cap_if_no_other_pending_usd": "7.9998536",
+  "currently_authorized_dispatch_available_usd": null,
+  "required_before_application": [
+    "verify stopped/quiescent relevant writers and no unresolved exposure",
+    "implement and test reviewed carryover/migration without inventing model, phase, payload hash or attempt timestamp",
+    "fresh exact route/pricing and scoped availability before dispatch"
+  ],
+  "implementation_note": "Current strict history_export format expects real attempt phase/model/payload/reservation fields; do not fabricate them for pre-R1 carryover or label legacy attempts as R1. Use a separately named immutable carryover record counted globally, preserving original records.",
+  "accepted_credit_provenance": "Owner-supplied rounded USD10 screenshot; parent pixel inspection explicitly accepted; no local materialization or API balance claimed"
+}

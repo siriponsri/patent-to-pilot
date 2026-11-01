@@ -28,7 +28,7 @@ from .ledger_registry import (
     ephemeral_ledger_id,
     resolve_canonical_ledger,
 )
-from .project_budget import BudgetedTransport, NANO, ProjectBudget
+from .project_budget import BudgetedTransport, NANO, ProjectBudget, policy_identity_hash
 
 
 R1_POLICY_VERSION = "ptp-ht-openrouter-r1-20261028-usd8-v1"
@@ -97,6 +97,7 @@ def build_round1_policy(
 
 
 def round1_policy_hash(policy: Mapping[str, Any]) -> str:
+    # Per-run config includes exact pricing; durable ledger identity excludes it.
     return _sha256(policy)
 
 
@@ -158,7 +159,7 @@ class Round1ProjectBudget(ProjectBudget):
             pricing_snapshot_sha256=pricing_snapshot_sha256,
             pricing_snapshot_utc=pricing_snapshot_utc,
         )
-        policy_hash = round1_policy_hash(policy)
+        policy_hash = policy_identity_hash(policy)
         if namespace == "canonical":
             try:
                 binding = resolve_canonical_ledger(
@@ -240,7 +241,25 @@ class Round1Runner:
             "upper_bound_usd": upper_bound_usd,
             "bound_verified": bound_verified,
             "data_class": data_class,
+            "credit_snapshot": getattr(self.budget, "account_credit_snapshot", None) if config.live_enabled else None,
         }
+        if config.live_enabled:
+            from datetime import datetime, timezone
+            from .credit import utc_time, normalize_credit
+            credit = normalize_credit(getattr(self.budget, "account_credit_snapshot", None), require_current=True)
+            scope = credit["key_scope"]
+            if not scope.startswith("sha256:"):
+                raise BudgetExceededError("availability observation requires the dispatch key fingerprint")
+            config.api_key_sha256 = _require_sha256(scope[7:], "dispatch key scope")
+            age = (datetime.now(timezone.utc) - utc_time(self.budget.pricing_snapshot_utc)).total_seconds()
+            if age < 0 or age > 300:
+                raise BudgetExceededError("current route pricing observation required before each dispatch")
+            # Recheck the process-wide binding before every send, including retries/controllers.
+            resolve_canonical_ledger(authorization_id=R1_AUTHORIZATION_ID,
+                policy_hash=self.budget.policy_hash,
+                pricing_snapshot_sha256=self.budget.pricing_snapshot_sha256,
+                pricing_snapshot_utc=self.budget.pricing_snapshot_utc,
+                requested_path=self.budget.path)
         wrapped = BudgetedTransport(self.transport_factory(), self.budget, binding)
         adapter = OpenRouterAdapter(config, wrapped, capabilities, AttemptLedger())
         return adapter.complete(request)

@@ -1,0 +1,18 @@
+{
+  "format": "ptp-current-rights-cleared-pack-receipt-v1",
+  "source_directory": "private-fda-canary-20261031",
+  "pack_file_sha256": "0b2bef9fcf8c3eff6106a1786885e4407ea4b8c9e628397ab8e52a392204ced9",
+  "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+  "exact_messages_file_sha256": "06748e94a0125afdb3925e73b2f59ea073d779a8422f847a765ef91ba463ea61",
+  "message_sha256": [
+    "aff765c814db1f16a113a4f6d447ca0937d1be8910ff0001b2eca2bc25beb1a7",
+    "c51435f2b2661bb81ca8da28e9d954f8f4ede2d029c98c783c02b57dc671f2f2",
+    "cc400bb8612c3479f6205c58f5e8d46a9c0f0281893e9aa8ec6a1c0ae6897ef4"
+  ],
+  "cases": ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"],
+  "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "thinking": false,
+  "raw_payloads_committed": false,
+  "api_run": "NOT_RUN",
+  "local_run_current_pack": "NOT_RUN"
+}

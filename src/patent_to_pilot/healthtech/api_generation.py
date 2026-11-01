@@ -31,6 +31,7 @@ from patent_to_pilot.providers.round1 import (
     Round1Runner,
     build_round1_config,
     build_round1_policy,
+    request_payload_hash,
 )
 
 
@@ -58,42 +59,18 @@ def _load_json(path: Path) -> dict[str, Any]:
 
 
 def normalize_account_credit_snapshot(raw: dict[str, Any]) -> dict[str, Any]:
-    """Validate the sanitized account-credit fact used by live preflight."""
-    if not isinstance(raw, dict):
-        raise APIGenerationError("account credit snapshot must be a JSON object")
-    if raw.get("format") != CREDIT_SNAPSHOT_FORMAT:
-        raise APIGenerationError("account credit snapshot format is unsupported")
-    if raw.get("provider") != "openrouter":
-        raise APIGenerationError("account credit snapshot provider must be openrouter")
-    source = raw.get("source")
-    if source not in {"approved_integration", "owner_sanitized_snapshot"}:
-        raise APIGenerationError("account credit snapshot source is not approved")
-    as_of_utc = raw.get("as_of_utc")
-    if not isinstance(as_of_utc, str) or not as_of_utc.strip():
-        raise APIGenerationError("account credit snapshot timestamp is required")
+    from patent_to_pilot.providers.credit import normalize_credit
     try:
-        parsed_time = datetime.fromisoformat(as_of_utc.replace("Z", "+00:00"))
+        return normalize_credit(raw)
     except ValueError as exc:
-        raise APIGenerationError("account credit snapshot timestamp is invalid") from exc
-    if parsed_time.tzinfo is None:
-        raise APIGenerationError("account credit snapshot timestamp must include timezone")
-    remaining = raw.get("remaining_credits_usd")
-    if isinstance(remaining, bool) or not isinstance(remaining, (int, float)) or not math.isfinite(float(remaining)):
-        raise APIGenerationError("remaining_credits_usd must be a finite number")
-    if float(remaining) < 0:
-        raise APIGenerationError("remaining_credits_usd cannot be negative")
-    unsigned = {
-        "format": CREDIT_SNAPSHOT_FORMAT,
-        "provider": "openrouter",
-        "source": source,
-        "as_of_utc": as_of_utc,
-        "remaining_credits_usd": float(remaining),
-    }
-    declared_hash = raw.get("snapshot_sha256")
-    expected_hash = sha256_json(unsigned)
-    if declared_hash is not None and declared_hash != expected_hash:
-        raise APIGenerationError("account credit snapshot hash mismatch")
-    return unsigned | {"snapshot_sha256": expected_hash}
+        raise APIGenerationError(str(exc)) from None
+
+
+def pricing_from_snapshot(raw):
+    allowed = set(B4Pricing.model_fields) | {"non_thinking_parameters", "max_input_tokens", "context_length", "timeout_seconds"}
+    if set(raw) - allowed:
+        raise APIGenerationError("unknown model snapshot fields")
+    return B4Pricing.model_validate({key: value for key, value in raw.items() if key in B4Pricing.model_fields})
 
 
 class OpenRouterQwenGenerationRunner:
@@ -134,6 +111,9 @@ class OpenRouterQwenGenerationRunner:
             if account_credit_snapshot is not None
             else None
         )
+        self.budget.account_credit_snapshot = self.account_credit_snapshot
+        if non_thinking_parameters and non_thinking_parameters != {"reasoning": {"enabled": False}}:
+            raise APIGenerationError("only the reviewed reasoning.enabled=false parameter is supported")
         self.run_id = run_id
         self.max_output_tokens = max_output_tokens
         self.max_findings = max_findings
@@ -174,8 +154,8 @@ class OpenRouterQwenGenerationRunner:
     def _request_for_case(self, payload_case: dict[str, Any]) -> tuple[ProviderRequest, int, int, float]:
         messages = payload_case["messages"]
         serialized = canonical_json(messages)
-        input_tokens = max(1, (len(serialized) + 3) // 4)
-        schema_tokens = max(1, (len(canonical_json(payload_case["response_schema"])) + 3) // 4)
+        input_tokens = max(1, len(serialized))
+        schema_tokens = len(canonical_json(payload_case["response_schema"])) + 512
         if input_tokens + schema_tokens > self.max_input_tokens:
             raise APIGenerationError("frozen paired message exceeds configured input bound")
         upper_bound = conservative_request_bound_usd(
@@ -213,12 +193,31 @@ class OpenRouterQwenGenerationRunner:
         for payload_case, source_case in zip(payload["cases"], pack["cases"]):
             request, input_tokens, schema_tokens, upper_bound = self._request_for_case(payload_case)
             prepared_cases.append((payload_case, source_case, request, input_tokens, schema_tokens, upper_bound))
+        attempt_ids = [item[2].request_id for item in prepared_cases]
+        if len(set(attempt_ids)) != len(attempt_ids):
+            raise APIGenerationError("case IDs collide after attempt-ID normalization")
         total_bound = sum(item[5] for item in prepared_cases)
         if self.live_enabled:
+            from patent_to_pilot.providers.credit import normalize_credit
+            try:
+                normalize_credit(self.account_credit_snapshot, require_current=True)
+                from patent_to_pilot.healthtech.b4_live import validate_pricing_freshness
+                validate_pricing_freshness(self.pricing)
+            except ValueError as exc:
+                raise APIGenerationError(str(exc)) from None
             assert self.account_credit_snapshot is not None
             if self.account_credit_snapshot["remaining_credits_usd"] < total_bound:
                 raise BudgetExceededError("account credit snapshot is below the conservative run bound")
+        before = self.budget.snapshot()
         result_cases: list[dict[str, Any]] = []
+        transport_modes = []
+        def make_transport():
+            transport = self.transport_factory()
+            mode = "mock" if transport.is_mock else "live"
+            if transport_modes and mode != transport_modes[0]:
+                raise APIGenerationError("mixed mock/live transports are not a paired run")
+            transport_modes.append(mode)
+            return transport
         for payload_case, source_case, request, input_tokens, schema_tokens, upper_bound in prepared_cases:
             attempt_id = request.request_id
             started = time.perf_counter()
@@ -227,6 +226,7 @@ class OpenRouterQwenGenerationRunner:
                 "attempt_id": attempt_id,
                 "message_sha256": payload_case["message_sha256"],
                 "payload_sha256": payload_case["payload_sha256"],
+                "wire_payload_sha256": request_payload_hash(self.config, request),
                 "input_token_bound": input_tokens,
                 "schema_framing_token_bound": schema_tokens,
                 "output_token_bound": self.max_output_tokens,
@@ -239,7 +239,7 @@ class OpenRouterQwenGenerationRunner:
                 ) else "public"
                 response: ProviderResponse = Round1Runner(
                     self.budget,
-                    self.transport_factory,
+                    make_transport,
                 ).complete(
                     attempt_id=attempt_id,
                     phase="paired_pilot",
@@ -278,6 +278,21 @@ class OpenRouterQwenGenerationRunner:
                     break
                 continue
             result_cases.append(case_result)
+        # Persist accounting even when schema/model validation failed after billing.
+        for case_result in result_cases:
+            row = self.budget.db.execute(
+                "SELECT a.actual,a.state,c.provider_generation_id FROM budget_attempts a LEFT JOIN budget_attempt_context c USING(attempt_id) WHERE a.attempt_id=?",
+                (case_result["attempt_id"],),
+            ).fetchone()
+            if row:
+                case_result["actual_debit_usd"] = None if row[0] is None else row[0] / 1_000_000_000
+                case_result["billing_state"] = row[1]
+                case_result["provider_generation_id"] = row[2]
+            else:
+                case_result["billing_state"] = "NOT_RESERVED"
+        for payload_case, _, request, _, _, _ in prepared_cases[len(result_cases):]:
+            result_cases.append({"case_id": payload_case["case_id"], "attempt_id": request.request_id,
+                "status": "NOT_RUN", "reason": "prior_attempt_blocked_dispatch", "billing_state": "NOT_RESERVED"})
         snapshot = self.budget.snapshot()
         status = "PASS_API_QWEN3_32B_FROZEN_PACK_GENERATION" if result_cases and all(
             case["status"] == "SUCCESS" for case in result_cases
@@ -285,6 +300,8 @@ class OpenRouterQwenGenerationRunner:
         return {
             "format": "ht-o3-api-generation-receipt-v1",
             "status": status,
+            "mode": transport_modes[0] if transport_modes else "not_run",
+            "external_provider_calls": 0 if "live" not in transport_modes else (None if snapshot["unknown_or_pending"] else snapshot["attempts"] - before["attempts"]),
             "authorization_id": R1_AUTHORIZATION_ID,
             "model_id": MODEL_ID,
             "route": self.pricing.upstream_provider,
@@ -295,8 +312,11 @@ class OpenRouterQwenGenerationRunner:
             "thinking": False,
             "account_credit_snapshot": self.account_credit_snapshot,
             "conservative_run_bound_usd": total_bound,
-            "provider_calls": sum(case["status"] in {"SUCCESS", "FAILED"} for case in result_cases),
-            "paid_cost_usd": sum(float(case.get("actual_debit_usd") or 0.0) for case in result_cases),
+            "provider_calls": None if snapshot["unknown_or_pending"] else snapshot["attempts"] - before["attempts"],
+            "reserved_attempts": snapshot["attempts"] - before["attempts"],
+            "known_debit_usd": (snapshot["actual_nano_usd"] - before["actual_nano_usd"]) / 1_000_000_000,
+            "paid_cost_usd": 0.0 if "live" not in transport_modes else (None if snapshot["unknown_or_pending"] else (snapshot["actual_nano_usd"] - before["actual_nano_usd"]) / 1_000_000_000),
+            "billing_complete": not bool(snapshot["unknown_or_pending"]),
             "ledger_snapshot": snapshot,
             "cases": result_cases,
         }
@@ -305,6 +325,7 @@ class OpenRouterQwenGenerationRunner:
     def sanitized_receipt(result: dict[str, Any]) -> dict[str, Any]:
         """Drop messages and generated text before persisting a receipt."""
         safe = dict(result)
+        safe["ledger_snapshot"] = {key: value for key, value in result.get("ledger_snapshot", {}).items() if key != "ledger_path"}
         safe["cases"] = []
         for case in result.get("cases", []):
             safe["cases"].append({
@@ -329,7 +350,7 @@ class OpenRouterQwenGenerationRunner:
     ) -> "OpenRouterQwenGenerationRunner":
         raw = _load_json(snapshot_path)
         try:
-            pricing = B4Pricing.model_validate(raw)
+            pricing = pricing_from_snapshot(raw)
         except Exception as exc:
             raise APIGenerationError("model snapshot does not contain exact pricing fields") from exc
         parameters = raw.get("non_thinking_parameters")

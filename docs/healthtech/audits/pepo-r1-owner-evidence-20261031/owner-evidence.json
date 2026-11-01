@@ -1,0 +1,22 @@
+{
+  "owner_source": "Sentinel_e733c42aab0c8191b636b8cddfdbda21",
+  "received_at_utc": "2026-10-31T14:09:42Z",
+  "sole_openrouter_key_for_r1": "CONFIRMED_BY_OWNER",
+  "no_inflight_requests": "NOT_EXPLICITLY_CONFIRMED",
+  "credit_display_usd": "10.00",
+  "credit_evidence_kind": "OWNER_SUPPLIED_ROUNDED_UI_SCREENSHOT_PARENT_VISUALLY_VERIFIED",
+  "displayed_timestamp_in_image": null,
+  "received_timestamp_is_not_capture_timestamp": true,
+  "account_scope_description": "Personal account; no email retained",
+  "library_file_id": "libfile_bbfa15f0baa0819181b4b6d2e26314c3",
+  "image_sha256_parent_observed": "8e6f268cb71512d48c27601d77fc2b719d67e66c48087ca1666b4460755c2a14",
+  "image_pixels_verified_by_this_executor": false,
+  "local_image_materialization": "FAILED_AFTER_ONE_RETRY_WINDOWS_HELPER_OS_SETXATTR_UNAVAILABLE",
+  "local_destination_exists": false,
+  "provider_api_authenticated_account_balance": false,
+  "live_credit_snapshot_created": false,
+  "new_budget_authorization": false,
+  "parent_visual_receipt_explicitly_accepted": true,
+  "repeat_materialization_required": false,
+  "acceptance_source": "Parent delegation explicitly accepted its own pixel inspection after receiving the completed handoff"
+}

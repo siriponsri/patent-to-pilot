@@ -1,0 +1,52 @@
+[
+  {
+    "journal": "live.sqlite3",
+    "attempts": [
+      {
+        "seq": 1,
+        "reservation_status": "settled",
+        "attempt_status": "model_drift",
+        "has_finished_value": true,
+        "observed_cost_usd": 1.32e-05,
+        "reserved_cost_usd": 0.10545760000000001,
+        "provider_request_id_present": true
+      },
+      {
+        "seq": 2,
+        "reservation_status": "settled",
+        "attempt_status": "success",
+        "has_finished_value": true,
+        "observed_cost_usd": 6e-05,
+        "reserved_cost_usd": 0.42143040000000004,
+        "provider_request_id_present": true
+      }
+    ],
+    "sha256": "a10f81d79a37a39b53547cb4417437499aa81b69a896048f352ff3a8ba8e9d36",
+    "unchanged": true
+  },
+  {
+    "journal": "paired-revalidation-1.sqlite3",
+    "attempts": [
+      {
+        "seq": 1,
+        "reservation_status": "settled",
+        "attempt_status": "success",
+        "has_finished_value": true,
+        "observed_cost_usd": 1.32e-05,
+        "reserved_cost_usd": 0.1054576,
+        "provider_request_id_present": true
+      },
+      {
+        "seq": 2,
+        "reservation_status": "settled",
+        "attempt_status": "success",
+        "has_finished_value": true,
+        "observed_cost_usd": 6e-05,
+        "reserved_cost_usd": 0.4214304,
+        "provider_request_id_present": true
+      }
+    ],
+    "sha256": "f6943c6b99b999f88e5df839e35c15bd86119cb19a89ab4507d61b40d7de9fcb",
+    "unchanged": true
+  }
+]

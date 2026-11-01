@@ -71,3 +71,16 @@ journal จริงและหลักฐานเครดิตปัจจ
 ผลนี้เป็น engineering/research handoff ไม่ใช่ semantic patent gold, exhaustive
 recall, clinical/FTO, patent validity, investment, deployment หรือ commercial
 validation
+
+
+## ข้อแก้ไขจาก audit รอบซ่อม
+
+O4 ผ่านเส้นทางผลิตภัณฑ์สามเคสตาม receipt ที่เก็บไว้ แต่ผลวิจัยยังไม่ครบ
+การปิด O3 เพียงอย่างเดียวยังไม่พอ ต้องมี fixed/adaptive comparison บน cohort
+และงบที่ตรึงตรงกัน พร้อม hash ของข้อความเข้าและผลลัพธ์ที่ผูกกับแต่ละ job
+ตาราง Stryker เก็บไว้เป็นผลอ้างอิงในอดีต แยกจาก Abbott รอบปัจจุบัน
+
+registry และ credit gate รุ่นก่อนยังมีช่องโหว่ รายละเอียดและ patch อยู่ที่
+[audit รอบซ่อม](../pepo-o3-safety-repair-20261031/AUDIT_TH.md)
+งาน offline เดินต่อได้ ส่วน paid branch ยังรอประวัติ R1 ที่ตรวจครบ
+และข้อมูลเครดิตที่ผูกกับ account/key ปัจจุบัน ไม่ต้องขออนุมัติ USD8 ซ้ำ

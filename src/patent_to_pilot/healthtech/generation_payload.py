@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from typing import Any
 
 
@@ -52,7 +53,11 @@ def _model_visible_case(pack: dict[str, Any], case: dict[str, Any]) -> dict[str,
     for row in case.get("evidence", []):
         if not isinstance(row, dict):
             raise GenerationPayloadError("case evidence row is invalid")
-        compact_row = dict(row)
+        compact_row = {key: row.get(key) for key in (
+            "evidence_id", "evidence_kind", "jurisdiction", "locator", "payload_hash",
+            "source_date", "source_id", "source_version", "statement", "structured_field",
+            "structured_value", "support_basis", "verification_status",
+        )}
         value = compact_row.get("structured_value")
         if isinstance(value, list) and len(value) > 8:
             compact_row["structured_value"] = {
@@ -202,7 +207,7 @@ def _case_source_ids(case: dict[str, Any]) -> list[str]:
     query = case.get("query") or {}
     if query.get("selected_comparator_source_id"):
         ids.append(query["selected_comparator_source_id"])
-    for group in (case.get("evidence", []), case.get("candidates", [])):
+    for group in (case.get("evidence", []), case.get("candidates", [])[:6]):
         for row in group:
             if isinstance(row, dict) and row.get("source_id"):
                 ids.append(row["source_id"])
@@ -225,6 +230,9 @@ def build_rights_cleared_paired_payload(
     """
     if pack.get("format") != PACK_FORMAT:
         raise GenerationPayloadError("unexpected frozen pack format")
+    unsigned_pack = {key: value for key, value in pack.items() if key != "pack_sha256"}
+    if pack.get("pack_sha256") != sha256_json(unsigned_pack):
+        raise GenerationPayloadError("pack_sha256 mismatch")
     if provider != "openrouter" or not model or not route:
         raise GenerationPayloadError("exact provider, model, and route are required")
     if max_output_tokens < 1:
@@ -235,6 +243,9 @@ def build_rights_cleared_paired_payload(
     output_schema = pack.get("prompt_contract", {}).get("output_schema")
     if not isinstance(output_schema, dict):
         raise GenerationPayloadError("frozen output schema is missing")
+    case_ids = [case.get("case_id") for case in cases if isinstance(case, dict)]
+    if len(case_ids) != len(cases) or len(set(case_ids)) != len(case_ids):
+        raise GenerationPayloadError("duplicate or invalid case IDs")
     runtime_cases = []
     manifest_cases = []
     all_decisions = []
@@ -246,12 +257,29 @@ def build_rights_cleared_paired_payload(
             for row in case.get("sources", [])
             if isinstance(row, dict) and row.get("source_id")
         }
+        if len(source_by_id) != len(case.get("sources", [])):
+            raise GenerationPayloadError("duplicate or missing source IDs")
+        for group, key in ((case.get("evidence", []), "evidence_id"), (case.get("candidates", []), "patent_id_canonical")):
+            ids = [row.get(key) for row in group]
+            if any(not isinstance(item, str) or not item for item in ids) or len(set(ids)) != len(ids):
+                raise GenerationPayloadError("duplicate or missing evidence/candidate IDs")
         source_bindings = []
         for source_id in _case_source_ids(case):
             source = source_by_id.get(source_id)
             if source is None:
                 raise GenerationPayloadError(f"case source descriptor is missing: {source_id}")
             decision = _source_decision(source)
+            if decision != "SYNTHETIC":
+                if not source.get("rights_id") or not source.get("basis_url") or not (source.get("clause_locator") or source.get("locator")):
+                    raise GenerationPayloadError("non-synthetic transfer requires sourced rights evidence")
+                if not re.fullmatch(r"[a-f0-9]{64}", str(source.get("sha256", ""))) or not source.get("version_label"):
+                    raise GenerationPayloadError("non-synthetic transfer requires source hash and revision")
+                for row in case.get("evidence", []):
+                    if row.get("source_id") == source_id:
+                        if row.get("source_version") != source["version_label"]:
+                            raise GenerationPayloadError("evidence/source revision mismatch")
+                        if row.get("structured_field") not in source.get("displayable_fields", []):
+                            raise GenerationPayloadError("evidence field is outside reviewed source projection")
             all_decisions.append(decision)
             source_bindings.append({
                 "source_id": source_id,
@@ -273,6 +301,12 @@ def build_rights_cleared_paired_payload(
             "thinking": False,
         }
         message_hash = sha256_json(messages)
+        if any(binding["decision"] != "SYNTHETIC" for binding in source_bindings):
+            review = case.get("remote_transfer_review", {})
+            # Query prose, associations, statements and unresolved text also leave
+            # the machine. A source-level redistribution label alone cannot clear them.
+            if (review.get("purpose"), review.get("provider"), review.get("route"), review.get("message_sha256")) != ("ht-o3-generation", provider, route, message_hash) or not review.get("basis_reference"):
+                raise GenerationPayloadError("exact model-visible fields require a source-backed transfer review")
         payload_hash = sha256_json(request_shape)
         runtime_cases.append({
             "case_id": case["case_id"],

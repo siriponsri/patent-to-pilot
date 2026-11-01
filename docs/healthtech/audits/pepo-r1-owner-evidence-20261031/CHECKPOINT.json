@@ -1,0 +1,22 @@
+{
+  "status": "HANDOFF_TO_EXISTING_OWNER_CLI_NO_DUPLICATE_RUNNER",
+  "branch": "pepo/r1-metadata-recovery-20261031",
+  "prior_delivery_head": "9b27915a391422b736e7e80b638e8d74075ef772",
+  "upstream_base_initially_verified": "9ac38720d219b83acccaa92dcabc4480283914c4",
+  "first_runtime_no_later_than_utc": "2026-10-31T02:47:23Z",
+  "deadline_no_later_than_utc": "2026-11-01T02:47:23Z",
+  "owned_active_paid_jobs": [],
+  "owned_active_gpu_jobs": [],
+  "owned_active_background_process_ids": [],
+  "other_project_processes": "UNKNOWN_ACCESS_DENIED",
+  "paid_calls_in_this_task": 0,
+  "gpu_jobs_in_this_task": 0,
+  "facts_no_longer_missing": [
+    "sole-key R1 scope",
+    "owner-reported rounded USD10 account credit with parent screenshot verification",
+    "four historical attempts settled and fully included in observed lifetime usage"
+  ],
+  "next_action": "Hand off to existing owner CLI. Complete writer-state checks and reviewed conservative carryover/migration. Use the accepted parent visual credit receipt; do not repeat image materialization. Stop on access denial without bypass.",
+  "parent_visual_receipt_accepted": true,
+  "repeat_image_transfer_required": false
+}

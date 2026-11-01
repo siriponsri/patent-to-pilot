@@ -11,6 +11,7 @@ from patent_to_pilot.healthtech.generation_payload import (
     build_generation_messages,
     build_rights_cleared_paired_payload,
     validate_generation_output,
+    sha256_json,
 )
 
 
@@ -121,6 +122,7 @@ def test_rights_cleared_payload_uses_shared_messages_and_excludes_raw_payload(tm
 def test_non_synthetic_blocked_rights_cannot_form_remote_payload(tmp_path):
     pack = _synthetic_pack(tmp_path)
     pack["cases"][0]["sources"][0]["synthetic"] = False
+    pack["pack_sha256"] = sha256_json({key: value for key, value in pack.items() if key != "pack_sha256"})
     with pytest.raises(GenerationPayloadError, match="not rights-cleared"):
         build_rights_cleared_paired_payload(
             pack,

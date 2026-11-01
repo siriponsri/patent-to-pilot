@@ -150,9 +150,14 @@ for reconciliation.
 
 ## Decision
 
-O1 and O2 are complete engineering packages. O4 is a verified three-case
-product-path and research handoff with grouped retrieval, failure, and
-cost-quality analysis. O3 remains the only material blocker to a complete
-four-outcome goal. Keep paid dispatch closed and resume only after the O3
-ledger, credit, fresh route/parameter, and prompt-rights gates are recorded;
-the original owner authorization is already present.
+O1 and O2 have engineering receipts. O4 demonstrates a three-case product
+path; the research outcome remains partial. Completing O3 alone does not close
+the four-outcome goal: a current matched fixed/adaptive comparison on the same
+frozen cohort and budget, plus per-job message/output provenance, is still
+needed. Preserve the Stryker holdout as a separate historical reference.
+
+Keep the dependent paid branch closed until reconciled R1 history, current
+scoped availability, exact route bounds and field-level prompt rights are
+available. The existing USD8 owner authorization remains valid; offline repairs
+and current-cohort study preparation can proceed. See
+[the follow-up repair audit](../pepo-o3-safety-repair-20261031/AUDIT_TH.md).

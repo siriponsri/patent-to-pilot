@@ -136,6 +136,8 @@ def _run(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
         parser.error("output already exists; choose a fresh directory")
     if not 1 <= args.max_steps <= 4:
         parser.error("max-steps must be between 1 and 4")
+    if args.mode == "live" and args.credit_snapshot is None:
+        parser.error("live mode requires --credit-snapshot")
     if args.mode == "live" and args.transfer_manifest is None:
         parser.error("live mode requires --transfer-manifest")
     if args.mode == "live" and args.env_file is None and not __import__("os").environ.get("OPENROUTER_API_KEY"):
@@ -170,6 +172,9 @@ def _run(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
             pricing_snapshot_utc=pricing.snapshot_utc,
             namespace="canonical",
         )
+    if args.mode == "live":
+        from patent_to_pilot.providers.credit import normalize_credit
+        budget.account_credit_snapshot = normalize_credit(_read_json(args.credit_snapshot), require_current=True)
     transfer_manifest = None if args.transfer_manifest is None else ProviderTransferManifest.model_validate(_read_json(args.transfer_manifest))
     runtime_sources = _sources(runtime, registry)
     devices, patents = BASELINES.validate_runtime_payload(runtime)
@@ -327,6 +332,7 @@ def main() -> int:
         default=None,
         help="isolated mock journal path; live mode accepts only the registered canonical path",
     )
+    parser.add_argument("--credit-snapshot", type=Path, help="sanitized v2 availability observation, required for live dispatch")
     parser.add_argument("--transfer-manifest", type=Path)
     parser.add_argument("--env-file", type=Path)
     parser.add_argument("--run-id", required=True)
@@ -338,6 +344,8 @@ def main() -> int:
     parser.add_argument("--max-steps", type=int, default=3)
     parser.add_argument("--max-output-tokens", type=int, default=256)
     args = parser.parse_args()
+    if args.mode == "live" and args.credit_snapshot is None:
+        parser.error("live mode requires --credit-snapshot")
     if args.mode == "live" and args.transfer_manifest is None:
         parser.error("live mode requires --transfer-manifest")
     if args.mode == "live" and args.env_file is None and not __import__("os").environ.get("OPENROUTER_API_KEY"):

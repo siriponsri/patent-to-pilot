@@ -247,11 +247,13 @@ def test_api_generation_cli_live_requires_credit_snapshot(tmp_path, monkeypatch)
 
 def test_live_runner_rejects_credit_below_total_bound_before_transport(tmp_path):
     pack = _load_fixture_builder()._synthetic_pack(tmp_path)
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc).isoformat()
     pricing = B4Pricing(
         model="qwen/qwen3-32b",
         upstream_provider="DeepInfra",
         snapshot_sha256="a" * 64,
-        snapshot_utc="2026-10-31T00:00:00Z",
+        snapshot_utc=now,
         prompt_usd_per_million="0.08",
         completion_usd_per_million="0.28",
         max_price_prompt=0.08,
@@ -264,10 +266,13 @@ def test_live_runner_rejects_credit_below_total_bound_before_transport(tmp_path)
         transport_factory=lambda: (_ for _ in ()).throw(AssertionError("transport must not run")),
         live_enabled=True,
         account_credit_snapshot={
-            "format": "ptp-openrouter-credit-snapshot-v1",
+            "format": "ptp-openrouter-credit-snapshot-v2",
+            "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+            "account_scope": "fixture-account", "key_scope": "fixture-key", "currency": "USD",
+            "key_limit_unlimited": True,
             "provider": "openrouter",
             "source": "owner_sanitized_snapshot",
-            "as_of_utc": "2026-10-31T11:00:00Z",
+            "as_of_utc": now,
             "remaining_credits_usd": 0.0,
         },
         run_id="low-credit-gate-test",

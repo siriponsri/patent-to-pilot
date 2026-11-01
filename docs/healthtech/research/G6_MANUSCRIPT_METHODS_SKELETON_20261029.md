@@ -1,6 +1,8 @@
 # G6 manuscript and reproducibility skeleton
 
-Status: `PREPARED METHODS/RESULTS SKELETON; DESCRIPTIVE DEVELOPMENT EVIDENCE ONLY`.
+Status: `HISTORICAL METHODS/RESULTS SKELETON; SEE CURRENT SOLO COMPUTATIONAL MANUSCRIPT`.
+
+The current owner-aligned manuscript package is [`MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md`](MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md). This file is retained as a historical methods/results record and is not, by itself, a claim of final study completion.
 
 Working title: *Evaluating Adaptive Evidence Acquisition for Medical-Device Patent Screening under Incomplete Judgments*.
 
