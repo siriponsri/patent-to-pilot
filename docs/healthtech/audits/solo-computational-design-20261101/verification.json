@@ -1,6 +1,7 @@
 {
   "run_id": "solo-computational-design-20261101",
   "status": "PASS_WITH_PARTIAL_RESEARCH_AND_EXTERNAL_VALIDATION",
+  "candidate_revision": "912a65e67e04faa74914819b415863e3e635ac7f",
   "commands": [
     {
       "command": "PYTHONPATH=src python -m pytest -q tests/test_healthtech_history_migration.py tests/test_openrouter_metadata_observation.py tests/test_healthtech_api_generation.py tests/test_healthtech_generation_payload.py tests/test_healthtech_ledger_registry.py tests/test_o3_adversarial_repair.py tests/test_o3_generation_repair.py",

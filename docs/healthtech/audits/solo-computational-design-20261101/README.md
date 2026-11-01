@@ -4,6 +4,8 @@ Status: `PASS_DESIGN_PACKAGE / EXTERNAL_BUSINESS_VALIDATION_NOT_VALIDATED / PAID
 
 Date: 2026-11-01 (Asia/Bangkok)
 
+Candidate revision: `912a65e67e04faa74914819b415863e3e635ac7f`
+
 This checkpoint records the owner-aligned change from a participant-dependent pilot framing to a solo reproducible computational study with permitted real-data case studies. It does not claim human validation, customer adoption, revenue, willingness-to-pay, ROI, journal submission, or journal acceptance.
 
 ## Scope completed

@@ -5,6 +5,7 @@
   "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
   "branch": "codex/research-product-o1-o4-20261031",
   "head_before_documentation_commit": "8b64ca09a4237a28ad121997985b081ca8781804",
+  "candidate_commit": "912a65e67e04faa74914819b415863e3e635ac7f",
   "owner_input": "docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md",
   "design_status": "PASS_SOLO_COMPUTATIONAL_DESIGN",
   "engineering_status": "PASS_CURRENT_CANDIDATE_TESTED",
