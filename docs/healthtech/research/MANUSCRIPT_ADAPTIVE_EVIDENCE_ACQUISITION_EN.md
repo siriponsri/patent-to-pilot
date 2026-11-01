@@ -149,6 +149,18 @@ The current frozen descriptive audits provide the following actual figure and ta
 
 The system provides a plausible operational path for entrepreneurs and investor analysts because it exposes source locators, evidence states, unresolved items, editable history, and exportable dossiers. The evidence currently supports potential value in four measurable dimensions: citation/locator quality, evidence coverage, machine/GPU time, and cost-quality trade-off.
 
+The three-case browser receipt provides a machine-side operational proxy, not a user-productivity result:
+
+| Operational measure | Observed value |
+|---|---:|
+| Named real-device cases | 3 |
+| Local generation schema-valid cases | 3/3 |
+| Local generation latency | 32.888–33.121 seconds per case; mean 33.023 seconds |
+| Source inspection, history 1→2, and JSON export | 3/3 cases |
+| Paid provider calls / paid cost | 0 / USD0.00 |
+
+These measurements exclude human time, support time, and external-user behavior. They should be used for capacity and cost scenarios only, not as a service-level promise or ROI evidence.
+
 The repository does not contain independent user validation, measured willingness-to-pay, a purchase, revenue, or ROI. If the owner runs the workflow personally, the result must be labeled `developer_self_evaluation` and interpreted as formative evidence with builder familiarity bias. Any labor-rate or dossier-volume scenario must remain a sensitivity analysis, not a commercial outcome.
 
 ## 9. Ethics, data rights, and responsible use
@@ -198,9 +210,9 @@ The following references are drawn from the checked local bibliography at `liter
 3. Xiong, G., Jin, Q., Lu, Z., and Zhang, A. (2024). Benchmarking Retrieval-Augmented Generation for Medicine. Findings of ACL 2024. doi:10.18653/v1/2024.findings-acl.372.
 4. Pai, D. B. (2021). Mapping the genealogy of medical device predicates in the United States. PLOS ONE, 16(10), e0258153. doi:10.1371/journal.pone.0258153.
 5. Shomee, H. H., Wang, Z., Ravi, S. N., and Medya, S. (2025). A Survey on Patent Analysis: From NLP to Multimodal AI. ACL 2025. doi:10.18653/v1/2025.acl-long.419.
-6. Jeong, S., Baek, J., Cho, S., Hwang, S. J., and Park, J. (2024). Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity. NAACL-HLT 2024.
-7. Su, W., Tang, Y., Ai, Q., Liu, Y., and others. (2024). DRAGIN: Dynamic Retrieval Augmented Generation based on the Information Needs of Large Language Models. ACL 2024.
-8. Wu, M., Yang, H., Ben-Porat, O., and Ziser, Y. (2026). When Knowledge Is Not Free: Cost-Aware Evidence Selection in Retrieval-Augmented Generation. Findings of EMNLP 2026.
+6. Jeong, S., Baek, J., Cho, S., Hwang, S. J., and Park, J. (2024). Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity. Proceedings of NAACL-HLT 2024, 7036–7050. doi:10.18653/v1/2024.naacl-long.389.
+7. Su, W., Tang, Y., Ai, Q., Wu, Z., and Liu, Y. (2024). DRAGIN: Dynamic Retrieval Augmented Generation based on the Information Needs of Large Language Models. Proceedings of ACL 2024, 12991–13013. doi:10.18653/v1/2024.acl-long.702.
+8. Wu, M., Yang, H., Ben-Porat, O., and Ziser, Y. (2026). When Knowledge Is Not Free: Cost-Aware Evidence Selection in Retrieval-Augmented Generation. Findings of EMNLP 2026, 8713–8739. https://aclanthology.org/2026.findings-emnlp.413/.
 9. Poce, S., and Cerro, G. (2026). A survey on automated and AI-based tools for patent retrieval with a special focus on the life sciences domain. World Patent Information. doi:10.1016/j.wpi.2026.102439.
 
 ## Author-review checklist
