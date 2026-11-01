@@ -47,7 +47,7 @@ Negative cases ต้องแยกสามชนิด: verified negative ท
 
 ## Benchmark-expansion reproducibility addendum — 2026-11-01
 
-The staged benchmark-expansion continuation is now partially executed on candidate `cd7e5d364d529a001fc51f78c217c10d7d9c8945`.
+The staged benchmark-expansion component scores were run on pre-run candidate `cd7e5d364d529a001fc51f78c217c10d7d9c8945`. The reviewed implementation candidate is `80da253969f7973cc630ce03ac83da9900f16628`; the current `41e5923664921ba5d0b34d2084d015dadf6ab5ea` commit adds audit/acceptance metadata only and does not change the scored implementation. The reviewed candidate is clean and bound by `CHECKPOINT_V6.json` and `FINAL_EVALUATION_BINDING.json`.
 
 ### Verified acquisition
 

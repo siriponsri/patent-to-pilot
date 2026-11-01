@@ -8,8 +8,9 @@
 
 - Worktree: `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031`
 - Branch: `codex/research-product-o1-o4-20261031`
-- Candidate ก่อนเอกสารรอบนี้: `cd7e5d364d529a001fc51f78c217c10d7d9c8945`
-- สถานะปัจจุบัน: working tree มี uncommitted changes; ยังไม่มี push, merge หรือ commit จาก checkpoint นี้
+- Candidate ที่ใช้ score ก่อนรัน: `cd7e5d364d529a001fc51f78c217c10d7d9c8945`
+- Reviewed implementation candidate: `80da253969f7973cc630ce03ac83da9900f16628`
+- Audit metadata base ก่อน provenance correction: `41e5923664921ba5d0b34d2084d015dadf6ab5ea`; การแก้รอบนี้เป็น documentation-only และไม่เปลี่ยน code, payload, score, push หรือ merge
 - Source pack: `pepo-dataset-benchmark-expansion-20261101`; parent audit commit `f826069dddb74d4df9ca820a33c07355bec8b357`
 - Raw payload และ row-level predictions อยู่นอก Git; ไม่เก็บ secret, key หรือ restricted payload ใน repository
 
@@ -31,7 +32,7 @@
 - Application overlap ระหว่าง validation/test: PAR4PC `0`, PI4PC `0`
 - Shared candidate IDs ข้าม official splits ถูกเก็บเป็น diagnostic: PAR4PC `149`, PI4PC `38`; ไม่ถูกลบหรือเรียกว่า leakage โดยอัตโนมัติ
 - Gold/silver/negative fields ถูกกันออกจาก runtime ranking; unjudged ไม่ถูกแปลงเป็น negative
-- `FINAL_EVALUATION_FREEZE.json` ถูกสร้างก่อน final component scoring และกำหนด endpoint, grouping, retry, cost และ stopping rules แล้ว ผลหลัง freeze ถูกผูกกับ candidate/protocol/result hashes ใน [`FINAL_EVALUATION_BINDING.json`](FINAL_EVALUATION_BINDING.json) และ [`CHECKPOINT_V4.json`](CHECKPOINT_V4.json)
+- `FINAL_EVALUATION_FREEZE.json` ถูกสร้างก่อน final component scoring และกำหนด endpoint, grouping, retry, cost และ stopping rules แล้ว ผลหลัง freeze ถูกผูกกับ pre-run scoring candidate, reviewed implementation candidate, protocol hash และ result hashes ใน [`FINAL_EVALUATION_BINDING.json`](FINAL_EVALUATION_BINDING.json) และ [`CHECKPOINT_V6.json`](CHECKPOINT_V6.json)
 - Freeze file คงสถานะ pre-run เดิมไว้เพื่อรักษาความไม่เปลี่ยนรูป; `FINAL_EVALUATION_BINDING.json` เป็น post-run record ที่ยืนยันผลจริงหลัง freeze
 
 ## ผลรันจริง
@@ -93,4 +94,4 @@ External business validation ยังคง `NOT_VALIDATED` ตาม solo-proj
 
 ## Next checkpoint
 
-Owner review candidate นี้ก่อน commit/push/merge และตรวจ official *World Patent Information* aims/scope กับ Guide for Authors ล่าสุดก่อน submission หลังจากนั้น หากจะทำ adaptive final study ให้ตรึง matched cohort, group split, endpoint และ fair-budget controls แยกเป็น audit ใหม่ โดยคง paid/API branch และ canonical ledger gates เดิม
+Owner review reviewed implementation candidate นี้ก่อน push/merge และตรวจ official *World Patent Information* aims/scope กับ Guide for Authors ล่าสุดก่อน submission หลังจากนั้น หากจะทำ adaptive final study ให้ตรึง matched cohort, group split, endpoint และ fair-budget controls แยกเป็น audit ใหม่ โดยคง paid/API branch และ canonical ledger gates เดิม
