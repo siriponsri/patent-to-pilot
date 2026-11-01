@@ -60,3 +60,12 @@ benchmark receipts referenced with their original candidate boundaries.
 
 No paid call, GPU job, participant contact, ledger mutation, top-up, or branch
 cleanup occurred in this checkpoint.
+
+## Current-head documentation continuation
+
+The later continuation commits through `c88ddecf922a4ace30bc36faf056bb86df67f9b9`
+change documentation and audit metadata only; they do not change runtime code,
+payloads, vector bundles, model configuration, ledger state, or endpoint rules.
+The current-head browser integration and focused O1/O2/O3/benchmark contract set
+were rerun after that documentation continuation. The machine-readable binding is
+[`CHECKPOINT_CURRENT_HEAD.json`](CHECKPOINT_CURRENT_HEAD.json).

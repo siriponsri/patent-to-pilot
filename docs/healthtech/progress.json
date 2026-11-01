@@ -655,5 +655,7 @@
   "latest_benchmark_expansion_selected_receipt": "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json",
   "latest_wpi_venue_check_audit": "docs/healthtech/audits/wpi-venue-check-20261101/README.md",
   "latest_wpi_venue_check_verification": "docs/healthtech/audits/wpi-venue-check-20261101/verification.json",
-  "latest_wpi_venue_check_status": "PASS_SCOPE_CHECKED_GUIDE_RECHECK_REQUIRED_NOT_SUBMITTED"
+  "latest_wpi_venue_check_status": "PASS_SCOPE_CHECKED_GUIDE_RECHECK_REQUIRED_NOT_SUBMITTED",
+  "latest_o1_o4_current_head_checkpoint": "docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/CHECKPOINT_CURRENT_HEAD.json",
+  "latest_o1_o4_current_head_status": "PARTIAL_O1_O2_O4_ENGINEERING_O3_PAID_BLOCKED_CURRENT_HEAD"
 }

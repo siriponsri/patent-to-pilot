@@ -982,3 +982,24 @@ Next: owner recheck the journal-specific author page in an authorized session,
 confirm final author/declaration details, and review the committed documentation
 candidate before any push or merge. Keep the main adaptive study and paid branch
 separately labeled until their own evidence gates are satisfied.
+
+## HT-NEXT-093 — 2026-11-01 current-head O1-O4 documentation binding
+
+Status: `PASS_CURRENT_HEAD_CONTRACTS_DOCS_ONLY_O3_PAID_BLOCKED`;
+canonical checkpoint: `docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/CHECKPOINT_CURRENT_HEAD.json`.
+
+Bound the current branch tip `c88ddecf922a4ace30bc36faf056bb86df67f9b9`
+to the prior runtime-equivalent candidate after confirming that the continuation
+delta is documentation and audit metadata only. Reran loopback browser HTTP
+integration with history `1 -> 2`, source inspection, edit, and JSON/TH/EN export;
+reran the focused O1/O2/O3/benchmark contract suite with exit code `0`; and
+revalidated JSON parsing and `git diff --check`.
+
+This strengthens candidate provenance but does not convert prior O2 remote receipts
+into a new remote rerun, does not create a live API result, and does not close the
+matched adaptive study. Paid cost, provider calls, GPU jobs, ledger state, and
+participant state remain unchanged.
+
+Next: keep O3 API and main adaptive scientific branches separately gated; owner
+review the current-head documentation binding and provide only the unresolved
+R1/credit evidence if a paid comparison is still desired.
