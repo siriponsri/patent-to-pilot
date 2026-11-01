@@ -1,12 +1,16 @@
 # Patent-to-Pilot O1-O4 completion matrix — current head
 
-Candidate: `ea751cddb310b62d6aa57654886cd66c9f7d7e5c`  
-Runtime-equivalent candidate: `c88ddecf922a4ace30bc36faf056bb86df67f9b9`  
+Candidate: `c1e9ece8dc2c6d6c790356acd5889382ef1c5787`  
+Runtime-equivalent candidate: `c2ec673d375f8ed8badfffeb115bed31c0cac526`  
 Reviewed implementation candidate: `80da253969f7973cc630ce03ac83da9900f16628`
 
 This matrix is an audit aid for the existing goal. It does not convert prior
 receipts into current reruns, turn unknowns into zeros, or promote descriptive
 evidence into scientific or commercial validation.
+
+The current-head delta after `c2ec673` is documentation-only. The runtime
+contract checks remain bound to the runtime-equivalent candidate; the current
+head binding is recorded in `docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V8_CURRENT_HEAD.json`.
 
 | Requirement | Status | Authoritative evidence | Boundary / missing proof |
 |---|---|---|---|
@@ -16,6 +20,7 @@ evidence into scientific or commercial validation.
 | Local Qwen3-8B frozen-evidence generation | `COMPLETE_PRIOR_RECEIPT` | [`generation-canary.json`](../ht-o3-local-model-preflight-20261031/generation-canary.json) | 3/3 schema-valid prior receipt; current checkout does not claim a new local inference run |
 | API Qwen3-32B comparison | `BLOCKED_LOCAL` | [`o3-gate.json`](../ht-research-product-20261031/o3-gate.json) | Missing complete R1 journal/completeness anchor, current credit, fresh route/pricing binding and outbound prompt rights |
 | Canonical budget ledger and duplicate-ledger guard | `COMPLETE_ENGINEERING / LIVE_BINDING_PENDING` | R1 continuation audit and current O3 contract suite | Real journal path and writer-quiescence evidence are not present in this candidate |
+| USD100/V100 resource boundary and no-reset rule | `RECORDED_AUTHORIZATION / LIVE_CREDIT_PENDING` | `GOAL.md`, `PLAN.md`, benchmark expansion pack, current-head checkpoint | USD100 is a cumulative ceiling, not proof of available credit; no spend, top-up or ledger reset is claimed |
 | Candidate vs disclosed-link validation | `COMPLETE_ENGINEERING` | O3 generation payload tests and source-backed provenance receipts | Does not create semantic gold or legal relevance |
 | Three real device cases through product path | `COMPLETE_PRIOR_REAL_CASE_ENGINEERING` | [`ht-o4-remote-http-generation-browser-20261031`](../ht-o4-remote-http-generation-browser-20261031/REPORT.md) | Prior MitraClip/Tendyne/TriClip receipt; current-head synthetic route is separate |
 | Adaptive vs fixed/multi-query/heuristic scientific comparison | `PARTIAL / NOT_EVALUATED` | [`COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md`](../../research/COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md); offline audits | Existing results are known-link/product-disclosure diagnostics; no admissible semantic gold and no powered confirmatory claim |
@@ -24,6 +29,7 @@ evidence into scientific or commercial validation.
 | Solo pilot protocol/task set/rubric/result form/consent | `COMPLETE_FOR_FUTURE_USE` | `docs/healthtech/business/` package and owner one-time input | No participant route is active in this round |
 | WPI venue fit and submission preparation | `PASS_SCOPE_CHECKED / GUIDE_RECHECK_REQUIRED` | [`wpi-venue-check-20261101`](../wpi-venue-check-20261101/README.md) | Journal-specific author page returned HTTP 403 locally; owner must recheck before submission |
 | Reproducible artifacts and rights boundary | `PARTIAL_READY_FOR_OWNER_REVIEW` | Benchmark binding, private-artifact receipts, rights manifests and manuscript supplement | Restricted payloads/private journals remain outside Git; unresolved dataset rights remain excluded |
+| Tested commit / push / PR / merge lifecycle | `COMPLETE_TESTED_COMMIT / PUSH_MERGE_PENDING` | Current branch `c1e9ece`; full Python, frontend, HTTP and benchmark checks | Push, PR review and main merge remain intentionally pending owner review and external gates |
 
 ## Owner-only external gates
 

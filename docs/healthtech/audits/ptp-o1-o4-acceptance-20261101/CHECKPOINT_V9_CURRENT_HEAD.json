@@ -1,0 +1,54 @@
+{
+  "checkpoint_version": "ptp-o1-o4-v9-current-head-requirement-audit",
+  "created_utc": "2026-11-01T05:13:07.9339961Z",
+  "status": "PASS_REQUIREMENT_AUDIT_CURRENT_HEAD_EXTERNAL_GATES_REMAIN",
+  "goal": "Patent-to-Pilot O1-O4 long-run continuation",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head": "c1e9ece8dc2c6d6c790356acd5889382ef1c5787",
+    "runtime_equivalent_head": "c2ec673d375f8ed8badfffeb115bed31c0cac526",
+    "working_tree_state_before_checkpoint": "clean",
+    "root_main_merged": false,
+    "push_performed": false
+  },
+  "objective_audit": {
+    "ui_http_history_export": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "remote_patembed_e5_resumable_import": "COMPLETE_PRIOR_RUNTIME_CURRENT_CONTRACTS_PASS",
+    "local_qwen3_8b": "COMPLETE_PRIOR_REMOTE_RECEIPT_NOT_RERUN_CURRENT_RUNTIME_UNAVAILABLE",
+    "api_qwen3_32b": "BLOCKED_LOCAL",
+    "three_real_device_cases": "COMPLETE_PRIOR_PRODUCT_ENGINEERING_DESCRIPTIVE_RESEARCH",
+    "adaptive_fixed_multiquery_heuristic_comparison": "PARTIAL_NOT_EVALUATED",
+    "canonical_ledger_duplicate_guard": "COMPLETE_ENGINEERING_LIVE_BINDING_PENDING",
+    "budget_and_resource_boundary": "RECORDED_AUTHORIZATION_LIVE_CREDIT_PENDING",
+    "tested_commit": "COMPLETE",
+    "push_pr_merge_main": "PENDING_OWNER_REVIEW_AND_EXTERNAL_GATES",
+    "cleanup_branch_and_worktrees": "NOT_PERMITTED_BEFORE_GOAL_ACCEPTANCE"
+  },
+  "checks": {
+    "full_python_suite": "PASS at runtime-equivalent head; exit code 0; existing warning/skip boundary only",
+    "frontend_unit": "PASS 74/74",
+    "http_integration": "PASS; history 1->2; source inspection; edit; JSON/TH/EN export; provider calls 0; paid USD0.00",
+    "benchmark_rights_suite": "PASS 6/6",
+    "compile_json_diff": "PASS",
+    "current_worktree": "CLEAN"
+  },
+  "unchanged_safety_state": {
+    "paid_api_calls": 0,
+    "gpu_jobs": 0,
+    "ledger_reset": false,
+    "automatic_top_up": false,
+    "participant_contact": false,
+    "root_main_touched": false,
+    "claude_luna_owner_worktrees_touched": false
+  },
+  "remaining_external_gates": [
+    "current R1 canonical journal or sanitized all-attempt export and writer-quiescence evidence",
+    "current authorized account-credit or billing snapshot",
+    "fresh route/parameter/pricing binding",
+    "rights-cleared outbound prompt manifest",
+    "matched adaptive evaluation cohort with admissible judgment source",
+    "owner WPI author-page recheck and final declarations"
+  ],
+  "next_action": "Continue offline manuscript/reproducibility work; keep paid/GPU and main merge closed until the listed gates are evidenced."
+}

@@ -1058,3 +1058,19 @@ The objective is still active. Engineering is complete for the staged package,
 but the live API comparison, matched adaptive scientific study, external business
 validation and WPI submission remain incomplete or gated. Continue offline work;
 do not push/merge main until owner review and the external gates are complete.
+
+## HT-NEXT-097 — 2026-11-01 current-head requirement audit correction
+
+Status: `PASS_REQUIREMENT_AUDIT_CURRENT_HEAD_EXTERNAL_GATES_REMAIN`; checkpoint:
+`docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/CHECKPOINT_V9_CURRENT_HEAD.json`.
+
+Corrected the O1-O4 completion matrix to bind the current branch tip
+`c1e9ece8dc2c6d6c790356acd5889382ef1c5787` instead of the stale documentation
+candidate. Added explicit audit rows for the cumulative USD100/V100 boundary,
+the no-reset/no-top-up rule, and the tested-commit versus pending push/PR/merge
+lifecycle. Runtime-equivalent test evidence remains valid because the intervening
+commits are documentation-only.
+
+The requirement audit confirms real progress but does not close the objective:
+API Qwen3-32B comparison, matched adaptive scientific evaluation, live ledger/
+credit binding, owner WPI review, and main merge remain incomplete or gated.
