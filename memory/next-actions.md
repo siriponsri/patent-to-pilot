@@ -1018,3 +1018,26 @@ judgment source.
 
 Next: use the matrix for owner review; do not merge or close the goal while the
 R1/credit/rights gates or the matched adaptive study remain unresolved.
+
+## HT-NEXT-095 — 2026-11-01 source-pack resume reconciliation
+
+Status: `PASS_SOURCE_PACK_RECONCILED_EXISTING_CONTINUATION_REUSED`; checkpoint:
+`docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V7_RESUME.json`.
+
+Read the Pepo dataset-benchmark expansion pack and linked literature index, then
+reconciled its hashes and execution scope to current candidate `c2ec673`. GOAL and
+PLAN already contain the staged protocol and the owner USD100/V100 extension, so
+no new goal or duplicate plan was created. Existing DAPFAM/PatEmbed/e5 vectors and
+rankings, acquisition receipts, freeze, component scores, and committed-candidate
+acceptance were reused.
+
+This resume made no new download, embedding, scoring run, GPU job, paid API call,
+ledger mutation, top-up, participant contact, push, or merge. Engineering remains
+complete for the staged component package; scientific evidence remains partial,
+the main adaptive dossier study remains not evaluated by this pack, business
+validation remains not validated for the solo project, and manuscript readiness
+remains owner-review required.
+
+Next: continue offline manuscript and reproducibility work. Open paid/GPU work
+only after the existing R1 journal, current credit, route/pricing, prompt-rights,
+and matched-evaluation gates are evidenced.

@@ -1,0 +1,89 @@
+{
+  "checkpoint_version": "benchmark-expansion-v7-resume-source-pack-reconciled",
+  "created_utc": "2026-11-01T05:03:08.4009492Z",
+  "status": "PASS_SOURCE_PACK_RECONCILED_EXISTING_CONTINUATION_REUSED",
+  "goal": "Patent-to-Pilot O1-O4 existing goal continuation",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head": "c2ec673d375f8ed8badfffeb115bed31c0cac526",
+    "working_tree_state": "clean",
+    "root_main_merged": false,
+    "push_performed": false
+  },
+  "source_pack": {
+    "root": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101",
+    "files_read": [
+      "report.md",
+      "DOWNLOADS.md",
+      "download_manifest.json",
+      "RESOURCE_AUTHORIZATION.md",
+      "README.md",
+      "luna_handoff.md",
+      "verification.json",
+      "availability_checks.json",
+      "metadata/receipt.json",
+      "NEXT_ACTIONS.md",
+      "../literature-review/healthtech/pepo-dataset-expansion-20261101/INDEX.md"
+    ],
+    "sha256": {
+      "report.md": "d208f5b464f1a89b287e3652d2a9adac69628a414b8940ca980b02a54d22a02a",
+      "DOWNLOADS.md": "0e58e201ea271397ffc300c39292ec2c809de31a07398a12e6c22ac81948dfab",
+      "download_manifest.json": "67c36586aec4e3ccc7834dd8c2869a563fda5a9fcf58043b138325285dcf3a79",
+      "RESOURCE_AUTHORIZATION.md": "38d53e46f767eafbbc8baffaa65058190a15febb85223ae2afceec11b294757c",
+      "README.md": "2e956571022c94711583daf11447617914f0f6a5aa95b7b616606cde2d3a7e53",
+      "luna_handoff.md": "28afb0ec6507ee0a63ada376946102e187e56fce5bd4e903c5a0080cb1ca1eea",
+      "verification.json": "4ab75162dd936b62dd26a157708b352f1d7d2450444da627f903c426d0919f1f",
+      "availability_checks.json": "bef4a0ddef711887be867ec5a8beacc865d96f5d210f565ad30a4dda96f216c5",
+      "metadata/receipt.json": "3b07b33c306dcb7cead7f083f1fc0d17659f5dc598effbf491cf458948daf90a",
+      "NEXT_ACTIONS.md": "55dc40fb0d80ab0594d073d100ef969a6714ae992dd29237b85b68243824f824"
+    },
+    "literature_index_repo_copy": "docs/healthtech/audits/benchmark-expansion-20261101/LITERATURE_INDEX.md"
+  },
+  "continuation_decision": {
+    "goal_reused": true,
+    "goal_created": false,
+    "goal_plan_already_contains_staged_protocol": true,
+    "existing_vectors_rankings_reused": true,
+    "duplicate_downloads": false,
+    "duplicate_embedding_runs": false,
+    "duplicate_audit_loop": false,
+    "final_endpoint_split_budget_freeze_changed": false
+  },
+  "actions_this_resume": {
+    "new_dataset_downloads": 0,
+    "new_scoring_runs": 0,
+    "new_gpu_jobs": 0,
+    "paid_api_calls": 0,
+    "ledger_reset": false,
+    "automatic_top_up": false,
+    "participant_contact": false,
+    "root_main_mutation": false,
+    "claude_luna_owner_worktrees_touched": false
+  },
+  "reused_evidence": {
+    "acquisition": "docs/healthtech/audits/benchmark-expansion-20261101/ACQUISITION_RECEIPT.json",
+    "selected_acquisition": "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json",
+    "freeze": "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_FREEZE.json",
+    "binding": "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json",
+    "committed_candidate_acceptance": "docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V6.json",
+    "current_head_acceptance": "docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/CHECKPOINT_CURRENT_HEAD.json"
+  },
+  "status_by_dimension": {
+    "engineering": "COMPLETE_FOR_STAGED_COMPONENT_PACKAGE",
+    "scientific_evidence": "PARTIAL_COMPONENT_EVIDENCE_ONLY",
+    "main_adaptive_dossier_study": "NOT_EVALUATED_BY_THIS_PACK",
+    "business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED",
+    "paid_api": "BLOCKED_LOCAL",
+    "gpu": "NOT_RUN"
+  },
+  "remaining_gates": [
+    "current R1 canonical journal or sanitized all-attempt export",
+    "current authorized account-credit or billing snapshot",
+    "fresh route/parameter/pricing binding",
+    "rights-cleared outbound dossier-prompt manifest",
+    "matched adaptive evaluation cohort with admissible semantic or documented-link judgment source"
+  ],
+  "next_action": "Continue offline manuscript and reproducibility work; open paid or GPU execution only after the existing ledger, credit, route, prompt-rights and matched-evaluation gates are evidenced."
+}
