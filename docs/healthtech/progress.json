@@ -738,5 +738,12 @@
   "latest_generation_path_followup_tested_source_head": "89bc03409f5b9dae35c6c4f50b68ea11c2f8951b",
   "latest_generation_path_followup_candidate": "89bc03409f5b9dae35c6c4f50b68ea11c2f8951b",
   "latest_generation_path_followup_tests": "75 passed, 0 failed, 0 errors, 0 skipped",
-  "latest_generation_path_followup_resource_mutations": "API 0, GPU 0, dataset downloads 0, ledger mutations 0, budget/window reset false"
+  "latest_generation_path_followup_resource_mutations": "API 0, GPU 0, dataset downloads 0, ledger mutations 0, budget/window reset false",
+  "latest_current_head_engineering_audit": "docs/healthtech/audits/ptp-current-head-engineering-20261103/README.md",
+  "latest_current_head_engineering_verification": "docs/healthtech/audits/ptp-current-head-engineering-20261103/verification.json",
+  "latest_current_head_engineering_status": "PASS_O1_ENGINEERING_FAILURE_ACCOUNTING_PARTIAL_O2_O3_O4",
+  "latest_current_head_engineering_candidate": "a7d064dcdda67752c1c0434267796852e9d4f0d9",
+  "latest_current_head_engineering_checkpoint_commit": "e2ace94",
+  "latest_current_head_engineering_python": "599 passed, 1 skipped, 2 warnings",
+  "latest_current_head_engineering_resource_mutations": "API 0, GPU 0, dataset downloads 0, ledger mutations 0, budget/window reset false"
 }

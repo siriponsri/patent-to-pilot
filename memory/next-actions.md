@@ -1507,3 +1507,25 @@ not rewritten, and no retrospective cost was inferred.
 No API call, GPU job, dataset download, ledger mutation, budget/window reset,
 or new experiment occurred. Keep live O3 and new-compute branches gated; the
 next permitted action is owner review or independent offline work.
+
+## HT-NEXT-116 — 2026-11-03 current-head engineering checkpoint package
+
+Status: `PASS_O1_ENGINEERING_FAILURE_ACCOUNTING_PARTIAL_O2_O3_O4`;
+receipt:
+`docs/healthtech/audits/ptp-current-head-engineering-20261103/verification.json`.
+
+Bound the available raw current-head logs and source hashes to candidate
+`a7d064dcdda67752c1c0434267796852e9d4f0d9`. The offline evidence records the
+current O1 HTTP/UI path, O2 contract tests, frontend/browser checks, and the
+failure-accounting regression without promoting historical O1/O4 receipts.
+The full Python suite passed `599` tests with one existing tokenizer skip and
+two warnings.
+
+O2 remote rerun, O3 paid/API comparison, and exact-head O4 real-case rerun
+remain partial because their existing authorization/runtime evidence gates are
+not exposed. B2/B3/offline-B4 remains a descriptive realized resource frontier,
+not an equal-total-budget comparison. No API, GPU, dataset, ledger, budget, or
+24-hour-window mutation occurred.
+
+Next: preserve the package, keep the goal active, and continue only with owner
+review or independently authorized offline work.
