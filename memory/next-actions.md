@@ -1392,3 +1392,6 @@ started.
 Next: keep the matched diagnostic descriptive, do not promote it to current-
 head final evidence, and pursue only the existing O3/O4 gates or independent
 offline work.
+
+Checkpoint: `docs/healthtech/audits/ptp-matched-budget-prefix-20261103/CHECKPOINT.json`;
+current documentation/analysis head: `a2ea768d0e90c2fd0d4c367353fc4c62c5762b6f`.

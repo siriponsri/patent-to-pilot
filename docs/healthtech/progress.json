@@ -705,5 +705,6 @@
   "latest_long_run_resume_readiness_followup_status": "PASS_FAILURE_ACCOUNTING_AND_BUDGET_BOUNDARY_VERIFIED_NO_NEW_BATCH",
   "latest_matched_budget_prefix_analysis_audit": "docs/healthtech/audits/ptp-matched-budget-prefix-20261103/README.md",
   "latest_matched_budget_prefix_analysis_verification": "docs/healthtech/audits/ptp-matched-budget-prefix-20261103/verification.json",
-  "latest_matched_budget_prefix_analysis_status": "PASS_POSTHOC_DESCRIPTIVE_BUDGET_CONTROL_NOT_ADAPTIVE"
+  "latest_matched_budget_prefix_analysis_status": "PASS_POSTHOC_DESCRIPTIVE_BUDGET_CONTROL_NOT_ADAPTIVE",
+  "latest_matched_budget_prefix_analysis_checkpoint": "docs/healthtech/audits/ptp-matched-budget-prefix-20261103/CHECKPOINT.json"
 }
