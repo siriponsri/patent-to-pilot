@@ -10,7 +10,7 @@
     "head_role": "release_verification_cleanup_and_receipt_commit",
     "runtime_tested_source_head": "e63e8a9d8996f805904a019579c405129171353c",
     "documentation_only_followup": false,
-    "working_tree": "CLEAN_BEFORE_DOCUMENTATION_UPDATE",
+    "working_tree": "CLEAN_AFTER_CHECKPOINT_DOCUMENTATION_COMMIT",
     "base_main": "0d049802d36bc2eebe60331ec444d62469fd767f",
     "main_is_ancestor": true
   },
