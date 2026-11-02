@@ -1,0 +1,39 @@
+........................................................................ [ 50%]
+.....................F................................................   [100%]
+================================== FAILURES ===================================
+______ test_preflight_runs_offline_but_never_claims_scientific_readiness ______
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/release-verification-20261103/tmp/test_preflight_runs_offline_bu0')
+
+    def test_preflight_runs_offline_but_never_claims_scientific_readiness(tmp_path):
+>       result=build_preflight(plan(),tmp_path/'new-run')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_g13_readiness.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\patent_to_pilot\evaluation\pilot_readiness.py:148: in build_preflight
+    (directory/name).write_text(json.dumps(obj, indent=2), encoding="utf-8")
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1047: in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-l...ion-20261103/tmp/test_preflight_runs_offline_bu0/new-run/curator-staged-current-inputs/PTP-0001/S0/runtime-input.json')
+mode = 'w', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-long-run-resume-20261103\\release-verification-20261103\\tmp\\test_preflight_runs_offline_bu0\\new-run\\curator-staged-current-inputs\\PTP-0001\\S0\\runtime-input.json'
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+- generated xml file: C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\release-verification-20261103\tests.xml -
+=========================== short test summary info ===========================
+FAILED tests/test_g13_readiness.py::test_preflight_runs_offline_but_never_claims_scientific_readiness

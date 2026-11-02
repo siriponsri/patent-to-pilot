@@ -1,0 +1,113 @@
+{
+  "packet": {
+    "case_id": "PTP-0003",
+    "state_id": "S4",
+    "event": {
+      "type": "support_withdrawal",
+      "scope": "affected explicit role/count check only",
+      "event_order": 4,
+      "effective_at": "development-event-S4",
+      "description": null,
+      "policy_rule_id": null
+    },
+    "brief": "Distinguish the abstract-reported intermediate-stage count from the number of stages using BTC, all manufacturing unit operations and numerical batch cost. No total unit-operation count or monetary cost is established in the allowed packet.",
+    "profile_id": "PTP-FIC-ORG-C",
+    "profile_version": "1.0.0",
+    "policy": {
+      "rule_id": "COUNT-001",
+      "origin": "benchmark_stipulation",
+      "role_scope": null,
+      "allowed_initial": [],
+      "carrier_scope": null,
+      "real_organization_rule": false,
+      "forbidden_inhibitors": [],
+      "operator": "max_document_reported_count",
+      "normalization": "five=5, two=2 in the explicitly named count field only",
+      "maximum": 4,
+      "count_kind": "all_manufacturing_operations",
+      "component": null,
+      "permitted_materials": [],
+      "forbidden_materials": []
+    },
+    "options": [
+      {
+        "option_id": "R",
+        "candidate_id": null,
+        "selected_component": null,
+        "selected_material": null,
+        "selection_origin": null,
+        "selected_carrier": null,
+        "selected_inhibitor": null,
+        "selected_route": "document-reported ritonavir process",
+        "basis": "benchmark_document_review_choice_not_endorsement",
+        "evidence_ids": []
+      }
+    ],
+    "evidence": [],
+    "unknowns": "Remain unknown relative to current packet; do not infer that evidence is absent worldwide",
+    "input_boundary": "public-input-only"
+  },
+  "profile": {
+    "record_id": "PTP-FIC-ORG-C",
+    "version": 1,
+    "created_at": "2026-11-02T18:07:07.334686Z",
+    "profile_id": "PTP-FIC-ORG-C",
+    "profile_version": "1.0.0",
+    "organization_kind": "fictional_benchmark_profile",
+    "status": "BOUNDED_G04_FIXTURE_NOT_VALIDATED_ORG_CARD",
+    "organization_label": "Fictional Translational Gate C",
+    "public_source_context": {
+      "source_ref": "ORG-SRC-NCATS-TRND-2023",
+      "description": "Uses the supplied public source only as context for translational and planning expertise. It does not establish this fictional profile's current capacity, ownership, regulatory status, or clinical readiness.",
+      "source_file": "methodology/datasets/organization-profile-example.json"
+    },
+    "capabilities": [
+      {
+        "field": "regulatory_and_clinical_planning_support",
+        "state": "unknown",
+        "basis": "source_assertion",
+        "confirmation_state": "pending",
+        "source_ref": "ORG-SRC-NCATS-TRND-2023",
+        "locator": "TRND Expertise list",
+        "note": null
+      },
+      {
+        "field": "formulation_development",
+        "state": "unknown",
+        "basis": "unknown",
+        "confirmation_state": "not_required",
+        "source_ref": null,
+        "locator": null,
+        "note": "No source or stipulation establishes in-house formulation capability for this scenario."
+      }
+    ],
+    "stipulations": [
+      {
+        "stipulation_id": "STIP-C-001",
+        "statement": "The scenario cannot treat a route as clinical-ready or regulatory-approved; it may only draft questions for later review.",
+        "basis": "stipulation",
+        "confirmation_state": "not_required",
+        "scope": "benchmark scenario only"
+      },
+      {
+        "stipulation_id": "STIP-C-002",
+        "statement": "A route using a restricted external source is paused until a permitted source snapshot and locator are supplied.",
+        "basis": "stipulation",
+        "confirmation_state": "not_required",
+        "scope": "source access boundary"
+      }
+    ],
+    "unknowns": [
+      "current capacity",
+      "clinical readiness",
+      "regulatory status",
+      "cost",
+      "lead time",
+      "permitted source access"
+    ],
+    "source_refs": [
+      "ORG-SRC-NCATS-TRND-2023"
+    ],
+    "policy_version": null
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scientific_live_ready": false,
+  "public_case_count": 3,
+  "public_state_count": 15,
+  "mock_call_records": 9,
+  "provider_calls": 0,
+  "api_cost_usd": 0
+}

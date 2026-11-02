@@ -1,0 +1,20 @@
+{
+  "kind": "g10_offline_comparison_evidence_manifest",
+  "status": "PASS",
+  "case_id": "PTP-0001",
+  "state_ids": [
+    "S0",
+    "S1",
+    "S2"
+  ],
+  "files": {
+    "comparison.json": "2f0ef41931583549bbde44f8fcb6a717f59ead07737f0f940678a230e6658de5",
+    "comparison.md": "8c1df54f594d4fb524acf597729575bef6581014c993a12f6926a9865919082e",
+    "comparison.html": "fec146497debc74f50ddae9e54786572708dd7929e79214c319725a080081d7c",
+    "before-after-diff.json": "368744d24dca8fd743d15933865a7104f90dc00ce2aaf33cef9e3ff08c7ac559",
+    "validator-results.json": "7decfd5c828119644bf0c29a0c4a21ffba841806de390677bf4d0af9d7b7504d",
+    "method-traces.json": "d69ec9fd08ce1a3b6168bbe4100e6b7772832ae6ae5f48af368aa678397a9014",
+    "search-pool-readiness.json": "5ef17c2173fcd837e3990e1de85050a0d06ec32c08b19cc5f8df50fd2b3b5d82",
+    "candidate-source-manifest.json": "cf564199565347201bb706377078a5cf4057e7fce816efd68ae1d450448a14d2"
+  }
+}

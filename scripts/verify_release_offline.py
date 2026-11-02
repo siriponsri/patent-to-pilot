@@ -1,5 +1,5 @@
 from pathlib import Path
-import contextlib, datetime, hashlib, importlib.metadata, json, os, runpy, socket, subprocess, sys, traceback, xml.etree.ElementTree as E
+import contextlib, datetime, hashlib, importlib.metadata, json, os, runpy, shutil, socket, subprocess, sys, tempfile, traceback, uuid, xml.etree.ElementTree as E
 
 import argparse
 parser=argparse.ArgumentParser(description='Offline release reproduction with sockets and credential-file reads denied')
@@ -40,8 +40,12 @@ sys.addaudithook(audit)
 import patent_to_pilot,pytest
 assert Path(patent_to_pilot.__file__).resolve().is_relative_to(ROOT)
 tests=['tests/test_g10_offline_comparison.py','tests/test_g09_g10_integration.py','tests/test_g11_adaptation.py','tests/test_provider_adapter.py','tests/test_g13_readiness.py','tests/test_g13_stage_boundary.py','tests/test_longrun_offline_v2.py','tests/test_release_budget_process.py']
-args=['-q','-p','no:cacheprovider','--basetemp',str(OUT/'tmp'),'--junitxml',str(OUT/'tests.xml'),*tests]
-with (OUT/'pytest.log').open('w',encoding='utf-8') as log,contextlib.redirect_stdout(log),contextlib.redirect_stderr(log): code=int(pytest.main(args))
+basetemp=Path(tempfile.gettempdir())/f'ptp-release-tests-{uuid.uuid4().hex}'
+args=['-q','-p','no:cacheprovider','--basetemp',str(basetemp),'--junitxml',str(OUT/'tests.xml'),*tests]
+try:
+    with (OUT/'pytest.log').open('w',encoding='utf-8') as log,contextlib.redirect_stdout(log),contextlib.redirect_stderr(log): code=int(pytest.main(args))
+finally:
+    shutil.rmtree(basetemp,ignore_errors=True)
 commands=[
  ('readme-workflow','scripts/run_g09_g10_workflow.py',['configs/g09-g10-example-input.json',str(OUT/'workflow')]),
  ('readme-comparison','scripts/run_g10_offline_comparison.py',['--output-dir',str(OUT/'comparison'),'--run-id','clean-release-'+options.source_commit[:7]]),

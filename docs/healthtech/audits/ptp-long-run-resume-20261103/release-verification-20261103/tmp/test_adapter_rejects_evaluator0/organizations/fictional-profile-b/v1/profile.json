@@ -1,0 +1,18 @@
+{
+  "profile_id": "PTP-FIC-ORG-B",
+  "profile_version": "1.0.0",
+  "organization_kind": "fictional_benchmark_profile",
+  "status": "BOUNDED_G04_FIXTURE_NOT_VALIDATED_ORG_CARD",
+  "organization_label": "Fictional Analytical Partner B",
+  "public_source_context": {"source_ref": "ORG-SRC-NCATS-TRND-2023", "description": "Uses the same official public source context as profile A for analytical-method expertise only. It does not establish this fictional profile's ownership, capacity, availability, or project acceptance.", "source_file": "methodology/datasets/organization-profile-example.json"},
+  "capabilities": [
+    {"field": "analytical_method_development", "state": "unknown", "basis": "source_assertion", "source_ref": "ORG-SRC-NCATS-TRND-2023", "locator": "TRND Expertise list", "confirmation_state": "pending"},
+    {"field": "formulation_development", "state": "external", "basis": "stipulation", "confirmation_state": "not_required", "note": "This benchmark scenario requires an external formulation provider; it is not a claim about a real organization."}
+  ],
+  "stipulations": [
+    {"stipulation_id": "STIP-B-001", "statement": "The fictional project may use an external formulation provider, but provider identity, availability, cost, and lead time remain unknown.", "basis": "stipulation", "confirmation_state": "not_required", "scope": "benchmark scenario only"},
+    {"stipulation_id": "STIP-B-002", "statement": "Analytical method development is an evidence-seeking route; do not treat the public expertise context as a confirmed service commitment.", "basis": "stipulation", "confirmation_state": "not_required", "scope": "analytical route"}
+  ],
+  "unknowns": ["provider identity", "availability", "capacity", "cost", "lead time", "project eligibility"],
+  "source_refs": ["ORG-SRC-NCATS-TRND-2023"]
+}

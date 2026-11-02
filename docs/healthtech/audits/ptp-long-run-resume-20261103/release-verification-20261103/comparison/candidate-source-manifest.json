@@ -1,0 +1,33 @@
+{
+  "kind": "g10_correctness_search_candidate_source_manifest",
+  "run_id": "clean-release-f9ac895",
+  "changed_source_hashes": {
+    "comparison": "ee7716226f39c6badfb44800c18dc906c447b1188798c925a632b421bc31bc45",
+    "runner_script": "6bda000ae03e6f9b4f4a6587c307d2d2ee4edc87148ded3d305fddaf5ce23629",
+    "g10_tests": "6120b1c97b2102920403285018f048e2281caf4e2593d5eb959d64651bb1b253",
+    "integration_pipeline": "43562334fd2f63909f561d3236108c89baf8c2c6e4b025b07b4f7a4dfed99008",
+    "public_output_schema": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e"
+  },
+  "dependency_hashes": {
+    "integration_pipeline": "43562334fd2f63909f561d3236108c89baf8c2c6e4b025b07b4f7a4dfed99008",
+    "public_output_schema": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e"
+  },
+  "frozen_input_hashes": {
+    "S0": "c78926dba9e409045655045d3cb3138a706a7d3ae21fbf15addf19d6322372fe",
+    "S1": "46f32be0494a6d964837d9e5c0ad66cb7ffdf75b93af768f3e4e318662a80fba",
+    "S2": "a601450669102659f5797798ba02c4caa40783d1473f8320b990616e0932eabd"
+  },
+  "documentation_schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+  "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+  "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+  "output_hashes": {
+    "comparison.json": "d49eaac135ef4ea34833d5c0f8fe885aaafe7477ff248f92b148ee2635faa8be",
+    "comparison.md": "8c1df54f594d4fb524acf597729575bef6581014c993a12f6926a9865919082e",
+    "comparison.html": "fec146497debc74f50ddae9e54786572708dd7929e79214c319725a080081d7c",
+    "before-after-diff.json": "368744d24dca8fd743d15933865a7104f90dc00ce2aaf33cef9e3ff08c7ac559",
+    "validator-results.json": "7decfd5c828119644bf0c29a0c4a21ffba841806de390677bf4d0af9d7b7504d",
+    "method-traces.json": "f8a5038cca0ddf271b85867d6c15b6793c435ca708fb35f57b5eb3745b194c80",
+    "search-pool-readiness.json": "5ef17c2173fcd837e3990e1de85050a0d06ec32c08b19cc5f8df50fd2b3b5d82"
+  },
+  "protected_old_evidence_and_journal_hashes": {}
+}

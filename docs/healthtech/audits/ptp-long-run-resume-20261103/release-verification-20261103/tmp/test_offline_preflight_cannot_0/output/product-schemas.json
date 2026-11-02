@@ -1,0 +1,286 @@
+{
+  "ProjectBrief": {
+    "additionalProperties": false,
+    "properties": {
+      "project_id": {
+        "pattern": "^[A-Za-z0-9_-]{1,80}$",
+        "title": "Project Id",
+        "type": "string"
+      },
+      "version": {
+        "minimum": 1,
+        "title": "Version",
+        "type": "integer"
+      },
+      "objective": {
+        "maxLength": 4000,
+        "minLength": 1,
+        "title": "Objective",
+        "type": "string"
+      },
+      "audience": {
+        "enum": [
+          "entrepreneur",
+          "investor",
+          "researcher"
+        ],
+        "title": "Audience",
+        "type": "string"
+      },
+      "data_class": {
+        "enum": [
+          "synthetic",
+          "public",
+          "private"
+        ],
+        "title": "Data Class",
+        "type": "string"
+      },
+      "language": {
+        "default": "en",
+        "enum": [
+          "en",
+          "th"
+        ],
+        "title": "Language",
+        "type": "string"
+      },
+      "theme": {
+        "default": "formal-light",
+        "enum": [
+          "formal-light",
+          "formal-dark",
+          "kmitl-inspired",
+          "ict-inspired"
+        ],
+        "title": "Theme",
+        "type": "string"
+      }
+    },
+    "required": [
+      "project_id",
+      "version",
+      "objective",
+      "audience",
+      "data_class"
+    ],
+    "title": "ProjectBrief",
+    "type": "object"
+  },
+  "EvidenceCard": {
+    "additionalProperties": false,
+    "properties": {
+      "evidence_id": {
+        "minLength": 1,
+        "title": "Evidence Id",
+        "type": "string"
+      },
+      "source_id": {
+        "minLength": 1,
+        "title": "Source Id",
+        "type": "string"
+      },
+      "source_version": {
+        "minimum": 1,
+        "title": "Source Version",
+        "type": "integer"
+      },
+      "source_sha256": {
+        "pattern": "^[a-f0-9]{64}$",
+        "title": "Source Sha256",
+        "type": "string"
+      },
+      "locator": {
+        "minLength": 1,
+        "title": "Locator",
+        "type": "string"
+      },
+      "statement": {
+        "minLength": 1,
+        "title": "Statement",
+        "type": "string"
+      },
+      "basis": {
+        "enum": [
+          "source_assertion",
+          "stipulation",
+          "interpretation",
+          "unknown"
+        ],
+        "title": "Basis",
+        "type": "string"
+      },
+      "support": {
+        "enum": [
+          "supported",
+          "contradicted",
+          "missing",
+          "unknown"
+        ],
+        "title": "Support",
+        "type": "string"
+      },
+      "synthetic": {
+        "title": "Synthetic",
+        "type": "boolean"
+      },
+      "limitation": {
+        "minLength": 1,
+        "title": "Limitation",
+        "type": "string"
+      }
+    },
+    "required": [
+      "evidence_id",
+      "source_id",
+      "source_version",
+      "source_sha256",
+      "locator",
+      "statement",
+      "basis",
+      "support",
+      "synthetic",
+      "limitation"
+    ],
+    "title": "EvidenceCard",
+    "type": "object"
+  },
+  "ReviewDecision": {
+    "additionalProperties": false,
+    "properties": {
+      "decision_id": {
+        "minLength": 1,
+        "title": "Decision Id",
+        "type": "string"
+      },
+      "project_id": {
+        "minLength": 1,
+        "title": "Project Id",
+        "type": "string"
+      },
+      "expected_version": {
+        "minimum": 1,
+        "title": "Expected Version",
+        "type": "integer"
+      },
+      "scope": {
+        "enum": [
+          "critical_assumption",
+          "outbound_disclosure",
+          "release_export"
+        ],
+        "title": "Scope",
+        "type": "string"
+      },
+      "decision": {
+        "enum": [
+          "confirm",
+          "reject",
+          "request_revision"
+        ],
+        "title": "Decision",
+        "type": "string"
+      },
+      "evidence_ids": {
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1,
+        "title": "Evidence Ids",
+        "type": "array"
+      },
+      "reason": {
+        "minLength": 1,
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "decision_id",
+      "project_id",
+      "expected_version",
+      "scope",
+      "decision",
+      "evidence_ids",
+      "reason"
+    ],
+    "title": "ReviewDecision",
+    "type": "object"
+  },
+  "JobStatus": {
+    "additionalProperties": false,
+    "properties": {
+      "job_id": {
+        "minLength": 1,
+        "title": "Job Id",
+        "type": "string"
+      },
+      "project_id": {
+        "minLength": 1,
+        "title": "Project Id",
+        "type": "string"
+      },
+      "state": {
+        "enum": [
+          "queued",
+          "running",
+          "ready_for_review",
+          "blocked",
+          "failed",
+          "cancelled"
+        ],
+        "title": "State",
+        "type": "string"
+      },
+      "reason": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Reason"
+      },
+      "affected_routes": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Affected Routes",
+        "type": "array"
+      },
+      "preserved_routes": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Preserved Routes",
+        "type": "array"
+      },
+      "provider_calls": {
+        "default": 0,
+        "minimum": 0,
+        "title": "Provider Calls",
+        "type": "integer"
+      },
+      "cost_status": {
+        "default": "not_run",
+        "enum": [
+          "not_run",
+          "known",
+          "unknown_pending"
+        ],
+        "title": "Cost Status",
+        "type": "string"
+      }
+    },
+    "required": [
+      "job_id",
+      "project_id",
+      "state"
+    ],
+    "title": "JobStatus",
+    "type": "object"
+  }
+}

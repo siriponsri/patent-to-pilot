@@ -1,0 +1,43 @@
+{
+  "schema_version": "G05-DEV-0.1",
+  "required": [
+    "case_id",
+    "state_id",
+    "source_facts",
+    "options",
+    "handoff"
+  ],
+  "source_fact_record": {
+    "required": [
+      "state",
+      "value",
+      "evidence_ids"
+    ],
+    "state_enum": [
+      "known",
+      "unknown"
+    ],
+    "unknown_value": null
+  },
+  "option_record": {
+    "required": [
+      "option_id",
+      "state"
+    ],
+    "state_enum": [
+      "passes_this_explicit_check",
+      "fails_this_explicit_check",
+      "unknown"
+    ]
+  },
+  "handoff_record": {
+    "required": [
+      "kind",
+      "status",
+      "global_blocked"
+    ],
+    "status": "ready_for_review",
+    "global_blocked": false
+  },
+  "warning": "Schema does not supply expected values/source-role mapping/graph; this is not a scientific-validity check"
+}

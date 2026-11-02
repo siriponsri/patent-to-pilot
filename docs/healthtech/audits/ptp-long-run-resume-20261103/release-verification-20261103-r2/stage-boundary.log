@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "verified_bundles": 15,
+  "scientific_live_ready": false,
+  "provider_calls": 0,
+  "limits": [
+    "No OS worker isolation",
+    "Curator manifest must be trusted",
+    "No semantic-oracle proof or scientific evaluation"
+  ]
+}

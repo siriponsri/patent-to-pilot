@@ -1,0 +1,235 @@
+{
+  "packet": {
+    "case_id": "PTP-0002",
+    "state_id": "S2",
+    "event": {
+      "type": "project_name_only",
+      "scope": "affected explicit role/count check only",
+      "event_order": 2,
+      "effective_at": "development-event-S2",
+      "description": null,
+      "policy_rule_id": null
+    },
+    "brief": "Return source-stated component roles, explicit policy-check states and a draft role-review handoff. Passing the check is not manufacturability. Only the inhibitor role is covered by the material prohibition.",
+    "profile_id": "PTP-FIC-ORG-B",
+    "profile_version": "1.0.0",
+    "policy": {
+      "rule_id": "ROLE-001",
+      "origin": "benchmark_stipulation",
+      "role_scope": "crystallization_inhibitor",
+      "allowed_initial": [
+        "PVP",
+        "HPMC"
+      ],
+      "carrier_scope": "PEG remains permitted",
+      "real_organization_rule": false,
+      "forbidden_inhibitors": [
+        "PVP"
+      ],
+      "operator": null,
+      "normalization": null,
+      "maximum": null,
+      "count_kind": null,
+      "component": null,
+      "permitted_materials": [],
+      "forbidden_materials": []
+    },
+    "options": [
+      {
+        "option_id": "A",
+        "candidate_id": null,
+        "selected_component": null,
+        "selected_material": null,
+        "selection_origin": null,
+        "selected_carrier": "PEG",
+        "selected_inhibitor": "PVP",
+        "selected_route": null,
+        "basis": "benchmark_design_choice_not_source_extraction",
+        "evidence_ids": []
+      },
+      {
+        "option_id": "B",
+        "candidate_id": null,
+        "selected_component": null,
+        "selected_material": null,
+        "selection_origin": null,
+        "selected_carrier": "PEG",
+        "selected_inhibitor": "HPMC",
+        "selected_route": null,
+        "basis": "benchmark_design_choice_not_source_extraction",
+        "evidence_ids": []
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "PTP-0002-P01",
+        "text": "water soluble carrier, such as polyethylene glycol (PEG)",
+        "source_id": "pls_ritonavir",
+        "source_version": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+        "document_id": "pls_ritonavir:15973991.0:WO0134119",
+        "family_id": "15973991.0",
+        "source_locator": "data/raw/pls/ritonavir.csv#logical_record=60&field=Abstract&raw_char_start=112",
+        "locator": {
+          "dataset_field": "Abstract",
+          "paragraph_id": null,
+          "printed_paragraph_num": null,
+          "char_start": 112,
+          "char_end": 168,
+          "offset_unit": "Unicode code points, end-exclusive",
+          "g08_trimmed_component_offsets": {
+            "char_start": 111,
+            "char_end": 167,
+            "basis": "CSV Abstract.strip() used by current G08 ingester; verify before using on another normalization"
+          }
+        },
+        "origin": "source_assertion",
+        "text_sha256": "cf9e40fc7f2085b6c772e7f009b645826dfcb4512f40997964519e91ac4c5939",
+        "char_start": 112,
+        "char_end": 168
+      },
+      {
+        "evidence_id": "PTP-0002-P02",
+        "text": "a crystallization inhibitor, such as polyvinylpyrrolidone",
+        "source_id": "pls_ritonavir",
+        "source_version": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+        "document_id": "pls_ritonavir:15973991.0:WO0134119",
+        "family_id": "15973991.0",
+        "source_locator": "data/raw/pls/ritonavir.csv#logical_record=60&field=Abstract&raw_char_start=174",
+        "locator": {
+          "dataset_field": "Abstract",
+          "paragraph_id": null,
+          "printed_paragraph_num": null,
+          "char_start": 174,
+          "char_end": 231,
+          "offset_unit": "Unicode code points, end-exclusive",
+          "g08_trimmed_component_offsets": {
+            "char_start": 173,
+            "char_end": 230,
+            "basis": "CSV Abstract.strip() used by current G08 ingester; verify before using on another normalization"
+          }
+        },
+        "origin": "source_assertion",
+        "text_sha256": "df7aba526d172ee4e59d6e59a4b92a58b7018071677de1e000fae04582f56aec",
+        "char_start": 174,
+        "char_end": 231
+      },
+      {
+        "evidence_id": "PTP-0002-P03",
+        "text": "a crystallization inhibitor, such as polyvinylpyrrolidone or hydroxypropylmethylcellulose",
+        "source_id": "pls_ritonavir",
+        "source_version": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+        "document_id": "pls_ritonavir:15973991.0:WO0134119",
+        "family_id": "15973991.0",
+        "source_locator": "data/raw/pls/ritonavir.csv#logical_record=60&field=Abstract&raw_char_start=174",
+        "locator": {
+          "dataset_field": "Abstract",
+          "paragraph_id": null,
+          "printed_paragraph_num": null,
+          "char_start": 174,
+          "char_end": 263,
+          "offset_unit": "Unicode code points, end-exclusive",
+          "g08_trimmed_component_offsets": {
+            "char_start": 173,
+            "char_end": 262,
+            "basis": "CSV Abstract.strip() used by current G08 ingester; verify before using on another normalization"
+          }
+        },
+        "origin": "source_assertion",
+        "text_sha256": "77d34d2c0a2b0c1e55428a0066ccc44d6d2c7173295fba1058aefd1e39881c81",
+        "char_start": 174,
+        "char_end": 263
+      },
+      {
+        "evidence_id": "PTP-0002-P04",
+        "text": "The solid dispersion may optionally be encapsulated in hard gelatin capsules, compressed into a tablet, or may be granulated with a pharmaceutically acceptable granulating agent.",
+        "source_id": "pls_ritonavir",
+        "source_version": "0a035ce46815b2aae5b7e49031c2975ba91fb0d1",
+        "document_id": "pls_ritonavir:15973991.0:WO0134119",
+        "family_id": "15973991.0",
+        "source_locator": "data/raw/pls/ritonavir.csv#logical_record=60&field=Abstract&raw_char_start=265",
+        "locator": {
+          "dataset_field": "Abstract",
+          "paragraph_id": null,
+          "printed_paragraph_num": null,
+          "char_start": 265,
+          "char_end": 443,
+          "offset_unit": "Unicode code points, end-exclusive",
+          "g08_trimmed_component_offsets": {
+            "char_start": 264,
+            "char_end": 442,
+            "basis": "CSV Abstract.strip() used by current G08 ingester; verify before using on another normalization"
+          }
+        },
+        "origin": "source_assertion",
+        "text_sha256": "a1ba0d46e4df57f16f41ccf0a3b9e9326f17f8d45c5d190d20f31d6892dd6bb8",
+        "char_start": 265,
+        "char_end": 443
+      }
+    ],
+    "unknowns": "Remain unknown relative to current packet; do not infer that evidence is absent worldwide",
+    "input_boundary": "public-input-only"
+  },
+  "profile": {
+    "record_id": "PTP-FIC-ORG-B",
+    "version": 1,
+    "created_at": "2026-11-02T18:08:35.636824Z",
+    "profile_id": "PTP-FIC-ORG-B",
+    "profile_version": "1.0.0",
+    "organization_kind": "fictional_benchmark_profile",
+    "status": "BOUNDED_G04_FIXTURE_NOT_VALIDATED_ORG_CARD",
+    "organization_label": "Fictional Analytical Partner B",
+    "public_source_context": {
+      "source_ref": "ORG-SRC-NCATS-TRND-2023",
+      "description": "Uses the same official public source context as profile A for analytical-method expertise only. It does not establish this fictional profile's ownership, capacity, availability, or project acceptance.",
+      "source_file": "methodology/datasets/organization-profile-example.json"
+    },
+    "capabilities": [
+      {
+        "field": "analytical_method_development",
+        "state": "unknown",
+        "basis": "source_assertion",
+        "confirmation_state": "pending",
+        "source_ref": "ORG-SRC-NCATS-TRND-2023",
+        "locator": "TRND Expertise list",
+        "note": null
+      },
+      {
+        "field": "formulation_development",
+        "state": "external",
+        "basis": "stipulation",
+        "confirmation_state": "not_required",
+        "source_ref": null,
+        "locator": null,
+        "note": "This benchmark scenario requires an external formulation provider; it is not a claim about a real organization."
+      }
+    ],
+    "stipulations": [
+      {
+        "stipulation_id": "STIP-B-001",
+        "statement": "The fictional project may use an external formulation provider, but provider identity, availability, cost, and lead time remain unknown.",
+        "basis": "stipulation",
+        "confirmation_state": "not_required",
+        "scope": "benchmark scenario only"
+      },
+      {
+        "stipulation_id": "STIP-B-002",
+        "statement": "Analytical method development is an evidence-seeking route; do not treat the public expertise context as a confirmed service commitment.",
+        "basis": "stipulation",
+        "confirmation_state": "not_required",
+        "scope": "analytical route"
+      }
+    ],
+    "unknowns": [
+      "provider identity",
+      "availability",
+      "capacity",
+      "cost",
+      "lead time",
+      "project eligibility"
+    ],
+    "source_refs": [
+      "ORG-SRC-NCATS-TRND-2023"
+    ],
+    "policy_version": null
+  }
+}
