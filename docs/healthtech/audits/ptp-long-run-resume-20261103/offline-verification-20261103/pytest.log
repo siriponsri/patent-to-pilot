@@ -1,0 +1,659 @@
+........................................................................ [ 12%]
+.............F.......................................................... [ 24%]
+............................FFFFFFF......F.........................EEFEF [ 36%]
+F....................................................................... [ 48%]
+..s..................................................................... [ 60%]
+...................................F.................................... [ 72%]
+........................................................................ [ 84%]
+........................................................................ [ 96%]
+.....................                                                    [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_local_http_job_is_idempotent_and_supports_history_source_and_exports _
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_local_http_job_is_idempot0')
+
+    @pytest.fixture()
+    def server(tmp_path):
+>       server = create_server("127.0.0.1", 0, tmp_path / "data", code_commit="test-head")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_http.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\patent_to_pilot\healthtech\http.py:703: in create_server
+    server = ThreadingHTTPServer((host, port), BoundHandler)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\socketserver.py:457: in __init__
+    self.server_bind()
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\http\server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\socketserver.py:478: in server_bind
+    self.socket.bind(self.server_address)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = (<socket.socket [closed] fd=-1, family=2, type=1, proto=0>, ('127.0.0.1', 0))
+kw = {}
+
+    def denied(*a,**kw):
+        network.append('socket_or_dns_attempt')
+>       raise RuntimeError('network forbidden during offline verification')
+E       RuntimeError: network forbidden during offline verification
+
+scripts\healthtech\verify_offline.py:37: RuntimeError
+__ ERROR at setup of test_provider_gate_and_version_conflict_are_fail_closed __
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_provider_gate_and_version0')
+
+    @pytest.fixture()
+    def server(tmp_path):
+>       server = create_server("127.0.0.1", 0, tmp_path / "data", code_commit="test-head")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_http.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\patent_to_pilot\healthtech\http.py:703: in create_server
+    server = ThreadingHTTPServer((host, port), BoundHandler)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\socketserver.py:457: in __init__
+    self.server_bind()
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\http\server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\socketserver.py:478: in server_bind
+    self.socket.bind(self.server_address)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = (<socket.socket [closed] fd=-1, family=2, type=1, proto=0>, ('127.0.0.1', 0))
+kw = {}
+
+    def denied(*a,**kw):
+        network.append('socket_or_dns_attempt')
+>       raise RuntimeError('network forbidden during offline verification')
+E       RuntimeError: network forbidden during offline verification
+
+scripts\healthtech\verify_offline.py:37: RuntimeError
+_ ERROR at setup of test_loopback_browser_cors_allows_preflight_and_blocks_non_loopback_origin _
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_loopback_browser_cors_all0')
+
+    @pytest.fixture()
+    def server(tmp_path):
+>       server = create_server("127.0.0.1", 0, tmp_path / "data", code_commit="test-head")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_http.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\patent_to_pilot\healthtech\http.py:703: in create_server
+    server = ThreadingHTTPServer((host, port), BoundHandler)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\socketserver.py:457: in __init__
+    self.server_bind()
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\http\server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\socketserver.py:478: in server_bind
+    self.socket.bind(self.server_address)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = (<socket.socket [closed] fd=-1, family=2, type=1, proto=0>, ('127.0.0.1', 0))
+kw = {}
+
+    def denied(*a,**kw):
+        network.append('socket_or_dns_attempt')
+>       raise RuntimeError('network forbidden during offline verification')
+E       RuntimeError: network forbidden during offline verification
+
+scripts\healthtech\verify_offline.py:37: RuntimeError
+================================== FAILURES ===================================
+______ test_preflight_runs_offline_but_never_claims_scientific_readiness ______
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_preflight_runs_offline_bu0')
+
+    def test_preflight_runs_offline_but_never_claims_scientific_readiness(tmp_path):
+>       result=build_preflight(plan(),tmp_path/'new-run')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_g13_readiness.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\patent_to_pilot\evaluation\pilot_readiness.py:148: in build_preflight
+    (directory/name).write_text(json.dumps(obj, indent=2), encoding="utf-8")
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1047: in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-l...ion-20261103/tmp/test_preflight_runs_offline_bu0/new-run/curator-staged-current-inputs/PTP-0001/S0/runtime-input.json')
+mode = 'w', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-long-run-resume-20261103\\offline-verification-20261103\\tmp\\test_preflight_runs_offline_bu0\\new-run\\curator-staged-current-inputs\\PTP-0001\\S0\\runtime-input.json'
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_________ test_cook_adapter_builds_cases_and_promotes_pdf_disclosures _________
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_cook_adapter_builds_cases0')
+
+    def test_cook_adapter_builds_cases_and_promotes_pdf_disclosures(tmp_path: Path):
+>       cohort = _write_synthetic_cook_cohort(tmp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_cook.py:267: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cook.py:59: in _write_synthetic_cook_cohort
+    _write_pdf(pdf_path)
+tests\test_healthtech_cook.py:47: in _write_pdf
+    document.save(path)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\__init__.py:6672: in save
+    mupdf.pdf_save_document(pdf, filename, opts)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+doc = <pymupdf.mupdf.PdfDocument; proxy of <Swig Object of type 'mupdf::PdfDocument *' at 0x0000017147BEE6B0> >
+filename = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...0261103\\tmp\\test_cook_adapter_builds_cases0\\cook-cohort\\raw\\disclosure\\US-Patents-List-for-US-website-2025.2.pdf'
+opts = (do_incremental=0 do_pretty=0 do_ascii=0 do_compress=0 do_compress_images=0 do_compress_fonts=0 do_decompress=0 do_gar...utf8= upwd_utf8= do_snapshot=0 do_preserve_metadata=1 do_use_objstms=0 compression_effort=0 do_labels=0 reproducible=0)
+
+    def pdf_save_document(doc, filename, opts):
+        r"""Class-aware wrapper for `::pdf_save_document()`."""
+>       return _mupdf.pdf_save_document(doc, filename, opts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pymupdf.mupdf.FzErrorSystem: code=2: cannot open file 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tmp\test_cook_adapter_builds_cases0\cook-cohort\raw\disclosure\US-Patents-List
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\mupdf.py:60453: FzErrorSystem
+_ test_cook_adapter_rejects_frozen_cohort_mutations[runtime-runtime JSON hash] _
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_cook_adapter_rejects_froz0')
+mutation = 'runtime', message = 'runtime JSON hash'
+
+    @pytest.mark.parametrize(
+        ("mutation", "message"),
+        [
+            ("runtime", "runtime JSON hash"),
+            ("runtime_text", "runtime JSON hash"),
+            ("raw", "raw file"),
+            ("registry", "source registry hash"),
+            ("missing", "raw file is missing"),
+            ("metadata", "source_registry_sha256"),
+        ],
+    )
+    def test_cook_adapter_rejects_frozen_cohort_mutations(tmp_path: Path, mutation: str, message: str):
+>       cohort = _write_synthetic_cook_cohort(tmp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_cook.py:312: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cook.py:59: in _write_synthetic_cook_cohort
+    _write_pdf(pdf_path)
+tests\test_healthtech_cook.py:47: in _write_pdf
+    document.save(path)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\__init__.py:6672: in save
+    mupdf.pdf_save_document(pdf, filename, opts)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+doc = <pymupdf.mupdf.PdfDocument; proxy of <Swig Object of type 'mupdf::PdfDocument *' at 0x00000171451F5130> >
+filename = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...0261103\\tmp\\test_cook_adapter_rejects_froz0\\cook-cohort\\raw\\disclosure\\US-Patents-List-for-US-website-2025.2.pdf'
+opts = (do_incremental=0 do_pretty=0 do_ascii=0 do_compress=0 do_compress_images=0 do_compress_fonts=0 do_decompress=0 do_gar...utf8= upwd_utf8= do_snapshot=0 do_preserve_metadata=1 do_use_objstms=0 compression_effort=0 do_labels=0 reproducible=0)
+
+    def pdf_save_document(doc, filename, opts):
+        r"""Class-aware wrapper for `::pdf_save_document()`."""
+>       return _mupdf.pdf_save_document(doc, filename, opts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pymupdf.mupdf.FzErrorSystem: code=2: cannot open file 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tmp\test_cook_adapter_rejects_froz0\cook-cohort\raw\disclosure\US-Patents-List
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\mupdf.py:60453: FzErrorSystem
+_ test_cook_adapter_rejects_frozen_cohort_mutations[runtime_text-runtime JSON hash] _
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_cook_adapter_rejects_froz1')
+mutation = 'runtime_text', message = 'runtime JSON hash'
+
+    @pytest.mark.parametrize(
+        ("mutation", "message"),
+        [
+            ("runtime", "runtime JSON hash"),
+            ("runtime_text", "runtime JSON hash"),
+            ("raw", "raw file"),
+            ("registry", "source registry hash"),
+            ("missing", "raw file is missing"),
+            ("metadata", "source_registry_sha256"),
+        ],
+    )
+    def test_cook_adapter_rejects_frozen_cohort_mutations(tmp_path: Path, mutation: str, message: str):
+>       cohort = _write_synthetic_cook_cohort(tmp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_cook.py:312: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cook.py:59: in _write_synthetic_cook_cohort
+    _write_pdf(pdf_path)
+tests\test_healthtech_cook.py:47: in _write_pdf
+    document.save(path)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\__init__.py:6672: in save
+    mupdf.pdf_save_document(pdf, filename, opts)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+doc = <pymupdf.mupdf.PdfDocument; proxy of <Swig Object of type 'mupdf::PdfDocument *' at 0x000001714DEF73F0> >
+filename = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...0261103\\tmp\\test_cook_adapter_rejects_froz1\\cook-cohort\\raw\\disclosure\\US-Patents-List-for-US-website-2025.2.pdf'
+opts = (do_incremental=0 do_pretty=0 do_ascii=0 do_compress=0 do_compress_images=0 do_compress_fonts=0 do_decompress=0 do_gar...utf8= upwd_utf8= do_snapshot=0 do_preserve_metadata=1 do_use_objstms=0 compression_effort=0 do_labels=0 reproducible=0)
+
+    def pdf_save_document(doc, filename, opts):
+        r"""Class-aware wrapper for `::pdf_save_document()`."""
+>       return _mupdf.pdf_save_document(doc, filename, opts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pymupdf.mupdf.FzErrorSystem: code=2: cannot open file 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tmp\test_cook_adapter_rejects_froz1\cook-cohort\raw\disclosure\US-Patents-List
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\mupdf.py:60453: FzErrorSystem
+_______ test_cook_adapter_rejects_frozen_cohort_mutations[raw-raw file] _______
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_cook_adapter_rejects_froz2')
+mutation = 'raw', message = 'raw file'
+
+    @pytest.mark.parametrize(
+        ("mutation", "message"),
+        [
+            ("runtime", "runtime JSON hash"),
+            ("runtime_text", "runtime JSON hash"),
+            ("raw", "raw file"),
+            ("registry", "source registry hash"),
+            ("missing", "raw file is missing"),
+            ("metadata", "source_registry_sha256"),
+        ],
+    )
+    def test_cook_adapter_rejects_frozen_cohort_mutations(tmp_path: Path, mutation: str, message: str):
+>       cohort = _write_synthetic_cook_cohort(tmp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_cook.py:312: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cook.py:59: in _write_synthetic_cook_cohort
+    _write_pdf(pdf_path)
+tests\test_healthtech_cook.py:47: in _write_pdf
+    document.save(path)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\__init__.py:6672: in save
+    mupdf.pdf_save_document(pdf, filename, opts)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+doc = <pymupdf.mupdf.PdfDocument; proxy of <Swig Object of type 'mupdf::PdfDocument *' at 0x0000017144FBA270> >
+filename = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...0261103\\tmp\\test_cook_adapter_rejects_froz2\\cook-cohort\\raw\\disclosure\\US-Patents-List-for-US-website-2025.2.pdf'
+opts = (do_incremental=0 do_pretty=0 do_ascii=0 do_compress=0 do_compress_images=0 do_compress_fonts=0 do_decompress=0 do_gar...utf8= upwd_utf8= do_snapshot=0 do_preserve_metadata=1 do_use_objstms=0 compression_effort=0 do_labels=0 reproducible=0)
+
+    def pdf_save_document(doc, filename, opts):
+        r"""Class-aware wrapper for `::pdf_save_document()`."""
+>       return _mupdf.pdf_save_document(doc, filename, opts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pymupdf.mupdf.FzErrorSystem: code=2: cannot open file 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tmp\test_cook_adapter_rejects_froz2\cook-cohort\raw\disclosure\US-Patents-List
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\mupdf.py:60453: FzErrorSystem
+_ test_cook_adapter_rejects_frozen_cohort_mutations[registry-source registry hash] _
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_cook_adapter_rejects_froz3')
+mutation = 'registry', message = 'source registry hash'
+
+    @pytest.mark.parametrize(
+        ("mutation", "message"),
+        [
+            ("runtime", "runtime JSON hash"),
+            ("runtime_text", "runtime JSON hash"),
+            ("raw", "raw file"),
+            ("registry", "source registry hash"),
+            ("missing", "raw file is missing"),
+            ("metadata", "source_registry_sha256"),
+        ],
+    )
+    def test_cook_adapter_rejects_frozen_cohort_mutations(tmp_path: Path, mutation: str, message: str):
+>       cohort = _write_synthetic_cook_cohort(tmp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_cook.py:312: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cook.py:59: in _write_synthetic_cook_cohort
+    _write_pdf(pdf_path)
+tests\test_healthtech_cook.py:47: in _write_pdf
+    document.save(path)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\__init__.py:6672: in save
+    mupdf.pdf_save_document(pdf, filename, opts)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+doc = <pymupdf.mupdf.PdfDocument; proxy of <Swig Object of type 'mupdf::PdfDocument *' at 0x00000171450854F0> >
+filename = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...0261103\\tmp\\test_cook_adapter_rejects_froz3\\cook-cohort\\raw\\disclosure\\US-Patents-List-for-US-website-2025.2.pdf'
+opts = (do_incremental=0 do_pretty=0 do_ascii=0 do_compress=0 do_compress_images=0 do_compress_fonts=0 do_decompress=0 do_gar...utf8= upwd_utf8= do_snapshot=0 do_preserve_metadata=1 do_use_objstms=0 compression_effort=0 do_labels=0 reproducible=0)
+
+    def pdf_save_document(doc, filename, opts):
+        r"""Class-aware wrapper for `::pdf_save_document()`."""
+>       return _mupdf.pdf_save_document(doc, filename, opts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pymupdf.mupdf.FzErrorSystem: code=2: cannot open file 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tmp\test_cook_adapter_rejects_froz3\cook-cohort\raw\disclosure\US-Patents-List
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\mupdf.py:60453: FzErrorSystem
+_ test_cook_adapter_rejects_frozen_cohort_mutations[missing-raw file is missing] _
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_cook_adapter_rejects_froz4')
+mutation = 'missing', message = 'raw file is missing'
+
+    @pytest.mark.parametrize(
+        ("mutation", "message"),
+        [
+            ("runtime", "runtime JSON hash"),
+            ("runtime_text", "runtime JSON hash"),
+            ("raw", "raw file"),
+            ("registry", "source registry hash"),
+            ("missing", "raw file is missing"),
+            ("metadata", "source_registry_sha256"),
+        ],
+    )
+    def test_cook_adapter_rejects_frozen_cohort_mutations(tmp_path: Path, mutation: str, message: str):
+>       cohort = _write_synthetic_cook_cohort(tmp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_cook.py:312: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cook.py:59: in _write_synthetic_cook_cohort
+    _write_pdf(pdf_path)
+tests\test_healthtech_cook.py:47: in _write_pdf
+    document.save(path)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\__init__.py:6672: in save
+    mupdf.pdf_save_document(pdf, filename, opts)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+doc = <pymupdf.mupdf.PdfDocument; proxy of <Swig Object of type 'mupdf::PdfDocument *' at 0x00000171425F5D30> >
+filename = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...0261103\\tmp\\test_cook_adapter_rejects_froz4\\cook-cohort\\raw\\disclosure\\US-Patents-List-for-US-website-2025.2.pdf'
+opts = (do_incremental=0 do_pretty=0 do_ascii=0 do_compress=0 do_compress_images=0 do_compress_fonts=0 do_decompress=0 do_gar...utf8= upwd_utf8= do_snapshot=0 do_preserve_metadata=1 do_use_objstms=0 compression_effort=0 do_labels=0 reproducible=0)
+
+    def pdf_save_document(doc, filename, opts):
+        r"""Class-aware wrapper for `::pdf_save_document()`."""
+>       return _mupdf.pdf_save_document(doc, filename, opts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pymupdf.mupdf.FzErrorSystem: code=2: cannot open file 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tmp\test_cook_adapter_rejects_froz4\cook-cohort\raw\disclosure\US-Patents-List
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\mupdf.py:60453: FzErrorSystem
+_ test_cook_adapter_rejects_frozen_cohort_mutations[metadata-source_registry_sha256] _
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_cook_adapter_rejects_froz5')
+mutation = 'metadata', message = 'source_registry_sha256'
+
+    @pytest.mark.parametrize(
+        ("mutation", "message"),
+        [
+            ("runtime", "runtime JSON hash"),
+            ("runtime_text", "runtime JSON hash"),
+            ("raw", "raw file"),
+            ("registry", "source registry hash"),
+            ("missing", "raw file is missing"),
+            ("metadata", "source_registry_sha256"),
+        ],
+    )
+    def test_cook_adapter_rejects_frozen_cohort_mutations(tmp_path: Path, mutation: str, message: str):
+>       cohort = _write_synthetic_cook_cohort(tmp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_cook.py:312: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_healthtech_cook.py:59: in _write_synthetic_cook_cohort
+    _write_pdf(pdf_path)
+tests\test_healthtech_cook.py:47: in _write_pdf
+    document.save(path)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\__init__.py:6672: in save
+    mupdf.pdf_save_document(pdf, filename, opts)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+doc = <pymupdf.mupdf.PdfDocument; proxy of <Swig Object of type 'mupdf::PdfDocument *' at 0x0000017143045AF0> >
+filename = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...0261103\\tmp\\test_cook_adapter_rejects_froz5\\cook-cohort\\raw\\disclosure\\US-Patents-List-for-US-website-2025.2.pdf'
+opts = (do_incremental=0 do_pretty=0 do_ascii=0 do_compress=0 do_compress_images=0 do_compress_fonts=0 do_decompress=0 do_gar...utf8= upwd_utf8= do_snapshot=0 do_preserve_metadata=1 do_use_objstms=0 compression_effort=0 do_labels=0 reproducible=0)
+
+    def pdf_save_document(doc, filename, opts):
+        r"""Class-aware wrapper for `::pdf_save_document()`."""
+>       return _mupdf.pdf_save_document(doc, filename, opts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pymupdf.mupdf.FzErrorSystem: code=2: cannot open file 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tmp\test_cook_adapter_rejects_froz5\cook-cohort\raw\disclosure\US-Patents-List
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\pymupdf\mupdf.py:60453: FzErrorSystem
+______________ test_display_path_supports_external_smoke_inputs _______________
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_display_path_supports_ext0')
+
+    def test_display_path_supports_external_smoke_inputs(tmp_path):
+        path = tmp_path / "fixture.parquet"
+>       assert MODULE.display_path(path) == str(path)
+E       AssertionError: assert 'docs\\health...xture.parquet' == 'C:\\Users\\U...xture.parquet'
+E         
+E         - C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tmp\test_display_path_supports_ext0\fixture.parquet
+E         ? -----------------------------------------------------------------------------
+E         + docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tmp\test_display_path_supports_ext0\fixture.parquet
+
+tests\test_healthtech_dapfam_bm25.py:61: AssertionError
+__ test_local_generation_provider_stays_in_http_history_and_export_lifecycle __
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_local_generation_provider0')
+
+    def test_local_generation_provider_stays_in_http_history_and_export_lifecycle(tmp_path):
+        def generate(dossier):
+            return {
+                "format": "ht-http-local-generation-result-v1",
+                "status": "PASS_TEST_GENERATION",
+                "case_id": dossier.query.query_id,
+                "model_id": "test-local-model",
+                "model_revision": "test-revision",
+                "schema_valid": True,
+                "generation_latency_seconds": 0.01,
+                "parsed_output": {
+                    "device_id": dossier.query.device_id_canonical,
+                    "device_name": dossier.query.device_id_raw,
+                    "findings": [],
+                    "unresolved": ["test provider only"],
+                },
+                "provider_calls": 0,
+                "paid_cost_usd": 0.0,
+                "billing_status": "not_billable_local",
+            }
+    
+        provider = CallableGenerationProvider(
+            {
+                "id": "local-generation",
+                "label": "Test local generation",
+                "available": True,
+                "model": "test-local-model",
+                "model_revision": "test-revision",
+                "billing_status": "not_billable_local",
+                "actual_usd": 0.0,
+                "reserved_usd": 0.0,
+                "unknown_usd": 0.0,
+            },
+            generate,
+        )
+>       server = create_server("127.0.0.1", 0, tmp_path / "data", code_commit="test-head", generation_provider=provider)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_http.py:153: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\patent_to_pilot\healthtech\http.py:703: in create_server
+    server = ThreadingHTTPServer((host, port), BoundHandler)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\socketserver.py:457: in __init__
+    self.server_bind()
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\http\server.py:136: in server_bind
+    socketserver.TCPServer.server_bind(self)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\socketserver.py:478: in server_bind
+    self.socket.bind(self.server_address)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = (<socket.socket [closed] fd=-1, family=2, type=1, proto=0>, ('127.0.0.1', 0))
+kw = {}
+
+    def denied(*a,**kw):
+        network.append('socket_or_dns_attempt')
+>       raise RuntimeError('network forbidden during offline verification')
+E       RuntimeError: network forbidden during offline verification
+
+scripts\healthtech\verify_offline.py:37: RuntimeError
+____________ test_cancel_before_dispatch_preserves_cancelled_state ____________
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_cancel_before_dispatch_pr0')
+
+    def test_cancel_before_dispatch_preserves_cancelled_state(tmp_path):
+        service = HealthTechJobService(tmp_path / "data", code_commit="test-head")
+        try:
+>           record = service.submit({"input": INPUT, "provider": {"id": "local"}, "idempotency_key": "cancel-1"})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_http.py:236: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\patent_to_pilot\healthtech\http.py:313: in submit
+    record = self.store.create(
+src\patent_to_pilot\healthtech\http.py:178: in create
+    _atomic_write_json(job_dir / "input.json", input_payload)
+src\patent_to_pilot\healthtech\http.py:72: in _atomic_write_json
+    descriptor, staging_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".staging", dir=path.parent)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\tempfile.py:357: in mkstemp
+    return _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dir = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...103\\offline-verification-20261103\\tmp\\test_cancel_before_dispatch_pr0\\data\\jobs\\f65cee6293834c1b90f96a0ad1af3cef'
+pre = '.input.json.', suf = '.staging', flags = 34050
+output_type = <class 'str'>
+
+    def _mkstemp_inner(dir, pre, suf, flags, output_type):
+        """Code common to mkstemp, TemporaryFile, and NamedTemporaryFile."""
+    
+        dir = _os.path.abspath(dir)
+        names = _get_candidate_names()
+        if output_type is bytes:
+            names = map(_os.fsencode, names)
+    
+        for seq in range(TMP_MAX):
+            name = next(names)
+            file = _os.path.join(dir, pre + name + suf)
+            _sys.audit("tempfile.mkstemp", file)
+            try:
+>               fd = _os.open(file, flags, 0o600)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-long-run-resume-20261103\\offline-verification-20261103\\tmp\\test_cancel_before_dispatch_pr0\\data\\jobs\\f65cee6293834c1b90f96a0ad1af3cef\\.input.json.g3j11cmy.staging'
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\tempfile.py:256: FileNotFoundError
+_____ test_running_cancel_discards_uncommitted_result_and_resume_retries ______
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_running_cancel_discards_u0')
+
+    def test_running_cancel_discards_uncommitted_result_and_resume_retries(tmp_path):
+        service = HealthTechJobService(tmp_path / "data", code_commit="test-head", execution_delay_seconds=0.1)
+        try:
+>           record = service.submit({"input": INPUT, "provider": {"id": "local"}, "idempotency_key": "cancel-running-1"})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_http.py:255: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\patent_to_pilot\healthtech\http.py:313: in submit
+    record = self.store.create(
+src\patent_to_pilot\healthtech\http.py:178: in create
+    _atomic_write_json(job_dir / "input.json", input_payload)
+src\patent_to_pilot\healthtech\http.py:72: in _atomic_write_json
+    descriptor, staging_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".staging", dir=path.parent)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\tempfile.py:357: in mkstemp
+    return _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dir = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...103\\offline-verification-20261103\\tmp\\test_running_cancel_discards_u0\\data\\jobs\\35eb850206e84019847e9f71045753e7'
+pre = '.input.json.', suf = '.staging', flags = 34050
+output_type = <class 'str'>
+
+    def _mkstemp_inner(dir, pre, suf, flags, output_type):
+        """Code common to mkstemp, TemporaryFile, and NamedTemporaryFile."""
+    
+        dir = _os.path.abspath(dir)
+        names = _get_candidate_names()
+        if output_type is bytes:
+            names = map(_os.fsencode, names)
+    
+        for seq in range(TMP_MAX):
+            name = next(names)
+            file = _os.path.join(dir, pre + name + suf)
+            _sys.audit("tempfile.mkstemp", file)
+            try:
+>               fd = _os.open(file, flags, 0o600)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-long-run-resume-20261103\\offline-verification-20261103\\tmp\\test_running_cancel_discards_u0\\data\\jobs\\35eb850206e84019847e9f71045753e7\\.input.json.o3izcbq9.staging'
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\tempfile.py:256: FileNotFoundError
+________ test_server_owned_vector_config_binds_http_job_to_exact_input ________
+
+tmp_path = WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/tmp/test_server_owned_vector_confi0')
+
+    def test_server_owned_vector_config_binds_http_job_to_exact_input(tmp_path: Path):
+        vector_service = ConfiguredVectorSearch.from_config(_make_vector_config(tmp_path))
+        service = HealthTechJobService(tmp_path / "jobs", code_commit="test", vector_search=vector_service)
+        try:
+>           submitted = service.submit({"input": INPUT, "provider": {"id": "local-vector"}}, "vector-1")
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_healthtech_vector_http.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\patent_to_pilot\healthtech\http.py:313: in submit
+    record = self.store.create(
+src\patent_to_pilot\healthtech\http.py:178: in create
+    _atomic_write_json(job_dir / "input.json", input_payload)
+src\patent_to_pilot\healthtech\http.py:72: in _atomic_write_json
+    descriptor, staging_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".staging", dir=path.parent)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\tempfile.py:357: in mkstemp
+    return _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+dir = 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-lon...103\\offline-verification-20261103\\tmp\\test_server_owned_vector_confi0\\jobs\\jobs\\a12dfc35f5b24dcfab75fcbb4bd4186b'
+pre = '.input.json.', suf = '.staging', flags = 34050
+output_type = <class 'str'>
+
+    def _mkstemp_inner(dir, pre, suf, flags, output_type):
+        """Code common to mkstemp, TemporaryFile, and NamedTemporaryFile."""
+    
+        dir = _os.path.abspath(dir)
+        names = _get_candidate_names()
+        if output_type is bytes:
+            names = map(_os.fsencode, names)
+    
+        for seq in range(TMP_MAX):
+            name = next(names)
+            file = _os.path.join(dir, pre + name + suf)
+            _sys.audit("tempfile.mkstemp", file)
+            try:
+>               fd = _os.open(file, flags, 0o600)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-long-run-20261103\\docs\\healthtech\\audits\\ptp-long-run-resume-20261103\\offline-verification-20261103\\tmp\\test_server_owned_vector_confi0\\jobs\\jobs\\a12dfc35f5b24dcfab75fcbb4bd4186b\\.input.json.6kwf7ntj.staging'
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\tempfile.py:256: FileNotFoundError
+============================== warnings summary ===============================
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\fitz\__init__.py:17
+  C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\site-packages\fitz\__init__.py:17: FutureWarning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+    warnings.warn(
+
+tests/test_healthtech_boundary_matrix.py::test_external_boundary_rejects_non_mapping_payload
+  C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py:475: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `str` - serialized value may not be as expected [field_name='payload', input_value=['unsafe', 'non-mapping', 'payload'], input_type=list])
+    PydanticSerializationUnexpectedValue(Expected `dict[str, any]` - serialized value may not be as expected [field_name='payload', input_value=['unsafe', 'non-mapping', 'payload'], input_type=list])
+    return self.__pydantic_serializer__.to_python(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\offline-verification-20261103\tests.xml -
+=========================== short test summary info ===========================
+FAILED tests/test_g13_readiness.py::test_preflight_runs_offline_but_never_claims_scientific_readiness
+FAILED tests/test_healthtech_cook.py::test_cook_adapter_builds_cases_and_promotes_pdf_disclosures
+FAILED tests/test_healthtech_cook.py::test_cook_adapter_rejects_frozen_cohort_mutations[runtime-runtime JSON hash]
+FAILED tests/test_healthtech_cook.py::test_cook_adapter_rejects_frozen_cohort_mutations[runtime_text-runtime JSON hash]
+FAILED tests/test_healthtech_cook.py::test_cook_adapter_rejects_frozen_cohort_mutations[raw-raw file]
+FAILED tests/test_healthtech_cook.py::test_cook_adapter_rejects_frozen_cohort_mutations[registry-source registry hash]
+FAILED tests/test_healthtech_cook.py::test_cook_adapter_rejects_frozen_cohort_mutations[missing-raw file is missing]
+FAILED tests/test_healthtech_cook.py::test_cook_adapter_rejects_frozen_cohort_mutations[metadata-source_registry_sha256]
+FAILED tests/test_healthtech_dapfam_bm25.py::test_display_path_supports_external_smoke_inputs
+FAILED tests/test_healthtech_http.py::test_local_generation_provider_stays_in_http_history_and_export_lifecycle
+FAILED tests/test_healthtech_http.py::test_cancel_before_dispatch_preserves_cancelled_state
+FAILED tests/test_healthtech_http.py::test_running_cancel_discards_uncommitted_result_and_resume_retries
+FAILED tests/test_healthtech_vector_http.py::test_server_owned_vector_config_binds_http_job_to_exact_input
+ERROR tests/test_healthtech_http.py::test_local_http_job_is_idempotent_and_supports_history_source_and_exports
+ERROR tests/test_healthtech_http.py::test_provider_gate_and_version_conflict_are_fail_closed
+ERROR tests/test_healthtech_http.py::test_loopback_browser_cors_allows_preflight_and_blocks_non_loopback_origin

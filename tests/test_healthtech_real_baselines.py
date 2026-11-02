@@ -22,7 +22,11 @@ def _device() -> SimpleNamespace:
     )
 
 
-def test_failed_attempt_keeps_elapsed_resources_and_marks_unknown_fields():
+def test_failed_attempt_keeps_elapsed_resources_and_marks_unknown_fields(monkeypatch):
+    wall_ticks = iter([10.0, 10.25])
+    cpu_ticks = iter([20.0, 20.125])
+    monkeypatch.setattr(MODULE, "perf_counter", lambda: next(wall_ticks))
+    monkeypatch.setattr(MODULE, "process_time", lambda: next(cpu_ticks))
     attempts: list[dict] = []
 
     assert MODULE._run_control_attempt(attempts, 1, "query", lambda: (_ for _ in ()).throw(RuntimeError("boom"))) is None
@@ -30,8 +34,8 @@ def test_failed_attempt_keeps_elapsed_resources_and_marks_unknown_fields():
     attempt = attempts[0]
     assert attempt["status"] == "failed"
     assert attempt["resources"]["query_calls"] == 1
-    assert attempt["resources"]["wall_seconds"] >= 0
-    assert attempt["resources"]["cpu_seconds"] >= 0
+    assert attempt["resources"]["wall_seconds"] == 0.25
+    assert attempt["resources"]["cpu_seconds"] == 0.125
     assert attempt["resource_accounting"] == {
         "status": "PARTIAL_UNKNOWN",
         "unknown_fields": [
