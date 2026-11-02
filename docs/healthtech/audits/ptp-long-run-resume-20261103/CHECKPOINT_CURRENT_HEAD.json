@@ -1,0 +1,99 @@
+{
+  "format": "ptp-long-run-resume-current-head-checkpoint-v1",
+  "observed_at_utc": "2026-11-02T17:39:32.9277377Z",
+  "parent_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT.json",
+  "goal": "Patent-to-Pilot research-product O1-O4",
+  "candidate": {
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "head": "597f3cd60c9d18be27bc665df4171a54c2eea99e",
+    "working_tree": "CLEAN",
+    "base_main": "0d049802d36bc2eebe60331ec444d62469fd767f",
+    "main_is_ancestor": true
+  },
+  "process_quiescence": {
+    "relevant_experiment_processes": 0,
+    "ssh_classification": "CODEX_REMOTE_APPSERVER_PROXY_NOT_EXPERIMENT"
+  },
+  "exact_head_checks": {
+    "targeted_python": {
+      "status": "PASS",
+      "command": "rtk proxy python -B -m pytest -ra tests/test_healthtech_real_baselines.py tests/test_healthtech_repairs.py tests/test_healthtech_long_run_analysis.py tests/test_healthtech_long_run_report.py tests/test_healthtech_controller.py tests/test_healthtech_cross_cohort.py",
+      "result": "49 passed, 1 skipped, 1 warning",
+      "skip_reason": "pinned local tokenizer artifact is unavailable"
+    },
+    "full_python": {
+      "status": "PASS",
+      "command": "rtk proxy python -B -m pytest -ra",
+      "result": "596 passed, 1 skipped, 2 warnings"
+    },
+    "frontend_unit": {
+      "status": "PASS",
+      "command": "rtk proxy npm test",
+      "result": "74 passed, 0 failed"
+    },
+    "http_integration": {
+      "status": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+      "command": "rtk proxy npm run test:integration:http",
+      "history_versions": [1, 2],
+      "source_inspection": "PASS",
+      "edit_reopen": "PASS",
+      "exports": ["json", "th", "en"],
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    "compileall": "PASS",
+    "json_parse": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "failure_accounting_repair": {
+    "status": "PASS_PROSPECTIVE_REPAIR",
+    "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+    "regression_contract_commit": "1c1a1d8ac436bfd491f85d3230a7179a26f2e7cc",
+    "historical_rounds_affected": "NONE_KNOWN",
+    "historical_receipts_rewritten": false,
+    "retrospective_cost_inferred": false,
+    "partial_attempts_preserved": true,
+    "unknown_resource_fields_explicit": true
+  },
+  "budget_interpretation": {
+    "status": "DESCRIPTIVE_REALIZED_QUALITY_RESOURCE_FRONTIER",
+    "equal_total_budget_claim": "NOT_SUPPORTED",
+    "matched_dimensions": [
+      "frozen corpus",
+      "eligible queries",
+      "references/groups",
+      "encoder/reranker bundle",
+      "K=20",
+      "candidate_depth=41",
+      "rerank_depth=41"
+    ],
+    "realized_units": {
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+      "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+    }
+  },
+  "outcomes": {
+    "G0": "COMPLETE_CONTRACT_AND_SCOPE",
+    "G1": "PARTIAL_RIGHTS_AND_SEMANTIC_GOLD_INCOMPLETE",
+    "G2": "PARTIAL_DEVELOPMENT_BASELINES_AND_EVALUATOR",
+    "G3": "PASS_LOOPBACK_ENGINEERING_PRIOR_REAL_CASE_RECEIPT",
+    "G4": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+    "G5": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
+    "G6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+    "G7": "PARTIAL_CURRENT_HEAD_LOOPBACK_FRESH_RELEASE_REPRO_NOT_RUN",
+    "G8": "NOT_RUN_FUTURE_SCOPE"
+  },
+  "resource_accounting": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "new_24h_window": false,
+    "historical_receipts_rewritten": false
+  },
+  "next_action": "Owner review of current candidate; expose only the existing authorized O3/O4 evidence paths if paid or exact-head real-case continuation is still desired; otherwise continue manuscript/reproducibility work without starting a new batch."
+}

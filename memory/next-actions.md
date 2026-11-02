@@ -1201,3 +1201,30 @@ call, GPU job, ledger mutation, or participant route was started.
 Next: keep the API/new-compute branches gated; continue owner-review and WPI
 submission-readiness work, and only run a future batch after freezing explicit
 total-budget controls and exposing the authorized evidence gates.
+
+## HT-NEXT-102 — 2026-11-03 exact-head verification after readiness repair
+
+Status: `PASS_EXACT_HEAD_ENGINEERING_PARTIAL_SCIENTIFIC_EXTERNAL_GATES_REMAIN`;
+checkpoint: `docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json`.
+
+Revalidated the readiness repair on candidate
+`597f3cd60c9d18be27bc665df4171a54c2eea99e`. The targeted failure-accounting,
+frontier, controller, report, and cross-cohort package passed `49` tests with
+one optional tokenizer skip. The full Python suite passed `596` tests with one
+optional tokenizer skip and two existing warnings. Frontend unit tests passed
+`74/74`, and loopback HTTP integration passed source inspection, history `1 ->
+2`, edit/reopen, and JSON/TH/EN export with zero provider calls and USD `0.00`.
+Compile, JSON, and diff checks also passed.
+
+This is exact-head engineering verification, not a new scientific batch. No
+API/GPU/dataset/ledger action occurred, old receipts and costs were not
+rewritten, and no retrospective cost was inferred. The current scientific
+frontier remains descriptive with unequal realized total budgets; G1/G4
+semantic/final-holdout evidence, O3 paid comparison, exact-head real-case
+assets, external business validation, and WPI owner review remain partial or
+gated.
+
+Next: owner review the current candidate and expose only the existing specific
+evidence needed for any paid or exact-head real-case continuation. Otherwise
+continue offline manuscript and reproducibility work without opening a new
+batch.

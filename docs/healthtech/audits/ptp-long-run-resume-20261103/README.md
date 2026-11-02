@@ -8,7 +8,7 @@ branch; the dirty long-run, Claude, Luna, and owner worktrees were preserved.
 
 ## Candidate and process state
 
-- Candidate HEAD at this checkpoint: `1c1a1d8ac436bfd491f85d3230a7179a26f2e7cc`.
+- Initial candidate HEAD recorded in the historical checkpoint: `1c1a1d8ac436bfd491f85d3230a7179a26f2e7cc`.
 - Worktree: `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103`.
 - Base relationship: `main` at `0d049802d36bc2eebe60331ec444d62469fd767f` is an ancestor.
 - The only SSH process observed was the Codex remote app-server proxy; no
@@ -123,3 +123,31 @@ the current audit is the canonical interpretation for the continuation.
 The paid/API and new compute branches remain gated by the existing canonical
 evidence. This checkpoint does not request the prior USD8 authorization again,
 reset any ledger/window, or add AI4AI as a goal condition.
+
+## Exact-head verification follow-up — 2026-11-03
+
+The current continuation candidate is `597f3cd60c9d18be27bc665df4171a54c2eea99e`
+on the same branch and worktree. The working tree was clean before this
+verification. No experiment, provider call, GPU job, dataset download, ledger
+mutation, or participant route was started.
+
+Fresh checks on this exact HEAD:
+
+- Targeted failure-accounting/frontier/controller/report package: `49 passed,
+  1 skipped` (the skip is the unavailable pinned local tokenizer artifact).
+- Full Python suite: `596 passed, 1 skipped, 2 warnings`.
+- Frontend unit suite: `74 passed, 0 failed`.
+- Loopback HTTP integration: `PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT`, with
+  source inspection, history `1 -> 2`, edit/reopen, JSON/TH/EN export, zero
+  provider calls, and paid cost `USD 0.00`.
+- `compileall`, JSON parsing, and `git diff --check`: pass.
+
+This revalidation strengthens the engineering and failure-accounting evidence
+only. It does not create a new scientific batch, convert the descriptive
+frontier into an equal-total-budget comparison, or change the existing O2/O3/O4
+external gates. The exact-head real-case rerun remains asset-gated; the API
+branch remains fail-closed pending the existing canonical journal, credit,
+route/pricing, and outbound-rights evidence.
+
+The machine-readable current-head record is
+[`CHECKPOINT_CURRENT_HEAD.json`](./CHECKPOINT_CURRENT_HEAD.json).
