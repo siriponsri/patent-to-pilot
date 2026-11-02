@@ -1369,3 +1369,26 @@ mutation, budget reset, or new experiment was started.
 
 Next: preserve the original O1-O4 statuses, keep paid/new-compute branches
 gated, and continue only with independent offline work or owner review.
+
+## HT-NEXT-109 — 2026-11-03 matched-budget prefix diagnostic
+
+Status: `PASS_POSTHOC_DESCRIPTIVE_BUDGET_CONTROL_NOT_ADAPTIVE`;
+receipt:
+`docs/healthtech/audits/ptp-matched-budget-prefix-20261103/verification.json`.
+
+Added a small reproducible analyzer and regression tests for the existing
+private O4 frontier receipt. At exactly `3` query calls and `123` rerank pairs,
+HT-B1, HT-B2 prefix-1, and HT-B3 prefix-1 each report macro Recall@20
+`0.498802`, with zero failed and zero not-realized queries. This is a post-hoc
+first-action control, not a final endpoint and not evidence of adaptive
+superiority. HT-B4 remains outside this slice because controller steps are not
+the same budget unit.
+
+The English manuscript now states this boundary. The new tests passed `2`; the
+full suite passed `598` with one existing tokenizer skip and two warnings. No
+API call, GPU job, dataset download, ledger mutation, or new 24-hour window was
+started.
+
+Next: keep the matched diagnostic descriptive, do not promote it to current-
+head final evidence, and pursue only the existing O3/O4 gates or independent
+offline work.

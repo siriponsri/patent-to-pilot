@@ -191,6 +191,28 @@ product-level disclosed-link labels rather than semantic relevance gold. The
 raw/evaluator receipts and hashes are in
 [`ht-o4-matched-offline-current-head-20261101`](../audits/ht-o4-matched-offline-current-head-20261101/README.md).
 
+#### 7.4.1 Post-hoc equalized first-action diagnostic
+
+Because the full frontier has unequal realized budgets, we also extracted a
+post-hoc descriptive slice at exactly three query calls and 123 rerank pairs.
+This selects the first action for HT-B1, HT-B2, and HT-B3; it does not represent
+the completed adaptive policy for HT-B3, and it was not the preregistered final
+endpoint.
+
+| Condition | Prefix | Query calls | Rerank pairs | Macro Recall@20 |
+|---|---:|---:|---:|---:|
+| HT-B1 | 1 | 3 | 123 | 0.498802 |
+| HT-B2 | 1 | 3 | 123 | 0.498802 |
+| HT-B3 | 1 | 3 | 123 | 0.498802 |
+
+All three selected rows had zero failed and zero not-realized queries. The
+equality is therefore an observed first-action budget control, not evidence
+that adaptive acquisition improves the endpoint. HT-B4 is excluded from this
+slice because its controller-step count is not directly interchangeable with
+the query/rerank budget, and its receipt does not provide a predeclared
+same-unit final comparison. The machine-readable diagnostic is in
+[`ptp-matched-budget-prefix-20261103/verification.json`](../audits/ptp-matched-budget-prefix-20261103/verification.json).
+
 ### 7.5 Engineering application slice
 
 The recorded O1-O4 engineering receipt from the reviewed prior candidate covers
