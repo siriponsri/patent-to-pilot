@@ -5,7 +5,7 @@
   "candidate": {
     "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
     "branch": "codex/patent-to-pilot-long-run-20261103",
-    "head": "8f1a2583c501a52eff66c5ca69620adc0e23048b",
+    "source_head_tested": "8f1a2583c501a52eff66c5ca69620adc0e23048b",
     "working_tree_before_checkpoint": "CLEAN",
     "root_main_merge": "NOT_DONE",
     "owner_review": "REQUIRED_BEFORE_MERGE"
