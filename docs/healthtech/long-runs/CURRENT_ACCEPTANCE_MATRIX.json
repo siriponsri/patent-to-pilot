@@ -1,0 +1,145 @@
+{
+  "format": "ptp-current-acceptance-matrix-v1",
+  "observed_local_date": "2026-11-03",
+  "goal": "Patent-to-Pilot O1-O4 original goal continuation",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "8f1a2583c501a52eff66c5ca69620adc0e23048b",
+    "working_tree_before_checkpoint": "CLEAN",
+    "root_main_merge": "NOT_DONE",
+    "owner_review": "REQUIRED_BEFORE_MERGE"
+  },
+  "process_and_resource_boundary": {
+    "relevant_experiment_processes_observed_this_turn": 0,
+    "paid_api_calls_this_turn": 0,
+    "gpu_jobs_this_turn": 0,
+    "dataset_downloads_this_turn": 0,
+    "ledger_mutations_this_turn": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "new_experiment_batch": false
+  },
+  "failure_accounting": {
+    "status": "COMPLETE_PROSPECTIVE_REPAIR",
+    "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+    "current_source_sha256": "1458939e49a39999d3009893ac5d13c5f69adcb01150871b62cefd7c5ab0cd3f",
+    "current_regression_test_sha256": "4c1fff706398342a2c260b514c1afadbdacc18a06a940d332d5cf4a743818e3b",
+    "partial_attempts_preserved": true,
+    "measured_wall_cpu_preserved": true,
+    "unknown_resource_fields_explicit": true,
+    "synthetic_zero_attempt_added": false,
+    "historical_receipts_rewritten": false,
+    "retrospective_cost_inferred": false,
+    "historical_rounds_affected": "NONE_KNOWN",
+    "basis": "Accessible receipts reviewed for non-zero failure counters; absence of a known affected round is not a completeness proof for private journals."
+  },
+  "verification": {
+    "focused_regression": {
+      "status": "PASS",
+      "result": "50 passed, 1 skipped, 1 warning",
+      "scope": "baseline failure accounting, repairs, frontier analysis/reporting, controller, and cross-cohort checks",
+      "skip": "pinned local tokenizer artifact unavailable"
+    },
+    "full_python": {
+      "status": "PASS",
+      "result": "599 passed, 1 skipped, 2 warnings",
+      "skip": "pinned local tokenizer artifact unavailable"
+    },
+    "source_integrity": {
+      "status": "PASS",
+      "checks": ["git diff --check", "JSON readback", "candidate clean before checkpoint"]
+    }
+  },
+  "g0_g8": {
+    "G0": {
+      "status": "COMPLETE_CONTRACT_AND_SCOPE",
+      "evidence": ["docs/healthtech/long-runs/LONG_RUN_GOAL.md", "docs/healthtech/long-runs/EXECUTION_PLAN.md"]
+    },
+    "G1": {
+      "status": "PARTIAL_RIGHTS_AND_SEMANTIC_GOLD_INCOMPLETE",
+      "limitation": "Product-level disclosed links remain distinct from semantic relevance gold; restricted and unresolved sources are not promoted.",
+      "evidence": ["docs/healthtech/research/BRIDGE_RIGHTS_COHORT.md", "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_FREEZE.json"]
+    },
+    "G2": {
+      "status": "PARTIAL_DEVELOPMENT_BASELINES_AND_EVALUATOR",
+      "limitation": "Offline baselines and evaluator are real/descriptive; final powered adaptive comparison is not established.",
+      "evidence": ["docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/verification.json", "docs/healthtech/audits/ptp-matched-budget-prefix-20261103/verification.json"]
+    },
+    "G3": {
+      "status": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
+      "limitation": "Engineering evidence does not imply deployment, paid generation, or user validation.",
+      "evidence": ["docs/healthtech/audits/ptp-long-run-resume-20261103/o1-current-head-20261103/verification.json", "docs/healthtech/audits/ptp-current-head-engineering-20261103/verification.json"]
+    },
+    "G4": {
+      "status": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+      "limitation": "B2/B3/B4 share inputs and per-call caps but not equal realized totals; semantic gold and sufficient independent groups are absent.",
+      "evidence": ["docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/CHECKPOINT.json", "docs/healthtech/audits/ptp-matched-budget-prefix-20261103/verification.json"]
+    },
+    "G5": {
+      "status": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
+      "limitation": "Machine time, citation/locator integrity, evidence coverage, and scenario inputs are operational proxies; no independent user, revenue, ROI, or willingness-to-pay evidence.",
+      "evidence": ["docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md"]
+    },
+    "G6": {
+      "status": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+      "limitation": "Manuscript claim boundaries and references are prepared; WPI-specific author-guide details and final owner declarations remain to be rechecked.",
+      "evidence": ["docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md", "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md", "docs/healthtech/audits/ptp-long-run-resume-20261103/manuscript-integrity-20261103/verification.json"]
+    },
+    "G7": {
+      "status": "PASS_ISOLATED_RELEASE_REPRODUCTION_CURRENT_CANDIDATE",
+      "limitation": "Release verification is isolated offline reproduction, not external deployment or production readiness.",
+      "evidence": ["docs/healthtech/audits/ptp-long-run-resume-20261103/release-verification-20261103-r3/verification.json"]
+    },
+    "G8": {
+      "status": "NOT_RUN_FUTURE_SCOPE",
+      "limitation": "Future scope remains outside this solo computational study and current acceptance.",
+      "evidence": ["docs/healthtech/long-runs/LONG_RUN_GOAL.md"]
+    }
+  },
+  "o1_o4": {
+    "O1": {
+      "status": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+      "limitation": "Loopback HTTP/browser engineering is verified; no paid provider call is claimed.",
+      "evidence": ["docs/healthtech/audits/ptp-long-run-resume-20261103/o1-current-head-20261103/verification.json"]
+    },
+    "O2": {
+      "status": "PARTIAL_PRIOR_REMOTE_RUNTIME_REUSED_NO_NEW_WINDOW",
+      "limitation": "Prior remote encode/import receipts remain valid by runtime-equivalent contract checks; no new remote run after the original window.",
+      "evidence": ["docs/healthtech/audits/ht-research-product-20261031/verification.json", "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json"]
+    },
+    "O3": {
+      "status": "PARTIAL_LOCAL_PASS_API_BLOCKED_LOCAL",
+      "limitation": "Local canary/contract evidence is not a local-vs-API model comparison; API remains fail-closed pending existing canonical journal, credit, route, and rights evidence.",
+      "evidence": ["docs/healthtech/audits/ht-o3-local-model-preflight-20261031/download-verification.json", "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json"]
+    },
+    "O4": {
+      "status": "PARTIAL_THREE_CASE_ENGINEERING_DESCRIPTIVE_RESEARCH",
+      "limitation": "Three-case workflow evidence is engineering/application evidence; the adaptive study remains descriptive and the exact-head real-case rerun is asset-gated.",
+      "evidence": ["docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md", "docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/REPORT.md"]
+    }
+  },
+  "budget_boundary": {
+    "matched_dimensions": ["frozen corpus", "eligible queries", "references/groups", "encoder/reranker bundle", "K=20", "candidate_depth=41", "rerank_depth=41"],
+    "realized_units": {
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+      "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+    },
+    "equal_total_budget_claim": "NOT_SUPPORTED",
+    "posthoc_prefix_control": {
+      "budget": {"query_calls": 3, "rerank_pairs": 123},
+      "methods": {"HT-B1": 0.498802, "HT-B2_prefix_1": 0.498802, "HT-B3_prefix_1": 0.498802},
+      "status": "DESCRIPTIVE_FIRST_ACTION_ONLY",
+      "HT-B4": "EXCLUDED_CONTROLLER_STEPS_NOT_DIRECTLY_COMPARABLE"
+    }
+  },
+  "integration_readiness": {
+    "status": "READY_FOR_OWNER_REVIEW_NOT_MERGE",
+    "merge_main": "NOT_AUTHORIZED_BY_THIS_CHECKPOINT",
+    "push": "NOT_DONE",
+    "required_before_merge": ["owner review", "candidate-bound acceptance review", "preserve Claude/Luna/owner worktrees", "do not merge mixed snapshot results"]
+  },
+  "next_action": "Keep API and new-compute branches gated; continue only independent offline/manuscript work or owner-provided evidence reconciliation."
+}

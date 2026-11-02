@@ -8,6 +8,8 @@
 
 Execution has now produced a partial O4 adaptive-policy report with no provider calls. O3 remains locally blocked pending the existing ledger, rights, authorization, and immutable Qwen3-8B model gates.
 
+The current acceptance checklist is machine-readable in [CURRENT_ACCEPTANCE_MATRIX.json](CURRENT_ACCEPTANCE_MATRIX.json); it binds G0-G8, O1-O4, failure accounting, realized budget units, and merge readiness to the candidate HEAD.
+
 Owner ยืนยัน V100 UUID, resource bounds, isolated setup และ merge main หลังผ่านเกณฑ์แล้ว ไม่ต้องขอสิทธิ์ชุดเดิมซ้ำ ต้องตรวจ capacity/runtime/ledger/prices ตอน action จริง Unknown historical spend หยุดเฉพาะ paid branch ไม่หยุดโครงการ
 
 หลักฐานเดิม: [foundational context](../../audits/pepo-audit-20261030T1330Z-db07982/SOURCE_CONTEXT_TH.md), [audit](../../audits/pepo-audit-20261030T1330Z-db07982/AUDIT_TH.md), [read-only resource preflight](../../audits/dr-train-resource-preflight-20261031/README.md), [current UI integration](../../audits/pepo-ui-integration-20261031/README.md), [unmerged vector repairs](../../audits/pepo-unblock-remote-20261030T2038Z/README.md)
