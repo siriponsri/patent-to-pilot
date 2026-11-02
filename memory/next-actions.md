@@ -1245,3 +1245,29 @@ This does not promote O3 local generation or O4 real-case receipts: relevant
 generation/HTTP code changed after those runs. No new GPU/API/dataset/ledger
 action occurred. Next work remains the existing O3/O4 evidence gates plus
 offline manuscript/reproducibility work.
+
+## HT-NEXT-104 — 2026-11-03 guarded offline verification repair
+
+Status: `PASS_GUARDED_OFFLINE_REPRO_CURRENT_HEAD_FRESH_RELEASE_NOT_RUN`;
+checkpoint: `docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json`.
+
+The first current-head `verify_offline.py --suite all` attempt is retained as a
+failure receipt: it recorded `597` tests, `13` failures, and `3` errors because
+the verifier blocked the product's loopback HTTP server and placed basetemp
+under a path long enough to break Windows/PyMuPDF and atomic-file fixtures.
+
+Repaired `scripts/healthtech/verify_offline.py` to permit only loopback socket
+bind/connect/DNS resolution and to run pytest under a short-lived system-temp
+basetemp that is removed after the run. The rerun passed `597` tests with zero
+failures/errors, one optional tokenizer skip, zero blocked network attempts,
+zero credential-file reads, unchanged source hashes, zero provider calls, and
+USD `0.00` cost. The r3 receipt is bound to runtime-tested head
+`e63e8a9d8996f805904a019579c405129171353c`, and the failure regression uses
+deterministic clock ticks to prevent a literal-zero elapsed-time regression.
+Receipts are in the existing audit folder; the result is
+offline current-checkout reproducibility evidence, not fresh-install or
+deployment validation.
+
+Next: retain the current guarded result, keep paid/O3 and exact-head O4 gates
+closed, and continue only with offline manuscript/reproducibility work until
+the specific external evidence is available.

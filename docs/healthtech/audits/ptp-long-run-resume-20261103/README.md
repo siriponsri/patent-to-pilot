@@ -8,7 +8,9 @@ branch; the dirty long-run, Claude, Luna, and owner worktrees were preserved.
 
 ## Candidate and process state
 
-- Initial candidate HEAD recorded in the historical checkpoint: `1c1a1d8ac436bfd491f85d3230a7179a26f2e7cc`.
+- Runtime-tested code/test/receipt head for this continuation: `e63e8a9d8996f805904a019579c405129171353c`.
+- The final checkpoint update after this package is documentation-only; it does
+  not change the runtime-tested source or test result.
 - Worktree: `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103`.
 - Base relationship: `main` at `0d049802d36bc2eebe60331ec444d62469fd767f` is an ancestor.
 - The only SSH process observed was the Codex remote app-server proxy; no
@@ -83,9 +85,12 @@ evaluator and report layer.
 
 The focused regression package is in
 `tests/test_healthtech_real_baselines.py`. The current candidate passed the
-targeted baseline/analysis/report/controller/cross-cohort suite (`12 passed`),
-`compileall`, and `git diff --check` before this audit write. The full Python
-suite also exited `0` with one optional tokenizer skip and warnings only.
+targeted baseline/analysis/report/controller/cross-cohort suite (`49 passed,
+1 skipped`) and the failure regression now uses deterministic clock ticks to
+prove that failed attempts retain measured wall/CPU elapsed time rather than
+literal zero values. The package also passed `compileall` and `git diff
+--check`; the full Python suite exited `0` with one optional tokenizer skip and
+warnings only.
 
 Historical impact was checked without rewriting artifacts: no tracked
 `run_real_baselines.py` receipt in the current candidate has a non-zero
@@ -126,10 +131,11 @@ reset any ledger/window, or add AI4AI as a goal condition.
 
 ## Exact-head verification follow-up — 2026-11-03
 
-The current continuation candidate is `597f3cd60c9d18be27bc665df4171a54c2eea99e`
-on the same branch and worktree. The working tree was clean before this
-verification. No experiment, provider call, GPU job, dataset download, ledger
-mutation, or participant route was started.
+The runtime-tested continuation candidate is
+`e63e8a9d8996f805904a019579c405129171353c` on the same branch and worktree.
+The subsequent checkpoint edit is documentation-only. No experiment, provider
+call, GPU job, dataset download, ledger mutation, or participant route was
+started.
 
 Fresh checks on this exact HEAD:
 
@@ -140,6 +146,14 @@ Fresh checks on this exact HEAD:
   runtime paths have no source diff from the candidate bound to the prior full
   PatEmbed/e5 encode, import, and DAPFAM evaluation receipts. This is a
   current-head contract rebind, not a second remote encoding run.
+- Guarded offline verification: the first attempt is retained as a failure
+  receipt (`597` tests, `13` failures, `3` errors) because the verifier denied
+  loopback HTTP and used a path-sensitive basetemp. The verifier was repaired
+  to allow only loopback sockets and to use a short-lived system-temp basetemp;
+  the r2 rerun passed `597` tests with `0` failures, `0` errors, `1` optional
+  skip, `0` blocked network attempts, and `0` credential reads. After the
+  deterministic failure-accounting regression was tightened, r3 reproduced
+  the same `597/0/0/1` result on code head `e63e8a9`.
 - Frontend unit suite: `74 passed, 0 failed`.
 - Loopback HTTP integration: `PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT`, with
   source inspection, history `1 -> 2`, edit/reopen, JSON/TH/EN export, zero
@@ -158,6 +172,14 @@ remote artifacts remain authoritative for the completed encode/import/evaluation
 work, while a new remote rerun is `NOT_RUN_EXPIRED_24H_WINDOW`. O3 local
 generation and O4 real-case receipts are not promoted in the same way because
 their relevant generation/HTTP source paths changed after their prior runs.
+
+The guarded verification receipts are retained under
+[`offline-verification-20261103-r2`](./offline-verification-20261103-r2/),
+[`offline-verification-20261103-r3`](./offline-verification-20261103-r3/),
+and the failed first attempt under
+[`offline-verification-20261103`](./offline-verification-20261103/). This is
+current-checkout offline reproducibility evidence; it is not a fresh install
+or independent deployment validation.
 
 The machine-readable current-head record is
 [`CHECKPOINT_CURRENT_HEAD.json`](./CHECKPOINT_CURRENT_HEAD.json).
