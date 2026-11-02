@@ -6,7 +6,6 @@
     "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
     "branch": "codex/patent-to-pilot-long-run-20261103",
     "tested_source_head": "a7d064dcdda67752c1c0434267796852e9d4f0d9",
-    "checkpoint_commit": "e2ace94",
     "tracked_tree_before_checkpoint": "CLEAN",
     "change_scope": "documentation_and_raw_test_artifacts_only"
   },

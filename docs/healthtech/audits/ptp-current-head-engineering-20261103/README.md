@@ -4,9 +4,9 @@ Date: 2026-11-03
 
 This checkpoint binds the current offline engineering verification artifacts to
 tested source HEAD `a7d064dcdda67752c1c0434267796852e9d4f0d9` in the isolated
-worktree. The documentation checkpoint is committed at `e2ace94`. It does not
-start a new experiment, rerun paid inference, download a dataset, or replace
-any historical O1-O4 receipt.
+worktree. The documentation checkpoint is committed in this branch. It does
+not start a new experiment, rerun paid inference, download a dataset, or
+replace any historical O1-O4 receipt.
 
 ## Verification
 
