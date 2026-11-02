@@ -684,7 +684,9 @@
   "latest_o4_matched_offline_current_head_status": "PASS_DESCRIPTIVE_MATCHED_OFFLINE_FRONTIER_O3_BLOCKED",
   "latest_long_run_resume_audit": "docs/healthtech/audits/ptp-long-run-resume-20261103/README.md",
   "latest_long_run_resume_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT.json",
-  "latest_long_run_resume_status": "PARTIAL_O1_CURRENT_HEAD_O2_PRIOR_O3_API_BLOCKED_O4_ASSET_GATED",
-  "latest_long_run_resume_candidate": "7d77e927156dea5b0f6797f1417c052964f5e370",
-  "latest_long_run_resume_next": "Continue offline release/manuscript work; expose authorized exact case assets for O4 or reconcile canonical API evidence before external branches."
+  "latest_long_run_resume_status": "PARTIAL_O1_CURRENT_HEAD_O2_PRIOR_O3_API_BLOCKED_O4_ASSET_GATED_READINESS_REPAIR_COMPLETE",
+  "latest_long_run_resume_candidate": "b343c82fff605bccdfc6400af3201a54c2eea99e",
+  "latest_long_run_resume_next": "Keep API/new-compute branches gated; continue owner-review and WPI submission-readiness work, and freeze explicit total-budget controls before any future batch.",
+  "latest_long_run_resume_readiness_review": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/READINESS_REVIEW_TH.md",
+  "latest_long_run_resume_readiness_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT.json"
 }
