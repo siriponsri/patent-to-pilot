@@ -1345,3 +1345,27 @@ No new experiment, GPU job, API call, dataset acquisition, ledger mutation, or
 Next: owner review current O1/O4 evidence; keep paid/new-compute branches gated
 until the existing canonical ledger/credit/rights and exact O4 asset paths are
 available.
+
+## HT-NEXT-108 — 2026-11-03 parallel readiness follow-up
+
+Status: `PASS_FAILURE_ACCOUNTING_AND_BUDGET_BOUNDARY_VERIFIED_NO_NEW_BATCH`;
+receipt:
+`docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/verification.json`.
+
+Read the external Pepo readiness review and evidence index. No relevant
+experiment process was running; the existing SSH process was classified as a
+Codex remote app-server proxy. The current candidate already contained the
+failure-accounting repair, so no source edit was duplicated. Focused tests passed
+`49` with one optional tokenizer skip; the full Python suite passed `596` with
+one optional tokenizer skip and two warnings.
+
+Historical receipts were not rewritten and no retrospective cost was inferred.
+The accessible receipt scan found `NONE_KNOWN` affected completed rounds. B2,
+B3, and offline B4 share frozen inputs and per-call depth but have realized
+retrieval units `3/123`, `9/369`, `5/205`, and `5/205` respectively; the
+evidence remains a descriptive realized quality-resource frontier, not an
+equal-total-budget comparison. No API call, GPU job, dataset download, ledger
+mutation, budget reset, or new experiment was started.
+
+Next: preserve the original O1-O4 statuses, keep paid/new-compute branches
+gated, and continue only with independent offline work or owner review.

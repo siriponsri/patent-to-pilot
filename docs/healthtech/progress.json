@@ -699,5 +699,8 @@
   "latest_long_run_resume_o1_current_head_receipt": "docs/healthtech/audits/ptp-long-run-resume-20261103/o1-current-head-20261103/verification.json",
   "latest_long_run_resume_failure_accounting_regression": "PASS_DETERMINISTIC_WALL_CPU_ELAPSED_AND_PARTIAL_ATTEMPT_HISTORY",
   "latest_long_run_resume_readiness_review": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/READINESS_REVIEW_TH.md",
-  "latest_long_run_resume_readiness_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json"
+  "latest_long_run_resume_readiness_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json",
+  "latest_long_run_resume_readiness_followup_audit": "docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/README.md",
+  "latest_long_run_resume_readiness_followup_verification": "docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/verification.json",
+  "latest_long_run_resume_readiness_followup_status": "PASS_FAILURE_ACCOUNTING_AND_BUDGET_BOUNDARY_VERIFIED_NO_NEW_BATCH"
 }
