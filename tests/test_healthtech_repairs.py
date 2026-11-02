@@ -359,7 +359,7 @@ def test_baseline_preserves_completed_attempt_before_later_failure():
     assert result["final_ranking"][0]["patent_id_canonical"] == "US000001A1"
 
 
-def test_baseline_records_failure_before_dispatch_with_zero_query_calls(monkeypatch):
+def test_baseline_records_method_failure_before_dispatch_without_synthetic_attempt(monkeypatch):
     def fail_before_schedule(_device):
         raise RuntimeError("pre-dispatch failure")
 
@@ -370,10 +370,13 @@ def test_baseline_records_failure_before_dispatch_with_zero_query_calls(monkeypa
     )
 
     assert result["status"] == "failed"
-    assert len(result["attempts"]) == 1
-    assert result["attempts"][0]["status"] == "failed"
-    assert result["attempts"][0]["query"] == "first fixed query"
-    assert result["attempts"][0]["resources"]["query_calls"] == 0
+    assert result["attempts"] == []
+    assert result["resources"]["attempt_count"] == 0
+    assert result["resources"]["method_wall_seconds"] >= 0
+    assert result["method_error"] == {
+        "error_type": "RuntimeError",
+        "error": "pre-dispatch failure",
+    }
 
 
 def test_b1_and_fixed_multiquery_methods_share_first_query_text():
