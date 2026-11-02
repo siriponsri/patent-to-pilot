@@ -26,6 +26,13 @@ except ImportError:  # pragma: no cover - optional local-model runtime dependenc
     AutoModelForCausalLM = None
     AutoTokenizer = None
 
+try:
+    from lmformatenforcer import JsonSchemaParser
+    from lmformatenforcer.integrations.transformers import build_transformers_prefix_allowed_tokens_fn
+except ImportError:  # pragma: no cover - optional guided-decoding dependency.
+    JsonSchemaParser = None
+    build_transformers_prefix_allowed_tokens_fn = None
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
@@ -89,7 +96,21 @@ def _build_messages(pack: dict[str, Any], case: dict[str, Any]) -> list[dict[str
     return build_generation_messages(pack, case)
 
 
-def run_generation(pack: dict[str, Any], model_root: Path, output_path: Path, max_new_tokens: int, max_findings: int) -> dict[str, Any]:
+def _build_guided_json_callback(tokenizer: Any, output_schema: dict[str, Any]) -> Any:
+    if JsonSchemaParser is None or build_transformers_prefix_allowed_tokens_fn is None:
+        raise RuntimeError("guided JSON runtime dependency is unavailable")
+    parser = JsonSchemaParser(output_schema)
+    return build_transformers_prefix_allowed_tokens_fn(tokenizer, parser)
+
+
+def run_generation(
+    pack: dict[str, Any],
+    model_root: Path,
+    output_path: Path,
+    max_new_tokens: int,
+    max_findings: int,
+    guided_json: bool = False,
+) -> dict[str, Any]:
     if torch is None or transformers is None or AutoModelForCausalLM is None or AutoTokenizer is None:
         raise RuntimeError("local generation runtime dependencies are unavailable")
     if not torch.cuda.is_available() or torch.cuda.device_count() != 1:
@@ -129,13 +150,24 @@ def run_generation(pack: dict[str, Any], model_root: Path, output_path: Path, ma
         inputs = {key: value.to("cuda:0") for key, value in encoded.items()}
         prompt_tokens = int(inputs["input_ids"].shape[-1])
         generation_started = time.perf_counter()
+        generation_kwargs = {
+            "max_new_tokens": max_new_tokens,
+            "do_sample": False,
+            "use_cache": True,
+            "pad_token_id": tokenizer.eos_token_id,
+        }
+        if guided_json:
+            output_schema = pack.get("prompt_contract", {}).get("output_schema")
+            if not isinstance(output_schema, dict):
+                raise RuntimeError("guided JSON requires the frozen output schema")
+            generation_kwargs["prefix_allowed_tokens_fn"] = _build_guided_json_callback(
+                tokenizer,
+                output_schema,
+            )
         with torch.inference_mode():
             generated = model.generate(
                 **inputs,
-                max_new_tokens=max_new_tokens,
-                do_sample=False,
-                use_cache=True,
-                pad_token_id=tokenizer.eos_token_id,
+                **generation_kwargs,
             )
         latency_seconds = time.perf_counter() - generation_started
         output_tokens = generated[:, prompt_tokens:]
@@ -178,6 +210,8 @@ def run_generation(pack: dict[str, Any], model_root: Path, output_path: Path, ma
         "dtype": "float16",
         "attention": "eager",
         "thinking": False,
+        "guided_json": guided_json,
+        "guided_json_library": "lm-format-enforcer" if guided_json else None,
         "load_seconds": load_seconds,
         "gpu_peak_allocated_bytes": int(torch.cuda.max_memory_allocated()),
         "gpu_peak_reserved_bytes": int(torch.cuda.max_memory_reserved()),
@@ -201,9 +235,21 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--max-new-tokens", type=int, default=512)
     parser.add_argument("--max-findings", type=int, default=4)
+    parser.add_argument(
+        "--guided-json",
+        action="store_true",
+        help="constrain generation to the frozen JSON schema with lm-format-enforcer",
+    )
     args = parser.parse_args()
     pack = _load_pack(args.pack)
-    receipt = run_generation(pack, args.model_root, args.output, args.max_new_tokens, args.max_findings)
+    receipt = run_generation(
+        pack,
+        args.model_root,
+        args.output,
+        args.max_new_tokens,
+        args.max_findings,
+        guided_json=args.guided_json,
+    )
     print(json.dumps({key: value for key, value in receipt.items() if key != "cases"}, ensure_ascii=False))
     print(json.dumps({
         "cases": [

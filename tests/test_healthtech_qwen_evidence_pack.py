@@ -174,3 +174,31 @@ def test_runner_rejects_candidate_classification_drift(tmp_path: Path) -> None:
     output["findings"][0]["classification"] = "retrieved_candidate"
     with pytest.raises(ValueError, match="does not match association_status"):
         runner._validate_output(output, disclosed_case, max_findings=6)
+
+
+def test_guided_json_callback_requires_dependency_and_binds_schema(monkeypatch: pytest.MonkeyPatch) -> None:
+    runner = _load(RUNNER, "qwen_pack_runner_guided_callback")
+    monkeypatch.setattr(runner, "JsonSchemaParser", None)
+    monkeypatch.setattr(runner, "build_transformers_prefix_allowed_tokens_fn", None)
+    with pytest.raises(RuntimeError, match="guided JSON runtime dependency is unavailable"):
+        runner._build_guided_json_callback(object(), {"type": "object"})
+
+    seen = {}
+
+    class FakeParser:
+        def __init__(self, schema):
+            seen["schema"] = schema
+
+    def fake_builder(tokenizer, parser):
+        seen["tokenizer"] = tokenizer
+        seen["parser"] = parser
+        return "allowed-tokens-callback"
+
+    monkeypatch.setattr(runner, "JsonSchemaParser", FakeParser)
+    monkeypatch.setattr(runner, "build_transformers_prefix_allowed_tokens_fn", fake_builder)
+    tokenizer = object()
+    schema = {"type": "object", "properties": {"findings": {"type": "array"}}}
+    assert runner._build_guided_json_callback(tokenizer, schema) == "allowed-tokens-callback"
+    assert seen["schema"] == schema
+    assert seen["tokenizer"] is tokenizer
+    assert isinstance(seen["parser"], FakeParser)
