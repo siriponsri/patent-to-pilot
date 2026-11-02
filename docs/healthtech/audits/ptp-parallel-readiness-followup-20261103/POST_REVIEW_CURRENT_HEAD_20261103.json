@@ -1,0 +1,106 @@
+{
+  "format": "ptp-parallel-readiness-post-review-current-head-v1",
+  "observed_at_utc": "2026-11-02T19:08:24.8023782Z",
+  "goal": "Patent-to-Pilot O1-O4 original goal",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "source_candidate_commit": "323bcc5d39ad5374ec8bfce8007d24c1881eae86",
+    "failure_regression_test_sha256": "104ffa946fd4da6e674dc57ca7ee1dc0a2a10dae"
+  },
+  "review_inputs": {
+    "readiness_review": {
+      "path": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/READINESS_REVIEW_TH.md",
+      "sha256": "d1dcab3cb707da1e9c16fe5fa3b2b112cab37c838695e880c89802634326422c"
+    },
+    "evidence_index": {
+      "path": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/evidence-index.json",
+      "sha256": "c682e8360c0fca132b4f05a1bb70ccf89cfe544bd39e1b9cc900745ad11b2ca6"
+    }
+  },
+  "process_quiescence": {
+    "relevant_experiment_processes": 0,
+    "experiment_lock_or_pid_files": 0,
+    "existing_ssh_process": {
+      "pid": 31888,
+      "classification": "CODEX_REMOTE_APPSERVER_PROXY_NOT_EXPERIMENT"
+    }
+  },
+  "failure_accounting": {
+    "status": "PASS_CURRENT_HEAD_PARTIAL_ATTEMPT_REGRESSION",
+    "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+    "prior_hardening_commit": "e63e8a9d8996f805904a019579c405129171353c",
+    "new_regression": "B2 first attempt completes, second attempt fails",
+    "partial_attempts_preserved": true,
+    "measured_wall_cpu_preserved": true,
+    "unknown_resource_fields_explicit": true,
+    "synthetic_zero_attempt_added": false,
+    "historical_receipts_rewritten": false,
+    "retrospective_cost_inferred": false,
+    "historical_rounds_affected": "NONE_KNOWN",
+    "historical_scan_result": "No non-zero failed_query_count receipt was found in accessible docs/healthtech/audits JSON/CSV/Markdown files. This does not establish completeness of unavailable private journals."
+  },
+  "tests": {
+    "focused": {
+      "command": "rtk proxy python -B -m pytest -ra --junitxml docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/failure-accounting-tests-current-head.xml tests/test_healthtech_real_baselines.py tests/test_healthtech_repairs.py tests/test_healthtech_long_run_analysis.py tests/test_healthtech_long_run_report.py tests/test_healthtech_controller.py tests/test_healthtech_cross_cohort.py",
+      "status": "PASS",
+      "passed": 50,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "warnings": 1,
+      "junit": "failure-accounting-tests-current-head.xml"
+    },
+    "full_python": {
+      "command": "rtk proxy python -B -m pytest -ra --junitxml docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/full-tests-current-head.xml",
+      "status": "PASS",
+      "passed": 599,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "warnings": 2,
+      "junit": "full-tests-current-head.xml"
+    }
+  },
+  "budget_interpretation": {
+    "status": "DESCRIPTIVE_REALIZED_QUALITY_RESOURCE_FRONTIER",
+    "shared_inputs": [
+      "frozen corpus",
+      "eligible queries",
+      "references/groups",
+      "encoder/reranker bundle",
+      "K=20",
+      "candidate_depth=41",
+      "rerank_depth=41"
+    ],
+    "realized_units": {
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+      "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+    },
+    "equal_total_budget_claim": "NOT_SUPPORTED",
+    "b4_controller_steps_are_retrieval_units": false,
+    "matched_prefix_diagnostic": "B1/B2-prefix-1/B3-prefix-1 at 3 query calls and 123 rerank pairs is post-hoc descriptive, not a final adaptive endpoint"
+  },
+  "manuscript": {
+    "status": "CURRENT_TEXT_ALREADY_ALIGNS_WITH_REVIEW",
+    "change_in_this_checkpoint": "No wording change; current manuscript already states unequal realized budgets, descriptive frontier, B0b strength, B4 unit mismatch, and no adaptive-superiority claim."
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "new_experiment": false
+  },
+  "outcomes": {
+    "engineering": "COMPLETE_FAILURE_ACCOUNTING_REGRESSION_CURRENT_HEAD",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_FRONTIER",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript_readiness": "PARTIAL_OWNER_REVIEW_AND_WPI_RECHECK"
+  },
+  "next_action": "Stop at this checkpoint. Continue only with owner review or independently authorized offline work; keep paid/API and new-compute branches under existing gates."
+}

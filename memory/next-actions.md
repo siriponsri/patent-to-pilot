@@ -1440,3 +1440,28 @@ PASS. No scientific evaluation, paid call, or new compute was started.
 Next: keep the paper `PARTIAL_OWNER_REVIEW_REQUIRED`; owner must recheck the
 official WPI author instructions and review the final candidate before any
 push, merge, or submission.
+
+## HT-NEXT-113 — 2026-11-03 readiness review post-checkpoint
+
+Status: `PASS_FAILURE_ACCOUNTING_REGRESSION_CURRENT_HEAD_BUDGET_BOUNDARY_CONFIRMED`;
+receipt:
+`docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/POST_REVIEW_CURRENT_HEAD_20261103.json`.
+
+Added a deterministic regression for a partial HT-B2 failure: the first
+attempt completes and the second fails, while prior attempts, measured wall/CPU
+time, and unknown resource fields remain recorded. Focused tests passed `50`
+with one existing tokenizer skip; the full Python suite passed `599` with one
+skip and two warnings. A scan of accessible audit receipts found
+`NONE_KNOWN` completed rounds affected; no historical receipt or cost was
+rewritten or inferred.
+
+The B2/B3/offline-B4 interpretation remains a descriptive realized
+quality-resource frontier: shared inputs and per-call depth are common, but
+realized totals are `3/123`, `9/369`, `5/205`, and `5/205` query/rerank units,
+and B4's eight controller steps are a separate unit. The manuscript already
+states this boundary, so no unsupported claim was added.
+
+No API call, GPU job, dataset download, ledger mutation, budget/window reset,
+or new experiment was started. Stop at this checkpoint; keep paid/new-compute
+branches gated and resume only with owner review or independently authorized
+offline work.

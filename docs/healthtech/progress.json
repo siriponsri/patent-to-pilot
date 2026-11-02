@@ -716,5 +716,10 @@
   "latest_component_rebind_source_candidate": "bd7f7ad7238fad052a24b1b878a7fedfba490404",
   "latest_manuscript_integrity_current_head": "docs/healthtech/audits/ptp-manuscript-integrity-20261103/verification.json",
   "latest_manuscript_integrity_current_head_status": "PASS_MANUSCRIPT_LINK_AND_CLAIM_BOUNDARY_AUDIT",
-  "latest_manuscript_integrity_current_head_source_candidate": "1121467511d79cb27c093cd4b14986613dda7e9e"
+  "latest_manuscript_integrity_current_head_source_candidate": "1121467511d79cb27c093cd4b14986613dda7e9e",
+  "latest_readiness_post_review_checkpoint": "docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/POST_REVIEW_CURRENT_HEAD_20261103.json",
+  "latest_readiness_post_review_status": "PASS_FAILURE_ACCOUNTING_REGRESSION_CURRENT_HEAD_BUDGET_BOUNDARY_CONFIRMED",
+  "latest_readiness_post_review_source_candidate": "323bcc5d39ad5374ec8bfce8007d24c1881eae86",
+  "latest_readiness_post_review_focused_tests": "50 passed, 1 skipped, 1 warning",
+  "latest_readiness_post_review_full_tests": "599 passed, 1 skipped, 2 warnings"
 }
