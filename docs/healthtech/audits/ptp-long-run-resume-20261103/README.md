@@ -210,3 +210,18 @@ This moves G7 to `PASS_ISOLATED_RELEASE_REPRODUCTION` for the current
 candidate. It does not promote the scientific frontier to a matched-budget
 confirmatory result, does not rerun O2 remote embeddings, and does not remove
 the existing O3 API or O4 exact-head asset gates.
+
+## Manuscript integrity audit — 2026-11-03
+
+The current English manuscript and computational protocol were checked from
+candidate `345541e6fb4daffb8963b308fdf8cb9e02c0eb36`. All `15` manuscript-local
+links resolved, the protocol had `0` missing local links, and the WPI checklist
+and three O4 receipt references were hash-recorded. The audit also confirmed
+that the manuscript keeps the B2/B3/B4 unequal-realized-budget boundary, does
+not promote three real cases to a scientific benchmark, and does not claim
+external business, legal, clinical, FTO, or patent-validity evidence.
+
+The machine-readable receipt is
+[`manuscript-integrity-20261103/verification.json`](./manuscript-integrity-20261103/verification.json).
+This is documentation/provenance evidence only; it does not add a scientific
+run, resolve the HTTP 403 WPI-specific author-guide gap, or replace owner review.

@@ -1,0 +1,65 @@
+{
+  "format": "ptp-manuscript-integrity-verification-v1",
+  "observed_at_utc": "2026-11-02T18:20:43.4526885Z",
+  "source_commit": "345541e6fb4daffb8963b308fdf8cb9e02c0eb36",
+  "status": "PASS_MANUSCRIPT_LINK_AND_CLAIM_BOUNDARY_AUDIT",
+  "scope": "English manuscript, computational protocol, WPI checklist, and referenced O4 receipts",
+  "local_link_checks": {
+    "manuscript": {
+      "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+      "sha256": "c4528006cd1dc383e540884b990f564df28317a7cc1951431b1ab4ef155ff12c",
+      "bytes": 33271,
+      "local_links_checked": 15,
+      "missing_local_links": 0
+    },
+    "protocol": {
+      "path": "docs/healthtech/research/COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md",
+      "sha256": "84008b5e8c083a7eb4643bd752457820102a813d7a7e324ebddb06fd013ccf0b",
+      "bytes": 7837,
+      "missing_local_links": 0
+    }
+  },
+  "submission_materials": {
+    "wpi_checklist": {
+      "path": "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md",
+      "sha256": "54d86bb6d29a2eb758caa4a6c673ba7755f14ea08b0cb960c5cd7abc390292b4",
+      "bytes": 4692
+    }
+  },
+  "claim_boundary_checks": [
+    {
+      "claim": "B2/B3/B4 frontier is descriptive realized quality-resource evidence, not equal-total-budget superiority",
+      "status": "PASS",
+      "sources": [
+        "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+        "docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/README.md"
+      ]
+    },
+    {
+      "claim": "Three real-device cases demonstrate engineering workflow and do not replace a benchmark or user study",
+      "status": "PASS",
+      "sources": [
+        "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+        "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT.md"
+      ]
+    },
+    {
+      "claim": "External user validation, willingness-to-pay, revenue, ROI, clinical, legal, FTO, and patent-validity claims remain unsupported",
+      "status": "PASS",
+      "sources": [
+        "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+        "docs/healthtech/research/COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md"
+      ]
+    }
+  ],
+  "receipt_hashes": {
+    "matched_offline_o4_readme": "0de2c227b7b03e0ef3aef5b00e1a86d40f7f43848a41a6f81ddf2097427c6cff",
+    "offline_o4_readme": "af3319d23b1eedcab1cdc1d6ae113be19e3c146c364cb2e3e43c9b6e679c2eab",
+    "real_case_o4_report": "d1ad9f285a1f3c6c1ce73c5658b064dd1805b3f57b2039112d56de67b41e8feb"
+  },
+  "limitations": [
+    "This is a documentation and provenance audit; it is not a new scientific evaluation.",
+    "WPI-specific Guide for Authors remains unverified because the official route previously returned HTTP 403.",
+    "Owner review and actual submission remain pending."
+  ]
+}

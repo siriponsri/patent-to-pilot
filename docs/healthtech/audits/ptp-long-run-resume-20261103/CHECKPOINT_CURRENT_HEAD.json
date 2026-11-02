@@ -1,6 +1,6 @@
 {
   "format": "ptp-long-run-resume-current-head-checkpoint-v1",
-  "observed_at_utc": "2026-11-02T18:13:58.761341Z",
+  "observed_at_utc": "2026-11-02T18:20:43.4526885Z",
   "parent_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT.json",
   "goal": "Patent-to-Pilot research-product O1-O4",
   "candidate": {
@@ -9,6 +9,7 @@
     "head": "46ab5ac3b272dd6cce2ac48aa123b2c7e4838fcd",
     "head_role": "release_verification_cleanup_and_receipt_commit",
     "runtime_tested_source_head": "e63e8a9d8996f805904a019579c405129171353c",
+    "documentation_head_at_manuscript_audit": "345541e6fb4daffb8963b308fdf8cb9e02c0eb36",
     "documentation_only_followup": false,
     "working_tree": "CLEAN_AFTER_CHECKPOINT_DOCUMENTATION_COMMIT",
     "base_main": "0d049802d36bc2eebe60331ec444d62469fd767f",
@@ -62,6 +63,14 @@
       "provider_calls": 0,
       "paid_cost_usd": 0.0,
       "fresh_install_or_deployment_validation": false
+    },
+    "manuscript_integrity_audit": {
+      "status": "PASS_LINKS_AND_CLAIM_BOUNDARY",
+      "receipt": "docs/healthtech/audits/ptp-long-run-resume-20261103/manuscript-integrity-20261103/verification.json",
+      "manuscript_local_links": "15 checked, 0 missing",
+      "protocol_local_links": "0 missing",
+      "claim_boundary_checks": "B2/B3/B4 budget boundary, three-case engineering boundary, and unsupported business/legal claims all PASS",
+      "new_scientific_evaluation": false
     },
     "frontend_unit": {
       "status": "PASS",

@@ -1297,3 +1297,26 @@ API, dataset, ledger, budget, or 24-hour window was started.
 Next: owner review this current candidate; continue manuscript/reproducibility
 work offline and keep paid/new-compute branches closed until the specific
 existing evidence gates are exposed.
+
+## HT-NEXT-106 — 2026-11-03 manuscript integrity and claim-boundary audit
+
+Status: `PASS_MANUSCRIPT_LINK_AND_CLAIM_BOUNDARY_AUDIT`; checkpoint:
+`docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json`.
+
+Audited the current English manuscript and computational protocol at candidate
+`345541e6fb4daffb8963b308fdf8cb9e02c0eb36`. The manuscript had `15` local links
+and `0` missing targets; the protocol had `0` missing local links. Hashes for
+the manuscript, protocol, WPI checklist, matched/offline O4 receipts, and the
+real-case report are recorded in
+`docs/healthtech/audits/ptp-long-run-resume-20261103/manuscript-integrity-20261103/verification.json`.
+
+The claim-boundary checks pass: B2/B3/B4 remains a descriptive frontier with
+unequal realized budgets; three device cases remain engineering/application
+evidence rather than a scientific benchmark; and external business, legal,
+clinical, FTO, patent-validity, revenue, ROI, and WTP claims remain unsupported.
+No new scientific run, API call, GPU job, dataset acquisition, ledger mutation,
+or budget/window reset occurred.
+
+Next: owner review the manuscript package; keep paid/API and new-compute branches
+closed until the existing canonical evidence gates and exact O4 assets are
+available.
