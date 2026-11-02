@@ -1410,3 +1410,19 @@ dataset downloads, ledger mutations, and new time windows were all zero.
 Next: keep O1 current-head engineering closed; do not promote this receipt to
 O2/O3/O4 or commercial validation. Continue only with existing permitted
 offline work or newly exposed authorized O3/O4 evidence.
+
+## HT-NEXT-111 — 2026-11-03 component-results current-head rebind
+
+Status: `PASS_CURRENT_HEAD_COMPONENT_RECEIPTS_REUSED_NO_RERUN`;
+receipt: `docs/healthtech/audits/ptp-component-rebind-20261103/verification.json`.
+
+Checked that the PANORAMA/Helmers result-producing paths were unchanged from
+`ab7ad348` and the Qwen result-producing paths were unchanged from `a3bf4ff`.
+Reused the prior four PANORAMA component runs, Helmers selected-pool
+diagnostic, and three guided local Qwen cases without rerunning inference.
+The rebind preserves component-only interpretation, the semantic-gold gap,
+and the paid/API gate.
+
+Next: use these re-bound receipts for manuscript tables and provenance only;
+keep the main adaptive study, live API comparison, and external business
+validation marked partial/not validated.

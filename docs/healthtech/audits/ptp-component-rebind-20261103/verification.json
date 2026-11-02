@@ -1,0 +1,86 @@
+{
+  "format": "ptp-component-rebind-verification-v1",
+  "observed_at_utc": "2026-11-02T18:55:37.8098008Z",
+  "source_candidate_commit": "bd7f7ad7238fad052a24b1b878a7fedfba490404",
+  "status": "PASS_CURRENT_HEAD_COMPONENT_RECEIPTS_REUSED_NO_RERUN",
+  "rebind_checks": {
+    "component_runtime_paths": {
+      "comparison_base": "ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd",
+      "paths": [
+        "scripts/healthtech/run_panorama_lexical_baseline.py",
+        "scripts/healthtech/run_helmers_diagnostic.py",
+        "tests/test_healthtech_benchmark_expansion.py"
+      ],
+      "command_exit_code": 0,
+      "result": "unchanged"
+    },
+    "qwen_runtime_paths": {
+      "comparison_base": "a3bf4ff49590b8510cfab18734c048e1c47a8462",
+      "paths": [
+        "scripts/healthtech/run_qwen_generation_evidence_pack.py",
+        "tests/test_healthtech_qwen_evidence_pack.py",
+        "src",
+        "configs",
+        "methodology",
+        "tests"
+      ],
+      "command_exit_code": 0,
+      "result": "unchanged"
+    },
+    "protocol_change": {
+      "result": "status_and_next_action_narrative_only",
+      "endpoint_split_budget_freeze_changed": false
+    }
+  },
+  "source_receipts": {
+    "component_results": {
+      "path": "docs/healthtech/audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json",
+      "sha256": "956aaa9266322f0bfe749729a326c86d237c574673d3bef90eed5be80a632425",
+      "executed_candidate": "ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd"
+    },
+    "qwen_rebind": {
+      "path": "docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V16_CURRENT_HEAD_QWEN_REBIND.json",
+      "sha256": "c3406a25365cebba22b9d24b4d9dc8bfcb24c9138f42efce651323d39a278dd2",
+      "executed_or_rebound_candidate": "a3bf4ff49590b8510cfab18734c048e1c47a8462"
+    }
+  },
+  "results": {
+    "panorama": [
+      {"task": "PAR4PC", "split": "validation", "rows": 3029, "macro_gold_option_hit_at_1": 0.7335754374380984, "failed_rows": 0},
+      {"task": "PAR4PC", "split": "test", "rows": 2896, "macro_gold_option_hit_at_1": 0.7151243093922652, "failed_rows": 0},
+      {"task": "PI4PC", "split": "validation", "rows": 3937, "macro_gold_paragraph_hit_at_1": 0.3776987553975108, "failed_rows": 0},
+      {"task": "PI4PC", "split": "test", "rows": 3402, "macro_gold_paragraph_hit_at_1": 0.4012345679012346, "failed_rows": 0}
+    ],
+    "helmers": {
+      "targets": 10,
+      "judged_pairs": 450,
+      "macro_average_precision": 0.885450432614385,
+      "macro_auc": 0.880011844305422,
+      "interpretation": "selected judged pool diagnostic, not semantic device-patent gold"
+    },
+    "local_qwen": {
+      "model_id": "Qwen/Qwen3-8B",
+      "guided_schema_valid_cases": 3,
+      "inference_rerun": false,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    }
+  },
+  "resource_accounting": {
+    "new_runs": 0,
+    "new_dataset_downloads": 0,
+    "gpu_jobs": 0,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "interpretation_limits": [
+    "component evidence only",
+    "main adaptive dossier superiority not evaluated",
+    "semantic device-patent gold not established",
+    "external business validation not validated",
+    "live API comparison remains gated"
+  ]
+}
