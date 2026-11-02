@@ -1,0 +1,66 @@
+{
+  "checkpoint_version": "benchmark-expansion-v15-current-head-qwen-rebind",
+  "created_utc": "2026-11-02T11:28:55.4360092Z",
+  "status": "PASS_CURRENT_HEAD_LOCAL_QWEN_RECEIPT_REBOUND_NO_RERUN",
+  "goal_reused": true,
+  "candidate": {
+    "head": "50b27cd9229bc03232486c68654a0a56866250e0",
+    "base_head": "1dd9b772fec75ab60c1b42ca9b15798371209e0c",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "worktree_dirty": true,
+    "remote_branch_head_verified": true,
+    "pr_number": 2,
+    "pr_state": "OPEN"
+  },
+  "binding": {
+    "prior_checkpoint": "CHECKPOINT_V13_CURRENT_HEAD_QWEN.json",
+    "prior_base_head": "1dd9b772fec75ab60c1b42ca9b15798371209e0c",
+    "prior_runner_sha256": "f377e14a959858f91d1d2fc2f588790c5885ebd5affe8dac3aba94ed26f540ae",
+    "current_runner_sha256": "f377e14a959858f91d1d2fc2f588790c5885ebd5affe8dac3aba94ed26f540ae",
+    "runner_bytes_equal": true,
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "model_id": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "cases": ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"],
+    "messages_reused": true,
+    "inference_rerun": false,
+    "reason": "The commit makes the already-executed working-tree runner patch durable; it changes no frozen messages, pack, model revision, or generation configuration."
+  },
+  "prior_result_rebound": {
+    "non_guided_status": "FAIL_SCHEMA_ALL_CASES",
+    "non_guided_schema_valid_cases": 0,
+    "guided_status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
+    "guided_schema_valid_cases": 3,
+    "guided_receipt_sha256": "f50d12610caf90b2320da414ab04a744c38fe7fe0aeac4f05568735100133889",
+    "paid_cost_usd": 0.0,
+    "provider_calls": 0,
+    "post_run_v100_memory_used_mib": 0
+  },
+  "current_head_verification": {
+    "guided_callback_regression": "4 passed",
+    "full_python_suite_exit_code": 0,
+    "full_python_suite_optional_skips": 1,
+    "compile": "PASS",
+    "git_diff_check": "PASS",
+    "remote_head": "50b27cd9229bc03232486c68654a0a56866250e0",
+    "commit_pushed": true
+  },
+  "research_boundary": {
+    "local_o3_engineering": "PASS",
+    "paid_api_comparison": "BLOCKED_LOCAL",
+    "adaptive_superiority": "NOT_ESTABLISHED",
+    "external_business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED",
+    "wpi_submission": "NOT_SUBMITTED"
+  },
+  "resource_safety": {
+    "new_gpu_job": false,
+    "new_paid_call": false,
+    "ledger_mutation": false,
+    "ledger_reset": false,
+    "duplicate_download": false,
+    "claude_luna_owner_worktrees_touched": false,
+    "read_only_ssh_inspections_still_live": true
+  },
+  "next_action": "Keep the paid branch closed until canonical R1 journal, current credit, route/pricing, outbound-rights, and writer-quiescence evidence are current; continue offline release/manuscript work without rerunning the bound local receipt."
+}
