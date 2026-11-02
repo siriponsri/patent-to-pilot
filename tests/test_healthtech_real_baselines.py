@@ -4,6 +4,8 @@ import importlib.util
 from pathlib import Path
 from types import SimpleNamespace
 
+import pytest
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "scripts" / "healthtech" / "run_real_baselines.py"
@@ -88,3 +90,47 @@ def test_run_method_failure_does_not_append_synthetic_attempt():
     assert result["resources"]["attempt_count"] == 0
     assert result["resources"]["method_wall_seconds"] >= 0
     assert result["method_error"]["error_type"] == "ValueError"
+
+
+def test_partial_b2_failure_preserves_completed_attempt_and_measures_failed_attempt(monkeypatch):
+    wall_ticks = iter([100.0, 100.1, 100.2, 100.35, 100.5])
+    cpu_ticks = iter([200.0, 200.1, 200.2, 200.25, 200.4])
+    monkeypatch.setattr(MODULE, "perf_counter", lambda: next(wall_ticks))
+    monkeypatch.setattr(MODULE, "process_time", lambda: next(cpu_ticks))
+
+    class FailingAfterFirstBundle:
+        def __init__(self):
+            self.calls = 0
+
+        def fixed_bundle(self, query, *, candidate_depth, rerank_depth):
+            self.calls += 1
+            if self.calls == 2:
+                raise RuntimeError("second query failed")
+            return {
+                "query_hash": "first-query-hash",
+                "reranked": [{"patent_id_canonical": "P1", "rank": 1, "score": 1.0}],
+                "resources": {"query_calls": 1, "rerank_pairs": 1},
+                "observables": {},
+            }
+
+    result = MODULE._run_method(
+        _device(),
+        [SimpleNamespace(patent_id_canonical="P1", patent_id_raw="P1")],
+        method="HT-B2",
+        lexical=None,
+        retriever=FailingAfterFirstBundle(),
+        candidate_depth=1,
+        rerank_depth=1,
+    )
+
+    assert result["status"] == "failed"
+    assert len(result["attempts"]) == 2
+    assert result["attempts"][0]["status"] == "completed"
+    failed = result["attempts"][1]
+    assert failed["status"] == "failed"
+    assert failed["resources"]["query_calls"] == 1
+    assert failed["resources"]["wall_seconds"] == pytest.approx(0.15)
+    assert failed["resources"]["cpu_seconds"] == pytest.approx(0.05)
+    assert failed["resource_accounting"]["status"] == "PARTIAL_UNKNOWN"
+    assert result["resources"]["query_calls"] == 2.0
+    assert result["resources"]["attempt_count"] == 2
