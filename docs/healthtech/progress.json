@@ -713,5 +713,8 @@
   "latest_component_rebind_audit": "docs/healthtech/audits/ptp-component-rebind-20261103/README.md",
   "latest_component_rebind_verification": "docs/healthtech/audits/ptp-component-rebind-20261103/verification.json",
   "latest_component_rebind_status": "PASS_CURRENT_HEAD_COMPONENT_RECEIPTS_REUSED_NO_RERUN",
-  "latest_component_rebind_source_candidate": "bd7f7ad7238fad052a24b1b878a7fedfba490404"
+  "latest_component_rebind_source_candidate": "bd7f7ad7238fad052a24b1b878a7fedfba490404",
+  "latest_manuscript_integrity_current_head": "docs/healthtech/audits/ptp-manuscript-integrity-20261103/verification.json",
+  "latest_manuscript_integrity_current_head_status": "PASS_MANUSCRIPT_LINK_AND_CLAIM_BOUNDARY_AUDIT",
+  "latest_manuscript_integrity_current_head_source_candidate": "1121467511d79cb27c093cd4b14986613dda7e9e"
 }

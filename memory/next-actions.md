@@ -1426,3 +1426,17 @@ and the paid/API gate.
 Next: use these re-bound receipts for manuscript tables and provenance only;
 keep the main adaptive study, live API comparison, and external business
 validation marked partial/not validated.
+
+## HT-NEXT-112 — 2026-11-03 manuscript integrity recheck
+
+Status: `PASS_MANUSCRIPT_LINK_AND_CLAIM_BOUNDARY_AUDIT`;
+receipt: `docs/healthtech/audits/ptp-manuscript-integrity-20261103/verification.json`.
+
+After adding the current O1 and component-rebind provenance, the manuscript
+was rechecked: 18 local links were present with 0 missing, the protocol had 0
+missing local links, and the three existing claim-boundary checks remained
+PASS. No scientific evaluation, paid call, or new compute was started.
+
+Next: keep the paper `PARTIAL_OWNER_REVIEW_REQUIRED`; owner must recheck the
+official WPI author instructions and review the final candidate before any
+push, merge, or submission.
