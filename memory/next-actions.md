@@ -1320,3 +1320,28 @@ or budget/window reset occurred.
 Next: owner review the manuscript package; keep paid/API and new-compute branches
 closed until the existing canonical evidence gates and exact O4 assets are
 available.
+
+## HT-NEXT-107 — 2026-11-03 current-head O1 HTTP/UI verification
+
+Status: `PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING`; checkpoint:
+`docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json`.
+
+Ran the current candidate through the O1 backend/frontend/browser path. The
+targeted backend package passed `28` tests, covering HTTP idempotency, provider
+budget gating, cancel-before-dispatch, running cancellation, resume/retry,
+history conflict behavior, and exports. Frontend unit tests passed `74/74`.
+The browser HTTP integration passed source inspection, history `1 -> 2`, edit,
+and JSON/Thai/English export. Provider calls and paid cost were `0`.
+
+Receipt:
+`docs/healthtech/audits/ptp-long-run-resume-20261103/o1-current-head-20261103/verification.json`.
+
+This is current-head engineering evidence only. It does not close O2 remote
+encoding, O3 paid local/API comparison, O4 exact-head real-case execution,
+scientific generalization, deployment, user validation, or commercial value.
+No new experiment, GPU job, API call, dataset acquisition, ledger mutation, or
+24-hour window was started.
+
+Next: owner review current O1/O4 evidence; keep paid/new-compute branches gated
+until the existing canonical ledger/credit/rights and exact O4 asset paths are
+available.

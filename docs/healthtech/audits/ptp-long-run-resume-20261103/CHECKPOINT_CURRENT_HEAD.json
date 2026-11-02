@@ -72,6 +72,17 @@
       "claim_boundary_checks": "B2/B3/B4 budget boundary, three-case engineering boundary, and unsupported business/legal claims all PASS",
       "new_scientific_evaluation": false
     },
+    "current_head_o1_http_ui": {
+      "status": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
+      "receipt": "docs/healthtech/audits/ptp-long-run-resume-20261103/o1-current-head-20261103/verification.json",
+      "source_commit": "af7b4c2d4ae796cd591ce31b7f0e94efd44440c0",
+      "backend": "28 passed; cancel/resume/retry, idempotency, provider gate, history/export covered",
+      "frontend": "74 passed",
+      "browser_http": "PASS; source inspection, history 1->2, edit, JSON/TH/EN export",
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "new_scientific_evaluation": false
+    },
     "frontend_unit": {
       "status": "PASS",
       "command": "rtk proxy npm test",
@@ -125,7 +136,7 @@
     "G0": "COMPLETE_CONTRACT_AND_SCOPE",
     "G1": "PARTIAL_RIGHTS_AND_SEMANTIC_GOLD_INCOMPLETE",
     "G2": "PARTIAL_DEVELOPMENT_BASELINES_AND_EVALUATOR",
-    "G3": "PASS_LOOPBACK_ENGINEERING_PRIOR_REAL_CASE_RECEIPT",
+    "G3": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
     "G4": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
     "G5": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
     "G6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",

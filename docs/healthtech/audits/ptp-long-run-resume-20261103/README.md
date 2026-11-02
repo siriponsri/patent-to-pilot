@@ -225,3 +225,20 @@ The machine-readable receipt is
 [`manuscript-integrity-20261103/verification.json`](./manuscript-integrity-20261103/verification.json).
 This is documentation/provenance evidence only; it does not add a scientific
 run, resolve the HTTP 403 WPI-specific author-guide gap, or replace owner review.
+
+## Current-head O1 HTTP/UI verification — 2026-11-03
+
+The current documentation candidate was rechecked through the real loopback
+backend and frontend path. The backend targeted package passed `28` tests,
+including idempotency, provider-gate fail-closed behavior, cancel before
+dispatch, running cancellation with uncommitted-result discard, resume/retry,
+history conflict handling, and export paths. Frontend unit tests passed `74/74`.
+
+The browser HTTP integration passed with source inspection, history versions
+`1 -> 2`, edit/reopen behavior, and JSON/Thai/English export. Provider calls and
+paid cost were both `0`. The machine-readable receipt is
+[`o1-current-head-20261103/verification.json`](./o1-current-head-20261103/verification.json).
+
+This closes the current-head O1 engineering evidence package. It does not
+claim paid OpenRouter generation, O2 remote rerun, O4 exact-head real-case
+execution, deployment readiness, user validation, or commercial value.

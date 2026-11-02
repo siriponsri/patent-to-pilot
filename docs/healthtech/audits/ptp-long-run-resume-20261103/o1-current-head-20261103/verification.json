@@ -1,0 +1,52 @@
+{
+  "format": "ptp-o1-current-head-http-ui-verification-v1",
+  "observed_at_utc": "2026-11-02T18:24:27.4596827Z",
+  "source_commit": "af7b4c2d4ae796cd591ce31b7f0e94efd44440c0",
+  "status": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
+  "backend_targeted": {
+    "command": "python -B -m pytest -ra tests/test_healthtech_http.py tests/test_healthtech_prelive.py tests/test_healthtech_integration_contract.py tests/test_healthtech_history_migration.py",
+    "tests": 28,
+    "failures": 0,
+    "result": "28 passed in 4.07s",
+    "coverage_boundaries": [
+      "HTTP job submission/status and idempotency",
+      "provider budget gate fail-closed",
+      "cancel before dispatch",
+      "running cancel with uncommitted-result discard",
+      "resume/retry after cancellation",
+      "history versioning and edit conflict",
+      "JSON/Thai/English export"
+    ],
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "frontend_unit": {
+    "command": "npm test",
+    "tests": 74,
+    "failures": 0,
+    "result": "74 passed, 0 failed",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "browser_http": {
+    "command": "npm run test:integration:http",
+    "status": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+    "job_id": "bf63d38e01ea46e7a16e2e84dd8ddcd1",
+    "backend_origin": "loopback",
+    "source_inspection": "PASS",
+    "history_versions": [1, 2],
+    "edit": "PASS",
+    "exports": ["json", "th", "en"],
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "interpretation": {
+    "o1": "Current-head loopback HTTP/UI engineering is PASS.",
+    "not_proven": [
+      "paid OpenRouter generation",
+      "external deployment",
+      "user validation or commercial value",
+      "O2 remote rerun or O4 exact-head real-case asset execution"
+    ]
+  }
+}
