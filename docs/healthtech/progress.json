@@ -681,5 +681,10 @@
   "latest_o4_matched_offline_current_head_report_th": "docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/REPORT_TH.md",
   "latest_o4_matched_offline_current_head_checkpoint": "docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/CHECKPOINT.json",
   "latest_o4_matched_offline_current_head_verification": "docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/verification.json",
-  "latest_o4_matched_offline_current_head_status": "PASS_DESCRIPTIVE_MATCHED_OFFLINE_FRONTIER_O3_BLOCKED"
+  "latest_o4_matched_offline_current_head_status": "PASS_DESCRIPTIVE_MATCHED_OFFLINE_FRONTIER_O3_BLOCKED",
+  "latest_long_run_resume_audit": "docs/healthtech/audits/ptp-long-run-resume-20261103/README.md",
+  "latest_long_run_resume_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT.json",
+  "latest_long_run_resume_status": "PARTIAL_O1_CURRENT_HEAD_O2_PRIOR_O3_API_BLOCKED_O4_ASSET_GATED",
+  "latest_long_run_resume_candidate": "7d77e927156dea5b0f6797f1417c052964f5e370",
+  "latest_long_run_resume_next": "Continue offline release/manuscript work; expose authorized exact case assets for O4 or reconcile canonical API evidence before external branches."
 }

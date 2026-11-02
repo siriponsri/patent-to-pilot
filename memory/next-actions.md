@@ -1147,3 +1147,26 @@ contact, push, or merge occurred.
 Next: preserve this checkpoint, continue offline manuscript/reproducibility work,
 and open paid or new GPU execution only after current journal, credit,
 route/pricing, transfer-rights, and writer-quiescence evidence is current.
+
+## HT-NEXT-099 — 2026-11-03 long-run resume on clean candidate
+
+Status: `PARTIAL_O1_CURRENT_HEAD_O2_PRIOR_O3_API_BLOCKED_O4_ASSET_GATED`; checkpoint:
+`docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT.json`.
+
+Created a clean goal worktree from the reviewed O1-O4 branch and bound the
+resume checkpoint to candidate commit `7d77e927156dea5b0f6797f1417c052964f5e370`.
+Current Python contracts and the full Python suite exited `0` with one optional
+tokenizer skip; frontend unit tests passed `74/74`; loopback HTTP job/source/
+history/edit/export integration passed with zero provider calls and USD `0.00`.
+The named Abbott browser rerun was stopped before execution because the
+permitted cohort, rights matrix, and vector/runtime inputs are absent from the
+clean candidate. No remote/GPU/API run, ledger mutation, download, or new
+24-hour window was started.
+
+O1 is current-head loopback engineering PASS. O2 remains prior remote-runtime
+evidence without a new run after the original window. O3 local generation is
+prior 3/3 schema-valid evidence while the API branch remains fail-closed. O4
+retains the prior three-case receipt but does not relabel it as exact-head after
+the relevant HTTP/generation code changed; the current exact-head real-case
+rerun is asset-gated. Continue offline manuscript/reproducibility work and
+request only the specific missing evidence when an external branch is desired.
