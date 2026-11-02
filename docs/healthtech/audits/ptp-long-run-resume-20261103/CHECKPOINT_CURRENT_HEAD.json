@@ -27,6 +27,13 @@
       "command": "rtk proxy python -B -m pytest -ra",
       "result": "596 passed, 1 skipped, 2 warnings"
     },
+    "o2_transformer_vector_contracts": {
+      "status": "PASS",
+      "command": "rtk proxy python -B -m pytest -ra tests/test_healthtech_transformer_encoders.py tests/test_healthtech_vector_artifacts.py tests/test_healthtech_vector_eval.py tests/test_healthtech_vector_http.py",
+      "result": "17 passed",
+      "runtime_source_diff_from_prior_o2_candidate": false,
+      "prior_full_remote_rerun": "NOT_RUN_EXPIRED_24H_WINDOW"
+    },
     "frontend_unit": {
       "status": "PASS",
       "command": "rtk proxy npm test",
@@ -85,6 +92,16 @@
     "G6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
     "G7": "PARTIAL_CURRENT_HEAD_LOOPBACK_FRESH_RELEASE_REPRO_NOT_RUN",
     "G8": "NOT_RUN_FUTURE_SCOPE"
+  },
+  "o2_runtime_binding": {
+    "status": "PASS_PRIOR_RUNTIME_CURRENT_HEAD_CONTRACTS_PASS",
+    "prior_receipt": "docs/healthtech/audits/ht-research-product-20261031/verification.json",
+    "prior_candidate": "20e38974ed32bc6fca9760b9f1974b3c3f8dfa34",
+    "current_tested_runtime_head": "597f3cd60c9d18be27bc665df4171a54c2eea99e",
+    "relevant_source_diff": false,
+    "current_contract_tests": "17 passed",
+    "remote_rerun": "NOT_RUN_EXPIRED_24H_WINDOW",
+    "interpretation": "Prior full PatEmbed/e5 encode, Windows import, DAPFAM evaluation, and device dossier vector runs remain valid as runtime-equivalent evidence; this continuation did not recompute them."
   },
   "resource_accounting": {
     "provider_calls": 0,

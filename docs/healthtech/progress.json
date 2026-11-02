@@ -687,6 +687,8 @@
   "latest_long_run_resume_status": "PASS_EXACT_HEAD_ENGINEERING_PARTIAL_SCIENTIFIC_EXTERNAL_GATES_REMAIN",
   "latest_long_run_resume_candidate": "597f3cd60c9d18be27bc665df4171a54c2eea99e",
   "latest_long_run_resume_next": "Owner review current candidate; keep API/new-compute branches gated and continue manuscript/reproducibility work without starting a new batch unless existing evidence gates are exposed.",
+  "latest_long_run_resume_o2_status": "PASS_PRIOR_RUNTIME_CURRENT_HEAD_CONTRACTS_PASS_REMOTE_RERUN_EXPIRED",
+  "latest_long_run_resume_o2_contracts": "17 passed",
   "latest_long_run_resume_readiness_review": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/READINESS_REVIEW_TH.md",
   "latest_long_run_resume_readiness_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json"
 }

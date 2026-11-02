@@ -136,6 +136,10 @@ Fresh checks on this exact HEAD:
 - Targeted failure-accounting/frontier/controller/report package: `49 passed,
   1 skipped` (the skip is the unavailable pinned local tokenizer artifact).
 - Full Python suite: `596 passed, 1 skipped, 2 warnings`.
+- O2 transformer/vector contract and evaluator suite: `17 passed`; the O2
+  runtime paths have no source diff from the candidate bound to the prior full
+  PatEmbed/e5 encode, import, and DAPFAM evaluation receipts. This is a
+  current-head contract rebind, not a second remote encoding run.
 - Frontend unit suite: `74 passed, 0 failed`.
 - Loopback HTTP integration: `PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT`, with
   source inspection, history `1 -> 2`, edit/reopen, JSON/TH/EN export, zero
@@ -148,6 +152,12 @@ frontier into an equal-total-budget comparison, or change the existing O2/O3/O4
 external gates. The exact-head real-case rerun remains asset-gated; the API
 branch remains fail-closed pending the existing canonical journal, credit,
 route/pricing, and outbound-rights evidence.
+
+O2 is therefore `PASS_PRIOR_RUNTIME_CURRENT_HEAD_CONTRACTS_PASS`: the prior
+remote artifacts remain authoritative for the completed encode/import/evaluation
+work, while a new remote rerun is `NOT_RUN_EXPIRED_24H_WINDOW`. O3 local
+generation and O4 real-case receipts are not promoted in the same way because
+their relevant generation/HTTP source paths changed after their prior runs.
 
 The machine-readable current-head record is
 [`CHECKPOINT_CURRENT_HEAD.json`](./CHECKPOINT_CURRENT_HEAD.json).

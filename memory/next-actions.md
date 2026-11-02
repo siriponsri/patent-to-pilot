@@ -1228,3 +1228,20 @@ Next: owner review the current candidate and expose only the existing specific
 evidence needed for any paid or exact-head real-case continuation. Otherwise
 continue offline manuscript and reproducibility work without opening a new
 batch.
+
+## HT-NEXT-103 — 2026-11-03 O2 runtime-equivalent binding
+
+Status: `PASS_PRIOR_RUNTIME_CURRENT_HEAD_CONTRACTS_PASS_REMOTE_RERUN_EXPIRED`;
+checkpoint: `docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json`.
+
+Checked the O2 source surface from the prior full PatEmbed/e5 encode/import/
+DAPFAM-evaluation candidate through the current tested runtime head. There is
+no diff in the transformer encoder, vector bundle, vector-evaluation, or vector
+HTTP paths. The current O2 contract/evaluator selection passes `17/17`, so the
+prior remote artifacts remain valid runtime-equivalent evidence. A new remote
+encoding run was not started because the original 24-hour window is expired.
+
+This does not promote O3 local generation or O4 real-case receipts: relevant
+generation/HTTP code changed after those runs. No new GPU/API/dataset/ledger
+action occurred. Next work remains the existing O3/O4 evidence gates plus
+offline manuscript/reproducibility work.
