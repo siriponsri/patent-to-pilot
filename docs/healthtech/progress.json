@@ -460,6 +460,11 @@
       "id": "HT-M50-O4-MATCHED-OFFLINE-CURRENT-HEAD",
       "status": "PASS_O4_MATCHED_OFFLINE_FRONTIER_DESCRIPTIVE_O3_BLOCKED_LOCAL",
       "evidence": "Reran HT-B0a/B0b/B1/B2/B3 and deterministic HT-B4 offline on the same frozen Abbott cohort at candidate 891f3b3 with K=20 and candidate/rerank depth 41. Macro Recall@20 was B0a 0.442739, B0b 0.662242, B1 0.498802, B2 0.568912, B3 0.498802 and B4 0.498802; all devices and attempts completed, paid cost was USD0.00 and provider calls were 0. This is descriptive evidence with two exact-patent groups and no final holdout. Canonical audit: docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/"
+    },
+    {
+      "id": "HT-GENERATION-PATH-FOLLOWUP-20261103",
+      "status": "PASS_ENGINEERING_FAILURE_ACCOUNTING_AND_GENERATION_CONTRACTS",
+      "evidence": "At current HEAD 89bc034, offline targeted contracts passed 75/75 with zero failures, errors, or skips. The package covers partial-attempt preservation with measured wall/CPU time, explicit unknown resource fields, no synthetic zero attempts, rights-cleared paired payloads, exact qwen/qwen3-32b route/model binding, current-credit and canonical-ledger gates, unknown billing, and ledger registry rejection. No API/GPU/dataset/ledger action or new experiment occurred. Canonical audit: docs/healthtech/audits/ptp-generation-path-followup-20261103/README.md"
     }
   ],
   "scientific_healthtech_runs": "DEVELOPMENT_ONLY_PUBLIC_DISCLOSURE_RUN_WITH_ABBOTT_BOSTON_STRYKER_COOK_PHILIPS_COHORTS_TYPED_BOSTON_STRYKER_HOLDOUT_B4_PROVIDER_SHAPED_MOCK_HOLDOUT_M12_PAIRED_GROUP_DIAGNOSTIC_M14_LOCAL_DOSSIERS_M15_RIGHTS_POLICY_REPAIR_REVIEW_PACKET_M16_LOCAL_REVIEW_TASK_EXPORT_M17_TYPED_RIGHTS_OFFLINE_BASELINES_M18_SCIFACT_ERROR_ANALYSIS_AND_M19_G5_OFFLINE_PILOT_TASK_AND_M20_COMPANY_HOLDOUT_SENSITIVITY_AND_M21_G6_M20_INTEGRATION_AND_M22_SOURCE_LANDSCAPE_AND_M23_SOURCE_AUTHORIZATION_PREFLIGHT_AND_M24_AUTHORIZATION_BOUND_JUDGMENT_INGEST_AND_M25_BOUNDED_SEMANTIC_SOURCE_STAGING_AND_M26_SEMANTIC_SOURCE_LANDSCAPE_EXPANSION_AND_M27_SHARPS_SOURCE_METADATA_PREFLIGHT_AND_M28_OPENROUTER_R1_READINESS_REVALIDATION_AND_M29_CURRENT_HEAD_BACKEND_INTEGRATION_CONTRACT_REFRESH_AND_M30_CURRENT_HEAD_OFFLINE_BASELINE_B4_MOCK_AND_M31_CURRENT_HEAD_REPORT_BUDGET_G6_REFRESH_AND_M32_ADVERSARIAL_BOUNDARY_REGRESSION_AND_M33_DAPFAM_RETRIEVAL_DIAGNOSTIC_PREFLIGHT_AND_M34_DAPFAM_QRELS_PARSE_REVALIDATION_AND_M35_DAPFAM_BM25_FULL_BASELINE_AND_M36_DAPFAM_CODE_PROVENANCE_AND_M37_CURRENT_HEAD_B4_R2_AUDIT_AND_M38_CURRENT_HEAD_PHILIPS_DOSSIERS_AND_M39_CURRENT_HEAD_OPENROUTER_R1_READINESS_AND_M40_PHILIPS_G5_OFFLINE_PILOT_AND_M41_G5_PILOT_ANALYSIS_AND_M42_DAPFAM_COVERAGE_SCREEN_AND_M43_TRANSFORMER_ENCODING_EVAL_DEVICE_DOSSIER_E2E_AND_M47_O1_O4_HTTP_VECTOR_PACKAGE_AND_M48_O4_LOCAL_GENERATION_HTTP_AND_BENCHMARK_EXPANSION_COMPONENT_BINDING_AND_M49_O4_OFFLINE_CURRENT_HEAD_REVALIDATION_AND_M50_O4_MATCHED_OFFLINE_CURRENT_HEAD",
@@ -726,5 +731,12 @@
   "latest_remote_preflight_current_head_status": "PASS_READ_ONLY_NO_ACTIVE_EXPERIMENT_ALLOCATION_UNKNOWN_SERVICE_UNTOUCHED",
   "latest_remote_preflight_current_head_observed_at_utc": "2026-11-02T19:20:56+00:00",
   "latest_remote_preflight_current_head_service_pid": 1745699,
-  "latest_remote_preflight_current_head_paid_dispatch": "CLOSED"
+  "latest_remote_preflight_current_head_paid_dispatch": "CLOSED",
+  "latest_generation_path_followup_audit": "docs/healthtech/audits/ptp-generation-path-followup-20261103/README.md",
+  "latest_generation_path_followup_verification": "docs/healthtech/audits/ptp-generation-path-followup-20261103/verification.json",
+  "latest_generation_path_followup_status": "PASS_ENGINEERING_FAILURE_ACCOUNTING_AND_GENERATION_CONTRACTS",
+  "latest_generation_path_followup_tested_source_head": "89bc03409f5b9dae35c6c4f50b68ea11c2f8951b",
+  "latest_generation_path_followup_candidate": "89bc03409f5b9dae35c6c4f50b68ea11c2f8951b",
+  "latest_generation_path_followup_tests": "75 passed, 0 failed, 0 errors, 0 skipped",
+  "latest_generation_path_followup_resource_mutations": "API 0, GPU 0, dataset downloads 0, ledger mutations 0, budget/window reset false"
 }

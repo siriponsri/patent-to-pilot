@@ -1,0 +1,116 @@
+{
+  "format": "ptp-generation-path-followup-v1",
+  "observed_at": "2026-11-02T19:32:51Z",
+  "goal": "Patent-to-Pilot O1-O4 original goal",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "tested_source_head": "89bc03409f5b9dae35c6c4f50b68ea11c2f8951b",
+    "tree_before_tests": "CLEAN",
+    "tree_after_tests": "AUDIT_ARTIFACTS_ONLY"
+  },
+  "review_inputs": {
+    "readiness_review": {
+      "path": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/READINESS_REVIEW_TH.md",
+      "sha256": "d1dcab3cb707da1e9c16fe5fa3b2b112cab37c838695e880c89802634326422c"
+    },
+    "evidence_index": {
+      "path": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/evidence-index.json",
+      "sha256": "c682e8360c0fca132b4f05a1bb70ccf89cfe544bd39e1b9cc900745ad11b2ca6"
+    },
+    "parent_receipt": "docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/verification.json"
+  },
+  "process_quiescence": {
+    "local_relevant_experiment_processes": 0,
+    "remote_new_run": false,
+    "existing_ssh_proxy_reused": false
+  },
+  "failure_accounting": {
+    "status": "PASS_PROSPECTIVE_REPAIR_CURRENT_HEAD",
+    "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+    "deterministic_regression_commit": "e63e8a9d8996f805904a019579c405129171353c",
+    "partial_attempts_preserved": true,
+    "measured_wall_cpu_preserved": true,
+    "unknown_resource_fields_explicit": true,
+    "synthetic_zero_attempts_added": false,
+    "historical_receipts_rewritten": false,
+    "retrospective_cost_inferred": false,
+    "historical_impact": "NONE_KNOWN_IN_ACCESSIBLE_AUDIT_RECEIPTS",
+    "historical_impact_source": "Inherited from parent readiness receipt; no unavailable private journal was reconstructed."
+  },
+  "generation_contracts": {
+    "status": "PASS_OFFLINE_CONTRACTS_CURRENT_HEAD",
+    "rights_cleared_paired_payload": true,
+    "shared_message_hash_binding": true,
+    "raw_source_payload_excluded": true,
+    "evaluator_labels_excluded": true,
+    "exact_model": "qwen/qwen3-32b",
+    "exact_route_binding": true,
+    "canonical_live_ledger_required": true,
+    "current_credit_snapshot_required": true,
+    "sequential_attempts": true,
+    "unknown_billing_preserved": true,
+    "mock_live_transport_mixing_rejected": true
+  },
+  "tests": {
+    "command": "python -B -m pytest -ra -q tests/test_healthtech_real_baselines.py tests/test_healthtech_generation_payload.py tests/test_o3_generation_repair.py tests/test_o3_adversarial_repair.py tests/test_healthtech_api_generation.py tests/test_healthtech_qwen_evidence_pack.py tests/test_healthtech_ledger_registry.py --junitxml=docs/healthtech/audits/ptp-generation-path-followup-20261103/offline-targeted-tests.xml",
+    "status": "PASS",
+    "tests": 75,
+    "passed": 75,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 2.891,
+    "junit": "docs/healthtech/audits/ptp-generation-path-followup-20261103/offline-targeted-tests.xml",
+    "log": "docs/healthtech/audits/ptp-generation-path-followup-20261103/offline-targeted-tests.log"
+  },
+  "artifact_hashes": {
+    "offline-targeted-tests.log": {
+      "bytes": 352,
+      "sha256": "f08e1327d76e2f518f43f723f9f4c7ae09d45379ec88ae83fe2572d91e40d6ee"
+    },
+    "offline-targeted-tests.xml": {
+      "bytes": 10525,
+      "sha256": "99989668203ca470f21cdab054e36e37af8e222f40d9dfbab92bb4b43ec95760"
+    }
+  },
+  "source_hashes": {
+    "scripts/healthtech/run_real_baselines.py": "1458939e49a39999d3009893ac5d13c5f69adcb01150871b62cefd7c5ab0cd3f",
+    "src/patent_to_pilot/healthtech/generation_payload.py": "f6487d7f706d17335f98d44c33ef2b772efe3b6eec2da3d3c95df377fe908de6",
+    "src/patent_to_pilot/healthtech/api_generation.py": "bb16096bdd9dbb787721e1ee229e0c9c55164dd86c6ab914d87faa9cb2559694",
+    "src/patent_to_pilot/healthtech/generation.py": "052f87ef9543f76dec82b638f672bb3015adedf1edd9e1005f9a6b1397547655",
+    "tests/test_healthtech_real_baselines.py": "4c1fff706398342a2c260b514c1afadbdacc18a06a940d332d5cf4a743818e3b",
+    "tests/test_healthtech_generation_payload.py": "565a54ece103d5d57ba7fcc988512b74f3c3884e786ff6ef8bd70ecef1c2367f",
+    "tests/test_o3_generation_repair.py": "270fe137ab7626ceeff6dfc304184606c006fb8f978b9f7ae4b0db3b58bf99e3",
+    "tests/test_o3_adversarial_repair.py": "86fef5695a8bc5bb6cb60458fea11489b2eb62a308ac26ecc69e45337d65869c",
+    "tests/test_healthtech_api_generation.py": "50811b9ad36d78afb1fe429b3e659b73bc07a4e5b31ac5bbca3fc00806dfb71b",
+    "tests/test_healthtech_qwen_evidence_pack.py": "72015495ff76ac94bb64fc3a22bb1f2a45b1901731c99db4e2af2a55f320be86",
+    "tests/test_healthtech_ledger_registry.py": "6f837f48795bfadb1ca6b7429bae307cf3ea0d171fb6fa37f918409b0263f4c8"
+  },
+  "budget_interpretation": {
+    "status": "DESCRIPTIVE_REALIZED_QUALITY_RESOURCE_FRONTIER",
+    "equal_total_budget_claim": "NOT_SUPPORTED",
+    "realized_units": {
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+      "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+    }
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "new_experiment": false
+  },
+  "outcomes": {
+    "engineering": "COMPLETE_FOR_FAILURE_ACCOUNTING_AND_GENERATION_CONTRACTS",
+    "scientific_evidence": "PARTIAL",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript_readiness": "PARTIAL_OWNER_REVIEW_REQUIRED"
+  },
+  "next_action": "Owner review or independent offline work only; keep paid/API and new-compute branches under the existing gates."
+}

@@ -1483,3 +1483,27 @@ No API call, GPU job, model inference, dataset download, install, remote write,
 ledger mutation, budget reset, or new experiment occurred. Next action remains
 offline work or owner review only until an authoritative allocation, runtime
 window, lock ownership, and existing budget/rights gates are exposed.
+
+## HT-NEXT-115 — 2026-11-03 generation-path contract follow-up
+
+Status: `PASS_ENGINEERING_FAILURE_ACCOUNTING_AND_GENERATION_CONTRACTS`;
+receipt:
+`docs/healthtech/audits/ptp-generation-path-followup-20261103/verification.json`.
+
+At current HEAD `89bc034`, the offline generation/accounting package passed
+`75/75` tests with zero failures, errors, or skips. The tests cover preserved
+partial attempts and measured wall/CPU time, explicit unknown resource fields,
+no synthetic zero attempts, rights-cleared paired payloads, exact
+`qwen/qwen3-32b` route/model binding, current-credit and canonical-ledger
+preconditions, unknown billing, and ledger registry rejection. The reviewed
+source already contained the requested repair, so no duplicate source change
+was made.
+
+The readiness interpretation is unchanged: B2/B3/offline-B4 remain a
+descriptive realized quality-resource frontier with unequal total units, not an
+equal-budget adaptive-superiority result. Historical receipts and costs were
+not rewritten, and no retrospective cost was inferred.
+
+No API call, GPU job, dataset download, ledger mutation, budget/window reset,
+or new experiment occurred. Keep live O3 and new-compute branches gated; the
+next permitted action is owner review or independent offline work.
