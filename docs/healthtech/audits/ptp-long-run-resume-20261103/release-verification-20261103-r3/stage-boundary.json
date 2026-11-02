@@ -1,0 +1,223 @@
+{
+  "status": "PASS",
+  "verified_bundles": 15,
+  "results": [
+    {
+      "status": "PASS",
+      "case_id": "PTP-0001",
+      "state_id": "S0",
+      "file_hashes": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "37c8e78013f8cbc6a1fea5f09f031518e380c674c4df006fe87a03592d9c8692"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0001",
+      "state_id": "S1",
+      "file_hashes": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "8d5ce0be5b6a31253b777035c082f559de6de064908776641dcf683432d1118e"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0001",
+      "state_id": "S2",
+      "file_hashes": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "db2b38a8b893cb42bda338ed1883b9b969a99fd946aa8840f30fb13b0470b880"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0001",
+      "state_id": "S3",
+      "file_hashes": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "7b44d64fafe36db18edd5877767e713f480d6c8dd20a69b14f664626485f30e7"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0001",
+      "state_id": "S4",
+      "file_hashes": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "3c24519f079cb9b7938dd6c2dff4acf2120ba611d92248d0ab91b476e621302d"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0002",
+      "state_id": "S0",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "4aa53deaff86cb34c504dac364bfdcf6e29e792952612584491d481780a5acdd"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0002",
+      "state_id": "S1",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "05a3b20abcc9120774d8094477492a931af52e1b4b26acace353eb59db874cb3"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0002",
+      "state_id": "S2",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "70d615c77437022203d93d067da89be37f3f83f398f8dec03fd6def8a1693b21"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0002",
+      "state_id": "S3",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "294b3cd59e8eb67cd5f296073f9719ef4ed8c011d163d8d66522c0a4df15563e"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0002",
+      "state_id": "S4",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "2d1cb3beb76dc83c62facfc288e2875576179b3c959969874069511d461d7202"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0003",
+      "state_id": "S0",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "ae64ee8f34488c6cfe3a6f556e2ac8e482017d67811192277ac962c96d870331"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0003",
+      "state_id": "S1",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "e1d1b2f5a734a38940a7dc7bc3df037153e512641f11a697a5bb5c43b54825eb"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0003",
+      "state_id": "S2",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "88ee80789dacdb61b0969688e42ce9a5281bf08c68af622f27b388ab5daf99ff"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0003",
+      "state_id": "S3",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "10bf0bce5bd5e17767ae1d225c9026513e862c8e5a507c5084b29d7697be89e3"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "case_id": "PTP-0003",
+      "state_id": "S4",
+      "file_hashes": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "525212f1b48509b8b2067a80fb84a0fbb64a8ccdbae60bb94d480be75b2ae5f7"
+      },
+      "max_file_bytes": 1048576,
+      "scope": "identity, size, strict JSON, path and schema/key boundary",
+      "os_process_isolation": "NOT_VERIFIED",
+      "semantic_oracle_detection": "NOT_CLAIMED",
+      "manifest_authentication": "CURATOR_TRUST_REQUIRED"
+    }
+  ],
+  "scientific_live_ready": false,
+  "provider_calls": 0,
+  "limits": [
+    "No OS worker isolation",
+    "Curator manifest must be trusted",
+    "No semantic-oracle proof or scientific evaluation"
+  ]
+}

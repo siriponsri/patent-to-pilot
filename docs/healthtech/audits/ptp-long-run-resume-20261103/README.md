@@ -8,9 +8,9 @@ branch; the dirty long-run, Claude, Luna, and owner worktrees were preserved.
 
 ## Candidate and process state
 
-- Runtime-tested code/test/receipt head for this continuation: `e63e8a9d8996f805904a019579c405129171353c`.
-- The final checkpoint update after this package is documentation-only; it does
-  not change the runtime-tested source or test result.
+- Current candidate head for this continuation: `46ab5ac3b272dd6cce2ac48aa123b2c7e4838fcd`.
+- Runtime source/test behavior is unchanged from parent `e63e8a9d8996f805904a019579c405129171353c`;
+  this candidate also removes only generated release-verification scratch files.
 - Worktree: `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103`.
 - Base relationship: `main` at `0d049802d36bc2eebe60331ec444d62469fd767f` is an ancestor.
 - The only SSH process observed was the Codex remote app-server proxy; no
@@ -28,6 +28,10 @@ branch; the dirty long-run, Claude, Luna, and owner worktrees were preserved.
   `USD 0.00`.
 - `compileall`: PASS.
 - `git diff --check`: PASS.
+- Isolated release verification on the current candidate: `142 passed, 0 failed,
+  0 skipped`; all README/preflight/stage-boundary commands exited `0`, with
+  `0` socket attempts, `0` forbidden reads, `0` provider calls, and API cost
+  `USD 0.00`.
 - Named Abbott browser integration: `BLOCKED_ASSET_GATED` before execution
   because `HEALTHTECH_ABBOTT_COHORT` and its permitted rights/vector inputs are
   absent from this clean candidate. No synthetic fixture was promoted to a
@@ -183,3 +187,26 @@ or independent deployment validation.
 
 The machine-readable current-head record is
 [`CHECKPOINT_CURRENT_HEAD.json`](./CHECKPOINT_CURRENT_HEAD.json).
+
+## Fresh isolated release verification — 2026-11-03
+
+The release verifier was rerun after the scratch-cleanup commit at candidate
+`46ab5ac3b272dd6cce2ac48aa123b2c7e4838fcd`. The command-bound receipt is
+[`release-verification-20261103-r3/verification.json`](./release-verification-20261103-r3/verification.json).
+
+Observed result:
+
+- `142` tests passed; `0` failed; `0` skipped.
+- README workflow, offline comparison, provider dry-run, goal preflight,
+  G13 preflight, and stage-boundary checks all exited `0`.
+- Source files were unchanged during verification; blocked network attempts,
+  forbidden credential-file reads, provider calls, and paid API cost were all
+  `0`.
+- The verifier's dependency installation had ordinary package-index access in
+  the isolated environment; this receipt is offline product verification, not
+  a no-network installation or independent deployment test.
+
+This moves G7 to `PASS_ISOLATED_RELEASE_REPRODUCTION` for the current
+candidate. It does not promote the scientific frontier to a matched-budget
+confirmatory result, does not rerun O2 remote embeddings, and does not remove
+the existing O3 API or O4 exact-head asset gates.

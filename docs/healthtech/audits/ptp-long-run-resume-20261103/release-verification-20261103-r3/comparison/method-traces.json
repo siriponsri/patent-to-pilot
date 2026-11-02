@@ -1,0 +1,330 @@
+{
+  "B0_rules_only": {
+    "status": "PASS",
+    "metrics": {
+      "state_count": 3,
+      "valid_state_count": 3,
+      "revision_count": 2,
+      "valid_revision_count": 2,
+      "provider_call_count": 0,
+      "failed_attempt_count": 0,
+      "failed_state_count": 0,
+      "validation_failure_count": 0,
+      "dependent_skip_count": 0,
+      "retry_count": 0,
+      "cost_usd": 0,
+      "provider_wall_time_ms": 0,
+      "elapsed_seconds": 0.0023490999592468143,
+      "paid_api": false,
+      "network_calls_declared": 0,
+      "network_observation": "NOT_MEASURED"
+    },
+    "provider_calls": [],
+    "failure_traces": []
+  },
+  "B1_full_regeneration": {
+    "status": "PASS",
+    "metrics": {
+      "state_count": 3,
+      "valid_state_count": 3,
+      "revision_count": 2,
+      "valid_revision_count": 2,
+      "provider_call_count": 3,
+      "failed_attempt_count": 0,
+      "failed_state_count": 0,
+      "validation_failure_count": 0,
+      "dependent_skip_count": 0,
+      "retry_count": 0,
+      "cost_usd": 0.0,
+      "provider_wall_time_ms": 1.1702000047080219,
+      "elapsed_seconds": 0.002248500008136034,
+      "paid_api": false,
+      "network_calls_declared": 0,
+      "network_observation": "NOT_MEASURED"
+    },
+    "provider_calls": [
+      {
+        "call_id": "B1_full_regeneration:S0:1",
+        "method_id": "B1_full_regeneration",
+        "state_id": "S0",
+        "operation": "full_regeneration",
+        "input_sha256": "18f7c701c951a4854d3347179226e62a875da4b653044ae38afb9fda8cdfb54c",
+        "schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+        "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+        "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+        "status": "PASS",
+        "failure_mode": null,
+        "error": null,
+        "retry_count": 0,
+        "cost_usd": 0.0,
+        "elapsed_ms": 0.4056000034324825,
+        "metadata": {
+          "input_mode": "full_public_packet",
+          "generation_scope": "full"
+        }
+      },
+      {
+        "call_id": "B1_full_regeneration:S1:2",
+        "method_id": "B1_full_regeneration",
+        "state_id": "S1",
+        "operation": "full_regeneration",
+        "input_sha256": "0073b2a3baa450cdef9daeb20e8cd43bbfd6c1221fdc02ef90652ddbb681f75f",
+        "schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+        "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+        "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+        "status": "PASS",
+        "failure_mode": null,
+        "error": null,
+        "retry_count": 0,
+        "cost_usd": 0.0,
+        "elapsed_ms": 0.3752000047825277,
+        "metadata": {
+          "input_mode": "full_public_packet",
+          "generation_scope": "full"
+        }
+      },
+      {
+        "call_id": "B1_full_regeneration:S2:3",
+        "method_id": "B1_full_regeneration",
+        "state_id": "S2",
+        "operation": "full_regeneration",
+        "input_sha256": "c5fe79e956c80fb198946de16e30c9cea6b1c17d4998528d044d5515b71e53c6",
+        "schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+        "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+        "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+        "status": "PASS",
+        "failure_mode": null,
+        "error": null,
+        "retry_count": 0,
+        "cost_usd": 0.0,
+        "elapsed_ms": 0.3893999964930117,
+        "metadata": {
+          "input_mode": "full_public_packet",
+          "generation_scope": "full"
+        }
+      }
+    ],
+    "failure_traces": []
+  },
+  "B2_direct_revision": {
+    "status": "PASS",
+    "metrics": {
+      "state_count": 3,
+      "valid_state_count": 3,
+      "revision_count": 2,
+      "valid_revision_count": 2,
+      "provider_call_count": 3,
+      "failed_attempt_count": 0,
+      "failed_state_count": 0,
+      "validation_failure_count": 0,
+      "dependent_skip_count": 0,
+      "retry_count": 0,
+      "cost_usd": 0.0,
+      "provider_wall_time_ms": 0.8824999094940722,
+      "elapsed_seconds": 0.0025255000218749046,
+      "paid_api": false,
+      "network_calls_declared": 0,
+      "network_observation": "NOT_MEASURED"
+    },
+    "provider_calls": [
+      {
+        "call_id": "B2_direct_revision:S0:4",
+        "method_id": "B2_direct_revision",
+        "state_id": "S0",
+        "operation": "direct_revision",
+        "input_sha256": "18f7c701c951a4854d3347179226e62a875da4b653044ae38afb9fda8cdfb54c",
+        "schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+        "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+        "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+        "status": "PASS",
+        "failure_mode": null,
+        "error": null,
+        "retry_count": 0,
+        "cost_usd": 0.0,
+        "elapsed_ms": 0.43029995867982507,
+        "metadata": {
+          "input_mode": "full_public_packet",
+          "generation_scope": "full_generation_for_initial_state",
+          "invalidated_fields": null
+        }
+      },
+      {
+        "call_id": "B2_direct_revision:S1:5",
+        "method_id": "B2_direct_revision",
+        "state_id": "S1",
+        "operation": "direct_revision",
+        "input_sha256": "0073b2a3baa450cdef9daeb20e8cd43bbfd6c1221fdc02ef90652ddbb681f75f",
+        "schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+        "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+        "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+        "status": "PASS",
+        "failure_mode": null,
+        "error": null,
+        "retry_count": 0,
+        "cost_usd": 0.0,
+        "elapsed_ms": 0.16929995035752654,
+        "metadata": {
+          "input_mode": "previous_output_plus_public_change",
+          "generation_scope": "direct_revision",
+          "invalidated_fields": null
+        }
+      },
+      {
+        "call_id": "B2_direct_revision:S2:6",
+        "method_id": "B2_direct_revision",
+        "state_id": "S2",
+        "operation": "direct_revision",
+        "input_sha256": "c5fe79e956c80fb198946de16e30c9cea6b1c17d4998528d044d5515b71e53c6",
+        "schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+        "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+        "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+        "status": "PASS",
+        "failure_mode": null,
+        "error": null,
+        "retry_count": 0,
+        "cost_usd": 0.0,
+        "elapsed_ms": 0.2829000004567206,
+        "metadata": {
+          "input_mode": "previous_output_plus_public_change",
+          "generation_scope": "direct_revision",
+          "invalidated_fields": null
+        }
+      }
+    ],
+    "failure_traces": []
+  },
+  "B3_invalidation_same_generator": {
+    "status": "PASS",
+    "metrics": {
+      "state_count": 3,
+      "valid_state_count": 3,
+      "revision_count": 2,
+      "valid_revision_count": 2,
+      "provider_call_count": 3,
+      "failed_attempt_count": 0,
+      "failed_state_count": 0,
+      "validation_failure_count": 0,
+      "dependent_skip_count": 0,
+      "retry_count": 0,
+      "cost_usd": 0.0,
+      "provider_wall_time_ms": 1.3038000324741006,
+      "elapsed_seconds": 0.0030401999829337,
+      "paid_api": false,
+      "network_calls_declared": 0,
+      "network_observation": "NOT_MEASURED"
+    },
+    "provider_calls": [
+      {
+        "call_id": "B3_invalidation_same_generator:S0:7",
+        "method_id": "B3_invalidation_same_generator",
+        "state_id": "S0",
+        "operation": "same_generator_scoped_merge",
+        "input_sha256": "18f7c701c951a4854d3347179226e62a875da4b653044ae38afb9fda8cdfb54c",
+        "schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+        "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+        "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+        "status": "PASS",
+        "failure_mode": null,
+        "error": null,
+        "retry_count": 0,
+        "cost_usd": 0.0,
+        "elapsed_ms": 0.4833000130020082,
+        "metadata": {
+          "input_mode": "full_public_packet",
+          "generation_scope": "full_then_scoped_merge",
+          "invalidated_fields": [
+            "agent_input_fields",
+            "allowed_evidence",
+            "brief",
+            "case_id",
+            "contradictions",
+            "fictional_stipulations",
+            "handoff",
+            "interface_status",
+            "interpretations",
+            "options",
+            "profile_id",
+            "profile_version",
+            "project_display_name",
+            "proposed_next_tests",
+            "routes",
+            "source_facts",
+            "source_integrity",
+            "state_id",
+            "unknowns"
+          ]
+        }
+      },
+      {
+        "call_id": "B3_invalidation_same_generator:S1:8",
+        "method_id": "B3_invalidation_same_generator",
+        "state_id": "S1",
+        "operation": "same_generator_scoped_merge",
+        "input_sha256": "0073b2a3baa450cdef9daeb20e8cd43bbfd6c1221fdc02ef90652ddbb681f75f",
+        "schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+        "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+        "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+        "status": "PASS",
+        "failure_mode": null,
+        "error": null,
+        "retry_count": 0,
+        "cost_usd": 0.0,
+        "elapsed_ms": 0.40790002094581723,
+        "metadata": {
+          "input_mode": "previous_output_plus_public_change",
+          "generation_scope": "full_then_scoped_merge",
+          "invalidated_fields": [
+            "fictional_stipulations",
+            "options",
+            "routes"
+          ]
+        }
+      },
+      {
+        "call_id": "B3_invalidation_same_generator:S2:9",
+        "method_id": "B3_invalidation_same_generator",
+        "state_id": "S2",
+        "operation": "same_generator_scoped_merge",
+        "input_sha256": "c5fe79e956c80fb198946de16e30c9cea6b1c17d4998528d044d5515b71e53c6",
+        "schema_sha256": "c6ae96c0e40c8856b323caf42dbe28365b4e34d88396d53686f064b581d37243",
+        "runtime_contract_sha256": "dfbe59b20500891b135637c38ec247851f685642192fc7ee7395cbc07c551dba",
+        "validator_sha256": "acc5da92125d727c5185614b0851bdf57186d21e7b9f3ad349790b651b60a861",
+        "status": "PASS",
+        "failure_mode": null,
+        "error": null,
+        "retry_count": 0,
+        "cost_usd": 0.0,
+        "elapsed_ms": 0.41259999852627516,
+        "metadata": {
+          "input_mode": "previous_output_plus_public_change",
+          "generation_scope": "full_then_scoped_merge",
+          "invalidated_fields": []
+        }
+      }
+    ],
+    "failure_traces": []
+  },
+  "P_existing_workflow": {
+    "status": "PASS",
+    "metrics": {
+      "state_count": 3,
+      "valid_state_count": 3,
+      "revision_count": 2,
+      "valid_revision_count": 2,
+      "provider_call_count": 0,
+      "failed_attempt_count": 0,
+      "failed_state_count": 0,
+      "validation_failure_count": 0,
+      "dependent_skip_count": 0,
+      "retry_count": 0,
+      "cost_usd": 0,
+      "provider_wall_time_ms": 0,
+      "elapsed_seconds": 0.002230399986729026,
+      "paid_api": false,
+      "network_calls_declared": 0,
+      "network_observation": "NOT_MEASURED"
+    },
+    "provider_calls": [],
+    "failure_traces": []
+  }
+}

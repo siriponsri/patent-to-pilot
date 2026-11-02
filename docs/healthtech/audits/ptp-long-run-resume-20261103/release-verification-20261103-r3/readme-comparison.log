@@ -1,0 +1,11 @@
+run_id=clean-release-46ab5ac
+status=PASS
+wrote C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\release-verification-20261103-r3\comparison\comparison.json
+wrote C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\release-verification-20261103-r3\comparison\comparison.md
+wrote C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\release-verification-20261103-r3\comparison\before-after-diff.json
+wrote C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\release-verification-20261103-r3\comparison\validator-results.json
+wrote C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\release-verification-20261103-r3\comparison\method-traces.json
+wrote C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\release-verification-20261103-r3\comparison\search-pool-readiness.json
+wrote C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\release-verification-20261103-r3\comparison\candidate-source-manifest.json
+wrote C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\docs\healthtech\audits\ptp-long-run-resume-20261103\release-verification-20261103-r3\comparison\evidence-manifest.json
+states=3 methods=5 mock_calls=9

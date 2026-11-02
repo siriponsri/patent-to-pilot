@@ -1,0 +1,1174 @@
+{
+  "kind": "bounded_offline_workflow_prototype",
+  "input_mode": "caller_supplied_schema",
+  "report": {
+    "case_id": "NEW-PROJECT-ALPHA",
+    "states": [
+      {
+        "case_id": "NEW-PROJECT-ALPHA",
+        "state_id": "0",
+        "project_display_name": "NEW-PROJECT-ALPHA",
+        "profile_id": "NEW-ORG-Z",
+        "profile_version": "2.0.0",
+        "brief": "Compare two fictional coating routes and identify what must be measured before a formulation handoff.",
+        "fictional_stipulations": {
+          "policy": {
+            "rule_id": "NEW-POLICY-1",
+            "origin": null,
+            "role_scope": null,
+            "allowed_initial": [],
+            "carrier_scope": null,
+            "real_organization_rule": null,
+            "forbidden_inhibitors": [],
+            "operator": null,
+            "normalization": null,
+            "maximum": null,
+            "count_kind": null,
+            "component": "coating",
+            "permitted_materials": [
+              "polymer-x",
+              "polymer-y"
+            ],
+            "forbidden_materials": []
+          },
+          "options": [
+            {
+              "option_id": "NEW-A",
+              "candidate_id": null,
+              "selected_component": "coating",
+              "selected_material": "polymer-x",
+              "selection_origin": null,
+              "selected_carrier": null,
+              "selected_inhibitor": null,
+              "selected_route": null,
+              "basis": null,
+              "evidence_ids": [
+                "NEW-E1"
+              ]
+            },
+            {
+              "option_id": "NEW-B",
+              "candidate_id": null,
+              "selected_component": "coating",
+              "selected_material": "polymer-y",
+              "selection_origin": null,
+              "selected_carrier": null,
+              "selected_inhibitor": null,
+              "selected_route": null,
+              "basis": null,
+              "evidence_ids": [
+                "NEW-E2"
+              ]
+            }
+          ],
+          "basis": "caller-supplied bounded workflow input; not a real-organization fact"
+        },
+        "interpretations": [
+          {
+            "statement": "unsupported or absent evidence remains unknown",
+            "basis": "generic offline workflow rule"
+          }
+        ],
+        "allowed_evidence": [
+          {
+            "evidence_id": "NEW-E1",
+            "text": "Polymer-X is described as a coating candidate.",
+            "source_id": "NEW-SOURCE-1",
+            "source_version": "v7",
+            "document_id": null,
+            "family_id": null,
+            "source_locator": "new-source#paragraph-1",
+            "locator": {
+              "dataset_field": "text",
+              "paragraph_id": null,
+              "printed_paragraph_num": null,
+              "char_start": null,
+              "char_end": null,
+              "offset_unit": null,
+              "g08_trimmed_component_offsets": null
+            },
+            "origin": "source_assertion",
+            "text_sha256": null,
+            "char_start": null,
+            "char_end": null
+          },
+          {
+            "evidence_id": "NEW-E2",
+            "text": "Polymer-Y is described as a coating candidate.",
+            "source_id": "NEW-SOURCE-1",
+            "source_version": "v7",
+            "document_id": null,
+            "family_id": null,
+            "source_locator": "new-source#paragraph-2",
+            "locator": {
+              "dataset_field": "text",
+              "paragraph_id": null,
+              "printed_paragraph_num": null,
+              "char_start": null,
+              "char_end": null,
+              "offset_unit": null,
+              "g08_trimmed_component_offsets": null
+            },
+            "origin": "source_assertion",
+            "text_sha256": null,
+            "char_start": null,
+            "char_end": null
+          }
+        ],
+        "source_integrity": {
+          "checked": 2,
+          "valid": true,
+          "invalid_evidence_ids": [],
+          "reasons": {}
+        },
+        "interface_status": {
+          "typed_core": {
+            "status": "used",
+            "records": [
+              "EvidenceRecord",
+              "RouteRecord",
+              "ChangeRecord"
+            ]
+          },
+          "organization_profiles": {
+            "status": "used",
+            "profile_id": "NEW-ORG-Z",
+            "profile_version": "2.0.0"
+          },
+          "ingestion": {
+            "status": "not_invoked"
+          },
+          "retrieval": {
+            "status": "not_invoked"
+          },
+          "extraction": {
+            "status": "deterministic_packet_rule_adapter",
+            "model_called": false
+          }
+        },
+        "source_facts": [
+          {
+            "field": "evidence:NEW-E1",
+            "state": "known",
+            "value": "Polymer-X is described as a coating candidate.",
+            "evidence_ids": [
+              "NEW-E1"
+            ],
+            "role": "source_fact"
+          },
+          {
+            "field": "evidence:NEW-E2",
+            "state": "known",
+            "value": "Polymer-Y is described as a coating candidate.",
+            "evidence_ids": [
+              "NEW-E2"
+            ],
+            "role": "source_fact"
+          },
+          {
+            "field": "coating uniformity",
+            "state": "unknown",
+            "value": null,
+            "evidence_ids": [],
+            "role": "unknown"
+          },
+          {
+            "field": "pilot yield",
+            "state": "unknown",
+            "value": null,
+            "evidence_ids": [],
+            "role": "unknown"
+          }
+        ],
+        "options": [
+          {
+            "option_id": "NEW-A",
+            "label": "NEW-A: polymer-x",
+            "policy_check_state": "passes_this_explicit_check",
+            "evidence_ids": [
+              "NEW-E1"
+            ],
+            "unknowns": [
+              "coating uniformity",
+              "pilot yield"
+            ]
+          },
+          {
+            "option_id": "NEW-B",
+            "label": "NEW-B: polymer-y",
+            "policy_check_state": "passes_this_explicit_check",
+            "evidence_ids": [
+              "NEW-E2"
+            ],
+            "unknowns": [
+              "coating uniformity",
+              "pilot yield"
+            ]
+          }
+        ],
+        "routes": [
+          {
+            "route_id": "NEW-PROJECT-ALPHA:NEW-A",
+            "label": "NEW-A: polymer-x",
+            "status": "candidate",
+            "policy_check_state": "passes_this_explicit_check",
+            "evidence_ids": [
+              "NEW-E1"
+            ],
+            "constraint_ids": [
+              "NEW-POLICY-1"
+            ],
+            "unknowns": [
+              "coating uniformity",
+              "pilot yield"
+            ],
+            "contradictions": [],
+            "policy_scope_status": "matched",
+            "policy_reasons": []
+          },
+          {
+            "route_id": "NEW-PROJECT-ALPHA:NEW-B",
+            "label": "NEW-B: polymer-y",
+            "status": "candidate",
+            "policy_check_state": "passes_this_explicit_check",
+            "evidence_ids": [
+              "NEW-E2"
+            ],
+            "constraint_ids": [
+              "NEW-POLICY-1"
+            ],
+            "unknowns": [
+              "coating uniformity",
+              "pilot yield"
+            ],
+            "contradictions": [],
+            "policy_scope_status": "matched",
+            "policy_reasons": []
+          }
+        ],
+        "unknowns": [
+          "coating uniformity",
+          "pilot yield"
+        ],
+        "contradictions": [],
+        "proposed_next_tests": [
+          {
+            "test_id": "NEW-PROJECT-ALPHA-NEXT-001",
+            "purpose": "verify unresolved route fields with a bounded measurement",
+            "status": "proposed",
+            "inputs": [
+              "coating uniformity",
+              "pilot yield"
+            ]
+          }
+        ],
+        "handoff": {
+          "kind": "development_integration_handoff",
+          "status": "ready_for_review",
+          "global_blocked": false,
+          "ready_reason": "artifact and traceability checks only; reviewer approval is separate",
+          "review_state": "not_reviewed",
+          "facts_are_not_scientific_validation": true,
+          "policy_scope_reasons": []
+        },
+        "agent_input_fields": [
+          "brief",
+          "event",
+          "evidence",
+          "options",
+          "policy",
+          "profile",
+          "project_id",
+          "unknowns"
+        ],
+        "mock_provider_called": false
+      },
+      {
+        "case_id": "NEW-PROJECT-ALPHA",
+        "state_id": "1",
+        "project_display_name": "NEW-PROJECT-ALPHA",
+        "profile_id": "NEW-ORG-Z",
+        "profile_version": "2.0.0",
+        "brief": "Compare two fictional coating routes and identify what must be measured before a formulation handoff.",
+        "fictional_stipulations": {
+          "policy": {
+            "rule_id": "NEW-POLICY-2",
+            "origin": null,
+            "role_scope": null,
+            "allowed_initial": [],
+            "carrier_scope": null,
+            "real_organization_rule": null,
+            "forbidden_inhibitors": [],
+            "operator": null,
+            "normalization": null,
+            "maximum": null,
+            "count_kind": null,
+            "component": "coating",
+            "permitted_materials": [
+              "polymer-x",
+              "polymer-y"
+            ],
+            "forbidden_materials": [
+              "polymer-x"
+            ]
+          },
+          "options": [
+            {
+              "option_id": "NEW-A",
+              "candidate_id": null,
+              "selected_component": "coating",
+              "selected_material": "polymer-x",
+              "selection_origin": null,
+              "selected_carrier": null,
+              "selected_inhibitor": null,
+              "selected_route": null,
+              "basis": null,
+              "evidence_ids": [
+                "NEW-E1"
+              ]
+            },
+            {
+              "option_id": "NEW-B",
+              "candidate_id": null,
+              "selected_component": "coating",
+              "selected_material": "polymer-y",
+              "selection_origin": null,
+              "selected_carrier": null,
+              "selected_inhibitor": null,
+              "selected_route": null,
+              "basis": null,
+              "evidence_ids": [
+                "NEW-E2"
+              ]
+            }
+          ],
+          "basis": "caller-supplied bounded workflow input; not a real-organization fact"
+        },
+        "interpretations": [
+          {
+            "statement": "unsupported or absent evidence remains unknown",
+            "basis": "generic offline workflow rule"
+          }
+        ],
+        "allowed_evidence": [
+          {
+            "evidence_id": "NEW-E1",
+            "text": "Polymer-X is described as a coating candidate.",
+            "source_id": "NEW-SOURCE-1",
+            "source_version": "v7",
+            "document_id": null,
+            "family_id": null,
+            "source_locator": "new-source#paragraph-1",
+            "locator": {
+              "dataset_field": "text",
+              "paragraph_id": null,
+              "printed_paragraph_num": null,
+              "char_start": null,
+              "char_end": null,
+              "offset_unit": null,
+              "g08_trimmed_component_offsets": null
+            },
+            "origin": "source_assertion",
+            "text_sha256": null,
+            "char_start": null,
+            "char_end": null
+          },
+          {
+            "evidence_id": "NEW-E2",
+            "text": "Polymer-Y is described as a coating candidate.",
+            "source_id": "NEW-SOURCE-1",
+            "source_version": "v7",
+            "document_id": null,
+            "family_id": null,
+            "source_locator": "new-source#paragraph-2",
+            "locator": {
+              "dataset_field": "text",
+              "paragraph_id": null,
+              "printed_paragraph_num": null,
+              "char_start": null,
+              "char_end": null,
+              "offset_unit": null,
+              "g08_trimmed_component_offsets": null
+            },
+            "origin": "source_assertion",
+            "text_sha256": null,
+            "char_start": null,
+            "char_end": null
+          }
+        ],
+        "source_integrity": {
+          "checked": 2,
+          "valid": true,
+          "invalid_evidence_ids": [],
+          "reasons": {}
+        },
+        "interface_status": {
+          "typed_core": {
+            "status": "used",
+            "records": [
+              "EvidenceRecord",
+              "RouteRecord",
+              "ChangeRecord"
+            ]
+          },
+          "organization_profiles": {
+            "status": "used",
+            "profile_id": "NEW-ORG-Z",
+            "profile_version": "2.0.0"
+          },
+          "ingestion": {
+            "status": "not_invoked"
+          },
+          "retrieval": {
+            "status": "not_invoked"
+          },
+          "extraction": {
+            "status": "deterministic_packet_rule_adapter",
+            "model_called": false
+          }
+        },
+        "source_facts": [
+          {
+            "field": "evidence:NEW-E1",
+            "state": "known",
+            "value": "Polymer-X is described as a coating candidate.",
+            "evidence_ids": [
+              "NEW-E1"
+            ],
+            "role": "source_fact"
+          },
+          {
+            "field": "evidence:NEW-E2",
+            "state": "known",
+            "value": "Polymer-Y is described as a coating candidate.",
+            "evidence_ids": [
+              "NEW-E2"
+            ],
+            "role": "source_fact"
+          },
+          {
+            "field": "coating uniformity",
+            "state": "unknown",
+            "value": null,
+            "evidence_ids": [],
+            "role": "unknown"
+          },
+          {
+            "field": "pilot yield",
+            "state": "unknown",
+            "value": null,
+            "evidence_ids": [],
+            "role": "unknown"
+          }
+        ],
+        "options": [
+          {
+            "option_id": "NEW-A",
+            "label": "NEW-A: polymer-x",
+            "policy_check_state": "fails_this_explicit_check",
+            "evidence_ids": [
+              "NEW-E1"
+            ],
+            "unknowns": [
+              "coating uniformity",
+              "pilot yield"
+            ]
+          },
+          {
+            "option_id": "NEW-B",
+            "label": "NEW-B: polymer-y",
+            "policy_check_state": "passes_this_explicit_check",
+            "evidence_ids": [
+              "NEW-E2"
+            ],
+            "unknowns": [
+              "coating uniformity",
+              "pilot yield"
+            ]
+          }
+        ],
+        "routes": [
+          {
+            "route_id": "NEW-PROJECT-ALPHA:NEW-A",
+            "label": "NEW-A: polymer-x",
+            "status": "draft",
+            "policy_check_state": "fails_this_explicit_check",
+            "evidence_ids": [
+              "NEW-E1"
+            ],
+            "constraint_ids": [
+              "NEW-POLICY-2"
+            ],
+            "unknowns": [
+              "coating uniformity",
+              "pilot yield"
+            ],
+            "contradictions": [],
+            "policy_scope_status": "matched",
+            "policy_reasons": []
+          },
+          {
+            "route_id": "NEW-PROJECT-ALPHA:NEW-B",
+            "label": "NEW-B: polymer-y",
+            "status": "candidate",
+            "policy_check_state": "passes_this_explicit_check",
+            "evidence_ids": [
+              "NEW-E2"
+            ],
+            "constraint_ids": [
+              "NEW-POLICY-2"
+            ],
+            "unknowns": [
+              "coating uniformity",
+              "pilot yield"
+            ],
+            "contradictions": [],
+            "policy_scope_status": "matched",
+            "policy_reasons": []
+          }
+        ],
+        "unknowns": [
+          "coating uniformity",
+          "pilot yield"
+        ],
+        "contradictions": [],
+        "proposed_next_tests": [
+          {
+            "test_id": "NEW-PROJECT-ALPHA-NEXT-001",
+            "purpose": "verify unresolved route fields with a bounded measurement",
+            "status": "proposed",
+            "inputs": [
+              "coating uniformity",
+              "pilot yield"
+            ]
+          }
+        ],
+        "handoff": {
+          "kind": "development_integration_handoff",
+          "status": "ready_for_review",
+          "global_blocked": false,
+          "ready_reason": "artifact and traceability checks only; reviewer approval is separate",
+          "review_state": "not_reviewed",
+          "facts_are_not_scientific_validation": true,
+          "policy_scope_reasons": []
+        },
+        "agent_input_fields": [
+          "brief",
+          "event",
+          "evidence",
+          "options",
+          "policy",
+          "profile",
+          "project_id",
+          "unknowns"
+        ],
+        "mock_provider_called": false
+      }
+    ],
+    "changes": [
+      {
+        "state_id": "1",
+        "reason": "policy_change",
+        "before_version": 1,
+        "after_version": 2,
+        "affected_fields": [
+          "fictional_stipulations",
+          "options",
+          "routes"
+        ],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "before": {
+          "case_id": "NEW-PROJECT-ALPHA",
+          "state_id": "0",
+          "project_display_name": "NEW-PROJECT-ALPHA",
+          "profile_id": "NEW-ORG-Z",
+          "profile_version": "2.0.0",
+          "brief": "Compare two fictional coating routes and identify what must be measured before a formulation handoff.",
+          "fictional_stipulations": {
+            "policy": {
+              "rule_id": "NEW-POLICY-1",
+              "origin": null,
+              "role_scope": null,
+              "allowed_initial": [],
+              "carrier_scope": null,
+              "real_organization_rule": null,
+              "forbidden_inhibitors": [],
+              "operator": null,
+              "normalization": null,
+              "maximum": null,
+              "count_kind": null,
+              "component": "coating",
+              "permitted_materials": [
+                "polymer-x",
+                "polymer-y"
+              ],
+              "forbidden_materials": []
+            },
+            "options": [
+              {
+                "option_id": "NEW-A",
+                "candidate_id": null,
+                "selected_component": "coating",
+                "selected_material": "polymer-x",
+                "selection_origin": null,
+                "selected_carrier": null,
+                "selected_inhibitor": null,
+                "selected_route": null,
+                "basis": null,
+                "evidence_ids": [
+                  "NEW-E1"
+                ]
+              },
+              {
+                "option_id": "NEW-B",
+                "candidate_id": null,
+                "selected_component": "coating",
+                "selected_material": "polymer-y",
+                "selection_origin": null,
+                "selected_carrier": null,
+                "selected_inhibitor": null,
+                "selected_route": null,
+                "basis": null,
+                "evidence_ids": [
+                  "NEW-E2"
+                ]
+              }
+            ],
+            "basis": "caller-supplied bounded workflow input; not a real-organization fact"
+          },
+          "interpretations": [
+            {
+              "statement": "unsupported or absent evidence remains unknown",
+              "basis": "generic offline workflow rule"
+            }
+          ],
+          "allowed_evidence": [
+            {
+              "evidence_id": "NEW-E1",
+              "text": "Polymer-X is described as a coating candidate.",
+              "source_id": "NEW-SOURCE-1",
+              "source_version": "v7",
+              "document_id": null,
+              "family_id": null,
+              "source_locator": "new-source#paragraph-1",
+              "locator": {
+                "dataset_field": "text",
+                "paragraph_id": null,
+                "printed_paragraph_num": null,
+                "char_start": null,
+                "char_end": null,
+                "offset_unit": null,
+                "g08_trimmed_component_offsets": null
+              },
+              "origin": "source_assertion",
+              "text_sha256": null,
+              "char_start": null,
+              "char_end": null
+            },
+            {
+              "evidence_id": "NEW-E2",
+              "text": "Polymer-Y is described as a coating candidate.",
+              "source_id": "NEW-SOURCE-1",
+              "source_version": "v7",
+              "document_id": null,
+              "family_id": null,
+              "source_locator": "new-source#paragraph-2",
+              "locator": {
+                "dataset_field": "text",
+                "paragraph_id": null,
+                "printed_paragraph_num": null,
+                "char_start": null,
+                "char_end": null,
+                "offset_unit": null,
+                "g08_trimmed_component_offsets": null
+              },
+              "origin": "source_assertion",
+              "text_sha256": null,
+              "char_start": null,
+              "char_end": null
+            }
+          ],
+          "source_integrity": {
+            "checked": 2,
+            "valid": true,
+            "invalid_evidence_ids": [],
+            "reasons": {}
+          },
+          "interface_status": {
+            "typed_core": {
+              "status": "used",
+              "records": [
+                "EvidenceRecord",
+                "RouteRecord",
+                "ChangeRecord"
+              ]
+            },
+            "organization_profiles": {
+              "status": "used",
+              "profile_id": "NEW-ORG-Z",
+              "profile_version": "2.0.0"
+            },
+            "ingestion": {
+              "status": "not_invoked"
+            },
+            "retrieval": {
+              "status": "not_invoked"
+            },
+            "extraction": {
+              "status": "deterministic_packet_rule_adapter",
+              "model_called": false
+            }
+          },
+          "source_facts": [
+            {
+              "field": "evidence:NEW-E1",
+              "state": "known",
+              "value": "Polymer-X is described as a coating candidate.",
+              "evidence_ids": [
+                "NEW-E1"
+              ],
+              "role": "source_fact"
+            },
+            {
+              "field": "evidence:NEW-E2",
+              "state": "known",
+              "value": "Polymer-Y is described as a coating candidate.",
+              "evidence_ids": [
+                "NEW-E2"
+              ],
+              "role": "source_fact"
+            },
+            {
+              "field": "coating uniformity",
+              "state": "unknown",
+              "value": null,
+              "evidence_ids": [],
+              "role": "unknown"
+            },
+            {
+              "field": "pilot yield",
+              "state": "unknown",
+              "value": null,
+              "evidence_ids": [],
+              "role": "unknown"
+            }
+          ],
+          "options": [
+            {
+              "option_id": "NEW-A",
+              "label": "NEW-A: polymer-x",
+              "policy_check_state": "passes_this_explicit_check",
+              "evidence_ids": [
+                "NEW-E1"
+              ],
+              "unknowns": [
+                "coating uniformity",
+                "pilot yield"
+              ]
+            },
+            {
+              "option_id": "NEW-B",
+              "label": "NEW-B: polymer-y",
+              "policy_check_state": "passes_this_explicit_check",
+              "evidence_ids": [
+                "NEW-E2"
+              ],
+              "unknowns": [
+                "coating uniformity",
+                "pilot yield"
+              ]
+            }
+          ],
+          "routes": [
+            {
+              "route_id": "NEW-PROJECT-ALPHA:NEW-A",
+              "label": "NEW-A: polymer-x",
+              "status": "candidate",
+              "policy_check_state": "passes_this_explicit_check",
+              "evidence_ids": [
+                "NEW-E1"
+              ],
+              "constraint_ids": [
+                "NEW-POLICY-1"
+              ],
+              "unknowns": [
+                "coating uniformity",
+                "pilot yield"
+              ],
+              "contradictions": [],
+              "policy_scope_status": "matched",
+              "policy_reasons": []
+            },
+            {
+              "route_id": "NEW-PROJECT-ALPHA:NEW-B",
+              "label": "NEW-B: polymer-y",
+              "status": "candidate",
+              "policy_check_state": "passes_this_explicit_check",
+              "evidence_ids": [
+                "NEW-E2"
+              ],
+              "constraint_ids": [
+                "NEW-POLICY-1"
+              ],
+              "unknowns": [
+                "coating uniformity",
+                "pilot yield"
+              ],
+              "contradictions": [],
+              "policy_scope_status": "matched",
+              "policy_reasons": []
+            }
+          ],
+          "unknowns": [
+            "coating uniformity",
+            "pilot yield"
+          ],
+          "contradictions": [],
+          "proposed_next_tests": [
+            {
+              "test_id": "NEW-PROJECT-ALPHA-NEXT-001",
+              "purpose": "verify unresolved route fields with a bounded measurement",
+              "status": "proposed",
+              "inputs": [
+                "coating uniformity",
+                "pilot yield"
+              ]
+            }
+          ],
+          "handoff": {
+            "kind": "development_integration_handoff",
+            "status": "ready_for_review",
+            "global_blocked": false,
+            "ready_reason": "artifact and traceability checks only; reviewer approval is separate",
+            "review_state": "not_reviewed",
+            "facts_are_not_scientific_validation": true,
+            "policy_scope_reasons": []
+          },
+          "agent_input_fields": [
+            "brief",
+            "event",
+            "evidence",
+            "options",
+            "policy",
+            "profile",
+            "project_id",
+            "unknowns"
+          ],
+          "mock_provider_called": false
+        },
+        "after": {
+          "case_id": "NEW-PROJECT-ALPHA",
+          "state_id": "1",
+          "project_display_name": "NEW-PROJECT-ALPHA",
+          "profile_id": "NEW-ORG-Z",
+          "profile_version": "2.0.0",
+          "brief": "Compare two fictional coating routes and identify what must be measured before a formulation handoff.",
+          "fictional_stipulations": {
+            "policy": {
+              "rule_id": "NEW-POLICY-2",
+              "origin": null,
+              "role_scope": null,
+              "allowed_initial": [],
+              "carrier_scope": null,
+              "real_organization_rule": null,
+              "forbidden_inhibitors": [],
+              "operator": null,
+              "normalization": null,
+              "maximum": null,
+              "count_kind": null,
+              "component": "coating",
+              "permitted_materials": [
+                "polymer-x",
+                "polymer-y"
+              ],
+              "forbidden_materials": [
+                "polymer-x"
+              ]
+            },
+            "options": [
+              {
+                "option_id": "NEW-A",
+                "candidate_id": null,
+                "selected_component": "coating",
+                "selected_material": "polymer-x",
+                "selection_origin": null,
+                "selected_carrier": null,
+                "selected_inhibitor": null,
+                "selected_route": null,
+                "basis": null,
+                "evidence_ids": [
+                  "NEW-E1"
+                ]
+              },
+              {
+                "option_id": "NEW-B",
+                "candidate_id": null,
+                "selected_component": "coating",
+                "selected_material": "polymer-y",
+                "selection_origin": null,
+                "selected_carrier": null,
+                "selected_inhibitor": null,
+                "selected_route": null,
+                "basis": null,
+                "evidence_ids": [
+                  "NEW-E2"
+                ]
+              }
+            ],
+            "basis": "caller-supplied bounded workflow input; not a real-organization fact"
+          },
+          "interpretations": [
+            {
+              "statement": "unsupported or absent evidence remains unknown",
+              "basis": "generic offline workflow rule"
+            }
+          ],
+          "allowed_evidence": [
+            {
+              "evidence_id": "NEW-E1",
+              "text": "Polymer-X is described as a coating candidate.",
+              "source_id": "NEW-SOURCE-1",
+              "source_version": "v7",
+              "document_id": null,
+              "family_id": null,
+              "source_locator": "new-source#paragraph-1",
+              "locator": {
+                "dataset_field": "text",
+                "paragraph_id": null,
+                "printed_paragraph_num": null,
+                "char_start": null,
+                "char_end": null,
+                "offset_unit": null,
+                "g08_trimmed_component_offsets": null
+              },
+              "origin": "source_assertion",
+              "text_sha256": null,
+              "char_start": null,
+              "char_end": null
+            },
+            {
+              "evidence_id": "NEW-E2",
+              "text": "Polymer-Y is described as a coating candidate.",
+              "source_id": "NEW-SOURCE-1",
+              "source_version": "v7",
+              "document_id": null,
+              "family_id": null,
+              "source_locator": "new-source#paragraph-2",
+              "locator": {
+                "dataset_field": "text",
+                "paragraph_id": null,
+                "printed_paragraph_num": null,
+                "char_start": null,
+                "char_end": null,
+                "offset_unit": null,
+                "g08_trimmed_component_offsets": null
+              },
+              "origin": "source_assertion",
+              "text_sha256": null,
+              "char_start": null,
+              "char_end": null
+            }
+          ],
+          "source_integrity": {
+            "checked": 2,
+            "valid": true,
+            "invalid_evidence_ids": [],
+            "reasons": {}
+          },
+          "interface_status": {
+            "typed_core": {
+              "status": "used",
+              "records": [
+                "EvidenceRecord",
+                "RouteRecord",
+                "ChangeRecord"
+              ]
+            },
+            "organization_profiles": {
+              "status": "used",
+              "profile_id": "NEW-ORG-Z",
+              "profile_version": "2.0.0"
+            },
+            "ingestion": {
+              "status": "not_invoked"
+            },
+            "retrieval": {
+              "status": "not_invoked"
+            },
+            "extraction": {
+              "status": "deterministic_packet_rule_adapter",
+              "model_called": false
+            }
+          },
+          "source_facts": [
+            {
+              "field": "evidence:NEW-E1",
+              "state": "known",
+              "value": "Polymer-X is described as a coating candidate.",
+              "evidence_ids": [
+                "NEW-E1"
+              ],
+              "role": "source_fact"
+            },
+            {
+              "field": "evidence:NEW-E2",
+              "state": "known",
+              "value": "Polymer-Y is described as a coating candidate.",
+              "evidence_ids": [
+                "NEW-E2"
+              ],
+              "role": "source_fact"
+            },
+            {
+              "field": "coating uniformity",
+              "state": "unknown",
+              "value": null,
+              "evidence_ids": [],
+              "role": "unknown"
+            },
+            {
+              "field": "pilot yield",
+              "state": "unknown",
+              "value": null,
+              "evidence_ids": [],
+              "role": "unknown"
+            }
+          ],
+          "options": [
+            {
+              "option_id": "NEW-A",
+              "label": "NEW-A: polymer-x",
+              "policy_check_state": "fails_this_explicit_check",
+              "evidence_ids": [
+                "NEW-E1"
+              ],
+              "unknowns": [
+                "coating uniformity",
+                "pilot yield"
+              ]
+            },
+            {
+              "option_id": "NEW-B",
+              "label": "NEW-B: polymer-y",
+              "policy_check_state": "passes_this_explicit_check",
+              "evidence_ids": [
+                "NEW-E2"
+              ],
+              "unknowns": [
+                "coating uniformity",
+                "pilot yield"
+              ]
+            }
+          ],
+          "routes": [
+            {
+              "route_id": "NEW-PROJECT-ALPHA:NEW-A",
+              "label": "NEW-A: polymer-x",
+              "status": "draft",
+              "policy_check_state": "fails_this_explicit_check",
+              "evidence_ids": [
+                "NEW-E1"
+              ],
+              "constraint_ids": [
+                "NEW-POLICY-2"
+              ],
+              "unknowns": [
+                "coating uniformity",
+                "pilot yield"
+              ],
+              "contradictions": [],
+              "policy_scope_status": "matched",
+              "policy_reasons": []
+            },
+            {
+              "route_id": "NEW-PROJECT-ALPHA:NEW-B",
+              "label": "NEW-B: polymer-y",
+              "status": "candidate",
+              "policy_check_state": "passes_this_explicit_check",
+              "evidence_ids": [
+                "NEW-E2"
+              ],
+              "constraint_ids": [
+                "NEW-POLICY-2"
+              ],
+              "unknowns": [
+                "coating uniformity",
+                "pilot yield"
+              ],
+              "contradictions": [],
+              "policy_scope_status": "matched",
+              "policy_reasons": []
+            }
+          ],
+          "unknowns": [
+            "coating uniformity",
+            "pilot yield"
+          ],
+          "contradictions": [],
+          "proposed_next_tests": [
+            {
+              "test_id": "NEW-PROJECT-ALPHA-NEXT-001",
+              "purpose": "verify unresolved route fields with a bounded measurement",
+              "status": "proposed",
+              "inputs": [
+                "coating uniformity",
+                "pilot yield"
+              ]
+            }
+          ],
+          "handoff": {
+            "kind": "development_integration_handoff",
+            "status": "ready_for_review",
+            "global_blocked": false,
+            "ready_reason": "artifact and traceability checks only; reviewer approval is separate",
+            "review_state": "not_reviewed",
+            "facts_are_not_scientific_validation": true,
+            "policy_scope_reasons": []
+          },
+          "agent_input_fields": [
+            "brief",
+            "event",
+            "evidence",
+            "options",
+            "policy",
+            "profile",
+            "project_id",
+            "unknowns"
+          ],
+          "mock_provider_called": false
+        },
+        "read_back": true,
+        "route_history_versions": [
+          1,
+          2
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  "metrics": {
+    "state_count": 2,
+    "change_count": 1,
+    "source_integrity": true,
+    "sqlite_read_back": true,
+    "elapsed_seconds": 0.0011684999917633832,
+    "benchmark": false,
+    "paid_api": false
+  }
+}

@@ -1,15 +1,16 @@
 {
   "format": "ptp-long-run-resume-current-head-checkpoint-v1",
-  "observed_at_utc": "2026-11-02T17:58:12.802744Z",
+  "observed_at_utc": "2026-11-02T18:13:58.761341Z",
   "parent_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT.json",
   "goal": "Patent-to-Pilot research-product O1-O4",
   "candidate": {
     "branch": "codex/patent-to-pilot-long-run-20261103",
     "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
-    "head": "e63e8a9d8996f805904a019579c405129171353c",
-    "head_role": "runtime_tested_code_test_and_receipt_commit",
-    "documentation_only_followup": true,
-    "working_tree": "CLEAN_AFTER_DOCUMENTATION_UPDATE",
+    "head": "46ab5ac3b272dd6cce2ac48aa123b2c7e4838fcd",
+    "head_role": "release_verification_cleanup_and_receipt_commit",
+    "runtime_tested_source_head": "e63e8a9d8996f805904a019579c405129171353c",
+    "documentation_only_followup": false,
+    "working_tree": "CLEAN_BEFORE_DOCUMENTATION_UPDATE",
     "base_main": "0d049802d36bc2eebe60331ec444d62469fd767f",
     "main_is_ancestor": true
   },
@@ -48,6 +49,19 @@
       "paid_cost_usd": 0.0,
       "prior_pass_receipt": "docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103-r2/verification.json",
       "prior_failed_attempt": "docs/healthtech/audits/ptp-long-run-resume-20261103/offline-verification-20261103/verification.json"
+    },
+    "isolated_release_verification": {
+      "status": "PASS_CURRENT_CANDIDATE",
+      "command": "ptp-release-f9ac895-venv\\Scripts\\python.exe scripts\\verify_release_offline.py --output-dir docs\\healthtech\\audits\\ptp-long-run-resume-20261103\\release-verification-20261103-r3 --source-commit 46ab5ac --forbid-root C:\\Users\\User\\Desktop\\myProject\\patent-to-pilot",
+      "receipt": "docs/healthtech/audits/ptp-long-run-resume-20261103/release-verification-20261103-r3/verification.json",
+      "result": "142 tests, 0 failures, 0 errors, 0 skipped",
+      "workflow_commands_exit_code": 0,
+      "source_files_unchanged": true,
+      "socket_gate_attempts": 0,
+      "forbidden_file_read_attempts": 0,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "fresh_install_or_deployment_validation": false
     },
     "frontend_unit": {
       "status": "PASS",
@@ -106,7 +120,7 @@
     "G4": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
     "G5": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
     "G6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
-    "G7": "PARTIAL_CURRENT_HEAD_GUARDED_OFFLINE_REPRO_FRESH_RELEASE_NOT_RUN",
+    "G7": "PASS_ISOLATED_RELEASE_REPRODUCTION_CURRENT_CANDIDATE",
     "G8": "NOT_RUN_FUTURE_SCOPE"
   },
   "o2_runtime_binding": {
@@ -128,5 +142,5 @@
     "new_24h_window": false,
     "historical_receipts_rewritten": false
   },
-  "next_action": "Owner review of current candidate; expose only the existing authorized O3/O4 evidence paths if paid or exact-head real-case continuation is still desired; otherwise continue manuscript/reproducibility work without starting a new batch."
+  "next_action": "Owner review of current candidate; keep API/new-compute branches gated, and continue manuscript/reproducibility work without starting a new batch unless the existing authorized O3/O4 evidence paths are exposed."
 }

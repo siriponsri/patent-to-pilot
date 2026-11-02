@@ -1271,3 +1271,29 @@ deployment validation.
 Next: retain the current guarded result, keep paid/O3 and exact-head O4 gates
 closed, and continue only with offline manuscript/reproducibility work until
 the specific external evidence is available.
+
+## HT-NEXT-105 — 2026-11-03 isolated release verification on current candidate
+
+Status: `PASS_ENGINEERING_RELEASE_VERIFIED_PARTIAL_SCIENTIFIC_EXTERNAL_GATES_REMAIN`;
+checkpoint: `docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json`.
+
+After removing only generated verifier scratch files, candidate
+`46ab5ac3b272dd6cce2ac48aa123b2c7e4838fcd` passed the isolated release verifier:
+`142` tests passed, with `0` failures, `0` errors, and `0` skips. The README
+workflow, offline comparison, provider dry-run, goal preflight, G13 preflight,
+and stage-boundary checks all exited `0`; source files stayed unchanged,
+forbidden reads and socket attempts were `0`, provider calls were `0`, and paid
+cost was `USD 0.00`. The receipt is
+`docs/healthtech/audits/ptp-long-run-resume-20261103/release-verification-20261103-r3/verification.json`.
+
+This closes the fresh isolated release-reproduction item for G7 only. It is not
+fresh-clone/deployment validation and does not change the existing boundaries:
+O2 remote rerun is expired, O3 API remains gated by canonical journal/credit/
+route/pricing/rights evidence, O4 exact-head real-case assets remain absent,
+the B2/B3/B4 frontier is descriptive with unequal realized budgets, and
+external business validation remains not validated. No new experiment, GPU,
+API, dataset, ledger, budget, or 24-hour window was started.
+
+Next: owner review this current candidate; continue manuscript/reproducibility
+work offline and keep paid/new-compute branches closed until the specific
+existing evidence gates are exposed.
