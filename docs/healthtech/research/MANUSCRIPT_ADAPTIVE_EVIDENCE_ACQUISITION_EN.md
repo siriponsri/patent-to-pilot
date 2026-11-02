@@ -6,7 +6,7 @@ Target venue: *World Patent Information* (official scope checked on 2026-11-01; 
 
 ## Abstract
 
-Patent-information workflows for medical devices must connect regulatory or product evidence to patent records without silently treating a retrieved candidate as a disclosed relationship. This study evaluates whether adaptive evidence acquisition improves the auditability and resource efficiency of device-patent screening when documented links are incomplete. We compare metadata, lexical, strong fixed hybrid, fixed multi-query, and simple adaptive policies under shared evidence access, candidate universes, cutoffs, group splits, and budget units. The primary endpoint is macro known-link Recall@K over source-backed documented relationships; unlisted pairs remain unjudged rather than negative. A separate dossier application uses at least three permitted real device cases and tests source inspection, editing, history, and export. The current repository contains descriptive offline results and a verified local engineering path, but not a rights-cleared semantic relevance gold set, a powered confirmatory comparison, a live provider comparison, or independent user validation. In the frozen descriptive audit, HT-B2 has the highest final-holdout macro Recall@20 (0.8857), while HT-B1 and HT-B4-MOCK each record 0.8381; a four-company sensitivity audit shows that observed rankings vary by held-out company. These results are not superiority claims because the cohort is small, repeated across local relations, and based on product-level disclosures. The practical contribution is a reproducible patent-information protocol and evidence-dossier workflow that makes provenance, unknowns, costs, and failure modes inspectable.
+Patent-information workflows for medical devices must connect regulatory or product evidence to patent records without silently treating a retrieved candidate as a disclosed relationship. This study evaluates whether adaptive evidence acquisition improves the auditability and resource efficiency of device-patent screening when documented links are incomplete. We compare metadata, lexical, strong fixed hybrid, fixed multi-query, and simple adaptive policies under shared evidence access, candidate universes, cutoffs, group splits, and declared per-call budget units while reporting realized total resources. The primary endpoint is macro known-link Recall@K over source-backed documented relationships; unlisted pairs remain unjudged rather than negative. A separate dossier application uses at least three permitted real device cases and tests source inspection, editing, history, and export. The current repository contains descriptive offline results and a verified local engineering path, but not a rights-cleared semantic relevance gold set, a powered confirmatory comparison, a live provider comparison, or independent user validation. In the frozen descriptive audit, HT-B2 has the highest final-holdout macro Recall@20 (0.8857), while HT-B1 and HT-B4-MOCK each record 0.8381; a four-company sensitivity audit shows that observed rankings vary by held-out company. These results are not equal-total-budget superiority claims because the cohort is small, repeated across local relations, and the realized query/rerank budgets differ by policy. The practical contribution is a reproducible patent-information protocol and evidence-dossier workflow that makes provenance, unknowns, costs, and failure modes inspectable.
 
 Keywords: patent information; medical devices; evidence acquisition; adaptive retrieval; incomplete judgments; provenance; cost-quality trade-off; reproducible research
 
@@ -19,7 +19,7 @@ This paper studies a narrower question: when the evidence acquisition budget is 
 The contributions are:
 
 1. A provenance-bound evaluation contract that preserves raw and canonical identifiers, source revisions, rights policies, exact locators, and the distinction between disclosed links, retrieved candidates, and unjudged pairs.
-2. A matched comparison of fixed and adaptive evidence-acquisition policies with predeclared grouping, leakage controls, resource accounting, and failure retention.
+2. A frozen-input comparison of fixed and adaptive evidence-acquisition policies with predeclared grouping, leakage controls, explicit per-call budget controls, realized-resource accounting, and failure retention.
 3. A reproducible dossier workflow that connects retrieval to source inspection, editing, history, and bilingual export for real permitted medical-device cases.
 4. A bounded quality-cost and business-value analysis that reports operational potential without inventing user validation, willingness-to-pay, revenue, or ROI.
 
@@ -62,7 +62,7 @@ The 1 November 2026 benchmark-expansion continuation adds a rights-checked Helme
 | HT-B3 | simple adaptive heuristic | tests whether a rule is sufficient |
 | HT-B4 | bounded controller | optional adaptive condition; live status remains gated |
 
-All methods receive the same frozen corpus, eligible inputs, source cutoff, candidate universe, K, permitted metadata, output schema, failure rules, and declared budget units. If a method uses an additional representation, the matched fixed condition must report and account for that representation as well.
+All methods receive the same frozen corpus, eligible inputs, source cutoff, candidate universe, K, permitted metadata, output schema, failure rules, and declared per-call budget units. Equal inputs and per-call caps do not imply equal total query or rerank budgets when policies stop at different prefixes. If a method uses an additional representation, the matched fixed condition must report and account for that representation as well.
 
 ### 5.2 Splits and leakage controls
 
@@ -159,13 +159,15 @@ its seven-patent candidate universe. The rerun is reproducibility evidence for
 the offline controller, not a semantic adaptive-superiority result; its exact
 input/output hashes are recorded in [`ht-o4-offline-current-head-20261101`](../audits/ht-o4-offline-current-head-20261101/README.md).
 
-### 7.4 Matched current-head offline frontier
+### 7.4 Frozen-input current-head offline frontier
 
-To make the O4 comparison explicit on one frozen cohort, the current candidate
-`891f3b3` reran HT-B0a/B0b/B1/B2/B3 and the deterministic offline HT-B4
+To make the O4 comparison explicit on one frozen cohort, the 1 November
+current-head candidate `891f3b3` reran HT-B0a/B0b/B1/B2/B3 and the deterministic offline HT-B4
 controller on the same Abbott runtime, references, groups, encoder/reranker
 bundle, candidate depth 41, rerank depth 41, and K=20. All fifteen
-method-device rows and all controller devices completed without failure.
+method-device rows and all controller devices completed without failure. These
+conditions match evidence access and per-call depth; they do not equalize total
+query or rerank budgets across policies.
 
 | Method | Macro Recall@20 | Query calls | Rerank pairs | Evidence class |
 |---|---:|---:|---:|---|
@@ -177,17 +179,29 @@ method-device rows and all controller devices completed without failure.
 | HT-B4 offline | 0.498802 | 5 | 205 | deterministic controller |
 
 The controller also recorded micro Recall@20 `0.475410` and eight controller
-steps. B0b is the strongest observed condition in this development slice;
-B4 ties B1 and B3 at the macro endpoint. This is a matched descriptive
-quality-resource frontier, not evidence that adaptive acquisition is generally
-better or worse. The cohort has two exact-patent groups, one company group, no
-final holdout, and product-level disclosed-link labels rather than semantic
-relevance gold. The raw/evaluator receipts and hashes are in
+steps. The realized total retrieval budgets were 3 query calls/123 rerank pairs
+for HT-B1, 9/369 for HT-B2, and 5/205 for both HT-B3 and offline HT-B4. The
+eight HT-B4 controller steps are a separate action count, not a dollar or
+rerank budget. B0b is the strongest observed condition in this development
+slice; B4 ties B1 and B3 at the macro endpoint. This is a frozen-input,
+realized quality-resource frontier, not an equal-total-budget comparison and
+not evidence that adaptive acquisition is generally better or worse. The
+cohort has two exact-patent groups, one company group, no final holdout, and
+product-level disclosed-link labels rather than semantic relevance gold. The
+raw/evaluator receipts and hashes are in
 [`ht-o4-matched-offline-current-head-20261101`](../audits/ht-o4-matched-offline-current-head-20261101/README.md).
 
 ### 7.5 Engineering application slice
 
-The current O1-O4 engineering receipts cover three named real-device cases through browser/HTTP job start, retrieval, local generation, source inspection, edit/history, reopen, and export. Local generation was schema-valid for `3/3` cases in the recorded receipt; provider calls were `0` and paid cost was `USD0.00`. This is engineering and application evidence, not a user study or a three-case scientific benchmark.
+The recorded O1-O4 engineering receipt from the reviewed prior candidate covers
+three named real-device cases through browser/HTTP job start, retrieval, local
+generation, source inspection, edit/history, reopen, and export. Local
+generation was schema-valid for `3/3` cases in that receipt; provider calls
+were `0` and paid cost was `USD0.00`. The current continuation candidate has
+passed the loopback HTTP contract, but its exact-head real-case rerun is
+asset-gated because the permitted cohort, rights matrix, and vector/runtime
+bundles are not present. This is engineering and application evidence, not a
+user study or a three-case scientific benchmark.
 
 ### 7.6 Figures and machine-readable outputs
 
@@ -262,7 +276,7 @@ The historical component scores remain bound to pre-run candidate `cd7e5d364d529
 
 ## 12. Conclusion
 
-The current evidence supports a reproducible patent-information workflow and a disciplined computational study design for adaptive evidence acquisition under incomplete judgments. The four-company sensitivity audit and the new PANORAMA/Helmers component results show that the pipeline can be evaluated against multiple task-shaped signals, while also exposing the limits of transferring option-selection or selected-pool relevance metrics into device-patent dossier claims. The strongest defensible contribution is the combination of provenance-aware state separation, matched resource accounting, explicit unknowns, reproducible dossier operations, and honest quality-cost reporting. A stronger scientific conclusion requires a matched final adaptive dossier study on independent groups with an appropriate semantic judgment source or benchmark. A stronger business conclusion requires future authorized user or customer evidence.
+The current evidence supports a reproducible patent-information workflow and a disciplined computational study design for adaptive evidence acquisition under incomplete judgments. The four-company sensitivity audit and the new PANORAMA/Helmers component results show that the pipeline can be evaluated against multiple task-shaped signals, while also exposing the limits of transferring option-selection or selected-pool relevance metrics into device-patent dossier claims. The strongest defensible contribution is the combination of provenance-aware state separation, explicit per-call and realized-resource accounting, explicit unknowns, reproducible dossier operations, and honest quality-cost reporting. A stronger scientific conclusion requires a final adaptive dossier study with equalized total budgets, independent groups, and an appropriate semantic judgment source or benchmark. A stronger business conclusion requires future authorized user or customer evidence.
 
 ## Declarations
 

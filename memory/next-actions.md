@@ -1170,3 +1170,34 @@ retains the prior three-case receipt but does not relabel it as exact-head after
 the relevant HTTP/generation code changed; the current exact-head real-case
 rerun is asset-gated. Continue offline manuscript/reproducibility work and
 request only the specific missing evidence when an external branch is desired.
+
+## HT-NEXT-101 — 2026-11-03 readiness review repair and budget clarification
+
+Status: `PASS_PROSPECTIVE_FAILURE_ACCOUNTING_PARTIAL_SCIENTIFIC`; checkpoint:
+`docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT.json`.
+
+Read Pepo's parallel readiness review and evidence index. Repaired
+`scripts/healthtech/run_real_baselines.py` so method-level exceptions preserve
+partial attempts and measured wall/CPU time, action-level failures record
+elapsed resources and explicit unknown fields, and frontier diagnostics retain
+method failures. Added `tests/test_healthtech_real_baselines.py`; the focused
+baseline/analysis/report/controller/cross-cohort package passed `12` tests,
+with compile and diff checks passing. The full Python suite exited `0` with one
+optional tokenizer skip and warnings only.
+
+Historical impact search found no tracked baseline receipt with non-zero
+`failed_query_count`, `error_count`, or `failed_device_count`; affected rounds
+are `NONE_KNOWN`. Existing receipts and costs were not rewritten and no
+retrospective cost was inferred.
+
+Corrected the manuscript and checkpoint interpretation of the 1 November
+frontier: shared frozen inputs and per-call depth `41/41` did not produce equal
+total budgets. Realized units were B1 `3/123`, B2 `9/369`, B3 `5/205`, and
+offline B4 `5/205` retrieval calls/rerank pairs, with `8` separate B4 controller
+steps. The result remains a descriptive realized quality-resource frontier;
+equal-total-budget superiority is not established. No new experiment, paid
+call, GPU job, ledger mutation, or participant route was started.
+
+Next: keep the API/new-compute branches gated; continue owner-review and WPI
+submission-readiness work, and only run a future batch after freezing explicit
+total-budget controls and exposing the authorized evidence gates.

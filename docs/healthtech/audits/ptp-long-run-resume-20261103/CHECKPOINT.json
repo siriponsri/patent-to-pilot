@@ -1,14 +1,14 @@
 {
   "format": "ptp-long-run-resume-checkpoint-v1",
-  "observed_at_utc": "2026-11-02T17:05:41.2609051Z",
+  "observed_at_utc": "2026-11-02T17:22:23.0889875Z",
   "goal": "Patent-to-Pilot research-product O1-O4",
   "candidate": {
     "branch": "codex/patent-to-pilot-long-run-20261103",
     "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
-    "head": "b4bc13ccf8a9a71a8f50d16346ae1c6557bc69d0",
+    "head": "1c1a1d8ac436bfd491f85d3230a7179a26f2e7cc",
     "base_main": "0d049802d36bc2eebe60331ec444d62469fd767f",
     "main_is_ancestor": true,
-    "dirty_before_checkpoint": false
+    "dirty_before_checkpoint": true
   },
   "process_quiescence": {
     "relevant_experiment_processes": 0,
@@ -60,6 +60,38 @@
     "ledger_mutations": 0,
     "new_24h_window": false,
     "historical_receipts_rewritten": false
+  },
+  "readiness_review_followup": {
+    "source": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/",
+    "failure_accounting": {
+      "status": "PASS_PROSPECTIVE_REPAIR",
+      "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+      "test_contract_commit": "1c1a1d8ac436bfd491f85d3230a7179a26f2e7cc",
+      "regression_tests": "12 passed",
+      "historical_rounds_affected": "NONE_KNOWN",
+      "historical_cost_rewrite": false,
+      "unknown_resources_are_explicit": true
+    },
+    "budget_comparison": {
+      "status": "PASS_INTERPRETATION_CORRECTED",
+      "matched_dimensions": [
+        "frozen corpus",
+        "eligible queries",
+        "references/groups",
+        "encoder/reranker bundle",
+        "K=20",
+        "candidate_depth=41",
+        "rerank_depth=41"
+      ],
+      "realized_units": {
+        "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+        "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+        "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+        "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+      },
+      "equal_total_budget_claim": "NOT_SUPPORTED",
+      "interpretation": "descriptive_realized_quality_resource_frontier"
+    }
   },
   "next_action": "Continue offline release/manuscript work; rerun exact-head real cases only after authorized cohort assets are exposed; keep paid API fail-closed until canonical evidence is reconciled."
 }

@@ -8,7 +8,7 @@ branch; the dirty long-run, Claude, Luna, and owner worktrees were preserved.
 
 ## Candidate and process state
 
-- Candidate HEAD: `b4bc13ccf8a9a71a8f50d16346ae1c6557bc69d0`.
+- Candidate HEAD at this checkpoint: `1c1a1d8ac436bfd491f85d3230a7179a26f2e7cc`.
 - Worktree: `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103`.
 - Base relationship: `main` at `0d049802d36bc2eebe60331ec444d62469fd767f` is an ancestor.
 - The only SSH process observed was the Codex remote app-server proxy; no
@@ -59,5 +59,67 @@ Continue offline engineering and manuscript/reproducibility work. For O4 exact-
 head real-case rerun, use only an already authorized cohort, rights matrix,
 vector bundle, and model/runtime manifest when the owner exposes those specific
 paths. For O3 API, reconcile the existing canonical R1 history, current credit,
-outbound prompt rights, and route/pricing binding through the permitted channel;
-do not ask for the USD8 approval again and do not create a replacement ledger.
+  outbound prompt rights, and route/pricing binding through the permitted channel;
+  do not ask for the USD8 approval again and do not create a replacement ledger.
+
+## Readiness review follow-up — 2026-11-03
+
+The parallel readiness review at
+`C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/`
+was read before this checkpoint. Its two actionable findings were handled as
+an offline engineering/documentation package; no baseline, GPU, API, dataset,
+ledger, or new 24-hour run was started.
+
+### Failure accounting repair
+
+`scripts/healthtech/run_real_baselines.py` now carries one execution state per
+method. An unexpected method-level exception preserves completed/failed
+attempts, records measured method wall/CPU time, and avoids appending a
+synthetic attempt. Action-level failures retain measured elapsed time and mark
+unavailable fields (`returned_candidates`, `rerank_pairs`, embedding/rerank
+tokens) as `PARTIAL_UNKNOWN` instead of writing zero values. Frontier errors
+also include method-level failures, so a partial run remains visible to the
+evaluator and report layer.
+
+The focused regression package is in
+`tests/test_healthtech_real_baselines.py`. The current candidate passed the
+targeted baseline/analysis/report/controller/cross-cohort suite (`12 passed`),
+`compileall`, and `git diff --check` before this audit write. The full Python
+suite also exited `0` with one optional tokenizer skip and warnings only.
+
+Historical impact was checked without rewriting artifacts: no tracked
+`run_real_baselines.py` receipt in the current candidate has a non-zero
+`failed_query_count`, `error_count`, or `failed_device_count`. The affected
+rounds are therefore `NONE_KNOWN`; this repair is prospective. Historical
+zero-failure receipts and all recorded costs remain unchanged. No retrospective
+cost is inferred from the old handler.
+
+### Budget interpretation for B2/B3/B4
+
+The 1 November frontier used the same frozen corpus, eligible queries,
+references/groups, encoder/reranker bundle, K=20, and candidate/rerank depth
+`41/41`. That is matched evidence access and per-call configuration, not a
+matched total budget. The realized retrieval units were:
+
+| Method | Query calls | Rerank pairs | Budget interpretation |
+|---|---:|---:|---|
+| HT-B1 | 3 | 123 | one fixed query per device |
+| HT-B2 | 9 | 369 | full fixed multi-query schedule |
+| HT-B3 | 5 | 205 | heuristic stopping prefix |
+| HT-B4 offline | 5 | 205 | deterministic controller retrieval calls; 8 separate controller steps |
+
+Accordingly, the package is a descriptive realized quality-resource frontier.
+It is not evidence of equal-total-budget superiority for B2, B3, or B4, and the
+manuscript now states that boundary. The original receipts remain immutable;
+the current audit is the canonical interpretation for the continuation.
+
+### Checkpoint status
+
+- Engineering: `COMPLETE_FOR_FAILURE-ACCOUNTING-PACKAGE`; current O1 loopback and prior engineering receipts remain separately bound.
+- Scientific evidence: `PARTIAL`; the frozen frontier is descriptive, total budgets are not equalized, semantic gold and powered confirmatory inference remain unavailable.
+- Business validation: `PARTIAL`; operational-potential proxies only; no external user, demand, WTP, revenue, or ROI evidence.
+- Manuscript readiness: `PARTIAL`; claim boundary and budget interpretation were corrected, while WPI-specific submission details and owner review remain open.
+
+The paid/API and new compute branches remain gated by the existing canonical
+evidence. This checkpoint does not request the prior USD8 authorization again,
+reset any ledger/window, or add AI4AI as a goal condition.
