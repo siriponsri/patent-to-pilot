@@ -721,5 +721,10 @@
   "latest_readiness_post_review_status": "PASS_FAILURE_ACCOUNTING_REGRESSION_CURRENT_HEAD_BUDGET_BOUNDARY_CONFIRMED",
   "latest_readiness_post_review_source_candidate": "323bcc5d39ad5374ec8bfce8007d24c1881eae86",
   "latest_readiness_post_review_focused_tests": "50 passed, 1 skipped, 1 warning",
-  "latest_readiness_post_review_full_tests": "599 passed, 1 skipped, 2 warnings"
+  "latest_readiness_post_review_full_tests": "599 passed, 1 skipped, 2 warnings",
+  "latest_remote_preflight_current_head": "docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/REMOTE_PREFLIGHT_CURRENT_HEAD_20261103.json",
+  "latest_remote_preflight_current_head_status": "PASS_READ_ONLY_NO_ACTIVE_EXPERIMENT_ALLOCATION_UNKNOWN_SERVICE_UNTOUCHED",
+  "latest_remote_preflight_current_head_observed_at_utc": "2026-11-02T19:20:56+00:00",
+  "latest_remote_preflight_current_head_service_pid": 1745699,
+  "latest_remote_preflight_current_head_paid_dispatch": "CLOSED"
 }

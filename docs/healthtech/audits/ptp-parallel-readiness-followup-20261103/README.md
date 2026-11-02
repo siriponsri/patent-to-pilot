@@ -13,6 +13,21 @@ not open a new goal, budget, API key, GPU window, or scientific batch.
 - Relevant experiment processes: none
 - Existing SSH process: PID `31888`, started `2026-11-02 10:00:03` local time; classified as the Codex remote app-server proxy, not an experiment or GPU/API run.
 
+## Current-head remote preflight
+
+A second read-only inspection was performed at `2026-11-02T19:20:56Z` before
+considering any next batch. No local experiment process or experiment lock was
+active. On `dr-train`, the only relevant process was the existing HTTP service
+PID `1745699` on port `18787`, started at `2026-10-31T08:27:48Z`, with logical
+code commit `o4-http-remote`. A zero-byte GPU lock marker was present, but it
+does not establish ownership or an authorized allocation. The service was not
+killed, modified, relaunched, or used for a new run.
+
+The read-only `/providers` response showed local Qwen3-8B and local PatEmbed
+availability, while OpenRouter and paid dispatch remained closed with unknown
+remote budget fields. This is component/service observation only. The machine-
+readable receipt is [`REMOTE_PREFLIGHT_CURRENT_HEAD_20261103.json`](REMOTE_PREFLIGHT_CURRENT_HEAD_20261103.json).
+
 ## Failure-accounting finding
 
 The reviewed implementation is already present in the candidate. The repair

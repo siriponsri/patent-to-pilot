@@ -1465,3 +1465,21 @@ No API call, GPU job, dataset download, ledger mutation, budget/window reset,
 or new experiment was started. Stop at this checkpoint; keep paid/new-compute
 branches gated and resume only with owner review or independently authorized
 offline work.
+
+## HT-NEXT-114 — 2026-11-03 current-head remote preflight
+
+Status: `PASS_READ_ONLY_NO_ACTIVE_EXPERIMENT_ALLOCATION_UNKNOWN_SERVICE_UNTOUCHED`;
+receipt:
+`docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/REMOTE_PREFLIGHT_CURRENT_HEAD_20261103.json`.
+
+Before any next batch, a strict read-only SSH inspection found no local or
+remote scientific experiment process. The existing remote HTTP service remains
+PID `1745699` on port `18787` (`o4-http-remote`), with a zero-byte GPU lock
+marker. Because the marker does not prove ownership or allocation, the service
+was left untouched. `/providers` showed local Qwen3-8B and PatEmbed components;
+OpenRouter and paid dispatch remained closed.
+
+No API call, GPU job, model inference, dataset download, install, remote write,
+ledger mutation, budget reset, or new experiment occurred. Next action remains
+offline work or owner review only until an authoritative allocation, runtime
+window, lock ownership, and existing budget/rights gates are exposed.
