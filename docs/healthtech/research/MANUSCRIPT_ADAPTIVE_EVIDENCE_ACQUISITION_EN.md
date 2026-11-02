@@ -225,6 +225,12 @@ asset-gated because the permitted cohort, rights matrix, and vector/runtime
 bundles are not present. This is engineering and application evidence, not a
 user study or a three-case scientific benchmark.
 
+The current O1 engineering receipt separately rechecked the loopback service
+on source candidate `ec3f72147bb8d12531720e5e6dbd8d78914ba25d`: 28 backend
+contract tests passed, and browser HTTP integration passed for source
+inspection, history `1 -> 2`, edit/reopen, and JSON/Thai/English export. The
+machine-readable receipt is [`ptp-o1-current-head-20261103/verification.json`](../audits/ptp-o1-current-head-20261103/verification.json).
+
 ### 7.6 Figures and machine-readable outputs
 
 The current frozen descriptive audits provide the following actual figure and table inputs:
@@ -282,7 +288,7 @@ The benchmark-expansion reproducibility addendum and machine-readable receipts a
 
 An additional manifest extension was inspected without changing the primary experiment: a 30-row PatSnap claim-charting file, two PatentsView assignee benchmark CSVs, and a 1,374-row AffRoDB JSONL file passed the recorded byte/hash/schema checks. PatSnap and AffRoDB remain unscored diagnostics; PatentsView remains excluded because standalone data rights were not established, and AffRoDB lacks the pinned ROR v1.40 registry needed for a valid linkage evaluation. These assets therefore do not add evidence for adaptive dossier superiority and are retained only as rights-aware reproducibility inventory.
 
-The historical component scores remain bound to pre-run candidate `cd7e5d364d529a001fc51f78c217c10d7d9c8945` and are retained for provenance only. A current-head revalidation was run against `ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd` using the same frozen protocol and verified payloads; its summary/prediction hashes and failure denominator are recorded in [`CURRENT_HEAD_COMPONENT_RESULTS.json`](../audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json) and [`CHECKPOINT_V10_CURRENT_HEAD.json`](../audits/benchmark-expansion-20261101/CHECKPOINT_V10_CURRENT_HEAD.json). Results from different candidates or different protocol manifests are not combined into one PASS claim.
+The historical component scores remain bound to pre-run candidate `cd7e5d364d529a001fc51f78c217c10d7d9c8945` and are retained for provenance only. A current-head revalidation was run against `ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd` using the same frozen protocol and verified payloads; its summary/prediction hashes and failure denominator are recorded in [`CURRENT_HEAD_COMPONENT_RESULTS.json`](../audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json) and [`CHECKPOINT_V10_CURRENT_HEAD.json`](../audits/benchmark-expansion-20261101/CHECKPOINT_V10_CURRENT_HEAD.json). A later provenance check confirmed that the result-producing PANORAMA/Helmers and local-Qwen paths remained unchanged through source candidate `bd7f7ad7238fad052a24b1b878a7fedfba490404`; no inference or benchmark rerun was performed. That rebind is recorded in [`ptp-component-rebind-20261103/verification.json`](../audits/ptp-component-rebind-20261103/verification.json). Results from different candidates or different protocol manifests are not combined into one PASS claim.
 
 ## 11. Limitations
 
