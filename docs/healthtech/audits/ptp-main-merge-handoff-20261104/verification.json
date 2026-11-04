@@ -1,0 +1,50 @@
+{
+  "format": "ptp-main-merge-handoff-v1",
+  "run_id": "ptp-main-merge-handoff-20261104",
+  "observed_utc": "2026-11-04T12:15:46.2028916Z",
+  "repository": "C:/Users/User/Desktop/myProject/patent-to-pilot",
+  "branch": "main",
+  "head": "26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09",
+  "candidate_commit": "a71d808",
+  "preserved_main_commit": "f77c502",
+  "merge_commit": "26be1c1",
+  "status": "MERGED_LOCAL_VERIFIED_PUSH_PENDING",
+  "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_SCOPE",
+  "scientific_evidence": "PARTIAL_NO_PAID_COMPARISON_NO_FINAL_SEMANTIC_HOLDOUT",
+  "business_validation": "PARTIAL_SOLO_PROXY_EXTERNAL_VALIDATION_NOT_RUN",
+  "manuscript": "PARTIAL_OWNER_REVIEW_NOT_SUBMITTED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_STALE_CREDIT_SNAPSHOT",
+  "tests": {
+    "python_current_head_exit": 0,
+    "python_exact_prior_receipt": "655 passed; 2 skipped",
+    "frontend_unit": "73 passed; 1 optional skip",
+    "healthtech_json_files_parsed": 964,
+    "source_merge_markers": 0,
+    "non_audit_diff_check": "PASS"
+  },
+  "ledger": {
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_e2_cap_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutated": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "downloads": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "remote_before_push": {
+    "ahead": 78,
+    "behind": 0
+  },
+  "next_action": "Push main, then delete only verified-clean unused temporary worktrees after confirming protected worktrees are preserved.",
+  "paid_next_input": "One fresh non-secret credit snapshot for the existing dispatch key with matching E2 scope and observation age <=300 seconds at dispatch."
+}

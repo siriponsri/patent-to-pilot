@@ -1,0 +1,20 @@
+{
+  "checkpoint": "MAIN_MERGED_LOCAL_VERIFIED_HANDOFF_READY",
+  "parent_goal": "Patent-to-Pilot O1-O4",
+  "observed_utc": "2026-11-04T12:15:46.2028916Z",
+  "branch": "main",
+  "worktree": "C:/Users/User/Desktop/myProject/patent-to-pilot",
+  "head": "26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09",
+  "candidate_head": "a71d808",
+  "ownership": "main owner preserved; Claude/Luna/owner worktrees retained",
+  "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_SCOPE",
+  "scientific_evidence": "PARTIAL",
+  "business_validation": "PARTIAL_SOLO_PROXY_ONLY",
+  "manuscript_readiness": "PARTIAL_OWNER_REVIEW_NOT_SUBMITTED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_STALE_CREDIT",
+  "canonical_ledger": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+  "ledger_state": "integrity ok; 4 legacy settled; USD0.0001464 known; 0 operational/pending/unknown; prospective USD1; unknown history preserved",
+  "first_runtime_job_utc": null,
+  "deadline_utc": "2026-11-15T16:59:59Z",
+  "next_actual_command": "Verify origin/main, push main, then remove only verified-clean unused temporary worktrees."
+}

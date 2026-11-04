@@ -2713,5 +2713,26 @@
                                               "focused_tests":  "43 passed; 0 failed; 0 skipped",
                                               "resource_mutations":  "provider 0; reservations 0; attempts 0; retries 0; GPU jobs 0; downloads 0; ledger unchanged; budget/window reset false",
                                               "next":  "Obtain one fresh non-secret credit snapshot for the existing key, then refresh route pricing inside the same 300-second window and reserve only the bounded E2 canary."
-                                          }
+                                          },
+    "latest_patent_to_pilot_main_merge_20261104":  {
+                                                       "observed_utc":  "2026-11-04T12:15:46.2028916Z",
+                                                       "main_head":  "26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09",
+                                                       "candidate_commit":  "a71d808",
+                                                       "preserved_main_commit":  "f77c502",
+                                                       "merge_commit":  "26be1c1",
+                                                       "branch":  "main",
+                                                       "status":  "MERGED_PUSH_PENDING_HANDOFF_READY",
+                                                       "engineering":  "CURRENT_HEAD_OFFLINE_VERIFIED",
+                                                       "scientific_evidence":  "PARTIAL_NO_PAID_COMPARISON_OR_FINAL_SEMANTIC_HOLDOUT",
+                                                       "business_validation":  "PARTIAL_SOLO_PROXY_EXTERNAL_VALIDATION_NOT_RUN",
+                                                       "manuscript":  "PARTIAL_OWNER_REVIEW_WPI_GUIDE_AND_AIMS_UNVERIFIED_NOT_SUBMITTED",
+                                                       "paid_api":  "BLOCKED_BEFORE_RESERVATION_STALE_CREDIT_SNAPSHOT",
+                                                       "python_regression":  "exit_0_current_main; exact prior receipt 655 passed 2 skipped",
+                                                       "frontend_unit":  "73 passed 1 optional skip",
+                                                       "healthtech_json":  "964 parsed",
+                                                       "remote_before_push":  "ahead 78 behind 0",
+                                                       "protected_worktrees":  "preserved",
+                                                       "next":  "Push main, then delete only verified-clean unused temporary worktrees; retain Claude/Luna/owner worktrees and dirty research work",
+                                                       "handoff":  "docs/healthtech/audits/ptp-main-merge-handoff-20261104/README.md"
+                                                   }
 }

@@ -4917,3 +4917,28 @@ retrieval, AI/ML IP research, IR evaluation/benchmarking, and real-data
 experiments. Journal-specific ScienceDirect pages remain inaccessible with
 HTTP 403, so no formatting or article-type rule was inferred. Owner browser
 recheck remains required before submission; the article is still not submitted.
+
+## HT-NEXT-MAIN-MERGE-20261104 — merged main and Claude handoff
+
+Status: `MERGED_LOCAL_VERIFIED_PUSH_PENDING_HANDOFF_READY`; canonical audit:
+`docs/healthtech/audits/ptp-main-merge-handoff-20261104/README.md`.
+
+The continuation candidate was integrated into `main` at
+`26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`, preserving the owner-main commit
+`f77c502` and candidate integration commit `a71d808`. The current main working
+tree is clean. Python regression exits `0`; the exact candidate-bound receipt
+is `655 passed, 2 skipped`. Frontend unit tests are `73 passed, 1 optional
+skip`, and 964 HealthTech JSON receipts parse.
+
+Engineering is complete for the current offline scope. Scientific evidence,
+business validation, manuscript readiness and paid API remain partial. The
+paid branch is blocked before reservation because the supplied credit snapshot
+is stale for the 300-second gate. Ledger history is unchanged: four legacy
+settled receipts totaling `USD0.0001464`, zero operational/pending/unknown
+attempts, prospective E2 allowance `USD1`, and unknown history preserved.
+
+Next: push `main`, confirm the remote SHA, then remove only verified-clean
+unused temporary worktrees. Preserve Claude/Luna/owner worktrees and dirty
+research work. Continue paid work only after one fresh non-secret credit
+snapshot for the existing key; do not reset history, retry stale evidence or
+close the research goal from this merge.
