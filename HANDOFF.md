@@ -14,6 +14,9 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 - Track B: canary content audit 9/9 literal-correct. The device known-link cohort stays descriptive.
 - Spending this round: USD0 in paid calls and about 289 s of V100 encoding. The E2 ledger is unchanged since the canary (USD0.99945484 left under the code-enforced USD1; the owner allowance is USD10).
 - Next steps: [NEXT_ACTIONS](docs/healthtech/audits/ptp-wpi-research-package-20261104/NEXT_ACTIONS.md). Owner decisions: [READINESS](docs/healthtech/audits/ptp-wpi-research-package-20261104/READINESS.md).
+- 5 Nov 2026, plan only (nothing run): an organization-adaptive cross-domain acquisition study on DAPFAM that builds on Paper 53 and Paper 86. See the [protocol draft](docs/healthtech/research/ORG_ADAPTIVE_CROSS_DOMAIN_PROTOCOL_DRAFT_20261105_EN.md) and the [PoC plan](docs/healthtech/research/ORG_ADAPTIVE_POC_PLAN_20261105_EN.md).
+  - Owner decisions: the myIS journal_08 WPI package is an older plan and this study replaces it if stronger; Paper 86 is confirmed unpublished; organizations are IPC sections; the baseline reproduces ARM-03.
+  - Next: Stage 0.
 
 Earlier status: `PAUSED_BY_OWNER_NORMAL_MAIN_ONLY_AUDIT`
 

@@ -8,6 +8,18 @@
 
 This Normal round is a documentation/test audit on `main`, not a goal continuation. The older candidate and continuation queue remain historical references; no current READY package is opened here. Platform Luna state remains unverified; this file does not resume a runtime goal.
 
+## HT-NEXT-267 — 2026-11-05 Organization-adaptive cross-domain study (plan only)
+
+Status: `PLAN_DRAFT_NOT_FROZEN`. Protocol draft: `../docs/healthtech/research/ORG_ADAPTIVE_CROSS_DOMAIN_PROTOCOL_DRAFT_20261105_EN.md`. PoC plan: `../docs/healthtech/research/ORG_ADAPTIVE_POC_PLAN_20261105_EN.md`.
+
+- Target: adaptive, cost-accounted candidate acquisition for DAPFAM strict-OUT exposure at an equal budget of 200 families. Qwen3-8B actions (functional abstraction, IPC-shift, pseudo-document), a contextual-bandit policy, and simulated organizations defined by IPC section A–H.
+- Owner decisions (2026-11-05):
+  - journal_08 in myIS is an older plan; this study replaces it at WPI if it is stronger.
+  - Paper 86 is confirmed unpublished.
+  - Organizations are IPC sections.
+  - The baseline reproduces ARM-03 (PatEmbed-large passages).
+- Next: Stage 0. Check hashes, build the component-grouped split, reproduce ARM-03 within 0.005 of strict-OUT Recall@200 0.260, and run a 20-query Qwen canary. Do not open test before the Stage 1 headroom gate and the Stage 2 freeze commit. No paid calls.
+
 ## HT-NEXT-266 — 2026-11-04 WPI research package (Track A)
 
 Status: `TRACK_A_COMPLETE_PREREGISTERED_TEST`; canonical audit: `../docs/healthtech/audits/ptp-wpi-research-package-20261104/README.md`.
