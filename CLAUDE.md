@@ -7,7 +7,8 @@ This file is a project-local continuation guide. `AGENTS.md`, the current owner 
 - Repository: `C:/Users/User/Desktop/myProject/patent-to-pilot`
 - Branch: `main`
 - Main checkpoint before this file was added: `686f8338c4b288cfe706ae16f4aae8f885b81ebb`
-- Pushed handoff checkpoint: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`
+- Initial pushed handoff checkpoint: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`
+- Cleanup-record checkpoint: `46421f0d99f3425af1e841991411f80a21031a72`
 - Source merge already tested: `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`
 - Current task state: owner requested a detailed handoff, main verification/push, local cleanup where safe, then pause.
 - Goal status: not complete overall. Engineering is complete for the current offline scope; science, paid comparison, external business validation, and WPI submission remain partial or blocked.

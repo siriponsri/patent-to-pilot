@@ -29,7 +29,8 @@ The main checkout was clean before this handoff-document change.
 - Candidate integration commit: `a71d808`
 - Preserved owner-main commit: `f77c502`
 - Prior handoff documentation commit: `7e8fd1a`
-- Final documentation-update commit: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`.
+- Initial handoff-document commit: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`.
+- Cleanup-record commit already pushed: `46421f0d99f3425af1e841991411f80a21031a72`.
 
 The intended final check is:
 

@@ -7,6 +7,7 @@
   "tested_source_merge_head": "26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09",
   "handoff_document_commit": "7e8fd1a",
   "pushed_handoff_commit": "d407d61eb14c3fbde0163bc7d54207a00dc4f05d",
+  "cleanup_record_commit": "46421f0d99f3425af1e841991411f80a21031a72",
   "candidate_head": "a71d808",
   "ownership": "main owner preserved; Claude/Luna/owner worktrees retained",
   "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_SCOPE",

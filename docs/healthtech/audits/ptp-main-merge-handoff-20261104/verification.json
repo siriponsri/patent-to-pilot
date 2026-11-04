@@ -11,6 +11,7 @@
   "merge_commit": "26be1c1",
   "status": "MERGED_PUSHED_ORIGIN_VERIFIED_HANDOFF_PAUSED",
   "pushed_head": "d407d61eb14c3fbde0163bc7d54207a00dc4f05d",
+  "cleanup_record_commit": "46421f0d99f3425af1e841991411f80a21031a72",
   "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_SCOPE",
   "scientific_evidence": "PARTIAL_NO_PAID_COMPARISON_NO_FINAL_SEMANTIC_HOLDOUT",
   "business_validation": "PARTIAL_SOLO_PROXY_EXTERNAL_VALIDATION_NOT_RUN",
