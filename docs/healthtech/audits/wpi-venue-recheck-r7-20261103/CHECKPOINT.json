@@ -1,0 +1,9 @@
+{
+  "format": "ptp-wpi-venue-recheck-r7-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_OFFICIAL_SCOPE_PROFILE_RECHECK_GUIDE_DIRECT_403",
+  "scope_fit": "CONDITIONAL",
+  "journal_specific_requirements": "UNVERIFIED",
+  "submission": "NOT_SUBMITTED",
+  "next": "Owner browser/session recheck of the live WPI Guide for Authors"
+}

@@ -1,0 +1,81 @@
+{
+  "verification_version": "benchmark-expansion-verification-v2",
+  "verified_date": "2026-11-01",
+  "candidate": "80da253969f7973cc630ce03ac83da9900f16628",
+  "pre_run_scoring_candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "working_tree_state": "clean_committed",
+  "source_pack_parent_commit": "f826069dddb74d4df9ca820a33c07355bec8b357",
+  "checks": [
+    {
+      "name": "focused_benchmark_tests",
+      "command": "python -m pytest -q tests\\test_healthtech_benchmark_expansion.py",
+      "status": "PASS",
+      "result": "6 passed after non-commercial rights-gate regression"
+    },
+    {
+      "name": "new_script_compile",
+      "command": "python -m py_compile scripts\\healthtech\\acquire_benchmark_expansion.py scripts\\healthtech\\download_ranges.py scripts\\healthtech\\run_panorama_lexical_baseline.py scripts\\healthtech\\run_helmers_diagnostic.py",
+      "status": "PASS"
+    },
+    {
+      "name": "diff_check",
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "name": "full_python_suite",
+      "command": "python -m pytest -q",
+      "status": "PASS",
+      "result": "exit_code 0; one existing skip observed"
+    }
+  ],
+  "acquisition": {
+    "status": "PASS",
+    "files_verified": 5,
+    "failures": 0,
+    "payload_storage": "outside_git",
+    "rights_and_version_checks": "PASS",
+    "hash_and_size_checks": "PASS",
+    "archive_and_parquet_schema_checks": "PASS"
+  },
+  "freeze": {
+    "status": "PASS",
+    "manifest": "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_FREEZE.json",
+    "final_holdout": "official PANORAMA test splits",
+    "runtime_label_exclusions": ["gold_answers", "silver_answers", "negative_answers", "answer-derived queries"],
+    "cross_split_application_overlap": {"PAR4PC": 0, "PI4PC": 0},
+    "candidate_overlap_diagnostic": {"PAR4PC": 149, "PI4PC": 38}
+  },
+  "results": {
+    "PANORAMA_PAR4PC_validation_macro_gold_hit_at_1": 0.7335754374380984,
+    "PANORAMA_PAR4PC_test_macro_gold_hit_at_1": 0.7151243093922652,
+    "PANORAMA_PI4PC_validation_macro_gold_hit_at_1": 0.3776987553975108,
+    "PANORAMA_PI4PC_test_macro_gold_hit_at_1": 0.4012345679012346,
+    "PANORAMA_failed_output_rate": 0.0,
+    "HELMERS_macro_average_precision": 0.885450432614385,
+    "HELMERS_macro_auc": 0.880011844305422,
+    "HELMERS_targets": 10,
+    "HELMERS_judged_pairs": 450
+  },
+  "claim_boundary": {
+    "main_adaptive_dossier_study": "NOT_EVALUATED_BY_THIS_PACK",
+    "external_business_validation": "NOT_VALIDATED",
+    "paid_api_calls": 0,
+    "gpu_jobs": 0,
+    "paid_cost_usd": 0.0,
+    "ledger_reset": false
+  },
+  "submission_gate": {
+    "official_wpi_pages": "OWNER_RECHECK_REQUIRED_HTTP_403_IN_THIS_ENVIRONMENT",
+    "submission_sent": false,
+    "owner_approval_required": true,
+    "literature_index": "docs/healthtech/audits/benchmark-expansion-20261101/LITERATURE_INDEX.md"
+  },
+  "cleanup_limitation": {
+    "path": "outside_git:_private_artifacts/healthtech/benchmark-expansion-20261101/PANORAMA PAR4PC_PI4PC validation+test/PI4PC/test.parquet.part",
+    "bytes": 35309248,
+    "status": "REMAINS_OUTSIDE_GIT_CLEANUP_BLOCKED_BY_SHELL_GUARD",
+    "used_as_input": false
+  }
+}

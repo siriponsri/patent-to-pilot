@@ -1,0 +1,62 @@
+{
+  "format": "ptp-o2-current-head-completion-reconciliation-v1",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "COMPLETE_ENGINEERING_CURRENT_HEAD_REMOTE_SHARDS_TO_SHARED_ENGINE",
+  "source_receipts": {
+    "prior_remote": "docs/healthtech/audits/ht-research-product-20261031/verification.json",
+    "prior_remote_manifest": "docs/healthtech/audits/ht-research-product-20261031/manifest.json",
+    "remote_local_reconciliation": "docs/healthtech/audits/ptp-remote-artifact-manifest-reconciliation-20261103/verification.json",
+    "current_patembed_engine": "docs/healthtech/audits/ptp-o2-patembed-http-rebind-20261103/verification.json",
+    "current_e5_engine": "docs/healthtech/audits/ptp-o2-e5-http-rebind-20261103/verification.json",
+    "current_runtime_rebind": "docs/healthtech/audits/ptp-current-head-runtime-rebind-20261103/verification.json"
+  },
+  "remote_execution": {
+    "canary_interruption_resume": "PASS_WITH_RECOVERY_BOTH_ENCODERS",
+    "full_encoding": {
+      "passage_rows": 45336,
+      "passage_shards_per_model": 10,
+      "query_rows": 1247,
+      "dimension": 768
+    },
+    "windows_import": "PASS_COMPLETE_BUNDLES_ACCEPTED",
+    "remote_write": false
+  },
+  "manifest_binding": {
+    "device_bundles": 4,
+    "hashes_equal_remote_to_local": true,
+    "device_corpus_runtime_hash_equal": true,
+    "device_query_runtime_hash_equal": true,
+    "ordering_and_config_checks": "PASS_FROM_CURRENT_ENGINE_RECEIPTS"
+  },
+  "current_head_shared_engine": {
+    "patembed": {
+      "provider_revision": "datalyes/patembed-base@244ba452908a3093be11efb8a44396652317fb14",
+      "cases_succeeded": 3,
+      "cases_total": 3,
+      "vector_errors": 0,
+      "source_history_edit_export": "PASS"
+    },
+    "multilingual_e5": {
+      "provider_revision": "intfloat/multilingual-e5-base@d128750597153bb5987e10b1c3493a34e5a4502a",
+      "cases_succeeded": 3,
+      "cases_total": 3,
+      "vector_errors": 0,
+      "source_history_edit_export": "PASS"
+    }
+  },
+  "research": {
+    "status": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "reason": "DAPFAM is a citation/family diagnostic, and the three named devices are application cases rather than a final semantic holdout."
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "goal_closed": false,
+  "next": "Keep O2 engineering complete; continue O3 paid gate and O4 research packaging without another GPU rerun."
+}

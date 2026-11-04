@@ -1,0 +1,15 @@
+{
+  "format": "ht-browser-abbott-harness-receipt-v1",
+  "status": "NOT_RUN_ASSET_GATED",
+  "command": "npm run test:integration:abbott",
+  "exit_code": 1,
+  "required_environment": [
+    "HEALTHTECH_ABBOTT_COHORT",
+    "HEALTHTECH_ABBOTT_RIGHTS_MATRIX",
+    "HEALTHTECH_ABBOTT_VECTOR_CONFIG"
+  ],
+  "case_preparation_started": false,
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "reason": "The current checkout has no permitted server-owned cohort runtime and vector configuration paths for a named-device browser run."
+}

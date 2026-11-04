@@ -1,0 +1,115 @@
+{
+  "at_utc": "2026-11-03T11:50:34.603368+00:00",
+  "scope": "exact known journal paths in registered Patent-to-Pilot worktrees plus canonical registry; not an exhaustive machine scan",
+  "paths_checked": 21,
+  "checks": [
+    {
+      "worktree": "patent-to-pilot",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-claude-ux-20261028",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-claude-ux-20261028",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-codex-remote-embeddings",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-codex-remote-embeddings",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-long-run-20261031",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-long-run-20261031",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-long-run-20261103",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-long-run-20261103",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-luna-publication-20261030",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-luna-publication-20261030",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-o1-20261031",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-o1-20261031",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-o3-safety-repair-20261031",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-o3-safety-repair-20261031",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-pepo-unblock-20261030",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-pepo-unblock-20261030",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-research-product-20261031",
+      "relative_path": "results/development/provider-pilot/live.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "patent-to-pilot-research-product-20261031",
+      "relative_path": "results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "exists": false
+    },
+    {
+      "worktree": "owner_localappdata",
+      "relative_path": "PatentToPilot/healthtech/budget-ledgers/PTP-HT-OR-R1-20261028-USD8.json",
+      "exists": false
+    }
+  ],
+  "found": 0,
+  "journal_contents_read": false,
+  "secrets_read": false
+}

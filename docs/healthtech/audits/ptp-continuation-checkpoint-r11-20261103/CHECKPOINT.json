@@ -1,0 +1,13 @@
+{
+  "format": "ptp-continuation-checkpoint-r11-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_NOT_COMPLETE",
+  "engineering": "COMPLETE_O1_AND_CURRENT_HEAD_O2_PROVIDER_BINDING_THREE_CASE_O4_ENGINEERING",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "CURRENT_HEAD_PROVENANCE_BOUND_OWNER_REVIEW_PENDING",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_LIMIT_MISSING",
+  "journal": "E2 integrity ok; 0 operational attempts; 4 legacy settled; USD0.0001464 preserved; prospective USD1; unknown history preserved",
+  "next": "Keep goal active; reconcile non-secret paid-gate evidence if supplied, otherwise continue offline and owner review"
+}

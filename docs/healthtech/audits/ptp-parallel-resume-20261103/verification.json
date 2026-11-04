@@ -1,0 +1,137 @@
+{
+  "format": "ptp-parallel-resume-checkpoint-v1",
+  "observed_at_local": "2026-11-03T07:01:52.9652388+07:00",
+  "observed_at_utc": "2026-11-03T00:01:53Z",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree": "dirty_expected_source_patch_and_audit_docs"
+  },
+  "remote_staging": {
+    "host": "dr-train",
+    "user": "chaw",
+    "code_root": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/code/codex-local-current-head-20261103",
+    "pack": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/inputs/codex-local-current-head-20261103/evidence-pack.json",
+    "pack_sha256": "0b2bef9fcf8c3eff6106a1786885e4407ea4b8c9e628397ab8e52a392204ced9",
+    "runner_sha256": "d3f195e81959db3bf35661b9b0fc3a6593a0ad8a1e7b8a234a47fbeedee63d9c",
+    "generation_payload_sha256": "47e7711d77d0a58b1a5c7e0e86ea6401cb43a77f6ea59081d0a4e182cfc76045",
+    "local_execution_sha256": "25ed4283936885352054c5cd5d10d5f4c78fcf8bbe26762dc7da9ee7a5a35e0d",
+    "python_import_and_compile": "PASS",
+    "model_root": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/qwen3-8b",
+    "model_size_observed": "16G",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.55.2",
+    "visible_gpu": "Tesla V100-SXM2-32GB",
+    "visible_gpu_count": 1,
+    "cuda_uuid_binding": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "output_root_used_by_launch": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261103/outputs/codex-local-current-head-20261103",
+    "output_root_is_separate_from_code_input_root": true
+  },
+  "remote_runtime": {
+    "approved_gpu": {
+      "uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+      "memory_used_mib_after_run": 0,
+      "memory_free_mib_after_run": 32495,
+      "status": "RUN_COMPLETED_AND_RELEASED"
+    },
+    "pre_run_blocking_process": {
+      "pid": 3203927,
+      "user": "chaw",
+      "command": "/data/CIE/envs/forecast/bin/python backtest.py --data /data/CIE/world_predic/forecast/data/2026-10/panel_monthly.csv --out /data/CIE/world_predic/forecast/runs/M-2026-10 --end 2027-10 --origins 60 --step 1",
+      "started_at_utc": "2026-11-02T23:00:07Z",
+      "action": "LEFT_UNTOUCHED",
+      "status_before_launch": "ENDED_BEFORE_LAUNCH"
+    },
+    "existing_http_service": {
+      "pid": 1745699,
+      "port": 18787,
+      "action": "LEFT_UNTOUCHED"
+    },
+    "generation_process_started": true,
+    "receipt_created": true,
+    "receipt_path": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261103/outputs/codex-local-current-head-20261103/generation-receipt-guided.json",
+    "receipt_sha256": "1c60d4a0e1cf989f60e718707d3c65859c851e30dbe2c4e828674350dceb4227",
+    "receipt_bytes": 10540,
+    "run_status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
+    "started_at_utc": "2026-11-03T00:03:16.343832+00:00",
+    "completed_at_utc": "2026-11-03T00:05:20.229754+00:00",
+    "elapsed_seconds": 123.885922,
+    "load_seconds": 5.668705694843084,
+    "guided_json": true,
+    "guided_json_library": "lm-format-enforcer",
+    "total_prompt_tokens": 3073,
+    "total_output_tokens": 1054,
+    "cases": [
+      {
+        "case_id": "HT-DEV-MITRACLIP",
+        "messages_sha256": "aff765c814db1f16a113a4f6d447ca0937d1be8910ff0001b2eca2bc25beb1a7",
+        "prompt_tokens": 1017,
+        "output_tokens": 351,
+        "latency_seconds": 39.62501802504994,
+        "output_sha256": "d0ef3132f7afeb07106995e97ac739adf73142ec0309c248e739c418147928c9",
+        "schema_valid": true,
+        "parse_error": null
+      },
+      {
+        "case_id": "HT-DEV-TENDYNE",
+        "messages_sha256": "c51435f2b2661bb81ca8da28e9d954f8f4ede2d029c98c783c02b57dc671f2f2",
+        "prompt_tokens": 1036,
+        "output_tokens": 356,
+        "latency_seconds": 39.63239979208447,
+        "output_sha256": "1aafd2c4e0212fb868d3b9202574fef8fa499c6de5545efe618b0e14a68934f9",
+        "schema_valid": true,
+        "parse_error": null
+      },
+      {
+        "case_id": "HT-DEV-TRICLIP",
+        "messages_sha256": "cc400bb8612c3479f6205c58f5e8d46a9c0f0281893e9aa8ec6a1c0ae6897ef4",
+        "prompt_tokens": 1020,
+        "output_tokens": 347,
+        "latency_seconds": 38.84517579199746,
+        "output_sha256": "7fc9f4fa5fb91c9f49d59121302788a3dd880317daf68a5b7acbd5dd25998d9c",
+        "schema_valid": true,
+        "parse_error": null
+      }
+    ]
+  },
+  "api": {
+    "payload_preflight": "PASS_3_OF_3",
+    "rights_decision": "ALLOWED_WITH_ATTRIBUTION",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "canonical_registry_path": "C:/Users/User/AppData/Local/PatentToPilot/healthtech/budget-ledgers/ptp-ht-openrouter-r1-20261028-usd8-v1.json",
+    "canonical_registry_present": false,
+    "known_local_journal_paths_present": false,
+    "current_v2_credit_snapshot_present": false,
+    "historical_visible_debit_usd": 0.0001464,
+    "new_attempt_ids": 0,
+    "unknown_attempt_retried": false,
+    "env_file_present": true,
+    "env_contents_accessed": false,
+    "dispatch": "BLOCKED_BEFORE_RESERVATION"
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 1,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "zero_ledger_created": false,
+    "other_services_touched": false
+  },
+  "verification": {
+    "focused_tests": {
+      "command": "python -m pytest -q tests/test_o3_generation_repair.py tests/test_healthtech_local_execution.py tests/test_healthtech_api_generation.py tests/test_healthtech_ledger_registry.py tests/test_o3_adversarial_repair.py",
+      "passed": 74,
+      "failed": 0,
+      "skipped": 0,
+      "junit": "focused-tests.xml"
+    },
+    "compileall": "PASS",
+    "git_diff_check": "PASS",
+    "semantic_or_retrieval_evaluation": "NOT_RUN_BY_THIS_CANARY"
+  },
+  "next_action": "Poll PID 3203927; launch one fresh guided local pass only after the approved V100 is free. Obtain the existing canonical R1 journal or sanitized all-attempt export and a current v2 credit snapshot once before any paid reservation."
+}

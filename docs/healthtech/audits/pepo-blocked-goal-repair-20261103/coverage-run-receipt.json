@@ -1,0 +1,66 @@
+{
+  "started_utc": "2026-11-03T11:47:14.537365+00:00",
+  "completed_utc": "2026-11-03T11:47:16.518540+00:00",
+  "wall_seconds": 1.9805983999976888,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "dirty": true,
+  "source_sha256": "2be41ffc0613c1f577aa5d54c49c9b3d43e5f9b1fe20485cfde5c798ee481ffb",
+  "git_metadata_probe": "explicit snapshot from scoped git check; no recursive status scan",
+  "execution": "repaired analyzer.run and native DuckDB 2.0.0; no data/results mocked",
+  "provider_calls": 0,
+  "paid_cost_usd": 0,
+  "gpu_jobs": 0,
+  "source_inputs_unchanged": true,
+  "threads": 4,
+  "memory_limit": "4GB",
+  "screening": [
+    {
+      "dataset": "corpus",
+      "row_count": 45336,
+      "medical_device_rows": 3061,
+      "pharma_biologics_rows": 12163,
+      "missing_title_rows": 0,
+      "missing_abstract_rows": 0,
+      "missing_both_rows": 0
+    },
+    {
+      "dataset": "queries",
+      "row_count": 1247,
+      "medical_device_rows": 96,
+      "pharma_biologics_rows": 304,
+      "missing_title_rows": 0,
+      "missing_abstract_rows": 0,
+      "missing_both_rows": 0
+    }
+  ],
+  "positive_qrels": [
+    {
+      "domain_rel": "IN",
+      "positive_pairs": 19736,
+      "medical_device_query_screened_positive_pairs": 1687,
+      "medical_device_target_screened_positive_pairs": 1883,
+      "medical_device_both_screened_positive_pairs": 916,
+      "medical_device_screened_queries": 94,
+      "medical_device_screened_targets": 1473,
+      "pharma_biologics_query_screened_positive_pairs": 5086,
+      "pharma_biologics_target_screened_positive_pairs": 5183,
+      "pharma_biologics_both_screened_positive_pairs": 2012,
+      "pharma_biologics_screened_queries": 302,
+      "pharma_biologics_screened_targets": 4811
+    },
+    {
+      "domain_rel": "OUT",
+      "positive_pairs": 5193,
+      "medical_device_query_screened_positive_pairs": 233,
+      "medical_device_target_screened_positive_pairs": 1457,
+      "medical_device_both_screened_positive_pairs": 67,
+      "medical_device_screened_queries": 54,
+      "medical_device_screened_targets": 546,
+      "pharma_biologics_query_screened_positive_pairs": 994,
+      "pharma_biologics_target_screened_positive_pairs": 999,
+      "pharma_biologics_both_screened_positive_pairs": 234,
+      "pharma_biologics_screened_queries": 205,
+      "pharma_biologics_screened_targets": 862
+    }
+  ]
+}

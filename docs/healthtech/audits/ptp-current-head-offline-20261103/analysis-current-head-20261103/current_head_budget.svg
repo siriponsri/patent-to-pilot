@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="490" y="32" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">Current-head realized retrieval units</text>
+<text x="490" y="56" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">Same inputs and per-call depths; totals are observed, not equalized</text>
+<text x="390" y="82" text-anchor="middle" font-family="Arial" font-size="12" fill="#1d4ed8">Query calls (0 to 9)</text>
+<text x="770" y="82" text-anchor="middle" font-family="Arial" font-size="12" fill="#b45309">Rerank pairs (0 to 369)</text>
+<text x="216" y="128" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B0a</text>
+<line x1="230" y1="122" x2="380" y2="122" stroke="#dbeafe" stroke-width="10"/>
+<circle cx="280.0" cy="122" r="7" fill="#6b7280"/>
+<text x="390" y="127" font-family="Arial" font-size="11" fill="#1d4ed8">3</text>
+<line x1="620" y1="122" x2="840" y2="122" stroke="#fef3c7" stroke-width="10"/>
+<circle cx="620.0" cy="122" r="7" fill="#6b7280"/>
+<text x="850" y="127" font-family="Arial" font-size="11" fill="#b45309">0</text>
+<text x="216" y="180" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B0b</text>
+<line x1="230" y1="174" x2="380" y2="174" stroke="#dbeafe" stroke-width="10"/>
+<circle cx="280.0" cy="174" r="7" fill="#2563eb"/>
+<text x="390" y="179" font-family="Arial" font-size="11" fill="#1d4ed8">3</text>
+<line x1="620" y1="174" x2="840" y2="174" stroke="#fef3c7" stroke-width="10"/>
+<circle cx="620.0" cy="174" r="7" fill="#2563eb"/>
+<text x="850" y="179" font-family="Arial" font-size="11" fill="#b45309">0</text>
+<text x="216" y="232" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B1</text>
+<line x1="230" y1="226" x2="380" y2="226" stroke="#dbeafe" stroke-width="10"/>
+<circle cx="280.0" cy="226" r="7" fill="#0f766e"/>
+<text x="390" y="231" font-family="Arial" font-size="11" fill="#1d4ed8">3</text>
+<line x1="620" y1="226" x2="840" y2="226" stroke="#fef3c7" stroke-width="10"/>
+<circle cx="693.3" cy="226" r="7" fill="#0f766e"/>
+<text x="850" y="231" font-family="Arial" font-size="11" fill="#b45309">123</text>
+<text x="216" y="284" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B2</text>
+<line x1="230" y1="278" x2="380" y2="278" stroke="#dbeafe" stroke-width="10"/>
+<circle cx="380.0" cy="278" r="7" fill="#b45309"/>
+<text x="390" y="283" font-family="Arial" font-size="11" fill="#1d4ed8">9</text>
+<line x1="620" y1="278" x2="840" y2="278" stroke="#fef3c7" stroke-width="10"/>
+<circle cx="840.0" cy="278" r="7" fill="#b45309"/>
+<text x="850" y="283" font-family="Arial" font-size="11" fill="#b45309">369</text>
+<text x="216" y="336" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B3</text>
+<line x1="230" y1="330" x2="380" y2="330" stroke="#dbeafe" stroke-width="10"/>
+<circle cx="313.3" cy="330" r="7" fill="#7c3aed"/>
+<text x="390" y="335" font-family="Arial" font-size="11" fill="#1d4ed8">5</text>
+<line x1="620" y1="330" x2="840" y2="330" stroke="#fef3c7" stroke-width="10"/>
+<circle cx="742.2" cy="330" r="7" fill="#7c3aed"/>
+<text x="850" y="335" font-family="Arial" font-size="11" fill="#b45309">205</text>
+<text x="216" y="388" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B4-offline</text>
+<line x1="230" y1="382" x2="380" y2="382" stroke="#dbeafe" stroke-width="10"/>
+<circle cx="313.3" cy="382" r="7" fill="#be123c"/>
+<text x="390" y="387" font-family="Arial" font-size="11" fill="#1d4ed8">5</text>
+<line x1="620" y1="382" x2="840" y2="382" stroke="#fef3c7" stroke-width="10"/>
+<circle cx="742.2" cy="382" r="7" fill="#be123c"/>
+<text x="850" y="387" font-family="Arial" font-size="11" fill="#b45309">205</text>
+<text x="490" y="530" text-anchor="middle" font-family="Arial" font-size="11" fill="#4b5563">HT-B4 controller steps are reported separately and are not interchangeable with query/rerank units</text>
+</svg>

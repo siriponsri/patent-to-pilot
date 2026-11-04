@@ -1,0 +1,12 @@
+{
+  "checkpoint": "ptp-manuscript-current-r7-20261104",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+  "change": "ABSTRACT_HISTORICAL_TRANSFER_DIAGNOSTIC_EXPLICITLY_SEPARATED_FROM_CURRENT_HEAD_FRONTIER",
+  "metrics_changed": false,
+  "protocol_changed": false,
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "paid_api": "UNCHANGED_BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "goal_closed": false,
+  "next_action": "Owner review wording and remaining declarations; no paid retry or GPU rerun."
+}

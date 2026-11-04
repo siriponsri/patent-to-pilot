@@ -1,0 +1,426 @@
+"""Fail-closed OpenRouter Qwen3-32B generation runner for O3."""
+from __future__ import annotations
+
+import json
+from datetime import datetime
+import math
+from pathlib import Path
+import re
+import time
+from typing import Any, Callable
+
+from patent_to_pilot.healthtech.b4_live import B4Pricing, conservative_request_bound_usd
+from patent_to_pilot.healthtech.generation_payload import (
+    build_rights_cleared_paired_payload,
+    canonical_json,
+    sha256_json,
+    strip_fence,
+    validate_generation_output,
+)
+from patent_to_pilot.providers import (
+    BudgetExceededError,
+    MockHTTPTransport,
+    OpenRouterHTTPTransport,
+    ProviderCapabilities,
+    ProviderRequest,
+    ProviderResponse,
+)
+from patent_to_pilot.providers.round1 import (
+    R1_AUTHORIZATION_ID,
+    Round1ProjectBudget,
+    Round1Runner,
+    build_round1_config,
+    build_round1_policy,
+    request_payload_hash,
+)
+
+
+MODEL_ID = "qwen/qwen3-32b"
+CREDIT_SNAPSHOT_FORMAT = "ptp-openrouter-credit-snapshot-v1"
+
+
+class APIGenerationError(RuntimeError):
+    """Raised when an API generation precondition or result fails."""
+
+
+def _safe_token(value: str) -> str:
+    token = re.sub(r"[^A-Za-z0-9_-]+", "_", value).strip("_") or "item"
+    return token[:48]
+
+
+def _load_json(path: Path) -> dict[str, Any]:
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise APIGenerationError("API generation input is unreadable") from exc
+    if not isinstance(value, dict):
+        raise APIGenerationError("API generation input must be a JSON object")
+    return value
+
+
+def normalize_account_credit_snapshot(raw: dict[str, Any]) -> dict[str, Any]:
+    from patent_to_pilot.providers.credit import normalize_credit
+    try:
+        return normalize_credit(raw)
+    except ValueError as exc:
+        raise APIGenerationError(str(exc)) from None
+
+
+def pricing_from_snapshot(raw):
+    allowed = set(B4Pricing.model_fields) | {"non_thinking_parameters", "max_input_tokens", "context_length", "timeout_seconds"}
+    if set(raw) - allowed:
+        raise APIGenerationError("unknown model snapshot fields")
+    return B4Pricing.model_validate({key: value for key, value in raw.items() if key in B4Pricing.model_fields})
+
+
+class OpenRouterQwenGenerationRunner:
+    """Run one sequential, exact-route generation attempt per frozen case."""
+
+    def __init__(
+        self,
+        *,
+        budget: Round1ProjectBudget,
+        pricing: B4Pricing,
+        transport_factory: Callable[[], Any] | None = None,
+        live_enabled: bool = False,
+        account_credit_snapshot: dict[str, Any] | None = None,
+        run_id: str,
+        max_output_tokens: int = 512,
+        max_findings: int = 6,
+        non_thinking_parameters: dict[str, Any] | None = None,
+        max_input_tokens: int = 6144,
+        timeout_seconds: float = 45.0,
+    ) -> None:
+        if pricing.model != MODEL_ID:
+            raise APIGenerationError("API generation requires exact qwen/qwen3-32b")
+        if max_output_tokens < 1 or max_output_tokens > 4096:
+            raise APIGenerationError("max_output_tokens is outside the bounded range")
+        if max_findings < 1 or max_findings > 6:
+            raise APIGenerationError("max_findings is outside the frozen schema range")
+        if max_input_tokens < 1:
+            raise APIGenerationError("max_input_tokens must be positive")
+        if live_enabled and budget.namespace != "canonical":
+            raise BudgetExceededError("paid generation requires the canonical authorization ledger")
+        if live_enabled and account_credit_snapshot is None:
+            raise APIGenerationError("live generation requires a sanitized account credit snapshot")
+        self.budget = budget
+        self.pricing = pricing
+        self.live_enabled = live_enabled
+        self.account_credit_snapshot = (
+            normalize_account_credit_snapshot(account_credit_snapshot)
+            if account_credit_snapshot is not None
+            else None
+        )
+        self.budget.account_credit_snapshot = self.account_credit_snapshot
+        if non_thinking_parameters and non_thinking_parameters != {"reasoning": {"enabled": False}}:
+            raise APIGenerationError("only the reviewed reasoning.enabled=false parameter is supported")
+        self.case_observer = None
+        self.run_id = run_id
+        self.max_output_tokens = max_output_tokens
+        self.max_findings = max_findings
+        self.max_input_tokens = max_input_tokens
+        self.timeout_seconds = timeout_seconds
+        self.non_thinking_parameters = dict(non_thinking_parameters or {})
+        self.transport_factory = transport_factory or (lambda: OpenRouterHTTPTransport())
+        self.policy = budget.policy
+        if self.policy["models"].get(pricing.model) != pricing.upstream_provider:
+            raise APIGenerationError("pricing route differs from canonical budget policy")
+        self.config = build_round1_config(
+            self.policy,
+            phase="paired_pilot",
+            model=MODEL_ID,
+            max_price={
+                "prompt": pricing.max_price_prompt,
+                "completion": pricing.max_price_completion,
+            },
+            live_enabled=live_enabled,
+            max_input_tokens=max_input_tokens,
+            max_output_tokens=max_output_tokens,
+            max_total_tokens=max_input_tokens + max_output_tokens + 1024,
+            prompt_version="ptp-ht-o3-qwen3-32b-v1",
+        )
+        self.config.timeout_seconds = timeout_seconds
+        self.capabilities = ProviderCapabilities(
+            provider="openrouter",
+            model=MODEL_ID,
+            structured_outputs=True,
+            tools=False,
+            parameter_names=set(self.non_thinking_parameters),
+            exact_model_pin=True,
+            auto_routing=False,
+        )
+
+    def _request_for_case(self, payload_case: dict[str, Any]) -> tuple[ProviderRequest, int, int, float]:
+        messages = payload_case["messages"]
+        serialized = canonical_json(messages)
+        input_tokens = max(1, len(serialized))
+        schema_tokens = len(canonical_json(payload_case["response_schema"])) + 512
+        if input_tokens + schema_tokens > self.max_input_tokens:
+            raise APIGenerationError("frozen paired message exceeds configured input bound")
+        upper_bound = conservative_request_bound_usd(
+            input_tokens=input_tokens + schema_tokens,
+            output_tokens=self.max_output_tokens,
+            pricing=self.pricing,
+        )
+        request_id = f"{_safe_token(self.run_id)}-{_safe_token(payload_case['case_id'])}"
+        request = ProviderRequest(
+            prompt=messages[-1]["content"],
+            messages=messages,
+            response_schema=payload_case["response_schema"],
+            parameters=dict(self.non_thinking_parameters),
+            input_tokens_estimate=input_tokens,
+            schema_framing_tokens=schema_tokens,
+            max_output_tokens=self.max_output_tokens,
+            cost_upper_bound_usd=upper_bound,
+            request_id=request_id,
+        )
+        return request, input_tokens, schema_tokens, upper_bound
+
+    def run(self, pack: dict[str, Any]) -> dict[str, Any]:
+        if self.live_enabled and not self.non_thinking_parameters:
+            raise APIGenerationError(
+                "current route snapshot lacks an explicit non-thinking parameter binding"
+            )
+        payload = build_rights_cleared_paired_payload(
+            pack,
+            provider="openrouter",
+            model=MODEL_ID,
+            route=self.pricing.upstream_provider,
+            max_output_tokens=self.max_output_tokens,
+        )
+        prepared_cases = []
+        for payload_case, source_case in zip(payload["cases"], pack["cases"]):
+            request, input_tokens, schema_tokens, upper_bound = self._request_for_case(payload_case)
+            prepared_cases.append((payload_case, source_case, request, input_tokens, schema_tokens, upper_bound))
+        attempt_ids = [item[2].request_id for item in prepared_cases]
+        if len(set(attempt_ids)) != len(attempt_ids):
+            raise APIGenerationError("case IDs collide after attempt-ID normalization")
+        total_bound = sum(item[5] for item in prepared_cases)
+        if self.live_enabled:
+            from patent_to_pilot.providers.credit import normalize_credit
+            try:
+                normalize_credit(self.account_credit_snapshot, require_current=True)
+                from patent_to_pilot.healthtech.b4_live import validate_pricing_freshness
+                validate_pricing_freshness(self.pricing)
+            except ValueError as exc:
+                raise APIGenerationError(str(exc)) from None
+            assert self.account_credit_snapshot is not None
+            if self.account_credit_snapshot["remaining_credits_usd"] < total_bound:
+                raise BudgetExceededError("account credit snapshot is below the conservative run bound")
+        if self.live_enabled and not callable(self.case_observer):
+            raise APIGenerationError("durable local case journal required before live dispatch")
+        before = self.budget.snapshot()
+        existing_attempt_ids = {row[0] for row in self.budget.db.execute("SELECT attempt_id FROM budget_attempts")}
+        dispatched_attempt_ids = set()
+        result_cases: list[dict[str, Any]] = []
+        transport_modes = []
+        response_evidence = {}
+        def make_transport():
+            transport = self.transport_factory()
+            mode = "mock" if transport.is_mock else "live"
+            if transport_modes and mode != transport_modes[0]:
+                raise APIGenerationError("mixed mock/live transports are not a paired run")
+            transport_modes.append(mode)
+            class CaptureReturnedText:
+                is_mock = transport.is_mock
+
+                def preflight(self, **kwargs):
+                    check = getattr(transport, "preflight", None)
+                    if callable(check):
+                        return check(**kwargs)
+
+                def send(self, **kwargs):
+                    dispatched_attempt_ids.add(kwargs["request"].request_id)
+                    response = transport.send(**kwargs)
+                    body = response.payload if isinstance(response.payload, dict) else {}
+                    choices = body.get("choices")
+                    if isinstance(choices, list) and choices and isinstance(choices[0], dict):
+                        message = choices[0].get("message")
+                        content = message.get("content") if isinstance(message, dict) else None
+                        if isinstance(content, str):
+                            # Capture before adapter schema/model validation;
+                            # do not retain request headers or whole HTTP bodies.
+                            response_evidence.update(output_text=content, output_sha256=sha256_json(content))
+                    return response
+
+            return CaptureReturnedText()
+        for payload_case, source_case, request, input_tokens, schema_tokens, upper_bound in prepared_cases:
+            response_evidence.clear()
+            attempt_id = request.request_id
+            started = time.perf_counter()
+            case_result: dict[str, Any] = {
+                "case_id": payload_case["case_id"],
+                "attempt_id": attempt_id,
+                "message_sha256": payload_case["message_sha256"],
+                "payload_sha256": payload_case["payload_sha256"],
+                "wire_payload_sha256": request_payload_hash(self.config, request),
+                "input_token_bound": input_tokens,
+                "schema_framing_token_bound": schema_tokens,
+                "output_token_bound": self.max_output_tokens,
+                "cost_upper_bound_usd": upper_bound,
+                "status": "NOT_RUN",
+            }
+            try:
+                data_class = "synthetic" if all(
+                    item["decision"] == "SYNTHETIC" for item in payload_case["source_bindings"]
+                ) else "public"
+                response: ProviderResponse = Round1Runner(
+                    self.budget,
+                    make_transport,
+                ).complete(
+                    attempt_id=attempt_id,
+                    phase="paired_pilot",
+                    config=self.config,
+                    request=request,
+                    capabilities=self.capabilities,
+                    upper_bound_usd=upper_bound,
+                    data_class=data_class,
+                )
+                output_text = response.text
+                output_hash = sha256_json(output_text)
+                # Preserve the returned text even when JSON/schema validation
+                # fails. The public receipt removes it; local journal retains it.
+                case_result.update(output_text=output_text, output_sha256=output_hash)
+                parsed = json.loads(strip_fence(output_text))
+                validate_generation_output(parsed, source_case, max_findings=self.max_findings)
+                case_result.update({
+                    "status": "SUCCESS",
+                    "output_sha256": output_hash,
+                    "schema_valid": True,
+                    "usage": response.usage,
+                    "latency_seconds": response.latency_seconds,
+                    "cost_usd": response.cost_usd,
+                    "actual_debit_usd": response.actual_debit_usd,
+                    "reported_model": response.reported_model,
+                    "reported_upstream_provider": response.reported_upstream_provider,
+                    "parsed_output": parsed,
+                })
+            except Exception as exc:
+                case_result.update({
+                    "status": "FAILED",
+                    "error_class": type(exc).__name__,
+                    "schema_valid": False,
+                    "elapsed_seconds": time.perf_counter() - started,
+                })
+            case_result.update(response_evidence)
+            # Persist each observed outcome before the next paid attempt. Sink
+            # failures must escape (not be mistaken for a model failure/retry).
+            billing = self.budget.db.execute(
+                "SELECT a.actual,a.state,c.provider_generation_id FROM budget_attempts a LEFT JOIN budget_attempt_context c USING(attempt_id) WHERE a.attempt_id=?",
+                (attempt_id,),
+            ).fetchone()
+            if billing:
+                case_result.update(actual_debit_usd=None if billing[0] is None else billing[0] / 1_000_000_000,
+                    billing_state=billing[1], provider_generation_id=billing[2])
+            else:
+                case_result["billing_state"] = "NOT_RESERVED"
+            if self.case_observer is not None:
+                self.case_observer(dict(case_result))
+            result_cases.append(case_result)
+            if self.budget.snapshot()["dispatch_blocked"]:
+                break
+        # Persist accounting even when schema/model validation failed after billing.
+        for case_result in result_cases:
+            row = self.budget.db.execute(
+                "SELECT a.actual,a.state,c.provider_generation_id FROM budget_attempts a LEFT JOIN budget_attempt_context c USING(attempt_id) WHERE a.attempt_id=?",
+                (case_result["attempt_id"],),
+            ).fetchone()
+            if row:
+                case_result["actual_debit_usd"] = None if row[0] is None else row[0] / 1_000_000_000
+                case_result["billing_state"] = row[1]
+                case_result["provider_generation_id"] = row[2]
+            else:
+                case_result["billing_state"] = "NOT_RESERVED"
+        for payload_case, _, request, _, _, _ in prepared_cases[len(result_cases):]:
+            result_cases.append({"case_id": payload_case["case_id"], "attempt_id": request.request_id,
+                "status": "NOT_RUN", "reason": "prior_attempt_blocked_dispatch", "billing_state": "NOT_RESERVED"})
+        snapshot = self.budget.snapshot()
+        status = "PASS_API_QWEN3_32B_FROZEN_PACK_GENERATION" if result_cases and all(
+            case["status"] == "SUCCESS" for case in result_cases
+        ) and len(result_cases) == len(pack["cases"]) else "PARTIAL_API_QWEN3_32B_FROZEN_PACK_GENERATION"
+        # The canonical ledger is shared. Interleaved work by another
+        # process must not become this run's cost/call count.
+        dispatched_cases = [case for case in result_cases if case["attempt_id"] in dispatched_attempt_ids]
+        billing_complete = all(case.get("billing_state") == "settled" for case in dispatched_cases)
+        run_debit = sum(case.get("actual_debit_usd") or 0 for case in dispatched_cases)
+        reserved = sum(case["attempt_id"] not in existing_attempt_ids and case.get("billing_state") != "NOT_RESERVED" for case in result_cases)
+        call_count = len(dispatched_attempt_ids) if billing_complete else None
+        return {
+            "format": "ht-o3-api-generation-receipt-v1",
+            "status": status,
+            "mode": transport_modes[0] if transport_modes else "not_run",
+            "external_provider_calls": 0 if "live" not in transport_modes else call_count,
+            "authorization_id": self.budget.authorization_id,
+            "model_id": MODEL_ID,
+            "route": self.pricing.upstream_provider,
+            "pricing_snapshot_sha256": self.pricing.snapshot_sha256,
+            "pricing_snapshot_utc": self.pricing.snapshot_utc,
+            "pack_sha256": payload["pack_sha256"],
+            "manifest": payload["manifest"],
+            "thinking": False,
+            "account_credit_snapshot": self.account_credit_snapshot,
+            "conservative_run_bound_usd": total_bound,
+            "provider_calls": call_count,
+            "transport_invocations": len(dispatched_attempt_ids),
+            "reserved_attempts": reserved,
+            "known_debit_usd": run_debit,
+            "paid_cost_usd": 0.0 if "live" not in transport_modes else (run_debit if billing_complete else None),
+            "billing_complete": billing_complete,
+            "ledger_snapshot": snapshot,
+            "cases": result_cases,
+        }
+
+    @staticmethod
+    def sanitized_receipt(result: dict[str, Any]) -> dict[str, Any]:
+        """Drop messages and generated text before persisting a receipt."""
+        safe = dict(result)
+        safe["ledger_snapshot"] = {key: value for key, value in result.get("ledger_snapshot", {}).items() if key != "ledger_path"}
+        safe["cases"] = []
+        for case in result.get("cases", []):
+            safe["cases"].append({
+                key: value
+                for key, value in case.items()
+                if key not in {"parsed_output", "output_text", "messages"}
+            })
+        return safe
+
+    @classmethod
+    def from_snapshot(
+        cls,
+        *,
+        budget: Round1ProjectBudget,
+        snapshot_path: Path,
+        transport_factory: Callable[[], Any] | None,
+        live_enabled: bool,
+        account_credit_snapshot: dict[str, Any] | None = None,
+        run_id: str,
+        max_output_tokens: int = 512,
+        max_findings: int = 6,
+    ) -> "OpenRouterQwenGenerationRunner":
+        raw = _load_json(snapshot_path)
+        try:
+            pricing = pricing_from_snapshot(raw)
+        except Exception as exc:
+            raise APIGenerationError("model snapshot does not contain exact pricing fields") from exc
+        parameters = raw.get("non_thinking_parameters")
+        if parameters is not None and not isinstance(parameters, dict):
+            raise APIGenerationError("non_thinking_parameters must be an object")
+        return cls(
+            budget=budget,
+            pricing=pricing,
+            transport_factory=transport_factory,
+            live_enabled=live_enabled,
+            account_credit_snapshot=account_credit_snapshot,
+            run_id=run_id,
+            max_output_tokens=max_output_tokens,
+            max_findings=max_findings,
+            non_thinking_parameters=parameters,
+            max_input_tokens=int(raw.get("max_input_tokens", min(int(raw.get("context_length", 6144)), 6144))),
+            timeout_seconds=float(raw.get("timeout_seconds", 45.0)),
+        )
+
+
+def write_sanitized_receipt(result: dict[str, Any], output_path: Path) -> None:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    safe = OpenRouterQwenGenerationRunner.sanitized_receipt(result)
+    output_path.write_text(json.dumps(safe, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")

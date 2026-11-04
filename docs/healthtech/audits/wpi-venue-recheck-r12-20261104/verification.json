@@ -1,0 +1,50 @@
+{
+  "format": "ptp-wpi-venue-recheck-v12",
+  "observed_local": "2026-11-04",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_state": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "sources": {
+    "official_elsevier_profile": {
+      "url": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+      "status": "PUBLIC_PROFILE_OBSERVED",
+      "scope_fit": "CONDITIONAL"
+    },
+    "aims_and_scope": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope",
+      "status": "UNVERIFIED_DIRECT_PAGE"
+    },
+    "guide_for_authors": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+      "status": "UNVERIFIED_DIRECT_PAGE"
+    }
+  },
+  "claims_supported_by_profile": [
+    "intellectual-property information retrieval/search/analysis",
+    "AI/ML and language-model applications to IP research",
+    "information-retrieval evaluation and benchmarking",
+    "real-data retrieval experiments"
+  ],
+  "manuscript": {
+    "status": "DRAFT_FOR_OWNER_REVIEW_SOLO_COMPUTATIONAL_STUDY_NOT_SUBMITTED",
+    "generic_rag_framing": false,
+    "adaptive_superiority_claim": false,
+    "external_business_validation": "NOT_MEASURED",
+    "owner_review_required": true
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "runtime_window_reset": false,
+    "external_message": false,
+    "submission": false
+  },
+  "status": "PASS_OFFICIAL_PROFILE_SCOPE_RECHECK_GUIDE_AND_AIMS_UNVERIFIED_NOT_SUBMITTED",
+  "next": "Owner rechecks journal-specific Aims and Scope and Guide for Authors in an authorized browser/session before final packaging."
+}

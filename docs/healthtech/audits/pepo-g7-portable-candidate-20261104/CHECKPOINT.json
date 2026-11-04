@@ -1,0 +1,14 @@
+{
+  "format": "ptp-continuation-checkpoint-v1",
+  "checkpoint": "G7 portable candidate instructions",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "COMPLETE_CURRENT_CANDIDATE",
+  "queue_exhausted": true,
+  "overall_goal_closed": false,
+  "engineering": "COMPLETE_FOR_DOCUMENTED_OFFLINE_SURFACE",
+  "scientific_evidence": "PARTIAL",
+  "business_validation": "SOLO_OPERATIONAL_PROXY_ONLY",
+  "paid_api": "PAUSED_CURRENT_SCOPED_CREDIT",
+  "owner_review": "REQUIRED",
+  "merge_push_publish": false
+}

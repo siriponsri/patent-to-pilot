@@ -1,0 +1,118 @@
+{
+  "format": "ptp-local-qwen-pack-bind-v1",
+  "observed_local_date": "2026-11-03",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "source_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "runtime_reexecuted_on_source_head": false
+  },
+  "source_artifacts": {
+    "storage": "OWNER_PRIVATE_ARTIFACT_STORE",
+    "pack_file_sha256": "0b2bef9fcf8c3eff6106a1786885e4407ea4b8c9e628397ab8e52a392204ced9",
+    "pack_file_bytes": 17519,
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "exact_messages_file_sha256": "06748e94a0125afdb3925e73b2f59ea073d779a8422f847a765ef91ba463ea61",
+    "unguided_receipt_sha256": "ecaf99114d8431aee98fc48a5b39a162fdfcba2b0766d7abb141b7bd7737304d",
+    "guided_receipt_sha256": "21323f7e46ed099931165b00505329afaacdfd372b0890355f7ada7ccdabc1d7",
+    "cases": [
+      "HT-DEV-MITRACLIP",
+      "HT-DEV-TENDYNE",
+      "HT-DEV-TRICLIP"
+    ],
+    "raw_payloads_committed": false
+  },
+  "local_runtime": {
+    "model_id": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "license": "apache-2.0",
+    "cuda_visible_devices": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "gpu_name": "Tesla V100-SXM2-32GB",
+    "visible_gpu_count": 1,
+    "torch_threads": 8,
+    "dtype": "float16",
+    "attention": "eager",
+    "thinking": false,
+    "guided_json_library": "lm-format-enforcer"
+  },
+  "local_unguided": {
+    "status": "PARTIAL_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
+    "schema_valid_cases": 0,
+    "cases": 3,
+    "prompt_tokens": 3073,
+    "output_tokens": 1054,
+    "latency_seconds": 73.02102086995728,
+    "parse_errors": [
+      "unresolved must be a string array"
+    ],
+    "case_output_sha256": {
+      "HT-DEV-MITRACLIP": "f66ce4fb1ecd5c3bc3cea6b41bd4014bb403953973816d0b54cca2ae27a5d6dd",
+      "HT-DEV-TENDYNE": "d124d70c77228c11274d0058882a0040d7d046cea6d3183aff9007fa6a7ad333",
+      "HT-DEV-TRICLIP": "48dec6428ca930d63dbbb0dc1a8b217e11d6f4958c650b2fa2c6c81c9f65cfd4"
+    }
+  },
+  "local_guided": {
+    "status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
+    "schema_valid_cases": 3,
+    "cases": 3,
+    "prompt_tokens": 3073,
+    "output_tokens": 1054,
+    "latency_seconds": 116.52233324875124,
+    "case_metrics": {
+      "HT-DEV-MITRACLIP": {
+        "prompt_tokens": 1017,
+        "output_tokens": 351,
+        "latency_seconds": 38.924834199948236,
+        "schema_valid": true,
+        "output_sha256": "d0ef3132f7afeb07106995e97ac739adf73142ec0309c248e739c418147928c9"
+      },
+      "HT-DEV-TENDYNE": {
+        "prompt_tokens": 1036,
+        "output_tokens": 356,
+        "latency_seconds": 39.1050504068844,
+        "schema_valid": true,
+        "output_sha256": "1aafd2c4e0212fb868d3b9202574fef8fa499c6de5545efe618b0e14a68934f9"
+      },
+      "HT-DEV-TRICLIP": {
+        "prompt_tokens": 1020,
+        "output_tokens": 347,
+        "latency_seconds": 38.4924486419186,
+        "schema_valid": true,
+        "output_sha256": "7fc9f4fa5fb91c9f49d59121302788a3dd880317daf68a5b7acbd5dd25998d9c"
+      }
+    }
+  },
+  "api_preflight": {
+    "status": "FAIL_CLOSED_TRANSFER_REVIEW_REQUIRED",
+    "mode": "dry-run",
+    "model": "qwen/qwen3-32b",
+    "route": "DeepInfra",
+    "model_snapshot_sha256": "2ec5fcb0c2127000351a39e8487b4b7d654966c28dc1b46a39fe8c5a5810805a",
+    "pricing_snapshot_sha256": "792dbe941f25b9bcabc9d3758de11336ca5ee78e90328573dc310819245507b5",
+    "pricing_snapshot_utc": "2026-10-31T10:57:23.2417019Z",
+    "error_type": "GenerationPayloadError",
+    "error_reason": "exact model-visible fields require a source-backed transfer review",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "receipt_written": false
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs_started_by_this_audit": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "new_experiment_batch": false,
+    "secrets_read": false
+  },
+  "interpretation": {
+    "local_guided_result": "PRIOR_PRIVATE_CANARY_ARTIFACT_3_OF_3",
+    "current_head_rerun": "NOT_RUN",
+    "api_comparison": "NOT_RUN_BLOCKED_BY_TRANSFER_RIGHTS_AND_EXISTING_LEDGER_GATES",
+    "main_scientific_study": "NOT_REPLACED_BY_FDA_ONLY_CANARY",
+    "semantic_gold": "NOT_AVAILABLE",
+    "business_validation": "NOT_ESTABLISHED"
+  }
+}

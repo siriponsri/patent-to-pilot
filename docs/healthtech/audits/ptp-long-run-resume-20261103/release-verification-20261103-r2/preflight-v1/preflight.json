@@ -1,0 +1,273 @@
+{
+  "status": "PASS",
+  "scope": "offline development readiness, not scientific execution",
+  "scientific_live_ready": false,
+  "plan_id": "G13-PREPARATION-20261027-V1",
+  "plan_sha256": "6830da950054336adeeb664f570298cdb7ab748fa7aad361993bd82cf3e9d661",
+  "public_case_count": 3,
+  "public_state_count": 15,
+  "independent_sample_claim": false,
+  "held_out_case_count": 0,
+  "staged_inputs": [
+    {
+      "case_id": "PTP-0001",
+      "state_id": "S0",
+      "files": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "0994084ff934506b36ba0807f0c9c81c8b70bbd53cd918e1627dc04cc92b903b"
+      },
+      "source_packet_sha256": "2303b9b680787eb5ad8caf0233cc5537c621d95c3c384ea2e13b7a454a52120c",
+      "source_schema_sha256": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e"
+    },
+    {
+      "case_id": "PTP-0001",
+      "state_id": "S1",
+      "files": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "30e0458219eab155d3fa275dd5f44e427debd674198c52ca81189d2940784ff7"
+      },
+      "source_packet_sha256": "5cf75c7b22022b81e4e09e4be43c329c0f043d1d4ee8150022c183e5787bfc86",
+      "source_schema_sha256": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e"
+    },
+    {
+      "case_id": "PTP-0001",
+      "state_id": "S2",
+      "files": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "1ff8bf7ca7888eba2641950a357eb505d0d7e71d79f2fb5a6787cc338fa0359c"
+      },
+      "source_packet_sha256": "87627688730b7394fdaa117905d659ceb2332c6f93c311936031c8fed062000e",
+      "source_schema_sha256": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e"
+    },
+    {
+      "case_id": "PTP-0001",
+      "state_id": "S3",
+      "files": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "80e6714b15971a6d1b3bda7051924db8c630719ddd21dcbea388f6090b3b31b5"
+      },
+      "source_packet_sha256": "2e7e165a4ef956f7cefbbf058c419649b0a8378dd82fa957be4db8d93bdd7b3b",
+      "source_schema_sha256": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e"
+    },
+    {
+      "case_id": "PTP-0001",
+      "state_id": "S4",
+      "files": {
+        "output-contract.json": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e",
+        "runtime-input.json": "b3c5abc90c4815c6c0827bfeb244e35aeed17561f0fe70348b54e74e4ceb13f7"
+      },
+      "source_packet_sha256": "b1ebc78cd8b0a12da1d10a00d38d942ef425ff02d39f4e1b3090c429a3e88441",
+      "source_schema_sha256": "da0e3a2d200e6bb9ca2e5f09479a46f29f814d74ec4a61f0d240b6555654e28e"
+    },
+    {
+      "case_id": "PTP-0002",
+      "state_id": "S0",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "13e8d30e4f4b5dafe406f098d7a2a4c8e571cf170b2309d5826f93d485876db8"
+      },
+      "source_packet_sha256": "51247844fe23784ff0fe4fc6a16cdde8dc883c8cc6452f6ac8a633f2371d6465",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    },
+    {
+      "case_id": "PTP-0002",
+      "state_id": "S1",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "63670840aadc7ae4ff0ee7b2da56396aa8b43b81c324a4ad2661b3915220f891"
+      },
+      "source_packet_sha256": "e12e2b02a1ce9ff3db5518cbded27b683f29b0cbd9faa4f099a903ea103ab2f2",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    },
+    {
+      "case_id": "PTP-0002",
+      "state_id": "S2",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "2bb089f4a55e6cc21f49a27ca07105029f8f530852f9e27da07d71ce7c5f9e45"
+      },
+      "source_packet_sha256": "07f7da0de1d42dcc563d578f46b1f477c9077f0ab9f5fb1cbeb285a5a546daab",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    },
+    {
+      "case_id": "PTP-0002",
+      "state_id": "S3",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "522ff04c4e2bd7bbf2186de50119c5d1497df2c617a5db423334453efd63f1ba"
+      },
+      "source_packet_sha256": "d4f65b8018c28146cd5d6b91ca529124f196e71e583bd46f49f4c38eca225541",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    },
+    {
+      "case_id": "PTP-0002",
+      "state_id": "S4",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "43b83c365f4f933f86ce6389cd5b6ecb3cce13168e52f90cba110e4bb8c86a61"
+      },
+      "source_packet_sha256": "8d98d1317a501f4ad4e6b4b4844ff5a3b2ded6be86d4e9dcd9d7fd1f9d4c7285",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    },
+    {
+      "case_id": "PTP-0003",
+      "state_id": "S0",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "944d6611c0d8d0df49eccb7c84c74d8d4a4060c28d05d9717d89e8a4206c5eeb"
+      },
+      "source_packet_sha256": "1a9fe3423a392701c1940114b07e21195fc71296688d88e076c5f097469b58b7",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    },
+    {
+      "case_id": "PTP-0003",
+      "state_id": "S1",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "38ab89fc7325571b65325254d0fa6ed8cd7c08c53f72f6c151e351e04bdc5560"
+      },
+      "source_packet_sha256": "d2d51f743da3766dc7200f0cf96360d22ce300cd819186ed527d2bff6a3e579f",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    },
+    {
+      "case_id": "PTP-0003",
+      "state_id": "S2",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "8beba3f4865b268bea4d3ca5e9ccb98f1799025c6f3fae9e4e7f02bd93f5e8e1"
+      },
+      "source_packet_sha256": "03ff52cde8539267f608566e452ac4c6429d5c5da5d6f48b4c12e4a1fddfcfe4",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    },
+    {
+      "case_id": "PTP-0003",
+      "state_id": "S3",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "48f8718addcd51cdd18e6b601c5c04e72110585176398016f996db1e20ae563a"
+      },
+      "source_packet_sha256": "c01274d298c43fe9783b49df506220b1eae6ca2ef8dda8026faedc44ab4b83c5",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    },
+    {
+      "case_id": "PTP-0003",
+      "state_id": "S4",
+      "files": {
+        "output-contract.json": "97782b1f9ae024846bb95dff8aa3f5e7cf659c1ddf17a3ae63268ef633de66e7",
+        "runtime-input.json": "13afefd01d5fefd41690696466ed681088acaab5747a591fb438d2b03dd209b0"
+      },
+      "source_packet_sha256": "b77b149d6526bd9071d2b7162a7020c9cf304c90c96d9ab5b7fb0df648fd3efc",
+      "source_schema_sha256": "68044d0e375303a7c93f2b25598af7d259facadfcb4aa7b477457f3bfeccc59b"
+    }
+  ],
+  "calibration": [
+    {
+      "control": "PTP-0001:supported_positive",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "control": "PTP-0002:supported_positive",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "control": "PTP-0003:supported_positive",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "control": "missing_event_id",
+      "expected": false,
+      "observed": false,
+      "passed": true,
+      "failures": [
+        "$ missing required field: event_id",
+        "$.event_id does not match staged packet"
+      ]
+    },
+    {
+      "control": "wrong_case_id",
+      "expected": false,
+      "observed": false,
+      "passed": true,
+      "failures": [
+        "$.case_id does not match staged packet"
+      ]
+    },
+    {
+      "control": "wrong_option_id",
+      "expected": false,
+      "observed": false,
+      "passed": true,
+      "failures": [
+        "$.options candidate IDs do not match staged packet: expected ['A', 'B'], got ['OTHER', 'B']"
+      ]
+    },
+    {
+      "control": "invalid_policy_state",
+      "expected": false,
+      "observed": false,
+      "passed": true,
+      "failures": [
+        "$.options[0].policy_check_state is not a declared policy state"
+      ]
+    },
+    {
+      "control": "unknown_evidence_id",
+      "expected": false,
+      "observed": false,
+      "passed": true,
+      "failures": [
+        "$.options[0].current_support_ids contains an unknown evidence ID"
+      ]
+    },
+    {
+      "control": "invented_yield",
+      "expected": false,
+      "observed": false,
+      "passed": true,
+      "failures": [
+        "$.options[0].measured_production_yield must remain the explicit unknown measurement shape"
+      ]
+    },
+    {
+      "control": "shape_valid_false_policy_pass",
+      "expected": false,
+      "observed": false,
+      "passed": true
+    }
+  ],
+  "split_violations": [],
+  "comparison_methods": [
+    "B0_rules_only",
+    "B1_full_regeneration",
+    "B2_direct_revision",
+    "B3_invalidation_same_generator",
+    "P_existing_workflow"
+  ],
+  "comparison_case_ids": [
+    "PTP-0001"
+  ],
+  "comparison_states": [
+    "S0",
+    "S1",
+    "S2"
+  ],
+  "mock_call_records": 9,
+  "provider_calls": 0,
+  "api_cost_usd": 0,
+  "generation": "DETERMINISTIC_AND_MOCK_ONLY",
+  "scientific_blockers": [
+    "No common live generation/response adapter for B1/B2/B3/P in this runner",
+    "PTP-0002/0003 do not have the current PTP-0001 common comparison output adapter",
+    "No process/filesystem-isolated evaluated worker; staged folders alone are not a security boundary",
+    "All three current cases are exposed dev; no held-out family/template panel",
+    "B4-RG/DR NOT_IMPLEMENTED; verified shared distractor/recovery pool absent",
+    "Input tokenizer/framing upper bound and fresh endpoint/pricing snapshot not verified",
+    "No new scientific payload/matrix/budget approval; old echo approval is not reusable"
+  ]
+}

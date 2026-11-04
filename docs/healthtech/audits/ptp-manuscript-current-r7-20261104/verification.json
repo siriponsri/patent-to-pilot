@@ -1,0 +1,39 @@
+{
+  "format": "ptp-manuscript-current-r7-verification-v1",
+  "recorded_local": "2026-11-04T04:47:41+07:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_CURRENT_HEAD_ABSTRACT_BOUNDARY_CLARIFIED_COMPONENT_AND_HISTORICAL_RESULTS_SEPARATED",
+  "manuscript_binding": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "e871b0d4c9235e139df270db5c7b42faade0335387fde635e6f551c67ccb7486",
+    "bytes": 60881,
+    "change_scope": "abstract wording only; no metric, protocol, candidate, or resource change",
+    "historical_transfer_values_explicitly_separated": true,
+    "current_head_frontier_explicitly_separated": true,
+    "component_values_preserved": true,
+    "relative_links_missing": 0
+  },
+  "source_receipts": {
+    "current_head_frontier": "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+    "matched_budget": "docs/healthtech/audits/ptp-current-head-matched-budget-20261103/verification.json",
+    "component_holdout": "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json",
+    "historical_transfer_diagnostic": "retained in prior audit receipts; not pooled into current-head results"
+  },
+  "claim_boundary": "No adaptive superiority, semantic device-patent gold, exhaustive recall, external business validation, revenue, ROI, willingness-to-pay, or journal acceptance claim",
+  "owner_control": {
+    "owner_review_required": true,
+    "submission_sent": false,
+    "external_message": false,
+    "agreement_accepted": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  },
+  "next": "Owner review the clarified abstract and current scientific boundaries; keep paid/API and final-holdout limitations unchanged."
+}

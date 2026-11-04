@@ -1,0 +1,98 @@
+{
+  "format": "ptp-goal-completion-audit-r9-v1",
+  "observed_local": "2026-11-03T22:10:00+07:00",
+  "observed_utc": "2026-11-03T15:10:00Z",
+  "goal": "existing_patent_to_pilot_o1_o4",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree": "DIRTY_OWNER_CLAUDE_LUNA_AND_RESEARCH_CHANGES_PRESERVED",
+    "commit_push_merge": "NOT_RUN"
+  },
+  "requirements": [
+    {
+      "id": "R1",
+      "requirement": "UI to HTTP jobs/history/export workflow on real named cases",
+      "status": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+      "evidence": "docs/healthtech/audits/ptp-o2-patembed-http-rebind-20261103/verification.json",
+      "scope": "MitraClip, Tendyne, TriClip; source inspection, history/edit/reopen, JSON/TH/EN export; vector errors 0"
+    },
+    {
+      "id": "R2",
+      "requirement": "PatEmbed and multilingual-e5 encoding with reproducible private artifacts",
+      "status": "COMPLETE_ARTIFACT_DIAGNOSTIC_NOT_FINAL_STUDY",
+      "evidence": "docs/healthtech/audits/ptp-fresh-gpu-device-diagnostic-20261103/verification.json",
+      "scope": "4 encode passes, 88 rows, frozen 41-passage/3-query inputs, approved V100 evidence; no new rerun in this audit"
+    },
+    {
+      "id": "R3",
+      "requirement": "Local Qwen3-8B versus qwen/qwen3-32b API on one frozen evidence pack",
+      "status": "PARTIAL_API_NOT_RUN",
+      "evidence": "docs/healthtech/audits/ptp-local-qwen-pack-bind-20261103/verification.json; docs/healthtech/audits/ptp-resume-e2-refresh-20261103/verification.json",
+      "scope": "Local guided 3/3 retained; paid API has 0 calls because current scoped credit/key-limit evidence is unavailable"
+    },
+    {
+      "id": "R4",
+      "requirement": "Three real device cases with E2E engineering and research interpretation",
+      "status": "PARTIAL_ENGINEERING_COMPLETE_RESEARCH_DESCRIPTIVE",
+      "evidence": "docs/healthtech/audits/ptp-o2-patembed-http-rebind-20261103/README.md; docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+      "scope": "Workflow evidence is complete; 3 cases are not a powered benchmark or semantic gold"
+    },
+    {
+      "id": "R5",
+      "requirement": "Canonical ledger, legacy spend preservation, reservation and unknown-billing safety",
+      "status": "COMPLETE_ENGINEERING_PAID_BRANCH_NOT_ADMITTED",
+      "evidence": "docs/healthtech/audits/ptp-resume-e2-refresh-20261103/verification.json",
+      "scope": "E2 integrity ok; 4 legacy settled/$0.0001464; 0 new/pending/unknown; prospective $1; no reset/retry"
+    },
+    {
+      "id": "R6",
+      "requirement": "Adaptive versus fixed/multi-query/heuristic scientific comparison",
+      "status": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+      "evidence": "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json; docs/healthtech/audits/ptp-goal-completion-audit-r8-20261103/verification.json",
+      "scope": "Offline development diagnostics and matched budgets exist; no semantic device-patent gold or final powered holdout"
+    },
+    {
+      "id": "R7",
+      "requirement": "Solo business-value evidence without unsupported market claims",
+      "status": "PARTIAL_SCENARIO_ONLY",
+      "evidence": "docs/healthtech/audits/ptp-business-value-scenario-20261103/verification.json",
+      "scope": "Machine/GPU time, latency, citation/evidence potential and cost scenarios; no user validation, revenue, ROI or willingness-to-pay"
+    },
+    {
+      "id": "R8",
+      "requirement": "Journal manuscript, WPI readiness, rights and reproducibility package",
+      "status": "PARTIAL_OWNER_REVIEW_AND_GUIDE_RECHECK_PENDING",
+      "evidence": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md; docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md",
+      "scope": "Manuscript and declarations are drafted; direct official WPI pages returned 403, so journal-specific fields were not inferred"
+    },
+    {
+      "id": "R9",
+      "requirement": "Tested commit/push/review/merge and clean branch/worktree release",
+      "status": "NOT_RUN_OWNER_ACCEPTANCE_REQUIRED",
+      "evidence": "docs/healthtech/audits/ptp-code-review-provenance-20261103/verification.json; docs/healthtech/audits/ptp-current-head-release-readiness-20261103/verification.json",
+      "scope": "Dirty candidate is ready for owner review; no merge/push or unrelated cleanup performed"
+    }
+  ],
+  "verification": {
+    "focused_regression_latest": "74 passed; 0 failed; 0 errors; 0 skipped",
+    "full_current_head_prior": "640 passed; 0 failed; 0 errors; 2 skipped; 2 warnings",
+    "compileall": "PASS_PRIOR_CURRENT_HEAD",
+    "wpi_direct_pages": "HTTP_403_CURRENT_ENV_NO_GUIDE_FIELDS_INFERRED"
+  },
+  "resource_mutations_since_prior_checkpoint": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  },
+  "overall": "PARTIAL_NOT_COMPLETE",
+  "next_action": "Keep the goal active. Obtain one non-secret current scoped credit/limit snapshot only if the API comparison remains required; otherwise finish owner review, exact-head release selection, and manuscript/WPI guide verification without rerunning completed GPU or local canary artifacts."
+}

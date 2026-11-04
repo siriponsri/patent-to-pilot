@@ -1,0 +1,77 @@
+{
+  "format": "ptp-private-frontier-budget-ceilings-v1",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "source_summary": {
+    "path": "docs/healthtech/audits/ptp-private-frontier-budget-ceilings-20261104/summary.json",
+    "sha256": "f1d9f26c47af4cd8a9bcf9093f687057be1560c2f4f6c00ef6bc71cb74683e3b"
+  },
+  "source_private_receipt": {
+    "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "frontier_sha256": "edf7a0beb84b16434e33b5735e0a95f23eac97f251bacd8c089843e3ae785e42",
+    "receipt_sha256": "4bab13befdcac5e195695463da2fcbd06dfc5eb428e07e44dd1e250b748361ba",
+    "raw_rankings_sha256": "e21e2a84ff0f8757cae033a1a28d1a3bf3354c5e2f262e37b576a68444e8b5bf"
+  },
+  "exact_equal_realized_budget": {
+    "query_calls": 3,
+    "rerank_pairs": 123,
+    "status": "PASS_POSTHOC_DESCRIPTIVE_MATCHED_SLICE",
+    "methods": {
+      "HT-B1": {"prefix": 1, "macro_known_link_recall_at_20": 0.49880241951853205, "failed_query_count": 0, "not_realized_query_count": 0},
+      "HT-B2": {"prefix": 1, "macro_known_link_recall_at_20": 0.49880241951853205, "failed_query_count": 0, "not_realized_query_count": 0},
+      "HT-B3": {"prefix": 1, "macro_known_link_recall_at_20": 0.49880241951853205, "failed_query_count": 0, "not_realized_query_count": 0}
+    }
+  },
+  "at_most_ceiling_slices": [
+    {
+      "query_calls": 5,
+      "rerank_pairs": 205,
+      "equal_realized_budget": false,
+      "HT-B1": {"prefix": 1, "query_calls": 3, "rerank_pairs": 123, "macro_known_link_recall_at_20": 0.49880241951853205},
+      "HT-B2": {"prefix": 1, "query_calls": 3, "rerank_pairs": 123, "macro_known_link_recall_at_20": 0.49880241951853205},
+      "HT-B3": {"prefix": 2, "query_calls": 5, "rerank_pairs": 205, "macro_known_link_recall_at_20": 0.22429261559696342, "not_realized_query_count": 1}
+    },
+    {
+      "query_calls": 6,
+      "rerank_pairs": 246,
+      "equal_realized_budget": false,
+      "HT-B1": {"prefix": 1, "query_calls": 3, "rerank_pairs": 123, "macro_known_link_recall_at_20": 0.49880241951853205},
+      "HT-B2": {"prefix": 2, "query_calls": 6, "rerank_pairs": 246, "macro_known_link_recall_at_20": 0.49880241951853205},
+      "HT-B3": {"prefix": 2, "query_calls": 5, "rerank_pairs": 205, "macro_known_link_recall_at_20": 0.22429261559696342, "not_realized_query_count": 1}
+    },
+    {
+      "query_calls": 9,
+      "rerank_pairs": 369,
+      "equal_realized_budget": false,
+      "HT-B1": {"prefix": 1, "query_calls": 3, "rerank_pairs": 123, "macro_known_link_recall_at_20": 0.49880241951853205},
+      "HT-B2": {"prefix": 3, "query_calls": 9, "rerank_pairs": 369, "macro_known_link_recall_at_20": 0.5689116226200625},
+      "HT-B3": {"prefix": 2, "query_calls": 5, "rerank_pairs": 205, "macro_known_link_recall_at_20": 0.22429261559696342, "not_realized_query_count": 1}
+    }
+  ],
+  "evaluation_scope": {
+    "queries": 3,
+    "reference_pairs": 61,
+    "shared_exact_patent_groups": 2,
+    "final_holdout": false,
+    "semantic_relevance_gold": false,
+    "uncertainty": "NOT_ESTIMABLE"
+  },
+  "claim_boundary": "Only the 3/123 slice is a matched-budget diagnostic; larger ceilings are at-most-budget descriptive sensitivity views.",
+  "verification": {
+    "summarizer_sha256": "109e497960eba6440a80ca21249b35b2e37883cbac5312d61d78e8f1be54b349",
+    "regression_test_sha256": "e98a03fa2b9b8286a51f16e88f314ec7e24eb0f0d851052c4251b33a3779db6a",
+    "focused_test": "3 passed; 0 failed; 0 skipped",
+    "compileall": "PASS_EXIT_0"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "reservations": 0,
+    "ledger_mutations": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "status": "PASS_POSTHOC_DESCRIPTIVE_NOT_ESTIMABLE",
+  "goal_closed": false
+}

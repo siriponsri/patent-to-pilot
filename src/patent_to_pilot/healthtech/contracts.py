@@ -241,11 +241,17 @@ class DossierVersion(Contract):
         ):
             raise ValueError("public dossier sources require a typed rights policy")
         for e in self.evidence:
-            if e.source_id not in sources:
+            source = sources.get(e.source_id)
+            if source is None:
                 raise ValueError("dangling evidence source")
+            if e.source_version != source.source.version_label:
+                raise ValueError("evidence source revision mismatch")
         for c in self.candidates:
-            if c.source_id not in sources:
+            source = sources.get(c.source_id)
+            if source is None:
                 raise ValueError("dangling patent source")
+            if c.source_revision != source.source.version_label:
+                raise ValueError("patent candidate source revision mismatch")
             if c.association_status == "disclosed_link":
                 e=evidence.get(c.disclosure_evidence_id)
                 if e is None or e.evidence_kind != "patent_disclosure":

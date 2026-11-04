@@ -1,0 +1,18 @@
+{
+  "format": "ptp-checkpoint-v1",
+  "checkpoint": "ptp-release-verification-r12-20261103",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_NOT_COMPLETE",
+  "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_WITH_DIRTY_RELEASE_BOUNDARY",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "PARTIAL_OWNER_REVIEW_WPI_GUIDE_UNVERIFIED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "full_suite": "642 total; 640 passed; 0 failed; 0 errors; 2 skipped",
+  "journal": "E2 integrity ok; 0 operational attempts; 0 pending/unknown; 4 legacy settled; USD0.0001464 preserved; prospective USD1; unknown history preserved",
+  "resource_mutations": "provider 0; reservations 0; attempts 0; retries 0; GPU jobs 0; datasets 0; ledger mutations 0; budget/window reset false",
+  "diff_check": "SCOPED_PASS_GLOBAL_PREEXISTING_MEMORY_NOISE",
+  "private_receipt": "C:/Users/User/AppData/Local/PatentToPilot/private-artifacts/ptp-current-candidate-full-tests-20261103-r2.xml#sha256=1cfd796d5b55aeddc9ee6c7fedcdd836bcdbd147f0a94cc1d597f551472b187b",
+  "resume": "Owner review the dirty candidate; if paid comparison remains required, provide one non-secret current scoped v2 credit/limit snapshot, then refresh route pricing and reserve at most the existing USD0.25 canary."
+}

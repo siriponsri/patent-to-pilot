@@ -1,0 +1,71 @@
+{
+  "format": "ptp-dr-train-preflight-r2-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "ssh": {
+    "target": "chaw@100.77.149.83",
+    "host_alias": "dr-train",
+    "strict_host_key_checking": true,
+    "batch_mode": true,
+    "attempts": 1,
+    "resource_probe_started_utc": "2026-11-03T08:56:37.9582360Z",
+    "resource_probe_finished_utc": "2026-11-03T08:56:40.1235611Z",
+    "resource_probe_exit_code": 0
+  },
+  "remote": {
+    "hostname": "dr-train",
+    "job_root": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031",
+    "approved_gpu": {
+      "uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+      "name": "Tesla V100-SXM2-32GB",
+      "memory_used_mib": 0,
+      "memory_free_mib": 32495,
+      "utilization_percent": 0
+    },
+    "unapproved_gpu_observed": {
+      "uuid": "GPU-044a8b11-4729-458b-a07b-297e45439419",
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "use_for_goal": false
+    },
+    "allocation": "UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY",
+    "allocation_reference": "NOT_OBSERVED",
+    "relevant_experiment_processes": 0,
+    "existing_service": {
+      "pid": 1745699,
+      "start_time_utc": "2026-10-31T08:27:48Z",
+      "role": "serve_http.py",
+      "touched": false
+    },
+    "lock": {
+      "path": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/.GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089.lock",
+      "present": true,
+      "bytes": 0,
+      "ownership_inferred": false
+    }
+  },
+  "actions": {
+    "remote_writes": 0,
+    "compute_or_model_inference": 0,
+    "dataset_transfers": 0,
+    "installs": 0,
+    "service_restarts": 0,
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "private_evidence": {
+    "resource_observation_sha256": "8fb6dfc50b3f247a69eecb1a19201066ada03f34a2ffe9b9a4a49e84c4759ebd",
+    "process_lock_observation_sha256": "e7ee9257d3db21e85eb51cb91dc99bdc27f5d1ac0d8a3765bf050e679fce2d93",
+    "lock_observation_sha256": "7ebb0f1f5ecd8c0aab12ad296391144d1f32a3039641d1f02390d505971c313c"
+  },
+  "decision": "DO_NOT_START_NEXT_REMOTE_BATCH",
+  "next": "Obtain authorized allocation reference, quota or lease, allowed job root, and runtime window; then recheck and resume the existing encoder."
+}

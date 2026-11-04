@@ -1,0 +1,13 @@
+{
+  "format": "ptp-api-parallel-recheck-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "CURRENT_HEAD_API_DRY_RUN_PASS_PAID_GATE_MISSING",
+  "metadata_recheck": "docs/healthtech/audits/ptp-api-metadata-recheck-20261103/verification.json",
+  "verification": "docs/healthtech/audits/ptp-api-parallel-recheck-20261103/verification.json",
+  "current_head_preflight": "docs/healthtech/audits/ptp-api-parallel-recheck-20261103/preflight-current-pack.json",
+  "current_head_contract": "pack e033456a; manifest c298b102; 3/3 ALLOWED_WITH_ATTRIBUTION; route DeepInfra; provider calls 0",
+  "stale_copy_negative_evidence": "Desktop copy d2a91ce2 rejected before output/network; not combined with current-head result",
+  "next_action": "Obtain the existing canonical R1 journal/export and current scoped credit snapshot once; then recheck route, price, rights, writer quiescence, and reservation gates before one paired canary.",
+  "resource_mutations": "provider calls 0; reservations 0; attempts 0; retries 0; ledger mutations 0; budget/window reset false"
+}

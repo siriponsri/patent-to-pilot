@@ -1,0 +1,49 @@
+{
+  "format": "ptp-o1-current-head-http-ui-verification-v2",
+  "observed_at_utc": "2026-11-02T18:52:31.2027695Z",
+  "source_commit": "ec3f72147bb8d12531720e5e6dbd8d78914ba25d",
+  "status": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
+  "backend_targeted": {
+    "command": "rtk proxy python -B -m pytest -ra tests/test_healthtech_http.py tests/test_healthtech_prelive.py tests/test_healthtech_integration_contract.py tests/test_healthtech_history_migration.py",
+    "tests": 28,
+    "failures": 0,
+    "result": "28 passed in 4.61s",
+    "coverage": [
+      "HTTP job submission/status and idempotency",
+      "provider budget gate fail-closed",
+      "cancel before dispatch",
+      "running cancel with uncommitted-result discard",
+      "resume/retry after cancellation",
+      "history versioning and edit conflict",
+      "JSON/Thai/English export"
+    ]
+  },
+  "browser_http": {
+    "command": "rtk proxy npm run test:integration:http",
+    "status": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+    "job_id": "cb7d1137868b4b24b26ba007fefd305f",
+    "backend_origin": "loopback",
+    "source_inspection": "PASS",
+    "history_versions": [1, 2],
+    "edit": "PASS",
+    "exports": ["json", "th", "en"]
+  },
+  "resource_accounting": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "new_24h_window": false
+  },
+  "interpretation": {
+    "o1": "Current-head loopback HTTP/UI engineering is PASS.",
+    "not_proven": [
+      "paid OpenRouter generation",
+      "external deployment",
+      "user validation or commercial value",
+      "O2 remote rerun",
+      "O4 exact-head real-case asset execution"
+    ]
+  }
+}

@@ -116,6 +116,7 @@ def test_mock_selector_binds_schema_action_and_durable_r1_budget(tmp_path):
         model_provider_map={MODEL: UPSTREAM},
         pricing_snapshot_sha256=PRICE_HASH,
         pricing_snapshot_utc=PRICE_TIME,
+        namespace="mock",
     )
 
     def transport_factory():
@@ -154,6 +155,7 @@ def test_live_selector_requires_transfer_manifest_before_transport(tmp_path):
         model_provider_map={MODEL: UPSTREAM},
         pricing_snapshot_sha256=PRICE_HASH,
         pricing_snapshot_utc=PRICE_TIME,
+        namespace="mock",
     )
     source = ProviderVisibleSource(
         source_id="public-source",

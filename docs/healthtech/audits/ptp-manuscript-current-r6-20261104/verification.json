@@ -1,0 +1,69 @@
+{
+  "format": "ptp-manuscript-current-r6-verification-v1",
+  "recorded_local": "2026-11-04T04:42:12+07:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_COMPONENT_REBIND_WPI_SCOPE_CONFIRMED_GUIDE_UNVERIFIED",
+  "manuscript_binding": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "228b6f8add8a7cf0f07c9ce50675b3b56575bb5ae462c278d3a974229e62d3a8",
+    "bytes": 60835,
+    "candidate_string_present": true,
+    "component_values_present": {
+      "PANORAMA_PAR4PC_validation_hit_at_1": true,
+      "PANORAMA_PAR4PC_test_hit_at_1": true,
+      "PANORAMA_PI4PC_validation_hit_at_1": true,
+      "PANORAMA_PI4PC_test_hit_at_1": true,
+      "HELMERS_macro_average_precision": true,
+      "HELMERS_macro_auc": true
+    },
+    "relative_links_missing": 0,
+    "claim_boundary": "component diagnostics only; no adaptive dossier superiority, semantic device-patent gold, external business validation, revenue, ROI, or willingness-to-pay claim"
+  },
+  "component_receipt": {
+    "path": "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json",
+    "sha256": "6c0f14bbf0aa5b170a431e8dd95080f0e70ba482eacea25230345679d9116e8d",
+    "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "primary_endpoint": "macro_gold_option_or_paragraph_hit_at_1",
+    "official_test_holdout_retained": true,
+    "failed_rows": 0,
+    "cross_split_application_overlap": 0,
+    "candidate_id_overlap_diagnostic": {"PAR4PC": 149, "PI4PC": 38},
+    "main_adaptive_final_holdout": false,
+    "semantic_device_patent_gold": false
+  },
+  "venue_observation": {
+    "publisher_profile_url": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+    "publisher_profile_http_status": 200,
+    "publisher_profile_sha256": "75ef3ca5d482d1662983a0da3232937e937cb1eaa739726a91e88045cdeff1e6",
+    "scope_fit": "CONDITIONAL",
+    "scope_markers": [
+      "intellectual-property information retrieval and patent searching",
+      "AI/ML and language-model applications to IP research",
+      "information-retrieval evaluation and benchmarking",
+      "multilingual search",
+      "real-data retrieval experiments"
+    ],
+    "aims_and_scope_url": "https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope",
+    "aims_and_scope_http_status": 403,
+    "guide_for_authors_url": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+    "guide_for_authors_http_status": 403,
+    "journal_specific_rules_verified": false
+  },
+  "owner_control": {
+    "owner_review_required": true,
+    "owner_fields_pending": true,
+    "submission_sent": false,
+    "external_message": false,
+    "agreement_accepted": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  },
+  "next": "Owner rechecks the journal-specific Guide/Aims in an authorized browser before submission; keep component results and main adaptive claims separate."
+}

@@ -1,0 +1,39 @@
+{
+  "format": "ptp-business-value-scenario-verification-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_SCENARIO_REPRODUCIBILITY_BOUNDARY",
+  "checks": {
+    "scenario_json_readback": "PASS",
+    "scenario_csv_readback": "PASS",
+    "formula_recalculation": "PASS",
+    "manuscript_link_check": "PASS",
+    "manuscript_local_links_checked": 32,
+    "manuscript_missing_local_links": 0,
+    "observed_human_time_present": false,
+    "observed_gpu_rate_present": false,
+    "observed_paid_api_cost_present": false,
+    "external_business_validation": "NOT_RUN",
+    "roi_claim": "NOT_MADE",
+    "revenue_claim": "NOT_MADE",
+    "willingness_to_pay_claim": "NOT_MADE"
+  },
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "b1e041ea1fcc44c9481cb771777a43e588d9847df769a96e1f02414ac9cbe24b",
+    "bytes": 43806
+  },
+  "source_hashes": {
+    "docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json": "c71625aa749c04e73a273b1ad0393a701498ca7086dd7d351695e0b9f45ce330",
+    "docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json": "b04c9294c997c648f85ae57e9d6c56357c83639695c38ff8b2b9b6d3db7e3b4a",
+    "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json": "ff1c8184f526732fb14c6f6ed386aa43da9e4bbd0ba68a599123e43fe424dab0"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next": "Replace scenario assumptions with measured human review and infrastructure rates only if the owner runs a separately recorded workflow; keep external business validation unclaimed."
+}

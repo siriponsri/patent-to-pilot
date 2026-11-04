@@ -1,0 +1,27 @@
+{
+  "format": "ptp-current-checkpoint-r3",
+  "status": "PARTIAL_ENGINEERING_VERIFIED_API_BLOCKED_MANUSCRIPT_REVIEW_REQUIRED",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "o1": "CURRENT_HEAD_ENGINEERING_COMPLETE",
+  "o2": "PRIOR_ARTIFACTS_BOUND_NO_NEW_REMOTE_ENCODE",
+  "o3": "LOCAL_3_OF_3_SCHEMA_VALID_PAID_API_BLOCKED",
+  "o4": "THREE_CASE_OPERATIONAL_COVERAGE_DESCRIPTIVE_RESEARCH",
+  "manuscript": "AVAILABILITY_DECLARATIONS_AND_LOCAL_BIB_INDEX_RECONCILED_OWNER_REVIEW",
+  "diff_check": "PASS_SCOPED_NON_MEMORY; pre-existing memory/next-actions.md line-ending noise preserved",
+  "resume_condition": [
+    "existing canonical R1 journal/export",
+    "current scoped account/key credit snapshot"
+  ],
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  }
+}

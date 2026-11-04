@@ -1,0 +1,40 @@
+{
+  "format": "ht-o3-qwen3-download-verification-v1",
+  "run_id": "ht-o3-local-model-preflight-20261031",
+  "status": "PASS_VERIFIED",
+  "command": "rtk proxy python scripts/healthtech/prepare_research_models.py --output <private-storage> --models qwen3-8b",
+  "model": {
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "license": "apache-2.0",
+    "allowlisted_file_count": 15,
+    "payload_bytes": 16397461266,
+    "manifest_sha256": "f9a1820ac27cd6dfa3253f78f41004bb9cdee31e60686a4698ac3d0ebabec014",
+    "private_manifest": "permitted-local-storage:ht-research-models-v1-20261031/manifest.json"
+  },
+  "independent_verifier": {
+    "status": "PASS",
+    "files_hashed": 15,
+    "hashes_matching": 15,
+    "bad_files": [],
+    "missing_files": [],
+    "extra_files": [],
+    "verified_total_bytes": 16397461266
+  },
+  "measured_storage": {
+    "private_qwen_tree_bytes": 16397469781,
+    "isolated_validation_venv_bytes": 3477459492,
+    "huggingface_cache_bytes": 829494,
+    "windows_free_bytes_after_setup": 172829122560,
+    "known_peak_with_remote_qwen_copy_and_prior_embeddings_bytes": 38186418222,
+    "additional_disk_bound_bytes": 42949672960,
+    "remaining_bound_headroom_bytes": 4763254738
+  },
+  "boundaries": {
+    "credentials_read": false,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "remote_qwen_copy_started": false,
+    "full_weight_load_attempted_on_windows": false
+  }
+}

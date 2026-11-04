@@ -1,0 +1,70 @@
+{
+  "format": "ptp-mcp-credit-continuation-v1",
+  "observed_utc": "2026-11-04T11:16:54.651730+00:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "source_changes": [
+    {
+      "path": "src/patent_to_pilot/providers/credit_from_metadata.py",
+      "before_sha256": "c55aa10326fef926d737b2541fda170bd7265679d0721eba3cac1c4ec51b35c1",
+      "after_sha256": "3a69e787e8ae455d8de6e851f18a3ecafa24b4ffc6da751cc1e19d29136b44aa"
+    },
+    {
+      "path": "tests/test_openrouter_credit_from_metadata.py",
+      "before_sha256": "9770a4efca72cab1cb27b08e68745eb9dcc0eca7db23db7fb26ea3e87558928c",
+      "after_sha256": "c57a5916819e897e08c128e8280ab55ad530f07bb7792f5ac6ad901a00dd57b5"
+    },
+    {
+      "path": "src/patent_to_pilot/providers/owner_credit_capture.py",
+      "before_sha256": null,
+      "after_sha256": "5dad3fe1bf5ba5a773955d49ba4710682a8120b9b9ba53517126626a1de0d035"
+    },
+    {
+      "path": "tests/test_owner_credit_capture.py",
+      "before_sha256": null,
+      "after_sha256": "a9b77a7ee7f62e29cc8784cbb6e8a2519442431c2d26953c581dc4e3a60de75d"
+    }
+  ],
+  "tests": {
+    "tests": 188,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "journal": {
+    "integrity_check": "ok",
+    "operational_attempts": 0,
+    "scope_rows": 0,
+    "legacy_actual_usd": 0.0001464,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "ledger_sha256": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2"
+  },
+  "runtime_visibility": {
+    "openrouter_actions_exposed": 0,
+    "codex_cli_found_on_this_shell_PATH": false,
+    "exact_luna_goal_not_identified": true,
+    "new_session_tool_exposure": "NOT_TESTED_NOT_GUARANTEED",
+    "no_new_thread_created": true
+  },
+  "resume_observation": {
+    "source": "docs/healthtech/audits/pepo-key-limit-repair-20261104/metadata-observation-v2-resume.json",
+    "sha256": "c838d71ab87831210ccf1d4c8d640e4c587796026fe9bdf194141c178f9a94a4",
+    "started_at": "2026-11-04T17:57:37.583397+07:00",
+    "timezone_fix": "convert aware offset to same UTC instant after verifying receipt hash; do not renew time"
+  },
+  "owner_capture": {
+    "implemented": true,
+    "tested_with_fixtures": true,
+    "real_capture_executed_this_turn": false,
+    "balance_automatically_verified": false,
+    "account_scope_basis": "owner confirmation + existing immutable ledger scope or stable explicitly owner-asserted alias"
+  },
+  "new_key_requests": 0,
+  "new_paid_generation_calls": 0,
+  "new_reservations": 0,
+  "new_gpu_jobs": 0,
+  "new_paid_cost_usd": 0,
+  "ledger_unchanged": true,
+  "scientific_goals_unchanged": true,
+  "new_goal_created": false,
+  "goal_resumed_by_tool": false
+}

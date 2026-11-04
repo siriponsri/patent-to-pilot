@@ -1,0 +1,62 @@
+{
+  "format": "ptp-api-owner-key-recheck-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+  },
+  "observed_at_local": "2026-11-03T11:21:38.060778+07:00",
+  "owner_input": {
+    "env_path_supplied": true,
+    "path_recorded": false,
+    "key_value_printed": false,
+    "key_value_copied": false,
+    "key_value_staged": false
+  },
+  "metadata_receipt": {
+    "path": "metadata-observation.json",
+    "file_sha256": "329aef599f8c925c90d27ac305cb339b34de727dc33736cc1203b580386a6e59",
+    "receipt_sha256": "d5291371cdc58c6fbdc8e1b5cbd5bf9fcc912bd85b8461617e743c045ef4dc36",
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "is_management_key": false,
+    "account_scope_binding": "NOT_RECONCILED",
+    "account_credits": "NOT_REQUESTED_MANAGEMENT_KEY_REQUIRED",
+    "history_completeness": "NOT_PROVEN",
+    "live_admission_enabled": false
+  },
+  "dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "unknown_billing_retried": false
+  },
+  "tests": {
+    "full": {
+      "tests": 615,
+      "passed": 614,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "time_seconds": 21.892,
+      "junit": "full-tests.xml",
+      "junit_sha256": "6d40fed25882341f98993fd12554ac9b38f3251de17c86628f279387e37fa001",
+      "skip_reason": "pinned local tokenizer artifact unavailable"
+    },
+    "compileall": "PASS",
+    "json_readback": "PASS"
+  },
+  "remaining_non_secret_evidence": [
+    "existing canonical R1 journal location or reviewed sanitized all-attempt export",
+    "current scoped v2 account/key credit snapshot from an approved channel"
+  ],
+  "interpretation": "Read-only metadata refresh passed; it did not clear the paid reservation gate."
+}

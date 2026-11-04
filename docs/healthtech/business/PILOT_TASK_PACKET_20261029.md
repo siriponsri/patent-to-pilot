@@ -1,6 +1,6 @@
 # Public-case pilot task packet
 
-Status: `PREPARED / ENGINEERING_DRY_RUN_ONLY / NOT_VALIDATED`. This packet is a reversible preparation artifact for HT-G5 / HT-W16. It contains no participant data, no outreach, no participant timings, no purchase, and no customer claim.
+Status: `PREPARED / ENGINEERING_DRY_RUN_ONLY / NOT_VALIDATED / FUTURE_USE_ONLY`. This packet is a reversible preparation artifact for HT-G5 / HT-W16. The current round is a solo computational study; it contains no participant data, no outreach, no participant timings, no purchase, and no customer claim. See [`SOLO_PILOT_TASK_SET_RUBRIC_20261101_TH_EN.md`](SOLO_PILOT_TASK_SET_RUBRIC_20261101_TH_EN.md).
 
 ## Purpose
 
@@ -83,4 +83,4 @@ No offer has been sent, accepted, purchased, or validated. Manual delivery effor
 
 ## Acceptance boundary
 
-This packet is ready for owner review and an authorized usability/commercial study. It does not establish usability, willingness to pay, repeat use, ROI, product-market fit, or commercial demand.
+This packet is ready only as a future-use template. It does not establish usability, independent user validation, willingness to pay, repeat use, ROI, product-market fit, or commercial demand. The current solo computational study may continue without activating this packet.

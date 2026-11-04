@@ -1,0 +1,329 @@
+{
+  "file_sha256": "2594295d4bbc82c7707365e4a0f372be5c0da6b88264a7c1bd76df5f22f0043a",
+  "declared_pack_sha256": "d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932",
+  "hash_valid": true,
+  "cases": [
+    {
+      "case_id": "HT-DEV-MITRACLIP",
+      "source_ids_in_model_view": [
+        "abbott-product-patent-disclosures",
+        "google-patents-us10405976b2",
+        "google-patents-us10667815b2",
+        "google-patents-us11096783b2",
+        "google-patents-us11759318b2",
+        "google-patents-us9095433b2",
+        "google-patents-us9610159b2",
+        "openfda-pma-p100009-base"
+      ],
+      "messages_sha256": "543a23f239f1ac4a036459ebcbfb571c3501c62ed92686689eaaa66ad4dd8bca",
+      "evidence_count": 5,
+      "visible_candidates": 6
+    },
+    {
+      "case_id": "HT-DEV-TENDYNE",
+      "source_ids_in_model_view": [
+        "abbott-product-patent-disclosures",
+        "google-patents-us10405976b2",
+        "google-patents-us10667815b2",
+        "google-patents-us11096783b2",
+        "google-patents-us11759318b2",
+        "google-patents-us9095433b2",
+        "google-patents-us9610159b2",
+        "openfda-pma-p240042-base"
+      ],
+      "messages_sha256": "6011c581651a75cf16997fe6120f625f39047f127a3828d6d439546ee1ff325e",
+      "evidence_count": 5,
+      "visible_candidates": 6
+    },
+    {
+      "case_id": "HT-DEV-TRICLIP",
+      "source_ids_in_model_view": [
+        "abbott-product-patent-disclosures",
+        "google-patents-us10617519b2",
+        "google-patents-us11123181b2",
+        "google-patents-us11135055b2",
+        "google-patents-us11534303b2",
+        "google-patents-us12514573b2",
+        "google-patents-us9095433b2",
+        "openfda-pma-p230007-base"
+      ],
+      "messages_sha256": "3002726ee0f6db8d93a537096737e4ab9595ab011413fd2d46d1156e523df3ae",
+      "evidence_count": 5,
+      "visible_candidates": 6
+    }
+  ],
+  "rights_rows": {
+    "openfda-pma-p100009-base": {
+      "source_id": "openfda-pma-p100009-base",
+      "redistribution": "ALLOWED_WITH_ATTRIBUTION",
+      "rights_id": "openfda-pma-records",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "openFDA:pma_number=P100009",
+      "displayable_fields": [
+        "pma_number",
+        "supplement_number",
+        "applicant",
+        "generic_name",
+        "trade_name",
+        "product_code",
+        "advisory_committee",
+        "advisory_committee_description",
+        "decision_date",
+        "decision_code",
+        "date_received",
+        "supplement_reason",
+        "supplement_type",
+        "ao_statement"
+      ],
+      "version_label": "openFDA-last-updated-2026-10-19",
+      "sha256": "613e6d9c72da134861ce895ce3dff548abb234376fe6b0b4ee35c4782bcb8c43",
+      "missing_required_rights_fields": [
+        "basis_url"
+      ]
+    },
+    "abbott-product-patent-disclosures": {
+      "source_id": "abbott-product-patent-disclosures",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "abbott-product-patent-disclosures",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "product-sections:Abbott patent legal notice",
+      "displayable_fields": [],
+      "version_label": "page-retrieved-2026-10-27",
+      "sha256": "11da64a0b4603bd94ffe3d05791efc64b230812be9df035a767fa2889b07cea6",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us10405976b2": {
+      "source_id": "google-patents-us10405976b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:10405976",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "ac7caf9fce6bc90d25a4419447d0aa9b3130e980618d9e51df4137c6516cc6f9",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us10667815b2": {
+      "source_id": "google-patents-us10667815b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:10667815",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "a3fb54fe3d5402eb1f1d47dced67390f8fe56ea17de6e290d707ed3c479cfdbc",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us11096783b2": {
+      "source_id": "google-patents-us11096783b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:11096783",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "d494437bee2863b8d00e8246a89117533ff892fea345c4f0df114135529269fa",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us11759318b2": {
+      "source_id": "google-patents-us11759318b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:11759318",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "7eb7150cfbd48bca2989ef75b1d5dbd76138a5034252131672677170ef670257",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us9095433b2": {
+      "source_id": "google-patents-us9095433b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:9095433",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "43908da02c1d034c5ffbb248e613ea41fa0da1ed6af9334225a990ddc2461c17",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us9610159b2": {
+      "source_id": "google-patents-us9610159b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:9610159",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "fa46ff84292c9552b43a8cdd990b8e5a07baa5046d545ab1d1ce40eaa0f27015",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "openfda-pma-p240042-base": {
+      "source_id": "openfda-pma-p240042-base",
+      "redistribution": "ALLOWED_WITH_ATTRIBUTION",
+      "rights_id": "openfda-pma-records",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "openFDA:pma_number=P240042",
+      "displayable_fields": [
+        "pma_number",
+        "supplement_number",
+        "applicant",
+        "generic_name",
+        "trade_name",
+        "product_code",
+        "advisory_committee",
+        "advisory_committee_description",
+        "decision_date",
+        "decision_code",
+        "date_received",
+        "supplement_reason",
+        "supplement_type",
+        "ao_statement"
+      ],
+      "version_label": "openFDA-last-updated-2026-10-19",
+      "sha256": "99c35a6a724b554edd7c0c9d755f4f5a63fad4dd3c768e9d3cd22e58e26201b9",
+      "missing_required_rights_fields": [
+        "basis_url"
+      ]
+    },
+    "openfda-pma-p230007-base": {
+      "source_id": "openfda-pma-p230007-base",
+      "redistribution": "ALLOWED_WITH_ATTRIBUTION",
+      "rights_id": "openfda-pma-records",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "openFDA:pma_number=P230007",
+      "displayable_fields": [
+        "pma_number",
+        "supplement_number",
+        "applicant",
+        "generic_name",
+        "trade_name",
+        "product_code",
+        "advisory_committee",
+        "advisory_committee_description",
+        "decision_date",
+        "decision_code",
+        "date_received",
+        "supplement_reason",
+        "supplement_type",
+        "ao_statement"
+      ],
+      "version_label": "openFDA-last-updated-2026-10-19",
+      "sha256": "1d50de03827b92fba33de7871d487a1b94104000d3f76bff6af21a26e44b5ad5",
+      "missing_required_rights_fields": [
+        "basis_url"
+      ]
+    },
+    "google-patents-us10617519b2": {
+      "source_id": "google-patents-us10617519b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:10617519",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "8ece92938b6c3e77efd42e0bd96b9850fec2d6407e75607f6bb4b6c55651f0b9",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us11123181b2": {
+      "source_id": "google-patents-us11123181b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:11123181",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "5cb62308f48fda6bb15931294afbc241302a860d67d53b34000c41bbda1d0ac2",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us11135055b2": {
+      "source_id": "google-patents-us11135055b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:11135055",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "4647505bf026f90892fa5c311d6287220041ba380c376300c1ff463e1c3430d6",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us11534303b2": {
+      "source_id": "google-patents-us11534303b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:11534303",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "bb6338c3728cf6270d9520beaadd09bd9b86b5db80431a87c8bd830af9d6086d",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    },
+    "google-patents-us12514573b2": {
+      "source_id": "google-patents-us12514573b2",
+      "redistribution": "BLOCKED_LOCAL",
+      "rights_id": "google-patents-pages",
+      "basis_url": null,
+      "clause_locator": null,
+      "locator": "disclosure-raw-number:12514573",
+      "displayable_fields": [],
+      "version_label": "retrieved-2026-10-27",
+      "sha256": "6a0b6aaed9d52e40344673d0fec128e0d05c6f6d96637a929cc71972ee3bb443",
+      "missing_required_rights_fields": [
+        "basis_url",
+        "displayable_fields"
+      ]
+    }
+  },
+  "model_calls": 0,
+  "source_payloads_emitted": false,
+  "api_projection": "BLOCKED_LOCAL_RIGHTS",
+  "reason": "source abbott-product-patent-disclosures is not rights-cleared for remote generation",
+  "route_status": "PLACEHOLDER_FOR_OFFLINE_VALIDATION_ONLY_NOT_A_PRICING_SNAPSHOT"
+}

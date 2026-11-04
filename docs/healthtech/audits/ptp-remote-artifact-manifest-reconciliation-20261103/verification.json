@@ -1,0 +1,55 @@
+{
+  "format": "ptp-prior-remote-artifact-manifest-reconciliation-v1",
+  "status": "PASS_PRIOR_REMOTE_ARTIFACT_HASH_MATCH_NO_RERUN",
+  "observed_at_utc": "2026-11-03T06:55:22.0138419Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "remote_host": "100.77.149.83",
+  "remote_job_root": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/outputs",
+  "local_artifact_root": "C:/Users/User/Desktop/myProject/patent-to-pilot-local-artifacts/ht-o4-http-device-vectors-20261031/outputs",
+  "bundles": [
+    {
+      "name": "device-patembed-corpus",
+      "remote_manifest": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/outputs/device-patembed-corpus/manifest.json",
+      "local_manifest": "C:/Users/User/Desktop/myProject/patent-to-pilot-local-artifacts/ht-o4-http-device-vectors-20261031/outputs/device-patembed-corpus/manifest.json",
+      "sha256": "75348afa4fede2535c09970d70353ecf9477f306a48fa46c71a445677f2302f1",
+      "match": true
+    },
+    {
+      "name": "device-patembed-queries",
+      "remote_manifest": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/outputs/device-patembed-queries/manifest.json",
+      "local_manifest": "C:/Users/User/Desktop/myProject/patent-to-pilot-local-artifacts/ht-o4-http-device-vectors-20261031/outputs/device-patembed-queries/manifest.json",
+      "sha256": "45da46ee7dbd755f8ca8dd4c244ff6b9063f16253c27907e92ff0291c61c7e54",
+      "match": true
+    },
+    {
+      "name": "device-e5-corpus",
+      "remote_manifest": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/outputs/device-e5-corpus/manifest.json",
+      "local_manifest": "C:/Users/User/Desktop/myProject/patent-to-pilot-local-artifacts/ht-o4-http-device-vectors-20261031/outputs/device-e5-corpus/manifest.json",
+      "sha256": "643ab8856a1bcd72d2c2e4745d02bdfe46bed0190f16ab8834c3870249fdcc7b",
+      "match": true
+    },
+    {
+      "name": "device-e5-queries",
+      "remote_manifest": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/outputs/device-e5-queries/manifest.json",
+      "local_manifest": "C:/Users/User/Desktop/myProject/patent-to-pilot-local-artifacts/ht-o4-http-device-vectors-20261031/outputs/device-e5-queries/manifest.json",
+      "sha256": "8e0a933f34c26a7f1370809c5220911cf6ed1b318bd02e7b4b60cc25ce76494c",
+      "match": true
+    }
+  ],
+  "checks": {
+    "remote_manifest_read_only": true,
+    "local_manifest_hashes_recomputed": true,
+    "all_four_hashes_match": true,
+    "new_remote_encode": false,
+    "new_remote_retrieval_evaluation": false,
+    "remote_write": false,
+    "existing_http_service_touched": false,
+    "allocation_reference_observed": false
+  },
+  "command_evidence": "remote-manifest-sha256.txt",
+  "related_audits": [
+    "docs/healthtech/audits/ptp-current-head-runtime-rebind-20261103/verification.json",
+    "docs/healthtech/audits/ptp-vector-artifact-revalidation-20261103/verification.json",
+    "docs/healthtech/audits/ptp-remote-preflight-live-20261103/verification.json"
+  ]
+}

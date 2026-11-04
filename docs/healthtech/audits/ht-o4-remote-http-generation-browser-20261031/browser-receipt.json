@@ -1,0 +1,41 @@
+{
+  "format": "ht-browser-abbott-http-generation-receipt-v1",
+  "status": "PASS_BROWSER_HTTP_VECTOR_GENERATION_HISTORY_EXPORT",
+  "cases": [
+    {
+      "case_id": "HT-DEV-MITRACLIP",
+      "job_id": "da89cb6bcb7946c0a4a5b5170fec2d6d",
+      "provider": "local-generation",
+      "generation_schema_valid": true,
+      "source_inspection": "PASS",
+      "history_versions": [1, 2],
+      "export_json_version": 2,
+      "generation_latency_seconds": 32.888118783943355
+    },
+    {
+      "case_id": "HT-DEV-TENDYNE",
+      "job_id": "9775034f5c114725a79362474c8983af",
+      "provider": "local-generation",
+      "generation_schema_valid": true,
+      "source_inspection": "PASS",
+      "history_versions": [1, 2],
+      "export_json_version": 2,
+      "generation_latency_seconds": 33.05943679087795
+    },
+    {
+      "case_id": "HT-DEV-TRICLIP",
+      "job_id": "50522ac948b54a93a8d4a9a4a7ac2170",
+      "provider": "local-generation",
+      "generation_schema_valid": true,
+      "source_inspection": "PASS",
+      "history_versions": [1, 2],
+      "export_json_version": 2,
+      "generation_latency_seconds": 33.12056742794812
+    }
+  ],
+  "local_generation_jobs": 3,
+  "paid_provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "raw_case_bundle_committed": false,
+  "generated_text_committed": false
+}

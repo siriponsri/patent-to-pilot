@@ -1,0 +1,83 @@
+{
+  "format": "ptp-goal-completion-audit-v1",
+  "goal_reused": true,
+  "observed_local_date": "2026-11-03",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree": "DIRTY_DOCUMENTATION_AUDIT_AND_UNCOMMITTED_SOURCE_PATCH",
+    "root_main_head": "0d049802d36bc2eebe60331ec444d62469fd767f",
+    "root_main_merge": "NOT_DONE"
+  },
+  "requirements": [
+    {
+      "id": "scope_and_authorization",
+      "status": "PASS",
+      "result": "AGENTS, long-run goal, authorization/budget, protocol, and checkpoint documents were read; work remains isolated and owner scope is preserved.",
+      "evidence": ["AGENTS.md", "docs/healthtech/long-runs/LONG_RUN_GOAL.md", "docs/healthtech/long-runs/AUTHORIZATION_AND_BUDGET.md"]
+    },
+    {
+      "id": "O1_http_ui_jobs_history_export",
+      "status": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+      "result": "Current-head loopback HTTP/UI path covers jobs, status, cancel/resume/retry, source inspection, edit/history/reopen, and JSON/TH/EN export for three named cases.",
+      "evidence": ["docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json", "docs/healthtech/audits/ptp-long-run-resume-20261103/o1-current-head-20261103/verification.json"]
+    },
+    {
+      "id": "O2_remote_embeddings_shared_engine",
+      "status": "PARTIAL_RUNTIME_BOUND_NO_NEW_REMOTE_RERUN",
+      "result": "Existing PatEmbed/e5 remote artifacts are runtime-bound and private vector bundles pass integrity revalidation; no new dr-train encode window or model-weight recheck is claimed.",
+      "evidence": ["docs/healthtech/audits/ptp-current-head-runtime-rebind-20261103/verification.json", "docs/healthtech/audits/ptp-vector-artifact-revalidation-20261103/verification.json", "docs/healthtech/audits/ht-research-product-20261031/verification.json"]
+    },
+    {
+      "id": "O3_local_api_paired_generation",
+      "status": "PARTIAL_LOCAL_PASS_PAID_BLOCKED",
+      "result": "Local guided Qwen3-8B is schema-valid on 3/3 current-head cases; the exact current-head API payload is 3/3 rights/schema preflight-valid, but paid API generation is not run.",
+      "evidence": ["docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json", "docs/healthtech/audits/ptp-api-parallel-recheck-20261103/verification.json", "docs/healthtech/audits/ptp-api-gate-recheck-20261103/CHECKPOINT.json"]
+    },
+    {
+      "id": "O4_three_cases_and_research",
+      "status": "PARTIAL_DESCRIPTIVE_RESEARCH",
+      "result": "Three real device cases have current-head engineering evidence and the offline frontier is reproducible, but the cohort is development-only with no current-head final holdout and no equal-total-budget adaptive superiority claim.",
+      "evidence": ["docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json", "docs/healthtech/audits/ptp-current-head-holdout-availability-20261103/verification.json", "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md"]
+    },
+    {
+      "id": "budget_and_resource_safety",
+      "status": "PASS_NO_NEW_MUTATION",
+      "result": "No provider call, reservation, attempt ID, retry, ledger mutation, dataset download, budget reset, or time-window reset occurred during this audit.",
+      "evidence": ["docs/healthtech/audits/ptp-api-parallel-recheck-20261103/verification.json", "docs/healthtech/audits/ptp-goal-completion-audit-20261103/verification.json"]
+    },
+    {
+      "id": "manuscript_and_wpi_readiness",
+      "status": "PARTIAL_OWNER_REVIEW_REQUIRED",
+      "result": "Manuscript, declarations, publisher-level checklist, and WPI venue-fit audit are prepared; WPI-specific Guide for Authors remains inaccessible locally and submission has not occurred.",
+      "evidence": ["docs/healthtech/audits/ptp-manuscript-api-rebind-20261103/verification.json", "docs/healthtech/audits/wpi-venue-recheck-r2-20261103/verification.json"]
+    },
+    {
+      "id": "merge_and_cleanup",
+      "status": "NOT_RUN_OWNER_REVIEW_GATE",
+      "result": "Main merge, tested push/PR acceptance, and branch/worktree deletion are intentionally deferred until candidate-bound acceptance and owner review are complete.",
+      "evidence": ["docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json", "docs/healthtech/audits/ptp-local-lock-repair-20261103/CHECKPOINT.json"]
+    }
+  ],
+  "completion": {
+    "status": "PARTIAL_NOT_COMPLETE",
+    "adaptive_superiority": "NOT_ESTABLISHED",
+    "paid_api_comparison": "NOT_RUN",
+    "final_holdout": "NOT_AVAILABLE",
+    "external_business_validation": "NOT_VALIDATED",
+    "wpi_submission": "NOT_SUBMITTED",
+    "owner_inputs_required_once": [
+      "existing canonical R1 journal/registry or sanctioned sanitized all-attempt export",
+      "current scoped account/key credit and billing snapshot"
+    ]
+  },
+  "active_experiment_processes_after_audit": 0,
+  "json_validation": "PASS",
+  "evidence_paths_check": {
+    "status": "PASS",
+    "checked": 20,
+    "missing": [],
+    "command_scope": "requirements[].evidence paths in this completion audit"
+  }
+}

@@ -128,6 +128,47 @@ python -B -m pytest -p no:cacheprovider tests/test_healthtech.py
 
 The runtime accepts no gold labels. The independent evaluator lives in `evaluation/healthtech/`; generated schemas live in [schemas/healthtech](schemas/healthtech/). [Runbook](docs/healthtech/RUNBOOK.md) describes the contracts and remaining work.
 
+### Installed candidate versus source checkout
+
+The repository checkout and the verified installed candidate are separate
+reproduction surfaces:
+
+- **Source checkout:** use the repository's `scripts/healthtech/` entry points,
+  `src/` modules, authored examples, and tests from a pinned worktree. This is
+  the surface for development and for workflows that need repository-relative
+  fixtures or private, owner-authorized research bundles.
+- **Installed Python candidate:** the verified wheel is
+  `patent_to_pilot-0.1.0-py3-none-any.whl`, `237,355` bytes, SHA-256
+  `70b8b0d50d60ec4540d640864cee42495daaa68ceee8618c583dffe89b46784d`.
+  It was installed with `--no-index --no-deps` into an isolated task
+  environment and exercised through the installed package rather than the live
+  checkout. The synthetic HealthTech engine produced dossier JSON, Thai and
+  English Markdown, acquisition events, and a manifest; the installed-candidate
+  suite passed `102/102` with no skips.
+
+For a local wheel check, use a private wheel path and a fresh environment:
+
+```powershell
+python -m venv <task-venv>
+<task-venv>\Scripts\python.exe -m pip install --no-index --no-deps <path-to-wheel>
+certutil -hashfile <path-to-wheel> SHA256
+<task-venv>\Scripts\python.exe -B <private-verifier> --candidate-root <source-snapshot> --output-dir <fresh-output> --forbid-root <live-worktree>
+```
+
+The command above describes the verified shape; `<path-to-wheel>`,
+`<private-verifier>`, source snapshots, and output directories are local
+placeholders and are not bundled in Git. The installed-candidate follow-up
+receipt is [`pepo-resume-ready-20261104/verification.json`](docs/healthtech/audits/pepo-resume-ready-20261104/verification.json).
+
+The installed check used pre-existing system-site-packages for its test
+dependencies and therefore does **not** prove a clean-machine dependency
+install. Public release, third-party corpus/model redistribution, raw/private
+payload recovery, and provider credentials are also outside this check. Private
+recovery artifacts remain under the owner-controlled local evidence store
+(`%LOCALAPPDATA%/PatentToPilot/healthtech/evidence/`) and are referenced by
+sanitized manifests and hashes rather than committed payloads. The separate
+G7 checkpoint records these boundaries and the exact candidate under review.
+
 ## Historical fixture quickstart
 
 These commands are checked against the inspected source interfaces. They were **not executed as part of this documentation pack**. The example runs an existing deterministic fixture workflow; it does not run the planned HealthTech benchmark.

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checks": [
+    "3 cases, 9 allowed facts",
+    "no patent/disclosure candidates or sources",
+    "exact message hashes bound",
+    "tampered source rejected",
+    "original source unchanged"
+  ],
+  "provider_calls": 0,
+  "gpu_jobs": 0,
+  "input_file_sha256": "2594295d4bbc82c7707365e4a0f372be5c0da6b88264a7c1bd76df5f22f0043a",
+  "script_sha256": "53e2a646ed9f564e10ed2867042dc5ec95683e5cc41894f9bb2ff4f34c466222"
+}

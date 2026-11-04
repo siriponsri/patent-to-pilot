@@ -1,0 +1,69 @@
+{
+  "format": "ptp-current-head-holdout-availability-v1",
+  "observed_at_local": "2026-11-03",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "tree_state": "DIRTY_PREEXISTING_DOCUMENTATION_AND_AUDIT_PATCHES_PRESERVED"
+  },
+  "protocol": {
+    "path": "configs/healthtech/g1_g2_public_cohort_protocol.json",
+    "sha256": "582e7d9a551f2e4afefa6cec7be26f6c98f2af9fe32ffb4b16bab726b1f32508",
+    "status": "FROZEN_DEVELOPMENT_ONLY",
+    "cohort": "3 Abbott cardiovascular products; 1 applicant/source",
+    "split": "development_only",
+    "final_holdout_available": false,
+    "generalization_claim_allowed": false
+  },
+  "finding": {
+    "status": "PASS_AVAILABILITY_CHECK_NO_CURRENT_HEAD_FINAL_HOLDOUT",
+    "current_head_final_holdout": "NOT_AVAILABLE_OR_AUTHORIZED",
+    "historical_stryker": "RETAINED_AS_SEPARATE_DIAGNOSTIC_NOT_SUBSTITUTED",
+    "current_metrics_interpretation": "DESCRIPTIVE_DEVELOPMENT_ONLY"
+  },
+  "scope_boundaries": {
+    "retrieval_rerun": false,
+    "dataset_download": false,
+    "semantic_labels_created": false,
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "private_payload_copied": false
+  },
+  "verification": {
+    "focused_tests": {
+      "status": "PASS",
+      "passed": 82,
+      "failed": 0,
+      "skipped": 0,
+      "junit": "focused-tests-20261103.xml",
+      "junit_sha256": "7c316be722e4f9d7923d6a3b78956a67d6723a9e9048ca4c40fed54c18e735d2"
+    },
+    "full_python": {
+      "status": "PASS",
+      "passed": 612,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "warnings": 2,
+      "junit": "full-tests-20261103.xml",
+      "junit_sha256": "023668ee972fec7cb8b1f083bb46536f8f7f283fa4c5e1dddd0bef35e6949fbd",
+      "skip_reason": "pinned local tokenizer artifact unavailable"
+    },
+    "source_integrity": {
+      "status": "PASS",
+      "checks": ["JSON readback", "protocol SHA-256 readback", "compileall", "git diff --check"]
+    }
+  },
+  "evidence": [
+    "configs/healthtech/g1_g2_public_cohort_protocol.json",
+    "docs/healthtech/audits/luna-long-run-20261029-m2-m3-stryker-20261029/",
+    "docs/healthtech/audits/luna-long-run-20261030-company-holdout-sensitivity-20261030/",
+    "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json"
+  ],
+  "next_action": "Continue current-head development and offline work; do not claim final holdout or generalization. Add a separately authorized, rights-cleared final holdout only if one becomes available."
+}

@@ -1,0 +1,12 @@
+{
+  "format": "ptp-code-review-r2-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "specification_review": "PASS_NO_NEW_FINDINGS",
+  "standards_review": "PASS_NO_UNRELATED_SCOPE",
+  "full_suite": "640 passed; 0 failed; 0 errors; 2 skipped",
+  "compileall": "PASS",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION",
+  "release": "READY_FOR_OWNER_REVIEW_NOT_MERGE",
+  "goal_closed": false,
+  "next": "Owner reviews the scoped dirty source patch; only after acceptance may the authorized workflow stage/commit and rerun clean release verification."
+}

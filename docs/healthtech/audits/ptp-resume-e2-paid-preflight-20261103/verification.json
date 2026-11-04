@@ -1,0 +1,64 @@
+{
+  "format": "ptp-resume-e2-paid-preflight-verification-v1",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "provider_preflight": {
+    "env_source": "owner_supplied_local_env_bounded_helper",
+    "key_material_persisted": false,
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "key_class": "ordinary_non_management",
+    "current_scoped_credit": "UNAVAILABLE",
+    "remaining_key_limit": "UNAVAILABLE",
+    "account_scope": "NOT_RECONCILED",
+    "dispatch": "BLOCKED_BEFORE_RESERVATION"
+  },
+  "route": {
+    "model": "qwen/qwen3-32b",
+    "provider": "DeepInfra",
+    "prompt_usd_per_million": 0.08,
+    "completion_usd_per_million": 0.28,
+    "refresh_required_before_dispatch_seconds": 300,
+    "receipt": "public-route-pricing-observation.json"
+  },
+  "journal": {
+    "receipt": "journal-readback.json",
+    "integrity_check": "ok",
+    "operational_attempts": 0,
+    "operational_contexts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "legacy_actual_usd": 0.0001464,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_allowance_usd": 1.0,
+    "reset": false
+  },
+  "release_verification": {
+    "junit": "full-tests.xml",
+    "tests_total": 642,
+    "passed": 640,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "compileall": "PASS",
+    "diff_check": "KNOWN_PRE_EXISTING_LINE_ENDING_AND_TRAILING_WHITESPACE_NOISE"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids_created": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "research_goal_closed": false
+  },
+  "status": "PARTIAL_PAID_BLOCKED_BEFORE_RESERVATION",
+  "next": "Obtain one non-secret current scoped v2 credit/limit snapshot or sanctioned pointer; reconcile against E2, refresh route pricing inside the 300-second window, and reserve at most the existing USD0.25 canary."
+}

@@ -1,0 +1,129 @@
+{
+  "format": "ptp-current-head-engineering-verification-v1",
+  "observed_at_local": "2026-11-03",
+  "goal": "Patent-to-Pilot O1-O4 original goal",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "tested_source_head": "a7d064dcdda67752c1c0434267796852e9d4f0d9",
+    "tracked_tree_before_checkpoint": "CLEAN",
+    "change_scope": "documentation_and_raw_test_artifacts_only"
+  },
+  "tests": {
+    "python_targeted_prior_current_head": {
+      "status": "PASS",
+      "result": "41 passed, 0 failed, 0 errors, 0 skipped",
+      "log": "python-targeted.log",
+      "junit": "python-targeted.xml"
+    },
+    "o2_evaluator_contracts_prior_current_head": {
+      "status": "PASS",
+      "result": "28 passed, 0 failed, 0 errors, 0 skipped",
+      "log": "o2-evaluator-contracts.log",
+      "junit": "o2-evaluator-contracts.xml"
+    },
+    "frontend_unit_prior_current_head": {
+      "status": "PASS",
+      "result": "74 passed, 0 failed, 0 skipped",
+      "log": "frontend-unit.log"
+    },
+    "browser_http_prior_current_head": {
+      "status": "PASS",
+      "result": "source inspection PASS; history 1 -> 2; edit/reopen PASS; JSON/Thai/English export PASS; provider calls 0; paid cost USD 0.00",
+      "log": "browser-http-integration.log"
+    },
+    "failure_accounting_current_head": {
+      "status": "PASS",
+      "result": "4 passed, 0 failed, 0 errors, 0 skipped",
+      "log": "failure-accounting-current-head.log"
+    },
+    "full_python_current_head": {
+      "status": "PASS",
+      "result": "599 passed, 0 failed, 0 errors, 1 skipped, 2 warnings",
+      "log": "full-python-current-head-verbose.log",
+      "skip_reason": "pinned local tokenizer artifact is unavailable"
+    }
+  },
+  "source_hashes_sha256": {
+    "scripts/healthtech/run_real_baselines.py": "1458939e49a39999d3009893ac5d13c5f69adcb01150871b62cefd7c5ab0cd3f",
+    "tests/test_healthtech_real_baselines.py": "4c1fff706398342a2c260b514c1afadbdacc18a06a940d332d5cf4a743818e3b",
+    "tests/test_healthtech_http.py": "8374781c2ca1a6100842f76084d0b25fa0fd0ae4511af8bac777896f56b485f6",
+    "tests/test_healthtech_vector_http.py": "199d5e610c42f540e0332cc3615eee9f30f8c71ddd357a0e16adde49300cacfb",
+    "tests/test_healthtech_generation_payload.py": "565a54ece103d5d57ba7fcc988512b74f3c3884e786ff6ef8bd70ecef1c2367f",
+    "tests/test_healthtech_history_migration.py": "db2638159cce86d76247b25327ce993fc40576fadb5225e914d762b677fcaed9",
+    "tests/test_healthtech_transformer_encoders.py": "7a98f7ff2d46d313df4290bc62a5bfd60b96d75b7db5e1c320e65cda0a114897",
+    "tests/test_healthtech_vector_artifacts.py": "c82b231f1b7b741f3e971bbc417b3ef56672921a36449c7e8d851e283250f8b7",
+    "tests/test_healthtech_api_generation.py": "50811b9ad36d78afb1fe429b3e659b73bc07a4e5b31ac5bbca3fc00806dfb71b",
+    "tests/test_healthtech_ledger_registry.py": "6f837f48795bfadb1ca6b7429bae307cf3ea0d171fb6fa37f918409b0263f4c8",
+    "frontend/healthtech-web/app/src/adapters.js": "bd5105b2ba768ec909caea52063e13226a72c35e1ea74348ed48a75770dde8cd",
+    "frontend/healthtech-web/app/src/ui/app.js": "c456c21a5b1f211059c85178aa4c05b7c5f40d50eee9368f92f20688e06cb3e6",
+    "frontend/healthtech-web/tests/e2e/backend-http-integration.mjs": "8d13568789dbcfc34cc64af5bdb98894e0d7850952281d4a974994b42ba72c97"
+  },
+  "failure_accounting": {
+    "status": "PASS_PROSPECTIVE_REPAIR",
+    "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+    "regression_commits": [
+      "e63e8a9d8996f805904a019579c405129171353c",
+      "323bcc5d39ad5374ec8bfce8007d24c1881eae86"
+    ],
+    "partial_attempts_preserved": true,
+    "measured_wall_cpu_preserved": true,
+    "unknown_resource_fields_explicit": true,
+    "synthetic_zero_attempt_added": false,
+    "historical_receipts_rewritten": false,
+    "retrospective_cost_inferred": false,
+    "historical_rounds_affected": "NONE_KNOWN"
+  },
+  "budget_interpretation": {
+    "status": "DESCRIPTIVE_REALIZED_QUALITY_RESOURCE_FRONTIER",
+    "equal_total_budget_claim": "NOT_SUPPORTED",
+    "shared_inputs": [
+      "frozen corpus",
+      "eligible queries",
+      "references/groups",
+      "encoder/reranker bundle",
+      "K=20",
+      "candidate_depth=41",
+      "rerank_depth=41"
+    ],
+    "realized_units": {
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+      "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+    },
+    "matched_prefix_diagnostic": {
+      "status": "POSTHOC_DESCRIPTIVE_NOT_FINAL_ENDPOINT",
+      "budget": {"query_calls": 3, "rerank_pairs": 123},
+      "macro_recall_at_20": {
+        "HT-B1": 0.49880241951853205,
+        "HT-B2_prefix_1": 0.49880241951853205,
+        "HT-B3_prefix_1": 0.49880241951853205
+      },
+      "HT-B4": "EXCLUDED_CONTROLLER_STEPS_NOT_SAME_UNIT"
+    }
+  },
+  "outcomes": {
+    "O1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "O2": "PARTIAL_CONTRACT_ONLY_REMOTE_RERUN_NOT_CLAIMED",
+    "O3": "PARTIAL_PAID_API_COMPARISON_GATED",
+    "O4": "PARTIAL_EXACT_HEAD_REAL_CASE_ASSETS_UNAVAILABLE"
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "new_experiment": false
+  },
+  "canonical_receipts": [
+    "../ptp-parallel-readiness-followup-20261103/verification.json",
+    "../ptp-parallel-readiness-followup-20261103/POST_REVIEW_CURRENT_HEAD_20261103.json",
+    "../ptp-generation-path-followup-20261103/verification.json",
+    "../ptp-matched-budget-prefix-20261103/verification.json",
+    "../ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json"
+  ],
+  "next_action": "Keep the goal active; continue only with owner review or independently authorized offline work until the existing O2/O3/O4 evidence gates are exposed."
+}

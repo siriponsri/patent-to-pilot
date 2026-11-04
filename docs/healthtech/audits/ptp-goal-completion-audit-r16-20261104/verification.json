@@ -1,0 +1,59 @@
+{
+  "format": "ptp-goal-completion-audit-v16",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "outcomes": {
+    "O1": "COMPLETE_ENGINEERING_CURRENT_HEAD",
+    "O2_ENGINEERING": "COMPLETE_CURRENT_HEAD_REMOTE_SHARDS_TO_SHARED_ENGINE",
+    "O2_SCIENTIFIC": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "O3_LOCAL": "PASS_3_OF_3_SCHEMA_VALID_FROZEN_PACK",
+    "O3_API": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "O4_ENGINEERING": "PASS_THREE_CASE_BROWSER_AND_SHARED_VECTOR_ENGINE",
+    "O4_RESEARCH": "PARTIAL_NO_AUTHORIZED_FINAL_HOLDOUT"
+  },
+  "evidence": {
+    "o2_completion": "docs/healthtech/audits/ptp-o2-current-head-completion-r16-20261104/verification.json",
+    "r13_regression": "docs/healthtech/audits/ptp-resume-e2-current-r13-20261104/verification.json",
+    "prior_requirement_audit": "docs/healthtech/audits/ptp-goal-completion-audit-r15-20261104/verification.json",
+    "manuscript": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md"
+  },
+  "research": {
+    "matched_budget": "3 query calls / 123 rerank pairs",
+    "matched_methods": ["HT-B1", "HT-B2", "HT-B3"],
+    "matched_macro_recall_at_20": 0.49880241951853205,
+    "interpretation": "POSTHOC_DESCRIPTIVE_NOT_ESTIMABLE",
+    "final_holdout": "NOT_AVAILABLE",
+    "semantic_device_patent_gold": "NOT_AVAILABLE"
+  },
+  "business": {
+    "external_user_validation": false,
+    "revenue": false,
+    "roi": false,
+    "willingness_to_pay": false,
+    "status": "OPERATIONAL_POTENTIAL_ONLY"
+  },
+  "journal": {
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_historical_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutated": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "external_messages": 0,
+    "submission": false,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "goal_closed": false,
+  "next": "Continue O3 paid gating and O4 research packaging; do not replay unknown/pending calls or rerun the completed O2 chain without new evidence."
+}

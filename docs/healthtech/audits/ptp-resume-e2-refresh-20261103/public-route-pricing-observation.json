@@ -1,0 +1,14 @@
+{
+  "format": "ptp-openrouter-public-route-observation-v1",
+  "observed_at_utc": "2026-11-03T14:43:12.5795634Z",
+  "endpoint": "https://openrouter.ai/api/v1/models/qwen/qwen3-32b/endpoints",
+  "http_status": 200,
+  "response_sha256": "fe418dcd979248f577ee56d682f5aa52d6ab579c73ebdb35c04ae2d35fbd73ca",
+  "model": "qwen/qwen3-32b",
+  "provider": "DeepInfra",
+  "prompt_usd_per_token": 0.00000008,
+  "completion_usd_per_token": 0.00000028,
+  "context_length": 40960,
+  "status": 0,
+  "uptime_last_30m": 100
+}

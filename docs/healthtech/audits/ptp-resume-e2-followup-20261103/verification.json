@@ -1,0 +1,88 @@
+{
+  "format": "ptp-resume-e2-followup-v1",
+  "recorded_local": "2026-11-03T22:00:42+07:00",
+  "recorded_utc": "2026-11-03T15:00:42Z",
+  "goal": "resume_existing_patent_to_pilot_o1_o4",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_expected": true,
+    "commit": false,
+    "push": false,
+    "merge": false
+  },
+  "tests": {
+    "command_scope": [
+      "tests/test_healthtech_api_env.py",
+      "tests/test_healthtech_api_generation.py",
+      "tests/test_healthtech_current_head_frontier.py",
+      "tests/test_healthtech_generation_payload.py",
+      "tests/test_healthtech_history_migration.py",
+      "tests/test_healthtech_http.py",
+      "tests/test_healthtech_local_epoch.py",
+      "tests/test_healthtech_local_execution.py",
+      "tests/test_o3_adversarial_repair.py",
+      "tests/test_o3_generation_repair.py",
+      "tests/test_verify_vector_bundle_pair.py"
+    ],
+    "tests": 104,
+    "passed": 104,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit": "focused-tests.xml",
+    "junit_sha256": "fdaa2094bfee3aa977e45de43cc96eb86b74a441ef6e30f1ac310eef2d0a4d09",
+    "compileall": "PASS",
+    "git_diff_check": "PASS_WITH_PREEXISTING_CRLF_WARNINGS"
+  },
+  "e2_journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity_check": "ok",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+    "operational_attempts": 0,
+    "attempt_contexts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_attempts": 4,
+    "legacy_actual_usd": 0.0001464,
+    "legacy_actual_nano_usd": 146400,
+    "history_boundary": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_allowance_usd": 1.0,
+    "pre_reservation_scope_bindings": 0,
+    "zero_ledger_created": false,
+    "history_rewritten": false,
+    "unknown_call_retried": false
+  },
+  "paid_branch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "credit_snapshot": "UNAVAILABLE_FROM_ORDINARY_KEY",
+    "route_price": "REFRESH_REQUIRED_INSIDE_300_SECOND_ADMISSION_WINDOW",
+    "next_owner_input": "non-secret current scoped v2 credit/limit snapshot or sanctioned pointer for the same account/key"
+  },
+  "process_boundary": {
+    "ssh_pid": 18096,
+    "ssh_started_local": "2026-11-03T18:36:54+07:00",
+    "ssh_left_untouched": true,
+    "new_gpu_job": false,
+    "new_generation_job": false,
+    "other_services_touched": false
+  },
+  "status": {
+    "engineering": "PASS_CURRENT_HEAD_OFFLINE",
+    "o1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "o2": "PARTIAL_PROVIDER_BINDING_RESEARCH_NOT_FINAL",
+    "o3_local": "PRIOR_LOCAL_GUIDED_3_OF_3_RETAINED",
+    "o3_paid": "BLOCKED_BEFORE_RESERVATION",
+    "o4_research": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+    "manuscript": "PARTIAL_OWNER_REVIEW_PENDING",
+    "goal_closed": false
+  },
+  "next_action": "Keep the existing goal open. If credit evidence arrives, refresh exact route pricing and reserve only the USD0.25 canary through E2; otherwise continue owner review and offline manuscript/release preparation."
+}

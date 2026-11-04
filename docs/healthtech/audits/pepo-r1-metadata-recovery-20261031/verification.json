@@ -1,0 +1,52 @@
+{
+  "status": "PASS_OFFLINE_AND_AUTHORIZED_KEY_METADATA_ONLY",
+  "upstream_initially_verified_head": "9ac38720d219b83acccaa92dcabc4480283914c4",
+  "snapshot_baseline": "e27d031",
+  "code_commit": "1d817b0d7407489e50684d85fe20b102eba70b00",
+  "branch": "pepo/r1-metadata-recovery-20261031",
+  "tests": {
+    "tests": 583,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 582
+  },
+  "warnings": 2,
+  "skip": "Windows optional resource module unavailable",
+  "test_command": "rtk proxy python -B -m pytest -q -p no:cacheprovider --basetemp <fresh-temp> --junitxml <receipt.xml>",
+  "compile": "PASS",
+  "diff_check": "PASS",
+  "prior_repair_files_checked": 246,
+  "prior_repair_mismatches": [],
+  "source_sha256": {
+    "src/patent_to_pilot/providers/metadata_observation.py": "8825a34dcc94aa5d013a5b45b0c5a7e133ac6fa6569f2593b0beb49ad5d1a79e",
+    "scripts/healthtech/collect_openrouter_metadata.py": "c76a962aa4e262b101e070d79d3863167096fb8099cbcdc06fc516497ffeb086",
+    "tests/test_openrouter_metadata_observation.py": "ded11d7d7ed2978876436c13b4af97a2400488dbee429eefa8f412acfc36d813"
+  },
+  "authenticated_metadata_http_successes": 1,
+  "metadata_generation_lookup_calls": 0,
+  "generation_calls": 0,
+  "gpu_jobs": 0,
+  "journal_mutations": 0,
+  "push_merge": false,
+  "network_attempts": [
+    {
+      "mode": "sandbox",
+      "outcome": "NETWORK_ERROR_NO_HTTP_STATUS"
+    },
+    {
+      "mode": "approved_escalation",
+      "outcome": "GET_KEY_HTTP_200"
+    }
+  ],
+  "remaining_access_block": {
+    "action": "git rev-parse HEAD and git status --short on original worktree",
+    "target": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031",
+    "state": "DENIED_BY_GIT_DUBIOUS_OWNERSHIP_ON_FINAL_RECHECK",
+    "reason": "original .git owned by User; restricted executor CodexSandboxOffline",
+    "bypass_attempted": false,
+    "initial_read_and_archive": "SUCCEEDED_AT_9ac38720"
+  },
+  "prior_repair_comparison": "SHA256 checked with LF/CRLF variants because git archive normalizes checkout line endings",
+  "fda_canary_verification": "PASS_5_OFFLINE_CHECKS"
+}

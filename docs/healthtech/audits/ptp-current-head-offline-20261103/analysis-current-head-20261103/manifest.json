@@ -1,0 +1,66 @@
+{
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "cohort_manifest_sha256": "b92b50716599ad6ea3cdeb5b6a692990a52ae8dd113bfc0bb5cad2cdd2148715",
+  "format": "ptp-current-head-frontier-figures-v1",
+  "limitations": [
+    "Development-only cohort with no current-head final holdout.",
+    "Product-level disclosed links are not semantic relevance gold.",
+    "Observed query/rerank totals are not an equal-total-budget comparison.",
+    "Figures do not include paid API or external business validation evidence."
+  ],
+  "outputs": [
+    "current_head_frontier.csv",
+    "current_head_recall.svg",
+    "current_head_budget.svg"
+  ],
+  "protocol_hash": "a87acaa448f97eabccae0f1fecc5378720ecf1178869336f68b42174eb828b0f",
+  "rows": [
+    {
+      "failed_queries": 0,
+      "macro_recall_at_20": 0.4427394146064223,
+      "method": "HT-B0a",
+      "query_calls": 3,
+      "rerank_pairs": 0
+    },
+    {
+      "failed_queries": 0,
+      "macro_recall_at_20": 0.6622417082775139,
+      "method": "HT-B0b",
+      "query_calls": 3,
+      "rerank_pairs": 0
+    },
+    {
+      "failed_queries": 0,
+      "macro_recall_at_20": 0.49880241951853205,
+      "method": "HT-B1",
+      "query_calls": 3,
+      "rerank_pairs": 123
+    },
+    {
+      "failed_queries": 0,
+      "macro_recall_at_20": 0.5689116226200625,
+      "method": "HT-B2",
+      "query_calls": 9,
+      "rerank_pairs": 369
+    },
+    {
+      "failed_queries": 0,
+      "macro_recall_at_20": 0.49880241951853205,
+      "method": "HT-B3",
+      "query_calls": 5,
+      "rerank_pairs": 205
+    },
+    {
+      "controller_steps": 8,
+      "failed_queries": 0,
+      "macro_recall_at_20": 0.49880241951853205,
+      "method": "HT-B4-offline",
+      "micro_recall_at_20": 0.47540983606557374,
+      "query_calls": 5,
+      "rerank_pairs": 205
+    }
+  ],
+  "status": "DESCRIPTIVE_DEVELOPMENT_ONLY",
+  "verification_path": "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+  "verification_sha256": "ff1c8184f526732fb14c6f6ed386aa43da9e4bbd0ba68a599123e43fe424dab0"
+}

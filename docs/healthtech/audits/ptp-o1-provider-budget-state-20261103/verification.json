@@ -1,0 +1,58 @@
+{
+  "format": "ptp-o1-provider-budget-state-verification-v1",
+  "goal_reused": true,
+  "observed_local_date": "2026-11-03",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "source_state": "UNCOMMITTED_O1_PROVIDER_BUDGET_STATE_PATCH",
+    "owner_claude_luna_preserved": true
+  },
+  "repair": {
+    "provider_catalog": "estimated_usd and estimate_basis added for all providers",
+    "budget_gate": "estimated/actual/reserved/unknown_pending values exposed",
+    "ui": "provider availability/model/billing/spend and paid dispatch gate rendered",
+    "openrouter": "disabled and fail-closed; no browser credential"
+  },
+  "verification": {
+    "python_http_tests": {"tests": 7, "passed": 7, "failed": 0},
+    "frontend_unit_tests": {"tests": 74, "passed": 74, "failed": 0},
+    "browser_http": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+    "browser_provider_assertions": {
+      "provider_summary_present": true,
+      "openrouter_available": false,
+      "paid_dispatch": "closed"
+    },
+    "compileall": "PASS",
+    "scoped_diff_check": "PASS"
+  },
+  "source_patch_files": {
+    "src/patent_to_pilot/healthtech/http.py": {"sha256": "7a57b797215bcf90a6a000fcbcabe6a19039dc81c30351bdbd9dd9b6dcb60c8e", "bytes": 35231},
+    "src/patent_to_pilot/healthtech/vector_http.py": {"sha256": "e8dd1d2ba1e650192b0f0c62da4b33af538943c099cff4d593dbab0612e553e4", "bytes": 8897},
+    "src/patent_to_pilot/healthtech/generation.py": {"sha256": "a425213587308632f58ff86613fe71fb0c1190ac1c04fcd3d11433b08113e0a7", "bytes": 9145},
+    "frontend/healthtech-web/app/src/ui/screens.js": {"sha256": "1eea91e24b7e301f6bdd62340bd827b673269713ffb8187c1af94b21b1357e8c", "bytes": 95534},
+    "frontend/healthtech-web/app/src/core/i18n.js": {"sha256": "69cc641b518c22ddda84472450bf616a40bf701de3be685ec93fa85184b6e1f5", "bytes": 94659},
+    "tests/test_healthtech_http.py": {"sha256": "6f1f4eca13dd04e35a85024dcc9df764b2cfd6bee193a34202ef654d7256a0d9", "bytes": 13208},
+    "frontend/healthtech-web/tests/e2e/backend-http-integration.mjs": {"sha256": "72cd3ca111a12ab398f6222de727f33fbe0ecaf4ec7b46ddfb0e1884367f5102", "bytes": 8971}
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "secrets_persisted": false
+  },
+  "acceptance_boundary": {
+    "O1": "PASS_CURRENT_WORKTREE_HTTP_PROVIDER_BUDGET_VISIBILITY",
+    "O3_paid": "BLOCKED_BEFORE_RESERVATION",
+    "O4_research": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "overall_goal": "PARTIAL_NOT_COMPLETE",
+    "review_required": "OWNER_REVIEW_BEFORE_SCOPED_COMMIT_AND_MERGE"
+  },
+  "next_action": "Review the seven-file scoped patch, then commit/push and rerun the same checks at the new exact commit before updating current-head acceptance."
+}

@@ -1,0 +1,94 @@
+{
+  "format": "ptp-goal-completion-audit-v4",
+  "goal_reused": true,
+  "observed_local_date": "2026-11-03",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree": "DIRTY_DOCUMENTATION_AUDIT_AND_UNCOMMITTED_ROUTE_GUARD_SOURCE_PATCH"
+  },
+  "root": {
+    "worktree": "C:/Users/User/Desktop/myProject/patent-to-pilot",
+    "branch": "main",
+    "head": "0d049802d36bc2eebe60331ec444d62469fd767f",
+    "candidate_merged": false
+  },
+  "statuses": {
+    "O1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "O2": "PASS_CURRENT_HEAD_RUNTIME_BOUND_REMOTE_ARTIFACTS_NO_RERUN",
+    "O3": "PARTIAL_LOCAL_PASS_PAID_BLOCKED",
+    "O4": "PARTIAL_DESCRIPTIVE_RESEARCH_NO_FINAL_HOLDOUT",
+    "business_value": "PARTIAL_SCENARIO_ONLY_NOT_OBSERVED_BUSINESS_VALIDATION",
+    "manuscript": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+    "overall": "PARTIAL_NOT_COMPLETE"
+  },
+  "metrics": {
+    "patembed_macro_recall_at_100": 0.42252517152276575,
+    "patembed_micro_recall_at_100": 0.42231938705924826,
+    "patembed_macro_ndcg_at_100": 0.34882988642862867,
+    "e5_macro_recall_at_100": 0.28741423861712556,
+    "e5_micro_recall_at_100": 0.28729592041397567,
+    "e5_macro_ndcg_at_100": 0.24478123282756506,
+    "current_head_prefix_1_macro_recall_at_20": {
+      "HT-B1": 0.49880241951853205,
+      "HT-B2": 0.49880241951853205,
+      "HT-B3": 0.49880241951853205
+    },
+    "adaptive_superiority": "NOT_ESTABLISHED",
+    "machine_seconds_per_case": 71.983,
+    "business_value_scenario": {
+      "lower_usd": 12.51999528,
+      "central_usd": 50.05998583,
+      "upper_usd": 200.05998583,
+      "observed_human_time": false,
+      "observed_gpu_rate": false,
+      "observed_paid_api_cost": false
+    }
+  },
+  "remaining_gates": {
+    "canonical_r1_history_or_sanitized_export": "MISSING",
+    "current_scoped_credit_snapshot": "MISSING",
+    "paid_paired_generation": "NOT_RUN",
+    "final_holdout": "NOT_AVAILABLE_OR_AUTHORIZED",
+    "external_business_validation": "NOT_RUN",
+    "owner_review": "REQUIRED",
+    "merge_and_cleanup": "NOT_RUN",
+    "wpi_submission": "NOT_SUBMITTED"
+  },
+  "verification": {
+    "candidate_full_suite": "615 total; 614 passed; 0 failed; 1 skipped",
+    "manuscript_sha256": "b1e041ea1fcc44c9481cb771777a43e588d9847df769a96e1f02414ac9cbe24b",
+    "manuscript_bytes": 43806,
+    "manuscript_local_links_checked": 32,
+    "manuscript_missing_local_links": 0,
+    "business_value_scenario_formula": "PASS",
+    "json_readback": "PASS",
+    "known_ledger_paths": "ABSENT_AT_CHECKED_PATHS",
+    "secret_values_staged": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false,
+    "merge": false,
+    "branch_deletion": false
+  },
+  "evidence": [
+    "docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json",
+    "docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json",
+    "docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json",
+    "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+    "docs/healthtech/audits/ptp-current-head-holdout-availability-20261103/verification.json",
+    "docs/healthtech/audits/ptp-business-value-scenario-20261103/verification.json",
+    "docs/healthtech/audits/ptp-api-metadata-recheck-r3-20261103/verification.json"
+  ],
+  "next_action": "Keep goal active. Obtain the two existing non-secret paid-gate evidence items once, validate/bind the existing ledger, and recheck all live gates before one paired canary; continue owner review and offline work independently."
+}

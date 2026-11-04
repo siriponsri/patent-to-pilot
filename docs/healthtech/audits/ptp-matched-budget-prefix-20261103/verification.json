@@ -1,0 +1,60 @@
+{
+  "format": "ht-matched-budget-prefix-diagnostic-v1",
+  "status": "PASS_POSTHOC_DESCRIPTIVE_FIRST_ACTION_SLICE",
+  "source": {
+    "path": "C:\\Users\\User\\Documents\\Codex\\2026-10-31\\task\\ptp-o4-matched-20261101\\abbott-baselines\\frontier_diagnostics.json",
+    "sha256": "5bbccccb10ae21679679efc29041cc00ec52581bda1bbb50a983c97f90626647",
+    "receipt_candidate": "891f3b3"
+  },
+  "budget": {
+    "query_calls": 3,
+    "rerank_pairs": 123,
+    "selection_status": "POSTHOC_DESCRIPTIVE_NOT_PREREGISTERED_FINAL_ENDPOINT"
+  },
+  "methods": [
+    {
+      "method": "HT-B1",
+      "prefix": 1,
+      "scheduled_query_count": 1,
+      "query_calls": 3.0,
+      "rerank_pairs": 123.0,
+      "macro_known_link_recall_at_20": 0.49880241951853205,
+      "failed_query_count": 0,
+      "not_realized_query_count": 0
+    },
+    {
+      "method": "HT-B2",
+      "prefix": 1,
+      "scheduled_query_count": 3,
+      "query_calls": 3.0,
+      "rerank_pairs": 123.0,
+      "macro_known_link_recall_at_20": 0.49880241951853205,
+      "failed_query_count": 0,
+      "not_realized_query_count": 0
+    },
+    {
+      "method": "HT-B3",
+      "prefix": 1,
+      "scheduled_query_count": 3,
+      "query_calls": 3.0,
+      "rerank_pairs": 123.0,
+      "macro_known_link_recall_at_20": 0.49880241951853205,
+      "failed_query_count": 0,
+      "not_realized_query_count": 0
+    }
+  ],
+  "summary": {
+    "macro_recall_min": 0.49880241951853205,
+    "macro_recall_max": 0.49880241951853205,
+    "macro_recall_range": 0.0,
+    "all_failures_zero": true,
+    "all_queries_realized": true
+  },
+  "interpretation": {
+    "claim": "B1, B2 prefix-1, and B3 prefix-1 share the same first-action budget and observed endpoint on this receipt.",
+    "adaptive_test": "NOT_ESTABLISHED",
+    "b4_status": "EXCLUDED_CONTROLLER_STEPS_NOT_DIRECTLY_COMPARABLE_TO_QUERY_RERANK_BUDGET",
+    "final_holdout": "ABSENT_FROM_SOURCE_RECEIPT",
+    "semantic_gold": "NOT_AVAILABLE_PRODUCT_DISCLOSED_LINKS_ONLY"
+  }
+}

@@ -114,8 +114,8 @@ def test_failed_attempt_charge_and_new_retry_are_both_durable(tmp_path):
 @pytest.mark.parametrize('claim_ready',[False,True])
 def test_offline_preflight_cannot_be_activated_by_config_claims(tmp_path,monkeypatch,claim_ready):
     import runpy
-    import patent_to_pilot
-    root=Path(patent_to_pilot.__file__).resolve().parents[2]
+    # Fixtures and scripts belong to the test checkout, also for wheel installs.
+    root=Path(__file__).resolve().parents[1]
     plan=json.loads((root/'configs/long-run-offline-v2.json').read_text())
     plan['technical_gates']={k:True for k in plan['technical_gates']}
     plan['live_enabled']=claim_ready

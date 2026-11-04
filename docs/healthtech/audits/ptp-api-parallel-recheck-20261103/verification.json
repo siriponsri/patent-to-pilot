@@ -1,0 +1,70 @@
+{
+  "format": "ptp-api-parallel-recheck-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "candidate_worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+  "observed_at_utc": "2026-11-03T01:24:29.956138+00:00",
+  "metadata_observation": {
+    "artifact": "docs/healthtech/audits/ptp-api-metadata-recheck-20261103/verification.json",
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "is_management_key": false,
+    "account_scope": "NOT_RECONCILED",
+    "history_completeness": "NOT_PROVEN",
+    "live_admission_enabled": false
+  },
+  "dry_run": {
+    "status": "FAIL_CLOSED_STALE_LOCAL_PACK",
+    "mode": "dry-run",
+    "model": "qwen/qwen3-32b",
+    "expected_current_head_pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "workspace_pack_sha256": "d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932",
+    "error_type": "GenerationPayloadError",
+    "error_reason": "stale local artifact pack rejected before output creation",
+    "receipt_written": false,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "current_head_dry_run": {
+    "artifact": "docs/healthtech/audits/ptp-api-parallel-recheck-20261103/preflight-current-pack.json",
+    "status": "DRY_RUN_NOT_EXECUTED",
+    "source_directory": "private-fda-canary-20261031",
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "pack_file_sha256": "0b2bef9fcf8c3eff6106a1786885e4407ea4b8c9e628397ab8e52a392204ced9",
+    "manifest_sha256": "c298b1027e31a270c7db8956cf36a000c854f5c7374e8bb75241881f84729843",
+    "cases": 3,
+    "rights_decision": "ALLOWED_WITH_ATTRIBUTION",
+    "message_payload_hashes_match": true,
+    "route": "DeepInfra",
+    "model": "qwen/qwen3-32b",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "canonical_registry_present": false,
+    "canonical_journal_present": false,
+    "current_credit_snapshot_present": false,
+    "new_attempt_ids": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "retry_unknown_billing": false
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "secrets_persisted": false,
+    "restricted_payloads_persisted": false
+  },
+  "interpretation": {
+    "current_head_api_generation": "PAID_NOT_RUN_DRY_RUN_PASS",
+    "current_head_local_generation": "SEE_ptp-local-qwen-exact-head-20261103",
+    "stale_pack_failure": "WORKSPACE_AVAILABILITY_ONLY; CURRENT_HEAD_PACK_RESTAGED_FROM_OWNER_PRIVATE_SOURCE",
+    "research_quality": "NOT_EVALUATED"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "format": "ptp-openrouter-public-endpoint-observation-v3",
+  "source_url": "https://openrouter.ai/api/v1/models/qwen/qwen3-32b/endpoints",
+  "retrieved_at_utc": "2026-11-04T00:54:43.4535612Z",
+  "model": "qwen/qwen3-32b",
+  "endpoint_count": 3,
+  "endpoints": [
+    {
+      "provider": "DeepInfra",
+      "tag": "deepinfra/fp8",
+      "status": 0,
+      "prompt_usd_per_million": 0.08,
+      "completion_usd_per_million": 0.28,
+      "context_length": 40960,
+      "max_completion_tokens": 16384,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "repetition_penalty",
+        "top_k",
+        "min_p",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "logit_bias",
+        "response_format"
+      ]
+    },
+    {
+      "provider": "Tenstorrent",
+      "tag": "tenstorrent/fp8",
+      "status": 0,
+      "prompt_usd_per_million": 0.14,
+      "completion_usd_per_million": 0.4,
+      "context_length": 20000,
+      "max_completion_tokens": 16400
+    },
+    {
+      "provider": "SiliconFlow",
+      "tag": "siliconflow/fp8",
+      "status": 0,
+      "prompt_usd_per_million": 0.14,
+      "completion_usd_per_million": 0.57,
+      "context_length": 131072,
+      "max_completion_tokens": 117964
+    }
+  ],
+  "route_candidate": {
+    "provider": "DeepInfra",
+    "tag": "deepinfra/fp8",
+    "status": 0,
+    "prompt_usd_per_million": 0.08,
+    "completion_usd_per_million": 0.28,
+    "context_length": 40960,
+    "max_completion_tokens": 16384
+  },
+  "limitations": [
+    "Public endpoint metadata does not prove account credit or key-level remaining limit.",
+    "Public endpoint metadata does not authorize transfer of dossier payloads.",
+    "This observation is not a paid generation result."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "checkpoint": "ptp-manuscript-current-r6-20261104",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+  "manuscript": "CURRENT_HEAD_COMPONENT_VALUES_AND_CLAIM_BOUNDARY_RECONCILED",
+  "venue": "OFFICIAL_ELSEVIER_PROFILE_SCOPE_CONFIRMED; JOURNAL_GUIDE_AND_AIMS_403_UNVERIFIED",
+  "scientific_evidence": "COMPONENT_HOLDOUTS_DESCRIPTIVE_MAIN_ADAPTIVE_FINAL_HOLDOUT_ABSENT",
+  "business_validation": "SOLO_OPERATIONAL_PROXY_ONLY_EXTERNAL_NOT_VALIDATED",
+  "paid_api": "UNCHANGED_BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "goal_closed": false,
+  "next_action": "Owner review declarations and live Guide/Aims; continue offline package without paid retry or new GPU run."
+}

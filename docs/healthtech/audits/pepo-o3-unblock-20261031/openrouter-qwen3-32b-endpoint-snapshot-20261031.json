@@ -1,0 +1,114 @@
+{
+  "format": "ptp-openrouter-public-endpoint-snapshot-v1",
+  "model": "qwen/qwen3-32b",
+  "upstream_provider": "DeepInfra",
+  "snapshot_utc": "2026-10-31T10:57:23.2417019Z",
+  "prompt_usd_per_million": 0.08,
+  "completion_usd_per_million": 0.28,
+  "max_price_prompt": 0.08,
+  "max_price_completion": 0.28,
+  "unsupported_billable_components": [],
+  "retrieved_at_utc": "2026-10-31T10:57:23.2417019Z",
+  "source": {
+    "endpoint_metadata_url": "https://openrouter.ai/api/v1/models/qwen/qwen3-32b/endpoints",
+    "catalog_scope": "public unauthenticated model endpoint metadata",
+    "credential_used": false,
+    "account_credit_queried": false
+  },
+  "endpoint_count": 3,
+  "routes": [
+    {
+      "provider": "DeepInfra",
+      "context_length": 40960,
+      "max_completion_tokens": 16384,
+      "prompt_usd_per_million": 0.08,
+      "completion_usd_per_million": 0.28,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "repetition_penalty",
+        "top_k",
+        "seed",
+        "min_p",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "logit_bias",
+        "response_format"
+      ],
+      "quantization": "fp8",
+      "status": -2
+    },
+    {
+      "provider": "Tenstorrent",
+      "context_length": 20000,
+      "max_completion_tokens": 16400,
+      "prompt_usd_per_million": 0.14,
+      "completion_usd_per_million": 0.4,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "temperature",
+        "repetition_penalty",
+        "top_p",
+        "stop",
+        "top_k",
+        "seed",
+        "min_p",
+        "max_tokens",
+        "top_a",
+        "frequency_penalty",
+        "logit_bias",
+        "presence_penalty",
+        "logprobs",
+        "top_logprobs",
+        "tools",
+        "tool_choice"
+      ],
+      "quantization": "fp8",
+      "status": -2
+    },
+    {
+      "provider": "SiliconFlow",
+      "context_length": 131072,
+      "max_completion_tokens": 117964,
+      "prompt_usd_per_million": 0.14,
+      "completion_usd_per_million": 0.57,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "structured_outputs",
+        "response_format",
+        "temperature",
+        "top_p",
+        "top_k",
+        "frequency_penalty",
+        "tools",
+        "tool_choice",
+        "max_tokens"
+      ],
+      "quantization": "fp8",
+      "status": -2
+    }
+  ],
+  "route_candidate": {
+    "provider": "DeepInfra",
+    "status": "CANDIDATE_NOT_DISPATCHED",
+    "reason": "Supports structured_outputs, response_format, and max_tokens with the lowest listed text prices among routes supporting the required structured response contract.",
+    "fallbacks": false,
+    "auto_routing": false
+  },
+  "pricing_snapshot_basis": "Hash is computed over this JSON object with snapshot_sha256 omitted, using sorted keys and compact separators.",
+  "snapshot_sha256": "792dbe941f25b9bcabc9d3758de11336ca5ee78e90328573dc310819245507b5",
+  "limitations": [
+    "This snapshot does not prove account credit, project budget remaining, or billing reconciliation.",
+    "This snapshot does not authorize provider transfer of any dossier payload.",
+    "This snapshot does not record a live request or provider response."
+  ]
+}

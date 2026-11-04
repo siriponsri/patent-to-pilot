@@ -1,0 +1,51 @@
+{
+  "format": "ptp-continuation-checkpoint-r11-v1",
+  "observed_local_date": "2026-11-03",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_NOT_COMPLETE_LOCAL_ENGINEERING_PROGRESS_PAID_GATE_OPEN",
+  "o1_o4": {
+    "O1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "O2": "ENGINEERING_PROVIDER_BOUND_BOTH_ENCODERS_RESEARCH_PARTIAL",
+    "O3": "LOCAL_PASS_PAID_BLOCKED_BEFORE_RESERVATION",
+    "O4": "THREE_CASE_ENGINEERING_PASS_RESEARCH_PARTIAL"
+  },
+  "g0_g8": {
+    "G0": "COMPLETE_CONTRACT_AND_SCOPE",
+    "G1": "PARTIAL_RIGHTS_AND_SEMANTIC_GOLD_INCOMPLETE",
+    "G2": "PARTIAL_DEVELOPMENT_BASELINES_AND_EVALUATOR",
+    "G3": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
+    "G4": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+    "G5": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
+    "G6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+    "G7": "PASS_CURRENT_HEAD_OFFLINE_RELEASE_READINESS_DIRTY_CANDIDATE_NOT_RELEASED",
+    "G8": "NOT_RUN_FUTURE_SCOPE"
+  },
+  "journal": {
+    "integrity": "ok",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "known_actual_usd": 0.0001464,
+    "prospective_allowance_usd": 1.0,
+    "unknown_history_preserved": true
+  },
+  "document_checks": {
+    "manuscript_relative_links": 50,
+    "unique_source_link_pairs_checked": 42,
+    "missing_targets": 0,
+    "json_parse": "PASS",
+    "diff_check": "PASS_WITH_EXISTING_LINE_ENDING_WARNINGS"
+  },
+  "resource_mutations_this_checkpoint": {
+    "paid_api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  },
+  "next": "Obtain genuine non-secret R1 activity/export and current scoped credit/limit evidence once; otherwise continue owner-review and offline work"
+}

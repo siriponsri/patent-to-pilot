@@ -1,0 +1,13 @@
+{
+  "format": "ptp-goal-completion-audit-r7-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_NOT_COMPLETE",
+  "engineering": "COMPLETE_CURRENT_HEAD_O1_AND_THREE_CASE_O4_SLICE",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript_readiness": "PASS_INTEGRITY_OWNER_REVIEW_PENDING",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION",
+  "o2_remote": "PARTIAL_ALLOCATION_NOT_EVIDENCED",
+  "resource_mutations": "provider 0; reservations 0; attempts 0; retries 0; ledger 0; GPU jobs 0; dataset downloads 0; participant contact false; submission false",
+  "next": "Obtain the two existing non-secret paid-gate artifacts and authorized dr-train allocation evidence; continue local/offline and manuscript work independently."
+}

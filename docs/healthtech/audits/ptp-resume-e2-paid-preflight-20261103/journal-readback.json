@@ -1,0 +1,21 @@
+{
+  "format": "ptp-e2-journal-readback-v1",
+  "observed_utc": "2026-11-03T15:16:00Z",
+  "journal": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+  "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+  "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+  "integrity_check": "ok",
+  "operational_attempts": 0,
+  "operational_contexts": 0,
+  "pending_or_unknown": 0,
+  "legacy_settled_receipts": 4,
+  "known_legacy_actual_usd": 0.0001464,
+  "known_legacy_actual_nano_usd": 146400,
+  "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+  "prospective_allowance_usd": 1.0,
+  "account_scope_binding": "EMPTY_BEFORE_RESERVATION",
+  "legacy_sources_unchanged": true,
+  "budget_reset": false,
+  "window_reset": false,
+  "pending_call_retried": false
+}

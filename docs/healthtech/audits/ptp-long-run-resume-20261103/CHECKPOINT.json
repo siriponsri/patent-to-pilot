@@ -1,0 +1,97 @@
+{
+  "format": "ptp-long-run-resume-checkpoint-v1",
+  "observed_at_utc": "2026-11-02T17:22:23.0889875Z",
+  "goal": "Patent-to-Pilot research-product O1-O4",
+  "candidate": {
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "head": "1c1a1d8ac436bfd491f85d3230a7179a26f2e7cc",
+    "base_main": "0d049802d36bc2eebe60331ec444d62469fd767f",
+    "main_is_ancestor": true,
+    "dirty_before_checkpoint": true
+  },
+  "process_quiescence": {
+    "relevant_experiment_processes": 0,
+    "ssh_classification": "CODEX_REMOTE_APPSERVER_PROXY_NOT_EXPERIMENT"
+  },
+  "outcomes": {
+    "O1": {
+      "status": "PASS_CURRENT_HEAD_LOOPBACK_ENGINEERING",
+      "evidence": ["frontend unit 74/74", "loopback HTTP job/history/source/export integration"],
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    "O2": {
+      "status": "PARTIAL_PRIOR_REMOTE_RUNTIME_NOT_RERUN",
+      "prior_receipt": "docs/healthtech/audits/ht-research-product-20261031/verification.json",
+      "current_candidate_checks": "transformer/vector contracts and full Python suite pass",
+      "remote_rerun": "NOT_RUN_EXPIRED_24H_WINDOW"
+    },
+    "O3": {
+      "status": "PARTIAL_LOCAL_PASS_API_BLOCKED_LOCAL",
+      "local_receipt": "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/generation-canary.json",
+      "local_schema_valid_cases": 3,
+      "api_provider_calls": 0,
+      "api_paid_cost_usd": 0.0,
+      "blockers": ["canonical R1 journal identity", "current credit", "outbound prompt rights", "fresh route/pricing binding"]
+    },
+    "O4": {
+      "status": "PARTIAL_REAL_CASE_RECEIPT_NOT_EXACT_HEAD",
+      "prior_receipt": "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/browser-receipt.json",
+      "current_loopback": "PASS",
+      "exact_head_real_case_rerun": "BLOCKED_ASSET_GATED",
+      "missing_inputs": ["HEALTHTECH_ABBOTT_COHORT", "rights matrix", "vector/runtime bundles"]
+    }
+  },
+  "verification": {
+    "python_focused": "PASS_EXIT_0",
+    "python_full": "PASS_EXIT_0_WITH_1_OPTIONAL_TOKENIZER_SKIP",
+    "frontend_unit": "PASS_74_0_FAILED",
+    "http_integration": "PASS_PROVIDER_CALLS_0_PAID_USD_0",
+    "abbott_integration": "BLOCKED_ASSET_GATED_BEFORE_EXECUTION",
+    "compileall": "PASS",
+    "diff_check": "PASS"
+  },
+  "resource_accounting": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "new_24h_window": false,
+    "historical_receipts_rewritten": false
+  },
+  "readiness_review_followup": {
+    "source": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/",
+    "failure_accounting": {
+      "status": "PASS_PROSPECTIVE_REPAIR",
+      "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+      "test_contract_commit": "1c1a1d8ac436bfd491f85d3230a7179a26f2e7cc",
+      "regression_tests": "12 passed",
+      "historical_rounds_affected": "NONE_KNOWN",
+      "historical_cost_rewrite": false,
+      "unknown_resources_are_explicit": true
+    },
+    "budget_comparison": {
+      "status": "PASS_INTERPRETATION_CORRECTED",
+      "matched_dimensions": [
+        "frozen corpus",
+        "eligible queries",
+        "references/groups",
+        "encoder/reranker bundle",
+        "K=20",
+        "candidate_depth=41",
+        "rerank_depth=41"
+      ],
+      "realized_units": {
+        "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+        "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+        "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+        "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+      },
+      "equal_total_budget_claim": "NOT_SUPPORTED",
+      "interpretation": "descriptive_realized_quality_resource_frontier"
+    }
+  },
+  "next_action": "Continue offline release/manuscript work; rerun exact-head real cases only after authorized cohort assets are exposed; keep paid API fail-closed until canonical evidence is reconciled."
+}

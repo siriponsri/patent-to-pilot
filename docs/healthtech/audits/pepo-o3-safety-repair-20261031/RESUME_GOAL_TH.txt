@@ -1,0 +1,21 @@
+Resume goal เดิม Patent-to-Pilot O1–O4 โดยใช้ patch จาก Pepo ก่อนทำงานต่อ ไม่สร้างงบ USD8 หรือเริ่ม clock 24 ชั่วโมงใหม่
+
+อ่าน AGENTS, docs/healthtech/long-runs/LONG_RUN_GOAL.md และเอกสารใน folder เดียวกัน แล้วอ่าน AUDIT_TH.md กับ verification.json ที่ C:/Users/User/Documents/Codex/2026-10-31/task-5/repair-candidate/docs/healthtech/audits/pepo-o3-safety-repair-20261031/
+
+Pepo ตรวจ base 8b64ca09a4237a28ad121997985b081ca8781804 และซ่อมใน repo สำเนา เพราะ Git ต้นทางปฏิเสธ clone ด้วย dubious ownership สำเนานี้ไม่มี ancestry ของ PR ใช้เฉพาะ patent-to-pilot-o3-repair.patch ใน C:/Users/User/Documents/Codex/2026-10-31/task-5/ ตรวจ HEAD/dirty state ของ Luna ก่อน สร้าง isolated branch/worktree ด้วย Git ภายใต้ owner ที่มีสิทธิ์ apply --check แล้ว apply/test patch ห้าม merge snapshot root commits ห้ามแก้ safe.directory/ACL เพื่อข้าม denial รักษา Luna/Claude/owner files
+
+Patch ปิด empty-ledger/alternate-registry/direct-component bypass แยก authority hash จาก pricing ต่อ attempt คงยอดและ unresolved reservations ตรวจเครดิตใน transaction เดียวกับ reserve รวมคำขอที่ยัง in flight ตอนเก็บ snapshot ผูก key fingerprint กับ credential ที่ dispatch และปิด parameter override ของ frozen request ตรวจ pack/field rights/wire hash พร้อมเก็บ debit และ generation ID แม้ output fail อ่านผล tests จาก verification.json แล้วทดสอบ candidate ที่ integrate จริงก่อน commit/push/test PR ตามสิทธิ์เดิม
+
+Owner อนุมัติ local Qwen/Qwen3-8B + API qwen/qwen3-32b และ USD8 สะสมสำหรับ generation/judge/reasoning/retry แล้ว ไม่ขอ exact authorization ซ้ำ คง admission ไม่เกิน USD7 ภายใน cap8 Embeddings ใช้ local/dr-train เท่านั้น
+
+Legacy journals ที่กู้ได้ยืนยัน pilot USD0.0001464 ไม่ใช่ประวัติ R1 ครบ ห้าม scan Documents/Desktop ซ้ำ ห้ามนับ mock เป็นเงินจริงหรือเริ่ม zero ledger ใช้ receipt/recovery reference และ sanitized all-attempt export เท่านั้น มี inspect_r1_history_export.py ให้ตรวจ consistency แบบ offline แต่ผลนี้ไม่พิสูจน์ completeness และไม่ import/activate
+
+ก่อน paid run ต้อง reconcile actual + unresolved ทุก attempt กับหลักฐานที่ครอบคลุม R1 หยุดหรือปิดสิทธิ์ old writers ในระดับ application แล้วผูก canonical ledger เดียว การสร้าง history anchor/migration ต้องมาจากการ review หลักฐานจริงโดย implementer ห้ามใช้ fixture หรือ self-asserted flag แทน หากยังขาดข้อมูลให้หยุดเฉพาะ paid branch
+
+Credit v2 ต้องมี UTC timestamp ล่าสุด, account scope, key scope แบบ sha256 fingerprint, USD account remaining และ key limit remaining หรือ unlimited ที่ตรวจแล้ว ผ่าน approved integration/owner snapshot ที่ sanitize ห้ามอ่าน .env/เผย key/สร้าง credential/top-up Hash ไม่รับรอง provider authenticity และเครดิต shared account อาจเปลี่ยนจากระบบอื่นได้ ไม่ใช้แทน project spend
+
+ทำงาน offline ต่อ: สร้าง field-level projection และ source-backed transfer review ของข้อความที่จะส่งจริง ตรึง messages/schema/order/output budget ให้ local/API ตรงกัน หากตัดข้อมูลต้อง rerun local บน pack ใหม่ภายใน window เดิม FDA-only ใช้ canary ได้แต่ไม่อ้าง patent quality ไม่เพิ่ม expert-gold gate
+
+O4 engineering มี browser receipts แล้ว แต่ research ยัง partial ทำ matched fixed/adaptive comparison บน cohort และ primary budget เดียวกัน เก็บ per-job input/output hashes, latency, cost และ failures แยก Stryker holdout เก่าจาก Abbott ปัจจุบัน ไม่ปิด goal เพราะ O3 call เดียวหรือ receipt ผ่าน แก้ PR description ที่ยังอ้างขาด spend authorization โดยใช้ draft ใน audit หลังตรวจ integrated candidate แล้ว
+
+คง earliest runtime start เดิม ไม่ช้ากว่า 2026-10-31T02:47:23Z และ deadline ไม่ช้ากว่า 2026-11-01T02:47:23Z ใช้ GPU UUID เดิมใบเดียว concurrency1, CPU8, RAM32GiB, diskเพิ่มรวม40GiB ไม่แตะ Podi/งานอื่น เมื่อหมด window ทำ offline ต่อ Merge ได้เมื่อ acceptance และ required protections ครบเท่านั้น

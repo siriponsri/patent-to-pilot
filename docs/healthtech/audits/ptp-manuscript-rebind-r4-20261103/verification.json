@@ -1,0 +1,22 @@
+{
+  "format": "ptp-manuscript-rebind-v4",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+  "sha256": "3a09c9119547daf1975a4bf6cfb14c4db2aa155960ded9e1df03192755aebc5a",
+  "bytes": 39753,
+  "local_links_checked": 27,
+  "missing_local_links": 0,
+  "claim_boundary_checks": {
+    "older_transfer_rows_separated_from_current_head": true,
+    "current_head_frontier_separate": true,
+    "cross_candidate_results_not_pooled": true,
+    "no_journal_submission_claim": true
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  }
+}

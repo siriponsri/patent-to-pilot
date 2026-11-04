@@ -1,0 +1,49 @@
+{
+  "format": "ptp-wpi-venue-recheck-r4-verification-v1",
+  "goal_reused": true,
+  "candidate": {
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103"
+  },
+  "official_sources": [
+    {
+      "url": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+      "access_status": "PASS",
+      "supported_use": "conditional venue-fit scope only",
+      "topics_observed": [
+        "IP information retrieval and analysis",
+        "AI/ML/language-model applications to IP research",
+        "information-retrieval evaluation and benchmarking",
+        "real-data collections for IR experiments"
+      ]
+    },
+    {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope",
+      "access_status": "HTTP_403",
+      "supported_use": "no journal-specific inference"
+    },
+    {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+      "access_status": "HTTP_403",
+      "supported_use": "owner browser/session recheck required"
+    }
+  ],
+  "manuscript_fit": {
+    "status": "PASS_CONDITIONAL",
+    "reason": "Patent-information retrieval, provenance, evidence acquisition, and IR evaluation are central; medical-device cases are the application setting.",
+    "overclaims_excluded": ["generic web RAG", "clinical validity", "FTO", "market validation", "journal acceptance"]
+  },
+  "verification": {
+    "journal_specific_requirements_verified": false,
+    "submission_sent": false,
+    "publisher_terms_accepted": false,
+    "owner_recheck_required": true
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "ledger_mutations": 0,
+    "external_messages": 0,
+    "submission": false
+  }
+}

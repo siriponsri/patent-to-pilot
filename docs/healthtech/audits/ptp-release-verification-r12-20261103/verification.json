@@ -1,0 +1,64 @@
+{
+  "format": "ptp-release-verification-r12-v1",
+  "observed_local": "2026-11-03T23:24:45.9930360+07:00",
+  "observed_utc": "2026-11-03T16:24:45.9932015Z",
+  "goal_reused": true,
+  "goal_closed": false,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_intentionally": true,
+    "owner_work_preserved": true
+  },
+  "full_suite": {
+    "receipt": "C:/Users/User/AppData/Local/PatentToPilot/private-artifacts/ptp-current-candidate-full-tests-20261103-r2.xml",
+    "receipt_sha256": "1cfd796d5b55aeddc9ee6c7fedcdd836bcdbd147f0a94cc1d597f551472b187b",
+    "tests": 642,
+    "passed": 640,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "duration_seconds": 22.451,
+    "timestamp": "2026-11-03T23:20:15.253857+07:00",
+    "status": "PASS_CURRENT_HEAD_OFFLINE"
+  },
+  "other_checks": {
+    "compileall": "PASS_CURRENT_HEAD_RECEIPT",
+    "git_diff_check": "SCOPED_PASS_GLOBAL_PREEXISTING_MEMORY_NOISE",
+    "json_parse": "PASS"
+  },
+  "journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+    "integrity_check": "ok",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_attempts": 4,
+    "known_legacy_actual_usd": 0.0001464,
+    "prospective_allowance_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "current_scoped_credit": "NOT_AVAILABLE_FROM_ORDINARY_NON_MANAGEMENT_KEY",
+    "key_limit_remaining": "NOT_AVAILABLE",
+    "route_pricing": "OBSERVED_BUT_REQUIRES_REFRESH_INSIDE_300_SECONDS",
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "paid_cost_usd": 0.0
+  },
+  "research_boundary": {
+    "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_WITH_DIRTY_RELEASE_BOUNDARY",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+    "manuscript": "PARTIAL_OWNER_REVIEW_WPI_GUIDE_UNVERIFIED"
+  },
+  "next": "Keep the goal active. Obtain one non-secret scoped v2 credit/limit snapshot only if paid comparison remains required; otherwise continue owner review, offline research, and manuscript preparation."
+}

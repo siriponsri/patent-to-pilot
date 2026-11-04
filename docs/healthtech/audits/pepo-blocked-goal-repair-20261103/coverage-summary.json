@@ -1,0 +1,142 @@
+{
+  "counts": {
+    "corpus": {
+      "dataset": "corpus",
+      "row_count": 45336,
+      "unique_id_count": 45336
+    },
+    "qrels": {
+      "dataset": "qrels",
+      "row_count": 49869,
+      "unique_id_count": 49869
+    },
+    "queries": {
+      "dataset": "queries",
+      "row_count": 1247,
+      "unique_id_count": 1247
+    }
+  },
+  "input_files": {
+    "corpus": {
+      "bytes": 1149928014,
+      "path": "owner-private:DAPFAM/corpus",
+      "sha256": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6"
+    },
+    "qrels": {
+      "bytes": 828375,
+      "path": "owner-private:DAPFAM/qrels",
+      "sha256": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74"
+    },
+    "queries": {
+      "bytes": 62667355,
+      "path": "owner-private:DAPFAM/queries",
+      "sha256": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe"
+    }
+  },
+  "positive_qrels": [
+    {
+      "domain_rel": "IN",
+      "medical_device_both_screened_positive_pairs": 916,
+      "medical_device_query_screened_positive_pairs": 1687,
+      "medical_device_screened_queries": 94,
+      "medical_device_screened_targets": 1473,
+      "medical_device_target_screened_positive_pairs": 1883,
+      "pharma_biologics_both_screened_positive_pairs": 2012,
+      "pharma_biologics_query_screened_positive_pairs": 5086,
+      "pharma_biologics_screened_queries": 302,
+      "pharma_biologics_screened_targets": 4811,
+      "pharma_biologics_target_screened_positive_pairs": 5183,
+      "positive_pairs": 19736
+    },
+    {
+      "domain_rel": "OUT",
+      "medical_device_both_screened_positive_pairs": 67,
+      "medical_device_query_screened_positive_pairs": 233,
+      "medical_device_screened_queries": 54,
+      "medical_device_screened_targets": 546,
+      "medical_device_target_screened_positive_pairs": 1457,
+      "pharma_biologics_both_screened_positive_pairs": 234,
+      "pharma_biologics_query_screened_positive_pairs": 994,
+      "pharma_biologics_screened_queries": 205,
+      "pharma_biologics_screened_targets": 862,
+      "pharma_biologics_target_screened_positive_pairs": 999,
+      "positive_pairs": 5193
+    }
+  ],
+  "rights_boundary": {
+    "intended_use": "separate local research diagnostic only",
+    "license": "CC-BY-NC-SA-4.0",
+    "raw_payload_exported": false
+  },
+  "runtime": {
+    "code_revision": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "duckdb_version": "v2.0.0 (Cyanoptera) d54cbbe3df",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "working_tree_dirty": true
+  },
+  "screening": [
+    {
+      "dataset": "corpus",
+      "medical_device_rows": 3061,
+      "missing_abstract_rows": 0,
+      "missing_both_rows": 0,
+      "missing_title_rows": 0,
+      "pharma_biologics_rows": 12163,
+      "row_count": 45336
+    },
+    {
+      "dataset": "queries",
+      "medical_device_rows": 96,
+      "missing_abstract_rows": 0,
+      "missing_both_rows": 0,
+      "missing_title_rows": 0,
+      "pharma_biologics_rows": 304,
+      "row_count": 1247
+    }
+  ],
+  "screening_policy": {
+    "lexicon": {
+      "medical_device": [
+        "balloon",
+        "catheter",
+        "cardiac",
+        "cardiovascular",
+        "delivery system",
+        "embol",
+        "endovascular",
+        "graft",
+        "guidewire",
+        "implant",
+        "medical device",
+        "occluder",
+        "prosthesis",
+        "stent",
+        "surgical",
+        "thrombectomy",
+        "valve",
+        "vascular"
+      ],
+      "pharma_biologics": [
+        "antibody",
+        "cell",
+        "compound",
+        "drug",
+        "enzyme",
+        "gene",
+        "peptide",
+        "pharmaceutical",
+        "protein",
+        "vaccine"
+      ]
+    },
+    "match": "case-insensitive substring over title_en + abstract_en",
+    "semantic_claim": false,
+    "unjudged_policy": "unlisted query-target pairs remain unjudged"
+  },
+  "status": "PASS",
+  "task": "DAPFAM lexical medical-device coverage screen",
+  "sanitization": {
+    "original_summary_sha256": "dbc4632c54f2f141d1714ccca30eb7cac38f8319cca43f8bbaac838b6090d8ad",
+    "change": "input locations replaced by logical dataset references; aggregate values unchanged"
+  }
+}

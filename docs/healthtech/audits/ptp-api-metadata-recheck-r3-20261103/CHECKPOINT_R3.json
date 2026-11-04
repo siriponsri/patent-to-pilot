@@ -1,0 +1,53 @@
+{
+  "format": "ptp-api-metadata-recheck-checkpoint-v3",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "observed_at_utc": "2026-11-03T03:20:57.527471+00:00",
+  "status": "BLOCKED_BEFORE_RESERVATION",
+  "source_receipt": "metadata-observation-r3.json",
+  "observation": {
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "is_management_key": false,
+    "account_scope_binding": "NOT_RECONCILED",
+    "history_completeness": "NOT_PROVEN",
+    "current_scoped_credit": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "live_admission_enabled": false
+  },
+  "r2_comparison": {
+    "prior_receipt": "docs/healthtech/audits/ptp-api-metadata-recheck-20261103/metadata-observation-r2.json",
+    "usage_fields_changed": false,
+    "response_sha256_changed": false,
+    "status_fields_changed": false,
+    "changed_fields": [
+      "observation timestamps",
+      "local receipt_sha256"
+    ]
+  },
+  "authorization": {
+    "owner_instruction": "Conditional permission to continue OpenRouter in parallel if all existing elements are ready",
+    "does_not_override_missing_gates": true,
+    "live_dispatch_ready": false
+  },
+  "gates": {
+    "rights_cleared_three_case_pack": "PASS_PRIOR_PREFLIGHT",
+    "route_and_price": "PASS_PRIOR_PREFLIGHT",
+    "canonical_r1_registry_or_journal": "MISSING",
+    "sanitized_all_attempt_export": "NOT_SUPPLIED",
+    "current_scoped_account_key_credit": "MISSING"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "next_action": "Continue local/offline work; validate the two existing non-secret paid-gate evidence items once, then recheck all live gates before one paired canary."
+}

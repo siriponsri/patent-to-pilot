@@ -1,0 +1,33 @@
+{
+  "format": "ht-real-http-vector-device-cases-v1",
+  "status": "PASS_REAL_HTTP_VECTOR_DEVICE_CASES",
+  "receipt_origin": "sanitized summary of completed permitted-local execution; raw receipt, corpus, and vector bundles remain outside Git",
+  "code_revision": "928729ee1381280cc11d85439e63a71dff91432f",
+  "model": {
+    "model_id": "intfloat/multilingual-e5-base",
+    "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+    "license": "mit",
+    "encoder_kind": "multilingual-e5-base"
+  },
+  "inputs": {
+    "corpus_rows": 41,
+    "query_rows": 3,
+    "device_corpus_sha256": "5965b7b51006d9d64d05250848300dee68d80a0b69324213a5ccac25a1c44e9d",
+    "device_queries_sha256": "7e0e29b6b7e8f19dcbd28c775e8b518255b5fdcfa0846307ac5bdd7f5b1381a8",
+    "cohort_runtime_sha256": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121",
+    "corpus_manifest_sha256": "643ab8856a1bcd72d2c2e4745d02bdfe46bed0190f16ab8834c3870249fdcc7b",
+    "query_manifest_sha256": "8e0a933f34c26a7f1370809c5220911cf6ed1b318bd02e7b4b60cc25ce76494c",
+    "vector_config_sha256": "9e87cfb4d8401414261fb2b6f535a89905b81c2c337c8bcdc2548b4773b84daa"
+  },
+  "cases": [
+    {"case_id": "HT-DEV-MITRACLIP", "job_state": "succeeded", "dense_candidate_count": 33, "vector_errors": 0, "source_inspection": "HTTP_200", "history_versions": [1, 2], "exports": ["json_v2", "th_v2", "en_v2"]},
+    {"case_id": "HT-DEV-TENDYNE", "job_state": "succeeded", "dense_candidate_count": 33, "vector_errors": 0, "source_inspection": "HTTP_200", "history_versions": [1, 2], "exports": ["json_v2", "th_v2", "en_v2"]},
+    {"case_id": "HT-DEV-TRICLIP", "job_state": "succeeded", "dense_candidate_count": 41, "vector_errors": 0, "source_inspection": "HTTP_200", "history_versions": [1, 2], "exports": ["json_v2", "th_v2", "en_v2"]}
+  ],
+  "accounting": {"jobs_succeeded": 3, "provider_calls": 0, "paid_cost_usd": 0.0},
+  "boundaries": [
+    "Vector paths and raw bundles stayed server-owned.",
+    "These are product-level disclosure engineering cases, not semantic relevance gold.",
+    "Local Qwen generation was not dispatched by this HTTP runner."
+  ]
+}

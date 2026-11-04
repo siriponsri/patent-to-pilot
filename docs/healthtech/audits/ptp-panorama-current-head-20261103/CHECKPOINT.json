@@ -1,0 +1,9 @@
+{
+  "format": "ptp-panorama-current-head-checkpoint-v1",
+  "status": "PASS_CURRENT_HEAD_COMPONENT_HOLDOUT_REVALIDATION",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "verification": "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json",
+  "results": "Four deterministic CPU baseline runs completed with zero failed rows on frozen PANORAMA validation/test splits; the post-freeze Helmers diagnostic also completed on 10 targets and 450 judged pairs.",
+  "test_holdout": "Official component holdout only; main adaptive device-patent final holdout remains unavailable.",
+  "next": "Bind manuscript/supplemental references to this receipt and retain paid API gate independently blocked until canonical history and credit evidence exist."
+}

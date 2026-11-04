@@ -1,0 +1,53 @@
+{
+  "checkpoint_version": "benchmark-expansion-v16-current-head-qwen-rebind",
+  "created_utc": "2026-11-02T11:34:05.8314107Z",
+  "status": "PASS_CURRENT_HEAD_LOCAL_QWEN_DOCS_ONLY_REBIND",
+  "goal_reused": true,
+  "candidate": {
+    "head": "a3bf4ff49590b8510cfab18734c048e1c47a8462",
+    "parent_runtime_head": "50b27cd9229bc03232486c68654a0a56866250e0",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "worktree_dirty": true,
+    "remote_branch_head_verified": true,
+    "pr_number": 2,
+    "pr_state": "OPEN"
+  },
+  "runtime_scope_binding": {
+    "comparison_command": "git diff --quiet 50b27cd9229bc03232486c68654a0a56866250e0 a3bf4ff49590b8510cfab18734c048e1c47a8462 -- src scripts configs methodology tests",
+    "exit_code": 0,
+    "runtime_inputs_changed": false,
+    "change_in_parent_commit": "audit checkpoint JSON only"
+  },
+  "receipt_binding": {
+    "source_checkpoint": "CHECKPOINT_V15_CURRENT_HEAD_QWEN_REBIND.json",
+    "runner_sha256": "f377e14a959858f91d1d2fc2f588790c5885ebd5affe8dac3aba94ed26f540ae",
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "model_id": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "messages_reused": true,
+    "inference_rerun": false,
+    "non_guided_schema_valid_cases": 0,
+    "guided_schema_valid_cases": 3,
+    "guided_receipt_sha256": "f50d12610caf90b2320da414ab04a744c38fe7fe0aeac4f05568735100133889",
+    "paid_cost_usd": 0.0,
+    "provider_calls": 0
+  },
+  "current_head_verification": {
+    "guided_callback_regression": "4 passed",
+    "full_python_suite_exit_code": 0,
+    "full_python_suite_optional_skips": 1,
+    "compile": "PASS",
+    "git_diff_check": "PASS",
+    "remote_head": "a3bf4ff49590b8510cfab18734c048e1c47a8462",
+    "commit_pushed": true
+  },
+  "research_boundary": {
+    "local_o3_engineering": "PASS",
+    "paid_api_comparison": "BLOCKED_LOCAL",
+    "adaptive_superiority": "NOT_ESTABLISHED",
+    "external_business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED",
+    "wpi_submission": "NOT_SUBMITTED"
+  },
+  "next_action": "Keep paid/API closed until canonical R1 journal, current credit, route/pricing, outbound-rights, and writer-quiescence evidence are current; do not rerun the bound local receipt."
+}

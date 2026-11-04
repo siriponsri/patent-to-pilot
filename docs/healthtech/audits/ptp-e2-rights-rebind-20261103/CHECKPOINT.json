@@ -1,0 +1,22 @@
+{
+  "format": "ptp-e2-rights-rebind-checkpoint-v1",
+  "recorded_utc": "2026-11-03T16:46:00.8422563Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_PAYLOAD_READY_PAID_BLOCKED_RESEARCH_OPEN",
+  "payload_gate": "PASS_FDA_CANARY_ONLY",
+  "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_WITH_DIRTY_RELEASE_BOUNDARY",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "PARTIAL_OWNER_REVIEW_WPI_GUIDE_UNVERIFIED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "prepared_pack_sha256": "e146ab85db3792c3028e9becb0d71ea645a0cd0cfe426a9233622496e7aef489",
+  "manifest_sha256": "b9b0d1fea5c8d7c6e34801053034526103fca77d5c6b992fb29a008b64f57d28",
+  "cases": 3,
+  "evidence_rows": 9,
+  "dry_run": "PASS_NOT_EXECUTED",
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "e2_journal_mutated": false,
+  "goal_closed": false,
+  "next_action": "Reconcile a non-secret current scoped credit/limit snapshot before the existing USD0.25 canary; do not retry pending calls or reset the ledger."
+}

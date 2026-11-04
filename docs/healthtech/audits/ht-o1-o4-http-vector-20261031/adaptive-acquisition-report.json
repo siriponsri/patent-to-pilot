@@ -1,0 +1,35 @@
+{
+  "format": "ht-o1-o4-adaptive-acquisition-report-v1",
+  "status": "PARTIAL_OFFLINE_DESCRIPTIVE_O3_API_BLOCKED_LOCAL",
+  "endpoint": {"metric": "macro known-link recall at K=20", "scientific_claim": "DESCRIPTIVE_ONLY_NOT_ESTIMABLE", "unjudged_policy": "unlisted links remain unjudged"},
+  "method_classes": [
+    {"class": "fixed_controls", "methods": ["HT-B0a", "HT-B0b"], "definitions": ["company control", "BM25 lexical control"], "status": "OFFLINE_CONTROL"},
+    {"class": "fixed_hybrid", "methods": ["HT-B1"], "definition": "dense + fixed fusion + local reranker", "status": "OFFLINE_CONTROL"},
+    {"class": "fixed_multi_query", "methods": ["HT-B2"], "definition": "declared fixed reciprocal-rank query schedule", "status": "OFFLINE_CONTROL"},
+    {"class": "simple_adaptive_heuristic", "methods": ["HT-B3"], "definition": "observable no-new-candidate continuation/stop heuristic", "status": "OFFLINE_CONTROL"},
+    {"class": "controller_and_mock", "methods": ["offline_deterministic_controller", "HT-B4-MOCK"], "definition": "deterministic controller and provider-shaped action/accounting path", "status": "PASS_DESCRIPTIVE_MOCK_ONLY"},
+    {"class": "local_generation", "methods": ["Qwen/Qwen3-8B"], "definition": "frozen evidence-pack schema-valid generation", "status": "PASS_SCHEMA_INTEGRITY"},
+    {"class": "api_generation", "methods": ["qwen/qwen3-32b"], "definition": "paired provider comparison", "status": "BLOCKED_LOCAL_NOT_RUN"}
+  ],
+  "fixed_controls": [
+    {"method": "HT-B0a", "adaptive": false, "macro_recall_at_20": 0.8190476190476191, "query_calls": 3, "rerank_pairs": 0, "paid_cost_usd": 0.0, "status": "OFFLINE_CONTROL"},
+    {"method": "HT-B0b", "adaptive": false, "macro_recall_at_20": 0.9523809523809524, "query_calls": 3, "rerank_pairs": 0, "paid_cost_usd": 0.0, "status": "OFFLINE_CONTROL"},
+    {"method": "HT-B1", "adaptive": false, "macro_recall_at_20": 0.9333333333333332, "query_calls": 3, "rerank_pairs": 72, "paid_cost_usd": 0.0, "status": "OFFLINE_CONTROL"},
+    {"method": "HT-B2", "adaptive": false, "macro_recall_at_20": 0.9333333333333332, "query_calls": 12, "rerank_pairs": 288, "paid_cost_usd": 0.0, "status": "OFFLINE_CONTROL"},
+    {"method": "HT-B3", "adaptive": false, "macro_recall_at_20": 0.8857142857142857, "query_calls": 5, "rerank_pairs": 120, "paid_cost_usd": 0.0, "status": "OFFLINE_CONTROL"}
+  ],
+  "offline_controller": {
+    "is_llm": false,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "cohorts": [
+      {"cohort": "abbott", "devices": 3, "patents": 41, "macro_recall_at_20": 0.49880241951853205, "micro_recall_at_20": 0.47540983606557374, "query_calls": 5, "controller_steps": 8, "failed_devices": 0},
+      {"cohort": "boston", "devices": 2, "patents": 7, "macro_recall_at_20": 1.0, "micro_recall_at_20": 1.0, "query_calls": 2, "controller_steps": 4, "failed_devices": 0}
+    ]
+  },
+  "provider_shaped_mock": {"method": "HT-B4-MOCK", "devices": 3, "macro_recall_at_20": 0.8857142857142857, "micro_recall_at_20": 0.8461538461538461, "provider_shaped_calls": 8, "simulated_cost_usd": 0.0008, "unknown_billing": 0, "status": "MOCK_ONLY_NOT_PROVIDER_EVIDENCE"},
+  "local_generation": {"model": "Qwen/Qwen3-8B", "revision": "b968826d9c46dd6066d109eabc6255188de91218", "pack_sha256": "d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932", "cases": 3, "schema_valid": 3, "provider_calls": 0, "paid_cost_usd": 0.0, "latency_seconds": [33.501514435047284, 34.56170447007753, 32.91924047586508]},
+  "api_generation": {"model": "qwen/qwen3-32b", "status": "BLOCKED_LOCAL", "provider_calls": 0, "paid_cost_usd": 0.0, "blockers": ["canonical cumulative ledger identity", "current account credit", "exact comparison authorization", "rights-cleared outbound prompt manifest", "route/model binding"]},
+  "limits": ["The deterministic controller is not Qwen3.", "The HT-B4 row is a provider-shaped mock.", "DAPFAM diagnostics are citation-based, not semantic device-patent gold.", "Unjudged links are not negatives.", "No pooled scientific/generalization claim is estimable from these cohorts."],
+  "next_discriminating_test": "Bind local generation into the HTTP job lifecycle and compare it against the fixed controls on one rights-cleared hash-frozen cohort after O3 gates clear."
+}

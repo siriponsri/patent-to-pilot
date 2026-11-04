@@ -1,0 +1,53 @@
+{
+  "format": "ptp-goal-completion-audit-v14",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "engineering": "O1_COMPLETE_O2_PARTIAL_O3_LOCAL_PASS_API_BLOCKED_O4_ENGINEERING_PASS_RESEARCH_PARTIAL",
+  "scientific_evidence": "G1_G2_G4_PARTIAL_NO_AUTHORIZED_FINAL_HOLDOUT",
+  "business_validation": "G5_OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_NOT_VALIDATED",
+  "manuscript": "G6_READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "artifacts": {
+    "budget_audit": "docs/healthtech/audits/ptp-private-frontier-budget-ceilings-20261104/verification.json",
+    "manuscript_rebind": "docs/healthtech/audits/ptp-manuscript-rebind-r9-20261104/verification.json",
+    "journal_package": "docs/healthtech/audits/ptp-journal-package-current-r10-20261104/verification.json"
+  },
+  "budget_reconciliation": {
+    "matched_slice": "3 query calls / 123 rerank pairs",
+    "matched_methods": ["HT-B1", "HT-B2", "HT-B3"],
+    "matched_macro_recall_at_20": 0.49880241951853205,
+    "at_most_ceilings": ["5/205", "6/246", "9/369"],
+    "b3_not_realized_queries": 1,
+    "interpretation": "POSTHOC_DESCRIPTIVE_ONLY"
+  },
+  "tests": {
+    "focused_budget_summary": "3 passed; 0 failed; 0 skipped",
+    "compileall": "PASS_EXIT_0",
+    "relative_markdown_links": "67 checked; 0 missing"
+  },
+  "journal": {
+    "integrity": "ok",
+    "legacy_settled_count": 4,
+    "known_legacy_spend_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutated": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "time_window_reset": false,
+    "external_message": false,
+    "submission": false
+  },
+  "goal_closed": false,
+  "next": "Owner review current package; keep scientific and paid-API boundaries separate; obtain scoped credit evidence only if paid comparison remains required."
+}

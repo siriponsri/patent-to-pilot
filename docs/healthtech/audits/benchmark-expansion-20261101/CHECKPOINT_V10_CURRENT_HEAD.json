@@ -1,0 +1,70 @@
+{
+  "checkpoint_version": "benchmark-expansion-v10-current-head-component-baseline",
+  "created_utc": "2026-11-01T05:47:07.5636443Z",
+  "status": "PASS_CURRENT_HEAD_COMPONENT_BASELINE_PARTIAL_MAIN_ADAPTIVE",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head": "ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd",
+    "working_tree_state_before_receipt": "clean",
+    "root_main_merged": false,
+    "push_performed": false
+  },
+  "source_pack": {
+    "root": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101",
+    "manifest_sha256": "67c36586aec4e3ccc7834dd8c2869a563fda5a9fcf58043b138325285dcf3a79",
+    "protocol": "docs/healthtech/research/DATASET_BENCHMARK_EXPANSION_PROTOCOL_20261101_TH_EN.md",
+    "protocol_sha256_before_checkpoint": "f8da1a15b4d2b1bcf93dd9e24a4edcd6ec154529d625266fb197b70b8ac1275e",
+    "freeze": "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_FREEZE.json",
+    "freeze_sha256": "42fdd9b7d505943f940b834f34e522b761d3651b6f7df44c51a509371c0e9f24",
+    "acquisition_receipt_sha256": "cfda1577f52a0165cdcfaddc979ade6aba179c6d6481ad54cc2dbeaf97ca4217",
+    "current_head_results": "docs/healthtech/audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json"
+  },
+  "execution": {
+    "new_dataset_downloads": 0,
+    "existing_core_payloads_reused": 5,
+    "new_embedding_runs": 0,
+    "panorama_cpu_baseline_runs": 4,
+    "helmers_diagnostic_runs": 1,
+    "paid_api_calls": 0,
+    "paid_cost_usd": 0.0,
+    "gpu_jobs": 0,
+    "gpu_preflight": "PASS_READ_ONLY_OBSERVATION",
+    "ledger_reset": false,
+    "automatic_top_up": false,
+    "participant_contact": false
+  },
+  "verification": {
+    "PAR4PC_validation": "PASS; 3029 rows; macro gold option hit@1 0.733575; failed-output rate 0.0",
+    "PAR4PC_test": "PASS; 2896 rows; macro gold option hit@1 0.715124; failed-output rate 0.0",
+    "PI4PC_validation": "PASS; 3937 rows; macro gold paragraph hit@1 0.377699; failed-output rate 0.0",
+    "PI4PC_test": "PASS; 3402 rows; macro gold paragraph hit@1 0.401235; failed-output rate 0.0",
+    "Helmers": "PASS_DESCRIPTIVE_DIAGNOSTIC; 10 targets; 450 judged pairs; macro AP 0.885450; macro AUC 0.880012",
+    "failure_preservation": "PASS; summary receipts retain empty failure_reasons arrays and all rows remain in denominator",
+    "current_head_binding": "PASS; all new component runs executed against ab7ad34; historical candidate outputs are not merged into this result"
+  },
+  "status_by_dimension": {
+    "engineering": "COMPLETE_FOR_STAGED_COMPONENT_PACKAGE",
+    "scientific_evidence": "PARTIAL_COMPONENT_EVIDENCE_ONLY",
+    "main_adaptive_dossier_study": "NOT_EVALUATED",
+    "business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED",
+    "paid_api_comparison": "BLOCKED_LOCAL",
+    "gpu_generation": "NOT_RUN_IN_THIS_RESUME; PRIOR_LOCAL_QWEN_RECEIPT_REUSED"
+  },
+  "remaining_gates": [
+    "current canonical R1 journal or sanitized all-attempt export plus writer-quiescence evidence",
+    "current authorized account-credit or billing snapshot",
+    "fresh route/parameter/pricing binding",
+    "rights-cleared outbound dossier/prompt manifest",
+    "matched adaptive evaluation cohort with admissible semantic or documented-link judgment source",
+    "owner review before push/merge and official WPI author-page recheck"
+  ],
+  "next_action": "Keep the component receipt and manuscript current-head binding; continue offline matched-study design and paper review. Open paid/API or new GPU compute only when its live gates are evidenced; do not reset the historical ledger or re-download verified payloads.",
+  "artifacts": {
+    "current_head_results": "docs/healthtech/audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json",
+    "private_run_root": "permitted-local-storage:healthtech/benchmark-expansion-20261101/baseline-20261101",
+    "next_actions": "memory/next-actions.md"
+  }
+}

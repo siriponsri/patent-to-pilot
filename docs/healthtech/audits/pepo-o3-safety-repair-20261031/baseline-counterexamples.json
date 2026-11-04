@@ -1,0 +1,12 @@
+{
+  "baseline_source": "8b64ca09 source snapshot",
+  "all_fixtures_synthetic": true,
+  "non_sqlite_registration_accepted": true,
+  "empty_canonical_without_history_reserved_nano_usd": 10000000,
+  "registry_policy_hash_matches_sqlite_policy_hash": false,
+  "stale_credit_accepted": true,
+  "future_credit_accepted": true,
+  "parameters_replaced_frozen_messages": true,
+  "external_provider_calls": 0,
+  "actual_paid_cost_usd": 0
+}

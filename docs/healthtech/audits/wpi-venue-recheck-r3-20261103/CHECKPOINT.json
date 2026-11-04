@@ -1,0 +1,9 @@
+{
+  "format": "ptp-checkpoint-v1",
+  "status": "PASS_CONDITIONAL_SCOPE_GUIDE_403_OWNER_RECHECK_REQUIRED",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "scope_fit": "PASS_CONDITIONAL",
+  "guide_for_authors": "BLOCKED_HTTP_403",
+  "submission": "NOT_SUBMITTED",
+  "next": "Owner browser recheck of the official WPI Guide before submission."
+}

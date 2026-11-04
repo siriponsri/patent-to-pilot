@@ -1,0 +1,18 @@
+{
+  "status": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+  "job_id": "46c85ee0958748bb868da370d5c9447d",
+  "backend_origin": "loopback",
+  "source_inspection": "PASS",
+  "history_versions": [
+    1,
+    2
+  ],
+  "edit": "PASS",
+  "exports": [
+    "json",
+    "th",
+    "en"
+  ],
+  "provider_calls": 0,
+  "paid_cost_usd": 0
+}

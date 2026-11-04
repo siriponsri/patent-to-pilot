@@ -1,0 +1,1472 @@
+{
+  "B0_rules_only": [
+    {
+      "state_id": "S0",
+      "event_type": "initial",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": null
+    },
+    {
+      "state_id": "S1",
+      "event_type": "forbid_silicon_substrate",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [
+          "fictional_stipulations",
+          "options",
+          "routes"
+        ],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {
+          "fictional_stipulations": {
+            "before": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": []
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            },
+            "after": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": [
+                  "silicon"
+                ]
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            }
+          },
+          "options": {
+            "before": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ]
+          },
+          "routes": {
+            "before": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ],
+            "after": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "draft",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "state_id": "S2",
+      "event_type": "project_name_only",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "fictional_stipulations",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "options",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "routes",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {}
+      }
+    }
+  ],
+  "B1_full_regeneration": [
+    {
+      "state_id": "S0",
+      "event_type": "initial",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": null
+    },
+    {
+      "state_id": "S1",
+      "event_type": "forbid_silicon_substrate",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [
+          "fictional_stipulations",
+          "options",
+          "routes"
+        ],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {
+          "fictional_stipulations": {
+            "before": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": []
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            },
+            "after": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": [
+                  "silicon"
+                ]
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            }
+          },
+          "options": {
+            "before": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ]
+          },
+          "routes": {
+            "before": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ],
+            "after": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "draft",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "state_id": "S2",
+      "event_type": "project_name_only",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "fictional_stipulations",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "options",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "routes",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {}
+      }
+    }
+  ],
+  "B2_direct_revision": [
+    {
+      "state_id": "S0",
+      "event_type": "initial",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": null
+    },
+    {
+      "state_id": "S1",
+      "event_type": "forbid_silicon_substrate",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [
+          "fictional_stipulations",
+          "options",
+          "routes"
+        ],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {
+          "fictional_stipulations": {
+            "before": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": []
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            },
+            "after": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": [
+                  "silicon"
+                ]
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            }
+          },
+          "options": {
+            "before": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ]
+          },
+          "routes": {
+            "before": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ],
+            "after": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "draft",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "state_id": "S2",
+      "event_type": "project_name_only",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "fictional_stipulations",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "options",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "routes",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {}
+      }
+    }
+  ],
+  "B3_invalidation_same_generator": [
+    {
+      "state_id": "S0",
+      "event_type": "initial",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": null
+    },
+    {
+      "state_id": "S1",
+      "event_type": "forbid_silicon_substrate",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [
+          "fictional_stipulations",
+          "options",
+          "routes"
+        ],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {
+          "fictional_stipulations": {
+            "before": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": []
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            },
+            "after": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": [
+                  "silicon"
+                ]
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            }
+          },
+          "options": {
+            "before": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ]
+          },
+          "routes": {
+            "before": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ],
+            "after": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "draft",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "state_id": "S2",
+      "event_type": "project_name_only",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "fictional_stipulations",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "options",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "routes",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {}
+      }
+    }
+  ],
+  "P_existing_workflow": [
+    {
+      "state_id": "S0",
+      "event_type": "initial",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": null
+    },
+    {
+      "state_id": "S1",
+      "event_type": "forbid_silicon_substrate",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [
+          "fictional_stipulations",
+          "options",
+          "routes"
+        ],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {
+          "fictional_stipulations": {
+            "before": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": []
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            },
+            "after": {
+              "policy": {
+                "rule_id": null,
+                "origin": null,
+                "role_scope": null,
+                "allowed_initial": [],
+                "carrier_scope": null,
+                "real_organization_rule": null,
+                "forbidden_inhibitors": [],
+                "operator": null,
+                "normalization": null,
+                "maximum": null,
+                "count_kind": null,
+                "component": "substrate",
+                "permitted_materials": [
+                  "silicon",
+                  "glass"
+                ],
+                "forbidden_materials": [
+                  "silicon"
+                ]
+              },
+              "options": [
+                {
+                  "option_id": null,
+                  "candidate_id": "A",
+                  "selected_component": "substrate",
+                  "selected_material": "silicon",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                },
+                {
+                  "option_id": null,
+                  "candidate_id": "B",
+                  "selected_component": "substrate",
+                  "selected_material": "glass",
+                  "selection_origin": "synthetic_benchmark_choice_not_a_verified_complete_route",
+                  "selected_carrier": null,
+                  "selected_inhibitor": null,
+                  "selected_route": null,
+                  "basis": null,
+                  "evidence_ids": []
+                }
+              ],
+              "basis": "public development case stipulation; not a real-organization fact"
+            }
+          },
+          "options": {
+            "before": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ],
+            "after": [
+              {
+                "option_id": "A",
+                "label": "A: silicon substrate",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              },
+              {
+                "option_id": "B",
+                "label": "B: glass substrate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ]
+              }
+            ]
+          },
+          "routes": {
+            "before": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ],
+            "after": [
+              {
+                "route_id": "PTP-0001:A",
+                "label": "A: silicon substrate",
+                "status": "draft",
+                "policy_check_state": "fails_this_explicit_check",
+                "evidence_ids": [
+                  "C01"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              },
+              {
+                "route_id": "PTP-0001:B",
+                "label": "B: glass substrate",
+                "status": "candidate",
+                "policy_check_state": "passes_this_explicit_check",
+                "evidence_ids": [
+                  "C02"
+                ],
+                "constraint_ids": [
+                  "PTP-0001-policy"
+                ],
+                "unknowns": [
+                  "measured production yield"
+                ],
+                "contradictions": []
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "state_id": "S2",
+      "event_type": "project_name_only",
+      "execution_status": "PASS",
+      "validation_status": "PASS",
+      "status": "PASS",
+      "before_after_diff": {
+        "affected_fields": [],
+        "preserved_fields": [
+          "agent_input_fields",
+          "allowed_evidence",
+          "brief",
+          "case_id",
+          "contradictions",
+          "fictional_stipulations",
+          "handoff",
+          "interface_status",
+          "interpretations",
+          "mock_provider_called",
+          "options",
+          "profile_id",
+          "profile_version",
+          "proposed_next_tests",
+          "routes",
+          "source_facts",
+          "source_integrity",
+          "unknowns"
+        ],
+        "fields": {}
+      }
+    }
+  ]
+}

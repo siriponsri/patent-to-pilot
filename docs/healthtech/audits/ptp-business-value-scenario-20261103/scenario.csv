@@ -1,0 +1,4 @@
+scenario,human_hours,labor_rate_usd_per_hour,gpu_rate_usd_per_hour,observed_machine_hours,illustrative_unit_cost_usd
+lower,0.25,50.0,1.0,0.0199952778,12.51999528
+central,0.5,100.0,3.0,0.0199952778,50.05998583
+upper,1.0,200.0,3.0,0.0199952778,200.05998583

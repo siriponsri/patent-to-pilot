@@ -1,0 +1,23 @@
+{
+  "run_id": "solo-computational-design-20261101",
+  "date": "2026-11-01",
+  "timezone": "Asia/Bangkok",
+  "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "head_before_documentation_commit": "8b64ca09a4237a28ad121997985b081ca8781804",
+  "candidate_commit": "912a65e67e04faa74914819b415863e3e635ac7f",
+  "owner_input": "docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md",
+  "design_status": "PASS_SOLO_COMPUTATIONAL_DESIGN",
+  "engineering_status": "PASS_CURRENT_CANDIDATE_TESTED",
+  "scientific_evidence_status": "PARTIAL_DESCRIPTIVE_WITH_FOUR_COMPANY_SENSITIVITY",
+  "external_business_validation_status": "NOT_VALIDATED",
+  "manuscript_status": "PARTIAL_OWNER_REVIEW_NOT_SUBMITTED",
+  "participant_count": 0,
+  "paid_provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "budget_expansion_requested": false,
+  "new_ledger_created": false,
+  "time_window_reset": false,
+  "named_abbott_browser_recheck": "BLOCKED_ASSET_GATED",
+  "next_action": "Keep scientific claims descriptive, preserve prior O4 receipt, and resolve only the remaining paid/evaluator gates before any final claim."
+}

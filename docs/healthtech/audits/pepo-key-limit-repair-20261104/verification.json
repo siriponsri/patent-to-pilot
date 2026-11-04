@@ -1,0 +1,60 @@
+{
+  "format": "ptp-key-limit-repair-v1",
+  "observed_utc": "2026-11-04T10:34:51.880706+00:00",
+  "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "dirty_candidate": true,
+  "source_hashes": {
+    "src/patent_to_pilot/providers/metadata_observation.py": "4b2bb300455820f69cf3e538cd53f26026c5cab040538837ee72bc58fdc649f4",
+    "src/patent_to_pilot/providers/credit_from_metadata.py": "c55aa10326fef926d737b2541fda170bd7265679d0721eba3cac1c4ec51b35c1",
+    "tests/test_openrouter_key_limit_semantics.py": "058128918bbb6e40bbaac985d6d0ca9b751b21184e90d4b047e3c017e1a9eb14",
+    "tests/test_openrouter_credit_from_metadata.py": "9770a4efca72cab1cb27b08e68745eb9dcc0eca7db23db7fb26ea3e87558928c"
+  },
+  "tests": {
+    "tests": 172,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "key_observation_file_sha256": "88303ed6eb2acdf54479fc3585342628a7a95dfb9dd5c2bc8517bb2d4eada4d3",
+  "key_limit_state": "UNLIMITED",
+  "latest_key_observation": {
+    "file": "docs/healthtech/audits/pepo-key-limit-repair-20261104/metadata-observation-v2-resume.json",
+    "file_sha256": "c838d71ab87831210ccf1d4c8d640e4c587796026fe9bdf194141c178f9a94a4",
+    "started_at_utc": "2026-11-04T17:57:37.583397+07:00",
+    "completed_at_utc": "2026-11-04T17:57:38.080978+07:00",
+    "key_scope": "sha256:7cbe4013fd1c43bb8096135bc6e4ed9a0befb7607ebe820bcfcb2c33544d7b97",
+    "key_limit_state": "UNLIMITED",
+    "fresh_for_account_join_at_capture": true,
+    "account_scope_binding": "NOT_RECONCILED",
+    "live_admission_enabled": false
+  },
+  "raw_response_sha256_matches_r13": true,
+  "journal": {
+    "integrity_check": "ok",
+    "operational_attempts": 0,
+    "attempt_context_rows": 0,
+    "legacy_attempts": 4,
+    "legacy_actual_usd": 0.0001464,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_allowance_usd": 1.0,
+    "lifetime_cap_guaranteed": false
+  },
+  "journal_sha256_before": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2",
+  "journal_sha256_after": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2",
+  "read_only_key_requests": 1,
+  "paid_generation_calls": 0,
+  "reservations": 0,
+  "gpu_jobs": 0,
+  "new_paid_cost_usd": 0,
+  "historical_mcp_credit": {
+    "total_credits_usd": 10,
+    "total_usage_usd": 0.0001464,
+    "calculated_remaining_usd": 9.9998536,
+    "as_of_utc": "2026-11-03T23:58:56.9604548Z",
+    "fresh_for_dispatch": false,
+    "same_account_not_proven_by_matching_usage": true
+  },
+  "current_paid_dependency": "FRESH_ACCOUNT_OBSERVATION_BOUND_TO_DISPATCH_KEY_AND_CURRENT_ROUTE_PRICING",
+  "runtime_goal_state": "NOT_INSPECTED_OR_CHANGED",
+  "scientific_acceptance_changed": false
+}

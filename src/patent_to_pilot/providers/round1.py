@@ -22,7 +22,13 @@ from .openrouter import (
     ProviderRequest,
     ProviderResponse,
 )
-from .project_budget import BudgetedTransport, NANO, ProjectBudget
+from .ledger_registry import (
+    CanonicalLedgerBinding,
+    CanonicalLedgerError,
+    ephemeral_ledger_id,
+    resolve_canonical_ledger,
+)
+from .project_budget import BudgetedTransport, NANO, ProjectBudget, policy_identity_hash
 
 
 R1_POLICY_VERSION = "ptp-ht-openrouter-r1-20261028-usd8-v1"
@@ -91,6 +97,7 @@ def build_round1_policy(
 
 
 def round1_policy_hash(policy: Mapping[str, Any]) -> str:
+    # Per-run config includes exact pricing; durable ledger identity excludes it.
     return _sha256(policy)
 
 
@@ -140,18 +147,60 @@ class Round1ProjectBudget(ProjectBudget):
 
     def __init__(
         self,
-        path: Path,
+        path: Path | None = None,
         *,
         model_provider_map: Mapping[str, str],
         pricing_snapshot_sha256: str,
         pricing_snapshot_utc: str,
+        namespace: str = "canonical",
     ) -> None:
         policy = build_round1_policy(
             model_provider_map,
             pricing_snapshot_sha256=pricing_snapshot_sha256,
             pricing_snapshot_utc=pricing_snapshot_utc,
         )
-        super().__init__(path, policy=policy)
+        if namespace == "canonical":
+            from . import local_epoch
+            if local_epoch.active():
+                policy = local_epoch.policy(model_provider_map,
+                    pricing_snapshot_sha256=pricing_snapshot_sha256,
+                    pricing_snapshot_utc=pricing_snapshot_utc)
+        authorization_id = policy["authorization_id"]
+        policy_hash = policy_identity_hash(policy)
+        if namespace == "canonical":
+            try:
+                binding = resolve_canonical_ledger(
+                    authorization_id=authorization_id,
+                    policy_hash=policy_hash,
+                    pricing_snapshot_sha256=pricing_snapshot_sha256,
+                    pricing_snapshot_utc=pricing_snapshot_utc,
+                    requested_path=path,
+                )
+            except CanonicalLedgerError:
+                raise
+            path = binding.ledger_path
+            ledger_id = binding.ledger_id
+            canonical_path = binding.ledger_path
+        elif namespace == "mock":
+            if path is None:
+                raise ValueError("mock R1 ledgers require an explicit isolated path")
+            binding = None
+            path = Path(path)
+            ledger_id = ephemeral_ledger_id(path, namespace="mock")
+            canonical_path = path
+        else:
+            raise ValueError("R1 budget namespace must be canonical or mock")
+        super().__init__(
+            path,
+            policy=policy,
+            ledger_id=ledger_id,
+            authorization_id=authorization_id,
+            namespace=namespace,
+            canonical_path=canonical_path,
+            pricing_snapshot_sha256=pricing_snapshot_sha256,
+            pricing_snapshot_utc=pricing_snapshot_utc,
+        )
+        self.canonical_binding: CanonicalLedgerBinding | None = binding
 
 
 def request_payload_hash(config: ProviderConfig, request: ProviderRequest) -> str:
@@ -188,6 +237,8 @@ class Round1Runner:
             or config.config_version != round1_policy_hash(self.budget.policy)
         ):
             raise BudgetExceededError("R1 config is not bound to the verified policy")
+        if config.live_enabled and self.budget.namespace != "canonical":
+            raise BudgetExceededError("live R1 dispatch requires the canonical authorization ledger")
         if request.cost_upper_bound_usd is None:
             raise BudgetExceededError("R1 requires an explicit conservative request bound")
         binding = {
@@ -197,7 +248,25 @@ class Round1Runner:
             "upper_bound_usd": upper_bound_usd,
             "bound_verified": bound_verified,
             "data_class": data_class,
+            "credit_snapshot": getattr(self.budget, "account_credit_snapshot", None) if config.live_enabled else None,
         }
+        if config.live_enabled:
+            from datetime import datetime, timezone
+            from .credit import utc_time, normalize_credit
+            credit = normalize_credit(getattr(self.budget, "account_credit_snapshot", None), require_current=True)
+            scope = credit["key_scope"]
+            if not scope.startswith("sha256:"):
+                raise BudgetExceededError("availability observation requires the dispatch key fingerprint")
+            config.api_key_sha256 = _require_sha256(scope[7:], "dispatch key scope")
+            age = (datetime.now(timezone.utc) - utc_time(self.budget.pricing_snapshot_utc)).total_seconds()
+            if age < 0 or age > 300:
+                raise BudgetExceededError("current route pricing observation required before each dispatch")
+            # Recheck the process-wide binding before every send, including retries/controllers.
+            resolve_canonical_ledger(authorization_id=self.budget.authorization_id,
+                policy_hash=self.budget.policy_hash,
+                pricing_snapshot_sha256=self.budget.pricing_snapshot_sha256,
+                pricing_snapshot_utc=self.budget.pricing_snapshot_utc,
+                requested_path=self.budget.path)
         wrapped = BudgetedTransport(self.transport_factory(), self.budget, binding)
         adapter = OpenRouterAdapter(config, wrapped, capabilities, AttemptLedger())
         return adapter.complete(request)

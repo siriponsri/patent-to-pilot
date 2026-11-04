@@ -1,0 +1,54 @@
+{
+  "format": "ptp-openrouter-mcp-credit-capability-recheck-v1",
+  "observed_local": "2026-11-04T06:52:17.6177054+07:00",
+  "observed_utc": "2026-11-03T23:52:17.6177054Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "worktree_dirty_intentionally": true,
+  "goal": "resume_existing_patent_to_pilot_goal",
+  "official_docs": {
+    "url": "https://openrouter.ai/docs/guides/overview/mcp-server",
+    "http_status": 200,
+    "get_credits_documented": true,
+    "dedicated_connection_key_documented": true,
+    "key_expiry_documented": "within_7_days",
+    "starting_spend_cap_usd": 10.0,
+    "source_read_only": true
+  },
+  "runtime_discovery": {
+    "openrouter_specific_actions": 0,
+    "openrouter_mcp_resources_or_templates": 0,
+    "codex_cli_available": false,
+    "config_has_openrouter_server": false,
+    "authenticated_openrouter_mcp_session": false,
+    "get_credits_invoked": false,
+    "account_credit_verified": false,
+    "exact_key_limit_verified": false
+  },
+  "safety": {
+    "api_key_read_or_printed": false,
+    "oauth_started": false,
+    "new_mcp_key_created": false,
+    "new_goal": false,
+    "new_budget_or_zero_ledger": false,
+    "ledger_mutation": false,
+    "paid_provider_calls": 0,
+    "reservation_count": 0,
+    "gpu_jobs_started": 0
+  },
+  "e2_gate": {
+    "status": "PENDING_CURRENT_SCOPED_CREDIT",
+    "legacy_spend_usd": 0.0001464,
+    "history_reset": false,
+    "required_next_evidence": [
+      "current account credit snapshot",
+      "exact key remaining limit or explicit unlimited status",
+      "observation time and key scope",
+      "fresh route pricing within admission window"
+    ]
+  },
+  "research": {
+    "local_offline_work": "CONTINUE",
+    "paid_model_comparison": "NOT_RUN_CREDIT_GATE",
+    "scientific_claim": "DESCRIPTIVE_ONLY"
+  }
+}

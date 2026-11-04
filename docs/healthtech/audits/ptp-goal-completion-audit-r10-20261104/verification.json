@@ -1,0 +1,57 @@
+{
+  "format": "ptp-goal-completion-audit-r10-v1",
+  "recorded_utc": "2026-11-03T17:37:07.7239338Z",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "tree_state": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "accounting": {
+    "journal": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity": "ok",
+    "new_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": "0.0001464",
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_allowance_usd": "1",
+    "budget_reset": false,
+    "window_reset": false,
+    "ledger_mutations": 0
+  },
+  "engineering": {
+    "full_suite": "642 total; 640 passed; 0 failed; 0 errors; 2 skipped",
+    "compileall": "PASS",
+    "o1": "COMPLETE_CURRENT_HEAD",
+    "o2": "PARTIAL_CURRENT_HEAD_PATEMBED_AND_E5_HTTP_BOUND_RESEARCH_PARTIAL",
+    "o3": "PASS_LOCAL_GUIDED_API_PREFLIGHT_PAID_DISPATCH_BLOCKED",
+    "o4": "PASS_THREE_CASE_ENGINEERING_PARTIAL_RESEARCH"
+  },
+  "scientific": {
+    "g1": "PARTIAL_RIGHTS_AND_SEMANTIC_GOLD_INCOMPLETE",
+    "g2": "PARTIAL_DEVELOPMENT_BASELINES_AND_EVALUATOR",
+    "g4": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+    "matched_budget": "POSTHOC_FIRST_ACTION_ONLY",
+    "current_head_final_holdout": "NOT_AVAILABLE_OR_AUTHORIZED",
+    "semantic_gold": "NOT_AVAILABLE_PRODUCT_DISCLOSED_LINKS_ONLY"
+  },
+  "business_and_manuscript": {
+    "g5": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
+    "g6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+    "g7": "PASS_CURRENT_HEAD_OFFLINE_RELEASE_READINESS_DIRTY_CANDIDATE_NOT_RELEASED",
+    "g8": "NOT_RUN_FUTURE_SCOPE",
+    "manuscript": "READY_FOR_OWNER_REVIEW",
+    "cover_letter": "DRAFT_NOT_SENT",
+    "submission": "NOT_SUBMITTED"
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "route_refresh": "NOT_RUN",
+    "reservation": "NOT_RUN",
+    "provider_calls": 0,
+    "retries": 0
+  },
+  "goal_status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "next": "Continue offline owner-review/reproducibility work; obtain the one non-secret credit/limit snapshot only if paid comparison remains required, and do not infer a final adaptive claim without an authorized holdout."
+}

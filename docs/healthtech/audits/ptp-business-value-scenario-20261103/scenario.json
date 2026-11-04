@@ -1,0 +1,54 @@
+{
+  "format": "ptp-business-value-scenario-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "SCENARIO_ONLY_NOT_OBSERVED_BUSINESS_VALIDATION",
+  "observed": {
+    "named_real_device_cases": 3,
+    "mean_local_vector_seconds_per_case": 33.023,
+    "mean_guided_local_qwen_seconds_per_case": 38.96,
+    "combined_machine_seconds_per_case": 71.983,
+    "combined_machine_hours_per_case": 0.0199952778,
+    "source_inspection_history_json_export_cases": "3/3",
+    "human_review_hours_per_case": null,
+    "gpu_rate_usd_per_hour": null,
+    "paid_api_cost_usd_per_case": null
+  },
+  "formula": "human_hours * labor_rate_usd_per_hour + observed_machine_hours * gpu_rate_usd_per_hour",
+  "scenarios": [
+    {
+      "scenario": "lower",
+      "human_hours": 0.25,
+      "labor_rate_usd_per_hour": 50.0,
+      "gpu_rate_usd_per_hour": 1.0,
+      "illustrative_unit_cost_usd": 12.51999528
+    },
+    {
+      "scenario": "central",
+      "human_hours": 0.5,
+      "labor_rate_usd_per_hour": 100.0,
+      "gpu_rate_usd_per_hour": 3.0,
+      "illustrative_unit_cost_usd": 50.05998583
+    },
+    {
+      "scenario": "upper",
+      "human_hours": 1.0,
+      "labor_rate_usd_per_hour": 200.0,
+      "gpu_rate_usd_per_hour": 3.0,
+      "illustrative_unit_cost_usd": 200.05998583
+    }
+  ],
+  "not_claimed": [
+    "independent user validation",
+    "customer productivity gain",
+    "willingness-to-pay",
+    "revenue",
+    "ROI",
+    "production unit cost",
+    "paid API cost"
+  ],
+  "source_receipts": [
+    "docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json",
+    "docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json",
+    "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json"
+  ]
+}

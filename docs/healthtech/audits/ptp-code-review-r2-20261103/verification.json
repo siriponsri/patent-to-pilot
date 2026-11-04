@@ -1,0 +1,55 @@
+{
+  "format": "ptp-code-review-r2-v1",
+  "recorded_local": "2026-11-03T22:06:00+07:00",
+  "recorded_utc": "2026-11-03T15:06:00Z",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_preserved": true,
+    "commit": false,
+    "push": false,
+    "merge": false
+  },
+  "review": {
+    "mode": "serial_same_agent_pre_owner_review",
+    "specification_findings": 0,
+    "standards_findings": 0,
+    "scope": "current goal-specific source/test patch from ptp-source-patch-inventory-20261103",
+    "claim_boundary": "no merge approval, paid completion, scientific adaptive superiority, business validation, or journal acceptance"
+  },
+  "tests": {
+    "full_suite_total": 642,
+    "passed": 640,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "junit": "full-tests.xml",
+    "junit_sha256": "35abe40008571a877b23194024c1151023f8e7462bf932a2cc875a4ab4277852",
+    "compileall": "PASS",
+    "git_diff_check": "PASS_WITH_PREEXISTING_CRLF_WARNINGS",
+    "skip_reasons": [
+      "native DuckDB integration requires PTP_TEST_DUCKDB",
+      "pinned local tokenizer artifact is unavailable"
+    ]
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "current_scoped_credit_snapshot": "MISSING",
+    "route_price": "REFRESH_REQUIRED_INSIDE_ADMISSION_WINDOW_AFTER_CREDIT_GATE",
+    "next_owner_input": "one non-secret current scoped v2 credit/limit snapshot or sanctioned pointer for the same account/key"
+  },
+  "disposition": "READY_FOR_OWNER_REVIEW_NOT_MERGE"
+}

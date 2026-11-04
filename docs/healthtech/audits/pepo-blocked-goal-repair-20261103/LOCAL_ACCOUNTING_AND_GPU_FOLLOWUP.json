@@ -1,0 +1,716 @@
+{
+  "format": "ptp-local-accounting-and-fresh-gpu-followup-v1",
+  "recorded_utc": "2026-11-03T13:04:31.743999+00:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "dirty_candidate": true,
+  "goal_recommendation": "RESUME_EXISTING_GOAL",
+  "owner_policy": {
+    "evidence": "owner Windows local storage",
+    "dr_train": "compute only, transient scratch removed",
+    "api": "existing local .env authorized",
+    "history": "owner explicitly accepted new accounting epoch when R1 history unavailable"
+  },
+  "source_changes": {
+    "src/patent_to_pilot/providers/project_budget.py": {
+      "before_sha256": "d8fd0528c30d9c0a1709532e257014c5962d59af0d030facb941feeebbd7c55f",
+      "after_sha256": "ea0ef2f9bc7e31aac4a400fde8a9198b9ac1a98902eaa238b1b974f9f3fddb62"
+    },
+    "src/patent_to_pilot/providers/ledger_registry.py": {
+      "before_sha256": "6030b16e7bb8b8b1e46082e219d2abf2accfe6b9eb2e82bf43d4e75d6c8eac22",
+      "after_sha256": "335df3775a44e7fa9218c1b186f3e76397f7f3f1092ecdf8cba1e78446546cbd"
+    },
+    "src/patent_to_pilot/providers/round1.py": {
+      "before_sha256": "2885190fe5903252737b54d6cf49f15f8b7e26ca3f03fde8a3e817985ef3d500",
+      "after_sha256": "354bac65fd8cb550fd4578ebfdecd036d6db59f3debcebdf42d4e38445eb0d0e"
+    },
+    "src/patent_to_pilot/healthtech/api_generation.py": {
+      "before_sha256": "bb16096bdd9dbb787721e1ee229e0c9c55164dd86c6ab914d87faa9cb2559694",
+      "after_sha256": "d2bb52cd0f4d8052bcba234342b65ddaf5d519f5233017e2fea9ff9eea90310c"
+    },
+    "scripts/healthtech/run_openrouter_generation_evidence_pack.py": {
+      "before_sha256": "94c88ea1e52216ba8815afdcc24569338db5c361516fc4fabcf8e5edd4923287",
+      "after_sha256": "eac71589279f1245126c3f603193c0750833a4711ecf086525b634d59a03f256"
+    },
+    "scripts/healthtech/run_b4_controller.py": {
+      "before_sha256": "4b4825fdef10ef0a3b48bdda55d80bde46d41d8f7c56907893a1d7acd6814de4",
+      "after_sha256": "882230781919c7ca01b26751b4f86d09d23a5581803251ad703ee2560ca16011"
+    },
+    "src/patent_to_pilot/providers/local_epoch.py": {
+      "before_sha256": null,
+      "after_sha256": "d37ba155f361a5a02ea0ce3efbdb5dd94a2deaa91f41563e47387b1f85a9dc25"
+    },
+    "tests/test_healthtech_local_epoch.py": {
+      "before_sha256": null,
+      "after_sha256": "5af7cece807234107b8cad5005985476df895d2f3896f70f44f492fac34ad36d"
+    },
+    "scripts/healthtech/initialize_local_api_journal.py": {
+      "before_sha256": null,
+      "after_sha256": "0d3f053e3c91564b091f53589a9f95506b0e8de99fd11707e1463f3fac685728"
+    },
+    "tests/test_healthtech_api_env.py": {
+      "before_sha256": null,
+      "after_sha256": "f51b84a21413792259336b90a4119da4e123376b1c688cd3c83bf11dbcc4bfe1"
+    },
+    "tests/test_healthtech_api_generation.py": {
+      "before_sha256": "50811b9ad36d78afb1fe429b3e659b73bc07a4e5b31ac5bbca3fc00806dfb71b",
+      "after_sha256": "063b8e4d7c6b07c03140f99e9765fe9823a4bea41b7b34608911a57d464190a2"
+    }
+  },
+  "tests": {
+    "tests": 187,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_receipt": "local-api-provider-regressions.xml",
+  "previous_test_iterations": "Synthetic fixture hash collision, Windows backup handle/path-length bugs and one obsolete test stub were fixed; final 187 pass. Earlier XML remains in task workspace.",
+  "accounting": {
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+    "snapshot": {
+      "policy_sha256": "018ff0c3869743b2826773141594964485281e745d69cc379a12c786db7c522b",
+      "policy_version": "ptp-local-api-e2-20261103-v1",
+      "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+      "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+      "ledger_namespace": "canonical",
+      "ledger_path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+      "pricing_snapshot_sha256": "668086a67b0941d1eca2e90e740f98b7f2f9cf381f20aae67b18abd8f8a9f6ee",
+      "pricing_snapshot_utc": "2026-10-31T10:57:23.2417019Z",
+      "attempts": 0,
+      "actual_nano_usd": 146400,
+      "historical_carryover_nano_usd": 146400,
+      "uncertainty_buffer_nano_usd": 98999853600,
+      "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+      "lifetime_cap_guaranteed": false,
+      "prospective_epoch_cap_nano_usd": 1000000000,
+      "committed_nano_usd": 99000000000,
+      "phase_committed_nano_usd": {
+        "canary": 0,
+        "paired_pilot": 0,
+        "robustness": 0
+      },
+      "admission_threshold_nano_usd": 100000000000,
+      "authorization_cap_nano_usd": 100000000000,
+      "remaining_to_admission_nano_usd": 1000000000,
+      "remaining_to_authorization_nano_usd": 1000000000,
+      "unknown_or_pending": [],
+      "breach": false,
+      "admission_closed": false,
+      "dispatch_blocked": false
+    },
+    "known_legacy_settled_attempts": 4,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "integrity_check": "ok",
+    "idempotent_reinitialization_verified": true,
+    "opened_by_current_runner": true,
+    "journal_sha256_at_initialization": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2",
+    "registry_sha256": "54d4ac2a8927c81461c6ced2f2a67b12f7be17e80760cbaa95697aa410db70ee",
+    "legacy_originals_unchanged": true,
+    "secret_values_read_for_cutover": false,
+    "current_credit": "PENDING_NOT_OBSERVED",
+    "price_snapshot": "HISTORICAL_BOOTSTRAP_ONLY_FRESH_OBSERVATION_REQUIRED",
+    "new_paid_attempts": 0,
+    "new_paid_cost_usd": 0,
+    "lifetime_cap_guaranteed": false,
+    "note": "USD98.9998536 is an uncertainty buffer, not measured past spending or a proven bound on unavailable history; USD1 prospective allowance is not a fresh USD100 budget."
+  },
+  "fresh_gpu_run": {
+    "started_utc": "2026-11-03T12:35:56.270398+00:00",
+    "status": "PASS_FRESH_PATENT_CORPUS_AND_QUERY_ENCODING",
+    "run_id": "20261103-pepo-patent-current",
+    "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "sources": {
+      "local_execution.py": "25ed4283936885352054c5cd5d10d5f4c78fcb8bbe26762dc7da9ee7a5a35e0d",
+      "transformer_encoders.py": "ba6fb896252771c9bea9f3c44b0e629ca439d12d093d220ef61c6d9b30b0357a"
+    },
+    "input_hashes": {
+      "corpus": "5965b7b51006d9d64d05250848300dee68d80a0b69324213a5ccac25a1c44e9d",
+      "queries": "7e0e29b6b7e8f19dcbd28c775e8b518255b5fdcfa0846307acb5dd7f5b1381a8"
+    },
+    "models": [
+      {
+        "kind": "patembed",
+        "binding": {
+          "model_id": "datalyes/patembed-base",
+          "revision": "244ba452908a3093be11efb8a44396652317fb14",
+          "encoder_kind": "patembed",
+          "implementation": "transformer_masked_mean_projection_l2_v1",
+          "model_artifact": {
+            "filename": "model.safetensors",
+            "sha256": "ae1a87ca79784c8fc457b24b26ebfed812e8f5d5075436b0ba8ad83773560edc",
+            "bytes": 774215768
+          },
+          "tokenizer_artifact": {
+            "filename": "tokenizer.json",
+            "sha256": "d5496fadd2d7fda4e958da4285f7cd97c41177bbfc500580addc9c08896fb773",
+            "bytes": 958763
+          },
+          "artifact_files": {
+            "config.json": {
+              "sha256": "9b06cbe31efb4e5f01f87b01de5d134a9256097b8acc3fffab0ba1e6b7ec0be5",
+              "bytes": 584
+            },
+            "modules.json": {
+              "sha256": "8ef212e610cdac86f995dd2573bb3f74bc7f7f4c05307489642fd71e59a574f3",
+              "bytes": 345
+            },
+            "1_Pooling/config.json": {
+              "sha256": "a30548e8bc4255aafe5e5c638f6b15712eebbc8e84ea5988a5835f976c412907",
+              "bytes": 313
+            },
+            "tokenizer.json": {
+              "sha256": "d5496fadd2d7fda4e958da4285f7cd97c41177bbfc500580addc9c08896fb773",
+              "bytes": 958763
+            },
+            "model.safetensors": {
+              "sha256": "ae1a87ca79784c8fc457b24b26ebfed812e8f5d5075436b0ba8ad83773560edc",
+              "bytes": 774215768
+            },
+            "config_sentence_transformers.json": {
+              "sha256": "187f2d0a140e537a751e283983ddacc129614333726dfb78b986b6c723dd8d2d",
+              "bytes": 2369
+            },
+            "2_Dense/config.json": {
+              "sha256": "cd2b17f556f7c7e9d2204abb97c2a9fcab2eb37a9b052d80bdc0a46554b52761",
+              "bytes": 134
+            },
+            "2_Dense/model.safetensors": {
+              "sha256": "8987d3aba976a0f6174b2743792d1bc5f8dca0cf0d0da8ba167bf0026819bc42",
+              "bytes": 3145816
+            }
+          }
+        },
+        "roles": [
+          {
+            "role": "passage",
+            "started_utc": "2026-11-03T12:36:01.064356+00:00",
+            "completed_utc": "2026-11-03T12:36:04.004788+00:00",
+            "wall_seconds": 2.940416632918641,
+            "load_seconds": 1.8826563209295273,
+            "rows": 41,
+            "attention_tokens": 20971,
+            "shape": [
+              41,
+              768
+            ],
+            "vectors_sha256": "ea941b035abc7e276e50c71025f10e43880c3acf08cd0143d47d90e1696cdfa1",
+            "peak_gpu_allocated_bytes": 1155477504,
+            "peak_gpu_reserved_bytes": 1390411776,
+            "max_rss_bytes": 1582682112,
+            "l2_norm_min": 0.9999998807907104,
+            "l2_norm_max": 1.0000001192092896,
+            "document_ids": [
+              "US10363135B2",
+              "US10376673B2",
+              "US10405976B2",
+              "US10517728B2",
+              "US10610354B2",
+              "US10617519B2",
+              "US10660625B2",
+              "US10667815B2",
+              "US10667905B2",
+              "US10743876B2",
+              "US10856988B2",
+              "US11065119B2",
+              "US11096691B2",
+              "US11096783B2",
+              "US11123181B2",
+              "US11135055B2",
+              "US11141158B2",
+              "US11382753B2",
+              "US11523902B2",
+              "US11534303B2",
+              "US11622859B2",
+              "US11660189B2",
+              "US11759209B2",
+              "US11759318B2",
+              "US11850151B2",
+              "US12016561B2",
+              "US12029425B2",
+              "US12048624B2",
+              "US12090053B2",
+              "US12102534B2",
+              "US12137910B2",
+              "US12178704B2",
+              "US12274615B2",
+              "US12295846B2",
+              "US12514573B2",
+              "US12588908B2",
+              "US9078749B2",
+              "US9095433B2",
+              "US9480559B2",
+              "US9610159B2",
+              "US9700445B2"
+            ]
+          },
+          {
+            "role": "query",
+            "started_utc": "2026-11-03T12:36:04.144357+00:00",
+            "completed_utc": "2026-11-03T12:36:04.443063+00:00",
+            "wall_seconds": 0.29869863484054804,
+            "load_seconds": 0.2740237519610673,
+            "rows": 3,
+            "attention_tokens": 33,
+            "shape": [
+              3,
+              768
+            ],
+            "vectors_sha256": "e4eea689bd6074b1fc6651a517c69de6b8e16ccbb7c1839879b8cf312771b4aa",
+            "peak_gpu_allocated_bytes": 788313600,
+            "peak_gpu_reserved_bytes": 805306368,
+            "max_rss_bytes": 1891188736,
+            "l2_norm_min": 0.9999999403953552,
+            "l2_norm_max": 1.0,
+            "document_ids": [
+              "HT-DEV-MITRACLIP",
+              "HT-DEV-TENDYNE",
+              "HT-DEV-TRICLIP"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "e5",
+        "binding": {
+          "model_id": "intfloat/multilingual-e5-base",
+          "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+          "encoder_kind": "e5",
+          "implementation": "transformer_masked_mean_projection_l2_v1",
+          "model_artifact": {
+            "filename": "model.safetensors",
+            "sha256": "a18a44fad1d0b46ded15928144138cff1135d5cc8233bdd90be5f18822de09a7",
+            "bytes": 1112201288
+          },
+          "tokenizer_artifact": {
+            "filename": "tokenizer.json",
+            "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+            "bytes": 17082660
+          },
+          "artifact_files": {
+            "config.json": {
+              "sha256": "9dab198f24c8c0879e481cf7822005d5ecbceedbacb390ffafa594e28d31bac4",
+              "bytes": 694
+            },
+            "modules.json": {
+              "sha256": "c6e29747481e8b5dd2b58401966aeac910de39092f90cda9a704b1545f902b04",
+              "bytes": 387
+            },
+            "1_Pooling/config.json": {
+              "sha256": "f586ab6c734af7b8d14d898bfa7faa886f23b46f86dd1730514309893af13d75",
+              "bytes": 200
+            },
+            "tokenizer.json": {
+              "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+              "bytes": 17082660
+            },
+            "model.safetensors": {
+              "sha256": "a18a44fad1d0b46ded15928144138cff1135d5cc8233bdd90be5f18822de09a7",
+              "bytes": 1112201288
+            }
+          }
+        },
+        "roles": [
+          {
+            "role": "passage",
+            "started_utc": "2026-11-03T12:36:08.023968+00:00",
+            "completed_utc": "2026-11-03T12:36:09.983291+00:00",
+            "wall_seconds": 1.9593047238886356,
+            "load_seconds": 1.3315283469855785,
+            "rows": 41,
+            "attention_tokens": 20992,
+            "shape": [
+              41,
+              768
+            ],
+            "vectors_sha256": "5dbc074e7bd2e50eac2debce590894700c58e12550cd6bc18db1f712bbaf4c52",
+            "peak_gpu_allocated_bytes": 1397728256,
+            "peak_gpu_reserved_bytes": 1589641216,
+            "max_rss_bytes": 2553933824,
+            "l2_norm_min": 0.9999999403953552,
+            "l2_norm_max": 1.0000001192092896,
+            "document_ids": [
+              "US10363135B2",
+              "US10376673B2",
+              "US10405976B2",
+              "US10517728B2",
+              "US10610354B2",
+              "US10617519B2",
+              "US10660625B2",
+              "US10667815B2",
+              "US10667905B2",
+              "US10743876B2",
+              "US10856988B2",
+              "US11065119B2",
+              "US11096691B2",
+              "US11096783B2",
+              "US11123181B2",
+              "US11135055B2",
+              "US11141158B2",
+              "US11382753B2",
+              "US11523902B2",
+              "US11534303B2",
+              "US11622859B2",
+              "US11660189B2",
+              "US11759209B2",
+              "US11759318B2",
+              "US11850151B2",
+              "US12016561B2",
+              "US12029425B2",
+              "US12048624B2",
+              "US12090053B2",
+              "US12102534B2",
+              "US12137910B2",
+              "US12178704B2",
+              "US12274615B2",
+              "US12295846B2",
+              "US12514573B2",
+              "US12588908B2",
+              "US9078749B2",
+              "US9095433B2",
+              "US9480559B2",
+              "US9610159B2",
+              "US9700445B2"
+            ]
+          },
+          {
+            "role": "query",
+            "started_utc": "2026-11-03T12:36:10.402859+00:00",
+            "completed_utc": "2026-11-03T12:36:11.716221+00:00",
+            "wall_seconds": 1.3133547729812562,
+            "load_seconds": 1.2984190180432051,
+            "rows": 3,
+            "attention_tokens": 28,
+            "shape": [
+              3,
+              768
+            ],
+            "vectors_sha256": "216c5da38ff4e93e450f9c1c7e26a38cf50b2300ccbf844181aa0f9d65de7d9d",
+            "peak_gpu_allocated_bytes": 1122561536,
+            "peak_gpu_reserved_bytes": 1163919360,
+            "max_rss_bytes": 2569682944,
+            "l2_norm_min": 0.9999999403953552,
+            "l2_norm_max": 1.0,
+            "document_ids": [
+              "HT-DEV-MITRACLIP",
+              "HT-DEV-TENDYNE",
+              "HT-DEV-TRICLIP"
+            ]
+          }
+        ]
+      }
+    ],
+    "provider_calls": 0,
+    "gpu_job_processes": 1,
+    "concurrency": 1,
+    "paid_cost_usd": 0,
+    "evaluator_labels_transferred": false,
+    "durable_evidence_destination": "owner Windows local storage",
+    "job_root_bytes_before": 25789263872,
+    "shared_lock_path": "<approved shared model parent>/.GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089.lock",
+    "prelaunch_gpu": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089, Tesla V100-SXM2-32GB, 0, 32495, 0",
+    "runtime": {
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "torch": "2.8.0+cu128",
+      "transformers": "4.55.2",
+      "threads": 8,
+      "visible_gpu": "Tesla V100-SXM2-32GB"
+    },
+    "shared_lock_released": true,
+    "transient_remote_files_removed": true,
+    "completed_utc": "2026-11-03T12:36:12.122034+00:00",
+    "wall_seconds": 15.851646784925833
+  },
+  "fresh_retrieval": {
+    "status": "PASS_FRESH_GPU_PATENT_RETRIEVAL_DIAGNOSTIC",
+    "recorded_utc": "2026-11-03T12:38:37.879546+00:00",
+    "corpus": 41,
+    "queries": 3,
+    "known_links": 61,
+    "evaluator_sha256": "4024eb9ce949ad1e6d6c683c1762c87e29eef3814a9fb8cbf64cdc7f28df77ae",
+    "method_rows": [
+      {
+        "method": "frozen-query-bm25",
+        "per_query": [
+          {
+            "query_id": "HT-DEV-MITRACLIP",
+            "hits": 1,
+            "known_links": 21,
+            "recall_at_20": 0.047619047619047616,
+            "ndcg_at_20": 0.08961728720334346
+          },
+          {
+            "query_id": "HT-DEV-TENDYNE",
+            "hits": 17,
+            "known_links": 17,
+            "recall_at_20": 1.0,
+            "ndcg_at_20": 0.9364526449891548
+          },
+          {
+            "query_id": "HT-DEV-TRICLIP",
+            "hits": 3,
+            "known_links": 23,
+            "recall_at_20": 0.13043478260869565,
+            "ndcg_at_20": 0.26399561798532056
+          }
+        ],
+        "hits_total": 21,
+        "positive_denominator": 61,
+        "macro_recall_at_20": 0.39268461007591443,
+        "micro_recall_at_20": 0.3442622950819672,
+        "macro_ndcg_at_20": 0.43002185005927296
+      },
+      {
+        "method": "patembed-dense",
+        "per_query": [
+          {
+            "query_id": "HT-DEV-MITRACLIP",
+            "hits": 4,
+            "known_links": 21,
+            "recall_at_20": 0.19047619047619047,
+            "ndcg_at_20": 0.13886630007088027
+          },
+          {
+            "query_id": "HT-DEV-TENDYNE",
+            "hits": 15,
+            "known_links": 17,
+            "recall_at_20": 0.8823529411764706,
+            "ndcg_at_20": 0.9182756058603948
+          },
+          {
+            "query_id": "HT-DEV-TRICLIP",
+            "hits": 5,
+            "known_links": 23,
+            "recall_at_20": 0.21739130434782608,
+            "ndcg_at_20": 0.17145751337546924
+          }
+        ],
+        "hits_total": 24,
+        "positive_denominator": 61,
+        "macro_recall_at_20": 0.43007347866682905,
+        "micro_recall_at_20": 0.39344262295081966,
+        "macro_ndcg_at_20": 0.4095331397689148
+      },
+      {
+        "method": "e5-dense",
+        "per_query": [
+          {
+            "query_id": "HT-DEV-MITRACLIP",
+            "hits": 2,
+            "known_links": 21,
+            "recall_at_20": 0.09523809523809523,
+            "ndcg_at_20": 0.06837498047599132
+          },
+          {
+            "query_id": "HT-DEV-TENDYNE",
+            "hits": 17,
+            "known_links": 17,
+            "recall_at_20": 1.0,
+            "ndcg_at_20": 0.9977006742529905
+          },
+          {
+            "query_id": "HT-DEV-TRICLIP",
+            "hits": 8,
+            "known_links": 23,
+            "recall_at_20": 0.34782608695652173,
+            "ndcg_at_20": 0.30186667293199904
+          }
+        ],
+        "hits_total": 27,
+        "positive_denominator": 61,
+        "macro_recall_at_20": 0.48102139406487227,
+        "micro_recall_at_20": 0.4426229508196721,
+        "macro_ndcg_at_20": 0.4559807758869936
+      }
+    ],
+    "scope": "Frozen generic device queries, paired identical runtime inputs, development diagnostic only; not HT-B0b/B1 equivalence or final holdout; no semantic gold inferred",
+    "query_ambiguity": "MitraClip and Tendyne both use identical mitral valve query; only two unique query texts",
+    "gpu_receipt_sha256": "8e9bf926ead4c0a7a046357c726a4ab4e21c9b4324d4b6ca0b8506efe0f8fb02",
+    "provider_calls": 0,
+    "paid_cost_usd": 0
+  },
+  "independent_fresh_check": {
+    "status": "VERIFIED_SAVED_VECTORS_RANKINGS_AND_METRICS",
+    "tolerance": 1e-12,
+    "metrics": [
+      {
+        "method": "frozen-query-bm25",
+        "hits": 21,
+        "denominator": 61,
+        "values": {
+          "macro_recall_at_20": 0.39268461007591443,
+          "micro_recall_at_20": 0.3442622950819672,
+          "macro_ndcg_at_20": 0.43002185005927296
+        },
+        "max_abs_delta": 0.0
+      },
+      {
+        "method": "patembed-dense",
+        "hits": 24,
+        "denominator": 61,
+        "values": {
+          "macro_recall_at_20": 0.43007347866682905,
+          "micro_recall_at_20": 0.39344262295081966,
+          "macro_ndcg_at_20": 0.4095331397689148
+        },
+        "max_abs_delta": 0.0
+      },
+      {
+        "method": "e5-dense",
+        "hits": 27,
+        "denominator": 61,
+        "values": {
+          "macro_recall_at_20": 0.48102139406487227,
+          "micro_recall_at_20": 0.4426229508196721,
+          "macro_ndcg_at_20": 0.4559807758869936
+        },
+        "max_abs_delta": 0.0
+      }
+    ],
+    "dense_recomputation": [
+      {
+        "model": "patembed",
+        "rankings_match_saved_vectors": true,
+        "queries": 3
+      },
+      {
+        "model": "e5",
+        "rankings_match_saved_vectors": true,
+        "queries": 3
+      }
+    ],
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "scope": "Three-case development diagnostic; unlisted patents remain unjudged; no final-holdout or causal improvement claim"
+  },
+  "durable_local_evidence": {
+    "root": "%LOCALAPPDATA%/PatentToPilot/healthtech/evidence/20261103-pepo-patent-current",
+    "files": [
+      {
+        "name": "dispatch-result.json",
+        "bytes": 92,
+        "sha256": "1ae6ff30b34d1593ff0fd3d35b6b86d63ceff7fdd5be570e7dda442ff06eefa5"
+      },
+      {
+        "name": "dispatch.json",
+        "bytes": 199,
+        "sha256": "cfd359c526284b1719f473e252f201ac9bcb9631e82b5549d6a0e96b58a7d457"
+      },
+      {
+        "name": "e5-passage.npy",
+        "bytes": 126080,
+        "sha256": "5dbc074e7bd2e50eac2debce590894700c58e12550cd6bc18db1f712bbaf4c52"
+      },
+      {
+        "name": "e5-query.npy",
+        "bytes": 9344,
+        "sha256": "216c5da38ff4e93e450f9c1c7e26a38cf50b2300ccbf844181aa0f9d65de7d9d"
+      },
+      {
+        "name": "fresh-retrieval-evaluation.json",
+        "bytes": 3435,
+        "sha256": "a67ebead230a225c35fd41bb4ac64f51ae3a812880ad045b1abad4464a201cfd"
+      },
+      {
+        "name": "gpu-compute-receipt.json",
+        "bytes": 10841,
+        "sha256": "8e9bf926ead4c0a7a046357c726a4ab4e21c9b4324d4b6ca0b8506efe0f8fb02"
+      },
+      {
+        "name": "independent-fresh-verification.json",
+        "bytes": 1431,
+        "sha256": "e81d6e89b3a8672598bc335892da29ef0bf95cbee740d203cb5c70b628b85138"
+      },
+      {
+        "name": "input-source-manifest.json",
+        "bytes": 4705,
+        "sha256": "de5fe54e60697b59b496a1ecdde0cc1b80955afeb285e3ff88d5aaf6a0e9b05d"
+      },
+      {
+        "name": "patembed-passage.npy",
+        "bytes": 126080,
+        "sha256": "ea941b035abc7e276e50c71025f10e43880c3acf08cd0143d47d90e1696cdfa1"
+      },
+      {
+        "name": "patembed-query.npy",
+        "bytes": 9344,
+        "sha256": "e4eea689bd6074b1fc6651a517c69de6b8e16ccbb7c1839879b8cf312771b4aa"
+      },
+      {
+        "name": "rankings.json",
+        "bytes": 4484,
+        "sha256": "221dfb5966d0456094e73e228c407118c5233e5a249306f5371f7133df6f7f61"
+      },
+      {
+        "name": "remote-events.jsonl",
+        "bytes": 372719,
+        "sha256": "bd301749bff2852454aff12384369c199dd2a5f86426565d1650cfc9beb3f0d0"
+      },
+      {
+        "name": "remote-stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "remote-worker.py",
+        "bytes": 667231,
+        "sha256": "cae0467f3b4da9ee3c74dc8b3aea042a437a531939caccc78522f57df0ea7d34"
+      },
+      {
+        "name": "verify_fresh_retrieval.py",
+        "bytes": 3253,
+        "sha256": "b8edfddc3f218fec95ebdabc2e7e1790a8eb1f76cdc16279c5a03bf90af969f7"
+      },
+      {
+        "name": "gpu_runtime_worker_template.py",
+        "bytes": 5902,
+        "sha256": "7bfb3e5eada116989fa218eeb14328ac91e94c1e8980e35caa6e768502fb1df9"
+      },
+      {
+        "name": "prepare_gpu_run.py",
+        "bytes": 2394,
+        "sha256": "6a466f8a74a6efaa956ed977cc8976caf43b9becd5773f9ed60cc7ebff23d63c"
+      },
+      {
+        "name": "epoch-initialization.json",
+        "bytes": 2649,
+        "sha256": "f7e0c718fcc48b43f99c9bda0963fc2b2ec36a938a8213e9e4c7a7da2882c4a1"
+      },
+      {
+        "name": "bootstrap-pricing-stale-not-dispatchable.json",
+        "bytes": 391,
+        "sha256": "90bddd56cd1873418c7925e945887f6616736fd1b06368ca48469751acbd82ce"
+      }
+    ],
+    "raw_vectors_or_corpus_in_project_docs": false
+  },
+  "mcp": {
+    "official_url": "https://openrouter.ai/docs/guides/overview/mcp-server",
+    "accessed_date": "2026-11-03",
+    "connection_configured": false,
+    "account_connection_tested": false,
+    "credits_tool_documented": true,
+    "complete_all_attempt_export_tool_documented": false,
+    "new_credential_created": false
+  },
+  "limitations": [
+    "Luna control/session state unknown; no steering performed",
+    "Three device cases, two unique runtime query texts; development diagnostic only",
+    "Fresh frozen-query scores are not directly comparable to earlier HT-B0b/B4 or DAPFAM protocols",
+    "G7 release artifact not rebuilt for this dirty repair; no goal closed from tests alone"
+  ],
+  "cleanup": {
+    "deleted_documents": 0,
+    "canonical_report_updated": true,
+    "historical_receipts_preserved": true
+  },
+  "commit_push_merge": "NOT_PERFORMED",
+  "resources_this_followup": {
+    "paid_generation_calls": 0,
+    "authenticated_provider_metadata_calls": 0,
+    "gpu_job_processes": 1,
+    "sequential_encoder_passes": 4,
+    "encoded_rows": 88,
+    "api_cost_usd": 0,
+    "new_datasets": 0
+  }
+}

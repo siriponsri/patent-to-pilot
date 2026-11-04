@@ -1,0 +1,22 @@
+{
+  "format": "ht-o3-local-runtime-smoke-v1",
+  "run_id": "ht-o3-local-model-preflight-20261031",
+  "status": "PASS_OFFLINE_TOKENIZER_CONFIG_SMOKE",
+  "offline_only": true,
+  "trust_remote_code": false,
+  "python": "3.12.10",
+  "torch": "2.8.0+cpu",
+  "transformers": "4.51.3",
+  "safetensors": "0.5.3",
+  "accelerate": "1.6.0",
+  "cuda_available": false,
+  "host_ram_bytes": 16824262656,
+  "model_type": "qwen3",
+  "hidden_size": 4096,
+  "num_hidden_layers": 36,
+  "torch_dtype": "torch.bfloat16",
+  "tokenizer_class": "Qwen2TokenizerFast",
+  "sample_token_count": 13,
+  "full_weight_load": "NOT_ATTEMPTED_HOST_RAM_AND_CUDA_BOUNDARY",
+  "next_gate": "REMOTE_V100_LOCAL_GENERATION_CANARY"
+}

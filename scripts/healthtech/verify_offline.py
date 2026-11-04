@@ -6,8 +6,11 @@ import datetime
 import hashlib
 import json
 import os
+import shutil
 import socket
 import sys
+import tempfile
+import uuid
 import xml.etree.ElementTree as ET
 
 
@@ -32,11 +35,43 @@ def main():
     before={p.relative_to(repo).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in code_files}
     for p in code_files:compile(p.read_text(encoding='utf-8-sig'),str(p),'exec')
     network=[];forbidden=[]
-    def denied(*a,**kw):
-        network.append('socket_or_dns_attempt')
-        raise RuntimeError('network forbidden during offline verification')
-    socket.socket.connect=denied;socket.socket.connect_ex=denied;socket.socket.bind=denied
-    socket.create_connection=denied;socket.getaddrinfo=denied
+    loopback_hosts={'127.0.0.1','localhost','::1'}
+    def host_from_address(address):
+        if isinstance(address,tuple) and address:
+            return str(address[0]).strip().lower()
+        if isinstance(address,str):
+            return address.strip().lower()
+        return None
+    def is_loopback_address(address):
+        host=host_from_address(address)
+        return host in loopback_hosts
+    def guarded_socket_method(original,operation):
+        def guarded(sock,address,*args,**kwargs):
+            if is_loopback_address(address):
+                return original(sock,address,*args,**kwargs)
+            network.append(f'blocked_{operation}')
+            raise RuntimeError('non-loopback network forbidden during offline verification')
+        return guarded
+    original_connect=socket.socket.connect
+    original_connect_ex=socket.socket.connect_ex
+    original_bind=socket.socket.bind
+    original_create_connection=socket.create_connection
+    original_getaddrinfo=socket.getaddrinfo
+    def guarded_create_connection(address,*args,**kwargs):
+        if is_loopback_address(address):
+            return original_create_connection(address,*args,**kwargs)
+        network.append('blocked_create_connection')
+        raise RuntimeError('non-loopback network forbidden during offline verification')
+    def guarded_getaddrinfo(host,*args,**kwargs):
+        if str(host).strip().lower() in loopback_hosts:
+            return original_getaddrinfo(host,*args,**kwargs)
+        network.append('blocked_getaddrinfo')
+        raise RuntimeError('non-loopback DNS forbidden during offline verification')
+    socket.socket.connect=guarded_socket_method(original_connect,'connect')
+    socket.socket.connect_ex=guarded_socket_method(original_connect_ex,'connect_ex')
+    socket.socket.bind=guarded_socket_method(original_bind,'bind')
+    socket.create_connection=guarded_create_connection
+    socket.getaddrinfo=guarded_getaddrinfo
     def audit(event,values):
         if event=='open' and isinstance(values[0],(str,bytes,os.PathLike)):
             if Path(os.fsdecode(values[0])).resolve()==repo/'.env':
@@ -50,9 +85,13 @@ def main():
         'test_release_budget_process','test_healthtech','test_provider_env_file',
         'test_healthtech_prelive','test_provider_identity','test_provider_paired','test_provider_pilot','test_provider_recovery']
     targets=['tests'] if args.suite=='all' else [f'tests/{name}.py' for name in public_tests]
-    argv=['-q','-p','no:cacheprovider','--basetemp',str(out/'tmp'),'--junitxml',str(out/'tests.xml'),*targets]
-    with (out/'pytest.log').open('w',encoding='utf-8') as log,contextlib.redirect_stdout(log),contextlib.redirect_stderr(log):
-        code=int(pytest.main(argv))
+    basetemp=Path(tempfile.gettempdir())/f'ptp-offline-{uuid.uuid4().hex}'
+    argv=['-q','-p','no:cacheprovider','--basetemp',str(basetemp),'--junitxml',str(out/'tests.xml'),*targets]
+    try:
+        with (out/'pytest.log').open('w',encoding='utf-8') as log,contextlib.redirect_stdout(log),contextlib.redirect_stderr(log):
+            code=int(pytest.main(argv))
+    finally:
+        shutil.rmtree(basetemp,ignore_errors=True)
     counts={k:sum(int(e.attrib.get(k,0)) for e in ET.parse(out/'tests.xml').getroot().iter('testsuite')) for k in ['tests','failures','errors','skipped']}
     after={p.relative_to(repo).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in code_files}
     result={'status':'PASS' if code==0 and before==after and not network and not forbidden else 'FAIL',

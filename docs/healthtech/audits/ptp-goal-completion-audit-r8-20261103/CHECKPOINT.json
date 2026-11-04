@@ -1,0 +1,14 @@
+{
+  "format": "ptp-goal-completion-audit-r8-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_NOT_COMPLETE",
+  "engineering": "COMPLETE_CURRENT_HEAD_O1_AND_THREE_CASE_O4_SLICE",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "PASS_INTEGRITY_OWNER_REVIEW_PENDING",
+  "o2_remote": "PARTIAL_ALLOCATION_NOT_EVIDENCED",
+  "o3_paid_api": "BLOCKED_BEFORE_RESERVATION",
+  "current_head_focused_regression": "72 passed; 0 failed; 0 errors; 0 skipped",
+  "resource_mutations": "provider 0; reservations 0; attempts 0; ledger 0; remote writes 0; GPU jobs 0; datasets 0; budget/window reset false",
+  "next": "Obtain the two paid-gate evidence items and authorized dr-train allocation evidence; keep goal active."
+}

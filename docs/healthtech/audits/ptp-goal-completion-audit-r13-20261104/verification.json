@@ -1,0 +1,85 @@
+{
+  "format": "ptp-goal-completion-audit-r13-v1",
+  "recorded_date": "2026-11-04",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_state": "INTENTIONALLY_DIRTY_PRESERVED",
+    "unmerged_paths": 0
+  },
+  "engineering": {
+    "full_suite": "646 total; 644 passed; 0 failed; 0 errors; 2 skipped",
+    "focused_current_head_generation_accounting": "49 passed; 0 failed; 0 errors; 0 skipped",
+    "compileall": "PASS",
+    "scoped_document_diff_check": "PASS",
+    "o1": "COMPLETE_CURRENT_HEAD",
+    "o2": "PARTIAL_CURRENT_HEAD_PATEMBED_AND_E5_HTTP_BOUND_RESEARCH_PARTIAL",
+    "o3_local": "PASS_CURRENT_HEAD_QWEN3_8B_3_OF_3_SCHEMA_VALID",
+    "o3_api": "NOT_RUN_BLOCKED_BEFORE_RESERVATION",
+    "o4": "PASS_THREE_CASE_ENGINEERING_PARTIAL_RESEARCH"
+  },
+  "local_generation": {
+    "cases": 3,
+    "schema_valid_cases": 3,
+    "prompt_tokens": 7301,
+    "output_tokens": 1448,
+    "mean_latency_seconds": 54.32043713191524,
+    "provider_calls": 0,
+    "paid_cost_usd": "0.00",
+    "operational_evaluation": {
+      "exact_source_locator_bindings": "12/12",
+      "classification_contract_matches": "12/12",
+      "input_evidence_rows": 15,
+      "emitted_unique_evidence_rows": 12,
+      "evidence_coverage_rate": 0.8,
+      "cases_with_unresolved_items": "3/3"
+    }
+  },
+  "journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity": "ok",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": "0.0001464",
+    "prospective_allowance_usd": "1.00",
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "budget_reset": false,
+    "window_reset": false,
+    "ledger_mutations": 0
+  },
+  "journal_package": {
+    "audit": "docs/healthtech/audits/ptp-journal-package-current-r9-20261104/verification.json",
+    "files": 5,
+    "relative_links_checked": 65,
+    "missing_relative_links": 0,
+    "guide_for_authors_verified": false,
+    "submission": false
+  },
+  "venue": {
+    "audit": "docs/healthtech/audits/wpi-venue-recheck-r11-20261104/verification.json",
+    "official_indexed_content_observed": true,
+    "conditional_scope_fit": true,
+    "journal_specific_rules_verified": false,
+    "submission": false
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "current_credit_snapshot": "NOT_AVAILABLE",
+    "route_refresh": "DEFERRED_UNTIL_CREDIT_GATE",
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "submission": false,
+    "external_message": false
+  },
+  "goal_status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+}
+

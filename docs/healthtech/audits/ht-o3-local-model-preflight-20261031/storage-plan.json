@@ -1,0 +1,44 @@
+{
+  "format": "ht-o3-local-model-storage-plan-v1",
+  "run_id": "ht-o3-local-model-preflight-20261031",
+  "captured_at_local": "2026-10-31",
+  "status": "READY_TO_DOWNLOAD_WITHIN_HARD_DISK_BOUND",
+  "model": {
+    "repo_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "license": "apache-2.0",
+    "allowlisted_file_count": 15,
+    "allowlisted_bytes": 16397461266,
+    "source": "https://huggingface.co/Qwen/Qwen3-8B"
+  },
+  "known_prior_payloads": {
+    "patembed_windows_bytes": 778662281,
+    "multilingual_e5_windows_bytes": 1134535908,
+    "combined_embedding_windows_bytes": 1913198189,
+    "source": "docs/healthtech/audits/ht-research-product-20261031/manifest.json"
+  },
+  "peak_storage_model": {
+    "windows_qwen_payload_bytes": 16397461266,
+    "remote_qwen_copy_bytes": 16397461266,
+    "existing_embedding_payload_bytes": 1913198189,
+    "worst_case_two_copy_total_bytes": 34708120721,
+    "additional_disk_bound_bytes": 42949672960,
+    "remaining_bound_headroom_bytes": 8241552239,
+    "assumption": "Counts a full Windows copy, a full remote copy, and the existing embedding payload; the remaining headroom covers manifests, temporary files, and isolated runtime dependencies. Stop before any measured total exceeds the bound."
+  },
+  "machine_snapshot": {
+    "windows_free_bytes": 192915554304,
+    "windows_ram_bytes": 16824262656,
+    "remote_runtime_ram_bound_bytes": 34359738368,
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "note": "The local Windows RAM snapshot is not used as remote allocation evidence; generation runtime remains a separate remote-V100 compatibility gate."
+  },
+  "download_policy": {
+    "destination": "private Windows storage outside the repository",
+    "allowlist_only": true,
+    "token": false,
+    "no_repository_staging": true,
+    "no_provider_calls": true,
+    "no_api_embeddings": true
+  }
+}

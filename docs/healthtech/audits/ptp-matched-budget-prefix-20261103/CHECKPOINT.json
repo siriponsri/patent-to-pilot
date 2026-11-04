@@ -1,0 +1,54 @@
+{
+  "format": "ptp-matched-budget-prefix-checkpoint-v1",
+  "observed_date": "2026-11-03",
+  "parent_goal": "Patent-to-Pilot O1-O4 original goal",
+  "parent_checkpoint": "docs/healthtech/audits/ptp-long-run-resume-20261103/CHECKPOINT_CURRENT_HEAD.json",
+  "candidate": {
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "head": "a2ea768d0e90c2fd0d4c367353fc4c62c5762b6f",
+    "working_tree": "CLEAN",
+    "source_engine_changed": false,
+    "analysis_only_changes": true
+  },
+  "new_package": {
+    "status": "PASS_POSTHOC_DESCRIPTIVE_BUDGET_CONTROL_NOT_ADAPTIVE",
+    "verification": "docs/healthtech/audits/ptp-matched-budget-prefix-20261103/verification.json",
+    "tests": "2 passed",
+    "full_suite": "598 passed, 1 skipped, 2 warnings"
+  },
+  "matched_prefix": {
+    "source_candidate": "891f3b3",
+    "source_sha256": "5bbccccb10ae21679679efc29041cc00ec52581bda1bbb50a983c97f90626647",
+    "query_calls": 3,
+    "rerank_pairs": 123,
+    "methods": {
+      "HT-B1": 0.49880241951853205,
+      "HT-B2_prefix_1": 0.49880241951853205,
+      "HT-B3_prefix_1": 0.49880241951853205
+    },
+    "failed_queries": 0,
+    "not_realized_queries": 0,
+    "interpretation": "posthoc first-action control; adaptive superiority not established; B4 excluded from same-unit slice"
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "goals": {
+    "G0": "COMPLETE_CONTRACT_AND_SCOPE",
+    "G1": "PARTIAL_RIGHTS_AND_SEMANTIC_GOLD_INCOMPLETE",
+    "G2": "PARTIAL_DEVELOPMENT_BASELINES_AND_EVALUATOR",
+    "G3": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
+    "G4": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+    "G5": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
+    "G6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+    "G7": "PASS_ISOLATED_RELEASE_REPRODUCTION_CURRENT_CANDIDATE",
+    "G8": "NOT_RUN_FUTURE_SCOPE"
+  },
+  "next_action": "Keep this result descriptive; pursue existing O3/O4 gates or independent offline work without paid/API/GPU reset."
+}

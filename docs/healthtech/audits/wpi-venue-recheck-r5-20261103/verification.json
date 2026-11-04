@@ -1,0 +1,20 @@
+{
+  "format": "ptp-wpi-venue-recheck-r5-verification-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_SCOPE_SOURCE_RECHECKED_GUIDE_AND_AIMS_403",
+  "scope_source": "PASS_CURRENT_ELSEVIER_CATALOG",
+  "aims_and_scope": "HTTP_403_NOT_INSPECTABLE",
+  "guide_for_authors": "HTTP_403_NOT_INSPECTABLE",
+  "journal_specific_requirements_verified": false,
+  "manuscript_submission": "NOT_SUBMITTED",
+  "publisher_terms_accepted": false,
+  "external_messages": 0,
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "ledger_mutations": 0,
+    "dataset_downloads": 0
+  },
+  "next": "Owner browser/session recheck of the official Guide for Authors before submission."
+}

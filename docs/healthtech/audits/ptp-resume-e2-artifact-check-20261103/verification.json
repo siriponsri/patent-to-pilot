@@ -1,0 +1,108 @@
+{
+  "format": "ptp-resume-e2-artifact-check-v1",
+  "observed_local": "2026-11-03T21:13:01+07:00",
+  "observed_utc": "2026-11-03T14:13:01Z",
+  "goal": "resume_existing_patent_to_pilot_o1_o4",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_expected": true,
+    "patch_reapplied": false,
+    "commit": false,
+    "push": false,
+    "merge": false,
+    "diff_check": "PASS"
+  },
+  "engineering": {
+    "focused_junit": "PRIVATE_LOCAL_ARTIFACTS/healthtech/ptp-resume-e2-20261103/focused-tests.xml",
+    "tests": 46,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit_sha256": "65ccc8e3f83fb68f0c09535998ab53a8b8e7333e8b8ec0460d3411a83039f2da",
+    "scope": [
+      "vector HTTP binding",
+      "vector bundle pair verifier",
+      "HTTP history/export",
+      "API generation gates",
+      "local execution guards",
+      "generation payloads",
+      "O3 repair behavior"
+    ]
+  },
+  "vector_artifacts": {
+    "prior_receipt": "docs/healthtech/audits/ptp-vector-artifact-revalidation-20261103/verification.json",
+    "status": "PASS_VECTOR_BUNDLE_INTEGRITY_PRIOR_ARTIFACT",
+    "runtime_manifest_sha256": "89e5b86cc21d9f3466cc3236416f4873840622a56e7aad767bbbfe173bc0484c",
+    "corpus_rows": 41,
+    "query_rows": 3,
+    "dimension": 768,
+    "models": {
+      "patembed": "datalyes/patembed-base@244ba452908a3093be11efb8a44396652317fb14",
+      "e5": "intfloat/multilingual-e5-base@d128750597153bb5987e10b1c3493a34e5a4502a"
+    },
+    "new_encode": false,
+    "new_retrieval_evaluation": false,
+    "http_dossier_binding": "NOT_RUN_MISSING_AUTHORIZED_COHORT_SOURCE_PACKAGE"
+  },
+  "active_process_observation": {
+    "ssh_inspection": {
+      "pid": 18096,
+      "started_local": "2026-11-03T18:36:54+07:00",
+      "classification": "PRE_EXISTING_CHATGPT_INSPECTION_SESSION",
+      "action": "LEFT_UNTOUCHED"
+    },
+    "python_processes": {
+      "classification": "PRE_EXISTING_MARKITDOWN_MCP_SERVICE_TREE",
+      "action": "LEFT_UNTOUCHED"
+    },
+    "encoder_or_generation_job": "NOT_OBSERVED"
+  },
+  "journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity_check": "ok",
+    "budget_attempt_rows": 0,
+    "pending_or_unknown_rows": 0,
+    "measured_new_actual_usd": 0.0,
+    "legacy_settled_attempts": 4,
+    "legacy_actual_usd": 0.0001464,
+    "history_boundary": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_allowance_usd": 1.0,
+    "zero_ledger_created": false,
+    "history_rewritten": false,
+    "unknown_call_retried": false
+  },
+  "paid_dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "current_scoped_credit": "UNAVAILABLE_FROM_ORDINARY_KEY_METADATA",
+    "current_key_limit": "UNAVAILABLE",
+    "route_pricing": "STALE_FOR_DISPATCH_REFRESH_REQUIRED_WITHIN_300_SECONDS",
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_FOCUSED",
+    "o1": "COMPLETE_EXISTING_MINILM_HTTP_RECEIPT",
+    "o2": "PARTIAL_PROVIDER_UNBOUND",
+    "o3_local": "PRIOR_3_OF_3_SCHEMA_VALID_RETAINED",
+    "o3_paid": "BLOCKED_BEFORE_RESERVATION",
+    "o4_research": "PARTIAL_DESCRIPTIVE",
+    "business_validation": "PARTIAL_SCENARIO_ONLY",
+    "manuscript": "PARTIAL_OWNER_REVIEW_PENDING",
+    "goal_closed": false
+  },
+  "resource_mutations": {
+    "paid_api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "other_services_touched": false
+  },
+  "next_action": "Keep the goal open; obtain one non-secret current scoped credit/limit snapshot for paid work and the authorized cohort/source package for PatEmbed/E5 HTTP binding if required."
+}

@@ -1,0 +1,51 @@
+{
+  "checkpoint_version": "benchmark-expansion-v5-rights-gate-revalidation",
+  "created_utc": "2026-11-01T04:22:56.7526687Z",
+  "status": "PASS_SELECTED_RECEIPT_REVALIDATED_RIGHTS_GATE",
+  "goal": "Patent-to-Pilot O1-O4 continuation",
+  "candidate": {
+    "base_commit": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "working_tree_state": "working_tree_uncommitted",
+    "root_main_merged": false,
+    "push_performed": false
+  },
+  "change": {
+    "scope": "rights classification helper and regression coverage only",
+    "reason": "CC BY-NC metadata must remain local-research-only and not commercially cleared",
+    "script": "scripts/healthtech/acquire_manifest_datasets.py",
+    "test": "tests/test_healthtech_benchmark_expansion.py",
+    "new_regression": "PASS; non-commercial license is not cleared for commercial release"
+  },
+  "selected_receipt": {
+    "path": "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json",
+    "sha256": "7caa453fc480cb44a4481cf377b0435d4f16856e15714531faded4da479eb10e",
+    "status": "PASS_SELECTED_ACQUISITION",
+    "files": 4,
+    "failures": 0,
+    "payloads_reused": true,
+    "payloads_redownloaded": false,
+    "commercial_release": {
+      "PatSnap": "NOT_CLEARED_CC_BY_NC",
+      "PatentsView": "NOT_CLEARED_STANDALONE_DATA_RIGHTS",
+      "AffRoDB": "REQUIRES_SEPARATE_REVIEW_UNTIL_ROR_V1_40"
+    }
+  },
+  "verification": {
+    "focused_tests": "PASS; 6 passed",
+    "script_compile": "PASS",
+    "json_parse": "PASS",
+    "source_manifest_hash": "67c36586aec4e3ccc7834dd8c2869a563fda5a9fcf58043b138325285dcf3a79",
+    "paid_api_usd": 0.0,
+    "gpu_jobs": 0,
+    "ledger_reset": false,
+    "automatic_top_up": false
+  },
+  "claim_boundary": {
+    "selected_extension": "schema_and_rights_inventory_only",
+    "main_adaptive_dossier_study": "NOT_EVALUATED_BY_THIS_PACK",
+    "external_business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "submission_sent": false
+  },
+  "next_action": "Review and commit the candidate; keep PatSnap/PatentsView/AffRoDB out of commercial or primary endpoint claims until their separate rights conditions are cleared."
+}

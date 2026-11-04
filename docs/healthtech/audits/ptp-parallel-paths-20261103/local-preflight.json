@@ -1,0 +1,47 @@
+{
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "cases": [
+    {
+      "case_id": "HT-DEV-MITRACLIP",
+      "input_dossier_sha256": "cf26ff847d32f532f769f308ffa4e8ecf67029f1101975e4b1c7f92b6f8384a6",
+      "message_sha256": "aff765c814db1f16a113a4f6d447ca0937d1be8910ff0001b2eca2bc25beb1a7"
+    },
+    {
+      "case_id": "HT-DEV-TENDYNE",
+      "input_dossier_sha256": "dfb2566b5f2d0e6997129e518dd9dd20b70b30532f8bdeeef1651a53b4d1334c",
+      "message_sha256": "c51435f2b2661bb81ca8da28e9d954f8f4ede2d029c98c783c02b57dc671f2f2"
+    },
+    {
+      "case_id": "HT-DEV-TRICLIP",
+      "input_dossier_sha256": "ef1e1d1fdc6255e36c11d1ebb866e995cd5612e069523c1b159c06d452f85f58",
+      "message_sha256": "cc400bb8612c3479f6205c58f5e8d46a9c0f0281893e9aa8ec6a1c0ae6897ef4"
+    }
+  ],
+  "exact_messages_file_sha256": "06748e94a0125afdb3925e73b2f59ea073d779a8422f847a765ef91ba463ea61",
+  "format": "ptp-local-paired-contract-preflight-v1",
+  "ledger_mutations": 0,
+  "model": {
+    "dtype": "float16",
+    "model_id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "thinking": false
+  },
+  "pack_file_sha256": "0b2bef9fcf8c3eff6106a1786885e4407ea4b8c9e628397ab8e52a392204ced9",
+  "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+  "paid_cost_usd": 0.0,
+  "prior_private_receipts": {
+    "guided_sha256": "21323f7e46ed099931165b00505329afaacdfd372b0890355f7ada7ccdabc1d7",
+    "interpretation": "historical/private receipts; not current-head inference",
+    "unguided_sha256": "ecaf99114d8431aee98fc48a5b39a162fdfcba2b0766d7abb141b7bd7737304d"
+  },
+  "provider_calls": 0,
+  "runtime": {
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "concurrency": 1,
+    "http_observation": "TCP 18787 actively refused",
+    "reason": "current model root not exposed and dr-train SSH/HTTP inspection inaccessible",
+    "ssh_observation": "Permission denied (publickey,password)",
+    "status": "NOT_RUN",
+    "window_end_local": "2026-11-15T23:59:00+07:00"
+  }
+}

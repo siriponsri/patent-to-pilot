@@ -1,0 +1,34 @@
+{
+  "status": "READY_FOR_LUNA_CLI_HANDOFF_PAID_BRANCH_FACTS_PENDING",
+  "upstream_head_initial": "9ac38720d219b83acccaa92dcabc4480283914c4",
+  "repair_code_commit": "1d817b0d7407489e50684d85fe20b102eba70b00",
+  "branch": "pepo/r1-metadata-recovery-20261031",
+  "worktree": "C:\\Users\\User\\Documents\\Codex\\2026-10-31\\task-5\\metadata-recovery-candidate",
+  "owner_worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031",
+  "first_runtime_no_later_than_utc": "2026-10-31T02:47:23Z",
+  "deadline_no_later_than_utc": "2026-11-01T02:47:23Z",
+  "clock_source": "parent trusted runtime boundary; use earlier proven start if found; no reset",
+  "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+  "cumulative_cap_usd": 8,
+  "admission_ceiling_usd": 7,
+  "r1_actual_usd": null,
+  "r1_pending_usd": null,
+  "r1_remaining_usd": null,
+  "current_key_observed_lifetime_usd": "0.0001464",
+  "this_task_paid_usd": "0",
+  "owned_active_gpu_jobs": [],
+  "owned_active_paid_jobs": [],
+  "owned_background_process_ids": [],
+  "handoff_reason": "CLI owns existing private runtime artifacts and SSH/GPU workflow; upstream Git recheck is ownership-blocked here. No duplicate long runner launched.",
+  "pending_owner_facts": [
+    "R1 sole key scope and no in-flight requests",
+    "current same-account dashboard balance and observation time"
+  ],
+  "independent_next_work": [
+    "review field-level source rights and freeze paired projection",
+    "current-cohort fixed/adaptive protocol and raw provenance capture",
+    "complete current-candidate browser acceptance"
+  ],
+  "private_canary_artifacts": "C:/Users/User/Documents/Codex/2026-10-31/task-5/private-fda-canary-20261031",
+  "rights_canary": "FDA_3_CASES_9_FACTS_READY_OFFLINE_NO_MODEL_RUN"
+}

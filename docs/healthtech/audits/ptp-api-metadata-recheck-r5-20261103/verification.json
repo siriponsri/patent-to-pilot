@@ -1,0 +1,38 @@
+{
+  "format": "ptp-api-metadata-recheck-r5-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "metadata": {
+    "path": "docs/healthtech/audits/ptp-api-metadata-recheck-r5-20261103/metadata.json",
+    "http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "key_type": "ordinary_non_management",
+    "account_scope": "NOT_RECONCILED",
+    "current_scoped_credit": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "history_completeness": "NOT_PROVEN"
+  },
+  "dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "key_handling": {
+    "printed": false,
+    "copied": false,
+    "persisted": false,
+    "metadata_observer_only": true
+  },
+  "missing_owner_evidence": [
+    "existing canonical R1 journal/registry or sanitized all-attempt export",
+    "current scoped account/key credit snapshot through an authorized non-secret channel"
+  ]
+}

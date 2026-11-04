@@ -1,0 +1,62 @@
+{
+  "run_id": "solo-computational-design-20261101",
+  "status": "PASS_WITH_PARTIAL_RESEARCH_AND_EXTERNAL_VALIDATION",
+  "candidate_revision": "912a65e67e04faa74914819b415863e3e635ac7f",
+  "commands": [
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/test_healthtech_history_migration.py tests/test_openrouter_metadata_observation.py tests/test_healthtech_api_generation.py tests/test_healthtech_generation_payload.py tests/test_healthtech_ledger_registry.py tests/test_o3_adversarial_repair.py tests/test_o3_generation_repair.py",
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPATH=src python -m compileall -q src scripts tests",
+      "status": "PASS"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q",
+      "status": "PASS",
+      "summary": "562 passed, 1 skipped"
+    },
+    {
+      "command": "npm test",
+      "workdir": "frontend/healthtech-web",
+      "status": "PASS",
+      "summary": "74 passed"
+    },
+    {
+      "command": "npm run test:integration:http",
+      "workdir": "frontend/healthtech-web",
+      "status": "PASS",
+      "summary": "job/source/history 1->2/edit/export; 0 provider calls; USD0.00 paid cost; cleanup EPERM deferred"
+    },
+    {
+      "command": "npm run test:integration:abbott",
+      "workdir": "frontend/healthtech-web",
+      "status": "BLOCKED_ASSET_GATED",
+      "summary": "HEALTHTECH_ABBOTT_COHORT is missing; no new browser run started"
+    },
+    {
+      "command": "Existing company holdout sensitivity audit",
+      "status": "PASS_DESCRIPTIVE",
+      "summary": "4 leave-one-company-out views; 11 devices; 31 patents; 38 disclosed pairs; 303 unjudged; 0 provider/network calls; USD0.00 paid cost"
+    },
+    {
+      "command": "python -c '<relative-link-check>'",
+      "status": "PASS",
+      "summary": "5 manuscript relative links resolved"
+    },
+    {
+      "command": "python -c '<json-parse-check>'",
+      "status": "PASS",
+      "summary": "269 HealthTech JSON files parsed"
+    }
+  ],
+  "claims_not_supported": [
+    "independent user validation",
+    "willingness-to-pay",
+    "revenue",
+    "ROI",
+    "semantic patent relevance gold",
+    "live paid API comparison",
+    "journal submission or acceptance"
+  ]
+}

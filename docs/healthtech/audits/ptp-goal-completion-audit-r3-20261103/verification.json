@@ -1,0 +1,65 @@
+{
+  "format": "ptp-goal-completion-audit-v3",
+  "goal_reused": true,
+  "observed_local_date": "2026-11-03",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "statuses": {
+    "O1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "O2": "PASS_CURRENT_HEAD_RUNTIME_BOUND_REMOTE_ARTIFACTS_NO_RERUN",
+    "O3": "PARTIAL_LOCAL_PASS_PAID_BLOCKED",
+    "O4": "PARTIAL_DESCRIPTIVE_RESEARCH_NO_FINAL_HOLDOUT",
+    "overall": "PARTIAL_NOT_COMPLETE"
+  },
+  "o2_evidence": {
+    "actual_remote_receipt": "docs/healthtech/audits/ht-research-product-20261031/verification.json",
+    "current_head_rebind": "docs/healthtech/audits/ptp-current-head-runtime-rebind-20261103/verification.json",
+    "integrity_revalidation": "docs/healthtech/audits/ptp-vector-artifact-revalidation-20261103/verification.json",
+    "patembed_macro_recall_at_100": 0.42252517152276575,
+    "patembed_micro_recall_at_100": 0.42231938705924826,
+    "patembed_macro_ndcg_at_100": 0.34882988642862867,
+    "e5_macro_recall_at_100": 0.28741423861712556,
+    "e5_micro_recall_at_100": 0.28729592041397567,
+    "e5_macro_ndcg_at_100": 0.24478123282756506,
+    "dense_failures": 0,
+    "new_remote_run": false
+  },
+  "o4_current_head_matched_budget": {
+    "audit": "docs/healthtech/audits/ptp-current-head-matched-budget-20261103/verification.json",
+    "query_calls": 3,
+    "rerank_pairs": 123,
+    "b1_b2_b3_prefix_1_macro_recall_at_20": [0.49880241951853205, 0.49880241951853205, 0.49880241951853205],
+    "range": 0.0,
+    "adaptive_superiority": "NOT_ESTABLISHED"
+  },
+  "manuscript": {
+    "audit": "docs/healthtech/audits/ptp-manuscript-rebind-r8-20261103/verification.json",
+    "sha256": "e56c2cde5e8aab643464f7e1b999a7fe26fa1bce1fe4a841a22d425ab6a23453",
+    "bytes": 42789,
+    "local_links_checked": 33,
+    "missing_local_links": 0
+  },
+  "remaining_gates": {
+    "canonical_r1_history_or_sanitized_export": "MISSING",
+    "current_scoped_credit_snapshot": "MISSING",
+    "final_holdout": "NOT_AVAILABLE",
+    "external_business_validation": "NOT_VALIDATED",
+    "wpi_submission": "NOT_SUBMITTED",
+    "owner_review": "REQUIRED",
+    "merge_and_cleanup": "NOT_RUN"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false,
+    "merge": false,
+    "branch_deletion": false
+  },
+  "next_action": "Owner review the updated manuscript; if paid comparison remains required, supply the two existing non-secret gate evidence items once, then validate history and recheck all live gates before reservation."
+}

@@ -1,0 +1,75 @@
+{
+  "format": "ptp-resume-e2-current-r2-verification-v1",
+  "recorded_utc": "2026-11-03T16:37:49Z",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true,
+    "clean_release": false
+  },
+  "process_boundary": {
+    "existing_ssh_pid": 18096,
+    "existing_ssh_started_ict": "2026-11-03T18:36:54+07:00",
+    "existing_ssh_action": "inspected_and_left_untouched",
+    "existing_dr_train_service_pid": 1745699,
+    "new_remote_jobs": 0,
+    "new_gpu_jobs": 0
+  },
+  "journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity_check": "ok",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": 0.0001464,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_allowance_usd": 1.0,
+    "new_zero_ledger": false,
+    "pending_call_retried": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "provider_gate": {
+    "current_scoped_credit": "UNAVAILABLE",
+    "remaining_key_limit": "UNAVAILABLE",
+    "account_scope": "NOT_RECONCILED",
+    "paid_dispatch": "BLOCKED_BEFORE_RESERVATION",
+    "route_price_refresh_required_inside_seconds": 300,
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "paid_cost_usd": 0.0
+  },
+  "pack_check": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-local-qwen-patent-pack-20261103-r2/evidence-pack.json",
+    "format": "ht-o3-qwen3-frozen-evidence-pack-v1",
+    "status": "PASS_FROZEN_LOCAL_RESEARCH_PACK",
+    "pack_sha256": "918f615210546b65111cbc683181dc43886ace2267f16c19d62c31175ea6607b",
+    "case_count": 3,
+    "dry_run": "FAIL_CLOSED_GENERATION_PAYLOAD_ERROR",
+    "existing_reason_classification": "SOURCE_BACKED_TRANSFER_REVIEW_REQUIRED",
+    "output_written": false
+  },
+  "release_recheck": {
+    "pytest_tests": 102,
+    "pytest_passed": 102,
+    "pytest_failed": 0,
+    "pytest_errors": 0,
+    "pytest_skipped": 0,
+    "compileall": "PASS",
+    "junit_private_path": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-resume-e2-current-r2-20261103.xml",
+    "junit_sha256": "f088379a1d1b86a54c6af45f3ff8da07c2208d8cf967ba2063aed566b3528008"
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_WITH_DIRTY_RELEASE_BOUNDARY",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+    "manuscript": "PARTIAL_OWNER_REVIEW_WPI_GUIDE_UNVERIFIED",
+    "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "goal_closed": false
+  },
+  "next_action": "Obtain one non-secret current scoped credit/limit snapshot if paid comparison remains required; then reconcile E2, refresh route pricing inside 300 seconds, revalidate the rights-cleared pack, and reserve only the existing USD0.25 canary."
+}

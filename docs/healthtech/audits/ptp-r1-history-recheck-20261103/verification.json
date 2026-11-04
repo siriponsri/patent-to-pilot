@@ -1,0 +1,62 @@
+{
+  "format": "ptp-r1-history-recheck-v1",
+  "status": "LEGACY_HISTORY_REVIEWED_NOT_CANONICAL",
+  "observed_at_utc": "2026-11-03T07:43:07.4476694Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "scope": {
+    "read_only": true,
+    "current_worktree_only": true,
+    "documents_or_desktop_rescan": false,
+    "private_journals_copied": false
+  },
+  "reviewed_evidence": [
+    "docs/healthtech/audits/pepo-r1-metadata-recovery-20261031/legacy-journal-check.json",
+    "docs/healthtech/audits/pepo-r1-metadata-recovery-20261031/reconciliation.json",
+    "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-recovery-20261031.json",
+    "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-search-20261031.json"
+  ],
+  "legacy_journals": [
+    {
+      "locator": "live.sqlite3",
+      "schema": ["attempts", "meta", "reconciliations"],
+      "attempt_count": 2,
+      "actual_debit_usd": 0.0000732,
+      "unknown_pending_attempts": 0,
+      "policy_class": "legacy_provider_pilot_policy",
+      "r1_compatible": false
+    },
+    {
+      "locator": "paired-revalidation-1.sqlite3",
+      "schema": ["attempts", "meta"],
+      "attempt_count": 2,
+      "actual_debit_usd": 0.0000732,
+      "unknown_pending_attempts": 0,
+      "policy_class": "legacy_provider_pilot_policy",
+      "r1_compatible": false
+    }
+  ],
+  "historical_correspondence": {
+    "known_legacy_debit_usd": 0.0001464,
+    "key_lifetime_usage_usd": 0.0001464,
+    "correspondence_type": "aggregate_equality_not_provider_id_match",
+    "r1_history_completeness": "NOT_PROVEN",
+    "current_account_credit": "NOT_VERIFIED"
+  },
+  "registration_probe": {
+    "status": "REJECTED_FAIL_CLOSED",
+    "canonical_registry_created": false,
+    "reason": "legacy schema cannot be bound as current R1 without a sourced migration contract"
+  },
+  "dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next": "Obtain the existing canonical R1 journal/export and current scoped credit snapshot once; do not rebind legacy receipts or infer completeness from aggregate equality."
+}

@@ -2,9 +2,9 @@
 
 > Implementation checkpoint (27 October 2026): [migration and coverage](docs/healthtech/MIGRATION.md), [actual progress](docs/healthtech/progress.json). The pack’s starting statuses below are historical starting points; the full HealthTech study and product are not complete.
 
-**Version:** 1.0 · **วันที่:** 27 ตุลาคม 2026 (Asia/Bangkok) <br>
+**Version:** 1.2 · **วันที่:** 1 พฤศจิกายน 2026 (Asia/Bangkok) <br>
 **ประเภท:** System blueprint + work packages สำหรับ agent <br>
-**สถานะ:** Proposed implementation plan; ไม่มีผลทดลองใหม่ถูกอ้างว่ารันแล้ว <br>
+**สถานะ:** Solo computational study + engineering continuation plan; external business validation ยังไม่ทำ และไม่มีผลทดลองใหม่ถูกอ้างว่ารันแล้วจนกว่าจะมี receipt ผูกกับ candidate เดียว <br>
 **เอกสารร่วม:** [GOAL.md](GOAL.md) · [README.md](README.md) · [RELATED_PAPERS.md](RELATED_PAPERS.md)
 
 ## 0. วิธีใช้แผนนี้
@@ -431,11 +431,13 @@ Oracle ที่เห็น gold ใช้เพื่อ development headroom 
 
 ## 10. Business validation plan
 
+รอบปัจจุบันไม่ใช่ human pilot และไม่มี participant route ตาม owner decision ที่ [OWNER_ONE_TIME_INPUT_TH_EN.md](docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md) การทดลองหลักเป็น reproducible computational study; business value รายงานเป็น operational potential จากคุณภาพหลักฐานและทรัพยากรที่วัดได้ ส่วน external validation เป็น future work
+
 ### 10.1 Hypotheses
 
-- BH1: ผู้ใช้ได้ usable dossier ด้วยภาระรวมที่เหมาะสมกว่าวิธีปัจจุบัน
-- BH2: ผู้ใช้กลับมาใช้กับ case/project ใหม่
-- BH3: มีการซื้อ offering ที่กำหนด และต้นทุนส่งมอบตรวจได้
+- BH1: adaptive evidence acquisition อาจเพิ่ม citation quality/evidence coverage หรือสร้าง quality-cost frontier ที่ดีกว่า fixed baselines ภายใต้ evidence access และงบเดียวกัน
+- BH2: dossier ที่มี source/locator/history/export ครบอาจลดภาระการตรวจแก้ใน workflow จริง แต่รอบนี้ยังไม่มี independent user measurement
+- BH3: repeat use, willingness-to-pay, purchase, revenue และ ROI เป็น future hypotheses; ห้ามสรุปจาก demo, self-evaluation หรือ scenario assumptions
 
 ### 10.2 Public-case task script
 
@@ -449,17 +451,19 @@ Oracle ที่เห็น gold ใช้เพื่อ development headroom 
 
 เก็บ task completion, time including correction, edits, missing fields, rejected evidence และ perceived usefulness แยกกัน หากทำ within-user comparison ให้จัดลำดับ/กรณีเพื่อลด practice effect และรายงานขนาด/ข้อจำกัดของกลุ่มตัวอย่าง
 
+สำหรับรอบ solo ให้ใช้ชุดเอกสารที่เตรียมไว้โดยไม่เปิด participant route: [computational protocol](docs/healthtech/research/COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md), [task set/rubric](docs/healthtech/business/SOLO_PILOT_TASK_SET_RUBRIC_20261101_TH_EN.md), [result form](docs/healthtech/business/RESULT_COLLECTION_FORM_20261101_TH_EN.md) และ [future consent template](docs/healthtech/business/CONSENT_TEMPLATE_FUTURE_HUMAN_STUDY_20261101_TH_EN.md)
+
 ### 10.3 Commercial evidence
 
-เริ่มจาก bounded project offer ที่มี input/output และขอบเขต support ชัด ไม่ตั้งราคาขายจากราคาคู่แข่งโดยไม่มีข้อมูลต้นทุนหรือ willingness to pay
+จัดทำ bounded project offer เป็น draft ได้ แต่ยังไม่ส่งและยังไม่ตั้งเป็นผล commercial evidence ไม่ตั้งราคาขายจากราคาคู่แข่งหรือ scenario labor assumptions แล้วเรียกว่า willingness to pay
 
 บันทึกสิ่งที่ลูกค้าซื้อจริง เช่น workspace/software, managed ingestion, integration หรือ manual research service แยก manual effort จาก compute เสมอ เพื่อไม่ตีความยอดซื้อบริการคนเป็น product-market evidence ของ software อัตโนมัติ
 
-GitHub เป็น distribution/trust channel วัด activation, completed example/workflow และ repeat use แยกจาก stars/downloads ไม่อ้าง ROI จนมีการวัดในงานจริง
+GitHub เป็น distribution/trust channel เท่านั้นในรอบนี้; activation, repeat use, purchase, revenue และ ROI เป็น `NOT_VALIDATED` จนมีการวัดในงานจริง
 
 ### 10.4 Owner burden
 
-Agent เตรียม demo, task script, invitation draft, offer และผลที่ตรวจได้ก่อนขอ owner ช่วยเปิดทางหาผู้ใช้ การส่งข้อความจริงต้องมี authorization ที่ครอบคลุม หากยังไม่มี ให้ทำงานเตรียมและงานอิสระต่อ
+Agent เตรียม demo, task script, consent template, invitation draft และ offer ก่อนขอ owner ช่วยเปิดทางหาผู้ใช้ แต่ตาม owner decision รอบนี้ไม่มี participant route และไม่มีการส่งข้อความ หากอนาคตจะติดต่อบุคคลภายนอก ต้องเสนอข้อความและรายชื่อให้ owner ตรวจและขอ authorization ก่อน
 
 ## 11. Work package map
 
@@ -482,9 +486,9 @@ Agent เตรียม demo, task script, invitation draft, offer และผ
 | HT-W13 | Build no-code inspection/export | Dossier output | TH/EN workflow/source viewer | W12 |
 | HT-W14 | Run final scientific comparison | Frozen data/config/rights | Raw results/plots/analysis | W07/W09/W11 |
 | HT-W15 | Verify evidence component | Existing benchmark labels | SciFact/component results | W04/W06 |
-| HT-W16 | Prepare user/pilot package | Working public cases | Task script/demo/offer | W12/W13 |
-| HT-W17 | Collect user/commercial evidence | Authorized participants/pilot | Workflow/reuse/purchase records | W16 + actual access |
-| HT-W18 | Draft research manuscript | Verified sources/protocol/results | Manuscript and reproducibility materials | Sections can start early; results depend W14/W15 |
+| HT-W16 | Prepare validation package | Working public cases | Task set/rubric/form/consent/demo/offer draft | W12/W13 |
+| HT-W17 | Future external validation | Owner-authorized participants/access | User/reuse/purchase records; current round remains NOT_VALIDATED | W16 + future access |
+| HT-W18 | Draft research manuscript | Verified sources/protocol/results | Solo computational manuscript and reproducibility materials | Sections can start early; results depend W14/W15 |
 | HT-W19 | Prepare operable release | Working workflow/config | Setup/runbook/build/checks | W13 + needed engineering |
 | HT-W20 | Evaluate one expansion branch | Source/buyer/task evidence | Branch decision and bounded prototype | Core contract stable |
 
@@ -498,7 +502,7 @@ Agent เตรียม demo, task script, invitation draft, offer และผ
 
 - W03 และ W04/W05/W06 เดินคู่กันได้
 - Product W12/W13 ใช้ ready baseline ได้ ไม่ต้องรอ W14
-- W16 เริ่มเมื่อมี dossier ที่ทดสอบได้ ไม่ต้องรอ manuscript
+- W16 เริ่มเมื่อมี dossier ที่ทดสอบได้ ไม่ต้องรอ manuscript และไม่ต้องมี participant route ในรอบ solo
 - W18 เขียนส่วน background/data/protocol ได้ตามหลักฐานที่พร้อม แต่ results ต้องมาจาก execution จริง
 
 ## 12. Deliverable structure เมื่อเริ่ม implementation
@@ -598,6 +602,8 @@ docs/healthtech/
 8. Dossier application and separate user evidence if available
 9. Limitations and reproducibility
 
+รอบปัจจุบันต้องระบุ solo computational design, developer self-evaluation หากมี, external business validation เป็น future work, และแยก machine time จาก human time อย่างชัดเจน
+
 ไม่ใช้จำนวน agents หรือความซับซ้อนของ UI เป็น scientific contribution ไม่รับประกัน acceptance และไม่เขียนผลที่ยัง NOT_RUN
 
 ### 16.2 Public repository release
@@ -614,7 +620,9 @@ README ต้องบอก current foundation และ planned features ต�
 
 ## 17. Practical next action
 
-เมื่อได้รับมอบหมายให้เริ่ม implementation ให้ทำ **HT-W01 + HT-W02** เป็น work package แรก พร้อมเลือกงานอิสระอย่าง **HT-W04 หรือ HT-W05/HT-W06** ที่ไม่ต้องรอสิทธิ์ของ Bridge
+สำหรับ continuation วันที่4พฤศจิกายน2026 ให้เลือกงาน READY แรกใน `docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json` → `continuation_work_queue` ตาม [handoffปัจจุบัน](docs/healthtech/audits/pepo-resume-ready-20261104/README.md) เริ่มจากตารางที่มาของตัวเลขและ reproducibility appendix ใน manuscriptเดิม ตามด้วย operational case table และ installed-candidate instructions ไม่กลับไปเริ่ม contracts หรือ gate-only audit ที่เสร็จแล้ว
+
+คำสั่งเริ่ม HT-W01/HT-W02 ใช้เฉพาะการเริ่มโครงการครั้งแรก ไม่ใช่ work order ของ continuation นี้
 
 เป้าหมายส่งมอบแรกคือ contracts และ evidence flow ที่เปิดตรวจได้จาก public source หรือ permitted benchmark จากนั้นต่อให้เป็น public-case dossier ด้วย baseline ที่พร้อมใช้ ก่อนเพิ่ม adaptive complexity ตามผลที่วัดได้
 
@@ -623,3 +631,33 @@ README ต้องบอก current foundation และ planned features ต�
 ## Migration support records — 27 October 2026
 
 แหล่งข้อมูลเสริมที่เสนอเพื่อรองรับ goals เดิม: [supplemental data](docs/healthtech/research/SUPPLEMENTAL_DATA.md) สถานะ implementation จริง: [coverage](docs/healthtech/MIGRATION.md) ข้อเสนอนี้ไม่เปลี่ยน scientific thesis, success criteria หรือ product scope ในเอกสารนี้
+
+## 18. Staged benchmark expansion — existing goal continuation
+
+**Source pack:** `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101/` (parent audit basis `f826069dddb74d4df9ca820a33c07355bec8b357`).
+
+**Authorization boundary:** owner has extended the project resource ceiling for this continuation to cumulative USD100 across providers, with the historical ledger preserved, the existing V100 and concurrency-one constraint preserved, and the deadline fixed at 2026-11-15 23:59 Asia/Bangkok. This is an execution boundary for new work, not a ledger reset or automatic credit/top-up grant.
+
+**Staged protocol:**
+
+1. Reuse existing DAPFAM, PatEmbed and multilingual-e5 vectors/rankings; verify hashes and source/config identity without re-downloading or re-embedding.
+2. Acquire only manifest-approved core-new files first: Helmers `human_eval.zip` and the four pinned PANORAMA PAR4PC/PI4PC validation/test Parquet files. Keep raw payloads outside Git.
+3. Verify each file against expected size/checksum, record acquisition timestamp and source response metadata, inspect archive/Parquet schema, and reject mismatches. Rights receipts must distinguish local research use from commercial redistribution.
+4. Run CPU integrity/BM25 and existing-ranking checks before any new representation or paid generation. Keep failures, missing fields, duplicate IDs and excluded rows in the denominator and receipts.
+5. Freeze eligible units, group keys, development/final splits, K, primary/secondary endpoints, budget accounting, retry rules and stopping criteria in a machine-readable manifest before touching final holdout results. Use validation for development and test as untouched final holdout; do not tune on test.
+6. Compare fixed, fixed multi-query, simple adaptive and bounded LLM adaptive controls with the same corpus, candidate universe, action library, generator, accounting and evidence order. Use existing vectors first; treat model-size/provider differences as configuration comparisons.
+7. Add Helmers as post-freeze relevance diagnostics and add optional organization/claim-charting datasets only after separate rights and task-fit review. Keep conditional or unresolved datasets out of the main claim.
+
+**Work packages:** `HT-W19` acquisition and receipts; `HT-W20` schema/group/split freeze; `HT-W21` CPU baseline and calibration; `HT-W22` final holdout evaluation; `HT-W23` manuscript tables, limitations and WPI reproducibility appendix.
+
+**Stopping rules:** stop a dataset branch on rights/hash/schema failure, stop new compute at the authorized USD100 cumulative ceiling or resource conflict, and stop final evaluation if the frozen candidate changes. A blocked paid branch does not block offline integrity, baseline, manuscript, or audit work.
+
+**Executed continuation checkpoint (2026-11-01):** the small manifest-listed extension acquired PatSnap, PatentsView AIR-UMASS/NBER, and AffRoDB after the core freeze. Hash/schema checks passed after correcting Git blob SHA-1 verification semantics; unresolved PatentsView rights and the missing ROR v1.40 snapshot keep these packages outside the primary final endpoint. Existing vectors/rankings, ledger identity, API cap, and GPU boundary were preserved.
+
+**Post-run binding:** actual component results after the pre-run freeze are recorded in `docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json` and `CHECKPOINT_V6.json`, bound to candidate base `cd7e5d364d529a001fc51f78c217c10d7d9c8945`, the protocol hash, freeze hash, and every split summary hash. Engineering for the component package is `COMPLETE`; scientific evidence is `PARTIAL`; the main adaptive claim is `NOT_EVALUATED_BY_THIS_PACK`; the paid/API branch remains gated.
+
+**Current-head revalidation:** the same frozen component protocol was executed against `ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd` with the already verified five-file payload. The four PANORAMA runs and Helmers diagnostic are recorded in `docs/healthtech/audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json` and `CHECKPOINT_V10_CURRENT_HEAD.json`; no cross-candidate aggregation is used. This closes the current-head component baseline package, not the main adaptive dossier study or the paid/API comparison.
+
+**O4 offline controller revalidation:** the deterministic HT-B4 controller was rerun on the existing Abbott and Boston frozen cohorts at candidate `94ce5b1`, using the same K=20, candidate depth 50, rerank depth 50 and max-steps 3. The current-head receipt is `docs/healthtech/audits/ht-o4-offline-current-head-20261101/CHECKPOINT.json`. This adds reproducible descriptive O4 evidence while preserving `NOT_ESTIMABLE` generalization and the paid/API gate.
+
+**O4 matched offline frontier:** candidate `891f3b3` reran HT-B0a/B0b/B1/B2/B3 and deterministic HT-B4 on the same frozen Abbott cohort, with K=20 and candidate/rerank depth 41. The matched receipt reports B0b as the strongest observed condition (macro Recall@20 `0.662242`) and B4 offline at `0.498802`, with zero failed devices and zero paid calls. This is descriptive development evidence only; it does not establish adaptive superiority or generalization. See `docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/CHECKPOINT.json`.

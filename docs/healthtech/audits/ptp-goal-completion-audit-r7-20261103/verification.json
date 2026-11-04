@@ -1,0 +1,85 @@
+{
+  "format": "ptp-goal-completion-audit-r7-verification-v1",
+  "status": "PARTIAL_NOT_COMPLETE",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "deadline_local": "2026-11-15T23:59:00+07:00",
+    "dirty_worktree_preserved": true
+  },
+  "requirements": {
+    "objective_read": "PASS",
+    "o1_ui_http_history_export": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "o2_remote_encode_retrieval": "PARTIAL_REMOTE_ALLOCATION_NOT_EVIDENCED",
+    "o3_local_generation": "PASS_CURRENT_HEAD_GUIDED_3_OF_3_SCHEMA_VALID",
+    "o3_paid_generation": "BLOCKED_BEFORE_RESERVATION",
+    "o4_three_case_workflow": "COMPLETE_CURRENT_HEAD_ENGINEERING_SLICE",
+    "o4_research_comparison": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_value": "PARTIAL_SCENARIO_ONLY_EXTERNAL_VALIDATION_NOT_RUN",
+    "manuscript": "PASS_CURRENT_HEAD_INTEGRITY_OWNER_REVIEW_PENDING",
+    "merge_submission": "NOT_DONE_OWNER_REVIEW_REQUIRED"
+  },
+  "verification": {
+    "full_suite": "617 total / 616 passed / 1 skipped / 0 failed / 0 errors",
+    "focused_regression": "62 passed / 0 failed / 0 errors / 0 skipped",
+    "documentation_validation": "8/8 passed",
+    "json_validation": "PASS",
+    "scoped_git_diff_check": "PASS",
+    "manuscript_sha256": "b21f7d38b49f873575a5c74ac46ac4c431c06122df999bda818e8d02aa2b213a",
+    "manuscript_bytes": 50363,
+    "manuscript_relative_links_checked": 45,
+    "manuscript_missing_relative_links": 0
+  },
+  "metrics": {
+    "device_patent_macro_recall_at_20": {
+      "HT-B0a": 0.442739,
+      "HT-B0b": 0.662242,
+      "HT-B1": 0.498802,
+      "HT-B2": 0.568912,
+      "HT-B3": 0.498802,
+      "HT-B4_offline": 0.498802
+    },
+    "panorama_component_hit_at_1": {
+      "PAR4PC": 0.7151243093922652,
+      "PI4PC": 0.4012345679012346
+    },
+    "panorama_component_hit_at_8": {
+      "PAR4PC": 1.0,
+      "PI4PC": 1.0
+    }
+  },
+  "paid_gate": {
+    "authorization_reapproval_requested": false,
+    "canonical_r1_journal_present": false,
+    "current_scoped_credit_snapshot_present": false,
+    "observed_lifetime_usage_usd": 0.0001464,
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "resource_mutations": {
+    "new_gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "participant_contact": false,
+    "submission": false,
+    "public_release": false
+  },
+  "source_receipts": [
+    "docs/healthtech/audits/ptp-current-head-browser-http-recheck-20261103/verification.json",
+    "docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json",
+    "docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json",
+    "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+    "docs/healthtech/audits/ptp-current-head-matched-budget-20261103/verification.json",
+    "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json",
+    "docs/healthtech/audits/ptp-api-owner-env-live-check-20261103/verification.json",
+    "docs/healthtech/audits/ptp-manuscript-integrity-current-head-r3-20261103/verification.json"
+  ],
+  "next": "Continue local/offline and manuscript work; obtain the existing canonical R1 journal/export and current scoped credit snapshot once, and obtain authorized dr-train allocation evidence before any new remote encode."
+}

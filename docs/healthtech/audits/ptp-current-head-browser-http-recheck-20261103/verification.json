@@ -1,0 +1,20 @@
+{
+  "format": "ptp-current-head-browser-http-recheck-v1",
+  "status": "PASS_CURRENT_HEAD_BROWSER_HTTP_HISTORY_EXPORT",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "command": "HEALTHTECH_HTTP_COMMIT=88dc40471cb9078f929c02bb893cfa1e364da841 npm run test:integration:http",
+  "job_id": "536bc0e990ce48b3a9a8ad51a3ac0971",
+  "backend_origin": "loopback",
+  "source_inspection": "PASS",
+  "history_versions": [1, 2],
+  "edit": "PASS",
+  "reopen": "PASS",
+  "exports": ["json", "th", "en"],
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0,
+  "limitations": [
+    "Authored synthetic browser fixture only.",
+    "No paid provider request was made.",
+    "Engineering workflow evidence is not semantic retrieval or business validation."
+  ]
+}

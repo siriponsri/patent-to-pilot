@@ -1,0 +1,94 @@
+{
+  "format": "ptp-parallel-readiness-current-head-recheck-v1",
+  "observed_at_utc": "2026-11-02T21:09:47.1346333Z",
+  "goal": "Patent-to-Pilot O1-O4 original goal continuation",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "source_candidate_commit": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "runner_sha256": "1458939e49a39999d3009893ac5d13c5f69adcb01150871b62cefd7c5ab0cd3f",
+    "failure_regression_test_sha256": "4c1fff706398342a2c260b514c1afadbdacc18a06a940d332d5cf4a743818e3b",
+    "manuscript_sha256": "47d7da3301757ee35c07202b10df796397a6ed3a1f05bfc86e5ad61db7e57650"
+  },
+  "review_inputs": {
+    "readiness_review": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/READINESS_REVIEW_TH.md",
+    "evidence_index": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/evidence-index.json"
+  },
+  "process_quiescence": {
+    "relevant_experiment_processes_before_and_after": 0,
+    "new_experiment_batch": false,
+    "paid_api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "failure_accounting": {
+    "status": "PASS_PROSPECTIVE_REPAIR_VERIFIED_CURRENT_HEAD",
+    "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+    "partial_attempts_preserved": true,
+    "measured_wall_cpu_preserved": true,
+    "unknown_resource_fields_explicit": true,
+    "synthetic_zero_attempt_added": false,
+    "historical_receipts_rewritten": false,
+    "retrospective_cost_inferred": false,
+    "historical_rounds_affected": "NONE_KNOWN",
+    "basis": "Accessible receipts showed no known non-zero failed-query rounds; this is not a completeness proof for unavailable private journals."
+  },
+  "verification": {
+    "focused_regression": {
+      "status": "PASS",
+      "exit_code": 0,
+      "commands": [
+        "rtk proxy python -m pytest -q tests/test_healthtech_real_baselines.py tests/test_healthtech_matched_budget_prefix.py tests/test_healthtech_round1_budget.py",
+        "rtk proxy python -m pytest -q tests/test_healthtech_adaptive_report.py tests/test_healthtech_long_run_report.py tests/test_healthtech_review_packet.py tests/test_healthtech_g6_skeleton.py",
+        "rtk proxy python -m pytest -q tests/test_release_budget_process.py tests/test_healthtech_ledger_registry.py tests/test_healthtech_source_authorization.py tests/test_healthtech_prelive.py"
+      ]
+    },
+    "full_python": {
+      "status": "PASS",
+      "exit_code": 0,
+      "passed": 599,
+      "skipped": 1,
+      "warnings": 2,
+      "junit": "docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/current-head-full-tests-20261103.xml",
+      "skip_reason": "pinned local tokenizer artifact is unavailable"
+    },
+    "source_integrity": {
+      "git_diff_check": "PASS",
+      "json_readback": "PASS",
+      "manuscript_links": 21,
+      "manuscript_missing_links": 0,
+      "claim_boundary_checks": "PASS"
+    }
+  },
+  "budget_interpretation": {
+    "status": "DESCRIPTIVE_REALIZED_QUALITY_RESOURCE_FRONTIER",
+    "realized_units": {
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+      "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+    },
+    "equal_total_budget_claim": "NOT_SUPPORTED",
+    "posthoc_prefix_control": {
+      "query_calls": 3,
+      "rerank_pairs": 123,
+      "methods": {
+        "HT-B1": 0.498802,
+        "HT-B2_prefix_1": 0.498802,
+        "HT-B3_prefix_1": 0.498802
+      },
+      "status": "DESCRIPTIVE_FIRST_ACTION_ONLY",
+      "HT-B4": "EXCLUDED_CONTROLLER_STEPS_NOT_DIRECTLY_COMPARABLE"
+    }
+  },
+  "outcomes": {
+    "engineering": "COMPLETE",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_FRONTIER",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript_readiness": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK"
+  },
+  "next_action": "Keep paid/API and new-compute branches gated; continue only with owner review or independently authorized offline/manuscript work."
+}

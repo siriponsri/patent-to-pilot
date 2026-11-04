@@ -1,0 +1,60 @@
+{
+  "format": "ptp-source-patch-inventory-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "tree_state": "DIRTY_DOCUMENTATION_AUDIT_AND_UNCOMMITTED_GOAL_SOURCE_PATCH"
+  },
+  "scope": {
+    "tracked_source_test_files": 9,
+    "new_source_test_files": 6,
+    "tracked_insertions": 281,
+    "tracked_deletions": 128,
+    "areas": [
+      "source revision/provenance fail-closed validation",
+      "rights-cleared model-visible route binding",
+      "local execution deadline and cooperative GPU slot",
+      "current-head frontier and vector-bundle verification",
+      "regression coverage"
+    ]
+  },
+  "files": {
+    "scripts/healthtech/encode_transformer_shards.py": {"sha256": "a154b2c039bc6f563a68e43cb7680ef64a3bc8055846d3da5a43ef79bc3d5d27", "bytes": 3953, "state": "modified"},
+    "scripts/healthtech/remote_encoder_self_check.py": {"sha256": "9a3fc79f693fcb7480e9dbfd0c017f0f94c44974b59ca53fff099d3bb0374bc5", "bytes": 4382, "state": "modified"},
+    "scripts/healthtech/run_qwen_generation_evidence_pack.py": {"sha256": "d3f195e81959db3bf35661b9b0fc3a6593a0ad8a1e7b8a234a47fbeedee63d9c", "bytes": 11643, "state": "modified"},
+    "scripts/healthtech/run_transformer_vector_retrieval_eval.py": {"sha256": "0423f9e843c32efa01a33ae80ea734e79d832eaf75d77d66dbde7adbcf718975", "bytes": 8909, "state": "modified"},
+    "scripts/healthtech/render_current_head_frontier.py": {"sha256": "207b0bf249efb876bea0285fcb47175e7b9cc9366785fe690a9d50b5d92973e5", "bytes": 9477, "state": "new"},
+    "scripts/healthtech/verify_vector_bundle_pair.py": {"sha256": "53400683deb60b12661ae7cacce8f1ef83a911889bb0ffded7f7a789a82342b8", "bytes": 4733, "state": "new"},
+    "src/patent_to_pilot/healthtech/contracts.py": {"sha256": "86ccdd2e4665ecdd1b9d291ee06a1cd4f5fef836b3cd1eefc9c3a68cfb133b60", "bytes": 12384, "state": "modified"},
+    "src/patent_to_pilot/healthtech/generation_payload.py": {"sha256": "bfdab9abc030eb84908e38b591d0df315a5edac0a3c5dfbcb9747743793e4c93", "bytes": 19644, "state": "modified"},
+    "src/patent_to_pilot/healthtech/local_execution.py": {"sha256": "25ed4283936885352054c5cd5d10d5f4c78fcb8bbe26762dc7da9ee7a5a35e0d", "bytes": 2302, "state": "new"},
+    "tests/test_healthtech.py": {"sha256": "4bd4346f85c3df6066c206cf577eb060c49344a5dc27a7da0309827d5cd86ec5", "bytes": 10173, "state": "modified"},
+    "tests/test_healthtech_generation_payload.py": {"sha256": "7dd2eacb111d9a869464475b102f03298961b8773c0384ef97d288a2a93e3bd3", "bytes": 8295, "state": "modified"},
+    "tests/test_o3_generation_repair.py": {"sha256": "879486e1a821b390ffa7e2ab2b15928252a7b29e52a0ded3cbc05bc63165a2bc", "bytes": 8984, "state": "modified"},
+    "tests/test_healthtech_current_head_frontier.py": {"sha256": "fadef689224cceb9144a2f5db514068e391ebb9ce11fd379bbdf8cf0cdb00b3c", "bytes": 1587, "state": "new"},
+    "tests/test_healthtech_local_execution.py": {"sha256": "8ad288ae26161882e8e63d13ff320fb3ebdd9d940e46e6d88a03489b8e238e0b", "bytes": 7184, "state": "new"},
+    "tests/test_verify_vector_bundle_pair.py": {"sha256": "379b72acca25d40160a226bc1d3ff7eb825e7a4abd0fe1c9e5b93b156ddfbae9", "bytes": 3575, "state": "new"}
+  },
+  "verification": {
+    "scoped_diff_check": "PASS",
+    "compileall": "PASS",
+    "focused_suite": "58 passed, 0 failed, 0 skipped",
+    "full_suite_receipt": "616 total; 615 passed; 1 skipped; 0 failed; 0 errors",
+    "full_suite_receipt_path": "docs/healthtech/audits/ptp-api-owner-authorized-metadata-20261103/full-tests.xml",
+    "owner_files_staged": false,
+    "merge_main": false,
+    "push": false
+  },
+  "decision": "READY_FOR_OWNER_REVIEW_NOT_MERGE",
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next_action": "Owner review the scoped source/test patch; later stage and commit only this inventory's files after acceptance, without merging unrelated dirty work."
+}

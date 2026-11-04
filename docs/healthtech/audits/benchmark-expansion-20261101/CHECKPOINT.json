@@ -1,0 +1,66 @@
+{
+  "checkpoint_version": "benchmark-expansion-v2",
+  "created_date": "2026-11-01",
+  "status": "PASS_OFFLINE_COMPONENT_RESULTS_READY_FOR_OWNER_REVIEW",
+  "candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+  "candidate_state": "working_tree_uncommitted",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "source_pack": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101",
+  "source_pack_parent_commit": "f826069dddb74d4df9ca820a33c07355bec8b357",
+  "raw_payload_root": "outside_git:_private_artifacts/healthtech/benchmark-expansion-20261101",
+  "literature_index": "docs/healthtech/audits/benchmark-expansion-20261101/LITERATURE_INDEX.md",
+  "existing_assets_reused": [
+    "DAPFAM vectors/rankings",
+    "PatEmbed vectors",
+    "multilingual-e5 vectors"
+  ],
+  "acquisition_scope": [
+    "Helmers expert human-evaluation human_eval.zip",
+    "PANORAMA PAR4PC/test.parquet",
+    "PANORAMA PAR4PC/validation.parquet",
+    "PANORAMA PI4PC/test.parquet",
+    "PANORAMA PI4PC/validation.parquet"
+  ],
+  "stages": {
+    "inventory": "READY",
+    "core_acquisition": "PASS",
+    "integrity_schema": "PASS",
+    "freeze": "PASS",
+    "offline_baseline": "PASS",
+    "final_holdout_component": "PASS",
+    "helmers_diagnostic": "PASS_DESCRIPTIVE_DIAGNOSTIC",
+    "main_adaptive_dossier_study": "NOT_EVALUATED_BY_THIS_PACK",
+    "paid_generation": "BLOCKED_UNTIL_LEDGER_CREDIT_ROUTE_RIGHTS_GATES"
+  },
+  "component_results": {
+    "PANORAMA_PAR4PC_validation_macro_gold_hit_at_1": 0.7335754374380984,
+    "PANORAMA_PAR4PC_test_macro_gold_hit_at_1": 0.7151243093922652,
+    "PANORAMA_PI4PC_validation_macro_gold_hit_at_1": 0.3776987553975108,
+    "PANORAMA_PI4PC_test_macro_gold_hit_at_1": 0.4012345679012346,
+    "PANORAMA_failed_output_rate_all_splits": 0.0,
+    "HELMERS_targets": 10,
+    "HELMERS_judged_pairs": 450,
+    "HELMERS_positive_pairs": 258,
+    "HELMERS_macro_average_precision": 0.885450432614385,
+    "HELMERS_macro_auc": 0.880011844305422
+  },
+  "resource_boundary": {
+    "api_cumulative_ceiling_usd": 100,
+    "gpu": "V100 existing allocation, concurrency 1",
+    "deadline_bangkok": "2026-11-15T23:59:00+07:00",
+    "ledger_reset": false,
+    "paid_calls_started": false,
+    "gpu_jobs_started": false
+  },
+  "cleanup": {
+    "stale_partial_path": "outside_git:_private_artifacts/healthtech/benchmark-expansion-20261101/PANORAMA PAR4PC_PI4PC validation+test/PI4PC/test.parquet.part",
+    "stale_partial_bytes": 35309248,
+    "status": "REMAINS_OUTSIDE_GIT_CLEANUP_BLOCKED_BY_SHELL_GUARD"
+  },
+  "submission_gate": {
+    "official_wpi_pages": "OWNER_RECHECK_REQUIRED_HTTP_403_IN_THIS_ENVIRONMENT",
+    "submission_sent": false,
+    "owner_approval_required": true
+  },
+  "next_action": "Owner review candidate and report; bind future adaptive dossier evaluation only after a separate matched protocol and current resource/ledger gates are verified."
+}

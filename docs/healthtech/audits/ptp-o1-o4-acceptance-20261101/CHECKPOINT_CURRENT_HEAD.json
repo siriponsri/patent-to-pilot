@@ -1,0 +1,61 @@
+{
+  "checkpoint_version": "ptp-o1-o4-current-head-docs-continuation-v1",
+  "created_date": "2026-11-01",
+  "status": "PARTIAL_O1_O2_O4_ENGINEERING_O3_PAID_BLOCKED_CURRENT_HEAD",
+  "goal": "Patent-to-Pilot O1-O4 long-run continuation",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head": "c88ddecf922a4ace30bc36faf056bb86df67f9b9",
+    "prior_runtime_equivalent_head": "3eae57d8b43f9595774db5e7566445785d6ddd96",
+    "reviewed_implementation_candidate": "80da253969f7973cc630ce03ac83da9900f16628",
+    "working_tree_state": "clean",
+    "root_main_merged": false,
+    "push_performed": false
+  },
+  "continuation_delta": {
+    "runtime_code_changes_since_prior_runtime_equivalent_head": false,
+    "changed_scope": "documentation_and_audit_metadata_only",
+    "paid_api_calls": 0,
+    "gpu_jobs": 0,
+    "ledger_reset": false,
+    "participant_contact": false
+  },
+  "fresh_current_head_checks": [
+    {
+      "name": "browser_http_integration",
+      "command": "npm run test:integration:http",
+      "cwd": "frontend/healthtech-web",
+      "status": "PASS",
+      "result": "loopback job/history/source/edit/export; history 1->2; JSON/TH/EN export; provider calls 0; paid USD 0.00"
+    },
+    {
+      "name": "o1_o2_o3_benchmark_contracts",
+      "command": "python -m pytest -q tests/test_healthtech_http.py tests/test_healthtech_vector_http.py tests/test_healthtech_generation_payload.py tests/test_healthtech_history_migration.py tests/test_healthtech_transformer_encoders.py tests/test_healthtech_vector_artifacts.py tests/test_healthtech_vector_eval.py tests/test_healthtech_dapfam_bm25.py tests/test_healthtech_cross_cohort.py tests/test_healthtech_api_generation.py tests/test_healthtech_round1_budget.py tests/test_healthtech_ledger_registry.py tests/test_o3_adversarial_repair.py tests/test_o3_generation_repair.py tests/test_healthtech_benchmark_expansion.py",
+      "status": "PASS",
+      "result": "exit code 0"
+    },
+    {
+      "name": "json_and_diff_checks",
+      "command": "ConvertFrom-Json progress/checkpoint; git diff --check",
+      "status": "PASS",
+      "result": "JSON parsed; diff check passed"
+    }
+  ],
+  "outcome_boundaries": {
+    "O1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "O2": "COMPLETE_PRIOR_RUNTIME_RECEIPT_CURRENT_HEAD_CONTRACTS_PASS_REMOTE_RERUN_NOT_RUN",
+    "O3": "PARTIAL_LOCAL_COMPLETE_API_BLOCKED_LOCAL",
+    "O4": "COMPLETE_PRIOR_REAL_CASE_ENGINEERING_CURRENT_HEAD_RUNTIME_EQUIVALENT_DOCS_ONLY",
+    "main_adaptive_dossier_study": "PARTIAL_NOT_EVALUATED_BY_THIS_PACK",
+    "external_business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+    "manuscript": "PARTIAL_OWNER_REVIEW_REQUIRED"
+  },
+  "remaining_gates": [
+    "real current R1 canonical journal or sanitized all-attempt export",
+    "current authorized account-credit or billing snapshot",
+    "fresh route/parameter/pricing binding",
+    "rights-cleared outbound dossier-prompt manifest",
+    "matched adaptive study with an admissible semantic judgment source or benchmark"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "format": "ptp-e2-rights-rebind-verification-v1",
+  "recorded_utc": "2026-11-03T16:46:00.8422563Z",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "input": {
+    "private_pack": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-local-qwen-patent-pack-20261103-r2/evidence-pack.json",
+    "input_file_sha256": "b132f0409b24262cff09e6a162a7c3d3ec30858bc90a7ba4b9836ce303256f36",
+    "parent_pack_sha256": "918f615210546b65111cbc683181dc43886ace2267f16c19d62c31175ea6607b"
+  },
+  "projection": {
+    "status": "PASS_RIGHTS_PROJECTION_OFFLINE_ONLY",
+    "prepared_pack_sha256": "e146ab85db3792c3028e9becb0d71ea645a0cd0cfe426a9233622496e7aef489",
+    "manifest_sha256": "b9b0d1fea5c8d7c6e34801053034526103fca77d5c6b992fb29a008b64f57d28",
+    "cases": 3,
+    "evidence_rows": 9,
+    "fields": ["pma_number", "trade_name", "applicant"],
+    "source_backed_transfer_review": "PASS",
+    "rights_decision": "ALLOWED_WITH_ATTRIBUTION",
+    "excluded": [
+      "patent/disclosure sources",
+      "generic/GMDN fields",
+      "raw source payloads",
+      "evaluator labels and qrels",
+      "provider credentials",
+      "generated output text"
+    ]
+  },
+  "case_hashes": {
+    "HT-DEV-MITRACLIP": {
+      "message_sha256": "aff765c814db1f16a113a4f6d447ca0937d1be8910ff0001b2eca2bc25beb1a7",
+      "payload_sha256": "4a999f0eeb6b493aa782e059fc742b86ff82b52fb1d2ec6da824a3f58783590d"
+    },
+    "HT-DEV-TENDYNE": {
+      "message_sha256": "c51435f2b2661bb81ca8da28e9d954f8f4ede2d029c98c783c02b57dc671f2f2",
+      "payload_sha256": "bccb1eb6a0e257b66317e8eeb69b66c4662bfdef59f9ddb45f61844fc7d5b105"
+    },
+    "HT-DEV-TRICLIP": {
+      "message_sha256": "cc400bb8612c3479f6205c58f5e8d46a9c0f0281893e9aa8ec6a1c0ae6897ef4",
+      "payload_sha256": "d9ec5c693c5013564623e28d3849761886f565d413e65511fe9cc40a8dc17d97"
+    }
+  },
+  "dry_run": {
+    "status": "DRY_RUN_NOT_EXECUTED",
+    "exit_code": 0,
+    "model": "qwen/qwen3-32b",
+    "route_snapshot_used_for_preflight": "DeepInfra",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "output": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-e2-api-dryrun-rights-r2-20261103/preflight.json"
+  },
+  "local_canary_binding": {
+    "reference": "docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json",
+    "message_hashes_match": true,
+    "new_local_inference": false,
+    "interpretation": "same exact canary messages; no paired local/API outcome yet"
+  },
+  "reproducibility": {
+    "script": "docs/healthtech/audits/ptp-resume-e2-current-r2-20261103/prepare_fda_canary_from_current_pack.py",
+    "py_compile": "PASS",
+    "replay_output": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-e2-rights-cleared-fda-pack-r2-replay2-20261103",
+    "replay_pack_match": true,
+    "replay_manifest_match": true,
+    "replay_message_hashes_match": true,
+    "replay_payload_hashes_match": true
+  },
+  "accounting": {
+    "e2_journal_mutated": false,
+    "new_attempts": 0,
+    "pending_call_retried": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "status": {
+    "payload_gate": "PASS_FDA_CANARY_ONLY",
+    "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "local_vs_api_result": "NOT_RUN_API_CREDIT_GATE",
+    "scientific_claim": "DESCRIPTIVE_ONLY"
+  },
+  "next_action": "When one non-secret current scoped credit/limit snapshot exists, reconcile it to E2, refresh exact route pricing inside 300 seconds, and reserve only the existing USD0.25 canary."
+}

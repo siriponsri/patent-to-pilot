@@ -1,0 +1,145 @@
+{
+  "format": "ptp-goal-completion-audit-r5-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+  },
+  "requirements": [
+    {
+      "id": "O1",
+      "status": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+      "proof": "Browser/UI to real loopback HTTP jobs, status, cancel acknowledgement, resume/history, source inspection, edit/reopen, and JSON/TH/EN export are covered by current-head receipts.",
+      "evidence": [
+        "docs/healthtech/audits/ptp-long-run-resume-20261103/o1-current-head-20261103/verification.json",
+        "docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json"
+      ],
+      "gap": "No deployment or paid-provider claim is implied."
+    },
+    {
+      "id": "O2",
+      "status": "PASS_CURRENT_HEAD_RUNTIME_BOUND_REMOTE_ARTIFACTS_NO_RERUN",
+      "proof": "Prior dr-train PatEmbed-base and multilingual-e5-base artifacts are bound to current runtime paths and pass current vector-bundle integrity revalidation.",
+      "evidence": [
+        "docs/healthtech/audits/ht-research-product-20261031/verification.json",
+        "docs/healthtech/audits/ptp-current-head-runtime-rebind-20261103/verification.json",
+        "docs/healthtech/audits/ptp-vector-artifact-revalidation-20261103/verification.json"
+      ],
+      "gap": "No new remote encode/retrieval run or local model-weight recheck is claimed."
+    },
+    {
+      "id": "O3-local",
+      "status": "PASS_CURRENT_HEAD_LOCAL_GUIDED_GENERATION_CONTRACT",
+      "proof": "Pinned local Qwen/Qwen3-8B guided generation produced schema-valid outputs for 3/3 named cases on the frozen current-head pack.",
+      "evidence": [
+        "docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json"
+      ],
+      "gap": "Schema validity does not establish semantic correctness or citation quality."
+    },
+    {
+      "id": "O3-paid",
+      "status": "BLOCKED_BEFORE_RESERVATION",
+      "proof": "Rights-cleared paired payload and current route/price preflight pass; the runner fails closed before reservation when canonical R1 history/registry or current scoped credit is missing.",
+      "evidence": [
+        "docs/healthtech/audits/ptp-api-parallel-recheck-20261103/verification.json",
+        "docs/healthtech/audits/ptp-api-owner-authorized-metadata-20261103/verification.json",
+        "docs/healthtech/audits/ptp-api-owner-authorized-metadata-20261103/CHECKPOINT.json"
+      ],
+      "gap": "Existing canonical R1 journal/history or sanitized export and current scoped credit snapshot are not available."
+    },
+    {
+      "id": "O4-engineering",
+      "status": "PASS_CURRENT_HEAD_THREE_CASE_ENGINEERING",
+      "proof": "MitraClip, Tendyne, and TriClip each completed the current local HTTP/vector path and local guided generation contract with inspection/history/export evidence.",
+      "evidence": [
+        "docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json",
+        "docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json"
+      ],
+      "gap": "Three cases are an application slice, not a powered research sample or user validation."
+    },
+    {
+      "id": "O4-research",
+      "status": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+      "proof": "Current-head B0a/B0b/B1/B2/B3/B4-offline frontier, matched first-action diagnostic, component holdouts, failure accounting, and business-value scenario are reproducible and candidate-bound.",
+      "evidence": [
+        "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+        "docs/healthtech/audits/ptp-current-head-matched-budget-20261103/verification.json",
+        "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json",
+        "docs/healthtech/audits/ptp-business-value-scenario-20261103/verification.json",
+        "docs/healthtech/audits/ptp-manuscript-integrity-current-r2-20261103/verification.json"
+      ],
+      "gap": "No semantic device-patent gold, main-task final holdout, equal-total-budget confirmatory comparison, or sufficient independent groups."
+    },
+    {
+      "id": "G0",
+      "status": "COMPLETE_CONTRACT_AND_SCOPE",
+      "evidence": ["docs/healthtech/long-runs/LONG_RUN_GOAL.md", "docs/healthtech/long-runs/EXECUTION_PLAN.md"],
+      "gap": null
+    },
+    {
+      "id": "G1",
+      "status": "PARTIAL_RIGHTS_AND_SEMANTIC_GOLD_INCOMPLETE",
+      "evidence": ["docs/healthtech/research/BRIDGE_RIGHTS_COHORT.md", "docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_FREEZE.json"],
+      "gap": "Restricted/unresolved sources remain excluded and documented links are not semantic gold."
+    },
+    {
+      "id": "G2",
+      "status": "PARTIAL_DEVELOPMENT_BASELINES_AND_EVALUATOR",
+      "evidence": ["docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json", "docs/healthtech/audits/ptp-current-head-holdout-availability-20261103/verification.json"],
+      "gap": "Final powered adaptive comparison is not established."
+    },
+    {
+      "id": "G3",
+      "status": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
+      "evidence": ["docs/healthtech/audits/ptp-current-head-engineering-20261103/verification.json", "docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json"],
+      "gap": "Engineering evidence does not imply deployment or user validation."
+    },
+    {
+      "id": "G4",
+      "status": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+      "evidence": ["docs/healthtech/audits/ptp-current-head-matched-budget-20261103/verification.json"],
+      "gap": "Observed totals differ across policies and group count is below the predeclared uncertainty threshold."
+    },
+    {
+      "id": "G5",
+      "status": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
+      "evidence": ["docs/healthtech/audits/ptp-business-value-scenario-20261103/verification.json", "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md"],
+      "gap": "No independent user validation, revenue, willingness-to-pay, or ROI evidence."
+    },
+    {
+      "id": "G6",
+      "status": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+      "evidence": ["docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md", "docs/healthtech/audits/wpi-venue-recheck-r4-20261103/verification.json"],
+      "gap": "Journal-specific Guide for Authors remains unverified; no submission or publisher-term acceptance."
+    },
+    {
+      "id": "G7",
+      "status": "PASS_ISOLATED_RELEASE_REPRODUCTION_CURRENT_CANDIDATE",
+      "evidence": ["docs/healthtech/audits/ptp-long-run-resume-20261103/release-verification-20261103-r3/verification.json"],
+      "gap": "This is isolated offline release reproduction, not deployment readiness."
+    },
+    {
+      "id": "G8",
+      "status": "NOT_RUN_FUTURE_SCOPE",
+      "evidence": ["docs/healthtech/long-runs/LONG_RUN_GOAL.md"],
+      "gap": "Future scope is outside current solo computational acceptance."
+    }
+  ],
+  "completion_decision": "PARTIAL_NOT_COMPLETE",
+  "owner_review": "REQUIRED_BEFORE_MERGE",
+  "merge_or_push": false,
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "secrets_persisted": false
+  },
+  "next_action": "Continue local/offline and manuscript preparation; reconcile the existing canonical R1 journal/history and current scoped credit once before any paid canary, and keep O4 research claims descriptive until admissible gold/holdout evidence exists."
+}

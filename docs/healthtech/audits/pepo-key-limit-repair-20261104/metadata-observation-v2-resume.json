@@ -1,0 +1,59 @@
+{
+  "format": "ptp-openrouter-metadata-observation-v2",
+  "provider": "openrouter",
+  "currency": "USD",
+  "started_at_utc": "2026-11-04T17:57:37.583397+07:00",
+  "key_scope": "sha256:7cbe4013fd1c43bb8096135bc6e4ed9a0befb7607ebe820bcfcb2c33544d7b97",
+  "key_endpoint": {
+    "status": "OBSERVED",
+    "http_status": 200,
+    "response_sha256": "e84b6015e81e54607537040502062eb3a7b5b5f704bdf7565adac8ac99775521"
+  },
+  "account_scope": null,
+  "account_scope_binding": "NOT_RECONCILED",
+  "account_credits": {
+    "status": "NOT_REQUESTED_MANAGEMENT_KEY_REQUIRED"
+  },
+  "history_completeness": "NOT_PROVEN",
+  "r1_actual_spend_usd": null,
+  "r1_unresolved_exposure_usd": null,
+  "live_admission_enabled": false,
+  "verification": "local_https_observation_not_signed_attestation",
+  "key_metadata": {
+    "limit": null,
+    "limit_remaining": null,
+    "usage": "0.0001464",
+    "usage_daily": "0",
+    "usage_weekly": "0",
+    "usage_monthly": "0",
+    "byok_usage": "0",
+    "is_management_key": false,
+    "is_free_tier": false,
+    "include_byok_in_limit": false,
+    "budgets": [],
+    "effective_budget": null,
+    "limit_reset": null,
+    "creator_user_id_sha256": "666994c4b8526e18e00aa3e477c20b63b5bf55164489f310cf371795f88e367c",
+    "workspace_id_sha256": "50a0e4a8f9b2c38c52824ca3aa5a7c105c65c588821a9ed4e86b3eaa1b10b0d2",
+    "field_presence": {
+      "limit": true,
+      "limit_remaining": true,
+      "budgets": true,
+      "effective_budget": true
+    },
+    "key_limit_state": "UNLIMITED"
+  },
+  "availability": {
+    "key_limit_state": "UNLIMITED",
+    "applicable_budgets_observed": true,
+    "observed_key_or_budget_remaining_usd": null,
+    "blocked_prerequisites": [
+      "ACCOUNT_CREDIT_NOT_OBSERVED_BY_THIS_COLLECTOR",
+      "ACCOUNT_KEY_BINDING_NOT_RECONCILED"
+    ],
+    "live_admission_enabled": false,
+    "scope": "metadata explanation only; freshness, canonical E2, rights and route checks remain required"
+  },
+  "completed_at_utc": "2026-11-04T17:57:38.080978+07:00",
+  "receipt_sha256": "850c3f1a68eff13954b1f5052de782b03957a02523575b33115be977ee7f7416"
+}

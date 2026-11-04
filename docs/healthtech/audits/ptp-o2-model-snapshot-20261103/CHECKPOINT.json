@@ -1,0 +1,68 @@
+{
+  "format": "ptp-o2-model-snapshot-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_MODEL_SNAPSHOT_LOCAL_CPU_CANARY_REMOTE_ENCODE_NOT_RUN",
+  "private_model_root": "worktree-local ignored data/raw/healthtech/models/required-encoders",
+  "manifest_sha256": "1b3af4bfc52671c5b411aee473b394a2e2ff12e7681dec0e3f478a74012278ac",
+  "models": [
+    {
+      "repo_id": "datalyes/patembed-base",
+      "revision": "244ba452908a3093be11efb8a44396652317fb14",
+      "license": "cc-by-nc-sa-4.0",
+      "files": 14,
+      "bytes": 778662281,
+      "binding_status": "PASS"
+    },
+    {
+      "repo_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "license": "mit",
+      "files": 11,
+      "bytes": 1134535908,
+      "binding_status": "PASS"
+    }
+  ],
+  "total_bytes": 1913198189,
+  "verification": {
+    "focused_tests": "16 passed; 0 failed; 0 errors; 0 skipped",
+    "focused_junit": "focused-tests.xml",
+    "focused_junit_sha256": "8e8b30d97f0b70020aec82fe4d46db66fa2116bb61afa2ab80c896784b3176b6",
+    "full_tests": "617 total; 616 passed; 0 failed; 0 errors; 1 skipped",
+    "full_junit": "full-tests.xml",
+    "full_junit_sha256": "2eb1d228c540e2b4d3f03bc626f20de89b040071f76efe3cce02b8ae1a8b80f1",
+    "compileall": "PASS",
+    "global_runtime_dependencies": "unavailable",
+    "isolated_cpu_canary": "PASS",
+    "isolated_cpu_canary_artifact": "cpu-canary.json",
+    "isolated_runtime": {
+      "torch": "2.15.0+cpu",
+      "transformers": "5.22.1",
+      "safetensors": "0.8.0",
+      "pydantic": "2.14.2",
+      "cuda_available": false
+    }
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "time_window_reset": false,
+    "gpu_jobs": 0,
+    "remote_transfers": 0,
+    "new_encode_runs": 0,
+    "local_cpu_canary_runs": 1,
+    "dataset_downloads": 0,
+    "model_snapshot_downloads": 2
+  },
+  "rights_boundary": {
+    "patembed": "CC-BY-NC-SA-4.0; private research-only handling",
+    "multilingual_e5": "MIT; retained privately in this worktree",
+    "public_redistribution": "NOT_AUTHORIZED_BY_THIS_CHECKPOINT"
+  },
+  "next_action": "Obtain live remote allocation and transfer evidence, then run the existing resumable encoder on the approved V100; keep paid API blocked until its two missing non-secret evidence items are reconciled."
+}

@@ -1,0 +1,13 @@
+{
+  "checkpoint": "ptp-current-acceptance-rebind-r10-20261103",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "matrix": "docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json",
+  "status": "PARTIAL_NOT_COMPLETE_CURRENT_EVIDENCE_REBOUND",
+  "engineering": "PASS_CURRENT_HEAD_OFFLINE_RELEASE_VERIFIED_DIRTY_NOT_RELEASED",
+  "research": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "PARTIAL_OWNER_REVIEW_WPI_GUIDE_UNVERIFIED",
+  "paid": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "resource_mutations": "NONE",
+  "goal_closed": false
+}

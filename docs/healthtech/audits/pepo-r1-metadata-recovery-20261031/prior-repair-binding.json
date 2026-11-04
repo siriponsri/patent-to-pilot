@@ -1,0 +1,2440 @@
+[
+  {
+    "path": "configs/deployment-plan-v1.json",
+    "canonical_lf_sha256": "eae8c7fc2cd9fa4a16a7bb5fef101b726f107e42e11d1709990297584666ace1",
+    "prior_record_sha256": "2a3dcbaebdec518a24a8f50032948216ec8d12c78cdcaa9e6a730997df02c723",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/g09-g10-api-smoke.toml",
+    "canonical_lf_sha256": "ad63e6a7e65cbed6cd17d4119d2520c6d982e952489613bd8a074f598bf8d15f",
+    "prior_record_sha256": "e87c5b005c78456bcdf1c2ce5a65dc36baef0b83f1c17683d136412fc3f42b07",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/g09-g10-example-input.json",
+    "canonical_lf_sha256": "866dbf273f47dfc8c220d1a696d7894e802af7329c6314627662f03ecd862161",
+    "prior_record_sha256": "28e69c0d66404723f94d238fa12028d27bfba66c2383b118fb58183e00306a52",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/g11-provider-example.toml",
+    "canonical_lf_sha256": "20dc4ebc012ffa784800276cf8a551ba0c5213502dae517b98e040cda0c1ec15",
+    "prior_record_sha256": "6756ddf58fb16a9e10c1b3604248a7508c8e1051ba8b2d280ddb15350b73c4a0",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/g13-offline-plan-v1.json",
+    "canonical_lf_sha256": "299d752f624542f4489995e00871c110d95498d639e12ff00aeda018e7cc5ea4",
+    "prior_record_sha256": "2c73fdbed4b259d9508b27a7a457506d4384c1d3da9a90c07730979a9c0dbfd9",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/healthtech/api_dry_run.json",
+    "canonical_lf_sha256": "5ae51fe0f7f37edd167202106600c877dfd78a6f1b01493f865766594c271a69",
+    "prior_record_sha256": "4c53c6beaafce3d47e524b6300486b04d39539faa3d68e022eb24b8d1278053e",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/healthtech/data_registry.json",
+    "canonical_lf_sha256": "348bfd5e794f08781e8597dd542c58f6c0c68281b1793d319e5446bbaab2665d",
+    "prior_record_sha256": "a9688f9f8dabf1885d365a14fa1d8618e5c12cb970514ad9f82c6b3c6d2978a2",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/healthtech/g1_g2_public_cohort_protocol.json",
+    "canonical_lf_sha256": "7dab96b735c70bcf60b99f191477c5add04d95c337d437c2d17b546e8b226cf2",
+    "prior_record_sha256": "582e7d9a551f2e4afefa6cec7be26f6c98f2af9fe32ffb4b16bab726b1f32508",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/healthtech/ht_t2_scifact_lexical_dev_v1.json",
+    "canonical_lf_sha256": "39bed6da45a67229888a6fb17f51983a15af070fd51193506419898d1e58ac40",
+    "prior_record_sha256": "7bfb685e743f10358b6b9cf4e6d2bdf433c9c1b15b57bbe7e77acf17fc023367",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/healthtech/task_protocol.json",
+    "canonical_lf_sha256": "98a6937e27b5d3fb506a076ef37309852d4fb45cdb1746e1a10440903a209acf",
+    "prior_record_sha256": "3c036dbc480e04fae3e6f7b1612719bd31afa70c7740d66e9faafe2389f5d8ea",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/local-dev.toml",
+    "canonical_lf_sha256": "6313933d5551ab70ae22672b619b1c9816acc513d52ff6202770fe0eda9f13c7",
+    "prior_record_sha256": "4e77b123aff57621433979cfd31c284463a19806dc6a1062b1bf0977cff224b1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/long-run-offline-v2.json",
+    "canonical_lf_sha256": "03e88b6601c202ffe542b098615c684a205d587af76cd8d0b3a5d2e5a59f2590",
+    "prior_record_sha256": "eec7e75e3b2fae691da4d8f04602634d0bf9b076d45e329dfd22df90179fce90",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/provider-paired-revalidation-plan.json",
+    "canonical_lf_sha256": "b5d299dc3b03c74b1741535fb8084a8afca12e99fea30b4725f7fae256cf8fd3",
+    "prior_record_sha256": "c05f3bf2aed29127d66b7b926e7d1b7a5959725e51b57d825793b4cccbdddf48",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/provider-pilot-approval.example.json",
+    "canonical_lf_sha256": "f1dc5423662fd7ea068354e61441730550c7e3a397de824a5cdd99bc74e92b7a",
+    "prior_record_sha256": "fbd29530a14b78a149b6bcab48c52a7c3f08f9752bd7b0c5b764b9218d453c60",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "configs/provider-pilot-plan.json",
+    "canonical_lf_sha256": "90a3279bee02dfa6f8bf962e8ddff15e3673535602c0b83d523998f4933c5831",
+    "prior_record_sha256": "92af480ccfc25798382501c4e8ad86ccc8f1bf1bd171ee7ce64548eb7292fb23",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "examples/healthtech/synthetic-device/README.md",
+    "canonical_lf_sha256": "1230a0acb49d21e2d7885f8775e5d43948ca0abf17561af71ff68cc002dc4a27",
+    "prior_record_sha256": "bdea9cb47bc17c89504515ca02f901e6487b94ba4bad95d6e7079304fc27d3ed",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "examples/healthtech/synthetic-device/input.json",
+    "canonical_lf_sha256": "75e8b2c6c78ad439fd0f2ccd60a70edd4fe1275653d5fb2d12664e51bb664a65",
+    "prior_record_sha256": "e8e7fc012a61d2c29fa10a472c391fde0277c3c913d119842034c8e074520693",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "pyproject.toml",
+    "canonical_lf_sha256": "392afa48aba220663e66f57cc67d3b1862d9df5f1f6d2fceb5b07065f72b0100",
+    "prior_record_sha256": "2d4233b63d7b4568e985099f1040328381218ee43ef8da0a0c1c22aceec2c0dc",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/AcquisitionEvent.schema.json",
+    "canonical_lf_sha256": "3b3fbda51a53888ab2e47d5281ba3fdcf9586bc597f36d6c4198362cacd8558b",
+    "prior_record_sha256": "49f2bba5622934c0ff811b1315a1f67412e045796f5532d4ede920a47d0ea0ca",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/DeviceQuery.schema.json",
+    "canonical_lf_sha256": "24dc9f3a684264a1e233e15bdf6271acba1508d691856a18f1fa827d4e1a9d16",
+    "prior_record_sha256": "ece6a948510b30d78207486f7d86df55cfab4141f9bfc6babec70f238e0af396",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/DossierInput.schema.json",
+    "canonical_lf_sha256": "a8808db04bb11f78cdb6f38c367cafa026514ada7497d6bde38c4bbe8be8c656",
+    "prior_record_sha256": "83458ee55a9a9f0b38b6323f65fc0b797480275a706109c02bb09664ca392d28",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/DossierVersion.schema.json",
+    "canonical_lf_sha256": "2106acaff42e16c53d2419c453b47ed5af1a335f22325382f77f19dbea4ec29e",
+    "prior_record_sha256": "91c5b182f7a24f4826f83d64fac2b4c041ebf91e5e046b93de30b9142830db2f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/EvidenceItem.schema.json",
+    "canonical_lf_sha256": "0c1f684d8257e807b02df62e280238f301606bed0fd2d358482585a3503560a0",
+    "prior_record_sha256": "052218ce350233f32ea6dcf4613285e98ad8b0ecd3af10bf71392a9b60925f40",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/HealthTechAPIConfig.schema.json",
+    "canonical_lf_sha256": "d8a3312ec18254e637b668b1747d4aa0ffda894b282ca9a093ff2b99ff469ac9",
+    "prior_record_sha256": "9bd179f8c0934daf402e2a159c05dcf066a909118981be8cc385a6b4f247782f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/HealthTechDispatchReceipt.schema.json",
+    "canonical_lf_sha256": "780f541fd02d080d21b770bd1e270363e71a5c575056891162b7d4c084da2ffb",
+    "prior_record_sha256": "4f858a730d2c7016ff75e517bf37a0be4f572d8b67075d964352ade986fb764f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/HealthTechRequest.schema.json",
+    "canonical_lf_sha256": "91955b65616f41f72e5178799b50e750cf537d4ae6c5432f80b44237257f1992",
+    "prior_record_sha256": "74dd6e18c73324d587069213c710c4903fcf425bfc74cb6bc51b3e344f16534e",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/HealthTechVisibleSource.schema.json",
+    "canonical_lf_sha256": "76b3ed3965dde9b2060e7787890d9703bb317bc3a0dcc8d70a5729d003bb2565",
+    "prior_record_sha256": "b82c2f40ae7304d2f7bfa515d0f26577248cda679067d5061a4b1b0d69696fd5",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/PatentCandidate.schema.json",
+    "canonical_lf_sha256": "bd06e450a2eb1a4a395172c2fd41fc6e098d1c655d1f0ca0efe4e43eba22cf43",
+    "prior_record_sha256": "d619768f8660c9af24bea9a81801076846bed7fae39635e5f94aa8819f6b009d",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "schemas/healthtech/RunManifest.schema.json",
+    "canonical_lf_sha256": "e5a62853d466508469f8d273f2b9401c28d58f8f228784d2ef059cd2824ce894",
+    "prior_record_sha256": "db3dd5ee973cc50534f24d2597ab19f81e99088968d605dbadd1e92bfb5b55c1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/dispatch_provider_pilot.py",
+    "canonical_lf_sha256": "9bc0e765aad06c24db763fce8162e35b76574dd9036c9188badc295c63313128",
+    "prior_record_sha256": "5d0176e520cbc17b4ce418b51235e39d13a628495dcb5104b15529af60d8b7d6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/g03_acquire.py",
+    "canonical_lf_sha256": "675c43a80edb7225405d8b472b0de3d5893c93ff3a84b9ad2c8c48d344f9c682",
+    "prior_record_sha256": "496af7691447deb8424847deca7b33024738befd9832ef8dbef7a78f51d1276f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/g03_analyze.py",
+    "canonical_lf_sha256": "331ec6344cbb5b4e8968d35233d30042d931b2fdce48c3310bc463ec61f80044",
+    "prior_record_sha256": "aa4eb679a385de0e144ec1f168fbd9996223c80238f4ec1f7d62ba8fe35dd15e",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/g03_fetch_metadata.py",
+    "canonical_lf_sha256": "7c5c40935a382c14d171c11c2739e8e1cda5f9b5f73033bed6cd21efa552184b",
+    "prior_record_sha256": "fcf3cfc9f5b93b8ad286998852e4444798cc01dfd416cd2043a9c798d9f19bdf",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/acquire_model_artifacts.py",
+    "canonical_lf_sha256": "d5a4593a1ed36297270631c2ed335997411866f8f6d444e3860444b0b46e181f",
+    "prior_record_sha256": "dc44cf35dd2b6326b87c7a1187a85c24f8f593be6edf4aa3ecc59e8153301fa1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/acquire_semantic_source.py",
+    "canonical_lf_sha256": "559087862f1e59aec6f4d744897bc6bf4ed49f64772231819a1a4839246a39a8",
+    "prior_record_sha256": "ab2a35e4fad500ce3962137f23ef0953dcfd8bbc7cc7d75aa2a0b6dbc4c61265",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/analyze_dapfam_coverage.py",
+    "canonical_lf_sha256": "c0fab42f382ee5e0a8a68931565b8599ca5203e933e6263fd403482a1aa6ceaa",
+    "prior_record_sha256": "2a59636c3093dd18044e4699258c8821e710e224ceb68194399b84d0d709043f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/analyze_family_frontier.py",
+    "canonical_lf_sha256": "2cf79cde78230950b190e8c7a15ff2f9e92e8e9f8d99afdd8b4c574e24c943a3",
+    "prior_record_sha256": "491186dba4ab99c77aca2bb6209a11d3c36e014c4de4f41ff17a88e7f6adbb63",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/analyze_family_groups.py",
+    "canonical_lf_sha256": "22b4530956f169af4359274b54537e4be497078d586b298205381987048f23d8",
+    "prior_record_sha256": "f99d5defc27e17fe4a9856f18601b8003d319b87355c74c2d78e3a099a75a3d9",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/analyze_long_run.py",
+    "canonical_lf_sha256": "7dc08c0a8c97f478b9212e315949b8640756e3bf27c5701fcf9c8fac92d5a0c5",
+    "prior_record_sha256": "d07ff14291046f38e50d9ea51ac4459a8a42c9f103fa98f6409287292ab54c00",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/analyze_pilot_tasks.py",
+    "canonical_lf_sha256": "e0016d12a036445ae842b9e329bddb65ee689d6376ea595c690cccfd847abf1d",
+    "prior_record_sha256": "6f5f2288bc7e6ef1746fc058bb96c99def649383a64171273693067c490aee21",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/analyze_scifact_errors.py",
+    "canonical_lf_sha256": "4f2b5af4a0cedc1eecb2d6a843c93aaa9218a11b852a025bb839c7adc5fc8bd4",
+    "prior_record_sha256": "fe71c84eb66f7352a2e3998fa437d10726cc3245d29ef4cd182aff0f1da2c161",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/build_abbott_dossiers.py",
+    "canonical_lf_sha256": "675920ed4c4c3e3faab4e1ba287cb56c2c6afdfe7795fb93b77639932ae832be",
+    "prior_record_sha256": "845aa87ccce0fbad400e45d4efb62bea3d27bb0c8df0ae5967705b149418830c",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/build_adaptive_policy_report.py",
+    "canonical_lf_sha256": "231dd2374243075e453f749666dae0eceae589a7a415bdd669dcd3542fb19d18",
+    "prior_record_sha256": "231dd2374243075e453f749666dae0eceae589a7a415bdd669dcd3542fb19d18",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/build_google_family_mapping.py",
+    "canonical_lf_sha256": "c19ded56246688440ea2208ea8d3a378eba08f5568e9aa3b725b6f5a2a963a04",
+    "prior_record_sha256": "0ff36709460a416be46ff80e431b13f9ba2478b32d7923824b645b99281d081b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/build_long_run_report.py",
+    "canonical_lf_sha256": "f5f84e2e0af58de3343191fb58a52b29e59b24c95f91af882a6f8cb8e4062a7f",
+    "prior_record_sha256": "471be73cbf714b4f579021c315b8551d9afd7184e5d90a9a007f165072c2d743",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/build_qwen_evidence_pack.py",
+    "canonical_lf_sha256": "29cec1eb76879e263203fce9f9ec24d31d44493b417d6168868cb46d4c294958",
+    "prior_record_sha256": "29cec1eb76879e263203fce9f9ec24d31d44493b417d6168868cb46d4c294958",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/build_review_tasks.py",
+    "canonical_lf_sha256": "fab43312e88c8b6d08978ee0bb9e34770ba68717f17d4b98f61c8bf13ffd0687",
+    "prior_record_sha256": "61e5ba9a0b877ea199489a2361a8317a54acb51926b3f680cc7e31edd73a0ce2",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/build_transformer_canary.py",
+    "canonical_lf_sha256": "4768fe17858eebdbb526c04cd0f9e053b20f7ce00a71ecc481db32b732451c83",
+    "prior_record_sha256": "4768fe17858eebdbb526c04cd0f9e053b20f7ce00a71ecc481db32b732451c83",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/compare_b4_holdout.py",
+    "canonical_lf_sha256": "62e4049074f18349ad07f15e79ab2edb4fe158dd777fba25d9f41133756c8b99",
+    "prior_record_sha256": "44a2a2524a6edb76128af68433160139b491411afbd282c7b55cb6c10183769b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/compare_cross_cohort.py",
+    "canonical_lf_sha256": "2680d845ca62231437eee8573b83e671f2b51d8dc6c6f3da62b7570a80cbd3ad",
+    "prior_record_sha256": "de22ffe1b03388abfdc3f553191ea3278a8dbd91a8d542cb53a458d9210f331d",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/compose_multicompany_cohort.py",
+    "canonical_lf_sha256": "ebed14ef5a9699b2db556a35921549b5cc6ea074abaf3a052b5792d6e17d04f7",
+    "prior_record_sha256": "9a741415a8c8e2f3ed5083fc9b6f6a2416a8b12254c3827c194e88a40e87ff63",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/encode_transformer_shards.py",
+    "canonical_lf_sha256": "73946dbc5129723d8439c4424b510d8f64fdff3360416ed0c3242d6101d50738",
+    "prior_record_sha256": "73946dbc5129723d8439c4424b510d8f64fdff3360416ed0c3242d6101d50738",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/encode_vector_shards.py",
+    "canonical_lf_sha256": "eef18a84c97c4d14e51db6da63b736d537525baa81ebdf6a7a13a48fd0dd1316",
+    "prior_record_sha256": "abe1752c57df873d09e2f46ce19e205db9d5cce3f20063499fcf2b5704cdaccd",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/export_runtime_text.py",
+    "canonical_lf_sha256": "5c2d1e45499b69c1c26196c8185e6b6c4f6abc1f7a5d94afbd62092a41bef19c",
+    "prior_record_sha256": "7fe1f19fe85313cdfea3da6f7bd3ea1021316beac7c0cefba1b9d1edf1f3fd7d",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/export_schemas.py",
+    "canonical_lf_sha256": "c8919f9c403e68d7550dfdf3b8799538dd0162cacb96d32e0d709defd8c45379",
+    "prior_record_sha256": "11a9ad297940ace4c85c62583b70cbc5d2e7e9d6f579cb39c3afc1717a924e57",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/fetch_boston_watchman_cohort.py",
+    "canonical_lf_sha256": "3f91126b58d50b9d815f32895fafe051848e041d7b073a76d0ae7132892d4e5c",
+    "prior_record_sha256": "3f325c523b0fc613f08ceda6cf51cf8eae2e7356804bcb729e531d41b9911199",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/fetch_cook_zenith_cohort.py",
+    "canonical_lf_sha256": "e24fe2c2732b12d728ffd854f4596f3ed639d363148f38abcdb9de548d8f3173",
+    "prior_record_sha256": "da74674f926d59be9a8ed26adcb90f2663b2d4f082a90afc34372adbbf22c48e",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/fetch_philips_cardiovascular_cohort.py",
+    "canonical_lf_sha256": "4a4f0b8af05331d5b895f18e8d621e6ccc77da8832bf79b23a5b095d14e561df",
+    "prior_record_sha256": "f802f10fc8217e973d633b3dab9d2aef4def5bc88a7d1a6b297bdc59d2666e20",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/fetch_public_510k.py",
+    "canonical_lf_sha256": "5361c191c06c4af410115391bac5eeedb70469e36563b4ecaa235e0769b383fa",
+    "prior_record_sha256": "ce02bbb1c6c792d20cb7723f7a871320e24957a6bd22eac2019c2b1fc1aa22cd",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/fetch_public_device_cohort.py",
+    "canonical_lf_sha256": "8352a2beb632285c2158169ddf0b88763bde466b0f9d41e7b45fee97c2705998",
+    "prior_record_sha256": "8125ffaeb276a8b9897a58cda04c81078562b9d98336e77420f15ddc52372f29",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/fetch_stryker_neurovascular_cohort.py",
+    "canonical_lf_sha256": "be27ee2641081ecae8a1e65153501e4771a8fbcaf209559289ad0539ac34bc08",
+    "prior_record_sha256": "32921015256e0e4285864d8af8fc7049e79d71c9d7df720f4316d83bbe00befe",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/freeze_abbott_development.py",
+    "canonical_lf_sha256": "c2cf08d7b6b26e5a081c0ad775f224077f308deb133c67e00f970a052588dd51",
+    "prior_record_sha256": "74f89bf3a5f5bfb154220093e38fd5e4831541deda0deac6000ab25a8d702727",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/ingest_relevance_judgments.py",
+    "canonical_lf_sha256": "d8ef0e33723d28edb992c6bf86932574b96eb641e6e52cee221b908b9b78febe",
+    "prior_record_sha256": "0087f2a0776474919dad34fbeda388c5c3f7453b204e5125196cb311e6f5fbad",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/inspect_r1_history_export.py",
+    "canonical_lf_sha256": "328510533edf06efa362a2e801c512b54358d399a4ac5eac99f40a496f52be19",
+    "prior_record_sha256": "328510533edf06efa362a2e801c512b54358d399a4ac5eac99f40a496f52be19",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/manage_dossier_history.py",
+    "canonical_lf_sha256": "bb4199283d0adc213ad51e9570a81b90f538059ddd57a513022f60fd7a1a1947",
+    "prior_record_sha256": "e196854c8979dd2cfd208e41463cc08a2ab507e634b6ff797889666d061d25a9",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/migrate_legacy_cohort_rights.py",
+    "canonical_lf_sha256": "e6deeba39856b88572599493d558833b1717e5da10412b4251c5cacb08bc85ba",
+    "prior_record_sha256": "327cb4a7180a19909c09285e8ae483f896a2bdea826c310b93b57714f431db08",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/prepare_http_browser_cases.py",
+    "canonical_lf_sha256": "7dfadfac11aa33b12431540beec36c814017907e7805d42b597808ef77bda82f",
+    "prior_record_sha256": "7dfadfac11aa33b12431540beec36c814017907e7805d42b597808ef77bda82f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/prepare_relevance_review_packet.py",
+    "canonical_lf_sha256": "271cd2ace9a24463d5479ed78599549997f1c286f0a51427aed9a5475c4345c4",
+    "prior_record_sha256": "f19941618287a635bf3e9d79b57bf8bcde3dad1d6308747f5a34ccaac39e4447",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/prepare_research_models.py",
+    "canonical_lf_sha256": "bed6132bbf31c0bd0b4f34a38e75295f05e8d45fee448e571bce6af83004d4c6",
+    "prior_record_sha256": "bed6132bbf31c0bd0b4f34a38e75295f05e8d45fee448e571bce6af83004d4c6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/prepare_scifact.py",
+    "canonical_lf_sha256": "891704ec23592da5285de678f03a58195a272e6595db7cc4917b5db582e5a4bc",
+    "prior_record_sha256": "fb27261e51bbd06112f4e05cb36f548f192fb19ea3f0ef47d362239ff03f37e6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/prepare_ui_integration.py",
+    "canonical_lf_sha256": "18c94d0ab657706cf29dd1941706ed8491b62e8c1e3cfc4decba3c01d5057273",
+    "prior_record_sha256": "68cc72356cd445c619a70a0b98eb7c5436cc82c4fb592bd1ef897e17222d6b32",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/refresh_integration_contract.py",
+    "canonical_lf_sha256": "8012cafcf86c1caa347b19d7873e80d935463142b44ca4056393783a29df70c1",
+    "prior_record_sha256": "50900c6aec85cdc4386d2a9750d0b179e9aa957491557702eedcb0760f8e6f66",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/register_canonical_openrouter_ledger.py",
+    "canonical_lf_sha256": "e17bf16149ae404eaaf4989a546ed4ee5bcb0443d8e86ba6310c24a78d62e378",
+    "prior_record_sha256": "f06533b041c5063c56e37a7057b48bd9f5f14219018d1015baa7d3aeb3f8e7a6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/remote_encoder_self_check.py",
+    "canonical_lf_sha256": "eb9820b3846df4505244b61f82781fb90b6b482c6a251145ac9323e0519941dd",
+    "prior_record_sha256": "eb9820b3846df4505244b61f82781fb90b6b482c6a251145ac9323e0519941dd",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_api_dry_run.py",
+    "canonical_lf_sha256": "3fb46f26326af095e13a509dfc4410459da9a0ab2eca0e30f5049f057f168fde",
+    "prior_record_sha256": "9498a42231d692f44455ffb4b8b64f7b5ee0f637c69a7819d532d7301ced8bfc",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_b4_controller.py",
+    "canonical_lf_sha256": "f353e51931591f62933118c79c41dbb0ccefeb758153fccecfba3e9ddfd2d180",
+    "prior_record_sha256": "4b4825fdef10ef0a3b48bdda55d80bde46d41d8f7c56907893a1d7acd6814de4",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_bounded_controller.py",
+    "canonical_lf_sha256": "76aa626612d27e046f4b6c6aa6a772028e9eaa170f39703f50379d8282bdd6c0",
+    "prior_record_sha256": "a9e12a740aad590291d26297267d8382f741120485f90706180dfad483131033",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_company_holdout_sensitivity.py",
+    "canonical_lf_sha256": "ca5dc806b319d379f6327a19a6b4ad1335b32fabd76a69abec0bdfd7cff5e7f8",
+    "prior_record_sha256": "b1f5083e5f55d651c5f60ce7cb2b0e37db9c51ebf98648fc2d9ab3c4e8174be6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_cook_dossiers.py",
+    "canonical_lf_sha256": "ba179d9507cf2ffef6138784d0878e906255a85cd18c95199f6b323aed57537a",
+    "prior_record_sha256": "fc26025238e180bba9dd63c92523fce2f278b201fc90101af0b1ed4d46982c32",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_dapfam_bm25.py",
+    "canonical_lf_sha256": "d2acc8720e90725bf49b3b955a431cb956cbdca207984c2f6c683d6e59ed9196",
+    "prior_record_sha256": "1f4db7696fdcbae48b0fec7f2c89ffb9b4bd777c66997ba98cfbe0085a15083d",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_dossier.py",
+    "canonical_lf_sha256": "7b4a42c6cca44f3e5935fffeaed08a8d879d0763ce08ee73a5016888d636f76e",
+    "prior_record_sha256": "e9861b0f72561361cf1146f9523c8fcaae8000a77537a90ba2b69997fadb9f21",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_http_device_cases.py",
+    "canonical_lf_sha256": "613c184b3472e27c169ee40fa8c953d627031b1d193a4e160f17cd27986e324b",
+    "prior_record_sha256": "613c184b3472e27c169ee40fa8c953d627031b1d193a4e160f17cd27986e324b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_openrouter_generation_evidence_pack.py",
+    "canonical_lf_sha256": "7fc9703c30399e65ee82f759c8ccd3528fb0fc43f39c3a1418c0a75346bb6095",
+    "prior_record_sha256": "94c88ea1e52216ba8815afdcc24569338db5c361516fc4fabcf8e5edd4923287",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_philips_dossiers.py",
+    "canonical_lf_sha256": "9ac9d8939e647ee0f9ea6a94d56ab37457e497522cf37760c81dfd32875303c5",
+    "prior_record_sha256": "7ae6fbc6bcd9f3e1140adb81aaf41b535ca01495eaeef8e7fa6340185717db71",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_pilot_task.py",
+    "canonical_lf_sha256": "fffd050f5a5c4c35c1dc9468da14ccb2b94afd6148987818ffabed5659048803",
+    "prior_record_sha256": "e9988cf468bd4b1951e00d56d64b657af519bc976793efe794808237108dc073",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_qwen_generation_evidence_pack.py",
+    "canonical_lf_sha256": "544a80730dfd71acc28843b2b7d761d5b0f5097afb995911397c8a6842b0ef18",
+    "prior_record_sha256": "544a80730dfd71acc28843b2b7d761d5b0f5097afb995911397c8a6842b0ef18",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_real_baselines.py",
+    "canonical_lf_sha256": "fd2f5275214d50b9129fed28f76fbbb7a8a8c15d517bf587185feac5689f7fcb",
+    "prior_record_sha256": "cb6790350058a446c03acf2edecc13e9a06a56c1bf67aec611a87ad4867ee20b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_scifact_differential.py",
+    "canonical_lf_sha256": "1b7b5e38430d5c2e056b777c215725331ee0f0b521282064cc40bdbe127725ae",
+    "prior_record_sha256": "3ee174d951e71c39175da2c0a7e1f62d0df60affdd33694e0a7370a9826386c4",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_scifact_lexical_baseline.py",
+    "canonical_lf_sha256": "a84143eeac29b958cbb87aca224b88263f3b32506672407246a320a4229e5958",
+    "prior_record_sha256": "59c28fc87703865749bec2d6a3b157625f39a44a6cd165b867103b2890eed7a6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_transformer_vector_retrieval_eval.py",
+    "canonical_lf_sha256": "6f63b93cce7d1232681b4b497e834fee0004d4e5449ce7e061f50faee5f947f5",
+    "prior_record_sha256": "6f63b93cce7d1232681b4b497e834fee0004d4e5449ce7e061f50faee5f947f5",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/run_vector_retrieval_eval.py",
+    "canonical_lf_sha256": "a65721ed46aea5ddaa77e71f8378ab73db8970e0ce9344a46b2e9ff6a7699251",
+    "prior_record_sha256": "9a307528f3ba8c1ab4d5d3b457d169a599d9cc6822410b25293f82606bda3ba8",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/score_scifact_predictions.py",
+    "canonical_lf_sha256": "a631b07e1e5c06b9b7a5b823efdbce86e6250798be909c3ff89e55636e5f4dce",
+    "prior_record_sha256": "09a8d83cfb086638ced32813bf25b794caeb4e65151ded4e0c8ee44deeabb48c",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/serve_http.py",
+    "canonical_lf_sha256": "9f2f937fe3db7a900067f59eaaab5fc196a09e4e9852a346ea23fe2a7ba7fac3",
+    "prior_record_sha256": "2d51a048fe5bd4624c94cda362da3c3bde538f7b3373e697b7486beed6dad41b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/validate_relevance_judgments.py",
+    "canonical_lf_sha256": "06f72a768424f2b05391f7c50d491d4c0a2087d2655c47255e4603f5b36fa361",
+    "prior_record_sha256": "a6d91faadf9c7b1c5d7864e7f55a6373c05e1eb80fecf94818d1f3edfe3375eb",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/validate_semantic_source_authorization.py",
+    "canonical_lf_sha256": "a1997e8d0677e0fcb6dbf5ae1e3d1d10814988e40b4a50d358a4219cd8b7d93c",
+    "prior_record_sha256": "241d0b0c319b8d38f7565d4d0febda200921763efd54fd2b7042439ba8541cf9",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/validate_vector_bundle.py",
+    "canonical_lf_sha256": "a48cd3868c31eb0326ada2d635d75a0f2ad251068fb0fe063bd83439ad011e32",
+    "prior_record_sha256": "a48cd3868c31eb0326ada2d635d75a0f2ad251068fb0fe063bd83439ad011e32",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/verify_cohort_provenance.py",
+    "canonical_lf_sha256": "a4d1f5abc0bc4c1bca7348ae1d0c914fe765d363f2a7c0cfbeeac6ba7b739546",
+    "prior_record_sha256": "e3ff1dbba9c2afb1048a0098653ebfe9bbd3058ccd9f8e0765c89d1ed221ed80",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/verify_offline.py",
+    "canonical_lf_sha256": "d7ab1763c686ce608663766b17de5cbca648bfb3502e763654c27f107ded154c",
+    "prior_record_sha256": "1bbc03e05a0e4725767a5f96e3c91251acfe638ed86405afce13b043d61af0de",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/healthtech/view_dossier_source.py",
+    "canonical_lf_sha256": "c54bffa2de1496fc20cf95bc482486ee9f6a4afb7ea694fd297d93649aa99889",
+    "prior_record_sha256": "eb7decba7d5f4a22a0a3074432fc289d9aaaa2bbba1293cfc1f5453211a07242",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/prepare_long_run_offline.py",
+    "canonical_lf_sha256": "2a5e6c4c65a644ac1423ee03c39d70f97b24397deeb936a3ead55972a688490a",
+    "prior_record_sha256": "394053c02de6cd75eeb2917c0dec7f2628e564c3d1508a75f8aa43acfe8f5399",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/run_g09_g10_integration.py",
+    "canonical_lf_sha256": "57eefe4f0bee618606e2d05565eda309d32dc3029c19228217e3c789bef8ddc1",
+    "prior_record_sha256": "6251cdef144ac31102ef195af61d7c638ea533ddb53313735aa903ed758999f9",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/run_g09_g10_workflow.py",
+    "canonical_lf_sha256": "4a1a9428bc4c574982a2d71951052f7bbdaf4be6698449519a4978336bb705db",
+    "prior_record_sha256": "4f2b46c3e5c41de292e1021548045aa3edb6dafb008af6237481ded94976e0c4",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/run_g10_offline_comparison.py",
+    "canonical_lf_sha256": "2f63eb67f0439571b2491382dc79bd200d6a0a46db3f58ea44a4062749efbeff",
+    "prior_record_sha256": "6bda000ae03e6f9b4f4a6587c307d2d2ee4edc87148ded3d305fddaf5ce23629",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/run_g13_offline_preflight.py",
+    "canonical_lf_sha256": "c382d6636cee920c8f8d967b6bac0afd53d1af8a64f76cc592a6b713f2a51751",
+    "prior_record_sha256": "48c9838249395e3f18be43f7ca4d80642c2b9f9cb1eb757296dd646adbf997f1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/run_offline_verification.py",
+    "canonical_lf_sha256": "68a20c97605c58ba1aaaec1bb1c1a85effbdf526aca873c233c06dba2a5226b2",
+    "prior_record_sha256": "297cd5f071a998c7d9e7f8b1b9fcf05bd63af7747a9d8b8ef7aaf5dc14c04a1a",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/run_provider_pair.py",
+    "canonical_lf_sha256": "5f94cba9b55d6010eb9bac0ba4f3747fa7dc3b8b5b05e177b4602d0d3d2864aa",
+    "prior_record_sha256": "b4ae7e579333b2ebac6dfdc023a24eb5c5325fd7040a2aef3446f7ab1fd0fae1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/run_provider_pilot.py",
+    "canonical_lf_sha256": "00a6260d10965348dbc53706b7fbd73a5bd88ec3dd8ca3593e47caa0ea94a1cc",
+    "prior_record_sha256": "b7b14a0e7c393d8360a220fc565bc8b5f5e916c862ceaeed899331692988ee73",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/run_provider_recovery.py",
+    "canonical_lf_sha256": "61078079881c0a0376ca450d0e3acd7341c1b3f343c415b0679ce08007639b1b",
+    "prior_record_sha256": "95da50f85ef3cc1e0d7fa71770fe8239c71ffad923c804a6b34b5e408c48cdd0",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/verify_g13_stage_boundary.py",
+    "canonical_lf_sha256": "30df031cb5bf3034509e9b213e902daacd206ddd5faecb2ad74e742c4caed1e5",
+    "prior_record_sha256": "4fc4f1da8786f6d255fc56840749b6b72fdf33e6b988bedb9b33968d224201c9",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "scripts/verify_release_offline.py",
+    "canonical_lf_sha256": "f0c7b6452aab9c91c5244bc488bb8b0bdc5c995321692f4c87ba5a06824d4bc5",
+    "prior_record_sha256": "c968ba33eb0ed028d50cb390a01c73c4aa2492243029911df65b0d3487297c94",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/__init__.py",
+    "canonical_lf_sha256": "c66342b6d1c98cea75906fb4c2d6f8d64411513ac7abcf2f1371a3adb8320e3e",
+    "prior_record_sha256": "6aa12e52856fe4ecc80712be04c8c2827d773e431349c7000a3d2aafe23f7f1f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/adaptation/__init__.py",
+    "canonical_lf_sha256": "2cd11520634dcbe688f8ac71d5ab7c5ef88efeaa5bbe005afcd1621d2433825f",
+    "prior_record_sha256": "cc737cc58520084c9b8f8d254e5f9cd603e8ae318cb6db16c445908bea1fd088",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/adaptation/engine.py",
+    "canonical_lf_sha256": "aed0e1855e0ea9c77e0e0a0ddebe2ef41d3d81ecfee87967edeb9bd53e5b0d9c",
+    "prior_record_sha256": "c4da61d05e538d3a3df1feaca10ef9b96832e14847fa8a7e8381c1a34da4eb1b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/adaptation/models.py",
+    "canonical_lf_sha256": "f1c449189f292dc073d853880fa01d5f3d47d937944092bd2f51a853f79e1f74",
+    "prior_record_sha256": "3cbcf47f680fe7de36243fcce22776a17d6ed824dd331e62ecaf4f0d2e4faf54",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/core/__init__.py",
+    "canonical_lf_sha256": "bf5ce7ce79308aed32d032c549d2f40459b9c524dbf2c8df8959871460336481",
+    "prior_record_sha256": "28647250f1da0274c31003d853fba1b5486c8127f8ca7c08960f566fc6b996d5",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/core/models.py",
+    "canonical_lf_sha256": "fb6203a68bc3324708500a709f468719d2d85a73c7ffff201268dec8f8cfced9",
+    "prior_record_sha256": "0a2d27f1436dd0d66142fa3fc70df7eb95f4d5d8fc18ff049c9f34b8680ea641",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/core/providers.py",
+    "canonical_lf_sha256": "97f5a2053644651ea66a2026c2d9f89719e8344a5d42e28326e21ec16cb77b91",
+    "prior_record_sha256": "6306427af9371ecb1d6576314ee9f9f87b314bff9e06bc7c6ca84df30ea04dbc",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/core/repository.py",
+    "canonical_lf_sha256": "4dde6d7cd3bbefc2f00282bfb5e2a0bf7af25bd30321b47e2e049126179d7564",
+    "prior_record_sha256": "e72a6fd93705d3d54e790f1fcaa32ba974ef453835a300cd230ffef582dae28d",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/__init__.py",
+    "canonical_lf_sha256": "ae08346a8f206a81bee383081e4ba6b1da6e6618bdca23abe5c7b06273d41e9b",
+    "prior_record_sha256": "81e8f7d947309cabec0c64afcb401f50368ec2acea265db0ab68e6f45eb7e2db",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/comparison.py",
+    "canonical_lf_sha256": "0261b874e7725ae797754699fae01b62f1d0d2abeedc50ad1b421a6075204554",
+    "prior_record_sha256": "ee7716226f39c6badfb44800c18dc906c447b1188798c925a632b421bc31bc45",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/__init__.py",
+    "canonical_lf_sha256": "baa116d6fbbd6a8f009ac67374ce1b2acc0376e38aade17b40264aa0ee07a4b5",
+    "prior_record_sha256": "5dac3557ca44c36713ee1db30b2c14ed625394ef160f5adcc6c82b14796837ea",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/judgment_submission.py",
+    "canonical_lf_sha256": "139de7bf96b95cd61c476d35f7379d7f86d96f89b5adb5025a255acc5a993fe9",
+    "prior_record_sha256": "a8e4b25f8f4fd81d62adc2f5ed9980817e77da34f7ddf811e7ec321eddd62ece",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/judgments.py",
+    "canonical_lf_sha256": "4e1b84e71162da489d6a5c66eaf5817d36355915f1803ac682934971be8e2021",
+    "prior_record_sha256": "1da8490d95f23d7b4c6f88a0798e622fb922987463a80b59561adaa2e134a391",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/local_retrieval.py",
+    "canonical_lf_sha256": "2fef0dd47d310d9e77aadd044987d969e3228b7d416e63fa22b2a4c456a75700",
+    "prior_record_sha256": "335927c8514c89e43216d06724fcf4cba74c7b7a3fa4ce43989fb18ae7b414a5",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/provenance.py",
+    "canonical_lf_sha256": "fcbf92ad45ec282d69503c29d423792274b8c667a7e40277c25e15ffd0e33b2a",
+    "prior_record_sha256": "6b3c2b65f5f018a18b5db885b008c80641e24103df9039d440701196b45f3c65",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/retrieval.py",
+    "canonical_lf_sha256": "c4651fcf819ac5633b23c8c984ccd5945893c8ba5959f17fddd4c1282d240673",
+    "prior_record_sha256": "179657a381702f230d4eafcaf73ff66429e8db6a927a60dcff5f3696eef37366",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/review_packet.py",
+    "canonical_lf_sha256": "2ea909f97137b6f638727c4323c42189cffd49b5f87c049958e15f5924ed01f2",
+    "prior_record_sha256": "f03d78621a197684c4723de9897e4b60ff0c95fdfab3e43b998739bb2ac442cc",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/review_tasks.py",
+    "canonical_lf_sha256": "37b7ef46982bf5bdf9e904d74e374622a80a5926fba8f58a68416c2f6503b9fb",
+    "prior_record_sha256": "bae271b2d94d40edab2b26b8b3d33067b05f0ee5df830a4e6225e16d567fb637",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/scifact.py",
+    "canonical_lf_sha256": "0c8efd75a118a8050131c6f0a446bb62ed15b5efd6b174237b10dedc165afeb1",
+    "prior_record_sha256": "dee01f36f0d93a6bad4dccbb96d7ebc9571d45c420676fae5bf422b791a8bf3c",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/source_acquisition.py",
+    "canonical_lf_sha256": "22010a9e162ffb25d723d21badd8d4b7be9db48f66614b7217973b23e4afd514",
+    "prior_record_sha256": "42580bf44ec620de74b3de08aa1ee9e22dd77383628f4649d56782ae1ac10fc7",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/source_authorization.py",
+    "canonical_lf_sha256": "0e00d4be99646bcd45fe595aeb87ba1685f936485aa3875cc6616ad76d6e78f1",
+    "prior_record_sha256": "5b8ee71c7f0b9f851d053fa8ab04c59e4a8ff5f8de6a9ca26aab27092e0d9782",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/transformer_encoders.py",
+    "canonical_lf_sha256": "de3c9bd20cd82ca5c0b9a94207533b28f0f7f61675035bc7bd102a0cbb1e8b8f",
+    "prior_record_sha256": "de3c9bd20cd82ca5c0b9a94207533b28f0f7f61675035bc7bd102a0cbb1e8b8f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py",
+    "canonical_lf_sha256": "a707569ae9d350bce92350ea0c03158b70c0295f4234db53b8a6e32ef9334244",
+    "prior_record_sha256": "9afc248de949484b52962df1c91a9759ce35f1a26b3b9ad4ef61ad5dd1e7ec0b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/pilot_readiness.py",
+    "canonical_lf_sha256": "c687abb0afd6e8eb2cedd0c0f4c499506dbab631c2911b43715017dc07c83c23",
+    "prior_record_sha256": "473785c9d50710c56bbb0f5d987664a7f5bffeb3c8a0ddd56a6a501bfce47262",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/stage_boundary.py",
+    "canonical_lf_sha256": "967bf313ad21fecf61bfcf7a323070d001ac607b887db4f08affea64770ce0b7",
+    "prior_record_sha256": "fae22ac3bf4fea477e085c6aaf47ca4320e5d9523101f1ce3d2d2ab9262b161b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/evaluation/synthetic_corpus.py",
+    "canonical_lf_sha256": "51d4ac96f65f938745c5f05a6be507f47aa0dfc3d66a6e87cc3406a755302214",
+    "prior_record_sha256": "b2fe0681ec142cabd65b032cd3f5cde690eef2fc96b20066109094d6aac121b6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/extraction/__init__.py",
+    "canonical_lf_sha256": "561d61fcd4e4c805d60622b6792efe30d093da75f4f8dc23be0127ea8f7069d0",
+    "prior_record_sha256": "55b539bd0206d36e9faff833ccd6ccd30579acbcf005e19766d8562179600d8e",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/extraction/interfaces.py",
+    "canonical_lf_sha256": "955b96938eb3330f3c465be499e7765cb70a3efe44295ba1a1a91c5bc4cb4804",
+    "prior_record_sha256": "8dd93e4c4e25e13aa7697e7b01da9ded1a00b49865d3b689b263f7c52dc6b109",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/__init__.py",
+    "canonical_lf_sha256": "48bb6dc4d117c1e75075c588c2526df8ee042a6d74067d90e6afe1e3cd02f0e0",
+    "prior_record_sha256": "de4eac6550c1a7aab6f9fa7230b2d17b752f355e9c41105851165c509f54bece",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/abbott.py",
+    "canonical_lf_sha256": "e1bb25420620808987379cc602352754ecd6bd09968625c9c67aed7d55ffd13d",
+    "prior_record_sha256": "1203ae9f44f8d34d993326095d35cd873a572201c07363e3f863fc72611e9433",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/adaptive_report.py",
+    "canonical_lf_sha256": "e9ef9bf5bd1626e2b54726379da33ed72f9f9dc9a7d8b9ed0f3f0ae9d7c3bc8f",
+    "prior_record_sha256": "e9ef9bf5bd1626e2b54726379da33ed72f9f9dc9a7d8b9ed0f3f0ae9d7c3bc8f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/api.py",
+    "canonical_lf_sha256": "110da7c6f919bbe3582370d3238b8e3b852c4c2de86248ef1a3fc674e302a965",
+    "prior_record_sha256": "46d58c2eb279fd0b9b02bb1e40a5de4b06bf24925bf29113b1a18d70339c274a",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/api_generation.py",
+    "canonical_lf_sha256": "7b9e285b8040f499f185a57abf76af6bacc6ebe5952ec0674443fea4978c5773",
+    "prior_record_sha256": "bb16096bdd9dbb787721e1ee229e0c9c55164dd86c6ab914d87faa9cb2559694",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/b4_live.py",
+    "canonical_lf_sha256": "2ae0a388f67ec5dc7c608a069ecb17ab4092bd044a947592400dbd13d0c6be4c",
+    "prior_record_sha256": "1a6f344b3ab1a87416d8a82a5b2182539f9dd7c750af2fdbef9220b97f6c1eb1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/contracts.py",
+    "canonical_lf_sha256": "115e3790d12538aa2832c0d491a3f20f87532e72fff63eed287c881babf732ac",
+    "prior_record_sha256": "c708c9e647ed27ee762508f618d3baf5fb78ae1ed70b7c3a99ae6b161a2acd40",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/controller.py",
+    "canonical_lf_sha256": "96bb940a022392b23e27aff7e8a46827405d22bc94ef080187b107283cbdc2d0",
+    "prior_record_sha256": "c3a077f887c02bcfacf2b8a12c561e70e81d20fdfb4abcdf518cd9deaf4dd042",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/cook.py",
+    "canonical_lf_sha256": "82dc43602d1434226f72984a9f31a725d6b4d5e0dfb4fa9fbf1e017368100074",
+    "prior_record_sha256": "801a20e099f798f1a2b73fe1a1ad1136119a56d71a09f161d0e514af0c4128d3",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/engine.py",
+    "canonical_lf_sha256": "119c1589aea13417d73062043640af4465f6842b617740f4099387eeb16a5aae",
+    "prior_record_sha256": "e5f722d6ec46969cb0fcef1df122ba2efab7f91d650b8c422c12c19d524707c7",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/generation.py",
+    "canonical_lf_sha256": "c1a36c90a327aa4a4777d6d9479ffb6930bbdebf69119e3fb984fb3f88f155a1",
+    "prior_record_sha256": "c1a36c90a327aa4a4777d6d9479ffb6930bbdebf69119e3fb984fb3f88f155a1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/generation_payload.py",
+    "canonical_lf_sha256": "6cf3dfddec727cd1805184dbb864d8c64004d54ea7eb247689410cda10828257",
+    "prior_record_sha256": "f6487d7f706d17335f98d44c33ef2b772efe3b6eec2da3d3c95df377fe908de6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/history.py",
+    "canonical_lf_sha256": "a5424af7bff3a943b9f1d3f786a14863595e29099a0fd935d8b78c5697d7c0e2",
+    "prior_record_sha256": "3d91e6e2cbae8ff58d3e15c4379d5a03040e074a44dd7d02bd2954d844a85971",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/http.py",
+    "canonical_lf_sha256": "2b0f482990506b9de7b927830e894ce435d3c5ac3a00a747018e8a981838e300",
+    "prior_record_sha256": "d23f270827aef9ea561a6eb640a7614671999593894c146921c08cf4c3230bbd",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/philips.py",
+    "canonical_lf_sha256": "b0dbcd5e0e4e6ea37d011809af67c968648ce4f2f513a8b3f228e591d105b410",
+    "prior_record_sha256": "ffc34d61cf0f8c9d4439a44d578ebf3d479c89adfdf26ff057c332e18cc67a31",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/policies.py",
+    "canonical_lf_sha256": "7861c7fd82b516b1fa804cdceddfc4c9a1d8b23282867f8d575b1433f983f5ad",
+    "prior_record_sha256": "739b5b57b13b84ba1b70c3ad1c72696c37d905f61fa0c5ea1b29716af1025ced",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/provenance.py",
+    "canonical_lf_sha256": "888ac7eb204144df7487406d96ac395663a1a96d1594d867ffef28bc99d7a3f7",
+    "prior_record_sha256": "97a98e9b06ede7801fb337abe9037ef0de58055a95a7889ac7a0253ccf3087e7",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/provider_transfer.py",
+    "canonical_lf_sha256": "5cdad746d957465d41ead6e4dd57d881c9d4daf72bb622d75b0b942bb5f61818",
+    "prior_record_sha256": "4b7cc901d04e311225d673c6327d6a8a808b284c9bb299e350bac88a0a267f23",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/rights.py",
+    "canonical_lf_sha256": "e078147ad3f7ac86ad1138e63aad602845ca2e1471b66ae35af37dcc3e777a49",
+    "prior_record_sha256": "2a31b9ae1ec2fb5a4f9226bef893c29ada15368b84dc879267415e390ebd37a4",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/sources.py",
+    "canonical_lf_sha256": "56b519ada915f9610d07124331ade784da3a002ea4b5b4c163b005d7a45c8459",
+    "prior_record_sha256": "fb5c71010e8df018012602063ef791a20f71c2f2e7b55b87a38b06830a45a0e3",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/healthtech/vector_http.py",
+    "canonical_lf_sha256": "5f671ac9f9c60debd0c12c76d6c5f1d6d2e810d6dbafc328f621f7aa04649cf8",
+    "prior_record_sha256": "5f671ac9f9c60debd0c12c76d6c5f1d6d2e810d6dbafc328f621f7aa04649cf8",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/ingestion/__init__.py",
+    "canonical_lf_sha256": "5c93a28eda70ed9ef4efe4097f3d7e207efb7faa32d748279fd3c5dd778b98fc",
+    "prior_record_sha256": "e4674b993dd07087e061e16d8b5d87baef91b5b5d0c8c46a2e19dc338b284415",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/ingestion/pls.py",
+    "canonical_lf_sha256": "deaf152c9262fda8cca4491e89ce3d789bc32bf14d0e50fd26166e1b1b59514b",
+    "prior_record_sha256": "f29b56cb67afd98d796679b268cf05b2f0d3d7fa3d2405256e21ec25976f15c4",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/integration/__init__.py",
+    "canonical_lf_sha256": "7de637a62b1b6380fea9b13374b6949c63fe716b3b13c85d51650e40732cd5db",
+    "prior_record_sha256": "7c156a4832154c4e82387ded6877b6be249461cf8c448b663eafef693186f7bd",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/integration/pipeline.py",
+    "canonical_lf_sha256": "6e1c98eb8598cff2022d409942031f36ee7a294a03637aab17dad05017fa54b0",
+    "prior_record_sha256": "43562334fd2f63909f561d3236108c89baf8c2c6e4b025b07b4f7a4dfed99008",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/product/__init__.py",
+    "canonical_lf_sha256": "a0d3b215b782ae0ccdaf9ebdf4ec1df909c78bdab22c64ae2fb075a2a6ef4bcf",
+    "prior_record_sha256": "fe15154979e318c3115d2b7c9d34ab3c1c0e3e1fe4c280df78479df6472207a2",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/product/contracts.py",
+    "canonical_lf_sha256": "3a77100a2ac246a9f9c6ae8c073cba58ce2b9951796cf8c88ab8237a8c416c26",
+    "prior_record_sha256": "b253ccbeb91f0aa140c24752b5e7a8e0ec57213f9ef597f92fd5148613ce149d",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/__init__.py",
+    "canonical_lf_sha256": "29c97d6a661d93cb0cb03b36c3685ddb080c8f41cbd22023a3d390c1fa5a17ef",
+    "prior_record_sha256": "7b91559637422580611f208ccb08f7ff86b8644b4b9d251891a6471e6b8a72f1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/credit.py",
+    "canonical_lf_sha256": "ff68436979912e7ba08b8e217f27557c28179480d053ce1a735c3806f1451403",
+    "prior_record_sha256": "7c1c503b2e638b43a456344c270e23ce21a0dbaedbe62c58a7803f82ee9e9b5c",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/env_file.py",
+    "canonical_lf_sha256": "16c27851d04f1897dc2274dca97130b846952c0d29c4213bd35d86dccf196655",
+    "prior_record_sha256": "01f73509d26cd5990f9f11033414f4ca3f0fac465d7918bec080b4de51d66f31",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/history_export.py",
+    "canonical_lf_sha256": "466233b5871fdfe44bc01037c64a1d35baa53596829926c668686d364957db5d",
+    "prior_record_sha256": "1cbbba975f2e867fe062c6f62913cdb3f0e788cabf202f455e8963feb2fe849f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/history_review.py",
+    "canonical_lf_sha256": "782d4a33373f0e9c835c723bfe35b2ab689178a0896f6a78f0739df05f90374b",
+    "prior_record_sha256": "32a3e3041f86a5f66fa6ea1edab28846e2dc6cfc6663527fc0a9f501a0c23c10",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/ledger_registry.py",
+    "canonical_lf_sha256": "a5acb0ce9160e503ed8e8126bf7d071ceb69e3468d6d9a07ec8f417fb92b2a72",
+    "prior_record_sha256": "6030b16e7bb8b8b1e46082e219d2abf2accfe6b9eb2e82bf43d4e75d6c8eac22",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/openrouter.py",
+    "canonical_lf_sha256": "4ed8eb52f995a4b52db236c78de3e20dfa0177d2d73a6ab9072c07a601be55ad",
+    "prior_record_sha256": "74488425f8c8f49e769662b9e5d7bfaafdb4bd22e84f1633e79ea533d56001dc",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/paired.py",
+    "canonical_lf_sha256": "2c52a5af046fd3baf25c6e412d58665c08f5d6574554ffd17d26f331c41ed198",
+    "prior_record_sha256": "2113b0cc4a70df8459d87d20544168121ac2a490d048f8896fee5ee708de8039",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/pilot.py",
+    "canonical_lf_sha256": "bad61700022a1d51434f5b7b107b6e68bcd935b4880f722edf2af091a7a35132",
+    "prior_record_sha256": "8f8db6ca9d6234303a8037946713e8e3094580705fc6c2887d80177bd97acad1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/project_budget.py",
+    "canonical_lf_sha256": "c85975cea32f5dc9dbf0d7634e28a51bf2feebbf9d872fccabe4989755bc93ac",
+    "prior_record_sha256": "d0433195bb33fb5044f37087c90b07e3be05950903a606c70e764f06feef6566",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/recovery.py",
+    "canonical_lf_sha256": "e8a45ff28c7c33b21d261cb62243de4caade8a5d96b2b26f74494471d739a8c6",
+    "prior_record_sha256": "c2a49e6aff177e9a3cdfe0c69d29d72b63a98112237fda37c06d03d577dd5355",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/providers/round1.py",
+    "canonical_lf_sha256": "edc0c69f70ae16279a0b648f2369cfca911d3e7c4d95866ffee970d2470d8e61",
+    "prior_record_sha256": "2885190fe5903252737b54d6cf49f15f8b7e26ca3f03fde8a3e817985ef3d500",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/retrieval/__init__.py",
+    "canonical_lf_sha256": "3d3bb0c7d634fa942688158dabb6e2211a283887d82a923ee7d5c6cdf5b581e3",
+    "prior_record_sha256": "6a8e4f00bd927d6b59e204d2d6acab63b8a5aaf16770053fac42285d4a666740",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "src/patent_to_pilot/retrieval/fts.py",
+    "canonical_lf_sha256": "243381ddb3a45cb0e2ad158a6ccfa30e1d9e05de123d9feb6959d6b50ef944b0",
+    "prior_record_sha256": "f74ca1e4a0f16bda65b1557829d713fbc4d2c656acc78d5cbd7da2d7f6e23aa3",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/fixtures/audit_regressions/README.md",
+    "canonical_lf_sha256": "599174954ac01012744999c4732acf94a6211943add864a8634aa4589f930443",
+    "prior_record_sha256": "6531d723c7aa8cd6a7743d297eda771b27661decf7b7ffec37a1eacdd76b3675",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/fixtures/audit_regressions/regression-matrix.json",
+    "canonical_lf_sha256": "108bf18e24d551307a6886741369359bb20f6af11b3a344c8c6b6cfc56fc320d",
+    "prior_record_sha256": "34fe66e6239625c38d5c10afa376fa4be1a8267cd07402213cdb19b6ae189bab",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/fixtures/g11_provider_regression_matrix.json",
+    "canonical_lf_sha256": "dda771a049edad9c018a6727f6324eca04ab620b47137c45e7ae4d75e4c39723",
+    "prior_record_sha256": "090a123e519c05891bd622fead302a85fe2fcc36d9b76b2a5a180caa47fa9219",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/fixtures/legacy_pls.csv",
+    "canonical_lf_sha256": "7f5c0a38c71a7d4869084b0812baa1d724821400cb29b3a3a2968c8b03e835f0",
+    "prior_record_sha256": "c82a8e3752c3468cd3245fb69a0da787e9e12bd9d58117d99b43681c8f0a9918",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/o3_test_support.py",
+    "canonical_lf_sha256": "e1c87da968f94b08135bec3eab774516b7bb1f177c0c9f96ac94dc6710c9628c",
+    "prior_record_sha256": "e1c87da968f94b08135bec3eab774516b7bb1f177c0c9f96ac94dc6710c9628c",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "tests/test_core.py",
+    "canonical_lf_sha256": "36d7308650db300d508a350779b95c64b2a79da288a76bd3580f16ea7518d917",
+    "prior_record_sha256": "b79d4e769d8fff0048186a0ee080900762c6474f5c2f6697eca7b5a6ab68ed9f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_g04_profiles.py",
+    "canonical_lf_sha256": "d275ea79ca965225edc5ddf865e026ae25391e0377283c229f285b0430a9d46c",
+    "prior_record_sha256": "84ac82e7e35ba40cecca3538fecfe14443f7886e20db19096aae36f6ad24bea7",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_g08_pipeline.py",
+    "canonical_lf_sha256": "37b4760672dbaa7a601714080319fefc3fd117380773484163fdd0e3907d3377",
+    "prior_record_sha256": "61f7e0373c053a3585e736573d0130c8f2d4bb772c604df0fb417437d5b3f328",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_g09_g10_integration.py",
+    "canonical_lf_sha256": "890b5ae2a4b07fe9897f20f1e4de67ed55dbe61327a2751a57d4fa41281bd790",
+    "prior_record_sha256": "2b8a7701f7ae479a7c1f6ae014a471eedfb078f618d9cda8a5e83b6109fac734",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_g10_offline_comparison.py",
+    "canonical_lf_sha256": "f72129520c3149448d91c923f1bdd8dd2cb13d0517e2333249c509c1333b5e4b",
+    "prior_record_sha256": "6120b1c97b2102920403285018f048e2281caf4e2593d5eb959d64651bb1b253",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_g11_adaptation.py",
+    "canonical_lf_sha256": "597cdc550c7c9ed2cb036fc9052ed903c6ad1d719ad7adf0ee60a5f000c32656",
+    "prior_record_sha256": "39d5d99cfc3544f86057f856e98753d8fb1d45beeb5ea5299ea79503f38af213",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_g13_readiness.py",
+    "canonical_lf_sha256": "7fd85c92fe48adaf8c792399a74ea0d1f85a58fb170cbf3ea5964f814fda5009",
+    "prior_record_sha256": "15bcb4bcd3a6d6994ef86e4198261bef7183ffa7162f3c65e102e8edcabdfd25",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_g13_stage_boundary.py",
+    "canonical_lf_sha256": "163005e7bd7fa70318a99727ec4e9cb59e18c434c40d1f08e573f9c1181afc44",
+    "prior_record_sha256": "37ca136138e5ac999cc55373a501b24c0902338410e8b2efb2794473262c7164",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech.py",
+    "canonical_lf_sha256": "211dbcd5e8a12666e101d1f8fdc2d38ee9b57bf02a65a08ffedddc7db6e32f92",
+    "prior_record_sha256": "170de3c2bb71bb5bab4ea748378d009eebb06f0fdc20b50dc7274c7ab6b9f2a5",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_adaptive_report.py",
+    "canonical_lf_sha256": "6a3a9666594bdb01e1d45a9d9400ca9a3e9376d66845bfcfa446ce31fbcb8dc2",
+    "prior_record_sha256": "6a3a9666594bdb01e1d45a9d9400ca9a3e9376d66845bfcfa446ce31fbcb8dc2",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_api_generation.py",
+    "canonical_lf_sha256": "721750359da052919922866f9c5374a8e6d054fcd4bdbc16ab794a6410657367",
+    "prior_record_sha256": "50811b9ad36d78afb1fe429b3e659b73bc07a4e5b31ac5bbca3fc00806dfb71b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_b4_holdout_comparison.py",
+    "canonical_lf_sha256": "596692058b06d7a6beb8bc0b76cfcb91dca25a14eeed3bf2dec63494b87478a3",
+    "prior_record_sha256": "61b17e35d20bbdcff4166cd51fa7ef6921a91b8c64ef264f5271c34f06b9f9e2",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_b4_live.py",
+    "canonical_lf_sha256": "cc91933332b3016a87900a309daea3fcf2294ad8c323a314e86e792388d52e01",
+    "prior_record_sha256": "5fa9bb5b54e1af29875cf089732a0a99c426f93bf0e2164d2a117b26d123de51",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_boundary_matrix.py",
+    "canonical_lf_sha256": "782bd4acbca7cf2dd050cbf7a41b4ca7462a0b4a8f8f11ac172ceb490c135561",
+    "prior_record_sha256": "d9949d333947f38dc98a2ff119a1a55fd8e4933944af8bf7b9cff1ab0a70331c",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_cohort_migration.py",
+    "canonical_lf_sha256": "b8c2ab221749b5fa9499a52194ab6329782ef474edfe7271d184b1eb3f6331e7",
+    "prior_record_sha256": "a878561384fb3ff012584a0565fd9e67cf3b525673a00f1476074c3a70897704",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_company_holdout_sensitivity.py",
+    "canonical_lf_sha256": "524ab899c38f9b460f17d686377bb7ada4d07a46adbd6a62728425dc9f76b050",
+    "prior_record_sha256": "817321aeb8540d4bca5a084a6027c952169fd0b0f14be014ba20fd11aba7864a",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_controller.py",
+    "canonical_lf_sha256": "872f0552867588afff485be18672ba83f5fbdde9988cd8b02f9613f210836fb0",
+    "prior_record_sha256": "29ed22752b0b3e81c6e896c5a8026776e59f5567c0dae2f8ff2986dc4aa35114",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_cook.py",
+    "canonical_lf_sha256": "28684b36b6c3cd8d2a647efa19e95b694ba700a5aab3f5a27eef41ca18cd4824",
+    "prior_record_sha256": "a6293ad37c009db42bb54bcd43465549bed5a2e2b02d5dd1c9fd3d9832067a34",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_cross_cohort.py",
+    "canonical_lf_sha256": "f1b2febac64e11d40e71d49aea2da7945cdadcb30dfd6ef675c52f59b7806ac5",
+    "prior_record_sha256": "edecab20f2ab3dd5c386653bbc5fac4b1ab82183ff5d916672a5a585046867ab",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_dapfam_bm25.py",
+    "canonical_lf_sha256": "3e7765e6f98d38025355cbc7f903fdb768363cd1df0f07aa457858701cab5426",
+    "prior_record_sha256": "a56ec5abbbc86d4ff0bed84a4707b1c808049cdcd779b882bd61432aa27ad52d",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_dapfam_coverage.py",
+    "canonical_lf_sha256": "c2358e94ea2d408f7e059697bdfb28a359a2ebaeb4487aa1a33e13ae1e3ab1f2",
+    "prior_record_sha256": "e089a13d93751b6f771874b3cdad901bd7758253705e49b11bbb86e654967878",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_family_mapping.py",
+    "canonical_lf_sha256": "1b74709a479dfd2b00e0b13db7e3b154dba17bb720779552822c580ccef1d5f6",
+    "prior_record_sha256": "e3c61974c91599694db0c74e084dbcadca9c374ee286db3307eda9adabb4c1ae",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_g6_skeleton.py",
+    "canonical_lf_sha256": "4b35e85bb6b5a5c656c07458aeef587f475fb4fdbbed2689a5f80770876fd27c",
+    "prior_record_sha256": "038b12ee5380886ad373413a16d265dbfb92a226fed0d265f3aafb92d10aab71",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_generation_payload.py",
+    "canonical_lf_sha256": "c6ddeaff2e96cc6366050b6bc0715cd8465172bf56cfbed4cfc0b799b0091615",
+    "prior_record_sha256": "565a54ece103d5d57ba7fcc988512b74f3c3884e786ff6ef8bd70ecef1c2367f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_http.py",
+    "canonical_lf_sha256": "9723c0b1609da71947f94e4103403a3d5fcac946a7f32105f27890a3babd8d4e",
+    "prior_record_sha256": "8374781c2ca1a6100842f76084d0b25fa0fd0ae4511af8bac777896f56b485f6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_integration_contract.py",
+    "canonical_lf_sha256": "7154c90df30a2df3ec7113ee04460bff67679c3fe55bd79879bc6cdc0fe24169",
+    "prior_record_sha256": "f2d17fc726776230896f69f88b05247a30d5a90f1c75ebc1741cecd1d75f9880",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_judgment_submission.py",
+    "canonical_lf_sha256": "a37b8102c18c7a47ab34bfcfc378ca75b46e4512973aa6576bfd52e358515614",
+    "prior_record_sha256": "95696991443956f4ba7ae5f39bad3e52774165e91a1324be1feb4b3b7808d401",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_judgments.py",
+    "canonical_lf_sha256": "deb37ad3f1f4ae647c9c20a1854183dca010319eb3dc2019aad074c5499a1107",
+    "prior_record_sha256": "4e193a813fabe129d91e66ed8a36913aeaed1ffbc7293ada33dc60e4a59d79df",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_ledger_registry.py",
+    "canonical_lf_sha256": "de2cf5bd144b434d137d0d8280caf800c24b5199a0168d6401a80c0c2c1ce5a1",
+    "prior_record_sha256": "6f837f48795bfadb1ca6b7429bae307cf3ea0d171fb6fa37f918409b0263f4c8",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_long_run_analysis.py",
+    "canonical_lf_sha256": "fd180f8e6faa7155fca8c253599d1a0fa206b5801694f345266a44093be499fd",
+    "prior_record_sha256": "ac09cbe64a0ee96a5092cb1fc63b7007d83e8a3df65a1a20e704d9ac556a0843",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_long_run_report.py",
+    "canonical_lf_sha256": "af1754a6b372fe4bccbbc1079ae0b2f3471d99a4f8fbac479ed265d94cad30a7",
+    "prior_record_sha256": "b94eb4a770fea9c977640f74b31446c4f3ca84ba360d7e75aaef19022a08f140",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_metadata_projection.py",
+    "canonical_lf_sha256": "bd702c89becc14dca36b81c78365108ca7480b84aec11a304e305af3ddf020b8",
+    "prior_record_sha256": "6924a5633d5a6f87bdb0806f0b7c3f2838a76200ea4d9b587fef46fceb1de05e",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_multicompany.py",
+    "canonical_lf_sha256": "a105a9c6b2b06d8579a28346192c81aad8da13355c65902d49b9952ee27a598b",
+    "prior_record_sha256": "673238c33a0fe938e2b256fcac050b25c295cece3252cca1ccf31d8eeb1c1a8f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_philips_cohort.py",
+    "canonical_lf_sha256": "98faf11018120c7602e3f707ca10d4c0db47df8bb2370576c0685c56bae4a22a",
+    "prior_record_sha256": "03ed54d931d1ce540bd54d43a47a09a7e63c05e88cd02a85656536bf413798a3",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_philips_dossiers.py",
+    "canonical_lf_sha256": "8a03848ecfc5cac128e47eeee506ebcf48117db01b872cb89f32a30e051796f9",
+    "prior_record_sha256": "2cf7381166b2df841eb9f9a97fc470a453e1ea9eb28e08c9f0a8d88b91418780",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_pilot_analysis.py",
+    "canonical_lf_sha256": "923c91c5f2a47762a0bc9e63f2f7ddf9d9b7c34a767173e48c4cee28c240f317",
+    "prior_record_sha256": "1f180025c582a58f26c119f1da3dc7b5440e802238a215f1f029e0dc1861683e",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_pilot_task.py",
+    "canonical_lf_sha256": "9558befc88053bb0aaa9fbc28fbe6aa8c4d8f627906a9aaa29df90930dd96067",
+    "prior_record_sha256": "cb25c9b6b8cd26ee25403341c0dd5432feef94c6d4eac6f37564db0ffdaca7e0",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_prelive.py",
+    "canonical_lf_sha256": "754834f06794ad59065cf10e309cbb1792d566739e967cdaafdfa104c1ef1db6",
+    "prior_record_sha256": "b27f95d39376b2406e62764d5310f9c4cd1335421eb540055ab12b0886c4c870",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_qwen_evidence_pack.py",
+    "canonical_lf_sha256": "bf9bc3c9f89feb644adc5a6022e7e47e66b7b717252fa5f13183883b149a83a0",
+    "prior_record_sha256": "bf9bc3c9f89feb644adc5a6022e7e47e66b7b717252fa5f13183883b149a83a0",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_repairs.py",
+    "canonical_lf_sha256": "9209c8cfe61713d15ddf64c8cbde02dbdf32d712302bdfa98fba4b42dbd106a0",
+    "prior_record_sha256": "3010674924335d2f6c84eb2f79f025523e06a52b21c26a6cc40d1c3d68ef6c7a",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_review_packet.py",
+    "canonical_lf_sha256": "5c042e4455952e278f96f11903545c407098a72456e348b64147be3b67968947",
+    "prior_record_sha256": "c10474ba8094b9a1f0fcaada48028b5342a7f0aab932f618947047d6168ac6b9",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_review_tasks.py",
+    "canonical_lf_sha256": "499ce54cbdd1add8c38b7f8f7c8da1ba63e6f7cbeb3f03fa4a8e89c3d1655eba",
+    "prior_record_sha256": "0515901c1c47a4d41e72a3fd92ec56ec44d8be72c1c5835d794f409e84f19563",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_round1_budget.py",
+    "canonical_lf_sha256": "60a8bfeec8e20bd7b1e036d6cda2eb2dc8a2def410029ee087d006535d70cefb",
+    "prior_record_sha256": "26ff1ecef792f065a80c462614374a7985e3848f6d974a76c3c17bc7e56a7f8f",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_runtime_export.py",
+    "canonical_lf_sha256": "b1e3f02566cb5ccb10a034ad46b9233d8ae33c70f211adf224081c45c5a9e930",
+    "prior_record_sha256": "ecbb6e261bcd854105103f6ee289ff5087df82c69f2a99b64677b51f13c060d1",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_scifact_baseline.py",
+    "canonical_lf_sha256": "e759e92f6c0056d832c58e0ae3200323566b44c43552c97edc11a06f3c1d769f",
+    "prior_record_sha256": "fa5d566f422d0e47f63a67e09c595d721790dc05b3286d1fbd8d36dbd246f964",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_scifact_error_analysis.py",
+    "canonical_lf_sha256": "ecfe414ea53cf47568e179dc10e9dd9c29778b21c5404d335fec9e6512a26539",
+    "prior_record_sha256": "fe69f8b2ee0887a92c1f67231de577a224b29e55910132923c1fe4856a19694d",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_source_acquisition.py",
+    "canonical_lf_sha256": "a0d9511ed858bdc45b9359ee3c0153fa3381d2c9cc7748b9590dd1976b40c57d",
+    "prior_record_sha256": "7f1c9e5554478a3a4872b72a78bb1708dbd13df83caa03c325b0fb794e6ab2a4",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_source_authorization.py",
+    "canonical_lf_sha256": "0e1de0bc42f3638e2025a2f5ad80d2cd1015d0018231f6ee9ca484f647c3f973",
+    "prior_record_sha256": "266654ff168b581b13da7351e9f70e85ee9ac32a86d1e9e89bb08178de06ea83",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_transformer_encoders.py",
+    "canonical_lf_sha256": "d96b9b0e1e341cb32462a6545d8a61c3f15995e9ee5cea3d03e197e2e5e51031",
+    "prior_record_sha256": "d96b9b0e1e341cb32462a6545d8a61c3f15995e9ee5cea3d03e197e2e5e51031",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_vector_artifacts.py",
+    "canonical_lf_sha256": "56cacbbb2b1cfd4b1c8cc3dc53d8e68b432603cebd352adc5c49be2cb1a5e863",
+    "prior_record_sha256": "c82b231f1b7b741f3e971bbc417b3ef56672921a36449c7e8d851e283250f8b7",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_vector_eval.py",
+    "canonical_lf_sha256": "2b962198971d5b1c1a0979c3c71701745172943006cd8ac0e6dad7048328739f",
+    "prior_record_sha256": "cd754adfcd18d3ccb71ec648ed1b020f56277a9774fb26b52405476e50949cb9",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_healthtech_vector_http.py",
+    "canonical_lf_sha256": "d40b0fd0f59d27b5142fc308371ea56540475e11c7fbd11704438cf15f6680f6",
+    "prior_record_sha256": "d40b0fd0f59d27b5142fc308371ea56540475e11c7fbd11704438cf15f6680f6",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "tests/test_longrun_offline_v2.py",
+    "canonical_lf_sha256": "749cd83fad531b39f3603987ff86cb8873a7dda255d233410282cb38f541ce73",
+    "prior_record_sha256": "f177f79fa8140797985b0bc50562bab6e6de784f84afb1239c848d47b0afc279",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_o3_adversarial_repair.py",
+    "canonical_lf_sha256": "bcfa9f3f2ec5bed438c6ed806ce1ba253bf127973d07c5a220c4980337926356",
+    "prior_record_sha256": "86fef5695a8bc5bb6cb60458fea11489b2eb62a308ac26ecc69e45337d65869c",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_o3_generation_repair.py",
+    "canonical_lf_sha256": "f7b20abef3837a81424c059e51ea238fbcb401ac368fecebac0e3524027f6e3d",
+    "prior_record_sha256": "f7b20abef3837a81424c059e51ea238fbcb401ac368fecebac0e3524027f6e3d",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "LF"
+    ]
+  },
+  {
+    "path": "tests/test_provider_adapter.py",
+    "canonical_lf_sha256": "c766dbf6df3d325d99248732ffca23ed0142d78bd71e52f3a6254d0c8ca3df61",
+    "prior_record_sha256": "514e2412237c50572edda9ecb81ff63edd95ce2f37851887e61de06bd4a72bdd",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_provider_env_file.py",
+    "canonical_lf_sha256": "7a2e1288364583aab55a5dd5e2025338f6563e448df986ed3b74f7807443cdef",
+    "prior_record_sha256": "cd3f9c6fdc723acf010a1661571ad3155d817cdef794b0835b24cc0ddb448526",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_provider_identity.py",
+    "canonical_lf_sha256": "b11d60ad4ea91599db691fbf932d6ed71d19f7c7a64330ebbdfe297388fc7022",
+    "prior_record_sha256": "63384448071ab3d61d2ba80586319bbb86db00a901e9d579c06ef437e60deaa3",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_provider_paired.py",
+    "canonical_lf_sha256": "6bb2524ca193d9972ad55ac0ae83db832328d65e82930c39d9ea59622a9be130",
+    "prior_record_sha256": "eb30917ccdb18e8266bff952d748f44fe88aae311fd50792405be57eea051d19",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_provider_pilot.py",
+    "canonical_lf_sha256": "c3755ad8f4402de401ddbec596741e448a1954ae938fb7c432af5b24ab6ea494",
+    "prior_record_sha256": "e61d42c9af43ab78e87d5ffaea1d47545b8891abd00dde254574e94b84386068",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_provider_recovery.py",
+    "canonical_lf_sha256": "65e66f1a3db8171fa125b60fda498b779e61abaae13d12be4cf270dbd8f31ed8",
+    "prior_record_sha256": "b33c24d9bb7d912cf39a90e0edd50dd837b43c2671134ed726cb20e15de7c6b5",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  },
+  {
+    "path": "tests/test_release_budget_process.py",
+    "canonical_lf_sha256": "9ae172c90396f41b300339700b18886d2aa3c2e5568d8aa245bda24786086924",
+    "prior_record_sha256": "7ee1b10e0736b02d0b26d3160bca38e22d7213e6f6efbb8473972975cd1bd00b",
+    "matches_prior_repair": true,
+    "matching_encoding": [
+      "raw",
+      "CRLF"
+    ]
+  }
+]

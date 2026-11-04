@@ -1,4 +1,4 @@
-"""Atomic shared USD 5 envelope for new work; historical ledgers are untouched.
+"""Atomic durable budget envelope; historical ledgers are untouched.
 
 This module never loads credentials. Every future scientific/UI dispatch must use
 this same database and policy, not the older engineering pilot ledgers.
@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import re
 import sqlite3
+from datetime import datetime, timezone
 
 from .openrouter import BudgetExceededError
 
@@ -35,6 +36,14 @@ def money(value) -> int:
     return int((amount * NANO).to_integral_value(rounding=ROUND_CEILING))
 
 
+def policy_identity_hash(policy):
+    durable = dict(policy)
+    if durable.get("authorization_id") in {"PTP-HT-OR-R1-20261028-USD8", "PTP-HT-OR-E2-20261103-USD100"}:
+        durable.pop("pricing_snapshot_sha256", None)
+        durable.pop("pricing_snapshot_utc", None)
+    return hashlib.sha256(json.dumps(durable, sort_keys=True).encode()).hexdigest()
+
+
 class ProjectBudget:
     """One writer transaction reserves before dispatch; no automatic release.
 
@@ -42,27 +51,98 @@ class ProjectBudget:
     never duplicates a charge; reserve replay never authorizes another send.
     No raw prompt, key, response body or exception text is stored here.
     """
-    def __init__(self, path: Path, *, policy: dict | None = None):
-        self.path = Path(path)
+    def __init__(
+        self,
+        path: Path,
+        *,
+        policy: dict | None = None,
+        ledger_id: str | None = None,
+        authorization_id: str | None = None,
+        namespace: str = "legacy",
+        canonical_path: Path | None = None,
+        pricing_snapshot_sha256: str | None = None,
+        pricing_snapshot_utc: str | None = None,
+    ):
+        if namespace not in {"legacy", "canonical", "mock"}:
+            raise ValueError("unsupported budget ledger namespace")
+        self.path = Path(path).expanduser().resolve(strict=False)
+        self.ledger_id = ledger_id or f"{namespace}:{hashlib.sha256(str(self.path).encode('utf-8')).hexdigest()[:24]}"
+        self.authorization_id = authorization_id or (policy or POLICY).get("authorization_id")
+        self.namespace = namespace
+        self.canonical_path = Path(canonical_path or self.path).expanduser().resolve(strict=False)
+        self.pricing_snapshot_sha256 = pricing_snapshot_sha256 or (policy or {}).get("pricing_snapshot_sha256")
+        self.pricing_snapshot_utc = pricing_snapshot_utc or (policy or {}).get("pricing_snapshot_utc")
         self.policy = json.loads(json.dumps(POLICY if policy is None else policy, sort_keys=True))
-        self.policy_hash = hashlib.sha256(json.dumps(self.policy, sort_keys=True).encode()).hexdigest()
+        self.policy_hash = policy_identity_hash(self.policy)
         self.models = dict(self.policy["models"])
         self.admission_threshold_nano_usd = int(self.policy.get("admission_threshold_nano_usd", self.policy["incremental_cap_nano_usd"]))
+        if namespace == "canonical":
+            if not self.path.is_file() or self.path != self.canonical_path:
+                raise ValueError("canonical ledger must already exist at its reviewed location")
+            from .ledger_registry import _validate_existing_sqlite_journal
+            _validate_existing_sqlite_journal(self.path, authorization_id=self.authorization_id, policy_hash=self.policy_hash)
+        self.path.parent.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(self.path, timeout=10, isolation_level=None)
         self.db.execute("PRAGMA busy_timeout=10000")
-        self.db.executescript("CREATE TABLE IF NOT EXISTS budget_meta(policy_hash TEXT NOT NULL); CREATE TABLE IF NOT EXISTS budget_attempts(attempt_id TEXT PRIMARY KEY, phase TEXT NOT NULL, model TEXT NOT NULL, payload_sha256 TEXT NOT NULL, reserved INTEGER NOT NULL, actual INTEGER, state TEXT NOT NULL, breach INTEGER NOT NULL DEFAULT 0);")
+        self.db.execute("PRAGMA synchronous=FULL")
+        stat = self.path.stat()
+        self._opened_identity = (stat.st_dev, stat.st_ino)
+        self.db.executescript(
+            "CREATE TABLE IF NOT EXISTS budget_attempt_context("
+            "attempt_id TEXT PRIMARY KEY, created_epoch REAL NOT NULL, pricing_sha256 TEXT, pricing_utc TEXT, credit_sha256 TEXT, provider_generation_id TEXT, settled_epoch REAL);"
+            "CREATE TABLE IF NOT EXISTS budget_meta(policy_hash TEXT NOT NULL);"
+            "CREATE TABLE IF NOT EXISTS budget_ledger_meta("
+            "singleton INTEGER PRIMARY KEY CHECK(singleton=1),"
+            "ledger_id TEXT NOT NULL, authorization_id TEXT, namespace TEXT NOT NULL,"
+            "canonical_path TEXT NOT NULL, policy_hash TEXT NOT NULL,"
+            "pricing_snapshot_sha256 TEXT, pricing_snapshot_utc TEXT"
+            ");"
+            "CREATE TABLE IF NOT EXISTS budget_attempts("
+            "attempt_id TEXT PRIMARY KEY, phase TEXT NOT NULL, model TEXT NOT NULL,"
+            "payload_sha256 TEXT NOT NULL, reserved INTEGER NOT NULL, actual INTEGER,"
+            "state TEXT NOT NULL, breach INTEGER NOT NULL DEFAULT 0"
+            ");"
+        )
+        columns = {row[1] for row in self.db.execute("PRAGMA table_info(budget_attempt_context)")}
+        if "settled_epoch" not in columns:
+            self.db.execute("ALTER TABLE budget_attempt_context ADD COLUMN settled_epoch REAL")
         with self.transaction():
             hashes = self.db.execute("SELECT policy_hash FROM budget_meta").fetchall()
             if not hashes:
                 self.db.execute("INSERT INTO budget_meta VALUES(?)", (self.policy_hash,))
             elif hashes != [(self.policy_hash,)]:
                 raise ValueError("budget policy mismatch; cannot reset/rebind history")
+            expected_meta = (
+                self.ledger_id,
+                self.authorization_id,
+                self.namespace,
+                str(self.canonical_path),
+                self.policy_hash,
+                self.pricing_snapshot_sha256,
+                self.pricing_snapshot_utc,
+            )
+            meta = self.db.execute(
+                "SELECT ledger_id,authorization_id,namespace,canonical_path,policy_hash,pricing_snapshot_sha256,pricing_snapshot_utc "
+                "FROM budget_ledger_meta WHERE singleton=1"
+            ).fetchone()
+            if meta is None:
+                self.db.execute(
+                    "INSERT INTO budget_ledger_meta(singleton,ledger_id,authorization_id,namespace,canonical_path,policy_hash,pricing_snapshot_sha256,pricing_snapshot_utc) "
+                    "VALUES(1,?,?,?,?,?,?,?)",
+                    expected_meta,
+                )
+            elif tuple(meta[:5]) != expected_meta[:5]:
+                raise ValueError("budget ledger identity or namespace mismatch; cannot rebind history")
 
     def close(self):
         self.db.close()
 
     @contextmanager
     def transaction(self):
+        if self.namespace == "canonical":
+            stat = self.path.stat()
+            if (stat.st_dev, stat.st_ino) != self._opened_identity:
+                raise BudgetExceededError("canonical journal file changed while open; stop and reconcile")
         self.db.execute("BEGIN IMMEDIATE")
         try:
             yield
@@ -74,17 +154,36 @@ class ProjectBudget:
     def _snapshot(self):
         rows = self.db.execute("SELECT attempt_id,phase,model,payload_sha256,reserved,actual,state,breach FROM budget_attempts ORDER BY attempt_id").fetchall()
         usage = {p: 0 for p in self.policy["phase_caps_nano_usd"]}
-        actual, pending, breach = 0, [], False
+        from .history_review import read_pre_r1_carryover
+        carryover = read_pre_r1_carryover(self.db, authorization_id=self.authorization_id, ledger_id=self.ledger_id)
+        historical_carryover = 0 if carryover is None else carryover["amount_nano_usd"]
+        uncertainty_buffer = 0
+        epoch = None
+        if self.authorization_id == "PTP-HT-OR-E2-20261103-USD100":
+            from .local_epoch import read_epoch
+            epoch = read_epoch(self.db, self.authorization_id, self.ledger_id)
+            historical_carryover += epoch["known_legacy_nano_usd"]
+            uncertainty_buffer = epoch["uncertainty_buffer_nano_usd"]
+        actual, pending, breach = historical_carryover, [], False
         for aid, phase, model, sha, reserved, cost, state, overrun in rows:
             usage[phase] += reserved if state != "settled" else cost
             actual += cost or 0
             if state != "settled":
                 pending.append(aid)
             breach |= bool(overrun)
-        committed = sum(usage.values())
+        committed = historical_carryover + uncertainty_buffer + sum(usage.values())
         admission_closed = committed > self.admission_threshold_nano_usd
         return {"policy_sha256": self.policy_hash, "policy_version": self.policy["version"],
-            "authorization_id": self.policy.get("authorization_id"), "attempts": len(rows), "actual_nano_usd": actual,
+            "authorization_id": self.authorization_id, "ledger_id": self.ledger_id,
+            "ledger_namespace": self.namespace, "ledger_path": str(self.canonical_path),
+            "pricing_snapshot_sha256": self.pricing_snapshot_sha256,
+            "pricing_snapshot_utc": self.pricing_snapshot_utc,
+            "attempts": len(rows), "actual_nano_usd": actual,
+            "historical_carryover_nano_usd": historical_carryover,
+            "uncertainty_buffer_nano_usd": uncertainty_buffer,
+            "history_completeness": None if epoch is None else epoch["history_completeness"],
+            "lifetime_cap_guaranteed": None if epoch is None else epoch["lifetime_cap_guaranteed"],
+            "prospective_epoch_cap_nano_usd": None if epoch is None else epoch["prospective_epoch_cap_nano_usd"],
             "committed_nano_usd": committed, "phase_committed_nano_usd": usage,
             "admission_threshold_nano_usd": self.admission_threshold_nano_usd,
             "authorization_cap_nano_usd": self.policy["incremental_cap_nano_usd"],
@@ -99,7 +198,7 @@ class ProjectBudget:
 
     def reserve(self, *, attempt_id: str, phase: str, model: str, provider: str,
                 payload_sha256: str, upper_bound_usd, bound_verified: bool,
-                data_class: str, subsequent_released: bool = False):
+                data_class: str, subsequent_released: bool = False, credit_snapshot=None):
         if not re.fullmatch(r"[A-Za-z0-9_-]{1,100}", attempt_id) or not re.fullmatch(r"[a-f0-9]{64}", payload_sha256):
             raise ValueError("safe attempt ID and exact payload hash required")
         if phase not in self.policy["phase_caps_nano_usd"] or self.models.get(model) != provider or data_class not in {"synthetic", "public"}:
@@ -108,6 +207,11 @@ class ProjectBudget:
             raise BudgetExceededError("verified full-request price/token bound required")
         if phase == "subsequent" and subsequent_released is not True:
             raise BudgetExceededError("subsequent work requires readiness release")
+        if self.namespace == "canonical":
+            from .ledger_registry import resolve_canonical_ledger
+            resolve_canonical_ledger(authorization_id=self.authorization_id,
+                policy_hash=self.policy_hash, pricing_snapshot_sha256=self.pricing_snapshot_sha256,
+                pricing_snapshot_utc=self.pricing_snapshot_utc, requested_path=self.path)
         reserved = money(upper_bound_usd)
         if reserved <= 0:
             raise BudgetExceededError("positive conservative reservation required")
@@ -119,8 +223,33 @@ class ProjectBudget:
                 raise BudgetExceededError("dispatch blocked by pending billing or breach")
             if state["committed_nano_usd"] + reserved > self.admission_threshold_nano_usd or state["phase_committed_nano_usd"][phase] + reserved > self.policy["phase_caps_nano_usd"][phase]:
                 raise BudgetExceededError("shared project/phase cap exceeded")
+            now = datetime.now(timezone.utc)
+            credit_hash = None
+            if self.namespace == "canonical":
+                from .history_review import read_history_anchor
+                from .credit import check_credit_for_reservation
+                if self.authorization_id == "PTP-HT-OR-E2-20261103-USD100":
+                    from .local_epoch import credit_scope
+                    anchor = credit_scope(self.db, credit_snapshot)
+                else:
+                    anchor = read_history_anchor(self.db, self.authorization_id, self.ledger_id)
+                try:
+                    credit = check_credit_for_reservation(self.db, credit_snapshot,
+                        authorization_id=self.authorization_id, account_scope=anchor["account_scope"],
+                        key_scope=anchor["key_scope"], reserved=reserved, now=now)
+                except ValueError:
+                    raise BudgetExceededError("current scoped account/key availability observation required") from None
+                credit_hash = credit["snapshot_sha256"]
+            self.db.execute("INSERT INTO budget_attempt_context(attempt_id,created_epoch,pricing_sha256,pricing_utc,credit_sha256) VALUES(?,?,?,?,?)",
+                (attempt_id, now.timestamp(), self.pricing_snapshot_sha256, self.pricing_snapshot_utc, credit_hash))
             self.db.execute("INSERT INTO budget_attempts(attempt_id,phase,model,payload_sha256,reserved,state) VALUES(?,?,?,?,?,'pending')", (attempt_id,phase,model,payload_sha256,reserved))
+        self._persist_epoch_backup()
         return attempt_id
+
+    def _persist_epoch_backup(self):
+        if self.authorization_id == "PTP-HT-OR-E2-20261103-USD100":
+            from .local_epoch import backup
+            backup(self.db, self.path)
 
     def settle(self, attempt_id: str, actual_usd):
         cost = None if actual_usd is None else money(actual_usd)
@@ -136,10 +265,13 @@ class ProjectBudget:
                 breach = bool(old_breach)
             else:
                 self.db.execute("UPDATE budget_attempts SET actual=?,state=? WHERE attempt_id=?", (cost, "settled" if cost is not None else "unknown_pending", attempt_id))
+                if cost is not None:
+                    self.db.execute("UPDATE budget_attempt_context SET settled_epoch=MAX(created_epoch,?) WHERE attempt_id=?", (datetime.now(timezone.utc).timestamp(), attempt_id))
                 totals = self._snapshot()
                 breach = cost is not None and (cost > reserved or totals["committed_nano_usd"] > self.policy["incremental_cap_nano_usd"] or any(totals["phase_committed_nano_usd"][p] > cap for p,cap in self.policy["phase_caps_nano_usd"].items()))
                 if breach:
                     self.db.execute("UPDATE budget_attempts SET breach=1 WHERE attempt_id=?", (attempt_id,))
+        self._persist_epoch_backup()
         if breach:
             raise BudgetExceededError("observed debit retained; budget/reservation breach blocks future dispatch")
 
@@ -165,6 +297,8 @@ class BudgetedTransport:
     def send(self, *, config, request):
         from .paired import body_hash
         binding = self.binding
+        if config.live_enabled and self.budget.authorization_id in {"PTP-HT-OR-R1-20261028-USD8", "PTP-HT-OR-E2-20261103-USD100"} and self.budget.namespace != "canonical":
+            raise BudgetExceededError("live R1 transport requires canonical authority")
         expected_provider = self.budget.models.get(config.model)
         if config.retries != 0 or config.routing_only != [expected_provider] or config.allow_fallbacks or not config.require_parameters:
             raise ValueError("exact route, no fallback/retries and required parameters mandatory")
@@ -172,6 +306,16 @@ class BudgetedTransport:
             raise ValueError("request reservation differs from bound manifest")
         if body_hash(config, request) != binding["payload_sha256"]:
             raise ValueError("request differs from bound manifest")
+        if config.live_enabled:
+            from .history_review import require_live_history_review
+            try:
+                if self.budget.authorization_id == "PTP-HT-OR-E2-20261103-USD100":
+                    from .local_epoch import read_epoch
+                    read_epoch(self.budget.db, self.budget.authorization_id, self.budget.ledger_id)
+                else:
+                    require_live_history_review(self.budget.db, self.budget.authorization_id, self.budget.ledger_id)
+            except ValueError as exc:
+                raise BudgetExceededError(str(exc)) from None
         self.budget.reserve(model=config.model, provider=config.routing_only[0], **binding)
         try:
             response = self.transport.send(config=config, request=request)
@@ -179,6 +323,10 @@ class BudgetedTransport:
             self.budget.settle(binding["attempt_id"], None)
             raise RuntimeError("provider transport failed; billing unknown_pending") from None
         payload = response.payload if isinstance(response.payload, dict) else {}
+        generation_id = payload.get("id")
+        if isinstance(generation_id, str) and re.fullmatch(r"[A-Za-z0-9_-]{1,160}", generation_id):
+            with self.budget.transaction():
+                self.budget.db.execute("UPDATE budget_attempt_context SET provider_generation_id=? WHERE attempt_id=?", (generation_id, binding["attempt_id"]))
         usage = payload.get("usage")
         cost = usage.get("cost", payload.get("cost")) if isinstance(usage, dict) else payload.get("cost")
         try:

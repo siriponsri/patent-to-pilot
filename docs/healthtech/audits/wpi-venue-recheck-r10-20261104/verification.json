@@ -1,0 +1,53 @@
+{
+  "format": "ptp-wpi-venue-recheck-v10",
+  "observed_local": "2026-11-04",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_state": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "sources": {
+    "publisher_profile": {
+      "url": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+      "http_status": 200,
+      "response_bytes": 186638,
+      "response_sha256": "75ef3ca5d482d1662983a0da3232937e937cb1eaa739726a91e88045cdeff1e6",
+      "stored_raw_response": false,
+      "scope_markers_observed": [
+        "world patent information",
+        "information retrieval",
+        "machine learning",
+        "system evaluation",
+        "benchmarking",
+        "guide for authors link"
+      ]
+    },
+    "aims_and_scope": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope",
+      "http_status": 403,
+      "status": "UNVERIFIED_DIRECT_PAGE"
+    },
+    "guide_for_authors": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+      "http_status": 403,
+      "status": "UNVERIFIED_DIRECT_PAGE"
+    }
+  },
+  "claims": {
+    "conditional_venue_fit": true,
+    "journal_specific_rules_verified": false,
+    "submission_sent": false,
+    "owner_review_required": true
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "external_message": false,
+    "submission": false
+  },
+  "status": "PASS_OFFICIAL_PROFILE_HTTP200_GUIDE_AND_AIMS_UNVERIFIED_NOT_SUBMITTED"
+}

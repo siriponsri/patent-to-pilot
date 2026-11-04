@@ -1,0 +1,75 @@
+{
+  "format": "ptp-parallel-authorized-check-v1",
+  "observed_local_date": "2026-11-03",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "root_main_head": "0d049802d36bc2eebe60331ec444d62469fd767f",
+    "dirty_worktree_preserved": true
+  },
+  "verification": {
+    "full_suite": {
+      "command": "rtk proxy python -B -m pytest -q --disable-warnings --junitxml full-tests-current-head-20261103.xml",
+      "tests": 615,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "exit_code": 0,
+      "time_seconds": 22.548,
+      "receipt": "full-tests-current-head-20261103.xml",
+      "receipt_sha256": "4d4f1c78f6a39a650f2dc4616514fe66f5ef44b27a018d2033306f0217a67478"
+    },
+    "focused_suite": {
+      "scope": "O3 generation repair, local execution guard, current-head frontier, vector bundle verification, ledger/history registry, provider adapter/identity/paired/pilot/recovery, metadata observation, release budget process",
+      "tests": 139,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "time_seconds": 6.192,
+      "receipt": "focused-tests-current-head-20261103.xml",
+      "receipt_sha256": "e6794475ec24355c0ff3bb8804ff713c6936d55d2be14c0886b5d1e33ad0cbcc"
+    },
+    "compileall": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "local_path": {
+    "status": "READY_WITHIN_AUTHORIZED_SCOPE",
+    "cases": 3,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "claim_boundary": "schema/contract and engineering smoke evidence only"
+  },
+  "api_path": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "payload_preflight": "PASS_3_OF_3",
+    "canonical_r1_registry_or_journal_present": false,
+    "current_scoped_v2_credit_snapshot_present": false,
+    "history_completeness": "NOT_PROVEN",
+    "observed_lifetime_usage_usd": 0.0001464,
+    "observed_daily_usage_usd": 0.0,
+    "key_type": "ordinary_non_management",
+    "provider_generation_called": false,
+    "reservation_created": false,
+    "attempt_created": false,
+    "missing_owner_evidence": [
+      "existing canonical R1 journal/registry or sanctioned sanitized all-attempt export",
+      "current scoped account/key credit snapshot"
+    ]
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "zero_ledger_created": false,
+    "secret_read_or_persisted": false
+  },
+  "next": "Obtain the two existing non-secret paid-gate evidence items once; inspect any export, reconcile to the same R1 ledger, and run one paired canary only after every gate passes. Continue local/offline work independently."
+}

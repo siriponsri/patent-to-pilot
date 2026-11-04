@@ -1,0 +1,51 @@
+{
+  "format": "ptp-owner-review-manifest-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "root_main_head": "0d049802d36bc2eebe60331ec444d62469fd767f",
+  "review_state": "READY_FOR_OWNER_REVIEW_NOT_MERGE",
+  "dirty_boundary": {
+    "preserve_existing_dirty_work": true,
+    "source_patch_uncommitted": true,
+    "source_files": [
+      "src/patent_to_pilot/healthtech/generation_payload.py",
+      "src/patent_to_pilot/healthtech/local_execution.py",
+      "scripts/healthtech/run_qwen_generation_evidence_pack.py",
+      "scripts/healthtech/encode_transformer_shards.py",
+      "scripts/healthtech/run_transformer_vector_retrieval_eval.py",
+      "scripts/healthtech/remote_encoder_self_check.py",
+      "tests/test_o3_generation_repair.py",
+      "tests/test_healthtech_local_execution.py",
+      "tests/test_healthtech_current_head_frontier.py",
+      "tests/test_verify_vector_bundle_pair.py"
+    ],
+    "root_main_merge": "NOT_DONE",
+    "snapshot_results_mixed": false
+  },
+  "key_source_hashes": {
+    "src/patent_to_pilot/healthtech/generation_payload.py": "47e7711d77d0a58b1a5c7e0e86ea6401cb43a77f6ea59081d0a4e182cfc76045",
+    "src/patent_to_pilot/healthtech/local_execution.py": "25ed4283936885352054c5cd5d10d5f4c78fcb8bbe26762dc7da9ee7a5a35e0d",
+    "scripts/healthtech/run_qwen_generation_evidence_pack.py": "d3f195e81959db3bf35661b9b0fc3a6593a0ad8a1e7b8a234a47fbeedee63d9c",
+    "tests/test_o3_generation_repair.py": "879486e1a821b390ffa7e2ab2b15928252a7b29e52a0ded3cbc05bc63165a2bc",
+    "tests/test_healthtech_local_execution.py": "8ad288ae26161882e8e63d13ff320fb3ebdd9d940e46e6d88a03489b8e238e0b"
+  },
+  "owner_review_items": [
+    "review uncommitted candidate source patch and preserved Claude/Luna/owner changes",
+    "review current-head acceptance matrix and manuscript claim boundaries",
+    "recheck WPI Guide for Authors in an authorized browser/session",
+    "supply one current scoped credit/remaining-limit snapshot only if paid API comparison remains required; R1 history remains an uncertainty boundary after accepted E2 cutover"
+  ],
+  "latest_checkpoint_evidence": [
+    "docs/healthtech/audits/ptp-goal-completion-audit-r20-20261104/verification.json",
+    "docs/healthtech/audits/ptp-offline-regression-r19-20261104/verification.json",
+    "docs/healthtech/audits/ptp-api-metadata-recheck-r12-20261104/verification.json",
+    "docs/healthtech/audits/ptp-api-openrouter-mcp-recheck-r2-20261104/mcp-get-credits.json"
+  ],
+  "owner_mcp_initial_limit_usd": 30.0,
+  "paid_gate_after_latest_recheck": "BLOCKED_BEFORE_RESERVATION",
+  "prohibited_actions_until_review": [
+    "merge candidate into root main",
+    "apply any prior patch again",
+    "create a zero ledger or reset budget/window",
+    "dispatch paid API before history and credit gates pass"
+  ]
+}

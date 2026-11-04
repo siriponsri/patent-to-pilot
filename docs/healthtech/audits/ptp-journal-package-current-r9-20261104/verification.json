@@ -1,0 +1,37 @@
+{
+  "format": "ptp-journal-package-verification-v2",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "change_scope": "WPI official active-record observation and venue receipt rebind",
+  "files": {
+    "manuscript": {"path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md", "sha256": "98607ae6fbc0649da74269a2b0c9d29dcbf316f85d761a82bc3c2bbe3a0d60bd", "bytes": 58749},
+    "cover_letter": {"path": "docs/healthtech/research/WPI_COVER_LETTER_DRAFT_20261101_EN.md", "sha256": "ef8efa6e03672de9284cc4e3ce8864ee3632e9033b9e48c9d5b29bbf77ca70c2", "bytes": 2194},
+    "wpi_checklist": {"path": "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md", "sha256": "8cb48905075d45be88ff2584b4165080662951a51ea244ce11154d49e6069891", "bytes": 7560},
+    "supplemental": {"path": "docs/healthtech/research/SUPPLEMENTAL_DATA.md", "sha256": "34f22e2748b5d67f9947ee47abf1fe95794676641f8734dac19912b150f6cf3c", "bytes": 23088},
+    "bibliography": {"path": "literature-review/healthtech/references.bib", "sha256": "7a9ef673632d59f6f2cfaf8877ac462639a759310596a7d98d63f02d51ae81a2", "bytes": 18285}
+  },
+  "file_count": 5,
+  "relative_links_checked": 65,
+  "missing_relative_links": 0,
+  "venue_receipt": "docs/healthtech/audits/wpi-venue-recheck-r11-20261104/verification.json",
+  "owner_control": {
+    "owner_fields_pending": true,
+    "guide_for_authors_verified": false,
+    "submission": false,
+    "external_message": false,
+    "agreement_accepted": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "time_window_reset": false,
+    "private_payload_added": false
+  },
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "status": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+  "goal_closed": false
+}
+

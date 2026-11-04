@@ -1,0 +1,15 @@
+{
+  "format": "ptp-resume-e2-current-checkpoint-v1",
+  "recorded_utc": "2026-11-03T15:34:58.8264436Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_ENGINEERING_VERIFIED_PAID_BLOCKED_RESEARCH_OPEN",
+  "next_action": "Keep the existing E2 journal and completed GPU evidence; obtain one non-secret current scoped credit/limit snapshot if paid comparison remains required, then refresh route pricing inside the admission window and reserve only the existing USD0.25 canary.",
+  "no_reset": true,
+  "no_pending_replay": true,
+  "no_goal_closure": true,
+  "artifacts": [
+    "README.md",
+    "verification.json",
+    "focused-tests.xml"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "format": "ptp-current-checkpoint-r2-v1",
+  "observed_at_utc": "2026-11-03T07:33:11.5902018Z",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "documentation": {
+    "readme_link_repair": "five historical audit links changed from ../../audits to ../audits",
+    "selected_markdown_links": {
+      "status": "PASS",
+      "missing": 0
+    },
+    "long_runs_readme_sha256": "FB278803A2ED6E277112A4B1D97C78EA31FACBA40CA8AFCD2381DB20E04997C8",
+    "supplemental_data_sha256": "0B2AC1EFE3E6AE43659C719D2D1CB7D66AC5EBD7B0F6AE47A79947647FC63D71"
+  },
+  "manuscript_figures": {
+    "status": "PASS_CURRENT_HEAD_BINDING",
+    "manifest": "docs/healthtech/audits/ptp-current-head-offline-20261103/analysis-current-head-20261103/manifest.json",
+    "manifest_candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "manifest_protocol_hash": "a87acaa448f97eabccae0f1fecc5378720ecf1178869336f68b42174eb828b0f",
+    "outputs": {
+      "recall_svg": {
+        "path": "docs/healthtech/audits/ptp-current-head-offline-20261103/analysis-current-head-20261103/current_head_recall.svg",
+        "sha256": "390BDE48C7E22AF8AA02BC15FB3A6E34DF0FA121213AAABDDAD723A4644CDAC8",
+        "bytes": 3749
+      },
+      "budget_svg": {
+        "path": "docs/healthtech/audits/ptp-current-head-offline-20261103/analysis-current-head-20261103/current_head_budget.svg",
+        "sha256": "4354C27257AA7448B351E0629345B08ED5D8F73F629A91480C0AFBAAED6E4A0E",
+        "bytes": 4113
+      },
+      "frontier_csv": {
+        "path": "docs/healthtech/audits/ptp-current-head-offline-20261103/analysis-current-head-20261103/current_head_frontier.csv",
+        "exists": true
+      }
+    },
+    "claim_boundary": "descriptive development-only figures; no paid API, semantic gold, final holdout, or external business validation claim"
+  },
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "27FA8680CE347FECF860976EFD53D8FBAF1C094A862827A666A49F54DD008E4A",
+    "bytes": 48846,
+    "relative_links_checked": 0,
+    "relative_links_missing": 0,
+    "submission_state": "DRAFT_OWNER_REVIEW_NOT_SUBMITTED",
+    "required_discussion_section": "PASS_SECTION_12_ADDED_WITH_CURRENT_HEAD_EVIDENCE"
+  },
+  "tests": {
+    "full": {
+      "status": "PASS",
+      "tests": 617,
+      "passed": 616,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "receipt": "full-tests-current-head-20261103-r2.xml",
+      "receipt_sha256": "3CB9CC320BF675DF599268C2AA5A2E0BBAA389E5A5A0E8864FB287C9C54389B2"
+    },
+    "focused": {
+      "status": "PASS",
+      "tests": 85,
+      "passed": 85,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "receipt": "focused-tests-current-head-20261103-r2.xml",
+      "receipt_sha256": "6311B25ED47B7F9E2D6924D8E61710D39B06998CFF32A1D03430AE76C8054E5A"
+    },
+    "compileall": "PASS",
+    "scoped_diff_check": "PASS"
+  },
+  "api_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "metadata_source": "docs/healthtech/audits/ptp-api-live-readiness-20261103/verification.json",
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "key_type": "ordinary_non_management",
+    "canonical_r1_journal_present": false,
+    "current_scoped_credit_snapshot_present": false,
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "r1_history_recheck": {
+    "status": "LEGACY_HISTORY_REVIEWED_NOT_CANONICAL",
+    "audit": "docs/healthtech/audits/ptp-r1-history-recheck-20261103/verification.json",
+    "known_legacy_debit_usd": 0.0001464,
+    "legacy_unknown_pending_attempts": 0,
+    "r1_compatible_legacy_journals": 0,
+    "canonical_registry_created": false,
+    "history_completeness": "NOT_PROVEN",
+    "current_credit": "NOT_VERIFIED"
+  },
+  "research_boundary": {
+    "benchmark_rerun": false,
+    "new_retrieval_metric": false,
+    "semantic_gold_created": false,
+    "final_holdout_created": false,
+    "external_business_validation": "NOT_RUN"
+  },
+  "next": "Obtain the existing non-secret canonical R1 journal/export and current scoped credit snapshot once; reconcile both before any paired paid canary. Continue local/offline work independently."
+}

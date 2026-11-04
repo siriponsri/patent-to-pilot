@@ -1,0 +1,156 @@
+{
+  "format": "ptp-healthtech-o1-o4-completion-audit-v1",
+  "captured_at_utc": "2026-10-31T11:36:24.1463295Z",
+  "repository": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head": "aa6c5c40ec84166b93734625a951eeb738ea3562",
+    "remote_head_matches": true,
+    "worktree_clean_before_audit_write": true
+  },
+  "goal_status": "ACTIVE",
+  "decision": "KEEP_ACTIVE_WAITING_FOR_RUNTIME_LEDGER_AND_CREDIT_EVIDENCE",
+  "requirements": [
+    {
+      "id": "read_required_contracts",
+      "status": "PASS",
+      "evidence": [
+        "AGENTS.md",
+        "external AUDIT_TH.md",
+        "external RESUME_GOAL_TH.txt",
+        "objective pasted-text-1.txt"
+      ]
+    },
+    {
+      "id": "preserve_existing_usd8_authorization",
+      "status": "PASS",
+      "evidence": [
+        "docs/healthtech/audits/ht-research-product-20261031/o3-gate.json",
+        "docs/healthtech/audits/pepo-o3-unblock-20261031/verification.json"
+      ],
+      "facts": {
+        "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+        "new_grant_created": false,
+        "budget_reset": false,
+        "clock_reset": false
+      }
+    },
+    {
+      "id": "canonical_ledger_shared_and_duplicate_path_closed",
+      "status": "PASS_OFFLINE_IMPLEMENTATION_RUNTIME_BINDING_PENDING",
+      "evidence": [
+        "src/patent_to_pilot/providers/ledger_registry.py",
+        "scripts/healthtech/register_canonical_openrouter_ledger.py",
+        "tests/test_healthtech_ledger_registry.py",
+        "docs/healthtech/audits/pepo-o3-unblock-20261031/verification.json"
+      ]
+    },
+    {
+      "id": "reconcile_existing_r1_journal",
+      "status": "BLOCKED_LOCAL",
+      "evidence": [
+        "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-recovery-20261031.json",
+        "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-search-recheck-20261031.json"
+      ],
+      "facts": {
+        "historical_actual_debit_usd": 0.0001464,
+        "historical_unknown_pending_attempts": 0,
+        "r1_canonical_journal_found": false,
+        "recovered_legacy_journals_r1_compatible": false,
+        "replacement_journal_created": false
+      }
+    },
+    {
+      "id": "current_account_credit_and_billing_snapshot",
+      "status": "BLOCKED_LOCAL",
+      "evidence": [
+        "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-search-recheck-20261031.json",
+        "docs/healthtech/audits/ht-research-product-20261031/o3-gate.json"
+      ],
+      "facts": {
+        "current_account_credit_verified": false,
+        "credentials_read": false,
+        "approved_credit_integration_found": false
+      }
+    },
+    {
+      "id": "rights_cleared_paired_payload",
+      "status": "PASS_OFFLINE",
+      "evidence": [
+        "src/patent_to_pilot/healthtech/generation_payload.py",
+        "tests/test_healthtech_generation_payload.py",
+        "docs/healthtech/audits/pepo-o3-unblock-20261031/verification.json"
+      ]
+    },
+    {
+      "id": "api_generation_runner",
+      "status": "PASS_DRY_RUN_MOCK_AND_CREDIT_PREFLIGHT_NOT_LIVE",
+      "evidence": [
+        "src/patent_to_pilot/healthtech/api_generation.py",
+        "scripts/healthtech/run_openrouter_generation_evidence_pack.py",
+        "tests/test_healthtech_api_generation.py"
+      ],
+      "facts": {
+        "live_requires_sanitized_credit_snapshot": true,
+        "credit_snapshot_bound_to_receipt": true,
+        "paid_dispatch": "NOT_RUN",
+        "provider_calls": 0,
+        "paid_cost_usd": 0.0
+      }
+    },
+    {
+      "id": "candidate_to_disclosed_link_validation",
+      "status": "PASS_OFFLINE",
+      "evidence": [
+        "src/patent_to_pilot/healthtech/generation_payload.py",
+        "tests/test_healthtech_qwen_evidence_pack.py",
+        "tests/test_healthtech_generation_payload.py"
+      ]
+    },
+    {
+      "id": "o4_three_case_http_generation_and_report",
+      "status": "PASS_ENGINEERING_RESEARCH_BOUNDED",
+      "evidence": [
+        "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT.md",
+        "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/REPORT_TH.md",
+        "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/browser-receipt.json",
+        "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/verification.json",
+        "docs/healthtech/audits/ht-o4-remote-http-generation-browser-20261031/CHECKPOINT.json"
+      ],
+      "facts": {
+        "cases": 3,
+        "local_generation_schema_valid_cases": 3,
+        "paid_provider_calls": 0,
+        "paid_cost_usd": 0.0,
+        "matched_abbott_fixed_control_frontier_rerun": false
+      }
+    },
+    {
+      "id": "tests_and_integrity_checks",
+      "status": "PASS",
+      "evidence": [
+        "current focused command: python -m pytest -p no:cacheprovider tests/test_healthtech_ledger_registry.py tests/test_healthtech_generation_payload.py tests/test_healthtech_api_generation.py tests/test_healthtech_round1_budget.py tests/test_healthtech_b4_live.py tests/test_healthtech_qwen_evidence_pack.py tests/test_healthtech_adaptive_report.py tests/test_healthtech_controller.py tests/test_healthtech_b4_holdout_comparison.py",
+        "result: 47 passed",
+        "full_repository_regression: 512 passed, 1 skipped, 2 warnings",
+        "JSON parse checks",
+        "git diff --check"
+      ]
+    },
+    {
+      "id": "merge_and_delete_branch",
+      "status": "NOT_RUN",
+      "reason": "Full O1-O4 acceptance is not proven while R1 journal and current credit evidence are missing."
+    }
+  ],
+  "owner_input_required": [
+    "Exact location of the existing R1 canonical journal or sanitized all-attempt export.",
+    "Current account-credit/billing snapshot with timestamp, or the approved integration that returns it."
+  ],
+  "safety_boundary": {
+    "credential_contents_read": false,
+    "new_ledger_created": false,
+    "authorization_renewed": false,
+    "clock_reset": false,
+    "paid_api_called": false
+  }
+}

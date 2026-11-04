@@ -554,3 +554,24 @@ class PrecomputedVectorRetriever:
             }
             for row in rows
         ], int(token_count)
+
+
+class PrecomputedQueryEncoder:
+    """Expose an imported query bundle through the Encoder protocol."""
+
+    def __init__(self, bundle: VectorBundle, query_ids: Iterable[str]) -> None:
+        expected = list(query_ids)
+        if list(bundle.document_ids) != expected:
+            raise VectorArtifactError("query vector order does not match runtime query order")
+        np = _numpy()
+        self.bundle = bundle
+        self._vectors = np.concatenate(bundle.vectors, axis=0).astype("<f4", copy=False)
+        self._cursor = 0
+
+    def encode(self, texts: list[str]) -> tuple[Any, int]:
+        count = self._cursor
+        end = count + len(texts)
+        if end > len(self._vectors):
+            raise VectorArtifactError("query vector bundle was consumed beyond its row count")
+        self._cursor = end
+        return self._vectors[count:end], 0

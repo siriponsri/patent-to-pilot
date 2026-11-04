@@ -1,0 +1,45 @@
+{
+  "format": "ptp-manuscript-rebind-verification-v1",
+  "observed_at_utc": "2026-11-02T22:31:54.7318383Z",
+  "status": "PASS_CURRENT_FILE_LINKS_AND_BOUNDARY_RECHECK",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "source_tree_changed_for_audit": false
+  },
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "b82752f5dae91edf148f56025882b650ba170cc52960c9a9728da9c8f89924c3",
+    "bytes": 36354,
+    "local_links_checked": 20,
+    "missing_local_links": 0
+  },
+  "claim_boundary_text_checks": {
+    "budget_boundary": true,
+    "three_case_not_user_or_market_validation": true,
+    "business_claim_boundary": true,
+    "semantic_gold_boundary": true,
+    "interpretation": "Text-presence checks only; not independent semantic validation."
+  },
+  "historical_hashes_not_current": [
+    {
+      "hash": "47d7da3301757ee35c07202b10df796397a6ed3a1f05bfc86e5ad61db7e57650",
+      "scope": "earlier readiness receipt"
+    },
+    {
+      "hash": "1149e67baa411f74a0c71c4d77fa9bdf2db4d5fabce8fbae338864da01325441",
+      "scope": "earlier manuscript-integrity receipt"
+    }
+  ],
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next_action": "Owner review current manuscript and recheck the official WPI Guide for Authors before merge or submission."
+}

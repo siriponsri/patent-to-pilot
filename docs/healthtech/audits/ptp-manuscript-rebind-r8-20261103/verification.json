@@ -1,0 +1,29 @@
+{
+  "format": "ptp-manuscript-rebind-v8",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+  "sha256": "e56c2cde5e8aab643464f7e1b999a7fe26fa1bce1fe4a841a22d425ab6a23453",
+  "bytes": 42789,
+  "local_links_checked": 33,
+  "missing_local_links": 0,
+  "change_scope": "add Section 7.4.2 actual remote encoder component diagnostic and current-head rebind boundaries",
+  "claim_boundary_checks": {
+    "remote_receipt_is_actual_prior_run": true,
+    "current_head_rebind_is_not_new_remote_run": true,
+    "dapfam_not_semantic_device_patent_gold": true,
+    "no_adaptive_superiority_claimed": true,
+    "no_paid_api_result_claimed": true,
+    "no_external_business_validation_claimed": true,
+    "no_journal_submission_claimed": true
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  }
+}

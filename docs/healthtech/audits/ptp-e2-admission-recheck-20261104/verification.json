@@ -1,0 +1,67 @@
+{
+  "format": "ptp-e2-admission-recheck-v1",
+  "observed_utc": "2026-11-04T11:41:18.6167925Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "BLOCKED_BEFORE_RESERVATION_STALE_CREDIT_SNAPSHOT",
+  "credit": {
+    "source": "%LOCALAPPDATA%/PatentToPilot/healthtech/evidence/owner-credit/20261104T112056Z-ac35457b/credit-snapshot.json",
+    "snapshot_sha256": "87ca37f6789519fdd1184afaa157423fedea33b61b6a3eb80408e9e9a5f06c5d",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "remaining_credits_usd": 10.0,
+    "key_limit_state": "UNLIMITED",
+    "account_scope": "owner_asserted_not_provider_verified",
+    "as_of_utc": "2026-11-04T11:21:09.628375Z",
+    "freshness_seconds": 300,
+    "current_gate": "FAIL_STALE"
+  },
+  "pricing": {
+    "source": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-api-admission-current-25691104T113911Z/model-snapshot.json",
+    "snapshot_sha256": "c680da332b86a8b153824758316a1168a5006068093306a386168f2ab743496a",
+    "snapshot_utc": "2026-11-04T11:39:31.172595Z",
+    "model": "qwen/qwen3-32b",
+    "provider": "DeepInfra",
+    "tag": "deepinfra/fp8",
+    "prompt_usd_per_million": 0.08,
+    "completion_usd_per_million": 0.28,
+    "context_length": 40960,
+    "current_gate": "PASS"
+  },
+  "payload": {
+    "pack_sha256": "e146ab85db3792c3028e9becb0d71ea645a0cd0cfe426a9233622496e7aef489",
+    "manifest_sha256": "b9b0d1fea5c8d7c6e34801053034526103fca77d5c6b992fb29a008b64f57d28",
+    "cases": 3,
+    "rights_decision": "ALLOWED_WITH_ATTRIBUTION",
+    "dry_run_status": "DRY_RUN_NOT_EXECUTED"
+  },
+  "ledger": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity": "ok",
+    "sha256_before": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2",
+    "sha256_after": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_count": 4,
+    "legacy_actual_usd": 0.0001464,
+    "prospective_cap_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutation": false
+  },
+  "tests": {
+    "focused": 43,
+    "passed": 43,
+    "failed": 0,
+    "skipped": 0
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutation": false,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "next_input_once": "Fresh non-secret current credit snapshot for the existing dispatch key; no key, secret, budget approval, or new ledger requested."
+}

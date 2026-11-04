@@ -1,0 +1,20 @@
+{
+  "format": "ptp-openrouter-public-route-snapshot-v1",
+  "observed_utc": "2026-11-03T15:14:56.1356230Z",
+  "endpoint": "/api/v1/models/qwen/qwen3-32b/endpoints",
+  "response_sha256": "d6d451d8367526aad97ba6a6c4e58cb255eebbfb1f56fc0d7c456a9589c1fb87",
+  "model": "qwen/qwen3-32b",
+  "selected_route": {
+    "provider_name": "DeepInfra",
+    "model_id": "qwen/qwen3-32b",
+    "prompt": "0.00000008",
+    "completion": "0.00000028",
+    "context_length": 40960,
+    "max_completion_tokens": 16384,
+    "uptime_last_30m": 100,
+    "status": 0,
+    "quantization": "fp8"
+  },
+  "endpoint_count": 3,
+  "raw_payload_persisted": false
+}

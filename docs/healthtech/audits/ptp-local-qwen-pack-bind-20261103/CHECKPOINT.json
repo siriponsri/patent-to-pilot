@@ -1,0 +1,16 @@
+{
+  "format": "ptp-local-qwen-pack-bind-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "READY_FOR_OWNER_REVIEW",
+  "engineering": "PASS_LOCAL_GUIDED_PACK_AND_FAIL_CLOSED_API_PREFLIGHT",
+  "scientific_evidence": "PARTIAL_CANARY_ONLY",
+  "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+  "manuscript_readiness": "PARTIAL_BOUNDARY_UPDATE_RECORDED",
+  "o3": {
+    "local_guided": "PRIOR_PRIVATE_ARTIFACT_3_OF_3_SCHEMA_VALID",
+    "local_unguided": "0_OF_3_SCHEMA_VALID_FIELD_TYPE_FAILURE",
+    "api": "BLOCKED_LOCAL_TRANSFER_REVIEW_AND_CANONICAL_LEDGER_GATES"
+  },
+  "next_action": "Keep the FDA pack local-only; obtain an owner-authorized source-backed transfer review and existing canonical journal/quiescence evidence before any API dispatch."
+}

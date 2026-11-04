@@ -1,0 +1,31 @@
+{
+  "format": "ptp-goal-checkpoint-v1",
+  "goal": "Patent-to-Pilot O1-O4",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "API_BLOCKED_BEFORE_RESERVATION_CURRENT_METADATA_RECHECK",
+  "engineering": "UNCHANGED_CURRENT_HEAD_PASS",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "SCENARIO_ONLY_EXTERNAL_VALIDATION_NOT_RUN",
+  "manuscript": "OWNER_REVIEW_READY_NOT_SUBMISSION_COMPLETE",
+  "api": {
+    "authorization_reused": "PTP-HT-OR-R1-20261028-USD8",
+    "owner_extension": "cumulative ceiling already recorded in goal documents; no new budget request",
+    "key_endpoint": "HTTP 200; lifetime USD0.0001464; ordinary non-management key",
+    "canonical_history": "MISSING_OR_NOT_RESOLVED",
+    "current_credit": "MISSING_OR_NOT_AVAILABLE",
+    "paid_run": "NOT_RUN"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "resume_from": "docs/healthtech/audits/ptp-api-live-readiness-20261103/README.md",
+  "owner_action_once": "Provide only the existing journal/export location and current scoped credit evidence; do not send secrets or re-approve the prior budget."
+}

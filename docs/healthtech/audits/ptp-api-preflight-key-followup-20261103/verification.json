@@ -1,0 +1,86 @@
+{
+  "format": "ptp-api-preflight-key-followup-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+  },
+  "observed_at_utc": "2026-11-03T00:37:02.949958+00:00",
+  "input_handling": {
+    "owner_supplied_env_path_used": true,
+    "key_value_printed": false,
+    "key_value_copied": false,
+    "key_value_staged": false,
+    "metadata_receipt": "metadata-observation.json",
+    "metadata_receipt_sha256": "a4b066a98c429a7b8ded31e07a343215bde9a72d15fdb3657d5da102876089e5"
+  },
+  "key_metadata": {
+    "key_scope": "sha256:7cbe4013fd1c43bb8096135bc6e4ed9a0befb7607ebe820bcfcb2c33544d7b97",
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "is_management_key": false,
+    "account_scope": "NOT_RECONCILED",
+    "current_v2_credit_snapshot": "NOT_AVAILABLE_ORDINARY_KEY_NOT_MANAGEMENT",
+    "history_completeness": "NOT_PROVEN"
+  },
+  "route": {
+    "model": "qwen/qwen3-32b",
+    "upstream_provider": "DeepInfra",
+    "prompt_usd_per_million": 0.08,
+    "completion_usd_per_million": 0.28,
+    "snapshot_sha256": "46b4b4896717ee6de5ae6f68f4fb6289a7d6d32ea37e8255f7592655410463e5",
+    "structured_output_parameters_verified": true
+  },
+  "rights_cleared_pack": {
+    "cases": 3,
+    "status": "PASS_3_OF_3_ALLOWED_WITH_ATTRIBUTION",
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "message_hashes_unchanged": true,
+    "raw_payloads_in_api_manifest": false,
+    "credentials_in_api_manifest": false
+  },
+  "canonical_ledger_gate": {
+    "registry_path": "%LOCALAPPDATA%/PatentToPilot/healthtech/budget-ledgers/PTP-HT-OR-R1-20261028-USD8.json",
+    "registry_present": false,
+    "probe": "EXPECTED_BLOCKED_CANONICAL_LEDGER",
+    "state_created": false,
+    "replacement_ledger_created": false,
+    "historical_carryover_usd": 0.0001464,
+    "historical_carryover_reclassified": false
+  },
+  "dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "paid_cost_usd": 0.0,
+    "unknown_pending_retried": false,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "tests": {
+    "focused": {
+      "tests": 84,
+      "passed": 84,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "junit": "focused-tests.xml"
+    },
+    "full": {
+      "tests": 611,
+      "passed": 610,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "junit": "full-tests.xml",
+      "skip_reason": "pinned local tokenizer artifact is unavailable"
+    },
+    "compileall": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "next_action": "Obtain the existing canonical R1 journal or sanitized all-attempt export and current scoped v2 credit snapshot once; then recheck quiescence, route, pricing, rights, and reserve one paired canary only if all gates pass."
+}

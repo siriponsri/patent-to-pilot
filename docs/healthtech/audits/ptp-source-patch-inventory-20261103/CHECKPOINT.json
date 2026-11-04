@@ -1,0 +1,19 @@
+{
+  "format": "ptp-source-patch-inventory-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "READY_FOR_OWNER_REVIEW_NOT_MERGE",
+  "source_patch": "15 files; 9 modified and 6 new",
+  "verification": "scoped diff-check PASS; compileall PASS; focused 58 passed",
+  "full_suite": "616 total; 615 passed; 1 skipped; 0 failed; 0 errors",
+  "staged_or_committed": false,
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next_action": "Review the manifest and preserve the dirty owner/Claude/Luna work before any scoped commit."
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS_OFFLINE_NO_LIVE_ACTIVATION",
+  "activation_regressions": {
+    "tests": 66,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suite": "test_o3_adversarial_repair.py, test_o3_generation_repair.py, test_healthtech_round1_budget.py",
+  "runtime_source_changed_since_582_test_receipt": false,
+  "secret_values_logged": false,
+  "ledger_mutations": 0,
+  "paid_calls": 0,
+  "gpu_jobs": 0
+}

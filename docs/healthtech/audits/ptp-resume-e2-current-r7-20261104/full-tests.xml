@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="23" failures="0" skipped="0" tests="23" time="3.052" timestamp="2026-11-04T02:55:28.092437+07:00" hostname="DESKTOP-C8EHASQ"><testcase classname="" name="tests.test_healthtech_benchmark_expansion" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_benchmark_expansion.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_benchmark_expansion.py:1: in &lt;module&gt;
+    from scripts.healthtech.run_helmers_diagnostic import auc, average_precision
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_boundary_matrix" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_boundary_matrix.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_boundary_matrix.py:8: in &lt;module&gt;
+    from patent_to_pilot.healthtech.abbott import build_abbott_case_inputs
+src\patent_to_pilot\healthtech\abbott.py:29: in &lt;module&gt;
+    from scripts.healthtech.fetch_public_device_cohort import PRODUCTS, _product_disclosures, _selected_pma_record
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_cohort_migration" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_cohort_migration.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_cohort_migration.py:8: in &lt;module&gt;
+    from patent_to_pilot.healthtech.abbott import build_abbott_case_inputs
+src\patent_to_pilot\healthtech\abbott.py:29: in &lt;module&gt;
+    from scripts.healthtech.fetch_public_device_cohort import PRODUCTS, _product_disclosures, _selected_pma_record
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_company_holdout_sensitivity" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_company_holdout_sensitivity.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_company_holdout_sensitivity.py:4: in &lt;module&gt;
+    from scripts.healthtech.run_company_holdout_sensitivity import (
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_cook" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_cook.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_cook.py:9: in &lt;module&gt;
+    from patent_to_pilot.healthtech.cook import (
+src\patent_to_pilot\healthtech\cook.py:29: in &lt;module&gt;
+    from scripts.healthtech.fetch_cook_zenith_cohort import (
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_current_head_frontier" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_current_head_frontier.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_current_head_frontier.py:3: in &lt;module&gt;
+    from scripts.healthtech.render_current_head_frontier import load_rows, render_budget_svg, render_recall_svg
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_family_mapping" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_family_mapping.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_family_mapping.py:9: in &lt;module&gt;
+    from scripts.healthtech.analyze_family_frontier import analyze_family_frontier
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_integration_contract" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_integration_contract.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_integration_contract.py:9: in &lt;module&gt;
+    from scripts.healthtech.refresh_integration_contract import (
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_matched_budget_prefix" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_matched_budget_prefix.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_matched_budget_prefix.py:8: in &lt;module&gt;
+    from scripts.healthtech.analyze_matched_budget_prefix import analyze
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_multicompany" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_multicompany.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_multicompany.py:6: in &lt;module&gt;
+    from scripts.healthtech.compose_multicompany_cohort import compose_cohort
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_philips_cohort" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_philips_cohort.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_philips_cohort.py:5: in &lt;module&gt;
+    from scripts.healthtech.fetch_philips_cardiovascular_cohort import (
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_philips_dossiers" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_philips_dossiers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_philips_dossiers.py:11: in &lt;module&gt;
+    from patent_to_pilot.healthtech.philips import (
+src\patent_to_pilot\healthtech\philips.py:30: in &lt;module&gt;
+    from scripts.healthtech.fetch_philips_cardiovascular_cohort import (
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_pilot_analysis" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_pilot_analysis.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_pilot_analysis.py:6: in &lt;module&gt;
+    from scripts.healthtech.analyze_pilot_tasks import build_analysis, write_outputs
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_pilot_task" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_pilot_task.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_pilot_task.py:19: in &lt;module&gt;
+    from scripts.healthtech.run_pilot_task import run_pilot_task
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_prelive" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_prelive.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_prelive.py:38: in &lt;module&gt;
+    from scripts.healthtech.fetch_public_510k import AcquisitionAccounting
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_private_frontier_summary" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_private_frontier_summary.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_private_frontier_summary.py:3: in &lt;module&gt;
+    from scripts.healthtech.summarize_private_frontier import summarize
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_repairs" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_repairs.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_repairs.py:28: in &lt;module&gt;
+    from patent_to_pilot.healthtech.abbott import (
+src\patent_to_pilot\healthtech\abbott.py:29: in &lt;module&gt;
+    from scripts.healthtech.fetch_public_device_cohort import PRODUCTS, _product_disclosures, _selected_pma_record
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_runtime_export" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_runtime_export.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_runtime_export.py:3: in &lt;module&gt;
+    from scripts.healthtech.export_runtime_text import runtime_rows
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_scifact_baseline" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_scifact_baseline.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_scifact_baseline.py:10: in &lt;module&gt;
+    from scripts.healthtech.run_scifact_lexical_baseline import _resolve_data_root, generate_predictions
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_scifact_error_analysis" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_scifact_error_analysis.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_scifact_error_analysis.py:1: in &lt;module&gt;
+    from scripts.healthtech.analyze_scifact_errors import build_analysis, classify_claim
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_vector_artifacts" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_vector_artifacts.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_vector_artifacts.py:7: in &lt;module&gt;
+    from scripts.healthtech.encode_vector_shards import build_model_binding
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_healthtech_vector_eval" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_vector_eval.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_healthtech_vector_eval.py:7: in &lt;module&gt;
+    from scripts.healthtech.run_vector_retrieval_eval import _rrf_rankings, _validate_model_artifacts, run_evaluation
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase><testcase classname="" name="tests.test_verify_vector_bundle_pair" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\User\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_verify_vector_bundle_pair.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_verify_vector_bundle_pair.py:7: in &lt;module&gt;
+    from scripts.healthtech.verify_vector_bundle_pair import verify
+E   ModuleNotFoundError: No module named 'scripts'</error></testcase></testsuite></testsuites>

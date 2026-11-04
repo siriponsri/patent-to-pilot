@@ -1,0 +1,112 @@
+{
+  "status": "PASS_POSTHOC_CORRECTED_QUERY_SCREEN_DIAGNOSTIC",
+  "started_utc": "2026-11-03T11:48:33.166783+00:00",
+  "completed_utc": "2026-11-03T11:48:33.835902+00:00",
+  "wall_seconds": 0.6684652999974787,
+  "definition": "96 query-side lexical medical screen only; full 45336 candidate universe and ALL supplied positives for selected queries; saved top100 unchanged; self matches retained per historical protocol",
+  "selection": "POSTHOC_NOT_FINAL_HOLDOUT_OR_SEMANTIC_DEVICE_GOLD",
+  "model_inference": "NOT_RUN_EXISTING_RANKINGS_REEVALUATED",
+  "qrels_sha256": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74",
+  "query_membership_sha256": "69555fd6099c48300c07d64c0627f652882083cec2e92b5ed9069a8ab65e62fe",
+  "source_rankings": [
+    {
+      "model": {
+        "kind": "patembed",
+        "model_id": "datalyes/patembed-base",
+        "revision": "244ba452908a3093be11efb8a44396652317fb14"
+      },
+      "code_revision": "257037ab349ec88e5600c074deccfc8a62fe5fc2",
+      "created_at_utc": "2026-10-31T03:27:42.194845+00:00",
+      "rankings_sha256": "d22e1f339565d3e7b32dd1ff8c880358d330b397c1de98144b06828ce024d936",
+      "summary_sha256": "8e7e2039dba2b2081bd01ae6a42669ab5a3df5c4a514f62c140495c8227850a5"
+    },
+    {
+      "model": {
+        "kind": "e5",
+        "model_id": "intfloat/multilingual-e5-base",
+        "revision": "d128750597153bb5987e10b1c3493a34e5a4502a"
+      },
+      "code_revision": "257037ab349ec88e5600c074deccfc8a62fe5fc2",
+      "created_at_utc": "2026-10-31T03:37:28.332399+00:00",
+      "rankings_sha256": "40139a266763699eb908881f942d9d0fc878fb59a96f0be9ddd55d22e22dde70",
+      "summary_sha256": "a4635adb0debd0fc3de840ffad00474f97fc7eb9d50ed59d57a4fd72035284af"
+    }
+  ],
+  "results": [
+    {
+      "model": "patembed",
+      "method": "bm25",
+      "queries": 96,
+      "positive_pairs": 1920,
+      "hits_at_100": 326,
+      "macro_recall_at_100": 0.16979166666666667,
+      "micro_recall_at_100": 0.16979166666666667,
+      "macro_ndcg_at_100": 0.1494084082076836,
+      "missing_queries": 0,
+      "duplicate_rank_ids": 0
+    },
+    {
+      "model": "patembed",
+      "method": "dense",
+      "queries": 96,
+      "positive_pairs": 1920,
+      "hits_at_100": 715,
+      "macro_recall_at_100": 0.3723958333333333,
+      "micro_recall_at_100": 0.3723958333333333,
+      "macro_ndcg_at_100": 0.31017261554228565,
+      "missing_queries": 0,
+      "duplicate_rank_ids": 0
+    },
+    {
+      "model": "patembed",
+      "method": "hybrid_rrf",
+      "queries": 96,
+      "positive_pairs": 1920,
+      "hits_at_100": 628,
+      "macro_recall_at_100": 0.32708333333333334,
+      "micro_recall_at_100": 0.32708333333333334,
+      "macro_ndcg_at_100": 0.26424801017779326,
+      "missing_queries": 0,
+      "duplicate_rank_ids": 0
+    },
+    {
+      "model": "e5",
+      "method": "bm25",
+      "queries": 96,
+      "positive_pairs": 1920,
+      "hits_at_100": 326,
+      "macro_recall_at_100": 0.16979166666666667,
+      "micro_recall_at_100": 0.16979166666666667,
+      "macro_ndcg_at_100": 0.1494084082076836,
+      "missing_queries": 0,
+      "duplicate_rank_ids": 0
+    },
+    {
+      "model": "e5",
+      "method": "dense",
+      "queries": 96,
+      "positive_pairs": 1920,
+      "hits_at_100": 488,
+      "macro_recall_at_100": 0.25416666666666665,
+      "micro_recall_at_100": 0.25416666666666665,
+      "macro_ndcg_at_100": 0.2131057283930197,
+      "missing_queries": 0,
+      "duplicate_rank_ids": 0
+    },
+    {
+      "model": "e5",
+      "method": "hybrid_rrf",
+      "queries": 96,
+      "positive_pairs": 1920,
+      "hits_at_100": 457,
+      "macro_recall_at_100": 0.23802083333333335,
+      "micro_recall_at_100": 0.23802083333333332,
+      "macro_ndcg_at_100": 0.20288260632847074,
+      "missing_queries": 0,
+      "duplicate_rank_ids": 0
+    }
+  ],
+  "provider_calls": 0,
+  "paid_cost_usd": 0,
+  "gpu_jobs": 0
+}

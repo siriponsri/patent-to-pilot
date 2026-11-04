@@ -1,0 +1,64 @@
+{
+  "format": "ptp-manuscript-fresh-gpu-rebind-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "325b16edbf0e589da1072ec9ce3b57159f5a743bcea29f4bd8ce7371bd666dbf",
+    "bytes": 52261,
+    "relative_links_checked": 47,
+    "missing_relative_links": 0,
+    "status": "PASS_CURRENT_HEAD"
+  },
+  "prior_rebind": {
+    "audit": "docs/healthtech/audits/ptp-manuscript-e2-rebind-20261103/verification.json",
+    "sha256": "0c3ed5f1ff80c44f704cb4cc6f93e03c9675fec2cfb1063ab5c34be81faf2cc0",
+    "bytes": 50708,
+    "relative_links_checked": 46,
+    "preserved_as_historical": true
+  },
+  "content_change": {
+    "section": "7.4.3 Fresh current-head three-device transformer diagnostic",
+    "source_audit": "docs/healthtech/audits/ptp-fresh-gpu-device-diagnostic-20261103/verification.json",
+    "scientific_endpoint_changed": false,
+    "claim_scope_expanded": false,
+    "dossier_provider_rebound": false
+  },
+  "claim_boundaries": {
+    "semantic_device_patent_gold_claimed": false,
+    "adaptive_superiority_claimed": false,
+    "final_holdout_claimed": false,
+    "paid_api_result_claimed": false,
+    "external_business_validation_claimed": false,
+    "submission_performed": false
+  },
+  "verification": {
+    "manuscript_hash_and_size": "PASS",
+    "relative_links": "PASS_47_CHECKED_0_MISSING",
+    "fresh_gpu_receipt": "PASS_ALREADY_COMPLETED_NO_RERUN",
+    "json_serialization": "PASS_POST_WRITE_CHECK",
+    "focused_regression": "PASS_61_PASSED_0_FAILED_0_ERRORS_0_SKIPPED",
+    "scoped_whitespace": "PASS_POST_WRITE_CHECK"
+  },
+  "focused_regression_receipt": "focused-regression.xml",
+  "focused_regression_receipt_sha256": "b1265f08e7264cf4f4b107c2d4c2d4874dc54ee764031e08768bad9a68632ebe",
+  "resource_mutations": {
+    "new_gpu_jobs": 0,
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "dataset_downloads": 0,
+    "submission": false
+  },
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_FRESH_GPU_DIAGNOSTIC_REBOUND_OWNER_REVIEW_PENDING",
+  "next": "Post-write JSON, link, scoped whitespace, and focused regression checks passed; keep O2 partial until imported PatEmbed/E5 vectors are explicitly bound to the dossier provider."
+}

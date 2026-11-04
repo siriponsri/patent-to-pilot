@@ -1,0 +1,12 @@
+{
+  "url": "https://github.com/siriponsri/patent-to-pilot/pull/2",
+  "number": 2,
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "mergeable": true,
+  "base": "main",
+  "base_sha": "0d049802d36bc2eebe60331ec444d62469fd767f",
+  "head": "codex/research-product-o1-o4-20261031",
+  "head_sha": "8b64ca09a4237a28ad121997985b081ca8781804"
+}

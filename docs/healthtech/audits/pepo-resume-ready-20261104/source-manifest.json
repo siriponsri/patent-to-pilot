@@ -1,0 +1,1117 @@
+{
+  "observed_utc": "2026-11-03T23:06:30.390947+00:00",
+  "files": {
+    "configs/deployment-plan-v1.json": {
+      "sha256": "2a3dcbaebdec518a24a8f50032948216ec8d12c78cdcaa9e6a730997df02c723",
+      "bytes": 582
+    },
+    "configs/g09-g10-api-smoke.toml": {
+      "sha256": "e87c5b005c78456bcdf1c2ce5a65dc36baef0b83f1c17683d136412fc3f42b07",
+      "bytes": 1131
+    },
+    "configs/g09-g10-example-input.json": {
+      "sha256": "28e69c0d66404723f94d238fa12028d27bfba66c2383b118fb58183e00306a52",
+      "bytes": 3274
+    },
+    "configs/g11-provider-example.toml": {
+      "sha256": "6756ddf58fb16a9e10c1b3604248a7508c8e1051ba8b2d280ddb15350b73c4a0",
+      "bytes": 1105
+    },
+    "configs/g13-offline-plan-v1.json": {
+      "sha256": "2c73fdbed4b259d9508b27a7a457506d4384c1d3da9a90c07730979a9c0dbfd9",
+      "bytes": 3976
+    },
+    "configs/healthtech/api_dry_run.json": {
+      "sha256": "4c53c6beaafce3d47e524b6300486b04d39539faa3d68e022eb24b8d1278053e",
+      "bytes": 1099
+    },
+    "configs/healthtech/data_registry.json": {
+      "sha256": "a9688f9f8dabf1885d365a14fa1d8618e5c12cb970514ad9f82c6b3c6d2978a2",
+      "bytes": 9491
+    },
+    "configs/healthtech/g1_g2_public_cohort_protocol.json": {
+      "sha256": "582e7d9a551f2e4afefa6cec7be26f6c98f2af9fe32ffb4b16bab726b1f32508",
+      "bytes": 4355
+    },
+    "configs/healthtech/ht_t2_scifact_lexical_dev_v1.json": {
+      "sha256": "7bfb685e743f10358b6b9cf4e6d2bdf433c9c1b15b57bbe7e77acf17fc023367",
+      "bytes": 1375
+    },
+    "configs/healthtech/task_protocol.json": {
+      "sha256": "3c036dbc480e04fae3e6f7b1612719bd31afa70c7740d66e9faafe2389f5d8ea",
+      "bytes": 1314
+    },
+    "configs/local-dev.toml": {
+      "sha256": "4e77b123aff57621433979cfd31c284463a19806dc6a1062b1bf0977cff224b1",
+      "bytes": 360
+    },
+    "configs/long-run-offline-v2.json": {
+      "sha256": "eec7e75e3b2fae691da4d8f04602634d0bf9b076d45e329dfd22df90179fce90",
+      "bytes": 1742
+    },
+    "configs/provider-paired-revalidation-plan.json": {
+      "sha256": "c05f3bf2aed29127d66b7b926e7d1b7a5959725e51b57d825793b4cccbdddf48",
+      "bytes": 3192
+    },
+    "configs/provider-pilot-approval.example.json": {
+      "sha256": "fbd29530a14b78a149b6bcab48c52a7c3f08f9752bd7b0c5b764b9218d453c60",
+      "bytes": 375
+    },
+    "configs/provider-pilot-plan.json": {
+      "sha256": "92af480ccfc25798382501c4e8ad86ccc8f1bf1bd171ee7ce64548eb7292fb23",
+      "bytes": 3009
+    },
+    "examples/healthtech/synthetic-device/input.json": {
+      "sha256": "e8e7fc012a61d2c29fa10a472c391fde0277c3c913d119842034c8e074520693",
+      "bytes": 7105
+    },
+    "examples/healthtech/synthetic-device/README.md": {
+      "sha256": "bdea9cb47bc17c89504515ca02f901e6487b94ba4bad95d6e7079304fc27d3ed",
+      "bytes": 853
+    },
+    "pyproject.toml": {
+      "sha256": "2d4233b63d7b4568e985099f1040328381218ee43ef8da0a0c1c22aceec2c0dc",
+      "bytes": 487
+    },
+    "README.md": {
+      "sha256": "79a05b7b9e35a19dbd592a506948eff7043fbd454088e9f97e5c71e20a7cdffd",
+      "bytes": 16845
+    },
+    "schemas/healthtech/AcquisitionEvent.schema.json": {
+      "sha256": "49f2bba5622934c0ff811b1315a1f67412e045796f5532d4ede920a47d0ea0ca",
+      "bytes": 4405
+    },
+    "schemas/healthtech/DeviceQuery.schema.json": {
+      "sha256": "ece6a948510b30d78207486f7d86df55cfab4141f9bfc6babec70f238e0af396",
+      "bytes": 4551
+    },
+    "schemas/healthtech/DossierInput.schema.json": {
+      "sha256": "83458ee55a9a9f0b38b6323f65fc0b797480275a706109c02bb09664ca392d28",
+      "bytes": 17243
+    },
+    "schemas/healthtech/DossierVersion.schema.json": {
+      "sha256": "91c5b182f7a24f4826f83d64fac2b4c041ebf91e5e046b93de30b9142830db2f",
+      "bytes": 20239
+    },
+    "schemas/healthtech/EvidenceItem.schema.json": {
+      "sha256": "052218ce350233f32ea6dcf4613285e98ad8b0ecd3af10bf71392a9b60925f40",
+      "bytes": 2675
+    },
+    "schemas/healthtech/HealthTechAPIConfig.schema.json": {
+      "sha256": "9bd179f8c0934daf402e2a159c05dcf066a909118981be8cc385a6b4f247782f",
+      "bytes": 1292
+    },
+    "schemas/healthtech/HealthTechDispatchReceipt.schema.json": {
+      "sha256": "4f858a730d2c7016ff75e517bf37a0be4f572d8b67075d964352ade986fb764f",
+      "bytes": 1987
+    },
+    "schemas/healthtech/HealthTechRequest.schema.json": {
+      "sha256": "74dd6e18c73324d587069213c710c4903fcf425bfc74cb6bc51b3e344f16534e",
+      "bytes": 2228
+    },
+    "schemas/healthtech/HealthTechVisibleSource.schema.json": {
+      "sha256": "b82c2f40ae7304d2f7bfa515d0f26577248cda679067d5061a4b1b0d69696fd5",
+      "bytes": 687
+    },
+    "schemas/healthtech/PatentCandidate.schema.json": {
+      "sha256": "d619768f8660c9af24bea9a81801076846bed7fae39635e5f94aa8819f6b009d",
+      "bytes": 1891
+    },
+    "schemas/healthtech/RunManifest.schema.json": {
+      "sha256": "db3dd5ee973cc50534f24d2597ab19f81e99088968d605dbadd1e92bfb5b55c1",
+      "bytes": 4533
+    },
+    "scripts/dispatch_provider_pilot.py": {
+      "sha256": "5d0176e520cbc17b4ce418b51235e39d13a628495dcb5104b15529af60d8b7d6",
+      "bytes": 3279
+    },
+    "scripts/g03_acquire.py": {
+      "sha256": "496af7691447deb8424847deca7b33024738befd9832ef8dbef7a78f51d1276f",
+      "bytes": 9445
+    },
+    "scripts/g03_analyze.py": {
+      "sha256": "aa4eb679a385de0e144ec1f168fbd9996223c80238f4ec1f7d62ba8fe35dd15e",
+      "bytes": 12670
+    },
+    "scripts/g03_fetch_metadata.py": {
+      "sha256": "fcf3cfc9f5b93b8ad286998852e4444798cc01dfd416cd2043a9c798d9f19bdf",
+      "bytes": 3003
+    },
+    "scripts/healthtech/acquire_benchmark_expansion.py": {
+      "sha256": "3e4c4d3cd3a1b45ebc70c797479fa6e242c8649e37290862ed688efc9def2af9",
+      "bytes": 8113
+    },
+    "scripts/healthtech/acquire_manifest_datasets.py": {
+      "sha256": "07475134f0933c9260088a5c53e89bfbda97628ba7f1dcb2db259267ffc24370",
+      "bytes": 11032
+    },
+    "scripts/healthtech/acquire_model_artifacts.py": {
+      "sha256": "dc44cf35dd2b6326b87c7a1187a85c24f8f593be6edf4aa3ecc59e8153301fa1",
+      "bytes": 4495
+    },
+    "scripts/healthtech/acquire_semantic_source.py": {
+      "sha256": "ab2a35e4fad500ce3962137f23ef0953dcfd8bbc7cc7d75aa2a0b6dbc4c61265",
+      "bytes": 1803
+    },
+    "scripts/healthtech/analyze_dapfam_coverage.py": {
+      "sha256": "2be41ffc0613c1f577aa5d54c49c9b3d43e5f9b1fe20485cfde5c798ee481ffb",
+      "bytes": 14569
+    },
+    "scripts/healthtech/analyze_family_frontier.py": {
+      "sha256": "491186dba4ab99c77aca2bb6209a11d3c36e014c4de4f41ff17a88e7f6adbb63",
+      "bytes": 11215
+    },
+    "scripts/healthtech/analyze_family_groups.py": {
+      "sha256": "f99d5defc27e17fe4a9856f18601b8003d319b87355c74c2d78e3a099a75a3d9",
+      "bytes": 4341
+    },
+    "scripts/healthtech/analyze_long_run.py": {
+      "sha256": "d07ff14291046f38e50d9ea51ac4459a8a42c9f103fa98f6409287292ab54c00",
+      "bytes": 22640
+    },
+    "scripts/healthtech/analyze_matched_budget_prefix.py": {
+      "sha256": "d545c017677f2558111083c9f6bd80b0305bc8c9599287c8d09323a95591ea2f",
+      "bytes": 4770
+    },
+    "scripts/healthtech/analyze_pilot_tasks.py": {
+      "sha256": "6f5f2288bc7e6ef1746fc058bb96c99def649383a64171273693067c490aee21",
+      "bytes": 11613
+    },
+    "scripts/healthtech/analyze_scifact_errors.py": {
+      "sha256": "fe71c84eb66f7352a2e3998fa437d10726cc3245d29ef4cd182aff0f1da2c161",
+      "bytes": 10711
+    },
+    "scripts/healthtech/build_abbott_dossiers.py": {
+      "sha256": "845aa87ccce0fbad400e45d4efb62bea3d27bb0c8df0ae5967705b149418830c",
+      "bytes": 8418
+    },
+    "scripts/healthtech/build_adaptive_policy_report.py": {
+      "sha256": "adf186c8cbcbdea1858264125ebef30744ff0dba8b963efd6469e12521003e65",
+      "bytes": 2227
+    },
+    "scripts/healthtech/build_google_family_mapping.py": {
+      "sha256": "0ff36709460a416be46ff80e431b13f9ba2478b32d7923824b645b99281d081b",
+      "bytes": 9502
+    },
+    "scripts/healthtech/build_long_run_report.py": {
+      "sha256": "471be73cbf714b4f579021c315b8551d9afd7184e5d90a9a007f165072c2d743",
+      "bytes": 23236
+    },
+    "scripts/healthtech/build_qwen_evidence_pack.py": {
+      "sha256": "f3de0f9f1745009f4c0a206715312e3aae0cee2d25bc30d102acdeeb72d7ffdf",
+      "bytes": 12471
+    },
+    "scripts/healthtech/build_review_tasks.py": {
+      "sha256": "61e5ba9a0b877ea199489a2361a8317a54acb51926b3f680cc7e31edd73a0ce2",
+      "bytes": 2574
+    },
+    "scripts/healthtech/build_transformer_canary.py": {
+      "sha256": "7147731d6423dd9ce0b94de2dc8a73d2e5faea05c4f809589fa7e262cde4230f",
+      "bytes": 2216
+    },
+    "scripts/healthtech/collect_openrouter_metadata.py": {
+      "sha256": "39fd3e9130eea81430eafe5ce009d5e726a48888b6fd683c5941187efccb8643",
+      "bytes": 849
+    },
+    "scripts/healthtech/compare_b4_holdout.py": {
+      "sha256": "44a2a2524a6edb76128af68433160139b491411afbd282c7b55cb6c10183769b",
+      "bytes": 8862
+    },
+    "scripts/healthtech/compare_cross_cohort.py": {
+      "sha256": "de22ffe1b03388abfdc3f553191ea3278a8dbd91a8d542cb53a458d9210f331d",
+      "bytes": 23263
+    },
+    "scripts/healthtech/compose_multicompany_cohort.py": {
+      "sha256": "9a741415a8c8e2f3ed5083fc9b6f6a2416a8b12254c3827c194e88a40e87ff63",
+      "bytes": 23549
+    },
+    "scripts/healthtech/download_ranges.py": {
+      "sha256": "d7f45a66c2f32f5c7473158dfa4a2d31d4c8f5e94da4ffe66293f466df7790fb",
+      "bytes": 3517
+    },
+    "scripts/healthtech/encode_transformer_shards.py": {
+      "sha256": "a154b2c039bc6f563a68e43cb7680ef64a3bc8055846d3da5a43ef79bc3d5d27",
+      "bytes": 3953
+    },
+    "scripts/healthtech/encode_vector_shards.py": {
+      "sha256": "abe1752c57df873d09e2f46ce19e205db9d5cce3f20063499fcf2b5704cdaccd",
+      "bytes": 3328
+    },
+    "scripts/healthtech/evaluate_local_qwen_operational.py": {
+      "sha256": "01c5d2862579a1c8476eef3316072304356c321f541cfb76064b0cf67158e7e1",
+      "bytes": 8716
+    },
+    "scripts/healthtech/export_runtime_text.py": {
+      "sha256": "7fe1f19fe85313cdfea3da6f7bd3ea1021316beac7c0cefba1b9d1edf1f3fd7d",
+      "bytes": 5804
+    },
+    "scripts/healthtech/export_schemas.py": {
+      "sha256": "11a9ad297940ace4c85c62583b70cbc5d2e7e9d6f579cb39c3afc1717a924e57",
+      "bytes": 1057
+    },
+    "scripts/healthtech/fetch_boston_watchman_cohort.py": {
+      "sha256": "3f325c523b0fc613f08ceda6cf51cf8eae2e7356804bcb729e531d41b9911199",
+      "bytes": 21083
+    },
+    "scripts/healthtech/fetch_cook_zenith_cohort.py": {
+      "sha256": "da74674f926d59be9a8ed26adcb90f2663b2d4f082a90afc34372adbbf22c48e",
+      "bytes": 25908
+    },
+    "scripts/healthtech/fetch_philips_cardiovascular_cohort.py": {
+      "sha256": "f802f10fc8217e973d633b3dab9d2aef4def5bc88a7d1a6b297bdc59d2666e20",
+      "bytes": 24921
+    },
+    "scripts/healthtech/fetch_public_510k.py": {
+      "sha256": "ce02bbb1c6c792d20cb7723f7a871320e24957a6bd22eac2019c2b1fc1aa22cd",
+      "bytes": 12025
+    },
+    "scripts/healthtech/fetch_public_device_cohort.py": {
+      "sha256": "8125ffaeb276a8b9897a58cda04c81078562b9d98336e77420f15ddc52372f29",
+      "bytes": 25625
+    },
+    "scripts/healthtech/fetch_stryker_neurovascular_cohort.py": {
+      "sha256": "32921015256e0e4285864d8af8fc7049e79d71c9d7df720f4316d83bbe00befe",
+      "bytes": 26406
+    },
+    "scripts/healthtech/freeze_abbott_development.py": {
+      "sha256": "74f89bf3a5f5bfb154220093e38fd5e4831541deda0deac6000ab25a8d702727",
+      "bytes": 3361
+    },
+    "scripts/healthtech/ingest_relevance_judgments.py": {
+      "sha256": "0087f2a0776474919dad34fbeda388c5c3f7453b204e5125196cb311e6f5fbad",
+      "bytes": 4122
+    },
+    "scripts/healthtech/initialize_local_api_journal.py": {
+      "sha256": "0d3f053e3c91564b091f53589a9f95506b0e8de99fd11707e1463f3fac685728",
+      "bytes": 1431
+    },
+    "scripts/healthtech/inspect_r1_history_export.py": {
+      "sha256": "1bd07a0c5953a8975db9153e4b85058889040f33e6ce64d83615126f73ed9c6b",
+      "bytes": 1024
+    },
+    "scripts/healthtech/manage_dossier_history.py": {
+      "sha256": "e196854c8979dd2cfd208e41463cc08a2ab507e634b6ff797889666d061d25a9",
+      "bytes": 3289
+    },
+    "scripts/healthtech/migrate_legacy_cohort_rights.py": {
+      "sha256": "327cb4a7180a19909c09285e8ae483f896a2bdea826c310b93b57714f431db08",
+      "bytes": 11732
+    },
+    "scripts/healthtech/migrate_r1_reviewed_history.py": {
+      "sha256": "67226591c9dbb68818cce9150e7d1fad03fa52065d6efa8377a4139606a7487d",
+      "bytes": 1612
+    },
+    "scripts/healthtech/prepare_http_browser_cases.py": {
+      "sha256": "ba1314d637a346decd335945d8dce12cb34133cec420b96a52820208517412be",
+      "bytes": 1779
+    },
+    "scripts/healthtech/prepare_relevance_review_packet.py": {
+      "sha256": "f19941618287a635bf3e9d79b57bf8bcde3dad1d6308747f5a34ccaac39e4447",
+      "bytes": 3038
+    },
+    "scripts/healthtech/prepare_research_models.py": {
+      "sha256": "f6d38fcfb74a1d62d1fd5539c08eaa692383a627c0c2305db8f68c9dcd772fc1",
+      "bytes": 6046
+    },
+    "scripts/healthtech/prepare_scifact.py": {
+      "sha256": "fb27261e51bbd06112f4e05cb36f548f192fb19ea3f0ef47d362239ff03f37e6",
+      "bytes": 2563
+    },
+    "scripts/healthtech/prepare_ui_integration.py": {
+      "sha256": "68cc72356cd445c619a70a0b98eb7c5436cc82c4fb592bd1ef897e17222d6b32",
+      "bytes": 5137
+    },
+    "scripts/healthtech/refresh_integration_contract.py": {
+      "sha256": "50900c6aec85cdc4386d2a9750d0b179e9aa957491557702eedcb0760f8e6f66",
+      "bytes": 6818
+    },
+    "scripts/healthtech/register_canonical_openrouter_ledger.py": {
+      "sha256": "f06533b041c5063c56e37a7057b48bd9f5f14219018d1015baa7d3aeb3f8e7a6",
+      "bytes": 1769
+    },
+    "scripts/healthtech/remote_encoder_self_check.py": {
+      "sha256": "9a3fc79f693fcb7480e9dbfd0c017f0f94c44974b59ca53fff099d3bb0374bc5",
+      "bytes": 4382
+    },
+    "scripts/healthtech/render_current_head_frontier.py": {
+      "sha256": "a97114296379ba342ead98076141006b9151bb182478f957eb0c2a1aa8735448",
+      "bytes": 9797
+    },
+    "scripts/healthtech/run_api_dry_run.py": {
+      "sha256": "9498a42231d692f44455ffb4b8b64f7b5ee0f637c69a7819d532d7301ced8bfc",
+      "bytes": 951
+    },
+    "scripts/healthtech/run_b4_controller.py": {
+      "sha256": "882230781919c7ca01b26751b4f86d09d23a5581803251ad703ee2560ca16011",
+      "bytes": 17832
+    },
+    "scripts/healthtech/run_bounded_controller.py": {
+      "sha256": "a9e12a740aad590291d26297267d8382f741120485f90706180dfad483131033",
+      "bytes": 13680
+    },
+    "scripts/healthtech/run_company_holdout_sensitivity.py": {
+      "sha256": "b1f5083e5f55d651c5f60ce7cb2b0e37db9c51ebf98648fc2d9ab3c4e8174be6",
+      "bytes": 13884
+    },
+    "scripts/healthtech/run_cook_dossiers.py": {
+      "sha256": "fc26025238e180bba9dd63c92523fce2f278b201fc90101af0b1ed4d46982c32",
+      "bytes": 13017
+    },
+    "scripts/healthtech/run_dapfam_bm25.py": {
+      "sha256": "1f4db7696fdcbae48b0fec7f2c89ffb9b4bd777c66997ba98cfbe0085a15083d",
+      "bytes": 18959
+    },
+    "scripts/healthtech/run_dossier.py": {
+      "sha256": "e9861b0f72561361cf1146f9523c8fcaae8000a77537a90ba2b69997fadb9f21",
+      "bytes": 2537
+    },
+    "scripts/healthtech/run_helmers_diagnostic.py": {
+      "sha256": "f9321de7b8806adca8de6ff2b9496dd49d78a05cd11e968f2f048f26ac668838",
+      "bytes": 4903
+    },
+    "scripts/healthtech/run_http_device_cases.py": {
+      "sha256": "1b7dcb4d193fd7130a74abe3fa8965316221a2170420d91b422b2ef440ed8292",
+      "bytes": 10363
+    },
+    "scripts/healthtech/run_openrouter_generation_evidence_pack.py": {
+      "sha256": "d289b28d7d7da9dfa4e0006c650b7f20a00ea72e9db7b50583edc86099514173",
+      "bytes": 8524
+    },
+    "scripts/healthtech/run_panorama_lexical_baseline.py": {
+      "sha256": "e99dbbc83edd1383df5bdef27692775a0abd69d4896f768842034b48b2f0197a",
+      "bytes": 6392
+    },
+    "scripts/healthtech/run_philips_dossiers.py": {
+      "sha256": "7ae6fbc6bcd9f3e1140adb81aaf41b535ca01495eaeef8e7fa6340185717db71",
+      "bytes": 12476
+    },
+    "scripts/healthtech/run_pilot_task.py": {
+      "sha256": "e9988cf468bd4b1951e00d56d64b657af519bc976793efe794808237108dc073",
+      "bytes": 13596
+    },
+    "scripts/healthtech/run_qwen_generation_evidence_pack.py": {
+      "sha256": "d3f195e81959db3bf35661b9b0fc3a6593a0ad8a1e7b8a234a47fbeedee63d9c",
+      "bytes": 11643
+    },
+    "scripts/healthtech/run_real_baselines.py": {
+      "sha256": "1458939e49a39999d3009893ac5d13c5f69adcb01150871b62cefd7c5ab0cd3f",
+      "bytes": 45509
+    },
+    "scripts/healthtech/run_scifact_differential.py": {
+      "sha256": "3ee174d951e71c39175da2c0a7e1f62d0df60affdd33694e0a7370a9826386c4",
+      "bytes": 8556
+    },
+    "scripts/healthtech/run_scifact_lexical_baseline.py": {
+      "sha256": "59c28fc87703865749bec2d6a3b157625f39a44a6cd165b867103b2890eed7a6",
+      "bytes": 8370
+    },
+    "scripts/healthtech/run_transformer_vector_retrieval_eval.py": {
+      "sha256": "0423f9e843c32efa01a33ae80ea734e79d832eaf75d77d66dbde7adbcf718975",
+      "bytes": 8909
+    },
+    "scripts/healthtech/run_vector_retrieval_eval.py": {
+      "sha256": "9a307528f3ba8c1ab4d5d3b457d169a599d9cc6822410b25293f82606bda3ba8",
+      "bytes": 11428
+    },
+    "scripts/healthtech/score_scifact_predictions.py": {
+      "sha256": "09a8d83cfb086638ced32813bf25b794caeb4e65151ded4e0c8ee44deeabb48c",
+      "bytes": 4169
+    },
+    "scripts/healthtech/serve_http.py": {
+      "sha256": "2d51a048fe5bd4624c94cda362da3c3bde538f7b3373e697b7486beed6dad41b",
+      "bytes": 2235
+    },
+    "scripts/healthtech/summarize_private_frontier.py": {
+      "sha256": "109e497960eba6440a80ca21249b35b2e37883cbac5312d61d78e8f1be54b349",
+      "bytes": 11741
+    },
+    "scripts/healthtech/validate_relevance_judgments.py": {
+      "sha256": "a6d91faadf9c7b1c5d7864e7f55a6373c05e1eb80fecf94818d1f3edfe3375eb",
+      "bytes": 2160
+    },
+    "scripts/healthtech/validate_semantic_source_authorization.py": {
+      "sha256": "241d0b0c319b8d38f7565d4d0febda200921763efd54fd2b7042439ba8541cf9",
+      "bytes": 1427
+    },
+    "scripts/healthtech/validate_vector_bundle.py": {
+      "sha256": "59c086dd03bb31d35b73b49af43dd3e3657a4eef67a703d2968bf0fcddadd5c6",
+      "bytes": 1266
+    },
+    "scripts/healthtech/verify_cohort_provenance.py": {
+      "sha256": "e3ff1dbba9c2afb1048a0098653ebfe9bbd3058ccd9f8e0765c89d1ed221ed80",
+      "bytes": 1191
+    },
+    "scripts/healthtech/verify_offline.py": {
+      "sha256": "bdd6e84299d4d15a8138e298ea80466aa4ac6d856ffa43ca86a8c6d0a77fafd8",
+      "bytes": 6387
+    },
+    "scripts/healthtech/verify_vector_bundle_pair.py": {
+      "sha256": "53400683deb60b12661ae7cacce8f1ef83a911889bb0ffded7f7a789a82342b8",
+      "bytes": 4733
+    },
+    "scripts/healthtech/view_dossier_source.py": {
+      "sha256": "eb7decba7d5f4a22a0a3074432fc289d9aaaa2bbba1293cfc1f5453211a07242",
+      "bytes": 1000
+    },
+    "scripts/prepare_long_run_offline.py": {
+      "sha256": "394053c02de6cd75eeb2917c0dec7f2628e564c3d1508a75f8aa43acfe8f5399",
+      "bytes": 3389
+    },
+    "scripts/run_g09_g10_integration.py": {
+      "sha256": "6251cdef144ac31102ef195af61d7c638ea533ddb53313735aa903ed758999f9",
+      "bytes": 759
+    },
+    "scripts/run_g09_g10_workflow.py": {
+      "sha256": "4f2b46c3e5c41de292e1021548045aa3edb6dafb008af6237481ded94976e0c4",
+      "bytes": 1130
+    },
+    "scripts/run_g10_offline_comparison.py": {
+      "sha256": "6bda000ae03e6f9b4f4a6587c307d2d2ee4edc87148ded3d305fddaf5ce23629",
+      "bytes": 1690
+    },
+    "scripts/run_g13_offline_preflight.py": {
+      "sha256": "48c9838249395e3f18be43f7ca4d80642c2b9f9cb1eb757296dd646adbf997f1",
+      "bytes": 935
+    },
+    "scripts/run_offline_verification.py": {
+      "sha256": "297cd5f071a998c7d9e7f8b1b9fcf05bd63af7747a9d8b8ef7aaf5dc14c04a1a",
+      "bytes": 2722
+    },
+    "scripts/run_provider_pair.py": {
+      "sha256": "b4ae7e579333b2ebac6dfdc023a24eb5c5325fd7040a2aef3446f7ab1fd0fae1",
+      "bytes": 3229
+    },
+    "scripts/run_provider_pilot.py": {
+      "sha256": "b7b14a0e7c393d8360a220fc565bc8b5f5e916c862ceaeed899331692988ee73",
+      "bytes": 4970
+    },
+    "scripts/run_provider_recovery.py": {
+      "sha256": "95da50f85ef3cc1e0d7fa71770fe8239c71ffad923c804a6b34b5e408c48cdd0",
+      "bytes": 2539
+    },
+    "scripts/verify_g13_stage_boundary.py": {
+      "sha256": "4fc4f1da8786f6d255fc56840749b6b72fdf33e6b988bedb9b33968d224201c9",
+      "bytes": 1838
+    },
+    "scripts/verify_release_offline.py": {
+      "sha256": "615bd270e006caa8788ea51407c5b1c9eb58b395450b081172e24f1564d2624c",
+      "bytes": 6424
+    },
+    "src/patent_to_pilot/__init__.py": {
+      "sha256": "6aa12e52856fe4ecc80712be04c8c2827d773e431349c7000a3d2aafe23f7f1f",
+      "bytes": 79
+    },
+    "src/patent_to_pilot/adaptation/__init__.py": {
+      "sha256": "cc737cc58520084c9b8f8d254e5f9cd603e8ae318cb6db16c445908bea1fd088",
+      "bytes": 352
+    },
+    "src/patent_to_pilot/adaptation/engine.py": {
+      "sha256": "c4da61d05e538d3a3df1feaca10ef9b96832e14847fa8a7e8381c1a34da4eb1b",
+      "bytes": 18389
+    },
+    "src/patent_to_pilot/adaptation/models.py": {
+      "sha256": "3cbcf47f680fe7de36243fcce22776a17d6ed824dd331e62ecaf4f0d2e4faf54",
+      "bytes": 3837
+    },
+    "src/patent_to_pilot/core/__init__.py": {
+      "sha256": "28647250f1da0274c31003d853fba1b5486c8127f8ca7c08960f566fc6b996d5",
+      "bytes": 454
+    },
+    "src/patent_to_pilot/core/models.py": {
+      "sha256": "0a2d27f1436dd0d66142fa3fc70df7eb95f4d5d8fc18ff049c9f34b8680ea641",
+      "bytes": 6191
+    },
+    "src/patent_to_pilot/core/providers.py": {
+      "sha256": "6306427af9371ecb1d6576314ee9f9f87b314bff9e06bc7c6ca84df30ea04dbc",
+      "bytes": 532
+    },
+    "src/patent_to_pilot/core/repository.py": {
+      "sha256": "e72a6fd93705d3d54e790f1fcaa32ba974ef453835a300cd230ffef582dae28d",
+      "bytes": 4401
+    },
+    "src/patent_to_pilot/evaluation/__init__.py": {
+      "sha256": "81e8f7d947309cabec0c64afcb401f50368ec2acea265db0ab68e6f45eb7e2db",
+      "bytes": 331
+    },
+    "src/patent_to_pilot/evaluation/comparison.py": {
+      "sha256": "ee7716226f39c6badfb44800c18dc906c447b1188798c925a632b421bc31bc45",
+      "bytes": 51378
+    },
+    "src/patent_to_pilot/evaluation/healthtech/__init__.py": {
+      "sha256": "5dac3557ca44c36713ee1db30b2c14ed625394ef160f5adcc6c82b14796837ea",
+      "bytes": 86
+    },
+    "src/patent_to_pilot/evaluation/healthtech/judgment_submission.py": {
+      "sha256": "a8e4b25f8f4fd81d62adc2f5ed9980817e77da34f7ddf811e7ec321eddd62ece",
+      "bytes": 10053
+    },
+    "src/patent_to_pilot/evaluation/healthtech/judgments.py": {
+      "sha256": "1da8490d95f23d7b4c6f88a0798e622fb922987463a80b59561adaa2e134a391",
+      "bytes": 14348
+    },
+    "src/patent_to_pilot/evaluation/healthtech/local_retrieval.py": {
+      "sha256": "335927c8514c89e43216d06724fcf4cba74c7b7a3fa4ce43989fb18ae7b414a5",
+      "bytes": 18030
+    },
+    "src/patent_to_pilot/evaluation/healthtech/provenance.py": {
+      "sha256": "6b3c2b65f5f018a18b5db885b008c80641e24103df9039d440701196b45f3c65",
+      "bytes": 18511
+    },
+    "src/patent_to_pilot/evaluation/healthtech/retrieval.py": {
+      "sha256": "179657a381702f230d4eafcaf73ff66429e8db6a927a60dcff5f3696eef37366",
+      "bytes": 4473
+    },
+    "src/patent_to_pilot/evaluation/healthtech/review_packet.py": {
+      "sha256": "f03d78621a197684c4723de9897e4b60ff0c95fdfab3e43b998739bb2ac442cc",
+      "bytes": 20539
+    },
+    "src/patent_to_pilot/evaluation/healthtech/review_tasks.py": {
+      "sha256": "bae271b2d94d40edab2b26b8b3d33067b05f0ee5df830a4e6225e16d567fb637",
+      "bytes": 11426
+    },
+    "src/patent_to_pilot/evaluation/healthtech/scifact.py": {
+      "sha256": "dee01f36f0d93a6bad4dccbb96d7ebc9571d45c420676fae5bf422b791a8bf3c",
+      "bytes": 18838
+    },
+    "src/patent_to_pilot/evaluation/healthtech/source_acquisition.py": {
+      "sha256": "42580bf44ec620de74b3de08aa1ee9e22dd77383628f4649d56782ae1ac10fc7",
+      "bytes": 11629
+    },
+    "src/patent_to_pilot/evaluation/healthtech/source_authorization.py": {
+      "sha256": "5b8ee71c7f0b9f851d053fa8ab04c59e4a8ff5f8de6a9ca26aab27092e0d9782",
+      "bytes": 9145
+    },
+    "src/patent_to_pilot/evaluation/healthtech/transformer_encoders.py": {
+      "sha256": "ba6fb896252771c9bea9f3c44b0e629ca439d12d093d220ef61c6d9b30b0357a",
+      "bytes": 13150
+    },
+    "src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py": {
+      "sha256": "9afc248de949484b52962df1c91a9759ce35f1a26b3b9ad4ef61ad5dd1e7ec0b",
+      "bytes": 25736
+    },
+    "src/patent_to_pilot/evaluation/pilot_readiness.py": {
+      "sha256": "473785c9d50710c56bbb0f5d987664a7f5bffeb3c8a0ddd56a6a501bfce47262",
+      "bytes": 10536
+    },
+    "src/patent_to_pilot/evaluation/stage_boundary.py": {
+      "sha256": "fae22ac3bf4fea477e085c6aaf47ca4320e5d9523101f1ce3d2d2ab9262b161b",
+      "bytes": 4439
+    },
+    "src/patent_to_pilot/evaluation/synthetic_corpus.py": {
+      "sha256": "b2fe0681ec142cabd65b032cd3f5cde690eef2fc96b20066109094d6aac121b6",
+      "bytes": 8911
+    },
+    "src/patent_to_pilot/extraction/__init__.py": {
+      "sha256": "55b539bd0206d36e9faff833ccd6ccd30579acbcf005e19766d8562179600d8e",
+      "bytes": 198
+    },
+    "src/patent_to_pilot/extraction/interfaces.py": {
+      "sha256": "8dd93e4c4e25e13aa7697e7b01da9ded1a00b49865d3b689b263f7c52dc6b109",
+      "bytes": 3260
+    },
+    "src/patent_to_pilot/healthtech/__init__.py": {
+      "sha256": "de4eac6550c1a7aab6f9fa7230b2d17b752f355e9c41105851165c509f54bece",
+      "bytes": 525
+    },
+    "src/patent_to_pilot/healthtech/abbott.py": {
+      "sha256": "1203ae9f44f8d34d993326095d35cd873a572201c07363e3f863fc72611e9433",
+      "bytes": 30640
+    },
+    "src/patent_to_pilot/healthtech/adaptive_report.py": {
+      "sha256": "3d12586640fb8e7311eb8db5999e62e5ea6221223321db6d47ab2c3aa6e00a5b",
+      "bytes": 12504
+    },
+    "src/patent_to_pilot/healthtech/api.py": {
+      "sha256": "46d58c2eb279fd0b9b02bb1e40a5de4b06bf24925bf29113b1a18d70339c274a",
+      "bytes": 6947
+    },
+    "src/patent_to_pilot/healthtech/api_generation.py": {
+      "sha256": "38483b5352ae1487bebefd994cac18463941f293d4c2328804ad31233a421e83",
+      "bytes": 21003
+    },
+    "src/patent_to_pilot/healthtech/b4_live.py": {
+      "sha256": "1a6f344b3ab1a87416d8a82a5b2182539f9dd7c750af2fdbef9220b97f6c1eb1",
+      "bytes": 10691
+    },
+    "src/patent_to_pilot/healthtech/contracts.py": {
+      "sha256": "86ccdd2e4665ecdd1b9d291ee06a1cd4f5fef836b3cd1eefc9c3a68cfb133b60",
+      "bytes": 12384
+    },
+    "src/patent_to_pilot/healthtech/controller.py": {
+      "sha256": "c3a077f887c02bcfacf2b8a12c561e70e81d20fdfb4abcdf518cd9deaf4dd042",
+      "bytes": 5979
+    },
+    "src/patent_to_pilot/healthtech/cook.py": {
+      "sha256": "801a20e099f798f1a2b73fe1a1ad1136119a56d71a09f161d0e514af0c4128d3",
+      "bytes": 22391
+    },
+    "src/patent_to_pilot/healthtech/engine.py": {
+      "sha256": "e5f722d6ec46969cb0fcef1df122ba2efab7f91d650b8c422c12c19d524707c7",
+      "bytes": 22442
+    },
+    "src/patent_to_pilot/healthtech/generation.py": {
+      "sha256": "a425213587308632f58ff86613fe71fb0c1190ac1c04fcd3d11433b08113e0a7",
+      "bytes": 9145
+    },
+    "src/patent_to_pilot/healthtech/generation_payload.py": {
+      "sha256": "bfdab9abc030eb84908e38b591d0df315a5edac0a3c5dfbcb9747743793e4c93",
+      "bytes": 19644
+    },
+    "src/patent_to_pilot/healthtech/history.py": {
+      "sha256": "3d91e6e2cbae8ff58d3e15c4379d5a03040e074a44dd7d02bd2954d844a85971",
+      "bytes": 7767
+    },
+    "src/patent_to_pilot/healthtech/http.py": {
+      "sha256": "7a57b797215bcf90a6a000fcbcabe6a19039dc81c30351bdbd9dd9b6dcb60c8e",
+      "bytes": 35231
+    },
+    "src/patent_to_pilot/healthtech/local_execution.py": {
+      "sha256": "25ed4283936885352054c5cd5d10d5f4c78fcb8bbe26762dc7da9ee7a5a35e0d",
+      "bytes": 2302
+    },
+    "src/patent_to_pilot/healthtech/philips.py": {
+      "sha256": "ffc34d61cf0f8c9d4439a44d578ebf3d479c89adfdf26ff057c332e18cc67a31",
+      "bytes": 25025
+    },
+    "src/patent_to_pilot/healthtech/policies.py": {
+      "sha256": "739b5b57b13b84ba1b70c3ad1c72696c37d905f61fa0c5ea1b29716af1025ced",
+      "bytes": 1366
+    },
+    "src/patent_to_pilot/healthtech/provenance.py": {
+      "sha256": "97a98e9b06ede7801fb337abe9037ef0de58055a95a7889ac7a0253ccf3087e7",
+      "bytes": 2084
+    },
+    "src/patent_to_pilot/healthtech/provider_transfer.py": {
+      "sha256": "4b7cc901d04e311225d673c6327d6a8a808b284c9bb299e350bac88a0a267f23",
+      "bytes": 4230
+    },
+    "src/patent_to_pilot/healthtech/rights.py": {
+      "sha256": "2a31b9ae1ec2fb5a4f9226bef893c29ada15368b84dc879267415e390ebd37a4",
+      "bytes": 13051
+    },
+    "src/patent_to_pilot/healthtech/sources.py": {
+      "sha256": "fb5c71010e8df018012602063ef791a20f71c2f2e7b55b87a38b06830a45a0e3",
+      "bytes": 3759
+    },
+    "src/patent_to_pilot/healthtech/vector_http.py": {
+      "sha256": "e8dd1d2ba1e650192b0f0c62da4b33af538943c099cff4d593dbab0612e553e4",
+      "bytes": 8897
+    },
+    "src/patent_to_pilot/ingestion/__init__.py": {
+      "sha256": "e4674b993dd07087e061e16d8b5d87baef91b5b5d0c8c46a2e19dc338b284415",
+      "bytes": 129
+    },
+    "src/patent_to_pilot/ingestion/pls.py": {
+      "sha256": "f29b56cb67afd98d796679b268cf05b2f0d3d7fa3d2405256e21ec25976f15c4",
+      "bytes": 7743
+    },
+    "src/patent_to_pilot/integration/__init__.py": {
+      "sha256": "7c156a4832154c4e82387ded6877b6be249461cf8c448b663eafef693186f7bd",
+      "bytes": 204
+    },
+    "src/patent_to_pilot/integration/pipeline.py": {
+      "sha256": "43562334fd2f63909f561d3236108c89baf8c2c6e4b025b07b4f7a4dfed99008",
+      "bytes": 70396
+    },
+    "src/patent_to_pilot/product/__init__.py": {
+      "sha256": "fe15154979e318c3115d2b7c9d34ab3c1c0e3e1fe4c280df78479df6472207a2",
+      "bytes": 80
+    },
+    "src/patent_to_pilot/product/contracts.py": {
+      "sha256": "b253ccbeb91f0aa140c24752b5e7a8e0ec57213f9ef597f92fd5148613ce149d",
+      "bytes": 2708
+    },
+    "src/patent_to_pilot/providers/__init__.py": {
+      "sha256": "7b91559637422580611f208ccb08f7ff86b8644b4b9d251891a6471e6b8a72f1",
+      "bytes": 1955
+    },
+    "src/patent_to_pilot/providers/case_journal.py": {
+      "sha256": "a90164bbb04b161f436b4b8f2bb62925c2354dc3497c8510320c348905e7e07c",
+      "bytes": 2429
+    },
+    "src/patent_to_pilot/providers/credit.py": {
+      "sha256": "7c1c503b2e638b43a456344c270e23ce21a0dbaedbe62c58a7803f82ee9e9b5c",
+      "bytes": 4969
+    },
+    "src/patent_to_pilot/providers/env_file.py": {
+      "sha256": "01f73509d26cd5990f9f11033414f4ca3f0fac465d7918bec080b4de51d66f31",
+      "bytes": 3140
+    },
+    "src/patent_to_pilot/providers/history_export.py": {
+      "sha256": "1cbbba975f2e867fe062c6f62913cdb3f0e788cabf202f455e8963feb2fe849f",
+      "bytes": 4431
+    },
+    "src/patent_to_pilot/providers/history_migration.py": {
+      "sha256": "06648ea79018e9422328f7cc185abe006ec4a0be5f85d56db38ea88840e9b5c4",
+      "bytes": 12479
+    },
+    "src/patent_to_pilot/providers/history_review.py": {
+      "sha256": "824cc21716b977b8b564110327770427cb607b641588365afb3419fa7efa3f6e",
+      "bytes": 6560
+    },
+    "src/patent_to_pilot/providers/ledger_registry.py": {
+      "sha256": "335df3775a44e7fa9218c1b186f3e76397f7f3f1092ecdf8cba1e78446546cbd",
+      "bytes": 11952
+    },
+    "src/patent_to_pilot/providers/local_epoch.py": {
+      "sha256": "d37ba155f361a5a02ea0ce3efbdb5dd94a2deaa91f41563e47387b1f85a9dc25",
+      "bytes": 12670
+    },
+    "src/patent_to_pilot/providers/metadata_observation.py": {
+      "sha256": "234cc439a780c0e0b16bb1924bfd0d8edf36c5d4b8499bc6b11d90405be16c33",
+      "bytes": 8130
+    },
+    "src/patent_to_pilot/providers/openrouter.py": {
+      "sha256": "74488425f8c8f49e769662b9e5d7bfaafdb4bd22e84f1633e79ea533d56001dc",
+      "bytes": 35930
+    },
+    "src/patent_to_pilot/providers/paired.py": {
+      "sha256": "2113b0cc4a70df8459d87d20544168121ac2a490d048f8896fee5ee708de8039",
+      "bytes": 21075
+    },
+    "src/patent_to_pilot/providers/pilot.py": {
+      "sha256": "8f8db6ca9d6234303a8037946713e8e3094580705fc6c2887d80177bd97acad1",
+      "bytes": 14131
+    },
+    "src/patent_to_pilot/providers/project_budget.py": {
+      "sha256": "ea0ef2f9bc7e31aac4a400fde8a9198b9ac1a98902eaa238b1b974f9f3fddb62",
+      "bytes": 20455
+    },
+    "src/patent_to_pilot/providers/recovery.py": {
+      "sha256": "c2a49e6aff177e9a3cdfe0c69d29d72b63a98112237fda37c06d03d577dd5355",
+      "bytes": 9688
+    },
+    "src/patent_to_pilot/providers/round1.py": {
+      "sha256": "354bac65fd8cb550fd4578ebfdecd036d6db59f3debcebdf42d4e38445eb0d0e",
+      "bytes": 11498
+    },
+    "src/patent_to_pilot/retrieval/__init__.py": {
+      "sha256": "6a8e4f00bd927d6b59e204d2d6acab63b8a5aaf16770053fac42285d4a666740",
+      "bytes": 77
+    },
+    "src/patent_to_pilot/retrieval/fts.py": {
+      "sha256": "f74ca1e4a0f16bda65b1557829d713fbc4d2c656acc78d5cbd7da2d7f6e23aa3",
+      "bytes": 7703
+    },
+    "tests/fixtures/audit_regressions/README.md": {
+      "sha256": "6531d723c7aa8cd6a7743d297eda771b27661decf7b7ffec37a1eacdd76b3675",
+      "bytes": 507
+    },
+    "tests/fixtures/audit_regressions/regression-matrix.json": {
+      "sha256": "34fe66e6239625c38d5c10afa376fa4be1a8267cd07402213cdb19b6ae189bab",
+      "bytes": 2054
+    },
+    "tests/fixtures/g11_provider_regression_matrix.json": {
+      "sha256": "090a123e519c05891bd622fead302a85fe2fcc36d9b76b2a5a180caa47fa9219",
+      "bytes": 2236
+    },
+    "tests/fixtures/legacy_pls.csv": {
+      "sha256": "c82a8e3752c3468cd3245fb69a0da787e9e12bd9d58117d99b43681c8f0a9918",
+      "bytes": 4032
+    },
+    "tests/o3_test_support.py": {
+      "sha256": "bc45f0cc5b726aca20c31b8beba4723e149db1b620d7f2cadb725be6a59df06c",
+      "bytes": 2053
+    },
+    "tests/test_core.py": {
+      "sha256": "b79d4e769d8fff0048186a0ee080900762c6474f5c2f6697eca7b5a6ab68ed9f",
+      "bytes": 3733
+    },
+    "tests/test_g04_profiles.py": {
+      "sha256": "84ac82e7e35ba40cecca3538fecfe14443f7886e20db19096aae36f6ad24bea7",
+      "bytes": 1367
+    },
+    "tests/test_g08_pipeline.py": {
+      "sha256": "61f7e0373c053a3585e736573d0130c8f2d4bb772c604df0fb417437d5b3f328",
+      "bytes": 6258
+    },
+    "tests/test_g09_g10_integration.py": {
+      "sha256": "2b8a7701f7ae479a7c1f6ae014a471eedfb078f618d9cda8a5e83b6109fac734",
+      "bytes": 29377
+    },
+    "tests/test_g10_offline_comparison.py": {
+      "sha256": "6120b1c97b2102920403285018f048e2281caf4e2593d5eb959d64651bb1b253",
+      "bytes": 12917
+    },
+    "tests/test_g11_adaptation.py": {
+      "sha256": "39d5d99cfc3544f86057f856e98753d8fb1d45beeb5ea5299ea79503f38af213",
+      "bytes": 5949
+    },
+    "tests/test_g13_readiness.py": {
+      "sha256": "15bcb4bcd3a6d6994ef86e4198261bef7183ffa7162f3c65e102e8edcabdfd25",
+      "bytes": 6322
+    },
+    "tests/test_g13_stage_boundary.py": {
+      "sha256": "37ca136138e5ac999cc55373a501b24c0902338410e8b2efb2794473262c7164",
+      "bytes": 4654
+    },
+    "tests/test_healthtech.py": {
+      "sha256": "4bd4346f85c3df6066c206cf577eb060c49344a5dc27a7da0309827d5cd86ec5",
+      "bytes": 10173
+    },
+    "tests/test_healthtech_adaptive_report.py": {
+      "sha256": "bf98555b714bce7fbe0b98b7fd77cdbc1dd5b05742aa8c10a510a039028a37af",
+      "bytes": 5149
+    },
+    "tests/test_healthtech_api_env.py": {
+      "sha256": "f51b84a21413792259336b90a4119da4e123376b1c688cd3c83bf11dbcc4bfe1",
+      "bytes": 1338
+    },
+    "tests/test_healthtech_api_generation.py": {
+      "sha256": "063b8e4d7c6b07c03140f99e9765fe9823a4bea41b7b34608911a57d464190a2",
+      "bytes": 11413
+    },
+    "tests/test_healthtech_b4_holdout_comparison.py": {
+      "sha256": "61b17e35d20bbdcff4166cd51fa7ef6921a91b8c64ef264f5271c34f06b9f9e2",
+      "bytes": 2954
+    },
+    "tests/test_healthtech_b4_live.py": {
+      "sha256": "5fa9bb5b54e1af29875cf089732a0a99c426f93bf0e2164d2a117b26d123de51",
+      "bytes": 5872
+    },
+    "tests/test_healthtech_benchmark_expansion.py": {
+      "sha256": "7ef6b5c31771056667b636461323b14550a45a0960881ad3bd168fbf09b1bd52",
+      "bytes": 2051
+    },
+    "tests/test_healthtech_boundary_matrix.py": {
+      "sha256": "d9949d333947f38dc98a2ff119a1a55fd8e4933944af8bf7b9cff1ab0a70331c",
+      "bytes": 9315
+    },
+    "tests/test_healthtech_case_journal.py": {
+      "sha256": "e8a10ca8339d5add3a72818fb902e404ba226926e8848d065e4e2e39b8a86380",
+      "bytes": 4946
+    },
+    "tests/test_healthtech_cohort_migration.py": {
+      "sha256": "a878561384fb3ff012584a0565fd9e67cf3b525673a00f1476074c3a70897704",
+      "bytes": 3616
+    },
+    "tests/test_healthtech_company_holdout_sensitivity.py": {
+      "sha256": "817321aeb8540d4bca5a084a6027c952169fd0b0f14be014ba20fd11aba7864a",
+      "bytes": 2827
+    },
+    "tests/test_healthtech_controller.py": {
+      "sha256": "29ed22752b0b3e81c6e896c5a8026776e59f5567c0dae2f8ff2986dc4aa35114",
+      "bytes": 2507
+    },
+    "tests/test_healthtech_cook.py": {
+      "sha256": "a6293ad37c009db42bb54bcd43465549bed5a2e2b02d5dd1c9fd3d9832067a34",
+      "bytes": 15047
+    },
+    "tests/test_healthtech_cross_cohort.py": {
+      "sha256": "edecab20f2ab3dd5c386653bbc5fac4b1ab82183ff5d916672a5a585046867ab",
+      "bytes": 4783
+    },
+    "tests/test_healthtech_current_head_frontier.py": {
+      "sha256": "81b120456c30209d74d9e053303fdd3c46d1e705869e0e3e5450dccfb3242df2",
+      "bytes": 1994
+    },
+    "tests/test_healthtech_dapfam_bm25.py": {
+      "sha256": "a56ec5abbbc86d4ff0bed84a4707b1c808049cdcd779b882bd61432aa27ad52d",
+      "bytes": 3636
+    },
+    "tests/test_healthtech_dapfam_coverage.py": {
+      "sha256": "32d37e3c3f4f70937e22801c7efb54110f3eef362c6c63e22ff12c8919018fca",
+      "bytes": 3414
+    },
+    "tests/test_healthtech_family_mapping.py": {
+      "sha256": "e3c61974c91599694db0c74e084dbcadca9c374ee286db3307eda9adabb4c1ae",
+      "bytes": 6580
+    },
+    "tests/test_healthtech_g6_skeleton.py": {
+      "sha256": "038b12ee5380886ad373413a16d265dbfb92a226fed0d265f3aafb92d10aab71",
+      "bytes": 3222
+    },
+    "tests/test_healthtech_generation_payload.py": {
+      "sha256": "7dd2eacb111d9a869464475b102f03298961b8773c0384ef97d288a2a93e3bd3",
+      "bytes": 8295
+    },
+    "tests/test_healthtech_history_migration.py": {
+      "sha256": "6ce1cd145ce9b35b660eb9fb27e3653eaa726c041b035c331eff0e010392b39b",
+      "bytes": 7606
+    },
+    "tests/test_healthtech_http.py": {
+      "sha256": "6f1f4eca13dd04e35a85024dcc9df764b2cfd6bee193a34202ef654d7256a0d9",
+      "bytes": 13208
+    },
+    "tests/test_healthtech_integration_contract.py": {
+      "sha256": "f2d17fc726776230896f69f88b05247a30d5a90f1c75ebc1741cecd1d75f9880",
+      "bytes": 3297
+    },
+    "tests/test_healthtech_judgment_submission.py": {
+      "sha256": "95696991443956f4ba7ae5f39bad3e52774165e91a1324be1feb4b3b7808d401",
+      "bytes": 8900
+    },
+    "tests/test_healthtech_judgments.py": {
+      "sha256": "4e193a813fabe129d91e66ed8a36913aeaed1ffbc7293ada33dc60e4a59d79df",
+      "bytes": 5561
+    },
+    "tests/test_healthtech_ledger_registry.py": {
+      "sha256": "6f837f48795bfadb1ca6b7429bae307cf3ea0d171fb6fa37f918409b0263f4c8",
+      "bytes": 5865
+    },
+    "tests/test_healthtech_local_epoch.py": {
+      "sha256": "5af7cece807234107b8cad5005985476df895d2f3896f70f44f492fac34ad36d",
+      "bytes": 8488
+    },
+    "tests/test_healthtech_local_execution.py": {
+      "sha256": "8ad288ae26161882e8e63d13ff320fb3ebdd9d940e46e6d88a03489b8e238e0b",
+      "bytes": 7184
+    },
+    "tests/test_healthtech_local_qwen_operational.py": {
+      "sha256": "2e4b10f90d7b0b01a7398dd82d3657fc5e6d3cc4c6c2f449c410009f2af43ee1",
+      "bytes": 3670
+    },
+    "tests/test_healthtech_long_run_analysis.py": {
+      "sha256": "ac09cbe64a0ee96a5092cb1fc63b7007d83e8a3df65a1a20e704d9ac556a0843",
+      "bytes": 4759
+    },
+    "tests/test_healthtech_long_run_report.py": {
+      "sha256": "b94eb4a770fea9c977640f74b31446c4f3ca84ba360d7e75aaef19022a08f140",
+      "bytes": 7447
+    },
+    "tests/test_healthtech_matched_budget_prefix.py": {
+      "sha256": "1d95b8ce396db9b3426e325fa6e20853d0165e1b223af447f28500d8fed763b4",
+      "bytes": 1718
+    },
+    "tests/test_healthtech_metadata_projection.py": {
+      "sha256": "6924a5633d5a6f87bdb0806f0b7c3f2838a76200ea4d9b587fef46fceb1de05e",
+      "bytes": 2731
+    },
+    "tests/test_healthtech_multicompany.py": {
+      "sha256": "673238c33a0fe938e2b256fcac050b25c295cece3252cca1ccf31d8eeb1c1a8f",
+      "bytes": 9327
+    },
+    "tests/test_healthtech_philips_cohort.py": {
+      "sha256": "03ed54d931d1ce540bd54d43a47a09a7e63c05e88cd02a85656536bf413798a3",
+      "bytes": 2056
+    },
+    "tests/test_healthtech_philips_dossiers.py": {
+      "sha256": "2cf7381166b2df841eb9f9a97fc470a453e1ea9eb28e08c9f0a8d88b91418780",
+      "bytes": 10925
+    },
+    "tests/test_healthtech_pilot_analysis.py": {
+      "sha256": "1f180025c582a58f26c119f1da3dc7b5440e802238a215f1f029e0dc1861683e",
+      "bytes": 2978
+    },
+    "tests/test_healthtech_pilot_task.py": {
+      "sha256": "cb25c9b6b8cd26ee25403341c0dd5432feef94c6d4eac6f37564db0ffdaca7e0",
+      "bytes": 9739
+    },
+    "tests/test_healthtech_prelive.py": {
+      "sha256": "b27f95d39376b2406e62764d5310f9c4cd1335421eb540055ab12b0886c4c870",
+      "bytes": 13728
+    },
+    "tests/test_healthtech_private_frontier_summary.py": {
+      "sha256": "e98a03fa2b9b8286a51f16e88f314ec7e24eb0f0d851052c4251b33a3779db6a",
+      "bytes": 4251
+    },
+    "tests/test_healthtech_qwen_evidence_pack.py": {
+      "sha256": "72015495ff76ac94bb64fc3a22bb1f2a45b1901731c99db4e2af2a55f320be86",
+      "bytes": 8913
+    },
+    "tests/test_healthtech_real_baselines.py": {
+      "sha256": "4c1fff706398342a2c260b514c1afadbdacc18a06a940d332d5cf4a743818e3b",
+      "bytes": 4894
+    },
+    "tests/test_healthtech_repairs.py": {
+      "sha256": "e408b6492786976f6eb03593cc3255fd94906901bb91b7006a4ad85a099d67a7",
+      "bytes": 47388
+    },
+    "tests/test_healthtech_review_packet.py": {
+      "sha256": "c10474ba8094b9a1f0fcaada48028b5342a7f0aab932f618947047d6168ac6b9",
+      "bytes": 5576
+    },
+    "tests/test_healthtech_review_tasks.py": {
+      "sha256": "0515901c1c47a4d41e72a3fd92ec56ec44d8be72c1c5835d794f409e84f19563",
+      "bytes": 5149
+    },
+    "tests/test_healthtech_round1_budget.py": {
+      "sha256": "26ff1ecef792f065a80c462614374a7985e3848f6d974a76c3c17bc7e56a7f8f",
+      "bytes": 12282
+    },
+    "tests/test_healthtech_runtime_export.py": {
+      "sha256": "ecbb6e261bcd854105103f6ee289ff5087df82c69f2a99b64677b51f13c060d1",
+      "bytes": 1399
+    },
+    "tests/test_healthtech_scifact_baseline.py": {
+      "sha256": "fa5d566f422d0e47f63a67e09c595d721790dc05b3286d1fbd8d36dbd246f964",
+      "bytes": 1736
+    },
+    "tests/test_healthtech_scifact_error_analysis.py": {
+      "sha256": "fe69f8b2ee0887a92c1f67231de577a224b29e55910132923c1fe4856a19694d",
+      "bytes": 2497
+    },
+    "tests/test_healthtech_source_acquisition.py": {
+      "sha256": "7f1c9e5554478a3a4872b72a78bb1708dbd13df83caa03c325b0fb794e6ab2a4",
+      "bytes": 7578
+    },
+    "tests/test_healthtech_source_authorization.py": {
+      "sha256": "266654ff168b581b13da7351e9f70e85ee9ac32a86d1e9e89bb08178de06ea83",
+      "bytes": 3923
+    },
+    "tests/test_healthtech_transformer_encoders.py": {
+      "sha256": "7a98f7ff2d46d313df4290bc62a5bfd60b96d75b7db5e1c320e65cda0a114897",
+      "bytes": 4102
+    },
+    "tests/test_healthtech_vector_artifacts.py": {
+      "sha256": "c82b231f1b7b741f3e971bbc417b3ef56672921a36449c7e8d851e283250f8b7",
+      "bytes": 10796
+    },
+    "tests/test_healthtech_vector_eval.py": {
+      "sha256": "cd754adfcd18d3ccb71ec648ed1b020f56277a9774fb26b52405476e50949cb9",
+      "bytes": 2662
+    },
+    "tests/test_healthtech_vector_http.py": {
+      "sha256": "199d5e610c42f540e0332cc3615eee9f30f8c71ddd357a0e16adde49300cacfb",
+      "bytes": 5413
+    },
+    "tests/test_longrun_offline_v2.py": {
+      "sha256": "f177f79fa8140797985b0bc50562bab6e6de784f84afb1239c848d47b0afc279",
+      "bytes": 9183
+    },
+    "tests/test_o3_adversarial_repair.py": {
+      "sha256": "22708bce065d1adb916bb9d2a454cb7c35dac2c5e2e48416ec3e7f00c07c031b",
+      "bytes": 13050
+    },
+    "tests/test_o3_generation_repair.py": {
+      "sha256": "879486e1a821b390ffa7e2ab2b15928252a7b29e52a0ded3cbc05bc63165a2bc",
+      "bytes": 8984
+    },
+    "tests/test_openrouter_metadata_observation.py": {
+      "sha256": "113934eb5925cfe20e772d0934c0aa3f6c7f8a7690ac27854251ba3f77d40c32",
+      "bytes": 5344
+    },
+    "tests/test_provider_adapter.py": {
+      "sha256": "514e2412237c50572edda9ecb81ff63edd95ce2f37851887e61de06bd4a72bdd",
+      "bytes": 19947
+    },
+    "tests/test_provider_env_file.py": {
+      "sha256": "cd3f9c6fdc723acf010a1661571ad3155d817cdef794b0835b24cc0ddb448526",
+      "bytes": 7919
+    },
+    "tests/test_provider_identity.py": {
+      "sha256": "63384448071ab3d61d2ba80586319bbb86db00a901e9d579c06ef437e60deaa3",
+      "bytes": 10072
+    },
+    "tests/test_provider_paired.py": {
+      "sha256": "eb30917ccdb18e8266bff952d748f44fe88aae311fd50792405be57eea051d19",
+      "bytes": 10885
+    },
+    "tests/test_provider_pilot.py": {
+      "sha256": "e61d42c9af43ab78e87d5ffaea1d47545b8891abd00dde254574e94b84386068",
+      "bytes": 10761
+    },
+    "tests/test_provider_recovery.py": {
+      "sha256": "b33c24d9bb7d912cf39a90e0edd50dd837b43c2671134ed726cb20e15de7c6b5",
+      "bytes": 9163
+    },
+    "tests/test_release_budget_process.py": {
+      "sha256": "a6235f761c29a408e6c1926e13818f4fff9af4873d61cabd318464b144e86a5d",
+      "bytes": 6092
+    },
+    "tests/test_verify_vector_bundle_pair.py": {
+      "sha256": "379b72acca25d40160a226bc1d3ff7eb825e7a4abd0fe1c9e5b93b156ddfbae9",
+      "bytes": 3575
+    }
+  }
+}

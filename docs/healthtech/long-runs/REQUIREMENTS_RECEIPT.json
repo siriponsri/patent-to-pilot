@@ -1,0 +1,91 @@
+{
+  "format": "patent-to-pilot-research-product-requirements-v1",
+  "prepared_utc": "2026-10-31T01:14:52.511606+00:00",
+  "base_revision": "0d049802d36bc2eebe60331ec444d62469fd767f",
+  "mode": "NEW_GOAL",
+  "execution_status": "NOT_STARTED_DOCUMENTS_ONLY",
+  "source": "Owner transcript relayed by parent in trusted top-level delegation, 2026-10-31; latest answers supersede old defaults",
+  "approved": {
+    "four_outcomes": true,
+    "purpose": "research_non_commercial_with_commercial_distribution_preparation",
+    "embedding_delivery": "HF_weights_download_to_Windows_then_dr_train_compute_then_vectors_return_Windows",
+    "api_embedding": false,
+    "openrouter_cap_usd": 8,
+    "budget_scope": "OLD_ROUND1_CUMULATIVE_GENERATION_JUDGE_REASONING_RETRY_ALL_BILLABLE_INPUT_OUTPUT",
+    "new_budget_grant": false,
+    "local_generator_count": 1,
+    "api_generator_count": 1,
+    "local_first": true,
+    "ui_provider_selector_with_cost_status_budget_gate": true,
+    "single_gpu": true,
+    "concurrency": 1,
+    "embedding_generation_sequential": true,
+    "no_podi_or_other_job_interference": true,
+    "runtime_ceiling_hours": 24,
+    "runtime_clock": "First model/runtime canary/job starts immutable cumulative UTC deadline; no reset across resumes",
+    "git": "isolated branch/worktree/scoped tested commit/push/test PR",
+    "primary": "quality_at_fixed_budget",
+    "secondary": "cost_quality_tradeoffs"
+  },
+  "selected_models": {
+    "required_embeddings": [
+      "datalyes/patembed-base",
+      "intfloat/multilingual-e5-base"
+    ],
+    "controls": [
+      "BM25",
+      "historical pinned MiniLM"
+    ],
+    "optional_challenger": "Qwen/Qwen3-Embedding-0.6B only if declared development criterion and resources allow",
+    "local_generator": "Qwen/Qwen3-8B",
+    "api_generator": "qwen/qwen3-32b",
+    "immutable_revisions": "ACTION_TIME_FREEZE_REQUIRED_NOT_DOWNLOADED_IN_DOC_TURN"
+  },
+  "confirmed_resource_and_git_authority": {
+    "gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "gpu_model": "Tesla V100-SXM2-32GB",
+    "runtime_max_hours": 24,
+    "cpu_threads_max": 8,
+    "ram_gib_max": 32,
+    "additional_disk_gib_total_max": 40,
+    "disk_scope": "Windows+remote copies, caches, temp, environment, outputs counted together; not 40 per host",
+    "isolated_environment_official_dependencies": "APPROVED; no system Python/driver/global security changes",
+    "merge_main": "APPROVED_AFTER_ACCEPTANCE_TESTS_WITH_HEAD_GUARD_RETEST_AND_REQUIRED_REVIEW_PROTECTIONS",
+    "owner_approval_pending": []
+  },
+  "latest_confirmation": {
+    "owner_answer": "ผลยืนยันเพิ่ม 3 ข้อตามข้อเสนอ pepo เลยครับ ผมอนุมัติว่า ใช่ครับ",
+    "questions_confirmed": [
+      "V100 32GB UUID above only, maximum24hours",
+      "CPU≤8threads RAM≤32GiB additional disk total≤40GiB isolated official setup no system Python/driver changes",
+      "branch/worktree/commit/push/open-test PR and automatic merge main after acceptance without bypassing protections or impersonating approval"
+    ],
+    "source": "Trusted parent delegation with original Q/A evidence, 2026-10-31"
+  },
+  "action_time_dependencies_not_new_owner_gates": [
+    "reconcile historical actual/pending ledger before paid calls",
+    "fresh exact model/provider prices and parameter support",
+    "pin immutable model/data revisions and licenses",
+    "compatible V100 SM70 runtime/canary",
+    "review current worktree/file ownership"
+  ],
+  "independent_ready_work": [
+    "local HTTP jobs/history/export contracts",
+    "UI integration and provider availability/budget display",
+    "offline canonical budget and failure-boundary tests",
+    "evaluator/protocol/data-model manifests",
+    "targeted review/port of unmerged vector repairs"
+  ],
+  "source_owner_answers": [
+    "1. เป้าหมาย long run : ปิด 4 ผลลัพธ์ได้เลยครับ",
+    "2. งบ API คงเพดาน openrouter 8$ รวมเฉพาะ generation, judge, reasoning และ retry สำหรับ embeddings จะใช้ hunggingface โหลด model เก็บไว้ที่ local แล้ว dr-train เพื่อใช้ เป็น engine ในการทำ vectorization ส่วนที่เหลือตามข้อเสนอ pepo เลยครับ",
+    "3. ใช้ GPU ที่ระบุเพียงใบเดียว, เริ่ม concurrency 1, embeddings กับ LLM รันสลับกัน, ไม่หยุดงานคนอื่น/ไม่แตะ Podi, ไม่ใช้ GPU ทุกใบอัตโนมัติ long run ได้ 24 ชั่วโมง",
+    "4. รอบนี้เป็น research/non-commercial ครับ แต่ให้เตรียมเผื่อ commercial distribute ได้ด้วย, คัดเฉพาะ shortlist ที่ใช้งานมาครับ และผม access ได้หมดแล้วครับ",
+    "5. Retrieval อยากเพิ่มโมเดลหลายภาษาแบบเป็นตัวกลางไว้ด้วยอีกสักตัวแหะ ดูจาก paper 86 ก็ได้ครับ, generator ใช้ local LLM 1 ตัว + API 1 ตัวครับ ช่วยเลือก โมเดลมาเลย การเลือกต้องมีงานวิจัยรองรับนะครับ, primary และรายงานข้อหลังเป็น trade-off",
+    "6. ตามข้อเสนอ pepo เลยครับ เน้นไปที่ local ก่อน และ UI เลือกได้พร้อมแสดงต้นทุน/สถานะ แต่ API ต้องผ่าน budget controller ทุกครั้ง",
+    "7. ให้สิท git operation แก่ luna ด้วยเลยครับ และให้ test PR ได้เลยครับ",
+    "8. นิยามจบ long run ตามข้อเสนอ pepo เลยครับ",
+    "https://huggingface.co/datalyes/patembed-base",
+    "ทั้งนี้การเลือกโมเดลต้องมี paper รับรองนะครับ ที่ไม่ใช่ paper ของผม"
+  ]
+}

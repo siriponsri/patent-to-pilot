@@ -1,0 +1,49 @@
+{
+  "format": "ptp-journal-package-current-r1-v1",
+  "recorded_utc": "2026-11-03T17:40:02.9232059Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+  "files": {
+    "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md": {
+      "bytes": 55559,
+      "sha256": "39de783f9a268837e50f69e1bf8a5adcaec8a64f217e8f7dda5391adcf07dbcf"
+    },
+    "docs/healthtech/research/WPI_COVER_LETTER_DRAFT_20261101_EN.md": {
+      "bytes": 1948,
+      "sha256": "3875fa50044faa1adf3a67e0a2dd615ade7a3aa018e5b06780822d56e56032c8"
+    },
+    "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md": {
+      "bytes": 6860,
+      "sha256": "cec1ffe4c41b1baa119674f7907918e257d65b18b39af3dd2fe09fda901636c8"
+    },
+    "docs/healthtech/research/SUPPLEMENTAL_DATA.md": {
+      "bytes": 19344,
+      "sha256": "0b2ac1efe3e6ae43659c719d2d1cb7d66ac5ebd7b0f6ae47a79947647fc63d71"
+    },
+    "literature-review/healthtech/references.bib": {
+      "bytes": 18285,
+      "sha256": "7a9ef673632d59f6f2cfaf8877ac462639a759310596a7d98d63f02d51ae81a2"
+    }
+  },
+  "link_check": {
+    "relative_links": 57,
+    "missing": 0
+  },
+  "verification_checks": {
+    "source_authorization_tests": "PASS",
+    "package_secret_pattern_scan": "PASS",
+    "scoped_diff_check": "PASS_WITH_EXISTING_CRLF_WARNINGS_ONLY"
+  },
+  "owner_fields": {
+    "cover_letter_owner_placeholder": true,
+    "manuscript_owner_confirmation_fields": 3,
+    "submission": "NOT_SUBMITTED"
+  },
+  "rights_and_privacy": {
+    "private_payloads_in_package": false,
+    "provider_credentials_in_package": false,
+    "restricted_raw_source_text_in_package": false,
+    "external_messages": 0
+  },
+  "next": "Owner review declarations and authorized live WPI Guide/Aims before final packaging; do not submit or accept agreements automatically."
+}

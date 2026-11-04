@@ -1,0 +1,72 @@
+{
+  "verification_version": "ptp-o1-o4-acceptance-v1",
+  "verified_date": "2026-11-01",
+  "candidate": "80da253969f7973cc630ce03ac83da9900f16628",
+  "pre_commit_candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+  "branch": "codex/research-product-o1-o4-20261031",
+  "working_tree_state": "clean_committed",
+  "checks": [
+    {
+      "name": "frontend_unit",
+      "command": "npm test",
+      "cwd": "frontend/healthtech-web",
+      "status": "PASS",
+      "result": "74 passed"
+    },
+    {
+      "name": "browser_http_integration",
+      "command": "npm run test:integration:http",
+      "cwd": "frontend/healthtech-web",
+      "status": "PASS",
+      "result": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT; history 1->2; source inspection PASS; JSON/TH/EN export; provider calls 0; paid USD 0.00"
+    },
+    {
+      "name": "o1_http_vector_generation_history_contracts",
+      "command": "python -m pytest -q tests/test_healthtech_http.py tests/test_healthtech_vector_http.py tests/test_healthtech_generation_payload.py tests/test_healthtech_history_migration.py",
+      "status": "PASS",
+      "result": "exit code 0"
+    },
+    {
+      "name": "o2_transformer_vector_eval_contracts",
+      "command": "python -m pytest -q tests/test_healthtech_transformer_encoders.py tests/test_healthtech_vector_artifacts.py tests/test_healthtech_vector_eval.py tests/test_healthtech_dapfam_bm25.py tests/test_healthtech_cross_cohort.py",
+      "status": "PASS",
+      "result": "exit code 0"
+    },
+    {
+      "name": "o3_ledger_api_repair_contracts",
+      "command": "python -m pytest -q tests/test_healthtech_api_generation.py tests/test_healthtech_round1_budget.py tests/test_healthtech_ledger_registry.py tests/test_o3_adversarial_repair.py tests/test_o3_generation_repair.py",
+      "status": "PASS",
+      "result": "exit code 0"
+    },
+    {
+      "name": "full_python_suite",
+      "command": "python -m pytest -q",
+      "status": "PASS",
+      "result": "exit code 0; existing warning/skip boundary preserved"
+    },
+    {
+      "name": "diff_check",
+      "command": "git diff --check",
+      "status": "PASS",
+      "result": "line-ending warnings only"
+    },
+    {
+      "name": "benchmark_rights_gate_regression",
+      "command": "python -m pytest -q tests/test_healthtech_benchmark_expansion.py",
+      "status": "PASS",
+      "result": "6 passed; CC BY-NC metadata is fail-closed for commercial release; selected receipt revalidated without payload redownload"
+    }
+  ],
+  "historical_evidence_boundaries": {
+    "o2_remote_full_encoding": "prior tested receipt; not rerun on this dirty candidate",
+    "o4_real_device_browser": "prior recorded receipt; current exact-head synthetic HTTP acceptance is separate",
+    "o3_live_api": "NOT_RUN_BLOCKED_LOCAL"
+  },
+  "claims_not_supported": [
+    "live qwen/qwen3-32b comparison",
+    "adaptive dossier superiority",
+    "exhaustive device-patent recall",
+    "external user or customer validation",
+    "revenue, willingness-to-pay, ROI, journal acceptance, clinical, FTO or patent-validity conclusions"
+  ]
+}

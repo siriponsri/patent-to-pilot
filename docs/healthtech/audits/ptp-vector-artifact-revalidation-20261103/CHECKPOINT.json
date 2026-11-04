@@ -1,0 +1,45 @@
+{
+  "format": "ptp-vector-artifact-revalidation-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "READY_FOR_OWNER_REVIEW",
+  "engineering": "PASS_VECTOR_BUNDLE_INTEGRITY_REVALIDATION",
+  "scientific_evidence": "PARTIAL_PRIOR_ARTIFACTS_NO_NEW_RETRIEVAL_RUN",
+  "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+  "manuscript_readiness": "PARTIAL_O2_BOUNDARY_CAN_BE_UPDATED",
+  "receipt": "docs/healthtech/audits/ptp-vector-artifact-revalidation-20261103/verification.json",
+  "verification": {
+    "focused_vector_tests": "10 passed, 0 failed, 0 skipped",
+    "full_python_suite": "613 tests; 612 passed, 0 failed, 0 errors, 1 skipped; exit 0; dependency/test warnings only",
+    "compileall": "PASS",
+    "git_diff_check": "PASS",
+    "json_readback": "PASS"
+  },
+  "runtime": {
+    "manifest_sha256": "89e5b86cc21d9f3466cc3236416f4873840622a56e7aad767bbbfe173bc0484c",
+    "corpus_rows": 41,
+    "query_rows": 3,
+    "dimension": 768,
+    "cases": [
+      "HT-DEV-MITRACLIP",
+      "HT-DEV-TENDYNE",
+      "HT-DEV-TRICLIP"
+    ]
+  },
+  "resource_mutations": {
+    "paid_api_calls": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "dataset_downloads": 0,
+    "model_encode": false,
+    "retrieval_evaluation": false
+  },
+  "limitations": [
+    "Existing private vector artifacts were checked in place; no new encode or retrieval evaluation ran.",
+    "Matching model-weight files were not reverified in the local model root.",
+    "No evaluator labels, qrels, raw corpus text, vectors, or credentials were copied into the repository."
+  ],
+  "next_action": "Use the revalidation receipt as O2 artifact-integrity evidence, keep O3 paid dispatch closed until canonical R1 history and scoped credit evidence exist, and continue offline analysis/manuscript work independently."
+}
+

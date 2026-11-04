@@ -1,0 +1,31 @@
+{
+  "format": "openrouter-mcp-get-credits-sanitized-v1",
+  "action": "get-credits",
+  "status": "success",
+  "observed_local": "2026-11-04T06:58:56.9561128+07:00",
+  "observed_utc": "2026-11-03T23:58:56.9604548Z",
+  "response_timestamp_present": false,
+  "scope": "account_level",
+  "data": {
+    "total_credits": 10.0,
+    "total_usage": 0.0001464
+  },
+  "limits": {
+    "exact_key_remaining_limit": null,
+    "key_scope": null,
+    "explicit_unlimited": null,
+    "owner_supplied_first_round_mcp_key_cap_usd": 30.0
+  },
+  "privacy": {
+    "api_key_or_oauth_token_persisted": false,
+    "restricted_payload_persisted": false
+  },
+  "accounting": {
+    "e2_ledger_mutated": false,
+    "new_reservation": false,
+    "provider_paid_calls": 0,
+    "retries": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  }
+}

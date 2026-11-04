@@ -1,0 +1,72 @@
+{
+  "format": "ptp-healthtech-resume-verification-v2",
+  "recorded_date": "2026-11-04",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_state": "INTENTIONALLY_DIRTY_OWNER_CLAUDE_LUNA_RESEARCH_AUDIT_CHANGES_PRESERVED"
+  },
+  "tests": {
+    "full_suite": "646 total; 644 passed; 0 failed; 0 errors; 2 skipped",
+    "full_suite_junit": "full-tests.xml",
+    "full_suite_sha256": "00A813EADA71643DC36E98B37917F88BD55623A646ED239F5CBD5D09D1056C19",
+    "focused_suite": "49 passed; 0 failed; 0 errors; 0 skipped",
+    "focused_suite_junit": "focused-tests.xml",
+    "focused_suite_sha256": "D16B587F446AC9F23627F21010F223935B6E596398AA15A938531B744D562316",
+    "compileall": "PASS",
+    "scoped_diff_check": "PASS_EXCLUDING_PREEXISTING_MEMORY_LINE_ENDING_NOISE"
+  },
+  "metadata_observation": {
+    "receipt": "metadata-observation.json",
+    "receipt_sha256": "4B69C64071A512618C63F7E5B9B4283B88E72429B10C679E3DA516DB11C25F6B",
+    "started_at_utc": "2026-11-03T19:33:45.018745+00:00",
+    "completed_at_utc": "2026-11-03T19:33:45.360804+00:00",
+    "key_endpoint_http_status": 200,
+    "key_class": "ordinary_non_management",
+    "lifetime_usage_usd": "0.0001464",
+    "current_scoped_credit": "UNAVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "remaining_key_limit": "UNAVAILABLE",
+    "account_scope": "NOT_RECONCILED",
+    "live_admission_enabled": false
+  },
+  "journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity": "ok",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": "0.0001464",
+    "prospective_allowance_usd": "1.00",
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutation": false
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "route_price_refreshed": false,
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "pending_request_replayed": false,
+    "prospective_canary_cap_usd": "0.25"
+  },
+  "research_status": {
+    "local_generation": "PASS_LOCAL_GENERATION_3_OF_3_SCHEMA_VALID_SEPARATE_PROTOCOL",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_NOT_RUN",
+    "manuscript": "READY_FOR_OWNER_REVIEW_GUIDE_UNVERIFIED"
+  },
+  "resource_mutations": {
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "time_window_reset": false,
+    "submission": false,
+    "external_message": false
+  },
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+}
+

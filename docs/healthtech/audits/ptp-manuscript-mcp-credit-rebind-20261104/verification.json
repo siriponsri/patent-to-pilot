@@ -1,0 +1,35 @@
+{
+  "format": "ptp-manuscript-mcp-credit-rebind-v1",
+  "observed_local": "2026-11-04T07:04:00+07:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "manuscript": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+  "sha256": "a99155a5013899036a19e1dc6f1e34de96f8cc6237d98e44ef5ff876bd58d4af",
+  "bytes": 76764,
+  "relative_links_checked": 76,
+  "missing_relative_links": 0,
+  "targeted_stale_credit_phrases": 0,
+  "claims": {
+    "account_credit_observed": true,
+    "e2_usage_reconciled": true,
+    "exact_dispatch_key_limit_observed": false,
+    "exact_dispatch_key_scope_observed": false,
+    "paid_model_comparison": "NOT_RUN",
+    "adaptive_superiority": "NOT_CLAIMED",
+    "business_validation": "NOT_MEASURED_SOLO_PROJECT",
+    "journal_submission": "NOT_SUBMITTED"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "verification": {
+    "git_diff_check": "PASS",
+    "code_tests": "NOT_RUN_DOCUMENTATION_ONLY"
+  }
+}

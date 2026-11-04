@@ -1,0 +1,24 @@
+........................................................................ [ 12%]
+........................................................................ [ 24%]
+........................................................................ [ 36%]
+........................................................................ [ 48%]
+.....s.................................................................. [ 60%]
+........................................................................ [ 72%]
+........................................................................ [ 84%]
+........................................................................ [ 96%]
+........................                                                 [100%]
+============================== warnings summary ===============================
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\fitz\__init__.py:17
+  C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\site-packages\fitz\__init__.py:17: FutureWarning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+    warnings.warn(
+
+tests/test_healthtech_boundary_matrix.py::test_external_boundary_rejects_non_mapping_payload
+  C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py:475: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected `str` - serialized value may not be as expected [field_name='payload', input_value=['unsafe', 'non-mapping', 'payload'], input_type=list])
+    PydanticSerializationUnexpectedValue(Expected `dict[str, any]` - serialized value may not be as expected [field_name='payload', input_value=['unsafe', 'non-mapping', 'payload'], input_type=list])
+    return self.__pydantic_serializer__.to_python(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_healthtech_repairs.py:274: pinned local tokenizer artifact is unavailable
+599 passed, 1 skipped, 2 warnings in 23.25s

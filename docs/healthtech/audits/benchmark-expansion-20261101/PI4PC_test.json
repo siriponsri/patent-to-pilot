@@ -1,0 +1,25 @@
+{
+  "run_version": "panorama-lexical-baseline-v1",
+  "task": "PI4PC",
+  "split": "test",
+  "source": "C:\\Users\\User\\Desktop\\myProject\\_private_artifacts\\healthtech\\benchmark-expansion-20261101\\PANORAMA PAR4PC_PI4PC validation+test\\PI4PC\\test.parquet",
+  "source_sha256": "fb3b5928018a0a8016f6d9ac913a00fae30f28042cfe71a9354860fccc41e10c",
+  "rows": 3402,
+  "failed_rows": 0,
+  "failed_output_rate": 0.0,
+  "macro_gold_hit_at_1": 0.4012345679012346,
+  "macro_gold_hit_at_8": 1.0,
+  "singleton_exact_top1": 0.4012345679012346,
+  "singleton_rows": 3402,
+  "wall_seconds": 7.972537100024056,
+  "machine_time_per_row_seconds": 0.0023434853321646254,
+  "method": "BM25-style lexical ranking over task-provided context and options; no gold/silver/negative fields read for ranking",
+  "runtime_exclusions": [
+    "gold_answers",
+    "silver_answers",
+    "negative_answers"
+  ],
+  "retry_policy": "none",
+  "predictions_path": "C:\\Users\\User\\Desktop\\myProject\\_private_artifacts\\healthtech\\benchmark-expansion-20261101\\predictions\\PI4PC_test.json",
+  "failure_reasons": []
+}

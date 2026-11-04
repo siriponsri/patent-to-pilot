@@ -1,0 +1,74 @@
+{
+  "cases": [
+    {
+      "case_id": "HT-DEV-MITRACLIP",
+      "classification_contract_matches": 4,
+      "emitted_evidence_rows": 4,
+      "exact_source_locator_bindings": 4,
+      "finding_count": 4,
+      "input_evidence_rows": 5,
+      "output_sha256": "b7bf8a7565d76361d9ce8e12a6390a9215e61a21267cbdfc4baa75608bb057d1",
+      "schema_valid": true,
+      "unresolved_count": 1
+    },
+    {
+      "case_id": "HT-DEV-TENDYNE",
+      "classification_contract_matches": 4,
+      "emitted_evidence_rows": 4,
+      "exact_source_locator_bindings": 4,
+      "finding_count": 4,
+      "input_evidence_rows": 5,
+      "output_sha256": "734cdb2db16de61b9c27e54c8b082201ec5df25db39f7a11ffb48b01af4863fc",
+      "schema_valid": true,
+      "unresolved_count": 1
+    },
+    {
+      "case_id": "HT-DEV-TRICLIP",
+      "classification_contract_matches": 4,
+      "emitted_evidence_rows": 4,
+      "exact_source_locator_bindings": 4,
+      "finding_count": 4,
+      "input_evidence_rows": 5,
+      "output_sha256": "67e458067e3795ba99ed6e6c7e5530fbef9abb379c103c48d8a91ffe7d3307f8",
+      "schema_valid": true,
+      "unresolved_count": 1
+    }
+  ],
+  "errors": [],
+  "format": "ptp-local-qwen-operational-evaluation-v1",
+  "inputs": {
+    "pack_file_sha256": "b132f0409b24262cff09e6a162a7c3d3ec30858bc90a7ba4b9836ce303256f36",
+    "receipt_sha256": "7072197565f26a0b88ae80aeddd08eff3c933f69f6632714fcc296a6713dc6fd"
+  },
+  "interpretation": "Deterministic source/locator and workflow-coverage metrics only; not semantic relevance, retrieval accuracy, or adaptive superiority.",
+  "resource_summary": {
+    "mean_generation_latency_seconds": 54.32043713191524,
+    "model_id": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "pack_sha256": "918f615210546b65111cbc683181dc43886ace2267f16c19d62c31175ea6607b",
+    "paid_cost_usd": 0.0,
+    "provider_calls": 0,
+    "total_output_tokens": 1448,
+    "total_prompt_tokens": 7301
+  },
+  "status": "PASS_OPERATIONAL_SOURCE_BOUNDING",
+  "summary": {
+    "case_count": 3,
+    "cases_with_unresolved_items": 3,
+    "classification_contract_matches": 12,
+    "classification_contract_rate": 1.0,
+    "classification_counts": {
+      "disclosed_link": 2,
+      "source_fact": 10
+    },
+    "emitted_unique_evidence_rows": 12,
+    "evidence_coverage_rate": 0.8,
+    "exact_source_locator_bindings": 12,
+    "exact_source_locator_rate": 1.0,
+    "finding_count": 12,
+    "input_evidence_rows": 15,
+    "schema_valid_cases": 3,
+    "unresolved_item_count": 3,
+    "unresolved_visibility_rate": 1.0
+  }
+}

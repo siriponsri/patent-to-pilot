@@ -1,0 +1,75 @@
+{
+  "format": "ptp-api-preflight-current-verification-v1",
+  "observed_at_utc": "2026-11-03T00:27:31.760880+00:00",
+  "candidate": {
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103"
+  },
+  "input": {
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "pack_file_sha256": "0b2bef9fcf8c3eff6106a1786885e4407ea4b8c9e628397ab8e52a392204ced9",
+    "manifest_sha256": "c298b1027e31a270c7db8956cf36a000c854f5c7374e8bb75241881f84729843",
+    "cases": 3,
+    "rights_decision": "ALLOWED_WITH_ATTRIBUTION",
+    "message_hashes_match_local_pack": true,
+    "payload_hashes_match_local_pack": true
+  },
+  "route_observation": {
+    "model": "qwen/qwen3-32b",
+    "provider": "DeepInfra",
+    "snapshot_utc": "2026-11-03T00:27:31.760880+00:00",
+    "snapshot_sha256": "46b4b4896717ee6de5ae6f68f4fb6289a7d6d32ea37e8255f7592655410463e5",
+    "prompt_usd_per_million": 0.08,
+    "completion_usd_per_million": 0.28,
+    "structured_output_parameters": [
+      "max_tokens",
+      "structured_outputs",
+      "response_format"
+    ],
+    "source": "https://openrouter.ai/api/v1/models/qwen/qwen3-32b/endpoints",
+    "account_credit_queried": false
+  },
+  "metadata_observation": {
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "matches_four_known_legacy_settled_attempts": true,
+    "current_v2_credit_snapshot": "NOT_AVAILABLE_ORDINARY_KEY_NOT_MANAGEMENT",
+    "account_scope": "NOT_RECONCILED",
+    "history_completeness": "NOT_PROVEN"
+  },
+  "dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "new_attempt_ids": 0,
+    "canonical_registry_present": false,
+    "current_credit_snapshot_present": false,
+    "reason": "Canonical R1 journal/registry and current scoped v2 account/key credit snapshot are required before paid reservation."
+  },
+  "safety": {
+    "journal_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "zero_ledger_created": false,
+    "credentials_persisted": false,
+    "raw_source_payloads_persisted": false
+  },
+  "verification": {
+    "focused_regression": "43 passed, 0 failed, 0 skipped",
+    "full_python": "611 tests; 610 passed; 0 failed; 0 errors; 1 skipped; 2 warnings",
+    "full_python_receipt": "full-tests.xml",
+    "compileall": "PASS",
+    "git_diff_check": "PASS",
+    "manuscript_links": "25 checked, 0 missing",
+    "manuscript_sha256": "a1f7f1630c7adfa820886dd8d1de311f954185f090c1b0831150e6c2c8760877"
+  },
+  "interpretation": {
+    "rights_and_schema_preflight": "PASS_3_OF_3",
+    "provider_generation": "NOT_RUN",
+    "model_quality": "NOT_EVALUATED",
+    "local_vs_api_comparison": "NOT_RUN",
+    "business_validation": "NOT_RUN"
+  }
+}

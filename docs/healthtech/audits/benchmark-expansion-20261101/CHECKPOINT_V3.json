@@ -1,0 +1,32 @@
+{
+  "checkpoint_version": "benchmark-expansion-v3-selected-datasets",
+  "created_date": "2026-11-01",
+  "status": "PASS_OFFLINE_ACQUISITION_SCOPE_EXTENDED_READY_FOR_OWNER_REVIEW",
+  "base_checkpoint": "docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT.json",
+  "candidate_base": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+  "candidate_state": "working_tree_uncommitted",
+  "source_pack": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-o3-safety-repair-20261031/docs/healthtech/audits/pepo-dataset-benchmark-expansion-20261101/",
+  "new_receipts": [
+    "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_RECEIPT.json",
+    "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_ACQUISITION_FAILURES.json",
+    "docs/healthtech/audits/benchmark-expansion-20261101/SELECTED_DATASET_SCOPE.json",
+    "docs/healthtech/audits/benchmark-expansion-20261101/verification_selected.json"
+  ],
+  "results": {
+    "PatSnap_claim_chart": "schema_verified_not_scored",
+    "PatentsView_assignee": "schema_verified_rights_unresolved_not_used",
+    "AffRoDB": "schema_verified_not_scored",
+    "existing_PANORAMA_Helmers_component_results": "unchanged_and_preserved"
+  },
+  "scientific_status": "PARTIAL_COMPONENT_EVIDENCE_ONLY",
+  "business_validation": "NOT_VALIDATED_SOLO_PROJECT",
+  "paid_api": "NOT_RUN",
+  "gpu": "NOT_RUN",
+  "resource_usage": {
+    "api_usd": 0,
+    "gpu_jobs": 0,
+    "existing_vectors_redownloaded": false,
+    "new_payload_bytes_verified": 27024143
+  },
+  "next_action": "Owner review selected-dataset scope and rights boundary; continue offline matched adaptive study only if a current rights-cleared cohort and final protocol are available."
+}

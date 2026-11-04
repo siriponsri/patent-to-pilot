@@ -1,0 +1,30 @@
+{
+  "format": "ptp-api-preflight-current-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_RIGHTS_3_OF_3_ROUTE_CURRENT_CREDIT_AND_CANONICAL_LEDGER_MISSING",
+  "rights_payload": "ALLOWED_WITH_ATTRIBUTION",
+  "public_route": "DeepInfra",
+  "public_price_usd_per_million": {"prompt": 0.08, "completion": 0.28},
+  "key_metadata": {
+    "http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "account_scope": "NOT_RECONCILED",
+    "v2_credit_snapshot": "NOT_AVAILABLE_ORDINARY_KEY_NOT_MANAGEMENT"
+  },
+  "paid_dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "new_attempt_ids": 0,
+    "paid_cost_usd": 0.0,
+    "ledger_mutations": 0
+  },
+  "verification": {
+    "full_python": "611 tests; 610 passed; 0 failed; 0 errors; 1 skipped; 2 warnings",
+    "focused_regression": "43 passed, 0 failed, 0 skipped",
+    "manuscript_links": "25 checked, 0 missing",
+    "manuscript_sha256": "a1f7f1630c7adfa820886dd8d1de311f954185f090c1b0831150e6c2c8760877"
+  },
+  "next_action": "Obtain the existing canonical R1 journal/export and current scoped v2 credit snapshot once, then recheck all gates before one canary."
+}

@@ -1,0 +1,274 @@
+{
+  "format": "ht-real-http-vector-device-cases-v1",
+  "status": "PASS_REAL_HTTP_VECTOR_DEVICE_CASES",
+  "created_at_utc": "2026-11-02T20:40:24.764877+00:00",
+  "code_commit": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "provider": {
+    "id": "local-vector",
+    "label": "Local vector engine (sentence-transformers/all-MiniLM-L6-v2)",
+    "available": true,
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "encoder_kind": "minilm_onnx",
+    "corpus_rows": 41,
+    "query_ids": [
+      "HT-DEV-MITRACLIP",
+      "HT-DEV-TENDYNE",
+      "HT-DEV-TRICLIP"
+    ],
+    "bundle_manifest_sha256": "e69ffe77ad463ba17512e5415933a15a4e3e5eb0609730b5649b5e417525503e",
+    "query_bundle_manifest_sha256": "5c1b83583a18e6316d8cbd47c2d9ca17f5ba8efeed07e6d64bf58c8ed8b707f9",
+    "config_sha256": "5a17a440dc9cf14a926a86ed69c9e8e66a9f268efe39b0b2ca3596c554fdf12b",
+    "billing_status": "not_billable_local",
+    "actual_usd": 0.0,
+    "reserved_usd": 0.0,
+    "unknown_usd": 0.0,
+    "resource_usage": "measured_local_resources"
+  },
+  "cases": [
+    {
+      "case_id": "HT-DEV-MITRACLIP",
+      "job_id": "6c5bb7812401469a9a8b98df0974b3b1",
+      "state": "succeeded",
+      "provider": {
+        "id": "local-vector",
+        "label": "Local vector engine (sentence-transformers/all-MiniLM-L6-v2)",
+        "available": true,
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "encoder_kind": "minilm_onnx",
+        "corpus_rows": 41,
+        "query_ids": [
+          "HT-DEV-MITRACLIP",
+          "HT-DEV-TENDYNE",
+          "HT-DEV-TRICLIP"
+        ],
+        "bundle_manifest_sha256": "e69ffe77ad463ba17512e5415933a15a4e3e5eb0609730b5649b5e417525503e",
+        "query_bundle_manifest_sha256": "5c1b83583a18e6316d8cbd47c2d9ca17f5ba8efeed07e6d64bf58c8ed8b707f9",
+        "config_sha256": "5a17a440dc9cf14a926a86ed69c9e8e66a9f268efe39b0b2ca3596c554fdf12b",
+        "billing_status": "not_billable_local",
+        "actual_usd": 0.0,
+        "reserved_usd": 0.0,
+        "unknown_usd": 0.0,
+        "resource_usage": "measured_local_resources"
+      },
+      "source_inspection": {
+        "status": 200,
+        "field": "trade_name",
+        "payload_present": true
+      },
+      "history": {
+        "status": 200,
+        "versions": [
+          {
+            "version": 1,
+            "parent_version": null,
+            "path": "version-0001.json",
+            "user_edit_keys": []
+          },
+          {
+            "version": 2,
+            "parent_version": 1,
+            "path": "version-0002.json",
+            "user_edit_keys": [
+              "review_note"
+            ]
+          }
+        ],
+        "edit_status": 200,
+        "edited_version": 2
+      },
+      "dossier": {
+        "candidate_count": 34,
+        "dense_candidate_count": 33,
+        "evidence_count": 5,
+        "event_count": 2,
+        "vector_errors": [],
+        "stop_reason": "fixed_schedule_complete"
+      },
+      "exports": {
+        "status": "PASS",
+        "versions": {
+          "json": 2,
+          "th": 2,
+          "en": 2
+        },
+        "sha256": {
+          "json": "6700f77b8dde81b5049a5833865b513914cfcfec9c384b3c3867f0144867a760",
+          "th": "148bc3a127ff7dff20380908dac192d7ce58034043a55c49fc573913fd713b81",
+          "en": "073c8123ca8785f9ff2a56c56b58645e3f1df638016331600a7842f247ca3511"
+        }
+      },
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    {
+      "case_id": "HT-DEV-TENDYNE",
+      "job_id": "ab8933d068d140baa4ab956df37905d8",
+      "state": "succeeded",
+      "provider": {
+        "id": "local-vector",
+        "label": "Local vector engine (sentence-transformers/all-MiniLM-L6-v2)",
+        "available": true,
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "encoder_kind": "minilm_onnx",
+        "corpus_rows": 41,
+        "query_ids": [
+          "HT-DEV-MITRACLIP",
+          "HT-DEV-TENDYNE",
+          "HT-DEV-TRICLIP"
+        ],
+        "bundle_manifest_sha256": "e69ffe77ad463ba17512e5415933a15a4e3e5eb0609730b5649b5e417525503e",
+        "query_bundle_manifest_sha256": "5c1b83583a18e6316d8cbd47c2d9ca17f5ba8efeed07e6d64bf58c8ed8b707f9",
+        "config_sha256": "5a17a440dc9cf14a926a86ed69c9e8e66a9f268efe39b0b2ca3596c554fdf12b",
+        "billing_status": "not_billable_local",
+        "actual_usd": 0.0,
+        "reserved_usd": 0.0,
+        "unknown_usd": 0.0,
+        "resource_usage": "measured_local_resources"
+      },
+      "source_inspection": {
+        "status": 200,
+        "field": "trade_name",
+        "payload_present": true
+      },
+      "history": {
+        "status": 200,
+        "versions": [
+          {
+            "version": 1,
+            "parent_version": null,
+            "path": "version-0001.json",
+            "user_edit_keys": []
+          },
+          {
+            "version": 2,
+            "parent_version": 1,
+            "path": "version-0002.json",
+            "user_edit_keys": [
+              "review_note"
+            ]
+          }
+        ],
+        "edit_status": 200,
+        "edited_version": 2
+      },
+      "dossier": {
+        "candidate_count": 34,
+        "dense_candidate_count": 33,
+        "evidence_count": 5,
+        "event_count": 2,
+        "vector_errors": [],
+        "stop_reason": "fixed_schedule_complete"
+      },
+      "exports": {
+        "status": "PASS",
+        "versions": {
+          "json": 2,
+          "th": 2,
+          "en": 2
+        },
+        "sha256": {
+          "json": "a6c54a36723d9c4f113da3bf675bc76db55e52c0fcb4352c38dabd0d7e08409b",
+          "th": "f91c666b72ca0a3dd00684468f7569a03753c3a2387f907611f58847dc596048",
+          "en": "c6437ef4798d38f9203c8500f1f3e1035954d926dfb9bbff8e2cb9439e227ab3"
+        }
+      },
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    {
+      "case_id": "HT-DEV-TRICLIP",
+      "job_id": "a97c1d5773d9461db07d2dcf9ffcc0c8",
+      "state": "succeeded",
+      "provider": {
+        "id": "local-vector",
+        "label": "Local vector engine (sentence-transformers/all-MiniLM-L6-v2)",
+        "available": true,
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "encoder_kind": "minilm_onnx",
+        "corpus_rows": 41,
+        "query_ids": [
+          "HT-DEV-MITRACLIP",
+          "HT-DEV-TENDYNE",
+          "HT-DEV-TRICLIP"
+        ],
+        "bundle_manifest_sha256": "e69ffe77ad463ba17512e5415933a15a4e3e5eb0609730b5649b5e417525503e",
+        "query_bundle_manifest_sha256": "5c1b83583a18e6316d8cbd47c2d9ca17f5ba8efeed07e6d64bf58c8ed8b707f9",
+        "config_sha256": "5a17a440dc9cf14a926a86ed69c9e8e66a9f268efe39b0b2ca3596c554fdf12b",
+        "billing_status": "not_billable_local",
+        "actual_usd": 0.0,
+        "reserved_usd": 0.0,
+        "unknown_usd": 0.0,
+        "resource_usage": "measured_local_resources"
+      },
+      "source_inspection": {
+        "status": 200,
+        "field": "trade_name",
+        "payload_present": true
+      },
+      "history": {
+        "status": 200,
+        "versions": [
+          {
+            "version": 1,
+            "parent_version": null,
+            "path": "version-0001.json",
+            "user_edit_keys": []
+          },
+          {
+            "version": 2,
+            "parent_version": 1,
+            "path": "version-0002.json",
+            "user_edit_keys": [
+              "review_note"
+            ]
+          }
+        ],
+        "edit_status": 200,
+        "edited_version": 2
+      },
+      "dossier": {
+        "candidate_count": 41,
+        "dense_candidate_count": 41,
+        "evidence_count": 5,
+        "event_count": 2,
+        "vector_errors": [],
+        "stop_reason": "fixed_schedule_complete"
+      },
+      "exports": {
+        "status": "PASS",
+        "versions": {
+          "json": 2,
+          "th": 2,
+          "en": 2
+        },
+        "sha256": {
+          "json": "abea24586288a8dba681513efc03a6efab827b4722e5295af787b142bef17e94",
+          "th": "ffe88abfc85f13a6c7d5d625eefbbf068be38bd15aa480f1a28e867cca801f50",
+          "en": "b1d5022c8666aa2e05bff4409a2a7a8a7808293a7d1cb2cddd93bc0a227cf50c"
+        }
+      },
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    }
+  ],
+  "counts": {
+    "cases": 3,
+    "passed": 3
+  },
+  "inputs": {
+    "cohort_sha256": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121",
+    "corpus_runtime_sha256": "d1c254d054982566418b55355f45ab7cd2d38145312653b2b91dbacd075383a3",
+    "query_runtime_sha256": "8d144151ecaf98b87f09ab673e1c3ac6f07c0df69d66ec162c4c36949ac3b2b6",
+    "corpus_manifest_sha256": "e69ffe77ad463ba17512e5415933a15a4e3e5eb0609730b5649b5e417525503e",
+    "query_manifest_sha256": "5c1b83583a18e6316d8cbd47c2d9ca17f5ba8efeed07e6d64bf58c8ed8b707f9"
+  },
+  "boundaries": [
+    "The browser did not receive server-owned vector paths or raw vector bundles.",
+    "The three Abbott cases are public-source local-research engineering cases; product-level disclosure is not semantic claim relevance gold.",
+    "No local Qwen generation was dispatched by this HTTP runner; the existing frozen-pack generation receipt is a separate artifact."
+  ]
+}

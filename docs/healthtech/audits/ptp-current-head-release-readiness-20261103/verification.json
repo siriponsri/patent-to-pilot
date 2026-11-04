@@ -1,0 +1,89 @@
+{
+  "format": "ptp-current-head-release-readiness-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true,
+    "clean_release": false
+  },
+  "historical_release_receipt": {
+    "path": "docs/healthtech/audits/ptp-long-run-resume-20261103/release-verification-20261103-r3/verification.json",
+    "source_commit_supplied": "46ab5ac3b272dd6cce2ac48aa123b2c7e4838fcd",
+    "tests": 142,
+    "status": "PASS_HISTORICAL_NOT_CURRENT_HEAD"
+  },
+  "current_head_verification": {
+    "full_python_suite": {
+      "tests_total": 642,
+      "passed": 640,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "warnings": 2,
+      "junit": "docs/healthtech/audits/ptp-current-head-release-readiness-20261103/full-tests.xml",
+      "junit_sha256": "e690c072b2094fd9f8dca5a03190adcca1a391f23e15fa295a2c752c9527f31e"
+    },
+    "ledger_regression": {
+      "tests": 43,
+      "passed": 43,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "junit": "docs/healthtech/audits/ptp-current-head-release-readiness-20261103/ledger-regression.xml",
+      "junit_sha256": "566553e297d5343bf73584a16ee4008fd05a56fd1be278e8b6a20d0823f2864a"
+    },
+    "compileall": "PASS",
+    "json_validation": "PASS",
+    "markdown_link_validation": "83 checked; 0 missing",
+    "scoped_diff_check": "PASS"
+  },
+  "failure_preservation": {
+    "initial_full_suite": {
+      "tests_total": 642,
+      "passed": 629,
+      "failures": 11,
+      "errors": 0,
+      "skipped": 2,
+      "junit": "docs/healthtech/audits/ptp-current-head-release-readiness-20261103/full-tests-initial-failures.xml",
+      "junit_sha256": "1e2e0785ee0c343ca8d58d1f1cc3ef35a53c42b8073830994cd7187019a3ed79"
+    },
+    "cause": "Legacy R1 canonical fixtures were evaluated while the owner-authorized E2 epoch was active. Tests now disable E2 activation only within those R1 fixtures; production default remains E2.",
+    "historical_receipts_rewritten": false
+  },
+  "source_changes": [
+    "tests/test_healthtech_history_migration.py",
+    "tests/test_o3_adversarial_repair.py"
+  ],
+  "journal_read_only_check": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity": "ok",
+    "budget_epoch_rows": 1,
+    "legacy_receipt_rows": 4,
+    "attempt_rows": 0,
+    "pending_or_unknown_rows": 0,
+    "known_legacy_actual_usd": "0.0001464",
+    "prospective_allowance_usd": "1",
+    "history_boundary": "UNKNOWN_OWNER_ACCEPTED_CUTOVER"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempts": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "active_experiment_processes_excluding_probe": 0
+  },
+  "status": "PASS_CURRENT_HEAD_OFFLINE_RELEASE_READINESS_DIRTY_CANDIDATE_NOT_RELEASED",
+  "limitations": [
+    "The worktree is intentionally dirty and has not been merged, pushed, or tagged as a clean release.",
+    "The historical 46ab5ac release receipt is not pooled with current-head evidence.",
+    "Paid API remains blocked before reservation pending current scoped credit/limit evidence and fresh exact-route pricing.",
+    "Research evidence remains descriptive/partial; this verification does not establish adaptive superiority, semantic gold, business validation, or journal acceptance."
+  ],
+  "next": "Owner reviews the current dirty candidate and manuscript; if release is desired, review the scoped patch, commit/push through the authorized workflow, and rerun clean release verification on that exact commit."
+}

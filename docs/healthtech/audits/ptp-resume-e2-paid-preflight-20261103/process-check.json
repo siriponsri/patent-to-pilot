@@ -1,0 +1,14 @@
+{
+  "format": "ptp-process-check-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "observed_utc": "2026-11-03T15:15:00Z",
+  "existing_ssh_inspection": {
+    "pid": 18096,
+    "name": "ssh.exe",
+    "started_ict": "2026-11-03T18:36:54+07:00",
+    "action": "left_untouched"
+  },
+  "new_pytest_or_experiment_jobs": 0,
+  "gpu_launch": false,
+  "note": "Sanitized process summary; raw command lines and credential paths are not retained."
+}

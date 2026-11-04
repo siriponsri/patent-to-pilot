@@ -1,0 +1,13 @@
+{
+  "format": "ptp-manuscript-fresh-gpu-rebind-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "manuscript_sha256": "325b16edbf0e589da1072ec9ce3b57159f5a743bcea29f4bd8ce7371bd666dbf",
+  "manuscript_bytes": 52261,
+  "relative_links_checked": 47,
+  "missing_relative_links": 0,
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_FRESH_GPU_DIAGNOSTIC_REBOUND_OWNER_REVIEW_PENDING",
+  "scientific_boundary": "Added diagnostic only; primary study claim and holdout status unchanged",
+  "o2_boundary": "Fresh remote vectors verified; dossier provider remains MiniLM and is not silently rebound",
+  "paid_boundary": "No API call, reservation, attempt, retry, or ledger mutation",
+  "submission": "NOT_SUBMITTED"
+}

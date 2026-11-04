@@ -1,0 +1,109 @@
+{
+  "format": "ptp-healthtech-pepo-o3-unblock-verification-v1",
+  "run_id": "pepo-o3-unblock-20261031",
+  "captured_at_utc": "2026-10-31T11:19:51.9621432Z",
+  "status": "PASS_ENGINEERING_PREPARATION_O3_PAID_RESEARCH_PARTIAL",
+  "repository": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-research-product-20261031",
+    "branch": "codex/research-product-o1-o4-20261031",
+    "head_before_new_audit": "6e404d8cb43570e2f54fcaa04b9e85946cc685dd",
+    "candidate_revision": "ea26eef6d0dfbe027c4bd02deb67001e014093fb",
+    "latest_credit_gate_candidate_revision": "aa6c5c40ec84166b93734625a951eeb738ea3562",
+    "remote_branch": "origin/codex/research-product-o1-o4-20261031",
+    "pull_request": "https://github.com/siriponsri/patent-to-pilot/pull/2",
+    "owner_scope_preserved": true,
+    "claude_worktree_modified": false
+  },
+  "authorization": {
+    "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+    "scope": "existing cumulative owner authorization; one local generator plus one API generator",
+    "new_grant_created": false,
+    "budget_reset": false,
+    "clock_reset": false,
+    "exact_comparison_authorization": "APPROVED_EXISTING_OWNER_SCOPE"
+  },
+  "journal_reconciliation": {
+    "historical_actual_debit_usd": 0.0001464,
+    "historical_unknown_pending_attempts": 0,
+    "current_canonical_journal_found": false,
+    "current_account_credit_verified": false,
+    "search_mode": "read_only_sanitized_path_and_record_search_plus_metadata_scan",
+    "search_receipt": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-search-20261031.json",
+    "search_recheck_receipt": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-search-recheck-20261031.json",
+    "historical_recovery_receipt": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-recovery-20261031.json",
+    "historical_recovered_journals": 2,
+    "r1_canonical_journal_found": false,
+    "r1_registration_probe": "REJECTED_FAIL_CLOSED_LEGACY_POLICY_SCHEMA",
+    "paid_dispatch": "NOT_RUN",
+    "owner_input_required": "R1 canonical journal location or sanitized all-attempt export; current credit/billing snapshot if approved integration cannot provide it"
+  },
+  "public_endpoint_refresh": {
+    "status": "PASS_PUBLIC_METADATA_ONLY",
+    "model": "qwen/qwen3-32b",
+    "snapshot": "docs/healthtech/audits/pepo-o3-unblock-20261031/openrouter-qwen3-32b-endpoint-snapshot-20261031.json",
+    "model_snapshot": "docs/healthtech/audits/pepo-o3-unblock-20261031/qwen3-32b-model-snapshot-20261031.json",
+    "snapshot_sha256": "792dbe941f25b9bcabc9d3758de11336ca5ee78e90328573dc310819245507b5",
+    "route_candidate": "DeepInfra",
+    "route_status": "CANDIDATE_NOT_DISPATCHED",
+    "credential_used": false,
+    "account_credit_queried": false
+  },
+  "implementation": {
+    "canonical_ledger_registry": "PASS_PATH_SUBSTITUTION_REJECTED_AND_NO_REPLACEMENT_CREATED",
+    "mock_namespace_isolation": "PASS",
+    "rights_cleared_paired_payload": "PASS_SYNTHETIC_CANARY_CONTRACT",
+    "api_generation_runner": "PASS_DRY_RUN_AND_MOCK_CONTRACT",
+    "api_generation_credit_gate": "PASS_SANITIZED_SNAPSHOT_REQUIRED_AND_BOUND_BEFORE_LIVE_RUN",
+    "candidate_disclosed_link_validation": "PASS",
+    "legacy_sqlite_journal_guard": "PASS_FAIL_CLOSED_BEFORE_REGISTRY_CREATION",
+    "authorization_gate_summary": "PASS_EXISTING_SCOPE_RECORDED_AS_APPROVED"
+  },
+  "checks": {
+    "focused_o3": {
+      "command": "python -m pytest -p no:cacheprovider tests/test_healthtech_ledger_registry.py tests/test_healthtech_generation_payload.py tests/test_healthtech_api_generation.py tests/test_healthtech_round1_budget.py tests/test_healthtech_b4_live.py tests/test_healthtech_qwen_evidence_pack.py",
+      "result": "37 passed",
+      "exit_code": 0
+    },
+    "journal_guard_regression": {
+      "command": "rtk proxy python -m pytest -p no:cacheprovider tests/test_healthtech_ledger_registry.py tests/test_healthtech_round1_budget.py tests/test_healthtech_b4_live.py",
+      "result": "29 passed",
+      "exit_code": 0
+    },
+    "full_python": {
+      "command": "python -m pytest -p no:cacheprovider",
+      "result": "508 passed, 1 skipped, 2 warnings",
+      "exit_code": 0
+    },
+    "compileall": {
+      "command": "python -B -m compileall -q src/patent_to_pilot scripts/healthtech/register_canonical_openrouter_ledger.py",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    "diff_check": {
+      "command": "git diff --check",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    "credit_gate_regression": {
+      "command": "python -m pytest -p no:cacheprovider tests/test_healthtech_api_generation.py tests/test_healthtech_ledger_registry.py tests/test_healthtech_round1_budget.py tests/test_healthtech_b4_live.py tests/test_healthtech_generation_payload.py tests/test_healthtech_qwen_evidence_pack.py",
+      "result": "41 passed",
+      "exit_code": 0
+    }
+  },
+  "provider_accounting": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "credentials_read": false,
+    "network_paid_request": false
+  },
+  "research_boundary": {
+    "o1_engineering": "complete per prior audit",
+    "o2_engineering": "complete per prior audit",
+    "o3_engineering_preparation": "complete",
+    "o3_paid_comparison": "partial_blocked_local",
+    "o4_product_path_and_report": "complete engineering handoff; research claims remain bounded",
+    "semantic_device_patent_gold": "not_run",
+    "clinical_fot_validity_investment": "not_run"
+  },
+  "next_action": "Obtain the R1 canonical journal location or sanitized all-attempt export and current credit/billing snapshot; do not ask for the existing USD8 authorization again. Recovered legacy receipts are reconciled but cannot be rebound as R1."
+}

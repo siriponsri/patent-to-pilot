@@ -1,0 +1,37 @@
+{
+  "format": "ptp-current-head-offline-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "READY_FOR_OWNER_REVIEW",
+  "engineering": "COMPLETE",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+  "manuscript_readiness": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+  "o1_o4": {
+    "O1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "O2": "PASS_CURRENT_HEAD_RUNTIME_BOUND_REMOTE_ARTIFACTS_NO_RERUN",
+    "O3": "PARTIAL_LOCAL_QWEN_PASS_API_BLOCKED",
+    "O4": "PASS_CURRENT_HEAD_OFFLINE_FRONTIER_AND_THREE_CASE_ENGINEERING_PARTIAL_RESEARCH"
+  },
+  "g0_g8": {
+    "G0": "COMPLETE",
+    "G1": "PARTIAL",
+    "G2": "PARTIAL",
+    "G3": "PASS",
+    "G4": "PARTIAL",
+    "G5": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "G6": "PARTIAL",
+    "G7": "PASS_ISOLATED_RELEASE_REPRODUCTION",
+    "G8": "NOT_RUN"
+  },
+  "figure_artifacts": {
+    "status": "PASS_CURRENT_HEAD_DEVELOPMENT_ONLY",
+    "directory": "docs/healthtech/audits/ptp-current-head-offline-20261103/analysis-current-head-20261103",
+    "manifest": "docs/healthtech/audits/ptp-current-head-offline-20261103/analysis-current-head-20261103/manifest.json",
+    "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "verification_sha256": "ff1c8184f526732fb14c6f6ed386aa43da9e4bbd0ba68a599123e43fe424dab0",
+    "claim_boundary": "Descriptive development-only figures; no final holdout, semantic gold, or equal-total-budget superiority claim",
+    "renderer_tests": "615 total; 614 passed; 0 failed; 1 skipped; renderer-tests.xml"
+  },
+  "next_action": "Owner review current-head frontier and manuscript; keep paid/API and new-compute branches gated; do not merge mixed-candidate results."
+}

@@ -1,0 +1,27 @@
+{
+  "status": "CURRENT_KEY_USAGE_EQUALS_FOUR_KNOWN_LEGACY_ATTEMPTS",
+  "observed_at_utc": "2026-10-31T13:52:45.803728+00:00",
+  "key_scope": "sha256:7cbe4013fd1c43bb8096135bc6e4ed9a0befb7607ebe820bcfcb2c33544d7b97",
+  "current_key_lifetime_usage_usd": "0.0001464",
+  "known_legacy_attempt_costs_usd": [
+    "0.0000132",
+    "0.00006",
+    "0.0000132",
+    "0.00006"
+  ],
+  "known_legacy_sum_usd": "0.0001464",
+  "unallocated_settled_usage_on_this_key_usd": "0E-7",
+  "same_key_correspondence": "AGGREGATE_EQUALITY_NOT_PROVIDER_ID_MATCH",
+  "legacy_journals_unchanged": true,
+  "provider_generation_ids_recovered": 0,
+  "r1_all_keys_scope": "OWNER_FACT_PENDING",
+  "r1_actual_spend_usd": null,
+  "r1_unresolved_exposure_usd": null,
+  "r1_remaining_allowance_usd": null,
+  "canonical_ledger_created": false,
+  "registry_modified": false,
+  "paid_calls": 0,
+  "account_remaining_credits_usd": null,
+  "credit_endpoint": "NOT_REQUESTED_EXISTING_KEY_IS_NOT_MANAGEMENT",
+  "interpretation": "Supports no additional SETTLED usage on this key at observation time. Does not rule out another key, requests in flight, or delayed billing. Do not sum cumulative response.actual_debit_usd fields as per-attempt costs."
+}

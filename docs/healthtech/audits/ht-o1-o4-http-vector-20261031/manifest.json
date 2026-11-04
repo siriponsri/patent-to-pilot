@@ -1,0 +1,26 @@
+{
+  "format": "ht-o1-o4-http-vector-manifest-v1",
+  "self_excluded": true,
+  "candidate_revision": "928729ee1381280cc11d85439e63a71dff91432f",
+  "files": [
+    {"path": "README.md", "bytes": 2882, "sha256": "2906eee28e1c2ca020f5a0ca38a57ea604e507259601bb4f332e048664765fa2"},
+    {"path": "REPORT.md", "bytes": 7641, "sha256": "b37302d3ea938e814b6d1a0a1b4bbedee09082224b6c083b7acd521e069be8e7"},
+    {"path": "REPORT_TH.md", "bytes": 5064, "sha256": "39c5d8702dc8131255d6e93bf4ce779e827cd73382ab1582af3eb2ba16f1cc74"},
+    {"path": "CHECKPOINT.json", "bytes": 1461, "sha256": "1594a1caede82fbd4d5c4ea6446b898878ea30f275940b3b07728d1f6b6693c3"},
+    {"path": "NEXT_ACTIONS.md", "bytes": 1053, "sha256": "e25fbb70cb4318a5a03e5acb2a4044949e0a7e9239eae5c05cd4d1af17d9bc77"},
+    {"path": "patembed-http-receipt.json", "bytes": 2118, "sha256": "eaf50c65db3b8a335a36b5aa595e3579a03fcbce9c622d0d817cf3acb2d86e8a"},
+    {"path": "e5-http-receipt.json", "bytes": 2120, "sha256": "827950157b266f325f75159b1444c9f0542d2d70ee56c4e2ab8c248c8b76e74d"},
+    {"path": "adaptive-acquisition-report.json", "bytes": 4261, "sha256": "7f6942eaa102b2c7dc3428a5d210472f4838b24854355243c30e369fd18576c9"},
+    {"path": "verification.json", "bytes": 2755, "sha256": "9fc1f989d546206cd8d41cb925f37480fadcefb1a0c05002614da7211622a878"}
+  ],
+  "source_hashes": {
+    "frontend/healthtech-web/app/src/ui/app.js": "f02cac84f9d5a3b7a99f0761e4a14f8e6a5e382b6c1e45a7066069a5650b2d22",
+    "frontend/healthtech-web/app/src/ui/screens.js": "1c05625ec8f519443cb5e84b5cfb76e51428acfddd1e0486d864f78496cac4bf",
+    "frontend/healthtech-web/tests/e2e/backend-http-integration.mjs": "39fe8373625a71a3e923bcbd263bf44d24422dbf6086e68256727743e3edd60a",
+    "scripts/healthtech/run_http_device_cases.py": "613c184b3472e27c169ee40fa8c953d627031b1d193a4e160f17cd27986e324b",
+    "scripts/healthtech/serve_http.py": "1f505229baa7a454d7bdc3259e56e0e0974b72884c7f5180e5c994e6b9a8918e",
+    "src/patent_to_pilot/healthtech/http.py": "777599048a06bea66368fb0e973a11dfe11cf476d10720bada097c13f91f05c0",
+    "src/patent_to_pilot/healthtech/vector_http.py": "5f671ac9f9c60debd0c12c76d6c5f1d6d2e810d6dbafc328f621f7aa04649cf8",
+    "tests/test_healthtech_vector_http.py": "d40b0fd0f59d27b5142fc308371ea56540475e11c7fbd11704438cf15f6680f6"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "format": "ptp-http-browser-receipt-v1",
+  "command": "npm run test:integration:http",
+  "working_directory": "frontend/healthtech-web",
+  "exit_code": 0,
+  "status": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+  "job_id": "f82668cfdd9b400e9b78a3bee34f2c08",
+  "backend_origin": "loopback",
+  "source_inspection": "PASS",
+  "history_versions": [1, 2],
+  "edit": "PASS",
+  "exports": ["json", "th", "en"],
+  "provider_calls": 0,
+  "paid_cost_usd": 0.0
+}

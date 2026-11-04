@@ -1,0 +1,12 @@
+{
+  "format": "ptp-continuation-checkpoint-v1",
+  "checkpoint": "G5 solo operational case table",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "COMPLETE_CURRENT_CANDIDATE",
+  "next_queue_item": "portable_candidate_instructions",
+  "acceptance": "PASS",
+  "business_validation": "SOLO_OPERATIONAL_PROXY_ONLY",
+  "external_validation": "NOT_PERFORMED",
+  "paid_api": "PAUSED_CURRENT_SCOPED_CREDIT",
+  "merge_push_publish": false
+}

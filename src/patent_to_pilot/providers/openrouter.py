@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import hmac
 import math
 import os
 import socket
@@ -83,6 +84,7 @@ class ProviderConfig(BaseModel):
     require_parameters: bool = True
     max_price: dict[str, float] = Field(default_factory=dict)
     api_key_env: str = "OPENROUTER_API_KEY"
+    api_key_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
     live_enabled: bool = False
     research_mode: bool = True
     allow_auto_routing: bool = False
@@ -99,6 +101,9 @@ class ProviderConfig(BaseModel):
 class ProviderRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     prompt: str = Field(min_length=1)
+    # When present, this exact message list is sent to the provider. The
+    # legacy single-prompt path remains available for existing controllers.
+    messages: list[dict[str, str]] | None = None
     response_schema: dict[str, Any] | None = None
     tools: list[dict[str, Any]] = Field(default_factory=list)
     parameters: dict[str, Any] = Field(default_factory=dict)
@@ -233,6 +238,11 @@ class OpenRouterHTTPTransport:
             raise CapabilityError("OpenRouter endpoint path must be /chat/completions")
         return "https://openrouter.ai/api/v1/chat/completions"
 
+    @staticmethod
+    def _check_credential_scope(config, key):
+        if config.api_key_sha256 is not None and not hmac.compare_digest(hashlib.sha256((key or "").encode()).hexdigest(), config.api_key_sha256):
+            raise CapabilityError("dispatch credential differs from the reviewed key scope")
+
     def preflight(self, *, config: ProviderConfig, request: ProviderRequest) -> None:
         if not config.live_enabled:
             raise LiveCallsDisabledError("live provider calls are disabled")
@@ -247,15 +257,17 @@ class OpenRouterHTTPTransport:
             raise CapabilityError("live pilot requires allow_fallbacks=false and require_parameters=true")
         if not config.max_price:
             raise CapabilityError("live pilot requires a max_price guard")
-        if not os.environ.get(config.api_key_env):
+        key = os.environ.get(config.api_key_env)
+        if not key:
             raise CapabilityError("live provider key is not available in the configured environment")
+        self._check_credential_scope(config, key)
 
     @staticmethod
     def _request_payload(config: ProviderConfig, request: ProviderRequest) -> dict[str, Any]:
         output_limit = request.max_output_tokens or config.max_output_tokens
         payload: dict[str, Any] = {
             "model": config.model,
-            "messages": [{"role": "user", "content": request.prompt}],
+            "messages": request.messages or [{"role": "user", "content": request.prompt}],
             "stream": False,
             "max_tokens": output_limit,
         }
@@ -273,6 +285,9 @@ class OpenRouterHTTPTransport:
             }
         if request.tools:
             payload["tools"] = request.tools
+        reserved_fields = {"model", "messages", "stream", "max_tokens", "provider", "response_format", "tools"}
+        if reserved_fields.intersection(request.parameters):
+            raise CapabilityError("provider parameters cannot override a bound request field")
         payload.update(request.parameters)
         return payload
 
@@ -287,6 +302,7 @@ class OpenRouterHTTPTransport:
     def send(self, *, config: ProviderConfig, request: ProviderRequest) -> MockHTTPResponse:
         self.preflight(config=config, request=request)
         key = os.environ.get(config.api_key_env)
+        self._check_credential_scope(config, key)
         # Keep the secret in the request object only; never include it in an
         # exception, return payload, or attempt log.
         headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}

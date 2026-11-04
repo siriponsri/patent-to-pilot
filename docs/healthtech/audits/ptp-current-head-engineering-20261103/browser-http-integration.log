@@ -1,0 +1,20 @@
+npm notice run healthtech-web@0.1.0 test:integration:http
+npm notice run node tests/e2e/backend-http-integration.mjs
+{
+  "status": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+  "job_id": "b4f6b8ef73484d19b8e58893b69fbf01",
+  "backend_origin": "loopback",
+  "source_inspection": "PASS",
+  "history_versions": [
+    1,
+    2
+  ],
+  "edit": "PASS",
+  "exports": [
+    "json",
+    "th",
+    "en"
+  ],
+  "provider_calls": 0,
+  "paid_cost_usd": 0
+}

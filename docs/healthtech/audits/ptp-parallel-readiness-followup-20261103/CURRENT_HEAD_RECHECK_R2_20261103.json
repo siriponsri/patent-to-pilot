@@ -1,0 +1,115 @@
+{
+  "format": "ptp-parallel-readiness-current-head-recheck-r2-v1",
+  "observed_date": "2026-11-03",
+  "goal": "Patent-to-Pilot O1-O4 original goal",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "source_tree_change_this_recheck": false,
+    "working_tree_before_recheck": "DIRTY_DOCUMENTATION_AND_AUDIT_PACKAGE_ONLY"
+  },
+  "review_inputs": {
+    "readiness_review": {
+      "path": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/READINESS_REVIEW_TH.md",
+      "sha256": "d1dcab3cb707da1e9c16fe5fa3b2b112cab37c838695e880c89802634326422c"
+    },
+    "evidence_index": {
+      "path": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/evidence-index.json",
+      "sha256": "c682e8360c0fca132b4f05a1bb70ccf89cfe544bd39e1b9cc900745ad11b2ca6"
+    }
+  },
+  "process_quiescence": {
+    "local_relevant_experiment_processes": 0,
+    "local_experiment_lock_or_pid_files": 0,
+    "latest_remote_read_only_preflight": {
+      "receipt": "REMOTE_PREFLIGHT_CURRENT_HEAD_20261103.json",
+      "observed_at_utc": "2026-11-02T19:20:56+00:00",
+      "scientific_or_model_processes": 0,
+      "existing_http_service_touched": false,
+      "allocation": "UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY"
+    },
+    "new_batch_started": false
+  },
+  "failure_accounting": {
+    "status": "PASS_CURRENT_HEAD_PROSPECTIVE_REPAIR",
+    "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+    "hardening_commits": [
+      "e63e8a9d8996f805904a019579c405129171353c",
+      "323bcc5d39ad5374ec8bfce8007d24c1881eae86"
+    ],
+    "current_behavior": [
+      "partial attempts remain in order",
+      "failed attempts retain measured wall and CPU elapsed time",
+      "unknown resource fields are explicit PARTIAL_UNKNOWN",
+      "outer failure does not append a synthetic zero attempt"
+    ],
+    "focused_tests": {
+      "command": "rtk proxy python -B -m pytest -ra --junitxml docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/failure-accounting-recheck-20261103.xml tests/test_healthtech_real_baselines.py tests/test_healthtech_repairs.py tests/test_healthtech_long_run_analysis.py tests/test_healthtech_long_run_report.py tests/test_healthtech_controller.py tests/test_healthtech_cross_cohort.py",
+      "status": "PASS",
+      "passed": 50,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "warnings": 1,
+      "receipt": "failure-accounting-recheck-20261103.xml"
+    },
+    "historical_impact": {
+      "accessible_json_csv_receipt_scan_nonzero_failed_query_count": 0,
+      "accessible_json_csv_receipt_scan_nonempty_failed_query_ids": 0,
+      "historical_receipts_rewritten": false,
+      "retrospective_cost_inferred": false,
+      "affected_completed_rounds": "NONE_KNOWN",
+      "limitation": "Unavailable private journals are not a completeness proof."
+    }
+  },
+  "budget_interpretation": {
+    "status": "DESCRIPTIVE_REALIZED_QUALITY_RESOURCE_FRONTIER",
+    "shared_inputs_do_not_equalize_totals": true,
+    "realized_units": {
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+      "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+    },
+    "equal_total_budget_claim": "NOT_SUPPORTED",
+    "posthoc_same_unit_slice": {
+      "budget": {"query_calls": 3, "rerank_pairs": 123},
+      "methods": {
+        "HT-B1": 0.498802,
+        "HT-B2_prefix_1": 0.498802,
+        "HT-B3_prefix_1": 0.498802
+      },
+      "status": "DESCRIPTIVE_FIRST_ACTION_ONLY",
+      "HT-B4": "EXCLUDED_CONTROLLER_STEPS_NOT_DIRECTLY_COMPARABLE"
+    }
+  },
+  "full_suite": {
+    "command": "rtk proxy python -B -m pytest -ra --junitxml docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/full-tests-recheck-20261103.xml",
+    "status": "PASS",
+    "passed": 599,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "warnings": 2,
+    "receipt": "full-tests-recheck-20261103.xml",
+    "skip_reason": "pinned local tokenizer artifact unavailable"
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "new_experiment": false,
+    "external_messages": 0
+  },
+  "status_by_area": {
+    "engineering": "COMPLETE",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_FRONTIER",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript_readiness": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK"
+  },
+  "next_action": "Checkpoint. Keep paid/API and new-compute branches gated; continue only owner review or independently authorized offline work."
+}

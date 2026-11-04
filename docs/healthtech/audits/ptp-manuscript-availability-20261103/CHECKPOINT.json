@@ -1,0 +1,15 @@
+{
+  "format": "ptp-manuscript-availability-checkpoint-v1",
+  "status": "PASS_DECLARATIONS_ADDED_OWNER_RELEASE_PENDING",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "engineering": "NO_CODE_BEHAVIOR_CHANGE",
+  "scientific_evidence": "UNCHANGED_PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "NOT_RUN_EXTERNAL_SOLO_PROXY_ONLY",
+  "manuscript_readiness": "IMPROVED_OWNER_REVIEW_REQUIRED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION",
+  "next": [
+    "Run documentation/link/JSON checks on the dirty candidate.",
+    "Keep paid OpenRouter blocked until canonical R1 history/export and current scoped credit are supplied.",
+    "Owner pins the final reviewed release and rechecks the live WPI guide before submission."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "format": "ptp-healthtech-checkpoint-v1",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+  "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_VERIFIED",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "READY_FOR_OWNER_REVIEW_GUIDE_UNVERIFIED",
+  "package": "5 files; 64 relative links checked; 0 missing; checklist rebound to wpi-venue-recheck-r10",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "resource_mutations": "provider 0; GPU 0; dataset 0; ledger 0; submission false; reset false",
+  "goal_closed": false,
+  "next": "Owner rechecks the live WPI Guide/Aims in an authorized browser and supplies current scoped credit evidence only if paid comparison remains required."
+}

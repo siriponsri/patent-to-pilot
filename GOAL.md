@@ -1,10 +1,14 @@
 # GOAL — Patent-to-Pilot HealthTech
 
+> **Latest repair — 4 Nov 2026:** [key-limit repair](docs/healthtech/audits/pepo-key-limit-repair-20261104/README.md) supersedes the R13/R21 key-limit-unavailable conclusion. The dispatch key is UNLIMITED; refresh and bind account credit before paid work. Existing offline queue is complete; do not reopen it or manufacture READY tasks. World Patent Information and scientific acceptance remain unchanged.
+
+> **Current continuation — 4 Nov 2026:** resume the existing goal in the 20261103 worktree. Start with the bounded READY queue in [the current handoff](docs/healthtech/audits/pepo-resume-ready-20261104/README.md) and `CURRENT_ACCEPTANCE_MATRIX.json`. Missing API credit blocks paid transport only; independent G5/G6/G7 work proceeds. This changes execution order, not goal acceptance or runtime state.
+
 > Implementation checkpoint (27 October 2026): [migration and coverage](docs/healthtech/MIGRATION.md), [actual progress](docs/healthtech/progress.json). The pack’s starting statuses below are historical starting points; the full HealthTech study and product are not complete.
 
-**Version:** 1.0 · **วันที่:** 27 ตุลาคม 2026 (Asia/Bangkok) <br>
+**Version:** 1.2 · **วันที่:** 1 พฤศจิกายน 2026 (Asia/Bangkok) <br>
 **รูปแบบ:** Goal-based execution contract สำหรับ owner และ coding/research agents <br>
-**สถานะ:** แผนที่พร้อมนำไปดำเนินงาน; เอกสารนี้ไม่ใช่หลักฐานว่าได้รันการทดลองใหม่หรือพิสูจน์ตลาดแล้ว <br>
+**สถานะ:** solo reproducible computational study + product engineering; external business validation ยังไม่ทำ และเอกสารนี้ไม่ใช่หลักฐานว่าได้พิสูจน์ตลาดหรือได้รับการตอบรับจากวารสารแล้ว <br>
 **อ่านร่วมกับ:** [PLAN.md](PLAN.md), [README.md](README.md), [RELATED_PAPERS.md](RELATED_PAPERS.md)
 
 ## 0. อ่านส่วนนี้ก่อนเริ่มงาน
@@ -49,7 +53,7 @@ Agent ต้องอ่านบริบทที่จำเป็น เล�
 | แหล่งข้อมูลเริ่มต้น | ข้อมูลสาธารณะและแหล่งที่มีสิทธิ์ใช้ตามงานที่ทำ |
 | ภาษาผลิตภัณฑ์ | ไทยและอังกฤษ; ใช้ข้อความที่ผู้ประกอบการเข้าใจได้ |
 | รูปแบบ UI | Minimal, formal, no-code journey; รักษา theme choices ที่โครงการมีไว้ |
-| รูปแบบรายได้ที่ทดสอบ | Bounded project pilot; ต่อด้วย hosted active-project/team offering เมื่อมีการใช้ซ้ำ |
+| รูปแบบรายได้ที่ทดสอบ | ยังไม่ทดสอบในรอบนี้; เก็บเป็น future commercial validation หลังมีหลักฐานผู้ใช้/การซื้อจริง |
 
 ### 1.2 Output contract ของ dossier
 
@@ -79,6 +83,8 @@ Agent ต้องอ่านบริบทที่จำเป็น เล�
 คำถามหลักคือ adaptive acquisition ช่วย recovery ของ known device–patent links หรือช่วยลดต้นทุนได้ในเงื่อนไขใด เมื่อเทียบกับวิธี fixed และวิธี adaptive ที่เรียบง่าย โดยคำนึงถึง company information, shared patents/families และคำตอบอ้างอิงที่มีไม่ครบ
 
 Generic adaptive RAG, cost-aware selection และ evidence-aware stopping มี prior art แล้ว ห้ามอ้างสิ่งเหล่านี้เป็นความใหม่โดยอัตโนมัติ Contribution ต้องมาจาก patent-specific questions, rigorous comparisons, substantive findings และ reproducible resources ดู literature map ใน RELATED_PAPERS.md
+
+**Current-round design decision (2026-11-01):** owner ยืนยันทำโครงการคนเดียว ไม่มีผู้เข้าร่วมภายนอกหรือช่องทางรับสมัคร จึงปรับรอบนี้เป็น reproducible computational study พร้อมกรณีศึกษาจากข้อมูลจริงที่มีสิทธิ์ใช้ ไม่ตั้ง human pilot หรือ customer validation เป็นเกณฑ์บังคับของ engineering, offline experiment หรือ manuscript package เก็บ business value เป็นศักยภาพเชิงปฏิบัติจาก citation quality, evidence coverage, machine/GPU time, latency และ cost; developer self-evaluation หากมีให้ติดป้ายแยก และห้ามอ้าง independent user validation, willingness-to-pay, revenue หรือ ROI ที่ยังไม่ได้วัด ดู [owner one-time input](docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md) และ [computational protocol](docs/healthtech/research/COMPUTATIONAL_STUDY_PROTOCOL_20261101_TH_EN.md)
 
 ## 2. กติกาความต่อเนื่องและอำนาจตัดสินใจ
 
@@ -112,6 +118,14 @@ Root GOAL.md และ PLAN.md เป็นจุดเริ่มอ่าน�
 ก่อนถาม ให้ทำงานเตรียมที่ได้รับอนุญาตให้เสร็จ และส่งคำถามพร้อมทางเลือกที่แนะนำ ผลกระทบ และสิ่งที่พร้อมตรวจแล้ว ถ้าคำสั่งก่อนหน้าครอบคลุมการกระทำนั้นอยู่แล้ว ให้ดำเนินการตาม authorization เดิมโดยไม่ขอซ้ำ
 
 การเตรียม draft, code, benchmark configuration, demo, PR หรือแพ็กเอกสารที่ย้อนกลับได้ ไม่ควรกลายเป็น approval step เพิ่มโดยไม่มีเหตุผลเฉพาะ
+
+### 2.1.1 Owner one-time decision
+
+ข้อมูลจาก owner ครั้งเดียวถูกบันทึกไว้ที่ [OWNER_ONE_TIME_INPUT_TH_EN.md](docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md) สถานะมีผลคือไม่ต้องรอ participant route, ไม่ต้องถามข้อมูลนี้ซ้ำ, deadline โครงการคือ 15 พฤศจิกายน 2026 (Asia/Bangkok), และไม่มีการขยายงบ USD8, GPU window หรือ dataset โดยอัตโนมัติ
+
+### 2.1.2 Owner resource extension for benchmark expansion
+
+คำสั่ง owner ล่าสุดวันที่ 1 พฤศจิกายน 2026 อนุญาตให้เดินแผน benchmark expansion ตาม [dataset audit pack](docs/healthtech/audits/benchmark-expansion-20261101/README.md) ภายใต้ cumulative API ceiling **USD100 ทั้งโครงการรวมยอดเก่า ยอดค้าง และ retry**, ใช้ V100 ใบเดิมแบบ concurrency 1 ได้ถึง 15 พฤศจิกายน 2026 เวลา 23:59 Asia/Bangkok และดาวน์โหลดเฉพาะชุดข้อมูลที่ manifest ระบุและสิทธิ์/แฮช/schema ผ่านการตรวจแล้ว การขยายนี้ **ไม่รีเซ็ต** ledger, ไม่สร้าง zero ledger, ไม่เติมเงินอัตโนมัติ และไม่เปลี่ยน historical receipts หรือ 24-hour history เดิม หาก resource จริงหรือสิทธิ์ไม่พอ ให้พักเฉพาะ branch ที่ได้รับผลกระทบและทำ offline work ต่อ
 
 ### 2.4 สิ่งที่ต้องบันทึกแทนการถาม
 
@@ -240,25 +254,25 @@ Bridge release audit มีข้อมูลเบื้องต้นแล�
 
 **สถานะตั้งต้น:** NOT_RUN
 
-### HT-G5 — ได้หลักฐานคุณค่าต่อผู้ใช้และทิศทางรายได้
+### HT-G5 — ประเมินศักยภาพคุณค่าเชิงปฏิบัติและเตรียม validation package
 
-**Outcome:** รู้ว่าผู้ใช้ทำงานต่อได้จริง แฟ้มช่วยหรือเพิ่มภาระตรงไหน และมีคนซื้อบริการส่วนใด
+**Outcome:** วัดคุณภาพ citation, ความครอบคลุมหลักฐาน, เวลา/ต้นทุนเครื่อง และภาระแก้ไขที่สังเกตได้ พร้อมเตรียม task/rubric/form สำหรับ future user study โดยไม่อ้างว่ามีผู้ใช้ภายนอกหรือการซื้อแล้ว
 
-**ผลส่งมอบขั้นต่ำ:** task script, public-case demo, feedback/results record, correction burden, repeat-use record และ bounded pilot offer
+**ผลส่งมอบขั้นต่ำ:** computational business-value metrics, real-case demo, task set, rubric, results form, future consent template และ scenario/sensitivity analysis ที่แยกจากผลจริง
 
-**เริ่มได้ทันทีเมื่อ HT-G3 มีตัวอย่าง:** เตรียม usability tasks และ offer โดยไม่ต้องรอ HT-G4 จบ การเตรียมเหล่านี้ไม่ต้องมีข้อมูลภายในองค์กร
+**เริ่มได้ทันทีเมื่อ HT-G3 มีตัวอย่าง:** เดิน solo computational evaluation และจัดทำ future-user materials โดยไม่ต้องรอ participant route หรือ HT-G4 จบ
 
-**Usability evidence:** ผู้ใช้เปิดหาหลักฐาน เปรียบเทียบข้อมูล แก้แฟ้ม และเตรียมคำขอข้อมูลได้; นับเวลารวมการตรวจ/แก้ ไม่รายงานเฉพาะเวลาที่โมเดลสร้างคำตอบ
+**Operational evidence:** รายงาน citation support, locator resolution, evidence coverage, unresolved visibility, machine/GPU time, latency, tokens และ cost; ถ้า owner ทดลองเองให้ติดป้าย `developer_self_evaluation` และแยก human time จาก machine time
 
-**Commercial evidence:** มีการใช้กับ case ใหม่และ bounded paid pilot หรือ purchase ที่ตรวจได้; แยกการซื้อ software/workspace ออกจากการซื้อบริการคนทำรายงาน และบันทึก manual work ทุกส่วน
+**External business validation:** รอบนี้เป็น `NOT_VALIDATED`; ห้ามอ้าง independent user validation, repeat use, willingness-to-pay, purchase, revenue หรือ ROI โดยไม่มีหลักฐานที่วัดจริง
 
-**ค่าเริ่มต้น discovery:** ใช้ผู้ใช้เป้าหมายอย่างน้อย 3 คนเป็นจุดเริ่มเรียนรู้ ไม่ตีความว่าเป็น sample size ที่พิสูจน์ตลาดทั้งหมด ไม่ต้องให้ผู้ใช้เหล่านี้สร้าง expert labels สำหรับ paper
+**กรณีศึกษาจริง:** คงอย่างน้อย 3 named cases เพื่อแสดงการใช้งาน แต่ไม่ถือว่า 3 cases เพียงพอแทน benchmark, user study หรือ market validation; จำนวนข้อมูลสำหรับข้อสรุปเชิงเปรียบเทียบต้องมาจาก protocol
 
-**เมื่อยังไม่มีผู้ใช้:** ทำ demo, task script, comparison package และ offer ให้พร้อม; ตั้ง demand เป็น NOT_VALIDATED และทำ research/engineering ต่อ
+**เมื่อยังไม่มีผู้ใช้:** ทำ demo, task script, comparison package, consent template และ offer draft ให้พร้อม; ตั้ง external business validation เป็น `NOT_VALIDATED` และทำ research/engineering ต่อ
 
 **Owner involvement:** การแนะนำผู้ใช้หรืออนุญาต outreach เมื่อจำเป็น; agent ต้องเตรียมสิ่งที่จะส่งให้ตรวจได้ก่อน ไม่ส่งข้อความเองหากยังไม่มี authorization
 
-**สถานะตั้งต้น:** NOT_VALIDATED
+**สถานะตั้งต้น:** OPERATIONAL_POTENTIAL_ONLY / EXTERNAL_VALIDATION_NOT_VALIDATED
 
 ### HT-G6 — มี manuscript และ reproducible research release ที่พร้อมส่งพิจารณา
 
@@ -266,7 +280,7 @@ Bridge release audit มีข้อมูลเบื้องต้นแล�
 
 **ผลส่งมอบขั้นต่ำ:** manuscript draft, related-work matrix, configurations, evaluator, per-query results ที่เผยแพร่ได้, source/data/model/system cards, limitations และ citation metadata
 
-**Definition of done:** paper มี patent-central research question; method comparisons ถูกต้อง; figures/tables สืบกลับไป raw output ได้; research code และ data rights แยกชัด; ไม่มี placeholder result หรือ claimed improvement ที่ไม่เคยรัน
+**Definition of done:** paper มี patent-central research question; method comparisons ถูกต้อง; figures/tables สืบกลับไป raw output ได้; research code และ data rights แยกชัด; ไม่มี placeholder result หรือ claimed improvement ที่ไม่เคยรัน; human pilot/customer validation ถูกระบุเป็น future work หากยังไม่มี
 
 **Agent ทำเอง:** เขียน introduction/method/data/protocol ที่ข้อเท็จจริงพร้อมแล้วก่อนผลทดลองได้ โดยติดป้ายส่วนผลที่ยัง NOT_RUN; จัด reproducibility package เป็นงานต่อเนื่อง ไม่รอจนเขียน paper เสร็จค่อยสร้าง provenance
 
@@ -274,7 +288,7 @@ Bridge release audit มีข้อมูลเบื้องต้นแล�
 
 **เกณฑ์ venue:** ถ้าถอด patent component แล้วคำถามและผลหลักยังเหมือนเดิม ให้ทบทวน fit กับ WPI โดยรักษา research integrity ไม่เพิ่มศัพท์ patent เพื่อให้ดูเข้าวารสาร
 
-**สถานะตั้งต้น:** Literature/documentation pack พร้อมเตรียมงาน; scientific results/manuscript readiness ยังต้องทำ
+**สถานะตั้งต้น:** Computational manuscript package กำลังจัดทำ; scientific comparison และ manuscript readiness ให้รายงานเป็น COMPLETE/PARTIAL ตามผลจริง; external business validation ไม่ใช่ gate ของรอบนี้
 
 ### HT-G7 — มีผลิตภัณฑ์ที่พร้อมติดตั้ง ใช้ และดูแล
 
@@ -378,6 +392,24 @@ Paper PDFs, datasets, source records, software, model weights และ generate
 Agent ไม่ต้องอ่าน PDF ทั้งหมดก่อนเริ่มทุกงาน ให้ใช้ reading routes ใน RELATED_PAPERS.md และเปิดเฉพาะ papers ที่มีผลกับการตัดสินใจปัจจุบัน เมื่อจะ implement หรืออ้างรายละเอียด method จึงอ่านส่วนที่เกี่ยวข้องจากต้นฉบับ
 
 **เป้าหมายของเอกสารชุดนี้คือให้ agent รับภาระการเตรียม ลงมือ ตรวจ และแก้ปัญหาแทน owner โดยรักษาข้อเท็จจริงของงานให้ชัดเจนและเดินหน้าได้ต่อเนื่อง**
+
+## 11. Benchmark expansion package — 1 พฤศจิกายน 2026
+
+รอบนี้เพิ่ม staged protocol สำหรับคำถามวิจัยเดิมเรื่องคุณภาพและความคุ้มค่าของ adaptive evidence acquisition โดยใช้ DAPFAM, PatEmbed และ multilingual-e5 ที่มีอยู่แล้วก่อน ไม่ดาวน์โหลดหรือ embed ซ้ำ จากนั้นจึงเพิ่ม **Helmers expert human-evaluation subset** และ **PANORAMA PAR4PC/PI4PC validation+test** ตาม manifest ที่มี source revision, license, expected bytes และ checksum การใช้ชุด NC จำกัดอยู่ที่ local research/evaluation ตามสิทธิ์ที่ตรวจได้ และไม่ถือเป็น commercial redistribution authorization
+
+ลำดับที่ตรึงไว้คือ (1) integrity/schema/rights receipt, (2) CPU/BM25 และ existing-ranking analysis, (3) development-only encoder/parameter contrast, (4) freeze eligible units, group splits, budget controls, primary endpoint และ failure/retry rules, (5) final holdout evaluation, แล้วจึง (6) external robustness/paired generation เฉพาะเมื่อ paid/API/compute gates ผ่านจริง การเลือกวิธีต้องไม่อ่าน labels หรือ test outcomes เพื่อเปลี่ยน controller และห้ามรวมผลจากคนละ candidate/protocol manifest เป็น PASS เดียว
+
+Helmers ใช้เป็น external relevance diagnostic หลัง freeze หาก split semantics รองรับ; PANORAMA ใช้ validation สำหรับ development และ test เป็น untouched final holdout โดยตรวจ application/patent-family overlap ตาม fields ที่พบจริงก่อน scoring ชุด AIR/NBER, AffRoDB, PatSnap, USPTO, GCPD, PatentMatch และ CLEF-IP ยังเป็น conditional/optional จนกว่าจะตรวจสิทธิ์และความสอดคล้องกับ task เพิ่มเติม ผลการศึกษาเป็น solo computational evidence; external business validation, willingness-to-pay, revenue และ ROI ยังคง `NOT_VALIDATED`
+
+การ continuation รอบเดียวกันรับ PatSnap, PatentsView AIR-UMASS/NBER และ AffRoDB ตาม manifest เพิ่มแล้ว โดยแยก schema/hash receipt ออกจากผลหลัก: PatSnap และ AffRoDB ยังไม่ score ส่วน PatentsView ถูกเก็บเป็น local inventory ที่ rights ยังไม่ชัดและไม่ถูกใช้สร้าง claim ใด การขยายนี้ไม่เปลี่ยน endpoint, split, fair-budget freeze หรือสถานะ O1-O4 เดิม
+
+ผล component หลัง freeze ถูกผูกกับ candidate/protocol/result hashes ใน [final evaluation binding](docs/healthtech/audits/benchmark-expansion-20261101/FINAL_EVALUATION_BINDING.json) และ [checkpoint V6](docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V6.json) แล้ว: PANORAMA validation/test ทั้ง 4 runs ผ่านโดยไม่มี failed rows และ Helmers ผ่านในฐานะ selected-pool diagnostic ผลนี้เป็นหลักฐาน component เท่านั้น; main adaptive dossier study, paid API comparison, external business validation และ journal submission ยังไม่ใช่ COMPLETE
+
+การ revalidation บน current candidate `ab7ad348ff2fb3ec8e02a52a49ccddd1657504fd` ถูกบันทึกแยกใน [current-head component results](docs/healthtech/audits/benchmark-expansion-20261101/CURRENT_HEAD_COMPONENT_RESULTS.json) และ [checkpoint V10](docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V10_CURRENT_HEAD.json) เพื่อไม่รวมผลต่างรุ่นเป็น PASS เดียว ผลรอบนี้ยืนยันค่า PAR4PC/PI4PC และ Helmers ตาม receipt จริง โดยยังคง `NOT_EVALUATED` สำหรับ main adaptive dossier superiority, `NOT_VALIDATED` สำหรับ external business value และ `BLOCKED_LOCAL` สำหรับ paid/API comparison
+
+O4 offline controller ถูก rerun บน current candidate `94ce5b10f7b787677ebd11d8c3f193753e4b7d8c` ด้วย Abbott/Boston frozen cohorts เดิม ผล macro Recall@20 คือ `0.498802` และ `1.000000` ตามลำดับ โดย failed devices เป็นศูนย์และ paid cost เป็น USD0.00 หลักฐานนี้ปิดเฉพาะ reproducible descriptive offline revalidation; ไม่ปิด semantic adaptive superiority, generalization, business validation หรือ O3 API comparison ดู [O4 current-head checkpoint](docs/healthtech/audits/ht-o4-offline-current-head-20261101/CHECKPOINT.json)
+
+จากนั้นจึงรัน matched offline frontier บน Abbott frozen cohort เดิมที่ candidate `891f3b3` ด้วย fixed controls และ deterministic HT-B4 ภายใต้ K=20, candidate/rerank depth 41 เดียวกัน ผล macro Recall@20 คือ B0a `0.442739`, B0b `0.662242`, B1 `0.498802`, B2 `0.568912`, B3 `0.498802` และ B4 offline `0.498802` โดยทุกวิธีมี failed devices เป็นศูนย์ ผลนี้เป็น descriptive development evidence ที่ช่วยตอบ cost-quality trade-off ของ O4 แต่ไม่ปิด superiority, generalization หรือ semantic gold ดู [matched frontier audit](docs/healthtech/audits/ht-o4-matched-offline-current-head-20261101/README.md)
 
 ## Migration support records — 27 October 2026
 

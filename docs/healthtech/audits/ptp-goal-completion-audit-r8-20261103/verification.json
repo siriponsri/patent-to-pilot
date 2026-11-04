@@ -1,0 +1,91 @@
+{
+  "format": "ptp-goal-completion-audit-r8-v1",
+  "status": "PARTIAL_NOT_COMPLETE",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "deadline_local": "2026-11-15T23:59:00+07:00",
+    "dirty_worktree_preserved": true
+  },
+  "requirements": {
+    "objective_read": "PASS",
+    "o1_ui_http_history_export": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "o2_remote_encode_retrieval": "PARTIAL_REMOTE_ALLOCATION_NOT_EVIDENCED",
+    "o3_local_generation": "PASS_CURRENT_HEAD_GUIDED_3_OF_3_SCHEMA_VALID",
+    "o3_paid_generation": "BLOCKED_BEFORE_RESERVATION",
+    "o4_three_case_workflow": "COMPLETE_CURRENT_HEAD_THREE_CASE_ENGINEERING_SLICE",
+    "o4_research_comparison": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_value": "PARTIAL_SCENARIO_ONLY_EXTERNAL_VALIDATION_NOT_RUN",
+    "manuscript": "PASS_CURRENT_HEAD_INTEGRITY_OWNER_REVIEW_PENDING",
+    "merge_submission": "NOT_DONE_OWNER_REVIEW_REQUIRED"
+  },
+  "current_head_regression": {
+    "audit": "docs/healthtech/audits/ptp-current-head-regression-r8-20261103/verification.json",
+    "result": "72 passed / 0 failed / 0 errors / 0 skipped",
+    "scope": "O1 HTTP/history/export; O3 generation/API fail-closed; O4 frontier/local execution/vector verification"
+  },
+  "o2_remote": {
+    "audit": "docs/healthtech/audits/ptp-dr-train-preflight-r2-20261103/verification.json",
+    "approved_gpu": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "gpu_memory_used_mib": 0,
+    "gpu_memory_free_mib": 32495,
+    "allocation": "UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY",
+    "allocation_reference": "NOT_OBSERVED",
+    "remote_writes": 0,
+    "new_gpu_jobs": 0,
+    "decision": "DO_NOT_START_NEXT_REMOTE_BATCH"
+  },
+  "o3_paid": {
+    "audit": "docs/healthtech/audits/ptp-api-owner-env-recheck-r2-20261103/verification.json",
+    "key_endpoint_http_status": 200,
+    "observed_lifetime_usage_usd": 0.0001464,
+    "key_class": "ordinary_non_management",
+    "canonical_r1_registry_present": false,
+    "canonical_r1_journal_resolved": false,
+    "current_scoped_credit_snapshot_present": false,
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "research_boundary": {
+    "semantic_gold": "INCOMPLETE",
+    "final_holdout": "INCOMPLETE",
+    "independent_groups": "INSUFFICIENT_FOR_CONFIRMATORY_CLAIM",
+    "equal_realized_total_budgets": "NOT_SUPPORTED",
+    "adaptive_superiority_claim": false,
+    "exhaustive_recall_claim": false,
+    "external_validation_claim": false,
+    "revenue_roi_willingness_to_pay_claim": false
+  },
+  "manuscript": {
+    "audit": "docs/healthtech/audits/ptp-manuscript-integrity-current-head-r3-20261103/verification.json",
+    "sha256": "b21f7d38b49f873575a5c74ac46ac4c431c06122df999bda818e8d02aa2b213a",
+    "bytes": 50363,
+    "relative_links_checked": 45,
+    "missing_relative_links": 0,
+    "submission": "NOT_SUBMITTED"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "remote_writes": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "participant_contact": false,
+    "external_validation": false,
+    "merge": false,
+    "push": false,
+    "submission": false
+  },
+  "next": "Obtain canonical R1 journal/export and current scoped credit once, obtain authorized dr-train allocation evidence, then recheck gates and resume the existing encoder plus one bounded paired canary."
+}

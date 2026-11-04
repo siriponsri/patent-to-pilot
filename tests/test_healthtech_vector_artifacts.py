@@ -7,6 +7,7 @@ import pytest
 from scripts.healthtech.encode_vector_shards import build_model_binding
 from patent_to_pilot.evaluation.healthtech.local_retrieval import PatentRecord, SharedRetriever
 from patent_to_pilot.evaluation.healthtech.vector_artifacts import (
+    PrecomputedQueryEncoder,
     VectorArtifactError,
     encode_vector_shards,
     export_runtime_text,
@@ -231,3 +232,33 @@ def test_dossier_engine_can_augment_lexical_candidates_with_returned_vectors():
     assert candidate.scores["dense_cosine"] == pytest.approx(0.99)
     assert events[0].returned_candidates >= 1
     assert manifest.stop_reason == "fixed_schedule_complete"
+
+
+def test_precomputed_query_encoder_preserves_runtime_query_order(tmp_path: Path):
+    runtime = tmp_path / "queries.jsonl"
+    export_runtime_text(
+        [
+            {"item_id": "q1", "document_id": "Q1", "text": "first query", "source_id": "src", "source_revision": "r1"},
+            {"item_id": "q2", "document_id": "Q2", "text": "second query", "source_id": "src", "source_revision": "r1"},
+        ],
+        runtime,
+        dataset_id="fixture-queries",
+        source_revision="r1",
+        representation="text-v1",
+    )
+    output = tmp_path / "bundle"
+    encode_vector_shards(
+        runtime,
+        output,
+        FakeEncoder({"first query": [1.0, 0.0], "second query": [0.0, 1.0]}),
+        model={"id": "fixture-model", "revision": "r1"},
+        config={"norm_policy": "none"},
+        shard_size=2,
+    )
+    query_bundle = load_vector_bundle(output)
+    encoder = PrecomputedQueryEncoder(query_bundle, ["Q1", "Q2"])
+    values, token_count = encoder.encode(["ignored", "ignored"])
+    assert values.shape == (2, 2)
+    assert values[0].tolist() == [1.0, 0.0]
+    assert values[1].tolist() == [0.0, 1.0]
+    assert token_count == 0

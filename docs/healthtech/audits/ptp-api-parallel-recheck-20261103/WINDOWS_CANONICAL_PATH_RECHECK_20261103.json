@@ -1,0 +1,42 @@
+{
+  "format": "ptp-api-windows-canonical-path-recheck-v1",
+  "goal_reused": true,
+  "observed_at_utc": "2026-11-03T02:31:40.2052701Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "candidate_worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+  "scope": "Read-only path and gate confirmation before any paid dispatch",
+  "registry_resolution": {
+    "platform": "Windows",
+    "localappdata": "C:/Users/User/AppData/Local",
+    "canonical_registry_path": "C:/Users/User/AppData/Local/PatentToPilot/healthtech/budget-ledgers/PTP-HT-OR-R1-20261028-USD8.json",
+    "present": false
+  },
+  "candidate_journals": {
+    "live_sqlite": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/results/development/provider-pilot/live.sqlite3",
+    "paired_sqlite": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/results/development/provider-pilot/paired-revalidation-1.sqlite3",
+    "present": false
+  },
+  "credential_path": {
+    "path": "C:/Users/User/Desktop/myProject/patent-to-pilot/.env",
+    "present": true,
+    "content_read_or_persisted": false
+  },
+  "gate_state": {
+    "current_head_rights_and_payload_preflight": "PASS_3_OF_3",
+    "route_and_price_snapshot": "PASS_PRIOR_PREFLIGHT",
+    "canonical_r1_registry_or_journal": "MISSING",
+    "current_scoped_v2_credit_snapshot": "MISSING",
+    "decision": "BLOCKED_BEFORE_RESERVATION"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "zero_ledger_created": false,
+    "credentials_read_or_persisted": false
+  },
+  "next_action": "Owner supplies the existing canonical R1 journal location or sanitized all-attempt export and the current scoped v2 credit snapshot; then recheck all gates and run one paired canary only if every gate passes."
+}

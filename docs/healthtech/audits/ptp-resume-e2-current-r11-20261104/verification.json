@@ -1,0 +1,71 @@
+{
+  "format": "ptp-resume-e2-current-r11-v1",
+  "recorded_date": "2026-11-04",
+  "candidate": {
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true,
+    "changed_file": "frontend/healthtech-web/tests/e2e/backend-integration.mjs",
+    "changed_file_sha256": "583e2142a220d7acdd486392fd6bd142ac9cc9867db9d4c5d5fabdc07f181235"
+  },
+  "debugging": {
+    "original_failure": "TIMEOUT_WAITING_FOR_IMPORT_RESULT",
+    "reproduction": "PRIVATE_QWEN_CASES_MISSING_MANIFEST_JSON",
+    "staged_alias_reproduction": "IMPORT_REACHED_THEN_VERSION1_VS_VERSION2_HARNESS_ASSERTION",
+    "repair": "MANIFEST_FALLBACK_AND_INPUT_BOUND_VERSION_BACKEND_EDIT_ASSERTION"
+  },
+  "verification": {
+    "node_syntax": "PASS",
+    "real_backend_browser_import": {
+      "status": "PASS",
+      "cases": 3,
+      "case_ids": ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"],
+      "manifest_used": "engine_manifest.json",
+      "backend_versions": [1, 1, 1],
+      "backend_edit_present_in_input": false,
+      "source_inspection": "PASS",
+      "indexeddb_save_reopen": "PASS",
+      "ui_note_retention": "PASS",
+      "th_en_export": "PASS",
+      "page_errors": 0,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    "frontend_unit": "74 passed; 0 failed; 0 skipped",
+    "browser_e2e": "17 passed; 0 failed",
+    "loopback_http": "PASS; source inspection/edit/history 1 to 2/JSON-TH-EN export",
+    "diff_check": "PASS"
+  },
+  "canonical_e2": {
+    "journal": "PTP-HT-OR-E2-20261103-USD100",
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_historical_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "budget_reset": false,
+    "time_window_reset": false,
+    "mutated_in_this_checkpoint": false
+  },
+  "paid_branch": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "provider_calls": 0,
+    "reservations": 0,
+    "required_owner_evidence": "ONE_NON_SECRET_CURRENT_SCOPED_CREDIT_AND_REMAINING_KEY_LIMIT_OBSERVATION"
+  },
+  "runtime": {
+    "gpu_jobs_launched": 0,
+    "ssh_inspection_reused": true,
+    "ssh_inspection_pid": 82752,
+    "ssh_inspection_started_local": "2026-11-04T03:02:08+07:00"
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_BROWSER_IMPORT_HTTP",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+    "overall_goal": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+  }
+}

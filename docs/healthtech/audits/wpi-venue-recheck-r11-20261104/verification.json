@@ -1,0 +1,55 @@
+{
+  "format": "ptp-wpi-venue-recheck-v11",
+  "observed_local": "2026-11-04",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_state": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "sources": {
+    "publisher_profile": {
+      "url": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+      "prior_http_status": 200,
+      "prior_response_sha256": "75ef3ca5d482d1662983a0da3232937e937cb1eaa739726a91e88045cdeff1e6",
+      "stored_raw_response": false
+    },
+    "official_indexed_article": {
+      "url": "https://www.sciencedirect.com/science/article/pii/S0172219026000797",
+      "journal": "World Patent Information",
+      "title": "Literature listing",
+      "doi": "10.1016/j.wpi.2026.102504",
+      "online_publication_date": "2026-09-26",
+      "observation": "official ScienceDirect indexed record observed in bounded lookup",
+      "raw_response_stored": false
+    },
+    "aims_and_scope": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope",
+      "prior_http_status": 403,
+      "status": "UNVERIFIED_DIRECT_PAGE"
+    },
+    "guide_for_authors": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+      "prior_http_status": 403,
+      "status": "UNVERIFIED_DIRECT_PAGE"
+    }
+  },
+  "claims": {
+    "current_indexed_content_observed": true,
+    "conditional_venue_fit": true,
+    "journal_specific_rules_verified": false,
+    "submission_sent": false,
+    "owner_review_required": true
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "external_message": false,
+    "submission": false
+  },
+  "status": "PASS_OFFICIAL_ACTIVE_RECORD_GUIDE_AND_AIMS_UNVERIFIED_NOT_SUBMITTED"
+}
+

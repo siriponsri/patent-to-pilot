@@ -1,0 +1,47 @@
+{
+  "format": "ptp-api-owner-env-recheck-r2-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "command": "rtk proxy python -B scripts/healthtech/collect_openrouter_metadata.py --key-file <owner-supplied .env path> --output metadata-observation.json",
+  "observed_at_utc": "2026-11-03T08:50:19.223422+00:00",
+  "metadata_observation": {
+    "receipt": "metadata-observation.json",
+    "receipt_sha256": "6693892b9dda7da1a5154b27b368b8215ed74fe422a3c0b282aec79fdc236885",
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "key_class": "ordinary_non_management",
+    "account_scope": "NOT_RECONCILED",
+    "current_scoped_credit": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "history_completeness": "NOT_PROVEN",
+    "live_admission_enabled": false
+  },
+  "gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "canonical_r1_registry_present": false,
+    "canonical_r1_journal_resolved": false,
+    "current_credit_snapshot_present": false,
+    "rights_cleared_paired_payload": "PASS_3_OF_3_CURRENT_HEAD",
+    "route_and_price": "PASS_EXISTING_SNAPSHOT"
+  },
+  "resource_mutations": {
+    "paid_provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "unknown_billing_retried": false
+  },
+  "next": "Reconcile the existing canonical R1 journal/export and current scoped credit once; run a paired canary only if every live gate passes. Continue local/offline and manuscript work independently."
+}

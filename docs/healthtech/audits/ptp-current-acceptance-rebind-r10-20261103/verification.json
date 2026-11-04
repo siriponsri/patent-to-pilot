@@ -1,0 +1,65 @@
+{
+  "format": "ptp-current-acceptance-rebind-r10-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "current_verification": {
+    "full_suite_total": 642,
+    "passed": 640,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "compileall": "PASS",
+    "release": "READY_FOR_OWNER_REVIEW_NOT_MERGE"
+  },
+  "o1_o4": {
+    "O1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "O2": "PARTIAL_SEMANTIC_GOLD_AND_FINAL_HOLDOUT_INCOMPLETE",
+    "O3": "PARTIAL_LOCAL_SMOKE_PAID_COMPARISON_UNRUN",
+    "O4": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE"
+  },
+  "g0_g8": {
+    "G0": "COMPLETE_CONTRACT_AND_SCOPE",
+    "G1": "PARTIAL_RIGHTS_AND_SEMANTIC_GOLD_INCOMPLETE",
+    "G2": "PARTIAL_DEVELOPMENT_BASELINES_AND_EVALUATOR",
+    "G3": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
+    "G4": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+    "G5": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
+    "G6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+    "G7": "PASS_CURRENT_HEAD_OFFLINE_RELEASE_READINESS_DIRTY_CANDIDATE_NOT_RELEASED",
+    "G8": "NOT_RUN_FUTURE_SCOPE"
+  },
+  "paid_and_journal": {
+    "e2_integrity": "ok",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": 0.0001464,
+    "prospective_allowance_usd": 1.0,
+    "unknown_history_preserved": true,
+    "current_scoped_credit": "UNAVAILABLE",
+    "key_limit_remaining": "UNAVAILABLE",
+    "paid_dispatch": "BLOCKED_BEFORE_RESERVATION",
+    "wpi_scope": "PASS_CONDITIONAL",
+    "wpi_guide_and_aims": "HTTP_403_NOT_INSPECTABLE",
+    "submission": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "external_messages": 0
+  },
+  "status": "PARTIAL_NOT_COMPLETE_CURRENT_EVIDENCE_REBOUND",
+  "next": "Owner review, authorized WPI Guide recheck, or one non-secret current scoped credit/limit snapshot if paid comparison remains required."
+}
