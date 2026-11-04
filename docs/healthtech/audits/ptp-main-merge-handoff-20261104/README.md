@@ -6,6 +6,7 @@
 - Branch: `main`
 - Tested source merge HEAD: `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`
 - Handoff-document commit: `7e8fd1a`
+- Final pushed handoff commit: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`
 
 ## Outcome
 
@@ -16,7 +17,7 @@ pre-existing owner handoff in a separate commit:
 - Preserved main-owner commit: `f77c502`
 - Merge commit: `26be1c1`
 
-Current status is **merged, locally verified, and ready to push**. The current
+Current status is **merged, pushed, locally verified, and paused for handoff**. The current
 `main` HEAD includes the docs-only handoff commit above. This is not
 an overall goal-complete claim.
 
@@ -65,6 +66,9 @@ rerun completed GPU work or old scientific benchmarks merely to refresh a
 receipt, and do not treat engineering or schema validity as scientific or
 business completion.
 
-Cleanup is intentionally conservative: Claude/Luna/owner worktrees and dirty
-research work must remain preserved. Only verified-clean, unused temporary
-worktrees may be removed after the push is confirmed.
+The owner later authorized removal of worktrees inactive for more than three
+days and removal of committed work already merged into `main`. That cleanup
+removed the old Claude/Luna/remote/O1/O3/pepo-unblock/UI-integration worktrees
+and local branches. Three recent worktrees remain preserved because they have
+newer activity or dirty work; the exact list and the one Windows orphan-folder
+exception are recorded in the repository-root `HANDOFF.md`.

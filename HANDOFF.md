@@ -23,12 +23,13 @@ The main checkout was clean before this handoff-document change.
 - Repository: `C:/Users/User/Desktop/myProject/patent-to-pilot`
 - Branch: `main`
 - Main HEAD before this documentation update: `686f8338c4b288cfe706ae16f4aae8f885b81ebb`
-- `origin/main` before this documentation update: `686f8338c4b288cfe706ae16f4aae8f885b81ebb`
+- Pushed handoff HEAD: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`
+- `origin/main` after push verification: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`
 - Source merge already tested: `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`
 - Candidate integration commit: `a71d808`
 - Preserved owner-main commit: `f77c502`
 - Prior handoff documentation commit: `7e8fd1a`
-- Final documentation-update commit: record with `git rev-parse HEAD` after this file is committed and pushed.
+- Final documentation-update commit: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`.
 
 The intended final check is:
 
@@ -39,7 +40,9 @@ rtk git rev-parse origin/main
 rtk git rev-list --left-right --count main...origin/main
 ```
 
-Expected result after push: a clean `main`, identical local and remote SHA, and `0 0` ahead/behind.
+Verified result after push: clean `main`, identical local and remote SHA, and `0 0` ahead/behind.
+
+The push completed on 2026-11-04 at approximately `2026-11-04T12:34:00Z` with `main -> origin/main`. The exact post-push verification at `2026-11-04T12:38:09.5419286Z` returned the same SHA on both sides and `0 0` ahead/behind.
 
 ## 3. Verified delivery boundary
 
@@ -172,6 +175,27 @@ The cleanup request is therefore split by safety boundary:
 - dirty worktrees must remain until their owner explicitly authorizes discard or a recoverable archive is created;
 - no `reset --hard`, `checkout --`, `clean -fd`, force push, ACL change, safe-directory change, or deletion of `.git` data is allowed.
 
+### 6.1 Cleanup performed after owner authorization
+
+The owner explicitly authorized removal of worktrees with no filesystem activity for more than three days, and authorized removal of worktrees whose committed branch work was already merged because a new worktree will be created. Using the observed cutoff before 2026-11-01 and the ancestry checks recorded during this session, the following local worktrees/branches were removed:
+
+- `claude/healthtech-ux-local-20261028` at `7ca0f2e...`; branch tip was an ancestor of `main` and last non-Git file activity was 2026-10-30;
+- `codex/remote-embeddings-20261030` at `68219d7...`; last non-Git file activity was 2026-10-30 and the branch tip was retained only locally;
+- `codex/luna-publication-20261030` at `bf416e9...`; branch tip was an ancestor of `main` and last non-Git file activity was 2026-10-30;
+- `codex/research-product-o1-20261031` at `257037a...`; branch tip was an ancestor of `main`, its remaining untracked artifact was older than three days, and the worktree was removed;
+- `codex/r1-owner-evidence-20261031` at `f826069...`; last non-Git file activity was 2026-11-01 09:59:41Z, more than 72 hours before cleanup;
+- `codex/pepo-unblock-remote-20261030` at `a0ec9ce...`; branch tip was an ancestor of `main`, last activity was 2026-10-30, and the owner authorized cleanup of the old dirty worktree;
+- `codex/pepo-ui-integration-20261031` at `0d04980...`; branch tip was an ancestor of `main` and the branch was deleted. Git removed the worktree registry entry, but Windows refused physical directory deletion because the exact orphan directory contained a protected `.pytest_cache` subtree. No ACL or permission bypass was attempted. The remaining orphan path is `C:/Users/User/Documents/Codex/2026-10-31/task/ptp-integration/.pytest_cache`.
+- `codex/o3-safety-repair-20261031` at `9ac3872...`; branch-only local reference, no worktree, last commit 2026-10-31, deleted after the more-than-three-day inactivity check.
+
+The following active worktrees were intentionally retained because they had filesystem activity within the last three days or contained newer uncommitted work:
+
+- `codex/patent-to-pilot-long-run-20261031` at `0cf41e0...`; latest observed file activity 2026-11-02 16:59:23Z; dirty source/tests/audits;
+- `codex/research-product-o1-o4-20261031` at `b4bc13c...`; branch tip is an ancestor of `main`, but the worktree contains newer uncommitted benchmark/manuscript/audit changes, latest observed file activity 2026-11-02 13:58:15Z;
+- `codex/pepo-paused-audit-20261101` at `a0809b4...`; latest observed file activity 2026-11-01 14:20:18Z, which was still within the three-day window at cleanup.
+
+After cleanup, the local branch set is exactly `main` plus the three retained branches above. Remote branches were not deleted because the owner requested local cleanup and a main push only.
+
 ## 7. Resume instructions for Claude
 
 When resuming, treat `main` and the canonical audit files as the current control plane. Do not combine receipts from different heads into one PASS. A receipt is admissible only when its candidate revision, inputs, configuration, and output hashes match the claim being made.
@@ -226,4 +250,4 @@ Paid API: `BLOCKED_BEFORE_RESERVATION_STALE_CREDIT`
 
 Repository handoff: `READY_FOR_REVIEW`
 
-Owner pause instruction: stop this goal after the main push and cleanup attempt. Resume only from this file and the canonical audit records; do not open a new goal for the same work.
+Owner pause instruction: stop this goal after the verified main push and cleanup attempt. Resume only from this file and the canonical audit records; do not open a new goal for the same work.

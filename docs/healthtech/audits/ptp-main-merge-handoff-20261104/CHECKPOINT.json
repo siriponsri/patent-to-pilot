@@ -1,11 +1,12 @@
 {
-  "checkpoint": "MAIN_MERGED_LOCAL_VERIFIED_HANDOFF_READY",
+  "checkpoint": "MAIN_PUSHED_ORIGIN_VERIFIED_CLEANUP_COMPLETE_PAUSED",
   "parent_goal": "Patent-to-Pilot O1-O4",
   "observed_utc": "2026-11-04T12:15:46.2028916Z",
   "branch": "main",
   "worktree": "C:/Users/User/Desktop/myProject/patent-to-pilot",
   "tested_source_merge_head": "26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09",
   "handoff_document_commit": "7e8fd1a",
+  "pushed_handoff_commit": "d407d61eb14c3fbde0163bc7d54207a00dc4f05d",
   "candidate_head": "a71d808",
   "ownership": "main owner preserved; Claude/Luna/owner worktrees retained",
   "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_SCOPE",
@@ -17,5 +18,5 @@
   "ledger_state": "integrity ok; 4 legacy settled; USD0.0001464 known; 0 operational/pending/unknown; prospective USD1; unknown history preserved",
   "first_runtime_job_utc": null,
   "deadline_utc": "2026-11-15T16:59:59Z",
-  "next_actual_command": "Verify origin/main, push main, then remove only verified-clean unused temporary worktrees."
+  "next_actual_command": "Pause goal; resume only from HANDOFF.md and the canonical audit records."
 }

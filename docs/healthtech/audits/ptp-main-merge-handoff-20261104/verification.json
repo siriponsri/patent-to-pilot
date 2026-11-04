@@ -9,7 +9,8 @@
   "candidate_commit": "a71d808",
   "preserved_main_commit": "f77c502",
   "merge_commit": "26be1c1",
-  "status": "MERGED_LOCAL_VERIFIED_PUSH_PENDING",
+  "status": "MERGED_PUSHED_ORIGIN_VERIFIED_HANDOFF_PAUSED",
+  "pushed_head": "d407d61eb14c3fbde0163bc7d54207a00dc4f05d",
   "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_SCOPE",
   "scientific_evidence": "PARTIAL_NO_PAID_COMPARISON_NO_FINAL_SEMANTIC_HOLDOUT",
   "business_validation": "PARTIAL_SOLO_PROXY_EXTERNAL_VALIDATION_NOT_RUN",
@@ -45,6 +46,19 @@
   "remote_before_push": {
     "ahead": 78,
     "behind": 0
+  },
+  "remote_after_push": {
+    "local_head": "d407d61eb14c3fbde0163bc7d54207a00dc4f05d",
+    "origin_main": "d407d61eb14c3fbde0163bc7d54207a00dc4f05d",
+    "ahead": 0,
+    "behind": 0
+  },
+  "cleanup": {
+    "local_branches_deleted": 8,
+    "worktrees_removed_from_registry": 7,
+    "active_worktrees_retained": 3,
+    "orphan_physical_directory_exception": "C:/Users/User/Documents/Codex/2026-10-31/task/ptp-integration/.pytest_cache",
+    "acl_bypass_attempted": false
   },
   "next_action": "Push main, then delete only verified-clean unused temporary worktrees after confirming protected worktrees are preserved.",
   "paid_next_input": "One fresh non-secret credit snapshot for the existing dispatch key with matching E2 scope and observation age <=300 seconds at dispatch."

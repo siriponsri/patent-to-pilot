@@ -7,11 +7,14 @@ This file is a project-local continuation guide. `AGENTS.md`, the current owner 
 - Repository: `C:/Users/User/Desktop/myProject/patent-to-pilot`
 - Branch: `main`
 - Main checkpoint before this file was added: `686f8338c4b288cfe706ae16f4aae8f885b81ebb`
+- Pushed handoff checkpoint: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`
 - Source merge already tested: `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`
 - Current task state: owner requested a detailed handoff, main verification/push, local cleanup where safe, then pause.
 - Goal status: not complete overall. Engineering is complete for the current offline scope; science, paid comparison, external business validation, and WPI submission remain partial or blocked.
 
 Read `HANDOFF.md` for the full evidence map and current worktree inventory.
+
+The 2026-11-04 push was verified against `origin/main`: both resolve to `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`, with `0 0` ahead/behind and a clean main checkout. Old local branches/worktrees were removed under the owner's three-day inactivity and merged-work authorization. Three active dirty/recent worktrees remain intentionally preserved; see `HANDOFF.md`. One old orphan directory under `C:/Users/User/Documents/Codex/2026-10-31/task/ptp-integration/.pytest_cache` could not be physically removed because Windows denied access; do not bypass ACLs.
 
 ## Required reading before any future change
 
