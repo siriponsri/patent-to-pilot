@@ -1,0 +1,54 @@
+{
+  "format": "ptp-experiment-registry-v1",
+  "runs": [
+    {
+      "run_id": "wpi-canary-content-audit-20261104",
+      "protocol": "content_audit rubric ptp-generation-content-audit-v1",
+      "code": "src/patent_to_pilot/healthtech/content_audit.py, scripts/healthtech/audit_generation_content.py",
+      "inputs": {"journal_sha256": "5884e20cf4da3409c8fc0948ef5127e814ae56fac1f9be27c8ff5979dd554298", "pack_sha256": "e146ab85db3792c3028e9becb0d71ea645a0cd0cfe426a9233622496e7aef489"},
+      "hardware": "Windows local CPU", "paid_cost_usd": 0, "model_calls": 0,
+      "outcome": "9/9 correct; integrity pass; provider-side reconciliation 3/3 via MCP get-generation",
+      "artifact": "canary-content-audit.json"
+    },
+    {
+      "run_id": "wpi-par4pc-encode-20261104",
+      "code_head": "85f7b72 plus the uncommitted scripts encode_jsonl_texts.py / build_par4pc_dense_inputs.py (committed in ff603bb)",
+      "inputs_receipt_sha256": "e3a55eab64a39d7a8528642b39c58305491eea62ea43a7e37712d847d7a09b7f",
+      "models": {"patembed-base": "datalyes/patembed-base (CC BY-NC-SA 4.0), pinned copy on dr-train", "multilingual-e5-base": "intfloat/multilingual-e5-base, pinned copy on dr-train"},
+      "hardware": "dr-train Tesla V100-SXM2-32GB (GPU-277ccc57-…), cooperative lock, concurrency 1",
+      "start_utc": "2026-11-04T14:29:55Z", "files": 12, "gpu_side_seconds": 289.1, "attention_tokens": 6971131,
+      "labels_sent_to_remote": false,
+      "integrity": "12 npy SHA-256 equal on dr-train and Windows"
+    },
+    {
+      "run_id": "wpi-par4pc-dev-20261104",
+      "protocol_sha256": "2056b80db6d57e87bf4791c2c1da12b1bf2505f1d1b3bf45d7df1ac81bfe8b6f",
+      "study_module_sha256": "d8aab3eeea48a46480996014e447dfc42396b335b92c72eeab7d41b5e0092414",
+      "runner_sha256": "493d447dd9e8aeb8d046d378d8f6709db8daccfebc7eff38400ea9b9632265c2",
+      "split": "validation", "frozen_utc": "2026-11-04T14:38:33Z", "freeze_sha256": "4600ea362b09df243cd0326ba57659761a6110c7e9387757481f5fd60b28bf20",
+      "commit": "ff603bb",
+      "outcome": "selection bm25_claim / patembed_claim / hybrid / tau 0.2738"
+    },
+    {
+      "run_id": "wpi-par4pc-test-20261104",
+      "split": "test", "runs": 1, "rows": 2896, "apps": 222, "failed_rows": 0,
+      "scoring_cpu_seconds": 69.34, "bootstrap": {"resamples": 10000, "seed": 20261104, "unit": "application"},
+      "reproduction_check": "bm25_full row-micro Hit@1 0.7151243093922652 equals benchmark-expansion receipt",
+      "artifact": "par4pc-test-results.json",
+      "deviations": "none"
+    },
+    {
+      "run_id": "wpi-par4pc-subgroups-20261104",
+      "status": "EXPLORATORY_NOT_PREREGISTERED",
+      "artifact": "par4pc-exploratory-subgroups.json"
+    }
+  ],
+  "commands": [
+    "python scripts/healthtech/audit_generation_content.py --journal <private jsonl> --pack <private pack> --receipt docs/healthtech/audits/ptp-e2-paid-canary-20261104T1354Z/sanitized-receipt.json --output <audit>/canary-content-audit.json",
+    "python scripts/healthtech/build_par4pc_dense_inputs.py --par4pc-dir <PANORAMA>/PAR4PC --output-dir <private>/inputs",
+    "CUDA_VISIBLE_DEVICES=GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089 python scripts/healthtech/encode_jsonl_texts.py --input <split-name>.jsonl --output <kind-split-name> --model-dir <model> --kind {patembed,e5} --role {query,passage}",
+    "python scripts/healthtech/run_par4pc_retrieval_study.py --phase dev --par4pc-dir <PAR4PC> --vectors-dir <vectors> --freeze <audit>/par4pc-freeze.json",
+    "python scripts/healthtech/run_par4pc_retrieval_study.py --phase test ... --output <audit>/par4pc-test-results.json --private-dir <private>/test-private",
+    "python scripts/healthtech/analyze_par4pc_subgroups.py --test-parquet <PAR4PC>/test.parquet --per-row <private>/test-private/test-per-row-metrics.json --output <audit>/par4pc-exploratory-subgroups.json"
+  ]
+}

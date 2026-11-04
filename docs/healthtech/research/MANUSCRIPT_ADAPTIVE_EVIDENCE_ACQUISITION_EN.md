@@ -1,12 +1,18 @@
-# Evaluating Adaptive Evidence Acquisition for Medical-Device Patent Screening under Incomplete Judgments
+# Lexical, Dense, Hybrid and Cost-Aware Cascade Ranking of Examiner-Cited Prior Art: A Preregistered Evaluation with a Provenance-Bound Medical-Device Evidence Application
+
+Working title, revised 2026-11-04; the owner must approve the reframing. Previous title: *Evaluating Adaptive Evidence Acquisition for Medical-Device Patent Screening under Incomplete Judgments*.
 
 Status: `DRAFT_FOR_OWNER_REVIEW / SOLO_COMPUTATIONAL_STUDY / NOT_SUBMITTED`
+
+Primary evidence for this revision: [`ptp-wpi-research-package-20261104`](../audits/ptp-wpi-research-package-20261104/README.md) (protocol frozen at commit `ff603bb` before the test run).
 
 Target venue: *World Patent Information* (official Elsevier profile scope rechecked on 2026-11-04; journal-specific author requirements still require owner recheck immediately before submission).
 
 ## Abstract
 
-Patent-information workflows for medical devices must connect regulatory or product evidence to patent records without silently treating a retrieved candidate as a disclosed relationship. This study evaluates whether adaptive evidence acquisition improves the auditability and resource efficiency of device-patent screening when documented links are incomplete. We compare metadata, lexical, strong fixed hybrid, fixed multi-query, and simple adaptive policies under shared evidence access, candidate universes, cutoffs, group splits, and declared per-call budget units while reporting realized total resources. The primary endpoint is macro known-link Recall@K over source-backed documented relationships; unlisted pairs remain unjudged rather than negative. A separate dossier application uses at least three permitted real device cases and tests source inspection, editing, history, and export. The current repository contains descriptive offline results and a verified local engineering path, but not a rights-cleared semantic relevance gold set, a powered confirmatory comparison, a live provider comparison, or independent user validation. A historical transfer diagnostic recorded HT-B2 at macro Recall@20 0.8857 and HT-B1 and provider-shaped HT-B4-MOCK at 0.8381; those values are retained for provenance only and are not pooled with the current-head three-device frontier. A four-company sensitivity audit shows that observed rankings vary by held-out company. These results are not equal-total-budget superiority claims because the cohort is small, repeated across local relations, and the realized query/rerank budgets differ by policy. The practical contribution is a reproducible patent-information protocol and evidence-dossier workflow that makes provenance, unknowns, costs, and failure modes inspectable.
+Prior-art screening must decide which candidate documents deserve an analyst's attention, and how much computation to spend deciding. We report a preregistered, solo, reproducible evaluation on the PANORAMA PAR4PC benchmark. For each of 2,896 rejected claims from 222 US applications in the test split, eight candidate patents are ranked against the documents the USPTO examiner cited for that rejection. We froze query formulations, the dense encoder, a reciprocal-rank-fusion hybrid and a lexical-margin cascade on the validation split (3,029 claims, 221 applications) before scoring test once. A patent-specific dense encoder (PatEmbed-base) raised application-macro MRR from 0.845 (BM25) to 0.933 (Δ +0.088, 95% application-cluster bootstrap CI +0.058 to +0.120). Fixed fusion with BM25 was worse than the dense ranker alone (Δ −0.020, CI −0.038 to −0.004). The cost-aware cascade stayed within a 0.01 MRR tolerance of the hybrid while escalating only 57% of claims, but it did not outperform the strongest fixed policy. Examiner citations are incomplete proxy labels, the task is closed-candidate ranking, and the encoder's training data may overlap USPTO citation data. We therefore make no claim about open-corpus search. As a separate application, the same provenance-bound engine produces medical-device evidence dossiers; three FDA canary cases show literal source fidelity (9/9 fields) and a measured cost of USD 0.00054516, and an 11-device known-link cohort remains descriptive because it has only three independent groups.
+
+*Earlier abstract, retained for traceability until the owner approves the reframing:* Patent-information workflows for medical devices must connect regulatory or product evidence to patent records without silently treating a retrieved candidate as a disclosed relationship. This study evaluates whether adaptive evidence acquisition improves the auditability and resource efficiency of device-patent screening when documented links are incomplete. We compare metadata, lexical, strong fixed hybrid, fixed multi-query, and simple adaptive policies under shared evidence access, candidate universes, cutoffs, group splits, and declared per-call budget units while reporting realized total resources. The primary endpoint is macro known-link Recall@K over source-backed documented relationships; unlisted pairs remain unjudged rather than negative. A separate dossier application uses at least three permitted real device cases and tests source inspection, editing, history, and export. The current repository contains descriptive offline results and a verified local engineering path, but not a rights-cleared semantic relevance gold set, a powered confirmatory comparison, a live provider comparison, or independent user validation. A historical transfer diagnostic recorded HT-B2 at macro Recall@20 0.8857 and HT-B1 and provider-shaped HT-B4-MOCK at 0.8381; those values are retained for provenance only and are not pooled with the current-head three-device frontier. A four-company sensitivity audit shows that observed rankings vary by held-out company. These results are not equal-total-budget superiority claims because the cohort is small, repeated across local relations, and the realized query/rerank budgets differ by policy. The practical contribution is a reproducible patent-information protocol and evidence-dossier workflow that makes provenance, unknowns, costs, and failure modes inspectable.
 
 Keywords: patent information; medical devices; evidence acquisition; adaptive retrieval; incomplete judgments; provenance; cost-quality trade-off; reproducible research
 
@@ -16,7 +22,14 @@ Medical-device screening sits between regulatory evidence, product descriptions,
 
 This paper studies a narrower question: when the evidence acquisition budget is fixed, does an adaptive policy produce a more auditable dossier or a better quality-cost trade-off than strong fixed baselines and a simple heuristic? The study is deliberately patent-information centered. It does not claim clinical suitability, freedom to operate, patent validity, regulatory approval probability, investment merit, or market demand.
 
-The contributions are:
+**Revised contributions (2026-11-04).** Following the evidence audit in [`ptp-wpi-research-package-20261104`](../audits/ptp-wpi-research-package-20261104/README.md), the primary contribution is narrowed to a preregistered comparison of lexical, dense, hybrid and cost-aware cascade ranking on an established examiner-citation benchmark (Track A). There are two secondary contributions:
+
+- a provenance-bound device dossier workflow and its source-fidelity audit (Track B, an application demonstration);
+- a reproducible package of protocol, freeze, hashes and negative results.
+
+The earlier contribution list below is kept for the owner's review.
+
+Earlier contributions:
 
 1. A provenance-bound evaluation contract that preserves raw and canonical identifiers, source revisions, rights policies, exact locators, and the distinction between disclosed links, retrieved candidates, and unjudged pairs.
 2. A frozen-input comparison of fixed and adaptive evidence-acquisition policies with predeclared grouping, leakage controls, explicit per-call budget controls, realized-resource accounting, and failure retention.
@@ -30,6 +43,16 @@ Prior work has studied cross-domain medical-device and patent linking, patent an
 The adaptive policy is not claimed to be novel merely because it uses adaptive retrieval. Adaptive-RAG, dynamic retrieval, cost-aware selection, verification-aware stopping, and related methods establish prior art for those general mechanisms. Any contribution here must come from the medical-device patent-information setting, the matched experimental design, the disclosed-link/unjudged boundary, and the reproducible operational artifacts.
 
 ## 3. Research questions and estimands
+
+### 3.A Revised questions (Track A primary, frozen in [`PAR4PC_RETRIEVAL_PROTOCOL_20261104_EN.md`](PAR4PC_RETRIEVAL_PROTOCOL_20261104_EN.md))
+
+**RQ-A1 (primary).** On claim-level prior-art option ranking with examiner-cited labels, do a patent-specific dense encoder and a fixed lexical–dense fusion rank cited documents higher than BM25? Estimand: application-macro MRR of the first gold option, compared by paired application-cluster bootstrap.
+
+**RQ-A2 (supporting).** Can a cost-aware cascade, which escalates only low-margin lexical decisions to dense scoring, stay within 0.01 MRR of always-on fusion while using less dense computation?
+
+**RQ-B (application).** Does the provenance-bound dossier engine preserve literal source fidelity and inspectable provenance on real device cases? This question is descriptive and is not pooled with Track A.
+
+### 3.B Earlier questions (Track B; retained)
 
 **RQ1.** Under a frozen device-patent candidate universe and incomplete documented links, how do fixed metadata/lexical/hybrid/multi-query controls and adaptive policies differ in known-link recovery at a fixed budget?
 
@@ -94,6 +117,60 @@ The analysis reports denominators, group counts, failures, retries, unknowns, an
 Report failures due to source unavailability, no new candidates, budget exhaustion, schema failure, provider failure, retry, rights blocking, or user cancellation. Where artifacts permit, ablate company/entity signals, action order, query breadth, stopping, and embedding choice. Preserve hard cases and blocked branches.
 
 ## 7. Results
+
+### 7.A Track A: preregistered PAR4PC prior-art ranking
+
+**Data.** PANORAMA PAR4PC, source revision `5c40de5f…`, CC BY-NC 4.0, used for local research only.
+
+- Validation: 3,029 claims, 221 applications. Test: 2,896 claims, 222 applications. No application appears in both splits.
+- Each claim has eight candidate patents. Gold = documents the examiner cited to reject that claim. Silver = other documents cited in the same examination, which receive graded credit in nDCG only.
+
+**Methods.** All methods are zero-shot and read no labels at runtime.
+
+- BM25 using the existing per-row implementation, with either the full application text or the target claim as the query.
+- PatEmbed-base and multilingual-e5-base, both 512-token, mean-pooled and L2-normalized, encoded on one V100.
+- Reciprocal-rank fusion (k = 60) of the validation-selected BM25 and dense rankers.
+- A cascade that keeps the BM25 ranking when the relative top-two margin is at least τ and otherwise escalates to the fusion.
+
+On validation only, the protocol selected BM25-claim, PatEmbed-claim (MRR 0.914 vs e5-full 0.905) and τ = 0.2738. These were frozen in commit `ff603bb` before test was scored. The test split was scored once.
+
+**Table A1. Test results (application-macro).**
+
+| Method | MRR | Hit@1 | Recall@3 | nDCG@8 |
+|---|---:|---:|---:|---:|
+| BM25-full | 0.8447 | 0.7292 | 0.8966 | 0.9048 |
+| BM25-claim | 0.8692 | 0.7686 | 0.9135 | 0.9176 |
+| e5-full | 0.9066 | 0.8322 | 0.9442 | 0.9447 |
+| e5-claim | 0.9070 | 0.8359 | 0.9406 | 0.9462 |
+| PatEmbed-full | 0.9390 | 0.8871 | 0.9654 | 0.9691 |
+| PatEmbed-claim (selected) | 0.9329 | 0.8754 | 0.9645 | 0.9668 |
+| Hybrid RRF | 0.9129 | 0.8373 | 0.9592 | 0.9492 |
+| Cascade (57.0% escalated) | 0.9109 | 0.8367 | 0.9433 | 0.9450 |
+
+**Table A2. Preregistered paired contrasts (MRR; application-cluster bootstrap, 10,000 resamples; Holm over C1–C3).**
+
+| Contrast | Δ | 95% CI | Holm p |
+|---|---:|---|---:|
+| C1 PatEmbed-claim − BM25-full | +0.0882 | +0.0578 to +0.1196 | < 0.0001 |
+| C2 Hybrid − BM25-full | +0.0682 | +0.0446 to +0.0924 | < 0.0001 |
+| C3 Hybrid − PatEmbed-claim | −0.0200 | −0.0377 to −0.0037 | 0.018 |
+| C4 Cascade − Hybrid (tolerance −0.01) | −0.0020 | −0.0076 to +0.0031 | — |
+
+H1 and H2 are supported. H3 is not: fixed fusion with the weaker lexical ranker hurt. H4 is met only in the narrow sense of matching the hybrid with 43% fewer dense query encodings. The adaptive cascade did not outperform the best fixed policy (dense alone).
+
+The BM25-full row-micro Hit@1 (0.7151) reproduces the earlier benchmark receipt exactly. On test, PatEmbed-full slightly exceeded the validation-selected PatEmbed-claim; the selection was not revised.
+
+In exploratory analyses that were not preregistered, the dense advantage held for independent claims (claim 1: Δ +0.112), for dependent claims (+0.084), and for single-gold (+0.106) and multi-gold (+0.064) rows. A top-1 comparison found 616 rows where only the dense ranker was correct, 188 where only BM25 was, 1,883 where both were and 209 where neither was.
+
+Encoding used about 289 V100-seconds for all 12 input files of both splits and both encoders. Scoring took 69 CPU-seconds on test. No paid inference was used.
+
+Artifacts: [results](../audits/ptp-wpi-research-package-20261104/par4pc-test-results.json), [freeze](../audits/ptp-wpi-research-package-20261104/par4pc-freeze.json), [subgroups](../audits/ptp-wpi-research-package-20261104/par4pc-exploratory-subgroups.json), [registry](../audits/ptp-wpi-research-package-20261104/EXPERIMENT_REGISTRY.json).
+
+### 7.B Track B canary content audit
+
+The E2 paid canary ran `qwen/qwen3-32b` via DeepInfra on three FDA PMA cases (USD 0.00054516). A deterministic rubric checked every generated finding against the exact evidence row the model received. Result: 9/9 findings carried the correct literal value, with correct citations, no extra regulatory, clinical, patent or commercial inference, and no missing evidence rows. All output, message and payload hashes and all three provider generation records reconcile. The task copies three structured fields, so this is engineering evidence of source fidelity, not semantic or patent-linkage evidence ([audit](../audits/ptp-wpi-research-package-20261104/canary-content-audit.json)).
+
+### 7.C Track B device known-link results (descriptive)
 
 The tables below reproduce the frozen descriptive audit already stored in the repository. They are not a newly executed final confirmatory evaluation on this continuation candidate; each table remains bound to its own audit manifest and revision.
 
@@ -714,6 +791,19 @@ source binding as a substitute for an independent semantic gold judgment.
 
 ## 11. Limitations
 
+Track A:
+
+- (A1) Examiner citations are incomplete, examiner-specific proxies for relevance. Unchosen options are not verified non-relevant.
+- (A2) Eight-option closed ranking is much easier than open-corpus prior-art search, so absolute scores do not transfer.
+- (A3) PatEmbed was trained multi-task on PatenTEB patent tasks; overlap with USPTO citation data cannot be ruled out, so C1 may be inflated.
+- (A4) Truncation at 512 tokens drops most claims of long documents.
+- (A5) BM25 had been run on test before this study; the new methods were frozen on validation.
+- (A6) PAR4PC exposes no family identifiers, so family-level leakage between splits was not checked beyond application disjointness.
+- (A7) The study covers one benchmark and one fusion rule (RRF, k = 60).
+- (A8) The analysis was conducted and checked by the same single author; no independent replication.
+
+Track B:
+
 1. Documented product-level links are not semantic patent relevance gold; unjudged pairs are not negatives.
 2. The current effective group counts and holdout size are too small for stable generalization or confirmatory significance claims.
 3. The three real-device cases demonstrate the workflow but do not replace a benchmark, user study, or market validation.
@@ -726,7 +816,9 @@ source binding as a substitute for an independent semantic gold judgment.
 
 ## 12. Discussion
 
-The current development evidence does not support a claim that the adaptive
+**Track A.** For examiner-cited prior art in closed candidate sets, the patent-specific dense encoder carried most of the gain. Combining it with BM25 through fixed rank fusion diluted that gain, which is consistent with fusion helping only when the components have comparable accuracy. The cost-aware cascade is a practical engineering result: about 43% of claims never needed dense query scoring, and quality matched always-on fusion. It is a negative result for adaptive acquisition as a source of quality, however, because the best fixed policy (dense alone) remained better. For patent-information practice, the evidence favours a strong domain encoder as the default ranker, with lexical scoring kept for transparency rather than as a fusion partner. A cascade should escalate to the dense ranker rather than to fusion; that variant was not preregistered and is left for the next frozen study.
+
+**Track B (earlier discussion).** The current development evidence does not support a claim that the adaptive
 policy is better than the fixed controls. On the frozen current-head cohort,
 HT-B0b has the highest observed macro known-link Recall@20 (`0.662242`), while
 HT-B2 reaches `0.568912` with a larger realized query/rerank budget and offline
@@ -767,7 +859,9 @@ open research question.
 
 ## 13. Conclusion
 
-The current evidence supports a reproducible patent-information workflow and a disciplined computational study design for adaptive evidence acquisition under incomplete judgments. The four-company sensitivity audit and the new PANORAMA/Helmers component results show that the pipeline can be evaluated against multiple task-shaped signals, while also exposing the limits of transferring option-selection or selected-pool relevance metrics into device-patent dossier claims. The strongest defensible contribution is the combination of provenance-aware state separation, explicit per-call and realized-resource accounting, explicit unknowns, reproducible dossier operations, and honest quality-cost reporting. A stronger scientific conclusion requires a final adaptive dossier study with equalized total budgets, independent groups, and an appropriate semantic judgment source or benchmark. A stronger business conclusion requires future authorized user or customer evidence.
+On a public examiner-citation benchmark, a preregistered evaluation found clear gains for a patent-specific dense encoder over BM25. Fixed fusion with BM25 was worse than the encoder alone. A cost-aware cascade saved dense computation but did not improve quality over the best fixed policy. These results are bounded by proxy labels, closed candidate sets and possible encoder contamination. The device dossier application shows source-faithful, cost-accounted generation on three FDA cases, but it is not a powered study.
+
+*Earlier conclusion (Track B):* The current evidence supports a reproducible patent-information workflow and a disciplined computational study design for adaptive evidence acquisition under incomplete judgments. The four-company sensitivity audit and the new PANORAMA/Helmers component results show that the pipeline can be evaluated against multiple task-shaped signals, while also exposing the limits of transferring option-selection or selected-pool relevance metrics into device-patent dossier claims. The strongest defensible contribution is the combination of provenance-aware state separation, explicit per-call and realized-resource accounting, explicit unknowns, reproducible dossier operations, and honest quality-cost reporting. A stronger scientific conclusion requires a final adaptive dossier study with equalized total budgets, independent groups, and an appropriate semantic judgment source or benchmark. A stronger business conclusion requires future authorized user or customer evidence.
 
 ## Declarations
 
@@ -801,6 +895,10 @@ The following references are drawn from the checked local bibliography at `liter
 10. Helmers, L., Horn, F., Biegler, F., Oppermann, T., and Müller, K.-R. (2019). Automating the search for a patent's prior art with a full text similarity search. PLOS ONE, 14(3), e0212103. doi:10.1371/journal.pone.0212103.
 11. Ayaou, I., Cavallucci, D., and Chibane, H. (2025). DAPFAM: A Domain-Aware Family-level Dataset to benchmark cross domain patent retrieval. arXiv:2506.22141.
 12. Lim, H., Nam, S., Na, S., Cho, J. Y., Yang, J. Y., Shin, H., Lee, Y., Kim, J., Lee, M., and Hong, H. (2025). PANORAMA: A Dataset and Benchmarks Capturing Decision Trails and Rationales in Patent Examination. NeurIPS 2025 Datasets and Benchmarks; arXiv:2510.24774.
+13. PatenTEB / patembed model family (2025). arXiv:2510.22264. Model: `datalyes/patembed-base`, CC BY-NC-SA 4.0. *Author list to be verified from the arXiv record before submission.*
+14. Wang, L., Yang, N., Huang, X., Yang, L., Majumder, R., and Wei, F. (2024). Multilingual E5 Text Embeddings: A Technical Report. arXiv:2402.05672.
+15. Robertson, S., and Zaragoza, H. (2009). The Probabilistic Relevance Framework: BM25 and Beyond. Foundations and Trends in Information Retrieval, 3(4), 333–389.
+16. Cormack, G. V., Clarke, C. L. A., and Büttcher, S. (2009). Reciprocal rank fusion outperforms Condorcet and individual rank learning methods. Proceedings of SIGIR 2009, 758–759.
 
 ## Author-review checklist
 

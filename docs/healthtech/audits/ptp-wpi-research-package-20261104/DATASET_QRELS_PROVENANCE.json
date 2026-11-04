@@ -1,0 +1,73 @@
+{
+  "format": "ptp-dataset-qrels-provenance-v1",
+  "observed_utc": "2026-11-04T15:00:00Z",
+  "sources": [
+    {
+      "id": "panorama-par4pc",
+      "role": "Track A primary benchmark (validation = development, test = frozen holdout)",
+      "source": "PANORAMA PAR4PC validation+test parquet, revision 5c40de5fb1de842d3a44ec4b9f5bb9c44d47a77d",
+      "license": "CC BY-NC 4.0; local non-commercial research/evaluation only; no raw redistribution",
+      "sha256": {"validation": "d84d34779c2d741b9eb3aebd7db009836dc0d78ba4c78aee1cfa410f5092594d", "test": "f1f8e33d32bfd2a6a2a7f1e740e94a6512c5d79598fdfb6b431829b21b6565e3"},
+      "unit": "(application_number, claim_number) row with 8 candidate options",
+      "counts": {"validation_rows": 3029, "validation_apps": 221, "test_rows": 2896, "test_apps": 222, "app_overlap": 0, "shared_option_patents": 149},
+      "label_creator": "USPTO examiners via office actions, compiled by the dataset authors",
+      "label_semantics": "gold = documents cited to reject that claim; silver = other documents cited in the examination; negatives = remaining options",
+      "label_type": "documented citation proxy; incomplete; not exhaustive relevance",
+      "created_independently_of_evaluated_methods": true,
+      "circularity_risk": "PatEmbed (PatenTEB multi-task) may have trained on USPTO citation-derived tasks; not ruled out",
+      "eligibility": "ELIGIBLE for the Track A claims as worded in the claims-evidence matrix",
+      "prior_exposure": "per-row BM25 baseline previously run on both splits; no new method scored on test before freeze ff603bb"
+    },
+    {
+      "id": "panorama-pi4pc",
+      "role": "not used this round",
+      "license": "CC BY-NC 4.0",
+      "label_semantics": "paragraph cited by examiner within a prior-art document",
+      "eligibility": "ELIGIBLE_NOT_USED; lexical baseline receipts exist (benchmark-expansion-20261101)"
+    },
+    {
+      "id": "helmers-human-eval",
+      "role": "external relevance diagnostic (historical lexical diagnostic only)",
+      "license": "CC BY 4.0",
+      "label_creator": "patent-domain human annotators (Helmers et al., 2019 PLOS ONE dataset)",
+      "label_semantics": "binary human relevance for selected target/candidate pairs (10 targets, 450 judged pairs)",
+      "eligibility": "DIAGNOSTIC_ONLY: selected pool, no official split, 10 targets too few for confirmatory inference"
+    },
+    {
+      "id": "device-known-link-cohort",
+      "role": "Track B application/development study",
+      "source": "openFDA PMA records + public company product-patent disclosure pages + public US patent pages (results/healthtech/ht-public-cohort-20261028-r1 and later company cohorts)",
+      "label_creator": "manufacturer product-level patent disclosure (marking) pages",
+      "label_semantics": "documented product-level device-patent relationships; unlisted pairs are unjudged, not negative",
+      "label_type": "documented association proxy; incomplete; not semantic relevance",
+      "counts": {"composite_devices": 11, "patents": 31, "disclosed_pairs": 38, "unjudged_distractor_pairs": 303, "effective_groups_per_split": 3},
+      "eligibility": "DEVELOPMENT_AND_DESCRIPTIVE_ONLY: too few independent groups; Stryker view previously exposed"
+    },
+    {
+      "id": "bridge-meddevkg",
+      "role": "none",
+      "eligibility": "BLOCKED_LOCAL: rights clause missing, 672 vs 585 pair reconciliation unresolved, train/eval positive overlap",
+      "reference": "docs/healthtech/research/BRIDGE_RIGHTS_COHORT.md"
+    },
+    {
+      "id": "fda-canary-pack",
+      "role": "engineering canary and literal source-fidelity check",
+      "source": "openFDA PMA records P100009, P240042, P230007 (openFDA-last-updated-2026-10-19)",
+      "license": "openFDA terms: ALLOWED_WITH_ATTRIBUTION",
+      "pack_sha256": "e146ab85db3792c3028e9becb0d71ea645a0cd0cfe426a9233622496e7aef489",
+      "label_semantics": "authoritative structured fields (pma_number, trade_name, applicant); deterministic literal check",
+      "eligibility": "ENGINEERING_ONLY: 3 cases, 9 fields, no patent content"
+    },
+    {
+      "id": "dapfam",
+      "role": "historical diagnostic",
+      "eligibility": "DIAGNOSTIC_ONLY: not semantic device-patent gold"
+    },
+    {
+      "id": "scifact",
+      "role": "separate evidence-verification component",
+      "eligibility": "COMPONENT_ONLY: not pooled with patent results"
+    }
+  ],
+  "solo_assessment": "No human assessor was used. No LLM judgment is used as a label."
+}

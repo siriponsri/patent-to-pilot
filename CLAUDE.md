@@ -10,7 +10,8 @@ This file is a project-local continuation guide. `AGENTS.md`, the current owner 
 - Initial pushed handoff checkpoint: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`
 - Cleanup-record checkpoint: `46421f0d99f3425af1e841991411f80a21031a72`
 - Source merge already tested: `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`
-- Current task state: Normal main-only audit; update current guidance and E2 evidence, run offline/isolated checks, then pause. Do not resume the goal, start a long run, create a worktree, push/merge, or clean branches/worktrees.
+- Current task state (4 Nov 2026): the WPI long-run plan is active on `main` per `docs/healthtech/long-runs/PTP_JOURNAL_LONG_RUN.md` and the owner amendments (E2 USD10 cumulative; push after a verified package; dr-train V100). Track A (PAR4PC) is complete; see `docs/healthtech/audits/ptp-wpi-research-package-20261104/`. Do not create worktrees, reset ledgers, submit the manuscript or contact outsiders.
+- Earlier task state: Normal main-only audit (superseded).
 - Goal status: not complete overall. Engineering is complete for the current offline scope; science, paid comparison, external business validation, and WPI submission remain partial or blocked.
 
 Read `HANDOFF.md` for the full evidence map and current worktree inventory.
@@ -115,11 +116,11 @@ No paid dispatch/reservation, GPU job, long run, push, merge, branch deletion, o
 
 Engineering: complete for current offline scope.
 
-Scientific evidence: partial; no admissible final semantic holdout or paid matched comparison.
+Scientific evidence: Track A has a preregistered PAR4PC test result with paired CIs and negative fusion and cascade findings. Track B (device links) is descriptive only; there is no matched local-vs-API comparison yet.
 
 Business validation: partial; solo developer proxy/scenario only.
 
-Manuscript/WPI: partial; owner review and journal-specific checks remain; not submitted.
+Manuscript/WPI: partial. Track A sections are written. The Guide for Authors is still HTTP 403. The reframing, declarations and license await the owner. Not submitted.
 
 Paid API: owner-authorized E2 canary passed on 2026-11-04 (3/3 settled, USD 0.00054516; `docs/healthtech/audits/ptp-e2-paid-canary-20261104T1354Z/`). This is engineering evidence only. Further paid work needs new owner authorization and a new 300-second admission window.
 

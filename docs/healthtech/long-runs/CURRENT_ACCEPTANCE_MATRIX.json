@@ -1,5 +1,6 @@
 {
   "format": "ptp-current-acceptance-matrix-v1",
+  "latest_wpi_research_package": {"audit": "docs/healthtech/audits/ptp-wpi-research-package-20261104/README.md", "status": "TRACK_A_COMPLETE_PREREGISTERED_TEST; TRACK_B_DESCRIPTIVE", "freeze_commit": "ff603bb", "paid_cost_usd_this_round": 0.0, "e2_allowance_usd_owner": 10.0, "e2_code_enforced_cap_usd": 1.0},
   "observed_local_date": "2026-11-04",
   "current_normal_round": {
     "status": "PASS_LOCAL_NORMAL_AUDIT_PAID_BRANCH_STILL_PAUSED",

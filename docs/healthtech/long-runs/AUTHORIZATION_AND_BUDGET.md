@@ -1,5 +1,7 @@
 ## Current owner amendment — 3 November 2026 local accounting epoch
 
+> **Owner amendment — 4 Nov 2026 (chat):** the prospective E2 allowance is raised from USD1 to **USD10 cumulative**, including the canary's settled USD0.00054516. The USD100 project ceiling, history and journals are unchanged; no reset. The epoch code (`providers/local_epoch.py`) still enforces USD1 until a recorded append-only policy amendment is implemented and tested. Do that only when a planned paid study exceeds the current residual of USD0.99945484. Push to `origin/main` after a verified package is authorized.
+
 > **Current key evidence — 4 Nov 2026:** [presence-preserving observation](../audits/pepo-key-limit-repair-20261104/metadata-observation-v2.json) confirms the dispatch key is UNLIMITED. Older statements below asking for its remaining limit are superseded. This does not imply unlimited account funds. Existing MCP credit evidence must be refreshed and bound to the dispatch account/key at admission. USD100 cumulative/E2USD1/unknown history remain unchanged.
 
 This section supersedes earlier instructions below that require complete R1 recovery before all paid work or prohibit the owner-authorized accounting cutover. The USD100 cumulative ceiling and original GPU limits remain; this is not a fresh USD100 allowance. See [current repair handoff](../audits/pepo-blocked-goal-repair-20261103/README.md) and `LOCAL_ACCOUNTING_AND_GPU_FOLLOWUP.json` there.

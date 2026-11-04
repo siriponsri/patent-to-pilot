@@ -1,0 +1,73 @@
+{
+  "format": "ptp-wpi-par4pc-exploratory-subgroups-v1",
+  "status": "EXPLORATORY_NOT_PREREGISTERED",
+  "subgroups": {
+    "claim_1": {
+      "rows": 206,
+      "apps": 206,
+      "bm25_full_app_macro_mrr": 0.8229773462783171,
+      "patembed_claim_app_macro_mrr": 0.9354368932038835,
+      "hybrid_app_macro_mrr": 0.9026699029126213,
+      "cascade_app_macro_mrr": 0.9033171521035599,
+      "patembed_claim_minus_bm25_full": {
+        "delta": 0.11245954692556635,
+        "ci95_low": 0.07548543689320389,
+        "ci95_high": 0.15109223300970873,
+        "p_bootstrap": 0.0,
+        "groups": 206
+      }
+    },
+    "claim_gt_1": {
+      "rows": 2690,
+      "apps": 220,
+      "bm25_full_app_macro_mrr": 0.847854273550094,
+      "patembed_claim_app_macro_mrr": 0.9323365180194351,
+      "hybrid_app_macro_mrr": 0.9155629622917837,
+      "cascade_app_macro_mrr": 0.9130699564836656,
+      "patembed_claim_minus_bm25_full": {
+        "delta": 0.08448224446934104,
+        "ci95_low": 0.05414606635413694,
+        "ci95_high": 0.11637349985638404,
+        "p_bootstrap": 0.0,
+        "groups": 220
+      }
+    },
+    "single_gold": {
+      "rows": 1697,
+      "apps": 164,
+      "bm25_full_app_macro_mrr": 0.7844881075736527,
+      "patembed_claim_app_macro_mrr": 0.8902216910009942,
+      "hybrid_app_macro_mrr": 0.8537639270840303,
+      "cascade_app_macro_mrr": 0.8539203564365443,
+      "patembed_claim_minus_bm25_full": {
+        "delta": 0.10573358342734146,
+        "ci95_low": 0.06692371769995326,
+        "ci95_high": 0.1447314316216755,
+        "p_bootstrap": 0.0,
+        "groups": 164
+      }
+    },
+    "multi_gold": {
+      "rows": 1199,
+      "apps": 141,
+      "bm25_full_app_macro_mrr": 0.8879293808371822,
+      "patembed_claim_app_macro_mrr": 0.9517944443868845,
+      "hybrid_app_macro_mrr": 0.950525942521145,
+      "cascade_app_macro_mrr": 0.9468097259320664,
+      "patembed_claim_minus_bm25_full": {
+        "delta": 0.06386506354970224,
+        "ci95_low": 0.02663447498932645,
+        "ci95_high": 0.10164488211800642,
+        "p_bootstrap": 0.0,
+        "groups": 141
+      }
+    }
+  },
+  "error_table_top1": {
+    "both_correct": 1883,
+    "dense_only": 616,
+    "bm25_only": 188,
+    "both_wrong": 209,
+    "rows": 2896
+  }
+}

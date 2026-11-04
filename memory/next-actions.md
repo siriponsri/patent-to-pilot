@@ -8,6 +8,19 @@
 
 This Normal round is a documentation/test audit on `main`, not a goal continuation. The older candidate and continuation queue remain historical references; no current READY package is opened here. Platform Luna state remains unverified; this file does not resume a runtime goal.
 
+## HT-NEXT-266 — 2026-11-04 WPI research package (Track A)
+
+Status: `TRACK_A_COMPLETE_PREREGISTERED_TEST`; canonical audit: `../docs/healthtech/audits/ptp-wpi-research-package-20261104/README.md`.
+
+- Canary content audit: 9/9 literal-correct, and all three generations were reconciled with the provider.
+- PAR4PC protocol frozen at `ff603bb`, then scored on test once:
+  - PatEmbed-claim beat BM25 (Δ MRR +0.088, CI +0.058 to +0.120);
+  - the RRF hybrid was below dense (−0.020, CI −0.038 to −0.004);
+  - the cascade stayed within 0.01 of the hybrid at 57% escalation but stayed below dense alone.
+- USD0 paid and about 289 s of V100 encoding.
+
+Next: PI4PC replication with its own freeze, matched local Qwen3-8B on the FDA pack, and a clean-clone rerun. Owner decisions on reframing, the Guide for Authors, license and declarations are in that audit's READINESS.md.
+
 ## HT-NEXT-265 — 2026-11-04 E2 paid canary
 
 Status: `PASS_E2_PAID_CANARY_ENGINEERING_ONLY`; canonical audit: `../docs/healthtech/audits/ptp-e2-paid-canary-20261104T1354Z/README.md`.

@@ -1,0 +1,128 @@
+{
+  "format": "ptp-generation-content-audit-summary-v1",
+  "rubric_version": "ptp-generation-content-audit-v1",
+  "pack_sha256": "e146ab85db3792c3028e9becb0d71ea645a0cd0cfe426a9233622496e7aef489",
+  "cases": 3,
+  "findings": 9,
+  "correct": 9,
+  "incorrect_or_unsupported": 0,
+  "flagged_other": 0,
+  "missing_evidence_rows": 0,
+  "all_integrity_checks_pass": true,
+  "results": [
+    {
+      "case_id": "HT-DEV-MITRACLIP",
+      "integrity": {
+        "output_sha256_recomputed_matches": true,
+        "message_sha256_matches_receipt": true,
+        "payload_sha256_matches_receipt": true,
+        "generation_id_matches_receipt": true
+      },
+      "rubric_version": "ptp-generation-content-audit-v1",
+      "device_id_matches_query": true,
+      "device_name_supported": true,
+      "evidence_rows": 3,
+      "findings": 3,
+      "correct": 3,
+      "incorrect_or_unsupported": 0,
+      "flagged_other": 0,
+      "missing_evidence_ids": [],
+      "duplicate_citations": [],
+      "unresolved_reported": 0,
+      "unresolved_expected": 0,
+      "finding_results": [
+        {
+          "record_id": "FACT-HT-DEV-MITRACLIP-pma_number",
+          "issues": [],
+          "label": "correct"
+        },
+        {
+          "record_id": "FACT-HT-DEV-MITRACLIP-trade_name",
+          "issues": [],
+          "label": "correct"
+        },
+        {
+          "record_id": "FACT-HT-DEV-MITRACLIP-applicant",
+          "issues": [],
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "case_id": "HT-DEV-TENDYNE",
+      "integrity": {
+        "output_sha256_recomputed_matches": true,
+        "message_sha256_matches_receipt": true,
+        "payload_sha256_matches_receipt": true,
+        "generation_id_matches_receipt": true
+      },
+      "rubric_version": "ptp-generation-content-audit-v1",
+      "device_id_matches_query": true,
+      "device_name_supported": true,
+      "evidence_rows": 3,
+      "findings": 3,
+      "correct": 3,
+      "incorrect_or_unsupported": 0,
+      "flagged_other": 0,
+      "missing_evidence_ids": [],
+      "duplicate_citations": [],
+      "unresolved_reported": 0,
+      "unresolved_expected": 0,
+      "finding_results": [
+        {
+          "record_id": "FACT-HT-DEV-TENDYNE-pma_number",
+          "issues": [],
+          "label": "correct"
+        },
+        {
+          "record_id": "FACT-HT-DEV-TENDYNE-trade_name",
+          "issues": [],
+          "label": "correct"
+        },
+        {
+          "record_id": "FACT-HT-DEV-TENDYNE-applicant",
+          "issues": [],
+          "label": "correct"
+        }
+      ]
+    },
+    {
+      "case_id": "HT-DEV-TRICLIP",
+      "integrity": {
+        "output_sha256_recomputed_matches": true,
+        "message_sha256_matches_receipt": true,
+        "payload_sha256_matches_receipt": true,
+        "generation_id_matches_receipt": true
+      },
+      "rubric_version": "ptp-generation-content-audit-v1",
+      "device_id_matches_query": true,
+      "device_name_supported": true,
+      "evidence_rows": 3,
+      "findings": 3,
+      "correct": 3,
+      "incorrect_or_unsupported": 0,
+      "flagged_other": 0,
+      "missing_evidence_ids": [],
+      "duplicate_citations": [],
+      "unresolved_reported": 0,
+      "unresolved_expected": 0,
+      "finding_results": [
+        {
+          "record_id": "FACT-HT-DEV-TRICLIP-pma_number",
+          "issues": [],
+          "label": "correct"
+        },
+        {
+          "record_id": "FACT-HT-DEV-TRICLIP-trade_name",
+          "issues": [],
+          "label": "correct"
+        },
+        {
+          "record_id": "FACT-HT-DEV-TRICLIP-applicant",
+          "issues": [],
+          "label": "correct"
+        }
+      ]
+    }
+  ]
+}

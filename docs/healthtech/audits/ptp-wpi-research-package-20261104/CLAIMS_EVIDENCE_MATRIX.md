@@ -1,0 +1,12 @@
+# Claims-to-evidence matrix — 4 November 2026
+
+| # | Manuscript claim (allowed wording) | Experiment / artifact | Population | Comparison | Uncertainty | Unsupported extensions |
+|---|---|---|---|---|---|---|
+| 1 | "On PANORAMA PAR4PC test, a patent-specific dense encoder ranked examiner-cited prior art higher than the BM25 baseline (application-macro MRR +0.088)." | `par4pc-test-results.json` C1 | 2,896 claims / 222 US applications; closed 8-option sets | PatEmbed-claim vs BM25-full | 95% CI [+0.058, +0.120], Holm p < 0.0001 | Open-corpus prior-art search; non-US offices; medical devices; independence from PatEmbed training data |
+| 2 | "Fixed reciprocal-rank fusion with BM25 improved on BM25 but was worse than the dense ranker alone." | C2, C3 | same | hybrid vs BM25-full; hybrid vs dense | C2 [+0.045, +0.092]; C3 [−0.038, −0.004], Holm p = 0.018 | That fusion never helps (only RRF k = 60 with these components was tested) |
+| 3 | "A lexical-margin cascade stayed within a 0.01 MRR tolerance of the hybrid while escalating 57% of claims to dense scoring." | C4, cascade curve | same | cascade vs hybrid | CI [−0.0076, +0.0031] | That adaptive acquisition beats the best fixed policy (it did not: 0.911 vs 0.933); equivalence |
+| 4 | "Claim-focused queries helped BM25; full-context queries were slightly better for PatEmbed on test." | all 8 methods | same | formulation ablation | Descriptive (no CI for this ablation) | Generality across encoders |
+| 5 | "Dense gains appeared in claim-1, dependent-claim, single-gold and multi-gold subsets." | `par4pc-exploratory-subgroups.json` | same | exploratory | Bootstrap CIs, exploratory | Preregistered subgroup effects |
+| 6 | "In three FDA canary cases, all nine generated findings literally matched the supplied structured fields." | `canary-content-audit.json` | 3 PMA records | none | n = 9 fields; descriptive | Semantic correctness, patent linkage, clinical or regulatory meaning |
+| 7 | "Device–patent known-link recovery results are descriptive development evidence." | §7.1–7.5 audits | 11 devices / 3 effective groups | B0a–B4 | `NOT_ESTIMABLE` | Superiority, generalization |
+| 8 | "The study reports cost and compute: 0 paid calls in Track A; about 289 s V100 encoding; 0.00054516 USD for the canary." | registry, canary audit | — | — | measured | Production cost or ROI |
