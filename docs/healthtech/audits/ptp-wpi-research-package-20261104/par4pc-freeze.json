@@ -1,0 +1,135 @@
+{
+  "format": "ptp-wpi-par4pc-freeze-v1",
+  "protocol": "docs/healthtech/research/PAR4PC_RETRIEVAL_PROTOCOL_20261104_EN.md",
+  "protocol_sha256": "2056b80db6d57e87bf4791c2c1da12b1bf2505f1d1b3bf45d7df1ac81bfe8b6f",
+  "study_module_sha256": "d8aab3eeea48a46480996014e447dfc42396b335b92c72eeab7d41b5e0092414",
+  "runner_sha256": "493d447dd9e8aeb8d046d378d8f6709db8daccfebc7eff38400ea9b9632265c2",
+  "validation_source_sha256": "d84d34779c2d741b9eb3aebd7db009836dc0d78ba4c78aee1cfa410f5092594d",
+  "validation_rows": 3029,
+  "validation_apps": 221,
+  "validation_app_macro_mrr": {
+    "bm25_full": 0.838971742130959,
+    "patembed_full": 0.9103657328349474,
+    "e5_full": 0.9051096786034019,
+    "bm25_claim": 0.8591837016545267,
+    "patembed_claim": 0.9143749283104409,
+    "e5_claim": 0.8971176688237991,
+    "hybrid": 0.9007814041762425
+  },
+  "validation_cascade_curve": [
+    {
+      "tau": 7.135693612056587e-05,
+      "app_macro_rr": 0.8591837016545267,
+      "escalation_rate": 0.0
+    },
+    {
+      "tau": 0.024611226108407012,
+      "app_macro_rr": 0.8637744228015184,
+      "escalation_rate": 0.04985143611753054
+    },
+    {
+      "tau": 0.0484463563535058,
+      "app_macro_rr": 0.8692032150941298,
+      "escalation_rate": 0.09970287223506108
+    },
+    {
+      "tau": 0.07699737708478316,
+      "app_macro_rr": 0.8731656284933138,
+      "escalation_rate": 0.14988445031363487
+    },
+    {
+      "tau": 0.10634425403612317,
+      "app_macro_rr": 0.8753731087693819,
+      "escalation_rate": 0.1997358864311654
+    },
+    {
+      "tau": 0.1373795026622111,
+      "app_macro_rr": 0.8778195549827964,
+      "escalation_rate": 0.2499174645097392
+    },
+    {
+      "tau": 0.16976462114620994,
+      "app_macro_rr": 0.8827567621389755,
+      "escalation_rate": 0.29976890062726974
+    },
+    {
+      "tau": 0.19460765172247443,
+      "app_macro_rr": 0.8849918158708592,
+      "escalation_rate": 0.3499504787058435
+    },
+    {
+      "tau": 0.21989669746295762,
+      "app_macro_rr": 0.8866550799406137,
+      "escalation_rate": 0.39980191482337407
+    },
+    {
+      "tau": 0.24682958724088896,
+      "app_macro_rr": 0.8891410876802182,
+      "escalation_rate": 0.44998349290194783
+    },
+    {
+      "tau": 0.27380964637634486,
+      "app_macro_rr": 0.8917430994381563,
+      "escalation_rate": 0.4998349290194784
+    },
+    {
+      "tau": 0.302291013168645,
+      "app_macro_rr": 0.8932411471959929,
+      "escalation_rate": 0.5496863651370089
+    },
+    {
+      "tau": 0.33655490023642537,
+      "app_macro_rr": 0.8951874642745719,
+      "escalation_rate": 0.5998679432155827
+    },
+    {
+      "tau": 0.36499620634990254,
+      "app_macro_rr": 0.8972059904275909,
+      "escalation_rate": 0.6497193793331132
+    },
+    {
+      "tau": 0.40509686744232354,
+      "app_macro_rr": 0.898934592951085,
+      "escalation_rate": 0.699900957411687
+    },
+    {
+      "tau": 0.46378491156475704,
+      "app_macro_rr": 0.8994936513677285,
+      "escalation_rate": 0.7497523935292175
+    },
+    {
+      "tau": 0.5216791616333459,
+      "app_macro_rr": 0.9005152343598998,
+      "escalation_rate": 0.7999339716077913
+    },
+    {
+      "tau": 0.6256383978958765,
+      "app_macro_rr": 0.9006483192680712,
+      "escalation_rate": 0.8497854077253219
+    },
+    {
+      "tau": 0.7285636215845046,
+      "app_macro_rr": 0.9007814041762425,
+      "escalation_rate": 0.8999669858038957
+    },
+    {
+      "tau": 0.8325822928866153,
+      "app_macro_rr": 0.9007814041762425,
+      "escalation_rate": 0.9498184219214262
+    },
+    {
+      "tau": 0.9125941954567529,
+      "app_macro_rr": 0.9007814041762425,
+      "escalation_rate": 0.9996698580389568
+    }
+  ],
+  "selection": {
+    "bm25": "bm25_claim",
+    "patembed": "patembed_claim",
+    "e5": "e5_full",
+    "dense": "patembed_claim",
+    "tau": 0.27380964637634486
+  },
+  "test_scored_before_freeze": false,
+  "frozen_utc": "2026-11-04T14:38:33Z"
+}
