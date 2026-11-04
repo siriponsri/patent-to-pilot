@@ -1,0 +1,52 @@
+{
+  "format": "ptp-wpi-venue-recheck-r2-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+  },
+  "official_sources": [
+    {
+      "url": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+      "access_status": "PASS",
+      "use": "conditional venue-fit only"
+    },
+    {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+      "access_status": "HTTP_403",
+      "use": "owner browser recheck required"
+    },
+    {
+      "url": "https://www.elsevier.com/researcher/author/tools-and-resources/research-data/data-guidelines",
+      "access_status": "PASS",
+      "use": "publisher-level data transparency preparation only"
+    },
+    {
+      "url": "https://www.elsevier.com/researcher/author/policies-and-guidelines/credit-author-statement",
+      "access_status": "PASS",
+      "use": "publisher-level author-role preparation only"
+    }
+  ],
+  "checklist": "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md",
+  "checklist_sha256": "bedf08eb700d9c38d74360febddeb8fc5875b9573846d03c1928cf62111f1b10",
+  "checklist_bytes": 5797,
+  "checklist_status": "PASS_PUBLISHER_LEVEL_ITEMS_RECORDED",
+  "wpi_specific_requirements": "NOT_VERIFIED_DUE_HTTP_403",
+  "publisher_level_checks": {
+    "data_availability_statement": "PREPARED",
+    "credit_author_statement": "PREPARED_FOR_OWNER_CONFIRMATION",
+    "ai_use_disclosure": "PRESENT_IN_MANUSCRIPT",
+    "funding_conflicts_ethics": "PRESENT_FOR_OWNER_CONFIRMATION"
+  },
+  "status": "PASS_PUBLISHER_PREPARATION_WPI_GUIDE_RECHECK_REQUIRED",
+  "submitted": false,
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "external_messages": 0
+  }
+}

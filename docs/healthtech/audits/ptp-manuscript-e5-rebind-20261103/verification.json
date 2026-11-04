@@ -1,0 +1,28 @@
+{
+  "format": "ptp-manuscript-e5-rebind-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_E5_PROVENANCE_REBIND_OWNER_REVIEW_PENDING",
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "bytes": 54378,
+    "sha256": "bcc3f9a91ea0eb1bd3913e424cdff72a5f103e0a3ab8fcbfd26b9c184566e09d",
+    "relative_markdown_links_detected": 50,
+    "unique_source_link_pairs_checked": 42,
+    "missing_targets": 0
+  },
+  "change_scope": "documentation-only provenance and claim-boundary update",
+  "linked_receipt": "docs/healthtech/audits/ptp-o2-e5-http-rebind-20261103/verification.json",
+  "scientific_boundary": "No semantic gold, exhaustive recall, adaptive superiority, paid API equivalence, user validation, revenue, ROI, or willingness-to-pay claim.",
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  },
+  "next": "Owner review, authorized WPI Guide recheck, and clean release verification remain required"
+}

@@ -1,0 +1,316 @@
+{
+  "format": "ptp-strong-audit-repair-v1",
+  "observed_utc": "2026-11-03T22:26:03.605832+00:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "goal_recommendation": "RESUME_EXISTING_GOAL",
+  "runtime_status": "UNKNOWN_NO_ACCESSIBLE_LUNA_SESSION_DESTINATION",
+  "document_reported_goal_status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "owner_reported_runtime_status": "BLOCKED",
+  "source_changes": {
+    "src/patent_to_pilot/healthtech/api_generation.py": {
+      "before": "d2bb52cd0f4d8052bcba234342b65ddaf5d519f5233017e2fea9ff9eea90310c",
+      "after": "38483b5352ae1487bebefd994cac18463941f293d4c2328804ad31233a421e83"
+    },
+    "scripts/healthtech/run_openrouter_generation_evidence_pack.py": {
+      "before": "eac71589279f1245126c3f603193c0750833a4711ecf086525b634d59a03f256",
+      "after": "d289b28d7d7da9dfa4e0006c650b7f20a00ea72e9db7b50583edc86099514173"
+    },
+    "src/patent_to_pilot/providers/case_journal.py": {
+      "before": null,
+      "after": "a90164bbb04b161f436b4b8f2bb62925c2354dc3497c8510320c348905e7e07c"
+    },
+    "tests/test_healthtech_case_journal.py": {
+      "before": null,
+      "after": "e8a10ca8339d5add3a72818fb902e404ba226926e8848d065e4e2e39b8a86380"
+    }
+  },
+  "reviewed_source_hashes": {
+    "GOAL.md": "651b1a597be7801aabff3052fd7058b2b1934ed6954dc3d5e3c2199181220cd7",
+    "PLAN.md": "8009c24883c10bff1932ed55a3bd4b1ceb6b039324d5e03fd86eaab4fe3ac3bb",
+    "docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json": "ccedcef85cd66bc78dfcb6b7bbf26225c7fb15bdce024f38affea6c341d74854",
+    "docs/healthtech/audits/ptp-goal-completion-audit-r17-20261104/verification.json": "951a281ca345110233e3dcbb88ba02c3eba5ef6b6675cca7552cb462ffac4825",
+    "docs/healthtech/audits/ptp-o2-current-head-completion-r16-20261104/verification.json": "f6644b2d68ea71169ed155ea8298497db96f0b8a95aa65473a5f9fdfcb5d1381",
+    "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/verification.json": "6bf2a84bb66c7c0723b1508379883a45188248eafdd5f03fe2f8ccc9e331efcd",
+    "docs/healthtech/audits/ptp-current-head-holdout-availability-20261103/verification.json": "68426a2a29bef77609956442b15f2adb34bb83a410e6a75809831598dc592aa4"
+  },
+  "findings_fixed": [
+    {
+      "severity": "HIGH",
+      "finding": "Live API CLI discarded generated output after writing a sanitized receipt",
+      "fix": "Exclusive local per-run JSONL preserves returned text, including invalid schema responses, and billing per case; sink failure stops before next dispatch"
+    },
+    {
+      "severity": "MEDIUM",
+      "finding": "Shared ledger before/after totals could attribute interleaved runs to this receipt",
+      "fix": "Calls and debit attributed to this run dispatch attempt IDs; shared ledger snapshot remains separate"
+    }
+  ],
+  "tests": {
+    "tests": 211,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_receipt": "regressions-final.xml",
+  "full_suite_for_this_patch": "NOT_RUN; prior r13 644 passed/2 skipped is pre-patch evidence, not repeated here",
+  "abbott_recomputed": [
+    {
+      "method": "HT-B0a",
+      "macro_recall_at_20": 0.4427394146064223,
+      "micro_recall_at_20": 0.4262295081967213,
+      "difference": 0.0,
+      "per_case": [
+        {
+          "query": "HT-DEV-MITRACLIP",
+          "hits": 7,
+          "denominator": 21
+        },
+        {
+          "query": "HT-DEV-TRICLIP",
+          "hits": 8,
+          "denominator": 23
+        },
+        {
+          "query": "HT-DEV-TENDYNE",
+          "hits": 11,
+          "denominator": 17
+        }
+      ],
+      "costs": {
+        "query_calls": 3.0,
+        "rerank_pairs": 0,
+        "controller_steps": 0
+      }
+    },
+    {
+      "method": "HT-B0b",
+      "macro_recall_at_20": 0.6622417082775139,
+      "micro_recall_at_20": 0.639344262295082,
+      "difference": 0.0,
+      "per_case": [
+        {
+          "query": "HT-DEV-MITRACLIP",
+          "hits": 11,
+          "denominator": 21
+        },
+        {
+          "query": "HT-DEV-TRICLIP",
+          "hits": 12,
+          "denominator": 23
+        },
+        {
+          "query": "HT-DEV-TENDYNE",
+          "hits": 16,
+          "denominator": 17
+        }
+      ],
+      "costs": {
+        "query_calls": 3.0,
+        "rerank_pairs": 0,
+        "controller_steps": 0
+      }
+    },
+    {
+      "method": "HT-B1",
+      "macro_recall_at_20": 0.49880241951853205,
+      "micro_recall_at_20": 0.47540983606557374,
+      "difference": 0.0,
+      "per_case": [
+        {
+          "query": "HT-DEV-MITRACLIP",
+          "hits": 5,
+          "denominator": 21
+        },
+        {
+          "query": "HT-DEV-TRICLIP",
+          "hits": 10,
+          "denominator": 23
+        },
+        {
+          "query": "HT-DEV-TENDYNE",
+          "hits": 14,
+          "denominator": 17
+        }
+      ],
+      "costs": {
+        "query_calls": 3.0,
+        "rerank_pairs": 123.0,
+        "controller_steps": 0
+      }
+    },
+    {
+      "method": "HT-B2",
+      "macro_recall_at_20": 0.5689116226200625,
+      "micro_recall_at_20": 0.5573770491803278,
+      "difference": 0.0,
+      "per_case": [
+        {
+          "query": "HT-DEV-MITRACLIP",
+          "hits": 7,
+          "denominator": 21
+        },
+        {
+          "query": "HT-DEV-TRICLIP",
+          "hits": 14,
+          "denominator": 23
+        },
+        {
+          "query": "HT-DEV-TENDYNE",
+          "hits": 13,
+          "denominator": 17
+        }
+      ],
+      "costs": {
+        "query_calls": 9.0,
+        "rerank_pairs": 369.0,
+        "controller_steps": 0
+      }
+    },
+    {
+      "method": "HT-B3",
+      "macro_recall_at_20": 0.49880241951853205,
+      "micro_recall_at_20": 0.47540983606557374,
+      "difference": 0.0,
+      "per_case": [
+        {
+          "query": "HT-DEV-MITRACLIP",
+          "hits": 5,
+          "denominator": 21
+        },
+        {
+          "query": "HT-DEV-TRICLIP",
+          "hits": 10,
+          "denominator": 23
+        },
+        {
+          "query": "HT-DEV-TENDYNE",
+          "hits": 14,
+          "denominator": 17
+        }
+      ],
+      "costs": {
+        "query_calls": 5.0,
+        "rerank_pairs": 205.0,
+        "controller_steps": 0
+      }
+    },
+    {
+      "method": "HT-B4-OFFLINE",
+      "macro_recall_at_20": 0.49880241951853205,
+      "micro_recall_at_20": 0.47540983606557374,
+      "difference": 0.0,
+      "per_case": [
+        {
+          "query": "HT-DEV-MITRACLIP",
+          "hits": 5,
+          "denominator": 21
+        },
+        {
+          "query": "HT-DEV-TRICLIP",
+          "hits": 10,
+          "denominator": 23
+        },
+        {
+          "query": "HT-DEV-TENDYNE",
+          "hits": 14,
+          "denominator": 17
+        }
+      ],
+      "costs": {
+        "query_calls": 5.0,
+        "rerank_pairs": 205.0,
+        "controller_steps": 8
+      }
+    }
+  ],
+  "medical_recomputed": {
+    "medical_queries": 96,
+    "medical_targets": 3061,
+    "query_screen_positive_denominator": 1920,
+    "both_screen_positives": 983,
+    "query_screen_positive_targets_outside_medical_screen": 937,
+    "inputs_stable_during_check": true
+  },
+  "component_metrics_reviewed_not_recomputed": {
+    "PANORAMA": [
+      {
+        "task": "PAR4PC",
+        "split": "validation",
+        "rows": 3029,
+        "macro_gold_hit_at_1": 0.7335754374380984,
+        "macro_gold_hit_at_8": 1.0
+      },
+      {
+        "task": "PAR4PC",
+        "split": "test",
+        "rows": 2896,
+        "macro_gold_hit_at_1": 0.7151243093922652,
+        "macro_gold_hit_at_8": 1.0
+      },
+      {
+        "task": "PI4PC",
+        "split": "validation",
+        "rows": 3937,
+        "macro_gold_hit_at_1": 0.3776987553975108,
+        "macro_gold_hit_at_8": 1.0
+      },
+      {
+        "task": "PI4PC",
+        "split": "test",
+        "rows": 3402,
+        "macro_gold_hit_at_1": 0.4012345679012346,
+        "macro_gold_hit_at_8": 1.0
+      }
+    ],
+    "Helmers": {
+      "archive_file": "human_eval.zip",
+      "archive_md5": "83465f1a95805d963d4aabe085e2af98",
+      "archive_bytes": 13962880,
+      "script": "scripts/healthtech/run_helmers_diagnostic.py",
+      "script_sha256": "f9321de7b8806adca8de6ff2b9496dd49d78a05cd11e968f2f048f26ac668838",
+      "summary_sha256": "6e603ddf74c521a1c4122e5734603a381a4d37211983f1d9038a5f430dcdb89b",
+      "status": "PASS_DESCRIPTIVE_DIAGNOSTIC",
+      "targets": 10,
+      "judged_pairs": 450,
+      "positive_pairs": 258,
+      "macro_average_precision": 0.885450432614385,
+      "macro_auc": 0.880011844305422,
+      "claim_boundary": "Selected judged pool; no modern official dev/test split; not semantic device-patent gold or exhaustive recall"
+    }
+  },
+  "e2_readonly": {
+    "integrity": "ok",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_count": 4,
+    "known_legacy_usd": 0.0001464,
+    "history": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_limit_usd": 1.0,
+    "lifetime_cap_guaranteed": false
+  },
+  "journal_sha256_before_after": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2",
+  "qwen_existing_receipt_hash_reverified": true,
+  "qwen_existing_cases": 3,
+  "qwen_rerun_this_turn": false,
+  "remaining": {
+    "paid_api": "CURRENT_ACCOUNT_CREDIT_AND_KEY_LIMIT_OBSERVATION_PENDING; fresh pricing checked only just before dispatch",
+    "scientific": "Existing primary cohort frozen development-only; no new semantic gold or final holdout manufactured",
+    "publication": "author declarations/final submission decision; journal-specific HTTP403 remains prior external limitation",
+    "handoff": "No accessible exact Luna destination/tool; prompt prepared for owner, no external message sent"
+  },
+  "resources_this_turn": {
+    "paid_calls": 0,
+    "authenticated_metadata_calls": 0,
+    "gpu_jobs": 0,
+    "ledger_mutations": 0,
+    "external_messages": 0,
+    "downloads": 0
+  },
+  "cleanup_deleted_files": 0,
+  "commit_push_merge": false,
+  "limitations": [
+    "No atomic transaction spans remote provider and local filesystem; a crash before a checkpoint may still need provider-ID reconciliation. Never replay uncertain billing.",
+    "New output sink is tested with synthetic transport only; real paid persistence remains NOT_RUN until credit is evidenced.",
+    "No exact runtime state or quiescence inferred from process names or unchanged HEAD."
+  ]
+}

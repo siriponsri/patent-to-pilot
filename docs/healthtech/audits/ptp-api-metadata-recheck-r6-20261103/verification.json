@@ -1,0 +1,60 @@
+{
+  "format": "ptp-api-metadata-recheck-r6-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "owner_parallel_authorization": {
+    "recorded": true,
+    "effective_condition": "only when every live paid gate passes",
+    "usd8_reapproval_requested": false
+  },
+  "metadata": {
+    "artifact": "metadata.json",
+    "http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "key_type": "ordinary_non_management",
+    "account_scope": "NOT_RECONCILED",
+    "current_scoped_credit": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "history_completeness": "NOT_PROVEN",
+    "metadata_sha256": "d5d8af19cdc7b2967583320d4f01377cdd7e57d8244ad286ee1d7cc49ab8a09e"
+  },
+  "canonical_ledger": {
+    "default_registry_path": "C:/Users/User/AppData/Local/PatentToPilot/healthtech/budget-ledgers/PTP-HT-OR-R1-20261028-USD8.json",
+    "registry_present": false,
+    "journal_resolved": false,
+    "duplicate_ledger_created": false,
+    "zero_ledger_created": false
+  },
+  "preflight": {
+    "rights_cleared_paired_payload": "PASS_3_OF_3_CURRENT_HEAD",
+    "source_backed_transfer_review": "PASS",
+    "route_and_price_snapshot": "PASS_DEEPINFRA_QWEN3_32B",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "verification": {
+    "focused_tests": "104 passed, 0 failed, 0 errors, 0 skipped",
+    "focused_junit": "focused-tests.xml",
+    "focused_junit_sha256": "efa2012be0c28611223f2773a353984ec4731f037d1214b052fb8669fe466438",
+    "compileall": "PASS",
+    "scoped_git_diff_check": "PASS"
+  },
+  "dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "unknown_billing_retried": false
+  },
+  "next": "Obtain the existing canonical R1 journal/export and current scoped credit snapshot once; inspect and reconcile them before one paired canary. Continue local/offline and manuscript work independently."
+}

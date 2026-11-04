@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="490" y="32" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">Current-head development-only Recall@20</text>
+<text x="490" y="56" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">Candidate 88dc4047; descriptive frontier; no equal-total-budget superiority claim</text>
+<line x1="230.0" y1="98" x2="230.0" y2="408" stroke="#d1d5db"/>
+<text x="230.0" y="88" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">0.00</text>
+<line x1="392.5" y1="98" x2="392.5" y2="408" stroke="#d1d5db"/>
+<text x="392.5" y="88" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">0.25</text>
+<line x1="555.0" y1="98" x2="555.0" y2="408" stroke="#d1d5db"/>
+<text x="555.0" y="88" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">0.50</text>
+<line x1="717.5" y1="98" x2="717.5" y2="408" stroke="#d1d5db"/>
+<text x="717.5" y="88" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">0.75</text>
+<line x1="880.0" y1="98" x2="880.0" y2="408" stroke="#d1d5db"/>
+<text x="880.0" y="88" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">1.00</text>
+<text x="216" y="128" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B0a</text>
+<rect x="230" y="110" width="287.8" height="24" fill="#6b7280"/>
+<text x="525.8" y="127" font-family="Arial" font-size="12" fill="#111827">0.442739</text>
+<text x="230" y="149" font-family="Arial" font-size="10" fill="#4b5563">queries=3; rerank_pairs=0</text>
+<text x="216" y="180" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B0b</text>
+<rect x="230" y="162" width="430.5" height="24" fill="#2563eb"/>
+<text x="668.5" y="179" font-family="Arial" font-size="12" fill="#111827">0.662242</text>
+<text x="230" y="201" font-family="Arial" font-size="10" fill="#4b5563">queries=3; rerank_pairs=0</text>
+<text x="216" y="232" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B1</text>
+<rect x="230" y="214" width="324.2" height="24" fill="#0f766e"/>
+<text x="562.2" y="231" font-family="Arial" font-size="12" fill="#111827">0.498802</text>
+<text x="230" y="253" font-family="Arial" font-size="10" fill="#4b5563">queries=3; rerank_pairs=123</text>
+<text x="216" y="284" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B2</text>
+<rect x="230" y="266" width="369.8" height="24" fill="#b45309"/>
+<text x="607.8" y="283" font-family="Arial" font-size="12" fill="#111827">0.568912</text>
+<text x="230" y="305" font-family="Arial" font-size="10" fill="#4b5563">queries=9; rerank_pairs=369</text>
+<text x="216" y="336" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B3</text>
+<rect x="230" y="318" width="324.2" height="24" fill="#7c3aed"/>
+<text x="562.2" y="335" font-family="Arial" font-size="12" fill="#111827">0.498802</text>
+<text x="230" y="357" font-family="Arial" font-size="10" fill="#4b5563">queries=5; rerank_pairs=205</text>
+<text x="216" y="388" text-anchor="end" font-family="Arial" font-size="12" fill="#111827">HT-B4-offline</text>
+<rect x="230" y="370" width="324.2" height="24" fill="#be123c"/>
+<text x="562.2" y="387" font-family="Arial" font-size="12" fill="#111827">0.498802</text>
+<text x="230" y="409" font-family="Arial" font-size="10" fill="#4b5563">queries=5; rerank_pairs=205</text>
+<text x="490" y="530" text-anchor="middle" font-family="Arial" font-size="11" fill="#4b5563">Macro known-link Recall@20 over the frozen development cohort; unlisted pairs remain unjudged</text>
+</svg>

@@ -1,0 +1,42 @@
+{
+  "format": "ptp-resume-e2-verification-v8",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "browser_e2e": {
+    "command": "npm run test:e2e",
+    "working_directory": "frontend/healthtech-web",
+    "exit_code": 0,
+    "pass": 17,
+    "fail": 0,
+    "result_path": "docs/healthtech/audits/ptp-resume-e2-current-r8-20261104/e2e/results.json",
+    "result_sha256": "c7d18054d5ddb13a99ccb572583bc95629a147793503ad7365ab098ace252599",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "candidate": {
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "worktree_dirty": true,
+    "unmerged_paths": 0
+  },
+  "current_head_evidence": {
+    "python_suite": "646 total; 644 passed; 0 failed; 0 errors; 2 skipped",
+    "frontend_unit": "74 passed; 0 failed; 0 skipped",
+    "http_browser": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+    "named_abbott_browser": "NOT_RUN_ASSET_GATED",
+    "compileall": "PASS"
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "route_price_refreshed": false,
+    "provider_calls": 0,
+    "reservations": 0,
+    "pending_retries": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "limitations": [
+    "Browser E2E uses synthetic local fixtures and is not external user validation.",
+    "The Abbott named-device harness remains asset-gated in this checkout.",
+    "Engineering evidence does not establish semantic device-patent gold, adaptive superiority, revenue, ROI, or willingness-to-pay.",
+    "The candidate is dirty and not a released commit."
+  ]
+}

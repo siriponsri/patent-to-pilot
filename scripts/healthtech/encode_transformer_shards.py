@@ -16,6 +16,7 @@ from patent_to_pilot.evaluation.healthtech.transformer_encoders import (
     build_transformer_model_binding,
 )
 from patent_to_pilot.evaluation.healthtech.vector_artifacts import encode_vector_shards
+from patent_to_pilot.healthtech.local_execution import check_local_window, local_gpu_slot
 
 
 def main() -> int:
@@ -37,43 +38,45 @@ def main() -> int:
     if args.batch_size < 1 or args.shard_size < 1 or args.shard_size > 5000:
         parser.error("batch size must be positive and shard size must be between 1 and 5000")
     prompt_name = args.patembed_prompt_name if args.kind == "patembed" else None
-    encoder = TransformerEncoder(
-        args.model_dir,
-        kind=args.kind,
-        role=args.role,
-        max_length=args.max_length,
-        device=args.device,
-        prompt_name=prompt_name,
-    )
-    config = {
-        "backend": "transformers_local_v1",
-        "encoder_kind": args.kind,
-        "role": args.role,
-        "max_length": args.max_length,
-        "representation": "masked_mean_projection_l2_normalized" if args.kind == "patembed" else "masked_mean_l2_normalized",
-        "dtype": "<f4",
-        "norm_policy": "l2",
-        "batch_size": args.batch_size,
-        "shard_size": args.shard_size,
-        "e5_prefix_policy": {"query": "query: ", "passage": "passage: "} if args.kind == "e5" else None,
-        "patembed_prompt_name": prompt_name,
-        "device": str(encoder.device),
-    }
-    manifest = encode_vector_shards(
-        args.input,
-        args.output,
-        encoder,
-        model=build_transformer_model_binding(
+    check_local_window()
+    with local_gpu_slot(args.model_dir):
+        encoder = TransformerEncoder(
             args.model_dir,
-            model_id=args.model_id,
-            revision=args.model_revision,
             kind=args.kind,
-        ),
-        config=config,
-        batch_size=args.batch_size,
-        shard_size=args.shard_size,
-        stop_after_shards=args.stop_after_shards,
-    )
+            role=args.role,
+            max_length=args.max_length,
+            device=args.device,
+            prompt_name=prompt_name,
+        )
+        config = {
+            "backend": "transformers_local_v1",
+            "encoder_kind": args.kind,
+            "role": args.role,
+            "max_length": args.max_length,
+            "representation": "masked_mean_projection_l2_normalized" if args.kind == "patembed" else "masked_mean_l2_normalized",
+            "dtype": "<f4",
+            "norm_policy": "l2",
+            "batch_size": args.batch_size,
+            "shard_size": args.shard_size,
+            "e5_prefix_policy": {"query": "query: ", "passage": "passage: "} if args.kind == "e5" else None,
+            "patembed_prompt_name": prompt_name,
+            "device": str(encoder.device),
+        }
+        manifest = encode_vector_shards(
+            args.input,
+            args.output,
+            encoder,
+            model=build_transformer_model_binding(
+                args.model_dir,
+                model_id=args.model_id,
+                revision=args.model_revision,
+                kind=args.kind,
+            ),
+            config=config,
+            batch_size=args.batch_size,
+            shard_size=args.shard_size,
+            stop_after_shards=args.stop_after_shards,
+        )
     print(json.dumps({
         "status": manifest["status"],
         "output": str(args.output.resolve()),

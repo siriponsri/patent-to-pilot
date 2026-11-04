@@ -1,0 +1,41 @@
+{
+  "format": "ptp-openrouter-metadata-observation-v1",
+  "provider": "openrouter",
+  "currency": "USD",
+  "started_at_utc": "2026-11-03T13:16:41.510302+00:00",
+  "key_scope": "sha256:7cbe4013fd1c43bb8096135bc6e4ed9a0befb7607ebe820bcfcb2c33544d7b97",
+  "key_endpoint": {
+    "status": "OBSERVED",
+    "http_status": 200,
+    "response_sha256": "e84b6015e81e54607537040502062eb3a7b5b5f704bdf7565adac8ac99775521"
+  },
+  "account_scope": null,
+  "account_scope_binding": "NOT_RECONCILED",
+  "account_credits": {
+    "status": "NOT_REQUESTED_MANAGEMENT_KEY_REQUIRED"
+  },
+  "history_completeness": "NOT_PROVEN",
+  "r1_actual_spend_usd": null,
+  "r1_unresolved_exposure_usd": null,
+  "live_admission_enabled": false,
+  "verification": "local_https_observation_not_signed_attestation",
+  "key_metadata": {
+    "limit": null,
+    "limit_remaining": null,
+    "usage": "0.0001464",
+    "usage_daily": "0",
+    "usage_weekly": "0",
+    "usage_monthly": "0",
+    "byok_usage": "0",
+    "is_management_key": false,
+    "is_free_tier": false,
+    "include_byok_in_limit": false,
+    "budgets": [],
+    "effective_budget": null,
+    "limit_reset": null,
+    "creator_user_id_sha256": "666994c4b8526e18e00aa3e477c20b63b5bf55164489f310cf371795f88e367c",
+    "workspace_id_sha256": "50a0e4a8f9b2c38c52824ca3aa5a7c105c65c588821a9ed4e86b3eaa1b10b0d2"
+  },
+  "completed_at_utc": "2026-11-03T13:16:41.919796+00:00",
+  "receipt_sha256": "c0a556a428c970c97dfcb5e07e1c4fe6b009b80ed1f8c12293ff4fbad99819ea"
+}

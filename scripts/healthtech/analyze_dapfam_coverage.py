@@ -61,7 +61,9 @@ def sql_literal(value: str | Path) -> str:
 
 
 def sql_regex_literal(pattern: str) -> str:
-    return sql_literal(pattern)
+    # Regex backslashes are syntax, not Windows path separators. SQL strings
+    # escape apostrophes by doubling them; preserve every regex character.
+    return pattern.replace("'", "''")
 
 
 def screening_pattern(terms: tuple[str, ...]) -> str:
@@ -114,7 +116,8 @@ def git_worktree_dirty() -> bool:
 
 def duckdb_json(duckdb: Path, sql: str) -> list[dict[str, Any]]:
     result = subprocess.run(
-        [str(duckdb), "-no-agent", "-json", "-c", sql],
+        [str(duckdb), "-no-agent", "-json", "-c",
+         "SET threads=4; SET memory_limit='4GB'; " + sql],
         cwd=ROOT,
         check=True,
         stdout=subprocess.PIPE,

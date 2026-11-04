@@ -620,7 +620,9 @@ README ต้องบอก current foundation และ planned features ต�
 
 ## 17. Practical next action
 
-เมื่อได้รับมอบหมายให้เริ่ม implementation ให้ทำ **HT-W01 + HT-W02** เป็น work package แรก พร้อมเลือกงานอิสระอย่าง **HT-W04 หรือ HT-W05/HT-W06** ที่ไม่ต้องรอสิทธิ์ของ Bridge
+สำหรับ continuation วันที่4พฤศจิกายน2026 ให้เลือกงาน READY แรกใน `docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json` → `continuation_work_queue` ตาม [handoffปัจจุบัน](docs/healthtech/audits/pepo-resume-ready-20261104/README.md) เริ่มจากตารางที่มาของตัวเลขและ reproducibility appendix ใน manuscriptเดิม ตามด้วย operational case table และ installed-candidate instructions ไม่กลับไปเริ่ม contracts หรือ gate-only audit ที่เสร็จแล้ว
+
+คำสั่งเริ่ม HT-W01/HT-W02 ใช้เฉพาะการเริ่มโครงการครั้งแรก ไม่ใช่ work order ของ continuation นี้
 
 เป้าหมายส่งมอบแรกคือ contracts และ evidence flow ที่เปิดตรวจได้จาก public source หรือ permitted benchmark จากนั้นต่อให้เป็น public-case dossier ด้วย baseline ที่พร้อมใช้ ก่อนเพิ่ม adaptive complexity ตามผลที่วัดได้
 

@@ -38,7 +38,7 @@ def money(value) -> int:
 
 def policy_identity_hash(policy):
     durable = dict(policy)
-    if durable.get("authorization_id") == "PTP-HT-OR-R1-20261028-USD8":
+    if durable.get("authorization_id") in {"PTP-HT-OR-R1-20261028-USD8", "PTP-HT-OR-E2-20261103-USD100"}:
         durable.pop("pricing_snapshot_sha256", None)
         durable.pop("pricing_snapshot_utc", None)
     return hashlib.sha256(json.dumps(durable, sort_keys=True).encode()).hexdigest()
@@ -84,6 +84,7 @@ class ProjectBudget:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(self.path, timeout=10, isolation_level=None)
         self.db.execute("PRAGMA busy_timeout=10000")
+        self.db.execute("PRAGMA synchronous=FULL")
         stat = self.path.stat()
         self._opened_identity = (stat.st_dev, stat.st_ino)
         self.db.executescript(
@@ -156,6 +157,13 @@ class ProjectBudget:
         from .history_review import read_pre_r1_carryover
         carryover = read_pre_r1_carryover(self.db, authorization_id=self.authorization_id, ledger_id=self.ledger_id)
         historical_carryover = 0 if carryover is None else carryover["amount_nano_usd"]
+        uncertainty_buffer = 0
+        epoch = None
+        if self.authorization_id == "PTP-HT-OR-E2-20261103-USD100":
+            from .local_epoch import read_epoch
+            epoch = read_epoch(self.db, self.authorization_id, self.ledger_id)
+            historical_carryover += epoch["known_legacy_nano_usd"]
+            uncertainty_buffer = epoch["uncertainty_buffer_nano_usd"]
         actual, pending, breach = historical_carryover, [], False
         for aid, phase, model, sha, reserved, cost, state, overrun in rows:
             usage[phase] += reserved if state != "settled" else cost
@@ -163,7 +171,7 @@ class ProjectBudget:
             if state != "settled":
                 pending.append(aid)
             breach |= bool(overrun)
-        committed = historical_carryover + sum(usage.values())
+        committed = historical_carryover + uncertainty_buffer + sum(usage.values())
         admission_closed = committed > self.admission_threshold_nano_usd
         return {"policy_sha256": self.policy_hash, "policy_version": self.policy["version"],
             "authorization_id": self.authorization_id, "ledger_id": self.ledger_id,
@@ -172,6 +180,10 @@ class ProjectBudget:
             "pricing_snapshot_utc": self.pricing_snapshot_utc,
             "attempts": len(rows), "actual_nano_usd": actual,
             "historical_carryover_nano_usd": historical_carryover,
+            "uncertainty_buffer_nano_usd": uncertainty_buffer,
+            "history_completeness": None if epoch is None else epoch["history_completeness"],
+            "lifetime_cap_guaranteed": None if epoch is None else epoch["lifetime_cap_guaranteed"],
+            "prospective_epoch_cap_nano_usd": None if epoch is None else epoch["prospective_epoch_cap_nano_usd"],
             "committed_nano_usd": committed, "phase_committed_nano_usd": usage,
             "admission_threshold_nano_usd": self.admission_threshold_nano_usd,
             "authorization_cap_nano_usd": self.policy["incremental_cap_nano_usd"],
@@ -216,7 +228,11 @@ class ProjectBudget:
             if self.namespace == "canonical":
                 from .history_review import read_history_anchor
                 from .credit import check_credit_for_reservation
-                anchor = read_history_anchor(self.db, self.authorization_id, self.ledger_id)
+                if self.authorization_id == "PTP-HT-OR-E2-20261103-USD100":
+                    from .local_epoch import credit_scope
+                    anchor = credit_scope(self.db, credit_snapshot)
+                else:
+                    anchor = read_history_anchor(self.db, self.authorization_id, self.ledger_id)
                 try:
                     credit = check_credit_for_reservation(self.db, credit_snapshot,
                         authorization_id=self.authorization_id, account_scope=anchor["account_scope"],
@@ -227,7 +243,13 @@ class ProjectBudget:
             self.db.execute("INSERT INTO budget_attempt_context(attempt_id,created_epoch,pricing_sha256,pricing_utc,credit_sha256) VALUES(?,?,?,?,?)",
                 (attempt_id, now.timestamp(), self.pricing_snapshot_sha256, self.pricing_snapshot_utc, credit_hash))
             self.db.execute("INSERT INTO budget_attempts(attempt_id,phase,model,payload_sha256,reserved,state) VALUES(?,?,?,?,?,'pending')", (attempt_id,phase,model,payload_sha256,reserved))
+        self._persist_epoch_backup()
         return attempt_id
+
+    def _persist_epoch_backup(self):
+        if self.authorization_id == "PTP-HT-OR-E2-20261103-USD100":
+            from .local_epoch import backup
+            backup(self.db, self.path)
 
     def settle(self, attempt_id: str, actual_usd):
         cost = None if actual_usd is None else money(actual_usd)
@@ -249,6 +271,7 @@ class ProjectBudget:
                 breach = cost is not None and (cost > reserved or totals["committed_nano_usd"] > self.policy["incremental_cap_nano_usd"] or any(totals["phase_committed_nano_usd"][p] > cap for p,cap in self.policy["phase_caps_nano_usd"].items()))
                 if breach:
                     self.db.execute("UPDATE budget_attempts SET breach=1 WHERE attempt_id=?", (attempt_id,))
+        self._persist_epoch_backup()
         if breach:
             raise BudgetExceededError("observed debit retained; budget/reservation breach blocks future dispatch")
 
@@ -274,7 +297,7 @@ class BudgetedTransport:
     def send(self, *, config, request):
         from .paired import body_hash
         binding = self.binding
-        if config.live_enabled and self.budget.authorization_id == "PTP-HT-OR-R1-20261028-USD8" and self.budget.namespace != "canonical":
+        if config.live_enabled and self.budget.authorization_id in {"PTP-HT-OR-R1-20261028-USD8", "PTP-HT-OR-E2-20261103-USD100"} and self.budget.namespace != "canonical":
             raise BudgetExceededError("live R1 transport requires canonical authority")
         expected_provider = self.budget.models.get(config.model)
         if config.retries != 0 or config.routing_only != [expected_provider] or config.allow_fallbacks or not config.require_parameters:
@@ -286,7 +309,11 @@ class BudgetedTransport:
         if config.live_enabled:
             from .history_review import require_live_history_review
             try:
-                require_live_history_review(self.budget.db, self.budget.authorization_id, self.budget.ledger_id)
+                if self.budget.authorization_id == "PTP-HT-OR-E2-20261103-USD100":
+                    from .local_epoch import read_epoch
+                    read_epoch(self.budget.db, self.budget.authorization_id, self.budget.ledger_id)
+                else:
+                    require_live_history_review(self.budget.db, self.budget.authorization_id, self.budget.ledger_id)
             except ValueError as exc:
                 raise BudgetExceededError(str(exc)) from None
         self.budget.reserve(model=config.model, provider=config.routing_only[0], **binding)

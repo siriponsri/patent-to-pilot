@@ -1,0 +1,38 @@
+{
+  "format": "ptp-api-preflight-owner-env-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_READ_ONLY_METADATA_PAID_GATE_UNCHANGED",
+  "api_dispatch": "BLOCKED_BEFORE_RESERVATION",
+  "observed": {
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "ordinary_key": true,
+    "account_scope": "NOT_RECONCILED",
+    "history_completeness": "NOT_PROVEN",
+    "current_scoped_credit": "NOT_AVAILABLE",
+    "canonical_r1_registry": "MISSING"
+  },
+  "verification": {
+    "full_python": "617 total; 616 passed; 0 failed; 0 errors; 1 skipped",
+    "browser_http": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+    "json_readback": "PASS",
+    "global_diff_check": "NOT_CLEAN_PREEXISTING_TRAILING_WHITESPACE_IN_MEMORY_NEXT_ACTIONS"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0
+  },
+  "next_action": "Obtain the existing canonical R1 journal or reviewed sanitized all-attempt export and current scoped credit snapshot once; inspect/bind actual history and reserve one paired canary only if all live gates pass."
+}

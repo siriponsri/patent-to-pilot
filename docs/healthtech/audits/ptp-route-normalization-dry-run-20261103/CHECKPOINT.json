@@ -1,0 +1,77 @@
+{
+  "format": "ptp-route-normalization-dry-run-checkpoint-v1",
+  "observed_local_date": "2026-11-03",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "source_patch_status": "UNCOMMITTED_ROUTE_NORMALIZATION_AND_LOCAL_EXECUTION_GUARD",
+    "owner_worktrees_preserved": true
+  },
+  "api_path": {
+    "status": "PASS_PAYLOAD_DRY_RUN_API_DISPATCH_BLOCKED_LEDGER_CREDIT",
+    "cases": 3,
+    "rights_decision": "ALLOWED_WITH_ATTRIBUTION",
+    "manifest_route": "deepinfra",
+    "snapshot_route": "DeepInfra",
+    "manifest_sha256": "c298b1027e31a270c7db8956cf36a000c854f5c7374e8bb75241881f84729843",
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "status_from_runner": "DRY_RUN_NOT_EXECUTED",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "attempt_ids_allocated": 0,
+    "output": "dry-run-receipt.json"
+  },
+  "local_path": {
+    "guard": "PASS_APPROVED_UUID_WINDOW_AND_SHARED_SLOT",
+    "new_model_inference": "NOT_RUN_NO_CURRENT_MODEL_ROOT_OR_REMOTE_ALLOCATION",
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "authorization_end_utc": "2026-11-15T16:59:00Z",
+    "receipt_overwrite_guard": true,
+    "message_hashes_recorded": true
+  },
+  "ledger_and_resource_boundary": {
+    "canonical_registry_present": false,
+    "replacement_registry_created": false,
+    "zero_ledger_created": false,
+    "historical_actual_debit_usd": 0.0001464,
+    "historical_unknown_pending_attempts": 0,
+    "current_credit_verified": false,
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "tests": {
+    "focused": {
+      "status": "PASS",
+      "passed": 26,
+      "failed": 0,
+      "skipped": 0,
+      "junit": "focused-tests.xml",
+      "junit_sha256": "97f639ccae300fad6d0f37b1e91420112a9e981a4528f7b3f23144d0ebcbd566"
+    },
+    "full_python": {
+      "status": "PASS",
+      "passed": 611,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "junit": "full-tests.xml",
+      "junit_sha256": "aec8663751936098823d9657818bbb6e36766b739709783bae2ba8cb69f500bc"
+    },
+    "compileall": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "source_hashes": {
+    "src/patent_to_pilot/healthtech/generation_payload.py": "47e7711d77d0a58b1a5c7e0e86ea6401cb43a77f6ea59081d0a4e182cfc76045",
+    "src/patent_to_pilot/healthtech/local_execution.py": "25ed4283936885352054c5cd5d10d5f4c78fcb8bbe26762dc7da9ee7a5a35e0d",
+    "scripts/healthtech/run_qwen_generation_evidence_pack.py": "d3f195e81959db3bf35661b9b0fc3a6593a0ad8a1e7b8a234a47fbeedee63d9c",
+    "tests/test_o3_generation_repair.py": "879486e1a821b390ffa7e2ab2b15928252a7b29e52a0ded3cbc05bc63165a2bc",
+    "tests/test_healthtech_local_execution.py": "122e25d7ea50496d42a6a6243aeabefc978cc6fa29af1089c0febfdb83332e6b"
+  },
+  "next_action": "Obtain existing canonical R1 journal location or sanitized all-attempt export and current authorized credit snapshot; then reserve and dispatch one paired canary only after all gates pass. Continue local/offline work independently."
+}

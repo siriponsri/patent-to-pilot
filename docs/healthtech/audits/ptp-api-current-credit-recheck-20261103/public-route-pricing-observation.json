@@ -1,0 +1,55 @@
+{
+  "format": "ptp-openrouter-public-route-snapshot-v1",
+  "observed_utc": "2026-11-03T13:18:15.745843+00:00",
+  "endpoint": "/api/v1/models/qwen/qwen3-32b/endpoints",
+  "response_sha256": "f73b3e462edb46daa667dcf532194f885b64564e35d48f131d6973e635681314",
+  "endpoint_count": 3,
+  "routes": [
+    {
+      "name": "DeepInfra | qwen/qwen3-32b-04-28",
+      "model_id": "qwen/qwen3-32b",
+      "provider_name": "DeepInfra",
+      "pricing": {
+        "prompt": "0.00000008",
+        "completion": "0.00000028",
+        "discount": 0
+      },
+      "context_length": 40960,
+      "max_completion_tokens": 16384,
+      "uptime_last_30m": 100,
+      "status": 0,
+      "quantization": "fp8"
+    },
+    {
+      "name": "Tenstorrent | qwen/qwen3-32b-04-28",
+      "model_id": "qwen/qwen3-32b",
+      "provider_name": "Tenstorrent",
+      "pricing": {
+        "prompt": "0.00000014",
+        "completion": "0.0000004",
+        "input_cache_read": "0.00000009",
+        "discount": 0
+      },
+      "context_length": 20000,
+      "max_completion_tokens": 16400,
+      "uptime_last_30m": 60,
+      "status": -5,
+      "quantization": "fp8"
+    },
+    {
+      "name": "SiliconFlow | qwen/qwen3-32b-04-28",
+      "model_id": "qwen/qwen3-32b",
+      "provider_name": "SiliconFlow",
+      "pricing": {
+        "prompt": "0.00000014",
+        "completion": "0.00000057",
+        "discount": 0
+      },
+      "context_length": 131072,
+      "max_completion_tokens": 117964,
+      "uptime_last_30m": 100,
+      "status": 0,
+      "quantization": "fp8"
+    }
+  ]
+}

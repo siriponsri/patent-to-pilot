@@ -1,0 +1,120 @@
+{
+  "format": "ptp-goal-completion-audit-v18",
+  "recorded_local": "2026-11-04T07:10:24.2835353+07:00",
+  "recorded_utc": "2026-11-04T00:10:24.2866840Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "requirements": {
+    "O1_ui_http_retrieval_evidence_generation_history_export": {
+      "status": "COMPLETE_ENGINEERING_CURRENT_HEAD",
+      "evidence": [
+        "docs/healthtech/audits/ptp-current-head-browser-http-recheck-20261103/verification.json",
+        "docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json",
+        "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/verification.json"
+      ],
+      "limit": "Engineering and source/locator binding only; no semantic or user validation claim."
+    },
+    "O2_patembed_e5_remote_shards_shared_engine": {
+      "engineering_status": "COMPLETE_CURRENT_HEAD_REMOTE_SHARDS_TO_SHARED_ENGINE",
+      "scientific_status": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+      "evidence": [
+        "docs/healthtech/audits/ptp-o2-current-head-completion-r16-20261104/verification.json",
+        "docs/healthtech/audits/ptp-remote-artifact-manifest-reconciliation-20261103/verification.json"
+      ],
+      "limit": "No authorized final semantic holdout or independent device-patent gold."
+    },
+    "O3_local_api_paired_generation": {
+      "local_status": "PASS_3_OF_3_SCHEMA_VALID_FROZEN_PACK",
+      "paid_api_status": "PARTIAL_ACCOUNT_CREDIT_RECONCILED_BEFORE_RESERVATION",
+      "paid_api_gate_missing": [
+        "exact remaining limit or explicit unlimited status for the .env dispatch key",
+        "dispatch key scope and observation binding",
+        "fresh route pricing inside the admission window"
+      ],
+      "evidence": [
+        "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/verification.json",
+        "docs/healthtech/audits/ptp-api-openrouter-mcp-recheck-r2-20261104/verification.json",
+        "docs/healthtech/audits/ptp-api-openrouter-mcp-recheck-r2-20261104/mcp-get-credits.json"
+      ],
+      "limit": "No paid provider result; local schema validity is not semantic quality."
+    },
+    "O4_three_real_cases_and_adaptive_research": {
+      "engineering_status": "PASS_THREE_CASE_BROWSER_AND_SHARED_VECTOR_ENGINE",
+      "research_status": "PARTIAL_POSTHOC_DESCRIPTIVE_NOT_ESTIMABLE",
+      "matched_budget": {
+        "query_calls": 3,
+        "rerank_pairs": 123,
+        "methods": ["HT-B1", "HT-B2-prefix-1", "HT-B3-prefix-1"],
+        "macro_recall_at_20": 0.49880241951853205,
+        "interpretation": "No adaptive superiority claim."
+      },
+      "component_holdouts": "PANORAMA validation/test and Helmers remain component diagnostics, not the main adaptive dossier endpoint.",
+      "evidence": [
+        "docs/healthtech/audits/ptp-private-frontier-budget-ceilings-20261104/verification.json",
+        "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json",
+        "docs/healthtech/audits/ptp-current-head-holdout-availability-20261103/verification.json"
+      ],
+      "limit": "Main current-head final holdout and semantic gold are unavailable."
+    },
+    "business_value": {
+      "status": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+      "observed": [
+        "machine latency and token/cost proxies",
+        "citation/locator and evidence-coverage proxies",
+        "scenario sensitivity analysis"
+      ],
+      "not_observed": ["human review time", "independent user validation", "revenue", "ROI", "willingness-to-pay"],
+      "evidence": [
+        "docs/healthtech/audits/ptp-business-value-scenario-20261103/verification.json"
+      ]
+    },
+    "journal_package": {
+      "status": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+      "evidence": [
+        "docs/healthtech/audits/ptp-manuscript-mcp-credit-rebind-20261104/verification.json",
+        "docs/healthtech/audits/ptp-journal-package-current-r10-20261104/verification.json",
+        "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md"
+      ],
+      "owner_items": ["author fields", "declarations", "live Guide/Aims recheck", "final release/archive link"],
+      "submission": false
+    },
+    "release_and_merge": {
+      "status": "NOT_READY_OWNER_REVIEW_AND_RESEARCH_GATES_REMAIN",
+      "evidence": [
+        "docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json",
+        "docs/healthtech/audits/ptp-release-verification-r12-20261103/verification.json",
+        "docs/healthtech/audits/ptp-source-patch-inventory-20261103/verification.json"
+      ],
+      "limit": "Dirty owner/Claude/Luna work is preserved; merge, push, and branch deletion remain deferred."
+    }
+  },
+  "e2_accounting": {
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_historical_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "attempt_context_rows": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mcp_total_credits": 10.0,
+    "mcp_total_usage": 0.0001464,
+    "mcp_scope": "account_level",
+    "mcp_response_timestamp_present": false,
+    "mutated": false,
+    "budget_reset": false,
+    "window_reset": false,
+    "unknown_call_retried": false
+  },
+  "resource_mutations_this_audit": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "external_messages": 0,
+    "submission": false
+  },
+  "goal_closed": false,
+  "next": "Keep the goal active. Continue owner-review and manuscript work; paid comparison remains separate until exact dispatch-key limit/scope and fresh route pricing exist, while scientific claims remain descriptive until a valid final holdout and semantic gold are authorized."
+}

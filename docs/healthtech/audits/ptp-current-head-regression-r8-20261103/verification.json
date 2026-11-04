@@ -1,0 +1,43 @@
+{
+  "format": "ptp-current-head-regression-r8-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "preflight_invocation": {
+    "status": "NOT_RUN_ARGUMENT_ERROR",
+    "reason": "The first pytest invocation passed a malformed --junitxml expression; pytest exited before collection and no test ran.",
+    "state_mutations": "none"
+  },
+  "authoritative_run": {
+    "command": "rtk proxy python -B -m pytest -ra --junitxml=docs/healthtech/audits/ptp-current-head-regression-r8-20261103/focused-tests.xml tests/test_healthtech.py tests/test_healthtech_http.py tests/test_healthtech_generation_payload.py tests/test_o3_generation_repair.py tests/test_healthtech_api_generation.py tests/test_healthtech_current_head_frontier.py tests/test_healthtech_local_execution.py tests/test_verify_vector_bundle_pair.py",
+    "status": "PASS",
+    "tests": 72,
+    "passed": 72,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit": "docs/healthtech/audits/ptp-current-head-regression-r8-20261103/focused-tests.xml",
+    "junit_sha256": "d654dc08e80117420f15a520bb56a33cbeda20610738761bbd8974e7e6975f6f"
+  },
+  "scope": {
+    "o1_http_history_export": "covered by selected HealthTech HTTP tests",
+    "o3_payload_and_paid_gate": "covered by generation/API/repair tests; no live provider call",
+    "o4_current_head_helpers": "covered by frontier/vector/local execution tests; no new scientific benchmark",
+    "o2_remote_encode": "not run; allocation evidence missing"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next": "Keep current-head engineering evidence bound to this candidate; obtain remote allocation and paid-gate evidence before launching O2/O3."
+}

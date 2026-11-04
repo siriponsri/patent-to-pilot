@@ -1,0 +1,70 @@
+{
+  "format": "ptp-g6-claim-table-checkpoint-v1",
+  "observed_utc": "2026-11-03T23:37:29.6876142Z",
+  "goal": "Patent-to-Pilot existing goal",
+  "queue_item": "manuscript_claim_table",
+  "status": "COMPLETE_CURRENT_CANDIDATE",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "tree": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "changed_files": [
+    "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json",
+    "docs/healthtech/progress.json",
+    "memory/next-actions.md"
+  ],
+  "manuscript_acceptance": {
+    "medical_denominator": "1,920 = 983 both-screen + 937 target-unscreened",
+    "claim_blocks_bound": ["7.1", "7.2", "7.2.1", "7.3", "7.4", "7.4.1", "7.4.1a", "7.4.2", "7.4.3", "7.4.4", "7.5", "7.7"],
+    "evidence_states": ["historical", "historical_recheck", "rebound", "fresh_current_head"],
+    "negative_finding_preserved": "HT-B0b development macro Recall@20 0.662242 > HT-B4 offline 0.498802 on the current three-device development slice",
+    "unequal_budgets_preserved": true,
+    "semantic_source_binding_claim": "NOT_MADE"
+  },
+  "artifact_hashes": {
+    "manuscript_evidence": {
+      "path": "docs/healthtech/audits/pepo-strong-followup-20261104/verification.json",
+      "sha256": "5a97e3f8afd1661d30133826856cb0cf2117d06347738a28204e014e032e34d0"
+    },
+    "medical_recheck": {
+      "path": "docs/healthtech/audits/pepo-strong-followup-20261104/medical-recheck.json",
+      "sha256": "48587a9319506716a11af6e872b635a6b9075fe757f17b6121bc1487aee3af05"
+    },
+    "current_head_frontier": {
+      "path": "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+      "sha256": "ff1c8184f526732fb14c6f6ed386aa43da9e4bbd0ba68a599123e43fe424dab0"
+    },
+    "component_diagnostics": {
+      "path": "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json",
+      "sha256": "6c0f14bbf0aa5b170a431e8dd95080f0e70ba482eacea25230345679d9116e8d"
+    },
+    "local_generation": {
+      "path": "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/verification.json",
+      "sha256": "6bf2a84bb66c7c0723b1508379883a45188248eafdd5f03fe2f8ccc9e331efcd"
+    }
+  },
+  "verification": {
+    "markdown_links": {"checked": 73, "missing": 0},
+    "json_receipts": "PASS",
+    "focused_tests": {"passed": 6, "failed": 0, "errors": 0, "skipped": 0},
+    "diff_check": "PASS"
+  },
+  "resource_mutations": {
+    "paid_calls": 0,
+    "gpu_jobs": 0,
+    "downloads": 0,
+    "ledger_mutations": 0,
+    "reservations": 0,
+    "pending_call_retries": 0,
+    "merge_push_publish": false
+  },
+  "remaining": {
+    "next_ready": "solo_operational_case_table",
+    "paid_api": "PENDING_CURRENT_SCOPED_CREDIT",
+    "final_semantic_holdout": "NOT_AVAILABLE",
+    "external_business_validation": "NOT_PERFORMED_SOLO_PROJECT"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "format": "ptp-current-checkpoint-r2",
+  "status": "PARTIAL_ENGINEERING_VERIFIED_API_BLOCKED",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "engineering": "COMPLETE_CURRENT_HEAD_CHECKS",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "NOT_RUN_EXTERNAL_SOLO_PROXY_ONLY",
+  "manuscript_readiness": "PARTIAL_OWNER_REVIEW_REQUIRED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION",
+  "o1": "CURRENT_HEAD_ENGINEERING_COMPLETE",
+  "o2": "PRIOR_ARTIFACTS_BOUND_NO_NEW_REMOTE_ENCODE",
+  "o3": "LOCAL_PATH_VERIFIED_PAID_PATH_BLOCKED",
+  "o4": "THREE_CASE_OPERATIONAL_COVERAGE_DESCRIPTIVE_RESEARCH",
+  "resume_condition": [
+    "existing canonical R1 journal/export",
+    "current scoped account/key credit snapshot"
+  ],
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  }
+}

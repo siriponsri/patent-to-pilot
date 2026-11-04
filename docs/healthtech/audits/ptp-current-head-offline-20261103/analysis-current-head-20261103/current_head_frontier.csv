@@ -1,0 +1,7 @@
+method,macro_recall_at_20,query_calls,rerank_pairs,failed_queries,micro_recall_at_20,controller_steps
+HT-B0a,0.4427394146064223,3,0,0,,
+HT-B0b,0.6622417082775139,3,0,0,,
+HT-B1,0.49880241951853205,3,123,0,,
+HT-B2,0.5689116226200625,9,369,0,,
+HT-B3,0.49880241951853205,5,205,0,,
+HT-B4-offline,0.49880241951853205,5,205,0,0.47540983606557374,8

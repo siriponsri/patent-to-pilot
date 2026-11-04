@@ -1,10 +1,10 @@
-# NEW GOAL — research engine และผลิตภัณฑ์ที่รันงานจริง
+# Existing goal continuation — research engine และผลิตภัณฑ์ที่รันงานจริง
 
 ## จุดหมายและคำสั่งเริ่ม
 
-ทำงานใน `C:/Users/User/Desktop/myProject/patent-to-pilot` ใช้ Luna Max ตามชื่อ executor ที่ owner เลือก ไม่ใช้ชื่อนั้นเป็น scientific model ID ทำตาม system/developer/runtime และ scoped AGENTS อ่าน [AGENTS](../../../../AGENTS.md), [GOAL sections 0–4](../../../../GOAL.md), [PLAN](../../../../PLAN.md), [README](../../../../README.md), [progress](../../progress.json) และ [next actions](../../../../memory/next-actions.md) ก่อนตรวจ HEAD/status/ownership ใหม่
+ทำงานใน active worktree `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103` ใช้ Luna Max ตามชื่อ executor ที่ owner เลือก ไม่ใช้ชื่อนั้นเป็น scientific model ID ทำตาม system/developer/runtime และ scoped AGENTS อ่าน [AGENTS](../../../../AGENTS.md), [GOAL sections 0–4](../../../../GOAL.md), [PLAN](../../../../PLAN.md), [README](../../../../README.md), [progress](../../progress.json) และ [next actions](../../../../memory/next-actions.md) ก่อนตรวจ HEAD/status/ownership ใหม่
 
-นี่คือ **NEW GOAL** แทน M42 coverage และ overnight scope เดิม งานต่อจากนี้ resume ได้จาก checkpoint ใหม่เท่านั้น ห้ามใช้ชื่อ goal ใหม่รีเซ็ตงบหรือ deadline เก็บหลักฐานเดิมไว้ ไม่เริ่ม broad audit ซ้ำโดยไม่มี source drift ที่เกี่ยวข้อง
+ป้าย NEW GOAL ใน intakeเดิมหมายถึงการแทน M42/overnightในครั้งนั้น รอบปัจจุบัน **resume goal เดิม** ตาม [handoff4พฤศจิกายน](../audits/pepo-resume-ready-20261104/README.md) และคิว READY ใน CURRENT_ACCEPTANCE_MATRIX.json ห้ามใช้ชื่อ goal ใหม่รีเซ็ตงบหรือ deadline เก็บหลักฐานเดิมไว้ ไม่เริ่ม broad audit ซ้ำโดยไม่มี source drift ที่เกี่ยวข้อง
 
 North star จากแชต “Pepo patent-to-pilot”: Medical Device evidence dossier สำหรับผู้ประกอบการและนักลงทุน เริ่มจาก named device/comparator แล้วได้ facts, patent candidates/disclosed associations, feature–evidence table, source spans/locators, gaps, next information requests, edits/history และ TH/EN export Research ใช้ retrieval/evidence engine เดียวกับ product และศึกษาว่า adaptive acquisition ช่วย quality ที่ fixed budget หรือไม่เมื่อเทียบกับวิธี fixed ที่แข็งแรง
 

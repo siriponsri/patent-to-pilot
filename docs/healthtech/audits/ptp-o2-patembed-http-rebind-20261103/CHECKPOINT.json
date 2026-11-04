@@ -1,0 +1,14 @@
+{
+  "format": "ptp-o2-patembed-http-rebind-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_CURRENT_HEAD_PATEMBED_HTTP_DOSSIER_BINDING_3_OF_3_ENGINEERING",
+  "engineering": "COMPLETE_CURRENT_HEAD_O2_PROVIDER_BOUND",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NO_FINAL_HOLDOUT",
+  "business_validation": "PARTIAL_SCENARIO_ONLY",
+  "manuscript_readiness": "PARTIAL_OWNER_REVIEW_PENDING",
+  "cases": "MitraClip/Tendyne/TriClip 3/3 succeeded; source/history/edit/export passed; vector errors 0",
+  "provider": "datalyes/patembed-base@244ba452908a3093be11efb8a44396652317fb14",
+  "resource_mutations": "provider 0; reservations 0; attempts 0; retries 0; ledger 0; GPU jobs 0; datasets 0; budget/window reset false",
+  "next": "Update matrix/manuscript; keep paid O3 gated until current scoped credit/limit evidence exists"
+}

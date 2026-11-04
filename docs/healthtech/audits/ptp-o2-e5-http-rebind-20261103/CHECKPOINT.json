@@ -1,0 +1,15 @@
+{
+  "format": "ptp-o2-e5-http-rebind-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_CURRENT_HEAD_E5_HTTP_DOSSIER_BINDING_3_OF_3_ENGINEERING",
+  "engineering": "COMPLETE_CURRENT_HEAD_O2_PATEMBED_AND_E5_PROVIDER_BOUND",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NO_FINAL_HOLDOUT",
+  "business_validation": "PARTIAL_SCENARIO_ONLY",
+  "manuscript_readiness": "PARTIAL_OWNER_REVIEW_PENDING",
+  "cases": "MitraClip/Tendyne/TriClip 3/3 succeeded; source/history/edit/export passed; vector errors 0",
+  "provider": "intfloat/multilingual-e5-base@d128750597153bb5987e10b1c3493a34e5a4502a",
+  "tests": "focused 11 passed; compileall PASS; bundle revalidation PASS",
+  "resource_mutations": "provider 0; reservations 0; attempts 0; retries 0; ledger 0; GPU jobs 0; datasets 0; budget/window reset false",
+  "next": "Keep O2 scientific evidence partial, keep paid O3 gated on current scoped credit/limit evidence, and retain the existing E2 journal and unknown history"
+}

@@ -1,0 +1,233 @@
+{
+  "format": "ptp-authorized-access-history-followup-v1",
+  "recorded_utc": "2026-11-03T12:27:02.110824+00:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "goal_reused": true,
+  "authorization": "Owner explicitly approved one read-only strict-host-key SSH retry; prior USD100 cumulative and V100 grant retained",
+  "ssh_retry": {
+    "started_utc": "2026-11-03T12:21:24.5367704Z",
+    "finished_utc": "2026-11-03T12:21:26.4115833Z",
+    "target": "chaw@100.77.149.83:22",
+    "strict_host_key_checking": true,
+    "batch_mode": true,
+    "connection_attempts": 1,
+    "authorized_retry_number": 1,
+    "exit_code": 0,
+    "read_only": true,
+    "remote_writes": 0,
+    "gpu_jobs": 0,
+    "provider_calls": 0
+  },
+  "remote_observation": {
+    "observed_utc": "2026-11-03T12:21:27.470344+00:00",
+    "hostname": "dr-train",
+    "uid": 1000,
+    "job_root_exists": true,
+    "read_only": true,
+    "model_loads": 0,
+    "gpu_jobs": 0,
+    "files_written": 0,
+    "approved_gpu": {
+      "exit_code": 0,
+      "stdout": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089, Tesla V100-SXM2-32GB, 32768, 0, 32495, 0",
+      "stderr": ""
+    },
+    "approved_gpu_compute_processes": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "filesystem_free_bytes": 128644546560,
+    "model_directories": [
+      {
+        "name": "qwen3-8b",
+        "resolved_parent": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models"
+      },
+      {
+        "name": "multilingual-e5-base",
+        "resolved_parent": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models"
+      },
+      {
+        "name": "patembed-base",
+        "resolved_parent": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models"
+      }
+    ],
+    "lock": {
+      "path": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/.GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089.lock",
+      "exists": true,
+      "ownership_inferred_from_file": false,
+      "bytes": 0,
+      "uid": 1000,
+      "inode": 8560259,
+      "device": 66306,
+      "kernel_records": []
+    },
+    "own_python_processes": [
+      {
+        "pid": 1745699,
+        "name": "python",
+        "ppid": "1",
+        "state": "S (sleeping)",
+        "vmrss": "76436 kB",
+        "cwd_in_project_job_root": false,
+        "is_this_readonly_probe": false
+      },
+      {
+        "pid": 2580681,
+        "name": "python3",
+        "ppid": "2429",
+        "state": "S (sleeping)",
+        "vmrss": "22736 kB",
+        "cwd_in_project_job_root": false,
+        "is_this_readonly_probe": false
+      },
+      {
+        "pid": 3253182,
+        "name": "python3",
+        "ppid": "3253143",
+        "state": "R (running)",
+        "vmrss": "14116 kB",
+        "cwd_in_project_job_root": false,
+        "is_this_readonly_probe": true
+      }
+    ],
+    "meminfo": {
+      "MemTotal": "131870916 kB",
+      "MemAvailable": "121331212 kB"
+    },
+    "limitations": [
+      "Observation alone is not operator allocation. Owner grant is recorded locally; no separate operator policy inferred.",
+      "No process command lines, environment, credentials, raw model data, or ledger read remotely.",
+      "No conflict-free lease acquired; preflight is a point-in-time observation only."
+    ]
+  },
+  "remote_decision": {
+    "access": "VERIFIED_BY_AUTHORIZED_RETRY",
+    "owner_gpu_grant": "ALREADY_APPROVED_THROUGH_20261115_2359_ASIA_BANGKOK",
+    "conflicts": "NONE_OBSERVED_ON_APPROVED_GPU_AT_SNAPSHOT",
+    "shared_lock_parent": "VERIFIED_FOR_THREE_EXISTING_MODEL_DIRECTORIES",
+    "new_gpu_job_started": false,
+    "lease_acquired": false,
+    "separate_operator_lease_required": "NO_APPLICABLE_POLICY_EVIDENCED",
+    "launch_condition": "Revalidate current resource state and acquire existing cooperative slot atomically at actual launch; preserve existing services and all original limits"
+  },
+  "history_search": {
+    "registered_worktrees": 16,
+    "filename_candidates": 220,
+    "complete_root_scans": 6,
+    "partial_root_scans_with_denials": 10,
+    "scope": "Registered PTP worktrees and exact preserved-journal references; not whole-machine exhaustive",
+    "denied_locations": "Test cache/temp directories; not retried; detailed filename-only inventory retained privately in task workspace",
+    "sqlite_candidates_in_worktrees": 9,
+    "candidate_classification": "Nine mock-labelled result databases; none has budget_ledger_meta canonical identity",
+    "canonical_registry_present": false,
+    "canonical_r1_journal_found": false,
+    "sanitized_all_attempt_export_found": false,
+    "legacy_recovery_reference": "docs/healthtech/audits/pepo-o3-unblock-20261031/journal-search-recheck-20261031.json"
+  },
+  "legacy_journals": [
+    {
+      "locator": "live.sqlite3",
+      "sha256_before": "a10f81d79a37a39b53547cb4417437499aa81b69a896048f352ff3a8ba8e9d36",
+      "attempts": [
+        {
+          "seq": 1,
+          "finished": true,
+          "status": "model_drift",
+          "reservation_status": "settled",
+          "reserved_cost_usd": 0.10545760000000001,
+          "observed_cost_usd": 1.32e-05,
+          "requested_model": null,
+          "reported_model": null,
+          "reported_upstream_provider": null
+        },
+        {
+          "seq": 2,
+          "finished": true,
+          "status": "success",
+          "reservation_status": "settled",
+          "reserved_cost_usd": 0.42143040000000004,
+          "observed_cost_usd": 6e-05,
+          "requested_model": "openai/gpt-4.1-mini",
+          "reported_model": "openai/gpt-4.1-mini",
+          "reported_upstream_provider": "openai"
+        }
+      ],
+      "mode": "live",
+      "sha256_after": "a10f81d79a37a39b53547cb4417437499aa81b69a896048f352ff3a8ba8e9d36"
+    },
+    {
+      "locator": "paired-revalidation-1.sqlite3",
+      "sha256_before": "f6943c6b99b999f88e5df839e35c15bd86119cb19a89ab4507d61b40d7de9fcb",
+      "attempts": [
+        {
+          "seq": 1,
+          "finished": true,
+          "status": "success",
+          "reservation_status": "settled",
+          "reserved_cost_usd": 0.1054576,
+          "observed_cost_usd": 1.32e-05,
+          "requested_model": "google/gemini-2.5-flash-lite",
+          "reported_model": "google/gemini-2.5-flash-lite",
+          "reported_upstream_provider": "google-ai-studio"
+        },
+        {
+          "seq": 2,
+          "finished": true,
+          "status": "success",
+          "reservation_status": "settled",
+          "reserved_cost_usd": 0.4214304,
+          "observed_cost_usd": 6e-05,
+          "requested_model": "openai/gpt-4.1-mini",
+          "reported_model": "openai/gpt-4.1-mini",
+          "reported_upstream_provider": "openai"
+        }
+      ],
+      "mode": "live",
+      "sha256_after": "f6943c6b99b999f88e5df839e35c15bd86119cb19a89ab4507d61b40d7de9fcb"
+    }
+  ],
+  "known_legacy_actual_usd": "0.0001464",
+  "known_legacy_settled_attempts": 4,
+  "known_legacy_unresolved_attempts": 0,
+  "r1_history_completeness": "NOT_PROVEN",
+  "stored_credit_evidence": {
+    "source": "docs/healthtech/audits/ptp-api-owner-env-recheck-r2-20261103/metadata-observation.json",
+    "source_sha256": "6693892b9dda7da1a5154b27b368b8215ed74fe422a3c0b282aec79fdc236885",
+    "observed_utc": "2026-11-03T08:50:19.223422+00:00",
+    "usage_usd": "0.0001464",
+    "daily_weekly_monthly_usage_usd": [
+      "0",
+      "0",
+      "0"
+    ],
+    "account_scope": "NOT_RECONCILED",
+    "limit": null,
+    "limit_remaining": null,
+    "current_scoped_credit_available": false,
+    "interpretation": "Stored observed key usage matches the four legacy settled calls. This is consistent with no additional charged use of this key through that observation; it does not establish complete R1 pending exposure or current account availability.",
+    "new_provider_metadata_call": false
+  },
+  "paid_decision": "BLOCKED_BEFORE_RESERVATION; do not invent R1 history, promote mock DBs, or reset allowance",
+  "smallest_next_input": "Existing provider/account activity or billing export covering R1 onward and current balance/account-key scope evidence, without secret; implementer maps genuine fields and hashes into review schema, owner need not fabricate a canonical journal or JSON",
+  "resources": {
+    "ssh_connections": 1,
+    "metadata_calls": 0,
+    "paid_calls": 0,
+    "paid_cost_usd": 0,
+    "gpu_jobs": 0,
+    "remote_writes": 0,
+    "ledger_mutations": 0,
+    "new_credentials": 0
+  },
+  "raw_private_journals_copied_to_project": false,
+  "historical_receipts_modified": false,
+  "source_evidence_hashes": {
+    "ssh-retry-receipt.json": "449b9a49333f7d37e73d1e058996e7a19771218fbcd94ccbf565851c12b4880f",
+    "ssh-preflight.stdout.txt": "ac20b170fa856ac2be232b716a02ee5ad24b9635a734d8c9fc11bf593194d275",
+    "r1-file-inventory.json": "e4fe0919db0597c5d0ed07bf1208cae55daab01760b5ae0339a985d76d616a0f",
+    "sqlite-candidate-check.json": "09ef9dedb1d6f1f48b082d44d2f1435d5c4ef2efdfb82a483c9934da7db84c0e",
+    "legacy-journal-recheck.json": "16b50553ed402e04ea843c7221a47c2c0fbae0d9f0e29779897141034297113a",
+    "remote_readonly_preflight.py": "1c0e613dc3abe89524409b3bb82e26ea9662898078bb28e1259814996f215dc5"
+  }
+}

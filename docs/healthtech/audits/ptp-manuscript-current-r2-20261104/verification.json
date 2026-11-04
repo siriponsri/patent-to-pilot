@@ -1,0 +1,24 @@
+{
+  "format": "ptp-manuscript-current-head-rebind-r2-v1",
+  "recorded_utc": "2026-11-03T17:30:23.9719798Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_DOCUMENTATION_REBOUND_OWNER_REVIEW_PENDING",
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "39de783f9a268837e50f69e1bf8a5adcaec8a64f217e8f7dda5391adcf07dbcf",
+    "bytes": 55559,
+    "relative_links_checked": 53,
+    "missing_relative_links": 0
+  },
+  "wpi_checklist": {
+    "path": "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md",
+    "sha256": "cec1ffe4c41b1baa119674f7907918e257d65b18b39af3dd2fe09fda901636c8",
+    "bytes": 6860
+  },
+  "venue_receipt": "docs/healthtech/audits/wpi-venue-recheck-r8-20261104/verification.json",
+  "e2_checkpoint": "docs/healthtech/audits/ptp-resume-e2-current-r2-20261104/verification.json",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "submission": "NOT_SUBMITTED",
+  "external_messages": 0,
+  "next": "Owner review declarations and authorized live WPI Guide for Authors before final packaging"
+}

@@ -1,0 +1,192 @@
+{
+  "format": "ptp-installed-candidate-continuation-v1",
+  "observed_utc": "2026-11-03T23:06:30.390947+00:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "candidate_dirty": true,
+  "wheel": {
+    "filename": "patent_to_pilot-0.1.0-py3-none-any.whl",
+    "sha256": "70b8b0d50d60ec4540d640864cee42495daaa68ceee8618c583dffe89b46784d",
+    "bytes": 237355,
+    "verified_python_source_files": 74
+  },
+  "source_archive": {
+    "filename": "candidate-source.zip",
+    "sha256": "52f0469f0a35e9e3b2559db48466abbf4457b7581e9d1d1f395d34c0b6c32c13",
+    "files": 278,
+    "bytes": 686104
+  },
+  "installed_check": {
+    "observed_utc": "2026-11-03T22:58:51.752537+00:00",
+    "status": "PASS",
+    "pytest_exit_code": 0,
+    "tests": {
+      "tests": 102,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "targets": [
+      "tests/test_healthtech.py",
+      "tests/test_healthtech_case_journal.py",
+      "tests/test_healthtech_api_generation.py",
+      "tests/test_healthtech_local_epoch.py",
+      "tests/test_healthtech_local_execution.py",
+      "tests/test_provider_adapter.py",
+      "tests/test_release_budget_process.py",
+      "tests/test_healthtech_generation_payload.py"
+    ],
+    "installed_production_modules": {
+      "patent_to_pilot": "Lib\\site-packages\\patent_to_pilot\\__init__.py",
+      "patent_to_pilot.core.models": "Lib\\site-packages\\patent_to_pilot\\core\\models.py",
+      "patent_to_pilot.core.repository": "Lib\\site-packages\\patent_to_pilot\\core\\repository.py",
+      "patent_to_pilot.core.providers": "Lib\\site-packages\\patent_to_pilot\\core\\providers.py",
+      "patent_to_pilot.core": "Lib\\site-packages\\patent_to_pilot\\core\\__init__.py",
+      "patent_to_pilot.product": "Lib\\site-packages\\patent_to_pilot\\product\\__init__.py",
+      "patent_to_pilot.product.contracts": "Lib\\site-packages\\patent_to_pilot\\product\\contracts.py",
+      "patent_to_pilot.healthtech.contracts": "Lib\\site-packages\\patent_to_pilot\\healthtech\\contracts.py",
+      "patent_to_pilot.providers.openrouter": "Lib\\site-packages\\patent_to_pilot\\providers\\openrouter.py",
+      "patent_to_pilot.providers.ledger_registry": "Lib\\site-packages\\patent_to_pilot\\providers\\ledger_registry.py",
+      "patent_to_pilot.providers.project_budget": "Lib\\site-packages\\patent_to_pilot\\providers\\project_budget.py",
+      "patent_to_pilot.providers.round1": "Lib\\site-packages\\patent_to_pilot\\providers\\round1.py",
+      "patent_to_pilot.providers": "Lib\\site-packages\\patent_to_pilot\\providers\\__init__.py",
+      "patent_to_pilot.healthtech.api": "Lib\\site-packages\\patent_to_pilot\\healthtech\\api.py",
+      "patent_to_pilot.healthtech.controller": "Lib\\site-packages\\patent_to_pilot\\healthtech\\controller.py",
+      "patent_to_pilot.healthtech.provider_transfer": "Lib\\site-packages\\patent_to_pilot\\healthtech\\provider_transfer.py",
+      "patent_to_pilot.healthtech.b4_live": "Lib\\site-packages\\patent_to_pilot\\healthtech\\b4_live.py",
+      "patent_to_pilot.healthtech.generation_payload": "Lib\\site-packages\\patent_to_pilot\\healthtech\\generation_payload.py",
+      "patent_to_pilot.healthtech.api_generation": "Lib\\site-packages\\patent_to_pilot\\healthtech\\api_generation.py",
+      "patent_to_pilot.healthtech": "Lib\\site-packages\\patent_to_pilot\\healthtech\\__init__.py",
+      "patent_to_pilot.healthtech.provenance": "Lib\\site-packages\\patent_to_pilot\\healthtech\\provenance.py",
+      "patent_to_pilot.ingestion.pls": "Lib\\site-packages\\patent_to_pilot\\ingestion\\pls.py",
+      "patent_to_pilot.ingestion": "Lib\\site-packages\\patent_to_pilot\\ingestion\\__init__.py",
+      "patent_to_pilot.retrieval.fts": "Lib\\site-packages\\patent_to_pilot\\retrieval\\fts.py",
+      "patent_to_pilot.retrieval": "Lib\\site-packages\\patent_to_pilot\\retrieval\\__init__.py",
+      "patent_to_pilot.healthtech.policies": "Lib\\site-packages\\patent_to_pilot\\healthtech\\policies.py",
+      "patent_to_pilot.healthtech.rights": "Lib\\site-packages\\patent_to_pilot\\healthtech\\rights.py",
+      "patent_to_pilot.healthtech.engine": "Lib\\site-packages\\patent_to_pilot\\healthtech\\engine.py",
+      "patent_to_pilot.healthtech.sources": "Lib\\site-packages\\patent_to_pilot\\healthtech\\sources.py",
+      "patent_to_pilot.integration.pipeline": "Lib\\site-packages\\patent_to_pilot\\integration\\pipeline.py",
+      "patent_to_pilot.integration": "Lib\\site-packages\\patent_to_pilot\\integration\\__init__.py",
+      "patent_to_pilot.evaluation.comparison": "Lib\\site-packages\\patent_to_pilot\\evaluation\\comparison.py",
+      "patent_to_pilot.evaluation": "Lib\\site-packages\\patent_to_pilot\\evaluation\\__init__.py",
+      "patent_to_pilot.evaluation.healthtech": "Lib\\site-packages\\patent_to_pilot\\evaluation\\healthtech\\__init__.py",
+      "patent_to_pilot.evaluation.healthtech.retrieval": "Lib\\site-packages\\patent_to_pilot\\evaluation\\healthtech\\retrieval.py",
+      "patent_to_pilot.providers.local_epoch": "Lib\\site-packages\\patent_to_pilot\\providers\\local_epoch.py",
+      "patent_to_pilot.providers.case_journal": "Lib\\site-packages\\patent_to_pilot\\providers\\case_journal.py",
+      "patent_to_pilot.healthtech.local_execution": "Lib\\site-packages\\patent_to_pilot\\healthtech\\local_execution.py",
+      "patent_to_pilot.providers.history_review": "Lib\\site-packages\\patent_to_pilot\\providers\\history_review.py",
+      "patent_to_pilot.providers.pilot": "Lib\\site-packages\\patent_to_pilot\\providers\\pilot.py",
+      "patent_to_pilot.providers.paired": "Lib\\site-packages\\patent_to_pilot\\providers\\paired.py",
+      "patent_to_pilot.providers.env_file": "Lib\\site-packages\\patent_to_pilot\\providers\\env_file.py",
+      "patent_to_pilot.providers.credit": "Lib\\site-packages\\patent_to_pilot\\providers\\credit.py",
+      "patent_to_pilot.evaluation.healthtech.transformer_encoders": "Lib\\site-packages\\patent_to_pilot\\evaluation\\healthtech\\transformer_encoders.py",
+      "patent_to_pilot.evaluation.healthtech.vector_artifacts": "Lib\\site-packages\\patent_to_pilot\\evaluation\\healthtech\\vector_artifacts.py",
+      "patent_to_pilot.evaluation.synthetic_corpus": "Lib\\site-packages\\patent_to_pilot\\evaluation\\synthetic_corpus.py"
+    },
+    "workflow": "synthetic authored HealthTech dossier -> JSON, English/Thai Markdown, acquisition events, manifest",
+    "input_sha256": "e8e7fc012a61d2c29fa10a472c391fde0277c3c913d119842034c8e074520693",
+    "output_hashes": {
+      "dossier.json": "cd656ea10b0570d2f478c497b3860d20cdd9e36a6904b3f7f8bac544d8283136",
+      "dossier.en.md": "6be59a98b7b83b9a7e8e18a3556eb3c670eebf5b91607f50c5c9d70a1ca9e0aa",
+      "dossier.th.md": "06bbc541d0d8818ddf611c4d2042065a3b020ceacfb291ce220cc9dde95becbf",
+      "manifest.json": "d7451c43ecc98ac77361991359d28cc0943a234292adca098b58f7f5517cd0a2",
+      "acquisition_events.jsonl": "8d79c6fd4bd4426f381976e21e5a075eb7511d733b99d2ed7a6af8336d46c4fa"
+    },
+    "external_network_attempts": 0,
+    "live_workspace_read_attempts": 0,
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "new_paid_cost_usd": 0,
+    "dependencies": {
+      "patent-to-pilot": "0.1.0",
+      "pydantic": "2.13.5",
+      "jsonschema": "4.26.0",
+      "pytest": "8.4.2"
+    },
+    "scope": "installed wheel in task venv with pre-existing system-site dependencies; Python socket/file guards, not an OS sandbox or pristine-machine install; synthetic engineering evidence, not new science"
+  },
+  "initial_check": {
+    "tests": 102,
+    "passed": 100,
+    "failures": 2,
+    "cause": "Test computed fixture root from installed package location. Fixed test to resolve the checkout from its own __file__. Assertions unchanged."
+  },
+  "current_test_repair": {
+    "path": "tests/test_release_budget_process.py",
+    "before_sha256": "7ee1b10e0736b02d0b26d3160bca38e22d7213e6f6efbb8473972975cd1bd00b",
+    "after_sha256": "a6235f761c29a408e6c1926e13818f4fff9af4873d61cabd318464b144e86a5d"
+  },
+  "prior_repair_tests": "211 passed; separate source-level provider/E2/API/medical regression package, not this installed-wheel test count",
+  "build_network": "pip build isolation obtained its public build backend; installed test and wheel installation made no external requests. This was not an entirely air-gapped build.",
+  "private_artifact_locator": "%LOCALAPPDATA%/PatentToPilot/healthtech/evidence/installed-candidate-20261104",
+  "new_provider_calls": 0,
+  "new_gpu_jobs": 0,
+  "new_paid_cost_usd": 0,
+  "ledger_modified": false,
+  "real_journal_sha256_observed": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2",
+  "luna_handoff": {
+    "status": "NOT_SENT_DESTINATION_UNVERIFIED",
+    "lookup": "Supported Codex task listing on local and durable hosts did not identify the current Luna goal. No session-store access, wrong-thread message, new goal or model change."
+  },
+  "continuation": {
+    "observed_utc": "2026-11-03T23:06:30.390947+00:00",
+    "state": "READY_WITH_BLOCKED_BRANCHES",
+    "platform_goal_state": "UNKNOWN_NOT_CHANGED",
+    "resume_existing_goal": true,
+    "queue": [
+      {
+        "id": "installed_candidate",
+        "status": "COMPLETE_ENGINEERING",
+        "evidence": "docs/healthtech/audits/pepo-resume-ready-20261104/verification.json"
+      },
+      {
+        "id": "manuscript_claim_table",
+        "goal": "G6",
+        "status": "READY",
+        "action": "Integrate a numerical claim-to-artifact table and reproducibility appendix into the existing manuscript using stored verified results. Record dataset, split, denominator, method/model revision, artifact SHA and fresh/rebound/historical status for each result.",
+        "acceptance": "Every current numerical result has an evidence locator; unsupported statements are narrowed or explicitly pending. Keep the BM25/adaptive negative finding, unequal realized budgets, development-only cohorts and medical denominator 1920=983+937. Do not claim semantic validation from source bindings.",
+        "inputs": [
+          "docs/healthtech/audits/pepo-strong-followup-20261104/README.md",
+          "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md"
+        ]
+      },
+      {
+        "id": "solo_operational_case_table",
+        "goal": "G5",
+        "status": "READY",
+        "action": "Use existing three-case patent-generation and dossier receipts to add the measured source-binding, evidence coverage, machine latency and resource/cost table to the existing manuscript/operational evidence section.",
+        "acceptance": "Separate actual measurements, developer assessment, and scenario assumptions. Missing per-case data stays missing; do not infer human time saved, customer ROI, semantic accuracy or new paid spend. No participants required.",
+        "inputs": [
+          "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/verification.json"
+        ]
+      },
+      {
+        "id": "portable_candidate_instructions",
+        "goal": "G7",
+        "status": "READY",
+        "action": "Update the existing installation/reproduction instructions to distinguish source checkout CLI/data fixtures from installed Python library; document the verified wheel and dependency versions plus private artifact recovery.",
+        "acceptance": "No secret or restricted raw corpus bundled; clean-machine dependency acquisition and public release remain explicitly untested/unpublished. Do not rerun successful model work for documentation."
+      }
+    ],
+    "blocked_branches": [
+      {
+        "branch": "paid_API_comparison",
+        "state": "PENDING_CURRENT_SCOPED_CREDIT",
+        "needed": "Fresh account credit and exact-key remaining limit (or explicit unlimited), observation time and key scope; then refresh route pricing within existing admission window. Existing local E2 journal and local .env remain authoritative.",
+        "retry_rule": "No repeated credit/history checks without new evidence; no reservation/paid call before admission."
+      },
+      {
+        "branch": "final_semantic_holdout",
+        "state": "PENDING_VALID_DATA_PROTOCOL",
+        "needed": "Rights-cleared independent judgments/groups and a frozen final protocol; keep current exposed cohorts development-only."
+      },
+      {
+        "branch": "public_release_submission",
+        "state": "PENDING_OWNER_FINAL_DECISION",
+        "needed": "Owner author/declaration and publication decisions; no merge/push/upload in this task."
+      }
+    ],
+    "selection_rule": "Choose the first READY package after checking its completion evidence and writer ownership. A blocked branch cannot block unrelated READY work. Do not manufacture work: if every authorized package is complete or genuinely dependent on unavailable input, emit one exact dependency handoff and wait; do not create gate-only audit loops.",
+    "source_drift_rule": "Revalidate only changed relevant inputs. Do not repeat paid/GPU jobs, successful installed checks or old metric recalculations without a concrete change."
+  }
+}

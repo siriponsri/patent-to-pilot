@@ -1,5 +1,9 @@
 # GOAL — Patent-to-Pilot HealthTech
 
+> **Latest repair — 4 Nov 2026:** [key-limit repair](docs/healthtech/audits/pepo-key-limit-repair-20261104/README.md) supersedes the R13/R21 key-limit-unavailable conclusion. The dispatch key is UNLIMITED; refresh and bind account credit before paid work. Existing offline queue is complete; do not reopen it or manufacture READY tasks. World Patent Information and scientific acceptance remain unchanged.
+
+> **Current continuation — 4 Nov 2026:** resume the existing goal in the 20261103 worktree. Start with the bounded READY queue in [the current handoff](docs/healthtech/audits/pepo-resume-ready-20261104/README.md) and `CURRENT_ACCEPTANCE_MATRIX.json`. Missing API credit blocks paid transport only; independent G5/G6/G7 work proceeds. This changes execution order, not goal acceptance or runtime state.
+
 > Implementation checkpoint (27 October 2026): [migration and coverage](docs/healthtech/MIGRATION.md), [actual progress](docs/healthtech/progress.json). The pack’s starting statuses below are historical starting points; the full HealthTech study and product are not complete.
 
 **Version:** 1.2 · **วันที่:** 1 พฤศจิกายน 2026 (Asia/Bangkok) <br>

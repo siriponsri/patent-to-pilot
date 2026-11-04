@@ -1,0 +1,85 @@
+{
+  "format": "ptp-continuation-exact-head-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+  "observed_at_local": "2026-11-03T07:15:07+07:00",
+  "source_bindings": {
+    "o1_browser_http": {
+      "path": "docs/healthtech/audits/ptp-current-head-browser-http-recheck-20261103/verification.json",
+      "status": "PASS_CURRENT_HEAD_BROWSER_HTTP_HISTORY_EXPORT",
+      "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+      "job_id": "536bc0e990ce48b3a9a8ad51a3ac0971"
+    },
+    "o2_vector_artifacts": {
+      "path": "docs/healthtech/audits/ptp-vector-artifact-revalidation-20261103/verification.json",
+      "status": "PASS_VECTOR_BUNDLE_INTEGRITY_PRIOR_ARTIFACT",
+      "artifact_root_id": "ht-o4-http-device-vectors-20261031",
+      "new_remote_encode": false,
+      "allocation_reference": "NOT_OBSERVED"
+    },
+    "o3_local": {
+      "path": "docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json",
+      "status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
+      "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+      "cases": 3,
+      "schema_valid_cases": 3,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0,
+      "elapsed_seconds": 120.954014
+    },
+    "o4_offline": {
+      "path": "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+      "status": "PASS_CURRENT_HEAD_OFFLINE_DESCRIPTIVE_FRONTIER",
+      "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+      "cohort": "ht-public-cohort-20261029-frozen-r1",
+      "devices": 3,
+      "patents": 41,
+      "disclosed_reference_pairs": 61,
+      "results": {
+        "HT-B0a": 0.4427394146064223,
+        "HT-B0b": 0.6622417082775139,
+        "HT-B1": 0.49880241951853205,
+        "HT-B2": 0.5689116226200625,
+        "HT-B3": 0.49880241951853205,
+        "HT-B4-offline": 0.49880241951853205
+      },
+      "b4_micro_recall_at_20": 0.47540983606557374,
+      "b4_controller_steps": 8,
+      "all_failed_queries": 0
+    },
+    "api_live_readiness": {
+      "path": "docs/healthtech/audits/ptp-api-live-readiness-20261103/verification.json",
+      "status": "BLOCKED_BEFORE_RESERVATION",
+      "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+      "provider_calls": 0,
+      "reservations": 0,
+      "canonical_registry_present": false,
+      "current_credit_snapshot_present": false
+    }
+  },
+  "consistency_checks": {
+    "current_candidate_heads_match": true,
+    "prior_artifact_marked_as_prior": true,
+    "historical_results_pooled": false,
+    "paid_branch_called": false,
+    "claims_overstated": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "claim_boundary": "O1 engineering is current-head complete; O2/O3/O4 remain partial exactly as stated above; no scientific superiority or commercial validation claim is supported.",
+  "next": [
+    "Continue local/offline manuscript and analysis work without rerunning the same frozen benchmark.",
+    "Obtain an authorized dr-train allocation reference before any new remote encode.",
+    "Obtain the existing non-secret R1 journal/export and current scoped credit evidence before any paid reservation."
+  ]
+}

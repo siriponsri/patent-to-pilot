@@ -1,0 +1,20 @@
+{
+  "format": "ptp-wpi-venue-recheck-r4-v1",
+  "goal_reused": true,
+  "observed_local_date": "2026-11-03",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_CONDITIONAL_SCOPE_GUIDE_UNVERIFIED_OWNER_RECHECK_REQUIRED",
+  "official_profile": "PASS_CONDITIONAL_SCOPE_FIT",
+  "aims_and_scope": "HTTP_403_NOT_INSPECTABLE",
+  "guide_for_authors": "HTTP_403_NOT_INSPECTABLE",
+  "journal_specific_requirements_inferred": false,
+  "submission": "NOT_SUBMITTED",
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "ledger_mutations": 0,
+    "external_messages": 0,
+    "publisher_terms_accepted": false
+  },
+  "next_action": "Owner browser/session recheck of the official Guide for Authors before submission."
+}

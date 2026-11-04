@@ -1,0 +1,9 @@
+{
+  "format": "ptp-api-owner-env-recheck-r2-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_READ_ONLY_METADATA_GATE_STILL_BLOCKED",
+  "metadata": "HTTP 200; lifetime USD0.0001464; daily/weekly/monthly USD0; ordinary non-management key; scoped credit unavailable; history NOT_PROVEN",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION",
+  "resource_mutations": "provider 0; reservations 0; attempts 0; retries 0; ledger 0; GPU 0; datasets 0; budget/window reset false",
+  "resume": "Obtain the existing canonical R1 journal/export and current scoped credit snapshot once; reconcile before any reservation."
+}

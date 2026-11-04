@@ -1,0 +1,114 @@
+{
+  "format": "ptp-resume-e2-current-v1",
+  "recorded_utc": "2026-11-03T15:34:58.8264436Z",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty": true,
+    "dirty_file_count": 151,
+    "clean_release": false,
+    "preserved_owner_claude_luna_work": true
+  },
+  "offline_tests": {
+    "command": "PYTHONPATH=src python -m pytest -q --disable-warnings --junitxml=docs/healthtech/audits/ptp-resume-e2-current-20261103/focused-tests.xml tests/test_healthtech_local_epoch.py tests/test_healthtech_api_generation.py tests/test_healthtech_generation_payload.py tests/test_healthtech_api_env.py tests/test_healthtech_history_migration.py tests/test_o3_generation_repair.py tests/test_o3_adversarial_repair.py",
+    "tests": 84,
+    "passed": 84,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit_receipt": "focused-tests.xml",
+    "junit_sha256": "8931cfa61155ce8cda6f55bde5dc88ccd540de779a62ecd695a4a2767a8b9e22"
+  },
+  "compileall": {
+    "command": "python -m compileall -q src scripts/healthtech",
+    "status": "PASS"
+  },
+  "diff_check": {
+    "status": "PASS_EXCLUDING_KNOWN_MEMORY_LINE_ENDING_NOISE",
+    "excluded": "memory/next-actions.md"
+  },
+  "source_hash_binding": {
+    "src/patent_to_pilot/providers/project_budget.py": "ea0ef2f9bc7e31aac4a400fde8a9198b9ac1a98902eaa238b1b974f9f3fddb62",
+    "src/patent_to_pilot/providers/ledger_registry.py": "335df3775a44e7fa9218c1b186f3e76397f7f3f1092ecdf8cba1e78446546cbd",
+    "src/patent_to_pilot/providers/round1.py": "354bac65fd8cb550fd457b54d6cf49f15f8b7e26ca3f03fde8a3e817985ef3d500",
+    "src/patent_to_pilot/providers/local_epoch.py": "d37ba155f361a5a02ea0ce3efbdb5dd94a2deaa91f41563e47387b1f85a9dc25",
+    "src/patent_to_pilot/healthtech/api_generation.py": "d2bb52cd0f4d8052bcba234342b65ddaf5d519f5233017e2fea9ff9eea90310c",
+    "src/patent_to_pilot/healthtech/local_execution.py": "25ed4283936885352054c5cd5d10d5f4c78fcb8bbe26762dc7da9ee7a5a35e0d",
+    "scripts/healthtech/run_openrouter_generation_evidence_pack.py": "eac71589279f1245126c3f603193c0750833a4711ecf086525b634d59a03f256",
+    "scripts/healthtech/run_qwen_generation_evidence_pack.py": "d3f195e81959db3bf35661b9b0fc3a6593a0ad8a1e7b8a234a47fbeedee63d9c"
+  },
+  "journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity": "ok",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "attempt_contexts": 0,
+    "scope_binding": null,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": 0.0001464,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_allowance_usd": 1.0,
+    "lifetime_cap_guaranteed": false,
+    "reset": false,
+    "mutation": false
+  },
+  "provider": {
+    "latest_sanitized_observation": "../ptp-api-current-credit-recheck-20261103/metadata-observation.json",
+    "observed_utc": "2026-11-03T13:16:41.919796+00:00",
+    "http_status": 200,
+    "key_class": "ordinary_non_management",
+    "lifetime_usage_usd": 0.0001464,
+    "current_scoped_credit_available": false,
+    "key_limit_remaining_available": false,
+    "account_scope_reconciled": false,
+    "secret_persisted": false
+  },
+  "route": {
+    "latest_available_snapshot": "../ptp-api-current-credit-recheck-20261103/public-route-pricing-observation.json",
+    "observed_utc": "2026-11-03T13:18:15.745843+00:00",
+    "model": "qwen/qwen3-32b",
+    "provider_route": "DeepInfra",
+    "prompt_usd_per_million": 0.08,
+    "completion_usd_per_million": 0.28,
+    "refresh_required_before_dispatch": true
+  },
+  "paid_dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempts": 0,
+    "retries": 0,
+    "new_cost_usd": 0.0,
+    "pending_replay": false
+  },
+  "gpu": {
+    "evidence_root": "%LOCALAPPDATA%/PatentToPilot/healthtech/evidence/20261103-pepo-patent-current/",
+    "run_id": "20261103-pepo-patent-current",
+    "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "protocol": "fresh_patent_encoder_retrieval_diagnostic",
+    "separate_from_paid_generation": true,
+    "saved_vectors_reverified": true,
+    "metrics": {
+      "BM25": {"known_links_20": 21, "denominator": 61, "macro_recall_at_20": 0.392685, "micro_recall_at_20": 0.344262, "macro_ndcg_at_20": 0.430022},
+      "PatEmbed": {"known_links_20": 24, "denominator": 61, "macro_recall_at_20": 0.430073, "micro_recall_at_20": 0.393443, "macro_ndcg_at_20": 0.409533},
+      "multilingual_e5": {"known_links_20": 27, "denominator": 61, "macro_recall_at_20": 0.481021, "micro_recall_at_20": 0.442623, "macro_ndcg_at_20": 0.455981}
+    }
+  },
+  "processes": {
+    "ssh_inspection_pid": 18096,
+    "ssh_left_untouched": true,
+    "claude_processes_left_untouched": true,
+    "new_provider_or_gpu_jobs": 0
+  },
+  "status": {
+    "engineering": "PASS_CURRENT_DIRTY_CANDIDATE_OFFLINE_VERIFIED_NOT_RELEASED",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+    "manuscript": "PARTIAL_OWNER_REVIEW_WPI_GUIDE_UNVERIFIED",
+    "goal": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED_GLOBALLY"
+  },
+  "owner_input_once_if_paid_required": "Non-secret current scoped v2 credit/limit snapshot for the same account/key, or a sanctioned pointer; do not send the API key."
+}

@@ -1,0 +1,532 @@
+{
+  "budget_comparability": {
+    "budget_ceiling_slices": [
+      {
+        "all_required_methods_present": true,
+        "ceiling": {
+          "query_calls": 3,
+          "rerank_pairs": 123
+        },
+        "claim_boundary": "posthoc descriptive ceiling sensitivity; only equal_realized_budget slices are matched-budget diagnostics",
+        "equal_realized_budget": true,
+        "methods_present": [
+          "HT-B1",
+          "HT-B2",
+          "HT-B3"
+        ],
+        "selected_by_method": {
+          "HT-B1": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+            "not_realized_query_count": 0,
+            "prefix": 1,
+            "query_calls": 3.0,
+            "rerank_pairs": 123.0
+          },
+          "HT-B2": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+            "not_realized_query_count": 0,
+            "prefix": 1,
+            "query_calls": 3.0,
+            "rerank_pairs": 123.0
+          },
+          "HT-B3": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+            "not_realized_query_count": 0,
+            "prefix": 1,
+            "query_calls": 3.0,
+            "rerank_pairs": 123.0
+          }
+        },
+        "selection_rule": "maximum observed prefix within the resource ceiling; no endpoint-based selection and no rerun"
+      },
+      {
+        "all_required_methods_present": true,
+        "ceiling": {
+          "query_calls": 5,
+          "rerank_pairs": 205
+        },
+        "claim_boundary": "posthoc descriptive ceiling sensitivity; only equal_realized_budget slices are matched-budget diagnostics",
+        "equal_realized_budget": false,
+        "methods_present": [
+          "HT-B1",
+          "HT-B2",
+          "HT-B3"
+        ],
+        "selected_by_method": {
+          "HT-B1": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+            "not_realized_query_count": 0,
+            "prefix": 1,
+            "query_calls": 3.0,
+            "rerank_pairs": 123.0
+          },
+          "HT-B2": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+            "not_realized_query_count": 0,
+            "prefix": 1,
+            "query_calls": 3.0,
+            "rerank_pairs": 123.0
+          },
+          "HT-B3": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.22429261559696342,
+            "not_realized_query_count": 1,
+            "prefix": 2,
+            "query_calls": 5.0,
+            "rerank_pairs": 205.0
+          }
+        },
+        "selection_rule": "maximum observed prefix within the resource ceiling; no endpoint-based selection and no rerun"
+      },
+      {
+        "all_required_methods_present": true,
+        "ceiling": {
+          "query_calls": 6,
+          "rerank_pairs": 246
+        },
+        "claim_boundary": "posthoc descriptive ceiling sensitivity; only equal_realized_budget slices are matched-budget diagnostics",
+        "equal_realized_budget": false,
+        "methods_present": [
+          "HT-B1",
+          "HT-B2",
+          "HT-B3"
+        ],
+        "selected_by_method": {
+          "HT-B1": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+            "not_realized_query_count": 0,
+            "prefix": 1,
+            "query_calls": 3.0,
+            "rerank_pairs": 123.0
+          },
+          "HT-B2": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+            "not_realized_query_count": 0,
+            "prefix": 2,
+            "query_calls": 6.0,
+            "rerank_pairs": 246.0
+          },
+          "HT-B3": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.22429261559696342,
+            "not_realized_query_count": 1,
+            "prefix": 2,
+            "query_calls": 5.0,
+            "rerank_pairs": 205.0
+          }
+        },
+        "selection_rule": "maximum observed prefix within the resource ceiling; no endpoint-based selection and no rerun"
+      },
+      {
+        "all_required_methods_present": true,
+        "ceiling": {
+          "query_calls": 9,
+          "rerank_pairs": 369
+        },
+        "claim_boundary": "posthoc descriptive ceiling sensitivity; only equal_realized_budget slices are matched-budget diagnostics",
+        "equal_realized_budget": false,
+        "methods_present": [
+          "HT-B1",
+          "HT-B2",
+          "HT-B3"
+        ],
+        "selected_by_method": {
+          "HT-B1": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+            "not_realized_query_count": 0,
+            "prefix": 1,
+            "query_calls": 3.0,
+            "rerank_pairs": 123.0
+          },
+          "HT-B2": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.5689116226200625,
+            "not_realized_query_count": 0,
+            "prefix": 3,
+            "query_calls": 9.0,
+            "rerank_pairs": 369.0
+          },
+          "HT-B3": {
+            "failed_query_count": 0,
+            "macro_known_link_recall_at_20_all_devices": 0.22429261559696342,
+            "not_realized_query_count": 1,
+            "prefix": 2,
+            "query_calls": 5.0,
+            "rerank_pairs": 205.0
+          }
+        },
+        "selection_rule": "maximum observed prefix within the resource ceiling; no endpoint-based selection and no rerun"
+      }
+    ],
+    "claim_boundary": "full-method quality differences are descriptive because realized budgets differ",
+    "equal_total_budget_across_methods": false,
+    "matched_first_action": {
+      "all_failures_zero": true,
+      "all_not_realized_zero": true,
+      "claim_boundary": "first-action diagnostic only; not a completed adaptive-policy comparison",
+      "equal_metric": true,
+      "methods": {
+        "HT-B1": 0.49880241951853205,
+        "HT-B2": 0.49880241951853205,
+        "HT-B3": 0.49880241951853205
+      },
+      "status": "PASS_OBSERVED"
+    },
+    "resource_vectors": {
+      "HT-B0a": {
+        "embedding_query_tokens": 0.0,
+        "query_calls": 3.0,
+        "rerank_pairs": 0.0
+      },
+      "HT-B0b": {
+        "embedding_query_tokens": 0.0,
+        "query_calls": 3.0,
+        "rerank_pairs": 0.0
+      },
+      "HT-B1": {
+        "embedding_query_tokens": 75.0,
+        "query_calls": 3.0,
+        "rerank_pairs": 123.0
+      },
+      "HT-B2": {
+        "embedding_query_tokens": 123.0,
+        "query_calls": 9.0,
+        "rerank_pairs": 369.0
+      },
+      "HT-B3": {
+        "embedding_query_tokens": 96.0,
+        "query_calls": 5.0,
+        "rerank_pairs": 205.0
+      }
+    }
+  },
+  "evaluation_scope": {
+    "final_holdout": "NOT_PRESENT_IN_PRIVATE_DEVELOPMENT_RECEIPT",
+    "reference_pair_count": 61,
+    "reference_query_count": 3,
+    "runtime_reference_separation": "reference file opened only after raw rankings and predictions were written",
+    "shared_reference_group_count": 2,
+    "shared_reference_group_sizes": [
+      2,
+      1
+    ],
+    "uncertainty": {
+      "confidence_intervals": "NOT_ESTIMABLE",
+      "reason": [
+        "The frozen slice has 3 eligible queries, 2 exact-patent groups, and no final holdout.",
+        "The company group contains all 3 queries for ABBOTT MEDICAL, so company-held-out sensitivity is not estimable.",
+        "Family mapping is UNKNOWN_NOT_ASSUMED; shared-patent groups are descriptive and not independent family samples."
+      ],
+      "reported_instead": [
+        "All-device per-prefix quality/resource rows with actual reached and not-realized counts.",
+        "Descriptive exact-patent group rows at each observed prefix."
+      ],
+      "status": "NOT_ESTIMABLE"
+    }
+  },
+  "format": "ptp-private-frontier-reconciliation-v1",
+  "frontier_prefixes": [
+    {
+      "cpu_seconds": 0.0,
+      "embedding_query_tokens": 0.0,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20_all_devices": 0.4427394146064223,
+      "method": "HT-B0a",
+      "micro_known_link_recall_at_20_all_devices": 0.4262295081967213,
+      "not_realized_query_count": 0,
+      "prefix": 1,
+      "query_calls": 3.0,
+      "reached_query_count": 3,
+      "rerank_pairs": 0.0,
+      "rerank_tokens": 0.0,
+      "returned_candidates": 123.0,
+      "scheduled_query_count": 1,
+      "wall_seconds": 9.129999671131372e-05
+    },
+    {
+      "cpu_seconds": 0.125,
+      "embedding_query_tokens": 0.0,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20_all_devices": 0.6622417082775139,
+      "method": "HT-B0b",
+      "micro_known_link_recall_at_20_all_devices": 0.639344262295082,
+      "not_realized_query_count": 0,
+      "prefix": 1,
+      "query_calls": 3.0,
+      "reached_query_count": 3,
+      "rerank_pairs": 0.0,
+      "rerank_tokens": 0.0,
+      "returned_candidates": 123.0,
+      "scheduled_query_count": 1,
+      "wall_seconds": 0.015400999982375652
+    },
+    {
+      "cpu_seconds": 45.4375,
+      "embedding_query_tokens": 75.0,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+      "method": "HT-B1",
+      "micro_known_link_recall_at_20_all_devices": 0.47540983606557374,
+      "not_realized_query_count": 0,
+      "prefix": 1,
+      "query_calls": 3.0,
+      "reached_query_count": 3,
+      "rerank_pairs": 123.0,
+      "rerank_tokens": 31488.0,
+      "returned_candidates": 123.0,
+      "scheduled_query_count": 1,
+      "wall_seconds": 5.360887700051535
+    },
+    {
+      "cpu_seconds": 46.1875,
+      "embedding_query_tokens": 75.0,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+      "method": "HT-B2",
+      "micro_known_link_recall_at_20_all_devices": 0.47540983606557374,
+      "not_realized_query_count": 0,
+      "prefix": 1,
+      "query_calls": 3.0,
+      "reached_query_count": 3,
+      "rerank_pairs": 123.0,
+      "rerank_tokens": 31488.0,
+      "returned_candidates": 123.0,
+      "scheduled_query_count": 3,
+      "wall_seconds": 5.334346999996342
+    },
+    {
+      "cpu_seconds": 92.484375,
+      "embedding_query_tokens": 111.0,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+      "method": "HT-B2",
+      "micro_known_link_recall_at_20_all_devices": 0.47540983606557374,
+      "not_realized_query_count": 0,
+      "prefix": 2,
+      "query_calls": 6.0,
+      "reached_query_count": 3,
+      "rerank_pairs": 246.0,
+      "rerank_tokens": 62976.0,
+      "returned_candidates": 246.0,
+      "scheduled_query_count": 3,
+      "wall_seconds": 10.461201799975242
+    },
+    {
+      "cpu_seconds": 137.890625,
+      "embedding_query_tokens": 123.0,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20_all_devices": 0.5689116226200625,
+      "method": "HT-B2",
+      "micro_known_link_recall_at_20_all_devices": 0.5573770491803278,
+      "not_realized_query_count": 0,
+      "prefix": 3,
+      "query_calls": 9.0,
+      "reached_query_count": 3,
+      "rerank_pairs": 369.0,
+      "rerank_tokens": 94464.0,
+      "returned_candidates": 369.0,
+      "scheduled_query_count": 3,
+      "wall_seconds": 15.516198900004383
+    },
+    {
+      "cpu_seconds": 44.46875,
+      "embedding_query_tokens": 75.0,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20_all_devices": 0.49880241951853205,
+      "method": "HT-B3",
+      "micro_known_link_recall_at_20_all_devices": 0.47540983606557374,
+      "not_realized_query_count": 0,
+      "prefix": 1,
+      "query_calls": 3.0,
+      "reached_query_count": 3,
+      "rerank_pairs": 123.0,
+      "rerank_tokens": 31488.0,
+      "returned_candidates": 123.0,
+      "scheduled_query_count": 3,
+      "wall_seconds": 4.858621299965307
+    },
+    {
+      "cpu_seconds": 73.84375,
+      "embedding_query_tokens": 96.0,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20_all_devices": 0.22429261559696342,
+      "method": "HT-B3",
+      "micro_known_link_recall_at_20_all_devices": 0.2459016393442623,
+      "not_realized_query_count": 1,
+      "prefix": 2,
+      "query_calls": 5.0,
+      "reached_query_count": 2,
+      "rerank_pairs": 205.0,
+      "rerank_tokens": 52480.0,
+      "returned_candidates": 205.0,
+      "scheduled_query_count": 3,
+      "wall_seconds": 8.077773299941327
+    }
+  ],
+  "limitations": [
+    "The private receipt covers a three-query development slice with two shared exact-patent groups.",
+    "No final holdout or semantic relevance gold is established by this reconciliation.",
+    "Only slices marked equal_realized_budget are matched-budget diagnostics; other ceilings are at-most-budget sensitivity views."
+  ],
+  "methods": [
+    {
+      "completed_query_count": 3,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20": 0.4427394146064223,
+      "method": "HT-B0a",
+      "micro_known_link_recall_at_20": null,
+      "resource": {
+        "attempt_count": 3,
+        "embedding_query_tokens": 0.0,
+        "method_cpu_seconds": 0.015625,
+        "method_wall_seconds": 0.0002965000458061695,
+        "query_calls": 3.0,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "resource_accounting_status": "COMPLETE",
+        "returned_candidates": 123.0,
+        "unknown_resource_fields": []
+      }
+    },
+    {
+      "completed_query_count": 3,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20": 0.6622417082775139,
+      "method": "HT-B0b",
+      "micro_known_link_recall_at_20": null,
+      "resource": {
+        "attempt_count": 3,
+        "embedding_query_tokens": 0.0,
+        "method_cpu_seconds": 0.125,
+        "method_wall_seconds": 0.015885099943261594,
+        "query_calls": 3.0,
+        "rerank_pairs": 0.0,
+        "rerank_tokens": 0.0,
+        "resource_accounting_status": "COMPLETE",
+        "returned_candidates": 123.0,
+        "unknown_resource_fields": []
+      }
+    },
+    {
+      "completed_query_count": 3,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20": 0.49880241951853205,
+      "method": "HT-B1",
+      "micro_known_link_recall_at_20": null,
+      "resource": {
+        "attempt_count": 3,
+        "embedding_query_tokens": 75.0,
+        "method_cpu_seconds": 45.4375,
+        "method_wall_seconds": 5.361326900019776,
+        "query_calls": 3.0,
+        "rerank_pairs": 123.0,
+        "rerank_tokens": 31488.0,
+        "resource_accounting_status": "COMPLETE",
+        "returned_candidates": 123.0,
+        "unknown_resource_fields": []
+      }
+    },
+    {
+      "completed_query_count": 3,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20": 0.5689116226200625,
+      "method": "HT-B2",
+      "micro_known_link_recall_at_20": null,
+      "resource": {
+        "attempt_count": 9,
+        "embedding_query_tokens": 123.0,
+        "method_cpu_seconds": 137.890625,
+        "method_wall_seconds": 15.517151899985038,
+        "query_calls": 9.0,
+        "rerank_pairs": 369.0,
+        "rerank_tokens": 94464.0,
+        "resource_accounting_status": "COMPLETE",
+        "returned_candidates": 369.0,
+        "unknown_resource_fields": []
+      }
+    },
+    {
+      "completed_query_count": 3,
+      "failed_query_count": 0,
+      "macro_known_link_recall_at_20": 0.49880241951853205,
+      "method": "HT-B3",
+      "micro_known_link_recall_at_20": null,
+      "resource": {
+        "attempt_count": 5,
+        "embedding_query_tokens": 96.0,
+        "method_cpu_seconds": 73.84375,
+        "method_wall_seconds": 8.078464600024745,
+        "query_calls": 5.0,
+        "rerank_pairs": 205.0,
+        "rerank_tokens": 52480.0,
+        "resource_accounting_status": "COMPLETE",
+        "returned_candidates": 205.0,
+        "unknown_resource_fields": []
+      }
+    }
+  ],
+  "privacy": {
+    "absolute_private_path_exported": false,
+    "raw_query_or_patent_text_exported": false,
+    "raw_source_identifiers_exported": false,
+    "source_file_names_and_hashes_only": true
+  },
+  "raw_ranking_rows": 15,
+  "raw_ranking_statuses": [
+    "completed"
+  ],
+  "receipt": {
+    "candidate_depth": 41,
+    "code_commit": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "cohort_manifest_hash": "b92b50716599ad6ea3cdeb5b6a692990a52ae8dd113bfc0bb5cad2cdd2148715",
+    "devices": 3,
+    "methods": [
+      "HT-B0a",
+      "HT-B0b",
+      "HT-B1",
+      "HT-B2",
+      "HT-B3"
+    ],
+    "paid_cost_usd": 0,
+    "patents": 41,
+    "protocol_hash": "a87acaa448f97eabccae0f1fecc5378720ecf1178869336f68b42174eb828b0f",
+    "provider_calls": 0,
+    "reference_pairs": 61,
+    "rerank_depth": 41,
+    "status": "REAL_PUBLIC_DEVELOPMENT_RUN"
+  },
+  "source_files": {
+    "evaluator_validation.json": {
+      "bytes": 1489,
+      "sha256": "e6fc1ef48fb6269bf56e714bb3f59dc1de102ed2373715a35bd11fcdc2275568"
+    },
+    "frontier_diagnostics.json": {
+      "bytes": 42981,
+      "sha256": "edf7a0beb84b16434e33b5735e0a95f23eac97f251bacd8c089843e3ae785e42"
+    },
+    "method_summary.json": {
+      "bytes": 2622,
+      "sha256": "df03e1893d5eac90561b9f4ff1ffc49d54fed4527774f0a848e3b73f9f27eacb"
+    },
+    "per_device_group_results.json": {
+      "bytes": 33222,
+      "sha256": "dea7d4f3899d1e716cae34077828b37c188739143ceaaff7d0b6a6baeda9a0c5"
+    },
+    "raw_rankings.jsonl": {
+      "bytes": 276970,
+      "sha256": "e21e2a84ff0f8757cae033a1a28d1a3bf3354c5e2f262e37b576a68444e8b5bf"
+    },
+    "receipt.json": {
+      "bytes": 1994,
+      "sha256": "4bab13befdcac5e195695463da2fcbd06dfc5eb428e07e44dd1e250b748361ba"
+    }
+  }
+}

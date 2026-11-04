@@ -1,0 +1,47 @@
+{
+  "format": "ptp-wpi-venue-recheck-r6-v1",
+  "observed_local": "2026-11-03",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "official_profile": {
+    "url": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+    "scope_fit": "CONDITIONAL",
+    "fit_topics": [
+      "patent-information retrieval and documentation",
+      "analysis and management of intellectual-property information",
+      "AI/ML and language-model applications to IP research",
+      "information-retrieval evaluation and real-data experiments"
+    ],
+    "acceptance_claim": false
+  },
+  "journal_specific_pages": {
+    "aims_and_scope": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope",
+      "status": "UNVERIFIED_PRIOR_DIRECT_CHECK_HTTP_403"
+    },
+    "guide_for_authors": {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+      "status": "UNVERIFIED_PRIOR_DIRECT_CHECK_HTTP_403"
+    }
+  },
+  "repository_change": {
+    "file": "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md",
+    "change": "record official Elsevier profile URL and preserve 403/no-inference boundary",
+    "submission": "NOT_SUBMITTED"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "external_messages": 0,
+    "submission": false
+  },
+  "next": "Owner browser/session recheck of the live Guide for Authors before final packaging or submission"
+}
+

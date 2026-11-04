@@ -1,0 +1,31 @@
+{
+  "format": "ptp-local-qwen-failure-accounting-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "attempts": [
+    {
+      "attempt_id": "local-qwen-patent-pack-20261104-preflight-python",
+      "phase": "environment_preflight",
+      "status": "FAILED_BEFORE_MODEL_LOAD",
+      "error_class": "ModuleNotFoundError",
+      "sanitized_error": "No module named 'pydantic'",
+      "interpreter": "/usr/bin/python3",
+      "provider_calls": 0,
+      "gpu_compute_started": false,
+      "ledger_mutation": false,
+      "retrospective_cost_inferred": false
+    },
+    {
+      "attempt_id": "local-qwen-patent-pack-20261104-preflight-output-path",
+      "phase": "runner_preflight",
+      "status": "FAILED_BEFORE_MODEL_LOAD",
+      "error_class": "FileExistsError",
+      "sanitized_error": "output already exists; choose a fresh receipt path",
+      "provider_calls": 0,
+      "gpu_compute_started": false,
+      "ledger_mutation": false,
+      "retrospective_cost_inferred": false
+    }
+  ],
+  "successful_attempt": "local-qwen-patent-pack-20261104-guided-v3",
+  "interpretation": "Both failures were corrected by selecting the existing dependency-complete remote venv and a runner-owned fresh receipt path. They did not consume paid or GPU inference resources."
+}

@@ -136,11 +136,60 @@ def test_redistribution_label_alone_cannot_clear_query_and_association_text(tmp_
     with pytest.raises(GenerationPayloadError, match="model-visible fields"):
         remote(pack)
     case = pack["cases"][0]
-    case["remote_transfer_review"] = {"purpose": "ht-o3-generation", "provider": "openrouter", "route": "DeepInfra",
-        "message_sha256": sha256_json(build_generation_messages(pack, case)), "basis_reference": "SYNTHETIC-FIELD-REVIEW-ONLY"}
+    case["remote_transfer_review"] = {
+        "purpose": "ht-o3-generation",
+        "provider": "openrouter",
+        "route": "DeepInfra",
+        "message_sha256": sha256_json(build_generation_messages(pack, case)),
+        "basis_reference": "SYNTHETIC-FIELD-REVIEW-ONLY",
+    }
     rehash(pack)
     remote(pack)
     case["query"]["technical_description"] += "more source text"
+    rehash(pack)
+    with pytest.raises(GenerationPayloadError, match="model-visible fields"):
+        remote(pack)
+
+
+def test_transfer_review_route_is_case_normalized_without_aliasing(tmp_path):
+    pack = _load_fixture_builder()._synthetic_pack(tmp_path)
+    source = pack["cases"][0]["sources"][0]
+    source.update(
+        synthetic=False,
+        redistribution="ALLOWED",
+        basis_url="https://example.invalid/terms",
+        displayable_fields=["trade_name"],
+    )
+    case = pack["cases"][0]
+    case["remote_transfer_review"] = {
+        "purpose": "ht-o3-generation",
+        "provider": "openrouter",
+        "route": "deepinfra",
+        "message_sha256": sha256_json(build_generation_messages(pack, case)),
+        "basis_reference": "SYNTHETIC-FIELD-REVIEW-ONLY",
+    }
+    rehash(pack)
+    payload = remote(pack)
+    assert payload["manifest"]["route"] == "deepinfra"
+
+
+def test_transfer_review_rejects_a_different_route(tmp_path):
+    pack = _load_fixture_builder()._synthetic_pack(tmp_path)
+    source = pack["cases"][0]["sources"][0]
+    source.update(
+        synthetic=False,
+        redistribution="ALLOWED",
+        basis_url="https://example.invalid/terms",
+        displayable_fields=["trade_name"],
+    )
+    case = pack["cases"][0]
+    case["remote_transfer_review"] = {
+        "purpose": "ht-o3-generation",
+        "provider": "openrouter",
+        "route": "different-route",
+        "message_sha256": sha256_json(build_generation_messages(pack, case)),
+        "basis_reference": "SYNTHETIC-FIELD-REVIEW-ONLY",
+    }
     rehash(pack)
     with pytest.raises(GenerationPayloadError, match="model-visible fields"):
         remote(pack)

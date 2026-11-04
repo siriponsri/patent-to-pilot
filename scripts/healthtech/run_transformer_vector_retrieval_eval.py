@@ -26,6 +26,7 @@ from patent_to_pilot.evaluation.healthtech.vector_artifacts import (
     read_runtime_text,
     sha256_file,
 )
+from patent_to_pilot.healthtech.local_execution import check_local_window, local_gpu_slot
 from scripts.healthtech.run_dapfam_bm25 import export_parquet, read_qrels
 from scripts.healthtech.run_vector_retrieval_eval import _write_rankings, run_evaluation
 
@@ -87,14 +88,67 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     query_rows = read_runtime_text(query_path)
     bundle = load_vector_bundle(args.bundle)
     config = bundle.manifest["config"]
+
+    def evaluate_with_encoder(encoder: Any, model_info: dict[str, Any], query_source: str) -> dict[str, Any]:
+        with tempfile.TemporaryDirectory(prefix="ht-transformer-vector-eval-") as temp_dir:
+            qrels_csv = Path(temp_dir) / "qrels.csv"
+            export_parquet(args.duckdb, qrels_path, qrels_csv, "query_id, relevant_id, relevance_score, domain_rel")
+            qrels, _ = read_qrels(qrels_csv)
+        started = perf_counter()
+        summary, method_rankings, method_statuses = run_evaluation(
+            corpus_rows,
+            query_rows,
+            qrels,
+            bundle,
+            encoder,
+            batch_size=args.batch_size,
+            k=args.k,
+            rrf_k=args.rrf_k,
+        )
+        elapsed = perf_counter() - started
+        rankings_path = _write_rankings(output, method_rankings)
+        payload = {
+            "status": "PASS" if summary["dense_failed_query_count"] == 0 else "PARTIAL_DENSE_FAILURES",
+            "task": "DAPFAM matched BM25/transformer-dense/hybrid retrieval diagnostic",
+            "summary": summary,
+            "inputs": {
+                "runtime_corpus": {"sha256": sha256_file(corpus_path), "rows": len(corpus_rows)},
+                "runtime_queries": {"sha256": sha256_file(query_path), "rows": len(query_rows)},
+                "qrels": {"sha256": sha256_file(qrels_path), "rows": summary["qrel_pair_count"]},
+                "vector_manifest": {"sha256": sha256_file(Path(args.bundle).resolve() / "manifest.json")},
+            },
+            "model": model_info,
+            "runtime": {
+                "elapsed_seconds": elapsed,
+                "provider_calls": 0,
+                "paid_cost_usd": 0,
+                "query_source": query_source,
+                "query_rows_encoded": len(query_rows),
+                "query_attention_tokens": getattr(getattr(encoder, "stats", None), "token_count", 0),
+            },
+            "outputs": {"rankings": str(rankings_path)},
+            "limits": [
+                "DAPFAM qrels are a citation-based family retrieval diagnostic, not semantic device-product gold.",
+                "Unlisted query-target pairs remain unjudged and are not treated as negatives.",
+                "Dense document vectors are imported artifacts; query vectors are encoded locally with the bound model.",
+            ],
+            "code_revision": _git_revision(),
+            "created_at_utc": datetime.now(timezone.utc).isoformat(),
+        }
+        (output / "summary.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        (output / "status.json").write_text(json.dumps({"method_statuses": method_statuses}, indent=2) + "\n", encoding="utf-8")
+        return payload
+
     if args.query_bundle is not None:
         query_bundle = load_vector_bundle(args.query_bundle)
         model_info = _validate_query_bundle(bundle, query_bundle, [row.document_id for row in query_rows])
         encoder = PrecomputedQueryEncoder(query_bundle, [row.document_id for row in query_rows])
-        query_source = "imported_query_bundle"
-    else:
-        if args.model_dir is None:
-            raise ValueError("--model-dir is required when --query-bundle is omitted")
+        return evaluate_with_encoder(encoder, model_info, "imported_query_bundle")
+
+    if args.model_dir is None:
+        raise ValueError("--model-dir is required when --query-bundle is omitted")
+    check_local_window()
+    with local_gpu_slot(args.model_dir.resolve()):
         model_info = _validate_model_binding(bundle, args.model_dir.resolve())
         encoder = TransformerEncoder(
             args.model_dir,
@@ -104,55 +158,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             device=args.device,
             prompt_name=config.get("patembed_prompt_name"),
         )
-        query_source = "local_query_encoder"
-    with tempfile.TemporaryDirectory(prefix="ht-transformer-vector-eval-") as temp_dir:
-        qrels_csv = Path(temp_dir) / "qrels.csv"
-        export_parquet(args.duckdb, qrels_path, qrels_csv, "query_id, relevant_id, relevance_score, domain_rel")
-        qrels, _ = read_qrels(qrels_csv)
-    started = perf_counter()
-    summary, method_rankings, method_statuses = run_evaluation(
-        corpus_rows,
-        query_rows,
-        qrels,
-        bundle,
-        encoder,
-        batch_size=args.batch_size,
-        k=args.k,
-        rrf_k=args.rrf_k,
-    )
-    elapsed = perf_counter() - started
-    rankings_path = _write_rankings(output, method_rankings)
-    payload = {
-        "status": "PASS" if summary["dense_failed_query_count"] == 0 else "PARTIAL_DENSE_FAILURES",
-        "task": "DAPFAM matched BM25/transformer-dense/hybrid retrieval diagnostic",
-        "summary": summary,
-        "inputs": {
-            "runtime_corpus": {"sha256": sha256_file(corpus_path), "rows": len(corpus_rows)},
-            "runtime_queries": {"sha256": sha256_file(query_path), "rows": len(query_rows)},
-            "qrels": {"sha256": sha256_file(qrels_path), "rows": summary["qrel_pair_count"]},
-            "vector_manifest": {"sha256": sha256_file(Path(args.bundle).resolve() / "manifest.json")},
-        },
-        "model": model_info,
-        "runtime": {
-            "elapsed_seconds": elapsed,
-            "provider_calls": 0,
-            "paid_cost_usd": 0,
-            "query_source": query_source,
-            "query_rows_encoded": len(query_rows),
-            "query_attention_tokens": getattr(getattr(encoder, "stats", None), "token_count", 0),
-        },
-        "outputs": {"rankings": str(rankings_path)},
-        "limits": [
-            "DAPFAM qrels are a citation-based family retrieval diagnostic, not semantic device-product gold.",
-            "Unlisted query-target pairs remain unjudged and are not treated as negatives.",
-            "Dense document vectors are imported artifacts; query vectors are encoded locally with the bound model.",
-        ],
-        "code_revision": _git_revision(),
-        "created_at_utc": datetime.now(timezone.utc).isoformat(),
-    }
-    (output / "summary.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    (output / "status.json").write_text(json.dumps({"method_statuses": method_statuses}, indent=2) + "\n", encoding="utf-8")
-    return payload
+        return evaluate_with_encoder(encoder, model_info, "local_query_encoder")
 
 
 def main() -> int:

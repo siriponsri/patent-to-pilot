@@ -115,6 +115,29 @@ def test_provider_gate_and_version_conflict_are_fail_closed(server):
     assert conflict["error"]["code"] == "version_conflict"
 
 
+def test_provider_catalog_exposes_estimate_spend_and_paid_gate_state(server):
+    status, catalog = _request(server, "GET", "/providers")
+    assert status == 200
+    local = next(item for item in catalog["providers"] if item["id"] == "local")
+    paid = next(item for item in catalog["providers"] if item["id"] == "openrouter")
+    assert local["estimated_usd"] == 0.0
+    assert local["actual_usd"] == 0.0
+    assert local["reserved_usd"] == 0.0
+    assert local["unknown_usd"] == 0.0
+    assert paid["estimated_usd"] is None
+    assert paid["actual_usd"] is None
+    assert paid["reserved_usd"] is None
+    assert paid["unknown_usd"] is None
+    assert catalog["budget_gate"] == {
+        "paid_dispatch": "closed",
+        "authorized_ceiling_usd": "unknown",
+        "estimated_usd": "unknown",
+        "actual_usd": "unknown",
+        "reserved_usd": "unknown",
+        "unknown_pending_usd": "unknown",
+    }
+
+
 def test_local_generation_provider_stays_in_http_history_and_export_lifecycle(tmp_path):
     def generate(dossier):
         return {

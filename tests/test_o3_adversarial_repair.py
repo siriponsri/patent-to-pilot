@@ -36,6 +36,7 @@ def reserve(budget, aid, amount, observation):
 def canonical(tmp_path, monkeypatch):
     registry = tmp_path / "canonical.json"
     monkeypatch.setattr("patent_to_pilot.providers.ledger_registry.default_registry_path", lambda _: registry)
+    monkeypatch.setattr("patent_to_pilot.providers.local_epoch.active", lambda: False)
     path = tmp_path / "canonical.sqlite3"
     digest = reviewed_fixture(path)
     binding(path, digest)

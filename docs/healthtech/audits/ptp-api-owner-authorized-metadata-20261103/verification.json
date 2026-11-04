@@ -1,0 +1,56 @@
+{
+  "format": "ptp-api-owner-authorized-metadata-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+  },
+  "observed_at_utc": "2026-11-03T04:40:33.482531Z",
+  "completed_at_utc": "2026-11-03T04:40:34.343203Z",
+  "metadata_receipt": "docs/healthtech/audits/ptp-api-owner-authorized-metadata-20261103/metadata-observation.json",
+  "metadata_file_sha256": "b514bcbe94be8103c4b2da7afc3d2157b32cb1e42e3e1ce012b090b1bc078f02",
+  "observed": {
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "is_management_key": false,
+    "account_scope": "NOT_RECONCILED",
+    "history_completeness": "NOT_PROVEN",
+    "current_scoped_credit_snapshot": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "live_admission_enabled": false
+  },
+  "gates": {
+    "rights_cleared_three_case_pack": "PASS_PRIOR_CURRENT_HEAD_PREFLIGHT",
+    "current_route_and_price": "PASS_PRIOR_CURRENT_HEAD_PREFLIGHT",
+    "canonical_r1_registry": "MISSING",
+    "existing_r1_history_or_sanitized_export": "NOT_SUPPLIED",
+    "current_scoped_credit": "MISSING",
+    "dispatch": "BLOCKED_BEFORE_RESERVATION"
+  },
+  "verification": {
+    "focused_tests": "58 passed, 0 failed, 0 errors, 0 skipped",
+    "focused_tests_receipt": "docs/healthtech/audits/ptp-api-owner-authorized-metadata-20261103/focused-tests.xml",
+    "focused_tests_receipt_sha256": "b1e3e3a16a5299e0325754e2f86a76169574d3803a84597d0c44cb6562cb5c12",
+    "full_python": "616 total; 615 passed, 1 skipped, 0 failed, 0 errors",
+    "full_tests_receipt": "docs/healthtech/audits/ptp-api-owner-authorized-metadata-20261103/full-tests.xml",
+    "full_tests_receipt_sha256": "3e56a5f88e1d4eca890b01ea5f24422dc07619a7959c2cc264fe24a8508c7a24",
+    "compileall": "PASS",
+    "json_readback": "PASS",
+    "known_skip": "pinned local tokenizer artifact unavailable"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false,
+    "secrets_persisted": false
+  },
+  "next_action": "Continue local/offline and manuscript work; reconcile the existing canonical R1 journal/export and current scoped credit snapshot once before any paid reservation."
+}

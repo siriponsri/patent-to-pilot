@@ -1,0 +1,31 @@
+{
+  "format": "ptp-api-preflight-key-followup-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_READ_ONLY_METADATA_REFRESH_DISPATCH_BLOCKED",
+  "api": {
+    "metadata": "HTTP 200; lifetime USD0.0001464; daily USD0; ordinary key",
+    "route": "DeepInfra; qwen/qwen3-32b; prompt USD0.08/M; completion USD0.28/M",
+    "rights_preflight": "3/3 ALLOWED_WITH_ATTRIBUTION",
+    "canonical_registry": "ABSENT",
+    "current_scoped_credit": "NOT_AVAILABLE",
+    "dispatch": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "verification": {
+    "focused_tests": "84 passed, 0 failed, 0 skipped",
+    "full_tests": "611 tests; 610 passed; 0 failed; 0 errors; 1 skipped",
+    "compileall": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "resource_mutations": {
+    "new_attempt_ids": 0,
+    "ledger_mutations": 0,
+    "replacement_ledger": false,
+    "budget_reset": false,
+    "window_reset": false,
+    "unknown_pending_retried": false
+  },
+  "owner_action_once": "Existing canonical R1 journal location or sanitized all-attempt export, plus current scoped v2 account/key credit snapshot if approved integration cannot provide it; no secret"
+}

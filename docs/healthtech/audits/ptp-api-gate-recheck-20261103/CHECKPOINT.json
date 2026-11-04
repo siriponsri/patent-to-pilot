@@ -1,0 +1,37 @@
+{
+  "format": "ptp-api-gate-recheck-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "BLOCKED_BEFORE_RESERVATION",
+  "metadata_receipt": "docs/healthtech/audits/ptp-api-gate-recheck-20261103/metadata-observation.json",
+  "observed": {
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "is_management_key": false,
+    "account_scope": "NOT_RECONCILED",
+    "current_scoped_credit_snapshot": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "history_completeness": "NOT_PROVEN",
+    "live_admission_enabled": false
+  },
+  "gates": {
+    "rights_cleared_three_case_pack": "PASS_PRIOR_PREFLIGHT",
+    "current_route_and_price": "PASS_PRIOR_PREFLIGHT",
+    "canonical_r1_registry": "MISSING",
+    "existing_r1_history_or_sanitized_export": "NOT_SUPPLIED",
+    "current_scoped_credit": "MISSING"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next_action": "Continue local/offline and manuscript work. Recheck and dispatch one paired canary only after the existing canonical R1 journal/export and current scoped credit evidence are supplied and all route, price, rights, and writer-quiescence gates pass."
+}

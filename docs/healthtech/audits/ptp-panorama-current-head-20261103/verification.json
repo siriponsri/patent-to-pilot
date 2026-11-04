@@ -1,0 +1,150 @@
+{
+  "format": "ptp-panorama-current-head-component-v1",
+  "observed_at_local": "2026-11-03T11:03:54.8276598+07:00",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "source_tree_changed_for_run": false
+  },
+  "freeze": {
+    "source_manifest": "docs/healthtech/audits/benchmark-expansion-20261101/ACQUISITION_RECEIPT.json",
+    "protocol": "docs/healthtech/research/DATASET_BENCHMARK_EXPANSION_PROTOCOL_20261101_TH_EN.md",
+    "protocol_sha256": "256a8b7033cb3fb1857337811fd201d063f760723dc64d11f1e2addc9505c0d7",
+    "pre_run_freeze_candidate": "cd7e5d364d529a001fc51f78c217c10d7d9c8945",
+    "official_validation_test_split_retained": true,
+    "application_overlap": 0,
+    "candidate_id_overlap_diagnostic": {
+      "PAR4PC": 149,
+      "PI4PC": 38
+    },
+    "method": "BM25-style lexical ranking over task-provided context and options",
+    "runtime_exclusions": [
+      "gold_answers",
+      "silver_answers",
+      "negative_answers",
+      "answer-derived queries"
+    ],
+    "retry_policy": "none",
+    "primary_endpoint": "macro gold option/paragraph hit@1"
+  },
+  "implementation": {
+    "script": "scripts/healthtech/run_panorama_lexical_baseline.py",
+    "script_sha256": "e99dbbc83edd1383df5bdef27692775a0abd69d4896f768842034b48b2f0197a"
+  },
+  "verification": {
+    "focused_benchmark_suite": {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "receipt": "focused-tests-20261103.xml",
+      "receipt_sha256": "ce9ff3765a2ac910d50b26eb37ec3a5b178b292d76a515a6c756d2a144a48679"
+    },
+    "full_current_candidate_suite": {
+      "tests": 615,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "receipt": "full-tests-current-head-20261103.xml",
+      "receipt_sha256": "e936f159f74bb9e86ecbb1b9bc3edd934319eb114f6dba99d15c59ddde01bd3f"
+    },
+    "json_readback": "PASS",
+    "markdown_local_links": "34 manuscript links, 4 supplemental links, 2 protocol links; 0 missing"
+  },
+  "runs": [
+    {
+      "task": "PAR4PC",
+      "split": "validation",
+      "source_file": "PAR4PC/validation.parquet",
+      "source_sha256": "d84d34779c2d741b9eb3aebd7db009836dc0d78ba4c78aee1cfa410f5092594d",
+      "rows": 3029,
+      "failed_rows": 0,
+      "failed_output_rate": 0.0,
+      "macro_gold_hit_at_1": 0.7335754374380984,
+      "macro_gold_hit_at_8": 1.0,
+      "singleton_exact_top1": 0.6815834767641996,
+      "singleton_rows": 1743,
+      "wall_seconds": 19.22767550003482,
+      "machine_time_per_row_seconds": 0.006347862495884721,
+      "summary_sha256": "526ee9a9af35c8abb34b2e7bb41602b25f5c9dffd7ab45902b74f1f9bc6a7744",
+      "predictions_sha256": "48ea158dfbceee23b8436531e7230e0d989b0b15431e5116d9b2f124c9ab4951"
+    },
+    {
+      "task": "PAR4PC",
+      "split": "test",
+      "source_file": "PAR4PC/test.parquet",
+      "source_sha256": "f1f8e33d32bfd2a6a2a7f1e740e94a6512c5d79598fdfb6b431829b21b6565e3",
+      "rows": 2896,
+      "failed_rows": 0,
+      "failed_output_rate": 0.0,
+      "macro_gold_hit_at_1": 0.7151243093922652,
+      "macro_gold_hit_at_8": 1.0,
+      "singleton_exact_top1": 0.6977018267530937,
+      "singleton_rows": 1697,
+      "wall_seconds": 18.091491399973165,
+      "machine_time_per_row_seconds": 0.006247061947504546,
+      "summary_sha256": "67c7892156442ab8f3eaddeb678d0e281d86a615bae65ea4522f56ca9ad95bd4",
+      "predictions_sha256": "1703eaf0e6ac14f98f2ffbbd986e474c50efb39d8451f1604b022499430874f7"
+    },
+    {
+      "task": "PI4PC",
+      "split": "validation",
+      "source_file": "PI4PC/validation.parquet",
+      "source_sha256": "692032d44a48d352430b9a22abab272f08fd429688402647b5f2180e9aeb35b0",
+      "rows": 3937,
+      "failed_rows": 0,
+      "failed_output_rate": 0.0,
+      "macro_gold_hit_at_1": 0.3776987553975108,
+      "macro_gold_hit_at_8": 1.0,
+      "singleton_exact_top1": 0.3776987553975108,
+      "singleton_rows": 3937,
+      "wall_seconds": 7.996743900002912,
+      "machine_time_per_row_seconds": 0.0020311770129547656,
+      "summary_sha256": "e274092deee25c6148aefec85f6c45f0fffd7f17564991bde50d8753f73600f0",
+      "predictions_sha256": "c1ccf07dc1b4d4349a887689a52da886e4a8b11512f518f3b9d9f68938bd2d11"
+    },
+    {
+      "task": "PI4PC",
+      "split": "test",
+      "source_file": "PI4PC/test.parquet",
+      "source_sha256": "fb3b5928018a0a8016f6d9ac913a00fae30f28042cfe71a9354860fccc41e10c",
+      "rows": 3402,
+      "failed_rows": 0,
+      "failed_output_rate": 0.0,
+      "macro_gold_hit_at_1": 0.4012345679012346,
+      "macro_gold_hit_at_8": 1.0,
+      "singleton_exact_top1": 0.4012345679012346,
+      "singleton_rows": 3402,
+      "wall_seconds": 6.479167399986181,
+      "machine_time_per_row_seconds": 0.00190451716636866,
+      "summary_sha256": "00b08e46e215801ac7679dfb20c6fc586afd3ca8ac3dd77aa06ce0b326f9bc8c",
+      "predictions_sha256": "1eb73b2d60d0ad6eface0d87b773dc2d1a0481ba729eed03d95076c61b5287bc"
+    }
+  ],
+  "helmers_diagnostic": {
+    "archive_file": "human_eval.zip",
+    "archive_md5": "83465f1a95805d963d4aabe085e2af98",
+    "archive_bytes": 13962880,
+    "script": "scripts/healthtech/run_helmers_diagnostic.py",
+    "script_sha256": "f9321de7b8806adca8de6ff2b9496dd49d78a05cd11e968f2f048f26ac668838",
+    "summary_sha256": "6e603ddf74c521a1c4122e5734603a381a4d37211983f1d9038a5f430dcdb89b",
+    "status": "PASS_DESCRIPTIVE_DIAGNOSTIC",
+    "targets": 10,
+    "judged_pairs": 450,
+    "positive_pairs": 258,
+    "macro_average_precision": 0.885450432614385,
+    "macro_auc": 0.880011844305422,
+    "claim_boundary": "Selected judged pool; no modern official dev/test split; not semantic device-patent gold or exhaustive recall"
+  },
+  "resource_mutations": {
+    "dataset_downloads": 0,
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "raw_predictions_staged_in_git": false
+  },
+  "claim_boundary": "Component benchmark evidence only; not adaptive dossier superiority, device-patent semantic gold, exhaustive recall, user validation, revenue, ROI, or willingness-to-pay."
+}

@@ -1,0 +1,12 @@
+{
+  "format": "ptp-fresh-gpu-device-diagnostic-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "run_id": "20261103-pepo-patent-current",
+  "status": "PASS_FRESH_GPU_DEVICE_RETRIEVAL_DIAGNOSTIC_NOT_DOSSIER_BINDING",
+  "remote_encode": "PASS_2_MODELS_4_ENCODE_PASSES_88_ROWS",
+  "retrieval": "PASS_3_METHODS_41_PATENTS_3_QUERIES_61_KNOWN_LINKS",
+  "metric_recheck": "PASS_MAX_ABS_DELTA_0_TOLERANCE_1E-12",
+  "dossier_integration": "NOT_BOUND_HTTP_PATH_STILL_MINILM",
+  "paid_api": "NOT_RUN_NO_LEDGER_MUTATION",
+  "research_boundary": "Development diagnostic; no semantic gold, adaptive superiority, or final-holdout claim"
+}

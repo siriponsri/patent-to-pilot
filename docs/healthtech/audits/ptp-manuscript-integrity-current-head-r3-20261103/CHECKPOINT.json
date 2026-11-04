@@ -1,0 +1,11 @@
+{
+  "format": "ptp-manuscript-integrity-current-head-r3-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "manuscript_sha256": "b21f7d38b49f873575a5c74ac46ac4c431c06122df999bda818e8d02aa2b213a",
+  "manuscript_bytes": 50363,
+  "relative_links_checked": 45,
+  "missing_relative_links": 0,
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_INTEGRITY_REBOUND_OWNER_REVIEW_PENDING",
+  "scientific_boundary": "Descriptive current-head evidence only; no adaptive superiority or semantic gold claim",
+  "submission": "NOT_SUBMITTED"
+}

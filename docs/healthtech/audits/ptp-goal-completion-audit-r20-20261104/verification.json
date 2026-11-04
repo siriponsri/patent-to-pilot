@@ -1,0 +1,69 @@
+{
+  "format": "ptp-goal-completion-audit-v20",
+  "recorded_local": "2026-11-04T07:30:09.7294230+07:00",
+  "recorded_utc": "2026-11-04T00:30:09.7309349Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "branch": "codex/patent-to-pilot-long-run-20261103",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "requirement_status": {
+    "G0": "COMPLETE_CONTRACT_AND_SCOPE",
+    "G1": "PARTIAL_RIGHTS_AND_SEMANTIC_GOLD_INCOMPLETE",
+    "G2": "PARTIAL_DEVELOPMENT_BASELINES_AND_EVALUATOR",
+    "G3": "PASS_CURRENT_HEAD_O1_HTTP_UI_ENGINEERING",
+    "G4": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+    "G5": "OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_VALIDATION_NOT_VALIDATED",
+    "G6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+    "G7": "PASS_CURRENT_HEAD_OFFLINE_RELEASE_READINESS_DIRTY_CANDIDATE_NOT_RELEASED",
+    "G8": "NOT_RUN_FUTURE_SCOPE",
+    "O1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+    "O2": "COMPLETE_CURRENT_HEAD_REMOTE_SHARDS_ENGINEERING_PARTIAL_RESEARCH",
+    "O3": "PASS_CURRENT_HEAD_LOCAL_GUIDED_API_DISPATCH_BLOCKED",
+    "O4": "PASS_CURRENT_HEAD_THREE_CASE_ENGINEERING_PARTIAL_RESEARCH"
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "owner_mcp_initial_limit_usd": 30.0,
+    "project_cumulative_ceiling_usd": 100.0,
+    "e2_prospective_allowance_usd": 1.0,
+    "mcp_account_total_credits_usd": 10.0,
+    "mcp_account_total_usage_usd": 0.0001464,
+    "dispatch_key_limit": null,
+    "dispatch_key_limit_remaining": null,
+    "dispatch_key_scope_bound": false,
+    "fresh_route_pricing": "NOT_REFRESHED",
+    "legacy_r1_history": "UNKNOWN_PRESERVED_NOT_A_CURRENT_E2_GATE",
+    "paid_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "ledger_mutations": 0
+  },
+  "verification": {
+    "full_offline_regression": "657 collected; 655 passed; 2 skipped; 0 failed; exit code 0",
+    "focused_metadata_regression": "20 passed; 0 failed; 0 skipped",
+    "json_readback": "PASS",
+    "git_diff_check": "PASS",
+    "independent_experiment_processes": 0,
+    "goal_platform_state": "UNKNOWN_NOT_CHANGED"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "runtime_window_reset": false,
+    "external_messages": 0,
+    "submission": false
+  },
+  "evidence": [
+    "docs/healthtech/audits/ptp-offline-regression-r19-20261104/verification.json",
+    "docs/healthtech/audits/ptp-api-metadata-recheck-r12-20261104/verification.json",
+    "docs/healthtech/audits/ptp-api-openrouter-mcp-recheck-r2-20261104/verification.json",
+    "docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json",
+    "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md"
+  ],
+  "goal_closed": false,
+  "next": "Obtain one permitted current scoped credit/remaining-limit observation only if paid comparison remains required; otherwise continue owner review and manuscript/release preparation without reopening completed offline work."
+}

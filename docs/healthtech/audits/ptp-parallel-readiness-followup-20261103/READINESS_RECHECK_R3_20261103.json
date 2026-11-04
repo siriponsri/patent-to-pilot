@@ -1,0 +1,119 @@
+{
+  "format": "ptp-parallel-readiness-recheck-r3-v1",
+  "observed_at_local": "2026-11-03T05:08:07.7641766+07:00",
+  "observed_at_utc": "2026-11-02T22:08:07.7705808Z",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "source_tree_changed_for_this_check": false,
+    "dirty_source_paths": []
+  },
+  "review_inputs": {
+    "readiness_review": {
+      "path": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/READINESS_REVIEW_TH.md",
+      "sha256": "d1dcab3cb707da1e9c16fe5fa3b2b112cab37c838695e880c89802634326422c"
+    },
+    "evidence_index": {
+      "path": "C:/Users/User/Documents/Codex/2026-11-02/task/ptp-parallel-readiness-review-20261102/evidence-index.json",
+      "sha256": "c682e8360c0fca132b4f05a1bb70ccf89cfe544bd39e1b9cc900745ad11b2ca6"
+    }
+  },
+  "process_state": {
+    "relevant_local_experiment_processes": 0,
+    "batch_started": false,
+    "runner_modified_during_batch": false,
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "failure_accounting": {
+    "status": "PASS_CURRENT_HEAD_REPAIR_ALREADY_PRESENT",
+    "source": "scripts/healthtech/run_real_baselines.py",
+    "implementation_commit": "0d092019cd7b9850f9b32988ca8a5c0f9b987eaa",
+    "regression_hardening_commit": "323bcc5d39ad5374ec8bfce8007d24c1881eae86",
+    "source_sha256": "1458939E49A39999D3009893AC5D13C5F69ADCB01150871B62CEFD7C5AB0CD3F",
+    "verified_behaviors": [
+      "attempt is appended before the external action",
+      "partial attempt history is preserved",
+      "measured wall and CPU elapsed time is retained on failure",
+      "unknown resource fields are explicit PARTIAL_UNKNOWN",
+      "method-level failure does not append a synthetic zero-cost attempt",
+      "historical receipts and costs were not rewritten"
+    ],
+    "accessible_historical_impact": "NONE_KNOWN",
+    "impact_limit": "Accessible audit receipts do not establish completeness of unavailable private journals; no retrospective cost was inferred."
+  },
+  "tests": {
+    "focused": {
+      "command": "rtk proxy python -B -m pytest -ra --junitxml docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/failure-accounting-tests-r3-20261103.xml tests/test_healthtech_real_baselines.py tests/test_healthtech_repairs.py tests/test_healthtech_long_run_analysis.py tests/test_healthtech_long_run_report.py tests/test_healthtech_controller.py tests/test_healthtech_cross_cohort.py tests/test_healthtech_matched_budget_prefix.py",
+      "status": "PASS",
+      "passed": 52,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "warnings": 1,
+      "junit_sha256": "570EC04DC694B66831704B89E9B14234B65D9310F974E9C829C141816FE04BD8"
+    },
+    "full_python": {
+      "command": "rtk proxy python -B -m pytest -ra --junitxml docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/full-tests-r3-20261103.xml",
+      "status": "PASS",
+      "passed": 599,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "warnings": 2,
+      "junit_sha256": "822C7627BFA5AB4AC475A66C254439DE7BB3DBC0CB8D6FCF998FE7BA15762D6F",
+      "skip_limit": "Pinned local tokenizer artifact unavailable; this is not converted to PASS."
+    }
+  },
+  "budget_review": {
+    "status": "DESCRIPTIVE_REALIZED_QUALITY_RESOURCE_FRONTIER",
+    "shared_constraints": [
+      "frozen corpus and eligible queries",
+      "references and group definitions",
+      "same encoder/reranker bundle",
+      "K=20",
+      "candidate_depth=41",
+      "rerank_depth=41",
+      "same failure and evaluator boundary"
+    ],
+    "realized_units_current_head": {
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123, "macro_recall_at_20": 0.498802},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369, "macro_recall_at_20": 0.568912},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205, "macro_recall_at_20": 0.498802},
+      "HT-B4_offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8, "macro_recall_at_20": 0.498802}
+    },
+    "equal_total_budget_claim": "NOT_SUPPORTED",
+    "interpretation": "Shared inputs and per-call depth are not matched total budgets. B4 controller steps are a separate action unit and are not interchangeable with query/rerank pairs.",
+    "historical_posthoc_prefix": {
+      "source_candidate": "891f3b3",
+      "query_calls": 3,
+      "rerank_pairs": 123,
+      "methods": {
+        "HT-B1": 0.49880241951853205,
+        "HT-B2_prefix_1": 0.49880241951853205,
+        "HT-B3_prefix_1": 0.49880241951853205
+      },
+      "status": "POSTHOC_DESCRIPTIVE_NOT_CURRENT_HEAD_FINAL_ENDPOINT",
+      "b4": "EXCLUDED_CONTROLLER_STEPS_NOT_DIRECTLY_COMPARABLE"
+    }
+  },
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "B82752F5DAE91EDF148F56025882B650BA170CC52960C9A9728DA9C8F89924C3",
+    "status": "CURRENT_TEXT_ALREADY_STATES_UNEQUAL_REALIZED_BUDGETS_AND_NO_ADAPTIVE_SUPERIORITY_CLAIM",
+    "edit_in_this_checkpoint": false
+  },
+  "goal_disposition": {
+    "engineering": "COMPLETE",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_FRONTIER_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript_readiness": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+    "next_action": "Stop at checkpoint; preserve candidate-bound receipts and continue only with owner review or independently authorized offline work."
+  }
+}

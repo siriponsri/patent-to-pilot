@@ -1,0 +1,68 @@
+[
+  {
+    "path": "private_temp://ptp-http-local-20261103/corpus-bundle",
+    "manifest_sha256": "e69ffe77ad463ba17512e5415933a15a4e3e5eb0609730b5649b5e417525503e",
+    "status": "complete",
+    "rows": 41,
+    "dimension": 384,
+    "shards": 3,
+    "model": {
+      "model_artifact": {
+        "filename": "model_quint8_avx2.onnx",
+        "sha256": "b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21"
+      },
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "tokenizer_artifact": {
+        "filename": "tokenizer.json",
+        "sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      }
+    },
+    "config": {
+      "backend": "onnx_cpu_quantized_avx2",
+      "batch_size": 4,
+      "dtype": "<f4",
+      "e5_prefix_policy": null,
+      "encoder_kind": "minilm_onnx",
+      "max_length": 256,
+      "norm_policy": "l2",
+      "patembed_prompt_name": null,
+      "representation": "mean_pool_l2_normalized",
+      "role": "passage",
+      "shard_size": 20
+    }
+  },
+  {
+    "path": "private_temp://ptp-http-local-20261103/query-bundle",
+    "manifest_sha256": "5c1b83583a18e6316d8cbd47c2d9ca17f5ba8efeed07e6d64bf58c8ed8b707f9",
+    "status": "complete",
+    "rows": 3,
+    "dimension": 384,
+    "shards": 1,
+    "model": {
+      "model_artifact": {
+        "filename": "model_quint8_avx2.onnx",
+        "sha256": "b941bf19f1f1283680f449fa6a7336bb5600bdcd5f84d10ddc5cd72218a0fd21"
+      },
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "tokenizer_artifact": {
+        "filename": "tokenizer.json",
+        "sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      }
+    },
+    "config": {
+      "backend": "onnx_cpu_quantized_avx2",
+      "batch_size": 3,
+      "dtype": "<f4",
+      "e5_prefix_policy": null,
+      "encoder_kind": "minilm_onnx",
+      "max_length": 256,
+      "norm_policy": "l2",
+      "patembed_prompt_name": null,
+      "representation": "mean_pool_l2_normalized",
+      "role": "query",
+      "shard_size": 3
+    }
+  }
+]

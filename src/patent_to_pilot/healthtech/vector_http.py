@@ -178,6 +178,8 @@ class ConfiguredVectorSearch:
             "query_bundle_manifest_sha256": sha256_file(self.query_bundle.root / "manifest.json"),
             "config_sha256": self.config_sha256,
             "billing_status": "not_billable_local",
+            "estimated_usd": 0.0,
+            "estimate_basis": "not_billable_local",
             "actual_usd": 0.0,
             "reserved_usd": 0.0,
             "unknown_usd": 0.0,

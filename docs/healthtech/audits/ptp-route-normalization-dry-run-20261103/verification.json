@@ -1,0 +1,71 @@
+{
+  "format": "ptp-route-normalization-dry-run-verification-v1",
+  "run_at_local": "2026-11-03T06:13:20+07:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "source_patch_uncommitted": true,
+  "active_experiment_processes": 0,
+  "input_artifacts": {
+    "owner_private_pack_alias": "private-fda-canary-20261031/evidence-pack.json",
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "pack_file_sha256": "0b2bef9fcf8c3eff6106a1786885e4407ea4b8c9e628397ab8e52a392204ced9",
+    "exact_messages_sha256": "06748e94a0125afdb3925e73b2f59ea073d779a8422f847a765ef91ba463ea61",
+    "model_snapshot_sha256": "2ec5fcb0c2127000351a39e8487b4b7d654966c28dc1b46a39fe8c5a5810805a",
+    "model": "qwen/qwen3-32b",
+    "snapshot_upstream_provider": "DeepInfra"
+  },
+  "payload_preflight": {
+    "status": "PASS",
+    "cases": 3,
+    "rights_decision": "ALLOWED_WITH_ATTRIBUTION",
+    "manifest_route": "deepinfra",
+    "snapshot_route": "DeepInfra",
+    "manifest_sha256": "c298b1027e31a270c7db8956cf36a000c854f5c7374e8bb75241881f84729843",
+    "model_visible_raw_sources": false,
+    "model_visible_evaluator_labels": false,
+    "model_visible_credentials": false,
+    "message_hashes_bound": true,
+    "different_route_rejected": true
+  },
+  "runner": {
+    "mode": "dry-run",
+    "status": "DRY_RUN_NOT_EXECUTED",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "receipt_written": true,
+    "receipt_sha256": "20e873214af8acfb4e210aba642f5cbd180ff47475dca782cae35fd5d8f175bf"
+  },
+  "local_guard": {
+    "module_added": true,
+    "runner_bound": true,
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "window_end_utc": "2026-11-15T16:59:00Z",
+    "shared_os_slot": true,
+    "receipt_no_overwrite": true,
+    "new_local_model_run": "NOT_RUN_NO_CURRENT_MODEL_ROOT_OR_REMOTE_ALLOCATION"
+  },
+  "ledger_gate": {
+    "canonical_registry_path": "LOCALAPPDATA/PatentToPilot/healthtech/budget-ledgers/<authorization-id>.json",
+    "canonical_registry_present": false,
+    "current_credit_snapshot_present": false,
+    "historical_actual_debit_usd": 0.0001464,
+    "historical_unknown_pending_attempts": 0,
+    "replacement_or_zero_ledger_created": false,
+    "paid_dispatch": "BLOCKED_LOCAL"
+  },
+  "tests": {
+    "focused": "26 passed, 0 failed, 0 skipped",
+    "full_python": "611 passed, 0 failed, 0 errors, 1 skipped",
+    "compileall": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "secrets_read": false
+  },
+  "owner_input_required_once": "Exact existing canonical R1 journal location or sanitized all-attempt export, plus current authorized account-credit/billing snapshot if the approved integration cannot provide it. Do not send a key or secret."
+}

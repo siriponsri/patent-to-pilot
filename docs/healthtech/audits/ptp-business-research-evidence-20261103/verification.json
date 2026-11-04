@@ -1,0 +1,138 @@
+{
+  "format": "ptp-business-research-evidence-checkpoint-v1",
+  "goal_reused": true,
+  "observed_local_date": "2026-11-03",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree": "DIRTY_EXISTING_OWNER_CLAUDE_LUNA_DOCUMENTATION_AUDIT_AND_SOURCE_PATCH_WORK",
+    "owner_claude_luna_preserved": true
+  },
+  "active_job_check": {
+    "relevant_local_experiment_processes": 0,
+    "ssh_process_observed": "Codex remote control-plane only; no project experiment command",
+    "new_experiment_started": false,
+    "duplicate_run_opened": false
+  },
+  "engineering_operational_evidence": {
+    "cases": ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"],
+    "case_count": 3,
+    "source_inspection_http_200": "3/3",
+    "evidence_count_per_case": [5, 5, 5],
+    "candidate_count_per_case": [34, 34, 41],
+    "dense_candidate_count_per_case": [33, 33, 41],
+    "history_edit_status_200": "3/3",
+    "history_versions": "1 -> 2 for all cases",
+    "exports": {
+      "json": "3/3 at version 2",
+      "thai": "3/3 at version 2",
+      "english": "3/3 at version 2"
+    },
+    "vector_errors": 0,
+    "semantic_correctness_evaluated": false
+  },
+  "local_generation": {
+    "model": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "schema_valid": "3/3",
+    "prompt_tokens_total": 3073,
+    "output_tokens_total": 1054,
+    "total_tokens": 4127,
+    "mean_generation_latency_seconds": 38.95953040903745,
+    "elapsed_seconds": 120.954014,
+    "gpu": "Tesla V100-SXM2-32GB",
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "semantic_or_retrieval_quality_evaluated": false
+  },
+  "research_metrics": {
+    "offline_frontier": {
+      "HT-B0a": {"macro_recall_at_20": 0.4427394146064223, "query_calls": 3, "rerank_pairs": 0, "failed_queries": 0},
+      "HT-B0b": {"macro_recall_at_20": 0.6622417082775139, "query_calls": 3, "rerank_pairs": 0, "failed_queries": 0},
+      "HT-B1": {"macro_recall_at_20": 0.49880241951853205, "query_calls": 3, "rerank_pairs": 123, "failed_queries": 0},
+      "HT-B2": {"macro_recall_at_20": 0.5689116226200625, "query_calls": 9, "rerank_pairs": 369, "failed_queries": 0},
+      "HT-B3": {"macro_recall_at_20": 0.49880241951853205, "query_calls": 5, "rerank_pairs": 205, "failed_queries": 0},
+      "HT-B4-offline": {"macro_recall_at_20": 0.49880241951853205, "micro_recall_at_20": 0.47540983606557374, "query_calls": 5, "rerank_pairs": 205, "controller_steps": 8, "failed_devices": 0}
+    },
+    "matched_first_action": {
+      "query_calls": 3,
+      "rerank_pairs": 123,
+      "HT-B1_macro_recall_at_20": 0.49880241951853205,
+      "HT-B2_prefix_1_macro_recall_at_20": 0.49880241951853205,
+      "HT-B3_prefix_1_macro_recall_at_20": 0.49880241951853205,
+      "observed_range": 0.0,
+      "interpretation": "POSTHOC_DESCRIPTIVE_NOT_ADAPTIVE_SUPERIORITY"
+    },
+    "component_diagnostics": {
+      "PatEmbed_base": {"macro_recall_at_100": 0.422525, "micro_recall_at_100": 0.422319, "macro_ndcg_at_100": 0.34883},
+      "multilingual_e5_base": {"macro_recall_at_100": 0.287414, "micro_recall_at_100": 0.287296, "macro_ndcg_at_100": 0.244781},
+      "PANORAMA_PAR4PC_hit_at_1_validation_test": [0.733575, 0.715124],
+      "PANORAMA_PI4PC_hit_at_1_validation_test": [0.377699, 0.401235],
+      "PANORAMA_macro_hit_at_8_all_splits": 1.0,
+      "Helmers_macro_AP": 0.88545,
+      "Helmers_macro_AUC": 0.880012,
+      "semantic_device_patent_gold": false
+    },
+    "research_status": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE"
+  },
+  "business_value": {
+    "observed_machine_seconds_per_case": 71.983,
+    "mean_local_vector_seconds_per_case": 33.023,
+    "mean_local_qwen_seconds_per_case": 38.96,
+    "human_review_time_observed": false,
+    "gpu_rate_observed": false,
+    "paid_api_cost_observed": false,
+    "scenario_unit_cost_usd": {"lower": 12.51999528, "central": 50.05998583, "upper": 200.05998583},
+    "external_validation": "NOT_RUN",
+    "revenue_willingness_to_pay_roi_claimed": false,
+    "interpretation": "OPERATIONAL_PROXY_AND_SCENARIO_ONLY"
+  },
+  "paid_api": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "canonical_r1_history_available": false,
+    "history_completeness_proven": false,
+    "current_scoped_v2_credit_available": false,
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids_created": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false,
+    "missing_non_secret_evidence": ["existing canonical R1 journal/history or sanitized all-attempt export", "current scoped account/key credit snapshot"]
+  },
+  "resource_mutations": {
+    "new_model_runs": 0,
+    "benchmark_reruns": 0,
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  },
+  "source_receipts": {
+    "docs/healthtech/audits/ptp-local-http-vector-20261103/verification.json": {"sha256": "c71625aa749c04e73a273b1ad0393a701498ca7086dd7d351695e0b9f45ce330", "bytes": 9597},
+    "docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/verification.json": {"sha256": "b04c9294c997c648f85ae57e9d6c56357c83639695c38ff8b2b9b6d3db7e3b4a", "bytes": 4753},
+    "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json": {"sha256": "ff1c8184f526732fb14c6f6ed386aa43da9e4bbd0ba68a599123e43fe424dab0", "bytes": 6704},
+    "docs/healthtech/audits/ptp-current-head-matched-budget-20261103/verification.json": {"sha256": "e7afc8826a5866e5720ab6d864d55258d61c4db225c14ebf50da15827e3651aa", "bytes": 2093},
+    "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json": {"sha256": "6c0f14bbf0aa5b170a431e8dd95080f0e70ba482eacea25230345679d9116e8d", "bytes": 6207},
+    "docs/healthtech/audits/ptp-business-value-scenario-20261103/verification.json": {"sha256": "7ce3fec371373feb1cc3f757ca7a46dd38a6dc16e8f1e112b5631065277882e4", "bytes": 1771},
+    "docs/healthtech/audits/ptp-manuscript-integrity-current-r2-20261103/verification.json": {"sha256": "33c598ca68e4855b3920acfd7e26642b7fd4bcbd1bfa8baff8fcf91be90a35b4", "bytes": 1362}
+  },
+  "decision": {
+    "engineering": "COMPLETE_CURRENT_HEAD_OPERATIONAL_SLICE",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript_readiness": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+    "overall": "PARTIAL_NOT_COMPLETE"
+  },
+  "next_action": "Continue local/offline and manuscript work; obtain the two existing non-secret paid-gate evidence items once, then recheck and reserve one paired canary only if every gate passes."
+}

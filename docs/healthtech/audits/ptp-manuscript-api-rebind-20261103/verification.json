@@ -1,0 +1,38 @@
+{
+  "format": "ptp-manuscript-api-rebind-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "manuscript": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+  "api_receipt": "docs/healthtech/audits/ptp-api-parallel-recheck-20261103/preflight-current-pack.json",
+  "api_verification": "docs/healthtech/audits/ptp-api-parallel-recheck-20261103/verification.json",
+  "status": "PASS_DOCUMENTATION_BOUNDARY_REBIND_PAID_GATE_UNCHANGED",
+  "current_head_preflight": {
+    "cases": 3,
+    "rights_decision": "ALLOWED_WITH_ATTRIBUTION",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "paid_dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "canonical_r1_journal_or_registry": "MISSING",
+    "current_scoped_credit_snapshot": "MISSING",
+    "attempt_ids_created": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "stale_pack": {
+    "status": "REJECTED_BEFORE_OUTPUT_OR_NETWORK",
+    "pooled_with_current_head": false
+  },
+  "manuscript_sha256": "6823a0695f073029a11dc43c99b09272f285bbc2100906b9e471135cdbf0de83",
+  "manuscript_bytes": 40253,
+  "local_links_checked": 28,
+  "missing_local_links": 0,
+  "link_check": "PASS",
+  "json_validation": "PASS",
+  "focused_regression_exit_code": 0,
+  "active_experiment_processes_after_checkpoint": 0,
+  "owner_review_required": true,
+  "submitted": false
+}

@@ -1,0 +1,13 @@
+{
+  "format": "ptp-business-research-evidence-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_EVIDENCE_BOUND_OPERATIONAL_COMPLETE_RESEARCH_NOT_ESTIMABLE",
+  "audit": "docs/healthtech/audits/ptp-business-research-evidence-20261103/README.md",
+  "verification": "docs/healthtech/audits/ptp-business-research-evidence-20261103/verification.json",
+  "engineering": "3/3 local HTTP cases and 3/3 local guided outputs bound to current HEAD",
+  "research": "B0a-B4 and matched first-action values are descriptive; semantic gold/final holdout/equal realized budget comparison absent",
+  "business": "71.983 observed machine seconds per case; scenario-only; no external validation or ROI claim",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION; canonical R1 history and current scoped credit snapshot missing",
+  "resource_mutations": "provider 0; reservation 0; attempts 0; GPU 0 this checkpoint; ledger 0; reset false",
+  "next_action": "Resume from verification.json and reconcile the two non-secret paid-gate evidence items once"
+}

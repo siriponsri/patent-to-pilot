@@ -1,0 +1,69 @@
+{
+  "format": "ptp-resume-e2-verification-v7",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "commands": [
+    {
+      "command": "npm test -- --runInBand",
+      "scope": "frontend/healthtech-web",
+      "exit_code": 0,
+      "result": "74 passed; 0 failed; 0 skipped"
+    },
+    {
+      "command": "npm run test:integration:http",
+      "scope": "frontend/healthtech-web",
+      "exit_code": 0,
+      "result": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT; source inspection, edit, history 1 to 2, JSON/TH/EN export; provider calls 0; paid cost USD0.00"
+    },
+    {
+      "command": "npm run test:integration:abbott",
+      "scope": "frontend/healthtech-web",
+      "exit_code": 1,
+      "result": "NOT_RUN_ASSET_GATED before case preparation because required non-secret environment paths were unset"
+    },
+    {
+      "command": "python -m pytest -q --junitxml=full-tests-python.xml",
+      "scope": "repository Python suite",
+      "exit_code": 0,
+      "result": "646 total; 644 passed; 0 failed; 0 errors; 2 skipped"
+    },
+    {
+      "command": "python -m compileall -q src scripts tests",
+      "scope": "repository Python source",
+      "exit_code": 0,
+      "result": "PASS"
+    }
+  ],
+  "candidate": {
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "worktree_dirty": true,
+    "unmerged_paths": 0
+  },
+  "journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity": "ok",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": 0.0001464,
+    "prospective_allowance_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutation": false
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "route_price_refreshed": false,
+    "provider_calls": 0,
+    "reservations": 0,
+    "pending_retries": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "limitations": [
+    "The Abbott browser harness remains asset-gated and is not evidence of failure in the product path.",
+    "The Python suite validates current-head engineering only; it does not establish adaptive superiority or a final scientific holdout.",
+    "No independent users, revenue, ROI, willingness-to-pay, or external business validation were measured.",
+    "The candidate is dirty and not a released commit."
+  ]
+}

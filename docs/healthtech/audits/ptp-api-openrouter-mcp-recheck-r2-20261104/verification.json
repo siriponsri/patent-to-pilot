@@ -1,0 +1,78 @@
+{
+  "format": "ptp-openrouter-mcp-owner-config-followup-v1",
+  "observed_local": "2026-11-04T06:57:01.6071947+07:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "goal": "resume_existing_patent_to_pilot_goal",
+  "cli": {
+    "command": "codex mcp list; codex mcp get openrouter",
+    "openrouter_enabled": true,
+    "transport": "streamable_http",
+    "auth_mode": "OAuth",
+    "login_process_polled": 86956,
+    "login_process_live_at_poll": false,
+    "credit_or_cap_returned": false
+  },
+  "runtime_action_discovery": {
+    "openrouter_specific_actions_exposed": 0,
+    "get_credits_invoked": true,
+    "generic_openrouter_resource_discovered": false,
+    "invented_tool_call": false,
+    "helper_mode": "ephemeral_read_only",
+    "helper_thread_id": "01a1a3d9-6615-7f82-8e89-a7f2e706c2bc"
+  },
+  "mcp_credit_observation": {
+    "observed_local": "2026-11-04T06:58:56.9561128+07:00",
+    "observed_utc": "2026-11-03T23:58:56.9604548Z",
+    "action": "get-credits",
+    "status": "success",
+    "scope": "account_level",
+    "response_timestamp_present": false,
+    "total_credits": 10.0,
+    "total_usage": 0.0001464,
+    "exact_key_remaining_limit": null,
+    "key_scope": null,
+    "explicit_unlimited": null,
+    "receipt": "mcp-get-credits.json"
+  },
+  "e2_reconciliation": {
+    "journal_read_only": true,
+    "integrity_check": "ok",
+    "legacy_settled_receipts": 4,
+    "legacy_actual_nano_usd": 146400,
+    "legacy_actual_usd": 0.0001464,
+    "operational_attempt_rows": 0,
+    "attempt_context_rows": 0,
+    "mcp_total_usage_matches_legacy_actual": true,
+    "history_completeness_proven": false,
+    "e2_journal_written": false
+  },
+  "documentation_rebind": {
+    "long_run_readme": "docs/healthtech/long-runs/README.md",
+    "authorization_budget": "docs/healthtech/long-runs/AUTHORIZATION_AND_BUDGET.md",
+    "readme_relative_links_checked": 31,
+    "authorization_relative_links_checked": 4,
+    "missing_links": 0,
+    "historical_policy_text_preserved": true
+  },
+  "owner_supplied_provider_cap": {
+    "first_round_mcp_key_limit_usd": 30.0,
+    "verified_by_cli": false,
+    "project_budget_changed": false,
+    "e2_ledger_changed": false
+  },
+  "paid_gate": {
+    "status": "PARTIAL_ACCOUNT_CREDIT_RECONCILED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "history_reset": false,
+    "budget_reset": false
+  },
+  "next_evidence": [
+    "sanitized get-credits receipt from authenticated MCP action",
+    "exact key remaining limit or explicit unlimited status",
+    "observation time and key scope",
+    "fresh route pricing inside the admission window"
+  ]
+}

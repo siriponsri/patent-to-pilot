@@ -1,0 +1,43 @@
+{
+  "format": "ptp-openrouter-metadata-recheck-v1",
+  "status": "PASS_READ_ONLY_METADATA_PAID_GATE_UNCHANGED",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "observed_at_utc": "2026-11-03T07:01:20.629669Z",
+  "key_endpoint": {
+    "http_status": 200,
+    "response_observed": true,
+    "credential_value_printed": false
+  },
+  "usage": {
+    "lifetime_usd": 0.0001464,
+    "daily_usd": 0.0,
+    "weekly_usd": 0.0,
+    "monthly_usd": 0.0
+  },
+  "key": {
+    "management_key": false,
+    "account_scope": "NOT_RECONCILED",
+    "current_credit_snapshot": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED"
+  },
+  "r1": {
+    "history_completeness": "NOT_PROVEN",
+    "actual_spend": "NOT_RECONCILED",
+    "unresolved_exposure": "NOT_RECONCILED"
+  },
+  "decision": {
+    "live_admission_enabled": false,
+    "dispatch": "BLOCKED_BEFORE_RESERVATION",
+    "canonical_r1_journal_present": false,
+    "current_scoped_credit_present": false
+  },
+  "resource_mutations": {
+    "provider_generation_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "private_receipt_sha256": "488dde473acfdd9d459c64b7a2cb9d6f868047401d2a2dae930886bda015e034"
+}

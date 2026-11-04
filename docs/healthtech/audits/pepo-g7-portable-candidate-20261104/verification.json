@@ -1,0 +1,50 @@
+{
+  "format": "ptp-g7-portable-candidate-checkpoint-v1",
+  "observed_utc": "2026-11-03T23:43:51.7513342Z",
+  "goal": "Patent-to-Pilot existing goal",
+  "queue_item": "portable_candidate_instructions",
+  "status": "COMPLETE_CURRENT_CANDIDATE",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "tree": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "installed_candidate": {
+    "wheel": "patent_to_pilot-0.1.0-py3-none-any.whl",
+    "bytes": 237355,
+    "sha256": "70b8b0d50d60ec4540d640864cee42495daaa68ceee8618c583dffe89b46784d",
+    "install_mode": "--no-index --no-deps",
+    "tests": {"passed": 102, "failed": 0, "skipped": 0},
+    "outputs": ["dossier.json", "dossier.md", "dossier_th.md", "acquisition_events.jsonl", "manifest.json"]
+  },
+  "documentation": {
+    "path": "README.md",
+    "source_checkout_surface": "src/ scripts/healthtech/ authored fixtures tests",
+    "installed_surface": "verified Python wheel",
+    "private_recovery": "owner-controlled local evidence store referenced by sanitized manifests and hashes",
+    "clean_machine_dependencies": "NOT_PROVEN",
+    "public_release": "NOT_PUBLISHED",
+    "restricted_payloads_in_git": false,
+    "credentials_in_git": false
+  },
+  "verification": {
+    "markdown_links": {"checked": 15, "missing": 0},
+    "diff_check": "PASS",
+    "wheel_receipt": "MATCHED"
+  },
+  "resource_mutations": {
+    "paid_calls": 0,
+    "gpu_jobs": 0,
+    "downloads": 0,
+    "ledger_mutations": 0,
+    "reservations": 0,
+    "merge_push_publish": false
+  },
+  "remaining": {
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NO_FINAL_SEMANTIC_HOLDOUT",
+    "paid_api": "PENDING_CURRENT_SCOPED_CREDIT",
+    "owner_review": "REQUIRED_BEFORE_SUBMISSION",
+    "overall_goal_closed": false
+  }
+}

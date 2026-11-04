@@ -1,0 +1,291 @@
+--- before/src/patent_to_pilot/providers/metadata_observation.py
++++ after/src/patent_to_pilot/providers/metadata_observation.py
+@@ -66,6 +66,8 @@
+ def sanitize_key(data):
+     if not isinstance(data, dict):
+         raise ObservationError("INVALID_KEY_METADATA")
++    # Preserve presence before normalization: absent != provider-explicit null.
++    presence = {k: k in data for k in ('limit', 'limit_remaining', 'budgets', 'effective_budget')}
+     result = {k: decimal_field(data.get(k), signed=k == "limit_remaining", nullable=k in {"limit", "limit_remaining"})
+               for k in ("limit", "limit_remaining", "usage")}
+     for k in ("usage_daily", "usage_weekly", "usage_monthly", "byok_usage"):
+@@ -90,7 +92,62 @@
+             if not isinstance(value, str) or len(value) > 256:
+                 raise ObservationError("INVALID_SCOPE_METADATA")
+             result[k + "_sha256"] = hashlib.sha256(value.encode()).hexdigest()
++    result['field_presence'] = presence
++    result['key_limit_state'] = key_limit_state(result)
+     return result
++
++
++def key_limit_state(metadata):
++    """Interpret only presence-preserving observations, never legacy v1 nulls.
++
++    A key cap is independent of account balance and applicable guardrail budgets.
++    OpenRouter /api/v1/key documents explicit null as unlimited.
++    """
++    presence = metadata.get('field_presence', {})
++    if not isinstance(presence, dict) or not all(presence.get(k) is True for k in ('limit', 'limit_remaining')):
++        return 'UNAVAILABLE_FIELD_PRESENCE'
++    limit, remaining = metadata.get('limit'), metadata.get('limit_remaining')
++    if limit is None and remaining is None:
++        return 'UNLIMITED'
++    if limit is None or remaining is None:
++        return 'INCONSISTENT'
++    # Values have already passed strict numeric validation in sanitize_key.
++    if Decimal(remaining) > Decimal(limit):
++        return 'INCONSISTENT'
++    return 'EXHAUSTED' if Decimal(remaining) <= 0 else 'LIMITED'
++
++
++def availability_summary(result):
++    """Explain missing prerequisites without granting admission or inventing balance."""
++    metadata = result.get('key_metadata', {})
++    state = key_limit_state(metadata)
++    presence = metadata.get('field_presence', {})
++    budgets = metadata.get('budgets')
++    effective = metadata.get('effective_budget')
++    limits = []
++    if state in {'LIMITED', 'EXHAUSTED'}:
++        limits.append(Decimal(metadata['limit_remaining']))
++    if isinstance(budgets, list):
++        limits.extend(Decimal(row['remaining_usd']) for row in budgets)
++    if effective is not None:
++        limits.append(Decimal(effective['remaining_usd']))
++    budgets_known = (presence.get('budgets') is True and isinstance(budgets, list)
++                     and presence.get('effective_budget') is True)
++    blocked = []
++    if state not in {'LIMITED', 'UNLIMITED'}:
++        blocked.append('KEY_LIMIT_' + state)
++    if not budgets_known:
++        blocked.append('APPLICABLE_BUDGETS_UNAVAILABLE')
++    if limits and min(limits) <= 0:
++        blocked.append('APPLICABLE_KEY_OR_BUDGET_EXHAUSTED')
++    if 'remaining_credits_usd' not in result.get('account_credits', {}):
++        blocked.append('ACCOUNT_CREDIT_NOT_OBSERVED_BY_THIS_COLLECTOR')
++    if result.get('account_scope_binding') != 'RECONCILED':
++        blocked.append('ACCOUNT_KEY_BINDING_NOT_RECONCILED')
++    return {'key_limit_state': state, 'applicable_budgets_observed': budgets_known,
++            'observed_key_or_budget_remaining_usd': str(min(limits)) if limits else None,
++            'blocked_prerequisites': blocked, 'live_admission_enabled': False,
++            'scope': 'metadata explanation only; freshness, canonical E2, rights and route checks remain required'}
+ 
+ 
+ def endpoint_request(key, endpoint):
+@@ -127,7 +184,7 @@
+     started = datetime.now(timezone.utc).isoformat()
+     status, data = endpoint_request(key, "/api/v1/key")
+     result = {
+-        "format": "ptp-openrouter-metadata-observation-v1", "provider": "openrouter", "currency": "USD",
++        "format": "ptp-openrouter-metadata-observation-v2", "provider": "openrouter", "currency": "USD",
+         "started_at_utc": started, "key_scope": "sha256:" + hashlib.sha256(key.encode()).hexdigest(),
+         "key_endpoint": status, "account_scope": None, "account_scope_binding": "NOT_RECONCILED",
+         "account_credits": {"status": "NOT_REQUESTED_MANAGEMENT_KEY_REQUIRED"},
+@@ -145,6 +202,7 @@
+                 used = decimal_field(credits.get("total_usage"))
+                 result["account_credits"].update(total_credits_usd=purchased, total_usage_usd=used,
+                                                remaining_credits_usd=str(Decimal(purchased) - Decimal(used)))
++    result["availability"] = availability_summary(result)
+     result["completed_at_utc"] = datetime.now(timezone.utc).isoformat()
+     result["receipt_sha256"] = hashlib.sha256(json.dumps(result, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+     return result
+--- /dev/null
++++ after/src/patent_to_pilot/providers/credit_from_metadata.py
+@@ -0,0 +1,75 @@
++"""Join a scoped account observation to fresh, presence-preserving key metadata.
++
++No credentials, network, ledger mutations or admission authority. Account/key
++binding must be asserted by the observation source; matching usage is not proof.
++"""
++from datetime import datetime, timezone
++from decimal import Decimal
++import hashlib
++import json
++
++from .credit import FORMAT, MAX_AGE_SECONDS, normalize_credit, utc_time, available_money
++from .metadata_observation import availability_summary
++
++
++def credit_from_metadata(metadata, account, *, now=None):
++    now = now or datetime.now(timezone.utc)
++    if not isinstance(metadata, dict) or metadata.get('format') != 'ptp-openrouter-metadata-observation-v2':
++        raise ValueError('presence-preserving v2 key observation required')
++    unsigned = {k:v for k,v in metadata.items() if k != 'receipt_sha256'}
++    digest = hashlib.sha256(json.dumps(unsigned,sort_keys=True,separators=(',',':')).encode()).hexdigest()
++    if metadata.get('receipt_sha256') != digest:
++        raise ValueError('metadata observation hash mismatch')
++    endpoint = metadata.get('key_endpoint', {})
++    if metadata.get('provider') != 'openrouter' or metadata.get('currency') != 'USD' or endpoint.get('status') != 'OBSERVED' or endpoint.get('http_status') != 200:
++        raise ValueError('successful OpenRouter key observation required')
++    key_at = utc_time(metadata.get('started_at_utc'))
++    age = (now-key_at).total_seconds()
++    if not 0 <= age <= MAX_AGE_SECONDS:
++        raise ValueError('key observation is future-dated or stale')
++    # This equality is necessary but does not infer account ownership. The
++    # account observation source must have established the named binding.
++    if not isinstance(account,dict) or account.get('key_scope') != metadata.get('key_scope'):
++        raise ValueError('account observation must bind the exact dispatch key')
++    if account.get('format') != FORMAT:
++        raise ValueError('v2 scoped account observation required')
++    state = availability_summary(metadata)
++    if state['key_limit_state'] not in {'LIMITED','UNLIMITED'} or not state['applicable_budgets_observed']:
++        raise ValueError('key/budget observation unavailable or blocking')
++    remaining = state['observed_key_or_budget_remaining_usd']
++    if remaining is not None:
++        if Decimal(remaining) <= 0:
++            raise ValueError('key or applicable budget is exhausted')
++        available_money(remaining)
++    # Retain the older timestamp so intervening exposure is conservatively
++    # counted by the existing transactional reservation guard.
++    account_at = utc_time(account.get('as_of_utc'))
++    values = {k:account.get(k) for k in ('format','provider','source','remaining_credits_usd',
++               'authorization_id','account_scope','key_scope','currency')}
++    values.update(as_of_utc=min(key_at,account_at).isoformat(),key_remaining_usd=remaining,
++                  key_limit_unlimited=remaining is None)
++    if account_at > now:
++        raise ValueError('account observation is future-dated')
++    return normalize_credit(values,now=now,require_current=True)
++
++
++def main():
++    import argparse
++    from pathlib import Path
++    parser=argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--key-observation',type=Path,required=True)
++    parser.add_argument('--account-observation',type=Path,required=True)
++    parser.add_argument('--output',type=Path,required=True)
++    args=parser.parse_args()
++    try:
++        result=credit_from_metadata(json.loads(args.key_observation.read_text(encoding='utf-8')),
++                                    json.loads(args.account_observation.read_text(encoding='utf-8')))
++        with args.output.open('x',encoding='utf-8') as handle:
++            json.dump(result,handle,indent=2,allow_nan=False);handle.write('\n')
++    except Exception:
++        raise SystemExit('CREDIT_JOIN_FAILED_NO_RAW_DETAILS') from None
++    print('SCOPED_CREDIT_SNAPSHOT_WRITTEN_NOT_DISPATCHED')
++
++
++if __name__=='__main__':
++    main()
+--- /dev/null
++++ after/tests/test_openrouter_key_limit_semantics.py
+@@ -0,0 +1,56 @@
++import json
++from decimal import Decimal
++import pytest
++from patent_to_pilot.providers import metadata_observation as m
++
++def raw(**changes):
++    return dict(limit=None, limit_remaining=None, usage=0, budgets=[], effective_budget=None, **changes)
++
++def test_explicit_null_is_unlimited_but_not_account_credit(monkeypatch):
++    monkeypatch.setattr(m, 'endpoint_request', lambda *a: ({'status':'OBSERVED','http_status':200}, raw()))
++    result=m.collect('fake-key')
++    assert result['format']=='ptp-openrouter-metadata-observation-v2'
++    assert result['key_metadata']['key_limit_state']=='UNLIMITED'
++    assert result['key_metadata']['field_presence']==dict(limit=True,limit_remaining=True,budgets=True,effective_budget=True)
++    assert result['availability']['blocked_prerequisites']==['ACCOUNT_CREDIT_NOT_OBSERVED_BY_THIS_COLLECTOR','ACCOUNT_KEY_BINDING_NOT_RECONCILED']
++    assert result['live_admission_enabled'] is False
++    assert 'fake-key' not in json.dumps(result)
++
++@pytest.mark.parametrize('missing', ['limit','limit_remaining'])
++def test_absent_field_is_not_unlimited(missing):
++    data=raw();del data[missing]
++    result=m.sanitize_key(data)
++    assert result['field_presence'][missing] is False
++    assert result['key_limit_state']=='UNAVAILABLE_FIELD_PRESENCE'
++
++def test_legacy_null_cannot_be_relabelled():
++    assert m.key_limit_state(dict(limit=None,limit_remaining=None))=='UNAVAILABLE_FIELD_PRESENCE'
++
++@pytest.mark.parametrize('limit,remaining,expected', [(10,2,'LIMITED'),(0,0,'EXHAUSTED'),(10,0,'EXHAUSTED'),(10,-1,'EXHAUSTED'),(None,1,'INCONSISTENT'),(1,None,'INCONSISTENT'),(1,2,'INCONSISTENT')])
++def test_finite_exhausted_and_inconsistent(limit,remaining,expected):
++    data=raw();data.update(limit=limit,limit_remaining=remaining)
++    assert m.sanitize_key(data)['key_limit_state']==expected
++
++def test_unlimited_key_still_has_exhausted_workspace_budget():
++    data=raw();data['budgets']=[dict(scope='workspace',limit_usd=10,spend_usd=11,remaining_usd=-1)]
++    result=m.availability_summary(dict(key_metadata=m.sanitize_key(data)))
++    assert result['key_limit_state']=='UNLIMITED'
++    assert result['observed_key_or_budget_remaining_usd']=='-1'
++    assert 'APPLICABLE_KEY_OR_BUDGET_EXHAUSTED' in result['blocked_prerequisites']
++
++@pytest.mark.parametrize('field',['budgets','effective_budget'])
++def test_missing_budget_fields_stay_unknown(field):
++    data=raw();del data[field]
++    result=m.availability_summary(dict(key_metadata=m.sanitize_key(data)))
++    assert result['applicable_budgets_observed'] is False
++
++def test_effective_budget_can_tighten_key_remaining():
++    data=raw();data.update(limit=10,limit_remaining=5,effective_budget=dict(scope='member',limit_usd=2,spend_usd=1,remaining_usd=1))
++    result=m.availability_summary(dict(key_metadata=m.sanitize_key(data)))
++    assert result['observed_key_or_budget_remaining_usd']=='1'
++
++def test_endpoint_failure_cannot_become_no_limit(monkeypatch):
++    monkeypatch.setattr(m,'endpoint_request',lambda *a: ({'status':'HTTP_REJECTED','http_status':401},None))
++    result=m.collect('fake-key')
++    assert result['availability']['key_limit_state']=='UNAVAILABLE_FIELD_PRESENCE'
++    assert result['live_admission_enabled'] is False
+--- /dev/null
++++ after/tests/test_openrouter_credit_from_metadata.py
+@@ -0,0 +1,60 @@
++from datetime import datetime, timezone, timedelta
++import hashlib, json
++import pytest
++from patent_to_pilot.providers import metadata_observation as m
++from patent_to_pilot.providers.credit_from_metadata import credit_from_metadata
++from patent_to_pilot.providers.credit import FORMAT
++
++def signed(meta):
++    raw={k:v for k,v in meta.items() if k!='receipt_sha256'}
++    return raw|{'receipt_sha256':hashlib.sha256(json.dumps(raw,sort_keys=True,separators=(',',':')).encode()).hexdigest()}
++
++@pytest.fixture
++def observations(monkeypatch):
++    monkeypatch.setattr(m,'endpoint_request',lambda *a: ({'status':'OBSERVED','http_status':200},dict(limit=None,limit_remaining=None,usage=0,budgets=[],effective_budget=None)))
++    meta=m.collect('fake-only')
++    now=datetime.now(timezone.utc)
++    account=dict(format=FORMAT,provider='openrouter',currency='USD',source='owner_sanitized_snapshot',
++                 authorization_id='test-authority',account_scope='test-account',key_scope=meta['key_scope'],
++                 as_of_utc=now.isoformat(),remaining_credits_usd='0.5')
++    return meta,account,now
++
++def test_unlimited_key_keeps_observed_account_cap(observations):
++    meta,account,now=observations
++    result=credit_from_metadata(meta,account,now=now)
++    assert result['key_limit_unlimited'] is True and result['key_remaining_usd'] is None
++    assert result['remaining_credits_usd']==.5
++    assert result['as_of_utc']==meta['started_at_utc']
++
++def test_workspace_budget_tightens_unlimited_key(observations):
++    meta,account,now=observations
++    meta['key_metadata']['budgets']=[dict(scope='workspace',limit_usd='1',spend_usd='.9',remaining_usd='.1')]
++    result=credit_from_metadata(signed(meta),account,now=now)
++    assert result['key_remaining_usd']==.1 and result['key_limit_unlimited'] is False
++
++@pytest.mark.parametrize('change',['wrong_key','old_key','old_account','future_account','bad_hash','legacy','exhausted','missing_budget'])
++def test_incomplete_or_conflicting_observations_rejected(observations,change):
++    meta,account,now=observations
++    if change=='wrong_key':account['key_scope']='different'
++    if change=='old_key':meta['started_at_utc']=(now-timedelta(seconds=301)).isoformat();meta=signed(meta)
++    if change=='old_account':account['as_of_utc']=(now-timedelta(seconds=301)).isoformat()
++    if change=='future_account':account['as_of_utc']=(now+timedelta(seconds=1)).isoformat()
++    if change=='bad_hash':meta['key_metadata']['usage']='1'
++    if change=='legacy':meta['format']='ptp-openrouter-metadata-observation-v1';meta=signed(meta)
++    if change=='exhausted':meta['key_metadata']['budgets']=[dict(scope='workspace',remaining_usd='0')];meta=signed(meta)
++    if change=='missing_budget':meta['key_metadata']['field_presence']['budgets']=False;meta=signed(meta)
++    with pytest.raises(ValueError):credit_from_metadata(meta,account,now=now)
++
++def test_cli_exclusive_write_and_allowlisted_output(observations,monkeypatch,tmp_path):
++    from patent_to_pilot.providers.credit_from_metadata import main
++    import sys
++    meta,account,now=observations
++    account['secret_extra']='DO_NOT_COPY'
++    mp=tmp_path/'key.json';ap=tmp_path/'account.json';out=tmp_path/'joined.json'
++    mp.write_text(json.dumps(meta));ap.write_text(json.dumps(account))
++    monkeypatch.setattr(sys,'argv',['join','--key-observation',str(mp),'--account-observation',str(ap),'--output',str(out)])
++    main()
++    before=out.read_bytes()
++    assert b'DO_NOT_COPY' not in before
++    with pytest.raises(SystemExit,match='CREDIT_JOIN_FAILED_NO_RAW_DETAILS'):main()
++    assert out.read_bytes()==before

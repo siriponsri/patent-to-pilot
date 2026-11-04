@@ -1,0 +1,9 @@
+{
+  "format": "ptp-documentation-checkpoint-v1",
+  "status": "PASS_SOLO_SCOPE_ALIGNED",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "source": "docs/healthtech/research/SUPPLEMENTAL_DATA.md",
+  "participant_route": "FUTURE_WORK_NOT_CURRENT_GATE",
+  "business_validation": "EXTERNAL_NOT_RUN; SCENARIO_ONLY_ALLOWED",
+  "next": "Keep manuscript and acceptance matrix aligned with solo computational-study boundaries"
+}

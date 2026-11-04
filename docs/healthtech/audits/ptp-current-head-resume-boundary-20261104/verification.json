@@ -1,0 +1,89 @@
+{
+  "format": "ptp-current-head-resume-boundary-verification-v1",
+  "recorded_date": "2026-11-04",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_state": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "checks": [
+    {
+      "id": "focused_python_contracts",
+      "status": "PASS",
+      "command": "PYTHONPATH=src python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_http.py tests/test_healthtech_api_generation.py tests/test_healthtech_local_epoch.py tests/test_healthtech_local_execution.py tests/test_healthtech_local_qwen_operational.py tests/test_verify_vector_bundle_pair.py",
+      "result": "43 passed, 0 failed, 0 errors",
+      "raw_log": "focused-python.log"
+    },
+    {
+      "id": "frontend_unit",
+      "status": "PASS",
+      "command": "npm test",
+      "result": "74 passed, 0 failed",
+      "raw_log": "frontend-unit.log"
+    },
+    {
+      "id": "browser_loopback_vector_lifecycle",
+      "status": "PASS",
+      "command": "npm run test:integration:http",
+      "result": "fresh synthetic loopback case; source inspection PASS; history 1 -> 2; edit PASS; JSON/TH/EN export PASS; provider_calls=0; paid_cost_usd=0",
+      "raw_log": "browser-http-integration.log"
+    },
+    {
+      "id": "named_browser_generation_harness_syntax",
+      "status": "PASS",
+      "command": "node --check tests/e2e/backend-http-abbott-integration.mjs",
+      "result": "syntax check passed; runtime was not started",
+      "raw_log": "node-check.log"
+    },
+    {
+      "id": "named_browser_generation_current_head",
+      "status": "NOT_RUN",
+      "reason": "authorized cohort, rights matrix, vector config, and local-generation config are not present in this checkout",
+      "claim_boundary": "older browser-generation receipt is not rebound to this candidate"
+    },
+    {
+      "id": "current_head_local_qwen",
+      "status": "PASS_INHERITED_PRIVATE_RECEIPT",
+      "result": "3/3 schema-valid frozen patent-candidate cases; 7301 prompt tokens; 1448 output tokens; mean latency 54.320437 seconds; provider_calls=0; paid_cost_usd=0",
+      "evidence": "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/verification.json"
+    },
+    {
+      "id": "current_head_fresh_gpu_retrieval",
+      "status": "PASS_INHERITED_SEPARATE_PROTOCOL",
+      "result": "fresh PatEmbed/E5 encoding and retrieval diagnostic retained separately from generation",
+      "evidence": "docs/healthtech/audits/pepo-blocked-goal-repair-20261103/LOCAL_ACCOUNTING_AND_GPU_FOLLOWUP.json"
+    }
+  ],
+  "journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": "0.0001464",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "prospective_allowance_usd": "1.00",
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutation": false
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "current_scoped_credit": "UNAVAILABLE",
+    "remaining_key_limit": "UNAVAILABLE",
+    "route_price_refresh_at_dispatch": "REQUIRED",
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "pending_replayed": false,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "research": {
+    "status": "PARTIAL_DESCRIPTIVE_ONLY",
+    "semantic_gold": "NOT_ESTABLISHED",
+    "adaptive_superiority": "NOT_ESTABLISHED",
+    "external_business_validation": "NOT_VALIDATED_SOLO_PROJECT"
+  },
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+}

@@ -1,0 +1,61 @@
+{
+  "format": "ptp-o2-e5-http-rebind-v1",
+  "observed_local": "2026-11-03T23:04:29+07:00",
+  "observed_utc": "2026-11-03T16:04:29Z",
+  "goal": "resume_existing_patent_to_pilot_o1_o4",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_expected": true
+  },
+  "status": "PASS_CURRENT_HEAD_E5_HTTP_DOSSIER_BINDING_3_OF_3_ENGINEERING",
+  "provider": {
+    "id": "local-vector",
+    "model_id": "intfloat/multilingual-e5-base",
+    "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+    "encoder_kind": "e5",
+    "corpus_rows": 41,
+    "query_ids": ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"],
+    "corpus_manifest_sha256": "643ab8856a1bcd72d2c2e4745d02bdfe46bed0190f16ab8834c3870249fdcc7b",
+    "query_manifest_sha256": "8e0a933f34c26a7f1370809c5220911cf6ed1b318bd02e7b4b60cc25ce76494c",
+    "billing_status": "not_billable_local",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "inputs": {
+    "cohort_id": "ht-public-cohort-20261029-frozen-r2-typed",
+    "cohort_sha256": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121",
+    "corpus_runtime_sha256": "5965b7b51006d9d64d05250848300dee68d80a0b69324213a5ccac25a1c44e9d",
+    "query_runtime_sha256": "7e0e29b6b7e8f19dcbd28c775e8b518255b5fdcfa0846307acb5dd7f5b1381a8",
+    "rights_matrix_sha256": "48bd51b8ce9d85bde9d1d64f235026c70aa6ba4f1374331f6d08434fb8e613ec"
+  },
+  "cases": [
+    {"case_id": "HT-DEV-MITRACLIP", "state": "succeeded", "candidate_count": 33, "dense_candidate_count": 33, "evidence_count": 5, "event_count": 2, "vector_errors": [], "source_inspection_status": 200, "history_status": 200, "edit_status": 200, "edited_version": 2, "export_status": "PASS", "export_versions": {"json": 2, "th": 2, "en": 2}},
+    {"case_id": "HT-DEV-TENDYNE", "state": "succeeded", "candidate_count": 33, "dense_candidate_count": 33, "evidence_count": 5, "event_count": 2, "vector_errors": [], "source_inspection_status": 200, "history_status": 200, "edit_status": 200, "edited_version": 2, "export_status": "PASS", "export_versions": {"json": 2, "th": 2, "en": 2}},
+    {"case_id": "HT-DEV-TRICLIP", "state": "succeeded", "candidate_count": 41, "dense_candidate_count": 41, "evidence_count": 5, "event_count": 2, "vector_errors": [], "source_inspection_status": 200, "history_status": 200, "edit_status": 200, "edited_version": 2, "export_status": "PASS", "export_versions": {"json": 2, "th": 2, "en": 2}}
+  ],
+  "tests": {
+    "focused": "11 passed; 0 failed; 0 errors; 0 skipped",
+    "compileall": "PASS",
+    "bundle_revalidation": "PASS_4_OF_4_BUNDLES"
+  },
+  "resource_mutations": {
+    "paid_api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "other_services_touched": false
+  },
+  "claim_boundary": [
+    "Engineering/provider binding only; no semantic gold or exhaustive recall claim.",
+    "Prior MiniLM and PatEmbed HTTP receipts remain separate protocol/results and are not pooled here.",
+    "No paid API, user validation, revenue, ROI, willingness-to-pay, clinical, legal, FTO, or patent-validity claim."
+  ],
+  "private_receipt": {
+    "sanitized_location": "PRIVATE_LOCAL_ARTIFACTS/ptp-o2-e5-http-rebind-current-head-20261103-r1/receipt.json",
+    "sha256": "bcdc364344b7c3503a1927a6d678d2d1bc16c143de87764daa508c1cdec32834"
+  }
+}

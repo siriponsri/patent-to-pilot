@@ -1,0 +1,77 @@
+{
+  "format": "ptp-resume-e2-current-r1-verification-v1",
+  "recorded_utc": "2026-11-03T17:06:28.075953Z",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true,
+    "clean_release": false,
+    "dirty_entries_observed": 160
+  },
+  "release_check": {
+    "head_patch": "git show --check HEAD PASS",
+    "scoped_diff_check_exit": 0,
+    "scoped_diff_check_note": "pre-existing LF/CRLF warnings only",
+    "source_hashes": {
+      "scripts/healthtech/run_openrouter_generation_evidence_pack.py": "eac71589279f1245126c3f603193c0750833a4711ecf086525b634d59a03f256",
+      "src/patent_to_pilot/providers/project_budget.py": "ea0ef2f9bc7e31aac4a400fde8a9198b9ac1a98902eaa238b1b974f9f3fddb62",
+      "src/patent_to_pilot/providers/local_epoch.py": "d37ba155f361a5a02ea0ce3efbdb5dd94a2deaa91f41563e47387b1f85a9dc25"
+    }
+  },
+  "journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "integrity_check": "ok",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": 0.0001464,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_allowance_usd": 1.0,
+    "new_zero_ledger": false,
+    "pending_call_retried": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "current_metadata_observation": {
+    "private_receipt": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-api-metadata-current-20261104-r1/metadata-observation.json",
+    "private_receipt_sha256": "8af12ade79f39a024a03f160b85eb6033fae003b61f237accf9198b95a383787",
+    "receipt_sha256": "376dd9df9ba355a314738a9b60a9af96111b458a1e70fc6a182f7ad2436feb14",
+    "observed_at_utc": "2026-11-03T17:06:27.703893Z",
+    "completed_at_utc": "2026-11-03T17:06:28.075953Z",
+    "key_http_status": 200,
+    "key_type": "ordinary_non_management",
+    "account_scope": "NOT_RECONCILED",
+    "limit": null,
+    "limit_remaining": null,
+    "current_scoped_credit": "UNAVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "live_admission_enabled": false,
+    "credential_value_printed": false,
+    "credential_value_persisted": false
+  },
+  "verification": {
+    "focused_tests": "31 passed; 0 failed; 0 errors; 0 skipped",
+    "compileall": "PASS",
+    "fresh_gpu_artifact_reused": true,
+    "new_gpu_job": false,
+    "local_and_paid_results_pooled": false
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "route_pricing_refreshed": false,
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "paid_cost_usd": 0.0,
+    "next_required_owner_input": "one non-secret current scoped credit/limit snapshot"
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_WITH_DIRTY_RELEASE_BOUNDARY",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+    "manuscript": "PARTIAL_OWNER_REVIEW_WPI_GUIDE_UNVERIFIED",
+    "goal_closed": false
+  }
+}

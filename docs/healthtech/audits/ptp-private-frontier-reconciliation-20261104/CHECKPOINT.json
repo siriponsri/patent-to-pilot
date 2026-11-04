@@ -1,0 +1,20 @@
+{
+  "format": "ptp-private-frontier-reconciliation-checkpoint-v1",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "package": "READY_FOR_OWNER_REVIEW_OFFLINE",
+  "engineering": "PASS_SANITIZED_SUMMARIZER_AND_REGRESSION",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "e2": {
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": "0.0001464",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "prospective_allowance_usd": "1.00",
+    "mutation": false
+  },
+  "next": "Keep the goal active; use the sanitized frontier/resource evidence for manuscript review, and only proceed to paid preflight after one non-secret current scoped credit/limit snapshot is available."
+}

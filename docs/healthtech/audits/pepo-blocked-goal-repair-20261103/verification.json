@@ -1,0 +1,142 @@
+{
+  "format": "pepo-blocked-goal-repair-v1",
+  "recorded_utc": "2026-11-03T11:56:11.220535+00:00",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "candidate_dirty": true,
+  "recommendation": "RESUME_EXISTING_GOAL",
+  "source_changes": {
+    "scripts/healthtech/analyze_dapfam_coverage.py": {
+      "before": "2a59636c3093dd18044e4699258c8821e710e224ceb68194399b84d0d709043f",
+      "after": "2be41ffc0613c1f577aa5d54c49c9b3d43e5f9b1fe20485cfde5c798ee481ffb"
+    },
+    "tests/test_healthtech_dapfam_coverage.py": {
+      "before": "e089a13d93751b6f771874b3cdad901bd7758253705e49b11bbb86e654967878",
+      "after": "32d37e3c3f4f70937e22801c7efb54110f3eef362c6c63e22ff12c8919018fca"
+    }
+  },
+  "tests": {
+    "coverage_native": "14 passed",
+    "scoped_aggregate": "22 passed, 1 deselected",
+    "excluded": "test_manifest_code_provenance_binds_working_tree_source: recursive Git metadata/ownership environment constraint",
+    "initial_aggregate": "22 passed, 1 failed (dubious ownership)",
+    "intermediate_scoped": "20 passed, 2 setup errors (default pytest temp access)",
+    "diff_check": "PASS",
+    "full_suite": "NOT_RUN_NOT_REQUIRED_FOR_SCOPED_SCREEN_FIX"
+  },
+  "real_runs": [
+    "coverage-summary.json",
+    "coverage-run-receipt.json",
+    "medical-subset-results.json"
+  ],
+  "prior_metrics_review": {
+    "audit_index_sha256": "2b519c2250792e5fec64955a30aa24b3c1e16f4d211980ee772b4813ca23647a",
+    "old_medical_counts": "superseded prospectively by new run; original receipt preserved",
+    "abbott": "BM25 39/61 > B4 29/61 development only",
+    "dapfam": "full diagnostic unchanged; new subset separately labelled posthoc",
+    "panorama": "hit@8 ceiling from complete options, not superiority",
+    "helmers": "AP/AUC unchanged; no current within-target ties"
+  },
+  "history_check": "21 exact known paths, 0 found; bounded search, not exhaustive",
+  "denials": [
+    {
+      "action": "SSH resource preflight",
+      "target": "chaw@100.77.149.83:22",
+      "reason": "Permission denied before connection",
+      "status": "DENIED_NOT_RETRIED",
+      "remote_writes": 0
+    },
+    {
+      "action": "list installed Programs directory while locating DuckDB",
+      "target": "owner LocalAppData Programs",
+      "reason": "filesystem access denied",
+      "status": "DENIED_NOT_RETRIED; used already recorded CLI path instead"
+    }
+  ],
+  "resources": {
+    "paid_calls": 0,
+    "metadata_calls": 0,
+    "paid_cost_usd": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "coverage_threads": 4,
+    "coverage_memory_limit": "4GB"
+  },
+  "integration": {
+    "commit": false,
+    "push": false,
+    "merge": false,
+    "external_goal_mutation": false,
+    "unrelated_changes_preserved": true
+  },
+  "reproduction": {
+    "original_task_runner_hashes": {
+      "run_coverage.py": "e083a136b943cb07e1153b6b297d7a7e2a05bfb04e88b7d732059447881b939e",
+      "evaluate_medical_subset.py": "c0a7a6cf7f55b23594bd0e7d12be6d1d31c7c69b015e9836fdcf7cb5f39620cb"
+    },
+    "portable_scripts": "same computation, explicit path arguments added; syntax checked, output root must be new"
+  },
+  "final_checks": {
+    "existing_next_actions_bytes_preserved": true,
+    "diff_check_existing_crlf": 0,
+    "json_parse": "PASS",
+    "portable_script_syntax": "PASS",
+    "local_links_missing": 0,
+    "note": "Existing memory file uses CRLF; all pre-existing bytes were preserved. Scoped diff check treats CR as line-ending with per-command core.whitespace=cr-at-eol; no global settings changed."
+  },
+  "independent_review": {
+    "recorded_utc": "2026-11-03T12:11:49.050730+00:00",
+    "result": "VERIFIED_CURRENT_SCORES_PROVENANCE_RUNNER_REPAIRED",
+    "receipt": "independent-review.json",
+    "native_rerun": "reviewed-coverage-run-receipt.json",
+    "tests": "24 passed; 1 deselected; no full suite",
+    "source_fix_unchanged": true,
+    "denominators": {
+      "query_side": 1920,
+      "both_sides": 983,
+      "query_only_target_unscreened": 937
+    },
+    "selected_queries_without_both_screen_positives": 10,
+    "selected_positive_self_pairs": 0,
+    "prior_portable_runner_sha256": "ed48bbff83996d32444d8802728ceba9969d0fcab8d724c26f2f6880e348aabf",
+    "historical_receipts_unchanged": true,
+    "blocker_scope": "Missing paid history/credit applies only to paid transport; SSH denial applies to fresh remote inspection/jobs; local cooperative lock is scoped to shared model-parent path, not all host processes",
+    "new_permissions_used": "project audit folder writes only; no SSH retry, provider call, or GPU job"
+  },
+  "authorized_access_followup": {
+    "audit": "docs/healthtech/audits/pepo-blocked-goal-repair-20261103/README.md",
+    "receipt": "docs/healthtech/audits/pepo-blocked-goal-repair-20261103/ACCESS_AND_HISTORY_FOLLOWUP.json",
+    "observed_utc": "2026-11-03T12:21:27.470344+00:00",
+    "status": "SSH_ACCESS_VERIFIED_NO_GPU_CONFLICT_OBSERVED_PAID_HISTORY_CREDIT_STILL_BLOCKED",
+    "legacy_settled_attempts": 4,
+    "legacy_actual_usd": "0.0001464",
+    "canonical_r1_history": "NOT_FOUND_OR_PROVEN",
+    "gpu_grant": "ALREADY_APPROVED",
+    "separate_operator_lease": "NOT_AN_EVIDENCED_PREREQUISITE",
+    "new_model_or_gpu_runs": 0,
+    "provider_calls": 0,
+    "ledger_mutations": 0
+  },
+  "latest_local_accounting_gpu_followup": {
+  "recorded_utc": "2026-11-03T13:04:31.743999+00:00",
+  "receipt": "docs/healthtech/audits/pepo-blocked-goal-repair-20261103/LOCAL_ACCOUNTING_AND_GPU_FOLLOWUP.json",
+  "status": "FRESH_GPU_DIAGNOSTIC_COMPLETE_LOCAL_EPOCH_INITIALIZED_API_CREDIT_PENDING",
+  "gpu_jobs": 1,
+  "new_paid_calls": 0,
+  "new_paid_cost_usd": 0,
+  "known_legacy_calls": 4,
+  "known_legacy_cost_usd": 0.0001464,
+  "prospective_epoch_limit_usd": 1,
+  "history": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+  "provider_regressions": {
+    "tests": 187,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "actual_luna_runtime": "UNKNOWN_NOT_STEERED",
+  "new_goal_closures": 0
+}
+}

@@ -1,0 +1,83 @@
+{
+  "format": "ptp-code-review-r21-v1",
+  "recorded_local": "2026-11-04T07:40:12.7302963+07:00",
+  "recorded_utc": "2026-11-04T00:40:12.7302963Z",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_preserved": true,
+    "code_changes_from_review": 0,
+    "merge": false,
+    "push": false,
+    "branch_deletion": false
+  },
+  "review": {
+    "mode": "serial_same_agent_pre_owner_review",
+    "specification_findings": 0,
+    "standards_findings": 0,
+    "scope": [
+      "api_generation",
+      "generation_payload",
+      "project_budget",
+      "round1",
+      "ledger_registry",
+      "local_execution",
+      "case_journal",
+      "local_epoch",
+      "run_real_baselines"
+    ],
+    "claim_boundary": "no merge approval, paid completion, scientific superiority, business validation, or journal acceptance"
+  },
+  "tests": {
+    "commands": [
+      {
+        "command": "python -m pytest tests/test_healthtech_api_generation.py tests/test_healthtech_case_journal.py tests/test_healthtech_history_migration.py tests/test_release_budget_process.py -ra",
+        "status": "PASS",
+        "summary": "26 passed"
+      },
+      {
+        "command": "python -m pytest tests/test_healthtech_generation_payload.py tests/test_o3_generation_repair.py tests/test_o3_adversarial_repair.py tests/test_healthtech_http.py -ra",
+        "status": "PASS",
+        "summary": "64 passed"
+      },
+      {
+        "command": "python -m pytest tests/test_healthtech_local_execution.py tests/test_healthtech_local_epoch.py tests/test_healthtech_current_head_frontier.py tests/test_healthtech_private_frontier_summary.py -ra",
+        "status": "PASS",
+        "summary": "27 passed"
+      },
+      {
+        "command": "python -m pytest tests/test_healthtech_real_baselines.py -ra",
+        "status": "PASS",
+        "summary": "4 passed"
+      }
+    ],
+    "prior_current_head_regression": {
+      "receipt": "docs/healthtech/audits/ptp-offline-regression-r19-20261104/verification.json",
+      "summary": "657 collected; 655 passed; 2 skipped; 0 failed; exit code 0"
+    },
+    "git_diff_check": "PASS_WITH_PREEXISTING_CRLF_WARNINGS"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "runtime_window_reset": false
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "owner_mcp_initial_limit_usd": 30.0,
+    "project_cumulative_ceiling_usd": 100.0,
+    "e2_prospective_allowance_usd": 1.0,
+    "current_exact_key_scope_bound": false,
+    "current_key_remaining_limit": "MISSING",
+    "fresh_route_pricing": "REQUIRED_IN_ADMISSION_WINDOW",
+    "next_evidence": "one permitted current scoped v2 credit/remaining-limit observation or sanctioned pointer for the dispatch key"
+  },
+  "disposition": "READY_FOR_OWNER_REVIEW_NOT_MERGE"
+}

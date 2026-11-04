@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import nullcontext
 import json
 from pathlib import Path
 import sys
@@ -25,6 +26,8 @@ from patent_to_pilot.healthtech.generation_payload import (  # noqa: E402
     sha256_json,
 )
 from patent_to_pilot.providers import MockHTTPResponse, OpenRouterHTTPTransport  # noqa: E402
+from patent_to_pilot.providers.case_journal import PrivateCaseJournal
+from patent_to_pilot.providers.env_file import scoped_env_file_key
 from patent_to_pilot.providers.round1 import Round1ProjectBudget  # noqa: E402
 
 
@@ -75,6 +78,14 @@ class MockGenerationTransport:
         })
 
 
+def _run_with_local_key(runner, pack, *, live_enabled, env_file):
+    # Explicit local source, only for an authorized live path. No discovery,
+    # remote copy, persistent environment change or logging of key material.
+    context = scoped_env_file_key(env_file) if live_enabled and env_file is not None else nullcontext()
+    with context:
+        return runner.run(pack)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pack", type=Path, required=True)
@@ -84,6 +95,7 @@ def main() -> int:
     parser.add_argument("--mode", choices=["dry-run", "mock", "live"], default="dry-run")
     parser.add_argument("--budget-path", type=Path, default=None, help="mock-only isolated journal; live accepts only canonical path")
     parser.add_argument("--credit-snapshot", type=Path, default=None, help="sanitized current OpenRouter credit snapshot; required for live mode")
+    parser.add_argument("--env-file", type=Path, default=None, help="explicit local .env; read only in live mode")
     parser.add_argument("--max-output-tokens", type=int, default=512)
     parser.add_argument("--max-findings", type=int, default=6)
     args = parser.parse_args()
@@ -93,8 +105,8 @@ def main() -> int:
     pricing = _pricing(args.model_snapshot)
     if pricing.model != MODEL_ID:
         parser.error("model snapshot must pin qwen/qwen3-32b")
-    if args.mode == "live" and args.budget_path is None:
-        parser.error("--budget-path is required for live mode")
+    # Live runs resolve the stable per-user canonical journal when no explicit
+    # path is supplied. An explicit mismatched path is still rejected.
     if args.mode == "live" and args.credit_snapshot is None:
         parser.error("--credit-snapshot is required for live mode")
     account_credit_snapshot = (
@@ -154,8 +166,15 @@ def main() -> int:
             max_output_tokens=args.max_output_tokens,
             max_findings=args.max_findings,
         )
-        result = runner.run(pack)
-        write_sanitized_receipt(result, args.output)
+        # Allocate private Windows-local output before reading the key or
+        # dispatching. Existing run IDs fail closed and are never overwritten.
+        with (PrivateCaseJournal(args.run_id) if live_enabled else nullcontext()) as private:
+            if private is not None:
+                runner.case_observer = private.write
+            result = _run_with_local_key(runner, pack, live_enabled=live_enabled, env_file=args.env_file)
+            if private is not None:
+                result["private_case_output"] = private.locator
+            write_sanitized_receipt(result, args.output)
     finally:
         budget.close()
     print(json.dumps({
@@ -172,5 +191,5 @@ def main() -> int:
 if __name__ == "__main__":
     try:
         raise SystemExit(main())
-    except (APIGenerationError, ValueError) as exc:
+    except Exception as exc:
         raise SystemExit(f"ERROR: {type(exc).__name__}; inspect sanitized preflight checks") from None

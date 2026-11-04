@@ -1,0 +1,58 @@
+{
+  "format": "ptp-api-live-readiness-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "observed_at_utc": "2026-11-03T07:10:11.082044+00:00",
+  "metadata_receipt": {
+    "path": "docs/healthtech/audits/ptp-api-live-readiness-20261103/metadata.json",
+    "sha256": "f78ec189b8026f672dfb1c5f128183d00fd6411bf17125dbc5b15c4737c0c8bc",
+    "bytes": 1526,
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "is_management_key": false,
+    "account_scope": "NOT_RECONCILED",
+    "current_scoped_credit_snapshot": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "history_completeness": "NOT_PROVEN",
+    "live_admission_enabled": false
+  },
+  "canonical_ledger": {
+    "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+    "registry_present": false,
+    "journal_resolved": false,
+    "duplicate_ledger_created": false,
+    "zero_ledger_created": false,
+    "historical_material_rebound": false
+  },
+  "dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "unknown_billing_retried": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "other_resources": {
+    "relevant_generation_processes": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "secrets_persisted": false,
+    "restricted_payloads_persisted": false
+  },
+  "verification": {
+    "focused_provider_gate_tests": "PASS; 0 failures",
+    "compileall": "PASS",
+    "current_head": "same dirty candidate HEAD as prior checkpoint",
+    "claim_boundary": "read-only live metadata only; no paid generation or research result"
+  },
+  "next": [
+    "Obtain the existing non-secret canonical R1 journal/export location once.",
+    "Obtain a current scoped credit snapshot through an authorized non-secret channel once.",
+    "Re-run all live gates and dispatch one frozen paired canary only if both pass."
+  ]
+}

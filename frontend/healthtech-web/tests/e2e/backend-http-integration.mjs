@@ -66,6 +66,9 @@ try {
   assert.equal(await page.eval('document.getElementById("backend-provider").value'), 'local');
   assert.equal(await page.eval('document.querySelector("#backend-provider option[value=openrouter]").disabled'), true);
   assert.equal(await page.eval('document.querySelector("#backend-provider option[value=local-generation]").disabled'), true);
+  assert.equal(await page.eval('Boolean(document.getElementById("backend-provider-status"))'), true);
+  assert.equal(await page.eval('document.querySelector("[data-provider-id=openrouter]").dataset.available'), 'false');
+  assert.equal(await page.eval('document.getElementById("backend-budget-gate").dataset.dispatch'), 'closed');
 
   await page.click('#backend-start');
   await page.waitFor('window.__healthtechApp.state.backendJob?.job_id');

@@ -110,6 +110,8 @@ class LocalQwenGenerationProvider:
             "model": self.model_id,
             "model_revision": self.model_revision,
             "billing_status": "not_billable_local",
+            "estimated_usd": 0.0,
+            "estimate_basis": "not_billable_local",
             "actual_usd": 0.0,
             "reserved_usd": 0.0,
             "unknown_usd": 0.0,

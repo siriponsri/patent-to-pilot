@@ -1,0 +1,21 @@
+{
+  "format": "ptp-journal-package-verification-v1",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "files": {
+    "manuscript": "5e19894aa4e61fc5c1cac3803e868a2d5d369426e8c681687ee5a2e1e4655251",
+    "cover_letter": "3875fa50044faa1adf3a67e0a2dd615ade7a3aa018e5b06780822d56e56032c8",
+    "wpi_checklist": "cec1ffe4c41b1baa119674f7907918e257d65b18b39af3dd2fe09fda901636c8",
+    "supplemental": "f9c5eda4dcbf29b9b5a513766ab646d01e19c4af2d37a84dd84927c1bc73b8c0",
+    "bibliography": "7a9ef673632d59f6f2cfaf8877ac462639a759310596a7d98d63f02d51ae81a2"
+  },
+  "file_count": 5,
+  "relative_links_checked": 63,
+  "missing_relative_links": 0,
+  "owner_fields_pending": true,
+  "guide_for_authors_verified": false,
+  "submission": false,
+  "credentials_or_private_payloads_added": false,
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "status": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED"
+}

@@ -156,6 +156,32 @@ def test_candidate_outside_visible_preview_is_rejected(tmp_path):
             "unresolved": [],
         }, case, max_findings=6)
 
+
+def test_rights_cleared_payload_rejects_missing_or_stale_source_provenance(tmp_path):
+    pack = _synthetic_pack(tmp_path)
+    case = pack["cases"][0]
+    case["candidates"][0]["source_revision"] = "stale"
+    pack["pack_sha256"] = sha256_json({key: value for key, value in pack.items() if key != "pack_sha256"})
+    with pytest.raises(GenerationPayloadError, match="candidate/source revision mismatch"):
+        build_rights_cleared_paired_payload(
+            pack,
+            provider="openrouter",
+            model="qwen/qwen3-32b",
+            route="DeepInfra",
+        )
+
+    pack = _synthetic_pack(tmp_path / "second")
+    pack["cases"][0]["evidence"][0]["source_id"] = "missing-source"
+    pack["pack_sha256"] = sha256_json({key: value for key, value in pack.items() if key != "pack_sha256"})
+    with pytest.raises(GenerationPayloadError, match="case source descriptor is missing"):
+        build_rights_cleared_paired_payload(
+            pack,
+            provider="openrouter",
+            model="qwen/qwen3-32b",
+            route="DeepInfra",
+        )
+
+
 def test_disclosed_candidate_requires_patent_disclosure_evidence(tmp_path):
     pack = _synthetic_pack(tmp_path)
     case = pack["cases"][0]

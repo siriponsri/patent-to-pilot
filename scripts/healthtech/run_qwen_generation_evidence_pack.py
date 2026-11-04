@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 import os
@@ -41,9 +42,13 @@ from patent_to_pilot.healthtech.generation_payload import (  # noqa: E402
     strip_fence,
     validate_generation_output,
 )
+from patent_to_pilot.healthtech.local_execution import (  # noqa: E402
+    APPROVED_GPU_UUID,
+    check_local_window,
+    local_gpu_slot,
+)
 
 
-APPROVED_GPU_UUID = "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089"
 MODEL_ID = "Qwen/Qwen3-8B"
 MODEL_REVISION = "b968826d9c46dd6066d109eabc6255188de91218"
 
@@ -111,6 +116,20 @@ def run_generation(
     max_findings: int,
     guided_json: bool = False,
 ) -> dict[str, Any]:
+    check_local_window()
+    if output_path.exists():
+        raise FileExistsError("output already exists; choose a fresh receipt path")
+    with local_gpu_slot(model_root):
+        # Recheck after acquiring the shared slot to close the output race.
+        if output_path.exists():
+            raise FileExistsError("output already exists; choose a fresh receipt path")
+        return _run_generation(pack, model_root, output_path, max_new_tokens, max_findings, guided_json)
+
+
+def _run_generation(pack, model_root, output_path, max_new_tokens, max_findings, guided_json):
+    if not 1 <= max_new_tokens <= 4096 or not 1 <= max_findings <= 6:
+        raise ValueError("generation limits are outside the bounded local contract")
+    started_at = datetime.now(timezone.utc).isoformat()
     if torch is None or transformers is None or AutoModelForCausalLM is None or AutoTokenizer is None:
         raise RuntimeError("local generation runtime dependencies are unavailable")
     if not torch.cuda.is_available() or torch.cuda.device_count() != 1:
@@ -119,8 +138,7 @@ def run_generation(
     if "V100" not in device_name:
         raise RuntimeError(f"unexpected visible GPU: {device_name}")
     visible = os.environ.get("CUDA_VISIBLE_DEVICES")
-    if visible not in {APPROVED_GPU_UUID, "1"}:
-        raise RuntimeError("CUDA_VISIBLE_DEVICES is not bound to the approved GPU")
+    check_local_window(visible=visible)
     torch.set_num_threads(8)
     torch.cuda.reset_peak_memory_stats()
     load_started = time.perf_counter()
@@ -138,6 +156,7 @@ def run_generation(
     load_seconds = time.perf_counter() - load_started
     case_receipts = []
     for case in pack["cases"]:
+        check_local_window()
         messages = _build_messages(pack, case)
         encoded = tokenizer.apply_chat_template(
             messages,
@@ -184,6 +203,7 @@ def run_generation(
             parse_error = str(exc)
         case_receipts.append({
             "case_id": case["case_id"],
+            "messages_sha256": _sha256_bytes(_canonical_json(messages)),
             "prompt_tokens": prompt_tokens,
             "output_tokens": int(output_tokens.shape[-1]),
             "generation_latency_seconds": latency_seconds,
@@ -196,6 +216,8 @@ def run_generation(
     receipt = {
         "status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION" if all(item["schema_valid"] for item in case_receipts) else "PARTIAL_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
         "model_id": MODEL_ID,
+        "started_at_utc": started_at,
+        "completed_at_utc": datetime.now(timezone.utc).isoformat(),
         "model_revision": MODEL_REVISION,
         "license": "apache-2.0",
         "pack_sha256": pack["pack_sha256"],
@@ -224,7 +246,8 @@ def run_generation(
         "cases": case_receipts,
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    with output_path.open("x", encoding="utf-8") as handle:
+        handle.write(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
     return receipt
 
 

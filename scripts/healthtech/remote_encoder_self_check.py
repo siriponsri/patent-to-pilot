@@ -18,6 +18,7 @@ from patent_to_pilot.evaluation.healthtech.transformer_encoders import (
     TransformerEncoder,
     build_transformer_model_binding,
 )
+from patent_to_pilot.healthtech.local_execution import APPROVED_GPU_UUID, check_local_window, local_gpu_slot
 
 
 def main() -> int:
@@ -36,31 +37,33 @@ def main() -> int:
 
     torch.set_num_threads(8)
     visible_uuid = os.environ.get("CUDA_VISIBLE_DEVICES", "")
-    if visible_uuid != args.approved_gpu_uuid:
-        raise RuntimeError("CUDA_VISIBLE_DEVICES is not bound to the approved GPU UUID")
+    if args.approved_gpu_uuid != APPROVED_GPU_UUID:
+        raise RuntimeError("approved GPU argument differs from the project authorization")
+    check_local_window(visible=visible_uuid)
     if not torch.cuda.is_available() or torch.cuda.device_count() != 1:
         raise RuntimeError("exactly one CUDA device must be visible")
-    binding = build_transformer_model_binding(
-        args.model_dir,
-        model_id=args.model_id,
-        revision=args.revision,
-        kind=args.kind,
-    )
-    encoder = TransformerEncoder(
-        args.model_dir,
-        kind=args.kind,
-        role=args.role,
-        max_length=512,
-        device="cuda",
-        prompt_name=args.prompt_name if args.kind == "patembed" else None,
-    )
-    texts = [
-        "A catheter-based heart valve with a flexible sealing skirt.",
-        "ลิ้นหัวใจเทียมสำหรับการรักษาผู้ป่วยโรคหัวใจ",
-        "Combining e\u0301, emoji 🫀, and punctuation — for tokenizer coverage.",
-        "A long edge-case row " + ("with repeated medical-device terminology " * 80),
-    ]
-    values, token_count = encoder.encode(texts)
+    with local_gpu_slot(args.model_dir):
+        binding = build_transformer_model_binding(
+            args.model_dir,
+            model_id=args.model_id,
+            revision=args.revision,
+            kind=args.kind,
+        )
+        encoder = TransformerEncoder(
+            args.model_dir,
+            kind=args.kind,
+            role=args.role,
+            max_length=512,
+            device="cuda",
+            prompt_name=args.prompt_name if args.kind == "patembed" else None,
+        )
+        texts = [
+            "A catheter-based heart valve with a flexible sealing skirt.",
+            "ลิ้นหัวใจเทียมสำหรับการรักษาผู้ป่วยโรคหัวใจ",
+            "Combining e\u0301, emoji 🫀, and punctuation — for tokenizer coverage.",
+            "A long edge-case row " + ("with repeated medical-device terminology " * 80),
+        ]
+        values, token_count = encoder.encode(texts)
     norms = np.linalg.norm(values, axis=1).tolist()
     payload = {
         "format": "ht-transformer-self-check-v1",

@@ -1,0 +1,17 @@
+{
+  "format": "ptp-manuscript-e2-rebind-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "manuscript_sha256": "0c3ed5f1ff80c44f704cb4cc6f93e03c9675fec2cfb1063ab5c34be81faf2cc0",
+  "manuscript_bytes": 50708,
+  "relative_links_checked": 46,
+  "missing_relative_links": 0,
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_E2_REBOUND_OWNER_REVIEW_PENDING",
+  "scientific_boundary": "Provenance-only rebind; no metric or claim change",
+  "paid_boundary": "E2 preserved; no new attempt or reservation; current scoped credit unavailable",
+  "focused_regression": "45 passed; 0 failed; 0 errors; 0 skipped",
+  "json_validation": "PASS_4_FILES",
+  "relative_link_check": "46 checked; 0 missing",
+  "scoped_whitespace": "PASS",
+  "repository_diff_note": "Pre-existing CRLF conversion warnings remain in dirty memory/next-actions.md; no unrelated line-ending rewrite performed",
+  "submission": "NOT_SUBMITTED"
+}

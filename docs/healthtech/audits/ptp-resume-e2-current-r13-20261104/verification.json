@@ -1,0 +1,72 @@
+{
+  "format": "ptp-resume-e2-current-r13-v1",
+  "recorded_date": "2026-11-04",
+  "candidate": {
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true,
+    "current_acceptance_matrix_sha256": "9312adcdff7414ebd2b552ba02af1ba9c54affb856bc2876ae8463f63701394b"
+  },
+  "verification": {
+    "python_suite": {
+      "tests": 646,
+      "passed": 644,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 2,
+      "junit": "docs/healthtech/audits/ptp-resume-e2-current-r13-20261104/full-tests.xml",
+      "junit_sha256": "814694a26563acce55968a5accabe88f628028016becce77d0a884ee71ac5eaf"
+    },
+    "compileall": {
+      "status": "PASS",
+      "paths": ["src", "scripts", "tests"]
+    },
+    "acceptance_matrix": {
+      "status": "PASS",
+      "current_full_suite": "646 total; 644 passed; 0 failed; 0 errors; 2 skipped",
+      "new_current_refs": [
+        "latest_resume_e2_current_r11_20261104",
+        "latest_resume_e2_current_r12_20261104",
+        "latest_goal_completion_audit_r15_20261104"
+      ],
+      "missing_paths": 0
+    },
+    "scoped_diff_check": "PASS",
+    "whole_worktree_diff_check": "NOT_CLEAN_PREEXISTING_MEMORY_NEXT_ACTIONS_TRAILING_WHITESPACE"
+  },
+  "canonical_e2": {
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_historical_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutated_in_this_checkpoint": false
+  },
+  "paid_api": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "pending_replay": false,
+    "required_evidence": "ONE_NON_SECRET_CURRENT_SCOPED_CREDIT_AND_REMAINING_KEY_LIMIT_OBSERVATION"
+  },
+  "resource_mutations": {
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "time_window_reset": false,
+    "ssh_inspection_relaunched": false,
+    "ssh_inspection_pid_preserved": 82752
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_REGRESSION_VERIFIED",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+    "overall_goal": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+  }
+}

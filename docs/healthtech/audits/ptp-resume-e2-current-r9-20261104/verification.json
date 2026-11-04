@@ -1,0 +1,150 @@
+{
+  "format": "ptp-resume-e2-current-r9-v1",
+  "observed_local": "2026-11-04T03:18:27.4619698+07:00",
+  "goal_reused": true,
+  "goal_closed": false,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty": true,
+    "tracked_modified_paths": 41,
+    "untracked_paths": 199,
+    "unmerged_paths": 0,
+    "owner_work_preserved": true
+  },
+  "active_jobs": {
+    "matching_experiment_processes": 0,
+    "provider_processes": 0,
+    "dr_train_processes": 0,
+    "duplicate_run_launched": false
+  },
+  "offline_component_reconciliation": {
+    "status": "PASS_REUSED_CURRENT_HEAD_RECEIPT_NO_DUPLICATE_RUN",
+    "prior_audit": "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json",
+    "private_artifact_root": "C:/Users/User/Desktop/myProject/_private_artifacts/healthtech/benchmark-expansion-20261101/current-head-baseline-20261103",
+    "candidate_head_matches": true,
+    "private_output_hashes_match_prior_receipt": true,
+    "new_scoring_run": false,
+    "reason": "Current HEAD receipt and private outputs already exist; rerunning deterministic scoring would duplicate an unchanged experiment.",
+    "protocol": {
+      "historical_receipt_sha256": "256a8b7033cb3fb1857337811fd201d063f760723dc64d11f1e2addc9505c0d7",
+      "current_worktree_sha256": "c5f235c0baacdbc2b662b9aefb9af1e9bc2fe91b33ae7690bd535ff18455a50b",
+      "change_scope": "documentation-only receipt pointer/rebind",
+      "endpoint_split_budget_retry_controls_preserved": true
+    },
+    "freeze_sha256_current_worktree": "25973429357c23bd68f081d4ac5edb6aa0f23f51b7400311c4371061b17fb2bd",
+    "acquisition_receipt_sha256": "cfda1577f52a0165cdcfaddc979ade6aba179c6d6481ad54cc2dbeaf97ca4217",
+    "source_files": [
+      {
+        "name": "PAR4PC_validation",
+        "rows": 3029,
+        "sha256": "d84d34779c2d741b9eb3aebd7db009836dc0d78ba4c78aee1cfa410f5092594d"
+      },
+      {
+        "name": "PAR4PC_test",
+        "rows": 2896,
+        "sha256": "f1f8e33d32bfd2a6a2a7f1e740e94a6512c5d79598fdfb6b431829b21b6565e3"
+      },
+      {
+        "name": "PI4PC_validation",
+        "rows": 3937,
+        "sha256": "692032d44a48d352430b9a22abab272f08fd429688402647b5f2180e9aeb35b0"
+      },
+      {
+        "name": "PI4PC_test",
+        "rows": 3402,
+        "sha256": "fb3b5928018a0a8016f6d9ac913a00fae30f28042cfe71a9354860fccc41e10c"
+      }
+    ],
+    "runs": [
+      {
+        "task": "PAR4PC",
+        "split": "validation",
+        "macro_gold_hit_at_1": 0.7335754374380984,
+        "macro_gold_hit_at_8": 1.0,
+        "singleton_exact_top1": 0.6815834767641996,
+        "failed_rows": 0,
+        "wall_seconds": 19.22767550003482
+      },
+      {
+        "task": "PAR4PC",
+        "split": "test",
+        "macro_gold_hit_at_1": 0.7151243093922652,
+        "macro_gold_hit_at_8": 1.0,
+        "singleton_exact_top1": 0.6977018267530937,
+        "failed_rows": 0,
+        "wall_seconds": 18.091491399973165
+      },
+      {
+        "task": "PI4PC",
+        "split": "validation",
+        "macro_gold_hit_at_1": 0.3776987553975108,
+        "macro_gold_hit_at_8": 1.0,
+        "singleton_exact_top1": 0.3776987553975108,
+        "failed_rows": 0,
+        "wall_seconds": 7.996743900002912
+      },
+      {
+        "task": "PI4PC",
+        "split": "test",
+        "macro_gold_hit_at_1": 0.4012345679012346,
+        "macro_gold_hit_at_8": 1.0,
+        "singleton_exact_top1": 0.4012345679012346,
+        "failed_rows": 0,
+        "wall_seconds": 6.479167399973165
+      }
+    ]
+  },
+  "verification": {
+    "focused_runner_tests": {
+      "command": "python -m pytest tests/test_healthtech_benchmark_expansion.py -q",
+      "status": "PASS",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "started_local": "2026-11-04T03:18:26.3993114+07:00",
+      "ended_local": "2026-11-04T03:18:27.4619698+07:00"
+    },
+    "compileall": {
+      "command": "python -m compileall -q scripts/healthtech/run_panorama_lexical_baseline.py",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  },
+  "journal": {
+    "path": "C:/Users/User/AppData/Local/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+    "integrity_check": "ok",
+    "legacy_settled_attempts": 4,
+    "known_legacy_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "ledger_mutation": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "current_scoped_credit": "NOT_AVAILABLE_FROM_PERMITTED_EVIDENCE",
+    "key_limit_remaining": "NOT_AVAILABLE",
+    "route_pricing": "HISTORICAL_ONLY_REFRESH_REQUIRED_INSIDE_300_SECONDS",
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "paid_cost_usd": 0.0,
+    "next_allowed_spend_usd": 0.25
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_WITH_DIRTY_RELEASE_BOUNDARY",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_NOT_RUN",
+    "manuscript": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED_GUIDE_UNVERIFIED",
+    "goal": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+  },
+  "next": "Continue offline owner-review and manuscript work. If paid comparison remains necessary, obtain one permitted non-secret current scoped credit/remaining-limit snapshot, reconcile E2, refresh exact-route pricing inside the admission window, and reserve at most the existing USD0.25 canary."
+}

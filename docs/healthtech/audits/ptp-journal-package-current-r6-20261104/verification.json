@@ -1,0 +1,23 @@
+{
+  "format": "ptp-journal-package-verification-v1",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "change_scope": "cover-letter claim-boundary clarification only",
+  "files": {
+    "manuscript": "98607ae6fbc0649da74269a2b0c9d29dcbf316f85d761a82bc3c2bbe3a0d60bd",
+    "cover_letter": "ef8efa6e03672de9284cc4e3ce8864ee3632e9033b9e48c9d5b29bbf77ca70c2",
+    "wpi_checklist": "e9c790d81e67426cdad71cba02121d26d099e73c5532d77d64ec155c875a1696",
+    "supplemental": "f9c5eda4dcbf29b9b5a513766ab646d01e19c4af2d37a84dd84927c1bc73b8c0",
+    "bibliography": "7a9ef673632d59f6f2cfaf8877ac462639a759310596a7d98d63f02d51ae81a2"
+  },
+  "venue_receipt": "docs/healthtech/audits/wpi-venue-recheck-r9-20261104/verification.json",
+  "file_count": 5,
+  "relative_links_checked": 63,
+  "missing_relative_links": 0,
+  "owner_fields_pending": true,
+  "guide_for_authors_verified": false,
+  "submission": false,
+  "credentials_or_private_payloads_added": false,
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "status": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED"
+}

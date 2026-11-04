@@ -1,0 +1,37 @@
+{
+  "format": "ptp-manuscript-rebind-r2-verification-v1",
+  "observed_local_date": "2026-11-03",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "source_code_changed_for_audit": false
+  },
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "bytes": 37222,
+    "sha256": "794df3ee712b499293b0fcd25a1c694b0972a56be3e8f72c741adeed554a49a0",
+    "local_links_checked": 21,
+    "missing_local_links": 0
+  },
+  "claim_boundary_text_checks": {
+    "budget_boundary": true,
+    "three_case_not_user_or_market_validation": true,
+    "business_claim_boundary": true,
+    "semantic_gold_boundary": true,
+    "qwen_canary_labeled_prior_private_smoke_test": true,
+    "api_not_claimed": true,
+    "interpretation": "Text-presence and link checks; not independent semantic validation."
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  },
+  "next_action": "Owner review the current manuscript and recheck the official WPI Guide for Authors before merge or submission."
+}

@@ -114,6 +114,7 @@ class OpenRouterQwenGenerationRunner:
         self.budget.account_credit_snapshot = self.account_credit_snapshot
         if non_thinking_parameters and non_thinking_parameters != {"reasoning": {"enabled": False}}:
             raise APIGenerationError("only the reviewed reasoning.enabled=false parameter is supported")
+        self.case_observer = None
         self.run_id = run_id
         self.max_output_tokens = max_output_tokens
         self.max_findings = max_findings
@@ -121,11 +122,9 @@ class OpenRouterQwenGenerationRunner:
         self.timeout_seconds = timeout_seconds
         self.non_thinking_parameters = dict(non_thinking_parameters or {})
         self.transport_factory = transport_factory or (lambda: OpenRouterHTTPTransport())
-        self.policy = build_round1_policy(
-            {pricing.model: pricing.upstream_provider},
-            pricing_snapshot_sha256=pricing.snapshot_sha256,
-            pricing_snapshot_utc=pricing.snapshot_utc,
-        )
+        self.policy = budget.policy
+        if self.policy["models"].get(pricing.model) != pricing.upstream_provider:
+            raise APIGenerationError("pricing route differs from canonical budget policy")
         self.config = build_round1_config(
             self.policy,
             phase="paired_pilot",
@@ -208,17 +207,45 @@ class OpenRouterQwenGenerationRunner:
             assert self.account_credit_snapshot is not None
             if self.account_credit_snapshot["remaining_credits_usd"] < total_bound:
                 raise BudgetExceededError("account credit snapshot is below the conservative run bound")
+        if self.live_enabled and not callable(self.case_observer):
+            raise APIGenerationError("durable local case journal required before live dispatch")
         before = self.budget.snapshot()
+        existing_attempt_ids = {row[0] for row in self.budget.db.execute("SELECT attempt_id FROM budget_attempts")}
+        dispatched_attempt_ids = set()
         result_cases: list[dict[str, Any]] = []
         transport_modes = []
+        response_evidence = {}
         def make_transport():
             transport = self.transport_factory()
             mode = "mock" if transport.is_mock else "live"
             if transport_modes and mode != transport_modes[0]:
                 raise APIGenerationError("mixed mock/live transports are not a paired run")
             transport_modes.append(mode)
-            return transport
+            class CaptureReturnedText:
+                is_mock = transport.is_mock
+
+                def preflight(self, **kwargs):
+                    check = getattr(transport, "preflight", None)
+                    if callable(check):
+                        return check(**kwargs)
+
+                def send(self, **kwargs):
+                    dispatched_attempt_ids.add(kwargs["request"].request_id)
+                    response = transport.send(**kwargs)
+                    body = response.payload if isinstance(response.payload, dict) else {}
+                    choices = body.get("choices")
+                    if isinstance(choices, list) and choices and isinstance(choices[0], dict):
+                        message = choices[0].get("message")
+                        content = message.get("content") if isinstance(message, dict) else None
+                        if isinstance(content, str):
+                            # Capture before adapter schema/model validation;
+                            # do not retain request headers or whole HTTP bodies.
+                            response_evidence.update(output_text=content, output_sha256=sha256_json(content))
+                    return response
+
+            return CaptureReturnedText()
         for payload_case, source_case, request, input_tokens, schema_tokens, upper_bound in prepared_cases:
+            response_evidence.clear()
             attempt_id = request.request_id
             started = time.perf_counter()
             case_result: dict[str, Any] = {
@@ -251,6 +278,9 @@ class OpenRouterQwenGenerationRunner:
                 )
                 output_text = response.text
                 output_hash = sha256_json(output_text)
+                # Preserve the returned text even when JSON/schema validation
+                # fails. The public receipt removes it; local journal retains it.
+                case_result.update(output_text=output_text, output_sha256=output_hash)
                 parsed = json.loads(strip_fence(output_text))
                 validate_generation_output(parsed, source_case, max_findings=self.max_findings)
                 case_result.update({
@@ -272,12 +302,23 @@ class OpenRouterQwenGenerationRunner:
                     "schema_valid": False,
                     "elapsed_seconds": time.perf_counter() - started,
                 })
-                result_cases.append(case_result)
-                snapshot = self.budget.snapshot()
-                if snapshot["dispatch_blocked"]:
-                    break
-                continue
+            case_result.update(response_evidence)
+            # Persist each observed outcome before the next paid attempt. Sink
+            # failures must escape (not be mistaken for a model failure/retry).
+            billing = self.budget.db.execute(
+                "SELECT a.actual,a.state,c.provider_generation_id FROM budget_attempts a LEFT JOIN budget_attempt_context c USING(attempt_id) WHERE a.attempt_id=?",
+                (attempt_id,),
+            ).fetchone()
+            if billing:
+                case_result.update(actual_debit_usd=None if billing[0] is None else billing[0] / 1_000_000_000,
+                    billing_state=billing[1], provider_generation_id=billing[2])
+            else:
+                case_result["billing_state"] = "NOT_RESERVED"
+            if self.case_observer is not None:
+                self.case_observer(dict(case_result))
             result_cases.append(case_result)
+            if self.budget.snapshot()["dispatch_blocked"]:
+                break
         # Persist accounting even when schema/model validation failed after billing.
         for case_result in result_cases:
             row = self.budget.db.execute(
@@ -297,12 +338,19 @@ class OpenRouterQwenGenerationRunner:
         status = "PASS_API_QWEN3_32B_FROZEN_PACK_GENERATION" if result_cases and all(
             case["status"] == "SUCCESS" for case in result_cases
         ) and len(result_cases) == len(pack["cases"]) else "PARTIAL_API_QWEN3_32B_FROZEN_PACK_GENERATION"
+        # The canonical ledger is shared. Interleaved work by another
+        # process must not become this run's cost/call count.
+        dispatched_cases = [case for case in result_cases if case["attempt_id"] in dispatched_attempt_ids]
+        billing_complete = all(case.get("billing_state") == "settled" for case in dispatched_cases)
+        run_debit = sum(case.get("actual_debit_usd") or 0 for case in dispatched_cases)
+        reserved = sum(case["attempt_id"] not in existing_attempt_ids and case.get("billing_state") != "NOT_RESERVED" for case in result_cases)
+        call_count = len(dispatched_attempt_ids) if billing_complete else None
         return {
             "format": "ht-o3-api-generation-receipt-v1",
             "status": status,
             "mode": transport_modes[0] if transport_modes else "not_run",
-            "external_provider_calls": 0 if "live" not in transport_modes else (None if snapshot["unknown_or_pending"] else snapshot["attempts"] - before["attempts"]),
-            "authorization_id": R1_AUTHORIZATION_ID,
+            "external_provider_calls": 0 if "live" not in transport_modes else call_count,
+            "authorization_id": self.budget.authorization_id,
             "model_id": MODEL_ID,
             "route": self.pricing.upstream_provider,
             "pricing_snapshot_sha256": self.pricing.snapshot_sha256,
@@ -312,11 +360,12 @@ class OpenRouterQwenGenerationRunner:
             "thinking": False,
             "account_credit_snapshot": self.account_credit_snapshot,
             "conservative_run_bound_usd": total_bound,
-            "provider_calls": None if snapshot["unknown_or_pending"] else snapshot["attempts"] - before["attempts"],
-            "reserved_attempts": snapshot["attempts"] - before["attempts"],
-            "known_debit_usd": (snapshot["actual_nano_usd"] - before["actual_nano_usd"]) / 1_000_000_000,
-            "paid_cost_usd": 0.0 if "live" not in transport_modes else (None if snapshot["unknown_or_pending"] else (snapshot["actual_nano_usd"] - before["actual_nano_usd"]) / 1_000_000_000),
-            "billing_complete": not bool(snapshot["unknown_or_pending"]),
+            "provider_calls": call_count,
+            "transport_invocations": len(dispatched_attempt_ids),
+            "reserved_attempts": reserved,
+            "known_debit_usd": run_debit,
+            "paid_cost_usd": 0.0 if "live" not in transport_modes else (run_debit if billing_complete else None),
+            "billing_complete": billing_complete,
             "ledger_snapshot": snapshot,
             "cases": result_cases,
         }

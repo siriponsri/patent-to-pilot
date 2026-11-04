@@ -1,0 +1,13 @@
+{
+  "format": "ptp-current-head-release-readiness-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_CURRENT_HEAD_OFFLINE_RELEASE_READINESS_DIRTY_CANDIDATE_NOT_RELEASED",
+  "full_suite": "640 passed; 0 failed; 0 errors; 2 skipped; 2 warnings",
+  "ledger_regression": "43 passed; 0 failed; 0 errors; 0 skipped",
+  "compileall": "PASS",
+  "historical_clean_release": "46ab5ac receipt retained separately; not current-head",
+  "journal": "E2 integrity ok; epoch 1; legacy receipts 4; attempts 0; pending/unknown 0; USD0.0001464 preserved; prospective USD1",
+  "resource_mutations": "provider 0; reservations 0; attempts 0; GPU 0; datasets 0; ledger 0; budget/window reset false",
+  "merge_or_push": "NOT_DONE_OWNER_REVIEW_REQUIRED"
+}

@@ -1,0 +1,68 @@
+{
+  "format": "ptp-code-review-provenance-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree_dirty_preserved": true,
+    "merge_or_push": false
+  },
+  "review": {
+    "scope": [
+      "src/patent_to_pilot/healthtech/contracts.py",
+      "src/patent_to_pilot/healthtech/generation_payload.py",
+      "tests/test_healthtech.py",
+      "tests/test_healthtech_generation_payload.py"
+    ],
+    "findings_addressed": [
+      "evidence source revision drift",
+      "patent candidate source revision drift",
+      "missing source IDs in model-visible evidence/candidates",
+      "missing source descriptor for model-visible evidence"
+    ],
+    "disclosed_link_boundary": "requires source-backed patent_disclosure evidence; no evaluator gold promotion"
+  },
+  "files": {
+    "src/patent_to_pilot/healthtech/contracts.py": "86CCDD2E4665ECDD1B9D291EE06A1CD4F5FEF836B3CD1EEFC9C3A68CFB133B60",
+    "src/patent_to_pilot/healthtech/generation_payload.py": "BFDAB9ABC030EB84908E38B591D0DF315A5EDAC0A3C5DFBCB9747743793E4C93",
+    "tests/test_healthtech_generation_payload.py": "7DD2EACB111D9A869464475B102F03298961B8773C0384EF97D288A2A93E3BD3",
+    "tests/test_healthtech.py": "4BD4346F85C3DF6066C206CF577EB060C49344A5DC27A7DA0309827D5CD86EC5"
+  },
+  "tests": {
+    "focused": {
+      "command": "rtk proxy python -B -m pytest -q tests/test_healthtech_generation_payload.py tests/test_healthtech.py tests/test_o3_generation_repair.py",
+      "tests": 45,
+      "passed": 45,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0
+    },
+    "full": {
+      "command": "rtk proxy python -B -m pytest -q --disable-warnings --junitxml docs/healthtech/audits/ptp-code-review-provenance-20261103/full-tests.xml",
+      "tests": 616,
+      "passed": 615,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "time_seconds": 22.664,
+      "exit_code": 0,
+      "junit_sha256": "9DCF7D46150263FDD26A3C0265A0BC7BF84D55AEA1FE220CF6300BC5989776A0"
+    },
+    "compileall": "PASS",
+    "diff_check_touched_files": "PASS"
+  },
+  "api_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "ledger_mutations": 0,
+    "observed_lifetime_usage_usd": 0.0001464,
+    "history_completeness": "NOT_PROVEN",
+    "canonical_r1_journal_or_export": "MISSING",
+    "current_scoped_v2_credit_snapshot": "MISSING"
+  },
+  "disposition": "READY_FOR_OWNER_REVIEW_NOT_MERGE_APPROVAL"
+}

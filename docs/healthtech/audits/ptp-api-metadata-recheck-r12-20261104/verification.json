@@ -1,0 +1,59 @@
+{
+  "format": "ptp-openrouter-metadata-recheck-v12",
+  "observed_at_local": "2026-11-04T07:24:13.771567+07:00",
+  "observed_at_utc": "2026-11-04T00:24:13.771567Z",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "branch": "codex/patent-to-pilot-long-run-20261103",
+  "observer": "scripts/healthtech/collect_openrouter_metadata.py",
+  "input_handling": {
+    "owner_env_used": true,
+    "credential_printed": false,
+    "credential_copied": false,
+    "credential_staged": false,
+    "raw_env_persisted": false
+  },
+  "metadata": {
+    "provider": "openrouter",
+    "key_endpoint_http_status": 200,
+    "key_scope": "sha256:7cbe4013fd1c43bb8096135bc6e4ed9a0befb7607ebe820bcfcb2c33544d7b97",
+    "account_scope_binding": "NOT_RECONCILED",
+    "account_credits": "NOT_REQUESTED_MANAGEMENT_KEY_REQUIRED",
+    "is_management_key": false,
+    "is_free_tier": false,
+    "limit_usd": null,
+    "limit_remaining_usd": null,
+    "budgets": [],
+    "usage_lifetime_usd": 0.0001464,
+    "usage_daily_usd": 0.0,
+    "usage_weekly_usd": 0.0,
+    "usage_monthly_usd": 0.0,
+    "live_admission_enabled": false,
+    "history_completeness": "NOT_PROVEN",
+    "response_sha256": "e84b6015e81e54607537040502062eb3a7b5b5f704bdf7565adac8ac99775521",
+    "receipt_sha256": "d649e2e9758c3164a2601745cc265e65948696532c83ee9b30025b3886ad86b2"
+  },
+  "owner_limit_context": {
+    "mcp_initial_limit_usd": 30.0,
+    "is_key_level_admission_evidence": false,
+    "project_cumulative_ceiling_usd": 100.0,
+    "e2_prospective_allowance_usd": 1.0
+  },
+  "paid_gate": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "legacy_r1_history": "UNKNOWN_PRESERVED_NOT_A_CURRENT_E2_GATE",
+    "current_scoped_credit_or_remaining_limit": "MISSING",
+    "fresh_route_pricing": "NOT_REFRESHED",
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "runtime_window_reset": false
+  },
+  "verification": {
+    "observer_regression": "20 passed; 0 failed; 0 skipped",
+    "json_readback": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "status": "PASS_READ_ONLY_METADATA_LIMIT_UNAVAILABLE"
+}

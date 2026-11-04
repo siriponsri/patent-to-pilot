@@ -1,0 +1,10 @@
+{
+  "format": "ptp-manuscript-checkpoint-v1",
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_EXACT_HEAD_PROVENANCE_REBIND",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "manuscript_sha256": "4499cf71d2b5ac1bb39c4e48b6244a1fdc05c70d08713ae0c72fd5d16d809736",
+  "links": "39 checked; 0 missing",
+  "scientific_content_changed": false,
+  "submission": "NOT_SUBMITTED",
+  "next": "Owner review, live WPI guide recheck, and paid/O2 gates when evidence becomes available"
+}

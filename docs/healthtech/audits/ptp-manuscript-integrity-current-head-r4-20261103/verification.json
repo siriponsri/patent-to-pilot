@@ -1,0 +1,64 @@
+{
+  "format": "ptp-manuscript-integrity-current-head-r4-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "13c503183a8acbfc953e20e9277b659aa3bc6d38bd783ced162ad5277101c12",
+    "bytes": 53781,
+    "relative_links_checked": 49,
+    "missing_relative_links": 0,
+    "status": "PASS_CURRENT_HEAD"
+  },
+  "claim_boundaries": {
+    "current_head_metrics_separate_from_historical": true,
+    "adaptive_superiority_claimed": false,
+    "semantic_device_patent_gold_claimed": false,
+    "exhaustive_recall_claimed": false,
+    "confirmatory_significance_claimed": false,
+    "paid_api_result_claimed": false,
+    "new_remote_encode_claimed": false,
+    "external_business_validation_claimed": false,
+    "revenue_roi_willingness_to_pay_claimed": false,
+    "human_participant_data_used": false,
+    "submission_performed": false
+  },
+  "source_receipts": [
+    "docs/healthtech/audits/ptp-o2-patembed-http-rebind-20261103/verification.json",
+    "docs/healthtech/audits/ptp-current-checkpoint-r3-20261103/verification.json",
+    "docs/healthtech/audits/ptp-manuscript-availability-20261103/verification.json",
+    "docs/healthtech/audits/ptp-manuscript-reference-reconcile-20261103/verification.json"
+  ],
+  "resource_mutations": {
+    "benchmark_reruns": 0,
+    "provider_calls": 0,
+    "reservations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  },
+  "validation": {
+    "json_documents": 6,
+    "local_markdown_links_checked_across_updated_documents": 83,
+    "missing_local_markdown_links_across_updated_documents": 0,
+    "scoped_diff_check": "PASS; known memory/next-actions.md line-ending noise remains outside this documentation checkpoint",
+    "focused_regression": {
+      "tests": 86,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "junit": "docs/healthtech/audits/ptp-manuscript-integrity-current-head-r4-20261103/focused-tests.xml",
+      "junit_sha256": "3e648e905f28c6673ccd0db3b3e3db506bcbdfb88de17352ba516a60652994e3"
+    }
+  },
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_INTEGRITY_O2_REBIND_OWNER_REVIEW_PENDING",
+  "next": "Owner reviews the exact-head manuscript, declarations, official WPI requirements, and release metadata before merge or submission."
+}

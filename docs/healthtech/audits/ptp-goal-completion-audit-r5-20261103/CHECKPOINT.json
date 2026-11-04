@@ -1,0 +1,25 @@
+{
+  "format": "ptp-goal-completion-audit-r5-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_NOT_COMPLETE",
+  "o1": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+  "o2": "PASS_CURRENT_HEAD_RUNTIME_BOUND_REMOTE_ARTIFACTS_NO_RERUN",
+  "o3_local": "PASS_CURRENT_HEAD_LOCAL_GUIDED_GENERATION_CONTRACT",
+  "o3_paid": "BLOCKED_BEFORE_RESERVATION",
+  "o4_engineering": "PASS_CURRENT_HEAD_THREE_CASE_ENGINEERING",
+  "o4_research": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "g6": "PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK",
+  "owner_review": "REQUIRED_BEFORE_MERGE",
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next_action": "Keep the goal active and continue independent local/offline/manuscript work without broadening scientific claims."
+}

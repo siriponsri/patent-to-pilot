@@ -1,0 +1,12 @@
+{
+  "format": "ptp-o1-provider-budget-state-checkpoint-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_CURRENT_WORKTREE_HTTP_PROVIDER_BUDGET_VISIBILITY_REVIEW_REQUIRED",
+  "audit": "docs/healthtech/audits/ptp-o1-provider-budget-state-20261103/README.md",
+  "verification": "docs/healthtech/audits/ptp-o1-provider-budget-state-20261103/verification.json",
+  "tests": "Python HTTP 7/7; frontend unit 74/74; browser HTTP PASS; compileall PASS",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION; unchanged",
+  "scientific_status": "O4 PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE; unchanged",
+  "source_state": "seven-file uncommitted patch; retest after scoped commit",
+  "next_action": "Owner review, scoped commit, exact-head retest"
+}

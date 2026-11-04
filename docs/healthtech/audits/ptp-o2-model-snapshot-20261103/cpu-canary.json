@@ -1,0 +1,45 @@
+{
+  "format": "ptp-o2-local-cpu-runtime-canary-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "scope": "Two authored smoke texts per encoder; local Windows CPU only; no cohort, retrieval metric, or external network",
+  "runtime": {
+    "torch": "2.15.0+cpu",
+    "transformers": "5.22.1",
+    "safetensors": "0.8.0",
+    "pydantic": "2.14.2",
+    "cuda_available": false,
+    "threads": 8,
+    "max_length": 64,
+    "local_files_only": true,
+    "raw_inputs_persisted": false
+  },
+  "results": [
+    {
+      "name": "patembed-base",
+      "model_id": "datalyes/patembed-base",
+      "revision": "244ba452908a3093be11efb8a44396652317fb14",
+      "model_sha256": "ae1a87ca79784c8fc457b24b26ebfed812e8f5d5075436b0ba8ad83773560edc",
+      "rows": 2,
+      "shape": [2, 768],
+      "dtype": "<f4",
+      "attention_tokens": 29,
+      "l2_norms": [1.0, 1.0],
+      "elapsed_seconds": 7.681,
+      "status": "PASS"
+    },
+    {
+      "name": "multilingual-e5-base",
+      "model_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "model_sha256": "a18a44fad1d0b46ded15928144138cff1135d5cc8233bdd90be5f18822de09a7",
+      "rows": 2,
+      "shape": [2, 768],
+      "dtype": "<f4",
+      "attention_tokens": 32,
+      "l2_norms": [1.0, 1.0],
+      "elapsed_seconds": 4.309,
+      "status": "PASS"
+    }
+  ],
+  "claim_boundary": "Runtime loading and normalization smoke only; not a remote encode, retrieval evaluation, scientific result, or business claim."
+}

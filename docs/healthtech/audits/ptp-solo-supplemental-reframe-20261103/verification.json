@@ -1,0 +1,27 @@
+{
+  "format": "ptp-solo-supplemental-reframe-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "path": "docs/healthtech/research/SUPPLEMENTAL_DATA.md",
+  "status": "PASS_SOLO_SCOPE_ALIGNED",
+  "change_scope": "documentation-only correction of participant/business-validation boundary",
+  "current_round": {
+    "study_type": "solo_reproducible_computational_study",
+    "external_participants": "NOT_RUN",
+    "developer_self_evaluation": "proxy_only_if_labeled",
+    "external_user_validation": "NOT_RUN",
+    "adoption": "NOT_RUN",
+    "actual_purchase": "NOT_RUN",
+    "revenue": "NOT_RUN",
+    "willingness_to_pay": "NOT_RUN",
+    "roi": "NOT_RUN"
+  },
+  "engineering_or_research_gate": "participant route is not required for the current round",
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  }
+}

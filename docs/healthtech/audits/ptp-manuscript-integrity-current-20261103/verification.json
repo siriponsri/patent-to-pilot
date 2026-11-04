@@ -1,0 +1,62 @@
+{
+  "format": "ptp-manuscript-integrity-current-head-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+  },
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "ac1a4396d1f0274007fca8e74d44115c330eddd53947f177b915576278600347",
+    "bytes": 44193,
+    "relative_links": 34,
+    "missing_relative_links": 0,
+    "external_links": 0
+  },
+  "bound_receipts": {
+    "offline_frontier": {
+      "path": "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+      "sha256": "ff1c8184f526732fb14c6f6ed386aa43da9e4bbd0ba68a599123e43fe424dab0",
+      "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+    },
+    "matched_budget": {
+      "path": "docs/healthtech/audits/ptp-current-head-matched-budget-20261103/verification.json",
+      "sha256": "e7afc8826a5866e5720ab6d864d55258d61c4db225c14ebf50da15827e3651aa",
+      "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+    },
+    "panorama": {
+      "path": "docs/healthtech/audits/ptp-panorama-current-head-20261103/verification.json",
+      "sha256": "6c0f14bbf0aa5b170a431e8dd95080f0e70ba482eacea25230345679d9116e8d",
+      "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+    },
+    "business_value": {
+      "path": "docs/healthtech/audits/ptp-business-value-scenario-20261103/verification.json",
+      "sha256": "7ce3fec371373feb1cc3f757ca7a46dd38a6dc16e8f1e112b5631065277882e4",
+      "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+    }
+  },
+  "content_checks": {
+    "offline_frontier_metrics_present": true,
+    "matched_budget_boundary_present": true,
+    "patembed_and_e5_metrics_present": true,
+    "panorama_metrics_present": true,
+    "business_scenario_metrics_present": true,
+    "semantic_gold_limitation_present": true,
+    "unjudged_not_negative_limitation_present": true,
+    "final_holdout_limitation_present": true,
+    "paid_api_not_run_boundary_present": true,
+    "external_validation_revenue_roi_boundary_present": true
+  },
+  "decision": "PASS_CURRENT_HEAD_CLAIM_AND_LINK_RECONCILIATION",
+  "claim_boundary": "Documentation integrity does not establish confirmatory adaptive superiority, semantic relevance gold, paid model comparison, external validation, revenue, ROI, or submission acceptance.",
+  "resource_mutations": {
+    "benchmark_reruns": 0,
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "format": "ptp-current-head-manuscript-o2-artifact-reconciliation-v1",
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_O2_ARTIFACT_BOUNDARY",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+  "sha256": "0bbd56f1bc579f5199e45f31d0797a961f25910c045733d2fc30e833ca18ff2f",
+  "bytes": 45257,
+  "relative_links_checked": 37,
+  "missing_relative_links": 0,
+  "change_scope": "prior remote vector manifest reconciliation wording and receipt link only",
+  "new_remote_encode": false,
+  "new_retrieval_evaluation": false,
+  "paid_api_call": false,
+  "claims_preserved": [
+    "prior actual remote artifact run is distinct from a new rerun",
+    "DAPFAM is diagnostic rather than semantic device-patent gold",
+    "adaptive superiority remains not established",
+    "external business validation and paid API comparison remain unclaimed"
+  ]
+}

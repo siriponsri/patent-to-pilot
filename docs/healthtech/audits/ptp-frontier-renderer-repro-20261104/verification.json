@@ -1,0 +1,40 @@
+{
+  "format": "ptp-frontier-renderer-repro-v1",
+  "recorded_date": "2026-11-04",
+  "timezone": "Asia/Bangkok",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_REPRODUCIBLE_SANITIZED_RENDERER_CURRENT_HEAD",
+  "change": {
+    "source": "scripts/healthtech/render_current_head_frontier.py",
+    "test": "tests/test_healthtech_current_head_frontier.py",
+    "source_sha256": "a97114296379ba342ead98076141006b9151bb182478f957eb0c2a1aa8735448",
+    "source_bytes": 9797,
+    "test_sha256": "81b120456c30209d74d9e053303fdd3c46d1e705869e0e3e5450dccfb3242df2",
+    "test_bytes": 1994,
+    "behavior": "stable_repo_relative_or_sanitized_external_manifest_path"
+  },
+  "verification": {
+    "pytest": "2 passed, 0 failed, 0 errors, 0 skipped",
+    "compileall_equivalent": "py_compile PASS",
+    "verification_input": "docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+    "output_count": 6,
+    "artifact_hash_matches": {
+      "current_head_frontier.csv": "B1A95D579375BFA1334C01177CB9B66B55EF42DDCFAB6C7371B1261591BCBBDA",
+      "current_head_recall.svg": "390BDE48C7E22AF8AA02BC15FB3A6E34DF0FA121213AAABDDAD723A4644CDAC8",
+      "current_head_budget.svg": "4354C27257AA7448B351E0629345B08ED5D8F73F629A91480C0AFBAAED6E4A0E",
+      "manifest.json": "31D8DC8762B9957866A629B8AF956934CC0E1C7249DD32314A8F6ED7EE4CEC48"
+    },
+    "replay_match_count": 4,
+    "replay_match_total": 4
+  },
+  "claim_boundary": "Development-only descriptive figures; no final holdout, semantic gold, paid API result, or adaptive-superiority claim.",
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "reservations": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  }
+}

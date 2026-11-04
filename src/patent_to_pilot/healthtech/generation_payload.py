@@ -29,6 +29,13 @@ def sha256_json(value: Any) -> str:
     return hashlib.sha256(canonical_json(value)).hexdigest()
 
 
+def _canonical_route(value: Any) -> str:
+    """Normalize route spelling without introducing aliases or fallback routing."""
+    if not isinstance(value, str):
+        return ""
+    return value.strip().casefold()
+
+
 def strip_fence(text: str) -> str:
     text = text.strip()
     if text.startswith("```") and text.endswith("```"):
@@ -49,10 +56,15 @@ def _model_visible_case(pack: dict[str, Any], case: dict[str, Any]) -> dict[str,
     query = case.get("query")
     if not isinstance(query, dict):
         raise GenerationPayloadError("case query is invalid")
+    evidence = case.get("evidence", [])
+    if not isinstance(evidence, list):
+        raise GenerationPayloadError("case evidence is invalid")
     compact_evidence = []
-    for row in case.get("evidence", []):
+    for row in evidence:
         if not isinstance(row, dict):
             raise GenerationPayloadError("case evidence row is invalid")
+        if not isinstance(row.get("source_id"), str) or not row["source_id"]:
+            raise GenerationPayloadError("case evidence source ID is missing")
         compact_row = {key: row.get(key) for key in (
             "evidence_id", "evidence_kind", "jurisdiction", "locator", "payload_hash",
             "source_date", "source_id", "source_version", "statement", "structured_field",
@@ -68,6 +80,11 @@ def _model_visible_case(pack: dict[str, Any], case: dict[str, Any]) -> dict[str,
     candidates = case.get("candidates", [])
     if not isinstance(candidates, list):
         raise GenerationPayloadError("case candidates are invalid")
+    for row in candidates:
+        if not isinstance(row, dict):
+            raise GenerationPayloadError("case candidate row is invalid")
+        if not isinstance(row.get("source_id"), str) or not row["source_id"]:
+            raise GenerationPayloadError("case candidate source ID is missing")
     compact_case = {
         "case_id": case.get("case_id"),
         "query": {
@@ -233,7 +250,8 @@ def build_rights_cleared_paired_payload(
     unsigned_pack = {key: value for key, value in pack.items() if key != "pack_sha256"}
     if pack.get("pack_sha256") != sha256_json(unsigned_pack):
         raise GenerationPayloadError("pack_sha256 mismatch")
-    if provider != "openrouter" or not model or not route:
+    canonical_route = _canonical_route(route)
+    if provider != "openrouter" or not model or not canonical_route:
         raise GenerationPayloadError("exact provider, model, and route are required")
     if max_output_tokens < 1:
         raise GenerationPayloadError("max_output_tokens must be positive")
@@ -252,6 +270,12 @@ def build_rights_cleared_paired_payload(
     for case in cases:
         if not isinstance(case, dict) or not isinstance(case.get("case_id"), str):
             raise GenerationPayloadError("frozen case is invalid")
+        evidence = case.get("evidence", [])
+        candidates = case.get("candidates", [])
+        if not isinstance(evidence, list):
+            raise GenerationPayloadError("case evidence is invalid")
+        if not isinstance(candidates, list):
+            raise GenerationPayloadError("case candidates are invalid")
         source_by_id = {
             row.get("source_id"): row
             for row in case.get("sources", [])
@@ -259,7 +283,7 @@ def build_rights_cleared_paired_payload(
         }
         if len(source_by_id) != len(case.get("sources", [])):
             raise GenerationPayloadError("duplicate or missing source IDs")
-        for group, key in ((case.get("evidence", []), "evidence_id"), (case.get("candidates", []), "patent_id_canonical")):
+        for group, key in ((evidence, "evidence_id"), (candidates, "patent_id_canonical")):
             ids = [row.get(key) for row in group]
             if any(not isinstance(item, str) or not item for item in ids) or len(set(ids)) != len(ids):
                 raise GenerationPayloadError("duplicate or missing evidence/candidate IDs")
@@ -269,15 +293,19 @@ def build_rights_cleared_paired_payload(
             if source is None:
                 raise GenerationPayloadError(f"case source descriptor is missing: {source_id}")
             decision = _source_decision(source)
+            for row in evidence:
+                if row.get("source_id") == source_id and row.get("source_version") != source.get("version_label"):
+                    raise GenerationPayloadError("evidence/source revision mismatch")
+            for row in candidates:
+                if row.get("source_id") == source_id and row.get("source_revision") != source.get("version_label"):
+                    raise GenerationPayloadError("candidate/source revision mismatch")
             if decision != "SYNTHETIC":
                 if not source.get("rights_id") or not source.get("basis_url") or not (source.get("clause_locator") or source.get("locator")):
                     raise GenerationPayloadError("non-synthetic transfer requires sourced rights evidence")
                 if not re.fullmatch(r"[a-f0-9]{64}", str(source.get("sha256", ""))) or not source.get("version_label"):
                     raise GenerationPayloadError("non-synthetic transfer requires source hash and revision")
-                for row in case.get("evidence", []):
+                for row in evidence:
                     if row.get("source_id") == source_id:
-                        if row.get("source_version") != source["version_label"]:
-                            raise GenerationPayloadError("evidence/source revision mismatch")
                         if row.get("structured_field") not in source.get("displayable_fields", []):
                             raise GenerationPayloadError("evidence field is outside reviewed source projection")
             all_decisions.append(decision)
@@ -294,7 +322,7 @@ def build_rights_cleared_paired_payload(
         messages = build_generation_messages(pack, case)
         request_shape = {
             "model": model,
-            "route": route,
+            "route": canonical_route,
             "messages": messages,
             "response_schema": output_schema,
             "max_output_tokens": max_output_tokens,
@@ -305,7 +333,12 @@ def build_rights_cleared_paired_payload(
             review = case.get("remote_transfer_review", {})
             # Query prose, associations, statements and unresolved text also leave
             # the machine. A source-level redistribution label alone cannot clear them.
-            if (review.get("purpose"), review.get("provider"), review.get("route"), review.get("message_sha256")) != ("ht-o3-generation", provider, route, message_hash) or not review.get("basis_reference"):
+            if (
+                review.get("purpose"),
+                review.get("provider"),
+                _canonical_route(review.get("route")),
+                review.get("message_sha256"),
+            ) != ("ht-o3-generation", provider, canonical_route, message_hash) or not review.get("basis_reference"):
                 raise GenerationPayloadError("exact model-visible fields require a source-backed transfer review")
         payload_hash = sha256_json(request_shape)
         runtime_cases.append({
@@ -328,7 +361,7 @@ def build_rights_cleared_paired_payload(
         "purpose": "ht-o3-generation",
         "provider": provider,
         "model": model,
-        "route": route,
+        "route": canonical_route,
         "thinking": False,
         "max_output_tokens": max_output_tokens,
         "pack_sha256": pack["pack_sha256"],

@@ -259,7 +259,10 @@ def test_live_runner_rejects_credit_below_total_bound_before_transport(tmp_path)
         max_price_prompt=0.08,
         max_price_completion=0.28,
     )
-    budget = SimpleNamespace(namespace="canonical")
+    from patent_to_pilot.providers.round1 import build_round1_policy
+    budget = SimpleNamespace(namespace="canonical", policy=build_round1_policy(
+        {pricing.model: pricing.upstream_provider},
+        pricing_snapshot_sha256=pricing.snapshot_sha256, pricing_snapshot_utc=pricing.snapshot_utc))
     runner = OpenRouterQwenGenerationRunner(
         budget=budget,
         pricing=pricing,

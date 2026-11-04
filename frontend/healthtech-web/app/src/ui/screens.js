@@ -80,6 +80,46 @@ function kv(rows) {
   return h('dl', { class: 'kv' }, rows.filter(Boolean).map(([k, v]) => [h('dt', {}, k), h('dd', {}, v)]));
 }
 
+function budgetValue(t, value) {
+  if (value === null || value === undefined || value === 'unknown') return t('value.unknown');
+  if (typeof value === 'number' && Number.isFinite(value)) return `USD ${value.toFixed(6)}`;
+  return String(value);
+}
+
+function providerStatus(t, providers, budgetGate) {
+  return h('details', { class: 'disclosure', id: 'backend-provider-status', open: true },
+    h('summary', {}, t('backend.providerStatus')),
+    h('div', { class: 'stack' }, providers.map((provider) => h('article', {
+      class: 'callout callout-info',
+      'data-provider-id': provider.id,
+      'data-available': String(Boolean(provider.available)),
+    },
+    h('h4', {}, provider.label || provider.id),
+    kv([
+      [t('backend.availability'), provider.available ? t('cap.available') : t('cap.unavailable')],
+      [t('backend.model'), provider.model || t('value.unknown')],
+      [t('backend.estimate'), budgetValue(t, provider.estimated_usd)],
+      [t('backend.billing'), provider.billing_status || t('value.unknown')],
+      [t('backend.actual'), budgetValue(t, provider.actual_usd)],
+      [t('backend.reserved'), budgetValue(t, provider.reserved_usd)],
+      [t('backend.unknownPending'), budgetValue(t, provider.unknown_usd)],
+    ]),
+    provider.estimate_basis ? h('p', { class: 'muted' }, `${t('backend.estimateBasis')}: ${provider.estimate_basis}`) : null,
+    provider.reason ? h('p', { class: 'muted' }, provider.reason) : null))),
+    callout('warning', t('backend.budgetGate'),
+      h('div', {
+        id: 'backend-budget-gate',
+        'data-dispatch': budgetGate?.paid_dispatch || 'unknown',
+      }, kv([
+        [t('backend.dispatch'), budgetGate?.paid_dispatch || t('value.unknown')],
+        [t('backend.authorizedCeiling'), budgetValue(t, budgetGate?.authorized_ceiling_usd)],
+        [t('backend.estimate'), budgetValue(t, budgetGate?.estimated_usd)],
+        [t('backend.actual'), budgetValue(t, budgetGate?.actual_usd)],
+        [t('backend.reserved'), budgetValue(t, budgetGate?.reserved_usd)],
+        [t('backend.unknownPending'), budgetValue(t, budgetGate?.unknown_pending_usd)],
+      ]))));
+}
+
 function known(t, kv) {
   return kv.status === 'known' ? String(kv.value) : `${t('value.unknown')} (${kv.reason})`;
 }
@@ -356,6 +396,7 @@ function briefScreen(app, projectDraft) {
     const backendPanel = backend ? h('section', { class: 'callout callout-info', id: 'backend-run', 'data-state': backendJob?.state || 'ready' },
       h('h3', {}, t('backend.title')),
       field(t('backend.provider'), h('select', { id: 'backend-provider', disabled: active }, providers.map((p) => h('option', { value: p.id, disabled: !p.available, selected: p.id === defaultProviderId }, `${p.label} — ${p.available ? t('cap.available') : t('cap.unavailable')}`)))),
+      providerStatus(t, providers, backend.providerCatalog?.budget_gate),
       h('p', { id: 'backend-status' }, `${t('backend.status')}: ${backendJob?.state || 'ready'}`),
       backendJob?.cost ? h('p', { class: 'muted' }, t('backend.cost', { usd: backendJob.cost.actual_usd ?? 'unknown', seconds: backendJob.cost.local_elapsed_seconds ?? 'unknown' })) : null,
       !backendInput ? h('p', { class: 'muted' }, t('backend.unavailable')) : null,

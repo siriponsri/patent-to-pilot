@@ -25,8 +25,11 @@ try {
   for (const name of cases) {
     const path = join(input, name);
     const original = JSON.parse(readFileSync(join(path, 'dossier.json'), 'utf8'));
+    const manifestName = ['manifest.json', 'engine_manifest.json'].find((f) => existsSync(join(path, f)));
+    assert.ok(manifestName, `${name}: missing manifest.json or engine_manifest.json`);
+    assert.ok(existsSync(join(path, 'acquisition_events.jsonl')), `${name}: missing acquisition_events.jsonl`);
     await page.hash('#/import');
-    await page.setFiles('#import-file', ['dossier.json', 'manifest.json', 'acquisition_events.jsonl'].map((f) => join(path, f)));
+    await page.setFiles('#import-file', ['dossier.json', manifestName, 'acquisition_events.jsonl'].map((f) => join(path, f)));
     await page.waitFor('document.getElementById("import-result")?.dataset.result');
     const verdict = await page.eval('({ok:window.__healthtechApp.state.importPreview.ok, errors:window.__healthtechApp.state.importPreview.errors.map(e=>e.code)})');
     assert.ok(verdict.ok, `${name}: ${verdict.errors.join(',')}`);
@@ -36,7 +39,7 @@ try {
     await page.waitFor('!window.__healthtechApp.state.current?.pipe?.running');
     const imported = await page.eval('({mode:window.__healthtechApp.state.current.mode, version:window.__healthtechApp.state.current.dossier.version, candidates:window.__healthtechApp.state.current.dossier.candidates.length})');
     assert.equal(imported.mode, 'imported_public');
-    assert.equal(imported.version, 2);
+    assert.equal(imported.version, original.version);
     assert.equal(imported.candidates, original.candidates.length);
     const evidence = original.evidence[0];
     await page.hash(`#/project/${pid}/source/${encodeURIComponent(evidence.source_id)}?evidenceId=${encodeURIComponent(evidence.evidence_id)}`);
@@ -62,12 +65,13 @@ try {
       const f = await waitForDownload(dl, `${fileId}-${lang}.md`);
       const md = readFileSync(f, 'utf8');
       assert.ok(md.includes(note));
-      assert.ok(md.includes(original.user_edits.integration_note));
+      if (original.user_edits?.integration_note) assert.ok(md.includes(original.user_edits.integration_note));
       for (const c of original.candidates) assert.ok(md.includes(c.patent_id_canonical));
     }
     assert.deepEqual(page.errors, []);
     results.push({query_id: name, result: 'PASS', imported_candidates: imported.candidates, backend_version: imported.version,
-      import: 'real-file-input', persistence: 'IndexedDB save and page reload', th_en_export: 'backend edits and UI note retained', page_errors: 0});
+      manifest: manifestName, import: 'real-file-input', persistence: 'IndexedDB save and page reload',
+      th_en_export: original.user_edits?.integration_note ? 'backend edits and UI note retained' : 'UI note retained; backend edit absent in input', page_errors: 0});
   }
   const summary = {status:'PASS_REAL_BACKEND_BROWSER_IMPORT', cases:results, live_search_api:'NOT_IMPLEMENTED', dense_encoding:'NOT_RUN', provider_calls:0, paid_cost_usd:0};
   writeFileSync(join(input, 'browser-summary.json'), JSON.stringify(summary, null, 2)+'\n');

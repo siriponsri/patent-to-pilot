@@ -1,0 +1,60 @@
+{
+  "format": "ptp-g5-operational-case-table-checkpoint-v1",
+  "observed_utc": "2026-11-03T23:41:27.9786139Z",
+  "goal": "Patent-to-Pilot existing goal",
+  "queue_item": "solo_operational_case_table",
+  "status": "COMPLETE_CURRENT_CANDIDATE",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "tree": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "receipt": {
+    "path": "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/verification.json",
+    "sha256": "6bf2a84bb66c7c0723b1508379883a45188248eafdd5f03fe2f8ccc9e331efcd",
+    "model_id": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "cases": 3,
+    "schema_valid_cases": "3/3",
+    "prompt_tokens": 7301,
+    "output_tokens": 1448,
+    "mean_generation_latency_seconds": 54.32043713191524,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "operational_evaluation": {
+    "path": "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/operational-evaluation.json",
+    "sha256": "8e329c714fb38a2aa12662bd76c672e756fac60ed5b5185a560de4b31bfc341b",
+    "finding_count": 12,
+    "exact_source_locator_bindings": "12/12",
+    "classification_contract_matches": "12/12",
+    "input_evidence_rows": 15,
+    "emitted_unique_evidence_rows": 12,
+    "evidence_coverage_rate": 0.8,
+    "cases_with_unresolved_items": "3/3",
+    "interpretation": "Machine-side source-binding and workflow-coverage proxy only; not semantic relevance, retrieval accuracy, adaptive superiority, or customer value."
+  },
+  "verification": {
+    "markdown_links": {"checked": 74, "missing": 0},
+    "diff_check": "PASS",
+    "queue_status": "COMPLETE"
+  },
+  "resource_mutations": {
+    "paid_calls": 0,
+    "gpu_jobs": 0,
+    "downloads": 0,
+    "ledger_mutations": 0,
+    "reservations": 0,
+    "merge_push_publish": false
+  },
+  "business_boundary": {
+    "human_time": "NOT_MEASURED",
+    "independent_user_validation": "NOT_PERFORMED",
+    "revenue": "NOT_MEASURED",
+    "willingness_to_pay": "NOT_MEASURED",
+    "roi": "NOT_MEASURED",
+    "external_customer_validation": "NOT_PERFORMED"
+  },
+  "next": "portable_candidate_instructions"
+}

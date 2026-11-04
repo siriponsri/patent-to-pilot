@@ -1,0 +1,62 @@
+{
+  "format": "ptp-api-owner-env-live-check-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true
+  },
+  "metadata_observation": {
+    "receipt": "metadata-observation.json",
+    "receipt_sha256": "67952e19832f6b2aa2e8024cbff508c5e2759eba1306768c45fee139171f34d8",
+    "started_at_utc": "2026-11-03T08:33:00.657670+00:00",
+    "completed_at_utc": "2026-11-03T08:33:01.997407+00:00",
+    "key_endpoint_http_status": 200,
+    "key_scope_sha256": "7cbe4013fd1c43bb8096135bc6e4ed9a0befb7607ebe820bcfcb2c33544d7b97",
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "key_class": "ordinary_non_management",
+    "account_scope": "NOT_RECONCILED",
+    "current_scoped_credit": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "history_completeness": "NOT_PROVEN",
+    "live_admission_enabled": false
+  },
+  "canonical_r1": {
+    "authorization_id": "PTP-HT-OR-R1-20261028-USD8",
+    "registry_path": "C:/Users/User/AppData/Local/PatentToPilot/healthtech/budget-ledgers/PTP-HT-OR-R1-20261028-USD8.json",
+    "registry_present": false,
+    "journal_resolved": false,
+    "legacy_rebinding_attempted": false,
+    "zero_ledger_created": false
+  },
+  "preflight": {
+    "rights_cleared_paired_payload": "PASS_3_OF_3_CURRENT_HEAD",
+    "source_backed_transfer_review": "PASS",
+    "route_and_price": "PASS_EXISTING_SNAPSHOT",
+    "dispatch": "BLOCKED_BEFORE_RESERVATION"
+  },
+  "verification": {
+    "focused_tests": "62 passed, 0 failed, 0 errors, 0 skipped",
+    "focused_junit": "focused-tests.xml",
+    "focused_junit_sha256": "85e8aa5704a53ce04cb51ab8e98510b764b077b88ac4c1f79b7cfe897303e486",
+    "compileall": "NOT_RUN_THIS_CHECKPOINT",
+    "git_diff_check": "KNOWN_PRE_EXISTING_MEMORY_NEXT_ACTIONS_LINE_ENDING_NOISE"
+  },
+  "resource_mutations": {
+    "paid_provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "unknown_billing_retried": false
+  },
+  "status": "PASS_READ_ONLY_METADATA_GATE_STILL_BLOCKED",
+  "next": "Obtain the existing canonical R1 journal/export and current scoped credit snapshot once; reconcile before any reservation. Continue local/offline and manuscript work independently."
+}

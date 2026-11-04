@@ -1,0 +1,15 @@
+{
+  "format": "ptp-healthtech-checkpoint-v1",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "engineering": "COMPLETE_WITH_RESEARCH_BOUNDARY",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "budget_audit": "exact 3/123 matched slice; 5/205, 6/246, 9/369 at-most sensitivity; B3 one not-realized query",
+  "resource_mutations": "provider 0; reservations 0; GPU 0; dataset 0; ledger 0; resets false; submission false",
+  "goal_closed": false,
+  "next": "Resume from r14 without rerunning the saved frontier; owner review or provide the one scoped credit/limit snapshot if paid comparison remains required."
+}

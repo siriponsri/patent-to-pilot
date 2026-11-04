@@ -1,0 +1,51 @@
+{
+  "format": "ptp-local-http-vector-checkpoint-v1",
+  "observed_date": "2026-11-03",
+  "parent_goal": "Patent-to-Pilot O1-O4 original goal continuation",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree_before_run": "CLEAN",
+    "source_changes_this_package": false,
+    "documentation_and_audit_changes_after_run": true
+  },
+  "status": "PASS_CURRENT_HEAD_LOCAL_VECTOR_HTTP_3_OF_3_ENGINEERING",
+  "cases": {
+    "count": 3,
+    "passed": 3,
+    "ids": ["HT-DEV-MITRACLIP", "HT-DEV-TENDYNE", "HT-DEV-TRICLIP"],
+    "per_case": "source inspection 200; history versions 1 and 2; edit status 200; JSON/TH/EN exports PASS; vector errors 0"
+  },
+  "resources": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "compute": "CPU-local MiniLM ONNX vector encoding and loopback HTTP only"
+  },
+  "tests": {
+    "python_targeted": "29 passed, 0 failed",
+    "frontend_unit": "74 passed, 0 failed",
+    "browser_http": "PASS; source inspection; history 1 -> 2; edit/reopen; JSON/TH/EN export",
+    "logs": ["python-regression.log", "frontend-unit.log", "browser-http-integration.log"]
+  },
+  "research_boundary": {
+    "engineering": "PASS",
+    "scientific_comparison": "PARTIAL_DESCRIPTIVE",
+    "semantic_gold": "NOT_ESTABLISHED",
+    "external_business_validation": "NOT_VALIDATED",
+    "paid_api_comparison": "BLOCKED_LOCAL"
+  },
+  "evidence": {
+    "verification": "verification.json",
+    "bundle_validation": "vector-validation.json",
+    "run_log": "run.log",
+    "manuscript_updated": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "acceptance_matrix_updated": "docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json"
+  },
+  "next_action": "Keep O3 paid/API and new-compute branches gated; owner-review the current candidate and continue only with independently authorized offline or manuscript work."
+}

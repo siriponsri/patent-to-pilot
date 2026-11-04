@@ -1,0 +1,58 @@
+{
+  "format": "ptp-goal-completion-audit-v15",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "outcomes": {
+    "O1": "COMPLETE_ENGINEERING_CURRENT_HEAD",
+    "O2": "PARTIAL_REMOTE_VECTOR_DOSSIER_ENGINE_BOUNDARY_REMAINS",
+    "O3_LOCAL": "PASS_3_OF_3_SCHEMA_VALID_FROZEN_PACK",
+    "O3_API": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "O4_ENGINEERING": "PASS_THREE_CASE_BROWSER_ARTIFACT_PATH",
+    "O4_RESEARCH": "PARTIAL_NO_ADMISSIBLE_FINAL_HOLDOUT"
+  },
+  "evidence": {
+    "r11_browser_import": "docs/healthtech/audits/ptp-resume-e2-current-r11-20261104/verification.json",
+    "r12_full_suite": "docs/healthtech/audits/ptp-resume-e2-current-r12-20261104/verification.json",
+    "r12_junit": "docs/healthtech/audits/ptp-resume-e2-current-r12-20261104/full-tests.xml",
+    "budget_frontier": "docs/healthtech/audits/ptp-private-frontier-budget-ceilings-20261104/verification.json",
+    "prior_goal_audit": "docs/healthtech/audits/ptp-goal-completion-audit-r14-20261104/verification.json"
+  },
+  "research": {
+    "matched_budget": "3 query calls / 123 rerank pairs",
+    "matched_methods": ["HT-B1", "HT-B2", "HT-B3"],
+    "matched_macro_recall_at_20": 0.49880241951853205,
+    "interpretation": "POSTHOC_DESCRIPTIVE_NOT_ESTIMABLE",
+    "final_holdout": "NOT_AVAILABLE",
+    "semantic_device_patent_gold": "NOT_AVAILABLE"
+  },
+  "business": {
+    "external_user_validation": false,
+    "revenue": false,
+    "roi": false,
+    "willingness_to_pay": false,
+    "status": "OPERATIONAL_POTENTIAL_ONLY"
+  },
+  "journal": {
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_historical_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutated": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "external_messages": 0,
+    "submission": false,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "next": "CONTINUE_OFFLINE_O2_O4_RESEARCH_PACKAGING; OBTAIN_ONE_NON_SECRET_CURRENT_CREDIT_LIMIT_OBSERVATION_ONLY_IF_PAID_COMPARISON_REQUIRED"
+}

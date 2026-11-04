@@ -1,0 +1,116 @@
+{
+  "format": "ptp-local-qwen-exact-head-verification-v1",
+  "observed_at_local": "2026-11-03T07:15:07+07:00",
+  "candidate": {
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103"
+  },
+  "staging": {
+    "host": "dr-train",
+    "user": "chaw",
+    "code_root": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/code/codex-exact-head-88dc4047",
+    "input_pack": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/code/codex-exact-head-88dc4047/inputs/evidence-pack.json",
+    "model_root": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/qwen3-8b",
+    "runner_sha256": "d3f195e81959db3bf35661b9b0fc3a6593a0ad8a1e7b8a234a47fbeedee63d9c",
+    "generation_payload_sha256": "47e7711d77d0a58b1a5c7e0e86ea6401cb43a77f6ea59081d0a4e182cfc76045",
+    "local_execution_sha256": "25ed4283936885352054c5cd5d10d5f4c78fcf8bbe26762dc7da9ee7a5a35e0d",
+    "pack_file_sha256": "0b2bef9fcf8c3eff6106a1786885e4407ea4b8c9e628397ab8e52a392204ced9",
+    "python_files_staged": 72,
+    "import_root": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/code/codex-exact-head-88dc4047/src/patent_to_pilot/__init__.py",
+    "staging_import_check": "PASS"
+  },
+  "model": {
+    "model_id": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "license": "apache-2.0",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.55.2",
+    "python": "3.12.3",
+    "visible_gpu": "Tesla V100-SXM2-32GB",
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "visible_gpu_count": 1,
+    "cuda_visible_devices": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "dtype": "float16",
+    "attention": "eager",
+    "thinking": false,
+    "guided_json": true,
+    "guided_json_library": "lm-format-enforcer",
+    "torch_threads": 8
+  },
+  "run": {
+    "status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
+    "receipt_path": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/outputs/codex-exact-head-88dc4047/generation-receipt-guided.json",
+    "receipt_sha256": "4c2b5c79441560c04da944be45ed7af0cb5aac2b6e9fd2aa5955a123cdcd1c03",
+    "receipt_bytes": 10540,
+    "started_at_utc": "2026-11-03T00:13:06.864143+00:00",
+    "completed_at_utc": "2026-11-03T00:15:07.818158+00:00",
+    "elapsed_seconds": 120.954014,
+    "load_seconds": 3.960359021788463,
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "gpu_peak_allocated_bytes": 17628246016,
+    "gpu_peak_reserved_bytes": 17735614464,
+    "rss_peak_bytes": 4885757952,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "cases": [
+      {
+        "case_id": "HT-DEV-MITRACLIP",
+        "messages_sha256": "aff765c814db1f16a113a4f6d447ca0937d1be8910ff0001b2eca2bc25beb1a7",
+        "prompt_tokens": 1017,
+        "output_tokens": 351,
+        "generation_latency_seconds": 38.91797397099435,
+        "output_sha256": "d0ef3132f7afeb07106995e97ac739adf73142ec0309c248e739c418147928c9",
+        "schema_valid": true,
+        "parse_error": null
+      },
+      {
+        "case_id": "HT-DEV-TENDYNE",
+        "messages_sha256": "c51435f2b2661bb81ca8da28e9d954f8f4ede2d029c98c783c02b57dc671f2f2",
+        "prompt_tokens": 1036,
+        "output_tokens": 356,
+        "generation_latency_seconds": 39.40877637709491,
+        "output_sha256": "1aafd2c4e0212fb868d3b9202574fef8fa499c6de5545efe618b0e14a68934f9",
+        "schema_valid": true,
+        "parse_error": null
+      },
+      {
+        "case_id": "HT-DEV-TRICLIP",
+        "messages_sha256": "cc400bb8612c3479f6205c58f5e8d46a9c0f0281893e9aa8ec6a1c0ae6897ef4",
+        "prompt_tokens": 1020,
+        "output_tokens": 347,
+        "generation_latency_seconds": 38.551840879023075,
+        "output_sha256": "7fc9f4fa5fb91c9f49d59121302788a3dd880317daf68a5b7acbd5dd25998d9c",
+        "schema_valid": true,
+        "parse_error": null
+      }
+    ]
+  },
+  "resource_and_scope": {
+    "gpu_jobs": 1,
+    "approved_gpu_only": true,
+    "concurrency": 1,
+    "dataset_downloads": 0,
+    "api_calls": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "other_services_touched": false,
+    "raw_outputs_committed_to_git": false
+  },
+  "full_suite": {
+    "tests": 611,
+    "passed": 610,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "warnings": 2,
+    "junit": "full-tests.xml"
+  },
+  "interpretation": {
+    "schema_validity": "PASS_3_OF_3",
+    "retrieval_or_semantic_quality": "NOT_EVALUATED",
+    "local_vs_api_comparison": "NOT_RUN_API_BRANCH_BLOCKED",
+    "prior_mixed_root_receipt": "HISTORICAL_ONLY_NOT_USED"
+  }
+}

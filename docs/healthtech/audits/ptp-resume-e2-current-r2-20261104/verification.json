@@ -1,0 +1,61 @@
+{
+  "format": "ptp-resume-e2-current-checkpoint-v1",
+  "recorded_utc": "2026-11-03T17:24:49.7581370Z",
+  "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+  "branch": "codex/patent-to-pilot-long-run-20261103",
+  "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "working_tree": "INTENTIONALLY_DIRTY_PRESERVED",
+  "engineering": {
+    "full_test_command": "rtk python -m pytest -q --junitxml=docs/healthtech/audits/ptp-resume-e2-current-r2-20261104/current-head-full-tests.xml",
+    "tests": 642,
+    "passed": 640,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 2,
+    "compileall": "PASS",
+    "scoped_diff_check": "PASS_WITH_EXISTING_LINE_ENDING_WARNINGS",
+    "test_receipt": "current-head-full-tests.xml",
+    "test_receipt_sha256": "76f50be98675d334d74f8b15862fba548133522128d90b5b9696df9a2c9bbecc"
+  },
+  "e2_journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "integrity_check": "ok",
+    "new_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": "0.0001464",
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_epoch_allowance_usd": "1",
+    "budget_reset": false,
+    "window_reset": false,
+    "ledger_mutation": false
+  },
+  "paid_gate": {
+    "latest_metadata_receipt": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-api-metadata-current-20261104-r1/metadata-observation.json",
+    "metadata_observed_utc": "2026-11-03T17:06:27.703893Z",
+    "account_scope_binding": "NOT_RECONCILED",
+    "current_credit": "UNAVAILABLE_THROUGH_ORDINARY_KEY",
+    "key_limit_or_remaining": "UNAVAILABLE",
+    "live_admission_enabled": false,
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "new_paid_calls": 0,
+    "new_paid_cost_usd": "0",
+    "route_price_refresh": "NOT_RUN",
+    "reservation": "NOT_RUN",
+    "retry": "NOT_RUN"
+  },
+  "runtime": {
+    "active_experiment_process": "NONE_OBSERVED",
+    "ssh_process": "EXISTING_CODEX_APP_SERVER_PROXY_NOT_EXPERIMENT",
+    "new_gpu_job": 0,
+    "dr_train_allocation": "NOT_REOBSERVED_THIS_CHECKPOINT"
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_VERIFIED",
+    "paid_api": "BLOCKED_BEFORE_RESERVATION",
+    "scientific_comparison": "PARTIAL",
+    "business_validation": "PARTIAL_PROXY_ONLY",
+    "manuscript": "READY_FOR_OWNER_REVIEW"
+  }
+}

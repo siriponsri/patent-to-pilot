@@ -1,0 +1,91 @@
+{
+  "format": "ptp-private-frontier-reconciliation-verification-v1",
+  "observed_local": "2026-11-04",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_state": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "input": {
+    "private_artifact": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-current-head-baselines-20261103-r2",
+    "input_files": 6,
+    "raw_payload_copied": false,
+    "absolute_private_path_copied": false
+  },
+  "checks": [
+    {
+      "id": "summarizer_regression_initial",
+      "status": "FAIL_RETAINED",
+      "reason": "Synthetic privacy assertion matched the word private in the format name rather than a payload marker. No production artifact was changed by the failed assertion."
+    },
+    {
+      "id": "summarizer_regression_corrected",
+      "status": "PASS",
+      "command": "$env:PYTHONPATH = \"src\"; python -B -m pytest -q -p no:cacheprovider tests/test_healthtech_private_frontier_summary.py",
+      "result": "1 passed, 0 failed, 0 errors"
+    },
+    {
+      "id": "focused_current_head_selection",
+      "status": "PASS",
+      "command": "$env:PYTHONPATH = \"src\"; python -B -m pytest -q -rA -p no:cacheprovider tests/test_healthtech_http.py tests/test_healthtech_api_generation.py tests/test_healthtech_local_epoch.py tests/test_healthtech_local_execution.py tests/test_healthtech_local_qwen_operational.py tests/test_verify_vector_bundle_pair.py tests/test_healthtech_private_frontier_summary.py",
+      "result": "44 passed, 0 failed, 0 errors"
+    },
+    {
+      "id": "private_frontier_summarization",
+      "status": "PASS",
+      "command": "$env:PYTHONPATH = \"src\"; python -B scripts/healthtech/summarize_private_frontier.py --baseline %LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-current-head-baselines-20261103-r2 --output docs/healthtech/audits/ptp-private-frontier-reconciliation-20261104/summary.json",
+      "result": "Sanitized JSON emitted; no raw query/patent/source text or absolute private path"
+    },
+    {
+      "id": "candidate_bound_receipt",
+      "status": "PASS",
+      "result": "Private receipt code_commit matches candidate HEAD"
+    },
+    {
+      "id": "e2_read_only_boundary",
+      "status": "PASS",
+      "result": "SQLite integrity ok; four legacy settled receipts; zero operational/pending/unknown rows; no mutation"
+    }
+  ],
+  "results": {
+    "reference_queries": 3,
+    "reference_pairs": 61,
+    "shared_exact_groups": 2,
+    "final_holdout": "NOT_PRESENT",
+    "uncertainty": "NOT_ESTIMABLE",
+    "full_method_equal_total_budget": false,
+    "matched_first_action": {
+      "methods": ["HT-B1", "HT-B2", "HT-B3"],
+      "query_calls": 3,
+      "rerank_pairs": 123,
+      "macro_recall_at_20": {
+        "HT-B1": 0.49880241951853205,
+        "HT-B2": 0.49880241951853205,
+        "HT-B3": 0.49880241951853205
+      },
+      "failures": 0,
+      "not_realized": 0,
+      "claim_boundary": "first-action diagnostic only"
+    },
+    "method_resources": {
+      "HT-B0a": {"query_calls": 3, "rerank_pairs": 0, "macro_recall_at_20": 0.4427394146064223},
+      "HT-B0b": {"query_calls": 3, "rerank_pairs": 0, "macro_recall_at_20": 0.6622417082775139},
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123, "macro_recall_at_20": 0.49880241951853205},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369, "macro_recall_at_20": 0.5689116226200625},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205, "macro_recall_at_20": 0.49880241951853205}
+    }
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "time_window_reset": false,
+    "pending_replayed": false
+  },
+  "status": "READY_FOR_OWNER_REVIEW_OFFLINE",
+  "overall_goal": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "summary_sha256": "75abf4ea4a018b8b3477174d349741da701d1da240f9d623b13e7c361a30068e"
+}

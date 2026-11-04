@@ -1,0 +1,54 @@
+{
+  "format": "ptp-wpi-venue-recheck-v1",
+  "observed_local_date": "2026-11-03",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841"
+  },
+  "sources": [
+    {
+      "url": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+      "publisher": "Elsevier",
+      "access_status": "PASS",
+      "supported_claim": "World Patent Information covers IP information retrieval, search, analysis, AI/ML applications to IP research, system evaluation/benchmarking, and real-data collections for IR experiments.",
+      "use": "conditional venue-fit only"
+    },
+    {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope",
+      "publisher": "Elsevier ScienceDirect",
+      "access_status": "HTTP_403",
+      "supported_claim": "The page could not be inspected in this environment.",
+      "use": "no journal-specific requirements inferred"
+    },
+    {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+      "publisher": "Elsevier ScienceDirect",
+      "access_status": "HTTP_403",
+      "supported_claim": "The current Guide for Authors could not be inspected in this environment.",
+      "use": "owner browser recheck required"
+    }
+  ],
+  "changes": [
+    {
+      "path": "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md",
+      "change": "corrected the Guide for Authors URL and recorded the 2026-11-03 recheck",
+      "sha256": "6FE546CC55F2AA5DF63A6A4DA9183C70A61F1D494854FAE51E2422F962DFEC4C"
+    }
+  ],
+  "status": {
+    "scope_fit": "PASS_CONDITIONAL",
+    "guide_for_authors": "BLOCKED_ACCESS_403_OWNER_BROWSER_RECHECK_REQUIRED",
+    "submitted": false,
+    "acceptance_claim": false
+  },
+  "resource_mutations": {
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next_action": "Owner rechecks the official WPI Guide for Authors in an authorized browser/session before submission."
+}

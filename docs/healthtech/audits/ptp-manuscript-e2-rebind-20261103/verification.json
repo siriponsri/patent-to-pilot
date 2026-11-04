@@ -1,0 +1,71 @@
+{
+  "format": "ptp-manuscript-e2-rebind-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true,
+    "latest_release_commit": "88dc40471cb9078f929c02bb893cfa1e364da841"
+  },
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "0c3ed5f1ff80c44f704cb4cc6f93e03c9675fec2cfb1063ab5c34be81faf2cc0",
+    "bytes": 50708,
+    "relative_links_checked": 46,
+    "missing_relative_links": 0,
+    "status": "PASS_CURRENT_HEAD"
+  },
+  "historical_rebind": {
+    "prior_audit": "docs/healthtech/audits/ptp-manuscript-integrity-current-head-r3-20261103/verification.json",
+    "prior_sha256": "b21f7d38b49f873575a5c74ac46ac4c431c06122df999bda818e8d02aa2b213a",
+    "prior_bytes": 50363,
+    "prior_relative_links_checked": 45,
+    "preserved_as_historical": true
+  },
+  "claim_boundaries": {
+    "metrics_changed": false,
+    "adaptive_superiority_claimed": false,
+    "semantic_device_patent_gold_claimed": false,
+    "confirmatory_significance_claimed": false,
+    "paid_api_result_claimed": false,
+    "external_business_validation_claimed": false,
+    "revenue_roi_willingness_to_pay_claimed": false,
+    "submission_performed": false
+  },
+  "e2_accounting_boundary": {
+    "journal": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "history": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "legacy_settled_attempts": 4,
+    "legacy_actual_usd": "0.0001464",
+    "new_attempts": 0,
+    "pending_or_unknown_rows": 0,
+    "prospective_allowance_usd": "1",
+    "ledger_mutation": false,
+    "budget_reset": false,
+    "window_reset": false,
+    "paid_dispatch": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE"
+  },
+  "resource_mutations": {
+    "benchmark_reruns": 0,
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "remote_writes": 0,
+    "submission": false
+  },
+  "verification": {
+    "manuscript_hash_and_size": "PASS",
+    "relative_links": "PASS_46_CHECKED_0_MISSING",
+    "json_serialization": "PASS_4_FILES",
+    "focused_regression": "PASS_45_PASSED_0_FAILED_0_ERRORS_0_SKIPPED",
+    "focused_regression_receipt": "docs/healthtech/audits/ptp-manuscript-e2-rebind-20261103/focused-tests.xml",
+    "focused_regression_receipt_sha256": "157ef1d787b61c16ec331b226c1fee44150387e1d92a14ea425b18fe0b5eb033",
+    "scoped_whitespace": "PASS",
+    "git_diff_check": "PASS_SCOPED; repository output retains pre-existing CRLF conversion warnings in dirty memory/next-actions.md"
+  },
+  "status": "PASS_CURRENT_HEAD_MANUSCRIPT_E2_REBOUND_OWNER_REVIEW_PENDING",
+  "next": "Post-write JSON, link, focused regression, and scoped whitespace checks passed; owner reviews the manuscript and WPI release requirements."
+}

@@ -1,0 +1,47 @@
+{
+  "format": "ptp-api-route-pricing-recheck-v1",
+  "status": "PASS_FRESH_PUBLIC_ROUTE_PRICING_PARTIAL_API_GATE",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_state": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "observation": {
+    "source": "docs/healthtech/audits/ptp-api-route-pricing-recheck-20261104/public-route-observation.json",
+    "source_url": "https://openrouter.ai/api/v1/models/qwen/qwen3-32b/endpoints",
+    "retrieved_at_utc": "2026-11-04T00:54:43.4535612Z",
+    "model": "qwen/qwen3-32b",
+    "endpoint_count": 3,
+    "selected_provider": "DeepInfra",
+    "selected_tag": "deepinfra/fp8",
+    "selected_prompt_usd_per_million": 0.08,
+    "selected_completion_usd_per_million": 0.28,
+    "selected_context_length": 40960,
+    "selected_max_completion_tokens": 16384,
+    "observation_sha256": "a497a28f50e830f33c469ae40786881a7ded085d2077b4c8fcc9841c15c8c9c6",
+    "model_snapshot": "docs/healthtech/audits/ptp-api-route-pricing-recheck-20261104/model-snapshot.json"
+  },
+  "gates": {
+    "fresh_public_route_price": true,
+    "exact_dispatch_key_scope": false,
+    "exact_dispatch_key_remaining_limit": false,
+    "canonical_ledger_rebound": false,
+    "paid_dispatch": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "ledger_mutations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "secrets_read_or_persisted": 0
+  },
+  "limitations": [
+    "The observation is public route metadata and does not prove account credit or key-level limit.",
+    "The route snapshot is not yet rebound into the canonical ledger because key scope/limit evidence remains absent.",
+    "No provider generation result is claimed."
+  ],
+  "next": "Bind exact dispatch-key scope and remaining limit or explicit unlimited status, then recheck E2 and reserve only if every live gate passes."
+}

@@ -60,6 +60,7 @@ def test_reviewed_migration_is_append_only_idempotent_and_counts_carryover(tmp_p
     registry = tmp_path / "registry.json"
     _existing_unbound_r1(path)
     monkeypatch.setattr("patent_to_pilot.providers.ledger_registry.default_registry_path", lambda _: registry)
+    monkeypatch.setattr("patent_to_pilot.providers.local_epoch.active", lambda: False)
     first = migrate_reviewed_r1_history(path, model_provider_map={MODEL: PROVIDER}, pricing_snapshot_sha256=PRICE_HASH, pricing_snapshot_utc=PRICE_TIME, review=_review(), carryover=_carryover(), registry_path=registry)
     second = migrate_reviewed_r1_history(path, model_provider_map={MODEL: PROVIDER}, pricing_snapshot_sha256=PRICE_HASH, pricing_snapshot_utc=PRICE_TIME, review=_review(), carryover=_carryover(), registry_path=registry)
     assert first == second
@@ -110,6 +111,7 @@ def test_live_transport_requires_reviewed_carryover(tmp_path, monkeypatch):
         db.execute("INSERT INTO budget_history_anchor VALUES(?)", (json.dumps(review),))
     registry = tmp_path / "registry.json"
     monkeypatch.setattr("patent_to_pilot.providers.ledger_registry.default_registry_path", lambda _: registry)
+    monkeypatch.setattr("patent_to_pilot.providers.local_epoch.active", lambda: False)
     register_canonical_ledger(path, authorization_id=R1_AUTHORIZATION_ID, policy_hash=digest, pricing_snapshot_sha256=PRICE_HASH, pricing_snapshot_utc=PRICE_TIME, registry_path=registry, ledger_id=EXPECTED_LEDGER_ID)
     # A canonical journal without the separately reviewed carryover remains offline-only.
     budget = Round1ProjectBudget(path, model_provider_map={MODEL: PROVIDER}, pricing_snapshot_sha256=PRICE_HASH, pricing_snapshot_utc=PRICE_TIME)

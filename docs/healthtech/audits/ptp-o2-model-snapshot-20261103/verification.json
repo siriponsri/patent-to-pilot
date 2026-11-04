@@ -1,0 +1,88 @@
+{
+  "format": "ptp-o2-model-snapshot-verification-v2",
+  "observed_at_utc": "2026-11-03T06:06:11.0497215Z",
+  "candidate": {
+    "worktree": "patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree": "DIRTY_OWNER_CLAUDE_LUNA_SOURCE_AND_AUDIT_WORK_PRESERVED"
+  },
+  "command": {
+    "acquisition": "rtk proxy python -u scripts/healthtech/prepare_research_models.py --output data/raw/healthtech/models/required-encoders --models patembed-base multilingual-e5-base",
+    "binding": "PYTHONPATH=src rtk proxy python -c build_transformer_model_binding for both pinned model trees",
+    "tests": "PYTHONPATH=src rtk proxy python -m pytest -q tests/test_healthtech_transformer_encoders.py tests/test_healthtech_local_execution.py tests/test_verify_vector_bundle_pair.py --junitxml=docs/healthtech/audits/ptp-o2-model-snapshot-20261103/focused-tests.xml",
+    "compile": "PYTHONPATH=src rtk proxy python -m compileall -q scripts/healthtech/prepare_research_models.py scripts/healthtech/encode_transformer_shards.py src/patent_to_pilot/evaluation/healthtech/transformer_encoders.py"
+  },
+  "acquisition": {
+    "status": "PASS_IMMUTABLE_HF_ARTIFACTS_DOWNLOADED",
+    "manifest_sha256": "1b3af4bfc52671c5b411aee473b394a2e2ff12e7681dec0e3f478a74012278ac",
+    "total_bytes": 1913198189,
+    "model_count": 2,
+    "allowlist_only": true,
+    "credential_used": false
+  },
+  "model_bindings": [
+    {
+      "repo_id": "datalyes/patembed-base",
+      "revision": "244ba452908a3093be11efb8a44396652317fb14",
+      "license": "cc-by-nc-sa-4.0",
+      "status": "PASS_LAYOUT_AND_HASH_BINDING",
+      "model_sha256": "ae1a87ca79784c8fc457b24b26ebfed812e8f5d5075436b0ba8ad83773560edc",
+      "tokenizer_sha256": "d5496fadd2d7fda4e958da4285f7cd97c41177bbfc500580addc9c08896fb773"
+    },
+    {
+      "repo_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "license": "mit",
+      "status": "PASS_LAYOUT_AND_HASH_BINDING",
+      "model_sha256": "a18a44fad1d0b46ded15928144138cff1135d5cc8233bdd90be5f18822de09a7",
+      "tokenizer_sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626"
+    }
+  ],
+  "tests": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit_sha256": "8e8b30d97f0b70020aec82fe4d46db66fa2116bb61afa2ab80c896784b3176b6",
+    "full_suite": {
+      "total": 617,
+      "passed": 616,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "junit": "full-tests.xml",
+      "junit_sha256": "2eb1d228c540e2b4d3f03bc626f20de89b040071f76efe3cce02b8ae1a8b80f1"
+    }
+  },
+  "runtime_dependencies": {
+    "global_interpreter": "dependencies unavailable",
+    "isolated_cpu_canary": "PASS",
+    "isolated_cpu_canary_artifact": "cpu-canary.json",
+    "torch": "2.15.0+cpu",
+    "transformers": "5.22.1",
+    "safetensors": "0.8.0",
+    "pydantic": "2.14.2",
+    "cuda_available": false,
+    "canary_rows_per_model": 2,
+    "canary_shapes": [[2, 768], [2, 768]],
+    "canary_l2_norms": [[1.0, 1.0], [1.0, 1.0]],
+    "canary_elapsed_seconds": [7.681, 4.309]
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "gpu_jobs": 0,
+    "remote_transfers": 0,
+    "new_encode_runs": 0,
+    "local_cpu_canary_runs": 1,
+    "dataset_downloads": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "claim_boundary": "Model snapshot, local runtime loading, and normalization smoke only; no remote encode, retrieval metric, adaptive superiority, paid API comparison, or publication claim."
+}

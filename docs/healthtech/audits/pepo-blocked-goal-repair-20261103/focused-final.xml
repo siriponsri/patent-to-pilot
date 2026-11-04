@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="23" time="0.866" timestamp="2026-11-03T18:47:18.486791+07:00" hostname="DESKTOP-C8EHASQ"><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_screening_pattern_is_case_insensitive_and_deterministic" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_screening_expression_rejects_unsafe_alias" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_sql_literal_escapes_paths_and_quotes" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_screening_sql_keeps_declared_fields_and_policy" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_qrel_sql_uses_positive_labels_and_keeps_domain_partition" time="0.001" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_sql_screen_preserves_substring_contract[terms0-A MEDICAL DEVICE for screening-True]" time="0.001" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_sql_screen_preserves_substring_contract[terms1-a delivery system-True]" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_sql_screen_preserves_substring_contract[terms2-medical/ device-False]" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_sql_screen_preserves_substring_contract[terms3-delivery systems-True]" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_sql_screen_preserves_substring_contract[terms4-a+b-True]" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_sql_screen_preserves_substring_contract[terms5-aaab-False]" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_sql_screen_preserves_substring_contract[terms6-PATIENT'S DEVICE-True]" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_sql_screen_preserves_substring_contract[terms7-medical equipment-False]" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_coverage" name="test_duckdb_screening_expression_matches_real_rows" time="0.059" /><testcase classname="tests.test_healthtech_dapfam_bm25" name="test_tokenize_is_lowercase_and_stable" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_bm25" name="test_sparse_bm25_matches_reference_scores" time="0.117" /><testcase classname="tests.test_healthtech_dapfam_bm25" name="test_ndcg_and_recall_ignore_unjudged_ids" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_bm25" name="test_duplicate_qrels_are_rejected" time="0.025" /><testcase classname="tests.test_healthtech_dapfam_bm25" name="test_display_path_supports_external_smoke_inputs" time="0.002" /><testcase classname="tests.test_healthtech_dapfam_bm25" name="test_manifest_code_provenance_binds_working_tree_source" time="0.099"><failure message="subprocess.CalledProcessError: Command '['git', 'rev-parse', 'HEAD']' returned non-zero exit status 128.">def test_manifest_code_provenance_binds_working_tree_source():
+&gt;       provenance = MODULE.code_provenance()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+..\..\..\..\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\tests\test_healthtech_dapfam_bm25.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\..\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\scripts\healthtech\run_dapfam_bm25.py:317: in code_provenance
+    "git_revision": git_revision(),
+                    ^^^^^^^^^^^^^^
+..\..\..\..\Desktop\myProject\_worktrees\patent-to-pilot-long-run-20261103\scripts\healthtech\run_dapfam_bm25.py:297: in git_revision
+    return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['git', 'rev-parse', 'HEAD'],)
+kwargs = {'cwd': WindowsPath('C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103'), 'stdout': -1, 'text': True}
+process = &lt;Popen: returncode: 128 args: ['git', 'rev-parse', 'HEAD']&gt;
+stdout = '', stderr = None, retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output &amp; stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+&gt;               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'rev-parse', 'HEAD']' returned non-zero exit status 128.
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:571: CalledProcessError</failure></testcase><testcase classname="tests.test_healthtech_dapfam_bm25" name="test_evaluator_rejects_duplicate_rankings_instead_of_inflating_ndcg" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_bm25" name="test_evaluator_rejects_unknown_queries_and_candidates" time="0.000" /><testcase classname="tests.test_healthtech_dapfam_bm25" name="test_evaluator_preserves_missing_and_failure_denominators" time="0.000" /></testsuite></testsuites>

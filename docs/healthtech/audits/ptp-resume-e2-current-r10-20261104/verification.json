@@ -1,0 +1,96 @@
+{
+  "format": "ptp-resume-e2-current-r10-v1",
+  "goal_reused": true,
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true,
+    "dirty_status_entries": 630,
+    "latest_patch_release_inspected": "323bcc5"
+  },
+  "runtime": {
+    "active_project_jobs_found": 0,
+    "duplicate_attempts_launched": 0,
+    "gpu_jobs_launched": 0,
+    "api_calls_launched": 0
+  },
+  "canonical_e2": {
+    "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_historical_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "paid_preflight": {
+    "metadata_artifact": "C:/Users/User/AppData/Local/PatentToPilot/healthtech/private-artifacts/ptp-resume-e2-current-r10-20261104/metadata-observation.json",
+    "key_endpoint_http_status": 200,
+    "key_is_management": false,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "current_scoped_credit": "NOT_REQUESTED_MANAGEMENT_KEY_REQUIRED",
+    "live_admission": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "route_snapshot_artifact": "C:/Users/User/AppData/Local/PatentToPilot/healthtech/private-artifacts/ptp-resume-e2-current-r10-20261104/model-snapshot.json",
+    "model": "qwen/qwen3-32b",
+    "route": "DeepInfra",
+    "route_status": 0,
+    "prompt_usd_per_million": 0.08,
+    "completion_usd_per_million": 0.28,
+    "route_snapshot_utc": "2026-11-03T20:49:19.3317048Z",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "local_canary": {
+    "status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
+    "model": "Qwen/Qwen3-8B",
+    "cases": 3,
+    "schema_valid_cases": 3,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "is_device_patent_study": false
+  },
+  "gpu_retrieval": {
+    "status": "PASS_FRESH_GPU_PATENT_RETRIEVAL_DIAGNOSTIC",
+    "gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "queries": 3,
+    "known_links": 61,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "saved_vector_verification": "VERIFIED_SAVED_VECTORS_RANKINGS_AND_METRICS",
+    "max_abs_metric_delta": 0.0,
+    "macro_recall_at_20": {
+      "bm25": 0.39268461007591443,
+      "patembed": 0.43007347866682905,
+      "multilingual_e5": 0.48102139406487227
+    },
+    "macro_ndcg_at_20": {
+      "bm25": 0.43002185005927296,
+      "patembed": 0.4095331397689148,
+      "multilingual_e5": 0.4559807758869936
+    }
+  },
+  "verification": {
+    "current_route_dry_run": "PASS",
+    "focused_api_provider_history_tests": "84 passed",
+    "failure_accounting_regressions": "4 passed",
+    "compileall": "PASS",
+    "wrong_reference_verifier_attempt": "FAILED_PRECONDITION_NO_OUTPUT_WRITTEN"
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_WITH_DIRTY_RELEASE_BOUNDARY",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+    "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "overall_goal": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+  },
+  "next": "Obtain one sanitized current account-credit and remaining-key-limit observation from an authorized channel; then reconcile E2, refresh exact-route pricing inside 300 seconds, and reserve only the existing USD0.25 canary."
+}

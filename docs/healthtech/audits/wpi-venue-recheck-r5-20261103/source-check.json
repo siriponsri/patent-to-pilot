@@ -1,0 +1,23 @@
+{
+  "format": "ptp-wpi-official-source-check-v1",
+  "observed_local_date": "2026-11-03",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "content_persisted": false,
+  "sources": [
+    {
+      "url": "https://shop.elsevier.com/journals/world-patent-information/0172-2190",
+      "http_status": 200,
+      "supported_use": "current official venue-scope catalog only"
+    },
+    {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/about/aims-and-scope",
+      "http_status": 403,
+      "supported_use": "not inspectable; no journal-specific inference"
+    },
+    {
+      "url": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+      "http_status": 403,
+      "supported_use": "not inspectable; owner browser/session recheck required"
+    }
+  ]
+}

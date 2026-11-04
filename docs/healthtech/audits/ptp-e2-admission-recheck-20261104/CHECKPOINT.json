@@ -1,0 +1,19 @@
+{
+  "checkpoint": "E2_ADMISSION_PREPARED_PAID_BRANCH_WAITING_FRESH_CREDIT",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+  "offline": "READY_TO_RESUME_AFTER_CREDIT_REFRESH",
+  "paid_api": "NOT_RUN",
+  "engineering": "COMPLETE_FOR_THIS_ADMISSION_PACKAGE",
+  "scientific_evidence": "PARTIAL_EXISTING_DEVELOPMENT_AND_DIAGNOSTIC_EVIDENCE",
+  "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_VALIDATION_NOT_RUN",
+  "manuscript_readiness": "PARTIAL_OWNER_REVIEW_AND_LIVE_WPI_METADATA_REMAIN",
+  "blocking_input": "one fresh non-secret credit snapshot with the existing key scope and E2 authorization",
+  "do_not": [
+    "edit the supplied snapshot timestamp",
+    "retry stale credit evidence",
+    "create a new ledger or reset E2",
+    "retry an unknown or pending request",
+    "claim a paid model result from this checkpoint"
+  ]
+}

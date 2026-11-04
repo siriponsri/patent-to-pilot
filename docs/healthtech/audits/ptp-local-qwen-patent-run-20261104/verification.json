@@ -1,0 +1,133 @@
+{
+  "format": "ptp-local-qwen-patent-run-v1",
+  "recorded_utc": "2026-11-03T18:05:29.479178+00:00",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "pack": {
+    "private_path": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-local-qwen-patent-pack-20261103-r2/evidence-pack.json",
+    "format": "ht-o3-qwen3-frozen-evidence-pack-v1",
+    "sha256": "918f615210546b65111cbc683181dc43886ace2267f16c19d62c31175ea6607b",
+    "case_count": 3,
+    "cases": [
+      {"case_id": "HT-DEV-MITRACLIP", "candidate_count": 35, "evidence_count": 5},
+      {"case_id": "HT-DEV-TENDYNE", "candidate_count": 20, "evidence_count": 5},
+      {"case_id": "HT-DEV-TRICLIP", "candidate_count": 28, "evidence_count": 5}
+    ],
+    "runtime_exclusions": ["source_payloads", "evaluator_labels", "qrels", "hidden_oracles", "raw_html", "provider_credentials"]
+  },
+  "run": {
+    "status": "PASS_LOCAL_QWEN3_FROZEN_PACK_GENERATION",
+    "private_receipt": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-local-qwen-patent-run-20261104-r1/generation-receipt-guided.json",
+    "receipt_sha256": "7072197565f26a0b88ae80aeddd08eff3c933f69f6632714fcc296a6713dc6fd",
+    "remote_receipt_sha256": "7072197565f26a0b88ae80aeddd08eff3c933f69f6632714fcc296a6713dc6fd",
+    "started_at_utc": "2026-11-03T17:55:54.959492+00:00",
+    "completed_at_utc": "2026-11-03T17:58:42.303497+00:00",
+    "model_id": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "license": "apache-2.0",
+    "gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "gpu_name": "Tesla V100-SXM2-32GB",
+    "cuda_visible_devices": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.55.2",
+    "python": "3.12.3",
+    "guided_json": true,
+    "torch_threads": 8,
+    "max_new_tokens": 512,
+    "max_findings": 4,
+    "load_seconds": 4.2612637099809945,
+    "gpu_peak_allocated_bytes": 18452102144,
+    "gpu_peak_reserved_bytes": 18865979392,
+    "rss_peak_bytes": 4891336704,
+    "total_prompt_tokens": 7301,
+    "total_output_tokens": 1448,
+    "mean_generation_latency_seconds": 54.32043713191524,
+    "schema_valid_cases": 3,
+    "cases": [
+      {"case_id": "HT-DEV-MITRACLIP", "prompt_tokens": 2397, "output_tokens": 483, "latency_seconds": 54.32065404811874, "schema_valid": true, "output_sha256": "b7bf8a7565d76361d9ce8e12a6390a9215e61a21267cbdfc4baa75608bb057d1"},
+      {"case_id": "HT-DEV-TENDYNE", "prompt_tokens": 2470, "output_tokens": 494, "latency_seconds": 55.19255641079508, "schema_valid": true, "output_sha256": "734cdb2db16de61b9c27e54c8b082201ec5df25db39f7a11ffb48b01af4863fc"},
+      {"case_id": "HT-DEV-TRICLIP", "prompt_tokens": 2434, "output_tokens": 471, "latency_seconds": 53.448100936831906, "schema_valid": true, "output_sha256": "67e458067e3795ba99ed6e6c7e5530fbef9abb379c103c48d8a91ffe7d3307f8"}
+    ],
+    "provider_calls": 0,
+    "paid_cost_usd": "0"
+  },
+  "independent_verification": {
+    "script": "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/verify_receipt.py",
+    "status": "PASS",
+    "pack_hash_binding": "PASS",
+    "exact_message_hashes": "PASS_3_OF_3",
+    "source_id_locator_classification_validation": "PASS_3_OF_3",
+    "schema_validation": "PASS_3_OF_3",
+    "paid_boundary": "PASS_ZERO_PROVIDER_CALLS_ZERO_COST"
+  },
+  "operational_evaluation": {
+    "path": "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/operational-evaluation.json",
+    "sha256": "8e329c714fb38a2aa12662bd76c672e756fac60ed5b5185a560de4b31bfc341b",
+    "status": "PASS_OPERATIONAL_SOURCE_BOUNDING",
+    "finding_count": 12,
+    "exact_source_locator_bindings": "12/12",
+    "classification_contract_matches": "12/12",
+    "input_evidence_rows": 15,
+    "emitted_unique_evidence_rows": 12,
+    "evidence_coverage_rate": 0.8,
+    "cases_with_unresolved_items": "3/3",
+    "classification_counts": {
+      "source_fact": 10,
+      "disclosed_link": 2
+    },
+    "interpretation": "Deterministic source-binding and workflow-coverage proxy only; not semantic relevance or adaptive superiority."
+  },
+  "failures": [
+    {
+      "attempt_id": "local-qwen-patent-pack-20261104-preflight-python",
+      "status": "FAILED_BEFORE_MODEL_LOAD",
+      "reason": "default remote /usr/bin/python3 lacked pydantic",
+      "gpu_compute_started": false,
+      "provider_calls": 0,
+      "paid_cost_usd": "0",
+      "ledger_mutation": false
+    },
+    {
+      "attempt_id": "local-qwen-patent-pack-20261104-preflight-output-path",
+      "status": "FAILED_BEFORE_MODEL_LOAD",
+      "reason": "runner rejected a pre-created output path with FileExistsError",
+      "gpu_compute_started": false,
+      "provider_calls": 0,
+      "paid_cost_usd": "0",
+      "ledger_mutation": false
+    }
+  ],
+  "post_run": {
+    "approved_gpu_memory_used_mib": 0,
+    "approved_gpu_memory_free_mib": 32495,
+    "approved_gpu_utilization_percent": 0,
+    "shared_lock_bytes": 0,
+    "existing_service_pid": 1745699,
+    "existing_service_start": "Sat Oct 31 08:27:48 2026",
+    "existing_service_touched": false,
+    "remote_transient_input_removed": true,
+    "remote_transient_output_removed": true,
+    "private_windows_receipt_retained": true
+  },
+  "accounting": {
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": "0.0001464",
+    "prospective_allowance_usd": "1.00",
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "ledger_mutation": false
+  },
+  "status": {
+    "local_generation": "PASS_CURRENT_HEAD_PATENT_CANDIDATE_PACK_3_OF_3",
+    "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "scientific_comparison": "PARTIAL_LOCAL_RESULT_API_UNRUN",
+    "business_validation": "PARTIAL_OPERATIONAL_PROXY_ONLY",
+    "goal": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+  }
+}

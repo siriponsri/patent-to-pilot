@@ -12,6 +12,11 @@ The official journal profile emphasizes intellectual-property information retrie
 
 The manuscript is intentionally bounded. It reports descriptive computational evidence and real permitted case studies; it does not claim semantic patent relevance gold, exhaustive recall, clinical suitability, FTO, patent validity, investment merit, independent user validation, revenue, willingness-to-pay, or ROI. The current project is a solo computational study, and no external participants or participant data were used.
 
+The current results do not establish adaptive superiority or a paid local/API
+model comparison: the development frontier remains descriptive, and the live
+API branch is held before reservation pending its non-secret credit and route
+gates.
+
 All authors and affiliations, funding, conflicts, data/code availability, and the final submission version will be confirmed by the owner before any submission. This letter is a draft only and has not been sent.
 
 Sincerely,

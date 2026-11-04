@@ -160,6 +160,10 @@ def test_disclosure_status_requires_independent_source_evidence(example):
     with pytest.raises(ValidationError):PatentCandidate.model_validate(candidate.model_dump()|{'association_status':'disclosed_link'})
     forged=candidate.model_copy(update={'association_status':'disclosed_link','disclosure_evidence_id':dossier.evidence[0].evidence_id})
     with pytest.raises(ValidationError):type(dossier).model_validate(dossier.model_dump()|{'candidates':[forged.model_dump()]})
+    stale=dossier.model_dump()
+    stale["candidates"][0]["source_revision"] = "stale"
+    with pytest.raises(ValidationError, match="patent candidate source revision mismatch"):
+        type(dossier).model_validate(stale)
 
 
 def test_export_escapes_literal_markup_and_does_not_overwrite_existing_directory(example,tmp_path):

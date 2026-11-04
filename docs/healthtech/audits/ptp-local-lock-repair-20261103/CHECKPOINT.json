@@ -1,0 +1,12 @@
+{
+  "format": "ptp-checkpoint-v1",
+  "status": "PASS_LOCAL_SHARED_GPU_LOCK_REPAIR_API_BLOCKED",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "local": "COMPLETE_FOR_LOCK_CONTRACT",
+  "api": "BLOCKED_BEFORE_RESERVATION",
+  "research": "PARTIAL_DESCRIPTIVE",
+  "manuscript": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+  "tests": "613 passed, 1 skipped, 2 warnings",
+  "paid_calls": 0,
+  "next": "Obtain only the existing canonical R1 journal/export and current scoped v2 credit snapshot, then recheck all live gates."
+}

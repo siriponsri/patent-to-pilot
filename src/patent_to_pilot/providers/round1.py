@@ -159,11 +159,18 @@ class Round1ProjectBudget(ProjectBudget):
             pricing_snapshot_sha256=pricing_snapshot_sha256,
             pricing_snapshot_utc=pricing_snapshot_utc,
         )
+        if namespace == "canonical":
+            from . import local_epoch
+            if local_epoch.active():
+                policy = local_epoch.policy(model_provider_map,
+                    pricing_snapshot_sha256=pricing_snapshot_sha256,
+                    pricing_snapshot_utc=pricing_snapshot_utc)
+        authorization_id = policy["authorization_id"]
         policy_hash = policy_identity_hash(policy)
         if namespace == "canonical":
             try:
                 binding = resolve_canonical_ledger(
-                    authorization_id=R1_AUTHORIZATION_ID,
+                    authorization_id=authorization_id,
                     policy_hash=policy_hash,
                     pricing_snapshot_sha256=pricing_snapshot_sha256,
                     pricing_snapshot_utc=pricing_snapshot_utc,
@@ -187,7 +194,7 @@ class Round1ProjectBudget(ProjectBudget):
             path,
             policy=policy,
             ledger_id=ledger_id,
-            authorization_id=R1_AUTHORIZATION_ID,
+            authorization_id=authorization_id,
             namespace=namespace,
             canonical_path=canonical_path,
             pricing_snapshot_sha256=pricing_snapshot_sha256,
@@ -255,7 +262,7 @@ class Round1Runner:
             if age < 0 or age > 300:
                 raise BudgetExceededError("current route pricing observation required before each dispatch")
             # Recheck the process-wide binding before every send, including retries/controllers.
-            resolve_canonical_ledger(authorization_id=R1_AUTHORIZATION_ID,
+            resolve_canonical_ledger(authorization_id=self.budget.authorization_id,
                 policy_hash=self.budget.policy_hash,
                 pricing_snapshot_sha256=self.budget.pricing_snapshot_sha256,
                 pricing_snapshot_utc=self.budget.pricing_snapshot_utc,

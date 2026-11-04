@@ -1,0 +1,58 @@
+{
+  "format": "ptp-resume-e2-current-r12-v1",
+  "recorded_date": "2026-11-04",
+  "candidate": {
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "dirty_worktree_preserved": true,
+    "prior_checkpoint": "docs/healthtech/audits/ptp-resume-e2-current-r11-20261104/"
+  },
+  "tests": {
+    "python_suite": {
+      "tests": 646,
+      "passed": 644,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 2,
+      "duration_seconds": 22.887,
+      "junit": "docs/healthtech/audits/ptp-resume-e2-current-r12-20261104/full-tests.xml"
+    },
+    "compileall": {
+      "status": "PASS",
+      "paths": ["src", "scripts", "tests"]
+    },
+    "frontend_unit": "74 passed; 0 failed; 0 skipped; prior r11 evidence",
+    "browser_e2e": "17 passed; 0 failed; prior r11 evidence",
+    "real_backend_browser_import": "3 of 3 passed; prior r11 evidence",
+    "loopback_http": "PASS; prior r11 evidence"
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutation": false,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "canonical_e2": {
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "integrity": "ok",
+    "legacy_settled_receipts": 4,
+    "known_historical_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER"
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_REGRESSION_VERIFIED",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY",
+    "manuscript": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+    "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "overall_goal": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+  }
+}

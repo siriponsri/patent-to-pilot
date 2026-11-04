@@ -1,0 +1,65 @@
+{
+  "format": "ptp-openrouter-metadata-recheck-r2-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "observed_at_utc": "2026-11-03T02:51:28.554157+00:00",
+  "metadata_receipt": "docs/healthtech/audits/ptp-api-metadata-recheck-20261103/metadata-observation-r2.json",
+  "metadata_receipt_sha256": "cc16f9e9ce625d2dda067278732ca65c91ef31fa11dc8b24eef8140e2351025a",
+  "key_handling": {
+    "source_path_used": "C:/Users/User/Desktop/myProject/patent-to-pilot/.env",
+    "key_value_printed": false,
+    "key_value_copied": false,
+    "key_value_persisted": false
+  },
+  "observed": {
+    "key_endpoint_http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "is_management_key": false,
+    "account_scope": "NOT_RECONCILED",
+    "current_scoped_credit_snapshot": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "history_completeness": "NOT_PROVEN",
+    "live_admission_enabled": false
+  },
+  "known_path_checks": {
+    "canonical_registry_present": false,
+    "candidate_live_sqlite_present": false,
+    "candidate_paired_sqlite_present": false,
+    "owner_root_all_attempt_export_present": false
+  },
+  "dispatch": {
+    "status": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "verification": {
+    "full_suite": {
+      "status": "PASS",
+      "tests": 615,
+      "passed": 614,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "skip_reason": "pinned local tokenizer artifact is unavailable",
+      "junit": "docs/healthtech/audits/ptp-api-metadata-recheck-20261103/full-tests-r2.xml",
+      "junit_sha256": "39ea859aa191bd499605b679887fafc7814db968803f2c4b681a04426b8ec3cd"
+    },
+    "compileall": "PASS",
+    "git_diff_check": "PASS",
+    "json_readback": "PASS"
+  },
+  "renderer_reproducibility": {
+    "status": "PASS",
+    "check": "fresh temporary renderer output manifest equals current committed manifest",
+    "test_receipt": "not embedded in figure manifest; authoritative test receipt remains CHECKPOINT.json and renderer-tests.xml"
+  },
+  "next_action": "Obtain the existing canonical R1 journal or sanctioned sanitized all-attempt export and the current scoped account/key credit snapshot once; validate history before any reservation."
+}

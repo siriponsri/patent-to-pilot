@@ -1,0 +1,38 @@
+{
+  "format": "ptp-manuscript-integrity-current-head-r2-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "change_scope": "One factual venue-check date corrected from 2026-11-01 to 2026-11-03; no scientific content changed.",
+  "manuscript": {
+    "path": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+    "sha256": "f5362b2522d11406af294d229fb8bf2e34710f8792b9b2b708aa30a74c822a5e",
+    "bytes": 44193,
+    "relative_links": 34,
+    "missing_relative_links": 0,
+    "updated_scope_check_date": "2026-11-03"
+  },
+  "unchanged_bindings": {
+    "current_head": true,
+    "offline_frontier_metrics": true,
+    "matched_budget_boundary": true,
+    "patembed_e5_component_metrics": true,
+    "panorama_component_metrics": true,
+    "business_value_scenario": true,
+    "semantic_gold_limitation": true,
+    "final_holdout_limitation": true,
+    "paid_api_not_run_boundary": true,
+    "external_validation_revenue_roi_boundary": true
+  },
+  "decision": "PASS_CURRENT_HEAD_CLAIM_AND_LINK_RECONCILIATION_R2",
+  "status": "DRAFT_FOR_OWNER_REVIEW_NOT_SUBMITTED",
+  "resource_mutations": {
+    "benchmark_reruns": 0,
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  }
+}

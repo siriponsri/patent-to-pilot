@@ -1,0 +1,23 @@
+{
+  "format": "ptp-manuscript-reference-reconcile-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_LOCAL_BIB_RECONCILED_OWNER_REVIEW_PENDING",
+  "manuscript": "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md",
+  "bibliography": "literature-review/healthtech/references.bib",
+  "repair": {
+    "entry_key": "helmers-etal-2019-prior-art",
+    "doi": "10.1371/journal.pone.0212103",
+    "source_payload_downloaded": false,
+    "pdf_bundled": false
+  },
+  "claim_boundary": "local bibliography completeness only; final publisher metadata and journal formatting remain owner review",
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  }
+}

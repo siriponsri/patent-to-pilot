@@ -1,0 +1,26 @@
+{
+  "format": "ptp-current-head-holdout-availability-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "RECORDED_DEVELOPMENT_ONLY_NO_FINAL_HOLDOUT",
+  "protocol_sha256": "582e7d9a551f2e4afefa6cec7be26f6c98f2af9fe32ffb4b16bab726b1f32508",
+  "g1_g2": "PARTIAL_DEVELOPMENT_ONLY",
+  "historical_diagnostic_boundary": "Stryker packages are retained separately and do not substitute for a current-head final holdout.",
+  "resource_mutations": {
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "verification": {
+    "focused_tests": "82 passed, 0 failed, 0 skipped",
+    "full_python": "612 passed, 1 skipped, 2 warnings; exit 0",
+    "compileall": "PASS",
+    "git_diff_check": "PASS",
+    "json_readback": "PASS",
+    "protocol_sha256_readback": "PASS"
+  },
+  "resume_action": "Continue local/offline, API gate preflight, and manuscript work without adding a final-holdout claim."
+}

@@ -1,5 +1,67 @@
 # Next actions — HealthTech
 
+> **Latest same-goal handoff:** [MCP diagnosis and owner-side credit capture](../docs/healthtech/audits/pepo-mcp-credit-continuation-20261104/README.md). Helper is tested188/188; not run with real dashboard input. Await working same-account MCP or an owner-generated fresh credit snapshot, then perform existing admission checks promptly. Do not repeat old gates, recreate the goal/ledger or reopen completed offline packages.
+
+> **Latest work order — 4 Nov 2026:** [key-limit repair](../docs/healthtech/audits/pepo-key-limit-repair-20261104/README.md). Prior offline queue remains COMPLETE. Do not repeat R1/key-limit requests. Next conditional action is fresh bound account credit -> offline v2 credit join -> current pricing/rights/E2 checks -> bounded paired API canary. If the existing MCP/binding is unavailable, request only that exact input once; no new goal, ledger or gate-only loop.
+
+## Current work order — 4 November 2026
+
+Resume the existing goal using [the tested handoff](../docs/healthtech/audits/pepo-resume-ready-20261104/README.md) and `CURRENT_ACCEPTANCE_MATRIX.json.continuation_work_queue`. G5–G7 offline continuation packages are complete on candidate `88dc40471cb9078f929c02bb893cfa1e364da841`; no current READY offline package remains. Installed candidate check is complete102/102; do not rerun without relevant source drift. Paid comparison alone waits for current scoped credit. Earlier "start", "not authorized", USD8/24h and global-gate wording below is historical, superseded by the current owner instructions and handoff. No merge/push/publication in this task. Platform Luna state remains unverified; this file does not resume a runtime goal.
+
+## HT-NEXT-044 — 2026-11-04 MCP limit amendment and offline regression checkpoint
+
+Status: `COMPLETE_CURRENT_CANDIDATE`; canonical audit: `docs/healthtech/audits/ptp-offline-regression-r19-20261104/README.md`.
+
+The owner set the first-round OpenRouter MCP/provider limit to USD30.00. It is recorded as provider-side metadata only and is separate from the project USD100 cumulative ceiling, E2 prospective USD1 allowance, account-level credit, and exact dispatch-key admission evidence. No history, ledger, or runtime window was reset.
+
+The current candidate `88dc40471cb9078f929c02bb893cfa1e364da841` passed the captured full offline regression: 657 collected, 655 passed, 2 skipped, 0 failed, exit code 0. Raw log SHA-256 is `5e25721855787c0e09833ac434375451d7196ee5e35b38f6e6ab1105d5ec7e90`. No paid calls, reservations, ledger writes, retries, GPU jobs, or dataset downloads occurred.
+
+Next: keep the paid branch before reservation until exact `.env` dispatch-key scope/limit and fresh route pricing are evidenced; continue owner-review/manuscript work without treating this engineering checkpoint as scientific or publication completion.
+
+## HT-NEXT-045 — 2026-11-04 sanitized dispatch-key metadata recheck
+
+Status: `COMPLETE_READ_ONLY_GATE_RECHECK`; canonical audit: `docs/healthtech/audits/ptp-api-metadata-recheck-r12-20261104/README.md`.
+
+Using the existing read-only metadata observer and the owner-supplied `.env` path, `/api/v1/key` returned HTTP 200 for an ordinary non-management key. Lifetime usage remains `USD0.0001464`; daily, weekly, and monthly usage are `USD0`; provider-reported `limit`, `limit_remaining`, and budgets are absent; live admission is false. No credential was printed or persisted, and no paid call, reservation, retry, ledger mutation, budget reset, or runtime-window reset occurred.
+
+The owner-set USD30.00 MCP/provider limit remains separate metadata and does not satisfy the exact dispatch-key credit/limit gate. Next: do not retry the observer without new evidence; if an approved scoped credit/limit observation becomes available, reconcile it to E2, refresh route pricing in-window, and reserve only the existing prospective canary.
+
+## HT-NEXT-257 — 2026-11-04 current requirement-level completion audit
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit: `docs/healthtech/audits/ptp-goal-completion-audit-r20-20261104/README.md`.
+
+The current candidate remains `88dc40471cb9078f929c02bb893cfa1e364da841`. G0, G3 and engineering portions of O1/O2/O4 are complete on current-head evidence; G1/G2/G4 remain descriptive or not estimable, G5 is operational-potential-only, G6 is owner-review/WPI-guide pending, and G7 is a dirty-candidate release pass. Local O3 is 3/3 schema-valid; paid O3 remains before reservation because the dispatch key has no permitted scoped remaining-credit/limit evidence. No independent experiment process was found, and no new resource mutation occurred.
+
+Next: do not rerun completed offline/GPU work or metadata without new evidence. Keep the goal open for one current scoped credit/limit observation if paid comparison remains required, plus owner review and release decisions.
+
+## HT-NEXT-041 — 2026-11-04 G6 numerical claim-to-artifact binding
+
+Status: `COMPLETE_CURRENT_CANDIDATE`; canonical queue item: `manuscript_claim_table` in `CURRENT_ACCEPTANCE_MATRIX.json`.
+
+Updated [`MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md`](../docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md) with the medical-subset denominator `1,920 = 983 both-screen + 937 target-unscreened`, a claim-to-artifact table covering Results 7.1–7.7, and a reproduction appendix. Each row records cohort/split/denominator, method or model revision, artifact path and SHA-256, and `historical`, `rebound`, `historical_recheck`, or `fresh_current_head` status. The BM25-over-adaptive development finding, unequal realized budgets, development-only boundaries, and source-binding limitations remain explicit.
+
+Verification on candidate `88dc40471cb9078f929c02bb893cfa1e364da841`: Markdown links `73/73` resolve; JSON receipts parse; focused current-head/frontier/local-Qwen tests `6 passed`; `git diff --check` passes. No paid calls, GPU jobs, downloads, ledger mutations, retries, or provider attempts occurred.
+
+Next: G5 is complete on the existing three-case operational receipts. Keep human time, independent user validation, revenue, willingness-to-pay, ROI, semantic accuracy, and paid API comparison unmeasured unless new authorized evidence exists. Continue with G7 portable candidate instructions; keep the final semantic holdout and paid branch separate from this completed documentation package.
+
+## HT-NEXT-042 — 2026-11-04 G5 solo operational case table
+
+Status: `COMPLETE_CURRENT_CANDIDATE`; canonical queue item: `solo_operational_case_table`.
+
+The manuscript operational-value section now binds the three-case local Qwen receipt and deterministic operational evaluation: `3/3` schema-valid cases, `12/12` exact source/locator bindings, `12/15 = 80%` evidence coverage, `3/3` unresolved-item visibility, `7,301/1,448` prompt/output tokens, mean latency `54.320437` seconds, provider calls `0`, and paid cost `USD0.00`. Model revision: `b968826d9c46dd6066d109eabc6255188de91218`.
+
+This is machine-side and developer-self-evaluation evidence only. Human time, independent user validation, customer value, revenue, willingness-to-pay, ROI, and semantic accuracy remain unmeasured. No participants were required or claimed.
+
+Canonical audit: `docs/healthtech/audits/pepo-g5-operational-case-table-20261104/README.md`. Next: G7 portable candidate instructions.
+
+## HT-NEXT-043 — 2026-11-04 G7 portable candidate instructions
+
+Status: `COMPLETE_CURRENT_CANDIDATE`; canonical queue item: `portable_candidate_instructions`.
+
+Updated the root README to distinguish source-checkout scripts/fixtures from the installed Python wheel, record the verified wheel size/hash and `102/102` installed-candidate suite, document the Windows install/hash-check shape, and state the private-artifact, clean-machine, restricted-data, credential, and public-release boundaries. No successful model work was rerun.
+
+Canonical audit: `docs/healthtech/audits/pepo-g7-portable-candidate-20261104/README.md`. The offline continuation queue is now exhausted, but the overall goal remains open because final semantic evidence, paid API admission/comparison, owner review, and publication decisions are incomplete.
+
 Record: HT-NEXT-004 · Scope: research/patent-to-pilot · Date: 2026-10-28 · Status: OBSERVED_LOCAL / DECISION
 
 Follow-up package: HT-NEXT-005 · Date: 2026-10-29 · Status: PASS_ENGINEERING. Canonical audit: [clean-checkout backend reproducibility](../docs/healthtech/audits/clean-checkout-repro-20261029-43ba0e7/README.md)
@@ -1529,3 +1591,3149 @@ not an equal-total-budget comparison. No API, GPU, dataset, ledger, budget, or
 
 Next: preserve the package, keep the goal active, and continue only with owner
 review or independently authorized offline work.
+
+## HT-NEXT-117 — 2026-11-03 current-head local vector HTTP cases
+
+Status: `PASS_CURRENT_HEAD_LOCAL_VECTOR_HTTP_3_OF_3_ENGINEERING_PARTIAL_RESEARCH`;
+canonical audit:
+`docs/healthtech/audits/ptp-local-http-vector-20261103/README.md`.
+
+At candidate `88dc40471cb9078f929c02bb893cfa1e364da841`, a fresh role-bound
+MiniLM ONNX corpus/query pair was validated against the permitted 3-device,
+41-patent runtime cohort and used by the loopback HTTP runner. MitraClip,
+Tendyne, and TriClip all succeeded. Each case passed source inspection, history
+1 -> 2 edit/reopen, and JSON/Thai/English export with zero vector errors.
+
+This is current-head engineering/application evidence only. It is not semantic
+gold, an adaptive-superiority result, a paid API comparison, user validation,
+revenue/ROI/WTP evidence, or journal acceptance. No API call, GPU job, dataset
+download, ledger mutation, budget reset, or time-window reset occurred.
+
+Next: owner-review the candidate-bound receipt and keep paid/new-compute
+branches gated; continue only with independently authorized offline or
+manuscript work.
+
+## HT-NEXT-118 — 2026-11-03 current-head O2/O3 runtime rebind
+
+Status: `PASS_O2_RUNTIME_BOUND_AND_O3_LOCAL_REBOUND_API_BLOCKED`;
+canonical audit:
+`docs/healthtech/audits/ptp-current-head-runtime-rebind-20261103/README.md`.
+
+Scoped zero-diff checks bind the prior actual remote PatEmbed/e5 encoding,
+Windows import, retrieval evaluation, and six device-vector dossier runs to
+the current candidate's O2 runtime paths. The original remote 24-hour window
+was not restarted. The same check binds the prior actual guided local Qwen3-8B
+3/3 schema-valid frozen-pack receipt to the current Qwen/generation-payload
+paths without rerunning inference.
+
+The API branch remains `BLOCKED_LOCAL`: no current canonical journal/credit,
+fresh route/pricing, outbound-rights, and writer-quiescence evidence package
+was exposed. The old browser-generation receipt is intentionally not promoted
+because HTTP/generation paths changed after that receipt. No new API call, GPU
+job, dataset download, ledger mutation, budget reset, or time-window reset
+occurred.
+
+Next: owner-review this rebind and continue only offline/manuscript work or
+newly exposed authorized gates.
+
+## HT-NEXT-119 — 2026-11-03 Pepo readiness recheck and manuscript boundary repair
+
+Status: `PASS_REVIEW_READ_FAILURE_ACCOUNTING_BUDGET_BOUNDARY_NO_NEW_BATCH`;
+candidate: `88dc40471cb9078f929c02bb893cfa1e364da841`.
+
+Read the Pepo readiness review and `evidence-index.json`. No local scientific
+experiment process was running, and no new batch was started. The requested
+failure-accounting repair was already present in `0d092019`; regression coverage
+was hardened in `e63e8a9` and `323bcc5`. Failed attempts retain prior attempts,
+measured wall/CPU elapsed time, and explicit unknown resource fields; no
+synthetic zero attempt is appended. Accessible completed receipts show
+`NONE_KNOWN` affected rounds, so no historical receipt or cost was rewritten and
+no retrospective cost was inferred.
+
+The B2/B3/offline-B4 result remains a descriptive realized quality-resource
+frontier. Shared inputs and per-call depth are common, but realized units are
+HT-B1 `3/123`, HT-B2 `9/369`, HT-B3 `5/205`, and HT-B4 offline `5/205` query
+calls/rerank pairs; B4 also has 8 controller steps, which are a separate unit.
+The post-hoc equalized slice is limited to HT-B1, HT-B2 prefix-1, and HT-B3
+prefix-1 at `3/123`, all with macro Recall@20 `0.498802`; B4 is excluded from
+that same-unit slice. No equal-total-budget or adaptive-superiority claim is
+supported.
+
+The manuscript was corrected narrowly so previously exposed transfer rows are
+not labelled as final holdout. Post-edit documentation/manuscript regressions
+passed `14/14`; the full Python suite on this source state exited `0` with one
+existing tokenizer skip and two warnings. The current manuscript hash is
+`47d7da3301757ee35c07202b10df796397a6ed3a1f05bfc86e5ad61db7e57650`; the
+older manuscript-integrity receipt remains historical and must be rebound before
+merge/submission. No API call, GPU job, dataset download, ledger mutation,
+budget reset, window reset, or external message occurred.
+
+Engineering: `COMPLETE`; scientific evidence: `PARTIAL`; business validation:
+`PARTIAL_OPERATIONAL_POTENTIAL_ONLY`; manuscript readiness: `PARTIAL_OWNER_REVIEW`.
+Next: owner-review the candidate, rebind the manuscript hash, and keep paid or
+new-compute branches gated.
+
+## HT-NEXT-120 — 2026-11-03 candidate-bound readiness recheck
+
+Status: `PASS_CURRENT_HEAD_RECHECK_NO_NEW_BATCH`;
+receipt:
+`docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/CURRENT_HEAD_RECHECK_20261103.json`.
+
+Re-ran the focused failure-accounting, budget-boundary, manuscript/report, and
+release/ledger regression groups on candidate `88dc40471cb9078f929c02bb893cfa1e364da841`; all exited `0`. Re-ran the full Python suite with a JUnit receipt: `599 passed, 1 skipped, 2 warnings`; the skip is the unavailable pinned local tokenizer artifact. No active experiment process was present before or after the checks.
+
+The runner repair remains candidate-bound and unchanged: partial attempt history
+and measured wall/CPU time are retained, unknown resource fields are explicit,
+and no synthetic zero attempt is added. Accessible historical receipts still show
+`NONE_KNOWN` affected rounds; no historical cost was rewritten or inferred.
+
+B2/B3/offline-B4 remain a descriptive realized frontier (`3/123`, `9/369`,
+`5/205`, `5/205` plus 8 separate controller steps). The only same-unit slice is
+the post-hoc B1/B2-prefix-1/B3-prefix-1 control at `3/123`, all `0.498802`; B4
+is excluded. Equal-total-budget or adaptive-superiority claims remain unsupported.
+
+Manuscript integrity passed with 21 local links, 0 missing links, and SHA-256
+`47d7da3301757ee35c07202b10df796397a6ed3a1f05bfc86e5ad61db7e57650`.
+Engineering is `COMPLETE`; scientific evidence is `PARTIAL`; business validation
+is `PARTIAL_OPERATIONAL_POTENTIAL_ONLY`; manuscript readiness is
+`PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK`. No API, GPU, dataset download,
+ledger mutation, budget reset, or time-window reset occurred.
+
+Next: stop at this checkpoint and wait for owner review or continue only with
+independently authorized offline/manuscript work; do not merge or push here.
+
+## HT-NEXT-121 — 2026-11-03 readiness review recheck R2
+
+Status: `PASS_CURRENT_HEAD_FAILURE_ACCOUNTING_AND_BUDGET_BOUNDARY_R2`;
+receipt:
+`docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/CURRENT_HEAD_RECHECK_R2_20261103.json`.
+
+Rechecked candidate `88dc40471cb9078f929c02bb893cfa1e364da841` after reading
+Pepo's readiness review and evidence index. No local experiment was running;
+the latest read-only remote preflight also recorded zero scientific/model
+processes and an unknown allocation, so no new batch was started.
+
+The existing `run_real_baselines.py` repair was verified rather than duplicated:
+partial attempts remain ordered, failed attempts keep measured wall/CPU time,
+unknown resource fields remain explicit, and no synthetic zero attempt is added.
+Focused regression tests passed `50` with one existing tokenizer skip; the full
+Python suite passed `599` with one skip and two warnings. An accessible JSON/CSV
+receipt scan found zero non-zero failed-query counts and zero non-empty failed
+query-ID lists. Historical receipts and costs were not rewritten or inferred;
+private-journal completeness remains unresolved.
+
+The budget review remains unchanged: shared frozen inputs and per-call depth do
+not make totals equal. The realized frontier is HT-B1 `3/123`, HT-B2 `9/369`,
+HT-B3 `5/205`, and offline HT-B4 `5/205` plus eight separate controller steps.
+Only the post-hoc B1/B2-prefix-1/B3-prefix-1 slice is same-unit at `3/123`,
+with all three at macro Recall@20 `0.498802`; B4 is excluded. No
+equal-total-budget or adaptive-superiority claim is supported.
+
+Engineering remains `COMPLETE`; scientific evidence remains `PARTIAL`; business
+validation is `PARTIAL_OPERATIONAL_POTENTIAL_ONLY`; manuscript readiness remains
+`PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK`. No API, GPU, dataset, ledger,
+budget, window, or external-message mutation occurred.
+
+Next: stop at this checkpoint. Preserve Claude/Luna/owner worktrees and wait for
+owner review or independently authorized offline work.
+
+## HT-NEXT-122 — 2026-11-03 current-head offline frontier
+
+Status: `PASS_CURRENT_HEAD_OFFLINE_DESCRIPTIVE_FRONTIER`;
+canonical audit:
+`docs/healthtech/audits/ptp-current-head-offline-20261103/README.md`.
+
+After confirming no active scientific/model process, the current candidate
+`88dc40471cb9078f929c02bb893cfa1e364da841` ran the frozen Abbott development
+frontier with the repaired baseline runner and deterministic offline B4. The
+five baseline methods completed all 15 method-device rows with zero failures;
+B4 completed 3/3 devices with zero failures. Macro Recall@20 was B0a
+`0.442739`, B0b `0.662242`, B1 `0.498802`, B2 `0.568912`, B3 `0.498802`, and
+offline B4 `0.498802` with micro `0.475410`.
+
+The realized units remain unequal: B1 `3/123`, B2 `9/369`, B3 `5/205`, and
+B4 `5/205` plus eight controller steps. This is a descriptive quality-resource
+frontier, not matched-total-budget evidence and not adaptive superiority. The
+failure-accounting regression passed `4` tests; no historical receipt or cost
+was rewritten or inferred. No API call, GPU job, dataset download, ledger
+mutation, budget/window reset, or zero ledger was created.
+
+The manuscript now binds section 7.4 to this exact current-head audit and labels
+the prior Boston/Abbott B4 package as a separate historical candidate. Owner
+review is still required before merge or submission; O3 live API remains
+blocked by its existing canonical journal/credit/rights/quiescence gates.
+
+## HT-NEXT-123 — 2026-11-03 readiness recheck R3
+
+Status: `PASS_FAILURE_ACCOUNTING_AND_BUDGET_BOUNDARY_R3_NO_NEW_BATCH`;
+receipt:
+`docs/healthtech/audits/ptp-parallel-readiness-followup-20261103/READINESS_RECHECK_R3_20261103.json`.
+
+Read Pepo's readiness review and evidence index, confirmed no active local
+experiment, and reran the focused failure-accounting/budget tests plus the full
+Python suite on candidate `88dc40471cb9078f929c02bb893cfa1e364da841`.
+Focused tests passed `52` with one existing tokenizer skip and one warning; the
+full suite passed `599` with one skip and two warnings.
+
+The existing `run_real_baselines.py` repair was verified rather than duplicated:
+partial attempt history, measured wall/CPU elapsed time, and explicit unknown
+resource fields are preserved, with no synthetic zero-cost attempt. Accessible
+historical receipts still show `NONE_KNOWN` affected rounds; no historical cost
+was rewritten or inferred.
+
+The budget boundary remains explicit: HT-B1 `3/123`, HT-B2 `9/369`, HT-B3
+`5/205`, and offline HT-B4 `5/205` plus eight separate controller steps.
+Shared inputs and per-call depth do not make total budgets equal. The only
+same-unit slice is the historical post-hoc B1/B2-prefix-1/B3-prefix-1 control
+at `3/123`, not a current-head final endpoint; B4 is excluded. No equal-total-
+budget or adaptive-superiority claim is supported.
+
+No API call, GPU job, dataset download, ledger mutation, budget reset, window
+reset, or new batch occurred. Next: stop at this checkpoint and preserve
+candidate-bound evidence; owner review or independently authorized offline work
+only.
+
+## HT-NEXT-124 — 2026-11-03 WPI venue recheck
+
+Status: `PASS_SCOPE_RECHECKED_GUIDE_ACCESS_403_NOT_SUBMITTED`;
+receipt:
+`docs/healthtech/audits/wpi-venue-recheck-20261103/verification.json`.
+
+Rechecked the official Elsevier journal profile and recorded conditional venue
+fit for patent-information retrieval/search/analysis, AI/ML IP research,
+system evaluation, benchmarking, and real-data IR experiments. The direct
+ScienceDirect Aims and Scope and Guide for Authors pages returned HTTP `403` in
+this environment, so no journal-specific word limits, article type, file
+format, or declaration was inferred from another journal or historical guide.
+
+Corrected the local checklist's Guide for Authors route to the current
+`/publish/guide-for-authors` path and kept submission status `NOT_SUBMITTED`.
+Focused G6/documentation checks passed `7`; no API, GPU, dataset, ledger,
+budget, window, or manuscript submission mutation occurred.
+
+Next: owner rechecks the official WPI Guide for Authors in an authorized
+browser/session and confirms final author, funding, conflicts, ethics,
+availability, AI-use, and submission declarations before any submission.
+
+## HT-NEXT-125 — 2026-11-03 current manuscript rebind
+
+Status: `PASS_CURRENT_FILE_LINKS_AND_BOUNDARY_RECHECK`;
+canonical audit:
+`docs/healthtech/audits/ptp-manuscript-rebind-20261103/README.md`.
+
+Rebound the acceptance record to the manuscript file actually present on
+candidate `88dc40471cb9078f929c02bb893cfa1e364da841`. The current file is
+`36,354` bytes with SHA-256
+`b82752f5dae91edf148f56025882b650ba170cc52960c9a9728da9c8f89924c3`; a
+local Markdown-link scan checked `20` links with `0` missing. Deterministic
+text checks confirmed that the manuscript retains the realized-budget,
+three-case, business-validation, and semantic-gold claim boundaries.
+
+Earlier hashes recorded by readiness/integrity receipts are historical and
+are no longer used as current-file proof. This package did not change source
+code or run a scientific experiment. No API call, GPU job, dataset download,
+ledger mutation, budget reset, or window reset occurred.
+
+The multi-company/final-holdout audit remains historical-only in this
+worktree because its raw runtime/reference artifacts are not present here;
+do not reconstruct a run from summary receipts. Next: owner review the
+current manuscript and official WPI Guide for Authors, or expose an
+authorized raw cohort path before any new offline rerun.
+
+## HT-NEXT-126 — 2026-11-03 current-head remote preflight R2
+
+Status: `PASS_READ_ONLY_NO_ACTIVE_EXPERIMENT_ALLOCATION_UNKNOWN`;
+canonical audit:
+`docs/healthtech/audits/ptp-remote-preflight-current-head-r2-20261103/README.md`.
+
+A fresh strict read-only inspection of `dr-train` at
+`2026-11-02T22:36:37Z` found no active scientific/model experiment. The
+approved V100 UUID was visible and idle (`32,495 MiB` free, `0 MiB` used), but
+the allocation remains `UNKNOWN_NOT_GRANTED_RESOURCE_OBSERVATION_ONLY`. The
+zero-byte GPU lock marker does not establish ownership or a valid runtime
+window. The existing HTTP service PID `1745699` on port `18787` was classified
+as a pre-existing service and left untouched; the unapproved RTX 2080 Ti was
+not used.
+
+No model inference, API call, dataset transfer, remote write, ledger mutation,
+budget reset, or window reset occurred. Do not launch the local Qwen or
+embedding branch from idle capacity. Continue offline work or obtain the
+existing authorized allocation reference and runtime window before remote
+compute.
+
+## HT-NEXT-127 — 2026-11-03 local Qwen pack binding and API rights preflight
+
+Status: `PASS_PRIOR_LOCAL_GUIDED_3_OF_3_API_PREFLIGHT_BLOCKED_TRANSFER_REVIEW`;
+canonical audit:
+`docs/healthtech/audits/ptp-local-qwen-pack-bind-20261103/README.md`.
+
+Verified the owner-supplied private FDA-only pack and sanitized local Qwen
+receipts by hash. Guided JSON decoding passed all three cases; unguided decoding
+failed all three on the declared `unresolved` array contract. The API runner was
+tested in dry-run mode and failed closed before dispatch because exact
+model-visible fields require a source-backed transfer review. No raw payloads
+were copied to Git, no current-head inference was rerun, and no API/GPU/ledger
+mutation occurred.
+
+Next: keep this FDA pack local-only; expose an owner-authorized transfer review
+and the existing canonical journal/quiescence evidence before any API call.
+
+## HT-NEXT-128 — 2026-11-03 manuscript rebind R2
+
+Status: `PASS_CURRENT_FILE_LINKS_AND_BOUNDARY_RECHECK`;
+canonical audit:
+`docs/healthtech/audits/ptp-manuscript-rebind-r2-20261103/README.md`.
+
+After adding the local Qwen canary boundary, the current manuscript was
+rechecked at HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`. It is `37,222`
+bytes, has SHA-256
+`794df3ee712b499293b0fcd25a1c694b0972a56be3e8f72c741adeed554a49a0`, and has
+21 local links with 0 missing targets. Claim-boundary checks still cover
+unequal budgets, semantic-gold limits, three-case limitations, business
+validation limits, and the non-API status. No source code, experiment, API,
+GPU, ledger, budget, window, or submission state changed.
+
+Next: owner review the current manuscript and recheck the official WPI Guide
+for Authors before merge or submission.
+
+## HT-NEXT-129 — 2026-11-03 route normalization and parallel-path checkpoint
+
+Status: `PASS_PAYLOAD_DRY_RUN_API_DISPATCH_BLOCKED_LEDGER_CREDIT`;
+canonical audit:
+`docs/healthtech/audits/ptp-route-normalization-dry-run-20261103/README.md`.
+
+Restored the local execution guard that was present in the earlier worktree but
+absent from the current candidate. The local Qwen runner now requires the exact
+approved V100 UUID, enforces the existing 15 November 2026 23:59 Thailand
+window, acquires a shared OS-held slot, rechecks the receipt path after lock
+acquisition, records message hashes/timestamps, and never overwrites a prior
+receipt. Added focused negative/concurrency tests.
+
+Fixed the narrow API payload failure caused by route spelling mismatch: the
+rights-cleared pack review uses `deepinfra` while the pricing snapshot exposes
+`DeepInfra`. Only case/whitespace normalization is applied at the payload
+boundary; provider/model identity, exact message hashes, and no-auto-routing
+behavior remain strict. The owner-private FDA pack now passes 3/3 payload dry
+run cases with `ALLOWED_WITH_ATTRIBUTION`; the runner stops before transport
+dispatch with provider calls `0` and paid cost `USD0.00`.
+
+Focused tests pass `26/26`; full Python passes `611` with one existing skip and
+zero failures/errors. No API call, GPU job, dataset download, ledger mutation,
+budget reset, or window reset occurred. The source patch is uncommitted on
+candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841` and must be reviewed
+as a worktree patch before merge.
+
+The live API branch remains closed: the canonical registry path is absent and
+no current authorized credit snapshot was available. Historical legacy debit
+`USD0.0001464` and zero known unknown-pending attempts remain preserved, but
+they cannot be rebound as the R1 canonical ledger. Owner input needed once:
+the exact existing canonical journal location or sanitized all-attempt export,
+plus a current sanitized credit/billing snapshot if the approved integration
+cannot provide it. Do not send keys or secrets. Continue local/offline and
+manuscript work independently; do not merge mixed-candidate results.
+
+## HT-NEXT-130 — 2026-11-03 parallel local/API contract checkpoint
+
+Status: `PASS_SHARED_CONTRACT_LOCAL_RUNTIME_NOT_RUN_API_DISPATCH_BLOCKED`;
+canonical audit:
+`docs/healthtech/audits/ptp-parallel-paths-20261103/README.md`.
+
+Rechecked candidate `88dc40471cb9078f929c02bb893cfa1e364da841` and bound both
+branches to the same owner-private FDA-only pack, exact messages, output schema,
+source hashes, and model-visible transfer review. All three cases passed the
+rights/payload preflight with `ALLOWED_WITH_ATTRIBUTION`; no raw payload,
+evaluator label, credential, or generated output was staged in the API manifest.
+
+The local contract preflight passed `3/3`, but current-head Qwen inference was
+not run: the permitted model root is not exposed, `dr-train` SSH returned
+`Permission denied (publickey,password)`, and the historical HTTP service on
+port `18787` refused the probe. The pre-existing service was left untouched;
+prior private guided/unguided receipts remain historical and are not promoted.
+
+The API dry-run passed `3/3`, with `0` provider calls and `USD0.00` paid cost.
+Paid dispatch remains blocked before reservation because the canonical R1
+registry/journal and current v2 account/key credit snapshot are still absent.
+Historical visible debit `USD0.0001464` remains preserved; no zero ledger,
+budget/window reset, new attempt ID, or retry of unresolved billing occurred.
+
+Focused regressions passed `33/33`; the full Python suite passed `611/611` with
+one existing skip; compileall and `git diff --check` passed. Engineering stays
+`COMPLETE`; scientific evidence is `PARTIAL`; business validation is
+`PARTIAL_OPERATIONAL_POTENTIAL_ONLY`; manuscript readiness is
+`PARTIAL_OWNER_REVIEW_AND_WPI_GUIDE_RECHECK`.
+
+Next: obtain the existing canonical journal location or sanitized all-attempt
+export and current v2 credit snapshot once, without any secret. Then recheck
+route, pricing, quiescence, and reserve one paired canary only if every gate
+passes. Continue local/offline and manuscript work independently.
+
+## HT-NEXT-131 — 2026-11-03 exact-head local Qwen generation
+
+Status: `PASS_CURRENT_HEAD_3_OF_3_SCHEMA_VALID_GUIDED_LOCAL_API_BLOCKED`;
+canonical audit:
+`docs/healthtech/audits/ptp-local-qwen-exact-head-20261103/README.md`.
+
+After the previously observed unrelated `backtest.py` process ended, staged
+the current worktree source package and runner into isolated remote directory
+`codex-exact-head-88dc4047`. Hashes of the runner, generation payload, local
+execution guard, and owner-private frozen pack were checked. The guided
+Qwen/Qwen3-8B pass ran on the exact approved V100 UUID with concurrency one,
+float16, eight CPU threads, and the pinned revision
+`b968826d9c46dd6066d109eabc6255188de91218`.
+
+All three frozen cases were schema-valid. Prompt/output totals were `3073` /
+`1054` tokens; per-case generation latency was `38.917974`, `39.408776`, and
+`38.551841` seconds. Provider calls and paid cost were `0` and `USD0.00`.
+The raw receipt remains remote-only and is recorded by SHA-256
+`4c2b5c79441560c04da944be45ed7af0cb5aac2b6e9fd2aa5955a123cdcd1c03`.
+
+The earlier receipt under the separate `research-product-o1-o4-20261103`
+output root is retained as historical runtime-bound evidence only; it is not
+combined with the exact-head result. Schema validity is not retrieval,
+semantic, citation, or business validation.
+
+No API call, reservation, attempt ID, retry, dataset download, ledger
+mutation, budget reset, or time-window reset occurred. The approved V100 was
+released after the run and the pre-existing HTTP service was untouched.
+
+Next: keep O3 API dispatch closed until the existing canonical R1 journal or
+sanitized all-attempt export and current v2 account/key credit snapshot are
+available. Then recheck route, price, rights, and writer quiescence before one
+paired canary; do not read or expose `.env` contents.
+
+## HT-NEXT-132 — 2026-11-03 current OpenRouter preflight
+
+Status: `PASS_READ_ONLY_API_METADATA_RIGHTS_PREFLIGHT_DISPATCH_BLOCKED`;
+canonical audit:
+`docs/healthtech/audits/ptp-api-preflight-current-20261103/README.md`.
+
+Using the existing metadata helper with the owner-provided `.env` path, the
+official `/api/v1/key` endpoint returned HTTP 200 without exposing the key.
+The sanitized observation reports lifetime usage `USD0.0001464` and daily
+usage `USD0`, matching the four known settled legacy attempts. The key is an
+ordinary key, not a management key, so the helper could not obtain account
+credits or a scoped v2 availability observation; account scope remains
+unreconciled and history completeness remains unproven.
+
+Current public endpoint metadata was rechecked for `qwen/qwen3-32b` and bound
+to a fresh runner snapshot: DeepInfra, `USD0.08/M` prompt and `USD0.28/M`
+completion, with the required structured-output parameters. The same frozen
+rights-cleared pack passed `3/3` preflight cases with message/payload hashes
+unchanged. No paid generation, reservation, attempt ID, retry, journal or
+budget mutation occurred.
+
+Next: keep the paid branch blocked before reservation until the existing
+canonical R1 journal or sanitized all-attempt export and current scoped v2
+account/key credit snapshot are available. Do not create a replacement ledger
+or request budget approval again. The manuscript now binds the current-head
+local Qwen metrics and keeps older candidate receipts historical.
+
+## HT-NEXT-133 — 2026-11-03 owner-provided OpenRouter key path follow-up
+
+Status: `PASS_READ_ONLY_METADATA_REFRESH_DISPATCH_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-api-preflight-key-followup-20261103/README.md`.
+
+The existing `.env` path supplied by the owner was used only through the
+sanitized metadata helper. `/api/v1/key` returned HTTP 200 with lifetime usage
+`USD0.0001464` and daily usage `USD0`; the key is ordinary, not a management
+key. No secret value was printed, copied, staged, or written. The current v2
+credit snapshot therefore remains unavailable, and history completeness is not
+proven.
+
+The live constructor was probed against the current public route snapshot and
+failed closed because the canonical R1 registry is absent. No replacement or
+zero ledger was created. The rights-cleared 3-case pack remains valid; no paid
+provider request, reservation, attempt ID, retry, or cost was created.
+
+Focused API/ledger/provider tests passed `84/84`; the full suite passed `610`
+of `611` with one existing tokenizer-artifact skip and no failures. Compileall
+and diff checks passed. Next action remains one-time owner evidence for the
+existing canonical journal/export and current scoped v2 credit snapshot; until
+then continue local/offline and manuscript work.
+
+## HT-NEXT-134 — 2026-11-03 vector artifact integrity revalidation
+
+Status: `PASS_VECTOR_BUNDLE_INTEGRITY_PRIOR_ARTIFACT`; canonical audit:
+`docs/healthtech/audits/ptp-vector-artifact-revalidation-20261103/README.md`.
+
+The owner-private PatEmbed and multilingual-e5 corpus/query bundles were
+revalidated against the frozen runtime manifest. All four bundles loaded; shard
+hashes/shapes, finite little-endian float32 values, unique IDs, runtime input
+bindings, and cross-encoder item/document ordering passed. The runtime has 41
+corpus rows, 3 query rows, dimension 768, and the three named device cases.
+
+This receipt validates existing artifact integrity only. It is not a new encode,
+retrieval evaluation, model-weight verification, semantic-quality result, or
+publication-readiness result. No private corpus text, vectors, labels, weights,
+credentials, API call, ledger mutation, budget reset, or time-window reset was
+created.
+
+Next: use the receipt as O2 provenance, keep the paid API branch blocked before
+reservation until the existing canonical R1 journal/export and current scoped
+credit snapshot are available, and continue offline/manuscript work separately.
+
+## HT-NEXT-135 — 2026-11-03 OpenRouter gate recheck
+
+Status: `BLOCKED_BEFORE_RESERVATION`; canonical audit:
+`docs/healthtech/audits/ptp-api-gate-recheck-20261103/README.md`.
+
+The owner-provided `.env` path was used only through the read-only metadata
+helper. The key endpoint returned HTTP 200 with lifetime usage `USD0.0001464`
+and daily, weekly, and monthly usage `USD0`. The key is ordinary rather than a
+management key, so the helper could not obtain the current scoped v2 credit
+snapshot. Account scope remains unreconciled, history completeness remains
+unproven, and live admission is disabled.
+
+No provider call, reservation, attempt ID, retry, ledger mutation, zero ledger,
+budget reset, or time-window reset occurred. A process scan found no unrelated
+project experiment process after excluding the inspection commands themselves.
+
+Next: do not reserve or dispatch. The one-time owner evidence remains the
+location of the existing canonical R1 journal or a sanitized all-attempt export,
+plus a current scoped account/key credit snapshot if approved integration cannot
+provide it. Continue local/offline and manuscript work independently.
+
+## HT-NEXT-136 — 2026-11-03 manuscript rebind R3
+
+Status: `PASS_CURRENT_FILE_LINKS_AND_BOUNDARY_RECHECK`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-rebind-r3-20261103/README.md`.
+
+The manuscript was updated only to link the current vector-artifact
+revalidation and API gate receipts. On candidate
+`88dc40471cb9078f929c02bb893cfa1e364da841`, the file is `39,212` bytes with
+SHA-256
+`16b105d8599c475523dbe6a393e3907cfc51d621fc48ed35f74f67646441cc7c`.
+The local link scan checked `27` links with `0` missing. Claim boundaries still
+state that vector checks are integrity evidence rather than a new retrieval
+run, paid API dispatch is gated before reservation, and no independent user or
+market validation is claimed.
+
+No submission, provider call, ledger mutation, budget reset, or time-window
+reset occurred. Next: owner review the current manuscript and official WPI
+Guide for Authors before merge or submission.
+
+## HT-NEXT-137 — 2026-11-03 manuscript cross-candidate boundary rebind
+
+Status: `PASS_CROSS_CANDIDATE_CLAIM_BOUNDARY_RECHECK`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-rebind-r4-20261103/README.md`.
+
+Clarified that the Section 7.1/7.2 transfer and leave-one-company-out rows are
+older bound diagnostics, while the current-head `88dc4047` frontier is reported
+separately in Section 7.5. The manuscript does not pool results from different
+candidates or turn the older diagnostics into a current-head PASS claim.
+
+Current manuscript hash:
+`3a09c9119547daf1975a4bf6cfb14c4db2aa155960ded9e1df03192755aebc5a`; `27`
+local links checked, `0` missing. No experiment, API call, ledger mutation,
+budget/window reset, or submission occurred.
+
+Next: owner review the current manuscript and official WPI Guide for Authors
+before merge or submission.
+
+## HT-NEXT-138 — 2026-11-03 current-head holdout availability
+
+Status: `PASS_AVAILABILITY_CHECK_NO_CURRENT_HEAD_FINAL_HOLDOUT`; canonical audit:
+`docs/healthtech/audits/ptp-current-head-holdout-availability-20261103/README.md`.
+
+The current protocol `configs/healthtech/g1_g2_public_cohort_protocol.json`
+(`582e7d9a551f2e4afefa6cec7be26f6c98f2af9fe32ffb4b16bab726b1f32508`) is
+`FROZEN_DEVELOPMENT_ONLY`: three Abbott devices, one applicant/source, no final
+holdout and no generalization claim. Historical Stryker packages remain
+separate diagnostics and were not substituted or pooled with current-head
+Abbott results.
+
+No retrieval rerun, label acquisition, dataset download, provider call, GPU
+job, ledger mutation, budget reset or time-window reset occurred. Current-head
+metrics remain descriptive development evidence. Continue local/offline,
+manuscript and API preflight work; keep paid dispatch closed until the existing
+canonical R1 journal/export and current scoped credit snapshot are available.
+
+## HT-NEXT-139 - 2026-11-03 manuscript rebind R5
+
+Status: `PASS_CURRENT_FILE_LINKS_AND_HOLDOUT_BOUNDARY_RECHECK`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-rebind-r5-20261103/README.md`.
+
+The manuscript now links the current-head holdout-availability audit and keeps
+the Abbott development-only protocol separate from historical Stryker
+diagnostics. Current file SHA-256 is
+`91b43dd30ad82dbfeb3d373f1bb8ba8926838634d9737e5b34dadb508bdef5b5`, size
+`40,076` bytes, with `28` local Markdown links checked and `0` missing.
+
+No experiment, provider call, ledger mutation, budget/window reset, or
+submission occurred. Owner review remains required before merge or submission.
+
+## HT-NEXT-140 - 2026-11-03 API parallel recheck
+
+Status: `BLOCKED_BEFORE_RESERVATION`; canonical audits:
+`docs/healthtech/audits/ptp-api-metadata-recheck-20261103/README.md` and
+`docs/healthtech/audits/ptp-api-parallel-recheck-20261103/README.md`.
+
+The owner-supplied `.env` path was used only through the sanitized metadata
+helper. `/api/v1/key` returned HTTP 200 with lifetime usage `USD0.0001464` and
+daily, weekly, and monthly usage `USD0`; the key is ordinary rather than a
+management key. Account scope and complete history remain unreconciled, so no
+scoped credit snapshot is available.
+
+A local API dry-run was also attempted against the workspace artifact store.
+The only available evidence pack was an older pack with hash
+`d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932`, while the
+current-head paired contract requires `e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e`.
+The runner rejected it before output creation and before network; this is a
+workspace-availability failure, not a current-head API result.
+
+No provider call, reservation, attempt ID, retry, ledger mutation, zero
+ledger, budget reset, or time-window reset occurred. Do not retry unknown
+billing. Next action is one-time owner evidence for the existing canonical R1
+journal/export and current scoped credit snapshot, then restage the current
+rights-cleared pack and recheck all gates before one paired canary.
+
+## HT-NEXT-141 - 2026-11-03 current-head API pack restored
+
+Status: `PASS_CURRENT_HEAD_DRY_RUN_PAID_DISPATCH_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-api-parallel-recheck-20261103/README.md`.
+
+The exact current-head owner-private pack was found at the source directory
+recorded by the prior pack receipt. A fresh dry-run passed the rights-cleared
+paired payload and route contract for all three cases with pack hash
+`e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e`, manifest
+hash `c298b1027e31a270c7db8956cf36a000c854f5c7374e8bb75241881f84729843`, and
+`ALLOWED_WITH_ATTRIBUTION`. Provider calls and paid cost were both zero.
+
+The stale Desktop copy with pack hash `d2a91ce2` remains recorded as a negative
+workspace check only; it was rejected before output/network and is not pooled
+with the current-head result.
+
+Live dispatch remains closed before reservation because the canonical R1
+journal/registry and current scoped credit snapshot are still absent. No
+attempt, retry, ledger mutation, budget reset, or time-window reset occurred.
+Next action is the same one-time owner evidence for those two gates, followed
+by a fresh route/price/rights/writer-quiescence check before one paired canary.
+
+## HT-NEXT-142 - 2026-11-03 manuscript API receipt rebind
+
+Status: `PASS_DOCUMENTATION_BOUNDARY_REBIND_PAID_GATE_UNCHANGED`; canonical
+audit: `docs/healthtech/audits/ptp-manuscript-api-rebind-20261103/README.md`.
+
+The manuscript now cites the current-head paired preflight and the current
+metadata/gate receipts. It records 3/3 rights-valid cases, the DeepInfra route,
+provider calls `0`, and paid cost `USD0.00`; the stale Desktop pack remains
+negative workspace evidence only. Paid dispatch remains blocked before
+reservation because the canonical R1 journal/registry and current scoped credit
+snapshot are unavailable.
+
+Post-edit validation passed: 28 local Markdown links checked, 0 missing; the
+manuscript is 40,253 bytes with SHA-256
+`6823a0695f073029a11dc43c99b09272f285bbc2100906b9e471135cdbf0de83`; audit
+JSON parses successfully. No provider call, reservation, attempt, retry,
+ledger mutation, budget/window reset, GPU job, or submission occurred.
+
+Next: keep local/offline work independent; if owner supplies the two missing
+non-secret evidence items, recheck the existing journal/credit once and run one
+paired canary only after all gates pass.
+
+## HT-NEXT-143 - 2026-11-03 Windows canonical ledger path recheck
+
+Status: `BLOCKED_BEFORE_RESERVATION`; canonical audit:
+`docs/healthtech/audits/ptp-api-parallel-recheck-20261103/WINDOWS_CANONICAL_PATH_RECHECK_20261103.json`.
+
+The registry default was checked using the Windows runtime path defined by
+`ledger_registry.py`: `%LOCALAPPDATA%` resolves to
+`C:/Users/User/AppData/Local`. The expected canonical R1 registry and the
+candidate live/paired SQLite journals are absent at the checked paths. The
+owner-provided `.env` exists, but its contents were not read, printed, copied,
+or persisted by this recheck.
+
+The current-head rights-cleared pack and prior route/price snapshot remain
+valid. Paid dispatch stays fail-closed before reservation because the existing
+canonical R1 journal/history and current scoped v2 credit snapshot are still
+missing. No provider call, reservation, attempt, retry, ledger mutation,
+zero-ledger creation, budget reset, or time-window reset occurred.
+
+Next: obtain the two non-secret evidence items once, validate the history
+export first if that is the supplied form, then recheck route, pricing,
+writer-quiescence, rights, and reservation before one paired canary.
+## HT-NEXT-LOCK-2026-11-03 — shared local GPU slot repair
+
+Status: `PASS_LOCAL_SHARED_GPU_LOCK_REPAIR_API_BLOCKED`; audit: `docs/healthtech/audits/ptp-local-lock-repair-20261103/README.md`.
+
+The transformer embedding shard launcher, local transformer query-evaluation path, remote encoder self-check, and local Qwen generation now use the same cooperative lock derived from the approved V100 UUID. The regression suite proves the embedding launcher holds the slot during encode, and the full suite passes `613 passed, 1 skipped, 2 warnings`. No new GPU job was launched in this repair package.
+
+The named `.env` was used only through the bounded read-only metadata collector. OpenRouter returned HTTP 200 with lifetime usage `$0.0001464`, daily/weekly/monthly usage `$0`, an ordinary non-management key, no account-scoped credit snapshot, `account_scope=NOT_RECONCILED`, and `history_completeness=NOT_PROVEN`. No prompt, reservation, attempt, ledger mutation, budget reset, or window reset occurred.
+
+Keep paid dispatch `BLOCKED_BEFORE_RESERVATION` until the owner supplies exactly two non-secret evidence items once: the existing canonical R1 journal or sanctioned sanitized all-attempt export, and the current scoped v2 account/key credit snapshot. Continue offline/research/manuscript work independently; do not create a replacement or zero ledger.
+
+## HT-NEXT-145 - 2026-11-03 current metadata refresh and figure-manifest cleanup
+
+Status: `BLOCKED_BEFORE_RESERVATION`; canonical API receipt:
+`docs/healthtech/audits/ptp-api-metadata-recheck-20261103/CHECKPOINT_R2.json`.
+
+The bounded metadata helper was rerun against the owner-supplied `.env` path
+without printing, copying, or persisting the key. At
+`2026-11-03T02:51:28.554157+00:00`, `/api/v1/key` returned HTTP 200 with
+lifetime usage `USD0.0001464` and daily/weekly/monthly usage `USD0`. The key is
+ordinary rather than a management key; account scope remains unreconciled,
+history completeness is not proven, and no current scoped credit snapshot is
+available. The checked canonical registry, candidate SQLite journals, and
+known owner-root all-attempt export paths were absent.
+
+No provider call, reservation, attempt, retry, ledger mutation, zero ledger,
+budget reset, or time-window reset occurred. Paid dispatch remains closed
+before reservation. The two non-secret owner evidence items remain unchanged:
+the existing canonical R1 journal or sanctioned sanitized all-attempt export,
+and the current scoped account/key credit snapshot.
+
+The current-head figure manifest was also aligned with the renderer output by
+removing a manually-added test block; test authority remains in
+`CHECKPOINT.json` and `renderer-tests.xml`. No research claim changed.
+
+## HT-NEXT-WPI-2026-11-03 — venue recheck
+
+Status: `PASS_CONDITIONAL_SCOPE_GUIDE_403_OWNER_RECHECK_REQUIRED`; audit: `docs/healthtech/audits/wpi-venue-recheck-r3-20261103/README.md`.
+
+The official Elsevier journal profile remains conditionally aligned with the manuscript's patent-information retrieval, AI/ML/IP-research, IR evaluation, and real-data experiment framing. The journal-specific ScienceDirect Guide for Authors still returned HTTP 403, so no WPI-specific article type, word limit, file-format, highlights, graphical-abstract, anonymization, or declaration rule was inferred.
+
+Next: owner browser/session recheck of the live Guide before submission. The manuscript remains `DRAFT_FOR_OWNER_REVIEW / NOT_SUBMITTED`.
+
+## HT-NEXT-144 - 2026-11-03 current-head figure rebind
+
+Status: `PASS_CURRENT_HEAD_DEVELOPMENT_ONLY`; canonical package:
+`docs/healthtech/audits/ptp-current-head-offline-20261103/analysis-current-head-20261103/manifest.json`.
+
+The manuscript's main figure/table links now bind to candidate
+`88dc40471cb9078f929c02bb893cfa1e364da841` and the current-head offline
+verification hash rather than using an older candidate's figures as the main
+evidence. The package contains a Recall@20 SVG, a realized query/rerank-units
+SVG, a CSV, a manifest, and `renderer-tests.xml`.
+
+The fresh current-candidate regression pass recorded `615` tests, `614`
+passed, `0` failed, and `1` skipped because the pinned local tokenizer artifact
+is unavailable. The figure package remains descriptive development evidence:
+there is no current-head final holdout, semantic relevance gold, equal-total-
+budget comparison, paid API result, or external business validation.
+
+No provider call, reservation, attempt, ledger mutation, GPU job, dataset
+download, budget reset, or time-window reset occurred. Next: owner review the
+rebound manuscript/figures, then supply the two existing non-secret paid-gate
+evidence items once if the API comparison is still required.
+
+## HT-NEXT-146 - 2026-11-03 manuscript receipt rebind
+
+Status: `PASS_CURRENT_FILE_LINKS_API_R2_RECEIPT_REBIND`; audit:
+`docs/healthtech/audits/ptp-manuscript-rebind-r6-20261103/README.md`.
+
+The manuscript links now point to the latest sanitized API metadata receipt and
++the R2 gate checkpoint. The current file is `40,874` bytes with SHA-256
++`d659892f33aa11310a61d7440a4232175e38dcaae71dbbeb5d14d2ad88bab4f1`, and `30`
+local Markdown links resolve with `0` missing. This was a documentation-only
++rebind: no result, claim, provider call, reservation, ledger mutation, or
++submission changed.
+
+## HT-NEXT-147 - 2026-11-03 current-head matched-budget checkpoint
+
+Status: `PASS_POSTHOC_DESCRIPTIVE_FIRST_ACTION_SLICE`; canonical audit:
+`docs/healthtech/audits/ptp-current-head-matched-budget-20261103/README.md`.
+
+The current-head offline frontier at `88dc40471cb9078f929c02bb893cfa1e364da841`
+was summarized at a post-hoc slice of 3 query calls and 123 rerank pairs.
+HT-B1, HT-B2, and HT-B3 prefix-1 each recorded Macro known-link Recall@20
+`0.498802`, with range `0.0`, zero failed queries, and zero not-realized
+queries. The slice is descriptive only: B4 is excluded as a different budget
+unit, the cohort has no final holdout or semantic gold, and adaptive
+superiority is `NOT_ESTABLISHED`.
+
+The manuscript now points Section 7.4.1 to the current-head audit and states
+that historical `891f3b3` evidence is not pooled. The current manuscript is
+`41,112` bytes with SHA-256
+`1602bc596f0dde87f779b8388c9ba2048cec9627737dc5be304cd23bcc77c0cd`; 30 local
+Markdown links resolve with 0 missing. The additive rebind receipt is
+`docs/healthtech/audits/ptp-manuscript-rebind-r7-20261103/README.md`.
+
+Focused matched-budget tests pass `6/6`. No provider call, reservation, retry,
+ledger mutation, GPU job, dataset download, budget reset, or time-window reset
+occurred. Paid dispatch remains `BLOCKED_BEFORE_RESERVATION` until the existing
+canonical R1 history/export and current scoped credit snapshot are available.
+
+## HT-NEXT-148 - 2026-11-03 completion audit R2
+
+Status: `PARTIAL_NOT_COMPLETE`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r2-20261103/README.md`.
+
+The original O1-O4 scope was re-audited without narrowing completion around the
+documentation work. O1 current-head engineering remains complete; O2 now
+matches the stated acceptance as actual dr-train PatEmbed/e5 encoding,
+resumable shards, Windows import, retrieval/dossier use, and current-head
+runtime binding, with no new remote rerun claimed; O3 remains local-pass/API-
+paid blocked; and O4 remains descriptive without a current-head final holdout
+or a powered equal-total-budget adaptive result.
+
+The current-head matched-budget slice is now included as evidence only: 3 query
+calls, 123 rerank pairs, HT-B1/HT-B2/HT-B3 prefix-1 Macro Recall@20 `0.498802`
+each, range `0.0`, failed `0`, not-realized `0`, and adaptive superiority
+`NOT_ESTABLISHED`. This does not replace the missing final holdout, semantic
+gold, paid paired generation, external business validation, owner review,
+merge acceptance, or cleanup.
+
+No provider call, reservation, attempt, retry, ledger mutation, GPU job, data
+download, budget reset, window reset, submission, merge, or branch deletion
+occurred. The two existing non-secret paid-gate evidence items remain the only
+owner input needed before a fresh reservation check.
+
+## HT-NEXT-149 - 2026-11-03 manuscript O2 component diagnostic
+
+Status: `PASS_MANUSCRIPT_COMPONENT_BOUNDARY_RECHECK`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-rebind-r8-20261103/README.md`.
+
+Section 7.4.2 now reports the actual prior dr-train PatEmbed/e5 component
+diagnostic: 45,336 passages, 1,247 queries, 49,869 qrel pairs; PatEmbed dense
+macro/micro Recall@100 `0.422525/0.422319` and macro nDCG@100 `0.348830`;
+multilingual-e5 `0.287414/0.287296` and `0.244781`; dense failures `0`.
+The text states that DAPFAM is citation-based diagnostic evidence, not semantic
+device-patent gold, and that current-head binding is a rebind rather than a new
+remote run.
+
+The manuscript is now `42,789` bytes with SHA-256
+`e56c2cde5e8aab643464f7e1b999a7fe26fa1bce1fe4a841a22d425ab6a23453`; 33 local
+links resolve with 0 missing. Completion audit R3 records O2 as passed under
+the stated acceptance while O3 paid generation, O4 final research gates,
+owner review, merge, submission, and cleanup remain incomplete.
+
+## HT-NEXT-150 - 2026-11-03 conditional OpenRouter authorization recheck
+
+Status: `PASS_READ_ONLY_METADATA_RECHECK_PAID_GATE_UNCHANGED`; canonical audit:
+`docs/healthtech/audits/ptp-api-metadata-recheck-r3-20261103/README.md`.
+
+The owner has authorized continuing the OpenRouter branch in parallel only when
+all existing gates are ready. The latest bounded metadata observation at
+`2026-11-03T03:20:57.527471+00:00` returned HTTP 200 with lifetime usage
+`USD0.0001464` and daily/weekly/monthly usage `USD0`. The key remains an
+ordinary non-management key; account scope is unreconciled, history
+completeness is unproven, and no scoped credit snapshot is available. The
+observed usage, response hash, and gate fields match R2; only timestamps and
+the local receipt hash changed.
+
+Paid dispatch remains `BLOCKED_BEFORE_RESERVATION` because the existing
+canonical R1 journal/registry and current scoped account/key credit evidence
+are still missing. No provider call, reservation, attempt, retry, ledger
+mutation, zero ledger, budget reset, or time-window reset occurred. Continue
+local/offline and manuscript work; after the two non-secret evidence items are
+supplied, recheck all route, price, rights, writer-quiescence, and reservation
+gates once before one paired canary.
+
+## HT-NEXT-151 - 2026-11-03 business-value scenario package
+
+Status: `PASS_SCENARIO_ONLY_NOT_OBSERVED_BUSINESS_VALIDATION`; canonical audit:
+`docs/healthtech/audits/ptp-business-value-scenario-20261103/README.md`.
+
+The manuscript now includes a transparent sensitivity analysis. Observed
+machine-side time is `71.983` seconds per case (`0.0199952778` hours), combining
+the local-vector path and guided local Qwen generation. Human review time and
+GPU price were not measured. Lower/central/upper illustrative unit-cost rows
+are calculated from explicit assumptions only; they exclude support, storage,
+rework, and paid API charges.
+
+The package and manuscript explicitly do not claim independent user
+validation, customer productivity, willingness-to-pay, revenue, ROI, or paid
+API cost. Scenario formulas and source hashes pass readback, and no provider,
+GPU, dataset, ledger, budget, or time-window mutation occurred.
+
+## HT-NEXT-152 - 2026-11-03 requirement-by-requirement completion audit R4
+
+Status: `PARTIAL_NOT_COMPLETE`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r4-20261103/README.md`.
+
+R4 rechecked the original O1-O4 objective and the attached long-run contract
+against candidate `88dc40471cb9078f929c02bb893cfa1e364da841`. O1 is current-head
+engineering complete; O2 is runtime-bound prior remote evidence without a new
+remote run; O3 local/API preflight passes but paid dispatch is blocked before
+reservation; and O4 remains descriptive without a final holdout or powered
+equal-total-budget result. The new business-value package is scenario-only and
+does not claim user validation, revenue, willingness-to-pay, or ROI.
+
+The canonical R1 journal/registry and current scoped credit snapshot remain
+absent at checked paths. Owner review, WPI Guide recheck, merge, push/PR
+acceptance, and cleanup remain open. No provider call, reservation, attempt,
+retry, ledger mutation, GPU job, dataset download, budget reset, time-window
+reset, submission, merge, or branch deletion occurred.
+
+## HT-NEXT-153 - 2026-11-03 WPI official-source recheck R4
+
+Status: `PASS_CONDITIONAL_SCOPE_GUIDE_UNVERIFIED_OWNER_RECHECK_REQUIRED`; audit:
+`docs/healthtech/audits/wpi-venue-recheck-r4-20261103/README.md`.
+
+The current official Elsevier journal profile remains conditionally aligned
+with the patent-information retrieval, AI/ML-for-IP, IR evaluation, and
+real-data experiment framing. The ScienceDirect Aims and Scope and Guide for
+Authors pages remain HTTP 403 in the available environment, so no
+journal-specific article type, word limit, formatting, anonymization, or
+declaration rule was inferred. The owner must recheck the live Guide in an
+authorized browser/session before submission. No submission, external message,
+publisher-term acceptance, API call, or other resource mutation occurred.
+
+## HT-NEXT-154 - 2026-11-03 parallel authorization checkpoint
+
+Status: `PASS_CURRENT_HEAD_REGRESSION_API_BLOCKED_BEFORE_RESERVATION`; canonical audit:
+`docs/healthtech/audits/ptp-parallel-authorized-check-20261103/README.md`.
+
+The current candidate `88dc40471cb9078f929c02bb893cfa1e364da841` was rechecked without mixing snapshot results. The full suite recorded `615 tests, 0 failures, 0 errors, 1 skipped`; the focused O3/local/provider/ledger/recovery suite recorded `139 tests, 0 failures, 0 errors, 0 skipped`; `compileall` and `git diff --check` passed. Raw JUnit receipts and an owner-review manifest are stored in the audit package.
+
+The local path remains ready within its authorization boundary, with current-head 3-case contract/smoke evidence and no paid calls. The OpenRouter path remains `BLOCKED_BEFORE_RESERVATION`: read-only metadata still shows lifetime usage `USD0.0001464` and daily usage `USD0`, but history completeness is not proven, the canonical R1 journal/registry is not present at the sanctioned path, and the current scoped v2 credit snapshot is unavailable. The `.env` location supplied by the owner was not read or persisted.
+
+No provider call, reservation, attempt, retry, ledger mutation, GPU job, dataset download, zero ledger, budget reset, or window reset occurred in this checkpoint. Owner input remains limited to the same two non-secret evidence items: the existing canonical R1 journal/export and the current scoped credit snapshot. After they are supplied, validate/bind them once and run one paired canary only if every gate passes; otherwise continue local/offline work. Owner review is required before merge.
+
+## HT-NEXT-155 - 2026-11-03 current-head PANORAMA component revalidation
+
+Status: `PASS_CURRENT_HEAD_COMPONENT_HOLDOUT_REVALIDATION`; canonical audit:
+`docs/healthtech/audits/ptp-panorama-current-head-20261103/README.md`.
+
+The deterministic CPU lexical baseline was rerun on the four manifest-listed PANORAMA files using candidate `88dc40471cb9078f929c02bb893cfa1e364da841` and the previously frozen protocol. PAR4PC validation/test macro hit@1 was `0.733575/0.715124`; PI4PC validation/test was `0.377699/0.401235`; macro hit@8 was `1.0` on all four splits; singleton exact top-1 was `0.681583/0.697702` for PAR4PC and `0.377699/0.401235` for PI4PC; failed rows were `0/0/0/0`. The same receipt reran Helmers on 10 targets and 450 judged pairs with macro AP `0.885450` and macro AUC `0.880012`. Machine wall time was recorded per split and raw predictions remain outside Git.
+
+The official PANORAMA test split is a component holdout for closed-candidate option/paragraph selection. It does not replace the unavailable main device-patent final holdout, semantic gold, or equal-total-budget adaptive comparison. Historical candidate receipts remain separate and were not pooled. No dataset was downloaded again and no API/GPU/ledger/budget/window mutation occurred.
+
+The manuscript and supplemental data now point to the current-head receipt. Manuscript hash is `ac1a4396d1f0274007fca8e74d44115c330eddd53947f177b915576278600347`, `44,193` bytes, with `34` local links checked and `0` missing. Keep O4 `PARTIAL` and preserve the paid API gate independently.
+
+## HT-NEXT-156 - 2026-11-03 owner-supplied OpenRouter key-path recheck
+
+Status: `PASS_READ_ONLY_METADATA_OWNER_KEY_PATH_RECHECK_PAID_GATE_UNCHANGED`; canonical audit:
+`docs/healthtech/audits/ptp-api-owner-key-recheck-20261103/README.md`.
+
+The owner supplied the existing `.env` path for a bounded metadata observation. The approved observer selected only the named key, and the key value was not printed, copied, staged, or persisted. The current endpoint returned HTTP 200 with lifetime usage `USD0.0001464` and daily/weekly/monthly usage `USD0`. The key is ordinary rather than a management key; account scope remains unreconciled, history completeness remains unproven, and no scoped v2 credit snapshot is available.
+
+The paid branch remains `BLOCKED_BEFORE_RESERVATION`. No provider generation, reservation, attempt, retry, ledger mutation, zero ledger, budget reset, or time-window reset occurred. The existing canonical R1 journal/export and current scoped credit snapshot remain the only non-secret evidence needed before one fresh reservation check and one small paired canary. Local/offline work remains independent and the current candidate full suite passed with one known skip.
+
+## HT-NEXT-157 - 2026-11-03 provenance review checkpoint
+
+Status: `READY_FOR_OWNER_REVIEW_NOT_MERGE_APPROVAL`; audit:
+`docs/healthtech/audits/ptp-code-review-provenance-20261103/README.md`.
+
+The O3 payload and dossier contracts now fail closed on missing source IDs,
+missing source descriptors, and evidence/candidate source-revision drift.
+Focused provenance/O3 tests pass `45/45`; the full current worktree suite passes
+`615/616` with one known pinned-tokenizer skip and zero failures/errors. The
+working tree remains dirty by design and all owner/Claude/Luna artifacts were
+preserved.
+
+Paid OpenRouter remains `BLOCKED_BEFORE_RESERVATION`: no provider call,
+reservation, attempt, retry, ledger mutation, budget reset, or window reset was
+made. Resume only after the same two existing non-secret evidence items are
+available: canonical R1 journal/history and current scoped v2 credit snapshot.
+
+## HT-NEXT-158 - 2026-11-03 owner-authorized parallel metadata checkpoint
+
+Status: `PASS_READ_ONLY_METADATA_PAID_GATE_UNCHANGED`; canonical audit:
+`docs/healthtech/audits/ptp-api-owner-authorized-metadata-20261103/README.md`.
+
+The owner authorized continuing the OpenRouter branch in parallel only when all
+existing gates are ready. A fresh bounded metadata observation through the
+owner-supplied `.env` path returned HTTP 200 with lifetime usage
+`USD0.0001464` and daily/weekly/monthly usage `USD0`. The key is ordinary and
+the current scoped credit snapshot is unavailable; history completeness and
+account scope remain unproven. The credential value was not printed, copied,
+staged, or persisted.
+
+The current candidate remains `88dc40471cb9078f929c02bb893cfa1e364da841`.
+Focused checks (`58 passed, 0 failed, 0 skipped`), full Python tests (`616 total;
+615 passed, 1 skipped, 0 failed, 0 errors`), compileall, and JSON readback pass.
+Rights-cleared payload and route
+preflight remain reusable, but paid dispatch is still
+`BLOCKED_BEFORE_RESERVATION` because the existing canonical R1 journal/export
+and current scoped credit evidence are missing. No provider call, reservation,
+attempt, retry, ledger mutation, zero ledger, budget reset, or time-window
+reset occurred. Continue local/offline and manuscript work; reconcile the two
+non-secret evidence items once before any paid canary.
+
+## HT-NEXT-159 - 2026-11-03 current-head manuscript integrity checkpoint
+
+Status: `PASS_CURRENT_HEAD_CLAIM_AND_LINK_RECONCILIATION`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-integrity-current-20261103/README.md`.
+
+The manuscript is bound to candidate `88dc40471cb9078f929c02bb893cfa1e364da841`
+with SHA-256 `ac1a4396d1f0274007fca8e74d44115c330eddd53947f177b915576278600347`
+and 44,193 bytes. All 34 relative links resolve. Current offline frontier,
+matched-budget diagnostic, PatEmbed/e5 component results, PANORAMA component
+metrics, and business-value scenario values are present and linked to
+candidate-bound receipts. The manuscript also preserves the required limits:
+no semantic gold, no final holdout for the main cohort, no equal-total-budget
+adaptive superiority claim, no paid API comparison, and no external validation,
+revenue, willingness-to-pay, or ROI claim.
+
+This is documentation/evidence integrity, not a scientific completion claim.
+No benchmark rerun, provider call, GPU job, dataset download, ledger mutation,
+budget reset, or window reset occurred. Keep O4 `PARTIAL` until admissible
+research evidence changes that boundary.
+
+## HT-NEXT-160 - 2026-11-03 requirement-by-requirement completion audit R5
+
+Status: `PARTIAL_NOT_COMPLETE`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r5-20261103/README.md`.
+
+R5 maps O1/O2/O3/O4 and G0-G8 to current candidate-bound evidence. O1 is
+current-head engineering complete; O2 is a runtime-bound prior remote artifact
+pass without a new remote rerun; local O3 is a 3/3 schema-valid generation
+contract; paid O3 remains blocked before reservation; and O4 is a three-case
+engineering pass with descriptive, not-estimable scientific evidence. G1/G2/G4
+remain partial because semantic gold, a main-task final holdout, equal realized
+budgets, and sufficient independent groups are absent. G5 remains scenario-only
+and G6 remains owner-review/Guide-for-Authors conditional.
+
+No provider call, reservation, attempt, retry, GPU job, dataset download,
+ledger mutation, budget reset, or window reset occurred. The goal remains
+active; continue local/offline and manuscript work, and reconcile the existing
+canonical R1 history/export plus current scoped credit once before any paid
+canary.
+
+## HT-NEXT-161 - 2026-11-03 manuscript venue-date correction
+
+Status: `PASS_CURRENT_HEAD_CLAIM_AND_LINK_RECONCILIATION_R2`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-integrity-current-r2-20261103/README.md`.
+
+The manuscript's venue-scope check date was corrected from 2026-11-01 to
+2026-11-03 so it matches the latest WPI venue audit. No scientific result,
+cohort, receipt, claim boundary, or limitation changed. The current manuscript
+hash is `f5362b2522d11406af294d229fb8bf2e34710f8792b9b2b708aa30a74c822a5e`;
+34 local links still resolve with zero missing links.
+
+No benchmark rerun, provider call, GPU job, dataset download, ledger mutation,
+submission, budget reset, or time-window reset occurred. O4 remains descriptive
+and paid API remains gated independently.
+
+## HT-NEXT-162 - 2026-11-03 current source-patch inventory
+
+Status: `READY_FOR_OWNER_REVIEW_NOT_MERGE`; canonical audit:
+`docs/healthtech/audits/ptp-source-patch-inventory-20261103/README.md`.
+
+The current goal-specific source/test patch is now inventoried as 15 files: 9
+modified and 6 new. It covers provenance/revision fail-closed validation,
+rights-cleared route binding, local execution/deadline/GPU-slot guards,
+current-head frontier/vector verification, and regressions. Every file has a
+current SHA-256 and byte count in the manifest.
+
+Scoped diff-check and compileall pass; the focused suite passes 58 tests, and
+the existing full-suite receipt records 616 total with 615 passed, 1 skipped,
+and zero failures/errors. No files were staged or committed, so owner/Claude/
+Luna dirty work remains untouched. Review this inventory before any later
+scoped commit; do not merge unrelated dirty files.
+
+## HT-NEXT-163 - 2026-11-03 business and research evidence checkpoint
+
+Status: `PARTIAL_EVIDENCE_BOUND_OPERATIONAL_COMPLETE_RESEARCH_NOT_ESTIMABLE`;
+canonical audit:
+`docs/healthtech/audits/ptp-business-research-evidence-20261103/README.md`.
+
+The checkpoint aggregates only existing candidate-bound receipts for HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841`. The three named cases (MitraClip,
+Tendyne, TriClip) each passed source inspection, evidence retrieval,
+history/edit, and JSON/TH/EN export operational checks. The local Qwen3-8B
+guided path produced schema-valid outputs for `3/3` cases with `3,073` prompt
+tokens, `1,054` output tokens, mean generation latency `38.960` seconds, and
+USD `0.00` paid cost.
+
+The current descriptive frontier is HT-B0a/B0b/B1/B2/B3/B4-offline macro
+Recall@20 `0.442739/0.662242/0.498802/0.568912/0.498802/0.498802`; the matched
+first-action diagnostic is `0.498802` for B1, B2 prefix-1, and B3 prefix-1
+with range `0.0`. These are not evidence of adaptive superiority: realized
+full-policy budgets, semantic gold, a main-task final holdout, and sufficient
+independent groups remain unavailable.
+
+Observed machine time is `71.983` seconds per case. Human review time, GPU
+rate, and paid API cost were not measured. Scenario unit-cost rows remain
+illustrative; no external user validation, revenue, willingness-to-pay, or ROI
+claim is made.
+
+The paid OpenRouter branch remains `BLOCKED_BEFORE_RESERVATION`. Read-only
+metadata shows lifetime usage `USD0.0001464` and daily/weekly/monthly usage
+`USD0`; the existing canonical R1 journal/history and current scoped credit
+snapshot are still missing. No provider call, reservation, attempt, retry,
+ledger mutation, zero ledger, budget reset, or time-window reset occurred in
+this checkpoint. Resume by reconciling those two non-secret evidence items
+once, then run one paired canary only if every live gate passes.
+
+## HT-NEXT-164 - 2026-11-03 O1 provider and budget-state visibility repair
+
+Status: `PASS_CURRENT_WORKTREE_HTTP_PROVIDER_BUDGET_VISIBILITY_REVIEW_REQUIRED`;
+canonical audit:
+`docs/healthtech/audits/ptp-o1-provider-budget-state-20261103/README.md`.
+
+The O1 loopback HTTP contract now exposes provider estimates and estimate
+bases plus actual, reserved, and unknown/pending spend state. The browser
+backend panel renders those fields and the paid dispatch gate. OpenRouter is
+still disabled and fail-closed; the browser receives no credential and no
+paid call is possible from this configuration.
+
+The scoped working-tree patch passed Python HTTP tests `7/7`, frontend unit
+tests `74/74`, browser HTTP acceptance, compileall, and scoped diff-check. The
+patch is uncommitted, so this is not yet a new clean current-HEAD receipt.
+Owner/Claude/Luna work remains preserved. No provider call, reservation,
+attempt, retry, GPU job, dataset download, ledger mutation, budget reset, or
+window reset occurred.
+
+Next: owner review the seven listed source/test files, make a scoped commit if
+accepted, and rerun the same checks at the new exact commit. Keep paid O3
+`BLOCKED_BEFORE_RESERVATION` until canonical R1 history/export and current
+scoped credit exist; keep O4 research `PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE`.
+
+## HT-NEXT-165 - 2026-11-03 owner-env API preflight recheck
+
+Status: `PASS_READ_ONLY_METADATA_PAID_GATE_UNCHANGED`; canonical audit:
+`docs/healthtech/audits/ptp-api-preflight-owner-env-20261103/README.md`.
+
+The owner-supplied `.env` path was used by the bounded metadata observer
+without printing, copying, staging, or persisting the credential. The key
+endpoint returned HTTP 200 with lifetime usage `USD0.0001464` and daily,
+weekly, and monthly usage `USD0`. It is an ordinary non-management key;
+account scope and history completeness remain unreconciled, and no scoped
+credit snapshot is available. The known canonical R1 journal/registry is
+still absent; legacy pilot journals remain historical and were not rebound.
+
+On the same dirty candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`,
+the full Python suite passed `617 total / 616 passed / 0 failed / 0 errors /
+1 skipped`, and loopback browser HTTP/history/export integration passed. No
+provider call, reservation, attempt, retry, ledger mutation, zero ledger,
+budget reset, window reset, GPU job, or dataset download occurred. Paid API
+remains `BLOCKED_BEFORE_RESERVATION`; continue local/offline work and request
+only the existing R1 journal/export location plus the current scoped credit
+snapshot before one paired canary.
+
+## HT-NEXT-166 - 2026-11-03 O2 model snapshot acquisition
+
+Status: `PASS_MODEL_SNAPSHOT_LOCAL_CPU_CANARY_REMOTE_ENCODE_NOT_RUN`; canonical audit:
+`docs/healthtech/audits/ptp-o2-model-snapshot-20261103/README.md`.
+
+The allowlist-based pinned model runner acquired `datalyes/patembed-base` at
+revision `244ba452908a3093be11efb8a44396652317fb14` (778,662,281 bytes,
+CC-BY-NC-SA-4.0) and `intfloat/multilingual-e5-base` at revision
+`d128750597153bb5987e10b1c3493a34e5a4502a` (1,134,535,908 bytes, MIT) into
+private ignored Windows storage. The acquisition manifest SHA-256 is
+`1b3af4bfc52671c5b411aee473b394a2e2ff12e7681dec0e3f478a74012278ac`.
+Both model trees pass the repository's layout and artifact-binding checks. A
+two-row-per-model local CPU runtime smoke also passed with shape `[2, 768]`
+and unit L2 norms; this is runtime evidence only, not a retrieval result.
+
+Focused encoder/local-execution/vector-bundle tests pass `16/16`; compileall
+passes. The global Windows interpreter remains unchanged; the runtime smoke
+used an isolated venv. There is still no live remote allocation/transfer
+receipt, so no remote encode or retrieval result is claimed. No provider call,
+reservation, attempt, retry, ledger mutation, GPU job, remote transfer, budget
+reset, or time-window reset occurred. PatEmbed remains private research-only
+under its declared CC-BY-NC-SA-4.0 boundary.
+
+Next: obtain the live `dr-train` allocation/transfer evidence, then use the
+existing resumable encoder on the approved V100. Keep the paid OpenRouter
+branch blocked until the existing canonical R1 history/export and current
+scoped credit snapshot are reconciled.
+
+## HT-NEXT-167 - 2026-11-03 manuscript O2 snapshot-boundary rebind
+
+Status: `PASS_CURRENT_HEAD_MANUSCRIPT_FACT_REBIND`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-o2-snapshot-20261103/README.md`.
+
+The manuscript now cites the current O2 snapshot acquisition receipt and says
+exactly what it proves: pinned model files are present privately and pass
+layout/hash binding. Prior PatEmbed/e5 DAPFAM diagnostic values remain the
+prior run's values; no new transfer, encode, retrieval evaluation, adaptive
+superiority, paid API comparison, or publication claim was added. The revised
+manuscript is 44,875 bytes with SHA-256
+`9494ae51e332fce3d571797498e2592675b4092e4de74b4078e63714e851eb46`; 36
+relative links were checked and none were missing.
+
+Owner review remains required before merge or submission.
+
+## HT-NEXT-168 - 2026-11-03 live remote allocation recheck
+
+Status: `PASS_READ_ONLY_NO_ACTIVE_EXPERIMENT_ALLOCATION_UNKNOWN`; canonical audit:
+`docs/healthtech/audits/ptp-remote-preflight-live-20261103/README.md`.
+
+Strict SSH to `chaw@100.77.149.83` was rechecked at `2026-11-03T06:46:40Z`.
+The approved V100 `GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089` was visible and
+idle with `32,495 MiB` free, no encoder/Qwen job was running, and the existing
+HTTP service PID `1745699` was left untouched. The job root exists, but the
+only matching allocation marker is a zero-byte lock; no owner, quota,
+allocation reference, or runtime window was found. Idle capacity is not an
+authorization, so no remote batch was launched.
+
+No remote write, model inference, dataset transfer, provider call, reservation,
+attempt, retry, ledger mutation, budget reset, or time-window reset occurred.
+O2 remote encode remains `NOT_RUN`; next action is one authorized allocation
+reference/window, then the existing resumable encoder under the recorded
+limits. Paid O3 remains independently gated by the existing canonical R1
+history/export and current scoped credit snapshot.
+
+## HT-NEXT-169 - 2026-11-03 prior remote artifact manifest reconciliation
+
+Status: `PASS_PRIOR_REMOTE_ARTIFACT_HASH_MATCH_NO_RERUN`; canonical audit:
+`docs/healthtech/audits/ptp-remote-artifact-manifest-reconciliation-20261103/README.md`.
+
+Read-only SSH inspection of the prior `dr-train` job root matched all four
+PatEmbed/e5 corpus/query manifest hashes to the private Windows bundle copies:
+`75348afa`, `45da46ee`, `643ab885`, and `8e0a933f`. This strengthens the
+current-head runtime rebind and confirms artifact identity, but it does not
+claim a new remote encode, new retrieval evaluation, allocation grant, or GPU
+window. No remote write occurred and the existing HTTP service was untouched.
+
+Keep O2 wording split between prior actual remote artifacts and no new remote
+rerun. The paid API branch is unchanged: reconcile the existing canonical R1
+journal/export and current scoped credit snapshot before any reservation.
+
+## HT-NEXT-170 - 2026-11-03 manuscript O2 artifact-boundary receipt
+
+Status: `PASS_CURRENT_HEAD_MANUSCRIPT_O2_ARTIFACT_BOUNDARY`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-o2-artifact-reconciliation-20261103/README.md`.
+
+The manuscript now records the four-manifest prior-remote reconciliation and
+explicitly says it is not a new remote encode or GPU window. Current hash is
+`0bbd56f1bc579f5199e45f31d0797a961f25910c045733d2fc30e833ca18ff2f`, size
+`45,257` bytes; 37 relative links resolve with zero missing. No scientific
+metric or claim boundary changed, and no API/GPU/ledger mutation occurred.
+
+## HT-NEXT-171 - 2026-11-03 OpenRouter metadata recheck
+
+Status: `PASS_READ_ONLY_METADATA_PAID_GATE_UNCHANGED`; canonical audit:
+`docs/healthtech/audits/ptp-api-metadata-recheck-r4-20261103/README.md`.
+
+The owner-supplied key path was used only through the bounded metadata
+observer. The key endpoint returned HTTP 200 with lifetime usage
+`USD0.0001464` and daily/weekly/monthly usage `USD0`; the key is ordinary,
+account scope is unreconciled, current scoped credit is unavailable, and R1
+history completeness remains unproven. Paid dispatch stays
+`BLOCKED_BEFORE_RESERVATION`. No provider call, reservation, attempt, retry,
+ledger mutation, budget reset, or time-window reset occurred.
+
+## HT-NEXT-172 - 2026-11-03 current-head browser/HTTP engineering recheck
+
+Status: `PASS_CURRENT_HEAD_BROWSER_HTTP_HISTORY_EXPORT`; canonical audit:
+`docs/healthtech/audits/ptp-current-head-browser-http-recheck-20261103/README.md`.
+
+The current candidate reran the browser-to-loopback HTTP flow with job
++`536bc0e990ce48b3a9a8ad51a3ac0971`. Source inspection passed; history moved
+from version 1 to 2; edit, reopen, and JSON/Thai/English exports passed. The
+fixture used zero provider calls and USD0.00 paid cost. This strengthens O1
+current-head engineering only and does not change O4 research or the paid gate.
+
+## HT-NEXT-173 - 2026-11-03 OpenRouter live-readiness recheck
+
+Status: `API_BLOCKED_BEFORE_RESERVATION_CURRENT_METADATA_RECHECK`; canonical audit:
+`docs/healthtech/audits/ptp-api-live-readiness-20261103/README.md`.
+
+The owner-supplied `.env` was consumed only by the bounded metadata observer.
+OpenRouter `GET /api/v1/key` returned HTTP 200 with lifetime usage
+`USD0.0001464` and daily, weekly, and monthly usage `USD0`. The key is an
+ordinary non-management key, so current scoped credit remains unavailable;
+account scope is unreconciled and R1 history completeness remains unproven.
+
+The user-local canonical registry for `PTP-HT-OR-R1-20261028-USD8` is absent,
+so no canonical journal can be resolved. No historical pilot material was
+rebound, no duplicate or zero ledger was created, and no provider call,
+reservation, attempt, retry, ledger mutation, budget reset, time-window reset,
+GPU job, or dataset download occurred. Focused provider/API gate tests and
+compileall passed.
+
+The new owner instruction permits parallel OpenRouter work when all components
+are ready, but the paid branch remains fail-closed before reservation. Next:
+obtain the existing non-secret R1 journal/export location and current scoped
+credit evidence once, then re-run all live gates before one frozen paired
+canary. Do not ask for the prior budget approval again or send a secret key.
+
+## HT-NEXT-174 - 2026-11-03 exact-head continuation binding
+
+Status: `PARTIAL_EXACT_HEAD_BOUND_EXTERNAL_GATES_PENDING`; canonical audit:
+`docs/healthtech/audits/ptp-continuation-exact-head-20261103/README.md`.
+
+The current candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841` is now
+bound across the current O1 browser/HTTP receipt, O2 prior-vector artifact
+reconciliation, O3 local Qwen3-8B receipt, O4 current-head offline frontier,
+and the live OpenRouter gate. O1 is current-head engineering complete. O2
+remains partial because no new authorized `dr-train` allocation reference was
+observed. O3 has local 3/3 schema-valid generation, while paid API remains
+blocked before reservation. O4 is operationally covered for three cases but
+scientific evidence remains descriptive and not estimable.
+
+The exact-head offline macro Recall@20 values are B0a `0.442739`, B0b
+`0.662242`, B1 `0.498802`, B2 `0.568912`, B3 `0.498802`, and B4-offline
+`0.498802`; B4 micro Recall@20 is `0.475410`. No historical candidate was
+pooled, and no provider/GPU/ledger mutation occurred.
+
+Next: continue manuscript/offline analysis without rerunning the same frozen
+benchmark; obtain one authorized remote allocation reference and the two
+existing non-secret paid-gate evidence items before new O2/O3 execution.
+
+## HT-NEXT-175 - 2026-11-03 manuscript exact-head provenance rebind
+
+Status: `PASS_CURRENT_HEAD_MANUSCRIPT_EXACT_HEAD_PROVENANCE_REBIND`; canonical
+audit: `docs/healthtech/audits/ptp-manuscript-exact-head-rebind-20261103/README.md`.
+
+The manuscript now points to the exact-head O1-O4 continuation checkpoint and
+the latest read-only API live-readiness receipt. The edit changed provenance
+references only; no metric, cohort, model result, or scientific claim changed.
+The manuscript hash is `4499cf71d2b5ac1bb39c4e48b6244a1fdc05c70d08713ae0c72fd5d16d809736`; 39 local links resolve with zero missing links.
+
+The draft remains for owner review and is not submitted. WPI journal-specific
+author instructions remain an owner recheck item because the direct official
+guide was inaccessible in this environment. Paid API and new O2 execution
+remain independently gated by the existing evidence requirements.
+
+## HT-NEXT-176 - 2026-11-03 solo supplemental-data scope repair
+
+Status: `PASS_SOLO_SCOPE_ALIGNED`; canonical audit:
+`docs/healthtech/audits/ptp-solo-supplemental-reframe-20261103/README.md`.
+
+`SUPPLEMENTAL_DATA.md` had one stale row that framed participant trials as a
+current must-have. It now matches the owner's solo-project decision: no
+participant route, recruitment, consent collection, or external user
+validation in this round; developer self-evaluation is proxy-only when labeled;
+operational potential and scenario sensitivity may continue; adoption,
+purchase, revenue, willingness-to-pay, and ROI remain `NOT_RUN`.
+
+No code, benchmark result, model output, API state, ledger, budget, or resource
+authorization changed.
+
+## HT-NEXT-177 - 2026-11-03 current checkpoint R2
+
+Status: `PARTIAL_ENGINEERING_VERIFIED_API_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-current-checkpoint-r2-20261103/README.md`.
+
+The current candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841` passed
+the full Python suite (`617 total / 616 passed / 1 skipped / 0 failed /
+0 errors`) and focused O3/O4/local/vector/generation coverage (`85 passed /
+0 skipped / 0 failed / 0 errors`). `compileall`, scoped `git diff --check`, and
+the selected Markdown link check passed; five stale historical audit links in
+`docs/healthtech/long-runs/README.md` were corrected from `../../audits` to
+`../audits`.
+
+The solo computational-study boundary remains aligned: participant access,
+recruitment, consent, independent user validation, revenue, willingness-to-pay,
+and ROI are not current gates. No benchmark was rerun and no scientific metric
+was added in this checkpoint.
+
+Owner permission to continue OpenRouter in parallel was assessed, but paid
+dispatch remains `BLOCKED_BEFORE_RESERVATION` because the existing canonical
+R1 journal/export and current scoped credit snapshot are still unavailable.
+No provider call, reservation, attempt, retry, ledger mutation, zero ledger,
+budget reset, window reset, GPU job, or dataset download occurred. Resume by
+providing those two non-secret evidence items once, then recheck all live gates
+before one paired canary; continue local/offline and manuscript work in the
+meantime.
+
+## HT-NEXT-178 - 2026-11-03 manuscript figure binding
+
+Status: `PASS_CURRENT_HEAD_MANUSCRIPT_FIGURE_BINDING`; checkpoint:
+`docs/healthtech/audits/ptp-current-checkpoint-r2-20261103/verification.json`.
+
+The manuscript now links the latest current-head checkpoint. The Recall@20
+SVG, realized retrieval-units SVG, frontier CSV, and figure manifest all exist
+and the manifest binds them to candidate `88dc40471cb9078f929c02bb893cfa1e364da841`
+and protocol hash `a87acaa448f97eabccae0f1fecc5378720ecf1178869336f68b42174eb828b0f`.
+Selected manuscript/docs links remain at `0 missing`.
+
+This improves reproducibility and review readiness only. It adds no benchmark
+rerun, no new metric, no semantic gold, no final holdout, no paid API result,
+and no business-validation evidence. Keep the figures descriptive and keep
+the goal `PARTIAL` until the substantive O2/O3/O4 gaps change.
+
+## HT-NEXT-179 - 2026-11-03 bounded R1 history recheck
+
+Status: `LEGACY_HISTORY_REVIEWED_NOT_CANONICAL`; canonical audit:
+`docs/healthtech/audits/ptp-r1-history-recheck-20261103/README.md`.
+
+A current-worktree-only recheck reviewed the preserved R1 evidence without
+scanning `Documents` or `Desktop` again. The only recovered journals are two
+legacy provider-pilot `attempts/meta` files, both explicitly
+`r1_compatible=false`; their registration probe is fail-closed. Four known
+legacy settled attempts sum to `USD0.0001464` and match the read-only key usage,
+but this is aggregate historical correspondence only. It does not prove
+complete R1 history, current credit, or remaining admission.
+
+No journal was copied or rebound, no canonical/zero ledger was created, and no
+provider call, reservation, retry, or ledger mutation occurred. Keep paid
+dispatch `BLOCKED_BEFORE_RESERVATION` until the owner supplies the existing
+canonical R1 journal/export and current scoped credit snapshot once.
+
+## HT-NEXT-180 - 2026-11-03 manuscript discussion completion
+
+Status: `PASS_MANUSCRIPT_REQUIRED_SECTION_ADDED`; manuscript:
+`docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md`.
+
+The draft now contains an explicit Discussion section before the Conclusion.
+It answers the current RQ1 using only candidate-bound evidence: HT-B0b has the
+highest observed current-head macro Recall@20 (`0.662242`), B2 is `0.568912`,
+offline B4 is `0.498802`, and the equalized first-action diagnostic ties B1,
+B2-prefix-1, and B3-prefix-1 at `0.498802`. The section states that these are
+descriptive development results, not adaptive superiority or confirmatory
+evidence, and separates operational potential from user validation, revenue,
+WTP, and ROI.
+
+The manuscript hash is
+`27FA8680CE347FECF860976EFD53D8FBAF1C094A862827A666A49F54DD008E4A`;
+relative links pass with zero missing. No benchmark, API, GPU, ledger, or
+business-validation state changed. Owner review and live WPI Guide recheck
+remain required before submission.
+
+## HT-NEXT-181 - 2026-11-03 manuscript availability declarations
+
+Status: `PASS_DECLARATIONS_ADDED_OWNER_RELEASE_PENDING`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-availability-20261103/README.md`.
+
+The manuscript now includes explicit Data Availability and Code Availability
+statements. They distinguish sanitized protocol/manifests/aggregate outputs
+from restricted raw sources, evaluator-only judgments, private provider
+journals, credentials, and other non-redistributable payloads. No public or
+DOI release was created, and the draft remains owner-review only. The current
+manuscript is `50,053` bytes with SHA-256
+`F57E2818E84ED75B29BA9A28FB8DEA7434294FCB713DDD8A53AF3BB5AC1EF9C6`.
+
+No scientific metric, API/GPU state, ledger, budget, or business-validation
+status changed. Owner must pin the final reviewed revision, choose an archival
+or repository release, and recheck the live WPI Guide before submission.
+
+## HT-NEXT-182 - 2026-11-03 OpenRouter metadata recheck R5
+
+Status: `PASS_READ_ONLY_METADATA_PAID_GATE_UNCHANGED`; canonical audit:
+`docs/healthtech/audits/ptp-api-metadata-recheck-r5-20261103/README.md`.
+
+The owner-supplied `.env` path was used only by the existing metadata observer.
+The key endpoint returned HTTP 200 with lifetime usage `USD0.0001464` and
+daily/weekly/monthly usage `USD0`; the key is ordinary non-management, account
+scope is unreconciled, current scoped credit is unavailable, and R1 history
+completeness remains unproven. No key was printed or persisted.
+
+Paid dispatch remains `BLOCKED_BEFORE_RESERVATION`. No provider call,
+reservation, attempt, retry, ledger mutation, zero ledger, budget reset,
+window reset, GPU job, or dataset download occurred. Do not retry or reserve;
+obtain the existing canonical R1 journal/export and current scoped credit once,
+then recheck every live gate before a paired canary.
+
+## HT-NEXT-183 - 2026-11-03 manuscript bibliography reconciliation
+
+Status: `PASS_LOCAL_BIB_RECONCILED_OWNER_REVIEW_PENDING`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-reference-reconcile-20261103/README.md`.
+
+The manuscript's Helmers prior-art diagnostic citation now has a matching local
+BibTeX entry for DOI `10.1371/journal.pone.0212103`. No PDF or source payload
+was downloaded, and no manuscript metric, claim, API/GPU state, ledger, or
+business-validation status changed. Owner still performs the final publisher
+metadata and journal-format review before submission.
+
+## HT-NEXT-184 - 2026-11-03 current checkpoint R3
+
+Status: `PARTIAL_ENGINEERING_VERIFIED_API_BLOCKED_MANUSCRIPT_REVIEW_REQUIRED`; canonical
+audit: `docs/healthtech/audits/ptp-current-checkpoint-r3-20261103/README.md`.
+
+The existing dirty candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`
+passed the full offline suite (`617 total / 616 passed / 1 skipped / 0 failed /
+0 errors`), compileall, JSON validation, and scoped diff-check outside the
+pre-existing `memory/next-actions.md` line-ending noise. The manuscript now has
+explicit Data Availability and Code Availability statements, and the local
+HealthTech BibTeX index includes the cited Helmers diagnostic entry.
+
+Paid OpenRouter remains `BLOCKED_BEFORE_RESERVATION`: metadata is HTTP 200 with
+lifetime usage `USD0.0001464`, but the key is ordinary non-management, scoped
+credit is unavailable, and R1 history completeness is not proven. No provider
+call, reservation, attempt, retry, ledger mutation, zero ledger, budget reset,
+window reset, GPU job, dataset download, or submission occurred.
+
+Resume with the existing canonical R1 journal/export and current scoped credit
+snapshot once; otherwise continue local/offline and manuscript work without
+rerunning the frozen benchmark.
+
+## HT-NEXT-185 - 2026-11-03 manuscript R3 provenance rebind
+
+Status: `PASS_CURRENT_HEAD_MANUSCRIPT_R3_LINK_REBIND`; canonical audit:
+`docs/healthtech/audits/ptp-current-checkpoint-r3-20261103/README.md`.
+
+The manuscript now points to the R3 checkpoint plus the current availability
+and bibliography-reconciliation audits. The final current hash is
+`B21F7D38B49F873575A5C74AC46AC4C431C06122DF999BDA818E8D02AA2B213A` for
+`50,363` bytes; `45` relative Markdown links resolve with `0` missing.
+No metrics, API/GPU state, ledger, budget, or submission state changed.
+
+## HT-NEXT-186 - 2026-11-03 parallel API authorization recheck R6
+
+Status: `PASS_READ_ONLY_RECHECK_API_GATE_STILL_BLOCKED`; audit:
+`docs/healthtech/audits/ptp-api-metadata-recheck-r6-20261103/README.md`.
+
+The owner permission to run the OpenRouter path in parallel is recorded, but
+the live gate is still closed. The existing metadata observer returned HTTP
+200, lifetime usage `USD0.0001464`, daily/weekly/monthly usage `USD0`, and an
+ordinary non-management key. Current scoped credit remains unavailable,
+account scope is unreconciled, R1 history completeness is not proven, and the
+default canonical registry path is absent.
+
+The current-head rights-cleared payload and route/price preflight remain
+valid. A focused provider/API/local regression passed `104/104`, compileall
+and scoped diff-check passed. No provider call, reservation, attempt, retry,
+ledger mutation, zero ledger, budget reset, window reset, GPU job, or dataset
+download occurred. Do not infer credit from lifetime usage or promote the two
+legacy journals. Resume with the existing canonical R1 journal/export and
+current scoped credit snapshot once; otherwise continue local/offline and
+manuscript work without rerunning the frozen benchmark.
+
+## HT-NEXT-187 - 2026-11-03 requirement-by-requirement completion audit R6
+
+Status: `PARTIAL_NOT_COMPLETE`; audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r6-20261103/README.md`.
+
+The original O1–O4 objective was re-audited against the current candidate
+`88dc40471cb9078f929c02bb893cfa1e364da841`. The full offline suite passed
+`617 total / 616 passed / 1 skipped / 0 failed / 0 errors`; compileall, JSON
+validation, and scoped diff-check passed. O1 is complete in the current-head
+engineering scope. O2 still lacks a fresh authorized dr-train encode/retrieval
+run. O3 local generation is current-head schema-valid, while paid OpenRouter
+is blocked before reservation. O4 remains descriptive/not estimable for the
+main adaptive dossier claim.
+
+The PANORAMA component holdout remains useful evidence (PAR4PC test hit@1
+`0.715124`, PI4PC test hit@1 `0.401235`, hit@8 `1.0`) but is not semantic
+device–patent gold and does not prove adaptive superiority. No paid call,
+ledger mutation, new GPU job, dataset download, participant contact, or
+submission occurred. Continue independently; do not close the goal until the
+remaining O2/O3/O4 and owner-review requirements are actually evidenced.
+
+## HT-NEXT-188 - 2026-11-03 owner-env metadata live check
+
+Status: `PASS_READ_ONLY_METADATA_GATE_STILL_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-api-owner-env-live-check-20261103/README.md`.
+
+The owner-supplied `.env` path was used only by the bounded metadata observer.
+The key endpoint returned HTTP 200 with lifetime usage `USD0.0001464`,
+daily/weekly/monthly usage `USD0`, and an ordinary non-management key. Account
+scope is unreconciled, scoped credit is unavailable through this key class, and
+R1 history completeness remains unproven. The default canonical ledger path is
+still absent; no legacy journal was rebound and no zero ledger was created.
+
+The focused current-head regression passed `62/62` with no failures, errors,
+or skips. No paid provider call, reservation, attempt, retry, ledger mutation,
+GPU job, dataset download, budget reset, or 24-hour window reset occurred.
+Owner parallel authorization remains recorded but executable only after the
+existing canonical R1 journal/export and current scoped credit snapshot are
+reconciled. Until then, continue local/offline and manuscript work.
+
+## HT-NEXT-189 - 2026-11-03 current-head manuscript integrity rebind
+
+Status: `PASS_CURRENT_HEAD_MANUSCRIPT_INTEGRITY_REBOUND_OWNER_REVIEW_PENDING`;
+canonical audit:
+`docs/healthtech/audits/ptp-manuscript-integrity-current-head-r3-20261103/README.md`.
+
+The manuscript hash and size in the top-level acceptance surface were stale
+relative to the current candidate. They now bind to
+`88dc40471cb9078f929c02bb893cfa1e364da841`, SHA-256
+`b21f7d38b49f873575a5c74ac46ac4c431c06122df999bda818e8d02aa2b213a`,
+`50,363` bytes, and `45` checked relative links with `0` missing. This was a
+provenance-only repair; no metrics or experiments were rerun and no API/GPU/
+ledger/budget/submission state changed.
+
+The manuscript remains a solo computational draft for owner review. It keeps
+current-head and historical results separate, does not claim adaptive
+superiority or semantic gold, and does not claim paid API, external business
+validation, revenue, ROI, or willingness-to-pay.
+
+## HT-NEXT-190 - 2026-11-03 completion audit R7
+
+Status: `PARTIAL_NOT_COMPLETE`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r7-20261103/README.md`.
+
+R7 re-audited the original O1-O4 objective on HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841`. O1 and the three-case O4
+engineering slice are complete on the current candidate. O2 remains partial
+because no new authorized dr-train allocation/window is evidenced. O3 local
+guided generation is schema-valid for 3/3 cases, while paid OpenRouter remains
+blocked before reservation. O4 research remains descriptive/not estimable
+without admissible semantic gold, a final holdout, sufficient independent
+groups, and equal realized total budgets.
+
+The manuscript is current-head bound with 45 links checked and none missing.
+Business value remains scenario-only, with no external validation, revenue,
+ROI, or willingness-to-pay claim. No paid call, reservation, retry, ledger
+mutation, zero ledger, budget/window reset, new GPU job, dataset download,
+participant contact, merge, push, or submission occurred.
+
+## HT-NEXT-191 - 2026-11-03 OpenRouter owner-environment recheck R2
+
+Status: `PASS_READ_ONLY_METADATA_GATE_STILL_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-api-owner-env-recheck-r2-20261103/README.md`.
+
+The owner-supplied `.env` path was used only by the bounded metadata observer.
+The key endpoint returned HTTP 200 and the ordinary key reported lifetime usage
+of USD `0.0001464` with zero daily, weekly, and monthly usage. The key is not a
+management key, so current scoped credit remains unavailable; account scope and
+R1 history completeness remain unreconciled/not proven. The existing USD8 R1
+authorization and the separate USD100 continuation ceiling are unchanged.
+
+Paid dispatch remains blocked before reservation. No provider call, reservation,
+attempt, retry, ledger mutation, zero ledger, budget/window reset, GPU job, or
+dataset download occurred. Next: obtain the existing canonical R1 journal or a
+sanitized all-attempt export plus a current scoped credit snapshot once, then
+reconcile and run one paired canary only if every live gate passes.
+
+## HT-NEXT-192 - 2026-11-03 dr-train allocation recheck R2
+
+Status: `PASS_READ_ONLY_NO_ACTIVE_EXPERIMENT_ALLOCATION_UNKNOWN`; canonical audit:
+`docs/healthtech/audits/ptp-dr-train-preflight-r2-20261103/README.md`.
+
+The known `dr-train` host was re-polled once with strict host-key checking and
+batch mode. The approved V100 UUID is visible with `0 MiB` used and `32,495 MiB`
+free, but no allocation reference, quota, lease, or runtime window is present.
+The existing HTTP service PID `1745699` (start `2026-10-31T08:27:48Z`) remains
+untouched. No separate encoder or generation job was observed after excluding
+the probe's own shell matches. The GPU lock remains a zero-byte file with no
+verifiable ownership.
+
+O2 remains `PARTIAL_ALLOCATION_NOT_EVIDENCED`; do not start the resumable
+encoder from idle capacity. Next: obtain the authorized allocation reference,
+quota/lease, allowed job root, and runtime window, then recheck and resume the
+existing encoder. Paid API remains independently gated.
+
+## HT-NEXT-193 - 2026-11-03 current-head regression recheck R8
+
+Status: `PASS_CURRENT_HEAD_ENGINEERING_FOCUSED`; canonical audit:
+`docs/healthtech/audits/ptp-current-head-regression-r8-20261103/README.md`.
+
+The current candidate `88dc40471cb9078f929c02bb893cfa1e364da841` passed the
+corrected focused O1/O3/O4 regression command with `72 passed`, `0 failed`,
+`0 errors`, and `0 skipped`. Coverage includes HTTP/history/export contracts,
+generation/API fail-closed gates, local execution guards, current-head frontier
+helpers, and vector-bundle verification. The first invocation had only a
+malformed JUnit path and ran zero tests; it caused no state change and is
+recorded as a command error, not a test result.
+
+This is current-head engineering evidence only. O2 still lacks authorized
+dr-train allocation, paid O3 still lacks canonical R1 history and current
+scoped credit, and O4 research remains descriptive/partial.
+
+## HT-NEXT-194 - 2026-11-03 completion audit R8
+
+Status: `PARTIAL_NOT_COMPLETE`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r8-20261103/README.md`.
+
+R8 binds the active Patent-to-Pilot objective to HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841`. O1 and the three-case O4
+engineering slice remain complete on current-head evidence. O2 remains partial
+because dr-train shows free V100 capacity but no authorized allocation,
+quota/lease, or runtime window. Local O3 remains schema-valid for 3/3 cases;
+paid O3 remains blocked before reservation because the canonical R1 journal and
+current scoped credit are unavailable. O4 research remains descriptive/not
+estimable, business value remains scenario-only, and manuscript review/submission
+remain owner actions.
+
+The current-head focused regression is `72 passed / 0 failed / 0 errors /
+0 skipped`. No paid call, reservation, attempt, retry, ledger mutation, zero
+ledger, budget/window reset, remote write, GPU job, dataset download, external
+validation, merge, push, or submission occurred. Keep the goal active and resume
+from R8 only when the two paid-gate evidence items and dr-train allocation
+evidence are available.
+
+
+## Pepo repair — 2026-11-03: resume the existing goal
+
+Canonical handoff: `docs/healthtech/audits/pepo-blocked-goal-repair-20261103/README.md`.
+Medical SQL regex fixed and native full-corpus coverage rerun: 96 queries / 3061 patents; both-screened positive pairs 983. Stored-ranking posthoc medical-subset evaluation completed (96 queries, 1920 positive pairs), not new inference. Corrected scoped regression: 22 passed; one unrelated recursive Git provenance check excluded with its earlier environment failure preserved.
+USD100 cumulative and the November 15 V100 window are already authorized. Preserve R1 identity/history. API remains blocked by missing canonical history/current scoped credit; strict-host SSH was denied before inspection in Pepo's environment. Do not infer a new lease requirement from a zero-byte marker or idle GPU. Continue independent work; do not repeat gate-only checks without new evidence. No paid calls, GPU jobs, ledger resets, commit, push or merge in this repair.
+
+
+## Pepo authorized SSH and journal follow-up — 2026-11-03 19:23 Thai
+
+- Canonical handoff remains docs/healthtech/audits/pepo-blocked-goal-repair-20261103/README.md; latest evidence ACCESS_AND_HISTORY_FOLLOWUP.json.
+- One owner-authorized strict-host-key SSH retry succeeded. Approved V100: 0 MiB used, no compute process or observed kernel slot lock; Qwen/E5/PatEmbed share the resolved models parent. No GPU job was started. Existing GPU grant already applies; actual launch needs fresh resource check and cooperative lock, not another date/UUID approval.
+- Preserved legacy live.sqlite3 and paired-revalidation-1.sqlite3 were rechecked read-only: four settled attempts, USD0.0001464 including the charged model-drift outcome, hashes unchanged. No complete R1 journal/export or current scoped credit established; do not promote mock DBs or create zero history.
+- Smallest source request: genuine provider/account activity export covering R1 onward plus current balance/scope evidence; owner need not create internal JSON. Implementer performs truthful reconciliation. No denied-directory retry, provider call, ledger write, commit/push/merge in this follow-up.
+- Resume the same goal; paid block must not prevent authorized local/offline work. Preserve posthoc medical denominator1920 vs both-screen983 and all prior scientific claim boundaries.
+
+
+## Current continuation: local E2 journal and completed patent GPU run (2026-11-03)
+
+Resume existing goal with local epoch E2 and completed fresh patent GPU evidence. Preserve unknown history and the USD1 prospective limit; do not recreate R1 or reset budgets. Paid dispatch waits only for current scoped account/key credit and fresh route pricing plus normal rights/payload checks. Keep all evidence and .env on Windows, dr-train computation only; retain one shared GPU slot and original limits. Rebind release to repaired candidate; do not close research goals from diagnostics.
+
+Read `docs/healthtech/audits/pepo-blocked-goal-repair-20261103/README.md` Current handoff first; earlier prompts are historical. Provider regressions 187/187. Raw evidence and journal are on Windows LocalAppData; new paid calls/cost 0. No runtime steering or goal closure performed.
+
+## HT-NEXT-195 - 2026-11-03 E2 current credit and route recheck
+
+Status: `PARTIAL_PAID_BLOCKED_BEFORE_RESERVATION`; canonical audit:
+`docs/healthtech/audits/ptp-api-current-credit-recheck-20261103/README.md`.
+
+The existing E2 journal was read-only verified with `PRAGMA integrity_check=ok`.
+It contains no new attempts or pending/unknown rows, preserves four legacy
+settled receipts totaling USD `0.0001464`, and keeps the owner-accepted
+`UNKNOWN_OWNER_ACCEPTED_CUTOVER` boundary with a prospective allowance of only
+USD `1`. No epoch, zero ledger, budget reset, retry, or ledger mutation occurred.
+
+The owner-authorized `.env` metadata observation returned HTTP 200 for the same
+ordinary non-management key, with lifetime usage USD `0.0001464` and no current
+account/key credit or limit evidence. A public route snapshot observed
+`qwen/qwen3-32b` on DeepInfra at USD `0.08/M` prompt and USD `0.28/M`
+completion. Route pricing is current evidence for preflight only and must be
+refreshed inside the runner window before reservation.
+
+The corrected current-head focused regression passed `79/79` with zero failures,
+errors, and skips. Paid dispatch remains blocked before reservation; local,
+offline, research, and manuscript work remain open. Owner input, only if the
+paid comparison is required, is one non-secret current scoped v2 credit/limit
+snapshot or a pointer to an existing sanctioned snapshot. Do not send the API
+key, create another epoch, or treat the usage total as current credit.
+
+## HT-NEXT-196 — 2026-11-03 manuscript E2 provenance rebind
+
+Status: `PASS_CURRENT_HEAD_MANUSCRIPT_E2_REBOUND_OWNER_REVIEW_PENDING`; canonical
+audit: `docs/healthtech/audits/ptp-manuscript-e2-rebind-20261103/README.md`.
+
+The current dirty candidate manuscript was rechecked at HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841`: `50,708` bytes, SHA-256
+`0c3ed5f1ff80c44f704cb4cc6f93e03c9675fec2cfb1063ab5c34be81faf2cc0`, and `46`
+relative links checked with `0` missing. The earlier 50,363-byte / 45-link
+receipt remains historical. This was a provenance-only rebind; no metric,
+experiment, API, GPU, ledger, budget, or submission state changed.
+
+E2 remains the canonical local journal with four legacy settled calls totaling
+USD `0.0001464`, no new or pending rows, and prospective allowance USD `1`.
+Paid dispatch remains blocked before reservation because current scoped credit
+and limit evidence are unavailable. Post-write JSON, link, focused regression,
+and scoped whitespace checks passed. Keep the goal active for owner
+manuscript/WPI review and the single non-secret paid-gate evidence request if
+needed.
+
+## HT-NEXT-197 — 2026-11-03 fresh GPU diagnostic and manuscript rebind
+
+Status: `PARTIAL_FRESH_GPU_DIAGNOSTIC_O2_PROVIDER_UNBOUND`; canonical audits:
+`docs/healthtech/audits/ptp-fresh-gpu-device-diagnostic-20261103/README.md` and
+`docs/healthtech/audits/ptp-manuscript-fresh-gpu-rebind-20261103/README.md`.
+
+The current candidate `88dc40471cb9078f929c02bb893cfa1e364da841` is bound to
+the already completed `20261103-pepo-patent-current` V100 run. PatEmbed and
+multilingual E5 encoded 41 patent passages plus 3 device queries per model;
+saved-vector verification reproduced all retrieval metrics with maximum
+absolute delta `0.0` at tolerance `1e-12`. The diagnostic reports macro
+Recall@20 `0.392685` / `0.430073` / `0.481021` for BM25 / PatEmbed / E5,
+respectively, with macro nDCG@20 `0.430022` / `0.409533` / `0.455981`.
+
+This is a small development diagnostic over 61 source-backed product-level
+links, not semantic gold, adaptive-superiority evidence, final-holdout
+evidence, or a replacement for the current HTTP dossier provider. The dossier
+path still uses its separate MiniLM ONNX bundle, so O2 remains partial until
+an imported PatEmbed/E5 bundle is explicitly bound and reverified.
+
+The manuscript now records this diagnostic at `52,261` bytes, SHA-256
+`325b16ed...666dbf`, with `47` relative links checked and `0` missing. The
+fresh rebind audit's post-write JSON, link, whitespace, and focused regression
+checks are recorded as PASS. E2 remains unchanged: four legacy settled calls,
+USD `0.0001464`, no new/pending/unknown rows, prospective USD `1`, and no paid
+dispatch because current scoped credit/key-limit evidence is unavailable.
+
+Next: owner reviews the current manuscript and WPI requirements; if paid
+comparison is still required, provide one non-secret current scoped v2
+credit/limit snapshot or a sanctioned pointer, then refresh route pricing
+inside the runner window before reserving the USD0.25 canary. Do not rerun the
+completed GPU job or create a new ledger.
+
+## HT-NEXT-198 - 2026-11-03 E2 resume and artifact checkpoint
+
+Status: `PARTIAL_LOCAL_ENGINEERING_PAID_BLOCKED_O2_PROVIDER_UNBOUND`; canonical
+audit: `docs/healthtech/audits/ptp-resume-e2-artifact-check-20261103/README.md`.
+
+At candidate `88dc40471cb9078f929c02bb893cfa1e364da841`, the focused current
+head regression passed `46/46` with zero failures, errors, and skips. The
+existing E2 journal was read-only rechecked with integrity `ok`, zero new
+attempt rows, zero pending/unknown rows, and the four preserved legacy settled
+receipts totaling USD `0.0001464`; prospective allowance remains USD `1`.
+
+The existing PatEmbed/multilingual-e5 private bundle revalidation remains
+valid, but the complete authorized cohort/source package needed by the current
+HTTP runner is absent from the known worktree/private vector root. The prior
+MiniLM HTTP receipt is therefore not relabeled as PatEmbed/E5 evidence. No new
+GPU/API job, reservation, retry, ledger mutation, budget reset, window reset,
+dataset download, commit, push, or merge occurred. Paid dispatch remains
+blocked before reservation because current scoped credit/limit evidence is
+unavailable; route pricing must be refreshed inside the runner window after
+that evidence exists.
+
+Next: keep the goal open, continue offline/manuscript work, and obtain only the
+single non-secret scoped credit/limit snapshot if the paid comparison is still
+required; separately restore the authorized cohort/source package if O2 HTTP
+binding is required.
+
+## HT-NEXT-199 - 2026-11-03 O2 PatEmbed binding and manuscript integrity checkpoint
+
+Status: `PASS_CURRENT_HEAD_O2_PROVIDER_BINDING_MANUSCRIPT_REBOUND_PAID_BLOCKED`; canonical audits:
+`docs/healthtech/audits/ptp-o2-patembed-http-rebind-20261103/README.md` and
+`docs/healthtech/audits/ptp-manuscript-integrity-current-head-r4-20261103/README.md`.
+
+The current candidate `88dc40471cb9078f929c02bb893cfa1e364da841` now has an
+explicit PatEmbed provider binding for the three named engineering cases:
+MitraClip, Tendyne, and TriClip all completed source inspection, history/edit,
+reopen, and JSON/Thai/English export with zero vector errors, zero provider
+calls, and USD0.00 paid cost. This closes the current-head O2 application
+binding slice only; multilingual-e5 was not substituted, and scientific
+comparison, semantic gold, final holdout, and adaptive superiority remain
+partial or unestablished.
+
+The manuscript was re-hashed after this documentation rebind at 53,781 bytes
+with SHA-256 `13c503183a8acbfc953e20e9277b659aa3bc6d38bd783ced162ad5277101c12`;
+49 manuscript-local links and 83 links across the updated documents resolved
+with zero missing. The focused current-head regression passed `86/86` with zero
+failures, errors, or skips; its JUnit receipt is bound in the R4 audit.
+Claim boundaries remain unchanged: no paid result,
+external business validation, revenue, ROI, willingness-to-pay, or submission
+is claimed. E2 remains unchanged with four legacy settled calls totaling
+USD0.0001464, no new/pending/unknown rows, and prospective USD1.
+
+Paid dispatch remains blocked before reservation because current scoped
+account/key credit and limit evidence is unavailable. Do not retry pending
+calls, create a ledger, reset budget/window, or rerun the completed GPU job.
+Next: owner reviews the exact-head manuscript/WPI metadata; if paid comparison
+is still required, provide one non-secret scoped v2 credit/limit snapshot or
+sanctioned pointer, then refresh exact-route pricing inside the admission
+window before the bounded USD0.25 canary.
+
+## HT-NEXT-200 - 2026-11-03 current-head release-readiness repair
+
+Status: `PASS_CURRENT_HEAD_OFFLINE_RELEASE_READINESS_DIRTY_CANDIDATE_NOT_RELEASED`; canonical audit:
+`docs/healthtech/audits/ptp-current-head-release-readiness-20261103/README.md`.
+
+The first full current-head suite exposed 11 fixture failures because legacy
+R1 canonical tests ran while the owner-authorized E2 epoch was active. The
+failed JUnit receipt is preserved. The repair disables E2 activation only in
+the R1 migration/adversarial fixtures, leaving the production E2 default and
+real journal unchanged. Re-running the full suite passed `640/642` tests with
+two known skips and two warnings; the dedicated ledger/history regression
+passed `43/43`, and compileall plus scoped diff checks passed.
+
+The current dirty candidate is therefore offline release-ready for owner
+review, not a clean release: HEAD is `88dc40471cb9078f929c02bb893cfa1e364da841`,
+while the older isolated clean receipt is bound to `46ab5ac` and remains
+historical. E2 read-only state is unchanged: integrity `ok`, four legacy
+settled receipts, USD0.0001464 known actual, zero attempts/pending/unknown,
+prospective USD1, and unknown history preserved. No provider call, reservation,
+GPU job, dataset transfer, ledger mutation, reset, merge, push, or submission
+occurred.
+
+Next: owner reviews the dirty patch and manuscript; only after an authorized
+commit/push should clean release verification be rerun on that exact commit.
+Paid API remains gated by current scoped credit/limit evidence and fresh route
+pricing; research/business/manuscript acceptance stays partial as recorded.
+
+## HT-NEXT-205 - 2026-11-03 E2 resume paid preflight
+
+Status: `PARTIAL_PAID_BLOCKED_BEFORE_RESERVATION`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-paid-preflight-20261103/README.md`.
+
+The existing E2 journal was read back without mutation at the canonical Windows
+path: SQLite integrity `ok`, zero operational attempts/contexts, zero
+pending/unknown rows, four preserved legacy settled receipts totaling
+USD0.0001464, prospective USD1, and `UNKNOWN_OWNER_ACCEPTED_CUTOVER` history.
+The existing SSH inspection PID 18096 was left untouched, and no new
+experiment/GPU/provider job was active after the check.
+
+A bounded read-only observation through the owner-supplied `.env` again returned
+HTTP 200 for `/api/v1/key`, but the key is ordinary non-management and exposes
+neither current scoped credit nor remaining key limit. A new public route
+snapshot observed DeepInfra for `qwen/qwen3-32b` at USD0.08/M prompt and
+USD0.28/M completion. The route is not a credit grant and must be refreshed
+inside the runner's 300-second admission window before dispatch.
+
+The exact dirty candidate at HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`
+passed the full Python suite with 642 total, 640 passed, zero failures/errors,
+and two known skips; compileall passed. `git diff --check` still reports only
+pre-existing line-ending/trailing-whitespace noise. No provider call,
+reservation, attempt, retry, GPU job, dataset download, ledger mutation,
+budget/window reset, or research-goal closure occurred. Keep the goal active and
+the research claims descriptive. The only paid prerequisite remains one
+non-secret current scoped v2 credit/limit snapshot or sanctioned pointer; after
+that, reconcile E2, refresh route pricing, validate the frozen payload, and
+reserve no more than the existing USD0.25 canary.
+
+## HT-NEXT-201 - 2026-11-03 E2 refresh and paid-gate checkpoint
+
+Status: `PARTIAL_ENGINEERING_VERIFIED_PAID_BLOCKED_RESEARCH_OPEN`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-refresh-20261103/README.md`.
+
+The existing E2 journal remains intact at the canonical Windows path: SQLite
+integrity `ok`, zero new attempts, zero pending/unknown rows, four preserved
+legacy settled receipts totaling USD0.0001464, prospective USD1, and the
+owner-accepted unknown-history boundary unchanged. A bounded read-only check
+through the owner-supplied `.env` returned HTTP 200 for `/api/v1/key`, but the
+key is ordinary non-management and exposes neither current scoped credit nor
+remaining key limit. Fresh public route metadata recorded DeepInfra for
+`qwen/qwen3-32b` at USD0.08/M prompt and USD0.28/M completion; this cannot
+admit a paid call by itself.
+
+The current dirty candidate remains at HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`.
+The focused E2/API/local/vector/O3 regression passed 74/74 with zero failures,
+errors, or skips. No provider call, reservation, attempt, retry, ledger
+mutation, GPU job, dataset download, budget reset, or time-window reset
+occurred. Keep the goal open and continue local/offline and manuscript work;
+if paid comparison remains required, obtain one non-secret scoped v2
+credit/limit snapshot or sanctioned pointer, then refresh route pricing inside
+the 300-second admission window before reserving at most the USD0.25 canary.
+
+## HT-NEXT-202 - 2026-11-03 requirement completion audit r9
+
+Status: `PARTIAL_NOT_COMPLETE`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r9-20261103/README.md`.
+
+The original O1-O4 objective was audited requirement by requirement at current
+HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`. UI/HTTP lifecycle, source-
+backed payload checks, local execution guards, E2 accounting safeguards, and
+the three named PatEmbed engineering cases are complete within their declared
+scope. The GPU encoder/retrieval evidence is retained as a separate diagnostic;
+local guided Qwen is 3/3, but the paid qwen/qwen3-32b comparison remains
+unrun because current scoped credit and key-limit evidence is unavailable.
+
+Scientific evidence remains descriptive/not estimable, business evidence is
+scenario-only, manuscript/WPI readiness still needs owner review and a live
+Guide-for-Authors check, and commit/push/merge/cleanup are not run on the dirty
+candidate. E2 remains unchanged with four legacy settled receipts totaling
+USD0.0001464, zero new/pending/unknown rows, prospective USD1, and unknown
+history preserved. No resource or ledger mutation was made by this audit.
+
+## HT-NEXT-203 - 2026-11-03 E2 follow-up verification
+
+Status: `PARTIAL_ENGINEERING_VERIFIED_PAID_BLOCKED_RESEARCH_OPEN`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-followup-20261103/README.md`.
+
+The current dirty candidate remains at HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841`. A selected current-head suite of
+104 tests passed with zero failures, errors, or skips; compileall and diff
+checks passed. The raw JUnit receipt and SHA-256 are recorded in the new audit.
+
+The canonical E2 journal remains unchanged: SQLite integrity `ok`, zero
+operational attempts and contexts, zero pending/unknown rows, four preserved
+legacy settled receipts totaling USD0.0001464, prospective USD1, and the
+owner-accepted unknown-history boundary. The pre-reservation account/key
+scope binding is empty because no reservation has occurred.
+
+Paid dispatch is still blocked before reservation because the ordinary key does
+not expose current scoped credit/limit evidence. No provider call,
+reservation, retry, GPU job, budget reset, or time-window reset occurred. The
+goal stays open; continue owner review and offline manuscript/release work.
+If paid comparison is still required, obtain one non-secret scoped v2
+credit/limit snapshot, refresh route pricing inside the 300-second admission
+window, and reserve only the existing USD0.25 canary.
+
+## HT-NEXT-204 - 2026-11-03 current-head source patch review r2
+
+Status: `READY_FOR_OWNER_REVIEW_NOT_MERGE`; canonical audit:
+`docs/healthtech/audits/ptp-code-review-r2-20261103/README.md`.
+
+A serial review of the current goal-specific source/test patch found no new
+specification or standards findings. The exact dirty candidate at HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841` passed the full Python suite with
+640/642 tests passed, zero failures/errors, and two documented skips; compileall
+and diff checks passed. The JUnit receipt and hash are stored in the audit.
+
+The review did not commit, push, merge, launch a GPU job, call a provider,
+reserve budget, retry a request, or alter the E2 journal. Paid dispatch remains
+gated by the missing current scoped credit/limit evidence. Next action is owner
+review of the scoped dirty patch; after acceptance, stage only the approved
+files and rerun clean release verification on the resulting exact commit.
+
+## HT-NEXT-206 - 2026-11-03 WPI venue source recheck R5
+
+Status: `PASS_SCOPE_SOURCE_RECHECKED_GUIDE_AND_AIMS_403`; canonical audit:
+`docs/healthtech/audits/wpi-venue-recheck-r5-20261103/README.md`.
+
+The current official Elsevier journal catalog was reachable from the Windows
+candidate and remains conditionally aligned with the paper's patent-information
+retrieval, provenance, AI/ML, IR benchmarking, and real-data framing. The
+direct ScienceDirect Aims and Scope and Guide for Authors pages both returned
+HTTP 403, so no journal-specific article type, word limit, formatting,
+anonymization, or declaration rule was inferred. The checklist now points to
+the R5 receipt and keeps submission `NOT_SUBMITTED`.
+
+No provider call, GPU job, ledger mutation, dataset download, external message,
+or submission occurred. The remaining owner-only action is an authorized
+browser/session recheck of the live Guide for Authors before final packaging.
+
+## HT-NEXT-207 - 2026-11-03 current acceptance matrix rebind R10
+
+Status: `PARTIAL_NOT_COMPLETE_CURRENT_EVIDENCE_REBOUND`; canonical audit:
+`docs/healthtech/audits/ptp-current-acceptance-rebind-r10-20261103/README.md`.
+
+The current acceptance matrix was reconciled to the exact candidate
+`88dc40471cb9078f929c02bb893cfa1e364da841`. The current full-suite entry is
+now `642 total; 640 passed; 0 failed; 0 errors; 2 skipped`; older 613/617
+counts remain historical and are not pooled with this result. O3/O4 entries now
+point to the E2 paid-preflight receipt, and G6 points to the WPI R5 receipt.
+
+The requirement audit remains honest: O1 engineering is complete within the
+dirty candidate; O2/O4 scientific evidence is partial/descriptive; O3 paid
+comparison is blocked before reservation; business validation is scenario-only;
+WPI Guide-specific requirements are unverified; and release is
+`READY_FOR_OWNER_REVIEW_NOT_MERGE`. No provider call, GPU job, reservation,
+retry, ledger mutation, budget reset, time-window reset, external message, or
+submission occurred.
+
+## HT-NEXT-208 - 2026-11-03 WPI official profile source receipt R6
+
+Status: `PASS_OFFICIAL_PROFILE_RECORDED_GUIDE_UNVERIFIED`; canonical audit:
+`docs/healthtech/audits/wpi-venue-recheck-r6-20261103/README.md`.
+
+The submission checklist now records the official Elsevier journal profile as
+the source for the conditional venue-fit statement. The source supports the
+paper's patent-information retrieval, AI/ML/IP-research, IR evaluation, and
+real-data framing, but it does not resolve journal-specific submission rules.
+The direct ScienceDirect Aims and Scope and Guide for Authors pages remain
+`UNVERIFIED_PRIOR_DIRECT_CHECK_HTTP_403`; no article type, limits, formatting,
+declaration, or data/code requirement was inferred. Submission remains
+`NOT_SUBMITTED`.
+
+No provider call, GPU job, dataset download, ledger mutation, external
+message, or submission occurred. The next owner-only action is an authorized
+browser/session recheck of the live Guide for Authors before final packaging.
+
+## HT-NEXT-209 - 2026-11-03 current-head multilingual-e5 HTTP rebind
+
+Status: `PASS_CURRENT_HEAD_E5_HTTP_DOSSIER_BINDING_3_OF_3_ENGINEERING`; canonical audit:
+`docs/healthtech/audits/ptp-o2-e5-http-rebind-20261103/README.md`.
+
+The existing private multilingual-e5 bundle was revalidated and then bound to
+the current HTTP dossier provider at HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841`. MitraClip, Tendyne, and TriClip
+all succeeded; source inspection, history/edit `1 -> 2`, readback, and
+JSON/Thai/English export passed with zero vector errors. The focused suite
+passed 11 tests and compileall passed. The raw receipt remains in private
+Windows storage; no vectors, model weights, raw payloads, or credentials were
+copied into Git.
+
+No paid call, reservation, retry, GPU job, dataset download, ledger mutation,
+budget reset, or time-window reset occurred. O2 engineering is now provider-
+bound for both PatEmbed and multilingual-e5, but O2 scientific evidence remains
+descriptive/partial. Paid O3 remains blocked before reservation pending the
+existing non-secret current scoped credit/limit evidence; preserve E2 legacy
+spend and unknown history.
+
+## HT-NEXT-210 - 2026-11-03 WPI official profile recheck R7
+
+Status: `PASS_OFFICIAL_SCOPE_PROFILE_RECHECK_GUIDE_DIRECT_403`; canonical audit:
+`docs/healthtech/audits/wpi-venue-recheck-r7-20261103/README.md`.
+
+The official Elsevier journal profile remains conditionally aligned with the
+paper's patent-information retrieval, AI/ML/IP-research, IR evaluation, and
+real-data framing. The direct ScienceDirect journal pages remain inaccessible
+with HTTP 403, so article type, formatting, word limits, declarations, and
+supplementary-file rules are still unverified. The checklist was updated to
+point to R7 without inferring requirements from another journal or historical
+guidance. Submission remains `NOT_SUBMITTED`.
+
+No provider call, GPU job, dataset download, ledger mutation, external message,
+or submission occurred. The owner-only next step is an authorized browser or
+session recheck of the live Guide for Authors before final packaging.
+
+## HT-NEXT-211 - 2026-11-03 current-head release verification R12
+
+Status: `PARTIAL_NOT_COMPLETE`; canonical audit:
+`docs/healthtech/audits/ptp-release-verification-r12-20261103/README.md`.
+
+The existing goal was resumed at the intentionally dirty candidate
+`88dc40471cb9078f929c02bb893cfa1e364da841`. The private full-suite receipt
+records `642` tests, `640` passed, `0` failed, `0` errors, and `2` skipped in
+`22.451` seconds. Its SHA-256 is
+`1cfd796d5b55aeddc9ee6c7fedcdd836bcdbd147f0a94cc1d597f551472b187b`.
+This evidence belongs to the current candidate; historical clean-release
+results remain separate and are not pooled with it.
+
+The canonical E2 journal is unchanged: SQLite integrity `ok`, zero operational
+attempts, zero pending/unknown rows, four preserved legacy settled receipts
+totaling `USD0.0001464`, prospective allowance `USD1`, and
+`UNKNOWN_OWNER_ACCEPTED_CUTOVER` history. No zero ledger, retry, reservation,
+provider call, budget reset, or time-window reset occurred.
+
+Paid dispatch remains `BLOCKED_BEFORE_RESERVATION` because the ordinary key
+does not provide the current scoped credit and remaining key limit required by
+the v2 gate. Previously observed route pricing is not sufficient and must be
+refreshed within the 300-second admission window. Continue local/offline
+research and manuscript work; if paid comparison remains required, obtain one
+non-secret scoped v2 credit/limit snapshot and reserve only the existing
+`USD0.25` canary through E2. Keep the goal active and do not infer scientific,
+business-validation, or publication completion from this engineering receipt.
+
+## HT-NEXT-212 - 2026-11-03 E2 current resume R2
+
+Status: `PARTIAL_ENGINEERING_VERIFIED_PAID_BLOCKED_RESEARCH_OPEN`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r2-20261103/README.md`.
+
+The existing E2 journal remains intact: SQLite integrity `ok`, zero operational
+attempts, zero pending/unknown rows, four legacy settled receipts totaling
+`USD0.0001464`, prospective allowance `USD1`, and unknown history preserved.
+The existing SSH inspection was checked and left untouched; no new remote
+compute job was launched. The three-case local pack was rechecked through the
+API dry-run and correctly failed closed because source-backed transfer review
+for exact model-visible fields is missing.
+
+The current dirty candidate passed a new focused release recheck with `102`
+tests passed, `0` failures, `0` errors, `0` skips, and `compileall` passed.
+This is engineering evidence only. The prior V100 encoder/retrieval output and
+local Qwen canary remain separate private protocol artifacts and are not pooled
+with paid results.
+
+Paid dispatch remains `BLOCKED_BEFORE_RESERVATION`: the ordinary key still does
+not expose current scoped credit or remaining key limit. Do not retry pending
+calls or refresh route pricing for dispatch until that one non-secret credit/
+limit snapshot exists. Then reconcile it to E2, refresh route pricing inside
+the 300-second window, revalidate a rights-cleared pack, and reserve only the
+existing `USD0.25` canary. Goal remains open.
+
+## HT-NEXT-213 - 2026-11-03 E2 rights-cleared payload rebind
+
+Status: `PARTIAL_PAYLOAD_READY_PAID_BLOCKED_RESEARCH_OPEN`; canonical audit:
+`docs/healthtech/audits/ptp-e2-rights-rebind-20261103/README.md`.
+
+The current private evidence pack was projected to an FDA factual canary using
+only the three fields covered by the openFDA rights basis:
+`pma_number`, `trade_name`, and `applicant`. Patent/disclosure sources and
+unreviewed fields were removed from the model-visible projection. The resulting
+three-case pack passed the source-backed transfer review and API payload
+preflight. A deterministic replay reproduced the prepared pack, manifest,
+exact-message, and payload hashes.
+
+This clears the payload-transfer blocker for the canary only. It is not the
+device-patent scientific study and does not establish semantic quality or
+adaptive superiority. No local inference was rerun and no paid call was made.
+
+The canonical E2 journal remains unchanged. Paid dispatch is still blocked
+before reservation because current scoped credit and remaining key-limit
+evidence are unavailable. Once one non-secret credit/limit snapshot exists,
+reconcile it to E2, refresh route pricing within the 300-second admission
+window, and reserve only the existing `USD0.25` canary. Do not retry pending
+calls, create a ledger, or reset the budget.
+
+## HT-NEXT-214 - 2026-11-03 E2 current resume R4
+
+Status: `PARTIAL_NOT_COMPLETE`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r4-20261103/README.md`.
+
+A new bounded read-only OpenRouter metadata observation was made through the
+existing `.env` loader without printing or persisting the key. The provider
+returned HTTP 200, but the key is ordinary non-management and exposes neither
+current scoped credit nor a remaining key limit. The new private receipt is
+`%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-api-metadata-current-20261103-r4/metadata-observation.json`.
+
+The current dirty candidate at `88dc40471cb9078f929c02bb893cfa1e364da841`
+passed the full suite with `642` tests, `640` passed, `0` failed, `0` errors,
+and `2` skipped; `compileall` passed. The JUnit receipt is private and its
+SHA-256 is `550c191222cc249730bc27ee4132011a31be7807bbb15f37000831af884e17c4`.
+
+The canonical E2 journal remains intact: SQLite integrity `ok`, zero
+operational attempts, zero pending/unknown rows, four legacy settled receipts
+totalling `USD0.0001464`, prospective allowance `USD1`, and unknown history
+preserved. No provider call, reservation, retry, GPU job, ledger mutation,
+budget reset, or time-window reset occurred. The completed V100 encoder result
+remains separate from local Qwen and any future paid output.
+
+Paid dispatch remains `BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE`.
+The only missing owner input is one non-secret current scoped credit/limit
+snapshot if the paid comparison is still required. After it exists, refresh the
+exact route price inside 300 seconds, revalidate the rights-cleared pack, and
+reserve at most the existing `USD0.25` canary. Keep the goal open.
+
+## HT-NEXT-215 - 2026-11-04 E2 resume current metadata r1
+
+Status: `PARTIAL_NOT_COMPLETE_PAID_BLOCKED_RESEARCH_OPEN`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r1-20261104/README.md`.
+
+The existing E2 journal was read back without mutation: SQLite integrity `ok`,
+zero operational/pending/unknown attempts, four preserved legacy settled
+receipts totaling `USD0.0001464`, prospective allowance `USD1`, and the
+`UNKNOWN_OWNER_ACCEPTED_CUTOVER` boundary unchanged. The current candidate is
+still the intentionally dirty HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`.
+
+A fresh bounded read-only observation through the owner `.env` returned HTTP
+200 from `/api/v1/key`, but the key remains ordinary non-management and does
+not expose current scoped credit or remaining key limit. The sanitized receipt
+is stored privately at `%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-api-metadata-current-20261104-r1/metadata-observation.json`.
+
+The focused E2/API/history/registry regression passed `31/31`; compileall
+passed. Existing V100 encoder/retrieval evidence remains separate and was
+reused without launching GPU. No provider call, reservation, retry, attempt,
+ledger mutation, budget/window reset, or goal closure occurred. Route pricing
+was not refreshed because the credit gate is still closed.
+
+Next action: only after one non-secret current scoped credit/limit snapshot,
+reconcile it to E2, refresh exact-route pricing within the 300-second
+admission window, revalidate the rights-cleared pack, and reserve at most the
+existing `USD0.25` canary. Keep the research goal active.
+
+## HT-NEXT-216 - 2026-11-04 manuscript current-head rebind r1
+
+Status: `PARTIAL_MANUSCRIPT_OWNER_REVIEW_PENDING`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-current-r1-20261104/README.md`.
+
+The manuscript and WPI checklist were updated only to point to the current
+4 November E2 read-only credit checkpoint. Local Markdown link validation
+covered `55` links with `0` missing; scoped diff checking exited `0`. The text
+continues to state that paid dispatch is not run, adaptive superiority is not
+established, product-level disclosed links are not semantic gold, and external
+business validation/revenue/ROI/willingness-to-pay are not measured.
+
+No provider call, reservation, retry, GPU job, dataset download, ledger
+mutation, budget/window reset, merge, push, or submission occurred. Next action
+remains owner review of declarations and the live WPI Guide; paid work still
+requires one non-secret current scoped credit/limit snapshot before route-price
+refresh and the bounded `USD0.25` canary.
+
+## HT-NEXT-217 - 2026-11-04 execution-plan current overlay r1
+
+Status: `PASS_DOCUMENTATION_STATUS_REBOUND_PAID_RESEARCH_OPEN`; canonical audit:
+`docs/healthtech/audits/ptp-plan-current-r1-20261104/README.md`.
+
+The stale `PROPOSED / NOT_RUN` header in `EXECUTION_PLAN.md` was clarified with
+a current-execution overlay that points to `CURRENT_ACCEPTANCE_MATRIX.json`.
+`SHORT_GOAL_TH.txt` now identifies this as continuation of the existing goal,
+preserves USD8 as historical context, and points current execution to the
+owner-authorized E2/USD100 amendment. One broken relative audit link was fixed.
+
+The plan and short-goal entrypoints were validated with `4` local links and
+`0` missing links; acceptance/progress JSON parsing passed. No experiment,
+provider call, ledger mutation, resource allocation, merge, push, or submission
+occurred. Research and paid gates remain unchanged.
+
+## HT-NEXT-218 - 2026-11-04 E2 resume current-head verification r2
+
+Status: `PARTIAL_ENGINEERING_VERIFIED_PAID_BLOCKED_RESEARCH_OPEN`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r2-20261104/README.md`.
+
+The intentionally dirty candidate at `88dc40471cb9078f929c02bb893cfa1e364da841`
+passed the full current-head suite with `642` tests, `640` passed, `0` failed,
+`0` errors, and `2` skipped; `compileall` also passed. The JUnit receipt is
+`docs/healthtech/audits/ptp-resume-e2-current-r2-20261104/current-head-full-tests.xml`
+with SHA-256
+`76f50be98675d334d74f8b15862fba548133522128d90b5b9696df9a2c9bbecc`.
+
+The canonical E2 journal was read without mutation: SQLite integrity `ok`, zero
+new/pending/unknown attempts, four preserved legacy settled receipts totaling
+`USD0.0001464`, prospective allowance `USD1`, and unknown history unchanged.
+No provider call, route refresh, reservation, retry, GPU job, ledger mutation,
+budget reset, or time-window reset occurred. No active local/API experiment
+process was observed; the existing SSH process is the Codex app-server proxy,
+not evidence of a new dr-train job.
+
+Paid dispatch remains `BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE`.
+Do not repeat the same metadata probe or replay a pending call. If paid
+comparison remains required, obtain one non-secret current scoped credit/limit
+snapshot, reconcile it to E2, refresh exact-route pricing inside the 300-second
+window, revalidate the rights-cleared pack, and reserve at most the existing
+`USD0.25` canary. Keep scientific and business claims at their current partial
+boundaries.
+
+## HT-NEXT-219 - 2026-11-04 WPI venue recheck r8
+
+Status: `PASS_OFFICIAL_ELSEVIER_PROFILE_SCOPE_RECHECK_GUIDE_UNVERIFIED_NOT_SUBMITTED`; canonical audit:
+`docs/healthtech/audits/wpi-venue-recheck-r8-20261104/README.md`.
+
+The current official Elsevier journal profile was rechecked and remains
+conditionally aligned with this patent-information study. Its scope supports
+IP-information retrieval, AI/ML and language-model applications to IP
+research, information-retrieval evaluation/benchmarking, and real-data
+collections. The journal-specific ScienceDirect pages were not readable in the
+current retrieval context; the prior local direct check recorded HTTP 403, so
+article type, limits, formatting, anonymization, and journal declarations
+remain unverified.
+
+The WPI checklist and manuscript now point to the r8 venue receipt and the E2
+current-head r2 checkpoint. No submission, external message, agreement,
+provider call, ledger mutation, GPU job, or resource allocation occurred.
+Owner action remains an authorized browser/session recheck of the live Guide
+for Authors before final packaging.
+
+## HT-NEXT-220 - 2026-11-04 manuscript current-head rebind r2
+
+Status: `PASS_DOCUMENTATION_REBOUND_OWNER_REVIEW_PENDING`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-current-r2-20261104/README.md`.
+
+The manuscript and WPI checklist now point to the current E2 r2 checkpoint and
+venue recheck r8. The manuscript hash is
+`39de783f9a268837e50f69e1bf8a5adcaec8a64f217e8f7dda5391adcf07dbcf`; the WPI
+checklist hash is
+`cec1ffe4c41b1baa119674f7907918e257d65b18b39af3dd2fe09fda901636c8`.
+Fifty-three relative links were checked with zero missing. The venue profile
+scope remains conditionally aligned, while journal-specific author
+requirements remain unverified and submission remains owner-controlled.
+
+No provider call, reservation, retry, GPU job, dataset download, ledger
+mutation, external message, or submission occurred. Next action is owner review
+of declarations and an authorized live Guide recheck; the paid branch still
+requires one non-secret current scoped credit/limit snapshot before dispatch.
+
+## HT-NEXT-221 - 2026-11-04 goal completion audit r10
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r10-20261104/README.md`.
+
+The requirement-by-requirement audit keeps the original objective intact. O1/G3
+engineering is current-head verified, while G1/G2/G4 remain partial because
+product-level disclosed links are not semantic gold, the matched-budget slice
+is post-hoc first-action only, and no authorized current-head final holdout is
+available. Local guided Qwen is schema-valid for 3/3 cases, but paid API
+comparison remains gated before reservation by missing current scoped credit and
+limit evidence. G5 remains operational potential only; G6 is owner review
+pending; G7 remains a dirty candidate; G8 is future scope.
+
+No provider call, reservation, retry, GPU job, ledger mutation, budget reset,
+time-window reset, submission, or external message occurred. Continue offline
+reproducibility and owner-review work. Do not close the goal from tests/canary,
+and do not infer an adaptive-superiority claim without an authorized holdout.
+
+## HT-NEXT-222 - 2026-11-04 journal package current r1
+
+Status: `READY_FOR_OWNER_REVIEW_NOT_SUBMITTED`; canonical audit:
+`docs/healthtech/audits/ptp-journal-package-current-r1-20261104/README.md`.
+
+The owner-review package now has five hash-bound files: manuscript, cover-letter
+draft, WPI checklist, supplemental data/rights notes, and bibliography. Fifty-
+seven relative links resolve with zero missing. The cover letter remains a
+draft with owner identity/contact placeholders, and manuscript declaration
+fields remain owner-controlled. No private payload, credential, restricted raw
+source text, submission, external message, or agreement was added.
+
+Next action is owner review of declarations and an authorized live WPI Guide/Aims
+check. Paid API remains independently gated by current scoped credit/limit
+evidence; this package checkpoint does not alter that gate.
+
+## HT-NEXT-223 - 2026-11-04 E2 current resume r3
+
+Status: `PARTIAL_ENGINEERING_VERIFIED_PAID_BLOCKED_RESEARCH_OPEN`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r3-20261104/README.md`.
+
+The current worktree regression selection passed 35/35 with no failures,
+errors, or skips; compileall passed. The canonical E2 journal was inspected
+read-only and remains intact: four legacy settled receipts totaling
+`USD0.0001464`, zero operational/pending/unknown rows, prospective `USD1`, and
+the unknown historical boundary preserved. The completed V100 retrieval
+diagnostic is referenced as a separate protocol and was not rerun.
+
+Paid admission remains `BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE`.
+No route refresh, reservation, provider call, retry, GPU job, ledger mutation,
+budget reset, or time-window reset occurred. Continue offline and owner-review
+work; if paid comparison remains required, obtain one non-secret current scoped
+credit/limit snapshot, then reconcile E2 and refresh the exact route immediately
+before the existing `USD0.25` canary. Do not replay unknown or pending calls.
+
+## HT-NEXT-224 - 2026-11-04 local Qwen patent-candidate run
+
+Status: `PASS_LOCAL_GENERATION_PAID_API_BLOCKED_RESEARCH_OPEN`; canonical audit:
+`docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/README.md`.
+
+The current-head local Qwen3-8B guided run completed on the frozen
+rights-cleared patent-candidate pack for MitraClip, Tendyne, and TriClip. All
+3/3 cases were schema-valid. The run used 7,301 prompt tokens and 1,448 output
+tokens, with 53.448-55.193 seconds generation latency per case and USD0.00
+paid cost. The Windows verifier passed exact pack/message hash and source
+ID/locator validation. Raw/parsed output remains private and is not staged in
+Git.
+
+Two pre-model failures are preserved: the default interpreter lacked
+`pydantic`, and a pre-created output path was rejected. Neither used GPU
+inference, called a provider, or mutated E2. The approved V100 lock was
+released, the existing service was untouched, and remote transients were
+removed. Paid API remains independently gated by current scoped credit/limit
+evidence; do not interpret local schema validity as semantic accuracy or an
+API comparison.
+
+## HT-NEXT-225 - 2026-11-04 E2 resume and package rebind r5
+
+Status: ACTIVE_NOT_COMPLETE_NOT_BLOCKED; canonical audit:
+docs/healthtech/audits/ptp-resume-e2-current-r5-20261104/README.md.
+
+The current dirty candidate at 88dc40471cb9078f929c02bb893cfa1e364da841
+revalidated with 642 tests (640 passed, 0 failed, 0 errors, 2 skipped),
+compileall PASS, and 62 package links with zero missing targets. The E2
+journal was read-only and unchanged: four legacy settled receipts, known spend
+USD0.0001464, zero operational/pending/unknown attempts, prospective allowance
+USD1, and unknown history preserved. The existing ordinary-key metadata
+observation still lacks scoped current credit and limit, so no route refresh,
+reservation, provider call, retry, or pending replay was allowed.
+
+Current manuscript and journal-package rebinds are recorded in
+ptp-manuscript-current-r3-20261104 and ptp-journal-package-current-r2-20261104.
+Owner declarations and the live WPI Guide remain pending; submission was not
+attempted. Keep the local Qwen run separate from the unrun API branch and keep
+the research goal active.
+
+## HT-NEXT-226 - 2026-11-04 operational evaluation and current package rebind r4/r3
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audits:
+`docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/operational-evaluation.json`,
+`docs/healthtech/audits/ptp-manuscript-current-r4-20261104/README.md`, and
+`docs/healthtech/audits/ptp-journal-package-current-r3-20261104/README.md`.
+
+The deterministic local evaluator records 12/12 exact source and locator
+bindings, 12/12 classification-contract matches, 15 input evidence rows, 12
+emitted unique rows, 80% operational evidence coverage, and unresolved items
+in all 3/3 cases. These metrics verify source-binding and workflow behavior
+only; they are not semantic gold, retrieval accuracy, adaptive superiority, or
+user/business validation.
+
+The current manuscript and five-file journal package are rebound to HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841` with 63 relative links checked and
+0 missing. The manuscript and supplemental hashes are recorded in the audit
+verification files. No provider call, reservation, retry, GPU job, ledger
+mutation, budget reset, or window reset occurred.
+
+E2 remains intact: SQLite integrity `ok`, zero operational/pending/unknown
+attempts, four preserved legacy settled receipts totaling `USD0.0001464`,
+prospective allowance `USD1`, and unknown history preserved. Paid dispatch
+remains blocked before reservation because the current scoped account/key
+credit and remaining-limit observation is still unavailable. Next action is
+owner review of declarations/Guide or one non-secret credit/limit snapshot if
+the paid comparison is still required; keep the goal active.
+
+## HT-NEXT-227 - 2026-11-04 goal completion audit r11
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r11-20261104/README.md`.
+
+The requirement audit revalidated the original O1-O4 objective against the
+current dirty candidate at `88dc40471cb9078f929c02bb893cfa1e364da841`.
+Engineering O1 is current-head complete; O2, O3 scientific comparison, O4
+research, G1/G2/G4, business validation, and owner/journal review remain
+partial for explicit evidence reasons. Current local-Qwen operational results
+remain 12/12 exact bindings, 12/12 classification matches, 12/15 emitted
+evidence rows, 80% coverage, and unresolved items in 3/3 cases.
+
+The audit keeps the older business-value scenario separate from the current
+local-Qwen latency rather than mixing protocol generations. E2 remains read-only
+and intact: four legacy settled receipts totaling `USD0.0001464`, zero
+operational/pending/unknown attempts, prospective `USD1`, and unknown history
+preserved. Paid dispatch remains blocked before reservation because the one
+non-secret current scoped credit/remaining-limit snapshot is still missing.
+
+No provider call, reservation, retry, GPU job, ledger mutation, budget reset,
+time-window reset, submission, merge, or goal closure occurred. Keep the goal
+active and use r11 as the next resume checkpoint.
+
+## HT-NEXT-228 - 2026-11-04 business-value runtime boundary and package rebind r5/r4
+
+Status: `PASS_DOCUMENTATION_BOUNDARY_CLARIFIED`; canonical audits:
+`docs/healthtech/audits/ptp-manuscript-current-r5-20261104/README.md` and
+`docs/healthtech/audits/ptp-journal-package-current-r4-20261104/README.md`.
+
+The manuscript now states explicitly that the illustrative business-value
+scenario uses the earlier guided local-Qwen runtime at `38.960` seconds per
+case, while the current patent-candidate run is a separate `54.320437` second
+mean-generation result with `7,301/1,448` prompt/output tokens. The two runtime
+and configuration envelopes are not pooled or substituted, preventing a mixed
+protocol cost claim.
+
+The current manuscript hash is
+`98607ae6fbc0649da74269a2b0c9d29dcbf316f85d761a82bc3c2bbe3a0d60bd`; 63
+relative links still resolve with zero missing targets. No source experiment,
+provider call, reservation, retry, GPU job, ledger mutation, budget reset,
+submission, merge, or goal closure occurred. Paid dispatch remains gated by
+the one missing non-secret current scoped credit/limit snapshot.
+
+## HT-NEXT-229 - 2026-11-04 official WPI profile scope recheck R9
+
+Status: `PASS_OFFICIAL_ELSEVIER_PROFILE_SCOPE_RECHECK_GUIDE_UNVERIFIED_NOT_SUBMITTED`;
+canonical audits:
+`docs/healthtech/audits/wpi-venue-recheck-r9-20261104/README.md` and
+`docs/healthtech/audits/ptp-journal-package-current-r5-20261104/README.md`.
+
+The current official Elsevier journal profile was readable and supports a
+conditional venue fit for IP information retrieval/search/analysis, AI/ML and
+language-model applications, IR evaluation/benchmarking, multilingual search,
+and real-data retrieval experiments. The journal-specific ScienceDirect Aims,
+Scope, and Guide remain unverified; the previous local direct check recorded
+HTTP 403, so no article type, formatting, word limit, or declaration rule was
+inferred.
+
+The WPI checklist and five-file journal package are rebound to the current
+checklist hash `e9c790d81e67426cdad71cba02121d26d099e73c5532d77d64ec155c875a1696`
+with 63 links checked and zero missing. No submission, external message,
+agreement, provider call, ledger mutation, GPU job, or budget reset occurred.
+Owner-authorized browser/session review remains the next journal action; paid
+API remains independently gated by the missing current credit/limit snapshot.
+
+## HT-NEXT-230 - 2026-11-04 cover-letter claim boundary and package rebind r6
+
+Status: `PASS_COVER_LETTER_BOUNDARY_CLARIFIED_OWNER_REVIEW_PENDING`; canonical
+audit: `docs/healthtech/audits/ptp-journal-package-current-r6-20261104/README.md`.
+
+The cover-letter draft now states explicitly that the current evidence does
+not establish adaptive superiority or a paid local/API model comparison. It
+keeps the solo-study, no-participant, no-revenue/ROI/willingness-to-pay and
+owner-controlled author/declaration boundaries intact.
+
+The five-file package is rebound to cover-letter SHA-256
+`ef8efa6e03672de9284cc4e3ce8864ee3632e9033b9e48c9d5b29bbf77ca70c2`; 63
+relative links remain checked with zero missing targets. The draft remains
+`NOT_SENT`; no external message, submission, agreement, provider call, ledger
+mutation, GPU job, budget reset, or goal closure occurred.
+
+## HT-NEXT-231 - 2026-11-04 current-head resume boundary
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-current-head-resume-boundary-20261104/README.md`.
+
+The intentionally dirty candidate at `88dc40471cb9078f929c02bb893cfa1e364da841`
+has a fresh browser loopback check for the UI -> HTTP vector lifecycle:
+source inspection PASS, history `1 -> 2`, edit/reopen PASS, JSON/Thai/English
+export PASS, zero provider calls, and USD0.00 paid cost. Frontend unit tests
+passed `74/74`, and the focused Python contract set exited successfully.
+The local-generation provider contract remains covered by HTTP tests, while a
+new named browser-generation run is `NOT_RUN_ASSET_GATED` because the current
+checkout has no authorized cohort/rights/vector/generation configuration. The
+older browser-generation receipt is not rebound to this HEAD.
+
+The private current-head Qwen3-8B receipt remains separate: 3/3 schema-valid
+cases, 7,301 prompt tokens, 1,448 output tokens, mean latency 54.320437 seconds,
+zero provider calls, and USD0.00 paid cost. E2 remains unchanged with four
+legacy settled receipts totaling USD0.0001464, zero operational/pending/unknown
+rows, prospective USD1, and unknown historical completeness. Paid dispatch stays
+blocked before reservation because current scoped credit and remaining key limit
+are unavailable. Do not replay pending/unknown calls or reset the journal.
+
+## HT-NEXT-232 - 2026-11-04 private frontier reconciliation
+
+Status: `READY_FOR_OWNER_REVIEW_OFFLINE`; canonical audit:
+`docs/healthtech/audits/ptp-private-frontier-reconciliation-20261104/README.md`.
+
+The current-head private baseline was reconciled without copying raw query,
+patent, or source text. The receipt covers 3 queries, 61 reference pairs, 2
+shared exact-patent groups, and 15 completed rows. Full-method budgets differ:
+HT-B1 uses 3 query calls/123 rerank pairs, HT-B2 uses 9/369, and HT-B3 uses
+5/205, so equal-total-budget superiority is not supported. The observed
+prefix-1 first-action diagnostic for B1/B2/B3 is matched at 3 calls/123 pairs
+with Macro Recall@20 `0.498802` for all three, zero failures, and zero
+not-realized queries. Uncertainty remains `NOT_ESTIMABLE` because there is no
+final holdout and only two shared exact groups.
+
+The summarizer regression passed 1/1 after a retained first-attempt assertion
+failure was narrowed. E2 remains unchanged and paid dispatch remains gated by
+the missing non-secret current scoped credit/limit snapshot. No provider call,
+GPU job, dataset download, ledger mutation, retry, or budget/window reset
+occurred. Continue owner-review/manuscript work; do not close the goal from
+this descriptive package.
+
+## HT-NEXT-233 - 2026-11-04 journal package current r7
+
+Status: `READY_FOR_OWNER_REVIEW_NOT_SUBMITTED`; canonical audit:
+`docs/healthtech/audits/ptp-journal-package-current-r7-20261104/README.md`.
+
+The five-file journal package was rebound after adding the sanitized current-
+head private frontier/resource reconciliation to `SUPPLEMENTAL_DATA.md`.
+The package now has 64 checked relative links with zero missing targets. The
+new section reports the B0a-B3 resource vectors, the matched prefix-1
+first-action diagnostic, and `NOT_ESTIMABLE` limits without adding private raw
+payloads or changing scientific claims. Manuscript, cover letter, checklist,
+and bibliography hashes remain unchanged.
+
+Owner/declaration fields remain pending, the journal-specific Guide/Aims is not
+verified, and submission remains owner-controlled. E2 and the paid gate are
+unchanged: no provider call, reservation, retry, ledger mutation, budget reset,
+or time-window reset occurred; current scoped credit/limit evidence is still
+missing. Keep the overall goal active and do not close it from this
+documentation rebind.
+
+## HT-NEXT-234 - 2026-11-04 official WPI profile recheck r10 and package r8
+
+Status: `READY_FOR_OWNER_REVIEW_NOT_SUBMITTED`; canonical audits:
+`docs/healthtech/audits/wpi-venue-recheck-r10-20261104/README.md` and
+`docs/healthtech/audits/ptp-journal-package-current-r8-20261104/README.md`.
+
+The official Elsevier WPI publisher profile returned HTTP 200 in a bounded
+read-only fetch on 2026-11-04. Its response was not stored; the local receipt
+records 186,638 UTF-8 bytes and SHA-256
+`75ef3ca5d482d1662983a0da3232937e937cb1eaa739726a91e88045cdeff1e6`.
+The journal-specific ScienceDirect Aims/Scope and Guide pages both returned
+HTTP 403, so no journal-specific article type, formatting, limits, or
+declaration rules were inferred.
+
+The five-file journal package was rebound to the changed checklist with 64
+relative links checked and zero missing targets. Manuscript, cover letter,
+supplemental data, and bibliography hashes remain unchanged. Submission,
+external messaging, provider calls, GPU jobs, dataset downloads, ledger
+mutation, budget reset, and time-window reset remain false. Owner fields and
+the live Guide/Aims recheck remain pending; keep the goal active.
+
+## HT-NEXT-235 - 2026-11-04 completion audit r12 after venue/package rebind
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r12-20261104/README.md`.
+
+The requirement audit was rerun after the WPI venue r10 and journal package r8
+changes. It keeps O1 engineering complete, O2 partial, local O3 schema-valid,
+paid O3 blocked before reservation, and O4 engineering complete with research
+partial. The top-level acceptance matrix manuscript hash was also rebound from
+the stale historical value to current manuscript r5 (`98607ae6...`) with 63
+links and zero missing targets.
+
+The journal package remains five hash-bound files with 64 checked relative
+links and zero missing targets. The official publisher profile is HTTP 200,
+but the journal-specific Aims/Scope and Guide remain HTTP 403 and unverified.
+E2 is unchanged: four legacy settled receipts totaling USD0.0001464, zero
+operational/pending/unknown rows, prospective USD1, and unknown history. No
+provider call, reservation, retry, GPU job, dataset download, ledger mutation,
+budget reset, time-window reset, submission, or external message occurred.
+Keep the goal active; do not merge or close it from this audit.
+
+## HT-NEXT-236 - 2026-11-04 E2 resume checkpoint r6
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r6-20261104/README.md`.
+
+The existing E2 journal was rechecked read-only at the canonical path. SQLite
+integrity is `ok`; four legacy settled receipts remain `USD0.0001464`, with
+zero operational and zero pending/unknown attempts, prospective allowance
+`USD1.00`, and `UNKNOWN_OWNER_ACCEPTED_CUTOVER` history. A bounded observation
+through the owner-provided `.env` confirmed an ordinary non-management key with
+usage `USD0.0001464`; current scoped credit and remaining key limit remain
+unavailable. No key material was printed or persisted.
+
+The current candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841` passed
+the full suite at `646 total; 644 passed; 0 failed; 0 errors; 2 skipped`, the
+focused E2/API/local set at `49 passed`, and compileall. The paid branch remains
+blocked before reservation; route pricing was intentionally not refreshed until
+the credit gate is satisfied. No provider call, reservation, retry, GPU job,
+dataset download, ledger mutation, budget reset, or time-window reset occurred.
+
+Next action: only if paid comparison remains required, obtain one non-secret
+current scoped credit/remaining-limit snapshot through an allowed channel,
+reconcile it to E2, refresh exact-route pricing inside the 300-second window,
+and reserve at most the existing `USD0.25` canary. Until then continue offline
+reproducibility and owner-review work without another same-kind metadata probe
+or duplicate API request.
+
+## HT-NEXT-237 - 2026-11-04 WPI active-record recheck and package r9
+
+Status: `READY_FOR_OWNER_REVIEW_NOT_SUBMITTED`; canonical audits:
+`docs/healthtech/audits/wpi-venue-recheck-r11-20261104/README.md` and
+`docs/healthtech/audits/ptp-journal-package-current-r9-20261104/README.md`.
+
+An official ScienceDirect record for the World Patent Information article
+`Literature listing` (DOI `10.1016/j.wpi.2026.102504`) was observed in a
+bounded 2026-11-04 lookup and lists online publication on 2026-09-26. This
+supports current indexed journal activity but does not prove acceptance or
+replace the journal-specific Guide/Aims. Those pages remain unverified, and no
+article type, formatting, declaration, or submission rule was inferred from
+the article record.
+
+The five-file package was rebound to the venue receipt with 65 relative links
+checked and zero missing targets. Only the WPI checklist changed; manuscript,
+cover letter, supplemental data, and bibliography hashes remain unchanged.
+Owner fields and live Guide/Aims review remain pending. No submission,
+external message, provider call, GPU job, dataset download, ledger mutation,
+budget reset, or time-window reset occurred.
+
+## HT-NEXT-238 - 2026-11-04 completion audit r13
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r13-20261104/README.md`.
+
+The requirement audit was rebound to the current candidate HEAD and current
+artifacts. It records O1 engineering complete, O2 partial, local O3 pass,
+paid O3 blocked before reservation, O4 engineering complete with research
+partial, G1/G2/G4 partial without an admissible final holdout, G5 operational
+potential only, and G6 owner-review package not submitted. Current source
+evidence remains `646 total; 644 passed; 0 failed; 0 errors; 2 skipped`, while
+the journal package is r9 with 65 links and zero missing targets.
+
+The goal remains active and is not closed from tests, the local canary, or the
+venue package. Remaining actions are the one non-secret scoped credit/limit
+evidence item if paid comparison is still required, owner Guide/Aims and
+declaration review, an admissible semantic holdout before adaptive claims, and
+owner review before merge/push/cleanup.
+
+## HT-NEXT-240 - 2026-11-04 E2 resume checkpoint r8
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r8-20261104/README.md`.
+
+The current candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841` passed
+the browser E2E suite with `17 passed, 0 failed` using a fresh temporary Chrome
+profile and real IndexedDB. The scenarios cover source inspection and mismatch
+handling, save/close/reopen, conflict handling, TH/EN export and recovery,
+negative imports, keyboard paths, responsive themes, storage-denied and quota
+boundaries. Results, screenshots, synthetic exports, and recovery fixtures are
+kept under the canonical r8 audit.
+
+This strengthens current-head UI engineering evidence only. It does not add
+user validation or scientific evidence. E2 remains unchanged with four legacy
+settled receipts totaling USD0.0001464, zero operational/pending/unknown rows,
+prospective USD1, and unknown history. Paid dispatch remains gated by missing
+current scoped credit/limit evidence; no provider call, reservation, retry,
+GPU job, dataset download, ledger mutation, budget reset, or time-window reset
+occurred.
+
+Keep the goal active. If paid comparison remains required, reconcile one
+permitted non-secret credit/limit snapshot to E2, refresh route pricing inside
+the admission window, and reserve at most the existing USD0.25 canary.
+
+## HT-NEXT-239 - 2026-11-04 E2 resume checkpoint r7
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r7-20261104/README.md`.
+
+Current-head verification added frontend unit `74/74` and loopback HTTP browser
+PASS with source inspection, edit, history `1 -> 2`, and JSON/TH/EN export.
+The Python suite passed `646 total; 644 passed; 0 failed; 0 errors; 2 skipped`
+through `python -m pytest`, and compileall passed. The first plain pytest
+launcher failure is retained as a collection-environment issue because the
+repository root was absent from `sys.path`; it is not a test regression.
+
+The named Abbott browser harness remains `NOT_RUN_ASSET_GATED` because the
+permitted cohort, rights-matrix, and server-owned vector-config paths are not
+present. No old vector bundle or synthetic replacement was used. E2 remains
+unchanged: four legacy settled receipts totaling USD0.0001464, zero
+operational/pending/unknown rows, prospective USD1, and unknown history. Paid
+dispatch remains closed before reservation until current scoped credit/limit
+evidence is supplied; no route refresh, retry, provider call, reservation,
+ledger mutation, budget reset, GPU job, or dataset download occurred.
+
+Keep the goal active. If paid comparison remains required, reconcile one
+permitted non-secret credit/limit snapshot to E2, refresh exact-route pricing
+inside the admission window, and reserve at most the existing USD0.25 canary.
+
+## HT-NEXT-241 - 2026-11-04 E2 resume checkpoint r9
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r9-20261104/README.md`.
+
+The existing current-head PANORAMA receipt was rechecked against the dirty
+candidate `88dc40471cb9078f929c02bb893cfa1e364da841`. Its private predictions
+and summaries match the stored receipt, so no duplicate CPU scoring run was
+launched. The focused benchmark regression passed `6/6`, and the runner
+compiled successfully. The current protocol pointer changed only the receipt
+reference; endpoint, split, exclusion, budget, and retry controls remain the
+same.
+
+The canonical E2 journal was read without mutation: SQLite integrity `ok`,
+four legacy settled receipts totaling `USD0.0001464`, zero operational and
+zero pending/unknown attempts, prospective allowance `USD1`, and
+`UNKNOWN_OWNER_ACCEPTED_CUTOVER` history. Paid dispatch remains blocked before
+reservation because current scoped credit and remaining key-limit evidence are
+still unavailable. No provider call, reservation, retry, route refresh, ledger
+mutation, budget reset, or window reset occurred.
+
+Keep the goal active. Continue offline owner-review/manuscript work. If paid
+comparison remains required, obtain one permitted non-secret scoped credit/limit
+snapshot, reconcile E2, refresh exact-route pricing inside the admission
+window, and reserve only the existing `USD0.25` canary.
+
+## HT-NEXT-242 - 2026-11-04 budget-ceiling reconciliation and checkpoint r14
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audits:
+`docs/healthtech/audits/ptp-private-frontier-budget-ceilings-20261104/README.md`,
+`docs/healthtech/audits/ptp-manuscript-rebind-r9-20261104/README.md`,
+`docs/healthtech/audits/ptp-journal-package-current-r10-20261104/README.md`,
+and `docs/healthtech/audits/ptp-goal-completion-audit-r14-20261104/README.md`.
+
+The saved current-head private frontier was reconciled without rerunning
+retrieval or GPU work. The exact equal-realized slice is 3 query calls / 123
+rerank pairs: HT-B1, HT-B2, and HT-B3 each record macro known-link Recall@20
+`0.498802`, zero failed queries, and zero not-realized queries. The 5/205,
+6/246, and 9/369 rows are at-most-budget sensitivity views because realized
+resources differ; HT-B3 has one not-realized query. These results remain
+post-hoc, development-only, and `NOT_ESTIMABLE` without a final holdout or
+semantic relevance gold.
+
+The manuscript and supplemental data now link this boundary, with 67 relative
+Markdown links checked and zero missing. Focused budget-summary regressions
+passed `3/3`; compileall passed. No provider call, reservation, retry, GPU job,
+dataset download, ledger mutation, budget reset, time-window reset, external
+message, or submission occurred. The E2 journal remains intact with four
+legacy settled receipts totaling USD0.0001464, zero operational/pending/unknown
+attempts, prospective USD1, and unknown history preserved.
+
+Next action: owner review the r10 five-file package and live WPI Guide/Aims. If
+the paid comparison remains required, provide only one permitted non-secret
+current scoped credit/remaining-limit snapshot; then reconcile E2, refresh
+exact-route pricing inside the admission window, and reserve at most the
+existing USD0.25 canary. Do not rerun the saved frontier or close the goal from
+the local tests/canary.
+
+## HT-NEXT-243 - 2026-11-04 E2 resume checkpoint r10
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r10-20261104/README.md`.
+
+The existing goal resumed on candidate HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841` with the dirty owner worktree
+preserved. No project, GPU, API, or duplicate baseline job was active. The
+latest failure-accounting release `323bcc5` was inspected and its four
+regressions passed.
+
+The canonical E2 journal remains intact: SQLite integrity `ok`, one canonical
+ledger, four legacy settled receipts totaling `USD0.0001464`, zero operational
+attempts, zero pending/unknown attempts, prospective allowance `USD1`, and
+`UNKNOWN_OWNER_ACCEPTED_CUTOVER` history. No reservation, retry, provider call,
+ledger mutation, budget reset, or time-window reset occurred.
+
+A fresh owner-local metadata observation saw HTTP 200 from `/api/v1/key`, but
+the key is ordinary non-management, so current scoped credit and remaining key
+limit are unavailable. The public route was refreshed to active DeepInfra
+`qwen/qwen3-32b` at prompt `USD0.08/M` and completion `USD0.28/M`. Paid
+dispatch remains `BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE`.
+
+The frozen 3-case local Qwen run remains 3/3 schema-valid with provider cost
+`USD0.00`. The completed V100 diagnostic remains separate: BM25, PatEmbed, and
+multilingual-e5 results were reused from saved vectors and independently
+verified at zero metric delta. Fresh dry-run, 84 focused tests, 4
+failure-accounting regressions, and compileall passed. One verifier invocation
+used the wrong reference file and failed before writing; the prior valid
+independent verification artifact remains authoritative.
+
+Continue owner-review/manuscript work and keep the goal active. If paid
+comparison remains required, obtain one sanitized current account-credit and
+remaining-key-limit observation from an authorized channel, reconcile E2,
+refresh route pricing inside 300 seconds, and reserve only the existing
+`USD0.25` canary. Do not replay unknown/pending calls or close the research
+goal from tests or canary results alone.
+
+## HT-NEXT-244 - 2026-11-04 E2 resume checkpoint r11
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r11-20261104/README.md`.
+
+The current local browser-import investigation is closed on candidate HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841`. The integration harness now accepts
+the real local-Qwen case layout (`engine_manifest.json`) as well as prepared
+`manifest.json`, asserts the dossier version supplied by the input, and only
+checks backend user-edit retention when the input actually contains a backend
+edit. The repaired real-file import passed for MitraClip, Tendyne, and TriClip,
+with source inspection, IndexedDB save/reopen, UI-note retention, and TH/EN
+export; provider calls and paid cost were zero.
+
+Frontend unit tests passed `74/74`, browser E2E passed `17/17`, and loopback
+HTTP integration passed on the same current HEAD. The earlier timeout and the
+staged version-1/version-2 assertion are retained as diagnosis evidence, not
+combined with the final PASS. E2 is unchanged: four legacy settled receipts
+totaling `USD0.0001464`, zero operational/pending/unknown attempts,
+prospective `USD1`, and `UNKNOWN_OWNER_ACCEPTED_CUTOVER`; no ledger or budget
+mutation occurred.
+
+Paid dispatch remains blocked before reservation because current scoped credit
+and remaining key-limit evidence is unavailable. Do not replay pending/unknown
+calls, reset E2, or close the research goal from this engineering evidence.
+
+## HT-NEXT-245 - 2026-11-04 E2 resume checkpoint r12
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r12-20261104/README.md`.
+
+The exact dirty candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`
+passed the full Python regression: `646` tests, `644` passed, `0` failed,
+`0` errors, and `2` skipped. Compileall passed for `src`, `scripts`, and
+`tests`; raw JUnit evidence is retained in the r12 audit folder. No provider
+call, reservation, retry, GPU job, dataset download, ledger mutation, budget
+reset, or time-window reset occurred.
+
+This strengthens engineering evidence only. The local/API research comparison
+is still incomplete because current scoped credit and remaining key-limit
+evidence is unavailable, and the scientific claim remains descriptive without
+an admissible final semantic holdout. Keep the goal active and do not close it
+from the full suite, local canary, or prior GPU diagnostic.
+
+## HT-NEXT-246 - 2026-11-04 O1-O4 completion audit r15
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r15-20261104/README.md`.
+
+The requirement-level audit is rebound to the current candidate and separates
+the four outcomes: O1 engineering is complete on the current HTTP/UI path; O2
+remains partial at the remote-vector-to-final-dossier-engine boundary; O3 local
+is a 3/3 schema-valid frozen-pack run while paid API is blocked before
+reservation; and O4 engineering passes for the three named local artifacts
+while adaptive research remains partial without an admissible final holdout or
+semantic device-patent gold.
+
+The exact matched-budget diagnostic remains the post-hoc 3 query-call / 123
+rerank-pair slice for HT-B1/B2/B3 with macro Recall@20 `0.498802`; it is not
+evidence of adaptive superiority. Business validation remains operational
+potential only, and the manuscript remains owner-review ready but unsubmitted.
+E2, legacy spend, unknown history, and all resource boundaries are unchanged.
+
+## HT-NEXT-247 - 2026-11-04 E2 resume checkpoint r13
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-resume-e2-current-r13-20261104/README.md`.
+
+The current acceptance matrix now points its current verification boundary to
+the exact candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`: the
+full Python regression is `646` tests, `644` passed, `0` failed, `0` errors,
+and `2` skipped, with r11, r12, and r15 references recorded. The same result
+was rerun in r13 and its JUnit receipt is retained in the audit folder.
+
+The scoped matrix diff check, JSON parse, compileall, and matrix path checks
+passed. A whole-worktree diff check still reports pre-existing trailing
+whitespace in this dirty file; that owner history was preserved and not
+normalized. E2 remains unchanged: four legacy settled receipts totaling
+`USD0.0001464`, zero operational/pending/unknown attempts, prospective `USD1`,
+and `UNKNOWN_OWNER_ACCEPTED_CUTOVER` history. No provider call, reservation,
+retry, GPU job, dataset download, ledger mutation, budget reset, or time-window
+reset occurred.
+
+Paid dispatch remains blocked before reservation because current scoped credit
+and remaining key-limit evidence is unavailable through the authorized
+non-secret observation path. Keep the goal active; do not replay pending or
+unknown calls or close the research goal from this regression/local evidence.
+
+## HT-NEXT-248 - 2026-11-04 O2 current-head completion reconciliation r16
+
+Status: `COMPLETE_ENGINEERING_CURRENT_HEAD_REMOTE_SHARDS_TO_SHARED_ENGINE`; canonical audit:
+`docs/healthtech/audits/ptp-o2-current-head-completion-r16-20261104/README.md`.
+
+The prior remote receipt and current-head rebinds now form one explicit O2
+engineering chain. Both encoders passed interruption/resume canaries; the
+full run encoded `45,336` passage rows into `10` resumable shards per model
+plus `1,247` query vectors; all four device bundle manifest hashes matched on
+Windows; and the same bound runtime/bundles passed the current shared HTTP/
+dossier engine for MitraClip, Tendyne, and TriClip with PatEmbed `3/3` and
+multilingual-e5 `3/3`. Every case had zero vector errors and passed source
+inspection, history/edit, and JSON/TH/EN export.
+
+This closes O2 engineering only. Scientific relevance, final holdout,
+adaptive superiority, and generalization remain partial/descriptive. No GPU,
+dataset, provider, ledger, budget, or time-window mutation occurred. Continue
+the paid O3 gate and O4 research packaging without another GPU rerun.
+
+## HT-NEXT-249 - 2026-11-04 E2 resume after blocked-goal handoff
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical handoff:
+`docs/healthtech/audits/pepo-blocked-goal-repair-20261103/README.md`.
+
+The existing Windows E2 journal remains the only canonical accounting source:
+SQLite integrity is `ok`, four legacy settled receipts total
+`USD0.0001464`, operational attempts are `0`, pending/unknown attempts are
+`0`, the prospective allowance is `USD1`, and history remains
+`UNKNOWN_OWNER_ACCEPTED_CUTOVER`. No budget reset, time-window reset, ledger
+mutation, retry, or pending-call replay occurred in this continuation.
+
+The owner `.env` path is already covered by the bounded metadata receipt, but
+the ordinary non-management key still does not expose a current scoped credit
+or remaining key-limit observation. The prior public route snapshot is stale
+for admission and must be refreshed inside the runner's 300-second window only
+after the missing credit evidence exists. Paid dispatch therefore remains
+`BLOCKED_BEFORE_RESERVATION`; do not call the provider or reserve through a
+different ledger.
+
+O2 engineering remains complete on the current HEAD with the completed GPU
+artifacts kept as a separate protocol, while O2 scientific evidence, O3 paid
+comparison, O4 research endpoints, and external business validation remain
+partial. Continue owner-review/manuscript packaging and offline checks without
+rerunning the completed GPU chain. The one owner input still needed for paid
+work is a non-secret current scoped v2 credit/limit snapshot or a sanctioned
+location for that evidence; it does not require re-approving the existing
+budget or sending the API key.
+
+## HT-NEXT-250 - 2026-11-04 current manuscript and WPI scope rebind r6
+
+Status: `READY_FOR_OWNER_REVIEW_NOT_SUBMITTED`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-current-r6-20261104/README.md`.
+
+The current manuscript values and claim boundary were reconciled against the
+current-head PANORAMA/Helmers component receipt on
+`88dc40471cb9078f929c02bb893cfa1e364da841`. The official PANORAMA validation/
+test component rows retain zero failed outputs and remain separate from the
+main adaptive device-patent final holdout, which is still absent. The older
+benchmark-expansion component JSON from another candidate is not used as a
+current-head result.
+
+The official Elsevier publisher profile was reachable with HTTP 200 and its
+scope remains conditionally aligned with patent-information retrieval,
+AI/ML, information-retrieval evaluation, benchmarking, multilingual search,
+and real-data retrieval. The journal-specific Aims and Scope and Guide for
+Authors both returned HTTP 403 in this environment, so article type, limits,
+formats, and declarations remain unverified owner-review items. No submission,
+external message, provider call, GPU job, dataset download, ledger mutation,
+budget reset, or time-window reset occurred.
+
+## HT-NEXT-251 - 2026-11-04 abstract claim-boundary clarification r7
+
+Status: `READY_FOR_OWNER_REVIEW_NOT_SUBMITTED`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-current-r7-20261104/README.md`.
+
+The abstract now states explicitly that the historical transfer-diagnostic
+values (`0.8857` and `0.8381`) are retained for provenance and are not pooled
+with the current-head three-device frontier. This is a wording-only repair:
+metrics, protocol, candidate, source hashes, and resource accounting are
+unchanged. The manuscript remains descriptive and does not claim adaptive
+superiority, semantic device-patent gold, external business validation,
+revenue, ROI, willingness-to-pay, or journal acceptance.
+
+## HT-NEXT-252 - 2026-11-04 O1-O4 completion audit r17
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r17-20261104/README.md`.
+
+The requirement-level checkpoint is now bound to candidate HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841`. O1 engineering and O2 engineering
+are complete in their documented current-head scopes; O3 local generation is
+3/3 schema-valid while paid API remains blocked before reservation; and O4
+engineering passes for the three named local cases while research remains
+descriptive without an admissible final semantic holdout or device-patent
+gold. The matched-budget slice remains the post-hoc 3-call/123-rerank-pair
+diagnostic with macro Recall@20 `0.498802` and no adaptive-superiority claim.
+
+E2 is unchanged: SQLite integrity `ok`, four legacy settled receipts totaling
+`USD0.0001464`, zero operational/pending/unknown attempts, prospective `USD1`,
+and `UNKNOWN_OWNER_ACCEPTED_CUTOVER`. No provider call, reservation, retry,
+GPU job, dataset download, ledger mutation, budget reset, or time-window reset
+occurred for this checkpoint. Paid work requires one permitted non-secret
+current scoped credit and remaining-key-limit observation; only then should
+E2 be reconciled and exact-route pricing refreshed inside the admission window.
+
+The manuscript is ready for owner review but not submitted. Keep author and
+declaration fields, journal-specific Guide/Aims verification, and release of
+the dirty candidate under owner control. Do not close the goal from tests,
+local canary, or the completed GPU diagnostic alone.
+
+## HT-NEXT-253 - 2026-11-04 frontier renderer reproducibility repair
+
+Status: `PASS_REPRODUCIBLE_SANITIZED_RENDERER_CURRENT_HEAD`; canonical audit:
+`docs/healthtech/audits/ptp-frontier-renderer-repro-20261104/README.md`.
+
+The current-head frontier renderer previously embedded the caller's absolute
+verification path in `manifest.json`, so identical inputs produced different
+manifest hashes on different invocation paths. The renderer now emits a
+stable repository-relative path for repository inputs and a sanitized
+`<external>/filename` label otherwise. Its regression passed `2/2`, and a
+fresh replay matched the existing CSV, both SVG figures, and manifest
+byte-for-byte (`4/4` hashes).
+
+This is a reproducibility/packaging repair only. The frontier remains a
+development-only descriptive result with no final holdout, semantic gold,
+paid API result, or adaptive-superiority claim. No provider, GPU, dataset,
+reservation, ledger, budget, or time-window mutation occurred.
+
+
+## Pepo current repair handoff — 2026-11-04
+
+Read `docs/healthtech/audits/pepo-strong-followup-20261104/README.md` before continuation. API returned outputs now persist locally per case; per-run costs exclude interleaved work. Targeted211 pass; medical/Abbott recomputed and unchanged. Resume existing goal; no new epoch or gate-only checkpoint loop. Paid credit remains pending; no accessible exact Luna runtime/destination was available, so no external message sent.
+
+## HT-NEXT-254 - 2026-11-04 OpenRouter MCP account-credit observation
+
+Status: `PARTIAL_ACCOUNT_CREDIT_OBSERVED_BEFORE_RESERVATION`; canonical audit:
+`docs/healthtech/audits/ptp-api-openrouter-mcp-recheck-r2-20261104/README.md`.
+
+The owner-configured OpenRouter MCP was verified through the Codex CLI and its
+read-only `get-credits` action returned account-level `total_credits=10` and
+`total_usage=0.0001464`. A read-only E2 reconciliation returned SQLite
+integrity `ok`, four legacy settled receipts totaling `146400` nano-USD, and
+zero operational attempt/context rows. The response supplied no timestamp,
+exact key limit, or key scope. The owner-supplied first-round MCP cap of
+`USD30` remains a provider-key setting, not a project budget or E2 allowance.
+
+No paid call, reservation, retry, ledger mutation, budget reset, or GPU job
+occurred. Reconcile this receipt with E2, obtain exact key-limit/scope
+evidence, refresh route pricing inside the admission window, and reserve only
+through the existing journal if the gate passes. Continue local/offline work
+without treating account credit as proof of scientific or business completion.
+
+## HT-NEXT-255 - 2026-11-04 manuscript MCP-credit rebind
+
+Status: `PASS_DOCUMENTATION_REBOUND_OWNER_REVIEW_PENDING`; canonical audit:
+`docs/healthtech/audits/ptp-manuscript-mcp-credit-rebind-20261104/README.md`.
+
+The manuscript now reflects the account-level MCP credit observation and its
+E2 reconciliation without treating it as the `.env` dispatch key's remaining
+limit or as project spend authorization. It retains the no-paid-comparison,
+no-adaptive-superiority, and solo-project business-value boundaries. The
+current manuscript has 76 checked relative links and zero missing.
+
+No provider, GPU, dataset, ledger, budget, or time-window mutation occurred.
+
+## HT-NEXT-256 - 2026-11-04 O1-O4 completion audit r18
+
+Status: `ACTIVE_NOT_COMPLETE_NOT_BLOCKED`; canonical audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-r18-20261104/README.md`.
+
+The requirement-level audit now binds the MCP account-credit receipt and its
+E2 reconciliation to the O1-O4 completion boundary. Account credit is
+observed, but the `.env` dispatch key's exact remaining limit/scope and fresh
+route pricing are still required before reservation. O1/O2 engineering, local
+O3, and three-case O4 engineering remain supported by current-head receipts;
+scientific, external business, owner-review, and submission boundaries remain
+explicitly partial.
+
+No paid call, reservation, retry, GPU job, dataset download, ledger mutation,
+budget reset, or time-window reset occurred. Do not merge, push, or delete the
+goal branch until the full acceptance and owner-review boundary is satisfied.
+
+## HT-NEXT-258 - 2026-11-04 WPI venue recheck r12 binding
+
+Status: `PASS_OFFICIAL_PROFILE_SCOPE_RECHECK_GUIDE_AND_AIMS_UNVERIFIED_NOT_SUBMITTED`; canonical audit:
+`docs/healthtech/audits/wpi-venue-recheck-r12-20261104/README.md`.
+
+The current acceptance matrix and progress record now point to the r12 venue
+receipt at candidate HEAD `88dc40471cb9078f929c02bb893cfa1e364da841`.
+The official Elsevier profile remains conditionally aligned with the
+patent-information retrieval/evaluation contribution, while the journal-specific
+Aims and Scope and Guide for Authors remain unverified. The manuscript remains
+owner-review-only and not submitted.
+
+No provider call, GPU job, dataset download, ledger mutation, budget reset,
+time-window reset, external message, or submission occurred. Keep paid API
+admission gated by exact dispatch-key scope/limit and fresh route pricing; the
+owner's USD30 provider-side cap does not replace those checks.
+
+## HT-NEXT-259 - 2026-11-04 fresh OpenRouter route pricing
+
+Status: `PASS_FRESH_PUBLIC_ROUTE_PRICING_PARTIAL_API_GATE`; canonical audit:
+`docs/healthtech/audits/ptp-api-route-pricing-recheck-20261104/README.md`.
+
+A read-only public endpoint lookup at `2026-11-04T00:54:43.4535612Z` refreshed
+the `qwen/qwen3-32b` route metadata. The selected DeepInfra route is
+`deepinfra/fp8`, with prompt pricing `USD0.08/M`, completion pricing
+`USD0.28/M`, context `40,960`, and maximum completion `16,384`. The sanitized
+observation hash is
+`a497a28f50e830f33c469ae40786881a7ded085d2077b4c8fcc9841c15c8c9c6`.
+
+This closes the stale-route-price sub-gate only. Exact dispatch-key scope and
+remaining limit are still unavailable, so the route snapshot has not been
+rebound into the canonical E2 journal and no reservation or paid call was made.
+No retry, ledger mutation, GPU job, download, budget reset, or time-window
+reset occurred.
+
+## HT-NEXT-260 - 2026-11-04 key-limit recheck r13
+
+Status: `PASS_READ_ONLY_KEY_METADATA_LIMIT_UNAVAILABLE`; canonical audit:
+`docs/healthtech/audits/ptp-api-metadata-recheck-r13-20261104/README.md`.
+
+After the owner recorded the initial USD30 OpenRouter MCP/provider limit, the
+existing `.env` dispatch key was checked once through the bounded local
+observer. The key endpoint returned HTTP 200 and lifetime usage
+`USD0.0001464`, with the same key-scope hash as the prior observation. The
+provider still returned `limit=null`, `limit_remaining=null`, an empty budget
+list, and no account-scope binding. The USD30 value therefore remains
+provider-side authorization metadata, not key-level admission evidence.
+
+The acceptance matrix now points to r13. Paid admission remains blocked before
+reservation; no provider call, retry, ledger mutation, budget reset, GPU job,
+dataset download, or runtime-window reset occurred. Do not repeat the observer
+without new evidence. The next paid prerequisite is one permitted non-secret
+observation of the key's remaining limit or explicit unlimited status with
+scope and observation time; otherwise continue owner review and the bounded
+offline manuscript/release package without reopening completed experiments.
+
+## HT-NEXT-261 - 2026-11-04 one-time paid-branch handoff clarified
+
+Status: `HANDOFF_READY_WAITING_NON_SECRET_KEY_METADATA`; owner input is not
+needed again for participants, USD100 authorization, E2 cutover, GPU window,
+or the USD30 provider-side limit.
+
+The exact remaining paid prerequisite is now written in
+`docs/healthtech/long-runs/OWNER_ONE_TIME_INPUT_TH_EN.md`: one current
+non-secret observation for the existing Windows dispatch key containing UTC
+observation time, key scope/hash, remaining limit or explicit unlimited state,
+and account/workspace scope when available. The key itself, management key,
+new ledger, top-up, and screenshot with credentials are explicitly excluded.
+
+After that one input arrives, bind it to E2, recheck the already-recorded route
+price, rights and writer quiescence, then reserve only through the canonical
+journal. Until then, no new observer/API call is justified and offline work
+remains complete at the current queue boundary.
+
+## HT-NEXT-262 - 2026-11-04 E2 admission recheck
+
+Status: `PAID_BRANCH_BLOCKED_BEFORE_RESERVATION_STALE_CREDIT_SNAPSHOT`; canonical audit:
+`docs/healthtech/audits/ptp-e2-admission-recheck-20261104/README.md`.
+
+The supplied v2 owner credit snapshot is structurally valid and matches the E2
+authorization and key scope, but its observation time is
+`2026-11-04T11:21:09.628375Z`, older than the 300-second live gate at the
+checkpoint. Its timestamp was preserved unchanged. A fresh public route
+snapshot was obtained for the pinned DeepInfra `qwen/qwen3-32b` route at
+`USD0.08/M` prompt and `USD0.28/M` completion.
+
+The canonical E2 ledger resolves with the refreshed price, remains byte-for-byte
+unchanged, and still has zero operational attempts and zero pending/unknown
+items. The rights-cleared three-case dry-run and 43 focused regressions pass;
+provider calls, reservations, retries, GPU jobs, downloads, paid cost, and
+budget/time-window resets remain zero. Do not retry the stale snapshot. The
+single remaining paid input is one fresh non-secret credit snapshot for the
+existing dispatch key, after which price, rights, and writer checks must be
+performed in the same admission window.

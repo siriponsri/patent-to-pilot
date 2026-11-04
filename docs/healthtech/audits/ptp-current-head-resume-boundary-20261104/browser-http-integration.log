@@ -1,0 +1,19 @@
+[rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+{
+  "status": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+  "job_id": "146e35f08c14403fafb261d9aff43d68",
+  "backend_origin": "loopback",
+  "source_inspection": "PASS",
+  "history_versions": [
+    1,
+    2
+  ],
+  "edit": "PASS",
+  "exports": [
+    "json",
+    "th",
+    "en"
+  ],
+  "provider_calls": 0,
+  "paid_cost_usd": 0
+}

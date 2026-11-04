@@ -1,0 +1,46 @@
+{
+  "format": "ptp-manuscript-rebind-verification-v1",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "change_scope": "business-value runtime/provenance clarification only",
+  "files": {
+    "docs/healthtech/research/MANUSCRIPT_ADAPTIVE_EVIDENCE_ACQUISITION_EN.md": {
+      "sha256": "98607ae6fbc0649da74269a2b0c9d29dcbf316f85d761a82bc3c2bbe3a0d60bd",
+      "bytes": 58749
+    },
+    "docs/healthtech/research/SUPPLEMENTAL_DATA.md": {
+      "sha256": "f9c5eda4dcbf29b9b5a513766ab646d01e19c4af2d37a84dd84927c1bc73b8c0",
+      "bytes": 21789
+    },
+    "docs/healthtech/research/WPI_SUBMISSION_CHECKLIST_20261101_EN.md": {
+      "sha256": "cec1ffe4c41b1baa119674f7907918e257d65b18b39af3dd2fe09fda901636c8",
+      "bytes": 6860
+    },
+    "docs/healthtech/research/WPI_COVER_LETTER_DRAFT_20261101_EN.md": {
+      "sha256": "3875fa50044faa1adf3a67e0a2dd615ade7a3aa018e5b06780822d56e56032c8",
+      "bytes": 1948
+    },
+    "literature-review/healthtech/references.bib": {
+      "sha256": "7a9ef673632d59f6f2cfaf8877ac462639a759310596a7d98d63f02d51ae81a2",
+      "bytes": 18285
+    }
+  },
+  "relative_links_checked": 63,
+  "missing_relative_links": 0,
+  "operational_evaluation": {
+    "path": "docs/healthtech/audits/ptp-local-qwen-patent-run-20261104/operational-evaluation.json",
+    "sha256": "8e329c714fb38a2aa12662bd76c672e756fac60ed5b5185a560de4b31bfc341b"
+  },
+  "business_value_runtime_boundary": {
+    "older_scenario_mean_generation_seconds": 38.96,
+    "current_patent_candidate_mean_generation_seconds": 54.32043713191524,
+    "current_patent_candidate_prompt_tokens": 7301,
+    "current_patent_candidate_output_tokens": 1448,
+    "pooled_or_substituted": false
+  },
+  "content_mutation_in_checkpoint": true,
+  "owner_review": "REQUIRED",
+  "wpi_guide_verified": false,
+  "submission": false,
+  "status": "PASS_DOCUMENTATION_CURRENT_HEAD_OWNER_REVIEW_PENDING"
+}

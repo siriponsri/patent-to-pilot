@@ -1,0 +1,98 @@
+{
+  "format": "ptp-resume-e2-current-r3-v1",
+  "recorded_utc": "2026-11-03T17:47:33.298991+00:00",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree": "INTENTIONALLY_DIRTY_PRESERVED"
+  },
+  "engineering": {
+    "focused_tests": {
+      "command": "rtk python -m pytest -q tests/test_healthtech_api_generation.py tests/test_healthtech_history_migration.py tests/test_healthtech_local_execution.py tests/test_healthtech_current_head_frontier.py tests/test_o3_generation_repair.py --junitxml=docs/healthtech/audits/ptp-resume-e2-current-r3-20261104/focused-current-tests.xml",
+      "tests": 35,
+      "passed": 35,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "receipt": "focused-current-tests.xml",
+      "receipt_sha256": "18130b276c91b1fe0a5489d0edf11b6b84ca62c35eea9dee838d7eaf91ae11bf"
+    },
+    "compileall": "PASS",
+    "scoped_diff_check": "PASS_WITH_PREEXISTING_LINE_ENDING_WARNINGS",
+    "prior_full_suite_reference": "642 total; 640 passed; 0 failed; 0 errors; 2 skipped",
+    "release_boundary": "DIRTY_CANDIDATE_OWNER_REVIEW_REQUIRED"
+  },
+  "e2_journal": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+    "ledger_id": "ptp-healthtech-openrouter-local-e2-20261103",
+    "integrity_check": "ok",
+    "operational_attempts": 0,
+    "pending_or_unknown": 0,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": "0.0001464",
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "prospective_epoch_allowance_usd": "1.00",
+    "ledger_mutation": false,
+    "budget_reset": false,
+    "window_reset": false,
+    "historical_cost_inferred": false
+  },
+  "paid_gate": {
+    "latest_metadata_receipt": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-api-metadata-current-20261104-r1/metadata-observation.json",
+    "metadata_status": "HTTP_200_ORDINARY_NON_MANAGEMENT_KEY",
+    "current_scoped_credit": "UNAVAILABLE",
+    "remaining_key_limit": "UNAVAILABLE",
+    "live_admission_enabled": false,
+    "status": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "route_price_refresh": "NOT_RUN",
+    "reservation": "NOT_RUN",
+    "provider_calls": 0,
+    "new_attempts": 0,
+    "new_cost_usd": "0",
+    "retry": "NOT_RUN"
+  },
+  "completed_gpu_diagnostic": {
+    "audit": "docs/healthtech/audits/ptp-fresh-gpu-device-diagnostic-20261103/verification.json",
+    "verification_sha256": "f4a6c05d6b596efa12b655f1c978e55d8721d7cda449b190cd207a2ef838c3f5",
+    "protocol": "FROZEN_QUERY_DEVICE_RETRIEVAL_DIAGNOSTIC",
+    "gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "corpus_rows": 41,
+    "query_rows": 3,
+    "known_links": 61,
+    "methods": {
+      "bm25": {"hits": 21, "macro_recall_at_20": 0.392685, "micro_recall_at_20": 0.344262, "macro_ndcg_at_20": 0.430022},
+      "patembed": {"hits": 24, "macro_recall_at_20": 0.430073, "micro_recall_at_20": 0.393443, "macro_ndcg_at_20": 0.409533},
+      "multilingual_e5": {"hits": 27, "macro_recall_at_20": 0.481021, "micro_recall_at_20": 0.442623, "macro_ndcg_at_20": 0.455981}
+    },
+    "independent_recheck_max_abs_delta": 0.0,
+    "reused_as_paid_generation": false,
+    "reused_as_final_holdout": false
+  },
+  "runtime": {
+    "active_local_api_or_dr_train_experiment": "NONE_OBSERVED",
+    "existing_ssh_process": "CODEX_APP_SERVER_PROXY_NOT_EXPERIMENT",
+    "new_gpu_job": 0
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "status": {
+    "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_WITH_DIRTY_RELEASE_BOUNDARY",
+    "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+    "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+    "manuscript": "READY_FOR_OWNER_REVIEW",
+    "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+    "goal": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED"
+  },
+  "next_action": "If paid comparison remains required, obtain one non-secret current scoped credit/limit snapshot, reconcile it to E2, refresh exact-route pricing inside 300 seconds, revalidate the rights-cleared pack, and reserve at most the existing USD0.25 canary. Otherwise continue offline and owner-review work without repeating the metadata probe."
+}

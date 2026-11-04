@@ -1,0 +1,20 @@
+{
+  "format": "ptp-healthtech-checkpoint-v2",
+  "recorded_date": "2026-11-04",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "engineering": "COMPLETE_CURRENT_HEAD_FULL_SUITE_VERIFIED",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "READY_FOR_OWNER_REVIEW_GUIDE_UNVERIFIED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "full_suite": "646 total; 644 passed; 0 failed; 0 errors; 2 skipped",
+  "focused_suite": "49 passed; 0 failed; 0 errors; 0 skipped",
+  "journal": "E2 integrity ok; 0 operational/pending/unknown; 4 legacy settled; USD0.0001464 preserved; prospective USD1; unknown history preserved",
+  "metadata": "ordinary non-management key; usage USD0.0001464; current scoped credit and key limit unavailable",
+  "local_generation": "3/3 schema-valid Qwen3-8B patent-candidate cases; separate protocol; USD0.00",
+  "resource_mutations": "provider 0; reservations 0; retries 0; GPU jobs 0; datasets 0; ledger 0; reset false",
+  "goal_closed": false,
+  "next": "Obtain one non-secret current scoped credit/limit snapshot only if paid comparison remains required; then reconcile E2, refresh route price, and reserve at most the existing USD0.25 canary."
+}
+

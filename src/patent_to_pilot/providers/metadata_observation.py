@@ -66,6 +66,8 @@ def budget(row):
 def sanitize_key(data):
     if not isinstance(data, dict):
         raise ObservationError("INVALID_KEY_METADATA")
+    # Preserve presence before normalization: absent != provider-explicit null.
+    presence = {k: k in data for k in ('limit', 'limit_remaining', 'budgets', 'effective_budget')}
     result = {k: decimal_field(data.get(k), signed=k == "limit_remaining", nullable=k in {"limit", "limit_remaining"})
               for k in ("limit", "limit_remaining", "usage")}
     for k in ("usage_daily", "usage_weekly", "usage_monthly", "byok_usage"):
@@ -90,7 +92,62 @@ def sanitize_key(data):
             if not isinstance(value, str) or len(value) > 256:
                 raise ObservationError("INVALID_SCOPE_METADATA")
             result[k + "_sha256"] = hashlib.sha256(value.encode()).hexdigest()
+    result['field_presence'] = presence
+    result['key_limit_state'] = key_limit_state(result)
     return result
+
+
+def key_limit_state(metadata):
+    """Interpret only presence-preserving observations, never legacy v1 nulls.
+
+    A key cap is independent of account balance and applicable guardrail budgets.
+    OpenRouter /api/v1/key documents explicit null as unlimited.
+    """
+    presence = metadata.get('field_presence', {})
+    if not isinstance(presence, dict) or not all(presence.get(k) is True for k in ('limit', 'limit_remaining')):
+        return 'UNAVAILABLE_FIELD_PRESENCE'
+    limit, remaining = metadata.get('limit'), metadata.get('limit_remaining')
+    if limit is None and remaining is None:
+        return 'UNLIMITED'
+    if limit is None or remaining is None:
+        return 'INCONSISTENT'
+    # Values have already passed strict numeric validation in sanitize_key.
+    if Decimal(remaining) > Decimal(limit):
+        return 'INCONSISTENT'
+    return 'EXHAUSTED' if Decimal(remaining) <= 0 else 'LIMITED'
+
+
+def availability_summary(result):
+    """Explain missing prerequisites without granting admission or inventing balance."""
+    metadata = result.get('key_metadata', {})
+    state = key_limit_state(metadata)
+    presence = metadata.get('field_presence', {})
+    budgets = metadata.get('budgets')
+    effective = metadata.get('effective_budget')
+    limits = []
+    if state in {'LIMITED', 'EXHAUSTED'}:
+        limits.append(Decimal(metadata['limit_remaining']))
+    if isinstance(budgets, list):
+        limits.extend(Decimal(row['remaining_usd']) for row in budgets)
+    if effective is not None:
+        limits.append(Decimal(effective['remaining_usd']))
+    budgets_known = (presence.get('budgets') is True and isinstance(budgets, list)
+                     and presence.get('effective_budget') is True)
+    blocked = []
+    if state not in {'LIMITED', 'UNLIMITED'}:
+        blocked.append('KEY_LIMIT_' + state)
+    if not budgets_known:
+        blocked.append('APPLICABLE_BUDGETS_UNAVAILABLE')
+    if limits and min(limits) <= 0:
+        blocked.append('APPLICABLE_KEY_OR_BUDGET_EXHAUSTED')
+    if 'remaining_credits_usd' not in result.get('account_credits', {}):
+        blocked.append('ACCOUNT_CREDIT_NOT_OBSERVED_BY_THIS_COLLECTOR')
+    if result.get('account_scope_binding') != 'RECONCILED':
+        blocked.append('ACCOUNT_KEY_BINDING_NOT_RECONCILED')
+    return {'key_limit_state': state, 'applicable_budgets_observed': budgets_known,
+            'observed_key_or_budget_remaining_usd': str(min(limits)) if limits else None,
+            'blocked_prerequisites': blocked, 'live_admission_enabled': False,
+            'scope': 'metadata explanation only; freshness, canonical E2, rights and route checks remain required'}
 
 
 def endpoint_request(key, endpoint):
@@ -127,7 +184,7 @@ def collect(key, *, allow_credits_if_management=False):
     started = datetime.now(timezone.utc).isoformat()
     status, data = endpoint_request(key, "/api/v1/key")
     result = {
-        "format": "ptp-openrouter-metadata-observation-v1", "provider": "openrouter", "currency": "USD",
+        "format": "ptp-openrouter-metadata-observation-v2", "provider": "openrouter", "currency": "USD",
         "started_at_utc": started, "key_scope": "sha256:" + hashlib.sha256(key.encode()).hexdigest(),
         "key_endpoint": status, "account_scope": None, "account_scope_binding": "NOT_RECONCILED",
         "account_credits": {"status": "NOT_REQUESTED_MANAGEMENT_KEY_REQUIRED"},
@@ -145,6 +202,7 @@ def collect(key, *, allow_credits_if_management=False):
                 used = decimal_field(credits.get("total_usage"))
                 result["account_credits"].update(total_credits_usd=purchased, total_usage_usd=used,
                                                remaining_credits_usd=str(Decimal(purchased) - Decimal(used)))
+    result["availability"] = availability_summary(result)
     result["completed_at_utc"] = datetime.now(timezone.utc).isoformat()
     result["receipt_sha256"] = hashlib.sha256(json.dumps(result, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     return result

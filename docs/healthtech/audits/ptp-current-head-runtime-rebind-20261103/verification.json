@@ -1,0 +1,48 @@
+{
+  "format": "ptp-current-head-runtime-rebind-verification-v1",
+  "status": "PASS_O2_RUNTIME_BOUND_AND_O3_LOCAL_REBOUND_API_BLOCKED",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "checks": [
+    {
+      "id": "o2_relevant_source_diff",
+      "status": "PASS",
+      "base": "20e38974ed32bc6fca9760b9f1974b3c3f8dfa34",
+      "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+      "command": "git diff --quiet <base> <head> -- scoped O2 vector/evaluator paths",
+      "exit_code": 0
+    },
+    {
+      "id": "qwen_relevant_source_diff",
+      "status": "PASS",
+      "base": "50b27cd9229bc03232486c68654a0a56866250e0",
+      "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+      "command": "git diff --quiet <base> <head> -- scoped Qwen/generation payload paths",
+      "exit_code": 0
+    },
+    {
+      "id": "prior_remote_embedding_run",
+      "status": "PASS_PRIOR_ACTUAL_RECEIPT",
+      "receipt": "docs/healthtech/audits/ht-research-product-20261031/verification.json",
+      "remote_rerun": "NOT_RUN"
+    },
+    {
+      "id": "prior_local_qwen_run",
+      "status": "PASS_PRIOR_ACTUAL_RECEIPT_REBOUND",
+      "receipt": "docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V16_CURRENT_HEAD_QWEN_REBIND.json",
+      "schema_valid_cases": 3,
+      "inference_rerun": false
+    },
+    {
+      "id": "api_branch",
+      "status": "BLOCKED_LOCAL",
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    }
+  ],
+  "limitations": [
+    "A runtime rebind is not a new remote or API run.",
+    "The old browser-generation path changed after its receipt and is not promoted here.",
+    "DAPFAM metrics are diagnostic and not semantic device-patent gold.",
+    "External business validation and journal acceptance remain unverified."
+  ]
+}

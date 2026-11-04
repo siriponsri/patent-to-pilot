@@ -172,6 +172,7 @@ def _run(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
             pricing_snapshot_utc=pricing.snapshot_utc,
             namespace="canonical",
         )
+    policy = budget.policy
     if args.mode == "live":
         from patent_to_pilot.providers.credit import normalize_credit
         budget.account_credit_snapshot = normalize_credit(_read_json(args.credit_snapshot), require_current=True)

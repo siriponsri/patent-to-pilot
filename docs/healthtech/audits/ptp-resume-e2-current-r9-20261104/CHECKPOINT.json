@@ -1,0 +1,12 @@
+{
+  "format": "ptp-resume-e2-current-r9-checkpoint-v1",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "goal_reused": true,
+  "verification": "docs/healthtech/audits/ptp-resume-e2-current-r9-20261104/verification.json",
+  "offline": "Current-head PANORAMA receipt reused without duplicate scoring; focused runner regression 6 passed and compileall passed.",
+  "journal": "E2 integrity ok; four legacy settled receipts totaling USD0.0001464; zero operational/pending/unknown attempts; prospective USD1; unknown history preserved.",
+  "paid_api": "Blocked before reservation pending permitted current scoped credit and remaining key-limit evidence; no retry, reservation, route refresh, or provider call.",
+  "goal_boundary": "Engineering offline complete; scientific evidence partial/descriptive; business validation external not run; manuscript owner-review ready; goal remains active.",
+  "next": "Keep offline work and owner review moving; after one permitted non-secret credit/limit snapshot, reconcile E2 and refresh route pricing before the existing USD0.25 canary."
+}

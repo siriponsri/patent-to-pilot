@@ -1,0 +1,55 @@
+{
+  "format": "ptp-local-lock-repair-v1",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "candidate_worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+  "status": "PASS_LOCAL_SHARED_GPU_LOCK_REPAIR_API_BLOCKED",
+  "changed_files": {
+    "scripts/healthtech/encode_transformer_shards.py": "a154b2c039bc6f563a68e43cb7680ef64a3bc8055846d3da5a43ef79bc3d5d27",
+    "scripts/healthtech/run_transformer_vector_retrieval_eval.py": "0423f9e843c32efa01a33ae80ea734e79d832eaf75d77d66dbde7adbcf718975",
+    "scripts/healthtech/remote_encoder_self_check.py": "9a3fc79f693fcb7480e9dbfd0c017f0f94c44974b59ca53fff099d3bb0374bc5",
+    "src/patent_to_pilot/healthtech/local_execution.py": "25ed4283936885352054c5cd5d10d5f4c78fcb8bbe26762dc7da9ee7a5a35e0d",
+    "tests/test_healthtech_local_execution.py": "8ad288ae26161882e8e63d13ff320fb3ebdd9d940e46e6d88a03489b8e238e0b"
+  },
+  "lock_contract": {
+    "approved_gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+    "concurrency": 1,
+    "embedding_launcher_holds_lock_during_encode": true,
+    "query_eval_holds_lock_during_local_encoder_run": true,
+    "generation_launcher_uses_same_lock": true
+  },
+  "tests": {
+    "focused": "37 passed, 0 failed, 0 skipped",
+    "full": "613 passed, 1 skipped, 2 warnings",
+    "compileall": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "api_metadata": {
+    "receipt": "docs/healthtech/audits/ptp-api-parallel-recheck-20261103/metadata-observation-r2.json",
+    "observed_at_utc": "2026-11-03T02:00:14.212818+00:00",
+    "http_status": 200,
+    "lifetime_usage_usd": 0.0001464,
+    "daily_usage_usd": 0.0,
+    "weekly_usage_usd": 0.0,
+    "monthly_usage_usd": 0.0,
+    "management_key": false,
+    "account_scope": "NOT_RECONCILED",
+    "credit_snapshot": "NOT_AVAILABLE",
+    "history_completeness": "NOT_PROVEN",
+    "live_admission_enabled": false
+  },
+  "resource_mutations": {
+    "paid_provider_calls": 0,
+    "paid_reservations": 0,
+    "new_attempt_ids": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "dataset_downloads": 0,
+    "new_gpu_jobs": 0
+  },
+  "missing_paid_gate_evidence": [
+    "existing canonical R1 journal or sanitized all-attempt export",
+    "current scoped v2 account/key credit snapshot"
+  ],
+  "next_action": "Continue offline; if both owner evidence items arrive, reconcile history and credit before one paired canary."
+}

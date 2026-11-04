@@ -1,0 +1,110 @@
+{
+  "format": "ht-o3-api-generation-preflight-v1",
+  "manifest": {
+    "cases": [
+      {
+        "case_id": "HT-DEV-MITRACLIP",
+        "message_sha256": "aff765c814db1f16a113a4f6d447ca0937d1be8910ff0001b2eca2bc25beb1a7",
+        "payload_sha256": "4a999f0eeb6b493aa782e059fc742b86ff82b52fb1d2ec6da824a3f58783590d",
+        "source_bindings": [
+          {
+            "basis_locator": "Data Rights and Usage; Attribution",
+            "basis_url": "https://open.fda.gov/terms/",
+            "decision": "ALLOWED_WITH_ATTRIBUTION",
+            "displayable_fields": [
+              "pma_number",
+              "trade_name",
+              "applicant"
+            ],
+            "rights_id": "openfda-pma-records",
+            "source_id": "openfda-pma-p100009-base",
+            "source_revision": "openFDA-last-updated-2026-10-19",
+            "source_sha256": "613e6d9c72da134861ce895ce3dff548abb234376fe6b0b4ee35c4782bcb8c43"
+          }
+        ]
+      },
+      {
+        "case_id": "HT-DEV-TENDYNE",
+        "message_sha256": "c51435f2b2661bb81ca8da28e9d954f8f4ede2d029c98c783c02b57dc671f2f2",
+        "payload_sha256": "bccb1eb6a0e257b66317e8eeb69b66c4662bfdef59f9ddb45f61844fc7d5b105",
+        "source_bindings": [
+          {
+            "basis_locator": "Data Rights and Usage; Attribution",
+            "basis_url": "https://open.fda.gov/terms/",
+            "decision": "ALLOWED_WITH_ATTRIBUTION",
+            "displayable_fields": [
+              "pma_number",
+              "trade_name",
+              "applicant"
+            ],
+            "rights_id": "openfda-pma-records",
+            "source_id": "openfda-pma-p240042-base",
+            "source_revision": "openFDA-last-updated-2026-10-19",
+            "source_sha256": "99c35a6a724b554edd7c0c9d755f4f5a63fad4dd3c768e9d3cd22e58e26201b9"
+          }
+        ]
+      },
+      {
+        "case_id": "HT-DEV-TRICLIP",
+        "message_sha256": "cc400bb8612c3479f6205c58f5e8d46a9c0f0281893e9aa8ec6a1c0ae6897ef4",
+        "payload_sha256": "d9ec5c693c5013564623e28d3849761886f565d413e65511fe9cc40a8dc17d97",
+        "source_bindings": [
+          {
+            "basis_locator": "Data Rights and Usage; Attribution",
+            "basis_url": "https://open.fda.gov/terms/",
+            "decision": "ALLOWED_WITH_ATTRIBUTION",
+            "displayable_fields": [
+              "pma_number",
+              "trade_name",
+              "applicant"
+            ],
+            "rights_id": "openfda-pma-records",
+            "source_id": "openfda-pma-p230007-base",
+            "source_revision": "openFDA-last-updated-2026-10-19",
+            "source_sha256": "1d50de03827b92fba33de7871d487a1b94104000d3f76bff6af21a26e44b5ad5"
+          }
+        ]
+      }
+    ],
+    "decision": "ALLOWED_WITH_ATTRIBUTION",
+    "excluded_fields": [
+      "raw source payloads",
+      "raw HTML/source pages",
+      "evaluator labels and qrels",
+      "gold-derived queries",
+      "provider credentials",
+      "generated output text"
+    ],
+    "format": "ht-o3-rights-cleared-paired-payload-v1",
+    "manifest_sha256": "c298b1027e31a270c7db8956cf36a000c854f5c7374e8bb75241881f84729843",
+    "max_output_tokens": 512,
+    "model": "qwen/qwen3-32b",
+    "model_visible_fields": {
+      "candidates": "first six ordered candidates with exact IDs, statuses, revisions, and locators",
+      "evidence": "frozen evidence rows without source payloads",
+      "query": [
+        "query_id",
+        "device_id_canonical",
+        "device_id_raw",
+        "jurisdiction",
+        "brief",
+        "technical_description",
+        "features_of_interest",
+        "user_questions",
+        "evidence_cutoff"
+      ],
+      "sources": "rights-cleared metadata and hashes only"
+    },
+    "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+    "provider": "openrouter",
+    "purpose": "ht-o3-generation",
+    "route": "deepinfra",
+    "thinking": false
+  },
+  "model_id": "qwen/qwen3-32b",
+  "pack_sha256": "e033456a1f9fe53a3bf8b2c4d1e6c07e1e6727796620f94f35f1ad505499526e",
+  "paid_cost_usd": 0.0,
+  "provider_calls": 0,
+  "route": "DeepInfra",
+  "status": "DRY_RUN_NOT_EXECUTED"
+}

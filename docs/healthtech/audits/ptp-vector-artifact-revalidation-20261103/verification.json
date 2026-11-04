@@ -1,0 +1,88 @@
+{
+  "format": "ptp-vector-bundle-pair-revalidation-v1",
+  "status": "PASS_VECTOR_BUNDLE_INTEGRITY_PRIOR_ARTIFACT",
+  "artifact_root_id": "ht-o4-http-device-vectors-20261031",
+  "runtime_manifest_sha256": "89e5b86cc21d9f3466cc3236416f4873840622a56e7aad767bbbfe173bc0484c",
+  "runtime": {
+    "cases": [
+      "HT-DEV-MITRACLIP",
+      "HT-DEV-TENDYNE",
+      "HT-DEV-TRICLIP"
+    ],
+    "corpus_rows": 41,
+    "query_rows": 3,
+    "corpus_sha256": "5965b7b51006d9d64d05250848300dee68d80a0b69324213a5ccac25a1c44e9d",
+    "queries_sha256": "7e0e29b6b7e8f19dcbd28c775e8b518255b5fdcfa0846307acb5dd7f5b1381a8"
+  },
+  "bundles": [
+    {
+      "bundle": "outputs/device-patembed-corpus",
+      "manifest_sha256": "75348afa4fede2535c09970d70353ecf9477f306a48fa46c71a445677f2302f1",
+      "row_count": 41,
+      "dimension": 768,
+      "shard_count": 3,
+      "model_id": "datalyes/patembed-base",
+      "revision": "244ba452908a3093be11efb8a44396652317fb14",
+      "model_sha256": "43f133c6c9abf94f8d93e77f129ccfe82140eadbc8bf4440e793c5a857d9e16b",
+      "config_sha256": "fae0a489395cdd70ab18a634a4a7e209e4f956beeb273b4c510f34c06c052f48",
+      "input_sha256": "5965b7b51006d9d64d05250848300dee68d80a0b69324213a5ccac25a1c44e9d",
+      "item_order_sha256": "8778cae0e5b7cb6245d7779411e4c86f944e469e511cc276e163ea8f372be281",
+      "document_order_sha256": "abcbe5f99365e46f34b360af467a60409b97da198e219d464c901be470695add"
+    },
+    {
+      "bundle": "outputs/device-patembed-queries",
+      "manifest_sha256": "45da46ee7dbd755f8ca8dd4c244ff6b9063f16253c27907e92ff0291c61c7e54",
+      "row_count": 3,
+      "dimension": 768,
+      "shard_count": 1,
+      "model_id": "datalyes/patembed-base",
+      "revision": "244ba452908a3093be11efb8a44396652317fb14",
+      "model_sha256": "43f133c6c9abf94f8d93e77f129ccfe82140eadbc8bf4440e793c5a857d9e16b",
+      "config_sha256": "ae8b6b831e643a4628e152006cacad16bb386e2cf081bf0070311e7adf8dd675",
+      "input_sha256": "7e0e29b6b7e8f19dcbd28c775e8b518255b5fdcfa0846307acb5dd7f5b1381a8",
+      "item_order_sha256": "68e6b874242ebd2c98447fa09e9b44034742d23b671759d3cce6c53f080dd4d1",
+      "document_order_sha256": "a4fdcd56a207091f63a4fcbfc2169c55036b474840975eafd032e5add637b448"
+    },
+    {
+      "bundle": "outputs/device-e5-corpus",
+      "manifest_sha256": "643ab8856a1bcd72d2c2e4745d02bdfe46bed0190f16ab8834c3870249fdcc7b",
+      "row_count": 41,
+      "dimension": 768,
+      "shard_count": 3,
+      "model_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "model_sha256": "b78d83f10782a118d15982d13f966c26eff082cbd1fd28fdf701ff1e5fba8ed5",
+      "config_sha256": "a1191965e90a64e32c4a23685dc0b98188d29accf6a1de926b5377f16b247d33",
+      "input_sha256": "5965b7b51006d9d64d05250848300dee68d80a0b69324213a5ccac25a1c44e9d",
+      "item_order_sha256": "8778cae0e5b7cb6245d7779411e4c86f944e469e511cc276e163ea8f372be281",
+      "document_order_sha256": "abcbe5f99365e46f34b360af467a60409b97da198e219d464c901be470695add"
+    },
+    {
+      "bundle": "outputs/device-e5-queries",
+      "manifest_sha256": "8e0a933f34c26a7f1370809c5220911cf6ed1b318bd02e7b4b60cc25ce76494c",
+      "row_count": 3,
+      "dimension": 768,
+      "shard_count": 1,
+      "model_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "model_sha256": "b78d83f10782a118d15982d13f966c26eff082cbd1fd28fdf701ff1e5fba8ed5",
+      "config_sha256": "28848b2d34690e95bd012cdfc2e3785176958a79ba53aa7cf63ddb19147715dc",
+      "input_sha256": "7e0e29b6b7e8f19dcbd28c775e8b518255b5fdcfa0846307acb5dd7f5b1381a8",
+      "item_order_sha256": "68e6b874242ebd2c98447fa09e9b44034742d23b671759d3cce6c53f080dd4d1",
+      "document_order_sha256": "a4fdcd56a207091f63a4fcbfc2169c55036b474840975eafd032e5add637b448"
+    }
+  ],
+  "checks": {
+    "completed_bundle_loader": true,
+    "shard_hashes_and_shapes": true,
+    "finite_little_endian_float32": true,
+    "unique_ids_and_order": true,
+    "runtime_input_bindings": true,
+    "cross_encoder_order_bindings": true
+  },
+  "scope_limits": [
+    "This verifies existing private vector artifacts; it is not a new encode or retrieval evaluation.",
+    "Vector manifests carry model IDs, revisions, and model hashes; matching PatEmbed/e5 weight files were not reverified in this check.",
+    "No evaluator labels, qrels, raw corpus text, vectors, or credentials are copied to the repository receipt."
+  ]
+}

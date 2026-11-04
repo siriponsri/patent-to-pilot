@@ -1,0 +1,62 @@
+{
+  "format": "ptp-resume-e2-checkpoint-v7",
+  "recorded_local": "2026-11-04",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "ACTIVE_NOT_COMPLETE_NOT_BLOCKED",
+  "engineering": "COMPLETE_CURRENT_HEAD_FRONTEND_HTTP_PYTHON_VERIFIED",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_OPERATIONAL_POTENTIAL_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "READY_FOR_OWNER_REVIEW_NOT_SUBMITTED_GUIDE_UNVERIFIED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "tests": {
+    "python": "646 total; 644 passed; 0 failed; 0 errors; 2 skipped",
+    "frontend_unit": "74 passed; 0 failed; 0 skipped",
+    "http_browser": "PASS_BROWSER_HTTP_BACKEND_HISTORY_EXPORT",
+    "abbott_browser": "NOT_RUN_ASSET_GATED",
+    "compileall": "PASS"
+  },
+  "http_browser": {
+    "job_id": "f82668cfdd9b400e9b78a3bee34f2c08",
+    "history_versions": [1, 2],
+    "source_inspection": "PASS",
+    "edit": "PASS",
+    "exports": ["json", "th", "en"],
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "abbott_browser": {
+    "status": "NOT_RUN_ASSET_GATED",
+    "required_environment": [
+      "HEALTHTECH_ABBOTT_COHORT",
+      "HEALTHTECH_ABBOTT_RIGHTS_MATRIX",
+      "HEALTHTECH_ABBOTT_VECTOR_CONFIG"
+    ],
+    "case_preparation_started": false,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0
+  },
+  "journal": {
+    "integrity": "ok",
+    "durable_epochs": 1,
+    "legacy_settled_receipts": 4,
+    "known_legacy_actual_usd": 0.0001464,
+    "operational_attempts": 0,
+    "pending_or_unknown_attempts": 0,
+    "prospective_allowance_usd": 1.0,
+    "history_completeness": "UNKNOWN_OWNER_ACCEPTED_CUTOVER",
+    "mutation": false
+  },
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "retries": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "time_window_reset": false
+  },
+  "goal_closed": false,
+  "next": "Keep the goal active. Obtain one permitted non-secret current scoped credit/remaining-limit snapshot only if paid comparison remains required; reconcile E2, refresh route pricing, and reserve at most the existing USD0.25 canary."
+}

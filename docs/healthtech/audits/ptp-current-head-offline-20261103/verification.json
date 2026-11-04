@@ -1,0 +1,118 @@
+{
+  "format": "ptp-current-head-offline-verification-v1",
+  "goal_reused": true,
+  "observed_local_date": "2026-11-03",
+  "run_at_utc": "2026-11-02T21:45:24.381077+00:00",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "source_tree_changed_for_run": false,
+    "private_artifact_root_id": "healthtech/ptp-current-head-offline-20261103"
+  },
+  "preflight": {
+    "relevant_experiment_processes_before_run": 0,
+    "relevant_experiment_processes_after_run": 0,
+    "approved_model_bundle_present": true,
+    "disk_free_bytes_before_run": 140904673280,
+    "api_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "new_mock_or_zero_budget_ledger": false
+  },
+  "frozen_inputs": {
+    "cohort": "ht-public-cohort-20261029-frozen-r1",
+    "devices": 3,
+    "patents": 41,
+    "disclosed_reference_pairs": 61,
+    "runtime_sha256": "3abd5cc308b7e69fc3b6055dd6744b0049341164adf9f95e9fa806ff35d0f121",
+    "references_sha256": "4024eb9ce949ad1e6d6c683c1762c87e29eef3814a9fb8cbf64cdc7f28df77ae",
+    "groups_sha256": "bfb1d8288283d801eb4c8db3200266ab0a8845f4206084fae56c4d91a806ac84",
+    "cohort_manifest_sha256": "b92b50716599ad6ea3cdeb5b6a692990a52ae8dd113bfc0bb5cad2cdd2148715",
+    "protocol_hash": "a87acaa448f97eabccae0f1fecc5378720ecf1178869336f68b42174eb828b0f",
+    "candidate_depth": 41,
+    "rerank_depth": 41,
+    "primary_k": 20,
+    "encoder": "sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2@233902d25c440f23af6f7d6e94d2946bac0bee0a"
+  },
+  "commands": [
+    {
+      "id": "failure-accounting-regression",
+      "command": "rtk proxy python -B -m pytest -q tests/test_healthtech_real_baselines.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "result": "4 passed"
+    },
+    {
+      "id": "baseline-frontier",
+      "command": "rtk proxy python -B scripts/healthtech/run_real_baselines.py --runtime <frozen runtime> --references <frozen references> --groups <frozen groups> --model-root <existing MiniLM bundle> --output <private>/baselines/run-001 --code-commit 88dc40471cb9078f929c02bb893cfa1e364da841 --protocol-hash a87acaa448f97eabccae0f1fecc5378720ecf1178869336f68b42174eb828b0f --cohort-manifest-hash b92b50716599ad6ea3cdeb5b6a692990a52ae8dd113bfc0bb5cad2cdd2148715 --candidate-depth 41 --rerank-depth 41 --k 20",
+      "exit_code": 0,
+      "status": "PASS",
+      "result": "5 methods, 3 devices, 61 reference pairs, zero provider calls"
+    },
+    {
+      "id": "offline-b4",
+      "command": "rtk proxy python -B scripts/healthtech/run_bounded_controller.py --runtime <frozen runtime> --references <frozen references> --groups <frozen groups> --model-root <existing MiniLM bundle> --output <private>/b4-offline/run-001 --code-commit 88dc40471cb9078f929c02bb893cfa1e364da841 --protocol-hash a87acaa448f97eabccae0f1fecc5378720ecf1178869336f68b42174eb828b0f --cohort-manifest-hash b92b50716599ad6ea3cdeb5b6a692990a52ae8dd113bfc0bb5cad2cdd2148715 --candidate-depth 41 --rerank-depth 41 --max-steps 3",
+      "exit_code": 0,
+      "status": "PASS",
+      "result": "3 devices, zero failed devices, zero provider calls"
+    }
+  ],
+  "test_summary": {
+    "command": "rtk proxy python -B -m pytest -q -ra --junitxml docs/healthtech/audits/ptp-current-head-offline-20261103/full-tests-20261103.xml",
+    "exit_code": 0,
+    "tests": 600,
+    "passed": 599,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 1,
+    "skip_reason": "pinned local tokenizer artifact is unavailable",
+    "warnings": 2,
+    "junit_sha256": "53622dfd97dc84ddce4b5207630a7cc592fc03f2302273e441ab4b7fe9541cd6"
+  },
+  "results": {
+    "HT-B0a": {"macro_recall_at_20": 0.4427394146064223, "query_calls": 3, "rerank_pairs": 0, "failed_queries": 0},
+    "HT-B0b": {"macro_recall_at_20": 0.6622417082775139, "query_calls": 3, "rerank_pairs": 0, "failed_queries": 0},
+    "HT-B1": {"macro_recall_at_20": 0.49880241951853205, "query_calls": 3, "rerank_pairs": 123, "failed_queries": 0},
+    "HT-B2": {"macro_recall_at_20": 0.5689116226200625, "query_calls": 9, "rerank_pairs": 369, "failed_queries": 0},
+    "HT-B3": {"macro_recall_at_20": 0.49880241951853205, "query_calls": 5, "rerank_pairs": 205, "failed_queries": 0},
+    "HT-B4-offline": {"macro_recall_at_20": 0.49880241951853205, "micro_recall_at_20": 0.47540983606557374, "query_calls": 5, "rerank_pairs": 205, "controller_steps": 8, "failed_devices": 0}
+  },
+  "resource_accounting": {
+    "all_baseline_methods": "COMPLETE",
+    "unknown_resource_fields": [],
+    "partial_attempts_preserved_by_runner": true,
+    "measured_wall_cpu_on_failure_path": true,
+    "synthetic_zero_attempt_added": false,
+    "historical_rounds_affected": "NONE_KNOWN",
+    "retrospective_cost_inferred": false
+  },
+  "artifact_hashes": {
+    "baselines/receipt.json": "95d09885f1b955bb0ecfad7ed43122c913bea8e817261758099fe983fe58e834",
+    "baselines/method_summary.json": "40737d3dc204398422804fd4a2a6dbb03c218ec45549e9c4d2fd40d572d5bc9e",
+    "baselines/raw_rankings.jsonl": "454bf883831e57955b4786d69c9eae0a109979fb39a69f0d3d22e59662524db4",
+    "b4-offline/receipt.json": "867e8fd1a91e54d4e9392250e46e6fabe445d4325be367c93c59f49c41d55d9f",
+    "b4-offline/controller_frontier.json": "3e3e4bf22f7894b817be50067bca82141a7cbae741d90dac7c75c908dfb52535"
+  },
+  "budget_interpretation": {
+    "shared_inputs": ["frozen corpus", "eligible queries", "references/groups", "encoder/reranker", "K=20", "candidate_depth=41", "rerank_depth=41"],
+    "realized_units": {
+      "HT-B1": {"query_calls": 3, "rerank_pairs": 123},
+      "HT-B2": {"query_calls": 9, "rerank_pairs": 369},
+      "HT-B3": {"query_calls": 5, "rerank_pairs": 205},
+      "HT-B4-offline": {"query_calls": 5, "rerank_pairs": 205, "controller_steps": 8}
+    },
+    "equal_total_budget_claim": "NOT_SUPPORTED",
+    "same_unit_posthoc_control": "HT-B1/HT-B2-prefix-1/HT-B3-prefix-1 at 3 query calls and 123 rerank pairs; all macro Recall@20 0.498802; HT-B4 excluded"
+  },
+  "limitations": [
+    "The cohort is development-only with two exact-patent groups, one company group, and no final holdout.",
+    "Product-level disclosed links are not semantic relevance gold; unlisted pairs remain unjudged.",
+    "The run is a descriptive realized quality-resource frontier, not evidence of adaptive superiority.",
+    "No live API comparison, external user validation, revenue, ROI, willingness-to-pay, clinical, FTO, or patent-validity claim is supported."
+  ]
+}

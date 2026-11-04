@@ -1,0 +1,23 @@
+{
+  "format": "ptp-api-owner-authorized-metadata-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_READ_ONLY_METADATA_PAID_GATE_UNCHANGED",
+  "paid_branch": "BLOCKED_BEFORE_RESERVATION",
+  "local_and_offline": "CONTINUE_INDEPENDENTLY",
+  "metadata": "HTTP 200; lifetime USD0.0001464; daily/weekly/monthly USD0; ordinary non-management key; no scoped credit snapshot",
+  "missing_non_secret_evidence": [
+    "existing canonical R1 journal or sanctioned sanitized all-attempt export",
+    "current scoped account/key credit snapshot"
+  ],
+  "resource_mutations": {
+    "provider_calls": 0,
+    "reservations": 0,
+    "new_attempt_ids": 0,
+    "retries": 0,
+    "ledger_mutations": 0,
+    "zero_ledger_created": false,
+    "budget_reset": false,
+    "window_reset": false
+  }
+}

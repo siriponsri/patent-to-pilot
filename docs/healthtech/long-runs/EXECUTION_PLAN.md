@@ -1,12 +1,34 @@
 # Execution plan — ลงมือให้จบเป็นผลลัพธ์
 
-ทุกขั้นยัง **PROPOSED / NOT_RUN ในงานจัดเอกสารนี้** เลือกชื่อ module/CLI ตาม repo จริง ส่ง actual commands หลัง implement ไม่อ้างว่าชื่อ interface ด้านล่างมีแล้ว อ่าน [authorization](AUTHORIZATION_AND_BUDGET.md) ก่อน action
+> **MCP fallback — 4 Nov 2026:** use [the owner capture instructions](../audits/pepo-mcp-credit-continuation-20261104/README.md) when OpenRouter actions are unavailable. Existing offline work remains complete. A new session is useful only if its tool access is verified; keep the same scientific goal and E2. Prepare dispatch first, then collect current credit; never re-date an expired snapshot.
+
+> **Latest continuation — 4 Nov 2026:** the prior READY queue below has completed. Use [the key-limit repair](../audits/pepo-key-limit-repair-20261104/README.md): UNLIMITED is verified, while fresh bound account credit is pending. Resume the same goal with the conditional paid handoff; do not repeat the old offline or gate-only packages.
+
+> **Next executable work — 4 Nov 2026:** use `CURRENT_ACCEPTANCE_MATRIX.json.continuation_work_queue`. The installed candidate now passes102 tests and emits JSON/TH/EN dossier artifacts. Start pending G6 claim/evidence binding, then G5 measured operational table and G7 installation instructions; no paid/GPU work is required for these packages. Read [the bounded handoff](../audits/pepo-resume-ready-20261104/README.md). Stop only the dependent branch when a prerequisite is missing; no repeated gate-only audits without new evidence. This task authorizes no merge/push/publication. Owner's V100 deadline is15 Nov2026 23:59 Asia/Bangkok; old24h language below is historical and superseded prospectively.
+
+> **Current execution overlay — 4 November 2026.** This file remains the
+> design/protocol baseline. The sentence below and the P0–P5 descriptions are
+> historical planning guidance, not a claim that current work is unrun. The
+> authoritative current statuses are in
+> [`CURRENT_ACCEPTANCE_MATRIX.json`](CURRENT_ACCEPTANCE_MATRIX.json) and the
+> latest audit checkpoints. At the current candidate HEAD `88dc404`, O1
+> engineering is complete; O2 scientific evidence is partial after verified
+> PatEmbed/E5 artifacts and three-case provider binding; O3 local Qwen is
+> complete as a schema/contract run while paid API is blocked before
+> reservation; O4 application engineering is complete for the named cases but
+> adaptive research evidence remains descriptive/partial. The canonical E2
+> journal and unknown history remain authoritative.
+
+The detailed P0–P5 text below is retained for protocol traceability. Do not
+read its historical `PROPOSED / NOT_RUN` wording as the current execution
+state. For every next action, record actual commands and receipts in
+`docs/healthtech/audits/<run-id>/` and update the acceptance matrix.
 
 ## P0 — snapshot, ownership และรวมเฉพาะ repair ที่จำเป็น
 
 ตรวจ currentHEAD/main/origin/tracked+untracked/worktrees และ applicable AGENTS อีกครั้ง ฐานเอกสาร 0d04980 Claude UI PR#1 merged แล้ว แต่ clean branch ไม่ได้พิสูจน์ว่า worker idle ห้าม checkout/แก้ branch ของ Claude หรือ Luna สร้าง isolatedgoal branch/worktree และจด single-writer/file ownership ไม่ delegatewriters โดยไม่มี explicitauthority
 
-Pepo vector repairs ยังอยู่ worktree `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-pepo-unblock-20261030`, branch `codex/pepo-unblock-remote-20261030` ที่ a0ec9ce มี dirty tested changes ตรวจ [repair receipt/patch](../../audits/pepo-unblock-remote-20261030T2038Z/README.md) และ current hash ก่อน port เฉพาะ vector crash-after-final-commit recovery, OS single-writer lock, child/parent binding และ regressions Main มี metadata-rights fix แล้ว ห้าม applywholeoldpatch ทับ currentengine/UI
+Pepo vector repairs ยังอยู่ worktree `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-pepo-unblock-20261030`, branch `codex/pepo-unblock-remote-20261030` ที่ a0ec9ce มี dirty tested changes ตรวจ [repair receipt/patch](../audits/pepo-unblock-remote-20261030T2038Z/README.md) และ current hash ก่อน port เฉพาะ vector crash-after-final-commit recovery, OS single-writer lock, child/parent binding และ regressions Main มี metadata-rights fix แล้ว ห้าม applywholeoldpatch ทับ currentengine/UI
 
 ทำ before/after hand-computable tests ของ remaininggaps โดยไม่เอา full old experiments มารันซ้ำ ไม่รวม unrelatedowner files เพื่อให้ git สะอาด เก็บ testedworking diff hash ก่อน commit และ exactfinalcandidate checks หลัง commit
 

@@ -1,0 +1,11 @@
+{
+  "checkpoint": "wpi-venue-recheck-r6-20261103",
+  "status": "PASS_OFFICIAL_PROFILE_RECORDED_GUIDE_UNVERIFIED",
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "scope_fit": "CONDITIONAL",
+  "guide_for_authors": "UNVERIFIED_PRIOR_DIRECT_CHECK_HTTP_403",
+  "checklist_updated": true,
+  "submission": "NOT_SUBMITTED",
+  "paid_or_gpu_work": "UNCHANGED",
+  "next": "Owner authorized browser/session recheck before final packaging"
+}

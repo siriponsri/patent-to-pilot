@@ -1,0 +1,10 @@
+{
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "started_utc": "2026-11-03T15:15:16.1589591Z",
+  "completed_utc": "2026-11-03T15:15:39.3911814Z",
+  "pytest_exit": 0,
+  "compileall_exit": 0,
+  "git_diff_check_exit": 2,
+  "test_receipt_sha256": "d23230abc41d5ce35c6759203a8273fe0b134cae13685b653679b2db0d0fd1b3",
+  "process_check": "process-check.json"
+}

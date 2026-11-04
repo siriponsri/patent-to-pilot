@@ -1,0 +1,13 @@
+{
+  "format": "ptp-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_NOT_COMPLETE",
+  "engineering": "COMPLETE_CURRENT_HEAD_ENGINEERING_WITH_DIRTY_RELEASE_BOUNDARY",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "PARTIAL_OWNER_REVIEW_PENDING",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "overall": "Do not close from tests/canaries; preserve active goal and exact evidence boundaries.",
+  "resume": "Reconcile one non-secret credit/limit snapshot if paid comparison is still required; otherwise proceed with owner review and release preparation."
+}

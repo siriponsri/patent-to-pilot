@@ -1,0 +1,22 @@
+{
+  "format": "ptp-manuscript-integrity-current-head-r2-checkpoint-v1",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PASS_CURRENT_HEAD_CLAIM_AND_LINK_RECONCILIATION_R2",
+  "change_scope": "venue scope check date corrected to 2026-11-03",
+  "manuscript_sha256": "f5362b2522d11406af294d229fb8bf2e34710f8792b9b2b708aa30a74c822a5e",
+  "relative_links": 34,
+  "missing_relative_links": 0,
+  "o4_status": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "paid_api_status": "BLOCKED_BEFORE_RESERVATION",
+  "resource_mutations": {
+    "benchmark_reruns": 0,
+    "provider_calls": 0,
+    "gpu_jobs": 0,
+    "dataset_downloads": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false,
+    "submission": false
+  }
+}

@@ -1,5 +1,7 @@
 # Checkpoint, resume และ report ที่ตรวจต่อได้
 
+> **Current authority/continuation (4 Nov 2026):** use [the resume-ready package](../audits/pepo-resume-ready-20261104/README.md) and its READY queue. USD8 and24h examples below are retained historical templates, not current limits. Current project ceiling is cumulativeUSD100 with existing E2 prospectiveUSD1 and unknown history preserved; the existing single-V100 grant ends15 Nov2026 23:59Asia/Bangkok. Missing credit stops paid transport only. Do not repeat old approvals/history lookup or mark overall blocked while an authorized READY package remains.
+
 ## Canonical storage และ single writer
 
 แผนอยู่ folder นี้ แต่ทุก execution/audit ของ goal ใหม่เก็บ sanitizedreceipts/report/manifest/continuation ใน `docs/healthtech/audits/<new-run-id>/` ตาม [audit convention](../../audits/README.md) Testtemp ได้ แต่ keyevidence ต้องกลับ repo ไม่ใช้ Codex/temp เป็น sole copy Largeweights/rawrestrictedtext/qrels/privateledgers/vectorbundles อยู่ permittedstorage พร้อม paths+hashes ไม่ publicGit

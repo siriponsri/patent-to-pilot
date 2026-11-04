@@ -1,0 +1,62 @@
+{
+  "format": "ptp-current-head-runtime-rebind-v1",
+  "observed_date": "2026-11-03",
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "working_tree_before_package": "DIRTY_AUDIT_DOCUMENTATION_ONLY",
+    "source_code_changed_this_package": false
+  },
+  "o2": {
+    "status": "PASS_CURRENT_HEAD_RUNTIME_BOUND_REMOTE_ARTIFACTS_NO_RERUN",
+    "parent_candidate": "20e38974ed32bc6fca9760b9f1974b3c3f8dfa34",
+    "relevant_diff_command_exit_code": 0,
+    "remote_rerun": "NOT_RUN_EXPIRED_ORIGINAL_WINDOW",
+    "actual_remote_artifacts": {
+      "patembed_corpus_rows": 45336,
+      "patembed_query_rows": 1247,
+      "e5_corpus_rows": 45336,
+      "e5_query_rows": 1247,
+      "device_dossier_runs": 6,
+      "provider_calls": 0,
+      "paid_cost_usd": 0.0
+    },
+    "evidence": "docs/healthtech/audits/ht-research-product-20261031/verification.json"
+  },
+  "o3_local": {
+    "status": "PASS_CURRENT_HEAD_LOCAL_QWEN_REBOUND",
+    "parent_runtime_candidate": "50b27cd9229bc03232486c68654a0a56866250e0",
+    "relevant_diff_command_exit_code": 0,
+    "model_id": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "pack_sha256": "d2a91ce2471461b3e5ed5468e15926e7c2359cb21368323a168f9c8fffbb5932",
+    "guided_schema_valid_cases": 3,
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "inference_rerun": false,
+    "evidence": [
+      "docs/healthtech/audits/ht-o3-local-model-preflight-20261031/generation-canary.json",
+      "docs/healthtech/audits/benchmark-expansion-20261101/CHECKPOINT_V16_CURRENT_HEAD_QWEN_REBIND.json"
+    ]
+  },
+  "o3_api": {
+    "status": "BLOCKED_LOCAL",
+    "provider_calls": 0,
+    "paid_cost_usd": 0.0,
+    "missing_gates": [
+      "canonical R1 journal and current reconciled credit",
+      "fresh route/pricing/parameter evidence",
+      "outbound rights and writer-quiescence evidence"
+    ]
+  },
+  "resource_mutations": {
+    "new_gpu_job": false,
+    "new_api_call": false,
+    "new_dataset_download": false,
+    "ledger_mutation": false,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "next_action": "Keep API closed; owner-review the rebind and continue only offline/manuscript work or newly exposed authorized gates."
+}

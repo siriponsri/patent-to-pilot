@@ -1,0 +1,18 @@
+{
+  "format": "ptp-checkpoint-v1",
+  "checkpoint": "ptp-resume-e2-current-r1-20261104",
+  "goal_reused": true,
+  "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+  "status": "PARTIAL_NOT_COMPLETE",
+  "engineering": "COMPLETE_CURRENT_HEAD_OFFLINE_WITH_DIRTY_RELEASE_BOUNDARY",
+  "scientific_evidence": "PARTIAL_DESCRIPTIVE_NOT_ESTIMABLE",
+  "business_validation": "PARTIAL_SCENARIO_ONLY_EXTERNAL_NOT_RUN",
+  "manuscript": "PARTIAL_OWNER_REVIEW_WPI_GUIDE_UNVERIFIED",
+  "paid_api": "BLOCKED_BEFORE_RESERVATION_CURRENT_SCOPED_CREDIT_UNAVAILABLE",
+  "focused_tests": "31 passed; 0 failed; 0 errors; 0 skipped",
+  "journal": "E2 integrity ok; 0 operational attempts; 0 pending/unknown; 4 legacy settled; USD0.0001464 preserved; prospective USD1; unknown history preserved",
+  "metadata": "HTTP 200; ordinary non-management key; scoped credit and remaining limit unavailable",
+  "resource_mutations": "provider 0; reservations 0; attempts 0; retries 0; GPU jobs 0; datasets 0; ledger mutations 0; budget/window reset false",
+  "goal_closed": false,
+  "resume": "After one non-secret scoped credit/limit snapshot exists, reconcile E2, refresh route pricing inside 300 seconds, revalidate the rights-cleared pack, and reserve at most the existing USD0.25 canary."
+}
