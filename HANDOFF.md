@@ -1,0 +1,229 @@
+# Patent-to-Pilot HealthTech Handoff
+
+Status: `PAUSED_BY_OWNER_AFTER_MAIN_HANDOFF`
+
+Observed: 2026-11-04, Asia/Bangkok
+
+Repository: `C:/Users/User/Desktop/myProject/patent-to-pilot`
+
+This file is the resumable handoff for the existing Patent-to-Pilot goal. It records what is verified, what is still partial or blocked, which artifacts are authoritative, and which local worktrees must not be removed without preserving their uncommitted work. It is not a claim that the research goal, business validation, or journal submission is complete.
+
+## 1. Objective and scope
+
+The goal is to deliver a usable Patent-to-Pilot HealthTech evidence workflow and a reproducible computational study suitable for owner review and possible submission to *World Patent Information*. The current study concerns device-patent known-link recovery and adaptive evidence acquisition under incomplete judgments.
+
+The current round is a solo reproducible computational study. There are no external participants, no recruitment route, and no independent customer validation. Human pilot work, revenue, willingness-to-pay, and ROI are future work unless separately measured. A three-case product demonstration is engineering evidence only; it is not a powered scientific evaluation and is not user validation.
+
+The product claim remains bounded: prepare an inspectable evidence dossier for an entrepreneur or investment analyst starting from a named public medical device or comparator. A retrieved candidate is not automatically a disclosed link. A literal field or quote match establishes source integrity only; it does not establish semantic entailment, clinical suitability, FTO, patent validity, regulatory approval, or investment merit.
+
+## 2. Repository and revision state
+
+The main checkout was clean before this handoff-document change.
+
+- Repository: `C:/Users/User/Desktop/myProject/patent-to-pilot`
+- Branch: `main`
+- Main HEAD before this documentation update: `686f8338c4b288cfe706ae16f4aae8f885b81ebb`
+- `origin/main` before this documentation update: `686f8338c4b288cfe706ae16f4aae8f885b81ebb`
+- Source merge already tested: `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`
+- Candidate integration commit: `a71d808`
+- Preserved owner-main commit: `f77c502`
+- Prior handoff documentation commit: `7e8fd1a`
+- Final documentation-update commit: record with `git rev-parse HEAD` after this file is committed and pushed.
+
+The intended final check is:
+
+```powershell
+rtk git status --short --branch
+rtk git rev-parse HEAD
+rtk git rev-parse origin/main
+rtk git rev-list --left-right --count main...origin/main
+```
+
+Expected result after push: a clean `main`, identical local and remote SHA, and `0 0` ahead/behind.
+
+## 3. Verified delivery boundary
+
+### Engineering: COMPLETE for the current offline scope
+
+The merged implementation covers the current offline engineering contract:
+
+- local HTTP/UI path;
+- retrieval and evidence projection;
+- source inspection;
+- edit, save, reopen, and history behavior;
+- JSON and Markdown export;
+- local generation and guarded accounting paths;
+- candidate-bound regression coverage.
+
+Recorded verification from the canonical merge audit:
+
+- Python regression: exit `0`;
+- exact candidate-bound receipt: `655 passed, 2 skipped`;
+- frontend unit tests: `73 passed, 1 optional skip`;
+- HealthTech JSON receipts parsed: `964`;
+- source merge-marker scan: clean;
+- non-audit `git diff --check`: clean.
+
+This is an engineering statement for the current implementation and receipts. It is not a scientific or commercial completion claim.
+
+### Scientific evidence: PARTIAL
+
+The following remain incomplete or limited:
+
+- no admissible final semantic device-patent holdout is bound to the current final study;
+- no powered comparison has established adaptive superiority;
+- no paid local/API matched comparison was completed;
+- historical PatEmbed and multilingual-e5 artifacts are runtime-bound evidence and must not be silently reinterpreted as a new current-head run;
+- Stryker material remains previously exposed diagnostic material, not final gold;
+- DAPFAM is diagnostic and is not a semantic device-patent gold standard;
+- unlisted links remain unjudged, not negative;
+- known-link recall is not exhaustive recall or a lower bound on exhaustive recall.
+
+The manuscript must keep fixed-budget, multi-query, simple-adaptive, and bounded-LLM controls distinct and must freeze cohort, splits, eligible queries, cutoffs, grouping, failure rules, endpoints, and budget controls before any final comparison.
+
+### Business value: PARTIAL, solo proxy and scenario only
+
+Observed engineering quantities may support a practical-potential discussion:
+
+- citation quality and locator integrity;
+- evidence coverage within the declared corpus;
+- machine/GPU time;
+- latency;
+- recorded provider cost where an actual receipt exists;
+- dossier completion and correction burden in the developer workflow.
+
+The current evidence does not support claims of independent user validation, revenue, willingness-to-pay, customer demand, ROI, or production labor cost. Any labor-rate or volume assumption must remain a scenario or sensitivity analysis and must be labelled as such.
+
+### Manuscript and WPI: PARTIAL
+
+Draft manuscript, methods, figures/tables, references, appendix material, data/code availability language, ethics, funding, conflicts, author contributions, AI-use disclosure, cover letter, and checklist artifacts exist in the repository. Owner review remains required. Official journal-specific Aims and Scope and Guide for Authors details were not fully verified in the local environment, and no manuscript was submitted or accepted.
+
+## 4. Paid/API state
+
+No paid call, reservation, retry, GPU rerun, dataset download, ledger mutation, budget reset, or time-window reset was performed in the merged-main handoff.
+
+Canonical ledger:
+
+`%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3`
+
+Known ledger state:
+
+- SQLite integrity: `ok`;
+- legacy settled receipts: `4`;
+- known actual spend: `USD0.0001464`;
+- operational attempts: `0`;
+- pending or unknown operational attempts: `0`;
+- prospective E2 allowance recorded in the handoff: `USD1`;
+- unknown history: preserved and not silently treated as zero.
+
+The previous credit snapshot was stale for the 300-second live gate. The paid branch therefore stopped before reservation. Do not create a zero ledger, reset the epoch, resend an unknown request, or edit an observation timestamp.
+
+If paid work is explicitly resumed, the smallest required gate is one fresh non-secret credit snapshot for the existing dispatch key, current exact-route pricing observed in the same admission window, verified export rights, and a single bounded canary through the canonical ledger. The key must never be read from or printed from `.env` in logs or documentation.
+
+## 5. Evidence map
+
+Read these artifacts in this order when resuming:
+
+1. `AGENTS.md`
+2. `GOAL.md`, sections 0-4
+3. `PLAN.md`
+4. `docs/healthtech/progress.json`
+5. `memory/next-actions.md`
+6. `docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json`
+7. `docs/healthtech/audits/ptp-main-merge-handoff-20261104/README.md`
+8. `docs/healthtech/audits/ptp-main-merge-handoff-20261104/verification.json`
+9. `docs/healthtech/audits/ptp-main-merge-handoff-20261104/CHECKPOINT.json`
+
+Key source and product areas:
+
+- `src/patent_to_pilot/healthtech/` for the current HealthTech runtime;
+- `src/patent_to_pilot/providers/` for provider identity, history, credit, and ledger boundaries;
+- `scripts/healthtech/` for reproducible runners and audit tools;
+- `tests/` for regression and handoff-bound evidence;
+- `frontend/healthtech-web/` for the local UI and browser-facing adapters;
+- `docs/healthtech/research/manuscript/` for the manuscript package;
+- `docs/healthtech/audits/` for canonical receipts and continuation records.
+
+Private artifacts, credentials, restricted corpora, model weights, and local owner evidence are not publication inputs merely because they exist on disk. Publish only permitted links, identifiers, hashes, and authored fixtures.
+
+## 6. Local branch and worktree inventory at handoff
+
+The following inventory was observed before cleanup. A blank status after the branch line means the worktree had no reported tracked or untracked changes at inspection time. Dirty worktrees contain uncommitted work and must not be removed without an explicit decision to discard or archive that work.
+
+Clean or apparently clean at inspection:
+
+- `claude/healthtech-ux-local-20261028` at `7ca0f2eab4a157d208fe0b9b949b83814e4fbcb2`, worktree `_worktrees/patent-to-pilot-claude-ux-20261028`, remote marked gone;
+- `codex/remote-embeddings-20261030` at `68219d78ec0de4c6ffab7fdbc2c79bcacbf612cf`, worktree `_worktrees/patent-to-pilot-codex-remote-embeddings`;
+- `codex/luna-publication-20261030` at `bf416e9ab6b6d2d031e885d4b6bb0a2d08bf9ebc`, worktree `_worktrees/patent-to-pilot-luna-publication-20261030`;
+- `codex/research-product-o1-20261031` at `257037ab349ec88e5600c074deccfc8a62fe5fc2`, worktree `_worktrees/patent-to-pilot-o1-20261031`, with one untracked browser artifact and therefore not fully clean;
+- `codex/pepo-ui-integration-20261031` at `0d049802d36bc2eebe60331ec444d62469fd767f`, worktree `C:/Users/User/Documents/Codex/2026-10-31/task/ptp-integration`;
+- `codex/pepo-paused-audit-20261101` at `a0809b4b124a6e19b8aea58c4258397aa60715df`, worktree `C:/Users/User/Documents/Codex/2026-11-01/task-3/publish-http`.
+
+Dirty or containing uncommitted work at inspection:
+
+- `codex/patent-to-pilot-long-run-20261031` at `0cf41e0d37cac75bc9475c8604ab3dabb5c5fd66`, worktree `_worktrees/patent-to-pilot-long-run-20261031`; this contains broad source, test, audit, manuscript, and benchmark changes;
+- `codex/r1-owner-evidence-20261031` at `f826069dddb74d4df9ca820a33c07355bec8b357`, worktree `_worktrees/patent-to-pilot-o3-safety-repair-20261031`; this contains manuscript, benchmark, audit, test, and protocol changes;
+- `codex/pepo-unblock-remote-20261030` at `a0ec9ceaf381ebbce6e6c340a8b420189eb8474c`, worktree `_worktrees/patent-to-pilot-pepo-unblock-20261030`; this contains source, tests, and audit changes;
+- `codex/research-product-o1-o4-20261031` at `b4bc13ccf8a9a71a8f50d16346ae1c6557bc69d0`, worktree `_worktrees/patent-to-pilot-research-product-20261031`; this contains benchmark, manuscript, business-value, test, and audit changes.
+
+The cleanup request is therefore split by safety boundary:
+
+- clean, unused worktrees and their local branches may be removed after the push check;
+- dirty worktrees must remain until their owner explicitly authorizes discard or a recoverable archive is created;
+- no `reset --hard`, `checkout --`, `clean -fd`, force push, ACL change, safe-directory change, or deletion of `.git` data is allowed.
+
+## 7. Resume instructions for Claude
+
+When resuming, treat `main` and the canonical audit files as the current control plane. Do not combine receipts from different heads into one PASS. A receipt is admissible only when its candidate revision, inputs, configuration, and output hashes match the claim being made.
+
+First perform:
+
+```powershell
+rtk git status --short --branch
+rtk git rev-parse HEAD
+rtk git rev-parse origin/main
+Get-Content -Raw AGENTS.md
+Get-Content -Raw GOAL.md
+Get-Content -Raw PLAN.md
+Get-Content -Raw docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json
+```
+
+Then choose one independent package:
+
+1. Offline manuscript and protocol consistency checks.
+2. Evaluation packaging with frozen splits, budgets, and leakage controls.
+3. Product evidence/source inspection/export improvements that remain within the current offline contract.
+4. Paid admission only after the fresh credit and exact-route pricing gates pass.
+
+Do not rerun completed GPU work merely to refresh a receipt. Do not use the FDA-only canary as the main scientific result. Do not turn schema validity into content or retrieval validity. Do not claim user validation, revenue, willingness-to-pay, or ROI without measured evidence. Do not submit a paper or accept publisher terms for the owner.
+
+## 8. Stop conditions and unresolved permissions
+
+Stop and report when:
+
+- a paid request lacks a fresh credit snapshot or current price;
+- account/key binding is not reconciled;
+- a request may have unknown billing state;
+- source or dataset rights are unclear;
+- an artifact is restricted or contains secrets;
+- a worktree is owned by another writer and contains dirty changes;
+- a result would require merging different candidate heads;
+- a claim would exceed the declared cohort, gold, or evaluation design.
+
+The next actor must preserve the existing ledger and historical receipts. The next actor must not manufacture a zero baseline, change timestamps, reopen a completed offline queue, or delete dirty worktrees merely to make the repository look clean.
+
+## 9. Handoff outcome
+
+Engineering: `COMPLETE_CURRENT_OFFLINE_SCOPE`
+
+Scientific evidence: `PARTIAL`
+
+Business validation: `PARTIAL_SOLO_PROXY_ONLY`
+
+Manuscript/WPI readiness: `PARTIAL_OWNER_REVIEW_REQUIRED_NOT_SUBMITTED`
+
+Paid API: `BLOCKED_BEFORE_RESERVATION_STALE_CREDIT`
+
+Repository handoff: `READY_FOR_REVIEW`
+
+Owner pause instruction: stop this goal after the main push and cleanup attempt. Resume only from this file and the canonical audit records; do not open a new goal for the same work.
