@@ -121,6 +121,6 @@ Business validation: partial; solo developer proxy/scenario only.
 
 Manuscript/WPI: partial; owner review and journal-specific checks remain; not submitted.
 
-Paid API: blocked before reservation by stale credit evidence.
+Paid API: owner-authorized E2 canary passed on 2026-11-04 (3/3 settled, USD 0.00054516; `docs/healthtech/audits/ptp-e2-paid-canary-20261104T1354Z/`). This is engineering evidence only. Further paid work needs new owner authorization and a new 300-second admission window.
 
 Do not close the research goal because tests or a canary pass. Do not open a second goal for the same Patent-to-Pilot work.

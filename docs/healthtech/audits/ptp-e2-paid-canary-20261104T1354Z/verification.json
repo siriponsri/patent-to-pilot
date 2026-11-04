@@ -1,0 +1,97 @@
+{
+  "format": "ptp-e2-paid-canary-verification-v1",
+  "run_id": "ptp-e2-paid-canary-20261104T1354Z",
+  "status": "PASS",
+  "status_scope": "Engineering/accounting canary: 3 of 3 frozen cases returned schema-valid output with settled billing. Not a scientific result, not content correctness, not semantic entailment.",
+  "authorization": {
+    "source": "owner chat instruction, 2026-11-04",
+    "scope": "paid qwen/qwen3-32b via DeepInfra, cases HT-DEV-MITRACLIP, HT-DEV-TENDYNE, HT-DEV-TRICLIP only, USD1 cap, existing E2 ledger; no retry, GPU, long run, worktree, ledger reset or push",
+    "authorization_id": "PTP-HT-OR-E2-20261103-USD100"
+  },
+  "repository": {
+    "branch": "main",
+    "head_at_dispatch": "e948cd5",
+    "worktree_clean_at_dispatch": true,
+    "worktree_created": false
+  },
+  "window": {
+    "opened_utc": "2026-11-04T13:54:32.923024Z",
+    "pricing_snapshot_utc": "2026-11-04T13:54:59.200703Z",
+    "dispatch_start_utc": "2026-11-04T13:55:07.520429Z",
+    "dispatch_end_utc": "2026-11-04T13:55:51.477198Z",
+    "age_at_dispatch_seconds": {"credit": 34.6, "pricing": 8.3},
+    "max_age_seconds": 300,
+    "window_closed_within_seconds": 78.6
+  },
+  "gates": {
+    "writer_quiescence": {"status": "PASS", "evidence": "no python/git process on the repo or private tree; HEAD e948cd5 and clean tree; ledger hash d0041eda...b8c1d2 and no SQLite sidecars immediately before dispatch; private tree unchanged for 2 h. Codex app-server processes were running but not writing."},
+    "fresh_account_credit": {"status": "PASS", "channel": "OpenRouter MCP get-credits (approved_integration)", "total_credits_usd": 10, "total_usage_usd": 0.0001464, "remaining_usd": 9.9998536},
+    "same_window_pricing": {"status": "PASS", "channels": ["public GET /api/v1/models/qwen/qwen3-32b/endpoints", "MCP list-model-endpoints"], "route": "DeepInfra deepinfra/fp8", "prompt_usd_per_million": 0.08, "completion_usd_per_million": 0.28, "context_length": 40960, "max_price_enforced": true},
+    "dispatch_key_scope": {"status": "PASS", "collector": "scripts/healthtech/collect_openrouter_metadata.py (GET /api/v1/key, non-billable)", "key_scope": "sha256:7cbe4013fd1c43bb8096135bc6e4ed9a0befb7607ebe820bcfcb2c33544d7b97", "creator_user_id_sha256_match": true, "workspace_id_sha256_match": true, "is_management_key": false, "key_limit_state": "UNLIMITED", "key_usage_before_usd": "0.0001464"},
+    "credit_join": {"status": "PASS", "function": "providers/credit_from_metadata.py", "credit_snapshot_sha256": "dfc5aee7abd8d53748a2a2ea087ba9a3ccba14da5c2a3589072a221a6d28fa13", "account_scope_bound": "owner-asserted-account:7cbe4013fd1c43bb8096135bc6e4ed9a0befb7607ebe820bcfcb2c33544d7b97", "account_scope_note": "Existing owner_credit_capture naming convention kept; account identity additionally matched by hashed creator/workspace IDs from both keys."},
+    "rights_payload_identity": {"status": "PASS", "pack_sha256": "e146ab85db3792c3028e9becb0d71ea645a0cd0cfe426a9233622496e7aef489", "manifest_sha256": "b9b0d1fea5c8d7c6e34801053034526103fca77d5c6b992fb29a008b64f57d28", "decision": "ALLOWED_WITH_ATTRIBUTION", "check": "fresh dry-run message/payload hashes equal preparation-receipt.json for all 3 cases"}
+  },
+  "run": {
+    "runner": "scripts/healthtech/run_openrouter_generation_evidence_pack.py --mode live (existing adapter; retries=0 enforced by policy; exact route, no fallback)",
+    "status": "PASS_API_QWEN3_32B_FROZEN_PACK_GENERATION",
+    "provider_calls": 3,
+    "retries": 0,
+    "reasoning_tokens": 0,
+    "thinking": false,
+    "max_output_tokens": 512,
+    "conservative_run_bound_usd": 0.001798508,
+    "paid_cost_usd": 0.00054516,
+    "billing_complete": true,
+    "cases": [
+      {"case_id": "HT-DEV-MITRACLIP", "status": "SUCCESS", "schema_valid": true, "input_tokens": 1017, "output_tokens": 363, "latency_seconds": 14.414, "cost_usd": 0.000183, "billing_state": "settled", "provider_generation_id": "gen-1793800511-yIZD7nqvCbKxrUwz6eVE", "output_sha256": "15748ae0d47b5e02816f9349c290aafeb91538eccb73b54756aac57bebc11058"},
+      {"case_id": "HT-DEV-TENDYNE", "status": "SUCCESS", "schema_valid": true, "input_tokens": 1036, "output_tokens": 356, "latency_seconds": 16.546, "cost_usd": 0.00018256, "billing_state": "settled", "provider_generation_id": "gen-1793800526-hWAgcboFTBMntONwEwro", "output_sha256": "81ef64428bbcdeab9a8a2473d7fc5dd5f0ea81ac0fa09f1a9e7ac1d71dbf60ec"},
+      {"case_id": "HT-DEV-TRICLIP", "status": "SUCCESS", "schema_valid": true, "input_tokens": 1020, "output_tokens": 350, "latency_seconds": 11.888, "cost_usd": 0.0001796, "billing_state": "settled", "provider_generation_id": "gen-1793800540-zEsrzdU817YVLfpyi61y", "output_sha256": "5ab714084b8f3e1a9b88f5e6e69920ad455097ee820ad38968bf88f3e6a35d27"}
+    ],
+    "totals": {"input_tokens": 3073, "output_tokens": 1069, "total_tokens": 4142, "sum_latency_seconds": 42.848, "wall_seconds": 43.957}
+  },
+  "reconciliation": {
+    "mcp_get_credits_after": {"total_credits_usd": 10, "total_usage_usd": 0.00069156, "delta_usd": 0.00054516, "matches_run_cost": true},
+    "mcp_get_generation_sample": {"id": "gen-1793800511-yIZD7nqvCbKxrUwz6eVE", "provider": "DeepInfra", "model": "qwen/qwen3-32b-04-28", "total_cost_usd": 0.000183, "native_tokens_prompt": 1017, "native_tokens_completion": 363, "native_tokens_reasoning": 0, "finish_reason": "stop", "provider_responses": 1, "matches_receipt": true}
+  },
+  "ledger": {
+    "path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+    "sha256_before": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2",
+    "sha256_after": "d19f58ec351f0b2f44a7a28189f685b0d017c81069d2668d4d01c18e9c6c237f",
+    "integrity_after": "ok",
+    "attempts_after": {"settled": 3},
+    "unknown_or_pending": [],
+    "budget_epoch_scope_rows_after": 1,
+    "legacy_receipts": 4,
+    "actual_total_usd_including_legacy": 0.00069156,
+    "e2_epoch_cap_usd": 1.0,
+    "e2_epoch_remaining_usd": 0.99945484,
+    "dispatch_blocked_after": false,
+    "reset": false
+  },
+  "private_artifacts": {
+    "location": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-e2-paid-canary-20261104T1354Z/",
+    "sha256": {
+      "account-observation.json": "eb6bd6e75cfb28691a9af614b61f4917e234014e2531ac3d1380e50f9806b16f",
+      "credit-snapshot.json": "4e9a623d6d4113bb6c244dfcb11f10c6480f8ae535130099ec4b9b4bcc132971",
+      "dry-run.json": "72ea7bb2505a0f1010b6e221674065edaa677754f893805146ea1e7dbb0c6703",
+      "gates.json": "bc5e2fa78bb895f4308a2d0ed79a8e3cf1213767c62f4505875fa9a1ecf299d6",
+      "key-observation.json": "c97ead63510d493f41ec45ce8acfb043abf301af9b135c40c2e4fba2fffeb518",
+      "model-snapshot.json": "183bafe1cd556f88f7d83ed2306212914ca2e99069e834472904d1a7eb20ca45",
+      "public-endpoint-observation.json": "cd194fe56e562e0d74a0c34612e1c10468efacee71937d35e71b2a6f668ae149",
+      "public-endpoint-raw.json": "19378ff6d8407035e475cb2171eb54783861bb85607ec4439ca839da57d30c05",
+      "receipt.json": "0c21215445be27bf5489d617c4fcd4c8756664cbc4bdcff6ec9181e84a8a7543"
+    },
+    "private_case_journal": {"location": "%LOCALAPPDATA%/PatentToPilot/healthtech/evidence/api-generation/ptp-e2-paid-canary-20261104T1354Z.jsonl", "sha256": "5884e20cf4da3409c8fc0948ef5127e814ae56fac1f9be27c8ff5979dd554298", "lines": 4, "contains": "generated output text; stays local, not in Git"}
+  },
+  "published_here": {
+    "sanitized-receipt.json": "0c21215445be27bf5489d617c4fcd4c8756664cbc4bdcff6ec9181e84a8a7543 (identical to the private runner receipt; generated text and messages removed by write_sanitized_receipt)",
+    "e2_window.py": "c1968eb20fd42e84d0d9b1cc188b6ad8f78038319326808a54d8f43bfb55dd0a (the exact gate+dispatch script that ran; reads no key itself)"
+  },
+  "commands": [
+    {"cmd": "MCP get-credits; MCP list-model-endpoints {qwen, qwen3-32b}", "utc": "2026-11-04T13:54:33Z", "exit": 0},
+    {"cmd": "python e2_window.py 2026-11-04T13:54:32.923024+00:00 10 0.0001464 20261104T1354Z", "exit": 0},
+    {"cmd": "MCP get-credits (post-run); MCP get-generation gen-1793800511-yIZD7nqvCbKxrUwz6eVE", "exit": 0}
+  ],
+  "not_done": ["no retry", "no GPU job", "no long run", "no worktree", "no ledger reset", "no push"],
+  "secrets_recorded": false
+}

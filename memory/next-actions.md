@@ -8,6 +8,14 @@
 
 This Normal round is a documentation/test audit on `main`, not a goal continuation. The older candidate and continuation queue remain historical references; no current READY package is opened here. Platform Luna state remains unverified; this file does not resume a runtime goal.
 
+## HT-NEXT-265 — 2026-11-04 E2 paid canary
+
+Status: `PASS_E2_PAID_CANARY_ENGINEERING_ONLY`; canonical audit: `../docs/healthtech/audits/ptp-e2-paid-canary-20261104T1354Z/README.md`.
+
+With owner authorization, all admission gates passed in one window, with credit 34.6 s and pricing 8.3 s old at dispatch. The gates covered dispatch-key scope, hashed account binding, MCP credit, exact DeepInfra pricing, rights/payload identity, and writer quiescence. `qwen/qwen3-32b` then ran the 3 frozen cases through the existing runner and canonical ledger: 3/3 schema-valid, 3 settled, 0 retries, 4142 tokens, 42.85 s summed latency, USD 0.00054516. MCP account usage confirms the same amount. The E2 epoch has USD 0.99945484 remaining. This is engineering evidence, not a scientific result.
+
+Next: review the private outputs for source integrity. Any further paid work needs new owner authorization and a new window.
+
 ## HT-NEXT-264 — 2026-11-04 Normal MCP admission check
 
 Status: `PARTIAL_READ_ONLY_GATES_PASS_PAID_BLOCKED_KEY_SCOPE`; canonical audit: `../docs/healthtech/audits/ptp-normal-mcp-admission-check-20261104/README.md`.

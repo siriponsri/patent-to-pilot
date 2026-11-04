@@ -16,6 +16,8 @@ The canonical evidence for this round is `NORMAL_ROUND_20261104.md` plus `normal
 
 Follow-up read-only check (2026-11-04T13:31–13:36Z): `docs/healthtech/audits/ptp-normal-mcp-admission-check-20261104/`. OpenRouter MCP account credit, exact-route pricing, account binding (hashed creator/workspace match), rights, writer quiescence, the E2 ledger, and dr-train SSH all passed. Paid admission remains blocked because the MCP key is not the dispatch key: the ledger needs a fresh key-scoped observation of `sha256:7cbe4013…`, plus owner authorization. A one-character erratum in the recorded normalized credit hash was fixed in all five affected files, with owner approval (correct value `…80408f9e9a5f06c5d`).
 
+E2 paid canary (owner-authorized, 2026-11-04T13:54–13:56Z): `docs/healthtech/audits/ptp-e2-paid-canary-20261104T1354Z/`. Status is PASS as engineering/accounting evidence: 3/3 schema-valid, 3 settled attempts, 0 retries, USD 0.00054516 total, reconciled with MCP account usage. The ledger is now `d19f58ec…`, and the E2 epoch has USD 0.99945484 remaining. The paid API state is no longer "blocked before reservation". Any further paid work needs a new owner authorization and a new 300-second admission window.
+
 ## 1. Objective and scope
 
 The goal is to deliver a usable Patent-to-Pilot HealthTech evidence workflow and a reproducible computational study suitable for owner review and possible submission to *World Patent Information*. The current study concerns device-patent known-link recovery and adaptive evidence acquisition under incomplete judgments.
@@ -255,7 +257,7 @@ Business validation: `PARTIAL_SOLO_PROXY_ONLY`
 
 Manuscript/WPI readiness: `PARTIAL_OWNER_REVIEW_REQUIRED_NOT_SUBMITTED`
 
-Paid API: `BLOCKED_BEFORE_RESERVATION_STALE_CREDIT`
+Paid API: `PASS_E2_CANARY_3_OF_3_USD0.00054516` (engineering only; see `ptp-e2-paid-canary-20261104T1354Z`); further paid work needs new owner authorization
 
 Repository handoff: `READY_FOR_REVIEW`
 
