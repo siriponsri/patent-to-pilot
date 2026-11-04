@@ -4,7 +4,8 @@
 - Observed: `2026-11-04T12:15:46.2028916Z`
 - Repository: `C:/Users/User/Desktop/myProject/patent-to-pilot`
 - Branch: `main`
-- Final local HEAD: `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`
+- Tested source merge HEAD: `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`
+- Handoff-document commit: `7e8fd1a`
 
 ## Outcome
 
@@ -15,7 +16,8 @@ pre-existing owner handoff in a separate commit:
 - Preserved main-owner commit: `f77c502`
 - Merge commit: `26be1c1`
 
-Current status is **merged, locally verified, and ready to push**. This is not
+Current status is **merged, locally verified, and ready to push**. The current
+`main` HEAD includes the docs-only handoff commit above. This is not
 an overall goal-complete claim.
 
 | Area | Status | Boundary |

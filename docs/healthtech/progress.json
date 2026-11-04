@@ -2733,6 +2733,9 @@
                                                        "remote_before_push":  "ahead 78 behind 0",
                                                        "protected_worktrees":  "preserved",
                                                        "next":  "Push main, then delete only verified-clean unused temporary worktrees; retain Claude/Luna/owner worktrees and dirty research work",
-                                                       "handoff":  "docs/healthtech/audits/ptp-main-merge-handoff-20261104/README.md"
+                                                       "handoff":  "docs/healthtech/audits/ptp-main-merge-handoff-20261104/README.md",
+                                                       "tested_source_merge_head":  "26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09",
+                                                       "handoff_document_commit":  "7e8fd1a",
+                                                       "main_head_after_handoff_docs":  "7e8fd1a"
                                                    }
 }
