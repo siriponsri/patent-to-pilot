@@ -10,6 +10,7 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
   - PatEmbed-claim MRR 0.933 vs BM25 0.845 (Δ +0.088, CI +0.058 to +0.120);
   - RRF hybrid was worse than dense alone (Δ −0.020, CI −0.038 to −0.004);
   - the cascade matched the hybrid with 57% escalation but did not beat dense alone.
+- The PI4PC paragraph-level replication (freeze `1665075`) did **not** replicate the dense advantage (Δ +0.003, CI −0.017 to +0.022). Fusion beat dense there (Δ +0.014, Holm p = 0.042), and the cascade missed its tolerance. The best fixed policy depends on task granularity.
 - Track B: canary content audit 9/9 literal-correct. The device known-link cohort stays descriptive.
 - Spending this round: USD0 in paid calls and about 289 s of V100 encoding. The E2 ledger is unchanged since the canary (USD0.99945484 left under the code-enforced USD1; the owner allowance is USD10).
 - Next steps: [NEXT_ACTIONS](docs/healthtech/audits/ptp-wpi-research-package-20261104/NEXT_ACTIONS.md). Owner decisions: [READINESS](docs/healthtech/audits/ptp-wpi-research-package-20261104/READINESS.md).

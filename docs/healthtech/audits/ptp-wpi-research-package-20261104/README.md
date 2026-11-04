@@ -3,7 +3,8 @@
 - Run ID: `ptp-wpi-research-package-20261104`
 - Plan: [PTP_JOURNAL_LONG_RUN.md](../../long-runs/PTP_JOURNAL_LONG_RUN.md), with the owner amendments of 4 November 2026: E2 allowance USD 10 cumulative, push to `origin/main` allowed after a verified package, dr-train V100 compute.
 - Checkout: existing `main`. Start HEAD `85f7b72`, clean. Preregistration commit `ff603bb`. No worktree, reset or ledger change.
-- Paid calls this round: **0**. GPU: about 289 s of V100 encoding on dr-train under the existing approved slot and lock.
+- Paid calls this round: **0**. GPU: about 1,204 s of V100 encoding on dr-train (289 s for PAR4PC and 915 s for PI4PC) under the existing approved slot and lock. No jobs remain running.
+- Commits: `ff603bb` (PAR4PC freeze), `9325185` (PAR4PC results), `1665075` (PI4PC freeze), then the PI4PC results commit.
 
 ## Outcome by work package
 
@@ -48,6 +49,30 @@ Preregistered paired contrasts on MRR, using an application cluster bootstrap wi
 - On test, PatEmbed-full scored slightly above the validation-selected PatEmbed-claim. The selection was not changed.
 
 `p < 0.0001` means no bootstrap resample crossed zero; that is the resolution limit of 10,000 resamples.
+
+## Replication on PI4PC (paragraph level, separate freeze at commit `1665075`)
+
+Same methods and selection rules ([addendum](../../research/PI4PC_REPLICATION_PROTOCOL_20261104_EN.md)). On validation, the rules selected BM25-claim, e5-claim as the dense ranker, and τ = 0.0735. Test: 3,402 rows, 306 applications, 0 failures. BM25-full row-micro Hit@1 0.4012346 reproduces the earlier receipt exactly.
+
+| Method | MRR | Hit@1 | Recall@3 | nDCG |
+|---|---:|---:|---:|---:|
+| BM25-full | 0.6298 | 0.4080 | 0.8296 | 0.7584 |
+| BM25-claim | 0.6252 | 0.3971 | 0.8314 | 0.7527 |
+| PatEmbed-full | 0.6074 | 0.3786 | 0.8072 | 0.7424 |
+| PatEmbed-claim | 0.6228 | 0.3986 | 0.8120 | 0.7518 |
+| e5-full | 0.6017 | 0.3731 | 0.7981 | 0.7375 |
+| **e5-claim (selected)** | 0.6327 | 0.4144 | 0.8295 | 0.7564 |
+| Hybrid RRF | **0.6467** | 0.4289 | 0.8415 | 0.7675 |
+| Cascade (19.1% escalated) | 0.6339 | 0.4091 | 0.8312 | 0.7594 |
+
+| Contrast (MRR) | Δ | 95% CI | raw p | Holm p | Reading |
+|---|---:|---|---:|---:|---|
+| C1 dense − BM25-full | +0.0028 | [−0.0166, +0.0220] | 0.79 | 0.79 | **H1 not replicated**: no detectable difference |
+| C2 hybrid − BM25-full | +0.0169 | [+0.0017, +0.0318] | 0.030 | 0.061 | Small gain; not significant after Holm |
+| C3 hybrid − dense | +0.0140 | [+0.0027, +0.0257] | 0.014 | 0.042 | **Opposite direction to PAR4PC**: fusion helped |
+| C4 cascade − hybrid | −0.0128 | [−0.0235, −0.0025] | — | — | **H4 failed**: outside the −0.01 tolerance |
+
+**Cross-task reading.** The dense advantage seen when ranking whole candidate documents (PAR4PC) did not carry over to choosing the examiner's paragraph within one cited document (PI4PC). There, lexical evidence stayed competitive and rank fusion was the best fixed policy. Whether fusion helps or hurts depends on the task. The margin cascade traded quality for cost on PI4PC. GPU encoding for PI4PC took about 915 V100-seconds; no paid calls were made.
 
 ## Engineering checks
 

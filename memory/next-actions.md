@@ -19,7 +19,9 @@ Status: `TRACK_A_COMPLETE_PREREGISTERED_TEST`; canonical audit: `../docs/healtht
   - the cascade stayed within 0.01 of the hybrid at 57% escalation but stayed below dense alone.
 - USD0 paid and about 289 s of V100 encoding.
 
-Next: PI4PC replication with its own freeze, matched local Qwen3-8B on the FDA pack, and a clean-clone rerun. Owner decisions on reframing, the Guide for Authors, license and declarations are in that audit's READINESS.md.
+The PI4PC replication (freeze `1665075`) did not replicate the dense advantage (+0.003, CI −0.017 to +0.022). Fusion beat dense (+0.014, Holm p = 0.042), and the cascade missed its tolerance. A further ~915 V100-seconds were used; USD0 was paid.
+
+Next: matched local Qwen3-8B on the FDA pack, a clean-clone rerun, and optionally a new preregistered granularity-aware policy. Owner decisions on reframing, the Guide for Authors, license and declarations are in that audit's READINESS.md.
 
 ## HT-NEXT-265 — 2026-11-04 E2 paid canary
 

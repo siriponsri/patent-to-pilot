@@ -6,7 +6,8 @@ Statuses: VERIFIED, PARTIAL, MISSING, NOT_APPLICABLE_WITH_REASON, CONTRADICTED.
 |---|---|---|---|---|---|---|---|---|
 | G-01 | Patent-central research question on an established benchmark | VERIFIED | `PAR4PC_RETRIEVAL_PROTOCOL_20261104_EN.md` | ff603bb | Closed 8-option task | — | — | no |
 | G-02 | Protocol and selections frozen before test | VERIFIED | `par4pc-freeze.json` (sha256 `4600ea36…`) | commit ff603bb | Lexical baseline previously exposed on test | — | — | no |
-| G-03 | Primary retrieval result with paired uncertainty | VERIFIED | `par4pc-test-results.json` | this round | Proxy labels; possible PatEmbed contamination | Optional: replicate on PI4PC or a second benchmark | — | no |
+| G-03 | Primary retrieval result with paired uncertainty | VERIFIED | `par4pc-test-results.json` | this round | Proxy labels; possible PatEmbed contamination | — | — | no |
+| G-03b | Replication on a second task | VERIFIED (mixed: not replicated) | `pi4pc-test-results.json`, freeze `1665075` | this round | Same dataset family (PANORAMA) | Optional: a benchmark outside PANORAMA | — | no |
 | G-04 | Negative/mixed findings reported | VERIFIED | README, manuscript §7.A | this round | — | — | — | no |
 | G-05 | Adaptive vs well-tuned fixed policy under cost | PARTIAL | C4 and the cascade curve | this round | The cascade beats only the hybrid on cost; it does not beat dense alone; a single τ rule | Exploratory: cascade→dense variant on validation only | — | no |
 | G-06 | Ablations (query formulation, encoder family, fusion) | VERIFIED | `par4pc-test-results.json` (all 8 methods) | this round | Single run per deterministic config | — | — | no |
