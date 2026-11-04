@@ -1,12 +1,28 @@
 # Next actions — HealthTech
 
-> **Latest same-goal handoff:** [MCP diagnosis and owner-side credit capture](../docs/healthtech/audits/pepo-mcp-credit-continuation-20261104/README.md). Helper is tested188/188; not run with real dashboard input. Await working same-account MCP or an owner-generated fresh credit snapshot, then perform existing admission checks promptly. Do not repeat old gates, recreate the goal/ledger or reopen completed offline packages.
+> **Current Normal-round handoff — 4 Nov 2026:** [E2 admission audit addendum](../docs/healthtech/audits/ptp-e2-admission-recheck-20261104/NORMAL_ROUND_20261104.md). Work only in the existing `main` checkout. Do not resume the goal, start a long run, create a worktree, refresh credit, dispatch/reserve paid work, push/merge, or clean branches/worktrees. Preserve the prior receipts and wait for a new owner goal prompt.
 
-> **Latest work order — 4 Nov 2026:** [key-limit repair](../docs/healthtech/audits/pepo-key-limit-repair-20261104/README.md). Prior offline queue remains COMPLETE. Do not repeat R1/key-limit requests. Next conditional action is fresh bound account credit -> offline v2 credit join -> current pricing/rights/E2 checks -> bounded paired API canary. If the existing MCP/binding is unavailable, request only that exact input once; no new goal, ledger or gate-only loop.
+> The MCP diagnosis, key-limit repair, and paid-admission instructions below are historical or future-gated records. They are not current commands for this round; the single future paid input remains one fresh non-secret credit snapshot after owner re-authorization.
 
 ## Current work order — 4 November 2026
 
-Resume the existing goal using [the tested handoff](../docs/healthtech/audits/pepo-resume-ready-20261104/README.md) and `CURRENT_ACCEPTANCE_MATRIX.json.continuation_work_queue`. G5–G7 offline continuation packages are complete on candidate `88dc40471cb9078f929c02bb893cfa1e364da841`; no current READY offline package remains. Installed candidate check is complete102/102; do not rerun without relevant source drift. Paid comparison alone waits for current scoped credit. Earlier "start", "not authorized", USD8/24h and global-gate wording below is historical, superseded by the current owner instructions and handoff. No merge/push/publication in this task. Platform Luna state remains unverified; this file does not resume a runtime goal.
+This Normal round is a documentation/test audit on `main`, not a goal continuation. The older candidate and continuation queue remain historical references; no current READY package is opened here. Platform Luna state remains unverified; this file does not resume a runtime goal.
+
+## HT-NEXT-264 — 2026-11-04 Normal MCP admission check
+
+Status: `PARTIAL_READ_ONLY_GATES_PASS_PAID_BLOCKED_KEY_SCOPE`; canonical audit: `../docs/healthtech/audits/ptp-normal-mcp-admission-check-20261104/README.md`.
+
+OpenRouter MCP works in Claude Code. Fresh account credit (USD10 total, USD0.0001464 used) and the DeepInfra `qwen/qwen3-32b` route price (USD0.08/0.28 per M, unchanged) were observed in one window. Account binding is verified by hashed creator/workspace IDs. Rights, writer quiescence, the read-only ledger (0 attempts, hash unchanged), and dr-train SSH also passed. Still blocked: the MCP key is not the dispatch key, so a key-scoped observation is still needed. A one-character erratum in the recorded normalized credit hash was fixed in five files (correct value `…80408f9e9a5f06c5d`).
+
+Next: only after a new owner goal prompt, follow that audit's `NEXT_ACTIONS.md`.
+
+## HT-NEXT-263 — 2026-11-04 Normal E2 audit correction
+
+Status: `PASS_LOCAL_NORMAL_AUDIT_PAID_BRANCH_STILL_PAUSED`; canonical audit: `../docs/healthtech/audits/ptp-e2-admission-recheck-20261104/NORMAL_ROUND_20261104.md`.
+
+The raw credit file hash was corrected to the hash of the actual private snapshot file, while the embedded normalized v2 content hash was retained and disambiguated. Explicit `UNLIMITED` semantics, UTC/timezone handling, E2 scope binding, pricing-age handling, rights-cleared payload checks, output-journal checks, and an empty-pre-reservation scope row were verified with offline fixtures and an isolated test ledger. The real ledger remained read-only and unchanged.
+
+Next: stop before fresh credit or paid admission. Owner must request the next goal prompt before any future credit refresh or live gate work.
 
 ## HT-NEXT-044 — 2026-11-04 MCP limit amendment and offline regression checkpoint
 

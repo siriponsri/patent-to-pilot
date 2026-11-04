@@ -24,12 +24,12 @@ Read root [GOAL.md](GOAL.md) sections 0–4, the selected HT-W in [PLAN.md](PLAN
 
 ## Permissions, privacy and release
 
-- Current owner task authorizes local migration, recoverable cleanup and a tested commit/push to `main`. This is not authorization for paid inference, deployment, clinical/human studies or external outreach.
+- Current Normal-round owner authorization is limited to inspection, local fixes, offline tests, and audit/handoff updates in the existing `main` checkout. Do not resume the goal, start a long run, dispatch or reserve paid work, push, merge, delete branches/worktrees, or create a new worktree in this round.
 - Never read/print `.env` or credentials, change ACL/auth/global hooks/tools, bypass access controls or touch unrelated projects. Use filesystem/shell for this task; browser/native UI belongs to concurrent AWS work.
 - Preserve provider identity, durable attempts, reservations, actual/unknown billing and existing budget journals. An offline count budget is not money. Future paid use must reuse the existing explicit adapter and ledger with conservative reservation and current exact authorization; never reset it for more attempts.
 - Scope memory to `research/patent-to-pilot`. No session-store access, automatic capture, cross-project memory or global configuration changes.
 - Keep original input pack unchanged. Third-party paper/data/code rights are separate. Publish source links/IDs/hashes and authored fixtures; do not stage paper PDFs, raw corpora, evaluator-only material or private local files.
-- Delete obsolete tracked files only after checking remote/history recovery; never reset/clean, force-push, prune/gc or delete `.git` packs. Do not destroy dirty-only changes, irreplaceable untracked data or sole-copy evidence. Keep exact recovery references and measured bytes for cleanup.
+- Cleanup is out of scope for this Normal round. Never reset/clean, force-push, prune/gc or delete `.git` packs. Do not destroy dirty-only changes, irreplaceable untracked data or sole-copy evidence. Keep exact recovery references and measured bytes for any separately authorized future cleanup.
 - Public repository visibility does not grant a code or dataset license. Do not invent one.
 
 ## Working and verification

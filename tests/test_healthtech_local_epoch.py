@@ -90,6 +90,19 @@ def test_bad_credit_consumes_no_attempt_or_scope(setup_epoch,observation):
     b.close()
 
 
+def test_empty_scope_row_is_valid_before_first_reservation(setup_epoch):
+    b = open_budget(setup_epoch)
+    try:
+        assert b.db.execute('SELECT COUNT(*) FROM budget_epoch_scope').fetchone()[0] == 0
+        reserve(b, 'first-valid')
+        assert b.db.execute('SELECT account_scope,key_scope FROM budget_epoch_scope').fetchone() == (
+            'synthetic-account', KEY_SCOPE
+        )
+        assert b.snapshot()['attempts'] == 1
+    finally:
+        b.close()
+
+
 def test_pending_recovery_blocks_replay_and_new_dispatch(setup_epoch):
     b=open_budget(setup_epoch);reserve(b);b.settle('one',None);b.close()
     b=open_budget(setup_epoch)

@@ -174,6 +174,27 @@ def test_account_credit_snapshot_is_sanitized_and_hash_bound():
         normalize_account_credit_snapshot(raw | {"snapshot_sha256": "0" * 64})
 
 
+def test_v2_unlimited_is_explicit_and_missing_is_rejected():
+    raw = {
+        "format": "ptp-openrouter-credit-snapshot-v2",
+        "provider": "openrouter",
+        "source": "owner_sanitized_snapshot",
+        "as_of_utc": "2026-11-04T11:21:09.628375Z",
+        "remaining_credits_usd": 10.0,
+        "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
+        "account_scope": "owner-asserted-account:fixture",
+        "key_scope": "sha256:" + "a" * 64,
+        "currency": "USD",
+        "key_remaining_usd": None,
+        "key_limit_unlimited": True,
+    }
+    normalized = normalize_account_credit_snapshot(raw)
+    assert normalized["key_limit_unlimited"] is True
+    assert normalized["key_remaining_usd"] is None
+    with pytest.raises(APIGenerationError, match="explicit unlimited"):
+        normalize_account_credit_snapshot(raw | {"key_limit_unlimited": None})
+
+
 def test_api_runner_binds_credit_snapshot_to_sanitized_result(tmp_path):
     pack = _load_fixture_builder()._synthetic_pack(tmp_path)
     pricing = B4Pricing(

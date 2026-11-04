@@ -10,12 +10,12 @@ This file is a project-local continuation guide. `AGENTS.md`, the current owner 
 - Initial pushed handoff checkpoint: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`
 - Cleanup-record checkpoint: `46421f0d99f3425af1e841991411f80a21031a72`
 - Source merge already tested: `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`
-- Current task state: owner requested a detailed handoff, main verification/push, local cleanup where safe, then pause.
+- Current task state: Normal main-only audit; update current guidance and E2 evidence, run offline/isolated checks, then pause. Do not resume the goal, start a long run, create a worktree, push/merge, or clean branches/worktrees.
 - Goal status: not complete overall. Engineering is complete for the current offline scope; science, paid comparison, external business validation, and WPI submission remain partial or blocked.
 
 Read `HANDOFF.md` for the full evidence map and current worktree inventory.
 
-The 2026-11-04 push was verified against `origin/main`: both resolve to `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`, with `0 0` ahead/behind and a clean main checkout. Old local branches/worktrees were removed under the owner's three-day inactivity and merged-work authorization. Three active dirty/recent worktrees remain intentionally preserved; see `HANDOFF.md`. One old orphan directory under `C:/Users/User/Documents/Codex/2026-10-31/task/ptp-integration/.pytest_cache` could not be physically removed because Windows denied access; do not bypass ACLs.
+The earlier 2026-11-04 push and cleanup receipt is historical evidence only: its verified handoff SHA was `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`, and its retained-worktree/orphan details remain in `HANDOFF.md`. Do not repeat push, cleanup, branch deletion, worktree creation, or ACL bypass in the current Normal round.
 
 ## Required reading before any future change
 
@@ -62,7 +62,7 @@ The current offline engineering scope covers the UI-to-dossier path, retrieval/e
 
 Use existing repository patterns. Do not add a new ledger, reset the accounting epoch, duplicate a provider binding, or copy secrets into logs, Git, audit files, manuscript artifacts, or examples. Never read or print `.env` contents. Do not change ACLs, hooks, `safe.directory`, or global configuration.
 
-When editing code, use an isolated branch/worktree. Keep one control plane and avoid multiple writers on the same files. Before a change, inspect current status and ownership. After a change, run focused tests and record the exact candidate SHA, command, exit code, and artifact path.
+For this Normal round, edit only the existing `main` checkout; do not create a branch or worktree. Keep one control plane and avoid multiple writers on the same files. Before a change, inspect current status and ownership. After a change, run focused tests and record the exact base/candidate SHA, command, exit code, and artifact path.
 
 ## Paid/API admission
 
@@ -99,17 +99,17 @@ Keep private or restricted payloads outside Git. Publish only permitted links, i
 
 Do not delete a dirty worktree, branch, untracked artifact, or sole-copy evidence merely to make the repository clean. Before deleting a worktree, verify its absolute path, ownership, status, and whether its branch tip or dirty-only files are preserved elsewhere. `git reset --hard`, `git clean -fd`, force push, pack deletion, ACL changes, and safe-directory changes are prohibited.
 
-The owner requested local branch/worktree cleanup. A clean, unused worktree can be removed after the main push is verified. A dirty worktree remains until its owner explicitly authorizes discarding or a recoverable archive is created. Record all retained worktrees in `HANDOFF.md`.
+Cleanup is paused for this Normal round. Preserve every branch, worktree, untracked artifact, and sole-copy receipt; do not remove or archive anything unless a later owner instruction explicitly authorizes that separate action.
 
-## Resume sequence
+## Current Normal-round sequence
 
-1. Confirm `main` is clean and equal to `origin/main`.
-2. Read `HANDOFF.md` and the canonical merge audit.
-3. Reconcile the current acceptance matrix with actual artifacts; do not pool different heads.
-4. Select one independent offline package or the paid admission package if its live gates pass.
-5. Run focused tests and write a new audit receipt.
-6. Update progress and next actions once for the completed package.
-7. Stop at `READY_FOR_REVIEW` or an explicit partial/blocker state.
+1. Confirm the existing `main` checkout, HEAD, authorship, and worktree inventory.
+2. Read the current handoff and E2 audit without resuming the long-run worktree.
+3. Make only bounded documentation/test/audit corrections on `main`.
+4. Run offline fixtures and an isolated test ledger; record exact outcomes.
+5. Update the handoff, progress pointer, and next action once, then stop.
+
+No paid dispatch/reservation, GPU job, long run, push, merge, branch deletion, or worktree creation is allowed in this round.
 
 ## Current final boundary
 

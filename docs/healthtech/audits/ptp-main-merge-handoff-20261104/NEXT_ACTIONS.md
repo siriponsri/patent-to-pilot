@@ -1,5 +1,7 @@
 # Next actions
 
+> Historical merge receipt. The push/cleanup actions below are preserved for provenance and are superseded by the 2026-11-04 Normal-round instruction: existing `main` only; no goal resume, long run, worktree creation, paid dispatch/reservation, push, merge, or branch/worktree cleanup.
+
 1. Verify the local `main` commit and push it to `origin/main`.
 2. Confirm `origin/main` equals `26be1c1f037c35352a5c0c4bbc8f0fbc0c135f09`.
 3. Recheck worktree ownership and active processes. Remove only clean,

@@ -472,7 +472,7 @@
     "provider_calls":  0,
     "paid_cost_usd":  0,
     "overnight_run":  "results/healthtech/luna-g1-g3-20261028-200041",
-    "next":  "Resume existing goal with local epoch E2 and completed fresh patent GPU evidence. Preserve unknown history and the USD1 prospective limit; do not recreate R1 or reset budgets. Paid dispatch waits only for current scoped account/key credit and fresh route pricing plus normal rights/payload checks. Keep all evidence and .env on Windows, dr-train computation only; retain one shared GPU slot and original limits. Rebind release to repaired candidate; do not close research goals from diagnostics.",
+    "next":  "Normal round complete on existing main only: preserve historical receipts, do not resume the goal/start a long run/create a worktree/refresh credit/dispatch/reserve/push/merge/cleanup. Wait for a new owner goal prompt before any future E2 admission work.",
     "verification":  "docs/healthtech/audits/ptp-o1-o4-acceptance-20261101/verification.json",
     "latest_patent_dossier_audit":  "docs/healthtech/audits/luna-patent-dossiers-20261028-final-9eba00f/README.md",
     "latest_rights_audit":  "docs/healthtech/audits/luna-long-run-20261029-m13-philips-expansion-20261029/rights-matrix.json",
@@ -2712,7 +2712,12 @@
                                               "journal":  "integrity ok; operational attempts 0; pending/unknown 0; legacy settled 4; actual USD0.0001464; prospective USD1; unknown history preserved",
                                               "focused_tests":  "43 passed; 0 failed; 0 skipped",
                                               "resource_mutations":  "provider 0; reservations 0; attempts 0; retries 0; GPU jobs 0; downloads 0; ledger unchanged; budget/window reset false",
-                                              "next":  "Obtain one fresh non-secret credit snapshot for the existing key, then refresh route pricing inside the same 300-second window and reserve only the bounded E2 canary."
+                                              "next":  "Current Normal round: stop before fresh credit or reservation; wait for a new owner goal prompt. Future paid work still requires one fresh non-secret credit snapshot and same-window pricing/rights/writer checks.",
+                                              "normal_round_audit":  "docs/healthtech/audits/ptp-e2-admission-recheck-20261104/NORMAL_ROUND_20261104.md",
+                                              "credit_file_sha256":  "9c7a92b1048b73cd6af71dfbe6cd42aa1567c485a1d094b4bf0dc1f85072c603",
+                                              "credit_normalized_snapshot_sha256":  "87ca37f6789519fdd1184afaa157423fedea33b61b6a3eb80408f9e9a5f06c5d",
+                                              "pricing_file_sha256":  "c128af4d377d3cec07d7d27af6bd4d406bb17a595c512e418978be40ff3e8aea",
+                                              "real_ledger_sha256_read_only":  "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2"
                                           },
     "latest_patent_to_pilot_main_merge_20261104":  {
                                                        "observed_utc":  "2026-11-04T12:15:46.2028916Z",

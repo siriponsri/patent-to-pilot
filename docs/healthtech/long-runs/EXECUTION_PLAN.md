@@ -1,10 +1,8 @@
 # Execution plan — ลงมือให้จบเป็นผลลัพธ์
 
-> **MCP fallback — 4 Nov 2026:** use [the owner capture instructions](../audits/pepo-mcp-credit-continuation-20261104/README.md) when OpenRouter actions are unavailable. Existing offline work remains complete. A new session is useful only if its tool access is verified; keep the same scientific goal and E2. Prepare dispatch first, then collect current credit; never re-date an expired snapshot.
+> **Current Normal-round hold — 4 Nov 2026:** this file is a design/protocol baseline only. Work on the existing `main` checkout for the bounded E2 documentation/admission audit; do not resume the goal, start a long run, create a worktree, push/merge, delete branches/worktrees, or perform paid dispatch/reservation. Stop after offline/isolated verification and the linked audit addendum.
 
-> **Latest continuation — 4 Nov 2026:** the prior READY queue below has completed. Use [the key-limit repair](../audits/pepo-key-limit-repair-20261104/README.md): UNLIMITED is verified, while fresh bound account credit is pending. Resume the same goal with the conditional paid handoff; do not repeat the old offline or gate-only packages.
-
-> **Next executable work — 4 Nov 2026:** use `CURRENT_ACCEPTANCE_MATRIX.json.continuation_work_queue`. The installed candidate now passes102 tests and emits JSON/TH/EN dossier artifacts. Start pending G6 claim/evidence binding, then G5 measured operational table and G7 installation instructions; no paid/GPU work is required for these packages. Read [the bounded handoff](../audits/pepo-resume-ready-20261104/README.md). Stop only the dependent branch when a prerequisite is missing; no repeated gate-only audits without new evidence. This task authorizes no merge/push/publication. Owner's V100 deadline is15 Nov2026 23:59 Asia/Bangkok; old24h language below is historical and superseded prospectively.
+> The MCP fallback, key-limit repair, READY-queue continuation, and candidate-worktree instructions below are historical planning receipts. They remain for traceability but are not executable commands in this round. A future paid admission may use the existing helper and ledger only after a new owner goal prompt and one fresh credit snapshot; never re-date an expired snapshot.
 
 > **Current execution overlay — 4 November 2026.** This file remains the
 > design/protocol baseline. The sentence below and the P0–P5 descriptions are

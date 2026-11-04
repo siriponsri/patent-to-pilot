@@ -5,7 +5,9 @@
   "status": "BLOCKED_BEFORE_RESERVATION_STALE_CREDIT_SNAPSHOT",
   "credit": {
     "source": "%LOCALAPPDATA%/PatentToPilot/healthtech/evidence/owner-credit/20261104T112056Z-ac35457b/credit-snapshot.json",
-    "snapshot_sha256": "87ca37f6789519fdd1184afaa157423fedea33b61b6a3eb80408e9e9a5f06c5d",
+    "file_sha256": "9c7a92b1048b73cd6af71dfbe6cd42aa1567c485a1d094b4bf0dc1f85072c603",
+    "snapshot_sha256": "87ca37f6789519fdd1184afaa157423fedea33b61b6a3eb80408f9e9a5f06c5d",
+    "snapshot_hash_semantics": "canonical_normalized_v2_content_hash_embedded_in_file; file_sha256 covers raw file bytes",
     "authorization_id": "PTP-HT-OR-E2-20261103-USD100",
     "remaining_credits_usd": 10.0,
     "key_limit_state": "UNLIMITED",
@@ -17,6 +19,8 @@
   "pricing": {
     "source": "%LOCALAPPDATA%/PatentToPilot/healthtech/private-artifacts/ptp-api-admission-current-25691104T113911Z/model-snapshot.json",
     "snapshot_sha256": "c680da332b86a8b153824758316a1168a5006068093306a386168f2ab743496a",
+    "file_sha256": "c128af4d377d3cec07d7d27af6bd4d406bb17a595c512e418978be40ff3e8aea",
+    "snapshot_hash_semantics": "canonical_model_snapshot_content_hash; file_sha256 covers raw file bytes",
     "snapshot_utc": "2026-11-04T11:39:31.172595Z",
     "model": "qwen/qwen3-32b",
     "provider": "DeepInfra",

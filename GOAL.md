@@ -2,7 +2,9 @@
 
 > **Latest repair — 4 Nov 2026:** [key-limit repair](docs/healthtech/audits/pepo-key-limit-repair-20261104/README.md) supersedes the R13/R21 key-limit-unavailable conclusion. The dispatch key is UNLIMITED; refresh and bind account credit before paid work. Existing offline queue is complete; do not reopen it or manufacture READY tasks. World Patent Information and scientific acceptance remain unchanged.
 
-> **Current continuation — 4 Nov 2026:** resume the existing goal in the 20261103 worktree. Start with the bounded READY queue in [the current handoff](docs/healthtech/audits/pepo-resume-ready-20261104/README.md) and `CURRENT_ACCEPTANCE_MATRIX.json`. Missing API credit blocks paid transport only; independent G5/G6/G7 work proceeds. This changes execution order, not goal acceptance or runtime state.
+> **Current Normal round — 4 Nov 2026:** inspect and repair the existing `main` checkout only. Do not resume the goal, start the long run, create a worktree, push/merge, delete branches, or perform paid dispatch/reservation. Record fixed/tested/pending evidence in the linked E2 audit, preserve the World Patent Information direction, and stop before requesting fresh credit.
+
+> The earlier 20261103 worktree continuation note is a historical handoff, not a current command. The goal remains paused until the owner requests a new goal prompt.
 
 > Implementation checkpoint (27 October 2026): [migration and coverage](docs/healthtech/MIGRATION.md), [actual progress](docs/healthtech/progress.json). The pack’s starting statuses below are historical starting points; the full HealthTech study and product are not complete.
 

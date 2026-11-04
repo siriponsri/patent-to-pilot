@@ -1,0 +1,208 @@
+{
+  "format": "ptp-normal-mcp-admission-check-v1",
+  "run_id": "ptp-normal-mcp-admission-check-20261104",
+  "parent_audit": "docs/healthtech/audits/ptp-e2-admission-recheck-20261104/NORMAL_ROUND_20261104.md",
+  "round": "Normal",
+  "executor": "Claude Code (claude-opus-5-5), existing main checkout",
+  "observed_window_utc": {
+    "start": "2026-11-04T13:31:38Z",
+    "end": "2026-11-04T13:36:30Z"
+  },
+  "repository": {
+    "branch": "main",
+    "head": "a8c8e229e6489bb29ae6f88f310f7307c8a09441",
+    "origin_main": "a8c8e229e6489bb29ae6f88f310f7307c8a09441",
+    "ahead_behind": "0 0",
+    "prior_dirty_patch": {
+      "description": "Uncommitted prior Normal-round patch (15 modified tracked files, 2 untracked audit files); preserved unchanged by this run",
+      "git_diff_binary_sha256": "c264ee38e7bba856e698d3024e89a748d526d506644ebe9061c858c2923062bf",
+      "git_diff_binary_bytes": 38428,
+      "untracked_sha256": {
+        "docs/healthtech/audits/ptp-e2-admission-recheck-20261104/NORMAL_ROUND_20261104.md": "6d714f254c12e211de92c0ed7e236483d92cacef8ace11449f0d0c6e08c883f4",
+        "docs/healthtech/audits/ptp-e2-admission-recheck-20261104/normal-verification.json": "7b6a4716c66c1ade5f70a2e6e0eb247bc3e1d3b8891240b4b06d946c9cbd275f"
+      },
+      "last_write_utc": "2026-11-04T13:25:17Z",
+      "rechecked_unchanged_at_utc": ["2026-11-04T13:31:38Z", "2026-11-04T13:35:38Z"]
+    },
+    "worktrees": [
+      {"branch": "main", "head": "a8c8e22", "path": "patent-to-pilot"},
+      {"branch": "codex/patent-to-pilot-long-run-20261031", "head": "0cf41e0", "path": "_worktrees/patent-to-pilot-long-run-20261031", "status_lines": 134, "latest_file_activity": "2026-11-02"},
+      {"branch": "codex/research-product-o1-o4-20261031", "head": "b4bc13c", "path": "_worktrees/patent-to-pilot-research-product-20261031", "status_lines": 26, "latest_file_activity": "2026-11-02"},
+      {"branch": "codex/pepo-paused-audit-20261101", "head": "a0809b4", "path": "<owner Codex task dir>/publish-http", "status_lines": 0, "latest_file_activity": "2026-11-01"}
+    ],
+    "worktree_created": false,
+    "branch_or_worktree_removed": false
+  },
+  "processes": {
+    "observed_utc": "2026-11-04T13:31Z",
+    "repo_writers_detected": "none attributable; no python/pytest/git process running against this repository",
+    "notable": [
+      "codex.exe app-server (started 2026-11-03) is running and is a potential future writer of this checkout",
+      "python -m http.server 8766 serving an unrelated presentation directory",
+      "ssh.exe session to dr-train as a different remote user (started 2026-11-04 ~03:00Z); not touched",
+      "MCP helper servers (markitdown, playwright, chrome-devtools, repomix, cua)"
+    ]
+  },
+  "openrouter_mcp": {
+    "server": "https://mcp.openrouter.ai/mcp",
+    "config_scope": "Claude Code local scope for this project; not in repository",
+    "admission_window_utc": {"start": "2026-11-04T13:33:10.049Z", "end_upper_bound": "2026-11-04T13:33:20.891Z"},
+    "tools": {
+      "ping": "PASS",
+      "get-credits": "PASS",
+      "get-current-key": "PASS",
+      "list-model-endpoints": "PASS",
+      "list-models": "PASS (called 2026-11-04T13:36Z, outside the 10-second admission window; catalog cross-check only)"
+    },
+    "billable_tools_called": [],
+    "account_credit": {
+      "scope": "account-level (OpenRouter /credits semantics)",
+      "total_credits_usd": 10,
+      "total_usage_usd": 0.0001464,
+      "derived_remaining_usd": 9.9998536,
+      "matches_legacy_ledger_actual_usd": true
+    },
+    "mcp_key": {
+      "label_recorded": false,
+      "is_dispatch_key": false,
+      "kind": "OAuth-minted MCP key, separate from the project dispatch key",
+      "usage_usd": 0,
+      "limit_usd": null,
+      "key_limit_state": "UNLIMITED",
+      "expires_at_utc": "2026-11-11T12:27:55.148Z",
+      "is_management_key": false,
+      "is_free_tier": false,
+      "creator_user_id_sha256": "666994c4b8526e18e00aa3e477c20b63b5bf55164489f310cf371795f88e367c",
+      "workspace_id_sha256": "50a0e4a8f9b2c38c52824ca3aa5a7c105c65c588821a9ed4e86b3eaa1b10b0d2",
+      "hash_method": "sha256(utf-8 raw value), same as providers/metadata_observation.py"
+    },
+    "pricing": {
+      "model": "qwen/qwen3-32b",
+      "canonical_slug": "qwen/qwen3-32b-04-28",
+      "selected_route": "DeepInfra",
+      "tag": "deepinfra/fp8",
+      "prompt_usd_per_million": 0.08,
+      "completion_usd_per_million": 0.28,
+      "context_length": 40960,
+      "max_completion_tokens": 16384,
+      "status": 0,
+      "uptime_last_30m": 100,
+      "latency_p50_ms_last_30m": 486,
+      "unchanged_vs_e2_snapshot_c680da33": true,
+      "other_routes": [
+        {"provider": "Tenstorrent", "tag": "tenstorrent/fp8", "prompt_usd_per_million": 0.14, "completion_usd_per_million": 0.4},
+        {"provider": "SiliconFlow", "tag": "siliconflow/fp8", "prompt_usd_per_million": 0.14, "completion_usd_per_million": 0.57}
+      ]
+    }
+  },
+  "gates": {
+    "mcp_tools_usable_this_session": {"status": "PASS"},
+    "fresh_account_credit": {"status": "PASS", "note": "Account-level balance observed via the MCP key; not a key-scoped snapshot of the dispatch key."},
+    "same_window_pricing": {"status": "PASS", "note": "Exact DeepInfra route price observed in the same window as credit."},
+    "account_binding": {
+      "status": "PASS",
+      "evidence": "creator_user_id_sha256 and workspace_id_sha256 of the MCP key equal those recorded for the dispatch key in key-observation.json (observed 2026-11-04T11:21:15Z).",
+      "limit": "The dispatch-key side of the comparison is 2h12m old; it shows the dispatch key belonged to this account/workspace at that time, not now."
+    },
+    "dispatch_key_scope_binding": {
+      "status": "BLOCKED",
+      "reason": "The ledger requires a credit snapshot bound to key_scope sha256:7cbe4013...d7b97 (the dispatch key). The MCP channel authenticates with a different key, so it cannot observe the dispatch key's limit/usage. credit_from_metadata() requires a v2 key observation of the dispatch key no more than 300 s old.",
+      "unblock": "In an owner-authorized paid round only: run the existing non-billable key-metadata collector (providers/metadata_observation.py, GET /api/v1/key) for the dispatch key without printing it; in the same 300 s window take MCP get-credits plus list-model-endpoints qwen/qwen3-32b; write the account observation with the dispatch key_scope; join with credit_from_metadata(); then proceed to reservation through the canonical ledger."
+    },
+    "credit_freshness_at_dispatch": {"status": "BLOCKED", "reason": "This Normal round forbids reservation/dispatch, so this observation expires (>300 s) before any lawful dispatch. It was not written as a ledger credit snapshot."},
+    "rights": {
+      "status": "PASS",
+      "evidence": "preparation-receipt.json and preflight.json agree on all three case message/payload hashes; every source binding is openfda-pma-records ALLOWED_WITH_ATTRIBUTION (https://open.fda.gov/terms/), fields pma_number/trade_name/applicant; pack e146ab85...e7aef489; manifest b9b0d1fe...64f57d28.",
+      "limit": "The openFDA terms page was not refetched in this round."
+    },
+    "writer_quiescence": {
+      "status": "PASS_AT_OBSERVATION",
+      "evidence": "Main dirty patch, untracked audit files, canonical ledger hash, private E2 tree (0 files newer than 11:40Z) and retained worktrees (0 files modified on 2026-11-04) unchanged between 13:31:38Z and 13:35:38Z; no SQLite -wal/-shm/-journal sidecars.",
+      "limit": "A Codex app-server process is running; quiescence must be rechecked immediately before any reservation."
+    },
+    "e2_journal": {
+      "status": "PASS",
+      "ledger_path": "%LOCALAPPDATA%/PatentToPilot/healthtech/accounting/project-api.sqlite3",
+      "access": "read-only (sqlite uri mode=ro&immutable=1)",
+      "integrity": "ok",
+      "sha256": "d0041edaf8be80cf01f77be3333bc4c5568254e5e7e2b1151d45960ef6b8c1d2",
+      "unchanged": true,
+      "tables": {"budget_attempts": 0, "budget_attempt_context": 0, "budget_epoch": 1, "budget_epoch_scope": 0, "budget_ledger_meta": 1, "budget_legacy_receipts": 4, "budget_meta": 1},
+      "registration": "budget-ledgers/PTP-HT-OR-E2-20261103-USD100.json present, policy_hash 018ff0c3...7c522b",
+      "output_journal": "none exists; no E2 dispatch has occurred",
+      "dry_run": "preflight.json DRY_RUN_NOT_EXECUTED, provider_calls 0, paid_cost_usd 0.0"
+    },
+    "dr_train_ssh": {
+      "status": "PASS",
+      "observed_utc": "2026-11-04T13:34:42Z",
+      "mode": "single read-only BatchMode session as the configured user; no files written, no processes started or signalled",
+      "host": "dr-train",
+      "gpus": [
+        {"index": 0, "name": "NVIDIA GeForce RTX 2080 Ti", "util_pct": 0, "mem_used_mib": 1, "mem_total_mib": 11264},
+        {"index": 1, "name": "Tesla V100-SXM2-32GB", "util_pct": 0, "mem_used_mib": 0, "mem_total_mib": 32768}
+      ],
+      "gpu_compute_apps": 0,
+      "load_avg_1m": 0.41,
+      "mem_available_gib": 113,
+      "root_disk_free": "118G of 295G",
+      "other_activity": "Long-running non-GPU python processes from several accounts; not inspected further.",
+      "gpu_job": "NOT_RUN (forbidden this round)"
+    }
+  },
+  "findings": [
+    {
+      "id": "ERRATUM-CREDIT-HASH-ONE-CHAR",
+      "status": "FIXED_DOCUMENTATION",
+      "detail": "Documents record the normalized credit snapshot hash as 87ca37f6...3eb80408e9e9a5f06c5d, but the embedded value and the value recomputed by providers/credit.py normalize_credit() are 87ca37f6789519fdd1184afaa157423fedea33b61b6a3eb80408f9e9a5f06c5d (one hex digit differs: ...80408[e->f]9e9a5...).",
+      "affected": [
+        "docs/healthtech/audits/ptp-e2-admission-recheck-20261104/README.md:17",
+        "docs/healthtech/audits/ptp-e2-admission-recheck-20261104/verification.json:9",
+        "docs/healthtech/audits/ptp-e2-admission-recheck-20261104/NORMAL_ROUND_20261104.md:11",
+        "docs/healthtech/audits/ptp-e2-admission-recheck-20261104/normal-verification.json:20",
+        "docs/healthtech/progress.json (credit_normalized_snapshot_sha256)"
+      ],
+      "action_this_run": "Owner approved the fix in chat (2026-11-04). The wrong value was replaced in the five files with no other content change; CRLF working-copy endings were preserved (byte sizes unchanged). The wrong value was already committed at HEAD in README.md and verification.json; history is not rewritten. Repository-wide count of the wrong value after the fix: 0.",
+      "untracked_file_hash_after_fix": {
+        "NORMAL_ROUND_20261104.md": {"before": "6d714f254c12e211de92c0ed7e236483d92cacef8ace11449f0d0c6e08c883f4", "after": "c61cfa7efabc0d7d612cdf89fce0982069e6501e0388ef93a84af306f31c1688"},
+        "normal-verification.json": {"before": "7b6a4716c66c1ade5f70a2e6e0eb247bc3e1d3b8891240b4b06d946c9cbd275f", "after": "d9777088d05a68c3dbd15573d4c92849d990351becd1f21cf3c5ef37459cd216"}
+      },
+      "stale_reference_note": "normal-verification.json field audit_addendum_sha256 still records 6d714f25... (the addendum before this fix); it is left as the prior writer's receipt, and this mapping supersedes it.",
+      "check": "Swapping only the corrected hash back reproduces both untracked files' original SHA-256 exactly; all three JSON files parse; git diff --check OK."
+    },
+    {
+      "id": "MCP-KEY-LIMIT-OBSERVATION",
+      "status": "INFO",
+      "detail": "The current MCP key reports limit=null (UNLIMITED at key level). Earlier notes mention a USD30 MCP/provider limit and the public announcement describes a USD10 cap. Neither cap is visible on this key; the account balance (USD10 total credits) is the effective bound."
+    }
+  ],
+  "commands": [
+    {"cmd": "rtk git status --short --branch; git rev-parse HEAD origin/main; git rev-list --left-right --count main...origin/main; git worktree list", "exit": 0},
+    {"cmd": "git diff --binary | sha256sum (before and after inspection)", "exit": 0},
+    {"cmd": "Get-CimInstance Win32_Process (python/node/git/codex/ssh; secrets masked)", "exit": 0},
+    {"cmd": "MCP: ping, get-credits, get-current-key, list-model-endpoints {qwen, qwen3-32b}, list-models {q: qwen3-32b, limit: 3}", "exit": 0},
+    {"cmd": "python -I sha256(creator_user_id), sha256(workspace_id) vs key-observation.json", "exit": 0},
+    {"cmd": "PYTHONPATH=src python -c normalize_credit(credit-snapshot.json without snapshot_sha256)", "exit": 0},
+    {"cmd": "python -I ledger_ro.py <ledger> (sqlite uri mode=ro&immutable=1)", "exit": 0},
+    {"cmd": "python -I rights consistency: preparation-receipt.json vs preflight.json", "exit": 0},
+    {"cmd": "ssh -o BatchMode=yes -o ConnectTimeout=15 100.77.149.83 '<read-only status commands>'", "exit": 0}
+  ],
+  "mutations": {
+    "paid_calls": 0,
+    "reservations": 0,
+    "ledger_writes": 0,
+    "gpu_jobs": 0,
+    "long_runs": 0,
+    "worktrees_created": 0,
+    "push_or_merge": false,
+    "files_written": [
+      "docs/healthtech/audits/ptp-normal-mcp-admission-check-20261104/README.md",
+      "docs/healthtech/audits/ptp-normal-mcp-admission-check-20261104/verification.json",
+      "docs/healthtech/audits/ptp-normal-mcp-admission-check-20261104/NEXT_ACTIONS.md",
+      "HANDOFF.md (one pointer paragraph appended to the Normal-round section)",
+      "memory/next-actions.md (one new entry)",
+      "credit-hash erratum fix in 5 files (see findings)"
+    ],
+    "secrets_recorded": false
+  },
+  "outcome": "PARTIAL: read-only gates PASS; paid admission BLOCKED on dispatch-key scope binding and round authorization"
+}

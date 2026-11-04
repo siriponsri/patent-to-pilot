@@ -1,12 +1,20 @@
 # Patent-to-Pilot HealthTech Handoff
 
-Status: `PAUSED_BY_OWNER_AFTER_MAIN_HANDOFF`
+Status: `PAUSED_BY_OWNER_NORMAL_MAIN_ONLY_AUDIT`
 
 Observed: 2026-11-04, Asia/Bangkok
 
 Repository: `C:/Users/User/Desktop/myProject/patent-to-pilot`
 
 This file is the resumable handoff for the existing Patent-to-Pilot goal. It records what is verified, what is still partial or blocked, which artifacts are authoritative, and which local worktrees must not be removed without preserving their uncommitted work. It is not a claim that the research goal, business validation, or journal submission is complete.
+
+## Current Normal-round hold — 2026-11-04
+
+This round works only in the existing `main` checkout. Base HEAD before the round was `a8c8e229e6489bb29ae6f88f310f7307c8a09441`, and `origin/main` matched it. Do not resume the goal, start a long run, create a worktree, dispatch or reserve paid work, push, merge, delete branches, or clean worktrees. The bounded deliverable is the E2 documentation/hash correction, offline fixture verification, isolated test-ledger verification, and this handoff update.
+
+The canonical evidence for this round is `NORMAL_ROUND_20261104.md` plus `normal-verification.json` in `docs/healthtech/audits/ptp-e2-admission-recheck-20261104/`. The prior merge push/cleanup actions and the 20261103 candidate worktree remain historical receipts only.
+
+Follow-up read-only check (2026-11-04T13:31–13:36Z): `docs/healthtech/audits/ptp-normal-mcp-admission-check-20261104/`. OpenRouter MCP account credit, exact-route pricing, account binding (hashed creator/workspace match), rights, writer quiescence, the E2 ledger, and dr-train SSH all passed. Paid admission remains blocked because the MCP key is not the dispatch key: the ledger needs a fresh key-scoped observation of `sha256:7cbe4013…`, plus owner authorization. A one-character erratum in the recorded normalized credit hash was fixed in all five affected files, with owner approval (correct value `…80408f9e9a5f06c5d`).
 
 ## 1. Objective and scope
 
@@ -32,7 +40,7 @@ The main checkout was clean before this handoff-document change.
 - Initial handoff-document commit: `d407d61eb14c3fbde0163bc7d54207a00dc4f05d`.
 - Cleanup-record commit already pushed: `46421f0d99f3425af1e841991411f80a21031a72`.
 
-The intended final check is:
+The following was the historical handoff check; it is retained for provenance and is not a current push instruction:
 
 ```powershell
 rtk git status --short --branch
@@ -41,7 +49,7 @@ rtk git rev-parse origin/main
 rtk git rev-list --left-right --count main...origin/main
 ```
 
-Verified result after push: clean `main`, identical local and remote SHA, and `0 0` ahead/behind.
+Historical result after push: clean `main`, identical local and remote SHA, and `0 0` ahead/behind.
 
 The push completed on 2026-11-04 at approximately `2026-11-04T12:34:00Z` with `main -> origin/main`. The exact post-push verification at `2026-11-04T12:38:09.5419286Z` returned the same SHA on both sides and `0 0` ahead/behind.
 
@@ -170,7 +178,7 @@ Dirty or containing uncommitted work at inspection:
 - `codex/pepo-unblock-remote-20261030` at `a0ec9ceaf381ebbce6e6c340a8b420189eb8474c`, worktree `_worktrees/patent-to-pilot-pepo-unblock-20261030`; this contains source, tests, and audit changes;
 - `codex/research-product-o1-o4-20261031` at `b4bc13ccf8a9a71a8f50d16346ae1c6557bc69d0`, worktree `_worktrees/patent-to-pilot-research-product-20261031`; this contains benchmark, manuscript, business-value, test, and audit changes.
 
-The cleanup request is therefore split by safety boundary:
+The cleanup request below is historical and is not executable in the current Normal round:
 
 - clean, unused worktrees and their local branches may be removed after the push check;
 - dirty worktrees must remain until their owner explicitly authorizes discard or a recoverable archive is created;
@@ -197,9 +205,9 @@ The following active worktrees were intentionally retained because they had file
 
 After cleanup, the local branch set is exactly `main` plus the three retained branches above. Remote branches were not deleted because the owner requested local cleanup and a main push only.
 
-## 7. Resume instructions for Claude
+## 7. Current Normal-round instructions
 
-When resuming, treat `main` and the canonical audit files as the current control plane. Do not combine receipts from different heads into one PASS. A receipt is admissible only when its candidate revision, inputs, configuration, and output hashes match the claim being made.
+Treat `main` and the canonical audit files as the current control plane, but do not resume the goal in this round. Do not combine receipts from different heads into one PASS. A receipt is admissible only when its candidate revision, inputs, configuration, and output hashes match the claim being made.
 
 First perform:
 
@@ -213,12 +221,12 @@ Get-Content -Raw PLAN.md
 Get-Content -Raw docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json
 ```
 
-Then choose one independent package:
+For this round, complete only these local actions:
 
-1. Offline manuscript and protocol consistency checks.
-2. Evaluation packaging with frozen splits, budgets, and leakage controls.
-3. Product evidence/source inspection/export improvements that remain within the current offline contract.
-4. Paid admission only after the fresh credit and exact-route pricing gates pass.
+1. Verify the current `main` status, HEAD, authorship, and preserved worktree inventory.
+2. Correct the E2 hash reference without changing the private snapshot or timestamp.
+3. Run offline fixtures and the isolated test ledger; record exact commands and outcomes.
+4. Update the handoff and stop before fresh credit, paid admission, GPU, long run, push, merge, or cleanup.
 
 Do not rerun completed GPU work merely to refresh a receipt. Do not use the FDA-only canary as the main scientific result. Do not turn schema validity into content or retrieval validity. Do not claim user validation, revenue, willingness-to-pay, or ROI without measured evidence. Do not submit a paper or accept publisher terms for the owner.
 
@@ -251,4 +259,4 @@ Paid API: `BLOCKED_BEFORE_RESERVATION_STALE_CREDIT`
 
 Repository handoff: `READY_FOR_REVIEW`
 
-Owner pause instruction: stop this goal after the verified main push and cleanup attempt. Resume only from this file and the canonical audit records; do not open a new goal for the same work.
+Owner pause instruction: stop this Normal round after the local audit and test evidence. Resume only after the owner requests a new goal prompt; do not open a new goal for the same work.

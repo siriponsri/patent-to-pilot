@@ -1,6 +1,14 @@
 {
   "format": "ptp-current-acceptance-matrix-v1",
   "observed_local_date": "2026-11-04",
+  "current_normal_round": {
+    "status": "PASS_LOCAL_NORMAL_AUDIT_PAID_BRANCH_STILL_PAUSED",
+    "checkout": "existing main only",
+    "base_head": "a8c8e229e6489bb29ae6f88f310f7307c8a09441",
+    "audit": "docs/healthtech/audits/ptp-e2-admission-recheck-20261104/NORMAL_ROUND_20261104.md",
+    "do_not": ["resume_goal", "start_long_run", "create_worktree", "refresh_credit", "paid_dispatch", "reservation", "push", "merge", "branch_or_worktree_cleanup"],
+    "next": "Wait for a new owner goal prompt before any future E2 admission work."
+  },
   "owner_limit_amendment": {
     "recorded_local_date": "2026-11-04",
     "provider": "openrouter",
