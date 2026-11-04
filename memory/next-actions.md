@@ -621,3 +621,180 @@ Status: `PASS_LOCAL_FILE_UI_BACKEND_INTEGRATION`; canonical audit: `docs/healtht
 Combined main `a0ec9ce` with PR #1 head `7ca0f2e` in an isolated worktree. Regenerated stale rights/manifest schemas, fixed external company-metadata projection, rejected mixed-query/duplicate-step/policy receipts, preserved historical browser evidence and added executable current-Python/backend-to-UI regressions. Final guarded backend suite: 475 passed/1 optional skip; frontend: 72/72; original browser acceptance: 17/17; fresh MitraClip/Tendyne/TriClip backend-to-browser cases: 3/3, including source inspection, IndexedDB reload and edited TH/EN downloads. No live API, paid call or remote job occurred.
 
 Next: verify publication via the merge receipt, then choose a separate HTTP run/history adapter package if desired. Remote allocation remains an independent blocker; vector/shard crash-resume repairs remain in their original Pepo worktree. Do not treat file-based UI integration as service deployment, scientific validation, or completion of the remote-embedding goal.
+
+## HT-NEXT-070 — 2026-11-03 research-product long-run continuation checkpoint
+
+Status: `PARTIAL_CANDIDATE_BOUND_NO_MIXED_HEAD_MERGE`; checkpoint:
+`docs/healthtech/long-runs/20261031-research-product/CURRENT_CHECKPOINT.json`.
+
+Read the objective pack, AGENTS, the research-product long-run goal, execution
+plan, authorization/budget contract, model/data protocol, and checkpoint rules.
+The isolated candidate `codex/patent-to-pilot-long-run-20261103` at
+`8f1a2583c501a52eff66c5ca69620adc0e23048b` contains current-head O1 HTTP/UI
+engineering evidence, prior runtime-equivalent O2 PatEmbed/e5 encoding/import
+evidence, local Qwen3-8B 3/3 generation, and three-case O4 vector/local
+generation evidence. The root `main` remains at `0d049802d36bc2eebe60331ec444d62469fd767f`;
+the candidate was not merged and results from different heads were not combined.
+
+No API call, GPU job, dataset download, ledger mutation, budget reset, or new
+24-hour window was started. O3 paid comparison remains gated because the
+existing R1 journal is not available at a bindable canonical location and a
+current credit/billing snapshot through an approved integration is not
+available. The owner-supplied UI credit receipt and key-usage reconciliation
+remain evidence, but do not substitute for those runtime binding gates.
+
+Next: keep offline reproducibility/manuscript work in the isolated candidate;
+do not start a paid/GPU batch or fast-forward `main` until the candidate is
+reviewed and the remaining O3 evidence gates are available.
+
+## HT-NEXT-071 — 2026-11-03 O3 canonical-path preflight
+
+Status: `BLOCKED_LOCAL_KNOWN_PATHS_RECHECKED_NO_LEDGER_CREATED`.
+
+Rechecked only the known root/candidate journal paths and the default canonical
+registry path. `live.sqlite3`, `paired-revalidation-1.sqlite3`, and the
+registry were absent in all checked locations; no active runtime process matched
+the project/provider entrypoints. No registry, zero ledger, replacement journal,
+paid dispatch, or budget/window mutation was created.
+
+The owner-supplied visual credit receipt and the prior key-usage reconciliation
+remain preserved evidence, but neither is promoted to a current API credit
+snapshot or canonical-ledger binding. Continue offline work and keep O3 paid
+dispatch closed until the existing journal location/sanitized export and
+approved current-credit evidence become available.
+
+## HT-NEXT-072 — 2026-11-03 O3 offline contract recheck
+
+Status: `PASS_OFFLINE_O3_CONTRACTS_LIVE_GATE_REMAINS_CLOSED`.
+
+On candidate `8f1a2583c501a52eff66c5ca69620adc0e23048b`, the focused O3 suite
+passed `83` tests in `2.97s`: canonical ledger registry, API generation
+preconditions, rights-cleared paired payloads, R1 budget contracts, and
+adversarial repair paths. This was a local-only test run with no provider call,
+network dispatch, ledger mutation, budget reset, or new time window.
+
+The result confirms engineering readiness of the gate, not live API readiness.
+Keep O3 paid dispatch closed until the known R1 journal/sanitized export and
+approved current-credit/billing evidence are available.
+
+## HT-NEXT-073 — 2026-11-03 current candidate rebind
+
+Status: `PARTIAL_CANDIDATE_88DC404_O1_ENGINEERING_O2_RUNTIME_BOUND_O3_API_PREFLIGHT_PAID_GATED_O4_DESCRIPTIVE`.
+
+The root research-product checkpoint was refreshed to the actual continuation
+candidate `88dc40471cb9078f929c02bb893cfa1e364da841` in
+`C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103`.
+The candidate remains intentionally dirty with uncommitted source repairs,
+tests, and audit/manuscript receipts; `main` remains at `0d049802` and no
+mixed-head merge occurred.
+
+Current evidence: O1 current-head HTTP/UI engineering is complete; O2 is bound
+to existing remote PatEmbed/e5 artifacts with integrity revalidation but no new
+remote encode; O3 local guided Qwen is 3/3 schema-valid and current-head API
+preflight is 3/3 rights-valid, while paid dispatch remains blocked before
+reservation; O4 has three-case engineering evidence and descriptive, not
+confirmatory, research results.
+
+No provider call, GPU job, dataset download, ledger mutation, budget reset, or
+new time window was started in this rebind. Next: keep the candidate isolated,
+obtain the existing canonical R1 journal/export and current scoped credit
+snapshot once, then recheck all gates before any paid canary. Do not merge or
+delete the candidate until owner review and candidate-bound acceptance are
+complete.
+
+## HT-NEXT-074 — 2026-11-03 publisher guidance cross-check
+
+Status: `PASS_PUBLISHER_PREPARATION_WPI_GUIDE_RECHECK_REQUIRED`; candidate
+audit: `docs/healthtech/audits/wpi-venue-recheck-r2-20261103/README.md`.
+
+The candidate checklist now records publisher-level Elsevier preparation for a
+Data Availability Statement and CRediT author-role confirmation. This does not
+substitute for the WPI-specific Guide for Authors: the direct ScienceDirect
+guide remains inaccessible with HTTP 403 in the local environment, so article
+type, formatting, word limits, file requirements, and final declarations stay
+owner browser checks. The manuscript remains `NOT_SUBMITTED`.
+
+No provider call, GPU job, dataset download, ledger mutation, budget reset,
+window reset, or external message occurred. Next: owner rechecks the official
+WPI author page before submission; meanwhile keep engineering/scientific status
+separate and continue only independently executable work.
+
+## HT-NEXT-075 — 2026-11-03 requirement-by-requirement completion audit
+
+Status: `PARTIAL_NOT_COMPLETE`; candidate audit:
+`docs/healthtech/audits/ptp-goal-completion-audit-20261103/README.md`.
+
+The audit evaluates the original O1–O4 objective without treating the existing
+engineering receipts as full scientific or commercial completion. It records
+O1 as current-head engineering complete; O2 as runtime-bound prior artifacts
+without a new remote encode; O3 as local/preflight partial with paid dispatch
+blocked before reservation; and O4 as three-case engineering plus descriptive
+research partial. Main merge, paid API comparison, final holdout claim,
+external business validation, and submission remain incomplete.
+
+The exact canonical R1 journal/registry and current scoped credit snapshot are
+still absent at the known paths. No provider call, reservation, attempt,
+dataset download, ledger mutation, budget reset, or time-window reset occurred.
+Keep the goal active and continue only independently executable work; do not
+mark COMPLETE or merge until the audit requirements are genuinely satisfied.
+
+## HT-NEXT-076 - 2026-11-03 root checkpoint rebind
+
+Status: `PASS_ROOT_CHECKPOINT_REBOUND_TO_CANDIDATE_R3`; canonical evidence is
+the candidate audit `C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-api-metadata-recheck-r3-20261103/README.md`.
+
+The root long-run checkpoint now records candidate HEAD
+`88dc40471cb9078f929c02bb893cfa1e364da841`, current O1-O4 boundaries, the
+current full-suite result (`615 total; 614 passed; 0 failed; 1 skipped`), and
+the latest read-only OpenRouter metadata observation. Lifetime usage remains
+`USD0.0001464`; account scope is unreconciled, history completeness is
+unproven, and scoped credit is unavailable.
+
+This is a checkpoint/documentation rebind only. No source from another head was
+merged, and no provider call, reservation, attempt, retry, ledger mutation,
+budget reset, time-window reset, GPU job, dataset download, submission, or
+branch deletion occurred. The candidate remains isolated and dirty pending
+owner review and the two existing non-secret paid-gate evidence items.
+
+## HT-NEXT-077 - 2026-11-03 business-value scenario rebind
+
+Status: `PASS_SCENARIO_ONLY_NOT_OBSERVED_BUSINESS_VALIDATION`; candidate audit:
+`C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-business-value-scenario-20261103/README.md`.
+
+The candidate manuscript now reports observed machine-side time separately from
+illustrative labor and GPU assumptions. The observed mean is `71.983` seconds
+per case (`0.0199952778` machine-hours), with source inspection, history, and
+JSON export passing for 3/3 engineering cases. The sensitivity rows are not
+user validation, production cost, revenue, willingness-to-pay, or ROI evidence.
+
+Root progress and the candidate acceptance matrix point to the scenario
+package. No provider call, reservation, attempt, retry, ledger mutation, GPU
+job, dataset download, budget reset, or time-window reset occurred.
+
+## HT-NEXT-078 - 2026-11-03 requirement-by-requirement completion audit R4
+
+Status: `PARTIAL_NOT_COMPLETE`; candidate audit:
+`C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/ptp-goal-completion-audit-r4-20261103/README.md`.
+
+The root checkpoint now points to R4, which audits the original O1-O4
+requirements without pooling candidates. It records O1 engineering complete,
+O2 runtime-bound prior artifacts without rerun, O3 paid API blocked before
+reservation, O4 descriptive research without final holdout, and Business Value
+as scenario-only. The manuscript hash and link readback are bound to the
+current file.
+
+The goal remains active. The two non-secret paid-gate evidence items, owner
+review, final research limits, merge acceptance, submission, and cleanup remain
+unresolved; no new ledger or budget/window was created.
+
+## HT-NEXT-079 - 2026-11-03 WPI official-source recheck R4
+
+Status: `PASS_CONDITIONAL_SCOPE_GUIDE_UNVERIFIED_OWNER_RECHECK_REQUIRED`; candidate audit:
+`C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103/docs/healthtech/audits/wpi-venue-recheck-r4-20261103/README.md`.
+
+The root checkpoint now points to the latest venue receipt. The official
+Elsevier profile supports conditional scope fit for patent-information
+retrieval, AI/ML IP research, IR evaluation/benchmarking, and real-data
+experiments. Journal-specific ScienceDirect pages remain inaccessible with
+HTTP 403, so no formatting or article-type rule was inferred. Owner browser
+recheck remains required before submission; the article is still not submitted.

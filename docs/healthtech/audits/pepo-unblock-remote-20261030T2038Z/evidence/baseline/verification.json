@@ -1,0 +1,15 @@
+{
+  "mode": "baseline",
+  "source": "C:\\Users\\User\\Desktop\\myProject\\patent-to-pilot",
+  "scope": [
+    "tests/test_healthtech_query_projection.py",
+    "tests/test_healthtech_vector_restart.py::test_resume_after_final_commit_before_checkpoint_cleanup"
+  ],
+  "exit_code": 1,
+  "elapsed_seconds": 8.296999999991385,
+  "network_attempts": 0,
+  "provider_calls": 0,
+  "model_inference_calls": 0,
+  "engine_file": "C:\\Users\\User\\Desktop\\myProject\\patent-to-pilot\\src\\patent_to_pilot\\healthtech\\engine.py",
+  "vector_artifacts_file": "C:\\Users\\User\\Desktop\\myProject\\patent-to-pilot\\src\\patent_to_pilot\\evaluation\\healthtech\\vector_artifacts.py"
+}

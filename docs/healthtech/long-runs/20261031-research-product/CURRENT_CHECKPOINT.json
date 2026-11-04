@@ -1,0 +1,126 @@
+{
+  "format": "ptp-long-run-current-checkpoint-v1",
+  "observed_at_utc": "2026-11-03T03:29:52.3191678Z",
+  "goal": "Patent-to-Pilot research engine and product O1-O4",
+  "root": {
+    "worktree": "C:/Users/User/Desktop/myProject/patent-to-pilot",
+    "branch": "main",
+    "head": "0d049802d36bc2eebe60331ec444d62469fd767f",
+    "working_tree": "DIRTY_UNTRACKED_GOAL_PACK_AND_AUDITS_PRESERVED"
+  },
+  "candidate": {
+    "worktree": "C:/Users/User/Desktop/myProject/_worktrees/patent-to-pilot-long-run-20261103",
+    "branch": "codex/patent-to-pilot-long-run-20261103",
+    "head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "base_main": "0d049802d36bc2eebe60331ec444d62469fd767f",
+    "working_tree": "DIRTY_DOCUMENTATION_AUDIT_AND_UNCOMMITTED_SOURCE_PATCH",
+    "source_changes_integrated_to_root_main": false
+  },
+  "outcomes": {
+    "O1": {
+      "status": "COMPLETE_CURRENT_HEAD_ENGINEERING",
+      "evidence": "candidate:docs/healthtech/audits/ptp-long-run-resume-20261103/o1-current-head-20261103/verification.json",
+      "scope": "loopback HTTP jobs, status, cancel/resume/retry, source inspection, history edit/reopen, JSON/TH/EN export"
+    },
+    "O2": {
+      "status": "PASS_CURRENT_HEAD_RUNTIME_BOUND_REMOTE_ARTIFACTS_NO_RERUN",
+      "evidence": "candidate:docs/healthtech/audits/ptp-current-head-runtime-rebind-20261103/verification.json",
+      "scope": "prior PatEmbed/e5 remote encoding, resumable shards, Windows import, retrieval/dossier use and vector integrity are bound to current-head runtime paths; no new remote rerun"
+    },
+    "O3": {
+      "status": "PASS_CURRENT_HEAD_LOCAL_GUIDED_API_PREFLIGHT_CURRENT_DISPATCH_BLOCKED",
+      "evidence": "candidate:docs/healthtech/audits/ptp-api-preflight-current-20261103/verification.json",
+      "scope": "local guided Qwen/Qwen3-8B passed 3/3 schema-valid cases and API rights/schema preflight passed 3/3; qwen/qwen3-32b paid comparison not dispatched"
+    },
+    "O4": {
+      "status": "PASS_CURRENT_HEAD_THREE_CASE_ENGINEERING_LOCAL_GENERATION_PARTIAL_RESEARCH",
+      "evidence": "candidate:docs/healthtech/audits/ptp-current-head-offline-20261103/verification.json",
+      "scope": "three named device cases have current-head vector/local generation engineering evidence; adaptive frontier remains descriptive with no final holdout or equal-total-budget superiority claim"
+    }
+  },
+  "verification": {
+    "candidate_full_python": "615 total; 614 passed, 0 failed, 1 skipped, 2 warnings",
+    "candidate_release_reproduction": "142 passed, 0 failed, 0 skipped",
+    "candidate_frontend": "74 passed",
+    "candidate_o1_backend": "28 passed",
+    "candidate_o3_offline_contracts": "83 passed",
+    "provider_calls_in_current_checkpoint": 0,
+    "paid_cost_usd_in_current_checkpoint": 0.0,
+    "gpu_jobs_in_current_checkpoint": 0,
+    "dataset_downloads_in_current_checkpoint": 0,
+    "ledger_mutations_in_current_checkpoint": 0
+  },
+  "o3_preflight": {
+    "status": "BLOCKED_LOCAL_CANONICAL_REGISTRY_AND_JOURNAL_ABSENT",
+    "process_probe": "NO_ACTIVE_RUNTIME_MATCH",
+    "registry_path_checked": "C:/Users/User/AppData/Local/PatentToPilot/healthtech/budget-ledgers/PTP-HT-OR-R1-20261028-USD8.json",
+    "registry_path_present": false,
+    "known_journal_paths_checked": [
+      "root/results/development/provider-pilot/live.sqlite3",
+      "root/results/development/provider-pilot/paired-revalidation-1.sqlite3",
+      "candidate/results/development/provider-pilot/live.sqlite3",
+      "candidate/results/development/provider-pilot/paired-revalidation-1.sqlite3"
+    ],
+    "known_journal_paths_present": false,
+    "new_ledger_created": false,
+    "paid_dispatch": false,
+    "interpretation": "Known local paths do not expose a bindable canonical R1 journal; owner visual credit evidence is not treated as an API credit snapshot."
+  },
+  "scientific_boundary": {
+    "adaptive_superiority": "NOT_ESTABLISHED",
+    "semantic_device_patent_gold": "INCOMPLETE",
+    "external_business_validation": "NOT_VALIDATED",
+    "willingness_to_pay_revenue_roi": "NOT_VALIDATED",
+    "wpi_submission": "OWNER_REVIEW_REQUIRED"
+  },
+  "remaining_gates": [
+    "Exact existing R1 canonical journal location or a sanctioned all-attempt export for shared-ledger binding",
+    "Current account credit and billing evidence through an approved integration",
+    "Fresh route/provider/parameter/pricing evidence at any paid dispatch",
+    "Rights-cleared outbound payload for any API comparison",
+    "Owner review before integrating the isolated candidate into main"
+  ],
+  "latest_api_metadata_recheck": {
+    "audit": "candidate:docs/healthtech/audits/ptp-api-metadata-recheck-r3-20261103/README.md",
+    "verification": "candidate:docs/healthtech/audits/ptp-api-metadata-recheck-r3-20261103/verification.json",
+    "observed_at_utc": "2026-11-03T03:20:57.527471+00:00",
+    "status": "PASS_READ_ONLY_METADATA_RECHECK_PAID_GATE_UNCHANGED",
+    "lifetime_usage_usd": 0.0001464,
+    "account_scope": "NOT_RECONCILED",
+    "history_completeness": "NOT_PROVEN",
+    "current_scoped_credit": "NOT_AVAILABLE_MANAGEMENT_KEY_REQUIRED",
+    "dispatch": "BLOCKED_BEFORE_RESERVATION",
+    "provider_calls": 0,
+    "reservations": 0,
+    "attempts": 0,
+    "ledger_mutations": 0,
+    "budget_reset": false,
+    "window_reset": false
+  },
+  "business_value_scenario": {
+    "audit": "candidate:docs/healthtech/audits/ptp-business-value-scenario-20261103/README.md",
+    "verification": "candidate:docs/healthtech/audits/ptp-business-value-scenario-20261103/verification.json",
+    "status": "PASS_SCENARIO_ONLY_NOT_OBSERVED_BUSINESS_VALIDATION",
+    "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "observed_machine_seconds_per_case": 71.983,
+    "observed_machine_hours_per_case": 0.0199952778,
+    "human_time_observed": false,
+    "gpu_rate_observed": false,
+    "paid_api_cost_observed": false,
+    "external_business_validation": "NOT_RUN",
+    "roi_revenue_willingness_to_pay_claimed": false
+  },
+  "next_action": "Continue offline reproducibility and manuscript work in the isolated candidate; do not start a new paid/GPU batch or merge mixed-head evidence. Revisit O3 only when the existing authorization can be bound to one real ledger and current credit evidence is available.",
+  "latest_candidate_resume": {
+    "candidate_head": "88dc40471cb9078f929c02bb893cfa1e364da841",
+    "candidate_status": "DIRTY_DOCUMENTATION_AUDIT_AND_UNCOMMITTED_SOURCE_PATCH",
+    "candidate_acceptance_matrix": "candidate:docs/healthtech/long-runs/CURRENT_ACCEPTANCE_MATRIX.json",
+    "o1_o4_status": "O1 engineering complete; O2 current-head runtime-bound artifacts with no new remote rerun; O3 local guided 3/3 and API preflight pass with paid dispatch blocked; O4 three-case engineering pass with descriptive research partial",
+    "api_gate": "BLOCKED_BEFORE_RESERVATION; canonical R1 journal/registry and current scoped credit snapshot absent",
+    "manuscript_checkpoint": "candidate:docs/healthtech/audits/ptp-manuscript-api-rebind-20261103/verification.json",
+    "wpi_recheck": "candidate:docs/healthtech/audits/wpi-venue-recheck-r4-20261103/verification.json",
+    "completion_audit": "candidate:docs/healthtech/audits/ptp-goal-completion-audit-r4-20261103/verification.json",
+    "merge_main": "NOT_DONE",
+    "owner_review": "REQUIRED_BEFORE_MERGE"
+  }
+}

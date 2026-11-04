@@ -1,0 +1,240 @@
+{
+  "format": "long-run-document-validation-v1",
+  "validated_utc": "2026-10-31T01:14:52.706349+00:00",
+  "status": "PASS_DOCUMENTS_ONLY_AUTHORIZED_EXECUTION_NOT_STARTED",
+  "start_revision": "0d049802d36bc2eebe60331ec444d62469fd767f",
+  "end_revision": "0d049802d36bc2eebe60331ec444d62469fd767f",
+  "tracked_tree_unchanged": true,
+  "short_prompt_unicode_codepoints_including_newlines": 1497,
+  "short_prompt_utf16_units_including_newlines": 1497,
+  "short_prompt_maximum": 4000,
+  "short_prompt_sha256": "d8e0dece596ca1ec5242fd5bc77108944145127f27a347948ab0271b7a287f97",
+  "relative_links_checked": 30,
+  "links": [
+    {
+      "source": "AUTHORIZATION_AND_BUDGET.md",
+      "target": "REQUIREMENTS_RECEIPT.json",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "CHECKPOINT_AND_REPORTING.md",
+      "target": "../../audits/README.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "EXECUTION_PLAN.md",
+      "target": "AUTHORIZATION_AND_BUDGET.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "EXECUTION_PLAN.md",
+      "target": "../../audits/pepo-unblock-remote-20261030T2038Z/README.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "EXECUTION_PLAN.md",
+      "target": "MODEL_AND_DATA_PROTOCOL.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "EXECUTION_PLAN.md",
+      "target": "CHECKPOINT_AND_REPORTING.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "LONG_RUN_GOAL.md",
+      "target": "../../../../AGENTS.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "LONG_RUN_GOAL.md",
+      "target": "../../../../GOAL.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "LONG_RUN_GOAL.md",
+      "target": "../../../../PLAN.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "LONG_RUN_GOAL.md",
+      "target": "../../../../README.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "LONG_RUN_GOAL.md",
+      "target": "../../progress.json",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "LONG_RUN_GOAL.md",
+      "target": "../../../../memory/next-actions.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "LONG_RUN_GOAL.md",
+      "target": "../../audits/pepo-ui-integration-20261031/README.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "LONG_RUN_GOAL.md",
+      "target": "EXECUTION_PLAN.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "LONG_RUN_GOAL.md",
+      "target": "AUTHORIZATION_AND_BUDGET.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "MODEL_AND_DATA_PROTOCOL.md",
+      "target": "../../audits/pepo-audit-20261030T1330Z-db07982/DATASET_GAPS_TH.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "LONG_RUN_GOAL.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "AUTHORIZATION_AND_BUDGET.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "EXECUTION_PLAN.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "MODEL_AND_DATA_PROTOCOL.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "CHECKPOINT_AND_REPORTING.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "SHORT_GOAL_TH.txt",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "REQUIREMENTS_RECEIPT.json",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "VALIDATION.json",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "manifest.json",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "../../audits/pepo-audit-20261030T1330Z-db07982/SOURCE_CONTEXT_TH.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "../../audits/pepo-audit-20261030T1330Z-db07982/AUDIT_TH.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "../../audits/dr-train-resource-preflight-20261031/README.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "../../audits/pepo-ui-integration-20261031/README.md",
+      "exists": true,
+      "ascii": true
+    },
+    {
+      "source": "README.md",
+      "target": "../../audits/pepo-unblock-remote-20261030T2038Z/README.md",
+      "exists": true,
+      "ascii": true
+    }
+  ],
+  "root_index_created": true,
+  "files": [
+    "README.md",
+    "LONG_RUN_GOAL.md",
+    "AUTHORIZATION_AND_BUDGET.md",
+    "EXECUTION_PLAN.md",
+    "MODEL_AND_DATA_PROTOCOL.md",
+    "CHECKPOINT_AND_REPORTING.md",
+    "SHORT_GOAL_TH.txt",
+    "REQUIREMENTS_RECEIPT.json"
+  ],
+  "source_checks": "Current root requirements, main UI integration/preflight/repair receipts, selected source/contracts and primary model cards/papers/catalog read; historical test counts not rerun",
+  "primary_sources": [
+    "https://huggingface.co/datalyes/patembed-base",
+    "https://arxiv.org/abs/2510.22264",
+    "https://huggingface.co/intfloat/multilingual-e5-base",
+    "https://arxiv.org/abs/2402.05672",
+    "https://huggingface.co/Qwen/Qwen3-8B",
+    "https://huggingface.co/Qwen/Qwen3-32B",
+    "https://arxiv.org/abs/2505.09388",
+    "https://openrouter.ai/qwen/qwen3-32b",
+    "https://openrouter.ai/docs/guides/routing/provider-selection",
+    "https://openrouter.ai/docs/cookbook/administration/usage-accounting"
+  ],
+  "source_access_limits": "PatEmbed model card/tree accessible; selected nested JSON config URLs returned tool Internal Error, not permission denial. Nested prompt/pooling/projection contract supplied by parent research must be verified on immutable download before execution; no fabricated hashes.",
+  "live_execution": {
+    "tests": 0,
+    "ssh": 0,
+    "model_calls": 0,
+    "provider_calls": 0,
+    "api_spend_usd": 0,
+    "model_or_dataset_downloads": 0,
+    "installs": 0,
+    "compute_jobs": 0,
+    "commit_push": false
+  },
+  "owner_approval_pending": [],
+  "action_time_readiness_checks_not_new_approval_gates": [
+    "Fresh capacity/runtime compatibility and bounded peak storage plan",
+    "Immutable model/data revisions/license use and complete shards/import checks",
+    "Historical ledger reconciliation and fresh model/provider price/parameter checks before paid calls",
+    "Current ownership and exact PR/main heads/tests/protections before merge"
+  ],
+  "unresolved_permission_denials": [],
+  "readability_pass": "Normal English word spacing clarified without changing authority, scope or model IDs"
+}

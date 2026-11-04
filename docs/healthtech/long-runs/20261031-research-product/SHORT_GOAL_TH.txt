@@ -1,0 +1,11 @@
+โหมด NEW GOAL สำหรับ Luna Max — Patent-to-Pilot research + product long run
+ทำงานใน C:/Users/User/Desktop/myProject/patent-to-pilot
+อ่าน AGENTS และ docs/healthtech/long-runs/20261031-research-product/LONG_RUN_GOAL.md พร้อมเอกสารที่ลิงก์ ตรวจ HEAD/status/ownership และ checkpoint ก่อนเริ่ม
+
+ปิด 4 outcomes: UI ต่อ HTTP jobs/history/export พร้อม provider/cost/budget gate; PatEmbed-base+multilingual-e5-base encode บน dr-train เป็น resumable shards กลับ Windows ใช้ shared engine จริง; Qwen3-8B local เทียบ qwen/qwen3-32b API บน frozen evidence; 3 real device cases E2E+research report คง adaptive acquisition เทียบ strong fixed/multi-query/heuristic ไม่จบแค่ scripts/leaderboard
+
+งบ OpenRouter เดิม USD8 สะสม รวม generation/judge/reasoning/retries ต้อง reconcile ledger+reserve ก่อนทุก paid call ไม่มี API embeddings โหลด HF weights เก็บ Windows ก่อนส่ง dr-train Unknown spend หยุดเฉพาะ paid branch ไม่รอ expert gold ใหม่
+
+Owner อนุมัติ V100 UUID ในเอกสารใบเดียว concurrency 1 embedding/LLM สลับกัน สูงสุด 24 ชั่วโมงจาก runtime job แรก CPU≤8 threads RAM≤32 GiB disk เพิ่มรวม Windows+remote≤40 GiB และ isolated official setup ไม่แก้ system Python/driver ไม่แตะ Podi/งานอื่น ไม่ต้องขอสิทธิ์เดิมซ้ำ ตรวจ readiness ก่อนใช้
+
+ใช้ branch/worktree แยก รักษางาน Claude/Luna/owner ทำ tested commit/push/test PR และ merge main หลัง acceptance ได้ ตรวจ head/race เคารพ required reviews ไม่ force push/ปลอม Approve เก็บ checkpoint/report ใน repo แยก COMPLETE/PARTIAL/BLOCKED_LOCAL และ resume เฉพาะ goal ใหม่นี้

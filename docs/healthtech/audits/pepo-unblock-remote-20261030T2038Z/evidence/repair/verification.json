@@ -1,0 +1,20 @@
+{
+  "mode": "repair",
+  "source": "C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-pepo-unblock-20261030",
+  "scope": [
+    "tests/test_healthtech_query_projection.py",
+    "tests/test_healthtech_vector_restart.py",
+    "tests/test_healthtech_boundary_matrix.py",
+    "tests/test_healthtech_vector_artifacts.py",
+    "tests/test_healthtech_vector_eval.py",
+    "tests/test_healthtech_runtime_export.py",
+    "tests/test_healthtech_repairs.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 10.328000000008615,
+  "network_attempts": 0,
+  "provider_calls": 0,
+  "model_inference_calls": 0,
+  "engine_file": "C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-pepo-unblock-20261030\\src\\patent_to_pilot\\healthtech\\engine.py",
+  "vector_artifacts_file": "C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-pepo-unblock-20261030\\src\\patent_to_pilot\\evaluation\\healthtech\\vector_artifacts.py"
+}

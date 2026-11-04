@@ -1,0 +1,51 @@
+{
+  "format": "audit-file-sha256-manifest-v1",
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "invoke_preflight.ps1",
+      "bytes": 1831,
+      "sha256": "03a59c91d030f586420d9ff73875518c7ee3ff1ba678b955fe13f47268530f75"
+    },
+    {
+      "path": "NEXT_ACTIONS.md",
+      "bytes": 1893,
+      "sha256": "9b44f12e648cd6eef0354763dc765053f6eef75ceb420e4c8f111219988501f1"
+    },
+    {
+      "path": "PATEMBED_CHECKPOINT_SEARCH.json",
+      "bytes": 1055,
+      "sha256": "e86b84c3b77b0f1123636982936507b21537f572f7612e62c8d8d70423cc002f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9830,
+      "sha256": "659a559624f9c43cd2c9ea54cc0ea6cccdbd4401ef462208ef9c61c3ad3defed"
+    },
+    {
+      "path": "resource_probe_snapshot_1.py",
+      "bytes": 7862,
+      "sha256": "78a93c1385d1bcd49d937033fb1e509983364baa3562f83715b2756a64c24bdf"
+    },
+    {
+      "path": "resource_probe_snapshot_2.py",
+      "bytes": 10487,
+      "sha256": "0b6615350fd386466ef3450b7d9cdf50361ff4409a7311839017a116999e1573"
+    },
+    {
+      "path": "snapshot-1.json",
+      "bytes": 5036,
+      "sha256": "09791599da8e4b388ad40e2e784d06303ff97d6ddd5b751c62d0c23719150dbf"
+    },
+    {
+      "path": "snapshot-2.json",
+      "bytes": 5648,
+      "sha256": "75c4c855cd151cb4ee0063f31ce24bc3ce15d9b888ebbb5d10d4ed3e88b7d083"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 6251,
+      "sha256": "d55a5d6b8472c9f6576316f6fab903307bf1866afcec8bddb9e381b133194da1"
+    }
+  ]
+}

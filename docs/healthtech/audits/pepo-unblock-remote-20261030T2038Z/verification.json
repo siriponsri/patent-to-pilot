@@ -1,0 +1,85 @@
+{
+  "format": "pepo-remote-unblock-result-v1",
+  "prepared_utc": "2026-10-30T20:48:34.876092+00:00",
+  "status": "LOCAL_REPAIRS_AND_REAL_LOCAL_CASES_PASS_REMOTE_BLOCKED_ALLOCATION",
+  "base_revision": "a0ec9ceaf381ebbce6e6c340a8b420189eb8474c",
+  "end_main_revision": "a0ec9ceaf381ebbce6e6c340a8b420189eb8474c",
+  "main_source_drift": false,
+  "repair_branch": "codex/pepo-unblock-remote-20261030",
+  "repair_worktree": "C:\\Users\\User\\Desktop\\myProject\\_worktrees\\patent-to-pilot-pepo-unblock-20261030",
+  "implementation_location": "Isolated Pepo worktree only; not merged/committed/pushed",
+  "fixes": [
+    "External source-derived query/company metadata field policy and source-value match",
+    "Resume recovery after final manifest committed before checkpoint cleanup",
+    "Kernel process-owned single-writer lock released on process crash",
+    "Imported shard input/model/config binding validation"
+  ],
+  "baseline_reproduction": {
+    "total": 3,
+    "passed": 0,
+    "failed": [
+      "test_external_query_metadata_follows_source_field_policy_after_reload[product_display]",
+      "test_external_query_metadata_follows_source_field_policy_after_reload[redistribution]",
+      "test_resume_after_final_commit_before_checkpoint_cleanup"
+    ],
+    "skipped": []
+  },
+  "repair_tests": {
+    "total": 59,
+    "passed": 58,
+    "failed": [],
+    "skipped": [
+      {
+        "name": "test_onnx_tokenizer_uses_native_masks_types_and_deterministic_padding",
+        "reason": "pinned local tokenizer artifact is unavailable"
+      }
+    ]
+  },
+  "syntax_check": {
+    "files": 5,
+    "result": "PASS"
+  },
+  "diff_check": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "warning: in the working copy of 'src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'src/patent_to_pilot/healthtech/engine.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'src/patent_to_pilot/healthtech/rights.py', LF will be replaced by CRLF the next time Git touches it\n"
+  },
+  "tested_source_sha256": {
+    "src/patent_to_pilot/healthtech/engine.py": "119c1589aea13417d73062043640af4465f6842b617740f4099387eeb16a5aae",
+    "src/patent_to_pilot/healthtech/rights.py": "e078147ad3f7ac86ad1138e63aad602845ca2e1471b66ae35af37dcc3e777a49",
+    "src/patent_to_pilot/evaluation/healthtech/vector_artifacts.py": "f3255d76f946b60bcb4f8be45879f3dfe9946c32927b8be0f0fcd80651dac3fa",
+    "tests/test_healthtech_query_projection.py": "932437cca1f3917cac83e2ce8303bfd138608118ff1b9115b73f56431ae38969",
+    "tests/test_healthtech_vector_restart.py": "bb333c6a9c3e8e011cb101d83a845e8a5ebc352bf7bd2f75f890c6334eade720"
+  },
+  "repair_patch_sha256": "01c8ba6856cd780f09a80a8f007e24eec996607d8e2196247485b37cbf835a09",
+  "actual_runtime": {
+    "location": "Windows local CPU only",
+    "real_patents": 41,
+    "shards": 3,
+    "dimension": 384,
+    "real_dossier_cases": 3,
+    "local_neural_calls": 14,
+    "encoded_rows_including_queries": 44,
+    "prior_luna_canary_imported_rows": 64,
+    "network_attempts": 0,
+    "provider_calls": 0,
+    "api_cost_usd": 0
+  },
+  "remote_execution": "NOT_RUN",
+  "remote_transfer": "NOT_RUN",
+  "remote_full_dapfam_eval": "NOT_RUN",
+  "remote_dossier_path": "NOT_RUN",
+  "actual_blocker": {
+    "action": "Start bounded dr-train encoder and controlled transfer",
+    "target": "chaw@100.77.149.83",
+    "reason": "No applicable CPU/GPU allocation/window/limits/jobroot reference found in the inspected current project checkpoint/receipts",
+    "state": "PENDING_MISSING_ALLOCATION_NOT_DENIED",
+    "completed": "Code repairs, offline crash/concurrency tests, actual local 41-patent encode/import and 3 dossier workflows",
+    "ssh": "Luna strict SSH PASS supported by prior receipts, not re-executed during this repair",
+    "minimal_owner_input": "Existing applicable allocation reference OR confirmation of the proposed bounded CPU scope in NEXT_ACTIONS.md"
+  },
+  "rights_scope": "Current owner instruction covers intended compute/transfer workflow; source-specific local-research/controlled-processing terms remain applicable. No new blanket owner transfer approval gate, public redistribution or patient/private input allowed.",
+  "writer_scope": "No specific Luna runner identity claimed; separate worktree/run files avoid taking over Luna/Claude files. Neither existing worktree modified.",
+  "budget": "No new OpenRouter grant. Original USD8 cumulative; no provider call here.",
+  "no_publication_or_scientific_completion_claim": true
+}

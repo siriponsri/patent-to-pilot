@@ -1,0 +1,153 @@
+{
+  "format": "dr-train-resource-preflight-verification-v1",
+  "prepared_utc": "2026-10-31T00:53:33.042168+00:00",
+  "status": "PASS_READ_ONLY_RESOURCE_OBSERVATION_ALLOCATION_UNKNOWN",
+  "scope": "Read-only preflight and project-local report only; no new long-run Goal or budget/rights decision in this task",
+  "destination": "chaw@100.77.149.83",
+  "start_revision": "0d049802d36bc2eebe60331ec444d62469fd767f",
+  "end_revision": "0d049802d36bc2eebe60331ec444d62469fd767f",
+  "tracked_status_start": [],
+  "tracked_status_end": [],
+  "snapshots_utc": [
+    "2026-10-31T00:49:34.766688Z",
+    "2026-10-31T00:51:00.341841Z"
+  ],
+  "snapshot_gap_seconds": 85.575153,
+  "snapshot_source_files": [
+    "snapshot-1.json",
+    "snapshot-2.json"
+  ],
+  "timestamp_serialization_note": "PowerShell ConvertFrom-Json/ConvertTo-Json converted remote UTC ISO fields to equivalent +07:00 offsets; original snapshot exports are preserved. UTC instants normalized here.",
+  "gpus": [
+    {
+      "index": "0",
+      "uuid": "GPU-044a8b11-4729-458b-a07b-297e45439419",
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "driver_version": "580.178.04",
+      "memory.total": "11264",
+      "memory.free": "10818",
+      "memory.used": "1",
+      "utilization.gpu": "0",
+      "compute_mode": "Default"
+    },
+    {
+      "index": "1",
+      "uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+      "name": "Tesla V100-SXM2-32GB",
+      "driver_version": "580.178.04",
+      "memory.total": "32768",
+      "memory.free": "32495",
+      "memory.used": "0",
+      "utilization.gpu": "0",
+      "compute_mode": "Default"
+    }
+  ],
+  "gpu_units": {
+    "memory": "MiB",
+    "utilization.gpu": "percent"
+  },
+  "cpu": {
+    "lscpu": {
+      "Architecture": "x86_64",
+      "CPU(s)": "72",
+      "On-line CPU(s) list": "0-71",
+      "Model name": "Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz",
+      "Thread(s) per core": "2",
+      "Core(s) per socket": "18",
+      "Socket(s)": "2",
+      "CPU max MHz": "3800.0000",
+      "CPU min MHz": "1200.0000"
+    },
+    "logical_cpu_count": 72,
+    "affinity_cpu_count": 72,
+    "load_averages_1_5_15_min": [
+      0.36767578125,
+      0.4560546875,
+      0.4404296875
+    ],
+    "allocation": "UNKNOWN_NOT_GRANTED"
+  },
+  "ram_total_gib": 125.76190567016602,
+  "ram_available_gib": 117.027587890625,
+  "storage_free_gib": 150.68596649169922,
+  "storage": "/home/chaw and /tmp share the observed filesystem; not additive; statvfs free is not a user quota",
+  "remote_jobroot": "/home/chaw/patent-to-pilot-jobs DOES_NOT_EXIST; not created",
+  "runtime_scope": {
+    "python_version": "3.12.3",
+    "python_executable": "/usr/bin/python3",
+    "packages": {
+      "torch": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "onnxruntime": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "onnxruntime-gpu": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "sentence-transformers": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "transformers": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "tokenizers": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "numpy": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "safetensors": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "huggingface-hub": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "accelerate": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "faiss-cpu": "NOT_INSTALLED_IN_THIS_INTERPRETER",
+      "faiss-gpu": "NOT_INSTALLED_IN_THIS_INTERPRETER"
+    },
+    "owned_environment_metadata": [],
+    "torch_cuda_runtime": "NOT_IMPORTED_OR_TESTED",
+    "cuda_compiler": {
+      "status": "NOT_ON_PATH"
+    }
+  },
+  "cache_scope": {
+    "root": "/home/chaw/.cache/huggingface/hub",
+    "exists": true,
+    "models": [],
+    "scope": "Owned default HF cache metadata for embedding/patent models only; no weight contents, tokens or arbitrary cache roots read",
+    "matching_model_count": 0
+  },
+  "other_owned_model_roots": [
+    {
+      "path": "/home/chaw/models",
+      "exists": false,
+      "embedding_or_patent_named_children": []
+    },
+    {
+      "path": "/home/chaw/model-cache",
+      "exists": false,
+      "embedding_or_patent_named_children": []
+    },
+    {
+      "path": "/home/chaw/hf-cache",
+      "exists": false,
+      "embedding_or_patent_named_children": []
+    },
+    {
+      "path": "/home/chaw/.cache/torch/sentence_transformers",
+      "exists": false,
+      "embedding_or_patent_named_children": []
+    }
+  ],
+  "patembed_actual_id_revision_checkpoint": "NOT_FOUND_IN_INSPECTED_PROJECT_DOCUMENTS_CONFIGS_CODE_AND_NAMED_CACHE_PATHS",
+  "allocation_status": "UNKNOWN_NOT_GRANTED; observed free capacity is not reserved or authorized capacity",
+  "hardware_runtime_compatibility": "NOT_TESTED; driver visibility is not evidence of PyTorch CUDA architecture/kernel compatibility",
+  "privacy_scope": "No env dump, credentials/private key contents, other-team files, model weight contents, process command lines or Podi service inspection",
+  "actions": {
+    "strict_ssh_connections": 2,
+    "remote_lightweight_metadata_probes": 2,
+    "model_or_encoding_jobs": 0,
+    "model_inference_calls": 0,
+    "provider_calls": 0,
+    "api_spend_usd": 0,
+    "downloads": 0,
+    "installs": 0,
+    "remote_writes": 0,
+    "settings_changes": 0,
+    "services_touched": 0,
+    "commit_push": false
+  },
+  "unresolved_permission_denials": [],
+  "requirements_for_parent": [
+    "Select/confirm an existing applicable GPU UUID or CPU allocation and execution window/hard deadline; confirm shared-service constraints rather than infer from idle GPUs",
+    "Choose exact PatEmbed model repository/revision/checkpoint from foundational-chat/research evidence; no checkpoint found here, do not guess",
+    "Determine a permitted isolated runtime/setup route or existing owner-supplied environment path; current system Python lacks required packages and nvcc is not on PATH",
+    "Agree bounded wall/VRAM/RAM/disk/download ceilings after actual model requirements are known; no new authorization or purchase inferred",
+    "Clarify only uncertain paid-provider/budget scope separately; this preflight used no API and did not inspect private historical billing ledgers"
+  ]
+}
