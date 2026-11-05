@@ -11,6 +11,7 @@ The owner supplied files 36–40 by downloading them through their own access; t
 | 36_llm_patent_lifecycle_review_wpi2026.pdf | Large language models in the patent lifecycle: A systematic review (*World Patent Information*, 2026) | owner download | `df2d4fbcd4814550` |
 | 37_searchformer_wpi2023.pdf | Searchformer, a Siamese transformer model designed for patent prior art searches (*World Patent Information*, 2023) | owner download | `8f5bd137f0b3866b` |
 | 38_dapfam_arxiv_v2_duplicate.pdf | DAPFAM. The download is byte-identical to `01_dapfam.pdf` (arXiv 2506.22141v2, "Preprint submitted to Elsevier"), not the published *Array* 29:100720 version, which is still to be obtained | owner download | `384dff3e3ac0fe6d` |
+| 59_dapfam_array2026.pdf | DAPFAM, published: *Array* 29 (2026) 100720, doi 10.1016/j.array.2026.100720, CC BY 4.0. Same content as arXiv v2 (all 1,494 appendix numbers identical); v2 inconsistencies unchanged; OUT ranking protocol still unspecified (p.9) | owner download | `276251946dfcbcea` |
 | 39_cpc_aware_llm_query_expansion_2026.pdf | CPC-aware neural patent retrieval with LLM-assisted query expansion (Springer, 2026; 10.1007/s42488-026-00165-8) | owner download | `8e00b74e00f480c9` |
 | 40_rethinking_patent_retrieval_lm_wpi2026.pdf | Rethinking patent retrieval with language models (*World Patent Information*, 2026) | owner download | `e02bf7921279e9ce` |
 | 41_patent_embeddings_22_models_2026.pdf | Yousefiramandi & Cooney, Benchmarking Patent Embeddings: 22 Models | arXiv 2605.24297 | `07aefa5f1673e182` |

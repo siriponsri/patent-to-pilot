@@ -67,7 +67,7 @@ The first citation-grounded, budget-controlled test of whether LLM function abst
    - A brief cut from the patent's own description can carry solution vocabulary.
    - Use title-only and a constrained problem-only extraction as two brief types. Report vocabulary overlap with the target.
 4. **Citation pairs are a proxy.** A cross-domain citation is evidence of relatedness, not of transferability. State this in the paper.
-5. **Embedding training leakage.** patembed's retrieval_OUT training data may overlap DAPFAM. Access to the gated HF dataset is granted to the owner's account; the overlap check is still pending.
+5. **Embedding training leakage: low at the pair level.** The PatenTEB `retrieval_OUT` test split (15,462 triplets, 32,094 families) contains 1 of the 5,193 DAPFAM strict-OUT pairs (in either direction). Its families overlap 48 DAPFAM queries and 376 corpus families. problem2solution overlaps 74 DAPFAM families and para_problem 95. The PatenTEB training split is not released, so the family-level overlap there is unknown. The data are stored in private artifacts only.
 6. **No business validation.** The PoC is a technical demonstration only, under the project's no-external-validation rule. DAPFAM has no assignee field, so partner suggestions would need another public source.
 
 ## Baselines this direction must beat (dev first, test once)
@@ -78,11 +78,20 @@ The first citation-grounded, budget-controlled test of whether LLM function abst
 4. A cross-domain lane on the raw brief, without an LLM.
 5. Untuned RRF with K = 60. Searchformer shows the result hardly depends on k (file 37, p.11).
 
+## DAPFAM published version (file 59)
+
+*Array* 29 (2026) 100720, CC BY 4.0. The content is identical to arXiv v2: all 1,494 appendix numbers match.
+
+- The v2 inconsistencies remain. Dense-passage OUT R@100 is 0.1538 in Table 9 but 0.1552 in Tables 11–12. The retention ratios are OUT/IN, not OUT/ALL.
+- It is still unspecified whether OUT ranks only OUT candidates or the full candidate set (p.9).
+- RRF K is tuned on the evaluation set.
+- There is no LLM, query rewriting or TRIZ content.
+- Citable baselines: hybrid passage OUT R@100 0.1653 (Table 12); BM25-passage 0.1563 and dense-passage 0.1552 (Table 11).
+
 ## Still to obtain
 
 | Item | Priority |
 |---|---|
-| DAPFAM, published *Array* version. The owner's download is the arXiv v2 preprint (identical bytes to file 01). https://www.sciencedirect.com/science/article/pii/S2590005626000433 | Medium |
 | Ayaou, Chibane, Koch, Cavallucci, "Leveraging information retrieval pipelines for inventive design", TFC 2024 (IFIP AICT) | Highest: same authors as DAPFAM |
 | Ni, Samet, Cavallucci, *J. Intell. Manuf.* 33(6) 2022, doi 10.1007/s10845-021-01749-4, and the 2019/2020 TFC chapters | High |
 | Yu et al., *IJPR* 61(21) 2023, doi 10.1080/00207543.2022.2151659 | High |
