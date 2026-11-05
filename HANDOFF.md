@@ -24,6 +24,9 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
   - Solution-scout feasibility (dev, 6 Nov 2026): `PARTIAL_LANE_ONLY` ([audit](docs/healthtech/audits/ptp-solution-scout-feasibility-20261105/README.md)).
     - The scout pool was below the lane-only pool (−0.066, CI −0.094 to −0.040), so the LLM claim is not carried forward.
     - Post hoc, the lane gain was traced to the IPC3 mask, which matches the strict-OUT definition. Test not opened; USD0 paid.
+  - Solution-atlas headroom (dev, 6 Nov 2026): `GO_ORACLE_ONLY` ([audit](docs/healthtech/audits/ptp-solution-atlas-headroom-20261106/README.md)).
+    - Oracle class reordering gave +0.059 R@50. The learned class prior gave −0.044 (CI −0.070 to −0.017).
+    - Building an external prior is an owner decision. Test not opened; USD0 paid.
 
 Earlier status: `PAUSED_BY_OWNER_NORMAL_MAIN_ONLY_AUDIT`
 
