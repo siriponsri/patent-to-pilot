@@ -28,6 +28,11 @@ Status: `STAGE1_GATE_PASS_LEARNABLE_HEADROOM_FAIL_TEST_NOT_OPENED` (Stage 1 audi
   - The cross-fitted global mix and the per-section mix both fell below R2 (Amendment 1). The fixed-mix and organization-adaptive claims are not carried forward.
   - Q actions reach 120 strict-OUT positives that no R action reaches.
 - Next: owner decision on direction. Do not open test before a Stage 2 freeze commit. No paid calls.
+- Solution-scout feasibility (dev, 6 Nov 2026): `PARTIAL_LANE_ONLY` ([audit](../docs/healthtech/audits/ptp-solution-scout-feasibility-20261105/README.md); [plan](../docs/healthtech/research/SOLUTION_SCOUT_FEASIBILITY_PLAN_20261105_EN.md), pre-declared at `3c4294e`).
+  - On brief P, scout − base was +0.044 (CI +0.021 to +0.069), but scout − lane was −0.066 (CI −0.094 to −0.040). The LLM claim is not carried forward; there is no test run.
+  - Function and solution-sketch texts were below the plain brief with and without the mask.
+  - Post hoc: the IPC3 lane mask equals the strict-OUT definition, and masked full-patent R2 reaches 0.334 against 0.162 unmasked. The lane gain is a candidate-set effect, not a finding.
+  - Next: owner decision on direction. Test not opened. No paid calls.
 
 ## HT-NEXT-266 — 2026-11-04 WPI research package (Track A)
 

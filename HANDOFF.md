@@ -21,6 +21,9 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
     - The preregistered gate passed: oracle − F\* 0.099, Q-only share 23%.
     - M\* is R2. The cross-fitted global mix was below R2 (−0.014, CI −0.028 to −0.002), and the per-section mix was below the global mix (−0.008).
     - Under Amendment 1, neither claim goes forward. Test not opened. Next is an owner decision on the direction.
+  - Solution-scout feasibility (dev, 6 Nov 2026): `PARTIAL_LANE_ONLY` ([audit](docs/healthtech/audits/ptp-solution-scout-feasibility-20261105/README.md)).
+    - The scout pool was below the lane-only pool (−0.066, CI −0.094 to −0.040), so the LLM claim is not carried forward.
+    - Post hoc, the lane gain was traced to the IPC3 mask, which matches the strict-OUT definition. Test not opened; USD0 paid.
 
 Earlier status: `PAUSED_BY_OWNER_NORMAL_MAIN_ONLY_AUDIT`
 

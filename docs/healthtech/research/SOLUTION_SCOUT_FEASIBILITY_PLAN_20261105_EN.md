@@ -2,6 +2,8 @@
 
 Status: pre-declared before any brief or scout output was generated. Background: [novelty check](SOLUTION_SCOUT_NOVELTY_CHECK_20261105_EN.md).
 
+Outcome (6 Nov 2026): `PARTIAL_LANE_ONLY`. The scout pool was below the lane-only pool. A post-hoc check found that the lane gain comes mainly from the IPC3 mask, which matches the strict-OUT definition. See the [feasibility audit](../audits/ptp-solution-scout-feasibility-20261105/README.md). The plan text below is unchanged.
+
 ## 1. Question
 
 When the query is a short problem brief rather than a full patent, does LLM function abstraction plus a cross-domain retrieval lane expose more known cross-domain (strict-OUT) prior art than dense retrieval on the brief, at the same 200-family budget?

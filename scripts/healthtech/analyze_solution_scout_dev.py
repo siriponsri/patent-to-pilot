@@ -45,6 +45,8 @@ def main() -> int:
     parser.add_argument("--r2", type=Path, required=True, help="full-patent dense rankings (reference only)")
     parser.add_argument("--qrels", type=Path, default=ROOT / "methodology/datasets/research-only-nc/qrels_all.parquet")
     parser.add_argument("--split", type=Path, required=True)
+    parser.add_argument("--masked-r2", type=Path,
+                        help="post-hoc, descriptive only: full-patent dense rankings under the same IPC3 mask")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     import pyarrow.parquet as pq
@@ -107,6 +109,22 @@ def main() -> int:
         "scout_beats_base": beats_base, "scout_beats_lane": beats_lane, "lane_beats_base": lane_helps,
         "status": "PASS" if beats_base and beats_lane else ("PARTIAL_LANE_ONLY" if lane_helps else "FAIL"),
     }
+    if args.masked_r2:
+        # Added after the stop rule was applied. The lane mask equals the strict-OUT definition (no shared IPC3),
+        # so this reference shows how much of the lane gain comes from the candidate set rather than the brief.
+        masked = _load(args.masked_r2)
+        result["inputs_sha256"][args.masked_r2.name] = hashlib.sha256(args.masked_r2.read_bytes()).hexdigest()
+        r2_lane = {q: lane_merge(r2.get(q, []), [masked.get(q, [])], KEEP) for q in dev}
+        x_p = _load(args.rankings_dir / "rankings-x-P-dev.jsonl")
+        result["post_hoc_descriptive"] = {
+            "note": "not pre-declared; no decision attached",
+            "full_patent_masked": metrics(masked),
+            "full_patent_lane_pool": metrics(r2_lane),
+            "brief_P_masked_minus_full_patent_masked": paired_cluster_bootstrap(
+                per_query(x_p), per_query(masked), ident, resamples=5000, seed=SEED),
+            "full_patent_masked_minus_full_patent": paired_cluster_bootstrap(
+                per_query(masked), per_query(r2), ident, resamples=5000, seed=SEED),
+        }
     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"stop_rule": result["stop_rule"], "reference": result["reference_full_patent_dense"],
                       **{b: {"pools": result["briefs"][b]["pools"],
