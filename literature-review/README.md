@@ -7,6 +7,7 @@
 - [Verified PDF identities and separate rights notes](healthtech/paper_manifest.json)
 - [BibTeX](healthtech/references.bib)
 - [Pack provenance](../docs/healthtech/pack-provenance.json)
+- [Additions 5 Nov 2026 (cross-domain retrieval, query reformulation)](cross-domain/ADDITIONS_20261105.md)
 
 Bridge-MedDevKG เป็น main task candidate แบบมีเงื่อนไข SciFact ประเมิน evidence component แยก; ChEMU/BioASQ/NLI4CT และ chemical resources เป็น supporting/extension tasks สิทธิ์ของ paper, code และ dataset ต้องตรวจแยก
 
