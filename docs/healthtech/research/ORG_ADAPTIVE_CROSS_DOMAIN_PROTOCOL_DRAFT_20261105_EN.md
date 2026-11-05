@@ -130,12 +130,21 @@ Reward on dev = new strict-OUT positives added to the pool − λ × Qwen calls,
 | Stage | Work | Gate to continue |
 |---|---|---|
 | 0 (**done, PASS**; [audit](../audits/ptp-org-adaptive-stage0-20261105/README.md)) | Hash check; split; model and license records; pooling equivalence check against SentenceTransformer; dense Top-200 pools for R2 and R2w; internal consistency check of R2 against the owner's earlier run (not reported); 20-query Qwen canary on dev | Hashes match; pooling equivalent; canary failure rate ≤ 5%. R2w (max and mean) was lower than R2 on every dev endpoint, so R2 stays the dense candidate. Prompt v1 replaced v0 after v0's IPC-shift failed. |
-| 1 | Run every action on dev. Compute F\*, M\* and the dev oracle. | **Headroom gate:** dev oracle − F\* ≥ 0.03 strict-OUT Recall@200, **and** Q actions contribute ≥ 10% of the unique OUT positives found by any action. If either fails, stop, report it as a diagnostic finding and do not open test. |
+| 1 (**done**; [audit](../audits/ptp-org-adaptive-stage1-20261105/README.md): gate PASS, Amendment 1 checks FAIL, test not opened) | Run every action on dev. Compute F\*, M\* and the dev oracle. | **Headroom gate:** dev oracle − F\* ≥ 0.03 strict-OUT Recall@200, **and** Q actions contribute ≥ 10% of the unique OUT positives found by any action. If either fails, stop, report it as a diagnostic finding and do not open test. |
 | 2 | Train π-global and π-org on dev with 5-fold cross-fitting by component. Choose λ as the smallest grid value whose cross-fitted π-global stays within 0.01 of M\*. Freeze prompts, code hashes, selections and λ, and commit **before** test. | Freeze committed |
 | 3 | Score all policies on test once. Paired component bootstrap (10,000 resamples, seed `20261105`); Holm adjustment over H1, H2 and H3; H2b and H-G are tolerance checks. | — |
 | 4 (optional, separate amendment) | GRPO-LoRA on Qwen3-1.7B or 4B for Q1, rewarded by dev OUT exposure gain; compared with the prompted Q1 under its own freeze | Only if H1 is positive and the owner approves the extra compute |
 
 Non-significant differences are reported as such and never called equivalence. Every policy and action is reported on test, not only the selected ones.
+
+**Amendment 1 (2026-11-05, recorded after R1 and R2 dev pools and before any Q-action output was read).**
+
+The Stage 1 gate above is kept unchanged and still reported. The per-query oracle maximizes over 63 correlated pools, so selection inflates it. A smoke run of the analysis with only R1, R2 and R3 showed the effect: the R-only oracle is already 0.019 above F\* on dev without any LLM call. Two cross-fitted checks are therefore added. Both use 5-fold, query-level folds stratified by first-IPC section with seed `20261105`. Component folds are not usable on dev, because one component holds 374 of the 474 dev queries.
+
+- **Fixed-mix claim:** the M\* > F\* claim goes to the Stage 3 test only if the cross-fitted global mix beats F\* on held-out dev queries with a 95% query-bootstrap lower bound above 0.
+- **Organization claim:** the organization-adaptive policy goes to Stage 2 only if the cross-fitted per-section mix beats the cross-fitted global mix on held-out dev queries (point estimate > 0). A section with fewer than 20 training queries falls back to the global mix.
+
+Stage 2 uses the same query-level folds in place of component folds.
 
 ## 9. Compute and cost
 

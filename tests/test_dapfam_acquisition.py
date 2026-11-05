@@ -98,3 +98,55 @@ def test_first_ipc_section():
     assert first_ipc_section(["A61", "B01"]) == "A"
     assert first_ipc_section([]) == "?"
     assert first_ipc_section(None) == "?"
+
+
+def test_budgeted_merge_round_robin_dedupes_and_caps():
+    from patent_to_pilot.evaluation.dapfam_acquisition import budgeted_merge
+
+    assert budgeted_merge([["a", "b", "c"], ["b", "d"]], budget=10) == ["a", "b", "d", "c"]
+    assert budgeted_merge([["a", "b", "c"], ["x", "y"]], budget=3) == ["a", "x", "b"]
+    assert budgeted_merge([], budget=5) == []
+
+
+def test_assign_folds_is_stratified_and_deterministic():
+    from patent_to_pilot.evaluation.dapfam_acquisition import assign_folds
+
+    strata = {f"q{i}": ("A" if i < 10 else "B") for i in range(15)}
+    folds = assign_folds(strata, k=5, seed=3)
+    assert folds == assign_folds(strata, k=5, seed=3)
+    assert sorted(v for q, v in folds.items() if strata[q] == "A") == [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
+
+
+def test_crossfit_select_uses_only_other_folds_and_group_fallback():
+    from patent_to_pilot.evaluation.dapfam_acquisition import crossfit_select
+
+    scores = {"a1": {"X": 1.0, "Y": 0.0}, "a2": {"X": 1.0, "Y": 0.0},
+              "b1": {"X": 0.0, "Y": 1.0}, "b2": {"X": 0.0, "Y": 1.0}, "b3": {"X": 0.0, "Y": 1.0}}
+    folds = {"a1": 0, "b1": 0, "a2": 1, "b2": 1, "b3": 2}
+    cost = {"X": (0, 1), "Y": (1, 1)}
+    # global: fold 0 trains on a2,b2,b3 -> Y; fold 1 trains on a1,b1,b3 -> Y; fold 2 trains on a1,b1,a2,b2 -> tie -> X
+    assert crossfit_select(scores, folds, cost) == {"a1": "Y", "b1": "Y", "a2": "Y", "b2": "Y", "b3": "X"}
+    groups = {"a1": "A", "a2": "A", "b1": "B", "b2": "B", "b3": "B"}
+    by_group = crossfit_select(scores, folds, cost, groups, min_group=1)
+    assert by_group == {"a1": "X", "a2": "X", "b1": "Y", "b2": "Y", "b3": "Y"}
+    assert crossfit_select(scores, folds, cost, groups, min_group=5)["a1"] == "Y"
+
+
+def test_compact_bm25_matches_reference_sparse_bm25():
+    import importlib.util
+    from pathlib import Path
+
+    import numpy as np
+
+    from patent_to_pilot.evaluation.dapfam_acquisition import CompactBM25
+
+    path = Path(__file__).resolve().parents[1] / "scripts/healthtech/run_dapfam_bm25.py"
+    spec = importlib.util.spec_from_file_location("run_dapfam_bm25", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    corpus = [module.tokenize(t) for t in ["valve leaflet clip clip", "wave float tether fin", "valve stent frame",
+                                           "the the the a", "clip and valve and fin"]]
+    reference = module.SparseBM25(corpus, k1=1.5, b=0.75, epsilon=0.25)
+    compact = CompactBM25(corpus)
+    for query in (["valve", "clip", "clip"], ["the", "fin", "unknown"], ["a"]):
+        assert np.allclose(compact.get_scores(query), reference.get_scores(query), rtol=1e-12, atol=1e-12)

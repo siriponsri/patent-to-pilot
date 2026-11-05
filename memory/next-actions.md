@@ -10,7 +10,7 @@ This Normal round is a documentation/test audit on `main`, not a goal continuati
 
 ## HT-NEXT-267 — 2026-11-05 Organization-adaptive cross-domain study (plan only)
 
-Status: `STAGE0_PASS_TEST_NOT_SCORED` (Stage 0 audit: `../docs/healthtech/audits/ptp-org-adaptive-stage0-20261105/README.md`). Protocol draft: `../docs/healthtech/research/ORG_ADAPTIVE_CROSS_DOMAIN_PROTOCOL_DRAFT_20261105_EN.md`. PoC plan: `../docs/healthtech/research/ORG_ADAPTIVE_POC_PLAN_20261105_EN.md`.
+Status: `STAGE1_GATE_PASS_LEARNABLE_HEADROOM_FAIL_TEST_NOT_OPENED` (Stage 1 audit: `../docs/healthtech/audits/ptp-org-adaptive-stage1-20261105/README.md`; Stage 0 audit: `../docs/healthtech/audits/ptp-org-adaptive-stage0-20261105/README.md`). Protocol draft: `../docs/healthtech/research/ORG_ADAPTIVE_CROSS_DOMAIN_PROTOCOL_DRAFT_20261105_EN.md`. PoC plan: `../docs/healthtech/research/ORG_ADAPTIVE_POC_PLAN_20261105_EN.md`.
 
 - Target: adaptive, cost-accounted candidate acquisition for DAPFAM strict-OUT exposure at an equal budget of 200 families. Qwen3-8B actions (functional abstraction, IPC-shift, pseudo-document), a contextual-bandit policy, and simulated organizations defined by IPC section A–H.
 - Owner decisions (2026-11-05):
@@ -22,7 +22,12 @@ Status: `STAGE0_PASS_TEST_NOT_SCORED` (Stage 0 audit: `../docs/healthtech/audits
   - The internal consistency check passed with delta 0.
   - Multi-window queries were worse than single-window on dev, a negative result; R2 stays.
   - Qwen prompt v1 passed the canary (1 of 40 calls failed).
-- Next: Stage 1 on dev only: BM25-TAC, RRF, and the Qwen v1 actions on 474 dev queries, followed by the headroom gate. Do not open test before the headroom gate and the Stage 2 freeze commit. No paid calls.
+- Stage 1 outcomes (dev):
+  - The preregistered gate passed.
+  - M\* is R2 alone.
+  - The cross-fitted global mix and the per-section mix both fell below R2 (Amendment 1). The fixed-mix and organization-adaptive claims are not carried forward.
+  - Q actions reach 120 strict-OUT positives that no R action reaches.
+- Next: owner decision on direction. Do not open test before a Stage 2 freeze commit. No paid calls.
 
 ## HT-NEXT-266 — 2026-11-04 WPI research package (Track A)
 

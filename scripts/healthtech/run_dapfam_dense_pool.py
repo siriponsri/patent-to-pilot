@@ -92,6 +92,8 @@ def main() -> int:
     parser.add_argument("--window-aggregation", choices=("max", "mean"), default="max",
                         help="combine per-window passage scores of a multi-window query")
     parser.add_argument("--reuse-vectors", type=Path, help="passage-vectors-f32.npy from an earlier run on the same corpus")
+    parser.add_argument("--family-ipc3", type=Path,
+                        help="JSONL {id, ipc3}; query rows with allowed_ipc3 are restricted to families in those classes")
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--limit-families", type=int)
     parser.add_argument("--limit-queries", type=int)
@@ -132,6 +134,13 @@ def main() -> int:
         timings["query_encode_seconds"] = round(time.time() - started, 3)
         torch = encoder.torch
         started = time.time()
+        class_members: dict[str, list[int]] = {}
+        if args.family_ipc3:
+            position = {family: i for i, family in enumerate(family_ids)}
+            for row in _read_jsonl(args.family_ipc3, None):
+                if row["id"] in position:
+                    for code in row["ipc3"]:
+                        class_members.setdefault(code, []).append(position[row["id"]])
         matrix = torch.from_numpy(vectors).to("cuda")
         family_index = torch.tensor(passage_family, dtype=torch.int64, device="cuda")
         all_queries = torch.from_numpy(query_vectors).to("cuda")
@@ -145,7 +154,14 @@ def main() -> int:
                 scores = window_scores.amax(dim=0) if args.window_aggregation == "max" else window_scores.mean(dim=0)
                 best = torch.full((len(family_ids),), -float("inf"), device="cuda")
                 best.scatter_reduce_(0, family_index, scores, reduce="amax", include_self=True)
+                if "allowed_ipc3" in row:
+                    allowed = sorted({i for code in row["allowed_ipc3"] for i in class_members.get(code, [])})
+                    mask = torch.ones(len(family_ids), dtype=torch.bool, device="cuda")
+                    mask[torch.tensor(allowed, dtype=torch.int64, device="cuda")] = False
+                    best[mask] = -float("inf")
                 values, indices = torch.topk(best, k=depth)
+                keep = torch.isfinite(values)
+                values, indices = values[keep], indices[keep]
                 ranked = sorted(zip(values.cpu().tolist(), indices.cpu().tolist()),
                                 key=lambda item: (-item[0], family_ids[item[1]]))
                 handle.write(json.dumps({"query_id": row["id"], "families": [family_ids[i] for _, i in ranked],
@@ -164,6 +180,8 @@ def main() -> int:
                    "limit_families": args.limit_families, "limit_queries": args.limit_queries},
         "families": len(family_ids), "passages": len(passages), "queries": len(queries),
         "query_windows": len(query_texts), "depth": depth,
+        "ipc3_restricted_queries": sum("allowed_ipc3" in row for row in queries),
+        "family_ipc3_sha256": _sha256(args.family_ipc3) if args.family_ipc3 else None,
         "passage_attention_tokens": passage_tokens, "query_attention_tokens": encoder.tokens - passage_tokens,
         "batch_size": args.batch_size, "timings": timings,
         "rankings_sha256": _sha256(rankings_path),

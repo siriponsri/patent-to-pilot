@@ -69,6 +69,116 @@ def maxp_top_k(passage_scores: Sequence[float], passage_family: Sequence[int], f
     return ordered[:k]
 
 
+def budgeted_merge(lists: Sequence[Sequence[str]], budget: int = POOL_DEPTH) -> list[str]:
+    """Interleave ranked lists round-robin by rank, dropping duplicates, until ``budget`` unique families."""
+    pool: list[str] = []
+    seen: set[str] = set()
+    for rank in range(max((len(ranked) for ranked in lists), default=0)):
+        for ranked in lists:
+            if rank < len(ranked) and ranked[rank] not in seen:
+                seen.add(ranked[rank])
+                pool.append(ranked[rank])
+                if len(pool) == budget:
+                    return pool
+    return pool
+
+
+def assign_folds(strata: Mapping[str, str], k: int = 5, seed: int = SPLIT_SEED) -> dict[str, int]:
+    """Stratified query-level folds: shuffle each stratum with ``seed`` and deal queries round-robin."""
+    by_stratum: dict[str, list[str]] = defaultdict(list)
+    for query in sorted(strata):
+        by_stratum[strata[query]].append(query)
+    rng = random.Random(seed)
+    folds: dict[str, int] = {}
+    offset = 0
+    for stratum in sorted(by_stratum):
+        queries = by_stratum[stratum]
+        rng.shuffle(queries)
+        for index, query in enumerate(queries):
+            folds[query] = (offset + index) % k
+        offset += len(queries)
+    return folds
+
+
+def crossfit_select(scores: Mapping[str, Mapping[str, float]], folds: Mapping[str, int],
+                    cost: Mapping[str, tuple[int, int]], groups: Mapping[str, str] | None = None,
+                    min_group: int = 20) -> dict[str, str]:
+    """Pick a mix for each query using only the other folds' labels.
+
+    Without ``groups`` one global mix is chosen per fold. With ``groups`` each group gets its own
+    mix when it has at least ``min_group`` training queries, otherwise the global mix. Ties go to
+    the lower ``cost`` tuple, then the lexically smaller mix name.
+    """
+    def best(train: list[str]) -> str:
+        return min(cost, key=lambda mix: (-sum(scores[q][mix] for q in train) / len(train), cost[mix], mix))
+
+    chosen: dict[str, str] = {}
+    for fold in sorted(set(folds.values())):
+        train = [q for q in scores if folds[q] != fold]
+        held = [q for q in scores if folds[q] == fold]
+        global_mix = best(train)
+        for query in held:
+            mix = global_mix
+            if groups is not None:
+                group_train = [q for q in train if groups[q] == groups[query]]
+                if len(group_train) >= min_group:
+                    mix = best(group_train)
+            chosen[query] = mix
+    return chosen
+
+
+class CompactBM25:
+    """BM25Okapi with the rank_bm25 IDF floor over integer postings.
+
+    Scores match ``scripts/healthtech/run_dapfam_bm25.SparseBM25`` (a query term counts once per
+    occurrence) but store postings as flat arrays, so full title+abstract+claims texts fit in memory.
+    """
+
+    def __init__(self, documents: Iterable[Sequence[str]], *, k1: float = 1.5, b: float = 0.75, epsilon: float = 0.25):
+        import numpy as np
+
+        self.np = np
+        self.vocab: dict[str, int] = {}
+        terms, freqs, lengths = [], [], []
+        for document in documents:
+            ids = np.fromiter((self.vocab.setdefault(t, len(self.vocab)) for t in document), dtype=np.int64,
+                              count=len(document))
+            unique, counts = np.unique(ids, return_counts=True)
+            terms.append(unique)
+            freqs.append(counts)
+            lengths.append(len(document))
+        if not lengths or sum(lengths) == 0:
+            raise ValueError("corpus has no tokens")
+        self.corpus_size = len(lengths)
+        doc_len = np.asarray(lengths, dtype=np.float64)
+        avgdl = float(doc_len.mean())
+        flat_terms = np.concatenate(terms)
+        flat_docs = np.repeat(np.arange(self.corpus_size, dtype=np.int32), [len(t) for t in terms])
+        flat_tf = np.concatenate(freqs).astype(np.float64)
+        order = np.argsort(flat_terms, kind="stable")
+        flat_terms = flat_terms[order]
+        self.doc_ids = flat_docs[order]
+        tf = flat_tf[order]
+        self.weights = tf * (k1 + 1.0) / (tf + k1 * (1.0 - b + b * doc_len[self.doc_ids] / avgdl))
+        self.offsets = np.searchsorted(flat_terms, np.arange(len(self.vocab) + 1))
+        df = np.diff(self.offsets).astype(np.float64)
+        idf = np.log(self.corpus_size - df + 0.5) - np.log(df + 0.5)
+        floor = epsilon * float(idf.mean())
+        self.idf = np.where(idf < 0, floor, idf)
+
+    def get_scores(self, query: Sequence[str]):
+        from collections import Counter
+
+        scores = self.np.zeros(self.corpus_size, dtype=self.np.float64)
+        for term, count in Counter(query).items():
+            index = self.vocab.get(term)
+            if index is None:
+                continue
+            start, end = self.offsets[index], self.offsets[index + 1]
+            scores[self.doc_ids[start:end]] += count * self.idf[index] * self.weights[start:end]
+        return scores
+
+
 def positive_relations(qrels: Iterable[Mapping[str, object]]) -> dict[str, dict[str, set[str]]]:
     """query_id -> {'IN': targets, 'OUT': targets} for relevance_score > 0; unlisted pairs stay unjudged."""
     out: dict[str, dict[str, set[str]]] = defaultdict(lambda: {"IN": set(), "OUT": set()})

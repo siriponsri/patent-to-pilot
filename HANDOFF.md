@@ -16,7 +16,11 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 - Next steps: [NEXT_ACTIONS](docs/healthtech/audits/ptp-wpi-research-package-20261104/NEXT_ACTIONS.md). Owner decisions: [READINESS](docs/healthtech/audits/ptp-wpi-research-package-20261104/READINESS.md).
 - 5 Nov 2026: an organization-adaptive cross-domain acquisition study on DAPFAM, written as a new self-contained manuscript. See the [protocol draft](docs/healthtech/research/ORG_ADAPTIVE_CROSS_DOMAIN_PROTOCOL_DRAFT_20261105_EN.md), the [PoC plan](docs/healthtech/research/ORG_ADAPTIVE_POC_PLAN_20261105_EN.md) and the [manuscript plan](docs/healthtech/research/ORG_ADAPTIVE_MANUSCRIPT_PLAN_20261105_EN.md).
   - Owner decisions: earlier unpublished analyses are superseded and not cited; only the neutral terms in the manuscript plan are used; organizations are IPC sections; the fixed baseline is the strongest dense passage retriever.
-  - Stage 0 PASS: [audit](docs/healthtech/audits/ptp-org-adaptive-stage0-20261105/README.md). Test was not scored. Multi-window queries did not beat single-window on dev. Next is Stage 1 on dev.
+  - Stage 0 PASS: [audit](docs/healthtech/audits/ptp-org-adaptive-stage0-20261105/README.md). Test was not scored. Multi-window queries did not beat single-window on dev.
+  - Stage 1 (dev): [audit](docs/healthtech/audits/ptp-org-adaptive-stage1-20261105/README.md).
+    - The preregistered gate passed: oracle − F\* 0.099, Q-only share 23%.
+    - M\* is R2. The cross-fitted global mix was below R2 (−0.014, CI −0.028 to −0.002), and the per-section mix was below the global mix (−0.008).
+    - Under Amendment 1, neither claim goes forward. Test not opened. Next is an owner decision on the direction.
 
 Earlier status: `PAUSED_BY_OWNER_NORMAL_MAIN_ONLY_AUDIT`
 
