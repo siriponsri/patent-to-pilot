@@ -1,0 +1,13 @@
+Patent-to-Pilot
+Copyright 2026 Siripon Srihangpiboon and Tuchsanai Ploysuwan
+
+The Apache License 2.0 in LICENSE applies to the source code in this repository
+(src/, scripts/, tests/ and frontend/).
+
+It does not apply to third-party datasets, model weights or documents that the code
+downloads or reads. They keep their own terms, for example:
+- DAPFAM (CC BY-NC-SA 4.0)
+- PANORAMA (CC BY-NC 4.0)
+- PatEmbed (CC BY-NC-SA 4.0)
+- Qwen3 (Apache-2.0)
+None of these datasets or weights is redistributed in this repository.

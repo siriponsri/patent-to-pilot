@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "input_sha256": {
+    "corpus.parquet": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6",
+    "queries.parquet": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe",
+    "qrels_all.parquet": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74"
+  },
+  "split": {
+    "seed": 20261105,
+    "rule": "connected components over shared positive targets; components with >= 50 queries go to dev; other components shuffled within majority first-IPC section until each section reaches ~1/3 dev (large components counted)",
+    "split_file_sha256": "dd76c019ee74c8d256e182ecfb329f9235638c1ecf9d2c7b1fa8073c4958e6dc",
+    "queries": {
+      "dev": 474,
+      "test": 773
+    },
+    "out_eligible_queries": {
+      "test": 556,
+      "dev": 349
+    },
+    "components": 526,
+    "component_size_histogram": {
+      "1": 421,
+      "2": 59,
+      "3": 16,
+      "4": 11,
+      "5": 4,
+      "6": 3,
+      "9": 1,
+      "10": 3,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "18": 1,
+      "21": 1,
+      "39": 1,
+      "51": 1,
+      "374": 1
+    },
+    "largest_component": 374,
+    "by_first_ipc_section": {
+      "A:dev": 52,
+      "A:test": 102,
+      "B:dev": 165,
+      "B:test": 207,
+      "C:dev": 68,
+      "C:test": 130,
+      "D:dev": 26,
+      "D:test": 51,
+      "E:dev": 24,
+      "E:test": 47,
+      "F:dev": 66,
+      "F:test": 107,
+      "G:dev": 46,
+      "G:test": 93,
+      "H:dev": 27,
+      "H:test": 35,
+      "O:test": 1
+    }
+  },
+  "gpu_inputs": {
+    "queries_dense_jsonl_sha256": "d6eee9ef23cc87c9647cc9bca8e31fdf764e474a89780823ca59b0f421cbce92",
+    "queries_dense_windows_jsonl_sha256": "3ecf40049148740c9e839c11a161abfd6481d4519be15c183fd7d3dfe308f102",
+    "query_windows": 6206,
+    "corpus_tac_jsonl_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+    "query_rows": 1247,
+    "corpus_rows": 45336,
+    "dense_passages": 188944,
+    "reference_passages_earlier_internal_run": 188944,
+    "labels_in_gpu_inputs": false
+  }
+}

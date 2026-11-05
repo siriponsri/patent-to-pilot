@@ -45,7 +45,7 @@ Generated query texts derived from DAPFAM are never shipped in the demo or the r
 | M2 | Frontend panels: profile, trace, cross-domain finds, feedback, cost meter | `npm test`, `npm run test:e2e` on Chromium, keyboard alternatives for drag-and-drop, TH/EN strings | M1 |
 | M3 | Live mode with Qwen3-8B on dr-train | A 3-query canary on the public demo layer, with tokens, latency and failures recorded under `docs/healthtech/audits/<run-id>/` | M1; protocol Stage 0 canary |
 | M4 | Results card filled from the frozen test | Every number traces to the Stage 3 test artifact; negative or null results are shown as they are | Protocol Stage 3 |
-| M5 | Portfolio package: case-study README (problem → lineage Paper 53/86 → method → frozen result → limits), a 2–3 minute screen recording using the existing `tutorial-video/build.mjs` pipeline, and an architecture diagram | Owner review; no claims beyond the protocol's results and limitations | M2–M4 |
+| M5 | Portfolio package: case-study README (problem → prior work → method → frozen result → limits), a 2–3 minute screen recording using the existing `tutorial-video/build.mjs` pipeline, and an architecture diagram | Owner review; no claims beyond the protocol's results and limitations | M2–M4 |
 
 M0–M2 do not depend on the research outcome, so they can run in parallel with protocol Stages 0–2.
 

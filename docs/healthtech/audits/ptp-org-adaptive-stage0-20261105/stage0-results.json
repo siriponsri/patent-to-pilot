@@ -1,0 +1,144 @@
+{
+  "format": "ptp-org-adaptive-stage0-results-v1",
+  "status": "PASS",
+  "test_split_scored": false,
+  "dense_baseline_encoding": {
+    "model": "datalyes/patembed-large@2d5c0f92a3e5dc3d5415c08e612c57543c0e03ad",
+    "dtype": "float32",
+    "passages": 188944,
+    "families": 45336,
+    "passage_encode_seconds": 5182.267,
+    "passage_attention_tokens": 73829185,
+    "passage_vectors_sha256": "9a385bcfd0aab6c4c19f2a8715824922d42d328c53f0da58857b0106ed4f0137",
+    "runner_sha256_as_run": "559f52e2dacf657a28d3a474dd995cd73f477497af1ce3efb9a77d7515b1121e"
+  },
+  "pooling_equivalence": {
+    "reference": "sentence-transformers 4.1.0 encode(normalize_embeddings=True), CPU",
+    "texts": 80,
+    "max_abs_diff": 0.0,
+    "min_cosine": 0.9999997019767761,
+    "status": "PASS"
+  },
+  "internal_consistency_check": {
+    "status": "PASS",
+    "strict_out_abs_delta_recall_at_200": 0.0,
+    "note": "Compared with the owner's earlier unpublished internal run of the same dense baseline. Pipeline check only; not a reported result."
+  },
+  "truncation": {
+    "passages_over_512_tokens": 19146,
+    "passage_share": 0.1013,
+    "passage_tokens_dropped_share": 0.04,
+    "queries_over_512_tokens": 1187,
+    "queries": 1247,
+    "query_median_tokens": 1309,
+    "query_tokens_dropped_share": 0.7085
+  },
+  "dense_variants_dev": {
+    "R2_single_window": {
+      "rankings_sha256": "cb53eaad6a5619b84352179710a095efe7857fb0247e848447bfdba25a7245eb",
+      "dev": {
+        "OUT": {
+          "queries": 349,
+          "recall_at_100": 0.111955,
+          "recall_at_200": 0.161844
+        },
+        "IN": {
+          "queries": 450,
+          "recall_at_100": 0.403846,
+          "recall_at_200": 0.518198
+        },
+        "all": {
+          "queries": 474,
+          "recall_at_100": 0.258861,
+          "recall_at_200": 0.352004
+        }
+      }
+    },
+    "R2w_multi_window_max": {
+      "rankings_sha256": "f917c8a5f53147ac5ff80dc425197acb35ad1f02c4946b1089a2714acd5bed8b",
+      "dev": {
+        "OUT": {
+          "queries": 349,
+          "recall_at_100": 0.108749,
+          "recall_at_200": 0.155173
+        },
+        "IN": {
+          "queries": 450,
+          "recall_at_100": 0.395084,
+          "recall_at_200": 0.508085
+        },
+        "all": {
+          "queries": 474,
+          "recall_at_100": 0.254008,
+          "recall_at_200": 0.346308
+        }
+      }
+    },
+    "R2w_multi_window_mean": {
+      "rankings_sha256": "b1a56673a1908e16f6dc40cd9ce7e14412812227c3a9373a9d91b9f47c15ee6a",
+      "dev": {
+        "OUT": {
+          "queries": 349,
+          "recall_at_100": 0.108498,
+          "recall_at_200": 0.153843
+        },
+        "IN": {
+          "queries": 450,
+          "recall_at_100": 0.393994,
+          "recall_at_200": 0.505258
+        },
+        "all": {
+          "queries": 474,
+          "recall_at_100": 0.250633,
+          "recall_at_200": 0.343565
+        }
+      }
+    }
+  },
+  "dense_variant_decision": "R2 single-window kept as the dense fixed candidate; both multi-window aggregations were lower on every dev endpoint (negative result, reported).",
+  "qwen_canary": {
+    "model": "Qwen/Qwen3-8B@b968826d9c46dd6066d109eabc6255188de91218",
+    "decoding": "greedy, fp16, eager attention",
+    "sample": "20 dev queries, seed 20261105",
+    "input_sha256": "25e5d30d8396481aa2c8eb1ea98e3d536c90d77d3208f1b911cc667632d11252",
+    "v0": {
+      "queries": 20,
+      "calls": 40,
+      "failed_calls": 0,
+      "queries_with_ipc_shift_codes": 1,
+      "prompt_tokens": 24360,
+      "output_tokens": 5430,
+      "mean_latency_seconds": 9.678,
+      "prompt_version": "ptp-org-adaptive-qwen-actions-v0",
+      "runner_sha256": "759fb5cc130d21bbbb93879888329dabee5779587846b8f1e3b04f51603d633c",
+      "output_sha256": "ea3f97bcf15b3cf4fee9bc5d49637fbb7aebf0cd19a4a330a8be484c0b616a1f",
+      "finding": "IPC-shift unusable: subclass/group codes or own-field codes; 19/20 queries kept no class"
+    },
+    "v1": {
+      "queries": 20,
+      "calls": 40,
+      "failed_calls": 1,
+      "queries_with_ipc_shift_codes": 19,
+      "prompt_tokens": 25332,
+      "output_tokens": 5282,
+      "mean_latency_seconds": 9.061,
+      "prompt_version": "ptp-org-adaptive-qwen-actions-v1",
+      "runner_sha256": "075bff9a0414fefbf6b15eba8a4815c8dd043537b36d608552e39c3eb909858e",
+      "output_sha256": "47824f8836c6c2c37e335f7651348cd30b8c0f69b35222664c236e5fbdb18ddf",
+      "classes_in_other_section": "40 of 50",
+      "most_frequent_classes": {
+        "G01": 15,
+        "B01": 7,
+        "F16": 7
+      },
+      "finding": "Gate passed (1/40 failed = 2.5% <= 5%, malformed JSON, no retry). Risk: proposals concentrate on generic classes."
+    }
+  },
+  "gpu_seconds_approx": {
+    "dense_encoding": 5182,
+    "query_window_encoding": 337,
+    "qwen_canary_generation": 750
+  },
+  "incident": "A watcher process whose command line contained the waited-for pattern blocked the canary queue for about one hour of idle GPU time; fixed by terminating only the two watcher shells created for this study and using self-excluding patterns.",
+  "paid_cost_usd": 0
+}
