@@ -83,6 +83,18 @@ def budgeted_merge(lists: Sequence[Sequence[str]], budget: int = POOL_DEPTH) -> 
     return pool
 
 
+def lane_merge(primary: Sequence[str], fills: Sequence[Sequence[str]], keep: int,
+               budget: int = POOL_DEPTH) -> list[str]:
+    """Two-lane pool: the first ``keep`` of ``primary``, then ``fills`` round-robin, then the rest of ``primary``."""
+    pool = list(dict.fromkeys(primary[:keep]))[:budget]
+    for family in budgeted_merge(fills, budget=budget) + list(primary[keep:]):
+        if len(pool) == budget:
+            break
+        if family not in pool:
+            pool.append(family)
+    return pool
+
+
 def assign_folds(strata: Mapping[str, str], k: int = 5, seed: int = SPLIT_SEED) -> dict[str, int]:
     """Stratified query-level folds: shuffle each stratum with ``seed`` and deal queries round-robin."""
     by_stratum: dict[str, list[str]] = defaultdict(list)

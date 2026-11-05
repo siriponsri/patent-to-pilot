@@ -132,6 +132,28 @@ def test_crossfit_select_uses_only_other_folds_and_group_fallback():
     assert crossfit_select(scores, folds, cost, groups, min_group=5)["a1"] == "Y"
 
 
+def test_lane_merge_keeps_primary_head_then_fills():
+    from patent_to_pilot.evaluation.dapfam_acquisition import lane_merge
+
+    assert lane_merge(["a", "b", "c", "d"], [["x", "a", "y"], ["z"]], keep=2, budget=5) == ["a", "b", "x", "z", "y"]
+    assert lane_merge(["a", "b", "c"], [["x"]], keep=1, budget=4) == ["a", "x", "b", "c"]
+    assert lane_merge(["a", "b"], [], keep=5, budget=3) == ["a", "b"]
+
+
+def test_scout_text_parser_bounds():
+    import importlib.util
+    from pathlib import Path
+
+    path = Path(__file__).resolve().parents[1] / "scripts/healthtech/run_qwen_scout_actions.py"
+    spec = importlib.util.spec_from_file_location("run_qwen_scout_actions", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    text = "Problem: " + " ".join(["word"] * 30)
+    assert module.parse_text(text, "P") == (" ".join(["word"] * 30), None)
+    assert module.parse_text("too few words", "F")[1].startswith("too short")
+    assert module.parse_text(" ".join(["w"] * 230), "S")[1].startswith("too long")
+
+
 def test_compact_bm25_matches_reference_sparse_bm25():
     import importlib.util
     from pathlib import Path

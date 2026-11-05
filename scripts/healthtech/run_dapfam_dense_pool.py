@@ -93,7 +93,8 @@ def main() -> int:
                         help="combine per-window passage scores of a multi-window query")
     parser.add_argument("--reuse-vectors", type=Path, help="passage-vectors-f32.npy from an earlier run on the same corpus")
     parser.add_argument("--family-ipc3", type=Path,
-                        help="JSONL {id, ipc3}; query rows with allowed_ipc3 are restricted to families in those classes")
+                        help="JSONL {id, ipc3}; query rows with allowed_ipc3 are restricted to families in those classes, "
+                             "and rows with excluded_ipc3 drop families sharing any of those classes")
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--limit-families", type=int)
     parser.add_argument("--limit-queries", type=int)
@@ -159,6 +160,11 @@ def main() -> int:
                     mask = torch.ones(len(family_ids), dtype=torch.bool, device="cuda")
                     mask[torch.tensor(allowed, dtype=torch.int64, device="cuda")] = False
                     best[mask] = -float("inf")
+                if row.get("excluded_ipc3"):
+                    # Cross-domain lane: drop every family that shares any IPC3 code with the query.
+                    excluded = sorted({i for code in row["excluded_ipc3"] for i in class_members.get(code, [])})
+                    if excluded:
+                        best[torch.tensor(excluded, dtype=torch.int64, device="cuda")] = -float("inf")
                 values, indices = torch.topk(best, k=depth)
                 keep = torch.isfinite(values)
                 values, indices = values[keep], indices[keep]
@@ -181,6 +187,7 @@ def main() -> int:
         "families": len(family_ids), "passages": len(passages), "queries": len(queries),
         "query_windows": len(query_texts), "depth": depth,
         "ipc3_restricted_queries": sum("allowed_ipc3" in row for row in queries),
+        "ipc3_excluded_queries": sum(bool(row.get("excluded_ipc3")) for row in queries),
         "family_ipc3_sha256": _sha256(args.family_ipc3) if args.family_ipc3 else None,
         "passage_attention_tokens": passage_tokens, "query_attention_tokens": encoder.tokens - passage_tokens,
         "batch_size": args.batch_size, "timings": timings,
