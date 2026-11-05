@@ -95,6 +95,39 @@ def lane_merge(primary: Sequence[str], fills: Sequence[Sequence[str]], keep: int
     return pool
 
 
+def class_first(ranked: Sequence[str], family_ipc3: Mapping[str, Sequence[str]], classes: set[str]) -> list[str]:
+    """Stable partition: families with any IPC3 code in ``classes`` first, each part in its original order."""
+    hit = [f for f in ranked if classes.intersection(family_ipc3.get(f, ()))]
+    return hit + [f for f in ranked if not classes.intersection(family_ipc3.get(f, ()))]
+
+
+def class_transition_prior(pairs: Iterable[tuple[Sequence[str], Sequence[str]]]) -> dict[str, dict[str, float]]:
+    """Own IPC3 class -> target IPC3 class weights from (own classes, target classes) pairs.
+
+    Each pair spreads a total weight of 1 evenly over its own x target class cells.
+    """
+    prior: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    for own, target in pairs:
+        own, target = sorted(set(own)), sorted(set(target))
+        if not own or not target:
+            continue
+        weight = 1.0 / (len(own) * len(target))
+        for a in own:
+            for c in target:
+                prior[a][c] += weight
+    return {a: dict(row) for a, row in prior.items()}
+
+
+def predict_target_classes(prior: Mapping[str, Mapping[str, float]], own: Sequence[str], m: int) -> list[str]:
+    """Top ``m`` non-own target classes summed over the query's own classes; ties by class code."""
+    scores: dict[str, float] = defaultdict(float)
+    for a in set(own):
+        for c, weight in prior.get(a, {}).items():
+            if c not in own:
+                scores[c] += weight
+    return sorted(scores, key=lambda c: (-scores[c], c))[:m]
+
+
 def assign_folds(strata: Mapping[str, str], k: int = 5, seed: int = SPLIT_SEED) -> dict[str, int]:
     """Stratified query-level folds: shuffle each stratum with ``seed`` and deal queries round-robin."""
     by_stratum: dict[str, list[str]] = defaultdict(list)

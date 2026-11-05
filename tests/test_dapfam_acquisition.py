@@ -140,6 +140,20 @@ def test_lane_merge_keeps_primary_head_then_fills():
     assert lane_merge(["a", "b"], [], keep=5, budget=3) == ["a", "b"]
 
 
+def test_class_first_and_transition_prior():
+    from patent_to_pilot.evaluation.dapfam_acquisition import (
+        class_first, class_transition_prior, predict_target_classes)
+
+    ipc = {"a": ["B01"], "b": ["C08", "H01"], "c": ["H01"], "d": []}
+    assert class_first(["a", "b", "c", "d"], ipc, {"H01"}) == ["b", "c", "a", "d"]
+    assert class_first(["a", "d"], ipc, set()) == ["a", "d"]
+    prior = class_transition_prior([(["A61"], ["C08", "B32"]), (["A61", "G01"], ["C08"]), (["A61"], [])])
+    assert prior == {"A61": {"B32": 0.5, "C08": 1.0}, "G01": {"C08": 0.5}}
+    assert predict_target_classes(prior, ["A61"], 1) == ["C08"]
+    assert predict_target_classes(prior, ["A61", "C08"], 5) == ["B32"]
+    assert predict_target_classes(prior, ["Z99"], 3) == []
+
+
 def test_scout_text_parser_bounds():
     import importlib.util
     from pathlib import Path
