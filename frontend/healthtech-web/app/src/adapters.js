@@ -45,10 +45,9 @@ function jobPath(jobId, suffix = '') {
  * Versioned loopback adapter. It never accepts an output path or arbitrary
  * command; the backend owns storage and the paid-provider gate.
  */
-export function createBackendAdapter(baseUrl, fetchImpl = globalThis.fetch) {
-  const root = loopbackUrl(baseUrl);
+function jsonRequester(root, fetchImpl) {
   if (typeof fetchImpl !== 'function') throw new Error('fetch is unavailable');
-  const request = async (path, options = {}) => {
+  return async (path, options = {}) => {
     const url = new URL(path.replace(/^\//, ''), root);
     const init = { method: options.method || 'GET', headers: { Accept: 'application/json', ...(options.headers || {}) } };
     if (options.body !== undefined) { init.headers['Content-Type'] = 'application/json'; init.body = JSON.stringify(options.body); }
@@ -64,6 +63,11 @@ export function createBackendAdapter(baseUrl, fetchImpl = globalThis.fetch) {
     }
     return value;
   };
+}
+
+export function createBackendAdapter(baseUrl, fetchImpl = globalThis.fetch) {
+  const root = loopbackUrl(baseUrl);
+  const request = jsonRequester(root, fetchImpl);
   return {
     ...HTTP_ADAPTER,
     available: true,
@@ -103,6 +107,31 @@ export function createBackendAdapter(baseUrl, fetchImpl = globalThis.fetch) {
         await new Promise((resolve) => setTimeout(resolve, pollMs));
       }
     },
+  };
+}
+
+export const SCOUT_ADAPTER = { id: 'scout-local-http-v1', version: '0.1.0' };
+export const SCOUT_DEFAULT_BACKEND = 'http://127.0.0.1:8787';
+
+/** Solution Scout loopback adapter: search sessions, source text, recorded rationales and receipts. */
+export function createScoutAdapter(baseUrl = SCOUT_DEFAULT_BACKEND, fetchImpl = globalThis.fetch) {
+  const root = loopbackUrl(baseUrl);
+  const request = jsonRequester(root, fetchImpl);
+  const session = (id, suffix = '') => `/scout-sessions/${encodeURIComponent(id)}${suffix}`;
+  return {
+    ...SCOUT_ADAPTER,
+    baseUrl: root.toString().replace(/\/$/, ''),
+    info: () => request('/scout/info'),
+    create: (brief, split, idempotencyKey) => request('/scout-sessions', {
+      method: 'POST', body: { brief, split }, headers: { 'Idempotency-Key': idempotencyKey },
+    }),
+    session: (id) => request(session(id)),
+    family: (id, familyId) => request(session(id, `/families/${encodeURIComponent(familyId)}`)),
+    rationale: (id, familyId) => request(session(id, `/rationales/${encodeURIComponent(familyId)}`), { method: 'POST', body: {} }),
+    decide: (id, familyId, decision, note = null) => request(session(id, `/rationales/${encodeURIComponent(familyId)}/decision`), {
+      method: 'POST', body: note ? { decision, note } : { decision },
+    }),
+    receipt: (id) => request(session(id, '/receipt')),
   };
 }
 

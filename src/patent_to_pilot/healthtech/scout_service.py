@@ -49,7 +49,7 @@ def _hash(payload: Any) -> str:
 
 def _atomic_write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    descriptor, staging_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".staging", dir=path.parent)
+    descriptor, staging_name = tempfile.mkstemp(prefix=".", suffix=".tmp", dir=path.parent)  # short: Windows MAX_PATH
     staging = Path(staging_name)
     try:
         with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as handle:
@@ -63,6 +63,11 @@ def _atomic_write_json(path: Path, payload: Any) -> None:
             staging.unlink()
         except FileNotFoundError:
             pass
+
+
+def _rationale_name(family_id: str) -> str:
+    """Short, filesystem-safe file name for one family's rationale (family ids may contain any character)."""
+    return f"{hashlib.sha256(family_id.encode()).hexdigest()[:24]}.json"
 
 
 class ReplayBundle:
@@ -286,7 +291,7 @@ class ScoutService:
         with self._lock:
             record = self._record(session_id)
             self._family_in_session(record, family_id)
-            path = self._dir(session_id) / "rationales" / f"{hashlib.sha256(family_id.encode()).hexdigest()}.json"
+            path = self._dir(session_id) / "rationales" / _rationale_name(family_id)
             if path.exists():
                 return json.loads(path.read_text(encoding="utf-8"))
             recorded = self._recorded(record, family_id)
@@ -313,7 +318,7 @@ class ScoutService:
                 body.get("decision") not in {"accepted", "rejected", "pending"}:
             raise ScoutError(400, "invalid_decision", "decision must be accepted, rejected or pending")
         with self._lock:
-            path = self._dir(session_id) / "rationales" / f"{hashlib.sha256(family_id.encode()).hexdigest()}.json"
+            path = self._dir(session_id) / "rationales" / _rationale_name(family_id)
             if not path.exists():
                 raise ScoutError(409, "rationale_not_ready", "request the rationale before deciding on it")
             result = json.loads(path.read_text(encoding="utf-8"))
