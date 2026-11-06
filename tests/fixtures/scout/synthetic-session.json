@@ -1,0 +1,28 @@
+{
+  "session_id": "syn-scout-001",
+  "brief": {
+    "brief_id": "syn-brief-001",
+    "text": "SYNTHETIC. A small pump seal starts to leak after long periods of strong vibration. We need a way to keep the sealing contact pressure steady without adding a heavy spring or a power supply.",
+    "own_ipc3": ["F04", "F16"],
+    "own_ipc3_basis": "typed",
+    "language": "en",
+    "data_class": "synthetic"
+  },
+  "split": {"n_own": 2, "n_other": 2},
+  "candidates": [
+    {"family_id": "SYN-F001", "lane": "own_field", "rank_in_lane": 1, "score": 0.81, "ipc3": ["F16"]},
+    {"family_id": "SYN-F002", "lane": "own_field", "rank_in_lane": 2, "score": 0.77, "ipc3": ["B60", "F04"]},
+    {"family_id": "SYN-F003", "lane": "other_fields", "rank_in_lane": 1, "score": 0.74, "ipc3": ["A61"]},
+    {"family_id": "SYN-F004", "lane": "other_fields", "rank_in_lane": 2, "score": 0.70, "ipc3": []}
+  ],
+  "receipt": {
+    "mode": "replay",
+    "corpus_bundle_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "encoder": "synthetic-encoder",
+    "encoder_revision": "fixture",
+    "input_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "output_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+    "encode_ms": 12.5,
+    "search_ms": 3.0
+  }
+}

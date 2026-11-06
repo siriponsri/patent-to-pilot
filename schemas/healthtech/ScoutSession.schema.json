@@ -1,0 +1,335 @@
+{
+  "$defs": {
+    "LaneSplit": {
+      "additionalProperties": false,
+      "properties": {
+        "n_own": {
+          "maximum": 200,
+          "minimum": 0,
+          "title": "N Own",
+          "type": "integer"
+        },
+        "n_other": {
+          "maximum": 200,
+          "minimum": 0,
+          "title": "N Other",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "n_own",
+        "n_other"
+      ],
+      "title": "LaneSplit",
+      "type": "object"
+    },
+    "ScoutBrief": {
+      "additionalProperties": false,
+      "properties": {
+        "brief_id": {
+          "pattern": "^[A-Za-z0-9_-]{1,80}$",
+          "title": "Brief Id",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "own_ipc3": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 50,
+          "minItems": 1,
+          "title": "Own Ipc3",
+          "type": "array"
+        },
+        "own_ipc3_basis": {
+          "enum": [
+            "typed",
+            "reference_patent"
+          ],
+          "title": "Own Ipc3 Basis",
+          "type": "string"
+        },
+        "reference_patent_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference Patent Raw"
+        },
+        "reference_patent_canonical": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference Patent Canonical"
+        },
+        "language": {
+          "default": "en",
+          "enum": [
+            "en",
+            "th"
+          ],
+          "title": "Language",
+          "type": "string"
+        },
+        "data_class": {
+          "enum": [
+            "synthetic",
+            "public"
+          ],
+          "title": "Data Class",
+          "type": "string"
+        }
+      },
+      "required": [
+        "brief_id",
+        "text",
+        "own_ipc3",
+        "own_ipc3_basis",
+        "data_class"
+      ],
+      "title": "ScoutBrief",
+      "type": "object"
+    },
+    "ScoutCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "family_id": {
+          "minLength": 1,
+          "title": "Family Id",
+          "type": "string"
+        },
+        "lane": {
+          "enum": [
+            "own_field",
+            "other_fields"
+          ],
+          "title": "Lane",
+          "type": "string"
+        },
+        "rank_in_lane": {
+          "minimum": 1,
+          "title": "Rank In Lane",
+          "type": "integer"
+        },
+        "score": {
+          "title": "Score",
+          "type": "number"
+        },
+        "ipc3": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Ipc3",
+          "type": "array"
+        },
+        "representative_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Representative Raw"
+        },
+        "representative_canonical": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Representative Canonical"
+        },
+        "jurisdiction": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Jurisdiction"
+        },
+        "publication_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Publication Date"
+        },
+        "judgment": {
+          "default": "not_judged",
+          "enum": [
+            "not_judged",
+            "relevant",
+            "not_relevant",
+            "unsure"
+          ],
+          "title": "Judgment",
+          "type": "string"
+        }
+      },
+      "required": [
+        "family_id",
+        "lane",
+        "rank_in_lane",
+        "score"
+      ],
+      "title": "ScoutCandidate",
+      "type": "object"
+    },
+    "ScoutReceipt": {
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "replay",
+            "live"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "corpus_bundle_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Corpus Bundle Sha256",
+          "type": "string"
+        },
+        "encoder": {
+          "minLength": 1,
+          "title": "Encoder",
+          "type": "string"
+        },
+        "encoder_revision": {
+          "minLength": 1,
+          "title": "Encoder Revision",
+          "type": "string"
+        },
+        "input_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "output_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Output Sha256",
+          "type": "string"
+        },
+        "encode_ms": {
+          "minimum": 0,
+          "title": "Encode Ms",
+          "type": "number"
+        },
+        "search_ms": {
+          "minimum": 0,
+          "title": "Search Ms",
+          "type": "number"
+        },
+        "llm_calls": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Llm Calls",
+          "type": "integer"
+        },
+        "prompt_tokens": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Prompt Tokens",
+          "type": "integer"
+        },
+        "output_tokens": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Output Tokens",
+          "type": "integer"
+        },
+        "gpu_seconds": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Gpu Seconds",
+          "type": "number"
+        },
+        "paid_calls": {
+          "const": 0,
+          "default": 0,
+          "title": "Paid Calls",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "mode",
+        "corpus_bundle_sha256",
+        "encoder",
+        "encoder_revision",
+        "input_sha256",
+        "output_sha256",
+        "encode_ms",
+        "search_ms"
+      ],
+      "title": "ScoutReceipt",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "session_id": {
+      "pattern": "^[A-Za-z0-9_-]{1,80}$",
+      "title": "Session Id",
+      "type": "string"
+    },
+    "brief": {
+      "$ref": "#/$defs/ScoutBrief"
+    },
+    "split": {
+      "$ref": "#/$defs/LaneSplit"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/ScoutCandidate"
+      },
+      "title": "Candidates",
+      "type": "array"
+    },
+    "receipt": {
+      "$ref": "#/$defs/ScoutReceipt"
+    }
+  },
+  "required": [
+    "session_id",
+    "brief",
+    "split",
+    "candidates",
+    "receipt"
+  ],
+  "title": "ScoutSession",
+  "type": "object"
+}

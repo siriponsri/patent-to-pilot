@@ -20,6 +20,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from patent_to_pilot.evaluation.dapfam_acquisition import POOL_DEPTH, dense_passages  # noqa: E402
 from patent_to_pilot.healthtech.local_execution import check_local_window, local_gpu_slot  # noqa: E402
+from patent_to_pilot.healthtech.scout import class_member_indices  # noqa: E402
 
 MODEL_SAFETENSORS_SHA256 = "234ea36a876fe5d5c416c1cbaad6f7221e17861fadd6481f0b96588fdc1ca482"
 
@@ -156,13 +157,13 @@ def main() -> int:
                 best = torch.full((len(family_ids),), -float("inf"), device="cuda")
                 best.scatter_reduce_(0, family_index, scores, reduce="amax", include_self=True)
                 if "allowed_ipc3" in row:
-                    allowed = sorted({i for code in row["allowed_ipc3"] for i in class_members.get(code, [])})
+                    allowed = class_member_indices(row["allowed_ipc3"], class_members)
                     mask = torch.ones(len(family_ids), dtype=torch.bool, device="cuda")
                     mask[torch.tensor(allowed, dtype=torch.int64, device="cuda")] = False
                     best[mask] = -float("inf")
                 if row.get("excluded_ipc3"):
                     # Cross-domain lane: drop every family that shares any IPC3 code with the query.
-                    excluded = sorted({i for code in row["excluded_ipc3"] for i in class_members.get(code, [])})
+                    excluded = class_member_indices(row["excluded_ipc3"], class_members)
                     if excluded:
                         best[torch.tensor(excluded, dtype=torch.int64, device="cuda")] = -float("inf")
                 values, indices = torch.topk(best, k=depth)

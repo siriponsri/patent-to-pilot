@@ -40,8 +40,17 @@ Status: `STAGE1_GATE_PASS_LEARNABLE_HEADROOM_FAIL_TEST_NOT_OPENED` (Stage 1 audi
   - The input is a short brief.
   - The search returns two user-controlled lanes, own field and other fields, with a descriptive field map.
   - The LLM is used only for quote-checked transfer rationales.
-  - Status: SPEC, nothing built. M0–M2 do not depend on research outcomes.
-  - Owner decisions pending: public demo corpus, freeze and one test read for E1–E2, PatenTEB replication, product name.
+  - Status: M0 done (6 Nov 2026).
+    - `src/patent_to_pilot/healthtech/scout.py`: lane partition and shortlist, `class_member_indices`, the literal quote check, and the contracts `ScoutBrief`, `ScoutSession` and `TransferRationale`.
+    - `tests/test_healthtech_scout.py`, with an authored synthetic fixture.
+    - Schemas exported to `schemas/healthtech/`.
+    - The dense runner now uses the library mask function; behaviour is unchanged.
+  - Owner approvals (6 Nov 2026), recorded in spec §9:
+    - a PatentsView public demo corpus plus V100 encoding;
+    - one DAPFAM test read for E1–E2 after a freeze commit;
+    - the PatenTEB replication (E5);
+    - the name "Solution Scout".
+  - Next: M1, backend routes in replay mode.
   - A Hyperresearch deep-research run on alternative directions is running outside the repo (`C:/Users/User/.hrv/work`); its result may change the spec's §6.
 
 ## HT-NEXT-266 — 2026-11-04 WPI research package (Track A)

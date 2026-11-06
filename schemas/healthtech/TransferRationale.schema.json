@@ -1,0 +1,168 @@
+{
+  "$defs": {
+    "QuoteCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "quote": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "matched",
+            "not_found",
+            "too_short",
+            "too_long"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "start": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End"
+        }
+      },
+      "required": [
+        "quote",
+        "status"
+      ],
+      "title": "QuoteCheck",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "session_id": {
+      "minLength": 1,
+      "title": "Session Id",
+      "type": "string"
+    },
+    "family_id": {
+      "minLength": 1,
+      "title": "Family Id",
+      "type": "string"
+    },
+    "source_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "model": {
+      "minLength": 1,
+      "title": "Model",
+      "type": "string"
+    },
+    "model_revision": {
+      "minLength": 1,
+      "title": "Model Revision",
+      "type": "string"
+    },
+    "prompt_version": {
+      "minLength": 1,
+      "title": "Prompt Version",
+      "type": "string"
+    },
+    "what_it_does": {
+      "maxLength": 600,
+      "minLength": 1,
+      "title": "What It Does",
+      "type": "string"
+    },
+    "transferable_mechanism": {
+      "maxLength": 600,
+      "minLength": 1,
+      "title": "Transferable Mechanism",
+      "type": "string"
+    },
+    "quotes": {
+      "items": {
+        "$ref": "#/$defs/QuoteCheck"
+      },
+      "maxItems": 3,
+      "minItems": 1,
+      "title": "Quotes",
+      "type": "array"
+    },
+    "quote_status": {
+      "enum": [
+        "all_matched",
+        "some_unmatched"
+      ],
+      "title": "Quote Status",
+      "type": "string"
+    },
+    "label": {
+      "const": "literal match is not semantic support",
+      "default": "literal match is not semantic support",
+      "title": "Label",
+      "type": "string"
+    },
+    "basis": {
+      "const": "system_inference",
+      "default": "system_inference",
+      "title": "Basis",
+      "type": "string"
+    },
+    "decision": {
+      "default": "pending",
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "note": {
+      "anyOf": [
+        {
+          "maxLength": 2000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Note"
+    }
+  },
+  "required": [
+    "session_id",
+    "family_id",
+    "source_sha256",
+    "model",
+    "model_revision",
+    "prompt_version",
+    "what_it_does",
+    "transferable_mechanism",
+    "quotes",
+    "quote_status"
+  ],
+  "title": "TransferRationale",
+  "type": "object"
+}

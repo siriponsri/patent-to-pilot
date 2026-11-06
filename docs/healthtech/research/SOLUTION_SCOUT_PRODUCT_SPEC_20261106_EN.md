@@ -108,9 +108,11 @@ M0–M2 do not depend on any research outcome.
   - anything about novelty, validity, infringement or freedom to operate.
 - Simulated or assumed users are labelled as such. Developer self-evaluation is labelled as a proxy.
 
-## 9. Owner decisions needed
+## 9. Owner decisions (approved 6 Nov 2026)
 
-1. The public demo corpus (PatentsView subset proposed) and the V100 time for encoding it.
-2. Approval to freeze E1–E2 and read the DAPFAM test split once.
-3. Whether to include E5 (PatenTEB replication).
-4. A product name for the paper and the demo.
+1. **Public demo corpus:** a multi-industry PatentsView subset (CC BY 4.0) and the V100 time to encode it. The encoding canary comes first.
+2. **Test read:** approved once, for E1–E2 only, after a freeze commit of the evaluation protocol. Not before.
+3. **E5:** the PatenTEB replication is included, still frozen before it is read.
+4. **Name:** "Solution Scout" (Cross-Industry Solution Scout).
+
+Starting M0 does not read any test data.
