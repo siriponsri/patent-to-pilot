@@ -1,0 +1,134 @@
+{
+  "format": "ptp-scout-replay-v1",
+  "data_class": "synthetic",
+  "encoder": "synthetic-encoder",
+  "encoder_revision": "fixture",
+  "corpus_bundle_sha256": "4836a6d5ad68a5a6920003a0acb339254e6f44743d4b69b68827cdcfc7d6d270",
+  "families": {
+    "SYN-F001": {
+      "ipc3": [
+        "F16"
+      ],
+      "representative_raw": "US 9,000,001 B1",
+      "jurisdiction": "US",
+      "publication_date": "2018-03-06",
+      "source_text": "SYNTHETIC. A lip seal for a rotating shaft has a garter spring that presses the lip against the shaft. The spring tension is chosen so the lip keeps contact during start-up."
+    },
+    "SYN-F002": {
+      "ipc3": [
+        "F04",
+        "B60"
+      ],
+      "representative_raw": "US 9,000,002 B2",
+      "jurisdiction": "US",
+      "publication_date": "2019-07-16",
+      "source_text": "SYNTHETIC. A coolant pump for a vehicle uses a mechanical face seal. Vibration dampers on the pump housing reduce the load on the seal faces."
+    },
+    "SYN-F003": {
+      "ipc3": [
+        "A61"
+      ],
+      "representative_raw": "US 9,000,003 B2",
+      "jurisdiction": "US",
+      "publication_date": "2020-01-14",
+      "source_text": "SYNTHETIC. A stent frame keeps steady radial force on the vessel wall while the patient moves, because nickel-titanium struts recover their shape after each deformation without any external power."
+    },
+    "SYN-F004": {
+      "ipc3": [],
+      "jurisdiction": "US",
+      "publication_date": "2016-11-01",
+      "source_text": "SYNTHETIC. A watch case gasket is compressed by a threaded back cover. The gasket material keeps its elasticity over many years of daily wear."
+    },
+    "SYN-F005": {
+      "ipc3": [
+        "E06"
+      ],
+      "representative_raw": "EP 3 000 005 A1",
+      "jurisdiction": "EP",
+      "publication_date": "2021-05-19",
+      "source_text": "SYNTHETIC. A window frame seal uses a hollow elastomer profile filled with air at atmospheric pressure, so the seal follows the frame as the building sways in strong wind."
+    },
+    "SYN-F006": {
+      "ipc3": [
+        "F16",
+        "H01"
+      ],
+      "representative_raw": "US 9,000,006 B1",
+      "jurisdiction": "US",
+      "publication_date": "2017-09-12",
+      "source_text": "SYNTHETIC. A battery enclosure gasket is held by spring clips placed every five centimetres along the lid."
+    }
+  },
+  "searches": [
+    {
+      "search_id": "syn-search-001",
+      "brief_text": "SYNTHETIC. A small pump seal starts to leak after long periods of strong vibration. We need a way to keep the sealing contact pressure steady without adding a heavy spring or a power supply.",
+      "own_ipc3": [
+        "F04",
+        "F16"
+      ],
+      "encode_ms": 14.0,
+      "search_ms": 2.5,
+      "ranking": [
+        {
+          "family_id": "SYN-F003",
+          "score": 0.74
+        },
+        {
+          "family_id": "SYN-F001",
+          "score": 0.72
+        },
+        {
+          "family_id": "SYN-F005",
+          "score": 0.7
+        },
+        {
+          "family_id": "SYN-F002",
+          "score": 0.69
+        },
+        {
+          "family_id": "SYN-F004",
+          "score": 0.66
+        },
+        {
+          "family_id": "SYN-F006",
+          "score": 0.61
+        }
+      ]
+    }
+  ],
+  "rationales": [
+    {
+      "search_id": "syn-search-001",
+      "family_id": "SYN-F003",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "fixture",
+      "prompt_version": "ptp-scout-rationale-v0",
+      "prompt_tokens": 420,
+      "output_tokens": 96,
+      "latency_seconds": 5.2,
+      "what_it_does": "Keeps a steady outward force on a soft wall while the body moves.",
+      "transferable_mechanism": "A superelastic element that recovers its shape could hold seal contact pressure under vibration without a heavy spring or power.",
+      "quotes": [
+        "keeps steady radial force on the vessel wall while the patient moves",
+        "recover their shape after each deformation without any external power"
+      ]
+    },
+    {
+      "search_id": "syn-search-001",
+      "family_id": "SYN-F005",
+      "model": "Qwen/Qwen3-8B",
+      "model_revision": "fixture",
+      "prompt_version": "ptp-scout-rationale-v0",
+      "prompt_tokens": 401,
+      "output_tokens": 88,
+      "latency_seconds": 4.8,
+      "what_it_does": "A seal profile that follows a moving frame.",
+      "transferable_mechanism": "A pressurised hollow profile could follow a vibrating seal seat.",
+      "quotes": [
+        "the seal follows the frame as the building sways in strong wind",
+        "the hollow profile is filled with nitrogen at high pressure"
+      ]
+    }
+  ]
+}

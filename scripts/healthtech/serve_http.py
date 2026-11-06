@@ -40,6 +40,12 @@ def main() -> None:
         default=None,
         help="server-owned JSON config for the pinned local generation provider",
     )
+    parser.add_argument(
+        "--scout-replay",
+        type=Path,
+        default=None,
+        help="server-owned Solution Scout replay bundle (ptp-scout-replay-v1; synthetic or public data only)",
+    )
     args = parser.parse_args()
     if args.delay_ms < 0:
         parser.error("--delay-ms must be non-negative")
@@ -51,6 +57,7 @@ def main() -> None:
         execution_delay_seconds=args.delay_ms / 1000,
         vector_config=args.vector_config,
         generation_config=args.generation_config,
+        scout_replay=args.scout_replay,
     )
     bound_host, bound_port = server.server_address[:2]
     print(f"healthtech local HTTP listening on http://{bound_host}:{bound_port}", flush=True)

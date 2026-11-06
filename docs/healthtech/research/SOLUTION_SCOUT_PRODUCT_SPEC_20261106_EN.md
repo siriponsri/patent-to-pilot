@@ -97,6 +97,20 @@ Earlier stop rules still hold. No claim of LLM retrieval gain, organization adap
 
 M0–M2 do not depend on any research outcome.
 
+**Progress**
+
+- **M0, done 6 Nov 2026:** `src/patent_to_pilot/healthtech/scout.py`.
+- **M1, done 6 Nov 2026:** `src/patent_to_pilot/healthtech/scout_service.py`, plus routes in `http.py`:
+  - `GET /scout/replay`;
+  - `POST /scout-sessions` (requires `Idempotency-Key`);
+  - `GET /scout-sessions/{id}`;
+  - `GET /scout-sessions/{id}/families/{family}`;
+  - `POST /scout-sessions/{id}/rationales/{family}`;
+  - `POST /scout-sessions/{id}/rationales/{family}/decision`;
+  - `GET /scout-sessions/{id}/receipt`.
+
+  The server takes the bundle with `serve_http.py --scout-replay <bundle>`. Replay answers recorded briefs only and recomputes every quote check against the bundle text. Tests use the synthetic bundle `tests/fixtures/scout/replay-bundle.json`.
+
 ## 8. Wording rules
 
 - Say: "on DAPFAM, under a frozen protocol, the other-fields lane changed what an analyst sees in the first 20 results by X (95% CI …), at a cost of Y in same-field recall".

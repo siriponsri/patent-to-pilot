@@ -39,6 +39,7 @@ from patent_to_pilot.healthtech.history import (
     source_view,
 )
 from patent_to_pilot.healthtech.rights import RightsBoundaryError
+from patent_to_pilot.healthtech.scout_service import ReplayBundle, ScoutError, ScoutService
 from patent_to_pilot.healthtech.vector_http import ConfiguredVectorSearch
 
 
@@ -197,7 +198,8 @@ class HealthTechJobService:
                  runner: Callable[..., tuple[Any, list[Any], Any]] = run_dossier,
                  execution_delay_seconds: float = 0.0,
                  vector_search: ConfiguredVectorSearch | None = None,
-                 generation_provider: GenerationProvider | None = None):
+                 generation_provider: GenerationProvider | None = None,
+                 scout_bundle: ReplayBundle | None = None):
         if max_workers != 1:
             raise ValueError("HealthTech local service requires one worker")
         if execution_delay_seconds < 0:
@@ -208,6 +210,7 @@ class HealthTechJobService:
         self.execution_delay_seconds = execution_delay_seconds
         self.vector_search = vector_search
         self.generation_provider = generation_provider
+        self.scout = ScoutService(root, scout_bundle)
         self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="healthtech-job")
 
     def close(self) -> None:
@@ -562,6 +565,28 @@ class HealthTechJobService:
                 raise HTTPJobError(409, "export_blocked", str(exc)) from exc
         raise HTTPJobError(400, "invalid_export", "format must be json or markdown and language must be en, th, or auto")
 
+    def _scout_route(self, method: str, path: list[str], body: Any,
+                     headers: dict[str, str]) -> tuple[int, Any, str]:
+        json_type = "application/json; charset=utf-8"
+        if method == "GET" and path == ["scout", "replay"]:
+            return 200, self.scout.describe(), json_type
+        if method == "POST" and path == ["scout-sessions"]:
+            session, duplicate = self.scout.create(body, headers.get("Idempotency-Key"))
+            return 200 if duplicate else 201, {"session": session, "duplicate": duplicate}, json_type
+        if path[0] == "scout-sessions" and len(path) >= 2:
+            session_id = path[1]
+            if method == "GET" and len(path) == 2:
+                return 200, {"session": self.scout.session(session_id)}, json_type
+            if method == "GET" and path[2:] == ["receipt"]:
+                return 200, self.scout.receipt(session_id), json_type
+            if method == "GET" and len(path) == 4 and path[2] == "families":
+                return 200, self.scout.family(session_id, path[3]), json_type
+            if method == "POST" and len(path) == 4 and path[2] == "rationales":
+                return 200, self.scout.rationale(session_id, path[3]), json_type
+            if method == "POST" and len(path) == 5 and path[2] == "rationales" and path[4] == "decision":
+                return 200, self.scout.decide(session_id, path[3], body), json_type
+        raise HTTPJobError(404, "route_not_found", "route was not found")
+
     def route(self, method: str, raw_path: str, body: Any = None, *, headers: dict[str, str] | None = None) -> tuple[int, Any, str]:
         headers = headers or {}
         parsed = urlsplit(raw_path)
@@ -571,6 +596,11 @@ class HealthTechJobService:
             return 200, {"status": "ok", "service": "healthtech-local-http-v1"}, "application/json; charset=utf-8"
         if method == "GET" and parsed.path == "/providers":
             return 200, self.provider_catalog(), "application/json; charset=utf-8"
+        if path and path[0] in {"scout", "scout-sessions"}:
+            try:
+                return self._scout_route(method, path, body, headers)
+            except ScoutError as exc:
+                raise HTTPJobError(exc.status, exc.code, exc.message, details=exc.details) from exc
         if method == "POST" and path == ["jobs"]:
             result = self.submit(body, headers.get("Idempotency-Key"))
             return 200 if result.get("duplicate") else 202, {"job": result}, "application/json; charset=utf-8"
@@ -688,6 +718,7 @@ def create_server(
     vector_config: str | Path | None = None,
     generation_config: str | Path | None = None,
     generation_provider: GenerationProvider | None = None,
+    scout_replay: str | Path | None = None,
 ) -> ThreadingHTTPServer:
     configured_vectors = None if vector_config is None else ConfiguredVectorSearch.from_config(vector_config)
     if generation_provider is not None and generation_config is not None:
@@ -701,6 +732,7 @@ def create_server(
         execution_delay_seconds=execution_delay_seconds,
         vector_search=configured_vectors,
         generation_provider=configured_generation,
+        scout_bundle=None if scout_replay is None else ReplayBundle.load(scout_replay),
     )
 
     class BoundHandler(_Handler):
