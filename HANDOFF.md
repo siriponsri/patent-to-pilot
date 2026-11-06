@@ -53,7 +53,7 @@ Last pushed commit before this note: `b8813b1` (updated 6 Nov 2026, about 19:10 
 2. **S5:** the "send to dossier" hand-off from the Scout drawer into the existing dossier flow.
 3. **M4:** live Qwen rationales for new briefs, through the existing local-generation path on dr-train. Add a stricter quote prompt or a quote-repair step; 24% of quotes did not match literally.
 4. **M5:** write the frozen evaluation protocol for E1–E5 and commit it before reading the DAPFAM test once. The owner approved this.
-5. Check on the hyperresearch run (see Running). Its report may change spec §6.
+5. Research direction: decided with the owner directly. The hyperresearch run was stopped.
 
 **Run the demo:**
 - Backend:
@@ -64,12 +64,9 @@ Last pushed commit before this note: `b8813b1` (updated 6 Nov 2026, about 19:10 
 ### Running or external state
 
 - **Qwen rationale job:** finished 6 Nov (PASS, 56 calls); outputs copied locally.
-- **Hyperresearch deep-research run** (alternative directions; may change spec §6):
-  - Tool: `jordan-gibbs/hyperresearch` v0.13.0, commit `aece65f`.
-  - Isolated venv at `C:/Users/User/.hrv`; vault at `C:/Users/User/.hrv/work`. The prompt is in `research/prompt.txt`; the report will be `research/notes/final_report_<vault_tag>.md`.
-  - It runs as a background subagent of the 6 Nov session. It hit usage limits twice and was resumed both times; at about 17:40 Bangkok it was at step 5 (depth investigators).
-  - A new agent should read `research/runs/*/run.json` and resume from the recorded step, never restart.
-  - Never run `hyperresearch install` in this repo or with `--global`: it adds a hook and edits CLAUDE.md, which this project forbids.
+- **Hyperresearch run: stopped by owner decision (6 Nov 2026, about 19:15 Bangkok)** to save tokens. It stopped partway through step 5; no final report exists.
+  - The owner and agent will set the research direction directly. Do not resume or restart it.
+  - The partial vault stays at `C:/Users/User/.hrv/work` (outside the repo) for reference only.
 - **dr-train:** no scout job is running. Earlier DAPFAM jobs are under `/home/chaw/patent-to-pilot-jobs/org-adaptive-20261105`; private DAPFAM artifacts are in `../_private_artifacts/healthtech/ptp-org-adaptive-20261105/`.
 
 ### Standing rules
