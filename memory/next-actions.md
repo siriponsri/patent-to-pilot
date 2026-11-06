@@ -55,8 +55,8 @@ Status: `STAGE1_GATE_PASS_LEARNABLE_HEADROOM_FAIL_TEST_NOT_OPENED` (Stage 1 audi
     - HUPD 2017 public subset, live CPU search and recorded Qwen rationales.
     - Scout page `frontend/healthtech-web/app/scout.html`.
     - Audit `../docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md`.
-  - Next:
-    - S5 dossier hand-off;
+  - M2 closed (6 Nov 2026): S5 is a dossier export (.md/.json).
+  - Next (pending the owner's plan approval):
     - M4 live LLM rationales;
     - M5 frozen evaluation (DAPFAM E1–E2 test read approved after the freeze; E5 PatenTEB).
   - A Hyperresearch deep-research run on alternative directions is running outside the repo (`C:/Users/User/.hrv/work`); its result may change the spec's §6.

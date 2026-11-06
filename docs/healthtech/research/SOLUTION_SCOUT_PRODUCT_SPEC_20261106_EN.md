@@ -116,7 +116,7 @@ M0–M2 do not depend on any research outcome.
   - 56 recorded Qwen rationales; 76% of their quotes match the source literally.
   - Scout page at `frontend/healthtech-web/app/scout.html`.
   - Audit: [ptp-scout-public-demo-20261106](../audits/ptp-scout-public-demo-20261106/README.md).
-  - The Scout is a dedicated page linked from the frontend README, not panels inside the node-canvas workspace. The dossier hand-off (S5) is still open.
+  - The Scout is a dedicated page linked from the frontend README, not panels inside the node-canvas workspace. **M2 closed 6 Nov 2026.** S5 is a dossier export (Markdown/JSON) that keeps source facts, system inference and unresolved items apart. A direct push into the device-dossier workspace is not built.
 
 ## 8. Wording rules
 

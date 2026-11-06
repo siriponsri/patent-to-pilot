@@ -77,6 +77,34 @@ test('scout adapter is loopback-only and sends the idempotency header', async ()
   assert.equal(calls[2].url, 'http://127.0.0.1:8787/scout-sessions/abc/rationales/US%201%2F2');
 });
 
+test('scout dossier keeps facts, inference and unresolved apart; unjudged is not negative', async () => {
+  const { scoutDossier, scoutDossierMarkdown } = await import('../../app/src/scout/model.js');
+  const session = {
+    session_id: 'abcdef1234567890', brief: { text: 'SYNTHETIC brief', own_ipc3: ['F16'] }, split: { n_own: 1, n_other: 1 },
+    receipt: { mode: 'live', encode_ms: 900, search_ms: 140, corpus_bundle_sha256: 'c'.repeat(64), encoder: 'datalyes/patembed-large', paid_calls: 0 },
+    candidates: [
+      { lane: 'own_field', rank_in_lane: 1, family_id: 'US1', representative_canonical: 'US1', score: 0.81, ipc3: ['F16'], title: 'Seal | gasket' },
+      { lane: 'other_fields', rank_in_lane: 1, family_id: 'US2', representative_canonical: 'US2', score: 0.74, ipc3: ['A61'], title: 'Stent' },
+    ],
+  };
+  const rationales = { US2: {
+    family_id: 'US2', basis: 'system_inference', model: 'Qwen/Qwen3-8B', model_revision: 'b968826d9c46', prompt_version: 'v0',
+    what_it_does: 'Holds force.', transferable_mechanism: 'Shape recovery.', quote_status: 'some_unmatched', decision: 'accepted',
+    quotes: [{ quote: 'a b c d e', status: 'matched', start: 0, end: 9 }, { quote: 'x y z w v', status: 'not_found' }], source_sha256: 's'.repeat(64),
+  } };
+  const d = scoutDossier(session, rationales, { source: 'HUPD', corpus_licence: 'CC BY-SA 4.0', encoder: { licence: 'CC BY-NC-SA 4.0' } }, 'now');
+  assert.equal(d.source_facts.length, 2);
+  assert.equal(d.system_inference[0].basis, 'system_inference');
+  assert.deepEqual(d.unresolved, [{ family_id: 'US1', status: 'not_judged' }]);
+  assert.equal(d.receipt.paid_calls, 0);
+  const md = scoutDossierMarkdown(d);
+  assert.match(md, /## System inference \(not source facts\)/);
+  assert.match(md, /Seal \\\| gasket/);
+  assert.match(md, /\[not_found\] "x y z w v"/);
+  assert.match(md, /1 candidates are not judged \(not negatives\)/);
+  assert.match(md, /CC BY-NC-SA 4\.0/);
+});
+
 test('scout page is served from the app allowlist with only its module script', () => {
   assert.ok(resolvePath('/scout.html').endsWith('scout.html'));
   assert.ok(resolvePath('/src/scout/main.js').endsWith('main.js'));

@@ -2,80 +2,83 @@
 
 Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
-## Agent takeover state — 6 Nov 2026 (read this first)
+## Agent takeover state — 6 Nov 2026, about 19:30 Bangkok (read this first)
 
-Last pushed commit before this note: `b8813b1` (updated 6 Nov 2026, about 19:10 Bangkok). All work is on `main` in this checkout; there are no worktrees or branches.
+Last pushed commit before this note: `04d5546`. All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 
-### Where the study stands
+### Direction
 
-- **Direction (owner-approved 6 Nov 2026):** a product-led WPI paper for **Solution Scout** (Cross-Industry Solution Scout).
-  - A short problem brief goes in. Out comes a two-lane shortlist (own field / other fields), a descriptive field map, and quote-checked LLM transfer rationales.
-  - Spec: [SOLUTION_SCOUT_PRODUCT_SPEC_20261106_EN.md](docs/healthtech/research/SOLUTION_SCOUT_PRODUCT_SPEC_20261106_EN.md). §2 holds the evidence table, §6 the evaluation E1–E5, §7 the milestones, §9 the owner approvals.
-- **Pre-declared dev results behind the design.** The DAPFAM test split has never been read.
+- A product-led WPI paper for **Solution Scout** (Cross-Industry Solution Scout).
+  - A short problem brief goes in. Out comes a two-lane shortlist (own field / other industries), a descriptive field constellation, and quote-checked LLM transfer rationales.
+- Spec: [SOLUTION_SCOUT_PRODUCT_SPEC_20261106_EN.md](docs/healthtech/research/SOLUTION_SCOUT_PRODUCT_SPEC_20261106_EN.md). §2 holds the evidence, §6 the evaluation E1–E5, §7 the milestones and progress, §9 the owner approvals.
+- **Pre-declared dev results** (the DAPFAM test split has never been read):
 
   | Check | Result | Audit |
   |---|---|---|
-  | Stage 1 | Original gate PASS, learnable headroom FAIL | [audit](docs/healthtech/audits/ptp-org-adaptive-stage1-20261105/README.md) |
-  | Scout feasibility | `PARTIAL_LANE_ONLY` | [audit](docs/healthtech/audits/ptp-solution-scout-feasibility-20261105/README.md) |
-  | Atlas headroom | `GO_ORACLE_ONLY` | [audit](docs/healthtech/audits/ptp-solution-atlas-headroom-20261106/README.md) |
+  | Stage 1 | Gate PASS, learnable headroom FAIL | [audit](docs/healthtech/audits/ptp-org-adaptive-stage1-20261105/README.md) |
+  | Scout feasibility | `PARTIAL_LANE_ONLY`: LLM rewriting hurts; the lane gain is definitional | [audit](docs/healthtech/audits/ptp-solution-scout-feasibility-20261105/README.md) |
+  | Atlas headroom | `GO_ORACLE_ONLY`: the learned class prior hurts | [audit](docs/healthtech/audits/ptp-solution-atlas-headroom-20261106/README.md) |
 
-  The claims of LLM retrieval gain, org-adaptive gain and class-prior gain are all **not** carried forward.
-- **Owner approvals (spec §9):**
-  - a public demo corpus with V100 encoding;
-  - one DAPFAM test read for E1–E2, **only after a freeze commit**;
-  - E5, the PatenTEB replication;
-  - the name "Solution Scout".
+- The hyperresearch deep-research run was **stopped by the owner** (6 Nov) to save tokens. The research direction is set with the owner directly. Do not resume it.
 
 ### Milestones
 
-- **M0 done** (`7162078`): `src/patent_to_pilot/healthtech/scout.py`, holding the contracts, lane partition and literal quote check.
-- **M1 done** (`69efd30`): replay-mode backend in `src/patent_to_pilot/healthtech/scout_service.py`, plus `/scout/replay` and `/scout-sessions…` routes in `http.py` and `serve_http.py --scout-replay`. Tests: `tests/test_healthtech_scout*.py`. Suites at that commit: Python 738 passed / 1 skipped; frontend `npm test` 73 passed / 1 skipped.
-- **M2 done (screens S1–S4, S6; S5 hand-off open):** frontend screens. The owner asked for a "modern + minimal" design with wow impact, on real public data with V100-prepared vectors.
-  - **M3 data step, done 6 Nov 2026:**
-    - HUPD `data/2017.tar.gz` downloaded to dr-train (sha256 `688a44e3a09b2ae2…`).
-    - Subset built with `scripts/healthtech/build_scout_hupd_subset.py`: 56,528 applications, up to 8,000 per IPC section. Section D has 1,723 and E has 6,805, because HUPD 2017 has few applications there. Personal names are dropped. Corpus sha256 `32be3c19fbc8dd53…`.
-    - Encoded on the V100 with PatEmbed-large: 74,670 passages in 1,618 s, PASS, vectors sha256 `f53dc6525a6c74ac…`.
-    - Outputs on dr-train: `/home/chaw/patent-to-pilot-jobs/scout-public-demo/{subset,encoded}/`.
-  - The 8 authored demo briefs are in `examples/healthtech/scout-demo-briefs.json`. Their GPU top-200 rankings are in `encoded/rankings-demo-top200.jsonl`, for checking CPU/GPU parity.
-  - The local CPU venv is ready at `C:/Users/User/.ptp-scout-venv` (torch 2.15.0+cpu, transformers 4.57.6, repo installed editable). PatEmbed weights are not yet copied locally.
+| M | Status | Where |
+|---|---|---|
+| M0 contracts, lane logic, quote check | done `7162078` | `src/patent_to_pilot/healthtech/scout.py` |
+| M1 replay backend | done `69efd30` | `scout_service.py`, `/scout-sessions…` routes in `http.py` |
+| M3 public corpus and live search | done | HUPD 2017 subset of 56,528 applications (CC BY-SA 4.0), V100 PatEmbed vectors, `scout_live.py` (CPU), exact CPU/GPU parity. [Audit](docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md) |
+| M2 screens S1–S6 | **done 6 Nov** | `frontend/healthtech-web/app/scout.html`, `scout.css`, `src/scout/*`. S5 is a dossier export (Markdown/JSON keeping source facts, system inference and unresolved items apart); a push into the device-dossier workspace is not built |
+| M4 live LLM rationales | open | Recorded rationales only: 56 for the 8 demo briefs; 120 of 158 quotes literal-matched |
+| M5 frozen evaluation E1–E5 | open | The owner approved one DAPFAM test read after a freeze commit, plus the E5 PatenTEB replication |
+| M6 paper and demo video | open | — |
 
-### Decisions made 6 Nov 2026 (owner answers)
+Latest suites: Python 739 passed / 1 skipped; `npm test` 81 passed / 1 skipped; e2e 17/17.
 
-1. **Demo corpus: HUPD** (Harvard USPTO Patent Dataset, `HUPD/hupd`), licence **CC BY-SA 4.0**. PatentsView bulk data now needs a USPTO.gov login with MFA (since June 2026) and the legacy S3 links return 403. Agents must not create accounts or log in. Share-alike applies to the derived corpus.
-2. **Live search: a local CPU encoder** in the isolated venv above. Qwen rationales are recorded on the V100 and replayed.
-3. **Licence flag:** `datalyes/patembed-large` (revision `2d5c0f92…`) is **CC BY-NC-SA 4.0, non-commercial**. The demo and paper are research use only; a commercial deployment would need a different encoder. Show this in the demo and state it in the paper.
+### Owner decisions in force
 
-### Next steps for a new agent
+- **HUPD** replaces PatentsView: PatentsView bulk data now needs a USPTO.gov login with MFA, and agents must not log in.
+- **Local CPU encoder** for live search.
+- PatEmbed-large is **CC BY-NC-SA 4.0**: research use only. Say so in the demo and the paper.
+- Name: **Solution Scout**.
 
-1. **M2 and M3 done 6 Nov:**
-   - Scout page plus live search plus recorded rationales. See the [public demo audit](docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md).
-   - Tests: Python 739 passed / 1 skipped; `npm test` 80 passed / 1 skipped; e2e 17/17.
-2. **S5:** the "send to dossier" hand-off from the Scout drawer into the existing dossier flow.
-3. **M4:** live Qwen rationales for new briefs, through the existing local-generation path on dr-train. Add a stricter quote prompt or a quote-repair step; 24% of quotes did not match literally.
-4. **M5:** write the frozen evaluation protocol for E1–E5 and commit it before reading the DAPFAM test once. The owner approved this.
-5. Research direction: decided with the owner directly. The hyperresearch run was stopped.
+### Run the demo
 
-**Run the demo:**
-- Backend:
-  `C:/Users/User/.ptp-scout-venv/Scripts/python scripts/healthtech/serve_http.py --port 8787 --data-dir C:/Users/User/.ptp-scout-data --scout-live-dir ../_private_artifacts/healthtech/scout-public-demo --scout-model-dir C:/Users/User/.ptp-models/patembed-large --scout-rationales ../_private_artifacts/healthtech/scout-public-demo/rationale-book-v0.json`
-  Startup takes about 100 s.
-- Frontend: `cd frontend/healthtech-web && npm start`, then open `http://127.0.0.1:5178/scout.html`.
+1. Backend (startup about 100 s):
+   `C:/Users/User/.ptp-scout-venv/Scripts/python scripts/healthtech/serve_http.py --port 8787 --data-dir C:/Users/User/.ptp-scout-data --scout-live-dir ../_private_artifacts/healthtech/scout-public-demo --scout-model-dir C:/Users/User/.ptp-models/patembed-large --scout-rationales ../_private_artifacts/healthtech/scout-public-demo/rationale-book-v0.json`
+2. Frontend: `cd frontend/healthtech-web && npm start`.
+3. Open `http://127.0.0.1:5178/scout.html`.
+
+Keep the data dir short: long Windows paths broke rationale writes before the fix.
+
+### Next steps (awaiting the owner's choice of research plan)
+
+1. The owner reviews the research plan proposed on 6 Nov in the session. Main options: the product-led paper with a frozen evaluation, and a quote-grounding method (M4) as the measurable method contribution.
+2. On approval, write the frozen protocol and commit it before any test read.
+3. Then build M4 and run M5 as the protocol says.
 
 ### Running or external state
 
-- **Qwen rationale job:** finished 6 Nov (PASS, 56 calls); outputs copied locally.
-- **Hyperresearch run: stopped by owner decision (6 Nov 2026, about 19:15 Bangkok)** to save tokens. It stopped partway through step 5; no final report exists.
-  - The owner and agent will set the research direction directly. Do not resume or restart it.
-  - The partial vault stays at `C:/Users/User/.hrv/work` (outside the repo) for reference only.
-- **dr-train:** no scout job is running. Earlier DAPFAM jobs are under `/home/chaw/patent-to-pilot-jobs/org-adaptive-20261105`; private DAPFAM artifacts are in `../_private_artifacts/healthtech/ptp-org-adaptive-20261105/`.
+- **Nothing runs on dr-train.**
+- Local servers may still be running from the 6 Nov session (ports 8787 and 5178). They are safe to stop.
+- Private data:
+  - `../_private_artifacts/healthtech/scout-public-demo/` holds the HUPD subset, vectors, rationales and book.
+  - `../_private_artifacts/healthtech/ptp-org-adaptive-20261105/` holds the DAPFAM dev artifacts.
+- Local venvs and model:
+  - `C:/Users/User/.ptp-scout-venv` (CPU torch);
+  - `C:/Users/User/.ptp-models/patembed-large`;
+  - `C:/Users/User/.hrv` (stopped hyperresearch; reference only).
+- dr-train job directories:
+  - `/home/chaw/patent-to-pilot-jobs/scout-public-demo`;
+  - `/home/chaw/patent-to-pilot-jobs/org-adaptive-20261105`.
 
 ### Standing rules
 
 - No paid API calls without new owner approval. Never read `.env`.
-- No worktrees, resets or ACL/hook/global-config changes.
+- No worktrees, resets or ACL/hook/global-config changes. Never run `hyperresearch install` in this repo.
 - DAPFAM texts and generated texts stay out of Git.
-- Never mention the superseded unpublished manuscript or its labels. The earlier published reranking paper may be cited.
-- Do not claim business or user validation.
+- Never mention the superseded unpublished manuscript or its labels.
+- Do not claim business or user validation. Developer decisions are a proxy.
 
 ## Current state — 4 Nov 2026 (supersedes the Normal-round hold below)
 

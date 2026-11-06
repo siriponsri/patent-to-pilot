@@ -1,8 +1,9 @@
 // Solution Scout UI. All text goes through text nodes; all network calls go through adapters.js.
 import { createScoutAdapter, SCOUT_DEFAULT_BACKEND } from '../adapters.js';
-import { h } from '../ui/dom.js';
+import { download, h } from '../ui/dom.js';
 import {
-  SECTIONS, SPLITS, displayTitle, fieldMap, formatMs, parseIpc3, quoteSegments, requestKey, translator,
+  SECTIONS, SPLITS, displayTitle, fieldMap, formatMs, parseIpc3, quoteSegments, requestKey, scoutDossier,
+  scoutDossierMarkdown, translator,
 } from './model.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -22,6 +23,7 @@ const state = {
   error: null,
   active: null,
   decisions: {},
+  rationales: {},
 };
 
 let adapter;
@@ -176,6 +178,7 @@ async function search() {
     const created = await adapter.create(brief, split, await requestKey(brief, split));
     state.session = (await adapter.session(created.session.session_id)).session;
     state.decisions = {};
+    state.rationales = {};
     const others = state.session.candidates.filter((c) => c.lane === 'other_fields').length;
     announce(`${t('scout.lane.other')}: ${others}`);
   } catch (error) {
@@ -327,7 +330,7 @@ async function openDrawer(familyId, { keepFocus = false } = {}) {
     ]);
     if (state.active !== familyId) return;
     body.replaceChildren(...drawerContent(c, family, idea?.rationale || null));
-    if (idea) renderReceipt();
+    if (idea) { state.rationales[familyId] = idea.rationale; renderReceipt(); }
   } catch (error) {
     body.replaceChildren(h('p', { class: 'hint err' }, t('scout.error.generic', { message: error.message })));
   }
@@ -350,7 +353,8 @@ function drawerContent(c, family, r) {
           type: 'button', class: 'ghost', 'aria-pressed': String(decision === d),
           onClick: async () => {
             try {
-              await adapter.decide(state.session.session_id, c.family_id, d);
+              const saved = await adapter.decide(state.session.session_id, c.family_id, d);
+              state.rationales[c.family_id] = saved.rationale;
               state.decisions[c.family_id] = d;
               announce(t('scout.decision.saved', { decision: t(d === 'accepted' ? 'scout.decision.accept' : 'scout.decision.reject') }));
               openDrawer(c.family_id, { keepFocus: true });
@@ -398,7 +402,19 @@ async function renderReceipt() {
     item(t('scout.receipt.encoder'), r.encoder.split('/').pop()),
     item(t('scout.receipt.ideas'), `${ideas}/${(s.rationales_available || []).length}`),
     item(t('scout.receipt.paid'), String(r.paid_calls)),
+    h('button', { type: 'button', class: 'receipt-btn', onClick: () => exportDossier('md') }, t('scout.export.md')),
+    h('button', { type: 'button', class: 'receipt-btn', onClick: () => exportDossier('json') }, t('scout.export.json')),
   );
+}
+
+function exportDossier(kind) {
+  const s = state.session;
+  if (!s) return;
+  const dossier = scoutDossier(s, state.rationales, state.info, new Date().toISOString());
+  const name = `scout-dossier-${s.session_id.slice(0, 8)}.${kind === 'md' ? 'md' : 'json'}`;
+  if (kind === 'md') download(name, scoutDossierMarkdown(dossier), 'text/markdown');
+  else download(name, `${JSON.stringify(dossier, null, 2)}\n`, 'application/json');
+  announce(t('scout.export.done', { name }));
 }
 
 // ---------- boot ----------

@@ -55,6 +55,9 @@ export const SCOUT_DICT = {
     'scout.error.backend': 'The local Scout service is not reachable at {url}. Start it with serve_http.py and reload.',
     'scout.error.generic': 'Something went wrong: {message}',
     'scout.empty': 'No results in this lane.',
+    'scout.export.md': 'Download dossier (.md)',
+    'scout.export.json': 'JSON',
+    'scout.export.done': 'Dossier downloaded: {name}',
     'scout.lang': 'ภาษาไทย',
     'scout.section.A': 'Human necessities', 'scout.section.B': 'Operations & transport', 'scout.section.C': 'Chemistry & metallurgy',
     'scout.section.D': 'Textiles & paper', 'scout.section.E': 'Fixed constructions', 'scout.section.F': 'Mechanical engineering',
@@ -111,6 +114,9 @@ export const SCOUT_DICT = {
     'scout.error.backend': 'เชื่อมต่อบริการ Scout ในเครื่องที่ {url} ไม่ได้ เปิดด้วย serve_http.py แล้วโหลดหน้าใหม่',
     'scout.error.generic': 'เกิดข้อผิดพลาด: {message}',
     'scout.empty': 'ไม่มีผลในเลนนี้',
+    'scout.export.md': 'ดาวน์โหลด dossier (.md)',
+    'scout.export.json': 'JSON',
+    'scout.export.done': 'ดาวน์โหลด dossier แล้ว: {name}',
     'scout.lang': 'English',
     'scout.section.A': 'ความจำเป็นของมนุษย์', 'scout.section.B': 'การดำเนินการและการขนส่ง', 'scout.section.C': 'เคมีและโลหะวิทยา',
     'scout.section.D': 'สิ่งทอและกระดาษ', 'scout.section.E': 'สิ่งก่อสร้างถาวร', 'scout.section.F': 'วิศวกรรมเครื่องกล',
@@ -199,4 +205,68 @@ export async function requestKey(brief, split, digest = globalThis.crypto?.subtl
   if (!digest) return `scout-${payload.length}-${Date.now()}`;
   const bytes = new Uint8Array(await digest.digest('SHA-256', new TextEncoder().encode(payload)));
   return `scout-${Array.from(bytes.slice(0, 12), (b) => b.toString(16).padStart(2, '0')).join('')}`;
+}
+
+/**
+ * Scout dossier for hand-off (S5). Source facts, system inference and unresolved items stay in
+ * separate sections; unjudged candidates are listed as unjudged, never as negatives.
+ */
+export function scoutDossier(session, rationales, info, generatedAt) {
+  const facts = session.candidates.map((c) => ({
+    lane: c.lane, rank_in_lane: c.rank_in_lane, family_id: c.family_id,
+    representative_raw: c.representative_raw ?? null, representative_canonical: c.representative_canonical ?? null,
+    title: c.title ?? null, publication_date: c.publication_date ?? null, ipc3: c.ipc3 || [], similarity: c.score,
+  }));
+  const inference = Object.values(rationales || {}).map((r) => ({
+    family_id: r.family_id, basis: r.basis, model: r.model, model_revision: r.model_revision,
+    prompt_version: r.prompt_version, what_it_does: r.what_it_does, transferable_mechanism: r.transferable_mechanism,
+    quote_status: r.quote_status,
+    quotes: r.quotes.map((q) => ({ quote: q.quote, status: q.status, start: q.start ?? null, end: q.end ?? null })),
+    developer_decision: r.decision, note: r.note ?? null, source_sha256: r.source_sha256,
+  }));
+  const decided = new Set(inference.filter((r) => r.developer_decision !== 'pending').map((r) => r.family_id));
+  return {
+    format: 'ptp-scout-dossier-v1', generated_at: generatedAt, session_id: session.session_id,
+    brief: session.brief, split: session.split, receipt: session.receipt,
+    corpus: { source: info?.source ?? null, licence: info?.corpus_licence ?? null, families: info?.families ?? null },
+    encoder_licence: info?.encoder?.licence ?? null,
+    source_facts: facts,
+    system_inference: inference,
+    unresolved: facts.filter((f) => !decided.has(f.family_id)).map((f) => ({ family_id: f.family_id, status: 'not_judged' })),
+    limits: [
+      'Research prototype; no novelty, validity, infringement or freedom-to-operate opinion.',
+      'Unjudged candidates are not negatives.',
+      'A literal quote match is not semantic support.',
+      'Developer decisions are a self-evaluation proxy with its bias, not user validation.',
+    ],
+  };
+}
+
+/** Markdown view of scoutDossier(); quotes and source facts are never translated. */
+export function scoutDossierMarkdown(d) {
+  const cell = (v) => String(v ?? '').replace(/\|/g, '\\|');
+  const lines = ['# Solution Scout dossier', '', `Generated ${d.generated_at} · session \`${d.session_id}\``, '',
+    '## Brief', '', d.brief.text, '',
+    `Own IPC classes: ${d.brief.own_ipc3.join(', ')} · shortlist ${d.split.n_own} + ${d.split.n_other}`, '',
+    '## Source facts', '', '| Lane | # | Document | Title | Date | IPC | Similarity |', '|---|---|---|---|---|---|---|'];
+  for (const f of d.source_facts) {
+    lines.push(`| ${f.lane === 'own_field' ? 'own field' : 'other industries'} | ${f.rank_in_lane} | `
+      + `${cell(f.representative_canonical || f.family_id)} | ${cell(f.title)} | ${cell(f.publication_date)} | `
+      + `${f.ipc3.join(' ')} | ${f.similarity.toFixed(3)} |`);
+  }
+  lines.push('', '## System inference (not source facts)', '');
+  if (!d.system_inference.length) lines.push('No rationale was opened in this session.', '');
+  for (const r of d.system_inference) {
+    lines.push(`### ${r.family_id}`, '', `- Model: ${r.model} (${String(r.model_revision).slice(0, 8)}), prompt ${r.prompt_version}`,
+      `- What it does: ${r.what_it_does}`, `- What might transfer: ${r.transferable_mechanism}`,
+      `- Quote check: ${r.quote_status}`, ...r.quotes.map((q) => `  - [${q.status}] "${q.quote}"`),
+      `- Developer decision: ${r.developer_decision}${r.note ? ` — ${r.note}` : ''}`, '');
+  }
+  lines.push('## Unresolved', '', `${d.unresolved.length} candidates are not judged (not negatives).`, '',
+    '## Receipt', '',
+    `Mode ${d.receipt.mode} · encode ${Math.round(d.receipt.encode_ms)} ms · search ${Math.round(d.receipt.search_ms)} ms · `
+    + `corpus \`${d.receipt.corpus_bundle_sha256.slice(0, 12)}\` · encoder ${d.receipt.encoder} · paid calls ${d.receipt.paid_calls}`, '',
+    `Corpus: ${d.corpus.source ?? 'n/a'} (${d.corpus.licence ?? 'n/a'}). Encoder licence: ${d.encoder_licence ?? 'n/a'}.`, '',
+    '## Limits', '', ...d.limits.map((l) => `- ${l}`), '');
+  return lines.join('\n');
 }
