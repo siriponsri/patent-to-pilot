@@ -27,6 +27,7 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
   - Solution-atlas headroom (dev, 6 Nov 2026): `GO_ORACLE_ONLY` ([audit](docs/healthtech/audits/ptp-solution-atlas-headroom-20261106/README.md)).
     - Oracle class reordering gave +0.059 R@50. The learned class prior gave −0.044 (CI −0.070 to −0.017).
     - Building an external prior is an owner decision. Test not opened; USD0 paid.
+  - Product-led paper approved (6 Nov 2026): [solution-scout product spec](docs/healthtech/research/SOLUTION_SCOUT_PRODUCT_SPEC_20261106_EN.md). Status: spec only; nothing built.
 
 Earlier status: `PAUSED_BY_OWNER_NORMAL_MAIN_ONLY_AUDIT`
 

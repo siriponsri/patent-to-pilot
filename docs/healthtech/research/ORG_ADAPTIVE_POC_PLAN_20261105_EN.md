@@ -1,6 +1,7 @@
 # PoC and portfolio plan: organization-adaptive cross-domain prior-art search
 
 - Written: 2026-11-05. **Status: PLAN. Nothing has been built or run yet.**
+- 6 Nov 2026: the organization-adaptive screens are superseded by the [solution-scout product spec](SOLUTION_SCOUT_PRODUCT_SPEC_20261106_EN.md). The architecture, data-layer and wording rules below still apply.
 - Research protocol (draft, not frozen): [ORG_ADAPTIVE_CROSS_DOMAIN_PROTOCOL_DRAFT_20261105_EN.md](ORG_ADAPTIVE_CROSS_DOMAIN_PROTOCOL_DRAFT_20261105_EN.md).
 - Goal: a working local demo that a reviewer can run and inspect, and a portfolio case study whose numbers come only from the frozen test in that protocol.
 

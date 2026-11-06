@@ -36,6 +36,13 @@ Status: `STAGE1_GATE_PASS_LEARNABLE_HEADROOM_FAIL_TEST_NOT_OPENED` (Stage 1 audi
 - Solution-atlas headroom (dev, 6 Nov 2026; owner-approved direction): `GO_ORACLE_ONLY` ([audit](../docs/healthtech/audits/ptp-solution-atlas-headroom-20261106/README.md); [plan](../docs/healthtech/research/SOLUTION_ATLAS_HEADROOM_PLAN_20261106_EN.md), pre-declared at `fc47cdb`).
   - Oracle class reordering gave +0.059 R@50 on brief P. The cross-fitted class-transition prior (m = 5) gave −0.044 (CI −0.070 to −0.017).
   - Next: owner decision on whether to build an external citation prior. Recommendation: not for retrieval, because the oracle bound is small and the prior's problem is precision. Test not opened. No paid calls.
+- Product-led paper (owner-approved, 6 Nov 2026): [solution-scout product spec](../docs/healthtech/research/SOLUTION_SCOUT_PRODUCT_SPEC_20261106_EN.md).
+  - The input is a short brief.
+  - The search returns two user-controlled lanes, own field and other fields, with a descriptive field map.
+  - The LLM is used only for quote-checked transfer rationales.
+  - Status: SPEC, nothing built. M0–M2 do not depend on research outcomes.
+  - Owner decisions pending: public demo corpus, freeze and one test read for E1–E2, PatenTEB replication, product name.
+  - A Hyperresearch deep-research run on alternative directions is running outside the repo (`C:/Users/User/.hrv/work`); its result may change the spec's §6.
 
 ## HT-NEXT-266 — 2026-11-04 WPI research package (Track A)
 
