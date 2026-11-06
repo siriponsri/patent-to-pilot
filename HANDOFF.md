@@ -4,7 +4,7 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 6 Nov 2026 (read this first)
 
-Last pushed commit before this note: `2a351ab` (updated 6 Nov 2026, about 18:50 Bangkok). All work is on `main` in this checkout; there are no worktrees or branches.
+Last pushed commit before this note: `b8813b1` (updated 6 Nov 2026, about 19:10 Bangkok). All work is on `main` in this checkout; there are no worktrees or branches.
 
 ### Where the study stands
 
@@ -30,7 +30,7 @@ Last pushed commit before this note: `2a351ab` (updated 6 Nov 2026, about 18:50 
 
 - **M0 done** (`7162078`): `src/patent_to_pilot/healthtech/scout.py`, holding the contracts, lane partition and literal quote check.
 - **M1 done** (`69efd30`): replay-mode backend in `src/patent_to_pilot/healthtech/scout_service.py`, plus `/scout/replay` and `/scout-sessions…` routes in `http.py` and `serve_http.py --scout-replay`. Tests: `tests/test_healthtech_scout*.py`. Suites at that commit: Python 738 passed / 1 skipped; frontend `npm test` 73 passed / 1 skipped.
-- **M2 in progress:** frontend screens S1–S6. The owner asked for a "modern + minimal" design with wow impact, on real public data with V100-prepared vectors.
+- **M2 done (screens S1–S4, S6; S5 hand-off open):** frontend screens. The owner asked for a "modern + minimal" design with wow impact, on real public data with V100-prepared vectors.
   - **M3 data step, done 6 Nov 2026:**
     - HUPD `data/2017.tar.gz` downloaded to dr-train (sha256 `688a44e3a09b2ae2…`).
     - Subset built with `scripts/healthtech/build_scout_hupd_subset.py`: 56,528 applications, up to 8,000 per IPC section. Section D has 1,723 and E has 6,805, because HUPD 2017 has few applications there. Personal names are dropped. Corpus sha256 `32be3c19fbc8dd53…`.
@@ -47,25 +47,13 @@ Last pushed commit before this note: `2a351ab` (updated 6 Nov 2026, about 18:50 
 
 ### Next steps for a new agent
 
-1. **Done 6 Nov:**
-   - Live CPU search; CPU/GPU parity is exact.
-   - Qwen rationales: 56/56 calls, 0 failed, 0 retries, mean 12.4 s.
-     - Quote check: 120 of 158 quotes match the source literally, 31 are not found and 7 are too long. 29 of 56 rationales have every quote matched.
-     - The book is at `../_private_artifacts/healthtech/scout-public-demo/rationale-book-v0.json`.
-   - M2 Scout page: `frontend/healthtech-web/app/scout.html`, `scout.css`, `src/scout/{main,model}.js`, plus `createScoutAdapter` in `adapters.js`. Unit tests are in `tests/unit/scout.test.mjs`.
-   - Browser check: a live brief returns real cross-industry results; the drawer shows the source.
-2. **In progress:** browser-verify the demo flow (rationale drawer with quote badges and highlights, decision buttons, receipt), then a mobile width check.
-   - The rationale route returned 500 because the long scratch data-dir path exceeded Windows MAX_PATH. Fixed by short rationale file names and a short staging prefix.
-   - Run the server with a short `--data-dir`, e.g. `C:/Users/User/.ptp-scout-data`.
-3. Run `npm test`, the full Python suite and (optionally) `npm run test:e2e`.
-4. Write the audit `docs/healthtech/audits/ptp-scout-public-demo-20261106/`, covering:
-   - the HUPD rights record (CC BY-SA 4.0, names dropped);
-   - the PatEmbed non-commercial licence;
-   - hashes: archive `688a44e3…`, corpus `32be3c19…`, vectors f32 `f53dc652…`, f16 `d51609df…`, rationale output `f5c072de…`;
-   - parity;
-   - quote-check stats.
-
-   Then commit and push.
+1. **M2 and M3 done 6 Nov:**
+   - Scout page plus live search plus recorded rationales. See the [public demo audit](docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md).
+   - Tests: Python 739 passed / 1 skipped; `npm test` 80 passed / 1 skipped; e2e 17/17.
+2. **S5:** the "send to dossier" hand-off from the Scout drawer into the existing dossier flow.
+3. **M4:** live Qwen rationales for new briefs, through the existing local-generation path on dr-train. Add a stricter quote prompt or a quote-repair step; 24% of quotes did not match literally.
+4. **M5:** write the frozen evaluation protocol for E1–E5 and commit it before reading the DAPFAM test once. The owner approved this.
+5. Check on the hyperresearch run (see Running). Its report may change spec §6.
 
 **Run the demo:**
 - Backend:

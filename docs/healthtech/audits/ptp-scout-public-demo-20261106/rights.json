@@ -1,0 +1,42 @@
+{
+  "format": "ptp-scout-rights-v1",
+  "checked_date": "2026-11-06",
+  "sources": [
+    {
+      "id": "hupd-2017",
+      "name": "Harvard USPTO Patent Dataset (HUPD)",
+      "location": "https://huggingface.co/datasets/HUPD/hupd (data/2017.tar.gz)",
+      "licence": "CC BY-SA 4.0",
+      "licence_basis": "Hugging Face dataset card metadata (cardData.license = cc-by-sa-4.0), read 2026-11-06",
+      "archive_sha256": "688a44e3a09b2ae2e0012278d040accb3d407e87940548ae29e1eb22e39cc86a",
+      "derived_subset_sha256": "32be3c19fbc8dd53fdbd12fb3aa2649e97419f47f99e0491ac5494ffe78cea0e",
+      "use": "local research demo corpus; share-alike applies to the derived subset",
+      "personal_data": "inventor and examiner names dropped",
+      "in_git": false
+    },
+    {
+      "id": "patembed-large",
+      "name": "datalyes/patembed-large",
+      "revision": "2d5c0f92a3e5dc3d5415c08e612c57543c0e03ad",
+      "licence": "CC BY-NC-SA 4.0",
+      "licence_basis": "Hugging Face model card metadata (cardData.license = cc-by-nc-sa-4.0), read 2026-11-06",
+      "use": "research use only; non-commercial; a commercial deployment needs a different encoder",
+      "in_git": false
+    },
+    {
+      "id": "qwen3-8b",
+      "name": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "licence": "Apache-2.0",
+      "licence_basis": "local model manifest qwen3-8b-manifest.json on dr-train",
+      "use": "local rationale generation on the approved V100",
+      "in_git": false
+    }
+  ],
+  "not_used": [
+    {
+      "id": "patentsview-bulk",
+      "reason": "bulk files moved to the USPTO Open Data Portal, which requires a USPTO.gov login with MFA since June 2026; the legacy S3 URLs returned HTTP 403; agents do not create accounts or log in"
+    }
+  ]
+}

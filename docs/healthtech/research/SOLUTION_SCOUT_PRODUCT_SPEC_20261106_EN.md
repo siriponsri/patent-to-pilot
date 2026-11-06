@@ -110,6 +110,13 @@ M0–M2 do not depend on any research outcome.
   - `GET /scout-sessions/{id}/receipt`.
 
   The server takes the bundle with `serve_http.py --scout-replay <bundle>`. Replay answers recorded briefs only and recomputes every quote check against the bundle text. Tests use the synthetic bundle `tests/fixtures/scout/replay-bundle.json`.
+- **M3 data and M2 screens, done 6 Nov 2026:**
+  - Public corpus: HUPD 2017 subset, 56,528 applications, V100-encoded.
+  - Live CPU search with exact GPU parity.
+  - 56 recorded Qwen rationales; 76% of their quotes match the source literally.
+  - Scout page at `frontend/healthtech-web/app/scout.html`.
+  - Audit: [ptp-scout-public-demo-20261106](../audits/ptp-scout-public-demo-20261106/README.md).
+  - The Scout is a dedicated page linked from the frontend README, not panels inside the node-canvas workspace. The dossier hand-off (S5) is still open.
 
 ## 8. Wording rules
 

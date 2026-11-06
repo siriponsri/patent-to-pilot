@@ -51,7 +51,14 @@ Status: `STAGE1_GATE_PASS_LEARNABLE_HEADROOM_FAIL_TEST_NOT_OPENED` (Stage 1 audi
     - the PatenTEB replication (E5);
     - the name "Solution Scout".
   - M1 done (6 Nov 2026): replay-mode backend in `scout_service.py`, with `/scout/replay` and `/scout-sessions…` routes in `http.py` and `serve_http.py --scout-replay`. Covered by `tests/test_healthtech_scout_http.py` (synthetic bundle).
-  - Next: M2, frontend panels S1–S6 in `frontend/healthtech-web`.
+  - M3 data and M2 screens done (6 Nov 2026):
+    - HUPD 2017 public subset, live CPU search and recorded Qwen rationales.
+    - Scout page `frontend/healthtech-web/app/scout.html`.
+    - Audit `../docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md`.
+  - Next:
+    - S5 dossier hand-off;
+    - M4 live LLM rationales;
+    - M5 frozen evaluation (DAPFAM E1–E2 test read approved after the freeze; E5 PatenTEB).
   - A Hyperresearch deep-research run on alternative directions is running outside the repo (`C:/Users/User/.hrv/work`); its result may change the spec's §6.
 
 ## HT-NEXT-266 — 2026-11-04 WPI research package (Track A)

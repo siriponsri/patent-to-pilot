@@ -288,7 +288,7 @@ function mapCard(s, ideas) {
   );
   return h('div', { class: 'map-card' },
     h('div', { class: 'map-head' }, h('h2', {}, t('scout.map.title')), h('p', {}, t('scout.map.note'))),
-    map);
+    h('div', { class: 'map-scroll', tabindex: '0', 'aria-label': t('scout.map.title') }, map));
 }
 
 function highlightDot(familyId, on) {
