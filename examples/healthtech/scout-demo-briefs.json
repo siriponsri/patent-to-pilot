@@ -1,0 +1,22 @@
+{
+  "format": "ptp-scout-demo-briefs-v1",
+  "note": "Authored demo problem briefs for Solution Scout. Written for this project; not taken from any patent or benchmark text.",
+  "briefs": [
+    {"brief_id": "demo-pump-seal", "own_ipc3": ["F04", "F16"],
+     "text": "A small pump seal starts to leak after long periods of strong vibration. We need a way to keep the sealing contact pressure steady without adding a heavy spring or a power supply."},
+    {"brief_id": "demo-battery-propagation", "own_ipc3": ["H01"],
+     "text": "When one cell in a battery pack overheats, the heat spreads to its neighbours and the whole pack can fail. We need to stop heat spreading between cells without adding much weight or volume."},
+    {"brief_id": "demo-skin-adhesive", "own_ipc3": ["A61"],
+     "text": "A wearable sensor patch must stay attached to the skin for two weeks, but strong adhesives irritate the skin and come off in the shower. We need an attachment that holds through sweat and water and peels off gently."},
+    {"brief_id": "demo-drone-icing", "own_ipc3": ["B64"],
+     "text": "Ice builds up on small drone propeller blades in cold, humid air and the drone loses lift. We need to prevent ice from sticking or shed it quickly without heavy heaters that drain the battery."},
+    {"brief_id": "demo-cold-chain", "own_ipc3": ["B65", "G01"],
+     "text": "Chilled food can warm above a safe temperature during transport and then cool down again, so nobody notices. We need a cheap, irreversible indicator on each package that shows this happened, without electronics."},
+    {"brief_id": "demo-solar-dust", "own_ipc3": ["H01", "H02"],
+     "text": "Solar panels in desert installations lose output because dust settles on the glass. We need to keep the surface clean without using water and with little maintenance."},
+    {"brief_id": "demo-concrete-cracks", "own_ipc3": ["C04", "E04"],
+     "text": "Concrete floors develop small cracks as they cure and shrink, and water then enters the cracks. We need the material to seal small cracks by itself or to avoid them without manual repair."},
+    {"brief_id": "demo-soft-gripper", "own_ipc3": ["B25"],
+     "text": "A robot gripper either drops soft fruit or crushes it, because the fruit varies in size and firmness. We need to hold delicate, irregular objects firmly but gently."}
+  ]
+}

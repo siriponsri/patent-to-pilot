@@ -4,7 +4,7 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 6 Nov 2026 (read this first)
 
-Last pushed commit before this note: `69efd30`. All work is on `main` in this checkout; there are no worktrees or branches.
+Last pushed commit before this note: `790996e` (updated 6 Nov 2026, about 17:40 Bangkok). All work is on `main` in this checkout; there are no worktrees or branches.
 
 ### Where the study stands
 
@@ -31,45 +31,38 @@ Last pushed commit before this note: `69efd30`. All work is on `main` in this ch
 - **M0 done** (`7162078`): `src/patent_to_pilot/healthtech/scout.py`, holding the contracts, lane partition and literal quote check.
 - **M1 done** (`69efd30`): replay-mode backend in `src/patent_to_pilot/healthtech/scout_service.py`, plus `/scout/replay` and `/scout-sessions…` routes in `http.py` and `serve_http.py --scout-replay`. Tests: `tests/test_healthtech_scout*.py`. Suites at that commit: Python 738 passed / 1 skipped; frontend `npm test` 73 passed / 1 skipped.
 - **M2 in progress:** frontend screens S1–S6. The owner asked for a "modern + minimal" design with wow impact, on real public data with V100-prepared vectors.
+  - **M3 data step, done 6 Nov 2026:**
+    - HUPD `data/2017.tar.gz` downloaded to dr-train (sha256 `688a44e3a09b2ae2…`).
+    - Subset built with `scripts/healthtech/build_scout_hupd_subset.py`: 56,528 applications, up to 8,000 per IPC section. Section D has 1,723 and E has 6,805, because HUPD 2017 has few applications there. Personal names are dropped. Corpus sha256 `32be3c19fbc8dd53…`.
+    - Encoded on the V100 with PatEmbed-large: 74,670 passages in 1,618 s, PASS, vectors sha256 `f53dc6525a6c74ac…`.
+    - Outputs on dr-train: `/home/chaw/patent-to-pilot-jobs/scout-public-demo/{subset,encoded}/`.
+  - The 8 authored demo briefs are in `examples/healthtech/scout-demo-briefs.json`. Their GPU top-200 rankings are in `encoded/rankings-demo-top200.jsonl`, for checking CPU/GPU parity.
+  - The local CPU venv is ready at `C:/Users/User/.ptp-scout-venv` (torch 2.15.0+cpu, transformers 4.57.6, repo installed editable). PatEmbed weights are not yet copied locally.
 
 ### Decisions made 6 Nov 2026 (owner answers)
 
-1. **Demo corpus: HUPD** (Harvard USPTO Patent Dataset, `HUPD/hupd` on Hugging Face), licence **CC BY-SA 4.0**, not gated.
-   - PatentsView was the first choice, but its bulk data now needs a USPTO.gov login with MFA. The data.uspto.gov Open Data Portal has required this since June 2026, and the legacy S3 URLs return 403.
-   - Agents must not create accounts or log in.
-   - HUPD per-year archives are 2.6–5.6 GB (`data/2016.tar.gz` 5.57 GB, `data/2017.tar.gz` 4.67 GB); `data/sample-jan-2016.tar.gz` is 0.39 GB.
-   - Not yet downloaded. Plan: one year on dr-train, then a stratified subset across IPC sections A–H, built from title + abstract (+ first claim) and IPC labels.
-   - Share-alike applies to the derived corpus. Record the rights through `rights.py` / `provenance.py`.
-2. **Live search: a local CPU encoder.** CPU torch + transformers in an isolated venv (not the repo's global env), with PatEmbed-large weights locally. Not yet installed: torch is absent in the local Python. Qwen rationales are recorded on the V100 and replayed.
-3. **Licence flag found 6 Nov 2026:**
-   - `datalyes/patembed-large` (revision `2d5c0f92…`) is **CC BY-NC-SA 4.0, non-commercial**.
-   - The demo and paper are research use. Any commercial or business deployment would need a different encoder.
-   - This must appear in the spec, the demo and the paper.
+1. **Demo corpus: HUPD** (Harvard USPTO Patent Dataset, `HUPD/hupd`), licence **CC BY-SA 4.0**. PatentsView bulk data now needs a USPTO.gov login with MFA (since June 2026) and the legacy S3 links return 403. Agents must not create accounts or log in. Share-alike applies to the derived corpus.
+2. **Live search: a local CPU encoder** in the isolated venv above. Qwen rationales are recorded on the V100 and replayed.
+3. **Licence flag:** `datalyes/patembed-large` (revision `2d5c0f92…`) is **CC BY-NC-SA 4.0, non-commercial**. The demo and paper are research use only; a commercial deployment would need a different encoder. Show this in the demo and state it in the paper.
 
 ### Next steps for a new agent
 
-1. Download one HUPD year to dr-train (`chaw@100.77.149.83`, about 115 GB free, two V100s; approved GPU `GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089`). Build the subset and write a rights record.
-2. Encode with PatEmbed-large on the V100. Reuse `scripts/healthtech/run_dapfam_dense_pool.py` logic and `dense_passages`, and run a 3-query canary first. Keep vectors and texts out of Git, under `../_private_artifacts/healthtech/scout-public-demo/`.
-3. Add a local live dense-search mode to `scout_service.py`: CPU query encoding plus a numpy dot product over the vectors. Keep the replay mode.
-4. Record 6–8 authored demo briefs and Qwen3-8B rationales on the V100 into a replay bundle (`ptp-scout-replay-v1`).
-5. Build M2 in `frontend/healthtech-web`: panels S1–S6, TH/EN, keyboard paths, no build step. Then run `npm test` and `npm run test:e2e`.
-6. Write an audit under `docs/healthtech/audits/`, then commit and push. The owner allows a push after verified work.
+1. Copy `subset/corpus.jsonl`, `subset/family-ipc3.jsonl`, `subset/manifest.json` and `encoded/*` from dr-train into `../_private_artifacts/healthtech/scout-public-demo/`. Store vectors as float16 to save space, recording the hash of the original float32 file. Copy the PatEmbed-large model directory from dr-train (`research-product-o1-o4-20261031/models/patembed-large`) to `C:/Users/User/.ptp-models/patembed-large` and check the safetensors sha256 `234ea36a…`.
+2. Check CPU/GPU parity: encode the 8 demo briefs on CPU and compare the top-200 against `rankings-demo-top200.jsonl`. Expect near-identical results; record the overlap.
+3. Add a live dense-search mode to `scout_service.py` (CPU query encoding plus a numpy MaxP dot product). Keep the replay mode. Add tests with a tiny synthetic vector bundle.
+4. Record Qwen3-8B transfer rationales (prompt `ptp-scout-rationale-v0`, quote-grounded) on the V100 for the top other-field candidates of each demo brief. Build a public replay bundle.
+5. Build the M2 screens S1–S6 in `frontend/healthtech-web` (modern + minimal, wow: an animated field map, lanes, quote highlights, a receipt strip; TH/EN; keyboard paths; no build step). Run `npm test`, `npm run test:e2e` and a browser check.
+6. Write an audit (`docs/healthtech/audits/ptp-scout-public-demo-20261106/`) with the rights record and hashes. Commit and push.
 
 ### Running or external state
 
-- **HUPD download** (started 6 Nov 2026, about 05:36 server time) on dr-train:
-  - Command: `curl -sSL --fail -o raw/hupd-2017.tar.gz https://huggingface.co/datasets/HUPD/hupd/resolve/main/data/2017.tar.gz`
-  - Directory: `/home/chaw/patent-to-pilot-jobs/scout-public-demo`; log in `logs/download.log`.
-  - Expected size 4,669 MB (HF listing). Check with `ls -la raw/` and `pgrep -af hupd-2017`.
-  - If it died partway, delete the partial file and restart; one retry is fine because this is not a paid call.
-  - Next: unpack, then build a stratified A–H subset into `subset/`.
-
 - **Hyperresearch deep-research run** (alternative directions; may change spec §6):
   - Tool: `jordan-gibbs/hyperresearch` v0.13.0, commit `aece65f`.
-  - It runs in an isolated venv at `C:/Users/User/.hrv`, with the vault at `C:/Users/User/.hrv/work`. The prompt is in `research/prompt.txt`; the report will be `research/notes/final_report_<vault_tag>.md`.
-  - It was started as a background subagent of the 6 Nov session. It hit a session rate limit once and was resumed. A new agent should check `research/runs/*/run.json` for the current step, not restart it.
-  - Never run `hyperresearch install` in this repo or with `--global`: it adds a PreToolUse hook and edits CLAUDE.md, which this project forbids.
-- **dr-train job directory:** `/home/chaw/patent-to-pilot-jobs/org-adaptive-20261105`. Private DAPFAM artifacts are under `../_private_artifacts/healthtech/ptp-org-adaptive-20261105/`.
+  - Isolated venv at `C:/Users/User/.hrv`; vault at `C:/Users/User/.hrv/work`. The prompt is in `research/prompt.txt`; the report will be `research/notes/final_report_<vault_tag>.md`.
+  - It runs as a background subagent of the 6 Nov session. It hit usage limits twice and was resumed both times; at about 17:40 Bangkok it was at step 5 (depth investigators).
+  - A new agent should read `research/runs/*/run.json` and resume from the recorded step, never restart.
+  - Never run `hyperresearch install` in this repo or with `--global`: it adds a hook and edits CLAUDE.md, which this project forbids.
+- **dr-train:** no scout job is running. Earlier DAPFAM jobs are under `/home/chaw/patent-to-pilot-jobs/org-adaptive-20261105`; private DAPFAM artifacts are in `../_private_artifacts/healthtech/ptp-org-adaptive-20261105/`.
 
 ### Standing rules
 
