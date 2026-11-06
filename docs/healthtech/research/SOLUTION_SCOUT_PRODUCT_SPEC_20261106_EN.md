@@ -130,3 +130,9 @@ M0–M2 do not depend on any research outcome.
 4. **Name:** "Solution Scout" (Cross-Industry Solution Scout).
 
 Starting M0 does not read any test data.
+
+**Updates (6 Nov 2026)**
+
+- **Corpus:** PatentsView bulk data now needs a USPTO.gov login with MFA, and the legacy S3 links return 403. The owner therefore chose **HUPD** (`HUPD/hupd`, CC BY-SA 4.0) as the public demo corpus. Share-alike applies to the derived corpus.
+- **Live search:** the owner chose a local CPU encoder for live search.
+- **Licence:** the PatEmbed-large encoder (`datalyes/patembed-large`) is **CC BY-NC-SA 4.0, non-commercial**. The demo and paper are research use. A commercial deployment would need a different encoder. This limit must be shown on the demo's about panel and stated in the paper.
