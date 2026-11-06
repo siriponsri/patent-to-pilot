@@ -57,6 +57,13 @@ Last pushed commit before this note: `69efd30`. All work is on `main` in this ch
 
 ### Running or external state
 
+- **HUPD download** (started 6 Nov 2026, about 05:36 server time) on dr-train:
+  - Command: `curl -sSL --fail -o raw/hupd-2017.tar.gz https://huggingface.co/datasets/HUPD/hupd/resolve/main/data/2017.tar.gz`
+  - Directory: `/home/chaw/patent-to-pilot-jobs/scout-public-demo`; log in `logs/download.log`.
+  - Expected size 4,669 MB (HF listing). Check with `ls -la raw/` and `pgrep -af hupd-2017`.
+  - If it died partway, delete the partial file and restart; one retry is fine because this is not a paid call.
+  - Next: unpack, then build a stratified A–H subset into `subset/`.
+
 - **Hyperresearch deep-research run** (alternative directions; may change spec §6):
   - Tool: `jordan-gibbs/hyperresearch` v0.13.0, commit `aece65f`.
   - It runs in an isolated venv at `C:/Users/User/.hrv`, with the vault at `C:/Users/User/.hrv/work`. The prompt is in `research/prompt.txt`; the report will be `research/notes/final_report_<vault_tag>.md`.

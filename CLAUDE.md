@@ -2,6 +2,27 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
+## Handoff rule (owner rule, 6 Nov 2026; always in force)
+
+Sessions can end without warning when an account hits its usage limit. Another agent, possibly on another account, must be able to continue from `HANDOFF.md` alone. So:
+
+1. **Start of session:** read the `## Agent takeover state` section at the top of `HANDOFF.md` before anything else. It overrides older sections in that file.
+2. **Update it every time** one of these happens:
+   - a step finishes (code, data, analysis or document);
+   - before starting anything that runs in the background or for more than about 10 minutes (downloads, GPU jobs, subagents, long test suites). Record what runs, where, its log and output paths, and how to check it or wait for it;
+   - an owner decision or a new blocker;
+   - at least once every 30–60 minutes of active work.
+3. **Keep it current, not historical.** Rewrite the takeover section in place. Include:
+   - the last pushed commit;
+   - milestone status;
+   - running jobs;
+   - decisions;
+   - the next 3–6 concrete steps;
+   - blockers.
+
+   Move superseded detail to the audits, not into this section.
+4. **Commit and push** the HANDOFF update right away (owner-authorized), together with the work it describes when there is any. Never include secrets, `.env` contents, DAPFAM text or generated text.
+
 ## Current checkpoint
 
 - Repository: `C:/Users/User/Desktop/myProject/patent-to-pilot`
