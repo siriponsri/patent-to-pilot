@@ -46,6 +46,11 @@ def main() -> None:
         default=None,
         help="server-owned Solution Scout replay bundle (ptp-scout-replay-v1; synthetic or public data only)",
     )
+    parser.add_argument("--scout-live-dir", type=Path, default=None,
+                        help="public corpus dir with corpus.jsonl, manifest.json and passage vectors (live CPU search)")
+    parser.add_argument("--scout-model-dir", type=Path, default=None, help="local PatEmbed-large directory")
+    parser.add_argument("--scout-rationales", type=Path, default=None,
+                        help="recorded rationale book (ptp-scout-rationales-v1) for the live corpus")
     args = parser.parse_args()
     if args.delay_ms < 0:
         parser.error("--delay-ms must be non-negative")
@@ -58,6 +63,9 @@ def main() -> None:
         vector_config=args.vector_config,
         generation_config=args.generation_config,
         scout_replay=args.scout_replay,
+        scout_live_dir=args.scout_live_dir,
+        scout_model_dir=args.scout_model_dir,
+        scout_rationales=args.scout_rationales,
     )
     bound_host, bound_port = server.server_address[:2]
     print(f"healthtech local HTTP listening on http://{bound_host}:{bound_port}", flush=True)

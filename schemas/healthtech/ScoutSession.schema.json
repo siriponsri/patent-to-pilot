@@ -138,6 +138,19 @@
           "title": "Ipc3",
           "type": "array"
         },
+        "title": {
+          "anyOf": [
+            {
+              "maxLength": 1000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
         "representative_raw": {
           "anyOf": [
             {

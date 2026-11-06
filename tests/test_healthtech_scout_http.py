@@ -136,6 +136,60 @@ def test_replay_fails_closed(server, tmp_path):
         plain.healthtech_service.close()
 
 
+class _FakeEncoder:
+    def encode(self, text):
+        import numpy as np
+
+        return np.array([1.0, 0.0, 0.0], dtype=np.float32)
+
+
+def test_live_mode_partitions_live_scores_and_replays_book(tmp_path):
+    import numpy as np
+
+    from patent_to_pilot.healthtech.scout_live import LiveIndex, source_text
+    from patent_to_pilot.healthtech.scout_service import RationaleBook, ScoutService
+
+    rows = [
+        {"id": "US20180000001A1", "title": "SYNTHETIC seal", "abstract": "A lip seal.", "claims": "1. A seal.",
+         "ipc3": ["F16"], "date_published": "20180104"},
+        {"id": "US20180000002A1", "title": "SYNTHETIC stent", "abstract": "Struts recover their shape after "
+         "each deformation without any external power.", "claims": "", "ipc3": ["A61"], "date_published": "20180111"},
+        {"id": "US20180000003A1", "title": "SYNTHETIC gasket", "abstract": "A gasket.", "claims": "", "ipc3": [],
+         "date_published": None},
+    ]
+    vectors = np.array([[0.5, 0.5, 0], [0.9, 0.1, 0], [0.1, 0.9, 0]], dtype=np.float16)
+    index = LiveIndex(rows, vectors, _FakeEncoder(), corpus_sha256="c" * 64, vectors_sha256="v" * 64)
+    ranking, _, _ = index.search("anything")
+    assert [f for f, _ in ranking] == ["US20180000002A1", "US20180000001A1", "US20180000003A1"]
+    assert index.family("US20180000001A1")["publication_date"] == "2018-01-04"
+    assert source_text(rows[1]).startswith("SYNTHETIC stent\n\n")
+
+    brief = {**BRIEF, "data_class": "public", "own_ipc3": ["F16"]}
+    book = RationaleBook({"format": "ptp-scout-rationales-v1", "corpus_sha256": "c" * 64, "rationales": [
+        {"brief_text": brief["text"], "own_ipc3": ["F16"], "family_id": "US20180000002A1", "model": "Qwen/Qwen3-8B",
+         "model_revision": "fixture", "prompt_version": "ptp-scout-rationale-v0", "what_it_does": "Holds force.",
+         "transferable_mechanism": "Shape recovery.",
+         "quotes": ["recover their shape after each deformation without any external power"]}]}, "c" * 64)
+    with pytest.raises(ValueError, match="different corpus"):
+        RationaleBook({"format": "ptp-scout-rationales-v1", "corpus_sha256": "d" * 64, "rationales": []}, "c" * 64)
+
+    service = ScoutService(tmp_path, live=index, rationale_book=book)
+    info = service.describe()
+    assert info["mode"] == "live" and info["recorded_rationales"] == 1 and info["demo_briefs"][0]["own_ipc3"] == ["F16"]
+    session, duplicate = service.create({"brief": brief, "split": {"n_own": 1, "n_other": 2}}, "live-1")
+    assert duplicate is False and session["receipt"]["mode"] == "live"
+    assert [(c["lane"], c["family_id"]) for c in session["candidates"]] == [
+        ("own_field", "US20180000001A1"), ("other_fields", "US20180000002A1"), ("other_fields", "US20180000003A1")]
+    assert session["candidates"][1]["title"] == "SYNTHETIC stent"
+    assert session["rationales_available"] == ["US20180000002A1"]
+    result = service.rationale(session["session_id"], "US20180000002A1")
+    assert result["rationale"]["quote_status"] == "all_matched"
+    with pytest.raises(Exception, match="no recorded rationale"):
+        service.rationale(session["session_id"], "US20180000001A1")
+    with pytest.raises(Exception, match="public data only"):
+        service.create({"brief": BRIEF}, "live-2")
+
+
 def test_replay_bundle_integrity_checks():
     with pytest.raises(ValueError, match="corpus hash"):
         ReplayBundle({**RAW, "corpus_bundle_sha256": "0" * 64}, "x")

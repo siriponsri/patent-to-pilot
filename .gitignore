@@ -26,3 +26,6 @@ literature-review/healthtech/papers/
 .pytest_cache/
 *.pyc
 deliverables/
+
+# local editable installs
+*.egg-info/

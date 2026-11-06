@@ -4,7 +4,7 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 6 Nov 2026 (read this first)
 
-Last pushed commit before this note: `790996e` (updated 6 Nov 2026, about 17:40 Bangkok). All work is on `main` in this checkout; there are no worktrees or branches.
+Last pushed commit before this note: `c93be8a` (updated 6 Nov 2026, about 18:05 Bangkok). All work is on `main` in this checkout; there are no worktrees or branches.
 
 ### Where the study stands
 
@@ -47,14 +47,27 @@ Last pushed commit before this note: `790996e` (updated 6 Nov 2026, about 17:40 
 
 ### Next steps for a new agent
 
-1. Copy `subset/corpus.jsonl`, `subset/family-ipc3.jsonl`, `subset/manifest.json` and `encoded/*` from dr-train into `../_private_artifacts/healthtech/scout-public-demo/`. Store vectors as float16 to save space, recording the hash of the original float32 file. Copy the PatEmbed-large model directory from dr-train (`research-product-o1-o4-20261031/models/patembed-large`) to `C:/Users/User/.ptp-models/patembed-large` and check the safetensors sha256 `234ea36a…`.
-2. Check CPU/GPU parity: encode the 8 demo briefs on CPU and compare the top-200 against `rankings-demo-top200.jsonl`. Expect near-identical results; record the overlap.
-3. Add a live dense-search mode to `scout_service.py` (CPU query encoding plus a numpy MaxP dot product). Keep the replay mode. Add tests with a tiny synthetic vector bundle.
-4. Record Qwen3-8B transfer rationales (prompt `ptp-scout-rationale-v0`, quote-grounded) on the V100 for the top other-field candidates of each demo brief. Build a public replay bundle.
-5. Build the M2 screens S1–S6 in `frontend/healthtech-web` (modern + minimal, wow: an animated field map, lanes, quote highlights, a receipt strip; TH/EN; keyboard paths; no build step). Run `npm test`, `npm run test:e2e` and a browser check.
-6. Write an audit (`docs/healthtech/audits/ptp-scout-public-demo-20261106/`) with the rights record and hashes. Commit and push.
+1. **Done 6 Nov:**
+   - Data copied locally to `../_private_artifacts/healthtech/scout-public-demo/` (corpus, manifest, `passage-vectors-f16.npy` sha256 `d51609df…`, demo rankings).
+   - PatEmbed copied to `C:/Users/User/.ptp-models/patembed-large` (hash checked).
+   - CPU/GPU parity: all 8 briefs have identical top-10 and 200/200 overlap in the top-200; CPU encode about 0.5 s and search about 0.5 s.
+   - Live mode: `src/patent_to_pilot/healthtech/scout_live.py`, plus `RationaleBook` and live mode in `scout_service.py`, plus `serve_http.py --scout-live-dir --scout-model-dir --scout-rationales`. Tests pass.
+2. When the Qwen rationale job finishes (see Running), copy `rationales-v0.out.jsonl(.receipt.json)` locally and build the book:
+   `python scripts/healthtech/run_qwen_scout_rationales.py book --briefs examples/healthtech/scout-demo-briefs.json --generated <local>/rationales-v0.out.jsonl --corpus-sha256 32be3c19fbc8dd53fdbd12fb3aa2649e97419f47f99e0491ac5494ffe78cea0e --model-revision b968826d9c46dd6066d109eabc6255188de91218 --output <local>/rationale-book-v0.json`
+   Then report the quote match rate.
+3. Build the M2 screens S1–S6 in `frontend/healthtech-web` (modern + minimal, wow). Start the server with the CPU venv:
+   `C:/Users/User/.ptp-scout-venv/Scripts/python scripts/healthtech/serve_http.py --scout-live-dir ../_private_artifacts/healthtech/scout-public-demo --scout-model-dir C:/Users/User/.ptp-models/patembed-large --scout-rationales <book>`
+   Startup takes about 100 s.
+4. Run `npm test`, `npm run test:e2e` and a browser check. Write the audit `docs/healthtech/audits/ptp-scout-public-demo-20261106/` with the rights record. Commit and push.
 
 ### Running or external state
+
+- **Qwen rationale job** (V100, started 6 Nov about 17:55 Bangkok):
+  - Command: `run_qwen_scout_rationales.py generate`, from `/home/chaw/patent-to-pilot-jobs/org-adaptive-20261105/code-v3`.
+  - Input: `/home/chaw/patent-to-pilot-jobs/scout-public-demo/rationale-inputs.jsonl` (56 candidates).
+  - Output: `rationales-v0.out.jsonl`, written line by line. The `.receipt.json` appears when it finishes. Log: `logs/rationales.log`.
+  - Check progress with `wc -l rationales-v0.out.jsonl`.
+  - Do not restart it while it is running. If it died, do not retry calls that already have an output line.
 
 - **Hyperresearch deep-research run** (alternative directions; may change spec §6):
   - Tool: `jordan-gibbs/hyperresearch` v0.13.0, commit `aece65f`.

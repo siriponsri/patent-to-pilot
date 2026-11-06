@@ -39,7 +39,7 @@ from patent_to_pilot.healthtech.history import (
     source_view,
 )
 from patent_to_pilot.healthtech.rights import RightsBoundaryError
-from patent_to_pilot.healthtech.scout_service import ReplayBundle, ScoutError, ScoutService
+from patent_to_pilot.healthtech.scout_service import RationaleBook, ReplayBundle, ScoutError, ScoutService
 from patent_to_pilot.healthtech.vector_http import ConfiguredVectorSearch
 
 
@@ -199,7 +199,9 @@ class HealthTechJobService:
                  execution_delay_seconds: float = 0.0,
                  vector_search: ConfiguredVectorSearch | None = None,
                  generation_provider: GenerationProvider | None = None,
-                 scout_bundle: ReplayBundle | None = None):
+                 scout_bundle: ReplayBundle | None = None,
+                 scout_live: Any = None,
+                 scout_rationales: RationaleBook | None = None):
         if max_workers != 1:
             raise ValueError("HealthTech local service requires one worker")
         if execution_delay_seconds < 0:
@@ -210,7 +212,7 @@ class HealthTechJobService:
         self.execution_delay_seconds = execution_delay_seconds
         self.vector_search = vector_search
         self.generation_provider = generation_provider
-        self.scout = ScoutService(root, scout_bundle)
+        self.scout = ScoutService(root, scout_bundle, live=scout_live, rationale_book=scout_rationales)
         self.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="healthtech-job")
 
     def close(self) -> None:
@@ -568,7 +570,7 @@ class HealthTechJobService:
     def _scout_route(self, method: str, path: list[str], body: Any,
                      headers: dict[str, str]) -> tuple[int, Any, str]:
         json_type = "application/json; charset=utf-8"
-        if method == "GET" and path == ["scout", "replay"]:
+        if method == "GET" and path in (["scout", "replay"], ["scout", "info"]):
             return 200, self.scout.describe(), json_type
         if method == "POST" and path == ["scout-sessions"]:
             session, duplicate = self.scout.create(body, headers.get("Idempotency-Key"))
@@ -719,8 +721,20 @@ def create_server(
     generation_config: str | Path | None = None,
     generation_provider: GenerationProvider | None = None,
     scout_replay: str | Path | None = None,
+    scout_live_dir: str | Path | None = None,
+    scout_model_dir: str | Path | None = None,
+    scout_rationales: str | Path | None = None,
 ) -> ThreadingHTTPServer:
     configured_vectors = None if vector_config is None else ConfiguredVectorSearch.from_config(vector_config)
+    live = book = None
+    if scout_live_dir is not None:
+        from patent_to_pilot.healthtech.scout_live import LiveIndex  # needs torch; imported only for live mode
+
+        if scout_model_dir is None:
+            raise ValueError("scout_live_dir requires scout_model_dir")
+        live = LiveIndex.load(scout_live_dir, scout_model_dir)
+        if scout_rationales is not None:
+            book = RationaleBook.load(scout_rationales, live.corpus_sha256)
     if generation_provider is not None and generation_config is not None:
         raise ValueError("generation_provider and generation_config are mutually exclusive")
     configured_generation = generation_provider if generation_provider is not None else (
@@ -733,6 +747,8 @@ def create_server(
         vector_search=configured_vectors,
         generation_provider=configured_generation,
         scout_bundle=None if scout_replay is None else ReplayBundle.load(scout_replay),
+        scout_live=live,
+        scout_rationales=book,
     )
 
     class BoundHandler(_Handler):

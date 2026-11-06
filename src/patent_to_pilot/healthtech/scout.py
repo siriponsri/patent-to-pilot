@@ -138,6 +138,7 @@ class ScoutCandidate(Contract):
     rank_in_lane: int = Field(ge=1)
     score: float
     ipc3: list[str] = Field(default_factory=list)
+    title: str | None = Field(default=None, max_length=1000)
     representative_raw: str | None = None
     representative_canonical: str | None = None
     jurisdiction: str | None = None
