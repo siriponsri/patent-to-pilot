@@ -39,6 +39,12 @@ Latest suites (7 Nov, code at freeze `4c5a882`): Python 746 passed / 1 skipped; 
 
 ### Owner decisions in force
 
+- **Deadline 14 Nov 2026, 09:00 (Bangkok):** the owner needs a short **"Next future" section** in the IS short-paper (Paper 53) deck at `C:/Users/User/Desktop/myDegree/IS/IS_1/presentation-is-shortpaper/`.
+  - The talk is 10 minutes; the audience includes AI/ML faculty and listeners from outside code and patents.
+  - It reports to the advisor where the work goes after Paper 53 and what has been done.
+  - That folder is not a Git repository: back it up before editing, and follow `IS_1/.claude/skills/no-slop-slides/SKILL.md`.
+  - The structure is awaiting the owner's answer.
+
 - **HUPD** replaces PatentsView: PatentsView bulk data now needs a USPTO.gov login with MFA, and agents must not log in.
 - **Local CPU encoder** for live search.
 - PatEmbed-large is **CC BY-NC-SA 4.0**: research use only. Say so in the demo and the paper.
@@ -123,7 +129,7 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
         - tm05 (US publication dates, dry run 4.48 GiB) needs owner approval.
       - **tm05 done** (4.8 GB billed; 22.3M US publication dates). **Inputs built** in `../_private_artifacts/healthtech/medtech-time-machine/inputs/`:
         - corpus of 899,838 families; 1,985 dev / 1,955 test queries;
-        - 173 gold pairs and 60 queries removed by the publication-date visibility rule.
+        - publication-date visibility rule: 173 gold pairs removed across 155 queries; 60 queries dropped entirely (dev 15, test 45).
       - **MTM rules FROZEN (owner approved 7 Nov)** at the commit `research: freeze MTM benchmark rules`. See rules §14: label-free test briefs and rankings may precede the dev method freeze; test scoring runs once, after methods are frozen.
       - **MTM V100 JOB RUNNING (started 7 Nov about 11:45Z).**
         - Job dir `J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`: frozen code from `git archive 7d317e7` in `$J/code`; inputs in `$J/inputs` (hash-identical to local).
@@ -136,7 +142,7 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
         - Check: `ssh -o BatchMode=yes chaw@100.77.149.83 'cat $J/logs/status.log; ls $J/out'`. Per-step logs in `$J/logs/<step>.log`.
         - No retries. If a step died: do not overwrite; report to the owner. The smoke test in `$J/smoke` passed.
         - Test outputs are label-free (rules §14). **Do not run `analyze_mtm.py --split test`** until the methods are frozen.
-      - Next: Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
+      - **GPU window extended by the owner (7 Nov) to 30 Nov 2026 16:59 UTC** (`local_execution.py`, test and AUTHORIZATION_AND_BUDGET.md updated). The running job uses the frozen copy `7d317e7`, whose check still ends at 15 Nov 16:59 UTC; that is not a problem, because the job ends long before then. Any run after 15 Nov needs a fresh `git archive` that includes the window change. That is not a benchmark-rule change.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
   - Nothing is frozen or scored.
@@ -160,7 +166,7 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 
 ### Running or external state
 
-- **Nothing runs on dr-train.** The E3 job finished at 06:46Z on 7 Nov: three runs, all exit 0, 416 lines.
+- **The MTM V100 job runs on dr-train** (see above). The earlier E3 job finished at 06:46Z on 7 Nov: three runs, all exit 0, 416 lines.
   - Outputs and receipts are on dr-train in `/home/chaw/patent-to-pilot-jobs/scout-public-demo/` and copied (hash-checked) to `../_private_artifacts/healthtech/scout-public-demo/e3-*.out.jsonl*`.
 - No local servers were listening on 8787 or 5178 on 7 Nov.
 - Private data:

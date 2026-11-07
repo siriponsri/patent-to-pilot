@@ -12,7 +12,8 @@ import os
 
 
 APPROVED_GPU_UUID = "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089"
-AUTHORIZATION_END_UTC = datetime(2026, 11, 15, 16, 59, tzinfo=timezone.utc)
+# Owner extension 7 Nov 2026: through 2026-11-30 23:59 Asia/Bangkok (was 15 Nov).
+AUTHORIZATION_END_UTC = datetime(2026, 11, 30, 16, 59, tzinfo=timezone.utc)
 
 
 def check_local_window(*, now=None, visible=None):
