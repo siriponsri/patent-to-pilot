@@ -89,6 +89,10 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 - **Owner chose "more data" (7 Nov).** See the [data plan draft](docs/healthtech/research/MEDTECH_TIME_MACHINE_DATA_PLAN_DRAFT_20261107_EN.md).
   - Recommended source: USPTO Patent Grant Full Text XML (public domain; examiner-cited references expected), stream-processed on dr-train.
   - **Pending owner approval:** pilot download of one weekly file (about 100–300 MB). Possibly a MyUSPTO API key registered by the owner, and a V100 window extension past 15 Nov.
+- **Owner (7 Nov):** both USPTO and Google BigQuery may be used. The owner has a Google Cloud account; no account details are recorded here.
+  - Proposed hybrid: BigQuery for the benchmark skeleton and private experiment text; USPTO XML pilot files to cross-check the examiner flag and text; releases carry only IDs and labels.
+  - The agent does not log in. The owner runs or authorizes queries; dry-run byte estimates come first.
+  - No BigQuery cost beyond the free tier without owner approval.
 - **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
