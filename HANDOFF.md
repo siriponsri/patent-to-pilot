@@ -39,11 +39,22 @@ Latest suites (7 Nov, code at freeze `4c5a882`): Python 746 passed / 1 skipped; 
 
 ### Owner decisions in force
 
-- **Deadline 14 Nov 2026, 09:00 (Bangkok):** the owner needs a short **"Next future" section** in the IS short-paper (Paper 53) deck at `C:/Users/User/Desktop/myDegree/IS/IS_1/presentation-is-shortpaper/`.
-  - The talk is 10 minutes; the audience includes AI/ML faculty and listeners from outside code and patents.
-  - It reports to the advisor where the work goes after Paper 53 and what has been done.
-  - That folder is not a Git repository: back it up before editing, and follow `IS_1/.claude/skills/no-slop-slides/SKILL.md`.
-  - The structure is awaiting the owner's answer.
+- **Deadline 14 Nov 2026, 09:00 (Bangkok): a "Next" part added to the IS short-paper (Paper 53) deck.**
+  - The deck is at `C:/Users/User/Desktop/myDegree/IS/IS_1/presentation-is-shortpaper/` (not a Git repo).
+  - Status: **draft done 7 Nov**, waiting for the owner's review.
+  - Backup before editing: `IS_1/presentation-is-shortpaper_backup_20261107.zip`. The stale `qa/` renders were deleted.
+  - Owner decisions:
+    - compress the Paper 53 story;
+    - add 1–2 new sheets, told with pictures, screenshots and HyperFrames motion;
+    - show no benchmark scores, only the concept and its link to Paper 53;
+    - include one Solution Scout screenshot.
+  - Result: 17 sheets, planned 8:55.
+    - rw, s04, s16 and s18 moved to appendix A10–A13.
+    - New sheet 16 `n1` is a time machine: HyperFrames clip `assets/video/time-machine.mp4` (20 s) on a real dev-split MTM pair, US9119617B2 (2012, A61) citing US3812859A (1972, A01, examiner `*`).
+    - New sheet 17 `n2` holds the benchmark dot funnel (`benchmark-funnel.mp4`, 10 s), a Scout screenshot, and the roadmap.
+    - Sources are in `motion-src/`. The script (`assets/js/script-th.js` → `script/script_th.{html,pdf}`) is rebuilt.
+  - Owner feedback 7 Nov: "too much text, tell it with pictures". It was applied to the new sheets. The older Paper 53 sheets keep their existing design unless the owner asks.
+  - Known issue: re-running a Scout brief against the old data dir `C:/Users/User/.ptp-scout-data` gives 409 `idempotency_conflict`. The client key hashes only text + own_ipc3 + split, while the server hashes the full brief. Screenshots used a fresh dir `C:/Users/User/.ptp-scout-shot`. Not fixed.
 
 - **HUPD** replaces PatentsView: PatentsView bulk data now needs a USPTO.gov login with MFA, and agents must not log in.
 - **Local CPU encoder** for live search.
