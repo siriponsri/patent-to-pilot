@@ -75,6 +75,9 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
   - the direction;
   - the patent text/CPC source (USPTO ODP key registered by the owner, or HUPD);
   - whether a legal check is needed before releasing identifier pairs.
+- Addendum (7 Nov): two further options are in the deep dive §7.
+  - **"Time machine"**: a retrospective cross-industry foresight back-test. Dev count: 35 A61 queries with OUT positives; 28% of their targets are at least 10 years older.
+  - **Landscape agent**: no LLM-agent vs expert-landscape evaluation found; WIPO Assistive Technology 2021 is a possible gold.
 - **Do not start P3, any acquisition, or a new protocol until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)

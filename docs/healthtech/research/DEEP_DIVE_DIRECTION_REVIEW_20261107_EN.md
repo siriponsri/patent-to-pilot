@@ -129,3 +129,45 @@ Make **A** the main study and product. Keep B's frozen protocol and the unread D
 - 510(k) predicate genealogy, PLOS ONE: https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0258153
 - FDA AI-enabled device search: https://arxiv.org/abs/2602.00006
 - Earlier review sources (FiNE-Patents, PatentAgentBench, PatRe, PANORAMA, LongCite, DAPFAM): see [CLAIM_CHART_AND_SCOUT_LITERATURE_REVIEW_20261107_EN.md](CLAIM_CHART_AND_SCOUT_LITERATURE_REVIEW_20261107_EN.md)
+
+## 7. Addendum, 7 Nov 2026: "time machine" and landscape-agent options
+
+The owner found the device–patent dataset not "wow" enough on its own. Two further options were discussed.
+
+### 7.1 Time machine (retrospective cross-industry foresight)
+
+**Question:** given only a clinical problem, and only patents that existed before year T, does a search surface the cross-industry mechanism that a later medtech invention actually used?
+
+**Dev-only counts** (DAPFAM dev split; test not touched; computed 7 Nov 2026):
+- 474 dev queries; 87 have IPC A61; 35 of those have at least one cross-domain (OUT) positive, giving 82 OUT pairs.
+- IPC sections of those cross-domain targets: H 36, B 24, G 18, F 14, A 12, C 9, E 4, D 1.
+- Query year minus target year (earliest claim year): median 0, IQR −7 to +12. DAPFAM relevance includes newer documents, so a time-machine study must keep only older targets.
+  - 38% of the targets are at least 5 years older than the query; 28% are at least 10 years older.
+- Small n: a test-split analysis would be descriptive with wide CIs.
+- Any A61 or time-cutoff subgroup on test needs a dated protocol amendment **before** the test read.
+
+**Product framing:** the time machine is the **back-test** that gives a product credibility; it is not the product.
+- The product is cross-industry foresight for medtech R&D: a problem brief goes in, and two lanes come out.
+- Its mechanism cards show the source industry (IPC section), age, legal status (an "off-patent mechanisms" filter, labelled not FTO), family size and grounded quotes.
+- Further features: watchlist alerts for new cross-industry filings, and export to the dossier for IP counsel.
+- The claim to make is "back-tested on history", with the number published. Vendors market cross-industry search without a public back-test.
+
+### 7.2 Landscape agent (reproduce an expert patent landscape in minutes)
+
+**Prior work:**
+
+| Work | What it does | Notes |
+|---|---|---|
+| Abood & Feltenberger, *Automated patent landscaping*, AI & Law 26 (2018) | Seed-set expansion plus a classifier | — |
+| Pujari et al., EMNLP 2022 ([paper](https://aclanthology.org/2022.emnlp-main.791.pdf)) | Three landscaping classification datasets | InjVal (Bosch in-house expert); Ritonavir (781 families) and Atazanavir (640 families) from WIPO landscape studies. These are classification within a given set, not end-to-end reproduction |
+| "Automated neural patent landscaping in the small data regime" ([AI & Law 2025](https://link.springer.com/article/10.1007/s10506-025-09483-5); [arXiv 2407.08001](https://arxiv.org/abs/2407.08001)) | Refines the training-data procedure with active learning | Finds the 2018 approach weak near the landscape boundary |
+| LLM agents | — | Two searches found no 2025–2026 paper that evaluates an LLM agent against an expert landscape. PatentAgentBench has no landscape suite |
+
+**Possible gold:** WIPO landscape datasets.
+- The [WIPO Analytics manual](https://wipo-analytics.github.io/manual/datasets.html) lists e-waste, solar cooking, ritonavir, AI 2019 and **Assistive Technology 2021** (two xlsx datasets; medtech-adjacent).
+- WIPO lists [Healthtech reports](https://www.wipo.int/en/web/patent-analytics/healthtech) and a [compilation of landscape reports by other organizations](https://www.wipo.int/en/web/patent-analytics/patent-landscapes-reports).
+- The dataset licence is not stated on the manual page and needs a check.
+
+**Risks:**
+- Expert landscapes are usually built with Boolean and classification queries, so a CPC-query baseline may already reach high recall. That must be the first baseline.
+- Our searchable corpus covers US applications only (HUPD to 2018). Mapping worldwide families needs a family source that may require a login.
