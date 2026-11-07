@@ -1,4 +1,36 @@
-# MTM dev baseline — query views T and A (7–8 Nov 2026)
+# MTM dev baseline — query views P, T and A (7–8 Nov 2026)
+
+## Update 8 Nov: primary view P (`dev-PTA.json`, `receipt-P-dev.json`)
+
+- **What ran:**
+  - Briefs P-dev: Qwen3-8B on V100, frozen prompt, 1,985 briefs, **0 failed**. Ran 20:09–22:36Z.
+  - Dense P-dev: ended 22:40Z, exit 0.
+  - `analyze_mtm.py --split dev --query-views P,T,A`: exit 0, written to a new file.
+  - The T and A means in `dev-PTA.json` are identical to `dev-TA.json`.
+- **Corpus view main, query view P:**
+
+  | Arm | hit@20 | recall@20 | hit@100 | MRR@100 | median gap (years) |
+  |---|---|---|---|---|---|
+  | U | 0.084 | 0.053 | 0.205 | 0.028 | 10 |
+  | X | 0.180 | 0.119 | 0.313 | 0.065 | 10 |
+  | M | 0.145 | 0.093 | (=hit@20) | 0.029 | 10 |
+
+- **Contrasts:** X − U = **+0.096 [0.084, 0.109]**; M − U = +0.062 [0.051, 0.072].
+- **Sensitivity views, hit@20 for U / X / M:**
+  - small: 0.216 / 0.313 / 0.276
+  - matched: 0.104 / 0.204 / 0.168
+  - uniform: 0.154 / 0.256 / 0.211
+  - X − U is +0.097 to +0.102 in every view.
+- **Reading (dev):**
+  - **The brief beats the title.** U rises from 0.074 to 0.084, and X rises from 0.129 to 0.180.
+    - The lane gain grows with the brief: X − U is +0.096 with P against +0.055 with T.
+  - **Gate 1 is still the bottleneck.** A plain search finds an older cross-field target in the top 20 for only about 8% of problems.
+  - **There is reranker headroom (gate 3).** X hit@100 is 0.313 against hit@20 of 0.180, so 13 points of queries have a target sitting in positions 21–100.
+  - **The P brief may carry mechanism words** (rules §7). The descriptive leakage check is not computed yet.
+  - **X − U holds partly by construction.**
+- **Status:**
+  - The test split is still sealed.
+  - The job continues with label-free P-test briefs and test rankings (rules §14).
 
 Status: **PASS (dev only).** The test split is still sealed. These numbers come from the dev split, so they can guide method choices on dev. They are not a headline result.
 

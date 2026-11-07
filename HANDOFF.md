@@ -4,7 +4,7 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 8 Nov 2026 (read this first)
 
-**Latest (8 Nov ~03:15 Bangkok):** the MTM T/A dev analysis is done (see the MTM V100 job below). A watcher waits for `end dense-P-dev`; then the P,T,A dev analysis runs. Test stays sealed.
+**Latest (8 Nov ~05:50 Bangkok):** the MTM dev baseline is complete for P, T and A (see the MTM V100 job below). The V100 is producing the label-free test briefs and rankings. Test stays sealed; the next step is the owner's choice of dev methods.
 
 Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 
@@ -166,7 +166,18 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
             - X − U is +0.055 (CI 0.045 to 0.065); M − U is +0.036.
             - hit@100 for X is 0.251, so there is reranking headroom.
             - Abstract view A (leakage reference only): U 0.146 / X 0.251.
-          - **Next:** briefs P-dev started 20:09Z at about 13 per minute, so they should end about 22:40Z (1,985 briefs). Dense P-dev follows, reusing the passage vectors, so it takes minutes. Then run the P,T,A analysis to `dev-PTA.json` (new file).
+          - **P,T,A dev analysis DONE (8 Nov ~22:45Z, exit 0)**, `dev-PTA.json` in the same audit.
+            - Briefs P-dev: 0 of 1,985 failed.
+            - Main view, P: hit@20 is U 0.084 / X 0.180 / M 0.145.
+            - X − U is +0.096 (CI 0.084 to 0.109); M − U is +0.062.
+            - hit@100 for X is 0.313, so there is reranker headroom of about 13 points.
+          - **Running now:** briefs P-test (started 22:40Z, about 2.5 h), then queries and dense P-test, then dense T-test and A-test. All are label-free.
+          - **Next (owner):**
+            1. Choose the dev methods to try (at most 4, rules §8), for example a reranker on the X top 100.
+            2. Freeze them.
+            3. Score the test split once.
+
+            Do not run `--split test` before that.
       - **GPU window extended by the owner (7 Nov) to 30 Nov 2026 16:59 UTC** (`local_execution.py`, test and AUTHORIZATION_AND_BUDGET.md updated). The running job uses the frozen copy `7d317e7`, whose check still ends at 15 Nov 16:59 UTC; that is not a problem, because the job ends long before then. Any run after 15 Nov needs a fresh `git archive` that includes the window change. That is not a benchmark-rule change.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
