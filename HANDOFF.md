@@ -66,8 +66,16 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 **Open owner decision on direction (7 Nov 2026).**
 - The owner asked whether to pivot to an "examiner-verifiable claim chart" or an FTO product. The advisor wants the paper to connect visibly to Paper 53.
 - See the [literature check](docs/healthtech/research/CLAIM_CHART_AND_SCOUT_LITERATURE_REVIEW_20261107_EN.md). Claim charts and FTO are already benchmarked in 2026 (FiNE-Patents, SIGIR '26; PatentAgentBench, PatSnap; PatRe). Cross-domain evidence on DAPFAM looks open.
-- Agent recommendation: stay with Solution Scout, reframed as the cross-domain follow-up to Paper 53 (E2a exposure under slot competition).
-- **Do not start P3 or any new protocol until the owner decides.**
+- **Owner criteria (7 Nov):** target users are R&D teams and medtech; "wow" means field-shocking numbers plus a live demo.
+- The follow-up [deep dive](docs/healthtech/research/DEEP_DIVE_DIRECTION_REVIEW_20261107_EN.md) found:
+  - no public device–patent register (JAMA 2026 "Yellow Book" proposal);
+  - one AI attempt (Bridge-MedDevKG, ACL 2026) with no analyst-depth metric, no precision and an A61-only corpus; its release is `BLOCKED_LOCAL` here on rights.
+- **New agent recommendation:** an open, provenance-tracked device–patent linkage benchmark and demo ("FDA device number → patent wall"). It uses Track B VPM adapters, the Scout lanes, E3 grounding and Paper 53's exposure lens. Keep the Scout P3 protocol in reserve.
+- **Owner decisions pending:**
+  - the direction;
+  - the patent text/CPC source (USPTO ODP key registered by the owner, or HUPD);
+  - whether a legal check is needed before releasing identifier pairs.
+- **Do not start P3, any acquisition, or a new protocol until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
 
