@@ -99,7 +99,12 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 - **BigQuery live (7 Nov):** [audit](docs/healthtech/audits/ptp-medtech-tm-bigquery-20261107/README.md).
   - tm01 ran (8.06 GB billed): US citations carry category SEA (examiner-cited) vs APP (applicant).
   - tm02 ran after the owner raised the cap to 34 GiB (33.5 GB billed). Of 324,452 US device grants from 2010 to 2023, **59,020 (18.2%)** have an examiner-cited, cross-field US target filed at least 5 years earlier: 139,227 pairs, median gap 14–16 years.
-  - Next, needing the owner: freeze benchmark rules (temporal dev/test split, sample sizes, corpus/distractors, query text) before any scoring; a text-extract dry run; USPTO pilot XML to cross-check SEA.
+  - [Benchmark rules draft (MTM)](docs/healthtech/research/MEDTECH_TIME_MACHINE_BENCHMARK_RULES_DRAFT_20261107_EN.md) is awaiting owner approval:
+    - family-deduplicated US device grants; dev 2010–2016 and test 2019–2023, 2,000 queries each;
+    - examiner-cited cross-field targets at least 5 years older by priority date;
+    - a corpus of about 500k matched-distractor families, time-filtered per query;
+    - brief P from the frozen prompt; arms U, X and M; hit@20.
+  - ⚙ items wait on tm03 dry runs and the USPTO pilot. Nothing is frozen or scored.
 - **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
