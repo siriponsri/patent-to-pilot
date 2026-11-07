@@ -114,6 +114,11 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
       - **tm04 RUNNING (owner approved 7 Nov)**: a uniform 470k-family distractor sample (dry run 349.8 GiB, cap 370 GiB).
         - Command: `bq_probe.py run --sql-file scripts/healthtech/sql/tm04_uniform_distractors.sql --output ../_private_artifacts/healthtech/medtech-time-machine/tm04_uniform_distractors.csv`. Log: `tm04_run.log` in the same folder.
         - It is done when `tm04_uniform_distractors.csv.receipt.json` exists. Do not re-run without the owner (a re-run bills about 376 GB again).
+      - MTM pipeline code is written and unit-tested; it is not run and not frozen:
+        - `build_mtm_inputs.py`, `run_mtm_dense_pool.py` (time filter, own family, X lane, 4 corpus views from one encoding), `analyze_mtm.py`;
+        - tests: `tests/test_mtm_pipeline.py`;
+        - proposed ⚙ resolutions are in §12 of the rules draft.
+      - Next: validate tm04, build inputs, then the **owner approves the FREEZE**. Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
   - Nothing is frozen or scored.

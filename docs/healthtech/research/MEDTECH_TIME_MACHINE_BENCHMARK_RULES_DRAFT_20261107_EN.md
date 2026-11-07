@@ -118,3 +118,54 @@ Unjudged documents are not negatives. Results are known-link hits, not exhaustiv
 | 6 | Dev: baselines and up to 4 method variants | — |
 | 7 | Test freeze of the methods, then one test run | — |
 | 8 | Audit, and the paper section | — |
+
+## 12. Proposed resolution of the ⚙ items (7 Nov 2026, after tm03, the SEA check and the tm04 plan; still DRAFT)
+
+**1. SEA.** Validated against USPTO XML: 206,070 pairs, precision and recall 1.000.
+
+**2. Build.** `scripts/healthtech/sql/tm03_build_mtm.sql` (sha256 `1cf6c97d…`) is the definitive selection for queries, targets and matched distractors.
+- Queries: 2,000 dev and 2,000 test. Target families: 8,518.
+- Uniform distractors come from `scripts/healthtech/sql/tm04_uniform_distractors.sql` (sha256 `6a11db61…`). tm03 families are dropped from them.
+
+**3. Corpus views** (one encoding serves all four):
+
+| View | Contents | Role |
+|---|---|---|
+| **main** | target + matched + uniform | **primary** |
+| small | target + small | sensitivity |
+| matched | target + matched | sensitivity |
+| uniform | target + uniform | sensitivity |
+
+- Why main is primary: the matched part alone lacks recent documents (see the BigQuery audit). The uniform part restores the real age mix, and the matched part keeps targets from standing out by age.
+
+**4. Document text.**
+- Title + abstract + the first 1,500 characters of the claims, in the DAPFAM dense format: 384/64-term TAC passages, MaxP, PatEmbed-large, via `run_mtm_dense_pool.py`. That script imports `run_dapfam_dense_pool.py` unchanged.
+- 2,331 documents have no claims head and 2 have no abstract. They are kept with the text they have.
+
+**5. Brief P input.**
+- The query's title + abstract, with the description slot left empty, passed to the frozen `ptp-solution-scout-v1` `PROBLEM` prompt.
+- Generated with `run_qwen_scout_actions.py generate --actions P` (unchanged), from `brief-inputs-{split}.jsonl` written by `build_mtm_inputs.py`.
+
+**6. Query views.**
+- T: title only.
+- A: full abstract, a leakage reference.
+- P: built from the generated briefs, with the dense query prefix.
+
+**7. Analysis.**
+- `analyze_mtm.py` computes hit@20, recall@20, hit@100, MRR@100 and the hit gaps for U, X and M.
+- It runs X − U and M − U with 5,000 resamples, seed `20261107`, and refuses to overwrite.
+- **Dev:** may be re-run to new output files during method development; every run is logged.
+- **Test:** one run, after the freeze of any carried-forward methods.
+
+**8. Brief-leakage check.** Simplified to a descriptive metric: the mean content-word overlap of P with its gold target abstracts, against the same overlap for T. No decision rides on it.
+
+**9. Sample sizes stay at 2,000 + 2,000.**
+- Brief generation is about 4,000 calls, roughly 5–7 V100 hours sequentially.
+- Encoding is roughly 1–1.5M passages, about 2–3 h in fp32.
+- Both fit before the GPU window ends (15 Nov 2026 16:59 UTC) if started by about 12 Nov.
+
+**10. Code to freeze with the rules:**
+- `scripts/healthtech/build_mtm_inputs.py`
+- `scripts/healthtech/run_mtm_dense_pool.py`
+- `scripts/healthtech/analyze_mtm.py`
+- tests: `tests/test_mtm_pipeline.py`
