@@ -118,7 +118,11 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
         - `build_mtm_inputs.py`, `run_mtm_dense_pool.py` (time filter, own family, X lane, 4 corpus views from one encoding), `analyze_mtm.py`;
         - tests: `tests/test_mtm_pipeline.py`;
         - proposed ⚙ resolutions are in §12 of the rules draft.
-      - Next: validate tm04, build inputs, then the **owner approves the FREEZE**. Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
+      - **Pre-freeze fix (7 Nov), from an external review the owner relayed:** the time filter must use the publication date of the indexed text, not the family priority date.
+        - Code and tests are changed (`visible_from`); see rules §13.
+        - Estimated impact: 1.6% of gold pairs; median 4% of eligible candidates per query.
+        - tm05 (US publication dates, dry run 4.48 GiB) needs owner approval.
+      - Next: tm04 finishes (do not re-run), the owner approves tm05, build inputs, then the **owner approves the FREEZE**. Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
   - Nothing is frozen or scored.

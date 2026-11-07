@@ -169,3 +169,31 @@ Unjudged documents are not negatives. Results are known-link hits, not exhaustiv
 - `scripts/healthtech/run_mtm_dense_pool.py`
 - `scripts/healthtech/analyze_mtm.py`
 - tests: `tests/test_mtm_pipeline.py`
+
+## 13. Pre-freeze fix: visibility by publication date (7 Nov 2026)
+
+**Issue** (raised by an external review the owner relayed; confirmed in the code):
+- tm03/tm04 choose each family's representative text by the longest English abstract, with no date check.
+- The time filter (§6) and the runner use the **family priority date**.
+- So a family whose earliest priority predates T(q) could be searchable with text first published **after** T(q): a later continuation or grant, or an application not yet published at T(q). That is future text leaking into a retrospective search.
+
+**Size, estimated without new BigQuery spend:**
+- Years are estimated from representative publication numbers, using pre-grant publication years (exact) and interpolated grant-number milestones (approximate).
+- The estimate covers the tm03 corpus only; tm04 adds more recent documents and may raise the share.
+
+| Measure | Value |
+|---|---|
+| Representative publication year minus family priority year | median 2 y; at least 5 y for 10.3%; at least 10 y for 1.2% |
+| Gold pairs whose representative was published after the query's priority year | 140 of 8,727 (1.6%) |
+| Per query, share of priority-eligible candidates not yet published (300-query sample) | median 4%, p90 12% |
+
+**Fix (code changed before any scoring; tests updated):**
+1. tm05 (`scripts/healthtech/sql/tm05_us_publication_dates.sql`, dry run **4.48 GiB**) fetches the publication date of every US publication. **Not run; owner approval needed.**
+2. `build_mtm_inputs.py` sets each document's `visible_from` to the publication date of the indexed representative member. Documents with no date are left out (counted).
+   - A gold target whose `visible_from` is after T(q) is removed from that query's gold (counted).
+   - A query left with no targets is dropped (counted).
+3. `run_mtm_dense_pool.py` filters candidates on `visible_from <= T(q)` instead of the priority date.
+4. The age gap of targets (≥ 5 years) stays defined on family priority dates, the invention dates.
+
+**Remaining limitation:** for families whose representative is a later member, an earlier public member with different text is not used. The fix is conservative: such a family becomes visible only from its representative's publication date.
+- Re-selecting the earliest-published member as representative would need another text scan of about 250–365 GiB. That is deferred: it is not needed for leakage control, and this month's free tier is nearly used.

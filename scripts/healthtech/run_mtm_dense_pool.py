@@ -1,8 +1,9 @@
 """MTM dense rankings on the approved GPU: one corpus encoding, rankings for every (corpus view, lane) at depth 200.
 
 Same encoder, prompts, 384/64-term TAC passages and MaxP aggregation as run_dapfam_dense_pool.py (imported, unchanged).
-Per query: candidates with priority later than the query's priority are removed (time filter), its own family is
-removed, and for lane X every family sharing a 3-character CPC code with the query is removed. Corpus views restrict
+Per query: candidates whose indexed text was published after the query's priority date (corpus "visible_from") are
+removed (time filter; pre-freeze fix of 7 Nov 2026: the family priority date alone let later text in), its own
+family is removed, and for lane X every family sharing a 3-character CPC code with the query is removed. Corpus views restrict
 candidates to families whose "sets" intersect the view (main = all; small = target+small; matched = target+matched;
 uniform = target+uniform). Query rows: {"id","text"}; query metadata (priority, family, c3) comes from queries-meta.jsonl.
 Labels are never read. Writes rankings-<view>-<lane>-<name>.jsonl and a receipt; refuses to overwrite.
@@ -28,11 +29,11 @@ _spec.loader.exec_module(dapfam_dense)
 VIEWS = {"main": None, "small": {"target", "small"}, "matched": {"target", "matched"}, "uniform": {"target", "uniform"}}
 
 
-def keep_mask(priority, cutoff: int, own_position: int | None, view_mask, shared_positions, lane: str):
-    """numpy keep-mask over corpus positions: time filter, own family, corpus view and (lane X) shared CPC3."""
+def keep_mask(visible_from, cutoff: int, own_position: int | None, view_mask, shared_positions, lane: str):
+    """numpy keep-mask over corpus positions: publication-date time filter, own family, view, lane X shared CPC3."""
     import numpy as np
 
-    keep = (np.asarray(priority) <= cutoff) & np.asarray(view_mask, dtype=bool)
+    keep = (np.asarray(visible_from) <= cutoff) & np.asarray(view_mask, dtype=bool)
     if own_position is not None:
         keep[own_position] = False
     if lane == "X" and len(shared_positions):
@@ -90,7 +91,7 @@ def main() -> int:
         timings["query_encode_seconds"] = round(time.time() - started, 3)
         matrix = torch.from_numpy(vectors).to("cuda")
         family_index = torch.tensor(owner, dtype=torch.int64, device="cuda")
-        priority = np.array([r["priority"] for r in corpus], dtype=np.int64)
+        visible_from = np.array([r["visible_from"] for r in corpus], dtype=np.int64)
         position = {f: i for i, f in enumerate(ids)}
         members: dict[str, list[int]] = {}
         for i, r in enumerate(corpus):
@@ -108,7 +109,7 @@ def main() -> int:
                 best.scatter_reduce_(0, family_index, scores[0], reduce="amax", include_self=True)
                 shared = sorted({i for code in m["c3"] for i in members.get(code, ())})
                 for (v, lane), handle in handles.items():
-                    keep = keep_mask(priority, m["priority"], position.get(m["family_id"]), view_mask[v], shared, lane)
+                    keep = keep_mask(visible_from, m["priority"], position.get(m["family_id"]), view_mask[v], shared, lane)
                     masked = torch.where(torch.from_numpy(keep).to("cuda"), best, torch.full_like(best, -float("inf")))
                     values, indices = torch.topk(masked, k=min(POOL_DEPTH, len(ids)))
                     ok = torch.isfinite(values)

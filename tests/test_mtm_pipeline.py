@@ -31,10 +31,24 @@ def test_build_merges_sets_and_drops_uniform_duplicates():
             _row("distractor", "d1", 20010101, ["B01"], small="True"),
             _row("distractor", "d2", 20010101, ["H01"], small="False")]
     uniform = [_row("uniform_distractor", "u1", 20180101, ["G06"]), _row("uniform_distractor", "d2", 20010101, ["H01"])]
-    corpus, queries = build.build(rows, uniform)
+    pubdates = {"US-t1-B2": 20030101, "US-d1-B2": 20020101, "US-d2-B2": 20020101, "US-u1-B2": 20190101}
+    corpus, queries, stats = build.build(rows, uniform, pubdates)
     sets = {r["id"]: r["sets"] for r in corpus}
     assert sets == {"d1": ["matched", "small"], "d2": ["matched"], "t1": ["target"], "u1": ["uniform"]}
     assert queries[0]["targets"] == ["t1"] and corpus[0]["abstract"] == "A b"
+    assert stats == {"no_publication_date": 0, "gold_pairs_dropped_not_yet_published": 0,
+                     "queries_dropped_no_visible_target": 0}
+
+
+def test_build_drops_targets_not_yet_published_and_undated_documents():
+    rows = [_row("query", "q1", 20150101, ["A61"], split="dev", targets=[{"t_family": "t1", "t_priority": 20000101}]),
+            _row("query", "q2", 20150101, ["A61"], split="test", targets=[{"t_family": "t2", "t_priority": 20000101}]),
+            _row("target", "t1", 20000101, ["B01"]), _row("target", "t2", 20000101, ["B01"]),
+            _row("distractor", "d1", 20010101, ["B01"])]
+    corpus, queries, stats = build.build(rows, [], {"US-t1-B2": 20160101, "US-t2-B2": 20020101})
+    assert [r["id"] for r in corpus] == ["t1", "t2"] and [q["id"] for q in queries] == ["US-q2-B2"]
+    assert stats == {"no_publication_date": 1, "gold_pairs_dropped_not_yet_published": 1,
+                     "queries_dropped_no_visible_target": 1}
 
 
 def test_runner_keep_mask_applies_time_family_view_and_lane():
