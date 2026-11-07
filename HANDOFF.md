@@ -121,9 +121,10 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
         - Code and tests are changed (`visible_from`); see rules §13.
         - Estimated impact: 1.6% of gold pairs; median 4% of eligible candidates per query.
         - tm05 (US publication dates, dry run 4.48 GiB) needs owner approval.
-      - **tm05 RUNNING (owner approved 7 Nov):** US publication dates (dry run 4.48 GiB). Output `../_private_artifacts/healthtech/medtech-time-machine/tm05_us_publication_dates.csv`, log `tm05_run.log`.
-        - It is done when the `.receipt.json` exists. About 20M rows, so the download can take 30–60+ min.
-      - Next: tm05 finishes, build inputs, then the **owner approves the FREEZE**. Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
+      - **tm05 done** (4.8 GB billed; 22.3M US publication dates). **Inputs built** in `../_private_artifacts/healthtech/medtech-time-machine/inputs/`:
+        - corpus of 899,838 families; 1,985 dev / 1,955 test queries;
+        - 173 gold pairs and 60 queries removed by the publication-date visibility rule.
+      - Next: the **owner approves the FREEZE**. Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
   - Nothing is frozen or scored.

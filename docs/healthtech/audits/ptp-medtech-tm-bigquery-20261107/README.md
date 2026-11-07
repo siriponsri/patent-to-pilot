@@ -193,3 +193,22 @@ Priority years in 5-year bins:
   - The recent documents missing from the tm03 corpus are now present.
 - **Monthly billed so far:** about 829 GB (tm01 8.1, tm01b 0.4, tm02 33.5, tm01c 18.8, tm03 392.1, tm04 375.6).
 - **Next:** tm05 (publication dates, dry run 4.48 GiB) needs owner approval. The owner can lower the per-query cap now.
+
+## tm05 and the MTM inputs (7 Nov 2026)
+
+**tm05** (`scripts/healthtech/sql/tm05_us_publication_dates.sql`), owner approved:
+- Exit 0 after 1,357 s. 4,809,818,112 bytes billed; not served from cache.
+- 22,330,085 US publications with a publication date. Output (private) sha256 `110e8056…0045`.
+
+**Inputs:** `python scripts/healthtech/build_mtm_inputs.py --build tm03_mtm_build.csv --uniform tm04_uniform_distractors.csv --pubdates tm05_us_publication_dates.csv --out-dir inputs` (exit 0, 11:00:53Z–11:05:38Z).
+
+| Item | Value |
+|---|---|
+| Corpus | **899,838 families**: target 8,518, matched 442,886 (of which small 85,172), uniform 448,434. All corpus documents have a publication date |
+| Visibility fix (rules §13) | **173 gold pairs** removed because the target's indexed text was not yet published at the query's priority date. **60 queries** dropped as left without a visible target |
+| Queries | **1,985 dev** and **1,955 test** |
+| Output size | `corpus.jsonl` 2.11 GB (private) |
+
+Output hashes are in `inputs/receipt.json` (private). No rankings or scores exist yet.
+
+**Monthly billed this month:** about 834 GB.
