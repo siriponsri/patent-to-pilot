@@ -93,6 +93,9 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
   - Proposed hybrid: BigQuery for the benchmark skeleton and private experiment text; USPTO XML pilot files to cross-check the examiner flag and text; releases carry only IDs and labels.
   - The agent does not log in. The owner runs or authorizes queries; dry-run byte estimates come first.
   - No BigQuery cost beyond the free tier without owner approval.
+- BigQuery tooling is ready: `scripts/healthtech/bq_probe.py` (dry-run first, per-query byte cap, refuses to overwrite, never prints credentials) and `scripts/healthtech/sql/tm01_us_citation_categories.sql`.
+  - The owner puts credentials in a git-ignored `.env.bigquery` (template in `.env.example`). It cannot go in `.env`: the loader accepts only `OPENROUTER_API_KEY`.
+  - Pending: the owner creates a service-account key or gcloud login, and approves `pip install google-cloud-bigquery` into the scout venv.
 - **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
