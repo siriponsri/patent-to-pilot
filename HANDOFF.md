@@ -86,6 +86,9 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 - [Amendment 1 draft](docs/healthtech/research/SOLUTION_SCOUT_PROTOCOL_AMENDMENT_1_DRAFT_20261107_EN.md) (E6 time machine on test): **DRAFT, NOT IN FORCE**.
   - It comes into force only with owner approval plus the frozen `analyze_time_machine_test.py`, before the test read.
   - The owner is considering dev-only expansion of the data and the effect first.
+- **Owner chose "more data" (7 Nov).** See the [data plan draft](docs/healthtech/research/MEDTECH_TIME_MACHINE_DATA_PLAN_DRAFT_20261107_EN.md).
+  - Recommended source: USPTO Patent Grant Full Text XML (public domain; examiner-cited references expected), stream-processed on dr-train.
+  - **Pending owner approval:** pilot download of one weekly file (about 100–300 MB). Possibly a MyUSPTO API key registered by the owner, and a V100 window extension past 15 Nov.
 - **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
