@@ -117,6 +117,14 @@ M0–M2 do not depend on any research outcome.
   - Scout page at `frontend/healthtech-web/app/scout.html`.
   - Audit: [ptp-scout-public-demo-20261106](../audits/ptp-scout-public-demo-20261106/README.md).
   - The Scout is a dedicated page linked from the frontend README, not panels inside the node-canvas workspace. **M2 closed 6 Nov 2026.** S5 is a dossier export (Markdown/JSON) that keeps source facts, system inference and unresolved items apart. A direct push into the device-dossier workspace is not built.
+- **M5, P2 (E3 and E4) done 7 Nov 2026** under the [frozen protocol](SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md). Audit: [ptp-scout-frozen-eval-20261107](../audits/ptp-scout-frozen-eval-20261107/README.md).
+  - **E3 `ADOPT_V1`**, on 236 pairs in 68 clusters (HUPD demo plus DAPFAM dev):
+    - G1 fully grounded +0.237 (CI +0.176 to +0.300);
+    - G2 NLI support proxy +0.075 (CI −0.013 to +0.166), non-inferior;
+    - v1 parse failures 18 vs 1 for v0.
+  - The product default is still v0; switching it is an owner decision.
+  - **E4:** CPU encode median 533 ms, search median 124 ms.
+  - P3 (DAPFAM test) is not started.
 
 ## 8. Wording rules
 

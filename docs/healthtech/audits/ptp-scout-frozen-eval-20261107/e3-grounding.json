@@ -1,0 +1,88 @@
+{
+  "format": "ptp-scout-grounding-e3-v1",
+  "nli_model": "nli-deberta-v3-base",
+  "nli_config_sha256": "897e756eb59d3183adb505952e7910e7cbc7750a43f3b3747a96b688d2b02a47",
+  "nli_labels": {
+    "0": "contradiction",
+    "1": "entailment",
+    "2": "neutral"
+  },
+  "threshold": 0.5,
+  "inputs_sha256": {
+    "rationale-inputs.jsonl": "c26c97422e178927c5c2f7c06047f9524c1531cfe81360b766dd96a2cdf8c7cc",
+    "e3-dapfam-dev-inputs.jsonl": "db4ca964ff4a814e0401298aaa08497989528c835e51192f6f9c9a3b962ae10a",
+    "rationales-v0.out.jsonl": "f5c072de16e8309d3e85d1148b7b32fa8e374036110b6773a22bebb97b60e4d0",
+    "e3-dapfam-v0.out.jsonl": "b469078f8c877ec8cff1217bed26fff81aef11e6bb89deb35e957c105fd1a6c6",
+    "e3-hupd-v1.out.jsonl": "eb2bc0669d246ab9ab49995e68be9a001ba5fdfcccb7695b3752f13dcf637b54",
+    "e3-dapfam-v1.out.jsonl": "8e203f6835feb93754cf52f2f6e6ac93499caf6366f825d197471dca468f7637"
+  },
+  "details": {
+    "v0": {
+      "parse_failures": 1,
+      "quotes": 680,
+      "matched": 578,
+      "prompt_tokens": 147365,
+      "output_tokens": 45284,
+      "latency_mean_seconds": 13.343
+    },
+    "v1": {
+      "parse_failures": 18,
+      "quotes": 624,
+      "matched": 618,
+      "invalid_references": 6,
+      "prompt_tokens": 152642,
+      "output_tokens": 21419,
+      "latency_mean_seconds": 6.374
+    }
+  },
+  "by_sample": {
+    "dapfam-dev": {
+      "g1": {
+        "v0": 0.7111111111111111,
+        "v1": 0.9388888888888889
+      },
+      "g2": {
+        "v0": 0.55,
+        "v1": 0.6277777777777778
+      },
+      "pairs": 180
+    },
+    "hupd-demo": {
+      "g1": {
+        "v0": 0.5178571428571429,
+        "v1": 0.8214285714285714
+      },
+      "g2": {
+        "v0": 0.375,
+        "v1": 0.42857142857142855
+      },
+      "pairs": 56
+    }
+  },
+  "g1": {
+    "v0": 0.6652542372881356,
+    "v1": 0.9110169491525424,
+    "v1_minus_v0": {
+      "delta": 0.23669467787114845,
+      "ci95_low": 0.17647058823529413,
+      "ci95_high": 0.3004201680672269,
+      "p_bootstrap": 0.0,
+      "groups": 68
+    }
+  },
+  "g2": {
+    "v0": 0.5084745762711864,
+    "v1": 0.5805084745762712,
+    "v1_minus_v0": {
+      "delta": 0.07492997198879552,
+      "ci95_low": -0.01260504201680672,
+      "ci95_high": 0.16596638655462184,
+      "p_bootstrap": 0.0932,
+      "groups": 68
+    }
+  },
+  "pairs": 236,
+  "clusters": 68,
+  "non_inferiority_margin": 0.05,
+  "decision": "ADOPT_V1"
+}

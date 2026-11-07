@@ -56,11 +56,17 @@ Status: `STAGE1_GATE_PASS_LEARNABLE_HEADROOM_FAIL_TEST_NOT_OPENED` (Stage 1 audi
     - Scout page `frontend/healthtech-web/app/scout.html`.
     - Audit `../docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md`.
   - M2 closed (6 Nov 2026): S5 is a dossier export (.md/.json).
-  - Next (pending the owner's plan approval):
-    - Plan A approved 7 Nov 2026; frozen protocol: `../docs/healthtech/research/SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md`. Run P2 (E3 grounding) -> E4 -> P3 (DAPFAM test once) -> P4 (E5 PatenTEB) -> P5 (manuscript).
-    - M4 live LLM rationales;
-    - M5 frozen evaluation (DAPFAM E1–E2 test read approved after the freeze; E5 PatenTEB).
-  - A Hyperresearch deep-research run on alternative directions is running outside the repo (`C:/Users/User/.hrv/work`); its result may change the spec's §6.
+  - Plan A approved 7 Nov 2026; frozen protocol `../docs/healthtech/research/SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md` (freeze `4c5a882`). Order: P2 (E3, E4) -> P3 (DAPFAM test once) -> P4 (E5 PatenTEB) -> P5 (manuscript).
+  - P2 done (7 Nov 2026; audit `../docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md`):
+    - E3 `ADOPT_V1`: G1 +0.237 (CI +0.176 to +0.300); G2 NLI proxy +0.075 (CI −0.013 to +0.166), non-inferior at −0.05.
+    - v1 parse failures 18/236 (more than 3 sentence numbers) vs v0 1/236.
+    - E4: CPU encode median 533 ms, search median 124 ms.
+  - Next:
+    1. Owner decision: switch the product default to v1. This needs a declared rule for answers with more than 3 numbers. Not done yet.
+    2. P3: the one-time DAPFAM test read. Not started; owner go-ahead needed.
+    3. P4: E5 PatenTEB.
+    4. M4: live LLM rationales.
+  - The Hyperresearch run was stopped by the owner on 6 Nov 2026. Do not resume it.
 
 ## HT-NEXT-266 — 2026-11-04 WPI research package (Track A)
 

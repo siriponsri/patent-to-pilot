@@ -4,7 +4,7 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 7 Nov 2026 (read this first)
 
-Last pushed commit before this note: `4c5a882` (protocol freeze). P2 (E3/E4) is in progress. All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
+Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 
 ### Direction
 
@@ -18,6 +18,8 @@ Last pushed commit before this note: `4c5a882` (protocol freeze). P2 (E3/E4) is 
   | Stage 1 | Gate PASS, learnable headroom FAIL | [audit](docs/healthtech/audits/ptp-org-adaptive-stage1-20261105/README.md) |
   | Scout feasibility | `PARTIAL_LANE_ONLY`: LLM rewriting hurts; the lane gain is definitional | [audit](docs/healthtech/audits/ptp-solution-scout-feasibility-20261105/README.md) |
   | Atlas headroom | `GO_ORACLE_ONLY`: the learned class prior hurts | [audit](docs/healthtech/audits/ptp-solution-atlas-headroom-20261106/README.md) |
+  | **E3 grounding (frozen, dev + HUPD)** | **`ADOPT_V1`**: G1 +0.237 (CI +0.176 to +0.300); G2 NLI proxy +0.075 (CI −0.013 to +0.166, non-inferior). v1 parse failures 18/236 (more than 3 sentence numbers) vs v0 1/236 | [audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md) |
+  | **E4 latency** | CPU encode median 533 ms (max 759), search median 124 ms (max 134); V100 rationale median 6.2 s (v1) vs 13.2 s (v0) | same audit |
 
 - The hyperresearch deep-research run was **stopped by the owner** (6 Nov) to save tokens. The research direction is set with the owner directly. Do not resume it.
 
@@ -30,10 +32,10 @@ Last pushed commit before this note: `4c5a882` (protocol freeze). P2 (E3/E4) is 
 | M3 public corpus and live search | done | HUPD 2017 subset of 56,528 applications (CC BY-SA 4.0), V100 PatEmbed vectors, `scout_live.py` (CPU), exact CPU/GPU parity. [Audit](docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md) |
 | M2 screens S1–S6 | **done 6 Nov** | `frontend/healthtech-web/app/scout.html`, `scout.css`, `src/scout/*`. S5 is a dossier export (Markdown/JSON keeping source facts, system inference and unresolved items apart); a push into the device-dossier workspace is not built |
 | M4 live LLM rationales | open | Recorded rationales only: 56 for the 8 demo briefs; 120 of 158 quotes literal-matched |
-| M5 frozen evaluation E1–E5 | **protocol frozen 7 Nov**; runs P2–P4 pending | The owner approved one DAPFAM test read after a freeze commit, plus the E5 PatenTEB replication |
+| M5 frozen evaluation E1–E5 | **protocol frozen 7 Nov; P2 (E3, E4) done 7 Nov**; P3–P4 pending | The owner approved one DAPFAM test read after a freeze commit, plus the E5 PatenTEB replication |
 | M6 paper and demo video | open | — |
 
-Latest suites: Python 739 passed / 1 skipped; `npm test` 81 passed / 1 skipped; e2e 17/17.
+Latest suites (7 Nov, code at freeze `4c5a882`): Python 746 passed / 1 skipped; `npm test` 81 passed / 1 skipped; e2e 17/17 (6 Nov).
 
 ### Owner decisions in force
 
@@ -51,21 +53,17 @@ Latest suites: Python 739 passed / 1 skipped; `npm test` 81 passed / 1 skipped; 
 
 Keep the data dir short: long Windows paths broke rationale writes before the fix.
 
-### Next steps: plan A approved 7 Nov 2026; P1 freeze committed
+### Next steps: plan A approved 7 Nov 2026; P1 freeze and P2 done
 
-The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/research/SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md) and its code are frozen at the commit that added them (`research: freeze Solution Scout protocol E1–E5`). Run in this order. **Never re-run a frozen analysis**; the scripts refuse to overwrite their output. The first output is final.
+The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/research/SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md) and its code are frozen at `4c5a882`. Run in this order. **Never re-run a frozen analysis**; the scripts refuse to overwrite their output. The first output is final.
 
-**P2: E3 grounding (dev/HUPD only, no test data)**
+**P2 (E3, E4): done 7 Nov.** See the [audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). `e3-grounding.json` and `e4-latency.json` are final; do not re-run them.
 
-1. Download the NLI model `cross-encoder/nli-deberta-v3-base` (Apache-2.0) to `C:/Users/User/.ptp-models/nli-deberta-v3-base` and record its revision.
-2. Build the DAPFAM dev sample (P = `../_private_artifacts/healthtech/ptp-org-adaptive-20261105`):
-   `python scripts/healthtech/run_qwen_scout_rationales.py build-dapfam --split $P/split.json --qwen-dev $P/scout/scout-dev-v1.out.jsonl --records $P/scout/scout-dev-records.jsonl --x-rankings $P/scout/rankings/rankings-x-P-dev.jsonl --output $P/scout/e3-dapfam-dev-inputs.jsonl`
-3. On the V100, run `generate --prompt-version v0` and `--prompt-version v1` on the DAPFAM sample, and `--prompt-version v1` on the HUPD `rationale-inputs.jsonl`. The HUPD v0 output already exists: `rationales-v0.out.jsonl`.
-4. Run `analyze_scout_grounding.py` with the CPU venv. The output goes to `docs/healthtech/audits/ptp-scout-frozen-eval-20261107/`.
+**Open owner decision from P2:** E3 permits switching the product default to v1 (quote by reference). This has **not** been done.
+- A switch needs a declared rule for answers with more than 3 sentence numbers. These caused all 18 v1 parse failures.
+- Until then, the demo keeps the v0 book, with unmatched quotes flagged.
 
-**E4:** `C:/Users/User/.ptp-scout-venv/Scripts/python scripts/healthtech/measure_scout_latency.py --data-dir ../_private_artifacts/healthtech/scout-public-demo --model-dir C:/Users/User/.ptp-models/patembed-large --output <audit>/e4-latency.json`
-
-**P3: DAPFAM test, read once**
+**P3: DAPFAM test, read once** (the next step; needs the owner's go-ahead in a new task)
 
 1. `run_qwen_scout_actions.py build --split-name test`.
 2. On the V100, `generate --actions P` (773 calls).
@@ -83,23 +81,16 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 
 ### Running or external state
 
-- **P2/E3 generation running on dr-train (started 7 Nov 2026, about 1.5 h).**
-  - Done before launch:
-    - NLI model `cross-encoder/nli-deberta-v3-base` rev `6c749ce3425cd33b46d187e45b92bbf96ee12ec7` (Apache-2.0 per model card) is in `C:/Users/User/.ptp-models/nli-deberta-v3-base`; config.json sha256 `897e756e…`.
-    - DAPFAM dev sample `$P/scout/e3-dapfam-dev-inputs.jsonl`: 60 queries, 180 pairs, sha256 `db4ca964…`.
-    - Copied to dr-train; repo `run_qwen_scout_rationales.py` sha256 `64ef8149…` matches code-v3.
-  - Job: `setsid nohup /home/chaw/patent-to-pilot-jobs/scout-public-demo/run_e3_generate.sh`. It runs three greedy runs in sequence on V100 `GPU-277ccc57…` (dapfam-v0 180, dapfam-v1 180, hupd-v1 56). No retries; an existing output is never overwritten.
-  - Outputs (J = `/home/chaw/patent-to-pilot-jobs/scout-public-demo`): `$J/e3-dapfam-v0.out.jsonl`, `$J/e3-dapfam-v1.out.jsonl`, `$J/e3-hupd-v1.out.jsonl`, each with `.receipt.json`.
-  - Check: `ssh -o BatchMode=yes chaw@100.77.149.83 'cat $J/logs/e3-status.log; wc -l $J/e3-*.out.jsonl'`. Per-run logs: `$J/logs/e3-<name>.log`.
-  - If a run died: do not re-run calls that already have lines; report it to the owner.
-  - When it is done: copy outputs and receipts to `../_private_artifacts/healthtech/scout-public-demo/`, then run E3 (`analyze_scout_grounding.py`, once) and E4 (`measure_scout_latency.py`, once) into `docs/healthtech/audits/ptp-scout-frozen-eval-20261107/`.
-- Local servers may still be running from the 6 Nov session (ports 8787 and 5178). They are safe to stop.
+- **Nothing runs on dr-train.** The E3 job finished at 06:46Z on 7 Nov: three runs, all exit 0, 416 lines.
+  - Outputs and receipts are on dr-train in `/home/chaw/patent-to-pilot-jobs/scout-public-demo/` and copied (hash-checked) to `../_private_artifacts/healthtech/scout-public-demo/e3-*.out.jsonl*`.
+- No local servers were listening on 8787 or 5178 on 7 Nov.
 - Private data:
   - `../_private_artifacts/healthtech/scout-public-demo/` holds the HUPD subset, vectors, rationales and book.
   - `../_private_artifacts/healthtech/ptp-org-adaptive-20261105/` holds the DAPFAM dev artifacts.
 - Local venvs and model:
   - `C:/Users/User/.ptp-scout-venv` (CPU torch);
   - `C:/Users/User/.ptp-models/patembed-large`;
+  - `C:/Users/User/.ptp-models/nli-deberta-v3-base` (rev `6c749ce3…`, Apache-2.0; the E3 NLI proxy);
   - `C:/Users/User/.hrv` (stopped hyperresearch; reference only).
 - dr-train job directories:
   - `/home/chaw/patent-to-pilot-jobs/scout-public-demo`;

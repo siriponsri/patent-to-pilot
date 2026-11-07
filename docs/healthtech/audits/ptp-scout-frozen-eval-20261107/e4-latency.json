@@ -1,0 +1,19 @@
+{
+  "format": "ptp-scout-latency-e4-v1",
+  "families": 56528,
+  "passages": 74670,
+  "encode": {
+    "median_ms": 533.4,
+    "max_ms": 759.4,
+    "n": 40
+  },
+  "search": {
+    "median_ms": 124.1,
+    "max_ms": 134.1,
+    "n": 40
+  },
+  "torch": "2.15.0+cpu",
+  "torch_threads": 8,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu_count": 12
+}
