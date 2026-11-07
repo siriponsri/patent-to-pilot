@@ -57,6 +57,7 @@ Status: `STAGE1_GATE_PASS_LEARNABLE_HEADROOM_FAIL_TEST_NOT_OPENED` (Stage 1 audi
     - Audit `../docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md`.
   - M2 closed (6 Nov 2026): S5 is a dossier export (.md/.json).
   - Next (pending the owner's plan approval):
+    - Plan A approved 7 Nov 2026; frozen protocol: `../docs/healthtech/research/SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md`. Run P2 (E3 grounding) -> E4 -> P3 (DAPFAM test once) -> P4 (E5 PatenTEB) -> P5 (manuscript).
     - M4 live LLM rationales;
     - M5 frozen evaluation (DAPFAM E1–E2 test read approved after the freeze; E5 PatenTEB).
   - A Hyperresearch deep-research run on alternative directions is running outside the repo (`C:/Users/User/.hrv/work`); its result may change the spec's §6.

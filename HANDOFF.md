@@ -2,9 +2,9 @@
 
 Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
-## Agent takeover state — 6 Nov 2026, about 19:30 Bangkok (read this first)
+## Agent takeover state — 7 Nov 2026 (read this first)
 
-Last pushed commit before this note: `04d5546`. All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
+Last pushed commit before this note: `801f090`. All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 
 ### Direction
 
@@ -30,7 +30,7 @@ Last pushed commit before this note: `04d5546`. All work is on `main` in this ch
 | M3 public corpus and live search | done | HUPD 2017 subset of 56,528 applications (CC BY-SA 4.0), V100 PatEmbed vectors, `scout_live.py` (CPU), exact CPU/GPU parity. [Audit](docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md) |
 | M2 screens S1–S6 | **done 6 Nov** | `frontend/healthtech-web/app/scout.html`, `scout.css`, `src/scout/*`. S5 is a dossier export (Markdown/JSON keeping source facts, system inference and unresolved items apart); a push into the device-dossier workspace is not built |
 | M4 live LLM rationales | open | Recorded rationales only: 56 for the 8 demo briefs; 120 of 158 quotes literal-matched |
-| M5 frozen evaluation E1–E5 | open | The owner approved one DAPFAM test read after a freeze commit, plus the E5 PatenTEB replication |
+| M5 frozen evaluation E1–E5 | **protocol frozen 7 Nov**; runs P2–P4 pending | The owner approved one DAPFAM test read after a freeze commit, plus the E5 PatenTEB replication |
 | M6 paper and demo video | open | — |
 
 Latest suites: Python 739 passed / 1 skipped; `npm test` 81 passed / 1 skipped; e2e 17/17.
@@ -51,11 +51,35 @@ Latest suites: Python 739 passed / 1 skipped; `npm test` 81 passed / 1 skipped; 
 
 Keep the data dir short: long Windows paths broke rationale writes before the fix.
 
-### Next steps (awaiting the owner's choice of research plan)
+### Next steps: plan A approved 7 Nov 2026; P1 freeze committed
 
-1. The owner reviews the research plan proposed on 6 Nov in the session. Main options: the product-led paper with a frozen evaluation, and a quote-grounding method (M4) as the measurable method contribution.
-2. On approval, write the frozen protocol and commit it before any test read.
-3. Then build M4 and run M5 as the protocol says.
+The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/research/SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md) and its code are frozen at the commit that added them (`research: freeze Solution Scout protocol E1–E5`). Run in this order. **Never re-run a frozen analysis**; the scripts refuse to overwrite their output. The first output is final.
+
+**P2: E3 grounding (dev/HUPD only, no test data)**
+
+1. Download the NLI model `cross-encoder/nli-deberta-v3-base` (Apache-2.0) to `C:/Users/User/.ptp-models/nli-deberta-v3-base` and record its revision.
+2. Build the DAPFAM dev sample (P = `../_private_artifacts/healthtech/ptp-org-adaptive-20261105`):
+   `python scripts/healthtech/run_qwen_scout_rationales.py build-dapfam --split $P/split.json --qwen-dev $P/scout/scout-dev-v1.out.jsonl --records $P/scout/scout-dev-records.jsonl --x-rankings $P/scout/rankings/rankings-x-P-dev.jsonl --output $P/scout/e3-dapfam-dev-inputs.jsonl`
+3. On the V100, run `generate --prompt-version v0` and `--prompt-version v1` on the DAPFAM sample, and `--prompt-version v1` on the HUPD `rationale-inputs.jsonl`. The HUPD v0 output already exists: `rationales-v0.out.jsonl`.
+4. Run `analyze_scout_grounding.py` with the CPU venv. The output goes to `docs/healthtech/audits/ptp-scout-frozen-eval-20261107/`.
+
+**E4:** `C:/Users/User/.ptp-scout-venv/Scripts/python scripts/healthtech/measure_scout_latency.py --data-dir ../_private_artifacts/healthtech/scout-public-demo --model-dir C:/Users/User/.ptp-models/patembed-large --output <audit>/e4-latency.json`
+
+**P3: DAPFAM test, read once**
+
+1. `run_qwen_scout_actions.py build --split-name test`.
+2. On the V100, `generate --actions P` (773 calls).
+3. `build_scout_test_inputs.py`.
+4. Nine dense runs (u/o/x × P/T/R2), each with `--family-ipc3`.
+5. Run `analyze_scout_frozen_test.py` once.
+
+**P4: E5 PatenTEB**
+
+1. `analyze_patenteb_brief_gap.py build`.
+2. Two dense runs on the V100 (encode the new corpus).
+3. `analyze` once.
+
+**P5:** draft the manuscript and figures. The owner reviews it. Never submit it.
 
 ### Running or external state
 

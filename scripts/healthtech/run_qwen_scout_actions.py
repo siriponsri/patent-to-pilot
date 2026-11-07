@@ -10,7 +10,9 @@ Subcommands:
   build     (local)  write label-free records for one split from the private parquet + split file
   generate  (GPU)    run the frozen prompts greedily; writes one JSON line per query as it goes, then a receipt
 
-Plan: docs/healthtech/research/SOLUTION_SCOUT_FEASIBILITY_PLAN_20261105_EN.md.
+Plan: docs/healthtech/research/SOLUTION_SCOUT_FEASIBILITY_PLAN_20261105_EN.md (dev). The test split is built only
+for the frozen protocol docs/healthtech/research/SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md, which uses P only
+(``generate --actions P``).
 """
 from __future__ import annotations
 
@@ -135,7 +137,7 @@ def generate(args: argparse.Namespace) -> int:
             row = {"id": record["id"], "prompt_version": PROMPT_VERSION, "title": record["title"]}
             row["P"] = run("P", PROBLEM.format(title=record["title"], abstract=record["abstract"],
                                                description=record["description"] or "none"))
-            briefs = {"T": record["title"], "P": row["P"]["parsed"]}
+            briefs = {"T": record["title"], "P": row["P"]["parsed"]} if args.actions == "all" else {}
             for brief_name, brief in briefs.items():
                 for action, template in (("F", FUNCTION), ("S", SOLUTION)):
                     key = f"{action}_{brief_name}"
@@ -166,12 +168,14 @@ def main() -> int:
     b = sub.add_parser("build")
     b.add_argument("--queries-parquet", type=Path, required=True)
     b.add_argument("--split", type=Path, required=True)
-    b.add_argument("--split-name", choices=("dev",), required=True)
+    b.add_argument("--split-name", choices=("dev", "test"), required=True,
+                   help="test only after the frozen protocol commit")
     b.add_argument("--output", type=Path, required=True)
     g = sub.add_parser("generate")
     g.add_argument("--input", type=Path, required=True)
     g.add_argument("--model-dir", type=Path, required=True)
     g.add_argument("--output", type=Path, required=True)
+    g.add_argument("--actions", choices=("all", "P"), default="all", help="P: problem brief only (frozen test)")
     args = parser.parse_args()
     return build(args) if args.command == "build" else generate(args)
 
