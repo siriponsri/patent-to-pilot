@@ -198,3 +198,40 @@ def test_replay_bundle_integrity_checks():
     bad_search = {**RAW["searches"][0], "ranking": [{"family_id": "NOPE", "score": 1.0}]}
     with pytest.raises(ValueError, match="unknown families"):
         ReplayBundle({**RAW, "searches": [bad_search]}, "x")
+
+
+# Shared with frontend/healthtech-web/tests/unit/scout.test.mjs: the client key must equal
+# "scout-" + the first 24 hex digits of the request hash the server compares.
+KEY_VECTOR_BRIEF = {"brief_id": "ui-brief", "text": "แผ่นเซนเซอร์ \"patch\" ลอกออก\tง่าย", "own_ipc3": ["A61", "C09"],
+                    "own_ipc3_basis": "typed", "data_class": "public", "language": "th"}
+KEY_VECTOR_SPLIT = {"n_own": 5, "n_other": 15}
+KEY_VECTOR_SHA256 = "0daf7e22e34c3c809a3f293ee369f8412b252f898c6c9c6bd1bfe5af08d2bd2a"
+
+
+def test_idempotency_hash_matches_client_key_vector():
+    from patent_to_pilot.healthtech.scout import LaneSplit, ScoutBrief
+    from patent_to_pilot.healthtech.scout_service import _hash
+
+    brief = ScoutBrief.model_validate(KEY_VECTOR_BRIEF).model_dump(mode="json")
+    split = LaneSplit.model_validate(KEY_VECTOR_SPLIT).model_dump(mode="json")
+    assert _hash({"brief": brief, "split": split}) == KEY_VECTOR_SHA256
+    # Every brief field counts: a key reused for the same text with another UI language is a conflict.
+    assert _hash({"brief": {**brief, "language": "en"}, "split": split}) != KEY_VECTOR_SHA256
+
+
+def test_same_key_with_other_language_conflicts_and_client_style_keys_do_not(server):
+    body = {"brief": {**BRIEF, "language": "th"}, "split": {"n_own": 2, "n_other": 2}}
+    status, first = _request(server, "POST", "/scout-sessions", body, {"Idempotency-Key": "old-style"})
+    assert status == 201
+    english = {**body, "brief": {**BRIEF, "language": "en"}}
+    status, err = _request(server, "POST", "/scout-sessions", english, {"Idempotency-Key": "old-style"})
+    assert status == 409 and err["error"]["code"] == "idempotency_conflict"
+    # Keys derived from the full request hash (the client rule) never collide across languages.
+    key_th = "scout-" + first["session"]["receipt"]["input_sha256"][:24]
+    status, again = _request(server, "POST", "/scout-sessions", body, {"Idempotency-Key": key_th})
+    assert status == 201 and again["session"]["receipt"]["input_sha256"] == first["session"]["receipt"]["input_sha256"]
+    status, replay = _request(server, "POST", "/scout-sessions", body, {"Idempotency-Key": key_th})
+    assert status == 200 and replay["duplicate"] is True
+    assert replay["session"]["session_id"] == again["session"]["session_id"]
+    status, created = _request(server, "POST", "/scout-sessions", english, {"Idempotency-Key": "scout-en-key"})
+    assert status == 201 and created["session"]["receipt"]["input_sha256"][:24] != key_th[6:]

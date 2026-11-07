@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  SCOUT_DICT, displayTitle, fieldMap, formatMs, parseIpc3, primarySection, quoteSegments, requestKey, translator,
+  SCOUT_DICT, canonicalJson, displayTitle, fieldMap, formatMs, parseIpc3, primarySection, quoteSegments, requestKey, translator,
 } from '../../app/src/scout/model.js';
 import { createScoutAdapter } from '../../app/src/adapters.js';
 import { resolvePath } from '../../serve.mjs';
@@ -58,6 +58,25 @@ test('formatting and stable request keys', async () => {
   assert.equal(a, await requestKey(brief, { n_own: 10, n_other: 10 }));
   assert.notEqual(a, await requestKey(brief, { n_own: 5, n_other: 15 }));
   assert.match(a, /^scout-[0-9a-f]{24}$/);
+});
+
+test('request key covers every brief field the server hashes', async () => {
+  // Shared vector with tests/test_healthtech_scout_http.py (KEY_VECTOR_*): server request_sha256 0daf7e22e34c…
+  const brief = { brief_id: 'ui-brief', text: 'แผ่นเซนเซอร์ "patch" ลอกออก\tง่าย', own_ipc3: ['A61', 'C09'], own_ipc3_basis: 'typed', data_class: 'public', language: 'th' };
+  const split = { n_own: 5, n_other: 15 };
+  assert.equal(await requestKey(brief, split), 'scout-0daf7e22e34c3c809a3f293e');
+  // Key order and omitted server defaults do not change the key ...
+  const reordered = Object.fromEntries(Object.entries(brief).reverse());
+  assert.equal(await requestKey({ ...reordered, reference_patent_raw: null, reference_patent_canonical: null }, split),
+    'scout-0daf7e22e34c3c809a3f293e');
+  const { language, ...noLanguage } = brief;
+  assert.equal(language, 'th');
+  assert.equal(await requestKey(noLanguage, split), await requestKey({ ...brief, language: 'en' }, split));
+  // ... but any field the server compares does (the 409 seen on 7 Nov 2026 was a UI-language change).
+  for (const change of [{ language: 'en' }, { brief_id: 'other' }, { data_class: 'synthetic' }, { own_ipc3_basis: 'reference_patent' }]) {
+    assert.notEqual(await requestKey({ ...brief, ...change }, split), 'scout-0daf7e22e34c3c809a3f293e', JSON.stringify(change));
+  }
+  assert.equal(canonicalJson({ b: [1, { d: null, c: 'x' }], a: true }), '{"a":true,"b":[1,{"c":"x","d":null}]}');
 });
 
 test('scout adapter is loopback-only and sends the idempotency header', async () => {

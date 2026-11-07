@@ -199,9 +199,27 @@ export function formatMs(ms) {
   return ms >= 1000 ? `${(ms / 1000).toFixed(1)} s` : `${Math.round(ms)} ms`;
 }
 
-/** A stable idempotency key for one brief + split, so a double click never creates two sessions. */
+/** Server-side defaults of the optional ScoutBrief / LaneSplit fields (scout.py), filled in before hashing. */
+export const SCOUT_BRIEF_DEFAULTS = Object.freeze({ reference_patent_raw: null, reference_patent_canonical: null, language: 'en' });
+export const SCOUT_SPLIT_DEFAULT = Object.freeze({ n_own: 10, n_other: 10 });
+
+/** JSON with sorted keys and no spaces: the same bytes as the server's `_hash` serialisation. */
+export function canonicalJson(value) {
+  if (Array.isArray(value)) return `[${value.map(canonicalJson).join(',')}]`;
+  if (value && typeof value === 'object') {
+    return `{${Object.keys(value).sort().map((k) => `${JSON.stringify(k)}:${canonicalJson(value[k])}`).join(',')}}`;
+  }
+  return JSON.stringify(value);
+}
+
+/**
+ * A stable idempotency key for one brief + split, so a double click never creates two sessions.
+ * It hashes the same request the server compares (`scout_service.create`: full brief + split, with
+ * defaults filled), so one key can never stand for two different requests. For a normalised brief
+ * the key is `scout-` + the first 24 hex digits of the server's `request_sha256`.
+ */
 export async function requestKey(brief, split, digest = globalThis.crypto?.subtle) {
-  const payload = JSON.stringify({ t: brief.text, o: brief.own_ipc3, s: split });
+  const payload = canonicalJson({ brief: { ...SCOUT_BRIEF_DEFAULTS, ...brief }, split: split ?? SCOUT_SPLIT_DEFAULT });
   if (!digest) return `scout-${payload.length}-${Date.now()}`;
   const bytes = new Uint8Array(await digest.digest('SHA-256', new TextEncoder().encode(payload)));
   return `scout-${Array.from(bytes.slice(0, 12), (b) => b.toString(16).padStart(2, '0')).join('')}`;

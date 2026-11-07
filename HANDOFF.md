@@ -54,7 +54,9 @@ Latest suites (7 Nov, code at freeze `4c5a882`): Python 746 passed / 1 skipped; 
     - New sheet 17 `n2` holds the benchmark dot funnel (`benchmark-funnel.mp4`, 10 s), a Scout screenshot, and the roadmap.
     - Sources are in `motion-src/`. The script (`assets/js/script-th.js` → `script/script_th.{html,pdf}`) is rebuilt.
   - Owner feedback 7 Nov: "too much text, tell it with pictures". Then "cut them too". All main sheets are now English title + Thai only: the English duplicate lines were removed, while the appendix and the figure captions keep their English. Both clips were re-rendered without English lines.
-  - Known issue: re-running a Scout brief against the old data dir `C:/Users/User/.ptp-scout-data` gives 409 `idempotency_conflict`. The client key hashes only text + own_ipc3 + split, while the server hashes the full brief. Screenshots used a fresh dir `C:/Users/User/.ptp-scout-shot`. Not fixed.
+  - **Scout 409 fixed (7 Nov).** Cause: the stored wearable-patch session in `C:/Users/User/.ptp-scout-data` was made with UI language `th`; the old client key hashed only text + own_ipc3 + split, so the same key came back with `language: "en"` and the server's full-brief hash differed. Now `requestKey()` (`frontend/healthtech-web/app/src/scout/model.js`) hashes the same canonical request as `scout_service.create` (full brief with defaults + split); the key is `scout-` + the first 24 hex digits of the server's `request_sha256`. A shared test vector pins both sides (`scout.test.mjs`, `tests/test_healthtech_scout_http.py`). The server is unchanged.
+    - Checked live on a copy of the old data dir: old key + `en` still gives 409 (old entries); new keys never conflict. Old index entries use the old key format, so the first re-run of a brief creates one new session (local search, no paid call) and later runs return it (`duplicate: true`). The old dir itself was not touched.
+    - Suites after the fix: `npm test` 82 passed / 1 skipped; Python 759 passed / 1 skipped.
 
 - **HUPD** replaces PatentsView: PatentsView bulk data now needs a USPTO.gov login with MFA, and agents must not log in.
 - **Local CPU encoder** for live search.
