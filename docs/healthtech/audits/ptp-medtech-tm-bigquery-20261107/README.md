@@ -77,3 +77,27 @@ The run was not served from cache. Output (private): `../_private_artifacts/heal
   - Medians are approximate (`APPROX_QUANTILES`).
   - Citation completeness varies by examiner. Unjudged is not negative.
 - **Spend:** about 41.5 GB billed in total this month (tm01 plus tm02), inside the 1 TB free tier as far as the project's billing setup allows. The owner should check the billing page.
+
+## tm03: MTM build query (dry runs only, 7 Nov 2026)
+
+- **Inputs:**
+  - SQL: `scripts/healthtech/sql/tm03_build_mtm.sql`, sha256 `1cf6c97d…7774`, per the rules draft.
+  - Table metadata (free): 173,516,400 rows, 2,952 GiB.
+- **Column probes** (dry run):
+
+  | Column | Estimate |
+  |---|---|
+  | `title_localized` | 15.9 GiB |
+  | `abstract_localized` | 199.1 GiB |
+  | `claims_localized` | 116.4 GiB |
+
+- **Full build:**
+
+  | Variant | Estimate | Note |
+  |---|---|---|
+  | With the claims head | **365.1 GiB** | |
+  | Without claims | **248.8 GiB** | the variant was generated in scratch by replacing the claims expression with NULL |
+
+- **Not run:** both exceed the owner's 34 GiB per-query cap.
+  - Running one needs the owner to raise the cap for that single run, and to confirm that the project's monthly free tier (1 TB) or billing setup covers it.
+  - About 41.5 GB is used so far this month.

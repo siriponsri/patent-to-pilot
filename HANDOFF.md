@@ -104,7 +104,11 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
     - examiner-cited cross-field targets at least 5 years older by priority date;
     - a corpus of about 500k matched-distractor families, time-filtered per query;
     - brief P from the frozen prompt; arms U, X and M; hit@20.
-  - ⚙ items wait on tm03 dry runs and the USPTO pilot. Nothing is frozen or scored.
+  - Owner approved the rules draft and the dry runs (7 Nov).
+    - tm03 build query (`scripts/healthtech/sql/tm03_build_mtm.sql`): dry run **365 GiB with claims, 249 GiB without**. Not run; it needs a one-run cap raise by the owner.
+    - dr-train has only Qwen3-8B locally (V100 32 GB; no vllm or bitsandbytes).
+    - The owner offered a stronger local model or an API. Agent proposal: decide after the MTM dev baseline measures reranking headroom (hit@100 − hit@20, Paper 53 lens). Paid API needs the CLAUDE.md admission process.
+  - Nothing is frozen or scored.
 - **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
