@@ -78,7 +78,12 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 - Addendum (7 Nov): two further options are in the deep dive §7.
   - **"Time machine"**: a retrospective cross-industry foresight back-test. Dev count: 35 A61 queries with OUT positives; 28% of their targets are at least 10 years older.
   - **Landscape agent**: no LLM-agent vs expert-landscape evaluation found; WIPO Assistive Technology 2021 is a possible gold.
-- **Do not start P3, any acquisition, or a new protocol until the owner decides.**
+- **Owner chose "time machine" (7 Nov).** The pre-declared dev probe (`013cbb9`) returned **`GO_SHOCK`**, the narrowest pass ([audit](docs/healthtech/audits/ptp-time-machine-dev-probe-20261107/README.md)).
+  - Population: 25 A61 dev queries with cross-industry targets at least 5 years older.
+  - hit@20: problem brief over all patents 0.08; cross-industry lane 0.28; Δ +0.20 (CI +0.04 to +0.36).
+  - Hits were a median of 16 years older. The gain is partly by construction (the lane equals the OUT rule).
+  - Next, needing the owner: a dated amendment adding this analysis to P3 **before** the test read, and a demo prototype from the 5 private dev cases.
+- **Do not start P3, any acquisition, or a protocol amendment until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
 
