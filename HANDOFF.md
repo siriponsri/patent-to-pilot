@@ -83,7 +83,10 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
   - hit@20: problem brief over all patents 0.08; cross-industry lane 0.28; Δ +0.20 (CI +0.04 to +0.36).
   - Hits were a median of 16 years older. The gain is partly by construction (the lane equals the OUT rule).
   - Next, needing the owner: a dated amendment adding this analysis to P3 **before** the test read, and a demo prototype from the 5 private dev cases.
-- **Do not start P3, any acquisition, or a protocol amendment until the owner decides.**
+- [Amendment 1 draft](docs/healthtech/research/SOLUTION_SCOUT_PROTOCOL_AMENDMENT_1_DRAFT_20261107_EN.md) (E6 time machine on test): **DRAFT, NOT IN FORCE**.
+  - It comes into force only with owner approval plus the frozen `analyze_time_machine_test.py`, before the test read.
+  - The owner is considering dev-only expansion of the data and the effect first.
+- **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
 
