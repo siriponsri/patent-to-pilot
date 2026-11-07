@@ -181,3 +181,15 @@ Priority years in 5-year bins:
 - Proposed primary corpus: targets + matched + uniform, about 900k families. Targets cannot then stand out by age, and recent competitors are present.
 - Sensitivities: targets + matched, and targets + uniform.
 - **Not run; owner approval needed.** Monthly billed so far is about 453 GB; with tm04 it would be about 829 GB, under 1 TiB.
+
+## tm04: uniform distractors run (`PASS`, 7 Nov 2026)
+
+- **Run:** the owner approved it. Exit 0 after 1,648 s. 375,577,542,687 bytes processed; 375,577,903,104 billed; not served from cache.
+  - Output (private): `tm04_uniform_distractors.csv`, 470,000 rows, sha256 `7181788a…9e9b`.
+- **Overlap with tm03:**
+  - 21,566 families are already in the tm03 corpus and will be dropped by `build_mtm_inputs.py`, leaving **448,434 new families**.
+  - 2 have no abstract.
+- **Age mix** (priority, 5-year bins; not matched to the targets): 1965: 5,773; 1970: 16,092; 1975: 15,600; 1980: 16,273; 1985: 20,795; 1990: 24,941; 1995: 37,111; 2000: 59,049; 2005: 66,468; **2010: 72,050; 2015: 77,010; 2020: 58,576**.
+  - The recent documents missing from the tm03 corpus are now present.
+- **Monthly billed so far:** about 829 GB (tm01 8.1, tm01b 0.4, tm02 33.5, tm01c 18.8, tm03 392.1, tm04 375.6).
+- **Next:** tm05 (publication dates, dry run 4.48 GiB) needs owner approval. The owner can lower the per-query cap now.

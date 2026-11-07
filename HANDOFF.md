@@ -111,9 +111,8 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
   - **Owner approved all (7 Nov)**: the tm03 run with claims and the USPTO pilot.
     - **tm03 done (PASS)**, 392 GB billed: 4,000 queries (2,000 dev / 2,000 test), 8,518 target families, 442,886 matched distractors. Private CSV, 1.06 GB.
       - Validation found a **corpus flaw**: distractors copy the targets' old age profile, so almost no documents have priority after 2012.
-      - **tm04 RUNNING (owner approved 7 Nov)**: a uniform 470k-family distractor sample (dry run 349.8 GiB, cap 370 GiB).
-        - Command: `bq_probe.py run --sql-file scripts/healthtech/sql/tm04_uniform_distractors.sql --output ../_private_artifacts/healthtech/medtech-time-machine/tm04_uniform_distractors.csv`. Log: `tm04_run.log` in the same folder.
-        - It is done when `tm04_uniform_distractors.csv.receipt.json` exists. Do not re-run without the owner (a re-run bills about 376 GB again).
+      - **tm04 done (PASS)**, 375.6 GB billed: 470,000 uniform families. 21,566 overlap tm03, leaving 448,434 new. The age mix now includes recent years (about 207k with priority 2010–2023).
+        - Monthly billed is about 829 GB. Do not re-run tm03 or tm04.
       - MTM pipeline code is written and unit-tested; it is not run and not frozen:
         - `build_mtm_inputs.py`, `run_mtm_dense_pool.py` (time filter, own family, X lane, 4 corpus views from one encoding), `analyze_mtm.py`;
         - tests: `tests/test_mtm_pipeline.py`;
@@ -122,7 +121,7 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
         - Code and tests are changed (`visible_from`); see rules §13.
         - Estimated impact: 1.6% of gold pairs; median 4% of eligible candidates per query.
         - tm05 (US publication dates, dry run 4.48 GiB) needs owner approval.
-      - Next: tm04 finishes (do not re-run), the owner approves tm05, build inputs, then the **owner approves the FREEZE**. Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
+      - Next: the owner approves tm05, build inputs, then the **owner approves the FREEZE**. Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
   - Nothing is frozen or scored.
