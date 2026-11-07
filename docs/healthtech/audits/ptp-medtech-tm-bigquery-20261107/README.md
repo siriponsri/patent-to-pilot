@@ -101,3 +101,19 @@ The run was not served from cache. Output (private): `../_private_artifacts/heal
 - **Not run:** both exceed the owner's 34 GiB per-query cap.
   - Running one needs the owner to raise the cap for that single run, and to confirm that the project's monthly free tier (1 TB) or billing setup covers it.
   - About 41.5 GB is used so far this month.
+
+## SEA cross-check (7 Nov 2026)
+
+**USPTO pilot: `BLOCKED`.**
+- The old host `bulkdata.uspto.gov` no longer resolves. The data.uspto.gov file path returns the web app's HTML, not the zip.
+- The ODP API (`api.uspto.gov/api/v1/datasets/products/PTGRXML`) returns **401** without an `X-API-KEY`.
+- Unblocking needs one of two things from the owner:
+  - a MyUSPTO account and ODP API key, registered by the owner (the agent does not log in); or
+  - one weekly grant zip downloaded in the owner's browser.
+
+**Spot check instead (`PASS`, weaker evidence):**
+- tm01b (`scripts/healthtech/sql/tm01b_sea_examples.sql`, 2% table sample, 0.376 GB billed) returned 3 January 2018 grants with SEA and APP citations.
+- On the public Google Patents pages, the "* Cited by examiner" marks match the BigQuery categories in **18 of 18** citations checked:
+  - US9854751B2: 12 of 12 (SEA = "*", APP = unmarked);
+  - US9854761B2: 6 of 6.
+- Both views come from Google's processing of USPTO data, so this is not an independent check. The USPTO XML check stays open.
