@@ -124,7 +124,8 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
       - **tm05 done** (4.8 GB billed; 22.3M US publication dates). **Inputs built** in `../_private_artifacts/healthtech/medtech-time-machine/inputs/`:
         - corpus of 899,838 families; 1,985 dev / 1,955 test queries;
         - 173 gold pairs and 60 queries removed by the publication-date visibility rule.
-      - Next: the **owner approves the FREEZE**. Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
+      - **MTM rules FROZEN (owner approved 7 Nov)** at the commit `research: freeze MTM benchmark rules`. See rules §14: label-free test briefs and rankings may precede the dev method freeze; test scoring runs once, after methods are frozen.
+      - Next: Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
   - Nothing is frozen or scored.

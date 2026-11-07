@@ -77,3 +77,10 @@ def test_analysis_metrics_mixed_and_missing_rankings():
     assert out["missing_rankings"] == {"U": 1, "X": 0}
     assert out["means"]["U"]["hit20"] == 0.0 and out["means"]["X"]["hit20"] == 1.0
     assert out["hit_gap_years_median"]["X"] == 12.5
+
+
+def test_p_query_rows_skip_failed_briefs():
+    pq = _load("build_mtm_p_queries")
+    lines = [json.dumps({"id": "q1", "P": {"parsed": "Need a valve."}}), json.dumps({"id": "q2", "P": {"parsed": None}}), ""]
+    rows, failed = pq.p_rows(lines)
+    assert failed == 1 and rows == [{"id": "q1", "text": pq.DENSE_QUERY_PREFIX + "Need a valve."}]

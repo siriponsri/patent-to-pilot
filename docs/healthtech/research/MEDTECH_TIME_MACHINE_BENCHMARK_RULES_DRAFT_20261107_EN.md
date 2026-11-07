@@ -1,8 +1,10 @@
-# Medtech time-machine benchmark (MTM): rules (DRAFT for owner approval, 7 Nov 2026)
+# Medtech time-machine benchmark (MTM): rules (FROZEN, 7 Nov 2026)
 
-- **Status:** DRAFT. Nothing in this file is frozen yet.
-  - Items marked ⚙ are fixed after a free dry run or a small pilot.
-  - The whole file is then frozen by a commit that says FROZEN, before any query brief, ranking or score exists.
+- **Status: FROZEN** at the commit that adds this line (`research: freeze MTM benchmark rules`). The owner approved the freeze on 7 Nov 2026.
+  - No query brief, ranking or score existed at the freeze.
+  - The filename keeps "DRAFT" only because frozen SQL refers to it.
+  - The ⚙ items are resolved in §12 and §13. The binding implementation is the code and SQL listed in §12.10 and §14.
+  - Changes after this point are dated amendments only, reported as deviations.
 - **Background:**
   - The dev probe on DAPFAM passed `GO_SHOCK` on n = 25 ([audit](../audits/ptp-time-machine-dev-probe-20261107/README.md)).
   - The BigQuery population count (tm02, [audit](../audits/ptp-medtech-tm-bigquery-20261107/README.md)) found 59,020 US device grants from 2010 to 2023 that qualify.
@@ -197,3 +199,25 @@ Unjudged documents are not negatives. Results are known-link hits, not exhaustiv
 
 **Remaining limitation:** for families whose representative is a later member, an earlier public member with different text is not used. The fix is conservative: such a family becomes visible only from its representative's publication date.
 - Re-selecting the earliest-published member as representative would need another text scan of about 250–365 GiB. That is deferred: it is not needed for leakage control, and this month's free tier is nearly used.
+
+## 14. Freeze decisions (owner, 7 Nov 2026)
+
+**1. Label-free test generation before the dev method freeze** (changes §5 and §11 to fit the V100 window, which ends 15 Nov 2026 16:59 UTC):
+- Test P briefs and test baseline rankings (U/X for views P, T and A, all corpus views) may be produced before any dev method is frozen. Neither reads labels.
+- Test **scoring** (`analyze_mtm.py --split test`) runs **once**, only after the carried-forward methods (at most 4) are frozen by a dated commit.
+- Test rankings of any later method are produced after that commit.
+
+**2. The P brief prompt.** The frozen `ptp-solution-scout-v1` `PROBLEM` template receives the query's title and abstract. Its description slot is empty, which the generator renders as "none".
+
+**3. Code frozen with these rules:**
+- `scripts/healthtech/build_mtm_inputs.py`
+- `scripts/healthtech/build_mtm_p_queries.py`
+- `scripts/healthtech/run_mtm_dense_pool.py` (imports `run_dapfam_dense_pool.py` unchanged)
+- `scripts/healthtech/analyze_mtm.py`
+- `scripts/healthtech/run_qwen_scout_actions.py` (unchanged)
+- SQL tm03, tm04 and tm05
+- `tests/test_mtm_pipeline.py`
+
+**4. Inputs:** `../_private_artifacts/healthtech/medtech-time-machine/inputs/`, receipt sha256 `5e29316b92c6fdab…`.
+- Corpus: 899,838 families.
+- Queries: 1,985 dev and 1,955 test.
