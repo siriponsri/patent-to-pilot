@@ -144,3 +144,40 @@ The run was not served from cache. Output (private): `../_private_artifacts/heal
 - **Conclusion:** the MTM target rule `category LIKE '%SEA%'` selects exactly the references the USPTO marks as cited by the examiner.
 
 **Spend:** about 61 GB billed this month before tm03 (tm01 8.1, tm01b 0.4, tm02 33.5, tm01c 18.8).
+
+## tm03: MTM build run (`PASS`), and a corpus design issue found in validation (7 Nov 2026)
+
+- **Run:** the owner raised the cap to 370 GiB. The dry run estimated 365.1 GiB.
+  - Exit 0 after 1,604 s. 392,073,437,102 bytes processed; 392,074,100,736 billed; not served from cache.
+  - Output (private): `../_private_artifacts/healthtech/medtech-time-machine/tm03_mtm_build.csv`, 1.06 GB, 455,404 rows, sha256 `65ffa97f…e23d`.
+
+**Validation** (counts only; no rankings or scores exist):
+
+| Item | Value |
+|---|---|
+| Queries | 2,000 dev + 2,000 test; 0 family overlap between splits |
+| Targets per query | dev mean 2.11 (median 1, max 39); test mean 2.26 (median 1, max 51) |
+| Target families | 8,518; all present in the corpus |
+| Matched distractors | 442,886. Main corpus: 451,404 families, no duplicates. Small corpus: 93,690 |
+| Missing text | claims head missing for 2,329 documents; abstract missing for 2 |
+
+**Issue: the corpus has almost no recent documents.**
+
+Priority years in 5-year bins:
+
+| Role | Bins (start year: count) |
+|---|---|
+| Queries | 1995: 15, 2000: 273, 2005: 1,081, 2010: 1,110, 2015: 1,364, 2020: 157 |
+| Targets | … 1995: 1,629, 2000: 1,985, 2005: 1,324, 2010: 483, 2015: 15 |
+| Distractors | … 1995: 84,708, 2000: 103,220, 2005: 68,848, 2010: 25,116, 2015: 780 |
+
+- The matched rule copies the targets' age profile. Targets are at least 5 years older than their queries by definition.
+- So, as of a query's date, the corpus lacks most of the recent documents a real search would rank against. That would make U and X easier than reality.
+- This is a design flaw found before any scoring.
+
+**Proposed fix (tm04, dry run only):** `scripts/healthtech/sql/tm04_uniform_distractors.sql`, sha256 `6a11db61…0f55`.
+- It draws a **uniform** sample of 470,000 US families (English title and abstract, priority ≤ 2023) by sha256 order. Families already in tm03 are dropped locally.
+- Dry run: **349.8 GiB** (cap 370 GiB).
+- Proposed primary corpus: targets + matched + uniform, about 900k families. Targets cannot then stand out by age, and recent competitors are present.
+- Sensitivities: targets + matched, and targets + uniform.
+- **Not run; owner approval needed.** Monthly billed so far is about 453 GB; with tm04 it would be about 829 GB, under 1 TiB.

@@ -109,10 +109,10 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
     - dr-train has only Qwen3-8B locally (V100 32 GB; no vllm or bitsandbytes).
     - The owner offered a stronger local model or an API. Agent proposal: decide after the MTM dev baseline measures reranking headroom (hit@100 − hit@20, Paper 53 lens). Paid API needs the CLAUDE.md admission process.
   - **Owner approved all (7 Nov)**: the tm03 run with claims and the USPTO pilot.
-    - **RUNNING (started 7 Nov):** the tm03 MTM build. The owner raised the cap to 370 GiB; the dry run is 365.1 GiB.
-      - Command: `C:/Users/User/.ptp-scout-venv/Scripts/python scripts/healthtech/bq_probe.py run --sql-file scripts/healthtech/sql/tm03_build_mtm.sql --output ../_private_artifacts/healthtech/medtech-time-machine/tm03_mtm_build.csv`. It runs as a local background process and downloads about 1.5 GB.
-      - Check: whether `tm03_mtm_build.csv.receipt.json` exists (it is written at the end). The script refuses to overwrite.
-      - If it died mid-download: a re-run would bill the scan again (about 365 GiB). Ask the owner first; BigQuery's 24 h result cache may make the re-run free (receipt `cache_hit`).
+    - **tm03 done (PASS)**, 392 GB billed: 4,000 queries (2,000 dev / 2,000 test), 8,518 target families, 442,886 matched distractors. Private CSV, 1.06 GB.
+      - Validation found a **corpus flaw**: distractors copy the targets' old age profile, so almost no documents have priority after 2012.
+      - Proposed tm04: a uniform 470k-family distractor sample (dry run 349.8 GiB). **Not run; owner approval needed.**
+      - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
   - Nothing is frozen or scored.
 - **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
