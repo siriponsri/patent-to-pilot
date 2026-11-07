@@ -96,6 +96,9 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 - BigQuery tooling is ready: `scripts/healthtech/bq_probe.py` (dry-run first, per-query byte cap, refuses to overwrite, never prints credentials) and `scripts/healthtech/sql/tm01_us_citation_categories.sql`.
   - The owner puts credentials in a git-ignored `.env.bigquery` (template in `.env.example`). It cannot go in `.env`: the loader accepts only `OPENROUTER_API_KEY`.
   - Pending: the owner creates a service-account key or gcloud login, and approves `pip install google-cloud-bigquery` into the scout venv.
+- **BigQuery live (7 Nov):** [audit](docs/healthtech/audits/ptp-medtech-tm-bigquery-20261107/README.md).
+  - tm01 ran (8.06 GB billed): US citations carry category SEA (examiner-cited) vs APP (applicant).
+  - tm02 (population counts) has a dry-run estimate of 31.2 GiB, over the owner cap of 30 GiB, so it was **not run**. The owner must raise the cap in `.env.bigquery` to run it.
 - **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
