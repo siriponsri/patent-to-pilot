@@ -53,7 +53,7 @@ Latest suites (7 Nov, code at freeze `4c5a882`): Python 746 passed / 1 skipped; 
     - New sheet 16 `n1` is a time machine: HyperFrames clip `assets/video/time-machine.mp4` (20 s) on a real dev-split MTM pair, US9119617B2 (2012, A61) citing US3812859A (1972, A01, examiner `*`).
     - New sheet 17 `n2` holds the benchmark dot funnel (`benchmark-funnel.mp4`, 10 s), a Scout screenshot, and the roadmap.
     - Sources are in `motion-src/`. The script (`assets/js/script-th.js` → `script/script_th.{html,pdf}`) is rebuilt.
-  - Owner feedback 7 Nov: "too much text, tell it with pictures". It was applied to the new sheets. The older Paper 53 sheets keep their existing design unless the owner asks.
+  - Owner feedback 7 Nov: "too much text, tell it with pictures". Then "cut them too". All main sheets are now English title + Thai only: the English duplicate lines were removed, while the appendix and the figure captions keep their English. Both clips were re-rendered without English lines.
   - Known issue: re-running a Scout brief against the old data dir `C:/Users/User/.ptp-scout-data` gives 409 `idempotency_conflict`. The client key hashes only text + own_ipc3 + split, while the server hashes the full brief. Screenshots used a fresh dir `C:/Users/User/.ptp-scout-shot`. Not fixed.
 
 - **HUPD** replaces PatentsView: PatentsView bulk data now needs a USPTO.gov login with MFA, and agents must not log in.
