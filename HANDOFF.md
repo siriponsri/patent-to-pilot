@@ -98,7 +98,8 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
   - Pending: the owner creates a service-account key or gcloud login, and approves `pip install google-cloud-bigquery` into the scout venv.
 - **BigQuery live (7 Nov):** [audit](docs/healthtech/audits/ptp-medtech-tm-bigquery-20261107/README.md).
   - tm01 ran (8.06 GB billed): US citations carry category SEA (examiner-cited) vs APP (applicant).
-  - tm02 (population counts) has a dry-run estimate of 31.2 GiB, over the owner cap of 30 GiB, so it was **not run**. The owner must raise the cap in `.env.bigquery` to run it.
+  - tm02 ran after the owner raised the cap to 34 GiB (33.5 GB billed). Of 324,452 US device grants from 2010 to 2023, **59,020 (18.2%)** have an examiner-cited, cross-field US target filed at least 5 years earlier: 139,227 pairs, median gap 14–16 years.
+  - Next, needing the owner: freeze benchmark rules (temporal dev/test split, sample sizes, corpus/distractors, query text) before any scoring; a text-extract dry run; USPTO pilot XML to cross-check SEA.
 - **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
 
 **P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
