@@ -111,7 +111,9 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
   - **Owner approved all (7 Nov)**: the tm03 run with claims and the USPTO pilot.
     - **tm03 done (PASS)**, 392 GB billed: 4,000 queries (2,000 dev / 2,000 test), 8,518 target families, 442,886 matched distractors. Private CSV, 1.06 GB.
       - Validation found a **corpus flaw**: distractors copy the targets' old age profile, so almost no documents have priority after 2012.
-      - Proposed tm04: a uniform 470k-family distractor sample (dry run 349.8 GiB). **Not run; owner approval needed.**
+      - **tm04 RUNNING (owner approved 7 Nov)**: a uniform 470k-family distractor sample (dry run 349.8 GiB, cap 370 GiB).
+        - Command: `bq_probe.py run --sql-file scripts/healthtech/sql/tm04_uniform_distractors.sql --output ../_private_artifacts/healthtech/medtech-time-machine/tm04_uniform_distractors.csv`. Log: `tm04_run.log` in the same folder.
+        - It is done when `tm04_uniform_distractors.csv.receipt.json` exists. Do not re-run without the owner (a re-run bills about 376 GB again).
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
   - Nothing is frozen or scored.
