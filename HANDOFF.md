@@ -4,7 +4,7 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 7 Nov 2026 (read this first)
 
-Last pushed commit before this note: `801f090`. All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
+Last pushed commit before this note: `4c5a882` (protocol freeze). P2 (E3/E4) is in progress. All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 
 ### Direction
 
@@ -83,7 +83,16 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 
 ### Running or external state
 
-- **Nothing runs on dr-train.**
+- **P2/E3 generation running on dr-train (started 7 Nov 2026, about 1.5 h).**
+  - Done before launch:
+    - NLI model `cross-encoder/nli-deberta-v3-base` rev `6c749ce3425cd33b46d187e45b92bbf96ee12ec7` (Apache-2.0 per model card) is in `C:/Users/User/.ptp-models/nli-deberta-v3-base`; config.json sha256 `897e756e…`.
+    - DAPFAM dev sample `$P/scout/e3-dapfam-dev-inputs.jsonl`: 60 queries, 180 pairs, sha256 `db4ca964…`.
+    - Copied to dr-train; repo `run_qwen_scout_rationales.py` sha256 `64ef8149…` matches code-v3.
+  - Job: `setsid nohup /home/chaw/patent-to-pilot-jobs/scout-public-demo/run_e3_generate.sh`. It runs three greedy runs in sequence on V100 `GPU-277ccc57…` (dapfam-v0 180, dapfam-v1 180, hupd-v1 56). No retries; an existing output is never overwritten.
+  - Outputs (J = `/home/chaw/patent-to-pilot-jobs/scout-public-demo`): `$J/e3-dapfam-v0.out.jsonl`, `$J/e3-dapfam-v1.out.jsonl`, `$J/e3-hupd-v1.out.jsonl`, each with `.receipt.json`.
+  - Check: `ssh -o BatchMode=yes chaw@100.77.149.83 'cat $J/logs/e3-status.log; wc -l $J/e3-*.out.jsonl'`. Per-run logs: `$J/logs/e3-<name>.log`.
+  - If a run died: do not re-run calls that already have lines; report it to the owner.
+  - When it is done: copy outputs and receipts to `../_private_artifacts/healthtech/scout-public-demo/`, then run E3 (`analyze_scout_grounding.py`, once) and E4 (`measure_scout_latency.py`, once) into `docs/healthtech/audits/ptp-scout-frozen-eval-20261107/`.
 - Local servers may still be running from the 6 Nov session (ports 8787 and 5178). They are safe to stop.
 - Private data:
   - `../_private_artifacts/healthtech/scout-public-demo/` holds the HUPD subset, vectors, rationales and book.
