@@ -125,6 +125,17 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
         - corpus of 899,838 families; 1,985 dev / 1,955 test queries;
         - 173 gold pairs and 60 queries removed by the publication-date visibility rule.
       - **MTM rules FROZEN (owner approved 7 Nov)** at the commit `research: freeze MTM benchmark rules`. See rules §14: label-free test briefs and rankings may precede the dev method freeze; test scoring runs once, after methods are frozen.
+      - **MTM V100 JOB RUNNING (started 7 Nov about 11:45Z).**
+        - Job dir `J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`: frozen code from `git archive 7d317e7` in `$J/code`; inputs in `$J/inputs` (hash-identical to local).
+        - Script `$J/run_mtm_v100.sh` (copy in `docs/healthtech/audits/ptp-medtech-tm-bigquery-20261107/`) runs in sequence:
+          1. dense T-dev, which encodes about 1.4M passages, roughly 6–7 h at about 55 passages/s in fp32, and saves `$J/out/passage-vectors-f32.npy`;
+          2. dense A-dev;
+          3. briefs P-dev, then queries P-dev, then dense P-dev;
+          4. briefs P-test, then queries P-test, then dense P-test;
+          5. dense T-test and A-test.
+        - Check: `ssh -o BatchMode=yes chaw@100.77.149.83 'cat $J/logs/status.log; ls $J/out'`. Per-step logs in `$J/logs/<step>.log`.
+        - No retries. If a step died: do not overwrite; report to the owner. The smoke test in `$J/smoke` passed.
+        - Test outputs are label-free (rules §14). **Do not run `analyze_mtm.py --split test`** until the methods are frozen.
       - Next: Then V100: P briefs (about 5–7 h) and encoding (about 2–3 h) before 15 Nov 16:59 UTC.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
