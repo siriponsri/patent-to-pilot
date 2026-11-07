@@ -155,6 +155,10 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
         - Check: `ssh -o BatchMode=yes chaw@100.77.149.83 'cat $J/logs/status.log; ls $J/out'`. Per-step logs in `$J/logs/<step>.log`.
         - No retries. If a step died: do not overwrite; report to the owner. The smoke test in `$J/smoke` passed.
         - Test outputs are label-free (rules §14). **Do not run `analyze_mtm.py --split test`** until the methods are frozen.
+        - **Owner approved (7 Nov, ~16:10Z) the dev analysis as soon as dev rankings exist.** The agent runs it on dr-train with the frozen code, CPU only, and writes aggregates only:
+          - when `end dense-A-dev` appears: `cd $J/code && $PY scripts/healthtech/analyze_mtm.py --split dev --query-views T,A --queries-meta $J/inputs/queries-meta.jsonl --corpus $J/inputs/corpus.jsonl --rankings-dir $J/out --output $J/analysis/dev-TA.json`;
+          - when `end dense-P-dev` appears: the same with `--query-views P,T,A --output $J/analysis/dev-PTA.json`.
+          - Copy each JSON to `docs/healthtech/audits/ptp-medtech-tm-dev-20261107/`, write a short README with the dev results, and report to the owner. Rules §11: dev may be re-run into new files; log every run.
       - **GPU window extended by the owner (7 Nov) to 30 Nov 2026 16:59 UTC** (`local_execution.py`, test and AUTHORIZATION_AND_BUDGET.md updated). The running job uses the frozen copy `7d317e7`, whose check still ends at 15 Nov 16:59 UTC; that is not a problem, because the job ends long before then. Any run after 15 Nov needs a fresh `git archive` that includes the window change. That is not a benchmark-rule change.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
