@@ -53,9 +53,29 @@ def corpus_row(row: dict, sets: list[str], pubdates: dict[str, int]) -> dict:
             "c3": json.loads(row["c3"] or "[]"), "sets": sets}
 
 
-def build(build_rows, uniform_rows, pubdates: dict[str, int]) -> tuple[list[dict], list[dict], dict]:
-    corpus: dict[str, dict] = {}
+def build(build_rows, uniform_rows, pubdates: dict[str, int], sink=None):
+    """One pass over tm03 rows then tm04 rows. Corpus rows go to ``sink`` (streamed) or, without a sink, are returned
+    sorted by id. Returns (corpus or None, queries sorted by id, stats, set counts)."""
+    kept: list[dict] | None = [] if sink is None else None
+    emit = kept.append if sink is None else sink
+    seen: set[str] = set()
+    target_visible: dict[str, int] = {}
     queries = []
+    stats = {"no_publication_date": 0}
+    counts = {s: 0 for s in ("target", "matched", "small", "uniform")}
+
+    def add(row: dict, sets: list[str]) -> None:
+        seen.add(row["family_id"])
+        record = corpus_row(row, sets, pubdates)
+        if record["visible_from"] is None:
+            stats["no_publication_date"] += 1
+            return
+        if "target" in sets:
+            target_visible[record["id"]] = record["visible_from"]
+        for name in sets:
+            counts[name] += 1
+        emit(record)
+
     for row in build_rows:
         if row["role"] == "query":
             queries.append({"id": row["publication_number"], "split": row["split"], "family_id": row["family_id"],
@@ -63,30 +83,33 @@ def build(build_rows, uniform_rows, pubdates: dict[str, int]) -> tuple[list[dict
                             "title": clean(row["title"]), "abstract": clean(row["abstract"]),
                             "targets": sorted(t["t_family"] for t in json.loads(row["targets"] or "[]"))})
         elif row["role"] == "target":
-            corpus[row["family_id"]] = corpus_row(row, ["target"], pubdates)
+            add(row, ["target"])
         elif row["role"] == "distractor":
-            small = str(row["in_small_corpus"]).lower() == "true"
-            corpus[row["family_id"]] = corpus_row(row, ["matched", "small"] if small else ["matched"], pubdates)
+            add(row, ["matched", "small"] if str(row["in_small_corpus"]).lower() == "true" else ["matched"])
     for row in uniform_rows:
-        if row["family_id"] not in corpus:
-            corpus[row["family_id"]] = corpus_row(row, ["uniform"], pubdates)
-    stats = {"no_publication_date": sum(r["visible_from"] is None for r in corpus.values())}
-    corpus = {f: r for f, r in corpus.items() if r["visible_from"] is not None}
+        if row["family_id"] not in seen:
+            add(row, ["uniform"])
     kept_queries, dropped_pairs = [], 0
     for q in queries:
-        visible = [t for t in q["targets"] if t in corpus and corpus[t]["visible_from"] <= q["priority"]]
+        visible = [t for t in q["targets"] if t in target_visible and target_visible[t] <= q["priority"]]
         dropped_pairs += len(q["targets"]) - len(visible)
         if visible:
             kept_queries.append({**q, "targets": visible})
     stats.update({"gold_pairs_dropped_not_yet_published": dropped_pairs,
                   "queries_dropped_no_visible_target": len(queries) - len(kept_queries)})
-    return sorted(corpus.values(), key=lambda r: r["id"]), sorted(kept_queries, key=lambda q: q["id"]), stats
+    corpus = sorted(kept, key=lambda r: r["id"]) if kept is not None else None
+    return corpus, sorted(kept_queries, key=lambda q: q["id"]), stats, counts
 
 
 def _write(path: Path, rows) -> None:
     with path.open("w", encoding="utf-8") as handle:
         for row in rows:
             handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+
+
+def _publication_numbers(path: Path) -> set[str]:
+    with path.open(encoding="utf-8", newline="") as handle:
+        return {row["publication_number"] for row in csv.DictReader(handle)}
 
 
 def main() -> int:
@@ -96,15 +119,21 @@ def main() -> int:
     parser.add_argument("--pubdates", type=Path, required=True, help="tm05_us_publication_dates.csv")
     parser.add_argument("--out-dir", type=Path, required=True)
     args = parser.parse_args()
-    if (args.out_dir / "receipt.json").exists():
+    if (args.out_dir / "receipt.json").exists() or (args.out_dir / "corpus.jsonl").exists():
         raise SystemExit("output exists: refusing to overwrite")
     args.out_dir.mkdir(parents=True, exist_ok=True)
+    needed = _publication_numbers(args.build) | _publication_numbers(args.uniform)
     with args.pubdates.open(encoding="utf-8", newline="") as handle:
-        pubdates = {r["publication_number"]: int(r["publication_date"]) for r in csv.DictReader(handle)}
-    with args.build.open(encoding="utf-8", newline="") as b, args.uniform.open(encoding="utf-8", newline="") as u:
-        corpus, queries, stats = build(csv.DictReader(b), csv.DictReader(u), pubdates)
-    _write(args.out_dir / "corpus.jsonl", corpus)
-    _write(args.out_dir / "family-cpc3.jsonl", ({"id": r["id"], "ipc3": r["c3"]} for r in corpus))
+        pubdates = {r["publication_number"]: int(r["publication_date"]) for r in csv.DictReader(handle)
+                    if r["publication_number"] in needed}
+    with (args.build.open(encoding="utf-8", newline="") as b, args.uniform.open(encoding="utf-8", newline="") as u,
+          (args.out_dir / "corpus.jsonl").open("w", encoding="utf-8") as corpus_out,
+          (args.out_dir / "family-cpc3.jsonl").open("w", encoding="utf-8") as cpc_out):
+        def sink(record: dict) -> None:
+            corpus_out.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+            cpc_out.write(json.dumps({"id": record["id"], "ipc3": record["c3"]}) + "\n")
+
+        _, queries, stats, counts = build(csv.DictReader(b), csv.DictReader(u), pubdates, sink)
     _write(args.out_dir / "queries-meta.jsonl", ({k: q[k] for k in ("id", "split", "family_id", "priority", "c3", "targets")}
                                                  for q in queries))
     for split in ("dev", "test"):
@@ -114,9 +143,9 @@ def main() -> int:
                 for q in part))
         _write(args.out_dir / f"queries-T-{split}.jsonl", ({"id": q["id"], "text": DENSE_QUERY_PREFIX + q["title"]} for q in part))
         _write(args.out_dir / f"queries-A-{split}.jsonl", ({"id": q["id"], "text": DENSE_QUERY_PREFIX + q["abstract"]} for q in part))
-    counts = {s: sum(s in r["sets"] for r in corpus) for s in ("target", "matched", "small", "uniform")}
-    receipt = {"inputs": {p.name: _sha(p) for p in (args.build, args.uniform, args.pubdates)}, "corpus_families": len(corpus),
-               "visibility": stats,
+    receipt = {"inputs": {p.name: _sha(p) for p in (args.build, args.uniform, args.pubdates)},
+               "publication_numbers_needed": len(needed), "publication_dates_found": len(pubdates),
+               "corpus_families": sum(counts[s] for s in ("target", "matched", "uniform")), "visibility": stats,
                "sets": counts, "queries": {s: sum(q["split"] == s for q in queries) for s in ("dev", "test")},
                "outputs": {p.name: _sha(p) for p in sorted(args.out_dir.glob("*.jsonl"))}}
     (args.out_dir / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
