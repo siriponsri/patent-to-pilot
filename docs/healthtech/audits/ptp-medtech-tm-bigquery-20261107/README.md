@@ -212,3 +212,16 @@ Priority years in 5-year bins:
 Output hashes are in `inputs/receipt.json` (private). No rankings or scores exist yet.
 
 **Monthly billed this month:** about 834 GB.
+
+## Visibility rule: exact effect, and a limitation to carry into the paper (7 Nov 2026)
+
+**Effect of the publication-date rule** (counts only, from the tm03 queries vs `inputs/queries-meta.jsonl`):
+- **173 gold pairs** removed, across **155 queries**.
+- **60 queries** dropped entirely (dev 15, test 45). The other **95** kept at least one target.
+- An external review the owner relayed read this as "173 pairs covering 60 queries". The correct reading is 173 pairs across 155 queries, of which 60 were dropped.
+
+**Limitation to state in the paper** (also in rules §13):
+- Each family is represented by one indexed member, the one with the longest English abstract.
+- If an earlier member of that family was already public at T(q) but the representative was published later, the family stays hidden until the representative's publication date.
+- The evaluation is therefore **conservative**: it can only under-state what a searcher could have found at T(q). It never lets later text in.
+- The larger drop on test (45 vs 15 queries) fits more recent families having later representatives. It is reported as is.
