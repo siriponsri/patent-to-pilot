@@ -2,7 +2,9 @@
 
 Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
-## Agent takeover state — 7 Nov 2026 (read this first)
+## Agent takeover state — 8 Nov 2026 (read this first)
+
+**Latest (8 Nov ~03:15 Bangkok):** the MTM T/A dev analysis is done (see the MTM V100 job below). A watcher waits for `end dense-P-dev`; then the P,T,A dev analysis runs. Test stays sealed.
 
 Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 
@@ -159,6 +161,12 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
           - when `end dense-A-dev` appears: `cd $J/code && $PY scripts/healthtech/analyze_mtm.py --split dev --query-views T,A --queries-meta $J/inputs/queries-meta.jsonl --corpus $J/inputs/corpus.jsonl --rankings-dir $J/out --output $J/analysis/dev-TA.json`;
           - when `end dense-P-dev` appears: the same with `--query-views P,T,A --output $J/analysis/dev-PTA.json`.
           - Copy each JSON to `docs/healthtech/audits/ptp-medtech-tm-dev-20261107/`, write a short README with the dev results, and report to the owner. Rules §11: dev may be re-run into new files; log every run.
+          - **T/A dev analysis DONE (7 Nov 20:11Z, exit 0)**: [audit](docs/healthtech/audits/ptp-medtech-tm-dev-20261107/README.md). Dense T-dev ended 20:05Z and A-dev 20:09Z, both exit 0.
+            - Corpus view main, title view T: hit@20 is U 0.074 / X 0.129 / M 0.110.
+            - X − U is +0.055 (CI 0.045 to 0.065); M − U is +0.036.
+            - hit@100 for X is 0.251, so there is reranking headroom.
+            - Abstract view A (leakage reference only): U 0.146 / X 0.251.
+          - **Next:** briefs P-dev started 20:09Z at about 13 per minute, so they should end about 22:40Z (1,985 briefs). Dense P-dev follows, reusing the passage vectors, so it takes minutes. Then run the P,T,A analysis to `dev-PTA.json` (new file).
       - **GPU window extended by the owner (7 Nov) to 30 Nov 2026 16:59 UTC** (`local_execution.py`, test and AUTHORIZATION_AND_BUDGET.md updated). The running job uses the frozen copy `7d317e7`, whose check still ends at 15 Nov 16:59 UTC; that is not a problem, because the job ends long before then. Any run after 15 Nov needs a fresh `git archive` that includes the window change. That is not a benchmark-rule change.
       - The owner may lower the cap again if tm04 is declined.
     - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
