@@ -117,3 +117,30 @@ The run was not served from cache. Output (private): `../_private_artifacts/heal
   - US9854751B2: 12 of 12 (SEA = "*", APP = unmarked);
   - US9854761B2: 6 of 6.
 - Both views come from Google's processing of USPTO data, so this is not an independent check. The USPTO XML check stays open.
+
+## SEA vs USPTO XML: independent check (`PASS`, 7 Nov 2026)
+
+**USPTO side:**
+- The owner downloaded `ipg180102.zip` (grants of 2 January 2018) in the browser to `data/raw/uspto/`, which is git-ignored.
+  - Size 129,360,562 bytes, sha256 `a8dca2bb…7d35`.
+- `scripts/healthtech/parse_uspto_grant_citations.py` streamed it with no text kept: 7,067 documents, 6,920 grants parsed.
+  - v2 output (private) sha256 `885d0b57…a6f6`.
+  - v1 had a number-format bug for pre-grant publications written as `2012/0323474`. It was fixed, and only v2 is used.
+
+**BigQuery side:**
+- tm01c (`scripts/healthtech/sql/tm01c_week_20180102_citations.sql`) returned the US B1/B2 grants of 2 January 2018 with their US citations: 6,251 grants, 18.8 GB billed.
+
+**Comparison** (6,251 common grants, 206,070 matched citation pairs):
+
+| USPTO XML category | BigQuery category | Pairs |
+|---|---|---|
+| cited by applicant | APP | 160,676 |
+| **cited by examiner** | **SEA** | **45,377** |
+| cited by third party | TPO | 17 |
+| any other combination | — | 0 |
+
+- SEA as a predictor of "cited by examiner": **precision 1.000, recall 1.000**.
+- Unmatched pairs: 83 on the XML side only and 24 on the BigQuery side only.
+- **Conclusion:** the MTM target rule `category LIKE '%SEA%'` selects exactly the references the USPTO marks as cited by the examiner.
+
+**Spend:** about 61 GB billed this month before tm03 (tm01 8.1, tm01b 0.4, tm02 33.5, tm01c 18.8).

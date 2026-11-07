@@ -113,7 +113,7 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
       - Command: `C:/Users/User/.ptp-scout-venv/Scripts/python scripts/healthtech/bq_probe.py run --sql-file scripts/healthtech/sql/tm03_build_mtm.sql --output ../_private_artifacts/healthtech/medtech-time-machine/tm03_mtm_build.csv`. It runs as a local background process and downloads about 1.5 GB.
       - Check: whether `tm03_mtm_build.csv.receipt.json` exists (it is written at the end). The script refuses to overwrite.
       - If it died mid-download: a re-run would bill the scan again (about 365 GiB). Ask the owner first; BigQuery's 24 h result cache may make the re-run free (receipt `cache_hit`).
-    - USPTO pilot BLOCKED: ODP returns 401 without an API key, and the old bulk host is gone. A Google Patents page spot check matched SEA to "cited by examiner" in 18 of 18 citations.
+    - **SEA validated against USPTO XML** (owner browser download `ipg180102.zip`): 206,070 citation pairs, SEA = "cited by examiner" with precision and recall 1.000.
   - Nothing is frozen or scored.
 - **Do not start P3, any acquisition, or put the amendment in force until the owner decides.**
 
