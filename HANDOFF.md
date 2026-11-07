@@ -63,7 +63,13 @@ The protocol [SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md](docs/healthtech/res
 - A switch needs a declared rule for answers with more than 3 sentence numbers. These caused all 18 v1 parse failures.
 - Until then, the demo keeps the v0 book, with unmatched quotes flagged.
 
-**P3: DAPFAM test, read once** (the next step; needs the owner's go-ahead in a new task)
+**Open owner decision on direction (7 Nov 2026).**
+- The owner asked whether to pivot to an "examiner-verifiable claim chart" or an FTO product. The advisor wants the paper to connect visibly to Paper 53.
+- See the [literature check](docs/healthtech/research/CLAIM_CHART_AND_SCOUT_LITERATURE_REVIEW_20261107_EN.md). Claim charts and FTO are already benchmarked in 2026 (FiNE-Patents, SIGIR '26; PatentAgentBench, PatSnap; PatRe). Cross-domain evidence on DAPFAM looks open.
+- Agent recommendation: stay with Solution Scout, reframed as the cross-domain follow-up to Paper 53 (E2a exposure under slot competition).
+- **Do not start P3 or any new protocol until the owner decides.**
+
+**P3: DAPFAM test, read once** (the next step if the owner keeps Scout; needs the owner's go-ahead)
 
 1. `run_qwen_scout_actions.py build --split-name test`.
 2. On the V100, `generate --actions P` (773 calls).
