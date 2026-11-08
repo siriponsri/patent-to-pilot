@@ -143,3 +143,23 @@ def test_new_and_lost_gold_at_200():
     rows = {"q1": {**base["q1"], "hit200": 1}, "q2": {**base["q2"], "hit200": 0}}
     out = methods.compare(rows, base)
     assert out["new_gold200"] == 0.5 and out["lost_gold200"] == 0.5
+
+
+probe = _load("analyze_mtm_citation_probe")
+
+
+def test_citation_probe_visibility_reach_and_gate(tmp_path):
+    edges = tmp_path / "e.csv"
+    edges.write_text("citing_family,citing_grant,cited_family\n"
+                     "n1,20050101,t1\nn1,20050101,t2\nn2,20120101,t3\nq9,20040101,t3\nqown,20030101,t4\n", encoding="utf-8")
+    by = probe.read_edges(edges, {"q9"})
+    assert "q9" not in {f for v in by.values() for _, f in v}
+    assert probe.visible_citers(by["t3"], 20110101, "x") == set()
+    assert probe.visible_citers(by["t1"], 20050101, "x") == {"n1"}
+    queries = [{"priority": 20100101, "family_id": "qa", "targets": ["t1", "t2"]},
+               {"priority": 20100101, "family_id": "qb", "targets": ["t3"]},
+               {"priority": 20100101, "family_id": "qown", "targets": ["t4"]}]
+    out = probe.reach_and_cocitation(queries, by)
+    assert out["reach"] == round(1 / 3, 4) and out["cocitation_interconnection"] == 1.0
+    assert probe.gate(0.60, 0.20)["decision"] == "GO" and probe.gate(0.60, 0.31)["decision"] == "NO_GO"
+    assert probe.gate(0.40, 0.01)["decision"] == "NO_GO"
