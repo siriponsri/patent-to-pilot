@@ -10,19 +10,21 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
   - **The defect:** the PatEmbed query prefix `encode query for different document retrieval: ` leaked into the BM25 tokens (`run_mtm_hybrid.py:168`) and into the reranker input (`run_mtm_rerank_ce.py:66`). The dense side is unaffected.
   - The results stay on record in the [phase-1 audit](docs/healthtech/audits/ptp-medtech-tm-dev-phase1-20261108/README.md), marked defective, and are not eligible for carry-forward.
   - The owner chose not to carry phase 1 to test, before the defect was found.
-- **DRAFTED, NOT RUN, waiting for owner go-ahead.** Both are in the [methods log](docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md):
-  - **Phase 1b (V1b–V3b):** the same methods with the prefix stripped. About 1 h on the V100; it needs a small code fix and a unit test first.
-  - **Phase 2:**
-    - V4: Qwen3-8B yes/no reranker on the X top 30, with prompts R-neutral and R-cross, fused with dense by λ CV;
-    - V5: V3b reranker scores fused with dense, no new GPU pass;
-    - V6: function-channel fusion, about 3.5 h of generation, lowest priority.
-  - The carry-forward rule is fixed: a CV out-of-fold lower bound > 0 on P/main, at most 4 methods.
-- **Next, once approved:**
-  1. Add the prefix-strip helper and its test, and V3b score saving. Run pytest and ruff, then push.
-  2. Run phase 1b on dr-train in `$J/dev1b` (`J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`). Record the job in this section before launch.
-  3. Write the phase-1b audit and push.
-  4. Write the V4/V5/V6 code, smoke-test V4 throughput (300 pairs), then run phase 2.
-- No GPU job is running. Test stays sealed.
+- **The owner approved phase 1b and phase 2 (8 Nov).** Both are declared in the [methods log](docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md).
+  - Phase 2: V4 Qwen3-8B yes/no reranker on the X top 30 (R-neutral and R-cross prompts), V5 reranker + dense fusion, V6 function-channel fusion.
+  - The prefix fix is pushed at `14263c9`: `strip_prefix`, a guard, and a test (12 tests pass).
+- **PHASE-1B JOB RUNNING on the V100** (launched about 13:50 Bangkok; expected about 1 h).
+  - Job dir: `$J/dev1b` (`J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`); code from `git archive 14263c9`.
+  - Script: `docs/healthtech/audits/ptp-medtech-tm-dev-phase1b-20261108/run_dev1b.sh`.
+  - Check: `ssh chaw@100.77.149.83 'cat /home/chaw/patent-to-pilot-jobs/mtm-20261107/dev1b/logs/status.log'`.
+  - When `all done` appears:
+    1. copy `$J/dev1b/out/receipt-hybrid-*.json`, `$J/dev1b/out/ce/receipt-rerank-ce-*.json` and `$J/dev1b/analysis/dev-phase1b.json` to that audit folder;
+    2. write its README and the methods-log results;
+    3. push.
+  - The private reranker scores stay in `$J/dev1b/private`; they feed V5.
+  - No retries. A failed step: report it, do not overwrite.
+- **Then phase 2:** write the V4/V5/V6 code and tests, smoke-test V4 throughput on 300 pairs, apply the 8-hour rule, launch, and record the job here first.
+- Test stays sealed.
 
 Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 
