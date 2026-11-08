@@ -4,7 +4,15 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 8 Nov 2026 (read this first)
 
-**Latest (8 Nov ~05:50 Bangkok):** the MTM dev baseline is complete for P, T and A (see the MTM V100 job below). The V100 is producing the label-free test briefs and rankings. Test stays sealed; the next step is the owner's choice of dev methods.
+**Latest (8 Nov ~07:45 Bangkok):** the MTM dev baseline is complete for P, T and A (see the MTM V100 job below).
+- The V100 job is still producing the label-free test briefs (1,600 of 1,955 at 00:36Z); dense P/T/A-test follow. Expect the end about 01:15–01:30Z. The job runs detached on dr-train, so a local restart does not affect it.
+- Check: `ssh chaw@100.77.149.83 'tail $J/logs/status.log; pgrep -f run_mtm_v100.sh'`. When it exits:
+  1. verify every step shows exit=0;
+  2. record the test receipts and hashes in an audit, with no labels and no `--split test` analysis;
+  3. push, then report.
+- The owner reviewed a Deep Research report on dev methods. The agent proposed phase 1: BM25 calibrated hybrid plus a zero-shot `BAAI/bge-reranker-v2-m3` on X top 100, on the idle second GPU.
+  - **The owner will decide on phase 1 after the test-ranking job finishes.**
+  - Do not download models or start dev methods before that.
 
 Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 
