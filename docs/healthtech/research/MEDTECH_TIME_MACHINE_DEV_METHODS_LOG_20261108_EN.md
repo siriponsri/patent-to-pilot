@@ -223,3 +223,60 @@ Results without fusion:
 Secondary result: V5 on T/main gives +0.015 [+0.008, +0.023].
 
 **Carry-forward candidate (needs the owner's freeze):** V4 with R-neutral, X top 30 and λ 0.5. It is the only eligible method, so Holm needs no adjustment.
+
+## Phase 3 (owner approved 9 Nov 2026, after the [phase-3 audit](../audits/ptp-medtech-tm-phase3-audit-20261109/README.md))
+
+Each entry below is written before its run. Later phase-3 entries (cited-distractor view, 3c, 3d, DAPFAM) get their own detailed entries before they run.
+
+**Shared settings:** as in phase 2 (dev only; lane X; P primary, T secondary; 4 corpus views). There are two new measures:
+
+- **hit@200**;
+- **new-gold@200 / lost-gold@200** against X's top 200.
+
+A first-stage method counts as changing exposure only if hit@100 or hit@200 changes, not just hit@20.
+
+### 3a — dense vector PRF (Rocchio) in lane X
+
+- **Base:** the frozen dense X retrieval: PatEmbed-large MaxP, the reused passage vectors, and the same `keep_mask`.
+- **Feedback:**
+  - For each query, take the first k families of its own X ranking in each corpus view.
+  - The feedback vector of a family is its best-matching passage vector for the query (the MaxP winner).
+  - c_k is the mean of those k vectors.
+- **New query:** q' = normalise(w·q + (1 − w)·normalise(c_k)), where q is the normalised query vector.
+- **Second pass:** a full MaxP lane-X retrieval with q' under the same `keep_mask`, depth 200.
+- **Grid:** k ∈ {3, 5, 10} and query weight w ∈ {0.7, 0.8, 0.9}, so α = 1 − w ∈ {0.3, 0.2, 0.1}.
+  - Variant names are `prfK<k>-<w>`.
+  - w = 1.0 (`prfK0-1.0`) is the sanity row: it must reproduce X exactly and is excluded from the CV.
+- **CV:** the 4-fold CV jointly over all 9 variants (prefix `prf`). A tie goes to the larger w, the one closer to X, then to the smaller k (listed first).
+- **Eligibility:** the usual CV out-of-fold lower bound > 0 on P/main hit@20, **and** hit@100 or hit@200 must differ from X.
+- **Code:** `scripts/healthtech/run_mtm_prf.py`.
+- **Evidence:**
+  - vector PRF is training-free (Li et al., TOIS 2023);
+  - it is sensitive to feedback quality (Li et al., SIGIR 2022);
+  - no patent study exists.
+
+### 3b — citation-reuse gating probe (BigQuery; dev labels only; no method claim)
+
+- **SQL:** `scripts/healthtech/sql/tm06_device_sea_citation_edges.sql`.
+  - **Citing grants:** US B1/B2 grants, granted 2001-01-01 to 2016-12-31, with a device CPC subclass (A61B/F/G/H/J/L/M/N).
+  - **Edges:** their examiner (SEA) citations to US publications, mapped to cited family IDs. Each edge is (citing family, citing grant date, cited family), deduplicated.
+  - **Spend:** dry-run first; the owner's per-query cap applies.
+- **Analysis:** `scripts/healthtech/analyze_mtm_citation_probe.py` (CPU, dev only).
+  - **Visible edges:** an edge counts for query q only if the citing grant date ≤ T(q), the query's priority date.
+  - **Excluded citers:** the query's own family, and all benchmark query families (dev and test). This is the conservative rule planned for 3c.
+- **Measures:**
+  - (i) **Reach:** the share of dev queries with at least one target cited by a visible device citer. This is an upper bound for unlimited-neighbour citation chasing.
+  - (ii) **Co-citation inter-connection:** among queries with two or more targets, the share whose targets include a pair co-cited by one visible device citer. This variant can be computed from these edges; Gobeill et al. used direct target–target citation.
+  - (iii) **Popularity null:** rank lane-X corpus families (same `keep_mask`, main view) by the number of visible device-citer citations, with ties by family ID and no query text. Report hit@20/100/200.
+  - (iv) **Outside-corpus share:** of the distinct families cited by device grants from 2001–2016, the share that is not in the MTM corpus.
+- **Go/no-go for 3c (fixed now):**
+  - **Go** only if reach ≥ 48.8% (X hit@200 38.8% + 10 points) **and** popularity-null hit@200 < reach/2.
+  - Otherwise 3c is not built, and the probe is reported as a negative feasibility result.
+
+### Decisions recorded on 9 Nov 2026
+
+- **The owner's published reranking paper** will be presented at its conference on 19–21 Nov 2026. It has no DOI yet; cite it as accepted/to appear until one is issued.
+- **Data licence:** the owner confirmed it from the repository's dataset table.
+  - Google Patents Public Data (`patents-public-data.patents.publications`) is provided by IFI CLAIMS Patent Services and Google under CC BY 4.0. Source: <https://github.com/google/patents-public-data/blob/master/tables/dataset_Google%20Patents%20Public%20Datasets.md#patents-public-datapatentspublications>.
+  - Any release must give the attribution, the licence link, the table, the retrieval dates and the modifications.
+  - The data licence grants no rights to patented inventions.
