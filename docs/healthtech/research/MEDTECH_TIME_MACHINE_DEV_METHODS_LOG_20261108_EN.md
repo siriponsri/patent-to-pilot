@@ -185,3 +185,19 @@ No phase-1 entry meets the §9 bar on the primary view. Carrying any of them to 
 - **Status:** the results stay on record, but they are not valid tests of the declared methods and are **not eligible for carry-forward**.
 - **Owner decision:** the owner chose not to carry phase 1 to test (8 Nov 2026), before this defect was found.
 - See the phase-1b entries below.
+
+### Phase 1b (V1b–V3b, query prefix stripped), run 8 Nov 2026 05:51Z–06:51Z, code `14263c9`
+
+[Audit](../audits/ptp-medtech-tm-dev-phase1b-20261108/README.md). Every step exit=0, with no retries. λ = 1.0 reproduced the baseline exactly.
+
+The table shows query view P, corpus view main, hit@20, as method − X with a 95% bootstrap CI. X = 0.180.
+
+| Entry | Δ hit@20 | new@100 / lost@100 | Outcome |
+|---|---|---|---|
+| V1b BM25 | −0.136 [−0.153, −0.119] | 0.016 / 0.246 | negative |
+| V2b hybrid, CV out of fold (λ 0.8, 0.9, 0.9, 0.9) | +0.002 [−0.008, +0.011] | 0.025 / 0.016 | null |
+| V3b bge-reranker-v2-m3, top 100 | −0.027 [−0.043, −0.013] | 0 / 0 by design | negative |
+
+Secondary result, query view T: V2b CV gives +0.014 [+0.008, +0.021] on main. Its lower bound is above 0 in all 4 corpus views. T is not the primary view.
+
+Under the fixed rule, no phase-1b entry is eligible for carry-forward.

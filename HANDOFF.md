@@ -13,7 +13,7 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 - **The owner approved phase 1b and phase 2 (8 Nov).** Both are declared in the [methods log](docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md).
   - Phase 2: V4 Qwen3-8B yes/no reranker on the X top 30 (R-neutral and R-cross prompts), V5 reranker + dense fusion, V6 function-channel fusion.
   - The prefix fix is pushed at `14263c9`: `strip_prefix`, a guard, and a test (12 tests pass).
-- **Phase 1b is done** (all done 06:50Z, every step exit=0). Its results are in `docs/healthtech/audits/ptp-medtech-tm-dev-phase1b-20261108/`; the README is being written.
+- **Phase 1b is done** (06:50Z, exit=0): [audit](docs/healthtech/audits/ptp-medtech-tm-dev-phase1b-20261108/README.md). On P/main the result is null/negative: hybrid CV +0.002 [−0.008, +0.011], BM25 −0.136, reranker −0.027. On T the hybrid gives +0.014 [+0.008, +0.021] (secondary). Nothing is eligible for test.
 - **The V4 smoke test passed** (300 pairs, `$J/smoke-p2`): N 13.9 pairs/s, C 13.0 pairs/s.
   - Projected time is 1.2 h + 1.3 h = 2.5 h, under the 8 h limit, so **PROMPTS=N,C**.
   - The scores are not degenerate.
