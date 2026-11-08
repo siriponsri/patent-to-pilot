@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "retriever": "PatEmbed-large dense, 384/64-term TAC passages, MaxP (run_dapfam_dense_pool)",
+  "model_safetensors_sha256": "234ea36a876fe5d5c416c1cbaad6f7221e17861fadd6481f0b96588fdc1ca482",
+  "families": 899838,
+  "passages": 1553678,
+  "queries": 1955,
+  "depth": 200,
+  "views": [
+    "main",
+    "small",
+    "matched",
+    "uniform"
+  ],
+  "inputs_sha256": {
+    "corpus.jsonl": "4d29bd8136e2a838e9a12e0907e0951dc029ca6f9b22ba7eae1da21bb5c618a6",
+    "queries-A-test.jsonl": "f7ff5bfe4f333d92661563c964c3bb24d0586a559386d0d630a61985be184e62",
+    "queries-meta.jsonl": "6d07052fc553909ecc8e02db79604ea413685e233a7d03a709e5b4f40a6ff9a8"
+  },
+  "rankings_sha256": {
+    "rankings-main-U-A-test.jsonl": "09f188ad4f05ba57eaa3bc667e583a201ee824c2793614dbafafb0d32f8eb8d0",
+    "rankings-main-X-A-test.jsonl": "f3cdb49b63dae97b6a1d8fbce1635aa9682a73b387d9fa06d1da9c4dd1c5cead",
+    "rankings-small-U-A-test.jsonl": "354fdf4bf782e6f651f53abbe44c4b7d4b104418678a2565231fc10b2fa86280",
+    "rankings-small-X-A-test.jsonl": "5067316de483c35306418c97cbb596f96d43f6ec7441bda699218944426f5c4e",
+    "rankings-matched-U-A-test.jsonl": "277c66aef30cdc55f59bfca531ff2cf5bdbf8e7568da8223ce16877e65c40af5",
+    "rankings-matched-X-A-test.jsonl": "46aba48f0bc2ab1809e2f5e324d0c35711c90c5bfeff59054744d1eaf446ba13",
+    "rankings-uniform-U-A-test.jsonl": "e36066fcf24db97bce5f3d84630e7a60d0811f3e4faa57ece3a3d52117e347ea",
+    "rankings-uniform-X-A-test.jsonl": "d885fe9340b1d3e94cda3836687cd5728efedf2f06beee34ee137a8ad55cae77"
+  },
+  "timings": {
+    "passage_vectors_reused_sha256": "8bb35abadf1df98c916eb495997214a225f280fbc2ae4979ca09b9d6ec56330b",
+    "query_encode_seconds": 20.214,
+    "ranking_seconds": 109.94
+  },
+  "gpu": "Tesla V100-SXM2-32GB",
+  "torch": "2.8.0+cu128",
+  "labels_used": false
+}
