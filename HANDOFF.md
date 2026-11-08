@@ -7,7 +7,11 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 **Latest (8 Nov ~13:30 Bangkok; last pushed commit before this note: `9f2a847`):**
 - **9 Nov owner decisions:**
   - **GPU window extended to 31 Dec 2026 16:59 UTC** (`local_execution.py`, its test and AUTHORIZATION_AND_BUDGET.md). Runs need a fresh `git archive` that includes this change.
-  - Phase 3 is **not approved yet**. First, the owner asked for a full audit of the plan and current results, plus a literature search.
+  - Phase 3 is **not approved yet**. The owner asked for a full audit of the plan and current results, plus a literature search. **The audit is done:** [phase-3 audit](docs/healthtech/audits/ptp-medtech-tm-phase3-audit-20261109/README.md).
+    - **Key finding:** the corpus is enriched with cited documents (8,518 targets plus distractors matched only on year and CPC section). Citation-derived methods (3c, and partly 3d) need a popularity-null baseline, an open-candidate protocol and a new "cited distractors" view.
+    - 3b becomes a gating probe with a fixed go/no-go rule.
+    - The V4 gain survives a cluster bootstrap: [+0.010, +0.024].
+    - The plan waits for owner approval.
   - Phase-3 draft: 3a vector PRF, 3b BigQuery citation-reuse probe, 3c citation chasing, 3d time-safe citation fine-tune, 3e combined system; DAPFAM as a secondary benchmark.
   - The 3d encoder choice (PatEmbed, NC licence, vs Apache Qwen3-Emb) is open.
 - **The MTM baseline job is done.** Test rankings for P/T/A are recorded and **not scored**: [test-rankings audit](docs/healthtech/audits/ptp-medtech-tm-test-rankings-20261108/README.md).
