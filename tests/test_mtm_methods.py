@@ -61,7 +61,8 @@ def test_rerank_reorders_only_the_head_and_keeps_ties_stable():
 
 
 def _rows(values):
-    return {q: {"hit20": h20, "recall20": h20, "hit100": h100, "mrr100": 0.0} for q, (h20, h100) in values.items()}
+    return {q: {"hit20": h20, "recall20": h20, "hit100": h100, "mrr100": 0.0, "hit200": h100}
+            for q, (h20, h100) in values.items()}
 
 
 def test_new_and_lost_gold_and_cv_choice():
@@ -115,3 +116,30 @@ def test_llm_prompts_and_candidate_text_are_frozen():
     assert llm.candidate_text(row) == "Jaw tool. " + " ".join(["w"] * 200)
     msgs = llm.messages("sys", "N", "a problem", "a patent")
     assert msgs[0] == {"role": "system", "content": "sys"} and "Problem: a problem" in msgs[1]["content"]
+
+
+prf = _load("run_mtm_prf")
+
+
+def test_prf_query_mixes_normalised_vectors_and_keeps_q_at_weight_one():
+    q = np.array([1.0, 0.0])
+    fb = np.array([[0.0, 2.0], [0.0, 4.0]])
+    assert np.allclose(prf.prf_query(q, fb, 1.0), q) and np.allclose(prf.prf_query(q, [], 0.7), q)
+    mixed = prf.prf_query(q, fb, 0.5)
+    assert np.isclose(np.linalg.norm(mixed), 1.0) and np.allclose(mixed, [2 ** -0.5, 2 ** -0.5])
+
+
+def test_winning_passage_and_variant_order():
+    scores = np.array([0.1, 0.9, 0.3, 0.2, 0.8])
+    starts = np.array([0, 2, 5])
+    assert prf.winning_passages(scores, starts, [1, 0]) == [4, 1]
+    assert prf.variant_names([3, 5], [0.8, 0.9])[:3] == ["prfK0-1.0", "prfK3-0.8", "prfK5-0.8"]
+    assert methods.choose({"prfK3-0.8": _rows({"q": (1, 1)}), "prfK5-0.9": _rows({"q": (1, 1)})}, ["q"], "prf") == "prfK5-0.9"
+
+
+def test_new_and_lost_gold_at_200():
+    base = {"q1": {"hit20": 0, "recall20": 0, "hit100": 0, "mrr100": 0, "hit200": 0},
+            "q2": {"hit20": 0, "recall20": 0, "hit100": 0, "mrr100": 0, "hit200": 1}}
+    rows = {"q1": {**base["q1"], "hit200": 1}, "q2": {**base["q2"], "hit200": 0}}
+    out = methods.compare(rows, base)
+    assert out["new_gold200"] == 0.5 and out["lost_gold200"] == 0.5

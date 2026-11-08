@@ -3,7 +3,7 @@
 For each (query view, corpus view) and method, it reports hit@20, recall@20, hit@100 and MRR@100, plus two shares:
 - new-gold@100: the baseline X top 100 had no target, but the method's top 100 has one;
 - lost-gold@100: the reverse.
-It also gives method - X on hit@20 by paired query bootstrap (5,000 resamples, seed 20261107).
+Phase 3 adds hit@200 and new/lost-gold@200. It also gives method - X on hit@20 by paired query bootstrap (5,000 resamples, seed 20261107).
 For a method family sharing --cv-prefix (e.g. hyb-0.5 ... hyb-0.9), it adds 4-fold cross-validation. A query's fold
 is int(sha256(query_id)[:8], 16) % 4. Each fold uses the variant with the best mean hit@20 on the other folds; a tie
 goes to the larger suffix value, the one closer to the baseline, then to the variant listed first in --methods.
@@ -29,7 +29,7 @@ analyze_mtm = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(analyze_mtm)
 
 SEED, RESAMPLES, FOLDS = analyze_mtm.SEED, analyze_mtm.RESAMPLES, 4
-MEASURES = ("hit20", "recall20", "hit100", "mrr100")
+MEASURES = ("hit20", "recall20", "hit100", "mrr100", "hit200")
 
 
 def fold_of(query_id: str) -> int:
@@ -37,7 +37,11 @@ def fold_of(query_id: str) -> int:
 
 
 def per_query(meta: list[dict], ranks: dict[str, list[str]]) -> dict[str, dict[str, float]]:
-    return {q["id"]: analyze_mtm.metrics(ranks.get(q["id"], []), set(q["targets"])) for q in meta}
+    out = {}
+    for q in meta:
+        pool, gold = ranks.get(q["id"], []), set(q["targets"])
+        out[q["id"]] = {**analyze_mtm.metrics(pool, gold), "hit200": float(bool(set(pool[:200]) & gold))}
+    return out
 
 
 def compare(rows: dict[str, dict[str, float]], base: dict[str, dict[str, float]]) -> dict:
@@ -46,6 +50,8 @@ def compare(rows: dict[str, dict[str, float]], base: dict[str, dict[str, float]]
     return {"means": {m: round(sum(r[m] for r in rows.values()) / n, 4) for m in MEASURES},
             "new_gold100": round(sum(base[q]["hit100"] == 0 and r["hit100"] == 1 for q, r in rows.items()) / n, 4),
             "lost_gold100": round(sum(base[q]["hit100"] == 1 and r["hit100"] == 0 for q, r in rows.items()) / n, 4),
+            "new_gold200": round(sum(base[q]["hit200"] == 0 and r["hit200"] == 1 for q, r in rows.items()) / n, 4),
+            "lost_gold200": round(sum(base[q]["hit200"] == 1 and r["hit200"] == 0 for q, r in rows.items()) / n, 4),
             "minus_X_hit20": paired_cluster_bootstrap({q: r["hit20"] for q, r in rows.items()},
                                                       {q: r["hit20"] for q, r in base.items()}, ident,
                                                       resamples=RESAMPLES, seed=SEED)}
