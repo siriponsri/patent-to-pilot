@@ -1,0 +1,16 @@
+{
+  "sql_file": "tm06_device_sea_citation_edges.sql",
+  "sql_sha256": "05241b9f08e3b5f762957b6ee55be6d4ba3429b4ac7130da54f6e316813040ad",
+  "estimate_bytes": 33801102209,
+  "estimate_gib": 31.48,
+  "cap_gib": 34.0,
+  "status": "PASS",
+  "job_id": "79b05fec-deb9-4b21-b963-641be6177205",
+  "location": "US",
+  "bytes_processed": 33801102209,
+  "bytes_billed": 33801895936,
+  "cache_hit": false,
+  "rows": 1344435,
+  "seconds": 125.798,
+  "output_sha256": "c2218eea7bf4597f42ce11f71f421faaa3fe0a278b1abb3ba36d69555334ce44"
+}

@@ -1,0 +1,31 @@
+{
+  "format": "ptp-mtm-citation-probe-v1",
+  "split": "dev",
+  "excluded_citers": "query's own family and all benchmark query families",
+  "reach": {
+    "queries": 1985,
+    "reach": 0.3028,
+    "multi_target_queries": 892,
+    "cocitation_interconnection": 0.0314
+  },
+  "outside_corpus": {
+    "distinct_cited_families": 449168,
+    "in_corpus": 58086,
+    "outside_share": 0.8707
+  },
+  "popularity_null": {
+    "hit20": 0.0055,
+    "hit100": 0.0207,
+    "hit200": 0.0368
+  },
+  "gate": {
+    "rule": "reach >= 0.488 and popularity-null hit@200 < reach/2",
+    "reach": 0.3028,
+    "popularity_null_hit200": 0.0368,
+    "decision": "NO_GO"
+  },
+  "inputs_sha256": {
+    "tm06_device_sea_citation_edges.csv": "c2218eea7bf4597f42ce11f71f421faaa3fe0a278b1abb3ba36d69555334ce44",
+    "queries-meta.jsonl": "6d07052fc553909ecc8e02db79604ea413685e233a7d03a709e5b4f40a6ff9a8"
+  }
+}

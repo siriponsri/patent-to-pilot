@@ -6,14 +6,16 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 **Latest (8 Nov ~13:30 Bangkok; last pushed commit before this note: `9f2a847`):**
 - **9 Nov: the owner approved phase 3.** The order is in the [phase-3 audit](docs/healthtech/audits/ptp-medtech-tm-phase3-audit-20261109/README.md). 3a and 3b are declared in the methods log (`3792f6d`).
-  - **PHASE-3A PRF JOB RUNNING on the V100** (launched about 18:50 Bangkok; expected about 45 min).
+  - **PHASE-3A PRF JOB RUNNING on the V100** (launched 06:49 Bangkok, 23:49Z on 8 Nov; expected about 45 min).
     - Code: `git archive a29610b` into `$J/dev3a/code`. Script: `docs/healthtech/audits/ptp-medtech-tm-dev-phase3a-20261109/run_dev3a.sh`.
     - Check: `ssh chaw@100.77.149.83 'cat /home/chaw/patent-to-pilot-jobs/mtm-20261107/dev3a/logs/status.log'`.
     - When `all done` appears, copy `$J/dev3a/out/receipt-prf-*.json` and `$J/dev3a/analysis/dev-phase3a.json` into that audit folder, then write the README and the methods-log results.
     - The 5-query smoke test passed: prfK0-1.0 equals X in 4/4 views, and PRF changes 15–30% of the top 200.
-  - **3b probe: BLOCKED on the BigQuery cap.** The tm06 dry run estimates 31.48 GiB (sha256 `05241b9f…`), but the cap in `.env.bigquery` is 28.6 GiB. The owner must raise `PTP_BQ_MAX_BYTES_BILLED` to at least 32 GiB (34 GiB, as for tm02). The agent never reads or edits `.env.bigquery`.
-    - Run command: `C:/Users/User/.ptp-scout-venv/Scripts/python scripts/healthtech/bq_probe.py run --sql-file scripts/healthtech/sql/tm06_device_sea_citation_edges.sql --output ../_private_artifacts/healthtech/medtech-time-machine/tm06_device_sea_citation_edges.csv`.
-    - The analysis script `analyze_mtm_citation_probe.py` is still to be written.
+  - **3b probe done: NO_GO** ([audit](docs/healthtech/audits/ptp-medtech-tm-dev-phase3b-20261109/README.md)).
+    - The owner raised the cap to 34 GiB. tm06 billed 33.8 GB, producing 1,344,435 edges.
+    - Reach is 30.3%, below the 48.8% gate, so **3c is not built**.
+    - Co-citation inter-connection is 3.1%. The popularity null reaches 3.7% at hit@200, so the corpus enrichment is not trivially exploitable.
+    - 87% of the cited families are outside the corpus.
   - **The owner's IEEE paper** is to be presented on 19–21 Nov 2026; no DOI yet. The data licence (Google Patents Public Data, CC BY 4.0) is confirmed and recorded in the methods log.
 - **9 Nov owner decisions:**
   - **GPU window extended to 31 Dec 2026 16:59 UTC** (`local_execution.py`, its test and AUTHORIZATION_AND_BUDGET.md). Runs need a fresh `git archive` that includes this change.

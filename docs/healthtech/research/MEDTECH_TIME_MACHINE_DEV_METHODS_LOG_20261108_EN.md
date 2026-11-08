@@ -280,3 +280,18 @@ A first-stage method counts as changing exposure only if hit@100 or hit@200 chan
   - Google Patents Public Data (`patents-public-data.patents.publications`) is provided by IFI CLAIMS Patent Services and Google under CC BY 4.0. Source: <https://github.com/google/patents-public-data/blob/master/tables/dataset_Google%20Patents%20Public%20Datasets.md#patents-public-datapatentspublications>.
   - Any release must give the attribution, the licence link, the table, the retrieval dates and the modifications.
   - The data licence grants no rights to patented inventions.
+
+### Phase 3b gating probe, run 9 Nov 2026 (BigQuery tm06 plus dr-train CPU analysis at `50eec39`)
+
+[Audit](../audits/ptp-medtech-tm-dev-phase3b-20261109/README.md).
+
+| Measure | Value |
+|---|---|
+| Reach | 30.3% |
+| Co-citation inter-connection | 3.1% |
+| Popularity null (hit@20 / @100 / @200) | 0.6 / 2.1 / 3.7% |
+| Outside-corpus share | 87.1% |
+
+**Gate: NO_GO.** Reach 30.3% is below 48.8%, so 3c (citation chasing) is not built.
+
+The popularity null is far below X, so the corpus enrichment is not trivially exploitable.
