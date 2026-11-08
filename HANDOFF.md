@@ -4,23 +4,30 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 8 Nov 2026 (read this first)
 
-**Latest (8 Nov ~11:40 Bangkok):**
+**Latest (8 Nov ~12:50 Bangkok):**
 - **The MTM baseline job is done** (`all done` 01:14Z, every step exit=0). Test rankings for P/T/A are recorded, label-free and **not scored**: [test-rankings audit](docs/healthtech/audits/ptp-medtech-tm-test-rankings-20261108/README.md).
 - **The owner approved phase 1 of the dev methods (8 Nov)**, after reviewing a ChatGPT Deep Research report.
   - The methods are declared before any run in the [methods log](docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md): V1 BM25, V2 calibrated BM25 + dense hybrid (λ by 4-fold CV), V3 zero-shot `BAAI/bge-reranker-v2-m3`.
   - Code is pushed at `2feec03`; the reranker was downloaded to dr-train at revision `953dc6f6…`.
-- **PHASE-1 JOB RUNNING on the V100** (started 04:35Z, expected about 1.5–2 h).
-  - Job dir: `J/dev1` (`J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`); code from `git archive 2feec03`.
-  - Script: `docs/healthtech/audits/ptp-medtech-tm-dev-phase1-20261108/run_dev1.sh`. It runs hybrid P-dev and T-dev, then ce P-dev and T-dev, then the analysis to `$J/dev1/analysis/dev-phase1.json`.
-  - Check: `ssh chaw@100.77.149.83 'cat /home/chaw/patent-to-pilot-jobs/mtm-20261107/dev1/logs/status.log'`.
-  - When `all done` appears:
-    1. copy the receipts (`$J/dev1/out/receipt-*.json`, `$J/dev1/out/ce/receipt-*.json`) and `dev-phase1.json` to that audit folder;
-    2. write its README;
-    3. append the results to the methods log;
-    4. push, then report.
-  - No retries. A failed step: report it, do not overwrite.
-- The smoke test passed: λ = 1 reproduces the baseline X order exactly.
-- Test stays sealed. Phase 2 (a Qwen reranker and others) needs its own methods-log entry and owner go-ahead.
+- **PHASE 1 IS DONE (8 Nov 12:35 Bangkok)**: all done 05:35Z, every step exit=0. See the [phase-1 audit](docs/healthtech/audits/ptp-medtech-tm-dev-phase1-20261108/README.md); results are appended to the methods log.
+  - **The result is null/negative on the primary view (P/main, hit@20, X = 0.180):**
+
+    | Method | Δ vs X |
+    |---|---|
+    | BM25 | −0.143 |
+    | Hybrid, CV out of fold (λ 0.9) | +0.005 [−0.004, +0.014] |
+    | bge-reranker zero-shot | −0.036 [−0.052, −0.021] |
+
+  - The hybrid helps query view T a little; the CV lower bound is above 0 in 3 sensitivity views.
+  - No GPU job is running. The dr-train rankings stay in `$J/dev1/out` (`J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`).
+- **Next, waiting on the owner:**
+  1. Decide whether to carry anything from phase 1 to test. The recommendation is no, given the low power.
+  2. Approve phase 2. Candidates:
+     - a mechanism/function query channel;
+     - a Qwen3-8B reranker with a cross-field-aware prompt;
+     - dev-supervised adaptation, after a dev/test target-overlap check.
+  3. Each phase-2 method needs a methods-log entry before it runs.
+- Test stays sealed.
 
 Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 

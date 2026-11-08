@@ -69,3 +69,22 @@ These settings are shared by every phase-1 entry.
 ## Results
 
 Each result is appended here with its audit link once its run ends.
+
+### Phase 1 (V1–V3), run 8 Nov 2026 04:35Z–05:35Z, code `2feec03`
+
+[Audit](../audits/ptp-medtech-tm-dev-phase1-20261108/README.md). Every step exit=0, with no retries. λ = 1.0 reproduced the baseline exactly. Settings were as declared above.
+
+The table shows query view P, corpus view main, hit@20, as method − X with a 95% bootstrap CI. X = 0.180.
+
+| Entry | Δ hit@20 | new@100 / lost@100 | Outcome |
+|---|---|---|---|
+| V1 BM25 | −0.143 [−0.160, −0.126] | 0.013 / 0.255 | negative |
+| V2 hybrid, CV out of fold (λ 0.9 in all 4 folds) | +0.005 [−0.004, +0.014] | 0.021 / 0.011 | null |
+| V3 bge-reranker-v2-m3, top 100 | −0.036 [−0.052, −0.021] | 0 / 0 by design | negative |
+
+Other views:
+
+- **T/main:** V2 CV +0.006 [−0.004, +0.016]; V3 −0.005 [−0.017, +0.008].
+- **V2 CV on T in the small, matched and uniform views:** the lower bound is above 0. These are not primary.
+
+No phase-1 entry meets the §9 bar on the primary view. Carrying any of them to test needs an owner decision.
