@@ -101,7 +101,7 @@ def test_gpu_index_or_multiple_devices_cannot_replace_uuid(visible):
 
 def test_expired_allocation_is_not_refreshed():
     with pytest.raises(RuntimeError, match="window"):
-        check_local_window(now=datetime(2026, 11, 30, 16, 59, tzinfo=timezone.utc), visible=APPROVED_GPU_UUID)
+        check_local_window(now=datetime(2026, 12, 31, 16, 59, tzinfo=timezone.utc), visible=APPROVED_GPU_UUID)
 
 
 def test_existing_local_receipt_never_overwritten(tmp_path, monkeypatch):

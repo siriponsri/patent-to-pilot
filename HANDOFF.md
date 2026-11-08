@@ -5,6 +5,11 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 ## Agent takeover state — 8 Nov 2026 (read this first)
 
 **Latest (8 Nov ~13:30 Bangkok; last pushed commit before this note: `9f2a847`):**
+- **9 Nov owner decisions:**
+  - **GPU window extended to 31 Dec 2026 16:59 UTC** (`local_execution.py`, its test and AUTHORIZATION_AND_BUDGET.md). Runs need a fresh `git archive` that includes this change.
+  - Phase 3 is **not approved yet**. First, the owner asked for a full audit of the plan and current results, plus a literature search.
+  - Phase-3 draft: 3a vector PRF, 3b BigQuery citation-reuse probe, 3c citation chasing, 3d time-safe citation fine-tune, 3e combined system; DAPFAM as a secondary benchmark.
+  - The 3d encoder choice (PatEmbed, NC licence, vs Apache Qwen3-Emb) is open.
 - **The MTM baseline job is done.** Test rankings for P/T/A are recorded and **not scored**: [test-rankings audit](docs/healthtech/audits/ptp-medtech-tm-test-rankings-20261108/README.md).
 - **Phase 1 ran (V1 BM25, V2 hybrid, V3 bge-reranker; every step exit=0) but is DEFECTIVE.**
   - **The defect:** the PatEmbed query prefix `encode query for different document retrieval: ` leaked into the BM25 tokens (`run_mtm_hybrid.py:168`) and into the reranker input (`run_mtm_rerank_ce.py:66`). The dense side is unaffected.
