@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "entries": [
+    "V4/V5 dense fusion"
+  ],
+  "labels": [
+    "llmN",
+    "llmC"
+  ],
+  "lambdas": [
+    0.0,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "top": 30,
+  "view": "main",
+  "lane": "X",
+  "normalisation": "per-query z over the baseline head",
+  "queries": 1985,
+  "lambda1_reproduces_baseline_head": 1985,
+  "queries_without_method_scores": 0,
+  "inputs_sha256": {
+    "corpus.jsonl": "4d29bd8136e2a838e9a12e0907e0951dc029ca6f9b22ba7eae1da21bb5c618a6",
+    "queries-P-dev.jsonl": "f1af63a4396447e947e64f36e905f9a4a90aafc0e18cacb72247e2f89ba59e67",
+    "rankings-main-X-P-dev.jsonl": "4f0d9c72cb9c81c2d41f38f2a3f1ca78c984fabf0c7c4fef6940f19b9d1f3165",
+    "passage-vectors-f32.npy": "8bb35abadf1df98c916eb495997214a225f280fbc2ae4979ca09b9d6ec56330b",
+    "llmN-scores-P-dev.jsonl": "5b7aa68d6bbd6f6e4ea14dced479397382752df4dd4f81bb2455ca495dc7302a",
+    "llmC-scores-P-dev.jsonl": "50738bc6e50449c084f1ffb56acc9ea7e09dc15672ecb2b599af195129b46867"
+  },
+  "rankings_sha256": {
+    "llmN-0.0/rankings-main-X-P-dev.jsonl": "c3be751314b9c0858d868a044c995f38beb5c494e8718c0607d2d3480698aa3e",
+    "llmN-0.5/rankings-main-X-P-dev.jsonl": "7dca213596baf428072ef8f9725ce865bff2febc19cf769bb9ec549ea1f7d6d9",
+    "llmN-0.6/rankings-main-X-P-dev.jsonl": "9e059ba025d3ac8d794b9ba860041302cd565716c1f1abc302a3eb07aba89b9f",
+    "llmN-0.7/rankings-main-X-P-dev.jsonl": "7fa6cf9561ba62ec80b437ba33b4dd31ea362278de161cd6da24ab25f073ba39",
+    "llmN-0.8/rankings-main-X-P-dev.jsonl": "6779153adb33df759354f8adde674ef81f163a35f1865406375f69a411619caf",
+    "llmN-0.9/rankings-main-X-P-dev.jsonl": "d1a5eaf397bf83e89b9851f437636f7e397a328a389f766e80c3607d3281b40b",
+    "llmN-1.0/rankings-main-X-P-dev.jsonl": "4f0d9c72cb9c81c2d41f38f2a3f1ca78c984fabf0c7c4fef6940f19b9d1f3165",
+    "llmC-0.0/rankings-main-X-P-dev.jsonl": "dc2122cc4bf97a5d9bb60d3624a3934b27aaec6cad3b78f2a2d520a327add90d",
+    "llmC-0.5/rankings-main-X-P-dev.jsonl": "7832cd412e65aaf4bf1273ea484e4b8fa35bcc6de6f412c0cf5af9dfa9d93ce7",
+    "llmC-0.6/rankings-main-X-P-dev.jsonl": "b84ba47ad21c2ddb0a8feef61a6e8c4db3d5cc7ace56d94111227cc1a3398b0a",
+    "llmC-0.7/rankings-main-X-P-dev.jsonl": "7482d6c5999a864fc7acda76838f53919d7b6409e39bfebddd292604332c539a",
+    "llmC-0.8/rankings-main-X-P-dev.jsonl": "3e6bac9c9b9e56fc105585c8b1ee0080f14e5662f6bd63aa2664901454f99f0e",
+    "llmC-0.9/rankings-main-X-P-dev.jsonl": "03521a717875b8072195a2f98fb5aa979c7c5f736e55b6fd261acb8be5fe3085",
+    "llmC-1.0/rankings-main-X-P-dev.jsonl": "4f0d9c72cb9c81c2d41f38f2a3f1ca78c984fabf0c7c4fef6940f19b9d1f3165"
+  },
+  "seconds": 56.155,
+  "gpu": "Tesla V100-SXM2-32GB",
+  "torch": "2.8.0+cu128",
+  "labels_used": false
+}

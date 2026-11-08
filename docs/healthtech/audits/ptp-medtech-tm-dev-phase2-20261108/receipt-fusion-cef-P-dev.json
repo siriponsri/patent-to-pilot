@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "entries": [
+    "V4/V5 dense fusion"
+  ],
+  "labels": [
+    "cef"
+  ],
+  "lambdas": [
+    0.0,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "top": 100,
+  "view": "main",
+  "lane": "X",
+  "normalisation": "per-query z over the baseline head",
+  "queries": 1985,
+  "lambda1_reproduces_baseline_head": 1985,
+  "queries_without_method_scores": 0,
+  "inputs_sha256": {
+    "corpus.jsonl": "4d29bd8136e2a838e9a12e0907e0951dc029ca6f9b22ba7eae1da21bb5c618a6",
+    "queries-P-dev.jsonl": "f1af63a4396447e947e64f36e905f9a4a90aafc0e18cacb72247e2f89ba59e67",
+    "rankings-main-X-P-dev.jsonl": "4f0d9c72cb9c81c2d41f38f2a3f1ca78c984fabf0c7c4fef6940f19b9d1f3165",
+    "passage-vectors-f32.npy": "8bb35abadf1df98c916eb495997214a225f280fbc2ae4979ca09b9d6ec56330b",
+    "ce-scores-P-dev.jsonl": "e0ad7a17c2ff5cde6f4de567d1e42b90fdfad6fdf54107b8afe6524b0081f343"
+  },
+  "rankings_sha256": {
+    "cef-0.0/rankings-main-X-P-dev.jsonl": "8e0dfb8e0423544ef0552ea80a2b3b1524654d4c8cbd26db8b02a100914cecec",
+    "cef-0.5/rankings-main-X-P-dev.jsonl": "421e6e1d67b9a507b7e704c753969f4c8a8ab26fb51f93f8543bb770c231976f",
+    "cef-0.6/rankings-main-X-P-dev.jsonl": "10704f9aa4da60512e129313d5292c91198cb247904031cb5e0c8a2f42db14e2",
+    "cef-0.7/rankings-main-X-P-dev.jsonl": "952184a87fe1012395f01b123cad52fea78bd163860f5d127eb395ce243383ee",
+    "cef-0.8/rankings-main-X-P-dev.jsonl": "ed66539be2c2bfb8d2f7b54d79c20ba01d993a304ba069fa5a38a7d7096ed2fe",
+    "cef-0.9/rankings-main-X-P-dev.jsonl": "58918701f2ed03d2d9f372697769b743727c3494885eecac19d8277a9972e3d2",
+    "cef-1.0/rankings-main-X-P-dev.jsonl": "4f0d9c72cb9c81c2d41f38f2a3f1ca78c984fabf0c7c4fef6940f19b9d1f3165"
+  },
+  "seconds": 55.192,
+  "gpu": "Tesla V100-SXM2-32GB",
+  "torch": "2.8.0+cu128",
+  "labels_used": false
+}

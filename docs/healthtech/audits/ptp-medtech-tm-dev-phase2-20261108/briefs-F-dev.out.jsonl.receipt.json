@@ -1,0 +1,22 @@
+{
+  "status": "PARTIAL",
+  "prompt_version": "ptp-solution-scout-v1",
+  "model_dir": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/qwen3-8b",
+  "input_sha256": "c255c7b59057490d2395b7b0082c6e20b167874b186692fa09ba1d72e5670d81",
+  "output_sha256": "ecce57d15716de4a626d8772d676208b188394747a4567696c93e18d418b38ff",
+  "queries": 1985,
+  "calls": 1985,
+  "failed_calls": 4,
+  "truncated_calls": 0,
+  "retries": 0,
+  "prompt_tokens": 375959,
+  "output_tokens": 88816,
+  "generation_seconds": 6642.871,
+  "mean_latency_seconds": 3.347,
+  "load_seconds": 4.244,
+  "peak_gpu_memory_bytes": 16450472448,
+  "gpu": "Tesla V100-SXM2-32GB",
+  "torch": "2.8.0+cu128",
+  "decoding": "greedy, fp16, eager attention",
+  "labels_used": false
+}

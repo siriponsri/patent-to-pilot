@@ -201,3 +201,25 @@ The table shows query view P, corpus view main, hit@20, as method − X with a 9
 Secondary result, query view T: V2b CV gives +0.014 [+0.008, +0.021] on main. Its lower bound is above 0 in all 4 corpus views. T is not the primary view.
 
 Under the fixed rule, no phase-1b entry is eligible for carry-forward.
+
+### Phase 2 (V4–V6), run 8 Nov 2026 06:55Z–11:53Z, code `2691931`, PROMPTS=N,C
+
+[Audit](../audits/ptp-medtech-tm-dev-phase2-20261108/README.md). Every step exit=0, with no retries. λ = 1 reproduced the baseline head for 1,985/1,985 queries in every fusion. V6 generation failed for 4 of 1,985 queries, which were scored as X.
+
+The table shows query view P, corpus view main, hit@20, as method − X with a 95% bootstrap CI. X = 0.180.
+
+| Entry | CV choice | Δ hit@20, out of fold | Outcome |
+|---|---|---|---|
+| V4 Qwen3-8B yes/no, top 30, fused | R-neutral λ 0.5 in all 4 folds | **+0.017 [+0.010, +0.025]** | **eligible** |
+| V5 bge reranker fused with dense | λ 0.7, 0.6, 0.7, 0.6 (full dev 0.6) | +0.007 [−0.001, +0.015] | not eligible |
+| V6 function channel fused with P | λ 0.9 in all 4 folds | −0.003 [−0.007, +0.002] | not eligible |
+
+Results without fusion:
+
+- V4 R-neutral alone: +0.012 [+0.003, +0.020].
+- V4 R-cross alone: +0.003 [−0.007, +0.013].
+- V6 function channel alone: −0.081.
+
+Secondary result: V5 on T/main gives +0.015 [+0.008, +0.023].
+
+**Carry-forward candidate (needs the owner's freeze):** V4 with R-neutral, X top 30 and λ 0.5. It is the only eligible method, so Holm needs no adjustment.

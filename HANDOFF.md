@@ -17,23 +17,19 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 - **The V4 smoke test passed** (300 pairs, `$J/smoke-p2`): N 13.9 pairs/s, C 13.0 pairs/s.
   - Projected time is 1.2 h + 1.3 h = 2.5 h, under the 8 h limit, so **PROMPTS=N,C**.
   - The scores are not degenerate.
-- **PHASE-2 JOB RUNNING on the V100** (launched about 14:05 Bangkok; expected about 5.5 h). The steps:
-  1. V5 fusion for P and T;
-  2. V4 scoring of 2 × 59,550 pairs;
-  3. V4 fusion;
-  4. V6 F generation (about 2.4 h), F queries, F channel;
-  5. analysis.
-  - Job dir: `$J/dev2` (`J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`); code from `git archive 2691931`.
-  - Script: `docs/healthtech/audits/ptp-medtech-tm-dev-phase2-20261108/run_dev2.sh`.
-  - Check: `ssh chaw@100.77.149.83 'cat /home/chaw/patent-to-pilot-jobs/mtm-20261107/dev2/logs/status.log'`.
-  - When `all done` appears, copy into that audit folder:
-    - `$J/dev2/out/receipt-*.json`;
-    - `$J/dev2/private/receipt-rerank-llm-P-dev.json`;
-    - `$J/dev2/private/briefs-F-dev.out.jsonl.receipt.json`;
-    - `$J/dev2/analysis/dev-phase2.json`.
-
-    Then write the README and the methods-log results, and push. The private score and text files stay on dr-train.
-  - No retries. A failed step: report it, do not overwrite.
+- **Phase 2 is done** (11:53Z, every step exit=0): [phase-2 audit](docs/healthtech/audits/ptp-medtech-tm-dev-phase2-20261108/README.md).
+  - **V4 (Qwen3-8B yes/no on the X top 30, fused with dense, R-neutral, λ 0.5) beats X on P/main.** Out of fold: +0.017 [+0.010, +0.025], hit@20 0.180 → 0.197. It is the only eligible method.
+  - V5 bge + dense: +0.007 [−0.001, +0.015], not eligible.
+  - V6 function channel: −0.003, not eligible.
+  - The R-cross prompt was weaker than R-neutral.
+  - No GPU job is running.
+- **Waiting on the owner:**
+  1. Freeze V4 (R-neutral, top 30, λ 0.5) for the single test read, or run more dev methods first. Once test is read, no new methods can be added.
+  2. If frozen:
+     - allow test mode in `run_mtm_rerank_llm.py` and `run_mtm_fusion.py` (a reviewed change);
+     - score the test X top 30 with prompt N only (about 1.3 h);
+     - fuse at λ 0.5;
+     - run one test analysis per rules §14 (X vs V4, Holm with 1 method).
 - Test stays sealed.
 
 Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.

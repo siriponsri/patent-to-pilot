@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "entry": "V4 Qwen3-8B pointwise yes/no",
+  "prompt_version": "ptp-mtm-rerank-llm-v1",
+  "prompts_sha256": {
+    "N": "4c8942202721a29f6af941d437e6ac77081ce7eafe579411337da14dc9520180",
+    "C": "6d5feb5bfb0fbd423c13adad997aef3b6211a368030aa3111fc1e8dad03758f7"
+  },
+  "system_sha256": "454c9569041a59461854cdc6529b5e14d7da0e11c74542f95e90503db53c172d",
+  "model_dir": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/qwen3-8b",
+  "weights_sha256": {
+    "model-00001-of-00005.safetensors": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+    "model-00002-of-00005.safetensors": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+    "model-00003-of-00005.safetensors": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+    "model-00004-of-00005.safetensors": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+    "model-00005-of-00005.safetensors": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff"
+  },
+  "answer_token_ids": {
+    "yes": [
+      9693,
+      9454
+    ],
+    "no": [
+      2152,
+      2753
+    ]
+  },
+  "thinking": false,
+  "dtype": "float16",
+  "attention": "sdpa",
+  "candidate_text": "title. first 200 abstract words",
+  "query": "dense instruction prefix stripped",
+  "top": 30,
+  "view": "main",
+  "lane": "X",
+  "pairs": 59550,
+  "full_pairs": 59550,
+  "smoke": false,
+  "prompt_tokens": 36657850,
+  "queries": 1985,
+  "inputs_sha256": {
+    "corpus.jsonl": "4d29bd8136e2a838e9a12e0907e0951dc029ca6f9b22ba7eae1da21bb5c618a6",
+    "queries-P-dev.jsonl": "f1af63a4396447e947e64f36e905f9a4a90aafc0e18cacb72247e2f89ba59e67",
+    "rankings-main-X-P-dev.jsonl": "4f0d9c72cb9c81c2d41f38f2a3f1ca78c984fabf0c7c4fef6940f19b9d1f3165"
+  },
+  "scores_sha256": {
+    "llmN-scores-P-dev.jsonl": "5b7aa68d6bbd6f6e4ea14dced479397382752df4dd4f81bb2455ca495dc7302a",
+    "llmC-scores-P-dev.jsonl": "50738bc6e50449c084f1ffb56acc9ea7e09dc15672ecb2b599af195129b46867"
+  },
+  "timings": {
+    "N_seconds": 4827.884,
+    "N_pairs_per_second": 12.33,
+    "C_seconds": 5225.536,
+    "C_pairs_per_second": 11.4
+  },
+  "peak_gpu_memory_bytes": 18331650048,
+  "gpu": "Tesla V100-SXM2-32GB",
+  "torch": "2.8.0+cu128",
+  "labels_used": false
+}
