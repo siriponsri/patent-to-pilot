@@ -6,7 +6,8 @@ For each (query view, corpus view) and method, it reports hit@20, recall@20, hit
 It also gives method - X on hit@20 by paired query bootstrap (5,000 resamples, seed 20261107).
 For a method family sharing --cv-prefix (e.g. hyb-0.5 ... hyb-0.9), it adds 4-fold cross-validation. A query's fold
 is int(sha256(query_id)[:8], 16) % 4. Each fold uses the variant with the best mean hit@20 on the other folds; a tie
-goes to the larger suffix value, the one closer to the baseline. It reports the out-of-fold hit@20 and its contrast
+goes to the larger suffix value, the one closer to the baseline, then to the variant listed first in --methods.
+--cv-prefix may list several groups (phase 2: e.g. llm,cef,fch); the suffix is the number after the last '-'. It reports the out-of-fold hit@20 and its contrast
 with X, and the full-dev choice under the same rule. Writes aggregates only and refuses to overwrite.
 """
 from __future__ import annotations
@@ -51,7 +52,8 @@ def compare(rows: dict[str, dict[str, float]], base: dict[str, dict[str, float]]
 
 
 def _suffix(name: str, prefix: str) -> float:
-    return float(name[len(prefix):])
+    """The lambda after the last '-' (hyb-0.9 -> 0.9; llmC-0.9 -> 0.9 under the joint prefix 'llm')."""
+    return float(name.rsplit("-", 1)[1])
 
 
 def choose(variants: dict[str, dict[str, dict[str, float]]], queries: list[str], prefix: str) -> str:
@@ -85,7 +87,7 @@ def main() -> int:
     parser.add_argument("--split", choices=("dev",), default="dev")
     parser.add_argument("--query-views", default="P,T")
     parser.add_argument("--corpus-views", default="main,small,matched,uniform")
-    parser.add_argument("--cv-prefix", default="")
+    parser.add_argument("--cv-prefix", default="", help="comma list; each prefix is one CV group")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.output.exists():
@@ -107,16 +109,23 @@ def main() -> int:
             rows = {m: per_query(meta, analyze_mtm._rankings(p)) for m, p in paths.items()}
             cell = {"queries": len(meta), "baseline_X": {m: round(sum(r[m] for r in base.values()) / len(base), 4) for m in MEASURES},
                     "methods": {m: compare(r, base) for m, r in rows.items()}}
-            family = {m: r for m, r in rows.items() if args.cv_prefix and m.startswith(args.cv_prefix)
-                      and _suffix(m, args.cv_prefix) < 1.0}
-            if family:
-                cell["cv"] = cross_validate(family, base, args.cv_prefix)
+            prefixes = [x for x in args.cv_prefix.split(",") if x]
+            groups = {}
+            for prefix in prefixes:
+                family = {m: r for m, r in rows.items() if m.startswith(prefix) and _suffix(m, prefix) < 1.0}
+                if family:
+                    groups[prefix] = cross_validate(family, base, prefix)
+            if len(prefixes) == 1 and groups:
+                cell["cv"] = groups[prefixes[0]]
+            elif groups:
+                cell["cv_groups"] = groups
             result["results"][f"{qv}|{cv}"] = cell
     result["inputs_sha256"] = {args.queries_meta.name: hashlib.sha256(args.queries_meta.read_bytes()).hexdigest(), **hashes}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: {"X": v["baseline_X"]["hit20"], **{m: c["means"]["hit20"] for m, c in v["methods"].items()},
-                          **({"cv_oof": v["cv"]["means"]["hit20"]} if "cv" in v else {})}
+                          **({"cv_oof": v["cv"]["means"]["hit20"]} if "cv" in v else {}),
+                          **{f"cv_oof_{g}": c["means"]["hit20"] for g, c in v.get("cv_groups", {}).items()}}
                       for k, v in result["results"].items()}, indent=1))
     return 0
 

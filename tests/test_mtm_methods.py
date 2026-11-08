@@ -88,3 +88,30 @@ def test_dense_prefix_is_stripped_for_bm25_and_rerankers_only():
     assert hybrid.tokenize(hybrid.strip_prefix(stored)) == ["intravenous", "stand"]
     assert rerank.query_text(stored) == "Intravenous stand"
     assert hybrid.strip_prefix("Intravenous stand") == "Intravenous stand"
+
+
+fusion = _load("run_mtm_fusion")
+llm = _load("run_mtm_rerank_llm")
+
+
+def test_fuse_head_lambda_one_keeps_dense_order_and_zero_uses_method():
+    fams = ["a", "b", "c", "d"]
+    dense, method = [0.9, 0.5, 0.1], [0.0, 1.0, 2.0]
+    assert fusion.fuse_head(fams, dense, method, 1.0, 3) == ["a", "b", "c", "d"]
+    assert fusion.fuse_head(fams, dense, method, 0.0, 3) == ["c", "b", "a", "d"]
+    assert fusion.fuse_head(fams, [1.0, 1.0, 1.0], [1.0, 1.0, 1.0], 0.5, 3) == fams
+
+
+def test_joint_cv_over_prompts_uses_number_after_last_dash():
+    base = _rows({"q1": (0, 0), "q2": (0, 0)})
+    good = _rows({"q1": (1, 1), "q2": (1, 1)})
+    assert methods.choose({"llmN-0.5": base, "llmC-0.9": good, "llmC-0.5": good}, ["q1", "q2"], "llm") == "llmC-0.9"
+    assert methods._suffix("hyb-0.7", "hyb-") == 0.7
+
+
+def test_llm_prompts_and_candidate_text_are_frozen():
+    assert set(llm.PROMPTS) == {"N", "C"} and "different technical field" in llm.PROMPTS["C"]
+    row = {"title": "Jaw  tool", "abstract": " ".join(["w"] * 250)}
+    assert llm.candidate_text(row) == "Jaw tool. " + " ".join(["w"] * 200)
+    msgs = llm.messages("sys", "N", "a problem", "a patent")
+    assert msgs[0] == {"role": "system", "content": "sys"} and "Problem: a problem" in msgs[1]["content"]

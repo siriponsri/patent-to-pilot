@@ -143,6 +143,8 @@ def main() -> int:
     parser.add_argument("--name", required=True, help="query view label, e.g. P-dev")
     parser.add_argument("--views", default="main,small,matched,uniform")
     parser.add_argument("--lambdas", default="0.5,0.6,0.7,0.8,0.9,1.0")
+    parser.add_argument("--channel-queries", type=Path, help="V6: a second dense query file replaces BM25")
+    parser.add_argument("--method-prefix", default="hyb")
     args = parser.parse_args()
     if args.name.endswith("-test"):
         raise SystemExit("phase-1 methods run on dev only")
@@ -153,9 +155,10 @@ def main() -> int:
     dapfam_dense = dense_pool.dapfam_dense
     views = args.views.split(",")
     lambdas = [float(x) for x in args.lambdas.split(",")]
-    methods = ["bm25"] + [f"hyb-{lam:.1f}" for lam in lambdas]
+    prefix = args.method_prefix
+    methods = ([] if args.channel_queries else ["bm25"]) + [f"{prefix}-{lam:.1f}" for lam in lambdas]
     outputs = {(m, v): args.output_dir / m / f"rankings-{v}-X-{args.name}.jsonl" for m in methods for v in views}
-    receipt_path = args.output_dir / f"receipt-hybrid-{args.name}.json"
+    receipt_path = args.output_dir / f"receipt-{'hybrid' if prefix == 'hyb' else prefix}-{args.name}.json"
     if receipt_path.exists() or any(p.exists() for p in outputs.values()):
         raise SystemExit("output exists: refusing to overwrite")
     if dapfam_dense._sha256(args.model_dir / "model.safetensors") != dapfam_dense.MODEL_SAFETENSORS_SHA256:
@@ -172,14 +175,18 @@ def main() -> int:
     owner = []
     for i, row in enumerate(corpus):
         owner += [i] * len(dense_pool.dense_passages(row["title"], row["abstract"], row["claims"]))
-    vocab, weights = build_bm25(tokenize(" ".join((r["title"], r["abstract"], r["claims"]))) for r in corpus)
-    weights_t = weights.T.tocsr()
-    lexical = [strip_prefix(q["text"]) for q in queries]
-    if any(t.startswith("encode query") for t in lexical):
-        raise SystemExit("query prefix still present after strip")
-    qmatrix = query_matrix([tokenize(t) for t in lexical], vocab)
-    stripped_sha = hashlib.sha256("".join(t + "\n" for t in lexical).encode("utf-8")).hexdigest()
-    timings["bm25_index_seconds"] = round(time.time() - started, 3)
+    channel = None
+    if args.channel_queries:
+        channel = {q["id"]: q["text"] for q in dapfam_dense._read_jsonl(args.channel_queries, None)}
+    else:
+        vocab, weights = build_bm25(tokenize(" ".join((r["title"], r["abstract"], r["claims"]))) for r in corpus)
+        weights_t = weights.T.tocsr()
+        lexical = [strip_prefix(q["text"]) for q in queries]
+        if any(t.startswith("encode query") for t in lexical):
+            raise SystemExit("query prefix still present after strip")
+        qmatrix = query_matrix([tokenize(t) for t in lexical], vocab)
+        stripped_sha = hashlib.sha256("".join(t + "\n" for t in lexical).encode("utf-8")).hexdigest()
+        timings["bm25_index_seconds"] = round(time.time() - started, 3)
     visible_from = np.array([r["visible_from"] for r in corpus], dtype=np.int64)
     position = {f: i for i, f in enumerate(ids)}
     members: dict[str, list[int]] = {}
@@ -199,35 +206,57 @@ def main() -> int:
         qvec = torch.from_numpy(encoder.encode([q["text"] for q in queries])).to("cuda")
         matrix = torch.from_numpy(vectors).to("cuda")
         family_index = torch.tensor(owner, dtype=torch.int64, device="cuda")
+        if channel is not None:
+            with_channel = [q["id"] for q in queries if q["id"] in channel]
+            channel_row = {qid: i for i, qid in enumerate(with_channel)}
+            cvec = torch.from_numpy(encoder.encode([channel[qid] for qid in with_channel])).to("cuda")
+
+        def family_scores(vec):
+            best = torch.full((len(ids),), -float("inf"), device="cuda")
+            best.scatter_reduce_(0, family_index, (vec @ matrix.T)[0], reduce="amax", include_self=True)
+            return best.cpu().numpy()
+
         handles = {k: p.open("w", encoding="utf-8") for k, p in outputs.items()}
         try:
             for start in range(0, len(queries), 64):
-                bm_block = (qmatrix[start:start + 64] @ weights_t).toarray().astype(np.float32)
-                for offset, bm_all in enumerate(bm_block):
+                if channel is None:
+                    second_block = (qmatrix[start:start + 64] @ weights_t).toarray().astype(np.float32)
+                else:
+                    second_block = [family_scores(cvec[channel_row[q["id"]]:channel_row[q["id"]] + 1])
+                                    if q["id"] in channel_row else None for q in queries[start:start + 64]]
+                for offset, bm_all in enumerate(second_block):
                     qi = start + offset
                     q = queries[qi]
                     m = meta[q["id"]]
-                    best = torch.full((len(ids),), -float("inf"), device="cuda")
-                    best.scatter_reduce_(0, family_index, (qvec[qi:qi + 1] @ matrix.T)[0], reduce="amax", include_self=True)
-                    dense_all = best.cpu().numpy()
+                    dense_all = family_scores(qvec[qi:qi + 1])
                     shared = sorted({i for code in m["c3"] for i in members.get(code, ())})
                     for v in views:
                         keep = dense_pool.keep_mask(visible_from, m["priority"], position.get(m["family_id"]), view_mask[v],
                                                     shared, "X")
                         dense = np.where(keep, dense_all, -np.inf)
-                        bm25 = np.where(keep, bm_all, -np.inf)
-                        ranked = {"bm25": topk(bm25, DEPTH, id_rank)}
-                        for lam, order in hybrid_order(dense, bm25, lambdas, id_rank).items():
-                            ranked[f"hyb-{lam:.1f}"] = order
+                        if bm_all is None:  # V6 query without a function text: scored as X
+                            ranked = {f"{prefix}-{lam:.1f}": topk(dense, DEPTH, id_rank) for lam in lambdas}
+                        else:
+                            bm25 = np.where(keep, bm_all, -np.inf)
+                            ranked = {} if channel is not None else {"bm25": topk(bm25, DEPTH, id_rank)}
+                            for lam, order in hybrid_order(dense, bm25, lambdas, id_rank).items():
+                                ranked[f"{prefix}-{lam:.1f}"] = order
                         for method, order in ranked.items():
                             handles[(method, v)].write(json.dumps({"query_id": q["id"], "families": [ids[i] for i in order]}) + "\n")
         finally:
             for handle in handles.values():
                 handle.close()
         timings["ranking_seconds"] = round(time.time() - started, 3)
-    receipt = {"status": "PASS", "entries": ["V1b bm25", "V2b hybrid"], "bm25": {"k1": K1, "b": B, "vocab": len(vocab),
-               "nnz": int(weights.nnz), "stopwords": "lucene-english-33", "stemming": False,
-               "query": "dense instruction prefix stripped", "stripped_queries_sha256": stripped_sha},
+    if channel is None:
+        second = {"entries": ["V1b bm25", "V2b hybrid"], "bm25": {"k1": K1, "b": B, "vocab": len(vocab),
+                  "nnz": int(weights.nnz), "stopwords": "lucene-english-33", "stemming": False,
+                  "query": "dense instruction prefix stripped", "stripped_queries_sha256": stripped_sha}}
+    else:
+        second = {"entries": [f"V6 dense channel ({prefix})"],
+                  "channel": {"queries_sha256": dapfam_dense._sha256(args.channel_queries),
+                              "queries_with_channel": len(channel_row),
+                              "queries_scored_as_X": len(queries) - len(channel_row)}}
+    receipt = {"status": "PASS", **second,
                "hybrid": {"union_depth": UNION_DEPTH, "lambdas": lambdas, "normalisation": "per-query z over union"},
                "dense": "PatEmbed-large MaxP, reused passage vectors", "families": len(ids), "queries": len(queries),
                "depth": DEPTH, "views": views, "lane": "X",

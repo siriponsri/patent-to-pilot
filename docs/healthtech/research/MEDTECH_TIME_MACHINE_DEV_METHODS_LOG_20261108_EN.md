@@ -122,6 +122,28 @@ Shared settings are as in phase 1: lane X, dev only, the same measures and boots
 - **Estimated time:** about 3.5 h of generation (about 6.3 s per call) plus about 10 min of search.
 - **Lowest priority:** V6 is dropped if the owner limits GPU time.
 
+### Approval and implementation notes (8 Nov 2026, written before any phase-1b or phase-2 run)
+
+- **Approval:** the owner approved phase 1b and phase 2 on 8 Nov 2026 ("Approve 1b + phase 2"). The DRAFT labels above now read as approved entries.
+- **Phase 1b code:** fixed at `14263c9`. The guard refuses to run if any stripped query still starts with `encode query`.
+- **CV and λ:**
+  - As in V2, λ = 1.0 is a sanity row only and is excluded from the CV choice.
+  - Each CV group is one entry: `llm` (both prompts jointly), `cef` (V5) and `fch` (V6).
+  - A tie goes to the larger λ, then to the variant listed first, R-neutral before R-cross.
+- **V4:**
+  - SDPA attention, fp16, batch 16, left padding, one forward pass per pair.
+  - The answer words must each be a single token; the run stops otherwise.
+  - The smoke test (300 pairs) runs on dev pairs. Its scores are not analysed.
+- **V5:** also runs on query view T, because the V3b scores exist for T. P/main stays primary.
+- **V6:** the λ grid includes 0, the function channel alone. A query whose function text fails scores as X.
+- **Code:**
+  - `run_mtm_rerank_llm.py` (V4 scores);
+  - `run_mtm_fusion.py` (V4/V5 fusion);
+  - `run_mtm_hybrid.py --channel-queries` (V6);
+  - `run_qwen_scout_actions.py generate --actions F` (V6 text);
+  - `analyze_mtm_methods.py --cv-prefix llm,cef,fch`.
+- **Job script:** `docs/healthtech/audits/ptp-medtech-tm-dev-phase2-20261108/run_dev2.sh`.
+
 ### Carry-forward rule for phases 1b and 2 (fixed now)
 
 - A method is eligible if its CV out-of-fold Δ hit@20 on P/main has a 95% lower bound > 0.

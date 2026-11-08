@@ -17,13 +17,13 @@ sys.path.insert(0, str(ROOT / "src"))
 from patent_to_pilot.evaluation.dapfam_acquisition import DENSE_QUERY_PREFIX  # noqa: E402
 
 
-def p_rows(lines) -> tuple[list[dict], int]:
+def p_rows(lines, key: str = "P") -> tuple[list[dict], int]:
     rows, failed = [], 0
     for line in lines:
         if not line.strip():
             continue
         record = json.loads(line)
-        brief = (record.get("P") or {}).get("parsed")
+        brief = (record.get(key) or {}).get("parsed")
         if brief:
             rows.append({"id": record["id"], "text": DENSE_QUERY_PREFIX + brief})
         else:
@@ -35,10 +35,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--generated", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--key", default="P", help="generated field to use: P, or F_P for the MTM V6 function text")
     args = parser.parse_args()
     if args.output.exists():
         raise SystemExit("output exists: refusing to overwrite")
-    rows, failed = p_rows(args.generated.read_text(encoding="utf-8").splitlines())
+    rows, failed = p_rows(args.generated.read_text(encoding="utf-8").splitlines(), args.key)
     args.output.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
     print(json.dumps({"queries": len(rows), "failed_briefs": failed,
                       "generated_sha256": hashlib.sha256(args.generated.read_bytes()).hexdigest(),

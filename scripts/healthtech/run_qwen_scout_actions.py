@@ -5,6 +5,7 @@ For each query family:
   F  function       the required function restated in generic terms, written from a brief only (title or P)
   S  solution       a short abstract of a hypothetical patent from another industry, written from a brief only
 The F and S actions never see the patent itself, only the brief.
+MTM V6 (dev only) uses ``generate --actions F --briefs <P-brief output>``: function text from each existing P brief.
 
 Subcommands:
   build     (local)  write label-free records for one split from the private parquet + split file
@@ -132,9 +133,21 @@ def generate(args: argparse.Namespace) -> int:
             calls.append(entry)
             return entry
 
+        p_briefs = {}
+        if args.actions == "F":
+            for line in args.briefs.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    r = json.loads(line)
+                    p_briefs[r["id"]] = (r.get("P") or {}).get("parsed")
         for record in records:
             check_local_window()
             row = {"id": record["id"], "prompt_version": PROMPT_VERSION, "title": record["title"]}
+            if args.actions == "F":
+                brief = p_briefs.get(record["id"])
+                row["F_P"] = run("F", FUNCTION.format(brief=brief)) if brief else None
+                handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+                handle.flush()
+                continue
             row["P"] = run("P", PROBLEM.format(title=record["title"], abstract=record["abstract"],
                                                description=record["description"] or "none"))
             briefs = {"T": record["title"], "P": row["P"]["parsed"]} if args.actions == "all" else {}
@@ -175,8 +188,12 @@ def main() -> int:
     g.add_argument("--input", type=Path, required=True)
     g.add_argument("--model-dir", type=Path, required=True)
     g.add_argument("--output", type=Path, required=True)
-    g.add_argument("--actions", choices=("all", "P"), default="all", help="P: problem brief only (frozen test)")
+    g.add_argument("--actions", choices=("all", "P", "F"), default="all",
+                   help="P: problem brief only (frozen test); F: function text from existing P briefs (MTM V6, dev)")
+    g.add_argument("--briefs", type=Path, help="generated P-brief file, required for --actions F")
     args = parser.parse_args()
+    if args.command == "generate" and args.actions == "F" and not args.briefs:
+        parser.error("--actions F needs --briefs")
     return build(args) if args.command == "build" else generate(args)
 
 
