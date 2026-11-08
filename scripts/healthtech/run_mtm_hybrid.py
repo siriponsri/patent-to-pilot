@@ -9,11 +9,14 @@ the baseline. Hybrid candidates are the union of the dense top 1,000 and the BM2
 z-normalised over that union per query, and fused = lam * z_dense + (1 - lam) * z_bm25; lam = 1 reproduces the dense
 order. Writes <output-dir>/<method>/rankings-<view>-X-<name>.jsonl at depth 200 plus a receipt, and refuses to overwrite.
 Methods log: docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md.
+Phase 1b (V1b, V2b): the PatEmbed instruction prefix is stripped from the query before BM25 tokenisation; the dense
+encoder still gets the full prefixed text. The phase-1 code without the strip is at commit 2feec03 (defective).
 """
 from __future__ import annotations
 
 import argparse
 from collections import Counter
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -31,6 +34,7 @@ LUCENE_STOPWORDS = frozenset(
 K1, B = 0.9, 0.4
 UNION_DEPTH = 1000
 DEPTH = 200
+DENSE_QUERY_PREFIX = "encode query for different document retrieval: "  # = dapfam_acquisition.DENSE_QUERY_PREFIX
 
 
 def _load(name: str):
@@ -38,6 +42,11 @@ def _load(name: str):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+def strip_prefix(text: str) -> str:
+    """Query text without the PatEmbed instruction prefix (for BM25 and rerankers, never for the dense encoder)."""
+    return text[len(DENSE_QUERY_PREFIX):] if text.startswith(DENSE_QUERY_PREFIX) else text
 
 
 def tokenize(text: str) -> list[str]:
@@ -165,7 +174,11 @@ def main() -> int:
         owner += [i] * len(dense_pool.dense_passages(row["title"], row["abstract"], row["claims"]))
     vocab, weights = build_bm25(tokenize(" ".join((r["title"], r["abstract"], r["claims"]))) for r in corpus)
     weights_t = weights.T.tocsr()
-    qmatrix = query_matrix([tokenize(q["text"]) for q in queries], vocab)
+    lexical = [strip_prefix(q["text"]) for q in queries]
+    if any(t.startswith("encode query") for t in lexical):
+        raise SystemExit("query prefix still present after strip")
+    qmatrix = query_matrix([tokenize(t) for t in lexical], vocab)
+    stripped_sha = hashlib.sha256("".join(t + "\n" for t in lexical).encode("utf-8")).hexdigest()
     timings["bm25_index_seconds"] = round(time.time() - started, 3)
     visible_from = np.array([r["visible_from"] for r in corpus], dtype=np.int64)
     position = {f: i for i, f in enumerate(ids)}
@@ -212,8 +225,9 @@ def main() -> int:
             for handle in handles.values():
                 handle.close()
         timings["ranking_seconds"] = round(time.time() - started, 3)
-    receipt = {"status": "PASS", "entries": ["V1 bm25", "V2 hybrid"], "bm25": {"k1": K1, "b": B, "vocab": len(vocab),
-               "nnz": int(weights.nnz), "stopwords": "lucene-english-33", "stemming": False},
+    receipt = {"status": "PASS", "entries": ["V1b bm25", "V2b hybrid"], "bm25": {"k1": K1, "b": B, "vocab": len(vocab),
+               "nnz": int(weights.nnz), "stopwords": "lucene-english-33", "stemming": False,
+               "query": "dense instruction prefix stripped", "stripped_queries_sha256": stripped_sha},
                "hybrid": {"union_depth": UNION_DEPTH, "lambdas": lambdas, "normalisation": "per-query z over union"},
                "dense": "PatEmbed-large MaxP, reused passage vectors", "families": len(ids), "queries": len(queries),
                "depth": DEPTH, "views": views, "lane": "X",

@@ -75,3 +75,16 @@ def test_new_and_lost_gold_and_cv_choice():
     cv = methods.cross_validate(tie, base, "hyb-")
     assert set(cv["chosen_per_fold"].values()) == {"hyb-0.9"} and sum(cv["fold_sizes"].values()) == 4
     assert methods.fold_of("US-7641158-B2") == methods.fold_of("US-7641158-B2") in range(4)
+
+
+def test_dense_prefix_is_stripped_for_bm25_and_rerankers_only():
+    import sys
+
+    sys.path.insert(0, str(SCRIPTS.parents[1] / "src"))
+    from patent_to_pilot.evaluation.dapfam_acquisition import DENSE_QUERY_PREFIX
+
+    assert hybrid.DENSE_QUERY_PREFIX == DENSE_QUERY_PREFIX
+    stored = DENSE_QUERY_PREFIX + "Intravenous stand"
+    assert hybrid.tokenize(hybrid.strip_prefix(stored)) == ["intravenous", "stand"]
+    assert rerank.query_text(stored) == "Intravenous stand"
+    assert hybrid.strip_prefix("Intravenous stand") == "Intravenous stand"

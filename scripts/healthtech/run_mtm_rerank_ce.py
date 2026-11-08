@@ -6,6 +6,8 @@ single logit. The top --top families are reordered by score, with ties keeping t
 unchanged, so hit@100 equals the baseline when --top is 100. Labels are never read. Writes
 <output-dir>/rankings-<view>-X-<name>.jsonl plus a receipt, and refuses to overwrite.
 Methods log: docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md.
+Phase 1b (V3b): the PatEmbed instruction prefix is stripped from the query text, and --scores-out writes the raw score of
+every pair (private; used by V5). The phase-1 code without the strip is at commit 2feec03 (defective).
 """
 from __future__ import annotations
 
@@ -21,6 +23,17 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
 SPACE = re.compile(r"\s+")
+
+
+def _load(name: str):
+    spec = importlib.util.spec_from_file_location(name, Path(__file__).with_name(f"{name}.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def query_text(text: str) -> str:
+    return _load("run_mtm_hybrid").strip_prefix(text)
 
 
 def candidate_text(row: dict) -> str:
@@ -48,6 +61,7 @@ def main() -> int:
     parser.add_argument("--top", type=int, default=100)
     parser.add_argument("--max-length", type=int, default=512)
     parser.add_argument("--batch-size", type=int, default=64)
+    parser.add_argument("--scores-out", type=Path, required=True, help="private jsonl of raw pair scores")
     args = parser.parse_args()
     if args.name.endswith("-test"):
         raise SystemExit("phase-1 methods run on dev only")
@@ -60,10 +74,12 @@ def main() -> int:
     views = args.views.split(",")
     outputs = {v: args.output_dir / f"rankings-{v}-X-{args.name}.jsonl" for v in views}
     receipt_path = args.output_dir / f"receipt-rerank-ce-{args.name}.json"
-    if receipt_path.exists() or any(p.exists() for p in outputs.values()):
+    if receipt_path.exists() or args.scores_out.exists() or any(p.exists() for p in outputs.values()):
         raise SystemExit("output exists: refusing to overwrite")
     dapfam_dense.check_local_window()
-    queries = {q["id"]: q["text"] for q in dapfam_dense._read_jsonl(args.queries, None)}
+    queries = {q["id"]: query_text(q["text"]) for q in dapfam_dense._read_jsonl(args.queries, None)}
+    if any(t.startswith("encode query") for t in queries.values()):
+        raise SystemExit("query prefix still present after strip")
     baseline = {}
     for v in views:
         path = args.baseline_dir / f"rankings-{v}-X-{args.name}.jsonl"
@@ -92,14 +108,18 @@ def main() -> int:
                 scores.update(zip(batch, logits))
         seconds = round(time.time() - started, 3)
         gpu = torch.cuda.get_device_name(0)
+    with args.scores_out.open("w", encoding="utf-8") as handle:
+        for (q, f), value in sorted(scores.items()):
+            handle.write(json.dumps({"query_id": q, "family": f, "score": value}) + "\n")
     for v, path in outputs.items():
         with path.open("w", encoding="utf-8") as handle:
             for q, fams in baseline[v].items():
                 ranked = rerank(fams, {f: scores[(q, f)] for f in fams[: args.top]}, args.top)
                 handle.write(json.dumps({"query_id": q, "families": ranked}) + "\n")
-    receipt = {"status": "PASS", "entry": "V3 zero-shot cross-encoder", "model": "BAAI/bge-reranker-v2-m3",
+    receipt = {"status": "PASS", "entry": "V3b zero-shot cross-encoder, prefix stripped", "model": "BAAI/bge-reranker-v2-m3",
                "revision": args.revision, "weights_sha256": {p.name: dapfam_dense._sha256(p) for p in weights},
                "top": args.top, "max_length": args.max_length, "dtype": "float16", "candidate_text": "title. abstract",
+               "query": "dense instruction prefix stripped", "scores_sha256": dapfam_dense._sha256(args.scores_out),
                "pairs": len(pairs), "queries": len(queries), "views": views, "lane": "X",
                "inputs_sha256": {p.name: dapfam_dense._sha256(p) for p in
                                  [args.corpus, args.queries] + [args.baseline_dir / f"rankings-{v}-X-{args.name}.jsonl" for v in views]},
