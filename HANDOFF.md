@@ -13,22 +13,27 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 - **The owner approved phase 1b and phase 2 (8 Nov).** Both are declared in the [methods log](docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md).
   - Phase 2: V4 Qwen3-8B yes/no reranker on the X top 30 (R-neutral and R-cross prompts), V5 reranker + dense fusion, V6 function-channel fusion.
   - The prefix fix is pushed at `14263c9`: `strip_prefix`, a guard, and a test (12 tests pass).
-- **PHASE-1B JOB RUNNING on the V100** (launched about 13:50 Bangkok; expected about 1 h).
-  - Job dir: `$J/dev1b` (`J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`); code from `git archive 14263c9`.
-  - Script: `docs/healthtech/audits/ptp-medtech-tm-dev-phase1b-20261108/run_dev1b.sh`.
-  - Check: `ssh chaw@100.77.149.83 'cat /home/chaw/patent-to-pilot-jobs/mtm-20261107/dev1b/logs/status.log'`.
-  - When `all done` appears:
-    1. copy `$J/dev1b/out/receipt-hybrid-*.json`, `$J/dev1b/out/ce/receipt-rerank-ce-*.json` and `$J/dev1b/analysis/dev-phase1b.json` to that audit folder;
-    2. write its README and the methods-log results;
-    3. push.
-  - The private reranker scores stay in `$J/dev1b/private`; they feed V5.
+- **Phase 1b is done** (all done 06:50Z, every step exit=0). Its results are in `docs/healthtech/audits/ptp-medtech-tm-dev-phase1b-20261108/`; the README is being written.
+- **The V4 smoke test passed** (300 pairs, `$J/smoke-p2`): N 13.9 pairs/s, C 13.0 pairs/s.
+  - Projected time is 1.2 h + 1.3 h = 2.5 h, under the 8 h limit, so **PROMPTS=N,C**.
+  - The scores are not degenerate.
+- **PHASE-2 JOB RUNNING on the V100** (launched about 14:05 Bangkok; expected about 5.5 h). The steps:
+  1. V5 fusion for P and T;
+  2. V4 scoring of 2 × 59,550 pairs;
+  3. V4 fusion;
+  4. V6 F generation (about 2.4 h), F queries, F channel;
+  5. analysis.
+  - Job dir: `$J/dev2` (`J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`); code from `git archive 2691931`.
+  - Script: `docs/healthtech/audits/ptp-medtech-tm-dev-phase2-20261108/run_dev2.sh`.
+  - Check: `ssh chaw@100.77.149.83 'cat /home/chaw/patent-to-pilot-jobs/mtm-20261107/dev2/logs/status.log'`.
+  - When `all done` appears, copy into that audit folder:
+    - `$J/dev2/out/receipt-*.json`;
+    - `$J/dev2/private/receipt-rerank-llm-P-dev.json`;
+    - `$J/dev2/private/briefs-F-dev.out.jsonl.receipt.json`;
+    - `$J/dev2/analysis/dev-phase2.json`.
+
+    Then write the README and the methods-log results, and push. The private score and text files stay on dr-train.
   - No retries. A failed step: report it, do not overwrite.
-- **Phase-2 code is pushed at `2691931`** (37 related tests pass). Job script: `docs/healthtech/audits/ptp-medtech-tm-dev-phase2-20261108/run_dev2.sh`, which needs `PROMPTS=N,C` or `PROMPTS=C`.
-- **After phase 1b finishes:**
-  1. `git archive 2691931` into `$J/dev2/code`.
-  2. V4 smoke test: `run_mtm_rerank_llm.py --limit-pairs 300 --prompts N,C --output-dir $J/smoke-p2 --name P-dev`. Project to 59,550 pairs per prompt.
-  3. If N+C projects to more than 8 h, set `PROMPTS=C`; otherwise `N,C`. Record the decision.
-  4. Launch `run_dev2.sh` with setsid nohup, and record it here.
 - Test stays sealed.
 
 Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.

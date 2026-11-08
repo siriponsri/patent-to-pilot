@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "entries": [
+    "V1b bm25",
+    "V2b hybrid"
+  ],
+  "bm25": {
+    "k1": 0.9,
+    "b": 0.4,
+    "vocab": 354601,
+    "nnz": 72001957,
+    "stopwords": "lucene-english-33",
+    "stemming": false,
+    "query": "dense instruction prefix stripped",
+    "stripped_queries_sha256": "658a3c8ddb06a6924176e5663da307f4bb0ef952f41b243928fb8b079a943035"
+  },
+  "hybrid": {
+    "union_depth": 1000,
+    "lambdas": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "normalisation": "per-query z over union"
+  },
+  "dense": "PatEmbed-large MaxP, reused passage vectors",
+  "families": 899838,
+  "queries": 1985,
+  "depth": 200,
+  "views": [
+    "main",
+    "small",
+    "matched",
+    "uniform"
+  ],
+  "lane": "X",
+  "inputs_sha256": {
+    "corpus.jsonl": "4d29bd8136e2a838e9a12e0907e0951dc029ca6f9b22ba7eae1da21bb5c618a6",
+    "queries-P-dev.jsonl": "f1af63a4396447e947e64f36e905f9a4a90aafc0e18cacb72247e2f89ba59e67",
+    "queries-meta.jsonl": "6d07052fc553909ecc8e02db79604ea413685e233a7d03a709e5b4f40a6ff9a8",
+    "passage-vectors-f32.npy": "8bb35abadf1df98c916eb495997214a225f280fbc2ae4979ca09b9d6ec56330b"
+  },
+  "rankings_sha256": {
+    "bm25/rankings-main-X-P-dev.jsonl": "b79bc51d4c935c6061f0e4273203c7aa474d065872b3239110b2c60b09c99a64",
+    "bm25/rankings-small-X-P-dev.jsonl": "70ce4b7f533357adc4edd31b4b02a111937b9bf3630b057f5fa88b4d61749cdd",
+    "bm25/rankings-matched-X-P-dev.jsonl": "5311832e85c655ee941b9fb52e968bed1b9f7ce9461e3954d2429bcdc6a37027",
+    "bm25/rankings-uniform-X-P-dev.jsonl": "8826f20a1196d168cabf372e213089e1176acdf4d9d4346741694c9537cd5a76",
+    "hyb-0.5/rankings-main-X-P-dev.jsonl": "82b637cc5c5993b2ff3bb22e9e4ce0fb54baa9c099a923c8a1a47e32cd95d34a",
+    "hyb-0.5/rankings-small-X-P-dev.jsonl": "45ae7cb14011ebc19fe6e00a2e3ae00c13fbb0185561ed9fc484f5013541204c",
+    "hyb-0.5/rankings-matched-X-P-dev.jsonl": "a941e0d0c8eac5dc6704badbd471071b79ec7e5260f332d9ee214f05100f99aa",
+    "hyb-0.5/rankings-uniform-X-P-dev.jsonl": "a4c2d04e6727f31d37cb038ed694d8f88b5919e4bce69d42dca2fe051eb509e8",
+    "hyb-0.6/rankings-main-X-P-dev.jsonl": "ca3e125921857c8220b020719a63b559774e6e078eda93d86fededb9ce499b89",
+    "hyb-0.6/rankings-small-X-P-dev.jsonl": "6a106d75126841b982b3f58b5b9412921ef223e94fd11feabdd2ed24a85ac354",
+    "hyb-0.6/rankings-matched-X-P-dev.jsonl": "1fb1b21b745f0bb0b8e622b3b9d271e27c7f9981a6f566b6172267f4b437e5f0",
+    "hyb-0.6/rankings-uniform-X-P-dev.jsonl": "8190d3d8a04fef971d5d9192e1ad3136a86bbcb3fc6322525bc33a74b422b792",
+    "hyb-0.7/rankings-main-X-P-dev.jsonl": "f006f78b7b10aadc7ae21e4685a831df7303553bafb9444f24f2871ed945b7f6",
+    "hyb-0.7/rankings-small-X-P-dev.jsonl": "614020e57c072bc60ddb9ab70da296fae7adceb565ae92330f3fc7e4fd4052a8",
+    "hyb-0.7/rankings-matched-X-P-dev.jsonl": "fcf17debda217b9fdb422f13686b851848ffec015c0f39d3d12c875f74c0732f",
+    "hyb-0.7/rankings-uniform-X-P-dev.jsonl": "0e08bc071f4d300d8197ba86eee2a1885b9ee20158e8b531736f73216fece4a0",
+    "hyb-0.8/rankings-main-X-P-dev.jsonl": "0cd582dc6ece03ccbb853c39cda0eb0df03ebf8a3098046170347ca04eaa8efd",
+    "hyb-0.8/rankings-small-X-P-dev.jsonl": "069e6bf4bb0f0dcf131627bba66a46783e3c8e6749e08327b19ed7b1df3a18fc",
+    "hyb-0.8/rankings-matched-X-P-dev.jsonl": "07eb57ce4ef00a9ea6d50ec1d19059b20d687303d51c10624922d5d97530f237",
+    "hyb-0.8/rankings-uniform-X-P-dev.jsonl": "770d9e7c28b3c42735ddd0ef434aed27a28b1da1f720ff7bcfcdb03130df442d",
+    "hyb-0.9/rankings-main-X-P-dev.jsonl": "470a58a14a3d8c355e1f4caaaa6cf1ab219954c02c75ffa3f1827b566ec3de19",
+    "hyb-0.9/rankings-small-X-P-dev.jsonl": "0dd442608e854485bfb8971adae4e6c9fb20acce941ddbc013c38fbe3cb6f7a1",
+    "hyb-0.9/rankings-matched-X-P-dev.jsonl": "fd1d385d3e2fd4a7283ca2b79e4c6171cb3efe7bd8f0eecf023713bf97ece8cc",
+    "hyb-0.9/rankings-uniform-X-P-dev.jsonl": "47ed79f747cfbb80e9ea5dca11aa2e6f21de8d3aeb280b703808ea6eab5236e7",
+    "hyb-1.0/rankings-main-X-P-dev.jsonl": "4f0d9c72cb9c81c2d41f38f2a3f1ca78c984fabf0c7c4fef6940f19b9d1f3165",
+    "hyb-1.0/rankings-small-X-P-dev.jsonl": "6b12000d7c67efd97e9319a505b62e18c5ff8ff2f9b542e7a3c2b77cdbb1bf3d",
+    "hyb-1.0/rankings-matched-X-P-dev.jsonl": "8f94b07513f647075dad82a8d3e17a96b07776f511b7fbf60351c9fbd51e4eb2",
+    "hyb-1.0/rankings-uniform-X-P-dev.jsonl": "4d8dc3c2d1d6489b932d2daf6d68f2abe617d02078e9d88a774078b4e42ea61c"
+  },
+  "timings": {
+    "bm25_index_seconds": 186.249,
+    "ranking_seconds": 302.734
+  },
+  "gpu": "Tesla V100-SXM2-32GB",
+  "torch": "2.8.0+cu128",
+  "labels_used": false
+}
