@@ -23,7 +23,12 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
     3. push.
   - The private reranker scores stay in `$J/dev1b/private`; they feed V5.
   - No retries. A failed step: report it, do not overwrite.
-- **Then phase 2:** write the V4/V5/V6 code and tests, smoke-test V4 throughput on 300 pairs, apply the 8-hour rule, launch, and record the job here first.
+- **Phase-2 code is pushed at `2691931`** (37 related tests pass). Job script: `docs/healthtech/audits/ptp-medtech-tm-dev-phase2-20261108/run_dev2.sh`, which needs `PROMPTS=N,C` or `PROMPTS=C`.
+- **After phase 1b finishes:**
+  1. `git archive 2691931` into `$J/dev2/code`.
+  2. V4 smoke test: `run_mtm_rerank_llm.py --limit-pairs 300 --prompts N,C --output-dir $J/smoke-p2 --name P-dev`. Project to 59,550 pairs per prompt.
+  3. If N+C projects to more than 8 h, set `PROMPTS=C`; otherwise `N,C`. Record the decision.
+  4. Launch `run_dev2.sh` with setsid nohup, and record it here.
 - Test stays sealed.
 
 Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
