@@ -4,30 +4,25 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 8 Nov 2026 (read this first)
 
-**Latest (8 Nov ~12:50 Bangkok):**
-- **The MTM baseline job is done** (`all done` 01:14Z, every step exit=0). Test rankings for P/T/A are recorded, label-free and **not scored**: [test-rankings audit](docs/healthtech/audits/ptp-medtech-tm-test-rankings-20261108/README.md).
-- **The owner approved phase 1 of the dev methods (8 Nov)**, after reviewing a ChatGPT Deep Research report.
-  - The methods are declared before any run in the [methods log](docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md): V1 BM25, V2 calibrated BM25 + dense hybrid (λ by 4-fold CV), V3 zero-shot `BAAI/bge-reranker-v2-m3`.
-  - Code is pushed at `2feec03`; the reranker was downloaded to dr-train at revision `953dc6f6…`.
-- **PHASE 1 IS DONE (8 Nov 12:35 Bangkok)**: all done 05:35Z, every step exit=0. See the [phase-1 audit](docs/healthtech/audits/ptp-medtech-tm-dev-phase1-20261108/README.md); results are appended to the methods log.
-  - **The result is null/negative on the primary view (P/main, hit@20, X = 0.180):**
-
-    | Method | Δ vs X |
-    |---|---|
-    | BM25 | −0.143 |
-    | Hybrid, CV out of fold (λ 0.9) | +0.005 [−0.004, +0.014] |
-    | bge-reranker zero-shot | −0.036 [−0.052, −0.021] |
-
-  - The hybrid helps query view T a little; the CV lower bound is above 0 in 3 sensitivity views.
-  - No GPU job is running. The dr-train rankings stay in `$J/dev1/out` (`J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`).
-- **Next, waiting on the owner:**
-  1. Decide whether to carry anything from phase 1 to test. The recommendation is no, given the low power.
-  2. Approve phase 2. Candidates:
-     - a mechanism/function query channel;
-     - a Qwen3-8B reranker with a cross-field-aware prompt;
-     - dev-supervised adaptation, after a dev/test target-overlap check.
-  3. Each phase-2 method needs a methods-log entry before it runs.
-- Test stays sealed.
+**Latest (8 Nov ~13:30 Bangkok; last pushed commit before this note: `9f2a847`):**
+- **The MTM baseline job is done.** Test rankings for P/T/A are recorded and **not scored**: [test-rankings audit](docs/healthtech/audits/ptp-medtech-tm-test-rankings-20261108/README.md).
+- **Phase 1 ran (V1 BM25, V2 hybrid, V3 bge-reranker; every step exit=0) but is DEFECTIVE.**
+  - **The defect:** the PatEmbed query prefix `encode query for different document retrieval: ` leaked into the BM25 tokens (`run_mtm_hybrid.py:168`) and into the reranker input (`run_mtm_rerank_ce.py:66`). The dense side is unaffected.
+  - The results stay on record in the [phase-1 audit](docs/healthtech/audits/ptp-medtech-tm-dev-phase1-20261108/README.md), marked defective, and are not eligible for carry-forward.
+  - The owner chose not to carry phase 1 to test, before the defect was found.
+- **DRAFTED, NOT RUN, waiting for owner go-ahead.** Both are in the [methods log](docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md):
+  - **Phase 1b (V1b–V3b):** the same methods with the prefix stripped. About 1 h on the V100; it needs a small code fix and a unit test first.
+  - **Phase 2:**
+    - V4: Qwen3-8B yes/no reranker on the X top 30, with prompts R-neutral and R-cross, fused with dense by λ CV;
+    - V5: V3b reranker scores fused with dense, no new GPU pass;
+    - V6: function-channel fusion, about 3.5 h of generation, lowest priority.
+  - The carry-forward rule is fixed: a CV out-of-fold lower bound > 0 on P/main, at most 4 methods.
+- **Next, once approved:**
+  1. Add the prefix-strip helper and its test, and V3b score saving. Run pytest and ruff, then push.
+  2. Run phase 1b on dr-train in `$J/dev1b` (`J=/home/chaw/patent-to-pilot-jobs/mtm-20261107`). Record the job in this section before launch.
+  3. Write the phase-1b audit and push.
+  4. Write the V4/V5/V6 code, smoke-test V4 throughput (300 pairs), then run phase 2.
+- No GPU job is running. Test stays sealed.
 
 Last pushed commit before this note: `b928456` (handoff before the E3 launch; protocol freeze `4c5a882`). **P2 (E3/E4) is done** (7 Nov 2026). The commit that adds this note also adds the [P2 audit](docs/healthtech/audits/ptp-scout-frozen-eval-20261107/README.md). All work is on `main` in this checkout; there are no worktrees or branches. The handoff rule in `CLAUDE.md` applies: update this section and push after every step.
 

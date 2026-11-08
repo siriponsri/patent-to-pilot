@@ -1,6 +1,16 @@
 # MTM dev phase 1: BM25, calibrated hybrid, zero-shot cross-encoder
 
-- **Status:** PASS (run). **Scientific result: null/negative on the primary view.** No phase-1 method beats the dense X lane on P/main hit@20 with a lower bound > 0.
+- **Status:** PASS (run), **DEFECTIVE for V1, V2 and V3** (correction added 8 Nov 2026, after the results were pushed at `9f2a847`). The numbers below are kept on record, but they are not valid tests of the declared methods and are not eligible for carry-forward.
+
+> **Defect: the query instruction prefix leaked into BM25 and the cross-encoder.**
+>
+> - **What happened:** the query files store `"encode query for different document retrieval: " + text`. That prefix is the PatEmbed instruction, and only the dense encoder should see it. `run_mtm_hybrid.py` (line 168) tokenised the full stored text for BM25. `run_mtm_rerank_ce.py` (line 66) passed it to the reranker. No test covered this.
+> - **Effect on BM25:** every query gained the tokens `encode`, `query`, `different`, `document` and `retrieval`. For a title query such as "Intravenous stand", 5 of its 7 tokens come from the prefix. Rare terms such as `query` and `encode` pull software documents into lane X, which by design holds other CPC classes.
+> - **Unaffected:** the dense part (baseline X and the dense side of V2) used the prefix correctly.
+> - **Status of the results:** V1 and V2 are invalid as declared. V3 is confounded.
+> - **Correction:** corrected re-runs are declared as new entries V1b–V3b in the methods log. Under the log's rule, a change after results are seen becomes a new entry.
+
+- **Scientific result as run (defective):** null/negative on the primary view. No phase-1 method beats the dense X lane on P/main hit@20 with a lower bound > 0.
 - **Split:** dev only (1,985 queries). The test split is sealed; no test file was read or scored.
 - **Methods:** declared before the run in the [methods log](../../research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md), entries V1–V3. No setting was changed after results were seen.
 - **Code:** `git archive 2feec03`, run on dr-train (Tesla V100-SXM2-32GB) by [run_dev1.sh](run_dev1.sh). Every step exit=0 ([status.log](status.log)), 04:35Z–05:35Z on 8 Nov 2026. No retries.

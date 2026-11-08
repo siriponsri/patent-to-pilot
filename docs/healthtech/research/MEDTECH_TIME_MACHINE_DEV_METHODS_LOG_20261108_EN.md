@@ -59,12 +59,80 @@ These settings are shared by every phase-1 entry.
   - Ranks 101–200 stay unchanged, so hit@100 equals the baseline by construction.
 - **Scope:** corpus view main only, query views P and T. The sensitivity views follow only if V3 helps on main.
 
+## Phase 1b: corrected re-run of V1–V3 (DRAFT, written 8 Nov 2026, not run; needs owner go-ahead)
+
+These entries repeat V1–V3 with one change: the PatEmbed instruction prefix (`DENSE_QUERY_PREFIX`) is removed from the query text before BM25 tokenisation and before the reranker. The dense encoder still gets the prefix. Every other setting stays exactly as declared above.
+
+- **Code change:**
+  - one shared helper strips `DENSE_QUERY_PREFIX` when present;
+  - a unit test asserts that no BM25 or reranker query starts with it.
+- **Receipts:** record the stripped-query hash.
+- **V1b BM25:** V1 on the stripped query.
+- **V2b hybrid:** the V1b BM25 scores and the unchanged dense scores. Same λ grid, CV and tie rule as V2.
+- **V3b cross-encoder:** V3 on the stripped query.
+  - Its raw scores are also written to a private file (one row per query–candidate pair), so that V5 needs no second GPU pass.
+  - The ranking rule is unchanged.
+- **Scope and measures:** as in phase 1.
+- **Estimated time:** about 1 h on the V100. Hybrid takes about 8 min per query view, the reranker about 20 min per view.
+
+## Phase 2 (DRAFT, written 8 Nov 2026, not run; needs owner go-ahead; runs after phase 1b)
+
+Shared settings are as in phase 1: lane X, dev only, the same measures and bootstrap.
+
+- **Primary cell:** query view P, corpus view main.
+- **Score fusion:** "fusion" means fused = λ·z_dense + (1 − λ)·z_method.
+  - z is per-query over the scored candidates.
+  - λ ∈ {0, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0}. λ = 1 must reproduce X; λ = 0 is the method alone.
+  - λ is chosen by the V2 4-fold CV (same fold hash, ties to the larger λ). The out-of-fold score is the honest estimate.
+
+### V4 — Qwen3-8B pointwise reranker on the X top 30
+
+- **Model:** the local Qwen3-8B already used for briefs (same revision and weights as the P-brief receipts), fp16 on the V100, thinking disabled.
+- **Input:**
+  - the query is brief P without the prefix;
+  - the candidate is its title plus the first 200 words of the abstract.
+- **Prompts (frozen now, 2 variants):**
+  - **R-neutral:** "Here is a technical problem and a patent. Is this patent relevant prior art for the problem? Answer yes or no."
+  - **R-cross:** "Here is a technical problem and a patent, which may come from a different technical field. Does the patent disclose a mechanism or technique that could solve this problem, even if it was made for another field? Answer yes or no."
+  - Both use the same system message as the brief prompts.
+- **Score:** logsumexp of the "yes"/"Yes" token logits minus logsumexp of the "no"/"No" token logits, at the first answer token. It needs a single forward pass and no generation.
+- **Depth:** the top 30 of X, which gives 59,550 pairs per prompt. Ranks 31–200 stay unchanged.
+- **Fusion:** z-scores are taken over the top 30. λ and the prompt are chosen jointly by the 4-fold CV over 2 prompts × 7 λ.
+- **Run-time rule (fixed now):**
+  - First, a smoke test of 300 pairs measures throughput.
+  - If both prompts together are projected to take more than 8 h, only R-cross runs, and this is recorded.
+  - Rankings are not inspected before that decision.
+- **Why:**
+  - V3 tests a general topical reranker. V4 tests whether stating the cross-field goal in the prompt changes the ranking.
+  - This links to the owner's published reranking paper on prompt sensitivity.
+
+### V5 — V3b reranker scores fused with dense
+
+- Uses the V3b scores saved over the X top 100 and needs no new GPU pass.
+- Fusion as defined above, with z-scores over the top 100.
+- **Why:** V3 alone replaces the dense order. V5 tests whether the reranker adds a complementary signal instead.
+
+### V6 — function-channel fusion
+
+- **Generation:** the existing frozen prompt `FUNCTION` (`ptp-solution-scout-v1`, in `run_qwen_scout_actions.py`), with brief P as input, greedy decoding.
+  - It produces one function text per dev query. A failed or short output scores as X for that query, with no retries.
+- **Retrieval:** the function text is encoded by PatEmbed with the prefix and searched in lane X.
+- **Fusion:** with the P dense scores over the union of both top-1000 lists, as defined above.
+- **Prior evidence:** on DAPFAM dev, function texts alone retrieved less than the plain brief (OUT R@200 about 0.19 vs 0.29 in the lane; [scout feasibility audit](../audits/ptp-solution-scout-feasibility-20261105/README.md)). That is why only the fusion is tested here.
+- **Estimated time:** about 3.5 h of generation (about 6.3 s per call) plus about 10 min of search.
+- **Lowest priority:** V6 is dropped if the owner limits GPU time.
+
+### Carry-forward rule for phases 1b and 2 (fixed now)
+
+- A method is eligible if its CV out-of-fold Δ hit@20 on P/main has a 95% lower bound > 0.
+- If more than 4 are eligible, the 4 with the largest out-of-fold Δ are carried.
+- The test read happens once, after the owner freezes the list (rules §14). Each test method uses its full-dev λ and prompt choice.
+
 ### Not yet run (later phases, each needs its own entry before running)
 
-- a Qwen3-8B reranker with a small frozen prompt family (the Paper 53 prompt-sensitivity link);
-- a function/mechanism query channel;
-- ColBERTv2 late interaction;
-- dev-supervised PatEmbed adaptation. This one needs a dev/test target-overlap check first.
+- dev-supervised PatEmbed adaptation. It needs a dev/test target-overlap check first, which reads test target IDs, so it needs separate owner approval;
+- ColBERTv2 late interaction (no library installed on dr-train);
+- per-grant-year and CPC-section breakdowns (descriptive, dev).
 
 ## Results
 
@@ -88,3 +156,10 @@ Other views:
 - **V2 CV on T in the small, matched and uniform views:** the lower bound is above 0. These are not primary.
 
 No phase-1 entry meets the §9 bar on the primary view. Carrying any of them to test needs an owner decision.
+
+**Correction (8 Nov 2026, after the results above were pushed):** V1–V3 are **defective**.
+
+- **The defect:** the stored query text begins with the PatEmbed instruction `encode query for different document retrieval: `. BM25 tokenised that prefix, and the reranker read it. For example, the title query "Intravenous stand" became 7 BM25 tokens, 5 of them from the prefix.
+- **Status:** the results stay on record, but they are not valid tests of the declared methods and are **not eligible for carry-forward**.
+- **Owner decision:** the owner chose not to carry phase 1 to test (8 Nov 2026), before this defect was found.
+- See the phase-1b entries below.
