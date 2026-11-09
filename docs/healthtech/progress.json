@@ -17,6 +17,15 @@
                             ],
     "work_packages":  [
                           {
+    "method_first_20261110": {
+        "status": "ACTIVE_R0_INVENTORY_COMPLETE_R1_OPEN",
+        "audit": "docs/healthtech/audits/ptp-method-first-r0-20261110/README.md",
+        "verification": "docs/healthtech/audits/ptp-method-first-r0-20261110/verification.json",
+        "authority": "Owner goal activation 10 Nov 2026; HANDOFF_PROMPT.md",
+        "next": "Finish required reading; implement R1 allowlists/staging fixtures, dev eligibility and vector binding; preserve protected-label boundary",
+        "protected_scoring": "NOT_AUTHORIZED",
+        "new_experiments": "NOT_RUN"
+    },
                               "id":  "HT-W01",
                               "status":  "IMPLEMENTED",
                               "evidence":  "current docs, AGENTS, source/rights map and history recovery"

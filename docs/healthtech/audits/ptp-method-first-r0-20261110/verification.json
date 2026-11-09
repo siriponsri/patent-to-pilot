@@ -1,0 +1,31 @@
+{
+  "format": "ptp-method-first-r0-v1",
+  "observed_at": "2026-11-10T06:58:22.494680+07:00",
+  "base_commit": "b311753e00270c16dc22ca7552114ada4a39141a",
+  "status": "R0_INVENTORY_COMPLETE_WITH_UNKNOWNS",
+  "source_sha256": {
+    "scripts/healthtech/build_mtm_inputs.py": "74b75b4b432c88a89c590c7dac35309f5d517daa9fcb163b74ba402f03b64786",
+    "scripts/healthtech/run_mtm_dense_pool.py": "196e2dc68fe6ef32bb378d605f858efa54853b84ce1ebfe2cae7101ba3d4d4ed",
+    "scripts/healthtech/analyze_mtm.py": "3d18bad32fe027440c57429a3116c9616130e5c3c5a0ef76daef5da9d1746480",
+    "src/patent_to_pilot/healthtech/local_execution.py": "edcd0442ca830e8df5dc15f9f9360b1e9bb7503e679aa68038481c9a03e6b4c4",
+    "HANDOFF_PROMPT.md": "8ee81d5ca5a3c88934dcafc9779999219ac7944a47e67ea32536ac9d3e282cdb",
+    "docs/healthtech/research/PATENT_TO_PILOT_RESEARCH_AND_CLAUDE_HANDOFF_2026-11-09.md": "e8773d4e07aa554472be7771738995dc4e65196868a389de42805255d353019f"
+  },
+  "repairs": {
+    "A01": "OPEN_STATIC_CONFIRMED",
+    "A03": "OPEN_INCIDENCE_UNKNOWN",
+    "A14": "OPEN_BINDING_NOT_VERIFIED"
+  },
+  "checks": {
+    "git_diff_since_reference": "DOCS_ONLY",
+    "ssh_inventory": "PASS",
+    "gpu_compute_processes_at_observation": 0,
+    "protected_label_contents_opened": false,
+    "experiment_execution": "NOT_RUN",
+    "runtime_tests": "NOT_RUN",
+    "new_paid_calls": 0,
+    "new_gpu_jobs": 0,
+    "baseline_parity": "NOT_RUN",
+    "full_required_reading": "INCOMPLETE_METHOD_SECTIONS_PENDING"
+  }
+}

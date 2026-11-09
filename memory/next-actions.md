@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **10 Nov 2026, active method-first goal:** [R0 inventory and bounded R1 next actions](../docs/healthtech/audits/ptp-method-first-r0-20261110/README.md). This owner-authorized R0–R6 continuation supersedes older hold/direction notes for the current task. R0 inventory is complete with unknowns; R1 A01/A03/A14 remain open. Keep protected labels sealed and all spending/protocol/release approval gates. Codex is the active writer; update HANDOFF.md and CLAUDE.md together at every checkpoint.
+
 > **Current Normal-round handoff — 4 Nov 2026:** [E2 admission audit addendum](../docs/healthtech/audits/ptp-e2-admission-recheck-20261104/NORMAL_ROUND_20261104.md). Work only in the existing `main` checkout. Do not resume the goal, start a long run, create a worktree, refresh credit, dispatch/reserve paid work, push/merge, or clean branches/worktrees. Preserve the prior receipts and wait for a new owner goal prompt.
 
 > The MCP diagnosis, key-limit repair, and paid-admission instructions below are historical or future-gated records. They are not current commands for this round; the single future paid input remains one fresh non-secret credit snapshot after owner re-authorization.
