@@ -295,3 +295,11 @@ A first-stage method counts as changing exposure only if hit@100 or hit@200 chan
 **Gate: NO_GO.** Reach 30.3% is below 48.8%, so 3c (citation chasing) is not built.
 
 The popularity null is far below X, so the corpus enrichment is not trivially exploitable.
+
+### Phase 3a PRF, run 8–9 Nov 2026 23:49Z–00:22Z, code `a29610b`
+
+[Audit](../audits/ptp-medtech-tm-dev-phase3a-20261109/README.md). Every step exit=0, with no retries. prfK0-1.0 reproduced X exactly.
+
+- **P/main, CV out of fold** (k10, w 0.9 in all 4 folds): Δ hit@20 −0.003 [−0.008, +0.003]; hit@200 0.383 vs 0.388.
+- **Every variant** lowers hit@20 and hit@200, and loses more targets at depth 200 than it gains. **Negative; not eligible.**
+- **T/main, CV:** +0.005 [−0.001, +0.011] (secondary).

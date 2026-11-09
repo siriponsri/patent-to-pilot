@@ -5,12 +5,24 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 ## Agent takeover state — 8 Nov 2026 (read this first)
 
 **Latest (8 Nov ~13:30 Bangkok; last pushed commit before this note: `9f2a847`):**
+- **STATE AFTER PHASE 3A/3B (9 Nov, about 07:40 Bangkok):**
+  - Eligible for test so far: **V4 only** (Qwen3-8B rerank of the X top 30 + dense, λ 0.5).
+  - Done and not eligible: 3a PRF (negative) and 3c (not built; the 3b gate said NO_GO).
+  - **Next steps, each needing a methods-log entry first:**
+    1. The **cited-distractor corpus view** (robustness): a BigQuery text pull, best done after the December free-tier reset, then an encode of about 1–2 h.
+    2. **3d time-safe citation fine-tune.** The owner still has to choose the encoder: A = PatEmbed (CC BY-NC-SA), B = Qwen3-Embedding (Apache-2.0), or C = both. It needs a BigQuery text pull for the 2001–2009 training pairs (December).
+    3. **DAPFAM secondary benchmark:**
+       - check the DAPFAM protocol code;
+       - calibrate the published baselines on all 1,247 queries;
+       - run X and V4 on the project's DAPFAM dev split.
+
+       This needs no BigQuery and could run in November.
+    4. A **PatEmbed look-ahead check** (does PatenTEB publish its training pairs?).
+    5. Freeze at most 4 methods for the single test read, with owner approval.
 - **9 Nov: the owner approved phase 3.** The order is in the [phase-3 audit](docs/healthtech/audits/ptp-medtech-tm-phase3-audit-20261109/README.md). 3a and 3b are declared in the methods log (`3792f6d`).
-  - **PHASE-3A PRF JOB RUNNING on the V100** (launched 06:49 Bangkok, 23:49Z on 8 Nov; expected about 45 min).
-    - Code: `git archive a29610b` into `$J/dev3a/code`. Script: `docs/healthtech/audits/ptp-medtech-tm-dev-phase3a-20261109/run_dev3a.sh`.
-    - Check: `ssh chaw@100.77.149.83 'cat /home/chaw/patent-to-pilot-jobs/mtm-20261107/dev3a/logs/status.log'`.
-    - When `all done` appears, copy `$J/dev3a/out/receipt-prf-*.json` and `$J/dev3a/analysis/dev-phase3a.json` into that audit folder, then write the README and the methods-log results.
-    - The 5-query smoke test passed: prfK0-1.0 equals X in 4/4 views, and PRF changes 15–30% of the top 200.
+  - **3a PRF done: negative** ([audit](docs/healthtech/audits/ptp-medtech-tm-dev-phase3a-20261109/README.md)).
+    - P/main CV out of fold: −0.003 [−0.008, +0.003]. Every variant lowers hit@20 and hit@200. Not eligible.
+    - No GPU job is running.
   - **3b probe done: NO_GO** ([audit](docs/healthtech/audits/ptp-medtech-tm-dev-phase3b-20261109/README.md)).
     - The owner raised the cap to 34 GiB. tm06 billed 33.8 GB, producing 1,344,435 edges.
     - Reach is 30.3%, below the 48.8% gate, so **3c is not built**.
