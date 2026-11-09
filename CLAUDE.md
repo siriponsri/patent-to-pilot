@@ -4,6 +4,9 @@ This file is a project-local continuation guide. `AGENTS.md`, the current owner 
 
 ## Cross-account checkpoint — 10 Nov 2026
 
+- **Active long-run goal (owner request, 10 Nov):** created in Codex chat `01a1c2b7-8897-7ea1-b7bb-ad7e8a449775`, following `HANDOFF_PROMPT.md` and the local method-first research handoff. Codex is the active writer; do not start a second account writer without transfer. This supersedes the documentation-only session status below. R0 reconciliation is next, followed by R1 A01/A03/A14 and authorized bounded R2–R4 work. R5 requires owner-approved freeze; R6 is draft preparation only. All existing spending, test, protocol and release gates remain.
+- **Goal activation checkpoint:** last verified pushed commit `aed40d4d781708fba29f683554c22e71cd2e935c`; only this file and `HANDOFF.md` changed for activation. The full local research handoff remains untracked and preserved. Read `HANDOFF_PROMPT.md` and research-handoff sections 16/20; complete remaining required reading and current-state inventory before implementation/experiments. No experiment, paid call or GPU job launched; remote artifacts/jobs NOT_VERIFIED. Goal creation succeeded; documentation whitespace and publication checks follow this checkpoint. No activation blocker.
+
 - Owner decision: every checkpoint must update **both `HANDOFF.md` and `CLAUDE.md`**, for Codex and Claude across accounts. The mandatory rule in `AGENTS.md` applies, including before a final response or account transfer and after read-only work.
 - Detailed current checkpoint: `HANDOFF.md`, top of `Agent takeover state`. Older checkpoint sections below are historical when they conflict with that state.
 - Session: Codex; bounded documentation update, handed off after successful publication; no ongoing writer or job launched by this session.
