@@ -2,6 +2,16 @@
 
 Read root [GOAL.md](GOAL.md) sections 0–4, the selected HT-W in [PLAN.md](PLAN.md), [progress](docs/healthtech/progress.json) and [next actions](memory/next-actions.md). Root GOAL/PLAN define current HealthTech scope; this file controls execution. Current owner directions and runtime permissions take precedence. Read only relevant sources and applicable `.agents/skills` instructions when present.
 
+## Mandatory cross-account handoff (owner rule, 10 Nov 2026)
+
+This rule applies to Codex and Claude on every account. At session start, read this file, the handoff rule and active checkpoint in `CLAUDE.md`, and the latest `Agent takeover state` in `HANDOFF.md`; verify the actual checkout before continuing. Chat history or account memory is not a substitute for these files.
+
+- Update **both `HANDOFF.md` and `CLAUDE.md`** after every completed step, owner decision, new blocker or failed/interrupted attempt; before any background job or work expected to exceed about 10 minutes; at least every 30 minutes during active work; and before ending, pausing or handing over a session. Even a read-only session must record its outcome and next action.
+- Keep the detailed current state in `HANDOFF.md`. Keep a matching concise active checkpoint in `CLAUDE.md`, linking to that state. Include the Bangkok timestamp, agent/session ownership without credentials, last verified pushed commit, completed and unfinished work, changed/uncommitted files, checks and evidence paths, running jobs with monitoring instructions, owner decisions and authorization limits, blockers, and the next 3–6 concrete steps. Explicitly mark unverified facts and NOT_RUN checks.
+- Commit and push both files together with the authorized work they describe to `origin main` at each checkpoint. This owner-authorized handoff publication supersedes older Normal-round no-push language for that work only. Never force-push, reset, create branches/worktrees, or stage unrelated/private files. If publication fails, preserve local changes and record the failure and recovery step in both files; do not claim synchronization.
+- A checkpoint may name the last pushed commit before its own update. The incoming agent must verify the containing checkpoint commit and remote state with Git; never invent a self-referential commit hash.
+- Multi-account continuation uses **one active writer**. Record the current owner and whether the session is active, paused or handed off. A new account must confirm the prior writer has stopped or has explicitly transferred ownership before changing shared files or starting jobs. Do not restart a recorded job without checking its status. This rule does not authorize subagents, experiments, paid calls or protected evaluation.
+
 ## Current scope and task contract
 
 - Start from a named public medical device or user-selected comparator. Produce an inspectable evidence dossier for entrepreneurs/investor analysts; idea-to-comparator discovery is future work.

@@ -2,7 +2,19 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Handoff rule (owner rule, 6 Nov 2026; always in force)
+## Cross-account checkpoint — 10 Nov 2026
+
+- Owner decision: every checkpoint must update **both `HANDOFF.md` and `CLAUDE.md`**, for Codex and Claude across accounts. The mandatory rule in `AGENTS.md` applies, including before a final response or account transfer and after read-only work.
+- Detailed current checkpoint: `HANDOFF.md`, top of `Agent takeover state`. Older checkpoint sections below are historical when they conflict with that state.
+- Session: Codex; bounded documentation update, handed off after successful publication; no ongoing writer or job launched by this session.
+- Last verified pushed commit before this update: `c3ff405396b73c25027505da70af6258604acf71`; local `main` and cached `origin/main` matched (0/0).
+- Changed files: `AGENTS.md`, `HANDOFF.md`, `CLAUDE.md`. Existing untracked research handoff preserved and excluded from this commit.
+- Verification: documentation change scope inspected; `git diff --check` PASS (exit 0). Publication is verified separately after the containing commit is pushed; no experiments or runtime tests required for this rule-only change. Remote GPU/job state NOT_VERIFIED in this session.
+- Next: verify the containing checkpoint commit and publication; confirm writer ownership; read the existing research handoff and assess R0/R1 under the recorded research boundaries. No new research execution is authorized by this update.
+
+## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
+
+**Mandatory extension:** every update below must update `CLAUDE.md`'s cross-account checkpoint together with `HANDOFF.md`. Follow `AGENTS.md`'s mandatory cross-account rule for triggers, required fields, single-writer ownership, and publication failures. End-of-session, pause, account transfer, failed attempts and read-only outcomes are checkpoints too. Use a maximum 30-minute interval during active work.
 
 Sessions can end without warning when an account hits its usage limit. Another agent, possibly on another account, must be able to continue from `HANDOFF.md` alone. So:
 

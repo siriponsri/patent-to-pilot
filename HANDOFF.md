@@ -2,7 +2,24 @@
 
 Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
-## Agent takeover state — 8 Nov 2026 (read this first)
+## Agent takeover state — 10 Nov 2026 (read this first)
+
+### Latest checkpoint — 10 Nov 2026 (Bangkok)
+
+- **Owner decision:** Codex and Claude on every account must update both this file and `CLAUDE.md` at every checkpoint. The full rule is in `AGENTS.md`, `Mandatory cross-account handoff`. It includes completion, decisions, blockers/failures, long/background work, 30-minute active intervals, and session end/pause/transfer.
+- **Ownership:** Codex, documentation-only rule update; handed off after successful publication. No continuing writer or background job launched by this session. Other machines' job state was not checked; historical statements below are not live job evidence.
+- **Last verified pushed commit before this update:** `c3ff405396b73c25027505da70af6258604acf71`; local `main` and cached `origin/main` matched (0/0). Verify the containing checkpoint commit and remote before resuming.
+- **Completed:** added mandatory paired handoff updates, account-independent continuation, single-writer ownership, and publication-failure handling to `AGENTS.md` and `CLAUDE.md`. Research results and protocol were not changed.
+- **Files:** this checkpoint changes only `AGENTS.md`, `CLAUDE.md`, and `HANDOFF.md`. The pre-existing untracked `docs/healthtech/research/PATENT_TO_PILOT_RESEARCH_AND_CLAUDE_HANDOFF_2026-11-09.md` is preserved and not staged. Contrary to the historical note below, a local copy now exists; its contents and completeness have not been verified in this session.
+- **Checks/evidence:** Git status, revision comparison and documentation change scope inspected; `git diff --check` PASS (exit 0). Publication is verified separately after the containing commit is pushed. Experiment/runtime checks NOT_RUN (documentation-only task).
+- **Boundaries/blockers:** no research execution in this task. Preserve sealed test labels and existing approval requirements for evaluation, spending, training and acquisition. No new blocker found for the documentation change; R0/R1 repair status has not been reassessed.
+- **Next steps:**
+  1. Verify the containing checkpoint commit, remote synchronization and working-tree state.
+  2. Confirm the previous writer has stopped or transferred ownership before editing or launching jobs.
+  3. Read the local research handoff and current canonical research records; verify actual R0/R1 status, beginning with A01, A03 and A14.
+  4. Record the next authorized bounded package and update both handoff files before any long job.
+
+The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
 
 **Latest (8 Nov ~13:30 Bangkok; last pushed commit before this note: `9f2a847`):**
 - **9 Nov owner handoff:**
