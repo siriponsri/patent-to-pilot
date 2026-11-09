@@ -5,6 +5,13 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 ## Agent takeover state — 8 Nov 2026 (read this first)
 
 **Latest (8 Nov ~13:30 Bangkok; last pushed commit before this note: `9f2a847`):**
+- **9 Nov owner handoff:**
+  - The owner will continue on another Claude account using the external research handoff `PATENT_TO_PILOT_RESEARCH_AND_CLAUDE_HANDOFF_2026-11-09.md` (not in the repo yet).
+  - **That handoff sets a method-first direction:**
+    - SACR (selective abstraction with preserved requirements) is the candidate method;
+    - DAPFAM is the external anchor;
+    - work packages R0–R6 come first, starting with integrity repairs: A01 label separation, A03 gold eligibility, A14 vector manifest.
+  - The copy-ready prompt is in `HANDOFF_PROMPT.md`. Phase-3 items 3d and the cited-distractor view are now optional later work.
 - **STATE AFTER PHASE 3A/3B (9 Nov, about 07:40 Bangkok):**
   - Eligible for test so far: **V4 only** (Qwen3-8B rerank of the X top 30 + dense, λ 0.5).
   - Done and not eligible: 3a PRF (negative) and 3c (not built; the 3b gate said NO_GO).
