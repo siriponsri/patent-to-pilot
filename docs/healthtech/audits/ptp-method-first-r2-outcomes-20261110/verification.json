@@ -1,0 +1,10 @@
+{
+  "status": "SYNTHETIC_OUTCOME_COST_UTILITIES_PASS",
+  "tests": 36,
+  "outcome_tests": 15,
+  "generation_tests": 8,
+  "component_tests": 13,
+  "lint": "PASS",
+  "runtime_controller": "NOT_COMPLETE",
+  "actual_cost_measurement": "NOT_RUN"
+}

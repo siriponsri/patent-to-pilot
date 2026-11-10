@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest outcomes/costs:**36 tests pass; full cohort preserves missing/fallback, review/retrieval failures stop scoring, unknown costs stay unknown. [Audit](../docs/healthtech/audits/ptp-method-first-r2-outcomes-20261110/README.md). Next reserved-attempt/event reconciliation and full R0–R6 acceptance audit; runtime and actual-data/generation gates remain.
+
 > **Latest components:** validated profile/source text rows and exact plan/row/encoder/vector-byte receipts;43 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-r2-components-20261110/README.md). Next full query failure/fallback/cost state; actual encoding, R1 and generation remain gated.
 
 > **Latest factorial integration:** shared inputs and separate unions, same-passage coverage/order binding;44 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-r2-factorial-20261110/README.md). Next source-bound component text compiler and full failure/cost orchestration. Pre-embedded kernel is not end-to-end SACR; actual R1/generation gates remain.

@@ -410,3 +410,13 @@ actual encoder execution and semantic fidelity not established. No model/data
 run. Failed/review plans remain explicit, not silently removed.
 Audit ../audits/ptp-method-first-r2-components-20261110/README.md.
 Next per-query failure/fallback and complete accounting; real R1/generation gates remain.
+
+
+### 2026-11-10 09:00:34 Bangkok — Outcome/cohort and cost utilities
+
+Missing/fallback denominator preservation, stop-on-review/retrieval-failure and
+unknown-preserving actual-operation cost summaries implemented.36 tests/lint pass.
+External durable attempt/event reconciliation and complete controller remain open;
+no real cost or relevance measurement. No data/model run.
+Audit ../audits/ptp-method-first-r2-outcomes-20261110/README.md.
+Next reconciliation and full R0–R6 evidence audit; no completion claim.
