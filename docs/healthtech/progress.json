@@ -51,7 +51,7 @@
       "disclosure": "B0 aggregate scores already known; no whole-study preregistration claim",
       "remaining": "Production runner, screening configuration and human review NOT_RUN"
     },
-    "sacr_native_fidelity_runner": "RUNNING_SESSION51538_2_EOS_1_REJECTED_1_STRUCTURAL_PENDING_AT_162158UTC",
+    "sacr_native_fidelity_runner": "RUNNING_REMOTE_CONTAINER_17_RETURNED_12_STRUCTURAL_5_REJECTED_AT_1704UTC_SESSION51538_CLOSED_NO_RESTART",
     "manuscript": "PRELIMINARY_B0_SG_NEGATIVE_DRAFT_SACR_RESULTS_PENDING"
   },
   "three_study_planning_20261110": {

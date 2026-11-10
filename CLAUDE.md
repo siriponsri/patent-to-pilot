@@ -1,5 +1,10 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Native fidelity periodic live checkpoint 2026-11-11T00:05+07:00
+
+Parent sole writer,last confirmed pushed5515f78. SAMEcontainerPID71075 confirmedRUNNING at17:04UTC;17normalreturns (15EOS,2OUTPUT_LIMIT),12structuralpending,5rejected;15360input/26584outputtokens,2710.996622s knowncompletedgeneration. Several SSHstatus/banner timeouts cleared by reobserving SAMEcontainer; no restart. Original attached51538 isclosed,observe remote status-v2.py; supervisorlastverifiedPID70886. Currentrun remains reserved7200s with6960s stoptrigger; next deadlineabout18:11UTC,not resetafterBangkokmidnight. Actualterminal/wholeGPUcharge pending. Both testsclosed,cards0,no semantic/retrievalPASS. Main workthisintervalverifiedwaitingon liveapprovedattempt; no new experiment/configuration. Next observe terminalandcharge,then decide remainingauthorizedwork fromcompletefailure/cohort evidence.
+
+
 ## Live supervisor recovered after SSH loss 2026-11-10T23:40+07:00
 
 Parent sole writer; push origin/main succeeded throughcb0c2e0,previous DNS backlog synchronized. Attached SSH session51538 is TERMINAL(exit1 connection timeout),NOT proofjobtermination and no longerpollable. Fresh independent observation verifies SAME supervisor PID70886 (supervise-reviewed.py),Dockerchild70995,containerPID71075 RUNNING at16:40:07UTC.6EOS,2rejected,4structuralpending;5681input/11741outputtokens,1205.188684s knowncompletedgeneration. No restart/newcallsfromrecovery. Monitor via fresh SSH status-v2.py and pgrep supervisor70886 inremotejobptp-native-sacr-fidelity-20261110-v1; original7200s boundstillactive. No fidelityPASS/cards/testaccess. Next terminalobservation/receiptcharge; preserveunknown interruptedcosts and originalsample ifcapends early.
