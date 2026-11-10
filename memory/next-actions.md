@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Specification reconciled:** implemented acquisition and typed evidence separated from actual execution; individual-view rejection distinguished from unadopted family rejection. [Audit](../docs/healthtech/audits/ptp-method-first-spec-reconciliation-20261110/README.md). CPU-004, curator/isolation and protocol decisions remain pending.
+
 > **Archive packaging verified locally:** six checks PASS; exact five pins and declaration. [Audit](../docs/healthtech/audits/ptp-method-first-archive-packaging-20261110/README.md). CPU-004 owner approval PENDING; no dispatch or retry. CPU-003 remains FAILED.
 
 > **CPU-ESCAPE-003 FAILED before cases:** archive CRLF bytes differ from declared LF payload; remote equals archive. Child/supervisor absent, zero model calls. [Result](../docs/healthtech/audits/ptp-method-first-escape-cpu-result-20261110/README.md). Next locally verify byte-identical archive packaging; no retry or model dispatch. Owner protocol/curator pending.

@@ -37,10 +37,11 @@ fidelity gates still prevent the present failed configuration from proceeding to
 
 ## Required integration before adoption
 
-1. Preserve the generation adapter's actual termination status, token/byte counts, raw
-   private artifact hash and terminal receipt before parser acceptance. Controller currently
-   receives raw bytes and metrics only; that is insufficient to classify infrastructure
-   failure versus normally terminated unusable generation.
+1. Typed generation records now bind reported termination, token/byte counts, raw private
+   artifact hash and costs before parser acceptance through generated profile/view adapters.
+   Execution v3 requires these adapters; legacy interfaces remain for older declarations.
+   Actual process-terminal evidence and runtime identity still require independent capture;
+   a bound normal-return record alone cannot attest real model execution.
 2. Introduce a new typed result version carrying generated-family outcome/reason and
    independent compact status. Bind replay to the original generation record; never change
    previously sealed v1/v2 outputs or failed attempts. Charge rejection attempts normally.
@@ -59,6 +60,10 @@ Whole malformed family currently produces a failed journal stage and blocks down
 this proposal has not changed that behavior. Existing SYN-SACR-001/002 and grammar failures
 remain unchanged. No retrieval effectiveness, human validation or semantic guarantee follows.
 
-The next implementation should first bind a typed generation outcome into the controller
-rather than broadly catching all exceptions as rejection. Independent safe work can also
-address full-index hashing memory while generation and curator gates remain unresolved.
+Typed generation outcomes and failed-attempt costs are now bound in the controller/journal;
+see the [generation-failure evidence](../audits/ptp-method-first-generation-failure-evidence-20261110/README.md)
+and [execution-v3 contract](../audits/ptp-method-first-required-generation-20261110/README.md).
+`GenerationEvidenceFailure` preserves verified failure evidence and still seals FAILED;
+it does not implement GENERATION_REJECTED or permit dependent retrieval. The next policy
+step is the pending owner decision, followed only if adopted by versioned implementation
+of items 2–5. Do not reinterpret existing failed receipts as completed rejected families.

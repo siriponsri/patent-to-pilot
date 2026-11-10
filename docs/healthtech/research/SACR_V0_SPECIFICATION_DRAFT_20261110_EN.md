@@ -1,6 +1,6 @@
 # SACR-v0 specification and fidelity plan
 
-Status: DRAFT_NOT_RUN; selector arithmetic implemented on synthetic fixtures only. This is preparatory R2 work while R1 actual data isolation, eligibility and baseline parity remain open. It is not a pilot declaration or experiment authorization.
+Status: DRAFT_NOT_ADOPTED_FOR_R3; injected six-stage orchestration is implemented and fixture-tested, but actual SACR retrieval is NOT_RUN. Failed model/grammar engineering attempts are retained separately. R1 actual data isolation, eligibility and baseline parity remain open. This is not a pilot declaration or experiment authorization.
 
 ## Research contract and source
 This draft operationalizes the owner's supplied research handoff §§8–10, 12–13 and Appendices B/C, without changing benchmark rules. SACR remains an untested candidate. The question is whether selective abstraction preserving explicit relations improves cross-class known-citation retrieval over a frozen passage anchor and resource-matched generic multi-query controls. No claim of novelty, semantic entailment, complete solutions, clinical usefulness or transfer feasibility follows from implementation.
@@ -14,14 +14,14 @@ Each condition records kind (numeric, qualitative, polarity, direction, material
 
 Allowed views are anchor unchanged, selective abstract, and deterministic relational compact serialization, at most three total. Relational serialization is source-order relation followed by its explicitly attached conditions; no new mechanism words. Duplicate views are logged and deduplicated, never replaced by extra generations. Preserve numbers, units, comparison, polarity, direction and action-operand roles. Source-span matching is a mechanical check, not proof that generated paraphrases preserve meaning.
 
-The extractor is the existing local Qwen3-8B, pending fresh local model/tokenizer/software identity capture. One prompt version, deterministic decoding, no generation retries. Exact prompt, token caps, truncation policy, memory/time cap and decoder implementation must be frozen in the methods log before the pilot. They are intentionally unresolved here rather than claimed as historical values. No corpus-side generation or full-corpus re-encoding.
+The proposed extractor is the existing local Qwen3-8B. Model/tokenizer hashes and selected software-source hashes have been captured for engineering checks; these do not attest a future runtime load or establish a viable decoder. One prompt version, deterministic decoding, no generation retries. Exact prompt, token caps, truncation policy, memory/time cap and decoder implementation must be frozen in the methods log before the pilot. Engineering-smoke settings are not an adopted R3 configuration. No corpus-side generation or full-corpus re-encoding.
 
-Whole-profile failure/no usable relation uses the immutable anchor output with a recorded reason. One invalid generated view is discarded; retain other valid views. Condition-free relations are allowed and tracked; do not remove those queries. Absent query text remains a failed query in the complete denominator. Runtime scoring failure stops the attempt; no silent candidate/query drops, automatic alternative method or score-driven retries.
+Whole-profile failure/no usable relation uses the immutable anchor output with a recorded reason. Within a valid response envelope, one mechanically invalid generated proposal is discarded while other valid views remain. A malformed envelope or normally returned non-EOS generation currently leaves a FAILED stage and blocks dependent retrieval; converting it to a rejected family while retaining anchor/compact is a separate [proposal awaiting owner decision](SACR_VIEW_FAILURE_POLICY_DRAFT_20261110_EN.md). Unresolved semantic review also stops retrieval. Condition-free relations are allowed and tracked; do not remove those queries. Absent query text remains in the complete denominator. Runtime scoring failure stops the attempt; no silent candidate/query drops, automatic alternative method or score-driven retries.
 
 ## Acquisition and selection arithmetic
 Proposed fixed first version: depth 200 per valid view, union at most 600 families, final depth 200; anchor alpha 0.5 and bottleneck beta 0.5. No hyperparameter search in this draft. These weights have no evidentiary relationship to V4's 0.5 fusion weight.
 
-Search every view over the full eligible frozen passage index with the existing query prefix and MaxP aggregation. Apply identical eligibility to every view before global top-k selection. Stable global cutoff ties use descending score then family ID. The historical baseline wrapper intentionally preserves historical torch.topk cutoff behavior for parity; the new stable acquisition implementation must report any tie divergence, not silently rewrite historical results. Acquisition implementation is still pending.
+Search every view over the full eligible frozen passage index with the existing query prefix and MaxP aggregation. Apply identical eligibility to every view before global top-k selection. Stable global cutoff ties use descending score then family ID. The historical baseline wrapper intentionally preserves historical torch.topk cutoff behavior for parity; the implemented CPU acquisition must report any tie divergence, not silently rewrite historical results. Actual baseline parity and corpus-scale resource acceptance remain NOT_RUN.
 
 For each candidate family and block, component cosine matrix rows are relation plus explicit conditions; columns are that family's identical indexed passages. Convert cosine to z=(1+cosine)/2, then for each column compute (1-beta)*mean(z)+beta*min(z). Take the maximum of that joint score over passages, then maximum over valid blocks. Thus evidence for separate components cannot be assembled from different passages. The maximum over blocks permits partial feature matching; no global all-requirements veto.
 
@@ -56,10 +56,10 @@ Evaluate acquisition rescue into raw union and selection rescue into fixed top-2
 ## Evidence and remaining freeze items
 Synthetic verification covers average-rank degeneracies, complementary passages, same-passage joint scores, partial-block matching, condition-free reductions, nonfinite inputs, duplicate IDs and stable final cutoff ties. It does not validate extraction, semantics, real vector alignment, acquisition or retrieval improvement.
 
-Before R3: finish strict profile/prompt validation and audit form; capture actual local model/software hashes; freeze prompt/token/time/memory limits; implement stable full-index acquisition and matched generic controls; declare benchmark adapters and failure/resource logs; complete actual R1 integrity/parity and source-fidelity review. Methods-log entry and bounded pilot declaration must precede execution. R5 protected evaluation still requires owner-approved freeze of at most four systems. No automatic ROSER/CPQA or other fallback research method.
+Before R3: establish a viable generation path; adopt fidelity and failure policies; bind the actual loaded model/tokenizer, prompt and immutable index to execution; freeze prompt/token/time/memory limits; verify actual matched-control costs and resource caps; complete R1 isolation, eligibility, baseline/native parity and source-fidelity review. Existing validators, acquisition, controls and journals supply implementation only. Methods-log entry and bounded pilot declaration must precede execution. R5 protected evaluation still requires owner-approved freeze of at most four systems. No automatic ROSER/CPQA or other fallback research method.
 
 ## Structural profile implementation checkpoint
-The sacr-profile-v0 validator now implements the logical profile contract with a proposed cap of eight conditions per block (eight blocks maximum). Optional numeric_value is exact string text, never coerced to float. Normalization/context changes require review; exact span checks never certify semantics. See SACR_FIDELITY_AUDIT_FORM_20261110_EN.md. Generated-view acceptance and extraction integration remain pending; these caps are draft implementation choices, not executed experimental settings.
+The sacr-profile-v0 validator implements the logical profile contract with a proposed cap of eight conditions per block (eight blocks maximum). Optional numeric_value is exact string text, never coerced to float. Normalization/context changes require review; exact span checks never certify semantics. See SACR_FIDELITY_AUDIT_FORM_20261110_EN.md. Generated-view acceptance and typed profile integration exist with authored fixtures; actual viable extraction and fidelity remain unverified. These caps are implementation choices, not adopted R3 experimental settings.
 
 ## Full-index acquisition checkpoint
 
@@ -68,16 +68,17 @@ It covers the intended full-index view search and global stable cutoff on synthe
 fixtures. Real owner/vector binding, historical numerical parity and V100 resource
 feasibility remain unverified; the historical baseline runner is unchanged.
 See [acquisition audit](../audits/ptp-method-first-r2-acquisition-20261110/README.md).
-This supersedes only the earlier statement that acquisition implementation is pending,
-not the end-to-end integration, actual integrity or semantic gates.
+Implementation does not satisfy actual integrity, runtime or semantic gates.
 
 ## Pre-embedded factorial checkpoint
 
 research/sacr_factorial.py now connects acquisition to G/G,G/L,I/G,I/L with shared
 anchor/index/mask/profile, separately bounded unions and common per-family passage
 slices. Order/owner digest is checked before search. It is not independent vector/text
-provenance. Profile-to-component embedding, fallback and full cost orchestration remain
-open. See [factorial audit](../audits/ptp-method-first-r2-factorial-20261110/README.md).
+provenance. Injected profile-to-component embedding, pinned-anchor fallback and cost
+reconciliation now exist; actual execution and measurements remain open. See
+[factorial audit](../audits/ptp-method-first-r2-factorial-20261110/README.md) and the
+[execution-v3 checkpoint](../audits/ptp-method-first-required-generation-20261110/README.md).
 No generated text, actual ranking or semantic benefit was evaluated.
 
 ## Component compilation checkpoint
@@ -87,4 +88,16 @@ receipts to ordered row/text/profile/encoder identities. Uncertain conditions do
 enter conjunction; failed/empty or review-flagged profiles yield no embedding rows.
 Unflagged plans still require fidelity review. Receipt checks do not prove actual
 encoder execution. See [component audit](../audits/ptp-method-first-r2-components-20261110/README.md).
-Actual encoding, failure/cost orchestration and end-to-end SACR remain incomplete.
+Actual encoding and end-to-end SACR remain incomplete. Execution v3 requires typed
+profile/view generation evidence, sealed costs and the original anchor; it does not
+independently attest model execution or authorize the proposed family-rejection rule.
+
+## Latest engineering boundary
+
+CPU-ESCAPE-003 failed before all 14 cases at the exact payload hash guard because
+Git archive changed line endings. Local archive packaging now verifies committed
+declaration bytes and all five pinned code/payload files before writing a package.
+This repair does not establish callback correctness. CPU-ESCAPE-004 approval is pending;
+no new remote attempt or model call follows automatically. See the
+[failed attempt](../audits/ptp-method-first-escape-cpu-result-20261110/README.md) and
+[packaging checks](../audits/ptp-method-first-archive-packaging-20261110/README.md).

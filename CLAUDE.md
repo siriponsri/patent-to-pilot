@@ -2,15 +2,15 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 11:06:43 Bangkok
+## Cross-account checkpoint — 2026-11-10 11:09:24 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** d24fd11f82a98dd6e697e57f35dedafff92fc284; verify containing checkpoint and remote on takeover.
-- **Latest package:** Byte-stable local archive packaging verified; six positive/negative checks PASS and Ruff PASS. Evidence docs/healthtech/audits/ptp-method-first-archive-packaging-20261110/README.md. CPU-003 remains FAILED; callback runtime NOT_RUN.
-- **Validation/changes:** Local packager uses per-command Git line-ending settings and checks exact declaration/blob/hash identities before writing archive. No Git configuration change, tokenizer import or remote dispatch. Five pinned files plus declaration match original committed bytes.
+- **Last verified pushed base:** 20e5fcaa106d11fbbc58be7f4dedbda87a86a631; verify containing checkpoint and remote on takeover.
+- **Latest package:** SACR specification and view-failure proposal reconciled with existing typed adapters/acquisition; stale pending-code statements removed, no policy adoption. Evidence docs/healthtech/audits/ptp-method-first-spec-reconciliation-20261110/README.md.
+- **Validation/changes:** Documentation only; inspected generated-view failure and controller/journal entry points. Nine local Markdown targets and progress JSON validated; no runtime tests rerun. CPU-003 remains FAILED; local archive six checks PASS, callback runtime NOT_RUN.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** Job /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1 ended 2026-11-10T03:58:53.704497Z, exit1, 0.075s supervisor wall, zero cases. Child3823049 reaped; child and supervisor3823048 observed absent. No remaining job from this dispatch. Existing HTTP service preserved. No restart.
-- **Next:** 1. Await owner CPU-ESCAPE-004 approval (asked; PENDING), then separate declaration and fresh preflight only if approved. 2. Use verified archive and remote transport hash check for authorized dispatch. 3. Resolve curator/isolation and view-failure protocol decisions. 4. Continue actual identity/resource and R1 gates; no model dispatch.
+- **Next:** 1. CPU-ESCAPE-004 approval remains PENDING; do not dispatch. 2. Owner curator/isolation and family-rejection protocol decisions remain pending. 3. Continue independent actual identity/resource preparation; preserve unchanged R1/generation/fidelity gates before any R3 declaration.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
