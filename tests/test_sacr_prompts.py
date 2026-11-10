@@ -10,6 +10,23 @@ from test_sacr_profile import SOURCE, fixture
 PROMPTS = Path(__file__).resolve().parents[1] / "docs/healthtech/research/prompts"
 
 
+def test_source_order_variant_preserves_identity_source_and_legacy_default():
+    args = dict(prompt_root=PROMPTS, kind='profile_quotes', source=SOURCE,
+                query_id='q1', input_kind='MTM_P')
+    old = build_messages(**args)
+    new = build_messages(**args, prompt_variant='source_order_v2')
+    assert old == build_messages(**args, prompt_variant='default')
+    assert old['messages'][1] == new['messages'][1]
+    assert old['prompt_sha256'] != new['prompt_sha256']
+    assert old['messages_sha256'] != new['messages_sha256']
+    assert 'earliest exact quotation' in new['messages'][0]['content']
+    assert json.loads(new['messages'][1]['content'])['identity']['profile_version'] == 'sacr-profile-quotes-v1'
+    with pytest.raises(InputBoundaryError):
+        build_messages(**{**args, 'kind': 'generic'}, prompt_variant='source_order_v2')
+    with pytest.raises(InputBoundaryError):
+        build_messages(**args, prompt_variant='unknown')
+
+
 def build(kind="profile", source=SOURCE, profile=None):
     return build_messages(prompt_root=PROMPTS, kind=kind, source=source, query_id="q1",
                           input_kind="MTM_P", profile=profile)

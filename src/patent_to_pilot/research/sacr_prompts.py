@@ -11,7 +11,7 @@ PROMPT_FILES = {"profile": "sacr_profile_v0.txt", "selective": "sacr_selective_v
 
 
 def build_messages(*, prompt_root: Path, kind: str, query_id: str, input_kind: str,
-                   source: str, profile=None) -> dict:
+                   source: str, profile=None, prompt_variant: str = "default") -> dict:
     if kind not in PROMPT_FILES or input_kind not in ("MTM_P", "DAPFAM_TA"):
         raise InputBoundaryError("unsupported generation contract")
     identifier(query_id)
@@ -20,7 +20,10 @@ def build_messages(*, prompt_root: Path, kind: str, query_id: str, input_kind: s
     if kind != "selective" and profile is not None:
         raise InputBoundaryError("profile forbidden for this prompt")
     root = prompt_root.resolve(strict=True)
-    path = root / PROMPT_FILES[kind]
+    if prompt_variant not in ("default", "source_order_v2") or (prompt_variant != "default" and kind != "profile_quotes"):
+        raise InputBoundaryError("unsupported prompt variant")
+    filename = "sacr_profile_quotes_order_v2.txt" if prompt_variant == "source_order_v2" else PROMPT_FILES[kind]
+    path = root / filename
     if path.is_symlink() or path.resolve().parent != root:
         raise InputBoundaryError("prompt path escapes declared root")
     raw = path.read_bytes()

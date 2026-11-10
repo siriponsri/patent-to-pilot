@@ -1,5 +1,9 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## SACR order repair declared 2026-11-10
+
+Parent solewriter,last pushed95d0f51. Source-order validator uses minimum block span start, nondecreasing/equality allowed. New explicit profile_quotes prompt variant states that rule; legacy prompt/schema/validator unchanged, no output repair. v4 synthetic smoke checks prompt hash before load/call.25 prompt/profile tests PASS,syntax PASS. Audit docs/healthtech/audits/ptp-syn-sacr004-20261110; configuration9127a6a42c0ccaa9cdee9b5bcfb253b41aebd8fd149c36bd3e934599804bbda6. DECLARED_NOT_RUN,zero new calls; one additional authorized smoke still unused. Next final supervisor/model/grammar/resource binding then single dispatch. Preserve SYN003 failure, all budgets, closed tests.
+
 ## Native baseline DEV MEASURED 2026-11-10
 
 Parent solewriter,last pushed1a5a849 before package. B0 OUT349:Recall200=.14772,Recall100=.09732,nDCG100=.04490,nDCG10=.02328; ALL474/IN450,zero missing rankings. Canonical audit docs/healthtech/audits/ptp-native-dense-preparation-20261110/README.md and dev-metrics-v1.json; aggregate hash6ebffc7f48c821c1b1fe2236243a91526f1ee3b9eee6d6d98ae29932b2f726ec verified. Evaluatorv1 failed pydantic import before data0.700525s; diagnosed deps-only read-only mount fix in freshv2 completed7.977811s. BothCPU-only; original failure retained, no generation/baseline retry. Runtime/evaluator containers terminal,no livejobs. Private perquery remains evaluatorv2 only. No published apples-to-apples or benefit claim. Next SACR declared repair/smoke, durable fidelity ledger, S/G sample/card allocation+feasibility; test closed.

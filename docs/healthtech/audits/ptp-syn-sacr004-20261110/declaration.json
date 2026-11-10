@@ -1,0 +1,32 @@
+{
+  "status": "DECLARED_NOT_RUN",
+  "attempt_id": "SYN-SACR-004",
+  "maximum_calls": 1,
+  "wall_seconds": 1800,
+  "kill_grace_seconds": 5,
+  "cpu_threads": 8,
+  "memory_total_bytes": 34359738368,
+  "gpu_uuid": "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089",
+  "retry": false,
+  "source": "same authored source as CPU004 and SYN003",
+  "prompt_variant": "source_order_v2",
+  "schema_version": "sacr-profile-quotes-v1",
+  "change": "Specify validator earliest block quotation nondecreasing source order; no output sorting/repair",
+  "unchanged": [
+    "source",
+    "model",
+    "decoder",
+    "grammar",
+    "schema",
+    "validation",
+    "limits"
+  ],
+  "files_sha256": {
+    "docs/healthtech/research/prompts/sacr_profile_quotes_order_v2.txt": "fca43e7cb6ecf667f9ca471ec6c408e9a945ec75e26a971d0fa192b6cc7d679b",
+    "scripts/healthtech/smoke_sacr_qwen_guarded_v4.py": "1ae2439e86d95f3ae00c5e2d52bd76aba0f7b0fe679e31a3ee3d1356b62e11c2"
+  },
+  "effective_decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+  "acceptance": "EOS_COMPLETE plus unchanged exact quote alignment and usable canonical profile; no semantic fidelity claim",
+  "on_failure": "preserve raw output and full costs; no further automatic smoke",
+  "configuration_sha256": "9127a6a42c0ccaa9cdee9b5bcfb253b41aebd8fd149c36bd3e934599804bbda6"
+}
