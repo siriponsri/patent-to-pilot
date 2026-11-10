@@ -471,3 +471,8 @@ negatives. Exact code/tokenizer/schema/source pins and stopping rules are in
 Specific justification: source-supported cache/backslash omission and config overwrite,
 with five installed source hashes matching upstream. No automatic repeated variants,
 SYN-SACR-003, model integration or R3 authorization. Status DECLARED_NOT_RUN.
+
+
+## CPU-ESCAPE-003 observed result — 2026-11-10 11:03:45 Bangkok
+
+FAILED before all 14 cases at payload hash guard; exit1, zero model calls, 0.0748766s supervisor wall. Child reaped and child/supervisor absent. Git archive CRLF payload differs from declared LF blob; remote equals archive, and CRLF-to-LF reproduces declared hash. No callback result, retry or model dispatch. Original declaration remains unchanged. See [terminal and byte evidence](../audits/ptp-method-first-escape-cpu-result-20261110/README.md). Next local packaging verification before any separately declared attempt. Scientific gates unchanged.

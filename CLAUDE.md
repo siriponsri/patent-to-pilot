@@ -2,15 +2,15 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 10:58:16 Bangkok
+## Cross-account checkpoint — 2026-11-10 11:03:45 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** a9c1d640d0c950fc0c032339fac87a29fd622ab2; CPU code archive fixed to this declaration commit; verify current containing handoff/remote on takeover.
-- **Latest package:** CPU-ESCAPE-003 prelaunch ready; docs/healthtech/audits/ptp-method-first-escape-cpu-result-20261110/. No conflicting research process/V100 compute observed; existing PID1745699 is retained HTTP service, not a probe. Fresh exclusive job root not yet created.
-- **Validation/changes:** Preflight/targeted service classification saved; supervisor syntax/Ruff checked. Original declaration14 cases, one120-second child plus5-second grace, zero model calls. No callback dispatched yet.
+- **Last verified pushed base:** 79338a7f3c6bb249326e9acc9141b959168ec9ab (matched origin/main before this checkpoint); executed code archive a9c1d640d0c950fc0c032339fac87a29fd622ab2. Verify containing checkpoint and remote on takeover.
+- **Latest package:** CPU-ESCAPE-003 FAILED at payload hash guard, before tokenizer imports or any of 14 cases; zero model calls. Evidence: docs/healthtech/audits/ptp-method-first-escape-cpu-result-20261110/README.md.
+- **Validation/changes:** Terminal receipt, launch and byte diagnosis preserved. Exact git archive and remote payload agree, but CRLF archive differs from declared LF blob; LF normalization reproduces declared hash. Candidate runtime NOT_RUN. No retry or production code change. Prior 429-test evidence does not validate this candidate.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
-- **Jobs/failures:** NEXT dispatch only: /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1, code a9c1d64, setsid/nohup supervisor. Monitor child.json, terminal.json and logs/status.log; timeout is supervised and exact child reaped. Prior failures retained; no restart.
-- **Next:** Launch declared CPU attempt once, poll same job and preserve terminal/cases including failure. Do not restart or dispatch model. Owner protocol/curator pending; actual R1/fidelity/resources/R3-R6 incomplete.
+- **Jobs/failures:** Job /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1 ended 2026-11-10T03:58:53.704497Z, exit1, 0.075s supervisor wall, zero cases. Child3823049 reaped; child and supervisor3823048 observed absent. No remaining job from this dispatch. Existing HTTP service preserved. No restart.
+- **Next:** 1. Design and locally verify byte-identical archive packaging, including all pinned files. 2. Preserve CPU-ESCAPE-003 as FAILED; any new CPU attempt needs a separate declaration, never silent retry. 3. Resolve owner curator/isolation and view-failure protocol decisions. 4. Complete actual R1/fidelity/resource gates before R3; no automatic model dispatch.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)

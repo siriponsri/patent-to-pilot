@@ -1,0 +1,45 @@
+{
+  "archive_commit": "a9c1d640d0c950fc0c032339fac87a29fd622ab2",
+  "files": [
+    {
+      "path": "docs/healthtech/audits/ptp-method-first-escape-cpu-declaration-20261110/authored-fixtures.json",
+      "declared": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8",
+      "checkout_sha256": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8",
+      "archive_sha256": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8",
+      "checkout_crlf": 0,
+      "lf_normalized_matches_archive": true
+    },
+    {
+      "path": "scripts/healthtech/probe_sacr_escape_candidate.py",
+      "declared": "4dd11460feaf0812940921ffa93acd6d71ac8b219fba634cdab9a0c0f3fe0dca",
+      "checkout_sha256": "4dd11460feaf0812940921ffa93acd6d71ac8b219fba634cdab9a0c0f3fe0dca",
+      "archive_sha256": "4dd11460feaf0812940921ffa93acd6d71ac8b219fba634cdab9a0c0f3fe0dca",
+      "checkout_crlf": 0,
+      "lf_normalized_matches_archive": true
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_escape_callback.py",
+      "declared": "73fd5b5a61e0225fb99aab8f09d6a725a231786cab9e46f1982c9252a484d642",
+      "checkout_sha256": "73fd5b5a61e0225fb99aab8f09d6a725a231786cab9e46f1982c9252a484d642",
+      "archive_sha256": "73fd5b5a61e0225fb99aab8f09d6a725a231786cab9e46f1982c9252a484d642",
+      "checkout_crlf": 0,
+      "lf_normalized_matches_archive": true
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_grammar_guard.py",
+      "declared": "04ae93ed31f72e92e40654142fb98f23279fe1a1f6d77357dfd90d2be6472aca",
+      "checkout_sha256": "04ae93ed31f72e92e40654142fb98f23279fe1a1f6d77357dfd90d2be6472aca",
+      "archive_sha256": "04ae93ed31f72e92e40654142fb98f23279fe1a1f6d77357dfd90d2be6472aca",
+      "checkout_crlf": 0,
+      "lf_normalized_matches_archive": true
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_alphabet.py",
+      "declared": "b621df06b742e8165fe98e3549b5df3e41361f89fa2eebde9e26e3865bda0731",
+      "checkout_sha256": "b621df06b742e8165fe98e3549b5df3e41361f89fa2eebde9e26e3865bda0731",
+      "archive_sha256": "b621df06b742e8165fe98e3549b5df3e41361f89fa2eebde9e26e3865bda0731",
+      "checkout_crlf": 0,
+      "lf_normalized_matches_archive": true
+    }
+  ]
+}

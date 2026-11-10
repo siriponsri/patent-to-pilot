@@ -1,0 +1,12 @@
+{
+  "git_archive_sha256": "eae376bd3c618b6f964fe25af6d2fc69082d33f3e14068b13d285a7c02993b08",
+  "git_archive_bytes": 37318,
+  "git_archive_crlf": 427,
+  "remote": {
+    "sha256": "eae376bd3c618b6f964fe25af6d2fc69082d33f3e14068b13d285a7c02993b08",
+    "bytes": 37318,
+    "crlf": 427,
+    "lf_sha256": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8",
+    "declared": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8"
+  }
+}

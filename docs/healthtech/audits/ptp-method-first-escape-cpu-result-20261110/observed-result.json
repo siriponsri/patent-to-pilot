@@ -1,0 +1,30 @@
+{
+  "supervisor-reservation.json": {
+    "pid": 3823048,
+    "wall_limit_seconds": 120,
+    "supervisor_sha256": "d79d4bf21d060261f57766863a82f7770a3beeec345accda273b50e61f4c2fcf",
+    "code_commit": "a9c1d640d0c950fc0c032339fac87a29fd622ab2",
+    "proc_exists_now": false
+  },
+  "child.json": {
+    "pid": 3823049,
+    "model_calls": 0,
+    "proc_exists_now": false
+  },
+  "terminal.json": {
+    "status": "FAILED",
+    "child_pid": 3823049,
+    "returncode": 1,
+    "child_reaped": true,
+    "child_proc_exists": false,
+    "cases_written": 0,
+    "result_exists": false,
+    "all_expected": false,
+    "wall_seconds": 0.07487657573074102,
+    "finished_utc": "2026-11-10T03:58:53.704497+00:00",
+    "model_calls": 0
+  },
+  "cases": [],
+  "status_log": "2026-11-10T03:58:53.634610+00:00 STARTED_CPU_ONLY\n2026-11-10T03:58:53.638977+00:00 CHILD 3823049\n2026-11-10T03:58:53.706316+00:00 TERMINAL FAILED\n",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1/code/scripts/healthtech/probe_sacr_escape_candidate.py\", line 100, in <module>\n    run(args.tokenizer, args.payload, args.declaration, args.output)\n  File \"/home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1/code/scripts/healthtech/probe_sacr_escape_candidate.py\", line 21, in run\n    raise ValueError('declared payload mismatch')\nValueError: declared payload mismatch\n"
+}
