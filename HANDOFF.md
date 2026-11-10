@@ -1,5 +1,10 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Fidelity closeout preparation and independent manuscript check 2026-11-10
+
+Parent sole writer,last locala58fb47,last confirmed remoteffc183f. Same native profile container confirmedrunning (session51538,PID71075);3EOS,1rejected,2structuralpending at16:28:19UTC;2657input/5157outputtokens,506.781825s knowncompletedgeneration. No fidelityPASS/cards/retries. New read-only closeout aggregator distinguishes notstarted/preparation/unknownexecution/normalreturns and refuseslive or conflictingterminal state;4 testsPASS. Independent manuscript review verified all B0/S-G numericclaims and no semantic/retrievaloverclaim; stale NOT_RUN baseline labels fixed in paper-comparability supportdoc. Audit README explicitly states2h stageallocation is agent choice inside owner8h fidelitycap; incomplete cohort mustnot become method-infeasibility claim or reset ledger. Continue monitoring SAMEjob, then terminalcost accounting; no additional GPU work whilelive.
+
+
 ## Native fidelity live evidence and manuscript draft 2026-11-10T23:22+07:00
 
 Parent sole writer,last local7e88947,last confirmed remoteffc183f. SAME session51538/containerptp-native-sacr-fidelity-20261110-v1 confirmedrunning PID71075 at16:21:58UTC;2 EOS_COMPLETE,1 rejected generated family,1 structural result fidelitypending;1751input/2966outputtokens,313.248574s completedgeneration,median156.624287s. No retries/repairs/cards; no semanticPASS. Early throughput risks completing fewer than100 withindeclared7200s; keep cap/no ledger reset and do not present partial cohort aspassed. One read-only SSH observation timed out; reobserving SAME container succeeded,not jobfailure/restart. Added preliminary PAPER1-MANUSCRIPT-DRAFT.md with source-verified B0 table,S/G negativefeasibility,costs,Paper53 alignment and comparability limits;7 evidence links verified. SACRresults/pilot/full-dev remainpending. Continue monitoring51538 or status-v2.py inremotejob;neverredispatch. Onterminal inspectstate/receipts,chargewholewall and preserveunknown/failed outputs before dependentwork.

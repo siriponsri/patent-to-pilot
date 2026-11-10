@@ -1,6 +1,6 @@
 # Paper 1 supplement: DAPFAM comparison and Paper 53 alignment
 
-Date: 2026-11-10. Status: SOURCE_REVIEWED / COMPARISON_PROTOCOL_PROPOSED / OUR_NATIVE_BASELINE_NOT_RUN.
+Date: 2026-11-10. Status: SOURCE_REVIEWED / OUR_NATIVE_DEV_BASELINE_MEASURED / OTHER_ARM_COMPARISONS_NOT_RUN.
 
 Owner requested this additional task within Paper 1, not a replacement goal or permission to open protected tests. Parent remains sole repository writer. Existing models, vectors, resource ledger and 60-card total human-review ceiling remain binding.
 
@@ -74,7 +74,7 @@ Adopt for Paper1:
 ## 6. Prospective execution and acceptance
 
 - Add descriptive nDCG@10 from the same saved rankings alongside nDCG@100/Recall@100/200, before any new native dev scores. This is a metric bridge, not an additional confirmatory hypothesis or a primary-endpoint change. Freeze exact metric implementation and denominator policy with the run manifest before execution.
-- First bind staged dev runtime/evaluator manifests, existing vector/passages/model revision and isolated mounts. Existing baseline is NOT_RUN; no paper review substitutes for this gate.
+- Native B0 has completed the staged dev runtime/evaluator, vector/passage/model binding and isolation checks; measured results are linked above. Carry the same bindings into subsequent arms. Source review alone does not establish parity for a new arm.
 - For each result row record query cohort hash, eligible counts per partition, qrel semantics, fields, candidate scope, preprocessing, model/pooling/precision, family aggregation, cutoffs, ties, tuning history, failure policy and cost scope. Mark unknowns explicitly.
 - Evaluate feasible authorized arms against B0 on identical dev inputs and relevance rules. Publish literature-context rows in a separate table, not an apparent common leaderboard.
 - Any exact published-model reproduction requiring new corpus encoding, training or protected queries remains out of scope. Report the gap rather than silently relaxing the owner's rules.
