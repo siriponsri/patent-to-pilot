@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 import subprocess
 import time
+import signal
 
 JOB = Path(__file__).resolve().parent
 BASE = Path('/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031')
@@ -29,6 +30,55 @@ def inspect():
     if p.returncode:
         raise RuntimeError('container inspection failed; do not restart')
     return json.loads(p.stdout)[0]
+
+
+def stop_owned():
+    """Only stop this attempt; failures remain unknown, never restart it."""
+    subprocess.run(['docker', 'stop', '--time=5', NAME], capture_output=True, timeout=15)
+    state = inspect()
+    if state['State']['Running']:
+        subprocess.run(['docker', 'kill', NAME], check=True, capture_output=True, timeout=10)
+        state = inspect()
+    if state['State']['Running']:
+        raise RuntimeError('owned container termination unverified')
+    return state
+
+
+def monitor(child, started):
+    peak, observation_errors = 0, 0
+    try:
+        while child.poll() is None:
+            if time.monotonic() - started >= 14395:
+                stop_owned()
+                return 'TIMEOUT', peak
+            size = sum(p.stat().st_size for folder in ('out', 'logs')
+                       for p in (JOB / folder).rglob('*') if p.is_file())
+            if size > 128 * 1024**2:
+                stop_owned()
+                return 'OUTPUT_LIMIT', peak
+            try:
+                state = inspect()
+                observation_errors = 0
+            except (subprocess.TimeoutExpired, RuntimeError, ValueError):
+                observation_errors += 1
+                if observation_errors >= 3:
+                    stop_owned()
+                    return 'OBSERVATION_FAILED_STOPPED', peak
+                time.sleep(1)
+                continue  # Reobserve the same child, never start another.
+            pid = state['State']['Pid']
+            try:
+                for line in Path(f'/proc/{pid}/cgroup').read_text().splitlines():
+                    if line.startswith('0::'):
+                        p = Path('/sys/fs/cgroup') / line.split('::', 1)[1].lstrip('/') / 'memory.peak'
+                        peak = max(peak, int(p.read_text()))
+            except (FileNotFoundError, ProcessLookupError):
+                pass
+            time.sleep(1)
+        return 'EXITED', peak
+    except BaseException:
+        stop_owned()
+        raise
 
 
 def main():
@@ -78,30 +128,15 @@ def main():
     write('isolation-readback.json', {'status': 'PASS_BEFORE_START', 'mounts': state['Mounts'],
                                      'host_config': h, 'image': state['Image']})
     started = time.monotonic()
-    timeout = False
-    peak = 0
+    signal.signal(signal.SIGTERM, lambda *_: (_ for _ in ()).throw(InterruptedError('supervisor interrupted')))
     with (JOB / 'logs/stdout').open('xb') as out, (JOB / 'logs/stderr').open('xb') as err:
         child = subprocess.Popen(['docker', 'start', '-a', NAME], stdout=out, stderr=err)
         write('child.json', {'pid': child.pid, 'container_name': NAME})
-        while child.poll() is None:
-            if time.monotonic() - started >= 14395:
-                timeout = True
-                subprocess.run(['docker', 'stop', '--time=5', NAME], capture_output=True, timeout=15)
-                break
-            state = inspect()
-            pid = state['State']['Pid']
-            try:
-                for line in Path(f'/proc/{pid}/cgroup').read_text().splitlines():
-                    if line.startswith('0::'):
-                        p = Path('/sys/fs/cgroup') / line.split('::', 1)[1].lstrip('/') / 'memory.peak'
-                        peak = max(peak, int(p.read_text()))
-            except (FileNotFoundError, ProcessLookupError):
-                pass
-            time.sleep(1)
+        reason, peak = monitor(child, started)
         rc = child.wait(timeout=15)
     state = inspect()
     completion = JOB / 'out/attempt/completion.json'
-    write('terminal.json', {'status': 'TIMEOUT' if timeout else 'COMPLETED_NOT_EVALUATED'
+    write('terminal.json', {'status': reason if reason != 'EXITED' else 'COMPLETED_NOT_EVALUATED'
           if rc == 0 and completion.is_file() and state['State']['ExitCode'] == 0 else 'FAILED',
           'wall_seconds': time.monotonic() - started, 'returncode': rc,
           'container_state': state['State'], 'observed_cgroup_peak_bytes': peak,

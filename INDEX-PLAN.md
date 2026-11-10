@@ -1,5 +1,9 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Native baseline dispatch preparation 2026-11-10
+
+Parent solewriter.27 targeted supervisor/runner/ranking/native tests PASS; hard stop and repeated observation failures covered. Remote model weight SHA234ea36a matches, pinned image exists, GPU currently empty. One baseline dispatch approved under existing4h cap; source73f799e runtime code already staged. Supervisor31GiB plus1GiB overhead,8CPU,14400s including5s grace,128MiB output alarm, no network/test/evaluator mounts; actual readback occurs before container start. NOT_STARTED at this checkpoint; next transfer supervisor/hash verify and single dispatch, then monitor same handle. Audit native-staging-admission.json; all prior budgets retained.
+
 ## Remote native runtime staging 2026-11-10
 
 Parent sole writer; last pushed73f799e. New remote job ptp-native-baseline-20261110-v1 contains only runtime-dev and committed code archive/extraction. Transfer72603 terminal exit0; corpus/TA/manifest and archive hashes match. No evaluator/test/model/vector copies. Conservative retained-plus-new reservation9885712459bytes below40GiB; priorGPU141.93697s retained, proposed baseline14400s within72h. Receipt: docs/healthtech/audits/ptp-native-dense-preparation-20261110/native-staging-admission.json. Supervisor draft syntax PASS but NOT_DISPATCHED; next harden exception/termination handling and verify actual container isolation before baseline. No running transfer or baseline/model calls.

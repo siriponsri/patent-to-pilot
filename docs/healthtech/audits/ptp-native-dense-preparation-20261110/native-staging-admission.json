@@ -12,7 +12,9 @@
   "gpu_total_limit_seconds": 259200,
   "model_calls_this_package": 0,
   "code_archive_sha256": "23352c6895d04dd9c7938ba03431ddfedf0bdb09a5fff70036c73adc6bd0f24b",
-  "supervisor_status": "DRAFT_SYNTAX_PASS_NOT_RUN_NEEDS_EXCEPTION_HANDLING_REVIEW",
+  "supervisor_status": "27_TARGETED_TESTS_PASS_READY_FOR_SINGLE_DISPATCH",
   "runtime_transfer_exit_code": 0,
-  "remote_runtime_hashes_match": true
+  "remote_runtime_hashes_match": true,
+  "supervisor_sha256": "0354200454bc949863f205ded3e03f133df2cf1f8f1e1be430e8ac78f4110750",
+  "model_weights_live_verified": true
 }
