@@ -2,15 +2,15 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 11:09:24 Bangkok
+## Cross-account checkpoint — 2026-11-10 11:11:19 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** 20e5fcaa106d11fbbc58be7f4dedbda87a86a631; verify containing checkpoint and remote on takeover.
-- **Latest package:** SACR specification and view-failure proposal reconciled with existing typed adapters/acquisition; stale pending-code statements removed, no policy adoption. Evidence docs/healthtech/audits/ptp-method-first-spec-reconciliation-20261110/README.md.
-- **Validation/changes:** Documentation only; inspected generated-view failure and controller/journal entry points. Nine local Markdown targets and progress JSON validated; no runtime tests rerun. CPU-003 remains FAILED; local archive six checks PASS, callback runtime NOT_RUN.
+- **Last verified pushed base:** ed41d88253fc4247f9fa3e112f6cdeaa02105537; verify containing checkpoint and remote on takeover.
+- **Latest package:** Read-only host-memory observation: 113.7099 GiB available vs 11.8536 GiB two-array payload; no finite cap in observed SSH cgroup ancestry. This is capacity evidence only, not runtime resource acceptance. docs/healthtech/audits/ptp-method-first-host-memory-20261110/README.md.
+- **Validation/changes:** Allowed OS/cgroup counters captured with UTC timestamp; arithmetic/schema verified, collector syntax checked. No model/vector/corpus load, protected data read, allocation experiment or new remote research job. Detached index-copy invariant retained.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** Job /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1 ended 2026-11-10T03:58:53.704497Z, exit1, 0.075s supervisor wall, zero cases. Child3823049 reaped; child and supervisor3823048 observed absent. No remaining job from this dispatch. Existing HTTP service preserved. No restart.
-- **Next:** 1. CPU-ESCAPE-004 approval remains PENDING; do not dispatch. 2. Owner curator/isolation and family-rejection protocol decisions remain pending. 3. Continue independent actual identity/resource preparation; preserve unchanged R1/generation/fidelity gates before any R3 declaration.
+- **Next:** 1. CPU-ESCAPE-004 owner approval remains PENDING; do not dispatch. 2. Obtain owner curator/isolated runtime and family-rejection decisions. 3. Declare actual isolated memory cap/residency and measure peak only under a separately bounded authorized run; host snapshot is not acceptance. 4. Preserve R1 parity/generation/fidelity gates before R3.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)

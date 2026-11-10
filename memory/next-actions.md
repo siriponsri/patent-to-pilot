@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Host capacity observed, runtime acceptance open:** 113.71 GiB available at observation; two-array payload 11.85 GiB excludes overhead. SSH hierarchy has no finite memory cap. [Audit](../docs/healthtech/audits/ptp-method-first-host-memory-20261110/README.md). Keep detached copy; actual isolated budget/peak and pending owner decisions remain prerequisites.
+
 > **Specification reconciled:** implemented acquisition and typed evidence separated from actual execution; individual-view rejection distinguished from unadopted family rejection. [Audit](../docs/healthtech/audits/ptp-method-first-spec-reconciliation-20261110/README.md). CPU-004, curator/isolation and protocol decisions remain pending.
 
 > **Archive packaging verified locally:** six checks PASS; exact five pins and declaration. [Audit](../docs/healthtech/audits/ptp-method-first-archive-packaging-20261110/README.md). CPU-004 owner approval PENDING; no dispatch or retry. CPU-003 remains FAILED.

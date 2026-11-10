@@ -1,0 +1,37 @@
+{
+  "observed_utc": "2026-11-10T04:10:09.274593+00:00",
+  "host_memory": {
+    "MemTotal_bytes": 135035817984,
+    "MemAvailable_bytes": 122095116288,
+    "SwapTotal_bytes": 8589930496,
+    "SwapFree_bytes": 8579997696
+  },
+  "cgroup_v2": [
+    {
+      "memory.max": "max",
+      "memory.high": "max",
+      "memory.current": "10125312",
+      "memory.swap.max": "max",
+      "memory.swap.current": "0"
+    },
+    {
+      "memory.max": "max",
+      "memory.high": "max",
+      "memory.current": "39435874304",
+      "memory.swap.max": "max",
+      "memory.swap.current": "0"
+    },
+    {
+      "memory.max": "max",
+      "memory.high": "max",
+      "memory.current": "46753095680",
+      "memory.swap.max": "max",
+      "memory.swap.current": "36864"
+    }
+  ],
+  "scope": "SSH observer only; not a declared isolated research runtime",
+  "recorded_index_payload_bytes": 6363865088,
+  "input_plus_detached_copy_bytes": 12727730176,
+  "host_available_minus_two_arrays_bytes": 109367386112,
+  "acceptance": "NOT_ESTABLISHED_NO_RUNTIME_BUDGET_OR_MEASURED_INDEX_PEAK"
+}
