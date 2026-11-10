@@ -113,6 +113,25 @@ class BoundProfileController:
 
         return self.journal.execute(self._attempts[query_id, kind], validated_work)
 
+    def _replay_view(self, query_id, kind, output, canonical):
+        """One replay contract for embedding and all terminal cohort states."""
+        if type(output) is not dict or type(output.get('response_utf8')) is not str:
+            raise InputBoundaryError('replayable typed view result required')
+        limits = self.journal.execution['limits']
+        if output.get('format') == 'sacr-view-stage-v3':
+            replayed = generated_view_result(
+                output['generation_artifact_utf8'].encode('utf-8'), output['generation_identity'],
+                expected_identity=self._generation_identity(query_id, kind, canonical),
+                metrics=self.journal.read_completed_metrics(self._attempts[query_id, kind]),
+                profile_output=canonical, limits=limits)
+        else:
+            replayed = view_result(output['response_utf8'].encode('utf-8'), kind=kind,
+                                   profile_output=canonical, maximum_bytes=limits['response_bytes'],
+                                   maximum_views=limits['views'])
+        if replayed != output:
+            raise InputBoundaryError('view evidence changed')
+        return replayed
+
     def embedding_inputs(self, query_id):
         """Replay both view decisions before preparing texts; no adapter dispatch.
 
@@ -129,23 +148,11 @@ class BoundProfileController:
         canonical = profile_result(profile['profile'], source=self._sources[query_id], query_id=query_id)
         if canonical != profile or canonical['decision'] != 'PROFILE_STRUCTURALLY_PREPARED_FIDELITY_PENDING':
             raise InputBoundaryError('embedding profile is not structurally prepared')
-        limits = self.journal.execution['limits']
         results = {}
         for kind in ('generic', 'selective'):
             output = self.journal.read_completed_output(self._attempts[query_id, kind])
-            if type(output) is not dict or type(output.get('response_utf8')) is not str:
-                raise InputBoundaryError('replayable typed view result required')
-            if output.get('format') == 'sacr-view-stage-v3':
-                replayed = generated_view_result(
-                    output['generation_artifact_utf8'].encode('utf-8'), output['generation_identity'],
-                    expected_identity=self._generation_identity(query_id, kind, canonical),
-                    metrics=self.journal.read_completed_metrics(self._attempts[query_id, kind]),
-                    profile_output=canonical, limits=limits)
-            else:
-                replayed = view_result(output['response_utf8'].encode('utf-8'), kind=kind,
-                                       profile_output=canonical, maximum_bytes=limits['response_bytes'],
-                                       maximum_views=limits['views'])
-            if replayed != output or replayed['decision'] == 'REVIEW_REQUIRED':
+            replayed = self._replay_view(query_id, kind, output, canonical)
+            if replayed['decision'] == 'REVIEW_REQUIRED':
                 raise InputBoundaryError('view evidence changed or requires review')
             results[kind] = {'views': tuple(replayed['screened']['views']),
                              'view_output_sha256': digest(replayed),
@@ -308,13 +315,7 @@ class BoundProfileController:
                     if states[kind] != 'COMPLETED':
                         raise InputBoundaryError('failed view generation requires declared family failure policy')
                     output = records[kind][1]
-                    if type(output) is not dict or type(output.get('response_utf8')) is not str:
-                        raise InputBoundaryError('typed view terminal evidence required')
-                    limits = self.journal.execution['limits']
-                    replayed = view_result(output['response_utf8'].encode(), kind=kind, profile_output=canonical,
-                                           maximum_bytes=limits['response_bytes'], maximum_views=limits['views'])
-                    if replayed != output:
-                        raise InputBoundaryError('view terminal evidence changed')
+                    replayed = self._replay_view(query, kind, output, canonical)
                     review = review or replayed['decision'] == 'REVIEW_REQUIRED'
             retrieval = ('embedding', 'acquisition', 'selection')
             if review:
