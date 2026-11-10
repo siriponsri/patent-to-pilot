@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 07:55:08 Bangkok
+## Cross-account checkpoint — 2026-11-10 07:58:12 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 43d2050723fd1286aa6993ab29cd9e12f997d124.
-- Latest: source-bound prompt assembler, three authored prompts and generation contract draft. Audit docs/healthtech/audits/ptp-method-first-r2-prompts-20261110/README.md. 39 tests pass (0.53s), Ruff pass.
-- Actual remote config/package metadata read: model ceiling 40960, tokenizer limit 131072; installed transformers 4.55.2 and torch 2.8.0+cu128. No model/tokenizer loaded, weights hashed, benchmark read or GPU job launched. Current live resources not inspected.
-- Output acceptance/compact view, full weight/dtype/resource freeze and real fidelity remain pending. Actual R1 isolation/A03/parity open; curator/environment question unanswered. No response inferred.
-- Next output validation/compact view and existing generation implementation review; actual integrity after curator transfer. Changes: prompts/module/tests, contract, observation/audit and paired handoff/progress pointers. Preserve untracked owner handoff and all standing gates.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: ee9206bd48fb274db52bf9fc000ccae5ca08dba3.
+- Latest: strict view parser, deterministic compact construction and conservative screening/anchor collection. Audit docs/healthtech/audits/ptp-method-first-r2-views-20261110/README.md. 54 tests pass in 0.76s; Ruff pass. Role-reversal falsification fixture proves lexical checks cannot certify semantics.
+- New vocabulary/uncertain transformations require review; full SACR acceptance policy remains open. Do not substitute extractive-only or anchor-only behavior and call it full SACR. No actual data/model/retrieval/GPU run or new job.
+- Next existing generation path review and orchestration; declared semantic-review/weight/dtype/resource gates before model smoke/pilot. Actual R1 isolation/A03/parity still awaits curator/environment response; no answer inferred.
+- Changes: views/tests, contract checkpoint, audit and paired handoff/progress pointers. Preserve owner untracked handoff, single writer and all test/spend/protocol/release gates.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

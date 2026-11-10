@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest view components:** [54 tests pass](../docs/healthtech/audits/ptp-method-first-r2-views-20261110/README.md). Compact/parser/lexical screening implemented; role-reversal limitation explicit. Full semantic acceptance remains open. Next generation-path/orchestration and declared resource/review gates; no actual experiment.
+
 > **Latest prompt package:** [generation contract](../docs/healthtech/research/SACR_GENERATION_CONTRACT_DRAFT_20261110_EN.md), actual remote config hashes and 39 passing tests. No generation; weights/resource/output gates still open. Next generated-view acceptance and compact view, existing local generation path.
 
 > **Latest parity gate:** [declaration](../docs/healthtech/research/MTM_DEV_BASELINE_PARITY_DECLARATION_20261110_EN.md) and dev/main comparator, 34 targeted tests pass. Actual rankings NOT_RUN. Curator/environment and real input pins still required; independently finish SACR view/prompt contract.
