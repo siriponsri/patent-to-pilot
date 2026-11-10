@@ -16,6 +16,7 @@ from patent_to_pilot.research.mtm_runtime import InputBoundaryError
 from patent_to_pilot.research.sacr_generation import GenerationLimits
 from patent_to_pilot.research.sacr_native_fidelity import bind_sample, digest, run_profiles, run_unstarted_profiles, write_new
 from patent_to_pilot.research.sacr_continuation import seal_terminal_history, canonical_continuation_root
+from patent_to_pilot.research.sacr_retry_exception import validate_authority, canonical_exception_root, run_authorized_exception, validate_closed_continuation, validate_same_contract
 
 REQUIRED_FILES = {
     'scripts/healthtech/run_sacr_native_fidelity.py',
@@ -23,7 +24,7 @@ REQUIRED_FILES = {
     'src/patent_to_pilot/healthtech/local_execution.py',
     'docs/healthtech/research/prompts/sacr_profile_quotes_order_v2.txt',
     *('src/patent_to_pilot/research/' + name + '.py' for name in (
-        'sacr_native_fidelity', 'sacr_continuation', 'sacr_generation', 'sacr_generation_receipt',
+        'sacr_native_fidelity', 'sacr_continuation', 'sacr_retry_exception', 'sacr_generation', 'sacr_generation_receipt',
         'sacr_rejection_policy', 'sacr_schema', 'sacr_solo_fidelity', 'sacr_prompts',
         'sacr_profile', 'sacr_quote_profile', 'sacr_views', 'sacr_outcomes',
         'sacr_alphabet', 'sacr_escape_callback', 'sacr_grammar_guard', 'mtm_runtime')),
@@ -78,6 +79,8 @@ def main():
         parser.add_argument('--' + name, type=Path)
     parser.add_argument('--declaration-sha256', required=True)
     parser.add_argument('--supervisor-stop-monotonic', type=float)
+    parser.add_argument('--retry-authorization', type=Path)
+    parser.add_argument('--continuation-terminal', type=Path)
     args = parser.parse_args()
     raw = args.declaration.read_bytes()
     if digest(raw) != args.declaration_sha256:
@@ -92,6 +95,9 @@ def main():
     prior_arguments = (args.prior_output, args.prior_terminal, args.observed_state,
                        args.continuation_manifest, args.resource_ledger)
     continuation = None
+    exception_raw = None
+    if args.retry_authorization and not all(prior_arguments):
+        raise InputBoundaryError('exception requires sealed original history and budget inputs')
     if any(prior_arguments):
         if args.supervisor_stop_monotonic is None or not math.isfinite(args.supervisor_stop_monotonic):
             raise InputBoundaryError('continuation requires the actual supervisor stop deadline')
@@ -105,7 +111,8 @@ def main():
             observed_state=json.loads(args.observed_state.read_bytes()),
             prompt_root=ROOT / 'docs/healthtech/research/prompts',
             sample_sha256=declaration['sample_sha256'], query_sha256=declaration['query_sha256'])
-        if continuation != json.loads(manifest_raw) or declaration['maximum_calls'] != continuation['maximum_new_profile_calls']:
+        expected_calls = 1 if args.retry_authorization else continuation['maximum_new_profile_calls']
+        if continuation != json.loads(manifest_raw) or declaration['maximum_calls'] != expected_calls:
             raise InputBoundaryError('continuation differs from sealed never-started selection')
         prior_decl = json.loads((args.prior_output / 'declaration.json').read_bytes())
         prior_wall = json.loads(args.prior_terminal.read_bytes())['wall_seconds']
@@ -114,7 +121,28 @@ def main():
             minimum_gpu_charge=prior_decl['prior_gpu_charge_seconds'] + prior_wall)
         if args.prior_output.resolve() != Path('/history/attempt'):
             raise InputBoundaryError('continuation requires the fixed prior history mount')
-        if args.output.resolve() != canonical_continuation_root(args.prior_output, continuation):
+        if args.retry_authorization:
+            validate_same_contract(declaration, prior_decl)
+            exception_raw = args.retry_authorization.read_bytes()
+            validate_authority(exception_raw, declaration['retry_authorization_sha256'], wall_seconds=declaration['wall_seconds'])
+            ledger = json.loads(args.resource_ledger.read_bytes())
+            if args.continuation_terminal is None:
+                raise InputBoundaryError('actual continuation terminal receipt required')
+            validate_closed_continuation(args.continuation_terminal.read_bytes(), ledger,
+                declaration['continuation_terminal_sha256'],
+                minimum_fidelity_charge=prior_decl['prior_fidelity_seconds'] + prior_wall,
+                minimum_gpu_charge=prior_decl['prior_gpu_charge_seconds'] + prior_wall)
+            prior_continuation = ledger.get('native_unstarted_continuation_reservation', {})
+            if (not str(prior_continuation.get('status', '')).startswith('CLOSED_') or
+                    type(prior_continuation.get('actual_supervisor_seconds')) not in (int, float)):
+                raise InputBoundaryError('continuation must be closed and charged before exception')
+            charged = prior_continuation['actual_supervisor_seconds']
+            if (not math.isfinite(charged) or charged < 0 or
+                    ledger['fidelity_generation_charged_seconds'] < prior_continuation['prior_fidelity_charged_seconds'] + charged or
+                    ledger['gpu_conservative_charged_seconds'] < prior_continuation['prior_gpu_charged_seconds'] + charged):
+                raise InputBoundaryError('continuation charges missing before exception')
+        expected_output = canonical_exception_root(args.prior_output) if exception_raw else canonical_continuation_root(args.prior_output, continuation)
+        if args.output.resolve() != expected_output:
             raise InputBoundaryError('continuation output must use its canonical history-bound location')
     elif declaration['maximum_calls'] != 100:
         raise InputBoundaryError('subset requires sealed continuation history')
@@ -186,8 +214,11 @@ def main():
                             validate=validator.validate)
                         return model.generate(**kwargs, prefix_allowed_tokens_fn=guard)
                 return Guarded()
-            run = run_unstarted_profiles if continuation is not None else run_profiles
+            run = run_authorized_exception if exception_raw is not None else run_unstarted_profiles if continuation is not None else run_profiles
             extra = {'prior_output': args.prior_output, 'continuation_manifest': continuation} if continuation is not None else {}
+            if exception_raw is not None:
+                extra.update(authorization_raw=exception_raw, authorization_sha256=declaration['retry_authorization_sha256'],
+                             wall_seconds=declaration['wall_seconds'])
             result = run(entries=entries, output=args.output / 'profiles',
                 prompt_root=ROOT / 'docs/healthtech/research/prompts', prompt_sha256=declaration['prompt_sha256'],
                 tokenizer=tokenizer, guarded_model_factory=factory, device='cuda:0', limits=limits,

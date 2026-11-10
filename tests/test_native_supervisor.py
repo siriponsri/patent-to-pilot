@@ -7,7 +7,8 @@ import pytest
 @pytest.fixture(params=['ptp-native-dense-preparation-20261110/supervise_native.py',
                         'ptp-syn-sacr004-20261110/supervise.py',
                         'ptp-native-sacr-fidelity-20261110/supervise.py',
-                        '../../../scripts/healthtech/supervise_sacr_unstarted_continuation.py'])
+                        '../../../scripts/healthtech/supervise_sacr_unstarted_continuation.py',
+                        '../../../scripts/healthtech/supervise_sacr_interrupted_exception.py'])
 def supervisor(monkeypatch, tmp_path, request):
     path = Path(__file__).resolve().parents[1] / 'docs/healthtech/audits' / request.param
     spec = importlib.util.spec_from_file_location('native_supervisor_test', path)

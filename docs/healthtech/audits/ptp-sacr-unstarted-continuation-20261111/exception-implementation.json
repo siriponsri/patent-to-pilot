@@ -1,0 +1,19 @@
+{
+  "status": "IMPLEMENTED_REVIEWED_NOT_DISPATCHED",
+  "checks": {
+    "exception_pass": 8,
+    "native_pass": 7,
+    "supervisor_pass": 21,
+    "legacy_skip": 4
+  },
+  "files_sha256": {
+    "src/patent_to_pilot/research/sacr_retry_exception.py": "37e9d07651cac7f13d0034349c0cbe8e707f8cfec3aea3a4134befd813d4b71b",
+    "scripts/healthtech/run_sacr_native_fidelity.py": "1bcaf7e3a229164748e38aed68f6d9fede35a774271b2b301815ea2772b286ee",
+    "scripts/healthtech/supervise_sacr_interrupted_exception.py": "b848fbdaa13d5b1f14c3d9c5f1370e9d7c204539fbf08c9e00c07ff495f16d56",
+    "tests/test_sacr_retry_exception.py": "33999a0dd50daa48bfc9d70df43323a10ae46e15a92ec3a3159718be8c629ca3",
+    "tests/test_native_supervisor.py": "af0ade0aa5c34c1ba4522bd478e086b2d6e1c42ea636b78d7d3a0d209d25cfe3"
+  },
+  "new_model_calls": 0,
+  "authority_used": false,
+  "repair_notes": "Exception review found insufficient actual-continuation cost binding and missing explicit original-model equality. Both repaired before staging: actual continuation terminal SHA/wall binds closed ledger, fresh Docker timestamps/exit code match; minimum charges derive from receipt. Original identity/prompt/LMFE/query/sample and schema/decoding pins must match before load. Latest combined suite36PASS,4legacySKIP. Independent reviewer verified all repairs including cumulative original-plus-continuation charge minima; no remaining blocker in scoped review. Same live GPU job freshly verified23:44:03UTC:5normalreturns,4structuralpending+1rejected,6attemptdirs. Exception remains NOT_RESERVED/NOT_DISPATCHED."
+}
