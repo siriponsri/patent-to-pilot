@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETED_DEV_ONLY",
+  "returncode": 0,
+  "reason": "EXITED",
+  "wall_seconds": 7.977811043150723,
+  "state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-10T15:18:28.086955691Z",
+    "FinishedAt": "2026-11-10T15:18:35.927183121Z"
+  },
+  "gpu_calls": 0,
+  "retry": false
+}

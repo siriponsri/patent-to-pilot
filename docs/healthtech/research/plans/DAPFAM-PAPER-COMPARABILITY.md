@@ -56,7 +56,7 @@ These best-by-partition cells are not proof that one frozen joint configuration 
 
 Paper41 Table19,p22: zero-shot patembed-base nDCG10 TA=.5326,TAC=.5647,abstract=.5258,claim1=.5393,mean=.5406,IN=.5423,OUT=.0484. Zero-shot Qwen3-embedding0.6B OUT=.0511; BGE-M3 OUT=.0423; BM25 OUT=.0335. These are nDCG10, not nDCG100. The IN/OUT-to-view mapping remains unresolved. Table20 training results are outside our no-training scope. Neither these values nor Paper53's fixed-pool reranker scores are valid numerical baselines for our current dev experiment.
 
-Our native B0/SACR/S/G score cells: **NOT_RUN**. No cross-paper score delta, percent improvement or significance claim is computed.
+Native B0 dev now measured in [receipt](../../audits/ptp-native-dense-preparation-20261110/README.md): OUT349 queries,Recall200=.14772,Recall100=.09732,nDCG100=.04490,nDCG10=.02328. These remain separate from the published all-query rows. SACR/S/G score cells: **NOT_RUN**. No cross-paper score delta, percent improvement or significance claim is computed.
 
 ## 5. Paper 53: use its diagnostic structure with correct boundaries
 

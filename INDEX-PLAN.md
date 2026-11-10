@@ -1,5 +1,9 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Native baseline DEV MEASURED 2026-11-10
+
+Parent solewriter,last pushed1a5a849 before package. B0 OUT349:Recall200=.14772,Recall100=.09732,nDCG100=.04490,nDCG10=.02328; ALL474/IN450,zero missing rankings. Canonical audit docs/healthtech/audits/ptp-native-dense-preparation-20261110/README.md and dev-metrics-v1.json; aggregate hash6ebffc7f48c821c1b1fe2236243a91526f1ee3b9eee6d6d98ae29932b2f726ec verified. Evaluatorv1 failed pydantic import before data0.700525s; diagnosed deps-only read-only mount fix in freshv2 completed7.977811s. BothCPU-only; original failure retained, no generation/baseline retry. Runtime/evaluator containers terminal,no livejobs. Private perquery remains evaluatorv2 only. No published apples-to-apples or benefit claim. Next SACR declared repair/smoke, durable fidelity ledger, S/G sample/card allocation+feasibility; test closed.
+
 ## Native dev evaluator preparation 2026-11-10
 
 Parent solewriter,last pushed533b809. Ranking/query-vector hashes freshly match completion; baseline container exited0. Pinned evaluator implemented with exact dev inputs, complete474-query/top200 validation, tie-order checks and private per-query outputs;20 evaluation/native tests PASS. Separate CPU evaluator supervisor4GiB/2CPU/120s,noGPU/network, readback before start; NOT_RUN at checkpoint. Next commit/code transport, transfer only prepared dev-evaluation projection into separate evaluator job, run once, inspect aggregates. No protected input or new GPU charge.

@@ -18,5 +18,17 @@
     "reserved_seconds_released": 14400,
     "container": "ptp-native-baseline-20261110-v1"
   },
-  "native_baseline_queries_encoded": 474
+  "native_baseline_queries_encoded": 474,
+  "native_evaluator_attempts": [
+    {
+      "v": 1,
+      "status": "FAILED_IMPORT_BEFORE_DATA",
+      "seconds": 0.7005253820680082
+    },
+    {
+      "v": 2,
+      "status": "COMPLETED_DEV_ONLY",
+      "seconds": 7.977811043150723
+    }
+  ]
 }

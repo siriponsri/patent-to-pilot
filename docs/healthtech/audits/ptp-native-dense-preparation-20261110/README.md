@@ -1,6 +1,24 @@
 # Native DAPFAM dense preparation
 
-Status: IMPLEMENTED_COMPONENT / BASELINE_NOT_RUN. Parent sole repository writer.
+Current status: NATIVE_BASELINE_DEV_MEASURED. Parent sole repository writer. Earlier NOT_RUN sections below are historical preparation records.
+
+## Actual native baseline and isolated evaluation
+
+One query-only GPU run completed exit0 in40.455s supervisor time (5.829s query encoding,9.985s ranking); sampled cgroup memory peak1,960,681,472bytes.474queries,45,336families,188,944existing passages,zero corpus encode calls. Runtime model/input/output hashes verified. GPU conservative cumulative charge182.3919865s including prior failed SYN003; no ledger reset. Test remains closed.
+
+| Partition | Eligible queries | nDCG10 | nDCG100 | Recall100 | Recall200 |
+|---|---:|---:|---:|---:|---:|
+| ALL |474|.17239|.20893|.25222|.34262|
+| IN |450|.20691|.27972|.39413|.51370|
+| OUT |349|.02328|.04490|.09732|.14772|
+
+All474 explicit top200 rankings verified,0missing/empty eligible rankings. Ideal ranking uses all known partition positives; full candidate corpus retained. Native TA query differs from historical claims-inclusive R2; these are not a reproduction of its scores. Published papers also use different cohorts/models/fields/cutoffs; no superiority or direct published replication claim.
+
+Evaluator v1 FAILED before input processing: package __init__ transitively imported pydantic absent from bare image.0.700525s CPU-only, preserved in evaluator-terminal-v1.json. Diagnosed packaging-only correction mounted the existing dependencies read-only in a fresh v2 job; no installs or baseline rerun. V2 completed7.977811s,CPU2/memory4GiB/noGPU/no network,no model/test mounts; evaluator-isolation-v2.json records readback. Total evaluator attempt wall8.678336s.20 targeted evaluator/native fixture tests passed before execution.
+
+Aggregate source `dev-metrics-v1.json` SHA256 `6ebffc7f48c821c1b1fe2236243a91526f1ee3b9eee6d6d98ae29932b2f726ec` verified against evaluator stdout. Private per-query outputs remain only in remote evaluator v2 `out/attempt/private-per-query.json`; their digest is in the aggregate receipt. No query IDs/labels/text published. Runtime and evaluator containers both terminal; no live jobs.
+
+Next: SACR source-order repair/declaration and single authorized smoke; durable solo fidelity ledger/screening; predeclared S/G sample/card allocation and bounded feasibility. Baseline alone does not pass those gates or establish benefit. Preserve B0 configuration rather than tuning it to paper scores.
 
 ## Native runner implementation checkpoint
 

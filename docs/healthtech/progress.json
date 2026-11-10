@@ -6,7 +6,7 @@
     "duplicate": "01_EQUALS_38_BYTE_IDENTICAL",
     "paper53": "DIAGNOSTIC_ALIGNMENT_RECORDED",
     "direct_published_replication": "NOT_ESTABLISHED",
-    "descriptive_ndcg10": "IMPLEMENTED_23_TARGETED_NATIVE_STAGING_TESTS_PASS_RUN_MANIFEST_FREEZE_PENDING",
+    "descriptive_ndcg10": "MEASURED_B0_OUT_0.02328_OTHER_ARMS_NOT_RUN",
     "new_model_calls": 0,
     "human_cards": 0,
     "protected_tests": "CLOSED"
@@ -26,7 +26,7 @@
     "status": "OWNER_APPROVED_BOUNDED_CONTINUATION",
     "audit": "docs/healthtech/audits/ptp-st1-takeover-20261110/README.md",
     "packaging": "EXACT_HISTORICAL_BYTES_RECONSTRUCTED_8_TARGETED_TESTS_PASS",
-    "native_dapfam_baseline": "RANKING_COMPLETED_NOT_EVALUATED_40_455_SECONDS",
+    "native_dapfam_baseline": "DEV_MEASURED_OUT_RECALL200_0.14772_NO_MISSING",
     "additional_sacr_smoke": "AUTHORIZED_NOT_RUN",
     "sg_feasibility": "AUTHORIZED_WITH_GATES_NOT_RUN",
     "protected_tests": "CLOSED",

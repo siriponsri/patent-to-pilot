@@ -6,7 +6,7 @@ import time
 
 JOB = Path(__file__).resolve().parent
 BASELINE = JOB.parent / 'ptp-native-baseline-20261110-v1'
-NAME = 'ptp-native-evaluator-20261110-v1'
+NAME = 'ptp-native-evaluator-20261110-v2'
 IMAGE = 'sha256:cb33f7f771ecec2ef1225cf39b159591a040391bd73e4c01f00fdfc4c47611d2'
 
 
@@ -24,13 +24,14 @@ def main():
     write('reservation.json', {'cpu_seconds_wall_cap': 120, 'gpu_calls': 0, 'retry': False})
     (JOB / 'out').mkdir(exist_ok=False)
     mounts = [(JOB / 'code', '/code', True),
+              (JOB.parent / 'research-product-o1-o4-20261031/venv/lib/python3.12/site-packages', '/deps', True),
               (BASELINE / 'runtime-dev', '/inputs/runtime', True),
               (BASELINE / 'out/attempt', '/inputs/rankings', True),
               (JOB / 'dev-evaluation', '/inputs/evaluation', True), (JOB / 'out', '/out', False)]
     cmd = ['docker', 'create', '--pull=never', '--name', NAME, '--network=none', '--read-only',
            '--user=1000:1000', '--cap-drop=ALL', '--security-opt=no-new-privileges',
            '--cpus=2', '--memory=4g', '--memory-swap=4g', '--pids-limit=32',
-           '--tmpfs', '/tmp:rw,nosuid,size=67108864', '--env', 'PYTHONPATH=/code/src',
+           '--tmpfs', '/tmp:rw,nosuid,size=67108864', '--env', 'PYTHONPATH=/code/src:/deps',
            '--env', 'PYTHONDONTWRITEBYTECODE=1']
     for source, dest, ro in mounts:
         if not source.exists():

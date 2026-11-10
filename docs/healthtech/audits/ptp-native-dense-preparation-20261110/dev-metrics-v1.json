@@ -1,0 +1,120 @@
+{
+  "status": "COMPLETED_DEV_ONLY",
+  "partitions": {
+    "ALL": {
+      "format": "ptp-paper1-native-dev-metrics-v1",
+      "partition": "ALL",
+      "queries": 474,
+      "input_queries": 474,
+      "queries_without_partition_positives": 0,
+      "missing_rankings": 0,
+      "empty_rankings": 0,
+      "metrics": {
+        "NDCG@10": 0.17239,
+        "NDCG@100": 0.20893,
+        "NDCG@200": 0.24474,
+        "Recall@10": 0.07553,
+        "Recall@100": 0.25222,
+        "Recall@200": 0.34262
+      },
+      "failure_policy": "missing_or_empty_eligible_rankings_score_zero",
+      "metric_contract": {
+        "primary_partition": "OUT",
+        "primary_metric": "Recall@200",
+        "cutoffs": [
+          10,
+          100,
+          200
+        ],
+        "gain": "binary_positive_qrels",
+        "ideal": "all_known_partition_positives_up_to_cutoff",
+        "aggregation": "eligible_query_macro",
+        "candidate_policy": "full",
+        "ties": "explicit_upstream_order",
+        "ndcg10_role": "descriptive_literature_bridge_not_confirmatory",
+        "comparability": "matched_dev_not_published_all_query_replication"
+      }
+    },
+    "IN": {
+      "format": "ptp-paper1-native-dev-metrics-v1",
+      "partition": "IN",
+      "queries": 450,
+      "input_queries": 474,
+      "queries_without_partition_positives": 24,
+      "missing_rankings": 0,
+      "empty_rankings": 0,
+      "metrics": {
+        "NDCG@10": 0.20691,
+        "NDCG@100": 0.27972,
+        "NDCG@200": 0.31786,
+        "Recall@10": 0.15749,
+        "Recall@100": 0.39413,
+        "Recall@200": 0.5137
+      },
+      "failure_policy": "missing_or_empty_eligible_rankings_score_zero",
+      "metric_contract": {
+        "primary_partition": "OUT",
+        "primary_metric": "Recall@200",
+        "cutoffs": [
+          10,
+          100,
+          200
+        ],
+        "gain": "binary_positive_qrels",
+        "ideal": "all_known_partition_positives_up_to_cutoff",
+        "aggregation": "eligible_query_macro",
+        "candidate_policy": "full",
+        "ties": "explicit_upstream_order",
+        "ndcg10_role": "descriptive_literature_bridge_not_confirmatory",
+        "comparability": "matched_dev_not_published_all_query_replication"
+      }
+    },
+    "OUT": {
+      "format": "ptp-paper1-native-dev-metrics-v1",
+      "partition": "OUT",
+      "queries": 349,
+      "input_queries": 474,
+      "queries_without_partition_positives": 125,
+      "missing_rankings": 0,
+      "empty_rankings": 0,
+      "metrics": {
+        "NDCG@10": 0.02328,
+        "NDCG@100": 0.0449,
+        "NDCG@200": 0.05757,
+        "Recall@10": 0.02372,
+        "Recall@100": 0.09732,
+        "Recall@200": 0.14772
+      },
+      "failure_policy": "missing_or_empty_eligible_rankings_score_zero",
+      "metric_contract": {
+        "primary_partition": "OUT",
+        "primary_metric": "Recall@200",
+        "cutoffs": [
+          10,
+          100,
+          200
+        ],
+        "gain": "binary_positive_qrels",
+        "ideal": "all_known_partition_positives_up_to_cutoff",
+        "aggregation": "eligible_query_macro",
+        "candidate_policy": "full",
+        "ties": "explicit_upstream_order",
+        "ndcg10_role": "descriptive_literature_bridge_not_confirmatory",
+        "comparability": "matched_dev_not_published_all_query_replication"
+      }
+    }
+  },
+  "input_pins": {
+    "runtime/manifest.json": "fd950817b3cab234c4175bb6c68cc9942ae4fcafd8c7108f2adeaab1ce161c1f",
+    "runtime/corpus.jsonl": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+    "runtime/queries-ta.jsonl": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a",
+    "evaluation/manifest.json": "604a4d33f29913a5d6bcd78c9d069b16f4505dadf3b06c27192ba8d612713881",
+    "evaluation/qrels-dev.jsonl": "ca693dc8a1d5c5bf10249c8e9438be5198346349dcd1b6a6194e0eeb96923473",
+    "rankings/completion.json": "e8491731e484cb6e14ee9c6b39656dab7a17ba9ef0bf4b420244194a4235c062",
+    "rankings/rankings-top200.jsonl": "26cfc1e0b9aa02477ca367cb07faee65d37f5e994e1625f29facbee2e007fb29",
+    "rankings/query-vectors-f32.npy": "2a3573d615dccaeff4ae0c44850fad64813d56068538e0c5df29a1700a4ee8ea"
+  },
+  "private_per_query_sha256": "a1ea06dbb68d9d413c272525a43c596c821475f48479b68fe5fd240dc38fbcf2",
+  "protected_test_access": false,
+  "published_score_replication": false
+}
