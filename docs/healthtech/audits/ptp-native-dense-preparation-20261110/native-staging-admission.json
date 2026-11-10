@@ -1,0 +1,18 @@
+{
+  "status": "REMOTE_RUNTIME_AND_CODE_ARCHIVE_HASH_VERIFIED_NOT_DISPATCHED",
+  "runtime_transfer_session": null,
+  "source_commit": "73f799e",
+  "local_scoped_bytes_before_archive": 408136287,
+  "prior_reservation_retained_bytes": 8811970635,
+  "new_remote_reservation_bytes": 1073741824,
+  "combined_conservative_reservation_bytes": 9885712459,
+  "limit_bytes": 42949672960,
+  "prior_gpu_charged_seconds": 141.9369698059745,
+  "baseline_gpu_reservation_seconds": 14400,
+  "gpu_total_limit_seconds": 259200,
+  "model_calls_this_package": 0,
+  "code_archive_sha256": "23352c6895d04dd9c7938ba03431ddfedf0bdb09a5fff70036c73adc6bd0f24b",
+  "supervisor_status": "DRAFT_SYNTAX_PASS_NOT_RUN_NEEDS_EXCEPTION_HANDLING_REVIEW",
+  "runtime_transfer_exit_code": 0,
+  "remote_runtime_hashes_match": true
+}

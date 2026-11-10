@@ -1,5 +1,9 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Remote native runtime staging 2026-11-10
+
+Parent sole writer; last pushed73f799e. New remote job ptp-native-baseline-20261110-v1 contains only runtime-dev and committed code archive/extraction. Transfer72603 terminal exit0; corpus/TA/manifest and archive hashes match. No evaluator/test/model/vector copies. Conservative retained-plus-new reservation9885712459bytes below40GiB; priorGPU141.93697s retained, proposed baseline14400s within72h. Receipt: docs/healthtech/audits/ptp-native-dense-preparation-20261110/native-staging-admission.json. Supervisor draft syntax PASS but NOT_DISPATCHED; next harden exception/termination handling and verify actual container isolation before baseline. No running transfer or baseline/model calls.
+
 ## Native baseline runner checkpoint 2026-11-10
 
 Parent solewriter; last pushedfcffd00 before package. Mandatory-vector native runner implemented: exact staged TA/corpus/manifest and vector/model pins, query-only encoding, exclusive output, global lexical MaxP;24 targeted tests PASS and CLI help PASS. Audit: docs/healthtech/audits/ptp-native-dense-preparation-20261110/README.md. As-run runner hash matches historical559f52e; passage AST matches after declared rename, encoder changes limited to explicit device. Initial path/name lookups failed then resolved; no run/retry. Native baseline NOT_RUN. Next actual isolated supervisor/mounts, cumulative budget admission and runtime model verification; then baseline/evaluator. No GPU calls, protected reads or corpus encoding.
