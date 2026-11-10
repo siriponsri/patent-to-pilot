@@ -1,4 +1,16 @@
 {
+  "st1_paper_comparability_20261110": {
+    "status": "SOURCE_PROTOCOL_MATRIX_COMPLETE_MEASURED_COMPARISON_NOT_RUN",
+    "artifact": "docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md",
+    "unique_dapfam_pdfs": 3,
+    "duplicate": "01_EQUALS_38_BYTE_IDENTICAL",
+    "paper53": "DIAGNOSTIC_ALIGNMENT_RECORDED",
+    "direct_published_replication": "NOT_ESTABLISHED",
+    "descriptive_ndcg10": "PROPOSED_FREEZE_AND_IMPLEMENT_BEFORE_OUTCOMES",
+    "new_model_calls": 0,
+    "human_cards": 0,
+    "protected_tests": "CLOSED"
+  },
   "st1_takeover_20261110": {
     "native_dapfam_staging": "V3_PREPARED_NOT_ISOLATION_ATTESTED_22_TARGETED_TESTS_PASS",
     "native_dapfam_dev_queries": 474,

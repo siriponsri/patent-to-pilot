@@ -2,6 +2,12 @@
 
 Status: `OWNER_APPROVED_BOUNDED_DEV_EXECUTION`
 
+## Latest continuation: Paper 1 comparison supplement — 2026-11-10
+
+Owner requested alignment with Paper53 and apples-to-apples comparison with DAPFAM papers01/38/41/59. [Source/protocol matrix](docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md) records hashes, actual reading coverage, visually checked tables, published values and unresolved candidate/view/corpus ambiguities.01/38 byte-identical. No exact published replication established; our474-query dev cannot be presented as their1,247-query evaluation. Native baseline still NOT_RUN. Prospective descriptive nDCG10 bridge preserves primary Recall200; freeze metric contract before scores. Paper53 fixed-pool exposure identity does not apply directly to changed SACR/S/G pools.
+
+Parent sole writer; curator completed/idle; no experiment started by this package, zero new model calls/cards. Last verified published checkpoint before this documentation package:ad84da5f1ba7448ea4286c62d00c39aade177058. Code/docs publication authorized, owner untracked9Nov handoff excluded. Next: native runtime/evaluator mount and model/passages/vector binding, then gated baseline; implement comparison metrics before outcomes. Existing vector SHA9a385bcfd0aab6c4c19f2a8715824922d42d328c53f0da58857b0106ed4f0137 reverified remotely; GPU idle at that observation only, recheck before launch. All previous failures/costs remain charged; no reset, test access, new corpus encoding or training.
+
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
 ### Active ST1 takeover — 2026-11-10 21:15 Bangkok

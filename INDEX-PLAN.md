@@ -1,5 +1,9 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## HT-EVENT-ST1-PAPER-COMPARABILITY — 2026-11-10
+
+Owner added apples-to-apples DAPFAM paper comparison and Paper53 alignment within HT-ST1. [Matrix/prospective contract](docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md):01/38 identical;59 selected best nDCG100/R100;41 nDCG10 with model/view/cohort ambiguities; no directly comparable published replication established. Descriptive nDCG10 proposed before outcomes, primary unchanged. Native baseline NOT_RUN, test CLOSED, zero new model calls/cards. Source/table review completed; metric implementation and measured matched-dev comparison pending.
+
 ## HT-EVENT-ST1-TAKEOVER — 2026-11-10 21:15 Bangkok
 
 **HT-EVENT-CURATOR-V3-COMPLETE:** HT-IDX29 PREPARED_NOT_ISOLATION_ATTESTED,474dev/45336fullcorpus,eligibleALL474/IN450/OUT349,protectedexports0. [Actual receipt](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/attempt-v3.json); source74a4d05;331626349outputbytes;12.329s/3.643GBpeak/noGPU. Totaldelegated57.829s inclfailed/diagnostic/probes. Allhashesverified, no activecurator. Next realmounts/vectorbinding/nativebaseline; no score,fidelity ormethodPASS.

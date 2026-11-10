@@ -1,6 +1,8 @@
 # Patent-to-Pilot: master research plan
 
-Updated: 10 November 2026 (Asia/Bangkok). Status: OWNER_DIRECTION_RECORDED / DOCUMENTATION_ONLY / NO_EXPERIMENT_AUTHORIZATION.
+Updated: 10 November 2026 (Asia/Bangkok). Current execution authority: OWNER_APPROVED_BOUNDED_DEV_EXECUTION; see HANDOFF and the authorization receipt. Historical proposal sections below do not reset that authority or its cumulative budgets.
+
+Paper 1 additional task: [DAPFAM paper comparability and Paper53 alignment](docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md). Three unique supplied DAPFAM PDFs reviewed selectively;01/38 are byte-identical. Published scores remain literature context; matched dev comparisons are planned, exact all-query replication is outside closed-test scope. No new training, corpus encoding or model acquisition follows from this task.
 
 ## 1. Decision and reading route
 

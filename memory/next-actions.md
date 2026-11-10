@@ -5181,3 +5181,9 @@ unused temporary worktrees. Preserve Claude/Luna/owner worktrees and dirty
 research work. Continue paid work only after one fresh non-secret credit
 snapshot for the existing key; do not reset history, retry stale evidence or
 close the research goal from this merge.
+# Paper 1 paper-comparison addition — 2026-11-10
+
+- Read `docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md`: source matrix completed, measured comparison NOT_RUN.01/38 duplicate; published rows contextual only.
+- Freeze and implement descriptive nDCG10 alongside nDCG100/Recall100/200 before native dev outcomes; preserve primary endpoint and no added confirmatory tests.
+- Resume isolated runtime/evaluator and vector/model/passage binding, then authorized baseline. Resolve source protocol ambiguities from public artifacts if available; do not open protected tests or re-encode to force comparability.
+- Apply Paper53 diagnostics only within their valid candidate-pool conditions. Persist current checkpoint in INDEX/HANDOFF/CLAUDE. No new cards/model calls from this package.

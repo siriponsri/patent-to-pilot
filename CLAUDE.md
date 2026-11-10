@@ -1,5 +1,9 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Latest owner amendment — 2026-11-10
+
+Paper1 includes [DAPFAM literature comparability and Paper53 alignment](docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md). Read this matrix before writing results:01/38 identical; published nDCG100 vs nDCG10 and different cohorts/models/configurations cannot form one leaderboard. Exact published replication NOT_ESTABLISHED; native dev baseline NOT_RUN. Keep primary Recall200, prospectively freeze descriptive nDCG10/100 and Recall100 bridge before outcomes. Paper53 exposure identity only for the same fixed pool; changed pools need separate exposure-stratum accounting. No new model calls/cards from document review. Parent remains sole repo writer, curator idle, protected tests closed. Last verified pushed checkpoint before this package ad84da5; current package publication must be checked via Git. Resume actual isolated binding/native baseline, not completed staging audits. All budgets and failed attempts retained.
+
 ## Active ST1 takeover — 2026-11-10 21:15 Bangkok
 
 **V3 COMPLETED:** curator exit0;474dev/full45336corpus; eligibleALL474/IN450/OUT349; protectedexports0. Output331626349bytes, allhashesverified,12.329s/3.643GBpeak,noGPU/modelcalls. [Receipt](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/attempt-v3.json). No curator process/retry active. Next actual isolated mounts/vector-model binding/nativebaseline; not research benefit/fidelityPASS. V1/v2 failures retained, totaldelegated57.829s inclprobes. Parent solewriter, lastpushed74a4d05.
