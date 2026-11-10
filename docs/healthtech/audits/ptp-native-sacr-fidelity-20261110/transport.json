@@ -1,0 +1,9 @@
+{
+  "code_archive_sha256": "5d34ef7101fafecb59e7d1ee6423ce53f75c12a385dbb32775eb99316f364956",
+  "inputs_archive_sha256": "ae6bb53080c45774a70cd2a6015732cae6bbea2cdfba46889de1489c9180ce35",
+  "supervisor_sha256": "4b3899c332fbc5a6b9ef996f7178452a59e7bd760662401bf267bab2ea104940",
+  "declaration_sha256": "bcfb785a808a5a74f50756cdce99dab51457eaa109838bf76a204304478b22fa",
+  "transport_bytes": 1853440,
+  "format": "exact local bytes; no git archive newline conversion",
+  "status": "PREPARED_NOT_DISPATCHED"
+}

@@ -15,6 +15,30 @@ from patent_to_pilot.research.mtm_runtime import InputBoundaryError
 from patent_to_pilot.research.sacr_generation import GenerationLimits
 from patent_to_pilot.research.sacr_native_fidelity import bind_sample, digest, run_profiles, write_new
 
+REQUIRED_FILES = {
+    'scripts/healthtech/run_sacr_native_fidelity.py',
+    'scripts/healthtech/inspect_qwen_weight_identity.py',
+    'src/patent_to_pilot/healthtech/local_execution.py',
+    'docs/healthtech/research/prompts/sacr_profile_quotes_order_v2.txt',
+    *('src/patent_to_pilot/research/' + name + '.py' for name in (
+        'sacr_native_fidelity', 'sacr_generation', 'sacr_generation_receipt',
+        'sacr_rejection_policy', 'sacr_schema', 'sacr_solo_fidelity', 'sacr_prompts',
+        'sacr_profile', 'sacr_quote_profile', 'sacr_views', 'sacr_outcomes',
+        'sacr_alphabet', 'sacr_escape_callback', 'sacr_grammar_guard', 'mtm_runtime')),
+}
+
+
+def validate_code_declaration(declaration, root):
+    hashes = declaration['files_sha256']
+    if type(hashes) is not dict or not REQUIRED_FILES <= set(hashes):
+        raise InputBoundaryError('mandatory runtime source pins missing')
+    for relative, expected in hashes.items():
+        target = (root / relative).resolve()
+        if not target.is_relative_to(root.resolve()) or digest(target.read_bytes()) != expected:
+            raise InputBoundaryError('declared code/prompt hash mismatch')
+    if declaration['prompt_sha256'] != hashes['docs/healthtech/research/prompts/sacr_profile_quotes_order_v2.txt']:
+        raise InputBoundaryError('prompt declaration disagrees before model loading')
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -29,10 +53,7 @@ def main():
     if (declaration['maximum_calls'] != 100 or declaration['retry'] is not False or
             type(declaration['wall_seconds']) is not int or not 60 <= declaration['wall_seconds'] <= 28800):
         raise InputBoundaryError('invalid bounded generation declaration')
-    for relative, expected in declaration['files_sha256'].items():
-        target = (ROOT / relative).resolve()
-        if not target.is_relative_to(ROOT.resolve()) or digest(target.read_bytes()) != expected:
-            raise InputBoundaryError('declared code/prompt hash mismatch')
+    validate_code_declaration(declaration, ROOT)
     entries = bind_sample(args.queries.read_bytes(), args.sample.read_bytes(),
         query_sha256=declaration['query_sha256'], sample_sha256=declaration['sample_sha256'])
     identity = args.identity.read_bytes()
@@ -76,6 +97,15 @@ def main():
                 attn_implementation='eager').eval()
             model.generation_config = config
             torch.cuda.reset_peak_memory_stats()
+            import transformers
+            write_new(args.output / 'loaded-runtime.json', {
+                'torch': torch.__version__, 'transformers': transformers.__version__,
+                'python': sys.version.split()[0], 'model_class': type(model).__name__,
+                'tokenizer_class': type(tokenizer).__name__, 'model_dtype': str(model.dtype),
+                'model_device': str(model.device), 'attention': model.config._attn_implementation,
+                'model_files_match': True, 'identity_sha256': declaration['identity_sha256'],
+                'effective_decoder_sha256': digest(json.dumps(config.to_dict(), sort_keys=True,
+                    separators=(',', ':')).encode()), 'load_and_preflight_seconds': time.monotonic() - start})
             token_data = build_token_enforcer_tokenizer_data(tokenizer)
             def factory(schema, source, attempt):
                 validator = Draft202012Validator(schema)

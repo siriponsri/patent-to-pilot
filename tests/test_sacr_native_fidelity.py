@@ -1,4 +1,5 @@
 import json
+import importlib.util
 from pathlib import Path
 import pytest
 
@@ -95,3 +96,17 @@ def test_deadline_prevents_first_model_call(tmp_path, monkeypatch):
     with pytest.raises(TimeoutError):
         batch.run_profiles(**kwargs)
     assert not calls
+
+
+def test_cli_requires_all_source_pins_and_prompt_agreement():
+    spec = importlib.util.spec_from_file_location('native_cli', ROOT / 'scripts/healthtech/run_sacr_native_fidelity.py')
+    cli = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(cli)
+    with pytest.raises(InputBoundaryError, match='mandatory'):
+        cli.validate_code_declaration({'files_sha256': {}}, ROOT)
+    hashes = {name: batch.digest((ROOT / name).read_bytes()) for name in cli.REQUIRED_FILES}
+    declaration = {'files_sha256': hashes, 'prompt_sha256': '0' * 64}
+    with pytest.raises(InputBoundaryError, match='prompt'):
+        cli.validate_code_declaration(declaration, ROOT)
+    declaration['prompt_sha256'] = hashes['docs/healthtech/research/prompts/sacr_profile_quotes_order_v2.txt']
+    cli.validate_code_declaration(declaration, ROOT)

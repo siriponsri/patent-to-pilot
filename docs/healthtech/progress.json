@@ -51,7 +51,7 @@
       "disclosure": "B0 aggregate scores already known; no whole-study preregistration claim",
       "remaining": "Production runner, screening configuration and human review NOT_RUN"
     },
-    "sacr_native_fidelity_runner": "IMPLEMENTED_12_BATCH_REJECTION_TESTS_PASS_CLI_HELP_PASS_GPU_NOT_RUN_SUPERVISOR_SCREENING_PENDING"
+    "sacr_native_fidelity_runner": "INDEPENDENT_REVIEW_REPAIRS_VERIFIED_16_TARGETED_9_SUPERVISOR_TESTS_PASS_7200S_RESERVED_NOT_DISPATCHED"
   },
   "three_study_planning_20261110": {
     "status": "PASS_DOCUMENTATION_ONLY_LOCAL_UNCOMMITTED_UNPUSHED",
