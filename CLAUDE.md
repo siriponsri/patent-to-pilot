@@ -2,12 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:26:19 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:29:38 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 5118c8bd21a2c3ea58fd27374b3dae4ba05747f4.
-- Execution declaration tied to dev plan before journal allocation; identities/source hashes/caps and mutation checks.70 focused tests,215 full SACR tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-execution-binding-20261110/README.md.
-- Declaration consistency only; actual artifact/preflight binding, typed scheduling and cap enforcement incomplete. Next bind allowed source bytes/observations. Unbound journals for component tests only.
-- No actual model/data/GPU jobs; remote live state not re-polled. R1 curator/isolation, generation and fidelity gates unchanged. R5 not authorized. Preserve owner untracked handoff; paired updates mandatory.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 7ab3719509906480df13989fdfc888de45af19c6.
+- Immutable allowed query/source and manifest byte snapshots checked; MTM loader single-read hash/parse.239 SACR+MTM bound-runner tests and Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-input-snapshots-20261110/README.md.
+- Other manifests opaque; referenced artifacts/preflight, typed scheduling and caps remain. Next integrate bound sources into typed stage controller. No actual data/model/GPU run; remote live state not re-polled.
+- R1 curator/isolation, generation/fidelity gates unchanged; R5 not authorized. Prior failures and owner untracked handoff preserved. Paired updates mandatory.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
