@@ -2,12 +2,17 @@
 
 No generation, retry, output repair, query text or identifiers in the report.
 The supplied Docker observation must be freshly captured by the operator.
+Run with PYTHONPATH pointing to the hash-verified source package from the run.
 """
 import argparse
 from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+
+from patent_to_pilot.research.sacr_generation import GenerationLimits
+from patent_to_pilot.research.sacr_generation_receipt import bind_generation_record
+from patent_to_pilot.research.mtm_runtime import decode_json
 
 
 def digest(path):
@@ -47,18 +52,10 @@ def summarize(job, observed_state):
             unknown_execution += int(reservation.exists())
             states['RESERVED_UNKNOWN_EXECUTION' if reservation.exists() else 'PREPARATION_ONLY'] += 1
             continue
-        record = json.loads(generated.read_bytes())
-        if record['status'] not in ('EOS_COMPLETE', 'NO_EOS', 'OUTPUT_LIMIT', 'RESPONSE_BYTE_LIMIT', 'INPUT_LIMIT'):
-            raise ValueError('not a normally returned generation record')
-        if any(type(record[k]) is not int or record[k] < 0 for k in ('model_calls', 'input_tokens', 'output_tokens')):
-            raise ValueError('invalid observed costs')
-        if record['retry'] is not False:
-            raise ValueError('retry present')
-        if record['status'] == 'INPUT_LIMIT':
-            if record['model_calls'] != 0 or record['output_tokens'] != 0 or record['text'] is not None:
-                raise ValueError('inconsistent input limit')
-        elif record['model_calls'] != 1 or hashlib.sha256(record['text'].encode()).hexdigest() != record['response_sha256']:
-            raise ValueError('generated response identity/call count mismatch')
+        raw = generated.read_bytes()
+        record = decode_json(raw)
+        bind_generation_record(raw, expected_sha256=digest(generated), limits=GenerationLimits(),
+            metrics={key: record[key] for key in ('model_calls', 'input_tokens', 'output_tokens')})
         known_calls += record['model_calls']
         input_tokens += record['input_tokens']
         output_tokens += record['output_tokens']
@@ -66,7 +63,7 @@ def summarize(job, observed_state):
         if not assessment.exists():
             unassessed_completed += 1
             continue
-        result = json.loads(assessment.read_bytes())
+        result = decode_json(assessment.read_bytes())
         if result['generation']['artifact_sha256'] != digest(generated) or result['generation']['record'] != record:
             raise ValueError('assessment not bound to generation bytes')
         if any(result['metrics'][k] != record[k] for k in ('model_calls', 'input_tokens', 'output_tokens')):

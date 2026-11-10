@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import hashlib
 from pathlib import Path
 import pytest
 
@@ -56,3 +57,45 @@ def test_tampered_assessment_does_not_become_rejected_family(tmp_path):
     write(root / 'assessment.json', {'generation': {'artifact_sha256': '0' * 64, 'record': record}})
     with pytest.raises(ValueError, match='bound'):
         closeout.summarize(tmp_path, state)
+
+
+def normal_record(**overrides):
+    return {'status': 'EOS_COMPLETE', 'model_calls': 1, 'input_tokens': 100,
+            'output_tokens': 2, 'text': '{}', 'retry': False,
+            'response_sha256': hashlib.sha256(b'{}').hexdigest(), **overrides}
+
+
+@pytest.mark.parametrize('overrides', [
+    {'output_tokens': 0}, {'status': 'OUTPUT_LIMIT'}, {'input_tokens': 8193},
+    {'status': 'RESPONSE_BYTE_LIMIT'}, {'output_tokens': 4097},
+])
+def test_impossible_normal_records_are_not_counted(tmp_path, overrides):
+    state = fixture(tmp_path)
+    write(tmp_path / 'out/attempt/profiles/000/profile/generation.json', normal_record(**overrides))
+    with pytest.raises(ValueError):
+        closeout.summarize(tmp_path, state)
+
+
+def test_full_cohort_counts_costs_but_never_claims_semantic_pass(tmp_path):
+    state = {'Running': False, 'Status': 'exited', 'ExitCode': 0}
+    root = tmp_path / 'out/attempt'
+    write(root / 'declaration.json', {'maximum_calls': 100})
+    record = normal_record()
+    for i in range(100):
+        attempt = root / f'profiles/{i:03d}'
+        generated = attempt / 'profile/generation.json'
+        write(generated, record)
+        write(attempt / 'assessment.json', {'generation': {
+            'artifact_sha256': closeout.digest(generated), 'record': record},
+            'metrics': {k: record[k] for k in ('model_calls', 'input_tokens', 'output_tokens')},
+            'status': 'REJECTED_GENERATED_FAMILY'})
+    write(root / 'terminal.json', {'queries': 100, 'status': 'PROFILE_BATCH_COMPLETED_FIDELITY_PENDING'})
+    write(tmp_path / 'terminal.json', {'container_state': state, 'wall_seconds': 6000,
+        'returncode': 0, 'status': 'PROFILE_BATCH_COMPLETE_FIDELITY_PENDING',
+        'observed_cgroup_peak_bytes': 1000, 'completion_sha256': closeout.digest(root / 'terminal.json')})
+    result = closeout.summarize(tmp_path, state)
+    assert result['status'] == 'COMPLETE_PROFILE_COHORT_FIDELITY_PENDING'
+    assert result['known_model_calls'] == 100 and result['known_input_tokens'] == 10000
+    assert result['known_output_tokens'] == 200 and result['not_started'] == 0
+    assert result['assessment_states'] == {'REJECTED_GENERATED_FAMILY': 100}
+    assert result['semantic_fidelity'] == 'NOT_ASSESSED'

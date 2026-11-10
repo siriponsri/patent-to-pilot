@@ -1,0 +1,10 @@
+{
+  "script_sha256": "e68a846fc34d5aa2087c35729f371b948d082586592a79d27db5420c1463448a",
+  "source": "scripts/healthtech/summarize_sacr_fidelity_attempt.py",
+  "remote_name": "summarize-reviewed.py",
+  "validation": "canonical bind_generation_record with GenerationLimits",
+  "tests": "40 closeout and canonical receipt tests PASS",
+  "independent_review": "one finding repaired and rechecked by read-only reviewer",
+  "runtime": "PYTHONPATH uses hash-verified run code/src; no model calls",
+  "status": "PREPARED_NOT_RUN"
+}

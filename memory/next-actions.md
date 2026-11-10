@@ -1,5 +1,10 @@
 
 
+## Reviewed closeout binder repair 2026-11-11
+
+Parent sole writer,last confirmed pushed82baa1c. Independent reviewer found duplicatedcloseout checks couldcount impossible generation records; nowcanonical bind_generation_record/GenerationLimits validatesraw beforecostsum andstrictJSONbindsassessments.40 closeout/receipt testsPASS includingfull100cohort withallrejected remainssemanticNOT_ASSESSED; reviewer recheckedrepair. Reviewedremotehelpers stagedonly,NOT_RUN; oldhelperretained. Newtool SHAe68a846fc34d5aa2087c35729f371b948d082586592a79d27db5420c1463448a,receipt docs/healthtech/audits/ptp-native-sacr-fidelity-20261110/closeout-tool.json. SameGPUjobstillrunning at17:21:24UTC:23returns,14structuralpending,9rejected; nojobrestart/no fidelityPASS/cards. Continue status-v2.py/supervisor70886 observation; onlyafterverifiedterminal runfinalize.py thenchargewholewall andpreserveunknown/incompletecohort.
+
+
 ## Native fidelity periodic live checkpoint 2026-11-11T00:05+07:00
 
 Parent sole writer,last confirmed pushed5515f78. SAMEcontainerPID71075 confirmedRUNNING at17:04UTC;17normalreturns (15EOS,2OUTPUT_LIMIT),12structuralpending,5rejected;15360input/26584outputtokens,2710.996622s knowncompletedgeneration. Several SSHstatus/banner timeouts cleared by reobserving SAMEcontainer; no restart. Original attached51538 isclosed,observe remote status-v2.py; supervisorlastverifiedPID70886. Currentrun remains reserved7200s with6960s stoptrigger; next deadlineabout18:11UTC,not resetafterBangkokmidnight. Actualterminal/wholeGPUcharge pending. Both testsclosed,cards0,no semantic/retrievalPASS. Main workthisintervalverifiedwaitingon liveapprovedattempt; no new experiment/configuration. Next observe terminalandcharge,then decide remainingauthorizedwork fromcompletefailure/cohort evidence.

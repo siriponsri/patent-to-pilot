@@ -53,8 +53,15 @@ captured Docker state. The aggregator refuses a live state or disagreement,
 reports remaining queries, normal returns, assessments and unknown interrupted
 execution, and charges the whole supervisor interval. Its byte/cost checks do
 not substitute for external process observation or semantic adjudication.
-Four closeout fixtures passed, including interrupted reservation, preparation
-without model reservation, live-state refusal and assessment tampering.
+Independent review identified incomplete duplicated generation checks in the
+first closeout tool. The reviewed replacement uses the canonical generation
+record binder with the original fixed limits before counting costs. Ten closeout
+fixtures now cover interrupted reservations, preparation without a model
+reservation, live-state refusal, tampering, impossible token/byte states and a
+complete100-query cohort that still cannot claim semantic PASS. Together with
+the canonical receipt suite,40 tests passed. The reviewer rechecked the repair.
+See [closeout tool pin](closeout-tool.json); the earlier transferred helper is
+retained, and only `summarize-reviewed.py` is intended for terminal accounting.
 
 No terminal result or full-stage cost is claimed yet. Consult the newest
 HANDOFF/INDEX-PLAN checkpoint for the latest observation.
