@@ -40,3 +40,9 @@ If review exposes a systematic defect, preserve all outputs and declare a new pr
 
 ## Acceptance before a pilot
 The sample manifest, complete observations and defect disposition must exist. Prompt/token/resource configuration and a precise generated-view acceptance rule must be fixed; actual R1 isolation/eligibility/parity must pass. No universal fidelity percentage threshold is invented by this form. Any adopted threshold and its rationale must be declared before reviewing method outcomes. R2 and R3 are not complete because this form exists.
+
+## Prospective acceptance policy
+
+See [the proposed batch-level acceptance policy](SACR_FIDELITY_ACCEPTANCE_POLICY_DRAFT_20261110_EN.md).
+It is not yet adopted and no ratings exist. Do not use developer review to silently
+filter individual views in an arm reported as automatic retrieval.

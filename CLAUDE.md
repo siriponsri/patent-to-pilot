@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:43:55 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:47:30 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base ff84568a8da8518bd719b1414faf21f24d81b51e.
-- CPU v2 remains FAILED8/10 escape-token compatibility; independent schema10/10. Follow-up shortcut comparison exceeded120s with no completed result; cause unproven. RemotePID2966698 command reverified, SIGTERM sent, /proc absence confirmed. No retry/model/GPU.
-- Failure receipt/audit: docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/shortcut-diagnostic-failure.json. Original v1/v2 and model failures unchanged.
-- Next independent semantic acceptance policy and evidence-led R6 draft; curator/environment for actual A03/parity. Generation integration/third model attempt remains gated by compatibility and resource feasibility; no automatic new attempts. Need a justified bounded repair first.
-- Changed timeout receipt/audit/methods log, paired handoff/progress pointers. Preserve owner untracked handoff; standing permissions unchanged.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base cf94d0e49908fd8421037fa967eea2bf288351ff.
+- Added proposed fidelity acceptance policy and incomplete manuscript material, audit docs/healthtech/audits/ptp-method-first-r2-fidelity-r6-draft-20261110/README.md.9 links resolve; claims source-checked. Policy NOT_ADOPTED, no samples/ratings/results; R6 incomplete. No hidden human filtering of automatic retrieval arms.
+- Generation branch remains gated: CPU v2 matched8/10, two escape failures; shortcut diagnostic timed out120s without causal result. PID2966698 was terminated/verified absent in previous package. No new job.
+- Next synthetic stable full-index acquisition/union and matched-control/accounting contracts; curator/environment for real R1 checks. No automatic grammar/model attempts. Fidelity adoption and R3 require gates; R5 owner freeze still required.
+- Changed two research drafts, audit-form pointer, package audit/methods log and handoff/progress. Preserve owner untracked handoff; all permissions unchanged.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

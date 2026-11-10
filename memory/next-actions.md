@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest writing package:** fidelity acceptance policy proposed (not adopted) and incomplete manuscript material; no ratings or SACR retrieval results. Next synthetic stable full-index acquisition/union and matched-control/accounting contracts while actual-data/generation gates remain. [Audit](../docs/healthtech/audits/ptp-method-first-r2-fidelity-r6-draft-20261110/README.md).
+
 > **Latest shortcut diagnostic timed out:**120s, no comparison result; remotePID2966698 terminated and absent. Cause unproven. No automatic further grammar/model attempts. Next semantic acceptance policy and evidence-led R6 draft; curator gate remains. Generation compatibility/resource feasibility unresolved.
 
 > **Latest configured CPU v2 FAILED:**8/10 tokenizer vs10/10 independent schema. Unicode character parsing passes; two escape-token failures remain; no early EOS. [Audit](../docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/README.md). Next bounded shortcut/token-tree diagnostic before any integration/model call. Prior failures preserved.

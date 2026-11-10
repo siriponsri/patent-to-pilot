@@ -372,3 +372,13 @@ completed output. RemotePID2966698 terminated after identity verification, then
 generation decoder established. Preserve v2 failure and timeout receipt. Stop
 automatic grammar/model attempts; continue independent semantic/R6 preparation.
 Audit ../audits/ptp-method-first-r2-full-schema-v2-20261110/README.md.
+
+
+### 2026-11-10 08:47:30 Bangkok — Fidelity policy proposal and manuscript material
+
+Proposed source-first batch fidelity gate; no observations/adoption. Human review
+must not silently filter automatic retrieval outputs. Working method-first manuscript
+material leaves results/novelty/reference verification and R6 incomplete. Nine links
+resolve and claims trace to current audits. No experiment or protocol amendment.
+See ../audits/ptp-method-first-r2-fidelity-r6-draft-20261110/README.md.
+Next independent synthetic acquisition/controls contract; actual R1/generation gates remain.
