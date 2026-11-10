@@ -106,6 +106,9 @@ def test_attempt_reserved_before_call_and_never_reused(tmp_path, fail):
     else:
         run_reserved_attempt(target, **args(model=model))
         assert (target / "generation.json").exists()
+        binding = json.loads((target / "generation-binding.json").read_bytes())
+        assert binding['artifact_sha256'] == hashlib.sha256((target / 'generation.json').read_bytes()).hexdigest()
+        assert binding['response_acceptance'] == 'NOT_EVALUATED'
     assert (target / "reservation.json").exists()
     with pytest.raises(FileExistsError):
         run_reserved_attempt(target, **args(model=model))

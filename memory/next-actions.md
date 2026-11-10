@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest generation record binding:** 363 related tests pass; reserved attempts now preserve typed private bindings. [Audit](../docs/healthtech/audits/ptp-method-first-generation-receipt-20261110/README.md). Next controller/replay identity binding before family-rejection adoption. No new model attempt; actual research gates unchanged.
+
 > **Latest vector hash repair:** 333 related tests pass; hash bytes now bounded to 1 MiB with legacy digests preserved. [Audit](../docs/healthtech/audits/ptp-method-first-vector-hash-20261110/README.md). Full-index copy remains; next typed generation receipts or independent resource review. Real research gates unchanged.
 
 > **Latest view-failure alignment:** proposed family rejection requires actual termination evidence; do not broadly catch infrastructure exceptions. [Audit](../docs/healthtech/audits/ptp-method-first-view-failure-policy-20261110/README.md). Next typed generation receipt binding or independent index-hash memory repair; no new run authorized.

@@ -98,17 +98,24 @@ def run_reserved_attempt(destination: Path, *, messages, tokenizer, model, devic
     destination.mkdir(parents=True, exist_ok=False)
     raw = json.dumps(messages, ensure_ascii=False, sort_keys=True).encode("utf-8")
     def write(name, value):
-        with (destination / name).open("x", encoding="utf-8") as handle:
-            json.dump(value, handle, ensure_ascii=False, indent=2)
-            handle.write("\n")
+        artifact = (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+        with (destination / name).open("xb") as handle:
+            handle.write(artifact)
+        return artifact
     write("reservation.json", {"status": "RESERVED", "messages_sha256": hashlib.sha256(raw).hexdigest(),
                                 "limits": limits.__dict__, "retry": False})
     try:
         result = generate_once(messages=messages, tokenizer=tokenizer, model=model, device=device,
                                eos_token_ids=eos_token_ids, limits=limits)
+        artifact = write("generation.json", result)
+        # Import here to keep the record binder usable with GenerationLimits.
+        from patent_to_pilot.research.sacr_generation_receipt import bind_generation_record
+        binding = bind_generation_record(
+            artifact, expected_sha256=hashlib.sha256(artifact).hexdigest(), limits=limits,
+            metrics={key: result[key] for key in ("model_calls", "input_tokens", "output_tokens")})
+        write("generation-binding.json", binding)
     except BaseException as error:
         write("failure.json", {"status": "FAILED_OR_INTERRUPTED", "exception_type": type(error).__name__,
                                "model_calls": "UNKNOWN", "retry": False})
         raise
-    write("generation.json", result)
     return result

@@ -2,15 +2,15 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 10:15:54 Bangkok
+## Cross-account checkpoint — 2026-11-10 10:19:12 Bangkok
 
-- **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Paired checkpoints mandatory.
-- **Last verified pushed base:** b648eb6c3284019c82e35332d3350fb69b97e812; verify containing checkpoint/remote on takeover.
-- **Latest package:** bounded vector hashing; audit docs/healthtech/audits/ptp-method-first-vector-hash-20261110/README.md. Legacy digest preserved; updates bounded to 1 MiB. Authored 64 MiB input: traced temporary peak 134217911 to 1049578 bytes. Full index still copied; resource gate remains open.
-- **Validation:** 333 related tests PASS; Ruff PASS. Initial measurement import path and checkpoint-command quoting failures corrected; neither executed research work.
-- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved, view-failure proposal NOT_ADOPTED; R3/R4 absent, R5 not authorized, R6 incomplete.
+- **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
+- **Last verified pushed base:** c6e5f85760a8b8a305a4366365cc653639bbcc10; verify containing checkpoint/remote on takeover.
+- **Latest package:** typed generation record binding and reserved-attempt artifact integration; audit docs/healthtech/audits/ptp-method-first-generation-receipt-20261110/README.md. Checks exact bytes, status/limits/counts and reported token costs; no response salvage or independent execution attestation. Existing attempts untouched.
+- **Validation/changes:** 38 focused / 363 related tests PASS; Ruff PASS. New binder/tests plus generation writer/tests, audit and paired progress/next-actions. No actual model attempt.
+- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Full-index copy/live resource caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** previous model/grammar failures retained; prior diagnostic terminated/absence verified. No new actual data/model/GPU/background job; remote not re-polled. No retries.
-- **Next:** typed generation termination/cost/artifact binding before failure-policy integration; independent index-copy resource review; curator/R1 and real anchor lineage; justified generation/fidelity repair then R3/R4; R5/R6 after gates.
+- **Next:** integrate typed generation binding and execution identity into controller/replay; only then new typed family-rejection policy and pre-run methods declaration; independent index-copy/resource review; curator/R1 and real anchor lineage; generation/fidelity then R3/R4 and gated R5/R6.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
