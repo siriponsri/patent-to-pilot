@@ -4,15 +4,15 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 11:03:45 Bangkok
+### Latest checkpoint — 2026-11-10 11:06:43 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** 79338a7f3c6bb249326e9acc9141b959168ec9ab (matched origin/main before this checkpoint); executed code archive a9c1d640d0c950fc0c032339fac87a29fd622ab2. Verify containing checkpoint and remote on takeover.
-- **Latest package:** CPU-ESCAPE-003 FAILED at payload hash guard, before tokenizer imports or any of 14 cases; zero model calls. Evidence: docs/healthtech/audits/ptp-method-first-escape-cpu-result-20261110/README.md.
-- **Validation/changes:** Terminal receipt, launch and byte diagnosis preserved. Exact git archive and remote payload agree, but CRLF archive differs from declared LF blob; LF normalization reproduces declared hash. Candidate runtime NOT_RUN. No retry or production code change. Prior 429-test evidence does not validate this candidate.
+- **Last verified pushed base:** d24fd11f82a98dd6e697e57f35dedafff92fc284; verify containing checkpoint and remote on takeover.
+- **Latest package:** Byte-stable local archive packaging verified; six positive/negative checks PASS and Ruff PASS. Evidence docs/healthtech/audits/ptp-method-first-archive-packaging-20261110/README.md. CPU-003 remains FAILED; callback runtime NOT_RUN.
+- **Validation/changes:** Local packager uses per-command Git line-ending settings and checks exact declaration/blob/hash identities before writing archive. No Git configuration change, tokenizer import or remote dispatch. Five pinned files plus declaration match original committed bytes.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** Job /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1 ended 2026-11-10T03:58:53.704497Z, exit1, 0.075s supervisor wall, zero cases. Child3823049 reaped; child and supervisor3823048 observed absent. No remaining job from this dispatch. Existing HTTP service preserved. No restart.
-- **Next:** 1. Design and locally verify byte-identical archive packaging, including all pinned files. 2. Preserve CPU-ESCAPE-003 as FAILED; any new CPU attempt needs a separate declaration, never silent retry. 3. Resolve owner curator/isolation and view-failure protocol decisions. 4. Complete actual R1/fidelity/resource gates before R3; no automatic model dispatch.
+- **Next:** 1. Await owner CPU-ESCAPE-004 approval (asked; PENDING), then separate declaration and fresh preflight only if approved. 2. Use verified archive and remote transport hash check for authorized dispatch. 3. Resolve curator/isolation and view-failure protocol decisions. 4. Continue actual identity/resource and R1 gates; no model dispatch.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

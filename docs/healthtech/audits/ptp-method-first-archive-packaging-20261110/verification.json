@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "exact_archive_accepts_all_five_pins_and_declaration",
+      "pass": true
+    },
+    {
+      "case": "windows_crlf_archive_rejected",
+      "pass": true,
+      "reason": "declaration differs from committed bytes"
+    },
+    {
+      "case": "payload_changed",
+      "pass": true,
+      "reason": "archive identity mismatch: docs/healthtech/audits/ptp-method-first-escape-cpu-declaration-20261110/authored-fixtures.json"
+    },
+    {
+      "case": "code_changed",
+      "pass": true,
+      "reason": "archive identity mismatch: src/patent_to_pilot/research/sacr_escape_callback.py"
+    },
+    {
+      "case": "payload_missing",
+      "pass": true,
+      "reason": "missing, duplicate or nonregular pinned member: docs/healthtech/audits/ptp-method-first-escape-cpu-declaration-20261110/authored-fixtures.json"
+    },
+    {
+      "case": "payload_duplicate",
+      "pass": true,
+      "reason": "missing, duplicate or nonregular pinned member: docs/healthtech/audits/ptp-method-first-escape-cpu-declaration-20261110/authored-fixtures.json"
+    }
+  ],
+  "verified_archive": {
+    "commit": "a9c1d640d0c950fc0c032339fac87a29fd622ab2",
+    "archive_sha256": "f419f8032baa2a015a329460a3b8be07a1f81c8878650118fba7160f72550139",
+    "archive_bytes": 1239040,
+    "pinned_files": [
+      {
+        "path": "scripts/healthtech/probe_sacr_escape_candidate.py",
+        "sha256": "4dd11460feaf0812940921ffa93acd6d71ac8b219fba634cdab9a0c0f3fe0dca",
+        "bytes": 5255
+      },
+      {
+        "path": "src/patent_to_pilot/research/sacr_escape_callback.py",
+        "sha256": "73fd5b5a61e0225fb99aab8f09d6a725a231786cab9e46f1982c9252a484d642",
+        "bytes": 4362
+      },
+      {
+        "path": "src/patent_to_pilot/research/sacr_grammar_guard.py",
+        "sha256": "04ae93ed31f72e92e40654142fb98f23279fe1a1f6d77357dfd90d2be6472aca",
+        "bytes": 2514
+      },
+      {
+        "path": "src/patent_to_pilot/research/sacr_alphabet.py",
+        "sha256": "b621df06b742e8165fe98e3549b5df3e41361f89fa2eebde9e26e3865bda0731",
+        "bytes": 1333
+      },
+      {
+        "path": "docs/healthtech/audits/ptp-method-first-escape-cpu-declaration-20261110/authored-fixtures.json",
+        "sha256": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8",
+        "bytes": 36891
+      }
+    ],
+    "declaration_sha256": "ec53c07dfb32dc19aec4fbf36dc7f0ea157bf111c68f4c062ba48a13dfbc9323",
+    "status": "LOCAL_ARCHIVE_VERIFIED",
+    "remote_execution": "NOT_RUN"
+  },
+  "model_calls": 0,
+  "remote_execution": "NOT_RUN"
+}
