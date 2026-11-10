@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **CPU-ESCAPE-003 declared, NOT_RUN:** one120-second CPU-only check,14 fixed cases, pinned archive/tokenizer/source/payload. [Declaration](../docs/healthtech/audits/ptp-method-first-escape-cpu-declaration-20261110/README.md). Next remote no-conflict check, exclusive job and bounded supervision; never restart or automatically dispatch model. Protocol/curator pending.
+
 > **Latest grammar candidate:** five installed source files match reviewed upstream; unused backslash/config adapter passes syntax/Ruff only. [Audit](../docs/healthtech/audits/ptp-method-first-grammar-installed-source-20261110/README.md). Next separate bounded CPU declaration before callback execution. No model/tokenizer/filter run; protocol/curator pending.
 
 > **Latest static grammar review:** upstream cache/backslash path supports a targeted repair hypothesis; config receipt fields were requested, not verified effective. [Audit](../docs/healthtech/audits/ptp-method-first-grammar-source-review-20261110/README.md). Next pinned adapter design/installed-source verification and separate bounded CPU declaration. No tokenizer/grammar/model execution; protocol/curator still pending.

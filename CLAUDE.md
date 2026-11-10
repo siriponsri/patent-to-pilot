@@ -2,15 +2,15 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 10:50:43 Bangkok
+## Cross-account checkpoint — 2026-11-10 10:55:00 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** 70d1f3b271ff223046ccf3dfc5d8dd347f5b77f4; verify containing checkpoint/remote on takeover.
-- **Latest package:** installed LMFE source verification and unused candidate adapter; audit docs/healthtech/audits/ptp-method-first-grammar-installed-source-20261110/README.md. Five installed0.11.3 files byte-match reviewed upstream. Candidate adds legal backslash traversal and restores explicit root config before tokens; existing generation path unchanged.
-- **Validation/changes:** Read-only SSH source hashing exited0, no LMFE/tokenizer/model import. Candidate Python syntax/Ruff PASS only; no candidate callback execution. Prior429 tests unchanged/not rerun and do not validate new candidate. Source comparison/audit/candidate module and paired progress/next-actions.
+- **Last verified pushed base:** 578054ae3521c857904c4bc2b7fa14ba09aad048; verify containing checkpoint/remote on takeover.
+- **Latest package:** CPU-ESCAPE-003 DECLARED_NOT_RUN; docs/healthtech/audits/ptp-method-first-escape-cpu-declaration-20261110/README.md. One targeted candidate CPU check, original10 cases unchanged plus4 fixed invalid escape/minLength cases. Code/blob/tokenizer/source/payload pins;120-second total child wall plus5-second termination grace. Not SYN-SACR-003/model run.
+- **Validation/changes:** Probe script Ruff PASS;14 authored cases constructed, original10 exact equality verified, four archived Git code blobs pinned. Declaration/methods log/probe and paired progress/next-actions. No tokenizer/filter/model execution; prior429 tests do not validate new candidate.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** Prior failed model/grammar attempts and terminated diagnostic preserved. Only short read-only SSH hash command ran and exited0; no model/GPU/background job launched. Remote job state not surveyed. No tokenizer/filter attempt or retry.
-- **Next:** predeclare one bounded CPU regression with unchanged full fixtures plus exact escape/length negatives, source/tokenizer/schema/code pins and terminal monitoring before any callback execution; no model integration/SYN-SACR-003 yet. Await owner protocol/curator; actual R1/resources/generation/fidelity before R3/R4 and gated R5/R6.
+- **Next:** verify no conflicting remote research job; ship containing pushed archive to new exclusive r2-sacr-escape-cpu-20261110-v1; supervise declared120-second CPU child and poll same handle; retain all receipts and verify terminal status with no restart. No automatic model dispatch after result. Owner protocol/curator still pending; actual R1/fidelity/resources remain prerequisites.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)

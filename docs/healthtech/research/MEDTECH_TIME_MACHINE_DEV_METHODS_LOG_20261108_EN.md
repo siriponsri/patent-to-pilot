@@ -461,3 +461,13 @@ See ../audits/ptp-method-first-grammar-source-review-20261110/README.md.
 No package change, tokenizer/filter/model run, retry or SYN-SACR-003 declaration.
 Next bounded repair design must preserve config/context and exact parsing, pin
 installed source, and receive a separate CPU declaration before execution.
+
+### CPU-ESCAPE-003 — candidate repair integration, declared before execution
+
+One CPU-only attempt, total120-second child wall cap plus5-second termination grace,
+zero model calls/weights. Preserve original10 cases and four fixed escape/minLength
+negatives. Exact code/tokenizer/schema/source pins and stopping rules are in
+../audits/ptp-method-first-escape-cpu-declaration-20261110/README.md and declaration.json.
+Specific justification: source-supported cache/backslash omission and config overwrite,
+with five installed source hashes matching upstream. No automatic repeated variants,
+SYN-SACR-003, model integration or R3 authorization. Status DECLARED_NOT_RUN.

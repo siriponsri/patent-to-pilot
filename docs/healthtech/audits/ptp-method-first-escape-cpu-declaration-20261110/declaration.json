@@ -1,0 +1,34 @@
+{
+  "format": "sacr-escape-cpu-declaration-v1",
+  "status": "DECLARED_NOT_RUN",
+  "job_name": "r2-sacr-escape-cpu-20261110-v1",
+  "wall_limit_seconds": 120,
+  "kill_grace_seconds": 5,
+  "attempts": 1,
+  "model_calls": 0,
+  "weights_loaded": false,
+  "payload_sha256": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8",
+  "original_payload_sha256": "263e73b000af42deedb0d2d79cd06f82d9f31584f0b093eafd4b52247dc71c76",
+  "original_cases_preserved": 10,
+  "augmented_cases": 4,
+  "code_commit": "CONTAINING_PUSHED_COMMIT_ARCHIVE_REQUIRED",
+  "code_files_sha256": {
+    "scripts/healthtech/probe_sacr_escape_candidate.py": "4dd11460feaf0812940921ffa93acd6d71ac8b219fba634cdab9a0c0f3fe0dca",
+    "src/patent_to_pilot/research/sacr_escape_callback.py": "73fd5b5a61e0225fb99aab8f09d6a725a231786cab9e46f1982c9252a484d642",
+    "src/patent_to_pilot/research/sacr_grammar_guard.py": "04ae93ed31f72e92e40654142fb98f23279fe1a1f6d77357dfd90d2be6472aca",
+    "src/patent_to_pilot/research/sacr_alphabet.py": "b621df06b742e8165fe98e3549b5df3e41361f89fa2eebde9e26e3865bda0731"
+  },
+  "lmfe_source_sha256": {
+    "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+    "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+    "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+    "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+    "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+  },
+  "tokenizer_files_sha256": {
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "config.json": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30"
+  },
+  "stop_rule": "No retries, timeout extensions, schema/prompt changes or model dispatch"
+}
