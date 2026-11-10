@@ -1,0 +1,10 @@
+{
+  "status": "DURABLE_STAGE_JOURNAL_SYNTHETIC_PASS",
+  "focused_tests": 36,
+  "full_sacr_tests": 181,
+  "full_sacr_test_files": 15,
+  "post_fixture_alignment_tests": 9,
+  "lint": "PASS",
+  "model_calls": 0,
+  "end_to_end_production_sacr": "NOT_IMPLEMENTED"
+}

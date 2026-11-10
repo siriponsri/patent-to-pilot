@@ -1,5 +1,6 @@
 ﻿{
     "method_first_20261110": {
+    "durable_stage_journal": "SYNTHETIC_181_SACR_TESTS_PASS_PRODUCTION_CONTROLLER_INCOMPLETE",
     "run_record_reconciliation": "SYNTHETIC_27_TESTS_PASS_DURABLE_CONTROLLER_PENDING",
     "readiness_audit": "37_REQUIREMENTS_MAPPED_NOT_READY_R3_R5",
     "r5_freeze_proposal": "CONDITIONAL_NOT_FROZEN_NOT_AUTHORIZED",

@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest durable stage journal:**181 SACR tests pass; authored/injected-vector six-stage integration and byte-checked receipts. [Audit](../docs/healthtech/audits/ptp-method-first-r2-journal-20261110/README.md). Not production SACR. Next primary prior-art comparison; actual source/controller/R1/generation/fidelity gates remain.
+
 > **Latest run reconciliation:**27 tests pass; declared slots, terminal receipts, costs and cohort agree or fail closed. [Audit](../docs/healthtech/audits/ptp-method-first-r2-reconcile-20261110/README.md). Next durable injected-backend controller; record consistency is not actual execution proof. Readiness remains incomplete.
 
 > **Latest readiness audit:**31 checklist items +6 package requirements: incomplete, not ready for R3/R5. [Audit](../docs/healthtech/audits/ptp-method-first-readiness-20261110/README.md). R5 conditional proposal is not authorization. Next expected-run/reservation/cost reconciliation and complete injected-backend controller; actual R1/generation gates remain.

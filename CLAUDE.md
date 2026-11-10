@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:07:05 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:12:05 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base f18543ca66ee826f215e55a5e3b5019059e41e0a.
-- Dev manifest/attempt/cost/outcome reconciliation:27 tests/lint PASS. Live/nonterminal records not finalized; explicit skips and one cost event per started slot. Audit docs/healthtech/audits/ptp-method-first-r2-reconcile-20261110/README.md. Record consistency is not durable execution/receipt proof.
-- Next durable injected-backend offline controller with reserve-before-call/immutable receipts and failure accounting, then full-path readiness review. Actual R1 curator/isolation/parity and generation/fidelity gates unchanged; no automatic new model attempts.
-- No data/model/GPU jobs. Prior failures retained. Overall NOT_READY_R3_R5; R5/R6 documents incomplete.
-- Changed reconciler/tests/audit, methods log and paired handoff/progress. Preserve owner untracked handoff; permissions unchanged.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 12dc182e6533653167d28717afb0667f596ada95.
+- Durable injected-stage journal and offline authored/injected-vector integration complete at component scope:36 focused tests,181 full SACR tests;9 journal tests after fixture-ID alignment. Audit docs/healthtech/audits/ptp-method-first-r2-journal-20261110/README.md. Not production end-to-end SACR or real resource evidence.
+- Next primary prior-art comparison against actual implementation; real source/model/index/cap bindings and trusted controller integration still required. Curator/environment/R1 and generation/fidelity gates unchanged; no automatic attempts.
+- No actual data/model/GPU job. Prior failed receipts retained. Readiness not R3/R5; R5/R6 drafts incomplete.
+- Changed journal/tests and plan-validator refactor, audit/methods log, paired handoff/progress. Preserve owner untracked handoff; permissions unchanged.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

@@ -6,7 +6,7 @@ from patent_to_pilot.research.sacr_outcomes import summarize_cohort, summarize_c
 STAGES = {'profile', 'generic', 'selective', 'embedding', 'acquisition', 'selection'}
 
 
-def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha256):
+def validate_plan(manifest, *, expected_manifest_sha256):
     """One predeclared slot per query/stage; no automatic retries or skipped costs.
 
     Hashes attest record consistency only. A trusted controller must create the
@@ -18,7 +18,6 @@ def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha
             digest(manifest) != expected_manifest_sha256):
         raise InputBoundaryError('wrong run plan identity or non-dev split')
     identifier(manifest['run_id'])
-    cohort = summarize_cohort(manifest['query_ids'], outcomes)
     slots, pairs = {}, set()
     for slot in manifest['slots']:
         exact_fields(slot, {'attempt_id', 'query_id', 'stage'})
@@ -31,6 +30,12 @@ def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha
         pairs.add(pair)
     if any((q, stage) not in pairs for q in manifest['query_ids'] for stage in STAGES):
         raise InputBoundaryError('every query needs all six explicit stage slots')
+    return slots
+
+
+def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha256):
+    slots = validate_plan(manifest, expected_manifest_sha256=expected_manifest_sha256)
+    cohort = summarize_cohort(manifest['query_ids'], outcomes)
     records = {}
     for attempt in attempts:
         exact_fields(attempt, {'attempt_id', 'query_id', 'stage', 'status', 'receipt_sha256', 'reason'})
