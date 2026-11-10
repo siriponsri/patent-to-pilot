@@ -1,5 +1,9 @@
 
 
+## Native dev evaluator preparation 2026-11-10
+
+Parent solewriter,last pushed533b809. Ranking/query-vector hashes freshly match completion; baseline container exited0. Pinned evaluator implemented with exact dev inputs, complete474-query/top200 validation, tie-order checks and private per-query outputs;20 evaluation/native tests PASS. Separate CPU evaluator supervisor4GiB/2CPU/120s,noGPU/network, readback before start; NOT_RUN at checkpoint. Next commit/code transport, transfer only prepared dev-evaluation projection into separate evaluator job, run once, inspect aggregates. No protected input or new GPU charge.
+
 ## Native baseline COMPLETED_NOT_EVALUATED 2026-11-10
 
 Single baseline v1 terminal exit0,40.4550167s supervisor, observed cgroup peak1960681472bytes, noOOM, container stopped/session26022 closed.474dev queries/45336families/188944passages; corpus encode calls0. Terminal/completion receipts in docs/healthtech/audits/ptp-native-dense-preparation-20261110; completion SHA verified. Previous RUNNING state historical. Parent solewriter, no active job/retry. Next verify private ranking/query-vector hashes and evaluate with isolated dev-only evaluator; scores still NOT_RUN, no quality claim. All prior failed attempts retained, GPU charge updated conservatively using whole supervisor time.
