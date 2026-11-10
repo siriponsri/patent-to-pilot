@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-10 09:20:17 Bangkok",
+  "base_commit": "73565c728238f2d3cf0ae98bf7e263b196f9abe8",
+  "documentation_links": "PASS",
+  "local_links_checked": 9,
+  "progress_json": "PASS",
+  "source_count": 7,
+  "note_sha256": "123028efa43482fb89abcb93a02a3568ba0b74cc05b9c5fa8bf6cffa65162fb5",
+  "independent_review": "NOT_RUN",
+  "experiments": "NOT_RUN",
+  "readiness": "INCOMPLETE"
+}

@@ -17,9 +17,9 @@ reported separately because their candidate and label semantics differ.
 
 An abstract claiming an empirical advantage is deliberately absent. The evidence
 currently supports a method specification and partial engineering/integrity work,
-not SACR retrieval effectiveness. Related-work synthesis and a verified bibliography
-must still be completed against the actual implemented algorithm before novelty
-language is written. The owner's separate conference work must be cited using its
+not SACR retrieval effectiveness. A [targeted primary-source comparison](SACR_PRIOR_ART_COMPARISON_20261110_EN.md)
+now bounds seven related sources against the implemented selector. It is non-exhaustive;
+full-method access and broader coverage remain necessary before novelty language. The owner's separate conference work must be cited using its
 verified publication status at manuscript review; no DOI is inferred here.
 
 ## Task and evaluation boundaries
@@ -56,7 +56,8 @@ all-requirements test, semantic entailment score or engineering compatibility ju
 
 The [versioned specification](SACR_V0_SPECIFICATION_DRAFT_20261110_EN.md) defines
 the arithmetic, fixed proposed weights, tie handling and failure behavior. Selector
-arithmetic has synthetic tests; full acquisition and end-to-end SACR are incomplete.
+arithmetic has synthetic tests; full-index acquisition and injected-stage integration have synthetic checks;
+production end-to-end SACR and actual retrieval validation remain incomplete.
 An anchor fallback is a recorded failed/empty transformation outcome, not evidence
 that SACR itself succeeded. No automatic alternative research method is substituted.
 

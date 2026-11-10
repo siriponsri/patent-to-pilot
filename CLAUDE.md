@@ -2,13 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:12:05 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:20:17 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 12dc182e6533653167d28717afb0667f596ada95.
-- Durable injected-stage journal and offline authored/injected-vector integration complete at component scope:36 focused tests,181 full SACR tests;9 journal tests after fixture-ID alignment. Audit docs/healthtech/audits/ptp-method-first-r2-journal-20261110/README.md. Not production end-to-end SACR or real resource evidence.
-- Next primary prior-art comparison against actual implementation; real source/model/index/cap bindings and trusted controller integration still required. Curator/environment/R1 and generation/fidelity gates unchanged; no automatic attempts.
-- No actual data/model/GPU job. Prior failed receipts retained. Readiness not R3/R5; R5/R6 drafts incomplete.
-- Changed journal/tests and plan-validator refactor, audit/methods log, paired handoff/progress. Preserve owner untracked handoff; permissions unchanged.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md owns detailed state. Last verified pushed base 73565c728238f2d3cf0ae98bf7e263b196f9abe8.
+- Seven-source primary prior-art comparison complete at bounded note scope; non-exhaustive and some sources preview-only. Audit docs/healthtech/audits/ptp-method-first-prior-art-20261110/README.md. No novelty or retrieval advantage established; R6 draft updated.
+- Documentation-only checkpoint; JSON/local links checked, independent review NOT_RUN. No new jobs/model calls; remote live state not re-polled. Previous failures preserved; no automatic generation attempts.
+- Next controller/source/manifest gap inspection and permitted preparatory bindings. Actual R1 isolation/curator, generation, fidelity and R3/R4 gates open. R5 not authorized. Paired updates mandatory; preserve owner untracked handoff.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
