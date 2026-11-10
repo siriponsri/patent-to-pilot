@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest A03:** [dev auditor implemented, 44 tests pass](../docs/healthtech/audits/ptp-method-first-r1-eligibility-20261110/README.md). Real incidence remains NOT_RUN. Next A14 binding, native DAPFAM parity and runtime integration; safe staging before real dev-label checks.
+
 > **Latest 10 Nov R1:** [boundary implementation and next package](../docs/healthtech/audits/ptp-method-first-r1-boundary-20261110/README.md). Strict prospective runtime/dev-evaluator inputs and trusted staging fixtures pass 39 tests. Real staging/isolation and ranking parity remain NOT_RUN. Next: A03 exact-mask dev auditor, A14 binding, native DAPFAM parity and prospective runner integration. No protected-label parsing in the agent environment; no new experiments yet.
 
 > **10 Nov 2026, active method-first goal:** [R0 inventory and bounded R1 next actions](../docs/healthtech/audits/ptp-method-first-r0-20261110/README.md). This owner-authorized R0–R6 continuation supersedes older hold/direction notes for the current task. R0 inventory is complete with unknowns; R1 A01/A03/A14 remain open. Keep protected labels sealed and all spending/protocol/release approval gates. Codex is the active writer; update HANDOFF.md and CLAUDE.md together at every checkpoint.

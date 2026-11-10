@@ -1,0 +1,20 @@
+{
+  "format": "ptp-r1-eligibility-v1",
+  "base_commit": "9378a2c4e777d639cb7f78f8775be575883c0b12",
+  "observed_at": "2026-11-10T07:08:28.690744+07:00",
+  "source_sha256": {
+    "src/patent_to_pilot/evaluation/mtm_eligibility.py": "175de2f11932d81bcb9d9b7b1a04f646c48d84f336eca8e5a5601f3731ac4894",
+    "scripts/healthtech/audit_mtm_dev_eligibility.py": "068fb720665f532ed8a45816b7d83543a71236bcd0205a6adc3ff451dc0ad491",
+    "tests/test_mtm_eligibility.py": "cbb6e698032451d2733f0c20f0596b41b875c44cba99ac76367329e8537945a2",
+    "scripts/healthtech/run_mtm_dense_pool.py": "196e2dc68fe6ef32bb378d605f858efa54853b84ce1ebfe2cae7101ba3d4d4ed"
+  },
+  "pytest": {
+    "exit_code": 0,
+    "passed": 44,
+    "seconds": 3.44
+  },
+  "real_dev_audit": "NOT_RUN",
+  "protected_label_access": false,
+  "new_jobs": 0,
+  "paid_calls": 0
+}
