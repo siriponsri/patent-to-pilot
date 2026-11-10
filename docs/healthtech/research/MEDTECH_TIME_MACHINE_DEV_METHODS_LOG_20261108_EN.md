@@ -307,3 +307,7 @@ The popularity null is far below X, so the corpus enrichment is not trivially ex
 ## R1-PARITY-P-MAIN-v1 — 10 Nov 2026
 
 Status: DECLARED_PENDING_ISOLATION_AND_INPUT_PINS; NOT_RUN. Integrity comparison only, not a new candidate method. See [fixed declaration](MTM_DEV_BASELINE_PARITY_DECLARATION_20261110_EN.md). Exact original P-dev bytes, full cohort, main/X and main/U, depth 200, batch 64, original MaxP/prefix/topk and bound vector reuse. Require exact ordered equality for every available query; preserve predeclared missing ledger, failures and all attempts. No test, re-encoding, tuning or automatic retry. Actual source/input/environment pins and isolated curator handoff required before launch.
+
+## SYN-SACR-001 — 10 Nov 2026
+
+DECLARED_NOT_RUN: synthetic engineering smoke only, not R3/dev research. Fixed authored liquid-flow input, at most profile/generic/selective calls (selective contingent on structurally usable profile), no retries, local fp16/eager Qwen, 8192/4096 input/output token caps, 900s soft / 1200s supervisor deadline. [Full declaration](../audits/ptp-method-first-r2-smoke-20261110/README.md). No benchmark or protected data; actual R1 gates remain open.

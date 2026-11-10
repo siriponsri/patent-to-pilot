@@ -2,11 +2,11 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:06:42 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:09:11 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: acf03860fb5ee30dc5f2dc1c1c4cb484f63a2e91.
-- Latest actual CPU inspection: five Qwen shards / 16,381,516,776 bytes hashed in 37.69s; prior config/tokenizer hashes match. Audit docs/healthtech/audits/ptp-method-first-r2-weights-20261110/README.md. Installed decoder configuration and CPU tokenizer nonthinking template checked on authored synthetic input.
-- Remote r2-qwen-identity-20261110-v1 exit 0 (01:04:05Z–01:04:43Z), launcher 2735622 / inspector 2735623; inspector absent, no remaining job. Code acf03860fb5ee30dc5f2dc1c1c4cb484f63a2e91. Monitor details/evidence in HANDOFF and audit.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 45f62557d7462f6dd8dfe1070837cc2c68a145c7.
+- Latest: PRELAUNCH SYN-SACR-001 declaration/runner implemented; Ruff passed. Fixed authored input, max three calls, fp16/eager, 900s soft/1200s hard supervisor limit. No benchmark paths. Audit docs/healthtech/audits/ptp-method-first-r2-smoke-20261110/README.md. Actual model smoke NOT_RUN at checkpoint.
+- Planned synthetic smoke remote r2-sacr-synthetic-smoke-20261110-v1; not launched at checkpoint. Monitor pid/logs/status.log/logs/smoke.log/out/status.log. No restart on timeout. Prior remote r2-qwen-identity-20261110-v1 exit 0 (01:04:05Z–01:04:43Z), launcher 2735622 / inspector 2735623; inspector absent, no remaining job. Code 45f62557d7462f6dd8dfe1070837cc2c68a145c7. Monitor details/evidence in HANDOFF and audit.
 - No weights loaded, generation/GPU experiment or benchmark/protected data access. Identity is local observation, not external authenticity. Synthetic full-model capacity/output validity still NOT_RUN; semantic-review and actual R1 isolation/A03/parity gates remain.
 - Next bind actual identities into bounded synthetic smoke declaration/runner; actual benchmark work awaits curator/environment response (still unanswered). Changes: observations/audit, contract and paired handoff/progress pointers. Preserve owner untracked handoff and standing gates.
 
