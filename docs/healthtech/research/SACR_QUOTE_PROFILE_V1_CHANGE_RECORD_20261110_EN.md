@@ -1,6 +1,6 @@
 # Prospective SACR quote-profile v1
 
-Status: IMPLEMENTED_SYNTHETIC_TESTS_ONLY; MODEL_NOT_RUN. This is a versioned engineering response to SYN-SACR-001, not a repair of its generated output or a benchmark protocol amendment.
+Status: IMPLEMENTED; SYN-SACR-002 MODEL_OUTPUT_INVALID_JSON. This is a versioned engineering response to SYN-SACR-001, not a repair of its generated output or a benchmark protocol amendment.
 
 ## Evidence motivating the change
 SYN-SACR-001 completed model inference but the profile failed exact span validation. Seven slice mismatches were observed; six quotations occurred once in the authored source and one did not occur. These facts suggest that numeric offset generation is a fragile interface, but do not show that the remaining extraction or semantic relationships are correct. Its two outputs and invalid-profile result remain unchanged. No output is retrospectively reprocessed as a successful v1 profile.
@@ -21,3 +21,6 @@ Numeric offsets supplied in v1 are rejected as extra fields. V0 output, includin
 Canonical structural PASS remains semantic_status unknown and fidelity_review REQUIRED. Exact quotations do not prove role assignment, attached-condition relevance, completeness, preserved meaning or retrieval utility. The conservative view screening and its role-reversal limitation are unchanged.
 
 Before another model run, declare a distinct synthetic engineering attempt with fixed fixtures, prompt/configuration hashes, resource limits and no retries. Preserve SYN-SACR-001 as failed; do not relabel the new attempt as its continuation or replacement. No v1 model inference has been performed. A successful synthetic check would still not satisfy actual R1 isolation/A03/parity or authorize R3/protected evaluation.
+
+## Actual model checkpoint
+SYN-SACR-002 returned EOS-complete but syntactically invalid JSON. Alignment was not reached; no claim that quote-profile v1 works on actual model outputs is supported. The original raw output and prior failed smoke remain preserved; no repair/retry. See ../audits/ptp-method-first-r2-quote-smoke-20261110/README.md. Earlier future-tense statements above describe the prelaunch state.

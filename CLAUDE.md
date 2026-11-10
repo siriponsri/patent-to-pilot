@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:18:21 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:21:51 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 56f4621905c2bb7f4f57adfd3a2f06c52de1c59a.
-- Latest: PRELAUNCH SYN-SACR-002 quote-profile-v1 regression declaration/runner ready. 72 tests pass (0.81s), Ruff pass. Max two calls on same authored fixture; no benchmark or old-output repair. Audit docs/healthtech/audits/ptp-method-first-r2-quote-smoke-20261110/README.md. NOT_RUN at checkpoint.
-- Old SYN-SACR-001 profile remains invalid (seven mismatches); generic structural PASS, selective skipped, no retry or repair. V1 rejects V0 inputs and model-supplied offsets; exact quotes still do not establish semantic fidelity.
-- Planned remote r2-sacr-quote-smoke-20261110-v1 not launched at checkpoint; monitor pid/logs/status.log/logs/smoke.log/out/status.log. No restart on timeout; last smoke terminated and was verified GPU-free. Recheck before future launch. Next separately declared v1 synthetic check and semantic-review policy; actual R1 isolation/A03/parity await curator/environment response.
-- Changes: quote-profile/prompt/dispatch/tests, change record/contract, audit and paired handoff/progress pointers. Preserve owner untracked handoff and all standing gates.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 47958726a80c715eda52f76031d368b9e1fdb05c.
+- Actual SYN-SACR-002 failed JSON syntax after EOS-complete681/344 tokens; quote alignment not reached and selective skipped. One call, no repair/retry. Audit docs/healthtech/audits/ptp-method-first-r2-quote-smoke-20261110/README.md. Prior SYN-SACR-001 span failure remains.
+- Remote quote-smoke job terminal exit0 at01:20:05Z; supervisor2829467/timeout2829469/Python2829470 terminal and GPU list empty. Code47958726a80c715eda52f76031d368b9e1fdb05c. Raw generated text stays private; aggregates committed.
+- Next assess schema-constrained output feasibility and bounded validation before any additional model call; avoid open-ended prompt attempts. Actual R1 isolation/A03/parity and semantic gates still open; curator/environment question unanswered.
+- Changes: quote-smoke results/verification, methods log/change record and paired handoff/progress pointers. Preserve owner untracked handoff and standing gates.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

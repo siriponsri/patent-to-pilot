@@ -1,0 +1,44 @@
+{
+  "summary": {
+    "status": "SMOKE_COMPLETED_NOT_RESEARCH_VALIDATION",
+    "outcomes": [
+      {
+        "status": "EOS_COMPLETE",
+        "model_calls": 1,
+        "input_tokens": 681,
+        "output_tokens": 344,
+        "response_sha256": "f1c4e9df26074988bbfda3e2674c7702a6a34ca6b3ba708c986175145f56aa8e",
+        "retry": false,
+        "kind": "profile_quotes",
+        "seconds": 24.533,
+        "validation_status": "INVALID_RESPONSE_PRESERVED"
+      },
+      {
+        "kind": "selective",
+        "status": "SKIPPED_UNUSABLE_PROFILE",
+        "model_calls": 0
+      }
+    ],
+    "model_load_seconds": 3.746,
+    "total_seconds": 71.66,
+    "peak_gpu_allocated_bytes": 16646121984,
+    "peak_gpu_reserved_bytes": 17733517312,
+    "effective_decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "torch": "2.8.0+cu128",
+    "semantic_validation": "NOT_PERFORMED"
+  },
+  "diagnostic": {
+    "validation_error": "invalid JSON",
+    "json_error": {
+      "json_valid": false,
+      "message": "Expecting ',' delimiter",
+      "position": 898,
+      "line": 1,
+      "column": 899,
+      "characters": 1124,
+      "begins_markdown_fence": false,
+      "first_nonspace_character": "{",
+      "last_nonspace_character": "}"
+    }
+  }
+}

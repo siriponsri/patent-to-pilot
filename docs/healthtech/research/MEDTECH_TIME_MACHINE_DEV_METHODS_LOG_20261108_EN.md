@@ -318,3 +318,6 @@ Completed 10 Nov, 01:09:47Z–01:11:37Z, code c9c37d01f6f3472ad614aead719cb81b07
 ## SYN-SACR-002 — quote-profile-v1 engineering regression
 
 DECLARED_NOT_RUN. Same authored fixture as known regression, not independent validation; new quote-profile prompt/adapter, max two calls (profile_quotes, conditional selective), no generic rerun or output repair. All model/decode/resource limits fixed as SYN-SACR-001. [Declaration](../audits/ptp-method-first-r2-quote-smoke-20261110/README.md). Prior failure remains. No benchmark/label access, R3 pilot or implicit further tuning.
+
+### SYN-SACR-002 observed outcome
+10 Nov01:18:52Z–01:20:05Z, code47958726a80c715eda52f76031d368b9e1fdb05c. One call681/344 tokens, EOS complete but JSON syntax error (comma delimiter character898); quote alignment not reached, selective skipped. No salvage/retry. Runtime71.66s, peak allocated16.65GB/reserved17.73GB. This is a second preserved engineering failure, not retrieval evidence. Assess structured-output feasibility before any further declared model attempt.
