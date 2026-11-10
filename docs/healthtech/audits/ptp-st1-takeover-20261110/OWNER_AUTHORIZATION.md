@@ -17,3 +17,7 @@ No new calls, cards or resource reservations were consumed by recording this dec
 # Latest owner amendment: Paper1 review allocation (2026-11-10)
 
 Owner explicitly approved: DAPFAM SACR up to30 cards plus one shared S/G extraction configuration up to30 cards. Each pool permits at most20 escalation and10 sentinel cards cumulatively across configurations. Global cap remains60. MTM currently has0 allocated cards and requires explicit future allocation from actual remaining quota. No automatic borrowing between pools, no refunds/reset. This supersedes the former30-per-benchmark split only; sampling, critical-error stop, incomplete-review no-pass and other resource/test restrictions remain. Append-only private ledger amendment receipt: `../ptp-solo-fidelity-mechanics-20261110/allocation-amendment.json`. No cards issued.
+
+## Interrupted-query exception 2026-11-11T06:36:17+07:00
+
+Owner approved exactly one regeneration exception for original fixed-sample index45 after its interrupted attempt. Same source/prompt/model/decoder; whole supervisor<=1200s including cleanup, charged to original shared fidelity/GPU limits. Preserve original failure and all known/unknown costs. If this exception fails, stop configuration and do not retry. Requires reviewed supervisor and no concurrent GPU job. Status OWNER_APPROVED_NOT_USED: no reservation or dispatch yet. This supersedes prior pending-request text only; all other failed/completed queries remain non-retryable.

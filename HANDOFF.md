@@ -1,5 +1,16 @@
 # Patent-to-Pilot HealthTech Handoff
 
+Independent bundle review found stale-bundle critic reuse and omitted lexical receipt gaps. Fixed with same-attempt critic reservation messages-hash verification and exact replay of the complete lexical screen. Eleven bundle/critic fixtures PASS, including both regressions; caller must bind reservation and normal-EOS/cost record from the same retained attempt. No critic/model call. Final repair rereview pending at this checkpoint. Failed quoted local test-edit command made no changes and was replaced with apply_patch; no experiment attempt. Current GPU container3052076 still RUNNING at23:37:59UTC,2normal structural-pending returns,3attemptdirs; no semantic PASS.
+
+## Owner interrupted-query exception and bundle screening 2026-11-11T06:36:17+07:00
+
+Owner approved exactly one regeneration exception for original fixed-sample index45 after its interrupted attempt. Same source/prompt/model/decoder; whole supervisor<=1200s including cleanup, charged to original shared fidelity/GPU limits. Preserve original failure and all known/unknown costs. If this exception fails, stop configuration and do not retry. Requires reviewed supervisor and no concurrent GPU job. Status OWNER_APPROVED_NOT_USED: no reservation or dispatch yet. This supersedes prior pending-request text only; all other failed/completed queries remain non-retryable.
+
+Parent sole writer; last verified pushed b3adecd. Current never-started continuation remains RUNNING, same containerPID3052076/session21435. Last fresh observation23:35:31UTC:1 normal return structurally pending,2 attempt dirs; no semantic PASS. Do not restart or modify immutable runtime. New local bundle helper requires complete profile/compact/selective/generic artifacts, binds critic prompt and bundle hashes, retains lexical flags even when critic says supported, and treats missing/malformed critic as unassessable. Nine bundle/critic testsPASS; no critic generation/cards. Normal-generation/cost binding remains upstream requirement; end-to-end bundle runner stillpending.
+
+Next monitor current job; finish bundle generation/screening integration; implement and review an exclusive index45 exception separately after current terminal and remaining-budget verification. Keep full100sample, both testsclosed,S/Gfailed,MTM0cards. Audit: ptp-sacr-unstarted-continuation-20261111/interrupted-query-authorization.json. GoalACTIVE.
+
+
 ## Continuation running 2026-11-11T06:33:02+07:00
 
 Parent sole writer; last verified pushed fdddb4b. Single continuation dispatch confirmed RUNNING: session21435, container ptp-native-sacr-continuation-20261111-v1 PID3052076, started2026-11-10T23:31:56.42988521Z. Actual isolation readback PASS persisted; latest aggregate live-observation.json has 0 normal-return model calls (does not exclude an in-flight call). No terminal/semantic PASS/cards. Old interrupted index45 excluded; pending exception has no authorization.

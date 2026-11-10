@@ -1,0 +1,14 @@
+{
+  "status": "OWNER_APPROVED_NOT_USED",
+  "timestamp_recorded": "2026-11-11T06:36:17+07:00",
+  "scope": "original fixed-sample index45 only, interrupted prior attempt",
+  "maximum_new_calls": 1,
+  "whole_supervisor_limit_seconds": 1200,
+  "same_source_prompt_model_decoder": true,
+  "charge_to_original_fidelity_and_gpu_ledgers": true,
+  "preserve_prior_attempt_and_unknown_costs": true,
+  "on_failure": "STOP_CONFIGURATION_NO_FURTHER_RETRY",
+  "requires_reviewed_supervisor": true,
+  "one_gpu_job_at_a_time": true,
+  "owner_answer": "อนุมัติข้อยกเว้นหนึ่งครั้งตามเงื่อนไข"
+}
