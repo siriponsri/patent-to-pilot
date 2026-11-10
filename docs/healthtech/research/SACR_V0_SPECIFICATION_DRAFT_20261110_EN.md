@@ -60,3 +60,13 @@ Before R3: finish strict profile/prompt validation and audit form; capture actua
 
 ## Structural profile implementation checkpoint
 The sacr-profile-v0 validator now implements the logical profile contract with a proposed cap of eight conditions per block (eight blocks maximum). Optional numeric_value is exact string text, never coerced to float. Normalization/context changes require review; exact span checks never certify semantics. See SACR_FIDELITY_AUDIT_FORM_20261110_EN.md. Generated-view acceptance and extraction integration remain pending; these caps are draft implementation choices, not executed experimental settings.
+
+## Full-index acquisition checkpoint
+
+The CPU chunked MaxP/union implementation now exists in research/sacr_acquisition.py.
+It covers the intended full-index view search and global stable cutoff on synthetic
+fixtures. Real owner/vector binding, historical numerical parity and V100 resource
+feasibility remain unverified; the historical baseline runner is unchanged.
+See [acquisition audit](../audits/ptp-method-first-r2-acquisition-20261110/README.md).
+This supersedes only the earlier statement that acquisition implementation is pending,
+not the end-to-end integration, actual integrity or semantic gates.

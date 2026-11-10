@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest acquisition:** CPU full-index MaxP/eligible union/stable cutoff implemented;33 targeted tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-r2-acquisition-20261110/README.md). Next component/passage identity binding and matched controls/accounting; real parity/resource and generation gates remain.
+
 > **Latest writing package:** fidelity acceptance policy proposed (not adopted) and incomplete manuscript material; no ratings or SACR retrieval results. Next synthetic stable full-index acquisition/union and matched-control/accounting contracts while actual-data/generation gates remain. [Audit](../docs/healthtech/audits/ptp-method-first-r2-fidelity-r6-draft-20261110/README.md).
 
 > **Latest shortcut diagnostic timed out:**120s, no comparison result; remotePID2966698 terminated and absent. Cause unproven. No automatic further grammar/model attempts. Next semantic acceptance policy and evidence-led R6 draft; curator gate remains. Generation compatibility/resource feasibility unresolved.

@@ -1,0 +1,9 @@
+{
+  "status": "SYNTHETIC_PASS_REAL_INDEX_AND_GPU_NOT_RUN",
+  "tests": 33,
+  "acquisition_tests": 18,
+  "selector_tests": 15,
+  "lint": "PASS",
+  "actual_ranking_parity": "NOT_RUN",
+  "resource_feasibility": "NOT_MEASURED"
+}

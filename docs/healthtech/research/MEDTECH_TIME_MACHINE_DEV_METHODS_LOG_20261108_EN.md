@@ -382,3 +382,12 @@ material leaves results/novelty/reference verification and R6 incomplete. Nine l
 resolve and claims trace to current audits. No experiment or protocol amendment.
 See ../audits/ptp-method-first-r2-fidelity-r6-draft-20261110/README.md.
 Next independent synthetic acquisition/controls contract; actual R1/generation gates remain.
+
+
+### 2026-11-10 08:50:45 Bangkok — Synthetic full-index acquisition package
+
+CPU chunked float32 MaxP, common eligibility, globally stable tie cutoff, union
+and anchor scores implemented;33 acquisition/selector tests and lint pass.
+Historical GPU baseline unchanged. Real index binding/parity and resource feasibility
+NOT_RUN; no benchmark/model/GPU access. See ../audits/ptp-method-first-r2-acquisition-20261110/README.md.
+Next component-passage binding and matched controls; no R3 declaration implied.

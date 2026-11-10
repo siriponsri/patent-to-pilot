@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:47:30 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:50:45 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base cf94d0e49908fd8421037fa967eea2bf288351ff.
-- Added proposed fidelity acceptance policy and incomplete manuscript material, audit docs/healthtech/audits/ptp-method-first-r2-fidelity-r6-draft-20261110/README.md.9 links resolve; claims source-checked. Policy NOT_ADOPTED, no samples/ratings/results; R6 incomplete. No hidden human filtering of automatic retrieval arms.
-- Generation branch remains gated: CPU v2 matched8/10, two escape failures; shortcut diagnostic timed out120s without causal result. PID2966698 was terminated/verified absent in previous package. No new job.
-- Next synthetic stable full-index acquisition/union and matched-control/accounting contracts; curator/environment for real R1 checks. No automatic grammar/model attempts. Fidelity adoption and R3 require gates; R5 owner freeze still required.
-- Changed two research drafts, audit-form pointer, package audit/methods log and handoff/progress. Preserve owner untracked handoff; all permissions unchanged.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 098eaabc4c9c80721e1940a0eb963a4a5eb7a36f.
+- CPU full-index acquisition/MaxP/stable ties/eligible union and anchor-score contract implemented;33 targeted tests/lint pass. Audit docs/healthtech/audits/ptp-method-first-r2-acquisition-20261110/README.md. Real owner/vector binding, CPU/GPU parity and V100 feasibility NOT_RUN; historical runner unchanged.
+- Next component/passage identity binding and matched factorial controls on synthetic inputs, full accounting/preflight. Curator/environment needed for actual R1. Generation remains gated by escape-token failures/resource timeout; no automatic attempts.
+- Fidelity policy proposed/unadopted; manuscript draft incomplete, no SACR retrieval results. No new data/model/GPU job. Previous diagnosticPID2966698 verified absent at prior checkpoint.
+- Changes module/tests/audit/spec, methods log and handoff/progress. Preserve owner untracked research handoff; permissions unchanged.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

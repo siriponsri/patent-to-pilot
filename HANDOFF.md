@@ -4,17 +4,17 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 08:47:30 Bangkok
+### Latest checkpoint — 2026-11-10 08:50:45 Bangkok
 
 - **Owner/goal:** Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Both handoff files mandatory.
-- **Last verified pushed commit before this checkpoint:** cf94d0e49908fd8421037fa967eea2bf288351ff; incoming account must verify containing commit and remote before takeover.
-- **Latest package:** proposed fidelity acceptance policy and incomplete method-first manuscript material written from current protocol/audits.9 relative links resolve; evidence claims source-checked. No fidelity observations or retrieval results inferred. [Audit](docs/healthtech/audits/ptp-method-first-r2-fidelity-r6-draft-20261110/README.md). Policy not adopted; R6 incomplete.
+- **Last verified pushed commit before this checkpoint:** 098eaabc4c9c80721e1940a0eb963a4a5eb7a36f; incoming account must verify containing commit and remote before takeover.
+- **Latest package:** chunked full-index CPU MaxP acquisition, eligibility-before-topk, global stable ties, union and anchor-score contract implemented;33 targeted tests/lint PASS. [Audit](docs/healthtech/audits/ptp-method-first-r2-acquisition-20261110/README.md). No real index/owner binding, GPU parity/resource or retrieval evidence. Historical runner unchanged.
 - **Prior failures preserved:** SYN-SACR-001 invalid spans; SYN-SACR-002 invalid JSON, alignment not reached/selective skipped. No salvage/retry. No retrieval or semantic success.
 - **Completed prior work:** R0 inventory; prospective A01 runtime/staging; A03 exact-mask auditor; A14 real CPU corpus/vector hashes matching historical receipts (original tokenizer/order attestation absent); DAPFAM synthetic differential parity12 cases; curator preparation and main-view bound dev runner/parity comparator. Actual benchmark replication/parity NOT_RUN.
 - **Jobs:** CPU v2 and character diagnostic terminal exit0. Follow-up shortcut comparison exceeded120s without results; remotePID2966698 explicitly terminated after exact command recheck and then verified absent. No retry/model/GPU job. Failure receipt in v2 audit.
-- **Changes:** fidelity policy proposal, manuscript working draft, audit-form pointer, package audit/methods log and paired handoff/progress. Preserve owner untracked research handoff.
+- **Changes:** acquisition module/tests/audit, spec checkpoint, methods log and paired handoff/progress pointers. Preserve owner untracked handoff.
 - **Open gates:** owner curator/environment question unanswered. Actual trusted staging/physical isolation, A03 counts, runner validation and real baseline parity remain open. Do not parse mixed labels from development agent. Hashes/directories are not isolation. Semantic acceptance pending.
-- **Next steps:** (1) inspect existing retrieval and implement/test the pending stable full-index acquisition/union contract on synthetic inputs without real data or re-encoding; (2) complete matched-control/accounting contracts; (3) obtain curator/environment for actual A03/parity; (4) generation remains gated on unresolved escape-token/resource feasibility, no automatic new attempts; (5) adopt fidelity policy before observation and finalize R3 only when integrity/engineering gates permit. R5/R6 remain incomplete; no submission.
+- **Next steps:** (1) bind candidate-passage/component identities for local coverage and matched G/G,G/L,I/G,I/L comparisons on synthetic inputs; (2) specify complete cost/failure accounting and preflight orchestration without labels; (3) receive curator/environment for actual A03/parity; (4) generation compatibility/resource gate unresolved, no automatic new attempts; (5) adopt fidelity policy before observations and finalize R3 only when gates permit. R5/R6 incomplete.
 - **Authorization:** protected scoring NOT_AUTHORIZED; no test access, paid APIs, training, full-corpus re-encoding/new BQ pull. V100 only, one job, authorization through2026-12-31 16:59UTC. No optional3d/cited-distractor work. Engineering checks do not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
