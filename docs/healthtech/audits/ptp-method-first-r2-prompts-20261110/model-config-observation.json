@@ -1,0 +1,51 @@
+{
+  "observed_utc": "2026-11-10T00:52:51.787005+00:00",
+  "model": "qwen3-8b",
+  "config": {
+    "model_type": "qwen3",
+    "architectures": [
+      "Qwen3ForCausalLM"
+    ],
+    "hidden_size": 4096,
+    "max_position_embeddings": 40960,
+    "torch_dtype": "bfloat16",
+    "transformers_version": "4.51.0"
+  },
+  "tokenizer": {
+    "tokenizer_class": "Qwen2Tokenizer",
+    "model_max_length": 131072,
+    "chat_template_present": true
+  },
+  "files": {
+    "config.json": {
+      "sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+      "bytes": 728
+    },
+    "tokenizer_config.json": {
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "bytes": 9732
+    },
+    "tokenizer.json": {
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "bytes": 11422654
+    },
+    "generation_config.json": {
+      "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "bytes": 239
+    },
+    "model.safetensors.index.json": {
+      "sha256": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc",
+      "bytes": 32878
+    }
+  },
+  "installed_packages": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.55.2",
+    "tokenizers": "0.21.4",
+    "numpy": "2.2.6",
+    "accelerate": "1.6.0"
+  },
+  "weights_hashed": false,
+  "model_loaded": false,
+  "benchmark_accessed": false
+}
