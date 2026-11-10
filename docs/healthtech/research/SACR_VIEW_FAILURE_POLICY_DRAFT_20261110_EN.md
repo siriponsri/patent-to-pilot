@@ -1,6 +1,9 @@
 # SACR generated-view failure policy proposal
 
-Status: PROPOSED, NOT ADOPTED FOR A SCIENTIFIC RUN. No new model attempt authorized.
+Status: ADOPTED PROSPECTIVELY by the owner's explicit 10 November 2026 chat reply;
+typed family-rejection continuation is NOT_IMPLEMENTED and no scientific run has
+used it. This policy alone authorizes no additional model attempt. Earlier proposal
+wording below describes the adopted design, not completed runtime behavior.
 This resolves implementation cases prospectively; it does not rewrite previous receipts.
 
 ## Authority and interpretation
@@ -64,6 +67,5 @@ Typed generation outcomes and failed-attempt costs are now bound in the controll
 see the [generation-failure evidence](../audits/ptp-method-first-generation-failure-evidence-20261110/README.md)
 and [execution-v3 contract](../audits/ptp-method-first-required-generation-20261110/README.md).
 `GenerationEvidenceFailure` preserves verified failure evidence and still seals FAILED;
-it does not implement GENERATION_REJECTED or permit dependent retrieval. The next policy
-step is the pending owner decision, followed only if adopted by versioned implementation
-of items 2–5. Do not reinterpret existing failed receipts as completed rejected families.
+it does not implement GENERATION_REJECTED or permit dependent retrieval. The owner has adopted the policy prospectively. Next is versioned implementation
+of items 2–5, with acceptance checks before any use in a scientific run. Do not reinterpret existing failed receipts as completed rejected families.

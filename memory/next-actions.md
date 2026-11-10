@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **MTM owner-curator bundle ready:** [one owner command](../docs/healthtech/audits/ptp-solo-runtime-20261110/OWNER_ACTION_TH.md). Only code deployed; no staging by agent. Fidelity budget fixed at60cards total across ALL configurations/benchmarks before retrieval, critical sentinel errors stop. Continue DAPFAM staging/policy implementation independently.
+
 > **SYN003 FAILED profile source-order acceptance:** EOS/schema valid,18 exact quotes, no retry. [Result](../docs/healthtech/audits/ptp-syn-sacr003-20261110/RESULT.md). Solo fidelity now adopted: fixed sampling,60cards TOTAL across both benchmarks/all configurations, sentinel critical errors stop configuration. Next owner-run curator bundle and independent baseline work; no protected access.
 
 > **CPU004 PASS14/14:** [Result](../docs/healthtech/audits/ptp-cpu-escape004-20261110/RESULT.md). Owner approved bounded plan, solo runtime isolation and failure policy. Prepare one generation smoke; automation-first fidelity [proposal](../docs/healthtech/research/SACR_SOLO_FIDELITY_PROPOSAL_20261110_EN.md) pending adoption. New-goal request rejected by service due unfinished old goal; keep actual work/limits in this context.

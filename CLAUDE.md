@@ -2,15 +2,15 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 18:18:11 Bangkok
+## Cross-account checkpoint — 2026-11-10 18:20:59 Bangkok
 
 - **Owner/goal:** Codex sole writer in same chat; owner approved bounded continuation. Working under renewed user authority; goal service status last observed BLOCKED, no resume tool. No new goal. Prior blocker audit no longer applies to approved CPU/isolation/failure work.
-- **Last verified pushed base:** 146d6117268c5a6a8e879392f3dd951c10a53229; SYN003 archived code equals this committed preflight correction.
-- **Latest package:** SYN003 FAILED declared profile acceptance despite EOS/schema PASS:18 exact quotes but blocks not in source order. One call677in/917out,141.94s supervisor wall; no repair/retry. Result docs/healthtech/audits/ptp-syn-sacr003-20261110/RESULT.md. Solo fidelity now adopted with60-card global cap across all benchmarks/configurations.
-- **Validation/changes:** Private read-only replay found schema0 errors and18/18 unique quotes; profile rejects order. Container exited0/OOMfalse; engineering_passfalse retained. CPU00414/14 PASS unaffected. Owner-curator MTM shell prepared/syntax-checked only; not executed. Fidelity fixed hash sample/sentinel and critical-error stop recorded before dev generation/retrieval.
+- **Last verified pushed base:** 8ff53ab8d4cfe156f79ee464eddd7e0ecff8e901; owner-curator bundle built from this exact pushed commit. Verify containing latest checkpoint on takeover.
+- **Latest package:** Owner adopted fixed automation-first fidelity: SHA256 sample<=100/benchmark; human budget60cards TOTAL across both benchmarks/all configurations, <=30/benchmark including20escalations+10sentinels. Critical sentinel error fails/stops configuration. MTM owner-curator code bundle deployed, not executed.
+- **Validation/changes:** Curator archive/source A14 hash verified, bash syntax PASS without executing staging; local Markdown/JSON checks completed. Only code transferred to /home/chaw/patent-to-pilot-jobs/owner-curator-mtm-20261110-v1. No mixed/protected data opened. Failure/fidelity/spec status pointers updated to actual owner adoption; implementation/ratings remain incomplete.
 - **Open gates:** One approved smoke consumed and FAILED; no automatic further generation. Both benchmark curator dev inputs and baseline parity remain pending, independently authorized. Accepted family rejection implementation pending. Fidelity adopted but implementation/sample/review NOT_RUN;60total/30per benchmark across configurations, not per-config. Tests remain closed; R5 unauthorized.
 - **Jobs/failures:** SYN003 container ptp-syn-sacr003-20261110-v1 exited at2026-11-10T11:13:37Z, no OOM. CPU004/Python import probe terminal. No new GPU job; verify at next launch. Retained HTTP untouched.
-- **Next:** 1. Deploy code-only MTM curator bundle and give owner one command to run personally; do not parse mixed sources in agent. 2. Prepare DAPFAM native dev staging preserving original split. 3. Implement accepted failure/fidelity policies and complete real baseline branches when inputs ready. 4. No generation retry; diagnose source-order failure without modifying stored output.
+- **Next:** 1. Owner personally runs command in docs/healthtech/audits/ptp-solo-runtime-20261110/OWNER_ACTION_TH.md; agent must not execute mixed-source staging. 2. Check allowed completion/receipts then actual scoped runtime mounts and MTM A03/baseline. 3. Prepare DAPFAM native TA staging with original split, and implement adopted family-rejection/fidelity accounting. 4. SYN003 remains FAILED order validation; no automatic new model attempt.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)

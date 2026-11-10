@@ -1,6 +1,11 @@
 # SACR fidelity acceptance policy
 
-Status: PROPOSED / NOT ADOPTED FOR AN EXPERIMENT / NO RATINGS COLLECTED.
+Status: HISTORICAL FULL-HUMAN-REVIEW PROPOSAL / NO RATINGS COLLECTED.
+The owner prospectively adopted the weaker automation-first solo policy in
+[SACR_SOLO_FIDELITY_PROPOSAL_20261110_EN.md](SACR_SOLO_FIDELITY_PROPOSAL_20261110_EN.md)
+on10 November2026, with a60-card total cap across both benchmarks/all configurations.
+The old fully human-reviewed100-query gate below is retained for comparison and must
+not be claimed as passed by the new automated-screen/sentinel gate.
 This elaborates the [specification](SACR_V0_SPECIFICATION_DRAFT_20261110_EN.md)
 and [audit form](SACR_FIDELITY_AUDIT_FORM_20261110_EN.md), following the owner
 handoff §§12.2, 13.7–13.8. It does not amend the frozen retrieval endpoint or

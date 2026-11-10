@@ -1,0 +1,8 @@
+{
+  "code_commit": "8ff53ab8d4cfe156f79ee464eddd7e0ecff8e901",
+  "destination": "/home/chaw/patent-to-pilot-jobs/owner-curator-mtm-20261110-v1",
+  "archive_sha256": "8286cc32691f05f01b62d61a3003755ce83da001b496dff4c1c564802211bc6f",
+  "archive_bytes": 1208320,
+  "staging_executed": false,
+  "owner_command": "ssh chaw@100.77.149.83 \"bash /home/chaw/patent-to-pilot-jobs/owner-curator-mtm-20261110-v1/owner-stage-mtm.sh --owner-curator\""
+}
