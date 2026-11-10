@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest quote-profile v1:** [72 tests pass](../docs/healthtech/audits/ptp-method-first-r2-quote-profile-20261110/README.md); unique exact alignment, no V0 repair, no model run. Next distinct declared synthetic check; preserve failed SYN-SACR-001 and all actual-data/semantic gates.
+
 > **Latest actual synthetic smoke:** [SYN-SACR-001](../docs/healthtech/audits/ptp-method-first-r2-smoke-20261110/README.md) completed; profile invalid (seven span mismatches), generic structural PASS, selective skipped. No retries/repairs or benchmark access; no live job. Next separately versioned profile-contract repair, not old-output correction.
 
 > **Latest actual Qwen identity:** [CPU observation complete](../docs/healthtech/audits/ptp-method-first-r2-weights-20261110/README.md), five shards 16.38GB / 37.69s, decoder/config and synthetic tokenizer check recorded. No model generation or live job. Next bounded synthetic smoke binding/declaration; curator/semantic gates unchanged.

@@ -10,6 +10,7 @@ from pathlib import Path
 
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError, decode_json
 from patent_to_pilot.research.sacr_profile import validate_profile
+from patent_to_pilot.research.sacr_quote_profile import align_quote_profile
 from patent_to_pilot.research.sacr_views import parse_view_response
 
 
@@ -70,7 +71,7 @@ def validate_generation(record: dict, *, kind: str, source: str, query_id: str, 
     """No fence stripping, JSON salvage, retry or post-outcome output repair."""
     limits.validate()
     if record.get("status") != "EOS_COMPLETE" or type(record.get("text")) is not str:
-        return {"status": "GENERATION_UNUSABLE", "anchor_fallback_required": kind == "profile"}
+        return {"status": "GENERATION_UNUSABLE", "anchor_fallback_required": kind in ("profile", "profile_quotes")}
     raw = record["text"].encode("utf-8")
     if len(raw) > limits.response_bytes or hashlib.sha256(raw).hexdigest() != record.get("response_sha256"):
         raise InputBoundaryError("response receipt content mismatch")
@@ -79,6 +80,9 @@ def validate_generation(record: dict, *, kind: str, source: str, query_id: str, 
         validation = validate_profile(profile, source=source, query_id=query_id, input_kind=input_kind)
         return {"status": "PROFILE_STRUCTURALLY_VALID", "profile": profile, "validation": validation,
                 "semantic_status": "unknown"}
+    if kind == "profile_quotes":
+        aligned = align_quote_profile(decode_json(raw), source=source, query_id=query_id, input_kind=input_kind)
+        return {"status": "QUOTE_PROFILE_STRUCTURALLY_VALID", **aligned, "semantic_status": "unknown"}
     views = parse_view_response(raw, kind=kind, maximum_bytes=limits.response_bytes)
     return {"status": "VIEWS_STRUCTURALLY_VALID", "views": views, "semantic_status": "unknown"}
 

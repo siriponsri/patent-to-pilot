@@ -7,7 +7,7 @@ from patent_to_pilot.research.mtm_runtime import InputBoundaryError, identifier
 from patent_to_pilot.research.sacr_profile import validate_profile
 
 PROMPT_FILES = {"profile": "sacr_profile_v0.txt", "selective": "sacr_selective_v0.txt",
-                "generic": "sacr_generic_views_v0.txt"}
+                "generic": "sacr_generic_views_v0.txt", "profile_quotes": "sacr_profile_quotes_v1.txt"}
 
 
 def build_messages(*, prompt_root: Path, kind: str, query_id: str, input_kind: str,
@@ -24,7 +24,8 @@ def build_messages(*, prompt_root: Path, kind: str, query_id: str, input_kind: s
     if path.is_symlink() or path.resolve().parent != root:
         raise InputBoundaryError("prompt path escapes declared root")
     raw = path.read_bytes()
-    identity = {"profile_version": "sacr-profile-v0", "query_id": query_id, "input_kind": input_kind,
+    version = "sacr-profile-quotes-v1" if kind == "profile_quotes" else "sacr-profile-v0"
+    identity = {"profile_version": version, "query_id": query_id, "input_kind": input_kind,
                 "source_sha256": hashlib.sha256(source.encode("utf-8")).hexdigest()}
     payload = {"identity": identity, "allowed_query": source}
     if kind == "selective":

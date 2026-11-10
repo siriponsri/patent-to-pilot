@@ -37,3 +37,6 @@ The CPU inspection at code acf03860fb5ee30dc5f2dc1c1c4cb484f63a2e91 hashed all f
 
 ## SYN-SACR-001 actual outcome
 The first short synthetic model smoke loaded fp16/eager successfully but failed profile source-span validation. Seven mismatched spans were found; no repair/retry occurred. Generic JSON passed structure, selective generation was skipped. No semantic or retrieval success claim. Audit: ../audits/ptp-method-first-r2-smoke-20261110/README.md. Source-quote alignment under a new version is a prospective repair option, not an alteration of the recorded attempt.
+
+## Prospective quote-profile v1
+A separately versioned exact-quotation interface is implemented and fixture-tested; see SACR_QUOTE_PROFILE_V1_CHANGE_RECORD_20261110_EN.md. No model run has used it. V0 prompt/output and the failed SYN-SACR-001 result are preserved. Unique exact quote alignment computes offsets without changing proposal text, then invokes existing canonical validation. Ambiguity/absence fail, with no fuzzy repair/retry. Semantic gates are unchanged.

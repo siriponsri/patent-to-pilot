@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:13:28 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:16:40 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: c9c37d01f6f3472ad614aead719cb81b07cb7a37.
-- Actual SYN-SACR-001: profile invalid (seven source-span mismatches), generic structurally valid, selective skipped. Two calls, zero retry/repair. Audit docs/healthtech/audits/ptp-method-first-r2-smoke-20261110/README.md. Actual fp16/eager load succeeded for short authored fixture; no semantic/retrieval success.
-- Job r2-sacr-synthetic-smoke-20261110-v1 exit0, 01:09:47Z–01:11:37Z; launcher2771699/timeout2771701/Python2771702 terminal, no GPU compute processes remain. Code c9c37d01f6f3472ad614aead719cb81b07cb7a37. Logs and raw generation stay private remote; aggregates committed.
-- Next review failed profile contract and design separately versioned quote alignment; no alteration/retry of this attempt. Actual R1 isolation/A03/parity and semantic gates remain open; curator/environment question still unanswered.
-- Changes: smoke results/verification, methods log/contract outcome and paired handoff/progress pointers. Preserve owner untracked handoff and all standing gates. Prior CPU weight inspection used acf03860fb5ee30dc5f2dc1c1c4cb484f63a2e91.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 7a8c53604bd94560a56588babcbb18bd432ed9cf.
+- Latest: prospective quote-profile-v1 prompt and unique exact quote-to-offset adapter. Audit docs/healthtech/audits/ptp-method-first-r2-quote-profile-20261110/README.md. 72 tests pass (0.92s), Ruff pass. No new model run.
+- Old SYN-SACR-001 profile remains invalid (seven mismatches); generic structural PASS, selective skipped, no retry or repair. V1 rejects V0 inputs and model-supplied offsets; exact quotes still do not establish semantic fidelity.
+- No new job; last smoke terminated and was verified GPU-free. Recheck before future launch. Next separately declared v1 synthetic check and semantic-review policy; actual R1 isolation/A03/parity await curator/environment response.
+- Changes: quote-profile/prompt/dispatch/tests, change record/contract, audit and paired handoff/progress pointers. Preserve owner untracked handoff and all standing gates.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
