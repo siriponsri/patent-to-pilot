@@ -79,3 +79,12 @@ slices. Order/owner digest is checked before search. It is not independent vecto
 provenance. Profile-to-component embedding, fallback and full cost orchestration remain
 open. See [factorial audit](../audits/ptp-method-first-r2-factorial-20261110/README.md).
 No generated text, actual ranking or semantic benefit was evaluated.
+
+## Component compilation checkpoint
+
+research/sacr_components.py compiles exact validated profile rows and binds vector
+receipts to ordered row/text/profile/encoder identities. Uncertain conditions do not
+enter conjunction; failed/empty or review-flagged profiles yield no embedding rows.
+Unflagged plans still require fidelity review. Receipt checks do not prove actual
+encoder execution. See [component audit](../audits/ptp-method-first-r2-components-20261110/README.md).
+Actual encoding, failure/cost orchestration and end-to-end SACR remain incomplete.

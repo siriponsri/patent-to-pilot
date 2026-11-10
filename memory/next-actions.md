@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest components:** validated profile/source text rows and exact plan/row/encoder/vector-byte receipts;43 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-r2-components-20261110/README.md). Next full query failure/fallback/cost state; actual encoding, R1 and generation remain gated.
+
 > **Latest factorial integration:** shared inputs and separate unions, same-passage coverage/order binding;44 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-r2-factorial-20261110/README.md). Next source-bound component text compiler and full failure/cost orchestration. Pre-embedded kernel is not end-to-end SACR; actual R1/generation gates remain.
 
 > **Latest acquisition:** CPU full-index MaxP/eligible union/stable cutoff implemented;33 targeted tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-r2-acquisition-20261110/README.md). Next component/passage identity binding and matched controls/accounting; real parity/resource and generation gates remain.

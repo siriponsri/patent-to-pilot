@@ -1,0 +1,10 @@
+{
+  "status": "SYNTHETIC_COMPONENT_BINDING_PASS",
+  "tests": 43,
+  "component_tests": 13,
+  "profile_tests": 19,
+  "factorial_tests": 11,
+  "lint": "PASS",
+  "actual_encoding": "NOT_RUN",
+  "semantic_status": "unknown"
+}

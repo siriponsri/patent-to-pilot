@@ -400,3 +400,13 @@ unions and same ordered passages per family. Order/owner digest fails before sea
 44 synthetic tests and lint pass. Vector/text provenance, embedding/generation,
 fallback/full cost and actual parity remain open. No experiment or protected access.
 Audit ../audits/ptp-method-first-r2-factorial-20261110/README.md.
+
+
+### 2026-11-10 08:57:16 Bangkok — Source-bound component compiler/receipt package
+
+Validated source/profile rows, explicit-condition-only conjunction and exact
+plan/row/encoder/vector-byte binding implemented.43 targeted tests/lint pass;
+actual encoder execution and semantic fidelity not established. No model/data
+run. Failed/review plans remain explicit, not silently removed.
+Audit ../audits/ptp-method-first-r2-components-20261110/README.md.
+Next per-query failure/fallback and complete accounting; real R1/generation gates remain.

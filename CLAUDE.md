@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:54:15 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:57:16 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 61fae452f79d9af2a709e95566e9ca95b2cdad84.
-- Pre-embedded factorial integration implemented;44 tests/lint pass. Shared anchor/index/mask/profile, separate unions, same-passage coverage, order/owner digest before search. Audit docs/healthtech/audits/ptp-method-first-r2-factorial-20261110/README.md. Actual vector/text provenance/end-to-end SACR/full cost/fallback incomplete.
-- Next source-bound component text/row compiler, per-query failure/fallback and full accounting; curator/environment for actual R1. Generation remains gated by escape-token failure and unresolved resource feasibility; no automatic attempts.
-- No new data/model/GPU jobs. Prior diagnosticPID2966698 was verified absent; prior failed receipts unchanged. Fidelity policy unadopted; R3/R4/R5/R6 incomplete.
-- Changed factorial module/tests/audit/spec, methods log and paired handoff/progress. Preserve owner untracked handoff; permissions unchanged.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 600997ca7316a605d0e8597a89d9764786c4d17f.
+- Source/profile component compiler and expected plan/row/encoder/vector-byte binding implemented;43 tests/lint pass. Audit docs/healthtech/audits/ptp-method-first-r2-components-20261110/README.md. Receipt consistency is not encoder execution/semantic proof. Actual encoding NOT_RUN.
+- Next per-query missing/failure/review/fallback and complete cost-ledger orchestration; then actual encoder behind identity/isolation gates. Curator needed for real R1. Generation failures/resource gate remain, no automatic attempts.
+- No new data/model/GPU jobs. Prior failed receipts unchanged. Fidelity policy unadopted; R3/R4/R5/R6 incomplete.
+- Changed components module/tests/audit/spec, methods log and paired handoff/progress. Preserve owner untracked handoff; permissions unchanged.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
