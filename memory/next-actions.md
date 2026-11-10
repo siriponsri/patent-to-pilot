@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest profile boundary:** [34 synthetic tests pass](../docs/healthtech/audits/ptp-method-first-r2-profile-20261110/README.md), strict profile/source checks and blank fidelity form. Structural PASS is not semantic acceptance. Next generated-view/prompt contract and parity protocol; curator/environment response pending.
+
 > **Latest preparatory R2:** [SACR draft](../docs/healthtech/research/SACR_V0_SPECIFICATION_DRAFT_20261110_EN.md), selector math and 15 synthetic tests pass. No retrieval/semantic evidence. Next profile validation/fidelity form and parity declaration; real data branch still awaits curator/environment response.
 
 > **Latest curator package:** [runbook](../docs/healthtech/audits/ptp-method-first-r1-curator-20261110/CURATOR_RUNBOOK.md), preparation CLI and 67 passing tests. Real staging NOT_RUN. Obtain curator/operator and isolated environment; independently continue SACR specification and parity declaration.

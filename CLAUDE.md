@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 07:44:39 Bangkok
+## Cross-account checkpoint — 2026-11-10 07:48:04 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: d5e7878b87a3e657c0424e00f3df7f1a61b79ebd.
-- Latest: preparatory R2 SACR specification/fidelity draft and selector math. Audit: docs/healthtech/audits/ptp-method-first-r2-selector-20261110/README.md. 15 synthetic tests pass in 0.45s; Ruff pass. No extraction/retrieval/experiment, no semantic-support claim; R1/R2 incomplete.
-- Owner curator/environment async question remains pending; no answer inferred. Reviewable runbook remains in ptp-method-first-r1-curator-20261110. Real staging/isolation, actual dev A03 and baseline parity NOT_RUN. No jobs started; recheck remote resources before any launch.
-- Next strict profile validation and fidelity form, parity declaration/model identity, then actual integrity after curator transfer and bounded R3 only when gates permit. Draft token/prompt/resource settings are explicitly unresolved.
-- Changes: selector/tests, draft spec, audit and paired handoff/progress pointers. Preserve owner untracked research handoff; single active writer and all test/spending/protocol/release gates unchanged.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 0eb11b1656d0e291e8461f8246f451f4ed5e0924.
+- Latest: strict SACR profile/source validation and blank fidelity audit form. Audit docs/healthtech/audits/ptp-method-first-r2-profile-20261110/README.md. 34 synthetic tests pass (0.57s); Ruff pass. Every result retains semantic unknown and requires fidelity review.
+- Generated-view acceptance/prompt/run budgets, real fidelity review, actual R1 staging/eligibility/parity and R2 completion remain pending. No real data, model, GPU, experiment or new job. Curator/environment async question remains unanswered; no answer inferred.
+- Next generated-view acceptance/prompt contract and parity declaration; actual integrity after curator transfer; bounded pilot only after gates. Preserve owner untracked research handoff and all single-writer/test/spend/protocol/release rules.
+- Changed profile module/tests, fidelity form/spec checkpoint, audit and paired handoff/progress pointers. Read-only quoting error recovered without mutation, recorded in audit.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
