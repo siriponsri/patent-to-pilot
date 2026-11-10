@@ -18,13 +18,15 @@
     "work_packages":  [
                           {
     "method_first_20261110": {
+        "r1_vectors_audit": "docs/healthtech/audits/ptp-method-first-r1-vectors-20261110/README.md",
+        "vector_identity": "OBSERVED_HISTORICAL_RECEIPTS_MATCHED_RANKING_PARITY_PENDING",
         "r1_eligibility_audit": "docs/healthtech/audits/ptp-method-first-r1-eligibility-20261110/README.md",
         "status": "ACTIVE_R1_BOUNDARY_FIXTURE_VERIFIED_REAL_STAGING_PENDING",
         "r1_boundary_audit": "docs/healthtech/audits/ptp-method-first-r1-boundary-20261110/README.md",
         "audit": "docs/healthtech/audits/ptp-method-first-r0-20261110/README.md",
         "verification": "docs/healthtech/audits/ptp-method-first-r0-20261110/verification.json",
         "authority": "Owner goal activation 10 Nov 2026; HANDOFF_PROMPT.md",
-        "next": "Implement A14 binding and native DAPFAM parity; integrate prospective runner; trusted staging before real-data A03 and parity checks",
+        "next": "Implement native DAPFAM parity and prospective runner identity enforcement; trusted staging before real-data A03 and ranking parity checks",
         "protected_scoring": "NOT_AUTHORIZED",
         "new_experiments": "NOT_RUN"
     },

@@ -1,0 +1,35 @@
+{
+  "format": "ptp-r1-vector-inspection-v1",
+  "code_commit": "1df23a5f81cef4b7cc6eb6045e66c0106ac52627",
+  "status": "HISTORICAL_RECEIPTS_MATCHED",
+  "pytest": {
+    "full_targeted_passed": 56,
+    "final_vector_subset_passed": 12
+  },
+  "ruff": "PASS",
+  "attempts": [
+    {
+      "version": 1,
+      "code_commit": "bfc12bb7cce2af4387fac9d82680a3c4d12a3200",
+      "pid": 2418646,
+      "status": "INVALID_LAUNCHER_ARCHIVE_CRLF",
+      "python_started": false
+    },
+    {
+      "version": 2,
+      "pid": 2427095,
+      "python_pid": 2427097,
+      "started_utc": "2026-11-10T00:14:21Z",
+      "ended_utc": "2026-11-10T00:16:20Z",
+      "exit_code": 0,
+      "archive_lf_check": "PASS",
+      "bash_syntax": "PASS"
+    }
+  ],
+  "report_sha256": "935d9b6c677b6df3abba405efe88097811cd1cea907bee42d4292131a8c7d945",
+  "real_ranking_parity": "NOT_RUN",
+  "protected_labels_read": false,
+  "gpu_jobs": 0,
+  "paid_calls": 0,
+  "remaining_jobs": 0
+}

@@ -1,0 +1,51 @@
+{
+  "identity": {
+    "format": "ptp-passage-vector-identity-v1",
+    "corpus": {
+      "sha256": "4d29bd8136e2a838e9a12e0907e0951dc029ca6f9b22ba7eae1da21bb5c618a6",
+      "family_order_sha256": "7486a17c392234c2f620875ba648a031da8835dfba29390456491881e3b61428",
+      "passage_owner_text_sha256": "7b7ab56b7cf4d7aefe253e70dd41fc020ad94b15997f17e536c7fa765ac4e2eb",
+      "families": 899838,
+      "passages": 1553678,
+      "passage_builder_source_sha256": "b46b1bd0c991f49a1998bc60a63130950089ef8c681edfd37db7a7f6a8976e0b"
+    },
+    "model": {
+      "files_sha256": {
+        "model.safetensors": "234ea36a876fe5d5c416c1cbaad6f7221e17861fadd6481f0b96588fdc1ca482",
+        "config.json": "bfa5f86c1416b6df6e51ef0b8a6d0d4cc8f34c083d0435c57856b95f8ed47854",
+        "tokenizer.json": "d5496fadd2d7fda4e958da4285f7cd97c41177bbfc500580addc9c08896fb773",
+        "tokenizer_config.json": "0088a6f8bcdd4014184fb068b83ebb12896a9db2bb269a71f73de83fef24bceb",
+        "sentence_bert_config.json": "948201d8329907aae938fa62f9ceeed53f5694dacc2b87b9f3b78b37ee986529",
+        "modules.json": "8f4b264b80206c830bebbdcae377e137925650a433b689343a63bdc9b3145460",
+        "1_Pooling/config.json": "a30548e8bc4255aafe5e5c638f6b15712eebbc8e84ea5988a5835f976c412907",
+        "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+        "vocab.txt": "a123c19b8d4677efb40940208592207ef800cf302149a85ba073b430d050f591",
+        "config_sentence_transformers.json": "187f2d0a140e537a751e283983ddacc129614333726dfb78b986b6c723dd8d2d"
+      },
+      "encoder_source_sha256": "b7932c01783cc8fdd25a79c965e187941b7894cee122b417d31b94a52b65751c",
+      "hidden_size": 1024,
+      "max_length": 512,
+      "encoding_contract": "fp32-attention-mask-mean-include-prompt-l2-v1"
+    },
+    "vectors": {
+      "sha256": "8bb35abadf1df98c916eb495997214a225f280fbc2ae4979ca09b9d6ec56330b",
+      "bytes": 6363865216,
+      "shape": [
+        1553678,
+        1024
+      ],
+      "dtype": "float32"
+    }
+  },
+  "provenance": {
+    "status": "HISTORICAL_RECEIPTS_MATCHED",
+    "reencoding_parity": "NOT_RUN",
+    "original_passage_order_attestation": "NOT_IN_HISTORICAL_RECEIPTS",
+    "original_tokenizer_attestation": "NOT_IN_HISTORICAL_RECEIPTS",
+    "ranking_parity": "NOT_RUN"
+  },
+  "receipt_sha256": {
+    "encoding": "d5c4a656b34e3ddf18a28a2c8b8256c3528637a027125ecaf38e0c814cd156d4",
+    "reuse": "6f29ebebe780656e93c12f9e65b6b170a260cc6200599ecb81a828364e649d2d"
+  }
+}

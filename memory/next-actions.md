@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest A14 real inspection:** [corpus/vector hashes match historical receipts](../docs/healthtech/audits/ptp-method-first-r1-vectors-20261110/README.md), CPU attempt v2 exit 0; original launcher failure preserved. No running job from this package. Next native DAPFAM parity and prospective runtime identity enforcement; safe staging before real dev A03/ranking parity. A01/A03 and overall R1 are still incomplete.
+
 > **Latest A03:** [dev auditor implemented, 44 tests pass](../docs/healthtech/audits/ptp-method-first-r1-eligibility-20261110/README.md). Real incidence remains NOT_RUN. Next A14 binding, native DAPFAM parity and runtime integration; safe staging before real dev-label checks.
 
 > **Latest 10 Nov R1:** [boundary implementation and next package](../docs/healthtech/audits/ptp-method-first-r1-boundary-20261110/README.md). Strict prospective runtime/dev-evaluator inputs and trusted staging fixtures pass 39 tests. Real staging/isolation and ranking parity remain NOT_RUN. Next: A03 exact-mask dev auditor, A14 binding, native DAPFAM parity and prospective runner integration. No protected-label parsing in the agent environment; no new experiments yet.
