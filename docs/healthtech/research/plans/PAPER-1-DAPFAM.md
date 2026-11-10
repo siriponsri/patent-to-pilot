@@ -127,3 +127,5 @@ Nearest-work distinctions and unresolved access are in [RELATED-WORK-AUDIT](RELA
 **Next bounded action:** reconcile the existing curator staging attempt from allowed sanitized receipts; verify a dev-only native TA input and baseline binding; independently finish the S/G operator/resource declaration. This document does not launch those actions.
 
 S/G sampling contract and card distribution: [fixed corpus/alias sample](SG-FIDELITY-SAMPLE.md). Actual100-record private sample fixed; extraction not yet run.
+
+Measured S/G feasibility: fixed deterministic configuration failed coverage/link gates (5/100families,6records,0cross-family alias pairs). See [negative receipt](../../audits/ptp-sg-feasibility-20261110/README.md). This configuration stops; no full-corpus or S/G quality claim. SACR continues independently; alternative S/G configurations require a new declared experiment.

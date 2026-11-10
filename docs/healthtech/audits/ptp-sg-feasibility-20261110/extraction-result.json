@@ -1,0 +1,22 @@
+{
+  "status": "EXTRACTED_UNSCREENED",
+  "families": 100,
+  "families_with_records": 5,
+  "records": 6,
+  "cross_family_exact_alias_candidate_pairs": 0,
+  "accepted_edges": 0,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "graph_configuration_gate": "FAIL_NO_CROSS_FAMILY_CANDIDATES",
+  "wall_seconds": 1.797000000020489,
+  "extraction_seconds": 0.0470000000204891,
+  "private_bytes": 54639,
+  "private_records_sha256": "289c28eccd2d9a6fcd862dbe736b4c80d63e6da6725c20eb004633ba240b96f7",
+  "gpu_calls": 0,
+  "model_calls": 0,
+  "cards_issued": 0,
+  "counts": {
+    "sentences": 200,
+    "cue_sentences": 43,
+    "over_length": 24
+  }
+}

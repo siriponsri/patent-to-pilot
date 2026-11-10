@@ -1,0 +1,36 @@
+{
+  "status": "DECLARED_BEFORE_EXTRACTION",
+  "config": {
+    "version": "sg-explicit-functional-clause-v1",
+    "fields": [
+      "abstract",
+      "claims"
+    ],
+    "max_records_per_family": 8,
+    "max_sentence_chars": 4000,
+    "subject_max_chars": 200,
+    "cues": [
+      "configured to",
+      "adapted to",
+      "operable to"
+    ],
+    "alias_policy": "exact_case_sensitive_action_clause_identity_only",
+    "semantic_acceptance": "requires_automated_screen_and_solo_review"
+  },
+  "sample_sha256": "f364014d3a8e429812ad0cc8328ae80b6e3e52e5af2f4ff9cbbcc976880591af",
+  "code_sha256": "560bc56c948d54cdee6c96b5f872426203af42a6120aa638a49e0b831410f90d",
+  "gate": "No semantic acceptance or graph edges until screening/review; zero cross-family alias candidates fails this fixed graph configuration; no posthoc synonym widening",
+  "limits": {
+    "families": 100,
+    "cpu_wall_seconds": 120,
+    "model_calls": 0,
+    "gpu_calls": 0
+  },
+  "limitations": [
+    "explicit functional cue coverage only",
+    "operand/effect/condition attachment unresolved",
+    "family-level source only; publication identifiers unavailable",
+    "exact full action clause identity may yield no useful cross-family links"
+  ],
+  "config_sha256": "3d4d162eb7601b19f0e31030744b6efd60919db9aa5c74ea0f4ad808fc1c5d20"
+}
