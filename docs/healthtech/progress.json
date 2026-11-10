@@ -1,5 +1,6 @@
 ﻿{
     "method_first_20261110": {
+    "consecutive_blocker_audit": 1,
     "host_memory": "OBSERVED_CAPACITY_ONLY_NO_ISOLATED_RUNTIME_BUDGET_OR_PEAK",
     "spec_reconciliation": "CURRENT_IMPLEMENTATION_BOUNDARIES_NO_POLICY_ADOPTION",
     "archive_packaging": "LOCAL_SIX_CHECKS_PASS_CPU_004_OWNER_APPROVAL_PENDING",
