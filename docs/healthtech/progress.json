@@ -51,7 +51,8 @@
       "disclosure": "B0 aggregate scores already known; no whole-study preregistration claim",
       "remaining": "Production runner, screening configuration and human review NOT_RUN"
     },
-    "sacr_native_fidelity_runner": "INDEPENDENT_REVIEW_REPAIRS_VERIFIED_16_TARGETED_9_SUPERVISOR_TESTS_PASS_7200S_RESERVED_NOT_DISPATCHED"
+    "sacr_native_fidelity_runner": "RUNNING_SESSION51538_2_EOS_1_REJECTED_1_STRUCTURAL_PENDING_AT_162158UTC",
+    "manuscript": "PRELIMINARY_B0_SG_NEGATIVE_DRAFT_SACR_RESULTS_PENDING"
   },
   "three_study_planning_20261110": {
     "status": "PASS_DOCUMENTATION_ONLY_LOCAL_UNCOMMITTED_UNPUSHED",

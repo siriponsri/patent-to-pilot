@@ -1,5 +1,10 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Native fidelity live evidence and manuscript draft 2026-11-10T23:22+07:00
+
+Parent sole writer,last local7e88947,last confirmed remoteffc183f. SAME session51538/containerptp-native-sacr-fidelity-20261110-v1 confirmedrunning PID71075 at16:21:58UTC;2 EOS_COMPLETE,1 rejected generated family,1 structural result fidelitypending;1751input/2966outputtokens,313.248574s completedgeneration,median156.624287s. No retries/repairs/cards; no semanticPASS. Early throughput risks completing fewer than100 withindeclared7200s; keep cap/no ledger reset and do not present partial cohort aspassed. One read-only SSH observation timed out; reobserving SAME container succeeded,not jobfailure/restart. Added preliminary PAPER1-MANUSCRIPT-DRAFT.md with source-verified B0 table,S/G negativefeasibility,costs,Paper53 alignment and comparability limits;7 evidence links verified. SACRresults/pilot/full-dev remainpending. Continue monitoring51538 or status-v2.py inremotejob;neverredispatch. Onterminal inspectstate/receipts,chargewholewall and preserveunknown/failed outputs before dependentwork.
+
+
 ## Native SACR fidelity RUNNING 2026-11-10T23:15+07:00
 
 Parent sole writer,last localb628795,last confirmed remoteffc183f. Single profile dispatch session51538; live containerptp-native-sacr-fidelity-20261110-v1 PID71075,attached Docker child70995,started16:15:21UTC. Actual Docker state running,noOOM; returned modelcalls0 at first observation (not a claim none in flight).7200s reservation,6960s early-stop margin; code/input/declaration/reviewed supervisor hashes verified. Do not restart on observation timeout. Monitor SAME session/container; status.py emits aggregate counts only. Next charge actual supervisor time and inspect terminal/retained failures; generic/selective/critic remainpending within8h shared fidelity cap. Zero human cards/testsclosed. No scientific quality/fidelity result yet.
