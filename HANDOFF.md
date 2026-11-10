@@ -1,5 +1,13 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Selected finalizer staged 2026-11-11T06:52:21+07:00
+
+Parent sole writer; last verified pushed b8b75cf. Trusted finalizer for exact54 selection staged separately as finalize-selected.py with summarize-selected-reviewed.py, remote SHA matches local (selected-closeout-tool.json). NOT_RUN while live. It verifies fixed declaration/selection manifest and fresh terminal Docker state, writes exclusive aggregate/state receipts, and invokes reviewed selected summarizer using actual canonical output. Do not replay if either output receipt already exists; inspect first. No ledger mutation by finalizer; charge actual supervisor wall separately after verified terminal. Wrapper py_compilePASS; summarizer11fixturesPASS from prior package.
+
+Same continuationPID3052076/session21435 verifiedRUNNING at23:51:51UTC:9normalreturns,8structuralpending+1rejected,10attemptdirs. Combined original+continuation completed54; frozen risk lowerbound19 (13rejected+6compactlexical), cap20 not crossed. Continue SAMEjob and bound observation; no new GPU job or exception dispatch. Manuscript updated with provisional continuation and frozen-stop interpretation, not retrieval/semantic claims. Any bound>20 must stop configuration; preserve inflight unknown/costs, do not consume optional retry merely to finish invalid gate. Both testsclosed/cards0. GoalACTIVE.
+
+Next observe samejob+compact-risk-lower-bound.py; on terminal run finalizer once, inspect and charge wholewall, then apply actual eligibility before any exception/views/critic. New protocol/extra quota not authorized. All raw evidence remains private.
+
 ## Selected closeout and early fidelity risk bound 2026-11-11T06:49:22+07:00
 
 Parent sole writer; last verified pushed33cf1ef. Added selected closeout support with full original100 denominator, bound terminal timestamps/declaration, exact selected-prefix attempts, reservation/input/record/assessment checks, and selected-complete label that never asserts complete cohort/fidelity.11closeout fixturesPASS; independent reviewer found no blocking classification/accounting issue. Remote use requires trusted wrapper calling summarize(output_root,selected_indices,expected_declaration_sha256); CLI not extended. Not run on live job as terminal.

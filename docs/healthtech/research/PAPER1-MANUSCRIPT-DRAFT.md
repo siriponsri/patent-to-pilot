@@ -147,6 +147,26 @@ and respect the remaining budget and prohibition on automatic retries.
 
 ### 4.4 Unavailable comparisons
 
+Operational update, 11 November: a separately sealed continuation is processing
+only the54 never-started sample entries, within the original shared fidelity
+allowance. It does not regenerate the45 normal returns or the interrupted entry.
+The owner separately authorized one bounded exception for the interrupted entry;
+that exception remains unused while the continuation is running. Costs for the
+live interval are reserved and are not yet represented by a final elapsed-time
+charge in the figures below.
+
+A read-only lower-bound check of54 completed profiles found13 rejected profiles
+and6 additional compact-view lexical flags, yielding19 distinct queries that
+must enter the frozen risk set. The lexical flags concern numeric or polarity
+inventories and do not establish19 semantic errors. The frozen review cap is20
+flagged queries plus10 sentinels. Because later views or critic judgments cannot
+erase these existing flags, a verified lower bound above20 will stop this
+configuration without spending generation merely to complete an already
+ineligible review set. This is a prospective stopping-rule application, not a
+change of the threshold based on retrieval outcomes; no SACR scores have been
+inspected. Current live counts are provisional and will be replaced by terminal
+aggregate receipts in the final report.
+
 SACR fidelity and retrieval results are pending. S/G retrieval effects are
 unavailable because the fixed extraction configuration failed feasibility.
 Neither absence is reported as a zero treatment effect. MTM transfer is not

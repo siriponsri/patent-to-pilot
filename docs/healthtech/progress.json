@@ -3066,6 +3066,15 @@
       "model_calls": 0,
       "observer_sha256": "c1d6ac6bf83156c82b462b855efcabae647dbbacd11cc1b299e94d36fc54d2f5",
       "observed_bangkok": "2026-11-11T06:49:22+07:00"
+    },
+    "selected_finalizer": {
+      "status": "STAGED_HASH_VERIFIED_NOT_RUN",
+      "summarizer_sha256": "9cc48e8e68b25d15426520e26c21211f52de3f6516e586dbdc12eddaf715f246",
+      "finalizer_sha256": "004fbbaee721105c28193a662dd303ab7bccfb9d92caac2417340e6fd150d88f",
+      "remote_finalizer": "finalize-selected.py",
+      "remote_helper": "summarize-selected-reviewed.py",
+      "py_compile": "PASS",
+      "new_model_calls": 0
     }
   }
 }
