@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:32:30 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:36:07 Bangkok
 
-- Codex single active writer in chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Read HANDOFF.md takeover state. Last verified pushed base cbf433842f1d969b3a239876bab162c50153144e.
-- Full quote-profile schema: 46 tests/lint passed; independent schema8/8 expected, actual tokenizer7/8. Unicode case FAILED: parser refuses first Thai character260; filter permits premature EOS at token109. Audit docs/healthtech/audits/ptp-method-first-r2-full-schema-20261110/README.md. No model calls/weights, benchmark input or GPU job.
-- CPU probe and diagnostic terminal; original failed receipt preserved. SYN-SACR-001/002 unchanged. Next inspect alphabet/dead-end behavior, explicit Unicode configuration and fail-closed integration, then separately versioned CPU checks. Do not launch third model attempt yet.
-- One bounded third model attempt only after engineering gate/declaration; stop generation branch on failure, no automatic fourth attempt. Actual R1 isolation/A03/parity and semantic gates remain; curator question unanswered.
-- Changes: schema/tests, probe and authored fixtures/failure receipts, audit/methods log and paired handoff/progress. Preserve owner untracked handoff; standing permissions unchanged.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md is detailed takeover state. Last verified pushed base 45bde9b55f162d044e51d685325ba13f34000c03.
+- Installed source confirms alphabet92 and ForceStopParser/EOS fallback; decoded Qwen vocabulary union17,829 includes fixture Unicode. Added prospective vocabulary/source alphabet and independent complete-JSON/schema EOS guard.39 targeted tests/lint PASS; actual integration NOT_RUN. Audit docs/healthtech/audits/ptp-method-first-r2-grammar-guard-20261110/README.md.
+- Prior full-schema Unicode/premature-EOS failure preserved, as are SYN-SACR-001/002. No model/GPU job launched; source/tokenizer inspections complete.
+- Next versioned CPU integration with explicit configuration, original Unicode fixture and isolated null/escape cases; then generation integration if pass. Third model attempt still not declared. One bounded third attempt only after gates; no automatic fourth if failed.
+- R1 isolation/A03/parity and semantic acceptance remain open; curator question unanswered. Changes: two modules/tests, audit/methods log, paired handoff/progress. Preserve owner untracked research handoff; permissions unchanged.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

@@ -1,0 +1,9 @@
+{
+  "status": "LOCAL_COMPONENT_TESTS_PASS_ACTUAL_INTEGRATION_NOT_RUN",
+  "tests": 39,
+  "lint": "PASS",
+  "model_calls": 0,
+  "observed_default_alphabet_characters": 92,
+  "observed_decoded_vocabulary_characters": 17829,
+  "prior_failed_receipt_unchanged": true
+}

@@ -342,3 +342,13 @@ receipt preserved; character diagnostic localizes failure. No model calls/weight
 or benchmark data. See ../audits/ptp-method-first-r2-full-schema-20261110/README.md.
 No SYN-SACR-003 declaration or launch. Inspect alphabet/dead-end and fail-closed
 configuration before a separately versioned CPU check. Prior failures unchanged.
+
+
+### 2026-11-10 08:36:07 Bangkok — Grammar dead-end diagnosis and prospective guard
+
+Installed source confirms92-character default alphabet and ForceStopParser/EOS
+fallback paths. Added complete-JSON/schema EOS guard and finite vocabulary/source
+alphabet builder;39 targeted local tests and lint pass. Actual configured integration
+NOT_RUN; no model calls. Next separately versioned CPU integration before any third
+model declaration. See ../audits/ptp-method-first-r2-grammar-guard-20261110/README.md.
+Prior failed receipts unchanged; actual-data and semantic gates remain.
