@@ -1,0 +1,35 @@
+{
+  "utc": "2026-11-10T10:51:17.682949+00:00",
+  "research_candidates": [
+    "1745699"
+  ],
+  "retained_service": [
+    "1745699"
+  ],
+  "unclassified_processes": [],
+  "process_check_exit": 0,
+  "gpu_check_exit": 0,
+  "v100_compute": [],
+  "available_isolation_commands": {
+    "docker": true,
+    "podman": false,
+    "bwrap": false,
+    "apptainer": false,
+    "unshare": true,
+    "systemd-run": true
+  },
+  "docker_socket_access": true,
+  "kernel_settings": {
+    "kernel/unprivileged_userns_clone": "1",
+    "kernel/apparmor_restrict_unprivileged_userns": "1",
+    "user/max_user_namespaces": "475541"
+  },
+  "cpu003_terminal": {
+    "status": "FAILED",
+    "returncode": 1,
+    "child_pid": 3823049,
+    "child_reaped": true,
+    "cases_written": 0
+  },
+  "cpu003_child_exists": false
+}

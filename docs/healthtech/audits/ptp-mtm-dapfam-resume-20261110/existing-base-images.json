@@ -1,0 +1,32 @@
+[
+  {
+    "Repository": "python",
+    "Tag": "3.12-slim",
+    "ID": "cb33f7f771ec",
+    "Size": "179MB"
+  },
+  {
+    "Repository": "python",
+    "Tag": "3.10-slim",
+    "ID": "6ff506466f8b",
+    "Size": "186MB"
+  },
+  {
+    "Repository": "ubuntu",
+    "Tag": "24.04",
+    "ID": "a853f94d2263",
+    "Size": "119MB"
+  },
+  {
+    "Repository": "pytorch/pytorch",
+    "Tag": "2.6.0-cuda12.6-cudnn9-runtime",
+    "ID": "f894dae26e1e",
+    "Size": "9.43GB"
+  },
+  {
+    "Repository": "nvidia/cuda",
+    "Tag": "12.6.3-base-ubuntu24.04",
+    "ID": "c87e78933f4c",
+    "Size": "353MB"
+  }
+]

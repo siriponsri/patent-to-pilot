@@ -1,18 +1,18 @@
 # Patent-to-Pilot HealthTech Handoff
 
-Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
+Status: `RESUMED_PREPARATION_OWNER_DECISIONS_PENDING`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 11:14:12 Bangkok
+### Latest checkpoint — 2026-11-10 17:54:40 Bangkok
 
-- **Owner/goal:** Codex chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal BLOCKED (confirmed by goal service). Three consecutive no-progress turns with unchanged owner-decision/isolation blockers. Writer stopped after this checkpoint; incoming account may take over after verifying current checkout and recording ownership. Objective remains incomplete.
-- **Last verified pushed base:** 2f045bd6b3d02802b387e953db219cb41c689e97 (HEAD matched origin/main at recheck); verify containing checkpoint and remote on takeover.
-- **Latest package:** Dependency audit only: no new experiment or implementation. Rechecked 37-requirement readiness map against current handoffs, CPU approval record, curator runbook, fidelity proposal and R5 freeze. Scope remains incomplete.
-- **Validation/changes:** No owner response or isolated-runtime receipt supplied. CPU-004 approval, curator/environment and family-rejection policy remain pending. Historical failed jobs remain terminal; no live handle is being waited on. No tests/model/data/remote jobs run this turn.
-- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
-- **Jobs/failures:** Job /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1 ended 2026-11-10T03:58:53.704497Z, exit1, 0.075s supervisor wall, zero cases. Child3823049 reaped; child and supervisor3823048 observed absent. No remaining job from this dispatch. Existing HTTP service preserved. No restart.
-- **Next:** 1. Resume only when an owner answer or external-state change unlocks meaningful work; reverify authority, checkout and writer ownership. 2. After CPU-004 approval only, publish new declaration and fresh preflight before the one bounded attempt. 3. After curator/environment handoff, verify allowed receipts and perform declared R1 checks. 4. Adopt failure/fidelity policy before R3; R4/R5/R6 depend on actual results. Do not manufacture more fixture/document work as scientific progress.
+- **Owner/goal:** Codex chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775 is sole active writer after owner explicitly requested takeover. Previous writer stopped. Existing goal service still BLOCKED; exposed tools cannot resume it; no replacement goal created. New resumed-run blocker audit reset to zero; this turn made fresh preparation progress.
+- **Last verified pushed base:** 85de926818e8f9ed5a162386c9de57e5d0ab0648; local main matched remote main at takeover. Verify containing checkpoint on next takeover.
+- **Latest package:** Owner MTM+DAPFAM continuation reconciled; one consolidated decision request pending for CPU004/bounded run plan, solo runtime-isolation amendment and failure/fidelity policy. Canonical matrix/proposal: docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/README.md.
+- **Validation/changes:** Fresh SSH/process/V100/base-image observations; no research job or container launched. Existing Docker access provides a candidate solo route, not proven isolation. DAPFAM legacy TAC query builder differs from native TA; curator must preserve existing split and export dev TA. Source hash, JSON and diff checks recorded; no old benchmark audit repeated.
+- **Open gates:** Owner answers PENDING; do not infer approval from attached plan. Both benchmark tests remain closed. Runtime-vs-agent isolation limitation explicitly disclosed; owner performs mixed-source staging outside agent. Native TA provenance and actual R1 parity, viable generation, finite human fidelity review, resource peaks and R3/R4 remain open. R5 unauthorized; R6 incomplete.
+- **Jobs/failures:** 2026-11-10T10:51:17Z read-only check: no V100 compute or unclassified project Python process; retained HTTP PID1745699 unchanged. CPU003 terminal FAILED, child absent. No new attempts, model calls, allocation probes, containers or downloads. Recheck live state/shared GPU slot at authorized launch.
+- **Next:** 1. Record answers to the one consolidated decision request; no approval yet. 2. Prepare executable solo-curator staging and scoped runtime/evaluator containers only under accepted isolation model. 3. Predeclare and run CPU004 only after approval. 4. Advance MTM/DAPFAM baseline branches independently when inputs ready, serial GPU. 5. Complete adopted fidelity then bounded pilot/full-dev; never open either test.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
