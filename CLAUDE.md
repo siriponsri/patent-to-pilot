@@ -2,12 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:16:40 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:18:21 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 7a8c53604bd94560a56588babcbb18bd432ed9cf.
-- Latest: prospective quote-profile-v1 prompt and unique exact quote-to-offset adapter. Audit docs/healthtech/audits/ptp-method-first-r2-quote-profile-20261110/README.md. 72 tests pass (0.92s), Ruff pass. No new model run.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 56f4621905c2bb7f4f57adfd3a2f06c52de1c59a.
+- Latest: PRELAUNCH SYN-SACR-002 quote-profile-v1 regression declaration/runner ready. 72 tests pass (0.81s), Ruff pass. Max two calls on same authored fixture; no benchmark or old-output repair. Audit docs/healthtech/audits/ptp-method-first-r2-quote-smoke-20261110/README.md. NOT_RUN at checkpoint.
 - Old SYN-SACR-001 profile remains invalid (seven mismatches); generic structural PASS, selective skipped, no retry or repair. V1 rejects V0 inputs and model-supplied offsets; exact quotes still do not establish semantic fidelity.
-- No new job; last smoke terminated and was verified GPU-free. Recheck before future launch. Next separately declared v1 synthetic check and semantic-review policy; actual R1 isolation/A03/parity await curator/environment response.
+- Planned remote r2-sacr-quote-smoke-20261110-v1 not launched at checkpoint; monitor pid/logs/status.log/logs/smoke.log/out/status.log. No restart on timeout; last smoke terminated and was verified GPU-free. Recheck before future launch. Next separately declared v1 synthetic check and semantic-review policy; actual R1 isolation/A03/parity await curator/environment response.
 - Changes: quote-profile/prompt/dispatch/tests, change record/contract, audit and paired handoff/progress pointers. Preserve owner untracked handoff and all standing gates.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)

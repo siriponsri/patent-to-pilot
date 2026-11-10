@@ -314,3 +314,7 @@ DECLARED_NOT_RUN: synthetic engineering smoke only, not R3/dev research. Fixed a
 
 ### SYN-SACR-001 observed outcome
 Completed 10 Nov, 01:09:47Z–01:11:37Z, code c9c37d01f6f3472ad614aead719cb81b07cb7a37. Two calls; profile EOS complete but invalid source spans (seven mismatches); generic response structurally valid; selective skipped. Zero retries or output repair. Peak allocated16.67GB/reserved17.79GB, total108.552s. Engineering loading works for this short synthetic input; profile contract fails. No benchmark/retrieval outcome or semantic validation. See smoke audit result.json. Any changed profile protocol must have a new version/declaration before a new attempt.
+
+## SYN-SACR-002 — quote-profile-v1 engineering regression
+
+DECLARED_NOT_RUN. Same authored fixture as known regression, not independent validation; new quote-profile prompt/adapter, max two calls (profile_quotes, conditional selective), no generic rerun or output repair. All model/decode/resource limits fixed as SYN-SACR-001. [Declaration](../audits/ptp-method-first-r2-quote-smoke-20261110/README.md). Prior failure remains. No benchmark/label access, R3 pilot or implicit further tuning.
