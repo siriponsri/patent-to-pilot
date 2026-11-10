@@ -362,3 +362,13 @@ character parser accepts both full strings. No premature EOS observed; null-only
 passes. No model calls. Freetext optimization is a candidate cause, not established.
 See ../audits/ptp-method-first-r2-full-schema-v2-20261110/README.md.
 Next bounded identical-prefix diagnostic; no generation integration or third smoke.
+
+
+### 2026-11-10 08:43:55 Bangkok — Bounded shortcut diagnostic timeout
+
+Identical character-state default/no-shortcut comparison exceeded120s without
+completed output. RemotePID2966698 terminated after identity verification, then
+/proc absence verified. No retry or model call. Cause not proven; no viable
+generation decoder established. Preserve v2 failure and timeout receipt. Stop
+automatic grammar/model attempts; continue independent semantic/R6 preparation.
+Audit ../audits/ptp-method-first-r2-full-schema-v2-20261110/README.md.

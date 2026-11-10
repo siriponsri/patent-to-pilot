@@ -29,3 +29,21 @@ fixture set before generation integration or SYN-SACR-003 declaration.
 R1 curator/isolation/A03/parity and semantic acceptance remain unresolved.
 Ruff passed for the new probe. Prior39 component tests were not re-run because
 their code was unchanged; this package adds actual tokenizer evidence.
+
+## Follow-up bounded diagnostic: timeout, no comparison result
+A same-state comparison at token111 was attempted for the two failing fixtures.
+For each mode, a fresh JsonSchemaParser consumed the tokenizer-decoded prefix.
+The no-shortcut mode used a CharacterLevelParser wrapper delegating add_character,
+get_allowed_characters and can_end, with inherited shortcut_key/cache_key=None.
+The callback was then asked for allowed tokens from that state. It reused tokenizer
+data and explicit v2 configuration. No package monkeypatch or model was involved.
+
+The command exceeded its120-second budget without complete stdout. No per-mode
+result is available, so neither causal attribution nor speedup/slowdown is proven.
+Remote PID2966698 was observed running, then exact command identity rechecked and
+SIGTERM sent after the local timeout. A subsequent /proc check confirmed PID absent.
+No restart. See shortcut-diagnostic-failure.json. The CPU branch has not established
+a viable configured decoder. Stop generation integration/third model declaration
+until a bounded, justified repair is available; do not keep attempting variants
+automatically. Continue independent semantic acceptance policy and evidence-led
+R6 draft work while owner curator/environment remains outstanding.

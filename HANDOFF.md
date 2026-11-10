@@ -4,17 +4,17 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 08:39:38 Bangkok
+### Latest checkpoint — 2026-11-10 08:43:55 Bangkok
 
 - **Owner/goal:** Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Both handoff files mandatory.
-- **Last verified pushed commit before this checkpoint:** 11d7a164f6c2a7217ddea2e13565c4c6121a1caf; incoming account must verify containing commit and remote before takeover.
+- **Last verified pushed commit before this checkpoint:** ff84568a8da8518bd719b1414faf21f24d81b51e; incoming account must verify containing commit and remote before takeover.
 - **Latest evidence:** configured full-schema CPU v2 FAILED8/10 (independent schema10/10). Unicode character parsing now passes; both remaining failures are combined escape token111. Null-only passes; no early EOS observed. Character diagnostic accepts both full strings. [Audit](docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/README.md). No model/weights/data. Prior failed CPU v1 preserved; do not integrate generation yet.
 - **Prior failures preserved:** SYN-SACR-001 invalid spans; SYN-SACR-002 invalid JSON, alignment not reached/selective skipped. No salvage/retry. No retrieval or semantic success.
 - **Completed prior work:** R0 inventory; prospective A01 runtime/staging; A03 exact-mask auditor; A14 real CPU corpus/vector hashes matching historical receipts (original tokenizer/order attestation absent); DAPFAM synthetic differential parity12 cases; curator preparation and main-view bound dev runner/parity comparator. Actual benchmark replication/parity NOT_RUN.
-- **Jobs:** CPU v2 and diagnostic terminal exit0; no model/GPU job launched. Recheck live state before future GPU work.
-- **Changes:** versioned v2 probe, authored fixtures, aggregate failure/diagnostic/independent validation and audit, methods log and paired handoff/progress pointers. Preserve owner untracked research handoff.
+- **Jobs:** CPU v2 and character diagnostic terminal exit0. Follow-up shortcut comparison exceeded120s without results; remotePID2966698 explicitly terminated after exact command recheck and then verified absent. No retry/model/GPU job. Failure receipt in v2 audit.
+- **Changes:** additional bounded diagnostic timeout receipt, audit/methods-log addendum and paired handoff/progress pointers. Previously pushed v2 result remains unchanged. Preserve owner untracked handoff.
 - **Open gates:** owner curator/environment question unanswered. Actual trusted staging/physical isolation, A03 counts, runner validation and real baseline parity remain open. Do not parse mixed labels from development agent. Hashes/directories are not isolation. Semantic acceptance pending.
-- **Next steps:** (1) bounded diagnostic comparing default vs no-shortcut parser at rejected escape token with identical prefix; inspect token-tree behavior (shortcut cause not yet proven); (2) explicit fix and full CPU fixture gate before generation integration; (3) only then separately declare at most one third model attempt, stop generation branch if failed; (4) obtain curator/environment and real A03/parity; (5) resolve semantic review and R3 declaration. Do not alter installed library or restrict source quotation characters.
+- **Next steps:** (1) continue semantic acceptance policy and evidence-led R6 draft with missing results explicit; (2) obtain curator/environment for actual A03/parity; (3) generation integration remains gated on unresolved escape-token compatibility and resource feasibility; no automatic new grammar/model attempts; a justified bounded repair is needed first; (4) finalize R2/R3 only after integrity and fidelity gates. Shortcut comparison timed out without outputs, so cause is unproven. No quote normalization or automatic alternate method.
 - **Authorization:** protected scoring NOT_AUTHORIZED; no test access, paid APIs, training, full-corpus re-encoding/new BQ pull. V100 only, one job, authorization through2026-12-31 16:59UTC. No optional3d/cited-distractor work. Engineering checks do not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

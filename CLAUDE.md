@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:39:38 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:43:55 Bangkok
 
-- Codex single active writer in chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Read HANDOFF.md detailed state. Last verified pushed base 11d7a164f6c2a7217ddea2e13565c4c6121a1caf.
-- Full-schema CPU v2 FAILED8/10; independent JSON Schema10/10. Explicit alphabet/config + EOS guard: no early EOS observed; null-only passes. Both remaining failures are escape token111; character parser accepts both complete strings including Unicode. Audit docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/README.md. Prior failure unchanged.
-- Probe/diagnostic terminal exit0, no model/weights/GPU or benchmark inputs. New probe lint PASS.
-- Next bounded identical-prefix token diagnostic with/without freetext shortcut; cause not yet proven. No installed library changes or quote restrictions. Full fixture gate must pass before generation integration/third model declaration. No automatic fourth model attempt if third fails.
-- R1 curator/isolation/A03/parity and semantic gates unchanged. Changes: v2 probe/fixtures/failure receipts, audit/methods log, handoff/progress. Preserve owner untracked handoff.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base ff84568a8da8518bd719b1414faf21f24d81b51e.
+- CPU v2 remains FAILED8/10 escape-token compatibility; independent schema10/10. Follow-up shortcut comparison exceeded120s with no completed result; cause unproven. RemotePID2966698 command reverified, SIGTERM sent, /proc absence confirmed. No retry/model/GPU.
+- Failure receipt/audit: docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/shortcut-diagnostic-failure.json. Original v1/v2 and model failures unchanged.
+- Next independent semantic acceptance policy and evidence-led R6 draft; curator/environment for actual A03/parity. Generation integration/third model attempt remains gated by compatibility and resource feasibility; no automatic new attempts. Need a justified bounded repair first.
+- Changed timeout receipt/audit/methods log, paired handoff/progress pointers. Preserve owner untracked handoff; standing permissions unchanged.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

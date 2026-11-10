@@ -1,0 +1,13 @@
+{
+  "status": "TIME_BUDGET_EXCEEDED_NO_COMPARISON_RESULT",
+  "timeout_seconds": 120,
+  "pid": 2966698,
+  "observed_live_before_timeout": true,
+  "termination": "SIGTERM_SENT_AFTER_REVERIFYING_EXACT_VENV_PYTHON_STDIN_COMMAND",
+  "terminal_verification": "PROC_PID_ABSENT",
+  "model_calls": 0,
+  "retry": false,
+  "comparison": "same character parser state immediately before token111; default vs wrapper delegating add_character/get_allowed_characters/can_end and inheriting no shortcut/cache",
+  "results": "UNKNOWN_NO_COMPLETE_STDOUT",
+  "interpretation": "Does not prove shortcut is cause; no full compatibility or acceptable latency established"
+}
