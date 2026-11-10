@@ -481,3 +481,8 @@ FAILED before all 14 cases at payload hash guard; exit1, zero model calls, 0.074
 ## CPU-ESCAPE-004 declaration and owner decisions — 2026-11-10 17:58:27 Bangkok
 
 Owner approved one120s+5s CPU check of unchanged14 cases with byte-stable packaging, and bounded conditional downstream plan. See [declaration](../audits/ptp-cpu-escape004-20261110/README.md) and [exact scope](../audits/ptp-mtm-dapfam-resume-20261110/OWNER_DECISIONS.md). Family-rejection policy prospectively accepted, implementation pending; automation-first fidelity amendment requested, not silently passed. CPU003 unchanged. No experiment dispatched at this declaration checkpoint.
+
+
+## CPU-ESCAPE-004 result — 2026-11-10 18:03:45 Bangkok
+
+PASS14/14;61.8898s supervisor wall, peak child RSS2,327,261,184bytes, zero model calls. Effective root config preserved, child/supervisor absent. [Result](../audits/ptp-cpu-escape004-20261110/RESULT.md). CPU003 remains FAILED. New automation-first fidelity proposal is NOT_ADOPTED, no ratings collected. One already authorized model smoke remains to be separately declared.

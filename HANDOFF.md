@@ -4,15 +4,15 @@ Status: `OWNER_APPROVED_BOUNDED_DEV_EXECUTION`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 17:58:27 Bangkok
+### Latest checkpoint — 2026-11-10 18:03:45 Bangkok
 
 - **Owner/goal:** Codex sole writer in same chat; owner approved bounded continuation. Working under renewed user authority; goal service status last observed BLOCKED, no resume tool. No new goal. Prior blocker audit no longer applies to approved CPU/isolation/failure work.
-- **Last verified pushed base:** bd98dbc93c7a89e6d7d2da9ac89fc568798e2131; verify containing prelaunch checkpoint and origin/main.
-- **Latest package:** Explicit owner decisions captured in docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/OWNER_DECISIONS.md. CPU-ESCAPE-004 declared in docs/healthtech/audits/ptp-cpu-escape004-20261110/; NOT_RUN until separately recorded launch.
-- **Validation/changes:** Same14 payload/schema/candidate/probe hashes as CPU003; corrected archive packaging only. New supervisor enforces120s+5s,8CPU,32GiB address-space cap, existing cooperative slot and terminal/RSS evidence. No actual CPU/model call yet.
+- **Last verified pushed base:** 26e83639dabfe47465a72efd3bcacdb1d89dedba; CPU004 code archive equals this pushed declaration commit.
+- **Latest package:** CPU004 PASS14/14 in61.8898s, peak child RSS2.17GiB, zero model calls; all requested/effective root config equal. Evidence docs/healthtech/audits/ptp-cpu-escape004-20261110/RESULT.md. Automation-first solo fidelity proposal prepared, NOT_ADOPTED.
+- **Validation/changes:** Terminal/reap/absence verified; exact archive transport, code/payload/tokenizer guards passed. Owner authorized new goal, but create_goal rejected because unfinished existing goal; do not falsely complete old goal or claim new one exists. Explicit work order remains active.
 - **Open gates:** CPU004 and bounded stages authorized; solo runtime-isolation amendment and family-rejection policy accepted. Implementation/isolation verification and curator-prepared real dev inputs pending. Owner requests automation-first fidelity proposal instead of100-query full manual review; revised gate NOT_ADOPTED/NOT_RUN. Tests closed; R5 unauthorized.
-- **Jobs/failures:** NEXT launch CPU004 once at /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v2 after fresh preflight and verified pushed archive. Monitor child.json/terminal.json/logs; no restart. CPU003 immutable FAILED. Retained HTTP untouched.
-- **Next:** 1. Verify archive, live resources and dispatch approved CPU004 once. 2. Follow same job to terminal and preserve all cases/failures. 3. Build scoped solo-curator/runtime setup and automation-first fidelity proposal while independent branches proceed. 4. Actual baseline/parity before pilot/full dev; single GPU, no tests.
+- **Jobs/failures:** CPU004 child2240963/supervisor2240926 absent after terminal PASS. CPU003 remains FAILED. No model smoke or container started yet; retained HTTP untouched.
+- **Next:** 1. Prepare separately declared one bounded real generation smoke after runtime compatibility/caps. 2. Prepare solo owner-curator instructions and dev-only runtime/evaluator routes. 3. Present automation-first fidelity proposal (up-to100 screened,<=20 escalations+10 sentinels/benchmark; weaker than old full-human gate). 4. Implement accepted family rejection before dev and preserve R1 gates.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

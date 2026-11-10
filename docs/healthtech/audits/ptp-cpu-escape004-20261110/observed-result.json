@@ -1,0 +1,1218 @@
+{
+  "supervisor-reservation.json": {
+    "pid": 2240926,
+    "wall_limit_seconds": 120,
+    "supervisor_sha256": "cafcbcee05178e4a5764b4e48d65dafcb3938ebf965bca277ca296afe8ace4e4",
+    "code_commit": "26e83639dabfe47465a72efd3bcacdb1d89dedba",
+    "proc_exists_now": false
+  },
+  "child.json": {
+    "pid": 2240963,
+    "model_calls": 0,
+    "proc_exists_now": false
+  },
+  "terminal.json": {
+    "status": "PASS",
+    "child_pid": 2240963,
+    "returncode": 0,
+    "child_reaped": true,
+    "child_proc_exists": false,
+    "child_peak_rss_bytes": 2327261184,
+    "cases_written": 14,
+    "result_exists": true,
+    "all_expected": true,
+    "wall_seconds": 61.88982811709866,
+    "finished_utc": "2026-11-10T11:01:47.822650+00:00",
+    "model_calls": 0
+  },
+  "output/result.json": {
+    "format": "sacr-escape-candidate-cpu-v1",
+    "model_calls": 0,
+    "weights_loaded": false,
+    "cases": [
+      {
+        "case": "nested_conditions",
+        "expected": true,
+        "independent_valid": true,
+        "accepted": true,
+        "rejected_token_position": null,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "unicode_optional_null",
+        "expected": true,
+        "independent_valid": true,
+        "accepted": true,
+        "rejected_token_position": null,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "two_blocks_duplicate_ids_postcheck_required",
+        "expected": true,
+        "independent_valid": true,
+        "accepted": true,
+        "rejected_token_position": null,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "empty_failed",
+        "expected": true,
+        "independent_valid": true,
+        "accepted": true,
+        "rejected_token_position": null,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "block_cap",
+        "expected": false,
+        "independent_valid": false,
+        "accepted": false,
+        "rejected_token_position": 1300,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "condition_cap",
+        "expected": false,
+        "independent_valid": false,
+        "accepted": false,
+        "rejected_token_position": 544,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "wrong_identity",
+        "expected": false,
+        "independent_valid": false,
+        "accepted": false,
+        "rejected_token_position": 15,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "truncated",
+        "expected": false,
+        "independent_valid": false,
+        "accepted": false,
+        "rejected_token_position": null,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "null_only",
+        "expected": true,
+        "independent_valid": true,
+        "accepted": true,
+        "rejected_token_position": null,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "ascii_escapes_only",
+        "expected": true,
+        "independent_valid": true,
+        "accepted": true,
+        "rejected_token_position": null,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "invalid_escape_q",
+        "expected": false,
+        "independent_valid": false,
+        "accepted": false,
+        "rejected_token_position": 110,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "raw_newline_in_string",
+        "expected": false,
+        "independent_valid": false,
+        "accepted": false,
+        "rejected_token_position": 109,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "invalid_unicode_escape",
+        "expected": false,
+        "independent_valid": false,
+        "accepted": false,
+        "rejected_token_position": 112,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      },
+      {
+        "case": "empty_description_minlength",
+        "expected": false,
+        "independent_valid": false,
+        "accepted": false,
+        "rejected_token_position": 107,
+        "early_eos": [],
+        "exception_type": null,
+        "config": {
+          "format": "sacr-escape-callback-candidate-v1",
+          "requested": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "constructor_overwrite": {
+            "max_consecutive_whitespaces": 12,
+            "force_json_field_order": false,
+            "max_json_array_length": 20,
+            "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+            "alphabet_characters": 17805
+          },
+          "effective_root": {
+            "max_consecutive_whitespaces": 4096,
+            "force_json_field_order": false,
+            "max_json_array_length": 4096,
+            "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+            "alphabet_characters": 17797
+          },
+          "source_sha256": {
+            "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+            "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+            "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+            "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+            "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+          },
+          "runtime_acceptance": "NOT_ESTABLISHED"
+        },
+        "pass": true
+      }
+    ],
+    "all_expected": true,
+    "wall_seconds": 58.70748974289745,
+    "semantic_status": "NOT_ESTABLISHED"
+  },
+  "cases": [
+    {
+      "case": "nested_conditions",
+      "expected": true,
+      "independent_valid": true,
+      "accepted": true,
+      "rejected_token_position": null,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "unicode_optional_null",
+      "expected": true,
+      "independent_valid": true,
+      "accepted": true,
+      "rejected_token_position": null,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "two_blocks_duplicate_ids_postcheck_required",
+      "expected": true,
+      "independent_valid": true,
+      "accepted": true,
+      "rejected_token_position": null,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "empty_failed",
+      "expected": true,
+      "independent_valid": true,
+      "accepted": true,
+      "rejected_token_position": null,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "block_cap",
+      "expected": false,
+      "independent_valid": false,
+      "accepted": false,
+      "rejected_token_position": 1300,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "condition_cap",
+      "expected": false,
+      "independent_valid": false,
+      "accepted": false,
+      "rejected_token_position": 544,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "wrong_identity",
+      "expected": false,
+      "independent_valid": false,
+      "accepted": false,
+      "rejected_token_position": 15,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "truncated",
+      "expected": false,
+      "independent_valid": false,
+      "accepted": false,
+      "rejected_token_position": null,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "null_only",
+      "expected": true,
+      "independent_valid": true,
+      "accepted": true,
+      "rejected_token_position": null,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "ascii_escapes_only",
+      "expected": true,
+      "independent_valid": true,
+      "accepted": true,
+      "rejected_token_position": null,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "invalid_escape_q",
+      "expected": false,
+      "independent_valid": false,
+      "accepted": false,
+      "rejected_token_position": 110,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "raw_newline_in_string",
+      "expected": false,
+      "independent_valid": false,
+      "accepted": false,
+      "rejected_token_position": 109,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "invalid_unicode_escape",
+      "expected": false,
+      "independent_valid": false,
+      "accepted": false,
+      "rejected_token_position": 112,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    },
+    {
+      "case": "empty_description_minlength",
+      "expected": false,
+      "independent_valid": false,
+      "accepted": false,
+      "rejected_token_position": 107,
+      "early_eos": [],
+      "exception_type": null,
+      "config": {
+        "format": "sacr-escape-callback-candidate-v1",
+        "requested": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "constructor_overwrite": {
+          "max_consecutive_whitespaces": 12,
+          "force_json_field_order": false,
+          "max_json_array_length": 20,
+          "alphabet_sha256": "a36fe2552dc1aebc64d17e35a0bbe62d4858ee43826eaf3d493e8adad22b0277",
+          "alphabet_characters": 17805
+        },
+        "effective_root": {
+          "max_consecutive_whitespaces": 4096,
+          "force_json_field_order": false,
+          "max_json_array_length": 4096,
+          "alphabet_sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+          "alphabet_characters": 17797
+        },
+        "source_sha256": {
+          "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+          "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+          "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+          "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+          "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+        },
+        "runtime_acceptance": "NOT_ESTABLISHED"
+      },
+      "pass": true
+    }
+  ],
+  "status_log": "2026-11-10T11:00:45.935063+00:00 STARTED_CPU_ONLY\n2026-11-10T11:00:45.941204+00:00 CHILD 2240963\n2026-11-10T11:01:47.828477+00:00 TERMINAL PASS\n",
+  "stderr": ""
+}

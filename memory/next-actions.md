@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **CPU004 PASS14/14:** [Result](../docs/healthtech/audits/ptp-cpu-escape004-20261110/RESULT.md). Owner approved bounded plan, solo runtime isolation and failure policy. Prepare one generation smoke; automation-first fidelity [proposal](../docs/healthtech/research/SACR_SOLO_FIDELITY_PROPOSAL_20261110_EN.md) pending adoption. New-goal request rejected by service due unfinished old goal; keep actual work/limits in this context.
+
 > **Owner requested MTM+DAPFAM takeover:** one consolidated decision request pending. Existing Docker offers a possible solo runtime-isolation route; host-agent access limitation explicitly disclosed. Native DAPFAM TA must not reuse legacy TAC queries. [Current matrix](../docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/README.md). No job/container started; both tests closed.
 
 > **Host capacity observed, runtime acceptance open:** 113.71 GiB available at observation; two-array payload 11.85 GiB excludes overhead. SSH hierarchy has no finite memory cap. [Audit](../docs/healthtech/audits/ptp-method-first-host-memory-20261110/README.md). Keep detached copy; actual isolated budget/peak and pending owner decisions remain prerequisites.
