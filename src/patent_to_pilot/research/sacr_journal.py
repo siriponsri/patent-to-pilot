@@ -119,6 +119,7 @@ class DevStageJournal:
         if digest(manifest) != self.expected:
             raise InputBoundaryError('persisted manifest changed')
         attempts, events = [], []
+        profile_outputs = {}
         for attempt_id, slot in self.slots.items():
             path = self.destination / digest(attempt_id)
             if not (path / 'seal.json').is_file():
@@ -139,10 +140,20 @@ class DevStageJournal:
             if receipt['status'] == 'COMPLETED' and seal['output_sha256'] is None:
                 raise InputBoundaryError('completed attempt lacks output binding')
             if seal['output_sha256'] is not None:
-                _, output_hash = _read(path / 'output.json')
+                output, output_hash = _read(path / 'output.json')
                 if output_hash != seal['output_sha256']:
                     raise InputBoundaryError('output bytes changed')
-        report = reconcile_run(manifest, attempts, events, outcomes, expected_manifest_sha256=self.expected)
+                if (slot['stage'] == 'profile' and type(output) is dict and
+                        output.get('format') == 'sacr-profile-stage-v1'):
+                    if self.execution is not None:
+                        sources = {s['query_id']: s['source_sha256'] for s in self.execution['sources']}
+                        source = output.get('source')
+                        if (type(source) is not str or hashlib.sha256(source.encode()).hexdigest() !=
+                                sources[slot['query_id']]):
+                            raise InputBoundaryError('typed profile source differs from execution binding')
+                    profile_outputs[slot['query_id']] = output
+        report = reconcile_run(manifest, attempts, events, outcomes, expected_manifest_sha256=self.expected,
+                               profile_outputs=profile_outputs)
         outcomes_hash = _write(self.destination / 'outcomes.json', outcomes)
         report_hash = _write(self.destination / 'reconciliation.json', report)
         _write(self.destination / 'completion.json', {'manifest_sha256': self.expected,

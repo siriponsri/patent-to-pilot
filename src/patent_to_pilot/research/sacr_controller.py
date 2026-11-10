@@ -1,11 +1,8 @@
 """Bound first-stage orchestration; not a production research runner."""
-from copy import deepcopy
-
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError
-from patent_to_pilot.research.sacr_components import compile_components
 from patent_to_pilot.research.sacr_execution import bind_input_snapshots
 from patent_to_pilot.research.sacr_journal import DevStageJournal
-from patent_to_pilot.research.sacr_views import compact_view
+from patent_to_pilot.research.sacr_profile_result import profile_result
 
 
 class BoundProfileController:
@@ -41,19 +38,7 @@ class BoundProfileController:
 
         def validated_work():
             profile, metrics = adapter(query_id, source)
-            # Detach before checking: downstream code consumes exactly these records.
-            profile = deepcopy(profile)
-            components = compile_components(profile, source=source, query_id=query_id, input_kind='MTM_P')
-            compact = compact_view(profile, source=source, query_id=query_id, input_kind='MTM_P')
-            if components['status'] == 'ANCHOR_FALLBACK':
-                decision = ('PROFILE_FAILED_FALLBACK_REQUIRED' if profile['extraction_status'] == 'failed'
-                            else 'PROFILE_EMPTY_FALLBACK_REQUIRED')
-            elif components['status'] == 'REVIEW_REQUIRED' or compact['status'] == 'REVIEW_REQUIRED':
-                decision = 'REVIEW_REQUIRED'
-            else:
-                decision = 'PROFILE_STRUCTURALLY_PREPARED_FIDELITY_PENDING'
-            return {'query_id': query_id, 'decision': decision, 'profile': profile,
-                    'components': components, 'compact': compact, 'semantic_status': 'unknown'}, metrics
+            return profile_result(profile, source=source, query_id=query_id), metrics
 
         # Structural failure happens within the reserved attempt, never after it
         # has been sealed as COMPLETED. No retry or downstream dispatch here.

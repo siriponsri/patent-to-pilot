@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest typed reconciliation:** sealed source/profile output recomputed; completed transport may honestly record failed extraction.253 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-typed-reconcile-20261110/README.md). Next prospective scheduling/view acceptance, then original-anchor evidence and live budgets.
+
 > **Latest profile controller:** source-bound first stage, typed stop/fallback-required decisions;247 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-profile-controller-20261110/README.md). Next reconcile declared extraction failure with completed transport using sealed typed output; no fallback finalization or production runner yet.
 
 > **Latest input snapshots:** immutable allowed source/manifest bytes bound; single-read MTM loader.239 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-input-snapshots-20261110/README.md). Next typed controller integration; actual referenced-artifact preflight/R1/generation/fidelity still open.

@@ -2,6 +2,7 @@
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError, exact_fields, identifier
 from patent_to_pilot.research.sacr_components import digest
 from patent_to_pilot.research.sacr_outcomes import summarize_cohort, summarize_costs
+from patent_to_pilot.research.sacr_profile_result import profile_result
 
 STAGES = {'profile', 'generic', 'selective', 'embedding', 'acquisition', 'selection'}
 
@@ -44,7 +45,7 @@ def validate_plan(manifest, *, expected_manifest_sha256):
     return slots
 
 
-def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha256):
+def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha256, profile_outputs=None):
     slots = validate_plan(manifest, expected_manifest_sha256=expected_manifest_sha256)
     cohort = summarize_cohort(manifest['query_ids'], outcomes)
     records = {}
@@ -74,11 +75,36 @@ def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha
         if any(event[k] != record[k] for k in ('query_id', 'stage', 'status')):
             raise InputBoundaryError('cost event does not describe its attempt')
     states = {(record['query_id'], record['stage']): record['status'] for record in records.values()}
+    decisions = {}
+    if profile_outputs is not None:
+        if type(profile_outputs) is not dict:
+            raise InputBoundaryError('invalid typed profile output mapping')
+        for q, output in profile_outputs.items():
+            exact_fields(output, {'format', 'query_id', 'source', 'decision', 'profile',
+                                  'components', 'compact', 'semantic_status'})
+            if q not in manifest['query_ids'] or output['query_id'] != q or states[q, 'profile'] != 'COMPLETED':
+                raise InputBoundaryError('typed profile output disagrees with its attempt')
+            canonical = profile_result(output['profile'], source=output['source'], query_id=q)
+            if output != canonical:
+                raise InputBoundaryError('typed profile decision or evidence inconsistent')
+            decisions[q] = output['decision']
     for outcome in outcomes:
         q, state = outcome['query_id'], outcome['state']
+        decision = decisions.get(q)
+        typed_states = {'PROFILE_FAILED_FALLBACK_REQUIRED': {'PROFILE_FAILED'},
+                        'PROFILE_EMPTY_FALLBACK_REQUIRED': {'PROFILE_EMPTY'},
+                        'REVIEW_REQUIRED': {'REVIEW_REQUIRED'},
+                        'PROFILE_STRUCTURALLY_PREPARED_FIDELITY_PENDING':
+                            {'READY', 'REVIEW_REQUIRED', 'RETRIEVAL_FAILED'}}
+        if decision is not None and state not in typed_states[decision]:
+            raise InputBoundaryError('outcome contradicts typed profile decision')
+        if decision in ('PROFILE_FAILED_FALLBACK_REQUIRED', 'PROFILE_EMPTY_FALLBACK_REQUIRED', 'REVIEW_REQUIRED'):
+            if any(states[q, stage] != 'SKIPPED' for stage in ('embedding', 'acquisition', 'selection')):
+                raise InputBoundaryError('stopped profile cannot execute retrieval stages')
         if state == 'MISSING_INPUT' and any(states[q, stage] != 'SKIPPED' for stage in STAGES):
             raise InputBoundaryError('missing input cannot have executed stages')
-        if state == 'PROFILE_FAILED' and states[q, 'profile'] not in ('FAILED', 'INTERRUPTED'):
+        if (state == 'PROFILE_FAILED' and states[q, 'profile'] not in ('FAILED', 'INTERRUPTED') and
+                decision != 'PROFILE_FAILED_FALLBACK_REQUIRED'):
             raise InputBoundaryError('profile fallback contradicts attempt journal')
         if state in ('PROFILE_EMPTY', 'REVIEW_REQUIRED', 'READY') and states[q, 'profile'] != 'COMPLETED':
             raise InputBoundaryError('profile outcome requires completed profile attempt')

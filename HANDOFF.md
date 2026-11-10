@@ -4,18 +4,17 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 09:32:49 Bangkok
+### Latest checkpoint — 2026-11-10 09:35:41 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Paired updates mandatory.
-- **Last verified pushed base:** d5038ed35e7627c1af0909cd32e99301ca049dd5; verify containing checkpoint and remote before takeover.
-- **Latest package:** [bound profile controller](docs/healthtech/audits/ptp-method-first-profile-controller-20261110/README.md): snapshot gate before allocation, source-bound adapter, validation/components/compact within journal reservation, typed stop/fallback-required/fidelity-pending decisions.247 tests (18 SACR files + MTM bound runner) PASS, Ruff PASS. Two authored fixture failures corrected without relaxing validator.
-- **New integration finding:** canonical extraction_status=failed can have COMPLETED transport/validation; legacy reconciliation only accepts FAILED/INTERRUPTED for PROFILE_FAILED. Next bind typed output decision to reconciliation; do not invent exception or relabel empty. No fallback rankings/finalization implemented here.
-- **Scope:** first stage only; actual referenced-artifact preflight, stage scheduling/view acceptance, anchor attestation and live resource controls incomplete. Tests are authored; no scientific result.
-- **Prior/open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered; no mixed-label reads. Generation/resource compatibility and fidelity open. R3/R4 absent, R5 not frozen/authorized, R6 incomplete.
-- **Failures/jobs:** prior model/grammar failures retained; timeout diagnostic process previously terminated/verified absent. No new actual data/model/GPU/background jobs; remote live state not re-polled. No automatic retries.
-- **Changes:** controller/tests/audit, paired handoff/progress/next-actions. Preserve owner untracked handoff.
-- **Next steps:** (1) typed profile decision reconciliation with actual sealed output; (2) view/dependency and retrieval adapter integration plus resource guards; (3) curator/environment for R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
-- **Limits:** no test access/scoring, paid API, training/full re-encode/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Engineering does not complete Goal.
+- **Last verified pushed base:** 30adb67bdbea1a6e281fdf9bc4f94bf2b822aab0; incoming account verifies containing checkpoint and remote.
+- **Latest package:** [typed profile reconciliation](docs/healthtech/audits/ptp-method-first-typed-reconcile-20261110/README.md): sealed output read, source binding, canonical result recomputation; distinguishes completed transport/failed extraction from exception failure.253 tests (19 SACR files + MTM bound runner), Ruff PASS. No relabelled empty or fabricated failure.
+- **Scope:** record-level consistency only; prospective scheduling/view acceptance, original anchor attestation, actual artifact preflight and live caps incomplete. Typed output includes private allowed source; never commit real output. Legacy untyped journal not a production approval path.
+- **Prior/open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered; no mixed-label reads. Generation/fidelity gates unresolved; R3/R4 absent, R5 not authorized, R6 incomplete.
+- **Failures/jobs:** prior model/grammar failures preserved; diagnostic process previously terminated/verified absent. No new actual data/model/GPU/background job; remote not re-polled. No automatic retries.
+- **Changes:** canonical result helper, controller refactor, journal/reconciler and six tests, audit, paired handoff/progress/next-actions. Owner untracked handoff preserved.
+- **Next steps:** (1) prospective typed scheduling/view acceptance so stopped profile cannot dispatch work; (2) anchor/retrieval evidence and live budgets; (3) curator/environment for R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
+- **Limits:** no test access/scoring, paid API, training/full re-encode/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Engineering checks do not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
 
