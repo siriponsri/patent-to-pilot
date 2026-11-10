@@ -1,0 +1,179 @@
+{
+  "supervisor-reservation.json": {
+    "container_name": "ptp-syn-sacr003-20261110-v1",
+    "commit": "146d6117268c5a6a8e879392f3dd951c10a53229",
+    "started_utc": "2026-11-10T11:11:15.939506+00:00",
+    "wall_seconds": 1800,
+    "maximum_model_calls": 1,
+    "retry": false
+  },
+  "child.json": {
+    "pid": 2306456,
+    "container_name": "ptp-syn-sacr003-20261110-v1"
+  },
+  "terminal.json": {
+    "status": "FAILED",
+    "returncode": 0,
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-10T11:11:16.073215994Z",
+      "FinishedAt": "2026-11-10T11:13:37.200868783Z"
+    },
+    "container_name": "ptp-syn-sacr003-20261110-v1",
+    "wall_seconds": 141.9369698059745,
+    "observed_cgroup_peak_bytes": 1654444032,
+    "memory_observation_limit": "sampled memory.peak while alive; final unobserved interval may be higher",
+    "finished_utc": "2026-11-10T11:13:37.876618+00:00",
+    "summary_sha256": "34e53ef2e75a75d53ddd2c08a237ec861955cb97dc2cb7c560c4e453a1d5107a",
+    "maximum_model_calls": 1,
+    "retry": false
+  },
+  "container-config.json": {
+    "id": "d31cf79e2f7927df9e9a4c7a29b04dc5a7d4d03963d8b457a139f8e7e3b1563b",
+    "image": "sha256:cb33f7f771ecec2ef1225cf39b159591a040391bd73e4c01f00fdfc4c47611d2",
+    "user": "1000:1000",
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "/home/chaw/patent-to-pilot-jobs/syn-sacr003-20261110-v1/code",
+        "Destination": "/code",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Source": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/venv/lib/python3.12/site-packages",
+        "Destination": "/deps",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Source": "/home/chaw/patent-to-pilot-jobs/syn-sacr003-20261110-v1/out",
+        "Destination": "/out",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Source": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/.GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089.lock",
+        "Destination": "/models/.GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089.lock",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Source": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/qwen3-8b",
+        "Destination": "/models/qwen3-8b",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ],
+    "limits": {
+      "NetworkMode": "none",
+      "ReadonlyRootfs": true,
+      "Memory": 34359738368,
+      "MemorySwap": 34359738368,
+      "NanoCpus": 8000000000,
+      "PidsLimit": 256,
+      "CapDrop": [
+        "ALL"
+      ],
+      "SecurityOpt": [
+        "no-new-privileges"
+      ],
+      "Privileged": false,
+      "DeviceRequests": [
+        {
+          "Driver": "",
+          "Count": 0,
+          "DeviceIDs": [
+            "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089"
+          ],
+          "Capabilities": [
+            [
+              "gpu"
+            ]
+          ],
+          "Options": {}
+        }
+      ]
+    }
+  },
+  "out/attempt/loaded-runtime.json": {
+    "torch": "2.8.0+cu128",
+    "python": "3.12.15",
+    "model_class": "Qwen3ForCausalLM",
+    "tokenizer_class": "Qwen2TokenizerFast",
+    "model_dtype": "torch.float16",
+    "model_device": "cuda:0",
+    "attention": "eager",
+    "model_files_match": true,
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "grammar_payload_sha256": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8",
+    "model_load_seconds": 3.6958184563554823
+  },
+  "current_container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-10T11:11:16.073215994Z",
+    "FinishedAt": "2026-11-10T11:13:37.200868783Z"
+  },
+  "summary": {
+    "status": "SMOKE_COMPLETED_NOT_RESEARCH_VALIDATION",
+    "model_load_seconds": 3.696,
+    "total_seconds": 138.284,
+    "peak_gpu_allocated_bytes": 16655618048,
+    "peak_gpu_reserved_bytes": 17735614464,
+    "effective_decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "torch": "2.8.0+cu128",
+    "semantic_validation": "NOT_PERFORMED",
+    "engineering_pass": false,
+    "outcomes": [
+      {
+        "status": "EOS_COMPLETE",
+        "model_calls": 1,
+        "input_tokens": 677,
+        "output_tokens": 917,
+        "response_sha256": "47b4349423c690727e7006dd84dece6cb9b2700691b9b135d0ea68b10040eaff",
+        "retry": false,
+        "kind": "profile_quotes",
+        "seconds": 83.307,
+        "validation_status": "INVALID_RESPONSE_PRESERVED"
+      }
+    ]
+  },
+  "artifact_hashes": {
+    "out/attempt/run-manifest.json": "22191fb0572b5f02c10c359c30df01d34fe562c789e5887787d23a7f2eddc666",
+    "out/attempt/profile_quotes-prompt-receipt.json": "dd715a71576a35546ab6917cfa1015d94114827ad40b2f0d265da145e37f273c",
+    "out/attempt/summary.json": "34e53ef2e75a75d53ddd2c08a237ec861955cb97dc2cb7c560c4e453a1d5107a",
+    "out/attempt/grammar-config.json": "0d6ef88df1235c796d9fc889bf3bab82b5dbeec740d667ee457e6358be70513e",
+    "out/attempt/loaded-runtime.json": "a2a2521768fbcea28993c405565d24acd7cacb4b992a93026af4d8d4399fa72a",
+    "out/attempt/profile_quotes-outcome.json": "d87c12feac6858ded1c2133770e5ae9f36e02653df0fe86ae92330b7df6c0aec",
+    "out/attempt/profile_quotes/generation.json": "bd21b136297d763008691900a0037e5cfaa321131f41b6b8efd3c0c3a0372df2",
+    "out/attempt/profile_quotes/generation-binding.json": "9a9aed374302778ce1505dcce68b838356c854973dd44374422fac7e56fbecd5",
+    "out/attempt/profile_quotes/reservation.json": "b01df021de47da720c18cb6b70b5fa30c59089c6fe48b3c73b6da95e22cb7f5c"
+  },
+  "supervisor_log_tail": "",
+  "stderr_tail": "The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\n\nLoading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]\nLoading checkpoint shards:  20%|\u2588\u2588        | 1/5 [00:00<00:03,  1.21it/s]\nLoading checkpoint shards:  40%|\u2588\u2588\u2588\u2588      | 2/5 [00:01<00:02,  1.22it/s]\nLoading checkpoint shards:  60%|\u2588\u2588\u2588\u2588\u2588\u2588    | 3/5 [00:02<00:01,  1.23it/s]\nLoading checkpoint shards:  80%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588  | 4/5 [00:03<00:00,  1.33it/s]\nLoading checkpoint shards: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 5/5 [00:03<00:00,  1.73it/s]\nLoading checkpoint shards: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 5/5 [00:03<00:00,  1.48it/s]\nThe following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.\n"
+}

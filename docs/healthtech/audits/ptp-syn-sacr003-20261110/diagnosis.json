@@ -1,0 +1,28 @@
+{
+  "source_matches_authored": true,
+  "query_id_matches": true,
+  "schema_errors": 0,
+  "schema_error_kinds": [],
+  "quote_counts": {
+    "references": 18,
+    "absent": 0,
+    "ambiguous": 0
+  },
+  "response_sha256": "47b4349423c690727e7006dd84dece6cb9b2700691b9b135d0ea68b10040eaff",
+  "new_model_calls": 0,
+  "alignment_status": "FAILED",
+  "exception_type": "InputBoundaryError",
+  "exception_location": [
+    {
+      "file": "sacr_quote_profile.py",
+      "line": 46,
+      "function": "align_quote_profile"
+    },
+    {
+      "file": "sacr_profile.py",
+      "line": 78,
+      "function": "validate_profile"
+    }
+  ],
+  "reason": "blocks not in source order"
+}

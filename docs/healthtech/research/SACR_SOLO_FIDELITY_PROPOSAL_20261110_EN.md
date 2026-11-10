@@ -1,14 +1,18 @@
 # Solo fidelity: automated screening with bounded human escalation
 
-Status: PROPOSED, NOT ADOPTED; no new fidelity outputs/ratings or retrieval scores
-observed under this proposal. Responds to the owner's 10 November request to reduce
-manual work without impersonating human judgment. The approved failure policy and
-CPU/baseline work do not wait for adoption of this separate semantic-review gate.
+Status: ADOPTED PROSPECTIVELY by the owner's explicit 10 November reply and follow-up;
+no fidelity outputs/ratings or retrieval scores observed under this policy. Reduces
+manual work without impersonating human judgment. CPU/baseline preparation remains
+independently actionable. The filename preserves the proposal's original identity.
 
 ## Fixed population and blinding
 
-Retain the existing up-to100 dev-query sample per benchmark and the existing
-SHA256 ordering key from SACR-v0. Freeze the allowed population and sample manifest
+Retain the existing up-to100 dev-query sample per benchmark. Use UTF-8 bytes of
+`sacr-v0-fidelity-20261110|benchmark|query_id`, SHA256 ascending then exact query ID
+as tie-break. Benchmark strings are exactly `MTM` and `DAPFAM`; use unchanged opaque
+IDs, no Unicode normalization. Select the first min(100, population size). This is
+deterministic hash sampling, not a probability claim or a score-selected sample.
+The base sample is shared across configurations within each benchmark. Freeze the allowed population and sample manifest
 before generation; never sample baseline failures or replace missing/failed queries.
 Review source/profile/all proposed generic and selective views without qrels,
 candidate lists, retrieval scores or method performance. Fixed manifests/configs
@@ -48,8 +52,21 @@ automated concern or sentinel label, proposed classification and rationale. The 
 chooses faithful / unsupported / ambiguous / unassessable; no text editing or per-query
 arm filtering. Record elapsed review time and all initial/corrected decisions.
 
-Propose at most20 escalated queries plus10 sentinels per benchmark (<=30 cards each,
-<=60 across both). This is a maximum workload, not a promise that the configuration
+The hard cap is **60 human cards TOTAL across both benchmarks and ALL configurations
+in this continuation**, with at most30 for MTM and30 for DAPFAM, including at most20
+escalations and10 sentinel cards per benchmark across configurations. It is not a
+per-configuration allowance. One card is `(benchmark, configuration_digest, query_id)`;
+a new configuration on the same query consumes a new card. All arms' source/profile/
+views for that tuple appear together on one card. Reopening the same card for a
+recorded adjudication does not create another card but its additional review time counts.
+
+Reserve the complete required card set in one private append-only ledger before
+presenting it; no per-benchmark/configuration ledger reset. Count previously issued,
+unfinished and completed cards. No cards have yet been issued. Before any new
+configuration, verify its full required escalation/sentinel allocation fits the
+remaining global and benchmark/category limits; otherwise mark HUMAN_BUDGET_EXHAUSTED
+and stop that configuration without inventing an automatic PASS. A larger human
+allowance requires a new explicit owner decision. This is a maximum workload, not a promise that the configuration
 will pass within it. If more than20 escalated queries exist, mark REVIEW_CAP_EXCEEDED
 and stop that configuration before requesting a larger human batch. Do not silently
 ignore remaining cases or replace them with automatic acceptance. Definite critical
@@ -64,8 +81,8 @@ acceptable rate appears. No prompt repair after seeing retrieval outcomes.
 If the automated checks and complete bounded human work find no critical defects,
 the most that can pass is **SOLO_SCREEN_AND_SENTINEL_GATE_PASS**. This explicitly
 replaces, and is weaker than, the previous completely human-reviewed100-query gate.
-It is not SAMPLE_FIDELITY_GATE_PASS under the old policy. Owner must adopt this
-amendment prospectively before the new screen is used to authorize R3.
+It is not SAMPLE_FIDELITY_GATE_PASS under the old policy. The owner adopted this
+weaker amendment before new fidelity sampling and before retrieval outcomes.
 
 ## Reporting and limits
 
@@ -86,4 +103,8 @@ No extra paid model, training or test access. Actual isolated dev inputs, viable
 generation, a pinned screening implementation and a runtime projection fitting the
 approved fidelity envelope remain required. If those are infeasible, report the
 specific issue; do not manufacture ratings. Baseline parity, container preparation
-and other permitted independent work continue while this proposal awaits adoption.
+and other permitted independent work continue while implementation and actual review
+remain incomplete. The owner explicitly requires stopping/reviewing the configuration
+when a sentinel critical error is found; the policy never declares immediate PASS
+after such a discovery. The new model smoke used only authored synthetic text and
+is outside this dev-fidelity sample; its failure is retained separately.

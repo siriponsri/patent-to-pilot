@@ -496,3 +496,8 @@ One guarded quote-profile call, authored CPU004 source/q1, existing prompt, <=18
 ### SYN-SACR-003 local preflight correction — 2026-11-10 18:10:53 Bangkok
 
 Local archive guard failed before remote staging/model execution: two pins came from CRLF checkout bytes. Original declaration and byte diagnosis preserved. Revision1 pins the existing committed LF blobs after explicit normalization equivalence check; code, prompts, schema and cases unchanged. No experimental retry occurred; actual first attempt remains NOT_RUN.
+
+
+## SYN-SACR-003 result and solo fidelity adoption — 2026-11-10 18:18:11 Bangkok
+
+FAILED structural acceptance: one EOS_COMPLETE call,677input/917output,83.307s generation/141.93697s supervisor. Full schema valid and18 exact quotes; blocks not in source order. No repair/retry; [evidence](../audits/ptp-syn-sacr003-20261110/RESULT.md). Owner prospectively adopted [solo fidelity](SACR_SOLO_FIDELITY_PROPOSAL_20261110_EN.md): fixed hash sample and sentinel before retrieval,60cards total across both benchmarks/all configurations; critical sentinel error stops configuration. No dev sample/output/retrieval observed for that policy.

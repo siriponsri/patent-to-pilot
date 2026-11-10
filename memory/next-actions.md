@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **SYN003 FAILED profile source-order acceptance:** EOS/schema valid,18 exact quotes, no retry. [Result](../docs/healthtech/audits/ptp-syn-sacr003-20261110/RESULT.md). Solo fidelity now adopted: fixed sampling,60cards TOTAL across both benchmarks/all configurations, sentinel critical errors stop configuration. Next owner-run curator bundle and independent baseline work; no protected access.
+
 > **CPU004 PASS14/14:** [Result](../docs/healthtech/audits/ptp-cpu-escape004-20261110/RESULT.md). Owner approved bounded plan, solo runtime isolation and failure policy. Prepare one generation smoke; automation-first fidelity [proposal](../docs/healthtech/research/SACR_SOLO_FIDELITY_PROPOSAL_20261110_EN.md) pending adoption. New-goal request rejected by service due unfinished old goal; keep actual work/limits in this context.
 
 > **Owner requested MTM+DAPFAM takeover:** one consolidated decision request pending. Existing Docker offers a possible solo runtime-isolation route; host-agent access limitation explicitly disclosed. Native DAPFAM TA must not reuse legacy TAC queries. [Current matrix](../docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/README.md). No job/container started; both tests closed.
