@@ -4,15 +4,15 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 10:43:51 Bangkok
+### Latest checkpoint — 2026-11-10 10:47:42 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** 754fdebd3f76c22df6047d1773ff2217339aabd1; verify containing checkpoint/remote on takeover.
-- **Latest package:** index allocation review and batched passage-order hashing; audit docs/healthtech/audits/ptp-method-first-order-hash-memory-20261110/README.md. Exact legacy digest preserved with4096-row JSON batches. Vector input plus detached copy totals11.8536 GiB payload if resident, before overhead; no actual host capacity claim.
-- **Validation/changes:** 429 related tests PASS; Ruff PASS. Authored100000 IDs: traced temporary allocation15379328 to631639 bytes, final time0.5474 to0.6546s; earlier slower per-row observation preserved. Source/hash tests, reproduction/observations, audit and paired handoffs/progress. No corpus/model/GPU access.
+- **Last verified pushed base:** d7e1d824f61be29500a794e2e25b5c8c9725006f; verify containing checkpoint/remote on takeover.
+- **Latest package:** static grammar source review; audit docs/healthtech/audits/ptp-method-first-grammar-source-review-20261110/README.md. Tagged upstream cache omits incomplete escape token and shortcut explores quote-only branch: candidate backslash-subtree repair. Config overwritten during construction means historical reported settings are requested, not verified effective. Installed source equality/runtime causality NOT_VERIFIED.
+- **Validation/changes:** Five primary upstream source files reviewed and hashed without importing/executing code. Audit, old-audit clarification, methods-log append and paired progress/next-actions. No grammar/tokenizer/model run; prior429 tests unchanged/not rerun. Initial documentation patch failed with no edits, corrected from inspected context.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** previous model/grammar failures retained; prior diagnostic terminated/absence verified. No new actual data/model/GPU/background job; remote not re-polled. No retries.
-- **Next:** await owner protocol decision before family-rejection adoption; independent resource/identity repair may continue; curator supplies isolated environment/allowlisted receipts for actual R1; justified separately declared generation repair/fidelity then bounded R3/R4 and gated R5/R6. Do not substitute indefinite fixture work for scientific gates.
+- **Next:** design version-pinned targeted backslash traversal/config-preserving adapter, verify installed source against reviewed hashes, then separately declare bounded CPU check before execution; await owner family-rejection decision and curator/environment; actual R1/resources/generation/fidelity before R3/R4 and gated R5/R6. No automatic grammar/model attempts.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

@@ -1,4 +1,11 @@
 # Full-schema CPU integration v2: FAILED escape-token compatibility
+
+Later clarification: [static upstream source review](../ptp-method-first-grammar-source-review-20261110/README.md)
+identifies a candidate cache/backslash traversal mechanism and config overwrite path.
+Settings below were requested, not verified effective after callback construction.
+Original receipts remain unchanged; installed source equality and repair NOT_VERIFIED.
+No new callback/model attempt was run for this review.
+
 Versioned CPU check using committed modules11d7a164f6c2a7217ddea2e13565c4c6121a1caf,
 a Git ZIP archive imported from a remote temporary file, and authored v2 probe source.
 No model weights, model calls, benchmark inputs or GPU generation. Original v1

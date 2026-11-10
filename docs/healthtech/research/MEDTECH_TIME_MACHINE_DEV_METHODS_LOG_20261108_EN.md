@@ -449,3 +449,15 @@ rechecked after fixture-ID alignment. Authored profile/views and injected embedd
 actual CPU kernels only;0 model calls. Not production controller or actual resource
 proof. Audit ../audits/ptp-method-first-r2-journal-20261110/README.md.
 Next primary prior-art boundary and actual input/controller gates; no new model attempt.
+
+### 2026-11-10 — Static grammar source review; no execution
+
+Reviewed upstream v0.11.3 source against the preserved token111 diagnostic. A cache
+exclusion plus quote-only shortcut traversal explains a candidate missing backslash
+path; installed-source equality and runtime causality remain unverified. Also found
+that callback construction assigns a new parser config: old reported config fields
+are requested, not verified effective values. Original results unchanged.
+See ../audits/ptp-method-first-grammar-source-review-20261110/README.md.
+No package change, tokenizer/filter/model run, retry or SYN-SACR-003 declaration.
+Next bounded repair design must preserve config/context and exact parsing, pin
+installed source, and receive a separate CPU declaration before execution.
