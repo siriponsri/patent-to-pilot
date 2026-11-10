@@ -1,0 +1,16 @@
+[
+  {
+    "path": "scripts/healthtech/smoke_sacr_qwen_guarded_v3.py",
+    "declared_checkout_sha256": "8db02800424e5a1dd7a0b49e383a30e800cdba1672550057c765139989b186f9",
+    "blob_sha256": "c236ebe30c84a5fbdd6460b38c118bf368b3c0491b0650875e7fc54fddf227a5",
+    "checkout_crlf": 170,
+    "normalization_explains": true
+  },
+  {
+    "path": "docs/healthtech/audits/ptp-cpu-escape004-20261110/declaration.json",
+    "declared_checkout_sha256": "f8848b4874593f42ecd556d566d3604ddec1ae8ad9af580df44930b3eee00f19",
+    "blob_sha256": "a6042a98aad569645bd989682c8bbd5d862eb086aee502e585d0b4cddb23f037",
+    "checkout_crlf": 42,
+    "normalization_explains": true
+  }
+]

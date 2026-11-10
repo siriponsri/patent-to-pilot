@@ -491,3 +491,8 @@ PASS14/14;61.8898s supervisor wall, peak child RSS2,327,261,184bytes, zero model
 ## SYN-SACR-003 predeclaration — 2026-11-10 18:09:01 Bangkok
 
 One guarded quote-profile call, authored CPU004 source/q1, existing prompt, <=1800s/8CPU/32GiB and approved V100 only; no benchmark inputs or retry. Pins and immutable acceptance in [declaration](../audits/ptp-syn-sacr003-20261110/declaration.json). Real generation viability unproven. Container CPU compatibility checked, GPU load belongs to this bounded attempt. Prior failures unchanged.
+
+
+### SYN-SACR-003 local preflight correction — 2026-11-10 18:10:53 Bangkok
+
+Local archive guard failed before remote staging/model execution: two pins came from CRLF checkout bytes. Original declaration and byte diagnosis preserved. Revision1 pins the existing committed LF blobs after explicit normalization equivalence check; code, prompts, schema and cases unchanged. No experimental retry occurred; actual first attempt remains NOT_RUN.

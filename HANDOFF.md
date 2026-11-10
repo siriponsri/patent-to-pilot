@@ -4,12 +4,12 @@ Status: `OWNER_APPROVED_BOUNDED_DEV_EXECUTION`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 18:09:01 Bangkok
+### Latest checkpoint — 2026-11-10 18:10:53 Bangkok
 
 - **Owner/goal:** Codex sole writer in same chat; owner approved bounded continuation. Working under renewed user authority; goal service status last observed BLOCKED, no resume tool. No new goal. Prior blocker audit no longer applies to approved CPU/isolation/failure work.
-- **Last verified pushed base:** 6593040 (CPU004 result checkpoint); containing prelaunch commit must be verified before dispatch.
+- **Last verified pushed base:** eb97637 (prelaunch declaration); verify containing revision1 checkpoint before dispatch.
 - **Latest package:** SYN-SACR-003 declared one guarded quote-profile call on authored source, <=30min, no benchmark inputs. Container CPU import/config probe passed with existing dependencies; docs/healthtech/audits/ptp-solo-runtime-20261110/. Smoke declaration docs/healthtech/audits/ptp-syn-sacr003-20261110/.
-- **Validation/changes:** CPU004 PASS14/14 preserved. New guarded smoke and container supervisor syntax/Ruff checked; pins cover exact source/prompt/model receipt/grammar. Python container3.12.15 vs host3.12.3 disclosed. No new model call yet; actual GPU load is part of single attempt.
+- **Validation/changes:** Local preflight refused checkout CRLF hashes for smoke script and CPU004 declaration before any remote staging or model call. Evidence preflight-byte-mismatch.json and original declaration preserved; revision1 pins existing committed LF blobs, no code/prompt/schema change. Reverify archive before first actual attempt.
 - **Open gates:** CPU004 and bounded stages authorized; solo runtime-isolation amendment and family-rejection policy accepted. Implementation/isolation verification and curator-prepared real dev inputs pending. Owner requests automation-first fidelity proposal instead of100-query full manual review; revised gate NOT_ADOPTED/NOT_RUN. Tests closed; R5 unauthorized.
 - **Jobs/failures:** NEXT SYN-SACR-003 once: /home/chaw/patent-to-pilot-jobs/syn-sacr003-20261110-v1; container ptp-syn-sacr003-20261110-v1, monitor terminal.json and out/attempt summaries;1800s external limit,1740s soft alarm,5s TERM grace. No retry. CPU004 terminal PASS; probe container exited0; HTTP preserved.
 - **Next:** 1. Fresh no-conflict check and verified pushed archive, then launch SYN003 once. 2. Poll same container until terminal and preserve outputs/failure evidence. 3. Develop owner-run curator staging without agent reading mixed sources. 4. Fidelity revised proposal awaits owner; baseline and permitted preparation continue independently.

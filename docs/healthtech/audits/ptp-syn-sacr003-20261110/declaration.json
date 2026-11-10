@@ -23,7 +23,7 @@
   "runtime_change": "Python3.12.15 container vs host3.12.3; same read-only Torch2.8/Transformers4.55.2/LMFE0.11.3 site-packages",
   "acceptance": "EOS_COMPLETE plus exact quote alignment and usable structurally valid profile; not semantic fidelity or dev readiness",
   "files_sha256": {
-    "scripts/healthtech/smoke_sacr_qwen_guarded_v3.py": "8db02800424e5a1dd7a0b49e383a30e800cdba1672550057c765139989b186f9",
+    "scripts/healthtech/smoke_sacr_qwen_guarded_v3.py": "c236ebe30c84a5fbdd6460b38c118bf368b3c0491b0650875e7fc54fddf227a5",
     "scripts/healthtech/inspect_qwen_weight_identity.py": "31217ac34d11a80f7bd58c9b4b3dfefb80111685e90ed314cd11023f4036c5ea",
     "src/patent_to_pilot/research/sacr_escape_callback.py": "73fd5b5a61e0225fb99aab8f09d6a725a231786cab9e46f1982c9252a484d642",
     "src/patent_to_pilot/research/sacr_grammar_guard.py": "04ae93ed31f72e92e40654142fb98f23279fe1a1f6d77357dfd90d2be6472aca",
@@ -31,7 +31,9 @@
     "src/patent_to_pilot/research/sacr_alphabet.py": "b621df06b742e8165fe98e3549b5df3e41361f89fa2eebde9e26e3865bda0731",
     "docs/healthtech/research/prompts/sacr_profile_quotes_v1.txt": "3f3b23257dd5c6a07fadf4a3cbeabff54ef2945df77c809e440fce4bf30aa6be",
     "docs/healthtech/audits/ptp-method-first-r2-weights-20261110/identity.json": "5b4f4a7317919979affc88df9837a6741ffa6715bf39d9516fe6cd4816ac9ac2",
-    "docs/healthtech/audits/ptp-cpu-escape004-20261110/declaration.json": "f8848b4874593f42ecd556d566d3604ddec1ae8ad9af580df44930b3eee00f19",
+    "docs/healthtech/audits/ptp-cpu-escape004-20261110/declaration.json": "a6042a98aad569645bd989682c8bbd5d862eb086aee502e585d0b4cddb23f037",
     "docs/healthtech/audits/ptp-cpu-escape004-20261110/authored-fixtures.json": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8"
-  }
+  },
+  "revision": 1,
+  "revision_reason": "LOCAL_ONLY_PREFLIGHT_REJECTED_CHECKOUT_CRLF_PINS_NO_REMOTE_ATTEMPT; exact committed LF blob identities, code/prompt/schema unchanged"
 }
