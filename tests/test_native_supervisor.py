@@ -4,9 +4,10 @@ from pathlib import Path
 import pytest
 
 
-@pytest.fixture
-def supervisor(monkeypatch, tmp_path):
-    path = Path(__file__).resolve().parents[1] / 'docs/healthtech/audits/ptp-native-dense-preparation-20261110/supervise_native.py'
+@pytest.fixture(params=['ptp-native-dense-preparation-20261110/supervise_native.py',
+                        'ptp-syn-sacr004-20261110/supervise.py'])
+def supervisor(monkeypatch, tmp_path, request):
+    path = Path(__file__).resolve().parents[1] / 'docs/healthtech/audits' / request.param
     spec = importlib.util.spec_from_file_location('native_supervisor_test', path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)

@@ -1,5 +1,9 @@
 
 
+## SYN004 single-dispatch readiness 2026-11-10
+
+Parent solewriter,last pushedad3f194.31 supervisor/prompt/profile tests PASS. Archived CRLF candidate rejected locally before dispatch; exact CRLF-to-LF restoration proven against every inherited/new hash, no repin. Raw candidate retained; transport.json binds restored archive, supervisor and pins. No remote attempt yet. New supervisor1800s total,31GiB+1GiB overhead,CPU8,networknone,no benchmark mounts; existing model/grammar/decoder,one call only. PriorGPU182.3919865s,new1800s reservation; retained disk9.886GB plus256MiB under40GiB. Next transfer/hash check then singleSYN004; monitor samehandle/no retry.
+
 ## SACR order repair declared 2026-11-10
 
 Parent solewriter,last pushed95d0f51. Source-order validator uses minimum block span start, nondecreasing/equality allowed. New explicit profile_quotes prompt variant states that rule; legacy prompt/schema/validator unchanged, no output repair. v4 synthetic smoke checks prompt hash before load/call.25 prompt/profile tests PASS,syntax PASS. Audit docs/healthtech/audits/ptp-syn-sacr004-20261110; configuration9127a6a42c0ccaa9cdee9b5bcfb253b41aebd8fd149c36bd3e934599804bbda6. DECLARED_NOT_RUN,zero new calls; one additional authorized smoke still unused. Next final supervisor/model/grammar/resource binding then single dispatch. Preserve SYN003 failure, all budgets, closed tests.

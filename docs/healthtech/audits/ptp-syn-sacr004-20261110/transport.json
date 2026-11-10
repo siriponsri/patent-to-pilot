@@ -1,0 +1,26 @@
+{
+  "source_commit": "ad3f194",
+  "archive_sha256": "1c89a093e6fbeff12dd0e4ad495218b3ae1bcd71f9c628ff66182a07177d440e",
+  "raw_archive_retained_sha256": "77816eae58f0dbcaca1d2751acd1c7d876ff494455212feda17f798b500c2d60",
+  "packaging_fix": "CRLF_TO_LF_ALL_DECLARED_LEGACY_AND_NEW_PINS_EXACTLY_MATCH_NO_REPIN",
+  "verified_files": {
+    "scripts/healthtech/inspect_qwen_weight_identity.py": "31217ac34d11a80f7bd58c9b4b3dfefb80111685e90ed314cd11023f4036c5ea",
+    "src/patent_to_pilot/research/sacr_escape_callback.py": "73fd5b5a61e0225fb99aab8f09d6a725a231786cab9e46f1982c9252a484d642",
+    "src/patent_to_pilot/research/sacr_grammar_guard.py": "04ae93ed31f72e92e40654142fb98f23279fe1a1f6d77357dfd90d2be6472aca",
+    "src/patent_to_pilot/research/sacr_generation.py": "3ebd68deeea80385869905b381dc2a611af6c309a86766af1cff7ac91a066c25",
+    "src/patent_to_pilot/research/sacr_alphabet.py": "b621df06b742e8165fe98e3549b5df3e41361f89fa2eebde9e26e3865bda0731",
+    "docs/healthtech/audits/ptp-method-first-r2-weights-20261110/identity.json": "5b4f4a7317919979affc88df9837a6741ffa6715bf39d9516fe6cd4816ac9ac2",
+    "docs/healthtech/audits/ptp-cpu-escape004-20261110/declaration.json": "a6042a98aad569645bd989682c8bbd5d862eb086aee502e585d0b4cddb23f037",
+    "docs/healthtech/audits/ptp-cpu-escape004-20261110/authored-fixtures.json": "71a047b9a422f9599ba80adf49b7fc53762ed9d0afcd0077cb7116fdeb8958a8",
+    "docs/healthtech/research/prompts/sacr_profile_quotes_order_v2.txt": "fca43e7cb6ecf667f9ca471ec6c408e9a945ec75e26a971d0fa192b6cc7d679b",
+    "scripts/healthtech/smoke_sacr_qwen_guarded_v4.py": "1ae2439e86d95f3ae00c5e2d52bd76aba0f7b0fe679e31a3ee3d1356b62e11c2"
+  },
+  "supervisor_sha256": "1afd20a5165d843d04a0ca3da44cf4cad02fd780aeb539bd03864ca697984dcb",
+  "previous_conservative_disk_reservation": 9885712459,
+  "additional_reservation_bytes": 268435456,
+  "limit_bytes": 42949672960,
+  "prior_gpu_charge_seconds": 182.39198653260246,
+  "new_gpu_reservation_seconds": 1800,
+  "gpu_limit_seconds": 259200,
+  "status": "LOCAL_PIN_CHECK_PASS_NOT_DISPATCHED"
+}
