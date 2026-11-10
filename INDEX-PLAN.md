@@ -1,5 +1,10 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Native SACR fidelity runner implemented 2026-11-10
+
+Parent sole writer. Last local checkpoint039f892; last confirmed remoteffc183f. Native batch binds fixed100 sample, exact TA sources and per-query grammar; exclusive attempts retain complete failed-family costs and continue only after normal return. Infra/input-limit/deadline stops preserve evidence without restart. New CLI loads pinned existing Qwen/decoder, fresh source-aware grammar per query, shared GPU lock and hard alarm.12 batch/rejection tests PASS; CLI help PASS. Actual GPU/runtime integration NOT_RUN; no model calls/cards. Mandatory next steps: review runner/declaration pins and supervisor isolation; freeze automated screening criteria/config and reserve cumulative budget; single declared dispatch then screening/human cards before retrieval. Both tests closed. Push retry after independent DNS lookup succeeded still failed resolving github.com; remote synchronization remains unconfirmed. Preserve local commits; no generation retry.
+
+
 ## Publication failure: native sample checkpoint
 
 Commit 921040f exists locally. Push to origin/main failed because github.com could not be resolved; remote synchronization NOT_CONFIRMED. Last previously confirmed pushed checkpoint ffc183f. No experiment or generation was started. Preserve this commit and retry publication only after connectivity is verified; continue independent local runner work. Parent remains sole writer.
