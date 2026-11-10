@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest acquisition reuse:** selection avoids repeated search/costs;290 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-acquisition-reuse-20261110/README.md). Next actual index/mask and sealed stage binding into controller. R1/generation/fidelity gates unchanged.
+
 > **Latest embedding controller:** reserved fake-encoder adapter and text/row/vector binding;279 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-embedding-controller-20261110/README.md). Next index/mask-bound acquisition/selection. Actual R1/generation/fidelity gates unchanged.
 
 > **Latest view replay:** both arm outputs recomputed before embedding-input preparation; degeneracy explicit;270 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-view-replay-20261110/README.md). Next reserved embedding/text-vector binding. Actual R1/generation/fidelity gates unchanged.

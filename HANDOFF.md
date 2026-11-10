@@ -4,16 +4,16 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 09:44:13 Bangkok
+### Latest checkpoint — 2026-11-10 09:47:28 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Paired updates mandatory.
-- **Last verified pushed base:** 483df9fbf78e900c3498709e51a1eaed1f2d9137; verify containing checkpoint/remote on takeover.
-- **Latest package:** [reserved embedding controller](docs/healthtech/audits/ptp-method-first-embedding-controller-20261110/README.md): shared exact-text row plan, adapter after reservation, row/encoder/plan/vector-byte and unit-float32 checks, private JSON replay.279 tests (22 SACR files + MTM bound runner), Ruff PASS. Fake two-dimensional encoder only.
-- **Scope:** structural receipts not actual encoder provenance. Next map sealed vectors to acquisition/selector with index/mask identity; real model preflight, dimension compatibility, typed finalization/anchor and live caps incomplete.
-- **Open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered, no mixed-label reads. Generation/fidelity unresolved; R3/R4 absent, R5 not authorized, R6 incomplete.
-- **Failures/jobs:** prior model/grammar failures preserved; diagnostic process previously terminated/verified absent. No actual data/model/GPU/background jobs; remote not re-polled. No retries.
-- **Changes:** embedding helper/controller/tests/audit, paired handoff/progress/next-actions. Preserve owner untracked handoff; private vectors/text never committed.
-- **Next steps:** (1) bound index/mask + mapped vector acquisition/selection; (2) typed finalization/anchor/live budgets and failed-generation policy; (3) curator/environment for R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
+- **Last verified pushed base:** a09f640897b074089ff2eb39795b2710b43547d8; verify containing checkpoint/remote on takeover.
+- **Latest package:** [acquisition reuse for selection](docs/healthtech/audits/ptp-method-first-acquisition-reuse-20261110/README.md): compare_factorial can select from supplied verified acquisition without repeating search; exposure/vector checks and separate actual cost counts.290 tests (23 SACR files + MTM bound runner), Ruff PASS. Synthetic equivalence only.
+- **Scope:** supplied score authenticity still requires sealed acquisition and actual index/mask/vector binding. Controller acquisition/selection dispatch, typed finalization, anchor provenance and live caps incomplete. No real index scan/model run.
+- **Open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered; no mixed-label reads. Generation/fidelity open; R3/R4 absent, R5 not authorized, R6 incomplete.
+- **Failures/jobs:** prior model/grammar failures preserved; diagnostic previously terminated/verified absent. No actual data/model/GPU/background jobs; remote not re-polled. No retries.
+- **Changes:** factorial reuse path/11 tests/audit, paired handoff/progress/next-actions. Preserve owner untracked handoff; private output never committed.
+- **Next steps:** (1) bind index/mask/vector identity and journal acquisition/selection using reused results; (2) typed finalization/anchor/live caps; (3) curator/environment R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
 - **Limits:** no test access/scoring, paid API, training/full re-encode/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Engineering does not finish Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
