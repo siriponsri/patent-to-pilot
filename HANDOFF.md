@@ -4,17 +4,17 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 08:36:07 Bangkok
+### Latest checkpoint — 2026-11-10 08:39:38 Bangkok
 
 - **Owner/goal:** Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Both handoff files mandatory.
-- **Last verified pushed commit before this checkpoint:** 45bde9b55f162d044e51d685325ba13f34000c03; incoming account must verify containing commit and remote before takeover.
-- **Latest evidence:** installed parser default alphabet92 characters; source confirms ForceStopParser/EOS fallback paths. Qwen vocabulary union17,829 characters includes failed fixture Unicode. Added independent complete-JSON/schema EOS guard and vocabulary+source alphabet builder. 39 targeted tests/lint PASS, actual configured integration NOT_RUN. [Audit](docs/healthtech/audits/ptp-method-first-r2-grammar-guard-20261110/README.md). Original full-schema CPU failure unchanged.
+- **Last verified pushed commit before this checkpoint:** 11d7a164f6c2a7217ddea2e13565c4c6121a1caf; incoming account must verify containing commit and remote before takeover.
+- **Latest evidence:** configured full-schema CPU v2 FAILED8/10 (independent schema10/10). Unicode character parsing now passes; both remaining failures are combined escape token111. Null-only passes; no early EOS observed. Character diagnostic accepts both full strings. [Audit](docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/README.md). No model/weights/data. Prior failed CPU v1 preserved; do not integrate generation yet.
 - **Prior failures preserved:** SYN-SACR-001 invalid spans; SYN-SACR-002 invalid JSON, alignment not reached/selective skipped. No salvage/retry. No retrieval or semantic success.
 - **Completed prior work:** R0 inventory; prospective A01 runtime/staging; A03 exact-mask auditor; A14 real CPU corpus/vector hashes matching historical receipts (original tokenizer/order attestation absent); DAPFAM synthetic differential parity12 cases; curator preparation and main-view bound dev runner/parity comparator. Actual benchmark replication/parity NOT_RUN.
-- **Jobs:** read-only source/tokenizer inspections completed; no model or GPU job launched. Recheck live processes before future GPU use.
-- **Changes:** two prospective modules and tests, diagnosis/audit, methods log and paired handoff/progress pointers. Preserve owner untracked handoff.
+- **Jobs:** CPU v2 and diagnostic terminal exit0; no model/GPU job launched. Recheck live state before future GPU work.
+- **Changes:** versioned v2 probe, authored fixtures, aggregate failure/diagnostic/independent validation and audit, methods log and paired handoff/progress pointers. Preserve owner untracked research handoff.
 - **Open gates:** owner curator/environment question unanswered. Actual trusted staging/physical isolation, A03 counts, runner validation and real baseline parity remain open. Do not parse mixed labels from development agent. Hashes/directories are not isolation. Semantic acceptance pending.
-- **Next steps:** (1) create new versioned CPU probe with explicit parser config, vocabulary/source alphabet and independent EOS guard; include original Unicode failure plus isolated null/escape cases; (2) record actual compatibility, then integrate only if gate passes; (3) only after engineering/declaration gates, at most one third synthetic model attempt; stop generation branch on failure; (4) receive curator/environment handoff for real A03/parity; (5) resolve semantic fidelity and bounded R3 declaration. No old-result overwrite or source normalization.
+- **Next steps:** (1) bounded diagnostic comparing default vs no-shortcut parser at rejected escape token with identical prefix; inspect token-tree behavior (shortcut cause not yet proven); (2) explicit fix and full CPU fixture gate before generation integration; (3) only then separately declare at most one third model attempt, stop generation branch if failed; (4) obtain curator/environment and real A03/parity; (5) resolve semantic review and R3 declaration. Do not alter installed library or restrict source quotation characters.
 - **Authorization:** protected scoring NOT_AUTHORIZED; no test access, paid APIs, training, full-corpus re-encoding/new BQ pull. V100 only, one job, authorization through2026-12-31 16:59UTC. No optional3d/cited-distractor work. Engineering checks do not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest configured CPU v2 FAILED:**8/10 tokenizer vs10/10 independent schema. Unicode character parsing passes; two escape-token failures remain; no early EOS. [Audit](../docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/README.md). Next bounded shortcut/token-tree diagnostic before any integration/model call. Prior failures preserved.
+
 > **Latest grammar guard:**39 targeted tests pass; explicit source/vocabulary alphabet and independent EOS completion checks implemented but not integrated. [Audit](../docs/healthtech/audits/ptp-method-first-r2-grammar-guard-20261110/README.md). Next new CPU version/configuration and original failure + isolated null/escape fixtures. No third model call; previous failures preserved.
 
 > **Latest full-schema CPU gate FAILED:** 46 tests pass; independent schema8/8, actual tokenizer7/8. Thai character refused and premature EOS allowed. [Audit](../docs/healthtech/audits/ptp-method-first-r2-full-schema-20261110/README.md). Next inspect alphabet/dead-end behavior and explicit Unicode/fail-closed configuration; preserve failed receipt. No third model call yet; actual-data/semantic gates remain.

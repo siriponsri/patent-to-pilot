@@ -352,3 +352,13 @@ alphabet builder;39 targeted local tests and lint pass. Actual configured integr
 NOT_RUN; no model calls. Next separately versioned CPU integration before any third
 model declaration. See ../audits/ptp-method-first-r2-grammar-guard-20261110/README.md.
 Prior failed receipts unchanged; actual-data and semantic gates remain.
+
+
+### 2026-11-10 08:39:38 Bangkok — Configured full-schema CPU v2 FAILED
+
+Explicit alphabet/config and EOS guard, committed module base11d7a164f6c2a7217ddea2e13565c4c6121a1caf.
+Tokenizer8/10 vs independent JSON Schema10/10. Two combined escape-token failures;
+character parser accepts both full strings. No premature EOS observed; null-only
+passes. No model calls. Freetext optimization is a candidate cause, not established.
+See ../audits/ptp-method-first-r2-full-schema-v2-20261110/README.md.
+Next bounded identical-prefix diagnostic; no generation integration or third smoke.

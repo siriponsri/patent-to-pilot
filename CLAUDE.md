@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:36:07 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:39:38 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md is detailed takeover state. Last verified pushed base 45bde9b55f162d044e51d685325ba13f34000c03.
-- Installed source confirms alphabet92 and ForceStopParser/EOS fallback; decoded Qwen vocabulary union17,829 includes fixture Unicode. Added prospective vocabulary/source alphabet and independent complete-JSON/schema EOS guard.39 targeted tests/lint PASS; actual integration NOT_RUN. Audit docs/healthtech/audits/ptp-method-first-r2-grammar-guard-20261110/README.md.
-- Prior full-schema Unicode/premature-EOS failure preserved, as are SYN-SACR-001/002. No model/GPU job launched; source/tokenizer inspections complete.
-- Next versioned CPU integration with explicit configuration, original Unicode fixture and isolated null/escape cases; then generation integration if pass. Third model attempt still not declared. One bounded third attempt only after gates; no automatic fourth if failed.
-- R1 isolation/A03/parity and semantic acceptance remain open; curator question unanswered. Changes: two modules/tests, audit/methods log, paired handoff/progress. Preserve owner untracked research handoff; permissions unchanged.
+- Codex single active writer in chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Read HANDOFF.md detailed state. Last verified pushed base 11d7a164f6c2a7217ddea2e13565c4c6121a1caf.
+- Full-schema CPU v2 FAILED8/10; independent JSON Schema10/10. Explicit alphabet/config + EOS guard: no early EOS observed; null-only passes. Both remaining failures are escape token111; character parser accepts both complete strings including Unicode. Audit docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/README.md. Prior failure unchanged.
+- Probe/diagnostic terminal exit0, no model/weights/GPU or benchmark inputs. New probe lint PASS.
+- Next bounded identical-prefix token diagnostic with/without freetext shortcut; cause not yet proven. No installed library changes or quote restrictions. Full fixture gate must pass before generation integration/third model declaration. No automatic fourth model attempt if third fails.
+- R1 curator/isolation/A03/parity and semantic gates unchanged. Changes: v2 probe/fixtures/failure receipts, audit/methods log, handoff/progress. Preserve owner untracked handoff.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

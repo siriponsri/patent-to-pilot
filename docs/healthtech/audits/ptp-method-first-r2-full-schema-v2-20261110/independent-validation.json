@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "case": "nested_conditions",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "unicode_optional_null",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "two_blocks_duplicate_ids_postcheck_required",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "empty_failed",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "block_cap",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "condition_cap",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "wrong_identity",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "truncated",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "null_only",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "ascii_escapes_only",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_expected": true
+}

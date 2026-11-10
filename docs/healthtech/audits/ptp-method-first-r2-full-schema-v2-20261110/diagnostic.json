@@ -1,0 +1,16 @@
+[
+  {
+    "case": "unicode_optional_null",
+    "character_failure": null,
+    "can_end": true,
+    "token111_context": "description\":\"\u0e44\u0e17\u0e22 \\\"quoted\\\"\\n\ud83e\uddea\",\"",
+    "token111_text": "\\\"\\"
+  },
+  {
+    "case": "ascii_escapes_only",
+    "character_failure": null,
+    "can_end": true,
+    "token111_context": "description\":\"quoted \\\"word\\\"\\nnext\\t",
+    "token111_text": "\\\"\\"
+  }
+]

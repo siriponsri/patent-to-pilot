@@ -1,0 +1,124 @@
+{
+  "format": "sacr-full-schema-cpu-probe-v2",
+  "model_calls": 0,
+  "model_weights_loaded": false,
+  "device": "cpu",
+  "alphabet": {
+    "version": "sacr-vocabulary-source-alphabet-v1",
+    "sha256": "9ecba166f5fb315a848212e8428f54900bfb420b72095f5f49df48732d202635",
+    "characters": 17797,
+    "scope": "FINITE_VOCABULARY_PLUS_SOURCE_NOT_ALL_UNICODE"
+  },
+  "parser_config": {
+    "max_consecutive_whitespaces": 4096,
+    "force_json_field_order": false,
+    "max_json_array_length": 4096
+  },
+  "lm_format_enforcer_version": "0.11.3",
+  "payload_sha256": "d519bd0fa2ef51528d5b4cd77fbb256a300876eab1ef6a6ef155c9bb6eedc0c9",
+  "cases": [
+    {
+      "case": "nested_conditions",
+      "accepted": true,
+      "expected": true,
+      "first_rejected_token": null,
+      "early_eos_indices": [],
+      "end_allowed_eos": [
+        151645
+      ],
+      "pass": true
+    },
+    {
+      "case": "unicode_optional_null",
+      "accepted": false,
+      "expected": true,
+      "first_rejected_token": 111,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": false
+    },
+    {
+      "case": "two_blocks_duplicate_ids_postcheck_required",
+      "accepted": true,
+      "expected": true,
+      "first_rejected_token": null,
+      "early_eos_indices": [],
+      "end_allowed_eos": [
+        151645
+      ],
+      "pass": true
+    },
+    {
+      "case": "empty_failed",
+      "accepted": true,
+      "expected": true,
+      "first_rejected_token": null,
+      "early_eos_indices": [],
+      "end_allowed_eos": [
+        151645
+      ],
+      "pass": true
+    },
+    {
+      "case": "block_cap",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token": 1300,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": true
+    },
+    {
+      "case": "condition_cap",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token": 544,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": true
+    },
+    {
+      "case": "wrong_identity",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token": 15,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": true
+    },
+    {
+      "case": "truncated",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token": null,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": true
+    },
+    {
+      "case": "null_only",
+      "accepted": true,
+      "expected": true,
+      "first_rejected_token": null,
+      "early_eos_indices": [],
+      "end_allowed_eos": [
+        151645
+      ],
+      "pass": true
+    },
+    {
+      "case": "ascii_escapes_only",
+      "accepted": false,
+      "expected": true,
+      "first_rejected_token": 111,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": false
+    }
+  ],
+  "all_expected": false,
+  "semantic_status": "NOT_ESTABLISHED",
+  "module_commit": "11d7a164f6c2a7217ddea2e13565c4c6121a1caf",
+  "source_archive_sha256": "833bb84de6b65becbc9de8eaf2fa71ddb95edbf5490c61729c287ba0840e6dfc",
+  "probe_source_sha256": "67745e1f2a0b1aba058b70374c587c92cebb9100d2d2de2e76ee6d3a4c9cb5c7"
+}
