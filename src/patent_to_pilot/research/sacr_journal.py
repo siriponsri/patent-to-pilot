@@ -12,8 +12,8 @@ from patent_to_pilot.research.sacr_execution import bind_execution
 from patent_to_pilot.research.sacr_anchor import bind_anchor_bundle
 from patent_to_pilot.research.sacr_outcomes import METRICS, summarize_costs
 from patent_to_pilot.research.sacr_run_reconcile import reconcile_run, validate_plan
-from patent_to_pilot.research.sacr_generated_view import GenerationEvidenceFailure
-from patent_to_pilot.research.sacr_generated_profile import replay_generated_profile
+from patent_to_pilot.research.sacr_generated_view import GenerationEvidenceFailure, generated_view_result
+from patent_to_pilot.research.sacr_generated_profile import replay_generated_profile, profile_generation_identity
 
 
 def _write(path, value):
@@ -49,7 +49,7 @@ class DevStageJournal:
                 execution, manifest, expected_execution_sha256=expected_execution_sha256,
                 expected_plan_sha256=expected_manifest_sha256)
         self.anchor_bundle = None
-        if self.execution is not None and self.execution['format'] == 'sacr-dev-execution-v2':
+        if self.execution is not None and self.execution['format'] in ('sacr-dev-execution-v2', 'sacr-dev-execution-v3'):
             self.anchor_bundle = bind_anchor_bundle(anchor_bundle_raw, self.execution)
         elif anchor_bundle_raw is not None:
             raise InputBoundaryError('anchor bundle requires predeclared execution v2')
@@ -79,7 +79,7 @@ class DevStageJournal:
                            expected_plan_sha256=self.expected)
             if digest(self.execution) != self.execution_expected:
                 raise InputBoundaryError('in-memory execution declaration changed')
-            if self.execution['format'] == 'sacr-dev-execution-v2':
+            if self.execution['format'] in ('sacr-dev-execution-v2', 'sacr-dev-execution-v3'):
                 bound = bind_anchor_bundle((self.destination / 'anchor-bundle.json').read_bytes(), self.execution)
                 if bound != self.anchor_bundle:
                     raise InputBoundaryError('in-memory original anchor bundle changed')
@@ -169,6 +169,7 @@ class DevStageJournal:
             metrics['operation_wall_seconds'] = time.monotonic() - start
             summarize_costs([{'event_id': attempt_id, 'query_id': slot['query_id'],
                              'stage': slot['stage'], 'status': 'COMPLETED', 'metrics': metrics}])
+            self._check_required_generation(slot, output, metrics)
             output_hash = _write(path / 'output.json', output)
         except BaseException as error:
             metrics = {key: None for key in METRICS}
@@ -187,6 +188,34 @@ class DevStageJournal:
             raise
         self._terminal(path, slot, 'COMPLETED', None, metrics, output_hash)
         return output
+
+    def _check_required_generation(self, slot, output, metrics):
+        if self.execution is None or self.execution['format'] != 'sacr-dev-execution-v3':
+            return
+        stage, query = slot['stage'], slot['query_id']
+        if stage not in ('profile', 'generic', 'selective'):
+            return
+        required = 'sacr-profile-stage-v2' if stage == 'profile' else 'sacr-view-stage-v3'
+        if type(output) is not dict or output.get('format') != required:
+            raise InputBoundaryError('execution v3 requires typed generation evidence')
+        profile_slot = next(s for s in self.slots.values() if s['query_id'] == query and s['stage'] == 'profile')
+        profile = output if stage == 'profile' else self.read_completed_output(profile_slot['attempt_id'])
+        source = profile.get('source')
+        expected_source = next(s['source_sha256'] for s in self.execution['sources'] if s['query_id'] == query)
+        if type(source) is not str or hashlib.sha256(source.encode()).hexdigest() != expected_source:
+            raise InputBoundaryError('generation source differs from execution')
+        canonical = replay_generated_profile(
+            profile, execution=self.execution, attempt_id=profile_slot['attempt_id'], query_id=query, source=source,
+            metrics=metrics if stage == 'profile' else self.read_completed_metrics(profile_slot['attempt_id']))
+        if stage != 'profile':
+            identity = profile_generation_identity(self.execution, attempt_id=slot['attempt_id'],
+                                                   query_id=query, source=source)
+            identity['kind'] = stage
+            replayed = generated_view_result(
+                output['generation_artifact_utf8'].encode(), output['generation_identity'],
+                expected_identity=identity, metrics=metrics, profile_output=canonical, limits=self.execution['limits'])
+            if output != replayed:
+                raise InputBoundaryError('generated view evidence differs from replay')
 
     def finalize(self, outcomes):
         self._check_bindings()
@@ -219,6 +248,8 @@ class DevStageJournal:
                 output, output_hash = _read(path / 'output.json')
                 if output_hash != seal['output_sha256']:
                     raise InputBoundaryError('output bytes changed')
+                if receipt['status'] == 'COMPLETED':
+                    self._check_required_generation(slot, output, self.read_completed_metrics(attempt_id))
                 if (slot['stage'] == 'profile' and type(output) is dict and
                         output.get('format') in ('sacr-profile-stage-v1', 'sacr-profile-stage-v2')):
                     if self.execution is not None:

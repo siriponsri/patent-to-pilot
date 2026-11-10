@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest required generation contract:** execution v3 requires typed profile/view evidence and original anchor; 417 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-required-generation-20261110/README.md). Next declared family rejection and actual preflight/resource/fidelity gates. No actual model attempt.
+
 > **Latest generated profile:** 407 related tests pass; quote-profile generation/identity/alignment replayed through finalization. [Audit](../docs/healthtech/audits/ptp-method-first-generated-profile-20261110/README.md). Next required-evidence execution version, then declared family rejection. No new actual model attempt; research gates unchanged.
 
 > **Latest v3 finalization repair:** 396 related tests pass; unified replay fixes five reproduced integration failures. [Audit](../docs/healthtech/audits/ptp-method-first-v3-finalization-repair-20261110/README.md). Profile evidence binding remains next, followed by required-evidence execution version and declared family rejection. No new model attempt; real gates unchanged.

@@ -6,7 +6,7 @@ from patent_to_pilot.research.sacr_outcomes import finalize_query
 
 
 def bind_anchor_bundle(raw, execution):
-    if (type(raw) is not bytes or execution['format'] != 'sacr-dev-execution-v2' or
+    if (type(raw) is not bytes or execution['format'] not in ('sacr-dev-execution-v2', 'sacr-dev-execution-v3') or
             hashlib.sha256(raw).hexdigest() != execution['anchor_bundle_sha256']):
         raise InputBoundaryError('original anchor bundle differs from predeclared digest')
     bundle = decode_json(raw)

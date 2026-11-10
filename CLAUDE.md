@@ -2,15 +2,15 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 10:32:49 Bangkok
+## Cross-account checkpoint — 2026-11-10 10:36:04 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** 39a8a6fddc9a5bb4edc49b4e1672ac624a3ec5fd; verify containing checkpoint/remote on takeover.
-- **Latest package:** quote-profile generation binding through controller and journal finalization; audit docs/healthtech/audits/ptp-method-first-generated-profile-20261110/README.md. Private v2 profile retains original generation/identity/alignment; deterministic replay and sealed-cost verification before dependencies and finalization. No real generation or semantic claim.
-- **Validation/changes:** 407 related tests PASS including 11 new profile cases; Ruff PASS after removing one unused test import. New module/tests, controller/journal integration, audit and paired progress/next-actions. Authored six-stage case counts all three generation records; stop/failure/missing cases preserved.
-- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. New execution version requiring typed evidence pending; full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
+- **Last verified pushed base:** b35e71840435a20eaa78de75622671f316b0be59; verify containing checkpoint/remote on takeover.
+- **Latest package:** execution v3 requires typed generation evidence and original-anchor bundle; audit docs/healthtech/audits/ptp-method-first-required-generation-20261110/README.md. Legacy dispatch refused before reservation; journal verifies generation replay before completion and finalization. Old v1/v2 unchanged. Contract is not actual preflight or experiment authorization.
+- **Validation/changes:** 417 related tests PASS including 10 v3 cases; Ruff PASS. Execution/anchor/controller/journal integration, fixtures/regressions, audit and paired progress/next-actions. Authored six-stage run and original-anchor empty/failed/malformed fallback only.
+- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** previous model/grammar failures retained; prior diagnostic terminated/absence verified. No new actual data/model/GPU/background job; remote not re-polled. No retries.
-- **Next:** new execution version requiring typed profile/view evidence; deterministic family rejection with pre-run methods entry and downstream accounting; curator/R1 and real anchor provenance; resources/generation/fidelity then R3/R4 and gated R5/R6.
+- **Next:** deterministic family rejection with preserved downstream accounting and pre-run methods entry; curator/R1 and real anchor/identity provenance; resources/generation/fidelity then bounded R3/R4 and gated R5/R6.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)

@@ -49,6 +49,7 @@ class BoundProfileController:
         return self._profile(query_id, adapter, generated=True)
 
     def _profile(self, query_id, adapter, *, generated):
+        self._require_generation_adapter(generated)
         if query_id not in self._sources:
             raise InputBoundaryError('query is outside bound cohort')
         source = self._sources[query_id]
@@ -70,10 +71,18 @@ class BoundProfileController:
         # has been sealed as COMPLETED. No retry or downstream dispatch here.
         return self.journal.execute(attempt, validated_work)
 
+    def _require_generation_adapter(self, generated):
+        self.journal._check_bindings()
+        if self.journal.execution['format'] == 'sacr-dev-execution-v3' and not generated:
+            raise InputBoundaryError('execution v3 requires generation evidence adapters')
+
     def _checked_profile(self, query_id, output):
         if type(output) is not dict or 'profile' not in output:
             raise InputBoundaryError('typed profile dependency required')
         source = self._sources[query_id]
+        if (self.journal.execution['format'] == 'sacr-dev-execution-v3' and
+                output.get('format') != 'sacr-profile-stage-v2'):
+            raise InputBoundaryError('execution v3 requires generated profile evidence')
         if output.get('format') == 'sacr-profile-stage-v2':
             attempt = self._attempts[query_id, 'profile']
             return replay_generated_profile(
@@ -112,6 +121,7 @@ class BoundProfileController:
                 'prompt_manifest_sha256': execution['identities']['prompt_manifest']}
 
     def _views(self, query_id, kind, adapter, *, generated):
+        self._require_generation_adapter(generated)
         if query_id not in self._sources or kind not in ('generic', 'selective'):
             raise InputBoundaryError('unknown query or view stage')
         source = self._sources[query_id]
@@ -143,6 +153,9 @@ class BoundProfileController:
         if type(output) is not dict or type(output.get('response_utf8')) is not str:
             raise InputBoundaryError('replayable typed view result required')
         limits = self.journal.execution['limits']
+        if (self.journal.execution['format'] == 'sacr-dev-execution-v3' and
+                output.get('format') != 'sacr-view-stage-v3'):
+            raise InputBoundaryError('execution v3 requires generated view evidence')
         if output.get('format') == 'sacr-view-stage-v3':
             replayed = generated_view_result(
                 output['generation_artifact_utf8'].encode('utf-8'), output['generation_identity'],

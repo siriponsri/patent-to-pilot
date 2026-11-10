@@ -11,7 +11,8 @@ from test_sacr_input_snapshots import inputs, sha
 from test_sacr_profile import SOURCE, fixture
 
 
-def setup(tmp_path, *, missing=False, tampered=False, index_manifest=None, anchor_factory=None):
+def setup(tmp_path, *, missing=False, tampered=False, index_manifest=None, anchor_factory=None,
+          require_generation=False):
     plan, data, manifests, _, _ = inputs()
     payload = json.dumps({'id': 'q', 'text': SOURCE}).encode()
     manifest = json.loads(manifests['query_manifest'])
@@ -34,6 +35,8 @@ def setup(tmp_path, *, missing=False, tampered=False, index_manifest=None, ancho
         anchor_raw = anchor_factory(data)
         data['format'] = 'sacr-dev-execution-v2'
         data['anchor_bundle_sha256'] = sha(anchor_raw)
+    if require_generation:
+        data['format'] = 'sacr-dev-execution-v3'
     if tampered:
         payload += b'changed'
     return BoundProfileController(tmp_path / 'run', plan, data, manifest_bytes=manifests,
