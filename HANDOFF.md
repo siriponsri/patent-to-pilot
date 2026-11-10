@@ -4,15 +4,15 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 11:13:12 Bangkok
+### Latest checkpoint — 2026-11-10 11:14:12 Bangkok
 
-- **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Consecutive no-progress blocker audit: 2. Same owner-decision/isolation blockers as preceding turn; this mandatory status checkpoint is not progress or a verified wait.
-- **Last verified pushed base:** 64e2566d82e0e2fb324679d75302b9cdcb62b849 (HEAD matched origin/main at recheck); verify containing checkpoint and remote on takeover.
+- **Owner/goal:** Codex chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal BLOCKED (confirmed by goal service). Three consecutive no-progress turns with unchanged owner-decision/isolation blockers. Writer stopped after this checkpoint; incoming account may take over after verifying current checkout and recording ownership. Objective remains incomplete.
+- **Last verified pushed base:** 2f045bd6b3d02802b387e953db219cb41c689e97 (HEAD matched origin/main at recheck); verify containing checkpoint and remote on takeover.
 - **Latest package:** Dependency audit only: no new experiment or implementation. Rechecked 37-requirement readiness map against current handoffs, CPU approval record, curator runbook, fidelity proposal and R5 freeze. Scope remains incomplete.
 - **Validation/changes:** No owner response or isolated-runtime receipt supplied. CPU-004 approval, curator/environment and family-rejection policy remain pending. Historical failed jobs remain terminal; no live handle is being waited on. No tests/model/data/remote jobs run this turn.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** Job /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1 ended 2026-11-10T03:58:53.704497Z, exit1, 0.075s supervisor wall, zero cases. Child3823049 reaped; child and supervisor3823048 observed absent. No remaining job from this dispatch. Existing HTTP service preserved. No restart.
-- **Next:** 1. Revalidate pending decisions on next continuation; absent changes this is the same blocker, not a new package. 2. After CPU-004 approval only, publish new declaration and fresh preflight before the one bounded attempt. 3. After curator/environment handoff, verify allowed receipts and perform declared R1 checks. 4. Adopt failure/fidelity policy before R3; R4/R5/R6 depend on actual results. Do not manufacture more fixture/document work as scientific progress.
+- **Next:** 1. Resume only when an owner answer or external-state change unlocks meaningful work; reverify authority, checkout and writer ownership. 2. After CPU-004 approval only, publish new declaration and fresh preflight before the one bounded attempt. 3. After curator/environment handoff, verify allowed receipts and perform declared R1 checks. 4. Adopt failure/fidelity policy before R3; R4/R5/R6 depend on actual results. Do not manufacture more fixture/document work as scientific progress.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
