@@ -2,15 +2,15 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 18:03:45 Bangkok
+## Cross-account checkpoint — 2026-11-10 18:09:01 Bangkok
 
 - **Owner/goal:** Codex sole writer in same chat; owner approved bounded continuation. Working under renewed user authority; goal service status last observed BLOCKED, no resume tool. No new goal. Prior blocker audit no longer applies to approved CPU/isolation/failure work.
-- **Last verified pushed base:** 26e83639dabfe47465a72efd3bcacdb1d89dedba; CPU004 code archive equals this pushed declaration commit.
-- **Latest package:** CPU004 PASS14/14 in61.8898s, peak child RSS2.17GiB, zero model calls; all requested/effective root config equal. Evidence docs/healthtech/audits/ptp-cpu-escape004-20261110/RESULT.md. Automation-first solo fidelity proposal prepared, NOT_ADOPTED.
-- **Validation/changes:** Terminal/reap/absence verified; exact archive transport, code/payload/tokenizer guards passed. Owner authorized new goal, but create_goal rejected because unfinished existing goal; do not falsely complete old goal or claim new one exists. Explicit work order remains active.
+- **Last verified pushed base:** 6593040 (CPU004 result checkpoint); containing prelaunch commit must be verified before dispatch.
+- **Latest package:** SYN-SACR-003 declared one guarded quote-profile call on authored source, <=30min, no benchmark inputs. Container CPU import/config probe passed with existing dependencies; docs/healthtech/audits/ptp-solo-runtime-20261110/. Smoke declaration docs/healthtech/audits/ptp-syn-sacr003-20261110/.
+- **Validation/changes:** CPU004 PASS14/14 preserved. New guarded smoke and container supervisor syntax/Ruff checked; pins cover exact source/prompt/model receipt/grammar. Python container3.12.15 vs host3.12.3 disclosed. No new model call yet; actual GPU load is part of single attempt.
 - **Open gates:** CPU004 and bounded stages authorized; solo runtime-isolation amendment and family-rejection policy accepted. Implementation/isolation verification and curator-prepared real dev inputs pending. Owner requests automation-first fidelity proposal instead of100-query full manual review; revised gate NOT_ADOPTED/NOT_RUN. Tests closed; R5 unauthorized.
-- **Jobs/failures:** CPU004 child2240963/supervisor2240926 absent after terminal PASS. CPU003 remains FAILED. No model smoke or container started yet; retained HTTP untouched.
-- **Next:** 1. Prepare separately declared one bounded real generation smoke after runtime compatibility/caps. 2. Prepare solo owner-curator instructions and dev-only runtime/evaluator routes. 3. Present automation-first fidelity proposal (up-to100 screened,<=20 escalations+10 sentinels/benchmark; weaker than old full-human gate). 4. Implement accepted family rejection before dev and preserve R1 gates.
+- **Jobs/failures:** NEXT SYN-SACR-003 once: /home/chaw/patent-to-pilot-jobs/syn-sacr003-20261110-v1; container ptp-syn-sacr003-20261110-v1, monitor terminal.json and out/attempt summaries;1800s external limit,1740s soft alarm,5s TERM grace. No retry. CPU004 terminal PASS; probe container exited0; HTTP preserved.
+- **Next:** 1. Fresh no-conflict check and verified pushed archive, then launch SYN003 once. 2. Poll same container until terminal and preserve outputs/failure evidence. 3. Develop owner-run curator staging without agent reading mixed sources. 4. Fidelity revised proposal awaits owner; baseline and permitted preparation continue independently.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)

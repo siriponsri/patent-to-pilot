@@ -486,3 +486,8 @@ Owner approved one120s+5s CPU check of unchanged14 cases with byte-stable packag
 ## CPU-ESCAPE-004 result — 2026-11-10 18:03:45 Bangkok
 
 PASS14/14;61.8898s supervisor wall, peak child RSS2,327,261,184bytes, zero model calls. Effective root config preserved, child/supervisor absent. [Result](../audits/ptp-cpu-escape004-20261110/RESULT.md). CPU003 remains FAILED. New automation-first fidelity proposal is NOT_ADOPTED, no ratings collected. One already authorized model smoke remains to be separately declared.
+
+
+## SYN-SACR-003 predeclaration — 2026-11-10 18:09:01 Bangkok
+
+One guarded quote-profile call, authored CPU004 source/q1, existing prompt, <=1800s/8CPU/32GiB and approved V100 only; no benchmark inputs or retry. Pins and immutable acceptance in [declaration](../audits/ptp-syn-sacr003-20261110/declaration.json). Real generation viability unproven. Container CPU compatibility checked, GPU load belongs to this bounded attempt. Prior failures unchanged.
