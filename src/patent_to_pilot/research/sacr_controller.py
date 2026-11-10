@@ -5,7 +5,8 @@ from patent_to_pilot.research.mtm_runtime import InputBoundaryError
 from patent_to_pilot.research.sacr_execution import bind_input_snapshots
 from patent_to_pilot.research.sacr_journal import DevStageJournal
 from patent_to_pilot.research.sacr_profile_result import profile_result
-from patent_to_pilot.research.sacr_views import collect_screened_views, parse_view_response
+from patent_to_pilot.research.sacr_components import digest
+from patent_to_pilot.research.sacr_view_result import view_result
 
 
 class BoundProfileController:
@@ -67,25 +68,45 @@ class BoundProfileController:
         if output != canonical or output['decision'] != 'PROFILE_STRUCTURALLY_PREPARED_FIDELITY_PENDING':
             raise InputBoundaryError('profile is not structurally prepared for dependent views')
         profile = canonical['profile']
-        protected = [c['raw_text'] for b in profile['blocks'] for c in b['attached_conditions']
-                     if c['relation_to_block'] == 'explicit']
         cap = self.journal.execution['limits']['response_bytes']
 
         def validated_work():
             args = (query_id, source) if kind == 'generic' else (query_id, source, deepcopy(profile))
             raw, metrics = adapter(*args)
-            if type(raw) is not bytes:
-                raise InputBoundaryError('view adapter must return immutable response bytes')
-            proposals = parse_view_response(raw, kind=kind, maximum_bytes=cap)
-            if kind == 'selective':
-                proposals.append(canonical['compact']['text'])
-            screened = collect_screened_views(source, proposals, protected_phrases=protected,
-                                               maximum_characters=cap)
-            if len(screened['views']) > self.journal.execution['limits']['views']:
-                raise InputBoundaryError('screened views exceed declared count cap')
-            review = any(r['status'] == 'REVIEW_REQUIRED' for r in screened['proposals'])
-            return {'format': 'sacr-view-stage-v1', 'query_id': query_id, 'kind': kind,
-                    'decision': 'REVIEW_REQUIRED' if review else 'VIEWS_SCREENED_FIDELITY_PENDING',
-                    'screened': screened, 'semantic_status': 'unknown'}, metrics
+            return view_result(raw, kind=kind, profile_output=canonical, maximum_bytes=cap,
+                               maximum_views=self.journal.execution['limits']['views']), metrics
 
         return self.journal.execute(self._attempts[query_id, kind], validated_work)
+
+    def embedding_inputs(self, query_id):
+        """Replay both view decisions before preparing texts; no adapter dispatch.
+
+        Returns detached inputs with explicit degeneracy flags. This is not
+        fidelity approval or proof an embedding adapter actually used these texts.
+        Failed/unsealed view attempts need their declared failure policy, not an
+        invented successful view record, and are refused here.
+        """
+        if query_id not in self._sources or self._sources[query_id] is None:
+            raise InputBoundaryError('embedding requires bound available source')
+        profile = self.journal.read_completed_output(self._attempts[query_id, 'profile'])
+        if type(profile) is not dict or 'profile' not in profile:
+            raise InputBoundaryError('typed profile required')
+        canonical = profile_result(profile['profile'], source=self._sources[query_id], query_id=query_id)
+        if canonical != profile or canonical['decision'] != 'PROFILE_STRUCTURALLY_PREPARED_FIDELITY_PENDING':
+            raise InputBoundaryError('embedding profile is not structurally prepared')
+        limits = self.journal.execution['limits']
+        results = {}
+        for kind in ('generic', 'selective'):
+            output = self.journal.read_completed_output(self._attempts[query_id, kind])
+            if type(output) is not dict or type(output.get('response_utf8')) is not str:
+                raise InputBoundaryError('replayable typed view result required')
+            replayed = view_result(output['response_utf8'].encode('utf-8'), kind=kind,
+                                   profile_output=canonical, maximum_bytes=limits['response_bytes'],
+                                   maximum_views=limits['views'])
+            if replayed != output or replayed['decision'] == 'REVIEW_REQUIRED':
+                raise InputBoundaryError('view evidence changed or requires review')
+            results[kind] = {'views': tuple(replayed['screened']['views']),
+                             'view_output_sha256': digest(replayed),
+                             'no_generated_view_retained': replayed['no_generated_view_retained']}
+        return {'query_id': query_id, 'components': deepcopy(canonical['components']),
+                'arms': results, 'semantic_status': 'unknown', 'fidelity_review': 'REQUIRED'}

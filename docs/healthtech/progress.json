@@ -1,5 +1,6 @@
 ﻿{
     "method_first_20261110": {
+    "view_replay_embedding_inputs": "270_RELATED_TESTS_PASS_ACTUAL_EMBEDDING_NOT_RUN",
     "view_controller": "263_RELATED_TESTS_PASS_DOWNSTREAM_INCOMPLETE",
     "typed_profile_reconciliation": "253_RELATED_TESTS_PASS_ANCHOR_AND_SCHEDULING_PENDING",
     "profile_controller": "FIRST_STAGE_ONLY_247_RELATED_TESTS_PASS_TYPED_FALLBACK_RECONCILIATION_PENDING",
