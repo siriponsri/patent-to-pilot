@@ -1,5 +1,9 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Native SACR profile controller integration 2026-11-10
+
+Parent solewriter,last pushed4b66476. Controller dispatches from hash-pinned query manifest; nativeTA kind propagated through profile compilation, generated validation and deterministic replay. LegacyMTM defaults unchanged.101 targeted controller/binding regressions PASS; after stricter manifest-object parsing10 focused tests PASS. Native generated-profile fixture accepted/replayed; MTM-kind response rejected with original failed evidence preserved. No actual modelcall. Still pending durable fidelity ledger/screening, rejected-family policy and complete native retrieval/anchor bindings before dev run. No livejobs;test closed;smoke allowance consumed.
+
 ## SACR native TA binder 2026-11-10
 
 Parent solewriter,last pushedda65c27. Separate native DAPFAM TA snapshot binder implemented; all manifest/query/source hashes,dev/TA/TAC/full semantics,unique IDs/exact schema and planned subset checked.35 binding/execution tests PASS,no modelcalls. Receipt docs/healthtech/audits/ptp-native-dense-preparation-20261110/SACR-DAPFAM-BINDING.md. Controller/profile_result/generated_profile still hardcode MTM binding/input kind; integration PENDING,do not launch nativeSACR yet. Next propagate pinned DAPFAM_TA through controller/validation/replay,then failure/fidelity integration and S/G allocation. No livejobs,tests closed,smoke allowance consumed.

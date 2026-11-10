@@ -17,7 +17,7 @@ def profile_generation_identity(execution, *, attempt_id, query_id, source):
             'prompt_manifest_sha256': execution['identities']['prompt_manifest']}
 
 
-def generated_profile_result(raw, identity, *, execution, attempt_id, query_id, source, metrics):
+def generated_profile_result(raw, identity, *, execution, attempt_id, query_id, source, metrics, input_kind='MTM_P'):
     expected = profile_generation_identity(execution, attempt_id=attempt_id, query_id=query_id, source=source)
     exact_fields(identity, set(expected) | {'artifact_sha256'})
     if any(identity[key] != value for key, value in expected.items()):
@@ -32,8 +32,8 @@ def generated_profile_result(raw, identity, *, execution, attempt_id, query_id, 
                                         reason='GENERATION_NOT_EOS_COMPLETE')
     try:
         aligned = validate_generation(binding['record'], kind='profile_quotes', source=source,
-                                      query_id=query_id, input_kind='MTM_P', limits=limits)
-        canonical = profile_result(aligned['profile'], source=source, query_id=query_id)
+                                      query_id=query_id, input_kind=input_kind, limits=limits)
+        canonical = profile_result(aligned['profile'], source=source, query_id=query_id, input_kind=input_kind)
     except InputBoundaryError:
         raise GenerationEvidenceFailure(raw=raw, identity=identity, binding=binding, metrics=metrics,
                                         reason='PROFILE_ACCEPTANCE_FAILED') from None
@@ -42,10 +42,10 @@ def generated_profile_result(raw, identity, *, execution, attempt_id, query_id, 
             'alignment': aligned['alignment']}
 
 
-def replay_generated_profile(output, *, execution, attempt_id, query_id, source, metrics):
+def replay_generated_profile(output, *, execution, attempt_id, query_id, source, metrics, input_kind='MTM_P'):
     replayed = generated_profile_result(
         output['generation_artifact_utf8'].encode('utf-8'), output['generation_identity'],
-        execution=execution, attempt_id=attempt_id, query_id=query_id, source=source, metrics=metrics)
+        execution=execution, attempt_id=attempt_id, query_id=query_id, source=source, metrics=metrics, input_kind=input_kind)
     if replayed != output:
         raise InputBoundaryError('generated profile evidence changed')
-    return profile_result(replayed['profile'], source=source, query_id=query_id)
+    return profile_result(replayed['profile'], source=source, query_id=query_id, input_kind=input_kind)

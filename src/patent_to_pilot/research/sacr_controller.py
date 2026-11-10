@@ -1,10 +1,12 @@
 """Bound profile/view orchestration; not a production research runner."""
 from copy import deepcopy
+import hashlib
+import json
 
 import numpy as np
 
-from patent_to_pilot.research.mtm_runtime import InputBoundaryError
-from patent_to_pilot.research.sacr_execution import bind_input_snapshots
+from patent_to_pilot.research.mtm_runtime import InputBoundaryError, _unique_object
+from patent_to_pilot.research.sacr_execution import bind_input_snapshots, bind_dapfam_input_snapshots
 from patent_to_pilot.research.sacr_journal import DevStageJournal
 from patent_to_pilot.research.sacr_profile_result import profile_result
 from patent_to_pilot.research.sacr_components import digest
@@ -30,11 +32,24 @@ class BoundProfileController:
 
     def __init__(self, destination, plan, execution, *, manifest_bytes, query_payload,
                  expected_plan_sha256, expected_execution_sha256, anchor_bundle_raw=None):
-        sources = bind_input_snapshots(
+        # Dispatch from a pinned manifest, not an unbound caller override.
+        raw_manifest = manifest_bytes['query_manifest']
+        if type(raw_manifest) is not bytes or hashlib.sha256(raw_manifest).hexdigest() != execution['identities']['query_manifest']:
+            raise InputBoundaryError('query manifest changed before binder selection')
+        try:
+            query_manifest = json.loads(raw_manifest, object_pairs_hook=_unique_object)
+        except (ValueError, UnicodeError):
+            raise InputBoundaryError('invalid query manifest serialization') from None
+        if type(query_manifest) is not dict:
+            raise InputBoundaryError('query manifest must be an object')
+        native = query_manifest.get('format') == 'ptp-dapfam-runtime-dev-v1'
+        binder = bind_dapfam_input_snapshots if native else bind_input_snapshots
+        sources = binder(
             execution, plan, manifest_bytes=manifest_bytes, query_payload=query_payload,
             expected_execution_sha256=expected_execution_sha256,
             expected_plan_sha256=expected_plan_sha256)
         self._sources = dict(sources)
+        self._input_kind = 'DAPFAM_TA' if native else 'MTM_P'
         self._attempts = {(s['query_id'], s['stage']): s['attempt_id'] for s in plan['slots']}
         self.journal = DevStageJournal(destination, plan, expected_manifest_sha256=expected_plan_sha256,
                                        execution=execution,
@@ -63,9 +78,9 @@ class BoundProfileController:
                 raw, identity, metrics = adapter(query_id, source)
                 return generated_profile_result(
                     raw, identity, execution=self.journal.execution, attempt_id=attempt,
-                    query_id=query_id, source=source, metrics=metrics), metrics
+                    query_id=query_id, source=source, metrics=metrics, input_kind=self._input_kind), metrics
             profile, metrics = adapter(query_id, source)
-            return profile_result(profile, source=source, query_id=query_id), metrics
+            return profile_result(profile, source=source, query_id=query_id, input_kind=self._input_kind), metrics
 
         # Structural failure happens within the reserved attempt, never after it
         # has been sealed as COMPLETED. No retry or downstream dispatch here.
@@ -87,8 +102,8 @@ class BoundProfileController:
             attempt = self._attempts[query_id, 'profile']
             return replay_generated_profile(
                 output, execution=self.journal.execution, attempt_id=attempt, query_id=query_id,
-                source=source, metrics=self.journal.read_completed_metrics(attempt))
-        canonical = profile_result(output['profile'], source=source, query_id=query_id)
+                source=source, metrics=self.journal.read_completed_metrics(attempt), input_kind=self._input_kind)
+        canonical = profile_result(output['profile'], source=source, query_id=query_id, input_kind=self._input_kind)
         if output != canonical:
             raise InputBoundaryError('profile evidence changed')
         return canonical

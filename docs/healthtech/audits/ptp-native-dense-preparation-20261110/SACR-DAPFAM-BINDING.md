@@ -1,3 +1,10 @@
+
+## Native SACR profile controller integration 2026-11-10
+
+Parent solewriter,last pushed4b66476. Controller dispatches from hash-pinned query manifest; nativeTA kind propagated through profile compilation, generated validation and deterministic replay. LegacyMTM defaults unchanged.101 targeted controller/binding regressions PASS; after stricter manifest-object parsing10 focused tests PASS. Native generated-profile fixture accepted/replayed; MTM-kind response rejected with original failed evidence preserved. No actual modelcall. Still pending durable fidelity ledger/screening, rejected-family policy and complete native retrieval/anchor bindings before dev run. No livejobs;test closed;smoke allowance consumed.
+
+Historical binder checkpoint below; controller/profile-kind gap described there is now resolved at fixture level. End-to-end native research execution remains NOT_RUN.
+
 # SACR native input integration checkpoint
 
 2026-11-10. Parent sole writer. IMPLEMENTED_BINDER / CONTROLLER_INTEGRATION_PENDING.
