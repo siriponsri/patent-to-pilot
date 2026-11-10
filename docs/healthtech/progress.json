@@ -2927,7 +2927,7 @@
     "main_head_after_handoff_docs": "7e8fd1a"
   },
   "st1_unstarted_continuation_20261111": {
-    "status": "LOCAL_CONTINUATION_PREPARATION_VERIFIED_REMOTE_SEAL_NOT_RUN",
+    "status": "REMOTE_HISTORY_SEALED_NO_GENERATION",
     "timestamp": "2026-11-11T06:23:07+07:00",
     "writer": "parent sole repo writer",
     "base_commit": "0dd6943bc0c4dd59215321f56c181aff59567229",
@@ -2948,7 +2948,21 @@
     },
     "new_model_calls": 0,
     "protected_tests": "CLOSED",
-    "actual_private_history_seal": "NOT_RUN",
+    "actual_private_history_seal": {
+      "status": "PRIVATE_HISTORY_SEALED_NO_GENERATION",
+      "sample_queries": 100,
+      "never_started_queries": 54,
+      "blocked_prior_queries": 1,
+      "normal_return_consumed_queries": 45,
+      "manifest_sha256": "3f8a91ecfcfdbc063bc9924513c364e6c3ba5e9c19081c7191529dc92d3cbf5b",
+      "prior_terminal_sha256": "b78281166cd0ce0021e96e745ade1e260cc45ab763cf7d1afbece37e8a805ec4",
+      "canonical_output_directory_name": "continuation-a2966f862e87c13f1f1abca8b6b903e7a860f7bff57737759e3c9d8d06da5b91",
+      "sealed_files": 276,
+      "model_calls": 0,
+      "retry_authorized": false,
+      "wall_seconds": 0.2078177952207625,
+      "preparer_sha256": "9671bc1311780b1ecb5c8812392719d817050f4635a956830952ffe08e24543d"
+    },
     "new_supervisor": "NOT_IMPLEMENTED",
     "generation": "NOT_RUN"
   }

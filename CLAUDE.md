@@ -1,5 +1,15 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## SACR actual history sealed 2026-11-11T06:25:40+07:00
+
+Parent sole writer; last verified pushed e113b81. CPU-only remote history preparation completed once in fresh job ptp-native-sacr-continuation-20261111-v1. Exact-byte code archive SHA ce4e1ffcfc92312d9031ac1b8099e2d04709cdeac2bad58c7b02c5eab5dd97a1 verified before extraction. Original job/code/output were not overwritten. Fresh Docker state matched the original terminal receipt.
+
+Actual sealed history confirms fixed100: 45 normal returns consumed, 1 interrupted/prepared blocked, 54 never started. Sealed276 files; private manifest SHA3f8a91ecfcfdbc063bc9924513c364e6c3ba5e9c19081c7191529dc92d3cbf5b. Canonical output sibling is continuation-a2966f862e87c13f1f1abca8b6b903e7a860f7bff57737759e3c9d8d06da5b91/attempt under ORIGINAL job/out, never a fresh job output. Private manifest remains remote; only aggregate sealed-history.json downloaded. Preparation wall0.207817795s excludes SSH/transport and is not total orchestration CPU. Modelcalls0, GPUseconds0; no generation retry/cards/test access. Archive retained1423360 bytes (verify transport receipt for exact bytes); new files count toward existing disk ceiling at next admission.
+
+Next implement/review the bounded supervisor using immutable original history RO and canonical sibling output RW, bind current ledger and original remaining fidelity budget, and verify free GPU/disk before any dispatch. No new GPU reservation or run yet. Do not rerun prepare.py: destination/code and private-plan already exist; inspect receipts on failure rather than overwrite. New supervisor, generic/selective/critic, owner fidelity review and gated pilot/full-dev remain NOT_RUN. Interrupted query still needs separate explicit retry authority; no sample reduction or semantic PASS. Goal ACTIVE; Paper2/3 plans only, S/G failed configuration preserved, MTM0cards.
+
+Evidence: `docs/healthtech/audits/ptp-sacr-unstarted-continuation-20261111/sealed-history.json` and `transport.json`.
+
 ## SACR continuation preparation 2026-11-11T06:23:07+07:00
 
 Parent remains sole writer; prior documentation session has explicit HANDED_OFF / stopped record, and the only listed child is a completed read-only reviewer. Current HEAD and remote main both verified at 0dd6943bc0c4dd59215321f56c181aff59567229. Prior container freshly inspected as exited; no restart. Previous status-only turn was no progress; this package verifies and checkpoints continuation implementation.
