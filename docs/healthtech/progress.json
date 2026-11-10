@@ -1,7 +1,8 @@
 ﻿{
     "method_first_20261110": {
+        "r1_bound_runner_audit": "docs/healthtech/audits/ptp-method-first-r1-bound-runner-20261110/README.md",
         "r1_preflight_audit": "docs/healthtech/audits/ptp-method-first-r1-preflight-20261110/README.md",
-        "runtime_preflight": "SYNTHETIC_PASS_RUNNER_INTEGRATION_PENDING",
+        "runtime_preflight": "BOUND_DEV_MAIN_RUNNER_SYNTHETIC_PASS_REAL_PARITY_PENDING",
         "r1_vectors_audit": "docs/healthtech/audits/ptp-method-first-r1-vectors-20261110/README.md",
         "vector_identity": "OBSERVED_HISTORICAL_RECEIPTS_MATCHED_RANKING_PARITY_PENDING",
         "r1_eligibility_audit": "docs/healthtech/audits/ptp-method-first-r1-eligibility-20261110/README.md",
@@ -10,7 +11,7 @@
         "audit": "docs/healthtech/audits/ptp-method-first-r0-20261110/README.md",
         "verification": "docs/healthtech/audits/ptp-method-first-r0-20261110/verification.json",
         "authority": "Owner goal activation 10 Nov 2026; HANDOFF_PROMPT.md",
-        "next": "Integrate prospective safe runtime and vector identity enforcement; trusted staging before actual dev A03 and ranking parity checks",
+        "next": "Complete curator asset preparation/isolation handoff and predeclare actual dev A03/baseline parity checks",
         "protected_scoring": "NOT_AUTHORIZED",
         "new_experiments": "NOT_RUN",
         "r1_dapfam_audit": "docs/healthtech/audits/ptp-method-first-r1-dapfam-20261110/README.md",

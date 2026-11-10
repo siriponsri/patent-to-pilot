@@ -1,0 +1,13 @@
+{
+  "status": "SYNTHETIC_PASS_REAL_NOT_RUN",
+  "timestamp": "2026-11-10 07:36:25 Bangkok",
+  "base_commit": "8bb0b47a403589dff642eddbb74e8002422146ad",
+  "tests": 61,
+  "new_cases": 12,
+  "seconds": 4.61,
+  "ruff": "PASS",
+  "command": "python -m pytest -o addopts= -q tests/test_mtm_bound_runner.py tests/test_mtm_preflight.py tests/test_vector_identity.py tests/test_mtm_input_boundary.py tests/test_mtm_eligibility.py",
+  "historical_main": "SYNTHETIC_STAND_IN",
+  "model_or_gpu_loaded": false,
+  "actual_ranking_parity": "NOT_RUN"
+}
