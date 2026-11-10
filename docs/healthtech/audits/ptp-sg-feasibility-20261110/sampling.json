@@ -1,0 +1,17 @@
+{
+  "status": "FIXED_CORPUS_SAMPLE_CREATED_NO_EXTRACTION",
+  "population": 45336,
+  "sample_size": 100,
+  "stratum_sizes": [
+    11334,
+    11334,
+    11334,
+    11334
+  ],
+  "sample_sha256": "f364014d3a8e429812ad0cc8328ae80b6e3e52e5af2f4ff9cbbcc976880591af",
+  "corpus_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+  "wall_seconds": 2.6410000000032596,
+  "gpu_calls": 0,
+  "cards_issued": 0,
+  "protected_access": false
+}

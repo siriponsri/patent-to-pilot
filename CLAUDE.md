@@ -1,5 +1,9 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## S/G fixed corpus sample 2026-11-10
+
+Parent solewriter,last pushed05b5d59. Prospective plan docs/healthtech/research/plans/SG-FIDELITY-SAMPLE.md fixes4 length strata/25hash-selected records each,alias sample and SG30-card gates before SG outputs;B0 aggregates alreadyknown/disclosed.7 sampling testsPASS. Actual pinned45336corpus sampled100unique records in2.641s CPU,no labels/GPU/cards. Private sibling ptp-sg-sample-20261110/sample.json SHA f364014d3a8e429812ad0cc8328ae80b6e3e52e5af2f4ff9cbbcc976880591af; aggregate docs/healthtech/audits/ptp-sg-feasibility-20261110/sampling.json. No extraction yet. Next freeze extractor/alias schema,execute bounded100record feasibility,complete screening; no fullcorpus extraction absent gates. SACR failure/fidelity integration remains pending;testsclosed,no livejobs.
+
 ## Owner review allocation amendment 2026-11-10
 
 Owner approved DAPFAM SACR30 + sharedS/G30,each20escalation+10sentinel,60global acrossconfigs;MTM0 pendingexplicitallocation,noautomaticborrowing. Existing privateledger amended by hash-linked policy event,not reset;0cardsissued. Receipt docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/allocation-amendment.json.13 ledger/solo tests PASS inclreopen,60DAPFAMcards acrosspools,MTM rejection,no refunds/repeated amendment. Parent solewriter,last pushedc99dc35,no livejobs/modelcalls. Next declare SG corpus/alias sampling and complete screening/failure-policy integration. Failure policy inspection confirmed typed normal-return evidence exists; integration stillPENDING,not falsely reportedcomplete.

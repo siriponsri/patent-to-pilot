@@ -125,3 +125,5 @@ Report all four systems and declared controls, extraction coverage by field/IPC/
 Nearest-work distinctions and unresolved access are in [RELATED-WORK-AUDIT](RELATED-WORK-AUDIT.md). Before a novelty claim, resolve FOPNet's protocol inconsistencies and publicly available artifacts, inspect PHAGE v3 and exact comparator availability, and complete limited-access functional-search sources. None is a reason to open protected labels early.
 
 **Next bounded action:** reconcile the existing curator staging attempt from allowed sanitized receipts; verify a dev-only native TA input and baseline binding; independently finish the S/G operator/resource declaration. This document does not launch those actions.
+
+S/G sampling contract and card distribution: [fixed corpus/alias sample](SG-FIDELITY-SAMPLE.md). Actual100-record private sample fixed; extraction not yet run.
