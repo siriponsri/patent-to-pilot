@@ -1,0 +1,10 @@
+{
+  "status": "STAGED_HASHES_VERIFIED_NO_DISPATCH",
+  "pinned_files": 137,
+  "new_job_bytes": 5444402,
+  "conservative_combined_disk_with_new_512MiB_reservation": 11233334141,
+  "free_disk_bytes": 102869721088,
+  "approved_gpu_free": true,
+  "model_calls": 0,
+  "declaration_sha256": "76dcfb90c69c2eb98410b55ff18c4d0742cb463f09c46fbe2873cea17fc42f01"
+}

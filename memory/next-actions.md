@@ -1,3 +1,10 @@
+## Continuation pre-dispatch 2026-11-11T06:31:44+07:00
+
+Parent sole writer; last verified pushed9e98852. Exact runtime archive842f0f7075a0483034a4a032dbf7b1a8e13c958cfb340c207e790a446e79ac31 staged once in separate runtime-code;137 source pins verified. Original preparation/history unchanged. Runtime declaration76dcfb90c69c2eb98410b55ff18c4d0742cb463f09c46fbe2873cea17fc42f01. GPU observed empty, remote free disk102869721088bytes; conservative combined retained+new512MiB reservation11233334141bytes below40GiB. No data/model/vector copies.
+
+10800s reservation added without changing prior charges; remaining shared fidelity after reservation11033.539409477264s. Runtime receives pinned pre-reservation ledger snapshot; canonical current ledger additionally records this reservation. Status RESERVED_NOT_DISPATCHED; no calls yet. Next run remote supervise.py ONCE, verify actual isolation/readback, monitor SAME child/container; stop trigger10560s includes240s cleanup. No retry index45; owner exception question remains pending. Do not rerun staging/sealing or redispatch on observation failure. Charge actual wall after terminal, preserving unknown costs and all100cohort. Both tests CLOSED;cards0. Generic/selective/critic/pilot/full dev remain incomplete.
+
+
 ## Continuation supervisor reviewed 2026-11-11T06:29:39+07:00
 
 Parent sole writer; last verified pushed be64432. Candidate continuation supervisor implemented, not staged or dispatched. Fixed original-host canonical sibling output and RO history prevent fresh-folder replay. Candidate declaration binds current code, original prompt/model/sample, sealed54 selection and current charged ledger. Proposed operational envelope10800s (stop10560,240s cleanup) leaves11033.539409477264s of the original fidelity allowance for remaining stages if fully consumed. No budget reservation/reset/new grant. This is not evidence all stages will finish within budget.

@@ -60,5 +60,15 @@
   "model_calls_count_is_lower_bound": true,
   "generation_attempts_with_unknown_call_token_costs": 1,
   "fidelity_generation_charged_seconds": 6966.460590522736,
-  "fidelity_generation_remaining_seconds": 21833.539409477264
+  "fidelity_generation_remaining_seconds": 21833.539409477264,
+  "native_unstarted_continuation_reservation": {
+    "status": "RESERVED_NOT_DISPATCHED",
+    "seconds": 10800,
+    "container": "ptp-native-sacr-continuation-20261111-v1",
+    "prior_gpu_charged_seconds": 7245.347415371332,
+    "prior_fidelity_charged_seconds": 6966.460590522736,
+    "remaining_fidelity_after_reservation_seconds": 11033.539409477264,
+    "disk_conservative_bytes": 11233334141,
+    "note": "Pinned runtime ledger is the pre-reservation snapshot, charges unchanged; this additive record prevents double allocation. Charge actual whole supervisor interval after verified terminal."
+  }
 }

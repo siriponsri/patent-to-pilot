@@ -2927,7 +2927,7 @@
     "main_head_after_handoff_docs": "7e8fd1a"
   },
   "st1_unstarted_continuation_20261111": {
-    "status": "REMOTE_HISTORY_SEALED_NO_GENERATION",
+    "status": "RESERVED_NOT_DISPATCHED",
     "timestamp": "2026-11-11T06:23:07+07:00",
     "writer": "parent sole repo writer",
     "base_commit": "0dd6943bc0c4dd59215321f56c181aff59567229",
