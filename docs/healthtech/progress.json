@@ -2963,7 +2963,22 @@
       "wall_seconds": 0.2078177952207625,
       "preparer_sha256": "9671bc1311780b1ecb5c8812392719d817050f4635a956830952ffe08e24543d"
     },
-    "new_supervisor": "NOT_IMPLEMENTED",
-    "generation": "NOT_RUN"
+    "new_supervisor": "IMPLEMENTED_REVIEWED_NOT_DISPATCHED",
+    "generation": "NOT_RUN",
+    "supervisor_review": {
+      "status": "CANDIDATE_NOT_RESERVED_NOT_DISPATCHED",
+      "profile_envelope_seconds": 10800,
+      "supervisor_stop_seconds": 10560,
+      "minimum_admission_seconds": 1200,
+      "remaining_shared_fidelity_after_maximum_envelope_seconds": 11033.539409477264,
+      "note": "Allocation is operational, not a new owner cap. Remaining view/critic and any separately approved retry share the original fidelity budget. Throughput and complete fidelity success are not guaranteed.",
+      "tests_passed": 23,
+      "legacy_tests_skipped": 4,
+      "protected_tests": "CLOSED",
+      "new_model_calls": 0,
+      "retry_exception": "OWNER_DECISION_PENDING_NOT_AUTHORIZED",
+      "supervisor_sha256": "0eb4301b9917ae3840668be7445c76dea852ea596293929b19780c55c44ce2ce",
+      "independent_review": "TIMING_FINDING_FIXED_RECHECKED_NO_ADDITIONAL_BLOCKER_IN_SCOPED_REVIEW"
+    }
   }
 }

@@ -1,5 +1,16 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Continuation supervisor reviewed 2026-11-11T06:29:39+07:00
+
+Parent sole writer; last verified pushed be64432. Candidate continuation supervisor implemented, not staged or dispatched. Fixed original-host canonical sibling output and RO history prevent fresh-folder replay. Candidate declaration binds current code, original prompt/model/sample, sealed54 selection and current charged ledger. Proposed operational envelope10800s (stop10560,240s cleanup) leaves11033.539409477264s of the original fidelity allowance for remaining stages if fully consumed. No budget reservation/reset/new grant. This is not evidence all stages will finish within budget.
+
+Independent read-only review found runtime admission clock was240s later than supervisor stop. Fixed by passing exact host monotonic stop deadline before Docker create; runtime uses minimum of own and external remaining time. Reviewer rechecked fix. Targeted supervisor/native suite23PASS,4legacy-onlySKIP; regression confirms1199s usable time defers despite1479s on runtime clock. Modelcalls0; engineering checks are not fidelity PASS. Original remote preparation code remains immutable; future runtime uses separate runtime-code.
+
+Owner question pending: exactly one interrupted-query regeneration exception, same inputs/prompt/model/decoder, <=1200s including cleanup, charged to original shared fidelity allowance, preserve prior failure, no further retry. No answer means no authority; current continuation still excludes that query. Do not dispatch a retry or shrink100 cohort. 54never-started work remains authorized subject to admission.
+
+Next: build and verify exact-byte runtime archive from candidate declaration; recheck disk/GPU and ledger; record resource reservation before a single bounded never-started dispatch and monitor same handle. Implement any interrupted-query exception only if explicitly approved, with its own exclusive receipt. Generic/selective/critic and cards remain incomplete; S/G fixed config failed; MTM0cards; protected tests CLOSED. Goal remains ACTIVE, not complete. Canonical audit includes candidate-declaration.json and supervisor-review.json.
+
+
 ## SACR actual history sealed 2026-11-11T06:25:40+07:00
 
 Parent sole writer; last verified pushed e113b81. CPU-only remote history preparation completed once in fresh job ptp-native-sacr-continuation-20261111-v1. Exact-byte code archive SHA ce4e1ffcfc92312d9031ac1b8099e2d04709cdeac2bad58c7b02c5eab5dd97a1 verified before extraction. Original job/code/output were not overwritten. Fresh Docker state matched the original terminal receipt.

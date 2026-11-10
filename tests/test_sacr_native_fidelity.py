@@ -13,6 +13,17 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = 'Reduce reverse flow without electrical power.'
 
 
+def test_continuation_admission_uses_external_stop_not_later_runtime_clock():
+    spec = importlib.util.spec_from_file_location('deadline_runner', ROOT / 'scripts/healthtech/run_sacr_native_fidelity.py')
+    runner = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(runner)
+    # Runtime begins 40 seconds after supervisor. Its own clock would admit
+    # another call, but the actual external stop leaves less than 1200 seconds.
+    assert runner.remaining_generation_seconds(40, 10800, 10560, 9361) == 1199
+    assert runner.remaining_generation_seconds(40, 10800, None, 9361) == 1479
+    assert runner.remaining_generation_seconds(40, 10800, 10560, 10561) == -1
+
+
 def inputs():
     rows = [{'id': f'q{i}', 'text': SOURCE} for i in range(474)]
     raw = ('\n'.join(json.dumps(r) for r in rows) + '\n').encode()

@@ -6,13 +6,16 @@ import pytest
 
 @pytest.fixture(params=['ptp-native-dense-preparation-20261110/supervise_native.py',
                         'ptp-syn-sacr004-20261110/supervise.py',
-                        'ptp-native-sacr-fidelity-20261110/supervise.py'])
+                        'ptp-native-sacr-fidelity-20261110/supervise.py',
+                        '../../../scripts/healthtech/supervise_sacr_unstarted_continuation.py'])
 def supervisor(monkeypatch, tmp_path, request):
     path = Path(__file__).resolve().parents[1] / 'docs/healthtech/audits' / request.param
     spec = importlib.util.spec_from_file_location('native_supervisor_test', path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     monkeypatch.setattr(module, 'JOB', tmp_path)
+    if hasattr(module, 'OUTPUT'):
+        monkeypatch.setattr(module, 'OUTPUT', tmp_path / 'canonical-output')
     monkeypatch.setattr(module.time, 'sleep', lambda _: None)
     return module
 
@@ -70,7 +73,7 @@ def test_fidelity_reserves_cleanup_margin(supervisor, monkeypatch):
     if not hasattr(supervisor, 'start_and_monitor'):
         pytest.skip('new cleanup margin applies to native fidelity supervisor')
     stopped = []
-    monkeypatch.setattr(supervisor.time, 'monotonic', lambda: 6960)
+    monkeypatch.setattr(supervisor.time, 'monotonic', lambda: getattr(supervisor, 'STOP_SECONDS', 6960))
     monkeypatch.setattr(supervisor, 'stop_owned', lambda: stopped.append(True))
     assert supervisor.monitor(Live(), 0) == ('TIMEOUT', 0)
     assert stopped == [True]

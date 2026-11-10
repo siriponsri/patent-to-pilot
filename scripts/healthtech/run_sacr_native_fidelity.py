@@ -30,6 +30,11 @@ REQUIRED_FILES = {
 }
 
 
+def remaining_generation_seconds(start, wall_seconds, supervisor_stop, now):
+    remaining = wall_seconds - (now - start)
+    return min(remaining, supervisor_stop - now) if supervisor_stop is not None else remaining
+
+
 def validate_code_declaration(declaration, root):
     hashes = declaration['files_sha256']
     if type(hashes) is not dict or not REQUIRED_FILES <= set(hashes):
@@ -72,6 +77,7 @@ def main():
     for name in ('prior-output', 'prior-terminal', 'observed-state', 'continuation-manifest', 'resource-ledger'):
         parser.add_argument('--' + name, type=Path)
     parser.add_argument('--declaration-sha256', required=True)
+    parser.add_argument('--supervisor-stop-monotonic', type=float)
     args = parser.parse_args()
     raw = args.declaration.read_bytes()
     if digest(raw) != args.declaration_sha256:
@@ -87,6 +93,8 @@ def main():
                        args.continuation_manifest, args.resource_ledger)
     continuation = None
     if any(prior_arguments):
+        if args.supervisor_stop_monotonic is None or not math.isfinite(args.supervisor_stop_monotonic):
+            raise InputBoundaryError('continuation requires the actual supervisor stop deadline')
         if not all(prior_arguments):
             raise InputBoundaryError('complete prior history and budget inputs required')
         manifest_raw = args.continuation_manifest.read_bytes()
@@ -184,7 +192,8 @@ def main():
                 prompt_root=ROOT / 'docs/healthtech/research/prompts', prompt_sha256=declaration['prompt_sha256'],
                 tokenizer=tokenizer, guarded_model_factory=factory, device='cuda:0', limits=limits,
                 check_authorization=check_local_window,
-                remaining_seconds=lambda: declaration['wall_seconds'] - (time.monotonic() - start),
+                remaining_seconds=lambda: remaining_generation_seconds(start, declaration['wall_seconds'],
+                    args.supervisor_stop_monotonic if continuation is not None else None, time.monotonic()),
                 peak_memory_bytes=lambda: torch.cuda.max_memory_allocated(), **extra)
             write_new(args.output / 'terminal.json', {'status': result['status'],
                 'wall_seconds': time.monotonic() - start, 'queries': len(result['outcomes']),
