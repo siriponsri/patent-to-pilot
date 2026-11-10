@@ -1,5 +1,10 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Live supervisor recovered after SSH loss 2026-11-10T23:40+07:00
+
+Parent sole writer; push origin/main succeeded throughcb0c2e0,previous DNS backlog synchronized. Attached SSH session51538 is TERMINAL(exit1 connection timeout),NOT proofjobtermination and no longerpollable. Fresh independent observation verifies SAME supervisor PID70886 (supervise-reviewed.py),Dockerchild70995,containerPID71075 RUNNING at16:40:07UTC.6EOS,2rejected,4structuralpending;5681input/11741outputtokens,1205.188684s knowncompletedgeneration. No restart/newcallsfromrecovery. Monitor via fresh SSH status-v2.py and pgrep supervisor70886 inremotejobptp-native-sacr-fidelity-20261110-v1; original7200s boundstillactive. No fidelityPASS/cards/testaccess. Next terminalobservation/receiptcharge; preserveunknown interruptedcosts and originalsample ifcapends early.
+
+
 ## Fidelity closeout preparation and independent manuscript check 2026-11-10
 
 Parent sole writer,last locala58fb47,last confirmed remoteffc183f. Same native profile container confirmedrunning (session51538,PID71075);3EOS,1rejected,2structuralpending at16:28:19UTC;2657input/5157outputtokens,506.781825s knowncompletedgeneration. No fidelityPASS/cards/retries. New read-only closeout aggregator distinguishes notstarted/preparation/unknownexecution/normalreturns and refuseslive or conflictingterminal state;4 testsPASS. Independent manuscript review verified all B0/S-G numericclaims and no semantic/retrievaloverclaim; stale NOT_RUN baseline labels fixed in paper-comparability supportdoc. Audit README explicitly states2h stageallocation is agent choice inside owner8h fidelitycap; incomplete cohort mustnot become method-infeasibility claim or reset ledger. Continue monitoring SAMEjob, then terminalcost accounting; no additional GPU work whilelive.
