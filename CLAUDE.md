@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:09:11 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:13:28 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 45f62557d7462f6dd8dfe1070837cc2c68a145c7.
-- Latest: PRELAUNCH SYN-SACR-001 declaration/runner implemented; Ruff passed. Fixed authored input, max three calls, fp16/eager, 900s soft/1200s hard supervisor limit. No benchmark paths. Audit docs/healthtech/audits/ptp-method-first-r2-smoke-20261110/README.md. Actual model smoke NOT_RUN at checkpoint.
-- Planned synthetic smoke remote r2-sacr-synthetic-smoke-20261110-v1; not launched at checkpoint. Monitor pid/logs/status.log/logs/smoke.log/out/status.log. No restart on timeout. Prior remote r2-qwen-identity-20261110-v1 exit 0 (01:04:05Z–01:04:43Z), launcher 2735622 / inspector 2735623; inspector absent, no remaining job. Code 45f62557d7462f6dd8dfe1070837cc2c68a145c7. Monitor details/evidence in HANDOFF and audit.
-- No weights loaded, generation/GPU experiment or benchmark/protected data access. Identity is local observation, not external authenticity. Synthetic full-model capacity/output validity still NOT_RUN; semantic-review and actual R1 isolation/A03/parity gates remain.
-- Next bind actual identities into bounded synthetic smoke declaration/runner; actual benchmark work awaits curator/environment response (still unanswered). Changes: observations/audit, contract and paired handoff/progress pointers. Preserve owner untracked handoff and standing gates.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: c9c37d01f6f3472ad614aead719cb81b07cb7a37.
+- Actual SYN-SACR-001: profile invalid (seven source-span mismatches), generic structurally valid, selective skipped. Two calls, zero retry/repair. Audit docs/healthtech/audits/ptp-method-first-r2-smoke-20261110/README.md. Actual fp16/eager load succeeded for short authored fixture; no semantic/retrieval success.
+- Job r2-sacr-synthetic-smoke-20261110-v1 exit0, 01:09:47Z–01:11:37Z; launcher2771699/timeout2771701/Python2771702 terminal, no GPU compute processes remain. Code c9c37d01f6f3472ad614aead719cb81b07cb7a37. Logs and raw generation stay private remote; aggregates committed.
+- Next review failed profile contract and design separately versioned quote alignment; no alteration/retry of this attempt. Actual R1 isolation/A03/parity and semantic gates remain open; curator/environment question still unanswered.
+- Changes: smoke results/verification, methods log/contract outcome and paired handoff/progress pointers. Preserve owner untracked handoff and all standing gates. Prior CPU weight inspection used acf03860fb5ee30dc5f2dc1c1c4cb484f63a2e91.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

@@ -311,3 +311,6 @@ Status: DECLARED_PENDING_ISOLATION_AND_INPUT_PINS; NOT_RUN. Integrity comparison
 ## SYN-SACR-001 — 10 Nov 2026
 
 DECLARED_NOT_RUN: synthetic engineering smoke only, not R3/dev research. Fixed authored liquid-flow input, at most profile/generic/selective calls (selective contingent on structurally usable profile), no retries, local fp16/eager Qwen, 8192/4096 input/output token caps, 900s soft / 1200s supervisor deadline. [Full declaration](../audits/ptp-method-first-r2-smoke-20261110/README.md). No benchmark or protected data; actual R1 gates remain open.
+
+### SYN-SACR-001 observed outcome
+Completed 10 Nov, 01:09:47Z–01:11:37Z, code c9c37d01f6f3472ad614aead719cb81b07cb7a37. Two calls; profile EOS complete but invalid source spans (seven mismatches); generic response structurally valid; selective skipped. Zero retries or output repair. Peak allocated16.67GB/reserved17.79GB, total108.552s. Engineering loading works for this short synthetic input; profile contract fails. No benchmark/retrieval outcome or semantic validation. See smoke audit result.json. Any changed profile protocol must have a new version/declaration before a new attempt.

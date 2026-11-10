@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-11-10 08:13:28 Bangkok",
+  "code_sha": "c9c37d01f6f3472ad614aead719cb81b07cb7a37",
+  "status": "ACTUAL_SYNTHETIC_SMOKE_COMPLETED_PROFILE_INVALID",
+  "prelaunch_regressions": 62,
+  "prelaunch_regression_seconds": 0.87,
+  "ruff": "PASS",
+  "launcher_pid": 2771699,
+  "timeout_pid": 2771701,
+  "python_pid": 2771702,
+  "start_utc": "2026-11-10T01:09:47Z",
+  "exit_utc": "2026-11-10T01:11:37Z",
+  "exit_code": 0,
+  "processes_remaining": [],
+  "postrun_gpu_compute_processes": [],
+  "archive_identity_sha256_verified": true,
+  "archive_launcher_lf_and_bash_syntax_verified": true,
+  "model_calls": 2,
+  "selective_calls": 0,
+  "retries": 0,
+  "benchmark_accessed": false,
+  "raw_generated_text": "PRIVATE_REMOTE_ONLY"
+}

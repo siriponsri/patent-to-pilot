@@ -1,5 +1,6 @@
 ﻿{
     "method_first_20261110": {
+        "synthetic_smoke_001": "COMPLETED_PROFILE_INVALID_GENERIC_STRUCTURAL_PASS_SELECTIVE_SKIPPED",
         "qwen_weight_identity": "ACTUAL_CPU_HASHED_FIVE_SHARDS_GENERATION_NOT_RUN",
         "qwen_identity_audit": "docs/healthtech/audits/ptp-method-first-r2-weights-20261110/README.md",
         "r2_generation_adapter": "FAKE_BACKEND_TESTED_ACTUAL_MODEL_NOT_RUN",

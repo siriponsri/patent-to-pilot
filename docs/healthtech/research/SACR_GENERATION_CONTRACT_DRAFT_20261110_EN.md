@@ -34,3 +34,6 @@ The existing query-generation path uses local fp16/eager attention, not the rera
 
 ## Actual weight/decoder observation checkpoint
 The CPU inspection at code acf03860fb5ee30dc5f2dc1c1c4cb484f63a2e91 hashed all five local weight shards, 16,381,516,776 bytes, and matched prior config/tokenizer observations. See ../audits/ptp-method-first-r2-weights-20261110/identity.json and decoder-observation.json. Installed GenerationConfig resolves greedy/one-beam overrides with EOS [151645,151643] and pad 151643; inherited temperature .6/top_k 20/top_p .95 are sampling-only and produced a warning under greedy settings. CPU tokenizer nonthinking template succeeded on one authored 34-token fixture. No weights loaded or generation run; this is not model-source authentication or a GPU capacity result. Runtime must bind these identities before the separately declared synthetic model smoke.
+
+## SYN-SACR-001 actual outcome
+The first short synthetic model smoke loaded fp16/eager successfully but failed profile source-span validation. Seven mismatched spans were found; no repair/retry occurred. Generic JSON passed structure, selective generation was skipped. No semantic or retrieval success claim. Audit: ../audits/ptp-method-first-r2-smoke-20261110/README.md. Source-quote alignment under a new version is a prospective repair option, not an alteration of the recorded attempt.
