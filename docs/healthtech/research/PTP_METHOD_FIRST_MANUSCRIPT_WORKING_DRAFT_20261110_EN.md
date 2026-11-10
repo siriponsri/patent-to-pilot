@@ -91,11 +91,19 @@ total systems under the current conservative interpretation. This draft grants n
 | [First model smoke](../audits/ptp-method-first-r2-smoke-20261110/README.md) | Profile failed source offsets; failure preserved | Reliable extraction or semantic fidelity |
 | [Quote-profile model smoke](../audits/ptp-method-first-r2-quote-smoke-20261110/README.md) | JSON failed before quote alignment | Viable quote-only generation |
 | [Configured grammar CPU check](../audits/ptp-method-first-r2-full-schema-v2-20261110/README.md) | Eight of ten authored token checks matched expectations; two escape cases failed; follow-up timed out | Compatible, resource-feasible generation integration |
+| [Execution-v3 contract](../audits/ptp-method-first-required-generation-20261110/README.md) | Authored integration tests cover generation evidence, sealed costs, original-anchor binding and six-stage finalization | Actual model loading/prompt identity, isolation, corpus-scale resources, fidelity and retrieval effectiveness |
+| [Bounded vector hashing](../audits/ptp-method-first-vector-hash-20261110/README.md) | Canonical hashes preserved with bounded temporary hash buffers on authored arrays | Whole-index copies and deployment memory acceptance |
 
 These are engineering observations, not retrieval results. No SACR pilot, full dev
 comparison or protected comparison is reported. Historical baseline/V4 results belong
 in a separately sourced development-history table, not as fresh SACR evidence. The
 final results table remains unfilled until run receipts and complete denominators exist.
+
+The [readiness refresh](../audits/ptp-method-first-readiness-refresh-20261110/README.md)
+distinguishes implemented orchestration from the still-open scientific gates. A
+proposed rule for discarding an unusable generated family remains an owner protocol
+decision; current failed-stage behavior is retained until a decision is recorded.
+No successful fallback or fixture execution is counted as a successful abstraction.
 
 ## Limitations to retain in the eventual paper
 

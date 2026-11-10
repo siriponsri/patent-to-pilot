@@ -4,15 +4,15 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 10:36:04 Bangkok
+### Latest checkpoint — 2026-11-10 10:39:15 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** b35e71840435a20eaa78de75622671f316b0be59; verify containing checkpoint/remote on takeover.
-- **Latest package:** execution v3 requires typed generation evidence and original-anchor bundle; audit docs/healthtech/audits/ptp-method-first-required-generation-20261110/README.md. Legacy dispatch refused before reservation; journal verifies generation replay before completion and finalization. Old v1/v2 unchanged. Contract is not actual preflight or experiment authorization.
-- **Validation/changes:** 417 related tests PASS including 10 v3 cases; Ruff PASS. Execution/anchor/controller/journal integration, fixtures/regressions, audit and paired progress/next-actions. Authored six-stage run and original-anchor empty/failed/malformed fallback only.
+- **Last verified pushed base:** 3925311a3220aca45a457559a1cac8522455d407; verify containing checkpoint/remote on takeover.
+- **Latest package:** research readiness refresh; audit docs/healthtech/audits/ptp-method-first-readiness-refresh-20261110/README.md. All37 requirements preserved; six stale implementation/draft rows updated. R6 evidence table refreshed. Engineering progress does not close actual scientific gates.
+- **Validation/changes:** 37 unique requirement IDs and30 referenced local files checked; snapshots hashed. Document-only change; prior417 tests remain latest runtime evidence, not rerun. Owner protocol question issued for family rejection; unanswered means keep FAILED behavior. Curator question remains unanswered; not repeated.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** previous model/grammar failures retained; prior diagnostic terminated/absence verified. No new actual data/model/GPU/background job; remote not re-polled. No retries.
-- **Next:** deterministic family rejection with preserved downstream accounting and pre-run methods entry; curator/R1 and real anchor/identity provenance; resources/generation/fidelity then bounded R3/R4 and gated R5/R6.
+- **Next:** await owner protocol decision before family-rejection adoption; independent resource/identity repair may continue; curator supplies isolated environment/allowlisted receipts for actual R1; justified separately declared generation repair/fidelity then bounded R3/R4 and gated R5/R6. Do not substitute indefinite fixture work for scientific gates.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
