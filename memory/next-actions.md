@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest actual Qwen identity:** [CPU observation complete](../docs/healthtech/audits/ptp-method-first-r2-weights-20261110/README.md), five shards 16.38GB / 37.69s, decoder/config and synthetic tokenizer check recorded. No model generation or live job. Next bounded synthetic smoke binding/declaration; curator/semantic gates unchanged.
+
 > **Latest generation adapter:** [62 fake-backend/structural tests pass](../docs/healthtech/audits/ptp-method-first-r2-generation-20261110/README.md), exclusive attempts and strict EOS/limit handling. Actual Qwen NOT_RUN. Next full weight/effective decoder identity and bounded smoke declaration; curator/environment gate unchanged.
 
 > **Latest view components:** [54 tests pass](../docs/healthtech/audits/ptp-method-first-r2-views-20261110/README.md). Compact/parser/lexical screening implemented; role-reversal limitation explicit. Full semantic acceptance remains open. Next generation-path/orchestration and declared resource/review gates; no actual experiment.

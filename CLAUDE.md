@@ -2,12 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:03:36 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:06:42 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 409f99a22eb54ba1827ed5a76e718d84f5052fbe.
-- Latest: PRELAUNCH CPU Qwen shard identity inspector implemented; two synthetic tests pass (0.22s), Ruff pass before status-log wiring. No actual hash result yet. Audit docs/healthtech/audits/ptp-method-first-r2-weights-20261110/README.md.
-- Planned CPU-only remote mtm-20261107/r2-qwen-identity-20261110-v1; not launched at checkpoint. Monitor pid/logs/status.log/logs/inspection.log/identity.json; no timeout-driven restart. No actual Qwen generation/GPU job or benchmark access. Full weight/effective decoder/runtime resource/semantic acceptance gates remain open. Actual R1 isolation/A03/parity still awaits curator/environment response; no answer inferred.
-- Next full weight identity/effective decoding settings and bounded synthetic smoke declaration; no model run before checks. Changes: generation adapter/tests, contract/audit and paired handoff/progress pointers. Preserve owner untracked research handoff and standing single-writer/test/spend/protocol/release gates.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: acf03860fb5ee30dc5f2dc1c1c4cb484f63a2e91.
+- Latest actual CPU inspection: five Qwen shards / 16,381,516,776 bytes hashed in 37.69s; prior config/tokenizer hashes match. Audit docs/healthtech/audits/ptp-method-first-r2-weights-20261110/README.md. Installed decoder configuration and CPU tokenizer nonthinking template checked on authored synthetic input.
+- Remote r2-qwen-identity-20261110-v1 exit 0 (01:04:05Z–01:04:43Z), launcher 2735622 / inspector 2735623; inspector absent, no remaining job. Code acf03860fb5ee30dc5f2dc1c1c4cb484f63a2e91. Monitor details/evidence in HANDOFF and audit.
+- No weights loaded, generation/GPU experiment or benchmark/protected data access. Identity is local observation, not external authenticity. Synthetic full-model capacity/output validity still NOT_RUN; semantic-review and actual R1 isolation/A03/parity gates remain.
+- Next bind actual identities into bounded synthetic smoke declaration/runner; actual benchmark work awaits curator/environment response (still unanswered). Changes: observations/audit, contract and paired handoff/progress pointers. Preserve owner untracked handoff and standing gates.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

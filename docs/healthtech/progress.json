@@ -1,5 +1,7 @@
 ﻿{
     "method_first_20261110": {
+        "qwen_weight_identity": "ACTUAL_CPU_HASHED_FIVE_SHARDS_GENERATION_NOT_RUN",
+        "qwen_identity_audit": "docs/healthtech/audits/ptp-method-first-r2-weights-20261110/README.md",
         "r2_generation_adapter": "FAKE_BACKEND_TESTED_ACTUAL_MODEL_NOT_RUN",
         "r2_view_components": "SYNTHETIC_PASS_SEMANTIC_ACCEPTANCE_POLICY_PENDING",
         "r2_generation_contract": "docs/healthtech/research/SACR_GENERATION_CONTRACT_DRAFT_20261110_EN.md",

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-11-10 08:06:42 Bangkok",
+  "code_sha": "acf03860fb5ee30dc5f2dc1c1c4cb484f63a2e91",
+  "status": "ACTUAL_CPU_OBSERVATION_COMPLETE",
+  "tests": 2,
+  "ruff": "PASS_AFTER_STATUS_LOG_WIRING",
+  "remote_job": "mtm-20261107/r2-qwen-identity-20261110-v1",
+  "launcher_pid": 2735622,
+  "actual_inspector_pid": 2735623,
+  "terminal_status_log": "2026-11-10T01:04:05.455246+00:00 START CPU_IDENTITY\n2026-11-10T01:04:43.145136+00:00 EXIT 0\n",
+  "inspector_process_missing_after_exit": true,
+  "prelaunch_gpu_compute_processes": [],
+  "weight_shards": 5,
+  "weight_bytes": 16381516776,
+  "hash_seconds": 37.69,
+  "prior_config_hashes_match": true,
+  "tokenizer_synthetic_template": "PASS_CPU_ONLY",
+  "generation": "NOT_RUN",
+  "protected_data_access": false
+}
