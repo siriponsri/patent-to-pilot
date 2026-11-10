@@ -1,5 +1,6 @@
 ﻿{
     "method_first_20261110": {
+    "view_failure_policy": "PROPOSED_NOT_ADOPTED_TERMINATION_EVIDENCE_REQUIRED",
     "original_anchor_binding": "319_RELATED_TESTS_PASS_REAL_BASELINE_PROVENANCE_PENDING",
     "mixed_terminal_finalization": "310_RELATED_TESTS_PASS_ANCHOR_BINDING_PENDING",
     "selection_finalization": "305_RELATED_TESTS_PASS_MIXED_COHORT_PENDING",

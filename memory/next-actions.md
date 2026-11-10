@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest view-failure alignment:** proposed family rejection requires actual termination evidence; do not broadly catch infrastructure exceptions. [Audit](../docs/healthtech/audits/ptp-method-first-view-failure-policy-20261110/README.md). Next typed generation receipt binding or independent index-hash memory repair; no new run authorized.
+
 > **Latest anchor binding:** execution-v2 pins original-anchor bundle before work;319 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-anchor-binding-20261110/README.md). Next failed-view policy alignment and resource gates. Real baseline lineage/parity remains unverified.
 
 > **Latest mixed finalization:** terminal ready/missing/review/retrieval-failure keeps full cohort;310 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-mixed-finalization-20261110/README.md). Next original-anchor binding and failed-view policy. No invented fallback; real gates unchanged.

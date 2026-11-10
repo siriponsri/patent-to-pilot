@@ -2,12 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 10:07:11 Bangkok
+## Cross-account checkpoint — 2026-11-10 10:09:41 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed HANDOFF.md; last verified pushed base 2d12d358ec3a62576bd09f5f766bf2df88ef968f.
-- Execution-v2 predeclared original-anchor bundle enables bound profile failure/empty fallback.57 focused/319 related tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-anchor-binding-20261110/README.md. Real baseline provenance/parity NOT_VERIFIED; external baseline costs excluded explicitly.
-- Next failed-view policy alignment, then memory/live caps/preflight. Actual R1 curator/generation/fidelity unchanged; R5 not authorized. No actual jobs, remote not re-polled; local tests exit0.
-- Preserve owner untracked handoff/private anchor data and paired updates.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed HANDOFF.md; last verified pushed base eb9c14931e88dc1f4d9713a9b795eb499ad5c9a6.
+- View-failure policy proposal aligns existing rules, distinguishes terminated unusable family from infrastructure failure; NOT_ADOPTED. Audit docs/healthtech/audits/ptp-method-first-view-failure-policy-20261110/README.md. No code/run; prior319 tests remain historical.
+- Next typed generation termination evidence before policy integration; full-index hash memory repair independently possible. R1 curator/real baseline/generation/fidelity unchanged; R5 not authorized.
+- No actual jobs, remote not re-polled. Preserve owner untracked handoff/private outputs; paired updates mandatory.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

@@ -40,3 +40,7 @@ The first short synthetic model smoke loaded fp16/eager successfully but failed 
 
 ## Prospective quote-profile v1
 A separately versioned exact-quotation interface is implemented and fixture-tested; see SACR_QUOTE_PROFILE_V1_CHANGE_RECORD_20261110_EN.md. No model run has used it. V0 prompt/output and the failed SYN-SACR-001 result are preserved. Unique exact quote alignment computes offsets without changing proposal text, then invokes existing canonical validation. Ambiguity/absence fail, with no fuzzy repair/retry. Semantic gates are unchanged.
+
+## Current failure-policy alignment checkpoint
+
+See [SACR_VIEW_FAILURE_POLICY_DRAFT_20261110_EN.md](SACR_VIEW_FAILURE_POLICY_DRAFT_20261110_EN.md) for the proposed distinction between individual view rejection, normally terminated unusable families, and infrastructure failures. Not adopted; no new attempt. Historical wording above describes earlier checkpoints: both actual model smokes have since failed, and configured grammar probes did not establish a viable generation path. No scientific generation/fidelity gate has passed.

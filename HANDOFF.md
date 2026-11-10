@@ -4,16 +4,16 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 10:07:11 Bangkok
+### Latest checkpoint — 2026-11-10 10:09:41 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Paired updates mandatory.
-- **Last verified pushed base:** 2d12d358ec3a62576bd09f5f766bf2df88ef968f; verify containing checkpoint/remote on takeover.
-- **Latest package:** [original-anchor binding](docs/healthtech/audits/ptp-method-first-anchor-binding-20261110/README.md): execution-v2 predeclares exact private bundle before allocation; profile failure/empty fallback preserves original ordered rankings, mask/exposure and state.57 focused/319 full tests, Ruff PASS. Authored anchors only.
-- **Limits of evidence:** baseline receipt/hash is not historical provenance; real R1 parity/mask/curator needed. Baseline costs explicitly external/not included. V1 unchanged; no late anchor injection. Failed-view family policy and full-scale memory/live caps remain.
-- **Open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered; no mixed-label reads. Generation/fidelity unresolved; R3/R4 absent, R5 not authorized, R6 incomplete.
-- **Failures/jobs:** prior model/grammar failures retained; diagnostic previously terminated/verified absent. No actual data/model/GPU/background job; remote not re-polled. Local session4492 tests terminal exit0. No retries.
-- **Changes:** anchor helper/execution-v2/journal/controller,9 tests and fixture support, audit, paired handoff/progress/next-actions. Preserve owner untracked handoff/private outputs.
-- **Next steps:** (1) resolve failed-view family behavior against declared method policy; (2) full-index memory/live resource/preflight acceptance; (3) curator/environment R1 and real anchor lineage; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
+- **Last verified pushed base:** eb9c14931e88dc1f4d9713a9b795eb499ad5c9a6; verify containing checkpoint/remote on takeover.
+- **Latest package:** [generated-view failure policy alignment](docs/healthtech/audits/ptp-method-first-view-failure-policy-20261110/README.md). Existing per-view rejection versus proposed terminated-family rejection/infrastructure stop distinguished. Controller lacks actual termination evidence; do not broadly catch exceptions as empty successful views. Proposal NOT_ADOPTED, no code/run.
+- **Engineering evidence:** previous319 related tests PASS for original-anchor v2 binding; real baseline lineage/parity unverified. Generation contract now links current policy/status rather than leaving historical no-run statements unqualified.
+- **Open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered; no mixed-label reads. Generation/fidelity unresolved; R3/R4 absent, R5 not authorized, R6 incomplete. Full-index copy/hash memory/live caps pending.
+- **Failures/jobs:** prior model/grammar failures retained; diagnostic previously terminated/verified absent. No actual data/model/GPU/background job; remote not re-polled. No retries.
+- **Changes:** authored policy/audit/generation-contract pointer, paired handoff/progress/next-actions. Links/JSON checked; no code tests required. Preserve owner untracked handoff/private outputs.
+- **Next steps:** (1) typed generation termination/cost/artifact receipt binding before family-rejection integration; (2) independent full-index hash memory/resource repair; (3) curator/environment R1 and real anchor lineage; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
 - **Limits:** no test access/scoring, paid API, training/full re-encode/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Engineering does not finish Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

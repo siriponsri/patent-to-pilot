@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-11-10 10:09:41 Bangkok",
+  "base_commit": "eb9c14931e88dc1f4d9713a9b795eb499ad5c9a6",
+  "type": "SOURCE_POLICY_ALIGNMENT",
+  "policy_status": "PROPOSED_NOT_ADOPTED",
+  "code_changes": false,
+  "new_experiments": "NOT_RUN",
+  "next_requirement": "Bind actual termination evidence before classifying family rejection"
+}
