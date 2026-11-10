@@ -1,18 +1,18 @@
 # Patent-to-Pilot HealthTech Handoff
 
-Status: `RESUMED_PREPARATION_OWNER_DECISIONS_PENDING`
+Status: `OWNER_APPROVED_BOUNDED_DEV_EXECUTION`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 17:54:40 Bangkok
+### Latest checkpoint — 2026-11-10 17:58:27 Bangkok
 
-- **Owner/goal:** Codex chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775 is sole active writer after owner explicitly requested takeover. Previous writer stopped. Existing goal service still BLOCKED; exposed tools cannot resume it; no replacement goal created. New resumed-run blocker audit reset to zero; this turn made fresh preparation progress.
-- **Last verified pushed base:** 85de926818e8f9ed5a162386c9de57e5d0ab0648; local main matched remote main at takeover. Verify containing checkpoint on next takeover.
-- **Latest package:** Owner MTM+DAPFAM continuation reconciled; one consolidated decision request pending for CPU004/bounded run plan, solo runtime-isolation amendment and failure/fidelity policy. Canonical matrix/proposal: docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/README.md.
-- **Validation/changes:** Fresh SSH/process/V100/base-image observations; no research job or container launched. Existing Docker access provides a candidate solo route, not proven isolation. DAPFAM legacy TAC query builder differs from native TA; curator must preserve existing split and export dev TA. Source hash, JSON and diff checks recorded; no old benchmark audit repeated.
-- **Open gates:** Owner answers PENDING; do not infer approval from attached plan. Both benchmark tests remain closed. Runtime-vs-agent isolation limitation explicitly disclosed; owner performs mixed-source staging outside agent. Native TA provenance and actual R1 parity, viable generation, finite human fidelity review, resource peaks and R3/R4 remain open. R5 unauthorized; R6 incomplete.
-- **Jobs/failures:** 2026-11-10T10:51:17Z read-only check: no V100 compute or unclassified project Python process; retained HTTP PID1745699 unchanged. CPU003 terminal FAILED, child absent. No new attempts, model calls, allocation probes, containers or downloads. Recheck live state/shared GPU slot at authorized launch.
-- **Next:** 1. Record answers to the one consolidated decision request; no approval yet. 2. Prepare executable solo-curator staging and scoped runtime/evaluator containers only under accepted isolation model. 3. Predeclare and run CPU004 only after approval. 4. Advance MTM/DAPFAM baseline branches independently when inputs ready, serial GPU. 5. Complete adopted fidelity then bounded pilot/full-dev; never open either test.
+- **Owner/goal:** Codex sole writer in same chat; owner approved bounded continuation. Working under renewed user authority; goal service status last observed BLOCKED, no resume tool. No new goal. Prior blocker audit no longer applies to approved CPU/isolation/failure work.
+- **Last verified pushed base:** bd98dbc93c7a89e6d7d2da9ac89fc568798e2131; verify containing prelaunch checkpoint and origin/main.
+- **Latest package:** Explicit owner decisions captured in docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/OWNER_DECISIONS.md. CPU-ESCAPE-004 declared in docs/healthtech/audits/ptp-cpu-escape004-20261110/; NOT_RUN until separately recorded launch.
+- **Validation/changes:** Same14 payload/schema/candidate/probe hashes as CPU003; corrected archive packaging only. New supervisor enforces120s+5s,8CPU,32GiB address-space cap, existing cooperative slot and terminal/RSS evidence. No actual CPU/model call yet.
+- **Open gates:** CPU004 and bounded stages authorized; solo runtime-isolation amendment and family-rejection policy accepted. Implementation/isolation verification and curator-prepared real dev inputs pending. Owner requests automation-first fidelity proposal instead of100-query full manual review; revised gate NOT_ADOPTED/NOT_RUN. Tests closed; R5 unauthorized.
+- **Jobs/failures:** NEXT launch CPU004 once at /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v2 after fresh preflight and verified pushed archive. Monitor child.json/terminal.json/logs; no restart. CPU003 immutable FAILED. Retained HTTP untouched.
+- **Next:** 1. Verify archive, live resources and dispatch approved CPU004 once. 2. Follow same job to terminal and preserve all cases/failures. 3. Build scoped solo-curator/runtime setup and automation-first fidelity proposal while independent branches proceed. 4. Actual baseline/parity before pilot/full dev; single GPU, no tests.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

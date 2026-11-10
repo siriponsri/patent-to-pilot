@@ -476,3 +476,8 @@ SYN-SACR-003, model integration or R3 authorization. Status DECLARED_NOT_RUN.
 ## CPU-ESCAPE-003 observed result — 2026-11-10 11:03:45 Bangkok
 
 FAILED before all 14 cases at payload hash guard; exit1, zero model calls, 0.0748766s supervisor wall. Child reaped and child/supervisor absent. Git archive CRLF payload differs from declared LF blob; remote equals archive, and CRLF-to-LF reproduces declared hash. No callback result, retry or model dispatch. Original declaration remains unchanged. See [terminal and byte evidence](../audits/ptp-method-first-escape-cpu-result-20261110/README.md). Next local packaging verification before any separately declared attempt. Scientific gates unchanged.
+
+
+## CPU-ESCAPE-004 declaration and owner decisions — 2026-11-10 17:58:27 Bangkok
+
+Owner approved one120s+5s CPU check of unchanged14 cases with byte-stable packaging, and bounded conditional downstream plan. See [declaration](../audits/ptp-cpu-escape004-20261110/README.md) and [exact scope](../audits/ptp-mtm-dapfam-resume-20261110/OWNER_DECISIONS.md). Family-rejection policy prospectively accepted, implementation pending; automation-first fidelity amendment requested, not silently passed. CPU003 unchanged. No experiment dispatched at this declaration checkpoint.
