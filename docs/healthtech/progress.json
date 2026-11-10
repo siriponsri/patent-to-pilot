@@ -1,5 +1,7 @@
 ﻿{
     "method_first_20261110": {
+        "r1_preflight_audit": "docs/healthtech/audits/ptp-method-first-r1-preflight-20261110/README.md",
+        "runtime_preflight": "SYNTHETIC_PASS_RUNNER_INTEGRATION_PENDING",
         "r1_vectors_audit": "docs/healthtech/audits/ptp-method-first-r1-vectors-20261110/README.md",
         "vector_identity": "OBSERVED_HISTORICAL_RECEIPTS_MATCHED_RANKING_PARITY_PENDING",
         "r1_eligibility_audit": "docs/healthtech/audits/ptp-method-first-r1-eligibility-20261110/README.md",

@@ -1,0 +1,14 @@
+{
+  "status": "SYNTHETIC_PASS_REAL_NOT_RUN",
+  "timestamp": "2026-11-10 07:33:00 Bangkok",
+  "base_commit": "b0f4e4c44cbac920985ec9cf257f4cf40afd1617",
+  "tests": 58,
+  "new_cases": 12,
+  "pytest_command": "python -m pytest -q tests/test_mtm_preflight.py tests/test_vector_identity.py tests/test_mtm_input_boundary.py tests/test_mtm_eligibility.py tests/test_dapfam_native.py",
+  "ruff": "PASS",
+  "real_projection": "NOT_RUN",
+  "runner_integration": "PARTIAL_CALLABLE_GATE_ONLY",
+  "ranking_parity": "NOT_RUN",
+  "protected_data_access": false,
+  "gpu_work": false
+}

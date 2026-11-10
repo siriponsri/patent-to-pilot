@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest prospective preflight:** [58 synthetic tests pass](../docs/healthtech/audits/ptp-method-first-r1-preflight-20261110/README.md). Curator projection preserves passage identity and removes roles; callable gate checks pinned projected corpus/vector/model. Next finish query-text/retrieval runner integration, curator staging/isolation handoff, real dev A03/parity. No real projection or new experiment run.
+
 > **Latest native DAPFAM:** [61 tests and 12 differential cases pass](../docs/healthtech/audits/ptp-method-first-r1-dapfam-20261110/README.md). Missing eligible rankings score zero; corpus unchanged across partitions. Real dev data NOT_RUN. Next prospective runtime/identity integration, trusted staging, actual A03/ranking parity.
 
 > **Latest A14 real inspection:** [corpus/vector hashes match historical receipts](../docs/healthtech/audits/ptp-method-first-r1-vectors-20261110/README.md), CPU attempt v2 exit 0; original launcher failure preserved. No running job from this package. Next native DAPFAM parity and prospective runtime identity enforcement; safe staging before real dev A03/ranking parity. A01/A03 and overall R1 are still incomplete.

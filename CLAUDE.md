@@ -2,18 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 10 Nov 2026 (Bangkok)
+## Cross-account checkpoint — 2026-11-10 07:33:00 Bangkok
 
-- Latest native DAPFAM package: 61 targeted tests/Ruff pass, 12 differential cases against pinned public MTEB loader/filter/metric aggregation and pytrec-eval-terrier 0.5.11 pass. Audit: docs/healthtech/audits/ptp-method-first-r1-dapfam-20261110/README.md. Base/last pushed before package 6202c58966e85b3c75d306c14228bb09d0161c74. No real benchmark labels/scores, GPU work or paid calls. Next prospective safe runtime/identity integration, then trusted staging and real dev integrity/parity. Goal ACTIVE, Codex single active writer. This updates the earlier native-parity-pending note below; full MTEB/published-result replication remains NOT_RUN.
-
-
-- Codex is the active single writer; method-first long-run goal ACTIVE. Read the latest Agent takeover state in HANDOFF.md. It supersedes historical Normal-round/activation-only states below.
-- Last pushed commit before this receipt: 1df23a5f81cef4b7cc6eb6045e66c0106ac52627. A14 actual CPU inspection at that revision completed exit 0; no remaining job.
-- R0 inventory, prospective A01 contracts, A03 auditor and A14 identity checks are implemented. 56 targeted tests passed; final vector subset 12 passed; Ruff passed. Actual corpus/vector/model hashes match historical dev receipts for 899,838 families / 1,553,678 passages. See docs/healthtech/audits/ptp-method-first-r1-vectors-20261110/README.md and its verification/report.
-- Initial archived launcher had CRLF and failed before Python; committed blob was LF. Both attempts are preserved; scoped LF attribute and archive/Bash checks fixed v2. Details/PIDs/log locations in HANDOFF.md.
-- Real staging/physical isolation, measured A03, native DAPFAM parity, prospective runner integration and actual ranking parity remain open. No protected-label/ranking/score access, paid calls, GPU experiment or re-encoding.
-- Next: DAPFAM evaluator parity, prospective safe runner/identity enforcement, then trusted curator staging outside agent label access and real dev integrity/parity checks. Preserve existing owner untracked research handoff. Changes in this receipt are audit results and handoff/progress pointers only.
-- Update both HANDOFF.md and CLAUDE.md at every checkpoint; push scoped authorized changes. Keep all owner test/spending/protocol/release gates and one active writer across accounts.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: b0f4e4c44cbac920985ec9cf257f4cf40afd1617.
+- Latest package: main-view curator corpus projection and callable runtime input preflight, [audit](docs/healthtech/audits/ptp-method-first-r1-preflight-20261110/README.md). 58 targeted synthetic tests and Ruff pass. Original-to-projected passage identity and pinned corpus/vector/model checks implemented; query-text/retrieval-runner integration remains incomplete.
+- R0, A01 contracts, A03 auditor, real A14 CPU observation and synthetic native DAPFAM parity are recorded in linked audits. Actual staging/isolation, A03 incidence and ranking parity NOT_RUN. No new jobs, actual corpus projection, protected-label access, GPU work or paid calls. Last remote job completed; live state must be rechecked before launch.
+- Next: finish prospective dev query/runner integration, complete curator procedure and operational handoff, run safe actual dev integrity/parity, then R2. No mixed-label staging in development-agent environment. Hashes do not establish physical isolation.
+- Changed: projection/preflight modules, tests/audit and handoff/progress pointers. Preserve owner untracked research handoff. Update and push both handoffs with scoped work; keep single-writer and all test/spending/protocol/release gates.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
