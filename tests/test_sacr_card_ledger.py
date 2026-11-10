@@ -54,3 +54,30 @@ def test_over_budget_batch_is_not_partially_issued(tmp_path):
     with pytest.raises(InputBoundaryError, match='BUDGET'):
         ledger.reserve(cards() + [extra], expected_head=ledger.snapshot()['head_sha256'])
     assert path.read_bytes() == before
+
+
+def test_owner_amendment_appends_without_reset_and_reserves_two_distinct_pools(tmp_path):
+    path = tmp_path / 'cards'
+    ledger = CardLedger.create(path)
+    original = path.read_bytes()
+    ledger.adopt_paper1_allocation(expected_head=ledger.snapshot()['head_sha256'])
+    assert path.read_bytes().startswith(original)
+    assert ledger.snapshot()['events'] == 1
+    for pool in ('SACR', 'SG'):
+        ledger.reserve([{**c, 'review_pool': pool} for c in cards()],
+                       expected_head=ledger.snapshot()['head_sha256'])
+    assert CardLedger(path).snapshot()['issued_total'] == 60
+    assert ledger.snapshot()['by_pool']['SG']['sentinel'] == 10
+    with pytest.raises(InputBoundaryError):
+        ledger.reserve([{**cards('MTM')[0], 'review_pool': 'SG'}], expected_head=ledger.snapshot()['head_sha256'])
+
+
+def test_amendment_cannot_refund_existing_cards_or_repeat(tmp_path):
+    ledger = CardLedger.create(tmp_path / 'cards')
+    ledger.reserve(cards()[:1], expected_head=ledger.snapshot()['head_sha256'])
+    with pytest.raises(InputBoundaryError):
+        ledger.adopt_paper1_allocation(expected_head=ledger.snapshot()['head_sha256'])
+    other = CardLedger.create(tmp_path / 'other')
+    other.adopt_paper1_allocation(expected_head=other.snapshot()['head_sha256'])
+    with pytest.raises(InputBoundaryError):
+        other.adopt_paper1_allocation(expected_head=other.snapshot()['head_sha256'])

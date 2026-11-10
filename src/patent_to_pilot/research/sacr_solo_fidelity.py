@@ -83,3 +83,22 @@ def review_gate(required, judgments, *, automatic_screen_complete, confirmed_aut
     if not automatic_screen_complete or set(judgments) != keys or any(v != "faithful" for v in judgments.values()):
         return "INCOMPLETE_NO_PASS"
     return "SOLO_SCREEN_AND_SENTINEL_GATE_PASS"
+
+
+def admit_paper1_cards(previously_issued, required):
+    """Owner amendment: DAPFAM SACR30 + shared S/G30; MTM unallocated.
+
+    Each pool cumulatively allows20 escalation and10 sentinel cards across all
+    configurations. A single S/G extraction configuration is shared, not30 each.
+    """
+    prior, new = list(previously_issued), list(required)
+    pools = {'SACR': [], 'SG': []}
+    for card in prior + new:
+        if type(card) is not dict or card.get('review_pool') not in pools or card.get('benchmark') != 'DAPFAM':
+            raise InputBoundaryError('unallocated review pool or benchmark')
+        pools[card['review_pool']].append({k: v for k, v in card.items() if k != 'review_pool'})
+    counts = {}
+    for pool, cards in pools.items():
+        status = admit_cards([], cards)
+        counts[pool] = status['by_benchmark']['DAPFAM']
+    return {'issued_total': len(prior) + len(new), 'by_pool': counts, 'reservation': new}

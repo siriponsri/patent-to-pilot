@@ -1,5 +1,9 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Owner review allocation amendment 2026-11-10
+
+Owner approved DAPFAM SACR30 + sharedS/G30,each20escalation+10sentinel,60global acrossconfigs;MTM0 pendingexplicitallocation,noautomaticborrowing. Existing privateledger amended by hash-linked policy event,not reset;0cardsissued. Receipt docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/allocation-amendment.json.13 ledger/solo tests PASS inclreopen,60DAPFAMcards acrosspools,MTM rejection,no refunds/repeated amendment. Parent solewriter,last pushedc99dc35,no livejobs/modelcalls. Next declare SG corpus/alias sampling and complete screening/failure-policy integration. Failure policy inspection confirmed typed normal-return evidence exists; integration stillPENDING,not falsely reportedcomplete.
+
 ## Durable fidelity-card ledger 2026-11-10
 
 Parent solewriter,last pushedcb6103b. CardLedger implemented: explicit exclusive creation, existing-file-only reopen,OS lock,stale-head checks,append+fsync,hash-linked corruption detection,no refunds/reset.11 ledger/solo tests PASS. Actual private ledger created at sibling _private_artifacts/healthtech/ptp-fidelity-cards-20261110/ledger.jsonl with ZERO cards; aggregate genesis in docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/ledger-genesis.json. Never create replacement if missing/corrupt; inspect existing history. This is durable reservation only,not semantic screening or human decisions; allocation/S-G sampling and screening adapters remain pending. No modelcall/test access/livejob. Next complete prospective configuration/card allocation,screening and failure-policy integration,then bounded native dev.

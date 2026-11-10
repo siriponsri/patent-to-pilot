@@ -2,6 +2,8 @@
 
 Updated: 10 November 2026. Status: DETAILED_PROTOCOL_PROPOSAL / NOT_FROZEN / NOT_RUN.
 
+Owner-approved review allocation amendment: DAPFAM SACR30 + shared S/G extraction configuration30, each up to20 risk/escalation +10 sentinel,60 total across all configurations. MTM allocation0 pending explicit redistribution of remaining cards. No automatic borrowing or reduction of SACR coverage. Existing sampling/critical-error stop/incomplete no-pass rules retained. This replaces prior benchmark-based30/30 allocation, not the full protocol freeze. Corpus/alias sampling specification remains required before S/G extraction/review.
+
 Owner-requested supplement: [DAPFAM paper comparability and Paper53 alignment](DAPFAM-PAPER-COMPARABILITY.md). Preserve primary OUT Recall@200; prospectively add descriptive nDCG@10 from the same rankings for metric alignment, subject to manifest freeze before scores. Published all-query/model-different numbers are contextual, not direct baselines. Adopt exposure and paired win/loss diagnostics with separate treatment of changed candidate pools. Native baseline and new method scores remain NOT_RUN.
 
 [Master](../../../../MASTER-PLAN.md) · [Component/evidence index](../../../../INDEX-PLAN.md) · [Related work](RELATED-WORK-AUDIT.md)

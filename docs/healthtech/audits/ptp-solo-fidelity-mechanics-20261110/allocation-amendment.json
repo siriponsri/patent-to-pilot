@@ -1,0 +1,45 @@
+{
+  "status": "OWNER_APPROVED_AMENDMENT_APPENDED",
+  "before": {
+    "issued_total": 0,
+    "by_benchmark": {
+      "DAPFAM": {
+        "escalation": 0,
+        "sentinel": 0
+      },
+      "MTM": {
+        "escalation": 0,
+        "sentinel": 0
+      }
+    },
+    "head_sha256": "4b3a4a05a3ad95396a73fb7b8568c01b21ddffd7be1cd0f268ee32eda3558f01",
+    "events": 0
+  },
+  "after": {
+    "issued_total": 0,
+    "by_pool": {
+      "SACR": {
+        "escalation": 0,
+        "sentinel": 0
+      },
+      "SG": {
+        "escalation": 0,
+        "sentinel": 0
+      }
+    },
+    "head_sha256": "d4cef98ef06375d51ff5225510b57e969fe0cce38eb0d06ded25d9b38aee2076",
+    "events": 1
+  },
+  "allocation": {
+    "DAPFAM_SACR": 30,
+    "DAPFAM_SG_SHARED": 30,
+    "MTM": 0
+  },
+  "per_pool": {
+    "escalation": 20,
+    "sentinel": 10
+  },
+  "total_cards_all_configurations": 60,
+  "automatic_borrowing": false,
+  "cards_issued": 0
+}
