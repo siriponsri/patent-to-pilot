@@ -27,7 +27,7 @@
     "audit": "docs/healthtech/audits/ptp-st1-takeover-20261110/README.md",
     "packaging": "EXACT_HISTORICAL_BYTES_RECONSTRUCTED_8_TARGETED_TESTS_PASS",
     "native_dapfam_baseline": "DEV_MEASURED_OUT_RECALL200_0.14772_NO_MISSING",
-    "additional_sacr_smoke": "SYN004_PROMPT_REPAIR_DECLARED_25_TESTS_PASS_NOT_RUN",
+    "additional_sacr_smoke": "SYN004_RUNNING_SESSION19221_NO_RETRY",
     "sg_feasibility": "AUTHORIZED_WITH_GATES_NOT_RUN",
     "protected_tests": "CLOSED",
     "publication": "PUSHED_b659a0a126daf159b814d68455ab3bbc14079771_LIVE_VERIFIED",

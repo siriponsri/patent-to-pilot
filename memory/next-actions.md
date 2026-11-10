@@ -1,5 +1,9 @@
 
 
+## SYN004 RUNNING 2026-11-10
+
+Parent solewriter,last pushed9ac075d. Single authorized new smoke dispatched; session19221,container ptp-syn-sacr004-20261110-v1 livePID3946946,Docker child3946859. Remote archive1c89a093e6fbeff12dd0e4ad495218b3ae1bcd71f9c628ff66182a07177d440e/supervisor1afd20a5165d843d04a0ca3da44cf4cad02fd780aeb539bd03864ca697984dcb verified.1800s reservation plus prior182.3919865s;31GiB+overhead,no benchmark mounts,one call,no retry. Monitor SAME handle/container. Terminal pending; next inspect EOS/unchangedvalidator and charge all costs; no fidelity/quality claim.
+
 ## SYN004 single-dispatch readiness 2026-11-10
 
 Parent solewriter,last pushedad3f194.31 supervisor/prompt/profile tests PASS. Archived CRLF candidate rejected locally before dispatch; exact CRLF-to-LF restoration proven against every inherited/new hash, no repin. Raw candidate retained; transport.json binds restored archive, supervisor and pins. No remote attempt yet. New supervisor1800s total,31GiB+1GiB overhead,CPU8,networknone,no benchmark mounts; existing model/grammar/decoder,one call only. PriorGPU182.3919865s,new1800s reservation; retained disk9.886GB plus256MiB under40GiB. Next transfer/hash check then singleSYN004; monitor samehandle/no retry.

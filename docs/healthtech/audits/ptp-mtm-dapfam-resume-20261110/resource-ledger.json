@@ -30,5 +30,11 @@
       "status": "COMPLETED_DEV_ONLY",
       "seconds": 7.977811043150723
     }
-  ]
+  ],
+  "syn004_reservation": {
+    "status": "RUNNING",
+    "seconds": 1800,
+    "session": 19221,
+    "container": "ptp-syn-sacr004-20261110-v1"
+  }
 }
