@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest failure evidence:** 391 related tests pass; verified malformed/non-EOS returns retain raw evidence and costs while remaining FAILED. [Audit](../docs/healthtech/audits/ptp-method-first-generation-failure-evidence-20261110/README.md). Next profile binding/required-evidence execution version, then declared family rejection. No new model attempt; real gates unchanged.
+
 > **Latest generated-view controller:** 382 related tests pass; v3 generation evidence and sealed costs replayed before embedding. [Audit](../docs/healthtech/audits/ptp-method-first-generated-view-controller-20261110/README.md). Next rejected-record/cost preservation, profile binding and required-evidence execution version. No new model attempt; real gates unchanged.
 
 > **Latest generation record binding:** 363 related tests pass; reserved attempts now preserve typed private bindings. [Audit](../docs/healthtech/audits/ptp-method-first-generation-receipt-20261110/README.md). Next controller/replay identity binding before family-rejection adoption. No new model attempt; actual research gates unchanged.

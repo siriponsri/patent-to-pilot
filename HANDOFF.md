@@ -4,15 +4,15 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 10:23:03 Bangkok
+### Latest checkpoint — 2026-11-10 10:26:06 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** fd4cce97f673f50e0e12a0a425e3b69de54c48c3; verify containing checkpoint/remote on takeover.
-- **Latest package:** generation evidence in view controller/replay; audit docs/healthtech/audits/ptp-method-first-generated-view-controller-20261110/README.md. New generated_views API and private v3 results bind original artifact, query/source/run/attempt/arm and declared generator/prompt identity; replay checks sealed costs. No independent execution attestation or failure-policy adoption.
-- **Validation/changes:** 19 new / 382 related tests PASS; Ruff PASS. Controller, journal cost reader, generated-view module/tests, audit and paired progress/next-actions. No actual model attempt. Existing raw v2 path remains explicitly legacy evidence.
-- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Failed callbacks still have unknown journal costs; rejected raw records remain adapter-owned. Full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
+- **Last verified pushed base:** 1cd6908a151eb9f14554f77e5b25b96419f0bce1; verify containing checkpoint/remote on takeover.
+- **Latest package:** sealed rejected-generation evidence and observed costs; audit docs/healthtech/audits/ptp-method-first-generation-failure-evidence-20261110/README.md. Verified non-EOS/malformed return stays FAILED with private raw/binding output and validated costs. Unknown remains null. Invalid identity/cost/infrastructure stays unknown. Disk error leaves unsealed reservation; no retry.
+- **Validation/changes:** 391 related tests PASS; Ruff PASS. Typed generation failure, journal preservation, regression tests, audit and paired progress/next-actions. No actual model attempt or family-rejection adoption.
+- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Profile-generation binding and required-evidence execution version pending; full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** previous model/grammar failures retained; prior diagnostic terminated/absence verified. No new actual data/model/GPU/background job; remote not re-polled. No retries.
-- **Next:** preserve rejected generation/observed costs within sealed failure evidence; profile-generation binding and new execution version requiring typed evidence; deterministic family rejection and pre-run methods entry; curator/R1 and real anchor provenance; resources/generation/fidelity then R3/R4 and gated R5/R6.
+- **Next:** profile-generation binding plus new execution version requiring typed evidence; deterministic family rejection with pre-run methods entry and downstream accounting; curator/R1 and real anchor provenance; resources/generation/fidelity then R3/R4 and gated R5/R6.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

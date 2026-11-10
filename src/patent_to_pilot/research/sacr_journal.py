@@ -12,6 +12,7 @@ from patent_to_pilot.research.sacr_execution import bind_execution
 from patent_to_pilot.research.sacr_anchor import bind_anchor_bundle
 from patent_to_pilot.research.sacr_outcomes import METRICS, summarize_costs
 from patent_to_pilot.research.sacr_run_reconcile import reconcile_run, validate_plan
+from patent_to_pilot.research.sacr_generated_view import GenerationEvidenceFailure
 
 
 def _write(path, value):
@@ -170,9 +171,18 @@ class DevStageJournal:
             output_hash = _write(path / 'output.json', output)
         except BaseException as error:
             metrics = {key: None for key in METRICS}
+            failure_output_hash = None
+            if (type(error) is GenerationEvidenceFailure and
+                    error.output['query_id'] == slot['query_id'] and
+                    error.output['kind'] == slot['stage'] and
+                    error.output['attempt_id'] == attempt_id):
+                metrics = deepcopy(error.metrics)
+                # Preserve the raw verified return before sealing FAILED. If this
+                # write fails, leave the attempt unsealed; never invent completion.
+                failure_output_hash = _write(path / 'output.json', error.output)
             metrics['operation_wall_seconds'] = time.monotonic() - start
             status = 'INTERRUPTED' if isinstance(error, (KeyboardInterrupt, SystemExit)) else 'FAILED'
-            self._terminal(path, slot, status, type(error).__name__, metrics)
+            self._terminal(path, slot, status, type(error).__name__, metrics, failure_output_hash)
             raise
         self._terminal(path, slot, 'COMPLETED', None, metrics, output_hash)
         return output

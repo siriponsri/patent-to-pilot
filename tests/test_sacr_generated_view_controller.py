@@ -82,7 +82,12 @@ def test_unusable_generation_never_becomes_successful_empty_view(tmp_path, kind,
     with pytest.raises(RuntimeError if case == 'infrastructure' else InputBoundaryError):
         controller.generated_views('q', kind, work)
     receipt, output = controller.journal.read_terminal_attempt(kind)
-    assert receipt['status'] == 'FAILED' and output is None
+    assert receipt['status'] == 'FAILED'
+    if case in ('non_eos', 'malformed'):
+        assert output['format'] == 'sacr-generation-failure-v1'
+        assert output['generation_artifact_utf8'].encode() == raw
+    else:
+        assert output is None
     with pytest.raises(InputBoundaryError):
         controller.embedding_inputs('q')
 
