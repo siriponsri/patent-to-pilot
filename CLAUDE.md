@@ -2,6 +2,8 @@
 
 ## Active ST1 takeover — 2026-11-10 21:15 Bangkok
 
+**DAPFAM diagnosis resolved:** historical corpus CRLF bytes reproduce pinned hash, normalizedLF equals new payload; exact-byte reconstruction fix18/18 PASS, no repin. Fresh v2 stage pending curator GO under existing diagnosed-repair authority/caps; v1 failure preserved. Native-staging receipt has source proof and bounded next action. No stage running at checkpoint.
+
 **21:34 terminal:** curator v1 FAILED before destination,session72462 terminal,16.312s,peak3.644GB,noGPU. One read-only diagnostic underway under curator role, not staging retry; no protected values return. Safe CLI error categories17/17 tests PASS. See HANDOFF/attempt-v1 receipt; earlier RUNNING superseded.
 
 **RUNNING curator:** child10184/session72462 under dapfam_curator, private supervisor`../_private_artifacts/healthtech/ptp-dapfam-native-dev-20261110-v1-supervisor`; one attempt,31GiB,CPU8,1800s,output8GiB,noGPU. Monitor same process, never restart from timeout. Latest pushedaf6ba97; source stage66405ab unchanged. No protected results return; completion pending. See HANDOFF.

@@ -1,5 +1,11 @@
 # Native DAPFAM curator preparation
 
+## Verified v1 cause and bounded v2 preparation
+
+[Read-only diagnostic](diagnosis-v1.json) proves all4 pins/split/count/type checks pass; earliest mismatch is corpus serialization hash. [Byte-only proof](newline-proof-v1.json): historical328,999,080bytes SHA42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d contains45,336 CRLF separators; normalize LF gives328,953,744bytes SHA0d57b65bb9f314dab82e6a77018a42bd9e824fa9fe9b6f75ee8eb475b216613b, exactly newly derived serialization. LF→CRLF reconstruction equals historical bytes. No corpus contents/labels returned to parent. Diagnostics10.75s and2.641s, no stage calls/model calls.
+
+Fix accepts only LF serialization or its CRLF record-separator form if it equals the existing exact historical hash. No changed pin or semantic rewrite; manifest declares separator form.18/18 staging/native tests PASS, including exact historical restoration and refusal on real content change. V1 remains FAILED. A fresh v2 projection is the next bounded action under approved diagnosed-repair authority, with same31GiB/1800s/CPU8/8GiBoutput caps, prior attempts preserved, no automatic retry on further failure. Curator must recheck absent v2 destination/free disk and source revision before GO.
+
 ## Attempt v1 terminal failure — 21:34 Bangkok
 
 Single real curator attempt FAILED before destination creation; no completion marker or output corpus. [Terminal evidence](attempt-v1.json): child10184/session72462 exit1, supervisor16.312s, child15.344s, peak committed memory3,644,051,456bytes,31GiB cap, no timeout/model/GPU calls. Generic handled input error initially hid exact category. No staging retry. Curator authorized one separate <=120s read-only diagnostic under same31GiB/CPU8 limits to compare pinned hashes, schema/counts and serialization; no dataset writes or protected values returned. Exact cause pending.

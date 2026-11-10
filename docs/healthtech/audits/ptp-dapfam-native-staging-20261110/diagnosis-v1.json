@@ -1,0 +1,42 @@
+{
+  "diagnosis": {
+    "status": "MISMATCH_CONFIRMED",
+    "checks": {
+      "all_source_hashes_match": true,
+      "corpus.parquet_expected_columns_present": true,
+      "queries.parquet_expected_columns_present": true,
+      "qrels_all.parquet_expected_columns_present": true,
+      "split_assignment_present": true,
+      "split_values_exact_dev_test": true,
+      "split_counts_match474_773": true,
+      "corpus_ids_unique": true,
+      "corpus_text_types_valid": true,
+      "corpus_count_matches45336": true,
+      "canonical_corpus_hash_matches": false
+    },
+    "read_only": true,
+    "staging_called": false,
+    "source_sha256": {
+      "corpus.parquet": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6",
+      "queries.parquet": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe",
+      "qrels_all.parquet": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74",
+      "split.json": "dd76c019ee74c8d256e182ecfb329f9235638c1ecf9d2c7b1fa8073c4958e6dc"
+    },
+    "corpus_rows": 45336,
+    "canonical_corpus_sha256": "0d57b65bb9f314dab82e6a77018a42bd9e824fa9fe9b6f75ee8eb475b216613b",
+    "canonical_corpus_bytes": 328953744,
+    "first_failed_invariant": "canonical_corpus_hash_matches"
+  },
+  "resources": {
+    "status": "COMPLETED",
+    "pid": 15356,
+    "process_exit_code": 0,
+    "wall_seconds": 10.75,
+    "timeout_seconds": 120,
+    "memory_limit_bytes": 33285996544,
+    "max_cpu_affinity": 8,
+    "model_calls": 0,
+    "gpu_calls": 0,
+    "automatic_retries": 0
+  }
+}

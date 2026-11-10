@@ -48,8 +48,15 @@ def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination
     if len(corpus) != expected_corpus:
         raise InputBoundaryError("corpus count mismatch")
     corpus_payload = jsonl_bytes(sorted(corpus, key=lambda r: r["id"]))
+    corpus_newline = "LF"
     if hashlib.sha256(corpus_payload).hexdigest() != expected_corpus_sha256:
-        raise InputBoundaryError("corpus differs from historical vector input")
+        # Historical Windows writer translated record separators to CRLF.
+        # Accept only reconstruction of the exact pinned bytes, never a new pin.
+        historical_payload = corpus_payload.replace(b"\n", b"\r\n")
+        if hashlib.sha256(historical_payload).hexdigest() != expected_corpus_sha256:
+            raise InputBoundaryError("corpus differs from historical vector input")
+        corpus_payload = historical_payload
+        corpus_newline = "CRLF_EXACT_HISTORICAL_BYTES"
     dev_queries, seen_queries = [], set()
     for row in query_rows:
         key = str(row["query_id"])
@@ -109,6 +116,7 @@ def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination
     common = {"dataset_revision": DATASET_REVISION, "mteb_revision": MTEB_REVISION,
               "source_sha256": source_hashes, "split": "dev", "query_view": "TA", "corpus_view": "TAC",
               "input_queries": len(dev_queries), "corpus_families": len(corpus), "candidate_policy": "full"}
+    common["corpus_record_newline"] = corpus_newline
     def manifest(folder, value):
         return write(folder / "manifest.json", (json.dumps(value, sort_keys=True, indent=2) + "\n").encode())
     runtime_digest = manifest(runtime, {**common, "format": "ptp-dapfam-runtime-dev-v1", "files": runtime_files})

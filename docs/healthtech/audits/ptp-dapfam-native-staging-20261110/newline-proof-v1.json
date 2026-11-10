@@ -1,0 +1,28 @@
+{
+  "diagnosis": {
+    "status": "READ_ONLY_BYTE_PROOF",
+    "staging_called": false,
+    "rows_parsed": 0,
+    "historical_raw_bytes": 328999080,
+    "historical_raw_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+    "historical_raw_matches_pin": true,
+    "lf_bytes": 328953744,
+    "lf_sha256": "0d57b65bb9f314dab82e6a77018a42bd9e824fa9fe9b6f75ee8eb475b216613b",
+    "lf_matches_new_canonical_serialization": true,
+    "crlf_reconstruction_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+    "crlf_reconstruction_equals_historical_bytes": true,
+    "CRLF_count": 45336
+  },
+  "resources": {
+    "status": "COMPLETED",
+    "pid": 13004,
+    "process_exit_code": 0,
+    "wall_seconds": 2.640999999974156,
+    "timeout_seconds": 120,
+    "memory_limit_bytes": 33285996544,
+    "max_cpu_affinity": 8,
+    "model_calls": 0,
+    "gpu_calls": 0,
+    "automatic_retries": 0
+  }
+}

@@ -73,3 +73,14 @@ def test_cli_errors_expose_only_fixed_categories():
     assert module.safe_failure_code(InputBoundaryError("corpus count mismatch")) == "CORPUS_COUNT"
     assert module.safe_failure_code(InputBoundaryError("PRIVATE_SOURCE_TEXT")) == "UNCLASSIFIED_INPUT_BOUNDARY"
     assert module.safe_failure_code(KeyError("PRIVATE_ID")) == "MISSING_FIELD"
+
+
+def test_exact_historical_crlf_corpus_bytes_restored_without_repinning(tmp_path):
+    c, q, r, split, kw = fixture()
+    historical = jsonl_bytes([{"id": "f1", "title": "Corpus", "abstract": "A", "claims": "C"}]).replace(b"\n", b"\r\n")
+    kw["expected_corpus_sha256"] = hashlib.sha256(historical).hexdigest()
+    stage_native_dev(c, q, r, split, tmp_path / "stage", **kw)
+    assert (tmp_path / "stage/runtime-dev/corpus.jsonl").read_bytes() == historical
+    c[0]["title_en"] = "changed"
+    with pytest.raises(InputBoundaryError, match="historical vector input"):
+        stage_native_dev(c, q, r, split, tmp_path / "different", **kw)

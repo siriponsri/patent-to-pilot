@@ -2,6 +2,8 @@
 
 ## HT-EVENT-ST1-TAKEOVER — 2026-11-10 21:15 Bangkok
 
+**HT-EVENT-DAPFAM-NEWLINE-PROVED:** HT-IDX29 canonical LF328953744bytes hash0d57b65... matches historical corpus after CRLF normalization; historical328999080bytes hash42f895... exact reconstructed bytes. [Proof](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/newline-proof-v1.json). Exact-hash reconstruction implemented18/18 tests PASS; no semantic/pin changes. Fresh v2 stage pending sole-curator GO, existing caps; native baseline NOT_RUN, v1 retained FAILED.
+
 **HT-EVENT-CURATOR-V1-FAILED:** terminal input failure before destination;16.312s/3.644GBpeak,exit1,no model/GPU,all source pins unchanged. [Receipt](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/attempt-v1.json). Curator read-only bounded diagnosis permitted; no stage retry. CLI redaction-safe static error codes implemented,17/17 staging/native tests PASS. Native baseline still NOT_RUN. Prior RUNNING event historical.
 
 **HT-EVENT-CURATOR-DISPATCH:** single real stage RUNNING, child10184/session72462 startedUnix1794321125.1408741; curator monitors own handle. Code66405ab, publicationaf6ba97. Final launcher hash603051554e0c5ea85982ebde6e71e855c1a314cc8315a1048b1d485286bc1ce3;31GiB/CPU8/1800s/8GiBoutput, noGPU. Native-staging audit and paired handoff contain scoped paths; terminal receipt pending, no score/protected output.
