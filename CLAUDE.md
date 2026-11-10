@@ -4,6 +4,8 @@ This file is a project-local continuation guide. `AGENTS.md`, the current owner 
 
 ## Cross-account checkpoint — 10 Nov 2026
 
+- **Latest A14 correction:** first CPU launcher at `bfc12bb` (PID 2418646) failed before Python due to CRLF. Preserve original attempt/nohup log. Corrected LF version targets distinct `mtm-20261107/r1-vector-identity-20261110-v2`, with same log/output names; verify pushed archive before launch. Codex active, goal ACTIVE; no actual inspection result yet. Details in A14 audit/HANDOFF.md.
+
 - **A14 launch checkpoint (latest):** implementation/56 tests pass; CPU-only real identity inspection PLANNED after publication. See `docs/healthtech/audits/ptp-method-first-r1-vectors-20261110/README.md` and HANDOFF.md for exact job/log/PID paths and no-restart rule. Base/last pushed before package `f3f3a42b3b78097a0b23f197e2efc695b31da277`; Codex active, goal ACTIVE. No label input, GPU job, paid call or re-encoding. Next record actual inspection then DAPFAM parity/integration; physical isolation and real ranking parity remain unverified. Preserve untracked owner research handoff.
 
 - **Latest A03 checkpoint:** exact frozen-mask dev auditor implemented and covered by 44 targeted tests including CLI; real dev audit NOT_RUN. See `docs/healthtech/audits/ptp-method-first-r1-eligibility-20261110/README.md`. Base/last pushed before package: `9378a2c4e777d639cb7f78f8775be575883c0b12`. Codex active, goal ACTIVE; no new jobs/spend/protected-label access. Next A14, DAPFAM parity and runtime integration; trusted staging still required for real dev checks. Details/changed files in HANDOFF.md. Earlier A03 implementation-next notes are superseded; A01/A03 are not closed.

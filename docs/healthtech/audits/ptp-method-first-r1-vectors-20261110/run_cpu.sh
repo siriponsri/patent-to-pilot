@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eu
-J=/home/chaw/patent-to-pilot-jobs/mtm-20261107/r1-vector-identity-20261110
+J=/home/chaw/patent-to-pilot-jobs/mtm-20261107/r1-vector-identity-20261110-v2
 M=/home/chaw/patent-to-pilot-jobs/mtm-20261107
 B=/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031
 cd "$J/code"
