@@ -1,6 +1,6 @@
 # Claude continuation instructions for Patent-to-Pilot
 
-Independent bundle review found stale-bundle critic reuse and omitted lexical receipt gaps. Fixed with same-attempt critic reservation messages-hash verification and exact replay of the complete lexical screen. Eleven bundle/critic fixtures PASS, including both regressions; caller must bind reservation and normal-EOS/cost record from the same retained attempt. No critic/model call. Final repair rereview pending at this checkpoint. Failed quoted local test-edit command made no changes and was replaced with apply_patch; no experiment attempt. Current GPU container3052076 still RUNNING at23:37:59UTC,2normal structural-pending returns,3attemptdirs; no semantic PASS.
+Independent bundle review found stale-bundle critic reuse and omitted lexical receipt gaps. Fixed with same-attempt critic reservation messages-hash verification and exact replay of the complete lexical screen. Eleven bundle/critic fixtures PASS, including both regressions; caller must bind reservation and normal-EOS/cost record from the same retained attempt. No critic/model call. Independent reviewer rechecked both repairs and found them closed under the documented same-attempt upstream contract. Failed quoted local test-edit command made no changes and was replaced with apply_patch; no experiment attempt. Current GPU container3052076 still RUNNING at23:37:59UTC,2normal structural-pending returns,3attemptdirs; no semantic PASS.
 
 ## Owner interrupted-query exception and bundle screening 2026-11-11T06:36:17+07:00
 
