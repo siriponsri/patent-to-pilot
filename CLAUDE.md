@@ -2,12 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:41:13 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:44:13 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed HANDOFF.md; last verified pushed base 95efd9d2ce550d633038efd818600fac6bb66542.
-- Replayable private view v2 + embedding-input gate; degeneracy explicit, review/failed/changed inputs refused.270 related tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-view-replay-20261110/README.md.
-- Next reserved embedding adapter and text/vector receipts; no actual embedding dispatched. Typed finalization/acquisition/anchor/live caps incomplete. R1 curator/generation/fidelity unchanged, R5 not authorized.
-- No actual jobs, remote not re-polled. Private output must not enter Git. Preserve owner untracked handoff; paired updates mandatory.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed HANDOFF.md; last verified pushed base 483df9fbf78e900c3498709e51a1eaed1f2d9137.
+- Reserved injected embedding, shared text row plan and verified row/encoder/vector receipts.279 related tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-embedding-controller-20261110/README.md. Fake two-dimensional encoder only.
+- Next bind index/mask and map sealed vectors to acquisition/selection. Actual encoder preflight, typed finalization/anchor/live caps pending. R1 curator/generation/fidelity unchanged; R5 not authorized.
+- No actual jobs; remote not re-polled. Preserve owner untracked handoff, private outputs and paired updates.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

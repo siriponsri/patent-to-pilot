@@ -4,16 +4,16 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 09:41:13 Bangkok
+### Latest checkpoint — 2026-11-10 09:44:13 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Paired updates mandatory.
-- **Last verified pushed base:** 95efd9d2ce550d633038efd818600fac6bb66542; verify containing checkpoint and remote on takeover.
-- **Latest package:** [view replay / embedding-input gate](docs/healthtech/audits/ptp-method-first-view-replay-20261110/README.md): private v2 response/profile-bound evidence replayed before preparing both arms; stopped/changed views rejected, generated-view degeneracy explicit.270 tests (21 SACR files + MTM bound runner), Ruff PASS. No embedding dispatch.
-- **Scope:** inputs only; actual embedding receipts, acquisition/selection, typed view finalization, failed-generation policy, anchor/index provenance and live caps remain. Existing v1 artifacts not rewritten. Private outputs never committed; lexical pass is fidelity pending.
+- **Last verified pushed base:** 483df9fbf78e900c3498709e51a1eaed1f2d9137; verify containing checkpoint/remote on takeover.
+- **Latest package:** [reserved embedding controller](docs/healthtech/audits/ptp-method-first-embedding-controller-20261110/README.md): shared exact-text row plan, adapter after reservation, row/encoder/plan/vector-byte and unit-float32 checks, private JSON replay.279 tests (22 SACR files + MTM bound runner), Ruff PASS. Fake two-dimensional encoder only.
+- **Scope:** structural receipts not actual encoder provenance. Next map sealed vectors to acquisition/selector with index/mask identity; real model preflight, dimension compatibility, typed finalization/anchor and live caps incomplete.
 - **Open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered, no mixed-label reads. Generation/fidelity unresolved; R3/R4 absent, R5 not authorized, R6 incomplete.
-- **Failures/jobs:** prior model/grammar failures preserved; diagnostic process previously terminated/verified absent. No actual data/model/GPU/background job; remote not re-polled. No retries.
-- **Changes:** view-result helper/controller/tests/audit, paired handoff/progress/next-actions. Preserve owner untracked handoff.
-- **Next steps:** (1) reserved embedding adapter/text-to-vector binding; (2) acquisition/selection and typed finalization/anchor evidence/live budgets; (3) curator/environment for R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
+- **Failures/jobs:** prior model/grammar failures preserved; diagnostic process previously terminated/verified absent. No actual data/model/GPU/background jobs; remote not re-polled. No retries.
+- **Changes:** embedding helper/controller/tests/audit, paired handoff/progress/next-actions. Preserve owner untracked handoff; private vectors/text never committed.
+- **Next steps:** (1) bound index/mask + mapped vector acquisition/selection; (2) typed finalization/anchor/live budgets and failed-generation policy; (3) curator/environment for R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
 - **Limits:** no test access/scoring, paid API, training/full re-encode/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Engineering does not finish Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

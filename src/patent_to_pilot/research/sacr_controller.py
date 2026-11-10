@@ -7,6 +7,7 @@ from patent_to_pilot.research.sacr_journal import DevStageJournal
 from patent_to_pilot.research.sacr_profile_result import profile_result
 from patent_to_pilot.research.sacr_components import digest
 from patent_to_pilot.research.sacr_view_result import view_result
+from patent_to_pilot.research.sacr_embedding import embedding_plan, bind_embeddings
 
 
 class BoundProfileController:
@@ -110,3 +111,24 @@ class BoundProfileController:
                              'no_generated_view_retained': replayed['no_generated_view_retained']}
         return {'query_id': query_id, 'components': deepcopy(canonical['components']),
                 'arms': results, 'semantic_status': 'unknown', 'fidelity_review': 'REQUIRED'}
+
+    def embed(self, query_id, adapter):
+        """Reserve once, then call an injected adapter on detached planned text rows.
+
+        Adapter returns (float32 unit vectors, identity receipt, cost metrics).
+        Its receipt is checked, not trusted as proof of actual encoder execution.
+        Private small per-query vectors are journaled as float32-replayable JSON.
+        """
+        prepared = self.embedding_inputs(query_id)
+        plan = embedding_plan(prepared)
+        encoder = self.journal.execution['identities']['encoder_manifest']
+
+        def work():
+            vectors, receipt, metrics = adapter(deepcopy(plan), encoder)
+            matrix = bind_embeddings(plan, vectors, receipt, expected_plan_sha256=plan['plan_sha256'],
+                                     expected_encoder_sha256=encoder)
+            return {'format': 'sacr-embedding-stage-v1', 'query_id': query_id, 'plan': plan,
+                    'receipt': deepcopy(receipt), 'vectors_float32': matrix.tolist(),
+                    'semantic_status': 'unknown', 'fidelity_review': 'REQUIRED'}, metrics
+
+        return self.journal.execute(self._attempts[query_id, 'embedding'], work)
