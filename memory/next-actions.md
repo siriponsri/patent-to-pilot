@@ -1,5 +1,9 @@
 
 
+## Completed-generation rejection policy 2026-11-10
+
+Parent solewriter,last pushed2800e6e. Versioned native-runner profile assessment added:rawhash/cost/limit binding first; completed unusable generation rejected/charged withoutrepair/retry; INPUT_LIMIT separate stop; unknown/infra/tampered state stops. Failedprofile cannot supplycompact;anchor needsindependentbinding.38 policy/receipt testsPASS,no modelcall. Receipt docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/REJECTION-POLICY.md. Doesnot rewrite oldFAILED journals; production native runner/generic-selective continuation/fidelity screening stillpending. Next build bounded100-native-query fidelity generation withfixedsample/prompt/resource declarations and private evidence,then automatedscreen/review before retrieval. SGfixedconfigfailed;no newSGtrialauthorized. No livejobs/testsclosed.
+
 ## S/G configuration feasibility FAILED 2026-11-10
 
 Parent solewriter,last pushed296ed0c. One predeclared deterministic100record extraction configuration executed:5/100families,6records,0cross-family exactalias pairs,95empty;43cue segments/24overlength abstentions. GateFAIL_NO_CROSS_FAMILY_CANDIDATES and insufficient10sentinel coverage; no fullcorpus/graph/pilot dispatch.11 fixturesPASS but semantic fidelity NOT_ASSESSED.1.797sCPUwall,0.047sextract,54639privatebytes,noGPU/model/cards. Audit docs/healthtech/audits/ptp-sg-feasibility-20261110/README.md. Private recordhash289c28eccd2d9a6fcd862dbe736b4c80d63e6da6725c20eb004633ba240b96f7. Stop this configuration,no automatic widening/retrial; not universalS/G impossibility. SG30cards remainunissued/notautomaticallytransferable. Continue independentSACR failure/screening/runtimeintegration;report negativebranch. No livejobs/testsclosed.

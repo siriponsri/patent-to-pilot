@@ -1,0 +1,7 @@
+# Completed-generation profile rejection policy
+
+Implemented `sacr_rejection_policy.assess_profile_attempt`, version sacr-completed-family-rejection-v1. It first binds raw terminal-record bytes, response digest, token/call limits and complete costs. Bad caller/source contracts, artifact mutation, infrastructure exceptions and unknown/RUNNING/FAILED/INTERRUPTED states stop rather than becoming rejections. INPUT_LIMIT is a distinct no-model-call stop.
+
+For verified normally returned generated records, non-EOS/output-limit responses or invalid EOS profile JSON/envelope/quote acceptance yield REJECTED_GENERATED_FAMILY with unchanged evidence and all costs. No sorting, JSON repair, replacement call or retry. A failed profile cannot supply compact; independently bound original anchor may be used only through a separately checked path. Accepted structure remains FIDELITY_PENDING, never semantic PASS. Review ambiguity in a structurally valid profile is not converted into a harmless rejection.
+
+38 policy/generation-receipt fixtures PASS. No actual model calls. This function is ready for the bounded native generation runner; it does not rewrite old FAILED journal receipts, bypass their seals or by itself implement controller retrieval continuation. Actual process termination still requires external supervisor verification. Generic/selective rejected-family integration and independently valid compact/anchor continuation remain unfinished. Raw outputs and per-query evidence must remain private.
