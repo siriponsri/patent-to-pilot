@@ -4,17 +4,17 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 09:35:41 Bangkok
+### Latest checkpoint — 2026-11-10 09:38:23 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Paired updates mandatory.
-- **Last verified pushed base:** 30adb67bdbea1a6e281fdf9bc4f94bf2b822aab0; incoming account verifies containing checkpoint and remote.
-- **Latest package:** [typed profile reconciliation](docs/healthtech/audits/ptp-method-first-typed-reconcile-20261110/README.md): sealed output read, source binding, canonical result recomputation; distinguishes completed transport/failed extraction from exception failure.253 tests (19 SACR files + MTM bound runner), Ruff PASS. No relabelled empty or fabricated failure.
-- **Scope:** record-level consistency only; prospective scheduling/view acceptance, original anchor attestation, actual artifact preflight and live caps incomplete. Typed output includes private allowed source; never commit real output. Legacy untyped journal not a production approval path.
-- **Prior/open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered; no mixed-label reads. Generation/fidelity gates unresolved; R3/R4 absent, R5 not authorized, R6 incomplete.
-- **Failures/jobs:** prior model/grammar failures preserved; diagnostic process previously terminated/verified absent. No new actual data/model/GPU/background job; remote not re-polled. No automatic retries.
-- **Changes:** canonical result helper, controller refactor, journal/reconciler and six tests, audit, paired handoff/progress/next-actions. Owner untracked handoff preserved.
-- **Next steps:** (1) prospective typed scheduling/view acceptance so stopped profile cannot dispatch work; (2) anchor/retrieval evidence and live budgets; (3) curator/environment for R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
-- **Limits:** no test access/scoring, paid API, training/full re-encode/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Engineering checks do not complete Goal.
+- **Last verified pushed base:** 9c2b3e66ad73206344c4ab067e17a4a6a47137a5; verify containing checkpoint and remote before takeover.
+- **Latest package:** [prospective view scheduling](docs/healthtech/audits/ptp-method-first-view-controller-20261110/README.md): sealed dependency read and canonical profile recheck before view reservation/adapter; generic ID/source only, selective detached profile; existing screening/compact/caps.263 tests (20 SACR files + MTM bound runner), Ruff PASS.
+- **Scope:** matched factorial arms only; standalone generic baseline unchanged. Lexical pass is fidelity pending. Next typed view reconciliation, downstream scheduling/failed-view behavior, anchor attestation and resource guards. General journal can bypass controller; no complete production runner.
+- **Open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered; no mixed-label reads. Generation/fidelity open; R3/R4 absent, R5 not authorized, R6 incomplete.
+- **Failures/jobs:** prior model/grammar failures preserved, timed-out diagnostic previously terminated/verified absent. No actual data/model/GPU/background jobs this package; remote not re-polled. No retries.
+- **Changes:** journal/controller,10 tests, audit, paired handoff/progress/next-actions. Preserve owner untracked handoff; private outputs never committed.
+- **Next steps:** (1) typed view evidence/downstream decisions; (2) embedding/retrieval and anchor attestation/live budgets; (3) curator/environment R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
+- **Limits:** no test access/scoring, paid API, training/full re-encode/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Engineering does not finish Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
 

@@ -2,12 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:35:41 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:38:23 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 30adb67bdbea1a6e281fdf9bc4f94bf2b822aab0.
-- Sealed typed profile outputs recomputed in reconciliation; completed transport/failed extraction handled without relabel.253 related tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-typed-reconcile-20261110/README.md.
-- Next prospective typed scheduling/view acceptance; anchor attestation, actual preflight/resources remain. Source/profile stage output is private. Legacy untyped records not production approval.
-- No actual data/model/GPU jobs, remote not re-polled. Curator/R1/generation/fidelity gates unchanged; R5 not authorized. Preserve owner untracked handoff and paired updates.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed state HANDOFF.md; last verified pushed base 9c2b3e66ad73206344c4ab067e17a4a6a47137a5.
+- Prospective profile-to-view scheduling and sealed dependency read; generic gets no profile, selective detached profile.263 related tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-view-controller-20261110/README.md.
+- Next typed view evidence/downstream scheduling; actual artifacts, anchor attestation/resource guards and R1/generation/fidelity still open. No actual jobs, remote not re-polled; R5 not authorized.
+- Preserve prior failures/owner untracked handoff. Paired updates mandatory. Private outputs never committed.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

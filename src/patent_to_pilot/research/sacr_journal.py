@@ -94,6 +94,28 @@ class DevStageJournal:
         path, slot = self._reserve(attempt_id)
         self._terminal(path, slot, 'SKIPPED', reason, None)
 
+    def read_completed_output(self, attempt_id):
+        """Read a sealed dependency, never infer completion from a reservation."""
+        self._check_bindings()
+        if attempt_id not in self.slots:
+            raise InputBoundaryError('dependency is not declared')
+        path = self.destination / digest(attempt_id)
+        if not (path / 'seal.json').is_file():
+            raise InputBoundaryError('dependency is unsealed; inspect process state')
+        slot = self.slots[attempt_id]
+        reservation, _ = _read(path / 'reservation.json')
+        receipt, receipt_hash = _read(path / 'receipt.json')
+        seal, _ = _read(path / 'seal.json')
+        if (reservation != {'manifest_sha256': self.expected, **slot} or
+                receipt_hash != seal['receipt_sha256'] or
+                any(receipt.get(key) != value for key, value in slot.items()) or
+                receipt.get('status') != 'COMPLETED' or seal['output_sha256'] is None):
+            raise InputBoundaryError('dependency is not a bound completed attempt')
+        output, output_hash = _read(path / 'output.json')
+        if output_hash != seal['output_sha256']:
+            raise InputBoundaryError('dependency output bytes changed')
+        return output
+
     def execute(self, attempt_id, callback):
         path, slot = self._reserve(attempt_id)
         start = time.monotonic()

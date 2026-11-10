@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest view controller:** sealed profile dependency checked before adapter/reservation;263 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-view-controller-20261110/README.md). Next typed view evidence and downstream scheduling. Actual R1/generation/fidelity gates unchanged.
+
 > **Latest typed reconciliation:** sealed source/profile output recomputed; completed transport may honestly record failed extraction.253 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-typed-reconcile-20261110/README.md). Next prospective scheduling/view acceptance, then original-anchor evidence and live budgets.
 
 > **Latest profile controller:** source-bound first stage, typed stop/fallback-required decisions;247 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-profile-controller-20261110/README.md). Next reconcile declared extraction failure with completed transport using sealed typed output; no fallback finalization or production runner yet.
