@@ -1,5 +1,6 @@
 {
   "st1_takeover_20261110": {
+    "native_dapfam_staging": "IMPLEMENTED_15_TARGETED_TESTS_PASS_REAL_STAGE_NOT_RUN",
     "status": "OWNER_APPROVED_BOUNDED_CONTINUATION",
     "audit": "docs/healthtech/audits/ptp-st1-takeover-20261110/README.md",
     "packaging": "EXACT_HISTORICAL_BYTES_RECONSTRUCTED_8_TARGETED_TESTS_PASS",

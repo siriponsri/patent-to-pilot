@@ -2,6 +2,8 @@
 
 ## Active ST1 takeover — 2026-11-10 21:15 Bangkok
 
+**DAPFAM update:** owner-only native dev staging implementation +15/15 fixtures PASS; [evidence](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/README.md). Preserved split file found and opaque hash matches; source file sizes only inspected. Real staging NOT_RUN; resource-enforced launcher/disk admission then owner execution needed. No protected parsing/model call. Prior pushed checkpoint2791893; single writer unchanged.
+
 **Published:** b659a0a126daf159b814d68455ab3bbc14079771 live-verified on origin/main (40 scoped files).8/8 checks passed;9 intentional historical Markdown hard breaks preserved after default whitespace warning, adjusted check passed. Owner external handoff excluded. No dataset/model run; native DAPFAM staging contract next. This updates earlier pending-publication text; verify containing checkpoint commit on takeover.
 
 **Subsequent update:** all consolidated permissions APPROVED; [exact scope](docs/healthtech/audits/ptp-st1-takeover-20261110/OWNER_AUTHORIZATION.md). Protected tests remain closed. Builder hash discrepancy proved CRLF-only by exact Git/local bytes. New guarded code-only archive builder + regression checks8/8 PASS; archive prepared locally, no staging/deployment/model call. Live remote matches287fabae65291d8f805b4bf48380ffb922552df0; screened commit/push now authorized, not yet done. Continue DAPFAM curator contract and failure/fidelity/SACR/S/G gates; owner runs mixed-source steps. Prior pending statements below superseded by this update.
