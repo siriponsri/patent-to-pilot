@@ -4,15 +4,15 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 10:55:00 Bangkok
+### Latest checkpoint — 2026-11-10 10:58:16 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** 578054ae3521c857904c4bc2b7fa14ba09aad048; verify containing checkpoint/remote on takeover.
-- **Latest package:** CPU-ESCAPE-003 DECLARED_NOT_RUN; docs/healthtech/audits/ptp-method-first-escape-cpu-declaration-20261110/README.md. One targeted candidate CPU check, original10 cases unchanged plus4 fixed invalid escape/minLength cases. Code/blob/tokenizer/source/payload pins;120-second total child wall plus5-second termination grace. Not SYN-SACR-003/model run.
-- **Validation/changes:** Probe script Ruff PASS;14 authored cases constructed, original10 exact equality verified, four archived Git code blobs pinned. Declaration/methods log/probe and paired progress/next-actions. No tokenizer/filter/model execution; prior429 tests do not validate new candidate.
+- **Last verified pushed base:** a9c1d640d0c950fc0c032339fac87a29fd622ab2; CPU code archive fixed to this declaration commit; verify current containing handoff/remote on takeover.
+- **Latest package:** CPU-ESCAPE-003 prelaunch ready; docs/healthtech/audits/ptp-method-first-escape-cpu-result-20261110/. No conflicting research process/V100 compute observed; existing PID1745699 is retained HTTP service, not a probe. Fresh exclusive job root not yet created.
+- **Validation/changes:** Preflight/targeted service classification saved; supervisor syntax/Ruff checked. Original declaration14 cases, one120-second child plus5-second grace, zero model calls. No callback dispatched yet.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
-- **Jobs/failures:** Prior failed model/grammar attempts and terminated diagnostic preserved. Only short read-only SSH hash command ran and exited0; no model/GPU/background job launched. Remote job state not surveyed. No tokenizer/filter attempt or retry.
-- **Next:** verify no conflicting remote research job; ship containing pushed archive to new exclusive r2-sacr-escape-cpu-20261110-v1; supervise declared120-second CPU child and poll same handle; retain all receipts and verify terminal status with no restart. No automatic model dispatch after result. Owner protocol/curator still pending; actual R1/fidelity/resources remain prerequisites.
+- **Jobs/failures:** NEXT dispatch only: /home/chaw/patent-to-pilot-jobs/r2-sacr-escape-cpu-20261110-v1, code a9c1d64, setsid/nohup supervisor. Monitor child.json, terminal.json and logs/status.log; timeout is supervised and exact child reaped. Prior failures retained; no restart.
+- **Next:** Launch declared CPU attempt once, poll same job and preserve terminal/cases including failure. Do not restart or dispatch model. Owner protocol/curator pending; actual R1/fidelity/resources/R3-R6 incomplete.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
