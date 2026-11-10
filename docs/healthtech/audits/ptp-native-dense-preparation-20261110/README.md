@@ -2,6 +2,16 @@
 
 Status: IMPLEMENTED_COMPONENT / BASELINE_NOT_RUN. Parent sole repository writer.
 
+## Native runner implementation checkpoint
+
+`scripts/healthtech/run_dapfam_native_baseline.py` now requires pinned runtime manifest/corpus/native TA queries, existing vector hash and model weights/config/tokenizer hashes. No corpus encode branch; only474 TA queries encoded with the retrieval_OUT prefix, exact newline body preserved, batch32/fp32. Full-family deterministic MaxP, exclusive destination, offline loading and private query-vector output. Completion receipt written last; partial outputs are retained on failure. Existing shared GPU lock retained. Actual external supervisor/mount/resource admission still pending; do not invoke directly on host.
+
+24 targeted tests PASS: native runner hash/exclusive-output guards, global tie ranking, native evaluator. CLI help PASS without model allocation. These do not prove actual runtime execution or numerical parity on GPU. Metric manifest freeze and evaluator integration remain pending.
+
+Historical as-run runner recovered from `code/scripts/healthtech/run_dapfam_dense_pool.first-run.py`: SHA256 `559f52e2dacf657a28d3a474dd995cd73f477497af1ce3efb9a77d7515b1121e`, matches stage0 receipt. Historical acquisition helper SHA256 `f99e1e292e2eddb3f008e2f952edd9bfc76537aa129b67fec2976882846ea977`. Current `dense_passages` AST equals historical `arm03_passages` after explicit function/ARM03-to-DENSE constant renaming and removal of docstring; canonical AST SHA256 `ec581e78854105f282118977ea846b98fa7fdbec1cc46fd34c5c98788fd291df`. Constants inspected:384/64 and identical document prefix. `_nfkc_whitespace` exact AST match. MeanPoolEncoder changes are explicit device argument/default cuda and replacement of hardcoded cuda with that variable; pooling/normalization/tokenization logic unchanged. New runner passes cuda explicitly. No claim of byte-identical current encoder source.
+
+Read-only lookup incidents: initial runner path did not exist (actual filename has `.first-run`); initial direct AST-name lookup failed because helper was renamed. Follow-up located and compared actual files, with no benchmark rerun. A local rg expression failed shell quoting and was corrected. Model configuration/tokenizer hashes observed and pinned; weight hash remains historically pinned and must be freshly checked at runtime. No protected data read, corpus re-encoding or new model calls.
+
 Inspection of historical `run_dapfam_dense_pool.py` found `torch.topk` selected a subset before lexical tie sorting. This cannot guarantee lexical membership when equal family scores cross the cutoff. No evidence that a historical scientific result changed is asserted; old runner/results remain intact.
 
 New `research/native_dense_ranking.py` computes full-universe MaxP and lexicographic sorting before truncation. It rejects nonfinite scores, invalid owners, duplicate IDs and missing-family passages. Synthetic evidence:9 ranking tests plus13 native evaluator tests,22 total PASS. Boundary-tie permutation and hand/reference negative-score cases covered. No GPU/model calls or benchmark scoring.

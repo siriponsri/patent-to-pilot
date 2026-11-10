@@ -1,5 +1,9 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Native baseline runner checkpoint 2026-11-10
+
+Parent solewriter; last pushedfcffd00 before package. Mandatory-vector native runner implemented: exact staged TA/corpus/manifest and vector/model pins, query-only encoding, exclusive output, global lexical MaxP;24 targeted tests PASS and CLI help PASS. Audit: docs/healthtech/audits/ptp-native-dense-preparation-20261110/README.md. As-run runner hash matches historical559f52e; passage AST matches after declared rename, encoder changes limited to explicit device. Initial path/name lookups failed then resolved; no run/retry. Native baseline NOT_RUN. Next actual isolated supervisor/mounts, cumulative budget admission and runtime model verification; then baseline/evaluator. No GPU calls, protected reads or corpus encoding.
+
 ## Native dense preparation 2026-11-10
 
 Parent sole writer; published34e0430. Full-universe MaxP tie sorting implemented;22 ranking/native tests PASS. Historical runner/results preserved. Receipt: docs/healthtech/audits/ptp-native-dense-preparation-20261110/README.md. Model directory located remotely, GPU idle at observation only. Baseline NOT_RUN; no model call or protected access. Next mandatory-vector native runner, model/passage binding, isolated mounts and resource admission. Handoff update command failed quoting before execution; this corrected checkpoint records it, no data/run affected.
