@@ -1,5 +1,10 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Publication failure: native sample checkpoint
+
+Commit 921040f exists locally. Push to origin/main failed because github.com could not be resolved; remote synchronization NOT_CONFIRMED. Last previously confirmed pushed checkpoint ffc183f. No experiment or generation was started. Preserve this commit and retry publication only after connectivity is verified; continue independent local runner work. Parent remains sole writer.
+
+
 ## SACR native fidelity sample frozen 2026-11-10T22:56:02+07:00
 
 Parent sole writer; last verified pushed ffc183f. Exactly 100 of 474 curated native TA dev queries frozen using the existing SHA256 sampling rule, invariant to input order. Source hash verified; dynamic quote schemas bind each query ID/source hash/DAPFAM_TA identity (100 checks PASS). Private sample hash cf0bce973696c6d71c06d2387a36bd024b0ddbdc2a36a2c77bc6ce17ba4bd767; aggregate receipt docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/native-sample.json. B0 scores were already known; this freeze precedes SACR dev outputs, not whole-study preregistration. Zero model calls/cards; both tests closed. No job launched. SACR30/SG30/MTM0 allocation retained; SG fixed configuration failed and is not retried. Next: integrate bounded native generation and completed-rejection receipts; freeze screening configuration and budget before dispatch; then automated screening and required human review before retrieval. Scientific fidelity and production execution NOT_RUN.
