@@ -1,4 +1,8 @@
 
+
+## Native dense preparation 2026-11-10
+
+Parent sole writer; published34e0430. Full-universe MaxP tie sorting implemented;22 ranking/native tests PASS. Historical runner/results preserved. Receipt: docs/healthtech/audits/ptp-native-dense-preparation-20261110/README.md. Model directory located remotely, GPU idle at observation only. Baseline NOT_RUN; no model call or protected access. Next mandatory-vector native runner, model/passage binding, isolated mounts and resource admission. Handoff update command failed quoting before execution; this corrected checkpoint records it, no data/run affected.
 ## Paper1 metric implementation checkpoint — 2026-11-10
 
 Native evaluator now has explicit Paper1 cutoffs10/100/200 and private full-precision per-query output for paired analysis. Primary remains OUT Recall200; nDCG10 descriptive only. Missing eligible outputs retain zero in both macro and per-query data, IDCG includes unretrieved known positives.23 targeted native/staging tests PASS including cutoff-boundary fixture. No real query scoring/model call/test-set access. Runtime isolation and vector/model/passage binding remain next; baseline NOT_RUN. Parent sole writer; original failures/budgets retained.
