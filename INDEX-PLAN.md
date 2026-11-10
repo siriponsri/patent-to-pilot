@@ -1,5 +1,12 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Continuation running 2026-11-11T06:33:02+07:00
+
+Parent sole writer; last verified pushed fdddb4b. Single continuation dispatch confirmed RUNNING: session21435, container ptp-native-sacr-continuation-20261111-v1 PID3052076, started2026-11-10T23:31:56.42988521Z. Actual isolation readback PASS persisted; latest aggregate live-observation.json has 0 normal-return model calls (does not exclude an in-flight call). No terminal/semantic PASS/cards. Old interrupted index45 excluded; pending exception has no authorization.
+
+Monitor SAME session or remote status.py. Never redispatch on network timeout; independently inspect same container/supervisor.10800s reservation,10560s stop trigger (~09:27:56 Bangkok), actual whole wall charge after terminal. Original100cohort remains incomplete even if selected54 finish. Shared fidelity reservation/cost preserved; GPU one job, tests CLOSED. Next observe load/generation and terminal; in parallel prepare remaining fidelity bundle/screening work without another GPU job. Preserve all prior failures and owner untracked handoff. Goal ACTIVE.
+
+
 ## Continuation pre-dispatch 2026-11-11T06:31:44+07:00
 
 Parent sole writer; last verified pushed9e98852. Exact runtime archive842f0f7075a0483034a4a032dbf7b1a8e13c958cfb340c207e790a446e79ac31 staged once in separate runtime-code;137 source pins verified. Original preparation/history unchanged. Runtime declaration76dcfb90c69c2eb98410b55ff18c4d0742cb463f09c46fbe2873cea17fc42f01. GPU observed empty, remote free disk102869721088bytes; conservative combined retained+new512MiB reservation11233334141bytes below40GiB. No data/model/vector copies.
