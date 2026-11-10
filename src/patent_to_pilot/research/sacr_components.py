@@ -40,8 +40,15 @@ def compile_components(profile, *, source, query_id, input_kind):
 
 def vector_digest(matrix):
     """Canonical shape + little-endian float32 bytes, distinct from a .npy hash."""
-    return hashlib.sha256(json.dumps(list(matrix.shape)).encode() + b'\n' +
-                          np.ascontiguousarray(matrix, dtype='<f4').tobytes()).hexdigest()
+    checksum = hashlib.sha256()
+    checksum.update(json.dumps(list(matrix.shape)).encode() + b'\n')
+    # Buffer even contiguous input: external_loop alone can expose the full array.
+    with np.nditer(matrix, flags=['external_loop', 'buffered', 'zerosize_ok'],
+                   op_flags=[['readonly', 'contig']], op_dtypes=['<f4'],
+                   casting='unsafe', order='C', buffersize=262144) as chunks:
+        for chunk in chunks:
+            checksum.update(chunk.tobytes(order='C'))
+    return checksum.hexdigest()
 
 
 def bind_component_vectors(plan, vectors, receipt, *, expected_plan_sha256, expected_encoder_sha256):

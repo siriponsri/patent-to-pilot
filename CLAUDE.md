@@ -2,12 +2,16 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 10:09:41 Bangkok
+## Cross-account checkpoint — 2026-11-10 10:15:54 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed HANDOFF.md; last verified pushed base eb9c14931e88dc1f4d9713a9b795eb499ad5c9a6.
-- View-failure policy proposal aligns existing rules, distinguishes terminated unusable family from infrastructure failure; NOT_ADOPTED. Audit docs/healthtech/audits/ptp-method-first-view-failure-policy-20261110/README.md. No code/run; prior319 tests remain historical.
-- Next typed generation termination evidence before policy integration; full-index hash memory repair independently possible. R1 curator/real baseline/generation/fidelity unchanged; R5 not authorized.
-- No actual jobs, remote not re-polled. Preserve owner untracked handoff/private outputs; paired updates mandatory.
+- **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Paired checkpoints mandatory.
+- **Last verified pushed base:** b648eb6c3284019c82e35332d3350fb69b97e812; verify containing checkpoint/remote on takeover.
+- **Latest package:** bounded vector hashing; audit docs/healthtech/audits/ptp-method-first-vector-hash-20261110/README.md. Legacy digest preserved; updates bounded to 1 MiB. Authored 64 MiB input: traced temporary peak 134217911 to 1049578 bytes. Full index still copied; resource gate remains open.
+- **Validation:** 333 related tests PASS; Ruff PASS. Initial measurement import path and checkpoint-command quoting failures corrected; neither executed research work.
+- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved, view-failure proposal NOT_ADOPTED; R3/R4 absent, R5 not authorized, R6 incomplete.
+- **Jobs/failures:** previous model/grammar failures retained; prior diagnostic terminated/absence verified. No new actual data/model/GPU/background job; remote not re-polled. No retries.
+- **Next:** typed generation termination/cost/artifact binding before failure-policy integration; independent index-copy resource review; curator/R1 and real anchor lineage; justified generation/fidelity repair then R3/R4; R5/R6 after gates.
+- **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

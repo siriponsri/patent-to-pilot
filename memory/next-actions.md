@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest vector hash repair:** 333 related tests pass; hash bytes now bounded to 1 MiB with legacy digests preserved. [Audit](../docs/healthtech/audits/ptp-method-first-vector-hash-20261110/README.md). Full-index copy remains; next typed generation receipts or independent resource review. Real research gates unchanged.
+
 > **Latest view-failure alignment:** proposed family rejection requires actual termination evidence; do not broadly catch infrastructure exceptions. [Audit](../docs/healthtech/audits/ptp-method-first-view-failure-policy-20261110/README.md). Next typed generation receipt binding or independent index-hash memory repair; no new run authorized.
 
 > **Latest anchor binding:** execution-v2 pins original-anchor bundle before work;319 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-anchor-binding-20261110/README.md). Next failed-view policy alignment and resource gates. Real baseline lineage/parity remains unverified.
