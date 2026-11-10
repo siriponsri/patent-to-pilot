@@ -1,0 +1,22 @@
+{
+  "status": "EARLY_FROZEN_FLAG_LOWER_BOUND",
+  "counts": {
+    "checked_completed": 53,
+    "rejected_profiles": 13,
+    "compact_unavailable": 0,
+    "compact_lexical_flagged": 6,
+    "compact_unflagged_only": 34
+  },
+  "flagged_queries_lower_bound": 19,
+  "reasons": {
+    "polarity_inventory_changed": 2,
+    "numeric_literal_inventory_changed": 5
+  },
+  "full_sample": 100,
+  "cap": 20,
+  "configuration_gate_impossible_without_policy_change": false,
+  "semantic_pass": false,
+  "model_calls": 0,
+  "observer_sha256": "c1d6ac6bf83156c82b462b855efcabae647dbbacd11cc1b299e94d36fc54d2f5",
+  "observed_bangkok": "2026-11-11T06:49:22+07:00"
+}

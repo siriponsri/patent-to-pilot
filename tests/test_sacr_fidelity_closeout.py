@@ -48,6 +48,25 @@ def test_preparation_without_model_reservation_is_distinct(tmp_path):
     assert result['status'] == 'INCOMPLETE_PROFILE_COHORT_NO_PASS'
 
 
+def test_selected_closeout_counts_unknown_and_preserves_full_sample(tmp_path):
+    state=fixture(tmp_path)
+    state.update(StartedAt='start',FinishedAt='finish')
+    terminal=json.loads((tmp_path/'terminal.json').read_bytes());terminal['container_state']=state
+    write(tmp_path/'terminal.json',terminal)
+    root=tmp_path/'canonical/attempt';write(root/'declaration.json',{'maximum_calls':54})
+    write(root/'profiles/046/profile/reservation.json',{'status':'RESERVED'})
+    args=dict(output_root=root,selected_indices=list(range(46,100)),expected_declaration_sha256=closeout.digest(root/'declaration.json'))
+    result=closeout.summarize(tmp_path,state,**args)
+    assert result['unknown_execution_attempts']==1 and result['not_started']==53
+    assert result['original_sample_queries']==100 and result['planned_queries']==54
+    assert result['gpu_charge_seconds']==7000 and result['cost_counts_are_lower_bounds']
+    with pytest.raises(ValueError,match='terminal identity'):
+        closeout.summarize(tmp_path,{**state,'FinishedAt':'different'},**args)
+    write(root/'profiles/045/input.json',{})
+    with pytest.raises(ValueError,match='non-prefix'):
+        closeout.summarize(tmp_path,state,**args)
+
+
 def test_tampered_assessment_does_not_become_rejected_family(tmp_path):
     state = fixture(tmp_path)
     root = tmp_path / 'out/attempt/profiles/000'
