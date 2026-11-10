@@ -10,6 +10,7 @@ from patent_to_pilot.research.sacr_profile_result import profile_result
 from patent_to_pilot.research.sacr_components import digest
 from patent_to_pilot.research.sacr_view_result import view_result
 from patent_to_pilot.research.sacr_generated_view import generated_view_result
+from patent_to_pilot.research.sacr_generated_profile import generated_profile_result, replay_generated_profile
 from patent_to_pilot.research.sacr_embedding import embedding_plan, bind_embeddings
 from patent_to_pilot.research.sacr_acquisition import acquire_union
 from patent_to_pilot.research.sacr_factorial import compare_factorial
@@ -41,6 +42,13 @@ class BoundProfileController:
                                        anchor_bundle_raw=anchor_bundle_raw)
 
     def profile(self, query_id, adapter):
+        return self._profile(query_id, adapter, generated=False)
+
+    def generated_profile(self, query_id, adapter):
+        """Reserve once; adapter returns original quote-generation bytes/identity/costs."""
+        return self._profile(query_id, adapter, generated=True)
+
+    def _profile(self, query_id, adapter, *, generated):
         if query_id not in self._sources:
             raise InputBoundaryError('query is outside bound cohort')
         source = self._sources[query_id]
@@ -50,12 +58,31 @@ class BoundProfileController:
             return {'decision': 'MISSING_INPUT', 'query_id': query_id}
 
         def validated_work():
+            if generated:
+                raw, identity, metrics = adapter(query_id, source)
+                return generated_profile_result(
+                    raw, identity, execution=self.journal.execution, attempt_id=attempt,
+                    query_id=query_id, source=source, metrics=metrics), metrics
             profile, metrics = adapter(query_id, source)
             return profile_result(profile, source=source, query_id=query_id), metrics
 
         # Structural failure happens within the reserved attempt, never after it
         # has been sealed as COMPLETED. No retry or downstream dispatch here.
         return self.journal.execute(attempt, validated_work)
+
+    def _checked_profile(self, query_id, output):
+        if type(output) is not dict or 'profile' not in output:
+            raise InputBoundaryError('typed profile dependency required')
+        source = self._sources[query_id]
+        if output.get('format') == 'sacr-profile-stage-v2':
+            attempt = self._attempts[query_id, 'profile']
+            return replay_generated_profile(
+                output, execution=self.journal.execution, attempt_id=attempt, query_id=query_id,
+                source=source, metrics=self.journal.read_completed_metrics(attempt))
+        canonical = profile_result(output['profile'], source=source, query_id=query_id)
+        if output != canonical:
+            raise InputBoundaryError('profile evidence changed')
+        return canonical
 
     def views(self, query_id, kind, adapter):
         """Require prepared profile before either matched factorial view arm.
@@ -91,10 +118,8 @@ class BoundProfileController:
         if source is None:
             raise InputBoundaryError('missing source cannot dispatch view generation')
         output = self.journal.read_completed_output(self._attempts[query_id, 'profile'])
-        if type(output) is not dict or 'profile' not in output:
-            raise InputBoundaryError('typed profile dependency required')
-        canonical = profile_result(output['profile'], source=source, query_id=query_id)
-        if output != canonical or output['decision'] != 'PROFILE_STRUCTURALLY_PREPARED_FIDELITY_PENDING':
+        canonical = self._checked_profile(query_id, output)
+        if canonical['decision'] != 'PROFILE_STRUCTURALLY_PREPARED_FIDELITY_PENDING':
             raise InputBoundaryError('profile is not structurally prepared for dependent views')
         profile = canonical['profile']
         cap = self.journal.execution['limits']['response_bytes']
@@ -143,10 +168,8 @@ class BoundProfileController:
         if query_id not in self._sources or self._sources[query_id] is None:
             raise InputBoundaryError('embedding requires bound available source')
         profile = self.journal.read_completed_output(self._attempts[query_id, 'profile'])
-        if type(profile) is not dict or 'profile' not in profile:
-            raise InputBoundaryError('typed profile required')
-        canonical = profile_result(profile['profile'], source=self._sources[query_id], query_id=query_id)
-        if canonical != profile or canonical['decision'] != 'PROFILE_STRUCTURALLY_PREPARED_FIDELITY_PENDING':
+        canonical = self._checked_profile(query_id, profile)
+        if canonical['decision'] != 'PROFILE_STRUCTURALLY_PREPARED_FIDELITY_PENDING':
             raise InputBoundaryError('embedding profile is not structurally prepared')
         results = {}
         for kind in ('generic', 'selective'):
@@ -299,11 +322,7 @@ class BoundProfileController:
             if states['profile'] != 'COMPLETED':
                 raise InputBoundaryError('available source lacks completed or failed profile')
             profile = records['profile'][1]
-            if type(profile) is not dict or 'profile' not in profile:
-                raise InputBoundaryError('typed profile terminal evidence required')
-            canonical = profile_result(profile['profile'], source=self._sources[query], query_id=query)
-            if canonical != profile:
-                raise InputBoundaryError('profile terminal evidence changed')
+            canonical = self._checked_profile(query, profile)
             decision = canonical['decision']
             if decision.endswith('FALLBACK_REQUIRED'):
                 state = 'PROFILE_FAILED' if decision.startswith('PROFILE_FAILED') else 'PROFILE_EMPTY'

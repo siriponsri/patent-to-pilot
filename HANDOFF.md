@@ -4,15 +4,15 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 10:29:18 Bangkok
+### Latest checkpoint — 2026-11-10 10:32:49 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** 9de8f04600d19fd9f15de0b4c3f684ea676e0f0d; verify containing checkpoint/remote on takeover.
-- **Latest package:** v3 view evidence finalization repair; audit docs/healthtech/audits/ptp-method-first-v3-finalization-repair-20261110/README.md. Inspection found finalize_mixed still using v2 replay; five authored reproductions failed. Unified embedding/finalization replay now checks v3 identities/artifacts/sealed costs. Profile binding deferred for this concrete fix.
-- **Validation/changes:** five reproductions now PASS; 36 focused / 396 related tests PASS; Ruff PASS. Controller refactor, integration regressions, audit and paired progress/next-actions. Fake encoder/tiny authored CPU index only; no actual model attempt. One guessed inspection path absent, recorded in audit.
-- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Profile-generation binding and required-evidence execution version pending; full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
+- **Last verified pushed base:** 39a8a6fddc9a5bb4edc49b4e1672ac624a3ec5fd; verify containing checkpoint/remote on takeover.
+- **Latest package:** quote-profile generation binding through controller and journal finalization; audit docs/healthtech/audits/ptp-method-first-generated-profile-20261110/README.md. Private v2 profile retains original generation/identity/alignment; deterministic replay and sealed-cost verification before dependencies and finalization. No real generation or semantic claim.
+- **Validation/changes:** 407 related tests PASS including 11 new profile cases; Ruff PASS after removing one unused test import. New module/tests, controller/journal integration, audit and paired progress/next-actions. Authored six-stage case counts all three generation records; stop/failure/missing cases preserved.
+- **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. New execution version requiring typed evidence pending; full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** previous model/grammar failures retained; prior diagnostic terminated/absence verified. No new actual data/model/GPU/background job; remote not re-polled. No retries.
-- **Next:** profile-generation binding plus new execution version requiring typed evidence; deterministic family rejection with pre-run methods entry and downstream accounting; curator/R1 and real anchor provenance; resources/generation/fidelity then R3/R4 and gated R5/R6.
+- **Next:** new execution version requiring typed profile/view evidence; deterministic family rejection with pre-run methods entry and downstream accounting; curator/R1 and real anchor provenance; resources/generation/fidelity then R3/R4 and gated R5/R6.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

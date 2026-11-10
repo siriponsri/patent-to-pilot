@@ -13,6 +13,7 @@ from patent_to_pilot.research.sacr_anchor import bind_anchor_bundle
 from patent_to_pilot.research.sacr_outcomes import METRICS, summarize_costs
 from patent_to_pilot.research.sacr_run_reconcile import reconcile_run, validate_plan
 from patent_to_pilot.research.sacr_generated_view import GenerationEvidenceFailure
+from patent_to_pilot.research.sacr_generated_profile import replay_generated_profile
 
 
 def _write(path, value):
@@ -219,13 +220,20 @@ class DevStageJournal:
                 if output_hash != seal['output_sha256']:
                     raise InputBoundaryError('output bytes changed')
                 if (slot['stage'] == 'profile' and type(output) is dict and
-                        output.get('format') == 'sacr-profile-stage-v1'):
+                        output.get('format') in ('sacr-profile-stage-v1', 'sacr-profile-stage-v2')):
                     if self.execution is not None:
                         sources = {s['query_id']: s['source_sha256'] for s in self.execution['sources']}
                         source = output.get('source')
                         if (type(source) is not str or hashlib.sha256(source.encode()).hexdigest() !=
                                 sources[slot['query_id']]):
                             raise InputBoundaryError('typed profile source differs from execution binding')
+                    if output['format'] == 'sacr-profile-stage-v2':
+                        if self.execution is None:
+                            raise InputBoundaryError('generated profile requires execution binding')
+                        output = replay_generated_profile(
+                            output, execution=self.execution, attempt_id=attempt_id,
+                            query_id=slot['query_id'], source=output['source'],
+                            metrics=self.read_completed_metrics(attempt_id))
                     profile_outputs[slot['query_id']] = output
                 if (slot['stage'] == 'selection' and type(output) is dict and
                         output.get('format') == 'sacr-selection-stage-v1'):
