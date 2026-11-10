@@ -1,5 +1,7 @@
 # ST1 takeover
 
+Publication receipt: b659a0a126daf159b814d68455ab3bbc14079771 pushed successfully and verified live on origin/main.40 allowlisted code/documentation/receipt files; heuristic scan passed (not a comprehensive security audit). Restricted data/PDFs/model outputs and external owner9Nov handoff excluded. Default staged whitespace check exit2 due9 preserved Markdown hard breaks; `git -c core.whitespace=-blank-at-eol diff --cached --check` exit0. No repository settings changed. Historical planning receipt remains a dated pre-publication observation, not current status.
+
 ## Approved continuation and verified packaging diagnosis
 
 Owner explicitly approved all three consolidated questions: [authorization](OWNER_AUTHORIZATION.md). Publication now authorized after screening; protected tests remain closed. Previous turn made concrete progress (live terminal/staging/hash evidence); this turn verifies the hash cause and adds a guarded packaging fix.
