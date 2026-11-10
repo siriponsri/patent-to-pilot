@@ -1,5 +1,10 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## SACR native fidelity sample frozen 2026-11-10T22:56:02+07:00
+
+Parent sole writer; last verified pushed ffc183f. Exactly 100 of 474 curated native TA dev queries frozen using the existing SHA256 sampling rule, invariant to input order. Source hash verified; dynamic quote schemas bind each query ID/source hash/DAPFAM_TA identity (100 checks PASS). Private sample hash cf0bce973696c6d71c06d2387a36bd024b0ddbdc2a36a2c77bc6ce17ba4bd767; aggregate receipt docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/native-sample.json. B0 scores were already known; this freeze precedes SACR dev outputs, not whole-study preregistration. Zero model calls/cards; both tests closed. No job launched. SACR30/SG30/MTM0 allocation retained; SG fixed configuration failed and is not retried. Next: integrate bounded native generation and completed-rejection receipts; freeze screening configuration and budget before dispatch; then automated screening and required human review before retrieval. Scientific fidelity and production execution NOT_RUN.
+
+
 ## Completed-generation rejection policy 2026-11-10
 
 Parent solewriter,last pushed2800e6e. Versioned native-runner profile assessment added:rawhash/cost/limit binding first; completed unusable generation rejected/charged withoutrepair/retry; INPUT_LIMIT separate stop; unknown/infra/tampered state stops. Failedprofile cannot supplycompact;anchor needsindependentbinding.38 policy/receipt testsPASS,no modelcall. Receipt docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/REJECTION-POLICY.md. Doesnot rewrite oldFAILED journals; production native runner/generic-selective continuation/fidelity screening stillpending. Next build bounded100-native-query fidelity generation withfixedsample/prompt/resource declarations and private evidence,then automatedscreen/review before retrieval. SGfixedconfigfailed;no newSGtrialauthorized. No livejobs/testsclosed.

@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN_BEFORE_SACR_DEV_OUTPUTS",
+  "population": 474,
+  "selected": 100,
+  "sample_sha256": "cf0bce973696c6d71c06d2387a36bd024b0ddbdc2a36a2c77bc6ce17ba4bd767",
+  "private_bytes": 23794,
+  "source_sha256": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a",
+  "schema_identity_checks": 100,
+  "ordering_invariance": "PASS",
+  "model_calls": 0,
+  "cards_issued": 0,
+  "disclosure": "B0 aggregate scores already known; no whole-study preregistration claim",
+  "remaining": "Production runner, screening configuration and human review NOT_RUN"
+}

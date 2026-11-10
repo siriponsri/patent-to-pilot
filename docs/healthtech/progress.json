@@ -36,7 +36,21 @@
     "native_runtime_remote": "STAGED_HASH_VERIFIED_SUPERVISOR_DRAFT_NOT_DISPATCHED",
     "sacr_native_binding": "CONTROLLER_PROFILE_VALIDATION_REPLAY_101_REGRESSIONS_PASS_NATIVE_RESEARCH_NOT_RUN",
     "fidelity_cards": "OWNER_AMENDED_SACR30_SG30_MTM0_APPEND_ONLY_LEDGER_0_CARDS_13_TESTS_PASS",
-    "sacr_rejection_policy": "PROFILE_CLASSIFIER_38_TESTS_PASS_RUNNER_AND_VIEW_CONTINUATION_PENDING"
+    "sacr_rejection_policy": "PROFILE_CLASSIFIER_38_TESTS_PASS_RUNNER_AND_VIEW_CONTINUATION_PENDING",
+    "sacr_fidelity_sample": {
+      "status": "FROZEN_BEFORE_SACR_DEV_OUTPUTS",
+      "population": 474,
+      "selected": 100,
+      "sample_sha256": "cf0bce973696c6d71c06d2387a36bd024b0ddbdc2a36a2c77bc6ce17ba4bd767",
+      "private_bytes": 23794,
+      "source_sha256": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a",
+      "schema_identity_checks": 100,
+      "ordering_invariance": "PASS",
+      "model_calls": 0,
+      "cards_issued": 0,
+      "disclosure": "B0 aggregate scores already known; no whole-study preregistration claim",
+      "remaining": "Production runner, screening configuration and human review NOT_RUN"
+    }
   },
   "three_study_planning_20261110": {
     "status": "PASS_DOCUMENTATION_ONLY_LOCAL_UNCOMMITTED_UNPUSHED",
