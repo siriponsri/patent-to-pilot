@@ -27,7 +27,7 @@ class BoundProfileController:
     """
 
     def __init__(self, destination, plan, execution, *, manifest_bytes, query_payload,
-                 expected_plan_sha256, expected_execution_sha256):
+                 expected_plan_sha256, expected_execution_sha256, anchor_bundle_raw=None):
         sources = bind_input_snapshots(
             execution, plan, manifest_bytes=manifest_bytes, query_payload=query_payload,
             expected_execution_sha256=expected_execution_sha256,
@@ -36,7 +36,8 @@ class BoundProfileController:
         self._attempts = {(s['query_id'], s['stage']): s['attempt_id'] for s in plan['slots']}
         self.journal = DevStageJournal(destination, plan, expected_manifest_sha256=expected_plan_sha256,
                                        execution=execution,
-                                       expected_execution_sha256=expected_execution_sha256)
+                                       expected_execution_sha256=expected_execution_sha256,
+                                       anchor_bundle_raw=anchor_bundle_raw)
 
     def profile(self, query_id, adapter):
         if query_id not in self._sources:
@@ -235,8 +236,8 @@ class BoundProfileController:
 
         Every declared slot must already be explicitly terminal. No automatic
         skip, guessed process death, fallback ranking or failure repair is made.
-        Profile fallback and malformed generation remain blocked on their missing
-        anchor/policy bindings rather than being silently relabelled.
+        Profile fallback requires execution-v2 original-anchor binding. Malformed
+        generation remains blocked on its family policy, not silently relabelled.
         """
         queries = self.journal.manifest['query_ids']
         if type(masks) is not dict or set(masks) != set(queries):
@@ -251,8 +252,11 @@ class BoundProfileController:
                     raise InputBoundaryError('missing source has executed stages')
                 outcomes.append(finalize_query(query_id=query, state='MISSING_INPUT'))
                 continue
+            if states['profile'] in ('FAILED', 'INTERRUPTED'):
+                outcomes.append(self._fallback_outcome(query, 'PROFILE_FAILED', index, masks[query], states))
+                continue
             if states['profile'] != 'COMPLETED':
-                raise InputBoundaryError('profile failure requires separately bound original anchor')
+                raise InputBoundaryError('available source lacks completed or failed profile')
             profile = records['profile'][1]
             if type(profile) is not dict or 'profile' not in profile:
                 raise InputBoundaryError('typed profile terminal evidence required')
@@ -261,7 +265,9 @@ class BoundProfileController:
                 raise InputBoundaryError('profile terminal evidence changed')
             decision = canonical['decision']
             if decision.endswith('FALLBACK_REQUIRED'):
-                raise InputBoundaryError('profile fallback requires separately bound original anchor')
+                state = 'PROFILE_FAILED' if decision.startswith('PROFILE_FAILED') else 'PROFILE_EMPTY'
+                outcomes.append(self._fallback_outcome(query, state, index, masks[query], states))
+                continue
             review = decision == 'REVIEW_REQUIRED'
             if not review:
                 for kind in ('generic', 'selective'):
@@ -290,3 +296,16 @@ class BoundProfileController:
             else:
                 outcomes.append(self._ready_outcome(query, index, masks[query]))
         return self.journal.finalize(outcomes)
+
+    def _fallback_outcome(self, query, state, index, mask, states):
+        if self.journal.anchor_bundle is None:
+            raise InputBoundaryError('profile fallback requires separately bound original anchor')
+        if any(status != 'SKIPPED' for stage, status in states.items() if stage != 'profile'):
+            raise InputBoundaryError('profile fallback cannot contain downstream work')
+        context = index.context(query, mask,
+                                expected_index_sha256=self.journal.execution['identities']['index_manifest'])
+        row = next(row for row in self.journal.anchor_bundle['rows'] if row['query_id'] == query)
+        allowed = {f for f, keep in zip(context['family_ids'], context['eligible'], strict=True) if keep}
+        if row['mask_sha256'] != digest(context['eligible'].tolist()) or not set(row['ranking']) <= allowed:
+            raise InputBoundaryError('original anchor mask or eligible exposure mismatch')
+        return finalize_query(query_id=query, state=state, anchor=row['ranking'])

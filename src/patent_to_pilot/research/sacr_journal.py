@@ -9,6 +9,7 @@ import time
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError
 from patent_to_pilot.research.sacr_components import digest
 from patent_to_pilot.research.sacr_execution import bind_execution
+from patent_to_pilot.research.sacr_anchor import bind_anchor_bundle
 from patent_to_pilot.research.sacr_outcomes import METRICS, summarize_costs
 from patent_to_pilot.research.sacr_run_reconcile import reconcile_run, validate_plan
 
@@ -37,7 +38,7 @@ class DevStageJournal:
     """
 
     def __init__(self, destination, manifest, *, expected_manifest_sha256,
-                 execution=None, expected_execution_sha256=None):
+                 execution=None, expected_execution_sha256=None, anchor_bundle_raw=None):
         validate_plan(manifest, expected_manifest_sha256=expected_manifest_sha256)
         self.execution = None
         self.execution_expected = expected_execution_sha256
@@ -45,6 +46,11 @@ class DevStageJournal:
             self.execution = bind_execution(
                 execution, manifest, expected_execution_sha256=expected_execution_sha256,
                 expected_plan_sha256=expected_manifest_sha256)
+        self.anchor_bundle = None
+        if self.execution is not None and self.execution['format'] == 'sacr-dev-execution-v2':
+            self.anchor_bundle = bind_anchor_bundle(anchor_bundle_raw, self.execution)
+        elif anchor_bundle_raw is not None:
+            raise InputBoundaryError('anchor bundle requires predeclared execution v2')
         self.manifest = deepcopy(manifest)
         self.expected = expected_manifest_sha256
         self.slots = {s['attempt_id']: s for s in self.manifest['slots']}
@@ -53,6 +59,11 @@ class DevStageJournal:
         _write(self.destination / 'manifest.json', self.manifest)
         if self.execution is not None:
             _write(self.destination / 'execution.json', self.execution)
+        if self.anchor_bundle is not None:
+            with (self.destination / 'anchor-bundle.json').open('xb') as handle:
+                handle.write(anchor_bundle_raw)
+                handle.flush()
+                os.fsync(handle.fileno())
 
     def _check_bindings(self):
         manifest, _ = _read(self.destination / 'manifest.json')
@@ -66,6 +77,10 @@ class DevStageJournal:
                            expected_plan_sha256=self.expected)
             if digest(self.execution) != self.execution_expected:
                 raise InputBoundaryError('in-memory execution declaration changed')
+            if self.execution['format'] == 'sacr-dev-execution-v2':
+                bound = bind_anchor_bundle((self.destination / 'anchor-bundle.json').read_bytes(), self.execution)
+                if bound != self.anchor_bundle:
+                    raise InputBoundaryError('in-memory original anchor bundle changed')
 
     def _reserve(self, attempt_id):
         self._check_bindings()
@@ -191,6 +206,18 @@ class DevStageJournal:
                     selection_outputs[slot['query_id']] = output
         report = reconcile_run(manifest, attempts, events, outcomes, expected_manifest_sha256=self.expected,
                                profile_outputs=profile_outputs, selection_outputs=selection_outputs)
+        if self.anchor_bundle is not None:
+            anchors = {row['query_id']: row['ranking'] for row in self.anchor_bundle['rows']}
+            for outcome in outcomes:
+                if outcome['anchor_fallback'] and any(r != anchors[outcome['query_id']]
+                                                      for r in outcome['rankings'].values()):
+                    raise InputBoundaryError('fallback outcome differs from pinned original anchor')
+            report['anchor_reuse'] = {
+                'bundle_sha256': self.execution['anchor_bundle_sha256'],
+                'baseline_receipt_sha256': self.anchor_bundle['baseline_receipt_sha256'],
+                'queries': sum(o['anchor_fallback'] for o in outcomes),
+                'baseline_costs': 'EXTERNAL_BASELINE_COSTS_NOT_INCLUDED',
+                'baseline_parity': 'REQUIRES_EXTERNAL_VERIFICATION'}
         outcomes_hash = _write(self.destination / 'outcomes.json', outcomes)
         report_hash = _write(self.destination / 'reconciliation.json', report)
         _write(self.destination / 'completion.json', {'manifest_sha256': self.expected,

@@ -29,10 +29,14 @@ def bind_execution(declaration, plan, *, expected_execution_sha256, expected_pla
     Limits are declared ceilings; an external controller must enforce them live.
     """
     validate_plan(plan, expected_manifest_sha256=expected_plan_sha256)
-    exact_fields(declaration, {'format', 'split', 'run_id', 'plan_sha256', 'sources',
-                               'identities', 'limits'})
+    fields = {'format', 'split', 'run_id', 'plan_sha256', 'sources', 'identities', 'limits'}
+    if type(declaration) is dict and declaration.get('format') == 'sacr-dev-execution-v2':
+        fields.add('anchor_bundle_sha256')
+    exact_fields(declaration, fields)
+    if 'anchor_bundle_sha256' in declaration:
+        _sha(declaration['anchor_bundle_sha256'])
     _sha(expected_execution_sha256)
-    if (declaration['format'] != 'sacr-dev-execution-v1' or declaration['split'] != 'dev' or
+    if (declaration['format'] not in ('sacr-dev-execution-v1', 'sacr-dev-execution-v2') or declaration['split'] != 'dev' or
             declaration['run_id'] != plan['run_id'] or
             declaration['plan_sha256'] != expected_plan_sha256 or
             digest(declaration) != expected_execution_sha256):
