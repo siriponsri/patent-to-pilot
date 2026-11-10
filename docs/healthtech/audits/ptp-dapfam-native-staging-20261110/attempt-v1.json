@@ -1,0 +1,33 @@
+{
+  "supervisor-result": {
+    "status": "FAILED",
+    "pid": 10184,
+    "process_exit_code": 1,
+    "wall_seconds": 16.312000000005355,
+    "timeout_seconds": 1800,
+    "memory_limit_bytes": 33285996544,
+    "max_cpu_affinity": 8,
+    "model_calls": 0,
+    "gpu_calls": 0,
+    "automatic_retries": 0
+  },
+  "child-result": {
+    "status": "FAILED",
+    "pid": 10184,
+    "memory_limit_bytes": 33285996544,
+    "affinity_mask": 255,
+    "active_process_limit": 1,
+    "peak_job_commit_bytes": 3644051456,
+    "peak_process_commit_bytes": 3644051456,
+    "exit_code": 1,
+    "wall_seconds": 15.344000000011874
+  },
+  "child-ready": {
+    "status": "RUNNING",
+    "pid": 10184,
+    "memory_limit_bytes": 33285996544,
+    "affinity_mask": 255,
+    "active_process_limit": 1
+  },
+  "completion_marker_present": false
+}

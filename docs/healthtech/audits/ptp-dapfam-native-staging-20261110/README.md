@@ -1,5 +1,11 @@
 # Native DAPFAM curator preparation
 
+## Attempt v1 terminal failure — 21:34 Bangkok
+
+Single real curator attempt FAILED before destination creation; no completion marker or output corpus. [Terminal evidence](attempt-v1.json): child10184/session72462 exit1, supervisor16.312s, child15.344s, peak committed memory3,644,051,456bytes,31GiB cap, no timeout/model/GPU calls. Generic handled input error initially hid exact category. No staging retry. Curator authorized one separate <=120s read-only diagnostic under same31GiB/CPU8 limits to compare pinned hashes, schema/counts and serialization; no dataset writes or protected values returned. Exact cause pending.
+
+CLI now emits only whitelisted constant error categories, never arbitrary exception text/paths/source values.17 staging/native fixtures PASS including exception-redaction check. This messaging change does not relax any gate or repair data; failed attempt preserved. Parent previously tried two nonexistent prompt paths while inspecting SACR, then located actual quotes-v1 prompt; no prompt or generation changed.
+
 ## Prelaunch resource checkpoint
 
 Curator temporary launcher synthetic tests:256MiB Job Object rejected512MiB allocation; timeout2s stopped sleeping child after2.031s with terminal receipt. Parent reviewed source, requested stronger affinity/flags readback before GO. Final child cap31GiB reserves1GiB overhead inside32GiB ceiling; affinity <=8 logical CPUs, thread env8, Arrow1, no GPU, wall1800s with kill/wait5s, no retry. Job limits affect only child processes, no ACL/system configuration changes. Windows memory/affinity contracts checked against Microsoft documentation: https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information and https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_basic_limit_information .

@@ -1,5 +1,7 @@
 import hashlib
 import json
+import importlib.util
+from pathlib import Path
 
 import pytest
 
@@ -61,3 +63,13 @@ def test_output_reservation_refuses_before_creating_destination(tmp_path):
     with pytest.raises(InputBoundaryError, match="reserved bytes"):
         stage_native_dev(c, q, r, split, tmp_path / "stage", max_output_bytes=10, **kw)
     assert not (tmp_path / "stage").exists()
+
+
+def test_cli_errors_expose_only_fixed_categories():
+    path = Path(__file__).resolve().parents[1] / "scripts/healthtech/stage_dapfam_native_dev.py"
+    spec = importlib.util.spec_from_file_location("stage_dapfam_test", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    assert module.safe_failure_code(InputBoundaryError("corpus count mismatch")) == "CORPUS_COUNT"
+    assert module.safe_failure_code(InputBoundaryError("PRIVATE_SOURCE_TEXT")) == "UNCLASSIFIED_INPUT_BOUNDARY"
+    assert module.safe_failure_code(KeyError("PRIVATE_ID")) == "MISSING_FIELD"

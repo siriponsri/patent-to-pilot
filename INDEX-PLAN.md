@@ -2,6 +2,10 @@
 
 ## HT-EVENT-ST1-TAKEOVER — 2026-11-10 21:15 Bangkok
 
+**HT-EVENT-CURATOR-V1-FAILED:** terminal input failure before destination;16.312s/3.644GBpeak,exit1,no model/GPU,all source pins unchanged. [Receipt](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/attempt-v1.json). Curator read-only bounded diagnosis permitted; no stage retry. CLI redaction-safe static error codes implemented,17/17 staging/native tests PASS. Native baseline still NOT_RUN. Prior RUNNING event historical.
+
+**HT-EVENT-CURATOR-DISPATCH:** single real stage RUNNING, child10184/session72462 startedUnix1794321125.1408741; curator monitors own handle. Code66405ab, publicationaf6ba97. Final launcher hash603051554e0c5ea85982ebde6e71e855c1a314cc8315a1048b1d485286bc1ce3;31GiB/CPU8/1800s/8GiBoutput, noGPU. Native-staging audit and paired handoff contain scoped paths; terminal receipt pending, no score/protected output.
+
 **HT-IDX30:** [solo fidelity mechanics](docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/README.md), pure deterministic sampling/card admission/gating IMPLEMENTED_FIXTURE_ONLY7/7. No durable ledger/screening adapter/real ratings yet; no retrieval outcomes. HT-IDX29 resource probes passed, disk admission8.812GBinclreservation, final launcher readback pending prior to one real stage. Parent writer/curator role split preserved; current source66405ab plus new fidelity helpers.
 
 **HT-EVENT-CURATOR-DELEGATION:** explicit owner amendment permits subagent curator, parent sole writer; role split not physical access denial. HT-IDX29 now8GiB output reservation enforced and single-thread Arrow,16/16 checks PASS. Curator prepares resource supervisor in temp only and awaits GO; real staging NOT_RUN. Inputs/receipt scope unchanged; protected outputs forbidden. See native-staging audit and authorization amendment.

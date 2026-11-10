@@ -2,6 +2,10 @@
 
 ## Active ST1 takeover — 2026-11-10 21:15 Bangkok
 
+**21:34 terminal:** curator v1 FAILED before destination,session72462 terminal,16.312s,peak3.644GB,noGPU. One read-only diagnostic underway under curator role, not staging retry; no protected values return. Safe CLI error categories17/17 tests PASS. See HANDOFF/attempt-v1 receipt; earlier RUNNING superseded.
+
+**RUNNING curator:** child10184/session72462 under dapfam_curator, private supervisor`../_private_artifacts/healthtech/ptp-dapfam-native-dev-20261110-v1-supervisor`; one attempt,31GiB,CPU8,1800s,output8GiB,noGPU. Monitor same process, never restart from timeout. Latest pushedaf6ba97; source stage66405ab unchanged. No protected results return; completion pending. See HANDOFF.
+
 **Prelaunch:** capped curator memory/timeout probes passed; final affinity readback pending GO. Admission8.812GB incl8GiB output under40GiB; child31GiB,1800s,CPU8/noGPU. Real stage NOT_RUN. Fidelity pure mechanics7/7 PASS, no cards/model calls; ledger/runtime integration pending. See HANDOFF/native-staging/fidelity-mechanics audits. Parent sole repo writer; last pushed66405ab.
 
 **Curator amendment:** user authorized subagent curator; dapfam_curator prepares capped launcher, awaits parent GO. Parent remains sole repo writer; no protected content returned. Native staging8GiB output ceiling + single-thread Arrow implemented,16/16 checks PASS. Real staging NOT_RUN at checkpoint; next launcher/disk/source-pin verification then one authorized projection. This replaces personal-owner execution only for delegated task.

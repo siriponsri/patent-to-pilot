@@ -21,6 +21,33 @@ PINS = {
     "split.json": "dd76c019ee74c8d256e182ecfb329f9235638c1ecf9d2c7b1fa8073c4958e6dc",
 }
 
+SAFE_FAILURE_CODES = {
+    "source identity mismatch": "SOURCE_HASH_MISMATCH",
+    "invalid preserved split": "SPLIT_FORMAT",
+    "preserved split count mismatch": "SPLIT_COUNTS",
+    "duplicate corpus family": "DUPLICATE_CORPUS_ID",
+    "invalid corpus text": "CORPUS_TEXT_TYPE",
+    "corpus count mismatch": "CORPUS_COUNT",
+    "corpus differs from historical vector input": "CORPUS_SERIALIZATION_HASH",
+    "invalid query population": "QUERY_POPULATION",
+    "invalid native TA query": "QUERY_TEXT_TYPE",
+    "empty native query; no silent denominator reduction": "EMPTY_NATIVE_QUERY",
+    "missing assigned queries": "MISSING_ASSIGNED_QUERIES",
+    "invalid relation identity": "RELATION_IDENTITY",
+    "invalid dev annotation": "DEV_ANNOTATION",
+    "projected output exceeds reserved bytes": "OUTPUT_RESERVATION",
+    "preserve existing attempt": "EXISTING_ATTEMPT",
+    "preserve existing staging attempt": "EXISTING_ATTEMPT",
+}
+
+
+def safe_failure_code(error):
+    # Never echo arbitrary exception values, paths or source-derived content.
+    if isinstance(error, InputBoundaryError):
+        return SAFE_FAILURE_CODES.get(str(error), "UNCLASSIFIED_INPUT_BOUNDARY")
+    return {OSError: "IO_ERROR", KeyError: "MISSING_FIELD", ValueError: "INVALID_VALUE",
+            TypeError: "INVALID_TYPE"}.get(type(error), "UNCLASSIFIED_FAILURE")
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -56,6 +83,7 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except (InputBoundaryError, OSError, KeyError, ValueError, TypeError):
-        print("DAPFAM preparation failed. Preserve attempt; no completion accepted. Curator-only diagnosis required.", file=sys.stderr)
+    except (InputBoundaryError, OSError, KeyError, ValueError, TypeError) as error:
+        print("DAPFAM preparation failed: " + safe_failure_code(error) +
+              ". Preserve attempt; no completion accepted. Curator-only diagnosis required.", file=sys.stderr)
         raise SystemExit(1)
