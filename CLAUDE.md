@@ -2,11 +2,11 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:50:59 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:53:59 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed HANDOFF.md; last verified pushed base 5acdfce338d738b1bbc3d41f6467dccfe9ba0734.
-- Bound CPU index/mask + journaled acquisition/selection;26 focused/297 related tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-retrieval-controller-20261110/README.md. Six-stage authored fixture only, no real run.
-- Next final outcome binding to sealed selection. Full-matrix copy/hash buffer not resource-approved at real scale; actual mask/preflight/isolation, anchor/failure policy/live caps remain. R1/generation/fidelity unchanged, R5 not authorized.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed HANDOFF.md; last verified pushed base a501b96cbc9169a3381a12bfbd95ffa02493156d.
+- Final rankings derived/bound to sealed typed selection; all-ready controller finalization checks full cohort/dependencies without rerun.305 related tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-selection-finalization-20261110/README.md.
+- Next mixed terminal outcomes/original-anchor receipts; full-scale memory/live caps/preflight still pending. R1 curator/generation/fidelity unchanged; R5 not authorized.
 - No actual jobs, remote not re-polled. Local tests terminal exit0. Preserve owner untracked handoff/private outputs; paired updates mandatory.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-11-10 09:53:59 Bangkok",
+  "base_commit": "a501b96cbc9169a3381a12bfbd95ffa02493156d",
+  "tests": 305,
+  "scope": "25 SACR files plus MTM bound runner",
+  "new_cases": 8,
+  "ruff": "PASS",
+  "actual_execution": "NOT_RUN",
+  "mixed_cohort_controller": "INCOMPLETE"
+}

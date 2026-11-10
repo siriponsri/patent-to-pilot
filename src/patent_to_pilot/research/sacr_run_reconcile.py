@@ -3,6 +3,7 @@ from patent_to_pilot.research.mtm_runtime import InputBoundaryError, exact_field
 from patent_to_pilot.research.sacr_components import digest
 from patent_to_pilot.research.sacr_outcomes import summarize_cohort, summarize_costs
 from patent_to_pilot.research.sacr_profile_result import profile_result
+from patent_to_pilot.research.sacr_selection_result import selection_outcome
 
 STAGES = {'profile', 'generic', 'selective', 'embedding', 'acquisition', 'selection'}
 
@@ -45,7 +46,8 @@ def validate_plan(manifest, *, expected_manifest_sha256):
     return slots
 
 
-def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha256, profile_outputs=None):
+def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha256, profile_outputs=None,
+                  selection_outputs=None):
     slots = validate_plan(manifest, expected_manifest_sha256=expected_manifest_sha256)
     cohort = summarize_cohort(manifest['query_ids'], outcomes)
     records = {}
@@ -76,6 +78,16 @@ def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha
             raise InputBoundaryError('cost event does not describe its attempt')
     states = {(record['query_id'], record['stage']): record['status'] for record in records.values()}
     decisions = {}
+    derived_outcomes = {}
+    if selection_outputs is not None:
+        if type(selection_outputs) is not dict:
+            raise InputBoundaryError('invalid typed selection mapping')
+        for q, output in selection_outputs.items():
+            derived = selection_outcome(output)
+            if (q not in manifest['query_ids'] or derived['query_id'] != q or
+                    states[q, 'selection'] != 'COMPLETED'):
+                raise InputBoundaryError('typed selection disagrees with attempt identity')
+            derived_outcomes[q] = derived
     if profile_outputs is not None:
         if type(profile_outputs) is not dict:
             raise InputBoundaryError('invalid typed profile output mapping')
@@ -90,6 +102,8 @@ def reconcile_run(manifest, attempts, events, outcomes, *, expected_manifest_sha
             decisions[q] = output['decision']
     for outcome in outcomes:
         q, state = outcome['query_id'], outcome['state']
+        if q in derived_outcomes and outcome != derived_outcomes[q]:
+            raise InputBoundaryError('final outcome differs from sealed selection')
         decision = decisions.get(q)
         typed_states = {'PROFILE_FAILED_FALLBACK_REQUIRED': {'PROFILE_FAILED'},
                         'PROFILE_EMPTY_FALLBACK_REQUIRED': {'PROFILE_EMPTY'},

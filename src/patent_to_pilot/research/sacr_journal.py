@@ -142,6 +142,7 @@ class DevStageJournal:
             raise InputBoundaryError('persisted manifest changed')
         attempts, events = [], []
         profile_outputs = {}
+        selection_outputs = {}
         for attempt_id, slot in self.slots.items():
             path = self.destination / digest(attempt_id)
             if not (path / 'seal.json').is_file():
@@ -174,8 +175,11 @@ class DevStageJournal:
                                 sources[slot['query_id']]):
                             raise InputBoundaryError('typed profile source differs from execution binding')
                     profile_outputs[slot['query_id']] = output
+                if (slot['stage'] == 'selection' and type(output) is dict and
+                        output.get('format') == 'sacr-selection-stage-v1'):
+                    selection_outputs[slot['query_id']] = output
         report = reconcile_run(manifest, attempts, events, outcomes, expected_manifest_sha256=self.expected,
-                               profile_outputs=profile_outputs)
+                               profile_outputs=profile_outputs, selection_outputs=selection_outputs)
         outcomes_hash = _write(self.destination / 'outcomes.json', outcomes)
         report_hash = _write(self.destination / 'reconciliation.json', report)
         _write(self.destination / 'completion.json', {'manifest_sha256': self.expected,

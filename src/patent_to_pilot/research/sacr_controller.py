@@ -13,6 +13,7 @@ from patent_to_pilot.research.sacr_embedding import embedding_plan, bind_embeddi
 from patent_to_pilot.research.sacr_acquisition import acquire_union
 from patent_to_pilot.research.sacr_factorial import compare_factorial
 from patent_to_pilot.research.sacr_outcomes import METRICS
+from patent_to_pilot.research.sacr_selection_result import selection_outcome
 
 
 class BoundProfileController:
@@ -194,3 +195,34 @@ class BoundProfileController:
             return {'format': 'sacr-selection-stage-v1', 'query_id': query_id, 'binding': binding,
                     'acquisition_output_sha256': digest(acquisition), 'result': result}, costs
         return self.journal.execute(self._attempts[query_id, 'selection'], work)
+
+    def finalize_ready(self, index, masks):
+        """Derive every query from sealed outputs; no arbitrary rankings accepted.
+
+        All-ready cohort path only. Missing/fallback/stopped queries are refused,
+        never dropped; mixed-cohort finalization still needs bound failure/anchor
+        evidence. READY denotes recorded rankings, not scientific/fidelity approval.
+        No search, model call or reranking is performed during this verification.
+        """
+        queries = self.journal.manifest['query_ids']
+        if type(masks) is not dict or set(masks) != set(queries):
+            raise InputBoundaryError('finalization requires exact declared mask cohort')
+        outcomes = []
+        for query in queries:
+            context, binding = self._retrieval_inputs(query, index, masks[query])
+            acquisition = self.journal.read_completed_output(self._attempts[query, 'acquisition'])
+            selection = self.journal.read_completed_output(self._attempts[query, 'selection'])
+            if (acquisition.get('format') != 'sacr-acquisition-stage-v1' or
+                    acquisition.get('query_id') != query or acquisition.get('binding') != binding or
+                    selection.get('query_id') != query or selection.get('binding') != binding or
+                    selection.get('acquisition_output_sha256') != digest(acquisition) or
+                    selection.get('result', {}).get('acquisition') != acquisition.get('acquired') or
+                    selection.get('result', {}).get('passage_order_sha256') != context['expected_order_sha256']):
+                raise InputBoundaryError('selection dependency chain differs from bound run')
+            outcome = selection_outcome(selection)
+            for arm, ranking in outcome['rankings'].items():
+                if (len(ranking) > binding['depth'] or
+                        not set(ranking) <= set(acquisition['acquired'][arm[0]]['family_ids'])):
+                    raise InputBoundaryError('selection exceeds its bound candidate exposure')
+            outcomes.append(outcome)
+        return self.journal.finalize(outcomes)
