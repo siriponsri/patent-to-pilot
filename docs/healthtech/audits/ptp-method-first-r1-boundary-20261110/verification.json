@@ -1,0 +1,29 @@
+{
+  "format": "ptp-r1-boundary-v1",
+  "observed_at": "2026-11-10T07:04:12.849590+07:00",
+  "base_commit": "b72cea102d880781b3e1da269a956a54da4d9af9",
+  "status": "IMPLEMENTED_FIXTURE_VERIFIED",
+  "source_sha256": {
+    "src/patent_to_pilot/research/__init__.py": "a2a39307f5f37254bc8eaf1ae149718003e80ca940d3a5c454e27259ff46773b",
+    "src/patent_to_pilot/research/mtm_runtime.py": "5a97ab9a6f344edbf6582ec00811aa3d0b5dfed480d518fcfb49e1073809e20a",
+    "src/patent_to_pilot/evaluation/mtm_staging.py": "6712bfb3238fef0f6588ce4eadd10767ec9dcd7032acaa8ebc7638fce411289b",
+    "src/patent_to_pilot/evaluation/mtm_dev_inputs.py": "2f514a6bc6776b9a4ba07453241dc23b29db4b244cfb54062a76df2992ef6710",
+    "scripts/healthtech/stage_mtm_metadata.py": "0de53e19c6dabd7c6fcbf9f11a654c74aa29636ebbec6689cb230626c97b9622",
+    "tests/test_mtm_input_boundary.py": "b175a7c40b719cc100bd35c3bc97a61c854fab20f81bda8e54a4db0fb6d5b48e"
+  },
+  "pytest": {
+    "exit_code": 0,
+    "passed": 39,
+    "seconds": 3.8
+  },
+  "ruff": {
+    "exit_code": 0,
+    "result": "PASS"
+  },
+  "real_staging": "NOT_RUN",
+  "physical_isolation": "NOT_ATTESTED",
+  "real_ranking_parity": "NOT_RUN",
+  "protected_label_access": false,
+  "paid_calls": 0,
+  "gpu_jobs": 0
+}
