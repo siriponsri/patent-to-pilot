@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest run reconciliation:**27 tests pass; declared slots, terminal receipts, costs and cohort agree or fail closed. [Audit](../docs/healthtech/audits/ptp-method-first-r2-reconcile-20261110/README.md). Next durable injected-backend controller; record consistency is not actual execution proof. Readiness remains incomplete.
+
 > **Latest readiness audit:**31 checklist items +6 package requirements: incomplete, not ready for R3/R5. [Audit](../docs/healthtech/audits/ptp-method-first-readiness-20261110/README.md). R5 conditional proposal is not authorization. Next expected-run/reservation/cost reconciliation and complete injected-backend controller; actual R1/generation gates remain.
 
 > **Latest outcomes/costs:**36 tests pass; full cohort preserves missing/fallback, review/retrieval failures stop scoring, unknown costs stay unknown. [Audit](../docs/healthtech/audits/ptp-method-first-r2-outcomes-20261110/README.md). Next reserved-attempt/event reconciliation and full R0–R6 acceptance audit; runtime and actual-data/generation gates remain.

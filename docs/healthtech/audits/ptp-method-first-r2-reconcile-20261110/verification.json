@@ -1,0 +1,9 @@
+{
+  "status": "SYNTHETIC_RECORD_RECONCILIATION_PASS",
+  "tests": 27,
+  "reconcile_tests": 12,
+  "outcome_tests": 15,
+  "lint": "PASS",
+  "durable_controller": "NOT_IMPLEMENTED",
+  "actual_execution_receipt_validation": "NOT_RUN"
+}

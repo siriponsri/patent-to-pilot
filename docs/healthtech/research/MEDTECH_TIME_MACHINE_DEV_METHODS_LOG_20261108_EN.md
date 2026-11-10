@@ -430,3 +430,12 @@ negative scientific result. Conditional four-total-system panel proposal is not
 freeze/approval. No test or model execution.
 Audit ../audits/ptp-method-first-readiness-20261110/README.md.
 Next expected-run/reservation/event reconciliation and offline controller.
+
+
+### 2026-11-10 09:07:05 Bangkok — Dev run-record reconciliation
+
+Expected dev manifest/slot, terminal attempt, cost-event and cohort reconciliation
+implemented;27 tests/lint pass. No automatic nonterminal-to-interrupted conversion,
+no retry slots, no skipped costs. Actual receipt byte loading/controller remain open.
+No model/data run. Audit ../audits/ptp-method-first-r2-reconcile-20261110/README.md.
+Next durable synthetic controller; actual R1/generation/fidelity gates unchanged.
