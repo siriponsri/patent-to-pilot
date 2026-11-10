@@ -9,6 +9,7 @@ from patent_to_pilot.research.sacr_journal import DevStageJournal
 from patent_to_pilot.research.sacr_profile_result import profile_result
 from patent_to_pilot.research.sacr_components import digest
 from patent_to_pilot.research.sacr_view_result import view_result
+from patent_to_pilot.research.sacr_generated_view import generated_view_result
 from patent_to_pilot.research.sacr_embedding import embedding_plan, bind_embeddings
 from patent_to_pilot.research.sacr_acquisition import acquire_union
 from patent_to_pilot.research.sacr_factorial import compare_factorial
@@ -64,6 +65,26 @@ class BoundProfileController:
         Raw generation attempts stay in adapter-owned private artifacts. Lexical
         screening is not fidelity approval; review decisions stop later retrieval.
         """
+        return self._views(query_id, kind, adapter, generated=False)
+
+    def generated_views(self, query_id, kind, adapter):
+        """Adapter returns (original generation bytes, identity receipt, costs).
+
+        It must persist its original private attempt, including unusable returns,
+        before returning. No failure-to-empty conversion or new model dispatch.
+        Generic receives only query/source; selective also a detached profile.
+        """
+        return self._views(query_id, kind, adapter, generated=True)
+
+    def _generation_identity(self, query_id, kind, profile):
+        execution = self.journal.execution
+        return {'query_id': query_id, 'kind': kind, 'run_id': execution['run_id'],
+                'attempt_id': self._attempts[query_id, kind],
+                'source_sha256': profile['profile']['source_sha256'],
+                'generator_manifest_sha256': execution['identities']['generator_manifest'],
+                'prompt_manifest_sha256': execution['identities']['prompt_manifest']}
+
+    def _views(self, query_id, kind, adapter, *, generated):
         if query_id not in self._sources or kind not in ('generic', 'selective'):
             raise InputBoundaryError('unknown query or view stage')
         source = self._sources[query_id]
@@ -80,6 +101,12 @@ class BoundProfileController:
 
         def validated_work():
             args = (query_id, source) if kind == 'generic' else (query_id, source, deepcopy(profile))
+            if generated:
+                raw, identity, metrics = adapter(*args)
+                result = generated_view_result(
+                    raw, identity, expected_identity=self._generation_identity(query_id, kind, canonical),
+                    metrics=metrics, profile_output=canonical, limits=self.journal.execution['limits'])
+                return result, metrics
             raw, metrics = adapter(*args)
             return view_result(raw, kind=kind, profile_output=canonical, maximum_bytes=cap,
                                maximum_views=self.journal.execution['limits']['views']), metrics
@@ -108,9 +135,16 @@ class BoundProfileController:
             output = self.journal.read_completed_output(self._attempts[query_id, kind])
             if type(output) is not dict or type(output.get('response_utf8')) is not str:
                 raise InputBoundaryError('replayable typed view result required')
-            replayed = view_result(output['response_utf8'].encode('utf-8'), kind=kind,
-                                   profile_output=canonical, maximum_bytes=limits['response_bytes'],
-                                   maximum_views=limits['views'])
+            if output.get('format') == 'sacr-view-stage-v3':
+                replayed = generated_view_result(
+                    output['generation_artifact_utf8'].encode('utf-8'), output['generation_identity'],
+                    expected_identity=self._generation_identity(query_id, kind, canonical),
+                    metrics=self.journal.read_completed_metrics(self._attempts[query_id, kind]),
+                    profile_output=canonical, limits=limits)
+            else:
+                replayed = view_result(output['response_utf8'].encode('utf-8'), kind=kind,
+                                       profile_output=canonical, maximum_bytes=limits['response_bytes'],
+                                       maximum_views=limits['views'])
             if replayed != output or replayed['decision'] == 'REVIEW_REQUIRED':
                 raise InputBoundaryError('view evidence changed or requires review')
             results[kind] = {'views': tuple(replayed['screened']['views']),

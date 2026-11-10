@@ -142,6 +142,22 @@ class DevStageJournal:
                 raise InputBoundaryError('dependency output bytes changed')
         return receipt, output
 
+    def read_completed_metrics(self, attempt_id):
+        """Check the sealed event as well as the output before replaying costs."""
+        receipt, _ = self.read_terminal_attempt(attempt_id)
+        if receipt['status'] != 'COMPLETED':
+            raise InputBoundaryError('completed cost event required')
+        path = self.destination / digest(attempt_id)
+        seal, _ = _read(path / 'seal.json')
+        event, observed = _read(path / 'event.json')
+        slot = self.slots[attempt_id]
+        if (observed != seal['event_sha256'] or event.get('event_id') != attempt_id or
+                event.get('query_id') != slot['query_id'] or event.get('stage') != slot['stage'] or
+                event.get('status') != 'COMPLETED'):
+            raise InputBoundaryError('completed cost event differs from seal or slot')
+        summarize_costs([event])
+        return deepcopy(event['metrics'])
+
     def execute(self, attempt_id, callback):
         path, slot = self._reserve(attempt_id)
         start = time.monotonic()
