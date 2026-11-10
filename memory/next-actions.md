@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest curator package:** [runbook](../docs/healthtech/audits/ptp-method-first-r1-curator-20261110/CURATOR_RUNBOOK.md), preparation CLI and 67 passing tests. Real staging NOT_RUN. Obtain curator/operator and isolated environment; independently continue SACR specification and parity declaration.
+
 > **Latest dev baseline entry point:** [61 tests pass](../docs/healthtech/audits/ptp-method-first-r1-bound-runner-20261110/README.md). Query cohort/missing ledger and pinned preflight now precede unchanged historical main/U-X runner; synthetic main stand-in only. Next curator asset command and isolation procedure, operational handoff, declared actual dev A03/parity. No real model/GPU run.
 
 > **Latest prospective preflight:** [58 synthetic tests pass](../docs/healthtech/audits/ptp-method-first-r1-preflight-20261110/README.md). Curator projection preserves passage identity and removes roles; callable gate checks pinned projected corpus/vector/model. Next finish query-text/retrieval runner integration, curator staging/isolation handoff, real dev A03/parity. No real projection or new experiment run.

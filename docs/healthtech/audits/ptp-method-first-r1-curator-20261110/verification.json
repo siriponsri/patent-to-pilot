@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-10 07:40:55 Bangkok",
+  "base_commit": "a1bab3fe890ca245f9f7ee875243c37c501b0ace",
+  "status": "SYNTHETIC_PASS_REAL_STAGING_NOT_RUN",
+  "tests": 67,
+  "new_cases": 6,
+  "seconds": 5.8,
+  "ruff": "PASS",
+  "a14_report_sha256": "935d9b6c677b6df3abba405efe88097811cd1cea907bee42d4292131a8c7d945",
+  "protected_data_access": false,
+  "isolation": "OWNER_DESIGNATED_CURATOR_AND_ENVIRONMENT_REQUIRED"
+}

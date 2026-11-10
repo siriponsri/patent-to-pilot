@@ -1,5 +1,6 @@
 ﻿{
     "method_first_20261110": {
+        "r1_curator_runbook": "docs/healthtech/audits/ptp-method-first-r1-curator-20261110/CURATOR_RUNBOOK.md",
         "r1_bound_runner_audit": "docs/healthtech/audits/ptp-method-first-r1-bound-runner-20261110/README.md",
         "r1_preflight_audit": "docs/healthtech/audits/ptp-method-first-r1-preflight-20261110/README.md",
         "runtime_preflight": "BOUND_DEV_MAIN_RUNNER_SYNTHETIC_PASS_REAL_PARITY_PENDING",
@@ -11,7 +12,7 @@
         "audit": "docs/healthtech/audits/ptp-method-first-r0-20261110/README.md",
         "verification": "docs/healthtech/audits/ptp-method-first-r0-20261110/verification.json",
         "authority": "Owner goal activation 10 Nov 2026; HANDOFF_PROMPT.md",
-        "next": "Complete curator asset preparation/isolation handoff and predeclare actual dev A03/baseline parity checks",
+        "next": "Obtain curator/environment handoff; independently draft SACR and parity protocol; actual dev A03/parity after isolation",
         "protected_scoring": "NOT_AUTHORIZED",
         "new_experiments": "NOT_RUN",
         "r1_dapfam_audit": "docs/healthtech/audits/ptp-method-first-r1-dapfam-20261110/README.md",

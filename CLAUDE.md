@@ -2,14 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 07:36:25 Bangkok
+## Cross-account checkpoint — 2026-11-10 07:40:55 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 8bb0b47a403589dff642eddbb74e8002422146ad.
-- Latest package: pinned dev query-text loader and prospective main/U-X baseline entry point. [Audit](docs/healthtech/audits/ptp-method-first-r1-bound-runner-20261110/README.md). 61 tests pass in 4.61s, Ruff pass. Tests use actual synthetic preflight and mocked historical main; no actual model/GPU/ranking computation.
-- Wrapper validates manifests, population/missing-query ledger and corpus/vector/model identity before historical runner import; forces dev/main and vector reuse. Frozen numerical code unchanged; cutoff-tie limitation preserved, parity NOT_RUN.
-- Actual curator staging/isolation, dev A03 counts, real runner/parity validation remain open. No new job, protected-data access, paid call or real projection. Inputs must remain immutable after checks. Recheck remote resources before launch.
-- Next: curator dev-asset preparation command and complete isolation procedure; obtain operational handoff and predeclare parity; actual safe dev A03/baseline checks; R2 when integrity permits.
-- Changed: query module, wrapper, tests/audit, paired handoffs and progress pointers. Preserve owner untracked research handoff. Publish paired handoffs with scoped work; keep all test/spending/protocol/release gates and single-writer ownership.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: a1bab3fe890ca245f9f7ee875243c37c501b0ace.
+- Latest: curator preparation CLI and [runbook](docs/healthtech/audits/ptp-method-first-r1-curator-20261110/CURATOR_RUNBOOK.md). 67 synthetic tests pass in 5.80s; Ruff pass. Exact query bytes, expected missing count and original report pinned; completion receipt written last.
+- Real staging/isolation, dev A03 and baseline parity NOT_RUN. No protected data read, GPU work or new jobs. Flags/hashes do not establish isolation.
+- Required operational handoff: owner-designated curator and isolated development environment with the runbook allowlist. Do not parse mixed metadata in the development-agent environment. Independently draft SACR specification/fidelity and parity protocol while pending.
+- Changes: preparation script/tests, audit/runbook, paired handoff/progress pointers. Preserve owner untracked research handoff. Goal ACTIVE; single writer and all test/spending/protocol/release gates apply. Recovered path-search and documentation-tool failures are recorded in audit.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
