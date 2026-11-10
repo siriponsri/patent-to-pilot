@@ -1,0 +1,21 @@
+{
+  "status": "ENGINEERING_PASS",
+  "wall_seconds": 96.49483831599355,
+  "returncode": 0,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-10T15:26:31.275318909Z",
+    "FinishedAt": "2026-11-10T15:28:07.259543177Z"
+  },
+  "observed_cgroup_peak_bytes": 1290051584,
+  "completion_sha256": "8ae9bd3f2361849b414efe115ddffa725dca6ea2fdad5269e5fca5f1798f8850",
+  "retry": false
+}

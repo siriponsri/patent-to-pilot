@@ -1,3 +1,5 @@
+Current result: ENGINEERING_PASS,one call,96.4948383s supervisor; EOS and unchanged quote/source-order validation passed. Semantic fidelity not performed. See summary.json and terminal.json. Additional smoke authorization consumed; no retry. Earlier declaration below is historical.
+
 # SYN-SACR-004 prospective source-order prompt correction
 
 Status: DECLARED_NOT_RUN. Uses the owner's one additional synthetic smoke authorization after diagnosed repair. No further generation attempt is authorized by this document.

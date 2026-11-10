@@ -1,0 +1,43 @@
+{
+  "status": "SMOKE_COMPLETED_NOT_RESEARCH_VALIDATION",
+  "outcomes": [
+    {
+      "status": "EOS_COMPLETE",
+      "model_calls": 1,
+      "input_tokens": 767,
+      "output_tokens": 375,
+      "response_sha256": "def34c59257ec241f94e20a204bfc17d28e63ee34ed8a59f64d921a1d972b87a",
+      "retry": false,
+      "kind": "profile_quotes",
+      "seconds": 35.703,
+      "validation_status": "QUOTE_PROFILE_STRUCTURALLY_VALID",
+      "profile_validation": {
+        "status": "STRUCTURE_AND_SPANS_PASS",
+        "blocks": 1,
+        "explicit_conditions": 2,
+        "uncertain_conditions": 0,
+        "conjunction_blocks": 1,
+        "review_flags": [],
+        "anchor_fallback_required": false,
+        "semantic_status": "unknown",
+        "fidelity_review": "REQUIRED"
+      },
+      "alignment": {
+        "format": "sacr-quote-alignment-v1",
+        "proposal_sha256": "257076a214cce03eb934258cb58f6c9936568d1fa1071abff0bb07bb1f950058",
+        "canonical_profile_sha256": "49e53b8fb0d1c03e935f268054ab03728737252d8da914b567012f2f1c7e5ff4",
+        "resolved_references": 3,
+        "policy": "UNIQUE_EXACT_CODEPOINT_MATCH_NO_NORMALIZATION",
+        "semantic_status": "unknown"
+      }
+    }
+  ],
+  "model_load_seconds": 4.138,
+  "total_seconds": 93.639,
+  "peak_gpu_allocated_bytes": 16696541184,
+  "peak_gpu_reserved_bytes": 17735614464,
+  "effective_decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+  "torch": "2.8.0+cu128",
+  "semantic_validation": "NOT_PERFORMED",
+  "engineering_pass": true
+}

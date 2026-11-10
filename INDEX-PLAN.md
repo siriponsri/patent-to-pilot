@@ -1,5 +1,9 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## SYN004 ENGINEERING_PASS 2026-11-10
+
+Single additional authorized smoke completed exit0,96.4948383s supervisor; onecall767input/375output tokens,35.703s generation. EOS_COMPLETE; oneblock/twoexplicitconditions,three exact quote references,source-order validatorPASS,no repair/retry. Audit docs/healthtech/audits/ptp-syn-sacr004-20261110 terminal/summary/isolation receipts; summary8ae9bd3f2361849b414efe115ddffa725dca6ea2fdad5269e5fca5f1798f8850 verified. GPU peakallocated16696541184/reserved17735614464bytes; cgroup hostpeak1290051584bytes sampled. Container stopped/session19221 terminal,no active jobs. Parent solewriter,last pushedfae3475. Additional smoke authorization consumed; no further smoke. Semantic fidelity NOT_PERFORMED. Next DAPFAM source binding (current execution binder MTM-only),durable fidelity ledger/screening and failure-policy integration,then gated dev; S/G sample/card allocation remains pending. All previous costs/failures retained.
+
 ## SYN004 RUNNING 2026-11-10
 
 Parent solewriter,last pushed9ac075d. Single authorized new smoke dispatched; session19221,container ptp-syn-sacr004-20261110-v1 livePID3946946,Docker child3946859. Remote archive1c89a093e6fbeff12dd0e4ad495218b3ae1bcd71f9c628ff66182a07177d440e/supervisor1afd20a5165d843d04a0ca3da44cf4cad02fd780aeb539bd03864ca697984dcb verified.1800s reservation plus prior182.3919865s;31GiB+overhead,no benchmark mounts,one call,no retry. Monitor SAME handle/container. Terminal pending; next inspect EOS/unchangedvalidator and charge all costs; no fidelity/quality claim.

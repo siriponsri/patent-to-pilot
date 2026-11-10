@@ -1,10 +1,10 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 259200,
-  "gpu_conservative_charged_seconds": 182.39198653260246,
-  "gpu_remaining_seconds": 259017.6080134674,
-  "charge_basis": "Whole SYN003 and native baseline v1 supervisor intervals; not measured GPU busy time",
-  "model_calls": 1,
+  "gpu_conservative_charged_seconds": 278.886824848596,
+  "gpu_remaining_seconds": 258921.1131751514,
+  "charge_basis": "Whole SYN003/native baseline/SYN004 supervisor intervals; query encoding recorded separately from generation calls",
+  "model_calls": 2,
   "cpu004_calls": 0,
   "automatic_retries": 0,
   "full_dev_started": false,
@@ -32,9 +32,8 @@
     }
   ],
   "syn004_reservation": {
-    "status": "RUNNING",
-    "seconds": 1800,
-    "session": 19221,
-    "container": "ptp-syn-sacr004-20261110-v1"
+    "status": "ENGINEERING_PASS_AUTHORIZED_ATTEMPT_CONSUMED",
+    "actual_supervisor_seconds": 96.49483831599355,
+    "reserved_seconds_released": 1800
   }
 }
