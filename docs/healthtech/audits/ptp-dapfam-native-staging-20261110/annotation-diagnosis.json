@@ -1,0 +1,29 @@
+{
+  "diagnosis": {
+    "status": "READ_ONLY_DEV_ANNOTATION_DIAGNOSIS",
+    "counts": {
+      "dev_records": 18960,
+      "exact_valid": 9480,
+      "case_only_valid": 0,
+      "nonstring": 0,
+      "other_invalid": 9480,
+      "nonfinite": 0
+    },
+    "upper_maps_all_dev_domains_to_IN_OUT": false,
+    "all_dev_scores_finite": true,
+    "staging_called": false,
+    "protected_statistics_emitted": false
+  },
+  "resources": {
+    "status": "COMPLETED",
+    "pid": 24244,
+    "process_exit_code": 0,
+    "wall_seconds": 1.625,
+    "timeout_seconds": 120,
+    "memory_limit_bytes": 33285996544,
+    "max_cpu_affinity": 8,
+    "model_calls": 0,
+    "gpu_calls": 0,
+    "automatic_retries": 0
+  }
+}

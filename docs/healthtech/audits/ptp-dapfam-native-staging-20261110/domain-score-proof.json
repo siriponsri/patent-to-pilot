@@ -1,0 +1,26 @@
+{
+  "diagnosis": {
+    "status": "READ_ONLY_DEV_DOMAIN_SCORE_ASSOCIATION",
+    "counts": {
+      "positive_exact_domain": 9480,
+      "positive_other_domain": 0,
+      "nonpositive_exact_domain": 0,
+      "nonpositive_other_domain": 9480,
+      "nonfinite": 0
+    },
+    "staging_called": false,
+    "protected_statistics_emitted": false
+  },
+  "resources": {
+    "status": "COMPLETED",
+    "pid": 27208,
+    "process_exit_code": 0,
+    "wall_seconds": 1.1410000000032596,
+    "timeout_seconds": 120,
+    "memory_limit_bytes": 33285996544,
+    "max_cpu_affinity": 8,
+    "model_calls": 0,
+    "gpu_calls": 0,
+    "automatic_retries": 0
+  }
+}

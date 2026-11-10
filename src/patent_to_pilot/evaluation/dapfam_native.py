@@ -37,7 +37,9 @@ def native_dev_task(corpus_rows, query_rows, relations, *, partition: str, candi
         seen.add((query, family))
         score = float(relation["relevance_score"])
         domain = relation["domain_rel"]
-        if not math.isfinite(score) or domain not in {"IN", "OUT"}:
+        # Native loader filters nonpositives before domain selection. Their
+        # auxiliary domain marker does not enter the positive qrel partitions.
+        if not math.isfinite(score) or (score > 0 and domain not in {"IN", "OUT"}):
             raise InputBoundaryError("invalid relation annotation")
         if score > 0 and (partition == "ALL" or domain == partition):
             qrels.setdefault(query, {})[family] = 1

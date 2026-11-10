@@ -84,3 +84,15 @@ def test_exact_historical_crlf_corpus_bytes_restored_without_repinning(tmp_path)
     c[0]["title_en"] = "changed"
     with pytest.raises(InputBoundaryError, match="historical vector input"):
         stage_native_dev(c, q, r, split, tmp_path / "different", **kw)
+
+
+def test_nonpositive_annotation_preserved_only_in_dev_evaluator(tmp_path):
+    c, q, r, split, kw = fixture()
+    r[0].update(relevance_score=0, domain_rel="NONPOSITIVE_SYNTHETIC_MARKER")
+    stage_native_dev(c, q, r, split, tmp_path / "stage", **kw)
+    manifest = json.loads((tmp_path / "stage/dev-evaluation/manifest.json").read_text())
+    assert manifest["eligible_queries"] == {"ALL": 0, "IN": 0, "OUT": 0}
+    assert json.loads((tmp_path / "stage/dev-evaluation/qrels-dev.jsonl").read_text())["domain_rel"] == r[0]["domain_rel"]
+    r[0]["relevance_score"] = 1
+    with pytest.raises(InputBoundaryError, match="annotation"):
+        stage_native_dev(c, q, r, split, tmp_path / "bad", **kw)

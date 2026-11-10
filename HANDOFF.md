@@ -6,6 +6,8 @@ Status: `OWNER_APPROVED_BOUNDED_DEV_EXECUTION`
 
 ### Active ST1 takeover — 2026-11-10 21:15 Bangkok
 
+**V2 annotation fix:** v2terminalFAILED DEV_ANNOTATION,10.219s/3.640GBpeak,nooutput. Dev-only diagnosis proves all9,480non-IN/OUT markers are nonpositive; all9,480positives exactIN/OUT. Pinned MTEB filters positive before domain; corrected staging/evaluator guard22/22 tests PASS. [Evidence](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/README.md). Fresh v3 pending committed-code curator GO, samecaps; no generation/test run or positive relabel. All failures preserved, parent sole writer.
+
 **Verified DAPFAM fix:** v1 corpus byte mismatch proved newline-only via existing historical file, LF-normalized hash equals new serialization exactly; source pins remain unchanged. [Proof/fix](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/README.md). Exact-hash CRLF reconstruction added18/18 tests PASS. Fresh v2 curator projection pending GO after committed source/free-space check; same31GiB/CPU8/1800s/8GiBoutput. No new approval needed under diagnosed-repair authorization; retain failed v1 and read-only diagnostics. Current no running stage; parent sole repo writer.
 
 **21:34 Bangkok terminal update:** curator v1 FAILED/exit1 before output creation,16.312s,peak3,644,051,456bytes,no timeout/GPU/model call. Session72462 no longer running. [Receipt](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/attempt-v1.json). One bounded read-only curator diagnostic authorized, no staging rerun; exact cause pending. CLI safe static error codes added17/17 targeted checks PASS. Previous RUNNING text below is historical. Continue independent fidelity/SACR prep, keep all tests closed.

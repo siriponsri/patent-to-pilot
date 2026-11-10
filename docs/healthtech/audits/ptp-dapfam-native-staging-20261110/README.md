@@ -1,5 +1,11 @@
 # Native DAPFAM curator preparation
 
+## V2 diagnosis and native annotation correction
+
+V2 FAILED DEV_ANNOTATION before output,10.219s,peak3,640,107,008bytes,exit1,no calls/timeout; [receipt](attempt-v2.json). Read-only [categories](annotation-diagnosis.json) and [association](domain-score-proof.json):18,960dev relations,9,480positive with exactIN/OUT,9,480nonpositive with other markers,0nonfinite/positive-other. No protected/raw annotation returned.
+
+Pinned [MTEB loader](https://github.com/embeddings-benchmark/mteb/blob/9242b36a1d400fc8c3af573e6a6e0705c0b96e3d/mteb/tasks/retrieval/eng/dapfam_patent_retrieval.py) lines101-122 selects score>0 before domain matching. Our adapter incorrectly required IN/OUT on nonpositives. Corrected staging/native evaluator: finite scores required; positive domain must remainIN/OUT; original nonpositive annotations retained only in dev evaluator. No positive/cohort/candidate removed.22/22 targeted tests PASS, all3 partitions stable with nonpositive synthetic markers, positive-invalid/nonfinite refused. Initial guessed upstream URL404; exact audit-linked path succeeded; no dataset download. Fresh v3 planned after committed code/GO under diagnosed-repair authority, samecaps; v1/v2 stay FAILED. First documentation patch context mismatch failed atomically; corrected checkpoint applied.
+
 ## Verified v1 cause and bounded v2 preparation
 
 [Read-only diagnostic](diagnosis-v1.json) proves all4 pins/split/count/type checks pass; earliest mismatch is corpus serialization hash. [Byte-only proof](newline-proof-v1.json): historical328,999,080bytes SHA42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d contains45,336 CRLF separators; normalize LF gives328,953,744bytes SHA0d57b65bb9f314dab82e6a77018a42bd9e824fa9fe9b6f75ee8eb475b216613b, exactly newly derived serialization. LF→CRLF reconstruction equals historical bytes. No corpus contents/labels returned to parent. Diagnostics10.75s and2.641s, no stage calls/model calls.

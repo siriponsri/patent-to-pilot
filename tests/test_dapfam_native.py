@@ -80,3 +80,17 @@ def test_no_positive_partition_fails_explicitly_and_falsey_text_is_skipped():
     assert task["queries"]["q1"] == "query title"
     with pytest.raises(InputBoundaryError):
         evaluate_native_dev(task, {})
+
+
+@pytest.mark.parametrize("partition", ["ALL", "IN", "OUT"])
+def test_nonpositive_domain_markers_do_not_change_native_positive_qrels(partition):
+    c, q, r = fixtures()
+    expected = native_dev_task(c, q, r, partition=partition)
+    r[-1]["domain_rel"] = "NONPOSITIVE_SYNTHETIC_MARKER"
+    assert native_dev_task(c, q, r, partition=partition) == expected
+    r[-1]["relevance_score"] = 1
+    with pytest.raises(InputBoundaryError, match="annotation"):
+        native_dev_task(c, q, r, partition=partition)
+    r[-1]["relevance_score"] = float("nan")
+    with pytest.raises(InputBoundaryError, match="annotation"):
+        native_dev_task(c, q, r, partition=partition)

@@ -2,6 +2,8 @@
 
 ## Active ST1 takeover — 2026-11-10 21:15 Bangkok
 
+**V2 terminal/fix:** FAILED beforeoutput DEV_ANNOTATION. Scoped dev diagnosis and pinned upstream show domain filter applies to positives; nonpositive markers caused erroneous refusal. Fixed staging/evaluator22/22 testsPASS, no cohort/positive change. Fresh v3 pending GO samecaps, parent sole writer; preserve v1/v2 receipts. See native-staging audit/HANDOFF.
+
 **DAPFAM diagnosis resolved:** historical corpus CRLF bytes reproduce pinned hash, normalizedLF equals new payload; exact-byte reconstruction fix18/18 PASS, no repin. Fresh v2 stage pending curator GO under existing diagnosed-repair authority/caps; v1 failure preserved. Native-staging receipt has source proof and bounded next action. No stage running at checkpoint.
 
 **21:34 terminal:** curator v1 FAILED before destination,session72462 terminal,16.312s,peak3.644GB,noGPU. One read-only diagnostic underway under curator role, not staging retry; no protected values return. Safe CLI error categories17/17 tests PASS. See HANDOFF/attempt-v1 receipt; earlier RUNNING superseded.

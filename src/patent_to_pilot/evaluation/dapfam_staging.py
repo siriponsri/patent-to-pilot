@@ -85,7 +85,7 @@ def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination
         if query not in dev_ids:
             continue  # Never export protected labels, scores, IDs or statistics.
         score, domain = float(row["relevance_score"]), row["domain_rel"]
-        if not math.isfinite(score) or domain not in {"IN", "OUT"}:
+        if not math.isfinite(score) or (score > 0 and domain not in {"IN", "OUT"}):
             raise InputBoundaryError("invalid dev annotation")
         qrels.append({"query_id": query, "relevant_id": family, "relevance_score": score, "domain_rel": domain})
         if score > 0:
