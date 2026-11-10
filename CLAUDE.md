@@ -2,11 +2,11 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:01:26 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:03:36 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 16c02610aa0067e1e5b9fcb1a5120e8694239436.
-- Latest: one-attempt generation/response adapter and exclusive private reservation, with historical fp16/eager generation path inspection. Audit docs/healthtech/audits/ptp-method-first-r2-generation-20261110/README.md. 62 tests pass in 0.68s; Ruff pass. Fake torch/model/tokenizer contract tests only; local torch absent.
-- No actual Qwen generation/GPU job or benchmark access. Full weight/effective decoder/runtime resource/semantic acceptance gates remain open. Actual R1 isolation/A03/parity still awaits curator/environment response; no answer inferred.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 409f99a22eb54ba1827ed5a76e718d84f5052fbe.
+- Latest: PRELAUNCH CPU Qwen shard identity inspector implemented; two synthetic tests pass (0.22s), Ruff pass before status-log wiring. No actual hash result yet. Audit docs/healthtech/audits/ptp-method-first-r2-weights-20261110/README.md.
+- Planned CPU-only remote mtm-20261107/r2-qwen-identity-20261110-v1; not launched at checkpoint. Monitor pid/logs/status.log/logs/inspection.log/identity.json; no timeout-driven restart. No actual Qwen generation/GPU job or benchmark access. Full weight/effective decoder/runtime resource/semantic acceptance gates remain open. Actual R1 isolation/A03/parity still awaits curator/environment response; no answer inferred.
 - Next full weight identity/effective decoding settings and bounded synthetic smoke declaration; no model run before checks. Changes: generation adapter/tests, contract/audit and paired handoff/progress pointers. Preserve owner untracked research handoff and standing single-writer/test/spend/protocol/release gates.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
