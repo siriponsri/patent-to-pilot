@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest CPU grammar feasibility:** five authored expectations matched; small quote schema only, invented quotes still accepted. No model calls. Follow [bounded plan](../docs/healthtech/research/SACR_STRUCTURED_OUTPUT_PLAN_20261110_EN.md): full schema/EOS/independent tests and explicit integration before one separately declared third smoke; stop generation if that fails. R1 curator and semantic gates remain.
+
 > **Latest SYN-SACR-002:** [invalid JSON preserved](../docs/healthtech/audits/ptp-method-first-r2-quote-smoke-20261110/README.md), one call/no retry; alignment not reached, selective skipped. No live job. Next structured-output feasibility and bounded plan, not continued prompt retries. Actual-data and semantic gates remain.
 
 > **Latest quote-profile v1:** [72 tests pass](../docs/healthtech/audits/ptp-method-first-r2-quote-profile-20261110/README.md); unique exact alignment, no V0 repair, no model run. Next distinct declared synthetic check; preserve failed SYN-SACR-001 and all actual-data/semantic gates.

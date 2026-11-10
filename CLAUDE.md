@@ -2,13 +2,14 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:21:51 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:28:17 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 47958726a80c715eda52f76031d368b9e1fdb05c.
-- Actual SYN-SACR-002 failed JSON syntax after EOS-complete681/344 tokens; quote alignment not reached and selective skipped. One call, no repair/retry. Audit docs/healthtech/audits/ptp-method-first-r2-quote-smoke-20261110/README.md. Prior SYN-SACR-001 span failure remains.
-- Remote quote-smoke job terminal exit0 at01:20:05Z; supervisor2829467/timeout2829469/Python2829470 terminal and GPU list empty. Code47958726a80c715eda52f76031d368b9e1fdb05c. Raw generated text stays private; aggregates committed.
-- Next assess schema-constrained output feasibility and bounded validation before any additional model call; avoid open-ended prompt attempts. Actual R1 isolation/A03/parity and semantic gates still open; curator/environment question unanswered.
-- Changes: quote-smoke results/verification, methods log/change record and paired handoff/progress pointers. Preserve owner untracked handoff and standing gates.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Read HANDOFF.md takeover state. Last verified pushed base 5b2cdadb16f5cd44cea481d1290593ecd51fe703.
+- CPU grammar probe: five expectations matched; actual tokenizer, small quote schema only. Invented quote allowed: no grounding/semantic claim. No model calls/weights or benchmark input. Audit docs/healthtech/audits/ptp-method-first-r2-json-grammar-20261110/README.md; probe ruff passed; terminal exit0.
+- Prior SYN-SACR-001 span failure and SYN-SACR-002 JSON failure preserved. No GPU job launched; verify live state before future GPU use.
+- Next full schema/independent and tokenizer fixtures/EOS, explicit filtering integration, then at most one separately declared third engineering attempt; if failed stop generation branch, no automatic fourth attempt. See SACR_STRUCTURED_OUTPUT_PLAN_20261110_EN.md.
+- Actual R1 isolation/A03/parity and semantic gates still open; curator/environment question unanswered. Standing permissions unchanged; no protected evaluation.
+- Changed: probe/audit/plan, methods log, paired handoff/progress pointers. Preserve unrelated owner untracked handoff.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

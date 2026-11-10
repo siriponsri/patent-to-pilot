@@ -321,3 +321,13 @@ DECLARED_NOT_RUN. Same authored fixture as known regression, not independent val
 
 ### SYN-SACR-002 observed outcome
 10 Nov01:18:52Z–01:20:05Z, code47958726a80c715eda52f76031d368b9e1fdb05c. One call681/344 tokens, EOS complete but JSON syntax error (comma delimiter character898); quote alignment not reached, selective skipped. No salvage/retry. Runtime71.66s, peak allocated16.65GB/reserved17.73GB. This is a second preserved engineering failure, not retrieval evidence. Assess structured-output feasibility before any further declared model attempt.
+
+
+### 2026-11-10 08:28:17 Bangkok — CPU JSON grammar feasibility (not a retrieval experiment)
+
+Five authored token-sequence expectations matched with installed Qwen tokenizer and
+lm-format-enforcer0.11.3; small quote schema only. Invented quote accepted, confirming
+format constraints do not ensure grounding. No model calls/weights or benchmark data.
+See ../audits/ptp-method-first-r2-json-grammar-20261110/README.md and
+SACR_STRUCTURED_OUTPUT_PLAN_20261110_EN.md for the bounded next engineering gate.
+No third model attempt declared or launched. Earlier failures remain unchanged.

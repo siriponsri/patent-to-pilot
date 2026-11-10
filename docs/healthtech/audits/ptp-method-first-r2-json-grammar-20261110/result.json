@@ -1,0 +1,74 @@
+{
+  "format": "sacr-json-grammar-feasibility-v1",
+  "scope": "SMALL_QUOTE_SCHEMA_ONLY_NOT_FULL_PROFILE",
+  "model_calls": 0,
+  "model_weights_loaded": false,
+  "device": "cpu",
+  "packages": {
+    "lm-format-enforcer": "0.11.3",
+    "transformers": "4.55.2",
+    "tokenizers": "0.21.4",
+    "torch": "2.8.0+cu128"
+  },
+  "factory_source_sha256": "fe210cb51381ebcd2ce3a17f2852e44f63d160c27db4266ec261b9522c0f9958",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "field",
+      "text"
+    ],
+    "properties": {
+      "field": {
+        "type": "string",
+        "enum": [
+          "allowed_query"
+        ]
+      },
+      "text": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "cases": [
+    {
+      "case": "literal_quote",
+      "accepted": true,
+      "expected": true,
+      "first_rejected_token_index": null,
+      "pass": true
+    },
+    {
+      "case": "invented_quote",
+      "accepted": true,
+      "expected": true,
+      "first_rejected_token_index": null,
+      "pass": true
+    },
+    {
+      "case": "missing_comma",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token_index": 6,
+      "pass": true
+    },
+    {
+      "case": "wrong_field",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token_index": 3,
+      "pass": true
+    },
+    {
+      "case": "extra_property",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token_index": 10,
+      "pass": true
+    }
+  ],
+  "all_expected": true,
+  "semantic_status": "NOT_ESTABLISHED_INVENTED_QUOTE_ALLOWED",
+  "probe_source_sha256": "6056e37e0ccf9d2d07b6f73c8e68bce849261b2e27e9ebb6767ca49e474ca9ab"
+}
