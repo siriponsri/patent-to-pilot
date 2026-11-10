@@ -1,5 +1,9 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Paper1 metric implementation checkpoint — 2026-11-10
+
+Native evaluator now has explicit Paper1 cutoffs10/100/200 and private full-precision per-query output for paired analysis. Primary remains OUT Recall200; nDCG10 descriptive only. Missing eligible outputs retain zero in both macro and per-query data, IDCG includes unretrieved known positives.23 targeted native/staging tests PASS including cutoff-boundary fixture. No real query scoring/model call/test-set access. Runtime isolation and vector/model/passage binding remain next; baseline NOT_RUN. Parent sole writer; original failures/budgets retained.
+
 ## Latest owner amendment — 2026-11-10
 
 Paper1 includes [DAPFAM literature comparability and Paper53 alignment](docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md). Read this matrix before writing results:01/38 identical; published nDCG100 vs nDCG10 and different cohorts/models/configurations cannot form one leaderboard. Exact published replication NOT_ESTABLISHED; native dev baseline NOT_RUN. Keep primary Recall200, prospectively freeze descriptive nDCG10/100 and Recall100 bridge before outcomes. Paper53 exposure identity only for the same fixed pool; changed pools need separate exposure-stratum accounting. No new model calls/cards from document review. Parent remains sole repo writer, curator idle, protected tests closed. Last verified pushed checkpoint before this package ad84da5; current package publication must be checked via Git. Resume actual isolated binding/native baseline, not completed staging audits. All budgets and failed attempts retained.

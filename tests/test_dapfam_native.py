@@ -2,7 +2,7 @@ import math
 
 import pytest
 
-from patent_to_pilot.evaluation.dapfam_native import evaluate_native_dev, native_dev_task
+from patent_to_pilot.evaluation.dapfam_native import evaluate_native_dev, evaluate_paper1_dev, native_dev_task
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError
 
 
@@ -16,6 +16,27 @@ def fixtures():
                  {"query_id": "q2", "relevant_id": "B", "relevance_score": 1, "domain_rel": "OUT"},
                  {"query_id": "q3", "relevant_id": "C", "relevance_score": 0, "domain_rel": "OUT"}]
     return corpus, queries, relations
+
+
+def test_paper1_bridge_keeps_cutoffs_distinct_and_missing_queries_in_paired_data():
+    # Relevant results straddle 10/100/200; an unretrieved positive must still
+    # contribute to IDCG and recall denominators. q2 has no output at all.
+    families = [f"F{i:03}" for i in range(202)]
+    task = {"candidate_policy": "full", "partition": "OUT",
+            "corpus": dict.fromkeys(families), "queries": {"q1": "", "q2": ""},
+            "qrels": {"q1": {families[i]: 1 for i in (9, 99, 199, 201)},
+                      "q2": {families[0]: 1}}}
+    result = evaluate_paper1_dev(task, {"q1": families[:200]})
+    assert result["metrics"]["Recall@10"] == .125
+    assert result["metrics"]["Recall@100"] == .25
+    assert result["metrics"]["Recall@200"] == .375
+    ideal = sum(1 / math.log2(i + 2) for i in range(4))
+    assert result["per_query"]["q1"]["NDCG@10"] == pytest.approx(1 / math.log2(11) / ideal)
+    assert set(result["per_query"]) == {"q1", "q2"}
+    assert all(v == 0 for v in result["per_query"]["q2"].values())
+    assert result["queries"] == 2 and result["missing_rankings"] == 1
+    assert result["metric_contract"]["primary_metric"] == "Recall@200"
+    assert "per_query" not in evaluate_native_dev(task, {"q1": families[:200]})
 
 
 def test_partitions_only_change_qrels_and_text_fields_are_exact():

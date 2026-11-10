@@ -1,3 +1,8 @@
+
+## Paper1 metric implementation checkpoint — 2026-11-10
+
+Native evaluator now has explicit Paper1 cutoffs10/100/200 and private full-precision per-query output for paired analysis. Primary remains OUT Recall200; nDCG10 descriptive only. Missing eligible outputs retain zero in both macro and per-query data, IDCG includes unretrieved known positives.23 targeted native/staging tests PASS including cutoff-boundary fixture. No real query scoring/model call/test-set access. Runtime isolation and vector/model/passage binding remain next; baseline NOT_RUN. Parent sole writer; original failures/budgets retained.
+
 # Next actions — HealthTech
 
 > **DAPFAM dev prepared:** [actual receipt](../docs/healthtech/audits/ptp-dapfam-native-staging-20261110/attempt-v3.json),474dev/45336corpus,protectedexports0. Curator subagent finished under explicit amendment; no owner command needed. Next actual isolated runtime/evaluator mounts, existing vector/model/passage binding and native TA baseline. V1/v2 failures preserved; no generated method run. Single parent repo writer.

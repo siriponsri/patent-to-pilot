@@ -1,5 +1,9 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Paper1 metric implementation checkpoint — 2026-11-10
+
+Native evaluator now has explicit Paper1 cutoffs10/100/200 and private full-precision per-query output for paired analysis. Primary remains OUT Recall200; nDCG10 descriptive only. Missing eligible outputs retain zero in both macro and per-query data, IDCG includes unretrieved known positives.23 targeted native/staging tests PASS including cutoff-boundary fixture. No real query scoring/model call/test-set access. Runtime isolation and vector/model/passage binding remain next; baseline NOT_RUN. Parent sole writer; original failures/budgets retained.
+
 ## HT-EVENT-ST1-PAPER-COMPARABILITY — 2026-11-10
 
 Owner added apples-to-apples DAPFAM paper comparison and Paper53 alignment within HT-ST1. [Matrix/prospective contract](docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md):01/38 identical;59 selected best nDCG100/R100;41 nDCG10 with model/view/cohort ambiguities; no directly comparable published replication established. Descriptive nDCG10 proposed before outcomes, primary unchanged. Native baseline NOT_RUN, test CLOSED, zero new model calls/cards. Source/table review completed; metric implementation and measured matched-dev comparison pending.

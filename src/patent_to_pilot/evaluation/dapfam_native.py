@@ -10,6 +10,7 @@ from patent_to_pilot.research.mtm_runtime import InputBoundaryError, identifier
 
 MTEB_REVISION = "9242b36a1d400fc8c3af573e6a6e0705c0b96e3d"
 DATASET_REVISION = "780f4011d60297fc6e97a4119b0c516d13afea2d"
+PAPER1_CUTOFFS = (10, 100, 200)
 
 
 def native_dev_task(corpus_rows, query_rows, relations, *, partition: str, candidate_policy: str = "full") -> dict:
@@ -49,7 +50,7 @@ def native_dev_task(corpus_rows, query_rows, relations, *, partition: str, candi
             "queries_without_partition_positives": len(queries) - len(qrels)}
 
 
-def evaluate_native_dev(task: dict, rankings: dict[str, list[str]], *, cutoffs=(100,)) -> dict:
+def evaluate_native_dev(task: dict, rankings: dict[str, list[str]], *, cutoffs=(100,), include_per_query=False) -> dict:
     """Binary NDCG/recall on explicit rankings; missing eligible outputs score zero.
 
     Unlike a raw backend call on incomplete results, denominators cannot shrink.
@@ -74,18 +75,49 @@ def evaluate_native_dev(task: dict, rankings: dict[str, list[str]], *, cutoffs=(
         if len(set(ranking)) != len(ranking) or not set(ranking) <= set(corpus):
             raise InputBoundaryError("duplicate or unknown ranked family")
     totals = {f"{metric}@{k}": 0.0 for metric in ("NDCG", "Recall") for k in cutoffs}
+    per_query = {}
     for query, gold in qrels.items():
         ranking = rankings.get(query, [])
+        values = {}
         for k in cutoffs:
             hits = [int(family in gold) for family in ranking[:k]]
             dcg = sum(hit / math.log2(rank + 2) for rank, hit in enumerate(hits))
             ideal = sum(1 / math.log2(rank + 2) for rank in range(min(k, len(gold))))
-            totals[f"NDCG@{k}"] += dcg / ideal
-            totals[f"Recall@{k}"] += sum(hits) / len(gold)
-    return {"format": "ptp-dapfam-native-dev-metrics-v1", "partition": task["partition"],
+            values[f"NDCG@{k}"] = dcg / ideal
+            values[f"Recall@{k}"] = sum(hits) / len(gold)
+        for name, value in values.items():
+            totals[name] += value
+        if include_per_query:
+            per_query[query] = values
+    result = {"format": "ptp-dapfam-native-dev-metrics-v1", "partition": task["partition"],
             "queries": len(qrels), "input_queries": len(queries),
             "queries_without_partition_positives": len(queries) - len(qrels),
             "missing_rankings": sum(q not in rankings for q in qrels),
             "empty_rankings": sum(q in rankings and not rankings[q] for q in qrels),
             "metrics": {name: round(value / len(qrels), 5) for name, value in totals.items()},
             "failure_policy": "missing_or_empty_eligible_rankings_score_zero"}
+    if include_per_query:
+        # Private evaluator artifact only: retain full precision for paired
+        # analysis; public macro rounding must never become inference input.
+        result["per_query"] = per_query
+    return result
+
+
+def evaluate_paper1_dev(task: dict, rankings: dict[str, list[str]]) -> dict:
+    """Prospective Paper1 metric bridge; no additional confirmatory endpoint.
+
+    Return value contains dev IDs and belongs only in the private evaluator.
+    Missing/empty eligible outputs remain zero, including in paired analysis.
+    """
+    result = evaluate_native_dev(task, rankings, cutoffs=PAPER1_CUTOFFS, include_per_query=True)
+    result["format"] = "ptp-paper1-native-dev-metrics-v1"
+    result["metric_contract"] = {
+        "primary_partition": "OUT", "primary_metric": "Recall@200",
+        "cutoffs": list(PAPER1_CUTOFFS), "gain": "binary_positive_qrels",
+        "ideal": "all_known_partition_positives_up_to_cutoff",
+        "aggregation": "eligible_query_macro",
+        "candidate_policy": "full", "ties": "explicit_upstream_order",
+        "ndcg10_role": "descriptive_literature_bridge_not_confirmatory",
+        "comparability": "matched_dev_not_published_all_query_replication",
+    }
+    return result
