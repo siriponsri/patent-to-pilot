@@ -1,5 +1,11 @@
 # Native DAPFAM curator preparation
 
+## Prelaunch resource checkpoint
+
+Curator temporary launcher synthetic tests:256MiB Job Object rejected512MiB allocation; timeout2s stopped sleeping child after2.031s with terminal receipt. Parent reviewed source, requested stronger affinity/flags readback before GO. Final child cap31GiB reserves1GiB overhead inside32GiB ceiling; affinity <=8 logical CPUs, thread env8, Arrow1, no GPU, wall1800s with kill/wait5s, no retry. Job limits affect only child processes, no ACL/system configuration changes. Windows memory/affinity contracts checked against Microsoft documentation: https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information and https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_basic_limit_information .
+
+Scoped cumulative disk admission: local ptp temp/private Nov10 artifacts75,751,499bytes + remote Nov10 jobs12,066,816 +8,589,934,592 output reservation +134,217,728 code/log margin =8,811,970,635 <42,949,672,960. Local free96,772,603,904 at observation. Existing source data/weights/vectors not copied or charged anew. Recheck free capacity and absent output immediately before single dispatch. Curator remains waiting GO pending strengthened launcher proof. Parent does not parse protected source. Real output destination private sibling healthtech/ptp-dapfam-native-dev-20261110-v1; process/terminal receipts in curator temp run directory to be recorded on dispatch.
+
 ## Authorized curator subagent preparation
 
 Owner authorized subagent-run curator, superseding personal execution for this task. Curator role dapfam_curator is preparing a temporary Windows Job Object launcher with synthetic cap tests; parent remains sole repo writer. Real stage waits for parent GO after source revision and disk/resource validation. No protected information returned. Shared host access limitation disclosed.

@@ -2,6 +2,8 @@
 
 ## Active ST1 takeover — 2026-11-10 21:15 Bangkok
 
+**Prelaunch:** capped curator memory/timeout probes passed; final affinity readback pending GO. Admission8.812GB incl8GiB output under40GiB; child31GiB,1800s,CPU8/noGPU. Real stage NOT_RUN. Fidelity pure mechanics7/7 PASS, no cards/model calls; ledger/runtime integration pending. See HANDOFF/native-staging/fidelity-mechanics audits. Parent sole repo writer; last pushed66405ab.
+
 **Curator amendment:** user authorized subagent curator; dapfam_curator prepares capped launcher, awaits parent GO. Parent remains sole repo writer; no protected content returned. Native staging8GiB output ceiling + single-thread Arrow implemented,16/16 checks PASS. Real staging NOT_RUN at checkpoint; next launcher/disk/source-pin verification then one authorized projection. This replaces personal-owner execution only for delegated task.
 
 **DAPFAM update:** owner-only native dev staging implementation +15/15 fixtures PASS; [evidence](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/README.md). Preserved split file found and opaque hash matches; source file sizes only inspected. Real staging NOT_RUN; resource-enforced launcher/disk admission then owner execution needed. No protected parsing/model call. Prior pushed checkpoint2791893; single writer unchanged.

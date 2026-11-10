@@ -2,6 +2,8 @@
 
 ## HT-EVENT-ST1-TAKEOVER — 2026-11-10 21:15 Bangkok
 
+**HT-IDX30:** [solo fidelity mechanics](docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/README.md), pure deterministic sampling/card admission/gating IMPLEMENTED_FIXTURE_ONLY7/7. No durable ledger/screening adapter/real ratings yet; no retrieval outcomes. HT-IDX29 resource probes passed, disk admission8.812GBinclreservation, final launcher readback pending prior to one real stage. Parent writer/curator role split preserved; current source66405ab plus new fidelity helpers.
+
 **HT-EVENT-CURATOR-DELEGATION:** explicit owner amendment permits subagent curator, parent sole writer; role split not physical access denial. HT-IDX29 now8GiB output reservation enforced and single-thread Arrow,16/16 checks PASS. Curator prepares resource supervisor in temp only and awaits GO; real staging NOT_RUN. Inputs/receipt scope unchanged; protected outputs forbidden. See native-staging audit and authorization amendment.
 
 **HT-IDX29 / HT-ST1-W1:** native DAPFAM curator CLI and projection IMPLEMENTED_FIXTURE_VERIFIED, sole Codex writer. [Receipt](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/README.md), source scripts/healthtech/stage_dapfam_native_dev.py and evaluation/dapfam_staging.py; original immutable source/split/corpus hash pins embedded.15/15 staging/native checks PASS. Real source contents not parsed; original split opaque hash verified. Real staging/baseline/mounts NOT_RUN; resource-enforced owner launcher and full disk accounting next. No cards/calls/retries.

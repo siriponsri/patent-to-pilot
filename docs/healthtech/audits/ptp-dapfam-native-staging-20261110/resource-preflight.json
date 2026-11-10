@@ -1,0 +1,48 @@
+{
+  "observed_unix": 1794320935.8418863,
+  "local_scoped_bytes": 75751499,
+  "remote_prior_scoped_bytes": 12066816,
+  "output_reservation_bytes": 8589934592,
+  "additional_logs_code_margin_bytes": 134217728,
+  "conservative_admitted_bytes": 8811970635,
+  "combined_limit_bytes": 42949672960,
+  "local_free_bytes": 96772603904,
+  "scope": "All current temp ptp-* plus private healthtech *20261110*; remote four Nov10 job dirs from parent observation. Original sources/models/vectors are pre-existing, not copied.",
+  "status": "PASS",
+  "launcher_sha256": "603051554e0c5ea85982ebde6e71e855c1a314cc8315a1048b1d485286bc1ce3",
+  "memory_probe": {
+    "status": "COMPLETED",
+    "pid": 10072,
+    "process_exit_code": 0,
+    "wall_seconds": 0.3120000000053551,
+    "timeout_seconds": 20,
+    "memory_limit_bytes": 268435456,
+    "max_cpu_affinity": 8,
+    "model_calls": 0,
+    "gpu_calls": 0,
+    "automatic_retries": 0
+  },
+  "memory_child": {
+    "status": "COMPLETED",
+    "pid": 10072,
+    "memory_limit_bytes": 268435456,
+    "affinity_mask": 255,
+    "active_process_limit": 1,
+    "peak_job_commit_bytes": 13983744,
+    "peak_process_commit_bytes": 13983744,
+    "exit_code": 0,
+    "wall_seconds": 0.03200000000651926
+  },
+  "timeout_probe": {
+    "status": "TIMEOUT",
+    "pid": 23872,
+    "process_exit_code": 1,
+    "wall_seconds": 2.0309999999881256,
+    "timeout_seconds": 2,
+    "memory_limit_bytes": 268435456,
+    "max_cpu_affinity": 8,
+    "model_calls": 0,
+    "gpu_calls": 0,
+    "automatic_retries": 0
+  }
+}
