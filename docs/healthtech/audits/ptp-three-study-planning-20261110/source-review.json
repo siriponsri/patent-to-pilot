@@ -1,0 +1,105 @@
+{
+  "format": "ptp-source-review-v1",
+  "date": "2026-11-10",
+  "supplied_pdfs": [
+    {
+      "path": "literature-review/pdfs/1-s2.0-S0172219026000025-main.pdf",
+      "bytes": 4427813,
+      "sha256": "ecfb0fda04dcd0a27aa4e0104f66d066b5d941a7c23e4121acf32fefce73a312",
+      "pages": 17,
+      "read_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "text_extraction": "PyMuPDF existing local package; temporary extracted text outside Git; no upload",
+      "visual_pages": [
+        14,
+        15
+      ],
+      "limitations": "two-column text can interleave; image appendices reviewed; no numerical figure digitization or replication"
+    },
+    {
+      "path": "literature-review/pdfs/1-s2.0-S0952197626004574-main.pdf",
+      "bytes": 11158583,
+      "sha256": "2542cd7e1cad78de5aa3a6dfd9cf4df9a4627a95c13407f8648fc341c361f4be",
+      "pages": 19,
+      "read_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "text_extraction": "PyMuPDF existing local package; temporary extracted text outside Git; no upload",
+      "visual_pages": [
+        16,
+        17
+      ],
+      "limitations": "two-column text can interleave; image appendices reviewed; no numerical figure digitization or replication"
+    },
+    {
+      "path": "literature-review/pdfs/2605.10073v2.pdf",
+      "bytes": 1683118,
+      "sha256": "6834eefd7ab425d4ea6c6f07f9f4993ed869aabc47d975d9fda9d857dff81bfa",
+      "pages": 14,
+      "read_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "text_extraction": "PyMuPDF existing local package; temporary extracted text outside Git; no upload",
+      "visual_pages": [
+        14
+      ],
+      "limitations": "two-column text can interleave; image appendices reviewed; no numerical figure digitization or replication"
+    }
+  ],
+  "advisory": {
+    "path": "docs/healthtech/research/PTP_SACR_VS_GRAPH_CONTRIBUTION_ASSESSMENT_20261110_EN.md",
+    "sha256": "ee64d8a05699613cbca50b06cd555c878d2488b729446f519d96bfafe5a6adae",
+    "status": "ADVICE_NOT_EXPERIMENT"
+  },
+  "web_scope": "Primary public metadata/abstract/selected-method follow-up; no comprehensive novelty clearance; PHAGE v3 identified not full-reviewed",
+  "ai_memory_release_observed": "v3.4.5; main docs moving branch; no source-code execution or pinned full commit",
+  "redistribution": "No PDF/extracted text/raw corpus/weights/generated text/protected relations included"
+}

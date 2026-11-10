@@ -1,0 +1,597 @@
+{
+  "format": "ptp-component-inventory-v1",
+  "base_head": "287fabae65291d8f805b4bf48380ffb922552df0",
+  "protected_data_read": false,
+  "runtime_imports": false,
+  "entries": [
+    {
+      "path": "scripts/healthtech/run_dapfam_dense_pool.py",
+      "sha256": "b7932c01783cc8fdd25a79c965e187941b7894cee122b417d31b94a52b65751c",
+      "bytes": 11579,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Build a label-free DAPFAM Top-200 dense candidate pool on the approved GPU.\n\nPatEmbed-large (pinned) with its retrieval_OUT prompt pair, 384/64-term TAC passages, masked mean\npooling over all tokens (SentenceTransformer Pooling with include_prompt), L2 normalization, fp32,\nMaxP family aggregation and a lexical family-id tie break. Query rows are either {\"id\",\"text\"}\n(single 512-token window) or {\"id\",\"windows\":[...]} (multi-window; score = max over windows).\nPassage vectors from an earlier run can be reused with --reuse-vectors.",
+      "top_level_interfaces": [
+        "_sha256",
+        "_read_jsonl",
+        "MeanPoolEncoder",
+        "main"
+      ]
+    },
+    {
+      "path": "scripts/healthtech/run_mtm_dense_pool.py",
+      "sha256": "196e2dc68fe6ef32bb378d605f858efa54853b84ce1ebfe2cae7101ba3d4d4ed",
+      "bytes": 7749,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "MTM dense rankings on the approved GPU: one corpus encoding, rankings for every (corpus view, lane) at depth 200.\n\nSame encoder, prompts, 384/64-term TAC passages and MaxP aggregation as run_dapfam_dense_pool.py (imported, unchanged).\nPer query: candidates whose indexed text was published after the query's priority date (corpus \"visible_from\") are\nremoved (time filter; pre-freeze fix of 7 Nov 2026: the family priority date alone let later text in), its own\nfamily is removed, and for lane X every family sharing a 3-character CPC code with the query is removed. Corpus views restrict\ncandidates to families whose \"sets\" intersect the view (main = all; small = target+small; matched = target+matched;\nuniform = target+uniform). Query rows: {\"id\",\"text\"}; query metadata (priority, family, c3) comes from queries-meta.jsonl.\nLabels are never read. Writes rankings-<view>-<lane>-<name>.jsonl and a receipt; refuses to overwrite.",
+      "top_level_interfaces": [
+        "keep_mask",
+        "main"
+      ]
+    },
+    {
+      "path": "scripts/healthtech/run_mtm_dev_bound.py",
+      "sha256": "c3b98e066ed1a9c331dca928eafabb4ab42f95e714ea12e82cbabc6282069fa0",
+      "bytes": 4873,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Prospective dev/main baseline parity entry point. No test or re-encode option.\n\nRequires independently pinned curator manifests and immutable isolated inputs.\nDelegates unchanged historical numerical behavior after all CPU input checks.\nThis preserves the historical torch.topk cutoff-tie limitation for parity.",
+      "top_level_interfaces": [
+        "parser",
+        "run"
+      ]
+    },
+    {
+      "path": "scripts/healthtech/verify_dapfam_native_parity.py",
+      "sha256": "3a18f0f9c3bfb04c85137c06af0f7c0c72a89c413702b60d80a911932abc5c8a",
+      "bytes": 7413,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Synthetic-only differential checks against pinned MTEB source and pytrec_eval.\n\nNo benchmark downloader. Source cache must contain the exact reviewed public\nfiles. Only hash-pinned, selected functions execute, with a synthetic dataset\nstub. This verifies loader/metric semantics, not a full MTEB/model run.",
+      "top_level_interfaces": [
+        "pinned_function",
+        "SyntheticQueries",
+        "main"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/dapfam_acquisition.py",
+      "sha256": "b46b1bd0c991f49a1998bc60a63130950089ef8c681edfd37db7a7f6a8976e0b",
+      "bytes": 15226,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Pure helpers for the organization-adaptive DAPFAM acquisition study.\n\nProtocol: docs/healthtech/research/ORG_ADAPTIVE_CROSS_DOMAIN_PROTOCOL_DRAFT_20261105_EN.md.\nThe dense baseline uses PatEmbed-large with its published ``retrieval_OUT`` prompt pair, 384/64-term\ntitle+abstract+claims passages and MaxP family aggregation.\nNo function here reads qrels except the split builder and the evaluator.",
+      "top_level_interfaces": [
+        "_nfkc_whitespace",
+        "dense_passages",
+        "_query_body",
+        "dense_query_text",
+        "dense_query_windows",
+        "maxp_top_k",
+        "budgeted_merge",
+        "lane_merge",
+        "class_first",
+        "class_transition_prior",
+        "predict_target_classes",
+        "assign_folds",
+        "crossfit_select",
+        "CompactBM25",
+        "positive_relations",
+        "recall_at",
+        "macro_recall",
+        "query_components",
+        "first_ipc_section",
+        "component_split"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/dapfam_native.py",
+      "sha256": "eef7cc12b678396e653e11f74ae385bf03a1b4a7d18650664b3c4f91f272f5bd",
+      "bytes": 5131,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Native DAPFAM TA-query/TAC-corpus semantics for staged development evaluation.\n\nNo downloader or split selection: callers must supply only authorized dev data.\nIN/OUT partition qrels, never the candidate universe. This is not MTM lane X.\nThe passage encoder remains a custom backend, not a published-run replication.",
+      "top_level_interfaces": [
+        "native_dev_task",
+        "evaluate_native_dev"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/mtm_corpus_projection.py",
+      "sha256": "ab4957ec95fa9fa28194b5668d463046842e0f934bd136e6d6c245721a519298",
+      "bytes": 2516,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Trusted curator corpus projection; never imported by retrieval runtime.\n\nUnlike mixed query metadata, corpus construction roles are not test qrels.\nNevertheless only the curator should prepare this input, with a pinned receipt.\nNo real projection has been authorized by the mere existence of this helper.",
+      "top_level_interfaces": [
+        "project_corpus"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/mtm_dev_inputs.py",
+      "sha256": "2f514a6bc6776b9a4ba07453241dc23b29db4b244cfb54062a76df2992ef6710",
+      "bytes": 1028,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Evaluator-only access to a curator-staged development qrel bundle.",
+      "top_level_interfaces": [
+        "load_dev_qrels"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/mtm_eligibility.py",
+      "sha256": "175de2f11932d81bcb9d9b7b1a04f646c48d84f336eca8e5a5601f3731ac4894",
+      "bytes": 4417,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Development-only eligibility diagnostics; never changes a qrel or population.",
+      "top_level_interfaces": [
+        "audit_eligibility"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/mtm_ranking_parity.py",
+      "sha256": "deeff47c0c77810b560f4ccc57d150b18f41451e38fb620538835b8949cde6c1",
+      "bytes": 4315,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Dev-only ordered-ranking parity; no qrels, relevance metrics or test inputs.",
+      "top_level_interfaces": [
+        "load_rankings",
+        "compare_rankings"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/mtm_staging.py",
+      "sha256": "6712bfb3238fef0f6588ce4eadd10767ec9dcd7032acaa8ebc7638fce411289b",
+      "bytes": 4412,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Trusted curator operation. Never import this module into retrieval runtime.\n\nStaging reads mixed protected source labels. Do not execute against real source\ndata in a development/agent environment. Separate destinations are necessary\nbut not sufficient for physical isolation; the curator controls mounts/access.",
+      "top_level_interfaces": [
+        "_write_bundle",
+        "stage_metadata"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/par4pc_study.py",
+      "sha256": "d8aab3eeea48a46480996014e447dfc42396b335b92c72eeab7d41b5e0092414",
+      "bytes": 4228,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Pure functions for the PAR4PC claim-level prior-art option-ranking study.\n\nRankers never read labels. Metrics treat PANORAMA gold answers (examiner-cited\nfor the claim's rejection) as relevant; silver answers get graded credit only\nin nDCG. Uncertainty resamples applications, the independent unit.",
+      "top_level_interfaces": [
+        "rank_by_scores",
+        "rrf",
+        "bm25_margin",
+        "cascade",
+        "row_metrics",
+        "app_macro",
+        "paired_cluster_bootstrap",
+        "holm"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/evaluation/scout_frozen.py",
+      "sha256": "78d06b52486fd0e32b951a21dd97885f2da73a381cfdbb313fa5661205fa816f",
+      "bytes": 5577,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Frozen-protocol metrics for Solution Scout (E1, E2, E5). Pure functions; no I/O.\n\nProtocol: docs/healthtech/research/SOLUTION_SCOUT_FROZEN_PROTOCOL_20261106_EN.md.",
+      "top_level_interfaces": [
+        "recall",
+        "single_pool",
+        "two_lane_pool",
+        "per_query",
+        "contrast",
+        "grounding_decision",
+        "brief_gap",
+        "e1_e2"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/local_execution.py",
+      "sha256": "edcd0442ca830e8df5dc15f9f9360b1e9bb7503e679aa68038481c9a03e6b4c4",
+      "bytes": 2405,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Local GPU execution boundary. No paid-provider or budget dependencies.\n\nThe lock is cooperative, scoped to the existing project model directory and\nshared by embedding and generation launchers. Host/resource checks still\nbelong to the launcher; possession of this lock is not an allocation from an\noperator.",
+      "top_level_interfaces": [
+        "check_local_window",
+        "local_gpu_slot"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/scout.py",
+      "sha256": "2f827ffd39a44cad28d73ea0720bce5103fc3f68f9fe23c38371f69b7b7d486f",
+      "bytes": 9894,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Solution Scout contracts and lane logic (M0).\n\nA problem brief and the user's own IPC3 classes go in. Two lanes come out of one dense ranking:\nfamilies sharing any own class (\"own_field\") and families sharing none (\"other_fields\"). The\nLLM never ranks; it only writes transfer rationales whose quotes are checked for a literal match.\nA literal match is not semantic support. Spec: docs/healthtech/research/SOLUTION_SCOUT_PRODUCT_SPEC_20261106_EN.md.",
+      "top_level_interfaces": [
+        "normalize_ipc3",
+        "class_member_indices",
+        "partition_by_field",
+        "two_lane_shortlist",
+        "QuoteCheck",
+        "check_quote",
+        "ScoutBrief",
+        "LaneSplit",
+        "ScoutCandidate",
+        "ScoutReceipt",
+        "ScoutSession",
+        "TransferRationale"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/scout_live.py",
+      "sha256": "5b999668d5f5f1bc0b4f87fbf3ef88f58cfd1d19adc07a2701baaf3c94fe22f1",
+      "bytes": 6817,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Solution Scout live dense search on CPU.\n\nLoads a public corpus (``corpus.jsonl`` from ``build_scout_hupd_subset.py``), its precomputed\nPatEmbed-large passage vectors (one row per ``dense_passages`` window, float16 or float32), and\nencodes each brief on the CPU with the same mean pooling and query prompt as the V100 runner.\nFamily score = max over its passages (MaxP). Nothing leaves the machine and no paid call is made.",
+      "top_level_interfaces": [
+        "source_text",
+        "_sha256_file",
+        "CpuQueryEncoder",
+        "LiveIndex"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/healthtech/scout_service.py",
+      "sha256": "7cfe7a8ee7d7c2f785025c3e819c4a5ac087131a368a105752bbc42f3cbf51e0",
+      "bytes": 18610,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Solution Scout service, replay mode (M1).\n\nReplay serves recorded searches and recorded LLM rationales from a server-owned bundle, so the demo\nruns with no GPU. It answers only briefs that were recorded; anything else fails closed. Quote\nchecks are recomputed against the bundle's source text on every request, never trusted from the\nrecording. Sessions persist as JSON under the service root. No provider or paid call is made.",
+      "top_level_interfaces": [
+        "ScoutError",
+        "_hash",
+        "_atomic_write_json",
+        "_rationale_name",
+        "ReplayBundle",
+        "RationaleBook",
+        "ScoutService"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/mtm_preflight.py",
+      "sha256": "463a8dbe587a6343679269c931e334e92530420e0403e3659c2c6e3e26b92dbc",
+      "bytes": 3264,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Prospective main-view input gate; no model/GPU initialization or scoring.\n\nReceipts must be pinned by a trusted curator outside this runtime. Hashes do\nnot establish physical isolation. Inputs must remain immutable after checking.",
+      "top_level_interfaces": [
+        "validate_corpus_row",
+        "preflight_dev"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/mtm_queries.py",
+      "sha256": "7383c9ec5bbd88a7ee6a3bebfd590ad6e1e09ff75455a0e0c31824299bb334ff",
+      "bytes": 3168,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Pinned dev-only query text; missing queries remain in the evaluation cohort.",
+      "top_level_interfaces": [
+        "load_dev_queries",
+        "_manifest",
+        "parse_dev_queries"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/mtm_runtime.py",
+      "sha256": "5a97ab9a6f344edbf6582ec00811aa3d0b5dfed480d518fcfb49e1073809e20a",
+      "bytes": 4181,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Strict label-free MTM inputs for prospective development runners.\n\nThis is input validation, not an OS access-control boundary. Run only with a\ncurator-provided runtime directory; protected sources must not be mounted in\nthe development environment. This module never imports evaluator/staging code.",
+      "top_level_interfaces": [
+        "InputBoundaryError",
+        "exact_fields",
+        "identifier",
+        "calendar_date",
+        "validate_metadata",
+        "_unique_object",
+        "decode_json",
+        "read_bound_rows",
+        "load_dev_metadata"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_acquisition.py",
+      "sha256": "25503134d46a91f38b5b3c287893accb056bc6125769108c45c40afa94cf3b14",
+      "bytes": 4234,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Chunked full-index MaxP acquisition; no encoder, labels or benchmark adapters.",
+      "top_level_interfaces": [
+        "acquire_union"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_alphabet.py",
+      "sha256": "b621df06b742e8165fe98e3549b5df3e41361f89fa2eebde9e26e3865bda0731",
+      "bytes": 1333,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Deterministic finite alphabet for a prospective source-aware JSON grammar.",
+      "top_level_interfaces": [
+        "build_alphabet"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_anchor.py",
+      "sha256": "d5aa70fe4b98dc2c448f90a687349d326ebd153bf2556a1e4614ae20ea068e6f",
+      "bytes": 2523,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Pinned original-anchor result bundle; byte agreement is not baseline parity.",
+      "top_level_interfaces": [
+        "bind_anchor_bundle"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_components.py",
+      "sha256": "b3ee149a316af229bdfed75f66932307422ce4a14364f244742357905695aeb5",
+      "bytes": 4924,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Source/profile-bound component plan and prospective embedding row receipts.",
+      "top_level_interfaces": [
+        "digest",
+        "compile_components",
+        "vector_digest",
+        "bind_component_vectors"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_controller.py",
+      "sha256": "ada478b7270c8b97a4d8d66329162762283463097799a0fb253a30a88ceb7a41",
+      "bytes": 23999,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Bound profile/view orchestration; not a production research runner.",
+      "top_level_interfaces": [
+        "BoundProfileController"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_embedding.py",
+      "sha256": "2332a51796baf5ce4700bc4440ad564f083233160d9d3c98aaad37913e16f537",
+      "bytes": 3152,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Per-query text-row plan and injected embedding receipts, not model attestation.",
+      "top_level_interfaces": [
+        "embedding_plan",
+        "bind_embeddings"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_escape_callback.py",
+      "sha256": "73fd5b5a61e0225fb99aab8f09d6a725a231786cab9e46f1982c9252a484d642",
+      "bytes": 4362,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Candidate pinned LMFE adapter. NOT validated for tokenizer/model execution.\n\nNo import of LMFE, tokenizer or model occurs until explicitly called. The next\ndeclared CPU gate must test this intervention; existing generation never uses it.",
+      "top_level_interfaces": [
+        "build_escape_callback"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_execution.py",
+      "sha256": "6375f01bd40eb1b71e50f411d83265bf9e09e06b885073dd458418beaa2878ea",
+      "bytes": 5829,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Prospective execution declaration binding, not authorization or live preflight.",
+      "top_level_interfaces": [
+        "_sha",
+        "bind_execution",
+        "bind_input_snapshots"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_factorial.py",
+      "sha256": "8c79b1041cb8409511e7a56f52c896d99146ed3dc0433f32aaf8fe14c0bc151d",
+      "bytes": 9504,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "CPU factorial scoring on pre-embedded inputs; no generation or evaluation labels.",
+      "top_level_interfaces": [
+        "passage_order_digest",
+        "compare_factorial"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generated_profile.py",
+      "sha256": "36d06aa33912c558e0194c2c7acb9aa5e4f49f3d292dab3f6f00da579af6dc70",
+      "bytes": 3391,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Quote-profile generation binding and deterministic replay; no model loading.",
+      "top_level_interfaces": [
+        "profile_generation_identity",
+        "generated_profile_result",
+        "replay_generated_profile"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generated_view.py",
+      "sha256": "a16220e7554a27d2701a4fe4ef5e7c00fb140da3bf317d5c0ccbe74d1bd64797",
+      "bytes": 3079,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Private v3 view evidence: bound normal-return record, no failure-policy adoption.",
+      "top_level_interfaces": [
+        "GenerationEvidenceFailure",
+        "generated_view_result"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generation.py",
+      "sha256": "3ebd68deeea80385869905b381dc2a611af6c309a86766af1cff7ac91a066c25",
+      "bytes": 6973,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "One-attempt local generation contract; injected model/tokenizer, no loading.\n\nCaller owns immutable model/config hashes, GPU authorization/lock and durable\nattempt reservation. Returned text is a private artifact, never a public audit.",
+      "top_level_interfaces": [
+        "GenerationLimits",
+        "generate_once",
+        "validate_generation",
+        "run_reserved_attempt"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generation_receipt.py",
+      "sha256": "da38cf22f00b1c02313a8dc410b0b0817f05396baaca1d8f34f49c8d7e2c8aeb",
+      "bytes": 3991,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Bind private terminal generation bytes, limits and reported token costs.\n\nThis validates a normally returned generate_once record, not infrastructure\ntermination or actual model execution. Exceptions/unknown state are not records.",
+      "top_level_interfaces": [
+        "bind_generation_record"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_grammar_guard.py",
+      "sha256": "04ae93ed31f72e92e40654142fb98f23279fe1a1f6d77357dfd90d2be6472aca",
+      "bytes": 2514,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Fail-closed EOS wrapper for a prospective single-sequence grammar decoder.",
+      "top_level_interfaces": [
+        "CompleteJsonEOSGuard"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_index.py",
+      "sha256": "790901eb58f0fc2002f1a5043d91f666c78b693a256ab1529f38846545f8c5cc",
+      "bytes": 4031,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Detached CPU index snapshot and predeclared mask binding; not eligibility proof.",
+      "top_level_interfaces": [
+        "BoundCPUIndex"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_journal.py",
+      "sha256": "eb107626124a5c536e9894491e6ce5c2c238b5bff7e0beaa8d4b1379b5debf1b",
+      "bytes": 17638,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Exclusive dev stage journal with durable receipts; injected callbacks only.",
+      "top_level_interfaces": [
+        "_write",
+        "_read",
+        "DevStageJournal"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_outcomes.py",
+      "sha256": "d82cfe0f6a791e44aa165beda66425af99d0f504d8fedce359a798b253b78aba",
+      "bytes": 6282,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Prospective cohort completeness and cost accounting, never relevance scoring.",
+      "top_level_interfaces": [
+        "_ranking",
+        "finalize_query",
+        "summarize_cohort",
+        "summarize_costs"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_profile.py",
+      "sha256": "60a79c1a301dd8356519ba81cbf696be7d90da05b74f28af25b0d8b7d2aa3d05",
+      "bytes": 7770,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Structural/source checks, never semantic certification of an LLM profile.",
+      "top_level_interfaces": [
+        "_text",
+        "_fields",
+        "_spans",
+        "validate_profile"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_profile_result.py",
+      "sha256": "65e8cce95ffbd7538a348f078d02897ae646deabb2fe74080df7549b4924ee86",
+      "bytes": 1162,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Canonical private profile-stage output; includes allowed source for replay.",
+      "top_level_interfaces": [
+        "profile_result"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_prompts.py",
+      "sha256": "d6f0e019245617f65d68989f51040c391b798a8cc9ed22eaaf323e19dd5ecd2d",
+      "bytes": 2444,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Deterministic prompt assembly only; no model call, tokenizer or hidden input.",
+      "top_level_interfaces": [
+        "build_messages"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_quote_profile.py",
+      "sha256": "49865dcac384355e056bfacc0532842730d86ee189484bc7cf5eacfe6cdcea58",
+      "bytes": 2657,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Prospective quote-profile v1 adapter. Never repairs offset-profile v0 output.",
+      "top_level_interfaces": [
+        "resolve_quote",
+        "align_quote_profile"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_run_reconcile.py",
+      "sha256": "e4c2b9c7626f85d12c537a3479ab1556c46d47adbe4ae258f477e2f997d45442",
+      "bytes": 8798,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Reconcile supplied dev run records; never infer that a live attempt stopped.",
+      "top_level_interfaces": [
+        "validate_plan",
+        "reconcile_run"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_schema.py",
+      "sha256": "bc06f9f89a10bfa9504b27d5dae85ff7deaaec7b7e826137d0dfca7c92ddb917",
+      "bytes": 2930,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Prospective grammar v1; source alignment and semantic review remain mandatory.",
+      "top_level_interfaces": [
+        "quote_profile_schema"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_selection_result.py",
+      "sha256": "d56368c728a28153c948b0d8fb5dc7866751d81e0ec8abd70b85e74047bc06d1",
+      "bytes": 982,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Derive private query outcomes from typed selection, never caller rankings.",
+      "top_level_interfaces": [
+        "selection_outcome"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_selector.py",
+      "sha256": "5e1afed765567b067b0304a16dfd99ec3fb9df839a3dba10241012f0a51c55a9",
+      "bytes": 3343,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "SACR-v0 proposed similarity proxy. No labels, extraction or search here.",
+      "top_level_interfaces": [
+        "ranknorm",
+        "local_coverage",
+        "select_union"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_view_result.py",
+      "sha256": "332a8644df47802080d260397cc603962a0b42c0a2711517494c91184ee5c3da",
+      "bytes": 2419,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Replayable private view-stage evidence; lexical screening is not entailment.",
+      "top_level_interfaces": [
+        "view_result"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_views.py",
+      "sha256": "995f997a4ad52ed3b3096135bc05287e366769f5d9c2a1dbb2589e8c7f9b6098",
+      "bytes": 5527,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Deterministic compact text and conservative proposal screening, not entailment.\n\nREVIEW_REQUIRED proposals are retained as evidence but not returned as usable\nviews. No retrieval outcome may be used to repair or approve a proposal.",
+      "top_level_interfaces": [
+        "parse_view_response",
+        "compact_view",
+        "screen_view",
+        "collect_screened_views"
+      ]
+    },
+    {
+      "path": "src/patent_to_pilot/research/vector_identity.py",
+      "sha256": "a5cf9eeb5f32addea8be4863d4b99cd9b23bf6ead90a1cd46fd8f5c2c42dd46f",
+      "bytes": 6364,
+      "review": "PATH_HASH_AST_INTERFACES_PLUS_SELECTED_CONTRACT_READS_NOT_FULL_SEMANTIC_AUDIT",
+      "module_doc": "Content/order bindings for existing passage vectors; no encoding or labels.\n\nA snapshot is a co-observation, not proof of how vectors were produced. A\ntrusted prior snapshot/receipt chain and ranking parity remain separate gates.",
+      "top_level_interfaces": [
+        "sha256",
+        "_feed",
+        "corpus_identity",
+        "model_identity",
+        "observe_identity",
+        "verify_identity",
+        "verify_historical_receipts"
+      ]
+    }
+  ]
+}

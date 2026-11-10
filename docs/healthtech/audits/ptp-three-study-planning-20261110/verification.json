@@ -1,0 +1,99 @@
+{
+  "format": "ptp-documentation-verification-v1",
+  "observed_utc": "2026-11-10T14:00:57.372840+00:00",
+  "status": "PASS_DOCUMENTATION_ONLY",
+  "files_checked": 30,
+  "markdown_links_seen": 415,
+  "introduced_broken_local_links": [],
+  "inherited_broken_local_links": [],
+  "json_files_parsed": [
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/package-files.json",
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/component-inventory.json",
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/preservation.json",
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/source-review.json",
+    "docs/healthtech/progress.json"
+  ],
+  "unique_index_rows": 39,
+  "source_files_unchanged": 48,
+  "supplied_pdfs_hash_matched": 3,
+  "protected_data_read": false,
+  "experiments": "NOT_RUN",
+  "runtime_tests": "NOT_RUN_DOCUMENTATION_ONLY",
+  "agent_startup_integration": "NOT_RUN_STATIC_ENTRY_POINT_LINKS_ONLY",
+  "remote_state": "NOT_VERIFIED_NETWORK_FAILURE",
+  "publication": "NOT_COMMITTED_NOT_PUSHED",
+  "file_sha256": {
+    "AGENTS.md": "57dee166b2983a3878b730c20e6daab227512e6333b9b5b1aa6e0c5cf5184a8c",
+    "CLAUDE.md": "9eb99c7e989fe15f079f9d5adebac483f73151cbc189d63c943abf9ca15efcf5",
+    "GOAL.md": "37b37ce47f5e2516e6c7f3fe3db9d232f1ba92835d4a274c199b3f1a5b929a00",
+    "HANDOFF.md": "250b21aefb80c71f84f6509851debce7d4a5bedb45cb70be15862d7b775ff41b",
+    "HANDOFF_PROMPT.md": "21b4d458b2a953b7e54bd743078885e4c7e05ec55c70371b1df257e4aabf47a8",
+    "INDEX-PLAN.md": "9b4e90ac74f25c45053fccce41b9e20dcc52d79953f3320162a6c5643ae4c570",
+    "MASTER-PLAN.md": "af88949baa13084fe382add9b3d474c4f97429c75a139d3dffeed726d2ed3915",
+    "PLAN.md": "3c832f2700bcff1f67901cdb665a48b5d9e57b50f4d20addf91f5c7f64c5c221",
+    "README.md": "f83f8335bd9761d65cd340b5b56280ee564f64a3fa0ecff2397ab7933c5f4e9d",
+    "archives/INDEX.md": "68a20a9b0ad1a149ff4fa93f42437499a65515686ff4b164cd50ec16c4a25a41",
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/NEXT_ACTIONS.md": "965dee8b8d78c3cc35afcbc54ea581ee8bcfbeea6228d04fb42ce1db9c683687",
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/README.md": "a6f1f5d9f4f7177bb8a005d03b9023bb529896afaf2d0aef9297ae6678ed9322",
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/component-inventory.json": "0f9168fb2d4f45276460b5cf7038b067a93efd06d1b52fd0c95fd902ef5a7fbd",
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/preservation.json": "efe554482a0901e01a70f12a404543f3a521e31be311ec6b11d3be4122151938",
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/source-review.json": "03eea4e008d48bdf1dc83579126fdfc0eaac8631412f2d2d24459aaa4f2c97ac",
+    "docs/healthtech/audits/ptp-three-study-planning-20261110/validate_docs.py": "2e32a68b674edcfb1b8b9d8d02612c42b7d10a58103c744baf63d5bf19891ab7",
+    "docs/healthtech/progress.json": "2342f7a0b17cfeda69ca9eff8bd02e953f29ed9a5319ca35fda9a139754675c5",
+    "docs/healthtech/research/DAPFAM_SACR_GRAPH_RESEARCH_DIRECTION_20261110_EN.md": "a9a239bd804c7941c20f508f145b49b5b8b5188c366c8c928df336a120531912",
+    "docs/healthtech/research/plans/PAPER-1-DAPFAM.md": "f9621588aa5fef8635a4bc87693c12cc10eb78cf3977e039301dc8535fc5b1b0",
+    "docs/healthtech/research/plans/PAPER-2-MTM.md": "7e5dbd4e3a8553bd2d207932a64a501ac64894f7b6a76b46ae82e2ad03d67920",
+    "docs/healthtech/research/plans/PAPER-3-ADAPTIVE.md": "a91992b5d86e19fafac73cc57921bed3d1b2b0bff7fe42f878cacee34d7d32d3",
+    "docs/healthtech/research/plans/RELATED-WORK-AUDIT.md": "ed5527cf05dbe477834a303c1f0d051da881de8b0ae440aef5b7abb21aad22d1",
+    "docs/healthtech/research/plans/SHARED-MEMORY-DESIGN.md": "b8af51c6fc751aab9c56aa35768f6a5b512042bb7709d5495628afb67e53c07c",
+    "literature-review/README.md": "e36fba202f8765549ba48f3651c17301c78b2b98fc66258d1c768c2100601be4",
+    "memory/README.md": "8ebf1497d78191853a9493bf32998f1ee68c05a0e72fc529a17c792c6a3f7880",
+    "memory/next-actions.md": "a6a1caa442874e47ca518b7f7dbb4b92df68f08280cfef7c160fa9204c8802c5",
+    "memory/research/patent-to-pilot/DECISIONS.md": "7ac26d281fe34959dad6d24bd96ccbf6d1fdce50b57fa7b96c1ba30df173304a",
+    "memory/research/patent-to-pilot/INDEX.md": "35d43d2c0b99450a68b19bb1b4bf1380badbedc2fee257c0ea85b245c49c6c86",
+    "memory/research/patent-to-pilot/OPEN-QUESTIONS.md": "fa47445f5467370581f4f4f69e6446563ef4e792bf93a6e56c0f590f429653bd",
+    "memory/research/patent-to-pilot/SESSION-LOG.md": "a45702b056aad30134fe23159a3c9ab2b3049d9a0a4a8ca48bdd230c4cade520"
+  },
+  "base_head": "287fabae65291d8f805b4bf48380ffb922552df0",
+  "checkout": "existing main",
+  "local_tracking_divergence": {
+    "ahead": 0,
+    "behind": 0,
+    "live_remote_verified": false
+  },
+  "commands": [
+    {
+      "command": "rtk proxy python docs/healthtech/audits/ptp-three-study-planning-20261110/validate_docs.py --root . --output <task-scratch>/final-checkout-verification.json",
+      "exit_code": 0,
+      "result": "PASS_DOCUMENTATION_ONLY; actual checkout hashes equal final reviewed overlay"
+    },
+    {
+      "command": "rtk proxy git diff --check",
+      "exit_code": 0,
+      "result": "No whitespace errors; LF/CRLF conversion warnings only"
+    },
+    {
+      "command": "rtk proxy git rev-list --left-right --count main...origin/main",
+      "exit_code": 0,
+      "result": "0 0; local tracking refs only"
+    },
+    {
+      "command": "rtk proxy git ls-remote origin refs/heads/main",
+      "exit_code": 1,
+      "result": "Failed to connect to github.com:443; remote synchronization unverified"
+    }
+  ],
+  "writer_state": "HANDED_OFF_AFTER_FINAL_RESPONSE_NO_JOBS_STARTED",
+  "archive_existing_moves": 0,
+  "installations": 0,
+  "paid_calls": 0,
+  "protected_label_reads": 0,
+  "runtime_source_mutations": 0,
+  "no_claims": [
+    "scientific_benefit",
+    "publication_readiness",
+    "automatic_cross_vendor_memory",
+    "live_remote_synchronization"
+  ],
+  "receipt_hash_rule": "Hashes bind all 30 listed document/source-manifest files; package-files and this receipt are excluded from the per-file map to avoid self-reference. Validator parses package-files separately."
+}

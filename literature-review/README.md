@@ -1,5 +1,7 @@
 # Literature review — HealthTech
 
+> **Current closest-work review - 10 November 2026:** [FOPNet, Yang, PHAGE and adjacent work](../docs/healthtech/research/plans/RELATED-WORK-AUDIT.md), with exact local PDF hashes/page coverage in the documentation audit. Three supplied PDFs remain local-only. Older library classifications/access limits below are historical; check newer primary records before publication claims.
+
 ชุดหลักปัจจุบันคือ HealthTech Pack วันที่ 27 ตุลาคม 2026 มี PDF 27 ฉบับ รวม 458 หน้า ตรวจ SHA-256 กับ CHECKSUMS ตรงทั้งหมดและอ่าน identity พร้อม method/task/evaluation passages ที่จำเป็น ไม่ใช่ systematic review และไม่ได้ reproduce ผลของบทความ
 
 - [Research library / source links](../RELATED_PAPERS.md)

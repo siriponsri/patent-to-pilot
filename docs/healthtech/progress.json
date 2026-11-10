@@ -1,4 +1,29 @@
-﻿{
+{
+  "st1_takeover_20261110": {
+    "status": "OWNER_APPROVED_BOUNDED_CONTINUATION",
+    "audit": "docs/healthtech/audits/ptp-st1-takeover-20261110/README.md",
+    "packaging": "EXACT_HISTORICAL_BYTES_RECONSTRUCTED_8_TARGETED_TESTS_PASS",
+    "native_dapfam_baseline": "NOT_RUN",
+    "additional_sacr_smoke": "AUTHORIZED_NOT_RUN",
+    "sg_feasibility": "AUTHORIZED_WITH_GATES_NOT_RUN",
+    "protected_tests": "CLOSED",
+    "publication": "AUTHORIZED_SCREENING_PENDING"
+  },
+  "three_study_planning_20261110": {
+    "status": "PASS_DOCUMENTATION_ONLY_LOCAL_UNCOMMITTED_UNPUSHED",
+    "master": "MASTER-PLAN.md",
+    "index": "INDEX-PLAN.md",
+    "audit": "docs/healthtech/audits/ptp-three-study-planning-20261110/README.md",
+    "studies": {
+      "HT-ST1": "PRIMARY_DAPFAM_PROTOCOL_PROPOSED_ACTUAL_NEW_METHODS_NOT_RUN",
+      "HT-ST2": "OPTIONAL_TEMPORAL_TRANSFER_MAY_BE_ST1_VALIDATION",
+      "HT-ST3": "CONDITIONAL_FIXED_GRAPH_AND_INDEPENDENT_EVALUATION_GATES"
+    },
+    "shared_memory": "PROJECT_MARKDOWN_IMPLEMENTED_SERVICE_NOT_INSTALLED",
+    "archive": "REVIEWED_ZERO_EXISTING_FILES_MOVED",
+    "experiments": "NOT_RUN",
+    "publication": "NOT_COMMITTED_NOT_PUSHED"
+  },
     "method_first_20261110": {
     "owner_curator_bundle": "MTM_CODE_DEPLOYED_HASH_VERIFIED_OWNER_EXECUTION_PENDING",
     "synthetic_smoke_003": "EOS_SCHEMA_VALID_18_QUOTES_EXACT_FAILED_BLOCK_SOURCE_ORDER_NO_RETRY",

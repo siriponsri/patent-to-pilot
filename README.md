@@ -1,4 +1,7 @@
 <p align="center">
+
+> **Current research direction - 10 November 2026:** use [MASTER-PLAN](MASTER-PLAN.md), [INDEX-PLAN](INDEX-PLAN.md) and the latest [HANDOFF](HANDOFF.md) before acting. DAPFAM B0/SACR/S/G is the primary proposed study; MTM and adaptive navigation are conditional. The older material below preserves product contracts, protocols and evidence; it is not authorization to resume old jobs or open protected evaluation. This documentation package is local-only/no-push.
+
   <img src="assets/logo.svg" alt="Patent-to-Pilot" width="620">
 </p>
 

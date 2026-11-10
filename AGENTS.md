@@ -1,5 +1,15 @@
 # Patent-to-Pilot HealthTech — execution instructions
 
+## Current research routing and mandatory index memory (owner, 10 Nov 2026)
+
+Read [MASTER-PLAN.md](MASTER-PLAN.md), [INDEX-PLAN.md](INDEX-PLAN.md) and the [shared project memory index](memory/research/patent-to-pilot/INDEX.md) with the current checkpoint. The owner selected DAPFAM-first B0/SACR/S/G; optional MTM transfer may be validation rather than a separate paper; adaptive LLM graph control is conditional last. Solution Scout remains separate. Historical GOAL/PLAN contracts and frozen evidence remain intact; a plan is not experiment authorization.
+
+**Update INDEX-PLAN.md on every substantive work event:** completed/read-only step; new/changed component, configuration, result or artifact; owner decision; new/cleared blocker; failed/interrupted/uncertain attempt; before background or >10-minute work; at least every 30 minutes active; and before pause/end/account handoff. Record row ID, study, writer/role, actual status, revision/source/config hashes or manifest, inputs/permissions, output/receipt, checks and NOT_RUN, failures/unknown costs and next action. Preserve historical negative/failed evidence.
+
+At each such checkpoint update HANDOFF.md and CLAUDE.md together with the same writer/state and current evidence. Update MASTER/detailed plans when scope/design changes; memory DECISIONS/OPEN-QUESTIONS/SESSION-LOG when relevant; progress and next-actions once per completed package. All shared knowledge stays in project files under scope `research/patent-to-pilot`; no private assistant-memory sharing, session capture, secrets or protected-label content. Both agents must read the same index; filenames do not imply automatic integration.
+
+The actual file is `CLAUDE.md` (the owner's `CLUADE.md` spelling refers to it; no duplicate existed). Current exact owner/runtime permissions govern publication: this three-study documentation session explicitly allows no commit/push, experiments or installations, overriding the older checkpoint-push requirement for this package. Record local-only state and resume publication only with applicable authority. Archive moves require confident supersession, provenance/link repair and unchanged access; see [archive review](archives/INDEX.md).
+
 Read root [GOAL.md](GOAL.md) sections 0–4, the selected HT-W in [PLAN.md](PLAN.md), [progress](docs/healthtech/progress.json) and [next actions](memory/next-actions.md). Root GOAL/PLAN define current HealthTech scope; this file controls execution. Current owner directions and runtime permissions take precedence. Read only relevant sources and applicable `.agents/skills` instructions when present.
 
 ## Mandatory cross-account handoff (owner rule, 10 Nov 2026)

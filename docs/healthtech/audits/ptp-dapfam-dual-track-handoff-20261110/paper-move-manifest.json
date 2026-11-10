@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-11-10T13:21:40.0089124+00:00",
+  "action": "Move three explicitly matched paper PDFs from Downloads; no overwrite",
+  "duplicate_check": "Same names absent; equal-sized files under destination tree hashed, no same-content match",
+  "files": [
+    {
+      "file": "1-s2.0-S0172219026000025-main.pdf",
+      "sha256": "ecfb0fda04dcd0a27aa4e0104f66d066b5d941a7c23e4121acf32fefce73a312",
+      "bytes": 4427813,
+      "source_absent": true,
+      "destination": "literature-review/pdfs/1-s2.0-S0172219026000025-main.pdf",
+      "status": "MOVED_HASH_VERIFIED"
+    },
+    {
+      "file": "1-s2.0-S0952197626004574-main.pdf",
+      "sha256": "2542cd7e1cad78de5aa3a6dfd9cf4df9a4627a95c13407f8648fc341c361f4be",
+      "bytes": 11158583,
+      "source_absent": true,
+      "destination": "literature-review/pdfs/1-s2.0-S0952197626004574-main.pdf",
+      "status": "MOVED_HASH_VERIFIED"
+    },
+    {
+      "file": "2605.10073v2.pdf",
+      "sha256": "6834eefd7ab425d4ea6c6f07f9f4993ed869aabc47d975d9fda9d857dff81bfa",
+      "bytes": 1683118,
+      "source_absent": true,
+      "destination": "literature-review/pdfs/2605.10073v2.pdf",
+      "status": "MOVED_HASH_VERIFIED"
+    }
+  ],
+  "published": false
+}

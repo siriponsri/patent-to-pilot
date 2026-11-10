@@ -1,5 +1,7 @@
 # PLAN — Patent-to-Pilot HealthTech
 
+> **Current research direction - 10 November 2026:** use [MASTER-PLAN](MASTER-PLAN.md), [INDEX-PLAN](INDEX-PLAN.md) and the latest [HANDOFF](HANDOFF.md) before acting. DAPFAM B0/SACR/S/G is the primary proposed study; MTM and adaptive navigation are conditional. The older material below preserves product contracts, protocols and evidence; it is not authorization to resume old jobs or open protected evaluation. This documentation package is local-only/no-push.
+
 > **Current execution plan — 4 Nov 2026:** follow work packages WP0–WP8 in [PTP_JOURNAL_LONG_RUN.md](docs/healthtech/long-runs/PTP_JOURNAL_LONG_RUN.md). The status of each package and the next runnable steps (PI4PC replication, matched local-vs-API generation on the FDA pack, clean-clone rerun) are in the [WPI package NEXT_ACTIONS](docs/healthtech/audits/ptp-wpi-research-package-20261104/NEXT_ACTIONS.md). Track A protocol: [PAR4PC_RETRIEVAL_PROTOCOL_20261104_EN.md](docs/healthtech/research/PAR4PC_RETRIEVAL_PROTOCOL_20261104_EN.md).
 
 > Implementation checkpoint (27 October 2026): [migration and coverage](docs/healthtech/MIGRATION.md), [actual progress](docs/healthtech/progress.json). The pack’s starting statuses below are historical starting points; the full HealthTech study and product are not complete.

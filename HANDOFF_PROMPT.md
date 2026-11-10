@@ -1,5 +1,7 @@
 # Prompt for the next Claude account (copy everything below the line)
 
+> **Routing amendment - 10 November 2026:** start from [AGENTS](AGENTS.md), [CLAUDE](CLAUDE.md), latest [HANDOFF](HANDOFF.md), [MASTER-PLAN](MASTER-PLAN.md), [INDEX-PLAN](INDEX-PLAN.md) and [shared memory](memory/research/patent-to-pilot/INDEX.md). The prompt below is preserved historical context. Its older dual-benchmark/continuation wording does not override the DAPFAM-first conditional programme or current scope/permissions. Do not automatically retry consumed smoke/curator work or access test. Update the index and both checkpoints at every substantive event.
+
 Send this prompt together with the attached research handoff `PATENT_TO_PILOT_RESEARCH_AND_CLAUDE_HANDOFF_2026-11-09.md`. The live project state is always in `HANDOFF.md` in the repository.
 
 ---

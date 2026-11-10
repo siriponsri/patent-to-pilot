@@ -1,0 +1,26 @@
+{
+  "format": "ptp-preservation-v1",
+  "unchanged": [
+    {
+      "path": "docs/healthtech/research/PTP_SACR_VS_GRAPH_CONTRIBUTION_ASSESSMENT_20261110_EN.md",
+      "bytes": 28606,
+      "sha256": "ee64d8a05699613cbca50b06cd555c878d2488b729446f519d96bfafe5a6adae"
+    },
+    {
+      "path": "docs/healthtech/research/PATENT_TO_PILOT_RESEARCH_AND_CLAUDE_HANDOFF_2026-11-09.md",
+      "bytes": 174053,
+      "sha256": "e8773d4e07aa554472be7771738995dc4e65196868a389de42805255d353019f"
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-dapfam-dual-track-handoff-20261110/paper-move-manifest.json",
+      "bytes": 1254,
+      "sha256": "0c382e3a2046c3681ed22a3a20529ff10a75d5b2f94bfa7796defb4215f7d393"
+    }
+  ],
+  "completed_partial": {
+    "path": "docs/healthtech/research/DAPFAM_SACR_GRAPH_RESEARCH_DIRECTION_20261110_EN.md",
+    "original_bytes": 14708,
+    "original_sha256": "6f6a95858e6b4429d84f45f6105df2cfee926110b95f2ea2ebd360ccc26de25e",
+    "change": "new sections6-10 appended; original bytes preserved as prefix"
+  }
+}
