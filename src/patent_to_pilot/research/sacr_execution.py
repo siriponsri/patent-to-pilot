@@ -1,8 +1,10 @@
 """Prospective execution declaration binding, not authorization or live preflight."""
 from copy import deepcopy
 import hashlib
+import json
 
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError, exact_fields
+from patent_to_pilot.research.mtm_runtime import identifier, _unique_object
 from patent_to_pilot.research.mtm_queries import parse_dev_queries
 from patent_to_pilot.research.sacr_components import digest
 from patent_to_pilot.research.sacr_generation import GenerationLimits
@@ -97,4 +99,53 @@ def bind_input_snapshots(declaration, plan, *, manifest_bytes, query_payload,
         if observed != source['source_sha256']:
             raise InputBoundaryError('source bytes or missing-input declaration changed')
         result.append((source['query_id'], text))
+    return tuple(result)
+
+
+def bind_dapfam_input_snapshots(declaration, plan, *, manifest_bytes, query_payload,
+                                expected_execution_sha256, expected_plan_sha256):
+    """Bind exact staged native TA bytes to a prospective DAPFAM dev cohort.
+
+    Explicit separate entry point: MTM P callers retain their existing contract.
+    The runtime manifest/payload may contain the full dev population while the
+    frozen plan selects a subset. No label, corpus or protected file is opened.
+    The returned text has no encoder prefix, normalization or added claims.
+    """
+    bound = bind_execution(declaration, plan, expected_execution_sha256=expected_execution_sha256,
+                           expected_plan_sha256=expected_plan_sha256)
+    exact_fields(manifest_bytes, IDENTITIES)
+    for key, raw in manifest_bytes.items():
+        if type(raw) is not bytes or hashlib.sha256(raw).hexdigest() != bound['identities'][key]:
+            raise InputBoundaryError('manifest byte snapshot differs from declared identity')
+    if type(query_payload) is not bytes:
+        raise InputBoundaryError('query payload requires immutable byte snapshot')
+    try:
+        manifest = json.loads(manifest_bytes['query_manifest'], object_pairs_hook=_unique_object)
+        rows = [json.loads(line, object_pairs_hook=_unique_object)
+                for line in query_payload.decode('utf-8').splitlines() if line.strip()]
+    except (ValueError, UnicodeError) as exc:
+        raise InputBoundaryError('invalid native dev serialization') from None
+    if (type(manifest) is not dict or manifest.get('format') != 'ptp-dapfam-runtime-dev-v1'
+            or manifest.get('split') != 'dev' or manifest.get('query_view') != 'TA'
+            or manifest.get('corpus_view') != 'TAC' or manifest.get('candidate_policy') != 'full'
+            or type(manifest.get('input_queries')) is not int
+            or manifest['input_queries'] != len(rows) or not rows):
+        raise InputBoundaryError('not a staged native DAPFAM dev manifest')
+    files = manifest.get('files')
+    if (type(files) is not dict or set(files) != {'corpus.jsonl', 'queries-ta.jsonl'}
+            or files['queries-ta.jsonl'] != hashlib.sha256(query_payload).hexdigest()):
+        raise InputBoundaryError('native query payload differs from manifest')
+    texts = {}
+    for row in rows:
+        exact_fields(row, {'id', 'text'})
+        identifier(row['id'])
+        if (row['id'] in texts or type(row['text']) is not str or not row['text'].strip()):
+            raise InputBoundaryError('invalid native dev query')
+        texts[row['id']] = row['text']
+    result = []
+    for source in bound['sources']:
+        query = source['query_id']
+        if query not in texts or hashlib.sha256(texts[query].encode('utf-8')).hexdigest() != source['source_sha256']:
+            raise InputBoundaryError('native source absent or changed')
+        result.append((query, texts[query]))
     return tuple(result)
