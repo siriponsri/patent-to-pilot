@@ -2,6 +2,10 @@
 
 ## HT-EVENT-ST1-TAKEOVER — 2026-11-10 21:15 Bangkok
 
+**HT-EVENT-CURATOR-V3-COMPLETE:** HT-IDX29 PREPARED_NOT_ISOLATION_ATTESTED,474dev/45336fullcorpus,eligibleALL474/IN450/OUT349,protectedexports0. [Actual receipt](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/attempt-v3.json); source74a4d05;331626349outputbytes;12.329s/3.643GBpeak/noGPU. Totaldelegated57.829s inclfailed/diagnostic/probes. Allhashesverified, no activecurator. Next realmounts/vectorbinding/nativebaseline; no score,fidelity ormethodPASS.
+
+**HT-EVENT-CURATOR-V3-DISPATCH:** one diagnosed-repair projection RUNNING child17928/session98364 at74a4d05, samecaps/exclusivev3 outputs. Curator watches samehandle. Prior42.688s stage/diagnostic wall plus2.812s probes accounted; noGPU/calls. Completion pending, fullbaseline NOT_RUN.
+
 **HT-EVENT-NATIVE-ANNOTATION-FIX:** HT-IDX29/v2FAILED DEV_ANNOTATION beforeoutput. Dev-only proof allothermarkers nonpositive; pinned MTEB positive-first semantics verified. Staging/native evaluator correction22/22 testsPASS, finite/positive-domain checks retained. [Evidence](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/README.md). v3 pendingGO samecaps; no retrieval score or protected evaluation. Sole writer unchanged; preserved failures.
 
 **HT-EVENT-DAPFAM-NEWLINE-PROVED:** HT-IDX29 canonical LF328953744bytes hash0d57b65... matches historical corpus after CRLF normalization; historical328999080bytes hash42f895... exact reconstructed bytes. [Proof](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/newline-proof-v1.json). Exact-hash reconstruction implemented18/18 tests PASS; no semantic/pin changes. Fresh v2 stage pending sole-curator GO, existing caps; native baseline NOT_RUN, v1 retained FAILED.

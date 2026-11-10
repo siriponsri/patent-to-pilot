@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **DAPFAM dev prepared:** [actual receipt](../docs/healthtech/audits/ptp-dapfam-native-staging-20261110/attempt-v3.json),474dev/45336corpus,protectedexports0. Curator subagent finished under explicit amendment; no owner command needed. Next actual isolated runtime/evaluator mounts, existing vector/model/passage binding and native TA baseline. V1/v2 failures preserved; no generated method run. Single parent repo writer.
+
 > **Native DAPFAM staging code ready:** [receipt](../docs/healthtech/audits/ptp-dapfam-native-staging-20261110/README.md),15/15 staging/native fixtures PASS, original split located/hash verified. Next resource-enforced owner launcher and complete cumulative disk admission before providing executable owner command. Agent must not run mixed-source curator. No real baseline or model call yet.
 
 > **ST1 continuation approved:** [scope/limits](../docs/healthtech/audits/ptp-st1-takeover-20261110/OWNER_AUTHORIZATION.md). DAPFAM primary; native dev-only curator contract next. Source-byte mismatch proved CRLF-only; exact-byte archive builder8/8 targeted checks passed, no real staging rerun. One additional declared synthetic smoke authorized but NOT_RUN. S/G sample and deterministic extraction conditional on fidelity/resources; test closed. Prior owner command below is a consumed partial attempt: do not rerun it. Screen/publish scoped documentation and repair checkpoint.

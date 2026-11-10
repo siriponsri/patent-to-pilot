@@ -1,6 +1,12 @@
 {
   "st1_takeover_20261110": {
-    "native_dapfam_staging": "IMPLEMENTED_15_TARGETED_TESTS_PASS_REAL_STAGE_NOT_RUN",
+    "native_dapfam_staging": "V3_PREPARED_NOT_ISOLATION_ATTESTED_22_TARGETED_TESTS_PASS",
+    "native_dapfam_dev_queries": 474,
+    "native_dapfam_corpus_families": 45336,
+    "native_dapfam_eligible_dev": {"ALL": 474, "IN": 450, "OUT": 349},
+    "curator_supervisor_seconds_all_attempts_and_probes": 57.829,
+    "curator_model_calls": 0,
+    "curator_output_bytes": 331626349,
     "status": "OWNER_APPROVED_BOUNDED_CONTINUATION",
     "audit": "docs/healthtech/audits/ptp-st1-takeover-20261110/README.md",
     "packaging": "EXACT_HISTORICAL_BYTES_RECONSTRUCTED_8_TARGETED_TESTS_PASS",

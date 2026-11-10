@@ -1,0 +1,90 @@
+{
+  "completion": {
+    "format": "ptp-dapfam-curator-receipt-v1",
+    "status": "PREPARED_NOT_ISOLATION_ATTESTED",
+    "runtime_manifest_sha256": "fd950817b3cab234c4175bb6c68cc9942ae4fcafd8c7108f2adeaab1ce161c1f",
+    "evaluator_manifest_sha256": "604a4d33f29913a5d6bcd78c9d069b16f4505dadf3b06c27192ba8d612713881",
+    "input_queries": 474,
+    "corpus_families": 45336,
+    "source_sha256": {
+      "corpus.parquet": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6",
+      "queries.parquet": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe",
+      "qrels_all.parquet": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74",
+      "split.json": "dd76c019ee74c8d256e182ecfb329f9235638c1ecf9d2c7b1fa8073c4958e6dc"
+    },
+    "protected_exports": 0,
+    "vector_binding": "CORPUS_BYTES_MATCH;VECTOR_AND_QUERY_BASELINE_VERIFICATION_PENDING"
+  },
+  "runtime_manifest": {
+    "candidate_policy": "full",
+    "corpus_families": 45336,
+    "corpus_record_newline": "CRLF_EXACT_HISTORICAL_BYTES",
+    "corpus_view": "TAC",
+    "dataset_revision": "780f4011d60297fc6e97a4119b0c516d13afea2d",
+    "files": {
+      "corpus.jsonl": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+      "queries-ta.jsonl": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a"
+    },
+    "format": "ptp-dapfam-runtime-dev-v1",
+    "input_queries": 474,
+    "mteb_revision": "9242b36a1d400fc8c3af573e6a6e0705c0b96e3d",
+    "query_view": "TA",
+    "source_sha256": {
+      "corpus.parquet": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6",
+      "qrels_all.parquet": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74",
+      "queries.parquet": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe",
+      "split.json": "dd76c019ee74c8d256e182ecfb329f9235638c1ecf9d2c7b1fa8073c4958e6dc"
+    },
+    "split": "dev"
+  },
+  "evaluator_manifest": {
+    "candidate_policy": "full",
+    "corpus_families": 45336,
+    "corpus_record_newline": "CRLF_EXACT_HISTORICAL_BYTES",
+    "corpus_view": "TAC",
+    "dataset_revision": "780f4011d60297fc6e97a4119b0c516d13afea2d",
+    "eligible_queries": {
+      "ALL": 474,
+      "IN": 450,
+      "OUT": 349
+    },
+    "files": {
+      "qrels-dev.jsonl": "ca693dc8a1d5c5bf10249c8e9438be5198346349dcd1b6a6194e0eeb96923473"
+    },
+    "format": "ptp-dapfam-evaluator-dev-v1",
+    "input_queries": 474,
+    "mteb_revision": "9242b36a1d400fc8c3af573e6a6e0705c0b96e3d",
+    "query_view": "TA",
+    "runtime_manifest_sha256": "fd950817b3cab234c4175bb6c68cc9942ae4fcafd8c7108f2adeaab1ce161c1f",
+    "source_sha256": {
+      "corpus.parquet": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6",
+      "qrels_all.parquet": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74",
+      "queries.parquet": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe",
+      "split.json": "dd76c019ee74c8d256e182ecfb329f9235638c1ecf9d2c7b1fa8073c4958e6dc"
+    },
+    "split": "dev"
+  },
+  "supervisor": {
+    "status": "COMPLETED",
+    "pid": 17928,
+    "process_exit_code": 0,
+    "wall_seconds": 12.328999999997905,
+    "timeout_seconds": 1800,
+    "memory_limit_bytes": 33285996544,
+    "max_cpu_affinity": 8,
+    "model_calls": 0,
+    "gpu_calls": 0,
+    "automatic_retries": 0
+  },
+  "child": {
+    "status": "COMPLETED",
+    "pid": 17928,
+    "memory_limit_bytes": 33285996544,
+    "affinity_mask": 255,
+    "active_process_limit": 1,
+    "peak_job_commit_bytes": 3642761216,
+    "peak_process_commit_bytes": 3642761216,
+    "exit_code": 0,
+    "wall_seconds": 11.719000000011874
+  }
+}

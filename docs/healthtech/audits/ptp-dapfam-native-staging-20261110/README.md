@@ -1,5 +1,13 @@
 # Native DAPFAM curator preparation
 
+## V3 completed: dev preparation accepted, runtime isolation pending
+
+[V3 aggregate receipt](attempt-v3.json): exit0,12.329s supervisor/11.719s child,peak3,642,761,216bytes,stderr0,model/GPUcalls0. Source74a4d05; runtime474dev queries/full45336corpus. Dev eligibility ALL474/IN450/OUT349 independently established here, not copied from old strict-OUT denominator. No protected export. Private output sibling`_private_artifacts/healthtech/ptp-dapfam-native-dev-20261110-v3`,331,626,349bytes; all file/manifest hashes streaming-verified by curator. CompletionSHA1e2011d44d5b0e89477485434cbc7d0c5f3004e36c56fe38e10aa211ea05f781; runtime manifestfd950817b3cab234c4175bb6c68cc9942ae4fcafd8c7108f2adeaab1ce161c1f; evaluator manifest604a4d33f29913a5d6bcd78c9d069b16f4505dadf3b06c27192ba8d612713881. Native TAqueriesSHA6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a, corpus exact historical42f895... unchanged.
+
+Status PREPARED_NOT_ISOLATION_ATTESTED: separate actual readonly runtime/evaluator mounts, existing vector/passage/model binding and native baseline remain required. No retrieval score/fidelity judgment generated. V1/v2 remain failed. Delegated total55.017s real-data/byte-diagnostic supervisor wall +2.812s synthetic probes =57.829s, excludes shell/parent overhead. Preserve all old costs and ledgers; output reservation8GiB now actual331626349bytes, no new budget. Curator completed with no active process/retry. Parent remains sole writer.
+
+Next: safely transfer only dev runtime bundle to declared remote private location; keep evaluator separate; verify original vector hash/order/encoder prompt and wrapper; run bounded baseline only after resource/isolation gates. Historical claims-inclusive scores do not establish native TA parity. Additional SACR smoke still authorized NOT_RUN.
+
 ## V2 diagnosis and native annotation correction
 
 V2 FAILED DEV_ANNOTATION before output,10.219s,peak3,640,107,008bytes,exit1,no calls/timeout; [receipt](attempt-v2.json). Read-only [categories](annotation-diagnosis.json) and [association](domain-score-proof.json):18,960dev relations,9,480positive with exactIN/OUT,9,480nonpositive with other markers,0nonfinite/positive-other. No protected/raw annotation returned.

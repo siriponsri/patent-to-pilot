@@ -2,6 +2,10 @@
 
 ## Active ST1 takeover — 2026-11-10 21:15 Bangkok
 
+**V3 COMPLETED:** curator exit0;474dev/full45336corpus; eligibleALL474/IN450/OUT349; protectedexports0. Output331626349bytes, allhashesverified,12.329s/3.643GBpeak,noGPU/modelcalls. [Receipt](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/attempt-v3.json). No curator process/retry active. Next actual isolated mounts/vector-model binding/nativebaseline; not research benefit/fidelityPASS. V1/v2 failures retained, totaldelegated57.829s inclprobes. Parent solewriter, lastpushed74a4d05.
+
+**V3 RUNNING:** child17928/session98364,source74a4d05,private siblingv3-supervisor. Curator monitors samehandle;31GiB/CPU8/1800s/8GiBoutput,noGPU. Prior real stage/diagnostic supervisor cost42.688s,probes2.812s. Terminal pending, no retries. Parent solewriter.
+
 **V2 terminal/fix:** FAILED beforeoutput DEV_ANNOTATION. Scoped dev diagnosis and pinned upstream show domain filter applies to positives; nonpositive markers caused erroneous refusal. Fixed staging/evaluator22/22 testsPASS, no cohort/positive change. Fresh v3 pending GO samecaps, parent sole writer; preserve v1/v2 receipts. See native-staging audit/HANDOFF.
 
 **DAPFAM diagnosis resolved:** historical corpus CRLF bytes reproduce pinned hash, normalizedLF equals new payload; exact-byte reconstruction fix18/18 PASS, no repin. Fresh v2 stage pending curator GO under existing diagnosed-repair authority/caps; v1 failure preserved. Native-staging receipt has source proof and bounded next action. No stage running at checkpoint.
