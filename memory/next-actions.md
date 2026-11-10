@@ -1,5 +1,10 @@
 
 
+## Native fidelity launch review repairs 2026-11-10
+
+Parent sole writer; last local1d6741d, remote sync stillunconfirmed. Independent reviewer found lifecycle cleanup gap and late timeout trigger in inherited supervisor; repaired BEFORE dispatch. start_and_monitor now guards creation/receipt/wait/inspect; timeout6960 leaves240s cleanup within7200 reservation.11 supervisor tests PASS (4 legacy-only skips), reviewer rechecked both fixes with no remaining launch blocker. Exact code/input archives verified remotely; old pre-review supervisor retained, launch uses supervise-reviewed.py hash71c1fa00cab53cc8b86b91ad79d1b56bb9325088343927467574730a39df57b1. No modelcalls/cards yet. Next single dispatch then actual isolation readback/monitor samehandle; budget and closedtests unchanged. Failed shell path lookup/quoted docker format probe were read-only, no experiment attempt.
+
+
 ## Native SACR fidelity pre-dispatch checkpoint 2026-11-10
 
 Parent sole writer, last local83ecac0, last confirmed remoteffc183f (push DNS failure preserved). Frozen screening protocol SACR-SOLO-FIDELITY-FREEZE.md: fixed100, all bundle risks<=20 plus exactly10 hash sentinels, SACR30/SG30/MTM0; critical sentinel stops, no same-model automatic semantic PASS. Critic parser implemented.16 runner/critic/rejection tests and9 supervisor tests PASS. Independent read-only reviewer found mandatory pin/runtime-receipt gaps; both fixed and rechecked by reviewer. Profile runtime declaration binds135 source files, same model/decoder/source-aware grammar; 7200s reserved within8h combined fidelity and72h cumulativeGPU,512MiB new disk reservation within40GiB. ExistingGPU observed empty; actual create/inspect before start stillrequired. Transport exact local-byte archives prepared, hashes in docs/healthtech/audits/ptp-native-sacr-fidelity-20261110/transport.json. No modelcalls/cards; scientific fidelity NOT_RUN. Next stage allowed query/sample/code only; verify hashes and single offline supervisor dispatch, monitor same handle; then charge actual costs and continue remaining view/critic stages before owner cards/retrieval. Do not replay reservation. Tests remainclosed.

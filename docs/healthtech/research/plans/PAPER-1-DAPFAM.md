@@ -1,6 +1,8 @@
 # HT-ST1: DAPFAM query abstraction versus fixed relation traversal
 
-Updated: 10 November 2026. Status: DETAILED_PROTOCOL_PROPOSAL / NOT_FROZEN / NOT_RUN.
+Updated: 10 November 2026. Status: DEV_EXECUTION_IN_PROGRESS; final panel and protected evaluation NOT_FROZEN/NOT_RUN.
+
+Current evidence supersedes historical readiness statements below: native B0 completed on474 dev queries (OUT349 Recall200 .14772); SYN004 engineering smoke passed without semantic validation. The single S/G extraction configuration failed feasibility (5/100 families,6 records,0 cross-family alias pairs); it is stopped, with no full-corpus/graph retrieval result. Native SACR profile generation is prepared under a7200-second reservation, NOT_DISPATCHED at this checkpoint. See [solo fidelity freeze](SACR-SOLO-FIDELITY-FREEZE.md) for fixed100 sampling, bundled cards and critical-sentinel stop rules. Exact live run status is in HANDOFF/INDEX-PLAN; no result is inferred from readiness tests.
 
 Owner-approved review allocation amendment: DAPFAM SACR30 + shared S/G extraction configuration30, each up to20 risk/escalation +10 sentinel,60 total across all configurations. MTM allocation0 pending explicit redistribution of remaining cards. No automatic borrowing or reduction of SACR coverage. Existing sampling/critical-error stop/incomplete no-pass rules retained. This replaces prior benchmark-based30/30 allocation, not the full protocol freeze. Corpus/alias sampling specification remains required before S/G extraction/review.
 

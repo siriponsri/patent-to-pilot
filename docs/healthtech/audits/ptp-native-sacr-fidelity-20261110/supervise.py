@@ -47,7 +47,9 @@ def monitor(child, started):
     peak, observation_errors = 0, 0
     try:
         while child.poll() is None:
-            if time.monotonic() - started >= 7195:
+            # Reserve 240 seconds inside the 7200-second envelope for a slow
+            # in-flight inspect and nested bounded stop/reobserve cleanup.
+            if time.monotonic() - started >= 6960:
                 stop_owned()
                 return 'TIMEOUT', peak
             size = sum(p.stat().st_size for folder in ('out', 'logs')
@@ -77,6 +79,28 @@ def monitor(child, started):
         return 'EXITED', peak
     except BaseException:
         stop_owned()
+        raise
+
+
+def start_and_monitor(started, out, err):
+    try:
+        child = subprocess.Popen(['docker', 'start', '-a', NAME], stdout=out, stderr=err)
+        write('child.json', {'pid': child.pid, 'container_name': NAME})
+        reason, peak = monitor(child, started)
+        rc = child.wait(timeout=15)
+        state = inspect()
+        if state['State']['Running']:
+            raise RuntimeError('attached client exited while owned container remains running')
+        return reason, peak, rc, state
+    except BaseException:
+        try:
+            stop_owned()
+        except BaseException as stop_error:
+            try:
+                write('cleanup-failure.json', {'status': 'OWNED_TERMINATION_UNKNOWN',
+                    'exception_type': type(stop_error).__name__, 'container': NAME, 'retry': False})
+            except BaseException:
+                pass
         raise
 
 
@@ -138,11 +162,7 @@ def main():
     started = time.monotonic()
     signal.signal(signal.SIGTERM, lambda *_: (_ for _ in ()).throw(InterruptedError('supervisor interrupted')))
     with (JOB / 'logs/stdout').open('xb') as out, (JOB / 'logs/stderr').open('xb') as err:
-        child = subprocess.Popen(['docker', 'start', '-a', NAME], stdout=out, stderr=err)
-        write('child.json', {'pid': child.pid, 'container_name': NAME})
-        reason, peak = monitor(child, started)
-        rc = child.wait(timeout=15)
-    state = inspect()
+        reason, peak, rc, state = start_and_monitor(started, out, err)
     completion = JOB / 'out/attempt/terminal.json'
     summary = json.loads(completion.read_bytes()) if completion.is_file() else {}
     write('terminal.json', {'status': reason if reason != 'EXITED' else 'PROFILE_BATCH_COMPLETE_FIDELITY_PENDING'
