@@ -1,0 +1,16 @@
+﻿{
+  "authored_passages": 100000,
+  "input_allocated_before_tracing": true,
+  "observations": {
+    "legacy": {
+      "sha256": "8efed8a71cf8be86a95f36c053a29ce7a463bb5a9b3121d28c0e65c5411d05d6",
+      "peak_traced_bytes": 15379328,
+      "wall_seconds": 0.5474234000139404
+    },
+    "streamed": {
+      "sha256": "8efed8a71cf8be86a95f36c053a29ce7a463bb5a9b3121d28c0e65c5411d05d6",
+      "peak_traced_bytes": 631639,
+      "wall_seconds": 0.6546060999971814
+    }
+  }
+}

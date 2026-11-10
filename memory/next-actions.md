@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest resource repair:** batched passage-order hashing preserves digests;429 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-order-hash-memory-20261110/README.md). Input plus detached vector copy is11.8536 GiB payload if resident, excluding overhead; actual host/resource gate remains open. Owner protocol and curator decisions pending; no automatic model retry.
+
 > **Latest readiness refresh:** all37 requirements retained; actual R1/generation/fidelity/R3-R6 incomplete. [Audit](../docs/healthtech/audits/ptp-method-first-readiness-refresh-20261110/README.md). Family-rejection owner decision pending; keep FAILED until answered. Curator/environment unanswered. Independent resource/identity work remains; no automatic model retry.
 
 > **Latest required generation contract:** execution v3 requires typed profile/view evidence and original anchor; 417 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-required-generation-20261110/README.md). Next declared family rejection and actual preflight/resource/fidelity gates. No actual model attempt.

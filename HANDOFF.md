@@ -4,12 +4,12 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 10:39:15 Bangkok
+### Latest checkpoint — 2026-11-10 10:43:51 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** 3925311a3220aca45a457559a1cac8522455d407; verify containing checkpoint/remote on takeover.
-- **Latest package:** research readiness refresh; audit docs/healthtech/audits/ptp-method-first-readiness-refresh-20261110/README.md. All37 requirements preserved; six stale implementation/draft rows updated. R6 evidence table refreshed. Engineering progress does not close actual scientific gates.
-- **Validation/changes:** 37 unique requirement IDs and30 referenced local files checked; snapshots hashed. Document-only change; prior417 tests remain latest runtime evidence, not rerun. Owner protocol question issued for family rejection; unanswered means keep FAILED behavior. Curator question remains unanswered; not repeated.
+- **Last verified pushed base:** 754fdebd3f76c22df6047d1773ff2217339aabd1; verify containing checkpoint/remote on takeover.
+- **Latest package:** index allocation review and batched passage-order hashing; audit docs/healthtech/audits/ptp-method-first-order-hash-memory-20261110/README.md. Exact legacy digest preserved with4096-row JSON batches. Vector input plus detached copy totals11.8536 GiB payload if resident, before overhead; no actual host capacity claim.
+- **Validation/changes:** 429 related tests PASS; Ruff PASS. Authored100000 IDs: traced temporary allocation15379328 to631639 bytes, final time0.5474 to0.6546s; earlier slower per-row observation preserved. Source/hash tests, reproduction/observations, audit and paired handoffs/progress. No corpus/model/GPU access.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
 - **Jobs/failures:** previous model/grammar failures retained; prior diagnostic terminated/absence verified. No new actual data/model/GPU/background job; remote not re-polled. No retries.
 - **Next:** await owner protocol decision before family-rejection adoption; independent resource/identity repair may continue; curator supplies isolated environment/allowlisted receipts for actual R1; justified separately declared generation repair/fidelity then bounded R3/R4 and gated R5/R6. Do not substitute indefinite fixture work for scientific gates.

@@ -13,8 +13,24 @@ def passage_order_digest(family_ids, passage_owner, passage_ids):
     if (owner_array.shape != (len(passage_ids),) or owner_array.dtype.kind not in 'iu' or
             (owner_array < 0).any() or (owner_array >= len(family_ids)).any()):
         raise ValueError('invalid passage ownership for identity binding')
-    rows = [(passage_id, family_ids[int(owner)]) for passage_id, owner in zip(passage_ids, passage_owner, strict=True)]
-    return hashlib.sha256(json.dumps(rows, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()
+    # Preserve the canonical JSON bytes without allocating all row tuples,
+    # the entire JSON string and its encoded copy simultaneously.
+    checksum = hashlib.sha256(b'[')
+    rows, first = [], True
+    for passage_id, owner in zip(passage_ids, passage_owner, strict=True):
+        rows.append((passage_id, family_ids[int(owner)]))
+        if len(rows) == 4096:
+            if not first:
+                checksum.update(b',')
+            checksum.update(json.dumps(rows, ensure_ascii=False, separators=(',', ':'))[1:-1].encode())
+            rows.clear()
+            first = False
+    if rows:
+        if not first:
+            checksum.update(b',')
+        checksum.update(json.dumps(rows, ensure_ascii=False, separators=(',', ':'))[1:-1].encode())
+    checksum.update(b']')
+    return checksum.hexdigest()
 
 
 def compare_factorial(*, family_ids, passage_owner, passage_ids, passage_vectors,
