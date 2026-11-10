@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-10 09:32:49 Bangkok",
+  "base_commit": "d5038ed35e7627c1af0909cd32e99301ca049dd5",
+  "new_controller_cases": 8,
+  "initial_tests": "1 failed / 40 passed; authored unknown item shape",
+  "second_tests": "1 failed / 246 passed; authored reason enum",
+  "final_tests": 247,
+  "scope": "18 SACR files plus MTM bound runner",
+  "ruff": "PASS",
+  "actual_data_model_execution": "NOT_RUN",
+  "production_controller": "FIRST_STAGE_ONLY"
+}

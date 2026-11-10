@@ -2,12 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:29:38 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:32:49 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 7ab3719509906480df13989fdfc888de45af19c6.
-- Immutable allowed query/source and manifest byte snapshots checked; MTM loader single-read hash/parse.239 SACR+MTM bound-runner tests and Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-input-snapshots-20261110/README.md.
-- Other manifests opaque; referenced artifacts/preflight, typed scheduling and caps remain. Next integrate bound sources into typed stage controller. No actual data/model/GPU run; remote live state not re-polled.
-- R1 curator/isolation, generation/fidelity gates unchanged; R5 not authorized. Prior failures and owner untracked handoff preserved. Paired updates mandatory.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base d5038ed35e7627c1af0909cd32e99301ca049dd5.
+- Bound first-stage profile controller; typed decisions distinguish failed/empty/review/fidelity pending.247 related tests, Ruff PASS. Two fixture failures recorded/corrected. Audit docs/healthtech/audits/ptp-method-first-profile-controller-20261110/README.md.
+- Next resolve typed failed-profile output versus COMPLETED transport in reconciliation using sealed output; do not relabel empty or invent exceptions. No finalized fallback/retrieval or complete controller.
+- No actual data/model/GPU jobs; remote state not re-polled. R1 curator/isolation, generation/fidelity gates unchanged; R5 not authorized. Preserve owner untracked handoff, paired updates required.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
