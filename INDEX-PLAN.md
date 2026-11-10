@@ -1,5 +1,9 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Durable fidelity-card ledger 2026-11-10
+
+Parent solewriter,last pushedcb6103b. CardLedger implemented: explicit exclusive creation, existing-file-only reopen,OS lock,stale-head checks,append+fsync,hash-linked corruption detection,no refunds/reset.11 ledger/solo tests PASS. Actual private ledger created at sibling _private_artifacts/healthtech/ptp-fidelity-cards-20261110/ledger.jsonl with ZERO cards; aggregate genesis in docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/ledger-genesis.json. Never create replacement if missing/corrupt; inspect existing history. This is durable reservation only,not semantic screening or human decisions; allocation/S-G sampling and screening adapters remain pending. No modelcall/test access/livejob. Next complete prospective configuration/card allocation,screening and failure-policy integration,then bounded native dev.
+
 ## Native SACR profile controller integration 2026-11-10
 
 Parent solewriter,last pushed4b66476. Controller dispatches from hash-pinned query manifest; nativeTA kind propagated through profile compilation, generated validation and deterministic replay. LegacyMTM defaults unchanged.101 targeted controller/binding regressions PASS; after stricter manifest-object parsing10 focused tests PASS. Native generated-profile fixture accepted/replayed; MTM-kind response rejected with original failed evidence preserved. No actual modelcall. Still pending durable fidelity ledger/screening, rejected-family policy and complete native retrieval/anchor bindings before dev run. No livejobs;test closed;smoke allowance consumed.

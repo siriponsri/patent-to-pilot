@@ -1,0 +1,21 @@
+{
+  "status": "PRIVATE_LEDGER_CREATED_ZERO_CARDS",
+  "snapshot": {
+    "issued_total": 0,
+    "by_benchmark": {
+      "DAPFAM": {
+        "escalation": 0,
+        "sentinel": 0
+      },
+      "MTM": {
+        "escalation": 0,
+        "sentinel": 0
+      }
+    },
+    "head_sha256": "4b3a4a05a3ad95396a73fb7b8568c01b21ddffd7be1cd0f268ee32eda3558f01",
+    "events": 0
+  },
+  "reservation_policy": "60_TOTAL_30_PER_BENCHMARK_20_ESCALATION_10_SENTINEL_NO_REFUNDS",
+  "real_cards_issued": 0,
+  "gpu_calls": 0
+}

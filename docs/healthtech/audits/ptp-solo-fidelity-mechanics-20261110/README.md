@@ -1,3 +1,10 @@
+
+## Durable fidelity-card ledger 2026-11-10
+
+Parent solewriter,last pushedcb6103b. CardLedger implemented: explicit exclusive creation, existing-file-only reopen,OS lock,stale-head checks,append+fsync,hash-linked corruption detection,no refunds/reset.11 ledger/solo tests PASS. Actual private ledger created at sibling _private_artifacts/healthtech/ptp-fidelity-cards-20261110/ledger.jsonl with ZERO cards; aggregate genesis in docs/healthtech/audits/ptp-solo-fidelity-mechanics-20261110/ledger-genesis.json. Never create replacement if missing/corrupt; inspect existing history. This is durable reservation only,not semantic screening or human decisions; allocation/S-G sampling and screening adapters remain pending. No modelcall/test access/livejob. Next complete prospective configuration/card allocation,screening and failure-policy integration,then bounded native dev.
+
+Hash links detect corruption,not deliberate full-chain rewriting by a host administrator. Prior notes below are historical.
+
 # Solo fidelity mechanics
 
 Implemented research/sacr_solo_fidelity.py and7 passing targeted fixtures. Pure mechanics only: deterministic <=100 dev hash sample; fixed hash sentinels; missing/unassessable screening escalates; complete card reservation checks cumulative60/all configurations,30per benchmark,20escalations/10sentinels; critical human/automatic error stops configuration; incomplete/ambiguous decisions cannot pass. Same configuration digest/query tuple cannot be reissued; new configuration consumes new allowance. No source/model/retrieval content used in tests.
