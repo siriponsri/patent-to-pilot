@@ -1,5 +1,15 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Unattended authority and Neo4j availability 2026-11-11T06:56:42+07:00
+
+Owner requested consolidated permissions for unattended continuation. Existing authority covers bounded current DAPFAM work, failures/negative closeout, report/manuscript and screened code/docs publication; no repeated routine approval. Human cards still require actual owner judgments; absence never implies fidelity PASS. Independent work proceeds while required judgments wait. No new retries/configurations/resource limits/test access/training/paid APIs/system permission changes were granted.
+
+Owner explicitly approved conditional transfer of all unused SG30 human cards to MTM30 only after DAPFAM fidelity and pilot pass and original resources remain. Preserve DAPFAM SACR30 and global60, with20risk+10sentinel per pool. SG fixed failed configuration remains closed. Private card ledger inspected:2events (header+prior allocation amendment), no card reservations. Conditional authority is recorded; do not activate transfer or run MTM before gates; implement append-only ledger amendment only when conditions are verified. No automatic borrowing elsewhere.
+
+Owner reports Neo4j installed and supplied official MCP repo https://github.com/neo4j/mcp. Official README checked: schema/read-Cypher/write-Cypher tools exist in the project, but discovery of this session's available tools returned no Neo4j/Cypher match. Live database connection/schema NOT_VERIFIED; no installation/configuration/password access/import/write attempted. Infrastructure availability does not remedy the failed SG extraction gate. Next connection verification may use exposed MCP when available; no expanded experiment authority inferred.
+
+Parent sole writer; last verified pushed a873fd3. Same live continuation retained. Latest early bound:55completed,14rejected+6compact flags=20, exactlycap, so stop not yet triggered. Added/staged fixed-owned-job stop-at-review-cap.py;3fixturesPASS (19/20mustnotstop,21consistentflagsstop). It rechecks pinned observer and exact container start, persists trigger before stopping only owned job, then verifies termination. NOT_RUN. If bound>20, apply predeclared stop and charge actual wholecost; optional approved retry remainsunused if gate already impossible. Finalizer already staged, terminal-only. Both testsclosed;no cards. GoalACTIVE.
+
 ## Selected finalizer staged 2026-11-11T06:52:21+07:00
 
 Parent sole writer; last verified pushed b8b75cf. Trusted finalizer for exact54 selection staged separately as finalize-selected.py with summarize-selected-reviewed.py, remote SHA matches local (selected-closeout-tool.json). NOT_RUN while live. It verifies fixed declaration/selection manifest and fresh terminal Docker state, writes exclusive aggregate/state receipts, and invokes reviewed selected summarizer using actual canonical output. Do not replay if either output receipt already exists; inspect first. No ledger mutation by finalizer; charge actual supervisor wall separately after verified terminal. Wrapper py_compilePASS; summarizer11fixturesPASS from prior package.

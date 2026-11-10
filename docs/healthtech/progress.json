@@ -3075,6 +3075,43 @@
       "remote_helper": "summarize-selected-reviewed.py",
       "py_compile": "PASS",
       "new_model_calls": 0
+    },
+    "conditional_mtm_allocation": {
+      "status": "OWNER_APPROVED_CONDITIONAL_NOT_ACTIVATED",
+      "recorded_bangkok": "2026-11-11T06:56:42+07:00",
+      "from_pool": "unused SG30",
+      "to_pool": "MTM30",
+      "conditions": [
+        "DAPFAM fidelity passes",
+        "DAPFAM pilot passes",
+        "original resource budget remains",
+        "verify zero SG cards issued before activation"
+      ],
+      "retained_dapfam_sacr_cards": 30,
+      "total_cards_ceiling": 60,
+      "each_pool_escalation_ceiling": 20,
+      "each_pool_sentinels": 10,
+      "sg_configuration": "CLOSED_FAILED_NO_NEW_TRIAL",
+      "authority_reply": "อนุมัติโอนแบบมีเงื่อนไขนี้"
+    },
+    "neo4j": {
+      "status": "OWNER_REPORTS_INSTALLED_TOOL_NOT_EXPOSED_IN_SESSION",
+      "source": "https://github.com/neo4j/mcp",
+      "available_matching_tools": 0,
+      "live_db_connection": "NOT_VERIFIED",
+      "schema_read": "NOT_RUN",
+      "writes_imports": "NOT_RUN",
+      "install_or_global_configuration_changes": false,
+      "scientific_scope": "Does not reopen failed SG configuration or authorize corpus extraction."
+    },
+    "frozen_cap_stop": {
+      "status": "STAGED_NOT_RUN",
+      "source_sha256": "e4b94a405651f3c5932827c6ffb867aab6f08b0b18317bd9f43b5fa23a5b7ad4",
+      "tests_passed": 3,
+      "threshold": "strictly more than20 distinct irrevocable flags",
+      "current_verified_lower_bound": 20,
+      "completed_profiles": 55,
+      "semantic_errors_proven": false
     }
   }
 }

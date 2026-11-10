@@ -1,0 +1,18 @@
+{
+  "status": "OWNER_APPROVED_CONDITIONAL_NOT_ACTIVATED",
+  "recorded_bangkok": "2026-11-11T06:56:42+07:00",
+  "from_pool": "unused SG30",
+  "to_pool": "MTM30",
+  "conditions": [
+    "DAPFAM fidelity passes",
+    "DAPFAM pilot passes",
+    "original resource budget remains",
+    "verify zero SG cards issued before activation"
+  ],
+  "retained_dapfam_sacr_cards": 30,
+  "total_cards_ceiling": 60,
+  "each_pool_escalation_ceiling": 20,
+  "each_pool_sentinels": 10,
+  "sg_configuration": "CLOSED_FAILED_NO_NEW_TRIAL",
+  "authority_reply": "อนุมัติโอนแบบมีเงื่อนไขนี้"
+}

@@ -21,3 +21,9 @@ Owner explicitly approved: DAPFAM SACR up to30 cards plus one shared S/G extract
 ## Interrupted-query exception 2026-11-11T06:36:17+07:00
 
 Owner approved exactly one regeneration exception for original fixed-sample index45 after its interrupted attempt. Same source/prompt/model/decoder; whole supervisor<=1200s including cleanup, charged to original shared fidelity/GPU limits. Preserve original failure and all known/unknown costs. If this exception fails, stop configuration and do not retry. Requires reviewed supervisor and no concurrent GPU job. Status OWNER_APPROVED_NOT_USED: no reservation or dispatch yet. This supersedes prior pending-request text only; all other failed/completed queries remain non-retryable.
+
+## Unattended continuation and conditional MTM allocation 2026-11-11T06:56:42+07:00
+
+Owner requested consolidated permissions for unattended continuation. Existing authority covers bounded current DAPFAM work, failures/negative closeout, report/manuscript and screened code/docs publication; no repeated routine approval. Human cards still require actual owner judgments; absence never implies fidelity PASS. Independent work proceeds while required judgments wait. No new retries/configurations/resource limits/test access/training/paid APIs/system permission changes were granted.
+
+Owner explicitly approved conditional transfer of all unused SG30 human cards to MTM30 only after DAPFAM fidelity and pilot pass and original resources remain. Preserve DAPFAM SACR30 and global60, with20risk+10sentinel per pool. SG fixed failed configuration remains closed. Private card ledger inspected:2events (header+prior allocation amendment), no card reservations. Conditional authority is recorded; do not activate transfer or run MTM before gates; implement append-only ledger amendment only when conditions are verified. No automatic borrowing elsewhere.

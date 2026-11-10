@@ -1,0 +1,10 @@
+{
+  "status": "OWNER_REPORTS_INSTALLED_TOOL_NOT_EXPOSED_IN_SESSION",
+  "source": "https://github.com/neo4j/mcp",
+  "available_matching_tools": 0,
+  "live_db_connection": "NOT_VERIFIED",
+  "schema_read": "NOT_RUN",
+  "writes_imports": "NOT_RUN",
+  "install_or_global_configuration_changes": false,
+  "scientific_scope": "Does not reopen failed SG configuration or authorize corpus extraction."
+}

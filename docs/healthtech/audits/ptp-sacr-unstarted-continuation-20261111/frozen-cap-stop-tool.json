@@ -1,0 +1,9 @@
+{
+  "status": "STAGED_NOT_RUN",
+  "source_sha256": "e4b94a405651f3c5932827c6ffb867aab6f08b0b18317bd9f43b5fa23a5b7ad4",
+  "tests_passed": 3,
+  "threshold": "strictly more than20 distinct irrevocable flags",
+  "current_verified_lower_bound": 20,
+  "completed_profiles": 55,
+  "semantic_errors_proven": false
+}
