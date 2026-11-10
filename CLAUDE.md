@@ -1,5 +1,10 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Native SACR fidelity RUNNING 2026-11-10T23:15+07:00
+
+Parent sole writer,last localb628795,last confirmed remoteffc183f. Single profile dispatch session51538; live containerptp-native-sacr-fidelity-20261110-v1 PID71075,attached Docker child70995,started16:15:21UTC. Actual Docker state running,noOOM; returned modelcalls0 at first observation (not a claim none in flight).7200s reservation,6960s early-stop margin; code/input/declaration/reviewed supervisor hashes verified. Do not restart on observation timeout. Monitor SAME session/container; status.py emits aggregate counts only. Next charge actual supervisor time and inspect terminal/retained failures; generic/selective/critic remainpending within8h shared fidelity cap. Zero human cards/testsclosed. No scientific quality/fidelity result yet.
+
+
 ## Native fidelity launch review repairs 2026-11-10
 
 Parent sole writer; last local1d6741d, remote sync stillunconfirmed. Independent reviewer found lifecycle cleanup gap and late timeout trigger in inherited supervisor; repaired BEFORE dispatch. start_and_monitor now guards creation/receipt/wait/inspect; timeout6960 leaves240s cleanup within7200 reservation.11 supervisor tests PASS (4 legacy-only skips), reviewer rechecked both fixes with no remaining launch blocker. Exact code/input archives verified remotely; old pre-review supervisor retained, launch uses supervise-reviewed.py hash71c1fa00cab53cc8b86b91ad79d1b56bb9325088343927467574730a39df57b1. No modelcalls/cards yet. Next single dispatch then actual isolation readback/monitor samehandle; budget and closedtests unchanged. Failed shell path lookup/quoted docker format probe were read-only, no experiment attempt.

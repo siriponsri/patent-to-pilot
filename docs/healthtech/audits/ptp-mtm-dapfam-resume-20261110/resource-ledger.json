@@ -37,7 +37,7 @@
     "reserved_seconds_released": 1800
   },
   "native_fidelity_profile_reservation": {
-    "status": "RESERVED_NOT_DISPATCHED",
+    "status": "RUNNING",
     "seconds": 7200,
     "container": "ptp-native-sacr-fidelity-20261110-v1",
     "fidelity_total_seconds": 28800,
@@ -47,6 +47,7 @@
     "latest_local_observed_bytes": 413485575,
     "latest_remote_observed_bytes": 348752400,
     "new_disk_reservation_bytes": 536870912,
-    "note": "Retained conservative prior disk accounting; no reset. Actual supervisor time charged after termination."
+    "note": "Retained conservative prior disk accounting; no reset. Actual supervisor time charged after termination.",
+    "session_id": 51538
   }
 }
