@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest preparatory R2:** [SACR draft](../docs/healthtech/research/SACR_V0_SPECIFICATION_DRAFT_20261110_EN.md), selector math and 15 synthetic tests pass. No retrieval/semantic evidence. Next profile validation/fidelity form and parity declaration; real data branch still awaits curator/environment response.
+
 > **Latest curator package:** [runbook](../docs/healthtech/audits/ptp-method-first-r1-curator-20261110/CURATOR_RUNBOOK.md), preparation CLI and 67 passing tests. Real staging NOT_RUN. Obtain curator/operator and isolated environment; independently continue SACR specification and parity declaration.
 
 > **Latest dev baseline entry point:** [61 tests pass](../docs/healthtech/audits/ptp-method-first-r1-bound-runner-20261110/README.md). Query cohort/missing ledger and pinned preflight now precede unchanged historical main/U-X runner; synthetic main stand-in only. Next curator asset command and isolation procedure, operational handoff, declared actual dev A03/parity. No real model/GPU run.

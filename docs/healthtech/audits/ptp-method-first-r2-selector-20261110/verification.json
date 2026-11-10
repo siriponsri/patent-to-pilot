@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-10 07:44:39 Bangkok",
+  "base_commit": "d5e7878b87a3e657c0424e00f3df7f1a61b79ebd",
+  "status": "SYNTHETIC_SELECTOR_PASS_SPEC_DRAFT",
+  "tests": 15,
+  "seconds": 0.45,
+  "ruff": "PASS",
+  "spec": "docs/healthtech/research/SACR_V0_SPECIFICATION_DRAFT_20261110_EN.md",
+  "spec_sha256": "f79c3d19b016845d3dc81d8f7627349e58fe08b1aa5c17f51e780c169fb14eb6",
+  "experiment": "NOT_RUN",
+  "fidelity_review": "NOT_RUN",
+  "r1_complete": false
+}
