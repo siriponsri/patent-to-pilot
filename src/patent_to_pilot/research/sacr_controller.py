@@ -12,7 +12,7 @@ from patent_to_pilot.research.sacr_view_result import view_result
 from patent_to_pilot.research.sacr_embedding import embedding_plan, bind_embeddings
 from patent_to_pilot.research.sacr_acquisition import acquire_union
 from patent_to_pilot.research.sacr_factorial import compare_factorial
-from patent_to_pilot.research.sacr_outcomes import METRICS
+from patent_to_pilot.research.sacr_outcomes import METRICS, finalize_query
 from patent_to_pilot.research.sacr_selection_result import selection_outcome
 
 
@@ -209,20 +209,84 @@ class BoundProfileController:
             raise InputBoundaryError('finalization requires exact declared mask cohort')
         outcomes = []
         for query in queries:
-            context, binding = self._retrieval_inputs(query, index, masks[query])
-            acquisition = self.journal.read_completed_output(self._attempts[query, 'acquisition'])
-            selection = self.journal.read_completed_output(self._attempts[query, 'selection'])
-            if (acquisition.get('format') != 'sacr-acquisition-stage-v1' or
-                    acquisition.get('query_id') != query or acquisition.get('binding') != binding or
-                    selection.get('query_id') != query or selection.get('binding') != binding or
-                    selection.get('acquisition_output_sha256') != digest(acquisition) or
-                    selection.get('result', {}).get('acquisition') != acquisition.get('acquired') or
-                    selection.get('result', {}).get('passage_order_sha256') != context['expected_order_sha256']):
-                raise InputBoundaryError('selection dependency chain differs from bound run')
-            outcome = selection_outcome(selection)
-            for arm, ranking in outcome['rankings'].items():
-                if (len(ranking) > binding['depth'] or
-                        not set(ranking) <= set(acquisition['acquired'][arm[0]]['family_ids'])):
-                    raise InputBoundaryError('selection exceeds its bound candidate exposure')
-            outcomes.append(outcome)
+            outcomes.append(self._ready_outcome(query, index, masks[query]))
+        return self.journal.finalize(outcomes)
+
+    def _ready_outcome(self, query, index, mask):
+        context, binding = self._retrieval_inputs(query, index, mask)
+        acquisition = self.journal.read_completed_output(self._attempts[query, 'acquisition'])
+        selection = self.journal.read_completed_output(self._attempts[query, 'selection'])
+        if (acquisition.get('format') != 'sacr-acquisition-stage-v1' or
+                acquisition.get('query_id') != query or acquisition.get('binding') != binding or
+                selection.get('query_id') != query or selection.get('binding') != binding or
+                selection.get('acquisition_output_sha256') != digest(acquisition) or
+                selection.get('result', {}).get('acquisition') != acquisition.get('acquired') or
+                selection.get('result', {}).get('passage_order_sha256') != context['expected_order_sha256']):
+            raise InputBoundaryError('selection dependency chain differs from bound run')
+        outcome = selection_outcome(selection)
+        for arm, ranking in outcome['rankings'].items():
+            if (len(ranking) > binding['depth'] or
+                    not set(ranking) <= set(acquisition['acquired'][arm[0]]['family_ids'])):
+                raise InputBoundaryError('selection exceeds its bound candidate exposure')
+        return outcome
+
+    def finalize_mixed(self, index, masks):
+        """Derive ready/missing/review/retrieval-failure states without dropping rows.
+
+        Every declared slot must already be explicitly terminal. No automatic
+        skip, guessed process death, fallback ranking or failure repair is made.
+        Profile fallback and malformed generation remain blocked on their missing
+        anchor/policy bindings rather than being silently relabelled.
+        """
+        queries = self.journal.manifest['query_ids']
+        if type(masks) is not dict or set(masks) != set(queries):
+            raise InputBoundaryError('finalization requires exact declared mask cohort')
+        outcomes = []
+        for query in queries:
+            records = {stage: self.journal.read_terminal_attempt(attempt)
+                       for (q, stage), attempt in self._attempts.items() if q == query}
+            states = {stage: record[0]['status'] for stage, record in records.items()}
+            if self._sources[query] is None:
+                if any(status != 'SKIPPED' for status in states.values()):
+                    raise InputBoundaryError('missing source has executed stages')
+                outcomes.append(finalize_query(query_id=query, state='MISSING_INPUT'))
+                continue
+            if states['profile'] != 'COMPLETED':
+                raise InputBoundaryError('profile failure requires separately bound original anchor')
+            profile = records['profile'][1]
+            if type(profile) is not dict or 'profile' not in profile:
+                raise InputBoundaryError('typed profile terminal evidence required')
+            canonical = profile_result(profile['profile'], source=self._sources[query], query_id=query)
+            if canonical != profile:
+                raise InputBoundaryError('profile terminal evidence changed')
+            decision = canonical['decision']
+            if decision.endswith('FALLBACK_REQUIRED'):
+                raise InputBoundaryError('profile fallback requires separately bound original anchor')
+            review = decision == 'REVIEW_REQUIRED'
+            if not review:
+                for kind in ('generic', 'selective'):
+                    if states[kind] != 'COMPLETED':
+                        raise InputBoundaryError('failed view generation requires declared family failure policy')
+                    output = records[kind][1]
+                    if type(output) is not dict or type(output.get('response_utf8')) is not str:
+                        raise InputBoundaryError('typed view terminal evidence required')
+                    limits = self.journal.execution['limits']
+                    replayed = view_result(output['response_utf8'].encode(), kind=kind, profile_output=canonical,
+                                           maximum_bytes=limits['response_bytes'], maximum_views=limits['views'])
+                    if replayed != output:
+                        raise InputBoundaryError('view terminal evidence changed')
+                    review = review or replayed['decision'] == 'REVIEW_REQUIRED'
+            retrieval = ('embedding', 'acquisition', 'selection')
+            if review:
+                if any(states[stage] != 'SKIPPED' for stage in retrieval):
+                    raise InputBoundaryError('review-required query executed retrieval')
+                outcomes.append(finalize_query(query_id=query, state='REVIEW_REQUIRED'))
+            elif any(states[stage] in ('FAILED', 'INTERRUPTED') for stage in retrieval):
+                first = next(i for i, stage in enumerate(retrieval) if states[stage] in ('FAILED', 'INTERRUPTED'))
+                if (any(states[s] != 'COMPLETED' for s in retrieval[:first]) or
+                        any(states[s] != 'SKIPPED' for s in retrieval[first + 1:])):
+                    raise InputBoundaryError('retrieval failure chain is inconsistent')
+                outcomes.append(finalize_query(query_id=query, state='RETRIEVAL_FAILED'))
+            else:
+                outcomes.append(self._ready_outcome(query, index, masks[query]))
         return self.journal.finalize(outcomes)

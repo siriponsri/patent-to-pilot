@@ -4,16 +4,16 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 09:53:59 Bangkok
+### Latest checkpoint — 2026-11-10 09:57:49 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Paired updates mandatory.
-- **Last verified pushed base:** a501b96cbc9169a3381a12bfbd95ffa02493156d; verify containing checkpoint/remote on takeover.
-- **Latest package:** [sealed-selection finalization](docs/healthtech/audits/ptp-method-first-selection-finalization-20261110/README.md): canonical rankings derived from typed output, journal rejects differing supplied outcomes; controller all-ready path replays dependencies and checks exposure without rerun.305 tests (25 SACR files + MTM bound runner), Ruff PASS.
-- **Remaining:** mixed failure/missing/review/fallback controller needs bound terminal/anchor evidence; all-ready refuses incomplete queries, never drops. Full-index copy/hash buffer resources, live caps and real provenance still unaccepted. Legacy untyped records not production approval.
-- **Open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered, no mixed-label reads. Generation/fidelity unresolved; R3/R4 absent, R5 not authorized, R6 incomplete.
-- **Failures/jobs:** prior model/grammar failures retained; diagnostic previously terminated/verified absent. No actual data/model/GPU/background job, remote not re-polled. Local test session27000 terminal exit0. No retries.
-- **Changes:** selection outcome helper, controller/journal/reconciler,8 tests/audit, paired handoff/progress/next-actions. Preserve owner untracked handoff/private outputs.
-- **Next steps:** (1) mixed terminal outcomes and original-anchor receipts; (2) full-index memory/live resource/preflight acceptance; (3) curator/environment R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
+- **Last verified pushed base:** 5948638b2ec8cbf30669ea8859c1f66c59869bdf; verify containing checkpoint/remote on takeover.
+- **Latest package:** [mixed terminal finalization](docs/healthtech/audits/ptp-method-first-mixed-finalization-20261110/README.md): verified terminal records derive ready/missing/review/retrieval-failure with full denominator; unsealed never guessed.40 focused/310 full related tests, Ruff PASS. Authored cases only.
+- **Remaining paths:** failed/empty profile still needs original-anchor binding; malformed/failed view family policy unresolved. No invented fallback or automatic skip. Memory/live resources/real provenance pending; no production approval.
+- **Open gates:** R0 done; R1 tooling/A14 hashes done, actual isolation/A03/baseline/native parity NOT_RUN. Curator/environment unanswered; no mixed-label reads. Generation/fidelity unresolved; R3/R4 absent, R5 not authorized, R6 incomplete.
+- **Failures/jobs:** prior model/grammar failures preserved; diagnostic previously terminated/verified absent. No actual data/model/GPU/background jobs; remote not re-polled. Local test session50935 terminal exit0. No retries.
+- **Changes:** terminal reader/controller/refactor/5 tests/audit, paired handoff/progress/next-actions. Preserve owner untracked handoff/private outputs.
+- **Next steps:** (1) predeclared original-anchor binding and failure-family policy; (2) full-index memory/live resource/preflight acceptance; (3) curator/environment R1; (4) justified generation repair/fidelity then R3/R4; (5) R5/R6 after gates.
 - **Limits:** no test access/scoring, paid API, training/full re-encode/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Engineering does not finish Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.

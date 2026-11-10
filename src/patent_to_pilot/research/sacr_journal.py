@@ -96,6 +96,13 @@ class DevStageJournal:
 
     def read_completed_output(self, attempt_id):
         """Read a sealed dependency, never infer completion from a reservation."""
+        receipt, output = self.read_terminal_attempt(attempt_id)
+        if receipt['status'] != 'COMPLETED':
+            raise InputBoundaryError('dependency is not a bound completed attempt')
+        return output
+
+    def read_terminal_attempt(self, attempt_id):
+        """Read verified terminal evidence; unsealed attempts are never classified."""
         self._check_bindings()
         if attempt_id not in self.slots:
             raise InputBoundaryError('dependency is not declared')
@@ -109,12 +116,16 @@ class DevStageJournal:
         if (reservation != {'manifest_sha256': self.expected, **slot} or
                 receipt_hash != seal['receipt_sha256'] or
                 any(receipt.get(key) != value for key, value in slot.items()) or
-                receipt.get('status') != 'COMPLETED' or seal['output_sha256'] is None):
-            raise InputBoundaryError('dependency is not a bound completed attempt')
-        output, output_hash = _read(path / 'output.json')
-        if output_hash != seal['output_sha256']:
-            raise InputBoundaryError('dependency output bytes changed')
-        return output
+                receipt.get('status') not in ('COMPLETED', 'FAILED', 'INTERRUPTED', 'SKIPPED')):
+            raise InputBoundaryError('dependency is not a bound terminal attempt')
+        if receipt['status'] == 'COMPLETED' and seal['output_sha256'] is None:
+            raise InputBoundaryError('completed dependency lacks bound output')
+        output = None
+        if seal['output_sha256'] is not None:
+            output, output_hash = _read(path / 'output.json')
+            if output_hash != seal['output_sha256']:
+                raise InputBoundaryError('dependency output bytes changed')
+        return receipt, output
 
     def execute(self, attempt_id, callback):
         path, slot = self._reserve(attempt_id)

@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest mixed finalization:** terminal ready/missing/review/retrieval-failure keeps full cohort;310 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-mixed-finalization-20261110/README.md). Next original-anchor binding and failed-view policy. No invented fallback; real gates unchanged.
+
 > **Latest finalization:** rankings derived from sealed selection;305 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-selection-finalization-20261110/README.md). Next mixed terminal outcomes/anchor attestations and resource/preflight acceptance. All-ready synthetic path is not scientific readiness.
 
 > **Latest retrieval controller:** bound snapshot/mask and separate search/selection;297 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-retrieval-controller-20261110/README.md). Next sealed final-outcome binding, then full-scale resources/preflight. Authored six-stage fixture is not actual SACR evidence.

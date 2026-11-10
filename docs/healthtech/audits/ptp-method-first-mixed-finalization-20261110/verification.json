@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-11-10 09:57:49 Bangkok",
+  "base_commit": "5948638b2ec8cbf30669ea8859c1f66c59869bdf",
+  "focused_tests": 40,
+  "full_tests": 310,
+  "scope": "26 SACR files plus MTM bound runner",
+  "new_cases": 5,
+  "ruff": "PASS",
+  "actual_execution": "NOT_RUN",
+  "anchor_fallback": "BOUND_EVIDENCE_REQUIRED_NOT_IMPLEMENTED"
+}
