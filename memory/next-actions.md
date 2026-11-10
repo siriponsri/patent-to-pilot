@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest grammar candidate:** five installed source files match reviewed upstream; unused backslash/config adapter passes syntax/Ruff only. [Audit](../docs/healthtech/audits/ptp-method-first-grammar-installed-source-20261110/README.md). Next separate bounded CPU declaration before callback execution. No model/tokenizer/filter run; protocol/curator pending.
+
 > **Latest static grammar review:** upstream cache/backslash path supports a targeted repair hypothesis; config receipt fields were requested, not verified effective. [Audit](../docs/healthtech/audits/ptp-method-first-grammar-source-review-20261110/README.md). Next pinned adapter design/installed-source verification and separate bounded CPU declaration. No tokenizer/grammar/model execution; protocol/curator still pending.
 
 > **Latest resource repair:** batched passage-order hashing preserves digests;429 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-order-hash-memory-20261110/README.md). Input plus detached vector copy is11.8536 GiB payload if resident, excluding overhead; actual host/resource gate remains open. Owner protocol and curator decisions pending; no automatic model retry.

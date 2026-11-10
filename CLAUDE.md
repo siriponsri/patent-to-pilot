@@ -2,15 +2,15 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 10:47:42 Bangkok
+## Cross-account checkpoint — 2026-11-10 10:50:43 Bangkok
 
 - **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Prior turn made verified progress; paired checkpoints mandatory.
-- **Last verified pushed base:** d7e1d824f61be29500a794e2e25b5c8c9725006f; verify containing checkpoint/remote on takeover.
-- **Latest package:** static grammar source review; audit docs/healthtech/audits/ptp-method-first-grammar-source-review-20261110/README.md. Tagged upstream cache omits incomplete escape token and shortcut explores quote-only branch: candidate backslash-subtree repair. Config overwritten during construction means historical reported settings are requested, not verified effective. Installed source equality/runtime causality NOT_VERIFIED.
-- **Validation/changes:** Five primary upstream source files reviewed and hashed without importing/executing code. Audit, old-audit clarification, methods-log append and paired progress/next-actions. No grammar/tokenizer/model run; prior429 tests unchanged/not rerun. Initial documentation patch failed with no edits, corrected from inspected context.
+- **Last verified pushed base:** 70d1f3b271ff223046ccf3dfc5d8dd347f5b77f4; verify containing checkpoint/remote on takeover.
+- **Latest package:** installed LMFE source verification and unused candidate adapter; audit docs/healthtech/audits/ptp-method-first-grammar-installed-source-20261110/README.md. Five installed0.11.3 files byte-match reviewed upstream. Candidate adds legal backslash traversal and restores explicit root config before tokens; existing generation path unchanged.
+- **Validation/changes:** Read-only SSH source hashing exited0, no LMFE/tokenizer/model import. Candidate Python syntax/Ruff PASS only; no candidate callback execution. Prior429 tests unchanged/not rerun and do not validate new candidate. Source comparison/audit/candidate module and paired progress/next-actions.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
-- **Jobs/failures:** previous model/grammar failures retained; prior diagnostic terminated/absence verified. No new actual data/model/GPU/background job; remote not re-polled. No retries.
-- **Next:** design version-pinned targeted backslash traversal/config-preserving adapter, verify installed source against reviewed hashes, then separately declare bounded CPU check before execution; await owner family-rejection decision and curator/environment; actual R1/resources/generation/fidelity before R3/R4 and gated R5/R6. No automatic grammar/model attempts.
+- **Jobs/failures:** Prior failed model/grammar attempts and terminated diagnostic preserved. Only short read-only SSH hash command ran and exited0; no model/GPU/background job launched. Remote job state not surveyed. No tokenizer/filter attempt or retry.
+- **Next:** predeclare one bounded CPU regression with unchanged full fixtures plus exact escape/length negatives, source/tokenizer/schema/code pins and terminal monitoring before any callback execution; no model integration/SYN-SACR-003 yet. Await owner protocol/curator; actual R1/resources/generation/fidelity before R3/R4 and gated R5/R6.
 - **Limits:** no protected test access, paid APIs, training/full re-encode/new BigQuery, optional3d/cited distractors. V100 only/one job/through2026-12-31 16:59UTC. Preserve owner untracked handoff/private outputs. Engineering does not complete Goal.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)

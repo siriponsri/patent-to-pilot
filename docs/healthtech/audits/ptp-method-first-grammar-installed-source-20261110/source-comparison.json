@@ -1,0 +1,40 @@
+{
+  "version": "0.11.3",
+  "files": [
+    {
+      "name": "tokenenforcer.py",
+      "sha256": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+      "bytes": 11022,
+      "matches_reviewed_upstream": true
+    },
+    {
+      "name": "tokenizerprefixtree.py",
+      "sha256": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+      "bytes": 7303,
+      "matches_reviewed_upstream": true
+    },
+    {
+      "name": "jsonschemaparser.py",
+      "sha256": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+      "bytes": 35094,
+      "matches_reviewed_upstream": true
+    },
+    {
+      "name": "characterlevelparser.py",
+      "sha256": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+      "bytes": 8701,
+      "matches_reviewed_upstream": true
+    },
+    {
+      "name": "integrations/transformers.py",
+      "sha256": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e",
+      "bytes": 7189,
+      "matches_reviewed_upstream": true
+    }
+  ],
+  "model_loaded": false,
+  "tokenizer_loaded": false,
+  "grammar_executed": false,
+  "all_match": true,
+  "scope": "Five installed source files only; not complete package/dependency/environment attestation"
+}
