@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest factorial integration:** shared inputs and separate unions, same-passage coverage/order binding;44 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-r2-factorial-20261110/README.md). Next source-bound component text compiler and full failure/cost orchestration. Pre-embedded kernel is not end-to-end SACR; actual R1/generation gates remain.
+
 > **Latest acquisition:** CPU full-index MaxP/eligible union/stable cutoff implemented;33 targeted tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-r2-acquisition-20261110/README.md). Next component/passage identity binding and matched controls/accounting; real parity/resource and generation gates remain.
 
 > **Latest writing package:** fidelity acceptance policy proposed (not adopted) and incomplete manuscript material; no ratings or SACR retrieval results. Next synthetic stable full-index acquisition/union and matched-control/accounting contracts while actual-data/generation gates remain. [Audit](../docs/healthtech/audits/ptp-method-first-r2-fidelity-r6-draft-20261110/README.md).

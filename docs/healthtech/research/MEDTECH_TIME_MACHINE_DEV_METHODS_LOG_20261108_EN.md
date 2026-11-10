@@ -391,3 +391,12 @@ and anchor scores implemented;33 acquisition/selector tests and lint pass.
 Historical GPU baseline unchanged. Real index binding/parity and resource feasibility
 NOT_RUN; no benchmark/model/GPU access. See ../audits/ptp-method-first-r2-acquisition-20261110/README.md.
 Next component-passage binding and matched controls; no R3 declaration implied.
+
+
+### 2026-11-10 08:54:15 Bangkok — Pre-embedded factorial integration
+
+G/G,G/L,I/G,I/L share anchor/index/mask/component profile with separate acquisition
+unions and same ordered passages per family. Order/owner digest fails before search.
+44 synthetic tests and lint pass. Vector/text provenance, embedding/generation,
+fallback/full cost and actual parity remain open. No experiment or protected access.
+Audit ../audits/ptp-method-first-r2-factorial-20261110/README.md.

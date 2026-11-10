@@ -70,3 +70,12 @@ feasibility remain unverified; the historical baseline runner is unchanged.
 See [acquisition audit](../audits/ptp-method-first-r2-acquisition-20261110/README.md).
 This supersedes only the earlier statement that acquisition implementation is pending,
 not the end-to-end integration, actual integrity or semantic gates.
+
+## Pre-embedded factorial checkpoint
+
+research/sacr_factorial.py now connects acquisition to G/G,G/L,I/G,I/L with shared
+anchor/index/mask/profile, separately bounded unions and common per-family passage
+slices. Order/owner digest is checked before search. It is not independent vector/text
+provenance. Profile-to-component embedding, fallback and full cost orchestration remain
+open. See [factorial audit](../audits/ptp-method-first-r2-factorial-20261110/README.md).
+No generated text, actual ranking or semantic benefit was evaluated.

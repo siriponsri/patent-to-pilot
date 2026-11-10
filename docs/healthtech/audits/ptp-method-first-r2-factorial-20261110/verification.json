@@ -1,0 +1,11 @@
+{
+  "status": "PREEMBEDDED_SYNTHETIC_PASS",
+  "tests": 44,
+  "factorial_tests": 11,
+  "acquisition_tests": 18,
+  "selector_tests": 15,
+  "lint": "PASS",
+  "real_vector_text_binding": "NOT_VERIFIED",
+  "end_to_end_sacr": "NOT_IMPLEMENTED",
+  "gpu_and_retrieval_experiment": "NOT_RUN"
+}

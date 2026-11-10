@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:50:45 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:54:15 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 098eaabc4c9c80721e1940a0eb963a4a5eb7a36f.
-- CPU full-index acquisition/MaxP/stable ties/eligible union and anchor-score contract implemented;33 targeted tests/lint pass. Audit docs/healthtech/audits/ptp-method-first-r2-acquisition-20261110/README.md. Real owner/vector binding, CPU/GPU parity and V100 feasibility NOT_RUN; historical runner unchanged.
-- Next component/passage identity binding and matched factorial controls on synthetic inputs, full accounting/preflight. Curator/environment needed for actual R1. Generation remains gated by escape-token failures/resource timeout; no automatic attempts.
-- Fidelity policy proposed/unadopted; manuscript draft incomplete, no SACR retrieval results. No new data/model/GPU job. Previous diagnosticPID2966698 verified absent at prior checkpoint.
-- Changes module/tests/audit/spec, methods log and handoff/progress. Preserve owner untracked research handoff; permissions unchanged.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 61fae452f79d9af2a709e95566e9ca95b2cdad84.
+- Pre-embedded factorial integration implemented;44 tests/lint pass. Shared anchor/index/mask/profile, separate unions, same-passage coverage, order/owner digest before search. Audit docs/healthtech/audits/ptp-method-first-r2-factorial-20261110/README.md. Actual vector/text provenance/end-to-end SACR/full cost/fallback incomplete.
+- Next source-bound component text/row compiler, per-query failure/fallback and full accounting; curator/environment for actual R1. Generation remains gated by escape-token failure and unresolved resource feasibility; no automatic attempts.
+- No new data/model/GPU jobs. Prior diagnosticPID2966698 was verified absent; prior failed receipts unchanged. Fidelity policy unadopted; R3/R4/R5/R6 incomplete.
+- Changed factorial module/tests/audit/spec, methods log and paired handoff/progress. Preserve owner untracked handoff; permissions unchanged.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
