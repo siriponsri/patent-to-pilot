@@ -4,18 +4,18 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 09:23:10 Bangkok
+### Latest checkpoint — 2026-11-10 09:26:19 Bangkok
 
-- **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; long-run ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Paired updates mandatory.
-- **Last verified pushed base:** e45de84883f7ad5f12d8c5628c45c93ec20ee8a0; incoming account verifies containing checkpoint and remote.
-- **Latest package:** [controller gap inspection and early-plan repair](docs/healthtech/audits/ptp-method-first-controller-gap-20261110/README.md). Malformed/empty/duplicate cohorts now rejected before journal allocation. Twelve regressions:6 failed before repair;48 related tests pass after repair; Ruff PASS. No actual run.
-- **Integration finding:** existing baseline preflight, component receipts and CPU kernels are separate; no complete trusted SACR controller established. Audit maps six boundaries. Next immutable execution manifest must join cohort/source/model/encoder/index/caps, not merely assert readiness.
-- **Prior evidence:**181 SACR tests at journal checkpoint; seven-source literature comparison non-exhaustive, no novelty claim. R0 inventory done; R1 tooling/synthetic checks and A14 observed hashes done. Actual isolation/A03 counts/baseline/native parity NOT_RUN.
-- **Failures/jobs:** prior two generation smokes and grammar escape probes failed; later diagnostic timed out and process previously terminated/verified absent. No new model/GPU/background job; remote live state not re-polled this package. No retries.
-- **Open gates:** curator/environment question unanswered; do not parse mixed labels. Real R1, generation compatibility/resource and semantic fidelity gates open. R3/R4 absent; R5 not frozen/authorized; R6 incomplete.
-- **Changes:** plan validator,12 journal regression cases, gap audit, paired handoff/progress/next-actions. Preserve owner untracked handoff. Engineering PASS is not research success.
-- **Next steps:** (1) bind immutable execution manifest to existing plan before journal allocation using authored fixtures; (2) connect typed stage acceptance/dependencies and actual adapter receipts; (3) curator/environment for R1; (4) justified generation repair/resource/fidelity gate before any attempt; (5) R3/R4 before R5/R6 completion.
-- **Limits:** no test access/scoring, paid API, training, full re-encode/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Permissions unchanged.
+- **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. DAPFAM anchor / MTM evaluation / SACR untested. Both handoff files mandatory.
+- **Last verified pushed base:** 5118c8bd21a2c3ea58fd27374b3dae4ba05747f4; verify containing checkpoint and remote before takeover.
+- **Latest package:** [execution declaration binding](docs/healthtech/audits/ptp-method-first-execution-binding-20261110/README.md): cohort/source hashes/nine manifest identities/resource declarations tied to plan before journal allocation; persisted and rechecked before reservation/finalization.70 focused tests,215 full SACR tests, Ruff PASS. Declaration agreement is not actual attestation or cap enforcement.
+- **Remaining controller work:** connect allowed source bytes/preflight observations to declarations; typed stage scheduling, actual adapters and live cumulative resource guards remain. Unbound journals are retained for component tests, not approved production execution.
+- **Prior evidence:** R0 done; R1 synthetic tooling/A14 observed hashes done; actual isolation/A03 counts/baseline/native parity NOT_RUN. Seven-source prior-art review bounded/non-exhaustive; no novelty claim.
+- **Failures/jobs:** two model smokes and grammar escape probes failed; diagnostic timeout process previously terminated/verified absent. No new data/model/GPU/background job this checkpoint; remote state not re-polled. No automatic retries.
+- **Open gates:** curator/environment question unanswered; never parse mixed labels. R1 actual isolation/parity, generation/resource compatibility and semantic fidelity pending. R3/R4 absent; R5 not frozen/authorized; R6 incomplete.
+- **Changes:** execution validator, journal integration/tests, audit, paired handoff/progress/next-actions. Preserve owner untracked handoff. Tests use authored inputs, no scientific claims.
+- **Next steps:** (1) bind permitted source bytes/preflight observations before callbacks; (2) typed stage dependencies and resource controls; (3) curator/environment for R1; (4) justified generation repair then fidelity/R3/R4; (5) R5/R6 only after gates.
+- **Limits:** no test access/scoring, paid APIs, training/full re-encoding/new BQ, optional3d/cited-distractor. V100 only/one job/through2026-12-31 16:59UTC. Engineering checks do not complete Goal.
 
 The material below preserves earlier research context. This checkpoint supersedes older handoff-process instructions; older job and permission statements require current verification.
 

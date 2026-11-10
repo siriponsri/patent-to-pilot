@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest execution binding:** declared cohort/source/manifest/caps bound before journal allocation;215 SACR tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-execution-binding-20261110/README.md). Next actual permitted-source/preflight observation binding, then typed scheduling/resource enforcement. R1/generation/fidelity gates unchanged.
+
 > **Latest controller inspection:** malformed cohort rejected before journal allocation;48 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-controller-gap-20261110/README.md). Next immutable execution-manifest binding using authored fixtures; actual R1/generation/fidelity gates unchanged.
 
 > **Latest prior-art comparison:** seven primary sources and implemented operator boundaries; non-exhaustive, no novelty claim. [Audit](../docs/healthtech/audits/ptp-method-first-prior-art-20261110/README.md). Next controller/source/manifest gap inspection. R1/generation/fidelity gates unchanged.

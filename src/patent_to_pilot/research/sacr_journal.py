@@ -8,6 +8,7 @@ import time
 
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError
 from patent_to_pilot.research.sacr_components import digest
+from patent_to_pilot.research.sacr_execution import bind_execution
 from patent_to_pilot.research.sacr_outcomes import METRICS, summarize_costs
 from patent_to_pilot.research.sacr_run_reconcile import reconcile_run, validate_plan
 
@@ -35,16 +36,39 @@ class DevStageJournal:
     exclusivity is not protection against another process modifying artifacts.
     """
 
-    def __init__(self, destination, manifest, *, expected_manifest_sha256):
+    def __init__(self, destination, manifest, *, expected_manifest_sha256,
+                 execution=None, expected_execution_sha256=None):
         validate_plan(manifest, expected_manifest_sha256=expected_manifest_sha256)
+        self.execution = None
+        self.execution_expected = expected_execution_sha256
+        if execution is not None or expected_execution_sha256 is not None:
+            self.execution = bind_execution(
+                execution, manifest, expected_execution_sha256=expected_execution_sha256,
+                expected_plan_sha256=expected_manifest_sha256)
         self.manifest = deepcopy(manifest)
         self.expected = expected_manifest_sha256
         self.slots = {s['attempt_id']: s for s in self.manifest['slots']}
         self.destination = Path(destination)
         self.destination.mkdir(parents=True, exist_ok=False)
         _write(self.destination / 'manifest.json', self.manifest)
+        if self.execution is not None:
+            _write(self.destination / 'execution.json', self.execution)
+
+    def _check_bindings(self):
+        manifest, _ = _read(self.destination / 'manifest.json')
+        if digest(manifest) != self.expected or digest(self.manifest) != self.expected:
+            raise InputBoundaryError('persisted or in-memory plan changed')
+        if self.slots != {s['attempt_id']: s for s in manifest['slots']}:
+            raise InputBoundaryError('in-memory attempt slots changed')
+        if self.execution is not None:
+            execution, _ = _read(self.destination / 'execution.json')
+            bind_execution(execution, manifest, expected_execution_sha256=self.execution_expected,
+                           expected_plan_sha256=self.expected)
+            if digest(self.execution) != self.execution_expected:
+                raise InputBoundaryError('in-memory execution declaration changed')
 
     def _reserve(self, attempt_id):
+        self._check_bindings()
         if attempt_id not in self.slots:
             raise InputBoundaryError('attempt is not declared')
         path = self.destination / digest(attempt_id)
@@ -90,6 +114,7 @@ class DevStageJournal:
         return output
 
     def finalize(self, outcomes):
+        self._check_bindings()
         manifest, _ = _read(self.destination / 'manifest.json')
         if digest(manifest) != self.expected:
             raise InputBoundaryError('persisted manifest changed')
@@ -121,6 +146,7 @@ class DevStageJournal:
         outcomes_hash = _write(self.destination / 'outcomes.json', outcomes)
         report_hash = _write(self.destination / 'reconciliation.json', report)
         _write(self.destination / 'completion.json', {'manifest_sha256': self.expected,
+                                                     'execution_sha256': self.execution_expected,
                                                      'outcomes_sha256': outcomes_hash,
                                                      'reconciliation_sha256': report_hash})
         return report
