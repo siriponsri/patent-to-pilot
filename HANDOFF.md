@@ -4,10 +4,10 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 2026-11-10 11:12:26 Bangkok
+### Latest checkpoint — 2026-11-10 11:13:12 Bangkok
 
-- **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Consecutive no-progress blocker audit: 1. Previous host-memory turn was progress; this status checkpoint is not scientific progress or a verified wait.
-- **Last verified pushed base:** 76a3972e68243f3a91fdfc60d50895d3676ce945; verify containing checkpoint and remote on takeover.
+- **Owner/goal:** Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Consecutive no-progress blocker audit: 2. Same owner-decision/isolation blockers as preceding turn; this mandatory status checkpoint is not progress or a verified wait.
+- **Last verified pushed base:** 64e2566d82e0e2fb324679d75302b9cdcb62b849 (HEAD matched origin/main at recheck); verify containing checkpoint and remote on takeover.
 - **Latest package:** Dependency audit only: no new experiment or implementation. Rechecked 37-requirement readiness map against current handoffs, CPU approval record, curator runbook, fidelity proposal and R5 freeze. Scope remains incomplete.
 - **Validation/changes:** No owner response or isolated-runtime receipt supplied. CPU-004 approval, curator/environment and family-rejection policy remain pending. Historical failed jobs remain terminal; no live handle is being waited on. No tests/model/data/remote jobs run this turn.
 - **Open gates:** R0 done; R1 tooling/A14 observed hashes done, actual isolation/A03/baseline/native parity NOT_RUN; curator/environment unanswered. Generation/fidelity unresolved; view-failure proposal NOT_ADOPTED. Actual identity/prompt/loading/anchor attestation and full-index copy/live caps pending. R3/R4 absent, R5 not authorized, R6 incomplete.
