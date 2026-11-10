@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest parity gate:** [declaration](../docs/healthtech/research/MTM_DEV_BASELINE_PARITY_DECLARATION_20261110_EN.md) and dev/main comparator, 34 targeted tests pass. Actual rankings NOT_RUN. Curator/environment and real input pins still required; independently finish SACR view/prompt contract.
+
 > **Latest profile boundary:** [34 synthetic tests pass](../docs/healthtech/audits/ptp-method-first-r2-profile-20261110/README.md), strict profile/source checks and blank fidelity form. Structural PASS is not semantic acceptance. Next generated-view/prompt contract and parity protocol; curator/environment response pending.
 
 > **Latest preparatory R2:** [SACR draft](../docs/healthtech/research/SACR_V0_SPECIFICATION_DRAFT_20261110_EN.md), selector math and 15 synthetic tests pass. No retrieval/semantic evidence. Next profile validation/fidelity form and parity declaration; real data branch still awaits curator/environment response.

@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 07:48:04 Bangkok
+## Cross-account checkpoint — 2026-11-10 07:51:48 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 0eb11b1656d0e291e8461f8246f451f4ed5e0924.
-- Latest: strict SACR profile/source validation and blank fidelity audit form. Audit docs/healthtech/audits/ptp-method-first-r2-profile-20261110/README.md. 34 synthetic tests pass (0.57s); Ruff pass. Every result retains semantic unknown and requires fidelity review.
-- Generated-view acceptance/prompt/run budgets, real fidelity review, actual R1 staging/eligibility/parity and R2 completion remain pending. No real data, model, GPU, experiment or new job. Curator/environment async question remains unanswered; no answer inferred.
-- Next generated-view acceptance/prompt contract and parity declaration; actual integrity after curator transfer; bounded pilot only after gates. Preserve owner untracked research handoff and all single-writer/test/spend/protocol/release rules.
-- Changed profile module/tests, fidelity form/spec checkpoint, audit and paired handoff/progress pointers. Read-only quoting error recovered without mutation, recorded in audit.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: c3058fe65a4ee3045a1ea5ceb2d054840cac8658.
+- Latest: pinned dev/main ordered-ranking comparator/CLI and fixed P/main U-X parity declaration in methods log. Audit docs/healthtech/audits/ptp-method-first-r1-ranking-parity-20261110/README.md. 34 tests pass in 3.22s; Ruff pass, including CLI mismatch/refusal. Actual parity NOT_RUN.
+- No real rankings/labels read, model/GPU job or paid work. Real isolation/A03/parity still open; curator/environment async question remains unanswered. Actual run hashes/environment pins must be recorded before launch.
+- Next generated-view/prompt acceptance and model/software identity, then actual integrity after curator transfer. R1/R2 incomplete. Preserve single writer, owner untracked handoff and all test/spend/protocol/release gates.
+- Changes: comparator/script/tests, declaration/methods log, audit and paired handoff/progress pointers.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

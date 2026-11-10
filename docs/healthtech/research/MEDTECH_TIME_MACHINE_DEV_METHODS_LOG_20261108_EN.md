@@ -303,3 +303,7 @@ The popularity null is far below X, so the corpus enrichment is not trivially ex
 - **P/main, CV out of fold** (k10, w 0.9 in all 4 folds): Δ hit@20 −0.003 [−0.008, +0.003]; hit@200 0.383 vs 0.388.
 - **Every variant** lowers hit@20 and hit@200, and loses more targets at depth 200 than it gains. **Negative; not eligible.**
 - **T/main, CV:** +0.005 [−0.001, +0.011] (secondary).
+
+## R1-PARITY-P-MAIN-v1 — 10 Nov 2026
+
+Status: DECLARED_PENDING_ISOLATION_AND_INPUT_PINS; NOT_RUN. Integrity comparison only, not a new candidate method. See [fixed declaration](MTM_DEV_BASELINE_PARITY_DECLARATION_20261110_EN.md). Exact original P-dev bytes, full cohort, main/X and main/U, depth 200, batch 64, original MaxP/prefix/topk and bound vector reuse. Require exact ordered equality for every available query; preserve predeclared missing ledger, failures and all attempts. No test, re-encoding, tuning or automatic retry. Actual source/input/environment pins and isolated curator handoff required before launch.
