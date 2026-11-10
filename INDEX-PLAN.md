@@ -1,5 +1,10 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Native fidelity periodic observation 2026-11-11T00:50+07:00
+
+Parent sole writer,last confirmed pusheddd21dc5. SAMEsupervisorPID70886 freshlyverified; containerPID71075 running. Aggregate live-observation-20261111T0049.json:37normalreturns (35EOS,2OUTPUT_LIMIT),27structuralpending,10rejected,5445.671279s knowncompletedgeneration. Notterminal/notfidelityPASS. SSHobservationtimeouts recheckedwithoutjobrestart. ActualwholeGPUcharge waitsforterminal;7200s reservation/6960s stoptrigger unchanged (about18:11UTC). No cards/testaccess/newGPUjob. Continue status-v2.py, then reviewedfinalize.py onlyaftercontainerterminal; preserveunstarted/unknownattempts and original100sample. Thisintervalverifiedwaitingon actualrun,notnewexperiment.
+
+
 ## Reviewed closeout binder repair 2026-11-11
 
 Parent sole writer,last confirmed pushed82baa1c. Independent reviewer found duplicatedcloseout checks couldcount impossible generation records; nowcanonical bind_generation_record/GenerationLimits validatesraw beforecostsum andstrictJSONbindsassessments.40 closeout/receipt testsPASS includingfull100cohort withallrejected remainssemanticNOT_ASSESSED; reviewer recheckedrepair. Reviewedremotehelpers stagedonly,NOT_RUN; oldhelperretained. Newtool SHAe68a846fc34d5aa2087c35729f371b948d082586592a79d27db5420c1463448a,receipt docs/healthtech/audits/ptp-native-sacr-fidelity-20261110/closeout-tool.json. SameGPUjobstillrunning at17:21:24UTC:23returns,14structuralpending,9rejected; nojobrestart/no fidelityPASS/cards. Continue status-v2.py/supervisor70886 observation; onlyafterverifiedterminal runfinalize.py thenchargewholewall andpreserveunknown/incompletecohort.

@@ -1,0 +1,32 @@
+{
+  "status": "LIVE_NOT_TERMINAL",
+  "observed_unix": 1794332982.0416718,
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 71075,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-10T16:15:21.324423973Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "generation_counts": {
+    "EOS_COMPLETE": 35,
+    "OUTPUT_LIMIT": 2
+  },
+  "assessment_counts": {
+    "STRUCTURAL_RESULT_FIDELITY_PENDING": 27,
+    "REJECTED_GENERATED_FAMILY": 10
+  },
+  "known_model_calls": 37,
+  "known_input_tokens": 33962,
+  "known_output_tokens": 52621,
+  "known_generation_seconds": 5445.671279268805,
+  "output_bytes": 1212131,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "retry": false
+}
