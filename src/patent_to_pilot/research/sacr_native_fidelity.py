@@ -66,6 +66,37 @@ def bind_sample(query_bytes, sample_bytes, *, query_sha256, sample_sha256):
 def run_profiles(*, entries, output, prompt_root, prompt_sha256, tokenizer,
                  guarded_model_factory, device, limits, check_authorization,
                  remaining_seconds, peak_memory_bytes):
+    return _run_profiles(entries=entries, output=output, prompt_root=prompt_root,
+        prompt_sha256=prompt_sha256, tokenizer=tokenizer, guarded_model_factory=guarded_model_factory,
+        device=device, limits=limits, check_authorization=check_authorization,
+        remaining_seconds=remaining_seconds, peak_memory_bytes=peak_memory_bytes)
+
+
+def run_unstarted_profiles(*, entries, prior_output, continuation_manifest, **kwargs):
+    """New output only; consumed and interrupted entries can never be selected."""
+    from .sacr_continuation import verify_history_files, canonical_continuation_root
+    manifest = continuation_manifest
+    if manifest.get('version') != 'sacr-unstarted-continuation-v1' or manifest.get('retry_authorized') is not False:
+        raise InputBoundaryError('unstarted-only continuation contract required')
+    records = manifest['records']
+    if (len(records) != 100 or [r['index'] for r in records] != list(range(100)) or
+            [r['query_id'] for r in records] != [q for q, _, _ in entries]):
+        raise InputBoundaryError('continuation differs from fixed sample')
+    selected = [r['index'] for r in records if r['state'] == 'NEVER_STARTED']
+    if (not selected or manifest['selected_indices'] != selected or
+            manifest['maximum_new_profile_calls'] != len(selected)):
+        raise InputBoundaryError('continuation cannot select consumed/blocked entries')
+    verify_history_files(prior_output, manifest)
+    if Path(kwargs['output']).resolve() != canonical_continuation_root(prior_output, manifest) / 'profiles':
+        raise InputBoundaryError('continuation requires its one canonical destination; no fresh-output replay')
+    return _run_profiles(entries=entries, indices=selected, before_call=lambda: verify_history_files(
+        prior_output, manifest), minimum_call_window_seconds=1200, **kwargs)
+
+
+def _run_profiles(*, entries, output, prompt_root, prompt_sha256, tokenizer,
+                  guarded_model_factory, device, limits, check_authorization,
+                  remaining_seconds, peak_memory_bytes, indices=None, before_call=None,
+                  minimum_call_window_seconds=5):
     """Run each bound query at most once; never resume an existing directory.
 
     factory(schema, source, attempt_directory) supplies a fresh per-query grammar
@@ -74,6 +105,8 @@ def run_profiles(*, entries, output, prompt_root, prompt_sha256, tokenizer,
     """
     if len(entries) != 100 or len({q for q, _, _ in entries}) != 100:
         raise InputBoundaryError('complete bound 100-query sample required')
+    continuation = indices is not None
+    indices = list(range(100)) if indices is None else indices
     limits.validate()
     prompts = []
     for q, source, schema in entries:
@@ -86,20 +119,39 @@ def run_profiles(*, entries, output, prompt_root, prompt_sha256, tokenizer,
         prompts.append(prompt)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
-    write_new(output / 'reservation.json', {'status': 'RESERVED', 'queries': 100,
-        'maximum_calls': 100, 'prompt_sha256': prompt_sha256, 'limits': limits.__dict__,
+    write_new(output / 'reservation.json', {'status': 'RESERVED', 'queries': len(indices),
+        'maximum_calls': len(indices), 'prompt_sha256': prompt_sha256, 'limits': limits.__dict__,
         'retry': False, 'semantic_status': 'NOT_ASSESSED'})
     completed = []
     try:
-        for index, ((q, source, schema), prompt) in enumerate(zip(entries, prompts)):
+        for position, index in enumerate(indices):
+            q, source, schema = entries[index]
+            prompt = prompts[index]
             check_authorization()
-            if remaining_seconds() <= 5:
+            if before_call is not None:
+                before_call()
+            remaining = remaining_seconds()
+            if continuation and remaining <= minimum_call_window_seconds:
+                deferred = {'status': 'PROFILE_BATCH_DEFERRED_NO_INFLIGHT_CALL', 'outcomes': completed,
+                    'deferred_indices': indices[position:], 'semantic_status': 'NOT_ASSESSED', 'retry': False}
+                write_new(output / 'deferred.json', deferred)
+                return deferred
+            if remaining <= minimum_call_window_seconds:
                 raise TimeoutError('fidelity reservation exhausted before next call')
             attempt = output / f'{index:03d}'
             attempt.mkdir(exist_ok=False)
             write_new(attempt / 'input.json', {'query_id': q, 'source_sha256': digest(source.encode()),
                       'schema_sha256': schema_digest(schema), 'prompt': prompt})
             guarded = guarded_model_factory(schema, source, attempt)
+            if continuation:
+                check_authorization()
+                before_call()
+                if remaining_seconds() <= minimum_call_window_seconds:
+                    deferred = {'status': 'PROFILE_BATCH_DEFERRED_NO_INFLIGHT_CALL', 'outcomes': completed,
+                        'deferred_indices': indices[position:], 'prepared_not_called_indices': [index],
+                        'semantic_status': 'NOT_ASSESSED', 'retry': False}
+                    write_new(output / 'deferred.json', deferred)
+                    return deferred
             start = time.monotonic()
             record = run_reserved_attempt(attempt / 'profile', messages=prompt['messages'],
                 tokenizer=tokenizer, model=guarded, device=device, eos_token_ids=[151645, 151643], limits=limits)
@@ -116,7 +168,8 @@ def run_profiles(*, entries, output, prompt_root, prompt_sha256, tokenizer,
                               'generation_sha256': digest(raw)})
             if assessment['status'] == 'STOP_INPUT_LIMIT_NO_MODEL_CALL':
                 raise InputBoundaryError('input-limit query stops batch without truncation or retry')
-        summary = {'status': 'PROFILE_BATCH_COMPLETED_FIDELITY_PENDING', 'outcomes': completed,
+        summary = {'status': 'SELECTED_PROFILE_BATCH_COMPLETED_COHORT_INCOMPLETE' if continuation else
+                   'PROFILE_BATCH_COMPLETED_FIDELITY_PENDING', 'outcomes': completed,
                    'semantic_status': 'NOT_ASSESSED', 'retry': False}
         write_new(output / 'completion.json', summary)
         return summary

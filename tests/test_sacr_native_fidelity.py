@@ -110,3 +110,25 @@ def test_cli_requires_all_source_pins_and_prompt_agreement():
         cli.validate_code_declaration(declaration, ROOT)
     declaration['prompt_sha256'] = hashes['docs/healthtech/research/prompts/sacr_profile_quotes_order_v2.txt']
     cli.validate_code_declaration(declaration, ROOT)
+
+
+def test_continuation_budget_cannot_reset_prior_costs():
+    spec = importlib.util.spec_from_file_location('native_cli_budget', ROOT / 'scripts/healthtech/run_sacr_native_fidelity.py')
+    cli = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(cli)
+    ledger = {'fidelity_generation_charged_seconds': 7000, 'fidelity_generation_remaining_seconds': 21800,
+              'gpu_conservative_charged_seconds': 7300, 'gpu_remaining_seconds': 251900,
+              'native_fidelity_profile_reservation': {'status': 'CLOSED_TIMEOUT_INCOMPLETE_NO_RETRY',
+                                                     'terminal_sha256': 'a' * 64}}
+    def validate(value, wall=10000):
+        raw = json.dumps(value).encode()
+        cli.validate_remaining_budget(raw, {'resource_ledger_sha256': batch.digest(raw),
+            'prior_terminal_sha256': 'a' * 64, 'wall_seconds': wall},
+            minimum_fidelity_charge=7000, minimum_gpu_charge=7300)
+    validate(ledger)
+    with pytest.raises(InputBoundaryError):
+        validate(ledger, 22000)
+    with pytest.raises(InputBoundaryError, match='erased'):
+        validate({**ledger, 'fidelity_generation_charged_seconds': 0, 'fidelity_generation_remaining_seconds': 28800})
+    with pytest.raises(InputBoundaryError, match='inconsistent'):
+        validate({**ledger, 'gpu_remaining_seconds': 259200})

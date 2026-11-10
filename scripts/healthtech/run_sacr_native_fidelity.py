@@ -2,6 +2,7 @@
 import argparse
 import importlib.util
 import json
+import math
 from pathlib import Path
 import signal
 import sys
@@ -13,7 +14,8 @@ sys.path.insert(0, str(ROOT / 'src'))
 from patent_to_pilot.healthtech.local_execution import check_local_window, local_gpu_slot
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError
 from patent_to_pilot.research.sacr_generation import GenerationLimits
-from patent_to_pilot.research.sacr_native_fidelity import bind_sample, digest, run_profiles, write_new
+from patent_to_pilot.research.sacr_native_fidelity import bind_sample, digest, run_profiles, run_unstarted_profiles, write_new
+from patent_to_pilot.research.sacr_continuation import seal_terminal_history, canonical_continuation_root
 
 REQUIRED_FILES = {
     'scripts/healthtech/run_sacr_native_fidelity.py',
@@ -21,7 +23,7 @@ REQUIRED_FILES = {
     'src/patent_to_pilot/healthtech/local_execution.py',
     'docs/healthtech/research/prompts/sacr_profile_quotes_order_v2.txt',
     *('src/patent_to_pilot/research/' + name + '.py' for name in (
-        'sacr_native_fidelity', 'sacr_generation', 'sacr_generation_receipt',
+        'sacr_native_fidelity', 'sacr_continuation', 'sacr_generation', 'sacr_generation_receipt',
         'sacr_rejection_policy', 'sacr_schema', 'sacr_solo_fidelity', 'sacr_prompts',
         'sacr_profile', 'sacr_quote_profile', 'sacr_views', 'sacr_outcomes',
         'sacr_alphabet', 'sacr_escape_callback', 'sacr_grammar_guard', 'mtm_runtime')),
@@ -40,22 +42,74 @@ def validate_code_declaration(declaration, root):
         raise InputBoundaryError('prompt declaration disagrees before model loading')
 
 
+def validate_remaining_budget(ledger_raw, declaration, *, minimum_fidelity_charge, minimum_gpu_charge):
+    if digest(ledger_raw) != declaration['resource_ledger_sha256']:
+        raise InputBoundaryError('resource ledger hash mismatch')
+    ledger = json.loads(ledger_raw)
+    for key, ceiling in (('fidelity_generation_remaining_seconds', 28800), ('gpu_remaining_seconds', 259200)):
+        remaining = ledger[key]
+        if (type(remaining) not in (int, float) or not math.isfinite(remaining) or
+                not declaration['wall_seconds'] <= remaining <= ceiling):
+            raise InputBoundaryError('insufficient verified remaining budget')
+    if ledger['native_fidelity_profile_reservation']['status'] != 'CLOSED_TIMEOUT_INCOMPLETE_NO_RETRY':
+        raise InputBoundaryError('prior profile reservation must be closed before continuation')
+    if ledger['native_fidelity_profile_reservation']['terminal_sha256'] != declaration['prior_terminal_sha256']:
+        raise InputBoundaryError('ledger closes a different prior attempt')
+    for charged_key, remaining_key, ceiling, minimum in (
+            ('fidelity_generation_charged_seconds', 'fidelity_generation_remaining_seconds', 28800, minimum_fidelity_charge),
+            ('gpu_conservative_charged_seconds', 'gpu_remaining_seconds', 259200, minimum_gpu_charge)):
+        charged = ledger[charged_key]
+        if (type(charged) not in (int, float) or not math.isfinite(charged) or
+                not math.isfinite(minimum) or charged < minimum or
+                not math.isclose(charged + ledger[remaining_key], ceiling, rel_tol=0, abs_tol=1e-6)):
+            raise InputBoundaryError('prior cost erased or remaining budget inconsistent')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('model-root', 'identity', 'queries', 'sample', 'declaration', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
+    for name in ('prior-output', 'prior-terminal', 'observed-state', 'continuation-manifest', 'resource-ledger'):
+        parser.add_argument('--' + name, type=Path)
     parser.add_argument('--declaration-sha256', required=True)
     args = parser.parse_args()
     raw = args.declaration.read_bytes()
     if digest(raw) != args.declaration_sha256:
         raise InputBoundaryError('unbound run declaration')
     declaration = json.loads(raw)
-    if (declaration['maximum_calls'] != 100 or declaration['retry'] is not False or
+    if (type(declaration['maximum_calls']) is not int or not 1 <= declaration['maximum_calls'] <= 100 or declaration['retry'] is not False or
             type(declaration['wall_seconds']) is not int or not 60 <= declaration['wall_seconds'] <= 28800):
         raise InputBoundaryError('invalid bounded generation declaration')
     validate_code_declaration(declaration, ROOT)
     entries = bind_sample(args.queries.read_bytes(), args.sample.read_bytes(),
         query_sha256=declaration['query_sha256'], sample_sha256=declaration['sample_sha256'])
+    prior_arguments = (args.prior_output, args.prior_terminal, args.observed_state,
+                       args.continuation_manifest, args.resource_ledger)
+    continuation = None
+    if any(prior_arguments):
+        if not all(prior_arguments):
+            raise InputBoundaryError('complete prior history and budget inputs required')
+        manifest_raw = args.continuation_manifest.read_bytes()
+        if digest(manifest_raw) != declaration['continuation_manifest_sha256']:
+            raise InputBoundaryError('continuation manifest hash mismatch')
+        continuation = seal_terminal_history(entries=entries, prior_output=args.prior_output,
+            terminal_raw=args.prior_terminal.read_bytes(), terminal_sha256=declaration['prior_terminal_sha256'],
+            observed_state=json.loads(args.observed_state.read_bytes()),
+            prompt_root=ROOT / 'docs/healthtech/research/prompts',
+            sample_sha256=declaration['sample_sha256'], query_sha256=declaration['query_sha256'])
+        if continuation != json.loads(manifest_raw) or declaration['maximum_calls'] != continuation['maximum_new_profile_calls']:
+            raise InputBoundaryError('continuation differs from sealed never-started selection')
+        prior_decl = json.loads((args.prior_output / 'declaration.json').read_bytes())
+        prior_wall = json.loads(args.prior_terminal.read_bytes())['wall_seconds']
+        validate_remaining_budget(args.resource_ledger.read_bytes(), declaration,
+            minimum_fidelity_charge=prior_decl['prior_fidelity_seconds'] + prior_wall,
+            minimum_gpu_charge=prior_decl['prior_gpu_charge_seconds'] + prior_wall)
+        if args.prior_output.resolve() != Path('/history/attempt'):
+            raise InputBoundaryError('continuation requires the fixed prior history mount')
+        if args.output.resolve() != canonical_continuation_root(args.prior_output, continuation):
+            raise InputBoundaryError('continuation output must use its canonical history-bound location')
+    elif declaration['maximum_calls'] != 100:
+        raise InputBoundaryError('subset requires sealed continuation history')
     identity = args.identity.read_bytes()
     if digest(identity) != declaration['identity_sha256']:
         raise InputBoundaryError('model identity receipt mismatch')
@@ -124,12 +178,14 @@ def main():
                             validate=validator.validate)
                         return model.generate(**kwargs, prefix_allowed_tokens_fn=guard)
                 return Guarded()
-            result = run_profiles(entries=entries, output=args.output / 'profiles',
+            run = run_unstarted_profiles if continuation is not None else run_profiles
+            extra = {'prior_output': args.prior_output, 'continuation_manifest': continuation} if continuation is not None else {}
+            result = run(entries=entries, output=args.output / 'profiles',
                 prompt_root=ROOT / 'docs/healthtech/research/prompts', prompt_sha256=declaration['prompt_sha256'],
                 tokenizer=tokenizer, guarded_model_factory=factory, device='cuda:0', limits=limits,
                 check_authorization=check_local_window,
                 remaining_seconds=lambda: declaration['wall_seconds'] - (time.monotonic() - start),
-                peak_memory_bytes=lambda: torch.cuda.max_memory_allocated())
+                peak_memory_bytes=lambda: torch.cuda.max_memory_allocated(), **extra)
             write_new(args.output / 'terminal.json', {'status': result['status'],
                 'wall_seconds': time.monotonic() - start, 'queries': len(result['outcomes']),
                 'peak_gpu_allocated_bytes': torch.cuda.max_memory_allocated(),
