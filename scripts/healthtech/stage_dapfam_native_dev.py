@@ -33,6 +33,8 @@ def main():
         raise InputBoundaryError("preserve existing attempt")
     import pyarrow as pa
     import pyarrow.parquet as pq
+    pa.set_cpu_count(1)
+    pa.set_io_thread_count(1)
     # Parse exactly the bytes hashed, not a second potentially changed file read.
     payload = {name: (args.original_split if name == "split.json" else args.data_dir / name).read_bytes()
                for name in PINS}
@@ -40,7 +42,7 @@ def main():
     if hashes != PINS:
         raise InputBoundaryError("source identity mismatch")
     def rows(name, columns):
-        return pq.read_table(pa.BufferReader(payload[name]), columns=columns).to_pylist()
+        return pq.read_table(pa.BufferReader(payload[name]), columns=columns, use_threads=False).to_pylist()
     receipt = stage_native_dev(
         rows("corpus.parquet", ["relevant_id", "title_en", "abstract_en", "claims_text"]),
         rows("queries.parquet", ["query_id", "title_en", "abstract_en"]),

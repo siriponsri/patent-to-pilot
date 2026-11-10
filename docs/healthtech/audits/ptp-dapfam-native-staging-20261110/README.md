@@ -1,5 +1,11 @@
 # Native DAPFAM curator preparation
 
+## Authorized curator subagent preparation
+
+Owner authorized subagent-run curator, superseding personal execution for this task. Curator role dapfam_curator is preparing a temporary Windows Job Object launcher with synthetic cap tests; parent remains sole repo writer. Real stage waits for parent GO after source revision and disk/resource validation. No protected information returned. Shared host access limitation disclosed.
+
+Added8GiB hard aggregate output-byte ceiling, with conservative pre-write projection plus per-write accounting; over-budget refusal precedes destination creation. Arrow CPU/I/O pools set1 and parquet use_threads=False; launch env/affinity caps still required. Updated staging/native checks16/16 PASS. This is an output reservation inside existing40GiB aggregate allowance, not a reset or new allocation. No real source parsing or staging has occurred yet.
+
 Status: IMPLEMENTED_FIXTURE_VERIFIED; REAL_STAGING_NOT_RUN. Sole writer Codex Pepo: Patent to pilot, 10 November 2026. Scope HT-ST1-W1, existing owner authorization applies.
 
 ## Contract

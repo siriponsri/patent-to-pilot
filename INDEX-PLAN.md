@@ -2,6 +2,8 @@
 
 ## HT-EVENT-ST1-TAKEOVER — 2026-11-10 21:15 Bangkok
 
+**HT-EVENT-CURATOR-DELEGATION:** explicit owner amendment permits subagent curator, parent sole writer; role split not physical access denial. HT-IDX29 now8GiB output reservation enforced and single-thread Arrow,16/16 checks PASS. Curator prepares resource supervisor in temp only and awaits GO; real staging NOT_RUN. Inputs/receipt scope unchanged; protected outputs forbidden. See native-staging audit and authorization amendment.
+
 **HT-IDX29 / HT-ST1-W1:** native DAPFAM curator CLI and projection IMPLEMENTED_FIXTURE_VERIFIED, sole Codex writer. [Receipt](docs/healthtech/audits/ptp-dapfam-native-staging-20261110/README.md), source scripts/healthtech/stage_dapfam_native_dev.py and evaluation/dapfam_staging.py; original immutable source/split/corpus hash pins embedded.15/15 staging/native checks PASS. Real source contents not parsed; original split opaque hash verified. Real staging/baseline/mounts NOT_RUN; resource-enforced owner launcher and full disk accounting next. No cards/calls/retries.
 
 **HT-EVENT-ST1-PUBLISHED:**40 scoped files published at b659a0a126daf159b814d68455ab3bbc14079771, verified against live origin/main. Heuristic/allowlist screening passed; excluded owner external handoff and restricted payloads. Default whitespace check flagged9 intentional Markdown breaks in preserved inputs; check excluding blank-at-EOL passed. No actual benchmark run. Next HT-ST1-W1 native curator contract. Paired handoff refreshed.

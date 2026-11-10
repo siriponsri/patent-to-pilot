@@ -54,3 +54,10 @@ def test_invalid_inputs_never_create_completion(tmp_path, bad):
     with pytest.raises(InputBoundaryError):
         stage_native_dev(c, q, r, split, tmp_path / "stage", **kw)
     assert not (tmp_path / "stage/owner-complete.json").exists()
+
+
+def test_output_reservation_refuses_before_creating_destination(tmp_path):
+    c, q, r, split, kw = fixture()
+    with pytest.raises(InputBoundaryError, match="reserved bytes"):
+        stage_native_dev(c, q, r, split, tmp_path / "stage", max_output_bytes=10, **kw)
+    assert not (tmp_path / "stage").exists()

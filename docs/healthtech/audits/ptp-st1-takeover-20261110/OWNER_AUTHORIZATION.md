@@ -1,5 +1,9 @@
 # Owner authorization: ST1 continuation
 
+## Curator delegation amendment
+
+Owner explicitly authorized a subagent to run curator on10November2026. This replaces the owner-personal execution restriction for the delegated staging task only. Parent remains sole repository writer. Curator may parse pinned mixed inputs solely to project native dev inputs, never score protected tests or return protected contents/IDs/labels. Return aggregate completion/resource receipts and hashes only. This is role separation on shared host permissions, not proof of physically agent-inaccessible test data. Existing compute/disk/test/failure limits remain unchanged.
+
 Explicit owner replies received 10 November 2026 in the controlling chat. This records authority; it is not a successful run receipt.
 
 1. DAPFAM Paper 1: native baseline, SACR, S/G feasibility, gated pilot/full dev, report and manuscript including failures/negative findings/costs. MTM only if DAPFAM method gates pass and resources remain. Failed arms stop without repeated outcome-seeking trials. Both protected tests remain closed. Final test and publication submission require later separate authority.

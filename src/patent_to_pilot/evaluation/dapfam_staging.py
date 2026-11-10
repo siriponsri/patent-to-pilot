@@ -18,9 +18,12 @@ def jsonl_bytes(rows):
 
 def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination: Path, *,
                      source_hashes: dict, expected_dev: int, expected_protected: int,
-                     expected_corpus: int, expected_corpus_sha256: str) -> dict:
+                     expected_corpus: int, expected_corpus_sha256: str,
+                     max_output_bytes: int = 8 * 1024**3) -> dict:
     if destination.exists():
         raise InputBoundaryError("preserve existing staging attempt")
+    if type(max_output_bytes) is not int or max_output_bytes <= 0:
+        raise InputBoundaryError("invalid output byte limit")
     if not isinstance(assignment, dict) or set(assignment.values()) != {"dev", "test"}:
         raise InputBoundaryError("invalid preserved split")
     if not source_hashes or any(not isinstance(v, str) or len(v) != 64 or
@@ -81,20 +84,28 @@ def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination
         if score > 0:
             eligible["ALL"].add(query)
             eligible[domain].add(query)
+    query_payload = jsonl_bytes(sorted(dev_queries, key=lambda r: r["id"]))
+    qrel_payload = jsonl_bytes(sorted(qrels, key=lambda r: (r["query_id"], r["relevant_id"])))
+    if len(corpus_payload) + len(query_payload) + len(qrel_payload) + 1024**2 > max_output_bytes:
+        raise InputBoundaryError("projected output exceeds reserved bytes")
     destination.mkdir(parents=True, exist_ok=False)
     runtime, evaluator = destination / "runtime-dev", destination / "dev-evaluation"
     runtime.mkdir()
     evaluator.mkdir()
+    written_bytes = 0
     def write(path, payload):
+        nonlocal written_bytes
+        if written_bytes + len(payload) > max_output_bytes:
+            raise InputBoundaryError("output byte limit exceeded; preserve attempt")
         with path.open("xb") as handle:
             handle.write(payload)
+        written_bytes += len(payload)
         return hashlib.sha256(payload).hexdigest()
     runtime_files = {
         "corpus.jsonl": write(runtime / "corpus.jsonl", corpus_payload),
-        "queries-ta.jsonl": write(runtime / "queries-ta.jsonl", jsonl_bytes(sorted(dev_queries, key=lambda r: r["id"]))),
+        "queries-ta.jsonl": write(runtime / "queries-ta.jsonl", query_payload),
     }
-    evaluator_files = {"qrels-dev.jsonl": write(evaluator / "qrels-dev.jsonl", jsonl_bytes(
-        sorted(qrels, key=lambda r: (r["query_id"], r["relevant_id"]))))}
+    evaluator_files = {"qrels-dev.jsonl": write(evaluator / "qrels-dev.jsonl", qrel_payload)}
     common = {"dataset_revision": DATASET_REVISION, "mteb_revision": MTEB_REVISION,
               "source_sha256": source_hashes, "split": "dev", "query_view": "TA", "corpus_view": "TAC",
               "input_queries": len(dev_queries), "corpus_families": len(corpus), "candidate_policy": "full"}
