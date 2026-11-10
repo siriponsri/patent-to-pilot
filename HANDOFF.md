@@ -4,7 +4,10 @@ Status: `ACTIVE_WPI_RESEARCH_PACKAGE_TRACK_A_COMPLETE_TRACK_B_DESCRIPTIVE`
 
 ## Agent takeover state — 10 Nov 2026 (read this first)
 
-### Latest checkpoint — 10 Nov 2026, 07:16 Bangkok
+### Latest checkpoint — 10 Nov 2026 (Bangkok)
+
+- **Latest DAPFAM package:** native TA/TAC loader/metric safeguards implemented; [audit](docs/healthtech/audits/ptp-method-first-r1-dapfam-20261110/README.md). Base/last pushed before this package: 6202c58966e85b3c75d306c14228bb09d0161c74. 61 targeted tests and Ruff pass; 12 differential cases against hash-pinned MTEB source and pytrec-eval-terrier 0.5.11 pass. Full corpus retained across ALL/IN/OUT; missing eligible rankings score zero with fixed denominator. Raw backend missing-query omission confirmed on synthetic data. No actual benchmark rows, protected labels, GPU jobs or paid calls. Changed: native dev module/verifier/tests, audit and handoff/progress pointers. Next integrate prospective safe runtime/vector checks; trusted staging still needed for actual dev A03 and ranking parity. Existing untracked research handoff preserved.
+
 
 - **Owner/goal:** Codex is the single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Follow HANDOFF_PROMPT.md and the local research handoff, with DAPFAM anchor / MTM evaluation / untested SACR. Update both HANDOFF.md and CLAUDE.md at every checkpoint. Prior 10 November checkpoints are preserved in Git and linked audits.
 - **Last pushed commit before this receipt:** 1df23a5f81cef4b7cc6eb6045e66c0106ac52627 (actual inspection code). Verify the containing receipt commit remotely before takeover.

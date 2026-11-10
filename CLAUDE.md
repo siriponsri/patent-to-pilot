@@ -2,7 +2,10 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 10 Nov 2026, 07:16 Bangkok
+## Cross-account checkpoint — 10 Nov 2026 (Bangkok)
+
+- Latest native DAPFAM package: 61 targeted tests/Ruff pass, 12 differential cases against pinned public MTEB loader/filter/metric aggregation and pytrec-eval-terrier 0.5.11 pass. Audit: docs/healthtech/audits/ptp-method-first-r1-dapfam-20261110/README.md. Base/last pushed before package 6202c58966e85b3c75d306c14228bb09d0161c74. No real benchmark labels/scores, GPU work or paid calls. Next prospective safe runtime/identity integration, then trusted staging and real dev integrity/parity. Goal ACTIVE, Codex single active writer. This updates the earlier native-parity-pending note below; full MTEB/published-result replication remains NOT_RUN.
+
 
 - Codex is the active single writer; method-first long-run goal ACTIVE. Read the latest Agent takeover state in HANDOFF.md. It supersedes historical Normal-round/activation-only states below.
 - Last pushed commit before this receipt: 1df23a5f81cef4b7cc6eb6045e66c0106ac52627. A14 actual CPU inspection at that revision completed exit 0; no remaining job.

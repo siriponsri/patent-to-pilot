@@ -1,0 +1,92 @@
+{
+  "status": "PASS_SYNTHETIC_DIFFERENTIAL",
+  "mteb_revision": "9242b36a1d400fc8c3af573e6a6e0705c0b96e3d",
+  "dataset_revision": "780f4011d60297fc6e97a4119b0c516d13afea2d",
+  "source_sha256": {
+    "mteb__tasks__retrieval__eng__dapfam_patent_retrieval.py": "8bcd06495193bc9f0ec85ec804ca506912e56ff6f261dce67628b2483c74afc5",
+    "mteb___evaluators__retrieval_metrics.py": "e1438f788f846464f81c5a6317c37a43686bc881dff72c64af69f61e9efb3b1a",
+    "mteb__abstasks__retrieval.py": "c3cfe12420c22ebd8e67e44ee00d42f3a6b33c9fea4fe7c5f49590d5f0c1258d"
+  },
+  "backend": "pytrec-eval-terrier==0.5.11",
+  "checks": [
+    {
+      "partition": "ALL",
+      "mode": "complete",
+      "queries": 2,
+      "status": "PASS"
+    },
+    {
+      "partition": "ALL",
+      "mode": "missing",
+      "queries": 2,
+      "status": "PASS"
+    },
+    {
+      "partition": "ALL",
+      "mode": "empty",
+      "queries": 2,
+      "status": "PASS"
+    },
+    {
+      "partition": "ALL",
+      "mode": "all_missing",
+      "queries": 2,
+      "status": "PASS"
+    },
+    {
+      "partition": "IN",
+      "mode": "complete",
+      "queries": 1,
+      "status": "PASS"
+    },
+    {
+      "partition": "IN",
+      "mode": "missing",
+      "queries": 1,
+      "status": "PASS"
+    },
+    {
+      "partition": "IN",
+      "mode": "empty",
+      "queries": 1,
+      "status": "PASS"
+    },
+    {
+      "partition": "IN",
+      "mode": "all_missing",
+      "queries": 1,
+      "status": "PASS"
+    },
+    {
+      "partition": "OUT",
+      "mode": "complete",
+      "queries": 2,
+      "status": "PASS"
+    },
+    {
+      "partition": "OUT",
+      "mode": "missing",
+      "queries": 2,
+      "status": "PASS"
+    },
+    {
+      "partition": "OUT",
+      "mode": "empty",
+      "queries": 2,
+      "status": "PASS"
+    },
+    {
+      "partition": "OUT",
+      "mode": "all_missing",
+      "queries": 2,
+      "status": "PASS"
+    }
+  ],
+  "raw_backend_missing_query_omitted": true,
+  "wrapper_missing_query_scores_zero": true,
+  "benchmark_rows_loaded": 0,
+  "protected_label_access": false,
+  "full_mteb_run": "NOT_RUN",
+  "published_result_replication": "NOT_RUN",
+  "scope": "native TA/TAC loader, positive-query filtering, binary NDCG/recall and denominator guard"
+}

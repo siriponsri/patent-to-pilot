@@ -1,0 +1,22 @@
+{
+  "format": "ptp-dapfam-native-parity-v1",
+  "base_commit": "6202c58966e85b3c75d306c14228bb09d0161c74",
+  "observed_at": "2026-11-10T07:26:02.185464+07:00",
+  "status": "SYNTHETIC_DIFFERENTIAL_PASS",
+  "source_sha256": {
+    "src/patent_to_pilot/evaluation/dapfam_native.py": "eef7cc12b678396e653e11f74ae385bf03a1b4a7d18650664b3c4f91f272f5bd",
+    "scripts/healthtech/verify_dapfam_native_parity.py": "3a18f0f9c3bfb04c85137c06af0f7c0c72a89c413702b60d80a911932abc5c8a",
+    "tests/test_dapfam_native.py": "2fb08e65c42974ef56a4a955c9a8d16685ae27d860e5fd5062a07b854e9ce225"
+  },
+  "pytest": {
+    "passed": 61,
+    "seconds": 4.39,
+    "exit_code": 0
+  },
+  "ruff": "PASS",
+  "differential_cases": 12,
+  "real_dev_scores": "NOT_RUN",
+  "protected_label_access": false,
+  "gpu_jobs": 0,
+  "paid_calls": 0
+}
