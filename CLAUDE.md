@@ -2,12 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:47:28 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:50:59 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed HANDOFF.md; last verified pushed base a09f640897b074089ff2eb39795b2710b43547d8.
-- Selection reuses acquisition without search/double charge; exposure/vector checks.290 related tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-acquisition-reuse-20261110/README.md.
-- Actual index/mask/sealed score binding and controller dispatch still next; synthetic equivalence only. Typed finalization/anchor/live caps pending. R1/generation/fidelity unchanged, R5 not authorized.
-- No actual jobs, remote not re-polled. Preserve owner untracked handoff/private outputs; paired updates mandatory.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Detailed HANDOFF.md; last verified pushed base 5acdfce338d738b1bbc3d41f6467dccfe9ba0734.
+- Bound CPU index/mask + journaled acquisition/selection;26 focused/297 related tests, Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-retrieval-controller-20261110/README.md. Six-stage authored fixture only, no real run.
+- Next final outcome binding to sealed selection. Full-matrix copy/hash buffer not resource-approved at real scale; actual mask/preflight/isolation, anchor/failure policy/live caps remain. R1/generation/fidelity unchanged, R5 not authorized.
+- No actual jobs, remote not re-polled. Local tests terminal exit0. Preserve owner untracked handoff/private outputs; paired updates mandatory.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

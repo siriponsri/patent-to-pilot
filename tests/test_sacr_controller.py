@@ -11,7 +11,7 @@ from test_sacr_input_snapshots import inputs, sha
 from test_sacr_profile import SOURCE, fixture
 
 
-def setup(tmp_path, *, missing=False, tampered=False):
+def setup(tmp_path, *, missing=False, tampered=False, index_manifest=None):
     plan, data, manifests, _, _ = inputs()
     payload = json.dumps({'id': 'q', 'text': SOURCE}).encode()
     manifest = json.loads(manifests['query_manifest'])
@@ -25,6 +25,9 @@ def setup(tmp_path, *, missing=False, tampered=False):
         manifest['missing_ids'] = ['missing']
     manifests['query_manifest'] = json.dumps(manifest).encode()
     data['identities']['query_manifest'] = sha(manifests['query_manifest'])
+    if index_manifest is not None:
+        manifests['index_manifest'] = index_manifest
+        data['identities']['index_manifest'] = sha(index_manifest)
     data['sources'][0]['source_sha256'] = hashlib.sha256(SOURCE.encode()).hexdigest()
     if tampered:
         payload += b'changed'

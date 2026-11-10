@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest retrieval controller:** bound snapshot/mask and separate search/selection;297 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-retrieval-controller-20261110/README.md). Next sealed final-outcome binding, then full-scale resources/preflight. Authored six-stage fixture is not actual SACR evidence.
+
 > **Latest acquisition reuse:** selection avoids repeated search/costs;290 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-acquisition-reuse-20261110/README.md). Next actual index/mask and sealed stage binding into controller. R1/generation/fidelity gates unchanged.
 
 > **Latest embedding controller:** reserved fake-encoder adapter and text/row/vector binding;279 tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-embedding-controller-20261110/README.md). Next index/mask-bound acquisition/selection. Actual R1/generation/fidelity gates unchanged.

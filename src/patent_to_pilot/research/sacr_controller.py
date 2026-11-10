@@ -1,6 +1,8 @@
 """Bound profile/view orchestration; not a production research runner."""
 from copy import deepcopy
 
+import numpy as np
+
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError
 from patent_to_pilot.research.sacr_execution import bind_input_snapshots
 from patent_to_pilot.research.sacr_journal import DevStageJournal
@@ -8,6 +10,9 @@ from patent_to_pilot.research.sacr_profile_result import profile_result
 from patent_to_pilot.research.sacr_components import digest
 from patent_to_pilot.research.sacr_view_result import view_result
 from patent_to_pilot.research.sacr_embedding import embedding_plan, bind_embeddings
+from patent_to_pilot.research.sacr_acquisition import acquire_union
+from patent_to_pilot.research.sacr_factorial import compare_factorial
+from patent_to_pilot.research.sacr_outcomes import METRICS
 
 
 class BoundProfileController:
@@ -132,3 +137,60 @@ class BoundProfileController:
                     'semantic_status': 'unknown', 'fidelity_review': 'REQUIRED'}, metrics
 
         return self.journal.execute(self._attempts[query_id, 'embedding'], work)
+
+    def _retrieval_inputs(self, query_id, index, eligible):
+        prepared = self.embedding_inputs(query_id)
+        expected_plan = embedding_plan(prepared)
+        output = self.journal.read_completed_output(self._attempts[query_id, 'embedding'])
+        if (output.get('format') != 'sacr-embedding-stage-v1' or output.get('query_id') != query_id or
+                output.get('plan') != expected_plan):
+            raise InputBoundaryError('sealed embedding plan differs from replayed texts')
+        vectors = bind_embeddings(expected_plan, np.asarray(output['vectors_float32'], dtype=np.float32),
+                                  output['receipt'], expected_plan_sha256=expected_plan['plan_sha256'],
+                                  expected_encoder_sha256=self.journal.execution['identities']['encoder_manifest'])
+        identity = self.journal.execution['identities']['index_manifest']
+        context = index.context(query_id, eligible, expected_index_sha256=identity)
+        if vectors.shape[1] != context['passage_vectors'].shape[1]:
+            raise InputBoundaryError('query and index vector dimensions disagree')
+        views = {}
+        for kind, rows in expected_plan['view_rows'].items():
+            views[kind] = (['anchor'] + [f'view-{i}' for i in range(1, len(rows))], vectors[rows])
+        components = vectors[expected_plan['component_rows']]
+        context.update(generic_views=views['generic'], invariant_views=views['selective'],
+                       component_blocks=[components[b['start']:b['end']] for b in expected_plan['component_blocks']],
+                       depth=self.journal.execution['limits']['depth'])
+        binding = {'index_sha256': identity, 'mask_sha256': digest(context['eligible'].tolist()),
+                   'embedding_output_sha256': digest(output), 'depth': context['depth']}
+        return context, binding
+
+    def acquire(self, query_id, index, eligible):
+        context, binding = self._retrieval_inputs(query_id, index, eligible)
+        def work():
+            acquired = {}
+            for name, key in [('G', 'generic_views'), ('I', 'invariant_views')]:
+                ids, vectors = context[key]
+                acquired[name] = acquire_union(
+                    family_ids=context['family_ids'], passage_owner=context['passage_owner'],
+                    passage_vectors=context['passage_vectors'], eligible=context['eligible'],
+                    view_ids=ids, view_vectors=vectors, depth=context['depth'])
+            costs = {key: 0 for key in METRICS}
+            costs['peak_memory_bytes'] = None
+            costs['index_dot_products'] = sum(a['accounting']['view_passage_dot_products'] for a in acquired.values())
+            return {'format': 'sacr-acquisition-stage-v1', 'query_id': query_id,
+                    'binding': binding, 'acquired': acquired}, costs
+        return self.journal.execute(self._attempts[query_id, 'acquisition'], work)
+
+    def select(self, query_id, index, eligible):
+        context, binding = self._retrieval_inputs(query_id, index, eligible)
+        acquisition = self.journal.read_completed_output(self._attempts[query_id, 'acquisition'])
+        if (acquisition.get('format') != 'sacr-acquisition-stage-v1' or
+                acquisition.get('query_id') != query_id or acquisition.get('binding') != binding):
+            raise InputBoundaryError('acquisition belongs to different query/index/mask/embedding/depth')
+        def work():
+            result = compare_factorial(**context, acquired=acquisition['acquired'])
+            costs = {key: 0 for key in METRICS}
+            costs['peak_memory_bytes'] = None
+            costs['candidate_dot_products'] = result['accounting']['actual_component_passage_dot_products']
+            return {'format': 'sacr-selection-stage-v1', 'query_id': query_id, 'binding': binding,
+                    'acquisition_output_sha256': digest(acquisition), 'result': result}, costs
+        return self.journal.execute(self._attempts[query_id, 'selection'], work)
