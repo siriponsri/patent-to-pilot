@@ -1,0 +1,382 @@
+{
+  "format": "ptp-method-first-readiness-v1",
+  "base_commit": "6377f25331325d5c2d21efbcc8e709e0a7009ecb",
+  "overall": "INCOMPLETE_NOT_READY_FOR_R3_OR_R5",
+  "protected_data_accessed": false,
+  "requirements": [
+    {
+      "id": "R0",
+      "requirement": "Current-state inventory and observed development history",
+      "status": "BOUNDED_INVENTORY_COMPLETE",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r0-20261110/README.md",
+        "HANDOFF.md"
+      ],
+      "missing": "Historical exposure uncertainty remains; inventory completion is not R1 completion."
+    },
+    {
+      "id": "21.1-01",
+      "requirement": "Current checkout and authority reconciled",
+      "status": "SUPPORTED_CURRENT_CHECKPOINT",
+      "evidence": [
+        "AGENTS.md",
+        "HANDOFF_PROMPT.md",
+        "HANDOFF.md"
+      ],
+      "missing": "Future takeover must reverify checkout and active writer."
+    },
+    {
+      "id": "21.1-02",
+      "requirement": "Runtime cannot access protected labels/construction tags",
+      "status": "INCOMPLETE",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r1-boundary-20261110/README.md",
+        "docs/healthtech/audits/ptp-method-first-r1-curator-20261110/CURATOR_RUNBOOK.md"
+      ],
+      "missing": "Trusted curator and actual physical isolation not provided; fixtures are not isolation."
+    },
+    {
+      "id": "21.1-03",
+      "requirement": "Exact-mask MTM development gold eligibility",
+      "status": "NOT_RUN",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r1-eligibility-20261110/README.md"
+      ],
+      "missing": "Need isolated dev evaluator inputs and actual counts."
+    },
+    {
+      "id": "21.1-04",
+      "requirement": "Any benchmark correction dated and applied fairly",
+      "status": "UNRESOLVED",
+      "evidence": [
+        "docs/healthtech/research/MTM_DEV_BASELINE_PARITY_DECLARATION_20261110_EN.md"
+      ],
+      "missing": "Actual eligibility/parity determine whether a correction is needed; no amendment by inference."
+    },
+    {
+      "id": "21.1-05",
+      "requirement": "Native DAPFAM OUT versus X encoded in tests",
+      "status": "SYNTHETIC_SUPPORTED",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r1-dapfam-20261110/README.md"
+      ],
+      "missing": "Actual benchmark replication and population validation NOT_RUN."
+    },
+    {
+      "id": "21.1-06",
+      "requirement": "Vector identity binds model/tokenizer/text/preprocessing/order",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r1-vectors-20261110/README.md"
+      ],
+      "missing": "Fresh hashes observed; original tokenizer/order attestation absent; real parity pending."
+    },
+    {
+      "id": "21.1-07",
+      "requirement": "Anchor-only matches frozen baseline on allowed data",
+      "status": "NOT_RUN",
+      "evidence": [
+        "docs/healthtech/research/MTM_DEV_BASELINE_PARITY_DECLARATION_20261110_EN.md"
+      ],
+      "missing": "Declaration/tooling exists; actual isolated ranking comparison absent."
+    },
+    {
+      "id": "21.1-08",
+      "requirement": "Fidelity rubric and sample fixed before scores",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/research/SACR_FIDELITY_ACCEPTANCE_POLICY_DRAFT_20261110_EN.md",
+        "docs/healthtech/research/SACR_FIDELITY_AUDIT_FORM_20261110_EN.md"
+      ],
+      "missing": "Policy proposed, not adopted; sample not drawn; no observations."
+    },
+    {
+      "id": "21.1-09",
+      "requirement": "SACR algorithm/views/weights/caps/fallback fixed",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/research/SACR_V0_SPECIFICATION_DRAFT_20261110_EN.md",
+        "docs/healthtech/audits/ptp-method-first-r2-components-20261110/README.md"
+      ],
+      "missing": "Modules and draft exist; viable generation and full controller/actual encoding absent."
+    },
+    {
+      "id": "21.1-10",
+      "requirement": "Matched control and essential ablations fixed",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r2-factorial-20261110/README.md"
+      ],
+      "missing": "Pre-embedded CPU kernels only; complete generation/embedding budgets and real arm runs absent."
+    },
+    {
+      "id": "21.1-11",
+      "requirement": "Resource counters and output immutability",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r2-outcomes-20261110/README.md"
+      ],
+      "missing": "Need reserved-attempt/event reconciliation and complete runtime measurements."
+    },
+    {
+      "id": "21.1-12",
+      "requirement": "Explicit dev-only bounded pilot declaration",
+      "status": "NOT_READY",
+      "evidence": [
+        "docs/healthtech/research/SACR_V0_SPECIFICATION_DRAFT_20261110_EN.md"
+      ],
+      "missing": "No adopted R3 pilot; engineering smokes are not a substitute."
+    },
+    {
+      "id": "R2-GEN",
+      "requirement": "Viable bounded generation path",
+      "status": "FAILED_ENGINEERING_GATE",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r2-smoke-20261110/README.md",
+        "docs/healthtech/audits/ptp-method-first-r2-quote-smoke-20261110/README.md",
+        "docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/README.md"
+      ],
+      "missing": "Two model smoke failures; two remaining escape-token cases; shortcut diagnostic timeout. No automatic further attempts."
+    },
+    {
+      "id": "R2-FID",
+      "requirement": "Observed source fidelity and requirement availability",
+      "status": "NOT_RUN",
+      "evidence": [
+        "docs/healthtech/research/SACR_FIDELITY_ACCEPTANCE_POLICY_DRAFT_20261110_EN.md"
+      ],
+      "missing": "No legitimate sample/observed ratings; source mechanisms remain untested."
+    },
+    {
+      "id": "R3",
+      "requirement": "Bounded full-corpus control matrix, rescue/loss/cost/failure report",
+      "status": "NOT_RUN",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r2-acquisition-20261110/README.md",
+        "docs/healthtech/audits/ptp-method-first-r2-factorial-20261110/README.md"
+      ],
+      "missing": "Synthetic tiny-index tests are not a pilot effect estimate."
+    },
+    {
+      "id": "R4",
+      "requirement": "Full dev comparison and fixed carry-forward decision",
+      "status": "NOT_RUN",
+      "evidence": [
+        "docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md"
+      ],
+      "missing": "SACR not tested; cannot assign scientific NO_ADVANTAGE or CARRY_FORWARD."
+    },
+    {
+      "id": "21.2-01",
+      "requirement": "All development variants logged including invalid/negative",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md"
+      ],
+      "missing": "Observed attempts recorded; future final ledger needs closed-run reconciliation."
+    },
+    {
+      "id": "21.2-02",
+      "requirement": "One final version selected under declared procedure",
+      "status": "NOT_READY",
+      "evidence": [
+        "docs/healthtech/research/PTP_R5_FREEZE_PROPOSAL_DRAFT_20261110_EN.md"
+      ],
+      "missing": "No new SACR candidate; historical V4 is not new final authorization."
+    },
+    {
+      "id": "21.2-03",
+      "requirement": "Strong control and final method count resolved",
+      "status": "PROPOSAL_ONLY",
+      "evidence": [
+        "docs/healthtech/research/PTP_R5_FREEZE_PROPOSAL_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Conditional four-total-system allocation not adopted."
+    },
+    {
+      "id": "21.2-04",
+      "requirement": "Final benchmark endpoints fixed",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/research/MEDTECH_TIME_MACHINE_BENCHMARK_RULES_DRAFT_20261107_EN.md"
+      ],
+      "missing": "MTM frozen endpoint exists; complete final cross-benchmark manifest unbound."
+    },
+    {
+      "id": "21.2-05",
+      "requirement": "Confirmatory contrasts and multiplicity family",
+      "status": "NOT_BOUND",
+      "evidence": [
+        "docs/healthtech/research/PTP_R5_FREEZE_PROPOSAL_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Final panel/contrasts and inference pins absent."
+    },
+    {
+      "id": "21.2-06",
+      "requirement": "Final failure/fallback/recovery rules",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r2-outcomes-20261110/README.md",
+        "docs/healthtech/research/PTP_R5_FREEZE_PROPOSAL_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Prospective utilities not final isolated evaluator/controller acceptance."
+    },
+    {
+      "id": "21.2-07",
+      "requirement": "Training/data overlap checks or explicit limitations",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Limits documented; no new historical model-contamination assurance."
+    },
+    {
+      "id": "21.2-08",
+      "requirement": "Final manifests/ranking code bound to immutable commit",
+      "status": "NOT_BOUND",
+      "evidence": [
+        "docs/healthtech/research/PTP_R5_FREEZE_PROPOSAL_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Final inputs, configurations, selected ranking digests not supplied."
+    },
+    {
+      "id": "21.2-09",
+      "requirement": "Protected evaluator isolated and synthetic dry-tested",
+      "status": "NOT_ESTABLISHED",
+      "evidence": [
+        "docs/healthtech/audits/ptp-method-first-r1-curator-20261110/CURATOR_RUNBOOK.md"
+      ],
+      "missing": "Prospective tooling does not establish actual isolated protected evaluator."
+    },
+    {
+      "id": "21.2-10",
+      "requirement": "Owner authorizes single final scoring pass",
+      "status": "NOT_AUTHORIZED",
+      "evidence": [
+        "HANDOFF_PROMPT.md",
+        "docs/healthtech/research/PTP_R5_FREEZE_PROPOSAL_DRAFT_20261110_EN.md"
+      ],
+      "missing": "No current owner freeze decision for this method-first final panel."
+    },
+    {
+      "id": "21.3-01",
+      "requirement": "Every manuscript numerical claim traces to evidence",
+      "status": "DRAFT_SUPPORTED",
+      "evidence": [
+        "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Current engineering table source-linked; final results absent."
+    },
+    {
+      "id": "21.3-02",
+      "requirement": "Full-release and project-subset results kept separate",
+      "status": "DRAFT_SUPPORTED",
+      "evidence": [
+        "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Final results/report still absent."
+    },
+    {
+      "id": "21.3-03",
+      "requirement": "Native OUT and filtered X not conflated",
+      "status": "DRAFT_SUPPORTED",
+      "evidence": [
+        "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md",
+        "docs/healthtech/audits/ptp-method-first-r1-dapfam-20261110/README.md"
+      ],
+      "missing": "No final actual benchmark comparison."
+    },
+    {
+      "id": "21.3-04",
+      "requirement": "No unsupported semantic/transfer/business claims",
+      "status": "DRAFT_SUPPORTED",
+      "evidence": [
+        "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Future final prose needs renewed claim audit."
+    },
+    {
+      "id": "21.3-05",
+      "requirement": "Null/negative/invalid results retained",
+      "status": "PARTIAL",
+      "evidence": [
+        "docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md"
+      ],
+      "missing": "Observed attempts retained; full study not executed."
+    },
+    {
+      "id": "21.3-06",
+      "requirement": "Actual algorithm compared to closest prior art",
+      "status": "INCOMPLETE",
+      "evidence": [
+        "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Verified implementation-specific novelty comparison/bibliography unfinished."
+    },
+    {
+      "id": "21.3-07",
+      "requirement": "Separate code/data/model/PDF rights review",
+      "status": "INCOMPLETE",
+      "evidence": [
+        "HANDOFF_PROMPT.md"
+      ],
+      "missing": "Standing restrictions exist; final artifact release inventory/rights approval absent."
+    },
+    {
+      "id": "21.3-08",
+      "requirement": "AI assistance/funding/contributions accurate",
+      "status": "INCOMPLETE",
+      "evidence": [
+        "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Final owner authorship/funding/disclosure statements not completed."
+    },
+    {
+      "id": "21.3-09",
+      "requirement": "Current journal instructions verified at submission preparation",
+      "status": "NOT_RUN",
+      "evidence": [
+        "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md"
+      ],
+      "missing": "No submission preparation/release authorized; do not invent current publisher policy."
+    },
+    {
+      "id": "R6",
+      "requirement": "Manuscript/supplement/reproducibility package",
+      "status": "PARTIAL_DRAFT",
+      "evidence": [
+        "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md"
+      ],
+      "missing": "Results, citations, final supplement, rights and owner review remain."
+    }
+  ],
+  "evidence_file_sha256": {
+    "docs/healthtech/audits/ptp-method-first-r0-20261110/README.md": "fcdd80494d0bb8f8337b2418d569589e9cee97f5616a9cdc7f0203a135f8d3fb",
+    "HANDOFF.md": "196c8141933c87607c7c09d9c26e3694c0fe2b9a8f8728675f4fa5d5eadc16aa",
+    "AGENTS.md": "0144aaa9d26189b26f0d5d6de1548df0ccc323057d7196915c184e7c648d256d",
+    "HANDOFF_PROMPT.md": "8ee81d5ca5a3c88934dcafc9779999219ac7944a47e67ea32536ac9d3e282cdb",
+    "docs/healthtech/audits/ptp-method-first-r1-boundary-20261110/README.md": "13d5b6400948a93d60a99be152a1ff428ee48625ecadcfd51528205e1e056d8d",
+    "docs/healthtech/audits/ptp-method-first-r1-curator-20261110/CURATOR_RUNBOOK.md": "0d1411fee1edd02a3ba5a69b05e2e0b9f39b87ed28b3b21c4a8ca49f69b0ee89",
+    "docs/healthtech/audits/ptp-method-first-r1-eligibility-20261110/README.md": "d8ae82c3384da001efdaba81ec1d811df76f716d3e234f4abc4ce0eae5a7254f",
+    "docs/healthtech/research/MTM_DEV_BASELINE_PARITY_DECLARATION_20261110_EN.md": "71109cecf9e7d51890a47df499b1dc5238681b996beca37e86cc04365a3e596b",
+    "docs/healthtech/audits/ptp-method-first-r1-dapfam-20261110/README.md": "bf93b6e61afd033200ac2f08edd8e2bdd56c33c98445faf366d3df5cc5ef8fbf",
+    "docs/healthtech/audits/ptp-method-first-r1-vectors-20261110/README.md": "a70503c2fa26c18803329a141d13a953f8a2067bde291b2a4c1d4c61e1b04a25",
+    "docs/healthtech/research/SACR_FIDELITY_ACCEPTANCE_POLICY_DRAFT_20261110_EN.md": "c65db0a61f30d87edfac23828374ded0f7804fab5088b1dc3bebd1a623db9fec",
+    "docs/healthtech/research/SACR_FIDELITY_AUDIT_FORM_20261110_EN.md": "e6093a016b43533ac86a1f4a7c1bde703c74205446fcda679aa02935407c0e36",
+    "docs/healthtech/research/SACR_V0_SPECIFICATION_DRAFT_20261110_EN.md": "b2036ee4d7d1e918779a7dfa551742fdc8b462ac49110f7f76c554ed44bb68bb",
+    "docs/healthtech/audits/ptp-method-first-r2-components-20261110/README.md": "0f9b3b5fdd74987aeac58bac5053e7ee42f4d9f24e6f49f50a03fc1fa96a71af",
+    "docs/healthtech/audits/ptp-method-first-r2-factorial-20261110/README.md": "2c26382d1d27b0cee0477013802f8389897c34eaa49dee83d78049901626530f",
+    "docs/healthtech/audits/ptp-method-first-r2-outcomes-20261110/README.md": "c9b224054dbabc633e8e227a09605af5d0a7ae3fcaeb40086fe6f0d17ecf00b3",
+    "docs/healthtech/audits/ptp-method-first-r2-smoke-20261110/README.md": "3f0113663a26673277ae6ffaa4cdb03eeb93d1bbd84877838b7ac7832344e67a",
+    "docs/healthtech/audits/ptp-method-first-r2-quote-smoke-20261110/README.md": "7f8ae5eb32241a5933f2db7cf25a4cca972d8651c017a6960ca6f798431cad75",
+    "docs/healthtech/audits/ptp-method-first-r2-full-schema-v2-20261110/README.md": "387b2fd2559d281935ac8ec425e01c8cdcb42aba46b5cdb34546b52273de3c41",
+    "docs/healthtech/audits/ptp-method-first-r2-acquisition-20261110/README.md": "0be503da0388d30648e3002eb9418d401e06e35d862773aee9aaf5d0eec20360",
+    "docs/healthtech/research/MEDTECH_TIME_MACHINE_DEV_METHODS_LOG_20261108_EN.md": "763b8965eae7077a6553f4b2e880e8d0e6784268be5f940ffebfb0ea28c59a72",
+    "docs/healthtech/research/PTP_R5_FREEZE_PROPOSAL_DRAFT_20261110_EN.md": "2e765a271b846e66786cb12300dbf96bd6a4f8cb21ff20f2a4f4c2db1e51e288",
+    "docs/healthtech/research/MEDTECH_TIME_MACHINE_BENCHMARK_RULES_DRAFT_20261107_EN.md": "613cfc9e6b009b156989e66b97d4379f94e5da4a9a82e5ddac6de8127ce83cae",
+    "docs/healthtech/research/PTP_METHOD_FIRST_MANUSCRIPT_WORKING_DRAFT_20261110_EN.md": "80e031d0f98f878a9c2372e03a163c1189e55df14e9bd7cf5460c37d5a7e4cf1"
+  },
+  "limitations": "Hashes identify inspected files, not proof of actual benchmark execution, physical isolation or scientific validity.",
+  "snapshot_time_bangkok": "2026-11-10 09:04:16 Bangkok",
+  "snapshot_scope": "Working-tree source snapshots at this checkpoint; base_commit is the previously pushed base. Later handoffs may change; hashes identify these inspected versions."
+}

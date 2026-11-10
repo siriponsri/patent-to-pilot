@@ -1,5 +1,7 @@
 ﻿{
     "method_first_20261110": {
+    "readiness_audit": "37_REQUIREMENTS_MAPPED_NOT_READY_R3_R5",
+    "r5_freeze_proposal": "CONDITIONAL_NOT_FROZEN_NOT_AUTHORIZED",
     "outcome_cost_utilities": "SYNTHETIC_36_TESTS_PASS_RUNTIME_RECONCILIATION_INCOMPLETE",
     "component_binding": "SYNTHETIC_43_TESTS_PASS_ACTUAL_ENCODING_NOT_RUN",
     "factorial_integration": "PREEMBEDDED_SYNTHETIC_44_TESTS_PASS_END_TO_END_INCOMPLETE",

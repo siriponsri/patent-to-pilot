@@ -2,13 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:00:34 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:04:16 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 3c03f6dde5d17738bc7567ac95b650f19babae8d.
-- Outcome/cohort and actual-operation cost utilities:36 tests/lint PASS. Missing/fallback retained; review/retrieval failures block scoring; unknown/empty-ledger costs stay unknown. Audit docs/healthtech/audits/ptp-method-first-r2-outcomes-20261110/README.md. Not complete runtime or measured cost report.
-- Next reserved-attempt/event reconciliation and full R0–R6 acceptance audit. Curator/environment required for actual R1; generation compatibility/resources unresolved, no automatic attempts. Actual encoder/index and fidelity gates remain.
-- No new data/model/GPU job. Earlier failures unchanged. R3/R4/R5/R6 incomplete; policy unadopted.
-- Changed outcomes module/tests/audit, methods log and paired handoff/progress. Preserve owner untracked research handoff; permissions unchanged.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base 6377f25331325d5c2d21efbcc8e709e0a7009ecb.
+- Readiness audit maps31 checklist items +6 package requirements to24 source files; INCOMPLETE/NOT_READY_FOR_R3_OR_R5. Audit docs/healthtech/audits/ptp-method-first-readiness-20261110/README.md. Conditional R5 proposal not frozen/authorized; SACR not eligible for nomination without R3/R4.
+- Next run-manifest/reservation/event reconciliation and complete offline controller with injected synthetic backends. Curator/environment and real R1 remain external gates. Generation compatibility/resources unresolved; no automatic attempts.
+- No tests/jobs/data/model/protected access this writing package. All prior failures retained. No scientific negative or success inferred.
+- Changed acceptance matrix/README, conditional R5 draft, methods log and handoff/progress. Preserve owner untracked handoff; permissions unchanged.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 
