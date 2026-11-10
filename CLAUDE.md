@@ -2,13 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 07:58:12 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:01:26 Bangkok
 
-- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: ee9206bd48fb274db52bf9fc000ccae5ca08dba3.
-- Latest: strict view parser, deterministic compact construction and conservative screening/anchor collection. Audit docs/healthtech/audits/ptp-method-first-r2-views-20261110/README.md. 54 tests pass in 0.76s; Ruff pass. Role-reversal falsification fixture proves lexical checks cannot certify semantics.
-- New vocabulary/uncertain transformations require review; full SACR acceptance policy remains open. Do not substitute extractive-only or anchor-only behavior and call it full SACR. No actual data/model/retrieval/GPU run or new job.
-- Next existing generation path review and orchestration; declared semantic-review/weight/dtype/resource gates before model smoke/pilot. Actual R1 isolation/A03/parity still awaits curator/environment response; no answer inferred.
-- Changes: views/tests, contract checkpoint, audit and paired handoff/progress pointers. Preserve owner untracked handoff, single writer and all test/spend/protocol/release gates.
+- Codex single active writer in chat 01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; method-first long-run goal ACTIVE. Read HANDOFF.md Agent takeover state. Base/last verified pushed commit before this checkpoint: 16c02610aa0067e1e5b9fcb1a5120e8694239436.
+- Latest: one-attempt generation/response adapter and exclusive private reservation, with historical fp16/eager generation path inspection. Audit docs/healthtech/audits/ptp-method-first-r2-generation-20261110/README.md. 62 tests pass in 0.68s; Ruff pass. Fake torch/model/tokenizer contract tests only; local torch absent.
+- No actual Qwen generation/GPU job or benchmark access. Full weight/effective decoder/runtime resource/semantic acceptance gates remain open. Actual R1 isolation/A03/parity still awaits curator/environment response; no answer inferred.
+- Next full weight identity/effective decoding settings and bounded synthetic smoke declaration; no model run before checks. Changes: generation adapter/tests, contract/audit and paired handoff/progress pointers. Preserve owner untracked research handoff and standing single-writer/test/spend/protocol/release gates.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

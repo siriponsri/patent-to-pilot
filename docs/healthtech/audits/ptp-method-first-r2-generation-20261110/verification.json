@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-10 08:01:26 Bangkok",
+  "base_commit": "16c02610aa0067e1e5b9fcb1a5120e8694239436",
+  "status": "SYNTHETIC_GENERATION_ADAPTER_PASS_REAL_NOT_RUN",
+  "tests": 62,
+  "new_cases": 8,
+  "seconds": 0.68,
+  "ruff": "PASS",
+  "torch_backend": "FAKE_NUMPY_CONTRACT_FIXTURE_LOCAL_TORCH_ABSENT",
+  "model_generation": "NOT_RUN",
+  "benchmark_access": false
+}

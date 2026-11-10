@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest generation adapter:** [62 fake-backend/structural tests pass](../docs/healthtech/audits/ptp-method-first-r2-generation-20261110/README.md), exclusive attempts and strict EOS/limit handling. Actual Qwen NOT_RUN. Next full weight/effective decoder identity and bounded smoke declaration; curator/environment gate unchanged.
+
 > **Latest view components:** [54 tests pass](../docs/healthtech/audits/ptp-method-first-r2-views-20261110/README.md). Compact/parser/lexical screening implemented; role-reversal limitation explicit. Full semantic acceptance remains open. Next generation-path/orchestration and declared resource/review gates; no actual experiment.
 
 > **Latest prompt package:** [generation contract](../docs/healthtech/research/SACR_GENERATION_CONTRACT_DRAFT_20261110_EN.md), actual remote config hashes and 39 passing tests. No generation; weights/resource/output gates still open. Next generated-view acceptance and compact view, existing local generation path.
