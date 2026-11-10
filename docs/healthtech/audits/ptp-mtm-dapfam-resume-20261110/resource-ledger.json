@@ -1,9 +1,9 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 259200,
-  "gpu_conservative_charged_seconds": 141.9369698059745,
-  "gpu_remaining_seconds": 259058.06303019403,
-  "charge_basis": "whole SYN003 supervisor interval, not measured GPU busy time",
+  "gpu_conservative_charged_seconds": 182.39198653260246,
+  "gpu_remaining_seconds": 259017.6080134674,
+  "charge_basis": "Whole SYN003 and native baseline v1 supervisor intervals; not measured GPU busy time",
   "model_calls": 1,
   "cpu004_calls": 0,
   "automatic_retries": 0,
@@ -11,5 +11,12 @@
   "fidelity_human_cards_issued": 0,
   "human_cards_total_limit_all_benchmarks_all_configurations": 60,
   "disk_limit_bytes_combined_incremental": 42949672960,
-  "disk_note": "Existing allocations are not reset; no model/vector copies or image downloads in this continuation. Exact cumulative disk admission must be rechecked before staging."
+  "disk_note": "Existing allocations are not reset; no model/vector copies or image downloads in this continuation. Exact cumulative disk admission must be rechecked before staging.",
+  "native_baseline_reservation": {
+    "status": "COMPLETED_NOT_EVALUATED",
+    "actual_supervisor_seconds": 40.455016726627946,
+    "reserved_seconds_released": 14400,
+    "container": "ptp-native-baseline-20261110-v1"
+  },
+  "native_baseline_queries_encoded": 474
 }

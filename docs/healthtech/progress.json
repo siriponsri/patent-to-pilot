@@ -26,7 +26,7 @@
     "status": "OWNER_APPROVED_BOUNDED_CONTINUATION",
     "audit": "docs/healthtech/audits/ptp-st1-takeover-20261110/README.md",
     "packaging": "EXACT_HISTORICAL_BYTES_RECONSTRUCTED_8_TARGETED_TESTS_PASS",
-    "native_dapfam_baseline": "NOT_RUN",
+    "native_dapfam_baseline": "RANKING_COMPLETED_NOT_EVALUATED_40_455_SECONDS",
     "additional_sacr_smoke": "AUTHORIZED_NOT_RUN",
     "sg_feasibility": "AUTHORIZED_WITH_GATES_NOT_RUN",
     "protected_tests": "CLOSED",

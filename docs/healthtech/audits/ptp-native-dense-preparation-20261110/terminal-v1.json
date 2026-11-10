@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETED_NOT_EVALUATED",
+  "wall_seconds": 40.455016726627946,
+  "returncode": 0,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-10T15:12:59.570938878Z",
+    "FinishedAt": "2026-11-10T15:13:38.863887037Z"
+  },
+  "observed_cgroup_peak_bytes": 1960681472,
+  "completion_sha256": "e8491731e484cb6e14ee9c6b39656dab7a17ba9ef0bf4b420244194a4235c062",
+  "retry": false
+}

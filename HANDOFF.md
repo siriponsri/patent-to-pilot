@@ -1,5 +1,13 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Native baseline COMPLETED_NOT_EVALUATED 2026-11-10
+
+Single baseline v1 terminal exit0,40.4550167s supervisor, observed cgroup peak1960681472bytes, noOOM, container stopped/session26022 closed.474dev queries/45336families/188944passages; corpus encode calls0. Terminal/completion receipts in docs/healthtech/audits/ptp-native-dense-preparation-20261110; completion SHA verified. Previous RUNNING state historical. Parent solewriter, no active job/retry. Next verify private ranking/query-vector hashes and evaluate with isolated dev-only evaluator; scores still NOT_RUN, no quality claim. All prior failed attempts retained, GPU charge updated conservatively using whole supervisor time.
+
+## Native baseline RUNNING 2026-11-10
+
+Parent solewriter. Single dispatch session26022 live: container ptp-native-baseline-20261110-v1 PID3856668, supervisor Docker child3856584. Code73f799e, supervisor0354200454bc949863f205ded3e03f133df2cf1f8f1e1be430e8ac78f4110750; last pushedc2fa4be. Isolation readback PASS_BEFORE_START persisted in native-dense audit; runtime/code/deps/model/vectors RO, only output/slot RW, no evaluator/test/network.14400s reserved plus prior141.93697s, no reset. Monitor SAME session/container; never restart on tool timeout. Terminal receipt pending, no scientific score yet.
+
 ## Native baseline dispatch preparation 2026-11-10
 
 Parent solewriter.27 targeted supervisor/runner/ranking/native tests PASS; hard stop and repeated observation failures covered. Remote model weight SHA234ea36a matches, pinned image exists, GPU currently empty. One baseline dispatch approved under existing4h cap; source73f799e runtime code already staged. Supervisor31GiB plus1GiB overhead,8CPU,14400s including5s grace,128MiB output alarm, no network/test/evaluator mounts; actual readback occurs before container start. NOT_STARTED at this checkpoint; next transfer supervisor/hash verify and single dispatch, then monitor same handle. Audit native-staging-admission.json; all prior budgets retained.
