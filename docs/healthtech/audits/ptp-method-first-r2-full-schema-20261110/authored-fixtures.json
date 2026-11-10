@@ -1,0 +1,396 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "profile_version": {
+        "type": "string",
+        "enum": [
+          "sacr-profile-quotes-v1"
+        ]
+      },
+      "query_id": {
+        "type": "string",
+        "enum": [
+          "q1"
+        ]
+      },
+      "source_sha256": {
+        "type": "string",
+        "enum": [
+          "0d06be991e2f1e85b846297da699cad0fe5130e1666f1eb19c899a905fe91eb8"
+        ]
+      },
+      "input_kind": {
+        "type": "string",
+        "enum": [
+          "MTM_P"
+        ]
+      },
+      "blocks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "block_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "relation_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_spans": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "enum": [
+                      "allowed_query"
+                    ]
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "field",
+                  "text"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1
+            },
+            "attached_conditions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "condition_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "raw_text": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "normalized_text": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "numeric",
+                      "qualitative",
+                      "polarity",
+                      "direction",
+                      "material",
+                      "other"
+                    ]
+                  },
+                  "relation_to_block": {
+                    "type": "string",
+                    "enum": [
+                      "explicit",
+                      "uncertain"
+                    ]
+                  },
+                  "source_spans": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "field": {
+                          "type": "string",
+                          "enum": [
+                            "allowed_query"
+                          ]
+                        },
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "field",
+                        "text"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 1
+                  },
+                  "numeric_value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "unit": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "condition_id",
+                  "raw_text",
+                  "normalized_text",
+                  "kind",
+                  "relation_to_block",
+                  "source_spans"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0,
+              "maxItems": 8
+            },
+            "action": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "operand": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "effect": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "block_id",
+            "relation_text",
+            "source_spans",
+            "attached_conditions"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 0,
+        "maxItems": 8
+      },
+      "context_items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "raw_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "action": {
+              "type": "string",
+              "enum": [
+                "retain",
+                "proposed_abstraction",
+                "unresolved"
+              ]
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_spans": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "enum": [
+                      "allowed_query"
+                    ]
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "field",
+                  "text"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1
+            },
+            "replacement": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "raw_text",
+            "action",
+            "reason",
+            "source_spans"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 0
+      },
+      "unknowns": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reason": {
+              "type": "string",
+              "enum": [
+                "ambiguity",
+                "insufficient_text",
+                "unsupported_normalization",
+                "other"
+              ]
+            },
+            "source_spans": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "enum": [
+                      "allowed_query"
+                    ]
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "field",
+                  "text"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "description",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 0
+      },
+      "extraction_status": {
+        "type": "string",
+        "enum": [
+          "valid",
+          "partial",
+          "failed"
+        ]
+      },
+      "failure_reasons": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 0
+      }
+    },
+    "required": [
+      "profile_version",
+      "query_id",
+      "source_sha256",
+      "input_kind",
+      "blocks",
+      "context_items",
+      "unknowns",
+      "extraction_status",
+      "failure_reasons"
+    ],
+    "additionalProperties": false
+  },
+  "cases": [
+    {
+      "name": "nested_conditions",
+      "text": "{\"profile_version\":\"sacr-profile-quotes-v1\",\"query_id\":\"q1\",\"input_kind\":\"MTM_P\",\"source_sha256\":\"0d06be991e2f1e85b846297da699cad0fe5130e1666f1eb19c899a905fe91eb8\",\"extraction_status\":\"valid\",\"failure_reasons\":[],\"context_items\":[],\"unknowns\":[],\"blocks\":[{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]}]}",
+      "expected": true
+    },
+    {
+      "name": "unicode_optional_null",
+      "text": "{\"profile_version\":\"sacr-profile-quotes-v1\",\"query_id\":\"q1\",\"input_kind\":\"MTM_P\",\"source_sha256\":\"0d06be991e2f1e85b846297da699cad0fe5130e1666f1eb19c899a905fe91eb8\",\"extraction_status\":\"valid\",\"failure_reasons\":[],\"context_items\":[],\"unknowns\":[{\"description\":\"ไทย \\\"quoted\\\"\\n🧪\",\"reason\":\"ambiguity\",\"source_spans\":[]}],\"blocks\":[{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":null,\"operand\":null,\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}],\"effect\":null}]}",
+      "expected": true
+    },
+    {
+      "name": "two_blocks_duplicate_ids_postcheck_required",
+      "text": "{\"profile_version\":\"sacr-profile-quotes-v1\",\"query_id\":\"q1\",\"input_kind\":\"MTM_P\",\"source_sha256\":\"0d06be991e2f1e85b846297da699cad0fe5130e1666f1eb19c899a905fe91eb8\",\"extraction_status\":\"valid\",\"failure_reasons\":[],\"context_items\":[],\"unknowns\":[],\"blocks\":[{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]},{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]}]}",
+      "expected": true
+    },
+    {
+      "name": "empty_failed",
+      "text": "{\"profile_version\":\"sacr-profile-quotes-v1\",\"query_id\":\"q1\",\"input_kind\":\"MTM_P\",\"source_sha256\":\"0d06be991e2f1e85b846297da699cad0fe5130e1666f1eb19c899a905fe91eb8\",\"extraction_status\":\"failed\",\"failure_reasons\":[\"authored failure\"],\"context_items\":[],\"unknowns\":[],\"blocks\":[]}",
+      "expected": true
+    },
+    {
+      "name": "block_cap",
+      "text": "{\"profile_version\":\"sacr-profile-quotes-v1\",\"query_id\":\"q1\",\"input_kind\":\"MTM_P\",\"source_sha256\":\"0d06be991e2f1e85b846297da699cad0fe5130e1666f1eb19c899a905fe91eb8\",\"extraction_status\":\"valid\",\"failure_reasons\":[],\"context_items\":[],\"unknowns\":[],\"blocks\":[{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]},{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]},{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]},{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]},{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]},{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]},{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]},{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]},{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]}]}",
+      "expected": false
+    },
+    {
+      "name": "condition_cap",
+      "text": "{\"profile_version\":\"sacr-profile-quotes-v1\",\"query_id\":\"q1\",\"input_kind\":\"MTM_P\",\"source_sha256\":\"0d06be991e2f1e85b846297da699cad0fe5130e1666f1eb19c899a905fe91eb8\",\"extraction_status\":\"valid\",\"failure_reasons\":[],\"context_items\":[],\"unknowns\":[],\"blocks\":[{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]},{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]},{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]},{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]},{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]},{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]},{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]},{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]},{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]}]}",
+      "expected": false
+    },
+    {
+      "name": "wrong_identity",
+      "text": "{\"profile_version\":\"sacr-profile-quotes-v1\",\"query_id\":\"wrong\",\"input_kind\":\"MTM_P\",\"source_sha256\":\"0d06be991e2f1e85b846297da699cad0fe5130e1666f1eb19c899a905fe91eb8\",\"extraction_status\":\"valid\",\"failure_reasons\":[],\"context_items\":[],\"unknowns\":[],\"blocks\":[{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]}]}",
+      "expected": false
+    },
+    {
+      "name": "truncated",
+      "text": "{\"profile_version\":\"sacr-profile-quotes-v1\",\"query_id\":\"q1\",\"input_kind\":\"MTM_P\",\"source_sha256\":\"0d06be991e2f1e85b846297da699cad0fe5130e1666f1eb19c899a905fe91eb8\",\"extraction_status\":\"valid\",\"failure_reasons\":[],\"context_items\":[],\"unknowns\":[],\"blocks\":[{\"block_id\":\"b1\",\"relation_text\":\"Reduce reverse flow of liquid\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"Reduce reverse flow of liquid at low pressure without external electrical power.\"}],\"action\":\"Reduce\",\"operand\":\"liquid\",\"attached_conditions\":[{\"condition_id\":\"c1\",\"raw_text\":\"low pressure\",\"normalized_text\":\"low pressure\",\"kind\":\"qualitative\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"low pressure\"}]},{\"condition_id\":\"c2\",\"raw_text\":\"without external electrical power\",\"normalized_text\":\"without external electrical power\",\"kind\":\"polarity\",\"relation_to_block\":\"explicit\",\"source_spans\":[{\"field\":\"allowed_query\",\"text\":\"without external electrical power\"}]}]}]",
+      "expected": false
+    }
+  ]
+}

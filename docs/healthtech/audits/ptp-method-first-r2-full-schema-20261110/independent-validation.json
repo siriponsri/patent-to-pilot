@@ -1,0 +1,46 @@
+{
+  "validator": "jsonschema 4.26.0 Draft202012Validator",
+  "cases": [
+    {
+      "case": "nested_conditions",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "unicode_optional_null",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "two_blocks_duplicate_ids_postcheck_required",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "empty_failed",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "case": "block_cap",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "condition_cap",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "wrong_identity",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "case": "truncated",
+      "accepted": false,
+      "expected": false
+    }
+  ],
+  "all_expected": true
+}

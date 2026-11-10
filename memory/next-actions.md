@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest full-schema CPU gate FAILED:** 46 tests pass; independent schema8/8, actual tokenizer7/8. Thai character refused and premature EOS allowed. [Audit](../docs/healthtech/audits/ptp-method-first-r2-full-schema-20261110/README.md). Next inspect alphabet/dead-end behavior and explicit Unicode/fail-closed configuration; preserve failed receipt. No third model call yet; actual-data/semantic gates remain.
+
 > **Latest CPU grammar feasibility:** five authored expectations matched; small quote schema only, invented quotes still accepted. No model calls. Follow [bounded plan](../docs/healthtech/research/SACR_STRUCTURED_OUTPUT_PLAN_20261110_EN.md): full schema/EOS/independent tests and explicit integration before one separately declared third smoke; stop generation if that fails. R1 curator and semantic gates remain.
 
 > **Latest SYN-SACR-002:** [invalid JSON preserved](../docs/healthtech/audits/ptp-method-first-r2-quote-smoke-20261110/README.md), one call/no retry; alignment not reached, selective skipped. No live job. Next structured-output feasibility and bounded plan, not continued prompt retries. Actual-data and semantic gates remain.

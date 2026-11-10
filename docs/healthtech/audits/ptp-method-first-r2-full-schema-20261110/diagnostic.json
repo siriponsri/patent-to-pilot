@@ -1,0 +1,10 @@
+{
+  "token109_context": "context_items\":[],\"unknowns\":[{\"description\":\"\u0e44\u0e17\u0e22 \\\"quoted\\\"\\n\ud83e\uddea",
+  "character_level_failure": {
+    "character_index": 260,
+    "context": "[],\"context_items\":[],\"unknowns\":[{\"description\":\"\u0e44\u0e17\u0e22 \\\"quoted\\\"\\n\ud83e\uddea\",\"reason\":\"a",
+    "character": "\u0e44",
+    "can_end": false
+  },
+  "character_level_can_end": false
+}

@@ -2,14 +2,13 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 08:28:17 Bangkok
+## Cross-account checkpoint — 2026-11-10 08:32:30 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Read HANDOFF.md takeover state. Last verified pushed base 5b2cdadb16f5cd44cea481d1290593ecd51fe703.
-- CPU grammar probe: five expectations matched; actual tokenizer, small quote schema only. Invented quote allowed: no grounding/semantic claim. No model calls/weights or benchmark input. Audit docs/healthtech/audits/ptp-method-first-r2-json-grammar-20261110/README.md; probe ruff passed; terminal exit0.
-- Prior SYN-SACR-001 span failure and SYN-SACR-002 JSON failure preserved. No GPU job launched; verify live state before future GPU use.
-- Next full schema/independent and tokenizer fixtures/EOS, explicit filtering integration, then at most one separately declared third engineering attempt; if failed stop generation branch, no automatic fourth attempt. See SACR_STRUCTURED_OUTPUT_PLAN_20261110_EN.md.
-- Actual R1 isolation/A03/parity and semantic gates still open; curator/environment question unanswered. Standing permissions unchanged; no protected evaluation.
-- Changed: probe/audit/plan, methods log, paired handoff/progress pointers. Preserve unrelated owner untracked handoff.
+- Codex single active writer in chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. Read HANDOFF.md takeover state. Last verified pushed base cbf433842f1d969b3a239876bab162c50153144e.
+- Full quote-profile schema: 46 tests/lint passed; independent schema8/8 expected, actual tokenizer7/8. Unicode case FAILED: parser refuses first Thai character260; filter permits premature EOS at token109. Audit docs/healthtech/audits/ptp-method-first-r2-full-schema-20261110/README.md. No model calls/weights, benchmark input or GPU job.
+- CPU probe and diagnostic terminal; original failed receipt preserved. SYN-SACR-001/002 unchanged. Next inspect alphabet/dead-end behavior, explicit Unicode configuration and fail-closed integration, then separately versioned CPU checks. Do not launch third model attempt yet.
+- One bounded third model attempt only after engineering gate/declaration; stop generation branch on failure, no automatic fourth attempt. Actual R1 isolation/A03/parity and semantic gates remain; curator question unanswered.
+- Changes: schema/tests, probe and authored fixtures/failure receipts, audit/methods log and paired handoff/progress. Preserve owner untracked handoff; standing permissions unchanged.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

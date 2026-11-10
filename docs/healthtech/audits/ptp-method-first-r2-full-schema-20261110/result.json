@@ -1,0 +1,95 @@
+{
+  "format": "sacr-full-schema-cpu-probe-v1",
+  "model_calls": 0,
+  "model_weights_loaded": false,
+  "device": "cpu",
+  "lm_format_enforcer_version": "0.11.3",
+  "payload_sha256": "2f3cb1b97ea007eba1a9a5839c46aa15850b662a1c190999b73c41939bb6dbfa",
+  "cases": [
+    {
+      "case": "nested_conditions",
+      "accepted": true,
+      "expected": true,
+      "first_rejected_token": null,
+      "early_eos_indices": [],
+      "end_allowed_eos": [
+        151645
+      ],
+      "pass": true
+    },
+    {
+      "case": "unicode_optional_null",
+      "accepted": false,
+      "expected": true,
+      "first_rejected_token": 109,
+      "early_eos_indices": [
+        109
+      ],
+      "end_allowed_eos": [
+        151645
+      ],
+      "pass": false
+    },
+    {
+      "case": "two_blocks_duplicate_ids_postcheck_required",
+      "accepted": true,
+      "expected": true,
+      "first_rejected_token": null,
+      "early_eos_indices": [],
+      "end_allowed_eos": [
+        151645
+      ],
+      "pass": true
+    },
+    {
+      "case": "empty_failed",
+      "accepted": true,
+      "expected": true,
+      "first_rejected_token": null,
+      "early_eos_indices": [],
+      "end_allowed_eos": [
+        151645
+      ],
+      "pass": true
+    },
+    {
+      "case": "block_cap",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token": 1300,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": true
+    },
+    {
+      "case": "condition_cap",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token": 544,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": true
+    },
+    {
+      "case": "wrong_identity",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token": 15,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": true
+    },
+    {
+      "case": "truncated",
+      "accepted": false,
+      "expected": false,
+      "first_rejected_token": null,
+      "early_eos_indices": [],
+      "end_allowed_eos": [],
+      "pass": true
+    }
+  ],
+  "all_expected": false,
+  "semantic_status": "NOT_ESTABLISHED",
+  "probe_source_sha256": "2c6b8de5f746e7732ad05207d2a420cac1244bbf07cb717a26d0620d57fc88ac"
+}

@@ -331,3 +331,14 @@ format constraints do not ensure grounding. No model calls/weights or benchmark 
 See ../audits/ptp-method-first-r2-json-grammar-20261110/README.md and
 SACR_STRUCTURED_OUTPUT_PLAN_20261110_EN.md for the bounded next engineering gate.
 No third model attempt declared or launched. Earlier failures remain unchanged.
+
+
+### 2026-11-10 08:32:30 Bangkok — Full-schema CPU gate FAILED
+
+Full quote-profile grammar and46 local tests passed. Independent JSON Schema8/8
+expected cases; actual Qwen token filter7/8. Unicode fixture rejected at first Thai
+character260; token filter permits EOS at token109 despite incomplete JSON. Original
+receipt preserved; character diagnostic localizes failure. No model calls/weights
+or benchmark data. See ../audits/ptp-method-first-r2-full-schema-20261110/README.md.
+No SYN-SACR-003 declaration or launch. Inspect alphabet/dead-end and fail-closed
+configuration before a separately versioned CPU check. Prior failures unchanged.
