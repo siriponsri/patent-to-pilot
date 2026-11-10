@@ -1,8 +1,8 @@
 # Source-preserving query representations and relation extraction for cross-domain patent retrieval
 
-Working manuscript, 10 November 2026. Development evidence only; incomplete and
-not ready for submission. SACR generation is in progress at this checkpoint;
-its fidelity, pilot and retrieval results are not available. The restricted
+Working manuscript, updated11 November2026. Development evidence only; incomplete and
+not ready for submission. The first native SACR profile batch timed out with an
+incomplete sample; its fidelity, pilot and retrieval results are not available. The restricted
 tests remain unopened. This draft preserves measured results and failed arms
 without presenting the intended four-system comparison as completed.
 
@@ -128,7 +128,24 @@ Consequently no full-corpus extraction, structured index, accepted graph edge
 or S/G retrieval comparison was run. Semantic fidelity was not assessed.
 Zero sample alias candidates do not establish zero possible corpus links.
 
-### 4.3 Unavailable comparisons
+### 4.3 Incomplete native query-generation run
+
+The first profile stage used an agent-selected2-hour suballocation within the
+owner-approved8-hour combined fidelity budget. It stopped at the declared
+supervisor threshold after6966.461 seconds, without an OOM event. Of the fixed
+100-query sample,45 returned normally, one reserved attempt was interrupted,
+and54 were not started. The normal returns included42 EOS completions and
+three output-limit returns;33 passed structural checks and12 were rejected.
+Structural acceptance is not semantic fidelity. No query was regenerated and
+the sample was not reduced to the completed subset.
+
+This is an incomplete run under the chosen stage allocation, not evidence that
+SACR is generally infeasible or that the full8-hour allowance was exhausted.
+The interrupted attempt retains unknown token/call costs; all supervisor time
+is charged. Any further work must preserve the fixed sample and failure history
+and respect the remaining budget and prohibition on automatic retries.
+
+### 4.4 Unavailable comparisons
 
 SACR fidelity and retrieval results are pending. S/G retrieval effects are
 unavailable because the fixed extraction configuration failed feasibility.
@@ -150,8 +167,13 @@ reliable full-corpus resource forecast. Do not extrapolate it into approval.
 
 SACR engineering history includes a failed source-order smoke and one subsequent
 authorized successful smoke. Their costs remain in the cumulative resource
-ledger. Native profile generation costs must be added from the actual terminal
-receipt; the current reservation is not an observed completed cost.
+ledger. The native profile interval added6966.461 seconds, bringing conservative
+cumulative GPU time to7245.347 seconds. The native run recorded at least45 model
+calls,41127 input tokens and65098 output tokens; an additional reserved attempt
+has unknown counts. Observed peak host cgroup usage was6973775872 bytes.
+These figures neither assign zero cost to the interrupted attempt nor establish
+its peak GPU memory. The full supervisor interval is included despite incomplete
+generation. About6h03m54s remains in the original combined fidelity allowance.
 
 Private source records, per-query outputs and qrels are not published. Public
 reproducibility artifacts include code, source/configuration hashes, aggregate
@@ -195,3 +217,4 @@ pending these outcomes; submission and test access require separate authority.
 - [Solo fidelity freeze](plans/SACR-SOLO-FIDELITY-FREEZE.md)
 - [Paper comparison protocol](plans/DAPFAM-PAPER-COMPARABILITY.md)
 - [Cumulative resource ledger](../audits/ptp-mtm-dapfam-resume-20261110/resource-ledger.json)
+- [Incomplete native SACR profile closeout](../audits/ptp-native-sacr-fidelity-20261110/aggregate-closeout.json)

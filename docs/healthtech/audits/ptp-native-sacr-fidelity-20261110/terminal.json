@@ -1,0 +1,21 @@
+{
+  "status": "TIMEOUT",
+  "wall_seconds": 6966.460590522736,
+  "returncode": 137,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 137,
+    "Error": "",
+    "StartedAt": "2026-11-10T16:15:21.324423973Z",
+    "FinishedAt": "2026-11-10T18:11:27.579545436Z"
+  },
+  "observed_cgroup_peak_bytes": 6973775872,
+  "completion_sha256": null,
+  "retry": false
+}

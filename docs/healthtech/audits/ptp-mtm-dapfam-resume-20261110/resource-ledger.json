@@ -1,10 +1,10 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 259200,
-  "gpu_conservative_charged_seconds": 278.886824848596,
-  "gpu_remaining_seconds": 258921.1131751514,
-  "charge_basis": "Whole SYN003/native baseline/SYN004 supervisor intervals; query encoding recorded separately from generation calls",
-  "model_calls": 2,
+  "gpu_conservative_charged_seconds": 7245.347415371332,
+  "gpu_remaining_seconds": 251954.65258462867,
+  "charge_basis": "Whole SYN003/native baseline/SYN004/native fidelity supervisor intervals; native interrupted attempt token/call counts remain unknown, whole wall charged.",
+  "model_calls": 47,
   "cpu004_calls": 0,
   "automatic_retries": 0,
   "full_dev_started": false,
@@ -37,7 +37,7 @@
     "reserved_seconds_released": 1800
   },
   "native_fidelity_profile_reservation": {
-    "status": "RUNNING",
+    "status": "CLOSED_TIMEOUT_INCOMPLETE_NO_RETRY",
     "seconds": 7200,
     "container": "ptp-native-sacr-fidelity-20261110-v1",
     "fidelity_total_seconds": 28800,
@@ -48,6 +48,17 @@
     "latest_remote_observed_bytes": 348752400,
     "new_disk_reservation_bytes": 536870912,
     "note": "Retained conservative prior disk accounting; no reset. Actual supervisor time charged after termination.",
-    "session_id": 51538
-  }
+    "session_id": 51538,
+    "actual_supervisor_seconds": 6966.460590522736,
+    "reserved_seconds_released": 7200,
+    "known_model_calls": 45,
+    "unknown_execution_attempts": 1,
+    "completed_queries": 45,
+    "not_started_queries": 54,
+    "terminal_sha256": "b78281166cd0ce0021e96e745ade1e260cc45ab763cf7d1afbece37e8a805ec4"
+  },
+  "model_calls_count_is_lower_bound": true,
+  "generation_attempts_with_unknown_call_token_costs": 1,
+  "fidelity_generation_charged_seconds": 6966.460590522736,
+  "fidelity_generation_remaining_seconds": 21833.539409477264
 }

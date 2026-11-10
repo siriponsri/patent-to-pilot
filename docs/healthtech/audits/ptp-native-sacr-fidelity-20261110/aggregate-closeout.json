@@ -1,0 +1,29 @@
+{
+  "status": "INCOMPLETE_PROFILE_COHORT_NO_PASS",
+  "planned_queries": 100,
+  "attempt_directories": 46,
+  "not_started": 54,
+  "normal_return_states": {
+    "EOS_COMPLETE": 42,
+    "OUTPUT_LIMIT": 3,
+    "RESERVED_UNKNOWN_EXECUTION": 1
+  },
+  "assessment_states": {
+    "STRUCTURAL_RESULT_FIDELITY_PENDING": 33,
+    "REJECTED_GENERATED_FAMILY": 12
+  },
+  "unassessed_normal_returns": 0,
+  "unknown_execution_attempts": 1,
+  "known_model_calls": 45,
+  "known_input_tokens": 41127,
+  "known_output_tokens": 65098,
+  "cost_counts_are_lower_bounds": true,
+  "gpu_charge_seconds": 6966.460590522736,
+  "observed_cgroup_peak_bytes": 6973775872,
+  "supervisor_terminal_sha256": "b78281166cd0ce0021e96e745ade1e260cc45ab763cf7d1afbece37e8a805ec4",
+  "retry": false,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "protected_test_access": false,
+  "limitation": "Aggregate byte/cost binding only; not independent execution or semantic attestation",
+  "closeout_tool_sha256": "e68a846fc34d5aa2087c35729f371b948d082586592a79d27db5420c1463448a"
+}

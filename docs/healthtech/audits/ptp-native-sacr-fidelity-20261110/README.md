@@ -1,10 +1,25 @@
 # Native SACR fidelity profile attempt
 
-Status at this checkpoint: RUNNING, not a fidelity or retrieval result.
-Container `ptp-native-sacr-fidelity-20261110-v1`, attached session51538.
-Use the same handle or inspect the same container; never redispatch because a
-status connection times out. The live aggregate observer is `status-v2.py` in
-the remote job directory. It exposes no source text or query identifiers.
+Status: TIMEOUT / INCOMPLETE_PROFILE_COHORT_NO_PASS. Container
+`ptp-native-sacr-fidelity-20261110-v1` exited137 at01:11:27 Bangkok on11 November2026;
+OOMKilled was false. The SSH session51538 had already closed after connection
+loss; the independent supervisor continued and enforced its original bound.
+Never restart that attempt or reuse its output directory.
+
+The supervisor interval was6966.460590522736 seconds, all charged once to both
+the cumulative GPU ledger and shared fidelity budget. Of100 planned queries,
+45 returned normally (42EOS,3OUTPUT_LIMIT),46 attempt directories exist,
+one reserved attempt has unknown execution/token costs, and54 were not started.
+The normal returns comprise33 structurally valid results awaiting semantic
+review and12 rejected families. Known counts are45 model calls,41127 input
+tokens and65098 output tokens; they are lower bounds because of the interrupted
+attempt. Peak observed host cgroup usage was6973775872 bytes, not GPU memory.
+
+The reviewed closeout used a fresh terminal Docker observation and revalidated
+all normal-return records through the canonical binder. Terminal SHA256:
+`b78281166cd0ce0021e96e745ade1e260cc45ab763cf7d1afbece37e8a805ec4`.
+No semantic fidelity PASS, human cards, view/critic generation, pilot or new
+retrieval score resulted. The frozen100-query sample remains unchanged.
 
 ## Authority, allocation and provenance
 
@@ -63,5 +78,11 @@ the canonical receipt suite,40 tests passed. The reviewer rechecked the repair.
 See [closeout tool pin](closeout-tool.json); the earlier transferred helper is
 retained, and only `summarize-reviewed.py` is intended for terminal accounting.
 
-No terminal result or full-stage cost is claimed yet. Consult the newest
-HANDOFF/INDEX-PLAN checkpoint for the latest observation.
+Terminal evidence: [supervisor](terminal.json), [fresh observed state](observed-terminal-state.json),
+[aggregate closeout](aggregate-closeout.json). Remaining shared fidelity budget
+is21833.539409477264 seconds (about6h03m54s); cumulative GPU charge is
+7245.347415371332 seconds. Known cumulative generation calls are47 plus one
+attempt with unknown call/token counts. There has been no automatic retry.
+Preparing continuation for never-started queries does not authorize regenerating
+the interrupted query or rerunning the45 completed queries. Consult the newest
+HANDOFF/INDEX-PLAN checkpoint for the next contract and any owner decision.
