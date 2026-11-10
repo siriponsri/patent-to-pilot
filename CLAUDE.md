@@ -2,12 +2,12 @@
 
 This file is a project-local continuation guide. `AGENTS.md`, the current owner instruction, and the canonical HealthTech audit records remain authoritative. Do not treat this file as evidence that the research goal is complete.
 
-## Cross-account checkpoint — 2026-11-10 09:20:17 Bangkok
+## Cross-account checkpoint — 2026-11-10 09:23:10 Bangkok
 
-- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md owns detailed state. Last verified pushed base 73565c728238f2d3cf0ae98bf7e263b196f9abe8.
-- Seven-source primary prior-art comparison complete at bounded note scope; non-exhaustive and some sources preview-only. Audit docs/healthtech/audits/ptp-method-first-prior-art-20261110/README.md. No novelty or retrieval advantage established; R6 draft updated.
-- Documentation-only checkpoint; JSON/local links checked, independent review NOT_RUN. No new jobs/model calls; remote live state not re-polled. Previous failures preserved; no automatic generation attempts.
-- Next controller/source/manifest gap inspection and permitted preparatory bindings. Actual R1 isolation/curator, generation, fidelity and R3/R4 gates open. R5 not authorized. Paired updates mandatory; preserve owner untracked handoff.
+- Codex single active writer, chat01a1c2b7-8897-7ea1-b7bb-ad7e8a449775; Goal ACTIVE. HANDOFF.md detailed state. Last verified pushed base e45de84883f7ad5f12d8c5628c45c93ec20ee8a0.
+- Controller gap inspection found malformed cohort accepted before journal allocation; fixed with12 regression cases (6 failures before repair).48 related tests and Ruff PASS. Audit docs/healthtech/audits/ptp-method-first-controller-gap-20261110/README.md.
+- Six integration boundaries remain; next immutable execution manifest linking cohort/source/model/encoder/index/caps before allocation, with authored fixtures. No complete production SACR controller or actual scientific run.
+- No new jobs/model calls; prior failures preserved, remote live state not re-polled. Curator/R1/generation/fidelity gates unchanged, R5 not authorized. Preserve owner untracked handoff; paired publication required.
 
 ## Handoff rule (owner rule, 6 Nov; extended 10 Nov 2026; always in force)
 

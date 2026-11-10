@@ -83,6 +83,28 @@ def test_test_manifest_refused_before_directory_creation(tmp_path):
     assert not (tmp_path / 'run').exists()
 
 
+@pytest.mark.parametrize('queries', [[], ['q', 'q'], 'q', [' q'], [True], [[]]])
+def test_invalid_cohort_refused_before_any_reservation(tmp_path, queries):
+    manifest = fixture()['manifest']
+    manifest['query_ids'] = queries
+    if queries == []:
+        manifest['slots'] = []
+    with pytest.raises(InputBoundaryError):
+        DevStageJournal(tmp_path / 'run', manifest, expected_manifest_sha256=digest(manifest))
+    assert not (tmp_path / 'run').exists()
+
+
+@pytest.mark.parametrize('slots', [None, {}, 'profile', [None], [
+    {'attempt_id': 'x', 'query_id': [], 'stage': 'profile'}], [
+    {'attempt_id': 'x', 'query_id': 'q', 'stage': []}]])
+def test_malformed_slots_refused_with_boundary_error(tmp_path, slots):
+    manifest = fixture()['manifest']
+    manifest['slots'] = slots
+    with pytest.raises(InputBoundaryError):
+        DevStageJournal(tmp_path / 'run', manifest, expected_manifest_sha256=digest(manifest))
+    assert not (tmp_path / 'run').exists()
+
+
 def test_authored_profile_to_real_cpu_kernels_with_injected_embeddings(tmp_path):
     import numpy as np
     from patent_to_pilot.research.sacr_components import compile_components, bind_component_vectors, vector_digest

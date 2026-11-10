@@ -1,5 +1,7 @@
 # Next actions — HealthTech
 
+> **Latest controller inspection:** malformed cohort rejected before journal allocation;48 related tests pass. [Audit](../docs/healthtech/audits/ptp-method-first-controller-gap-20261110/README.md). Next immutable execution-manifest binding using authored fixtures; actual R1/generation/fidelity gates unchanged.
+
 > **Latest prior-art comparison:** seven primary sources and implemented operator boundaries; non-exhaustive, no novelty claim. [Audit](../docs/healthtech/audits/ptp-method-first-prior-art-20261110/README.md). Next controller/source/manifest gap inspection. R1/generation/fidelity gates unchanged.
 
 > **Latest durable stage journal:**181 SACR tests pass; authored/injected-vector six-stage integration and byte-checked receipts. [Audit](../docs/healthtech/audits/ptp-method-first-r2-journal-20261110/README.md). Not production SACR. Next primary prior-art comparison; actual source/controller/R1/generation/fidelity gates remain.

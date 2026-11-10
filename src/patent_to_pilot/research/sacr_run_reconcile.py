@@ -18,10 +18,21 @@ def validate_plan(manifest, *, expected_manifest_sha256):
             digest(manifest) != expected_manifest_sha256):
         raise InputBoundaryError('wrong run plan identity or non-dev split')
     identifier(manifest['run_id'])
+    queries = manifest['query_ids']
+    if type(queries) is not list or not queries:
+        raise InputBoundaryError('expected cohort must be a nonempty list')
+    for query in queries:
+        identifier(query)
+    if len(set(queries)) != len(queries):
+        raise InputBoundaryError('expected cohort contains duplicate identifiers')
+    if type(manifest['slots']) is not list:
+        raise InputBoundaryError('attempt slots must be a list')
     slots, pairs = {}, set()
     for slot in manifest['slots']:
         exact_fields(slot, {'attempt_id', 'query_id', 'stage'})
         identifier(slot['attempt_id'])
+        identifier(slot['query_id'])
+        identifier(slot['stage'])
         pair = (slot['query_id'], slot['stage'])
         if (slot['attempt_id'] in slots or pair in pairs or
                 slot['query_id'] not in manifest['query_ids'] or slot['stage'] not in STAGES):
