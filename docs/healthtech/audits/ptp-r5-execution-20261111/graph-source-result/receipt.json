@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE_PRIVATE_SOURCE_ATTACHMENT_NOT_FIDELITY",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "retry": false,
+  "source_units": 100,
+  "private_output_bytes": 723886,
+  "private_output_sha256": "9152accfef878636852027d512665b7927f9c48543d2da0834ed3b35d6f5a374",
+  "corpus_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+  "extraction": "NOT_RUN",
+  "semantic_fidelity": "NOT_ASSESSED",
+  "wall_seconds": 1.8164133649997893,
+  "worker_peak_rss_bytes": 24489984
+}

@@ -1,0 +1,13 @@
+{
+  "status": "DECLARED_CPU_DIAGNOSIS",
+  "authority": "Owner current request to diagnose and test grammar",
+  "fixture_sha256": "0963a0c22e046c626cd4bb041dfc9e3fc770c0f7b969c4c332b5c72e02dfba6a",
+  "worker_sha256": "8c9a8e54f944b6864385301b78f642f5a63cbf3c2493c630e5481e41ee53e588",
+  "cpu_seconds": 60,
+  "wall_seconds": 90,
+  "cpu_affinity_count": 2,
+  "ram_bytes": 2147483648,
+  "no_model_tokenizer_corpus_queries_qrels_test": true,
+  "no_remote_files_written": true,
+  "retry": false
+}

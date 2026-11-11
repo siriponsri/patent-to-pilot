@@ -1,0 +1,15 @@
+{
+  "status": "STAGING_SOURCE_PINS_PASS",
+  "transport": {
+    "census.tar": {
+      "bytes": 1587200,
+      "sha256": "d7f34d2576d1cb6a14d29e30acadc9450b8744ba8976c180998da134e1044393"
+    },
+    "smoke.tar": {
+      "bytes": 1658880,
+      "sha256": "3a08cd1765235b0fc11ceb0e071107beb5d38983475365f545272412878713d1"
+    }
+  },
+  "ledger_snapshot_sha256": "753a12f1f7d68f933ae6055c57751d290ab6e34e4c16d089ec697a91af337a68",
+  "reservation": "Existing1800sGPU/fidelity and1GiB reused, no reset"
+}

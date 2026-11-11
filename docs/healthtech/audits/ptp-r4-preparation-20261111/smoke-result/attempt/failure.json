@@ -1,0 +1,6 @@
+{
+  "exception_type": "InputBoundaryError",
+  "retry": false,
+  "wall_seconds": 194.883158391,
+  "costs": "INSPECT_ATTEMPTS_AND_WHOLE_SUPERVISOR"
+}

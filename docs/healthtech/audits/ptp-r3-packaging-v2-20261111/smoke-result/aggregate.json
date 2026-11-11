@@ -1,0 +1,55 @@
+{
+  "status": "FAIL_SYNTHETIC_PROFILE_ACCEPTANCE_NO_RETRY",
+  "runtime_status": "UNASSESSABLE",
+  "normal_return_status": "EOS_COMPLETE",
+  "diagnosis": "role evidence outside relation evidence",
+  "rejection_replay": "PASS_SAME_REJECTION",
+  "source_span_violations": [
+    {
+      "block": "block-0",
+      "role": "quantity",
+      "token_range": [
+        29,
+        30
+      ],
+      "covered_by_evidence_union": false
+    },
+    {
+      "block": "block-0",
+      "role": "unit",
+      "token_range": [
+        31,
+        32
+      ],
+      "covered_by_evidence_union": false
+    },
+    {
+      "block": "block-1",
+      "role": "unit",
+      "token_range": [
+        31,
+        32
+      ],
+      "covered_by_evidence_union": false
+    }
+  ],
+  "block_evidence_counts": [
+    16,
+    16
+  ],
+  "model_calls": 1,
+  "input_tokens": 2387,
+  "output_tokens": 3395,
+  "whole_wall_seconds": 320.3040725919418,
+  "generation_wall_seconds": 261.6218827958219,
+  "peak_gpu_allocated_bytes": 18331955712,
+  "controller_peak_rss_bytes": 20021248,
+  "observed_worker_peak_lower_bound_bytes": 1366163456,
+  "final_worker_peak": "NOT_MEASURED",
+  "generic": "NOT_RUN",
+  "critic": "NOT_RUN",
+  "semantic_fidelity": "NOT_PASSED",
+  "native_generation_pilot_retrieval": "NOT_RUN",
+  "raw_generation_sha256": "3829666c5c01afbde5ed986358ffb6522af054e48875fa5981bcdf8663601fcc",
+  "retry": false
+}

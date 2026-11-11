@@ -1,0 +1,16 @@
+{
+  "status": "PASS_CPU_PREFLIGHT_NOT_MODEL_OR_FIDELITY",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "retry": false,
+  "grammar_fixture_count": 6,
+  "input_tokens": {
+    "profile": 1555,
+    "generic": 335,
+    "critic_authored_minimal": 511
+  },
+  "critic_limit": "Minimal authored critic only; real generated critic prompt still must pass runtime8192cap",
+  "tokenizer_class": "Qwen2TokenizerFast",
+  "wall_seconds": 9.676497506999993,
+  "worker_peak_rss_bytes": 859004928
+}

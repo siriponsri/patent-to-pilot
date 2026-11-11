@@ -1,0 +1,16 @@
+{
+  "status": "APPROVED",
+  "received_at": "2026-11-11T14:39:44.381829+07:00",
+  "source": "Owner reply call_12d552cdf34f41599caeed36e2ae3239: approved one census replacement and unused smoke under corrected packaging",
+  "declarations_sha256": {
+    "census-declaration.json": "9964b0daefb28c350a3e216c4fc8b789393378acfad0fba91b3061902f7e1ef7",
+    "sacr-smoke-declaration.json": "7b329b59536f208b4b9ebeb3140c6a37817b532f9e31ac83603fe75ea41293ac"
+  },
+  "census_replacement_attempts": 1,
+  "smoke_maximum_calls": 3,
+  "sequential": true,
+  "retry": false,
+  "human_cards": 0,
+  "neo4j_writes": false,
+  "combined_disk_cap_bytes": 1073741824
+}

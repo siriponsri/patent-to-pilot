@@ -1,0 +1,92 @@
+{
+  "status": "CPU_ENGINEERING_READY_FOR_OWNER_LONG_RUN_DECISION",
+  "jobs": [
+    {
+      "name": "initial-token",
+      "whole_wall_seconds": 179.71601679299988,
+      "exit_code": 0,
+      "oom_killed": false,
+      "worker_status": "FAIL_TOKEN_CALLBACK_MATRIX",
+      "peak_rss_bytes": 1158594560,
+      "terminal_sha256": "a184b633750ce7d36c64bac9c2b9ec129aed469561cda08dfdf7f55ff40d3b41",
+      "model_calls": 0,
+      "gpu_seconds": 0
+    },
+    {
+      "name": "targeted-diagnosis",
+      "whole_wall_seconds": 41.35685025800012,
+      "exit_code": 0,
+      "oom_killed": false,
+      "worker_status": "FAIL_TOKEN_CALLBACK_MATRIX",
+      "peak_rss_bytes": 1003163648,
+      "terminal_sha256": "69f2e1a126d985fcc05beb98aa404416fbbe2c43d4ca6a0e109055c830ffd4de",
+      "model_calls": 0,
+      "gpu_seconds": 0
+    },
+    {
+      "name": "boundary-v1",
+      "whole_wall_seconds": 395.08482875000004,
+      "exit_code": 137,
+      "oom_killed": false,
+      "worker_status": "NO_FINAL_RECEIPT_CONTROLLED_RESOURCE_STOP",
+      "peak_rss_bytes": "UNKNOWN",
+      "terminal_sha256": "f4ec3019de8a0dc20fab7baa0112a0cee8df755adcf93ac95576341296db0a68",
+      "model_calls": 0,
+      "gpu_seconds": 0
+    },
+    {
+      "name": "boundary-v2",
+      "whole_wall_seconds": 173.60999923600002,
+      "exit_code": 137,
+      "oom_killed": false,
+      "worker_status": "NO_FINAL_RECEIPT_CONTROLLED_RESOURCE_STOP",
+      "peak_rss_bytes": "UNKNOWN",
+      "terminal_sha256": "a445f3c64169fde46ad1cb8b6b74bec86a910b0d7505386fe157dbcdfb28e542",
+      "model_calls": 0,
+      "gpu_seconds": 0
+    },
+    {
+      "name": "boundary-v3",
+      "whole_wall_seconds": 276.9120892669998,
+      "exit_code": 0,
+      "oom_killed": false,
+      "worker_status": "PASS_TOKEN_CALLBACK_MATRIX",
+      "peak_rss_bytes": 1204183040,
+      "terminal_sha256": "97ad3e1a32289e9fb70dfde1373eee2433fd9c67ef18fe4f6d6e666bdc84b850",
+      "model_calls": 0,
+      "gpu_seconds": 0
+    },
+    {
+      "name": "exact-smoke-source",
+      "whole_wall_seconds": 50.433973929999866,
+      "exit_code": 0,
+      "oom_killed": false,
+      "worker_status": "PASS_TOKEN_CALLBACK_MATRIX",
+      "peak_rss_bytes": 997257216,
+      "terminal_sha256": "c5f006dabafde1b4c1e8e8ba7371cb1ed35210f6555cf098aca2bf032fb88e6e",
+      "model_calls": 0,
+      "gpu_seconds": 0
+    }
+  ],
+  "container_cpu_jobs_whole_wall_seconds": 1117.1137582339998,
+  "character_probe_whole_wall_seconds": 2.062999999965541,
+  "new_gpu_seconds": 0,
+  "new_fidelity_generation_seconds": 0,
+  "new_model_calls": 0,
+  "final_token_matrix": "35/35 PASS",
+  "exact_smoke_source": "1/1 PASS",
+  "local_tests": {
+    "passed": 86,
+    "failed": 0,
+    "pytest_seconds": 2.11
+  },
+  "remote_logical_bytes": 19252314,
+  "private_sample_bytes": 609543,
+  "card_ledger_sha256": "fcdbc86848d2694642463829ba0c24376ce860385fca6d0dcfca174ddefe51d7",
+  "cards_issued": 0,
+  "protected_tests": "CLOSED",
+  "retrieval": "NOT_RUN",
+  "historical_r4_failure_cause": "UNKNOWN",
+  "native_fidelity": "NOT_RUN",
+  "source_attachment": "IMPLEMENTED_FIXTURE_TESTED_NOT_RUN_ON_CORPUS"
+}

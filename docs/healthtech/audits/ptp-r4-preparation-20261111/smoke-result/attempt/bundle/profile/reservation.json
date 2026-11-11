@@ -1,0 +1,11 @@
+{
+  "status": "RESERVED",
+  "messages_sha256": "21ca5bedb60e8106f68d9a42cbc8da4cc413906c1947843ca12f0b20c37e2790",
+  "limits": {
+    "input_tokens": 8192,
+    "output_tokens": 4096,
+    "context_tokens": 40960,
+    "response_bytes": 65536
+  },
+  "retry": false
+}

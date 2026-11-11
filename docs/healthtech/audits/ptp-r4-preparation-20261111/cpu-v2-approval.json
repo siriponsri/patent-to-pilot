@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "owner_reply": "call_34f7b95ac89345738dc5d12efafd019d",
+  "declarations_sha256": {
+    "cpu-v2-declaration.json": "adbd722fca463e1cb36367cab190e7e278ec95164ff6d61d224ad5a03a310de3"
+  },
+  "replacement_attempts": 1,
+  "retry": false,
+  "scope": "CPU600s/2CPU/2GiB with64MiB tmpfs; unused smoke conditional on PASS"
+}

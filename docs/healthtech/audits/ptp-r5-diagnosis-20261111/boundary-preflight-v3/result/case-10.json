@@ -1,0 +1,1 @@
+{"case": "role-upper-bound", "expected": false, "accepted": false, "matches": true, "tokens": 160, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 6.206784942000013, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06761120400005893}

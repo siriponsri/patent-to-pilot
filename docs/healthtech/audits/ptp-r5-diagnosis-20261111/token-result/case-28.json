@@ -1,0 +1,1 @@
+{"case": "condition-outside-source", "expected": false, "accepted": false, "matches": true, "tokens": 234, "reason": "TOKEN_NOT_ALLOWED"}

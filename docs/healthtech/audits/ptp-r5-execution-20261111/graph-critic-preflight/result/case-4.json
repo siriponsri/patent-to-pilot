@@ -1,0 +1,1 @@
+{"case": "unknown-artifact-forbidden", "expected": false, "accepted": false, "matches": true, "tokens": 176, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 0.3393154939994929, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.07597164599974349}

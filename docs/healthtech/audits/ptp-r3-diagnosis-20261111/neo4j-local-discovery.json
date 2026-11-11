@@ -1,0 +1,28 @@
+{
+  "status": "EXISTING_INSTALLATION_FOUND_LIVE_DB_NOT_VERIFIED",
+  "observed_at": "2026-11-11T13:45:41.116282+07:00",
+  "installed_kernel_jar_version": "2026.10.2",
+  "database_directory_names": [
+    "neo4j",
+    "system"
+  ],
+  "java_exe_processes": 0,
+  "javaw_exe_processes": 0,
+  "neo4j_desktop_exe_processes": 0,
+  "ports": [
+    {
+      "port": 7474,
+      "connect_ex": 10035
+    },
+    {
+      "port": 7687,
+      "connect_ex": 10035
+    }
+  ],
+  "note": "connect_ex10035 is not proof of terminal state; no live database connection established",
+  "mcp_tools_exposed": false,
+  "database_content_read": false,
+  "credentials_read_or_written": false,
+  "configuration_changed": false,
+  "instance_started": false
+}

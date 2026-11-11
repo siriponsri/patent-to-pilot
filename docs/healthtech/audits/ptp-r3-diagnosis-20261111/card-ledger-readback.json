@@ -1,0 +1,21 @@
+{
+  "status": "PASS_EXISTING_CHAIN_UNCHANGED",
+  "ledger_sha256": "fcdbc86848d2694642463829ba0c24376ce860385fca6d0dcfca174ddefe51d7",
+  "snapshot": {
+    "issued_total": 0,
+    "by_pool": {
+      "SACR": {
+        "escalation": 0,
+        "sentinel": 0
+      },
+      "SG": {
+        "escalation": 0,
+        "sentinel": 0
+      }
+    },
+    "head_sha256": "d4cef98ef06375d51ff5225510b57e969fe0cce38eb0d06ded25d9b38aee2076",
+    "events": 1
+  },
+  "new_cards": 0,
+  "model_calls": 0
+}

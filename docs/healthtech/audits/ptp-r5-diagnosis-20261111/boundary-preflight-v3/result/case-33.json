@@ -1,0 +1,1 @@
+{"case": "too-many-blocks", "expected": false, "accepted": false, "matches": true, "tokens": 720, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 45.55465052399995, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06809072100031699}

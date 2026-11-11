@@ -1,0 +1,29 @@
+{
+  "status": "FROZEN_NOT_AUTHORIZED_NOT_DISPATCHED",
+  "declarations": {
+    "census-declaration.json": "9964b0daefb28c350a3e216c4fc8b789393378acfad0fba91b3061902f7e1ef7",
+    "sacr-smoke-declaration.json": "7b329b59536f208b4b9ebeb3140c6a37817b532f9e31ac83603fe75ea41293ac"
+  },
+  "packaging_fixtures": "12PASS",
+  "worker_code_parity": "PASS only run IDs changed",
+  "syntax": "4PASS",
+  "read_only_live_probe": {
+    "status": "PASS",
+    "engine_version": "29.8.2",
+    "api_version": "1.56",
+    "minimum_api": "1.40",
+    "selected_api": "1.47",
+    "address_space_cap_bytes": 536870912,
+    "peak_process_rss_bytes": 18821120,
+    "elapsed_seconds": 0.010943097062408924,
+    "container_mutations": 0,
+    "model_calls": 0
+  },
+  "source_identity": "All old source pins unchanged; only new packaging files added",
+  "smoke_generation": "NOT_RUN",
+  "census_extraction": "NOT_RUN",
+  "retry": false,
+  "combined_added_disk_cap_bytes": 1073741824,
+  "previous_failed_stage_preserved": true,
+  "gpu_fidelity_reservation": "Reuse existing1800second reservation; no additional model attempt"
+}

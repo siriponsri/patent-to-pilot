@@ -1,0 +1,1 @@
+{"case": "role-fraction-reversed-fields", "expected": false, "accepted": false, "matches": true, "tokens": 162, "reason": "TOKEN_NOT_ALLOWED"}

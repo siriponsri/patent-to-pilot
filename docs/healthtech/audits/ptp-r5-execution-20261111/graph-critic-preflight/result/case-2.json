@@ -1,0 +1,1 @@
+{"case": "uncertain-exact-quoted-finding", "expected": true, "accepted": true, "matches": true, "tokens": 176, "reason": "COMPLETE", "case_wall_seconds": 1.462041660000068, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06725227399965661}

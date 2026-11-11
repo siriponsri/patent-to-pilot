@@ -1,0 +1,1 @@
+{"case": "context-0-populated", "expected": true, "accepted": true, "matches": true, "tokens": 270, "reason": "COMPLETE", "case_wall_seconds": 48.79271673400035, "boundary_token_count": 2497, "boundary_trie_nodes": 5400, "boundary_build_seconds": 0.0789373079996949}

@@ -1,0 +1,67 @@
+{
+  "status": "FAIL_TOKEN_CALLBACK_MATRIX",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "cases": [
+    {
+      "case": "context-0-reversed-fields",
+      "expected": true,
+      "accepted": false,
+      "matches": false,
+      "tokens": 269,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "last_token_index": 106,
+      "next_token": 10465,
+      "prefix": "{\"version\": \"sacr-evidence-roles-v3\", \"query_id\": \"grammar-fixture\", \"source_sha256\": \"7b2915156558e0f3f0db382becc16bc5312bfdbd04e1bf49ebf390daa1832418\", \"blocks\": [{\"abstraction\": \"A \\\"quoted\\\" mechanism \\\\ path \u0e44\u0e17\u0e22 \ud83e\uddea"
+    },
+    {
+      "case": "context-0-reversed-fields-null",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 257,
+      "reason": "COMPLETE",
+      "last_token_index": 256,
+      "next_token": 13989,
+      "prefix": "{\"version\": \"sacr-evidence-roles-v3\", \"query_id\": \"grammar-fixture\", \"source_sha256\": \"7b2915156558e0f3f0db382becc16bc5312bfdbd04e1bf49ebf390daa1832418\", \"blocks\": [{\"abstraction\": null, \"conditions\": [{\"id\": \"c1\", \"kind\": \"numeric\", \"attachment\": \"explicit\", \"evidence\": [{\"field\": \"allowed_query\", \"start_token\": 8, \"end_token\": 10}], \"attachment_evidence\": [{\"field\": \"allowed_query\", \"start_token\": 5, \"end_token\": 12}]}], \"roles\": {\"action\": [{\"field\": \"allowed_query\", \"start_token\": 0, \"end_token\": 5}], \"unit\": [{\"field\": \"allowed_query\", \"start_token\": 4, \"end_token\": 5}]}, \"evidence\": [{\"field\": \"allowed_query\", \"start_token\": 0, \"end_token\": 5}], \"id\": \"b1\"}]}"
+    },
+    {
+      "case": "context-0-reversed-fields-ascii",
+      "expected": true,
+      "accepted": false,
+      "matches": false,
+      "tokens": 259,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "last_token_index": 96,
+      "next_token": 10465,
+      "prefix": "{\"version\": \"sacr-evidence-roles-v3\", \"query_id\": \"grammar-fixture\", \"source_sha256\": \"7b2915156558e0f3f0db382becc16bc5312bfdbd04e1bf49ebf390daa1832418\", \"blocks\": [{\"abstraction\": \"A mechanism"
+    },
+    {
+      "case": "context-0-reversed-fields-unicode",
+      "expected": true,
+      "accepted": false,
+      "matches": false,
+      "tokens": 264,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "last_token_index": 101,
+      "next_token": 10465,
+      "prefix": "{\"version\": \"sacr-evidence-roles-v3\", \"query_id\": \"grammar-fixture\", \"source_sha256\": \"7b2915156558e0f3f0db382becc16bc5312bfdbd04e1bf49ebf390daa1832418\", \"blocks\": [{\"abstraction\": \"A mechanism \u0e44\u0e17\u0e22 \ud83e\uddea"
+    },
+    {
+      "case": "context-0-reversed-fields-escape",
+      "expected": true,
+      "accepted": false,
+      "matches": false,
+      "tokens": 262,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "last_token_index": 99,
+      "next_token": 10465,
+      "prefix": "{\"version\": \"sacr-evidence-roles-v3\", \"query_id\": \"grammar-fixture\", \"source_sha256\": \"7b2915156558e0f3f0db382becc16bc5312bfdbd04e1bf49ebf390daa1832418\", \"blocks\": [{\"abstraction\": \"A \\\"quoted\\\" mechanism"
+    }
+  ],
+  "retry": false,
+  "input_tokens": 887,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "wall_seconds": 39.532151756000076,
+  "worker_peak_rss_bytes": 1003163648
+}

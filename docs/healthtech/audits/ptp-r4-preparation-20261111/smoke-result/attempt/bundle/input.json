@@ -1,0 +1,20 @@
+{
+  "query_id": "synthetic-r4-001",
+  "source_sha256": "3118adc166e1841e48fe5a178f9ca68a64e6805ebce4d31d95456fb8fc8b8863",
+  "execution": {
+    "run_id": "ptp-sacr-r4-synthetic-smoke-20261111-v1",
+    "profile_contract": "sacr-context-constrained-v4-bound",
+    "identities": {
+      "generator_manifest": "5b4f4a7317919979affc88df9837a6741ffa6715bf39d9516fe6cd4816ac9ac2",
+      "prompt_manifest": "ff16e1726898092d90fb7662719c051b97157575d0112d833b431baf73c3a214"
+    },
+    "limits": {
+      "input_tokens": 8192,
+      "output_tokens": 4096,
+      "context_tokens": 40960,
+      "response_bytes": 65536
+    }
+  },
+  "generic_prompt_sha256": "1344e14ca9e63103527cb5b67e0b2ab1ef3ab2e7cca3a4c8fbea0f4d22b17bcc",
+  "retry": false
+}

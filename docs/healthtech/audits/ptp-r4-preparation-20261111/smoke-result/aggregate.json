@@ -1,0 +1,19 @@
+{
+  "status": "FAILED_PROFILE_INFRA_OR_INTEGRITY_UNKNOWN_NO_RETRY",
+  "whole_wall_seconds": 198.97402946600002,
+  "exception_type": "InputBoundaryError",
+  "exception_message": "NOT_RETAINED",
+  "model_calls": "UNKNOWN",
+  "input_output_tokens": "UNKNOWN",
+  "known_normal_return_events": 0,
+  "raw_generation": "NOT_AVAILABLE",
+  "precise_failure_location": "NOT_PROVEN_FROM_RETAINED_RECEIPTS",
+  "controller_peak_rss_bytes": 20508672,
+  "model_peak_gpu_bytes": "NOT_RETAINED",
+  "generic": "NOT_RUN",
+  "critic": "NOT_RUN",
+  "native_fidelity_pilot_full_dev": "NOT_RUN",
+  "retry": false,
+  "terminal_sha256": "ac0ed5aff0f725a36a6d40bf0e6e8f490003dc652394dc1214b48480bda229b5",
+  "inference_limits": "Do not relabel this as normal EOS rejection, semantic failure or successful complete pipeline."
+}

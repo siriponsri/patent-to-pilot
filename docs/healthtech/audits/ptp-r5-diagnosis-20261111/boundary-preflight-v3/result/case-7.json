@@ -1,0 +1,1 @@
+{"case": "abstention", "expected": true, "accepted": true, "matches": true, "tokens": 91, "reason": "COMPLETE", "case_wall_seconds": 0.22828507100030038, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06973976299968854}

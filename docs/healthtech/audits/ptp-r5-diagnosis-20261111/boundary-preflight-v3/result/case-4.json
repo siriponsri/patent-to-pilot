@@ -1,0 +1,1 @@
+{"case": "context-1-reversed-fields", "expected": true, "accepted": true, "matches": true, "tokens": 273, "reason": "COMPLETE", "case_wall_seconds": 19.3135134260001, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.08064858200032177}

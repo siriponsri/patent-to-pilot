@@ -1,0 +1,29 @@
+{
+  "status": "CONFIRMED_LAUNCHER_INCOMPATIBILITY",
+  "census_dispatch_returncode": 1,
+  "docker_create_returncode": 2,
+  "docker_container_exists": false,
+  "corpus_processing": "NOT_STARTED",
+  "census_attempt": "CONSUMED_NO_RETRY",
+  "smoke_attempt": "NOT_DISPATCHED",
+  "read_only_docker_version_probes": [
+    {
+      "host_address_space_bytes": 536870912,
+      "returncode": 2,
+      "reason": "Go runtime failed to reserve page summary memory"
+    },
+    {
+      "host_address_space_bytes": 1073741824,
+      "returncode": 2,
+      "reason": "runtime/cgo pthread_create failed"
+    },
+    {
+      "host_address_space_bytes": 1073741824,
+      "GOMAXPROCS": "1",
+      "returncode": 2,
+      "reason": "Go runtime out of memory"
+    }
+  ],
+  "diagnosis": "RLIMIT_AS inherited by Docker CLI limits virtual address reservation; this is not evidence of corpus extraction failure or actual RAM exhaustion. Same pattern makes frozen smoke unsafe to dispatch.",
+  "next": "Prepare lightweight stdlib Docker Engine client under same limits, fixture and read-only live-check it, then bind revised packaging and request one replacement census attempt; preserve frozen v1."
+}

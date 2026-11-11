@@ -1,0 +1,9 @@
+{
+  "status": "FROZEN_UNSCREENED_NO_CARDS",
+  "sha256": {
+    "source-sample.json": "763b962e439069ec605ffb07f1c112fd6337413ad66a11efa051167bf30d0917",
+    "alias-sample.json": "977c71fb6524b8757361de871134a0f83b0e3b7530181e19ccad004baefb69d4"
+  },
+  "storage": "Existing private remote ptp-sg-r4-materialization-20261111-v1/out/attempt",
+  "uses_retrieval_scores": false
+}

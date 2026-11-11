@@ -1,0 +1,21 @@
+{
+  "status": "TERMINAL",
+  "retry": false,
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "exit_code": 0,
+  "r5_mismatches": [],
+  "r4_mismatches": [
+    "role-outside-context",
+    "role-outside-context-reversed-fields",
+    "role-upper-bound",
+    "role-upper-bound-reversed-fields",
+    "role-negative",
+    "role-negative-reversed-fields",
+    "condition-outside-source",
+    "condition-outside-source-reversed-fields"
+  ],
+  "worker_wall_seconds": 0.7484717709999131,
+  "peak_rss_bytes": 39030784,
+  "whole_wall_seconds": 2.062999999965541
+}

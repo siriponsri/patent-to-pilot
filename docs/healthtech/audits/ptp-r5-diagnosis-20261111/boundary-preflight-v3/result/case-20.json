@@ -1,0 +1,1 @@
+{"case": "evidence-unlisted", "expected": false, "accepted": false, "matches": true, "tokens": 160, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 5.401798078999946, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06765706600026533}

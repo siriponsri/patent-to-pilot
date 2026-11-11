@@ -1,0 +1,1 @@
+{"case": "prefixed-field-forbidden", "expected": false, "accepted": false, "matches": true, "tokens": 177, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 1.1462600260001636, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06852993099982996}

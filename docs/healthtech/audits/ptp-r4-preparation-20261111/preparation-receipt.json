@@ -1,0 +1,13 @@
+{
+  "status": "PREPARED_NOT_DISPATCHED_NO_NEW_RESERVATION",
+  "smoke_declaration_sha256": "226acd36c561d12c1efdca89075f2981f022e6285399a0a11445775e814c5654",
+  "tests": "21PASS context schema plus mocked three-stage orchestration",
+  "initial_test_failure": "20PASS/1FAIL: schema subtree aliasing allowed role outside context; repaired independent deep copies; regression now PASS",
+  "grammar_live_preflight": "NOT_RUN_REQUIRED",
+  "graph_worker": "DESIGN_ONLY_NOT_READY_FOR_DISPATCH",
+  "old_sources": "R1-R3 source/output files preserved; all new configuration files separate",
+  "budget_expansion": "PROPOSED_GPU192H_FIDELITY64H_FULLDEV128H_CUMULATIVE_NO_RESET",
+  "model_calls": 0,
+  "new_cards": 0,
+  "protected_tests": "CLOSED"
+}

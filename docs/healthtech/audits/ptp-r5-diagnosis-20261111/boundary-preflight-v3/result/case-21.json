@@ -1,0 +1,1 @@
+{"case": "evidence-unlisted-reversed-fields", "expected": false, "accepted": false, "matches": true, "tokens": 160, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 3.5324100120001276, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06706340600021576}

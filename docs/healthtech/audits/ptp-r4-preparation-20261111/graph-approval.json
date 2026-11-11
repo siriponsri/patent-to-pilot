@@ -1,0 +1,9 @@
+{
+  "status": "APPROVED",
+  "owner_reply": "call_c4ec345a29784975ab45f71412715d87",
+  "declarations_sha256": {
+    "graph-declaration.json": "c78f2b8ed03ecc6d15f50ab1a3c0918370d34bef707ac4095a07bca1ad016ca9"
+  },
+  "worker_fixtures": "9PASS",
+  "scope": "One deterministic materialization and fixed samples only; no model/cards/Neo4j"
+}

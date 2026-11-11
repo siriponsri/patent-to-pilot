@@ -1,0 +1,1 @@
+{"case": "missing-field", "expected": false, "accepted": false, "matches": true, "tokens": 156, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 5.765864443000282, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06622793199994703}

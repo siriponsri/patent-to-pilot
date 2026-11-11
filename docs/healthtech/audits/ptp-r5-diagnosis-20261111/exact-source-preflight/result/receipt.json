@@ -1,0 +1,25 @@
+{
+  "status": "PASS_TOKEN_CALLBACK_MATRIX",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "cases": [
+    {
+      "case": "exact-smoke-source-populated-reversed",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 280,
+      "reason": "COMPLETE",
+      "case_wall_seconds": 35.6175095589997,
+      "boundary_token_count": 725,
+      "boundary_trie_nodes": 1177,
+      "boundary_build_seconds": 0.0726035759998922
+    }
+  ],
+  "retry": false,
+  "diagnosed_token_10465": ".\",",
+  "input_tokens": 1557,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "wall_seconds": 48.873820123000314,
+  "worker_peak_rss_bytes": 997257216
+}

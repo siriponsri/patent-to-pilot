@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "authority": "Current owner request: diagnose/fix SACR and complete grammar checks; CPU authored fixtures only",
+  "declarations_sha256": {
+    "token-declaration.json": "92f8605a63a4f60fd71df6af7c469b77e3eda0f095c37b641b5573192c932c27"
+  },
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "retry": false
+}

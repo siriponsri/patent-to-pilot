@@ -1,0 +1,1 @@
+{"case": "evidence-empty-reversed-fields", "expected": false, "accepted": false, "matches": true, "tokens": 140, "reason": "TOKEN_NOT_ALLOWED"}

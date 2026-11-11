@@ -1,0 +1,23 @@
+{
+  "run_id": "ptp-sg-r5-source-attachment-20261111-v1",
+  "wall_seconds": 1800,
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "cpu_threads": 1,
+  "total_ram_bytes": 2147483648,
+  "maximum_output_bytes": 67108864,
+  "retry": false,
+  "source_sample_sha256": "763b962e439069ec605ffb07f1c112fd6337413ad66a11efa051167bf30d0917",
+  "corpus_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+  "files_sha256": {
+    "src/patent_to_pilot/__init__.py": "c66342b6d1c98cea75906fb4c2d6f8d64411513ac7abcf2f1371a3adb8320e3e",
+    "src/patent_to_pilot/research/__init__.py": "a2a39307f5f37254bc8eaf1ae149718003e80ca940d3a5c454e27259ff46773b",
+    "src/patent_to_pilot/research/mtm_runtime.py": "5a97ab9a6f344edbf6582ec00811aa3d0b5dfed480d518fcfb49e1073809e20a",
+    "src/patent_to_pilot/research/sg_fixed_source_attachment.py": "5ea12529e93382661b000b9da75129248642a404cc45553bada7cbe86fd1cb7f",
+    "scripts/healthtech/r3_engine_client.py": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+    "scripts/healthtech/supervise_r3_engine_v2.py": "d460f1b1e9a396a19a725b8af15531abf8ac433dccd59f9434227690aa6e2524",
+    "scripts/healthtech/supervise_sg_r5_source_attachment.py": "884bb58c4c3a2bdbc49276674e0b2de076e5185387b6385b428936c925c2f248",
+    "scripts/healthtech/run_sg_r5_source_attachment.py": "c6fd2217422b9b62e44dbbeb3a5808f76666f0beef85acafd0b94bb8103ee52d"
+  },
+  "scope": "one source-only join of frozen100IDs; no extraction, census, queries, qrels, test or model"
+}

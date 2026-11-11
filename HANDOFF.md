@@ -1,5 +1,312 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## R5 screened publication checkpoint prepared 2026-11-11T17:55:29.795929+07:00
+
+Parent solewriter; existingownerpublicationauthority retained. Preparing exactcurrentcode/docs/authoredfixtures/aggregateevidence plusdependentR3/R4work for normalcommit/push; unrelatedownerhandoff excluded. Privacy review: no rawGraph/native/corpus/PDF/model/private diagnostics in selection; historicalR3synthetic generations and authoredgrammarfixtures explicitlyallowed, sourceIDs/hashes/receipts retained. JSONparsePASS,credentialpatternscan0hits,diffcheckPASS; integrated61targetedtestsPASS. Graphjob ptp-sg-r5-screening-20261111-v1 remainsRUNNING observed3riskunits; no retry/no newjob,57600sreservation remains,finalcostpending. SACRclosed/nativeNOT_RUN;cards0/edges0. Baseac48e02; publicationverification pending, do notclaimpushedyet.
+
+
+## R5 Graph screening running; SACR candidate closed 2026-11-11T17:52:48.973867+07:00
+
+Verified Graph container running PID649083 at inspection, started2026-11-11T10:48:56Z; firstscreenRISK; no terminal yet. Watch exactjob ptp-sg-r5-screening-20261111-v1 without redispatch. Budget reservation57600s GPU/fidelity retained pending terminal; source100 thenalias100 risk21stop. SACRcandidate1 closed after3calls170.946s, independentmissingcoverage/units plusmalformedcritic; native/pilot/fulldevNOT_RUN, no reroll. Updatedreport/manuscript currentstatus abovehistoricalcloseouts. Parentsolewriter/mainac48e02; code/docsuncommitted; approvedpublicationpendingprivacyreview. Cards0,edges0,testsclosed.
+
+
+## Graph screening declared and reserved 2026-11-11T17:48:42.877704+07:00
+
+ApprovedGraph fixedsource100+alias100 screening ready; exactcriticCPU4/4PASS18.327s,28localfixturesPASS. Fullessentialcoverage omissions includingoutsideextractorcues remainrisk; aliasexternalcontextuncertain; frozenpolicy andconfig beforeoutputs/scores. Reserve57600s GPU+fidelity insideexistingcaps;≤200calls,sourcefirstthenfrozenaliasorder,risk21earlystop,no retries, cards0/edges0untilgates. Stage fixedjob ptp-sg-r5-screening-20261111-v1; inputsreadonlythreefixedsamplefiles only, no corpus/query/qrels/test/database mounts. ControllerGPU8CPU/RAM31GiB+1GiBhost/networkoff/57360sstop. SACRcandidateclosed,no native reroll. Canonicalexecutionaudit graph-screen-declaration/approval/transport; watchsameSSHhandle. Parentsolewriter/localmainac48e02.
+
+
+## Graph exact critic CPU qualification 2026-11-11T17:40:38.317825+07:00
+
+Owner-approved longrun continues. SACRfailedcandidate remainsclosed; Graphfullsource100joincomplete. Freeze exactcriticJSONschema andfullessentialsourcecoverage criterion before any Graphmodel: outside-cue omissions remainrisk, emptyrecords notautomaticpass; aliasexternalcontextneeded→uncertain.10localcontractfixturesPASS. Run4authored tokenizer/callback/EOS cases onceCPU2/RAM2GiB/600s usingexistingpinnedtokenizer,no model/data/GPU. Fixedjob ptp-sg-r5-critic-preflight-20261111-v1. Preserve allfailure/unknowns; nextGraph200unit screening onlyifCPUgatePASS,oneGPUjob,16hmax,earlystoprisk>20,no cards/scores yet. Parentsolewriter.
+
+
+## Graph fixed sources complete; exact critic contract preparing 2026-11-11T17:38:37.775367+07:00
+
+Graph sourcejoin COMPLETE100fixedfamilies in2.244678577s wholeCPU,24.49MBpeak,723886privateoutputbytes,SHA9152accfef878636852027d512665b7927f9c48543d2da0834ed3b35d6f5a374. Corpus unchanged; no extraction/model/query/qrels/test/database. Privatefullsources retained remote. SACR R5candidateclosed: independentreviewconfirms genuinecoverage/quantity/unit losses, malformedcritic7unsupportedlabels are NOT7validatedfindings. No secondmodelcandidate solelytofixenvelope; nativeSACRblocked. Prospective exact critic schema/prompt fix andGraphsource/aliasunitconstruction10testsPASS; oldoutputunchanged. Prepare pinnedCPUgrammarcheck before approvedGraph≤200calls/16h,earlystoprisk>20,no cardsuntilcompleteadmissiblebatch. Sourceempty requireseligiblefunctioncheck; aliasexternalcontextneeded→uncertain. Parentsolewriter/local-only; existingapprovedgoal continues despitegoalservicestate.
+
+
+## R5 Graph fixed-source join staging 2026-11-11T17:33:10.615075+07:00
+
+SACR R5candidate1 remainsfailed; independentreview confirms criticprompt ambiguity plus realcoverage/quantity/unit loss, no native reroll justified. Proceed approvedGraphsourcejoin of fixed100IDs,CPU1/RAMtotal2GiB/1800s/output64MiB, networkoff,nocorpusre-extraction/noGPU/query/qrels/test.7sourcejoin/isolationfixturesPASS including fileceiling alignment. Source/corpus hardlinks readonly from retainedR4 artifacts; no duplicatedcorpus. Fixedjob ptp-sg-r5-source-attachment-20261111-v1, exactdeclaration/approval/transport inexecutionaudit. Runonce, retain rawfullsourceonlyprivate, publishaggregates. Parentsolewriter/localmainac48e02.
+
+
+## R5 synthetic1 settled: engineering completion, fidelity failure 2026-11-11T17:31:24.747484+07:00
+
+Fixed R5smoke1 EXITED0/PID0,SSH29270complete;3EOS calls2745input/1442output,whole170.946075567s charged once GPU+fidelity,peak17.324GB. Profile/generic structurallyreturned; final UNASSESSABLE REJECTED_CRITIC due literal_source_quote/literal_candidate_quote keys instead of exact source_quote/candidate_quote. Independently profile selects only finalsentence; compact/selective lexicalREJECTED and selectiveconstraints/units incomplete. Keepcandidatefailed; criticformatfix alone cannot establishfidelity. Native/pilot/fullSACR NOT_RUN. Globalknowncalls63(lowerbound),historicalunknown3unchanged; reservationreleased,2syntheticcandidate slotsunused, no automaticnative retry. Graph approvedfixedsourcejoin can proceed CPU1/2GiB/30min without GPU. Canonical ptp-r5-execution-20261111/smoke-result/aggregate.json; raw/diagnosticsprivate. Parentsolewriter/mainac48e02/local-only; goalserviceblockedbutexecutionauthorized.
+
+
+## R5 synthetic candidate1 reserved and staging 2026-11-11T17:24:55.235837+07:00
+
+Approval call_172d9619b8e64a6781a0ff36fb183240 recorded. Immutable188sourcepins PASS; all owned priorcontainers terminal; targetnames absent; GPU idle. Conservative disk retained+new8GiB bound20.708GiB below40GiB, remote free94.67GiB. Reserve1800s GPU/fidelity and3calls for first of≤3synthetic candidates, no charge reset. Exact execution declaration/approval/transport in ptp-r5-execution-20261111. Dispatch fixed ptp-sacr-r5-synthetic-smoke-20261111-v1 once; watch samehandle, retain private diagnostics and charge wholeterminaltime. Graph sourcejoin follows; no cards/native/evaluation/test/database yet. Parent solewriter, localmainac48e02.
+
+
+## R5 long-run execution approved; admission checks 2026-11-11T17:23:13.539388+07:00
+
+Owner approved full R5 longgoal/gates and bounded repairs/replacements in call_172d9619b8e64a6781a0ff36fb183240. Canonical execution audit ptp-r5-execution-20261111. New GPU179.5h/fidelity49.5h within cumulative192/64/full128, no reset; synthetic≤3candidates/9calls/90min, no native auto-regeneration, cardsSACR30+SG30. Verify immutable source pins, prior jobs terminal, disk proof, GPU occupancy and ledger; reserve first1800s GPU/fidelity then stage one R5 smoke. Graph source-only join follows underCPU1/RAM2GiB/30min. No test/paid/train/reencoding/Neo4j writes. Parent solewriter; read-only agents. Goal create rejected due unfinished old goal; not falsely completing research objective, continue authorized currentchat. Main/baseac48e02, currentchangeslocal.
+
+
+## R5 combined owner decision pending 2026-11-11T16:32:02.991876+07:00
+
+Engineering checkpoint complete and frozen:86 local tests PASS, real tokenizer35/35 and exact smoke-source1/1 PASS; no new model/GPU. All6CPUjobs terminal, failures and1117.114s wholewall retained. Two combined decisions requested once: activate bounded R5 longgoal with existing60card split and Graph strata; permit capped engineering replacements/synthetic revisions. See ptp-r5-diagnosis-20261111/approval-request.md and R5-BOUNDED-LONG-RUN.md. Await actual reply; no silence-as-approval, no new native/model/corpus dispatch. Immediate code fixes already authorized; earlier screened-publication permission retained without asking again. HANDOFF/CLAUDE/INDEX updated together, parent solewriter, mainac48e02, local-only. Existing goal service remains blocked; proposed new longgoal is not activated or complete.
+
+
+## R5 engineering qualified; bounded long-run proposal ready 2026-11-11T16:29:25.771335+07:00
+
+R5 CPU engineering complete:86 local tests PASS; pinned character33+7numeric cases PASS; real tokenizer/callback/EOS35/35 PASS276.912s, exact original synthetic source1/1 PASS50.434s,input1557. Confirmed integer-bound omission and fused string-boundary token10465 omission; original R4 cause remainsUNKNOWN. Broad boundary adaptersv1/v2 stopped for cost and retained. Private bounded diagnostics preserve first failure and avoid normal-path GPU scalar copies; independent read-only review found no remaining blocker. All6ownedCPUcontainers terminal/PID0, no new model/GPU/fidelitygeneration/cards/retrieval. Graph integrity PASS100source families(86empty,29records),100alias units,215unique records; fullsource attachment code6fixturesPASS, corpus execution NOT_RUN. Cumulative GPU/fidelity charges unchanged; CPU costs in canonical audit ptp-r5-diagnosis-20261111/summary.json. Frozen smoke-proposal.json and R5-BOUNDED-LONG-RUN.md await combined goal/model/source/evaluator and bounded repair-policy approval; GPU192/fidelity64/fulldev128,60cards unchanged. Existing screened-publication permission retained, no duplicate approval requested; current changes local/uncommitted/unpushed, main/baseac48e02. Parent sole writer. Next: obtain2combined decisions; reserve/rebind ledger without method changes; dispatch one qualified smoke; proceed only through declared integrity/fidelity/human/resource gates. No native retry or test opening.
+
+
+## R5 boundary-token correction qualification; no model 2026-11-11T16:23:55.807464+07:00
+
+Owner requests SACR diagnosis/fix, complete grammar checks, independent Graph work and a combined future long-run proposal. Parent sole writer; reviewer read-only. New finite-integer schema fixes confirmed LMFE numeric-bound enforcement gap, not proven historical failure cause. Pinned character matrix: R4 admits8 invalid cases; R5 all33 match, numeric7 match, no model/GPU/corpus. Graph frozen sample integrity PASS,100source families(86empty,29records),100alias units,215unique witnesses; no semantic acceptance/cards. Initial tokenizer matrix30of33; targeteddiagnosis shows allstring variants failtoken10465 while nullpasses. Broad boundary-trie v1 exceeds practical CPU admission; preserve costs and terminal. v2 trie only exact cache-omitted tokens outside quote/backslash roots, retaining exact parser; no semantic change or relaxed field ordering. v2 also resource-inefficient; both stopped under caps, no pass claimed. v3 removes only lexically impossible string prefixes before first unescaped closingquote, preserving partial escapes and Unicode sequences;16fixturesPASS. Candidate reduced boundary-token trie exact-parser traversal; preserve originalfailure and do not infer historical R4cause. Dispatch one authored populated exact-smoke-source reversed-field CPU qualification; no model, no replay of model generation,2CPU/RAMtotal2GiB/600s,no GPU/model/corpus/test/network. Fresh job ptp-sacr-r5-exact-source-preflight-20261111-v1; never replay. Failures retained. New model attempts/native retrieval remain proposed only. Canonical audit ptp-r5-diagnosis-20261111; local-only.
+
+
+## R5 boundary-token correction qualification; no model 2026-11-11T16:17:52.658580+07:00
+
+Owner requests SACR diagnosis/fix, complete grammar checks, independent Graph work and a combined future long-run proposal. Parent sole writer; reviewer read-only. New finite-integer schema fixes confirmed LMFE numeric-bound enforcement gap, not proven historical failure cause. Pinned character matrix: R4 admits8 invalid cases; R5 all33 match, numeric7 match, no model/GPU/corpus. Graph frozen sample integrity PASS,100source families(86empty,29records),100alias units,215unique witnesses; no semantic acceptance/cards. Initial tokenizer matrix30of33; targeteddiagnosis shows allstring variants failtoken10465 while nullpasses. Broad boundary-trie v1 exceeds practical CPU admission; preserve costs and terminal. v2 trie only exact cache-omitted tokens outside quote/backslash roots, retaining exact parser; no semantic change or relaxed field ordering. v2 also resource-inefficient; both stopped under caps, no pass claimed. v3 removes only lexically impossible string prefixes before first unescaped closingquote, preserving partial escapes and Unicode sequences;16fixturesPASS. Candidate reduced boundary-token trie exact-parser traversal; preserve originalfailure and do not infer historical R4cause. Dispatch one33case CPU qualification,2CPU/RAMtotal2GiB/600s,no GPU/model/corpus/test/network. Fresh job ptp-sacr-r5-boundary-preflight-20261111-v3; never replay. Failures retained. New model attempts/native retrieval remain proposed only. Canonical audit ptp-r5-diagnosis-20261111; local-only.
+
+
+## R5 boundary-token correction qualification; no model 2026-11-11T16:14:27.447095+07:00
+
+Owner requests SACR diagnosis/fix, complete grammar checks, independent Graph work and a combined future long-run proposal. Parent sole writer; reviewer read-only. New finite-integer schema fixes confirmed LMFE numeric-bound enforcement gap, not proven historical failure cause. Pinned character matrix: R4 admits8 invalid cases; R5 all33 match, numeric7 match, no model/GPU/corpus. Graph frozen sample integrity PASS,100source families(86empty,29records),100alias units,215unique witnesses; no semantic acceptance/cards. Initial tokenizer matrix30of33; targeteddiagnosis shows allstring variants failtoken10465 while nullpasses. Broad boundary-trie v1 exceeds practical CPU admission; preserve costs and terminal. v2 trie only exact cache-omitted tokens outside quote/backslash roots, retaining exact parser; no semantic change or relaxed field ordering. Candidate reduced boundary-token trie exact-parser traversal; preserve originalfailure and do not infer historical R4cause. Dispatch one33case CPU qualification,2CPU/RAMtotal2GiB/600s,no GPU/model/corpus/test/network. Fresh job ptp-sacr-r5-boundary-preflight-20261111-v2; never replay. Failures retained. New model attempts/native retrieval remain proposed only. Canonical audit ptp-r5-diagnosis-20261111; local-only.
+
+
+## R5 boundary-token correction qualification; no model 2026-11-11T16:07:30.363397+07:00
+
+Owner requests SACR diagnosis/fix, complete grammar checks, independent Graph work and a combined future long-run proposal. Parent sole writer; reviewer read-only. New finite-integer schema fixes confirmed LMFE numeric-bound enforcement gap, not proven historical failure cause. Pinned character matrix: R4 admits8 invalid cases; R5 all33 match, numeric7 match, no model/GPU/corpus. Graph frozen sample integrity PASS,100source families(86empty,29records),100alias units,215unique witnesses; no semantic acceptance/cards. Initial tokenizer matrix30of33; targeteddiagnosis shows allstring variants failtoken10465 while nullpasses. Candidate reduced boundary-token trie exact-parser traversal; preserve originalfailure and do not infer historical R4cause. Dispatch one33case CPU qualification,2CPU/RAMtotal2GiB/600s,no GPU/model/corpus/test/network. Fresh job ptp-sacr-r5-boundary-preflight-20261111-v1; never replay. Failures retained. New model attempts/native retrieval remain proposed only. Canonical audit ptp-r5-diagnosis-20261111; local-only.
+
+
+## R5 tokenizer mismatch targeted diagnosis; no model 2026-11-11T16:04:01.540812+07:00
+
+Owner requests SACR diagnosis/fix, complete grammar checks, independent Graph work and a combined future long-run proposal. Parent sole writer; reviewer read-only. New finite-integer schema fixes confirmed LMFE numeric-bound enforcement gap, not proven historical failure cause. Pinned character matrix: R4 admits8 invalid cases; R5 all33 match, numeric7 match, no model/GPU/corpus. Graph frozen sample integrity PASS,100source families(86empty,29records),100alias units,215unique witnesses; no semantic acceptance/cards. Prior tokenizer gate FAIL30of33; valid reversed-field proposals rejected. Dispatch5authored variants to isolate Unicode/escape/field-order effect; retain priorfailures. One CPU diagnosis,2CPU/RAMtotal2GiB/600s,no GPU/model/corpus/test/network. Fresh job ptp-sacr-r5-token-diagnosis-20261111-v1; never replay. Failures retained. New model attempts/native retrieval remain proposed only. Canonical audit ptp-r5-diagnosis-20261111; local-only.
+
+
+## R5 CPU diagnosis; no model authorization consumed 2026-11-11T15:58:11.126382+07:00
+
+Owner requests SACR diagnosis/fix, complete grammar checks, independent Graph work and a combined future long-run proposal. Parent sole writer; reviewer read-only. New finite-integer schema fixes confirmed LMFE numeric-bound enforcement gap, not proven historical failure cause. Pinned character matrix: R4 admits8 invalid cases; R5 all33 match, numeric7 match, no model/GPU/corpus. Graph frozen sample integrity PASS,100source families(86empty,29records),100alias units,215unique witnesses; no semantic acceptance/cards. Dispatch one authored tokenizer/callback/EOS CPU qualification,2CPU/RAMtotal2GiB/600s,no GPU/model/corpus/test/network. Fresh job ptp-sacr-r5-token-preflight-20261111-v1; never replay. Failures retained. New model attempts/native retrieval remain proposed only. Canonical audit ptp-r5-diagnosis-20261111; local-only.
+
+
+## R4 reports reconciled; no authorized retries remain 2026-11-11T15:47:25.066176+07:00
+
+R4 authorized first stage is terminal. CPU replacement v2 PASS: six positive grammar fixtures and tokenizer admission, 12.341282328 seconds, no model/GPU calls. Positive fixtures do not establish complete live grammar correctness or semantic fidelity.
+
+The subsequent authorized synthetic smoke FAILED with InputBoundaryError in the unsettled profile attempt. Whole wall time 198.974029466 seconds was charged once to GPU and fidelity; the 1800-second reservation was released. No generation.json or detailed exception message was retained. Model calls/tokens and exact failure location remain UNKNOWN; no normal-return events were recorded. This is not evidence of normal EOS rejection or semantic failure. Generic, critic, native fidelity, pilot and full dev remain NOT_RUN. No retry is authorized.
+
+Graph materialization completed 45,336 families, reproducing census counts: 23,037 records and 18,326 pair-key incidences (not unique pairs). Whole CPU time 26.376899449 seconds; output 63,574,824 bytes. Fixed source100 and alias-pair100 hashes are retained in the audit. Samples remain unscreened; accepted edges and issued cards are zero. No Neo4j writes or protected-test access occurred.
+
+Next: add prospective bounded private failure telemetry and CPU negative grammar qualification, then prepare a concrete new-attempt proposal. Preserve all failed artifacts and cumulative costs. Budget caps remain GPU192h/fidelity64h/full-dev128h, with fidelity/full dev inside GPU192h. Additional budget does not authorize additional experiments. Current canonical receipts: docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/aggregate.json and the cumulative resource ledger. Parent is sole writer; changes remain local/uncommitted, last verified base ac48e02.
+
+
+
+## R4 authorized jobs settled; smoke integrity failure 2026-11-11T15:43:48.420540+07:00
+
+CPUv2PASS,Graph complete,smoke R4 terminal verifiedEXITED1/PID0/OOMfalse,SSH85299complete. Failed profile InputBoundaryError; no generation.json and no retained detailed error/prefix. Exact cause cannot be distinguished among grammar callback or generation integrity paths from these receipts. Model calls/tokens UNKNOWN, no normal-return events; do not assert model output rejection or zero calls. Whole198.974029466s charged once toGPU/fidelity,1800s reservation released. Knowncalls60 remains lowerbound;unknown attempts now3. Generic/critic/native/pilot NOT_RUN,no retry. Engine version receipt29.9.3 versus earlier29.8.2 is observed environment drift, not a proven cause; image/API/isolation checks passed. Next improve private failure telemetry and CPU negative-prefix qualification before proposing any new model attempt; preserve current artifacts. Reports/progress to reflect scientific UNKNOWN,Graph candidateonly,no cards/test/Neo4j. Solewriter,local-only ac48e02.
+
+
+## R4 smoke RUNNING 2026-11-11T15:39:03.502159+07:00
+
+Verified R4 smoke containerRUNNING PID23666,start2026-11-11T08:38:13.037233978Z UTC,SSH85299. Same fixedjob and immutable stagedsource/declaration; do not redispatch. CPUv2PASS receipt settled12.341282328000005s whole,0model/GPU; oldv1failure retained. Smoke still not a completed or accepted result; watch same handle through terminal, charge actualwholeGPU/fidelity once, keep allrejections andunknowncosts. Maximum3calls/1800s total; no secondGPUjob. Graph materialization/sample manifests complete unscreened; no native/card/database/test work. Local-only singlewriter ac48e02.
+
+
+## R4 CPU preflight PASS; smoke dispatch 2026-11-11T15:38:09.299827+07:00
+
+One approved CPU replacement completed EXITED0/PID0,SSH13868terminal;6grammar context fixtures accepted with pinned tokenizer/LMFE,profile1555tokens/generic335/authoredminimalcritic511. Actual critic still runtime8192cap. Worker9.676497507s and peak859004928bytes;wholeCPU charged once from terminal receipt. Model/GPU0. Restored unused1800sGPU/fidelity smoke reservation under expandedcaps, no prior-cost reset. Dispatch fixedR4smoke once maximum3calls/1800whole/1560stop,CPU8RAM32GiB,existingGPU+model+decoder,networkoff,no benchmarks. Source/declaration snapshot preserved. Graph complete not rerun; cards0/testsclosed. Local-only solewriter ac48e02.
+
+
+## R4 CPU replacement approved 2026-11-11T15:36:45.297386+07:00
+
+Owner explicitly approved one CPU preflight replacement in call_34f7b95ac89345738dc5d12efafd019d. Exact declaration adbd722fca463e1cb36367cab190e7e278ec95164ff6d61d224ad5a03a310de3 pins verified unchanged. No v2 preflight or R4 smoke container exists. Stage new fixedv2 directory and run once600s/2CPU/2GiB,64MiB tmpfs inside memorycap. Preserve failedv1; no retry. Smoke remains unused and conditional on CPU PASS; Graph completed and will not rerun. No new model/card/test/database access; one writer/local-only ac48e02.
+
+
+## R4 Graph artifacts complete; CPU replacement prepared 2026-11-11T15:28:17.190757+07:00
+
+Parent sole writer. Approved budget192/64/128h recorded without resetting usage. Graph v1 terminal EXITED0/PID0,SSH23397complete:45336families,23037records,census counts identical,source100/alias100sample hashes fixed,63,574,824artifact bytes,26.376899449154735s CPU charged once,0model/GPU/cards/edges. Private artifacts retained remote; public receipts/sample hashes in R4 audit. R4 CPU preflight v1 failed before grammar due missing writable temp;5.311607945244759s CPU charged; smoke NOT_STARTED and GPU reservation released. Prepared separate v2 supervisor with64MiB tmpfs within sameRAM cap,2boundary fixturesPASS; declaration cpu-v2-declaration.json pending explicit one-time exception under no-retry rule. Existing unused smoke follows only after CPU PASS, no new generation authority requested. Need combined decision on this remaining packaging exception; later fidelity/native/pilot still outside current grant. HANDOFF/CLAUDE/INDEX/progress synchronized,local-only ac48e02.
+
+
+## Graph materialization approved and frozen 2026-11-11T15:24:49.823294+07:00
+
+Parent sole writer. Graph worker9fixturesPASS, declaration c78f2b8ed03ecc6d15f50ab1a3c0918370d34bef707ac4095a07bca1ad016ca9 bound to owner first-stage approval. Corpus and transport hashes verified; same pinned R2 extraction plus exact prior census count checks; fixed100source IDs and predeclared hash100pair-key units. Canonical witness minimum relation_id perfamily/key fixed prospectively, no other-record fidelity implied. Fixedjob ptp-sg-r4-materialization-20261111-v1 will run once CPU1/RAM2GiB/1800s/output128MiB,corpus/sample/codeRO,noquery/qrel/test/model/GPU/Neo4j. CPU preflight failure settled separately; smoke held, no retry. New stage follows verified CPU termination, existing1GiB package reservation. Local-only ac48e02.
+
+
+## R4 CPU preflight failed before grammar; Graph continues 2026-11-11T15:21:29.242086+07:00
+
+Verified preflight v1 terminal EXITED1 PID0 OOMfalse; SSH13283complete. Worker failed while importing dependencies: no usable temporary directory under read-only root.5.311607945244759s wholeCPU,3.9341442356817424s worker,639361024byte peakRSS,0model/GPU. This does not assess R4 grammar or model. Preserve attempt; no retry under approved rule; smoke NOT_STARTED gated on CPU PASS. Independent Graph artifact worker implemented;7 fixtures PASS for census reproduction, deterministic bounded sampling, missing sample/hash/count/disk/deadline/replay failures. Graph supervisor/declaration still required before corpus job. Same approvedbudget,cards0,testsclosed,local-only. Fix CPU packaging prospectively and combine remaining decision after authorized Graph work finishes.
+
+
+## R4 CPU preflight dispatch ready 2026-11-11T15:18:36.921088+07:00
+
+Owner-approved first-stage package and budget amendment bound. CPU and smoke transport hashes verified against execution-freeze.json. CPU preflight fixedjob ptp-sacr-r4-cpu-preflight-20261111-v1 will run once,600s whole/540stop,2CPU,1536MiB container+512MiB supervisor,noGPU/model calls/network. Validates pinned tokenizer/dependencies and all R4 context grammar branches plus input tokens. Smoke staged but must wait for CPU PASS, not merely exit0. Existing stages preserved; reserve1800s GPU/fidelity and1GiB new disk once, no reset. Graph worker development independent; corpus materialization not started. Local-only single writer ac48e02.
+
+
+## R4 approvals recorded and CPU preflight prepared 2026-11-11T15:16:11.954488+07:00
+
+Owner approved budget amendment and first-stage R4 package in call_c4ec345a29784975ab45f71412715d87. Ledger cumulative caps nowGPU691200s/fidelity230400s/full-dev460800s insideGPUcap; prior9326.788862GPU/9047.902037fidelity charges preserved, remaining681873.211138/221352.097963s. Separate R4 guards prevent reset/unapproved cap changes;18 budget/Engine fixtures PASS. CPU tokenizer/grammar worker and fixed600s supervisor prepared, no model loading/GPU,2CPU/2GiB combined. New execution declaration to pin amended ledger and all new sources before one preflight; original proposed declaration retained. Smoke only after CPU PASS. Graph worker still to be implemented/tested/frozen under approved conditions before corpus processing. No cards/test/Neo4j/publication. Single writer, local-only ac48e02.
+
+
+## R4 SACR repair and Graph budget package prepared 2026-11-11T15:10:38.990869+07:00
+
+Parent sole writer. User requests continued SACR repair/Graph plan and now explicitly requests a budget-expansion proposal. Implemented separate context-constrained R4 schema, source-bound generation/critic adapters, full bundle and runtime candidates. Exact complete interval selection plus branch-specific role bounds; unchanged strict R3 compiler and semantic gates.21 tests PASS after fixing one real schema-aliasing regression; no live grammar/model qualification yet. Graph plan retains R2 extractor, fixed100source sample, hash-selected up100 full-corpus pair-key units, matched posting/traversal,60card cap unchanged. Prepared R4-SACR-GRAPH-ROUND and R4-BUDGET-EXPANSION: proposed cumulative GPU192h/fidelity64h/full-dev128h inside192h, no reset; current ceilings unchanged. R4 declaration/receipt in ptp-r4-preparation-20261111; no new reservation/dispatch. CPU grammar preflight and Graph worker readiness remain execution gates. Combine owner decisions once, no paid API/test/ACL/database writes/publication. Local-only main ac48e02; preserve unrelated owner file.
+
+
+## R3 results and reports synchronized 2026-11-11T14:51:36.722286+07:00
+
+Both approved jobs settled, no running PTP job at final inspection. Census complete45336families/23037records/13736keys/951sharedkeys/18326pair-key incidences, not unique pairs or accepted edges. Smoke failed one normal-EOS profile: role quantity40/unitC outside declared block evidence, exact rejection replay, no repair/retry; generic/critic/native/pilot NOT_RUN. Reports and manuscript updated with both outcomes and limits; progress synchronized; git diff--check PASS. GPU remaining249873.21113781678s, fidelity19752.09796266537s, knowncalls60plus2historicalunknownattempts, cards0/60. Current added transport/staging/evidence below1GiB; retained failed v1 and original declarations unchanged. Next prospective work: design review of saturated16 single-token context selections and graph-compatible fidelity sampling; any additional generation/corpus processing requires concrete scope and new authority, not remaining budget. Full research objective incomplete. Goal service retains prior blocked status because tools cannot resume it; owner approval was executed fully. Local-only main ac48e02; no commit/push, preserve owner unrelated file.
+
+
+## R3 first-stage jobs settled; smoke failed 2026-11-11T14:50:06.261418+07:00
+
+Parent sole writer. Census complete45336families:18326pair-key incidences,951sharedkeys; no fidelity/accepted edges/retrieval. Smoke v2 terminal verified EXITED0/PID0,SSH21273completed, but one EOS profile UNASSESSABLE; unchanged compiler replay rejects role evidence outside relation evidence. Quantity40 and unitC references lie outside declared block context, not merely adjacent-span containment. Two blocks each filled16 single-token evidence refs; do not repair output. Generic/critic/native/pilot/retrieval NOT_RUN.320.3040725919418s whole charged once to GPU and fidelity,1call2387input3395output,peakGPU18331955712bytes;1800s reservation released. Prior2unknown call attempts retained. Census25.31645278306678s CPU charged separately; no cards/test/Neo4j writes. Evidence in packaging-v2/census-result and smoke-result. Both approved attempts consumed,no retry. Update reports and prospective next gate; full research goal incomplete, local-only ac48e02.
+
+
+## R3 smoke running; census settled 2026-11-11T14:43:04.388319+07:00
+
+Parent sole writer ACTIVE. Smoke v2 verified RUNNING PID2070362 start2026-11-11T07:41:57.976872853Z UTC,SSH21273; isolate-readback passed before start. Monitor same handle; do not restart.1800s whole/1560stop,3callsmax. Census receipts fetched and histogram arithmetic checked:951 multi-family keys,16,392 family-key memberships; nonempty-family count not recorded by frozen counter, unique pairs not computed.25.31645278306678s CPU charged once; controller peak20,570,112bytes, worker peak NOT_MEASURED. No semantic or retrieval pass. Frozen smoke ledger is pre-reservation snapshot with unchanged GPU/fidelity charges; current additive CPU/approval entries do not reset it. Local-only, tests closed.
+
+
+## Census complete; smoke dispatch next 2026-11-11T14:41:51.695551+07:00
+
+Parent sole writer ACTIVE. Census replacement v2 verified EXITED0 PID0 OOMfalse, SSH10671 completed.45,336 families,23,037 records,13,736keys,18,326 cross-family pair-key incidences (not unique pairs),max69families/key,0hubs above100. Whole25.31645278306678s;0model/GPU. Raw receipts retained census-result under packaging-v2 audit. Counts are linkage opportunities only, accepted edges0, fidelity/retrieval NOT_RUN. Source hash matched. Dispatch approved unused smoke v2 once next,3calls/1800s max using existing reservation. No retry/cards/test/Neo4j writes. Local-only ac48e02.
+
+
+## R3 census replacement running 2026-11-11T14:41:03.447580+07:00
+
+Parent sole writer ACTIVE. One approved replacement census v2 RUNNING verified Docker PID2060834, started2026-11-11T07:40:28.644982718Z UTC; SSH session10671. Engine controller passed pre-start isolation; remote transport/corpus SHA match. Corpus is a hardlink to retained immutable v1 input mounted read-only, no duplicate transfer/content changes. Do not redispatch. Monitor same session or named container,1800s whole/1560s stop. Smoke staged but NOT_STARTED; only follows verified census terminal. Existing reservation retained, no cards/test/Neo4j writes, local-only ac48e02.
+
+
+## R3 replacement explicitly approved 2026-11-11T14:39:45.860682+07:00
+
+Parent sole writer; resumed execution after owner reply call_12d552cdf34f41599caeed36e2ae3239. One census replacement and unused smoke packaging v2 approved, exact frozen declarations bound by owner-approval.json. Source/ledger pins verified, no running v2 containers or approved-GPU processes, remote102.47GB available. Reuse existing1800s GPU/fidelity reservation and1GiB disk; no reset or future retry. Stage fresh v2 paths, preserve v1, census then smoke only after verified termination. No cards/test/Neo4j writes/native/pilot authority. Local-only ac48e02. Goal service may still display blocked; blocker itself is now cleared by owner reply.
+
+
+## Goal blocked on bounded replacement decision 2026-11-11T14:17:35.193066+07:00
+
+Parent sole writer; BLOCKED_PENDING_OWNER_DECISION, not complete. Same explicit no-retry exception has remained unanswered across original repair turn and three goal continuations. Prior two continuations made independent progress (card chain and retained R1 reconciliation); those packages are finished. Current authoritative readback finds no R3 census/smoke container, v1 terminal NOT_STARTED with0.009423678740859032s, and unchanged v2 declaration hashes. No live run to monitor. Main experimental path cannot advance without pending replacement decision; do not manufacture repeated audits or treat automatic continuation as consent. Pending question: census replacement once plus unused smoke with corrected packaging, existing limits/reservation, no further retries. Next on owner resume: record exact approval, verify pins/budget/GPU/ownership, stage new v2 paths, census then smoke, settle all costs/results; later native/fidelity/retrieval/Neo4j gates remain unfinished. Preserve all local changes and evidence, no push, base ac48e02. HANDOFF/CLAUDE/INDEX updated together.
+
+
+## R1 existing diagnosis reconciled without rerun 2026-11-11T14:16:28.630958+07:00
+
+Parent sole writer ACTIVE. Found completed retained-failure-audit.json:56/56 reproduced assessments;9 absent-or-ambiguous quotations,1 block order,3 output limit,1 raw condition grounding;14 rejects plus7 lexical flags stop21 above20. Verified current quote/profile/views hashes match frozen continuation declaration and mapped code paths. Old compact renderer can duplicate repeated literal conditions and omits context items; these properties do not attribute every observed lexical change or prove hallucination. Added r1-existing-evidence-reconciliation.md and corrected objective matrix to reuse completed audit rather than demand redundant replay. No new corpus/model/card/test/database work. Same replacement approval remains pending, not answered by goal continuation; no dispatch. Previous turn was progress from card-chain verification. Local-only base ac48e02; HANDOFF/CLAUDE/INDEX synchronized.
+
+
+## R3 objective gaps and card ledger verified 2026-11-11T14:14:30.853028+07:00
+
+Parent sole writer ACTIVE. Previous turn made progress: preserved failed census launch and prepared tested replacement packaging. Current continuation is not replacement approval. Read objective/HANDOFF and existing R1 aggregate/R2 design evidence; did not rerun prior scientific audits. Verified existing private card ledger with its hash-chain validator, byte-identical before/after:0 issued/reserved, SACR30/SG30,1 policy event. Sanitized receipt card-ledger-readback.json and requirement matrix objective-evidence-gaps.md added to R3 audit. Matrix explicitly keeps fresh R1 attribution, live smoke/census, source fidelity, current Neo4j connection and B0/SACR/S/G comparisons unfinished. No model/GPU/database/test/card changes. Pending same one-time replacement decision; no new question or dispatch. Local-only base ac48e02; frozen v2 declarations unchanged.
+
+
+## R3 replacement packaging ready for decision 2026-11-11T14:09:41.691456+07:00
+
+Parent sole writer ACTIVE. Preserved v1 census pre-create failure and held unstarted smoke. New stdlib Engine API controller fits512MiB in read-only live probe:18,821,120byte peak RSS, Engine29.8.2 API1.47 supported.12 packaging fixtures PASS,4 syntax PASS, worker parity PASS except run IDs. Frozen revised declarations at docs/healthtech/audits/ptp-r3-packaging-v2-20261111; new job IDs end-v2. No containers/generation/census started. Pending explicit one-time census replacement exception and switch of unused smoke to corrected packaging; same CPU/RAM/time/model/card/test limits, existing1800s GPU/fidelity reservation and combined1GiB disk cap retained, no reset. No automatic retry. Next obtain bounded decision then sequential census/smoke; independent Neo4j readiness note available. Local-only base ac48e02.
+
+
+## R3 census launch failure; smoke held 2026-11-11T14:04:16.155900+07:00
+
+Parent sole writer ACTIVE. Census v1 failed before container creation: Docker CLI exit2 under inherited512MiB address-space limit. Terminal cost0.009423678740859032s,0 rows/model/GPU; charged additive CPU record. Read-only docker-version probes confirm Go virtual-memory initialization failure at512MiB and1GiB, including GOMAXPROCS1. No census container exists; no retry. Smoke remains NOT_DISPATCHED because same issue applies. Preserve frozen code and all staged evidence. Prepare stdlib Docker API packaging under existing RAM caps and fixture/read-only verification before combined replacement approval. Ledger reservation retained, local-only base ac48e02; protected tests closed.
+
+
+## R3 census dispatch ready 2026-11-11T14:01:57.673764+07:00
+
+Parent sole writer ACTIVE; owner approval and 1GiB reservation recorded. Corpus transfer completed, SHA42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d matches; remote census staged331822995bytes, smoke2933728bytes, both transport hashes match. An earlier hash was observed during incomplete transfer and was not admitted. Starting fixed census job once, CPU1/RAM2GiB/1800s, no query/qrels/test/model/GPU/Neo4j. No retry. Smoke follows only after verified census termination. Local-only base ac48e02; no publication.
+
+
+## R3 bounded owner approval 2026-11-11T13:56:18.155925+07:00
+
+Parent sole writer; ACTIVE. Owner approved both frozen R3 jobs (call_33af8d0ad6914c339e4bd430cd25bcaa). Separate owner-approval.json binds unchanged declaration hashes. Reserved 1800 GPU/fidelity seconds and 1GiB combined disk against existing ledger; no reset, no retry, no cards or Neo4j writes. Sequential census then smoke; native/pilot/full dev excluded. Source and ledger snapshot hashes verified. Remote inspection: no running PTP R3 jobs, approved GPU has no compute process, ~102.8GB filesystem available. Staging next; NOT_DISPATCHED. Local-only changes; base ac48e02. Monitor fixed job names, never restart a consumed attempt.
+
+
+## R3 first-stage declarations awaiting approval 2026-11-11T13:50:57.742199+07:00
+
+Parent sole writer; ACTIVE. Census stop/kill reobservation repaired and10 supervisor fixtures PASS. Frozen two first-stage declarations under docs/healthtech/audits/ptp-r3-preexecution-20261111: smoke SHA5c208757f9ce50817154244d897eec78ea13e8e0412e77dd0c953805c73e074b; census SHA68c00d29a6fadd293dc073b514ffb62514d2d4670d94ea8456aa3c5b1d263f15. Source pin/budget checks PASS. Combined owner question submitted: one3call/1800s synthetic GPU smoke plus one CPU1/2GiB/1800s corpus census, sequential,1GiB combined added disk within old caps, no retries/cards/test/Neo4j writes. Approval PENDING, not elapsed-time implied. No staging/reservation/dispatch yet. Native/pilot/full dev excluded from this bounded request; goal remains active. Independent engineering/Neo4j official review continues while waiting. Local-only state, no push.
+
+
+## R3 CPU census supervisor candidate 2026-11-11T13:47:42.761318+07:00
+
+Parent sole writer; ACTIVE. Added census container entrypoint and one-use fixed-job supervisor: corpus-only RO input, code/declaration RO, separate output, no network/GPU/model/test/query/qrels mounts,1CPU,1536MiB container+512MiB supervisor,8MiB per-file cap, Docker logs disabled, bounded attach/stop/kill and terminal/unknown receipts.7 isolation fixtures PASS, both files syntax PASS. NOT_DISPATCHED/NOT_AUTHORIZED; actual code pins/declaration, input size accounting, termination-failure review and external readback remain pending. No new data processing or ledger charge. Next complete concrete smoke+census approval package and Neo4j official license/start review; no more source-data runs until needed authority. Local-only, goal ACTIVE.
+
+
+## R3 Neo4j local discovery 2026-11-11T13:45:41.116282+07:00
+
+Parent sole writer; ACTIVE. Found existing Desktop2 installation and one Data/dbmss directory; kernel JAR2026.10.2 and database directory names neo4j/system, no database content read. No java.exe/javaw.exe/Neo4j Desktop.exe matched process inventory. Local7474/7687 connect_ex returned10035 after bounded probes; live database unavailable/unverified, not proof of terminal process state. No Neo4j MCP tools exposed. Do not create duplicate instance; next verify official license/start method and existing instance name mapping before bounded startup proposal if needed. No secrets/config changes/imports. Initial nested PowerShell process query had quoting errors, stopped only that tool session5530; subsequent tasklist checks succeeded. Canonical receipt neo4j-local-discovery.json in R3 audit. Independent runtime/census preparation continues; no goal-wide blocker. Local-only, test sets closed.
+
+
+## R3 supervisor resource review 2026-11-11T13:43:32.105915+07:00
+
+Parent sole writer; ACTIVE. Fixed output monitor to count both artifacts and attach logs; disabled Docker log driver; configured64MiB per-file limit with isolation readback, and1GiB host-supervisor address-space bound plus31GiB container bound.10 supervisor fixtures PASS covering timeout, attach-client/container disagreement, stop-timeout kill/reobserve, budget/source failures and log-size stop. Aggregate output64MiB is a1second polling stop threshold, NOT a hard filesystem quota; per-file limits are hard but simultaneous file writes can overshoot aggregate threshold. Need conservative disk reservation/declared margin and actual pre-dispatch readback. No live execution or isolation claim. Next census supervisor/declarations, current Neo4j inspection and combined approvals; goal ACTIVE, local-only, costs unchanged.
+
+
+## R3 runtime candidate prepared 2026-11-11T13:41:52.796461+07:00
+
+Parent sole writer; ACTIVE. Created separate R3 synthetic runtime/supervisor from preserved R2 implementation, fixed new job name,3call maximum,1800s whole/240s cleanup, existing model/image/GPU lock, no benchmark mounts. R3 source guard requires new scripts/modules plus legacy shared/all shipped sources. Budget floor now includes completed R2 smoke;2 guard tests PASS,2 runtime files AST syntax PASS. NOT_DISPATCHED, NOT_AUTHORIZED: declaration/code pins, transport, hard disk/host memory scope and supervisor failure-path review still pending; syntax/fixtures do not prove live isolation. No new model/GPU use/reservation, old jobs untouched. Next prepare/review precise smoke+census declarations and Neo4j current state, then ask combined authorization. Local-only, protected tests closed.
+
+
+## R3 orchestration failure gates 2026-11-11T13:40:03.199556+07:00
+
+Parent sole writer; ACTIVE. Broadened pipeline evidence for INPUT_LIMIT at each of3 stages (known0call stage, prior costs retained), mismatched reservation (UNKNOWN unsettled cost), denied admission (no invocation), invalid contract/prompt/text limit before attempt creation. Corrected synthetic harness to preserve genuine INPUT_LIMIT shape rather than replacing it with a generated profile. Combined R3 compiler/schema/views/screening/profile+critic bindings/orchestration48 fixtures PASS. No live generation; no performance/fidelity inference. Outer code/model pin validation, hard resource supervision and global no-replay remain outstanding before runtime approval. Next prepare concrete runtime declaration/supervisors and existing Neo4j inspection; do not keep rerunning passed fixtures without changes. Local-only, no census/test access/publication, ledger unchanged.
+
+
+## R3 complete bundle orchestration fixture 2026-11-11T13:38:49.405982+07:00
+
+Parent sole writer; ACTIVE. Added durable3-stage profile/generic/critic R3 orchestrator; selective proposal is generated with profile then deterministically rendered, not a fourth call. Reads reservation and generation from exact executor directory, binds costs/EOS, persists prepared profile before generic, preserves rejected outputs, stops unknown infrastructure with unsettled stage/cost, exclusive destination prevents same-path replay.5 CPU pipeline fixtures PASS: complete3calls, profile rejection, abstention, generic rejection and interrupted generic UNKNOWN costs. Mocked only; no model dispatch/semantic pass. Three-stage design needs prospective smoke declaration and code/model pins; outer global no-replay, GPU/budget/time/memory supervisor and schema/load checks remain required. No live experiment or new authorization inferred. Next broaden meaningful orchestration failure checks and construct bounded runtime/census supervisors plus combined approval package; Neo4j inspection still pending. Local-only, test sets closed, ledger unchanged.
+
+
+## R3 generic control screening 2026-11-11T13:36:51.601661+07:00
+
+Parent sole writer; ACTIVE. Critic payload/receipt binding now includes up to2 generic matched-control views; adding a generic view after request reservation invalidates binding. Generic text receives same numeric/polarity/protected-phrase lexical screen.15 targeted critic/prompt fixtures PASS. Initial shell-based edit failed PowerShell parsing before changes; applied structured patch, then ran new tests successfully. No generation or runtime admission. Full orchestrator, generic output receipt collection and hard supervisors remain unfinished; do not infer complete pipeline from these component tests. Local-only, no corpus census/database write, ledger unchanged. Next implement durable stage orchestration and freeze runnable approval package.
+
+
+## R3 critic receipt binding 2026-11-11T13:35:13.791645+07:00
+
+Parent sole writer; ACTIVE. Added critic normal-return evidence binder: exact proposal-derived request hash, source/query/run/attempt identity, original bytes, EOS and existing full cost validation. Wrong request is infrastructure/integrity failure, not ordinary rejected output; malformed/nonEOS retains costs and raw evidence.10 profile+critic binding fixtures PASS. All-supported mocked critic still cannot promote abstention or lexical rejection. No live calls; same-attempt durable file collection/global admission remains orchestrator responsibility. Next implement complete orchestrator with generic matched control and bounded supervisor; census/Neo4j readiness still pending. No publication, tests closed, ledger unchanged.
+
+
+## R3 generation evidence binding 2026-11-11T13:33:49.696234+07:00
+
+Parent sole writer; ACTIVE. Added explicit R3 generation contract binding request reservation/messages hash, source/query/run/attempt/model/prompt identity, original artifact hash, normal-return EOS and all existing cost fields. Malformed/non-EOS outputs retain original bytes and costs through GenerationEvidenceFailure; exact replay detects result mutation.6 new binding fixtures PASS. No live model invocation: mocked generation records do not attest runtime. Complete orchestrator must retain same-attempt reservation+response externally and verify model/code pins, global no-replay ledger and terminal state. Critic receipt binding, generic matched control and supervisors remain pending. No budget reset, no test access, no publication. Next complete pipeline and bounded dispatch proposals before combined approval.
+
+
+## R3 lexical screen integration 2026-11-11T13:32:06.997984+07:00
+
+Parent sole writer; ACTIVE. Reused unchanged conservative screen_view on R3 compact/selective rendered text, including source-backed condition phrases, numeric/polarity inventories and vocabulary review. interpret_review recomputes screening and never lets unflagged critic erase lexical escalation.23 R3 fixtures PASS including invented99psi with mocked all-supported critic remaining ESCALATE. No semantic/retrieval pass, no model calls. Current review helper still requires upstream normal-EOS/cost/request receipt binding before runtime use; it is not standalone admission. Generic matched control, generation binding, bounded supervisors and Neo4j inspection remain unfinished. Local-only, tests closed, resource ledger unchanged. Next connect retained generation records and full-pipeline fixtures before combined approval.
+
+
+## R3 selective occurrence repair 2026-11-11T13:30:38.934223+07:00
+
+Parent sole writer; ACTIVE. Found prospective selective renderer repeated source quantities when condition evidence overlapped attachment evidence. Fixed by unioning source intervals globally for literal selective context, never string-deduplicating distinct occurrences or altering generated proposals. Added regression for multiple conditions sharing same5kPa occurrence.22 compiler/schema/view/review fixtures PASS. Prior R1/R2 artifacts untouched. Proposal-versus-source duplication remains visible and requires existing lexical screen integration; that integration and generation-cost binding are still pending. Located reusable screen_bundle in sacr_fidelity_bundle.py via R2 runner; one attempted search of nonexistent sacr_fidelity.py failed harmlessly before corrected lookup. No generation/corpus/Neo4j write, budgets unchanged. Next integrate lexical screen and bound generation receipts, then full CPU pipeline and supervisor before combined approval request. Local-only; goal not complete.
+
+
+## R3 view rendering checkpoint 2026-11-11T13:28:56.898568+07:00
+
+Parent sole writer; ACTIVE. Added explicit source-anchor/compact/selective proposed views. Compact unions source positions, preserves distinct repeated occurrences; selective retains proposed abstraction separately with literal condition/attachment context. All remain fidelity-pending, retrieval_ready=false. Critic now sees actual rendered views as well as role assertions and complete source, so omissions are visible.21 authored compiler/schema/view/review fixtures PASS. No live generation; selective repetition/coverage requires screening and is not certified by retained context. Generated-record binding, lexical screening and full pipeline admission/supervisor remain unfinished. Census hard supervisor and Neo4j checks pending. Local-only, no model/GPU calls or new corpus processing; next complete integration before concrete combined approval.
+
+
+## R3 abstention and critic binding 2026-11-11T13:27:30.218634+07:00
+
+Parent sole writer; ACTIVE. R3 now permits explicit empty-block abstention without fabricated evidence; full source retained, anchor fallback required, never semantic/retrieval PASS. Added critic payload binding complete literal evidence, role/kind/attachment assertions and abstraction proposals under existing seven-dimension parser. Request hash changes with proposals.18 compiler/schema/review fixtures PASS; even all-supported mocked critic cannot promote abstention to fidelity. No model calls. This is payload/parser integration only: generated-record EOS/cost binding, selective view renderer, full pipeline supervisor and real smoke remain NOT_RUN/unfinished. Census hard supervisor and Neo4j discovery also pending. Local-only checkpoint, tests closed, budgets unchanged; prepare concrete combined approval once runners are ready.
+
+
+## R3 source-bound grammar checkpoint 2026-11-11T13:25:59.196730+07:00
+
+Parent sole writer; ACTIVE. Added R3 source/query-bound JSON schema and token-catalogue prompt separating deterministic literal evidence from abstraction proposals. Identity/range bounds/unknown fields enforced by grammar; range ordering and semantic correctness still require post-generation checks.16 schema/compiler fixtures PASS, including deliberate schema-valid reversed range rejected by compiler and instruction-like source kept as data. No model dispatch or native semantic pass. Empty/failed proposal handling, semantic critic integration, selective view rendering and complete pipeline smoke remain unfinished; do not treat schema PASS as generation feasibility. Local-only, no publication. Next finish these pipeline pieces and census hard supervisor; collect concrete permissions only when runnable declarations are ready.
+
+
+## R3 retained S/G diagnosis 2026-11-11T13:24:29.756876+07:00
+
+Parent sole writer; ACTIVE. Read-only diagnosis on SAME pinned100 exposed families reproduced159 cues:107 fixed-vocabulary exclusions,6 role-pattern failures,17 overlength and29 supported-action candidates. Sum113 reproduces old combined unsupported_action count. Corpus/sample hashes matched; no extractor/config change or full-corpus signature census. CPUwall1.735s,0model/GPU/cards,charged additive CPU record without resetting ledger. Evidence docs/healthtech/audits/ptp-r3-diagnosis-20261111/sg-r2-rejection-breakdown.json. Dominant vocabulary exclusion is confirmed within sample; semantic validity after widening and full-corpus linkage remain UNKNOWN. Next finish R3 SACR schema/screen/pipeline, census hard supervisor and Neo4j read-only discovery before combined experiment approval. Local-only changes; protected tests closed.
+
+
+## R3 census worker checkpoint 2026-11-11T13:22:03.763412+07:00
+
+Parent sole writer; goal ACTIVE. Added one-shot census worker with exclusive output, input/config SHA validation, bounded line/input sizes, family/record caps, cooperative deadline, second-pass input hash and durable sanitized success/failure receipts.16 census worker/control fixtures PASS, including wrong hashes, truncation/count mismatch, duplicate IDs, deadline and replay. Actual corpus NOT_RUN; no new model/GPU calls. External hard CPU/RAM/time/disk supervisor, immutable code pins and cross-destination admission remain required before dispatch. Current worker is not standalone authorization or sufficient hard isolation. Local-only, no commit/push. Next finish supervisor and retained-sample diagnostics; continue SACR schema/screens/full-pipeline fixtures, existing Neo4j discovery, then concrete combined approval request.
+
+
+## R3 census engineering checkpoint 2026-11-11T13:20:26.199622+07:00
+
+Parent sole writer, goal ACTIVE. Added bounded signature accounting and independent posting-list versus family-key-family control;8 authored CPU fixtures PASS. Pair-key incidences explicitly distinguish repeated family pairs across keys; no quadratic pair materialization. No corpus run, model call, database write or budget reset. Proposal docs/healthtech/research/plans/SG-R3-CENSUS-DRAFT.md remains DRAFT/NOT_AUTHORIZED. Full corpus runner/supervisor and SACR complete-pipeline work remain unfinished before combined approval request. Existing R3 compiler28-test checkpoint retained. Local-only changes; no new commit/push. Next implement resource-bound runner/failure receipts, finish retained-sample diagnosis, SACR schema/screens and Neo4j discovery.
+
+
+## R3 active objective takeover 2026-11-11T13:17:50.350124+07:00
+
+New owner objective read and active: continue SACR + Graph research after the bounded R1/R2 closeout, preserving failures. Parent sole writer; base ac48e02. Current canonical audit: docs/healthtech/audits/ptp-r3-diagnosis-20261111/README.md. Confirmed retained R2 wrong span positions; implemented separate literal-evidence R3 compiler, no semantic acceptance. New/legacy token suites28PASS after correcting two authored fixture offset mistakes. No generation/census/database write/publication; tests closed; budgets unchanged. Current localhost7474 refuses connection and no Neo4j MCP tools exposed; prior connection result is historical. Next finish diagnosis, schema/semantic/full-pipeline fixtures and prospective census + matched posting-list control; inspect existing Neo4j, then present concrete combined approvals before costly runs. Goal ACTIVE; previous closeout below remains historical. Local changes are uncommitted; owner unrelated untracked handoff preserved.
+
+
 ## Publication verified and bounded goal closed
 
 Report/code/evidence checkpoint 5fdd1cfa9e4a8c08897dabb56c2c9e28bf243a29 was pushed and verified against live origin/main on11 November2026. Final report review passed; exposure fixtures4PASS; staged diff/secret-pattern checks passed. Authorized bounded work is complete with negative method gates. No remaining experiment is dispatched. Only the unrelated owner document remains untracked. Preserve all failed configurations; future revisions require a separately defined next task.
@@ -1031,3 +1338,5 @@ Paid API: `PASS_E2_CANARY_3_OF_3_USD0.00054516` (engineering only; see `ptp-e2-p
 Repository handoff: `READY_FOR_REVIEW`
 
 Owner pause instruction: stop this Normal round after the local audit and test evidence. Resume only after the owner requests a new goal prompt; do not open a new goal for the same work.
+
+Verification correction: initial supervisor fixture run was6PASS/1FAIL because Windows Path rendered the authored Linux mount with backslashes. Corrected fixture to PurePosixPath, leaving runtime isolation strict; rerun7PASS. The prior7PASS entry was written before inspecting test output; this correction preserves the failure history. A shell quoting edit attempt failed before mutation, then structured patch succeeded.

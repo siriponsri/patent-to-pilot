@@ -1,0 +1,1 @@
+{"case": "unknown-role-reversed-fields", "expected": false, "accepted": false, "matches": true, "tokens": 185, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 3.475071679999928, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06848148599965498}

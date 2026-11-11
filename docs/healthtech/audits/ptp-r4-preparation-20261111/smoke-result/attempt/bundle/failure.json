@@ -1,0 +1,8 @@
+{
+  "status": "INFRA_OR_INTEGRITY_STOP",
+  "exception_type": "InputBoundaryError",
+  "events": [],
+  "unsettled_attempt": "profile",
+  "unsettled_attempt_cost": "UNKNOWN",
+  "retry": false
+}

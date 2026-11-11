@@ -1,0 +1,10 @@
+{
+  "status": "FAILED_PREFLIGHT_NO_MODEL",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "retry": false,
+  "exception_type": "FileNotFoundError",
+  "reason": "[Errno 2] No usable temporary directory found in ['/tmp', '/var/tmp', '/usr/tmp', '/']",
+  "wall_seconds": 3.9341442356817424,
+  "worker_peak_rss_bytes": 639361024
+}

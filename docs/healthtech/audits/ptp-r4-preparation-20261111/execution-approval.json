@@ -1,0 +1,10 @@
+{
+  "status": "APPROVED",
+  "owner_reply": "call_c4ec345a29784975ab45f71412715d87",
+  "declarations_sha256": {
+    "smoke-execution-declaration.json": "460b62b314d7d896f42cea7dd7c016ad1f26fd01e6304d6bfa4efb40a7312c37",
+    "cpu-declaration.json": "723a182f62a1fe2ca29c5f13b4ea111506dcb0f4520adbf4cb61067a1725fc1c"
+  },
+  "retry": false,
+  "scope": "Approved R4 first stage; smoke requires CPU pass; no native/cards/Neo4j"
+}

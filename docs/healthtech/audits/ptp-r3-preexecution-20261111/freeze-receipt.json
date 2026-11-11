@@ -1,0 +1,11 @@
+{
+  "status": "DECLARED_NOT_AUTHORIZED_NOT_DISPATCHED",
+  "declarations": {
+    "census-declaration.json": "68c00d29a6fadd293dc073b514ffb62514d2d4670d94ea8456aa3c5b1d263f15",
+    "sacr-smoke-declaration.json": "5c208757f9ce50817154244d897eec78ea13e8e0412e77dd0c953805c73e074b"
+  },
+  "smoke_source_pin_check": "PASS",
+  "budget_arithmetic": "PASS_NO_RESERVATION_YET",
+  "census_supervisor_tests": "10PASS",
+  "corpus_size_stat_bytes": 328999080
+}

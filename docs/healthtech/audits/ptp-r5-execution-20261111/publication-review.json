@@ -1,0 +1,1718 @@
+{
+  "status": "REVIEWED_CODE_AUTHORED_FIXTURES_AGGREGATE_EVIDENCE_ONLY",
+  "excluded_owner_file": true,
+  "raw_graph_native_corpus_pdfs_models_private_diagnostics_included": false,
+  "checks": {
+    "integrated_tests": 61,
+    "json_parse": "PASS",
+    "diff_check": "PASS",
+    "credential_pattern_hits": 0
+  },
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "sha256": "ff772f0bae018a6d6c50cba46042e69a1351c7deeee1d45e64a4b03b2a966ef7",
+      "bytes": 155412
+    },
+    {
+      "path": "HANDOFF.md",
+      "sha256": "0bfe8c4acbf0a08c4f40c1935b3c0111e66613b132ccfac9cbf6514f8ea735ed",
+      "bytes": 198463
+    },
+    {
+      "path": "INDEX-PLAN.md",
+      "sha256": "9919928abcb58f0b6b2e29197d9298faecc948069a887e0b2b26d2113a85ae2f",
+      "bytes": 159229
+    },
+    {
+      "path": "MASTER-PLAN.md",
+      "sha256": "a1cc58bde02230b1ba204320c84803255e20fbe3d5c3cdb7583e1b4dca0ea054",
+      "bytes": 75536
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/resource-ledger.json",
+      "sha256": "48775b9e64371bb69cf72f92fcf9665c507212835ad3f4685006a2319881bf4c",
+      "bytes": 21320
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-diagnosis-20261111/README.md",
+      "sha256": "94da868227e9fc3143de4541afbf5ab60efc74c8a06851051070a2f2e6dbd8ee",
+      "bytes": 21273
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-diagnosis-20261111/card-ledger-readback.json",
+      "sha256": "24c0dadccd6a66c61866314afa38028f7880133881f48b2e552e86c47816ba05",
+      "bytes": 504
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-diagnosis-20261111/neo4j-local-discovery.json",
+      "sha256": "3078ac5d18f50762977e935c6e321ad472cdcd348ac21f43f5968064fea1a10e",
+      "bytes": 752
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-diagnosis-20261111/neo4j-mcp-readiness.md",
+      "sha256": "02bfd551ccb95f7bf15529aa0effb3ce2bba7197c5f3422efb4e0c6805d6d345",
+      "bytes": 2096
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-diagnosis-20261111/objective-evidence-gaps.md",
+      "sha256": "fe43083e9dd2d7a7c06596cc5ffc53f2de483d356996aae6e21c071d0f55be47",
+      "bytes": 5194
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-diagnosis-20261111/r1-existing-evidence-reconciliation.md",
+      "sha256": "8fc5a7097c7dd4c960ce6469b70b5c3509202af6e545d6676174cca66bcf5323",
+      "bytes": 3560
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-diagnosis-20261111/r2-span-diagnosis.json",
+      "sha256": "a03e6e8fb4dc0ceeff0405fe31a181c553a87ff76b95cb8eaac1bdfcbc7504c6",
+      "bytes": 1617
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-diagnosis-20261111/sg-r2-rejection-breakdown.json",
+      "sha256": "1c77d30b981ab0019270b562e24292672fd8461da277034edc05c2fa4cb64e16",
+      "bytes": 780
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/README.md",
+      "sha256": "ab4594bdaff4dda6ee9507b6d61aea368e7e8208599a46a578af5b952f9d1a2a",
+      "bytes": 3810
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/census-declaration.json",
+      "sha256": "9964b0daefb28c350a3e216c4fc8b789393378acfad0fba91b3061902f7e1ef7",
+      "bytes": 20227
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/census-result/aggregate.json",
+      "sha256": "2259fc4a49e9823efe1cbdaa4bf156a55f130dfd1983d3180fe2f3bf2c341bc3",
+      "bytes": 813
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/census-result/isolation.json",
+      "sha256": "bfbc732abf11b418ee9d0a4d9d87a29500f5ad497a552f7965fb2b6bb1209348",
+      "bytes": 7995
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/census-result/receipt.json",
+      "sha256": "241604275a55f62063efd672e17e1f3b485f2150c10c34f2fd5b6e5dd96616be",
+      "bytes": 1463
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/census-result/terminal.json",
+      "sha256": "6b6ab7a198e3f54f9a2ccaf14f2d6a3ed4e483d1af74265c7df3a73aab2e8cec",
+      "bytes": 577
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/closeout.json",
+      "sha256": "b79dff31a7467e24e97ba0c1fe4ac6378e177d8d9f6cefcb127392fb6a2cbc9c",
+      "bytes": 681
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/freeze-receipt.json",
+      "sha256": "a0ee79ea90d2531d3ebf5a3d3a5624528f55ff3ba6b8d6dd49e9ba79fe865487",
+      "bytes": 1125
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/owner-approval.json",
+      "sha256": "be227af992f80e0cc274c5d951fbc032f463cbeb26d06fcbf26aa7608b94ec63",
+      "bytes": 658
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/sacr-smoke-declaration.json",
+      "sha256": "7b329b59536f208b4b9ebeb3140c6a37817b532f9e31ac83603fe75ea41293ac",
+      "bytes": 22849
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-live-observation.json",
+      "sha256": "2d67bfbbc10bf3588d7f07831be34b266851a3195af0476b6b19437726ea2f2f",
+      "bytes": 431
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/aggregate.json",
+      "sha256": "84f6e612b22c2620acc08484bb6cb24f0b04286e3487a4da973368ca9fb4a572",
+      "bytes": 1439
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/bundle/input.json",
+      "sha256": "6f6ca7bf6548c5bd714c29cd91975f970a548ffb941a491632700fd6ed0a174d",
+      "bytes": 727
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/bundle/profile-rejection.json",
+      "sha256": "0e5be25eb7af997172684ca9a8b9d001f96245b5d8443001e88727b076d43735",
+      "bytes": 35524
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/bundle/profile/cost.json",
+      "sha256": "a727a1f5bacc6e9914e6b97eba0c4775198f8552ad43345f64a5f8a063b2a539",
+      "bytes": 416
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/bundle/profile/generation-binding.json",
+      "sha256": "e71e46989945d395ab3c55e53a1a2d04947b8affad65035640e692abede2f2c1",
+      "bytes": 16300
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/bundle/profile/generation.json",
+      "sha256": "3829666c5c01afbde5ed986358ffb6522af054e48875fa5981bcdf8663601fcc",
+      "bytes": 15810
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/bundle/profile/reservation.json",
+      "sha256": "76a259b2cc4004db7e366c911ff9b11bd3cfe86e5c66db929175152cb0492965",
+      "bytes": 263
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/bundle/result.json",
+      "sha256": "71a6171d952be1d976b4db692a20233adc977b64a903e6132a3f701aed33ea0f",
+      "bytes": 2057
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/completion.json",
+      "sha256": "50c4438bf0e88c61d5c5a75b3d09eaebd3f47ae0a3df39ee0bac210779355980",
+      "bytes": 762
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/declaration.json",
+      "sha256": "01d792358df0a0b91b228e90b892a8d90705be184bbddd482230bdb54da43a23",
+      "bytes": 22642
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/loaded-runtime.json",
+      "sha256": "a6c6072094ed27330fd9ae977fdb5e48727ea1f859cd0b6b46489c56e3f3b781",
+      "bytes": 299
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/attempt/profile-grammar.json",
+      "sha256": "0d6ef88df1235c796d9fc889bf3bab82b5dbeec740d667ee457e6358be70513e",
+      "bytes": 1398
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/isolation.json",
+      "sha256": "32d83ead81060dd1989de0c4c802ae8071fcbe1776133a08257317636e83fa90",
+      "bytes": 9906
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/smoke-result/terminal.json",
+      "sha256": "5f5630504143cbb2c64b99eb2b2cfa3c3a7436be68909d57ceba225ec15a7547",
+      "bytes": 579
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-packaging-v2-20261111/transport.json",
+      "sha256": "7bc13ca16bc63636c3f3fc61265d1b84f08c1115bd3f0b27fe50e45e55d6d03d",
+      "bytes": 513
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-preexecution-20261111/README.md",
+      "sha256": "c8f045b7583d963b9b15ccd59ce354e281a928f97845aa89f91c443b8f23c8f9",
+      "bytes": 2577
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-preexecution-20261111/census-declaration.json",
+      "sha256": "68c00d29a6fadd293dc073b514ffb62514d2d4670d94ea8456aa3c5b1d263f15",
+      "bytes": 19483
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-preexecution-20261111/census-v1-terminal.json",
+      "sha256": "f41ce07e79d3e7dee4f557840d448a19b70ab5ab47615408219b3fa8f74a3b58",
+      "bytes": 133
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-preexecution-20261111/freeze-receipt.json",
+      "sha256": "725f34be33629d2b238f5ed9130a65617ec3e90136e8f69e5ccd13cf8a81a361",
+      "bytes": 458
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-preexecution-20261111/launcher-failure-diagnosis.json",
+      "sha256": "1c61f7da08c1f19afac11c014bbc9b3af61c322394a02a4594169ef36f590cf9",
+      "bytes": 1202
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-preexecution-20261111/owner-approval.json",
+      "sha256": "00ff034473b2c6efe178159a1afd27d266677cd8f8e67f40331b8bdf03d12a87",
+      "bytes": 595
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r3-preexecution-20261111/sacr-smoke-declaration.json",
+      "sha256": "5c208757f9ce50817154244d897eec78ea13e8e0412e77dd0c953805c73e074b",
+      "bytes": 22194
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/README.md",
+      "sha256": "c03a3dce5ae1047b1c9142a1c22f1f1258e3b9708d2697984d8cd10ade9fbfe5",
+      "bytes": 4414
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/budget-approval.json",
+      "sha256": "f62df5b0b26f61eca54f5d45256931b5415d23cbb22f1c1bf443c7c0c892e0b6",
+      "bytes": 402
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-declaration.json",
+      "sha256": "723a182f62a1fe2ca29c5f13b4ea111506dcb0f4520adbf4cb61067a1725fc1c",
+      "bytes": 22644
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-result/receipt.json",
+      "sha256": "77816ec66fe001e8dae48e6fe75b761980d86fb2ee1812be072f577c97725e3e",
+      "bytes": 320
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-result/terminal.json",
+      "sha256": "0fead89a33c6aabf99c6f10ac200e475cfa998c13a2c7cbd68d9d701f2ec1fdc",
+      "bytes": 522
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-v2-approval.json",
+      "sha256": "6da1308749bd3fe4137fbbc27a4843c829d0a6c78ba6aa0bb2fd89f646ef31ce",
+      "bytes": 352
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-v2-declaration.json",
+      "sha256": "adbd722fca463e1cb36367cab190e7e278ec95164ff6d61d224ad5a03a310de3",
+      "bytes": 23112
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-v2-preparation.json",
+      "sha256": "28d9c54d8d97fa8109ac77a8e7f4afab899e073d59c21bd9f8e2e2e28c71a303",
+      "bytes": 558
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-v2-result/isolation.json",
+      "sha256": "56183d7c6285b5f3d81c4bef4ab729442c01fc49059c57fd082f0f5d887ebe1a",
+      "bytes": 8580
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-v2-result/receipt.json",
+      "sha256": "de2eec9c4961dedb6087137bcf42335fa2496cbdf74bd928f318d25669098882",
+      "bytes": 476
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-v2-result/terminal.json",
+      "sha256": "7a1e449e4774089398da86f5819d51e47025f9b67b1b136f9725044de3be8ed0",
+      "bytes": 523
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/cpu-v2-transport.json",
+      "sha256": "4f7927330bde56b8b97be5823b6246b5f0da53bfa7ff9e613da38085918d2007",
+      "bytes": 158
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/execution-approval.json",
+      "sha256": "38dbdfdb81c9ffdc64bce75c1bae324166926e863ed6fc6397d59e410e7c1393",
+      "bytes": 432
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/execution-freeze.json",
+      "sha256": "6d7b47c588b3f6f270fb72a1079e7b506af2164a12fd814aa06906db36678de5",
+      "bytes": 468
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/graph-approval.json",
+      "sha256": "9b76da2cebbba774047eee8ffc1d695ae33d1374c1aace47bb6eae84f6fdd5dd",
+      "bytes": 344
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/graph-declaration.json",
+      "sha256": "c78f2b8ed03ecc6d15f50ab1a3c0918370d34bef707ac4095a07bca1ad016ca9",
+      "bytes": 21582
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/graph-freeze.json",
+      "sha256": "285d74ad5febcae56bdb2534e5ccab1aabd2c825b216caeb285136f02eb2474f",
+      "bytes": 331
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/graph-result/isolation.json",
+      "sha256": "9169c398493f39350e8a54504e89ed8d8d1a2667336bb6a713cb18a6e7af9967",
+      "bytes": 8532
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/graph-result/receipt.json",
+      "sha256": "21fb361b1cf91b8744dd6ce73f1d4a50683fac570c5719f3453cf0506e2f918b",
+      "bytes": 1478
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/graph-result/sample-hashes.json",
+      "sha256": "860282ac5f8587f696103ea9da8bf6db9bba432bcecee69b8a1005a5c99948ca",
+      "bytes": 383
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/graph-result/terminal.json",
+      "sha256": "f8a36ba3e25d157d26b90127182c041a55ee0722400312d432d3c9293c793ded",
+      "bytes": 581
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/preparation-receipt.json",
+      "sha256": "9fcc5af26b54deb2dc475934199363838523e7b166d38d835efb2688181da121",
+      "bytes": 750
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-declaration.json",
+      "sha256": "226acd36c561d12c1efdca89075f2981f022e6285399a0a11445775e814c5654",
+      "bytes": 23731
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-execution-declaration.json",
+      "sha256": "460b62b314d7d896f42cea7dd7c016ad1f26fd01e6304d6bfa4efb40a7312c37",
+      "bytes": 24110
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/aggregate.json",
+      "sha256": "bb30170554787eb380dddbe39e89e368f4b20829c3ff61fd30ee55c31952d4ce",
+      "bytes": 820
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/attempt/bundle/failure.json",
+      "sha256": "ba7d6dacfe8b018c8915142bab7c0f8da146d389bd28eb46e16ca16c2a951139",
+      "bytes": 191
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/attempt/bundle/input.json",
+      "sha256": "4dedc011cbea1cf09a7a49b5cb3f82f9dcf96db5486f999694d7b776d435b6fb",
+      "bytes": 732
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/attempt/bundle/profile/failure.json",
+      "sha256": "dd4f5f29e233ed0bd4b5a8e9d7d612d8dc98993c006c2f4635b1f6c3ce053853",
+      "bytes": 128
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/attempt/bundle/profile/reservation.json",
+      "sha256": "2b87eb06b387a5964c7261055b89a2e46ebddeb0ffbfe3025d6b309c6c068028",
+      "bytes": 263
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/attempt/declaration.json",
+      "sha256": "5600fbaf4197355a76018ea17bf607327d3aef75eacc530cd75660529bedfef6",
+      "bytes": 23896
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/attempt/failure.json",
+      "sha256": "9370ef633df905a9cdbc7423a93e53886fa47c543d6c24ee26b7dc528cb3660d",
+      "bytes": 148
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/attempt/loaded-runtime.json",
+      "sha256": "a6c6072094ed27330fd9ae977fdb5e48727ea1f859cd0b6b46489c56e3f3b781",
+      "bytes": 299
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/attempt/profile-grammar.json",
+      "sha256": "0d6ef88df1235c796d9fc889bf3bab82b5dbeec740d667ee457e6358be70513e",
+      "bytes": 1398
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/isolation.json",
+      "sha256": "b4e5e7ea81542b075613593e6b5afdf9142e5c6c362bb0de9fde70211872f4dc",
+      "bytes": 9906
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r4-preparation-20261111/smoke-result/terminal.json",
+      "sha256": "ac0ed5aff0f725a36a6d40bf0e6e8f490003dc652394dc1214b48480bda229b5",
+      "bytes": 580
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/README.md",
+      "sha256": "c90209d218dceabe7b733ad76a2e94eae74dc9abf3bad3b502f87579dd8db32e",
+      "bytes": 6561
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/approval-request.md",
+      "sha256": "507a0637b6e80b9f99722400808e4f15b04d00b4e57b0cfa6bbec395cd0b3f13",
+      "bytes": 1484
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v2/result/case-1.json",
+      "sha256": "087247baafc293112a9cca3f8df319468f35c6a2cba436dfa0d3fde4cdc3b421",
+      "bytes": 266
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v2/terminal.json",
+      "sha256": "a445f3c64169fde46ad1cb8b6b74bec86a910b0d7505386fe157dbcdfb28e542",
+      "bytes": 525
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v2/token-cpu-authority.json",
+      "sha256": "f6310b6faed5a2152602f290c2f7c4906286bd40bfe8bbdc719db27e079218e5",
+      "bytes": 337
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v2/token-declaration.json",
+      "sha256": "71869f44ec8c1059578d475309c433ca4b0a6ddf72a4299dde7d85a6fd297eac",
+      "bytes": 23514
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v2/token-transport.json",
+      "sha256": "adce99f5c4a3baae22d8decdbfda72b642618a4a2bff61a858ee5d9b162edde6",
+      "bytes": 105
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-1.json",
+      "sha256": "164cbbc8d4175669e502469453fd816d8f774d43def5a9af74c118dbacce2a25",
+      "bytes": 266
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-10.json",
+      "sha256": "fa7496373d92d4e01e3b5a867cf22f80647a921fe0f0679702c35a7a5ef223a1",
+      "bytes": 274
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-11.json",
+      "sha256": "da640782ad2212c24a05e4a1d803fb0f64925187250c1c59203750357344e6bf",
+      "bytes": 291
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-12.json",
+      "sha256": "5c67ddb57b03264c811158701563f1a7ce1a8a57eb8b8223073ad5bf799b7788",
+      "bytes": 269
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-13.json",
+      "sha256": "e1d64333215a3fbf1feefa33f7e1217a76760bb17a66fbdaa1097aa3345cfa0f",
+      "bytes": 286
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-14.json",
+      "sha256": "beaed2e3c28f8d02076db4c320c0e4cb562eec2b4a01f8ecc1e5fe1de70dc850",
+      "bytes": 270
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-15.json",
+      "sha256": "e62b06b29f1c93483a9d5cb48d0bb3d446634cd437c5f0000d725865b5960d87",
+      "bytes": 287
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-16.json",
+      "sha256": "ce5d2b031c80f93de763e4a2df3edffb07e9e78fc63185dc4ff41cee4705ba2b",
+      "bytes": 271
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-17.json",
+      "sha256": "38c5a76cf467bd4ce44c91b91d34e8fd4a66a0461c2de7e76dff94536a0fabcd",
+      "bytes": 288
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-18.json",
+      "sha256": "b8fd5f1af708dd5199e2ce1403f78c3be3066b2748418e5edb2c92f0ede5469e",
+      "bytes": 274
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-19.json",
+      "sha256": "7af4e54e177f5df0dc86aae9f449433647dc5f60d3890fc5e6a4c83faaa39965",
+      "bytes": 292
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-2.json",
+      "sha256": "94410d590b61e809d708c2bcad49f6dd126fcc33b040532c01aa54be273fe0cf",
+      "bytes": 273
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-20.json",
+      "sha256": "6177e9f9841ef0db39844fe2bf04a9f2c89c0226ee79f8b2743cc70c5e52aab0",
+      "bytes": 275
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-21.json",
+      "sha256": "7d763ff2c52ec436e79891f39b9d328d70a1acc743ab62ec56bf4c189e76774d",
+      "bytes": 292
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-22.json",
+      "sha256": "06c47efeb766adbb46ff6d149950e62fcc3e62cbdd3fdeed13b418c46c4915be",
+      "bytes": 271
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-23.json",
+      "sha256": "f0311bb2fcefb4b8a2e417924c894cf9af7dda571ab284a05950294816a2877b",
+      "bytes": 289
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-24.json",
+      "sha256": "4a5d077559c04316e00f24192e7832ba62b23087d0fe9cea5db597d59dc17adc",
+      "bytes": 271
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-25.json",
+      "sha256": "86700ad89148afe1fd216910126fc4be84fe4dd75ecb091b89bce74613fc9bde",
+      "bytes": 288
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-26.json",
+      "sha256": "e196798025a2e7539778ca04ccb526df4cc8cefcb59fbdf1d1a8b4c219341d5d",
+      "bytes": 270
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-27.json",
+      "sha256": "2dd467a8af597dee7295f5f4b23281512efa60b4796cbc9921d457d6df026581",
+      "bytes": 286
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-28.json",
+      "sha256": "9cb2a4ae48bba91a1e8b0dd7ab41d4f4b066c0ce087723526f3d1e95dcca6f0a",
+      "bytes": 281
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-29.json",
+      "sha256": "54f2122dc5df5e51681c01114a2264aa3a684f24ce9b3f24d3a3442943faa9c2",
+      "bytes": 298
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-3.json",
+      "sha256": "465fc2ce937407930d2b29a1eb59054ef36d98e67f914992e6774f87687ad034",
+      "bytes": 265
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-30.json",
+      "sha256": "2c652ca8a5d84a16d404e36626c401769ca186bde84c331828c8490407b678d2",
+      "bytes": 260
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-31.json",
+      "sha256": "c298073320ae3880fc9cdefd458fe41fc726a6431dc5164985a542bbd60a5bcc",
+      "bytes": 262
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-32.json",
+      "sha256": "8282d324fc355cae699c5949542b8db70e0e657f54613b556aa47619e7689d41",
+      "bytes": 266
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-33.json",
+      "sha256": "3be16f9aaf523b63a6220500d38995a2becd84ad56acf7a741882d00114e3761",
+      "bytes": 273
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-34.json",
+      "sha256": "bd6915c85a8e2ceaecec44a381f09be40ae388323b093dd339d843f1b4588623",
+      "bytes": 280
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-35.json",
+      "sha256": "a0ad41623c9668a6e66ca05829cb5dbb68f69d2144294238eebe144016cf7c71",
+      "bytes": 287
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-4.json",
+      "sha256": "e5635be5b5ca3e468a8b32ceb1e100c9b7d4e9a871dca4e1619bfd3d9461f3ac",
+      "bytes": 271
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-5.json",
+      "sha256": "5a9e5f70cfbc04a7c17ad99e6bf139352513313629beb4efe36ee5efeb9746c1",
+      "bytes": 266
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-6.json",
+      "sha256": "46c2095b5cda1a3d8d394ca51ae899e915da75d38bd8e00372f697af08bf833f",
+      "bytes": 273
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-7.json",
+      "sha256": "3d3142dd4745d61ddb1d3511285c6ac3090a41c84015e2fdd8d8090f8c4a6d03",
+      "bytes": 258
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-8.json",
+      "sha256": "5d8b89125c309b92944ab3536f2c32fcac0746fc939ed0b834c98604a493cf61",
+      "bytes": 278
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/case-9.json",
+      "sha256": "075f6359c242750be2b342fd1cee394d0c988950a6c881892ae50f7222c67c39",
+      "bytes": 294
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/result/receipt.json",
+      "sha256": "1a265b01696a75eaebcdec1f3c4f7b757603732f7600edfb57296e829a82673a",
+      "bytes": 12508
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/terminal.json",
+      "sha256": "97ad3e1a32289e9fb70dfde1373eee2433fd9c67ef18fe4f6d6e666bdc84b850",
+      "bytes": 522
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/token-cpu-authority.json",
+      "sha256": "b9d8fd10ae85330a7e61e865e7210eb0b58aa1aa691f8f1d2ba1ef3901feb365",
+      "bytes": 337
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/token-declaration.json",
+      "sha256": "b53596519a111d4b25eb4b1b96c48223a438f5de7e0e96f388353fa405d416fc",
+      "bytes": 23645
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight-v3/token-transport.json",
+      "sha256": "fd9f2d36b58a3c53cd387dda4182aa07c29466366aa8f34f99a095c60ef60f13",
+      "bytes": 105
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight/result/case-1.json",
+      "sha256": "5732cf66773a1d1a0ae854c21654920b85667de67fd812aff4525ba6d940e1d6",
+      "bytes": 151
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight/result/case-2.json",
+      "sha256": "d47408eccd1036e3e9bb1782a809aa4c7b075d94c06266611f07f986db41fd3d",
+      "bytes": 157
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight/result/case-3.json",
+      "sha256": "b61cd0a7842b09e4da1467c31ee39b1df38170fe7b1a1d32292708cf126b980a",
+      "bytes": 151
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight/terminal.json",
+      "sha256": "f4ec3019de8a0dc20fab7baa0112a0cee8df755adcf93ac95576341296db0a68",
+      "bytes": 525
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight/token-cpu-authority.json",
+      "sha256": "f17e0c47182a68b93836007cbe994d6ebe6e38101391afca6f9022c315b49acb",
+      "bytes": 337
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight/token-declaration.json",
+      "sha256": "f4277f389ac0860e47bff4e20463e0e71de66db281efd024bfef25ac821d2ff3",
+      "bytes": 23505
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/boundary-preflight/token-transport.json",
+      "sha256": "ddb4ff69e5707d596e44fce37213fbd5750456b1a8e21a65e9cf7c3dc397082d",
+      "bytes": 105
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/character-probe/declaration.json",
+      "sha256": "b25111c052ef197c274b1af984ab8bf4b1d723d6f97a0548aec9ce7cc9115a48",
+      "bytes": 502
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/character-probe/fixtures.json",
+      "sha256": "0963a0c22e046c626cd4bb041dfc9e3fc770c0f7b969c4c332b5c72e02dfba6a",
+      "bytes": 51124
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/character-probe/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/character-probe/stdout.json",
+      "sha256": "106c4b55e891e9a9de4f320d513442e73d3eb4d512b45d509fb214983c78e9c5",
+      "bytes": 11474
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/character-probe/terminal.json",
+      "sha256": "4015a14befa22f94331860d0d2e9edee4cc5d19040b7a38d2e1b1d103a79cb4f",
+      "bytes": 562
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/exact-source-preflight/result/case-1.json",
+      "sha256": "869f0c365eef3d2d6776b5f450d031fb70608fc710643fa178145d738fa46f08",
+      "bytes": 282
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/exact-source-preflight/result/receipt.json",
+      "sha256": "dff1b7a633c9d88c6301c8bd9297ed6b1dc56158f37c425b061e0683ad5b51ba",
+      "bytes": 647
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/exact-source-preflight/terminal.json",
+      "sha256": "c5f006dabafde1b4c1e8e8ba7371cb1ed35210f6555cf098aca2bf032fb88e6e",
+      "bytes": 523
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/exact-source-preflight/token-cpu-authority.json",
+      "sha256": "cb5b10885057af34884fd8f561d998face377eb5dd8fa2f5a950579b8891e5d5",
+      "bytes": 337
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/exact-source-preflight/token-declaration.json",
+      "sha256": "1c2816102bcf91e2288114683293beb219dff81824cae28089e56358da588f0a",
+      "bytes": 23651
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/exact-source-preflight/token-transport.json",
+      "sha256": "e7755b351d2884cbfcc3b8d26184f5a44e5f49979ef6581aed4ccafbfbf83c49",
+      "bytes": 105
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/freeze.json",
+      "sha256": "50e7b8e77ec8e7d72e5de7498d79f2869ecbd9c57389dbebafc856ed3ac495ca",
+      "bytes": 651
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/graph-integrity-v2.json",
+      "sha256": "f701e4fdf129034a45953fc19f0a07e22ad48a63258832cfdd4213c18fd800a9",
+      "bytes": 603
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/graph-integrity.json",
+      "sha256": "1622bdc0eb9705654fd6719714dd4f2cfe6151d3f292b575ca1badd8d82df629",
+      "bytes": 810
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/smoke-proposal.json",
+      "sha256": "b322d7ef436062970e8a82d6dd25eed0029ac15690d38d564229cecff1a674ce",
+      "bytes": 26619
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/summary.json",
+      "sha256": "66758d8251d8c1d2f09e6ff4e9f6021721fe1d55ff320c5cca1bae796362e75a",
+      "bytes": 3186
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/terminal-observation.json",
+      "sha256": "d9c22dd9fa2730e7b71cea880fb72078c7ef91ca4184b5cb4ba0f9f28d86b6ca",
+      "bytes": 2945
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-cpu-authority.json",
+      "sha256": "230e1a5a375bfc360c73da3d604e7a55c1cf640ba629345c8c49c2b2fb1d69e2",
+      "bytes": 337
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-declaration.json",
+      "sha256": "fabce4c1a7a02c0a41107ae139710c02a957f818114b5fefb1c9bc7d79ce6f00",
+      "bytes": 23367
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/result/case-1.json",
+      "sha256": "110177cdbcb304739eac8ae7407a38412c574fa87f371f4c45f2470eeb14317b",
+      "bytes": 465
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/result/case-2.json",
+      "sha256": "55760a4afd78c645b7c620eda6b7608874d6602dce32fd07f7e71103ab018463",
+      "bytes": 951
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/result/case-3.json",
+      "sha256": "ce778869fdbfe14368791f9187ede07d821f6e5e408b8a5613d0a2f10d56ed08",
+      "bytes": 413
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/result/case-4.json",
+      "sha256": "993f7703874e783d50f579d9ccfb31d71677ba87f340c67982d6264cf0198228",
+      "bytes": 448
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/result/case-5.json",
+      "sha256": "53f958c083b856595379ab02896ce6e6821aa8ad2dc594551ee3c71076630a36",
+      "bytes": 429
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/result/receipt.json",
+      "sha256": "170d3a37d04889ccd09b68e5dd64d0e152500a71e4ebaa2ac0501412b61b8f18",
+      "bytes": 3294
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/terminal.json",
+      "sha256": "69f2e1a126d985fcc05beb98aa404416fbbe2c43d4ca6a0e109055c830ffd4de",
+      "bytes": 522
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/token-cpu-authority.json",
+      "sha256": "0b4eebd8580d0893837aeed2f28666dfacf414fb21527eb13ff6374f1d255cf8",
+      "bytes": 337
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/token-declaration.json",
+      "sha256": "92f8605a63a4f60fd71df6af7c469b77e3eda0f095c37b641b5573192c932c27",
+      "bytes": 23366
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-diagnosis/token-transport.json",
+      "sha256": "d1700b9dc1ef0439ab7dc02ff082bede36ef6911286771fdafd16766dcce05d1",
+      "bytes": 105
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-1.json",
+      "sha256": "f46304e47e17d341469764c08b7172634d589dbe6a82f780a836b79ccc4b8a05",
+      "bytes": 121
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-10.json",
+      "sha256": "8cef994124960e0b586d17bfac38651c9ba456b463486fb398282c9a2871634a",
+      "bytes": 129
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-11.json",
+      "sha256": "ee50755d0f20f5f8b4588b9264946f725b2a7fc8db0825e107f5ca6dfd14687c",
+      "bytes": 145
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-12.json",
+      "sha256": "93a8ea7375bf23538c2dc343cec3f256d465d06b345fc4a5bf224a75befde5cd",
+      "bytes": 126
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-13.json",
+      "sha256": "1b9fa4ec2627488f111818f409afeed8e576bfd3587af08696f8f01989e4ce45",
+      "bytes": 142
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-14.json",
+      "sha256": "aa8d02e712a0812670fd5f3d33049cb3a7225fd5eed08b1ec5c82d89a9cb3cf9",
+      "bytes": 126
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-15.json",
+      "sha256": "7df78d4b9aeea0ab066f2afcad3be84502c8cc9bcb38a2dfe062a373083e5772",
+      "bytes": 142
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-16.json",
+      "sha256": "964d9f9df9b76ae949603e1cbca74042000a894deef8e803fae127e5dddb5670",
+      "bytes": 127
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-17.json",
+      "sha256": "7396c95f216e6ecdf8f0477a3f91c02f1e1ff9f5ac63533b2aec6c471f0b1aa1",
+      "bytes": 143
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-18.json",
+      "sha256": "29ab6380b31e1dd7e8729b92e724ca934a0b208260ea63ed3eedce9d9a6432f1",
+      "bytes": 130
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-19.json",
+      "sha256": "db750652308e49c252d75481c943be2b0b73b63764275ddb36d3db6a27bb83a6",
+      "bytes": 146
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-2.json",
+      "sha256": "3c12b7342e0335d2dd1f67c2d51af1ee5a753f40bdfb8ca494ad726f08e7a368",
+      "bytes": 138
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-20.json",
+      "sha256": "1d12d8afc5a7bcf4bcb4f14287eb3768d391a2f793de23cf4e6b3f4cd0220755",
+      "bytes": 130
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-21.json",
+      "sha256": "4c61aa5699dc90a0524cc0fc221321f81495543c21c3aae7f8139f4b5706a674",
+      "bytes": 146
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-22.json",
+      "sha256": "efac64e0d997158cc3be3d77ce3ffafe7a318cac0371c0bb134a176606c2b40c",
+      "bytes": 126
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-23.json",
+      "sha256": "54b98823cfbda55b802f43a77b645f7ad8ed1273423f3cddc8c4af846ec7bec5",
+      "bytes": 142
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-24.json",
+      "sha256": "86610d5d62c7d58c239919c1587c1990d751c813faddc1bb45e6f4c33a05af2f",
+      "bytes": 126
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-25.json",
+      "sha256": "b39339a33971ffd798980a9668001f7da298e3a9a64168d76c1f0bfeb13ae78b",
+      "bytes": 142
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-26.json",
+      "sha256": "97d2ee9321ab97f17d9cf8bb3b04795226e2454a29905d54f8c4d993a30e59a5",
+      "bytes": 125
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-27.json",
+      "sha256": "4384bae9006070ae275409e8472e52c763a60bb4f91aa4e78c104a30046e0710",
+      "bytes": 141
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-28.json",
+      "sha256": "3aefc1358e9ab39d0d74ee3bbbd0c7a43cc9122a8d3aaa4e7681424847fb9225",
+      "bytes": 137
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-29.json",
+      "sha256": "b4ba4ae57f326da733daa6181c7c0ad7fb47d12098459867fdf982dd58f0d32a",
+      "bytes": 153
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-3.json",
+      "sha256": "19dc409a77dc6fec35e3db5defb227ee94e2605f0ee19ad69823d0205f2b9e17",
+      "bytes": 121
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-30.json",
+      "sha256": "94641a4ed2ec46ca1f4f5559d7b349d8b38cdeb2e63e95f238d2917af790b07f",
+      "bytes": 115
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-31.json",
+      "sha256": "030e19c9269eea3b82cb7f776466190bdadff7bdc9cabcb8db92232f10be96d9",
+      "bytes": 117
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-32.json",
+      "sha256": "a0398320f97142b3685b3889f2b32e60eca3dbc3c5db37a6ee69f1f434137551",
+      "bytes": 120
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-33.json",
+      "sha256": "401b0c444cf9302bf586e2d640fe1759a36996f749233f34c305ddf16b40ab71",
+      "bytes": 128
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-4.json",
+      "sha256": "a01b7d0c54d8b9cdda9560d851fea1f5158afafb298e5b401f7ed67dc8939cd8",
+      "bytes": 138
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-5.json",
+      "sha256": "ab80e6fd5e6fec278d4747d7883bec4dd126cd6565bee9fc3f1c3dd864d88ed8",
+      "bytes": 121
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-6.json",
+      "sha256": "535b926fdf26b148b1b9bfedbfb962367e12aca5e177cb9852386e57f658a620",
+      "bytes": 138
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-7.json",
+      "sha256": "288930287c03ecc418d245a71bdad77fdc53f6e5c4258cb01567704b5bf91392",
+      "bytes": 111
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-8.json",
+      "sha256": "6da7d665d4bf4738e4447da75c4275e4631ea0dae916c4b4bf1e8e65fc711d19",
+      "bytes": 133
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/case-9.json",
+      "sha256": "1efa475a47afd210f63d9b64dbc64eedbe9177ddfc8cf6ad1db6b1f7aa091b85",
+      "bytes": 149
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-result/receipt.json",
+      "sha256": "27cbef7aa1f6fafa99ce8b11f73aebccf48f5da583cdbefbd26d1c3f1c4a17d8",
+      "bytes": 6211
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-terminal.json",
+      "sha256": "a184b633750ce7d36c64bac9c2b9ec129aed469561cda08dfdf7f55ff40d3b41",
+      "bytes": 523
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-diagnosis-20261111/token-transport.json",
+      "sha256": "89bd86735e5936ef74cb03adb7bb395443dfb4e38ef4fbbfaf959bdd036dbeb1",
+      "bytes": 105
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/admission.json",
+      "sha256": "a082bbf09f3da0d650de15d37ce3ce930cfb47da1cfb26573d53839c405212f9",
+      "bytes": 3446
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-critic-preflight/result/case-1.json",
+      "sha256": "06e7cbc5391fb383a6a854f8cb90445acf42f2961ea307cbf3b177fa5b11506a",
+      "bytes": 256
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-critic-preflight/result/case-2.json",
+      "sha256": "95f31521f9190cad2e4083aa4eb511152baab6749bd5e2f15adf6673ec9f4fa6",
+      "bytes": 277
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-critic-preflight/result/case-3.json",
+      "sha256": "61cbac8ad3ad1387f64b2c67afa66d86134f9abc9eda5d4f8cd42bd766c05f20",
+      "bytes": 283
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-critic-preflight/result/case-4.json",
+      "sha256": "9d0bc2939dafe3848a60a9b58ceebb8d56fdde524626907b3227153614d9b3c3",
+      "bytes": 285
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-critic-preflight/result/receipt.json",
+      "sha256": "dd537e286a4926b642d13e56cade0314ed1459c206b7910901e503fff4028fd2",
+      "bytes": 1680
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-critic-preflight/terminal.json",
+      "sha256": "9fc20645421370b226e863322ee4e815c03a40b23ba9cecef5dc6e3764a3dd11",
+      "bytes": 523
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-critic-preflight/token-cpu-authority.json",
+      "sha256": "ba7f4b020176a15b7fca4a7d9f327e3cfe7efddd4f561d110616a67176083857",
+      "bytes": 337
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-critic-preflight/token-declaration.json",
+      "sha256": "f0ccf3128cf62cfbe82752b3f8f3a585857aaa6bd73bad225ab65fbb25586edc",
+      "bytes": 23766
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-critic-preflight/token-transport.json",
+      "sha256": "c695859f803cbe6d8964f977f136c5dbf46262a2c020d9f25b033260cc335d94",
+      "bytes": 105
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-screen-approval.json",
+      "sha256": "01f57ec13cfb915112a3d1e859ffdf1c24ded7fe3e6d0a3e4329f5029dbeb799",
+      "bytes": 959
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-screen-declaration.json",
+      "sha256": "0384c74a824b948cf5d60aef98da28e544f5177f8511fa04653c967c0b74bb95",
+      "bytes": 26533
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-screen-policy.md",
+      "sha256": "dc963f0de652b7b387c5314ca76a6eb29d8417c69066824d4d1772523d4c4998",
+      "bytes": 2976
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-screen-transport.json",
+      "sha256": "0937de21da95f91b78c6b4357f739abd77943b0c0d98389fedff733eacd1de45",
+      "bytes": 107
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-source-approval.json",
+      "sha256": "c7d9f03a936338a79d4c864d0b365baf07c5a72fc5d8f13173ae180c75a3a009",
+      "bytes": 957
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-source-declaration.json",
+      "sha256": "1e36cf2733950f7f179b99596302c0c9e982ac7016e25fcb2d314e9acf4a36e7",
+      "bytes": 1526
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-source-result/isolation.json",
+      "sha256": "ecd618eb521690686b417e7b0c768fd51a1529c0f8def3c1c99dd1186dbe2fff",
+      "bytes": 8636
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-source-result/receipt.json",
+      "sha256": "5aeba7abdad2b76e2c7d39aa7da59e753d060e5ee22c3b59d06de581a83017f0",
+      "bytes": 503
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-source-result/terminal.json",
+      "sha256": "70eafd9b626d42864d66d48236ab71ba29e941d7ae348616e299a3e5fc968f4e",
+      "bytes": 523
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-source-transport.json",
+      "sha256": "b2b52f33f542c699a5050997a3b3f513bc5947ee399473b08528c0834e4f390a",
+      "bytes": 103
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/owner-approval.json",
+      "sha256": "56266f904db98a66663dbe25a91f803e244ceb7693a1d0474b4d7fb1802faa2e",
+      "bytes": 818
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/smoke-execution-declaration.json",
+      "sha256": "9389e634e16c23d441d4939f6bf60438fae503c3c3d0c6151f0c90a87e849941",
+      "bytes": 26676
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/smoke-owner-approval.json",
+      "sha256": "838d8a767114ed670598d761a0bc41ccf184dd7837e7f28b0c23f5e6fb329310",
+      "bytes": 962
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/smoke-result/aggregate.json",
+      "sha256": "79e4072ec5758d3fbdcd8a8cf8a47c9f26e60a08909944039268422d1b0bfab8",
+      "bytes": 793
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/smoke-result/isolation.json",
+      "sha256": "388e1c2fc6919dc2d4001404333da4a0bdb884eeb428d96f9fb8f71a5c4344f1",
+      "bytes": 9906
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/smoke-result/terminal.json",
+      "sha256": "34b510ddc06da15a53405966f03afe7b127819dc16e89d3397802a2584e1b23f",
+      "bytes": 580
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/smoke-transport.json",
+      "sha256": "8ea9f9abe22ea3d01e96e6acbac27a9f7495d56370ba42e2cd2be07f86acc251",
+      "bytes": 140
+    },
+    {
+      "path": "docs/healthtech/progress.json",
+      "sha256": "50db8fd1a8dc847d64f068c75d452e423cef75ba49beafa704458eb970a12cf3",
+      "bytes": 321347
+    },
+    {
+      "path": "docs/healthtech/research/PAPER1-LONG-RUN-REPORT.md",
+      "sha256": "54d09ee55b8c64d06d012afa56cee406306b34ccc22fb5f978170df56e9fca12",
+      "bytes": 12692
+    },
+    {
+      "path": "docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md",
+      "sha256": "99c605abcbdb47a1fd2bec4e4527c0e687d16e47dedf4295eb5b11a8ebcb2bf0",
+      "bytes": 26517
+    },
+    {
+      "path": "docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md",
+      "sha256": "a9bbe3e223633347cc2ab0b3c163b7480663d7f03799374316adad5cb0f45d97",
+      "bytes": 12476
+    },
+    {
+      "path": "docs/healthtech/research/plans/PAPER-1-DAPFAM.md",
+      "sha256": "eef9cf3b2aebf4e3bc4a764c839cc80ae5558915f8efcd592bef30f43718102a",
+      "bytes": 22574
+    },
+    {
+      "path": "docs/healthtech/research/plans/R4-BUDGET-EXPANSION.md",
+      "sha256": "deaa5c3ce225ae3198d12fbe8247319cd5999ec098705cc021ed3f3919b6a7d1",
+      "bytes": 5988
+    },
+    {
+      "path": "docs/healthtech/research/plans/R4-SACR-GRAPH-ROUND.md",
+      "sha256": "1899c434eeddf29f3e5f02d6cd7974e72b10292eaec7b9274b9ef2c483052a8b",
+      "bytes": 10069
+    },
+    {
+      "path": "docs/healthtech/research/plans/R5-BOUNDED-LONG-RUN.md",
+      "sha256": "86e01be8bf8d350cd1e3e124bf08eef40c87f8d230dc40185718f273fbb6cb52",
+      "bytes": 11809
+    },
+    {
+      "path": "docs/healthtech/research/plans/SG-R3-CENSUS-DRAFT.md",
+      "sha256": "2919b5e607e06e88ebb5e328b47979485cfaa095afb5f56a827cba474b647ec3",
+      "bytes": 3656
+    },
+    {
+      "path": "memory/next-actions.md",
+      "sha256": "24f63434cbe79899a343af6909edd59f39267db2509a38b9da63010de9916436",
+      "bytes": 533177
+    },
+    {
+      "path": "memory/research/patent-to-pilot/INDEX.md",
+      "sha256": "ceb35f186faa53b2e66adbf2f7b035be0f470cd8f562fcfb54c37cbd737b777b",
+      "bytes": 6927
+    },
+    {
+      "path": "memory/research/patent-to-pilot/SESSION-LOG.md",
+      "sha256": "f584918013ad217eca171b2a1a28ff3e9e97aa6a5c4bd7402f199428d06aacb8",
+      "bytes": 59547
+    },
+    {
+      "path": "scripts/healthtech/diagnose_sacr_r5_tokens.py",
+      "sha256": "4997c1c9f80831cfefed55acef020a5e6dc279362bf0e32f826284778eb9d6bf",
+      "bytes": 5133
+    },
+    {
+      "path": "scripts/healthtech/diagnose_sg_r2_sample.py",
+      "sha256": "4fdf28832bd3228755a1acac9af0c777419599bbf58d0d77ecb665c9614cdcb5",
+      "bytes": 3458
+    },
+    {
+      "path": "scripts/healthtech/preflight_sacr_r4.py",
+      "sha256": "e59cc25b55a3aac687ce611958ea1a4fdd0a27e59a98f6dee6ee254e0e80ba9a",
+      "bytes": 4610
+    },
+    {
+      "path": "scripts/healthtech/preflight_sacr_r5_boundary.py",
+      "sha256": "13b55f6cc822ca166b0cc41bc6258367f776a0f8bd16e84438bd495b94255695",
+      "bytes": 5234
+    },
+    {
+      "path": "scripts/healthtech/preflight_sacr_r5_boundary_v2.py",
+      "sha256": "41ab0a85404b038fffae88ba09a5b9389177b34b071cb7081b817b8eaee9025a",
+      "bytes": 5560
+    },
+    {
+      "path": "scripts/healthtech/preflight_sacr_r5_boundary_v3.py",
+      "sha256": "1ebe76c109b2c64e77abb8966e112a4247efc42b0826e88006323c57f2273a8d",
+      "bytes": 5560
+    },
+    {
+      "path": "scripts/healthtech/preflight_sacr_r5_exact_source.py",
+      "sha256": "129e07f2319ddb3bb55649a6993f4f9f39f3e934dd61b4c93e79a7101b1150a3",
+      "bytes": 6048
+    },
+    {
+      "path": "scripts/healthtech/preflight_sacr_r5_tokens.py",
+      "sha256": "03696341127f0037f1506206b2ee17b6d0af4e35b51e8fdb3d8f4452144f1afd",
+      "bytes": 4398
+    },
+    {
+      "path": "scripts/healthtech/preflight_sg_r5_critic.py",
+      "sha256": "6df30351c7f063070b3079420c66236939bb347471c1f348737922a575be5c8a",
+      "bytes": 6480
+    },
+    {
+      "path": "scripts/healthtech/qualify_sacr_character_grammar.py",
+      "sha256": "7a3bdcbd3436c31a9ae8ff95ac70cfd0c706ed1ffc093c266792bbf99dc5ec99",
+      "bytes": 3231
+    },
+    {
+      "path": "scripts/healthtech/r3_engine_client.py",
+      "sha256": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+      "bytes": 3041
+    },
+    {
+      "path": "scripts/healthtech/run_sacr_character_probe.py",
+      "sha256": "e51452e05d6c792b365181ae03df89ad8ae4ed70dd9e9fbacf7ff399c51af57f",
+      "bytes": 2827
+    },
+    {
+      "path": "scripts/healthtech/run_sacr_r3_synthetic_smoke.py",
+      "sha256": "f9fb6300ac581bc3f2e71ffa67534dfc9d9270c7aefa8f345fba08367eee5519",
+      "bytes": 7594
+    },
+    {
+      "path": "scripts/healthtech/run_sacr_r3_synthetic_smoke_v2.py",
+      "sha256": "d8369b303495b888f5a4b1e18c0d945fe046224bc696ebd5ed2ec1c2b13fed7e",
+      "bytes": 7594
+    },
+    {
+      "path": "scripts/healthtech/run_sacr_r4_synthetic_smoke.py",
+      "sha256": "30fa38732cc35e8bed62c51e1f56021914d9465fa323b5ce492e3afee474ee6d",
+      "bytes": 7594
+    },
+    {
+      "path": "scripts/healthtech/run_sacr_r5_synthetic_smoke.py",
+      "sha256": "e44a759bada94ec4fcee4241a8a10e6d61e5bf9bfec3f3b762e575f710b4ab53",
+      "bytes": 8620
+    },
+    {
+      "path": "scripts/healthtech/run_sg_r3_census.py",
+      "sha256": "77eb8f159b2e6a95442bee3630cf83d6d198e48c9e841205b467ec8afc87ab48",
+      "bytes": 835
+    },
+    {
+      "path": "scripts/healthtech/run_sg_r3_census_v2.py",
+      "sha256": "a60e6f1a378e99c446dd041de2e24ef7e77986aa5c92978ea7a0983e2f1ccb89",
+      "bytes": 857
+    },
+    {
+      "path": "scripts/healthtech/run_sg_r4_materialization.py",
+      "sha256": "6547816eef0e9068efab900f279ac42875d02c004fc782bfabc290a1bcee74a1",
+      "bytes": 1160
+    },
+    {
+      "path": "scripts/healthtech/run_sg_r5_screening.py",
+      "sha256": "12e0759a47400a015c22a24a1b827292ba58773ab36c9679ef07350bbe65b681",
+      "bytes": 9234
+    },
+    {
+      "path": "scripts/healthtech/run_sg_r5_source_attachment.py",
+      "sha256": "c6fd2217422b9b62e44dbbeb3a5808f76666f0beef85acafd0b94bb8103ee52d",
+      "bytes": 2041
+    },
+    {
+      "path": "scripts/healthtech/supervise_r3_engine_v2.py",
+      "sha256": "d460f1b1e9a396a19a725b8af15531abf8ac433dccd59f9434227690aa6e2524",
+      "bytes": 9372
+    },
+    {
+      "path": "scripts/healthtech/supervise_r4_preflight.py",
+      "sha256": "22caf1bf0a33032b6b303c1093d73e9487cb378f440a26d6922a124df74a6fee",
+      "bytes": 3512
+    },
+    {
+      "path": "scripts/healthtech/supervise_r4_preflight_v2.py",
+      "sha256": "663e76f3867ee864a13b9b27eda62ae950c8734696d538a54635ca6d2cf28f3c",
+      "bytes": 4073
+    },
+    {
+      "path": "scripts/healthtech/supervise_r5_boundary_preflight.py",
+      "sha256": "db8e8ef2d9be942e26b0966cc0c712e6fbf864f7c0e8f3fd741c98d58fcc2765",
+      "bytes": 4093
+    },
+    {
+      "path": "scripts/healthtech/supervise_r5_boundary_preflight_v2.py",
+      "sha256": "1e6cc87c2aa3deed5efa11478fb121175f837a05709f7292de6d94e01eabd6c5",
+      "bytes": 4099
+    },
+    {
+      "path": "scripts/healthtech/supervise_r5_boundary_preflight_v3.py",
+      "sha256": "0ac53dbb7ae1efb068656b7ed717b9e60d68e61157e87313e4e371e1b8f698ec",
+      "bytes": 4099
+    },
+    {
+      "path": "scripts/healthtech/supervise_r5_exact_source_preflight.py",
+      "sha256": "d3fcc3e736892cece44f075a5c4504c54d33054b4cd31b88b7cc00a132083a72",
+      "bytes": 4105
+    },
+    {
+      "path": "scripts/healthtech/supervise_r5_token_diagnosis.py",
+      "sha256": "5b72f3adffd15d831be912ff6095a70ba57aa2833da8a34302a52b507485ca14",
+      "bytes": 4084
+    },
+    {
+      "path": "scripts/healthtech/supervise_r5_token_preflight.py",
+      "sha256": "c282abf76c1539cf44c26cca37c0ef0214a4d57ba78152c3966a77616e80f04e",
+      "bytes": 4085
+    },
+    {
+      "path": "scripts/healthtech/supervise_sacr_r3_synthetic_smoke.py",
+      "sha256": "d0417997ea27fd1d098ed4aa4b045e47d0d0cf962acc3f0f808c8b45efcafc3c",
+      "bytes": 7551
+    },
+    {
+      "path": "scripts/healthtech/supervise_sacr_r4_engine.py",
+      "sha256": "8035dd0723244c30437fdf928bb5bcf5d213e6ea127cbe51afcf35ca6fbee040",
+      "bytes": 9544
+    },
+    {
+      "path": "scripts/healthtech/supervise_sacr_r5_engine.py",
+      "sha256": "bd7ee24d1f6ed0e165414e2867e2a58e6244d890a6330f5ad9d11870bf42c9a4",
+      "bytes": 9544
+    },
+    {
+      "path": "scripts/healthtech/supervise_sg_r3_census.py",
+      "sha256": "172f29742a2f1cb9fd0e46b6c18ac51565d0f34bdc554747a306e36d1de26a95",
+      "bytes": 4914
+    },
+    {
+      "path": "scripts/healthtech/supervise_sg_r4_materialization.py",
+      "sha256": "f7f389c31473828ac197fadd367cf7dfcea4b35b31509487eff6f128d146079c",
+      "bytes": 4599
+    },
+    {
+      "path": "scripts/healthtech/supervise_sg_r5_critic_preflight.py",
+      "sha256": "497d5ea335890b542ba9a201b4a44cd8934b63077f186efcff5ed1b805f1a299",
+      "bytes": 4086
+    },
+    {
+      "path": "scripts/healthtech/supervise_sg_r5_screening.py",
+      "sha256": "027e1d32d7f7fbbc3484af5fb78fb491714e81fc00c5530c52e3261418681974",
+      "bytes": 9656
+    },
+    {
+      "path": "scripts/healthtech/supervise_sg_r5_source_attachment.py",
+      "sha256": "884bb58c4c3a2bdbc49276674e0b2de076e5185387b6385b428936c925c2f248",
+      "bytes": 3974
+    },
+    {
+      "path": "src/patent_to_pilot/research/literal_critic_contract_v1.py",
+      "sha256": "c053c8cc787aa35ba2fb9b91a7632c84a6786815b7b48d822406c4d93d311939",
+      "bytes": 2686
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_boundary_callback.py",
+      "sha256": "ce4240031a17e5f607d8b685f70f3a1792023949d5f95124294b7ac7e6db8242",
+      "bytes": 5297
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_boundary_callback_v2.py",
+      "sha256": "e71f39f557d2325c01033a5654c705972d3e7a888309ea7cc6a32acc1ac5c034",
+      "bytes": 6106
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_boundary_callback_v3.py",
+      "sha256": "9f55b4e65528b457d108c5215467fbc7dc4835d7ba4852792e05611d44f5dcc2",
+      "bytes": 6210
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_evidence_prompt_v3.py",
+      "sha256": "c55bdc0c61e585e0057aa3cd1ac9ad38df1939715476071f1613cc31a11f3dcc",
+      "bytes": 3675
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_evidence_prompt_v4.py",
+      "sha256": "715fa6953339302d4ebd068a8caf05bbe6b76dfc457d3596f94af41f2adf496f",
+      "bytes": 5966
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_evidence_prompt_v5.py",
+      "sha256": "c8b96a579993affbf21057a6dc6ad41ab4a31e9dfa473acdfb275be0bd4d812f",
+      "bytes": 2160
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_evidence_review_v3.py",
+      "sha256": "ed925c1c745746967d2f693c8d7a82c458720ffd68e687099e5b8a6fc010ae57",
+      "bytes": 4916
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_evidence_v3.py",
+      "sha256": "e5c281369b7d99cab4f5d9a597ae86fb8e8a8816138b579d5c4b5683674529d1",
+      "bytes": 4996
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_failure_diagnostics.py",
+      "sha256": "d203ac10e5da3c0a424e59b20f491554cb8eca39a436734e96e99a4f91bd13d9",
+      "bytes": 6484
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generated_critic_v3.py",
+      "sha256": "c1e7b1eff947ab1c7bdf0cbc905aafa8d70f55fdf9a93f94f4fc9994a0984366",
+      "bytes": 3021
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generated_critic_v4.py",
+      "sha256": "58967c52d55ee75e3d748f7c5cd67c3d5c3d2eeaaff1e4a3d88d9e91e512b882",
+      "bytes": 3065
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generated_critic_v5.py",
+      "sha256": "f84a3eb6f4872de276f668c4997c493eb14b34445ffac1ac606b4d9d9215eaf9",
+      "bytes": 3065
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generated_evidence_v3.py",
+      "sha256": "f2080392d2890cfad134ccc5b63f11c830e256758295fd731f5427f722efd809",
+      "bytes": 3399
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generated_evidence_v4.py",
+      "sha256": "da03331f3a42ad651e87e730fc7870dd1836b27523b96aa5c8d71fcab8425c55",
+      "bytes": 3531
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_generated_evidence_v5.py",
+      "sha256": "c478b7efa80dc93cffbaf1e0d982350226aa113a71fd034a66fc77c92507f058",
+      "bytes": 3535
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_grammar_qualification.py",
+      "sha256": "1fe21ace0f741835c304eafeada7bb92a757b7a867aa5924f10a47ec02787bbf",
+      "bytes": 3704
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_json_string_prefix.py",
+      "sha256": "75f23a874d02166783c890aac4d259428e8f4cc3f518d3303a26b3d7ce0a96fa",
+      "bytes": 702
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_r3_bundle_runner.py",
+      "sha256": "9e8cba70bcd20df2a3e5032bc9216a19cbe9c8b8194575741020b52672ed5605",
+      "bytes": 6171
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_r3_runtime_guards.py",
+      "sha256": "199645d1560b00197e4fe13a354e5658b9d9cbeadb8ed2712936f87fa70b0354",
+      "bytes": 1389
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_r4_bundle_runner.py",
+      "sha256": "b03dddbe15ca5d4bc71f59dd8ed780c8b5420b3f8619695e52d33be6bb375947",
+      "bytes": 6274
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_r4_runtime_guards.py",
+      "sha256": "ba1790c46feb4671299e8f0fb9ce5179deaf7d342db208642bdd73c47971a3fe",
+      "bytes": 1546
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_r5_bundle_runner.py",
+      "sha256": "4aba25b6f91ded85708c1cc8085437fff09774608a6bd319f9cfc420fb7f00de",
+      "bytes": 6274
+    },
+    {
+      "path": "src/patent_to_pilot/research/sacr_views_v3.py",
+      "sha256": "64cf288b67f7b06835bf1aac6acefc4f8041f96b957b2ab7db84c96df55d2982",
+      "bytes": 2586
+    },
+    {
+      "path": "src/patent_to_pilot/research/sg_census_runner.py",
+      "sha256": "615275b84d3a11d2295bbe8604277c2291942ffb315e86353480ae0964785287",
+      "bytes": 4396
+    },
+    {
+      "path": "src/patent_to_pilot/research/sg_critic_screen_v1.py",
+      "sha256": "41e46903cb59e60681f881fdd08793f23775288ca0b57ddcea095023b26a5b54",
+      "bytes": 6113
+    },
+    {
+      "path": "src/patent_to_pilot/research/sg_fixed_source_attachment.py",
+      "sha256": "5ea12529e93382661b000b9da75129248642a404cc45553bada7cbe86fd1cb7f",
+      "bytes": 2963
+    },
+    {
+      "path": "src/patent_to_pilot/research/sg_materialization_v1.py",
+      "sha256": "643d99eeb982f88798776ea49db4131d701e5a3c762447d2d825aa349f7d4ce4",
+      "bytes": 6138
+    },
+    {
+      "path": "src/patent_to_pilot/research/sg_r5_runtime_guards.py",
+      "sha256": "de8a3c1226c116e22e9e79784fbc260cbd37eaada78ce80eacdbe158cc397ccc",
+      "bytes": 1836
+    },
+    {
+      "path": "src/patent_to_pilot/research/sg_sample_integrity.py",
+      "sha256": "c1b475f66b2c0d8e1a6b3adbae6001c30d2fb171bad7c895d9a4f9961e7644c9",
+      "bytes": 4293
+    },
+    {
+      "path": "src/patent_to_pilot/research/sg_screening_runner_v1.py",
+      "sha256": "0887dc4516709f22df24468ae38198a594c409adc729971e69f3f4ee7f3fb97a",
+      "bytes": 4671
+    },
+    {
+      "path": "src/patent_to_pilot/research/sg_signature_census.py",
+      "sha256": "8fac7287187b7492d44670e02365b58020cce5431084dfc07a8b36ba160e3b67",
+      "bytes": 4131
+    },
+    {
+      "path": "tests/test_literal_critic_contract_v1.py",
+      "sha256": "4f8c81dc838625bd53c8dcca8fcabad2e6083cd83c67103880d0f551d6c84c13",
+      "bytes": 2317
+    },
+    {
+      "path": "tests/test_r3_engine_packaging.py",
+      "sha256": "7675626b6294a59daa05f911ec178a32779fb3dbaa196d910c0a2e90ef153405",
+      "bytes": 5171
+    },
+    {
+      "path": "tests/test_r4_preflight_temp.py",
+      "sha256": "b49ab3ae275f41c7a1f11238e2c3bb0074db6d59fb71acb7286018f447b00aa6",
+      "bytes": 1165
+    },
+    {
+      "path": "tests/test_sacr_boundary_callback.py",
+      "sha256": "19a7da8e792e493c5029344f03c923f2e3464eb91d620349826d08e43bfcb8e0",
+      "bytes": 762
+    },
+    {
+      "path": "tests/test_sacr_boundary_callback_v2.py",
+      "sha256": "fe31bffefef076f1f318b73f10789751b7e0acffcccdf31c002d4e674b5cff51",
+      "bytes": 973
+    },
+    {
+      "path": "tests/test_sacr_evidence_prompt_v3.py",
+      "sha256": "166b15d5949eb69fc366d9a0aa7d54eb636f262354ad4fbde8289e7ccdfef139",
+      "bytes": 4803
+    },
+    {
+      "path": "tests/test_sacr_evidence_prompt_v4.py",
+      "sha256": "456cc4f7ab85df2c53dd3b34e2dfad3b3db1da21016e87a9a5b37a05b66c70ce",
+      "bytes": 2758
+    },
+    {
+      "path": "tests/test_sacr_evidence_prompt_v5.py",
+      "sha256": "2c5e498d15034dc6bb2e783f47aa6a057b5ae2119fb5e8989a7ce86f248e88c0",
+      "bytes": 2153
+    },
+    {
+      "path": "tests/test_sacr_evidence_v3.py",
+      "sha256": "fe8cf892e12884482ada3a1c55401a8fa6bb11774a803e03d9f954faae0b16a0",
+      "bytes": 3219
+    },
+    {
+      "path": "tests/test_sacr_failure_diagnostics.py",
+      "sha256": "818686bc7ca279c7f0cb3cb91288aa15e34e5fd3d8fad7d6f0798d6282437049",
+      "bytes": 5349
+    },
+    {
+      "path": "tests/test_sacr_generated_critic_v3.py",
+      "sha256": "5b62e9ed07a05d35ba4ca27a52b921854d7afea3b41a9a62e1fc65dd124554c5",
+      "bytes": 3133
+    },
+    {
+      "path": "tests/test_sacr_generated_evidence_v3.py",
+      "sha256": "6404f09d905c0518c082d9785cef184e374e90bbba7bd97aa45cfd04a630678d",
+      "bytes": 2860
+    },
+    {
+      "path": "tests/test_sacr_grammar_qualification.py",
+      "sha256": "b7ca5b13a58330b735169d661b9a05f3a832ef2a6a8cf20a066dc21c5f3d9706",
+      "bytes": 879
+    },
+    {
+      "path": "tests/test_sacr_json_string_prefix.py",
+      "sha256": "b6c69982fee3cf62663ee90be62a5f399536a0df6ae3b4c6fb50d64b8fa728d4",
+      "bytes": 857
+    },
+    {
+      "path": "tests/test_sacr_r3_bundle_runner.py",
+      "sha256": "87d9f8b54b68c4b269737c987e1fe8641177af961a865dca4dbdcb177d848ed7",
+      "bytes": 4433
+    },
+    {
+      "path": "tests/test_sacr_r3_runtime_guards.py",
+      "sha256": "975025e8514aad8b5eceb0a77e337890560d6aaffd46418f1e46224a8b905c11",
+      "bytes": 1042
+    },
+    {
+      "path": "tests/test_sacr_r3_smoke_supervisor.py",
+      "sha256": "e1cdd216e1e7f7d4c1055b0d4ae4211eb3d7f3bc6206528af94d57e7e5b908f6",
+      "bytes": 4292
+    },
+    {
+      "path": "tests/test_sacr_r4_bundle_runner.py",
+      "sha256": "243b9952b58e6170451110072917a59b6d5ef98db043a9a242a79b80881e3021",
+      "bytes": 4523
+    },
+    {
+      "path": "tests/test_sacr_r4_runtime_guards.py",
+      "sha256": "7b746ded5f54ee272e9a9cc1ab2706a7943e51ea9979e0901de1498533c33e05",
+      "bytes": 1047
+    },
+    {
+      "path": "tests/test_sacr_r5_bundle_runner.py",
+      "sha256": "e39f88bcce0cdb0c4257cd43107edd3e1982d01f68d6914d65aadef3af38988d",
+      "bytes": 4523
+    },
+    {
+      "path": "tests/test_sacr_views_v3.py",
+      "sha256": "27b79d9385e4b3963f26411a2c9280defb71ebe6b8552dc4237e298d37a1913e",
+      "bytes": 2893
+    },
+    {
+      "path": "tests/test_sg_census_runner.py",
+      "sha256": "234a0753aba9f8da5ad81c483929840adaae1f5bdf7b5b80a5d16225bdd6446f",
+      "bytes": 2405
+    },
+    {
+      "path": "tests/test_sg_critic_screen_v1.py",
+      "sha256": "480bb9066f74e95cca77c561c7346a532205ef3089f5037d10c0374b548c13e3",
+      "bytes": 1625
+    },
+    {
+      "path": "tests/test_sg_fixed_source_attachment.py",
+      "sha256": "980d1830b4a4d2869778b3a73aedbd7906c7fbcf56f556f4699347cbda086091",
+      "bytes": 1410
+    },
+    {
+      "path": "tests/test_sg_materialization_v1.py",
+      "sha256": "22c89b027330ff14b506657e2243d926b4b812664f9d6e8cfbcc8f8bab326793",
+      "bytes": 2314
+    },
+    {
+      "path": "tests/test_sg_r3_supervisor.py",
+      "sha256": "a7d370bba9ab906b63ee7b021d6292a558ae1ebecf4d6f1ec2e3f0127f93dda5",
+      "bytes": 2726
+    },
+    {
+      "path": "tests/test_sg_r4_supervisor.py",
+      "sha256": "80828f8f3fec995878131235e82a5a344c20939e008e6220d304c9c9b158953c",
+      "bytes": 1299
+    },
+    {
+      "path": "tests/test_sg_r5_runtime.py",
+      "sha256": "631bda85aa5435413d6107dbbb6380d04001ddb00bbcf8d59bcc8c3db473081e",
+      "bytes": 2276
+    },
+    {
+      "path": "tests/test_sg_r5_source_supervisor.py",
+      "sha256": "d0d4311309c3d2a6e0ef299f7b07cff2299dde29217b4f28f1580e9493a09059",
+      "bytes": 902
+    },
+    {
+      "path": "tests/test_sg_sample_integrity.py",
+      "sha256": "a8e0e0e54b7a76dd7982e2a1f62f4fabf9104a903828e4b6d66e024058cd1381",
+      "bytes": 2705
+    },
+    {
+      "path": "tests/test_sg_screening_runner_v1.py",
+      "sha256": "7f70cae120af2a434a620d787c2840f99c1619772c3331739af54559abe727c9",
+      "bytes": 2813
+    },
+    {
+      "path": "tests/test_sg_signature_census.py",
+      "sha256": "789c06cf515055b04595a8d55c4b03abae2e16ddff9370a53e4e95c9069f3406",
+      "bytes": 2102
+    }
+  ]
+}

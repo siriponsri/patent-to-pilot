@@ -1,0 +1,6 @@
+{
+  "status": "FAILED_OR_INTERRUPTED",
+  "exception_type": "InputBoundaryError",
+  "model_calls": "UNKNOWN",
+  "retry": false
+}

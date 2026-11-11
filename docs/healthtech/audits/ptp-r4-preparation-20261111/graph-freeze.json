@@ -1,0 +1,9 @@
+{
+  "status": "FROZEN_NOT_DISPATCHED",
+  "declaration_sha256": "c78f2b8ed03ecc6d15f50ab1a3c0918370d34bef707ac4095a07bca1ad016ca9",
+  "transport_sha256": "7621ba81fc8f752b22f02e999149083af581041b70b916eeed71670edb522d21",
+  "transport_bytes": 1648640,
+  "tests": "9PASS",
+  "sample_uses_qrels": false,
+  "model_calls": 0
+}

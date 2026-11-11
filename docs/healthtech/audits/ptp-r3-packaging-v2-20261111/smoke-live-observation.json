@@ -1,0 +1,12 @@
+{
+  "observed_at_bangkok": "2026-11-11T14:45:00.010702+07:00",
+  "container": "ptp-sacr-r3-synthetic-smoke-20261111-v2",
+  "status": "RUNNING_PROFILE_STAGE",
+  "ssh_session": 21273,
+  "pid": 2070362,
+  "observed_cgroup_memory_peak_bytes": 1366163456,
+  "memory_max_bytes": 33285996544,
+  "gpu_used_mib_snapshot": 17991,
+  "gpu_total_mib": 32768,
+  "caveat": "Interim observations; not final peaks or completed costs"
+}

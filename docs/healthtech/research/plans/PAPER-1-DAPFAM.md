@@ -1,5 +1,10 @@
 # HT-ST1: DAPFAM query abstraction versus fixed relation traversal
 
+## R3 active objective takeover 2026-11-11T13:17:50.350124+07:00
+
+New owner objective read and active: continue SACR + Graph research after the bounded R1/R2 closeout, preserving failures. Parent sole writer; base ac48e02. Current canonical audit: docs/healthtech/audits/ptp-r3-diagnosis-20261111/README.md. Confirmed retained R2 wrong span positions; implemented separate literal-evidence R3 compiler, no semantic acceptance. New/legacy token suites28PASS after correcting two authored fixture offset mistakes. No generation/census/database write/publication; tests closed; budgets unchanged. Current localhost7474 refuses connection and no Neo4j MCP tools exposed; prior connection result is historical. Next finish diagnosis, schema/semantic/full-pipeline fixtures and prospective census + matched posting-list control; inspect existing Neo4j, then present concrete combined approvals before costly runs. Goal ACTIVE; previous closeout below remains historical. Local changes are uncommitted; owner unrelated untracked handoff preserved.
+
+
 ## Bounded long-run closeout, 11 November2026
 
 Current report: docs/healthtech/research/PAPER1-LONG-RUN-REPORT.md. Parent remains

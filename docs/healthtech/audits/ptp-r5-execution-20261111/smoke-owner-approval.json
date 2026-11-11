@@ -1,0 +1,26 @@
+{
+  "status": "APPROVED",
+  "owner_reply": "call_172d9619b8e64a6781a0ff36fb183240",
+  "decisions": [
+    "FULL_LONG_GOAL_AND_GATES",
+    "BOUNDED_FIXES_AND_REPLACEMENTS"
+  ],
+  "approved_plan_sha256": "897946e19301d4144c84305f1ecbd3b3b317eb2e84ab66b7aa18a48913d31244",
+  "new_gpu_cap_seconds": 646200.0,
+  "new_fidelity_cap_seconds": 178200.0,
+  "synthetic_max_candidates": 3,
+  "synthetic_max_calls": 9,
+  "synthetic_total_seconds": 5400,
+  "pre_backend_packaging_replacements_per_stage": 2,
+  "native_auto_regeneration": false,
+  "cards_total": 60,
+  "cards_allocation": {
+    "SACR": 30,
+    "SG": 30
+  },
+  "goal_service": "CREATE_REJECTED_UNFINISHED_OLD_GOAL",
+  "authority_note": "Owner approval activates execution plan; goal service cannot be falsely completed to replace the old goal.",
+  "declarations_sha256": {
+    "smoke-execution-declaration.json": "9389e634e16c23d441d4939f6bf60438fae503c3c3d0c6151f0c90a87e849941"
+  }
+}

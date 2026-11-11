@@ -1,0 +1,26 @@
+{
+  "status": "TERMINAL",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "retry": false,
+  "engine": {
+    "Version": "29.8.2",
+    "ApiVersion": "1.56",
+    "MinAPIVersion": "1.40"
+  },
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T08:24:54.408892695Z",
+    "FinishedAt": "2026-11-11T08:25:19.94305498Z"
+  },
+  "whole_wall_seconds": 26.376899449154735,
+  "controller_peak_rss_bytes": 21061632
+}

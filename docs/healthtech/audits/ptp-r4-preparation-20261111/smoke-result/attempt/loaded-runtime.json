@@ -1,0 +1,10 @@
+{
+  "model_class": "Qwen3ForCausalLM",
+  "tokenizer_class": "Qwen2TokenizerFast",
+  "dtype": "torch.float16",
+  "device": "cuda:0",
+  "attention": "eager",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.55.2",
+  "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae"
+}

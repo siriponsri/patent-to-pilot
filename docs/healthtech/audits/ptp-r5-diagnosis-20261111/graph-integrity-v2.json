@@ -1,0 +1,17 @@
+{
+  "status": "PASS_RETAINED_SAMPLE_INTEGRITY_ONLY",
+  "source_families": 100,
+  "source_families_without_extracted_records": 86,
+  "source_records": 29,
+  "alias_pair_units": 100,
+  "unique_records_checked": 215,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "full_source_hash_reverification": "NOT_RUN_NO_CORPUS_READ",
+  "sample_rank_against_full_population": "NOT_RECOMPUTED_FROZEN_MATERIALIZATION_RECEIPT",
+  "accepted_edges": 0,
+  "cards_issued": 0,
+  "model_calls": 0,
+  "retrieval": "NOT_RUN",
+  "wall_seconds": 0.01600000000325963,
+  "revision": "identity-and-conflict-checks-added"
+}

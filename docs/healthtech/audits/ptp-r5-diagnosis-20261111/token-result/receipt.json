@@ -1,0 +1,276 @@
+{
+  "status": "FAIL_TOKEN_CALLBACK_MATRIX",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "cases": [
+    {
+      "case": "context-0-populated",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 270,
+      "reason": "COMPLETE"
+    },
+    {
+      "case": "context-0-reversed-fields",
+      "expected": true,
+      "accepted": false,
+      "matches": false,
+      "tokens": 269,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "context-1-populated",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 274,
+      "reason": "COMPLETE"
+    },
+    {
+      "case": "context-1-reversed-fields",
+      "expected": true,
+      "accepted": false,
+      "matches": false,
+      "tokens": 273,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "context-2-populated",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 274,
+      "reason": "COMPLETE"
+    },
+    {
+      "case": "context-2-reversed-fields",
+      "expected": true,
+      "accepted": false,
+      "matches": false,
+      "tokens": 273,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "abstention",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 91,
+      "reason": "COMPLETE"
+    },
+    {
+      "case": "role-outside-context",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 184,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "role-outside-context-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 184,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "role-upper-bound",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 160,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "role-upper-bound-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 160,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "role-negative",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 160,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "role-negative-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 160,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "role-fraction",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 162,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "role-fraction-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 162,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "evidence-empty",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 140,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "evidence-empty-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 140,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "evidence-multiple",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 182,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "evidence-multiple-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 182,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "evidence-unlisted",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 160,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "evidence-unlisted-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 160,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "unknown-field",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 165,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "unknown-field-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 165,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "missing-field",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 156,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "missing-field-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 156,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "unknown-role",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 185,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "unknown-role-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 185,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "condition-outside-source",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 234,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "condition-outside-source-reversed-fields",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 234,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "case": "reversed-span",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 160,
+      "reason": "COMPLETE"
+    },
+    {
+      "case": "zero-width-span",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 160,
+      "reason": "COMPLETE"
+    },
+    {
+      "case": "duplicate-block-id",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 230,
+      "reason": "COMPLETE"
+    },
+    {
+      "case": "too-many-blocks",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 720,
+      "reason": "TOKEN_NOT_ALLOWED"
+    }
+  ],
+  "retry": false,
+  "input_tokens": 887,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "wall_seconds": 177.136233361,
+  "worker_peak_rss_bytes": 1158594560
+}

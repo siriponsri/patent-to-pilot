@@ -1,0 +1,14 @@
+{
+  "status": "APPROVED_NOT_DISPATCHED",
+  "received_at": "2026-11-11T13:56:18.155925+07:00",
+  "source": "Owner reply call_33af8d0ad6914c339e4bd430cd25bcaa: approved both jobs within caps",
+  "declarations_sha256": {
+    "census-declaration.json": "68c00d29a6fadd293dc073b514ffb62514d2d4670d94ea8456aa3c5b1d263f15",
+    "sacr-smoke-declaration.json": "5c208757f9ce50817154244d897eec78ea13e8e0412e77dd0c953805c73e074b"
+  },
+  "sequential": true,
+  "retry": false,
+  "native_generation_pilot_full_dev": "NOT_AUTHORIZED_BY_THIS_APPROVAL",
+  "human_cards": 0,
+  "neo4j_writes": false
+}

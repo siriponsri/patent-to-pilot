@@ -1,0 +1,11 @@
+{
+  "status": "PENDING_OWNER_EXCEPTION_NOT_DISPATCHED",
+  "cpu_v2_declaration_sha256": "adbd722fca463e1cb36367cab190e7e278ec95164ff6d61d224ad5a03a310de3",
+  "tests": "2PASS temporary workspace boundary; prior18Engine/budget fixtures and21R4bundle/context fixtures retained",
+  "model_or_prompt_change": false,
+  "new_model_calls": 0,
+  "new_gpu_seconds": 0,
+  "retry_after_replacement": false,
+  "scope": "One CPU600s replacement only; existing unused smoke authorization remains conditional on PASS",
+  "grammar_preflight": "NOT_YET_QUALIFIED"
+}

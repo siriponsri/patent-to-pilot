@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETED_THREE_EOS_CALLS_UNASSESSABLE_NOT_FIDELITY_PASS",
+  "model_calls": 3,
+  "whole_wall_seconds": 170.94607556700066,
+  "input_tokens": 2745,
+  "output_tokens": 1442,
+  "peak_gpu_allocated_bytes": 17323849216,
+  "critic_envelope": "WRONG_FINDING_FIELD_NAMES",
+  "profile_lexical_status": "ESCALATE",
+  "known_fidelity_problem": "Only final source sentence selected; omitted mechanism/directional coverage and units in selective view.",
+  "native_bridge": "NOT_RUN_GATE_FAILED",
+  "retrieval": "NOT_RUN",
+  "retry": false,
+  "terminal_sha256": "34b510ddc06da15a53405966f03afe7b127819dc16e89d3397802a2584e1b23f",
+  "result_sha256": "1d902fd99229e7a837761e4bc04eb40e673034c1889792144a97181aab0735eb",
+  "raw_and_diagnostics": "RETAINED_PRIVATE_NOT_PUBLISHED"
+}

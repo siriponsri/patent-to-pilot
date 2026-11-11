@@ -1,0 +1,17 @@
+{
+  "event_id": "profile",
+  "query_id": "synthetic-r3-001",
+  "stage": "profile",
+  "status": "COMPLETED",
+  "metrics": {
+    "model_calls": 1,
+    "input_tokens": 2387,
+    "output_tokens": 3395,
+    "embedding_texts": 0,
+    "index_dot_products": 0,
+    "candidate_dot_products": 0,
+    "peak_memory_bytes": 18331955712,
+    "operation_wall_seconds": 261.6218827958219,
+    "gpu_seconds": 261.6218827958219
+  }
+}

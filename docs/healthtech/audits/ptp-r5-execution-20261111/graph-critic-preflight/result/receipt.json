@@ -1,0 +1,61 @@
+{
+  "status": "PASS_TOKEN_CALLBACK_MATRIX",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "cases": [
+    {
+      "case": "supported",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 138,
+      "reason": "COMPLETE",
+      "case_wall_seconds": 0.3276382330004708,
+      "boundary_token_count": 725,
+      "boundary_trie_nodes": 1177,
+      "boundary_build_seconds": 0.0755646669995258
+    },
+    {
+      "case": "uncertain-exact-quoted-finding",
+      "expected": true,
+      "accepted": true,
+      "matches": true,
+      "tokens": 176,
+      "reason": "COMPLETE",
+      "case_wall_seconds": 1.462041660000068,
+      "boundary_token_count": 725,
+      "boundary_trie_nodes": 1177,
+      "boundary_build_seconds": 0.06725227399965661
+    },
+    {
+      "case": "prefixed-field-forbidden",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 177,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "case_wall_seconds": 1.1462600260001636,
+      "boundary_token_count": 725,
+      "boundary_trie_nodes": 1177,
+      "boundary_build_seconds": 0.06852993099982996
+    },
+    {
+      "case": "unknown-artifact-forbidden",
+      "expected": false,
+      "accepted": false,
+      "matches": true,
+      "tokens": 176,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "case_wall_seconds": 0.3393154939994929,
+      "boundary_token_count": 725,
+      "boundary_trie_nodes": 1177,
+      "boundary_build_seconds": 0.07597164599974349
+    }
+  ],
+  "retry": false,
+  "diagnosed_token_10465": ".\",",
+  "input_tokens": 697,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "wall_seconds": 16.11324567599968,
+  "worker_peak_rss_bytes": 998100992
+}

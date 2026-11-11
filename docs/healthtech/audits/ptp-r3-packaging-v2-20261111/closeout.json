@@ -1,0 +1,17 @@
+{
+  "status": "BOTH_JOBS_TERMINAL_AUTHORIZATION_CONSUMED",
+  "remote_retained_bytes_du_deduplicates_hardlink": 340786825,
+  "local_transport_and_current_audit_bytes": 6602323,
+  "observed_combined_bytes": 347389148,
+  "reserved_cap_bytes": 1073741824,
+  "cap_check": "PASS",
+  "census": "COMPLETE_COUNTS_ONLY",
+  "smoke": "FAILED_PROFILE_ACCEPTANCE_NO_RETRY",
+  "future_native_generation_pilot_full_dev": "NOT_AUTHORIZED_BY_THIS_PACKAGE",
+  "remaining_fidelity_seconds": 19752.09796266537,
+  "remaining_gpu_seconds": 249873.21113781678,
+  "human_cards_issued": 0,
+  "protected_tests": "CLOSED",
+  "publication": "LOCAL_ONLY",
+  "goal_completion": "NOT_ACHIEVED"
+}

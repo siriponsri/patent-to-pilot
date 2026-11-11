@@ -1,0 +1,1 @@
+{"case": "evidence-multiple-reversed-fields", "expected": false, "accepted": false, "matches": true, "tokens": 182, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 3.6252044339998974, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.06668574000013905}

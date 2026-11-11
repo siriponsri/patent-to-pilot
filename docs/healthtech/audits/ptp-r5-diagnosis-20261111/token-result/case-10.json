@@ -1,0 +1,1 @@
+{"case": "role-upper-bound", "expected": false, "accepted": false, "matches": true, "tokens": 160, "reason": "TOKEN_NOT_ALLOWED"}

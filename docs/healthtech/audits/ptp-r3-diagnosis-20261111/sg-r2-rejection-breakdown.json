@@ -1,0 +1,22 @@
+{
+  "status": "RETAINED_SAMPLE_DIAGNOSIS_ONLY",
+  "counts": {
+    "cue_occurrences": 159,
+    "supported_action_before_operand_filter": 29,
+    "action_outside_fixed_vocabulary": 107,
+    "role_pattern_no_match": 6,
+    "over_length": 17
+  },
+  "sample_families": 100,
+  "sample_sha256": "f364014d3a8e429812ad0cc8328ae80b6e3e52e5af2f4ff9cbbcc976880591af",
+  "corpus_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+  "elapsed_seconds": 1.7349999999860302,
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "new_config_evaluated": false,
+  "limitations": [
+    "No semantic acceptance inferred from recognized action",
+    "Vocabulary/parser diagnosis is not full-corpus link census",
+    "No unsupported raw action strings published"
+  ]
+}

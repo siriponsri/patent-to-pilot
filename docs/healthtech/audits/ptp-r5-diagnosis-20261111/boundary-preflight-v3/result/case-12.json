@@ -1,0 +1,1 @@
+{"case": "role-negative", "expected": false, "accepted": false, "matches": true, "tokens": 160, "reason": "TOKEN_NOT_ALLOWED", "case_wall_seconds": 5.48418005800022, "boundary_token_count": 725, "boundary_trie_nodes": 1177, "boundary_build_seconds": 0.0689455479996468}

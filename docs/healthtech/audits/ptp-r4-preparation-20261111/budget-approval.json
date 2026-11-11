@@ -1,0 +1,12 @@
+{
+  "status": "APPROVED",
+  "owner_reply": "call_c4ec345a29784975ab45f71412715d87",
+  "prior_gpu_cap_seconds": 259200,
+  "prior_fidelity_cap_seconds": 28800,
+  "new_gpu_cap_seconds": 691200,
+  "new_fidelity_cap_seconds": 230400,
+  "full_dev_subcap_seconds": 460800,
+  "prior_gpu_charged_seconds": 9326.788862183224,
+  "prior_fidelity_charged_seconds": 9047.902037334628,
+  "reset": false
+}

@@ -1,0 +1,64 @@
+{
+  "source_sha256": "3118adc166e1841e48fe5a178f9ca68a64e6805ebce4d31d95456fb8fc8b8863",
+  "retained_generation_file_sha256": "a96cf6ebc603b15819a07e4c972e140a635472a4982913c86c875a36023a05a1",
+  "synthetic_conditions": [
+    {
+      "condition_id": "cond_0",
+      "proposed_raw": "low pressure",
+      "kind": "polarity",
+      "selected_literal": [
+        "low pressure"
+      ]
+    },
+    {
+      "condition_id": "cond_1",
+      "proposed_raw": "without external electrical power",
+      "kind": "polarity",
+      "selected_literal": [
+        "without external electrical power."
+      ]
+    },
+    {
+      "condition_id": "cond_2",
+      "proposed_raw": "forward flow",
+      "kind": "polarity",
+      "selected_literal": [
+        "retain forward"
+      ]
+    },
+    {
+      "condition_id": "cond_3",
+      "proposed_raw": "limit pressure loss",
+      "kind": "polarity",
+      "selected_literal": [
+        "limit pressure loss."
+      ]
+    },
+    {
+      "condition_id": "cond_4",
+      "proposed_raw": "below 40 degrees C",
+      "kind": "polarity",
+      "selected_literal": [
+        "below 40 degrees C"
+      ]
+    },
+    {
+      "condition_id": "cond_5",
+      "proposed_raw": "at 5 kPa",
+      "kind": "polarity",
+      "selected_literal": [
+        "at 5"
+      ]
+    },
+    {
+      "condition_id": "cond_6",
+      "proposed_raw": "without external electrical power",
+      "kind": "polarity",
+      "selected_literal": [
+        "without external electrical"
+      ]
+    }
+  ],
+  "model_calls": 0,
+  "prior_output_modified": false
+}

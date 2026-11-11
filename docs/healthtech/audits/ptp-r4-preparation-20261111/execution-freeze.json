@@ -1,0 +1,11 @@
+{
+  "status": "FROZEN_STAGING",
+  "declarations": {
+    "smoke-execution-declaration.json": "460b62b314d7d896f42cea7dd7c016ad1f26fd01e6304d6bfa4efb40a7312c37",
+    "cpu-declaration.json": "723a182f62a1fe2ca29c5f13b4ea111506dcb0f4520adbf4cb61067a1725fc1c"
+  },
+  "transport_sha256": {
+    "cpu.tar": "a317f7dae0f1f6b5d13a680bfeac5145a8b6438d79b31162f518f8288e34eb23",
+    "smoke.tar": "4c90500357832077949875e081a1e9a50f86719339e8cbf3aa624dbb46303eb7"
+  }
+}

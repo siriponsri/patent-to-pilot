@@ -1,0 +1,13 @@
+{
+  "status": "PROPOSED_NOT_DISPATCHED",
+  "smoke_proposal_sha256": "b322d7ef436062970e8a82d6dd25eed0029ac15690d38d564229cecff1a674ce",
+  "long_run_plan_sha256": "897946e19301d4144c84305f1ecbd3b3b317eb2e84ab66b7aa18a48913d31244",
+  "source_manifest_entries": 188,
+  "review": "Read-only reviewer: no remaining blocking correctness/privacy findings after fixes",
+  "gpu_fidelity_charges_unchanged": {
+    "gpu_conservative_charged_seconds": 9525.762891649225,
+    "gpu_remaining_seconds": 681674.2371083507,
+    "fidelity_generation_charged_seconds": 9246.876066800629,
+    "fidelity_generation_remaining_seconds": 221153.1239331994
+  }
+}

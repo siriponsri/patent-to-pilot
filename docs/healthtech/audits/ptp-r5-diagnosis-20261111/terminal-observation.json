@@ -1,0 +1,108 @@
+{
+  "jobs": [
+    {
+      "job": "ptp-sacr-r5-token-preflight-20261111-v1",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-11-11T08:58:52.879954776Z",
+        "FinishedAt": "2026-11-11T09:01:51.570563272Z"
+      },
+      "logical_bytes": 3202134
+    },
+    {
+      "job": "ptp-sacr-r5-token-diagnosis-20261111-v1",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-11-11T09:04:12.846793507Z",
+        "FinishedAt": "2026-11-11T09:04:53.722182595Z"
+      },
+      "logical_bytes": 3198280
+    },
+    {
+      "job": "ptp-sacr-r5-boundary-preflight-20261111-v1",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 137,
+        "Error": "",
+        "StartedAt": "2026-11-11T09:07:42.533470324Z",
+        "FinishedAt": "2026-11-11T09:14:17.397781814Z"
+      },
+      "logical_bytes": 3198321
+    },
+    {
+      "job": "ptp-sacr-r5-boundary-preflight-20261111-v2",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 137,
+        "Error": "",
+        "StartedAt": "2026-11-11T09:14:33.117689863Z",
+        "FinishedAt": "2026-11-11T09:17:26.410715349Z"
+      },
+      "logical_bytes": 3209524
+    },
+    {
+      "job": "ptp-sacr-r5-boundary-preflight-20261111-v3",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-11-11T09:17:58.023918866Z",
+        "FinishedAt": "2026-11-11T09:22:34.336302574Z"
+      },
+      "logical_bytes": 3232395
+    },
+    {
+      "job": "ptp-sacr-r5-exact-source-preflight-20261111-v1",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-11-11T09:24:00.935094335Z",
+        "FinishedAt": "2026-11-11T09:24:51.147746767Z"
+      },
+      "logical_bytes": 3211660
+    }
+  ],
+  "remote_logical_bytes": 19252314,
+  "owned_running": 0
+}

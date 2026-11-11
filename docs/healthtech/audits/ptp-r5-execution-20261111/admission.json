@@ -1,0 +1,107 @@
+{
+  "status": "PASS_CONSERVATIVE_DISK_AND_IDLE_ADMISSION",
+  "historical_anchor_bytes": 11233334141,
+  "remote": {
+    "remote_post_anchor_logical_bytes": 1099435296,
+    "job_sizes": {
+      "ptp-sg-r4-materialization-20261111-v1": 395594116,
+      "ptp-sacr-r5-boundary-preflight-20261111-v1": 3198321,
+      "ptp-sacr-r5-boundary-preflight-20261111-v3": 3232395,
+      "ptp-sacr-r5-boundary-preflight-20261111-v2": 3209524,
+      "ptp-sacr-r3-synthetic-smoke-20261111-v2": 3127826,
+      "ptp-sacr-r5-token-preflight-20261111-v1": 3202134,
+      "ptp-sacr-r4-synthetic-smoke-20261111-v1": 3173447,
+      "ptp-sacr-r2-synthetic-smoke-20261111-v1": 2727613,
+      "ptp-sg-r3-census-20261111-v1": 331833020,
+      "ptp-sacr-r3-synthetic-smoke-20261111-v1": 2933728,
+      "ptp-sacr-r2-tokenizer-preflight-20261111-v1": 2619900,
+      "ptp-sacr-r5-exact-source-preflight-20261111-v1": 3211660,
+      "ptp-sacr-r4-cpu-preflight-20261111-v2": 3156930,
+      "ptp-sg-r3-census-20261111-v2": 331891331,
+      "ptp-sacr-r4-cpu-preflight-20261111-v1": 3125071,
+      "ptp-sacr-r5-token-diagnosis-20261111-v1": 3198280
+    },
+    "terminal_states": [
+      {
+        "job": "ptp-sg-r4-materialization-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v3",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r3-synthetic-smoke-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-token-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r2-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r2-tokenizer-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-exact-source-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-cpu-preflight-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r3-census-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-cpu-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-token-diagnosis-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      }
+    ],
+    "free_bytes": 101654605824
+  },
+  "local_private_logical_bytes": 1222414756,
+  "local_repo_selected_logical_bytes": 60513111,
+  "local_transport_bytes": 29604754,
+  "conservative_prior_bound_bytes": 13645302058,
+  "new_extension_reservation_bytes": 8589934592,
+  "combined_bound_plus_reservation_bytes": 22235236650,
+  "cap_bytes": 42949672960,
+  "source_pins": "PASS",
+  "counting_note": "Historical anchor retained plus later measurements; overlaps intentionally double counted. No historical reset."
+}
