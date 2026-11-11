@@ -1,0 +1,18 @@
+{
+  "status": "PENDING_OWNER_APPROVAL_NOT_ACTIVATED",
+  "plan_sha256": "3fc4e65aecab73f4af2954dd042a0a168b3af1f0b9720cefa5569efd44201c32",
+  "candidate_freeze_sha256": "315ad46a9c7ac6268089e2ea1078c240795e0acdc9ac8533b3ec570d9f9011d4",
+  "ledger_snapshot_sha256": "c9ed6707c3ee838358fc174403899aba44c65213254217f6fa6ebc8c6482a077",
+  "new_gpu_ceiling_seconds": 644400,
+  "new_fidelity_ceiling_seconds": 176400,
+  "full_dev_ceiling_seconds": 460800,
+  "new_disk_reservation_requested_bytes": 4294967296,
+  "cards_total": 60,
+  "cards_sacr": 30,
+  "cards_sg": 30,
+  "source_context_union_families": 282,
+  "graph_critic_units": 114,
+  "fixed_calibration_cases": 24,
+  "gpu_admission": "FORBIDDEN_UNTIL_OWNER_APPROVAL_AND_PHASE0_PASS",
+  "publication": "EXISTING_OWNER_AUTHORITY"
+}

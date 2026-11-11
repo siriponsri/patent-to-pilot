@@ -1,0 +1,571 @@
+{
+  "status": "FROZEN_BEFORE_ANY_R6_MODEL_OUTPUT",
+  "cases": [
+    {
+      "case_id": "050dbbf0c6f6f200",
+      "branch": "SG_RECORD",
+      "source": "The claimed pump is configured to move coolant when temperature is below 40 C.",
+      "artifacts": {
+        "candidate": "{\"proposed_claim\":\"positive capability of the claimed device\",\"records\":[{\"action_span\":{\"end\":38,\"start\":34,\"text\":\"move\"},\"alias_descriptor\":\"move|coolant\",\"alias_key\":\"392d98d257354afa12c66cbfbcf71a9e2789198233f7700656bae711f7c5f758\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":34,\"start\":20,\"text\":\"configured to \"},\"family_id\":\"fixture\",\"operand_span\":{\"end\":46,\"start\":39,\"text\":\"coolant\"},\"relation_id\":\"314db0013c573c03e99297b15d421c815eda3bca053e50b6c678f5098993939f\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"e23f79290878c156dae6fe69b3c96ca518559f460bbe58287b61dbe830b55498\",\"source_span\":{\"end\":78,\"start\":0,\"text\":\"The claimed pump is configured to move coolant when temperature is below 40 C.\"},\"trailing_context_span\":{\"end\":78,\"start\":46,\"text\":\" when temperature is below 40 C.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "0570d8593837c976",
+      "branch": "SACR",
+      "source": "The pump operates at 5 kPa below 40 C.",
+      "artifacts": {
+        "candidate": "Below 40 C, the pump operates at 50 kPa."
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "quantities_units"
+        ],
+        "allowed_flags": [
+          "quantities_units",
+          "essential_coverage"
+        ],
+        "target_source_spans": [
+          [
+            21,
+            26
+          ]
+        ],
+        "target_candidate_spans": [
+          [
+            33,
+            39
+          ]
+        ],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "1d2c4776e68c960f",
+      "branch": "SG_RECORD",
+      "source": "The claimed device is NOT configured to remove particles.",
+      "artifacts": {
+        "candidate": "{\"proposed_claim\":\"positive capability of the claimed device\",\"records\":[{\"action_span\":{\"end\":46,\"start\":40,\"text\":\"remove\"},\"alias_descriptor\":\"remove|particles\",\"alias_key\":\"eb4e8339fd6d5f90710064c72066457ea259d8b365918ab96244f1c0e6109b3f\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":40,\"start\":26,\"text\":\"configured to \"},\"family_id\":\"fixture\",\"operand_span\":{\"end\":56,\"start\":47,\"text\":\"particles\"},\"relation_id\":\"40d69d9470db7e8c5770b70d50dcf46c031b9d86c1e7d05e96d347e8e638e554\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"90cd951d0840367862e0b438228a6c1658b5f665f11d6022adc31da7fc771557\",\"source_span\":{\"end\":57,\"start\":0,\"text\":\"The claimed device is NOT configured to remove particles.\"},\"trailing_context_span\":{\"end\":57,\"start\":56,\"text\":\".\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "polarity_exceptions"
+        ],
+        "allowed_flags": [
+          "polarity_exceptions",
+          "context_preservation",
+          "roles_direction"
+        ],
+        "target_source_spans": [
+          [
+            22,
+            36
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "27f155161b3842e9",
+      "branch": "SACR",
+      "source": "The first unit feeds the second unit. It reduces pressure. The source does not identify the antecedent of It.",
+      "artifacts": {
+        "candidate": "The first unit feeds the second unit and reduces pressure."
+      },
+      "expected": {
+        "kind": "uncertain",
+        "required_flags": [
+          "roles_direction"
+        ],
+        "allowed_flags": [
+          "roles_direction",
+          "context_preservation"
+        ],
+        "target_source_spans": [
+          [
+            70,
+            102
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "29acac63c47cda2a",
+      "branch": "SG_RECORD",
+      "source": "The claimed pump is configured to move coolant when temperature is below 40 C.",
+      "artifacts": {
+        "candidate": "{\"proposed_claim\":\"positive capability of the claimed device\",\"records\":[{\"action_span\":{\"end\":38,\"start\":34,\"text\":\"move\"},\"alias_descriptor\":\"move|coolant\",\"alias_key\":\"392d98d257354afa12c66cbfbcf71a9e2789198233f7700656bae711f7c5f758\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":34,\"start\":20,\"text\":\"configured to \"},\"family_id\":\"fixture\",\"operand_span\":{\"end\":46,\"start\":39,\"text\":\"coolant\"},\"relation_id\":\"314db0013c573c03e99297b15d421c815eda3bca053e50b6c678f5098993939f\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"e23f79290878c156dae6fe69b3c96ca518559f460bbe58287b61dbe830b55498\",\"source_span\":{\"end\":46,\"start\":0,\"text\":\"The claimed pump is configured to move coolant\"},\"trailing_context_span\":{\"end\":46,\"start\":46,\"text\":\"\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "condition_attachment",
+          "essential_coverage"
+        ],
+        "allowed_flags": [
+          "condition_attachment",
+          "essential_coverage"
+        ],
+        "target_source_spans": [
+          [
+            47,
+            77
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "2e912eead9d182ab",
+      "branch": "SACR",
+      "source": "Administrative context: the document contains a cover page, revision date, drawing index and glossary. These administrative entries describe how the file is organized and make no technical capability claim. The index lists numbered sections so a reader can locate the description. The glossary defines formatting conventions. The cover identifies the document revision and the drawing list identifies sheet numbers. This paragraph is administrative background only. The valve opens above 5 kPa; the pump stops above 40 C.",
+      "artifacts": {
+        "candidate": "Administrative context: the document contains a cover page, revision date, drawing index and glossary. These administrative entries describe how the file is organized and make no technical capability claim. The index lists numbered sections so a reader can locate the description. The glossary defines formatting conventions. The cover identifies the document revision and the drawing list identifies sheet numbers. This paragraph is administrative background only. The valve opens above 40 C; the pump stops above 5 kPa.",
+        "control": "Administrative context: the document contains a cover page, revision date, drawing index and glossary. These administrative entries describe how the file is organized and make no technical capability claim. The index lists numbered sections so a reader can locate the description. The glossary defines formatting conventions. The cover identifies the document revision and the drawing list identifies sheet numbers. This paragraph is administrative background only. The pump stops above 40 C, and the valve opens above 5 kPa."
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "condition_attachment"
+        ],
+        "allowed_flags": [
+          "condition_attachment",
+          "roles_direction",
+          "quantities_units",
+          "essential_coverage"
+        ],
+        "target_source_spans": [
+          [
+            466,
+            493
+          ],
+          [
+            495,
+            520
+          ]
+        ],
+        "target_candidate_spans": [
+          [
+            466,
+            492
+          ],
+          [
+            494,
+            520
+          ]
+        ],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "33afc0bfbf899bd7",
+      "branch": "SACR",
+      "source": "Administrative context: the document contains a cover page, revision date, drawing index and glossary. These administrative entries describe how the file is organized and make no technical capability claim. The index lists numbered sections so a reader can locate the description. The glossary defines formatting conventions. The cover identifies the document revision and the drawing list identifies sheet numbers. This paragraph is administrative background only. A prior filter uses a laser. The claimed invention uses a membrane to filter particles.",
+      "artifacts": {
+        "candidate": "The claimed invention uses a laser to filter particles.",
+        "control": "A laser belongs to the prior filter; the invention filters particles with a membrane."
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "context_preservation",
+          "abstraction_support"
+        ],
+        "allowed_flags": [
+          "context_preservation",
+          "abstraction_support",
+          "essential_coverage",
+          "roles_direction"
+        ],
+        "target_source_spans": [
+          [
+            495,
+            532
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "368a68a5deb468b0",
+      "branch": "SG_RECORD",
+      "source": "The claimed device is configured to adjust pressure under Procedure X. Procedure X is not supplied.",
+      "artifacts": {
+        "candidate": "{\"proposed_claim\":\"positive capability of the claimed device\",\"records\":[{\"action_span\":{\"end\":42,\"start\":36,\"text\":\"adjust\"},\"alias_descriptor\":\"adjust|pressure\",\"alias_key\":\"2ac1e914a31d35b641232c20457f8110c48082b149d4f92b0f37266a410e52b2\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":36,\"start\":22,\"text\":\"configured to \"},\"family_id\":\"fixture\",\"operand_span\":{\"end\":51,\"start\":43,\"text\":\"pressure\"},\"relation_id\":\"6af2a8c471cc6894e66f25ace5814b4e2255da982d77a13321bad8123a0aedd8\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"0311436fcabdae529b48b7dbf525f45ad69c708cdfe893681a7b32e8e49223ae\",\"source_span\":{\"end\":70,\"start\":0,\"text\":\"The claimed device is configured to adjust pressure under Procedure X.\"},\"trailing_context_span\":{\"end\":70,\"start\":51,\"text\":\" under Procedure X.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "uncertain",
+        "required_flags": [
+          "condition_attachment",
+          "context_preservation"
+        ],
+        "allowed_flags": [
+          "condition_attachment",
+          "context_preservation"
+        ],
+        "target_source_spans": [
+          [
+            71,
+            98
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "3ba5732490115271",
+      "branch": "SG_RECORD",
+      "source": "Only the prior device is configured to detect pressure. The claimed device measures temperature.",
+      "artifacts": {
+        "candidate": "{\"proposed_claim\":\"positive capability of the claimed device\",\"records\":[{\"action_span\":{\"end\":45,\"start\":39,\"text\":\"detect\"},\"alias_descriptor\":\"detect|pressure\",\"alias_key\":\"d71026f7c77e3105f232f4f748e79b1b808e270850e2b0ed6f091b51881dd794\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":39,\"start\":25,\"text\":\"configured to \"},\"family_id\":\"fixture\",\"operand_span\":{\"end\":54,\"start\":46,\"text\":\"pressure\"},\"relation_id\":\"95ebf2c70f1f7bd2a263df7b2b31d81397ae099c6182c7bb6787fd8a959a6900\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"9de28e2c62b1de1c318123d501c9217e6982de2ed452173f1886ceab8ce61a4a\",\"source_span\":{\"end\":55,\"start\":0,\"text\":\"Only the prior device is configured to detect pressure.\"},\"trailing_context_span\":{\"end\":55,\"start\":54,\"text\":\".\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "context_preservation"
+        ],
+        "allowed_flags": [
+          "context_preservation",
+          "roles_direction"
+        ],
+        "target_source_spans": [
+          [
+            0,
+            21
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "57a6c248dc3bcde8",
+      "branch": "SACR",
+      "source": "The filter must not release particles except during cleaning.",
+      "artifacts": {
+        "candidate": "The filter must not release particles."
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "polarity_exceptions"
+        ],
+        "allowed_flags": [
+          "polarity_exceptions",
+          "condition_attachment",
+          "essential_coverage"
+        ],
+        "target_source_spans": [
+          [
+            38,
+            60
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "6431550c749ffaf6",
+      "branch": "SACR",
+      "source": "Valve A responds to sensor B at a threshold. The source does not identify whether this threshold belongs to A or B.",
+      "artifacts": {
+        "candidate": "Valve A responds to sensor B at the threshold belonging to A."
+      },
+      "expected": {
+        "kind": "uncertain",
+        "required_flags": [
+          "condition_attachment"
+        ],
+        "allowed_flags": [
+          "condition_attachment",
+          "context_preservation",
+          "roles_direction"
+        ],
+        "target_source_spans": [
+          [
+            56,
+            73
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "67070d7339ba5f85",
+      "branch": "SG_ALIAS",
+      "source": "WITNESS A\nDevice A is configured to store charge. Here charge means electric charge.\nWITNESS B\nDevice B is configured to store charge. Here charge means a billing fee.",
+      "artifacts": {
+        "candidate": "{\"full_witness_contexts\":[\"Device A is configured to store charge. Here charge means electric charge.\",\"Device B is configured to store charge. Here charge means a billing fee.\"],\"proposed_claim\":\"shared positive technical action/operand with both contexts retained; no interchangeability\",\"witness_records\":[{\"action_span\":{\"end\":31,\"start\":26,\"text\":\"store\"},\"alias_descriptor\":\"store|charge\",\"alias_key\":\"b9f98a2225a7522be63981ecb9eb14ad166c73648a566f92a133abc83ac9ecd3\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":26,\"start\":12,\"text\":\"configured to \"},\"family_id\":\"left\",\"operand_span\":{\"end\":38,\"start\":32,\"text\":\"charge\"},\"relation_id\":\"468212e99943880868474f203503eb3877928df88e17b9218c954b87a5f86e07\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"0de616bab1f1f6271f2fd7277017be5e7d70d5bb5febbc4d4e4af69986c17bcb\",\"source_span\":{\"end\":39,\"start\":0,\"text\":\"Device A is configured to store charge.\"},\"trailing_context_span\":{\"end\":39,\"start\":38,\"text\":\".\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]},{\"action_span\":{\"end\":31,\"start\":26,\"text\":\"store\"},\"alias_descriptor\":\"store|charge\",\"alias_key\":\"b9f98a2225a7522be63981ecb9eb14ad166c73648a566f92a133abc83ac9ecd3\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":26,\"start\":12,\"text\":\"configured to \"},\"family_id\":\"right\",\"operand_span\":{\"end\":38,\"start\":32,\"text\":\"charge\"},\"relation_id\":\"8363eb21af367420c01f0c9df05831936930ca007cc1f0383eee3c92b0330656\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"8f08e777e251a02f4de7849b3cd770f40033db4cff16692eb9aa1ec7afc1250a\",\"source_span\":{\"end\":39,\"start\":0,\"text\":\"Device B is configured to store charge.\"},\"trailing_context_span\":{\"end\":39,\"start\":38,\"text\":\".\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "abstraction_support"
+        ],
+        "allowed_flags": [
+          "abstraction_support",
+          "context_preservation",
+          "roles_direction"
+        ],
+        "target_source_spans": [
+          [
+            155,
+            166
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "7a0762269ff9f9e4",
+      "branch": "SACR",
+      "source": "The pump operates at 5 kPa below 40 C.",
+      "artifacts": {
+        "candidate": "Below 40 C, the pump operates at 5 kPa."
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "96a2c90fb1fcf533",
+      "branch": "SG_ALIAS",
+      "source": "WITNESS A\nDevice A is configured to control process under Figure A. Figure A is unavailable.\nWITNESS B\nDevice B is configured to control process under Figure B. Figure B is unavailable.",
+      "artifacts": {
+        "candidate": "{\"full_witness_contexts\":[\"Device A is configured to control process under Figure A. Figure A is unavailable.\",\"Device B is configured to control process under Figure B. Figure B is unavailable.\"],\"proposed_claim\":\"shared positive technical action/operand with both contexts retained; no interchangeability\",\"witness_records\":[{\"action_span\":{\"end\":33,\"start\":26,\"text\":\"control\"},\"alias_descriptor\":\"control|process\",\"alias_key\":\"20564a911ade691a14bb6137f2880d56d4ef20a88f7bf286d1f56cf7f48c510d\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":26,\"start\":12,\"text\":\"configured to \"},\"family_id\":\"left\",\"operand_span\":{\"end\":41,\"start\":34,\"text\":\"process\"},\"relation_id\":\"97f597bd550306da8445b229308bc9f14e330f51539a3c658255651b5a5b59ae\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"7033ff472c65653c513f11792ade528913f4295c849fcacd869a77c4f38f1363\",\"source_span\":{\"end\":57,\"start\":0,\"text\":\"Device A is configured to control process under Figure A.\"},\"trailing_context_span\":{\"end\":57,\"start\":41,\"text\":\" under Figure A.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]},{\"action_span\":{\"end\":33,\"start\":26,\"text\":\"control\"},\"alias_descriptor\":\"control|process\",\"alias_key\":\"20564a911ade691a14bb6137f2880d56d4ef20a88f7bf286d1f56cf7f48c510d\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":26,\"start\":12,\"text\":\"configured to \"},\"family_id\":\"right\",\"operand_span\":{\"end\":41,\"start\":34,\"text\":\"process\"},\"relation_id\":\"62055bf2be7f8302e159197a96d22122a6f4d38cc46cbd9a78021e96ddde4389\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"4803ac672813c9e4ba3c9664422bc02809601b7f28c0b1a8be5dcaa3384d29df\",\"source_span\":{\"end\":57,\"start\":0,\"text\":\"Device B is configured to control process under Figure B.\"},\"trailing_context_span\":{\"end\":57,\"start\":41,\"text\":\" under Figure B.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "uncertain",
+        "required_flags": [
+          "abstraction_support",
+          "context_preservation"
+        ],
+        "allowed_flags": [
+          "abstraction_support",
+          "context_preservation"
+        ],
+        "target_source_spans": [
+          [
+            68,
+            91
+          ],
+          [
+            161,
+            184
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "994a6b45e44d8cb1",
+      "branch": "SACR",
+      "source": "The filter must not release particles except during cleaning.",
+      "artifacts": {
+        "candidate": "Except during cleaning, the filter must not release particles."
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "9f2433a3dc16c540",
+      "branch": "SG_RECORD",
+      "source": "The claimed device is configured to detect pressure.",
+      "artifacts": {
+        "candidate": "{\"proposed_claim\":\"positive capability of the claimed device\",\"records\":[{\"action_span\":{\"end\":42,\"start\":36,\"text\":\"detect\"},\"alias_descriptor\":\"detect|pressure\",\"alias_key\":\"d71026f7c77e3105f232f4f748e79b1b808e270850e2b0ed6f091b51881dd794\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":36,\"start\":22,\"text\":\"configured to \"},\"family_id\":\"fixture\",\"operand_span\":{\"end\":51,\"start\":43,\"text\":\"pressure\"},\"relation_id\":\"d2f0eddef881e35cf32abfd187cad9a9bd5108751510aa3a4f2764015c407a3a\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"527e48fcc2df241be9567beaf4757a0fa36cc2f19c851b17474b9b79972819f8\",\"source_span\":{\"end\":52,\"start\":0,\"text\":\"The claimed device is configured to detect pressure.\"},\"trailing_context_span\":{\"end\":52,\"start\":51,\"text\":\".\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "a02cbb97a52243ac",
+      "branch": "SG_RECORD",
+      "source": "The claimed module is configured to convert heat into electricity.",
+      "artifacts": {
+        "candidate": "{\"proposed_claim\":\"positive capability of the claimed device\",\"records\":[{\"action_span\":{\"end\":43,\"start\":36,\"text\":\"convert\"},\"alias_descriptor\":\"convert|electricity\",\"alias_key\":\"f745947e859957f826fc4711b9aad4b95766bf1211fb5bf6d6f181f89f7b0ece\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":36,\"start\":22,\"text\":\"configured to \"},\"family_id\":\"fixture\",\"operand_span\":{\"end\":65,\"start\":54,\"text\":\"electricity\"},\"relation_id\":\"7bfff017e0344e5e4e1d21ef87a9524f2c140a0deaef9dced72aa0edf66912c4\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"2ec503380b9d7efb437b63fc0f51d11b0bcc00829c76ef3c9d0f3af3e6199103\",\"source_span\":{\"end\":66,\"start\":0,\"text\":\"The claimed module is configured to convert heat into electricity.\"},\"trailing_context_span\":{\"end\":66,\"start\":48,\"text\":\" into electricity.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "roles_direction"
+        ],
+        "allowed_flags": [
+          "roles_direction",
+          "abstraction_support"
+        ],
+        "target_source_spans": [
+          [
+            36,
+            65
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "ac2ad6edbcfc930c",
+      "branch": "SACR",
+      "source": "Administrative context: the document contains a cover page, revision date, drawing index and glossary. These administrative entries describe how the file is organized and make no technical capability claim. The index lists numbered sections so a reader can locate the description. The glossary defines formatting conventions. The cover identifies the document revision and the drawing list identifies sheet numbers. This paragraph is administrative background only. A prior filter uses a laser. The claimed invention uses a membrane to filter particles.",
+      "artifacts": {
+        "candidate": "A laser belongs to the prior filter; the invention filters particles with a membrane.",
+        "control": "A laser belongs to the prior filter; the invention filters particles with a membrane."
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "b473d4f8ed9f9ebc",
+      "branch": "SG_ALIAS",
+      "source": "WITNESS A\nDevice A is configured to filter particles when pressure is below 5 kPa.\nWITNESS B\nDevice B is NOT configured to filter the particles when temperature is below 40 C.",
+      "artifacts": {
+        "candidate": "{\"full_witness_contexts\":[\"Device A is configured to filter particles when pressure is below 5 kPa.\",\"Device B is NOT configured to filter the particles when temperature is below 40 C.\"],\"proposed_claim\":\"shared positive technical action/operand with both contexts retained; no interchangeability\",\"witness_records\":[{\"action_span\":{\"end\":32,\"start\":26,\"text\":\"filter\"},\"alias_descriptor\":\"filter|particles\",\"alias_key\":\"ac9a569f951fc2c0bb7d4061fcf39716247a9b23528cb02b3fcdd7a8560a360b\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":26,\"start\":12,\"text\":\"configured to \"},\"family_id\":\"left\",\"operand_span\":{\"end\":42,\"start\":33,\"text\":\"particles\"},\"relation_id\":\"f1d56eb0fc1b4e22572e2f766649f48d70b9c36df1b02a62d07e21fd3ed2ac08\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"e3d0806532861cb580c5d637813bd512898c36d1028e40c37323385089e27e1d\",\"source_span\":{\"end\":72,\"start\":0,\"text\":\"Device A is configured to filter particles when pressure is below 5 kPa.\"},\"trailing_context_span\":{\"end\":72,\"start\":42,\"text\":\" when pressure is below 5 kPa.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]},{\"action_span\":{\"end\":36,\"start\":30,\"text\":\"filter\"},\"alias_descriptor\":\"filter|particles\",\"alias_key\":\"ac9a569f951fc2c0bb7d4061fcf39716247a9b23528cb02b3fcdd7a8560a360b\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":30,\"start\":16,\"text\":\"configured to \"},\"family_id\":\"right\",\"operand_span\":{\"end\":50,\"start\":37,\"text\":\"the particles\"},\"relation_id\":\"f67feadd31707bbfb306193c86c23ae35bc6eba741b87dc4b349964870e93711\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"f18c55fe0fb5cf5597cb61b802b60ca43d11a6a3c3ebc96a4948af6489ea8d61\",\"source_span\":{\"end\":82,\"start\":0,\"text\":\"Device B is NOT configured to filter the particles when temperature is below 40 C.\"},\"trailing_context_span\":{\"end\":82,\"start\":50,\"text\":\" when temperature is below 40 C.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "negative",
+        "required_flags": [
+          "polarity_exceptions"
+        ],
+        "allowed_flags": [
+          "polarity_exceptions",
+          "roles_direction",
+          "context_preservation"
+        ],
+        "target_source_spans": [
+          [
+            105,
+            119
+          ]
+        ],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "b48aa9daa4823781",
+      "branch": "SG_ALIAS",
+      "source": "WITNESS A\nDevice A is configured to filter particles when pressure is below 5 kPa.\nWITNESS B\nDevice B is configured to filter the particles when temperature is below 40 C.",
+      "artifacts": {
+        "candidate": "{\"full_witness_contexts\":[\"Device A is configured to filter particles when pressure is below 5 kPa.\",\"Device B is configured to filter the particles when temperature is below 40 C.\"],\"proposed_claim\":\"shared positive technical action/operand with both contexts retained; no interchangeability\",\"witness_records\":[{\"action_span\":{\"end\":32,\"start\":26,\"text\":\"filter\"},\"alias_descriptor\":\"filter|particles\",\"alias_key\":\"ac9a569f951fc2c0bb7d4061fcf39716247a9b23528cb02b3fcdd7a8560a360b\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":26,\"start\":12,\"text\":\"configured to \"},\"family_id\":\"left\",\"operand_span\":{\"end\":42,\"start\":33,\"text\":\"particles\"},\"relation_id\":\"f1d56eb0fc1b4e22572e2f766649f48d70b9c36df1b02a62d07e21fd3ed2ac08\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"e3d0806532861cb580c5d637813bd512898c36d1028e40c37323385089e27e1d\",\"source_span\":{\"end\":72,\"start\":0,\"text\":\"Device A is configured to filter particles when pressure is below 5 kPa.\"},\"trailing_context_span\":{\"end\":72,\"start\":42,\"text\":\" when pressure is below 5 kPa.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]},{\"action_span\":{\"end\":32,\"start\":26,\"text\":\"filter\"},\"alias_descriptor\":\"filter|particles\",\"alias_key\":\"ac9a569f951fc2c0bb7d4061fcf39716247a9b23528cb02b3fcdd7a8560a360b\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":26,\"start\":12,\"text\":\"configured to \"},\"family_id\":\"right\",\"operand_span\":{\"end\":46,\"start\":33,\"text\":\"the particles\"},\"relation_id\":\"7078c0da8eea8d6975dbc7b7f9a2a139a42cd91a7842cc86d60ec6a2618216bb\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"7c693690252ac9706389f09bf0c9a82164da79850a2a07117066789f54ef06ae\",\"source_span\":{\"end\":78,\"start\":0,\"text\":\"Device B is configured to filter the particles when temperature is below 40 C.\"},\"trailing_context_span\":{\"end\":78,\"start\":46,\"text\":\" when temperature is below 40 C.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "b80eeb2bd7e10b09",
+      "branch": "SACR",
+      "source": "Administrative context: the document contains a cover page, revision date, drawing index and glossary. These administrative entries describe how the file is organized and make no technical capability claim. The index lists numbered sections so a reader can locate the description. The glossary defines formatting conventions. The cover identifies the document revision and the drawing list identifies sheet numbers. This paragraph is administrative background only. The valve opens above 5 kPa; the pump stops above 40 C.",
+      "artifacts": {
+        "candidate": "Administrative context: the document contains a cover page, revision date, drawing index and glossary. These administrative entries describe how the file is organized and make no technical capability claim. The index lists numbered sections so a reader can locate the description. The glossary defines formatting conventions. The cover identifies the document revision and the drawing list identifies sheet numbers. This paragraph is administrative background only. The pump stops above 40 C, and the valve opens above 5 kPa.",
+        "control": "Administrative context: the document contains a cover page, revision date, drawing index and glossary. These administrative entries describe how the file is organized and make no technical capability claim. The index lists numbered sections so a reader can locate the description. The glossary defines formatting conventions. The cover identifies the document revision and the drawing list identifies sheet numbers. This paragraph is administrative background only. The pump stops above 40 C, and the valve opens above 5 kPa."
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "c3e7634150f232c3",
+      "branch": "SG_RECORD",
+      "source": "The claimed device is configured to remove particles.",
+      "artifacts": {
+        "candidate": "{\"proposed_claim\":\"positive capability of the claimed device\",\"records\":[{\"action_span\":{\"end\":42,\"start\":36,\"text\":\"remove\"},\"alias_descriptor\":\"remove|particles\",\"alias_key\":\"eb4e8339fd6d5f90710064c72066457ea259d8b365918ab96244f1c0e6109b3f\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":36,\"start\":22,\"text\":\"configured to \"},\"family_id\":\"fixture\",\"operand_span\":{\"end\":52,\"start\":43,\"text\":\"particles\"},\"relation_id\":\"d2ba1114243b52c96dfa6a4517dde49f34e92d3421be55cc48a57a328212480b\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"5ad710a326139de7c712fd2711ca0c4b7ed44c391ddc1cc499358ea8c887abfe\",\"source_span\":{\"end\":53,\"start\":0,\"text\":\"The claimed device is configured to remove particles.\"},\"trailing_context_span\":{\"end\":53,\"start\":52,\"text\":\".\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "ddca6b1640c46ab6",
+      "branch": "SG_RECORD",
+      "source": "The claimed module is configured to convert heat into electricity.",
+      "artifacts": {
+        "candidate": "{\"proposed_claim\":\"positive capability of the claimed device\",\"records\":[{\"action_span\":{\"end\":43,\"start\":36,\"text\":\"convert\"},\"alias_descriptor\":\"convert|heat\",\"alias_key\":\"5189f22e5d6e8314c7dadaedbc4612d71aadcaf51631ebd6c8bc5d1da86cb081\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":36,\"start\":22,\"text\":\"configured to \"},\"family_id\":\"fixture\",\"operand_span\":{\"end\":48,\"start\":44,\"text\":\"heat\"},\"relation_id\":\"7bfff017e0344e5e4e1d21ef87a9524f2c140a0deaef9dced72aa0edf66912c4\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"2ec503380b9d7efb437b63fc0f51d11b0bcc00829c76ef3c9d0f3af3e6199103\",\"source_span\":{\"end\":66,\"start\":0,\"text\":\"The claimed module is configured to convert heat into electricity.\"},\"trailing_context_span\":{\"end\":66,\"start\":48,\"text\":\" into electricity.\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    },
+    {
+      "case_id": "eaec269bf682d9d7",
+      "branch": "SG_ALIAS",
+      "source": "WITNESS A\nDevice A is configured to store charge. Here charge means electric charge.\nWITNESS B\nDevice B is configured to store charge. Here charge also means electric charge.",
+      "artifacts": {
+        "candidate": "{\"full_witness_contexts\":[\"Device A is configured to store charge. Here charge means electric charge.\",\"Device B is configured to store charge. Here charge also means electric charge.\"],\"proposed_claim\":\"shared positive technical action/operand with both contexts retained; no interchangeability\",\"witness_records\":[{\"action_span\":{\"end\":31,\"start\":26,\"text\":\"store\"},\"alias_descriptor\":\"store|charge\",\"alias_key\":\"b9f98a2225a7522be63981ecb9eb14ad166c73648a566f92a133abc83ac9ecd3\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":26,\"start\":12,\"text\":\"configured to \"},\"family_id\":\"left\",\"operand_span\":{\"end\":38,\"start\":32,\"text\":\"charge\"},\"relation_id\":\"468212e99943880868474f203503eb3877928df88e17b9218c954b87a5f86e07\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"0de616bab1f1f6271f2fd7277017be5e7d70d5bb5febbc4d4e4af69986c17bcb\",\"source_span\":{\"end\":39,\"start\":0,\"text\":\"Device A is configured to store charge.\"},\"trailing_context_span\":{\"end\":39,\"start\":38,\"text\":\".\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]},{\"action_span\":{\"end\":31,\"start\":26,\"text\":\"store\"},\"alias_descriptor\":\"store|charge\",\"alias_key\":\"b9f98a2225a7522be63981ecb9eb14ad166c73648a566f92a133abc83ac9ecd3\",\"condition_policy\":\"retain complete unit; no inferred compatibility\",\"cue_span\":{\"end\":26,\"start\":12,\"text\":\"configured to \"},\"family_id\":\"right\",\"operand_span\":{\"end\":38,\"start\":32,\"text\":\"charge\"},\"relation_id\":\"c406126b0f2b01c8ab254989261a404343a6ae3f726e67d5060e560be22366f7\",\"semantic_status\":\"UNSCREENED_NO_EDGES_ALLOWED\",\"source_field\":\"abstract\",\"source_sha256\":\"6a96c7f154a45d8a293e24c4876166a0f66c5f5452a9a8d8e8fba00546640f20\",\"source_span\":{\"end\":39,\"start\":0,\"text\":\"Device B is configured to store charge.\"},\"trailing_context_span\":{\"end\":39,\"start\":38,\"text\":\".\"},\"unresolved_roles\":[\"subject_attachment\",\"condition_attachment\",\"cross_record_compatibility\"]}]}"
+      },
+      "expected": {
+        "kind": "positive",
+        "required_flags": [],
+        "allowed_flags": [],
+        "target_source_spans": [],
+        "target_candidate_spans": [],
+        "target_artifact": "candidate"
+      }
+    }
+  ],
+  "model_calls": 0,
+  "native_accuracy_estimate": false,
+  "expected_labels_in_requests": false
+}

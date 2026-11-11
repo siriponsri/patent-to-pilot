@@ -1,5 +1,9 @@
 # Source-preserving query representations and relation extraction for cross-domain patent retrieval
 
+## R6 preparation addendum, 11 November 2026
+
+Three read-only agents reviewed evaluator correctness, scientific criteria and runtime integration. Prospective fixes and53 local tests are complete; R6 model/native execution is NOT_READY and NOT_RUN. The new engineering-first goal and partial-Graph estimand await one combined owner decision. R5 results are unchanged. See [R6 preparation and review](../audits/ptp-r6-preparation-20261111/README.md) and [proposed R6 goal](plans/R6-BOUNDED-LONG-RUN.md).
+
 ## R5 bounded-run closeout, 11 November 2026
 
 The approved conditional run has reached its stopping gates. SACR candidate 1 and the Graph screening configuration did not qualify for native comparison. Consequently native SACR5/100, pilot20, full dev474 and conditional MTM are NOT_RUN. There is no new retrieval effect estimate, not a measured zero or negative effect. Both protected tests remain closed.

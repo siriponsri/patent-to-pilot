@@ -1,0 +1,22 @@
+{
+  "status": "PREPARATION_ONLY_NOT_DISPATCH_READY",
+  "files_sha256": {
+    "src/patent_to_pilot/research/reference_critic_v1.py": "cf7ee86befcfe46cda30b9743e7922fb421b513c6a8c4bebe5e8295fc257d1bd",
+    "src/patent_to_pilot/research/research_evidence_axes_v1.py": "a34f1046b8a619ccb325dd10362076ddeda2dda18a3e58de255a82800973665b",
+    "src/patent_to_pilot/research/sacr_r6_candidate.py": "8e7f8577d9502d87d5fd5230a6ee3c270a26e720b4430fcb3c2c9a913d2c5b4a",
+    "src/patent_to_pilot/research/r6_critic_calibration.py": "119a677c9fd4bf95c8723190aed7140cf0dfa1a704c47b55abc8a3ddaff5ed5a",
+    "src/patent_to_pilot/research/r6_critic_tasks.py": "3fa013a5c275d4c2d9d09e8dfd19f9854072a740586a0180c31256ed122037f6",
+    "tests/test_r6_evidence_separation.py": "512d4dbf63829d9319739cb353403b3720b924928a21f66790d816188f5a8e5a",
+    "tests/test_r6_critic_calibration.py": "288d0078e8946a03543f65d88de5c791556a56a752ba1d5b818a6178511e8020"
+  },
+  "calibration_sha256": "c02a585bad30b3aa7916d9f0d04546e0d58df36bd7b2b428a42460ecd717f5c5",
+  "tests": 53,
+  "real_tokenizer_r6": "NOT_RUN",
+  "model_calls": 0,
+  "native_runner": "NOT_IMPLEMENTED",
+  "graph114_runner": "NOT_IMPLEMENTED",
+  "join282_runner": "NOT_IMPLEMENTED",
+  "same_attempt_execution_attestation": "NOT_IMPLEMENTED",
+  "parent_writer_only": true,
+  "historical_R5_modified": false
+}

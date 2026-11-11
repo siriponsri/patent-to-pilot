@@ -1,0 +1,39 @@
+{
+  "retained_proposal_sha256": "fd2d22e3935601e9f7edcc35ed4bcde7953ccb55577d34951ec0af067a3c41c8",
+  "coverage": {
+    "source_tokens": 40,
+    "covered_source_tokens": 15,
+    "uncovered_token_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "complete_context": false,
+    "semantic_pass": false
+  },
+  "prospective_r6_guard_rejects": true,
+  "interpretation": "counterfactual CPU diagnosis only; R5 output/status unchanged, no corrected-generation claim",
+  "new_model_calls": 0
+}

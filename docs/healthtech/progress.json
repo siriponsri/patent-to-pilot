@@ -3507,5 +3507,19 @@
     "graph_risk_units": 21,
     "graph_whole_wall_seconds": 2612.904537661,
     "writer_state": "COMPLETE_RELEASED_NO_ACTIVE_JOB"
+  },
+  "st1_r6_preparation_20261111": {
+    "status": "READY_FOR_COMBINED_OWNER_DECISION_NOT_MODEL_DISPATCH",
+    "audit": "docs/healthtech/audits/ptp-r6-preparation-20261111",
+    "local_tests": 53,
+    "independent_agents": 3,
+    "new_model_calls": 0,
+    "new_corpus_census": false,
+    "new_native_retrieval": false,
+    "new_goal": "PROPOSED_NOT_ACTIVATED",
+    "runtime_phase0": "REQUIRED_NOT_IMPLEMENTED",
+    "graph_policy_change": "PENDING_OWNER_APPROVAL",
+    "cards_used": 0,
+    "protected_tests": "CLOSED"
   }
 }
