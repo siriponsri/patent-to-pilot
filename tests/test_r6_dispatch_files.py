@@ -54,4 +54,4 @@ def test_worker_deadline_cannot_outlive_declared_stage(stop):
 
 
 def test_worker_package_requires_current_r6_entrypoints(tmp_path):
-    with pytest.raises(InputBoundaryError):validate_worker_package(tmp_path,{})
+    with pytest.raises(InputBoundaryError):validate_worker_package(tmp_path,{},'a'*64)

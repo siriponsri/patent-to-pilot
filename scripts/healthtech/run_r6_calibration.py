@@ -28,7 +28,7 @@ def main():
     if d['stage']!='calibration' or d['maximum_calls']!=24:
         raise RuntimeError('fixed24 calibration declaration required')
     validate_deadline(stop,time.monotonic(),d['seconds'])
-    validate_worker_package(ROOT,d['files_sha256'])
+    validate_worker_package(ROOT,d['files_sha256'],d['package_sha256'])
     out=Path('/out/attempt');out.mkdir(exist_ok=False)
     write_new(out/'dispatch-binding.json',evidence['receipt'])
     start=time.monotonic()

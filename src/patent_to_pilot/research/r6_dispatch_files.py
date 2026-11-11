@@ -56,12 +56,18 @@ def load_dispatch(root,*,manifest_path,manifest_sha256):
             'gates':gates,'receipt':dict(receipt,evidence_manifest_sha256=manifest_sha256)}
 
 
-def validate_worker_package(root,pins):
+def package_identity(pins):
+    return hashlib.sha256(json.dumps(pins,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+
+
+def validate_worker_package(root,pins,expected_package_sha256):
+    if not digest(expected_package_sha256) or package_identity(pins)!=expected_package_sha256:
+        raise InputBoundaryError('qualified package manifest identity mismatch')
     root=Path(root).resolve(strict=True)
     required={p.relative_to(root).as_posix() for p in (root/'src').rglob('*.py')}
     required.update('scripts/healthtech/'+name for name in (
         'run_r6_calibration.py','supervise_r6_calibration.py','inspect_qwen_weight_identity.py',
-        'r3_engine_client.py','supervise_r3_engine_v2.py'))
+        'r3_engine_client.py','supervise_r3_engine_v2.py','supervise_sacr_r5_engine.py'))
     required.add('docs/healthtech/audits/ptp-method-first-r2-weights-20261110/identity.json')
     if not (root/'src/patent_to_pilot/research/r6_backend.py').is_file() or not required<=set(pins):
         raise InputBoundaryError('R6 staged source or current entrypoint pins missing')
