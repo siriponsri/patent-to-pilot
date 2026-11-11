@@ -1,5 +1,14 @@
 # Proposed single-candidate continuation after R6 calibration failure
 
+**OWNER APPROVED — 12 November 2026.** The owner approved this long goal and
+authorized skills/agents to diagnose and repair errors within its existing
+limits, recording evidence instead of requesting repeated approval. Actual
+human fidelity decisions and the declared stop rules remain. Authority and the
+pre-activation proposal hash: `../../audits/ptp-r7-preparation-20261112/owner-approval.json`.
+The proposal wording below is retained as historical provenance; it no longer
+means that R7 is unapproved. Runtime qualification still precedes GPU dispatch.
+
+
 PROPOSED / MODEL EXECUTION NOT AUTHORIZED. Existing code-fix, CPU-inspection and
 screened-publication authority remains. No new goal or GPU reservation is created
 by this document. R6 has completed its stopped-branch reporting outcome; this

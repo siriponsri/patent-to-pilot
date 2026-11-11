@@ -1,0 +1,10 @@
+{
+  "ledger_sha256": "f66c4d4cb43946ef679142221578ddf4d782bd9b39505b79915580105159a0e7",
+  "gpu_charged_seconds": 14058.613504877227,
+  "fidelity_charged_seconds": 13779.72668002863,
+  "CPU_accounted_seconds": 25075.092252204,
+  "CPU_remaining_seconds": 3724.907747796002,
+  "model_calls_lower_bound": 108,
+  "existing_R6_journal_generation": 1,
+  "no_reservation_created": true
+}
