@@ -1,5 +1,13 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## ST1 R2 grammar, cost replay and input preflight 2026-11-11T07:26:44.422930+07:00
+
+Parent sole writer; last verified pushed297b105. Added source-bound token grammar; explicit R2 generation contract with original artifact/identity/normal-EOS/cost validation and exact replay; compact-union renderer included. Legacy quote grammar/controller unchanged. Added CPU-only profile preflight that binds original100sample before tokenizing all entries with production template settings, rejects oversized inputs without dropping/truncating, and never claims bundle/budget readiness. Actual tokenizer preflight NOT_RUN.
+
+62targeted testsPASS. Independent reviewer found escaped lone-surrogate text could raise outside typed failure envelope; now rejected as InputBoundaryError without repair, with regression proving raw/cost retention. Independent reviewer confirmed the surrogate finding closed by inspection. Initial exception test used nonexistent reason attribute; fixed assertions to actual output envelope. Inspection attempted missing guessed filenames before locating actual files; no mutation from failed reads. Canonical receipt: docs/healthtech/audits/ptp-sacr-r2-engineering-20261111/generation-binding-checkpoint.json. No model calls, private/test reads, GPU reservations or graph imports.
+
+Next verify reviewer fix, run bounded tokenizer-only preflight using existing remote model tokenizer and curateddev/sample pins; integrate explicit R2 runner with full bundle/cost accounting and original resource ledger; declare synthetic smoke after admission. Profile preflight alone does not establish selective/generic/critic input lengths or full stage budget. Both testsclosed, old failures preserved, GoalACTIVE.
+
 ## ST1 R2 source-reference implementation 2026-11-11T07:21:47.852936+07:00
 
 Parent sole writer; last verified pushed7e6da05. Added prospective token-reference adapter and explicit profile_tokens prompt/validation dispatch; old quote/default paths preserved. Exact source ranges distinguish repeated occurrences, preserve whitespace/Unicode, validate source identity and original functional roles/conditions/order, and never assert semantic PASS. New prompt/source hashes recorded in docs/healthtech/audits/ptp-sacr-r2-engineering-20261111/token-reference-checkpoint.json.

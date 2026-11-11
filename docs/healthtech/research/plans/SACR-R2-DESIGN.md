@@ -87,3 +87,5 @@ development comparisons remain NOT_RUN. Independent documentation and engineerin
 work may continue without additional routine approval.
 
 Engineering update: source-token adapter, explicit profile_tokens prompt/validation dispatch and 47 fixtures pass. Independent adapter review found no blocker. Input-token overhead, per-query constrained schema, same-attempt generation/cost replay and complete bundle runner remain pending; do not dispatch from prompt availability alone.
+
+Grammar/cost update: token_profile_schema and explicit R2 artifact/cost replay are implemented, with 62 targeted checks. CPU profile preflight implementation preserves the sealed100 sample and refuses any oversized input. Actual tokenizer run, full bundle driver, stage resource admission and synthetic smoke remain NOT_RUN. A Unicode acceptance-envelope defect found in review was repaired with retained-failure regression.

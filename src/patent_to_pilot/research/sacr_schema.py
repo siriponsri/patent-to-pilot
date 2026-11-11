@@ -57,3 +57,36 @@ def quote_profile_schema(*, source: str, query_id: str, input_kind: str) -> dict
         'context_items': array(context), 'unknowns': array(unknown),
         'extraction_status': enum(['valid', 'partial', 'failed']), 'failure_reasons': array(text()),
     })
+
+
+def token_profile_schema(*, source: str, query_id: str, input_kind: str) -> dict:
+    """Source-bound grammar for the explicit R2 token-reference contract.
+
+    Range ordering and semantic checks remain mandatory after generation.
+    Every call constructs an independent schema; legacy grammar is unchanged.
+    """
+    from .sacr_token_profile import source_catalogue, VERSION
+    schema = quote_profile_schema(source=source, query_id=query_id, input_kind=input_kind)
+    count = len(source_catalogue(source)['tokens'])
+    schema['properties']['profile_version']['enum'] = [VERSION]
+
+    def walk(node):
+        if type(node) is dict:
+            props = node.get('properties', {})
+            if 'source_spans' in props:
+                props['source_spans']['items'] = {
+                    'type': 'object', 'additionalProperties': False,
+                    'required': ['field', 'start_token', 'end_token'],
+                    'properties': {
+                        'field': {'type': 'string', 'enum': ['allowed_query']},
+                        'start_token': {'type': 'integer', 'minimum': 0, 'maximum': count-1},
+                        'end_token': {'type': 'integer', 'minimum': 1, 'maximum': count},
+                    }}
+            for value in node.values():
+                walk(value)
+        elif type(node) is list:
+            for value in node:
+                walk(value)
+
+    walk(schema)
+    return schema

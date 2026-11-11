@@ -15,11 +15,18 @@ from .sacr_profile import validate_profile
 VERSION = 'sacr-profile-token-spans-v1'
 
 
+def _utf8(text):
+    try:
+        return text.encode('utf-8')
+    except UnicodeError:
+        raise InputBoundaryError('invalid Unicode scalar text; no repair') from None
+
+
 def source_catalogue(source):
     if type(source) is not str or not source.strip():
         raise InputBoundaryError('invalid token-reference source')
     return {'format': 'sacr-source-tokens-v1',
-            'source_sha256': hashlib.sha256(source.encode('utf-8')).hexdigest(),
+            'source_sha256': hashlib.sha256(_utf8(source)).hexdigest(),
             'tokens': [{'id': i, 'start': m.start(), 'end': m.end(), 'text': m.group()}
                        for i, m in enumerate(re.finditer(r'\S+', source))]}
 
@@ -38,8 +45,8 @@ def align_token_profile(proposal, *, source, query_id, input_kind):
     if type(proposal) is not dict or proposal.get('profile_version') != VERSION:
         raise InputBoundaryError('only explicitly versioned token profiles may be aligned')
     catalogue = source_catalogue(source)
-    original = json.dumps(proposal, ensure_ascii=False, sort_keys=True,
-                          separators=(',', ':')).encode('utf-8')
+    original = _utf8(json.dumps(proposal, ensure_ascii=False, sort_keys=True,
+                               separators=(',', ':')))
     canonical = deepcopy(proposal)
     canonical['profile_version'] = 'sacr-profile-v0'
     count = 0

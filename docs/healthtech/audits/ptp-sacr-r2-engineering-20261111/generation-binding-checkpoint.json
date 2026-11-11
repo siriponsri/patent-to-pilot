@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-11-11T07:26:44.422930+07:00",
+  "status": "ENGINEERING_PASS_NOT_RUNTIME_READY",
+  "source_hashes": {
+    "src/patent_to_pilot/research/sacr_generated_token_profile.py": "dd8ef1d40e1acdd77e44f1e8d7e589ca21dde92337573bdb5567fb69a45bdae1",
+    "src/patent_to_pilot/research/sacr_schema.py": "80311c092d11445874b1cbbe4cf6eca061b81a4d0828e5b546b8e6140316fff5",
+    "src/patent_to_pilot/research/sacr_token_profile.py": "5c9563bfbf5fae0bdfcd45b44a7f8caa0f88d46144b255f922e9ce6e8e1842a3",
+    "src/patent_to_pilot/research/sacr_r2_preflight.py": "45a48b29693885d1821ba4f20428240a4ff191c987ce542a0e374592c142ce37"
+  },
+  "tests": "62 PASS: R2 preflight/generated-token, legacy generated-profile controller/schema, token adapter",
+  "review_finding": "Lone Unicode surrogate escaped typed failure envelope; fixed to reject without repair and retain raw generation/cost",
+  "initial_test_failure": "Test used nonexistent exception.reason attribute; corrected to existing output envelope and asserted raw/cost retention",
+  "actual_tokenizer_preflight": "NOT_RUN",
+  "runtime_driver_integration": "NOT_RUN",
+  "model_calls": 0,
+  "review_status": "Finding closed by independent re-inspection; reviewer did not rerun tests"
+}
