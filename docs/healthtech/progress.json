@@ -3317,5 +3317,14 @@
     "actual_tokenizer_preflight": "NOT_RUN",
     "runtime_driver_integration": "NOT_RUN",
     "model_calls": 0
+  },
+  "st1_r2_real_tokenizer_preflight_20261111": {
+    "timestamp": "2026-11-11T07:30:49.857457+07:00",
+    "status": "PROFILE_INPUT_LIMIT_PASS_ONLY",
+    "sample_size": 100,
+    "maximum_input_tokens": 2788,
+    "whole_wall_seconds": 7.8144424529746175,
+    "model_calls": 0,
+    "gpu_seconds": 0
   }
 }

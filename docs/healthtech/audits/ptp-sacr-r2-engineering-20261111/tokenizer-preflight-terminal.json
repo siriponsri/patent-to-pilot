@@ -1,0 +1,22 @@
+{
+  "status": "EXITED",
+  "exit_code": 0,
+  "attach_returncode": 0,
+  "wall_seconds": 7.8144424529746175,
+  "gpu_seconds": 0,
+  "model_calls": 0,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T00:29:33.844295297Z",
+    "FinishedAt": "2026-11-11T00:29:41.347130281Z"
+  },
+  "retry": false
+}

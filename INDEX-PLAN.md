@@ -1,5 +1,13 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## ST1 R2 real-tokenizer preflight 2026-11-11T07:30:49.857457+07:00
+
+Parent sole writer; last verified pusheda3a70d5. Ran one CPU-only preflight in fixed job ptp-sacr-r2-tokenizer-preflight-20261111-v1 using existing pinned tokenizer and original curated474dev/fixed100sample hashes. All100profile prompts fit8192input limit; max2788,total181274,0exceeded,0truncated. Whole supervisor7.814442453s; innerCPU6.418046379s;0GPU/modelcalls. Actual tokenizer Qwen2TokenizerFast. Container terminal exited0,OOMfalse,PID0; do not restart.
+
+Offline isolation readbackPASS: CPU2,4GiBcap,noGPUdevice requests,networknone,readonly code/model/deps/dev input files,only separateoutput writable. No test/qrels or wholeprojectmount. Transport145source/promptfiles1341440bytes SHA4da0d4060afed3231431ad9760e6ade833627b1e07db3c35b97183d89f8fb0f7 matched before extraction; no model/data copy. Remotejob2619900bytes,localarchive1341440bytes,8MiBconservative incremental reservation added to ledger without changing GPU/fidelitycharges. Memory peak NOT_MEASURED. Raw per-query result staysremoteprivate; aggregate/terminal/sanitized isolation downloaded under ptp-sacr-r2-engineering-20261111.
+
+This establishes profile INPUT size only; no generation speed, grammar callback viability, selective/generic/critic inputs, semanticfidelity or full budget pass. Scripts compile. Next finish complete R2 bundle driver and explicit stage resource admission, then declare and run one bounded synthetic smoke with fresh GPUavailability and sharedlock. Both testsclosed;allR1failures preserved;no cards. GoalACTIVE.
+
 ## ST1 R2 grammar, cost replay and input preflight 2026-11-11T07:26:44.422930+07:00
 
 Parent sole writer; last verified pushed297b105. Added source-bound token grammar; explicit R2 generation contract with original artifact/identity/normal-EOS/cost validation and exact replay; compact-union renderer included. Legacy quote grammar/controller unchanged. Added CPU-only profile preflight that binds original100sample before tokenizing all entries with production template settings, rejects oversized inputs without dropping/truncating, and never claims bundle/budget readiness. Actual tokenizer preflight NOT_RUN.

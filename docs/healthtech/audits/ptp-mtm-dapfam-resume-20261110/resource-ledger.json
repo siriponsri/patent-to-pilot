@@ -81,5 +81,18 @@
     "stop_reason": "FROZEN_REVIEW_CAP_EXCEEDED"
   },
   "sacr_configuration_status": "STOPPED_FROZEN_REVIEW_CAP_EXCEEDED",
-  "interrupted_query_exception": "APPROVED_UNUSED_NOT_NEEDED_AFTER_CONFIGURATION_STOP"
+  "interrupted_query_exception": "APPROVED_UNUSED_NOT_NEEDED_AFTER_CONFIGURATION_STOP",
+  "r2_tokenizer_cpu_preflight": {
+    "status": "COMPLETED",
+    "whole_wall_seconds": 7.8144424529746175,
+    "gpu_seconds": 0,
+    "model_calls": 0,
+    "remote_job_bytes": 2619900,
+    "local_transport_bytes": 1341440,
+    "incremental_disk_reserved_bytes": 8388608,
+    "memory_limit_bytes": 4294967296,
+    "peak_memory": "NOT_MEASURED",
+    "cpu_threads_limit": 2,
+    "receipt": "../ptp-sacr-r2-engineering-20261111/tokenizer-preflight-aggregate.json"
+  }
 }

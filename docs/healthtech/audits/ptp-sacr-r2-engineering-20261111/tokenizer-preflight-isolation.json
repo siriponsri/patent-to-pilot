@@ -1,0 +1,42 @@
+{
+  "status": "PASS_BEFORE_START",
+  "original_receipt_sha256": "8e0387f26ece06b7f07e810562bdb028ca66aeb5e06562a18645cb1fad05a8df",
+  "network": "none",
+  "readonly_root": true,
+  "memory_limit_bytes": 4294967296,
+  "memory_swap_limit_bytes": 4294967296,
+  "cpu_nanocpus": 2000000000,
+  "device_requests": null,
+  "cap_drop": [
+    "ALL"
+  ],
+  "security_opt": [
+    "no-new-privileges"
+  ],
+  "mounts": [
+    {
+      "destination": "/code",
+      "read_only": true
+    },
+    {
+      "destination": "/deps",
+      "read_only": true
+    },
+    {
+      "destination": "/model",
+      "read_only": true
+    },
+    {
+      "destination": "/out",
+      "read_only": false
+    },
+    {
+      "destination": "/inputs/queries-ta.jsonl",
+      "read_only": true
+    },
+    {
+      "destination": "/inputs/sample.json",
+      "read_only": true
+    }
+  ]
+}

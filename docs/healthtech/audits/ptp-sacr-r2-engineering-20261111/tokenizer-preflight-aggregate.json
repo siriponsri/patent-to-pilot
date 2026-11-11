@@ -1,0 +1,34 @@
+{
+  "format": "sacr-r2-profile-input-preflight-v1",
+  "status": "PROFILE_INPUT_LIMIT_PASS_ONLY",
+  "original_query_sha256": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a",
+  "original_sample_sha256": "cf0bce973696c6d71c06d2387a36bd024b0ddbdc2a36a2c77bc6ce17ba4bd767",
+  "sample_size": 100,
+  "exceeded": 0,
+  "maximum_input_tokens": 2788,
+  "total_input_tokens": 181274,
+  "limits": {
+    "input_tokens": 8192,
+    "output_tokens": 4096,
+    "context_tokens": 40960,
+    "response_bytes": 65536
+  },
+  "model_calls": 0,
+  "truncation": false,
+  "bundle_input_limits": "NOT_ESTABLISHED",
+  "generation_budget": "NOT_ESTABLISHED",
+  "semantic_fidelity": "NOT_ASSESSED",
+  "tokenizer_class": "Qwen2TokenizerFast",
+  "tokenizer_files_sha256": {
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "config.json": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+    "model.safetensors.index.json": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc"
+  },
+  "cpu_wall_seconds": 6.418046378996223,
+  "gpu_seconds": 0,
+  "code_manifest_sha256": "949ecbbd7477e35aceb5f9a0e26b6c00689a23b9175c655c666d51075a6ff346"
+}
