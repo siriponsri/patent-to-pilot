@@ -1,0 +1,22 @@
+{
+  "status": "PASS_BEFORE_START",
+  "mounts": [
+    {
+      "destination": "/out",
+      "read_only": false
+    },
+    {
+      "destination": "/code/summarize.py",
+      "read_only": true
+    },
+    {
+      "destination": "/input/private-per-query.json",
+      "read_only": true
+    }
+  ],
+  "network": "none",
+  "cpu_limit": 1,
+  "memory_bytes": 536870912,
+  "gpu_devices": 0,
+  "raw_receipt_sha256": "5a32a0172e3d99f6e6ab9fb6fa26a98b57166a564e4ab4ee154995396e43d54b"
+}

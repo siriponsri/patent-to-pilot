@@ -120,5 +120,14 @@
     "private_output_bytes": 135639,
     "human_cards_issued": 0,
     "retry": false
+  },
+  "baseline_exposure_aggregation": {
+    "status": "COMPLETED_DESCRIPTIVE_ONLY",
+    "cpu_wall_seconds": 0.5750234569422901,
+    "gpu_seconds": 0,
+    "model_calls": 0,
+    "disk_reservation_bytes": 1048576,
+    "peak_memory": "NOT_MEASURED",
+    "receipt": "../ptp-native-exposure-20261111/terminal.json"
   }
 }

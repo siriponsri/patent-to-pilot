@@ -1,0 +1,18 @@
+{
+  "status": "DECLARED_BEFORE_AGGREGATE",
+  "analysis": "descriptive existing dev metrics; no new retrieval",
+  "bins": [
+    "1-10",
+    "11-100",
+    "101-200",
+    "not_exposed_at_200"
+  ],
+  "files_sha256": {
+    "scripts/healthtech/summarize_native_baseline_exposure.py": "120d8ab530df1bb8a5168b00dd44a45d4cfadf73c4af3c113869a5285556aa9c",
+    "scripts/healthtech/supervise_baseline_exposure.py": "5b452151dc44335909ab5a1d0469cabdea6401d44e5e02c7c4bc325986ea7c1f"
+  },
+  "input_sha256": "a1ea06dbb68d9d413c272525a43c596c821475f48479b68fe5fd240dc38fbcf2",
+  "model_calls": 0,
+  "protected_test_access": false,
+  "tests": "4PASS"
+}

@@ -1,0 +1,19 @@
+{
+  "wall_seconds": 0.5750234569422901,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T01:09:34.455337806Z",
+    "FinishedAt": "2026-11-11T01:09:34.742850843Z"
+  },
+  "returncode": 0,
+  "model_calls": 0,
+  "gpu_seconds": 0
+}

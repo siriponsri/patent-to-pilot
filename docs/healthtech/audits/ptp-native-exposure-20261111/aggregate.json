@@ -1,0 +1,71 @@
+{
+  "status": "DESCRIPTIVE_EXISTING_DEV_METRICS_ONLY",
+  "partitions": {
+    "ALL": {
+      "eligible_queries": 474,
+      "first_known_positive_rank_bin": {
+        "1-10": 308,
+        "11-100": 115,
+        "101-200": 19,
+        "not_exposed_at_200": 32
+      },
+      "exposed_queries_at_10": 308,
+      "exposed_queries_at_100": 423,
+      "exposed_queries_at_200": 442,
+      "mean_recall_check": {
+        "10": 0.07553,
+        "100": 0.25222,
+        "200": 0.34262
+      }
+    },
+    "IN": {
+      "eligible_queries": 450,
+      "first_known_positive_rank_bin": {
+        "1-10": 299,
+        "11-100": 110,
+        "101-200": 21,
+        "not_exposed_at_200": 20
+      },
+      "exposed_queries_at_10": 299,
+      "exposed_queries_at_100": 409,
+      "exposed_queries_at_200": 430,
+      "mean_recall_check": {
+        "10": 0.15749,
+        "100": 0.39413,
+        "200": 0.5137
+      }
+    },
+    "OUT": {
+      "eligible_queries": 349,
+      "first_known_positive_rank_bin": {
+        "1-10": 37,
+        "11-100": 67,
+        "101-200": 32,
+        "not_exposed_at_200": 213
+      },
+      "exposed_queries_at_10": 37,
+      "exposed_queries_at_100": 104,
+      "exposed_queries_at_200": 136,
+      "mean_recall_check": {
+        "10": 0.02372,
+        "100": 0.09732,
+        "200": 0.14772
+      }
+    }
+  },
+  "input_sha256": "a1ea06dbb68d9d413c272525a43c596c821475f48479b68fe5fd240dc38fbcf2",
+  "cutoffs": [
+    10,
+    100,
+    200
+  ],
+  "limitations": [
+    "coarse rank bins inferred from positive recall, not exact ranks",
+    "unexposed means no known positive at cutoff, not semantic irrelevance",
+    "no comparator: paired effects and exposure-rescue comparisons unavailable"
+  ],
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "protected_test_access": false,
+  "wall_seconds": 0.01289372704923153
+}

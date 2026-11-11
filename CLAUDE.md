@@ -1,5 +1,36 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Bounded long-run closeout, 11 November2026
+
+Current report: docs/healthtech/research/PAPER1-LONG-RUN-REPORT.md. Parent remains
+sole writer. Prior verified pushed checkpoint5d406d7; this closeout awaits its
+screened commit and final reviewer check. No running GPU job or pending cards.
+
+B0 is the only measured retrieval arm: OUT Recall@200=0.14772 over349 queries.
+SACR R1 stopped at21 flags above20; R2 single synthetic smoke failed source-backed
+condition acceptance. S/G R1 and R2 each produced0 cross-family candidate pairs;
+both closed. Pilot/full dev/MTM NOT_RUN because prerequisite gates failed.
+Neo4j connection was verified, but no graph import was justified. No retry or
+new configuration from remaining budget alone. Both tests remain CLOSED.
+
+New CPU-only exposure aggregation of sealed prior dev metrics completed once:
+ALL/IN/OUT unexposed at200=32/20/213; all9 recall aggregates match B0 receipt.
+Whole wall0.575023457s,0GPU/model calls,1MiB disk reservation. GPU/fidelity charges
+remain9006.484789591283/8727.597964742686s; remaining250193.51521040872/
+20072.402035257313s. Known model calls at least59; two interrupted attempts
+retain unknown counts. Human cards0/60; no semantic/independent-review pass.
+
+Manuscript and literature supplement now report both negative rounds and the
+Paper53-style coarse exposure. Direct published-score replication remains
+NOT_ESTABLISHED. Bounded negative-outcome closeout is not proof of improvement,
+a completed four-system comparison, test validation or submission readiness.
+Paper2/3 and adaptive work remain plans only. Final read-only report review passed after correcting one broken evidence link.
+No additional required experiment remains; screened publication verification is the
+last closeout step. The reviewer did not independently inspect private data or GPU.
+Any subsequent method revision requires a new explicit configuration/decision.
+Preserve owner-untracked PATENT_TO_PILOT_RESEARCH_AND_CLAUDE_HANDOFF_2026-11-09.md.
+
+
 ## ST1 S/G R2 negative feasibility result 2026-11-11T08:03:27.198976+07:00
 
 Parent sole writer; last verified pushed02508b2. Ran declaredSGR2 once afterfreeze: SAME100families,14nonempty/86empty,29records,0crossfamilypairs/0acceptededges.159cueoccurrences,17overlength,113unsupportedaction/parser. FAIL_NO_CROSS_FAMILY_CANDIDATES underpredeclaredgate. Coverage increasedfromR1(5families/6records), but doesnot establish retrievalgain orgraphfeasibility. No synonymwidening/replacementsource/automaticretry.

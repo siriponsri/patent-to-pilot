@@ -3,8 +3,8 @@
 Working manuscript, updated11 November2026. Development evidence only; incomplete and
 not ready for submission. SACR round 1 stopped at its frozen review-cap gate after
 an initial timeout and a separately preserved continuation. Its fidelity did not
-pass; pilot and retrieval results are not available. A new round is authorized
-but has no measured method results. The restricted
+pass; pilot and retrieval results are not available. The authorized second round also stopped at engineering/feasibility gates;
+there are no SACR/S/G retrieval results. The restricted
 tests remain unopened. This draft preserves measured results and failed arms
 without presenting the intended four-system comparison as completed.
 
@@ -16,14 +16,15 @@ DAPFAM under a bounded solo-project workflow. We first establish a native
 title-and-abstract query baseline over the full candidate corpus, reusing
 existing passage vectors without retraining or corpus re-encoding. On 349
 eligible cross-domain development queries, this baseline obtains Recall@200
-of 0.14772. A fixed, stratified 100-family feasibility sample for one conservative
-relation extractor produces six records from five families and no cross-family
-exact-alias candidates; this configuration is therefore stopped before graph
-construction. Source-linked query generation is subject to a prospective
-automated-screening and limited human-review gate. Its retrieval effects remain
-unmeasured. These intermediate findings establish an executable baseline and
-a specific extraction feasibility failure, not superiority of a new method or
-a general impossibility result for structured retrieval.
+of0.14772;213 of349 queries expose no known positive within200 ranks.
+Two declared deterministic extractors, assessed on the same exposed100-family
+sample, produced respectively6 records from5 families and29 records from14
+families, with no cross-family candidate pair in either round. SACR round1
+stopped when21 flagged queries exceeded the prospective20-risk-card ceiling;
+round2 failed source-span validation in its single synthetic smoke. No method
+passed the fidelity/feasibility gates required for pilot or full dev retrieval.
+These findings establish a reproducible baseline and bounded negative results
+for the tested configurations, not superiority or a general impossibility result.
 
 ## 1. Motivation and research questions
 
@@ -61,7 +62,7 @@ interpreting every unjudged candidate as a false positive.
 The primary development endpoint is OUT Recall@200. nDCG@10 is a descriptive
 bridge to supplied literature, not a new confirmatory endpoint. Historical
 development exposure and shared-positive dependence limit independent
-generalization claims. Component-based uncertainty analyses are still pending;
+generalization claims. No feasible paired comparator exists for component-based effect uncertainty;
 no confidence intervals or significance claims are supplied here.
 
 ## 3. Methods and fidelity controls
@@ -184,7 +185,7 @@ not independently adjudicated semantic errors. A prospective renderer now unions
 overlapping source occurrences while preserving distinct identical occurrences;
 its 20 engineering tests do not demonstrate real-data fidelity or retrieval gain.
 
-S/G retrieval effects remain unavailable after its first extraction configuration
+S/G retrieval effects remain unavailable after both declared extraction configurations
 failed feasibility. Neither missing comparison is a zero treatment effect. New
 round authority preserves prior failures and cumulative budgets. MTM has a
 conditional unused-card transfer only after DAPFAM fidelity and pilot pass;
@@ -232,7 +233,8 @@ have unknown counts. Peak sampled host cgroup usage was 6973775872 bytes for
 the original interval and 4869136384 bytes for the continuation.
 These figures neither assign zero cost to the interrupted attempt nor establish
 its peak GPU memory. The full supervisor interval is included despite incomplete
-generation. About 5h37m16s remains in the original combined fidelity allowance.
+generation. That historical remaining allowance was subsequently reduced by the R2 smoke;
+the current remainder is20072.402 seconds, as stated above.
 
 Private source records, per-query outputs and qrels are not published. Public
 reproducibility artifacts include code, source/configuration hashes, aggregate
@@ -256,16 +258,46 @@ percentage-gain claims. The protocol comparison and source-page references are
 maintained in DAPFAM-PAPER-COMPARABILITY.md; files01 and38 are byte-identical and
 must not be counted as independent studies.
 
-## 7. Limitations and required completion
+## Descriptive exposure of the existing baseline
 
-The current evidence supports a measured native baseline and failure of one
-specific deterministic extraction configuration. It does not support a new
-retrieval-quality claim, independent semantic validation, test generalization,
-inventive-design success or clinical/product usefulness. Complete the bounded
-SACR stages and fidelity decisions before permitted pilot/full-dev comparisons.
-Report stopped arms, all spent resources and remaining uncertainty even if the
-intended panel cannot be completed. Final discussion and conclusions remain
-pending these outcomes; submission and test access require separate authority.
+These fixed coarse bins were declared before aggregation of the existing sealed
+dev per-query metrics. They are not exact first-positive ranks. No retrieval was
+rerun and no new method scores were inspected. All nine recomputed macro recall
+values match the original published dev receipt.
+
+| Partition | Eligible | First positive 1–10 | 11–100 | 101–200 | None at 200 |
+|---|---:|---:|---:|---:|---:|
+| ALL | 474 | 308 | 115 | 19 | 32 |
+| IN | 450 | 299 | 110 | 21 | 20 |
+| OUT | 349 | 37 | 67 | 32 | 213 |
+
+The OUT baseline exposes at least one known positive for 136/349 queries at200;
+213/349 expose none. This is distinct from macro Recall@200=0.14772. Unexposed
+does not mean semantically irrelevant: judgments are incomplete. IN/OUT eligible
+populations overlap. Paper53-inspired paired wins/losses, rescue and uncertainty
+analyses are NOT_RUN because no comparator passed the prior gates.
+
+The isolated aggregation used0.575023457 seconds whole supervisor time,1CPU,
+512MiB memory limit,0GPU/model calls, no network and no protected-test mounts.
+Peak memory was not measured. Four hand-computable validation fixtures passed.
+
+## 7. Discussion, limitations and conclusion
+
+The native baseline is executable, but cross-domain known-positive exposure is
+limited. Neither source-preserving generation nor deterministic graph candidates
+passed the declared prerequisites. The broader retrieval hypotheses therefore
+remain unanswered; unavailable comparisons are not zero or negative effect sizes.
+R2 engineering improvements and greater extraction coverage did not establish
+semantic fidelity or downstream usefulness. Reusing the exposed sample also
+prevents treating R2 as independent validation.
+
+The authorized bounded run is closed with negative configurations preserved.
+No human cards were issued, no independent expert review occurred, and no test
+generalization, inventive-design success or product usefulness is established.
+Pilot/full dev and conditional MTM were not dispatched because their gates failed.
+Remaining budget does not justify retrying failed declarations. This is a draft
+negative feasibility report, not a validated four-system comparison or a
+submission-ready method paper. Submission and protected tests remain separate.
 
 ## Evidence links
 
@@ -277,3 +309,7 @@ pending these outcomes; submission and test access require separate authority.
 - [Paper comparison protocol](plans/DAPFAM-PAPER-COMPARABILITY.md)
 - [Cumulative resource ledger](../audits/ptp-mtm-dapfam-resume-20261110/resource-ledger.json)
 - [Incomplete native SACR profile closeout](../audits/ptp-native-sacr-fidelity-20261110/aggregate-closeout.json)
+
+- [R2 SACR failure](../audits/ptp-sacr-r2-synthetic-smoke-20261111/aggregate-closeout.json)
+- [R2 S/G failure](../audits/ptp-sg-feasibility-r2-20261111/README.md)
+- [Baseline exposure](../audits/ptp-native-exposure-20261111/README.md)

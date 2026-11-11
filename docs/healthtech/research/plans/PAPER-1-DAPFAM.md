@@ -1,5 +1,36 @@
 # HT-ST1: DAPFAM query abstraction versus fixed relation traversal
 
+## Bounded long-run closeout, 11 November2026
+
+Current report: docs/healthtech/research/PAPER1-LONG-RUN-REPORT.md. Parent remains
+sole writer. Prior verified pushed checkpoint5d406d7; this closeout awaits its
+screened commit and final reviewer check. No running GPU job or pending cards.
+
+B0 is the only measured retrieval arm: OUT Recall@200=0.14772 over349 queries.
+SACR R1 stopped at21 flags above20; R2 single synthetic smoke failed source-backed
+condition acceptance. S/G R1 and R2 each produced0 cross-family candidate pairs;
+both closed. Pilot/full dev/MTM NOT_RUN because prerequisite gates failed.
+Neo4j connection was verified, but no graph import was justified. No retry or
+new configuration from remaining budget alone. Both tests remain CLOSED.
+
+New CPU-only exposure aggregation of sealed prior dev metrics completed once:
+ALL/IN/OUT unexposed at200=32/20/213; all9 recall aggregates match B0 receipt.
+Whole wall0.575023457s,0GPU/model calls,1MiB disk reservation. GPU/fidelity charges
+remain9006.484789591283/8727.597964742686s; remaining250193.51521040872/
+20072.402035257313s. Known model calls at least59; two interrupted attempts
+retain unknown counts. Human cards0/60; no semantic/independent-review pass.
+
+Manuscript and literature supplement now report both negative rounds and the
+Paper53-style coarse exposure. Direct published-score replication remains
+NOT_ESTABLISHED. Bounded negative-outcome closeout is not proof of improvement,
+a completed four-system comparison, test validation or submission readiness.
+Paper2/3 and adaptive work remain plans only. Final read-only report review passed after correcting one broken evidence link.
+No additional required experiment remains; screened publication verification is the
+last closeout step. The reviewer did not independently inspect private data or GPU.
+Any subsequent method revision requires a new explicit configuration/decision.
+Preserve owner-untracked PATENT_TO_PILOT_RESEARCH_AND_CLAUDE_HANDOFF_2026-11-09.md.
+
+
 Updated: 10 November 2026. Status: DEV_EXECUTION_IN_PROGRESS; final panel and protected evaluation NOT_FROZEN/NOT_RUN.
 
 Current evidence (11 November): native B0 completed on 474 dev queries, OUT349 Recall200 .14772. SACR R1 stopped at the frozen review cap: 56 normal returns, 14 rejected plus 7 additional compact flags, 2 interrupted attempts and 42 never started. Fidelity did not pass; no SACR pilot/retrieval result exists. S/G R1 failed feasibility (5/100 families, 6 records, 0 cross-family alias pairs). New-round authority preserves failures and cumulative limits; see [R2 design](SACR-R2-DESIGN.md). No R2 model calls or semantic acceptance yet.
