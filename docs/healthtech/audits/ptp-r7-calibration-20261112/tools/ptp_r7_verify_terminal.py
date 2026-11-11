@@ -55,12 +55,20 @@ if (root/'result.json').exists() and (root/'calibration-assessment.json').exists
  result=json.loads((root/'result.json').read_bytes());saved=json.loads((root/'calibration-assessment.json').read_bytes())
  assert saved['cohort_result_sha256']==sha((root/'result.json').read_bytes())
  assert saved['tasks_sha256']==d['input_manifest_sha256']
+ assert saved['run_id']==d['attempt_id']
  assert saved['status']==saved['assessment']['status']
  assert saved['events']==result['events'] and saved['costs']==result['costs']==summarize_costs(result['events'])
  if result['status']=='SCREENING_COMPLETE_NOT_FIDELITY' and len(result['results'])==24:
   assert len(records)==len(markers)==len(returns)==len(result['events'])==24
   rows=[];rejected=0;tasks=frozen_tasks();limits=GenerationLimits()
+  preflight=json.loads((root/'input-preflight.json').read_bytes())
+  before_load=json.loads((p/'out/attempt/before-model-input-admission.json').read_bytes())
+  assert preflight==before_load and preflight['tasks_sha256']==d['input_manifest_sha256']
+  assert preflight['version']==VERSION and preflight['status']=='ADMITTED'
   for i,row in enumerate(result['results']):
+   diagnostics=root/f'unit-{i:03}-diagnostics-private'
+   assert json.loads((diagnostics/'backend-dispatch.json').read_bytes())=={'status':'DISPATCH_INTENT','retry':False}
+   assert json.loads((diagnostics/'backend-return.json').read_bytes())=={'status':'BACKEND_RETURNED_NOT_VALIDATED'}
    raw=(root/f'unit-{i:03}/generation.json').read_bytes()
    assert sha(raw)==row['generation_sha256'] and json.loads(raw)['text']==row['critic_text']
    task=tasks[i]['prepared']
@@ -73,6 +81,10 @@ if (root/'result.json').exists() and (root/'calibration-assessment.json').exists
    assert event['query_id']==row['query_id'] and event['stage']=='critic' and event['status']=='COMPLETED'
    assert event['event_id']==sha(encoded([saved['run_id'],row['query_id'],'critic']))
    binding=bind_generation_record(raw,expected_sha256=sha(raw),limits=limits,metrics=event['metrics'])
+   admission=preflight['rows'][i]
+   assert admission['query_id']==row['query_id'] and admission['status']=='ADMITTED'
+   assert admission['messages_sha256']==sha(encoded(task['messages']))
+   assert binding['record']['input_tokens']==admission['input_tokens']
    expected_reason=binding['record']['status']
    if expected_reason=='EOS_COMPLETE':
     try:interpret(row['critic_text'].encode(),task);expected_reason='VALID_CRITIC'

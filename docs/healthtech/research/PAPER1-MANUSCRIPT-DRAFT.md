@@ -1,6 +1,27 @@
 # Source-preserving query representations and relation extraction for cross-domain patent retrieval
 
-## Current R6 outcome and Graph repair, 11 November 2026
+## R7 execution checkpoint, 12 November 2026
+
+The owner approved one new compact-v2 candidate under the existing cumulative
+budgets. Its actual24-case calibration is RUNNING; no terminal outcome or native
+fidelity claim is available. Exact authored CPU pipeline qualification passed
+with31 simulated invocations and3,649 grammar-checked tokens, charging99.222876
+CPU seconds and zero model/GPU use. Hardware/load/authority boundaries were
+explicit doubles. The real model run remains a separate evidence layer.
+
+The original R6 journal, failures and charges were preserved. Candidate authority
+permits at most24 new calibration calls in7200 seconds. Any execution-contract
+or frozen semantic failure closes this candidate. Graph retains114 parents,
+100 admitted requests and14 initial technical risks; admission is not fidelity.
+Native screening, actual human judgments and pilot/full dev remain conditional.
+No protected test, corpus re-encoding or Neo4j write has been performed in R7.
+
+See the [live calibration audit](../audits/ptp-r7-calibration-20261112/README.md)
+and [authored CPU qualification](../audits/ptp-r7-pipeline-20261112/README.md).
+The R6 checkpoint below is historical; its statement that no job was live is
+not the current R7 execution state. B0 remains the only measured retrieval arm.
+
+## Historical R6 outcome and Graph repair, 11 November 2026
 
 R6 Phase0 engineering completed, but the actual evaluator candidate failed the
 frozen24-case calibration. All24 calls ended with EOS:23 responses were schema-valid
@@ -41,12 +62,12 @@ rounds below are historical; their cost balances are not current allowances.
 
 ## Study scope
 
-Working development manuscript, updated11 November2026; not submission-ready.
+Working development manuscript, updated12 November2026; not submission-ready.
 The measured dense baseline is available. SACR/S/G comparative retrieval has not
 passed the required gates. R6 evaluator calibration is closed with a valid
 semantic failure and separate contract failures; compact Graph v2 has only
-technical input-admission evidence. The proposed R7 model candidate awaits an
-owner decision. Both protected tests remain closed. Historical rounds are
+technical input-admission evidence. The owner-approved R7 model candidate is undergoing calibration; no terminal
+outcome is available yet. Both protected tests remain closed. Historical rounds are
 identified below and their original status notes are retained in the appendix.
 
 ## Abstract — provisional
@@ -394,7 +415,7 @@ prevents treating R2 as independent validation.
 The earlier bounded round is closed with negative configurations preserved;
 the subsequent R6 evaluator also failed calibration, while the owner-requested
 compact Graph transport admitted100 of114 fixed units, retaining14 technical
-risks; semantic screening has not run. R7 model approval is pending.
+risks; semantic screening has not run. R7 is owner-approved and calibration is running; its outcome remains pending.
 No human cards were issued, no independent expert review occurred, and no test
 generalization, inventive-design success or product usefulness is established.
 Pilot/full dev and conditional MTM were not dispatched because their gates failed.

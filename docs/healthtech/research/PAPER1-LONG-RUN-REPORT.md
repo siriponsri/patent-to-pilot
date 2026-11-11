@@ -1,6 +1,27 @@
 # Paper1 bounded long-run report, 11 November2026
 
-## Current R6 outcome and Graph repair, 11 November 2026
+## R7 execution checkpoint, 12 November 2026
+
+The owner approved one new compact-v2 candidate under the existing cumulative
+budgets. Its actual24-case calibration is RUNNING; no terminal outcome or native
+fidelity claim is available. Exact authored CPU pipeline qualification passed
+with31 simulated invocations and3,649 grammar-checked tokens, charging99.222876
+CPU seconds and zero model/GPU use. Hardware/load/authority boundaries were
+explicit doubles. The real model run remains a separate evidence layer.
+
+The original R6 journal, failures and charges were preserved. Candidate authority
+permits at most24 new calibration calls in7200 seconds. Any execution-contract
+or frozen semantic failure closes this candidate. Graph retains114 parents,
+100 admitted requests and14 initial technical risks; admission is not fidelity.
+Native screening, actual human judgments and pilot/full dev remain conditional.
+No protected test, corpus re-encoding or Neo4j write has been performed in R7.
+
+See the [live calibration audit](../audits/ptp-r7-calibration-20261112/README.md)
+and [authored CPU qualification](../audits/ptp-r7-pipeline-20261112/README.md).
+The R6 checkpoint below is historical; its statement that no job was live is
+not the current R7 execution state. B0 remains the only measured retrieval arm.
+
+## Historical R6 outcome and Graph repair, 11 November 2026
 
 R6 Phase0 engineering completed, but the actual evaluator candidate failed the
 frozen24-case calibration. All24 calls ended with EOS:23 responses were schema-valid
