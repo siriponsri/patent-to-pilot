@@ -68,3 +68,32 @@ def build_manifest(source_rows, source_sample, aliases):
 def request(unit):
     from .reference_critic_v1 import prepare
     return prepare(**{k:unit[k] for k in ('query_id','source','artifacts','criteria','scope')})
+
+
+def preflight_graph(manifest,*,count_tokens,write_request,check_admission):
+    if len(manifest['units'])!=114 or len(manifest['coverage'])!=100:
+        raise InputBoundaryError('fixed Graph preflight denominator')
+    results=[]
+    for index,unit in enumerate(manifest['units']):
+        check_admission(index)
+        row={'query_id':unit['query_id'],'unit_type':unit['unit_type'],
+            'stable_id_sha256':hashlib.sha256(unit['stable_id'].encode()).hexdigest()}
+        try:prepared=request(unit)
+        except InputBoundaryError as error:
+            if str(error)!='catalogue too large; no truncation':raise
+            row.update(status='CATALOGUE_LIMIT',input_tokens=None)
+        else:
+            before=json.dumps(prepared['messages'],ensure_ascii=False,sort_keys=True).encode()
+            count=count_tokens(prepared['messages'])
+            if (type(count) is not int or count<1 or
+                    json.dumps(prepared['messages'],ensure_ascii=False,sort_keys=True).encode()!=before):
+                raise InputBoundaryError('Graph tokenizer altered request or count')
+            row.update(status='INPUT_LIMIT' if count>8192 else 'ADMITTED',input_tokens=count,
+                messages_sha256=prepared['messages_sha256'],binding_sha256=prepared['binding_sha256'])
+            write_request(index,prepared)
+        results.append(row)
+    risks=sum(r['status']!='ADMITTED' for r in results)
+    return {'status':'STOP_GRAPH_INPUT_RISK_CAP' if risks>20 else 'PASS_GRAPH_INPUT_ADMISSION_WITH_RISKS',
+        'units':results,'risk_units':risks,'screening_units':114,'source_coverage_units':100,
+        'source_abstentions':sum(r['status']=='ABSTENTION' for r in manifest['coverage']),
+        'model_calls':0,'semantic_fidelity':'NOT_ASSESSED','retrieval':'NOT_RUN','cards_issued':0}

@@ -1,0 +1,41 @@
+{
+  "local_tests": 174,
+  "real_grammar_cases": 52,
+  "code_sha256": {
+    "src/patent_to_pilot/research/r6_backend.py": "30fc15ea529f1779b44ab6b3c6d98ecba73092ff6c7919aaead61665eadf3fef",
+    "src/patent_to_pilot/research/r6_qualification.py": "72c6a1005099a33f076a77ad9baf7f1ff4e740841a4277e9c2ccc76116033aa4",
+    "src/patent_to_pilot/research/r6_reference_runner.py": "4fb32cf1dbd2b01cff02c2c518c2172d8bb7f0bd04a54da71a69462a31a9c3ec",
+    "src/patent_to_pilot/research/sg_r6_manifest.py": "3aacaaa91fe7bfc82840b4074237a79d601f80abbe3057dc6c2733f00f94c482",
+    "scripts/healthtech/preflight_r6_backend.py": "9c1808cb399d63bee1fe69dfe170f30d37f45ef9ed625e62fcd140189192a360",
+    "scripts/healthtech/preflight_r6_graph_inputs.py": "446fd10ef12f3bbe5f93532518ae3c4629f38beed64ecd3d1483788ef6305eff",
+    "scripts/healthtech/supervise_r6_backend_preflight.py": "18fae9d91859d9e43eb6c6a9f902b1c280c980309266438260d23a4db5e9ca18"
+  },
+  "local_test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_r6_admission.py",
+    "tests/test_sg_r6_scoring.py",
+    "tests/test_sg_r6_manifest.py",
+    "tests/test_sg_fixed_source_attachment.py",
+    "tests/test_r6_prompt_admission.py",
+    "tests/test_r6_evidence_separation.py",
+    "tests/test_r6_critic_calibration.py",
+    "tests/test_sacr_r6_bundle_runner.py",
+    "tests/test_sacr_r6_components.py",
+    "tests/test_r6_cohort.py",
+    "tests/test_sg_r6_source_worker.py",
+    "tests/test_sacr_factorial.py",
+    "tests/test_sacr_embedding_inputs.py",
+    "tests/test_sacr_embedding_controller.py",
+    "tests/test_r6_backend_factory.py",
+    "tests/test_r6_qualification.py",
+    "tests/test_r6_reference_runner.py",
+    "tests/test_sg_r6_input_preflight.py",
+    "-q",
+    "-o",
+    "addopts="
+  ],
+  "gpu_admission": "NOT_READY",
+  "graph": "CLOSED_INPUT_RISK_CAP"
+}

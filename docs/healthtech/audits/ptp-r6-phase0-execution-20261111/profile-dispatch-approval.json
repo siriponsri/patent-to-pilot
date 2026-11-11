@@ -1,0 +1,8 @@
+{
+  "status": "APPROVED",
+  "basis": "Owner approved R6 Phase0 CPU qualification; concrete declaration binding by authorized sole writer",
+  "owner_approval_sha256": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "declarations_sha256": {
+    "profile-declaration.json": "83b800966aebf69cff4a94c7cb959802b974d0240ad5b6413fb534760ca5c771"
+  }
+}

@@ -1,0 +1,1085 @@
+{
+  "job": "ptp-r6-graph-input-preflight-20261111-v1",
+  "case_files": 0,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T13:20:51.582064614Z",
+    "FinishedAt": "2026-11-11T13:21:06.650650006Z"
+  },
+  "terminal": {
+    "status": "TERMINAL",
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "engine": {
+      "Version": "29.9.3",
+      "ApiVersion": "1.56",
+      "MinAPIVersion": "1.40"
+    },
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-11T13:20:51.582064614Z",
+      "FinishedAt": "2026-11-11T13:21:06.650650006Z"
+    },
+    "whole_wall_seconds": 15.304917131001275,
+    "controller_cpu_seconds": 0.118315388
+  },
+  "receipt": {
+    "status": "STOP_GRAPH_INPUT_RISK_CAP",
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "units": [
+      {
+        "query_id": "sg-r6-000",
+        "unit_type": "source",
+        "stable_id_sha256": "45e00333e5e1eef01740731b2e737e001410be2de394e2fa636f38b6d4328c8f",
+        "status": "ADMITTED",
+        "input_tokens": 3323,
+        "messages_sha256": "1337c99c60cd6680e517942cde25fee6787aaca3cb787ace7c354311edca719d",
+        "binding_sha256": "6d0f324088278254f6b45517a40919f6c43216cea03325b9b35176be2756391a"
+      },
+      {
+        "query_id": "sg-r6-001",
+        "unit_type": "source",
+        "stable_id_sha256": "1683c6624ffeb3b4a8261226f77b080c767a6ecf8590225b66aa73f6879eac80",
+        "status": "ADMITTED",
+        "input_tokens": 4184,
+        "messages_sha256": "29059e6b8a7d6c02ea0f457be18a1078aff4d7bdc22fa996a1b796303e0729c8",
+        "binding_sha256": "aad121ad0ad336a116fa3526bbd878450e9e8cd70f7f08a5c2ad523b67252a6f"
+      },
+      {
+        "query_id": "sg-r6-002",
+        "unit_type": "source",
+        "stable_id_sha256": "0ce82e05e1159f3c4ecc2dbfb6603ad509aa0203401c1ae3b46bc8035e42b322",
+        "status": "ADMITTED",
+        "input_tokens": 7144,
+        "messages_sha256": "195f6af472ff502fc6f475013961e49bedcf48afd1a029cf1b3bb808a8e19e77",
+        "binding_sha256": "75acc7e262d14b4156347b72e2af2e68cb046f4d53dfa99ebefa7bf7b27d4ce2"
+      },
+      {
+        "query_id": "sg-r6-003",
+        "unit_type": "source",
+        "stable_id_sha256": "25155b213e03c6bc8be68f0895dcef522305d9d612cbb428f2dbf0f4fe4c82d5",
+        "status": "ADMITTED",
+        "input_tokens": 4338,
+        "messages_sha256": "cd2a1cc4321b3c991c0a3344077f3f6d40e9aabcfa0ccccfb5156994639cc0b9",
+        "binding_sha256": "7375aea84f050d5de93cd41767b75d72a107269fc4511501dd1e75cc75037dff"
+      },
+      {
+        "query_id": "sg-r6-004",
+        "unit_type": "source",
+        "stable_id_sha256": "a9b4d5625eb274435ea0d788d77b9c428e9c1846a099687638db755c25a9737f",
+        "status": "ADMITTED",
+        "input_tokens": 3136,
+        "messages_sha256": "e263ad343a188ecefd14666ecdabbad380d8562bb626d0cda730a6e1db16c904",
+        "binding_sha256": "e871e69dd5d5bb34119c065627ff6b9fd2e0e0f5a7c9e62313acede3d2c3f452"
+      },
+      {
+        "query_id": "sg-r6-005",
+        "unit_type": "source",
+        "stable_id_sha256": "1d59707f2c242f408b4fbb95763e36f14af2c2b8a2b12c0726aa34a3f9a08cd2",
+        "status": "ADMITTED",
+        "input_tokens": 3929,
+        "messages_sha256": "42fd0813bdd0fb5001919883487d1c06f51bda673b86568976acd6c0e86fba1d",
+        "binding_sha256": "4168368eab412646fc46fd7d28b07979fc952d44df9c7d840c98d2cd730bfb17"
+      },
+      {
+        "query_id": "sg-r6-006",
+        "unit_type": "source",
+        "stable_id_sha256": "e167423bc9677d0ccfc3e4683d972146e6d33d68e23fe2523aa59e3484ca4a86",
+        "status": "ADMITTED",
+        "input_tokens": 5294,
+        "messages_sha256": "9e049543f41b6ec78c53a1bce4564ce74295a0f95227f8ad907acecbf9f40a82",
+        "binding_sha256": "df2cb7e14d0d043b82cdf5ce4ffea2c1408669e26e41106e178842304948031b"
+      },
+      {
+        "query_id": "sg-r6-007",
+        "unit_type": "source",
+        "stable_id_sha256": "a70683f746cd35bf8fe06c0221f00b1f2667bb42309c2686e2e2e821c13fe11a",
+        "status": "ADMITTED",
+        "input_tokens": 4604,
+        "messages_sha256": "88cfd210aadf4e719a980c4f726156f2157266666322c67ea427134e37843c9d",
+        "binding_sha256": "7383e0f097a726cc5047e61c58135cf6f6d16f1ef8dd6654496a2904b2e221d2"
+      },
+      {
+        "query_id": "sg-r6-008",
+        "unit_type": "source",
+        "stable_id_sha256": "45a6ac42d9fdf400df3c107a590bacebc4683eb726dc7a78951a6caa42d895e1",
+        "status": "ADMITTED",
+        "input_tokens": 5626,
+        "messages_sha256": "80c5235e0ddb017c24cf09ea0f22d608df25b7573d9df6a7c7735b827cdf74cd",
+        "binding_sha256": "ca2593004270b17a47f38de927f8da5918c82d79a6e0e352c2ecea844524bbbb"
+      },
+      {
+        "query_id": "sg-r6-009",
+        "unit_type": "source",
+        "stable_id_sha256": "78d4529aec0296cf0abaa4ffb90a53f29be1717298a964b26f37a1b6f6f89119",
+        "status": "ADMITTED",
+        "input_tokens": 6208,
+        "messages_sha256": "76211aeacff3a7b2dc62877fc2e732f2f6b611326ba9513b41fd1bdf9500566e",
+        "binding_sha256": "8478f5a3b576171ff59eef53d98a359c9cc77e635bbd75c3f89659a7e77656be"
+      },
+      {
+        "query_id": "sg-r6-010",
+        "unit_type": "source",
+        "stable_id_sha256": "e1045fa903b286eb69c8b9bac63e0bcd0c1caa3b18029652bf81570327e7c59b",
+        "status": "ADMITTED",
+        "input_tokens": 5811,
+        "messages_sha256": "4a1cc2cfb7968592cb55f6101184e9bf8f44bf65a8c39588b1212a23446e4613",
+        "binding_sha256": "6219e73a70ea58891dfde41d183689788e0ef9642f40d4f6cd7077e257b9dac2"
+      },
+      {
+        "query_id": "sg-r6-011",
+        "unit_type": "source",
+        "stable_id_sha256": "501a553828a06d0f7f2062bd5e0a2f3f4c1114042523c31980e7fce14497e176",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9028,
+        "messages_sha256": "d2ed0eb44ee94d4c80882dcc29e21f751e2daa49defc7a912350f35551670c4f",
+        "binding_sha256": "87ab173ddd7ff4df5f9c20e5eec5623f3a2ceb8f4347109c26db2d2eaa32d36d"
+      },
+      {
+        "query_id": "sg-r6-012",
+        "unit_type": "source",
+        "stable_id_sha256": "7c9ddc5f0baf474b3447bccbf9549a5504e271c49e5c7349fe822df75fd0f710",
+        "status": "ADMITTED",
+        "input_tokens": 4541,
+        "messages_sha256": "a6606073fd7b02e6e16bfb8fce9ce81eaf573dbafb832e4d7cfb46e1bbde5192",
+        "binding_sha256": "4e0fe22f83b68357a7d4cad0768d5849b67213041993d81a9ad0abbeb2cf5b06"
+      },
+      {
+        "query_id": "sg-r6-013",
+        "unit_type": "source",
+        "stable_id_sha256": "4a6aa5fc2b14a05b8de3e558680cf84df2a4a97bc3c59bd725a3246b54266c33",
+        "status": "ADMITTED",
+        "input_tokens": 4984,
+        "messages_sha256": "5fef675f7064d78b59c7030733517a6e5be67632b2de3e74756719ad876b027d",
+        "binding_sha256": "6dfbdd0b51aff3634b0ba82b033404e9a4e875d89170906c4dfcab728b35c0fd"
+      },
+      {
+        "query_id": "sg-r6-014",
+        "unit_type": "alias",
+        "stable_id_sha256": "d373ce2dafe6a6027a7d468ec6128f37c6f122f46e1fa22491b98bda4e1ff705",
+        "status": "ADMITTED",
+        "input_tokens": 5636,
+        "messages_sha256": "c7b2c2c78d419ddde0113c1f5914b58b75595f008106659bf5779376a94bed27",
+        "binding_sha256": "3ed242bff56ad3af968f8a513a76f221f892f25f10b8e3e5c265438b2b995763"
+      },
+      {
+        "query_id": "sg-r6-015",
+        "unit_type": "alias",
+        "stable_id_sha256": "f6f2a3ad3ca56849c86f8d8043d20c23c05f9b7cca1d7244410040f38011562c",
+        "status": "ADMITTED",
+        "input_tokens": 6614,
+        "messages_sha256": "7d54fc1b76989d92a91ef6a8bd616b9643c07701a73e0b27b33501dbfd6d000e",
+        "binding_sha256": "ee84eade9bc1064e9debf4c370e25c1de0b927162ee4250ab794d47740ad476c"
+      },
+      {
+        "query_id": "sg-r6-016",
+        "unit_type": "alias",
+        "stable_id_sha256": "53f56612408cf178d30e20f8df0b3b136c4ce78fd81e12f2220a50e8a920a7d9",
+        "status": "ADMITTED",
+        "input_tokens": 8175,
+        "messages_sha256": "66fde88b3bd1c81b7801c13495ed1dc3c13f7993e99c1f04b5adddab2c6e3695",
+        "binding_sha256": "88761c37b25f5351b353063d8faec2cd80471201f22aa33e379ddb55b181658e"
+      },
+      {
+        "query_id": "sg-r6-017",
+        "unit_type": "alias",
+        "stable_id_sha256": "85527e682d194f620c4441e82e245274aee1422cbac06d8e46ea1c9544c2c5fd",
+        "status": "ADMITTED",
+        "input_tokens": 7093,
+        "messages_sha256": "8d56fc83cffd8e8032b1cbaeadb8ca11fc7eb10dc37b77885abb91fc2135fe5f",
+        "binding_sha256": "0d4709efee979c373bb14fcb5bd19673725f934dc1974d2e8c0ba96020873fef"
+      },
+      {
+        "query_id": "sg-r6-018",
+        "unit_type": "alias",
+        "stable_id_sha256": "78554d64399a11df1d544fa68f36ce19befe99d60d4bba7a83da00066efd82f8",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8444,
+        "messages_sha256": "35ea9cd97737e699cd2fa82e7918551148bba3ce211c07ea81832ee4a89b411e",
+        "binding_sha256": "c0a62e926a9a8412d8637d1b2d883ffbafafb950a7614cceaf27ff0420c1f22a"
+      },
+      {
+        "query_id": "sg-r6-019",
+        "unit_type": "alias",
+        "stable_id_sha256": "4f426c6cfcbcb092a253ad5a32a396e233fb2dd0cc7de3da787c69e788aa0b84",
+        "status": "ADMITTED",
+        "input_tokens": 7001,
+        "messages_sha256": "ced8bd9f5b6c359116167a794475152755cb8bf02e5c035716b0cf8f569d1089",
+        "binding_sha256": "1a55cc334415687d6dc5889c727113db4e77e7ef3fe74d9ac8fe99a86c2a092a"
+      },
+      {
+        "query_id": "sg-r6-020",
+        "unit_type": "alias",
+        "stable_id_sha256": "20ba5ecad4b0b2830f2dab0f1cd74559fc41b36573e3e9c751c59a2c3dc9a852",
+        "status": "ADMITTED",
+        "input_tokens": 6669,
+        "messages_sha256": "2f2a1107ff4d4f1408f874e0b3bbd535dbd4b334ba2563a8f1cbe148cc93d32f",
+        "binding_sha256": "733fbc62613b324ff33344c76f732f1a91720e60d34c568032fc747bf390c6da"
+      },
+      {
+        "query_id": "sg-r6-021",
+        "unit_type": "alias",
+        "stable_id_sha256": "5b8aa5e3f2dbc06192946b2f56f69695d9bf4f701cccc64fa5d51b9fc6094da3",
+        "status": "ADMITTED",
+        "input_tokens": 7214,
+        "messages_sha256": "b38d079ab38dd89824904588531919ba42718a137572f01fe1aa0c8796c22017",
+        "binding_sha256": "00b7f77d00efa3a81116587873730d7978e7cc9b341b6092b27b1ee4a5514518"
+      },
+      {
+        "query_id": "sg-r6-022",
+        "unit_type": "alias",
+        "stable_id_sha256": "588a662837d03ce286562888193cc9840cb9451792e80b61488cb06aca3d495d",
+        "status": "ADMITTED",
+        "input_tokens": 7078,
+        "messages_sha256": "afd7be57998dd3169eba9cafe8f3ac5c9eef48d521a0d10ed1f9bd45603da6f9",
+        "binding_sha256": "bb63de925a31718d7fda5e9551fa8d9b51533eac137648c61fb9443316292cc9"
+      },
+      {
+        "query_id": "sg-r6-023",
+        "unit_type": "alias",
+        "stable_id_sha256": "e60f314b5ae60c6ce1daa544f098e8af527847475d48f7624dab264266bd98bb",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9080,
+        "messages_sha256": "6ef00bf71ceb7bfa7fc434f6831398d6521c237e57d16a59d0dc1a0431f63371",
+        "binding_sha256": "dfbaba799d9bd361e85a0121d03eede133a877c6a08e8de89cb1ed1b6926c754"
+      },
+      {
+        "query_id": "sg-r6-024",
+        "unit_type": "alias",
+        "stable_id_sha256": "45f367d419674f6131d83f530431fe96196e90ecde431ae6ff38053f9cb88831",
+        "status": "ADMITTED",
+        "input_tokens": 7251,
+        "messages_sha256": "e5f91bf0494d82e396671f5fcbc0dce32f9367e68c2ea496b7f3072295f99925",
+        "binding_sha256": "4c07f6fe9a29eb852589fbac5b356d198d94a6229f5ed8b39586dd33ca9de1b9"
+      },
+      {
+        "query_id": "sg-r6-025",
+        "unit_type": "alias",
+        "stable_id_sha256": "eef73f712695bf43d314c9e8ae5d65b9ae2ef2816f8b6b9259f6cd73493b757a",
+        "status": "ADMITTED",
+        "input_tokens": 8151,
+        "messages_sha256": "35042c458586d372078241ddd631408496b4768af3fd35067bb691e36e38ec87",
+        "binding_sha256": "23fd4f13c04351b83b88a4723a11973c001d8e9b1a1ea93e4a32589180607657"
+      },
+      {
+        "query_id": "sg-r6-026",
+        "unit_type": "alias",
+        "stable_id_sha256": "e1bdad21462fab9d63727566418c61042730d3fe80f62008da3817d642897c44",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8888,
+        "messages_sha256": "f0c749c8e582ce10d063be78782d0616fbff90b0b0fe3600809a90631c1efe1a",
+        "binding_sha256": "157548f727c1733904838b475284f8de381650502af1bb328208540fc07a9123"
+      },
+      {
+        "query_id": "sg-r6-027",
+        "unit_type": "alias",
+        "stable_id_sha256": "4014aca4dbbc31013eea4295bc36bf639f78ac93b6c88b161eb4e6da01204d61",
+        "status": "ADMITTED",
+        "input_tokens": 7368,
+        "messages_sha256": "48f170810d0228136f8329716b075e5c3eeab1022de77aedcdcb7fd08dc885da",
+        "binding_sha256": "3b3fef6e3bbe244b75da5a2f72dae0a15dfa03bc599e908cfa007d094afcab93"
+      },
+      {
+        "query_id": "sg-r6-028",
+        "unit_type": "alias",
+        "stable_id_sha256": "56ff7df0599d7848589ae16eb18627afc1e7e8d3fe7e92d8e3fcc0b8a7b5a50b",
+        "status": "ADMITTED",
+        "input_tokens": 6904,
+        "messages_sha256": "adc09d6e9b3f76cf489663d55465eff06498c433e2a9512d6338c510a8c41667",
+        "binding_sha256": "0fda71baef4ef3430bd2a89f0084d2a081e319a69857227366296d0981087cfd"
+      },
+      {
+        "query_id": "sg-r6-029",
+        "unit_type": "alias",
+        "stable_id_sha256": "e99938303239cb76851b32cdf50694eca33288b930b48cda606c353b6904a8eb",
+        "status": "ADMITTED",
+        "input_tokens": 6596,
+        "messages_sha256": "aa69b976a6d3fa75031379e9fd61e7550b1b73e30b7a5a157a97430052dfe5d0",
+        "binding_sha256": "3dfcfcb585c6b002e8b80dc92c6737c04d658d0a93ebf98fbc8b87df596e111c"
+      },
+      {
+        "query_id": "sg-r6-030",
+        "unit_type": "alias",
+        "stable_id_sha256": "ce438cf931c58a37ad1a51ac650d4c7ce4aaf850152e0b67a39ca26a6dae372d",
+        "status": "ADMITTED",
+        "input_tokens": 7333,
+        "messages_sha256": "38d0402887d761a1d1c7147365deac6b170d27e8f12ef17bb6834f70835da821",
+        "binding_sha256": "96fe2b80e1c4236cdd5c61fc81da2067f661babc6a73bad1f76ad34cf4aeb583"
+      },
+      {
+        "query_id": "sg-r6-031",
+        "unit_type": "alias",
+        "stable_id_sha256": "de9999250074f7618c18221b8df1a5cfcf09594c5b57da0854bb5a658078db99",
+        "status": "ADMITTED",
+        "input_tokens": 5521,
+        "messages_sha256": "4bfc22441317e0bb2cb6221c6aa2908370d8a6d68feb39ca62993ec17daa3d96",
+        "binding_sha256": "396ab575e0103264ce66a082adc21558c99bb52edd103cc002d7f43b35c18ed5"
+      },
+      {
+        "query_id": "sg-r6-032",
+        "unit_type": "alias",
+        "stable_id_sha256": "d44e6a48d6b6863dfa234423bf2c668cc6abbf0c552f8ace8a4b47e6c568853f",
+        "status": "ADMITTED",
+        "input_tokens": 5987,
+        "messages_sha256": "8c5d731e3778cf3d07279c3cefc32cbd6622cbd95a066ae255603518ed71c282",
+        "binding_sha256": "220359b9dfef0d5659003f60b72af23a7e9226644cb321a11beacf32b17ab293"
+      },
+      {
+        "query_id": "sg-r6-033",
+        "unit_type": "alias",
+        "stable_id_sha256": "f679ccb44cb8d0913988f72b5b4155aafa16909b31096ccb8dd2e644441c7bba",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 10675,
+        "messages_sha256": "2f0c4ad39cc9de0318d1ad689745cbad899c8b075cde812d940e94642387ecf2",
+        "binding_sha256": "c6fdc02e80fb4e5607e7778b17d4a3919cca52fdd97fd1dd8f5a73d94e4e4f82"
+      },
+      {
+        "query_id": "sg-r6-034",
+        "unit_type": "alias",
+        "stable_id_sha256": "bd3ecf7e7a795c1cb1d8e46fe9ab31953722ec3f44126e941b37526231e3a390",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9801,
+        "messages_sha256": "05f25ced7fe1619f9331a0130213ed8219eb2037b4569363a34616a352174148",
+        "binding_sha256": "44c6b26600cbca21f38ca2f95e9c8c78699745218ec84c3855f9ebeb937a64ac"
+      },
+      {
+        "query_id": "sg-r6-035",
+        "unit_type": "alias",
+        "stable_id_sha256": "05e5669e90ab20faca8fccd7a429428f3631a7fbae9144477b3ac0d255bcbdd4",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8684,
+        "messages_sha256": "e5dca6cf291a2cdf0c47a59cc3776da447af1489d937e0ae49b106c77958af4d",
+        "binding_sha256": "710b1f08e38070154736cd5a63c456e1e5aaaf895ce0303d314e0e62dbe5a5e6"
+      },
+      {
+        "query_id": "sg-r6-036",
+        "unit_type": "alias",
+        "stable_id_sha256": "ffa7ba4306341d3932229fdb99bc63133cf0e85da3712eea8053a217d4af6516",
+        "status": "ADMITTED",
+        "input_tokens": 6463,
+        "messages_sha256": "510ed0452aba8d944c0242575a9b6eedb6b22895f07a9ca2cafe9c417caa31ed",
+        "binding_sha256": "afe4956a46bc5a9186a82b67a363bf2e623d2968174bfcf5632e2f374c0ce5a6"
+      },
+      {
+        "query_id": "sg-r6-037",
+        "unit_type": "alias",
+        "stable_id_sha256": "24d11a3f52b105a6d5739498b87e9a1c28a1f8e3b3d3922128955818a7494b3d",
+        "status": "ADMITTED",
+        "input_tokens": 4619,
+        "messages_sha256": "309b8f83e0598292425025308220ec50a67be218ca5acd08df56f52acba6d260",
+        "binding_sha256": "05253c6e051846e3e9e099b7da44007712033db00f6cfcf61f99e281813d6f39"
+      },
+      {
+        "query_id": "sg-r6-038",
+        "unit_type": "alias",
+        "stable_id_sha256": "8020a0c07a67fea2b177cc3ac9ff9d67b55937e99354190e7bbb66716c84abe4",
+        "status": "ADMITTED",
+        "input_tokens": 7499,
+        "messages_sha256": "98ee18117e76c4f5fb6a8eb0eaf582f24aaa34a75e6c94af9b45f0ec97ea4f29",
+        "binding_sha256": "8b34da085ff85543744ded29ace12d7074b8859e7e173eeb8a80e414fd427a58"
+      },
+      {
+        "query_id": "sg-r6-039",
+        "unit_type": "alias",
+        "stable_id_sha256": "351a665acb412a111ca32c1d2cb6d0d5f1b5ec8bcc12961a047081e53dc21be4",
+        "status": "ADMITTED",
+        "input_tokens": 7210,
+        "messages_sha256": "568c3f37ac3dacda6ba7eb8fb202683968a5b298339dc66f66bb13134c72722e",
+        "binding_sha256": "13b8b873472cc112b1527c4c756b87547b36c72b76a837e61945ff0db6a79203"
+      },
+      {
+        "query_id": "sg-r6-040",
+        "unit_type": "alias",
+        "stable_id_sha256": "6b30ac00e753a29b61ee00cc7aa7ba0a20fb9b52cdc545b5bfed8745484869d1",
+        "status": "ADMITTED",
+        "input_tokens": 7684,
+        "messages_sha256": "fb645a8543d678fed58df1afe15c3be6c6069abdc71814894e9fd65fc41d318c",
+        "binding_sha256": "fc6fb2f91c506d9a9f85549f0b7bc58ef12abdd42c1048aada5022d2c17a3b4f"
+      },
+      {
+        "query_id": "sg-r6-041",
+        "unit_type": "alias",
+        "stable_id_sha256": "bf33e6153add11331c7110dc57d09e6b9517956e3c614b8b3c08e2a2d7d031a9",
+        "status": "ADMITTED",
+        "input_tokens": 7543,
+        "messages_sha256": "eb543aea064fb87bf31c9c3c816526ad275dc90ff42b0346c30c7abe073f517f",
+        "binding_sha256": "f101d4fa208c8366e610730a4249700c3476930cd274121624b983ffaf406d22"
+      },
+      {
+        "query_id": "sg-r6-042",
+        "unit_type": "alias",
+        "stable_id_sha256": "59d465ff9a523f340e103990035ad5e928dc390a31f5875dbaf16af4ff9950bf",
+        "status": "ADMITTED",
+        "input_tokens": 7266,
+        "messages_sha256": "9b40623d20721eabffb4b292286cc780296a247adf981d8fc99b5ce49cebac11",
+        "binding_sha256": "734d9aef7e1bd322ee188f6237dd73ee1800710734921986732e8e93d39db7c8"
+      },
+      {
+        "query_id": "sg-r6-043",
+        "unit_type": "alias",
+        "stable_id_sha256": "3537a12e31c3430452fd5f507fce44911512541342954ff72abc795a816dda8f",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8344,
+        "messages_sha256": "5ecd58ee4d37211a8ceef2e46bf22e6cefed2e29d2c381825eee6b9198bae86e",
+        "binding_sha256": "f336b97d341470beeff55b8b26fb8394dbf03fbed5a1020c1db2719f618585e7"
+      },
+      {
+        "query_id": "sg-r6-044",
+        "unit_type": "alias",
+        "stable_id_sha256": "b2bed8d7a01e03fbc05e75f37a227beaa66e0c83d2a4dc86aba0fa3151283703",
+        "status": "ADMITTED",
+        "input_tokens": 6219,
+        "messages_sha256": "c4ce4c9ca8960cc6b0460e757092e5517f5756444cc2b94ff5fb24ac63b63f7d",
+        "binding_sha256": "ce871352bdadc1bc0807b80e1ac4af9743002d4b12740c49364eb5e368145b43"
+      },
+      {
+        "query_id": "sg-r6-045",
+        "unit_type": "alias",
+        "stable_id_sha256": "6e740992cdbd29917d0a15bdcec22c075577fb172fb924514b4ebb105b72b0b9",
+        "status": "ADMITTED",
+        "input_tokens": 5979,
+        "messages_sha256": "f8425abb80fb780b0b54177baa1a97ca92b1943ca3617e298c743c0de830e700",
+        "binding_sha256": "27e3a4197f4bb4865fb11231ef129966d67327314c40e11245fca27dc2404063"
+      },
+      {
+        "query_id": "sg-r6-046",
+        "unit_type": "alias",
+        "stable_id_sha256": "67e5f9e4c0446be76350d1bfff9c7ec45d42befafd131b1741caf44747b29750",
+        "status": "ADMITTED",
+        "input_tokens": 6871,
+        "messages_sha256": "03b401840ebcae4d2437bd08c49064398a7ce68188ab2d1d4efaef9de7a05bd7",
+        "binding_sha256": "42a2446e752e371cc9ec04591605c627d236b034a09789c084e313a81be4a127"
+      },
+      {
+        "query_id": "sg-r6-047",
+        "unit_type": "alias",
+        "stable_id_sha256": "d657a07a022da84d741b3a30334e234ac2ecdc7870c5a071b501bebb5061ba71",
+        "status": "ADMITTED",
+        "input_tokens": 7160,
+        "messages_sha256": "b723af2669801a2ac996b6747367f7cb775b516df828682f9dff6c50477f753b",
+        "binding_sha256": "4f06e5daaf728653046a9e591dd54e8d9e1aa1904e40c82d6fdd04064bca8834"
+      },
+      {
+        "query_id": "sg-r6-048",
+        "unit_type": "alias",
+        "stable_id_sha256": "5a2060ad8a0dd54629ae8d7c3314153bf52b2e5682aefbd9018355b980d7176e",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 12236,
+        "messages_sha256": "fdb014b5b9b7c39b15bd347b5f6bd9dc6a6e9bf0b1a248885856d497c563d635",
+        "binding_sha256": "6d8bdac8fbf8458168151a86beabc36e17e1f6058141a1515942362c8a58e0f1"
+      },
+      {
+        "query_id": "sg-r6-049",
+        "unit_type": "alias",
+        "stable_id_sha256": "c95fc692318b2db957ca738d7059049bc3841fe6b7cea88d20e0f24d2d327089",
+        "status": "ADMITTED",
+        "input_tokens": 6734,
+        "messages_sha256": "9ed1ddb537d556a6be9780c66328a1648fbf15452f21cdc7337a8d326e1b8dcd",
+        "binding_sha256": "a041aed482c1b953d596a540571f3d4f0ecf8d720615b8f9c95959806a9393ba"
+      },
+      {
+        "query_id": "sg-r6-050",
+        "unit_type": "alias",
+        "stable_id_sha256": "a8c5065b3007a6da10623312c126010c91e3820456d460ea2f555f7b467877a2",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9048,
+        "messages_sha256": "e1a17fc6a55ffa1673879efae8aeced109a3ed9442deb80274d737a8f846ed57",
+        "binding_sha256": "8c56e02cea6f01548c7113e5d4c7e7dc8aa5d7be7e2b47e237a7b16bac1446cd"
+      },
+      {
+        "query_id": "sg-r6-051",
+        "unit_type": "alias",
+        "stable_id_sha256": "72484fcc6bcf4650513fcc359afb2c32487b073974817348b83bbc75ac6c5690",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8622,
+        "messages_sha256": "3aa4455ac4e4840eda26d607eb8df7ad10d924071492f12f725117c9fe02850e",
+        "binding_sha256": "65570e002c7d158f2d91c386da03b8b46e7528973c0169742f6b928cf1a5256e"
+      },
+      {
+        "query_id": "sg-r6-052",
+        "unit_type": "alias",
+        "stable_id_sha256": "8c1b63af58339d2f524802cacd365afea15507b1a7e1553ef5f40a89f7744e2f",
+        "status": "ADMITTED",
+        "input_tokens": 5931,
+        "messages_sha256": "1d12d455fd84a7035b9d7e8f6cc738d1bf2c464e513e0f902cef409777c5e7d5",
+        "binding_sha256": "f0ace51a8bec64add4f4863739b4e6dc6765e6c7ea7b0da3d689dc0462cff40c"
+      },
+      {
+        "query_id": "sg-r6-053",
+        "unit_type": "alias",
+        "stable_id_sha256": "0dbdcb7b92a14031dd2a937a5014732cdd4b7c454a3e5456debbc4b4f30253cb",
+        "status": "ADMITTED",
+        "input_tokens": 6135,
+        "messages_sha256": "a8a595d93882f96f7d7e10e382f2350a795e1edc6285ac734189b242fce9ab22",
+        "binding_sha256": "dafd543c53d7c8e72412be7abe1d3e06cc97804e6a03e92b2c34cd5e52ead3c7"
+      },
+      {
+        "query_id": "sg-r6-054",
+        "unit_type": "alias",
+        "stable_id_sha256": "c5ce73ac03cda167d465fa46d788b151c7f48303a04b74d9a5b9edb9331be925",
+        "status": "ADMITTED",
+        "input_tokens": 6734,
+        "messages_sha256": "acb29a3dd1d92c6098e62c6237bbf364f9f17f775b77ede98ee715804a8c41b9",
+        "binding_sha256": "03ce9a5d6323c483c6fb3fc0260513f2de63a07d7149ef326b7533fd8636aaac"
+      },
+      {
+        "query_id": "sg-r6-055",
+        "unit_type": "alias",
+        "stable_id_sha256": "6d0e3d71923088ce6833163de2bfa076159d9b6cc71523256569e903a44efb7d",
+        "status": "ADMITTED",
+        "input_tokens": 6460,
+        "messages_sha256": "f3d02ba6962a0a8efddc96bafe12848601cece37447f8a3c25c73f7d0f071520",
+        "binding_sha256": "d42c258d369ad5cc2f92feda8de3f16234bb94cf288c16831f559da888e657ff"
+      },
+      {
+        "query_id": "sg-r6-056",
+        "unit_type": "alias",
+        "stable_id_sha256": "21c092933c17c6c14e88c908b8db66c09e48a15f4ab34f3a75ba941b89147f87",
+        "status": "ADMITTED",
+        "input_tokens": 7817,
+        "messages_sha256": "1eba8feb38aa36b3f424089383a58121ac5e7efca81508b45e42011dc776cf5b",
+        "binding_sha256": "387568e7d26e5894e97edce828b010b1a22cf92bfb8b3cf7d7253d6c391592f1"
+      },
+      {
+        "query_id": "sg-r6-057",
+        "unit_type": "alias",
+        "stable_id_sha256": "2d5ceff32e5fd64421d0dcab7e0bdf0a52ae225c4b1922b21b938b5b33bbda2a",
+        "status": "ADMITTED",
+        "input_tokens": 5475,
+        "messages_sha256": "4c5d7062e1d598db9f79547b95aacbaf698fe3ba65e5e2b6287e289fcca1dc77",
+        "binding_sha256": "cdda9879d58b19d644e532613bc1110263c0c5bb9463a41af24572518beba246"
+      },
+      {
+        "query_id": "sg-r6-058",
+        "unit_type": "alias",
+        "stable_id_sha256": "cae90dbbdcb0f2523186fb47f3abe3d1640db667c8e1017a49ee8ac5914b795c",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8699,
+        "messages_sha256": "e6d596787f3f12e3cdff24f6d36dd7c02f531f964c34e9025ffb119d36b851e0",
+        "binding_sha256": "c9e669d46e6fb8ee1c02c696a9956138ea62822869e4be3d80d2c9f314c69b54"
+      },
+      {
+        "query_id": "sg-r6-059",
+        "unit_type": "alias",
+        "stable_id_sha256": "caff07dea7f5b21bea78dcd0dfd9910e2a03e68fcd44054743cf5015a551c54f",
+        "status": "ADMITTED",
+        "input_tokens": 6534,
+        "messages_sha256": "297b35199997d1eacc0ef05aaeb5b77b677e84ad8c7517fd1d7ef465be96e707",
+        "binding_sha256": "1393a40b6e46b0a443590877891b3f4a576905f79f043c25b485a522875c945b"
+      },
+      {
+        "query_id": "sg-r6-060",
+        "unit_type": "alias",
+        "stable_id_sha256": "017b303e4e25d24822dd442aaf44c442ee1129c1faf40492aec2ba92ddb56ff9",
+        "status": "ADMITTED",
+        "input_tokens": 5962,
+        "messages_sha256": "c303245633892723ed2c471356cb60d2102dc870937bcdde6bba6db296fbccdd",
+        "binding_sha256": "58c4308f9aed5853fbb5563c94c20c28b9a9f13862750a423d8d54725b6c0fff"
+      },
+      {
+        "query_id": "sg-r6-061",
+        "unit_type": "alias",
+        "stable_id_sha256": "f29c21baf744ba0a805db473047e40183e5a4cd2c32753c2aca5bf802954a481",
+        "status": "ADMITTED",
+        "input_tokens": 5244,
+        "messages_sha256": "46b1efcf95124e6e081d858ec63dbd2158a28717a76aa1613c1dd428809092ac",
+        "binding_sha256": "ed8aeeb17d6a6664f54dd2d4d6a2745b34058e8b9867b34e4ae1ce96e35543db"
+      },
+      {
+        "query_id": "sg-r6-062",
+        "unit_type": "alias",
+        "stable_id_sha256": "0bf0a0804d004a31611be43db325f5538c38534ce8f1782b7aa7e7ff7b6b47f6",
+        "status": "ADMITTED",
+        "input_tokens": 7196,
+        "messages_sha256": "5c809a22cdbf52762dde8844ff8f8225eff41be5ff513343fccd6156f2152863",
+        "binding_sha256": "0432fad48a3db77d118e19a9338dd03d9bbce7b3681ed46dcd400d5a25e7bc83"
+      },
+      {
+        "query_id": "sg-r6-063",
+        "unit_type": "alias",
+        "stable_id_sha256": "3247709168f449260ec13e34901c1a4c3236ee0c9f58c3b992137c02fbe1baa9",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9772,
+        "messages_sha256": "1d6ed98c6324fb0b7f956c6cf7699f311c0e479775b03510b8cd786412f50dbd",
+        "binding_sha256": "08d2e74ba5996f2bc49fd58fb7fe832b1370082624e1e9385a23f675f79f04a3"
+      },
+      {
+        "query_id": "sg-r6-064",
+        "unit_type": "alias",
+        "stable_id_sha256": "b2e97f1317301522fa09d297f343be71c81e9397007f13e2df39603a47f4591d",
+        "status": "ADMITTED",
+        "input_tokens": 6619,
+        "messages_sha256": "5989e0fc4d8d8b128e6bdd77b19beeb1df47ddc7cce559b9c7a1563aede6bb48",
+        "binding_sha256": "600f9243280aaf90e2c8c3d067c4fe9455665f67f1a55592c4a94dc9c41059ac"
+      },
+      {
+        "query_id": "sg-r6-065",
+        "unit_type": "alias",
+        "stable_id_sha256": "01f2b90a4037b11a9c57dd8e9fbe3da2bb84cb086e8b8dc7d9bf1144ab6a8df9",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 10884,
+        "messages_sha256": "643240c0b9af397ce2cec33deea8c257197e572019dde2d74928dce9bde5677a",
+        "binding_sha256": "158e90c7a130aecd1b534ca365eb8960f0c59ee5020a32765f76b7859263d004"
+      },
+      {
+        "query_id": "sg-r6-066",
+        "unit_type": "alias",
+        "stable_id_sha256": "3c74efa6f6afb6757a9805f16d26d2748f8bd8268d2b3c918548d7be6c2cce10",
+        "status": "ADMITTED",
+        "input_tokens": 6474,
+        "messages_sha256": "ab37d36f0a996e99cb799ffc7ecfc71d7c1a7892b890857323b605389b1748b9",
+        "binding_sha256": "c3e1499bb6709358fea1449a83720ba6a950871f20ca564549c8a8eb9a65100b"
+      },
+      {
+        "query_id": "sg-r6-067",
+        "unit_type": "alias",
+        "stable_id_sha256": "8bea29dc9b69920cd45c9fdf4df62da1c51f5830c5e7d7736e5af6780ec44c19",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9207,
+        "messages_sha256": "6fc49eb33c3190a8d34e133a27afe911aa414eb96c5dee21af94f4cdc43bffd8",
+        "binding_sha256": "3d3a58cbdf6e90dcf6acbabd30d909dc3a36c7f82f2dabc81d6c232e3c390cd9"
+      },
+      {
+        "query_id": "sg-r6-068",
+        "unit_type": "alias",
+        "stable_id_sha256": "b24a4507de7ca291007c63dce49a3e7768ffe9de8474f1e5a646543355d273a3",
+        "status": "ADMITTED",
+        "input_tokens": 5597,
+        "messages_sha256": "90fe0b20c8b0c54b3e424e435678354c20d0f65d9970e19ca4e09634d9e04782",
+        "binding_sha256": "f5979bb951daf3ec91add393b824a06d67d8d59d0045094f9bc97ff2672777db"
+      },
+      {
+        "query_id": "sg-r6-069",
+        "unit_type": "alias",
+        "stable_id_sha256": "e64a38a9ed85e24f5730ad116bf19d334026fa13f02d1fd15ffdbc2e3519cbe2",
+        "status": "ADMITTED",
+        "input_tokens": 6137,
+        "messages_sha256": "a5693489810c30354a41d360ef5b6238c043b9c592b4d758980caf80ba367e16",
+        "binding_sha256": "ac91305e4cde2eefe29b1d49ff251eb59b3a98df96407b174000d284577dc18c"
+      },
+      {
+        "query_id": "sg-r6-070",
+        "unit_type": "alias",
+        "stable_id_sha256": "f327188ef3afae46cd39dd218662368bd491d4d3aeaf49c1c9ce454fb03cec87",
+        "status": "ADMITTED",
+        "input_tokens": 7628,
+        "messages_sha256": "a057cba0a9c549b94006dfb077a64ce1b1b0826cb15b0f1269fb8ec8ca254bd7",
+        "binding_sha256": "fd486b4172238e0d32cf999ccf3e29faf3ae0f7f8c74b694927537bb347e0485"
+      },
+      {
+        "query_id": "sg-r6-071",
+        "unit_type": "alias",
+        "stable_id_sha256": "4ed5e38d8a9bdc30f2fe77d5fcc8ea8e1358593be1d08fe3d79a932f66a4b2ec",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9294,
+        "messages_sha256": "2c1c981ec56c7deb51d10a685b4dd7b5acf18d65465eae9e2b0cb10ed82488c8",
+        "binding_sha256": "e0518c4204baafcf64e29e9e25e47aa3b1fd00cc08d9f14d2f6e1ecee41aadc2"
+      },
+      {
+        "query_id": "sg-r6-072",
+        "unit_type": "alias",
+        "stable_id_sha256": "74ba8b5f6374b063763f1677a777c1a43294b566b318f3266a0431ce6326eb22",
+        "status": "ADMITTED",
+        "input_tokens": 6629,
+        "messages_sha256": "7c4cb87f628f0b503e1d88756128b7acb86521bf2e3ef3a1b7d2f013f6334aba",
+        "binding_sha256": "1db1067624728a677eebc76a0bde8233d7808638b05f3ed65ddffc0482e1f0f2"
+      },
+      {
+        "query_id": "sg-r6-073",
+        "unit_type": "alias",
+        "stable_id_sha256": "c06b7702242eedc855c035cd474b778b28eb48bf3e27765d3040e8c5e61d20fb",
+        "status": "ADMITTED",
+        "input_tokens": 7905,
+        "messages_sha256": "99bb29728cf92b8caf07f96069fd826254fc87cc68c90fdd17e22d0fabdd56ac",
+        "binding_sha256": "de8636146795a7e55b9e2566cdcf29677137a328ecd955f54879b9a103612060"
+      },
+      {
+        "query_id": "sg-r6-074",
+        "unit_type": "alias",
+        "stable_id_sha256": "ca87ea2923a39284bd2f0a5e526a35b047dd7fd34f046d4ad68274ace56a8aa4",
+        "status": "ADMITTED",
+        "input_tokens": 6558,
+        "messages_sha256": "f8e7f9297d523ce9e50e5059306de03990966df4b6b9cef2c9078daa523bcd13",
+        "binding_sha256": "fba09d0d7191ff193bdd675b7d7c9f104a64d379c5a594d91c8e6da871d8fe55"
+      },
+      {
+        "query_id": "sg-r6-075",
+        "unit_type": "alias",
+        "stable_id_sha256": "7484159cc90195854019ec140a5f2d286f089bb04257ee30a3505af3a0d43cff",
+        "status": "ADMITTED",
+        "input_tokens": 6821,
+        "messages_sha256": "d314ed4e7eaa25c259c5eb3caec453e2c0e9309954b0e36750ce78580d61a826",
+        "binding_sha256": "edc918117bc57086db35d3c6f2778bd372a3e04431559214dbcd54c91eb0f91e"
+      },
+      {
+        "query_id": "sg-r6-076",
+        "unit_type": "alias",
+        "stable_id_sha256": "64a3fa65051e416f9cf274a94764d322d4d74fa6b47f16244c730a585c51dd84",
+        "status": "ADMITTED",
+        "input_tokens": 7042,
+        "messages_sha256": "f0e17510d88eb883f6436b92dece18f5043f452b7c3f028504574b604dd746e8",
+        "binding_sha256": "0cd11c5ee33fa8673d8c389b5d87b329b5fb9b99115eb1f0f71c9d9fe3e67460"
+      },
+      {
+        "query_id": "sg-r6-077",
+        "unit_type": "alias",
+        "stable_id_sha256": "2fc9fc42e4d13181b2daef142fc488f10ddcf4b28e592be1e1690df7680c1b47",
+        "status": "ADMITTED",
+        "input_tokens": 6049,
+        "messages_sha256": "19a16ab553201333a16ebe8a653fd104197feb2aa322c39bd8835003aaeb8a2f",
+        "binding_sha256": "fbb844a3313b1bd68d12d6989eaf66f9d2e357446d163b9a437d6e22895afcb2"
+      },
+      {
+        "query_id": "sg-r6-078",
+        "unit_type": "alias",
+        "stable_id_sha256": "59b6b56b3e8056d38c22a81202a53ee892cce698b00c048d9dea37ea7bd77bc0",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 11421,
+        "messages_sha256": "e78dcf27a1aa39b10eee0875ba62383aa09cc2c977c261c131c842240ff39dfa",
+        "binding_sha256": "a9b6511795902b8c59e8ef8de48c57ec2eed1a7ea69db30dab6cf945e9e55d03"
+      },
+      {
+        "query_id": "sg-r6-079",
+        "unit_type": "alias",
+        "stable_id_sha256": "09df8593981143b626ba96176d0e747917996429caad13afee7a995b8aefe304",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9076,
+        "messages_sha256": "a37c618f3aefa60719cd5977bfb2eb0c3d0f63eafc511cab58e614fb7b03b876",
+        "binding_sha256": "18c97182dde423d4a2c7c8141acb8edf8d4040cdc3f579a1ea6334b3cced6de7"
+      },
+      {
+        "query_id": "sg-r6-080",
+        "unit_type": "alias",
+        "stable_id_sha256": "d49d74e8b800aeb1363bd7445c8ca87b2f57ed0251c369e142124fdd8d6b3de0",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9146,
+        "messages_sha256": "85f277962870998d561078e8b7a824a0f507a758a5bed910f6b035657ab66e3f",
+        "binding_sha256": "8ff1f5c5cc6ae84f81283295840b944df3d1f0fb644d96908b88d3a23a3c9425"
+      },
+      {
+        "query_id": "sg-r6-081",
+        "unit_type": "alias",
+        "stable_id_sha256": "14392c4178412f3a8dae4e2e59d27f4021879e796a1411631e00892ec71254a7",
+        "status": "ADMITTED",
+        "input_tokens": 6971,
+        "messages_sha256": "b6baa04ab02074cebe4d56ca4a3e1b90134ce1be0a2394d3d3b009fd2559a8f8",
+        "binding_sha256": "8d4a2be56918fd8f2d33ba70fec8983fe4cf941996a0de5a159665839fa08a6a"
+      },
+      {
+        "query_id": "sg-r6-082",
+        "unit_type": "alias",
+        "stable_id_sha256": "6f65c45b30d065e99edfdebe9afd087c6d9fa177cb42e1b12ca120bf3eecb8b3",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9321,
+        "messages_sha256": "aca62bb2016e8fc23c66721a72a0361b25855b1653f03989a0d0e9ee36618fb0",
+        "binding_sha256": "197fc81c9774eaa6dc773de80cdc753d15b39f43fff9dee6a6b391edf66d2e31"
+      },
+      {
+        "query_id": "sg-r6-083",
+        "unit_type": "alias",
+        "stable_id_sha256": "46f3a8168062ccfc6560c5d7cb0e40f2fe778a87190f90a71fcbdeb81684447a",
+        "status": "ADMITTED",
+        "input_tokens": 7998,
+        "messages_sha256": "979effa01954089089914bd5a5e8e12e02e433d84062fd57fa43735df1de271e",
+        "binding_sha256": "052e58e69b3bf882a4e90fdbe12b784f62b892b3a89c194e216d3028d6366494"
+      },
+      {
+        "query_id": "sg-r6-084",
+        "unit_type": "alias",
+        "stable_id_sha256": "ca5c51b816fa79978149d976705f09acbfddaf0111384a705068dbc2ed38c8e9",
+        "status": "ADMITTED",
+        "input_tokens": 6432,
+        "messages_sha256": "2513cc8cc916e4e2744c4965bebcc6b1c3990d50370583f761a0d5f2bb2cc5b7",
+        "binding_sha256": "14c04e113536eeb0e01b443bc2b658604c976d579abddf9902b22fa9ef0efd21"
+      },
+      {
+        "query_id": "sg-r6-085",
+        "unit_type": "alias",
+        "stable_id_sha256": "37dbc575e26ef8ddfe4d7f147a2fdcf2df270b03860e579fa952cc988ece465b",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9384,
+        "messages_sha256": "09dab7f5bb26fc5acedab3d28ae7c9b82fdcd9e9c7fe0f7b39f1c95c311b51e5",
+        "binding_sha256": "635f823ce4b65cb54eb790c28f4a0df708b370f2ca8db05e60152873b222da19"
+      },
+      {
+        "query_id": "sg-r6-086",
+        "unit_type": "alias",
+        "stable_id_sha256": "0e7bbe674ac4beb69292f50a9e3ce8fe204b312e0c5d5f68e7c062b234bfa016",
+        "status": "ADMITTED",
+        "input_tokens": 7273,
+        "messages_sha256": "a6e1d5064da66fa8dfed5b1519fd7f71427ef8b186df450f6c5dcae15f4910e4",
+        "binding_sha256": "00c6f3626c427de6dd1fc18ca2553757fb340f69601eee4405167a66314b4f8e"
+      },
+      {
+        "query_id": "sg-r6-087",
+        "unit_type": "alias",
+        "stable_id_sha256": "ca90f12d7c4444cad8c27508f4a28749949675820a4fa56e4a05d070f184eee4",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8368,
+        "messages_sha256": "fa96cd7a7c1d38adb148ee174210c57220897b72dc8b9f376eef51825fbdfe7a",
+        "binding_sha256": "29703cf549d33df8d9fe81eda34697d50e75360437ea19fb9e7d26cb98d8c67f"
+      },
+      {
+        "query_id": "sg-r6-088",
+        "unit_type": "alias",
+        "stable_id_sha256": "5f0b8f9e41d317605494e45a80520a46786ccfef231a389798b76ffe9dd7a7e2",
+        "status": "ADMITTED",
+        "input_tokens": 7056,
+        "messages_sha256": "f1717385f7dfc745030101f875b9632fe5df8d707d7c6b191dd7e668110692f4",
+        "binding_sha256": "b7a0a0319ee906d63470529c64c943dcd652221f3c6285b7824631f2eb389e6d"
+      },
+      {
+        "query_id": "sg-r6-089",
+        "unit_type": "alias",
+        "stable_id_sha256": "2515fd1119683baca929fc46738488f85cad4aa2fabe162e8e4d7a421d4e39d7",
+        "status": "CATALOGUE_LIMIT",
+        "input_tokens": null
+      },
+      {
+        "query_id": "sg-r6-090",
+        "unit_type": "alias",
+        "stable_id_sha256": "43f1f5a1bd5ccd5527d60e4999060ead389051871922055f0787f713a863bd4e",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9941,
+        "messages_sha256": "4b1542ab9e2f34df905a1a8c9f36788d2471ffd9284938c1006ac499f361f4eb",
+        "binding_sha256": "26dd84798d0294591edde3b5035ea82e7c22db35d31024b6b6e9d00443d7deaa"
+      },
+      {
+        "query_id": "sg-r6-091",
+        "unit_type": "alias",
+        "stable_id_sha256": "70900f245d18fbaa0b9dbef40f7d302ae5f3573e0689e945abd44a24d1ddcb4c",
+        "status": "ADMITTED",
+        "input_tokens": 6138,
+        "messages_sha256": "39bb0b41fbc39b9213b6f01611daeba4f0db83ff2359f8ab15a5f2b832918bcf",
+        "binding_sha256": "f4a317cffe50ea190590a41ac09b3a8b953b4e8e0172a558226edc495308e127"
+      },
+      {
+        "query_id": "sg-r6-092",
+        "unit_type": "alias",
+        "stable_id_sha256": "50bf7e82397ab7bc6bdce569a26babbe7922ad3a4522c46b75d4e9b0dc580169",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9603,
+        "messages_sha256": "1699ead19246e3be51366d9a6aad14ec7c6c8617e737406ef600b380f820fea4",
+        "binding_sha256": "30ead7739d9879d18e90964a0b1fbb99992fa898107a571e24d3f4fc178493d3"
+      },
+      {
+        "query_id": "sg-r6-093",
+        "unit_type": "alias",
+        "stable_id_sha256": "6b67966b10eb16d55d70cd8e3c98e380bd907b8c7353c8a97090c4d1f4bca7e6",
+        "status": "ADMITTED",
+        "input_tokens": 7760,
+        "messages_sha256": "615960df4237eb8df3acfe4faad28b8f4b1a440ac7d7ff797e0c4798535b8eb8",
+        "binding_sha256": "47877eedd12264a68915e448fd9cf22b460434acb4dcc566cbb48fd9014e25d8"
+      },
+      {
+        "query_id": "sg-r6-094",
+        "unit_type": "alias",
+        "stable_id_sha256": "71cad841c26334827bd412d6dcb99b9649086a116dd3f727b35991abf110bc39",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9309,
+        "messages_sha256": "bddc2ea9d5aec688a1e52ab85ad83f7501d9c8df46e9daffc285a865fdb06e30",
+        "binding_sha256": "a6ddb5bbc774536876137981a91b101fb87e43f30c44a3281e332d99934b822f"
+      },
+      {
+        "query_id": "sg-r6-095",
+        "unit_type": "alias",
+        "stable_id_sha256": "24fd7e30e5bf6d3cc4233f3cc9029b4794c63f5478d604c5bd7be57237e9e243",
+        "status": "ADMITTED",
+        "input_tokens": 6546,
+        "messages_sha256": "965720ee046d5fc1803c5727dfcb8a76174b7c8e0dacaf5d88a5bb43616d1a5c",
+        "binding_sha256": "6dee7dba4716b61ac656ca2394fac073a3319f469d5f7fed8738f8ad6a859a5d"
+      },
+      {
+        "query_id": "sg-r6-096",
+        "unit_type": "alias",
+        "stable_id_sha256": "a9491eaf6e2a15b6f99c8b0a201ce4b390a2bab022b3847cfd1382ac01d3d2fe",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8248,
+        "messages_sha256": "956ce87ecc06c1c404ac42ccc615c1f9ae2d415d13ddf0443051aff9ec607171",
+        "binding_sha256": "f1d5804de7023265497c4272b033b29c898be9ae5d98bdb5212978a99603fbc0"
+      },
+      {
+        "query_id": "sg-r6-097",
+        "unit_type": "alias",
+        "stable_id_sha256": "fc96808fa3d6384c50fc45aa9671f43a141a3e8e616473014c61277b62b56f5d",
+        "status": "ADMITTED",
+        "input_tokens": 5660,
+        "messages_sha256": "9cc55630b2fc20d07cbc008495dd940e45db6e461a18839cf312ea74e8e7ad05",
+        "binding_sha256": "adad92a5a519c2c386bc1e6502c4b2eab9bde2f6c160089ee5ef07abf0854e1a"
+      },
+      {
+        "query_id": "sg-r6-098",
+        "unit_type": "alias",
+        "stable_id_sha256": "a7a1aa3484fedf2bf8367791a0e01a89f4ca07f867c52ee4c9d1df0d9b7b83d5",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9921,
+        "messages_sha256": "aaf5c937f2a4a3d75106e3900ec86c3061f9e5070f0c62146f48af7054669343",
+        "binding_sha256": "0afd63939951a46776382a1ee592ec5f145f7ffa624c15c97f14721bd7cade59"
+      },
+      {
+        "query_id": "sg-r6-099",
+        "unit_type": "alias",
+        "stable_id_sha256": "2b08c16a7c51f469196d43dc84b281e253d5864d4abb42162f16818639b0f363",
+        "status": "ADMITTED",
+        "input_tokens": 6607,
+        "messages_sha256": "2c4757571382ff7e1622aced299fca61e23c27dea607f6ecd4fc0e7fcd1cdd0b",
+        "binding_sha256": "db81233f0df822d0f70bf93ad3c7d7188fdb612c8763d701d565c41e880498cb"
+      },
+      {
+        "query_id": "sg-r6-100",
+        "unit_type": "alias",
+        "stable_id_sha256": "18c3b89649b192988be92f749ccc5320df1318b4ff13f71b0cceba8b8b59eb00",
+        "status": "ADMITTED",
+        "input_tokens": 7091,
+        "messages_sha256": "ea2f36133f7d15c5c5522773e181f073aecf05ae7913dfa08c666d0d0ff3b5cb",
+        "binding_sha256": "2d3ad52af715270c0e2da112c7dc2340b0a64eabe2f14f29d92927c98eea9d13"
+      },
+      {
+        "query_id": "sg-r6-101",
+        "unit_type": "alias",
+        "stable_id_sha256": "45c6bd53c7b575ae23c528c08791933ee93bb26b7b2edf242bf596c9b4ef2711",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8263,
+        "messages_sha256": "c5a0972f258cd3b7ec5cf8f8c9ed7a28387ed8dcff655554dbb2469270d195de",
+        "binding_sha256": "1c8835bec830980e9e88b41672cfcdad2aadc057e9f89f7a2305747b121e0a2e"
+      },
+      {
+        "query_id": "sg-r6-102",
+        "unit_type": "alias",
+        "stable_id_sha256": "b632301cff3330443412e29e5f1e789d93add878112799586e9d6baa4380bea7",
+        "status": "ADMITTED",
+        "input_tokens": 7372,
+        "messages_sha256": "5b1bc055922d7ae0a14f670bc78a331592b9df93adb3c3972a0c6947afed6c4f",
+        "binding_sha256": "8d02414c5f6a19a5d4da0a96fa1c425108dcf25e7ae6ddf0ac0b39dc16ae63f6"
+      },
+      {
+        "query_id": "sg-r6-103",
+        "unit_type": "alias",
+        "stable_id_sha256": "34677f3099bfe09063e8e3f1fe6fbace9b35fb34f4c6c521c678e83e9c8189b7",
+        "status": "ADMITTED",
+        "input_tokens": 6287,
+        "messages_sha256": "1fe45ed2979db0ee04822e66ba196c7d3cccbf1378a401b21d367f5f85a8d0bc",
+        "binding_sha256": "d94d385fdc2bd9e0e3473e3d809c1bd6701edfaaa49cd7d1540a672fd2193885"
+      },
+      {
+        "query_id": "sg-r6-104",
+        "unit_type": "alias",
+        "stable_id_sha256": "239718c0577fb9e51a79aeb5a334dd7f7531cc34f438af34553dac54bcba9bd5",
+        "status": "ADMITTED",
+        "input_tokens": 5842,
+        "messages_sha256": "23447be54933d3fd0df25c932674d0dacc334c345d5cc231d0634d9d533f4965",
+        "binding_sha256": "c8e889328c1199bb0402836592c366e7532a5cf7df6708f89f173ea9d214ccef"
+      },
+      {
+        "query_id": "sg-r6-105",
+        "unit_type": "alias",
+        "stable_id_sha256": "ce8b63f5db588f70a5fbd729a683bc515ca79a0e696f00b1cc210a2d0da6051c",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8646,
+        "messages_sha256": "7d2b27d7a84190677d17272c3513f6c6232f91dad1d2060a813cdd5c574c593d",
+        "binding_sha256": "eaa78ce46284d37cd43fab73c2797ef8fa89792cafc96954781c595646eae907"
+      },
+      {
+        "query_id": "sg-r6-106",
+        "unit_type": "alias",
+        "stable_id_sha256": "240826960e48badcd2a42cf3e4d20b66215455b470ffa764518dbbf9e1347938",
+        "status": "ADMITTED",
+        "input_tokens": 7926,
+        "messages_sha256": "e20641c05bbb4a6f73c0b0b9cec91ac36932dae2faf4f1a7efd1d08a37d7db04",
+        "binding_sha256": "fe3f6f8a1474cfd1ca56c25fd383a76f06a931994df1247672febe3626800eb2"
+      },
+      {
+        "query_id": "sg-r6-107",
+        "unit_type": "alias",
+        "stable_id_sha256": "98072f262347a18f2cbba1ceebe2aa30dcd59e1f3ab33a51f37bfea7b233f602",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9037,
+        "messages_sha256": "7a37fc12d10985a70cd03dadcba3501b1db911e73ec72756ae9cc830336ba35f",
+        "binding_sha256": "54a95d697ce958c6c8123110f0701cd66d77bbaef84691c1d19468dd47365ed9"
+      },
+      {
+        "query_id": "sg-r6-108",
+        "unit_type": "alias",
+        "stable_id_sha256": "50569b7d3d929ce90e42b951d47759a95b26edd1b6411cbbae8f65542c627e94",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8612,
+        "messages_sha256": "4d08938b8e5d7da08db3bac9e71756a9ffe9179ab6f427d4a1783c5139b016ce",
+        "binding_sha256": "21c846631b165d37e5f8c0adef88a52a79a70cbb518590214497e7ff951e0344"
+      },
+      {
+        "query_id": "sg-r6-109",
+        "unit_type": "alias",
+        "stable_id_sha256": "4489697faf941498cb3f03691af4fb86fdfdc3033c3da26bc6c870f6a0b3eb04",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 11237,
+        "messages_sha256": "a421c4e94a85646a2b7b9a62cc9f539a20dcb82019178531dd260c10a12b620f",
+        "binding_sha256": "ae1ad5be9f1ea374de4d1d658081618a3180f0995a4e9c7d8452215ab57d706a"
+      },
+      {
+        "query_id": "sg-r6-110",
+        "unit_type": "alias",
+        "stable_id_sha256": "f0894669cbe43082692390472508f181e09a0afc7ddd5efc61e531e7999748ad",
+        "status": "ADMITTED",
+        "input_tokens": 6970,
+        "messages_sha256": "f857fd87f2fa708664dc0d249932f5cafb01c14bb977264076329125f4b54a4d",
+        "binding_sha256": "4de9d604d9c2d99205c4f1e64dbb7ba841c53703a73f2892e1b0330d1df58b8b"
+      },
+      {
+        "query_id": "sg-r6-111",
+        "unit_type": "alias",
+        "stable_id_sha256": "6b73a632c8d137695075096e6bf8fd39108847cf50810b5c68a931ed743e8c4e",
+        "status": "ADMITTED",
+        "input_tokens": 7907,
+        "messages_sha256": "b3e0923783cd425cccad0d46dcc07e2ac103ff8855d98ab0f86963e67e254d6c",
+        "binding_sha256": "23f9825d7b82eb3fd9b13a862cd9651aad9c114830ae33c53223ac8c219954d1"
+      },
+      {
+        "query_id": "sg-r6-112",
+        "unit_type": "alias",
+        "stable_id_sha256": "5eb6e4cfa29f5a21149a9672d5d7c5d9f21fcd370febce404f5c4bf908cbe536",
+        "status": "ADMITTED",
+        "input_tokens": 6547,
+        "messages_sha256": "3fe2df8a18d528dca08e14a9069e21e55ac41f5acb45d20f1583ef00dcfbf129",
+        "binding_sha256": "94b1cfba0c70dbbb878eeb7690bfdb02856fd063a744098768696ccd94f283eb"
+      },
+      {
+        "query_id": "sg-r6-113",
+        "unit_type": "alias",
+        "stable_id_sha256": "dd274d5d7e93775db9f514300ff8f1cbeffe201747fd5930c4376aed64975754",
+        "status": "ADMITTED",
+        "input_tokens": 7342,
+        "messages_sha256": "a2e0b7b722a271b0b04043831a59be161963fa62c82978908afb7b16075f88c4",
+        "binding_sha256": "27547527bef859918e18f2fc788443b4c8e712c329c86507446606db22d9bce7"
+      }
+    ],
+    "retry": false,
+    "risk_units": 33,
+    "screening_units": 114,
+    "source_coverage_units": 100,
+    "source_abstentions": 86,
+    "semantic_fidelity": "NOT_ASSESSED",
+    "retrieval": "NOT_RUN",
+    "cards_issued": 0,
+    "prepared_request_bytes": 6553711,
+    "wall_seconds": 13.962431665000622,
+    "cpu_seconds": 14.185333426,
+    "worker_peak_rss_bytes": 996495360
+  }
+}

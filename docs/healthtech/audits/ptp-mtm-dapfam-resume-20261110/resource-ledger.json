@@ -598,5 +598,97 @@
     },
     "dimension_counts_interpretation": "automated judgments only; invalid critics excluded, not independently validated errors",
     "result_sha256": "535b3f11f48afe637aed96acd87d34534372550ba5fd5fc8ab42cd37a39b2f89"
-  }
+  },
+  "r6_phase0_cpu": {
+    "status": "GRAPH_INPUT_GATE_CLOSED_SACR_CONTINUES",
+    "owner_approval_sha256": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+    "cpu_prior_upper_bound_seconds": 23448.0,
+    "local_cpu_reserved_seconds": 0,
+    "remote_cpu_reserved_seconds": 0,
+    "cpu_cap_seconds": 28800,
+    "disk_reserved_bytes": 4294967296,
+    "gpu_reserved_seconds": 0,
+    "model_calls": 0,
+    "admission_receipt": "../ptp-r6-phase0-execution-20261111/admission.json",
+    "jobs": {
+      "profile": {
+        "status": "TERMINAL_PASS",
+        "declaration_sha256": "83b800966aebf69cff4a94c7cb959802b974d0240ad5b6413fb534760ca5c771",
+        "wall_seconds": 105.51054180799838,
+        "worker_cpu_seconds": 102.52434319,
+        "controller_cpu_seconds": 0.248002368,
+        "model_calls": 0
+      },
+      "critic": {
+        "status": "TERMINAL_PASS",
+        "declaration_sha256": "8af7181a056b01450899a69b4218b959c4f8d48db55a53858ab8422517332475",
+        "wall_seconds": 87.52811843800009,
+        "worker_cpu_seconds": 85.610814011,
+        "controller_cpu_seconds": 0.278539399,
+        "model_calls": 0
+      },
+      "graph-input": {
+        "status": "TERMINAL_GRAPH_GATE_FAILED",
+        "declaration_sha256": "1bc072730c747a9dd566612ef3cd28ec8c6c9ad9d469cece87eaf8229d3c1c6f",
+        "wall_seconds": 15.304917131001275,
+        "worker_cpu_seconds": 14.185333426,
+        "controller_cpu_seconds": 0.118315388,
+        "risk_units": 33
+      }
+    },
+    "remote_cpu_charged_seconds": 205.05086916200003,
+    "source_jobs": {
+      "fixture": {
+        "status": "TERMINAL_PASS",
+        "cpu_reserved_seconds": 0,
+        "receipt": {
+          "status": "COMPLETE_PRIVATE_SOURCE_ATTACHMENT_NOT_FIDELITY",
+          "model_calls": 0,
+          "gpu_seconds": 0,
+          "extraction": "NOT_RUN",
+          "retry": false,
+          "source_units": 282,
+          "corpus_sha256": "17667999d862cf0bc231a4b2cea6084c29b882b334d8d4e03d538ea89f5953b6",
+          "input_bytes": 34404,
+          "private_output_bytes": 32430,
+          "private_output_sha256": "a2d90b8762d57040f78d4871c447a773b76e9b0635f1b8266b2dcaec5540ae83",
+          "fixed_ids_sha256": "990afd318371b100341741b6fe3161dfdc2c8d41a2a8ac39ff196111ef10f978",
+          "wall_seconds": 0.004806970999197802,
+          "worker_wall_seconds": 0.013883809999242658,
+          "worker_cpu_seconds": 0.013884215000000005,
+          "semantic_fidelity": "NOT_ASSESSED",
+          "whole_worker_wall_seconds": 0.014216146002581809,
+          "whole_worker_cpu_seconds": 0.014215064999999999,
+          "worker_peak_rss_bytes": 20017152
+        }
+      },
+      "attachment": {
+        "status": "TERMINAL_PASS",
+        "cpu_reserved_seconds": 0,
+        "receipt": {
+          "status": "COMPLETE_PRIVATE_SOURCE_ATTACHMENT_NOT_FIDELITY",
+          "model_calls": 0,
+          "gpu_seconds": 0,
+          "extraction": "NOT_RUN",
+          "retry": false,
+          "source_units": 282,
+          "corpus_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+          "input_bytes": 328999080,
+          "private_output_bytes": 2472676,
+          "private_output_sha256": "09c4713aeeca7addbf7d77e12165db4430d96dc0f11fdbad9624f11594bb0004",
+          "fixed_ids_sha256": "fdccae5bac3e2eb390bf0c1ffd5d504568693ebf75c14de7417e887b1ffd2ccc",
+          "wall_seconds": 1.849919337000756,
+          "worker_wall_seconds": 1.868560710001475,
+          "worker_cpu_seconds": 1.8679488190000002,
+          "semantic_fidelity": "NOT_ASSESSED",
+          "whole_worker_wall_seconds": 1.8691638989985222,
+          "whole_worker_cpu_seconds": 1.8685458060000002,
+          "worker_peak_rss_bytes": 30633984
+        }
+      }
+    },
+    "local_cpu_conservative_charged_seconds": 600,
+    "local_cpu_measured_seconds": 10.296875
+  },
+  "r6_graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114_NO_MODEL"
 }

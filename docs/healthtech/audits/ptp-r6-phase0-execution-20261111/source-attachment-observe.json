@@ -1,0 +1,61 @@
+{
+  "job": "ptp-sg-r6-source-attachment-20261111-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T13:17:03.568926193Z",
+    "FinishedAt": "2026-11-11T13:17:05.742795716Z"
+  },
+  "terminal": {
+    "status": "TERMINAL",
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "engine": {
+      "Version": "29.9.3",
+      "ApiVersion": "1.56",
+      "MinAPIVersion": "1.40"
+    },
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-11T13:17:03.568926193Z",
+      "FinishedAt": "2026-11-11T13:17:05.742795716Z"
+    },
+    "whole_wall_seconds": 3.2859590600019146,
+    "controller_cpu_seconds": 0.105092819
+  },
+  "receipt": {
+    "status": "COMPLETE_PRIVATE_SOURCE_ATTACHMENT_NOT_FIDELITY",
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "extraction": "NOT_RUN",
+    "retry": false,
+    "source_units": 282,
+    "corpus_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+    "input_bytes": 328999080,
+    "private_output_bytes": 2472676,
+    "private_output_sha256": "09c4713aeeca7addbf7d77e12165db4430d96dc0f11fdbad9624f11594bb0004",
+    "fixed_ids_sha256": "fdccae5bac3e2eb390bf0c1ffd5d504568693ebf75c14de7417e887b1ffd2ccc",
+    "wall_seconds": 1.849919337000756,
+    "worker_wall_seconds": 1.868560710001475,
+    "worker_cpu_seconds": 1.8679488190000002,
+    "semantic_fidelity": "NOT_ASSESSED",
+    "whole_worker_wall_seconds": 1.8691638989985222,
+    "whole_worker_cpu_seconds": 1.8685458060000002,
+    "worker_peak_rss_bytes": 30633984
+  }
+}

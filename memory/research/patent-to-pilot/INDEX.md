@@ -2,7 +2,7 @@
 
 ## Current R6 preparation
 
-Read HANDOFF and INDEX-PLAN first. R6 owner approved all three decisions and goal is ACTIVE; Phase0 engineering is in progress and model dispatch is not ready. See docs/healthtech/audits/ptp-r6-preparation-20261111/owner-approval.json. Three independent read-only reviews and53 local tests completed. Canonical audit: docs/healthtech/audits/ptp-r6-preparation-20261111/. Exact proposed scope: docs/healthtech/research/plans/R6-BOUNDED-LONG-RUN.md. Prior entries below are historical; do not reuse their old approval or running-state text.
+Read HANDOFF and INDEX-PLAN first. R6 owner approved all three decisions and goal is ACTIVE; Phase0 engineering is in progress and model dispatch is not ready. See docs/healthtech/audits/ptp-r6-preparation-20261111/owner-approval.json. Latest:174 local tests and52 real CPU tokenizer/grammar cases PASS; native source282 join completed once. Graph R6 closed at33 technical input risks out of114, before model/retrieval/cards. SACR continues Phase0. See docs/healthtech/audits/ptp-r6-phase0-execution-20261111/. Canonical audit: docs/healthtech/audits/ptp-r6-preparation-20261111/. Exact proposed scope: docs/healthtech/research/plans/R6-BOUNDED-LONG-RUN.md. Prior entries below are historical; do not reuse their old approval or running-state text.
 
 ## R5 engineering qualification, 11 November 2026
 

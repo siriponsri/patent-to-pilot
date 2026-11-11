@@ -1,0 +1,138 @@
+{
+  "status": "PASS_CONSERVATIVE_CPU_DISK_AND_IDLE_ADMISSION",
+  "prior_disk_bound_including_R5_reservation": 22235236650,
+  "remote": {
+    "logical_bytes": 1441311526,
+    "job_sizes": {
+      "ptp-sg-r4-materialization-20261111-v1": 395594116,
+      "ptp-sacr-r5-boundary-preflight-20261111-v1": 3198321,
+      "ptp-sacr-r5-boundary-preflight-20261111-v3": 3232395,
+      "ptp-sacr-r5-synthetic-smoke-20261111-v1": 3426202,
+      "ptp-sacr-r5-boundary-preflight-20261111-v2": 3209524,
+      "ptp-sacr-r3-synthetic-smoke-20261111-v2": 3127826,
+      "ptp-sacr-r5-token-preflight-20261111-v1": 3202134,
+      "ptp-sacr-r4-synthetic-smoke-20261111-v1": 3173447,
+      "ptp-sg-r5-screening-20261111-v1": 5272928,
+      "ptp-sacr-r2-synthetic-smoke-20261111-v1": 2727613,
+      "ptp-sg-r3-census-20261111-v1": 331833020,
+      "ptp-sacr-r3-synthetic-smoke-20261111-v1": 2933728,
+      "ptp-sacr-r2-tokenizer-preflight-20261111-v1": 2619900,
+      "ptp-sg-r5-critic-preflight-20261111-v1": 3216643,
+      "ptp-sacr-r5-exact-source-preflight-20261111-v1": 3211660,
+      "ptp-sacr-r4-cpu-preflight-20261111-v2": 3156930,
+      "ptp-sg-r3-census-20261111-v2": 331891331,
+      "ptp-sacr-r4-cpu-preflight-20261111-v1": 3125071,
+      "ptp-sacr-r5-token-diagnosis-20261111-v1": 3198280,
+      "ptp-sg-r5-source-attachment-20261111-v1": 329960457
+    },
+    "terminal_states": [
+      {
+        "job": "ptp-sg-r4-materialization-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v3",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r3-synthetic-smoke-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-token-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r5-screening-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r2-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r2-tokenizer-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r5-critic-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-exact-source-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-cpu-preflight-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r3-census-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-cpu-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-token-diagnosis-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r5-source-attachment-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      }
+    ],
+    "free_bytes": 101638770688
+  },
+  "local_measured_logical_bytes": 1312803113,
+  "r6_disk_reserved_bytes": 4294967296,
+  "combined_disk_bound_bytes": 29284318585,
+  "disk_cap_bytes": 42949672960,
+  "cpu_prior_upper_bound_seconds": 23448.0,
+  "cpu_prior_bound_interval_utc": [
+    "2026-11-11T12:33:20+00:00",
+    "2026-11-11T13:05:54+00:00"
+  ],
+  "cpu_prior_bound_basis": "entire elapsed interval times all12 local logical processors; includes unrelated idle time and is not measured process CPU",
+  "local_post_cutoff_cpu_reservation_seconds": 600,
+  "remote_cpu_jobs_reserved_seconds": 2400,
+  "cpu_cap_seconds": 28800,
+  "gpu_reservation_seconds": 0,
+  "model_calls": 0,
+  "counting_note": "Retain old disk anchor/reservation; overlaps intentionally counted again. No reset."
+}

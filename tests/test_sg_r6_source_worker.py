@@ -14,6 +14,7 @@ def prepare(tmp_path):
         (inputs/name).write_text(json.dumps(value))
     (inputs/'corpus.jsonl').write_bytes(b''.join(json.dumps(r).encode()+b'\n' for r in rows))
     d={'run_id':'ptp-sg-r6-source-attachment-20261111-v1','wall_seconds':1800,'model_calls':0,
+        'input_kind':'NATIVE_FIXED282',
         'fixed_ids_sha256':hashlib.sha256(json.dumps(fixed_union(sample,aliases),separators=(',',':')).encode()).hexdigest()}
     for name,key in [('source-sample.json','source_sample_sha256'),('alias-sample.json','alias_sample_sha256'),('corpus.jsonl','corpus_sha256')]:
         d[key]=hashlib.sha256((inputs/name).read_bytes()).hexdigest()

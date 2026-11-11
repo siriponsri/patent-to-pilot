@@ -8,8 +8,10 @@ from patent_to_pilot.research.sg_r6_manifest import fixed_union
 
 def execute(declaration,*,input_root,output_root):
     d=declaration;start=time.monotonic();cpu=time.process_time()
-    if (d['run_id']!='ptp-sg-r6-source-attachment-20261111-v1'
-            or d['wall_seconds']!=1800 or d['model_calls']!=0):
+    fixture=d['run_id']=='ptp-sg-r6-source-fixture-20261111-v1'
+    if (d['run_id'] not in ('ptp-sg-r6-source-attachment-20261111-v1','ptp-sg-r6-source-fixture-20261111-v1')
+            or d['wall_seconds']!=(120 if fixture else 1800) or d['model_calls']!=0
+            or d.get('input_kind')!=('AUTHORED_FIXTURE' if fixture else 'NATIVE_FIXED282')):
         raise RuntimeError('R6 source join declaration mismatch')
     inputs={}
     for name,key in [('source-sample.json','source_sample_sha256'),('alias-sample.json','alias_sample_sha256')]:
@@ -22,7 +24,7 @@ def execute(declaration,*,input_root,output_root):
     with (output_root/'data-operation-dispatch.json').open('x') as f:
         json.dump({'status':'SOURCE_JOIN_DISPATCH_INTENT','retry':False,'fixed_ids_sha256':id_hash},f)
     result=attach_fixed282_sources(input_root/'corpus.jsonl',output_root/'private-source-attachment',
-        expected_sha256=d['corpus_sha256'],fixed_ids=ids,max_seconds=1500)
+        expected_sha256=d['corpus_sha256'],fixed_ids=ids,max_seconds=60 if fixture else 1500)
     return {**result,'worker_wall_seconds':time.monotonic()-start,'worker_cpu_seconds':time.process_time()-cpu,
         'semantic_fidelity':'NOT_ASSESSED','model_calls':0,'gpu_seconds':0}
 

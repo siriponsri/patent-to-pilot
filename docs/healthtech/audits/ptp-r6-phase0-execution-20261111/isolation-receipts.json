@@ -1,0 +1,202 @@
+[
+  {
+    "job": "ptp-r6-profile-preflight-20261111-v1",
+    "original_receipt_sha256": "3ac2d48a1f3a9d5273bf9f90203fd72ff8593468266b47e9970cab2b741a57fa",
+    "status": "PASS_BEFORE_START",
+    "nano_cpus": 2000000000,
+    "container_memory_bytes": 1610612736,
+    "memory_swap_bytes": 1610612736,
+    "network": "none",
+    "root_readonly": true,
+    "gpu_devices": [],
+    "tmpfs": {
+      "/tmp": "rw,nosuid,size=67108864"
+    },
+    "mounts": [
+      {
+        "target": "/code",
+        "read_only": true
+      },
+      {
+        "target": "/declaration.json",
+        "read_only": true
+      },
+      {
+        "target": "/deps",
+        "read_only": true
+      },
+      {
+        "target": "/out",
+        "read_only": false
+      },
+      {
+        "target": "/models/qwen3-8b",
+        "read_only": true
+      }
+    ]
+  },
+  {
+    "job": "ptp-r6-critic-preflight-20261111-v1",
+    "original_receipt_sha256": "77e7905d5a7d3da953bf98a2618d03627041f45746cbfd700a2bf710aef4c698",
+    "status": "PASS_BEFORE_START",
+    "nano_cpus": 2000000000,
+    "container_memory_bytes": 1610612736,
+    "memory_swap_bytes": 1610612736,
+    "network": "none",
+    "root_readonly": true,
+    "gpu_devices": [],
+    "tmpfs": {
+      "/tmp": "rw,nosuid,size=67108864"
+    },
+    "mounts": [
+      {
+        "target": "/code",
+        "read_only": true
+      },
+      {
+        "target": "/declaration.json",
+        "read_only": true
+      },
+      {
+        "target": "/deps",
+        "read_only": true
+      },
+      {
+        "target": "/out",
+        "read_only": false
+      },
+      {
+        "target": "/models/qwen3-8b",
+        "read_only": true
+      }
+    ]
+  },
+  {
+    "job": "ptp-sg-r6-source-fixture-20261111-v1",
+    "original_receipt_sha256": "1349c673cf2a80bd26922080edfa45f6d3e87ac62ed46b5972904a79867cbe2d",
+    "status": "PASS_BEFORE_START",
+    "nano_cpus": 1000000000,
+    "container_memory_bytes": 1610612736,
+    "memory_swap_bytes": 1610612736,
+    "network": "none",
+    "root_readonly": true,
+    "gpu_devices": [],
+    "tmpfs": {
+      "/tmp": "rw,nosuid,size=67108864"
+    },
+    "mounts": [
+      {
+        "target": "/code",
+        "read_only": true
+      },
+      {
+        "target": "/declaration.json",
+        "read_only": true
+      },
+      {
+        "target": "/out",
+        "read_only": false
+      },
+      {
+        "target": "/input/alias-sample.json",
+        "read_only": true
+      },
+      {
+        "target": "/input/corpus.jsonl",
+        "read_only": true
+      },
+      {
+        "target": "/input/source-sample.json",
+        "read_only": true
+      }
+    ]
+  },
+  {
+    "job": "ptp-sg-r6-source-attachment-20261111-v1",
+    "original_receipt_sha256": "88317682f7e201b012d5fd94c063d61dcdd181701690965f4ed00a156f080479",
+    "status": "PASS_BEFORE_START",
+    "nano_cpus": 1000000000,
+    "container_memory_bytes": 1610612736,
+    "memory_swap_bytes": 1610612736,
+    "network": "none",
+    "root_readonly": true,
+    "gpu_devices": [],
+    "tmpfs": {
+      "/tmp": "rw,nosuid,size=67108864"
+    },
+    "mounts": [
+      {
+        "target": "/code",
+        "read_only": true
+      },
+      {
+        "target": "/declaration.json",
+        "read_only": true
+      },
+      {
+        "target": "/out",
+        "read_only": false
+      },
+      {
+        "target": "/input/alias-sample.json",
+        "read_only": true
+      },
+      {
+        "target": "/input/corpus.jsonl",
+        "read_only": true
+      },
+      {
+        "target": "/input/source-sample.json",
+        "read_only": true
+      }
+    ]
+  },
+  {
+    "job": "ptp-r6-graph-input-preflight-20261111-v1",
+    "original_receipt_sha256": "ccb1b6dd23011992d607c952cce5e9262ccc0cab8b7986bcb266b530ed39ba7c",
+    "status": "PASS_BEFORE_START",
+    "nano_cpus": 2000000000,
+    "container_memory_bytes": 1610612736,
+    "memory_swap_bytes": 1610612736,
+    "network": "none",
+    "root_readonly": true,
+    "gpu_devices": [],
+    "tmpfs": {
+      "/tmp": "rw,nosuid,size=67108864"
+    },
+    "mounts": [
+      {
+        "target": "/code",
+        "read_only": true
+      },
+      {
+        "target": "/declaration.json",
+        "read_only": true
+      },
+      {
+        "target": "/deps",
+        "read_only": true
+      },
+      {
+        "target": "/out",
+        "read_only": false
+      },
+      {
+        "target": "/input/alias-sample.json",
+        "read_only": true
+      },
+      {
+        "target": "/input/source-sample.json",
+        "read_only": true
+      },
+      {
+        "target": "/input/sources-private.jsonl",
+        "read_only": true
+      },
+      {
+        "target": "/models/qwen3-8b",
+        "read_only": true
+      }
+    ]
+  }
+]

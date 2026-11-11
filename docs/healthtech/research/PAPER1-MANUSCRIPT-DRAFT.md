@@ -1,5 +1,30 @@
 # Source-preserving query representations and relation extraction for cross-domain patent retrieval
 
+## R6 Graph input-admission outcome, 11 November 2026
+
+The approved R6 Graph configuration is **CLOSED_INPUT_RISK_CAP**, before any model
+inference or retrieval. A single source-only pass attached the complete original
+fields for the fixed282-family union (2,472,676 private output bytes; no new
+extraction). Exact input admission covered14 nonempty source units and100 alias
+units, while retaining all100 source-family coverage rows and86 abstentions.
+
+Of114 screening units,81 were admitted and33 were technical input risks:1 source
+and31 alias requests exceeded8,192 model tokens, and1 alias request exceeded the
+256-unit evidence catalogue bound before token counting. Token counts among the
+113 constructed requests ranged3,136–12,236. The predeclared risk cap was20, so
+the configuration stopped without truncation, substitution, resampling or model
+calls. Human cards issued0; accepted graph edges0; retrieval/pilot/full dev for
+this configuration NOT_RUN. These outcomes do not establish semantic errors or
+a negative retrieval effect of graph methods.
+
+The actual CPU tokenizer/grammar qualifications separately passed14 profile and
+38 critic authored cases. They qualify syntax/reference handling, not native
+critic accuracy or fidelity. SACR remains active and must complete its remaining
+runtime gates and calibrated semantic screening. R5 outcomes are unchanged.
+
+Evidence: `docs/healthtech/audits/ptp-r6-phase0-execution-20261111/`.
+
+
 ## R6 preparation addendum, 11 November 2026
 
 Three read-only agents reviewed evaluator correctness, scientific criteria and runtime integration. Prospective fixes and53 local tests are complete; R6 model/native execution is NOT_READY and NOT_RUN. The new engineering-first goal and partial-Graph estimand await one combined owner decision. R5 results are unchanged. See [R6 preparation and review](../audits/ptp-r6-preparation-20261111/README.md) and [proposed R6 goal](plans/R6-BOUNDED-LONG-RUN.md).

@@ -1,9 +1,9 @@
 """Approved1800second CPU1 fixed-source attachment; no model or evaluator."""
 from pathlib import Path
-import json,hashlib,time
+import json,hashlib,time,signal
 from r3_engine_client import Engine,EngineError
 from supervise_r3_engine_v2 import configuration,supervise,BASE
-NAME='ptp-sg-r6-source-attachment-20261111-v1'
+NAME=Path(__file__).resolve().parent.name
 JOB=Path('/home/chaw/patent-to-pilot-jobs')/NAME
 def add_temporary_workspace(config):
     from copy import deepcopy
@@ -25,15 +25,24 @@ def source_configuration(job,stop,digest):
     return config,mounts
 def main():
     import resource
-    if Path(__file__).resolve().parent!=JOB:raise RuntimeError('fixed job required')
+    if NAME not in ('ptp-sg-r6-source-attachment-20261111-v1','ptp-sg-r6-source-fixture-20261111-v1') or Path(__file__).resolve().parent!=JOB:raise RuntimeError('fixed job required')
     resource.setrlimit(resource.RLIMIT_AS,(512*1024**2,512*1024**2))
     resource.setrlimit(resource.RLIMIT_FSIZE,(16*1024**2,16*1024**2))
     with (JOB/'admission.json').open('x') as f:json.dump({'retry':False},f)
     start=time.monotonic();receipt={'status':'PREFLIGHT','model_calls':0,'gpu_seconds':0};engine=Engine();created=False
+    def interrupted(*_):raise RuntimeError('controller interrupted; inspect owned container')
+    signal.signal(signal.SIGTERM,interrupted)
     try:
         raw=(JOB/'declaration.json').read_bytes();d=json.loads(raw);digest=hashlib.sha256(raw).hexdigest()
+        expected_wall=120 if 'source-fixture' in NAME else 1800
+        if d['run_id']!=NAME or d['wall_seconds']!=expected_wall:raise RuntimeError('source scope mismatch')
         approval=json.loads((JOB/'owner-approval.json').read_bytes())
         if approval.get('status')!='APPROVED' or digest not in approval['declarations_sha256'].values():raise RuntimeError('approval binding missing')
+        root=JOB/'code'
+        required={p.relative_to(root).as_posix() for p in (root/'src').rglob('*.py')}
+        required.update('scripts/healthtech/'+n for n in ['r3_engine_client.py','supervise_r3_engine_v2.py',
+            'supervise_sg_r6_source_attachment.py','run_sg_r6_source_attachment.py'])
+        if not required<=set(d['files_sha256']):raise RuntimeError('required source pins missing')
         for path,expected in d['files_sha256'].items():
             p=(JOB/'code'/path).resolve()
             if not p.is_relative_to((JOB/'code').resolve()) or hashlib.sha256(p.read_bytes()).hexdigest()!=expected:raise RuntimeError('code pin mismatch')
@@ -45,10 +54,11 @@ def main():
             if e.status!=404:raise
         else:raise RuntimeError('existing preflight; no replay')
         (JOB/'out').mkdir(exist_ok=False)
-        config,mounts=source_configuration(JOB,start+1560,digest)
+        stop=start+(90 if expected_wall==120 else 1560)
+        config,mounts=source_configuration(JOB,stop,digest)
         if any(not s.exists() for s,_,_ in mounts):raise RuntimeError('missing input mount')
         created=True
-        reason,state=supervise(engine,NAME,config,mounts,start+1560,JOB/'out')
+        reason,state=supervise(engine,NAME,config,mounts,stop,JOB/'out')
         receipt.update(status=reason,container_state=state['State'])
     except BaseException as error:
         receipt.update(status='FAILED',exception_type=type(error).__name__)
@@ -59,5 +69,6 @@ def main():
         raise
     finally:
         receipt['whole_wall_seconds']=time.monotonic()-start
+        receipt['controller_cpu_seconds']=time.process_time()
         with (JOB/'terminal.json').open('x') as f:json.dump(receipt,f,indent=2)
 if __name__=='__main__':main()

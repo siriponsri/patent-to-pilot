@@ -3526,10 +3526,14 @@
     "status": "IN_PROGRESS",
     "goal": "ACTIVE_OWNER_APPROVED",
     "audit": "docs/healthtech/audits/ptp-r6-phase0-20261111",
-    "local_tests": 161,
+    "local_tests": 174,
     "gpu_admission": "NOT_READY",
     "model_calls": 0,
     "runtime_foundations": "IMPLEMENTED_LOCAL_TESTED",
-    "next_gate": "ACTUAL_FACTORY_AND_STAGED_TRANSPORT"
+    "next_gate": "SACR_GLOBAL_ATTEMPT_NATIVE_INPUT_AND_GENERATION_TRANSPORT",
+    "real_tokenizer_grammar_cases": 52,
+    "source_join_families": 282,
+    "graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114",
+    "sacr_status": "ACTIVE_PHASE0"
   }
 }
