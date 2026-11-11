@@ -60,6 +60,7 @@ def validate_dispatch(declaration, ledger, scope, gates):
     require(type(d.get('attempt_id')) is str and re.fullmatch('[a-z0-9][a-z0-9_-]{0,127}',d['attempt_id']),'attempt identity')
     require(set(gates)==REQUIRED_GATES,'incomplete Phase0 gate set')
     for gate,receipt in gates.items():
+        require(receipt.get('gate')==gate,f'{gate} receipt role mismatch')
         require(receipt.get('status')=='PASS' and receipt.get('package_sha256')==d['package_sha256']
             and digest(receipt.get('receipt_sha256')),f'unqualified {gate}')
         require(receipt.get('dispatch_identity')=={k:d[k] for k in IDENTITIES},f'{gate} target binding mismatch')

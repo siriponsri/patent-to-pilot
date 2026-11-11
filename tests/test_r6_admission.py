@@ -14,7 +14,7 @@ def fixture():
         'stage_costs':{k:{'seconds':0,'calls':0} for k in STAGES},
         'stage_attempts':{k:[d['attempt_id']] if k=='calibration' else [] for k in STAGES},
         'reservations':[{'attempt_id':d['attempt_id'],'status':'RESERVED','declaration':dict(d)}]}
-    gates={k:{'status':'PASS','package_sha256':'a'*64,'receipt_sha256':'b'*64,
+    gates={k:{'gate':k,'status':'PASS','package_sha256':'a'*64,'receipt_sha256':'b'*64,
         'dispatch_identity':{key:d[key] for key in IDENTITIES}} for k in REQUIRED_GATES}
     for receipt in gates.values():receipt['receipt_sha256']=receipt_digest(receipt)
     d['gate_receipts']={k:r['receipt_sha256'] for k,r in gates.items()}
@@ -27,6 +27,17 @@ def fixture():
 def test_static_qualification_never_claims_live_or_model_execution():
     result=validate_dispatch(*fixture())
     assert result['live_admission']=='REQUIRED' and result['model_calls']==0
+
+
+def test_rehashed_receipt_cannot_substitute_another_gate_role():
+    d,l,s,g=fixture()
+    g['grammar']['gate']='transport'
+    g['grammar']['receipt_sha256']=receipt_digest(g['grammar'])
+    d['gate_receipts']['grammar']=g['grammar']['receipt_sha256']
+    s['qualified_dispatches'][d['attempt_id']]=dict(d)
+    s['reservations'][0]['declaration']=dict(d)
+    with pytest.raises(InputBoundaryError,match='receipt role mismatch'):
+        validate_dispatch(d,l,s,g)
 
 
 @pytest.mark.parametrize('fault',['gate','package','request','reservation','parallel','unknown','reset','budget','cap','nan','calls','past_calls','past_time','approval','retry'])

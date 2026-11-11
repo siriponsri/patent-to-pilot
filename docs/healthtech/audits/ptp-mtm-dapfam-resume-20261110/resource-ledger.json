@@ -695,7 +695,7 @@
       }
     },
     "local_cpu_conservative_charged_seconds": 700,
-    "local_cpu_measured_seconds": 41.5625
+    "local_cpu_measured_seconds": 46.34375
   },
   "r6_graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114_NO_MODEL"
 }
