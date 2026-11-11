@@ -1,5 +1,10 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Paper A status and proposed long run — 2026-11-12
+
+Status review only on 2026-11-12 (client date, Asia/Bangkok; exact time not recorded). Parent sole writer. Verified local main6f85141 with only pre-existing owner untracked handoff; no experiment or new goal. R6 completed bounded stopped-branch reporting; previous publication-pending checkpoint is historical and6f85141 was successfully pushed in prior turn. Paper A interpreted as Paper1/HT-ST1, not a formal rename. New docs/healthtech/research/PAPER-A-STATUS-AND-LONG-RUN-20261112.md summarizes B0-only measured retrieval, failed R6 critic, compact Graph100/114 admission with14risks, remaining runtime/fidelity/human/pilot/full/analysis/manuscript work and R7 inclusive177/47/128 limits. R7 remains PROPOSED; one earlier combined owner decision pending, not repeated or assumed. No native/model/test/Neo4j activity; existing60cards unchanged. Corrected R7 opening to reflect R6 complete rather than active. S/G current protocol is implementation-equivalence control; old G-minus-S superiority language is historical. Current package pending screened publication; no active writer after this report handoff unless owner resumes. Next: owner decides R7; if approved create requested long goal and qualify exact runtime before GPU. Actual human judgments remain required later.
+
+
 ## R6 final publication whitespace correction 2026-11-11T22:17:22.698553+07:00
 
 R6 completion audit remains accepted; no research/runtime change. Initial final publication stopped before commit because git diff --check found one blank line at manuscript EOF after appendix relocation. Removed that trailing blank line, preserving content; rescan and exact-stage publication next. No model/backend/data operation, no budget or output change. Lastverifiedpushedd1f3237; final11-file package local/staged untilsuccessfulpublication. R7 remains proposed and awaiting owner decision; no activejob or newmodel authority. Prior checkpoint retains full final evidence and nextaccount boundary.

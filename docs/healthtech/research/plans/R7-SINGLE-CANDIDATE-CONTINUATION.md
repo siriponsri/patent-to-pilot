@@ -2,7 +2,8 @@
 
 PROPOSED / MODEL EXECUTION NOT AUTHORIZED. Existing code-fix, CPU-inspection and
 screened-publication authority remains. No new goal or GPU reservation is created
-by this document. The current goal stays active while this decision is prepared.
+by this document. R6 has completed its stopped-branch reporting outcome; this
+separate proposed continuation awaits the owner's decision.
 
 ## Why this is a new candidate
 
