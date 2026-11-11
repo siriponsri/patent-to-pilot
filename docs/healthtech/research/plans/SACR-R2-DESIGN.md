@@ -29,7 +29,7 @@ explicit and independently screenable.
    renderer remain immutable. Engineering checkpoint and source hash:
    [receipt](../../audits/ptp-sacr-r2-engineering-20261111/checkpoint.json).
 2. Source reference generation must disambiguate repeated exact quotations
-   prospectively. The final representation is not yet selected. Any occurrence
+   prospectively. The engineering candidate is sacr-profile-token-spans-v1: zero-based half-open ranges of maximal non-whitespace source runs. Exact internal whitespace and punctuation are preserved. The source catalogue and prompt are bound by hashes; functional-profile fields remain unchanged. This candidate is implemented and fixture-tested, but not yet frozen for model execution. Any occurrence
    IDs or offsets must bind exact original code-point intervals and source hash;
    no arbitrary first-match choice, fuzzy matching, normalization or post-hoc
    repair is allowed. Fixtures must cover repeated/overlapping quotations,
@@ -85,3 +85,5 @@ evidence only, not an extraction or fidelity pass.
 Until these exist, new model generation, R2 fidelity measurement, pilot and full
 development comparisons remain NOT_RUN. Independent documentation and engineering
 work may continue without additional routine approval.
+
+Engineering update: source-token adapter, explicit profile_tokens prompt/validation dispatch and 47 fixtures pass. Independent adapter review found no blocker. Input-token overhead, per-query constrained schema, same-attempt generation/cost replay and complete bundle runner remain pending; do not dispatch from prompt availability alone.

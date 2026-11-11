@@ -1,3 +1,11 @@
+## ST1 R2 source-reference implementation 2026-11-11T07:21:47.852936+07:00
+
+Parent sole writer; last verified pushed7e6da05. Added prospective token-reference adapter and explicit profile_tokens prompt/validation dispatch; old quote/default paths preserved. Exact source ranges distinguish repeated occurrences, preserve whitespace/Unicode, validate source identity and original functional roles/conditions/order, and never assert semantic PASS. New prompt/source hashes recorded in docs/healthtech/audits/ptp-sacr-r2-engineering-20261111/token-reference-checkpoint.json.
+
+47targeted fixturesPASS. Initial17fixture failures came from reusing a low-pressure-specific fixture with unrelated synthetic text; repaired fixture initialization, no experiment attempt. Read-only independent adapter review found no blocking defect; later prompt/dispatch integration covered by fixtures, not that review. One malformed shell inspection failed before any file changes and was replaced with Python read. No private/test reads, model calls, resource reservations or output repairs.
+
+Next: per-query constrained schema and same-attempt generation/cost replay; complete bundle runner and fixed100 input-token/resource preflight; freeze one bounded synthetic smoke only after admission. Model input catalogue adds tokens, so do not assume prior8192input limit remains sufficient or truncate to fit. GoalACTIVE; R1 failures and global60card/cumulative resource limits unchanged.
+
 ## ST1 R1 reporting correction and R2 design 2026-11-11T07:17:39.205497+07:00
 
 Parent sole writer; last verified pushed81c2ec5. Current checkout preserved owner untracked document. Re-read master/shared index and terminal aggregate/ledger. Corrected manuscript live/provisional statements to terminal R1:56normal,14rejected+7compact flags,2interrupted,42neverstarted; GPU8843.155s, fidelity remaining20235.732s. No semantic or retrieval benefit claimed. Detailed DAPFAM/master plan now distinguish current evidence from historical readiness statements.

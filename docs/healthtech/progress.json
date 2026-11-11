@@ -3279,5 +3279,27 @@
     "r1_reporting": "TERMINAL_COUNTS_CORRECTED",
     "path": "docs/healthtech/research/plans/SACR-R2-DESIGN.md",
     "model_calls": 0
+  },
+  "st1_r2_token_reference_20261111": {
+    "timestamp": "2026-11-11T07:21:47.852936+07:00",
+    "status": "ENGINEERING_PASS_NOT_DISPATCHED",
+    "files": {
+      "src/patent_to_pilot/research/sacr_token_profile.py": "6cbf169e826748c89c1d9073d97fa69225cc5e15950ab3697d073dcd9926b62b",
+      "src/patent_to_pilot/research/sacr_prompts.py": "5f4bb7bdc0b917310c4a8cf1a04c112dd59160a2629c31426e48be899b4ced97",
+      "src/patent_to_pilot/research/sacr_generation.py": "08bbea3f52c82a628446dd3ac9049662c40920e7c6179acb66b95e1a4cf1ad48",
+      "docs/healthtech/research/prompts/sacr_profile_tokens_v1.txt": "622272c6dd42472badf3096058e3710e46e8a5d8587e60c7c191d6db1b15453c"
+    },
+    "tests": "47 PASS token/quote/compact/prompts/generation",
+    "initial_fixture_failure": "17 failed due reused fixture requiring low-pressure text; fixed fixture construction; no model call",
+    "review": "Independent adapter review: no blocking finding; subsequent prompt/dispatch integration fixture-tested only",
+    "model_calls": 0,
+    "fidelity": "NOT_ASSESSED",
+    "remaining": [
+      "per-query grammar",
+      "generation cost/replay integration",
+      "input-token preflight",
+      "complete bundle stage budget",
+      "synthetic smoke declaration"
+    ]
   }
 }
