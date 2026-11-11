@@ -1,6 +1,10 @@
 # Graph recovery: prospective compact transport
 
-Status: ENGINEERING_IMPLEMENTED; native token admission and model screening NOT_RUN.
+Current status: compact v2 actual token admission passed its risk cap, with100
+admitted parents and14 technical risks among fixed114. Model screening NOT_RUN.
+See [actual evidence](../../audits/ptp-sg-compact-v2-preparation-20261111/summary.json)
+and [proposed next candidate](R7-SINGLE-CANDIDATE-CONTINUATION.md). The original v1
+preparation below predates the calibration contract diagnosis and was not run.
 Owner requested Graph repair while the original R6 critic calibration was active.
 The parent remains the sole repository writer. Historical Graph R6 remains
 CLOSED_INPUT_RISK_CAP_33_OF_114_NO_MODEL. This document does not reopen that run.

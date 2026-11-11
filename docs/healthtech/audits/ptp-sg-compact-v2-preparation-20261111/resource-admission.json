@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "remote": {
+    "project_job_logical_bytes": 2160396765,
+    "free_bytes": 101597167616,
+    "terminal_states": [
+      {
+        "job": "ptp-r6-calibration-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r4-materialization-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-pipeline-fixture-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-evaluator-20261110-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-evaluator-20261110-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v3",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-critic-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r6-source-attachment-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-sacr-continuation-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-syn-sacr004-20261110-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r3-synthetic-smoke-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-token-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r5-screening-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r2-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r6-source-fixture-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-exposure-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-baseline-20261110-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r2-tokenizer-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r5-critic-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-profile-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-exact-source-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-cpu-preflight-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r3-census-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-sacr-fidelity-20261110-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-cpu-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-graph-input-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-native-input-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-token-diagnosis-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r5-source-attachment-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      }
+    ],
+    "memory_available": "124263776 kB"
+  },
+  "combined_conservative_bound_bytes": 31150580833,
+  "cpu_accounted_before_reservation": 24960.363325241,
+  "CPU_reservation_seconds": 1200,
+  "additional_local_conservative_CPU_seconds": 100,
+  "disk_within_existing_R6_reserve": true
+}

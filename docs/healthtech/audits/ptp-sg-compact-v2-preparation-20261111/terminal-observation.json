@@ -1,0 +1,857 @@
+{
+  "job": "ptp-sg-compact-input-preflight-20261111-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T15:00:44.910973957Z",
+    "FinishedAt": "2026-11-11T15:01:00.435285004Z"
+  },
+  "terminal": {
+    "status": "TERMINAL",
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "engine": {
+      "Version": "29.9.3",
+      "ApiVersion": "1.56",
+      "MinAPIVersion": "1.40"
+    },
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-11T15:00:44.910973957Z",
+      "FinishedAt": "2026-11-11T15:01:00.435285004Z"
+    },
+    "whole_wall_seconds": 16.324545396997564,
+    "controller_cpu_seconds": 0.122236112
+  },
+  "receipt": {
+    "status": "INPUT_ADMISSION_ONLY",
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "units": [
+      {
+        "query_id": "sg-r6-000",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 3131,
+        "messages_sha256": "7aaa86d07e01c765c2cd467fe95bbfa027c6fff05b8bbd5202d809e475516f20"
+      },
+      {
+        "query_id": "sg-r6-001",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 3941,
+        "messages_sha256": "15d03872c68df376ce0e7387d3d65c33b8d939b8f8405668b635aa3b0ef69571"
+      },
+      {
+        "query_id": "sg-r6-002",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 6359,
+        "messages_sha256": "36d9507ebfde304ab6a666628185c46ad10b4770075b369e0e541c43666e33fd"
+      },
+      {
+        "query_id": "sg-r6-003",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 3972,
+        "messages_sha256": "73370694f385af1bce82fa52dcfd85e1642e09e8fd2f7f6f9c634fd33fe4899a"
+      },
+      {
+        "query_id": "sg-r6-004",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 2961,
+        "messages_sha256": "071892bd705fb2c7423763eed6c38843e262dbfde6f3fb577b306c158de753ef"
+      },
+      {
+        "query_id": "sg-r6-005",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 3635,
+        "messages_sha256": "000d40358c96d9a555a814ced806579dab688ad555d4bfbc88ae7c2622a57615"
+      },
+      {
+        "query_id": "sg-r6-006",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 4796,
+        "messages_sha256": "dc0ee8c018e143294fe19f04e5ef8ead3ea81ad440feb123a55baa60c409c26a"
+      },
+      {
+        "query_id": "sg-r6-007",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 4276,
+        "messages_sha256": "540e7406ebccee916d610263461ce2c3e0152c6f4ff84a064f488035d7b9d785"
+      },
+      {
+        "query_id": "sg-r6-008",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 5055,
+        "messages_sha256": "393b1a44d20bfac2cb761aab6a60d1c87bfad47aa45a436377242fe5515da8e8"
+      },
+      {
+        "query_id": "sg-r6-009",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 5756,
+        "messages_sha256": "af8a0269dec145104429b58adb77295f2308872b7005186d201a79f20e0055db"
+      },
+      {
+        "query_id": "sg-r6-010",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 5332,
+        "messages_sha256": "73f353f0e57eac1a375b56ced4e2aaefdd3021b16f27a44ee990475b76ee32eb"
+      },
+      {
+        "query_id": "sg-r6-011",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 8095,
+        "messages_sha256": "98a8445b90455138affe439a0a449ba978a84f517ab15d8d2d8a98f93d3049eb"
+      },
+      {
+        "query_id": "sg-r6-012",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 4178,
+        "messages_sha256": "8419d06172e4306209a876060ec79cb208b3ee3f2b2362a30dc4d50bd2f0123f"
+      },
+      {
+        "query_id": "sg-r6-013",
+        "unit_type": "source",
+        "status": "ADMITTED",
+        "input_tokens": 4690,
+        "messages_sha256": "b1981c238f7b039f229006c9cb6389afa91acd4d33fa50a6b1fc4b78576cedc2"
+      },
+      {
+        "query_id": "sg-r6-014",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5182,
+        "messages_sha256": "faea4d5cd49062fc213812a4f173299fc6fa9a0dc20906435f7ad25383e259ce"
+      },
+      {
+        "query_id": "sg-r6-015",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6009,
+        "messages_sha256": "459b19e90d3bf6025061eb3d9487a621a8fd6687a12a560757b6e099d285398a"
+      },
+      {
+        "query_id": "sg-r6-016",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7299,
+        "messages_sha256": "ba054ba828d1f24ddc6a878ad1a1c3b72a13a2161719052055047dd6f3bd6b0b"
+      },
+      {
+        "query_id": "sg-r6-017",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6370,
+        "messages_sha256": "11ffc5cbeca2f1fb834023144872489c8e5f1eeacacc3d5cc53c6282650f5ac8"
+      },
+      {
+        "query_id": "sg-r6-018",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7518,
+        "messages_sha256": "9d13655f221a61f9cb42f671bf22aae561638d592da7da78b35e3e24b733be01"
+      },
+      {
+        "query_id": "sg-r6-019",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6298,
+        "messages_sha256": "f223d96624129cfdb6f5071af3c8aa524a09f56c48c6e00d46b7072ee6704ba1"
+      },
+      {
+        "query_id": "sg-r6-020",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6021,
+        "messages_sha256": "9f3ae36ac1e1a9531b204794b1b9cc576eb5d89d47727b38ea24bb3d1a3e994b"
+      },
+      {
+        "query_id": "sg-r6-021",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6493,
+        "messages_sha256": "8a646be96f74d2c92b720a0ea4a3ef8b956f0b70aa3830764002e733e68813c1"
+      },
+      {
+        "query_id": "sg-r6-022",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6374,
+        "messages_sha256": "03038552720ff7f8ec2037eba34cb42fa98e7cec5140b9b14049f4dc679c09fc"
+      },
+      {
+        "query_id": "sg-r6-023",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 8014,
+        "messages_sha256": "865dd81c283e01bf9a1a68f3e9af03234adcfef45a5884849ba5d614811b4ff5"
+      },
+      {
+        "query_id": "sg-r6-024",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6528,
+        "messages_sha256": "9d80b29bbbf52b3a4dc7cf8827ba21fd44dd003cb5aad6d354973293de2a9fef"
+      },
+      {
+        "query_id": "sg-r6-025",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7249,
+        "messages_sha256": "ab2c5e17ee7504b0992e90dc94a01772d93293bb44af859d32d2438127874566"
+      },
+      {
+        "query_id": "sg-r6-026",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7857,
+        "messages_sha256": "3258ea77419bc1877dbd7e077517fdf6e05ea4a693429ceb7dd3be9a1d93dd9c"
+      },
+      {
+        "query_id": "sg-r6-027",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6568,
+        "messages_sha256": "b14cff15c6152650e0266426f7ada05a46363758cee93fdad21cf09410744a9b"
+      },
+      {
+        "query_id": "sg-r6-028",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6223,
+        "messages_sha256": "d5150f25ddf33674217a370f2fef834df59801e10fa7261040ae0313c181e11b"
+      },
+      {
+        "query_id": "sg-r6-029",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5922,
+        "messages_sha256": "40be87e9c8028a6864b83be3948f1f803dbdd0936881925d99e27b894712daaf"
+      },
+      {
+        "query_id": "sg-r6-030",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6595,
+        "messages_sha256": "a2f2c16323291ba3edc02e3c876859954a4c88c8919eab914bcfe6cc6298b975"
+      },
+      {
+        "query_id": "sg-r6-031",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5074,
+        "messages_sha256": "e03b809634f88eab4933b8597a72e214c794afe9efebb6e72a6074027380de14"
+      },
+      {
+        "query_id": "sg-r6-032",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5429,
+        "messages_sha256": "a1ed049e06312ecc541af6bc05be6034a318ccbcafc2b9f6e7a54a19f47249fc"
+      },
+      {
+        "query_id": "sg-r6-033",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9313,
+        "messages_sha256": "d00178b20a3a4920ff4a25b4fa5cf9c60dc6d964c6e9df907a1a179321ae6f17"
+      },
+      {
+        "query_id": "sg-r6-034",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8703,
+        "messages_sha256": "c14078ca5cedbb83aba9ca27fb7c7189cfde788103fa0df72fb60e20d7269ba9"
+      },
+      {
+        "query_id": "sg-r6-035",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7731,
+        "messages_sha256": "3104b549ab408f49ecc907addeb04aebe2e3c2a372b09ce6a4dbadefbf641c82"
+      },
+      {
+        "query_id": "sg-r6-036",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5870,
+        "messages_sha256": "deb24d5dde304289d8a0752cc9647de9dfac75d51f00957ded83a6f3b161421e"
+      },
+      {
+        "query_id": "sg-r6-037",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 4303,
+        "messages_sha256": "e659eb1f270e270d62831cc76b4a633d99768b9b9fe967eac721531172d56c72"
+      },
+      {
+        "query_id": "sg-r6-038",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6654,
+        "messages_sha256": "bbd4d3b3d1d9c0085a9e6b94bd1b70718a51b2e1c24539ab508cbc1cea58de35"
+      },
+      {
+        "query_id": "sg-r6-039",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6458,
+        "messages_sha256": "7521ff0d13e5f427459e9dcbffec140314f2efb823ce172c9283d7f6e7b4e249"
+      },
+      {
+        "query_id": "sg-r6-040",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6946,
+        "messages_sha256": "0e134418b95c0a12fc4a4250f46660c4d0338cc1c4f1a4082dab6844178da05b"
+      },
+      {
+        "query_id": "sg-r6-041",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6750,
+        "messages_sha256": "d1c2717ffeb2aaf35781988bfe11ae694e963086e0ec84d3c6b9a113bf84643e"
+      },
+      {
+        "query_id": "sg-r6-042",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6539,
+        "messages_sha256": "95274d7107ac97f6d25cd6263b2b28f5dfc3d8d4f76bbf35ba6e72d882b3525a"
+      },
+      {
+        "query_id": "sg-r6-043",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7406,
+        "messages_sha256": "6b1587034d779bc0263e5822a2d431419dd668ccf2f84ec4e416e5862a003f58"
+      },
+      {
+        "query_id": "sg-r6-044",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5681,
+        "messages_sha256": "35043c08862578d4571dd4509c06694a6063991af7af9cfa704c57d3516f38eb"
+      },
+      {
+        "query_id": "sg-r6-045",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5464,
+        "messages_sha256": "a00d1daca22ac27bd0a37f90b0d127ea415264d107d004152bda773bd5a91366"
+      },
+      {
+        "query_id": "sg-r6-046",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6181,
+        "messages_sha256": "d870e490c5e778a8b09884589057c27ae69fd73a1674aa098d0b76b5500e8684"
+      },
+      {
+        "query_id": "sg-r6-047",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6432,
+        "messages_sha256": "05bcebcd77168ddd65b072e5b0f7129977c0a98e5adec0df7018febd351fa62c"
+      },
+      {
+        "query_id": "sg-r6-048",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 10635,
+        "messages_sha256": "1c649caf41f5666a789c27fc63e7d912ae34673f7fea6adeee61010b4c3314bc"
+      },
+      {
+        "query_id": "sg-r6-049",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6096,
+        "messages_sha256": "da2c82b52c46bc99aa1662686ef5157449aa2cfaeba36e738a8998f0884bed9f"
+      },
+      {
+        "query_id": "sg-r6-050",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 8038,
+        "messages_sha256": "cd4b62013e174d75a299d93aa8c08a27d8f9be3d2a64a1c3b109fb234e5903ba"
+      },
+      {
+        "query_id": "sg-r6-051",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7631,
+        "messages_sha256": "df188235178aaaa6336c9241f37cd0cf6fe4a2da5e143192fc44c488a6bade05"
+      },
+      {
+        "query_id": "sg-r6-052",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5393,
+        "messages_sha256": "4bed5f001508eb2fd4f371b940f0220f55112c6debc3ee994ab1da7201514152"
+      },
+      {
+        "query_id": "sg-r6-053",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5605,
+        "messages_sha256": "cdee8935a9f8cf3417b657822d3d03d7b334086de53bc581ddfe24352d21d70d"
+      },
+      {
+        "query_id": "sg-r6-054",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6085,
+        "messages_sha256": "ac61d036ae59434335a564f0be9d32b87978611a387b16b28af1fc274ccb9f99"
+      },
+      {
+        "query_id": "sg-r6-055",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5873,
+        "messages_sha256": "5f0784c963cbee00ffa775cb422c9108e607a79ee555a82e3cf9b155ac7b5eed"
+      },
+      {
+        "query_id": "sg-r6-056",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6997,
+        "messages_sha256": "cd03383f15fa0adb0182fe47dd0983f82a0f296e2253f97d529ceb635aae3516"
+      },
+      {
+        "query_id": "sg-r6-057",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5042,
+        "messages_sha256": "b8349e316cfb3a9e53be2ffbb83ba9e56f8ed6e0b9ae5a2d3a4f6e88559dc511"
+      },
+      {
+        "query_id": "sg-r6-058",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7825,
+        "messages_sha256": "7066ce2eaf08025a7c583da88bb029399deb17ecf413297567978299abf3c9ef"
+      },
+      {
+        "query_id": "sg-r6-059",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5919,
+        "messages_sha256": "716dae277ad9116d699c61c60495aff3461fba9f1afa94b4659daca689d9a2a8"
+      },
+      {
+        "query_id": "sg-r6-060",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5488,
+        "messages_sha256": "141881bede0026084111b9003e581e6872bd8161c8e51ddd647c3562e66ca4c4"
+      },
+      {
+        "query_id": "sg-r6-061",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 4898,
+        "messages_sha256": "82db2110b4f71c4ebdcfc369ea5d08788714345256641e4bb0f14d981eda99eb"
+      },
+      {
+        "query_id": "sg-r6-062",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6508,
+        "messages_sha256": "abbec76dba1e6a482a12b921e2378cdd554369e46626d36ee18981cdbd2ba2b0"
+      },
+      {
+        "query_id": "sg-r6-063",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8554,
+        "messages_sha256": "1c9eef245bcd166bba16e86b5f92981d25c56079b1797b8ab01cdc0277b879d3"
+      },
+      {
+        "query_id": "sg-r6-064",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6036,
+        "messages_sha256": "6320ee7cc0086d90ac9138797814ee63fba04311a57a22e3254564d80cc8dde2"
+      },
+      {
+        "query_id": "sg-r6-065",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9597,
+        "messages_sha256": "f60461944fa6b8ba0b0b47fa3672d6880229c5a12b25f7efe974bb6324e0e009"
+      },
+      {
+        "query_id": "sg-r6-066",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5868,
+        "messages_sha256": "fb28c6e6f3a5fb23da697665b3f9747f20328503a6db02a4b6c8fd6cbb003c28"
+      },
+      {
+        "query_id": "sg-r6-067",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 8184,
+        "messages_sha256": "8917a509fc1b8c7592a58417fc20b8ea22994121d6bfecd80e7a9cd44060cb15"
+      },
+      {
+        "query_id": "sg-r6-068",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5132,
+        "messages_sha256": "b896efcaee2a0e71048568762bf37b4b54dfd9f0b918a62dba34c3e9cc524be8"
+      },
+      {
+        "query_id": "sg-r6-069",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5567,
+        "messages_sha256": "74a0fe3db74e4a270fa1119cd131b459f7ec28cc82d4f05331555d17f9cc9bd7"
+      },
+      {
+        "query_id": "sg-r6-070",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6814,
+        "messages_sha256": "8cbde76929a520bc6aa066d20c218a78c79c8af9817c56c98fbdf1af7b07e2da"
+      },
+      {
+        "query_id": "sg-r6-071",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8227,
+        "messages_sha256": "fa3f920003449aeaed11ad8bdf1e1c3f7d613974eee3c7ecd84bf378e69f8aca"
+      },
+      {
+        "query_id": "sg-r6-072",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5991,
+        "messages_sha256": "82862792bd537508a436a422e61ec0de7906e1f952a3b6b59edd082bbc999f1d"
+      },
+      {
+        "query_id": "sg-r6-073",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7101,
+        "messages_sha256": "8f25cbcb29df9bc240f6f521b26dd87759b428c0b6a2804aeeb49c84b1b2f91b"
+      },
+      {
+        "query_id": "sg-r6-074",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5937,
+        "messages_sha256": "6ef44814de3e66bd319f46798bb4876bc9c705bcf742c21387ea3bd46c2a59ac"
+      },
+      {
+        "query_id": "sg-r6-075",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6176,
+        "messages_sha256": "4b119dce1b6771299e7efac3da707b81ac9e7bf02dcf0f232eaca371ec6b914c"
+      },
+      {
+        "query_id": "sg-r6-076",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6403,
+        "messages_sha256": "a8722819e377931576569e8be7ac8a0c9fa4d2b0eba834ad2f16e4e90a891980"
+      },
+      {
+        "query_id": "sg-r6-077",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5476,
+        "messages_sha256": "98b63a342c6ee64a010b5d5626e0e5287fbb9a55340b847ed194724fdc92f097"
+      },
+      {
+        "query_id": "sg-r6-078",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9984,
+        "messages_sha256": "5dbeea30ff3b5d76a60bf3380e1eca706ec51b9a53c8eb5f516efcbe15ab2523"
+      },
+      {
+        "query_id": "sg-r6-079",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 8068,
+        "messages_sha256": "7e01ab6754b51e22dfccf38db7c7bba13a65551eae4f4d73f65914aeb91bae56"
+      },
+      {
+        "query_id": "sg-r6-080",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 8136,
+        "messages_sha256": "ca787979ceb241edfbdc77f779ad06f54f8760daa448a3e4f3867a66cab65af8"
+      },
+      {
+        "query_id": "sg-r6-081",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6282,
+        "messages_sha256": "84950e0c199129261b2566ee40385578b243ae502c5d4f6244973f72c6721580"
+      },
+      {
+        "query_id": "sg-r6-082",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 8164,
+        "messages_sha256": "74972d21f1b472a7dddd44bcaa524c974823223bc8672c306a91936e4cfc029c"
+      },
+      {
+        "query_id": "sg-r6-083",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7141,
+        "messages_sha256": "c5a7da41b7e03692994983bfc10d6bf0521aec9107f193b756f6b69a44d6c4d8"
+      },
+      {
+        "query_id": "sg-r6-084",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5825,
+        "messages_sha256": "4b7292859d9a0b11504c7995b96026639ad18918018eb488c2a1b3cd4a1eae12"
+      },
+      {
+        "query_id": "sg-r6-085",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8291,
+        "messages_sha256": "8a61e44b2d6edea1de3052556c80996d801c183d27909d2b2cff0020e6d3428a"
+      },
+      {
+        "query_id": "sg-r6-086",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6565,
+        "messages_sha256": "f6d975022b5edb0bc9466cbbfd85ab7d22aada07944ec21cf2db7272c4a8a1cc"
+      },
+      {
+        "query_id": "sg-r6-087",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7435,
+        "messages_sha256": "b42c66618b18fb02186e6eada41379b2c592ba490082b4a11615b3ad27d81cd7"
+      },
+      {
+        "query_id": "sg-r6-088",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6366,
+        "messages_sha256": "8a3587e053078a541e2c4478c1bd1f37e7404a3f96cfdbaa9430a403ad54d082"
+      },
+      {
+        "query_id": "sg-r6-089",
+        "unit_type": "alias",
+        "status": "CATALOGUE_LIMIT",
+        "input_tokens": null
+      },
+      {
+        "query_id": "sg-r6-090",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8776,
+        "messages_sha256": "def3f267a6eff465f3aff1813ed736162ee3e2735ad9319466deb41a41a58221"
+      },
+      {
+        "query_id": "sg-r6-091",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5570,
+        "messages_sha256": "28f5bf807c33840a7abd3c2e256d1c0d944334a247f4cc573b5243253e353794"
+      },
+      {
+        "query_id": "sg-r6-092",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8484,
+        "messages_sha256": "e84576506e238b5bbb2ed0fcf9d788235df1790c6ad19d9f86f9034cf5ea06b4"
+      },
+      {
+        "query_id": "sg-r6-093",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6975,
+        "messages_sha256": "2a938b38137970f87035fcdc388af108e8d13ce2b53c5d2795a2660a211c1ed8"
+      },
+      {
+        "query_id": "sg-r6-094",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8244,
+        "messages_sha256": "76e5a827182c5bc351a0791902281c767d3fbc08a580a6b0127fc03022a5764c"
+      },
+      {
+        "query_id": "sg-r6-095",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5925,
+        "messages_sha256": "f0a228c3445bc45470c9eb3078999159c50d1ecea6e3cccb7ebc9b98203c867e"
+      },
+      {
+        "query_id": "sg-r6-096",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7354,
+        "messages_sha256": "a07c8b13eb5c47965d4828133b3b265b854334d435ca6768761ec1ebdcb4c869"
+      },
+      {
+        "query_id": "sg-r6-097",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5187,
+        "messages_sha256": "92b02826dfdd0eecbc804e3e6abc01df697491199e7b76afa32d8e11eb8297d5"
+      },
+      {
+        "query_id": "sg-r6-098",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 8722,
+        "messages_sha256": "797216dcca7eae23f7971dd2830c4fe8e90f87d85cce66a40557207d9d8706f1"
+      },
+      {
+        "query_id": "sg-r6-099",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5959,
+        "messages_sha256": "cb1bedb1ffe9784f8de7278cec8ceeed3e5764a2b0c7fbcbd4b8d08e4d724d5e"
+      },
+      {
+        "query_id": "sg-r6-100",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6373,
+        "messages_sha256": "a795bd31470bd3f551141f09ea0bfb09777fafb2a43f6e7db3cfa70c23f5ca30"
+      },
+      {
+        "query_id": "sg-r6-101",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7326,
+        "messages_sha256": "646b30081303407d7da4ead4c622c67b19c52c6cc200d790e2a2667690186897"
+      },
+      {
+        "query_id": "sg-r6-102",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6694,
+        "messages_sha256": "6f2002f0f6ad352a76ea28e3766166df5a8f00bb3bffd824dca9eae6030d1c64"
+      },
+      {
+        "query_id": "sg-r6-103",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5719,
+        "messages_sha256": "ebd3c5d118d373746350d39b249b3e34b68bad1298e83c76a7fe5883478d5113"
+      },
+      {
+        "query_id": "sg-r6-104",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5357,
+        "messages_sha256": "7dc7663c3fa7ffa628eabe4b0a4c73fefb708522c3f43f4455d2a7b36f524acb"
+      },
+      {
+        "query_id": "sg-r6-105",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7714,
+        "messages_sha256": "b608864d48de3d08316e61653e76a42504912e1da984f4827a17764c4b971ee1"
+      },
+      {
+        "query_id": "sg-r6-106",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7107,
+        "messages_sha256": "35de0cddfc613730cf78d97423e93277fa95a453578065f6140289d26a721d28"
+      },
+      {
+        "query_id": "sg-r6-107",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7970,
+        "messages_sha256": "0d2fd7a3b3434bccd8b07f90cade2a31256f962cebbe1f243a6001135485e9d0"
+      },
+      {
+        "query_id": "sg-r6-108",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7637,
+        "messages_sha256": "1c008c36ad88617c32316594d6c332cab3284030861abd8d4ec55338c45ce2bb"
+      },
+      {
+        "query_id": "sg-r6-109",
+        "unit_type": "alias",
+        "status": "INPUT_LIMIT",
+        "input_tokens": 9850,
+        "messages_sha256": "6d447c58d929d0ea9096f5873a05ca63b01a3e189cd6665928f520ddca46751d"
+      },
+      {
+        "query_id": "sg-r6-110",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6284,
+        "messages_sha256": "7f063db526ccde61d863675adb9457bc8cc0c362eea4c3ad4535767b63cf5480"
+      },
+      {
+        "query_id": "sg-r6-111",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 7039,
+        "messages_sha256": "886c0fa80b08403b86ebfe919962d8637368d82cd37890bc288123f03d9bdbc5"
+      },
+      {
+        "query_id": "sg-r6-112",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 5933,
+        "messages_sha256": "32a4e24ee897d2a8b25c27293a2b07a86128cb759326ca4e73c282d90c122f7a"
+      },
+      {
+        "query_id": "sg-r6-113",
+        "unit_type": "alias",
+        "status": "ADMITTED",
+        "input_tokens": 6583,
+        "messages_sha256": "29378bcda069c411a64c522a99daebb985024770ab84fd2549ffb4ec3010ac15"
+      }
+    ],
+    "retry": false,
+    "version": "sg-compact-transport-v2",
+    "risk_units": 14,
+    "screening_units": 114,
+    "source_coverage_units": 100,
+    "source_abstentions": 86,
+    "semantic_fidelity": "NOT_ASSESSED",
+    "dispatch_authorized": false,
+    "historical_r6_reopened": false,
+    "wall_seconds": 14.383828078000079,
+    "cpu_seconds": 14.606690851,
+    "worker_peak_rss_bytes": 996880384
+  }
+}

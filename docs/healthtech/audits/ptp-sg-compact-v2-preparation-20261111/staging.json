@@ -1,0 +1,7 @@
+{
+  "status": "STAGED_NOT_STARTED",
+  "job": "ptp-sg-compact-input-preflight-20261111-v1",
+  "CPU_reserved_seconds": 1200,
+  "model_calls": 0,
+  "GPU_seconds": 0
+}

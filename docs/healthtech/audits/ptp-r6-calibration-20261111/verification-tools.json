@@ -1,0 +1,7 @@
+{
+  "purpose": "Read-only reproducibility helpers; no model calls or output repair",
+  "sha256": {
+    "verify-terminal.py": "0031f5623cdde8198263bc3821da25767a643a6d8c7f8d906e22b3642a327adf",
+    "diagnose-calibration.py": "b73c4640065e016fe0feb027cb70af48530ba21b01c381acdc13a5295f568585"
+  }
+}

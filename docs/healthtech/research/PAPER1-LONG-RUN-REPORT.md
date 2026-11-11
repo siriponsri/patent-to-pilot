@@ -1,26 +1,43 @@
 # Paper1 bounded long-run report, 11 November2026
 
-## Current R6 execution status, 11 November 2026
+## Current R6 outcome and Graph repair, 11 November 2026
 
-The owner approved R6. Phase0 qualification is complete; the sole live critic
-calibration is `ptp-r6-calibration-20261111-v1`. Its outcome remains PENDING until
-terminal evidence and raw-response assessment. No native fidelity or retrieval
-success is inferred from software tests or intermediate generation counts.
+R6 Phase0 engineering completed, but the actual evaluator candidate failed the
+frozen24-case calibration. All24 calls ended with EOS:23 responses were schema-valid
+but interpreter-invalid, and one valid response had unrelated semantic flags.
+The candidate is closed; this is not a native SACR or Graph fidelity result.
 
 | Evidence layer | Current status | Boundary |
 |---|---|---|
-| Runtime engineering | PASS for frozen R6 package | 256 local tests; real CPU transport used authored outputs, not model evidence |
-| Actual critic calibration | RUNNING / outcome PENDING | Frozen24 authored cases; no gold or threshold changes |
-| SACR native fidelity | NOT_RUN | Requires qualified critic and synthetic gates |
-| Graph R6 input admission | CLOSED_INPUT_RISK_CAP | 33 technical risks/114; semantic fidelity NOT_ASSESSED |
-| Graph compact repair | ENGINEERING_IMPLEMENTED | 12 authored tests; actual token admission and calibration NOT_RUN |
-| Human review | NOT_RUN, zero cards issued | Actual owner judgments required; total ceiling60 |
-| New comparative retrieval | NOT_RUN | No improvement estimate; B0 evidence remains historical measured baseline |
+| Runtime engineering | PASS for frozen R6 package | 256 local tests and authored CPU transport; actual calibration completed24 calls |
+| Actual critic calibration | FAILED / candidate closed | 23 contract-invalid; one contract-valid semantic failure; unchanged gold |
+| SACR native fidelity | NOT_RUN | Shared critic prerequisite failed; native method quality NOT_ASSESSED |
+| Graph original R6 admission | CLOSED_INPUT_RISK_CAP | 33 technical risks/114, preserved unchanged |
+| Graph compact v2 admission | INPUT_ADMISSION_ONLY | 100 admitted/114;13 input limits+1 catalogue limit; no model screening |
+| Human review | NOT_RUN, zero cards issued | Actual owner judgments required; ceiling60 unchanged |
+| New comparative retrieval | NOT_RUN | No improvement estimate; measured B0 remains separate |
 
-Current job and reservation: [calibration audit](../audits/ptp-r6-calibration-20261111/launch.json).
-Graph recovery preserves the failed R6 result: [prospective repair](plans/GRAPH-COMPACT-TRANSPORT-20261111.md).
-Later terminal receipts and the handoff supersede this running-state snapshot.
+Calibration used1748.397555 seconds whole occupancy, charged1749 GPU+fidelity
+seconds once;24 calls,33,988 input/15,799 output tokens, peak allocated GPU
+17,713,604,608 bytes. The prompt omitted an explicit prohibition on supported-
+dimension findings, although its interpreter rejects them. Four invalid cases
+also omit required flagged findings, and two include findings without references.
+The independent valid semantic error remains even if the contract wording is fixed.
+No responses were repaired, regraded into acceptance or regenerated.
 
+Compact Graph v2 clarifies that existing rule and compresses redundant transport
+metadata while retaining full source/artifact text, evidence IDs, schema and
+criteria. Its first actual CPU inspection used16.324545 seconds whole wall and
+14.728927 CPU seconds; worker peak RSS996,880,384 bytes under aggregate2GiB limit
+(aggregate peak not measured). All14 source units and86 alias units fit; the14
+remaining alias risks stay in the fixed114 denominator. All100 source coverage
+rows and86 extraction abstentions remain. Passing input admission is not fidelity.
+
+Evidence: [calibration closeout](../audits/ptp-r6-calibration-20261111/README.md)
+and [Graph actual token admission](../audits/ptp-sg-compact-v2-preparation-20261111/summary.json).
+No owned job remains live at this checkpoint. New model-candidate authorization
+and qualification remain before further semantic screening. Prior negative
+rounds below are historical; their cost balances are not current allowances.
 
 ## R6 Graph input-admission outcome, 11 November 2026
 
@@ -41,8 +58,9 @@ a negative retrieval effect of graph methods.
 
 The actual CPU tokenizer/grammar qualifications separately passed14 profile and
 38 critic authored cases. They qualify syntax/reference handling, not native
-critic accuracy or fidelity. SACR remains active and must complete its remaining
-runtime gates and calibrated semantic screening. R5 outcomes are unchanged.
+critic accuracy or fidelity. At that earlier checkpoint SACR was still active;
+its later calibration failure and dependent stop are recorded above. R5 outcomes
+are unchanged.
 
 Evidence: `docs/healthtech/audits/ptp-r6-phase0-execution-20261111/`.
 

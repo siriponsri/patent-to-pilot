@@ -3523,18 +3523,18 @@
     "protected_tests": "CLOSED"
   },
   "st1_r6_phase0_20261111": {
-    "status": "IN_PROGRESS",
+    "status": "PHASE0_COMPLETE_CALIBRATION_FAILED",
     "goal": "ACTIVE_OWNER_APPROVED",
     "audit": "docs/healthtech/audits/ptp-r6-phase0-execution-20261111",
     "local_tests": 256,
-    "gpu_admission": "FROZEN_QUALIFIED_CALIBRATION_RUNNING",
-    "model_calls": null,
+    "gpu_admission": "NO_ACTIVE_JOB",
+    "model_calls": 24,
     "runtime_foundations": "IMPLEMENTED_LOCAL_TESTED",
-    "next_gate": "CALIBRATION_TERMINAL_RAW_ASSESSMENT_AND_WHOLE_STAGE_RECONCILIATION",
+    "next_gate": "NEW_CANDIDATE_PLAN_AND_AUTHORITY_NO_AUTOMATIC_SEMANTIC_RETRY",
     "real_tokenizer_grammar_cases": 52,
     "source_join_families": 282,
     "graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114",
-    "sacr_status": "ACTUAL_CRITIC_CALIBRATION_RUNNING",
+    "sacr_status": "STOPPED_EVALUATOR_CALIBRATION_GATE_NATIVE_NOT_ASSESSED",
     "native_input_queries": 100,
     "native_input_requests": 200,
     "native_input_risks": 0,
@@ -3542,22 +3542,25 @@
     "authored_factorial_composition": "PASS_REVIEWED",
     "controller_and_global_ledger": "IMPLEMENTED_FAULT_TESTED",
     "local_tests_note": "Frozen final Phase0 suite256; separate Graph repair suite29 is not added to this total.",
-    "real_R6_model_calls": null,
-    "real_R6_GPU_seconds": null,
+    "real_R6_model_calls": 24,
+    "real_R6_GPU_seconds": 1749,
     "owned_CPU_jobs_terminal": 7,
     "actual_calibration_job": "ptp-r6-calibration-20261111-v1",
-    "observed_completed_generation_records": 12,
-    "observed_dispatch_markers": 13,
-    "counts_note": "Live observation snapshot; final counts/costs pending. Null is not zero."
+    "observed_completed_generation_records": 24,
+    "observed_dispatch_markers": 24,
+    "counts_note": "Terminal raw24/cost/backend-return verification complete; cumulative historical costs are separate.",
+    "GPU_seconds_note": "Conservative whole-stage charge; measured1748.3975548730014 seconds."
   },
   "st1_graph_compact_20261111": {
-    "status": "LOCAL_FROZEN_NOT_STAGED",
-    "audit": "docs/healthtech/audits/ptp-sg-compact-preparation-20261111",
+    "status": "V1_SUPERSEDED_BEFORE_STAGING_V2_INPUT_ADMISSION_ONLY",
+    "audit": "docs/healthtech/audits/ptp-sg-compact-v2-preparation-20261111",
     "tests": 29,
     "model_calls": 0,
     "GPU_seconds": 0,
-    "production_token_admission": "NOT_RUN",
+    "production_token_admission": "100_ADMITTED_14_RISKS_OF_FIXED114",
     "historical_R6_graph_reopened": false,
-    "next_gate": "ORIGINAL_CALIBRATION_TERMINAL_THEN_RESOURCE_RECONCILIATION_AND_CPU_PREFLIGHT"
+    "next_gate": "NEW_MODEL_CANDIDATE_AUTHORITY_AND_CALIBRATION",
+    "CPU_seconds": 14.728926963,
+    "whole_wall_seconds": 16.324545396997564
   }
 }

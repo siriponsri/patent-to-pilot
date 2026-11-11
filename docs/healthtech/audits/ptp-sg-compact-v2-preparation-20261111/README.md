@@ -1,5 +1,14 @@
 # Graph compact v2: first CPU input inspection
 
+**Current result: INPUT_ADMISSION_ONLY.** The sole CPU attempt completed exit0,
+PID0/no OOM.100/114 parents admitted:14 source+86 alias;13 alias input limits and
+one alias catalogue limit remain risks. The risk cap20 is met without truncation
+or resampling. Whole wall16.324545s; worker+controller CPU14.728927s charged once;
+1200-second CPU reservation released. No model/GPU/card/retrieval activity.
+See [summary](summary.json), [terminal receipt](terminal-observation.json) and
+[resource admission](resource-admission.json). Preparation statements below are
+historical; input admission does not qualify the critic or authorize inference.
+
 The first compact v1 package was frozen but never staged or executed. Before
 its first token measurement, completed R6 calibration revealed a prompt/validator
 gap: findings for supported dimensions were not explicitly prohibited in the

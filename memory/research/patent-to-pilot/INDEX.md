@@ -1,5 +1,10 @@
 # Patent-to-Pilot shared project memory
 
+## Latest terminal R6 and Graph v2 checkpoint
+
+R6 calibration finished24 EOS calls but failed:23 contract-invalid and one valid semantic grading failure. Raw24/costs verified,1749 whole-stage GPU/fidelity seconds charged, journal generation1 reconciled. No automatic critic revision. Graph compact v2 CPU inspection completed100 admitted/14 technical risks among fixed114;14.728927 CPU seconds charged, no model or cards. Both jobs terminal. Prior running-state entries below are historical. See HANDOFF and audits ptp-r6-calibration-20261111 and ptp-sg-compact-v2-preparation-20261111. R7-SINGLE-CANDIDATE-CONTINUATION.md is proposed; owner decision pending, no new model authority or reservation. Preserve cumulative journal history; canonical CPU ledger advanced after the GPU snapshot and requires an explicit idle reconciliation before any future GPU declaration.
+
+
 ## Current calibration and Graph repair checkpoint
 
 R6 critic calibration is live under the unchanged frozen job

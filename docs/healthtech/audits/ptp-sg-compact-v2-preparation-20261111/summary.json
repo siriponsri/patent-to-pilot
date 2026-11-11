@@ -1,0 +1,35 @@
+{
+  "status": "INPUT_ADMISSION_ONLY",
+  "version": "sg-compact-transport-v2",
+  "risk_units": 14,
+  "prior_R6_risk_units": 33,
+  "status_counts": {
+    "ADMITTED": 100,
+    "INPUT_LIMIT": 13,
+    "CATALOGUE_LIMIT": 1
+  },
+  "stratum_status_counts": {
+    "source": {
+      "ADMITTED": 14
+    },
+    "alias": {
+      "ADMITTED": 86,
+      "INPUT_LIMIT": 13,
+      "CATALOGUE_LIMIT": 1
+    }
+  },
+  "input_tokens_min": 2961,
+  "input_tokens_max": 10635,
+  "whole_wall_seconds": 16.324545396997564,
+  "charged_CPU_seconds": 14.728926963,
+  "worker_peak_rss_bytes": 996880384,
+  "aggregate_RAM_limit_bytes": 2147483648,
+  "aggregate_peak_RAM": "NOT_MEASURED",
+  "model_calls": 0,
+  "GPU_seconds": 0,
+  "cards_issued": 0,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "retrieval": "NOT_RUN",
+  "historical_R6_reopened": false,
+  "terminal_observation_sha256": "a35fc407faf68b1d4ee1dff709bae15a7726e5434b86467df0daba1df101774e"
+}
