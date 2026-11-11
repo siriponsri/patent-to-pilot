@@ -3412,7 +3412,7 @@
     "retry": false
   },
   "st1_bounded_closeout_20261111": {
-    "status": "BOUNDED_NEGATIVE_CLOSEOUT_REVIEWED",
+    "status": "COMPLETE_BOUNDED_NEGATIVE_OUTCOME",
     "report": "docs/healthtech/research/PAPER1-LONG-RUN-REPORT.md",
     "retrieval_arms_measured": [
       "B0"
@@ -3425,6 +3425,8 @@
     "human_cards": 0,
     "protected_tests": "CLOSED",
     "exposure": "MEASURED_EXISTING_DEV_ONLY",
-    "published_replication": "NOT_ESTABLISHED"
+    "published_replication": "NOT_ESTABLISHED",
+    "publication_checkpoint": "5fdd1cfa9e4a8c08897dabb56c2c9e28bf243a29",
+    "publication": "VERIFIED_ORIGIN_MAIN"
   }
 }

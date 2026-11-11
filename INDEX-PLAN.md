@@ -1,5 +1,10 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Publication verified and bounded goal closed
+
+Report/code/evidence checkpoint 5fdd1cfa9e4a8c08897dabb56c2c9e28bf243a29 was pushed and verified against live origin/main on11 November2026. Final report review passed; exposure fixtures4PASS; staged diff/secret-pattern checks passed. Authorized bounded work is complete with negative method gates. No remaining experiment is dispatched. Only the unrelated owner document remains untracked. Preserve all failed configurations; future revisions require a separately defined next task.
+
+
 ## Bounded long-run closeout, 11 November2026
 
 Current report: docs/healthtech/research/PAPER1-LONG-RUN-REPORT.md. Parent remains
