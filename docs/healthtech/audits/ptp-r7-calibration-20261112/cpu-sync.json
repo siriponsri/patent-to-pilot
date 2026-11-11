@@ -1,0 +1,23 @@
+{
+  "status": "VERIFIED_CPU_ONLY_RECONCILIATION",
+  "journal_identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "owner_approval_sha256": "51b0dee061c052027596003d785cf137a460c57749ab93212560fee8f5c15a2e",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "old_ledger_sha256": "1fa549149b4f379e219cd2db53259283de295fac5982a0dac0e5a45f5d1b9aac",
+  "new_ledger_sha256": "5d5c53eba6fb546156515458ce0518509886235519b8ec64450b15d272ae6b35",
+  "cpu_deltas": {
+    "local_cpu_conservative_charged_seconds": 400,
+    "local_cpu_measured_seconds": 18.53125,
+    "remote_cpu_charged_seconds": 113.951802569,
+    "local_cpu_reserved_seconds": 0,
+    "remote_cpu_reserved_seconds": 0
+  },
+  "evidence_sha256": [
+    "b5b5d33706c958b25bdc5e15419086367633a79e548559dcf67086c80fb3af9d",
+    "16c97247f774d38194de508f2bc9c7a21c9a8935969570332d3d40008f0001be",
+    "c71fc6cecc17b94dcff3b569e54ee86171242461770089b78870836bf3e08211",
+    "66eac95fb42faf4006b2de2781bddc194d7f87d01f816fad8592ed8dfb43d3cf",
+    "433ada19d4d953410c06ca2c5ce842d5d0e6427a60ffb719a7d4b3a2bd923973"
+  ]
+}

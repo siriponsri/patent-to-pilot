@@ -1,0 +1,8 @@
+{
+  "status": "APPROVED",
+  "basis": "Owner-approved R7 exact pipeline qualification before GPU",
+  "owner_approval_sha256": "51b0dee061c052027596003d785cf137a460c57749ab93212560fee8f5c15a2e",
+  "declarations_sha256": {
+    "pipeline-fixture-declaration.json": "3cc550df67e88b2dbc105c0a1374b0710f290446d51b317898232f55709de158"
+  }
+}

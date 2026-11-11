@@ -1,0 +1,9 @@
+{
+  "status": "LOCAL_PREPARATION_FAILED_AFTER_SHADOW_CHECK_BEFORE_LIVE_DISPATCH",
+  "cause": "Temporary SQLite setup connection was committed but not closed, so Windows rejected temporary directory cleanup after the shadow transitions passed.",
+  "repair": "Explicitly close the shadow setup connection. Preserve the first verification receipt and require exact equality on resume. No live journal or research backend was touched.",
+  "new_model_calls": 0,
+  "new_gpu_seconds": 0,
+  "live_journal_mutation": false,
+  "CPU_accounting": "Included in conservative100second local freeze preparation charge."
+}

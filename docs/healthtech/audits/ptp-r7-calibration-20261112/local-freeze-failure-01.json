@@ -1,0 +1,9 @@
+{
+  "status": "LOCAL_PREPARATION_FAILED_BEFORE_DECLARATION_OR_DISPATCH",
+  "cause": "Freeze helper used journal JSON encoding for the task hash; runtime task encoding retains whitespace. Hash assertion rejected it before any declaration, ledger change or remote mutation.",
+  "repair": "Use the exact existing runtime task serializer. No task, prompt, gold, model or output changed.",
+  "new_model_calls": 0,
+  "new_gpu_seconds": 0,
+  "live_journal_mutation": false,
+  "CPU_accounting": "Included in the conservative100second freeze preparation charge before subsequent dispatch."
+}

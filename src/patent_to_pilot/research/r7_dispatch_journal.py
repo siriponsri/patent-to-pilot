@@ -51,7 +51,10 @@ def validate_cpu_change(old, new, receipt):
             for r7_key, global_key in [('conservative_charged_seconds', CPU_CHARGES[0]),
                                        ('measured_seconds', CPU_CHARGES[1])]:
                 delta = current[r7_key] - (previous[r7_key] if previous else 0)
-                require(delta <= new_cpu.get(global_key,0)-old_cpu.get(global_key,0),
+                global_delta = new_cpu.get(global_key,0)-old_cpu.get(global_key,0)
+                if r7_key == 'measured_seconds':
+                    global_delta += new_cpu.get(CPU_CHARGES[2],0)-old_cpu.get(CPU_CHARGES[2],0)
+                require(delta <= global_delta,
                         'R7 CPU charge not included in global accounting')
             if previous is not None:
                 for k in fields[:2]:

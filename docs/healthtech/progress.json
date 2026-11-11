@@ -3563,5 +3563,20 @@
     "next_gate": "NEW_MODEL_CANDIDATE_AUTHORITY_AND_CALIBRATION",
     "CPU_seconds": 14.728926963,
     "whole_wall_seconds": 16.324545396997564
+  },
+  "st1_r7_20261112": {
+    "status": "CALIBRATION_RUNNING_NOT_SCIENTIFIC_ACCEPTANCE",
+    "job": "ptp-r7-calibration-20261112-v1",
+    "maximum_calls": 24,
+    "whole_stage_seconds": 7200,
+    "audit": "docs/healthtech/audits/ptp-r7-calibration-20261112/README.md",
+    "exact_pipeline": "PASS_AUTHORED_CPU_ONLY_31_INVOCATIONS_3649_GRAMMAR_TOKENS",
+    "cpu_charged_seconds_before_model_launch": 417.754125606,
+    "journal": "ORIGINAL_EXTENDED_GENERATION3_NO_RESET",
+    "historical_R6_failure": "EVALUATOR_CALIBRATION_UNCHANGED",
+    "native_fidelity": "NOT_RUN",
+    "retrieval": "NOT_RUN",
+    "cards_issued": 0,
+    "protected_tests": "CLOSED"
   }
 }

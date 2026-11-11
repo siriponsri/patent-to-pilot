@@ -1,0 +1,10 @@
+{
+  "status": "STAGED_EXISTING_JOURNAL_EXTENDED_NO_RESET",
+  "attempt_id": "ptp-r7-calibration-20261112-v1",
+  "generation": 3,
+  "manifest_sha256": "a73e6502bf199780c53db790f8a9da0909a84bdef637687cf93afdc588905434",
+  "package_sha256": "30496ef212b5aab29ccb57514fa0efdc4b41d3b2ee0ace5ca0899135fdff76ac",
+  "candidate_authority_sha256": "1ede47a72c33df3a02607e971afe1ba19a56d8ce56b42808e84e60a05e7ec74d",
+  "model_calls": 0,
+  "active": null
+}

@@ -1,0 +1,19 @@
+{
+  "status": "OWNER_APPROVED_R7_SINGLE_CANDIDATE",
+  "journal_identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "owner_approval_sha256": "51b0dee061c052027596003d785cf137a460c57749ab93212560fee8f5c15a2e",
+  "plan_sha256": "7de2a8c1cc3fd8fa00015d17754c622d2f972f20b4493c436b0ad447f045203d",
+  "gold_or_threshold_changed": false,
+  "previous_attempt_id": "ptp-r6-calibration-20261111-v1",
+  "previous_terminal_sha256": "4ace4ea41251aad6a16eadd741971139bc98caa872a7d9c6a2ee4ec872daaf8e",
+  "declaration_sha256": "11fce15cde3e5279812ee6ab8fa2ef721b4094dc2e5f27dc6b3c3595d0114208",
+  "gold_sha256": "119a677c9fd4bf95c8723190aed7140cf0dfa1a704c47b55abc8a3ddaff5ed5a",
+  "criteria_sha256": "3fa013a5c275d4c2d9d09e8dfd19f9854072a740586a0180c31256ed122037f6",
+  "transport_sha256": "e5ba7a83fd012227f336d96e9bbb29914105e1cb6987e0cff7c842b1fef5a3c3",
+  "gpu_seconds": 637200,
+  "fidelity_seconds": 169200,
+  "full_dev_seconds": 460800,
+  "cpu_seconds": 3600,
+  "initial_gpu_seconds": 14058.613504877227,
+  "initial_fidelity_seconds": 13779.72668002863
+}

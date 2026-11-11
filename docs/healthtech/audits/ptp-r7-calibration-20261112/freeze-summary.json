@@ -1,0 +1,22 @@
+{
+  "status": "FROZEN_QUALIFIED_NOT_LIVE_AUTHORIZED",
+  "attempt_id": "ptp-r7-calibration-20261112-v1",
+  "maximum_calls": 24,
+  "seconds": 7200,
+  "manifest_sha256": "a73e6502bf199780c53db790f8a9da0909a84bdef637687cf93afdc588905434",
+  "package_sha256": "30496ef212b5aab29ccb57514fa0efdc4b41d3b2ee0ace5ca0899135fdff76ac",
+  "configuration_sha256": "76a4a33f9d6f59ef84a984d03072a77305b4e6e42704ef151665f050e3bf0ff1",
+  "task_manifest_sha256": "56cc829156b046f174539ed634240da427f3e8e5167a11c6960b65a82eed2e89",
+  "owner_approval_sha256": "51b0dee061c052027596003d785cf137a460c57749ab93212560fee8f5c15a2e",
+  "journal_original_identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "cpu_sync_sha256": "7d0945cf663d999ac72d5b182af6c7c33de228a9280dc96fea581465c4c876bc",
+  "candidate_authority_sha256": "1ede47a72c33df3a02607e971afe1ba19a56d8ce56b42808e84e60a05e7ec74d",
+  "expected_current_generation": 1,
+  "after_cpu_sync_generation": 2,
+  "after_authorization_generation": 3,
+  "GPU_remaining_after_reservation_seconds": 669941.3864951228,
+  "fidelity_remaining_after_reservation_seconds": 209420.27331997137,
+  "model_calls": 0,
+  "real_journal_mutation": false,
+  "shadow_transition_and_claim": "PASS"
+}

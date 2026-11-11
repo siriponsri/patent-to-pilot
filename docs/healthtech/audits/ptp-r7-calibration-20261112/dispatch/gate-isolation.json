@@ -1,0 +1,23 @@
+{
+  "gate": "isolation",
+  "status": "PASS",
+  "package_sha256": "30496ef212b5aab29ccb57514fa0efdc4b41d3b2ee0ace5ca0899135fdff76ac",
+  "candidate_owner_approval_sha256": "51b0dee061c052027596003d785cf137a460c57749ab93212560fee8f5c15a2e",
+  "dispatch_identity": {
+    "approval_sha256": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+    "package_sha256": "30496ef212b5aab29ccb57514fa0efdc4b41d3b2ee0ace5ca0899135fdff76ac",
+    "input_manifest_sha256": "56cc829156b046f174539ed634240da427f3e8e5167a11c6960b65a82eed2e89",
+    "model_identity_sha256": "5b4f4a7317919979affc88df9837a6741ffa6715bf39d9516fe6cd4816ac9ac2",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "evidence_sha256": {
+    "docs/healthtech/audits/ptp-r6-phase0-execution-20261111/isolation-receipts.json": "33783c7ea711c26823c77657a48a0d45a561467b09e1a0d1e666e9ed3ccf0380",
+    "docs/healthtech/audits/ptp-r7-calibration-20261112/verification.json": "b8e975cafd27a5e4f563708e1d7af2d08718e7acefab0ae1a5ed31f4debdc5c8",
+    "docs/healthtech/audits/ptp-r7-calibration-20261112/current-resource-probe.json": "70600c737a0115fb23a3c9b73f3586b53d096cd844e9443060fdf0cdbe6fabdf"
+  },
+  "qualification": "ENGINEERING_PRECONDITIONS_ONLY; exact calibration path; live GPU/model/isolation checks required",
+  "source_mapping": "Package exactly matches authored CPU pipeline; unchanged critic/profile grammar dependencies verified by hash; retrieval historical unchanged control only",
+  "graph_status": "INPUT_ADMITTED_100_OF_114_NOT_FIDELITY",
+  "receipt_sha256": "3c75356cf1486a1792b24600585079f1a181e5fccc275c7a588d12a5222fd4b4"
+}

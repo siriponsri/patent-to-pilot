@@ -1,0 +1,70 @@
+{
+  "status": "PASS_AUTHORED_FULL_CALIBRATION_PIPELINE",
+  "real_model_calls": 0,
+  "gpu_seconds": 0,
+  "authored_backend_invocations": 31,
+  "actual_grammar_tokens_checked": 3649,
+  "whole_wall_seconds": 100.23083715899702,
+  "charged_cpu_seconds": 99.222875606,
+  "worker_peak_rss_bytes": 1138241536,
+  "bundle_fixture_results": [
+    {
+      "case": "normal",
+      "authored_backend_invocations": 3,
+      "expected_error": null,
+      "pass": true
+    },
+    {
+      "case": "invalid_envelope",
+      "authored_backend_invocations": 2,
+      "expected_error": null,
+      "pass": true
+    },
+    {
+      "case": "post_backend",
+      "authored_backend_invocations": 2,
+      "expected_error": "RuntimeError",
+      "pass": true
+    },
+    {
+      "case": "exhausted_budget",
+      "authored_backend_invocations": 0,
+      "expected_error": "TimeoutError",
+      "pass": true
+    },
+    {
+      "case": "deadline",
+      "authored_backend_invocations": 0,
+      "expected_error": "TimeoutError",
+      "pass": true
+    },
+    {
+      "case": "missing_file",
+      "authored_backend_invocations": 0,
+      "expected_error": "FileNotFoundError",
+      "pass": true
+    }
+  ],
+  "mocked_boundaries": [
+    "dispatch_authority",
+    "model_weight_observer",
+    "GPU_lock",
+    "model_loader",
+    "CUDA_telemetry",
+    "device_to_cpu"
+  ],
+  "actual_boundaries": [
+    "worker_main",
+    "request_assembly",
+    "tokenizer",
+    "grammar_EOS",
+    "generation_adapter",
+    "durable_attempts",
+    "cohort",
+    "calibration_assess"
+  ],
+  "tasks_sha256": "56cc829156b046f174539ed634240da427f3e8e5167a11c6960b65a82eed2e89",
+  "semantic_result": "Expected all-supported authored calibration failure; not an observed model outcome",
+  "qualification_limits": "R7 calibration compact path qualified; additional bundle cases exercise unchanged R6 bundle only. Authored CPU doubles do not prove GPU, native fidelity or scientific success.",
+  "R7_CPU_total_seconds": 316.488500606
+}

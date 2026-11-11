@@ -1,0 +1,18 @@
+{
+  "status": "PASS_AUTHORED_ENGINEERING_ONLY",
+  "test_files_sha256": {
+    "tests/test_r7_reference_runner.py": "9935a48132ef812666911367441991688927fe08fe00f24596fae000746a2166",
+    "tests/test_r7_calibration_runner.py": "eff71ef387e4420a0f3b9ba7aababd17efc7cf7d7d356cf54f3488fba130d4a1",
+    "tests/test_r7_dispatch_journal.py": "2ffd460d23e9d0bf6530f02ff4ad3ae1507f3dcbb03e690707a138189fb68305",
+    "tests/test_r7_calibration_worker.py": "5e4de5376bfcc5f139de5f66d71c1512694c0691e941b65e3ca58a9e7accb9e9",
+    "tests/test_r7_calibration_supervisor.py": "4b6fe152b13dbe6699b04f479fd83993360032b5ad766841713cf66ed4e4ea07",
+    "tests/test_r7_controller_entrypoint.py": "d0df54ebe6cde7e39bc08e554e3ac24b6a8137031d38e0afcb2b726ef9eb360a",
+    "tests/test_r7_cpu_fixture_scope.py": "d62214e5ed360a4128121e82376c9d961130dbd1759df8acb7d82ac52c68682b",
+    "tests/test_r7_dispatch_files.py": "53ee72fcf2f15af6d35f68bbc3335a23353701b1c84350e7d286a69039295e33"
+  },
+  "measurements_sha256": "c71fc6cecc17b94dcff3b569e54ee86171242461770089b78870836bf3e08211",
+  "qualified_package_sha256": "30496ef212b5aab29ccb57514fa0efdc4b41d3b2ee0ace5ca0899135fdff76ac",
+  "real_model_calls": 0,
+  "gpu_seconds": 0,
+  "scope": "Exact compact calibration worker; live GPU admission remains separate; no native fidelity claim."
+}

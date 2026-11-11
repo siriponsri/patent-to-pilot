@@ -48,6 +48,15 @@ def test_cpu_sync_preserves_scope_and_all_model_history(tmp_path):
     with pytest.raises(InputBoundaryError):j.claim(d,n,s,g,expected_generation=0)
 
 
+def test_remote_measured_cpu_is_included_in_both_ledgers(tmp_path):
+    j,args,n,r=setup(tmp_path)
+    n['r6_phase0_cpu']['remote_cpu_charged_seconds']+=25
+    n['r7_cpu']['measured_seconds']=25
+    r['cpu_deltas']['remote_cpu_charged_seconds']=25
+    r['new_ledger_sha256']=document_hash(n)
+    assert sync(j,n,r)['generation']==1
+
+
 @pytest.mark.parametrize('fault',['gpu','cap','floor','history','cpu_reset','over_budget',
     'r7_budget','model_job','delta','old_hash','active','approval','pending',
     'r7_unmirrored','r7_pending','gpu_job','evidence_type','bool_counter'])

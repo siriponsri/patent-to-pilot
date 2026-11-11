@@ -1,0 +1,7 @@
+{
+  "status": "FROZEN_TRANSPORT",
+  "bytes": 2191360,
+  "sha256": "a8a685d3ae2ae200a6c5ba82eee060685b33c807376d92f0620a183d0f5ba8b9",
+  "dispatch_manifest_sha256": "a73e6502bf199780c53db790f8a9da0909a84bdef637687cf93afdc588905434",
+  "package_sha256": "30496ef212b5aab29ccb57514fa0efdc4b41d3b2ee0ace5ca0899135fdff76ac"
+}

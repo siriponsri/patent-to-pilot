@@ -1,0 +1,45 @@
+{
+  "version": "r6-dispatch-files-v1",
+  "files": {
+    "declaration": {
+      "path": "declaration.json",
+      "sha256": "8f27585db7e1af23ed3d15ddf97327a83460a01686ddc441ff68193b3f140f48"
+    },
+    "ledger": {
+      "path": "ledger.json",
+      "sha256": "7edf64409c3b7300ee6c580fb88eb5d1766c4e3e5c675016bc9e5298d48fffa5"
+    },
+    "scope": {
+      "path": "scope.json",
+      "sha256": "c83db34a06f3281b1a4815b752caae130067eb16795822a5204e365e51a397b1"
+    },
+    "gate:transport": {
+      "path": "gate-transport.json",
+      "sha256": "7a0322d7ca411552360ba66e21b521a289ef0c0e16c97931304ceb9992064536"
+    },
+    "gate:attempt_accounting": {
+      "path": "gate-attempt_accounting.json",
+      "sha256": "f69ca2df04d6ad49142e8c82ac58f7283e7e9c142209e623951bab64eff5ca15"
+    },
+    "gate:grammar": {
+      "path": "gate-grammar.json",
+      "sha256": "d8d2bd8a73dc6a709b8bc418481a51d4a96f6990f3e4d8ec677b1857db287b1a"
+    },
+    "gate:cohorts": {
+      "path": "gate-cohorts.json",
+      "sha256": "c66c5227c978f37f4d3f06b93a8d531defc4afef4345880dc5e54466c27dcc2e"
+    },
+    "gate:retrieval": {
+      "path": "gate-retrieval.json",
+      "sha256": "f2679985f460400384115e519268d680dad8b1f035597ccf9bfa472bb4dff35f"
+    },
+    "gate:input_admission": {
+      "path": "gate-input_admission.json",
+      "sha256": "3e64aabac76a981ccab8265093110f9e33365e7ceaca8febaf08bbaf9e171339"
+    },
+    "gate:isolation": {
+      "path": "gate-isolation.json",
+      "sha256": "611761685ba0547f85226ce983446ff1630b52978019123d57d120dae1441e78"
+    }
+  }
+}

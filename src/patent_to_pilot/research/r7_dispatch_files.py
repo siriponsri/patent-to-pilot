@@ -1,6 +1,6 @@
 """R7 bindings on top of the unchanged historical dispatch file contract."""
 from .r6_dispatch_files import (load_dispatch as load_r6_dispatch,
-    validate_worker_package as validate_r6_package, read_pinned, validate_deadline)
+    validate_worker_package as validate_r6_package, read_pinned, validate_deadline, package_identity)
 from .r6_dispatch_journal import document_hash
 from .r7_dispatch_journal import R7DispatchJournal
 from .mtm_runtime import InputBoundaryError
