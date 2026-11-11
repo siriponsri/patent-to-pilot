@@ -701,8 +701,19 @@
         }
       }
     },
-    "local_cpu_conservative_charged_seconds": 800,
-    "local_cpu_measured_seconds": 77.1875
+    "local_cpu_conservative_charged_seconds": 900,
+    "local_cpu_measured_seconds": 102.5
   },
-  "r6_graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114_NO_MODEL"
+  "r6_graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114_NO_MODEL",
+  "r6_calibration_reservation": {
+    "status": "RESERVED",
+    "attempt_id": "ptp-r6-calibration-20261111-v1",
+    "seconds": 7200,
+    "maximum_calls": 24,
+    "GPU_and_fidelity": true,
+    "retry": false,
+    "prior_gpu_seconds": 12309.613504877227,
+    "prior_fidelity_seconds": 12030.72668002863,
+    "new_total_limits_not_reset": true
+  }
 }

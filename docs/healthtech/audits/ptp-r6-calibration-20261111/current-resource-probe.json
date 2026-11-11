@@ -1,0 +1,179 @@
+{
+  "status": "PASS_CURRENT_IDLE_AND_CONSERVATIVE_DISK",
+  "remote": {
+    "project_job_logical_bytes": 2155809153,
+    "free_bytes": 101603717120,
+    "terminal_states": [
+      {
+        "job": "ptp-sg-r4-materialization-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-pipeline-fixture-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-evaluator-20261110-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-evaluator-20261110-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v3",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-critic-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r6-source-attachment-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-sacr-continuation-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-boundary-preflight-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-syn-sacr004-20261110-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r3-synthetic-smoke-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-token-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r5-screening-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r2-synthetic-smoke-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r6-source-fixture-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-exposure-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-baseline-20261110-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r2-tokenizer-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r5-critic-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-profile-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-exact-source-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-cpu-preflight-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r3-census-20261111-v2",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-native-sacr-fidelity-20261110-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r4-cpu-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-graph-input-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-r6-native-input-preflight-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sacr-r5-token-diagnosis-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      },
+      {
+        "job": "ptp-sg-r5-source-attachment-20261111-v1",
+        "status": "exited",
+        "pid": 0
+      }
+    ],
+    "approved_gpu_occupied": false,
+    "journal_absent": true,
+    "calibration_job_absent": true,
+    "memory_available": "124365876 kB"
+  },
+  "local_logical_bytes": 2455800768,
+  "retained_prior_disk_bound": 22235236650,
+  "R6_reserve_bytes": 4294967296,
+  "combined_conservative_bound_bytes": 31141813867,
+  "disk_cap_bytes": 42949672960,
+  "no_model_or_GPU_dispatch": true
+}

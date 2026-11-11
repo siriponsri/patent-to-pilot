@@ -1,0 +1,21 @@
+{
+  "gate": "attempt_accounting",
+  "status": "PASS",
+  "package_sha256": "53324c7290231aa51a147dbd341d6984fc304bceafb2577d8479a792eadc5bc2",
+  "dispatch_identity": {
+    "approval_sha256": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+    "package_sha256": "53324c7290231aa51a147dbd341d6984fc304bceafb2577d8479a792eadc5bc2",
+    "input_manifest_sha256": "060c43e25e80db58808b025d801ea981a18765fcddd46be125cc25fb6ff809fc",
+    "model_identity_sha256": "5b4f4a7317919979affc88df9837a6741ffa6715bf39d9516fe6cd4816ac9ac2",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "evidence_sha256": {
+    "docs/healthtech/audits/ptp-r6-calibration-20261111/verification.json": "265d12bbde462ee7423a079c3767d60a06b9d118b98ab7ca2491d63d24e4b988"
+  },
+  "qualification": "ENGINEERING_PRECONDITIONS_ONLY; live GPU/model/isolation checks remain required",
+  "source_mapping": "Production source manifest exactly matches real authored pipeline; schema/native dependencies matched separately",
+  "real_R6_model_calls": 0,
+  "graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114",
+  "receipt_sha256": "d099018d1ef47e48782dc756812a9b79b03209b6ffd837556933d89c1fdb7ac2"
+}

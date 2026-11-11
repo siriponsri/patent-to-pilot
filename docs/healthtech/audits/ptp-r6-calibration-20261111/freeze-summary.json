@@ -1,0 +1,17 @@
+{
+  "status": "FROZEN_READY_FOR_LIVE_ADMISSION",
+  "attempt_id": "ptp-r6-calibration-20261111-v1",
+  "maximum_calls": 24,
+  "seconds": 7200,
+  "manifest_sha256": "d15a328f89aee4a3ba5efd51adb4ef16139bcb42941d37ba468b0a9787843fb5",
+  "package_sha256": "53324c7290231aa51a147dbd341d6984fc304bceafb2577d8479a792eadc5bc2",
+  "configuration_sha256": "c59afc2ed8e5a34942d21bfe41c6ee077e03f8a8e8b03943d33d2bdc98923a4e",
+  "task_manifest_sha256": "060c43e25e80db58808b025d801ea981a18765fcddd46be125cc25fb6ff809fc",
+  "owner_approval_sha256": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "tests": 256,
+  "GPU_remaining_after_reservation_seconds": 671690.3864951228,
+  "fidelity_remaining_after_reservation_seconds": 211169.27331997137,
+  "created_utc": "2026-11-11T14:23:30.338332+00:00",
+  "model_calls": 0,
+  "journal_initialized": false
+}
