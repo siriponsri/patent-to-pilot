@@ -1,0 +1,69 @@
+{
+  "status": "PASS_AUTHORED_FULL_CALIBRATION_PIPELINE",
+  "real_model_calls": 0,
+  "gpu_seconds": 0,
+  "authored_backend_invocations": 31,
+  "actual_grammar_tokens_checked": 3649,
+  "whole_wall_seconds": 93.15686573600033,
+  "charged_cpu_seconds": 91.88928407499999,
+  "worker_peak_rss_bytes": 1116348416,
+  "bundle_fixture_results": [
+    {
+      "case": "normal",
+      "authored_backend_invocations": 3,
+      "expected_error": null,
+      "pass": true
+    },
+    {
+      "case": "invalid_envelope",
+      "authored_backend_invocations": 2,
+      "expected_error": null,
+      "pass": true
+    },
+    {
+      "case": "post_backend",
+      "authored_backend_invocations": 2,
+      "expected_error": "RuntimeError",
+      "pass": true
+    },
+    {
+      "case": "exhausted_budget",
+      "authored_backend_invocations": 0,
+      "expected_error": "TimeoutError",
+      "pass": true
+    },
+    {
+      "case": "deadline",
+      "authored_backend_invocations": 0,
+      "expected_error": "TimeoutError",
+      "pass": true
+    },
+    {
+      "case": "missing_file",
+      "authored_backend_invocations": 0,
+      "expected_error": "FileNotFoundError",
+      "pass": true
+    }
+  ],
+  "mocked_boundaries": [
+    "dispatch_authority",
+    "model_weight_observer",
+    "GPU_lock",
+    "model_loader",
+    "CUDA_telemetry",
+    "device_to_cpu"
+  ],
+  "actual_boundaries": [
+    "worker_main",
+    "request_assembly",
+    "tokenizer",
+    "grammar_EOS",
+    "generation_adapter",
+    "durable_attempts",
+    "cohort",
+    "calibration_assess"
+  ],
+  "tasks_sha256": "060c43e25e80db58808b025d801ea981a18765fcddd46be125cc25fb6ff809fc",
+  "semantic_result": "Expected all-supported authored calibration failure; not an observed model outcome",
+  "qualification_limits": "CPU-only stricter resource profile; dispatch authorization, GPU lock/load/device and telemetry explicitly doubled. Live GPU admission and exact dispatch freeze remain separate."
+}

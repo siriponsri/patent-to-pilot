@@ -242,5 +242,41 @@
         "read_only": true
       }
     ]
+  },
+  {
+    "job": "ptp-r6-pipeline-fixture-preflight-20261111-v1",
+    "original_receipt_sha256": "62d91dec01d3cba9c1a4e83b060eb213213c74b9c36df9bcf3ff51e2e2218479",
+    "status": "PASS_BEFORE_START",
+    "nano_cpus": 2000000000,
+    "container_memory_bytes": 1610612736,
+    "memory_swap_bytes": 1610612736,
+    "network": "none",
+    "root_readonly": true,
+    "gpu_devices": [],
+    "tmpfs": {
+      "/tmp": "rw,nosuid,size=67108864"
+    },
+    "mounts": [
+      {
+        "target": "/code",
+        "read_only": true
+      },
+      {
+        "target": "/declaration.json",
+        "read_only": true
+      },
+      {
+        "target": "/deps",
+        "read_only": true
+      },
+      {
+        "target": "/out",
+        "read_only": false
+      },
+      {
+        "target": "/models/qwen3-8b",
+        "read_only": true
+      }
+    ]
   }
 ]

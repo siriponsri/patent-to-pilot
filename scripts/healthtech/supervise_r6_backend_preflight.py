@@ -14,7 +14,7 @@ def add_temporary_workspace(config):
     return result
 def main():
     import resource
-    if NAME not in ('ptp-r6-profile-preflight-20261111-v1','ptp-r6-critic-preflight-20261111-v1','ptp-r6-graph-input-preflight-20261111-v1','ptp-r6-native-input-preflight-20261111-v1') or Path(__file__).resolve().parent!=JOB:raise RuntimeError('fixed job required')
+    if NAME not in ('ptp-r6-profile-preflight-20261111-v1','ptp-r6-critic-preflight-20261111-v1','ptp-r6-graph-input-preflight-20261111-v1','ptp-r6-native-input-preflight-20261111-v1','ptp-r6-pipeline-fixture-preflight-20261111-v1') or Path(__file__).resolve().parent!=JOB:raise RuntimeError('fixed job required')
     resource.setrlimit(resource.RLIMIT_AS,(512*1024**2,512*1024**2))
     resource.setrlimit(resource.RLIMIT_FSIZE,(16*1024**2,16*1024**2))
     with (JOB/'admission.json').open('x') as f:json.dump({'retry':False},f)
@@ -25,6 +25,7 @@ def main():
         raw=(JOB/'declaration.json').read_bytes();d=json.loads(raw);digest=hashlib.sha256(raw).hexdigest()
         if d['run_id']!=NAME or d['wall_seconds']!=600:raise RuntimeError('declared CPU scope mismatch')
         worker={'graph-input':'preflight_r6_graph_inputs.py','native-input':'preflight_r6_native_inputs.py',
+                'pipeline-fixture':'qualify_r6_calibration_pipeline.py',
                 'profile':'preflight_r6_backend.py','critic':'preflight_r6_backend.py'}[d['kind']]
         approval=json.loads((JOB/'owner-approval.json').read_bytes())
         if approval.get('status')!='APPROVED' or digest not in approval['declarations_sha256'].values():raise RuntimeError('approval binding missing')

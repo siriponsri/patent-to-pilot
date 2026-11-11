@@ -1,5 +1,9 @@
 # Patent-to-Pilot shared project memory
 
+## Latest R6 actual CPU pipeline qualification
+
+Read HANDOFF for current writer and publication state. Native100 full profile/generic inputs passed (200 requests, zero risks). Actual Docker CPU-only authored pipeline passed through R6 worker, tokenizer, grammar/EOS, adapter, durable attempts, cohort and calibration scoring: 31 simulated backend invocations, 3649 checked tokens, 93.157 seconds. Entire output tree is SIMULATED; no real model/GPU calls. Seven CPU jobs terminal. Factorial composition reviewed; controller/global-ledger faults tested. Final Phase0 evidence binding and frozen calibration dispatch remain before GPU. Graph R6 remains closed at33 technical risks of114. Audit: docs/healthtech/audits/ptp-r6-phase0-execution-20261111.
+
 ## Current R6 preparation
 
 Read HANDOFF and INDEX-PLAN first. R6 owner approved all three decisions and goal is ACTIVE; Phase0 engineering is in progress and model dispatch is not ready. See docs/healthtech/audits/ptp-r6-preparation-20261111/owner-approval.json. Latest:174 local tests and52 real CPU tokenizer/grammar cases PASS; native source282 join completed once. Graph R6 closed at33 technical input risks out of114, before model/retrieval/cards. SACR continues Phase0. See docs/healthtech/audits/ptp-r6-phase0-execution-20261111/. Canonical audit: docs/healthtech/audits/ptp-r6-preparation-20261111/. Exact proposed scope: docs/healthtech/research/plans/R6-BOUNDED-LONG-RUN.md. Prior entries below are historical; do not reuse their old approval or running-state text.

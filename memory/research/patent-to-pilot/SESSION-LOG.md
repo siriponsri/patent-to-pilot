@@ -1,5 +1,20 @@
 # Sanitized session outcomes
 
+## R6 transport gate accepted; production dispatch freeze next 2026-11-11T21:19:13.294257+07:00
+
+Independent runtime reviewer accepted approvedPhase0gate4 authoredtransportqualification from realDockerfixture plusactualcontrollerfaulttests. Verified31simulatedcalls3649grammartokens91.8893CPU,exit0/PID0/noOOM; noactualmodel/GPUclaim. Noadditional speculativegates. Remainingbeforefirstcalibration: freezeproductionpackage andmapexistingqualificationreceipts tounchangedcomponenthashes; assembleexactgate/declarationmanifests inclacceptedfactorialcomposition; reconcilecurrentbudgets/reservations andinitializefixeddispatchjournalonce; liveisolation/GPUavailability/sharedlock/model/decoderchecks atdispatch, chargewholestageoccupancy. CPU2/2GiBfixture doesnotproveGPU8/32GiBloading and neednotrepeat successfultransport. GoalACTIVE,parentsolewriter,Graphclosed,cards0. Screenedpublicationnext,lastpushedf8c5f11.
+
+
+## R6 real Docker authored pipeline qualification passed 2026-11-11T21:18:55.044376+07:00
+
+GoalACTIVE parentsolewriter. RealCPUjob ptp-r6-pipeline-fixture-preflight-20261111-v1 terminalexit0/PID0/OOMfalse. Actual R6worker.main/requestassembly/pinnedtokenizer/grammarEOS/generationadapter/durablereservations/cohort/assess exercised:24 authoredall-supportedoutputs correctlyfail14criticalcalibrationverdicts, plusnormalbundle3calls,invalidenvelope2,postbackendunknown2, budget/deadline/missing/replay0.31simulatedbackendinvocations,3649grammarcheckedtokens; realmodel/GPU0. EntireoutputSIMULATED, neverimport dummy GPUmetrics. Wholewall93.156866s workerCPU90.983247/controller0.906037,charged91.889284s; workerRSS1116348416bytes, enforcedcontainer1536MiB+controller512MiB noaggregateRSSclaim.1200CPUreservation settledonce, additional100localconservativecharged, historicalcostsunchanged. All7CPUcontainers terminal, sanitizedisolationrefreshed. Gate4reviewpending alongside actualcontrollerprecreate/unknownfaultfixtures; stricterCPUprofile, authority/load/GPUlock/device explicitlymocked. Progress/projectmemoryupdated. Next finalPhase0receipt/packagebinding and livefreshbudget/idleinspection beforefirstcalibration; no duplicateapproval needed. Graphclosed33of114; no cards/nativegeneration/retrieval. Lastpushedf8c5f11 currentcheckpoint readyforscreenedpublication.
+
+
+## R6 authored pipeline fixture frozen before CPU staging 2026-11-11T21:14:29.564469+07:00
+
+GoalACTIVE parent solewriter. Prepared stdlib qualificationdriver invoking actualcalibrationworker.main, realtokenizer/grammar/EOS/generationadapter/cohort/assess with authoredmodelCPU double; includes normal3stagebundle, invalidenvelope, postbackendunknown, exhaustedbudget, deadline, missingprompt and replay. Expected31authoredbackendinvocations, realmodel/GPU0; entireoutputtree SIMULATED marker prevents importing dummy GPU/modelmetrics. Staticreview accepted CPUrouting, requestedsupervisorallowlist/pin andsimulationlabel added. Corrected fixtureproposal version to actualevidence-v3 beforedispatch. No runtime attemptyet. Stage oneCPU2/RAMtotal2GiB/600s job; reserve1200CPUseconds plus100conservative local within remainingbudget; no corpus/query/qrels/testmounts or weightsloading. MockGPUlocks/loader/authority are explicit, liveGPUqualification remains separate. Lastpushedf8c5f11 currentchangeslocal; checkpointbeforebackground, nextstage/launchonce/monitor exacthandle.
+
+
 ## R6 authored factorial composition accepted by reviewer 2026-11-11T21:09:05.438154+07:00
 
 Independent research reviewer accepted gate7authoredcomposition: actualdeduplicated R6view/component indices and blocks feed existingfactorialscorer, identity checksbeforesearch, handcomputedscore/tie/exclusion/work/cachetests covercontract. FivePASS parentmeasured, reviewerread-onlydidnotrerun. Realencoder/native retrieval/runtimeisolation/fidelity remainseparate; caller must enforcehumanfidelity before scorer. Remaining immediatePhase0gate is exactmockedfullpipeline inintendedDocker thenpackage/gatereceiptfreeze. GoalACTIVE parentsolewriter,Graphclosed,noGPU/model/cards. Screenedpublicationnext lastpushed75402b0.

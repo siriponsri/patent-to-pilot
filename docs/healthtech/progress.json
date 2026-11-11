@@ -3525,15 +3525,25 @@
   "st1_r6_phase0_20261111": {
     "status": "IN_PROGRESS",
     "goal": "ACTIVE_OWNER_APPROVED",
-    "audit": "docs/healthtech/audits/ptp-r6-phase0-20261111",
+    "audit": "docs/healthtech/audits/ptp-r6-phase0-execution-20261111",
     "local_tests": 174,
     "gpu_admission": "NOT_READY",
     "model_calls": 0,
     "runtime_foundations": "IMPLEMENTED_LOCAL_TESTED",
-    "next_gate": "SACR_GLOBAL_ATTEMPT_NATIVE_INPUT_AND_GENERATION_TRANSPORT",
+    "next_gate": "FINAL_PHASE0_RECEIPTS_AND_FROZEN_CALIBRATION_DISPATCH",
     "real_tokenizer_grammar_cases": 52,
     "source_join_families": 282,
     "graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114",
-    "sacr_status": "ACTIVE_PHASE0"
+    "sacr_status": "ACTIVE_PHASE0",
+    "native_input_queries": 100,
+    "native_input_requests": 200,
+    "native_input_risks": 0,
+    "authored_docker_pipeline": "PASS_31_SIMULATED_BACKEND_INVOCATIONS_3649_GRAMMAR_TOKENS",
+    "authored_factorial_composition": "PASS_REVIEWED",
+    "controller_and_global_ledger": "IMPLEMENTED_FAULT_TESTED",
+    "local_tests_note": "174 was prior combined suite; later targeted suites have separate metered receipts and are not summed",
+    "real_R6_model_calls": 0,
+    "real_R6_GPU_seconds": 0,
+    "owned_CPU_jobs_terminal": 7
   }
 }

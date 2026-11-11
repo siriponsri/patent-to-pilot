@@ -1,0 +1,112 @@
+{
+  "job": "ptp-r6-pipeline-fixture-preflight-20261111-v1",
+  "case_files": 0,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T14:14:54.358840336Z",
+    "FinishedAt": "2026-11-11T14:16:27.18582289Z"
+  },
+  "terminal": {
+    "status": "TERMINAL",
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "engine": {
+      "Version": "29.9.3",
+      "ApiVersion": "1.56",
+      "MinAPIVersion": "1.40"
+    },
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-11T14:14:54.358840336Z",
+      "FinishedAt": "2026-11-11T14:16:27.18582289Z"
+    },
+    "whole_wall_seconds": 93.15686573600033,
+    "controller_cpu_seconds": 0.906036818
+  },
+  "receipt": {
+    "status": "PASS_AUTHORED_FULL_CALIBRATION_PIPELINE",
+    "real_model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "authored_backend_invocations": 31,
+    "bundle_fixture_results": [
+      {
+        "case": "normal",
+        "authored_backend_invocations": 3,
+        "expected_error": null,
+        "pass": true
+      },
+      {
+        "case": "invalid_envelope",
+        "authored_backend_invocations": 2,
+        "expected_error": null,
+        "pass": true
+      },
+      {
+        "case": "post_backend",
+        "authored_backend_invocations": 2,
+        "expected_error": "RuntimeError",
+        "pass": true
+      },
+      {
+        "case": "exhausted_budget",
+        "authored_backend_invocations": 0,
+        "expected_error": "TimeoutError",
+        "pass": true
+      },
+      {
+        "case": "deadline",
+        "authored_backend_invocations": 0,
+        "expected_error": "TimeoutError",
+        "pass": true
+      },
+      {
+        "case": "missing_file",
+        "authored_backend_invocations": 0,
+        "expected_error": "FileNotFoundError",
+        "pass": true
+      }
+    ],
+    "actual_grammar_tokens_checked": 3649,
+    "expected_semantic_failure": true,
+    "tasks_sha256": "060c43e25e80db58808b025d801ea981a18765fcddd46be125cc25fb6ff809fc",
+    "assessment_sha256": "f5e7ef45796fc24cc5bb9914edbf71f48a07ee8c7c434133631ef2d9939a78af",
+    "mocked_boundaries": [
+      "dispatch_authority",
+      "model_weight_observer",
+      "GPU_lock",
+      "model_loader",
+      "CUDA_telemetry",
+      "device_to_cpu"
+    ],
+    "actual_boundaries": [
+      "worker_main",
+      "request_assembly",
+      "tokenizer",
+      "grammar_EOS",
+      "generation_adapter",
+      "durable_attempts",
+      "cohort",
+      "calibration_assess"
+    ],
+    "wall_seconds": 91.4346887540014,
+    "cpu_seconds": 90.98324725699999,
+    "worker_peak_rss_bytes": 1116348416
+  }
+}

@@ -641,9 +641,16 @@
         "cpu_seconds": 12.923172004000001,
         "manifest_sha256": "d4da535377d3186e1904bcbb749367104c708a91103b99f95c346aefe1428b08",
         "private_output_sha256": "450db5566e20ffc084190c0932f455921a59936f65167df802095852e3e0d446"
+      },
+      "pipeline-fixture": {
+        "status": "TERMINAL_PASS_AUTHORED",
+        "declaration_sha256": "330bc88a674a7696a098f65535f16f394924d3ce271c733d25eff05923ae3dce",
+        "cpu_seconds": 91.88928407499999,
+        "real_model_calls": 0,
+        "gpu_seconds": 0
       }
     },
-    "remote_cpu_charged_seconds": 217.97404116600003,
+    "remote_cpu_charged_seconds": 309.86332524100004,
     "source_jobs": {
       "fixture": {
         "status": "TERMINAL_PASS",
@@ -694,7 +701,7 @@
         }
       }
     },
-    "local_cpu_conservative_charged_seconds": 700,
+    "local_cpu_conservative_charged_seconds": 800,
     "local_cpu_measured_seconds": 77.1875
   },
   "r6_graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114_NO_MODEL"

@@ -1,0 +1,8 @@
+{
+  "status": "APPROVED",
+  "basis": "Owner-approved R6 Phase0 gate4 authored full-pipeline CPU qualification before GPU",
+  "owner_approval_sha256": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "declarations_sha256": {
+    "pipeline-fixture-declaration.json": "330bc88a674a7696a098f65535f16f394924d3ce271c733d25eff05923ae3dce"
+  }
+}

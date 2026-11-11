@@ -1,3 +1,7 @@
+# Latest authored full-pipeline evidence
+
+Real Docker CPU-only qualification completed: actual R6 worker main, request assembly, pinned tokenizer, grammar/EOS, generation adapter, durable attempts, calibration cohort and assessment; 31 authored backend invocations and 3649 grammar-checked tokens. Calibration all-supported outputs correctly fail the fixed semantic criteria. Synthetic bundle, invalid envelope, post-backend unknown, budget/deadline denial, missing file and replay were exercised. The entire remote output tree is marked SIMULATED; internal dummy model/GPU metrics must never enter research cost accounting. Real model/GPU use was zero. See pipeline-fixture-summary.json for exact mocked boundaries and limits.
+
 # Latest native100 input evidence
 
 Tokenizer-only native input preflight completed: 100 fixed queries, 200 full profile/generic requests, zero input-limit risks. No truncation, model calls or GPU. See native-input-summary.json, declaration, terminal observation and isolation receipt. This does not pre-admit critic requests: complete generated views must be tokenized before every critic call. Production runtime qualification and semantic calibration remain incomplete.
