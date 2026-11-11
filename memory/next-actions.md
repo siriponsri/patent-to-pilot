@@ -1,3 +1,11 @@
+## ST1 R2 engineering and Neo4j connection 2026-11-11T07:14:49.017013+07:00
+
+Parent sole repo writer; last verified pushed bd4242a. Dedicated Research Patent01 now RUNNING; authenticated local read returned 1 (HTTP 202), version2026.10.2. No Neo4j MCP tools exposed; used local HTTP Query API. Initial combined currentUser probe returned400; minimal read succeeded. No database writes/imports, credentials saved, or system settings changed. This supersedes earlier INSTALLING observation.
+
+Prospective compact v2 unions exact overlapping source occurrences, preserves separate identical occurrences, retains explicit context, and abstains on ambiguous/unresolved evidence. Original renderer/artifacts unchanged. Targeted tests20PASS, including distinct identical clauses; engineering review completed. No real-dev v2 evaluation, model/retrieval calls, or semantic PASS. Source hash and sanitized receipt: docs/healthtech/audits/ptp-sacr-r2-engineering-20261111/checkpoint.json.
+
+R1 remains stopped at21flags over20cap; S/G R1 remains failed. New-round authority retained within cumulative limits; fidelity remaining20235.73218671605s, no reset. GoalACTIVE. Next: freeze complete R2 extraction/bundle design and cost admission before dispatch; evaluate global fixes without repairing R1 outputs; prepare new S/G feasibility contract before graph import; update manuscript R1 terminal counts. Both protected tests closed, no cards issued.
+
 ## New round authorized and failure audit 2026-11-11T07:07:33+07:00
 
 Parent sole writer; last verified pushed96a0a75. Owner authorized audit/fixes and a NEW ROUND if needed, and supplied dedicated Neo4j instance credentials in chat. Credentials MUST NOT appear in repo/handoff/log output. No new experiments dispatched yet. Original SACR remains stopped at frozen cap21>20; original S/G remains failed. New round may use new prospective configuration after diagnosis/fixtures; keep all old results, same protected-test and cumulative resource limits, and declare changed sampling/representation transparently before new outcomes. Do not treat this as permission for unbounded retries, new paid models, training, corpus re-encoding or full-corpus LLM extraction. Conditional MTM allocation still depends on DAPFAM gates; current card ledger has0cards.

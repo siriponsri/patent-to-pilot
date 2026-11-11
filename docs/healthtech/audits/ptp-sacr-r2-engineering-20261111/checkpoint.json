@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-11-11T07:14:49.017013+07:00",
+  "status": "ENGINEERING_ONLY",
+  "renderer_version": "sacr-compact-source-interval-union-v2",
+  "source_sha256": "33b112b6de5565299c44a693f84e0e0328200c9b21703e1349b6bbea59a357c8",
+  "tests": "20 PASS: compact v2 and original views",
+  "real_data_evaluation": "NOT_RUN",
+  "neo4j": {
+    "instance": "Research Patent01",
+    "version": "2026.10.2",
+    "endpoint": "local HTTP Query API",
+    "authenticated_read": "PASS: RETURN 1 returned 1, HTTP 202",
+    "mcp_tools_available": 0,
+    "database_writes": "NOT_RUN",
+    "prior_probe": "HTTP 400 for combined currentUser probe; minimal query succeeded"
+  },
+  "model_calls": 0,
+  "protected_test_access": false
+}
