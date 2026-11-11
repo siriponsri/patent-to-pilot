@@ -1,4 +1,5 @@
 """Strict local-critic receipt parsing; uncertainty escalates, never auto-PASS."""
+import json
 from .mtm_runtime import InputBoundaryError, decode_json, exact_fields
 from .sacr_native_fidelity import digest
 
@@ -16,6 +17,10 @@ def parse_critic(raw, *, query_id, source, artifacts):
             not artifacts or any(type(k) is not str or type(v) is not str for k, v in artifacts.items())):
         raise InputBoundaryError('invalid critic source/artifact contract')
     value = decode_json(raw)
+    try:
+        json.dumps(value, ensure_ascii=False).encode('utf-8')
+    except UnicodeError:
+        raise InputBoundaryError('invalid Unicode scalar in critic; no repair') from None
     exact_fields(value, {'query_id', 'source_sha256', 'dimensions', 'findings'})
     if value['query_id'] != query_id or value['source_sha256'] != digest(source.encode()):
         raise InputBoundaryError('critic identity mismatch')

@@ -1,3 +1,11 @@
+## ST1 R2 complete per-query bundle runner 2026-11-11T07:36:30.849727+07:00
+
+Parent sole writer; last verified pushed3656079. Implemented explicit profile->generic->selective->critic orchestration and local one-call executor adapter. All stage prompt/contract pins checked beforedispatch; each exclusive attempt reservation/messages,rawnormalreturn and costs bound from its own directory. Malformed profile retained/charged; independently valid generic/selective artifacts retained if peer fails; no critic on incompletebundle. Infrastructure/identity/budget uncertainty stops and leaves durableunknown marker. Automaticunflagged is never fidelityPASS. Same destination cannot restart. Admission rechecked after modelwrapper/grammarsetup.
+
+35targeted testsPASS. Initial3fixture failures traced to synthetic profile MTM inputkind and corrected toDAPFAM_TA. Independent review found escaped surrogate in decoded critic reason could bypass normal-rejection classification; fixed parse_critic to reject withoutrepair, regression preserves all4costs and returnsUNASSESSABLE. Finalre-reviewpending. No realmodelcall, retrieval, cards or newresource reservation. Receipt: docs/healthtech/audits/ptp-sacr-r2-engineering-20261111/bundle-runner-checkpoint.json.
+
+Next close review; build bounded100-query outer loop with riskcapstop and whole-run accounting; freeze per-stage budget and one synthetic smoke; verify existing model/GPUlock/isolation before dispatch. Alreadymeasuredprofileinputs100pass,max2788; otherbundleinputs and runtime throughput stillunknown. Originalfidelityremaining20235.732s unchanged. GoalACTIVE;bothprotectedtestsCLOSED.
+
 ## ST1 R2 real-tokenizer preflight 2026-11-11T07:30:49.857457+07:00
 
 Parent sole writer; last verified pusheda3a70d5. Ran one CPU-only preflight in fixed job ptp-sacr-r2-tokenizer-preflight-20261111-v1 using existing pinned tokenizer and original curated474dev/fixed100sample hashes. All100profile prompts fit8192input limit; max2788,total181274,0exceeded,0truncated. Whole supervisor7.814442453s; innerCPU6.418046379s;0GPU/modelcalls. Actual tokenizer Qwen2TokenizerFast. Container terminal exited0,OOMfalse,PID0; do not restart.

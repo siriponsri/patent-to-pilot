@@ -3326,5 +3326,18 @@
     "whole_wall_seconds": 7.8144424529746175,
     "model_calls": 0,
     "gpu_seconds": 0
+  },
+  "st1_r2_bundle_runner_20261111": {
+    "timestamp": "2026-11-11T07:36:30.849727+07:00",
+    "status": "BUNDLE_ENGINEERING_PASS_NOT_DISPATCHED",
+    "source_hashes": {
+      "src/patent_to_pilot/research/sacr_r2_bundle_runner.py": "0e0b9fad71566f46e566d8e3ae4a59ed3d2ad92c2788920d5caa60b3594d738f",
+      "src/patent_to_pilot/research/sacr_fidelity_screen.py": "bf289cc05c22372c052dd319ca083951f7b0fb0f61a68c1917cacff87472f09d"
+    },
+    "tests": "35 PASS bundle runner, bundle screen, critic screen, generated token profile",
+    "model_calls": 0,
+    "review": "Critic decoded-surrogate issue fixed with full-bundle retained-cost regression; final re-review pending",
+    "initial_fixture_failures": "3 failures due authored profile fixture retaining MTM input kind; corrected fixture to DAPFAM_TA",
+    "runtime": "Local one-call adapter implemented; full-cohort supervisor, staging and live model execution NOT_RUN"
   }
 }
