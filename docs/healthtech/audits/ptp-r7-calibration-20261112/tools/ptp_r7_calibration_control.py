@@ -35,6 +35,7 @@ r=subprocess.run(['ssh','-o','BatchMode=yes','chaw@100.77.149.83','python3 -'],i
 if r.returncode:print(r.stderr.decode()[-3000:]);r.check_returncode()
 value=json.loads(r.stdout)
 if mode=='start' or 'terminal' in value:(A/('launch.json' if mode=='start' else 'terminal-observation.json')).write_text(json.dumps(value,indent=2)+'\n')
+else:(A/'latest-live-observation.json').write_text(json.dumps(value,indent=2)+'\n')
 brief={k:v for k,v in value.items() if k not in ('completion',)}
 if 'completion' in value:brief['completion']={k:v for k,v in value['completion'].items() if k!='events'}
 print(json.dumps(brief))
