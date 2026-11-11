@@ -1,5 +1,35 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## R5 final integrity checks passed; conditional work complete 2026-11-11T18:36:02.937196+07:00
+
+Parent solewriter closing approvedR5package. Exactdispatchedsourcepins matchcurrentfiles;21normalEOS generationhashes/calls/tokensmatchaggregates; ledger192/64capconservationPASS,reservations0,read-onlyfixedinputs/networknoneverified; currentreportlinksPASS,61integratedtestsPASS. Finaldiagnosis9SOURCE_QUOTE_NOT_EXACT;12validautomatedcriticsflaggedall7dimensions, notindependentsemanticproof. Bothconfigurationsclosed;79source+100aliasunscreened,0cards/edges; native/pilot/full-dev/MTMNOT_RUN. No activeownedGPUjob; rawprivatepreserved. R5report/manuscript/plan/progress/aggregatecloseout readyfornormalcommit/push. Lastverifiedpushedbe0f342. Afterpublication, writerownershipreleasedfornextaccount; anynewmethodneedsprospectivescope, no implicitretry orbudgetreset.
+
+
+## R5 conditional long run closed; final report prepared 2026-11-11T18:34:11.476172+07:00
+
+R5 approvedconditionalstages completeorblockedbyfailedprerequisites: SACRcandidate1closed after3EOS calls170.946s; Graphstoppedrisk21 after21 sourceunits,179 notscreened,whole2612.905s,terminalPID0,allcostssettledonce,reservation0. No cards/humanreview/acceptededges; native5/100,pilot20,fulldev474,MTM NOT_RUN. No newretrievaleffect; onlyexistingB0 andPaper53descriptiveexposure. Report/manuscript/comparability/progress updatedwithnegativeoutcomes andlimits; directpublishedreplicationNOT_ESTABLISHED. RemainingGPU188.581h/fidelity60.658h doesnotreopenfailedgates. Parentsolewriter, finalpublicationpending; lastverifiedpushedbe0f342. Next verifyaggregate/source/privacy/linkchecks,publishfinalhandofftogether,closeconditionalgoal. No newtrial proposedoractivated; protectedtestsclosed.
+
+
+## R5 Graph screening settled at predeclared risk cap 2026-11-11T18:34:08.964702+07:00
+
+Parent solewriter ACTIVE; Graph fixedjob terminal/PID0, risk21 earlystop after 21 units; 179 unscreened, no fullpopulationfailureestimate. Reasons {'MALFORMED_OR_UNGROUNDED_CRITIC': 9, 'ESCALATE': 12}; invalidcritic counts not semanticfindings. Whole 2612.904538s chargedonceGPU+fidelity,57600sreservationreleased; knowncallsadded21,historicalunknownretained. Rawoutputsprivate; canonicalgraph-screen-result aggregate/terminal/isolation. Cards0/edges0,pilot/full-devNOT_RUN prerequisitefailed,SACRcandidateclosed. No rerun/retry/test/Neo4jwrite. Next finalize honestreport/manuscript/progress,privacycheck andpublishhandoffwithcurrentledger. Lastverifiedpushedbe0f342; finaldocumentspending.
+
+
+## Graph R5 monitoring checkpoint at19 risk units 2026-11-11T18:30:31.870890+07:00
+
+Parent solewriter ACTIVE; exactGraphjob ptp-sg-r5-screening-20261111-v1 remainsRUNNING/PID649083,19completedsourceunitsallRISK:9malformed-or-ungroundedcritic and10ESCALATE. Unit019currentlyreserved/inprogress; no redispatch. Predeclaredrisk21stop unchanged,57600sGPU/fidelityreservationstillpendingterminal. Currentunitandfinalcostnotinferredfrompartialstate. Priorcompletedunit15tooklongerbutfinishednormally; no knowninterruption. Cards0/edges0/nativecomparisonsNOT_RUN. Screenedcodecheckpointbe0f342pushedverified; finalreport/ledgerpublicationwillfollowterminalreconciliation; upcomingreviewrequiresno ownerdecision unlessactualhuman gate reached.
+
+
+## Graph R5 interim critic diagnosis 2026-11-11T18:06:16.317733+07:00
+
+Graph screening RUNNING,8completedsourceunits allRISK at inspection:5MALFORMED_OR_UNGROUNDED_CRITIC and3ESCALATE. Read-only diagnostic on8completedEOSrecords identifies5SOURCE_QUOTE_NOT_EXACT; no candidatequote/dimension/identity mismatches observed bythisdiagnostic. Thisiscriticreliabilityevidence, not5validatedsemanticerrors; no outputrepair orcriteriachange. Samejob ptp-sg-r5-screening-20261111-v1, no redispatch;57600sreservationpendingterminal. Parentsolewriter/mainlastpushedbe0f342; cards0/edges0/newretrievalNOT_RUN. Continueunchangedrisk21stop andfinalsettlement; reportrawprivatelyandaggregatesonly.
+
+
+## R5 checkpoint publication verified 2026-11-11T17:58:46.417721+07:00
+
+Parent solewriter ACTIVE. Screened342file research checkpoint committed and pushed be0f342de876b27b3b05c24fc988a23ab853df20; remote main verified exactsameSHA. Unrelatedownerhandoff excluded. Graph ptp-sg-r5-screening-20261111-v1 stillrunning,4completedriskunits at latestinspection, no terminal; retain57600s GPU/fidelityreservation and monitorwithoutredispatch. Integrated61testsPASS; cards0/edges0/newretrievalNOT_RUN. Added canonicalexecutionREADME for continuation; subsequentstatusupdatespendingnextpublication. SACRcandidate1closed, nativeblocked; remainingapprovedconditionalwork dependsGraphgate. Goalserviceoldblockedstate unchanged; chat executioncontinues underownerapproval.
+
+
 ## R5 screened publication checkpoint prepared 2026-11-11T17:55:29.795929+07:00
 
 Parent solewriter; existingownerpublicationauthority retained. Preparing exactcurrentcode/docs/authoredfixtures/aggregateevidence plusdependentR3/R4work for normalcommit/push; unrelatedownerhandoff excluded. Privacy review: no rawGraph/native/corpus/PDF/model/private diagnostics in selection; historicalR3synthetic generations and authoredgrammarfixtures explicitlyallowed, sourceIDs/hashes/receipts retained. JSONparsePASS,credentialpatternscan0hits,diffcheckPASS; integrated61targetedtestsPASS. Graphjob ptp-sg-r5-screening-20261111-v1 remainsRUNNING observed3riskunits; no retry/no newjob,57600sreservation remains,finalcostpending. SACRclosed/nativeNOT_RUN;cards0/edges0. Baseac48e02; publicationverification pending, do notclaimpushedyet.

@@ -1,0 +1,97 @@
+{
+  "status": "SCREENED_FINAL_REPORT_LEDGER_AND_AGGREGATES",
+  "excluded_owner_file": true,
+  "private_raw_outputs_included": false,
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "sha256": "37763aa501adaae8fd5e14be770fe7f616b930c43769858cb244021e818ab5c0",
+      "bytes": 160159
+    },
+    {
+      "path": "HANDOFF.md",
+      "sha256": "73e0d60553e9d340b7917d2ff676e381f148a10957f81aa2864ad843ac4d6227",
+      "bytes": 203210
+    },
+    {
+      "path": "INDEX-PLAN.md",
+      "sha256": "ba5ac272cb54d141a18aafe599708f8915ca4424c998b1bd7d48788e37a8b75d",
+      "bytes": 163976
+    },
+    {
+      "path": "MASTER-PLAN.md",
+      "sha256": "0347e0e86eeb211ed16c6226fd4923fe0b2c1ed2c86900ee26a77ecda3751718",
+      "bytes": 80283
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/resource-ledger.json",
+      "sha256": "c9ed6707c3ee838358fc174403899aba44c65213254217f6fa6ebc8c6482a077",
+      "bytes": 23036
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/README.md",
+      "sha256": "91ffc7788f3870e432202397442e90b1bb15def272abd58cbdf25b085c1a1411",
+      "bytes": 4386
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/closeout-validation.json",
+      "sha256": "5f711f958b47cb842aa2dfe3dde1822fd6b020ca48ed1f08d6e1c96f699dd584",
+      "bytes": 534
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-screen-result/aggregate.json",
+      "sha256": "20d4a85897b9fb41e38ce3a08e81cd55e7fcc41646211f6fb6d90afe3b357965",
+      "bytes": 1541
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-screen-result/critic-diagnostic-aggregate.json",
+      "sha256": "6b9980c5b0360ac91e668493f77cc6e38f16b5f190957e168deeafb4c3a4debf",
+      "bytes": 361
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-screen-result/isolation.json",
+      "sha256": "1162ce2e6edb981ab16ab3540d4b275efea3c15d369179dfb0d1c930d66b57c8",
+      "bytes": 11269
+    },
+    {
+      "path": "docs/healthtech/audits/ptp-r5-execution-20261111/graph-screen-result/terminal.json",
+      "sha256": "c684dccda23890638bf5ba87dab44c418420f300c90a5fd42f602879e718e8f9",
+      "bytes": 576
+    },
+    {
+      "path": "docs/healthtech/progress.json",
+      "sha256": "de2763a8ccfafc60709aa2cc0d4c03620ad8024bbd7cb7f0ad87deec63689bf3",
+      "bytes": 321502
+    },
+    {
+      "path": "docs/healthtech/research/PAPER1-LONG-RUN-REPORT.md",
+      "sha256": "b4c9b30460514865a6aee4463d65ad1e1aec4cec8c57d48709893b680443ddc5",
+      "bytes": 14573
+    },
+    {
+      "path": "docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md",
+      "sha256": "ff330e8f983ff841398aaf4b93ff93d093c7e3acf426834ba195f758eb19ede2",
+      "bytes": 28398
+    },
+    {
+      "path": "docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md",
+      "sha256": "66a5ee96be89c51df4d3a583ddc3431275e17a477002b9a49c44fab68441697a",
+      "bytes": 12506
+    },
+    {
+      "path": "docs/healthtech/research/plans/R5-BOUNDED-LONG-RUN.md",
+      "sha256": "f97344b71b8c864c4302cb11ca27c45d3c0a6553faaccd5fd091a355461b1f09",
+      "bytes": 12360
+    },
+    {
+      "path": "memory/next-actions.md",
+      "sha256": "7912a7502330229e81db60de8f51a8013dab953bd18082569d775df02dd706e4",
+      "bytes": 537924
+    },
+    {
+      "path": "memory/research/patent-to-pilot/SESSION-LOG.md",
+      "sha256": "1d67d0cf91656281c73ab3381bf80c977544b5ca846afd94367a3f8eeff86366",
+      "bytes": 64294
+    }
+  ]
+}

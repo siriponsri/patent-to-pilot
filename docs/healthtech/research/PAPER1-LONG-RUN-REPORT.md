@@ -1,14 +1,29 @@
 # Paper1 bounded long-run report, 11 November2026
 
-## Current R5 execution checkpoint, 11 November 2026
+## R5 bounded-run closeout, 11 November 2026
 
-The owner approved the bounded R5 long run and limited replacement policy. Earlier planning and closeout sections below are historical; they do not describe current permissions or running jobs.
+The approved conditional run has reached its stopping gates. SACR candidate 1 and the Graph screening configuration did not qualify for native comparison. Consequently native SACR5/100, pilot20, full dev474 and conditional MTM are NOT_RUN. There is no new retrieval effect estimate, not a measured zero or negative effect. Both protected tests remain closed.
 
-SACR synthetic candidate 1 completed three calls in 170.946 seconds whole wall time (2,745 input / 1,442 output tokens; peak allocated GPU memory 17,323,849,216 bytes). It did not pass: the critic envelope used incorrect literal-quote key names, while independent inspection also found missing source mechanism/constraint coverage and lost quantity units. The malformed critic's labels are not validated semantic findings. This candidate is closed; native SACR, pilot and full-dev comparisons remain NOT_RUN. These are construction and acceptance failures, not measured negative retrieval effects. No native query was regenerated.
+| Stage | Observed result | Time and resources |
+|---|---|---|
+| SACR synthetic candidate1 | Three EOS calls; critic envelope rejected; separately observed source-coverage and unit omissions; candidate closed | 170.946s whole wall; 2,745 input / 1,442 output tokens; peak allocated GPU17,323,849,216bytes |
+| Graph fixed-source attachment | 100 original family texts attached privately; no re-extraction | 2.245s CPU wall |
+| Graph exact-critic preflight | Four authored real-tokenizer cases passed; software evidence only | 18.327s CPU wall |
+| Graph fixed source100 + alias100 screening | Stopped at21 risk units after21 completed source units; 179 units not screened | 2612.905s whole wall; 21 observed model calls; 63064 input / 22554 output tokens; peak allocated GPU26555098624bytes |
+| Human review / accepted graph edges | 0 cards issued / 0 accepted edges; cap gate prevents card release | No human judgments requested |
+| Native comparative evaluation | NOT_RUN because prerequisites failed | No new ranking scores or significance tests |
 
-Graph fixed-source attachment completed 100 families in 2.245 seconds CPU wall time, preserving the original source text privately. Exact critic contract/tokenizer preflight passed 4/4 authored cases in 18.327 seconds; 28 targeted local fixtures passed. Graph screening is RUNNING in `ptp-sg-r5-screening-20261111-v1`, with fixed source100 followed by alias100, at most 200 calls and 16 hours reserved inside existing cumulative limits. Essential source omissions remain risks even outside the extractor's cue vocabulary. Risk 21 stops the configuration; only complete screening with at most 20 risks can produce the frozen 5-source + 5-alias sentinel selection and risk cards. Human judgments remain required. Cards issued and accepted edges remain zero.
+Graph risk reasons: {"ESCALATE": 12, "MALFORMED_OR_UNGROUNDED_CRITIC": 9}. Invalid or ungrounded critic responses are failures of the screening evidence, not validated semantic findings. The remaining escalations are automated risk judgments, not independent expert review. Source-first processing and the prospective risk21 stop left the alias stratum untested; neither a corpus-wide error rate nor alias incompatibility can be estimated from this stopped prefix. No output was repaired or regenerated, and no threshold was changed after observing results.
 
-Before Graph settlement, cumulative charged GPU time is 9,696.709 seconds and fidelity time is 9,417.822 seconds; the separate Graph reservation is 57,600 seconds in each budget, not a completed charge. Historical unknown attempts remain unknown. Caps are GPU192h/fidelity64h/full-dev128h, with the latter two inside GPU; no ledger reset. Canonical evidence: `docs/healthtech/audits/ptp-r5-execution-20261111/` and the cumulative resource ledger. Both benchmark tests remain closed; no Neo4j writes or new retrieval comparison has occurred. Existing native baseline and literature comparability limitations remain unchanged.
+The SACR profile omitted mechanism/constraint coverage and quantity units independently of the critic's incorrect finding-key names. Fixing that envelope alone would not establish fidelity; no additional candidate was used to reroll the failed profile. Two prospective synthetic candidate slots remain unused. This closes the tested candidate, not the general research hypothesis.
+
+Cumulative charged GPU time is 12309.614s; cumulative fidelity time is 12030.727s. Remaining allowances are 188.581h GPU and 60.658h fidelity. The 57,600-second Graph reservation was released after charging actual whole supervisor time once. Known model calls are a lower bound of84; historical unknown attempts remain retained. Caps stay GPU192h/fidelity64h/full-dev128h, with fidelity/full dev inside GPU. Remaining allowance does not reopen failed gates. No paid API, training, corpus re-encoding, Neo4j write or permission change occurred.
+
+Canonical evidence: [R5 execution audit](../audits/ptp-r5-execution-20261111/README.md), [Graph terminal aggregate](../audits/ptp-r5-execution-20261111/graph-screen-result/aggregate.json), and [cumulative ledger](../audits/ptp-mtm-dapfam-resume-20261110/resource-ledger.json). Raw source/model records remain private. Engineering checks include 35/35 tokenizer/callback/EOS cases, the exact-source admission case, and 61 final integrated local tests; these do not certify semantic quality.
+
+The measured native baseline and Paper53-style descriptive exposure remain the only retrieval results. Direct replication of published DAPFAM scores remains NOT_ESTABLISHED because cohort, model and protocol differ. Paired effects, wins/losses, rescue/displacement and uncertainty analyses remain NOT_RUN. The manuscript is an evidence-backed research draft, not submission-ready. Any later methodological revision requires a new prospective specification; protected-test evaluation and submission remain separate decisions.
+
+Earlier planning and closeout sections below are historical. Their old resource figures, permissions and running-state statements do not supersede this current closeout.
 
 ## R5 engineering qualification, 11 November 2026
 

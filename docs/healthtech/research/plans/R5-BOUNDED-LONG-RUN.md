@@ -4,6 +4,10 @@
 
 Both decisions approved in call_172d9619b8e64a6781a0ff36fb183240. Execute within all ceilings and gates below. The following original proposal is retained as the approved specification; its pending wording is historical. New goal creation was rejected because an unfinished old goal exists; do not falsely complete that goal. Continue authorized work in this chat. Approval receipt: audits/ptp-r5-execution-20261111/owner-approval.json.
 
+## Terminal execution, 11 November 2026
+
+The conditional run closed at its declared gates: SACR synthetic candidate1 failed fidelity/critic acceptance; Graph stopped at21 source risk units in2612.905s, leaving79source+100alias units unscreened. No cards or accepted edges; native/pilot/full-dev/MTM NOT_RUN. All new attempts settled, Graph reservation released, historical unknowns preserved. Two synthetic candidate slots unused; no reroll to seek a favorable outcome. See [execution closeout](../../audits/ptp-r5-execution-20261111/README.md).
+
 ## Original approved proposal
 
 Status: PROPOSED, NOT ACTIVATED. No new model generation is authorized by this

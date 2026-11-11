@@ -1,0 +1,9 @@
+{
+  "completed_eos_source_units_inspected": 21,
+  "unit_level_mismatch_counts_overlapping": {
+    "SOURCE_QUOTE_NOT_EXACT": 9
+  },
+  "raw_text_returned": false,
+  "interpretation": "diagnostic only; no output repair or independent semantic acceptance",
+  "diagnostic_script_sha256": "f48b348c3aef98c7583e8d1443a92aae217e8de9c9a04a2f207b5dd45b42a112"
+}

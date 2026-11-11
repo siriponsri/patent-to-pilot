@@ -80,7 +80,7 @@ Adopt for Paper1:
 - Any exact published-model reproduction requiring new corpus encoding, training or protected queries remains out of scope. Report the gap rather than silently relaxing the owner's rules.
 - Additional paper comparison itself consumes zero human fidelity cards and zero model calls. Existing60-card ceiling across all benchmarks/configurations is unchanged; S/G allocation remains a separate pre-execution gate.
 
-Completion of this supplement requires an implemented metric contract, actual authorized measurements and final comparability labels. The source/protocol matrix, implemented metric contract, actual B0 dev measurements and descriptive exposure are complete. Direct published-score replication is NOT_ESTABLISHED; paired method comparisons are NOT_RUN because no comparator has passed all required gates. Earlier configurations failed prerequisite gates; R5 Graph screening is active under the separately approved bounded plan. No method-quality improvement is claimed.
+Completion of this supplement requires an implemented metric contract, actual authorized measurements and final comparability labels. The source/protocol matrix, implemented metric contract, actual B0 dev measurements and descriptive exposure are complete. Direct published-score replication is NOT_ESTABLISHED; paired method comparisons are NOT_RUN because no comparator has passed all required gates. Earlier configurations failed prerequisite gates; the approved R5 Graph screening also stopped at its predeclared risk cap, with no accepted comparator. No method-quality improvement is claimed.
 
 ## Descriptive exposure of the existing baseline
 

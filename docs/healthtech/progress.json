@@ -3490,17 +3490,21 @@
     "owner_decision": "PENDING_COMBINED_REQUEST"
   },
   "st1_r5_execution_20261111": {
-    "status": "SACR_CANDIDATE_CLOSED_GRAPH_SCREENING_RUNNING",
+    "status": "CONDITIONAL_RUN_CLOSED_FAILED_PREREQUISITES",
     "audit": "docs/healthtech/audits/ptp-r5-execution-20261111",
     "sacr_calls": 3,
     "sacr_whole_wall_seconds": 170.94607556700066,
     "native_sacr": "NOT_RUN_GATE_FAILED",
     "graph_job": "ptp-sg-r5-screening-20261111-v1",
-    "graph_reserved_gpu_fidelity_seconds": 57600,
+    "graph_reserved_gpu_fidelity_seconds": 0,
     "cards_issued": 0,
     "accepted_edges": 0,
     "retrieval_comparison": "NOT_RUN",
     "protected_tests": "CLOSED",
-    "publication": "PREPARING_SCREENED_CHECKPOINT"
+    "publication": "FINAL_CHECKED_READY_TO_PUBLISH",
+    "graph_result": "STOP_REVIEW_CAP_EXCEEDED",
+    "graph_screened_units": 21,
+    "graph_risk_units": 21,
+    "graph_whole_wall_seconds": 2612.904537661
   }
 }

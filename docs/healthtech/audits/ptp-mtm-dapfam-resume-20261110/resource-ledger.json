@@ -1,10 +1,10 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 691200,
-  "gpu_conservative_charged_seconds": 9696.708967216226,
-  "gpu_remaining_seconds": 681503.2910327838,
+  "gpu_conservative_charged_seconds": 12309.613504877227,
+  "gpu_remaining_seconds": 678890.3864951228,
   "charge_basis": "Whole SYN003/native baseline/SYN004/native fidelity supervisor intervals; native interrupted attempt token/call counts remain unknown, whole wall charged.",
-  "model_calls": 63,
+  "model_calls": 84,
   "cpu004_calls": 0,
   "automatic_retries": 0,
   "full_dev_started": false,
@@ -59,8 +59,8 @@
   },
   "model_calls_count_is_lower_bound": true,
   "generation_attempts_with_unknown_call_token_costs": 3,
-  "fidelity_generation_charged_seconds": 9417.82214236763,
-  "fidelity_generation_remaining_seconds": 220982.17785763237,
+  "fidelity_generation_charged_seconds": 12030.72668002863,
+  "fidelity_generation_remaining_seconds": 218369.27331997137,
   "native_unstarted_continuation_reservation": {
     "status": "CLOSED_FROZEN_REVIEW_CAP_STOP_NO_RETRY",
     "seconds": 10800,
@@ -428,27 +428,28 @@
     "receipt": "../ptp-r5-diagnosis-20261111/summary.json"
   },
   "r5_long_run": {
-    "status": "GRAPH_SCREEN_RESERVED",
+    "status": "TERMINAL_SACR_AND_GRAPH_GATES_FAILED",
     "owner_reply": "call_172d9619b8e64a6781a0ff36fb183240",
     "initial_gpu_charged_seconds": 9525.762891649225,
     "initial_fidelity_charged_seconds": 9246.876066800629,
     "new_gpu_cap_seconds": 646200.0,
     "new_fidelity_cap_seconds": 178200.0,
-    "new_gpu_charged_seconds": 170.94607556700066,
-    "new_fidelity_charged_seconds": 170.94607556700066,
+    "new_gpu_charged_seconds": 2783.850613228001,
+    "new_fidelity_charged_seconds": 2783.850613228001,
     "synthetic_candidates_started": 1,
     "synthetic_model_calls_observed": 3,
     "synthetic_reserved_calls": 0,
     "synthetic_reserved_seconds": 0,
-    "reserved_gpu_seconds": 57600,
-    "reserved_fidelity_seconds": 57600,
+    "reserved_gpu_seconds": 0,
+    "reserved_fidelity_seconds": 0,
     "new_disk_reservation_bytes": 8589934592,
     "disk_admission_receipt": "../ptp-r5-execution-20261111/admission.json",
     "first_candidate": "ptp-sacr-r5-synthetic-smoke-20261111-v1",
     "note": "Reservations additive; global remaining fields remain cap-minus-settled charges. One active model job only.",
-    "graph_screening_reserved": true,
+    "graph_screening_reserved": false,
     "graph_maximum_units": 200,
-    "graph_maximum_model_calls": 200
+    "graph_maximum_model_calls": 200,
+    "graph_screening_settled": true
   },
   "r5_synthetic_1": {
     "status": "COMPLETED_THREE_EOS_CALLS_UNASSESSABLE_NOT_FIDELITY_PASS",
@@ -544,5 +545,58 @@
     "wall_seconds": 16.11324567599968,
     "worker_peak_rss_bytes": 998100992,
     "whole_wall_seconds": 18.326803470000414
+  },
+  "r5_graph_screening": {
+    "status": "STOP_REVIEW_CAP_EXCEEDED",
+    "screened_units": 21,
+    "risk_units": 21,
+    "reason_counts": {
+      "MALFORMED_OR_UNGROUNDED_CRITIC": 9,
+      "ESCALATE": 12
+    },
+    "stratum_counts": {
+      "source": 21
+    },
+    "unscreened_units": 179,
+    "normal_generation_records": 21,
+    "unsettled_attempt_count": 0,
+    "whole_wall_seconds": 2612.904537661,
+    "model_calls_observed": 21,
+    "input_tokens_observed": 63064,
+    "output_tokens_observed": 22554,
+    "peak_gpu_allocated_bytes": 26555098624,
+    "review_selection_status": "STOP_REVIEW_CAP_EXCEEDED",
+    "cards_issued": 0,
+    "accepted_edges": 0,
+    "semantic_pass": false,
+    "retrieval": "NOT_RUN",
+    "retry": false,
+    "terminal_sha256": "c684dccda23890638bf5ba87dab44c418420f300c90a5fd42f602879e718e8f9",
+    "raw_and_diagnostics": "RETAINED_PRIVATE_NOT_PUBLISHED",
+    "valid_critic_dimension_status_counts": {
+      "roles_direction": {
+        "unsupported": 12
+      },
+      "quantities_units": {
+        "unsupported": 12
+      },
+      "polarity_exceptions": {
+        "unsupported": 12
+      },
+      "condition_attachment": {
+        "unsupported": 12
+      },
+      "essential_coverage": {
+        "unsupported": 12
+      },
+      "abstraction_support": {
+        "unsupported": 12
+      },
+      "context_preservation": {
+        "unsupported": 12
+      }
+    },
+    "dimension_counts_interpretation": "automated judgments only; invalid critics excluded, not independently validated errors",
+    "result_sha256": "535b3f11f48afe637aed96acd87d34534372550ba5fd5fc8ab42cd37a39b2f89"
   }
 }

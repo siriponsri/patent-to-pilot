@@ -1,0 +1,16 @@
+{
+  "status": "PASS_CLOSEOUT_INTEGRITY_NOT_FIDELITY",
+  "source_files_matched": 194,
+  "generation_records_verified": 21,
+  "normal_eos_records": 21,
+  "token_and_call_totals": "MATCH",
+  "ledger_cap_conservation": "PASS",
+  "reserved_gpu_fidelity_seconds": 0,
+  "isolation": "READ_ONLY_FIXED_INPUTS_NETWORK_NONE",
+  "current_report_links": "PASS",
+  "latest_integrated_local_tests": 61,
+  "raw_native_graph_or_credentials_published": false,
+  "protected_tests": "CLOSED",
+  "cards_issued": 0,
+  "accepted_edges": 0
+}
