@@ -1,10 +1,10 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 691200,
-  "gpu_conservative_charged_seconds": 12309.613504877227,
-  "gpu_remaining_seconds": 678890.3864951228,
+  "gpu_conservative_charged_seconds": 14058.613504877227,
+  "gpu_remaining_seconds": 677141.3864951228,
   "charge_basis": "Whole SYN003/native baseline/SYN004/native fidelity supervisor intervals; native interrupted attempt token/call counts remain unknown, whole wall charged.",
-  "model_calls": 84,
+  "model_calls": 108,
   "cpu004_calls": 0,
   "automatic_retries": 0,
   "full_dev_started": false,
@@ -59,8 +59,8 @@
   },
   "model_calls_count_is_lower_bound": true,
   "generation_attempts_with_unknown_call_token_costs": 3,
-  "fidelity_generation_charged_seconds": 12030.72668002863,
-  "fidelity_generation_remaining_seconds": 218369.27331997137,
+  "fidelity_generation_charged_seconds": 13779.72668002863,
+  "fidelity_generation_remaining_seconds": 216620.27331997137,
   "native_unstarted_continuation_reservation": {
     "status": "CLOSED_FROZEN_REVIEW_CAP_STOP_NO_RETRY",
     "seconds": 10800,
@@ -701,12 +701,13 @@
         }
       }
     },
-    "local_cpu_conservative_charged_seconds": 900,
-    "local_cpu_measured_seconds": 102.5
+    "local_cpu_conservative_charged_seconds": 1100,
+    "local_cpu_measured_seconds": 102.5,
+    "compact_preparation_pending_cpu_settled_seconds": 200
   },
   "r6_graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114_NO_MODEL",
   "r6_calibration_reservation": {
-    "status": "RESERVED",
+    "status": "SETTLED",
     "attempt_id": "ptp-r6-calibration-20261111-v1",
     "seconds": 7200,
     "maximum_calls": 24,
@@ -714,6 +715,84 @@
     "retry": false,
     "prior_gpu_seconds": 12309.613504877227,
     "prior_fidelity_seconds": 12030.72668002863,
-    "new_total_limits_not_reset": true
+    "new_total_limits_not_reset": true,
+    "whole_wall_seconds": 1748.3975548730014,
+    "charged_seconds": 1749
+  },
+  "r6_calibration": {
+    "status": "CALIBRATION_FAILED",
+    "assessment": {
+      "status": "CALIBRATION_FAILED",
+      "cases": 24,
+      "invalid_evaluator_cases": 23,
+      "positive_cases_flagged": 0,
+      "required_verdict_misses": 0,
+      "unrelated_dimension_flags": 1,
+      "irrelevant_evidence_cases": 0,
+      "execution_attestation": "REQUIRED_SEPARATELY",
+      "native_fidelity_proven": false,
+      "independent_expert_review": false,
+      "execution_rejected_cases": 23
+    },
+    "whole_wall_seconds": 1748.3975548730014,
+    "charged_seconds": 1749,
+    "charge_basis": "Whole supervisor occupancy rounded upward to a whole second; per-call GPU times are not added again.",
+    "model_calls": 24,
+    "costs": {
+      "events": 24,
+      "metrics": {
+        "model_calls": {
+          "value": 24,
+          "observed_lower_bound": 24,
+          "unknown_events": 0
+        },
+        "input_tokens": {
+          "value": 33988,
+          "observed_lower_bound": 33988,
+          "unknown_events": 0
+        },
+        "output_tokens": {
+          "value": 15799,
+          "observed_lower_bound": 15799,
+          "unknown_events": 0
+        },
+        "embedding_texts": {
+          "value": 0,
+          "observed_lower_bound": 0,
+          "unknown_events": 0
+        },
+        "index_dot_products": {
+          "value": 0,
+          "observed_lower_bound": 0,
+          "unknown_events": 0
+        },
+        "candidate_dot_products": {
+          "value": 0,
+          "observed_lower_bound": 0,
+          "unknown_events": 0
+        },
+        "peak_memory_bytes": {
+          "value": 17713604608,
+          "observed_lower_bound": 17713604608,
+          "unknown_events": 0
+        },
+        "operation_wall_seconds": {
+          "value": 1691.077153492999,
+          "observed_lower_bound": 1691.077153492999,
+          "unknown_events": 0
+        },
+        "gpu_seconds": {
+          "value": 1691.077153492999,
+          "observed_lower_bound": 1691.077153492999,
+          "unknown_events": 0
+        }
+      },
+      "end_to_end_elapsed_seconds": null,
+      "standalone_arm_costs": "NOT_DERIVED",
+      "receipt_completeness": "REQUIRES_EXTERNAL_ATTEMPT_RECONCILIATION"
+    },
+    "terminal_sha256": "ad9caceeb1d49b2f2ea261c22507c40d36b1117f7afb3934b4d7dcfc918baaa6",
+    "raw24_reassessment": "MATCHES_FROZEN_ASSESSOR",
+    "retry": false
   }
 }

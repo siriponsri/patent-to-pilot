@@ -23,6 +23,9 @@ def test_exact_unicode_whitespace_and_references():
     assert 'text_ref' in prepared['messages'][1]['content']
     original = prepared['original']
     assert len(prepared['messages'][1]['content']) < len(original['messages'][1]['content'])
+    assert prepared['version']=='sg-compact-transport-v2'
+    assert 'findings ONLY for dimensions marked unsupported or uncertain' in prepared['messages'][0]['content']
+    assert 'findings must be an empty array' in prepared['messages'][0]['content']
 
 
 @pytest.mark.parametrize('target', ['wire', 'hash', 'scope', 'schema'])

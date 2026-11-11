@@ -1,0 +1,685 @@
+{
+  "status": "READ_ONLY_RAW_DIAGNOSIS",
+  "model_calls": 0,
+  "output_repaired": false,
+  "contract_counts": {
+    "inconsistent critic finding": 23,
+    "VALID": 1
+  },
+  "rows": [
+    {
+      "case_id": "050dbbf0c6f6f200",
+      "expected_kind": "positive",
+      "generation_sha256": "55a3865073392a2b21f2de1eb19f7e518207894f73308525e8a5ba3eb6802a1f",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 7,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "0570d8593837c976",
+      "expected_kind": "negative",
+      "generation_sha256": "a65b07b064321017d9b005a87f58fb09a95947b0a5e73dae6b861eb8ce0dbae2",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 1,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "1d2c4776e68c960f",
+      "expected_kind": "negative",
+      "generation_sha256": "6bbf5837546af5483e823e93c4cf1ccb1a84e376baaad651028ea8a96bd7b26b",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "context_preservation",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "27f155161b3842e9",
+      "expected_kind": "uncertain",
+      "generation_sha256": "9cd40bb18dbfd303f79d12911d578920046ba3068e60250f9bdf7bf00870f885",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 2,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "29acac63c47cda2a",
+      "expected_kind": "negative",
+      "generation_sha256": "8d3045841cc9a16b264f83608997254bda1793ec6ab30d97cf2306cb36c47e6a",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "context_preservation",
+        "essential_coverage",
+        "quantities_units"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 4,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "2e912eead9d182ab",
+      "expected_kind": "negative",
+      "generation_sha256": "6555117764b4cfdc91ed4dc246ba3be600eae7aa4c509cd118c2c18dec56dbd6",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "context_preservation",
+        "essential_coverage"
+      ],
+      "findings_on_supported_dimensions": 1,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "33afc0bfbf899bd7",
+      "expected_kind": "negative",
+      "generation_sha256": "b0a11ee8010863264d8ee8e3664438c16a182b0b7815838bf8e84617c93a074d",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "context_preservation",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 2,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "368a68a5deb468b0",
+      "expected_kind": "uncertain",
+      "generation_sha256": "0ee72baa9e946ed0825084f1efa396c9f19831f8578cd1ba7af2531934131617",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 3,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "3ba5732490115271",
+      "expected_kind": "negative",
+      "generation_sha256": "93cf3c6efb18c0a61ec6b628ae0789454c7c21f9ea485dbcc3f1f10fc7b75b26",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 2,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "57a6c248dc3bcde8",
+      "expected_kind": "negative",
+      "generation_sha256": "d17f6fc72288e96291417d31b5a7fbb187e2e5fec9b642e315d9eaa44befca48",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "polarity_exceptions",
+        "context_preservation",
+        "quantities_units",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support"
+      ],
+      "findings_on_supported_dimensions": 3,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "6431550c749ffaf6",
+      "expected_kind": "uncertain",
+      "generation_sha256": "84672c7edfd7a5835aaaff3dc714be78ae69ae300b140ee303d522ac428648e0",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 1,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "67070d7339ba5f85",
+      "expected_kind": "negative",
+      "generation_sha256": "34949f5d34be46f8eb7016a69eb75b949a82814c80f357d54333fc2cc2f809f2",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 2,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "7a0762269ff9f9e4",
+      "expected_kind": "positive",
+      "generation_sha256": "98b349ce421271c9414de17c5b5dda7aa44b64bb8ab60ea98a3f590e690f119b",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "essential_coverage",
+        "polarity_exceptions"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 4,
+      "findings_without_references": 2,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "96a2c90fb1fcf533",
+      "expected_kind": "uncertain",
+      "generation_sha256": "318868ff2ef9e349dfc5894a91a8d9feb310c40cc7791e7d7340c28c32fd0dd0",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "polarity_exceptions"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 6,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "994a6b45e44d8cb1",
+      "expected_kind": "positive",
+      "generation_sha256": "e6d8416814058c94f08f173571baccbbe3f90e8a57d8dc61d4782941f8cf7376",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "essential_coverage",
+        "quantities_units"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "polarity_exceptions",
+        "condition_attachment",
+        "context_preservation",
+        "quantities_units",
+        "essential_coverage",
+        "abstraction_support"
+      ],
+      "findings_on_supported_dimensions": 4,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "9f2433a3dc16c540",
+      "expected_kind": "positive",
+      "generation_sha256": "76bfbc38e6d8ee908f32723abd8f72a1d83b873edfa6b862d98aeaec07331d89",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 4,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "a02cbb97a52243ac",
+      "expected_kind": "negative",
+      "generation_sha256": "114ae2329470e0afd6d8275f153fe6baff8473390a5fee5dc0820dba8a72e18a",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 4,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "ac2ad6edbcfc930c",
+      "expected_kind": "positive",
+      "generation_sha256": "7c5726eab4ca1522c3eb9d3703e11feefbb477e0d2029423a41caf700b1bc1cf",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "context_preservation",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 2,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "b473d4f8ed9f9ebc",
+      "expected_kind": "negative",
+      "generation_sha256": "e663f71001e0a51294c036209eb8af5845a82b01c54ea3ae8f1f35c127089b41",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 5,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "b48aa9daa4823781",
+      "expected_kind": "positive",
+      "generation_sha256": "7f83686601ecce49c998ff64bb9a78213a83f6a26fe39ab3469f0299ead0b980",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "polarity_exceptions",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "condition_attachment",
+        "essential_coverage",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 4,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [
+        "abstraction_support",
+        "polarity_exceptions"
+      ],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "b80eeb2bd7e10b09",
+      "expected_kind": "positive",
+      "generation_sha256": "5d211c15f1539d2571411ebc4cd509e2961b0395eb1ed76527f7b06de4acf306",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 2,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "c3e7634150f232c3",
+      "expected_kind": "positive",
+      "generation_sha256": "612a3badff84e69f16d55806ab68d0d9d4673e6b3213974d10945a3582706434",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 4,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "ddca6b1640c46ab6",
+      "expected_kind": "positive",
+      "generation_sha256": "3c176ecb4b607b82a7eff4cf2448a8cec57578fc946d739b3db52d656b052993",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 4,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "eaec269bf682d9d7",
+      "expected_kind": "positive",
+      "generation_sha256": "e15ec4a4ac1a00de3d8240b4b3873d1c1403e949de1acf0d1d8ada7362cf2beb",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "polarity_exceptions"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 6,
+      "findings_without_references": 1,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    }
+  ],
+  "no_native_semantic_conclusion": true
+}

@@ -9,7 +9,7 @@ import json
 from .mtm_runtime import InputBoundaryError
 from .reference_critic_v1 import prepare as reference_prepare, interpret as reference_interpret
 
-VERSION = 'sg-compact-transport-v1'
+VERSION = 'sg-compact-transport-v2'
 
 
 def prepare(**kwargs):
@@ -38,7 +38,12 @@ def prepare(**kwargs):
         ' Compact catalogue format: each entry is [unit ID, exact text] or '
         '[unit ID, {"text_ref": earlier unit ID}]. Resolve text_ref verbatim. '
         'Concatenate entries in order to recover the complete source or artifact; '
-        'no text was removed. Unit IDs and artifact membership remain distinct.')
+        'no text was removed. Unit IDs and artifact membership remain distinct. '
+        'Include findings ONLY for dimensions marked unsupported or uncertain; '
+        'do not include findings for supported dimensions. Every unsupported or '
+        'uncertain dimension must have at least one finding. If all dimensions '
+        'are supported, findings must be an empty array. Every finding must '
+        'include a nonblank reason and at least one source or candidate unit ID.')
     messages = [{'role': 'system', 'content': instruction},
                 {'role': 'user', 'content': json.dumps(wire, ensure_ascii=False,
                                                      separators=(',', ':'))}]
