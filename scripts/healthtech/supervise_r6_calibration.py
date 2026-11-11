@@ -36,7 +36,7 @@ def main(manifest_sha256):
         f.flush()
         import os
         os.fsync(f.fileno())
-    receipt={'status':'PREFLIGHT','retry':False,'started_unix':time.time()}
+    receipt={'status':'PREFLIGHT','retry':False,'started_unix':time.time(),'attempt_id':name,'container_name':name}
     engine=Engine();created=False
     def interrupted(*_):raise InterruptedError('calibration controller interrupted')
     signal.signal(signal.SIGTERM,interrupted)
@@ -45,6 +45,8 @@ def main(manifest_sha256):
         from patent_to_pilot.research.r6_dispatch_files import load_dispatch,validate_worker_package
         evidence=load_dispatch(job/'dispatch',manifest_path='manifest.json',manifest_sha256=manifest_sha256)
         d=evidence['declaration']
+        from patent_to_pilot.research.r6_dispatch_journal import document_hash
+        receipt['declaration_sha256']=document_hash(d)
         if d['attempt_id']!=name or d['stage']!='calibration' or d['maximum_calls']!=24:
             raise RuntimeError('fixed calibration declaration mismatch')
         validate_worker_package(root,d['files_sha256'],d['package_sha256'])
@@ -59,6 +61,11 @@ def main(manifest_sha256):
         used=subprocess.run(['nvidia-smi','--query-compute-apps=pid,gpu_uuid','--format=csv,noheader'],
             check=True,capture_output=True,text=True,timeout=10).stdout
         if GPU in used:raise RuntimeError('approved GPU occupied')
+        from patent_to_pilot.research.r6_dispatch_journal import DispatchJournal
+        journal=DispatchJournal(job.parent/'ptp-r6-control/dispatch.sqlite',d['approval_sha256'])
+        consumed=journal.claim(d,evidence['ledger'],evidence['scope'],evidence['gates'],d['ledger_generation'])
+        with (job/'global-dispatch.json').open('x') as f:
+            json.dump(consumed,f,indent=2);f.flush();os.fsync(f.fileno())
         stop=start+d['seconds']-240
         if time.monotonic()+30>=stop:raise TimeoutError('setup exhausted stage allowance')
         (job/'out').mkdir(exist_ok=False)
@@ -74,7 +81,9 @@ def main(manifest_sha256):
             try:receipt.update(status='FAILED_TERMINATED',container_state=engine.terminate(name)['State'])
             except EngineError as missing:
                 receipt['status']='FAILED_NO_CONTAINER' if missing.status==404 else 'TERMINATION_UNKNOWN'
+                if missing.status==404:receipt.update(container_outcome='NO_CONTAINER',absence_observation='ENGINE_404')
             except BaseException:receipt['status']='TERMINATION_UNKNOWN'
+        else:receipt.update(container_outcome='NO_CONTAINER',create_request_sent=False)
         raise
     finally:
         receipt.update(whole_wall_seconds=time.monotonic()-start,controller_cpu_seconds=time.process_time(),
