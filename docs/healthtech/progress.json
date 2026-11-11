@@ -3526,8 +3526,10 @@
     "status": "IN_PROGRESS",
     "goal": "ACTIVE_OWNER_APPROVED",
     "audit": "docs/healthtech/audits/ptp-r6-phase0-20261111",
-    "local_tests": 96,
+    "local_tests": 161,
     "gpu_admission": "NOT_READY",
-    "model_calls": 0
+    "model_calls": 0,
+    "runtime_foundations": "IMPLEMENTED_LOCAL_TESTED",
+    "next_gate": "ACTUAL_FACTORY_AND_STAGED_TRANSPORT"
   }
 }

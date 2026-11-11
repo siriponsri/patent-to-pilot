@@ -1,0 +1,33 @@
+{
+  "status": "PASS_LOCAL_AUTHORED_AND_REGRESSION_ONLY",
+  "tests": 161,
+  "test_wall_seconds": 9.88,
+  "command": "python -m pytest tests/test_r6_admission.py tests/test_sg_r6_scoring.py tests/test_sg_r6_manifest.py tests/test_sg_fixed_source_attachment.py tests/test_r6_prompt_admission.py tests/test_r6_evidence_separation.py tests/test_r6_critic_calibration.py tests/test_sacr_r6_bundle_runner.py tests/test_sacr_r6_components.py tests/test_r6_cohort.py tests/test_sg_r6_source_worker.py tests/test_sacr_factorial.py tests/test_sacr_embedding_inputs.py tests/test_sacr_embedding_controller.py -q -o addopts=",
+  "files_sha256": {
+    "src/patent_to_pilot/research/sacr_r6_bundle_runner.py": "e85344739e6a48689c1594be5ee9b8da82b64b7b7af866e7d298fc375db2310a",
+    "src/patent_to_pilot/research/sacr_r6_components.py": "9d73a588c713d634c9b1635c5c03a5c51c91733ec69b21f5a5242f4e6e2b8fcb",
+    "src/patent_to_pilot/research/r6_cohort.py": "e23132ce45afb0a6a577887a0e4ba156ae2bfd2d817cc5a5b6e320fa111f1944",
+    "src/patent_to_pilot/research/sg_r6_manifest.py": "41971a50824051c7045685df3046fa22c64ab8307fbf6eb0c1a3e0570cfc76df",
+    "scripts/healthtech/run_sg_r6_source_attachment.py": "9faefd3618c7dc88c92554809839d29f1a22555f0fc76b0153ac40816be50346",
+    "scripts/healthtech/supervise_sg_r6_source_attachment.py": "e84cf4f8ff2aa800fca0d816b8a6ab3e0ab8418aa2426a2ad246bbc97ea08869",
+    "tests/test_r6_admission.py": "0613d9b5e25ae2e119ac4036d50cf60589a1216fc37077be1c3f837fc037baab",
+    "tests/test_sg_r6_scoring.py": "62b280bddb26218aa2ab4cedee7cdb088939f23ef7963fff3257eee463cad82e",
+    "tests/test_sg_r6_manifest.py": "06d1226e867f008c5ca427c59a1f16d0fd7269a7e1b309832601613363bda657",
+    "tests/test_sg_fixed_source_attachment.py": "980d1830b4a4d2869778b3a73aedbd7906c7fbcf56f556f4699347cbda086091",
+    "tests/test_r6_prompt_admission.py": "c924372339ff800a537814a2d67db45c7d740974e21e99ab132f80aaaf35130d",
+    "tests/test_r6_evidence_separation.py": "512d4dbf63829d9319739cb353403b3720b924928a21f66790d816188f5a8e5a",
+    "tests/test_r6_critic_calibration.py": "288d0078e8946a03543f65d88de5c791556a56a752ba1d5b818a6178511e8020",
+    "tests/test_sacr_r6_bundle_runner.py": "683bfc0637e243a230bef48d9574f209c482d75140264515d6be1d4527075c13",
+    "tests/test_sacr_r6_components.py": "2c34bf2303988dd36acb612aeaec950569ebb340f80ea6e5e753e3477d2e51f6",
+    "tests/test_r6_cohort.py": "c51219765b9f70b63e4b66c12932eeec2d646e911e30b4e4be4ac0373b0804e3",
+    "tests/test_sg_r6_source_worker.py": "8f92ea343a05e56ae1f5e76dcc2104ef76df9d89a1e26a372b1b78aa90621ac4",
+    "tests/test_sacr_factorial.py": "719c6c5311a5387346f7c9b9058284fd58242bd3433515d272d10ecf70e3f7b4",
+    "tests/test_sacr_embedding_inputs.py": "6c6a4d41a172a951345cf369916c4d8c7cf8bc6a8217dd243f42479b9b1401ca",
+    "tests/test_sacr_embedding_controller.py": "563658239ed522ceacb01ac467b0b930ea9b1f33268f40a55c29ec392fccfc13"
+  },
+  "source_worker_import_without_site_packages": "PASS",
+  "model_calls": 0,
+  "native_corpus_join": "NOT_RUN",
+  "docker_transport": "NOT_RUN",
+  "gpu_admission": "NOT_READY"
+}

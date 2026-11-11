@@ -3,8 +3,6 @@ import hashlib
 import json
 from .mtm_runtime import InputBoundaryError, exact_fields
 from .sg_sample_integrity import check_samples
-from .r6_critic_tasks import RECORD_CRITERIA, ALIAS_CRITERIA
-from .reference_critic_v1 import prepare
 
 
 def fixed_union(source_sample, aliases):
@@ -18,6 +16,7 @@ def fixed_union(source_sample, aliases):
 
 
 def build_manifest(source_rows, source_sample, aliases):
+    from .r6_critic_tasks import RECORD_CRITERIA, ALIAS_CRITERIA
     expected=fixed_union(source_sample,aliases)
     rows={row['id']:row for row in source_rows}
     if len(rows)!=len(source_rows) or sorted(rows)!=expected:
@@ -67,4 +66,5 @@ def build_manifest(source_rows, source_sample, aliases):
 
 
 def request(unit):
+    from .reference_critic_v1 import prepare
     return prepare(**{k:unit[k] for k in ('query_id','source','artifacts','criteria','scope')})
