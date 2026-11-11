@@ -3501,10 +3501,11 @@
     "accepted_edges": 0,
     "retrieval_comparison": "NOT_RUN",
     "protected_tests": "CLOSED",
-    "publication": "FINAL_CHECKED_READY_TO_PUBLISH",
+    "publication": "PUSHED_AND_REMOTE_VERIFIED_4af62c6580c0a7443dd8890b47de70908231b725",
     "graph_result": "STOP_REVIEW_CAP_EXCEEDED",
     "graph_screened_units": 21,
     "graph_risk_units": 21,
-    "graph_whole_wall_seconds": 2612.904537661
+    "graph_whole_wall_seconds": 2612.904537661,
+    "writer_state": "COMPLETE_RELEASED_NO_ACTIVE_JOB"
   }
 }
