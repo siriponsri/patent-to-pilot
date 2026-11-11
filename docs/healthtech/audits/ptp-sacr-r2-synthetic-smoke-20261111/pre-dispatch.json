@@ -1,0 +1,9 @@
+{
+  "status": "FROZEN_NOT_DISPATCHED",
+  "transport_sha256": "ec1e84bd633a3b30b3b1807548227830898eb40a627eb4993037ca0cfeceb8e2",
+  "transport_bytes": 1392640,
+  "declaration_sha256": "1bb1b955e4ff95c72f06f6ec8ebb3a2ee3f913d8a0bdaf8145d7995a3b027aa5",
+  "source_files": 151,
+  "tests": "30 PASS supervisor/bundle/cohort",
+  "review": "All4 findings closed; no remaining scoped blocker by inspection"
+}

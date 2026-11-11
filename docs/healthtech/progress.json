@@ -3348,5 +3348,13 @@
     "model_calls": 0,
     "review": "No scoped blocker by independent inspection; outer cross-destination replay/resource/termination guards pending",
     "runtime_supervisor": "NOT_IMPLEMENTED_FOR_R2"
+  },
+  "st1_r2_synthetic_smoke_20261111": {
+    "timestamp": "2026-11-11T07:48:37.049565+07:00",
+    "status": "FROZEN_NOT_DISPATCHED",
+    "wall_seconds": 1800,
+    "maximum_calls": 4,
+    "retry": false,
+    "audit": "docs/healthtech/audits/ptp-sacr-r2-synthetic-smoke-20261111"
   }
 }

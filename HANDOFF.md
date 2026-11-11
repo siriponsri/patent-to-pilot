@@ -1,5 +1,13 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## ST1 R2 synthetic smoke pre-dispatch 2026-11-11T07:48:37.049565+07:00
+
+Parent sole writer; last verified pushed455a84e. R2 one-synthetic-bundle smoke FROZEN_NOT_DISPATCHED: fixedjob ptp-sacr-r2-synthetic-smoke-20261111-v1,maximum4calls,whole1800s,stop1560s+240s cleanup;no retry. Source is authored valve requirement, no benchmarkmount. SameQwen3-8Bfp16/eager/greedy,existingimage,oneapprovedGPU+sharedlock,CPU8,31GiBcontainer+1GiBsupervisor. Generic/selective/critic use declared prompts and normalboundedgeneration; profile uses source-token JSONgrammar. Exact declaration1bb1b955e4ff95c72f06f6ec8ebb3a2ee3f913d8a0bdaf8145d7995a3b027aa5. Transport151files1392640bytes SHAec1e84bd633a3b30b3b1807548227830898eb40a627eb4993037ca0cfeceb8e2.
+
+30targeted testsPASS. Independentpre-dispatchreview found4blockers: ledgerarithmetic,missingrequiredpins,observedloadcontract,stop-timeoutcleanup. Allfixedandreviewclosed:finitecap-minus-chargechecks,allshippedsourcepins,observedmodel/dtype/device/attention/decoderreceipt,stop/reobserve/killandUNKNOWNelapsedcleanup. No remaining scopedblocker. No generationyet. Ledgerreserved1800against BOTHremainingGPU/fidelity,priorchargesunchanged;32MiBadded conservative diskreservation. CPUtokenizer100preflight remainsPASS only.
+
+Next transportverify/freshGPUavailability/createinspect/startonce; monitor SAMEjob,neverrestartonobservationtimeout. Terminalwholewallchargedonce toGPUandfidelity,keepfailedoutput/tokenunknowns. Engineeringpass requires4normalEOS,completeparsedbundle,criticassessable; nosemantic/retrievalPASS. Ifgatefails stopthisconfiguration; no outputrepair/refill. Native100notreserved/dispatched;requiresactualsmokefeasibility andremainingbudget. Both testsclosed,0cards. GoalACTIVE. Canonicalaudit docs/healthtech/audits/ptp-sacr-r2-synthetic-smoke-20261111.
+
 ## ST1 R2 fixed-cohort controller 2026-11-11T07:41:36.152058+07:00
 
 Parent sole writer; last verified pushed901740b. Added fixed100 cohort controller: binds originalquery/samplebytes before output, verifies each returnedbundle equals durableJSON and records itsSHA, exclusivequery/rounddestinations, noresume/retry, stops immediately at21risk while20isallowed. Separatescompleted/inflight/neverstarted afterbudget orinfra failure; original100 denominator alwaysretained. Automaticcompletion requires humanreview, issues0cards and grantsnosemanticPASS.21cohort+bundlefixturesPASS; Independentread-onlyreview found no scoped blocker; outercross-destination replay/resource/termination guards remainpending. Receipt ptp-sacr-r2-engineering-20261111/cohort-checkpoint.json. No newmodel/GPUjobs.
