@@ -1,0 +1,29 @@
+{
+  "status": "RETAINED_FAILURE_AUDIT_COMPLETE",
+  "checked_normal_returns": 56,
+  "assessments_recomputed_equal": 56,
+  "distinct_irrevocable_flags": 21,
+  "compact_unflagged_not_semantic_pass": 35,
+  "rejected_profile_causes": {
+    "source quotation absent or ambiguous": 9,
+    "blocks not in source order": 1,
+    "GENERATION_OUTPUT_LIMIT": 3,
+    "condition raw text is not source backed": 1
+  },
+  "lexical_inventory_differences": {
+    "polarity_queries": 2,
+    "polarity_removed_occurrences": 1,
+    "polarity_added_occurrences": 2,
+    "numeric_queries": 6,
+    "numeric_removed_occurrences": 2,
+    "numeric_added_occurrences": 40
+  },
+  "frozen_review_cap": 20,
+  "gate_stop_confirmed": true,
+  "semantic_errors_proven": false,
+  "model_calls": 0,
+  "retrieval_calls": 0,
+  "output_repairs": 0,
+  "wall_seconds": 0.07086008973419666,
+  "observer_sha256": "eb5565c680ff334d203fdb27e932dcb56910ea685a0888c4fc2851eda29462ac"
+}
