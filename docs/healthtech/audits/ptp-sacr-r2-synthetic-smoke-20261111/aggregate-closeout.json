@@ -1,0 +1,21 @@
+{
+  "status": "FAIL_SYNTHETIC_PROFILE_SOURCE_BACKING",
+  "generation_status": "EOS_COMPLETE",
+  "diagnostic": "condition raw text is not source backed",
+  "generation_sha256": "a96cf6ebc603b15819a07e4c972e140a635472a4982913c86c875a36023a05a1",
+  "known_model_calls": 1,
+  "input_tokens": 1096,
+  "output_tokens": 1083,
+  "whole_supervisor_seconds": 163.3301514587365,
+  "generation_seconds": 102.5425956491381,
+  "peak_gpu_allocated_bytes": 16917964800,
+  "generic_selective_critic": "NOT_RUN",
+  "native_r2_100": "NOT_RUN",
+  "repair": false,
+  "retry": false,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "retrieval": "NOT_RUN",
+  "diagnostic_replay": "Same source and validator; initial local import failed before parse, corrected module path; no model call",
+  "fidelity_remaining_seconds": 20072.402035257313,
+  "gpu_remaining_seconds": 250193.51521040872
+}

@@ -180,6 +180,26 @@ those conditions are unmet. No protected-test result exists.
 
 ## 5. Cost, failures and reproducibility
 
+### Additional R2 engineering outcome
+
+A prospectively declared source-token-reference revision was tested once on an
+authored synthetic valve requirement, without benchmark data. The existing
+Qwen3-8B model returned a normal EOS profile (1096 input and 1083 output tokens),
+but a condition's text was not backed by its selected source span. The profile
+was rejected without repair or regeneration. Generic, selective and critic
+stages were not dispatched, and native R2 fidelity/pilot/retrieval remain unrun.
+This is a synthetic source-reference acceptance failure, not a retrieval result
+or a general impossibility finding. Earlier CPU tokenization of the original
+100 dev inputs passed its size limit (maximum2788/8192 tokens); that check did
+not predict successful generation.
+
+The failed smoke consumed163.330 seconds of whole supervisor time and102.543
+seconds of generation time. Peak GPU allocated memory was16917964800 bytes;
+this differs from the host-cgroup measures below. Its whole time is charged to
+both GPU and fidelity budgets, bringing cumulative charges to9006.485 and
+8727.598 seconds respectively. The fidelity allowance now has20072.402 seconds
+remaining. Historical R1 figures below retain their original checkpoint scope.
+
 The B0 supervisor interval was 40.455 seconds, including 5.829 seconds of query
 encoding and 9.985 seconds of ranking. Peak sampled host cgroup usage was
 1,960,681,472 bytes; this is not GPU memory. The first evaluator attempt failed

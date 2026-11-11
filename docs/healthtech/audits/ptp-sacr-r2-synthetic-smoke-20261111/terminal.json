@@ -1,0 +1,19 @@
+{
+  "status": "EXITED",
+  "wall_seconds": 163.3301514587365,
+  "attach_returncode": 0,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T00:49:22.349459404Z",
+    "FinishedAt": "2026-11-11T00:52:04.510772754Z"
+  },
+  "retry": false
+}

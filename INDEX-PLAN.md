@@ -1,5 +1,15 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## ST1 R2 synthetic smoke FAILED and closed 2026-11-11T07:54:25.966944+07:00
+
+Parent sole writer; last verified pushed0e6a790. Samejob terminal verified EXITED0,PID0,OOMfalse,finished2026-11-11T00:52:04.510772754Z; SSH51141terminal. Do notpoll/restart. Scientific/engineeringgateFAIL despiteprocessexit0: one normalEOSprofile rejected because condition raw text is not source backed. Rawoutputretained; exactvalidatorreplay reproducedreason, no repair/regeneration. Initial localdiagnostic import failed beforeparse then modulepath corrected.
+
+1modelcall,input1096/output1083; generation102.5426s,wholewall163.3301514587365s,peakGPUallocated16917964800bytes. Generic/selective/critic NOT_RUN; nativeR2fixed100/pilot/retrieval NOT_RUN. This is a source-reference acceptance failure on one synthetic fixture, not measured retrievalloss or general impossibility. Source/tokenizer/loadedmodel/decoderpins matched.
+
+WholewallchargedONCE to cumulativeGPUandfidelity;1800reservationreleased. GPUcharged9006.484789591283s;fidelitycharged8727.597964742686s;fidelityremaining20072.402035257313s (~5h34m32s),GPUremaining250193.51521040872s. Knowncumulativecalls59,priorunknownattempts2 retained. CurrentR2configurationSTOPPED_NO_RETRY. No cards/testaccess. Evidence ptp-sacr-r2-synthetic-smoke-20261111/aggregate-closeout.json,completion.json,terminal.json,loaded-runtime.json.
+
+Next update manuscript failure/cost panel; do independently authorized S/G R2 feasibility design/fixtures under same remainingresources, keeping old S/Gfailure and currentSACRfailure. No further SACR generation from this consumed declaration; any furthermethodrevision must be separatelyprospective and within actualauthority, never repair/refill. Neo4jconnectionisinfraonly; nofullcorpus/graphimport beforedeclaredS/Gfidelitygates. GoalACTIVE.
+
 ## ST1 R2 synthetic smoke RUNNING
 
 Verified DockerRUNNING PID3598530,started2026-11-11T00:49:22.349459404Z (07:49Bangkok),sameSSHsession51141. TransportSHA matched; isolation readbackPASS persisted. Onefixedjob ptp-sacr-r2-synthetic-smoke-20261111-v1. Do not redispatch or edit immutable remote code/declaration/ledger.1800whole/1560stop deadline,4callmaximum,syntheticonly. Calls notyetobserved; do not infer zero costs. Bothprotectedtestsclosed. Latestpushed8490cff; parentsolewriter.

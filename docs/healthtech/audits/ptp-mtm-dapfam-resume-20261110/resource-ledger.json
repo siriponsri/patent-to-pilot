@@ -1,10 +1,10 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 259200,
-  "gpu_conservative_charged_seconds": 8843.154638132546,
-  "gpu_remaining_seconds": 250356.84536186745,
+  "gpu_conservative_charged_seconds": 9006.484789591283,
+  "gpu_remaining_seconds": 250193.51521040872,
   "charge_basis": "Whole SYN003/native baseline/SYN004/native fidelity supervisor intervals; native interrupted attempt token/call counts remain unknown, whole wall charged.",
-  "model_calls": 58,
+  "model_calls": 59,
   "cpu004_calls": 0,
   "automatic_retries": 0,
   "full_dev_started": false,
@@ -59,8 +59,8 @@
   },
   "model_calls_count_is_lower_bound": true,
   "generation_attempts_with_unknown_call_token_costs": 2,
-  "fidelity_generation_charged_seconds": 8564.26781328395,
-  "fidelity_generation_remaining_seconds": 20235.73218671605,
+  "fidelity_generation_charged_seconds": 8727.597964742687,
+  "fidelity_generation_remaining_seconds": 20072.402035257313,
   "native_unstarted_continuation_reservation": {
     "status": "CLOSED_FROZEN_REVIEW_CAP_STOP_NO_RETRY",
     "seconds": 10800,
@@ -96,7 +96,7 @@
     "receipt": "../ptp-sacr-r2-engineering-20261111/tokenizer-preflight-aggregate.json"
   },
   "r2_synthetic_smoke_reservation": {
-    "status": "RUNNING",
+    "status": "CLOSED_FAILED_SYNTHETIC_PROFILE_ACCEPTANCE_NO_RETRY",
     "seconds": 1800,
     "maximum_calls": 4,
     "canonical_job": "ptp-sacr-r2-synthetic-smoke-20261111-v1",
@@ -105,6 +105,11 @@
     "incremental_disk_reserved_bytes": 33554432,
     "retry": false,
     "ssh_session": 51141,
-    "container_pid": 3598530
+    "container_pid": 3598530,
+    "actual_supervisor_seconds": 163.3301514587365,
+    "reserved_seconds_released": 1800,
+    "terminal_sha256": "3365ad2cfb954b18e635d11efa4efeac4feef71c75b56a9c91e5058e8fb57534",
+    "known_model_calls": 1,
+    "unknown_execution_attempts": 0
   }
 }
