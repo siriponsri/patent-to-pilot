@@ -26,7 +26,8 @@ def native_manifest(rows,expected_sha256):
 
 
 def run_native_section(*,destination,rows,manifest_sha256,section,configuration_sha256,
-                       run_bundle,check_admission,bridge=None,bridge_sha256=None):
+                       run_bundle,check_admission,bridge=None,bridge_sha256=None,
+                       verify_imported=None,registration=None):
     """run_bundle(index,row,path) must bind identities and return durable result.
 
     Remaining95 imports an exact immutable bridge receipt; it cannot invoke its
@@ -59,6 +60,8 @@ def run_native_section(*,destination,rows,manifest_sha256,section,configuration_
                 raise InputBoundaryError('bridge outcome identity or risk mismatch')
         risks=sum(r['risk'] for r in imported)
         if risks!=bridge['risk_units']:raise InputBoundaryError('bridge risk accounting')
+        if verify_imported is not None:
+            for item,row in zip(imported,rows[:5]):verify_imported(item,row)
     imported_events=[event for item in imported for event in item['result']['events']]
     summarize_costs(imported_events)
     out=Path(destination);out.mkdir(parents=True,exist_ok=False)
@@ -83,6 +86,7 @@ def run_native_section(*,destination,rows,manifest_sha256,section,configuration_
             risk=result['status']!='AUTOMATIC_UNFLAGGED_NOT_FIDELITY_PASS'
             item={'index':index,'query_id':row['query_id'],'source_sha256':hashlib.sha256(row['source'].encode()).hexdigest(),
                 'result':result,'result_sha256':digest(result),'risk':risk}
+            if registration is not None:item['registration']=registration(index,row,bundle_path,result)
             results.append(item);events.extend(result['events']);summarize_costs(imported_events+events)
             active=None;risks+=risk
             write_new(out/f'unit-{index:03}-receipt.json',item)
@@ -97,3 +101,52 @@ def run_native_section(*,destination,rows,manifest_sha256,section,configuration_
             'active_index':active,'completed_units':len(results),'known_events':events,
             'retry':False,'unknown_attempt':'INSPECT_BUNDLE' if active is not None else None})
         raise
+
+
+def run_registered_native_section(*,registry,namespace,execution,bundle_arguments,
+                                  destination,rows,manifest_sha256,section,
+                                  configuration_sha256,check_admission,
+                                  bridge=None,bridge_sha256=None):
+    """Production native cohort adapter; core callbacks remain authored test seams.
+
+    The controller must pin registry identity/location, namespace and configuration.
+    Every imported record is reread from its original directory before any new call.
+    """
+    from .r6_attempt_registry import run_registered_bundle,completed_bundle
+    frozen_execution=deepcopy(execution)
+    registrations={}
+
+    def verify(record,row,result):
+        claim=record['claim'];binding=json.loads(claim['binding'])
+        expected_key=json.dumps([namespace,'DAPFAM','dev',configuration_sha256,row['query_id']],
+                                sort_keys=True,separators=(',',':'),ensure_ascii=False)
+        if (claim['key']!=expected_key or binding['manifest_sha256']!=manifest_sha256
+                or binding['source_sha256']!=hashlib.sha256(row['source'].encode()).hexdigest()
+                or binding['execution_sha256']!=digest(frozen_execution)
+                or not binding.get('destination')):
+            raise InputBoundaryError('registered cohort claim identity mismatch')
+        actual=completed_bundle(binding['destination'],query_id=row['query_id'],
+            source_sha256=binding['source_sha256'],execution=frozen_execution,result=result)
+        registry.verify_completed(claim,actual)
+        return {'claim':deepcopy(claim)}
+
+    def run(index,row,path):
+        args=dict(bundle_arguments)
+        args.update(destination=path,source=row['source'],query_id=row['query_id'],
+                    execution=deepcopy(frozen_execution))
+        record=run_registered_bundle(registry=registry,namespace=namespace,
+            configuration_sha256=configuration_sha256,manifest_sha256=manifest_sha256,
+            bundle_arguments=args)
+        registrations[index]=record
+        return record['binding']['result']
+
+    def register(index,row,path,result):
+        record=registrations[index]
+        if json.loads(record['claim']['binding'])['destination']!=str(path.resolve()):
+            raise InputBoundaryError('registered bundle destination mismatch')
+        return verify(record,row,result)
+
+    return run_native_section(destination=destination,rows=rows,manifest_sha256=manifest_sha256,
+        section=section,configuration_sha256=configuration_sha256,run_bundle=run,
+        check_admission=check_admission,bridge=bridge,bridge_sha256=bridge_sha256,
+        registration=register,verify_imported=lambda item,row:verify(item['registration'],row,item['result']))
