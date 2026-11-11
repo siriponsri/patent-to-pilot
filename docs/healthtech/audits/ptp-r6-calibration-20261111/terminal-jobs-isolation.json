@@ -1,0 +1,90 @@
+{
+  "status": "EXISTING_PRESTART_RECEIPTS_COLLECTED",
+  "new_experiment": false,
+  "model_calls": 0,
+  "rows": [
+    {
+      "job": "ptp-r6-calibration-20261111-v1",
+      "status": "PASS_BEFORE_START",
+      "original_receipt_sha256": "4448cd873aa16cafa52c48d3f9c0f4452f111b2e89cc7e47414ff18f06d58c05",
+      "mounts": [
+        {
+          "target": "/code",
+          "readonly": true
+        },
+        {
+          "target": "/deps",
+          "readonly": true
+        },
+        {
+          "target": "/dispatch",
+          "readonly": true
+        },
+        {
+          "target": "/out",
+          "readonly": false
+        },
+        {
+          "target": "/models/.GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089.lock",
+          "readonly": false
+        },
+        {
+          "target": "/models/qwen3-8b",
+          "readonly": true
+        }
+      ],
+      "network_mode": "none",
+      "readonly_rootfs": true,
+      "NanoCpus": 8000000000,
+      "container_memory_limit_bytes": 33285996544,
+      "gpu_device_request_count": 1,
+      "host_source_paths": "WITHHELD_FROM_SANITIZED_RECEIPT"
+    },
+    {
+      "job": "ptp-sg-compact-input-preflight-20261111-v1",
+      "status": "PASS_BEFORE_START",
+      "original_receipt_sha256": "d44f9c0a6c845dafab970a2102f76cddf8e529a3817dd50732585f2f3a0b0ba4",
+      "mounts": [
+        {
+          "target": "/code",
+          "readonly": true
+        },
+        {
+          "target": "/declaration.json",
+          "readonly": true
+        },
+        {
+          "target": "/deps",
+          "readonly": true
+        },
+        {
+          "target": "/out",
+          "readonly": false
+        },
+        {
+          "target": "/input/alias-sample.json",
+          "readonly": true
+        },
+        {
+          "target": "/input/source-sample.json",
+          "readonly": true
+        },
+        {
+          "target": "/input/sources-private.jsonl",
+          "readonly": true
+        },
+        {
+          "target": "/models/qwen3-8b",
+          "readonly": true
+        }
+      ],
+      "network_mode": "none",
+      "readonly_rootfs": true,
+      "NanoCpus": 2000000000,
+      "container_memory_limit_bytes": 1610612736,
+      "gpu_device_request_count": 0,
+      "host_source_paths": "WITHHELD_FROM_SANITIZED_RECEIPT"
+    }
+  ],
+  "limitation": "Runtime mount isolation; controlling agent retains acknowledged host access."
+}
