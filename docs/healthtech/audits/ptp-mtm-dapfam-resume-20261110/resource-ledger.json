@@ -111,5 +111,14 @@
     "terminal_sha256": "3365ad2cfb954b18e635d11efa4efeac4feef71c75b56a9c91e5058e8fb57534",
     "known_model_calls": 1,
     "unknown_execution_attempts": 0
+  },
+  "sg_r2_feasibility": {
+    "status": "FAIL_NO_CROSS_FAMILY_CANDIDATES",
+    "cpu_wall_seconds": 1.485000000015134,
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "private_output_bytes": 135639,
+    "human_cards_issued": 0,
+    "retry": false
   }
 }

@@ -130,6 +130,18 @@ Consequently no full-corpus extraction, structured index, accepted graph edge
 or S/G retrieval comparison was run. Semantic fidelity was not assessed.
 Zero sample alias candidates do not establish zero possible corpus links.
 
+A separately declared R2 revision used semicolon-aware statement units and
+literal action/operand candidate keys, preserving source context and allowing
+only casefolding, whitespace and leading-article normalization. On the same
+exposed100-family sample it produced29 records from14 families, but again zero
+cross-family candidate pairs. Of159 explicit cue occurrences,17 were over length
+and113 did not match the fixed action vocabulary/parser. The predeclared graph
+feasibility gate therefore stopped R2 as well. The increased record coverage is
+not a retrieval gain or an independent validation. No accepted edges, full-corpus
+extraction, semantic screening, human cards or S/G retrieval measurement followed.
+The run took1.485 seconds of CPU wall time, wrote135639 private bytes and used
+no model/GPU calls. No synonym widening or replacement sample was attempted.
+
 ### 4.3 Incomplete native query-generation run
 
 The first profile stage used an agent-selected2-hour suballocation within the

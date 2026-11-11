@@ -3381,9 +3381,34 @@
   },
   "st1_sg_r2_20261111": {
     "timestamp": "2026-11-11T08:02:11.923756+07:00",
-    "status": "DECLARED_NOT_RUN",
+    "status": "FAIL_NO_CROSS_FAMILY_CANDIDATES",
     "tests": "18PASS",
     "review": "closed",
-    "declaration_sha256": "1ce22688c4bb53ffc4a31db45c7d94305ae801da6cfd85ac765f8d5e4f5d30c0"
+    "declaration_sha256": "1ce22688c4bb53ffc4a31db45c7d94305ae801da6cfd85ac765f8d5e4f5d30c0",
+    "sample_families": 100,
+    "nonempty_families": 14,
+    "empty_families": 86,
+    "records": 29,
+    "candidate_pairs": 0,
+    "sampled_candidate_pairs": 0,
+    "accepted_edges": 0,
+    "counts": {
+      "units": 1224,
+      "cue_occurrences": 159,
+      "over_length": 17,
+      "unsupported_action": 113,
+      "unresolved_operand": 0,
+      "cap_omitted": 0
+    },
+    "output_sha256": "4c5da2113c15ec044fad590010c123d2ccd346eb65c8e96eb880c08872d26138",
+    "private_output_bytes": 135639,
+    "wall_seconds": 1.485000000015134,
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "human_cards_issued": 0,
+    "semantic_fidelity": "NOT_ASSESSED",
+    "retrieval": "NOT_RUN",
+    "protected_test_access": false,
+    "retry": false
   }
 }

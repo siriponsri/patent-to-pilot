@@ -1,5 +1,13 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## ST1 S/G R2 negative feasibility result 2026-11-11T08:03:27.198976+07:00
+
+Parent sole writer; last verified pushed02508b2. Ran declaredSGR2 once afterfreeze: SAME100families,14nonempty/86empty,29records,0crossfamilypairs/0acceptededges.159cueoccurrences,17overlength,113unsupportedaction/parser. FAIL_NO_CROSS_FAMILY_CANDIDATES underpredeclaredgate. Coverage increasedfromR1(5families/6records), but doesnot establish retrievalgain orgraphfeasibility. No synonymwidening/replacementsource/automaticretry.
+
+CPUwall1.485000000015134s,private135639bytes,SHA4c5da2113c15ec044fad590010c123d2ccd346eb65c8e96eb880c08872d26138;0model/GPU/cards. Costrecordaddedonce;GPU/fidelityremainingunchanged. Privateoutput ptp-sg-sample-20261110/feasibility-v2/candidates.json; publicaggregate docs/healthtech/audits/ptp-sg-feasibility-r2-20261111/aggregate.json. Codefixtures18PASS andreviewclosed beforeexecution. Fullcorpus,Neo4jimport,S/Gpilot/retrieval NOT_RUN becausegatefailed.
+
+SACRR1/R2 andSGR1/R2 nowstopped;B0measured remains onlyretrievalresult. MTMconditionaltransfer notactivated becauseDAPFAMfidelity/pilotdidnotpass;all60cardsunissued. Both testsclosed, noGPUjobs. Next completeconsolidatedfailure/costreport and Paper1manuscript, audit everyremaininggoalrequirement and literaturecomparisonlimits; do notmarkgoalcomplete untilreport/handoffauditfinished. No newconfiguration from remainingbudgetalone. GoalACTIVE.
+
 ## ST1 S/G R2 feasibility frozen 2026-11-11T08:02:11.923756+07:00
 
 Parent sole writer; last verified pusheda07088e. Newroundauthorization covers one revisedSG candidate: sg-explicit-action-operand-v2,semicolonsplitunits,explicitconfigured/adapted/operablecues,fixed22verbs,literalaction+operand keys withcasefold/whitespace/leadingarticleonly. Fullunitandtrailingconditions retained; no semantic equivalence/compatibility/acceptededges inferred. Decimalobjectquantities preserved. Reuse SAME100lengthstratifiedfamilies andsourcepins;R1negative retained andexposure disclosed.
