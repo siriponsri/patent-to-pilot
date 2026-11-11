@@ -3272,5 +3272,12 @@
     },
     "model_calls": 0,
     "protected_test_access": false
+  },
+  "st1_r2_design_20261111": {
+    "timestamp": "2026-11-11T07:17:39.205497+07:00",
+    "status": "DESIGN_IN_PROGRESS_NOT_DISPATCHED",
+    "r1_reporting": "TERMINAL_COUNTS_CORRECTED",
+    "path": "docs/healthtech/research/plans/SACR-R2-DESIGN.md",
+    "model_calls": 0
   }
 }

@@ -1,5 +1,11 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## ST1 R1 reporting correction and R2 design 2026-11-11T07:17:39.205497+07:00
+
+Parent sole writer; last verified pushed81c2ec5. Current checkout preserved owner untracked document. Re-read master/shared index and terminal aggregate/ledger. Corrected manuscript live/provisional statements to terminal R1:56normal,14rejected+7compact flags,2interrupted,42neverstarted; GPU8843.155s, fidelity remaining20235.732s. No semantic or retrieval benefit claimed. Detailed DAPFAM/master plan now distinguish current evidence from historical readiness statements.
+
+Added docs/healthtech/research/plans/SACR-R2-DESIGN.md: explicit exposed-dev revision, unchanged100sample/risk20+sentinel10/global60card limits, original failures retained, full functional representation and matched controls required. Design is NOT an executable freeze: source-reference format, complete bundle runner, stage budget and smoke declaration remain unfinished. No model call, new sample, graph import or resource reservation. Next implement and fixture source-reference disambiguation without weakening semantics; finish bundle/cost integration; freeze bounded smoke then recheck budget/isolation. GoalACTIVE, protected tests CLOSED.
+
 ## ST1 R2 engineering and Neo4j connection 2026-11-11T07:14:49.017013+07:00
 
 Parent sole repo writer; last verified pushed bd4242a. Dedicated Research Patent01 now RUNNING; authenticated local read returned 1 (HTTP 202), version2026.10.2. No Neo4j MCP tools exposed; used local HTTP Query API. Initial combined currentUser probe returned400; minimal read succeeded. No database writes/imports, credentials saved, or system settings changed. This supersedes earlier INSTALLING observation.

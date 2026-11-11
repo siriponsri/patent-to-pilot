@@ -4,6 +4,10 @@ Updated: 10 November 2026 (Asia/Bangkok). Current execution authority: OWNER_APP
 
 Paper 1 additional task: [DAPFAM paper comparability and Paper53 alignment](docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md). Three unique supplied DAPFAM PDFs reviewed selectively;01/38 are byte-identical. Published scores remain literature context; matched dev comparisons are planned, exact all-query replication is outside closed-test scope. No new training, corpus encoding or model acquisition follows from this task.
 
+## Current execution update, 11 November 2026
+
+Owner-approved audit, fixes and a new bounded round supersede historical documentation-only authority below. B0 is measured; SACR R1 stopped at the frozen review cap and S/G R1 failed extraction feasibility. Their retrieval comparisons are unavailable, not zero effects. R2 engineering/design is in progress under unchanged cumulative limits. See [R2 design](docs/healthtech/research/plans/SACR-R2-DESIGN.md) and [manuscript](docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md). Paper 2/3 remain conditional plans.
+
 ## 1. Decision and reading route
 
 Develop **one primary DAPFAM study**, then decide whether MTM transfer and adaptive graph navigation merit independent studies. Three manuscripts are possible outcomes, not three promised journal publications. The owner wants a method contribution; a benchmark audit alone does not replace it. Negative or inconclusive findings must remain reportable.

@@ -1,8 +1,10 @@
 # Source-preserving query representations and relation extraction for cross-domain patent retrieval
 
 Working manuscript, updated11 November2026. Development evidence only; incomplete and
-not ready for submission. The first native SACR profile batch timed out with an
-incomplete sample; its fidelity, pilot and retrieval results are not available. The restricted
+not ready for submission. SACR round 1 stopped at its frozen review-cap gate after
+an initial timeout and a separately preserved continuation. Its fidelity did not
+pass; pilot and retrieval results are not available. A new round is authorized
+but has no measured method results. The restricted
 tests remain unopened. This draft preserves measured results and failed arms
 without presenting the intended four-system comparison as completed.
 
@@ -145,32 +147,36 @@ The interrupted attempt retains unknown token/call costs; all supervisor time
 is charged. Any further work must preserve the fixed sample and failure history
 and respect the remaining budget and prohibition on automatic retries.
 
-### 4.4 Unavailable comparisons
+### 4.4 Frozen review-cap stop and unavailable comparisons
 
-Operational update, 11 November: a separately sealed continuation is processing
-only the54 never-started sample entries, within the original shared fidelity
-allowance. It does not regenerate the45 normal returns or the interrupted entry.
-The owner separately authorized one bounded exception for the interrupted entry;
-that exception remains unused while the continuation is running. Costs for the
-live interval are reserved and are not yet represented by a final elapsed-time
-charge in the figures below.
+The sealed continuation processed only previously unstarted entries. It added
+11 normal EOS returns in 1597.807 seconds before the frozen gate stopped the
+configuration. Across both intervals, 56 queries returned normally: 42 were
+structurally pending fidelity and 14 were rejected. Two attempts were interrupted
+with unknown execution counts, and 42 queries were never started. The fixed
+100-query denominator remains unchanged. The separately approved single-query
+regeneration exception was not used after the configuration became ineligible.
 
-A read-only lower-bound check of54 completed profiles found13 rejected profiles
-and6 additional compact-view lexical flags, yielding19 distinct queries that
-must enter the frozen risk set. The lexical flags concern numeric or polarity
-inventories and do not establish19 semantic errors. The frozen review cap is20
-flagged queries plus10 sentinels. Because later views or critic judgments cannot
-erase these existing flags, a verified lower bound above20 will stop this
-configuration without spending generation merely to complete an already
-ineligible review set. This is a prospective stopping-rule application, not a
-change of the threshold based on retrieval outcomes; no SACR scores have been
-inspected. Current live counts are provisional and will be replaced by terminal
-aggregate receipts in the final report.
+Fourteen rejected profiles and seven additional compact-view lexical flags
+established 21 distinct flagged queries, above the prospectively fixed limit of
+20 risk cards plus 10 sentinels. Later critic judgments cannot erase these flags.
+The stop therefore applies the declared gate, without changing it using retrieval
+outcomes. It does not establish 21 semantic errors or a negative retrieval effect.
+No human cards, critic calls, pilot or SACR retrieval comparison were completed.
 
-SACR fidelity and retrieval results are pending. S/G retrieval effects are
-unavailable because the fixed extraction configuration failed feasibility.
-Neither absence is reported as a zero treatment effect. MTM transfer is not
-run and has no human-review allocation. No protected-test result exists.
+A retained-output audit reproduced all 56 structural assessments. Rejections
+comprised nine absent/ambiguous quotations, one source-order violation, three
+output-limit returns and one condition not backed by source text. Numeric or
+polarity inventories flagged seven other queries. These are diagnostic categories,
+not independently adjudicated semantic errors. A prospective renderer now unions
+overlapping source occurrences while preserving distinct identical occurrences;
+its 20 engineering tests do not demonstrate real-data fidelity or retrieval gain.
+
+S/G retrieval effects remain unavailable after its first extraction configuration
+failed feasibility. Neither missing comparison is a zero treatment effect. New
+round authority preserves prior failures and cumulative budgets. MTM has a
+conditional unused-card transfer only after DAPFAM fidelity and pilot pass;
+those conditions are unmet. No protected-test result exists.
 
 ## 5. Cost, failures and reproducibility
 
@@ -187,13 +193,14 @@ reliable full-corpus resource forecast. Do not extrapolate it into approval.
 
 SACR engineering history includes a failed source-order smoke and one subsequent
 authorized successful smoke. Their costs remain in the cumulative resource
-ledger. The native profile interval added6966.461 seconds, bringing conservative
-cumulative GPU time to7245.347 seconds. The native run recorded at least45 model
-calls,41127 input tokens and65098 output tokens; an additional reserved attempt
-has unknown counts. Observed peak host cgroup usage was6973775872 bytes.
+ledger. The native profile intervals total 8564.268 seconds, bringing conservative
+cumulative GPU time to 8843.155 seconds. Native generation recorded at least
+56 calls, 51088 input tokens and 79724 output tokens; two interrupted attempts
+have unknown counts. Peak sampled host cgroup usage was 6973775872 bytes for
+the original interval and 4869136384 bytes for the continuation.
 These figures neither assign zero cost to the interrupted attempt nor establish
 its peak GPU memory. The full supervisor interval is included despite incomplete
-generation. About6h03m54s remains in the original combined fidelity allowance.
+generation. About 5h37m16s remains in the original combined fidelity allowance.
 
 Private source records, per-query outputs and qrels are not published. Public
 reproducibility artifacts include code, source/configuration hashes, aggregate
