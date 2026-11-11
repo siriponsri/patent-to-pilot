@@ -1,4 +1,10 @@
-# Proposed single-candidate continuation after R6 calibration failure
+# R7 single-candidate continuation after R6 calibration failure
+
+**TERMINAL — CLOSED_CALIBRATION_FAILED, 12 November 2026.** The sole24-call
+calibration completed but failed unchanged contract/semantic criteria. Dependent
+stages were not dispatched. The approved stopped-branch report and manuscript
+are updated; remaining budget does not authorize another candidate. See
+[terminal verification](../../audits/ptp-r7-calibration-20261112/terminal-verification.json).
 
 **OWNER APPROVED — 12 November 2026.** The owner approved this long goal and
 authorized skills/agents to diagnose and repair errors within its existing

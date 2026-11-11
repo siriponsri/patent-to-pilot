@@ -1,0 +1,221 @@
+{
+  "status": "TERMINAL_ACCOUNTING_AND_IDLE_VERIFIED",
+  "generation": 5,
+  "active": null,
+  "ledger_sha256": "2d0419778919614d48872f4d1f536edabb458881d6be18dbfb7d5542d402a927",
+  "scope_sha256": "31bac51f4dc1317645c03c3a4c796302af80a9a619129d8738a1c96c3c3b9798",
+  "cpu_receipt_sha256": "0892ddae91c43123ec96993243fc40f10b092168c179dc784bdd32801ad76173",
+  "attempts": [
+    {
+      "id": "ptp-r6-calibration-20261111-v1",
+      "terminal_sha256": "4ace4ea41251aad6a16eadd741971139bc98caa872a7d9c6a2ee4ec872daaf8e",
+      "failure_axis": "EVALUATOR_CALIBRATION"
+    },
+    {
+      "id": "ptp-r7-calibration-20261112-v1",
+      "terminal_sha256": "31ec1bdc719a82b6fd153801b89a64aee543271a07d9c7407a968b5dd0c087ed",
+      "failure_axis": "EVALUATOR_CALIBRATION"
+    }
+  ],
+  "transitions": [
+    {
+      "generation": 2,
+      "kind": "CPU_ONLY",
+      "receipt_sha256": "7d0945cf663d999ac72d5b182af6c7c33de228a9280dc96fea581465c4c876bc"
+    },
+    {
+      "generation": 3,
+      "kind": "NEW_CANDIDATE",
+      "receipt_sha256": "1ede47a72c33df3a02607e971afe1ba19a56d8ce56b42808e84e60a05e7ec74d"
+    },
+    {
+      "generation": 5,
+      "kind": "CPU_ONLY",
+      "receipt_sha256": "0892ddae91c43123ec96993243fc40f10b092168c179dc784bdd32801ad76173"
+    }
+  ],
+  "terminal_containers": [
+    {
+      "job": "ptp-r6-calibration-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sg-r4-materialization-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r5-boundary-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-r6-pipeline-fixture-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-native-evaluator-20261110-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-native-evaluator-20261110-v2",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r5-boundary-preflight-20261111-v3",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-r6-critic-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r5-synthetic-smoke-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sg-r6-source-attachment-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-native-sacr-continuation-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r5-boundary-preflight-20261111-v2",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sg-compact-input-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-syn-sacr004-20261110-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r3-synthetic-smoke-20261111-v2",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r5-token-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r4-synthetic-smoke-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sg-r5-screening-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r2-synthetic-smoke-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sg-r6-source-fixture-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-native-exposure-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-native-baseline-20261110-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r2-tokenizer-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sg-r5-critic-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-r6-profile-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r5-exact-source-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r4-cpu-preflight-20261111-v2",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sg-r3-census-20261111-v2",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-native-sacr-fidelity-20261110-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-r7-calibration-20261112-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r4-cpu-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-r6-graph-input-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-r6-native-input-preflight-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sacr-r5-token-diagnosis-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-sg-r5-source-attachment-20261111-v1",
+      "status": "exited",
+      "pid": 0
+    },
+    {
+      "job": "ptp-r7-pipeline-fixture-preflight-20261112-v1",
+      "status": "exited",
+      "pid": 0
+    }
+  ],
+  "approved_gpu_occupied": false,
+  "new_model_calls": 0
+}

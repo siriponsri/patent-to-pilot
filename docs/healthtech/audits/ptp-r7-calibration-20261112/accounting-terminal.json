@@ -1,0 +1,34 @@
+{
+  "status": "TERMINAL",
+  "retry": false,
+  "started_unix": 1794437572.7431564,
+  "attempt_id": "ptp-r7-calibration-20261112-v1",
+  "container_name": "ptp-r7-calibration-20261112-v1",
+  "declaration_sha256": "11fce15cde3e5279812ee6ab8fa2ef721b4094dc2e5f27dc6b3c3595d0114208",
+  "engine": {
+    "Version": "29.9.3",
+    "ApiVersion": "1.56",
+    "MinAPIVersion": "1.40"
+  },
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T22:52:53.012047962Z",
+    "FinishedAt": "2026-11-11T23:11:58.717609113Z"
+  },
+  "whole_wall_seconds": 1146.625128763997,
+  "controller_cpu_seconds": 6.283199428,
+  "controller_peak_rss_bytes": 22470656,
+  "costs_reconciled": true,
+  "charged_seconds": 1147,
+  "failure_axis": "EVALUATOR_CALIBRATION",
+  "outcome": "CALIBRATION_FAILED",
+  "verification_sha256": "63c4dc4de2151aa8996028adecc9c9d8884f4caf2edf40195bef7c48f849c38f"
+}

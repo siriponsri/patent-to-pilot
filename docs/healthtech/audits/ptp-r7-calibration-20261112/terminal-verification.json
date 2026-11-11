@@ -1,0 +1,130 @@
+{
+  "status": "TERMINAL_VERIFIED",
+  "terminal": {
+    "status": "TERMINAL",
+    "retry": false,
+    "started_unix": 1794437572.7431564,
+    "attempt_id": "ptp-r7-calibration-20261112-v1",
+    "container_name": "ptp-r7-calibration-20261112-v1",
+    "declaration_sha256": "11fce15cde3e5279812ee6ab8fa2ef721b4094dc2e5f27dc6b3c3595d0114208",
+    "engine": {
+      "Version": "29.9.3",
+      "ApiVersion": "1.56",
+      "MinAPIVersion": "1.40"
+    },
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-11T22:52:53.012047962Z",
+      "FinishedAt": "2026-11-11T23:11:58.717609113Z"
+    },
+    "whole_wall_seconds": 1146.625128763997,
+    "controller_cpu_seconds": 6.283199428,
+    "controller_peak_rss_bytes": 22470656
+  },
+  "terminal_file_sha256": "b29ec4d8e648b4766f7757eadb79a070a27ce9b6cc830dcbcb6adfa2ac837d42",
+  "authoritative_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T22:52:53.012047962Z",
+    "FinishedAt": "2026-11-11T23:11:58.717609113Z"
+  },
+  "generation_records": 24,
+  "backend_dispatch_markers": 24,
+  "backend_return_markers": 24,
+  "counts_note": "Observed artifacts; dispatch intent alone is not completed inference.",
+  "records_status_counts": {
+    "EOS_COMPLETE": 24
+  },
+  "raw_private_retained": true,
+  "retry": false,
+  "frozen_tasks_sha256": "56cc829156b046f174539ed634240da427f3e8e5167a11c6960b65a82eed2e89",
+  "raw24_reassessment": "MATCHES_FROZEN_ASSESSOR",
+  "assessment": {
+    "status": "CALIBRATION_FAILED",
+    "cases": 24,
+    "invalid_evaluator_cases": 3,
+    "positive_cases_flagged": 8,
+    "required_verdict_misses": 5,
+    "unrelated_dimension_flags": 11,
+    "irrelevant_evidence_cases": 2,
+    "execution_attestation": "REQUIRED_SEPARATELY",
+    "native_fidelity_proven": false,
+    "independent_expert_review": false,
+    "execution_rejected_cases": 3
+  },
+  "costs": {
+    "events": 24,
+    "metrics": {
+      "model_calls": {
+        "value": 24,
+        "observed_lower_bound": 24,
+        "unknown_events": 0
+      },
+      "input_tokens": {
+        "value": 36077,
+        "observed_lower_bound": 36077,
+        "unknown_events": 0
+      },
+      "output_tokens": {
+        "value": 11820,
+        "observed_lower_bound": 11820,
+        "unknown_events": 0
+      },
+      "embedding_texts": {
+        "value": 0,
+        "observed_lower_bound": 0,
+        "unknown_events": 0
+      },
+      "index_dot_products": {
+        "value": 0,
+        "observed_lower_bound": 0,
+        "unknown_events": 0
+      },
+      "candidate_dot_products": {
+        "value": 0,
+        "observed_lower_bound": 0,
+        "unknown_events": 0
+      },
+      "peak_memory_bytes": {
+        "value": 17807886848,
+        "observed_lower_bound": 17807886848,
+        "unknown_events": 0
+      },
+      "operation_wall_seconds": {
+        "value": 1088.591507008976,
+        "observed_lower_bound": 1088.591507008976,
+        "unknown_events": 0
+      },
+      "gpu_seconds": {
+        "value": 1088.591507008976,
+        "observed_lower_bound": 1088.591507008976,
+        "unknown_events": 0
+      }
+    },
+    "end_to_end_elapsed_seconds": null,
+    "standalone_arm_costs": "NOT_DERIVED",
+    "receipt_completeness": "REQUIRES_EXTERNAL_ATTEMPT_RECONCILIATION"
+  },
+  "outcome": "CALIBRATION_FAILED",
+  "reason_counts": {
+    "VALID_CRITIC": 21,
+    "INVALID_EVALUATOR": 3
+  },
+  "assessment_file_sha256": "6ce8d1feb011a8dc4b9c645f470381cb78caef00300b2cf453a30e2ac27343db",
+  "cohort_result_sha256": "84cf3cbccbc6a2bbe8e40a84d6b38e2cae4504642841b0be5f7bae25064a8638"
+}

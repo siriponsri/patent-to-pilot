@@ -1,3 +1,23 @@
+# Paper A current status — 12 November 2026
+
+R7 bounded execution has reached its declared stopping gate. Exact runtime and
+accounting integration worked; the sole24-call critic calibration failed its
+unchanged semantic/contract criteria. Three responses were contract-invalid and
+the assessor also found overlapping semantic errors. The candidate is closed.
+
+The [current report](PAPER1-LONG-RUN-REPORT.md) and
+[working manuscript](PAPER1-MANUSCRIPT-DRAFT.md) now include R7 evidence and costs.
+The approved stopped-branch delivery passed its final completion audit. The intended method paper still lacks accepted native fidelity, human
+review and a paired SACR/S/G pilot/full-dev comparison. Those are NOT_RUN, not
+zero effects. A new methodological proposal would be a separate future decision;
+this document does not request or authorize another experiment. Both tests stay
+closed, unused cards are not consumed and Neo4j has not been written.
+
+## Historical proposal and pre-R7 status
+
+The following text records the earlier proposal. Its pending-approval and
+remaining-work statements do not override the terminal R7 result above.
+
 # Paper A status and proposed long run — 12 November 2026
 
 Naming assumption: Paper A refers to the current Paper1 / HT-ST1 DAPFAM study.

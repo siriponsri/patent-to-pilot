@@ -1,25 +1,51 @@
 # Source-preserving query representations and relation extraction for cross-domain patent retrieval
 
-## R7 execution checkpoint, 12 November 2026
+## R7 terminal outcome, 12 November 2026
 
-The owner approved one new compact-v2 candidate under the existing cumulative
-budgets. Its actual24-case calibration is RUNNING; no terminal outcome or native
-fidelity claim is available. Exact authored CPU pipeline qualification passed
-with31 simulated invocations and3,649 grammar-checked tokens, charging99.222876
-CPU seconds and zero model/GPU use. Hardware/load/authority boundaries were
-explicit doubles. The real model run remains a separate evidence layer.
+The sole owner-approved compact-v2 critic candidate is **CLOSED_CALIBRATION_FAILED**.
+All24 calls completed with EOS; the container exited0 with PID0 and no OOM.
+Raw outputs, exact compact message/token bindings, backend return markers and
+unchanged gold were independently rechecked by the verification script, reproducing
+the saved assessment. Runtime completion does not imply evaluator qualification.
 
-The original R6 journal, failures and charges were preserved. Candidate authority
-permits at most24 new calibration calls in7200 seconds. Any execution-contract
-or frozen semantic failure closes this candidate. Graph retains114 parents,
-100 admitted requests and14 initial technical risks; admission is not fidelity.
-Native screening, actual human judgments and pilot/full dev remain conditional.
-No protected test, corpus re-encoding or Neo4j write has been performed in R7.
+| Evidence layer | Observed result | Interpretation |
+|---|---|---|
+| Execution |24/24 EOS; no unknown R7 calls | Completed bounded model run |
+| Schema/interpretation |24 schema-valid;21 contract-valid;3 contract-invalid | Two inconsistent findings and one missing flagged-dimension evidence |
+| Frozen semantic counters |8 positive cases flagged;5 required-verdict misses;11 unrelated-dimension flags;2 irrelevant-evidence cases | Counters overlap; do not sum them into an error rate |
+| SACR native fidelity |NOT_RUN under R7 | Method quality NOT_ASSESSED; shared critic prerequisite failed |
+| Graph |100 admitted/114;14 retained initial risks; semantic screening NOT_RUN | Technical feasibility only; zero accepted edges |
+| Human review |0 cards issued,0 judgments;60-card cap unchanged | No human fidelity or independent expert review claim |
+| Synthetic, pilot/full dev, conditional MTM |NOT_RUN under R7 | Candidate closure prevents dependent dispatch |
+| Retrieval comparison |NOT_RUN | B0 remains the only measured retrieval arm; unavailable effects are not zero effects |
 
-See the [live calibration audit](../audits/ptp-r7-calibration-20261112/README.md)
-and [authored CPU qualification](../audits/ptp-r7-pipeline-20261112/README.md).
-The R6 checkpoint below is historical; its statement that no job was live is
-not the current R7 execution state. B0 remains the only measured retrieval arm.
+Whole supervisor occupancy was1146.625129 seconds (19.11minutes), conservatively
+charged1147 seconds once to GPU and fidelity. The24 calls used36,077 input and
+11,820 output tokens. Peak allocated GPU memory was17,807,886,848 bytes; this is
+not aggregate host RAM. Controller peak RSS was22,470,656 bytes; aggregate peak
+RAM was not measured. The model container31GiB plus controller1GiB enforced the
+32GiB limit. Per-call GPU seconds were not added again to whole-stage occupancy.
+
+R7 CPU preparation/qualification/closeout totals517.754126 seconds:400 conservative
+and117.754126 measured. The actual authored CPU pipeline portion was99.222876
+seconds, with no model/GPU use. Cumulative GPU charge is15,205.613505 seconds and
+fidelity charge14,926.726680 seconds; remaining675,994.386495 and215,473.273320
+seconds respectively. Remaining budget does not reopen this failed candidate.
+The original journal is now generation5, activeNULL, retaining both R6 and R7
+failures and all charges. All36 observed owned containers are terminal; the
+approved GPU was idle at closeout. No test, paid API, training, corpus re-encoding,
+Neo4j write or permission change occurred.
+
+This completes the approved stopped-branch reporting path, not a successful
+SACR/Graph method comparison or a submission-ready paper. No model output was
+repaired, no native query regenerated and no third critic candidate dispatched.
+Paper53-inspired paired effects remain unavailable; published DAPFAM scores stay
+separate literature context and direct replication remains NOT_ESTABLISHED.
+
+Evidence: [R7 terminal audit](../audits/ptp-r7-calibration-20261112/README.md),
+[raw verification](../audits/ptp-r7-calibration-20261112/terminal-verification.json),
+[final accounting](../audits/ptp-r7-calibration-20261112/final-state-verification.json).
+Prior R6 and earlier-round sections below retain historical results and balances.
 
 ## Historical R6 outcome and Graph repair, 11 November 2026
 
@@ -66,8 +92,8 @@ Working development manuscript, updated12 November2026; not submission-ready.
 The measured dense baseline is available. SACR/S/G comparative retrieval has not
 passed the required gates. R6 evaluator calibration is closed with a valid
 semantic failure and separate contract failures; compact Graph v2 has only
-technical input-admission evidence. The owner-approved R7 model candidate is undergoing calibration; no terminal
-outcome is available yet. Both protected tests remain closed. Historical rounds are
+technical input-admission evidence. The owner-approved R7 candidate also failed the unchanged calibration and is
+closed; its dependent native and retrieval stages were not dispatched. Both protected tests remain closed. Historical rounds are
 identified below and their original status notes are retained in the appendix.
 
 ## Abstract — provisional
@@ -79,8 +105,12 @@ on349 eligible cross-domain development queries;213 expose no known positive
 within200 ranks. Corpus-wide deterministic extraction produces23,037 records and
 18,326 cross-family pair-key incidences, which remain unvalidated candidate links.
 Earlier generation and screening configurations failed prerequisite gates. The
-latest evaluator calibration also failed:23 of24 responses violated the response
-contract, and the remaining response failed the frozen semantic grading criteria.
+R6 evaluator failed with23 contract rejections and one valid semantic failure.
+The separately approved compact-v2 R7 candidate completed24 EOS responses, but
+three violated the response contract and the fixed assessor recorded eight
+positive cases flagged, five required-verdict misses, eleven unrelated-dimension
+flags and two irrelevant-evidence cases. These counters overlap. Runtime
+qualification therefore did not establish a usable semantic evaluator.
 A compact Graph transport subsequently admitted100 of114 fixed screening units,
 with14 technical risks retained; this is input-admission evidence, not semantic
 validation. No SACR or S/G retrieval comparison passed the required gates. These
@@ -415,7 +445,8 @@ prevents treating R2 as independent validation.
 The earlier bounded round is closed with negative configurations preserved;
 the subsequent R6 evaluator also failed calibration, while the owner-requested
 compact Graph transport admitted100 of114 fixed units, retaining14 technical
-risks; semantic screening has not run. R7 is owner-approved and calibration is running; its outcome remains pending.
+risks; semantic screening has not run. The sole owner-approved R7 candidate also failed calibration, with3 contract
+rejections and overlapping semantic errors among the completed24 responses.
 No human cards were issued, no independent expert review occurred, and no test
 generalization, inventive-design success or product usefulness is established.
 Pilot/full dev and conditional MTM were not dispatched because their gates failed.

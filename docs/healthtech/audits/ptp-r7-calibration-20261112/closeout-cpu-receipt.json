@@ -1,0 +1,22 @@
+{
+  "status": "VERIFIED_CPU_ONLY_RECONCILIATION",
+  "journal_identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "owner_approval_sha256": "51b0dee061c052027596003d785cf137a460c57749ab93212560fee8f5c15a2e",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "old_ledger_sha256": "36359afda95c4239b748bf42d6adc6e847880052f470d9f02d7f2296d4101a21",
+  "new_ledger_sha256": "2d0419778919614d48872f4d1f536edabb458881d6be18dbfb7d5542d402a927",
+  "cpu_deltas": {
+    "local_cpu_conservative_charged_seconds": 100,
+    "local_cpu_measured_seconds": 0.0,
+    "remote_cpu_charged_seconds": 0.0,
+    "local_cpu_reserved_seconds": 0,
+    "remote_cpu_reserved_seconds": 0
+  },
+  "evidence_sha256": [
+    "63c4dc4de2151aa8996028adecc9c9d8884f4caf2edf40195bef7c48f849c38f",
+    "6ea2611c715899a6a20d2c6168f41675537b8d62c33e7f313debe2a826ea07fa",
+    "70dcb83cf3cbcda4b54edda23437412196072a8ccaa952c0fec01a22003fbeb2"
+  ],
+  "charge_basis": "100 conservative CPU seconds for terminal verification, diagnosis, bookkeeping, report/audit/publication closeout; no further model work."
+}

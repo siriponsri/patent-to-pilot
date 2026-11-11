@@ -1,0 +1,602 @@
+{
+  "status": "READ_ONLY_RAW_DIAGNOSIS",
+  "model_calls": 0,
+  "output_repaired": false,
+  "contract_counts": {
+    "VALID": 21,
+    "inconsistent critic finding": 2,
+    "missing flagged dimension evidence": 1
+  },
+  "rows": [
+    {
+      "case_id": "050dbbf0c6f6f200",
+      "expected_kind": "positive",
+      "generation_sha256": "29cfdd22bf41a29f1eb6f57f3774dccc183a2a69b502ce2bd23b3b719132abc8",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "0570d8593837c976",
+      "expected_kind": "negative",
+      "generation_sha256": "ef44f3d57a402d8289de4412f7e811e1e42837fad1c7990f1dfb09af7dde5766",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "condition_attachment",
+        "essential_coverage",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 1,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [
+        "abstraction_support"
+      ],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "1d2c4776e68c960f",
+      "expected_kind": "negative",
+      "generation_sha256": "36ae398c6d039cd3aeda266b646073cecf3d133e6bd8cc52e096a019d1ccb5ac",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "polarity_exceptions",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "27f155161b3842e9",
+      "expected_kind": "uncertain",
+      "generation_sha256": "4b8f23f12655397dfe52e063ad30c89c1abb5be390d1e4e1a236eddc054724b5",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "essential_coverage"
+      ],
+      "finding_dimensions": [
+        "essential_coverage"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "29acac63c47cda2a",
+      "expected_kind": "negative",
+      "generation_sha256": "9cf0073abf5e2ec4b8fe15358832dc62493201ac5590eb48045fabb3fac5cb80",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "2e912eead9d182ab",
+      "expected_kind": "negative",
+      "generation_sha256": "07839c6d66b2d4e354ebc3f4fb29b8adbe110b02fdbec494858beb1db1afc3e8",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "essential_coverage"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [
+        "condition_attachment"
+      ],
+      "contract": "InputBoundaryError",
+      "contract_reason": "missing flagged dimension evidence"
+    },
+    {
+      "case_id": "33afc0bfbf899bd7",
+      "expected_kind": "negative",
+      "generation_sha256": "edb60f049c7c4c5da7540b0d34132bdce362cef56799f672aabd72212f3093dd",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "context_preservation",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "368a68a5deb468b0",
+      "expected_kind": "uncertain",
+      "generation_sha256": "e8f73ec694a0cb69d159c9032ed0110be6c4a44d7381e5eb26e0f2d41fa189f5",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "context_preservation",
+        "essential_coverage",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "3ba5732490115271",
+      "expected_kind": "negative",
+      "generation_sha256": "f442229069af7ce62a24ff66f59d2b47970c22732414baef6bac48afc48a5210",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "context_preservation",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "57a6c248dc3bcde8",
+      "expected_kind": "negative",
+      "generation_sha256": "3afafefa047e04ccd6175e4a3413ca3aaaa82ea88c03c77c3a958d8160fad653",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "essential_coverage"
+      ],
+      "finding_dimensions": [
+        "essential_coverage"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "6431550c749ffaf6",
+      "expected_kind": "uncertain",
+      "generation_sha256": "b206069e528cecb3081f03b64c34884ef8a61d38e9b84a256d0c2daa2a16fa03",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "condition_attachment",
+        "essential_coverage",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "condition_attachment",
+        "essential_coverage"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "67070d7339ba5f85",
+      "expected_kind": "negative",
+      "generation_sha256": "a25f5d2f0103f93f586ba7f8f9e281099369010f4ecff5078aab0a86f57fa217",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "context_preservation",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "7a0762269ff9f9e4",
+      "expected_kind": "positive",
+      "generation_sha256": "6bc45c541dca0b8bab557858c7f954602faf02fb3300d72cb777bd9c57abd6e8",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "essential_coverage"
+      ],
+      "finding_dimensions": [
+        "essential_coverage"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "96a2c90fb1fcf533",
+      "expected_kind": "uncertain",
+      "generation_sha256": "5407cae94f36fb7157077132fd491d60aef94faad5f4d534ac77a89adc1e2b8d",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "context_preservation",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "994a6b45e44d8cb1",
+      "expected_kind": "positive",
+      "generation_sha256": "b15a20c87d581dccbff17e73ec73c7d33db5da7e821f33a42f7ccd7e10032b1e",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "essential_coverage"
+      ],
+      "finding_dimensions": [
+        "essential_coverage"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "9f2433a3dc16c540",
+      "expected_kind": "positive",
+      "generation_sha256": "fa54412a73c262a24d6aefd93f80c437bd6cb0542936a6831dc89f54dd512f46",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "context_preservation",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "a02cbb97a52243ac",
+      "expected_kind": "negative",
+      "generation_sha256": "e38e8f996e96a50c9c9abf3f1f36766d9fdc90b76d6378caba17a283b55753ac",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "ac2ad6edbcfc930c",
+      "expected_kind": "positive",
+      "generation_sha256": "cacd96b646351884e7c1e5c2b0b602b87fb409314929a8be657f24cdc7ef401c",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "essential_coverage"
+      ],
+      "finding_dimensions": [
+        "essential_coverage"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "b473d4f8ed9f9ebc",
+      "expected_kind": "negative",
+      "generation_sha256": "59834c388b26cb857195ecbae3875ea6aac0e57b11274f709f5b120150168d80",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "context_preservation",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "b48aa9daa4823781",
+      "expected_kind": "positive",
+      "generation_sha256": "92d1c94ae847e54b0759b746025517997b5762c1dbaa742066ce30abcbb8ea59",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "abstraction_support"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "b80eeb2bd7e10b09",
+      "expected_kind": "positive",
+      "generation_sha256": "741b064890dec1814ed414e2b2a5d227d3a293457b59b3affba9454a7686bbdf",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "essential_coverage"
+      ],
+      "finding_dimensions": [
+        "essential_coverage"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "c3e7634150f232c3",
+      "expected_kind": "positive",
+      "generation_sha256": "54460257f13c04b9aff4b28b6d35c4e88a48355135d64b42d7d92e58ad314485",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "context_preservation",
+        "essential_coverage",
+        "polarity_exceptions",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "polarity_exceptions",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    },
+    {
+      "case_id": "ddca6b1640c46ab6",
+      "expected_kind": "positive",
+      "generation_sha256": "f43d11ea66b803e3006868d842cf92b1c6307f90ed50807153f34c1a27e2fa17",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [
+        "abstraction_support",
+        "condition_attachment",
+        "essential_coverage",
+        "quantities_units",
+        "roles_direction"
+      ],
+      "finding_dimensions": [
+        "roles_direction",
+        "quantities_units",
+        "condition_attachment",
+        "essential_coverage",
+        "abstraction_support",
+        "context_preservation"
+      ],
+      "findings_on_supported_dimensions": 1,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "InputBoundaryError",
+      "contract_reason": "inconsistent critic finding"
+    },
+    {
+      "case_id": "eaec269bf682d9d7",
+      "expected_kind": "positive",
+      "generation_sha256": "ecb9bbcd1b024341fd6e7659652a5f66a084aeddcd7d1b82bbeb3e16ef7d6566",
+      "generation_status": "EOS_COMPLETE",
+      "schema_errors": [],
+      "flagged_dimensions": [],
+      "finding_dimensions": [],
+      "findings_on_supported_dimensions": 0,
+      "findings_without_references": 0,
+      "findings_with_blank_reason": 0,
+      "missing_flagged_dimensions": [],
+      "contract": "VALID"
+    }
+  ],
+  "no_native_semantic_conclusion": true
+}

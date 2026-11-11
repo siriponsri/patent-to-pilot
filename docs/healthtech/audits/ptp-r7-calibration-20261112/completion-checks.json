@@ -1,0 +1,27 @@
+{
+  "status": "PASS_TERMINAL_COMPLETION_EVIDENCE",
+  "scientific_outcome": "CLOSED_CALIBRATION_FAILED",
+  "exact_qualified_source_unchanged": true,
+  "all24_schema_valid": true,
+  "contract_valid": 21,
+  "contract_invalid": 3,
+  "all_calls_reconciled": true,
+  "original_R6_failure_retained": true,
+  "active": null,
+  "journal_generation": 5,
+  "all_scope_reservations_settled": true,
+  "downstream_attempt_registry_empty": true,
+  "CPU_global_charged_seconds": 25592.84637781,
+  "CPU_global_remaining_seconds": 3207.1536221899987,
+  "R7_CPU_charged_seconds": 517.754125606,
+  "GPU_remaining_seconds": 675994.3864951228,
+  "fidelity_remaining_seconds": 215473.27331997137,
+  "known_model_calls_cumulative_lower_bound": 132,
+  "evidence_sha256": {
+    "terminal-verification.json": "63c4dc4de2151aa8996028adecc9c9d8884f4caf2edf40195bef7c48f849c38f",
+    "calibration-diagnosis.json": "70dcb83cf3cbcda4b54edda23437412196072a8ccaa952c0fec01a22003fbeb2",
+    "final-state-verification.json": "c63c2181fed5bfb6578d52d2e8b0b2b1accc7968f7759a15e2c940e193e79791",
+    "final-ledger.json": "2ea38fb4ee4cf37e7e3bdb352bce0d1e5d27f2488fa696948155b00811123fe9",
+    "reconciliation.json": "6ea2611c715899a6a20d2c6168f41675537b8d62c33e7f313debe2a826ea07fa"
+  }
+}

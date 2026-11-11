@@ -1,4 +1,10 @@
-# R7 sole calibration: running
+# R7 sole calibration: closed after failed calibration
+
+Status: CLOSED_CALIBRATION_FAILED. All24 EOS responses independently verified;21 contract-valid,3 invalid and overlapping semantic failures. Whole stage1146.625129seconds, charged1147 GPU/fidelity seconds once. Final journalgeneration5 activeNULL; all36 observed owned containers terminal and approvedGPU idle. R7CPU517.754126seconds. See COMPLETION-AUDIT.md, completion-checks.json, terminal-verification.json, calibration-diagnosis.json and final-state-verification.json. No dependent stage was dispatched.
+
+## Historical launch and monitoring checkpoint
+
+The running state below records launch history, not the current state.
 
 Owner-approved R7, root sole writer. The exact24-case calibration was launched
 once as `ptp-r7-calibration-20261112-v1`. Last observed authoritative Docker state:
