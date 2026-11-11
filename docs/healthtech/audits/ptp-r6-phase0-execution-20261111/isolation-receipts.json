@@ -198,5 +198,49 @@
         "read_only": true
       }
     ]
+  },
+  {
+    "job": "ptp-r6-native-input-preflight-20261111-v1",
+    "original_receipt_sha256": "9ffb1553dfa3bd08171337f3b42a8d9df480b0f5cd4de4350230f5693f45f6b3",
+    "status": "PASS_BEFORE_START",
+    "nano_cpus": 2000000000,
+    "container_memory_bytes": 1610612736,
+    "memory_swap_bytes": 1610612736,
+    "network": "none",
+    "root_readonly": true,
+    "gpu_devices": [],
+    "tmpfs": {
+      "/tmp": "rw,nosuid,size=67108864"
+    },
+    "mounts": [
+      {
+        "target": "/code",
+        "read_only": true
+      },
+      {
+        "target": "/declaration.json",
+        "read_only": true
+      },
+      {
+        "target": "/deps",
+        "read_only": true
+      },
+      {
+        "target": "/out",
+        "read_only": false
+      },
+      {
+        "target": "/input/queries-ta.jsonl",
+        "read_only": true
+      },
+      {
+        "target": "/input/sample.json",
+        "read_only": true
+      },
+      {
+        "target": "/models/qwen3-8b",
+        "read_only": true
+      }
+    ]
   }
 ]

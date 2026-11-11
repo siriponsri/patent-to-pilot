@@ -1,3 +1,7 @@
+# Latest native100 input evidence
+
+Tokenizer-only native input preflight completed: 100 fixed queries, 200 full profile/generic requests, zero input-limit risks. No truncation, model calls or GPU. See native-input-summary.json, declaration, terminal observation and isolation receipt. This does not pre-admit critic requests: complete generated views must be tokenized before every critic call. Production runtime qualification and semantic calibration remain incomplete.
+
 # R6 CPU qualification and Graph input gate
 
 Goal ACTIVE. Parent remains sole writer. Previous turn made verified code progress

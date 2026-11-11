@@ -9,6 +9,7 @@ from .r6_cohort import digest,native_manifest
 from .sacr_native_fidelity import bind_sample
 from .sacr_r6_candidate import build_messages,proposal_schema
 from .sacr_prompts import build_messages as generic_messages
+from .sacr_r6_bundle_runner import encoded,sha
 
 
 def fixed_native_rows(query_bytes,sample_bytes,*,query_sha256,sample_sha256):
@@ -34,10 +35,10 @@ def preflight_native(rows,*,manifest_sha256,prompt_root,generic_prompt_sha256,
             count=count_tokens(supplied)
             if supplied!=messages or type(count) is not int or count<1:
                 raise InputBoundaryError('native exact token counter contract')
-            counts[stage]=count;hashes[stage]=digest(messages)
+            counts[stage]=count;hashes[stage]=sha(encoded(messages))
         units.append({'query_id':row['query_id'],
             'source_sha256':hashlib.sha256(row['source'].encode()).hexdigest(),
-            'messages_sha256':hashes,'profile_schema_sha256':digest(schema),
+            'messages_sha256':hashes,'profile_schema_sha256':sha(encoded(schema)),
             'input_tokens':counts,'status':'INPUT_LIMIT' if max(counts.values())>8192 else 'ADMITTED'})
     risks=sum(unit['status']!='ADMITTED' for unit in units)
     return {'status':'STOPPED_INPUT_RISK_CAP' if risks>20 else 'INPUT_PREFLIGHT_COMPLETE',

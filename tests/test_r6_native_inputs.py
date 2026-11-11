@@ -19,6 +19,8 @@ def test_all100_full_inputs_retained_and_generated_critic_not_claimed(tmp_path):
     assert receipt['risk_units']==21 and receipt['status']=='STOPPED_INPUT_RISK_CAP'
     assert receipt['model_calls']==0 and not receipt['semantic_pass']
     assert receipt['critic_input_admission'].startswith('REQUIRES_ACTUAL')
+    from patent_to_pilot.research.sacr_r6_bundle_runner import encoded,sha
+    assert receipt['units'][0]['messages_sha256']['profile']==sha(encoded(calls[0]))
 
 
 def test_changed_manifest_stops_before_tokenizer(tmp_path):

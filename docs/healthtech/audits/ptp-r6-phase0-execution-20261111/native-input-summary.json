@@ -1,0 +1,25 @@
+{
+  "status": "PASS_NATIVE100_PROFILE_GENERIC_INPUTS_ONLY",
+  "units": 100,
+  "requests": 200,
+  "input_risks": 0,
+  "token_ranges": {
+    "profile": {
+      "min": 1308,
+      "max": 5875
+    },
+    "generic": {
+      "min": 338,
+      "max": 585
+    }
+  },
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "whole_wall_seconds": 14.289677217002463,
+  "charged_cpu_seconds": 12.923172004000001,
+  "worker_peak_rss_bytes": 990973952,
+  "manifest_sha256": "d4da535377d3186e1904bcbb749367104c708a91103b99f95c346aefe1428b08",
+  "private_output_sha256": "450db5566e20ffc084190c0932f455921a59936f65167df802095852e3e0d446",
+  "critic_input_admission": "REQUIRES_ACTUAL_GENERATED_VIEWS_BEFORE_EACH_CRITIC_CALL",
+  "remaining": "Production transport/controller qualification and frozen semantic calibration; no fidelity or retrieval pass claimed."
+}

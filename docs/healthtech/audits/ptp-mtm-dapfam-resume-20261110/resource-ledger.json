@@ -634,9 +634,16 @@
         "worker_cpu_seconds": 14.185333426,
         "controller_cpu_seconds": 0.118315388,
         "risk_units": 33
+      },
+      "native-input": {
+        "status": "TERMINAL_PASS",
+        "declaration_sha256": "dad69abcfb5e4703e54dc792e403df93cbccaa2fd741fff5b5bb6519ad1ee37f",
+        "cpu_seconds": 12.923172004000001,
+        "manifest_sha256": "d4da535377d3186e1904bcbb749367104c708a91103b99f95c346aefe1428b08",
+        "private_output_sha256": "450db5566e20ffc084190c0932f455921a59936f65167df802095852e3e0d446"
       }
     },
-    "remote_cpu_charged_seconds": 205.05086916200003,
+    "remote_cpu_charged_seconds": 217.97404116600003,
     "source_jobs": {
       "fixture": {
         "status": "TERMINAL_PASS",
@@ -687,8 +694,8 @@
         }
       }
     },
-    "local_cpu_conservative_charged_seconds": 600,
-    "local_cpu_measured_seconds": 30.5
+    "local_cpu_conservative_charged_seconds": 700,
+    "local_cpu_measured_seconds": 41.5625
   },
   "r6_graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114_NO_MODEL"
 }

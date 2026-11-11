@@ -1,0 +1,1459 @@
+{
+  "job": "ptp-r6-native-input-preflight-20261111-v1",
+  "case_files": 0,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-11T13:45:11.312274905Z",
+    "FinishedAt": "2026-11-11T13:45:24.95366698Z"
+  },
+  "terminal": {
+    "status": "TERMINAL",
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "engine": {
+      "Version": "29.9.3",
+      "ApiVersion": "1.56",
+      "MinAPIVersion": "1.40"
+    },
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-11T13:45:11.312274905Z",
+      "FinishedAt": "2026-11-11T13:45:24.95366698Z"
+    },
+    "whole_wall_seconds": 14.289677217002463,
+    "controller_cpu_seconds": 0.110912258
+  },
+  "receipt": {
+    "status": "INPUT_PREFLIGHT_COMPLETE",
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "manifest_sha256": "d4da535377d3186e1904bcbb749367104c708a91103b99f95c346aefe1428b08",
+    "units": [
+      {
+        "query_id": "047-311-863-902-493",
+        "source_sha256": "a4da6c20b2cc41b0cd7e5e2644a0200535a9addcdbee370f56cfb1af9c778b15",
+        "messages_sha256": {
+          "profile": "2ff581859611190040cfd2ef1ee8e1c515e850d796231d24b90321408fc86624",
+          "generic": "1d51c8db22a833819931d0973904ba50b603c050b9d12ab1fc27b6f5ed6e1f9e"
+        },
+        "profile_schema_sha256": "2be9ee08008f1f330706ee03c3649994ce6919dcb88c8dbb5e1dc07acebaa3f7",
+        "input_tokens": {
+          "profile": 3619,
+          "generic": 444
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "048-964-646-448-292",
+        "source_sha256": "a05656cc2ac0d4778b38e4829f8dea3e073bccdf7623cdddd513b7b2cddacd9d",
+        "messages_sha256": {
+          "profile": "5fb52cd769aab9b237d579573ef46113b4abb71f37588cdf1e37ed71cb00354b",
+          "generic": "cb538c9ac94150a1646145afd1a4b3d00e15bbb42c74d64746af0dca07b3735a"
+        },
+        "profile_schema_sha256": "6be715c71f247a389c52a94be6783065f2105e8de5a11fd198d4ac3309c7b6b2",
+        "input_tokens": {
+          "profile": 1939,
+          "generic": 359
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "195-912-637-315-004",
+        "source_sha256": "ebf4e06288612a69e51d6a37addb1ea16c3dd51976c345056547c16ad55ca450",
+        "messages_sha256": {
+          "profile": "072cc8c387ce22b253a7be3ef0fc404eca8108ae30be09e743c271a254438162",
+          "generic": "d1d31def0cac8c7ff587f1528b93f0fd10436d28dc4f57ecfdd89fe21e40f542"
+        },
+        "profile_schema_sha256": "e8c0c90e60d9ba38c97bea5a8a0485b657125e0cb761d3ac988f0cf138eed78f",
+        "input_tokens": {
+          "profile": 3269,
+          "generic": 432
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "025-402-369-691-200",
+        "source_sha256": "44456b8065a6d1ce9d2f400edd73456d90a2df3a112f1eb20b78d5b856279950",
+        "messages_sha256": {
+          "profile": "7b4afefe4bb52b487125703e9317e23f838180a954c41f276c84b9487cdfefd7",
+          "generic": "dd5cc507194a176a3f5cb205f9a6df49e5ca2dc22615d640fe76fb591a1f849d"
+        },
+        "profile_schema_sha256": "bf821b1d841446d0fa97f774936f6ae9d85c62958bae6b0d016031f1642cc672",
+        "input_tokens": {
+          "profile": 5491,
+          "generic": 584
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "137-828-244-380-440",
+        "source_sha256": "42151b2c827e37d0497019d77fbd746f42cae63e974528c3fe8cd7a168a1ce75",
+        "messages_sha256": {
+          "profile": "59ff8bfc745d4735b1eeab10bee3fac097db3a5b467fd4bd996ab2bb40693131",
+          "generic": "3e560c5ae63ef26bea56ece8a672780e81e0e3292173b374c02c9cb28c9edc01"
+        },
+        "profile_schema_sha256": "d95f45e88a6bf4603c3ef9103cec67ac061f11322bef903f0200fc74ba571632",
+        "input_tokens": {
+          "profile": 5630,
+          "generic": 572
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "078-886-304-335-279",
+        "source_sha256": "2305f2b4789b4f28706c4cae18a76250d024b4f113e08a0d71f0fe17c6aadf1e",
+        "messages_sha256": {
+          "profile": "8bf16863b33ad541c7c6bd2d8d56757e49d5d3238e7e681593e8caf1903c50ba",
+          "generic": "5ead138fd48aa74f26549b2f3b3dadf0410beba246b106f0073765f1a20f26d8"
+        },
+        "profile_schema_sha256": "114fa55c43353b08834046b6b3fc2f3ea30c6a3497dc3fd113e96615452a18e4",
+        "input_tokens": {
+          "profile": 2991,
+          "generic": 446
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "150-398-077-809-652",
+        "source_sha256": "abb2aeb890218e4b15bd987199e549c9c8992725c671bb65f578b2523d0dfe7f",
+        "messages_sha256": {
+          "profile": "68b830f5f4c75ec9794d9676a1cea0ac50974871f272c57d0e4e4b8cc247f61f",
+          "generic": "e3937f95319ce564b96ecc54836281821354680f9a1fbcade3b72a70d92d1a58"
+        },
+        "profile_schema_sha256": "852186f848bc76c3033f6ce8d1c4431bc77628f3d89581fc6b027c572a824cdf",
+        "input_tokens": {
+          "profile": 2996,
+          "generic": 421
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "081-915-620-656-216",
+        "source_sha256": "223f770286e0ae3a4bfcd6b8d59498b9ba97436468df7903667dfbab68fb6c60",
+        "messages_sha256": {
+          "profile": "d8d7a6079daf220f0749973988fa7ea4244fbcc21a5bcd69683f6f2bceb7afd1",
+          "generic": "54d1c7ed08ed988974d4fab05374711ca6405d7c127c031cb0bfe2aa96beaf94"
+        },
+        "profile_schema_sha256": "c39109d20233d7995f18c4b02265ffa334ef8dfd8725982a7b6460f853a591b8",
+        "input_tokens": {
+          "profile": 3532,
+          "generic": 437
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "083-229-426-495-079",
+        "source_sha256": "99821128d4b83644a2c5b7444ecdef7ae1e2895b827e70f706a4cd033f5d1fea",
+        "messages_sha256": {
+          "profile": "8f62ddd4905752d5776f24cc608af977fdb71a8e7b4c2033024f7a3b47915ec5",
+          "generic": "eb40280ebd15445477a3de8d60359f9ade14fce83b17ca023bc58c9e19fedc68"
+        },
+        "profile_schema_sha256": "fd4ef20623f0a9004b04e93e9aa1aecd83142a36b238d9a6725db8205206ce85",
+        "input_tokens": {
+          "profile": 1308,
+          "generic": 341
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "183-424-668-389-278",
+        "source_sha256": "c0f1a6e4cb6e208e4c212a3e7e6c1f406f090d4d05b88e338cd948c810d5a1ab",
+        "messages_sha256": {
+          "profile": "47551b08e2c841e279081f4a617d407c0c2dfc029bdb8e53125ba71900b3a853",
+          "generic": "3333b832709492b8426c5f39c87c386a235ae24758218747c6a57d6179de4622"
+        },
+        "profile_schema_sha256": "147e37bd225f47f1f03fab2e902c05ac46d68bdc6d6903284905b6f7ed3a3062",
+        "input_tokens": {
+          "profile": 2884,
+          "generic": 412
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "042-378-236-212-05X",
+        "source_sha256": "5207d854438291c1eeb60d9b7689a2438295fd1ca6b92dcb7be9299c1d56b664",
+        "messages_sha256": {
+          "profile": "2e96eaa618cd7b93f9eaf687ec2427f0db0261f8abb62e351df81839126cd21a",
+          "generic": "47dc7b47f0993388a31c21b670af35df937623646e4ecb16fc051b32e7c4d896"
+        },
+        "profile_schema_sha256": "52476b07417a28daff988a1d808a747f7ff33d14abff59f9f1b7325d700363a6",
+        "input_tokens": {
+          "profile": 2736,
+          "generic": 403
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "198-083-841-401-499",
+        "source_sha256": "5d202a5fbaac899ab798f4e2679ac62723efd6285a788deb1c791a05dc8c9588",
+        "messages_sha256": {
+          "profile": "53107e85f07733f7a225a34234e9e731ca2833af73291fb14b569b279b0d8127",
+          "generic": "48ab7734e8ad5f266b03e97255f2d3c7880f2932249e8ad6d2f83db8cc24a909"
+        },
+        "profile_schema_sha256": "ff1fbbfca6f24e71d9b83c4b2da86ef84b8ad7fa6009fa9eb2f59754dbdcc289",
+        "input_tokens": {
+          "profile": 1818,
+          "generic": 373
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "020-443-352-759-36X",
+        "source_sha256": "d006775bfada23c6abf8ceb18bf34fc29093e4000efb251b9ec6e5e2e056c8a7",
+        "messages_sha256": {
+          "profile": "0df3e0e24f9d02391275c3167909f28e89556ec830939542e519b7b45709caad",
+          "generic": "20ebf59b94b49e5b5105e58b931bca6c84435bb1e42e1a2f2cff4cbe68534065"
+        },
+        "profile_schema_sha256": "7b1be2b769b875776dabc5e46720e446059b882286781b99c0f21d023925eb2d",
+        "input_tokens": {
+          "profile": 3657,
+          "generic": 450
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "035-978-082-154-111",
+        "source_sha256": "61c1ef9818b279680cb93d755085ebe69a035712846b33104126bab123f56160",
+        "messages_sha256": {
+          "profile": "f02155c068cc5bf57f95caf4f889c95041f4c8390abff0a2ad547bceb0b35fd1",
+          "generic": "349911ff2f6595cb808d4f0060009d1288c8b9a35aae6ef25ee2a4915b1ecb36"
+        },
+        "profile_schema_sha256": "1e53f463ed4e1b58e860450c53b389431bfbceacaf700097a9f757092a4d1d11",
+        "input_tokens": {
+          "profile": 1340,
+          "generic": 338
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "063-035-899-299-958",
+        "source_sha256": "0eeacb504bbd4f628efa235986d81775477c5c37165030c98ce81b469d136809",
+        "messages_sha256": {
+          "profile": "4dafdda3c9ae04211346cf22128bd931ee1a05bc7f326d26b77571d61fc91d86",
+          "generic": "614b30e5a9dabe7dc2a9d76ef6a3ae252e435b742c467ed75edc2bbc6718df84"
+        },
+        "profile_schema_sha256": "197396ba81d7009666de22181b8e0f417fa65c2e5e1362565ea13cc52e056a31",
+        "input_tokens": {
+          "profile": 4042,
+          "generic": 472
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "000-435-136-282-338",
+        "source_sha256": "56307fe4925f2b789d27b8cd046020f88b0f735e1946c27dac37ba0fa50b518d",
+        "messages_sha256": {
+          "profile": "b029b276db8751e6e1772df70bcc8d180aec22a95d074e9f756c828e3eede565",
+          "generic": "e0b8911dfdfb72146dbe7f363f2d5bbf16c4610fb1eba4f7e12436403d29d733"
+        },
+        "profile_schema_sha256": "30a4fc27ced9584a7ecbac73e12fa018b2a81b253d0cc606aeb33d3e4252513b",
+        "input_tokens": {
+          "profile": 1541,
+          "generic": 342
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "032-961-168-303-472",
+        "source_sha256": "b1b969f864ce067537507c81997df162f12f336a7ee8780b062cecbb987c96f1",
+        "messages_sha256": {
+          "profile": "c38355937d717473244f80811d498eb85d3078f8da2bb6e8716785b63f82dcde",
+          "generic": "caba95cddc0365154c3c50469aa0d1931bc65aeb9b992f2a65199d754f113685"
+        },
+        "profile_schema_sha256": "1d54e4649f7d45ecd9d352d935561cd1281a063b5676a3510bd4d08825a6491d",
+        "input_tokens": {
+          "profile": 4018,
+          "generic": 476
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "161-711-295-914-298",
+        "source_sha256": "29311aac116b105c80e442a5eaf11d9113bc3bf186746e632048de54ba6f771d",
+        "messages_sha256": {
+          "profile": "dda08d7fe856df8e3eafce598210b7d892516022bf6526ce174b689c97559b2b",
+          "generic": "4bd5aee4738ce1900dfae3633cb7ed6d7316d7f8016bc2ffc362d48a2f30c648"
+        },
+        "profile_schema_sha256": "411e380f1d4df45dd7898ab9bf94d8f6421c5d9b5bd03ff17c02ca5dc752d515",
+        "input_tokens": {
+          "profile": 4199,
+          "generic": 476
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "165-224-385-890-32X",
+        "source_sha256": "763c6f22d0843fe8eb7aeda4e1f82cf2c09b1e0abd0956c15f3e80b5111c3b96",
+        "messages_sha256": {
+          "profile": "854f7afb5577a55f2d9e3850e3231a763b032e24af565cf2475fda43cba0c956",
+          "generic": "0e66bd88e37a936a007f011261d9d7854ef17d7cca2021d14c9cd6dcc08b6930"
+        },
+        "profile_schema_sha256": "79f06d22e2dad054515904e2d89e49a297da0903cf802efdc01015894b33d34c",
+        "input_tokens": {
+          "profile": 4146,
+          "generic": 491
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "082-374-934-422-153",
+        "source_sha256": "6adf787b64d2eb4e991880b79be287039a61783b015f6371dc9738bc32bc18d7",
+        "messages_sha256": {
+          "profile": "63c387e3736405fd3462aea27a1d9617e4579e2823e7d7fee6878cb1ffcae53c",
+          "generic": "4793674b5bcb838d28e93ef0e4027f97bedaf75b5a4f7857bc0584ebe3b5a7ec"
+        },
+        "profile_schema_sha256": "907530f690e4f7efd1877bb18683e1d43d46a1e9e9dfda36122a9d3c972dbba1",
+        "input_tokens": {
+          "profile": 4213,
+          "generic": 507
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "120-251-179-830-087",
+        "source_sha256": "d85bde7dfe02794d3eef5cc9ed157f82dec7d72bb7f1b0d4571515551e844935",
+        "messages_sha256": {
+          "profile": "bc8ec2516d2ab06a867de461d156f92e26fe226eca43adf9a28e8e7ed50c709f",
+          "generic": "8454e8e5e77db92fb3d3577405537d045ffd1fc842edd77d7b13b3db823ad6c6"
+        },
+        "profile_schema_sha256": "8cea8d504a257dcab3e70b6a055fc8ffc164557bb81d8bd8c65a337b0a431b37",
+        "input_tokens": {
+          "profile": 3495,
+          "generic": 447
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "177-975-151-007-656",
+        "source_sha256": "f281f134beb94377f20ab5d9ebeb87c282ec9ee6cafbfae52e70dea1bea66653",
+        "messages_sha256": {
+          "profile": "2e1bec15261c5373b0c5f38fc8114d645c6931aee0b30eb4848b810f7e608e46",
+          "generic": "84a73f6aff68e9a109fbc0f8a1473837eae636e06628e143c3289b9530784773"
+        },
+        "profile_schema_sha256": "dee7db320602aaa78ce53ee67c0eac74976af92e596017fdc9c6fb21c68fd206",
+        "input_tokens": {
+          "profile": 3763,
+          "generic": 453
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "135-034-811-691-345",
+        "source_sha256": "2d6f9ab0ccb13d85babb811f0d1f1f0834b147914d176a639e3e20fa31662195",
+        "messages_sha256": {
+          "profile": "922351c0ed7ba94917e525938bb9d0675ddaef16b97816991c2f02a17d450387",
+          "generic": "064cacb7a4fbd62c7ffdbc9000641cfad6f38d8f21345b117e91e21f587c1964"
+        },
+        "profile_schema_sha256": "290415651bc4b5c9e03ddcb78218cbd203befd060dcc3f97cc0f821ca2e2e15e",
+        "input_tokens": {
+          "profile": 4252,
+          "generic": 487
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "174-741-960-496-305",
+        "source_sha256": "a37f8867e0977330bf577c644d08bc156e69f68515ed8548de2a8e5d84105df0",
+        "messages_sha256": {
+          "profile": "f3ce5a4d06e1d541770b6ca45d8a77c28d1924b0534793806a9f086feb316fd0",
+          "generic": "beaad1a67cb760b7bf102ae8ad08533af7925e7e5d3b489c93b12fe5dfe7d3c9"
+        },
+        "profile_schema_sha256": "29d8f6a3f082e83e7a9abbc4913f96d2ccaf7bec1780556c68fc59423bf60260",
+        "input_tokens": {
+          "profile": 2215,
+          "generic": 380
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "110-961-361-443-351",
+        "source_sha256": "922f027ab4caec113b44e151388a5907a93a8d4fd73e2c75ed2c1e5deade5059",
+        "messages_sha256": {
+          "profile": "f0afc995a384ce6dc591f02186f223fb79bdbffaec3f3ad683d368fdaf718d72",
+          "generic": "5b4915de3ef7a66a5285e6017842f9047ea1949ba471a465058ebba79c0e0198"
+        },
+        "profile_schema_sha256": "13a7dca9929be7dbe16ffe6e6116a0647115985368cca86b5f91b2febc33957b",
+        "input_tokens": {
+          "profile": 3588,
+          "generic": 439
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "014-659-933-679-822",
+        "source_sha256": "2f2f2706e41686183b978572b53b6a62c1c8d8b646a074911acdbf31b0fca78b",
+        "messages_sha256": {
+          "profile": "4827ddb51854631de63cd0385982826e11a25f774d44e210257d1326c9f30d03",
+          "generic": "b82c3c751f43e833c5168fd6d628e6a5eed4c4cd492fab35466907e558e20345"
+        },
+        "profile_schema_sha256": "33b34e49a2a75f664dc9df5f4bb0b0edbfb865bdd8618c87b580b17c32b0ab8a",
+        "input_tokens": {
+          "profile": 4110,
+          "generic": 519
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "048-954-401-235-994",
+        "source_sha256": "3562df67c8d9ff22b9b0606dd92350ed5d7bb223d001d5762753ab6094916582",
+        "messages_sha256": {
+          "profile": "db3ca18498a0212a91d29bb5df70e8f65cb09c2a4e8aaa09a29890b13fb25491",
+          "generic": "c062ccd0028682171bd57ac7338848ecfbb5375a08e2f86ef4086587d6eabc7d"
+        },
+        "profile_schema_sha256": "d898369a8882035730ca31d00ea0404eba5cda7e9204b7d2690d95a247ad4e8c",
+        "input_tokens": {
+          "profile": 3819,
+          "generic": 473
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "198-021-597-085-223",
+        "source_sha256": "5887169d59769ea07c92e38f612f13a581c58e817347ae28e116078adc31b720",
+        "messages_sha256": {
+          "profile": "f9d8f9d8ed33b532a69f22aca1d5290a0cf54f6207789273bb401809fc8d47d3",
+          "generic": "5f805f48fdd38c5d8a479e90f5fc0050336ac806068df6360e4f04f65031caea"
+        },
+        "profile_schema_sha256": "d1a52a2b3f2f6965c3b6dfe0410f429435562f58e788a20b9e996ce518caeac6",
+        "input_tokens": {
+          "profile": 4490,
+          "generic": 495
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "074-077-602-196-566",
+        "source_sha256": "9fc31b2c8370a090a83a748c57f1c6423395183c0cb76330f55f799cd52679fb",
+        "messages_sha256": {
+          "profile": "a2181ffe6c84a3878243fd7e0e6d0d02f7da9c784dcbaaa1fd7ec7917a97a412",
+          "generic": "4fed6e67bfe94c70aea625b9fb0dd8d569c27f25b8e503db0afe4934f0c14316"
+        },
+        "profile_schema_sha256": "922fb933f02f59dfe8404f8453df04cd66fb5e248a62659b7abd26214d3bc6df",
+        "input_tokens": {
+          "profile": 3224,
+          "generic": 444
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "120-474-096-497-854",
+        "source_sha256": "198bcd367c5bc17e80eddab5280dc309d7d9aa9dc17aacb24697fbc7e41f6bd1",
+        "messages_sha256": {
+          "profile": "d89d6f9b9a9974a84338b5bd530b140db9745fb0af0d6fc5dd341168d2224c8d",
+          "generic": "e88406f3ad5863bd2a3a23203194f935ae880aab14406ba161362dd02b0abbf5"
+        },
+        "profile_schema_sha256": "cefe71c26bd0851e623c5388e3ce28b09ebc1a84c90cea355a88c13ee7a173f9",
+        "input_tokens": {
+          "profile": 4087,
+          "generic": 457
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "154-097-255-966-519",
+        "source_sha256": "6f1d1d43f0e22102b269f390dbcf4ba5c7e508f3037f4917b23df2b52560065e",
+        "messages_sha256": {
+          "profile": "5ea135d27816abb03e7dfcee1db05d42580125128dc179b78cb8929c60128932",
+          "generic": "7a1421fed8ce0b899e88d4880e1b54984d47fae0180315a91a10a4ead9754862"
+        },
+        "profile_schema_sha256": "3c8f3c16a70b979ed1326fb06905536b71c9d697f6d3e41ae83bcdf0c8420cc4",
+        "input_tokens": {
+          "profile": 4046,
+          "generic": 469
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "071-149-630-069-16X",
+        "source_sha256": "e7afac1d54e7edb61f1dcddaea989e7e803c123d5ddadf40c66b6666b396f781",
+        "messages_sha256": {
+          "profile": "0da237861203cbcc520a0fb7303095a95ff3aa52d06aed963c151b0ed03b5256",
+          "generic": "c1c36684fb4f289b0c35883118d31263f85faf6f0807d9114dac53d56835c10b"
+        },
+        "profile_schema_sha256": "5f1120948cdc553eef77924e991d673b7008dc6173199f36d337af842bcfba1b",
+        "input_tokens": {
+          "profile": 4120,
+          "generic": 484
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "051-565-298-506-256",
+        "source_sha256": "6d62a328cc39d81fdfd99e648e034925812810aa4ee3995e4a0ff525d5a5580d",
+        "messages_sha256": {
+          "profile": "47b067cae3a4258e1d1cfabfc26295f26175520f85bc7d0269954b52b07b5e68",
+          "generic": "fd2fed005610a5244af374e4dbafbac6b7a6eb957599e42680c7ea653d0c9434"
+        },
+        "profile_schema_sha256": "4e359fe0b96a259d7d9535c3f611290618f1be5d578968d5441c06a79bffc3c8",
+        "input_tokens": {
+          "profile": 2266,
+          "generic": 394
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "129-907-966-426-290",
+        "source_sha256": "a301684ae81d287ff295e3dd4bf7f52edde92176477b4fb00142933b39db77cd",
+        "messages_sha256": {
+          "profile": "03dd45597de883dd454570c148a4d2eeac167832789b1a98840a06dc195b58f3",
+          "generic": "9b2cccdfeba62c739b4651c0f3bab7d0f019a4733c108e5e589c905e82c94564"
+        },
+        "profile_schema_sha256": "b94fa801d1552d354f1c9c04080afc9509196ac299f409032ef225a7ecf0c892",
+        "input_tokens": {
+          "profile": 3087,
+          "generic": 437
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "034-962-506-921-028",
+        "source_sha256": "2db1da32b173af7330fd9a07b1ce45c480333584a656d02d94203a076c9173a1",
+        "messages_sha256": {
+          "profile": "81e653b88643a9858479728caebf7de7d9b217ba20065a308a944dcd937d3bf7",
+          "generic": "0ddbcab104720eebd06052b4894ef3708e906a1a4cea165ff37647cf7c72b1ff"
+        },
+        "profile_schema_sha256": "1f1d1709792d2ba33b6028c312907481a935c1d8b1d9297768fb1de5bed474c4",
+        "input_tokens": {
+          "profile": 2754,
+          "generic": 422
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "029-010-343-412-990",
+        "source_sha256": "45938d809da7affbde5c03602ac7bf29af3a8d48faf185594d2ee6a1d72289c4",
+        "messages_sha256": {
+          "profile": "96be36e20f1137bd807e8c76bf4395032aae90fca858b63debb6d6684a7cd578",
+          "generic": "af28a69e3d9e75e16bd3eea694ef8b94b19f06b78efd406f1038b802bb277740"
+        },
+        "profile_schema_sha256": "38fecd935543982a48a9ddb3c504b450a9e8e0e2a81af429100a9ca3b40b80a3",
+        "input_tokens": {
+          "profile": 2011,
+          "generic": 374
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "069-099-751-908-834",
+        "source_sha256": "673d7cd61a577151bbbfb934e0eebf0ca19cd3fff19305af917021a82b236eaf",
+        "messages_sha256": {
+          "profile": "1fda06fdbac9ed39b0b10deb5fc851a14dc1d6eefcbb3d3008721e7648a86774",
+          "generic": "05f473092ccc13a02014a0f41b1517af58d2119a877d3b226d66f0362aeed8c9"
+        },
+        "profile_schema_sha256": "f65152af809cdef0bfc97bd3a32a0ae7499d8576d7bfe4105f1f5b1c5002cd6d",
+        "input_tokens": {
+          "profile": 4213,
+          "generic": 474
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "058-271-133-596-987",
+        "source_sha256": "0670dbf4347ff8abd01028b62cc8c4bb0b533c3a135f090b118b91d91f49ecbf",
+        "messages_sha256": {
+          "profile": "41fc9fa07fac8cc9a848ceae5f5ee636d31a2431c5d15f48453c24b18abcba14",
+          "generic": "86346aec0f136725f33f961a5ad4dc3b62a07f36ca142faf01f437984f039e9d"
+        },
+        "profile_schema_sha256": "815806bf2bbfd918ba99f521dc164a399d7ae02023cbc68fb398d97ecfa3455e",
+        "input_tokens": {
+          "profile": 2993,
+          "generic": 418
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "175-618-847-898-364",
+        "source_sha256": "d27f90ebef53983a0230fa016abd83045d0991e82cbb28e4767f7e8aa7f15f82",
+        "messages_sha256": {
+          "profile": "1bc4c7c4c4473e10702d326846967947f3cbcdef413f3f98f1f4728446ad65aa",
+          "generic": "8bea9a720eb819948ee77a692ccb645b2e44114b2c513e2bad658094413fde23"
+        },
+        "profile_schema_sha256": "c2ecebb7697cab79424fe27e3c1dc4d24ac5a926f328b268861a6f6acbe9b5d4",
+        "input_tokens": {
+          "profile": 1879,
+          "generic": 360
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "045-915-097-973-51X",
+        "source_sha256": "43c6a571a16c4c38349abc5a075cdff670aa2735e749f3e26abd090301399259",
+        "messages_sha256": {
+          "profile": "3ca601365ec7e63ef792173f45e057d5fce2254d3d9efd48041ddd5f6463936a",
+          "generic": "71793c9bf0a72d03e832b688dd257469d868369275ff897a582fe71a9d1381ea"
+        },
+        "profile_schema_sha256": "beef1479c41b7d5eaf606d43fc1f87165177d81499917ec261d58fd0cfa40738",
+        "input_tokens": {
+          "profile": 3748,
+          "generic": 466
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "012-637-377-368-133",
+        "source_sha256": "c4ebc495c0fc1d5f18ebee317120639f208003e5ebec1216dcaecf831432b48c",
+        "messages_sha256": {
+          "profile": "e490a23f696603305cd9915f06c0b2907b6457c34b5a0ec7009db4799b8ed2cb",
+          "generic": "95b649274209b0dfc568b901699792b4f269948d03e563bda7a10cf9b28f1259"
+        },
+        "profile_schema_sha256": "d8fd506f91f34872a71fdfa5f366bd368e692325938e0bfc05cb30616f2e6a8c",
+        "input_tokens": {
+          "profile": 2439,
+          "generic": 401
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "010-741-752-935-441",
+        "source_sha256": "fc9f49de3f703550258cea55baea838178c65eb069a26fe9cf84b184760a5c3e",
+        "messages_sha256": {
+          "profile": "b47eae1245a7d0c2b01c65e64e2170ad994e7a6f55a03830da63b07e028d66b6",
+          "generic": "8eedeffbf9483a206947d49fe0ecc59e23ee755cbef86a7b91cfa07356268b9a"
+        },
+        "profile_schema_sha256": "da24d909f4bc0da515050351c1e84b97bdbb9c404ed2d8d64dbb599d5b18091a",
+        "input_tokens": {
+          "profile": 4140,
+          "generic": 475
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "171-880-226-149-22X",
+        "source_sha256": "155d46fd560391fd80b73f7dbf2d4d09ec523da74c24d7e5281d6d42739c0854",
+        "messages_sha256": {
+          "profile": "89697d9b64e069236362b5b95169e049da4bdc9d4f4942639df49d8088f9a764",
+          "generic": "9c3a901d7c015d6dfb2b4da4ca13ddc9daedb60e6adeb5f67f5035f5fed8c15a"
+        },
+        "profile_schema_sha256": "fa326c6119ab8e585394e8ab138c041635981084437da667eb279655201aa05a",
+        "input_tokens": {
+          "profile": 2651,
+          "generic": 393
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "088-085-264-247-938",
+        "source_sha256": "382ef640756f6fd6edabd015eeb648375452b29b8709adc99d11150351c6d965",
+        "messages_sha256": {
+          "profile": "8be5806e3569dc47e40b0e1988db336182d39d69a459eacf61975971a34bcb29",
+          "generic": "3011e4a9934c00976f6a1dc69ae658b45bc5b4013922a8dffc331321c3a7c631"
+        },
+        "profile_schema_sha256": "8bf0d4ff842b2e60bc78f2c39307ed307162357d353d9073b2d19dd2139936d9",
+        "input_tokens": {
+          "profile": 2760,
+          "generic": 415
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "011-829-560-798-326",
+        "source_sha256": "fab2b5668bd4b2b01f27d9069c64ba89c9aa6f14902464646dd89d1359f15e7a",
+        "messages_sha256": {
+          "profile": "0ce194947d5f1fba5ca037c39de2e2932b476b8e502b125d142523c600f817ad",
+          "generic": "fdcaaa574ea2aae753e9ec5e6ac68bf1aa2c279de8e64fb57dc35ede4832ec2e"
+        },
+        "profile_schema_sha256": "4dc55261c3d1d897895c6312a15adf08ce6c0760a660947e2f7d55d549c2df13",
+        "input_tokens": {
+          "profile": 3609,
+          "generic": 445
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "105-157-736-406-365",
+        "source_sha256": "f0db493f9871bc8e2268a8c4a494d5a40324966f0fd1ae1e4ba7515999c3a5f3",
+        "messages_sha256": {
+          "profile": "b42f0b4bd88e732d014400d3cc9dcb93ce30371927ef6c9f7c6a93183c48277c",
+          "generic": "e68059aa03e604b84ff9f9bce966f3fc4b56d957341102f9b85c95869ba078fe"
+        },
+        "profile_schema_sha256": "6a9dd2e61b4589a1a2befb5e4584cda7f21c3889961fe32c152d8b7e0f6ce572",
+        "input_tokens": {
+          "profile": 2554,
+          "generic": 412
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "084-993-328-903-163",
+        "source_sha256": "336ea130c7832f7e1a7cc4d97204a64790f8587a653c128dbd599cf2327bd925",
+        "messages_sha256": {
+          "profile": "e9c0c0b5cb3d208e9f6160eded84a4f73959bf5c5dc2de9e04affd4043362fbe",
+          "generic": "ab60d37b413d0426891292ff52bc9f103bbbdb614cbcdbb4c92b73a31b7d7faa"
+        },
+        "profile_schema_sha256": "cd6870a1b90c248ca4a78ca33f95bd27ce1b9a5a194cf5ce7582cb93c03867c6",
+        "input_tokens": {
+          "profile": 3281,
+          "generic": 454
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "156-982-593-034-540",
+        "source_sha256": "3ca18c06bc57161ffe9098226e75629e6b020ef2fe31badadecac036560eb3b0",
+        "messages_sha256": {
+          "profile": "9035e1aeec5418f71b5b3517083c8f5e5854f3ce17d93dca53cb03270f70d365",
+          "generic": "18419b0e1163915201e2cdc5eef2abae8cbcc125418e4cab81db0562caa3df36"
+        },
+        "profile_schema_sha256": "3f53a7a603d32787a024f4839db80cd851c322fb364f89aa65e3b7d03851c407",
+        "input_tokens": {
+          "profile": 3780,
+          "generic": 449
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "124-675-228-552-293",
+        "source_sha256": "9393a493c2f0a3b761f49d0cd80be9d6a165dd134718874a9553e41ce948ffc2",
+        "messages_sha256": {
+          "profile": "930d3da997659e5839484fd9315367a1263728c3776492b10ca17c8818bd1c85",
+          "generic": "37d2e0257ab6a2a0efac897c605e0cf1f95cbd735e17825e483d7699763dbb01"
+        },
+        "profile_schema_sha256": "f864edfb71237f4bf15a06d10ff2c09ec5a4a65ff27de4ec2bc6ab5f8f23eca2",
+        "input_tokens": {
+          "profile": 2445,
+          "generic": 394
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "130-313-557-598-179",
+        "source_sha256": "f17c0f8e73f926e182ef8f3cf069c59b2192ae12a8d79d00703b9645094f887e",
+        "messages_sha256": {
+          "profile": "9c3000b640add77e51fd5f0d37981936f4e1f82bfa182c7044befce965ba933d",
+          "generic": "36fb932477ee25dad8afe4a7065b12dd0640b5ac8d407e96e0cd180d8ebd0e3f"
+        },
+        "profile_schema_sha256": "cd3f49dddd720ebd7277827d95d02726bc315704933094ba9cadaf629ae35580",
+        "input_tokens": {
+          "profile": 2971,
+          "generic": 415
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "139-741-022-436-462",
+        "source_sha256": "6f721ef327d5fceeb76c1729cd5fb13dc28b8a3bb683aa0bb94a573b0c65bfaa",
+        "messages_sha256": {
+          "profile": "ca0fa16dee6221b53220e957aec536d2a008113a832f69c3be962c2a4010151f",
+          "generic": "c93c5306ccad2b56498b6a2990748fa946194db6db729ac7f029427426cead32"
+        },
+        "profile_schema_sha256": "52b765dec6ca4332c0d29e36881d881ed7f594967bf6ac6033fae1795cfbd19c",
+        "input_tokens": {
+          "profile": 3088,
+          "generic": 443
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "009-651-466-334-384",
+        "source_sha256": "72036641c27ceaabcdc3424ed37638f50b5273bc6146d3d6743c77a5d2a640f0",
+        "messages_sha256": {
+          "profile": "a2d34fbaaaa7f66188b13c3b4f5d81d2a1bd0328fce07ae885929b7d4e9ce8fe",
+          "generic": "b994a4e03ffb3cd436980b6c094f6c45aff8e4dbec4c3dea073c762471ae91a2"
+        },
+        "profile_schema_sha256": "d246688319b2c1154eda31ff19ed80134ac4f3ca17a3b17b73cf43d1ab5b8843",
+        "input_tokens": {
+          "profile": 2999,
+          "generic": 440
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "079-445-658-379-052",
+        "source_sha256": "93c7c7773b1ab0a8a824eb13230af4365d13681f0e00bf0c5b0917c3a4ff1508",
+        "messages_sha256": {
+          "profile": "14703b420a311c7ab7ab5ad77b992a74b5375ebe867353227e1c17e0569e7cb4",
+          "generic": "1d68c3eb5ab2ebd21ce157d4b39ecbd76b48db59fea163e1dc1392c021b28ec0"
+        },
+        "profile_schema_sha256": "8cf3df9cfe4148020eca1f8c262524de3351137b3cb33a2dbeda74fd8f7d7910",
+        "input_tokens": {
+          "profile": 3957,
+          "generic": 471
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "175-810-170-502-611",
+        "source_sha256": "32d6d9daf50c6ed0a5df118907fa22daba3624bbd23038ef5bd90dfd6fda0a99",
+        "messages_sha256": {
+          "profile": "bb0a0b169604cb793cfd8ac0fa8b1a4856bfece84c803badc418efb88db19001",
+          "generic": "b5dab9dd3cbec7c8b1537e8b2cd034d1ea3d389107f6174c7b260ad6f889f84b"
+        },
+        "profile_schema_sha256": "58c01899b4b097ea9be9a47df046298c9f0dfca6f9a0338d6651ce3275b91153",
+        "input_tokens": {
+          "profile": 2688,
+          "generic": 404
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "017-702-081-958-943",
+        "source_sha256": "6bf08cc99faa97d187ed700d143c2f22e3ca775c1f855836508dedca6ecf8c89",
+        "messages_sha256": {
+          "profile": "46fbfbf882e15d821fa36882e74ed287305c30f5268d0ec7172263a46f252eec",
+          "generic": "25392263d789958e1577a58289e76b08c3ba5f0d2226682e9a83c67edb57a85d"
+        },
+        "profile_schema_sha256": "cbc6e53393eb59282ede975a3b395f3153079e038c26a9660c48f7009316c543",
+        "input_tokens": {
+          "profile": 2388,
+          "generic": 385
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "013-310-783-919-975",
+        "source_sha256": "0c3b99a7919aa7b795f3a653379b7e5d4eb959acc2a23f12d38a31e673c2e79d",
+        "messages_sha256": {
+          "profile": "2fa6047624ece3f251b2f5cf6758fbaa2848309425fdc37d0f29148c364ddd20",
+          "generic": "5c4e0f0bd74d8c31da30b2756619fc70eb263b219995f3aacbab267edbe8588f"
+        },
+        "profile_schema_sha256": "fc35ca811e9a5c6716f29abef56ec3da24dad68d2d1a739195ccb5ec08588a4d",
+        "input_tokens": {
+          "profile": 2491,
+          "generic": 405
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "102-494-228-160-205",
+        "source_sha256": "ed9bd7c03e0e5bee58bd7fe2b11c78ed3c2da574d3925511e2ce87a608e66347",
+        "messages_sha256": {
+          "profile": "679e04741d703fc2f7289933ad59b93f9e2294be02a6431cdc5d136e01601abb",
+          "generic": "13cd1319ace7032ba7619b72b3a6c916d810858c8abdb9232a50b144cff04f1c"
+        },
+        "profile_schema_sha256": "74f96286abb21699174d25dd4b83fde7179478651e516961b3ae2fa5baf0ae42",
+        "input_tokens": {
+          "profile": 3877,
+          "generic": 487
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "086-577-446-462-039",
+        "source_sha256": "76f83b3b2ddf9fa45e1a459d02cb758969e46d2993f9132ed2cd53ef24022c6e",
+        "messages_sha256": {
+          "profile": "e9ab6bf4027621d4bb456ba699758d765fa83ab1cba974eaa04a492c540941d6",
+          "generic": "0a151d98d030b3090e98649c8053023278ea07011402f36380543cb2c0b8bb66"
+        },
+        "profile_schema_sha256": "64f0b0c0c80725205c59f83bb71899b3c772bd49a0e89887f069ebc0ed221994",
+        "input_tokens": {
+          "profile": 5379,
+          "generic": 526
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "080-625-455-565-537",
+        "source_sha256": "c163690e29b6e1e829b5de8b2f7a1d0a878da5c6d2c4f004235811eac2fc0a2e",
+        "messages_sha256": {
+          "profile": "6d3bed72e054f21761a0db80ec1405b18ecdfc58b918e5df4f23aa4081838509",
+          "generic": "a59fc35bd0b0466e5134ccf9d4ec6d110b87080dbcd9123d852314bbdba71e00"
+        },
+        "profile_schema_sha256": "9c4d986145522f52c18f214649ff1fdb153b49e20c858faf6eb50d607da60989",
+        "input_tokens": {
+          "profile": 1700,
+          "generic": 361
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "164-508-353-952-408",
+        "source_sha256": "a3f4148c5ea97daf157ec4e38989a26941688cfab8d069bf41c293c569970633",
+        "messages_sha256": {
+          "profile": "f73a601a9bdcf6723618ac5e6379a04cee21d4fd4941babd40a2bff535aef9b0",
+          "generic": "4ecbf19fd6411a38859fc0d1663efcdd9c98557ef6e50fefaa63e30d169073aa"
+        },
+        "profile_schema_sha256": "b5ca9c93d0862d6b3b78fb5f2d75e6b6a6ee93a13b0e456f7a700656be90dd98",
+        "input_tokens": {
+          "profile": 2922,
+          "generic": 421
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "061-615-432-287-441",
+        "source_sha256": "a8cbcc4eae73050e40b5fd7aed1af7fe352b8e052149729edad4004f9770964e",
+        "messages_sha256": {
+          "profile": "9a29f6de55e9fbbc791b318df60d20ac8d47f7e5fe7c764a7e6be0242ddd7f26",
+          "generic": "15e30729010323f9c05806bc3102ec4ab0b8becd720fb919b644e9cdd6b23836"
+        },
+        "profile_schema_sha256": "93ef92aed0b84ee92a539865c0bf3a7023774905f4f1155a173c91b1c291307d",
+        "input_tokens": {
+          "profile": 2319,
+          "generic": 386
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "171-475-923-954-743",
+        "source_sha256": "6c846710689eb1b4160f268a34909c157030853a49a70504647d9ae08acae6f5",
+        "messages_sha256": {
+          "profile": "c05568345d6dc18c6f89b32c279b8793be18d3da13b6310583df4155d0514f51",
+          "generic": "4da0923ff0a71c9a400613a038ebf7b735ef019ebee40aba02c0030a31d5e31f"
+        },
+        "profile_schema_sha256": "b61ee868fd9277497496d9acff2ee469b74a7dd6681140be2d0ae442f0988b20",
+        "input_tokens": {
+          "profile": 4212,
+          "generic": 498
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "130-534-212-101-728",
+        "source_sha256": "1480c8249a2061f45e97767669cd04f58f87fcc0305b7ef33c3ba96c089f2711",
+        "messages_sha256": {
+          "profile": "206770899b0120d31d57cabd2a4342b9b237f6f9e0cb44b7526e76fc631670b2",
+          "generic": "c56f28bb33663d0104c13fc62d684e9ada193d1d095a4476dd76542f55fa3456"
+        },
+        "profile_schema_sha256": "5001a3a449fdedabda7ce7cea6dd612ca25298293b4e72aabefb2ef029e6cae1",
+        "input_tokens": {
+          "profile": 3970,
+          "generic": 466
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "134-978-336-633-892",
+        "source_sha256": "10ee6e8da2539d1f9dcf9e34945048e19b0dad26cbbfbc8ce789d7b18ea8528e",
+        "messages_sha256": {
+          "profile": "0b924351579ad997b90114ae382c129b821c14861e6a6558de4347436600ce67",
+          "generic": "4425c8b31110392c964bd826178b3b609c8a463d8b9d40f432da2ce729559370"
+        },
+        "profile_schema_sha256": "c6d7fd84f1808e9191a4f243c38edd37e58b586b4e4f88e91be4c8f3c8ab973e",
+        "input_tokens": {
+          "profile": 4028,
+          "generic": 473
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "033-679-059-501-493",
+        "source_sha256": "b2d903d8547eb05a55959026a87ce4360671668f1c6c9c58d2896c92f48bd6a1",
+        "messages_sha256": {
+          "profile": "4fc3c7e719db554d092563341724274e290a1081e659be186e30963e0be1e77a",
+          "generic": "e9a65b034af1f8c845e1b374015a0070fa0830e3be1dea3aae381bd98c68167c"
+        },
+        "profile_schema_sha256": "236f5b7d7e697650a98d994abd4865971b8797f977249c508d06b4a7fcada2c7",
+        "input_tokens": {
+          "profile": 3294,
+          "generic": 442
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "112-687-148-064-794",
+        "source_sha256": "f1871cf55c72c304519a28268de5422b02aeeb547ee84e0d6382f7fac5759891",
+        "messages_sha256": {
+          "profile": "556c8dd0b06897394a9bcbb760f2b304ae2611b9022a1bd6f4d1fd4174167e45",
+          "generic": "9b1a6b6f858663bd1bbf58effb789c1df28c87ca86feaa5e03f471e510b32e7a"
+        },
+        "profile_schema_sha256": "87a51c6714cae58b45ccf283f22eb5ff51d18d08c174de3aa279a1b201d6aa97",
+        "input_tokens": {
+          "profile": 4669,
+          "generic": 547
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "139-022-626-086-44X",
+        "source_sha256": "81e865c947360a2036585edd25c252e260e92178b8837a0ff4bc36a54c85e7b8",
+        "messages_sha256": {
+          "profile": "3fb1ded341cf32be66f86aac8b3cf650119c9e2bb993e1b91ca41c8eba0a442d",
+          "generic": "afdc0777ffa62e0f767a671180820f674c01a8fac9b288c3955664f613a3f58d"
+        },
+        "profile_schema_sha256": "d7cbc3531ea775b1943d07280deb57b2c5bcacd62b06dcf7de43f25fd28d4db8",
+        "input_tokens": {
+          "profile": 3983,
+          "generic": 471
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "006-265-466-026-440",
+        "source_sha256": "3aa5b6cffc2be73a5682760420808ee69fdd46d697fa652c1d0084d3a197d595",
+        "messages_sha256": {
+          "profile": "9aec646ee7186900c476bd821874eac3de66a291a4d8a9b1d619be54b4af010b",
+          "generic": "d182a2b2a03e226eb47e61fbe67420f1d628edeab2ff2d24d48c2604e3c2c8cb"
+        },
+        "profile_schema_sha256": "2bce9308b88b4970a79d372ef5f5dc9c2e47c61ce18877e1f7c12d27d2d2fc32",
+        "input_tokens": {
+          "profile": 2364,
+          "generic": 413
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "122-146-309-345-089",
+        "source_sha256": "0f336b21d66786134b20b886f6522f6d7f864373aa13f4ebcfd12aa26ca0ff92",
+        "messages_sha256": {
+          "profile": "ed68decbc25a5989c56db98240904e2788642dfa8c04d31777f5379cee1ceff0",
+          "generic": "1c11e178b33fcf1eaf0928ca95154808ca98fce74968553ae888f87108e29e87"
+        },
+        "profile_schema_sha256": "70c2c4d6bb2f59759a6ce73412b4c7b559aa62a6cfeaa56dda5f52044261ffc5",
+        "input_tokens": {
+          "profile": 4539,
+          "generic": 534
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "040-625-348-151-987",
+        "source_sha256": "8301bd56e6db61688d9f0860c07db6e3d3e5ebe18121ae78a2198a60363ce4e6",
+        "messages_sha256": {
+          "profile": "36669060e98d7d299eddf8ead6d1636f9e3b13e8ceefbf0b9baa407b0d62de3a",
+          "generic": "e88b5ecef4efab0c88d8d6df78cfe3c78d6cfef224bb935072a2fbd42222eaf6"
+        },
+        "profile_schema_sha256": "e84076beb14167b42d7e2310377dd7ff8485ed8f6a52cd09a37a02293fc0ad36",
+        "input_tokens": {
+          "profile": 4553,
+          "generic": 505
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "197-500-223-185-141",
+        "source_sha256": "23a273c4b3080f12a7d1e5888c8139670823c02e5faa8ce93a8f2f9f5beabffb",
+        "messages_sha256": {
+          "profile": "5d2f67c7a7a0d3d10159e9f86a721537106e4d8f3e728f4ef51f2970246d3c56",
+          "generic": "62d222276a66ea3cc13d83f79b3c3961247b887bb6e829faef493c6a8aa9119d"
+        },
+        "profile_schema_sha256": "b680762d898ae3c7f6e7e2013725e655ffb6d81eee3073a8062cc1495d51189e",
+        "input_tokens": {
+          "profile": 2763,
+          "generic": 401
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "031-308-134-708-57X",
+        "source_sha256": "99441e5d6d68075187f334a66f4a83e21f03e5d0dcb5bf54b3cb7152f7ee27d5",
+        "messages_sha256": {
+          "profile": "a38c2c2b3a904b4dbd171d49084652d714bd9669a21bb6453c4fd78d615dd9cf",
+          "generic": "ba8167f028457bceba31f6d55667d1349260604cb8c85327cfafa44177046629"
+        },
+        "profile_schema_sha256": "aa566970b86793c32b02aa964c91e50024d69ab214f6177af162781f48daf778",
+        "input_tokens": {
+          "profile": 4218,
+          "generic": 483
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "158-993-491-434-638",
+        "source_sha256": "2bcddb1ada4e807ed99ef9ad6509d5f14c3eed8e9bd830d2f8568d3128ee0109",
+        "messages_sha256": {
+          "profile": "fb1d8b03935c414221a95e85ec12f66d7b69e2c5f4399d6635756c56ca577b82",
+          "generic": "0a781ba6d814196bebc3a2abcf050e00d63db7f3e1d67805ed789d930dd8270f"
+        },
+        "profile_schema_sha256": "4b3a080d8549fd65243bec7cef42ae217773afd3a18448602cdf28694e2ed9d9",
+        "input_tokens": {
+          "profile": 3032,
+          "generic": 467
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "143-158-624-739-336",
+        "source_sha256": "65bf83de8a89791b0ca68ef23da44a784ae5a97a22729e10054044aa283d4b0a",
+        "messages_sha256": {
+          "profile": "da54150b60a96756d0e7dd35e4b7fccc15b602a60e04bfe6d0c7fe38057182a2",
+          "generic": "365b63f0014216a52e512ce260e11d31212b525640ca0ed39dfef7f91b34f02a"
+        },
+        "profile_schema_sha256": "376d0793e2c80a56a2827ead726f4f6bee5121cd61b3fa6d538504b79164910c",
+        "input_tokens": {
+          "profile": 1851,
+          "generic": 366
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "148-814-144-589-003",
+        "source_sha256": "699beec32eb99de34906b89528bd9d8aad2a2762bd452d765cdfba137f756ded",
+        "messages_sha256": {
+          "profile": "4bad25c37f379bb0d9f19a6fcac8def60f18fbb226b069ac7f26fe5b18fa7467",
+          "generic": "141e81f8a1737318c570014b88398a6d291aa1c97f1934153b5ea31d92c35cc7"
+        },
+        "profile_schema_sha256": "ec3195c3fa380d086815a23f7d2ed615d23191e03645693a8894e6a57178859e",
+        "input_tokens": {
+          "profile": 1546,
+          "generic": 340
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "099-861-464-771-927",
+        "source_sha256": "b08d22354ceb900d414fdc84be4fc5fbde69c5be1e07a917a45354890a407359",
+        "messages_sha256": {
+          "profile": "27491f0eb9ab26385384993130a035c2aa74098864750eb3ff34100c80b1c50d",
+          "generic": "e83b1decd814ba03caee2493f369f774d0d35bd9abdf8140f2ac2547e66a9ec6"
+        },
+        "profile_schema_sha256": "f8906c8693648bd211168b0923dc421aa215a1e1aaeffd2e8ade96b71ca6dcfa",
+        "input_tokens": {
+          "profile": 3336,
+          "generic": 444
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "110-518-180-138-394",
+        "source_sha256": "da2d48c962a2c4e68bf92543a949496b97fa34770e79cf240126b38cb10d2e30",
+        "messages_sha256": {
+          "profile": "8141eaa699037e1a7cd955d90695f25d55ec7bde86c7201a5353587db7f5859d",
+          "generic": "d0194d87564484c07699a8294ef4500197e32a601593db73f68df1ac9d1cdb51"
+        },
+        "profile_schema_sha256": "0794e323c9aa2cb5da36d524ce82f033e722c0ed702c23ac5e65dae40fa4df8a",
+        "input_tokens": {
+          "profile": 3110,
+          "generic": 489
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "110-055-861-638-193",
+        "source_sha256": "89ea8936441cb91527b97ed2a265aaaff4ace6ac80d7832f14364a80b1262e5f",
+        "messages_sha256": {
+          "profile": "1a400b447b757f6d6cef808f65058a43d968bb81c326aaeb66a96a6f7c9bc03f",
+          "generic": "ea3233c97ac8095cbf103af1cc9b059146a687f1c290b2cc64e2592a030b95b2"
+        },
+        "profile_schema_sha256": "4277f5d325a87af8eb9f54f91ac4e42e3dad487e8b2a725b1caf6e3568b26f86",
+        "input_tokens": {
+          "profile": 5438,
+          "generic": 553
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "044-787-127-340-458",
+        "source_sha256": "b15e4c7221588e3db28e47a3cedcf8f3a57f5b2627718e118ba289782067aa37",
+        "messages_sha256": {
+          "profile": "1a61882b7faabdbf3a4489935fe2b3ddda3d6a778b3c1d2f61dd3e0cc0b0bd50",
+          "generic": "0149c4f5cd23eea2e9f00f854b0c608400b57c0233f4716bbcb75bb143ce4b3c"
+        },
+        "profile_schema_sha256": "b8aba62badd95cf1c3a8774ca4ab9af7d50a4be5d4f2284c67cf8c86b226ee05",
+        "input_tokens": {
+          "profile": 1893,
+          "generic": 374
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "113-886-082-762-124",
+        "source_sha256": "5c73c3ce5ab62a4562151e33a726365caeeeeda3cf7975bf65f5bfc890e8efbb",
+        "messages_sha256": {
+          "profile": "6ae9a23ba030c172b0e90ea6ea376b4e1e1e7fa0fc4ea256f87c0f800bbeca85",
+          "generic": "c61e540dc780fe4bd114b4a8f850aa0682777f2a0b44516336baf982fa7cd668"
+        },
+        "profile_schema_sha256": "0aceef8e281bb2007d186b57e3cbc200d1d562984235fb5f24e10cf109da057f",
+        "input_tokens": {
+          "profile": 3540,
+          "generic": 519
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "076-828-448-405-653",
+        "source_sha256": "697b48bdb36441d9c3d105add53949a114921aa5f26c27c23ad6b103a9029fe4",
+        "messages_sha256": {
+          "profile": "52d8dd5ad99f889a39f4caf3ae0569d069b02cb583893584d1acfcd18c4c611c",
+          "generic": "6d5019212e180faa4ef3f0404d9e704c83a7f997db6c50e9eaf53a9856dae62d"
+        },
+        "profile_schema_sha256": "97795d2336dfe09eac9bb699b117d47b379f758ec270283f619753e92d3ca6e1",
+        "input_tokens": {
+          "profile": 4150,
+          "generic": 468
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "164-159-793-346-951",
+        "source_sha256": "8c53f4b894c4bd888498a30a217ed0cdadc20855bc34fb8e5425861344106b02",
+        "messages_sha256": {
+          "profile": "1954003357bb981d7e513d4119efc1aa134db4395db5de7a43a75e288511c87a",
+          "generic": "4f29126dea63d3375d4f333403a2620acadf0a3568fe169547e9cbaeb3c47659"
+        },
+        "profile_schema_sha256": "afe344f2f2e4e735f394b3c3bb7902a72b77fc191a795799f845beb1bb8e1c18",
+        "input_tokens": {
+          "profile": 4399,
+          "generic": 488
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "126-189-790-335-48X",
+        "source_sha256": "ada7e85f9c9fc15c29775f7adb7e617273f2833ea3cbe01fd586489270417e69",
+        "messages_sha256": {
+          "profile": "0d40bca624506958bf0943d4f7673ad87ef61abf33f8a0ab180a0f2ae7ec4859",
+          "generic": "eb94e268e830544dad42d2813762b0238f12f83144fe6b89be3611e27bb11a1e"
+        },
+        "profile_schema_sha256": "0f714d7eac6712acfe3c105ec6b5545b227cfb3846142f216d5ff348e93054c2",
+        "input_tokens": {
+          "profile": 2441,
+          "generic": 384
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "089-929-228-750-628",
+        "source_sha256": "4d8be876ea0605de3ce784b30354304eff38f41f2160ebcb9017b402d56466de",
+        "messages_sha256": {
+          "profile": "9460e85d74df62e9179b1077df86c25b8c4ea80bdb29f95ae87e534fe803e6a7",
+          "generic": "161ed867d8702d06f9da835328cb1af2ea0eddc6af475394f9204ec9ac79b9cb"
+        },
+        "profile_schema_sha256": "41504021b213a990ec1d62efb9594dc4b42a2d9700488b4877cd2abb87fc6a4f",
+        "input_tokens": {
+          "profile": 3071,
+          "generic": 418
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "135-648-492-138-96X",
+        "source_sha256": "df39951f1b2c6f3a465de40be9ffdf9ef33b8775fd9f2a185457c2071b36c4a3",
+        "messages_sha256": {
+          "profile": "bdfc453d8f71143d258bcf6fa8bf69fa7c337f0c325760d828a2d65aa64fa33d",
+          "generic": "591bb3c0d6001f94c636a6d5d1c81c0d537e6c20eb58e55b3677794ec50e397d"
+        },
+        "profile_schema_sha256": "5244f9e301d97f621800e806be7d1bfcd35578643a515f6bb281e038eee71971",
+        "input_tokens": {
+          "profile": 4979,
+          "generic": 520
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "172-818-515-754-636",
+        "source_sha256": "d09dde623ebc21e27005c12af62a1c8ff6b95efb83d910c59a552d130f89d1ab",
+        "messages_sha256": {
+          "profile": "de0debaceca427d4f6e224e37bd948ab4db9ac8422bdf64b19c97ef4fe6149f3",
+          "generic": "d65d37b664d188da3f5ef46d1c52273ffc459024ef658133666045b84833c8ca"
+        },
+        "profile_schema_sha256": "37f5d044c70f6509fb2667671a54c64b9964ec0811bda5c18f1a798d040c1fe4",
+        "input_tokens": {
+          "profile": 4398,
+          "generic": 506
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "168-612-530-252-759",
+        "source_sha256": "7f7d44d5105cc35e90606bf83ef249d096e71621a74c1b5c867364120eb496b0",
+        "messages_sha256": {
+          "profile": "4e4011c737bca19f161b96926987cb68d5f96edf0d39b08616e985cc2aab8d74",
+          "generic": "965f628d9619e3ea55f0cfdbe49010597edafa83ffa0f29654d27b7bf4e0189f"
+        },
+        "profile_schema_sha256": "05c154be9fffcc9139438e089a755296ff93d87f2943e44bc44f8a6317045a92",
+        "input_tokens": {
+          "profile": 3132,
+          "generic": 432
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "135-560-658-034-313",
+        "source_sha256": "d82ea8ba8d1bc0bc6508d024175315e9bc0b4281592bbbb645be876cbb173a5a",
+        "messages_sha256": {
+          "profile": "8da6e123044fc5a780ba55578fa4175fac7e6a6d2e774fd0841a0d73b76ac060",
+          "generic": "5bdb95898ddbfbb9dee72c1f0592ca8b2a6f639215b726140e1eb7036f039191"
+        },
+        "profile_schema_sha256": "79bccdc8ede01cd28a190de8e812eb775a94a130b1323cb5c4a71330a4676cad",
+        "input_tokens": {
+          "profile": 4366,
+          "generic": 484
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "049-950-853-481-799",
+        "source_sha256": "593860c38a97f6e79744e3291ab671ef4e4ca625d17760fad33a807eb499cafc",
+        "messages_sha256": {
+          "profile": "fd780bb7e445f35c6631950aa81c059aa7c8454c0a75e8745e0d25c75f9e75ce",
+          "generic": "d1fcf03fa15f156d4d82f53d726565de4e0430a9ef09efe5ae3640ff7847733b"
+        },
+        "profile_schema_sha256": "6255df7d57607f88bbde0d300e98a6697f5028ddbad54ecf43f7eca7786c7ccd",
+        "input_tokens": {
+          "profile": 1863,
+          "generic": 362
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "168-276-210-252-143",
+        "source_sha256": "37c64239fbb771643ee3528941fa8d12037c649f828b7934c90a66130664bd33",
+        "messages_sha256": {
+          "profile": "afddb31ff4315327eb6a83e9591a23b026fa857176b957c3a5371616274c484a",
+          "generic": "579b7225f751a6a245ef04a02ce9d1f0eb6f2a94327b76e90bc98855e1620f78"
+        },
+        "profile_schema_sha256": "42a7eefdcf751a4c62de0fcfb0423677706c1d06019c79f346c207ff8f376dea",
+        "input_tokens": {
+          "profile": 2162,
+          "generic": 386
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "120-848-834-498-861",
+        "source_sha256": "8df3df02ff2ec330c76d995b9ecf3f1961834285fb7225ecf38ce1b6c71bf1a4",
+        "messages_sha256": {
+          "profile": "fedd047160b82cb498ca83a0ffc568c32119a09bd80fb73bbbbed5cabbee0923",
+          "generic": "2296b634071774369ddbc373b0faf343e439141bd3a30db548eede4ab65d27b6"
+        },
+        "profile_schema_sha256": "d714c0bf8fb570fecfa5f6ef2a664de1e14bb2567772e9832697d5d5fe69e46a",
+        "input_tokens": {
+          "profile": 5453,
+          "generic": 560
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "074-282-793-708-829",
+        "source_sha256": "b07cc081fff721c943a06063574b4bb3da4f420ba71a3aaa77455c705a084ed1",
+        "messages_sha256": {
+          "profile": "c7dc87f84d16e85e2065fc62008537aabb753d581ac954d21fe310d28615f1c1",
+          "generic": "e2c37124a7d2c3504b80b5a33f46c614d630d2101b076053597510735b0a8090"
+        },
+        "profile_schema_sha256": "e8ea923d16f12c2cb383c4610f37367e9510d32052c65af3bad542da04e28492",
+        "input_tokens": {
+          "profile": 3917,
+          "generic": 465
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "029-870-018-898-843",
+        "source_sha256": "659c4e218545c17e411067cde31426f42efb59a6f83e14ddb415b9d8b6bfec49",
+        "messages_sha256": {
+          "profile": "e22a8a754362851629ea0b2d9d2ba8f668ef60fbce15b50d49088718e3059c8b",
+          "generic": "b497dfff631522086165086f6dbea2acfaf74acbf28ec1143a1416466cc55bb7"
+        },
+        "profile_schema_sha256": "600c4e6336df66f89cd3b052a2b86d229185046ca3c4939f5b1d92a12dad3f22",
+        "input_tokens": {
+          "profile": 2351,
+          "generic": 391
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "021-360-366-482-464",
+        "source_sha256": "a290bc1e8ce41bb4064d6b9812abc42b024a17f36054b255d0a36f39cc6b96fc",
+        "messages_sha256": {
+          "profile": "9d529f5cd5758667368ab01f531d5afdf3a2a262e65f5dc367f7c980619f31fd",
+          "generic": "d777d0f6d6d55269ec1d6607c0acb6a52eedfed47f1357ac17d4b7a060597b0b"
+        },
+        "profile_schema_sha256": "6445f87c589c64654b9e6f4d6bc24155aa6a299e55425bbb8f217f1e53bbc97b",
+        "input_tokens": {
+          "profile": 5875,
+          "generic": 585
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "010-541-720-740-176",
+        "source_sha256": "1712ccf155395ae3a63bbef366542a795a0139dc31e2aedf8cd07327fabdab5c",
+        "messages_sha256": {
+          "profile": "151390c10d1c99f5e7322f7cb74520d524efcdd49c40a393ee2e79f99e63502f",
+          "generic": "3fee1a09011090c2d33bcef20d9a1ec843e3774fe03289509fad113b5842e344"
+        },
+        "profile_schema_sha256": "53081442e6d33ac46f96879e98e3eba6093a5b9098b264cd95eddf9453c760c0",
+        "input_tokens": {
+          "profile": 3954,
+          "generic": 455
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "057-595-745-949-194",
+        "source_sha256": "10558d3eb448e0160d96c677a442d1c3ae4983d46d0b5e87e8ae62026fd79742",
+        "messages_sha256": {
+          "profile": "0b663819ab774c05320f237f62070d2671a02f589fce67037b41c1717b83ff78",
+          "generic": "3a2ae93cfc3fb42409afdc9ff83d3916a3055508a23230fa1ee163f1cf43e010"
+        },
+        "profile_schema_sha256": "39ec0d024c129d8d0293014f0bd11e5052c23e4a28d2ca9c005c6b84eba978bb",
+        "input_tokens": {
+          "profile": 3708,
+          "generic": 464
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "160-190-550-990-451",
+        "source_sha256": "fd3f6c5f9379df1ee62c445c689802df310324415e5ae407efdc227c34038c92",
+        "messages_sha256": {
+          "profile": "cb4e73038a0da018f7c0c3f9533d3cf1361ae5bbdb9e734aa7ba3d1142ba9599",
+          "generic": "5291ffa180dbf4e318409ca26a82a62dcade7b36ed8d8ef64a4e02a4239dcc78"
+        },
+        "profile_schema_sha256": "a33a41a1bc818761207f4be79ca17993ae845093f2d38900e613e3b327655b74",
+        "input_tokens": {
+          "profile": 2713,
+          "generic": 414
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "180-593-863-953-039",
+        "source_sha256": "7f93a9179c2b57c0ae3bbf7d66a9ef5d5af9303d2cbb21a5163d0943b17a096d",
+        "messages_sha256": {
+          "profile": "4a4770250ec2dedfd8951dd0a7dec70b6927b16ad84ae5e933a54e43890ffe09",
+          "generic": "cd5667b3c41f3ea4a33aabe7aee3d63473f3bb91712d42b36bb5789f3b3bdc3e"
+        },
+        "profile_schema_sha256": "fa0e9a2ec20dffe87eb4a71906fd78bc2ceb5fa1fbf0d8b9a43758f65893a00b",
+        "input_tokens": {
+          "profile": 3379,
+          "generic": 443
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "122-078-288-740-773",
+        "source_sha256": "f8b28b40ae954c81a3367f87063a2595bf8b16ec818e5c67c8a97a2e135d31ce",
+        "messages_sha256": {
+          "profile": "1a97d229a2ba27c7bf70ec3e088d764d0430505eb226e00b15eb071b0d525ea2",
+          "generic": "ff5ae6d74b8ebd506291b8088233c44975dc91e9e5bb789a040cc7f485f849ae"
+        },
+        "profile_schema_sha256": "9bdb88c0c1237c9ae2b3bf5dc06d854b6d4b40a075ed88f91a648e02dd0298f2",
+        "input_tokens": {
+          "profile": 3602,
+          "generic": 451
+        },
+        "status": "ADMITTED"
+      },
+      {
+        "query_id": "142-642-453-609-913",
+        "source_sha256": "64b4ca25a513b3e6b0b31517d055dc3879632a9e35530a2020cc251060a9d67b",
+        "messages_sha256": {
+          "profile": "5f47cb477daa23628920fcb6f5b93a230b65e361b20d985a5263f69c0e74c37a",
+          "generic": "cabc0c3e259d4c622f47b1e63fc3e5d48504a4f41b9554b4e02e97428b4a8b0e"
+        },
+        "profile_schema_sha256": "deacdae0e272fe8d137216a51c196872397765ca9b95aa22a1805ce17cb1f611",
+        "input_tokens": {
+          "profile": 3543,
+          "generic": 467
+        },
+        "status": "ADMITTED"
+      }
+    ],
+    "risk_units": 0,
+    "fixed_denominator": 100,
+    "semantic_pass": false,
+    "critic_input_admission": "REQUIRES_ACTUAL_GENERATED_VIEWS_BEFORE_EACH_CRITIC_CALL",
+    "private_output_sha256": "450db5566e20ffc084190c0932f455921a59936f65167df802095852e3e0d446",
+    "wall_seconds": 12.594226732999232,
+    "cpu_seconds": 12.812259746,
+    "worker_peak_rss_bytes": 990973952
+  }
+}

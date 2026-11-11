@@ -14,7 +14,7 @@ def add_temporary_workspace(config):
     return result
 def main():
     import resource
-    if NAME not in ('ptp-r6-profile-preflight-20261111-v1','ptp-r6-critic-preflight-20261111-v1','ptp-r6-graph-input-preflight-20261111-v1') or Path(__file__).resolve().parent!=JOB:raise RuntimeError('fixed job required')
+    if NAME not in ('ptp-r6-profile-preflight-20261111-v1','ptp-r6-critic-preflight-20261111-v1','ptp-r6-graph-input-preflight-20261111-v1','ptp-r6-native-input-preflight-20261111-v1') or Path(__file__).resolve().parent!=JOB:raise RuntimeError('fixed job required')
     resource.setrlimit(resource.RLIMIT_AS,(512*1024**2,512*1024**2))
     resource.setrlimit(resource.RLIMIT_FSIZE,(16*1024**2,16*1024**2))
     with (JOB/'admission.json').open('x') as f:json.dump({'retry':False},f)
@@ -24,7 +24,8 @@ def main():
     try:
         raw=(JOB/'declaration.json').read_bytes();d=json.loads(raw);digest=hashlib.sha256(raw).hexdigest()
         if d['run_id']!=NAME or d['wall_seconds']!=600:raise RuntimeError('declared CPU scope mismatch')
-        worker='preflight_r6_graph_inputs.py' if d['kind']=='graph-input' else 'preflight_r6_backend.py'
+        worker={'graph-input':'preflight_r6_graph_inputs.py','native-input':'preflight_r6_native_inputs.py',
+                'profile':'preflight_r6_backend.py','critic':'preflight_r6_backend.py'}[d['kind']]
         approval=json.loads((JOB/'owner-approval.json').read_bytes())
         if approval.get('status')!='APPROVED' or digest not in approval['declarations_sha256'].values():raise RuntimeError('approval binding missing')
         root=JOB/'code'
@@ -49,6 +50,8 @@ def main():
         mounts += [(BASE/'venv/lib/python3.12/site-packages','/deps',True),(BASE/'models/qwen3-8b','/models/qwen3-8b',True)]
         if d['kind']=='graph-input':
             mounts += [(JOB/n,'/input/'+n,True) for n in ['sources-private.jsonl','source-sample.json','alias-sample.json']]
+        if d['kind']=='native-input':
+            mounts += [(JOB/n,'/input/'+n,True) for n in ['queries-ta.jsonl','sample.json']]
         config['HostConfig']['NanoCpus']=2_000_000_000
         # Tmpfs is accounted within the unchanged1536MiB cgroup RAM ceiling.
         config=add_temporary_workspace(config)
