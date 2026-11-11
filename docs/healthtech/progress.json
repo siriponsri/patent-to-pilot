@@ -3336,7 +3336,7 @@
     },
     "tests": "39 PASS bundle runner, bundle screen, critic screen, generated token profile",
     "model_calls": 0,
-    "review": "Surrogate finding closed; INPUT_LIMIT normal zero-call outcome now stage-specific unassessable; re-review pending",
+    "review": "Both findings closed by independent read-only reinspection; no remaining scoped bundle-runner blocker; runtime/cohort outside review",
     "initial_fixture_failures": "3 failures due authored profile fixture retaining MTM input kind; corrected fixture to DAPFAM_TA",
     "runtime": "Local one-call adapter implemented; full-cohort supervisor, staging and live model execution NOT_RUN"
   }

@@ -1,6 +1,6 @@
 # Patent-to-Pilot: component, evidence and plan index
 
-Review follow-up: both decoded-critic Unicode and known INPUT_LIMIT handling repaired. Frozen policy requires oversized/missing critic and unusable artifact bundles to be flagged, not mislabeled infrastructure failures. All4stage input-limit fixtures preserve known zero-call costs;39targeted testsPASS. Re-review of limit fix requested; no live modelcalls. Previous bundle commit9ea2ea0 preserved.
+Review follow-up: both decoded-critic Unicode and known INPUT_LIMIT handling repaired. Frozen policy requires oversized/missing critic and unusable artifact bundles to be flagged, not mislabeled infrastructure failures. All4stage input-limit fixtures preserve known zero-call costs;39targeted testsPASS. Independent reviewer confirmed limit fix closed; no remaining blocker in scoped bundle review; no live modelcalls. Previous bundle commit9ea2ea0 preserved.
 
 ## ST1 R2 complete per-query bundle runner 2026-11-11T07:36:30.849727+07:00
 
