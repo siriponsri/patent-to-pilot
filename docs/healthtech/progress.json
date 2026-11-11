@@ -3351,10 +3351,15 @@
   },
   "st1_r2_synthetic_smoke_20261111": {
     "timestamp": "2026-11-11T07:48:37.049565+07:00",
-    "status": "FROZEN_NOT_DISPATCHED",
+    "status": "RUNNING",
     "wall_seconds": 1800,
     "maximum_calls": 4,
     "retry": false,
-    "audit": "docs/healthtech/audits/ptp-sacr-r2-synthetic-smoke-20261111"
+    "audit": "docs/healthtech/audits/ptp-sacr-r2-synthetic-smoke-20261111",
+    "container": "ptp-sacr-r2-synthetic-smoke-20261111-v1",
+    "pid": 3598530,
+    "started_at": "2026-11-11T00:49:22.349459404Z",
+    "ssh_session": 51141,
+    "model_calls": "NOT_YET_OBSERVED"
   }
 }

@@ -96,13 +96,15 @@
     "receipt": "../ptp-sacr-r2-engineering-20261111/tokenizer-preflight-aggregate.json"
   },
   "r2_synthetic_smoke_reservation": {
-    "status": "RESERVED_NOT_DISPATCHED",
+    "status": "RUNNING",
     "seconds": 1800,
     "maximum_calls": 4,
     "canonical_job": "ptp-sacr-r2-synthetic-smoke-20261111-v1",
     "prior_gpu_charged_seconds": 8843.154638132546,
     "prior_fidelity_charged_seconds": 8564.26781328395,
     "incremental_disk_reserved_bytes": 33554432,
-    "retry": false
+    "retry": false,
+    "ssh_session": 51141,
+    "container_pid": 3598530
   }
 }

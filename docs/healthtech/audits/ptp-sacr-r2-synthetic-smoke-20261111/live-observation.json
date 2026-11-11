@@ -1,0 +1,9 @@
+{
+  "status": "RUNNING",
+  "container": "ptp-sacr-r2-synthetic-smoke-20261111-v1",
+  "pid": 3598530,
+  "started_at": "2026-11-11T00:49:22.349459404Z",
+  "ssh_session": 51141,
+  "model_calls": "NOT_YET_OBSERVED",
+  "retry": false
+}

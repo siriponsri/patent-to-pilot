@@ -1,0 +1,53 @@
+{
+  "status": "PASS_BEFORE_START",
+  "original_sha256": "b1157feb21206d0ffda183a299f932395eeafea8ad9d3845c071a07a254b8311",
+  "network": "none",
+  "memory_bytes": 33285996544,
+  "cpu_nanocpus": 8000000000,
+  "readonly_root": true,
+  "device_requests": [
+    {
+      "Driver": "",
+      "Count": 0,
+      "DeviceIDs": [
+        "GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089"
+      ],
+      "Capabilities": [
+        [
+          "gpu"
+        ]
+      ],
+      "Options": {}
+    }
+  ],
+  "mounts": [
+    {
+      "destination": "/code",
+      "readonly": true
+    },
+    {
+      "destination": "/declaration.json",
+      "readonly": true
+    },
+    {
+      "destination": "/deps",
+      "readonly": true
+    },
+    {
+      "destination": "/out",
+      "readonly": false
+    },
+    {
+      "destination": "/resource-ledger.json",
+      "readonly": true
+    },
+    {
+      "destination": "/models/.GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089.lock",
+      "readonly": false
+    },
+    {
+      "destination": "/models/qwen3-8b",
+      "readonly": true
+    }
+  ]
+}
