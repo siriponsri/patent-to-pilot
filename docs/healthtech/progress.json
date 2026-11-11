@@ -3378,5 +3378,12 @@
     "diagnostic_replay": "Same source and validator; initial local import failed before parse, corrected module path; no model call",
     "fidelity_remaining_seconds": 20072.402035257313,
     "gpu_remaining_seconds": 250193.51521040872
+  },
+  "st1_sg_r2_20261111": {
+    "timestamp": "2026-11-11T08:02:11.923756+07:00",
+    "status": "DECLARED_NOT_RUN",
+    "tests": "18PASS",
+    "review": "closed",
+    "declaration_sha256": "1ce22688c4bb53ffc4a31db45c7d94305ae801da6cfd85ac765f8d5e4f5d30c0"
   }
 }

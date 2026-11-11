@@ -1,0 +1,60 @@
+{
+  "status": "DECLARED_BEFORE_EXTRACTION",
+  "config": {
+    "version": "sg-explicit-action-operand-v2",
+    "fields": [
+      "abstract",
+      "claims"
+    ],
+    "maximum_unit_chars": 4000,
+    "maximum_records_per_family": 8,
+    "maximum_operand_words": 8,
+    "verbs": [
+      "receive",
+      "transmit",
+      "detect",
+      "generate",
+      "control",
+      "adjust",
+      "store",
+      "convert",
+      "reduce",
+      "prevent",
+      "measure",
+      "filter",
+      "remove",
+      "separate",
+      "connect",
+      "move",
+      "heat",
+      "cool",
+      "rotate",
+      "transfer",
+      "compress",
+      "expand"
+    ],
+    "cues": [
+      "configured to",
+      "adapted to",
+      "operable to"
+    ],
+    "boundaries": "newline;semicolon;sentence punctuation followed by whitespace and uppercase",
+    "alias_policy": "same literal action plus operand; casefold/whitespace/leading article only",
+    "semantic_status": "UNSCREENED_NO_EDGES_ALLOWED"
+  },
+  "sample_sha256": "f364014d3a8e429812ad0cc8328ae80b6e3e52e5af2f4ff9cbbcc976880591af",
+  "corpus_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+  "code_sha256": "78864067bf733d82dab4601784469554271e9dc87768732e9fd49e76ce7edd5c",
+  "runner_sha256": "3a915e23e63842d372e04829fad57af415cb7c4c8f041f4aa342018f3f2542dd",
+  "limits": {
+    "families": 100,
+    "cpu_wall_seconds": 120,
+    "output_bytes": 134217728,
+    "model_calls": 0,
+    "gpu_calls": 0
+  },
+  "stop": "zero cross-family candidate pairs or fewer than10source-bearingfamilies",
+  "pass_label": "CANDIDATES_REQUIRE_FIDELITY_SCREENING only",
+  "review_pool": "SG30 separate from SACR30;global60",
+  "retry": false
+}

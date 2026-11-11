@@ -1,3 +1,11 @@
+## ST1 S/G R2 feasibility frozen 2026-11-11T08:02:11.923756+07:00
+
+Parent sole writer; last verified pusheda07088e. Newroundauthorization covers one revisedSG candidate: sg-explicit-action-operand-v2,semicolonsplitunits,explicitconfigured/adapted/operablecues,fixed22verbs,literalaction+operand keys withcasefold/whitespace/leadingarticleonly. Fullunitandtrailingconditions retained; no semantic equivalence/compatibility/acceptededges inferred. Decimalobjectquantities preserved. Reuse SAME100lengthstratifiedfamilies andsourcepins;R1negative retained andexposure disclosed.
+
+Declaration SHA1ce22688c4bb53ffc4a31db45c7d94305ae801da6cfd85ac765f8d5e4f5d30c0 under docs/healthtech/audits/ptp-sg-feasibility-r2-20261111. CPU<=120s,100selectedfamilies,output<=128MiB,0GPU/modelcalls,0cards,0Neo4jimport. Zero cross-family pairs or<10sourcebearingfamilies stopsconfiguration; otherwiseONLYcandidatefidelityscreening readiness. Fixed alias/sentinel salts andSG30/global60unchanged;allcompatibilitystillrequiresreview.
+
+18fixturesPASS. Reviewerfoundmissingfailurecostreceipt; repaired immutableelapsed/progress/pins/partialoutputreceipt and no-replaycheck,regressionPASS;independentreinspectionclosedfinding. No remaining scopedblocker. NOT_RUN oncorpus atthischeckpoint. Next runonce,retainalloutcomes/costs;onlyifcandidatecoveragegatepasses buildautomaticfidelityscreen+limitedhumanreview beforefullcorpus. Both testsclosed;SACRR1/R2remainstopped. GoalACTIVE. Plan docs/healthtech/research/plans/SG-R2-FEASIBILITY.md.
+
 ## ST1 R2 synthetic smoke FAILED and closed 2026-11-11T07:54:25.966944+07:00
 
 Parent sole writer; last verified pushed0e6a790. Samejob terminal verified EXITED0,PID0,OOMfalse,finished2026-11-11T00:52:04.510772754Z; SSH51141terminal. Do notpoll/restart. Scientific/engineeringgateFAIL despiteprocessexit0: one normalEOSprofile rejected because condition raw text is not source backed. Rawoutputretained; exactvalidatorreplay reproducedreason, no repair/regeneration. Initial localdiagnostic import failed beforeparse then modulepath corrected.
