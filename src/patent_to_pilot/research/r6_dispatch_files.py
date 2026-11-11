@@ -6,6 +6,7 @@ storage. Live GPU lock, resources and attempt consumption remain separate gates.
 """
 import hashlib
 import json
+import math
 from pathlib import Path
 
 from .mtm_runtime import InputBoundaryError,decode_json
@@ -53,3 +54,21 @@ def load_dispatch(root,*,manifest_path,manifest_sha256):
     receipt=validate_dispatch(values['declaration'],values['ledger'],values['scope'],gates)
     return {'declaration':values['declaration'],'ledger':values['ledger'],'scope':values['scope'],
             'gates':gates,'receipt':dict(receipt,evidence_manifest_sha256=manifest_sha256)}
+
+
+def validate_worker_package(root,pins):
+    root=Path(root).resolve(strict=True)
+    required={p.relative_to(root).as_posix() for p in (root/'src').rglob('*.py')}
+    required.update('scripts/healthtech/'+name for name in (
+        'run_r6_calibration.py','supervise_r6_calibration.py','inspect_qwen_weight_identity.py',
+        'r3_engine_client.py','supervise_r3_engine_v2.py'))
+    required.add('docs/healthtech/audits/ptp-method-first-r2-weights-20261110/identity.json')
+    if not (root/'src/patent_to_pilot/research/r6_backend.py').is_file() or not required<=set(pins):
+        raise InputBoundaryError('R6 staged source or current entrypoint pins missing')
+    for path,expected in pins.items():read_pinned(root,path,expected)
+
+
+def validate_deadline(stop,now,seconds):
+    if (any(type(x) not in (int,float) or not math.isfinite(x) for x in (stop,now,seconds))
+            or not 30<stop-now<=seconds or seconds<=0):
+        raise InputBoundaryError('worker deadline outside declared remaining stage')

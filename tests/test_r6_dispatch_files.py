@@ -4,7 +4,7 @@ import json
 import pytest
 
 from test_r6_admission import fixture
-from patent_to_pilot.research.r6_dispatch_files import load_dispatch
+from patent_to_pilot.research.r6_dispatch_files import load_dispatch,validate_deadline,validate_worker_package
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError
 
 
@@ -43,3 +43,15 @@ def test_changed_incomplete_or_escaping_evidence_never_admitted(tmp_path,fault):
     if fault=='unbounded':(tmp_path/'ledger.json').write_bytes(b' '* (8*1024**2+1))
     with pytest.raises((InputBoundaryError,FileNotFoundError)):
         load(tmp_path,manifest)
+
+
+@pytest.mark.parametrize('stop',[float('nan'),float('inf'),129,131,7301])
+def test_worker_deadline_cannot_outlive_declared_stage(stop):
+    # 31 seconds is valid; 29 is insufficient cleanup margin; 7201 exceeds cap.
+    if stop==131:validate_deadline(stop,100,7200)
+    else:
+        with pytest.raises(InputBoundaryError):validate_deadline(stop,100,7200)
+
+
+def test_worker_package_requires_current_r6_entrypoints(tmp_path):
+    with pytest.raises(InputBoundaryError):validate_worker_package(tmp_path,{})
