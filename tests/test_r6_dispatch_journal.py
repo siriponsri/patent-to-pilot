@@ -89,3 +89,32 @@ def test_reviewer_reconciliation_integrity_regressions(tmp_path,fault):
     if fault=='stage_reassignment':ns['stage_costs']['synthetic']={'calls':1,'seconds':1}
     with pytest.raises(InputBoundaryError):
         journal.reconcile(attempt_id=d['attempt_id'],terminal=terminal,new_ledger=nl,new_scope=ns)
+
+
+@pytest.mark.parametrize('fault',[None,'method_failure','missing_repair','changed_gold','wrong_configuration'])
+def test_second_revision_requires_reconciled_engineering_repair(tmp_path,fault):
+    journal,args=setup(tmp_path);d,l,s,g=args;journal.claim(*args,expected_generation=0)
+    nl=deepcopy(l);ns=deepcopy(s)
+    for charged,left in [('gpu_conservative_charged_seconds','gpu_remaining_seconds'),
+                         ('fidelity_generation_charged_seconds','fidelity_generation_remaining_seconds')]:
+        nl[charged]+=10;nl[left]-=10
+    ns['reservations'][0]['status']='SETTLED';ns['stage_costs']['calibration']={'calls':1,'seconds':10}
+    d2=dict(d,attempt_id='r6-calibration-v2',configuration_sha256='f'*64)
+    ns['stage_attempts']['calibration'].append(d2['attempt_id'])
+    ns['qualified_dispatches'][d2['attempt_id']]=d2
+    ns['reservations'].append({'attempt_id':d2['attempt_id'],'status':'RESERVED','declaration':d2})
+    repair={'previous_attempt_id':d['attempt_id'],'status':'APPROVED_BOUNDED_ENGINEERING_REVISION',
+        'gold_or_threshold_changed':False,'cause_evidence_sha256':'b'*64,'tests_sha256':'c'*64,
+        'configuration_sha256':'f'*64}
+    ns['revision_receipts']={d2['attempt_id']:repair}
+    terminal={'attempt_id':d['attempt_id'],'container_name':d['attempt_id'],'declaration_sha256':document_hash(d),
+        'container_state':{'Running':False,'Pid':0,'ExitCode':1},'whole_wall_seconds':10,
+        'costs_reconciled':True,'failure_axis':'ENGINEERING'}
+    if fault=='method_failure':terminal['failure_axis']='METHOD'
+    if fault=='missing_repair':ns['revision_receipts']={}
+    if fault=='changed_gold':repair['gold_or_threshold_changed']=True
+    if fault=='wrong_configuration':repair['configuration_sha256']='e'*64
+    journal.reconcile(attempt_id=d['attempt_id'],terminal=terminal,new_ledger=nl,new_scope=ns)
+    if fault:
+        with pytest.raises(InputBoundaryError):journal.claim(d2,nl,ns,g,expected_generation=1)
+    else:assert journal.claim(d2,nl,ns,g,expected_generation=1)['status']=='CONSUMED_UNRESOLVED'

@@ -60,6 +60,7 @@ class DispatchJournal:
                         or revision.get('status')!='APPROVED_BOUNDED_ENGINEERING_REVISION'
                         or revision.get('gold_or_threshold_changed') is not False
                         or not all(digest(revision.get(key)) for key in ('cause_evidence_sha256','tests_sha256','configuration_sha256'))
+                        or revision['configuration_sha256']!=declaration.get('configuration_sha256')
                         or json.loads(prior[0]).get('failure_axis')!='ENGINEERING'):
                     raise InputBoundaryError('revision requires reconciled engineering failure and frozen repair evidence')
             if db.execute('SELECT id FROM attempts WHERE id=?',(attempt,)).fetchone():
