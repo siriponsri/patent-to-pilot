@@ -1,5 +1,10 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## R6 calibration v1 live controller started 2026-11-11T21:27:09.801049+07:00
+
+GoalACTIVE parentsolewriter. Afterreviewedfreeze andpublishedtransport6a60bf4, launched soleownedGPUjob ptp-r6-calibration-20261111-v1, controllerPID1677329/containerPID1677371. AuthoritativeDockerstateRUNNING at2026-11-11T14:26:01.807111555Z,OOMfalse; latest0completedgenerationrecords/0dispatchmarkers duringstartup, no inference outcomeclaimed. Reservation24calls7200s GPU+fidelity staysbound; fixedglobaljournal consumed bycontroller beforecreate; no otherjob/retry. Monitor with C:/Users/User/AppData/Local/Temp/ptp_r6_calibration_control.py observe overexistingSSH, neverrerun start. Controller automaticallystops beforeoriginaldeadlinewith240scleanupreserve; preserveunknownstate anddo not restartonpollerror. Needobserve loadedruntime/recordcounts/terminal, thenchargewholeoccupancy andassessfixed24; validfailedcalibration closescandidate, no prompt/goldtuning. HANDOFF/CLAUDE updated together; Graphclosed/testsealed/cards0. Currentlaunchreceiptpendingpublication; lastverifiedpushed6a60bf4.
+
+
 ## R6 calibration staged with reviewed frozen dispatch 2026-11-11T21:25:23.467313+07:00
 
 Independent runtime reviewer found no blocking freeze/package/accounting inconsistency: manifest/source/gateevidence hashes match, sourceexactrealDockerfixture, solereservation24calls7200s preservesfloors, disk29.003GiB andrecordedidle pass. Staged exacttransport and initialized hostonly fixedjournal once at/home/chaw/patent-to-pilot-jobs/ptp-r6-control/dispatch.sqlite generation0, approvalidentity bound. Stagingreceipt confirmsno modelcalls. Jobptp-r6-calibration-20261111-v1; manifestd15a328f89aee4a3ba5efd51adb4ef16139bcb42941d37ba468b0a9787843fb5. Publishtransporthash beforelaunch; thencontrollerliveGPU/isolation/source/decoderchecks andactualweightload. No retries or outputrepair; monitor samehandle untilauthoritativeterminal, chargewholeoccupancy. GoalACTIVE parentsolewriter,Graphclosed,testsealed,cards0. Lastpushed7c7c36e; nextlaunchalreadyowner-authorized,noquestionneeded.
