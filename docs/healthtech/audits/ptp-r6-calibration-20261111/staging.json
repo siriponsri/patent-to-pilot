@@ -1,0 +1,8 @@
+{
+  "status": "STAGED_AND_JOURNAL_INITIALIZED_ONCE",
+  "attempt_id": "ptp-r6-calibration-20261111-v1",
+  "generation": 0,
+  "manifest_sha256": "d15a328f89aee4a3ba5efd51adb4ef16139bcb42941d37ba468b0a9787843fb5",
+  "package_sha256": "53324c7290231aa51a147dbd341d6984fc304bceafb2577d8479a792eadc5bc2",
+  "model_calls": 0
+}
