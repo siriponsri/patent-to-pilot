@@ -1,5 +1,11 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## ST1 R2 fixed-cohort controller 2026-11-11T07:41:36.152058+07:00
+
+Parent sole writer; last verified pushed901740b. Added fixed100 cohort controller: binds originalquery/samplebytes before output, verifies each returnedbundle equals durableJSON and records itsSHA, exclusivequery/rounddestinations, noresume/retry, stops immediately at21risk while20isallowed. Separatescompleted/inflight/neverstarted afterbudget orinfra failure; original100 denominator alwaysretained. Automaticcompletion requires humanreview, issues0cards and grantsnosemanticPASS.21cohort+bundlefixturesPASS; Independentread-onlyreview found no scoped blocker; outercross-destination replay/resource/termination guards remainpending. Receipt ptp-sacr-r2-engineering-20261111/cohort-checkpoint.json. No newmodel/GPUjobs.
+
+Next assemble R2 runtime supervisor and one synthetic completebundle smoke <=1800s undernewroundauthority. Candidate sharedtime allocation: smoke<=1800s plus nativecohort<=18000s within current20235.732s fidelityremaining; NOT_RESERVED/NOT_DISPATCHED, noledgerreset. Freeze exact hashes and verify model/runtime/budget/GPUlock first. Measure smoke throughput and estimate full100 feasibility before committingnativewindow; if evidence exceeds allowance stopresourcebranch rather than cutcohort/controls or silentlyincreasebudget. Wholecosts include setup andshutdown. Both testsclosed, cardlimitsunchanged, GoalACTIVE.
+
 Review follow-up: both decoded-critic Unicode and known INPUT_LIMIT handling repaired. Frozen policy requires oversized/missing critic and unusable artifact bundles to be flagged, not mislabeled infrastructure failures. All4stage input-limit fixtures preserve known zero-call costs;39targeted testsPASS. Independent reviewer confirmed limit fix closed; no remaining blocker in scoped bundle review; no live modelcalls. Previous bundle commit9ea2ea0 preserved.
 
 ## ST1 R2 complete per-query bundle runner 2026-11-11T07:36:30.849727+07:00
