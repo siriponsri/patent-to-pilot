@@ -1,9 +1,10 @@
 from concurrent.futures import ThreadPoolExecutor
+import json
 
 import pytest
 
 from patent_to_pilot.research.mtm_runtime import InputBoundaryError
-from patent_to_pilot.research.r6_attempt_registry import AttemptRegistry, initialize
+from patent_to_pilot.research.r6_attempt_registry import AttemptRegistry, initialize, completed_bundle
 
 
 def parameters():
@@ -37,6 +38,9 @@ def test_completed_claim_still_cannot_replay_or_resettle(tmp_path):
     with pytest.raises(InputBoundaryError):
         db.begin_dispatch(claim)
     assert len(db.settle(claim, {'status': 'UNASSESSABLE'})) == 64
+    db.verify_completed(claim, {'status': 'UNASSESSABLE'})
+    with pytest.raises(InputBoundaryError):
+        db.verify_completed(claim, {'status': 'changed'})
     with pytest.raises(InputBoundaryError):
         db.settle(claim, {'status': 'UNASSESSABLE'})
     with pytest.raises(InputBoundaryError):
@@ -66,3 +70,67 @@ def test_missing_identity_or_changed_binding_cannot_admit(tmp_path):
         db.settle(dict(claim, binding='changed'), {})
     with pytest.raises(FileExistsError):
         initialize(db.path, 'e'*64)
+
+
+def test_cached_bundle_byte_change_and_execution_substitution_fail(tmp_path):
+    db = registry(tmp_path)
+    out = tmp_path/'bundle';out.mkdir()
+    result = {'query_id': 'q1', 'status': 'UNASSESSABLE', 'retry': False}
+    execution = {'model_identity': 'authored'}
+    source = 'b'*64
+    (out/'input.json').write_text(json.dumps(dict(query_id='q1', source_sha256=source,
+                                                execution=execution, retry=False)))
+    (out/'result.json').write_text(json.dumps(result))
+    args = dict(query_id='q1', source_sha256=source, execution=execution, result=result)
+    binding = completed_bundle(out, **args)
+    claim = db.claim(**parameters());db.begin_dispatch(claim);db.settle(claim, binding)
+    db.verify_completed(claim, completed_bundle(out, **args))
+    (out/'result.json').write_text(json.dumps(result, indent=2))
+    with pytest.raises(InputBoundaryError):
+        db.verify_completed(claim, completed_bundle(out, **args))
+    with pytest.raises(InputBoundaryError):
+        completed_bundle(out, **dict(args, execution={'model_identity': 'changed'}))
+
+
+def test_unresolved_never_reused_and_deleted_registry_never_recreated(tmp_path):
+    db = registry(tmp_path);claim = db.claim(**parameters())
+    with pytest.raises(InputBoundaryError):
+        db.verify_completed(claim, {})
+    db.path.unlink()
+    with pytest.raises(Exception):
+        db.claim(**parameters())
+    assert not db.path.exists()
+
+
+def test_real_bundle_entry_rejects_new_destination_and_run_without_calls(tmp_path):
+    from test_sacr_r6_bundle_runner import setup
+    from patent_to_pilot.research.r6_attempt_registry import run_registered_bundle
+    db = registry(tmp_path)
+    args, calls, _ = setup(tmp_path)
+    dispatch = dict(registry=db, namespace='R6', configuration_sha256='a'*64,
+                    manifest_sha256='c'*64, bundle_arguments=args)
+    receipt = run_registered_bundle(**dispatch)
+    assert len(calls) == 3
+    assert json.loads(receipt['claim']['binding'])['destination'] == str(args['destination'].resolve())
+    db.verify_completed(receipt['claim'], receipt['binding'])
+    args['destination'] = tmp_path/'different-output'
+    args['execution'] = dict(args['execution'], run_id='different-run')
+    with pytest.raises(InputBoundaryError, match='replay forbidden'):
+        run_registered_bundle(**dispatch)
+    assert len(calls) == 3 and not args['destination'].exists()
+
+
+def test_real_bundle_unknown_backend_cannot_replay_elsewhere(tmp_path):
+    from test_sacr_r6_bundle_runner import setup
+    from patent_to_pilot.research.r6_attempt_registry import run_registered_bundle
+    db = registry(tmp_path)
+    args, calls, _ = setup(tmp_path, 'infra')
+    dispatch = dict(registry=db, namespace='R6', configuration_sha256='a'*64,
+                    manifest_sha256='c'*64, bundle_arguments=args)
+    with pytest.raises(RuntimeError):
+        run_registered_bundle(**dispatch)
+    count = len(calls)
+    args['destination'] = tmp_path/'different-output'
+    with pytest.raises(InputBoundaryError, match='replay forbidden'):
+        run_registered_bundle(**dispatch)
+    assert len(calls) == count

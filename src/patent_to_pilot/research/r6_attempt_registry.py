@@ -61,14 +61,15 @@ class AttemptRegistry:
             db.close()
 
     def claim(self, *, namespace, benchmark, split, configuration_sha256,
-              query_id, source_sha256, manifest_sha256, execution_sha256):
+              query_id, source_sha256, manifest_sha256, execution_sha256, destination=None):
         for value in (namespace, benchmark, split, query_id):
             if type(value) is not str or not value.strip():
                 raise InputBoundaryError('registry key fields required')
         key = _encoded([namespace, benchmark, split, _hash(configuration_sha256), query_id])
         binding = _encoded({'source_sha256': _hash(source_sha256),
                             'manifest_sha256': _hash(manifest_sha256),
-                            'execution_sha256': _hash(execution_sha256)})
+                            'execution_sha256': _hash(execution_sha256),
+                            'destination': str(Path(destination).resolve()) if destination is not None else None})
         with self._open() as db:
             db.execute('BEGIN IMMEDIATE')
             # Any earlier claim blocks: changed source is not a new native attempt.
@@ -102,3 +103,76 @@ class AttemptRegistry:
             if changed.rowcount != 1:
                 raise InputBoundaryError('unknown, altered or already settled claim')
         return result_hash
+
+    def verify_completed(self, claim, result):
+        """Verify cached outcome identity; this never grants a dispatch token."""
+        if claim.get('registry_identity') != self.identity:
+            raise InputBoundaryError('claim registry identity mismatch')
+        result_hash = hashlib.sha256(_encoded(result).encode()).hexdigest()
+        with self._open() as db:
+            row = db.execute('SELECT binding, status, result_sha256 FROM attempts WHERE key=?',
+                             (claim['key'],)).fetchone()
+        if row != (claim['binding'], 'COMPLETE', result_hash):
+            raise InputBoundaryError('cached result is unresolved, changed or unregistered')
+        return result_hash
+
+
+def artifact_manifest(directory):
+    """Bind exact retained bundle files; no sources or file bytes leave this API."""
+    root = Path(directory).resolve(strict=True)
+    result = {}
+    for path in sorted(root.rglob('*')):
+        if path.is_symlink():
+            raise InputBoundaryError('bundle artifact symlink forbidden')
+        if path.is_file():
+            if not path.resolve(strict=True).is_relative_to(root):
+                raise InputBoundaryError('bundle artifact outside destination')
+            result[path.relative_to(root).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
+    if 'input.json' not in result or 'result.json' not in result:
+        raise InputBoundaryError('completed bundle requires input and result artifacts')
+    return result
+
+
+def completed_bundle(directory, *, query_id, source_sha256, execution, result):
+    """Validate durable input/result before settling or reusing a native bundle."""
+    root = Path(directory)
+    artifacts = artifact_manifest(root)
+    input_record = json.loads((root/'input.json').read_bytes())
+    durable = json.loads((root/'result.json').read_bytes())
+    if (input_record.get('query_id') != query_id
+            or input_record.get('source_sha256') != source_sha256
+            or input_record.get('execution') != execution
+            or input_record.get('retry') is not False
+            or durable != result or result.get('query_id') != query_id
+            or result.get('status') not in ('UNASSESSABLE', 'AUTOMATIC_METHOD_FLAG',
+                                          'AUTOMATIC_UNFLAGGED_NOT_FIDELITY_PASS')
+            or result.get('retry') is not False):
+        raise InputBoundaryError('durable native bundle identity mismatch')
+    return {'query_id': query_id, 'source_sha256': source_sha256,
+            'execution': execution, 'result': result, 'artifacts': artifacts}
+
+
+def run_registered_bundle(*, registry, namespace, configuration_sha256,
+                          manifest_sha256, bundle_arguments):
+    """Native worker entry: a new directory/run never grants a second attempt.
+
+    The controller must validate the namespace/configuration against its frozen
+    declaration. Synthetic fixtures use the unregistered core runner separately.
+    """
+    from copy import deepcopy
+    from .sacr_r6_bundle_runner import run_bundle
+    args = dict(bundle_arguments)
+    execution = deepcopy(args['execution'])
+    args['execution'] = deepcopy(execution)
+    source_hash = hashlib.sha256(args['source'].encode()).hexdigest()
+    claim = registry.claim(namespace=namespace, benchmark='DAPFAM', split='dev',
+        configuration_sha256=configuration_sha256, query_id=args['query_id'],
+        source_sha256=source_hash, manifest_sha256=manifest_sha256,
+        execution_sha256=hashlib.sha256(_encoded(execution).encode()).hexdigest(),
+        destination=args['destination'])
+    registry.begin_dispatch(claim)
+    result = run_bundle(**args)
+    binding = completed_bundle(args['destination'], query_id=args['query_id'],
+        source_sha256=source_hash, execution=execution, result=result)
+    registry.settle(claim, binding)
+    return {'claim': claim, 'binding': binding}
