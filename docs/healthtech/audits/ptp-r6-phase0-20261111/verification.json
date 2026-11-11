@@ -1,0 +1,25 @@
+{
+  "status": "PASS_LOCAL_ENGINEERING_ONLY",
+  "tests": 96,
+  "command": "python -m pytest tests/test_r6_admission.py tests/test_sg_r6_scoring.py tests/test_sg_r6_manifest.py tests/test_sg_fixed_source_attachment.py tests/test_r6_prompt_admission.py tests/test_r6_evidence_separation.py tests/test_r6_critic_calibration.py -q",
+  "files_sha256": {
+    "src/patent_to_pilot/research/sacr_r6_candidate.py": "1cf6c882b2808103f15c9d2257928d963692116ee488d23b50767fbb6efe3350",
+    "src/patent_to_pilot/research/sacr_r6_prompt.py": "3faeaa0f8a4a922422a2a17187e1985876ee69864301006bbd19bb47a74d2233",
+    "src/patent_to_pilot/research/r6_admission.py": "f3282444f0ffe7969224dd1d203e5bf94842a296c3675efe9cbc411978f0a9cc",
+    "src/patent_to_pilot/research/sg_r6_manifest.py": "f20b7cab53aa765e6e4ea43aabc337ada12c096735de6076bdace60d8ef7b1c4",
+    "src/patent_to_pilot/research/sg_r6_source_attachment.py": "7d816361b939c32f0bb2da91daaa69e3de3de5af13a3cab0d2ef7d5417ec1c62",
+    "src/patent_to_pilot/research/sg_r6_scoring.py": "6985b6c62de9674c5023e8a5a1beed0958c5d00ffbd13157b1a7226f7e036d64",
+    "tests/test_r6_admission.py": "0613d9b5e25ae2e119ac4036d50cf60589a1216fc37077be1c3f837fc037baab",
+    "tests/test_sg_r6_scoring.py": "62b280bddb26218aa2ab4cedee7cdb088939f23ef7963fff3257eee463cad82e",
+    "tests/test_sg_r6_manifest.py": "06d1226e867f008c5ca427c59a1f16d0fd7269a7e1b309832601613363bda657",
+    "tests/test_sg_fixed_source_attachment.py": "980d1830b4a4d2869778b3a73aedbd7906c7fbcf56f556f4699347cbda086091",
+    "tests/test_r6_prompt_admission.py": "c924372339ff800a537814a2d67db45c7d740974e21e99ab132f80aaaf35130d",
+    "tests/test_r6_evidence_separation.py": "512d4dbf63829d9319739cb353403b3720b924928a21f66790d816188f5a8e5a",
+    "tests/test_r6_critic_calibration.py": "288d0078e8946a03543f65d88de5c791556a56a752ba1d5b818a6178511e8020"
+  },
+  "model_calls": 0,
+  "gpu_jobs": 0,
+  "native_corpus_join": "NOT_RUN",
+  "live_runtime": "NOT_READY",
+  "ledger_sha256": "c9ed6707c3ee838358fc174403899aba44c65213254217f6fa6ebc8c6482a077"
+}

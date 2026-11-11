@@ -3521,5 +3521,13 @@
     "graph_policy_change": "PENDING_OWNER_APPROVAL",
     "cards_used": 0,
     "protected_tests": "CLOSED"
+  },
+  "st1_r6_phase0_20261111": {
+    "status": "IN_PROGRESS",
+    "goal": "ACTIVE_OWNER_APPROVED",
+    "audit": "docs/healthtech/audits/ptp-r6-phase0-20261111",
+    "local_tests": 96,
+    "gpu_admission": "NOT_READY",
+    "model_calls": 0
   }
 }

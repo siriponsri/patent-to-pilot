@@ -1,0 +1,16 @@
+{
+  "status": "OWNER_APPROVED_GOAL_ACTIVE_PHASE0",
+  "recorded_at": "2026-11-11T19:34:29.944772+07:00",
+  "approved_request_sha256": "5eb89012f3032a623809551d5dee9db6967d5e21ce26b78def6c6b4173511f35",
+  "plan_sha256": "3fc4e65aecab73f4af2954dd042a0a168b3af1f0b9720cefa5569efd44201c32",
+  "decisions": {
+    "scope_and_budgets": "APPROVED",
+    "partial_graph_and_fidelity": "APPROVED",
+    "bounded_replacements": "APPROVED"
+  },
+  "authority": "Owner explicit three-part response in current chat",
+  "phase0": "IN_PROGRESS",
+  "gpu_admission": "NOT_READY",
+  "new_model_calls": 0,
+  "ledger_reset": false
+}

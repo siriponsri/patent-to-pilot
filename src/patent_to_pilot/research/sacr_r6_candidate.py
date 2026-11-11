@@ -5,11 +5,10 @@ compact control identical to the source anchor; no independent benefit is claime
 Role/attachment and selective-view fidelity still require a calibrated critic.
 """
 import json
-from copy import deepcopy
 from jsonschema import Draft202012Validator
 from .mtm_runtime import InputBoundaryError
-from .sacr_evidence_prompt_v5 import build_messages as previous_messages, proposal_schema as previous_schema, validate_proposal as previous_validate
-from .sacr_evidence_prompt_v4 import contexts
+from .sacr_r6_prompt import build_messages as previous_messages, proposal_schema as full_schema, contexts
+from .sacr_evidence_v3 import compile_evidence
 from .sacr_token_profile import source_catalogue
 from .sacr_views_v3 import render_views as old_views, _union
 
@@ -36,18 +35,11 @@ def context_coverage(proposal, source):
 
 
 def proposal_schema(source, query_id):
-    schema=deepcopy(previous_schema(source,query_id))
-    size=len(source_catalogue(source)['tokens'])
-    variants=schema['properties']['blocks']['items']['anyOf']
-    full=[v for v in variants if v['properties']['evidence']['items']['properties']['start_token']['enum']==[0]
-          and v['properties']['evidence']['items']['properties']['end_token']['enum']==[size]]
-    if len(full)!=1:raise InputBoundaryError('unique full-source context branch required')
-    schema['properties']['blocks']['items']=full[0]
-    return schema
+    return full_schema(source, query_id)
 
 
 def validate_proposal(proposal, source, query_id):
-    compiled = previous_validate(proposal, source, query_id)
+    compiled = compile_evidence(proposal, source=source, query_id=query_id)
     coverage = context_coverage(proposal, source)
     if proposal['blocks'] and not coverage['complete_context']:
         raise InputBoundaryError('R6 profile context coverage gap')

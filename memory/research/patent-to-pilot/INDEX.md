@@ -2,7 +2,7 @@
 
 ## Current R6 preparation
 
-Read HANDOFF and INDEX-PLAN first. R6 is proposed, not activated; model dispatch is not ready. Three independent read-only reviews and53 local tests completed. Canonical audit: docs/healthtech/audits/ptp-r6-preparation-20261111/. Exact proposed scope: docs/healthtech/research/plans/R6-BOUNDED-LONG-RUN.md. Prior entries below are historical; do not reuse their old approval or running-state text.
+Read HANDOFF and INDEX-PLAN first. R6 owner approved all three decisions and goal is ACTIVE; Phase0 engineering is in progress and model dispatch is not ready. See docs/healthtech/audits/ptp-r6-preparation-20261111/owner-approval.json. Three independent read-only reviews and53 local tests completed. Canonical audit: docs/healthtech/audits/ptp-r6-preparation-20261111/. Exact proposed scope: docs/healthtech/research/plans/R6-BOUNDED-LONG-RUN.md. Prior entries below are historical; do not reuse their old approval or running-state text.
 
 ## R5 engineering qualification, 11 November 2026
 
