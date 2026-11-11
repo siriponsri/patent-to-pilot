@@ -1,0 +1,40 @@
+{
+  "reason": "FROZEN_REVIEW_CAP_EXCEEDED",
+  "bound": {
+    "status": "EARLY_FROZEN_FLAG_LOWER_BOUND",
+    "counts": {
+      "checked_completed": 56,
+      "rejected_profiles": 14,
+      "compact_unavailable": 0,
+      "compact_lexical_flagged": 7,
+      "compact_unflagged_only": 35
+    },
+    "flagged_queries_lower_bound": 21,
+    "reasons": {
+      "polarity_inventory_changed": 2,
+      "numeric_literal_inventory_changed": 6
+    },
+    "full_sample": 100,
+    "cap": 20,
+    "configuration_gate_impossible_without_policy_change": true,
+    "semantic_pass": false,
+    "model_calls": 0
+  },
+  "observer_sha256": "c1d6ac6bf83156c82b462b855efcabae647dbbacd11cc1b299e94d36fc54d2f5",
+  "observed_utc": "2026-11-10T23:58:27.875268+00:00",
+  "before": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 3052076,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-10T23:31:56.42988521Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "semantic_errors_proven": false,
+  "retry": false
+}

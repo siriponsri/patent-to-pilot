@@ -1,3 +1,16 @@
+# Terminal configuration stop
+
+Parent sole writer; last verified pushed06087e9. Verified frozen risk lower bound21>20 among56 completed sample entries (14rejected profiles+7additional compact lexical flags). Applied predeclared stop to OWNED continuation only at2026-11-11T06:58:33+07:00; Dockerexited137,OOMfalse,PID0. Stop reason is review-cap infeasibility, not proof21semanticerrors or retrievalloss. Same supervisor emitted genericFAILED because external gate stop; gate-stop-trigger/result preserve actual cause. Session21435 and stop session65977 completed. No live task-ownedGPUjob remains. No exception/critic/views/cards/pilot/fulldev dispatch; approved index45 exception remainsunused because configuration already cannot pass. MTM conditional transfer notactivated; DAPFAM fidelity/pilot conditions unmet. S/Gfixedconfiguration remainsfailed.
+
+Continuation closed:11normalEOSreturns,9structuralpending+2rejected,1reservedunknownexecution,42neverstarted; wholewall1597.8072227612138s,hostcgrouppeak4869136384bytes. Across original+continuation:56normalreturns (42structuralpending+14rejected),2unknowninterrupted attempts,42neverstarted of fixed100. Known native calls56/input51088/output79724tokens are LOWERBOUNDS; unknownattempts notzero. Native profile fidelity NOT_ASSESSED/NO_PASS; no protectedtestaccess.
+
+Ledger charged actual continuation wall ONCE, released10800reservation without resetting priorcharges. CumulativeGPU8843.154638132546s,remaining250356.84536186745s;fidelitycharged8564.26781328395s,remaining20235.73218671605s. Known cumulativegenerationcalls58plus2unknown attempts. Remaining budget doesnot authorize a newconfiguration or overwrite stoprule.
+
+Closeoutv1 failed before writingreceipts: originaldeclaration CRLF165 vs runtimeLF0. Diagnosisproved rawhashes differ but strictJSONvalues and CRLF-normalizedbytes equal. Repaired closeout binds ORIGINALinputbytes plus exact parsedruntimevalues, retainsbothhashes;12fixturesPASS includingchangedparameterrefusal. Oldhelpers/failure retained. Freshv2finalizer succeeded once; aggregate-closeout.json/terminal.json/gate-stop-result.json authoritative. Do not rerun finalize/charge script. TerminalSHA6d5f61378f85b0a331e190f39d55175dc36c64857a06c925e27b00b33c16cb1a.
+
+Next finish terminal negative/feasibility report and manuscript, update method-status/comparison tables and scope conclusions, verify all counts/links and publish screenedhandoff. B0 measured; no SACR/S/G retrievaleffect claimed. Paper2/3 plansonly. GoalACTIVE until report/manuscript and completionaudit are finished; stopping arms is authorized, not successfulmethodvalidation.
+
+
 # SACR never-started continuation preparation
 
 Parent remains sole writer; prior documentation session has explicit HANDED_OFF / stopped record, and the only listed child is a completed read-only reviewer. Current HEAD and remote main both verified at 0dd6943bc0c4dd59215321f56c181aff59567229. Prior container freshly inspected as exited; no restart. Previous status-only turn was no progress; this package verifies and checkpoints continuation implementation.

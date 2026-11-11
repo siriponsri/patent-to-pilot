@@ -33,11 +33,11 @@ def main():
         raise ValueError('fixed selection differs')
     state=json.loads(subprocess.run(['docker','inspect',JOB.name],check=True,capture_output=True,text=True,timeout=10).stdout)[0]['State']
     sys.path.insert(0,str(JOB/'runtime-code/src'))
-    spec=importlib.util.spec_from_file_location('selected_closeout',JOB/'summarize-selected-reviewed.py')
+    spec=importlib.util.spec_from_file_location('selected_closeout',JOB/'summarize-selected-v2.py')
     helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
     result=helper.summarize(JOB,state,output_root=OUTPUT,selected_indices=manifest['selected_indices'],expected_declaration_sha256=expected)
     result['selection_manifest_sha256']=declaration['continuation_manifest_sha256']
-    result['closeout_helper_sha256']=hashlib.sha256((JOB/'summarize-selected-reviewed.py').read_bytes()).hexdigest()
+    result['closeout_helper_sha256']=hashlib.sha256((JOB/'summarize-selected-v2.py').read_bytes()).hexdigest()
     result['finalizer_sha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     for name,value in [('observed-terminal-state.json',state),('aggregate-closeout.json',result)]:
         with (JOB/name).open('x') as f:json.dump(value,f,indent=2)

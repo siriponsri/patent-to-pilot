@@ -1,0 +1,12 @@
+{
+  "input_sha256": "76dcfb90c69c2eb98410b55ff18c4d0742cb463f09c46fbe2873cea17fc42f01",
+  "runtime_sha256": "1e10eec8669aa8eb6650f7762c39e0b849d9cbd5bc85baa240a387795f873051",
+  "json_values_equal": true,
+  "input_crlf": 165,
+  "runtime_crlf": 0,
+  "equal_after_crlf_normalization": true,
+  "closeout_outputs_exist": [
+    false,
+    false
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "FAILED",
+  "wall_seconds": 1597.8072227612138,
+  "returncode": 137,
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 137,
+    "Error": "",
+    "StartedAt": "2026-11-10T23:31:56.42988521Z",
+    "FinishedAt": "2026-11-10T23:58:33.506586641Z"
+  },
+  "observed_cgroup_peak_bytes": 4869136384,
+  "completion_sha256": null,
+  "retry": false
+}

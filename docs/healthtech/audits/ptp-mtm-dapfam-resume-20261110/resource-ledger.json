@@ -1,10 +1,10 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 259200,
-  "gpu_conservative_charged_seconds": 7245.347415371332,
-  "gpu_remaining_seconds": 251954.65258462867,
+  "gpu_conservative_charged_seconds": 8843.154638132546,
+  "gpu_remaining_seconds": 250356.84536186745,
   "charge_basis": "Whole SYN003/native baseline/SYN004/native fidelity supervisor intervals; native interrupted attempt token/call counts remain unknown, whole wall charged.",
-  "model_calls": 47,
+  "model_calls": 58,
   "cpu004_calls": 0,
   "automatic_retries": 0,
   "full_dev_started": false,
@@ -58,11 +58,11 @@
     "terminal_sha256": "b78281166cd0ce0021e96e745ade1e260cc45ab763cf7d1afbece37e8a805ec4"
   },
   "model_calls_count_is_lower_bound": true,
-  "generation_attempts_with_unknown_call_token_costs": 1,
-  "fidelity_generation_charged_seconds": 6966.460590522736,
-  "fidelity_generation_remaining_seconds": 21833.539409477264,
+  "generation_attempts_with_unknown_call_token_costs": 2,
+  "fidelity_generation_charged_seconds": 8564.26781328395,
+  "fidelity_generation_remaining_seconds": 20235.73218671605,
   "native_unstarted_continuation_reservation": {
-    "status": "RUNNING",
+    "status": "CLOSED_FROZEN_REVIEW_CAP_STOP_NO_RETRY",
     "seconds": 10800,
     "container": "ptp-native-sacr-continuation-20261111-v1",
     "prior_gpu_charged_seconds": 7245.347415371332,
@@ -71,6 +71,15 @@
     "disk_conservative_bytes": 11233334141,
     "note": "Pinned runtime ledger is the pre-reservation snapshot, charges unchanged; this additive record prevents double allocation. Charge actual whole supervisor interval after verified terminal.",
     "session_id": 21435,
-    "container_pid": 3052076
-  }
+    "container_pid": 3052076,
+    "actual_supervisor_seconds": 1597.8072227612138,
+    "terminal_sha256": "6d5f61378f85b0a331e190f39d55175dc36c64857a06c925e27b00b33c16cb1a",
+    "reserved_seconds_released": 10800,
+    "known_model_calls": 11,
+    "unknown_execution_attempts": 1,
+    "not_started_queries": 42,
+    "stop_reason": "FROZEN_REVIEW_CAP_EXCEEDED"
+  },
+  "sacr_configuration_status": "STOPPED_FROZEN_REVIEW_CAP_EXCEEDED",
+  "interrupted_query_exception": "APPROVED_UNUSED_NOT_NEEDED_AFTER_CONFIGURATION_STOP"
 }

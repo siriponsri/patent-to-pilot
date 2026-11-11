@@ -2927,7 +2927,7 @@
     "main_head_after_handoff_docs": "7e8fd1a"
   },
   "st1_unstarted_continuation_20261111": {
-    "status": "RUNNING",
+    "status": "CLOSED_FROZEN_REVIEW_CAP_STOP",
     "timestamp": "2026-11-11T06:23:07+07:00",
     "writer": "parent sole repo writer",
     "base_commit": "0dd6943bc0c4dd59215321f56c181aff59567229",
@@ -3112,6 +3112,95 @@
       "current_verified_lower_bound": 20,
       "completed_profiles": 55,
       "semantic_errors_proven": false
-    }
+    },
+    "terminal_closeout": {
+      "status": "INCOMPLETE_PROFILE_COHORT_NO_PASS",
+      "original_sample_queries": 100,
+      "selected_closeout": true,
+      "runtime_declaration_sha256": "1e10eec8669aa8eb6650f7762c39e0b849d9cbd5bc85baa240a387795f873051",
+      "input_declaration_sha256": "76dcfb90c69c2eb98410b55ff18c4d0742cb463f09c46fbe2873cea17fc42f01",
+      "planned_queries": 54,
+      "attempt_directories": 12,
+      "not_started": 42,
+      "normal_return_states": {
+        "EOS_COMPLETE": 11,
+        "RESERVED_UNKNOWN_EXECUTION": 1
+      },
+      "assessment_states": {
+        "STRUCTURAL_RESULT_FIDELITY_PENDING": 9,
+        "REJECTED_GENERATED_FAMILY": 2
+      },
+      "unassessed_normal_returns": 0,
+      "unknown_execution_attempts": 1,
+      "known_model_calls": 11,
+      "known_input_tokens": 9961,
+      "known_output_tokens": 14626,
+      "cost_counts_are_lower_bounds": true,
+      "gpu_charge_seconds": 1597.8072227612138,
+      "observed_cgroup_peak_bytes": 4869136384,
+      "supervisor_terminal_sha256": "6d5f61378f85b0a331e190f39d55175dc36c64857a06c925e27b00b33c16cb1a",
+      "retry": false,
+      "semantic_fidelity": "NOT_ASSESSED",
+      "protected_test_access": false,
+      "limitation": "Aggregate byte/cost binding only; not independent execution or semantic attestation",
+      "selection_manifest_sha256": "3f8a91ecfcfdbc063bc9924513c364e6c3ba5e9c19081c7191529dc92d3cbf5b",
+      "closeout_helper_sha256": "5d91f56f8163c8a8bcc74b78df172916bff762eca1fbd98856ef8eba18fe9637",
+      "finalizer_sha256": "1a5f2b93306c08cc06bbda122ebe936e760d7b56bacf38c15d9823d234cdc21d"
+    },
+    "stop": {
+      "reason": "FROZEN_REVIEW_CAP_EXCEEDED",
+      "bound": {
+        "status": "EARLY_FROZEN_FLAG_LOWER_BOUND",
+        "counts": {
+          "checked_completed": 56,
+          "rejected_profiles": 14,
+          "compact_unavailable": 0,
+          "compact_lexical_flagged": 7,
+          "compact_unflagged_only": 35
+        },
+        "flagged_queries_lower_bound": 21,
+        "reasons": {
+          "polarity_inventory_changed": 2,
+          "numeric_literal_inventory_changed": 6
+        },
+        "full_sample": 100,
+        "cap": 20,
+        "configuration_gate_impossible_without_policy_change": true,
+        "semantic_pass": false,
+        "model_calls": 0
+      },
+      "observer_sha256": "c1d6ac6bf83156c82b462b855efcabae647dbbacd11cc1b299e94d36fc54d2f5",
+      "observed_utc": "2026-11-10T23:58:27.875268+00:00",
+      "before": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 3052076,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-11-10T23:31:56.42988521Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "semantic_errors_proven": false,
+      "retry": false,
+      "after": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 137,
+        "Error": "",
+        "StartedAt": "2026-11-10T23:31:56.42988521Z",
+        "FinishedAt": "2026-11-10T23:58:33.506586641Z"
+      },
+      "status": "OWNED_CONTINUATION_STOPPED_FOR_FROZEN_GATE"
+    },
+    "remaining_fidelity_seconds": 20235.73218671605
   }
 }

@@ -54,6 +54,7 @@ def test_selected_closeout_counts_unknown_and_preserves_full_sample(tmp_path):
     terminal=json.loads((tmp_path/'terminal.json').read_bytes());terminal['container_state']=state
     write(tmp_path/'terminal.json',terminal)
     root=tmp_path/'canonical/attempt';write(root/'declaration.json',{'maximum_calls':54})
+    write(tmp_path/'declaration.json',{'maximum_calls':54})
     write(root/'profiles/046/profile/reservation.json',{'status':'RESERVED'})
     args=dict(output_root=root,selected_indices=list(range(46,100)),expected_declaration_sha256=closeout.digest(root/'declaration.json'))
     result=closeout.summarize(tmp_path,state,**args)
@@ -65,6 +66,18 @@ def test_selected_closeout_counts_unknown_and_preserves_full_sample(tmp_path):
     write(root/'profiles/045/input.json',{})
     with pytest.raises(ValueError,match='non-prefix'):
         closeout.summarize(tmp_path,state,**args)
+
+
+def test_selected_declaration_reserialization_is_bound_by_values_and_original_bytes(tmp_path):
+    state=fixture(tmp_path);state.update(StartedAt='start',FinishedAt='finish')
+    terminal=json.loads((tmp_path/'terminal.json').read_bytes());terminal['container_state']=state;write(tmp_path/'terminal.json',terminal)
+    root=tmp_path/'canonical/attempt';write(root/'declaration.json',{'maximum_calls':54})
+    (tmp_path/'declaration.json').write_bytes(b'{\r\n  "maximum_calls": 54\r\n}\r\n')
+    args=dict(output_root=root,selected_indices=list(range(46,100)),expected_declaration_sha256=closeout.digest(tmp_path/'declaration.json'))
+    result=closeout.summarize(tmp_path,state,**args)
+    assert result['runtime_declaration_sha256']!=result['input_declaration_sha256']
+    write(root/'declaration.json',{'maximum_calls':53})
+    with pytest.raises(ValueError,match='declaration not bound'):closeout.summarize(tmp_path,state,**args)
 
 
 def test_tampered_assessment_does_not_become_rejected_family(tmp_path):

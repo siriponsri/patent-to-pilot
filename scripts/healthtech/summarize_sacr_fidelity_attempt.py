@@ -41,8 +41,13 @@ def summarize(job, observed_state, *, output_root=None, selected_indices=None, e
     if type(wall) not in (int, float) or not 0 <= wall < float('inf'):
         raise ValueError('unknown supervisor cost; cannot reset ledger')
     root = Path(output_root) if selected else job / 'out/attempt'
-    if selected and digest(root / 'declaration.json') != expected_declaration_sha256:
-        raise ValueError('selected runtime declaration not bound')
+    if selected:
+        # Runtime write_new serializes the verified input declaration again.
+        # Bind original bytes, then compare strict JSON values, retaining both
+        # raw hashes. Do not equate reserialization with altered parameters.
+        if (digest(job / 'declaration.json') != expected_declaration_sha256 or
+                decode_json((root / 'declaration.json').read_bytes()) != decode_json((job / 'declaration.json').read_bytes())):
+            raise ValueError('selected runtime declaration not bound')
     declaration = json.loads((root / 'declaration.json').read_bytes())
     if declaration['maximum_calls'] != len(indices):
         raise ValueError('unexpected native sample contract')
@@ -107,6 +112,8 @@ def summarize(job, observed_state, *, output_root=None, selected_indices=None, e
             raise ValueError('runtime cohort completion mismatch')
     return {'status': ('COMPLETE_SELECTED_PROFILES_COHORT_NOT_ESTABLISHED' if selected else 'COMPLETE_PROFILE_COHORT_FIDELITY_PENDING') if complete else 'INCOMPLETE_PROFILE_COHORT_NO_PASS',
         'original_sample_queries': 100, 'selected_closeout': selected,
+        'runtime_declaration_sha256': digest(root / 'declaration.json'),
+        'input_declaration_sha256': digest(job / 'declaration.json') if selected else None,
         'planned_queries': len(indices), 'attempt_directories': len(attempts), 'not_started': len(indices) - len(attempts),
         'normal_return_states': dict(states), 'assessment_states': dict(assessments),
         'unassessed_normal_returns': unassessed_completed, 'unknown_execution_attempts': unknown_execution,

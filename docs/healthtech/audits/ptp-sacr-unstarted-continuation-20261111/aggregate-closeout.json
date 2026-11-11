@@ -1,0 +1,34 @@
+{
+  "status": "INCOMPLETE_PROFILE_COHORT_NO_PASS",
+  "original_sample_queries": 100,
+  "selected_closeout": true,
+  "runtime_declaration_sha256": "1e10eec8669aa8eb6650f7762c39e0b849d9cbd5bc85baa240a387795f873051",
+  "input_declaration_sha256": "76dcfb90c69c2eb98410b55ff18c4d0742cb463f09c46fbe2873cea17fc42f01",
+  "planned_queries": 54,
+  "attempt_directories": 12,
+  "not_started": 42,
+  "normal_return_states": {
+    "EOS_COMPLETE": 11,
+    "RESERVED_UNKNOWN_EXECUTION": 1
+  },
+  "assessment_states": {
+    "STRUCTURAL_RESULT_FIDELITY_PENDING": 9,
+    "REJECTED_GENERATED_FAMILY": 2
+  },
+  "unassessed_normal_returns": 0,
+  "unknown_execution_attempts": 1,
+  "known_model_calls": 11,
+  "known_input_tokens": 9961,
+  "known_output_tokens": 14626,
+  "cost_counts_are_lower_bounds": true,
+  "gpu_charge_seconds": 1597.8072227612138,
+  "observed_cgroup_peak_bytes": 4869136384,
+  "supervisor_terminal_sha256": "6d5f61378f85b0a331e190f39d55175dc36c64857a06c925e27b00b33c16cb1a",
+  "retry": false,
+  "semantic_fidelity": "NOT_ASSESSED",
+  "protected_test_access": false,
+  "limitation": "Aggregate byte/cost binding only; not independent execution or semantic attestation",
+  "selection_manifest_sha256": "3f8a91ecfcfdbc063bc9924513c364e6c3ba5e9c19081c7191529dc92d3cbf5b",
+  "closeout_helper_sha256": "5d91f56f8163c8a8bcc74b78df172916bff762eca1fbd98856ef8eba18fe9637",
+  "finalizer_sha256": "1a5f2b93306c08cc06bbda122ebe936e760d7b56bacf38c15d9823d234cdc21d"
+}
