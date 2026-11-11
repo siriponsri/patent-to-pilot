@@ -1,5 +1,27 @@
 # Paper1 bounded long-run report, 11 November2026
 
+## Current R6 execution status, 11 November 2026
+
+The owner approved R6. Phase0 qualification is complete; the sole live critic
+calibration is `ptp-r6-calibration-20261111-v1`. Its outcome remains PENDING until
+terminal evidence and raw-response assessment. No native fidelity or retrieval
+success is inferred from software tests or intermediate generation counts.
+
+| Evidence layer | Current status | Boundary |
+|---|---|---|
+| Runtime engineering | PASS for frozen R6 package | 256 local tests; real CPU transport used authored outputs, not model evidence |
+| Actual critic calibration | RUNNING / outcome PENDING | Frozen24 authored cases; no gold or threshold changes |
+| SACR native fidelity | NOT_RUN | Requires qualified critic and synthetic gates |
+| Graph R6 input admission | CLOSED_INPUT_RISK_CAP | 33 technical risks/114; semantic fidelity NOT_ASSESSED |
+| Graph compact repair | ENGINEERING_IMPLEMENTED | 12 authored tests; actual token admission and calibration NOT_RUN |
+| Human review | NOT_RUN, zero cards issued | Actual owner judgments required; total ceiling60 |
+| New comparative retrieval | NOT_RUN | No improvement estimate; B0 evidence remains historical measured baseline |
+
+Current job and reservation: [calibration audit](../audits/ptp-r6-calibration-20261111/launch.json).
+Graph recovery preserves the failed R6 result: [prospective repair](plans/GRAPH-COMPACT-TRANSPORT-20261111.md).
+Later terminal receipts and the handoff supersede this running-state snapshot.
+
+
 ## R6 Graph input-admission outcome, 11 November 2026
 
 The approved R6 Graph configuration is **CLOSED_INPUT_RISK_CAP**, before any model
@@ -27,7 +49,7 @@ Evidence: `docs/healthtech/audits/ptp-r6-phase0-execution-20261111/`.
 
 ## R6 preparation addendum, 11 November 2026
 
-Three read-only agents reviewed evaluator correctness, scientific criteria and runtime integration. Prospective fixes and53 local tests are complete; R6 model/native execution is NOT_READY and NOT_RUN. The new engineering-first goal and partial-Graph estimand await one combined owner decision. R5 results are unchanged. See [R6 preparation and review](../audits/ptp-r6-preparation-20261111/README.md) and [proposed R6 goal](plans/R6-BOUNDED-LONG-RUN.md).
+Historical preparation checkpoint: three read-only agents reviewed evaluator correctness, scientific criteria and runtime integration; the initial53 local tests preceded owner approval. That pending-decision status is superseded by the approved R6 execution table above. R5 results are unchanged. See [R6 preparation and review](../audits/ptp-r6-preparation-20261111/README.md) and [proposed R6 goal](plans/R6-BOUNDED-LONG-RUN.md).
 
 ## R5 bounded-run closeout, 11 November 2026
 
@@ -46,7 +68,7 @@ Graph risk reasons: {"ESCALATE": 12, "MALFORMED_OR_UNGROUNDED_CRITIC": 9}. Inval
 
 The SACR profile omitted mechanism/constraint coverage and quantity units independently of the critic's incorrect finding-key names. Fixing that envelope alone would not establish fidelity; no additional candidate was used to reroll the failed profile. Two prospective synthetic candidate slots remain unused. This closes the tested candidate, not the general research hypothesis.
 
-Cumulative charged GPU time is 12309.614s; cumulative fidelity time is 12030.727s. Remaining allowances are 188.581h GPU and 60.658h fidelity. The 57,600-second Graph reservation was released after charging actual whole supervisor time once. Known model calls are a lower bound of84; historical unknown attempts remain retained. Caps stay GPU192h/fidelity64h/full-dev128h, with fidelity/full dev inside GPU. Remaining allowance does not reopen failed gates. No paid API, training, corpus re-encoding, Neo4j write or permission change occurred.
+At R5 closeout, cumulative charged GPU time was12309.614s and cumulative fidelity time was12030.727s. The then-remaining allowances were 188.581h GPU and 60.658h fidelity. The 57,600-second Graph reservation was released after charging actual whole supervisor time once. Known model calls are a lower bound of84; historical unknown attempts remain retained. Caps stay GPU192h/fidelity64h/full-dev128h, with fidelity/full dev inside GPU. Remaining allowance does not reopen failed gates. No paid API, training, corpus re-encoding, Neo4j write or permission change occurred.
 
 Canonical evidence: [R5 execution audit](../audits/ptp-r5-execution-20261111/README.md), [Graph terminal aggregate](../audits/ptp-r5-execution-20261111/graph-screen-result/aggregate.json), and [cumulative ledger](../audits/ptp-mtm-dapfam-resume-20261110/resource-ledger.json). Raw source/model records remain private. Engineering checks include 35/35 tokenizer/callback/EOS cases, the exact-source admission case, and 61 final integrated local tests; these do not certify semantic quality.
 
@@ -154,11 +176,11 @@ Both protected tests remain closed. No paid API, new model training, corpus
 re-encoding or system-permission change was used. Existing failures and raw
 private evidence remain preserved; public artifacts contain only screened code,
 documents and aggregate evidence. Credentials and source records are excluded.
-There is no active GPU job and no required human card decision for these stopped
-configurations. Remaining resource allowance does not reopen failed gates.
+At the earlier bounded-round closeout there was no active GPU job and no required
+human card decision for those stopped configurations. R6 execution is tracked above. Remaining resource allowance does not reopen failed gates.
 
 Any future methodological revision needs a separately defined configuration,
 prospective sampling/fidelity policy and budget decision. This report closes
-the authorized bounded attempt; it does not claim the scientific hypotheses
+the earlier authorized bounded attempt, not the active R6 goal; it does not claim the scientific hypotheses
 were resolved or that a publishable improvement was found. Protected-test
 evaluation and submission remain separate decisions.

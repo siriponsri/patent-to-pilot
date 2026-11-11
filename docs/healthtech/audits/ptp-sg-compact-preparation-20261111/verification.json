@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "tests": 29,
+  "command": "python -m pytest tests/test_sg_compact_worker.py tests/test_sg_compact_controller.py tests/test_sg_compact_transport.py -q",
+  "test_sha256": {
+    "tests/test_sg_compact_transport.py": "50b65c19288a63b50331af9fafe39997f76780545fe0efef61435d69092ce280",
+    "tests/test_sg_compact_controller.py": "ca971ce1450153bb62290551536679e50ce4d564c3ca6a30a87a8aa2f9b47244",
+    "tests/test_sg_compact_worker.py": "a46e2b64481405df6564e9fdae0436a57e06aa33c2336a070d301290be494268"
+  },
+  "actual_model_calls": 0,
+  "production_tokenizer_measurement": "NOT_RUN",
+  "boundaries": "Worker main exercised with authored fixed282 fixture and token-count double; real tokenizer admission remains pending.",
+  "cpu_pending_conservative_seconds": 200,
+  "cpu_pending_scope": "100 from previous Graph repair turn plus100 this preparation; charge once after active GPU reconciliation; not already in ledger."
+}

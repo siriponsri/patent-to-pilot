@@ -1,0 +1,13 @@
+{
+  "status": "APPROVED",
+  "basis": "Owner Graph repair request; CPU-only prospective token inspection. No new model run.",
+  "owner_request_sha256": "8ab32e3f7ddfd303a7daec61ba5915bb2459f9f02483e6bd99b2c8f6bb898d38",
+  "declarations_sha256": {
+    "declaration.json": "ff6cac632b62d92e7522b1f72dba75e1a1fb6a8f33c5841af6ec69222703540a"
+  },
+  "preconditions": [
+    "original calibration authoritatively terminal",
+    "current CPU/disk reservation recorded before staging",
+    "same fixed114 inputs; no model/GPU"
+  ]
+}

@@ -1,5 +1,27 @@
 # Source-preserving query representations and relation extraction for cross-domain patent retrieval
 
+## Current R6 execution status, 11 November 2026
+
+The owner approved R6. Phase0 qualification is complete; the sole live critic
+calibration is `ptp-r6-calibration-20261111-v1`. Its outcome remains PENDING until
+terminal evidence and raw-response assessment. No native fidelity or retrieval
+success is inferred from software tests or intermediate generation counts.
+
+| Evidence layer | Current status | Boundary |
+|---|---|---|
+| Runtime engineering | PASS for frozen R6 package | 256 local tests; real CPU transport used authored outputs, not model evidence |
+| Actual critic calibration | RUNNING / outcome PENDING | Frozen24 authored cases; no gold or threshold changes |
+| SACR native fidelity | NOT_RUN | Requires qualified critic and synthetic gates |
+| Graph R6 input admission | CLOSED_INPUT_RISK_CAP | 33 technical risks/114; semantic fidelity NOT_ASSESSED |
+| Graph compact repair | ENGINEERING_IMPLEMENTED | 12 authored tests; actual token admission and calibration NOT_RUN |
+| Human review | NOT_RUN, zero cards issued | Actual owner judgments required; total ceiling60 |
+| New comparative retrieval | NOT_RUN | No improvement estimate; B0 evidence remains historical measured baseline |
+
+Current job and reservation: [calibration audit](../audits/ptp-r6-calibration-20261111/launch.json).
+Graph recovery preserves the failed R6 result: [prospective repair](plans/GRAPH-COMPACT-TRANSPORT-20261111.md).
+Later terminal receipts and the handoff supersede this running-state snapshot.
+
+
 ## R6 Graph input-admission outcome, 11 November 2026
 
 The approved R6 Graph configuration is **CLOSED_INPUT_RISK_CAP**, before any model
@@ -27,7 +49,7 @@ Evidence: `docs/healthtech/audits/ptp-r6-phase0-execution-20261111/`.
 
 ## R6 preparation addendum, 11 November 2026
 
-Three read-only agents reviewed evaluator correctness, scientific criteria and runtime integration. Prospective fixes and53 local tests are complete; R6 model/native execution is NOT_READY and NOT_RUN. The new engineering-first goal and partial-Graph estimand await one combined owner decision. R5 results are unchanged. See [R6 preparation and review](../audits/ptp-r6-preparation-20261111/README.md) and [proposed R6 goal](plans/R6-BOUNDED-LONG-RUN.md).
+Historical preparation checkpoint: three read-only agents reviewed evaluator correctness, scientific criteria and runtime integration; the initial53 local tests preceded owner approval. That pending-decision status is superseded by the approved R6 execution table above. R5 results are unchanged. See [R6 preparation and review](../audits/ptp-r6-preparation-20261111/README.md) and [proposed R6 goal](plans/R6-BOUNDED-LONG-RUN.md).
 
 ## R5 bounded-run closeout, 11 November 2026
 
@@ -46,7 +68,7 @@ Graph risk reasons: {"ESCALATE": 12, "MALFORMED_OR_UNGROUNDED_CRITIC": 9}. Inval
 
 The SACR profile omitted mechanism/constraint coverage and quantity units independently of the critic's incorrect finding-key names. Fixing that envelope alone would not establish fidelity; no additional candidate was used to reroll the failed profile. Two prospective synthetic candidate slots remain unused. This closes the tested candidate, not the general research hypothesis.
 
-Cumulative charged GPU time is 12309.614s; cumulative fidelity time is 12030.727s. Remaining allowances are 188.581h GPU and 60.658h fidelity. The 57,600-second Graph reservation was released after charging actual whole supervisor time once. Known model calls are a lower bound of84; historical unknown attempts remain retained. Caps stay GPU192h/fidelity64h/full-dev128h, with fidelity/full dev inside GPU. Remaining allowance does not reopen failed gates. No paid API, training, corpus re-encoding, Neo4j write or permission change occurred.
+At R5 closeout, cumulative charged GPU time was12309.614s and cumulative fidelity time was12030.727s. The then-remaining allowances were 188.581h GPU and 60.658h fidelity. The 57,600-second Graph reservation was released after charging actual whole supervisor time once. Known model calls are a lower bound of84; historical unknown attempts remain retained. Caps stay GPU192h/fidelity64h/full-dev128h, with fidelity/full dev inside GPU. Remaining allowance does not reopen failed gates. No paid API, training, corpus re-encoding, Neo4j write or permission change occurred.
 
 Canonical evidence: [R5 execution audit](../audits/ptp-r5-execution-20261111/README.md), [Graph terminal aggregate](../audits/ptp-r5-execution-20261111/graph-screen-result/aggregate.json), and [cumulative ledger](../audits/ptp-mtm-dapfam-resume-20261110/resource-ledger.json). Raw source/model records remain private. Engineering checks include 35/35 tokenizer/callback/EOS cases, the exact-source admission case, and 61 final integrated local tests; these do not certify semantic quality.
 
@@ -131,9 +153,9 @@ extraction coverage and cross-record linkage must be demonstrated before
 traversal can be evaluated.
 
 The planned study asks whether a source-preserving query intervention improves
-known-family recovery over a fixed dense anchor, and whether graph traversal
-adds value over direct search of the same extracted information. These are
-separate questions: an extraction-empty configuration cannot provide a valid
+known-family recovery over a fixed dense anchor, and whether adding extracted information helps retrieval. In R6, direct
+postings S and one-key traversal G use the same data and scorer and are
+implementation-equivalence controls, not independent improvement claims: an extraction-empty configuration cannot provide a valid
 test of traversal benefit. The intended B0/SACR/S/G panel is retained in the
 protocol; unavailable arms must remain explicitly unavailable in reporting.
 
@@ -169,6 +191,18 @@ and 64-word overlap, query-only encoding, the established retrieval prefix,
 and family MaxP aggregation. Global lexical family-ID tie ordering precedes
 top-200 selection. The run binds 188,944 passage vectors to the existing corpus
 and encoder identity. It does not construct new corpus embeddings.
+
+### R6-specific evidence boundaries
+
+Authored critic calibration tests the evaluator contract; it does not estimate
+native fidelity. The prospective SACR projection retains literal complete
+source context; a compact view identical to its anchor reuses the same vector
+and is reported as a duplicate control. Graph tests only retained claims with
+their full family context. All100 source families remain in coverage reporting,
+including86 extraction abstentions that are not fidelity passes. Its14 nonempty
+source units and100 alias pairs were closed by input admission before model
+screening. The newer compact transport is engineering work, not an accepted
+Graph comparator. Earlier criteria and outcomes below retain their round scope.
 
 ### 3.2 Source-linked query method
 
@@ -386,7 +420,8 @@ R2 engineering improvements and greater extraction coverage did not establish
 semantic fidelity or downstream usefulness. Reusing the exposed sample also
 prevents treating R2 as independent validation.
 
-The authorized bounded run is closed with negative configurations preserved.
+The earlier bounded round is closed with negative configurations preserved;
+the subsequently approved R6 goal remains active as recorded above.
 No human cards were issued, no independent expert review occurred, and no test
 generalization, inventive-design success or product usefulness is established.
 Pilot/full dev and conditional MTM were not dispatched because their gates failed.

@@ -1,5 +1,20 @@
 # Patent-to-Pilot shared project memory
 
+## Current calibration and Graph repair checkpoint
+
+R6 critic calibration is live under the unchanged frozen job
+`ptp-r6-calibration-20261111-v1`; outcome and whole-stage costs remain pending.
+Phase0 final256 tests and authored pipeline evidence are complete. Graph R6's
+33/114 technical input-risk closure remains historical evidence. A separate
+lossless compact transport and CPU-only worker/controller passed29 authored
+tests and are frozen locally, not staged. See
+`docs/healthtech/audits/ptp-sg-compact-preparation-20261111/README.md` for exact
+resource/terminal gates and pending200 conservative local CPU seconds. Do not
+start the CPU job alongside calibration or reset the active dispatch journal.
+Reports now distinguish current R6 status from earlier closed rounds; no new
+semantic or retrieval improvement is claimed. Read HANDOFF for latest status.
+
+
 ## Latest R6 actual CPU pipeline qualification
 
 Read HANDOFF for current writer and publication state. Native100 full profile/generic inputs passed (200 requests, zero risks). Actual Docker CPU-only authored pipeline passed through R6 worker, tokenizer, grammar/EOS, adapter, durable attempts, cohort and calibration scoring: 31 simulated backend invocations, 3649 checked tokens, 93.157 seconds. Entire output tree is SIMULATED; no real model/GPU calls. Seven CPU jobs terminal. Factorial composition reviewed; controller/global-ledger faults tested. Final Phase0 evidence binding and frozen calibration dispatch remain before GPU. Graph R6 remains closed at33 technical risks of114. Audit: docs/healthtech/audits/ptp-r6-phase0-execution-20261111.
