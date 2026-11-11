@@ -96,8 +96,8 @@ def run_bundle(*, destination, query_id, source, execution, prompt_root,
         summarize_costs([event])
         write_new(attempt/'cost.json', event)
         events.append(event)
-        if binding['record']['status'] == 'INPUT_LIMIT':
-            raise InputBoundaryError('stage input limit; no truncation or retry')
+        # A verified INPUT_LIMIT is a known zero-call outcome. Stage-specific
+        # rejection below flags it without treating it as infrastructure failure.
         return raw, binding, metrics, reservation
 
     def prompt(kind, profile=None):

@@ -53,9 +53,12 @@ def harness(tmp_path, mode=None):
         if mode == 'bad_generic' and stage == 'generic': text = '{invalid'
         record = {'status':'EOS_COMPLETE', 'text':text, 'model_calls':1, 'input_tokens':10,
                   'output_tokens':5, 'response_sha256':digest(text.encode()), 'retry':False}
+        if mode == stage+'_input_limit':
+            record = {'status':'INPUT_LIMIT', 'text':None, 'model_calls':0,
+                      'input_tokens':8193, 'output_tokens':0, 'retry':False}
         (path/'generation.json').write_text(json.dumps(record))
         metrics = {k:0 for k in METRICS}
-        metrics.update(model_calls=1,input_tokens=10,output_tokens=5)
+        metrics.update({k:record[k] for k in ('model_calls','input_tokens','output_tokens')})
         return metrics
 
     args = dict(destination=tmp_path/'bundle', query_id='q1', source=SOURCE, execution=execution,
@@ -144,3 +147,24 @@ def test_local_executor_rechecks_admission_after_model_wrapper_setup(tmp_path, m
         eos_token_ids=[1],check_admission=deny,peak_memory_bytes=lambda:0)
     with pytest.raises(TimeoutError): invoke('profile',tmp_path/'attempt',[],{})
     assert calls == ['setup','admission'] and not (tmp_path/'attempt').exists()
+
+
+def test_critic_input_limit_is_flagged_with_known_zero_call_cost(tmp_path):
+    args,calls = harness(tmp_path,'critic_input_limit')
+    result = run_bundle(**args)
+    assert calls == ['profile','generic','selective','critic']
+    assert result['status'] == 'UNASSESSABLE'
+    assert result['costs']['metrics']['model_calls']['value'] == 3
+    assert result['events'][-1]['metrics']['model_calls'] == 0
+    assert result['events'][-1]['metrics']['input_tokens'] == 8193
+    assert not (args['destination']/'failure.json').exists()
+
+
+@pytest.mark.parametrize('stage,expected_calls', [('profile',0),('generic',2),('selective',2)])
+def test_artifact_input_limit_is_unassessable_without_unknown_cost(tmp_path,stage,expected_calls):
+    args,calls = harness(tmp_path,stage+'_input_limit')
+    result = run_bundle(**args)
+    assert result['status'] == 'UNASSESSABLE'
+    assert result['costs']['metrics']['model_calls']['value'] == expected_calls
+    assert 'critic' not in calls
+    assert not (args['destination']/'failure.json').exists()

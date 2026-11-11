@@ -1,5 +1,7 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+Review follow-up: both decoded-critic Unicode and known INPUT_LIMIT handling repaired. Frozen policy requires oversized/missing critic and unusable artifact bundles to be flagged, not mislabeled infrastructure failures. All4stage input-limit fixtures preserve known zero-call costs;39targeted testsPASS. Re-review of limit fix requested; no live modelcalls. Previous bundle commit9ea2ea0 preserved.
+
 ## ST1 R2 complete per-query bundle runner 2026-11-11T07:36:30.849727+07:00
 
 Parent sole writer; last verified pushed3656079. Implemented explicit profile->generic->selective->critic orchestration and local one-call executor adapter. All stage prompt/contract pins checked beforedispatch; each exclusive attempt reservation/messages,rawnormalreturn and costs bound from its own directory. Malformed profile retained/charged; independently valid generic/selective artifacts retained if peer fails; no critic on incompletebundle. Infrastructure/identity/budget uncertainty stops and leaves durableunknown marker. Automaticunflagged is never fidelityPASS. Same destination cannot restart. Admission rechecked after modelwrapper/grammarsetup.
