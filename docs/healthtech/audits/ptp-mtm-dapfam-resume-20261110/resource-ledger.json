@@ -1,8 +1,8 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 691200,
-  "gpu_conservative_charged_seconds": 22160.613504877227,
-  "gpu_remaining_seconds": 669039.3864951228,
+  "gpu_conservative_charged_seconds": 22186.613504877227,
+  "gpu_remaining_seconds": 669013.3864951228,
   "charge_basis": "Whole SYN003/native baseline/SYN004/native fidelity supervisor intervals; native interrupted attempt token/call counts remain unknown, whole wall charged.",
   "model_calls": 245,
   "cpu004_calls": 0,
@@ -959,5 +959,5 @@
     "retry": false,
     "owner_approval_sha256": "51b0dee061c052027596003d785cf137a460c57749ab93212560fee8f5c15a2e"
   },
-  "gpu_stage_host_cpu_telemetry_seconds": 6963.6637416349995
+  "gpu_stage_host_cpu_telemetry_seconds": 8823.929980994999
 }

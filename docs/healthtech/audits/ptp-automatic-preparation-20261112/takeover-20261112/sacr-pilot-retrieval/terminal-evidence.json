@@ -1,0 +1,87 @@
+{
+  "supervisor_terminal": {
+    "attempt_id": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+    "container_name": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+    "retry": false,
+    "declaration_sha256": "bc6c20e8678edbbea958b8635e9101089c3e0c443bbd147139efd2464a38ed81",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T16:00:33.753854006Z",
+      "FinishedAt": "2026-11-12T16:00:59.023962202Z"
+    },
+    "whole_wall_seconds": 25.672009570000228,
+    "controller_cpu_seconds": 0.26623936,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "docker_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T16:00:33.753854006Z",
+    "FinishedAt": "2026-11-12T16:00:59.023962202Z"
+  },
+  "call_markers": [],
+  "normal_return_records": [],
+  "completion": {
+    "status": "PILOT_RANKINGS_COMPLETE_NOT_EVALUATED",
+    "queries": 20,
+    "encoded_texts": 40,
+    "anchor_check": {
+      "queries": 20,
+      "identical_family_lists": 20,
+      "reference": "B0_PINNED"
+    },
+    "panel_counts": {
+      "screened": 20,
+      "fallback": 0
+    },
+    "query_prefix": "encode query for different document retrieval: ",
+    "encode_seconds": 0.8037377059954451,
+    "wall_seconds": 7.382202249005786,
+    "labels_used": false,
+    "model_calls": 0,
+    "files_sha256": {
+      "anchor-top200-private.jsonl": "c354a131d9cbbe9b66ba2846acd9592f67addfa6ce305284cddd387f887f824a",
+      "panel-top200-private.jsonl": "fa1f00db103a2bf12888b757b91251dde181a5221be7fff3713cc7cbb96d852b",
+      "reference-top200-private.jsonl": "dd766682bca7c1159f05ec1ebbeffe258158e49db21bc23c7e58b922bbae4c1e",
+      "sacr-top200-private.jsonl": "fa1f00db103a2bf12888b757b91251dde181a5221be7fff3713cc7cbb96d852b"
+    }
+  },
+  "failure": null,
+  "file_sha256": {
+    "__pycache__/r3_engine_client.cpython-312.pyc": "eaef12ea2474a882b870df83ae66c1abeb759514b973b2f319a271eb77593c31",
+    "__pycache__/supervise_sacr_r5_engine.cpython-312.pyc": "a53a285612383ca80b2eea374af577323ec4432d98bd67d6219e6784635b87e6",
+    "admission.json": "2ed22c8e2cba5ad5a0c3ebea28f49a88bfea4ccac953691c1fd8f6372e3f7ec7",
+    "controller.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch/declaration.json": "18e82397c4aeb1d1d9c35b6c7498100b112caa3239442649fea8c4cc532e1f73",
+    "dispatch/gates.json": "989d00dfc32c6ecba59acff5276213c43ac9b83cbd96a956a6e9eb95694402b7",
+    "global-dispatch.json": "b49e349bdfab4b793b57ec58c7f8f35997f95ab1fd957780ad3a18a19560e9f8",
+    "isolation.json": "236387b8b6818e08f9b53e936be2827018798aee7f700fba2c9216b226958a87",
+    "launch.json": "59376cb42c09e66add4ef7a83eb4cb7c22208a6969e1e661d54cd199dfd7f229",
+    "out/attempt/anchor-top200-private.jsonl": "c354a131d9cbbe9b66ba2846acd9592f67addfa6ce305284cddd387f887f824a",
+    "out/attempt/completion.json": "cac2d5acfe1e54a1d402f4c99d9cc12542616e855f6c7f51e479f6d3a7df3cbf",
+    "out/attempt/panel-top200-private.jsonl": "fa1f00db103a2bf12888b757b91251dde181a5221be7fff3713cc7cbb96d852b",
+    "out/attempt/reference-top200-private.jsonl": "dd766682bca7c1159f05ec1ebbeffe258158e49db21bc23c7e58b922bbae4c1e",
+    "out/attempt/sacr-top200-private.jsonl": "fa1f00db103a2bf12888b757b91251dde181a5221be7fff3713cc7cbb96d852b",
+    "r3_engine_client.py": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+    "supervise_sacr_pilot_retrieval.py": "c2d06a6ee4a75fb16801f01eccafba9d99c892e95d262eb9c58fa11e7370f3b1",
+    "supervise_sacr_r5_engine.py": "2f9413b5eb0c870961a923132c13afbe6f045f425d41d14679f5ffca8f0a84e3",
+    "terminal.json": "d11f30700f5a5ce66b19de9626728849e6e2fd71c17dfd69104cc699afbffc5e"
+  }
+}

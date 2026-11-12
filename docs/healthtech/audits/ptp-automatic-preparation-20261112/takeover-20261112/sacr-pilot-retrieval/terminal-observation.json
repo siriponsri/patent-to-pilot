@@ -1,0 +1,72 @@
+{
+  "job": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T16:00:33.753854006Z",
+    "FinishedAt": "2026-11-12T16:00:59.023962202Z"
+  },
+  "terminal": {
+    "attempt_id": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+    "container_name": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+    "retry": false,
+    "declaration_sha256": "bc6c20e8678edbbea958b8635e9101089c3e0c443bbd147139efd2464a38ed81",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T16:00:33.753854006Z",
+      "FinishedAt": "2026-11-12T16:00:59.023962202Z"
+    },
+    "whole_wall_seconds": 25.672009570000228,
+    "controller_cpu_seconds": 0.26623936,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+    "generation": 87
+  },
+  "completion": {
+    "status": "PILOT_RANKINGS_COMPLETE_NOT_EVALUATED",
+    "queries": 20,
+    "encoded_texts": 40,
+    "anchor_check": {
+      "queries": 20,
+      "identical_family_lists": 20,
+      "reference": "B0_PINNED"
+    },
+    "panel_counts": {
+      "screened": 20,
+      "fallback": 0
+    },
+    "query_prefix": "encode query for different document retrieval: ",
+    "encode_seconds": 0.8037377059954451,
+    "wall_seconds": 7.382202249005786,
+    "labels_used": false,
+    "model_calls": 0,
+    "files_sha256": {
+      "anchor-top200-private.jsonl": "c354a131d9cbbe9b66ba2846acd9592f67addfa6ce305284cddd387f887f824a",
+      "panel-top200-private.jsonl": "fa1f00db103a2bf12888b757b91251dde181a5221be7fff3713cc7cbb96d852b",
+      "reference-top200-private.jsonl": "dd766682bca7c1159f05ec1ebbeffe258158e49db21bc23c7e58b922bbae4c1e",
+      "sacr-top200-private.jsonl": "fa1f00db103a2bf12888b757b91251dde181a5221be7fff3713cc7cbb96d852b"
+    }
+  },
+  "call_markers": []
+}

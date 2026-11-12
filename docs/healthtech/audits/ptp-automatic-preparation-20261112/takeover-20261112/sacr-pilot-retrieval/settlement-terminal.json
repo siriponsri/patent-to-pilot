@@ -1,0 +1,24 @@
+{
+  "attempt_id": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+  "container_name": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+  "declaration_sha256": "bc6c20e8678edbbea958b8635e9101089c3e0c443bbd147139efd2464a38ed81",
+  "whole_wall_seconds": 25.672009570000228,
+  "known_model_calls": 0,
+  "calls_complete": true,
+  "cost_evidence_sha256": "ecac76eccb2e1c2a04bc147ba70429053c1f11947066b83146b6360dde1b2e2f",
+  "aggregate_cpu_seconds": 1860.26623936,
+  "aggregate_cpu_basis": "worker CPU unknown: declared safety bound recorded",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T16:00:33.753854006Z",
+    "FinishedAt": "2026-11-12T16:00:59.023962202Z"
+  }
+}
