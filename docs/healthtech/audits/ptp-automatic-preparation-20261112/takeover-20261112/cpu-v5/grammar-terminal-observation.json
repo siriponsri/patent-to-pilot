@@ -1,0 +1,138 @@
+{
+  "job": "ptp-auto-grammar-20261112-v5",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T11:29:46.420589008Z",
+    "FinishedAt": "2026-11-12T11:30:14.999380651Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-grammar-20261112-v5",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T11:29:46.420589008Z",
+      "FinishedAt": "2026-11-12T11:30:14.999380651Z"
+    },
+    "whole_wall_seconds": 29.40824836200045,
+    "controller_cpu_seconds": 0.207544489
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "qualification": {
+    "status": "PASS_GRAMMAR_ONLY",
+    "results": [
+      {
+        "name": "marking-valid",
+        "expected": true,
+        "accepted": true,
+        "reason": "COMPLETE",
+        "input_tokens": 1636,
+        "output_tokens": 127,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "marking-abstain",
+        "expected": true,
+        "accepted": true,
+        "reason": "COMPLETE",
+        "input_tokens": 1636,
+        "output_tokens": 115,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "marking-wrong-identity",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 1636,
+        "output_tokens": 123,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "marking-labels-too-short",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 1636,
+        "output_tokens": 125,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "marking-labels-too-long",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 1636,
+        "output_tokens": 129,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "review-valid",
+        "expected": true,
+        "accepted": true,
+        "reason": "COMPLETE",
+        "input_tokens": 1135,
+        "output_tokens": 199,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "review-uncertain",
+        "expected": true,
+        "accepted": true,
+        "reason": "COMPLETE",
+        "input_tokens": 1135,
+        "output_tokens": 212,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "review-missing-check",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 1135,
+        "output_tokens": 178,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "review-paraphrased-quote",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 1135,
+        "output_tokens": 209,
+        "model_calls": 0,
+        "schema_eos_only": true
+      }
+    ],
+    "model_calls": 0,
+    "semantic_certified": false,
+    "wall_seconds": 27.23314357099298,
+    "process_cpu_seconds": 27.299923563
+  }
+}

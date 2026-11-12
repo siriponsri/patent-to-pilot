@@ -1,0 +1,35 @@
+[
+  {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "owner_approval_sha256": "6e36eee5143f53b291b7e061e442f3be446d964d1b58334806680a27367661dd",
+    "evidence_sha256": "ecbde75307792004cd73defa80479d1f08f715b7150d9300a1e578c153f9a08b",
+    "booking_id": "takeover-20261112-segment11",
+    "location": "local",
+    "conservative_cpu_seconds": 109,
+    "basis": "metered lines 23..27 (8.734375 s) + 100 s conservative unmetered shell/inspection allowance",
+    "prior_ledger_sha256": "4e0f12d4f4e317780108b6d770329a21031b62b6b131875afca61587ccbad730"
+  },
+  {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "owner_approval_sha256": "f870cd5126e321ac02e6aac9597fc61e275d8a47a0e71798aea63ae14c97c8d2",
+    "evidence_sha256": "1a721474d0049ac3ffe9b36bd9e5692e0c4e8f042a62abdb8827453999a5db10",
+    "booking_id": "ptp-auto-grammar-20261112-v5",
+    "location": "remote",
+    "conservative_cpu_seconds": 120,
+    "basis": "upper bound: worker RLIMIT_CPU 90 s + controller 30 s on 1 core, wall stop 110 s; no refund",
+    "prior_ledger_sha256": "af42112fcb14551072bfbaa651923375c54dbbdbf02f0654e7914ee07742ccd2"
+  },
+  {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "owner_approval_sha256": "f870cd5126e321ac02e6aac9597fc61e275d8a47a0e71798aea63ae14c97c8d2",
+    "evidence_sha256": "1a721474d0049ac3ffe9b36bd9e5692e0c4e8f042a62abdb8827453999a5db10",
+    "booking_id": "ptp-auto-pipeline-fixture-20261112-v5",
+    "location": "remote",
+    "conservative_cpu_seconds": 120,
+    "basis": "upper bound: worker RLIMIT_CPU 90 s + controller 30 s on 1 core, wall stop 110 s; no refund",
+    "prior_ledger_sha256": "d051469c7153e3b66691d5efab57f5208be56017bb199104de3f5f71961645a7"
+  }
+]
