@@ -1,0 +1,39 @@
+{
+  "status": "OWNER_AUTHORIZED_AUTOMATIC_DUAL_TRACK_CONTINUATION",
+  "date": "2026-11-12",
+  "channel": "Claude Code chat, session local_016eefb9 (owner takeover instructions + approved plan)",
+  "scope": [
+    "continue Paper 1 automatic dual-track (SACR + Graph) to results and reproducibility package or declared stop condition",
+    "engineering/integrity qualification before use; freeze protocol, manifests, hashes, caps, retry/stop rules before dispatch",
+    "bounded synthetic qualification; separate SACR and Graph qualification; 20-query pilot; 474-query DAPFAM dev panel for qualified arms",
+    "combined SACR+Graph and adaptive arm only if declared gates pass; analysis, manuscript and reproducibility package"
+  ],
+  "rules": [
+    "one repo writer; one GPU job at a time; inspect outcome before any retry; unknown/running != failed; failed does not authorize automatic rerun",
+    "human cards optional for new configurations; automatic screening is not semantic certification or gold",
+    "preserve R6/R7 negative results and rules; no retroactive criteria changes",
+    "Graph needs a genuinely distinct fixed traversal vs non-traversal S under equal information/scoring/work budget; S/G parity is implementation check only",
+    "SACR failure falls back to original query; uncertain graph relation abstains; full denominator kept, coverage/fallback reported",
+    "pilot win/loss is not a full-dev gate",
+    "engineering fault repair allowed within existing authority; not automatic model/data replay"
+  ],
+  "prohibited": [
+    "paid API",
+    "training",
+    "corpus re-encoding",
+    "Neo4j writes",
+    "full-corpus LLM extraction",
+    "protected-test access",
+    "post-hoc cohort/scoring/control/stop-rule changes",
+    "outcome-driven retry",
+    "manuscript submission or publisher terms"
+  ],
+  "resources": {
+    "cpu_cumulative_cap_seconds": 57600,
+    "gpu_cumulative_cap_hours": 192,
+    "ram_gib": 32,
+    "cpu_threads": 8,
+    "incremental_disk_gib": 40
+  },
+  "cpu_amendment_receipt": "owner-cpu-amendment.json"
+}

@@ -1,5 +1,14 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## CPU grammar job staged; launching 2026-11-12T18:05+07:00
+
+Journal generation 8, idle. Bookings: takeover-20261112-segment1 = 105s local (metered 4.6s + 100s conservative); ptp-auto-grammar-20261112-v1 = 600s remote precharge (upper bound, no refund: worker RLIMIT_CPU 480s + controller 60s, 1 core, wall stop 540s). CPU used 47885.85s of 57600s, remaining 9714.15s. Ledger 92b95cbcf436dfe26a34daecab79b1eee500679053a7e2ece895285b26fb040c (local mirrors journal).
+
+Job /home/chaw/patent-to-pilot-jobs/ptp-auto-grammar-20261112-v1: declaration f0689cf133bafe03223810371d3317aa042920d311763137051998fcb38d5c4a, package 5849318268b3916f8555d367ee2d35e9b6f389a5e3dfa755dd4e05c73bc8c891 built from committed blobs at 23ec2b5, transport 72d80abd41b4a18a9ef6f232851797762428cb75c95a3a5488a909c1acb2543b. 6 authored cases, real tokenizer + R6Backend grammar/EOS. No weights, corpus, GPU or model calls; network off; 1536MiB container. Pre-dispatch fix: allowlist now includes vocab.json and merges.txt (tokenizer-only).
+
+Launch once: python docs/healthtech/audits/ptp-automatic-preparation-20261112/takeover-20261112/grammar_control.py start. Monitor with the same script in `observe` mode. NEVER rerun start; launch.json/admission.json block replay. If observation times out, observe again; do not restart. After the terminal state, record actual worker+controller CPU (already covered by the 600s booking; no refund). PASS_GRAMMAR_ONLY qualifies grammar mechanics only, not semantic quality.
+
+
 ## CPU accounting blocker cleared; journal generation 6 2026-11-12T17:45+07:00
 
 Claude session local_016eefb9 is the sole writer. Owner decisions applied once to the live journal: CPU cap 28800 -> 57600s (no reset); unmeasured automatic preparation 07:00:41.145 -> 07:30:39.320 booked as physical upper bound 1799s x 12 CPUs = 21588s UPPER_BOUND_NOT_MEASURED (the 4h estimate was NOT approved and is not used); GPU-stage host CPU is telemetry only, not charged to the CPU cap. Journal generation 5 -> 6, active null, scope and attempts unchanged, ledger f07dcc5fe7666d809f41a19d331d23812735dfb58653531a2889f755e937cbe5 mirrored to the local canonical ledger and confirmed by the read-only inspector. CPU charged 47180.84637781s, remaining 10419.15362219s (~2.89h). GPU remaining 675994.39s, fidelity 215473.27s, unchanged.

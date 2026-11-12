@@ -1,0 +1,21 @@
+{
+  "status": "STAGED_NOT_LAUNCHED",
+  "job": "ptp-auto-grammar-20261112-v1",
+  "declaration_sha256": "f0689cf133bafe03223810371d3317aa042920d311763137051998fcb38d5c4a",
+  "package_sha256": "5849318268b3916f8555d367ee2d35e9b6f389a5e3dfa755dd4e05c73bc8c891",
+  "transport": {
+    "bytes": 1832960,
+    "sha256": "72d80abd41b4a18a9ef6f232851797762428cb75c95a3a5488a909c1acb2543b",
+    "files": 227
+  },
+  "journal_generation": 8,
+  "ledger_sha256": "92b95cbcf436dfe26a34daecab79b1eee500679053a7e2ece895285b26fb040c",
+  "booking_ids": [
+    "automatic-preparation-20261112T070041-073039",
+    "ptp-auto-grammar-20261112-v1",
+    "takeover-20261112-segment1"
+  ],
+  "cpu_used_seconds": 47885.84637781,
+  "cpu_remaining_seconds": 9714.153622190002,
+  "segment1_seconds": 105
+}
