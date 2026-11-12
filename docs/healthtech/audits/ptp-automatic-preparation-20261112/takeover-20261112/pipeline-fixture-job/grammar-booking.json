@@ -1,0 +1,11 @@
+{
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "owner_approval_sha256": "f870cd5126e321ac02e6aac9597fc61e275d8a47a0e71798aea63ae14c97c8d2",
+  "evidence_sha256": "bb24ab34ba2d941dcda0b029ce65aab837807f80c8639c0bf005d33fc800b9cf",
+  "booking_id": "ptp-auto-pipeline-fixture-20261112-v1",
+  "location": "remote",
+  "conservative_cpu_seconds": 600,
+  "basis": "upper bound: worker RLIMIT_CPU 480 s (inner worker 540) + controller 60 s on 1 core, wall stop 540 s; no refund",
+  "prior_ledger_sha256": "03ec3497775fdabec5786e78c71e39340489f16dc89e4e17c144ae80c5a1299d"
+}

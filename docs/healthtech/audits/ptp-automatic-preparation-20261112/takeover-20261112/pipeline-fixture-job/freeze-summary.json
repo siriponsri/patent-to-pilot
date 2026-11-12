@@ -1,0 +1,23 @@
+{
+  "status": "STAGED_NOT_LAUNCHED",
+  "job": "ptp-auto-pipeline-fixture-20261112-v1",
+  "declaration_sha256": "843ac86e28fbf58d841a7a8eefe16beeeec33200fdf6c7bf1b8679321706c9f4",
+  "package_sha256": "bb24ab34ba2d941dcda0b029ce65aab837807f80c8639c0bf005d33fc800b9cf",
+  "transport": {
+    "bytes": 1863680,
+    "sha256": "edcb7a93755c95bbcf2351b77538a8bf9b3decd4ed146c75a850dc2b54549233",
+    "files": 231
+  },
+  "journal_generation": 10,
+  "ledger_sha256": "0dd87fe91a3d6456e1a480444ca882ad1f092296b4dc3d7a84faf83efb35619f",
+  "booking_ids": [
+    "automatic-preparation-20261112T070041-073039",
+    "ptp-auto-grammar-20261112-v1",
+    "ptp-auto-pipeline-fixture-20261112-v1",
+    "takeover-20261112-segment1",
+    "takeover-20261112-segment2"
+  ],
+  "cpu_used_seconds": 48587.84637781,
+  "cpu_remaining_seconds": 9012.153622190002,
+  "segment2_seconds": 102
+}
