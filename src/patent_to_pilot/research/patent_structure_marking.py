@@ -6,7 +6,9 @@ from jsonschema.exceptions import ValidationError
 from .mtm_runtime import InputBoundaryError
 from .sacr_token_profile import source_catalogue
 
-VERSION = 'patent-structure-marking-v1'
+# v2 (12 Nov 2026): token bounds enumerated via finite_integer_schema because LMFE does
+# not enforce numeric minimum/maximum (R5 finding); v1 synthetic smoke emitted end_token > count.
+VERSION = 'patent-structure-marking-v2'
 ROLES = ('entity', 'action', 'operand', 'quantity', 'condition', 'exception',
          'negation', 'modality', 'reference', 'background')
 
@@ -38,6 +40,8 @@ def prepare(source, query_id, km_text, expected_km_sha256):
             'end_token': {'type': 'integer', 'minimum': 1, 'maximum': count},
             'attachment': {'enum': ['explicit', 'uncertain']}})},
         'abstraction': {'anyOf': [{'type': 'null'}, {'type': 'string', 'minLength': 1, 'maxLength': 4096}]}})
+    from .sacr_evidence_prompt_v5 import finite_integer_schema
+    schema = finite_integer_schema(schema)
     payload = {'version': VERSION, 'query_id': query_id, 'source_sha256': sha(source),
                'source': source, 'tokens': tokens, 'km_sha256': expected_km_sha256}
     messages = [{'role': 'system', 'content':

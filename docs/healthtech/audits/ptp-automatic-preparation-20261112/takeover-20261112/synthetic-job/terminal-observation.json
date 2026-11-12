@@ -1,0 +1,67 @@
+{
+  "job": "ptp-auto-synthetic-20261112-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 1,
+    "Error": "",
+    "StartedAt": "2026-11-12T10:42:28.490735989Z",
+    "FinishedAt": "2026-11-12T10:46:34.142141494Z"
+  },
+  "terminal": {
+    "attempt_id": "ptp-auto-synthetic-20261112-v1",
+    "container_name": "ptp-auto-synthetic-20261112-v1",
+    "retry": false,
+    "declaration_sha256": "91602ad370becce705b587d339ace218d35ca1dc2aaec511085cdb18362e9655",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 1,
+      "Error": "",
+      "StartedAt": "2026-11-12T10:42:28.490735989Z",
+      "FinishedAt": "2026-11-12T10:46:34.142141494Z"
+    },
+    "whole_wall_seconds": 246.18847570099751,
+    "controller_cpu_seconds": 0.635643924,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-synthetic-20261112-v1",
+    "generation": 13
+  },
+  "input_admission": {
+    "input_tokens": 2280,
+    "status": "ADMITTED",
+    "model_calls": 0
+  },
+  "loaded_runtime": {
+    "model_class": "Qwen3ForCausalLM",
+    "dtype": "torch.float16",
+    "device": "cuda:0",
+    "attention": "eager"
+  },
+  "worker_failure": {
+    "exception_type": "InputBoundaryError",
+    "call_slots_consumed": 1,
+    "process_cpu_seconds": 242.937210778,
+    "retry": false,
+    "cost_status": "CONTROLLER_AND_DIAGNOSTICS_RECONCILIATION_REQUIRED"
+  },
+  "call_markers": [
+    "call-1.json"
+  ]
+}

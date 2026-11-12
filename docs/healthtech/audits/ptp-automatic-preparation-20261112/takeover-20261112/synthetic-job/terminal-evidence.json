@@ -1,0 +1,80 @@
+{
+  "supervisor_terminal": {
+    "attempt_id": "ptp-auto-synthetic-20261112-v1",
+    "container_name": "ptp-auto-synthetic-20261112-v1",
+    "retry": false,
+    "declaration_sha256": "91602ad370becce705b587d339ace218d35ca1dc2aaec511085cdb18362e9655",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 1,
+      "Error": "",
+      "StartedAt": "2026-11-12T10:42:28.490735989Z",
+      "FinishedAt": "2026-11-12T10:46:34.142141494Z"
+    },
+    "whole_wall_seconds": 246.18847570099751,
+    "controller_cpu_seconds": 0.635643924,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "docker_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 1,
+    "Error": "",
+    "StartedAt": "2026-11-12T10:42:28.490735989Z",
+    "FinishedAt": "2026-11-12T10:46:34.142141494Z"
+  },
+  "call_markers": [
+    "call-1.json"
+  ],
+  "normal_return_records": [],
+  "completion": null,
+  "failure": {
+    "exception_type": "InputBoundaryError",
+    "call_slots_consumed": 1,
+    "process_cpu_seconds": 242.937210778,
+    "retry": false,
+    "cost_status": "CONTROLLER_AND_DIAGNOSTICS_RECONCILIATION_REQUIRED"
+  },
+  "file_sha256": {
+    "__pycache__/r3_engine_client.cpython-312.pyc": "5b98e56e488de1bb4bb9dadaf29d40e819a913c1907569f38c2d1a0b33cae82f",
+    "__pycache__/supervise_sacr_r5_engine.cpython-312.pyc": "2860ba3487229605f079ffce36e774a6ab4400a39579bf898262a6e6208671ac",
+    "admission.json": "02a72ccc963c0e5b4bf64f3be2c3b4a0a2ab532a17a6e851f17c2ce951231593",
+    "controller.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch/declaration.json": "941a5776673b99fb9cac9d1c78f06fa8c43b91035838b6663721588a63e1c847",
+    "dispatch/gates.json": "cfc9a0eda6d04eb8173ad71b65368678154e896e9983b3debeb21088a96c0d46",
+    "dispatch/task.json": "e975c506847e08fcc016fd97a1a61e90b3be35abcd1de79b710b310909da28a3",
+    "global-dispatch.json": "1b673bf21a28499d320697d8b127971d29877da4475b5dea6f5ebbd9268fa642",
+    "isolation.json": "a4a336b2af4d6dc601ecf0887fa6e15aa140080e3c33f2e422c953350371aafe",
+    "launch.json": "4e2a46aff18bb45d148121889e90ec88f99d2e8556b6db2f3d4b1fdaf5a9f367",
+    "out/attempt/backend/marking/failure.json": "dd4f5f29e233ed0bd4b5a8e9d7d612d8dc98993c006c2f4635b1f6c3ce053853",
+    "out/attempt/backend/marking/reservation.json": "f8a8eb4e99bc395f52dd70e1ffb10572aac3326df3c115942978929652bd39f8",
+    "out/attempt/backend/marking-diagnostics-private/backend-dispatch.json": "27b07c6a6393942a9e5a1794b84af954dcdef69b26cf0f2742786f406bc504b6",
+    "out/attempt/backend/marking-diagnostics-private/failure-private.json": "5a6809a4d91de5b3126405e1d166b7342f189b6a973778c2dcc0e5e9f03d29ab",
+    "out/attempt/before-model-input-admission.json": "cf60e269795861c4b34913c1173981b805044c79836e31c4e9d584152b7ed189",
+    "out/attempt/call-1.json": "8e887ab6334de2180695bb740214ecea1a514357e3b6dacde3cf11d4281f81ac",
+    "out/attempt/failure.json": "20cdd921a0d592cb2a67977cf4758e9c1e73f76f98ccb7cbc1c9e5480edd2836",
+    "out/attempt/loaded-runtime.json": "a0b12377493b0228cbcd75a4d16f4a64aa71c10d371eeb4b63fe23f044d2c704",
+    "out/attempt/marking-grammar-private.json": "477cb6b6effdff6673f8994b7d1bc45244573048caea1a3af7e85e4caf9954f9",
+    "out/attempt/query/failure.json": "ca30dccf73504fb6ed07581cf59ba6263fefd73a552cfb91b612eadad570e2b4",
+    "out/attempt/query/input.json": "70d62eaf558490b1d23c5de50bb7bce916bb1fb9c4bc05d8060b15342e808370",
+    "out/attempt/query/marking-dispatch.json": "fa9cb12c94c4b2d9f27bc31be9e9b769f6b18b62b4654d34b83223295b9d1237",
+    "out/attempt/query/marking-request.json": "2a017cfcaf5444cdd58fa8ae00dbdcae0827a610e4d8c80a82d41e9c3455d101",
+    "r3_engine_client.py": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+    "supervise_automatic_synthetic.py": "caf1b7bdc4a106ec4924e4141c548971d3de62d3a2c380492c22b7e880b2767c",
+    "supervise_sacr_r5_engine.py": "2f9413b5eb0c870961a923132c13afbe6f045f425d41d14679f5ffca8f0a84e3",
+    "terminal.json": "0daf92278054ae4994d01d40372951c53f598b413c0fc824c0008505cbde25ec"
+  }
+}

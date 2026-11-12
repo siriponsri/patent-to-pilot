@@ -23,11 +23,11 @@ try:r['container_state']=Engine().inspect(p.name)['State']
 except EngineError as error:
  if error.status!=404:raise
  r['container_state']='NOT_CREATED'
-for key,loc in [('terminal','terminal.json'),('isolation_status','isolation.json'),('global_dispatch','global-dispatch.json'),('input_admission','out/attempt/before-model-input-admission.json'),('loaded_runtime','out/attempt/loaded-runtime.json'),('completion','out/attempt/completion.json'),('worker_failure','out/attempt/failure.json')]
-r['call_markers']=sorted(x.name for x in (p/'out/attempt').glob('call-*.json')) if (p/'out/attempt').exists() else []:
+for key,loc in [('terminal','terminal.json'),('isolation_status','isolation.json'),('global_dispatch','global-dispatch.json'),('input_admission','out/attempt/before-model-input-admission.json'),('loaded_runtime','out/attempt/loaded-runtime.json'),('completion','out/attempt/completion.json'),('worker_failure','out/attempt/failure.json')]:
  if (p/loc).exists():
   v=json.loads((p/loc).read_bytes())
   r[key]=v.get('status') if key=='isolation_status' else v
+r['call_markers']=sorted(x.name for x in (p/'out/attempt').glob('call-*.json')) if (p/'out/attempt').exists() else []
 if 'terminal' in r and r['terminal'].get('status')!='TERMINAL':r['controller_log']=(p/'controller.log').read_text()[-3000:]
 print(json.dumps(r))
 """

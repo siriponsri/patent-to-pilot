@@ -1,0 +1,18 @@
+{
+  "applied_now": true,
+  "generation": 14,
+  "study": {
+    "status": "IDLE",
+    "stage_costs": {
+      "ptp-auto-synthetic-20261112-v1": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 243.572854702,
+        "known_calls": 0,
+        "seconds": 247,
+        "stage": "synthetic"
+      }
+    }
+  },
+  "approved_gpu_occupied": false,
+  "ledger_sha256": "a87cd6c6c7a40412ce734cd3f302a3ae44f4ba9f83e2641275377c53063881ef"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "FAILED_ENGINEERING_GRAMMAR_INTEGER_BOUND",
+  "attempt_id": "ptp-auto-synthetic-20261112-v1",
+  "exit_code": 1,
+  "oom_killed": false,
+  "whole_wall_seconds": 246.18847570099751,
+  "charged_gpu_and_fidelity_seconds": 247,
+  "host_cpu_telemetry_seconds": 243.572854702,
+  "call_slots_consumed": 1,
+  "normal_returns": 0,
+  "known_model_calls_added": 0,
+  "calls_complete": false,
+  "model_call_count": "lower bound; 1 dispatched marking call without normal return",
+  "loaded_runtime": {
+    "model_class": "Qwen3ForCausalLM",
+    "dtype": "float16",
+    "device": "cuda:0",
+    "attention": "eager"
+  },
+  "marking_input_tokens": 2280,
+  "diagnosis": "The model emitted marks[6].end_token above the source token count. LMFE does not enforce JSON-schema integer minimum/maximum (documented R5 finding; R5/R6 used enumerated finite integer domains), but the new marking schema used minimum/maximum. Once the partial output was schema-invalid, the EOS guard correctly refused termination, the model could only continue with whitespace, and the guard raised \"premature grammar termination refused\" after ~189s of generation (2449 generated tokens seen).",
+  "classification": "engineering fault in schema/grammar integration; not semantic evidence about SACR marking; no output repair or retry",
+  "fix": "patent_structure_marking v2 applies finite_integer_schema (enumerated token bounds); new authored grammar case marking-end-token-out-of-range must be rejected",
+  "gap_in_prior_qualification": "CPU grammar cases had no out-of-range integer case",
+  "retry": "NONE. A revised synthetic smoke v2 is a new configuration and requires an owner decision",
+  "journal": {
+    "generation": 14,
+    "study_status": "IDLE"
+  }
+}

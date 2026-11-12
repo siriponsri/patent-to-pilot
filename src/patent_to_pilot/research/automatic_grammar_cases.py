@@ -17,8 +17,10 @@ def cases(km_text):
             'abstraction': SOURCE}
     abstain = dict(base, marks=[], abstraction=None)
     invalid = dict(base, query_id='WRONG-ID')
+    out_of_range = dict(base, marks=base['marks'][:2] + [dict(base['marks'][2], end_token=len(request['payload']['tokens']) + 1)])
     rows = [('marking-valid', request, base, True), ('marking-abstain', request, abstain, True),
-            ('marking-wrong-identity', request, invalid, False)]
+            ('marking-wrong-identity', request, invalid, False),
+            ('marking-end-token-out-of-range', request, out_of_range, False)]
     review = prepare_review(item_id='synthetic-auto-001', source=SOURCE, candidate=SOURCE,
                             track='SACR', km_text=km_text, km_sha256=sha(km_text))
     output = {'binding_sha256': review['binding_sha256'], 'checks': {k: {

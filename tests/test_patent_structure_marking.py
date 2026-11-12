@@ -56,3 +56,16 @@ def test_request_corruption_is_not_output_rejection(field):
     if field == 'source': request['payload']['source'] = 'changed'
     else: request['schema']['properties']['query_id']['const'] = 'changed'
     with pytest.raises(RequestIntegrityError): validate_and_render(output, request)
+
+
+def test_token_bounds_are_enumerated_for_grammar_enforcement():
+    # LMFE does not enforce numeric minimum/maximum (R5); the v1 synthetic GPU smoke
+    # emitted end_token > token count. Bounds must be finite enums.
+    from patent_to_pilot.research.patent_structure_marking import prepare, sha, VERSION
+    km = 'Preserve conditions and exceptions.'
+    request = prepare('The pump stops below 5 kPa.', 'q-bounds', km, sha(km))
+    item = request['schema']['properties']['marks']['items']['properties']
+    count = len(request['payload']['tokens'])
+    assert item['start_token']['enum'] == list(range(0, count))
+    assert item['end_token']['enum'] == list(range(1, count + 1))
+    assert 'maximum' not in item['end_token'] and VERSION == 'patent-structure-marking-v2'

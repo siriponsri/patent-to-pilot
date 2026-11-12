@@ -1,5 +1,16 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Synthetic GPU smoke v1 FAILED (engineering), settled; fix ready 2026-11-12T18:15+07:00
+
+ptp-auto-synthetic-20261112-v1 exited 1 (no OOM) after 246.2s wall. The claim was consumed and the runtime loaded Qwen3 fp16/eager on cuda:0. The marking input was admitted at 2280 tokens. One marking call was dispatched with no normal return.
+
+Cause: the model emitted marks[6].end_token above the source token count. LMFE does not enforce integer minimum/maximum (an R5 finding), and the new marking schema relied on them. The EOS guard then refused termination, the model emitted only whitespace, and the guard raised 'premature grammar termination refused'. This is an engineering fault, NOT semantic evidence. No output repair and no retry.
+
+Settled once at journal generation 14 (study IDLE, GPU idle): 247s charged to both GPU and fidelity; known calls +0 with calls_complete=false (count stays a lower bound, plus 1 unknown dispatch); host CPU 243.6s recorded as telemetry. GPU charged 15452.61s; fidelity remaining 215226.27s; CPU cap unchanged (remaining 8910.15s before segment 4).
+
+Fix (committed, tests 136 PASS): patent_structure_marking v2 enumerates token bounds via finite_integer_schema, and a new authored case marking-end-token-out-of-range must be rejected. A v2 synthetic smoke needs: (a) an owner decision (a failed stage does not authorize an automatic rerun); (b) an append-only authority amendment adding the v2 configuration (the root authority is immutable); (c) CPU grammar v2 + fixture re-qualification; (d) a new attempt id. Evidence: takeover-20261112/synthetic-job/synthetic-result.json, settlement*.json, terminal-evidence.json.
+
+
 ## Synthetic GPU stage qualified; launching one smoke 2026-11-12T18:00+07:00
 
 The exact-entrypoint CPU fixture passed: the real run_automatic_synthetic main ran with an authored CPU model double through the real tokenizer, grammar/EOS guard, adapter and run_query; 2 invocations; USE_SCREENED_CANDIDATE; semantic_certified=false; 16.3s CPU against a 600s booking. The decoder pin 20232bca... is identical to R7.
