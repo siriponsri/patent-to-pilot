@@ -44,7 +44,7 @@ def main():
         task = '\n'.join(json.dumps(t) for t in ({'id': 'authored-native-001', 'text': SOURCE},
                 {'id': 'authored-native-002', 'text': 'The heater is not activated during transport.'})).encode() + b'\n'
         d = {'attempt_id': 'authored-fixture', 'stage': 'fidelity', 'maximum_calls': 4, 'queries': 2, 'seconds': 1800,
-             'cpu_seconds': 150, 'input_token_cap': 5800, 'files_sha256': outer['files_sha256'], 'package_sha256': outer['package_sha256'],
+             'cpu_seconds': 150, 'input_token_cap': 5800, 'max_consecutive_whitespaces': 48, 'files_sha256': outer['files_sha256'], 'package_sha256': outer['package_sha256'],
              'input_manifest_sha256': sha(task), 'km_sha256': sha(km), 'model_sha256': sha(identity),
              'tokenizer_sha256': sha(Path('/models/qwen3-8b/tokenizer.json').read_bytes()),
              'decoder_sha256': sha(json.dumps(config.to_dict(), sort_keys=True, separators=(',', ':')).encode()),

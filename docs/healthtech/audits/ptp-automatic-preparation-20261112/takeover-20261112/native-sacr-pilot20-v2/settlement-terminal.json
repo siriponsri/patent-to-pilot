@@ -1,0 +1,24 @@
+{
+  "attempt_id": "ptp-auto-native-sacr-pilot20-20261112-v2",
+  "container_name": "ptp-auto-native-sacr-pilot20-20261112-v2",
+  "declaration_sha256": "cf80532bad752b3d2769036507af1c4ebbd0160730664b4736b758d1c240d18b",
+  "whole_wall_seconds": 1353.8281114379934,
+  "known_model_calls": 21,
+  "calls_complete": false,
+  "cost_evidence_sha256": "497d1f58be4d4569a8737b0fc03eef6f06fe591b400342961e1511c1c86d4d16",
+  "aggregate_cpu_seconds": 1358.301128158,
+  "aggregate_cpu_basis": "worker process_cpu + controller",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 1,
+    "Error": "",
+    "StartedAt": "2026-11-12T12:12:53.908260182Z",
+    "FinishedAt": "2026-11-12T12:35:27.172588165Z"
+  }
+}

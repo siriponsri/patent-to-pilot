@@ -89,7 +89,8 @@ def main():
                 raise RuntimeError('loaded runtime changed')
             write_new(out / 'loaded-runtime.json', {'model_class': type(model).__name__,
                 'dtype': str(model.dtype), 'device': str(model.device), 'attention': model.config._attn_implementation})
-            backend = R6Backend(tokenizer=tokenizer, model=model, output_root=out,
+            if type(d.get('max_consecutive_whitespaces')) is not int: raise RuntimeError('declared whitespace cap required')
+            backend = R6Backend(tokenizer=tokenizer, model=model, output_root=out, max_consecutive_whitespaces=d['max_consecutive_whitespaces'],
                                 lmfe_source_sha256=d['lmfe_source_sha256'])
             executor = request_bound_executor(tokenizer=tokenizer, model_factory=backend.factory,
                 device='cuda:0', eos_token_ids=[151645,151643], check_admission=admission,

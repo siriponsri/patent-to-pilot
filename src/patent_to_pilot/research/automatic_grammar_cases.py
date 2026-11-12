@@ -36,9 +36,13 @@ def cases(km_text):
     rows += [('review-valid', review, output, True), ('review-uncertain', review, flagged, True),
              ('review-missing-check', review, missing, False),
              ('review-paraphrased-quote', review, paraphrased, False)]
-    return [{'name': name, 'request': req, 'output': value, 'expected_grammar_acceptance': expected,
+    out = [{'name': name, 'request': req, 'output': value, 'expected_grammar_acceptance': expected,
              'output_text': json.dumps(value,ensure_ascii=False,separators=(',', ':'))}
             for name,req,value,expected in rows]
+    # Whitespace runaway (native v2 review): only rejected when the backend declares a small cap.
+    runaway = dict(out[-4], name='review-whitespace-runaway', expected_grammar_acceptance=False)
+    runaway['output_text'] = runaway['output_text'].replace(',', ',' + '\n' * 100, 1)
+    return out + [runaway]
 
 
 def qualify(backend, km_text):

@@ -1,0 +1,33 @@
+{
+  "status": "FAILED_ENGINEERING_REVIEW_WHITESPACE_RUNAWAY_PARTIAL",
+  "attempt_id": "ptp-auto-native-sacr-pilot20-20261112-v2",
+  "exit_code": 1,
+  "whole_wall_seconds": 1353.8281114379934,
+  "charged_gpu_and_fidelity_seconds": 1354,
+  "call_slots_consumed": 22,
+  "known_normal_returns": 21,
+  "unknown_dispatch": 1,
+  "input_admission": {
+    "max_input_tokens": 2324,
+    "cap": 5800,
+    "over_limit": 0
+  },
+  "processed_queries": 10,
+  "screened_candidates": 9,
+  "flagged_fallback": 1,
+  "hold_query_index": 10,
+  "not_started": 9,
+  "peak_gpu_memory_gib_range": [
+    16.4,
+    16.9
+  ],
+  "diagnosis": "review call for query index 10 degenerated into unbounded whitespace (R6Backend max_consecutive_whitespaces=4096); the EOS guard correctly refused premature termination after 1481 generated tokens",
+  "fix": "R6Backend takes a declared max_consecutive_whitespaces (default 4096 keeps closed R6/R7 behaviour); automatic workers declare 48; new authored grammar case review-whitespace-runaway must be rejected",
+  "memory_fix_effective": "compact marking payload cut max prompt from 7971 to 2324 tokens; peak memory flat at ~16.9 GiB",
+  "note": "partial results (9/10 screened) are engineering evidence only; the pilot needs one complete attempt over all 20 queries",
+  "journal": {
+    "generation": 63,
+    "study_status": "IDLE"
+  },
+  "retry": "none; native v3 requires owner approval"
+}
