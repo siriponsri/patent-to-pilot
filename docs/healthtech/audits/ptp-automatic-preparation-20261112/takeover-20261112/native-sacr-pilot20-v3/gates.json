@@ -1,0 +1,47 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "aad1e2ddf471c972489d889a74dd11b7e98f99a0af7d16808f59b58e44dcda8b",
+    "configuration_sha256": "415bd723200b3967acd65b2b30fc6f887f1b35bcffe29571b877c28bd7af59bf",
+    "gate": "integrity",
+    "source_commit": "1dc4602e391bd68bf843004bcc5a6f184355e3db",
+    "files": 229,
+    "evidence": "committed blobs; CPU v7 PASS: grammar 10/10 incl. whitespace runaway rejected; native fixture v4 PASS",
+    "fixture_sha256": "b87068ea38fcbd97e61aaf8cfb34b5271bac4d5d58b12a848a12d81fa4bfad96"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "aad1e2ddf471c972489d889a74dd11b7e98f99a0af7d16808f59b58e44dcda8b",
+    "configuration_sha256": "415bd723200b3967acd65b2b30fc6f887f1b35bcffe29571b877c28bd7af59bf",
+    "gate": "isolation",
+    "evidence": "supervisor config tests PASS; supervisor re-validates isolation before start"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "aad1e2ddf471c972489d889a74dd11b7e98f99a0af7d16808f59b58e44dcda8b",
+    "configuration_sha256": "415bd723200b3967acd65b2b30fc6f887f1b35bcffe29571b877c28bd7af59bf",
+    "gate": "runtime",
+    "synthetic_v5_sha256": "5c7a7c95a892d580b488ccc53ca48a742fc060946e5ed355526999a9d43302d4",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "evidence": "synthetic v5: marking v4 + review v2 valid end-to-end on this GPU"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "aad1e2ddf471c972489d889a74dd11b7e98f99a0af7d16808f59b58e44dcda8b",
+    "configuration_sha256": "415bd723200b3967acd65b2b30fc6f887f1b35bcffe29571b877c28bd7af59bf",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 673438.3864951228,
+    "fidelity_remaining_seconds": 212917.27331997137,
+    "disk_preexisting_upper_bound_bytes": 33880710639
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "aad1e2ddf471c972489d889a74dd11b7e98f99a0af7d16808f59b58e44dcda8b",
+    "configuration_sha256": "415bd723200b3967acd65b2b30fc6f887f1b35bcffe29571b877c28bd7af59bf",
+    "gate": "accounting",
+    "ledger_sha256": "9e250578113ecb4ee06bc5fc38436279546cff3414c7abf5adb54cfec1d7d7dd",
+    "cpu_remaining_seconds": 30731.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}

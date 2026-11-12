@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "b49d7b689df2a2545944deb37024cbf13e77e20211dffcdcbb8e94add1b77d56",
+  "evidence_sha256": "aca96ae16c1d4d9c80eb70d1aa61b48f58a934b11d29b5b4414b64d5cb0b040a",
+  "add_configuration_sha256": [
+    "415bd723200b3967acd65b2b30fc6f887f1b35bcffe29571b877c28bd7af59bf"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "native-v3",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "9e250578113ecb4ee06bc5fc38436279546cff3414c7abf5adb54cfec1d7d7dd",
+  "scope_sha256": "2ccf978a6d18c55650485d6ac0d5a4d19b44d8dc4d26b988c8f9f41fb65d9ffd",
+  "reason": "owner approved native v3 (+2 engineering revisions) after v2 review whitespace runaway: declared whitespace cap 48"
+}
