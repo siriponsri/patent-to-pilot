@@ -39,3 +39,21 @@ def test_cpu_grammar_mounts_only_tokenizer_files_without_gpu():
     targets={t for _,t,_ in mounts}
     assert '/input/corpus.jsonl' not in targets and '/models/qwen3-8b' not in targets
     assert '/models/qwen3-8b/tokenizer.json' in targets
+
+
+def test_pipeline_fixture_mounts_dispatch_rw_and_no_weights_or_gpu():
+    scripts=Path(__file__).resolve().parents[1]/'scripts/healthtech'
+    sys.path.insert(0,str(scripts))
+    try:
+        spec=importlib.util.spec_from_file_location('pipeline_fixture_supervisor',scripts/'supervise_automatic_pipeline_fixture.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        config,mounts=module.configuration(Path('/jobs/fixture'),1234,'a'*64,
+            ['tokenizer.json','tokenizer_config.json','config.json','vocab.json','merges.txt','generation_config.json'])
+    finally: sys.path.remove(str(scripts))
+    host=config['HostConfig']
+    assert not host.get('DeviceRequests') and host['NetworkMode']=='none' and host['NanoCpus']==1_000_000_000
+    targets={t:ro for _,t,ro in mounts}
+    assert targets['/dispatch'] is False and targets['/out'] is False
+    assert '/models/qwen3-8b' not in targets and '/models/qwen3-8b/generation_config.json' in targets
+    assert all(ro for t,ro in targets.items() if t not in ('/dispatch','/out'))
+    assert config['Cmd']==['-s','/code/scripts/healthtech/qualify_automatic_synthetic_pipeline.py','a'*64]
