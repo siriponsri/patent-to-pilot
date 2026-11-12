@@ -1,0 +1,11 @@
+{
+  "stage": "pilot",
+  "track": "SACR",
+  "protocol": "NATIVE-STAGES-20261112 addendum",
+  "encoder": "B0 MeanPoolEncoder PatEmbed-large fp32, MODEL_PINS",
+  "query_prefix": "DENSE_QUERY_PREFIX (B0)",
+  "vectors_sha256": "9a385bcfd0aab6c4c19f2a8715824922d42d328c53f0da58857b0106ed4f0137",
+  "ranking": "rank_maxp depth 200",
+  "anchor_control": "reencode 20 original TA; B0 reference only if all identical",
+  "labels_used": false
+}

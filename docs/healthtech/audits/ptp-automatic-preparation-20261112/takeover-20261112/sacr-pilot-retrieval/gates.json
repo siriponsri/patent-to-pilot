@@ -1,0 +1,44 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "be34550bf7cf590ab172afa50795d22537b934e351c7e143af4229ecc4d0a0b5",
+    "configuration_sha256": "d4fce2aa111919ff613d4ec5b518d1725d595d14164d1595457514c27332cb26",
+    "gate": "integrity",
+    "source_commit": "b289d66850d41c49b5082f8fdff508be667713a5",
+    "files": 230,
+    "evidence": "committed blobs; sacr_pilot_panel unit tests PASS; encode/rank path identical to B0 runner functions"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "be34550bf7cf590ab172afa50795d22537b934e351c7e143af4229ecc4d0a0b5",
+    "configuration_sha256": "d4fce2aa111919ff613d4ec5b518d1725d595d14164d1595457514c27332cb26",
+    "gate": "isolation",
+    "evidence": "supervisor config test PASS: read-only inputs, no qrels/evaluation mounts, network none"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "be34550bf7cf590ab172afa50795d22537b934e351c7e143af4229ecc4d0a0b5",
+    "configuration_sha256": "d4fce2aa111919ff613d4ec5b518d1725d595d14164d1595457514c27332cb26",
+    "gate": "runtime",
+    "evidence": "read-only remote preflight: all inputs present, B0 rankings and native decisions hashes pinned, 20 non-empty candidates"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "be34550bf7cf590ab172afa50795d22537b934e351c7e143af4229ecc4d0a0b5",
+    "configuration_sha256": "d4fce2aa111919ff613d4ec5b518d1725d595d14164d1595457514c27332cb26",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 669039.3864951228,
+    "fidelity_remaining_seconds": 208518.27331997137,
+    "disk_preexisting_upper_bound_bytes": 35591986671
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "be34550bf7cf590ab172afa50795d22537b934e351c7e143af4229ecc4d0a0b5",
+    "configuration_sha256": "d4fce2aa111919ff613d4ec5b518d1725d595d14164d1595457514c27332cb26",
+    "gate": "accounting",
+    "ledger_sha256": "17195a095a0af27ae492af6e7bf14ebdfb6219049c46370df16356efd608f967",
+    "cpu_remaining_seconds": 29703.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "stage": "pilot",
+  "track": "SACR",
+  "decisions_sha256": "ce7e68b5b2e2de24ad08dc641a88bcf5e41af1b52e5da69aca9cb5a620d964d4",
+  "configuration_sha256": "d4fce2aa111919ff613d4ec5b518d1725d595d14164d1595457514c27332cb26",
+  "package_sha256": "be34550bf7cf590ab172afa50795d22537b934e351c7e143af4229ecc4d0a0b5"
+}

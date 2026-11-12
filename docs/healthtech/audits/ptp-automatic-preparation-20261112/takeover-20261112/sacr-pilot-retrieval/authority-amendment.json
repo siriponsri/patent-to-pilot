@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "be36543554a02a838640e54323c0a6eaac0526ce034fe53dc47885ab8ac97d70",
+  "evidence_sha256": "6eed566f43bec8559dc16b92e23976d24dbdd6ea7d7f1707a0664f8620400f1c",
+  "add_configuration_sha256": [
+    "d4fce2aa111919ff613d4ec5b518d1725d595d14164d1595457514c27332cb26"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "pilot",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "17195a095a0af27ae492af6e7bf14ebdfb6219049c46370df16356efd608f967",
+  "scope_sha256": "f200a15affdafbc0383d75f1cd0899fb53b36847b81c4a11edd5da6b25618fa9",
+  "reason": "owner: continue native SACR; pilot retrieval per NATIVE-STAGES addendum (frozen before scores)"
+}

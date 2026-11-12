@@ -1,0 +1,16 @@
+{
+  "status": "STAGED_QUALIFIED_NOT_LAUNCHED",
+  "job": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+  "declaration_sha256": "18e82397c4aeb1d1d9c35b6c7498100b112caa3239442649fea8c4cc532e1f73",
+  "package_sha256": "be34550bf7cf590ab172afa50795d22537b934e351c7e143af4229ecc4d0a0b5",
+  "configuration_sha256": "d4fce2aa111919ff613d4ec5b518d1725d595d14164d1595457514c27332cb26",
+  "transport": {
+    "bytes": 1894400,
+    "sha256": "5eb7a13516ea5810e4f4605241f640e5897911c3d0ccff698aa41c83112d4dcc",
+    "files": 235
+  },
+  "journal_generation": 87,
+  "ledger_sha256": "17195a095a0af27ae492af6e7bf14ebdfb6219049c46370df16356efd608f967",
+  "segment26_seconds": 103,
+  "cpu_remaining_seconds": 29703.153622190002
+}
