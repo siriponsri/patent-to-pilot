@@ -1,5 +1,17 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## CPU grammar qualification PASS (grammar only) 2026-11-12T17:35+07:00
+
+Job ptp-auto-grammar-20261112-v1 is terminal: exit 0, no OOM, PID 0, isolation PASS_BEFORE_START, 25.4s wall. All 6 authored cases matched expectations: marking-valid, marking-abstain, review-valid and review-uncertain accepted; marking-wrong-identity and review-missing-check rejected with TOKEN_NOT_ALLOWED. Input tokens: marking 1331, review 1122. Actual CPU 23.96s (worker 23.77 + controller 0.18), against a 600s booking with no refund. 0 model calls, 0 GPU. This is grammar mechanics only; it gives no semantic or retrieval evidence. Receipt: takeover-20261112/grammar-job/grammar-result.json. Do not relaunch: admission.json and launch.json exist.
+
+Next is step C, freezing the synthetic GPU stage:
+- one-time adopt_scope of the automatic authority (owner-long-run-authority f870cd51...);
+- qualify_stage for synthetic (1800s, 2 calls; cpu_seconds safety bound 1860, telemetry only);
+- authored synthetic task, decoder pin, five gate receipts;
+- disk preexisting upper bound 31162801647 (R7 conservative) + 16MiB for the grammar job;
+- then one GPU job through supervise_automatic_synthetic.
+
+
 ## CPU grammar job staged; launching 2026-11-12T18:05+07:00
 
 Journal generation 8, idle. Bookings: takeover-20261112-segment1 = 105s local (metered 4.6s + 100s conservative); ptp-auto-grammar-20261112-v1 = 600s remote precharge (upper bound, no refund: worker RLIMIT_CPU 480s + controller 60s, 1 core, wall stop 540s). CPU used 47885.85s of 57600s, remaining 9714.15s. Ledger 92b95cbcf436dfe26a34daecab79b1eee500679053a7e2ece895285b26fb040c (local mirrors journal).

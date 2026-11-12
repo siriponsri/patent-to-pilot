@@ -1,0 +1,66 @@
+{
+  "status": "PASS_GRAMMAR_ONLY_NOT_SEMANTIC",
+  "job": "ptp-auto-grammar-20261112-v1",
+  "exit_code": 0,
+  "oom_killed": false,
+  "isolation": "PASS_BEFORE_START",
+  "cases": [
+    {
+      "name": "marking-valid",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE",
+      "input_tokens": 1331,
+      "output_tokens": 158
+    },
+    {
+      "name": "marking-abstain",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE",
+      "input_tokens": 1331,
+      "output_tokens": 91
+    },
+    {
+      "name": "marking-wrong-identity",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "input_tokens": 1331,
+      "output_tokens": 154
+    },
+    {
+      "name": "review-valid",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE",
+      "input_tokens": 1122,
+      "output_tokens": 196
+    },
+    {
+      "name": "review-uncertain",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE",
+      "input_tokens": 1122,
+      "output_tokens": 200
+    },
+    {
+      "name": "review-missing-check",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "input_tokens": 1122,
+      "output_tokens": 175
+    }
+  ],
+  "worker_process_cpu_seconds": 23.770891913,
+  "controller_cpu_seconds": 0.184774417,
+  "actual_cpu_seconds": 23.95566633,
+  "booked_cpu_seconds": 600,
+  "refund": false,
+  "whole_wall_seconds": 25.386380462005036,
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "scope": "actual Qwen3 tokenizer + R6Backend grammar callback and EOS guard on 6 authored cases; no weights, corpus, GPU; grammar mechanics only"
+}
