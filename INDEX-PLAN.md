@@ -1,5 +1,22 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Graph extractor v3: frozen gate FAIL on G2 (8/20 pilot); Graph reported negative 2026-11-12T22:10+07:00
+
+Job ptp-auto-graph-extractor-v3-20261112-v1 exited 0 (no OOM). CPU: 66.1s actual, 300s booked; segment14 booked; journal generation 47.
+
+v3 results (deterministic; 120 lemmas; 4 patterns):
+- 251,314 records; 44,207 keys; 16,130 shared keys; 98 hubs over 100.
+- Query coverage 52.3% (248/474), vs 2.7% for v2.
+- Pilot-20: 8/20 queries with structure.
+
+Frozen gate: G1 PASS, G3 PASS, G2 FAIL (needs ≥10) -> FAIL. Under the frozen rule, Graph is reported as a negative feasibility arm. No threshold change and no further extractor round without explicit owner authorization. Note: the protocol's pilot screening scope is 14,123 reachable relations, which would need a capped sample to be GPU-feasible. No Graph screening, pilot or GPU work was done. Receipt: takeover-20261112/graph-extractor-v3/graph-extractor-v3-result.json.
+
+Overall state:
+- SACR is technically qualified (synthetic v5 valid screen, flagged -> fallback).
+- Native SACR screening/pilot still needs later-stage journal qualification and caps.
+- CPU remaining ~3485s; GPU ~187.5h; nothing running; journal generation 47, IDLE.
+
+
 ## Graph census: feasibility NEGATIVE (2.7% query coverage); Graph paused for owner decision 2026-11-12T21:30+07:00
 
 Job ptp-auto-graph-census-20261112-v1 exited 0. It used the 474 dev query texts (6fa09d71...) and lexical R4 postings (c6d8bdbc...); no qrels, no scores, no model; CPU 0.33s actual, 120s booked; segment13 booked at generation 45.

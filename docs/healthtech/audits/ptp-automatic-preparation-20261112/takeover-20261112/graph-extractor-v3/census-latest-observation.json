@@ -1,0 +1,17 @@
+{
+  "job": "ptp-auto-graph-extractor-v3-20261112-v1",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 3544082,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T11:51:03.703254274Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START"
+}

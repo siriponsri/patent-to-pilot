@@ -1,0 +1,94 @@
+{
+  "job": "ptp-auto-graph-extractor-v3-20261112-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T11:51:03.703254274Z",
+    "FinishedAt": "2026-11-12T11:52:09.902194793Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-graph-extractor-v3-20261112-v1",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T11:51:03.703254274Z",
+      "FinishedAt": "2026-11-12T11:52:09.902194793Z"
+    },
+    "whole_wall_seconds": 66.48416465500486,
+    "controller_cpu_seconds": 0.24938009
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "aggregate": {
+    "all": {
+      "queries": 474,
+      "zero_keys": 177,
+      "zero_hits": 226,
+      "with_structure": 248,
+      "keys_total": 556,
+      "direct_families_total": 8241
+    },
+    "pilot": {
+      "queries": 20,
+      "zero_keys": 11,
+      "zero_hits": 12,
+      "with_structure": 8,
+      "keys_total": 21,
+      "direct_families_total": 210
+    },
+    "pilot_screening_scope": {
+      "query_keys": 14,
+      "one_hop_bridge_keys": 783,
+      "reachable_key_family_relations": 14123
+    },
+    "max_key_degree": 100,
+    "postings_status": "LEXICAL_UNSCREENED_R4",
+    "qrels_used": false,
+    "scores_computed": false,
+    "extractor": "sg-action-operand-v3",
+    "corpus": {
+      "families": 45336,
+      "records": 251314,
+      "keys": 44207,
+      "shared_keys": 16130,
+      "hub_keys_over_100": 98,
+      "max_key_degree": 1211
+    },
+    "query_share_with_usable_key": 0.5232067510548524,
+    "gate": {
+      "G1_min_query_share_with_usable_key": 0.5,
+      "G2_min_pilot_queries_with_structure": 10,
+      "G3_min_shared_keys": 1000
+    },
+    "gate_results": {
+      "G1": true,
+      "G2": false,
+      "G3": true
+    },
+    "gate_status": "FAIL",
+    "pilot_ids_sha256": "16647aefeddcb6adc2241daa3643374fbcd91b2b83a5fd577d3ff4cb67ab9b44",
+    "queries_sha256": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a",
+    "corpus_sha256": "42f895cd411b344f7be4de4c77bfab66797aa2a1d92353dbee82669fc569af0d",
+    "wall_seconds": 65.90714787600155,
+    "process_cpu_seconds": 66.056806271,
+    "model_calls": 0,
+    "status": "CENSUS_COMPLETE"
+  }
+}
