@@ -1,0 +1,73 @@
+{
+  "job": "ptp-auto-graph-census-20261112-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T11:37:13.86983603Z",
+    "FinishedAt": "2026-11-12T11:37:14.277427808Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-graph-census-20261112-v1",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T11:37:13.86983603Z",
+      "FinishedAt": "2026-11-12T11:37:14.277427808Z"
+    },
+    "whole_wall_seconds": 1.3045235080062412,
+    "controller_cpu_seconds": 0.173712988
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "aggregate": {
+    "all": {
+      "queries": 474,
+      "zero_keys": 452,
+      "zero_hits": 461,
+      "with_structure": 13,
+      "keys_total": 25,
+      "direct_families_total": 72
+    },
+    "pilot": {
+      "queries": 20,
+      "zero_keys": 19,
+      "zero_hits": 19,
+      "with_structure": 1,
+      "keys_total": 1,
+      "direct_families_total": 1
+    },
+    "pilot_screening_scope": {
+      "query_keys": 1,
+      "one_hop_bridge_keys": 2,
+      "reachable_key_family_relations": 3
+    },
+    "max_key_degree": 100,
+    "postings_status": "LEXICAL_UNSCREENED_R4",
+    "qrels_used": false,
+    "scores_computed": false,
+    "pilot_ids_sha256": "16647aefeddcb6adc2241daa3643374fbcd91b2b83a5fd577d3ff4cb67ab9b44",
+    "queries_sha256": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a",
+    "postings_sha256": "c6d8bdbca57df365d22e426764038d9517cad1ce80ef15b07804036407f45628",
+    "wall_seconds": 0.14847986299719196,
+    "process_cpu_seconds": 0.330711345,
+    "model_calls": 0,
+    "status": "CENSUS_COMPLETE"
+  }
+}

@@ -1,5 +1,21 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Graph census: feasibility NEGATIVE (2.7% query coverage); Graph paused for owner decision 2026-11-12T21:30+07:00
+
+Job ptp-auto-graph-census-20261112-v1 exited 0. It used the 474 dev query texts (6fa09d71...) and lexical R4 postings (c6d8bdbc...); no qrels, no scores, no model; CPU 0.33s actual, 120s booked; segment13 booked at generation 45.
+
+Result of the deterministic extractor v2:
+- 452/474 queries have no relation keys.
+- Only 13/474 queries (2.7%) have usable structure.
+- Frozen pilot-20 (ids private, sha in result): 1/20 queries with structure; screening scope 1 query key, 2 bridge keys, 3 relations.
+
+A Graph arm would fall back to B0 on ~97% of queries, so its effect is not measurable under this extractor. No Graph screening, pilot or GPU work was started. Receipt: takeover-20261112/graph-census/graph-census-result.json.
+
+Owner decision needed: report Graph as a negative feasibility arm, OR authorize a new deterministic extraction design round (CPU-only; full-corpus LLM extraction remains prohibited).
+
+SACR status: technically qualified (synthetic v5 valid screen); native screening needs later-stage journal qualification, a stage-envelope amendment with call caps, and live admission. CPU remaining ~3890s; GPU ~187.5h; nothing running; journal generation 45, IDLE.
+
+
 ## SACR round 2 done: v5 technical PASS (valid screen, flagged -> fallback); synthetic closed 2026-11-12T21:00+07:00
 
 v4 (marking v4 few-shot, review v1) ran 2 calls. The candidate was produced, but the review paraphrased quotes, so it was invalid and the query fell back; 198s.

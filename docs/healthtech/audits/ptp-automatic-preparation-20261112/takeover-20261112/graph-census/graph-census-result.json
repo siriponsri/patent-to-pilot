@@ -1,0 +1,37 @@
+{
+  "status": "GRAPH_FEASIBILITY_NEGATIVE_COVERAGE",
+  "job": "ptp-auto-graph-census-20261112-v1",
+  "exit_code": 0,
+  "actual_cpu_seconds": 0.504424333,
+  "booked_cpu_seconds": 120,
+  "model_calls": 0,
+  "qrels_used": false,
+  "scores_computed": false,
+  "all": {
+    "queries": 474,
+    "zero_keys": 452,
+    "zero_hits": 461,
+    "with_structure": 13,
+    "keys_total": 25,
+    "direct_families_total": 72
+  },
+  "pilot": {
+    "queries": 20,
+    "zero_keys": 19,
+    "zero_hits": 19,
+    "with_structure": 1,
+    "keys_total": 1,
+    "direct_families_total": 1
+  },
+  "pilot_screening_scope": {
+    "query_keys": 1,
+    "one_hop_bridge_keys": 2,
+    "reachable_key_family_relations": 3
+  },
+  "pilot_ids_sha256": "16647aefeddcb6adc2241daa3643374fbcd91b2b83a5fd577d3ff4cb67ab9b44",
+  "queries_sha256": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a",
+  "postings_sha256": "c6d8bdbca57df365d22e426764038d9517cad1ce80ef15b07804036407f45628",
+  "postings_status": "LEXICAL_UNSCREENED_R4",
+  "interpretation": "the deterministic v2 extractor (configured/adapted/operable to + fixed verb + operand) gives usable relation keys for 13/474 dev queries (2.7%) and 1/20 pilot queries; a Graph arm would fall back to B0 for ~97% of queries, so a Graph effect is not measurable under this extractor. No screening, pilot or GPU work started for Graph.",
+  "decision_needed": "report Graph as a negative feasibility arm, or authorize a new deterministic extraction design round (CPU-only; full-corpus LLM extraction remains prohibited)"
+}
