@@ -1,5 +1,14 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Native SACR v2 (owner-approved) qualified; launching 2026-11-13T00:45+07:00
+
+Owner: "Approve native v2". Marking v5 sends token texts only to the model (validation keeps offsets); input cap 5800 tokens is checked before load, and longer queries fall back but stay in the denominator. CPU v6 PASS: grammar 9/9 and native fixture v3. Bookings at generation 59.
+
+Native v2 is frozen through freeze_native_sacr_v2.py on the same pilot-20 file (amendment round native-v2, predecessor synthetic v5). Ledger frozen until the claim.
+
+Launch once: python takeover-20261112/native_control.py start native-sacr-pilot20-v2. Settle with settle_synthetic.py ptp-auto-native-sacr-pilot20-20261112-v2 native-sacr-pilot20-v2 (glob fixed for nested records).
+
+
 ## Native SACR pilot-20 v1: GPU OOM on query 3 (engineering); settled; owner decision needed 2026-11-13T00:05+07:00
 
 ptp-auto-native-sacr-pilot20-20261112-v1 exited 1 with a CUDA OutOfMemoryError during query 3 marking (input 6329 tokens; V100 32GB) after 267.6s.

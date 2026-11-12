@@ -717,7 +717,7 @@
         }
       }
     },
-    "local_cpu_conservative_charged_seconds": 25092,
+    "local_cpu_conservative_charged_seconds": 25196,
     "local_cpu_measured_seconds": 121.03125,
     "compact_preparation_pending_cpu_settled_seconds": 200,
     "compact_v2_local_CPU_charged_seconds": 100,
