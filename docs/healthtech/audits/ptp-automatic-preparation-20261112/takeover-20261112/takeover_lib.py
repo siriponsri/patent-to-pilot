@@ -65,7 +65,12 @@ def segment_booking(number, prior_ledger_sha):
 
 def book(code_src, bookings, generation):
     """Apply CPU bookings in order from `generation`; returns new head ledger."""
-    out = journal(code_src, "from patent_to_pilot.research.automatic_cpu_booking import book_cpu\n"
+    module = blob('src/patent_to_pilot/research/automatic_cpu_booking.py').decode()  # current committed module
+    out = journal(code_src, "import importlib.util,hashlib\nimport patent_to_pilot.research\n"
+        "src=" + repr(module) + "\nassert hashlib.sha256(src.encode()).hexdigest()=='" + sha(module.encode()) + "'\n"
+        "spec=importlib.util.spec_from_loader('patent_to_pilot.research.automatic_cpu_booking',loader=None)\n"
+        "m=importlib.util.module_from_spec(spec);m.__package__='patent_to_pilot.research'\n"
+        "exec(compile(src,'automatic_cpu_booking.py','exec'),m.__dict__);book_cpu=m.book_cpu\n"
         "bs=json.loads(" + repr(json.dumps(bookings)) + ")\nj=DispatchJournal(path,'" + IDENTITY + "')\n"
         "for i,b in enumerate(bs):book_cpu(j,expected_generation=" + str(generation) + "+i,receipt=b,receipt_sha256=document_hash(b))\n"
         "h,at=head()\nassert h[1]==" + str(generation + len(bookings)) + " and h[4] is None\n"
