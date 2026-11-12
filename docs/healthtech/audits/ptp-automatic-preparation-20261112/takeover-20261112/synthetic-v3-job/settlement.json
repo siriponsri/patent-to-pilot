@@ -1,0 +1,32 @@
+{
+  "applied_now": true,
+  "generation": 28,
+  "study": {
+    "status": "IDLE",
+    "stage_costs": {
+      "ptp-auto-synthetic-20261112-v1": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 243.572854702,
+        "known_calls": 0,
+        "seconds": 247,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v2": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 255.739112608,
+        "known_calls": 1,
+        "seconds": 259,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v3": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 74.31802920999999,
+        "known_calls": 1,
+        "seconds": 77,
+        "stage": "synthetic"
+      }
+    }
+  },
+  "approved_gpu_occupied": false,
+  "ledger_sha256": "a75396329508bf40c6a5889c0888575974d1aa0124bb3446dfef22abb8c68f4e"
+}

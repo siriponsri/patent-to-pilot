@@ -1,0 +1,94 @@
+{
+  "supervisor_terminal": {
+    "attempt_id": "ptp-auto-synthetic-20261112-v3",
+    "container_name": "ptp-auto-synthetic-20261112-v3",
+    "retry": false,
+    "declaration_sha256": "0d10afc780f56e2ac7971ab51fce38b44956356440a8a5763bd00f908ae4602e",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T11:10:53.655158724Z",
+      "FinishedAt": "2026-11-12T11:12:09.206781555Z"
+    },
+    "whole_wall_seconds": 76.71091313900251,
+    "controller_cpu_seconds": 0.284830261,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "docker_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T11:10:53.655158724Z",
+    "FinishedAt": "2026-11-12T11:12:09.206781555Z"
+  },
+  "call_markers": [
+    "call-1.json"
+  ],
+  "normal_return_records": [
+    "backend/marking/generation.json"
+  ],
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "decision": {
+      "policy": "automatic-screening-v1",
+      "action": "ORIGINAL_QUERY_FALLBACK",
+      "screening": "uncertain",
+      "semantic_certified": false,
+      "human_review_required": false
+    },
+    "call_slots_consumed": 1,
+    "wall_seconds": 73.31985047300986,
+    "process_cpu_seconds": 74.033198949,
+    "semantic_certified": false
+  },
+  "failure": null,
+  "file_sha256": {
+    "__pycache__/r3_engine_client.cpython-312.pyc": "d8ceeb3166c2473ec0b1d596790f27f99368738372f41fad0a3bb39c2edb7c42",
+    "__pycache__/supervise_sacr_r5_engine.cpython-312.pyc": "6ac7619d139743441e6a59a379d16e298cc2ae2297d0a18c0c0c8ca0ca7105fd",
+    "admission.json": "e02d22cd5b2cc5359f056e018e77f38c2e471ac588804dab54a15225cad03cad",
+    "controller.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch/declaration.json": "8f9e116529d6a725009027e56eac69caab9a593f4292b92b98bfbe1d7b385354",
+    "dispatch/gates.json": "ce83d4408311045a1a1ef7d1669869e0d90f7c2ebab97876f190b5403eaeff84",
+    "dispatch/task.json": "5d63ea1669221b339bcebf4c12f04a4c65bcf1103b260248bcf14bae6413d5b5",
+    "global-dispatch.json": "7a9a995996f735bd6788c508a451694e763d419c4a8159f01a537bd339d43a5d",
+    "isolation.json": "99367b1dc9cf3c1319442896b37d465d7ad17caa689a797fb7e59efe08b724b3",
+    "launch.json": "85e20be9e3851a5123ca52bad7e404ad827f050a4ee42cb4f49216b1f4838ad9",
+    "out/attempt/backend/marking/generation-binding.json": "77fd1195e4cf1949bf127a1be0231a9002e0f5e13d4a48cf15962e7d2170170e",
+    "out/attempt/backend/marking/generation.json": "5393cad63cf7ffefaf67ea87b808447add6c0038f92ff440e86fa13c74cd4291",
+    "out/attempt/backend/marking/reservation.json": "59c6d5f06ce5ebe1f7a88d83e675fa13228bfa08adf3bdbf0348e7395835da76",
+    "out/attempt/backend/marking-diagnostics-private/backend-dispatch.json": "27b07c6a6393942a9e5a1794b84af954dcdef69b26cf0f2742786f406bc504b6",
+    "out/attempt/backend/marking-diagnostics-private/backend-return.json": "a0a7e13a69ce362345c0871fa4f680dcdb7ae1882fe6b6d5d66060a7fdf4c8ce",
+    "out/attempt/before-model-input-admission.json": "d381834de67d2fe1b46b39f4a38b9851d28c0cf9b86038554beefd30d88b9ecd",
+    "out/attempt/call-1.json": "8e887ab6334de2180695bb740214ecea1a514357e3b6dacde3cf11d4281f81ac",
+    "out/attempt/completion.json": "c995dc094c94e0a8f15963b536bacfefaa46bf34e718e82cc44b286657d6d1a7",
+    "out/attempt/loaded-runtime.json": "a0b12377493b0228cbcd75a4d16f4a64aa71c10d371eeb4b63fe23f044d2c704",
+    "out/attempt/marking-grammar-private.json": "a6b5cc630d6455d843950c3fa07a6fb9c293fed94259c0c4c5c389f75eba985d",
+    "out/attempt/query/candidate.json": "b7a85e7b28fb4fce1f95e72975b0468f5f45600cbb896c8d56f74f599c66e9d1",
+    "out/attempt/query/input.json": "5346b1c77b6164a3ffe3ab70a25d398ba652a2f84d790767c1f43aec7bcd9d4c",
+    "out/attempt/query/marking-dispatch.json": "d233fec2272e2d79f04751e77cacebe534d3427f6f54df805aa2bcf3e108eda2",
+    "out/attempt/query/marking-generation.json": "5393cad63cf7ffefaf67ea87b808447add6c0038f92ff440e86fa13c74cd4291",
+    "out/attempt/query/marking-metrics.json": "f1d3de1eb104c63bb33482959596fc05bf60e6ccda1cfb3dcd1b69be2abdfb2c",
+    "out/attempt/query/marking-request.json": "68b6d681111d495e62d1e471bffd97abfcae22374c37f4b5a71fe715abdded13",
+    "out/attempt/query/marking-terminal.json": "d1c20c16a29427db59e769f52a6e670ed1c473de3958976ba612b9726199dc9d",
+    "out/attempt/query/result.json": "15a4c85e8621bd350fa47ab447dfabfb690b96fd39095b32e781f7d5b6352201",
+    "r3_engine_client.py": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+    "supervise_automatic_synthetic.py": "80f4a9bbbdddc8358250f36efd72eba523b7a18d1934e9f9683871b9578d6d4b",
+    "supervise_sacr_r5_engine.py": "2f9413b5eb0c870961a923132c13afbe6f045f425d41d14679f5ffca8f0a84e3",
+    "terminal.json": "c728fb975aecf086090bdf6888add9d6f101df4fa8a686b20b41f03b39c1e28c"
+  }
+}

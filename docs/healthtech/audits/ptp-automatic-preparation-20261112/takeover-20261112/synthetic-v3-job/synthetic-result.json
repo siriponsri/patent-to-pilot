@@ -1,0 +1,34 @@
+{
+  "status": "ENGINEERING_PASS_MARKING_ABSTAINED_FALLBACK",
+  "attempt_id": "ptp-auto-synthetic-20261112-v3",
+  "exit_code": 0,
+  "oom_killed": false,
+  "whole_wall_seconds": 76.71091313900251,
+  "charged_gpu_and_fidelity_seconds": 77,
+  "host_cpu_telemetry_seconds": 74.31802920999999,
+  "calls": {
+    "consumed": 1,
+    "normal_returns": 1,
+    "calls_complete": true
+  },
+  "marking": {
+    "input_tokens": 2314,
+    "output_tokens": 250,
+    "gpu_seconds": 20.79,
+    "status": "EOS_COMPLETE"
+  },
+  "decision": {
+    "action": "ORIGINAL_QUERY_FALLBACK",
+    "screening": "uncertain",
+    "reason": "MARKING_ABSTAINED",
+    "semantic_certified": false
+  },
+  "observed_output": "valid v3 output: all 41 labels none, uncertain_roles empty, abstraction null (complete abstention)",
+  "engineering_conclusion": "GPU path qualified again; v3 removed repetition and bounded output (250 tokens, 20.8 s)",
+  "method_conclusion": "no usable SACR marking candidate on the authored synthetic example in any of 3 attempts (v1 engineering fault, v2 degenerate repetition, v3 full abstention)",
+  "synthetic_stage": "CLOSED: owner cap of 2 revised attempts used; no further synthetic attempt for this automatic SACR marking configuration family",
+  "journal": {
+    "generation": 28,
+    "study_status": "IDLE"
+  }
+}

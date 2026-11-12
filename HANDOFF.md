@@ -1,5 +1,25 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Synthetic stage CLOSED for automatic SACR marking: 3 attempts, no usable candidate 2026-11-12T19:45+07:00
+
+Synthetic v3 exited 0 after 76.7s wall. The marking call returned EOS (2314 input / 250 output tokens, 20.8s GPU). The output was valid v3 but a complete abstention: all 41 labels none and a null abstraction. Result: MARKING_ABSTAINED -> ORIGINAL_QUERY_FALLBACK; no review call. Settled once at generation 28: 77s to GPU and fidelity, 1 complete call.
+
+Summary of the 3 synthetic attempts (owner cap of 2 revisions is now used):
+- v1: engineering fault (unenforced integer bound).
+- v2: degenerate repetition, rejected.
+- v3: full abstention.
+
+The engineering path (claim, isolation, Qwen3 fp16/eager load, grammar, normal EOS, durable records, validation, fallback, settlement) is qualified. Automatic SACR marking produced NO usable candidate on the authored example. The synthetic stage is CLOSED for this configuration family: no further synthetic attempt and no tuning. This is one authored example, not a rate.
+
+Accounting:
+- Segment8 local CPU booked: 102s, generation 29.
+- CPU used 51616.85s / 57600s; remaining 5983.15s.
+- GPU charged 15788.61s (~187.6h remaining); fidelity remaining 214890.27s.
+- model_calls 134 (lower bound).
+
+Remaining owner-level decision: whether a NEW SACR configuration round is authorized (e.g. few-shot KM examples), or SACR is reported as a negative arm while the Graph track continues (deterministic extraction + distinct traversal vs S; needs later-stage qualification code and a stage-envelope amendment). Nothing is running.
+
+
 ## Synthetic v3 (last revision) qualified; launching 2026-11-12T19:35+07:00
 
 The owner chose "Yes, do v3 first". Marking v3: one role-or-none label per source token in a fixed-length array. LMFE enforces minItems=maxItems at token level, so duplicate and out-of-range spans are structurally impossible; marks are contiguous label runs. 137 tests PASS.
