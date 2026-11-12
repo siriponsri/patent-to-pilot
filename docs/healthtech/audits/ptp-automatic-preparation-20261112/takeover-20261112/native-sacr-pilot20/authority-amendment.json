@@ -1,0 +1,24 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "be36543554a02a838640e54323c0a6eaac0526ce034fe53dc47885ab8ac97d70",
+  "evidence_sha256": "9fd54e566696c8c4cece44f8069dd27a1135b75afff5389fc1f5e7e367657338",
+  "add_configuration_sha256": [
+    "52a59e03cb324a96c8095761edffbfeb7973c8197688fcc25514509748be6a28"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "native",
+  "add_stage_envelopes": {
+    "fidelity": {
+      "seconds": 21600,
+      "maximum_calls": 300
+    },
+    "pilot": {
+      "seconds": 1800,
+      "maximum_calls": 20
+    }
+  },
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "95bf3b929f2bb0620b7b3cc604d38513259e0c1e773c5ce4e6a68c09e6694e47",
+  "scope_sha256": "0a3eeb5bb64f6ba11087ace9313c66428643daa712eebc99c02f0fc73e1a01bf",
+  "reason": "owner: continue native SACR (NATIVE-STAGES-20261112); envelopes cover SACR fidelity (<=40 calls/3600 s) and Graph screening (<=300 calls/21600 s per job)"
+}

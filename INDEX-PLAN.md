@@ -1,5 +1,19 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Native SACR fidelity (pilot-20) qualified; launching 2026-11-12T23:30+07:00
+
+Journal stages extended: append-only stage envelopes plus predecessor gates (synthetic -> fidelity -> pilot -> full_dev). 290 tests PASS.
+- Native batch worker run_automatic_native.py. CPU fixture v1 caught a per-query grammar-file collision (FileExistsError; no GPU); fixed. Fixture v2 PASS: 2 queries, 4 calls, 2 screened.
+- Two bookings through older staged code were refused safely by the cap check (journal unchanged); the booking helper now executes the current committed module.
+
+Authority amendment round 'native': SACR native config 52a59e03...; envelopes fidelity ≤21600s/300 calls and pilot ≤1800s/20.
+qualify_stage: attempt ptp-auto-native-sacr-pilot20-20261112-v1 (predecessor synthetic v5), journal generation 55; ledger 95bf3b92... frozen until the claim.
+
+The pilot-20 query file b5d837f4... is private on the remote; caps 40 calls and 3600s. CPU remaining 31718s.
+
+Launch once: python takeover-20261112/native_control.py start native-sacr-pilot20. Observe with the same script in `observe native-sacr-pilot20` mode. Settle with settle_synthetic.py ptp-auto-native-sacr-pilot20-20261112-v1 native-sacr-pilot20 (generic reconcile).
+
+
 ## Owner: native SACR continues, CPU cap 24h, explicit Graph override 2026-11-12T22:40+07:00
 
 Owner decisions:
