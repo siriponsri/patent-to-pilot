@@ -1,0 +1,90 @@
+{
+  "job": "ptp-auto-pipeline-fixture-20261112-v4",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T11:21:48.515494783Z",
+    "FinishedAt": "2026-11-12T11:22:06.325261468Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-pipeline-fixture-20261112-v4",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T11:21:48.515494783Z",
+      "FinishedAt": "2026-11-12T11:22:06.325261468Z"
+    },
+    "whole_wall_seconds": 18.379149378000875,
+    "controller_cpu_seconds": 0.179701527
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "receipt": {
+    "status": "PASS_AUTHORED_SYNTHETIC_PIPELINE",
+    "real_model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "authored_backend_invocations": 2,
+    "grammar_tokens_checked": 325,
+    "decision": {
+      "policy": "automatic-screening-v1",
+      "action": "USE_SCREENED_CANDIDATE",
+      "screening": "screened",
+      "semantic_certified": false,
+      "human_review_required": false
+    },
+    "marking_input_tokens": 1636,
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "mocked_boundaries": [
+      "GPU_slot_and_window",
+      "model_weight_observer",
+      "model_loader",
+      "CUDA_telemetry",
+      "device_to_cpu"
+    ],
+    "actual_boundaries": [
+      "worker_main",
+      "declaration_package_KM_tokenizer_decoder_checks",
+      "tokenizer",
+      "grammar_EOS",
+      "request_bound_executor",
+      "executor_adapter",
+      "call_markers",
+      "run_query"
+    ],
+    "wall_seconds": 16.105740945989965,
+    "cpu_seconds": 15.977547365,
+    "worker_peak_rss_bytes": 1005584384
+  },
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "decision": {
+      "policy": "automatic-screening-v1",
+      "action": "USE_SCREENED_CANDIDATE",
+      "screening": "screened",
+      "semantic_certified": false,
+      "human_review_required": false
+    },
+    "call_slots_consumed": 2,
+    "wall_seconds": 10.869189835997531,
+    "process_cpu_seconds": 16.520699897,
+    "semantic_certified": false
+  }
+}
