@@ -19,12 +19,15 @@ def pilot_ids(query_ids):
     return sorted(ids, key=lambda q: hashlib.sha256((PILOT_SALT + '|' + q).encode()).hexdigest())[:PILOT_SIZE]
 
 
-def census(queries, postings, *, max_key_degree=100):
+def _v2_keys(qid, text):
+    return {r['alias_key'] for r in extract_family_v2({'id': qid, 'title': '', 'abstract': text, 'claims': ''})['records']}
+
+
+def census(queries, postings, *, max_key_degree=100, query_keys=_v2_keys):
     """queries: [{'id','text'}]; postings: {key: {family_id: relation_id}}."""
     rows, pilot = [], set(pilot_ids([q['id'] for q in queries]))
     for q in queries:
-        keys = sorted({r['alias_key'] for r in extract_family_v2(
-            {'id': q['id'], 'title': '', 'abstract': q['text'], 'claims': ''})['records']})
+        keys = sorted(query_keys(q['id'], q['text']))
         hit = [k for k in keys if postings.get(k)]
         usable = [k for k in hit if len(postings[k]) <= max_key_degree]
         fams = {f for k in usable for f in postings[k]}
@@ -40,7 +43,7 @@ def census(queries, postings, *, max_key_degree=100):
     pilot_keys = set()
     for q in queries:
         if q['id'] in pilot:
-            pilot_keys |= {r['alias_key'] for r in extract_family_v2({'id': q['id'], 'title': '', 'abstract': q['text'], 'claims': ''})['records']}
+            pilot_keys |= set(query_keys(q['id'], q['text']))
     pilot_keys = {k for k in pilot_keys if postings.get(k) and len(postings[k]) <= max_key_degree}
     direct = {f for k in pilot_keys for f in postings[k]}
     family_keys = {}
