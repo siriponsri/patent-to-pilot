@@ -1,0 +1,31 @@
+{
+  "applied_now": true,
+  "generation": 93,
+  "status": "IDLE",
+  "transition": [
+    [
+      93,
+      "CLEAR_FALSE_CPU_OVERRUN"
+    ]
+  ],
+  "cost": {
+    "calls_complete": true,
+    "host_cpu_seconds_telemetry": 231.04808613000205,
+    "host_cpu_telemetry_basis": "PHYSICAL_UPPER_BOUND wall x (container CPUs + controller); replaced declared-bound fallback",
+    "known_calls": 0,
+    "seconds": 26,
+    "stage": "pilot"
+  },
+  "scope_sha256": "056a6d43638120e71ccb1d26e3c23bde9f9e0e23ad39a0252be0a452d28d3e69",
+  "receipt": {
+    "kind": "CLEAR_FALSE_CPU_OVERRUN",
+    "attempt_id": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+    "container_cpus": 8,
+    "container_cpus_basis": "supervise_sacr_pilot_retrieval uses base configuration smoke: NanoCpus 8e9",
+    "isolation_evidence_sha256": "366fc4684db0eea1f2e2334d8a09f89f5030a53060c625a5a5f495f07e1e7dbc",
+    "owner_approval_sha256": "19014d6632fb4e6095e3db1fee3ec424936bd11f61643090e4a2974f83dc876e",
+    "evidence": "takeover-20261112/sacr-pilot-retrieval/terminal-evidence.json (Docker exited 0, wall 25.672 s)"
+  },
+  "receipt_sha256": "9f141504345b6f30da1440c8ec02f555b382f31299c056380e2480949dff65c6",
+  "ledger_sha256": "e9b6a94dbf78a8ff6ffaee4d1d1752e70ec45a884a543dedab8fac7abc53bb91"
+}
