@@ -1,0 +1,57 @@
+{
+  "job": "ptp-auto-native-fixture-20261112-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 1,
+    "Error": "",
+    "StartedAt": "2026-11-12T12:00:19.273465742Z",
+    "FinishedAt": "2026-11-12T12:00:39.250565689Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-native-fixture-20261112-v1",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 1,
+      "Error": "",
+      "StartedAt": "2026-11-12T12:00:19.273465742Z",
+      "FinishedAt": "2026-11-12T12:00:39.250565689Z"
+    },
+    "whole_wall_seconds": 20.40599069300515,
+    "controller_cpu_seconds": 0.224491264
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "receipt": {
+    "status": "FAILED_AUTHORED_PIPELINE",
+    "real_model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "exception_type": "FileExistsError",
+    "exception": "[Errno 17] File exists: '/out/attempt/marking-grammar-private.json'",
+    "wall_seconds": 17.570598883001367,
+    "cpu_seconds": 17.425140123000002,
+    "worker_peak_rss_bytes": 1006358528
+  },
+  "worker_failure": {
+    "exception_type": "FileExistsError",
+    "call_slots_consumed": 3,
+    "process_cpu_seconds": 17.922326833,
+    "retry": false,
+    "cost_status": "CONTROLLER_AND_DIAGNOSTICS_RECONCILIATION_REQUIRED"
+  }
+}

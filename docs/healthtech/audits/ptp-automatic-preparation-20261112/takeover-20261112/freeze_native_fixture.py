@@ -7,10 +7,10 @@ from takeover_lib import *
 from patent_to_pilot.research.r6_dispatch_files import package_identity
 from patent_to_pilot.research.automatic_cpu_booking import cpu_used, cpu_cap
 
-JOBS_V2 = {'fixture': ('ptp-auto-native-fixture-20261112-v1', 'supervise_automatic_native_fixture.py', 'automatic-native-pipeline-fixture',
+JOBS_V2 = {'fixture': ('ptp-auto-native-fixture-20261112-v2', 'supervise_automatic_native_fixture.py', 'automatic-native-pipeline-fixture',
                        ['supervise_automatic_native_fixture.py', 'supervise_automatic_pipeline_fixture.py', 'supervise_automatic_grammar.py'], 4,
                        'actual run_automatic_native batch worker (2 authored queries, 4 calls) with authored CPU model double; no weights/GPU/model calls')}
-OUT = A/'native-fixture'; OUT.mkdir(exist_ok=False)
+OUT = A/'native-fixture-v2'; OUT.mkdir(exist_ok=False)
 ledger = json.loads(L.read_bytes()); ledger_sha = document_hash(ledger)
 h = journal(JOBS + '/ptp-auto-graph-extractor-v3-20261112-v1/code/src',
             "h,at=head()\nprint(json.dumps({'generation':h[1],'ledger_sha256':document_hash(json.loads(h[2])),'active':h[4]}))\n")
@@ -25,7 +25,7 @@ remote_tok = ssh("import hashlib,json\nfrom pathlib import Path\nm=Path('" + JOB
 assert remote_tok['tokenizer.json'] == 'aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4'
 old = json.loads((R/'docs/healthtech/audits/ptp-r6-phase0-execution-20261111/critic-declaration.json').read_bytes())
 authority = sha((A/'owner-long-run-authority.json').read_bytes())
-seg = segment_booking(15, ledger_sha)
+seg = segment_booking(16, ledger_sha)
 expected = copy.deepcopy(ledger); expected['r6_phase0_cpu']['local_cpu_conservative_charged_seconds'] += seg['conservative_cpu_seconds']
 bookings = [seg]; decls = {}
 for kind, (name, sup, k, roots, cases, scope) in JOBS_V2.items():
@@ -49,7 +49,7 @@ out = book(JOBS + '/ptp-auto-graph-extractor-v3-20261112-v1/code/src', bookings,
 assert document_hash(out['ledger']) == document_hash(expected); write_ledger(out['ledger'])
 summary = {'generation': gen + len(bookings), 'ledger_sha256': document_hash(expected),
            'cpu_remaining_seconds': cpu_cap(expected['r6_phase0_cpu']) - cpu_used(expected['r6_phase0_cpu']),
-           'segment15_seconds': seg['conservative_cpu_seconds'], 'package_sha256': package_sha, 'jobs': {}}
+           'segment16_seconds': seg['conservative_cpu_seconds'], 'package_sha256': package_sha, 'jobs': {}}
 for kind, (name, sup, roots, raw) in decls.items():
     files = {'code/' + n: b for n, b in blobs.items()}
     files.update({n: blobs['scripts/healthtech/' + n] for n in roots + ['supervise_r3_engine_v2.py', 'r3_engine_client.py']})

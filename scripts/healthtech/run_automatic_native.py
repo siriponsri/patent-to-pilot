@@ -104,6 +104,9 @@ def main():
                 if admitted[t['id']] > 8192:
                     decisions[t['id']] = {'action': 'ORIGINAL_QUERY_FALLBACK', 'screening': 'invalid_output', 'reason': 'INPUT_LIMIT'}
                     continue
+                # Per-query grammar directory: R6Backend writes '<stage>-grammar-private.json' exclusively
+                # (native fixture v1 caught the collision between queries).
+                backend.output_root = out / 'grammar' / ('q%03d' % index); backend.output_root.mkdir(parents=True)
                 result = run_query(destination=out / 'queries' / ('q%03d' % index), query_id=t['id'], source=t['text'],
                     km_text=km_raw.decode(), km_sha256=d['km_sha256'], invoke=invoke,
                     admit=admission, count_tokens=backend.count_tokens)
