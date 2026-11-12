@@ -1,5 +1,16 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Native v3 settled (review guard refusal); field-order fix; native v4 (allowance 1/2) launching 2026-11-13T03:00+07:00
+
+Native v3 exited 1 at the same query as v2 (index 10, review). The JSON object closed with binding_sha256 last, but the strict EOS guard refused it without a schema rejection (a key-shape class). Settled once at generation 70: 1121s, 21 known calls + 1 unknown.
+
+Fix: R6Backend declared force_json_field_order (default False keeps closed R6/R7 behaviour); the native worker requires True. CPU v8 PASS: grammar 11/11, key-order violation and whitespace runaway both rejected as TOKEN_NOT_ALLOWED; native fixture v5 PASS.
+
+Native v4 is frozen under the owner's standing allowance (revision 1 of 2). Launch with native_control.py start native-sacr-pilot20-v4; settle with settle_synthetic.py ptp-auto-native-sacr-pilot20-20261112-v4 native-sacr-pilot20-v4.
+
+Totals: GPU charged 18882.6s; model_calls 180 (lower bound). Next after a complete native run: SACR pilot retrieval (sacr_pilot_panel.py ready; GPU encode entrypoint and supervisor still to build).
+
+
 ## Native v2 settled; whitespace cap fix qualified on CPU; native v3 awaits owner 2026-11-13T01:40+07:00
 
 Native SACR v2 (marking v5 compact + cap 5800) exited 1 after 1354s.

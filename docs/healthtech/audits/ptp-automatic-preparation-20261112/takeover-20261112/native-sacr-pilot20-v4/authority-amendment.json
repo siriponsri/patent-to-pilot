@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "b49d7b689df2a2545944deb37024cbf13e77e20211dffcdcbb8e94add1b77d56",
+  "evidence_sha256": "d6c48e33ba272086f9285621f7e9368edca4068fd9dbf2cd1b340a25888bf8bf",
+  "add_configuration_sha256": [
+    "ebdc47f0c2fe572756fdaa1e3990ecef1f3d38c07d72e33204871b23a5f8aacd"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "native-v4",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "f673ed4f531d1df95cb46a60c86b4435cb8ede7ec01b294d9cfbc246cabe72a2",
+  "scope_sha256": "75beb1f64e2745e7f8725f9a1dfa2b41d5839943efdf7c3cf62a2a9b2e6f6541",
+  "reason": "standing owner allowance revision 1 of 2: declared JSON field order after v3 review guard refusal"
+}

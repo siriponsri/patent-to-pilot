@@ -1,0 +1,17 @@
+{
+  "status": "STAGED_QUALIFIED_NOT_LAUNCHED",
+  "job": "ptp-auto-native-sacr-pilot20-20261112-v4",
+  "declaration_sha256": "4ff5e86f61a8db56ccbfb6b78e049989c941794db81607b0376ad79222e4b4b1",
+  "package_sha256": "de593a5019d5a4cf7b1c5e29c51d86534d64660ab61afeaa921a1dbb9f23656f",
+  "configuration_sha256": "ebdc47f0c2fe572756fdaa1e3990ecef1f3d38c07d72e33204871b23a5f8aacd",
+  "input_sha256": "b5d837f47bf4fc497c9105cfa35b397979b15e46a9c093a0c9e9cf89e404262e",
+  "transport": {
+    "bytes": 1863680,
+    "sha256": "3eced986958605f68066cdcdb110bb4d7d901301d7520832c0cd964d3a2746fd",
+    "files": 233
+  },
+  "journal_generation": 76,
+  "ledger_sha256": "f673ed4f531d1df95cb46a60c86b4435cb8ede7ec01b294d9cfbc246cabe72a2",
+  "segment23_seconds": 116,
+  "cpu_remaining_seconds": 30259.153622190002
+}
