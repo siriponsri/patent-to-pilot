@@ -1,22 +1,33 @@
 # Claude continuation instructions for Patent-to-Pilot
 
-## BLOCKED on owner decision: false CPU-overrun stop in journal 2026-11-13T07:00+07:00
+## Paper 1 redirected to query-side acquisition; protocol DRAFT awaits owner review 2026-11-13T08:30+07:00
 
-The owner approved "Proceed with both" (SACR full-dev + Graph screening; owner-fulldev-graph-approval.json). The batch freeze helper (freeze_fulldev.py) and the full-dev worker/supervisor are committed (c34b53f).
+The false CPU-overrun stop is CLEARED with owner approval (owner-false-cpu-stop-approval.json, "อนุมัติปลด"). The clear_false_cpu_overrun transition was committed (d085ee3) and applied once: journal generation 92 -> 93, status IDLE, active null. The pilot-retrieval host-CPU telemetry is now 231.05s (physical bound 25.672s x 9) instead of 1860.27s. Receipt: takeover-20261112/clear-false-stop-receipt.json; ledger mirrored at e9b6a94d... settle_synthetic.py now uses that physical bound when worker CPU is unknown.
 
-What happened:
-- Settling the pilot retrieval stage (generation 88): the worker wrote no process CPU, so settle_synthetic.py recorded the declared bound (1860s) plus controller (0.27s) = 1860.27s as host-CPU telemetry. That exceeds the declared 1860s, and reconcile set study status RESOURCE_OVERRUN_STOP.
-- This is a false positive: the job ran 25.7s wall on ≤8 container CPUs, so its physical CPU was ≤ ~231s. GPU 26s ≤ 1800s, calls 0 ≤ 1.
-- Freezing full-dev batch 1 then committed the one-time FULL_DEV_ACCOUNTING_INIT (generation 92; full_dev_charged_seconds=0). After that, amend_authority refused because the study was stopped.
-- The remote job dir ptp-auto-native-sacr-fulldev-b1-20261113-v1 is staged (code + dispatch/queries.jsonl) but NOT qualified. Its segment28 CPU booking is applied.
+After pilot-20 showed SACR rescued 0 OUT queries, the owner asked to discuss strategy and was interviewed for requirements (owner-paper1-requirements.json):
+- Contribution: method + diagnostic.
+- Arms: B0, SACR faithful, generic rewrite (GR), functional abstraction (FA), RRF fusions with B0.
+- Primary: OUT R@200 with a predeclared margin.
+- Protected test: opened ONCE at the end, after the freeze.
+- Graph: feasibility/negative only; no further Graph GPU.
+- No human audit; no LLM judge.
+- Paper 53 cited as related work only.
+- Venue not fixed (design to the IP&M/JASIST standard).
+- No deadline; quality first.
 
-A drafted journal transition, clear_false_cpu_overrun, exists (local, UNCOMMITTED, NOT applied; test passes). It only applies when all of these hold: the telemetry came from the unknown-worker fallback; there was no GPU/call overrun; and the physical bound wall×(CPUs+1) is within the declared CPU bound. The auto-mode permission classifier DENIED applying it (Security Weaken). Clearing a stop needs explicit owner approval.
+Draft protocol: docs/healthtech/research/plans/PAPER1-ACQUISITION-PROTOCOL-DRAFT-20261113.md. It is NOT frozen.
+- Gatekeeping H1 F-FA>B0, H2 F-FA>F-GR, H3 F-FA>F-SACR; delta 0.010; cluster bootstrap.
+- Owner checkpoint after dev; that checkpoint cannot change the plan.
 
-Owner options:
-- (a) Approve clearing this specific false stop with the documented physical-bound evidence. Then: commit the transition, apply it once, fix the settle fallback to use the physical bound, resume the batch 1 freeze (amendment + qualify only) and run the batches.
-- (b) Keep the stop; the study ends here.
+Next, after owner review:
+1. Freeze the FA/GR prompts and schemas plus all pins.
+2. CPU grammar qualification.
+3. Synthetic smoke.
+4. Technical pilot.
+5. Full-dev generation: SACR batches (staged b1 dir exists) plus FA and GR.
+6. Retrieval, fusion and dev evaluation; then the owner checkpoint.
 
-Journal generation 92 (active null, status RESOURCE_OVERRUN_STOP). Local ledger mirrored from the journal. Nothing running. Untracked uv.lock was left untouched.
+Graph screening (previously approved) is NOT to be run: owner chose feasibility/negative. Nothing is running. Untracked uv.lock and the owner's 9-Nov handoff file are untouched.
 
 
 ## SACR pilot-20: retrieval + evaluation complete (development evidence, no significance) 2026-11-13T06:10+07:00
