@@ -71,3 +71,20 @@ def test_graph_census_mounts_only_inputs_code_and_out():
     assert targets['/input/queries.jsonl'] and targets['/input/postings.json'] and targets['/out'] is False
     assert not any('qrels' in t or 'models' in t for t in targets) and not config['HostConfig'].get('DeviceRequests')
     assert config['Cmd'][1]=='/code/scripts/healthtech/run_graph_query_census.py'
+
+
+def test_native_supervisor_and_fixture_commands():
+    scripts=Path(__file__).resolve().parents[1]/'scripts/healthtech'
+    sys.path.insert(0,str(scripts))
+    try:
+        mods={}
+        for name in ('supervise_automatic_native','supervise_automatic_native_fixture'):
+            spec=importlib.util.spec_from_file_location(name+'_t',scripts/(name+'.py'))
+            mods[name]=importlib.util.module_from_spec(spec);spec.loader.exec_module(mods[name])
+        native,_=mods['supervise_automatic_native'].configuration(Path('/jobs/n'),1234,'a'*64)
+        fixture,fm=mods['supervise_automatic_native_fixture'].configuration(Path('/jobs/f'),1234,'a'*64,['tokenizer.json','generation_config.json'])
+    finally: sys.path.remove(str(scripts))
+    assert native['Cmd']==['-s','/code/scripts/healthtech/run_automatic_native.py','1234','a'*64]
+    assert native['HostConfig']['NetworkMode']=='none' and native['HostConfig']['DeviceRequests']
+    assert fixture['Cmd'][1]=='/code/scripts/healthtech/qualify_automatic_native_pipeline.py'
+    assert not fixture['HostConfig'].get('DeviceRequests')
