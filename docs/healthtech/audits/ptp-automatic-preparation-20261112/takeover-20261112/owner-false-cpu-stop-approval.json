@@ -1,0 +1,14 @@
+{
+  "status": "OWNER_APPROVED_CLEAR_FALSE_CPU_OVERRUN_STOP",
+  "date": "2026-11-13",
+  "question": "SACR faithful full-dev is blocked by a false-positive RESOURCE_OVERRUN_STOP (settle recorded the declared CPU bound 1860 s instead of a physical bound <= ~231 s). Approve clearing it once with the clear_false_cpu_overrun transition and the recorded evidence?",
+  "owner_answer": "อนุมัติปลด (แนะนำ)",
+  "option_text": "Commit transition, apply once, fix the settle fallback to use the physical bound; do NOT run full-dev until the new protocol is frozen",
+  "attempt_id": "ptp-auto-sacr-pilot-retrieval-20261113-v1",
+  "conditions": [
+    "applies only to this attempt and only via the unknown-worker-CPU fallback",
+    "GPU seconds and calls within the declaration",
+    "physical bound wall x (container CPUs + controller) within the declared cpu_seconds",
+    "no full-dev or other GPU dispatch until the Paper 1 protocol amendment is frozen"
+  ]
+}

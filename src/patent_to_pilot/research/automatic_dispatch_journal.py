@@ -120,6 +120,39 @@ class AutomaticDispatchJournal(DispatchJournal):
             db.execute('UPDATE head SET generation=?,scope=?', (head[1] + 1, encoded(scope)))
         return {'status': 'AUTHORITY_AMENDED', 'generation': expected_generation + 1, 'scope': scope}
 
+    def clear_false_cpu_overrun(self, *, expected_generation, receipt, receipt_sha256):
+        """Clear RESOURCE_OVERRUN_STOP only for a demonstrable CPU-telemetry artifact.
+
+        Allowed only when the attempt's recorded host CPU came from the 'worker CPU unknown'
+        fallback (declared bound + controller), GPU seconds and calls stayed within the
+        declaration, and the physical bound wall x (container CPUs + 1 controller) is itself
+        within the declared CPU bound. That physical bound replaces the telemetry figure.
+        """
+        require(digest(receipt_sha256) and document_hash(receipt) == receipt_sha256, 'receipt pin changed')
+        nano = receipt.get('container_cpus'); attempt = receipt.get('attempt_id')
+        require(receipt.get('kind') == 'CLEAR_FALSE_CPU_OVERRUN' and type(nano) is int and 1 <= nano <= 8
+                and digest(receipt.get('isolation_evidence_sha256')), 'evidence required')
+        with self.transaction() as (db, head):
+            require(head[1] == expected_generation and head[4] is None, 'stale or active journal')
+            ledger, scope = json.loads(head[2]), json.loads(head[3]); study = scope['automatic_study']
+            require(study['status'] == 'RESOURCE_OVERRUN_STOP', 'no overrun stop to clear')
+            row = db.execute('SELECT declaration,terminal FROM attempts WHERE id=?', (attempt,)).fetchone()
+            require(row is not None and row[1] is not None, 'settled attempt required')
+            declaration, terminal = json.loads(row[0]), json.loads(row[1]); cost = study['stage_costs'][attempt]
+            require('unknown' in str(terminal.get('aggregate_cpu_basis', '')), 'only the unknown-worker-CPU fallback can be corrected')
+            require(cost['seconds'] <= declaration['seconds'] and cost['known_calls'] <= declaration['maximum_calls'],
+                    'genuine GPU or call overrun cannot be cleared')
+            bound = terminal['whole_wall_seconds'] * (nano + 1)
+            require(bound <= declaration['cpu_seconds'], 'physical CPU bound exceeds declaration; overrun stands')
+            old = cost['host_cpu_seconds_telemetry']
+            cost['host_cpu_seconds_telemetry'] = bound
+            cost['host_cpu_telemetry_basis'] = 'PHYSICAL_UPPER_BOUND wall x (container CPUs + controller); replaced declared-bound fallback'
+            ledger['gpu_stage_host_cpu_telemetry_seconds'] = ledger.get('gpu_stage_host_cpu_telemetry_seconds', 0) - old + bound
+            study['status'] = 'IDLE'
+            db.execute('INSERT INTO automatic_transitions VALUES (?,?,?)', (head[1] + 1, 'CLEAR_FALSE_CPU_OVERRUN', encoded(receipt)))
+            db.execute('UPDATE head SET generation=?,ledger=?,scope=?', (head[1] + 1, encoded(ledger), encoded(scope)))
+        return {'status': 'FALSE_CPU_OVERRUN_CLEARED', 'generation': expected_generation + 1, 'bound': bound, 'ledger': ledger}
+
     def initialize_full_dev_accounting(self, *, expected_generation, receipt, receipt_sha256):
         """One-time: full_dev_charged_seconds = 0, only when absent and full_dev_started is False.
 

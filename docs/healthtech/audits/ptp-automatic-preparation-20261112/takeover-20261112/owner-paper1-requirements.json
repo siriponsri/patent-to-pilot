@@ -1,0 +1,19 @@
+{
+  "status": "OWNER_REQUIREMENTS_FOR_PAPER1_PROTOCOL_AMENDMENT",
+  "date": "2026-11-13",
+  "context": "Owner asked to be interviewed before the protocol is drafted, after the SACR pilot-20 showed 0 OUT rescues (pilot outcomes already seen; must be disclosed).",
+  "answers": {
+    "venue": {"answer": "ยังไม่ fix ให้แนะนำ", "meaning": "design the protocol to meet the strictest plausible venue standard; choose venue after results"},
+    "contribution": {"answer": "Method + diagnostic", "meaning": "a method aimed at the acquisition gap (e.g. functional/domain-neutral abstraction) plus exposure/rescue diagnostics; positive and negative results reportable"},
+    "protected_test": {"answer": "เปิดครั้งเดียวตอนจบ", "meaning": "freeze arms/endpoint/margin/statistics from dev, then run the DAPFAM protected test once; the opening itself still requires the frozen, dated declaration"},
+    "graph": {"answer": "Feasibility/negative", "meaning": "report coverage/gates/override honestly; no further GPU for Graph in Paper 1"},
+    "arms": {"answer": ["SACR faithful", "Generic LLM rewrite", "Functional abstraction", "Fusion (RRF กับ B0)"], "meaning": "B0 plus these four"},
+    "human_audit": {"answer": "ไม่ทำ human audit", "meaning": "no owner cards; judgment incompleteness reported as a limitation"},
+    "timeline": {"answer": "ไม่จำกัด เน้นคุณภาพ", "meaning": "no deadline; quality first within approved budgets"},
+    "paper53": {"answer": "อ้างเป็น related work", "meaning": "cite Paper 53 in motivation/related work, not as the central framing"},
+    "false_cpu_stop": {"answer": "อนุมัติปลด (แนะนำ)", "record": "owner-false-cpu-stop-approval.json"},
+    "llm_judge": {"answer": "ไม่ใช้", "meaning": "no LLM relevance judge; existing qrels only"},
+    "primary_endpoint": {"answer": "OUT R@200 + margin (แนะนำ)", "meaning": "keep OUT Recall@200 primary; predeclare superiority and equivalence margins; exposure/rescue secondary"}
+  },
+  "unchanged": ["no paid API/training/corpus re-encoding/Neo4j writes/full-corpus LLM extraction", "one GPU job at a time", "no outcome-driven retry", "never mention the superseded prior manuscript or its labels"]
+}

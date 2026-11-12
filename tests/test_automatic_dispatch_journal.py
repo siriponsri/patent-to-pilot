@@ -279,3 +279,26 @@ def test_full_dev_accounting_initializes_once_only_when_never_started(tmp_path):
     r2 = dict(r, prior_ledger_sha256=document_hash(out['ledger']))
     with pytest.raises(InputBoundaryError):
         journal.initialize_full_dev_accounting(expected_generation=2, receipt=r2, receipt_sha256=document_hash(r2))
+
+
+def test_false_cpu_overrun_cleared_only_with_physical_bound(tmp_path):
+    from patent_to_pilot.research.r6_dispatch_journal import encoded
+    path, journal, authority, ledger, _ = setup_journal(tmp_path)
+    journal.adopt_scope(expected_generation=0, authority=authority, authority_sha256=document_hash(authority))
+    decl = {'attempt_id': 'ptp-auto-x', 'seconds': 1800, 'maximum_calls': 1, 'cpu_seconds': 1860}
+    term = {'whole_wall_seconds': 25.7, 'aggregate_cpu_seconds': 1860.3, 'aggregate_cpu_basis': 'worker CPU unknown: declared safety bound recorded'}
+    with sqlite3.connect(path) as db:
+        scope = json.loads(db.execute('SELECT scope FROM head').fetchone()[0])
+        scope['automatic_study']['status'] = 'RESOURCE_OVERRUN_STOP'
+        scope['automatic_study']['stage_costs']['ptp-auto-x'] = {'stage': 'pilot', 'seconds': 26, 'known_calls': 0,
+                                                                  'calls_complete': True, 'host_cpu_seconds_telemetry': 1860.3}
+        db.execute('UPDATE head SET scope=?', (encoded(scope),))
+        db.execute('INSERT INTO attempts VALUES (?,?,?)', ('ptp-auto-x', encoded(decl), encoded(term)))
+    def receipt(cpus):
+        r = {'kind': 'CLEAR_FALSE_CPU_OVERRUN', 'attempt_id': 'ptp-auto-x', 'container_cpus': cpus, 'isolation_evidence_sha256': 'a'*64}
+        return r, document_hash(r)
+    r, h = receipt(8)
+    out = journal.clear_false_cpu_overrun(expected_generation=1, receipt=r, receipt_sha256=h)
+    assert out['bound'] == 25.7 * 9 and out['generation'] == 2
+    with pytest.raises(InputBoundaryError):           # nothing left to clear
+        journal.clear_false_cpu_overrun(expected_generation=2, receipt=r, receipt_sha256=h)

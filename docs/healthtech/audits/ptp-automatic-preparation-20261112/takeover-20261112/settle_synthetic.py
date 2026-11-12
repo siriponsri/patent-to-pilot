@@ -1,7 +1,8 @@
 """Independently verify the synthetic GPU job terminal state and reconcile ONCE.
 
 Refuses unless Docker reports exited/PID0 (or proven never-created). Whole wall
-is charged once to GPU and fidelity; host CPU is telemetry only. Idempotent:
+is charged once to GPU and fidelity; host CPU is telemetry only (unknown worker CPU -> physical bound
+wall x (container CPUs + controller), fixed 2026-11-13). Idempotent:
 at generation 14 it only verifies.
 """
 from pathlib import Path
@@ -28,10 +29,11 @@ def rd(rel):
  f=p/rel
  return json.loads(f.read_bytes()) if f.exists() else None
 sup=rd('terminal.json');assert sup is not None,'supervisor terminal receipt missing'
-try:state=Engine().inspect(p.name)['State']
+try:
+ info=Engine().inspect(p.name);state=info['State'];cpus=info['HostConfig']['NanoCpus']/1e9
 except EngineError as e:
  if e.status!=404:raise
- state=None
+ state=None;cpus=None
 out=p/'out/attempt'
 markers=sorted(x.name for x in out.glob('call-*.json')) if out.exists() else []
 gens=sorted(str(x.relative_to(out)) for x in out.glob('backend/**/generation.json')) if out.exists() else []
@@ -49,8 +51,8 @@ if state is not None:
 term={'attempt_id':p.name,'container_name':p.name,'declaration_sha256':document_hash(d),
  'whole_wall_seconds':sup['whole_wall_seconds'],'known_model_calls':len(gens),
  'calls_complete':len(gens)==len(markers),'cost_evidence_sha256':ev_sha,
- 'aggregate_cpu_seconds':(worker_cpu if type(worker_cpu) in (int,float) else d['cpu_seconds'])+sup.get('controller_cpu_seconds',60),
- 'aggregate_cpu_basis':'worker process_cpu + controller' if type(worker_cpu) in (int,float) else 'worker CPU unknown: declared safety bound recorded'}
+ 'aggregate_cpu_seconds':(worker_cpu+sup.get('controller_cpu_seconds',60)) if type(worker_cpu) in (int,float) else (sup['whole_wall_seconds']*(cpus+1) if cpus else d['cpu_seconds']+sup.get('controller_cpu_seconds',60)),
+ 'aggregate_cpu_basis':'worker process_cpu + controller' if type(worker_cpu) in (int,float) else ('worker CPU unknown: physical upper bound wall x (container CPUs + controller)' if cpus else 'worker CPU unknown: no container; declared safety bound recorded')}
 if state is None:term.update(container_outcome='NO_CONTAINER',create_request_sent=False)
 else:term['container_state']=state
 h=head();applied=False
