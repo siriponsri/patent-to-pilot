@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "8a5278485f2a0c826f09a3bd04eb1a05637b8de79642d0f4b96cb04e61763885",
+  "evidence_sha256": "162befbf9344abd31d9d324d714405d74a36a03de78f83f1e22f324772c28bb1",
+  "add_configuration_sha256": [
+    "8621400f0feb3748d0a43cf61290ea0e1f5bbbfd2604c9915fbf8bbcb148192e"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "round-2",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "7461431130bcd31c954f61c13f30bd748a9828ba50e87e3f621a4d3b5dfec17a",
+  "scope_sha256": "daf2eba659856097b8f7cceb7595c9e3b8df9357cead648d6e2d3a543f5dab58",
+  "reason": "round-2 second (last) synthetic attempt: review v2 configuration"
+}
