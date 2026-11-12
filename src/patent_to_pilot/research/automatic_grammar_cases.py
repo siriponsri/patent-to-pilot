@@ -27,11 +27,15 @@ def cases(km_text):
     output = {'binding_sha256': review['binding_sha256'], 'checks': {k: {
         'status': 'screened', 'source_quote': '', 'candidate_quote': '', 'reason': 'No issue detected.'} for k in CHECKS}}
     flagged = deepcopy(output)
-    flagged['checks']['conditions_exceptions'].update(status='uncertain', source_quote='except during cleaning.',
+    flagged['checks']['conditions_exceptions'].update(status='uncertain', source_quote=SOURCE,
                                                      reason='Attachment requires interpretation.')
     missing = deepcopy(output); del missing['checks']['roles_direction']
+    paraphrased = deepcopy(output)
+    paraphrased['checks']['conditions_exceptions'].update(status='flagged', source_quote='The pump reduces pressure.',
+                                                       reason='Paraphrased quote must be impossible.')
     rows += [('review-valid', review, output, True), ('review-uncertain', review, flagged, True),
-             ('review-missing-check', review, missing, False)]
+             ('review-missing-check', review, missing, False),
+             ('review-paraphrased-quote', review, paraphrased, False)]
     return [{'name': name, 'request': req, 'output': value, 'expected_grammar_acceptance': expected,
              'output_text': json.dumps(value,ensure_ascii=False,separators=(',', ':'))}
             for name,req,value,expected in rows]

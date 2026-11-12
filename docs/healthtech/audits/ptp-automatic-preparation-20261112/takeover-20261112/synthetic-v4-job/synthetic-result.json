@@ -1,0 +1,39 @@
+{
+  "status": "ENGINEERING_PASS_REVIEW_REJECTED_FALLBACK",
+  "attempt_id": "ptp-auto-synthetic-20261112-v4",
+  "exit_code": 0,
+  "oom_killed": false,
+  "whole_wall_seconds": 197.08092563599348,
+  "charged_gpu_and_fidelity_seconds": 198,
+  "host_cpu_telemetry_seconds": 193.898080916,
+  "calls": {
+    "consumed": 2,
+    "normal_returns": 2,
+    "calls_complete": true
+  },
+  "marking": {
+    "input_tokens": 2585,
+    "output_tokens": 327,
+    "candidate_available": true
+  },
+  "review": {
+    "input_tokens": 1196,
+    "output_tokens": 980
+  },
+  "decision": {
+    "action": "ORIGINAL_QUERY_FALLBACK",
+    "screening": "invalid_output",
+    "reason": "REVIEW_REJECTED",
+    "semantic_certified": false
+  },
+  "observed": {
+    "marking": "abstraction kept condition (40 kPa), exception (priming < 10 s) and negation (not refilled) but dropped the claimed components preamble; token labels noisy (e.g. \"the\" as entity, negation label on \"reservoir\")",
+    "review": "flagged missing_requirement (components preamble omitted; a legitimate catch) but three screened checks quoted paraphrased fragments not literally present, so the strict literal-evidence rule rejected the review"
+  },
+  "conclusion": "first end-to-end 2-call run; fallback for two independent reasons (invalid review quotes; legitimate missing-requirement flag); no tuning or retry",
+  "next": "v5 = last round-2 attempt: review v2 restricts quotes to enumerated literal spans; marking prompt unchanged",
+  "journal": {
+    "generation": 36,
+    "study_status": "IDLE"
+  }
+}

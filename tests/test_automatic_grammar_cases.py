@@ -6,7 +6,7 @@ from patent_to_pilot.research.km_automatic_review import interpret_review
 
 def test_authored_grammar_cases_match_independent_schema_validator():
     rows = cases('Preserve conditions and exceptions.')
-    assert len(rows) == 8
+    assert len(rows) == 9
     for row in rows:
         assert Draft202012Validator(row['request']['schema']).is_valid(row['output']) == row['expected_grammar_acceptance']
         if row['expected_grammar_acceptance']:

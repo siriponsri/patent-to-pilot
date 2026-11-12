@@ -1,0 +1,75 @@
+{
+  "job": "ptp-auto-synthetic-20261112-v4",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T11:23:07.774594103Z",
+    "FinishedAt": "2026-11-12T11:26:24.111484379Z"
+  },
+  "terminal": {
+    "attempt_id": "ptp-auto-synthetic-20261112-v4",
+    "container_name": "ptp-auto-synthetic-20261112-v4",
+    "retry": false,
+    "declaration_sha256": "82f21cfdc57054aa0e7ea9e3e9baf394e3b5a0a840479472ad5e6780454d3e72",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T11:23:07.774594103Z",
+      "FinishedAt": "2026-11-12T11:26:24.111484379Z"
+    },
+    "whole_wall_seconds": 197.08092563599348,
+    "controller_cpu_seconds": 0.562252798,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-synthetic-20261112-v4",
+    "generation": 35
+  },
+  "input_admission": {
+    "input_tokens": 2585,
+    "status": "ADMITTED",
+    "model_calls": 0
+  },
+  "loaded_runtime": {
+    "model_class": "Qwen3ForCausalLM",
+    "dtype": "torch.float16",
+    "device": "cuda:0",
+    "attention": "eager"
+  },
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "decision": {
+      "policy": "automatic-screening-v1",
+      "action": "ORIGINAL_QUERY_FALLBACK",
+      "screening": "invalid_output",
+      "semantic_certified": false,
+      "human_review_required": false
+    },
+    "call_slots_consumed": 2,
+    "wall_seconds": 192.71090954900137,
+    "process_cpu_seconds": 193.335828118,
+    "semantic_certified": false
+  },
+  "call_markers": [
+    "call-1.json",
+    "call-2.json"
+  ]
+}

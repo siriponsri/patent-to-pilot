@@ -9,7 +9,7 @@ import time
 from r3_engine_client import Engine, EngineError
 from supervise_r3_engine_v2 import configuration as prior_configuration, supervise, BASE
 
-NAME = 'ptp-auto-grammar-20261112-v4'  # v1/v2 terminal PASS (marking schemas v1/v2)
+NAME = 'ptp-auto-grammar-20261112-v5'  # v1/v2 terminal PASS (marking schemas v1/v2)
 
 
 def configuration(job, stop, pin, tokenizer_files):
@@ -35,7 +35,7 @@ def main(pin):
     job=Path(__file__).resolve().parent
     if job!=Path('/home/chaw/patent-to-pilot-jobs')/NAME: raise RuntimeError('fixed CPU job path required')
     resource.setrlimit(resource.RLIMIT_AS,(512*1024**2,512*1024**2))
-    resource.setrlimit(resource.RLIMIT_CPU,(60,60))
+    resource.setrlimit(resource.RLIMIT_CPU,(30,30))
     start=time.monotonic();created=False;engine=Engine()
     receipt={'model_calls':0,'gpu_seconds':0,'retry':False,'attempt_id':NAME}
     with (job/'admission.json').open('x') as f: json.dump({'declaration_sha256':pin,'retry':False},f)
@@ -45,7 +45,7 @@ def main(pin):
         raw=(job/'declaration.json').read_bytes()
         if hashlib.sha256(raw).hexdigest()!=pin: raise RuntimeError('declaration pin changed')
         d=json.loads(raw)
-        if d['kind']!='automatic-grammar-only' or d['cpu_seconds']>540: raise RuntimeError('CPU scope mismatch')
+        if d['kind']!='automatic-grammar-only' or d['cpu_seconds']>90: raise RuntimeError('CPU scope mismatch')
         sys.path.insert(0,str(job/'code/src'))
         from patent_to_pilot.research.r7_dispatch_files import validate_worker_package
         from patent_to_pilot.research.r6_dispatch_journal import document_hash
@@ -57,7 +57,7 @@ def main(pin):
             row=db.execute('SELECT receipt FROM automatic_cpu_bookings WHERE id=?',(NAME,)).fetchone()
         if active is not None or row is None: raise RuntimeError('active global job or missing CPU booking')
         booking=json.loads(row[0])
-        if (document_hash(booking)!=d['cpu_booking_sha256'] or booking['conservative_cpu_seconds']!=600
+        if (document_hash(booking)!=d['cpu_booking_sha256'] or booking['conservative_cpu_seconds']!=120
                 or booking['location']!='remote'): raise RuntimeError('CPU booking mismatch')
         engine.check_version()
         try: engine.inspect(NAME)
@@ -65,10 +65,10 @@ def main(pin):
             if error.status!=404: raise
         else: raise RuntimeError('existing CPU container prevents replay')
         (job/'out').mkdir(exist_ok=False)
-        config,mounts=configuration(job,start+540,pin,d['tokenizer_files_sha256'])
+        config,mounts=configuration(job,start+110,pin,d['tokenizer_files_sha256'])
         if any(not p.exists() for p,_,_ in mounts): raise RuntimeError('missing exact mount')
         created=True
-        reason,state=supervise(engine,NAME,config,mounts,start+540,job/'out')
+        reason,state=supervise(engine,NAME,config,mounts,start+110,job/'out')
         receipt.update(status=reason,container_state=state['State'])
     except BaseException as error:
         receipt.update(status='FAILED',exception_type=type(error).__name__)

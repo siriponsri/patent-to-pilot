@@ -43,7 +43,7 @@ def main():
                       eos_token_id=[151645, 151643], pad_token_id=151643)
         task = json.dumps({'query_id': 'synthetic-auto-001', 'source': SOURCE, 'authored_synthetic': True}).encode()
         d = {'attempt_id': 'authored-fixture', 'stage': 'synthetic', 'maximum_calls': 2, 'seconds': 1800,
-             'cpu_seconds': 600, 'files_sha256': outer['files_sha256'], 'package_sha256': outer['package_sha256'],
+             'cpu_seconds': 150, 'files_sha256': outer['files_sha256'], 'package_sha256': outer['package_sha256'],
              'input_manifest_sha256': sha(task), 'km_sha256': sha(km), 'model_sha256': sha(identity),
              'tokenizer_sha256': sha(Path('/models/qwen3-8b/tokenizer.json').read_bytes()),
              'decoder_sha256': sha(json.dumps(config.to_dict(), sort_keys=True, separators=(',', ':')).encode()),

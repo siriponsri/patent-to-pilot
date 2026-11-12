@@ -16,8 +16,8 @@ def example():
 
 def test_flag_preserved_without_semantic_certification():
     req, result = example()
-    result['checks']['negation_modality'] = {'status': 'flagged', 'source_quote': 'must not leak',
-        'candidate_quote': 'leaks', 'reason': 'Negation reversed.'}
+    result['checks']['negation_modality'] = {'status': 'flagged', 'source_quote': 'The valve must not leak.',
+        'candidate_quote': 'The valve leaks.', 'reason': 'Negation reversed.'}
     out = interpret_review(result, req)
     assert out['screening'] == 'flagged' and not out['semantic_certified']
     assert not out['reviewer_validated']
@@ -38,5 +38,14 @@ def test_invalid_review_cannot_pass(problem):
 def test_uncertainty_is_not_a_pass_and_screened_is_not_certified():
     req, result = example()
     assert not interpret_review(result, req)['semantic_certified']
-    result['checks']['roles_direction'].update(status='uncertain', source_quote='valve')
+    result['checks']['roles_direction'].update(status='uncertain', source_quote='The valve must not leak.')
     assert interpret_review(result, req)['screening'] == 'uncertain'
+
+
+def test_review_quotes_are_enumerated_literal_spans():
+    # v2: synthetic v4 review paraphrased quotes; the grammar now only offers literal spans.
+    req = prepare_review(item_id='q2', source='A pump, wherein it stops above 4 kPa. It is not refilled.',
+                         candidate='It stops above 4 kPa.', track='SACR', km_text='k', km_sha256=sha('k'))
+    spans = req['schema']['properties']['checks']['properties']['roles_direction']['properties']['source_quote']['enum']
+    assert spans[0] == '' and 'It is not refilled.' in spans and 'wherein it stops above 4 kPa.' in spans
+    assert all(x in req['payload']['source'] for x in spans)
