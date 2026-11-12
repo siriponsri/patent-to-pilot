@@ -1,0 +1,13 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "fea6919370bde8ff6064d5c7e8cb4c2b4f936db1583f557ebb429e589b9958a7",
+  "evidence_sha256": "d4576f3f088a57901bcd384ffca71e0f5cb2634827f11d89b7cb7e21298ce266",
+  "add_configuration_sha256": [
+    "87a12df7792a86808ed5e2c670c92b3f29824862e72c266e510f1e8f9b034323"
+  ],
+  "additional_synthetic_attempts": 2,
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "f58dbfb53302ae4f39a7dfa0b3868599b9810c966154833e400d36f107ded7ba",
+  "scope_sha256": "1b110d1ba63c185afcea6a6f03bcbe73277eb4cc6ab19414de8cad463bf47a05",
+  "reason": "v1 engineering failure (unenforced integer bound); owner approved max 2 revised synthetic attempts"
+}

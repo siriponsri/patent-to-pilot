@@ -1,5 +1,16 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Owner approved max 2 revised synthetic smokes; v2 qualified, launching 2026-11-12T18:50+07:00
+
+The owner answered "Approve, max 2" (owner-synthetic-revision-approval.json): at most 2 revised synthetic GPU attempts, ≤2 calls and ≤1800s each, never the same configuration twice; stop if both fail.
+- Implemented: AutomaticDispatchJournal.amend_authority (append-only; root authority immutable; owner cap MAX_ADDITIONAL_SYNTHETIC=2). qualify_stage enforces the allowance and no configuration reuse. 137 tests PASS.
+- CPU re-qualification v2 PASS: grammar 7/7 (out-of-range end_token now rejected, TOKEN_NOT_ALLOWED) and the actual-worker fixture with marking schema v2. Bookings at generation 17 (segment4 107s + 2×600s).
+- Synthetic v2 is frozen. Segment5 booking (109s) is at generation 18; the amendment (config 87a12df7..., allowance 2) is at generation 19; qualify_stage puts the journal at generation 20, IDLE. Ledger f58dbfb53302ae4f39a7dfa0b3868599b9810c966154833e400d36f107ded7ba is frozen until the claim; do NOT book CPU before the v2 job is settled. CPU remaining 7494.15s.
+- Job ptp-auto-synthetic-20261112-v2: declaration 754308a2..., same task text as v1 (query id synthetic-auto-gpu-002).
+
+Launch once: python takeover-20261112/synthetic_control.py start synthetic-v2-job. Observe with the same script in `observe synthetic-v2-job` mode. Settle with python takeover-20261112/settle_synthetic.py ptp-auto-synthetic-20261112-v2 synthetic-v2-job. If v2 fails, one more revised attempt (v3) is allowed only with a NEW configuration; after that the synthetic stage stops.
+
+
 ## Synthetic GPU smoke v1 FAILED (engineering), settled; fix ready 2026-11-12T18:15+07:00
 
 ptp-auto-synthetic-20261112-v1 exited 1 (no OOM) after 246.2s wall. The claim was consumed and the runtime loaded Qwen3 fp16/eager on cuda:0. The marking input was admitted at 2280 tokens. One marking call was dispatched with no normal return.
