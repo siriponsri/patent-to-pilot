@@ -12,7 +12,7 @@ from .r6_admission import digest
 from .r6_dispatch_journal import DispatchJournal, document_hash, encoded
 
 
-MAX_ADDITIONAL_SYNTHETIC = 2  # owner approval 12 Nov 2026: "Approve, max 2"
+MAX_ADDITIONAL_SYNTHETIC = 2  # per owner-approved round (round-1: "Approve, max 2"; round-2 default 2)
 
 
 def require(value, message):
@@ -89,10 +89,13 @@ class AutomaticDispatchJournal(DispatchJournal):
             known = list(authority.get('configuration_sha256', []))
             for a in amendments: known += a['add_configuration_sha256']
             require(not set(adds) & set(known), 'configuration already authorized')
-            require(sum(a['additional_synthetic_attempts'] for a in amendments) + extra <= MAX_ADDITIONAL_SYNTHETIC,
-                    'synthetic revision cap exceeded')
+            round_id = receipt.get('round', 'round-1')
+            require(type(round_id) is str and round_id, 'round identity required')
+            require(sum(a['additional_synthetic_attempts'] for a in amendments if a.get('round', 'round-1') == round_id)
+                    + extra <= MAX_ADDITIONAL_SYNTHETIC, 'synthetic revision cap exceeded')
             amendments.append({'receipt_sha256': receipt_sha256, 'add_configuration_sha256': list(adds),
-                               'additional_synthetic_attempts': extra, 'generation': head[1] + 1})
+                               'additional_synthetic_attempts': extra, 'round': round_id,
+                               'generation': head[1] + 1})
             db.execute('INSERT INTO automatic_transitions VALUES (?,?,?)',
                        (head[1] + 1, 'AUTHORITY_AMENDMENT', encoded(receipt)))
             db.execute('UPDATE head SET generation=?,scope=?', (head[1] + 1, encoded(scope)))

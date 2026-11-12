@@ -208,3 +208,25 @@ def test_authority_amendment_adds_revised_configurations_with_owner_cap(tmp_path
     with pytest.raises(InputBoundaryError):          # no further synthetic allowance
         amend(['5'], 1)
     assert state['automatic_study']['authority'] == authority   # root never changes
+
+
+def test_new_owner_round_gets_its_own_capped_allowance(tmp_path):
+    path, journal, authority, ledger, _ = setup_journal(tmp_path)
+    authority.update(stage_envelopes={'synthetic': {'seconds': 1800, 'maximum_calls': 2}},
+                     configuration_sha256=['1'*64])
+    pin = document_hash(authority)
+    state = journal.adopt_scope(expected_generation=0, authority=authority, authority_sha256=pin)['scope']; gen = 1
+    def amend(configs, extra, round_id=None):
+        nonlocal state, gen
+        r = {'kind': 'AUTHORITY_AMENDMENT', 'owner_approval_sha256': 'e'*64, 'evidence_sha256': 'f'*64,
+             'add_configuration_sha256': [c*64 for c in configs], 'additional_synthetic_attempts': extra,
+             'authority_sha256': pin, 'ledger_sha256': document_hash(ledger), 'scope_sha256': document_hash(state)}
+        if round_id: r['round'] = round_id
+        state = journal.amend_authority(expected_generation=gen, receipt=r, receipt_sha256=document_hash(r))['scope']; gen += 1
+    amend(['2'], 2)                       # legacy round-1 record (no explicit round)
+    with pytest.raises(InputBoundaryError):
+        amend(['3'], 1)                   # round-1 exhausted
+    amend(['4'], 2, 'round-2')            # new owner round, own cap
+    with pytest.raises(InputBoundaryError):
+        amend(['5'], 1, 'round-2')
+    assert [a['round'] for a in state['automatic_study']['authority_amendments']] == ['round-1', 'round-2']

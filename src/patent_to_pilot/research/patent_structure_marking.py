@@ -11,8 +11,20 @@ from .sacr_token_profile import source_catalogue
 # enforced by LMFE at token level). v2 synthetic smoke degenerated into repeating one interval
 # up to the item cap; a per-token label array makes duplicate or out-of-range spans structurally
 # impossible and bounds output length by the source. Marks are contiguous label runs.
-VERSION = 'patent-structure-marking-v3'
+# v4 (12 Nov 2026, SACR round 2, owner-approved): same bounded v3 representation plus two
+# authored worked examples (NOT the synthetic test sentence) and an explicit labelling
+# guideline; the v3 synthetic smoke abstained on every token.
+VERSION = 'patent-structure-marking-v4'
 NONE = 'none'
+EXAMPLES = (
+    {'source': 'A valve comprising a spring, wherein the spring closes the valve when inlet pressure falls below 2 bar.',
+     'labels': ['none', 'entity', 'none', 'none', 'entity', 'none', 'none', 'entity', 'action', 'none', 'operand',
+                'condition', 'condition', 'condition', 'condition', 'condition', 'quantity', 'quantity'],
+     'uncertain_roles': [], 'abstraction': 'The spring closes the valve when inlet pressure falls below 2 bar.'},
+    {'source': 'The heater is not activated during transport, except when a manual override is set.',
+     'labels': ['none', 'entity', 'none', 'negation', 'action', 'condition', 'condition', 'exception', 'exception',
+                'exception', 'exception', 'exception', 'exception', 'exception'],
+     'uncertain_roles': [], 'abstraction': 'The heater is not activated during transport, except when a manual override is set.'})
 ROLES = ('entity', 'action', 'operand', 'quantity', 'condition', 'exception',
          'negation', 'modality', 'reference', 'background')
 
@@ -49,7 +61,11 @@ def prepare(source, query_id, km_text, expected_km_sha256):
         'Output one JSON object. labels has exactly one entry per source token, in token order: the token role, or "none". Adjacent tokens with the same role form one mark. List in uncertain_roles every role whose attachment is unclear. '
         'Retain conditions, exceptions, negation, quantities and references. Mark unclear attachment uncertain; do not invent antecedents. '
         'Use null abstraction if no faithful selective abstraction is available. An abstraction must retain supported functions and constraints. '
-        'Annotations do not delete source context. Do not assert semantic certification.\nKM:\n' + km_text},
+        'Annotations do not delete source context. Do not assert semantic certification. '
+        'Label every token that belongs to an entity, action, operand, quantity, condition, exception, negation, modality or reference; '
+        'use none only for function words and punctuation-only tokens. Give an abstraction that keeps all conditions, exceptions, '
+        'negations and quantities unless no faithful abstraction exists. Worked examples (authored, illustrative only):\n'
+        + '\n'.join(json.dumps(e, ensure_ascii=False) for e in EXAMPLES) + '\nKM:\n' + km_text},
         {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False, sort_keys=True)}]
     return {'payload': payload, 'schema': schema, 'messages': messages,
             'request_sha256': sha(json.dumps({'messages': messages, 'schema': schema}, sort_keys=True, ensure_ascii=False))}

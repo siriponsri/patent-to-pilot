@@ -11,7 +11,7 @@ from r3_engine_client import Engine, EngineError
 from supervise_r3_engine_v2 import supervise, BASE
 from supervise_automatic_grammar import configuration as grammar_configuration
 
-NAME = 'ptp-auto-pipeline-fixture-20261112-v3'  # v1/v2 terminal PASS (marking schemas v1/v2)
+NAME = 'ptp-auto-pipeline-fixture-20261112-v4'  # v1/v2 terminal PASS (marking schemas v1/v2)
 
 
 def configuration(job, stop, pin, tokenizer_files):

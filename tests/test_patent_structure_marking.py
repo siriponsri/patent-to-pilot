@@ -64,10 +64,24 @@ def test_labels_are_fixed_length_and_runs_become_marks():
     text = 'The pump stops below 5 kPa except during cleaning.'
     request = prepare(text, 'q-bounds', km, sha(km))
     labels = request['schema']['properties']['labels']; count = len(request['payload']['tokens'])
-    assert labels['minItems'] == labels['maxItems'] == count and VERSION == 'patent-structure-marking-v3'
+    assert labels['minItems'] == labels['maxItems'] == count and VERSION == 'patent-structure-marking-v4'
     output = {'version': VERSION, 'query_id': 'q-bounds', 'source_sha256': sha(text),
               'labels': ['entity', 'entity', 'action', 'condition', 'condition', 'condition',
                          'exception', 'exception', 'exception'], 'uncertain_roles': [], 'abstraction': text}
     marks = validate_and_render(output, request)['marks']
     assert [(m['role'], m['text']) for m in marks] == [('entity', 'The pump'), ('action', 'stops'),
         ('condition', 'below 5 kPa'), ('exception', 'except during cleaning.')]
+
+
+def test_worked_examples_are_valid_marking_outputs_and_not_the_synthetic_source():
+    from patent_to_pilot.research.patent_structure_marking import EXAMPLES
+    km = 'Preserve conditions and exceptions.'
+    for i, example in enumerate(EXAMPLES):
+        request = prepare(example['source'], 'example-%d' % i, km, sha(km))
+        output = {'version': VERSION, 'query_id': 'example-%d' % i, 'source_sha256': sha(example['source']),
+                  'labels': example['labels'], 'uncertain_roles': example['uncertain_roles'],
+                  'abstraction': example['abstraction']}
+        result = validate_and_render(output, request)
+        assert result['candidate_available'] and result['marks']
+        assert 'infusion pump' not in example['source']   # never the GPU synthetic test sentence
+    assert 'Worked examples' in request['messages'][0]['content']

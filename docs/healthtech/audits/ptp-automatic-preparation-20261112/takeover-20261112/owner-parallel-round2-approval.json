@@ -1,0 +1,24 @@
+{
+  "status": "OWNER_APPROVED_PARALLEL_GRAPH_AND_NEW_SACR_ROUND",
+  "date": "2026-11-12",
+  "channel": "Claude Code chat, session local_016eefb9",
+  "owner_words": "อนุมัตติทำงานขนาน Graph และ New SACR round",
+  "interpretation": {
+    "graph": "continue the Graph primary track: qualification, distinct traversal vs non-traversal S under matched budget, screening, pilot/full-dev per gates",
+    "sacr_round_2": "new SACR configuration family after round-1 synthetic closure; round-1 negative result retained",
+    "parallel": "work proceeds on both tracks; still one repo writer and one GPU job at a time"
+  },
+  "defaults_set_by_agent_owner_may_change": {
+    "sacr_round_2_max_synthetic_attempts": 2,
+    "per_attempt": "<=2 calls, <=1800 s",
+    "stop_rule": "stop round 2 synthetic stage if both attempts fail"
+  },
+  "unchanged": [
+    "CPU cap 57600 s",
+    "GPU 192 h cumulative",
+    "RAM 32 GiB",
+    "CPU 8 threads",
+    "disk 40 GiB",
+    "no paid API/training/re-encoding/Neo4j writes/full-corpus LLM extraction/protected tests"
+  ]
+}
