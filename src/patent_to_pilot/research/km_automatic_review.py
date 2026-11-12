@@ -10,17 +10,23 @@ from .r6_dispatch_journal import document_hash
 # v2 (12 Nov 2026, SACR round 2): quotes are enums of literal clause/sentence spans of the bound
 # texts (plus ''), so the grammar cannot emit paraphrased quotes; synthetic v4 review was rejected
 # because three 'quotes' were paraphrased fragments. The post-hoc literal check is unchanged.
-VERSION = 'km-automatic-review-v2'
+# v3 (13 Nov 2026): LMFE emits string-enum values literally (no JSON escaping), so a span holding a
+# newline/quote/backslash/control character produced invalid JSON (native v2-v4 review refusals on
+# title+newline+abstract sources). Spans are split at newlines and any span needing escaping is excluded.
+VERSION = 'km-automatic-review-v3'
 MAX_SPANS = 64
 
 
 def literal_spans(text):
     out = []
+    lines = text.split('\n')
     for pattern in (None, r'(?<=[.;:])\s+', r'(?<=[,;:.])\s+'):
-        for piece in ([text] if pattern is None else re.split(pattern, text)):
-            piece = piece.strip()
-            if piece and piece in text and piece not in out:
-                out.append(piece)
+        for line in lines:
+            for piece in ([line] if pattern is None else re.split(pattern, line)):
+                piece = piece.strip()
+                if (piece and piece in text and piece not in out and '"' not in piece and '\\' not in piece
+                        and not any(ord(ch) < 32 for ch in piece)):
+                    out.append(piece)
     return [''] + out[:MAX_SPANS]
 CHECKS = ('roles_direction', 'quantities_units', 'conditions_exceptions',
           'negation_modality', 'unsupported_addition', 'missing_requirement')

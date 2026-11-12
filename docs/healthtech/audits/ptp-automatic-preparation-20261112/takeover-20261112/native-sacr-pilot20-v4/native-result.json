@@ -1,0 +1,15 @@
+{
+  "status": "FAILED_ENGINEERING_REVIEW_INVALID_JSON_ENUM_PARTIAL",
+  "attempt_id": "ptp-auto-native-sacr-pilot20-20261112-v4",
+  "exit_code": 1,
+  "whole_wall_seconds": 1312.5235875670041,
+  "charged_gpu_and_fidelity_seconds": 1313,
+  "call_slots_consumed": 26,
+  "processed_queries": 12,
+  "screened_candidates": 12,
+  "failing_query_index": 12,
+  "failing_stage": "review",
+  "diagnosis": "LMFE string enums are emitted literally (StringParsingState over allowed strings, no JSON escaping); review-v2 literal spans included the full title+newline+abstract source, so a chosen quote produced a raw newline inside a JSON string; json.loads failed and the EOS guard refused termination. Very likely the same cause as v2/v3 at query index 10.",
+  "fix": "km-automatic-review-v3: spans split at newlines and any span containing control characters, quotes or backslashes is excluded; grammar cases review-multiline-line-span (accept) and review-multiline-full-source (reject)",
+  "standing_allowance": "native v5 is revision 2 of 2 (last)"
+}

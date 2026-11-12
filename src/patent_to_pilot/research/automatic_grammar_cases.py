@@ -47,7 +47,18 @@ def cases(km_text):
     disorder = dict(out[-4], name='review-key-order-violation', expected_grammar_acceptance=False)
     disorder['output_text'] = json.dumps({'checks': valid['checks'], 'binding_sha256': valid['binding_sha256']},
                                          ensure_ascii=False, separators=(',', ':'))
-    return out + [runaway, disorder]
+    # Multi-line source (native TA = title + newline + abstract): the full source is not an allowed span.
+    two_line = 'Pump unit' + chr(10) + SOURCE
+    review2 = prepare_review(item_id='synthetic-auto-002', source=two_line, candidate=SOURCE,
+                             track='SACR', km_text=km_text, km_sha256=sha(km_text))
+    ok2 = {'binding_sha256': review2['binding_sha256'], 'checks': {k: {
+        'status': 'screened', 'source_quote': '', 'candidate_quote': '', 'reason': 'No issue detected.'} for k in CHECKS}}
+    ok2['checks']['roles_direction'].update(status='uncertain', source_quote='Pump unit')
+    bad2 = deepcopy(ok2); bad2['checks']['roles_direction']['source_quote'] = two_line
+    extra = [{'name': n, 'request': review2, 'output': v, 'expected_grammar_acceptance': e,
+              'output_text': json.dumps(v, ensure_ascii=False, separators=(',', ':'))}
+             for n, v, e in (('review-multiline-line-span', ok2, True), ('review-multiline-full-source', bad2, False))]
+    return out + [runaway, disorder] + extra
 
 
 def qualify(backend, km_text):

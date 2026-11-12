@@ -49,3 +49,11 @@ def test_review_quotes_are_enumerated_literal_spans():
     spans = req['schema']['properties']['checks']['properties']['roles_direction']['properties']['source_quote']['enum']
     assert spans[0] == '' and 'It is not refilled.' in spans and 'wherein it stops above 4 kPa.' in spans
     assert all(x in req['payload']['source'] for x in spans)
+
+
+def test_spans_never_need_json_escaping():
+    # v3: LMFE emits enum strings literally; a newline/quote/backslash span produced invalid JSON.
+    from patent_to_pilot.research.km_automatic_review import literal_spans
+    spans = literal_spans('Pump title\nA pump, wherein it stops. It says "x" ok. Path a' + chr(92) + 'b.')
+    assert 'Pump title' in spans and 'A pump,' in spans
+    assert all('\n' not in s and '"' not in s and chr(92) not in s for s in spans)
