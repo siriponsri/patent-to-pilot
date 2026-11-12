@@ -88,3 +88,18 @@ def test_native_supervisor_and_fixture_commands():
     assert native['HostConfig']['NetworkMode']=='none' and native['HostConfig']['DeviceRequests']
     assert fixture['Cmd'][1]=='/code/scripts/healthtech/qualify_automatic_native_pipeline.py'
     assert not fixture['HostConfig'].get('DeviceRequests')
+
+
+def test_pilot_retrieval_mounts_are_read_only_inputs_without_qrels():
+    scripts=Path(__file__).resolve().parents[1]/'scripts/healthtech'
+    sys.path.insert(0,str(scripts))
+    try:
+        spec=importlib.util.spec_from_file_location('pilot_retrieval_supervisor',scripts/'supervise_sacr_pilot_retrieval.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        config,mounts=module.configuration(Path('/jobs/p'),1234,'a'*64)
+    finally: sys.path.remove(str(scripts))
+    targets={t:ro for _,t,ro in mounts}
+    assert '/models/qwen3-8b' not in targets and targets['/models/patembed-large'] and targets['/native/out/attempt']
+    assert not any('qrels' in str(s) or 'evaluation' in str(s) for s,_,_ in mounts)
+    assert all(ro for t,ro in targets.items() if t not in ('/out','/models/.'+module.GPU+'.lock'))
+    assert config['Cmd'][1]=='/code/scripts/healthtech/run_sacr_pilot_retrieval.py' and config['HostConfig']['NetworkMode']=='none'
