@@ -57,3 +57,17 @@ def test_pipeline_fixture_mounts_dispatch_rw_and_no_weights_or_gpu():
     assert '/models/qwen3-8b' not in targets and '/models/qwen3-8b/generation_config.json' in targets
     assert all(ro for t,ro in targets.items() if t not in ('/dispatch','/out'))
     assert config['Cmd']==['-s','/code/scripts/healthtech/qualify_automatic_synthetic_pipeline.py','a'*64]
+
+
+def test_graph_census_mounts_only_inputs_code_and_out():
+    scripts=Path(__file__).resolve().parents[1]/'scripts/healthtech'
+    sys.path.insert(0,str(scripts))
+    try:
+        spec=importlib.util.spec_from_file_location('graph_census_supervisor',scripts/'supervise_graph_census.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        config,mounts=module.configuration(Path('/jobs/census'),1234,'a'*64,[])
+    finally: sys.path.remove(str(scripts))
+    targets={t:ro for _,t,ro in mounts}
+    assert targets['/input/queries.jsonl'] and targets['/input/postings.json'] and targets['/out'] is False
+    assert not any('qrels' in t or 'models' in t for t in targets) and not config['HostConfig'].get('DeviceRequests')
+    assert config['Cmd'][1]=='/code/scripts/healthtech/run_graph_query_census.py'

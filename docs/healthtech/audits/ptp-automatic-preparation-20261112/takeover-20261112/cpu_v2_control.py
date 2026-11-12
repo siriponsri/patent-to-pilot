@@ -3,7 +3,7 @@ Never restart on an observation timeout."""
 from pathlib import Path
 import json, subprocess, sys
 kind, mode = sys.argv[1], sys.argv[2]
-A = Path(__file__).resolve().parent/(sys.argv[3] if len(sys.argv) > 3 else 'cpu-v2'); assert kind in ('grammar', 'fixture') and mode in ('start', 'observe')
+A = Path(__file__).resolve().parent/(sys.argv[3] if len(sys.argv) > 3 else 'cpu-v2'); assert kind in ('grammar', 'fixture', 'census') and mode in ('start', 'observe')
 j = json.loads((A/'freeze-summary.json').read_bytes())['jobs'][kind]
 base = f"from pathlib import Path\nimport json,sys\np=Path('/home/chaw/patent-to-pilot-jobs/{j['job']}')\n"
 if mode == 'start':
@@ -23,7 +23,7 @@ try:r['container_state']=Engine().inspect(p.name)['State']
 except EngineError as error:
  if error.status!=404:raise
  r['container_state']='NOT_CREATED'
-for key,loc in [('terminal','terminal.json'),('isolation_status','isolation.json'),('qualification','out/attempt/qualification.json'),('receipt','out/receipt.json'),('completion','out/attempt/completion.json'),('worker_failure','out/attempt/failure.json')]:
+for key,loc in [('terminal','terminal.json'),('isolation_status','isolation.json'),('qualification','out/attempt/qualification.json'),('receipt','out/receipt.json'),('completion','out/attempt/completion.json'),('aggregate','out/attempt/aggregate.json'),('worker_failure','out/attempt/failure.json')]:
  if (p/loc).exists():
   v=json.loads((p/loc).read_bytes())
   r[key]=v.get('status') if key=='isolation_status' else v
