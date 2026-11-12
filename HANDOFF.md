@@ -1,5 +1,23 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Native SACR pilot-20 v1: GPU OOM on query 3 (engineering); settled; owner decision needed 2026-11-13T00:05+07:00
+
+ptp-auto-native-sacr-pilot20-20261112-v1 exited 1 with a CUDA OutOfMemoryError during query 3 marking (input 6329 tokens; V100 32GB) after 267.6s.
+- Queries 1 and 2 both completed with USE_SCREENED_CANDIDATE (marking 3423 and 5773 input tokens).
+- Peak memory: 18.7GiB and 24.3GiB, growing super-linearly. The 8192-token admission limit is not memory-safe for marking prompts on this GPU.
+- 17 queries were never started.
+
+Settled once at generation 56: 268s GPU and fidelity.
+
+Correction: the settle script under-counted known calls as 0, because native records are nested one level deeper. The true count is 4 normal returns + 1 unknown dispatch. The journal is not re-settled; the ledger model_calls stays a lower bound. The glob is fixed. Receipt: takeover-20261112/native-sacr-pilot20/native-result.json.
+
+The SACR pilot retrieval details (prefix, anchor control) were frozen beforehand in NATIVE-STAGES-20261112.md.
+
+Proposed fix, needing owner OK for a revised native attempt: compact the marking payload (token texts only, positions by index) to shrink prompts, plus a measured memory-safe admission cap (e.g. ≤5800 input tokens, with INPUT_LIMIT -> fallback kept in the denominator). Then CPU re-qualification and a native v2 run on the same pilot-20.
+
+CPU remaining ~31.6ks; GPU ~187.4h; nothing running; journal generation 56, IDLE.
+
+
 ## Native SACR fidelity (pilot-20) qualified; launching 2026-11-12T23:30+07:00
 
 Journal stages extended: append-only stage envelopes plus predecessor gates (synthetic -> fidelity -> pilot -> full_dev). 290 tests PASS.

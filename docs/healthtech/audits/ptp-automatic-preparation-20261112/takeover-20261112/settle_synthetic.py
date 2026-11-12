@@ -34,7 +34,7 @@ except EngineError as e:
  state=None
 out=p/'out/attempt'
 markers=sorted(x.name for x in out.glob('call-*.json')) if out.exists() else []
-gens=sorted(str(x.relative_to(out)) for x in out.glob('backend/*/generation.json')) if out.exists() else []
+gens=sorted(str(x.relative_to(out)) for x in out.glob('backend/**/generation.json')) if out.exists() else []
 completion=rd('out/attempt/completion.json');failure=rd('out/attempt/failure.json')
 worker_cpu=(completion or failure or {}).get('process_cpu_seconds')
 files={}

@@ -1,0 +1,46 @@
+{
+  "status": "FAILED_ENGINEERING_GPU_OOM_PARTIAL",
+  "attempt_id": "ptp-auto-native-sacr-pilot20-20261112-v1",
+  "exit_code": 1,
+  "oom_killed_container": false,
+  "exception": "torch OutOfMemoryError (CUDA) during query 3 marking generation",
+  "whole_wall_seconds": 267.62208980400464,
+  "charged_gpu_and_fidelity_seconds": 268,
+  "host_cpu_telemetry_seconds": 261.291922179,
+  "call_slots_consumed": 5,
+  "calls_actual": {
+    "normal_returns": 4,
+    "unknown_dispatch": 1,
+    "journal_recorded_known_calls": 0,
+    "correction": "settle script globbed backend/*/generation.json; native layout is backend/qNNN/<stage>/generation.json, so 4 normal returns were recorded as 0 known calls. Journal is append-only and was not re-settled; the ledger call count stays a (now looser) lower bound. Glob fixed for future settlements."
+  },
+  "processed_queries": {
+    "q000": {
+      "decision": "USE_SCREENED_CANDIDATE",
+      "marking_in": 3423,
+      "review_in": 1276
+    },
+    "q001": {
+      "decision": "USE_SCREENED_CANDIDATE",
+      "marking_in": 5773,
+      "review_in": 1436
+    },
+    "q002": {
+      "decision": "HOLD (OOM during marking)",
+      "marking_in": 6329
+    }
+  },
+  "not_started_queries": 17,
+  "memory": {
+    "q000_marking_peak_gib": 18.71,
+    "q001_marking_peak_gib": 24.33,
+    "gpu": "Tesla V100-SXM2-32GB",
+    "admission_max_input_tokens": 7971,
+    "diagnosis": "eager attention + KV cache grow super-linearly with sequence length; the 8192-token admission limit is not memory-safe on this GPU for marking prompts (KM + worked examples + per-token offset catalogue)"
+  },
+  "retry": "none; a revised native attempt requires owner approval",
+  "journal": {
+    "generation": 56,
+    "study_status": "IDLE"
+  }
+}

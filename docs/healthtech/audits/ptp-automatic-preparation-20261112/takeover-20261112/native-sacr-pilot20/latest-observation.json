@@ -1,0 +1,40 @@
+{
+  "job": "ptp-auto-native-sacr-pilot20-20261112-v1",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 3604327,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T12:03:18.767629155Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-native-sacr-pilot20-20261112-v1",
+    "generation": 55
+  },
+  "input_admission": {
+    "over_limit": 0,
+    "max_input_tokens": 7971,
+    "queries": 20,
+    "model_calls": 0
+  },
+  "loaded_runtime": {
+    "model_class": "Qwen3ForCausalLM",
+    "dtype": "torch.float16",
+    "device": "cuda:0",
+    "attention": "eager"
+  },
+  "call_markers": [
+    "call-1.json",
+    "call-2.json",
+    "call-3.json",
+    "call-4.json"
+  ]
+}

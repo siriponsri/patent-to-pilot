@@ -1,0 +1,72 @@
+{
+  "job": "ptp-auto-native-sacr-pilot20-20261112-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 1,
+    "Error": "",
+    "StartedAt": "2026-11-12T12:03:18.767629155Z",
+    "FinishedAt": "2026-11-12T12:07:45.121882991Z"
+  },
+  "terminal": {
+    "attempt_id": "ptp-auto-native-sacr-pilot20-20261112-v1",
+    "container_name": "ptp-auto-native-sacr-pilot20-20261112-v1",
+    "retry": false,
+    "declaration_sha256": "34873597968caa833a571c89f2efd4f9d49dd668520686fe1f4a2272fbd9fff0",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 1,
+      "Error": "",
+      "StartedAt": "2026-11-12T12:03:18.767629155Z",
+      "FinishedAt": "2026-11-12T12:07:45.121882991Z"
+    },
+    "whole_wall_seconds": 267.62208980400464,
+    "controller_cpu_seconds": 1.028098094,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-native-sacr-pilot20-20261112-v1",
+    "generation": 55
+  },
+  "input_admission": {
+    "over_limit": 0,
+    "max_input_tokens": 7971,
+    "queries": 20,
+    "model_calls": 0
+  },
+  "loaded_runtime": {
+    "model_class": "Qwen3ForCausalLM",
+    "dtype": "torch.float16",
+    "device": "cuda:0",
+    "attention": "eager"
+  },
+  "worker_failure": {
+    "exception_type": "OutOfMemoryError",
+    "call_slots_consumed": 5,
+    "process_cpu_seconds": 260.263824085,
+    "retry": false,
+    "cost_status": "CONTROLLER_AND_DIAGNOSTICS_RECONCILIATION_REQUIRED"
+  },
+  "call_markers": [
+    "call-1.json",
+    "call-2.json",
+    "call-3.json",
+    "call-4.json",
+    "call-5.json"
+  ]
+}
