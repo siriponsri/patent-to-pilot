@@ -28,8 +28,9 @@ def configuration(job, stop, digest):
 def main(pin):
     import resource
     job = Path(__file__).resolve().parent
-    if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in ('ptp-auto-native-sacr-pilot20-20261112-v1', 'ptp-auto-native-sacr-pilot20-20261112-v2', 'ptp-auto-native-sacr-pilot20-20261112-v3',
-                                                     'ptp-auto-native-sacr-pilot20-20261112-v4', 'ptp-auto-native-sacr-pilot20-20261112-v5'):
+    allowed = (tuple('ptp-auto-native-sacr-pilot20-20261112-v%d' % v for v in range(1, 6))
+               + tuple('ptp-auto-native-sacr-fulldev-b%d-20261113-v1' % b for b in range(1, 7)))
+    if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in allowed:
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))
     resource.setrlimit(resource.RLIMIT_CPU, (60,60))
@@ -44,7 +45,7 @@ def main(pin):
         raw = (job / 'dispatch/declaration.json').read_bytes()
         if hashlib.sha256(raw).hexdigest() != pin: raise RuntimeError('declaration changed')
         d = json.loads(raw)
-        if d['attempt_id'] != job.name or d['stage'] != 'fidelity' or d['maximum_calls'] > 2 * d['queries']:
+        if d['attempt_id'] != job.name or d['stage'] not in ('fidelity', 'full_dev') or d['maximum_calls'] > 2 * d['queries']:
             raise RuntimeError('native declaration mismatch')
         sys.path.insert(0, str(job/'code/src'))
         from patent_to_pilot.research.automatic_dispatch_journal import AutomaticDispatchJournal

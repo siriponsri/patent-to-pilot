@@ -1,0 +1,16 @@
+{
+  "status": "OWNER_APPROVED_SACR_FULL_DEV_AND_GRAPH_SCREENING",
+  "date": "2026-11-13",
+  "owner_answer": "Proceed with both",
+  "question": "Proceed with SACR full-dev (474 queries, ~13 h GPU) and Graph screening?",
+  "plan": {
+    "sacr_full_dev": "474 dev queries, frozen configuration identical to native v5 (stage full_dev), 6 batches x 79 queries, each <=158 calls and <=10800 s; then full-dev retrieval + evaluation",
+    "graph": "frozen 300-relation screening sample (NATIVE-STAGES-20261112) then pilot S/G/S-deep fused with B0; post-hoc G2 override disclosed"
+  },
+  "unchanged": [
+    "one GPU job at a time",
+    "no protected test access",
+    "no paid API/training/re-encoding/Neo4j writes/full-corpus LLM extraction",
+    "no outcome-driven retry"
+  ]
+}

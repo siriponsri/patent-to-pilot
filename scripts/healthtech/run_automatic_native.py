@@ -32,7 +32,8 @@ def main():
     if type(d.get('cpu_seconds')) is not int or d['cpu_seconds'] <= 60:
         raise RuntimeError('aggregate worker/controller CPU reservation required')
     resource.setrlimit(resource.RLIMIT_CPU, (d['cpu_seconds']-60, d['cpu_seconds']-60))
-    if d['stage'] != 'fidelity' or d['maximum_calls'] > 2 * d['queries'] or d['seconds'] > 3600:
+    if (d['stage'] not in ('fidelity', 'full_dev') or d['maximum_calls'] > 2 * d['queries']
+            or d['seconds'] > (3600 if d['stage'] == 'fidelity' else 10800)):
         raise RuntimeError('native fidelity contract required')
     validate_deadline(stop, time.monotonic(), d['seconds'])
     validate_worker_package(ROOT, d['files_sha256'], d['package_sha256'])

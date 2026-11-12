@@ -120,6 +120,27 @@ class AutomaticDispatchJournal(DispatchJournal):
             db.execute('UPDATE head SET generation=?,scope=?', (head[1] + 1, encoded(scope)))
         return {'status': 'AUTHORITY_AMENDED', 'generation': expected_generation + 1, 'scope': scope}
 
+    def initialize_full_dev_accounting(self, *, expected_generation, receipt, receipt_sha256):
+        """One-time: full_dev_charged_seconds = 0, only when absent and full_dev_started is False.
+
+        claim() refuses full_dev without explicit prior accounting; this records it instead of
+        treating a missing value as zero. Replay or reset is rejected.
+        """
+        require(digest(receipt_sha256) and document_hash(receipt) == receipt_sha256, 'receipt pin changed')
+        require(receipt.get('kind') == 'FULL_DEV_ACCOUNTING_INIT' and digest(receipt.get('owner_approval_sha256'))
+                and digest(receipt.get('evidence_sha256')), 'owner approval and evidence required')
+        with self.transaction() as (db, head):
+            require(head[1] == expected_generation and head[4] is None, 'stale or active journal')
+            ledger = json.loads(head[2])
+            require(document_hash(ledger) == receipt.get('prior_ledger_sha256'), 'accounting baseline changed')
+            require('full_dev_charged_seconds' not in ledger and ledger.get('full_dev_started') is False,
+                    'full-dev accounting already initialized or prior full-dev not excluded')
+            ledger['full_dev_charged_seconds'] = 0
+            ledger['full_dev_accounting_init_receipt_sha256'] = receipt_sha256
+            db.execute('INSERT INTO automatic_transitions VALUES (?,?,?)', (head[1] + 1, 'FULL_DEV_ACCOUNTING_INIT', encoded(receipt)))
+            db.execute('UPDATE head SET generation=?,ledger=?', (head[1] + 1, encoded(ledger)))
+        return {'status': 'FULL_DEV_ACCOUNTING_INITIALIZED', 'generation': expected_generation + 1, 'ledger': ledger}
+
     def adopt_scope(self, *, expected_generation, authority, authority_sha256):
         require(type(expected_generation) is int and expected_generation >= 0, 'invalid generation')
         require(digest(authority_sha256) and document_hash(authority) == authority_sha256,

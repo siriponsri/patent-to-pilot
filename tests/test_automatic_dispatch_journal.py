@@ -262,3 +262,20 @@ def test_native_stage_needs_envelope_and_settled_predecessor(tmp_path):
     qualify('ptp-auto-f2', 'fidelity', 'b', 'ptp-auto-s1')           # same config split across jobs is allowed
     with pytest.raises(InputBoundaryError):
         qualify('ptp-auto-p1', 'pilot', 'c', 'ptp-auto-f1')          # pilot envelope absent; fidelity not settled
+
+
+def test_full_dev_accounting_initializes_once_only_when_never_started(tmp_path):
+    path, journal, authority, ledger, _ = setup_journal(tmp_path)
+    with sqlite3.connect(path) as db:
+        from patent_to_pilot.research.r6_dispatch_journal import encoded
+        ledger['full_dev_started'] = False
+        db.execute('UPDATE head SET ledger=?', (encoded(ledger),))
+    journal.adopt_scope(expected_generation=0, authority=dict(authority, prior_ledger_sha256=document_hash(ledger)),
+                        authority_sha256=document_hash(dict(authority, prior_ledger_sha256=document_hash(ledger))))
+    r = {'kind': 'FULL_DEV_ACCOUNTING_INIT', 'owner_approval_sha256': 'e'*64, 'evidence_sha256': 'f'*64,
+         'prior_ledger_sha256': document_hash(ledger)}
+    out = journal.initialize_full_dev_accounting(expected_generation=1, receipt=r, receipt_sha256=document_hash(r))
+    assert out['ledger']['full_dev_charged_seconds'] == 0 and out['generation'] == 2
+    r2 = dict(r, prior_ledger_sha256=document_hash(out['ledger']))
+    with pytest.raises(InputBoundaryError):
+        journal.initialize_full_dev_accounting(expected_generation=2, receipt=r2, receipt_sha256=document_hash(r2))
