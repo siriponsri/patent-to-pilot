@@ -30,7 +30,7 @@ def main():
         model = Path('/models/qwen3-8b')
         # Only tokenizer files are inspected; model tensors are never opened.
         for name, expected in d['tokenizer_files_sha256'].items():
-            if name not in ('tokenizer.json','tokenizer_config.json','special_tokens_map.json','config.json'):
+            if name not in ('tokenizer.json','tokenizer_config.json','special_tokens_map.json','config.json','vocab.json','merges.txt'):
                 raise RuntimeError('non-tokenizer file in CPU manifest')
             if hashlib.sha256((model/name).read_bytes()).hexdigest() != expected:
                 raise RuntimeError('tokenizer file changed')

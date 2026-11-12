@@ -17,7 +17,7 @@ def configuration(job, stop, pin, tokenizer_files):
     mounts = [m for m in mounts if m[1] != '/input/corpus.jsonl']
     mounts.append((BASE/'venv/lib/python3.12/site-packages','/deps',True))
     for name in tokenizer_files:
-        if name not in ('tokenizer.json','tokenizer_config.json','special_tokens_map.json','config.json'):
+        if name not in ('tokenizer.json','tokenizer_config.json','special_tokens_map.json','config.json','vocab.json','merges.txt'):
             raise RuntimeError('weight or unknown tokenizer mount prohibited')
         mounts.append((BASE/'models/qwen3-8b'/name,'/models/qwen3-8b/'+name,True))
     host=config['HostConfig'];host['NanoCpus']=1_000_000_000
