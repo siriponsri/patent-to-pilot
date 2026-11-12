@@ -12,6 +12,7 @@ from .r6_admission import digest
 from .r6_dispatch_journal import DispatchJournal, document_hash, encoded
 
 
+PREDECESSOR = {'fidelity': 'synthetic', 'pilot': 'fidelity', 'full_dev': 'pilot'}  # NATIVE-STAGES-20261112
 MAX_ADDITIONAL_SYNTHETIC = 2  # per owner-approved round (round-1: "Approve, max 2"; round-2 default 2)
 
 
@@ -26,7 +27,7 @@ class AutomaticDispatchJournal(DispatchJournal):
         require(type(expected_generation) is int and expected_generation >= 0, 'invalid generation')
         require(digest(receipt_sha256) and document_hash(receipt) == receipt_sha256, 'qualification pin changed')
         declaration = receipt.get('declaration', {})
-        require(declaration.get('stage') == 'synthetic', 'later-stage qualification not implemented')
+        require(declaration.get('stage') in ('synthetic',) + tuple(PREDECESSOR), 'unknown stage')
         require(digest(declaration.get('operation_sha256')), 'operation identity missing')
         with self.transaction() as (db, head):
             require(head[1] == expected_generation and head[4] is None, 'stale or active qualification')
@@ -36,7 +37,16 @@ class AutomaticDispatchJournal(DispatchJournal):
             require(receipt.get('authority_sha256') == study['authority_sha256'] == document_hash(authority)
                     and receipt.get('ledger_sha256') == document_hash(ledger)
                     and receipt.get('scope_sha256') == document_hash(scope), 'qualification baseline changed')
-            policy = authority.get('stage_envelopes', {}).get('synthetic', {})
+            envelopes = dict(authority.get('stage_envelopes', {}))
+            for amendment in study.get('authority_amendments', []):
+                envelopes.update(amendment.get('add_stage_envelopes', {}))
+            stage = declaration['stage']
+            policy = envelopes.get(stage, {})
+            require(policy, 'stage envelope not authorized')
+            if stage != 'synthetic':
+                pred = study.get('stage_costs', {}).get(declaration.get('predecessor_attempt_id'))
+                require(pred is not None and pred.get('stage') == PREDECESSOR[stage] and pred.get('calls_complete') is True,
+                        'settled technical predecessor required')
             for field in ('seconds', 'maximum_calls'):
                 require(type(declaration.get(field)) is int and declaration[field] > 0
                         and type(policy.get(field)) is int and declaration[field] <= policy[field],
@@ -46,11 +56,13 @@ class AutomaticDispatchJournal(DispatchJournal):
             for amendment in amendments: allowed += amendment['add_configuration_sha256']
             require(declaration.get('configuration_sha256') in allowed,
                     'configuration outside approved authority')
-            prior = [d for d in study['qualified_dispatches'].values() if d.get('stage') == 'synthetic']
-            require(len(prior) < 1 + sum(a['additional_synthetic_attempts'] for a in amendments),
-                    'synthetic attempt allowance exhausted')
-            require(all(d.get('configuration_sha256') != declaration['configuration_sha256'] for d in prior),
-                    'synthetic configuration already attempted')
+            prior = [d for d in study['qualified_dispatches'].values() if d.get('stage') == stage]
+            if stage == 'synthetic':
+                require(len(prior) < 1 + sum(a['additional_synthetic_attempts'] for a in amendments),
+                        'synthetic attempt allowance exhausted')
+                require(all(d.get('configuration_sha256') != declaration['configuration_sha256'] for d in prior),
+                        'synthetic configuration already attempted')
+            # Native stages may split one configuration across jobs; operation identity stays unique.
             attempt = declaration.get('attempt_id')
             require(type(attempt) is str and attempt.startswith('ptp-auto-'), 'invalid attempt')
             require(attempt not in study['qualified_dispatches']
@@ -73,9 +85,13 @@ class AutomaticDispatchJournal(DispatchJournal):
         require(type(expected_generation) is int and expected_generation >= 0, 'invalid generation')
         require(digest(receipt_sha256) and document_hash(receipt) == receipt_sha256, 'amendment pin changed')
         adds = receipt.get('add_configuration_sha256'); extra = receipt.get('additional_synthetic_attempts')
+        new_env = receipt.get('add_stage_envelopes', {})
+        require(type(new_env) is dict and set(new_env) <= set(PREDECESSOR) and all(
+            type(v) is dict and set(v) == {'seconds', 'maximum_calls'} and all(type(x) is int and x > 0 for x in v.values())
+            for v in new_env.values()), 'invalid stage envelopes')
         require(receipt.get('kind') == 'AUTHORITY_AMENDMENT' and digest(receipt.get('owner_approval_sha256'))
                 and digest(receipt.get('evidence_sha256')), 'owner amendment evidence missing')
-        require(type(adds) is list and adds and all(digest(a) for a in adds) and len(set(adds)) == len(adds)
+        require(type(adds) is list and (adds or new_env) and all(digest(a) for a in adds) and len(set(adds)) == len(adds)
                 and type(extra) is int and 0 <= extra <= MAX_ADDITIONAL_SYNTHETIC, 'invalid amendment content')
         with self.transaction() as (db, head):
             require(head[1] == expected_generation and head[4] is None, 'stale or active amendment')
@@ -89,12 +105,15 @@ class AutomaticDispatchJournal(DispatchJournal):
             known = list(authority.get('configuration_sha256', []))
             for a in amendments: known += a['add_configuration_sha256']
             require(not set(adds) & set(known), 'configuration already authorized')
+            defined = set(authority.get('stage_envelopes', {}))
+            for am in amendments: defined |= set(am.get('add_stage_envelopes', {}))
+            require(not set(new_env) & defined, 'stage envelope already defined')
             round_id = receipt.get('round', 'round-1')
             require(type(round_id) is str and round_id, 'round identity required')
             require(sum(a['additional_synthetic_attempts'] for a in amendments if a.get('round', 'round-1') == round_id)
                     + extra <= MAX_ADDITIONAL_SYNTHETIC, 'synthetic revision cap exceeded')
             amendments.append({'receipt_sha256': receipt_sha256, 'add_configuration_sha256': list(adds),
-                               'additional_synthetic_attempts': extra, 'round': round_id,
+                               'additional_synthetic_attempts': extra, 'round': round_id, 'add_stage_envelopes': new_env,
                                'generation': head[1] + 1})
             db.execute('INSERT INTO automatic_transitions VALUES (?,?,?)',
                        (head[1] + 1, 'AUTHORITY_AMENDMENT', encoded(receipt)))
@@ -151,7 +170,6 @@ class AutomaticDispatchJournal(DispatchJournal):
         d = declaration
         require(d.get('retry') is False and d.get('stage') in ('synthetic', 'fidelity', 'pilot', 'full_dev'),
                 'unknown stage or replay')
-        require(d['stage'] == 'synthetic', 'later stages await explicit technical predecessor gates')
         require(type(d.get('attempt_id')) is str and d['attempt_id'].startswith('ptp-auto-'), 'attempt identity')
         require(type(d.get('maximum_calls')) is int and d['maximum_calls'] > 0,
                 'explicit positive call ceiling required')

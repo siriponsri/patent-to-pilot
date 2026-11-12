@@ -230,3 +230,35 @@ def test_new_owner_round_gets_its_own_capped_allowance(tmp_path):
     with pytest.raises(InputBoundaryError):
         amend(['5'], 1, 'round-2')
     assert [a['round'] for a in state['automatic_study']['authority_amendments']] == ['round-1', 'round-2']
+
+
+def test_native_stage_needs_envelope_and_settled_predecessor(tmp_path):
+    path, journal, authority, ledger, _ = setup_journal(tmp_path)
+    authority.update(stage_envelopes={'synthetic': {'seconds': 1800, 'maximum_calls': 2}}, configuration_sha256=['1'*64])
+    pin = document_hash(authority)
+    state = journal.adopt_scope(expected_generation=0, authority=authority, authority_sha256=pin)['scope']; gen = 1
+    def qualify(attempt, stage, op, pred=None, config='1'):
+        nonlocal state, gen
+        d = {'attempt_id': attempt, 'operation_sha256': op*64, 'stage': stage, 'configuration_sha256': config*64,
+             'seconds': 1800, 'maximum_calls': 2}
+        if pred: d['predecessor_attempt_id'] = pred
+        r = {'declaration': d, 'authority_sha256': pin, 'ledger_sha256': document_hash(ledger), 'scope_sha256': document_hash(state)}
+        state = journal.qualify_stage(expected_generation=gen, receipt=r, receipt_sha256=document_hash(r))['scope']; gen += 1
+    with pytest.raises(InputBoundaryError):
+        qualify('ptp-auto-f1', 'fidelity', 'a', 'ptp-auto-s1')      # no envelope yet
+    r = {'kind': 'AUTHORITY_AMENDMENT', 'owner_approval_sha256': 'e'*64, 'evidence_sha256': 'f'*64,
+         'add_configuration_sha256': [], 'additional_synthetic_attempts': 0, 'round': 'native',
+         'add_stage_envelopes': {'fidelity': {'seconds': 3600, 'maximum_calls': 40}},
+         'authority_sha256': pin, 'ledger_sha256': document_hash(ledger), 'scope_sha256': document_hash(state)}
+    state = journal.amend_authority(expected_generation=gen, receipt=r, receipt_sha256=document_hash(r))['scope']; gen += 1
+    with pytest.raises(InputBoundaryError):
+        qualify('ptp-auto-f1', 'fidelity', 'a', 'ptp-auto-s1')      # predecessor not settled
+    # simulate a settled, complete synthetic attempt (settlement itself is covered elsewhere)
+    with sqlite3.connect(path) as db:
+        from patent_to_pilot.research.r6_dispatch_journal import encoded
+        state['automatic_study']['stage_costs']['ptp-auto-s1'] = {'stage': 'synthetic', 'calls_complete': True, 'seconds': 10}
+        db.execute('UPDATE head SET scope=?', (encoded(state),))
+    qualify('ptp-auto-f1', 'fidelity', 'a', 'ptp-auto-s1')
+    qualify('ptp-auto-f2', 'fidelity', 'b', 'ptp-auto-s1')           # same config split across jobs is allowed
+    with pytest.raises(InputBoundaryError):
+        qualify('ptp-auto-p1', 'pilot', 'c', 'ptp-auto-f1')          # pilot envelope absent; fidelity not settled
