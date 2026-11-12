@@ -1,0 +1,36 @@
+{
+  "status": "ENGINEERING_PASS_MARKING_REJECTED_FALLBACK",
+  "attempt_id": "ptp-auto-synthetic-20261112-v2",
+  "exit_code": 0,
+  "oom_killed": false,
+  "whole_wall_seconds": 258.18439886799024,
+  "charged_gpu_and_fidelity_seconds": 259,
+  "host_cpu_telemetry_seconds": 255.739112608,
+  "calls": {
+    "consumed": 1,
+    "normal_returns": 1,
+    "calls_complete": true
+  },
+  "marking": {
+    "input_tokens": 2280,
+    "output_tokens": 2610,
+    "gpu_seconds": 203.08,
+    "peak_memory_bytes": 18184020480,
+    "status": "EOS_COMPLETE"
+  },
+  "decision": {
+    "action": "ORIGINAL_QUERY_FALLBACK",
+    "screening": "invalid_output",
+    "reason": "MARKING_REJECTED",
+    "semantic_certified": false
+  },
+  "observed_output": "well-formed JSON; model degenerated into repeating the identical mark [40,41] entity/uncertain up to the item cap; every mark attachment uncertain; no condition/exception/quantity/negation roles",
+  "engineering_conclusion": "end-to-end path qualified on GPU: claim, isolation, model load, input admission, grammar, normal EOS, durable records, validation and declared fallback all behaved as specified",
+  "method_conclusion": "marking quality on this authored synthetic example failed; one example, not a rate estimate; not tuned or retried",
+  "throughput": "~12.9 output tokens/s; one marking call ~203 s GPU",
+  "journal": {
+    "generation": 21,
+    "study_status": "IDLE"
+  },
+  "remaining_synthetic_revisions": 1
+}

@@ -1,0 +1,24 @@
+{
+  "attempt_id": "ptp-auto-synthetic-20261112-v2",
+  "container_name": "ptp-auto-synthetic-20261112-v2",
+  "declaration_sha256": "396cb7de37431dbb8eaaa813f15df19947eb499c5f1ced0e4e236b313dfacb1f",
+  "whole_wall_seconds": 258.18439886799024,
+  "known_model_calls": 1,
+  "calls_complete": true,
+  "cost_evidence_sha256": "f90d37bed081dc637bde5e0ec0392f6855e3158b97b2e09ba734728036b0d967",
+  "aggregate_cpu_seconds": 255.739112608,
+  "aggregate_cpu_basis": "worker process_cpu + controller",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T10:57:41.377030155Z",
+    "FinishedAt": "2026-11-12T11:01:58.383757902Z"
+  }
+}

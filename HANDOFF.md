@@ -1,5 +1,16 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Synthetic v2: engineering PASS, marking rejected -> fallback; settled 2026-11-12T19:05+07:00
+
+ptp-auto-synthetic-20261112-v2 exited 0 (no OOM) after 258.2s wall. The marking call returned normally (EOS): 2280 input and 2610 output tokens, 203s GPU, peak 18.2GB. The output was well-formed but degenerate: the identical mark [40,41] entity/uncertain was repeated up to the item cap, every attachment was uncertain, and there were no condition/exception/quantity roles. Post-hoc validation rejected it (MARKING_REJECTED) and the declared ORIGINAL_QUERY_FALLBACK was applied; the review stage was not reached.
+
+Engineering: the end-to-end GPU path is qualified. Method: marking quality failed on this one authored example. This is not a rate estimate; there was no tuning and no retry.
+
+Settled once at generation 21 (study IDLE, GPU idle): 259s to GPU and fidelity, 1 known complete call. Cumulative: GPU charged 15711.61s; fidelity remaining 214967.27s; model_calls 133 (lower bound). A local mirror-check bug after the remote settlement (the telemetry key was not whitelisted) was fixed; the rerun only verified (applied_now false).
+
+1 revised synthetic attempt (v3) remains under the owner cap. Native SACR/Graph stages still need: later-stage qualification code, a stage-envelope amendment with call caps, and live admission for non-synthetic stages. Measured throughput: ~12.9 output tokens/s.
+
+
 ## Owner approved max 2 revised synthetic smokes; v2 qualified, launching 2026-11-12T18:50+07:00
 
 The owner answered "Approve, max 2" (owner-synthetic-revision-approval.json): at most 2 revised synthetic GPU attempts, ≤2 calls and ≤1800s each, never the same configuration twice; stop if both fail.

@@ -1,0 +1,93 @@
+{
+  "supervisor_terminal": {
+    "attempt_id": "ptp-auto-synthetic-20261112-v2",
+    "container_name": "ptp-auto-synthetic-20261112-v2",
+    "retry": false,
+    "declaration_sha256": "396cb7de37431dbb8eaaa813f15df19947eb499c5f1ced0e4e236b313dfacb1f",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T10:57:41.377030155Z",
+      "FinishedAt": "2026-11-12T11:01:58.383757902Z"
+    },
+    "whole_wall_seconds": 258.18439886799024,
+    "controller_cpu_seconds": 0.625824762,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "docker_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T10:57:41.377030155Z",
+    "FinishedAt": "2026-11-12T11:01:58.383757902Z"
+  },
+  "call_markers": [
+    "call-1.json"
+  ],
+  "normal_return_records": [
+    "backend/marking/generation.json"
+  ],
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "decision": {
+      "policy": "automatic-screening-v1",
+      "action": "ORIGINAL_QUERY_FALLBACK",
+      "screening": "invalid_output",
+      "semantic_certified": false,
+      "human_review_required": false
+    },
+    "call_slots_consumed": 1,
+    "wall_seconds": 254.35507305100327,
+    "process_cpu_seconds": 255.113287846,
+    "semantic_certified": false
+  },
+  "failure": null,
+  "file_sha256": {
+    "__pycache__/r3_engine_client.cpython-312.pyc": "760bdac0560dc9903e558417957c992cbc189aac40502216bcd21a3ce46e0938",
+    "__pycache__/supervise_sacr_r5_engine.cpython-312.pyc": "a3ebf6b5c8e4ef54e34e1977315f09bf01410c5aeae52b8eacbf7357891bb6f8",
+    "admission.json": "b5446934bb72815631e0a59429d3c5398d1c931c236395afb8535b9b37b1ea09",
+    "controller.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch/declaration.json": "754308a2983ea08ae1c56aa3fd0378ab52b68637e155a30f84719aa32a71879c",
+    "dispatch/gates.json": "3b2b2cc3c0571342ed7e1604c2dc51554711f0059bc60404dda65f8d02d84475",
+    "dispatch/task.json": "63311566bfe61569edd277fb18ed1b9415a8683177ae3a368cad526e516d6f8e",
+    "global-dispatch.json": "1c6c1e086590381d57b83ada6d6a53c0cfb8088e163c36aa8b5148c477b587c1",
+    "isolation.json": "2d64147b08999438ccb3dd37beeb65c52f02edfd9672b941c84ab56acdff9ab5",
+    "launch.json": "37a202c46fed4eed09625f7135180fe562c77723d3996815d6ef9c96343f49e2",
+    "out/attempt/backend/marking/generation-binding.json": "98e5769d9d772a2930f37cfa87e80a3e5123d107589c9efdaf44c00aa52dec3f",
+    "out/attempt/backend/marking/generation.json": "74fb3a17dc37ef358d704b8302a5f624b50fbbc6edaf85f50c961791154ee154",
+    "out/attempt/backend/marking/reservation.json": "a1ec620e172a3bcbd375fd1adbe85472a5809b060a8e19bbf5d334f99b2fed73",
+    "out/attempt/backend/marking-diagnostics-private/backend-dispatch.json": "27b07c6a6393942a9e5a1794b84af954dcdef69b26cf0f2742786f406bc504b6",
+    "out/attempt/backend/marking-diagnostics-private/backend-return.json": "a0a7e13a69ce362345c0871fa4f680dcdb7ae1882fe6b6d5d66060a7fdf4c8ce",
+    "out/attempt/before-model-input-admission.json": "cf60e269795861c4b34913c1173981b805044c79836e31c4e9d584152b7ed189",
+    "out/attempt/call-1.json": "8e887ab6334de2180695bb740214ecea1a514357e3b6dacde3cf11d4281f81ac",
+    "out/attempt/completion.json": "d93f5c4f1c0c1ec478717b25c9548d169cbd4caf5805e2a24242b8a67a2d4a51",
+    "out/attempt/loaded-runtime.json": "a0b12377493b0228cbcd75a4d16f4a64aa71c10d371eeb4b63fe23f044d2c704",
+    "out/attempt/marking-grammar-private.json": "be49b31df6d51cf1d3233cfd9f0c782849715f07d24366a7fcaf664ac63b3a53",
+    "out/attempt/query/input.json": "183d04126430648dd8bea046b3efbc6d5ec43717a108a07f477c5372632db693",
+    "out/attempt/query/marking-dispatch.json": "e980da6ebc63b5064e309d5f131a2dfbb66234bbc9ecc6e03226c5177a4ecc8b",
+    "out/attempt/query/marking-generation.json": "74fb3a17dc37ef358d704b8302a5f624b50fbbc6edaf85f50c961791154ee154",
+    "out/attempt/query/marking-metrics.json": "cd057c784abf5cf68cdc14adf95aa05da2b6b2286225fc5bc01b82fae529ae86",
+    "out/attempt/query/marking-request.json": "9ab6a03d9c0dc4938481bb43846c1d871bc272c04eff4207d4ebe8733e3223ec",
+    "out/attempt/query/marking-terminal.json": "42a3f77150447f82d4eadd7b6b02a67018ec720ca7824d492f2083ce8fa751d2",
+    "out/attempt/query/result.json": "331d8287cc95ad455a9143118afdd40f6694f04d3403b26266694e882b9ae867",
+    "r3_engine_client.py": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+    "supervise_automatic_synthetic.py": "80f4a9bbbdddc8358250f36efd72eba523b7a18d1934e9f9683871b9578d6d4b",
+    "supervise_sacr_r5_engine.py": "2f9413b5eb0c870961a923132c13afbe6f045f425d41d14679f5ffca8f0a84e3",
+    "terminal.json": "6b03d848aa3b62157cfdc85c24b1303ab6b52ec815fe6b9755d6ff7e9f183555"
+  }
+}
