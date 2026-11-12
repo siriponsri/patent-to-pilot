@@ -1,5 +1,23 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## SACR round 2 done: v5 technical PASS (valid screen, flagged -> fallback); synthetic closed 2026-11-12T21:00+07:00
+
+v4 (marking v4 few-shot, review v1) ran 2 calls. The candidate was produced, but the review paraphrased quotes, so it was invalid and the query fell back; 198s.
+v5 (marking v4 + review v2 with quote enums of literal spans) produced a VALID screen: missing_requirement flagged because the candidate drops 'infusion pump comprising a reservoir and a controller'; the other 5 checks screened. Result: ORIGINAL_QUERY_FALLBACK, 153s, settled once at generation 43.
+
+The automatic SACR pipeline is technically qualified end to end. On the authored example there was no usable candidate (a real omission, correctly caught). Round-2 synthetic attempts are used up. Summary: takeover-20261112/SACR-SYNTHETIC-SUMMARY.json.
+
+CPU jobs now book 120s (worker 90 + controller 30, wall 110) instead of 600s.
+
+Totals:
+- GPU charged 16139.61s; fidelity remaining 214539.27s; model_calls 138 (lower bound).
+- CPU remaining ~4114s (minus the segment-13 local CPU, not yet booked).
+- Journal generation 43, IDLE; nothing running.
+
+Graph: protocol frozen (GRAPH-AUTOMATIC-ROUND-20261112.md); operators S/G/S-deep implemented (sg_automatic_traversal.py, tests). Next: CPU query-key coverage census, then the pilot-20 freeze.
+Native SACR also needs: later-stage journal qualification, a stage-envelope amendment with call caps (measured throughput: marking ~2585 in/327 out, review ~1200 in/580 out, ~150s wall per query including model load), and live admission.
+
+
 ## Parallel Graph + SACR round 2 approved; synthetic v4 qualified, launching 2026-11-12T20:15+07:00
 
 Owner: "อนุมัตติทำงานขนาน Graph และ New SACR round" (owner-parallel-round2-approval.json). Agent default for round 2: at most 2 synthetic attempts, ≤2 calls, ≤1800s each.

@@ -1,0 +1,46 @@
+{
+  "status": "TECHNICAL_PASS_VALID_SCREEN_FLAGGED_FALLBACK",
+  "attempt_id": "ptp-auto-synthetic-20261112-v5",
+  "exit_code": 0,
+  "whole_wall_seconds": 152.93287680100184,
+  "charged_gpu_and_fidelity_seconds": 153,
+  "host_cpu_telemetry_seconds": 149.54138611500002,
+  "calls": {
+    "consumed": 2,
+    "normal_returns": 2,
+    "calls_complete": true
+  },
+  "marking": {
+    "input_tokens": 2585,
+    "output_tokens": 327,
+    "candidate_available": true,
+    "note": "identical to v4 (greedy decoding, same marking prompt)"
+  },
+  "review": {
+    "input_tokens": 1203,
+    "output_tokens": 581,
+    "valid": true,
+    "flagged": [
+      "missing_requirement"
+    ],
+    "screened": [
+      "unsupported_addition",
+      "negation_modality",
+      "quantities_units",
+      "conditions_exceptions",
+      "roles_direction"
+    ]
+  },
+  "decision": {
+    "action": "ORIGINAL_QUERY_FALLBACK",
+    "screening": "flagged",
+    "reason": "AUTOMATIC_SCREEN_COMPLETED",
+    "semantic_certified": false
+  },
+  "conclusion": "automatic SACR pipeline technically qualified end to end (bounded marking, literal-span review, valid screening, declared fallback). On this one authored example the candidate omitted the claimed components and was correctly flagged. Not a semantic certification; not a rate.",
+  "round_2": "both synthetic attempts used (v4, v5); synthetic stage closed for round 2",
+  "journal": {
+    "generation": 43,
+    "study_status": "IDLE"
+  }
+}

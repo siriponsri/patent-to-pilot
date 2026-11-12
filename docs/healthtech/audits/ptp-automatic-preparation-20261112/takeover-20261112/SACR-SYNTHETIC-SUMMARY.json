@@ -1,0 +1,41 @@
+{
+  "title": "Automatic SACR synthetic qualification summary (12 Nov 2026)",
+  "attempts": [
+    {
+      "id": "v1",
+      "config": "marking v1 (min/max ints)",
+      "outcome": "ENGINEERING FAULT: LMFE ignores integer bounds; end_token out of range; EOS guard refused",
+      "gpu_s": 247
+    },
+    {
+      "id": "v2",
+      "config": "marking v2 (enumerated ints)",
+      "outcome": "degenerate repetition of one mark; rejected; fallback",
+      "gpu_s": 259
+    },
+    {
+      "id": "v3",
+      "config": "marking v3 (per-token fixed-length labels)",
+      "outcome": "complete abstention; fallback",
+      "gpu_s": 77
+    },
+    {
+      "id": "v4",
+      "config": "marking v4 (v3 + 2 authored worked examples), review v1",
+      "outcome": "candidate produced; review paraphrased quotes -> invalid; fallback",
+      "gpu_s": 198
+    },
+    {
+      "id": "v5",
+      "config": "marking v4, review v2 (literal-span quote enums)",
+      "outcome": "valid review; flagged missing_requirement (real omission); fallback",
+      "gpu_s": 153
+    }
+  ],
+  "total_gpu_and_fidelity_seconds": 934,
+  "model_calls_added": 6,
+  "unknown_dispatch": 1,
+  "technical_status": "SACR automatic pipeline qualified on GPU end to end",
+  "method_status": "no screened (usable) SACR candidate on the authored synthetic example; native fidelity/pilot not yet run",
+  "next": "native SACR screening and Graph need later-stage qualification code, stage-envelope amendment with call caps from measured throughput, and live admission"
+}
