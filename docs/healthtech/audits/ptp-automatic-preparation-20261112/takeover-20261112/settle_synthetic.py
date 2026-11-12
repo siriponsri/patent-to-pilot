@@ -7,10 +7,12 @@ at generation 14 it only verifies.
 from pathlib import Path
 import hashlib, json, subprocess, sys
 R = Path('C:/Users/User/Desktop/myProject/patent-to-pilot'); sys.path.insert(0, str(R/'src'))
-A = R/'docs/healthtech/audits/ptp-automatic-preparation-20261112/takeover-20261112'; S = A/'synthetic-job'
+A = R/'docs/healthtech/audits/ptp-automatic-preparation-20261112/takeover-20261112'
+NAME, SUB = (sys.argv[1], sys.argv[2]) if len(sys.argv) == 3 else ('ptp-auto-synthetic-20261112-v1', 'synthetic-job')
+S = A/SUB
 L = R/'docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/resource-ledger.json'
 from patent_to_pilot.research.r6_dispatch_journal import document_hash
-NAME = 'ptp-auto-synthetic-20261112-v1'; JOBS = '/home/chaw/patent-to-pilot-jobs'; JOB = JOBS + '/' + NAME
+JOBS = '/home/chaw/patent-to-pilot-jobs'; JOB = JOBS + '/' + NAME
 IDENTITY = '2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4'
 d = json.loads((S/'declaration.json').read_bytes())
 code = """import json,sys,sqlite3,hashlib,subprocess
@@ -52,11 +54,10 @@ term={'attempt_id':p.name,'container_name':p.name,'declaration_sha256':document_
 if state is None:term.update(container_outcome='NO_CONTAINER',create_request_sent=False)
 else:term['container_state']=state
 h=head();applied=False
-if h[0]==13:
- assert h[3]==p.name,'active attempt differs'
- AutomaticDispatchJournal(path,'""" + IDENTITY + """').reconcile(attempt_id=p.name,terminal=term,terminal_sha256=document_hash(term),expected_generation=13)
+if h[3]==p.name:
+ AutomaticDispatchJournal(path,'""" + IDENTITY + """').reconcile(attempt_id=p.name,terminal=term,terminal_sha256=document_hash(term),expected_generation=h[0])
  applied=True
-h=head();assert h[0]==14 and h[3] is None
+h=head();assert h[3] is None and p.name in json.loads(h[2])['automatic_study']['stage_costs']
 gpu=subprocess.run(['nvidia-smi','--query-compute-apps=pid,gpu_uuid','--format=csv,noheader'],capture_output=True,text=True,timeout=10,check=True).stdout
 scope=json.loads(h[2])
 print(json.dumps({'applied_now':applied,'generation':h[0],'terminal':term,'evidence':evidence,'ledger':json.loads(h[1]),

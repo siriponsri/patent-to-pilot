@@ -2,7 +2,8 @@
 Never restart on an observation timeout; inspect the same job instead."""
 from pathlib import Path
 import json, subprocess, sys
-A = Path(__file__).resolve().parent/'synthetic-job'
+import sys as _s
+A = Path(__file__).resolve().parent/(_s.argv[2] if len(_s.argv) > 2 else 'synthetic-job')
 s = json.loads((A/'freeze-summary.json').read_bytes()); mode = sys.argv[1]
 assert mode in ('start', 'observe')
 base = f"from pathlib import Path\nimport json,sys\np=Path('/home/chaw/patent-to-pilot-jobs/{s['job']}')\n"
