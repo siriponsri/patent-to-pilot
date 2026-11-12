@@ -605,7 +605,7 @@
     "cpu_prior_upper_bound_seconds": 23448.0,
     "local_cpu_reserved_seconds": 0,
     "remote_cpu_reserved_seconds": 0,
-    "cpu_cap_seconds": 57600,
+    "cpu_cap_seconds": 86400,
     "disk_reserved_bytes": 4294967296,
     "gpu_reserved_seconds": 0,
     "model_calls": 0,
@@ -728,6 +728,13 @@
         "owner_approval_sha256": "6e36eee5143f53b291b7e061e442f3be446d964d1b58334806680a27367661dd",
         "receipt_sha256": "1f5c4123d042f575b64a1b64e9d4cde0f0b744bf98d56fa76ae55bf83c51fa8c",
         "to_seconds": 57600
+      },
+      {
+        "from_seconds": 57600,
+        "generation": 48,
+        "owner_approval_sha256": "be36543554a02a838640e54323c0a6eaac0526ce034fe53dc47885ab8ac97d70",
+        "receipt_sha256": "d52ce29bdea0819ba944bb29cd97f69b1a9d9877b577fd0bc7585dc9371ae1cf",
+        "to_seconds": 86400
       }
     ],
     "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP",

@@ -22,17 +22,43 @@ def require(value, message):
     if not value: raise InputBoundaryError(message)
 
 
+CAP_CHAIN = ((BASE_CAP_SECONDS, AMENDED_CAP_SECONDS), (AMENDED_CAP_SECONDS, 86400))  # owner approvals 12 Nov 2026
+
+
 def cpu_cap(cpu):
-    """Return the cap only when it is the original value or the recorded amendment."""
+    """Return the cap only when it is the original value or follows the exact owner-approved chain."""
     cap, amendments = cpu.get('cpu_cap_seconds'), cpu.get('cap_amendments')
     if cap == BASE_CAP_SECONDS and amendments is None:
         return cap
-    require(cap == AMENDED_CAP_SECONDS and type(amendments) is list and len(amendments) == 1
-            and amendments[0].get('from_seconds') == BASE_CAP_SECONDS
-            and amendments[0].get('to_seconds') == AMENDED_CAP_SECONDS
-            and digest(amendments[0].get('owner_approval_sha256'))
-            and digest(amendments[0].get('receipt_sha256')), 'CPU cap not backed by amendment record')
+    require(type(amendments) is list and 1 <= len(amendments) <= len(CAP_CHAIN)
+            and all((a.get('from_seconds'), a.get('to_seconds')) == CAP_CHAIN[i]
+                    and digest(a.get('owner_approval_sha256')) and digest(a.get('receipt_sha256'))
+                    for i, a in enumerate(amendments))
+            and cap == amendments[-1]['to_seconds'], 'CPU cap not backed by amendment record')
     return cap
+
+
+def amend_cpu_cap(journal: DispatchJournal, *, expected_generation, receipt, receipt_sha256):
+    """Append the next owner-approved cap link (no booking, no reset)."""
+    require(digest(receipt_sha256) and document_hash(receipt) == receipt_sha256, 'amendment pin changed')
+    require(receipt.get('kind') == 'CPU_CAP_AMENDMENT' and digest(receipt.get('owner_approval_sha256'))
+            and receipt.get('model_calls') == 0, 'owner amendment receipt incomplete')
+    with journal.transaction() as (db, head):
+        require(head[1] == expected_generation and head[4] is None, 'stale or active journal')
+        ledger = json.loads(head[2])
+        require(document_hash(ledger) == receipt.get('prior_ledger_sha256'), 'CPU accounting baseline changed')
+        cpu = ledger['r6_phase0_cpu']; current = cpu_cap(cpu); links = cpu.get('cap_amendments') or []
+        require(len(links) < len(CAP_CHAIN) and (receipt.get('from_seconds'), receipt.get('to_seconds')) == CAP_CHAIN[len(links)]
+                and current == receipt['from_seconds'], 'amendment outside approved chain')
+        cpu['cap_amendments'] = links + [{'from_seconds': receipt['from_seconds'], 'to_seconds': receipt['to_seconds'],
+            'owner_approval_sha256': receipt['owner_approval_sha256'], 'receipt_sha256': receipt_sha256,
+            'generation': head[1] + 1}]
+        cpu['cpu_cap_seconds'] = receipt['to_seconds']
+        db.execute('CREATE TABLE IF NOT EXISTS automatic_transitions (generation INTEGER PRIMARY KEY, kind TEXT, receipt TEXT)')
+        db.execute('INSERT INTO automatic_transitions VALUES (?,?,?)', (head[1] + 1, 'CPU_CAP_AMENDMENT', encoded(receipt)))
+        db.execute('UPDATE head SET generation=?,ledger=?', (head[1] + 1, encoded(ledger)))
+    return {'status': 'CPU_CAP_AMENDED', 'generation': expected_generation + 1, 'ledger': ledger,
+            'remaining_seconds': cpu['cpu_cap_seconds'] - cpu_used(cpu)}
 
 
 def cpu_used(cpu):

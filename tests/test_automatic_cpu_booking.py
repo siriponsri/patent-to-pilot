@@ -119,3 +119,22 @@ def test_gpu_stage_admission_does_not_consume_cpu_cap_but_cpu_stage_does():
     with pytest.raises(InputBoundaryError):
         validate_live(live, cpu_only, ledger, 6, 110)
     assert validate_live(live, dict(cpu_only, cpu_seconds=600), ledger, 6, 110)['cpu_reserved_seconds'] == 600
+
+
+def test_second_cap_link_follows_exact_chain_once(tmp_path):
+    from patent_to_pilot.research.automatic_cpu_booking import amend_cpu_cap
+    ledger = _base_ledger(); journal = _journal(tmp_path, ledger)
+    first = _amendment(ledger)
+    out = amend_cpu_cap_and_book_preparation(journal, expected_generation=0, receipt=first, receipt_sha256=document_hash(first))
+    def link(led, frm, to):
+        return {'kind': 'CPU_CAP_AMENDMENT', 'owner_approval_sha256': 'd'*64, 'model_calls': 0,
+                'from_seconds': frm, 'to_seconds': to, 'prior_ledger_sha256': document_hash(led)}
+    with pytest.raises(InputBoundaryError):           # not the approved next link
+        r = link(out['ledger'], 57600, 100000); amend_cpu_cap(journal, expected_generation=1, receipt=r, receipt_sha256=document_hash(r))
+    r = link(out['ledger'], 57600, 86400)
+    res = amend_cpu_cap(journal, expected_generation=1, receipt=r, receipt_sha256=document_hash(r))
+    cpu = res['ledger']['r6_phase0_cpu']
+    assert cpu_cap(cpu) == 86400 and cpu['local_cpu_conservative_charged_seconds'] == 1600 + 21588
+    assert len(cpu['cap_amendments']) == 2
+    with pytest.raises(InputBoundaryError):           # chain exhausted / replay
+        r2 = link(res['ledger'], 57600, 86400); amend_cpu_cap(journal, expected_generation=2, receipt=r2, receipt_sha256=document_hash(r2))

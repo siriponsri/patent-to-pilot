@@ -1,0 +1,17 @@
+{
+  "status": "OWNER_EXPLICIT_GRAPH_GATE_OVERRIDE",
+  "date": "2026-11-12",
+  "owner_words": "และอนุมัติผล graph แบบ explicit",
+  "clarified_choice": "ให้ Graph ไปต่อ (override)",
+  "overridden_gate": "G2 (pilot-20 with structure >= 10); observed 8/20",
+  "kept_gates": {
+    "G1": "PASS 52.3%",
+    "G3": "PASS 16,130 shared keys"
+  },
+  "deviation_label": "POST_HOC_OWNER_OVERRIDE_OF_FROZEN_FEASIBILITY_GATE: must be disclosed in every Graph result and the manuscript",
+  "conditions": [
+    "screening of the 14,123 reachable relations must be capped by a sampling rule frozen before any GPU dispatch",
+    "unscreened relations abstain; full query denominator retained; coverage and fallback reported",
+    "no further threshold or extractor changes after seeing Graph outputs"
+  ]
+}

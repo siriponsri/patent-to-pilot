@@ -1,5 +1,19 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Owner: native SACR continues, CPU cap 24h, explicit Graph override 2026-11-12T22:40+07:00
+
+Owner decisions:
+- Continue native SACR.
+- CPU cap 16h -> 24h (owner-cpu-amendment-2.json). Applied once as journal generation 48 through amend_cpu_cap: chain 28800->57600->86400 only; no reset. CPU used 54114.85s; remaining 32285.15s.
+- Explicit Graph override (owner-graph-override.json): Graph v3 proceeds although G2 failed (8/20 pilot). Labelled POST_HOC_OWNER_OVERRIDE_OF_FROZEN_FEASIBILITY_GATE; must be disclosed everywhere.
+
+Frozen before any native output: docs/healthtech/research/plans/NATIVE-STAGES-20261112.md.
+- SACR: fidelity on pilot-20 (≤40 calls, ≤3600s); then pilot re-encode of screened candidates (≤20 encodes, ≤1800s) with CPU evaluation; full_dev caps from measured throughput.
+- Graph: a 300-relation screening sample (all direct pilot-key relations first, then a salted-hash bridge sample; unscreened relations abstain); fidelity ≤300 calls, ≤21600s per job; pilot S/G/S-deep over screened postings, fused with B0.
+
+Next implementation: journal stage envelopes for fidelity/pilot with predecessor checks; a native SACR batch worker; Graph screening runner. Nothing running; journal generation 48, IDLE.
+
+
 ## Graph extractor v3: frozen gate FAIL on G2 (8/20 pilot); Graph reported negative 2026-11-12T22:10+07:00
 
 Job ptp-auto-graph-extractor-v3-20261112-v1 exited 0 (no OOM). CPU: 66.1s actual, 300s booked; segment14 booked; journal generation 47.

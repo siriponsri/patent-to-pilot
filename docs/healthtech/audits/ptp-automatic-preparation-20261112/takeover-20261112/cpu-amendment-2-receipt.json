@@ -1,0 +1,10 @@
+{
+  "kind": "CPU_CAP_AMENDMENT",
+  "owner_approval_sha256": "be36543554a02a838640e54323c0a6eaac0526ce034fe53dc47885ab8ac97d70",
+  "model_calls": 0,
+  "from_seconds": 57600,
+  "to_seconds": 86400,
+  "prior_ledger_sha256": "60590636dc88d73a8a92728d47a419d1cd7f256259bcd7725b5d03271657a550",
+  "module_sha256_lf": "7203a22d6267be9ce5bd5436d199884babaeec831bb7ad77c0541da27efdd522",
+  "journal_identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4"
+}
