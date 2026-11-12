@@ -1,0 +1,17 @@
+{
+  "jobs": {
+    "census": {
+      "job": "ptp-auto-graph-extractor-v3-20261112-v1",
+      "supervisor": "supervise_graph_extractor_v3.py",
+      "declaration_sha256": "aa6ea6ed02a93bac133dedc5e115c9fe3e0fecbfbf817064cfa2d3f2ad248ae3",
+      "transport": {
+        "bytes": 1884160,
+        "sha256": "49df69326dd0d595f26b6ab29c6d3386fcce4191eeedf158456ec522caac599f",
+        "files": 235
+      }
+    }
+  },
+  "generation": 47,
+  "ledger_sha256": "60590636dc88d73a8a92728d47a419d1cd7f256259bcd7725b5d03271657a550",
+  "cpu_remaining_seconds": 3485.1536221900024
+}
