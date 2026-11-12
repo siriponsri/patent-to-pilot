@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "8a5278485f2a0c826f09a3bd04eb1a05637b8de79642d0f4b96cb04e61763885",
+  "evidence_sha256": "a604aaa1c4cb0939cc4159958f0f9ccc521eb9685f68b3b4f1dffd31a0c5986b",
+  "add_configuration_sha256": [
+    "64c4d212637cbf3fa4e3e711fa6e2de68eb5df6f1f7e5e847d72c610cd352e56"
+  ],
+  "additional_synthetic_attempts": 2,
+  "round": "round-2",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "05d4fc816e6d18fa673dbb4e9298b940719e79d770f38f6fc4bc4f808e9c29eb",
+  "scope_sha256": "131a8cccdde8736a723b4efa15cc52c82d3a45a4016300a713bb615c0c777d97",
+  "reason": "owner approved a new SACR round (round-2) in parallel with Graph; agent default cap 2 synthetic attempts"
+}

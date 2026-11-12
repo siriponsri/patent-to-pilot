@@ -1,5 +1,17 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Parallel Graph + SACR round 2 approved; synthetic v4 qualified, launching 2026-11-12T20:15+07:00
+
+Owner: "อนุมัตติทำงานขนาน Graph และ New SACR round" (owner-parallel-round2-approval.json). Agent default for round 2: at most 2 synthetic attempts, ≤2 calls, ≤1800s each.
+- SACR round 2, marking v4: the bounded v3 labels plus two authored worked examples (never the test sentence) and a labelling guideline.
+- Journal: per-round synthetic cap. 139 tests PASS.
+- CPU re-qualification v4 PASS (grammar 8/8 and fixture). Bookings at generation 32.
+- Synthetic v4 frozen. The round-2 amendment (config 64c4d212..., +2) and qualify_stage put the journal at generation 35, IDLE. Ledger 05d4fc81... is frozen until the claim. CPU remaining 4574.15s.
+- Graph: a read-only survey produced the prospective protocol docs/healthtech/research/plans/GRAPH-AUTOMATIC-ROUND-20261112.md (scope = relations reachable from pilot-20; S matched-key scoring with salted tie-break; S-deep matched-work control; perturbation diagnostic; input-limit abstention). It is frozen before any Graph score. Next Graph step: CPU query-key coverage census.
+
+Launch once: python takeover-20261112/synthetic_control.py start synthetic-v4-job. Settle with settle_synthetic.py ptp-auto-synthetic-20261112-v4 synthetic-v4-job.
+
+
 ## Synthetic stage CLOSED for automatic SACR marking: 3 attempts, no usable candidate 2026-11-12T19:45+07:00
 
 Synthetic v3 exited 0 after 76.7s wall. The marking call returned EOS (2314 input / 250 output tokens, 20.8s GPU). The output was valid v3 but a complete abstention: all 41 labels none and a null abstraction. Result: MARKING_ABSTAINED -> ORIGINAL_QUERY_FALLBACK; no review call. Settled once at generation 28: 77s to GPU and fidelity, 1 complete call.

@@ -1,0 +1,48 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "2281d50aa852c5d36faaf5480e564fa089e858625c71ae9bb9ee74d8c7d917db",
+    "configuration_sha256": "64c4d212637cbf3fa4e3e711fa6e2de68eb5df6f1f7e5e847d72c610cd352e56",
+    "gate": "integrity",
+    "source_commit": "f5f5cfb466d299432304f2d404af471d12fa6d6f",
+    "files": 223,
+    "evidence": "package from committed blobs; 137 tests PASS; actual worker main PASS in CPU fixture v4 (marking schema v4)",
+    "fixture_result_sha256": "b481707764a4fb0389dca0d044134aecfb1687157f6eecb822e9e6f6648fe76b"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "2281d50aa852c5d36faaf5480e564fa089e858625c71ae9bb9ee74d8c7d917db",
+    "configuration_sha256": "64c4d212637cbf3fa4e3e711fa6e2de68eb5df6f1f7e5e847d72c610cd352e56",
+    "gate": "isolation",
+    "evidence": "supervisor config test PASS; supervisor re-validates actual isolation before start; v1 isolation PASS_BEFORE_START"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "2281d50aa852c5d36faaf5480e564fa089e858625c71ae9bb9ee74d8c7d917db",
+    "configuration_sha256": "64c4d212637cbf3fa4e3e711fa6e2de68eb5df6f1f7e5e847d72c610cd352e56",
+    "gate": "runtime",
+    "grammar_result_sha256": "dbb8acb018a5e845a85e2078daa1067dc96ac505837dc834f14d00187ff3e373",
+    "fixture_result_sha256": "b481707764a4fb0389dca0d044134aecfb1687157f6eecb822e9e6f6648fe76b",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "evidence": "grammar v4 rejects too-short/too-long label arrays; v2/v3 completed normal GPU marking calls on this GPU"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "2281d50aa852c5d36faaf5480e564fa089e858625c71ae9bb9ee74d8c7d917db",
+    "configuration_sha256": "64c4d212637cbf3fa4e3e711fa6e2de68eb5df6f1f7e5e847d72c610cd352e56",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 675411.3864951228,
+    "fidelity_remaining_seconds": 214890.27331997137,
+    "disk_preexisting_upper_bound_bytes": 32102325743
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "2281d50aa852c5d36faaf5480e564fa089e858625c71ae9bb9ee74d8c7d917db",
+    "configuration_sha256": "64c4d212637cbf3fa4e3e711fa6e2de68eb5df6f1f7e5e847d72c610cd352e56",
+    "gate": "accounting",
+    "ledger_sha256": "05d4fc816e6d18fa673dbb4e9298b940719e79d770f38f6fc4bc4f808e9c29eb",
+    "cpu_remaining_seconds": 4574.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}

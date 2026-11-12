@@ -1,0 +1,30 @@
+{
+  "stage": "synthetic",
+  "marking_version": "patent-structure-marking-v4",
+  "review_checks": [
+    "roles_direction",
+    "quantities_units",
+    "conditions_exceptions",
+    "negation_modality",
+    "unsupported_addition",
+    "missing_requirement"
+  ],
+  "km_sha256": "4af3628e1b0dd0c7883c6741cbba8884063164149250125af748c1edfc8e3281",
+  "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+  "max_new_tokens": 4096,
+  "dtype": "float16",
+  "attention": "eager",
+  "greedy": true,
+  "container": {
+    "nano_cpus": 1,
+    "memory_bytes": 33285996544,
+    "network": "none",
+    "gpu": "single approved UUID"
+  },
+  "maximum_calls": 2,
+  "seconds": 1800,
+  "fallback": "original query on rejection; HOLD on unknown backend state",
+  "semantic_certification": false,
+  "human_review_required": false,
+  "revision": "v4 (SACR round 2): v3 bounded labels + two authored worked examples (not the test sentence) + labelling guideline; v3 abstained on every token"
+}
