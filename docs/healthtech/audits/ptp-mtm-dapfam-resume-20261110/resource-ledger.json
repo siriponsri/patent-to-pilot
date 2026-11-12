@@ -1,10 +1,10 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 691200,
-  "gpu_conservative_charged_seconds": 17761.613504877227,
-  "gpu_remaining_seconds": 673438.3864951228,
+  "gpu_conservative_charged_seconds": 18882.613504877227,
+  "gpu_remaining_seconds": 672317.3864951228,
   "charge_basis": "Whole SYN003/native baseline/SYN004/native fidelity supervisor intervals; native interrupted attempt token/call counts remain unknown, whole wall charged.",
-  "model_calls": 159,
+  "model_calls": 180,
   "cpu004_calls": 0,
   "automatic_retries": 0,
   "full_dev_started": false,
@@ -59,8 +59,8 @@
   },
   "model_calls_count_is_lower_bound": true,
   "generation_attempts_with_unknown_call_token_costs": 3,
-  "fidelity_generation_charged_seconds": 17482.72668002863,
-  "fidelity_generation_remaining_seconds": 212917.27331997137,
+  "fidelity_generation_charged_seconds": 18603.72668002863,
+  "fidelity_generation_remaining_seconds": 211796.27331997137,
   "native_unstarted_continuation_reservation": {
     "status": "CLOSED_FROZEN_REVIEW_CAP_STOP_NO_RETRY",
     "seconds": 10800,
@@ -959,5 +959,5 @@
     "retry": false,
     "owner_approval_sha256": "51b0dee061c052027596003d785cf137a460c57749ab93212560fee8f5c15a2e"
   },
-  "gpu_stage_host_cpu_telemetry_seconds": 2536.662513888
+  "gpu_stage_host_cpu_telemetry_seconds": 3661.11052497
 }

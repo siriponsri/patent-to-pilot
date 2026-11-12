@@ -6,9 +6,9 @@ from patent_to_pilot.research.km_automatic_review import interpret_review
 
 def test_authored_grammar_cases_match_independent_schema_validator():
     rows = cases('Preserve conditions and exceptions.')
-    assert len(rows) == 10
+    assert len(rows) == 11
     for row in rows:
-        if row['name'] == 'review-whitespace-runaway':
+        if row['name'] in ('review-whitespace-runaway', 'review-key-order-violation'):
             continue  # valid JSON object; rejection is a grammar-level whitespace cap, checked on CPU
         assert Draft202012Validator(row['request']['schema']).is_valid(row['output']) == row['expected_grammar_acceptance']
         if row['expected_grammar_acceptance']:

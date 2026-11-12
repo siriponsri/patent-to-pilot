@@ -90,7 +90,9 @@ def main():
             write_new(out / 'loaded-runtime.json', {'model_class': type(model).__name__,
                 'dtype': str(model.dtype), 'device': str(model.device), 'attention': model.config._attn_implementation})
             if type(d.get('max_consecutive_whitespaces')) is not int: raise RuntimeError('declared whitespace cap required')
+            if d.get('force_json_field_order') is not True: raise RuntimeError('declared JSON field order required')
             backend = R6Backend(tokenizer=tokenizer, model=model, output_root=out, max_consecutive_whitespaces=d['max_consecutive_whitespaces'],
+                                force_json_field_order=d['force_json_field_order'],
                                 lmfe_source_sha256=d['lmfe_source_sha256'])
             executor = request_bound_executor(tokenizer=tokenizer, model_factory=backend.factory,
                 device='cuda:0', eos_token_ids=[151645,151643], check_admission=admission,

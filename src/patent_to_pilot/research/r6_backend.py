@@ -7,7 +7,7 @@ from .sacr_native_fidelity import write_new
 
 
 class R6Backend:
-    def __init__(self,*,tokenizer,output_root,lmfe_source_sha256,model=None,max_consecutive_whitespaces=4096):
+    def __init__(self,*,tokenizer,output_root,lmfe_source_sha256,model=None,max_consecutive_whitespaces=4096,force_json_field_order=False):
         # Default 4096 preserves closed R6/R7 behaviour; native v2 review ran away on whitespace,
         # so automatic-round workers declare a small cap explicitly.
         from lmformatenforcer.integrations.transformers import build_token_enforcer_tokenizer_data
@@ -15,6 +15,9 @@ class R6Backend:
         self.lmfe_source_sha256=lmfe_source_sha256
         if type(max_consecutive_whitespaces) is not int or not 8<=max_consecutive_whitespaces<=4096:raise ValueError('whitespace cap')
         self.max_consecutive_whitespaces=max_consecutive_whitespaces
+        # Native v3 review closed its object in an order/shape the strict EOS guard refused; automatic
+        # workers declare schema field order so keys appear once, in order, and close only when complete.
+        self.force_json_field_order=bool(force_json_field_order)
         self.token_data=build_token_enforcer_tokenizer_data(tokenizer)
 
     def prompt_tokens(self,messages):
@@ -35,7 +38,7 @@ class R6Backend:
         text=json.dumps(messages,ensure_ascii=False,sort_keys=True)
         alphabet=build_alphabet(self.tokenizer,text)
         settings=CharacterLevelParserConfig(alphabet=alphabet['alphabet'],max_consecutive_whitespaces=getattr(self,'max_consecutive_whitespaces',4096),
-            force_json_field_order=False,max_json_array_length=4096)
+            force_json_field_order=getattr(self,'force_json_field_order',False),max_json_array_length=4096)
         callback=build_boundary_callback(self.token_data,schema,settings,expected_source_sha256=self.lmfe_source_sha256)
         if callback.configuration_receipt['requested']!=callback.configuration_receipt['effective_root']:
             raise InputBoundaryError('grammar effective configuration differs')

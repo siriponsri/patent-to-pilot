@@ -42,7 +42,12 @@ def cases(km_text):
     # Whitespace runaway (native v2 review): only rejected when the backend declares a small cap.
     runaway = dict(out[-4], name='review-whitespace-runaway', expected_grammar_acceptance=False)
     runaway['output_text'] = runaway['output_text'].replace(',', ',' + '\n' * 100, 1)
-    return out + [runaway]
+    # Key-order violation (native v3 review wrote binding_sha256 last): rejected under declared field order.
+    valid = out[-4]['output']
+    disorder = dict(out[-4], name='review-key-order-violation', expected_grammar_acceptance=False)
+    disorder['output_text'] = json.dumps({'checks': valid['checks'], 'binding_sha256': valid['binding_sha256']},
+                                         ensure_ascii=False, separators=(',', ':'))
+    return out + [runaway, disorder]
 
 
 def qualify(backend, km_text):

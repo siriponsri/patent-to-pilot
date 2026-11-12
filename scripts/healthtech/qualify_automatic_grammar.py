@@ -41,7 +41,8 @@ def main():
         from patent_to_pilot.research.automatic_grammar_cases import qualify
         tokenizer = AutoTokenizer.from_pretrained(str(model),local_files_only=True)
         backend = R6Backend(tokenizer=tokenizer,output_root=out,lmfe_source_sha256=d['lmfe_source_sha256'],
-                            max_consecutive_whitespaces=d.get('max_consecutive_whitespaces',4096))
+                            max_consecutive_whitespaces=d.get('max_consecutive_whitespaces',4096),
+                            force_json_field_order=d.get('force_json_field_order',False))
         result = qualify(backend, km_raw.decode())
         result.update(wall_seconds=time.monotonic()-started,process_cpu_seconds=time.process_time())
         (out/'qualification.json').write_text(json.dumps(result,indent=2)+'\n')

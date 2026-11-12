@@ -1,0 +1,67 @@
+{
+  "applied_now": true,
+  "generation": 70,
+  "study": {
+    "status": "IDLE",
+    "stage_costs": {
+      "ptp-auto-native-sacr-pilot20-20261112-v1": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 261.291922179,
+        "known_calls": 0,
+        "seconds": 268,
+        "stage": "fidelity"
+      },
+      "ptp-auto-native-sacr-pilot20-20261112-v2": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 1358.301128158,
+        "known_calls": 21,
+        "seconds": 1354,
+        "stage": "fidelity"
+      },
+      "ptp-auto-native-sacr-pilot20-20261112-v3": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 1124.448011082,
+        "known_calls": 21,
+        "seconds": 1121,
+        "stage": "fidelity"
+      },
+      "ptp-auto-synthetic-20261112-v1": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 243.572854702,
+        "known_calls": 0,
+        "seconds": 247,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v2": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 255.739112608,
+        "known_calls": 1,
+        "seconds": 259,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v3": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 74.31802920999999,
+        "known_calls": 1,
+        "seconds": 77,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v4": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 193.898080916,
+        "known_calls": 2,
+        "seconds": 198,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v5": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 149.54138611500002,
+        "known_calls": 2,
+        "seconds": 153,
+        "stage": "synthetic"
+      }
+    }
+  },
+  "approved_gpu_occupied": false,
+  "ledger_sha256": "670b10c61c2e6d4369b0fa823b9de95816cad38ef24fcc6452f84d084e841716"
+}

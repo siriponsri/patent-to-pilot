@@ -1,0 +1,15 @@
+{
+  "status": "FAILED_ENGINEERING_REVIEW_GUARD_REFUSAL_PARTIAL",
+  "attempt_id": "ptp-auto-native-sacr-pilot20-20261112-v3",
+  "exit_code": 1,
+  "whole_wall_seconds": 1120.979625441003,
+  "charged_gpu_and_fidelity_seconds": 1121,
+  "call_slots_consumed": 22,
+  "processed_queries": 10,
+  "failing_query_index": 10,
+  "failing_stage": "review",
+  "diagnosis": "review JSON object closed (binding_sha256 written last) but the strict EOS guard refused termination without a schema rejection (JSON-shape class: key order/duplicate); trailing whitespace then hit the guard. Same query index as v2.",
+  "fix": "declared force_json_field_order=True in R6Backend for automatic workers (keys once, schema order, close only when complete); new grammar case review-key-order-violation",
+  "standing_allowance": "owner-native-v3-approval.json: native v4 is revision 1 of 2",
+  "retry": "none of v3"
+}
