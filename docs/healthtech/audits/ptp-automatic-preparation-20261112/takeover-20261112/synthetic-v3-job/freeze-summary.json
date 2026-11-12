@@ -1,0 +1,17 @@
+{
+  "status": "STAGED_QUALIFIED_NOT_LAUNCHED",
+  "job": "ptp-auto-synthetic-20261112-v3",
+  "declaration_sha256": "8f9e116529d6a725009027e56eac69caab9a593f4292b92b98bfbe1d7b385354",
+  "package_sha256": "048f7e6c06e8fffa6a22d33e19981627ab95dfe0a77119ab6b6b7d5945cde017",
+  "configuration_sha256": "eb16a83d5cc8c95ebf0a73e101d0306fd4069a73a2cf8a51a3e2eb9e590a8259",
+  "transport": {
+    "bytes": 1853440,
+    "sha256": "c230249429b760799d00e99349c7b1523ede38e2e7fb9abea2b25bc87bb69a42",
+    "files": 229
+  },
+  "journal_generation": 27,
+  "ledger_sha256": "17dfd4bcaa343c0e3604c32e101a7688be3781f3f23264e77c9875673d86360f",
+  "study_status": "IDLE",
+  "segment7_seconds": 105,
+  "cpu_remaining_seconds": 6085.153622190002
+}

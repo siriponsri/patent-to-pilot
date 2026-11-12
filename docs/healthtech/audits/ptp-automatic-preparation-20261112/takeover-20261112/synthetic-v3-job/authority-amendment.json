@@ -1,0 +1,13 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "fea6919370bde8ff6064d5c7e8cb4c2b4f936db1583f557ebb429e589b9958a7",
+  "evidence_sha256": "919867cde209a9bb0404dde893864fe8c040eb1b3650bc79d423514682f9c5ba",
+  "add_configuration_sha256": [
+    "eb16a83d5cc8c95ebf0a73e101d0306fd4069a73a2cf8a51a3e2eb9e590a8259"
+  ],
+  "additional_synthetic_attempts": 0,
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "17dfd4bcaa343c0e3604c32e101a7688be3781f3f23264e77c9875673d86360f",
+  "scope_sha256": "9905863361fe192cd3d3afec5a173a0e045a0b85b4a037b2a5a5b764f0db2070",
+  "reason": "v2 marking degenerated (repeated identical marks); owner approved v3 as the last revised synthetic attempt (cap 2 already granted)"
+}

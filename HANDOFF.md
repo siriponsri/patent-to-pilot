@@ -1,5 +1,16 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Synthetic v3 (last revision) qualified; launching 2026-11-12T19:35+07:00
+
+The owner chose "Yes, do v3 first". Marking v3: one role-or-none label per source token in a fixed-length array. LMFE enforces minItems=maxItems at token level, so duplicate and out-of-range spans are structurally impossible; marks are contiguous label runs. 137 tests PASS.
+
+CPU re-qualification v3 PASS: grammar 8/8 (too-short and too-long label arrays rejected with TOKEN_NOT_ALLOWED) and the actual-worker fixture. Generation 24: segment6 104s + 2×600s.
+
+Synthetic v3 is frozen. Segment7 (105s) is at generation 25; the amendment (config eb16a83d..., additional 0, cap already 2) is at generation 26; qualify_stage puts the journal at generation 27, IDLE. Ledger 17dfd4bcaa343c0e3604c32e101a7688be3781f3f23264e77c9875673d86360f is frozen until the claim. CPU remaining 6085.15s.
+
+Launch once: python takeover-20261112/synthetic_control.py start synthetic-v3-job. Settle with settle_synthetic.py ptp-auto-synthetic-20261112-v3 synthetic-v3-job. This is the LAST permitted synthetic attempt: if it fails, the synthetic stage stops and SACR marking is reported as a negative result.
+
+
 ## Synthetic v2: engineering PASS, marking rejected -> fallback; settled 2026-11-12T19:05+07:00
 
 ptp-auto-synthetic-20261112-v2 exited 0 (no OOM) after 258.2s wall. The marking call returned normally (EOS): 2280 input and 2610 output tokens, 203s GPU, peak 18.2GB. The output was well-formed but degenerate: the identical mark [40,41] entity/uncertain was repeated up to the item cap, every attachment was uncertain, and there were no condition/exception/quantity roles. Post-hoc validation rejected it (MARKING_REJECTED) and the declared ORIGINAL_QUERY_FALLBACK was applied; the review stage was not reached.
