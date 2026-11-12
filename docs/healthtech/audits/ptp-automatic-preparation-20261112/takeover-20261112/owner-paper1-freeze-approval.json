@@ -1,0 +1,9 @@
+{
+  "status": "OWNER_APPROVED_PAPER1_PROTOCOL_FREEZE",
+  "date": "2026-11-13",
+  "question": "Protocol draft นี้ freeze ได้เลยไหม หรือมีจุดต้องแก้",
+  "owner_answer": "Freeze ได้เลย",
+  "protocol": "docs/healthtech/research/plans/PAPER1-ACQUISITION-PROTOCOL-DRAFT-20261113.md",
+  "scope": "Freezes arms, prompts/schemas, endpoints, margins, gatekeeping, statistics, failure rules and stage order. Authorizes S1-S6 within existing GPU/CPU/full-dev budgets under per-stage declarations. Test (S7-S8) still needs the post-dev owner checkpoint and an explicit go.",
+  "unchanged": ["no paid API/training/corpus re-encoding/Neo4j writes/full-corpus LLM extraction", "one GPU job at a time", "no outcome-driven retry", "no human audit, no LLM judge"]
+}

@@ -1,6 +1,6 @@
 # Paper 1 protocol amendment: query-side acquisition of cross-domain prior art on DAPFAM
 
-Date: 13 November 2026. Status: **DRAFT_FOR_OWNER_REVIEW, NOT FROZEN.** Nothing in this document authorizes a dispatch. It becomes binding only after owner review, as a dated freeze commit with hashes (section 11).
+Date: 13 November 2026. Status: **FROZEN 13 November 2026** (owner: "Freeze ได้เลย"). The file name keeps its draft-date name for link stability. Pins and hashes: [freeze manifest](../../audits/ptp-automatic-preparation-20261112/takeover-20261112/paper1-freeze/freeze-manifest.json). Prompts/schemas: `src/patent_to_pilot/research/paper1_rewrite_arms.py`; analysis: `src/patent_to_pilot/research/paper1_analysis.py`. Changes after freeze are engineering-fault repairs only, each recorded; the freeze is not a dispatch authorization by itself (stage declarations still apply).
 
 Inputs:
 - [owner requirements](../../audits/ptp-automatic-preparation-20261112/takeover-20261112/owner-paper1-requirements.json) (interview, 13 Nov 2026);
