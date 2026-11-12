@@ -1,0 +1,40 @@
+{
+  "status": "PASS_AUTHORED_SYNTHETIC_PIPELINE_NOT_SEMANTIC",
+  "exit_code": 0,
+  "oom_killed": false,
+  "isolation": "PASS_BEFORE_START",
+  "authored_backend_invocations": 2,
+  "grammar_tokens_checked": 356,
+  "decision": {
+    "policy": "automatic-screening-v1",
+    "action": "USE_SCREENED_CANDIDATE",
+    "screening": "screened",
+    "semantic_certified": false,
+    "human_review_required": false
+  },
+  "marking_input_tokens": 1331,
+  "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+  "actual_cpu_seconds": 16.34560244,
+  "booked_cpu_seconds": 600,
+  "refund": false,
+  "worker_peak_rss_bytes": 1006358528,
+  "mocked_boundaries": [
+    "GPU_slot_and_window",
+    "model_weight_observer",
+    "model_loader",
+    "CUDA_telemetry",
+    "device_to_cpu"
+  ],
+  "actual_boundaries": [
+    "worker_main",
+    "declaration_package_KM_tokenizer_decoder_checks",
+    "tokenizer",
+    "grammar_EOS",
+    "request_bound_executor",
+    "executor_adapter",
+    "call_markers",
+    "run_query"
+  ],
+  "model_calls": 0,
+  "gpu_seconds": 0
+}
