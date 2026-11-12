@@ -1,0 +1,11 @@
+{
+  "status": "OWNER_APPROVED_NATIVE_SACR_V3_PLUS_2_ENGINEERING_REVISIONS",
+  "date": "2026-11-13",
+  "owner_answer": "v3 + สิทธิ์แก้ 2 ครั้ง (แนะนำ)",
+  "terms": {
+    "v3": "same frozen pilot-20; marking v5, review v2, input cap 5800, whitespace cap 48",
+    "standing_allowance": "up to 2 further native attempts (v4, v5) after v3 without asking, ONLY for demonstrable engineering faults, each preceded by CPU re-qualification",
+    "prohibited": "changing screening criteria, prompts or configuration to improve outcomes; outcome-driven retry",
+    "each_failure": "settled once and reported; no unknown-state replay"
+  }
+}
