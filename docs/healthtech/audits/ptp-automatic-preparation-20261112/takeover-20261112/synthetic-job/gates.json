@@ -1,0 +1,48 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "967f527279bb148f1dce19bd6f86748c5b709cd7f66ec675f8f2ef2cbea8e3a4",
+    "configuration_sha256": "70d91acad610274d6f10d9ccd796d1212339d76043024913fab391070e30c524",
+    "gate": "integrity",
+    "source_commit": "2e1071909e95292a0a7f16d13899491b5beff65d",
+    "files": 223,
+    "evidence": "package built from committed blobs; 135 automatic/journal/SACR/Graph/KM tests PASS; actual worker main PASS in CPU fixture",
+    "fixture_result_sha256": "6e2a9d488ed15ff66e1796b372457d8e20b4573b06a4047a39ef9e0868c44951"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "967f527279bb148f1dce19bd6f86748c5b709cd7f66ec675f8f2ef2cbea8e3a4",
+    "configuration_sha256": "70d91acad610274d6f10d9ccd796d1212339d76043024913fab391070e30c524",
+    "gate": "isolation",
+    "evidence": "supervise_automatic_synthetic config test PASS (network none, read-only, 31GiB, CPU1, single GPU, no corpus/evaluator mounts); supervisor re-validates actual container isolation before start"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "967f527279bb148f1dce19bd6f86748c5b709cd7f66ec675f8f2ef2cbea8e3a4",
+    "configuration_sha256": "70d91acad610274d6f10d9ccd796d1212339d76043024913fab391070e30c524",
+    "gate": "runtime",
+    "grammar_result_sha256": "433cc01451a1a7fb0d1512326e3415e4fa498f5fb25e5615a1ce4893a1b6352f",
+    "fixture_result_sha256": "6e2a9d488ed15ff66e1796b372457d8e20b4573b06a4047a39ef9e0868c44951",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "evidence": "real tokenizer grammar PASS; decoder pin identical to R7 (Qwen3 fp16 eager loaded on this GPU in R7)"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "967f527279bb148f1dce19bd6f86748c5b709cd7f66ec675f8f2ef2cbea8e3a4",
+    "configuration_sha256": "70d91acad610274d6f10d9ccd796d1212339d76043024913fab391070e30c524",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 675994.3864951228,
+    "fidelity_remaining_seconds": 215473.27331997137,
+    "disk_preexisting_upper_bound_bytes": 31196356079
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "967f527279bb148f1dce19bd6f86748c5b709cd7f66ec675f8f2ef2cbea8e3a4",
+    "configuration_sha256": "70d91acad610274d6f10d9ccd796d1212339d76043024913fab391070e30c524",
+    "gate": "accounting",
+    "ledger_sha256": "68ab9e93a8f9c1addf2c05beb40d7d94f5d871018d0bd31c5e0ff4de27ce04a5",
+    "cpu_remaining_seconds": 8910.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}

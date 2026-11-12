@@ -1,0 +1,30 @@
+{
+  "status": "OWNER_APPROVED_AUTOMATIC_DUAL_TRACK",
+  "journal_identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "human_review_required": false,
+  "semantic_certification": false,
+  "owner_approval_sha256": "f870cd5126e321ac02e6aac9597fc61e275d8a47a0e71798aea63ae14c97c8d2",
+  "protocol_sha256": "969aadd3cf5f6c4569d8af5f421786b99f5d499a0d6e649d8802da9a659ab9e4",
+  "policy_sha256": "4af3628e1b0dd0c7883c6741cbba8884063164149250125af748c1edfc8e3281",
+  "prior_ledger_sha256": "68ab9e93a8f9c1addf2c05beb40d7d94f5d871018d0bd31c5e0ff4de27ce04a5",
+  "prior_scope_sha256": "31bac51f4dc1317645c03c3a4c796302af80a9a619129d8738a1c96c3c3b9798",
+  "prior_attempts_sha256": "27f8beb3f4b94b29005058c58510f58abfa4fe17d4bf4d4f3b01ecdf216a9f44",
+  "unchanged_ledger_caps": {
+    "gpu_limit_seconds": 691200,
+    "fidelity_limit_seconds": 230400,
+    "full_dev_limit_seconds": 460800,
+    "disk_limit_bytes_combined_incremental": 42949672960,
+    "human_cards_total_limit_all_benchmarks_all_configurations": 60
+  },
+  "stage_envelopes": {
+    "synthetic": {
+      "seconds": 1800,
+      "maximum_calls": 2
+    }
+  },
+  "configuration_sha256": [
+    "70d91acad610274d6f10d9ccd796d1212339d76043024913fab391070e30c524"
+  ],
+  "package_gpu_ceiling_seconds": 576000,
+  "later_stages": "fidelity/pilot/full_dev envelopes and call caps require a separate append-only authority amendment after synthetic throughput is measured"
+}

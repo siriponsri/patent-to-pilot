@@ -1,5 +1,19 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Synthetic GPU stage qualified; launching one smoke 2026-11-12T18:00+07:00
+
+The exact-entrypoint CPU fixture passed: the real run_automatic_synthetic main ran with an authored CPU model double through the real tokenizer, grammar/EOS guard, adapter and run_query; 2 invocations; USE_SCREENED_CANDIDATE; semantic_certified=false; 16.3s CPU against a 600s booking. The decoder pin 20232bca... is identical to R7.
+
+The journal is now at generation 13. Transitions: segment3 booking (102s) -> generation 11; adopt_scope with automatic authority 4e2b0888... -> generation 12; qualify_stage synthetic -> generation 13; study status ADOPTED_NO_DISPATCH. Ledger 68ab9e93a8f9c1addf2c05beb40d7d94f5d871018d0bd31c5e0ff4de27ce04a5 MUST NOT change before the claim (the accounting gate is bound to it): do not book CPU until the GPU job is settled. CPU remaining 8910.15s.
+
+Job /home/chaw/patent-to-pilot-jobs/ptp-auto-synthetic-20261112-v1:
+- declaration 941a5776673b99fb9cac9d1c78f06fa8c43b91035838b6663721588a63e1c847; 2 calls max, 1800s (stop at 1560s, 240s cleanup); cpu_seconds 1860 is a safety bound only (telemetry);
+- authored infusion-pump source (condition 40 kPa, exception priming < 10 s, negation not refilled);
+- Qwen3-8B fp16 eager, greedy, 1 GPU, network off.
+
+Launch once: python docs/healthtech/audits/ptp-automatic-preparation-20261112/takeover-20261112/synthetic_control.py start. Monitor with the same script in `observe` mode. Never rerun start; admission.json and launch.json block replay. After the terminal state: verify independently, then reconcile once (whole wall to GPU+fidelity, host CPU as telemetry). No unknown-state retry.
+
+
 ## CPU grammar qualification PASS (grammar only) 2026-11-12T17:35+07:00
 
 Job ptp-auto-grammar-20261112-v1 is terminal: exit 0, no OOM, PID 0, isolation PASS_BEFORE_START, 25.4s wall. All 6 authored cases matched expectations: marking-valid, marking-abstain, review-valid and review-uncertain accepted; marking-wrong-identity and review-missing-check rejected with TOKEN_NOT_ALLOWED. Input tokens: marking 1331, review 1122. Actual CPU 23.96s (worker 23.77 + controller 0.18), against a 600s booking with no refund. 0 model calls, 0 GPU. This is grammar mechanics only; it gives no semantic or retrieval evidence. Receipt: takeover-20261112/grammar-job/grammar-result.json. Do not relaunch: admission.json and launch.json exist.
