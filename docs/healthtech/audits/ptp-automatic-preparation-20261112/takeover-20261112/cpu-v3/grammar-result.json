@@ -1,0 +1,79 @@
+{
+  "status": "PASS_GRAMMAR_ONLY_NOT_SEMANTIC",
+  "job": "ptp-auto-grammar-20261112-v3",
+  "exit_code": 0,
+  "oom_killed": false,
+  "isolation": "PASS_BEFORE_START",
+  "cases": [
+    {
+      "name": "marking-valid",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE",
+      "input_tokens": 1365,
+      "output_tokens": 127
+    },
+    {
+      "name": "marking-abstain",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE",
+      "input_tokens": 1365,
+      "output_tokens": 115
+    },
+    {
+      "name": "marking-wrong-identity",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "input_tokens": 1365,
+      "output_tokens": 123
+    },
+    {
+      "name": "marking-labels-too-short",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "input_tokens": 1365,
+      "output_tokens": 125
+    },
+    {
+      "name": "marking-labels-too-long",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "input_tokens": 1365,
+      "output_tokens": 129
+    },
+    {
+      "name": "review-valid",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE",
+      "input_tokens": 1122,
+      "output_tokens": 196
+    },
+    {
+      "name": "review-uncertain",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE",
+      "input_tokens": 1122,
+      "output_tokens": 200
+    },
+    {
+      "name": "review-missing-check",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED",
+      "input_tokens": 1122,
+      "output_tokens": 175
+    }
+  ],
+  "actual_cpu_seconds": 27.436225629,
+  "booked_cpu_seconds": 600,
+  "refund": false,
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "marking_schema": "patent-structure-marking-v3"
+}

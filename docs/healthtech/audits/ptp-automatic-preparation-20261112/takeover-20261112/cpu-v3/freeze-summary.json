@@ -1,0 +1,29 @@
+{
+  "generation": 24,
+  "ledger_sha256": "1123d8542dac823da3fcc2233d0c7247ca2db0df12136b63cc159b7a165c6c2a",
+  "cpu_remaining_seconds": 6190.153622190002,
+  "segment6_seconds": 104,
+  "package_sha256": "56a8230b91a2e1b1807c6a65841017c01af2f9e823f68f2c5b392841c387327d",
+  "jobs": {
+    "grammar": {
+      "job": "ptp-auto-grammar-20261112-v3",
+      "supervisor": "supervise_automatic_grammar.py",
+      "declaration_sha256": "1616fc636199d032a169150cdef0ab6f410611005a65ad510afdee2a181b2dc0",
+      "transport": {
+        "bytes": 1863680,
+        "sha256": "332a05f05532a99300aec99031e0241a3f6c5bda8bd7d78d483a85f6dd4001a0",
+        "files": 230
+      }
+    },
+    "fixture": {
+      "job": "ptp-auto-pipeline-fixture-20261112-v3",
+      "supervisor": "supervise_automatic_pipeline_fixture.py",
+      "declaration_sha256": "0ffbe35f2a01096ea4e4cd16dd2799ace2858ca610acee4b2e328638ea890928",
+      "transport": {
+        "bytes": 1863680,
+        "sha256": "b37bebbaf62ca6bb9701af717cb8bc2c3772cda6f97d296dca26a33f32400e15",
+        "files": 231
+      }
+    }
+  }
+}

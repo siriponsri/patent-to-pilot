@@ -1,0 +1,17 @@
+{
+  "job": "ptp-auto-pipeline-fixture-20261112-v3",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 3342275,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T11:09:35.753495512Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START"
+}
