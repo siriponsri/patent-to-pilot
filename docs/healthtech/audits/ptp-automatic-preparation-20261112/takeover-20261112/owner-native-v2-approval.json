@@ -1,0 +1,16 @@
+{
+  "status": "OWNER_APPROVED_NATIVE_SACR_V2",
+  "date": "2026-11-13",
+  "owner_answer": "Approve native v2",
+  "question": "Approve a revised native SACR run (compact prompt + memory-safe input cap)?",
+  "terms": {
+    "changes": [
+      "marking payload sends token texts only (positions by index); validation keeps full offsets",
+      "memory-safe input admission cap 5800 tokens; longer queries fall back (INPUT_LIMIT) and stay in the denominator"
+    ],
+    "requalification": "CPU grammar + native fixture before GPU",
+    "input": "same frozen pilot-20",
+    "prior_failure": "native-sacr-pilot20/native-result.json",
+    "retry_of_v1": "none"
+  }
+}

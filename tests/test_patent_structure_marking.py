@@ -64,7 +64,7 @@ def test_labels_are_fixed_length_and_runs_become_marks():
     text = 'The pump stops below 5 kPa except during cleaning.'
     request = prepare(text, 'q-bounds', km, sha(km))
     labels = request['schema']['properties']['labels']; count = len(request['payload']['tokens'])
-    assert labels['minItems'] == labels['maxItems'] == count and VERSION == 'patent-structure-marking-v4'
+    assert labels['minItems'] == labels['maxItems'] == count and VERSION == 'patent-structure-marking-v5'
     output = {'version': VERSION, 'query_id': 'q-bounds', 'source_sha256': sha(text),
               'labels': ['entity', 'entity', 'action', 'condition', 'condition', 'condition',
                          'exception', 'exception', 'exception'], 'uncertain_roles': [], 'abstraction': text}
@@ -85,3 +85,12 @@ def test_worked_examples_are_valid_marking_outputs_and_not_the_synthetic_source(
         assert result['candidate_available'] and result['marks']
         assert 'infusion pump' not in example['source']   # never the GPU synthetic test sentence
     assert 'Worked examples' in request['messages'][0]['content']
+
+
+def test_model_sees_token_texts_only_but_validation_keeps_offsets():
+    km = 'Preserve conditions and exceptions.'
+    text = 'The pump stops below 5 kPa except during cleaning.'
+    request = prepare(text, 'q-compact', km, sha(km))
+    import json
+    shown = json.loads(request['messages'][1]['content'])
+    assert shown['tokens'] == text.split() and all('start' in t for t in request['payload']['tokens'])

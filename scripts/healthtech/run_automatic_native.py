@@ -76,7 +76,10 @@ def main():
                 marking = prepare(t['text'], t['id'], km_raw.decode(), d['km_sha256'])
                 admitted[t['id']] = len(tokenizer.apply_chat_template(marking['messages'], tokenize=True,
                     add_generation_prompt=True, enable_thinking=False))
-            write_new(out/'before-model-input-admission.json', {'over_limit': sum(v > 8192 for v in admitted.values()),
+            if type(d.get('input_token_cap')) is not int or not 1000 <= d['input_token_cap'] <= 8192:
+                raise RuntimeError('declared memory-safe input cap required')
+            write_new(out/'before-model-input-admission.json', {'over_limit': sum(v > d['input_token_cap'] for v in admitted.values()),
+                'input_token_cap': d['input_token_cap'],
                 'max_input_tokens': max(admitted.values()), 'queries': len(tasks), 'model_calls': 0})
             admission()
             model = AutoModelForCausalLM.from_pretrained('/models/qwen3-8b', local_files_only=True,
@@ -101,7 +104,7 @@ def main():
                     calls += 1
                     write_new(out / f'call-{calls}.json', {'stage': stage, 'query_index': index, 'status': 'CONSUMED_BEFORE_BACKEND', 'retry': False})
                     return adapted(stage, request)
-                if admitted[t['id']] > 8192:
+                if admitted[t['id']] > d['input_token_cap']:  # memory-safe cap (native v1 OOM at 6,329)
                     decisions[t['id']] = {'action': 'ORIGINAL_QUERY_FALLBACK', 'screening': 'invalid_output', 'reason': 'INPUT_LIMIT'}
                     continue
                 # Per-query grammar directory: R6Backend writes '<stage>-grammar-private.json' exclusively

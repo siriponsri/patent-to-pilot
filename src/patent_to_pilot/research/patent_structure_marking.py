@@ -14,7 +14,10 @@ from .sacr_token_profile import source_catalogue
 # v4 (12 Nov 2026, SACR round 2, owner-approved): same bounded v3 representation plus two
 # authored worked examples (NOT the synthetic test sentence) and an explicit labelling
 # guideline; the v3 synthetic smoke abstained on every token.
-VERSION = 'patent-structure-marking-v4'
+# v5 (13 Nov 2026, owner-approved native v2): the model sees token TEXTS only (position = list index);
+# the full offset catalogue stays in the request payload for validation. Native v1 ran out of GPU memory
+# on a 6,329-token marking prompt dominated by the per-token {id,start,end,text} catalogue.
+VERSION = 'patent-structure-marking-v5'
 NONE = 'none'
 EXAMPLES = (
     {'source': 'A valve comprising a spring, wherein the spring closes the valve when inlet pressure falls below 2 bar.',
@@ -66,7 +69,8 @@ def prepare(source, query_id, km_text, expected_km_sha256):
         'use none only for function words and punctuation-only tokens. Give an abstraction that keeps all conditions, exceptions, '
         'negations and quantities unless no faithful abstraction exists. Worked examples (authored, illustrative only):\n'
         + '\n'.join(json.dumps(e, ensure_ascii=False) for e in EXAMPLES) + '\nKM:\n' + km_text},
-        {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False, sort_keys=True)}]
+        {'role': 'user', 'content': json.dumps(dict(payload, tokens=[t['text'] for t in tokens]),
+                                               ensure_ascii=False, sort_keys=True)}]
     return {'payload': payload, 'schema': schema, 'messages': messages,
             'request_sha256': sha(json.dumps({'messages': messages, 'schema': schema}, sort_keys=True, ensure_ascii=False))}
 

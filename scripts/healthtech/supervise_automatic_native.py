@@ -28,7 +28,7 @@ def configuration(job, stop, digest):
 def main(pin):
     import resource
     job = Path(__file__).resolve().parent
-    if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name != 'ptp-auto-native-sacr-pilot20-20261112-v1':
+    if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in ('ptp-auto-native-sacr-pilot20-20261112-v1', 'ptp-auto-native-sacr-pilot20-20261112-v2'):
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))
     resource.setrlimit(resource.RLIMIT_CPU, (60,60))
