@@ -1,5 +1,16 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Native v4 settled (raw-newline enum JSON); review v3; native v5 (LAST allowance) launching 2026-11-13T04:30+07:00
+
+Native v4 completed 12 queries, all USE_SCREENED_CANDIDATE. Then query index 12's review chose a literal span containing the title/abstract newline. LMFE emits enum strings literally, so the JSON was invalid and the guard refused it. This is very likely the v2/v3 cause too. Settled once at generation 77: 1313s, 25 known calls + 1 unknown.
+
+Fix: km-automatic-review-v3 splits spans at newlines and excludes spans needing JSON escaping. CPU v9 PASS: grammar 13/13, multiline full-source quote rejected, single-line span accepted; native fixture v6 PASS.
+
+Native v5 is the last owner-allowed revision (2 of 2). If it fails, stop and report to the owner. Launch with native_control.py start native-sacr-pilot20-v5; settle with settle_synthetic.py ptp-auto-native-sacr-pilot20-20261112-v5 native-sacr-pilot20-v5.
+
+Totals: GPU charged 20195.6s; model_calls 205 (lower bound).
+
+
 ## Native v3 settled (review guard refusal); field-order fix; native v4 (allowance 1/2) launching 2026-11-13T03:00+07:00
 
 Native v3 exited 1 at the same query as v2 (index 10, review). The JSON object closed with binding_sha256 last, but the strict EOS guard refused it without a schema rejection (a key-shape class). Settled once at generation 70: 1121s, 21 known calls + 1 unknown.

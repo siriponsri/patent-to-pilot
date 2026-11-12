@@ -1,0 +1,7 @@
+{
+  "stage": "fidelity",
+  "track": "SACR",
+  "input_sha256": "b5d837f47bf4fc497c9105cfa35b397979b15e46a9c093a0c9e9cf89e404262e",
+  "configuration_sha256": "d1fa66a2b2bb1ef79b89ec14e9e3352a8f307eda9fb815a5af3fd805f3af27f8",
+  "package_sha256": "ba75785aa3e190c68a7ead6fa86eca32690f33486d3d059ec59908b06d0706af"
+}

@@ -1,0 +1,35 @@
+{
+  "stage": "fidelity",
+  "track": "SACR",
+  "marking_version": "patent-structure-marking-v5",
+  "review_version": "km-automatic-review-v3",
+  "review_checks": [
+    "roles_direction",
+    "quantities_units",
+    "conditions_exceptions",
+    "negation_modality",
+    "unsupported_addition",
+    "missing_requirement"
+  ],
+  "km_sha256": "4af3628e1b0dd0c7883c6741cbba8884063164149250125af748c1edfc8e3281",
+  "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+  "max_new_tokens": 4096,
+  "dtype": "float16",
+  "attention": "eager",
+  "greedy": true,
+  "maximum_calls_per_query": 2,
+  "container": {
+    "nano_cpus": 1,
+    "memory_bytes": 33285996544,
+    "network": "none",
+    "gpu": "single approved UUID"
+  },
+  "fallback": "original query on rejection/flag/uncertain/abstain; HOLD on unknown backend state",
+  "semantic_certification": false,
+  "human_review_required": false,
+  "protocol": "NATIVE-STAGES-20261112",
+  "input_token_cap": 5800,
+  "max_consecutive_whitespaces": 48,
+  "force_json_field_order": true,
+  "revision": "native v5: review v3 escape-safe literal spans (v4 raw-newline enum JSON); field order, whitespace cap 48, marking v5, cap 5800 unchanged"
+}

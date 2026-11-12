@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "b49d7b689df2a2545944deb37024cbf13e77e20211dffcdcbb8e94add1b77d56",
+  "evidence_sha256": "eb677fe78d448d1d1044cb7a32dec098c36917f68a9d834689002acc93865517",
+  "add_configuration_sha256": [
+    "d1fa66a2b2bb1ef79b89ec14e9e3352a8f307eda9fb815a5af3fd805f3af27f8"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "native-v5",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "c74c16cb60a7cbbb8ff1d5f9d690dbadc54038aafe8e9c9fe91d2d71560622f5",
+  "scope_sha256": "1c986b3b431c2056d026922ba34f063a5cf2cd81b101bb95bf9720165a285874",
+  "reason": "standing owner allowance revision 2 of 2 (last): review v3 escape-safe spans after v4 raw-newline enum JSON"
+}
