@@ -1,5 +1,27 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Paper 1 protocol FROZEN; next is S1 CPU grammar qualification for FA/GR 2026-11-13T09:15+07:00
+
+The owner approved the freeze ("Freeze ได้เลย"; owner-paper1-freeze-approval.json).
+- Frozen commit 8a31ad0. Freeze manifest takeover-20261112/paper1-freeze/freeze-manifest.json, sha 00a730d9...
+- Protocol: docs/healthtech/research/plans/PAPER1-ACQUISITION-PROTOCOL-DRAFT-20261113.md. It is now FROZEN; the file name is kept for link stability.
+- Frozen code:
+  - paper1_rewrite_arms.py: FA functional-abstraction and GR generic-rewrite prompts/schemas; matched caps of 2,000 characters; the same authored lawn-mower example in both.
+  - paper1_analysis.py: RRF k=60 depth 200; tie on B0 rank, then family id; component cluster bootstrap with 10k resamples, seed 20261113; sign-flip test; gatekeeping H1 F-FA>B0, H2 F-FA>F-GR, H3 F-FA>F-SACR; delta 0.010; IN/ALL non-inferiority margin 0.020.
+  - Tests: tests/test_paper1_frozen_arms.py, 7 PASS.
+- The freeze authorizes S1-S6 within existing budgets under per-stage declarations. The test (S7-S8) still needs the post-dev owner checkpoint and an explicit go.
+
+State: journal generation 93, IDLE, active null. The false CPU stop was cleared earlier at generation 93. Nothing is running. Previously approved Graph screening is NOT to be run (Graph is feasibility/negative only).
+
+Next:
+1. S1: CPU grammar cases for the FA/GR schemas (valid, field too long, blank field, wrong query_id, key order, whitespace runaway) via a qualify job, as for the earlier grammar jobs.
+2. A native worker variant for FA/GR: one call per query, same decoder/tokenizer/LMFE pins, input cap 5800, whitespace 48, field order; plus a journal configuration amendment.
+3. S2 synthetic smoke for each arm.
+4. S3 pilot-20 technical run.
+5. S4 full-dev: SACR batches (staged b1 dir exists, needs amendment+qualify) plus FA and GR.
+6. S5 retrieval, fusion, dev evaluation; then S6 owner checkpoint.
+
+
 ## Paper 1 redirected to query-side acquisition; protocol DRAFT awaits owner review 2026-11-13T08:30+07:00
 
 The false CPU-overrun stop is CLEARED with owner approval (owner-false-cpu-stop-approval.json, "อนุมัติปลด"). The clear_false_cpu_overrun transition was committed (d085ee3) and applied once: journal generation 92 -> 93, status IDLE, active null. The pilot-retrieval host-CPU telemetry is now 231.05s (physical bound 25.672s x 9) instead of 1860.27s. Receipt: takeover-20261112/clear-false-stop-receipt.json; ledger mirrored at e9b6a94d... settle_synthetic.py now uses that physical bound when worker CPU is unknown.
