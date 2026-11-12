@@ -1,0 +1,11 @@
+{
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "owner_approval_sha256": "8a5278485f2a0c826f09a3bd04eb1a05637b8de79642d0f4b96cb04e61763885",
+  "evidence_sha256": "159ad491d55a75f1b43c866fdfd09c7e98d3c79ad4dc45db87b449415f38b09a",
+  "booking_id": "ptp-auto-graph-census-20261112-v1",
+  "location": "remote",
+  "conservative_cpu_seconds": 120,
+  "basis": "upper bound: worker RLIMIT_CPU 90 s + controller 30 s on 1 core, wall stop 110 s; no refund",
+  "prior_ledger_sha256": "d830b540aa469784d64834d073e437504d9012e9ae7aaa7c0cfb5676e8035f9f"
+}

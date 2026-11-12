@@ -1,0 +1,17 @@
+{
+  "jobs": {
+    "census": {
+      "job": "ptp-auto-graph-census-20261112-v1",
+      "supervisor": "supervise_graph_census.py",
+      "declaration_sha256": "ec969954655838cdefe4280a7c4d435cfe72d07261e74b82053b8d1df43d51d1",
+      "transport": {
+        "bytes": 1863680,
+        "sha256": "f8ad15059389d6a9d9830e23796a2a76153b2a3e8ec30440e927670de113b117",
+        "files": 231
+      }
+    }
+  },
+  "generation": 45,
+  "ledger_sha256": "9489a3359449b5ef632c828faadd97519a334c0edbf2f1cab2770fe52511e517",
+  "cpu_remaining_seconds": 3890.1536221900024
+}
