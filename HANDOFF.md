@@ -1,5 +1,17 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Native SACR pilot-20 v5 COMPLETE: 20/20 screened candidates; settled call-complete 2026-11-13T05:15+07:00
+
+ptp-auto-native-sacr-pilot20-20261112-v5 exited 0 after 1964.6s. 40 calls, all normal returns; all 20 queries USE_SCREENED_CANDIDATE (AUTOMATIC_SCREEN_COMPLETED); semantic_certified=false.
+- Settled once at generation 84: 1965s GPU and fidelity; known calls 40, calls_complete=True. This is the predecessor for the pilot stage.
+- Configuration: marking v5 (compact token texts); review v3 (escape-safe literal spans); JSON field order; whitespace cap 48; input cap 5800.
+- Native attempt history: v1 OOM, v2 whitespace runaway, v3 key-shape refusal, v4 raw-newline enum JSON, v5 complete. Each was settled once with no output repair.
+
+Totals: GPU charged 22160.6s; fidelity remaining 208518s; model_calls 245 (lower bound); CPU remaining ~29.7ks.
+
+Next: the SACR pilot retrieval stage, frozen in NATIVE-STAGES addendum. Encode screened candidates + the 20 anchors with the B0 encoder/prefix (GPU, ≤1800s), apply the anchor check, assemble the panel (sacr_pilot_panel.py) and evaluate on the pilot subset (CPU). Still to build: run_sacr_pilot_retrieval.py, its supervisor (patembed + vectors + runtime-dev + native v5 out mounts), the journal pilot declaration (predecessor native v5), and an evaluator subset variant.
+
+
 ## Native v4 settled (raw-newline enum JSON); review v3; native v5 (LAST allowance) launching 2026-11-13T04:30+07:00
 
 Native v4 completed 12 queries, all USE_SCREENED_CANDIDATE. Then query index 12's review chose a literal span containing the title/abstract newline. LMFE emits enum strings literally, so the JSON was invalid and the guard refused it. This is very likely the v2/v3 cause too. Settled once at generation 77: 1313s, 25 known calls + 1 unknown.

@@ -1,0 +1,38 @@
+{
+  "status": "COMPLETE_TECHNICAL_PASS_ALL_SCREENED",
+  "attempt_id": "ptp-auto-native-sacr-pilot20-20261112-v5",
+  "exit_code": 0,
+  "whole_wall_seconds": 1964.6402394100005,
+  "charged_gpu_and_fidelity_seconds": 1965,
+  "calls": {
+    "consumed": 40,
+    "known_normal_returns": 40,
+    "calls_complete": true
+  },
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "queries": 20,
+    "screened_candidates": 20,
+    "fallbacks": 0,
+    "reasons": {
+      "AUTOMATIC_SCREEN_COMPLETED": 20
+    },
+    "call_slots_consumed": 40,
+    "wall_seconds": 1959.3099314700085,
+    "process_cpu_seconds": 1958.323637772,
+    "semantic_certified": false
+  },
+  "configuration": "marking v5 (compact), review v3 (escape-safe literal spans), field order, whitespace cap 48, input cap 5800",
+  "interpretation": "technical pass: every pilot query produced a candidate that the automatic screen did not flag. Automatic screening is not semantic certification; retrieval effect not yet measured.",
+  "journal": {
+    "generation": 84,
+    "study_status": "IDLE"
+  },
+  "native_attempt_history": [
+    "v1 GPU OOM",
+    "v2 whitespace runaway",
+    "v3 key-shape guard refusal",
+    "v4 raw-newline enum JSON",
+    "v5 complete"
+  ]
+}
