@@ -21,3 +21,21 @@ def test_synthetic_mounts_limits_and_command():
     assert all(ro for _,target,ro in mounts if target not in ('/out','/models/.'+module.GPU+'.lock'))
     assert config['Cmd'] == ['-s','/code/scripts/healthtech/run_automatic_synthetic.py','1234','a'*64]
     assert 'OMP_NUM_THREADS=1' in config['Env']
+
+
+def test_cpu_grammar_mounts_only_tokenizer_files_without_gpu():
+    scripts=Path(__file__).resolve().parents[1]/'scripts/healthtech'
+    sys.path.insert(0,str(scripts))
+    try:
+        spec=importlib.util.spec_from_file_location('cpu_grammar_supervisor_fixture',scripts/'supervise_automatic_grammar.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        config,mounts=module.configuration(Path('/jobs/fixture'),1234,'a'*64,
+                                         ['tokenizer.json','tokenizer_config.json','config.json'])
+    finally: sys.path.remove(str(scripts))
+    host=config['HostConfig']
+    assert not host.get('DeviceRequests')
+    assert host['NetworkMode']=='none' and host['Memory']==1536*1024**2
+    assert host['NanoCpus']==1_000_000_000
+    targets={t for _,t,_ in mounts}
+    assert '/input/corpus.jsonl' not in targets and '/models/qwen3-8b' not in targets
+    assert '/models/qwen3-8b/tokenizer.json' in targets

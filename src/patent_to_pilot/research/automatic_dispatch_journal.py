@@ -158,7 +158,8 @@ class AutomaticDispatchJournal(DispatchJournal):
             study['qualified_dispatches'][d['attempt_id']] = deepcopy(d)
             study['reservations'].append({'attempt_id': d['attempt_id'], 'status': 'RUNNING', 'declaration': deepcopy(d)})
             study['status'] = 'ACTIVE'
-            ledger['r6_phase0_cpu']['remote_cpu_reserved_seconds'] += d['cpu_seconds']
+            # Owner definition (12 Nov 2026): claimable stages are GPU stages;
+            # their host CPU is telemetry, so no CPU-cap reservation is made.
             db.execute('INSERT INTO attempts VALUES (?,?,NULL)', (d['attempt_id'], encoded(d)))
             db.execute('UPDATE head SET active=?,scope=?,ledger=?', (d['attempt_id'], encoded(scope), encoded(ledger)))
         return {'status': 'CONSUMED_UNRESOLVED', 'attempt_id': d['attempt_id'], 'generation': expected_generation}
@@ -196,10 +197,9 @@ class AutomaticDispatchJournal(DispatchJournal):
             require(len(reservations) == 1 and reservations[0]['status'] == 'RUNNING'
                     and reservations[0]['declaration'] == declaration, 'reservation mismatch')
             charge = math.ceil(wall)
-            cpu = ledger['r6_phase0_cpu']
-            require(cpu['remote_cpu_reserved_seconds'] >= declaration['cpu_seconds'], 'CPU reservation missing')
-            cpu['remote_cpu_reserved_seconds'] -= declaration['cpu_seconds']
-            cpu['remote_cpu_charged_seconds'] += math.ceil(cpu_seconds)
+            telemetry = ledger.get('gpu_stage_host_cpu_telemetry_seconds', 0)
+            require(type(telemetry) in (int, float) and math.isfinite(telemetry), 'invalid CPU telemetry')
+            ledger['gpu_stage_host_cpu_telemetry_seconds'] = telemetry + cpu_seconds
             for used, remaining, cap, delta in (
                 ('gpu_conservative_charged_seconds', 'gpu_remaining_seconds', 'gpu_limit_seconds', charge),
                 ('fidelity_generation_charged_seconds', 'fidelity_generation_remaining_seconds', 'fidelity_limit_seconds',
@@ -215,7 +215,8 @@ class AutomaticDispatchJournal(DispatchJournal):
             ledger['model_calls'] += calls
             ledger['model_calls_count_is_lower_bound'] = ledger.get('model_calls_count_is_lower_bound', False) or not terminal['calls_complete']
             study['stage_costs'][attempt_id] = {'stage': declaration['stage'], 'seconds': charge,
-                                               'known_calls': calls, 'calls_complete': terminal['calls_complete']}
+                                               'known_calls': calls, 'calls_complete': terminal['calls_complete'],
+                                               'host_cpu_seconds_telemetry': cpu_seconds}
             reservations[0]['status'] = 'SETTLED'
             study['status'] = 'IDLE'
             if (charge > declaration['seconds'] or calls > declaration['maximum_calls']

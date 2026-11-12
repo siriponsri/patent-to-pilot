@@ -1,5 +1,65 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## CPU accounting blocker cleared; journal generation 6 2026-11-12T17:45+07:00
+
+Claude session local_016eefb9 is the sole writer. Owner decisions applied once to the live journal: CPU cap 28800 -> 57600s (no reset); unmeasured automatic preparation 07:00:41.145 -> 07:30:39.320 booked as physical upper bound 1799s x 12 CPUs = 21588s UPPER_BOUND_NOT_MEASURED (the 4h estimate was NOT approved and is not used); GPU-stage host CPU is telemetry only, not charged to the CPU cap. Journal generation 5 -> 6, active null, scope and attempts unchanged, ledger f07dcc5fe7666d809f41a19d331d23812735dfb58653531a2889f755e937cbe5 mirrored to the local canonical ledger and confirmed by the read-only inspector. CPU charged 47180.84637781s, remaining 10419.15362219s (~2.89h). GPU remaining 675994.39s, fidelity 215473.27s, unchanged.
+
+Code: automatic_cpu_booking (cpu_cap/cpu_used + one-time amend_cpu_cap_and_book_preparation), automatic_live_admission (cap from ledger; GPU stages consume no CPU cap), automatic_dispatch_journal (no CPU reservation for claims; settlement records host_cpu_seconds_telemetry), scripts/healthtech/meter_local_cpu.py. Tests: 31 targeted, then 134 across automatic, R6/R7 journal, SACR, Graph and KM suites, all PASS. Closed R7 code still refuses the amended cap (intended).
+
+Evidence: docs/healthtech/audits/ptp-automatic-preparation-20261112/takeover-20261112/ (README, owner-cpu-amendment, preparation-window-evidence, amendment-receipt, amendment-verification, post-amendment-inspection, local-cpu-measurements.jsonl). Takeover-session measured CPU 3.5625s so far is not yet booked; book it with a 100s conservative segment allowance before the next CPU-only dispatch. Do NOT rerun apply_cpu_amendment.py expecting a second booking: at generation 6 it only verifies.
+
+Next: plan step B, the CPU grammar qualification (supervise_automatic_grammar + qualify_automatic_grammar, 6 authored cases, CPU-only, <=600s reserved through book_cpu). First pin the package/declaration and tokenizer/lmfe files, review abnormal-exit accounting, stage once in a new job dir, and observe the same handle to terminal. No model call, GPU job, corpus read, Neo4j write or paid API so far in this session.
+
+
+## Claude takeover; owner CPU decisions recorded 2026-11-12T17:25+07:00
+
+Claude Code session local_016eefb9 (claude-opus-5-5, effort high, plan approved) is now sole repo writer; no other session on this repo running, no python/codex process locally. Read-only verification: HEAD=origin/main=bdb77da (0/0), local CPU-grammar package and handoffs unpublished and preserved, owner 9-Nov file untouched. Remote journal generation5 active=null, 0 outstanding reservations, R6/R7 terminal, approved GPU idle, 0 running ptp containers; local ledger hash = remote 2d0419778919614d48872f4d1f536edabb458881d6be18dbfb7d5542d402a927. CPU charged 25592.84637781s (unchanged since R7).
+
+Owner decisions (this chat): (1) cumulative CPU cap 8h->16h (28800->57600s), no reset; (2) unmeasured automatic preparation window 2026-11-12T07:00:41.145->07:30:39.320 booked as PHYSICAL UPPER BOUND 1799s x 12 logical CPUs = 21588s, label UPPER_BOUND_NOT_MEASURED (owner did NOT approve the 4h estimate); 06:47-07:00 pre-activation planning uncharged per inter-goal precedent, disclosed; (3) ORIGINAL definition retained: GPU stages charge GPU/fidelity wall only, host CPU recorded as telemetry; CPU cap covers CPU-only jobs, local prep, tests, analysis. Conservative CPU remaining after booking 10419.15s (~2.89h). From takeover onward: metered local subprocess CPU + 100s conservative per session segment.
+
+NOT yet applied: journal/ledger still at cap28800, no booking written. Hardcoded 28800 in automatic_cpu_booking.py and automatic_live_admission.py and GPU-stage CPU reservation in automatic_dispatch_journal.py must be amended first (plan step A). No job, model call or remote mutation this checkpoint. Plan: C:/Users/User/.claude/plans/wise-finding-hamming.md. Owner asked execution to continue on Sonnet; a session cannot switch its own model, awaiting owner model-picker switch, then resume at step A.
+
+
+## Automatic goal blocked on unresolved CPU accounting 2026-11-12T07:30:39.285730+07:00
+
+Accounting blocker persisted third consecutive goal turn with no owner decision or new accounting evidence. Goal marked BLOCKED via goal tool after this checkpoint; not complete or owner-paused. Cannot establish remaining CPU allowance because automatic preparation costs were not fully measured; requested CPU8to16h and4h estimated preparation allowance remains unanswered. No response inferred from continuation. No meaningful resource-dependent progress can proceed within verified budget; low-overhead handoff completed. Resume requires explicit decision or defensible accounting, then follow AUTOMATIC-RESUME-CHECKLIST.md and inspect same journal before dispatch. No automatic-era model/native/Graph pilot/full-dev results; latest publishedbdb77da contains68test preparation package, subsequent CPUgrammar source/tests and handoffs remain local. No live experiment launched, no claim activeGPU now; last live idle check historical. Preserve all files and failures, owner unrelatedfile, original ledger and full two-track objective. Parent relinquishes active writing after final handoff.
+
+
+## Accounting blocker revalidated; exact resume checklist saved 2026-11-12T07:30:11.811077+07:00
+
+Goal ACTIVE; accounting blocker second consecutive goal turn. No owner response to pending CPU16h/estimated4h decision, and no independently defensible aggregateCPU bound found in existing receipts; do not infer approval from automatic continuation. Minimal read-only checkout confirms unpublished CPU grammar artifacts preserved. Added AUTOMATIC-RESUME-CHECKLIST.md with exact dependencies, hardcoded28800s cap amendment requirement, samejournal continuation and remaining full-goal gaps. This documentation improves handoff but does not remove execution blocker; no CPU/GPU experiment or model/corpus operation. Next await decision or verified accounting evidence; if same true impasse persists third consecutive turn, mark blocked rather than repeatedly claiming ongoing execution. Parent solewriter, HANDOFF/CLAUDE aligned; prior model results remain unavailable.
+
+
+## CPU accounting uncertainty surfaced before dispatch 2026-11-12T07:29:09.699553+07:00
+
+Goal ACTIVE; prior turn PROGRESS (CPU controller fixture repair). Before any real CPU/model dispatch, identified missing aggregate CPU measurements for automatic preparation commands since goal activation. Historical ledger3207.15362219s remaining excludes this unsettled preparation; cannot assert sufficient headroom or silently zero it. Sent one consolidated owner decision: increase cumulativeCPU8to16h (previously only proposed) and allocate4h conservative preparation allowance explicitly ESTIMATED_NOT_MEASURED, preserve old costs, future bounded metering; alternative retain8h and hold execution until accounting proven. No response yet, no inferred approval. Do not dispatch CPUgrammar/GPU or charge invented actual costs while pending. No new runtimejob; last live journal observationgeneration5idle is historical, not newly polled. Keep full two-track goal active; this is first accounting-blocker turn, not blocked threshold. Offline artifacts and handoff preserved; low-overhead documentation only, parent solewriter. Need owner decision or independently defensible accounting bound before resource-dependent work.
+
+
+## CPU supervisor Windows import fixture repaired 2026-11-12T07:28:09.249525+07:00
+
+Correction to immediately prior checkpoint: initial targeted test was3PASS/1FAIL because Linux resource imported at module load on Windows; prior fourPASS wording was premature. Moved resource import inside Linux-only main, reran same four tests and all4PASS confirmed. This is packaging-only fixture repair, no container/backend/data started and no experimental retry consumed. Preserve original test failure in handoff. All runtime grammar/model qualifications remain NOT_RUN; next freeze/stage CPU job with explicit booking. Goal ACTIVE and full scope retained.
+
+
+## CPU grammar supervisor isolated and tested 2026-11-12T07:27:51.047987+07:00
+
+Goal ACTIVE; previous turn PROGRESS. Added fixed-name supervise_automatic_grammar.py CPU1/1536MiBworker+512MiBcontroller, networkoff, read-only tokenizer FILE mounts only (no weight directory/corpus/GPU), exact package/controller pins, precharged600CPU receipt check, worker540/controller60 CPU enforcement, exclusive admission and terminal inspect. Four targeted config/CPUbooking/grammar fixture testsPASS; controller compiles. Not staged/launched yet. Still need concrete charge evidence and one-shot freeze/stage helper, exact tokenizer/lmfe pins and actual CPU replay; do not claim full runtimequalification. Current package includes no protected data or model output. Parent solewriter, HANDOFF/CLAUDE aligned, local additions afterbdb77da retained; goal full scope unchanged.
+
+
+## CPU-only conservative booking mechanism qualified 2026-11-12T07:26:33.676736+07:00
+
+Goal ACTIVE; prior turn PROGRESS. Added automatic_cpu_booking.py to debit a bounded CPU-only upper bound once under same durable journal, preserving all nonCPU fields and scope, requiring pinned approval/evidence/prior ledger and idlegeneration; duplicatebooking rejected. Upper-bound charges are not refunded, avoiding unmeasured CPU zero claims; no GPU/model authority granted. Authored transaction testPASS. No live booking/debit yet. Next use documented preparation bound and explicit<=600CPU grammar allowance, stage CPU controller with worker<=540s/controller<=60s enforcement, then verify terminal and retain actualCPU belowchargedbound. Need real observed proof for charge basis before booking; do not reset original8h cap. All runtime/model/test/Neo4j NOT_RUN this turn. Full goal ACTIVE, HANDOFF/CLAUDE aligned; sole parentwriter, local additions afterbdb77da, owner unrelatedfile preserved.
+
+
+## CPU-only actual-tokenizer grammar worker prepared 2026-11-12T07:25:32.242579+07:00
+
+Goal ACTIVE; prior turn PROGRESS. Added qualify_automatic_grammar.py CPU-only worker for6 authored new-schema cases using actual existing tokenizer/R6Backend grammar and EOS guard, no weight tensors/corpus/model invocation. Exact source/tokenizer/KM/lmfe pins, CPU<=540s and alarm, durable qualification/failure CPU/time receipts. CompilationPASS only; no real tokenizer execution yet. Next reuse existing CPU isolated controller with new fixedname/manifest, reserve<=600CPU includingcontroller after preparation reconciliation, run once and inspect samehandle to terminal; keep GPU smoke contingent on actual grammar. No new runtime/data/journal changes, prior publishedbdb77da preserved; current worker/grammar additions local. Parent solewriter, HANDOFF/CLAUDE aligned; full goal remains active and unfinished.
+
+
+## Authored automatic grammar qualification cases ready 2026-11-12T07:24:44.518412+07:00
+
+Goal ACTIVE; previous turn PROGRESS including screened publication bdb77da3011e8099363f736918cdb5201a1aae9d. Added automatic_grammar_cases.py with6 fixed authored cases: marking valid/abstain/wrongID and review valid/uncertain/missingcheck, using exact KM prompt/schema and same R6Backend.qualify callback intended for runtime. Independent JSONschema fixture testPASS; actual tokenizer/grammar replay NOT_RUN. A lookup of nonexistent run_r7_backend_preflight.py failed read-only; no execution attempted. Current CPU snapshot confirmed global charged25592.84637781s with3207.15362219s headroom under8h; pending new preparation CPU not yet settled, no budget reset. Next prepare isolated CPU grammar worker and exact reservation/receipt, reconcile conservative preparation costs and preserve enough headroom before actual CPU/model dispatch. No new model/corpus/protectedtest/Neo4j activity. New grammar source/test local afterpublishedbdb77da; HANDOFF/CLAUDE aligned and owner unrelatedfile untouched.
+
+
 ## Automatic package offline qualification recorded 2026-11-12T07:23:26.125674+07:00
 
 Goal ACTIVE; previous turn PROGRESS. Exact combined package qualification completed68 authored tests PASS including supervisor mount/network/CPU/RAM config, journal claims/settlement, automatic pipeline and graph evidence/traversal. Persisted test output/source hashes in docs/healthtech/audits/ptp-automatic-preparation-20261112/offline-v1; measured wall2.156s, CPU still pending conservative settlement. Evidence is offline engineering only, runtime_qualified=false/semantic_certified=false; no real model calls. Current code and docs prepared for screened publication under owner authorized code/docs publication; only explicit manifest files, owner unrelated handoff excluded. Next grammar/tokenizer qualification on exact new schema, CPU ledger reconciliation and staged synthetic declaration/controller verification before real smoke. Main goal full SACR+Graph dev remains incomplete. Parent solewriter, HANDOFF/CLAUDE aligned; previous base f88edb3, publication result must be verified.

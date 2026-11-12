@@ -1,0 +1,20 @@
+{
+  "kind": "CPU_CAP_AMENDMENT_AND_PREPARATION_UPPER_BOUND",
+  "from_seconds": 28800,
+  "to_seconds": 57600,
+  "basis": "UPPER_BOUND_NOT_MEASURED",
+  "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "location": "local",
+  "owner_approval_sha256": "6e36eee5143f53b291b7e061e442f3be446d964d1b58334806680a27367661dd",
+  "evidence_sha256": "6df70f9075b67da9187cf7f9744cc9ea6332bb6354b1dc97f5fcc4711d724f30",
+  "window_start_unix": 1794441641.145226,
+  "window_end_unix": 1794443439.320318,
+  "logical_cpus": 12,
+  "upper_bound_seconds": 21588,
+  "booking_id": "automatic-preparation-20261112T070041-073039",
+  "prior_ledger_sha256": "2d0419778919614d48872f4d1f536edabb458881d6be18dbfb7d5542d402a927",
+  "journal_identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "module_sha256_lf": "011a674c3b5836384960f3644260c5910e8e52ce8a166cca4d1af06ab3252a8a"
+}

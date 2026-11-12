@@ -162,7 +162,10 @@ def test_only_exact_declared_stage_can_claim_once(tmp_path):
     assert result['ledger']['fidelity_generation_charged_seconds'] == 113
     assert result['ledger']['model_calls'] == 133
     assert result['ledger']['r6_phase0_cpu']['remote_cpu_reserved_seconds'] == 0
-    assert result['ledger']['r6_phase0_cpu']['remote_cpu_charged_seconds'] == 5
+    # GPU-stage host CPU is telemetry only (owner definition, 12 Nov 2026).
+    assert result['ledger']['r6_phase0_cpu']['remote_cpu_charged_seconds'] == 0
+    assert result['ledger']['gpu_stage_host_cpu_telemetry_seconds'] == 4.3
+    assert result['scope']['automatic_study']['stage_costs'][d['attempt_id']]['host_cpu_seconds_telemetry'] == 4.3
     assert result['ledger']['model_calls_count_is_lower_bound'] is True
     assert result['scope']['old_failure'] == 'CALIBRATION_FAILED'
     with pytest.raises(InputBoundaryError):

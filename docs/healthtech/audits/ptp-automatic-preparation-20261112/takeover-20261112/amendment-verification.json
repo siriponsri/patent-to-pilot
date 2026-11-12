@@ -1,0 +1,13 @@
+{
+  "applied_now": true,
+  "identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "generation": 6,
+  "active": null,
+  "scope_sha256": "31bac51f4dc1317645c03c3a4c796302af80a9a619129d8738a1c96c3c3b9798",
+  "approved_gpu_occupied": false,
+  "new_model_calls": 0,
+  "ledger_sha256": "f07dcc5fe7666d809f41a19d331d23812735dfb58653531a2889f755e937cbe5",
+  "receipt_sha256": "1f5c4123d042f575b64a1b64e9d4cde0f0b744bf98d56fa76ae55bf83c51fa8c",
+  "cpu_used_seconds": 47180.84637781,
+  "cpu_remaining_seconds": 10419.153622190002
+}

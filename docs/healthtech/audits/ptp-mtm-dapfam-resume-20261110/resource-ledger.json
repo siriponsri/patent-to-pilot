@@ -605,7 +605,7 @@
     "cpu_prior_upper_bound_seconds": 23448.0,
     "local_cpu_reserved_seconds": 0,
     "remote_cpu_reserved_seconds": 0,
-    "cpu_cap_seconds": 28800,
+    "cpu_cap_seconds": 57600,
     "disk_reserved_bytes": 4294967296,
     "gpu_reserved_seconds": 0,
     "model_calls": 0,
@@ -717,10 +717,30 @@
         }
       }
     },
-    "local_cpu_conservative_charged_seconds": 1600,
+    "local_cpu_conservative_charged_seconds": 23188,
     "local_cpu_measured_seconds": 121.03125,
     "compact_preparation_pending_cpu_settled_seconds": 200,
-    "compact_v2_local_CPU_charged_seconds": 100
+    "compact_v2_local_CPU_charged_seconds": 100,
+    "cap_amendments": [
+      {
+        "from_seconds": 28800,
+        "generation": 6,
+        "owner_approval_sha256": "6e36eee5143f53b291b7e061e442f3be446d964d1b58334806680a27367661dd",
+        "receipt_sha256": "1f5c4123d042f575b64a1b64e9d4cde0f0b744bf98d56fa76ae55bf83c51fa8c",
+        "to_seconds": 57600
+      }
+    ],
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP",
+    "upper_bound_bookings": [
+      {
+        "basis": "UPPER_BOUND_NOT_MEASURED",
+        "booking_id": "automatic-preparation-20261112T070041-073039",
+        "logical_cpus": 12,
+        "seconds": 21588,
+        "window_end_unix": 1794443439.320318,
+        "window_start_unix": 1794441641.145226
+      }
+    ]
   },
   "r6_graph_status": "CLOSED_INPUT_RISK_CAP_33_OF_114_NO_MODEL",
   "r6_calibration_reservation": {

@@ -1,0 +1,24 @@
+{
+  "status": "OWNER_APPROVED_CPU_CAP_AMENDMENT",
+  "date": "2026-11-12",
+  "channel": "Claude Code chat, session local_016eefb9",
+  "owner_words_cap": "ผมอนุมัติเพิ่มเพดาน CPU สะสมจาก 8 เป็น 16 ชั่วโมง ไม่ใช่เพิ่มอีก 16 ชั่วโมง และห้ามล้างต้นทุนเดิม",
+  "owner_words_estimate": "การอนุมัติเพดาน 16 ชั่วโมงไม่ได้ยืนยันว่าผมอนุมัติให้กัน 4 ชั่วโมงแบบประมาณการแล้ว",
+  "owner_choice_preparation": "ขอบบนทางกายภาพ (1,799s x 12 CPU = 21,588s, UPPER_BOUND_NOT_MEASURED); 4h estimate NOT approved",
+  "owner_choice_gpu_stage_cpu": "ใช้นิยามเดิม: GPU stages charged as GPU/fidelity wall; host CPU telemetry only; CPU cap covers CPU-only jobs, local prep, tests, analysis",
+  "cumulative_cpu_cap_seconds": {
+    "from": 28800,
+    "to": 57600
+  },
+  "reset": false,
+  "unchanged": {
+    "gpu_limit_hours": 192,
+    "ram_gib": 32,
+    "cpu_threads": 8,
+    "incremental_disk_gib": 40,
+    "paid_api": false
+  },
+  "journal_identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4",
+  "prior_generation": 5,
+  "prior_ledger_sha256": "2d0419778919614d48872f4d1f536edabb458881d6be18dbfb7d5542d402a927"
+}

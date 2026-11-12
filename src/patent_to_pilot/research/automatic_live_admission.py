@@ -4,6 +4,7 @@ from .mtm_runtime import InputBoundaryError
 from .r6_dispatch_journal import document_hash
 
 GPU = 'GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089'
+GPU_STAGES = frozenset(('synthetic', 'fidelity', 'pilot', 'full_dev'))
 
 
 def validate_live(receipt, declaration, ledger, generation, now):
@@ -23,19 +24,19 @@ def validate_live(receipt, declaration, ledger, generation, now):
     require(type(receipt.get('cpu_threads')) is int and 0 < receipt['cpu_threads'] <= 8
             and type(receipt.get('aggregate_ram_limit_bytes')) is int
             and 0 < receipt['aggregate_ram_limit_bytes'] <= 32*1024**3, 'host resource caps changed')
+    from .automatic_cpu_booking import cpu_cap, cpu_used
     cpu = ledger.get('r6_phase0_cpu', {})
-    keys = ('cpu_prior_upper_bound_seconds', 'local_cpu_conservative_charged_seconds',
-            'local_cpu_measured_seconds', 'remote_cpu_charged_seconds',
-            'local_cpu_reserved_seconds', 'remote_cpu_reserved_seconds')
-    require(cpu.get('cpu_cap_seconds') == 28800 and all(number(cpu.get(k)) for k in keys),
-            'CPU cumulative accounting incomplete')
+    cap, used = cpu_cap(cpu), cpu_used(cpu)
+    # cpu_seconds is always a worker RLIMIT safety bound. Owner definition:
+    # GPU-stage host CPU is telemetry; only CPU-only stages consume the cap.
     reserved = declaration.get('cpu_seconds')
-    require(number(reserved) and reserved > 0
-            and sum(cpu[k] for k in keys) + reserved <= cpu['cpu_cap_seconds'], 'CPU allowance exhausted')
+    charged = 0 if declaration.get('stage') in GPU_STAGES else reserved
+    require(number(reserved) and reserved > 0 and used + charged <= cap, 'CPU allowance exhausted')
     disk = receipt.get('incremental_disk_bytes'); addition = declaration.get('additional_disk_bytes')
     require(number(disk) and type(addition) is int and addition > 0
             and disk + addition <= ledger.get('disk_limit_bytes_combined_incremental', 0),
             'incremental disk allowance exceeded')
     require(number(receipt.get('free_disk_bytes')) and receipt['free_disk_bytes'] >= addition,
             'physical disk space insufficient')
-    return {'status': 'LIVE_OBSERVATION_BOUND', 'cpu_reserved_seconds': reserved}
+    return {'status': 'LIVE_OBSERVATION_BOUND', 'cpu_reserved_seconds': charged,
+            'cpu_safety_bound_seconds': reserved}

@@ -1,0 +1,22 @@
+{
+  "kind": "UNMEASURED_AUTOMATIC_PREPARATION_WINDOW",
+  "host": "local Windows workstation (this repo checkout)",
+  "logical_cpus": 12,
+  "logical_cpus_source": "python os.cpu_count() observed 2026-11-12 ~17:00 +07",
+  "window_start": "2026-11-12T07:00:41.145226+07:00",
+  "window_start_source": "automatic dual-track goal activation checkpoint timestamp (CLAUDE.md/HANDOFF.md entry)",
+  "window_end": "2026-11-12T07:30:39.320318+07:00",
+  "window_end_source": "last pre-takeover write: CLAUDE.md mtime observed read-only before any takeover edit (HANDOFF.md 07:30:39.288730)",
+  "window_start_unix": 1794441641.145226,
+  "window_end_unix": 1794443439.320318,
+  "window_seconds": 1798.1750919818878,
+  "upper_bound_seconds": 21588,
+  "basis": "UPPER_BOUND_NOT_MEASURED: all logical CPUs saturated for the whole window; actual use was far lower but was not retained",
+  "double_count_exclusions": [
+    "R7 CPU settled at R7 closeout (~06:17 +07); no automatic-era CPU booking existed in journal generation 5 (charged total 25592.84637781 unchanged since R7)",
+    "06:47-07:00 pre-activation planning left uncharged per inter-goal precedent (disclosed)",
+    "takeover session from 2026-11-12 ~16:58 +07 metered separately (local-cpu-measurements.jsonl) plus conservative segment allowance"
+  ],
+  "residual_disclosure": "Any shell activity after the final 07:30:39 handoff write and before goal-tool blocking is not evidenced by files and is not separately charged.",
+  "remote_cpu_in_window": "read-only SSH inspection (inspect_automatic_resume.py) ran remote python briefly; not covered by this local bound, negligible, disclosed"
+}
