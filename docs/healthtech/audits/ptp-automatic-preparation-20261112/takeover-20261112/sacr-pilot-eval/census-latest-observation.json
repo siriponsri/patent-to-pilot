@@ -1,0 +1,17 @@
+{
+  "job": "ptp-auto-sacr-pilot-eval-20261113-v1",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 564227,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T16:03:51.510006858Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START"
+}

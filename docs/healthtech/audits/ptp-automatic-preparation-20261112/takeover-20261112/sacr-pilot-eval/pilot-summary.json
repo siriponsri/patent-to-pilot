@@ -1,0 +1,182 @@
+{
+  "status": "PILOT_EVALUATED_DEV_ONLY",
+  "pilot_queries": 20,
+  "partitions": {
+    "ALL": {
+      "eligible_queries": 20,
+      "B0": {
+        "NDCG@10": 0.17622,
+        "NDCG@100": 0.20149,
+        "NDCG@200": 0.24177,
+        "Recall@10": 0.075,
+        "Recall@100": 0.235,
+        "Recall@200": 0.3375
+      },
+      "SACR": {
+        "NDCG@10": 0.18795,
+        "NDCG@100": 0.2056,
+        "NDCG@200": 0.24577,
+        "Recall@10": 0.0825,
+        "Recall@100": 0.2375,
+        "Recall@200": 0.34
+      },
+      "paired": {
+        "NDCG@10": {
+          "sacr_better": 5,
+          "b0_better": 2,
+          "ties": 13,
+          "mean_delta": 0.01173
+        },
+        "NDCG@100": {
+          "sacr_better": 10,
+          "b0_better": 7,
+          "ties": 3,
+          "mean_delta": 0.00411
+        },
+        "NDCG@200": {
+          "sacr_better": 11,
+          "b0_better": 7,
+          "ties": 2,
+          "mean_delta": 0.004
+        },
+        "Recall@10": {
+          "sacr_better": 2,
+          "b0_better": 0,
+          "ties": 18,
+          "mean_delta": 0.0075
+        },
+        "Recall@100": {
+          "sacr_better": 2,
+          "b0_better": 1,
+          "ties": 17,
+          "mean_delta": 0.0025
+        },
+        "Recall@200": {
+          "sacr_better": 3,
+          "b0_better": 3,
+          "ties": 14,
+          "mean_delta": 0.0025
+        }
+      }
+    },
+    "IN": {
+      "eligible_queries": 18,
+      "B0": {
+        "NDCG@10": 0.19472,
+        "NDCG@100": 0.26995,
+        "NDCG@200": 0.30646,
+        "Recall@10": 0.21719,
+        "Recall@100": 0.46182,
+        "Recall@200": 0.57764
+      },
+      "SACR": {
+        "NDCG@10": 0.21721,
+        "NDCG@100": 0.28168,
+        "NDCG@200": 0.3159,
+        "Recall@10": 0.24224,
+        "Recall@100": 0.46527,
+        "Recall@200": 0.5745
+      },
+      "paired": {
+        "NDCG@10": {
+          "sacr_better": 5,
+          "b0_better": 3,
+          "ties": 10,
+          "mean_delta": 0.02249
+        },
+        "NDCG@100": {
+          "sacr_better": 8,
+          "b0_better": 8,
+          "ties": 2,
+          "mean_delta": 0.01173
+        },
+        "NDCG@200": {
+          "sacr_better": 9,
+          "b0_better": 8,
+          "ties": 1,
+          "mean_delta": 0.00944
+        },
+        "Recall@10": {
+          "sacr_better": 2,
+          "b0_better": 0,
+          "ties": 16,
+          "mean_delta": 0.02505
+        },
+        "Recall@100": {
+          "sacr_better": 2,
+          "b0_better": 1,
+          "ties": 15,
+          "mean_delta": 0.00345
+        },
+        "Recall@200": {
+          "sacr_better": 1,
+          "b0_better": 3,
+          "ties": 14,
+          "mean_delta": -0.00314
+        }
+      }
+    },
+    "OUT": {
+      "eligible_queries": 16,
+      "B0": {
+        "NDCG@10": 0.08797,
+        "NDCG@100": 0.11366,
+        "NDCG@200": 0.13575,
+        "Recall@10": 0.06195,
+        "Recall@100": 0.15769,
+        "Recall@200": 0.22838
+      },
+      "SACR": {
+        "NDCG@10": 0.08871,
+        "NDCG@100": 0.1156,
+        "NDCG@200": 0.14025,
+        "Recall@10": 0.06195,
+        "Recall@100": 0.15769,
+        "Recall@200": 0.23535
+      },
+      "paired": {
+        "NDCG@10": {
+          "sacr_better": 1,
+          "b0_better": 0,
+          "ties": 15,
+          "mean_delta": 0.00074
+        },
+        "NDCG@100": {
+          "sacr_better": 4,
+          "b0_better": 1,
+          "ties": 11,
+          "mean_delta": 0.00194
+        },
+        "NDCG@200": {
+          "sacr_better": 6,
+          "b0_better": 2,
+          "ties": 8,
+          "mean_delta": 0.0045
+        },
+        "Recall@10": {
+          "sacr_better": 0,
+          "b0_better": 0,
+          "ties": 16,
+          "mean_delta": 0.0
+        },
+        "Recall@100": {
+          "sacr_better": 0,
+          "b0_better": 0,
+          "ties": 16,
+          "mean_delta": 0.0
+        },
+        "Recall@200": {
+          "sacr_better": 2,
+          "b0_better": 0,
+          "ties": 14,
+          "mean_delta": 0.00697
+        }
+      }
+    }
+  },
+  "reference": "B0_PINNED (anchor check 20/20 identical)",
+  "protected_test_access": false,
+  "significance_claim": false,
+  "process_cpu_seconds": 3.047417437,
+  "wall_seconds": 2.8889296790002845
+}

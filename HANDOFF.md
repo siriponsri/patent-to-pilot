@@ -1,5 +1,24 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## SACR pilot-20: retrieval + evaluation complete (development evidence, no significance) 2026-11-13T06:10+07:00
+
+Pilot retrieval stage ptp-auto-sacr-pilot-retrieval-20261113-v1 exited 0 in 25.7s; settled at generation 88 (26s GPU; 0 generation calls).
+- Anchor control: all 20 re-encoded original TA rankings are identical to the pinned B0, so B0_PINNED is the reference.
+- 40 texts encoded; panel = 20 SACR rankings, 0 fallbacks.
+
+Pilot evaluation (CPU, dev qrels only; ptp-auto-sacr-pilot-eval-20261113-v1); summary at takeover-20261112/sacr-pilot-eval/pilot-summary.json:
+- OUT (16 eligible) Recall@200: B0 0.2284 vs SACR 0.2354 (paired: SACR better 2, B0 better 0, ties 14). nDCG@10: 0.0880 vs 0.0887.
+- ALL (20) Recall@200: 0.3375 vs 0.3400 (3/3/14). nDCG@10: 0.1762 vs 0.1880.
+- IN (18) Recall@200: 0.5776 vs 0.5745 (1/3/14).
+
+Differences are small and mostly ties; n=20, no significance claim. The pilot is technically valid, which per the frozen rule permits full-dev (win/loss is not a gate).
+
+Next (already within the original goal F):
+- SACR full-dev on 474 dev queries: ~98s per query, about 13h GPU, inside the 100h full-dev planning envelope. It needs a full_dev stage envelope amendment and explicit ledger full_dev accounting initialisation (claim requires full_dev_charged_seconds; prior full-dev NOT_RUN is evidenced in the R5-R7 records).
+- Graph under the override: 300-relation screening, then pilot S/G/S-deep.
+Nothing running.
+
+
 ## Native SACR pilot-20 v5 COMPLETE: 20/20 screened candidates; settled call-complete 2026-11-13T05:15+07:00
 
 ptp-auto-native-sacr-pilot20-20261112-v5 exited 0 after 1964.6s. 40 calls, all normal returns; all 20 queries USE_SCREENED_CANDIDATE (AUTOMATIC_SCREEN_COMPLETED); semantic_certified=false.

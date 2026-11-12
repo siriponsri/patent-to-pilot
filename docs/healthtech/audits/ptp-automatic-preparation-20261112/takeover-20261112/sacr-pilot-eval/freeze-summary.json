@@ -1,0 +1,17 @@
+{
+  "jobs": {
+    "census": {
+      "job": "ptp-auto-sacr-pilot-eval-20261113-v1",
+      "supervisor": "supervise_sacr_pilot_eval.py",
+      "declaration_sha256": "f81166a8061d49254ad9ff7038680a39b19b97a2c4bb7eb11b7645a340ad97b5",
+      "transport": {
+        "bytes": 1894400,
+        "sha256": "6709fc8f4f77f84a97d296f07fe1281e51501d23bf3f0f3275a5ce91cb381285",
+        "files": 237
+      }
+    }
+  },
+  "generation": 90,
+  "ledger_sha256": "fcde7d04cb2e9d6c049e84ffc6e0be287953149492c5be7d8148cc31e56fb597",
+  "cpu_remaining_seconds": 29481.153622190002
+}

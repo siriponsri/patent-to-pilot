@@ -1,0 +1,11 @@
+{
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "owner_approval_sha256": "8a5278485f2a0c826f09a3bd04eb1a05637b8de79642d0f4b96cb04e61763885",
+  "evidence_sha256": "45c034961b735017851142c80bccb37e5a188c92a157c35dc0b475ad1f14961f",
+  "booking_id": "ptp-auto-sacr-pilot-eval-20261113-v1",
+  "location": "remote",
+  "conservative_cpu_seconds": 120,
+  "basis": "upper bound: worker RLIMIT_CPU 90 s + controller 30 s on 1 core, wall stop 110 s; no refund",
+  "prior_ledger_sha256": "b3b9ecac56c5afba3c428793c471bb93d08dee7879becf333bd0d7a7369b2a8d"
+}

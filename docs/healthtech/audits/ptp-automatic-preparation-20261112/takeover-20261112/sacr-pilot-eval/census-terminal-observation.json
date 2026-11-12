@@ -1,0 +1,39 @@
+{
+  "job": "ptp-auto-sacr-pilot-eval-20261113-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T16:03:51.510006858Z",
+    "FinishedAt": "2026-11-12T16:03:54.678338355Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-sacr-pilot-eval-20261113-v1",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-12T16:03:51.510006858Z",
+      "FinishedAt": "2026-11-12T16:03:54.678338355Z"
+    },
+    "whole_wall_seconds": 4.34730882900476,
+    "controller_cpu_seconds": 0.168653102
+  },
+  "isolation_status": "PASS_BEFORE_START"
+}
