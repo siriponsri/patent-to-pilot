@@ -47,3 +47,14 @@
 - `pilot` needs a completed `fidelity` attempt.
 
 `qualify_stage` and `claim` accept these stages only under such envelopes. GPU-stage host CPU stays telemetry only.
+
+## Addendum: SACR pilot retrieval details (frozen 12 Nov 2026, before any SACR retrieval score)
+
+Based on a read-only survey of `run_dapfam_native_baseline.py`, `native_dense_ranking.rank_maxp`, `evaluate_dapfam_native_baseline.py` and `automatic_screening.complete_query_panel`.
+
+- **Encoding.** SACR candidate text is encoded as `DENSE_QUERY_PREFIX + candidate`, with exactly the B0 query format, encoder (`MeanPoolEncoder`, PatEmbed-large fp32, pinned `MODEL_PINS`), passage vectors (`VECTOR_SHA`), owner construction and `rank_maxp` depth 200. Only the query text differs from B0.
+- **Anchor control.** The same GPU job also re-encodes the 20 original pilot TA texts. If their rankings do not reproduce the pinned B0 rankings exactly, the SACR comparison uses these re-encoded anchors as the B0 reference, and the drift is reported. It is never hidden.
+- **Panel.** `complete_query_panel` builds the SACR arm: a screened candidate's ranking where one exists; otherwise the B0 ranking, unchanged. HOLD aborts. Scores are carried through so the evaluator's ordering check still applies.
+- **Evaluation.** An evaluator variant takes an explicit rankings file (hash-recorded) and a pilot ID subset. It uses the same `native_dev_task` partitions (ALL/IN/OUT) and keeps per-query rows private.
+- **Reported.** OUT Recall@200 (primary), Recall@100, nDCG@10/100; the candidate/fallback counts; and the anchor-reproduction check.
+- **Decision rule.** No significance claim on 20 queries; the pilot only checks technical validity and resource feasibility before full-dev.
