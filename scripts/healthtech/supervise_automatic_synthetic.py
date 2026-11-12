@@ -28,7 +28,8 @@ def configuration(job, stop, digest):
 def main(pin):
     import resource
     job = Path(__file__).resolve().parent
-    if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name != 'ptp-auto-synthetic-20261112-v1':
+    # v1 failed and settled; owner approved at most two revised attempts (v2, v3).
+    if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in ('ptp-auto-synthetic-20261112-v2', 'ptp-auto-synthetic-20261112-v3'):
         raise RuntimeError('fixed new synthetic job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))
     resource.setrlimit(resource.RLIMIT_CPU, (60,60))

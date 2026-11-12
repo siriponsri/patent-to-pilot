@@ -1,0 +1,16 @@
+{
+  "status": "OWNER_APPROVED_SYNTHETIC_REVISIONS",
+  "date": "2026-11-12",
+  "channel": "Claude Code chat, session local_016eefb9 (button answer)",
+  "owner_answer": "Approve, max 2",
+  "question": "Approve up to 2 revised synthetic GPU smokes (<=2 calls, <=1,800 s each)?",
+  "terms": {
+    "max_additional_synthetic_attempts": 2,
+    "maximum_calls_each": 2,
+    "seconds_each": 1800,
+    "configuration_rule": "each attempt must use a revised configuration; never the same configuration twice",
+    "stop_rule": "stop the synthetic stage if both revised attempts fail",
+    "retry_of_failed_v1": "none; v1 failure retained"
+  },
+  "prior_failure": "synthetic-job/synthetic-result.json"
+}

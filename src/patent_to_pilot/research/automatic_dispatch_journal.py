@@ -12,6 +12,9 @@ from .r6_admission import digest
 from .r6_dispatch_journal import DispatchJournal, document_hash, encoded
 
 
+MAX_ADDITIONAL_SYNTHETIC = 2  # owner approval 12 Nov 2026: "Approve, max 2"
+
+
 def require(value, message):
     if not value:
         raise InputBoundaryError(message)
@@ -38,8 +41,16 @@ class AutomaticDispatchJournal(DispatchJournal):
                 require(type(declaration.get(field)) is int and declaration[field] > 0
                         and type(policy.get(field)) is int and declaration[field] <= policy[field],
                         'stage exceeds root authority envelope')
-            require(declaration.get('configuration_sha256') in authority.get('configuration_sha256', []),
+            amendments = study.get('authority_amendments', [])
+            allowed = list(authority.get('configuration_sha256', []))
+            for amendment in amendments: allowed += amendment['add_configuration_sha256']
+            require(declaration.get('configuration_sha256') in allowed,
                     'configuration outside approved authority')
+            prior = [d for d in study['qualified_dispatches'].values() if d.get('stage') == 'synthetic']
+            require(len(prior) < 1 + sum(a['additional_synthetic_attempts'] for a in amendments),
+                    'synthetic attempt allowance exhausted')
+            require(all(d.get('configuration_sha256') != declaration['configuration_sha256'] for d in prior),
+                    'synthetic configuration already attempted')
             attempt = declaration.get('attempt_id')
             require(type(attempt) is str and attempt.startswith('ptp-auto-'), 'invalid attempt')
             require(attempt not in study['qualified_dispatches']
@@ -52,6 +63,40 @@ class AutomaticDispatchJournal(DispatchJournal):
                        (head[1]+1, 'STAGE_QUALIFICATION', encoded(receipt)))
             db.execute('UPDATE head SET generation=?,scope=?', (head[1]+1, encoded(scope)))
         return {'status': 'QUALIFIED_NOT_DISPATCHED', 'generation': expected_generation+1, 'scope': scope}
+
+    def amend_authority(self, *, expected_generation, receipt, receipt_sha256):
+        """Append-only owner amendment; the root authority itself never changes.
+
+        Adds approved configuration identities and (owner cap, 12 Nov 2026) at most
+        two additional synthetic attempts in total across all amendments.
+        """
+        require(type(expected_generation) is int and expected_generation >= 0, 'invalid generation')
+        require(digest(receipt_sha256) and document_hash(receipt) == receipt_sha256, 'amendment pin changed')
+        adds = receipt.get('add_configuration_sha256'); extra = receipt.get('additional_synthetic_attempts')
+        require(receipt.get('kind') == 'AUTHORITY_AMENDMENT' and digest(receipt.get('owner_approval_sha256'))
+                and digest(receipt.get('evidence_sha256')), 'owner amendment evidence missing')
+        require(type(adds) is list and adds and all(digest(a) for a in adds) and len(set(adds)) == len(adds)
+                and type(extra) is int and 0 <= extra <= MAX_ADDITIONAL_SYNTHETIC, 'invalid amendment content')
+        with self.transaction() as (db, head):
+            require(head[1] == expected_generation and head[4] is None, 'stale or active amendment')
+            ledger, scope = json.loads(head[2]), json.loads(head[3])
+            study = scope['automatic_study']; authority = study['authority']
+            require(study['status'] in ('IDLE', 'ADOPTED_NO_DISPATCH'), 'study stopped or active')
+            require(receipt.get('authority_sha256') == study['authority_sha256'] == document_hash(authority)
+                    and receipt.get('ledger_sha256') == document_hash(ledger)
+                    and receipt.get('scope_sha256') == document_hash(scope), 'amendment baseline changed')
+            amendments = study.setdefault('authority_amendments', [])
+            known = list(authority.get('configuration_sha256', []))
+            for a in amendments: known += a['add_configuration_sha256']
+            require(not set(adds) & set(known), 'configuration already authorized')
+            require(sum(a['additional_synthetic_attempts'] for a in amendments) + extra <= MAX_ADDITIONAL_SYNTHETIC,
+                    'synthetic revision cap exceeded')
+            amendments.append({'receipt_sha256': receipt_sha256, 'add_configuration_sha256': list(adds),
+                               'additional_synthetic_attempts': extra, 'generation': head[1] + 1})
+            db.execute('INSERT INTO automatic_transitions VALUES (?,?,?)',
+                       (head[1] + 1, 'AUTHORITY_AMENDMENT', encoded(receipt)))
+            db.execute('UPDATE head SET generation=?,scope=?', (head[1] + 1, encoded(scope)))
+        return {'status': 'AUTHORITY_AMENDED', 'generation': expected_generation + 1, 'scope': scope}
 
     def adopt_scope(self, *, expected_generation, authority, authority_sha256):
         require(type(expected_generation) is int and expected_generation >= 0, 'invalid generation')

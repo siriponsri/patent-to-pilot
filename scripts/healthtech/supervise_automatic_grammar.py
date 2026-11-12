@@ -9,7 +9,7 @@ import time
 from r3_engine_client import Engine, EngineError
 from supervise_r3_engine_v2 import configuration as prior_configuration, supervise, BASE
 
-NAME = 'ptp-auto-grammar-20261112-v1'
+NAME = 'ptp-auto-grammar-20261112-v2'  # v1 terminal PASS (marking schema v1)
 
 
 def configuration(job, stop, pin, tokenizer_files):

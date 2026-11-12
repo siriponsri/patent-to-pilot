@@ -171,3 +171,40 @@ def test_only_exact_declared_stage_can_claim_once(tmp_path):
     with pytest.raises(InputBoundaryError):
         journal.reconcile(attempt_id=d['attempt_id'], terminal=terminal,
                           terminal_sha256=document_hash(terminal), expected_generation=2)
+
+
+def test_authority_amendment_adds_revised_configurations_with_owner_cap(tmp_path):
+    path, journal, authority, ledger, _ = setup_journal(tmp_path)
+    authority.update(stage_envelopes={'synthetic': {'seconds': 1800, 'maximum_calls': 2}},
+                     configuration_sha256=['1'*64])
+    pin = document_hash(authority)
+    state = journal.adopt_scope(expected_generation=0, authority=authority, authority_sha256=pin)['scope']
+    gen = 1
+    def qualify(attempt, config, op):
+        nonlocal state, gen
+        d = {'attempt_id': attempt, 'operation_sha256': op*64, 'stage': 'synthetic',
+             'configuration_sha256': config*64, 'seconds': 1800, 'maximum_calls': 2}
+        r = {'declaration': d, 'authority_sha256': pin, 'ledger_sha256': document_hash(ledger),
+             'scope_sha256': document_hash(state)}
+        state = journal.qualify_stage(expected_generation=gen, receipt=r, receipt_sha256=document_hash(r))['scope']; gen += 1
+    def amend(configs, extra):
+        nonlocal state, gen
+        r = {'kind': 'AUTHORITY_AMENDMENT', 'owner_approval_sha256': 'e'*64, 'evidence_sha256': 'f'*64,
+             'add_configuration_sha256': [c*64 for c in configs], 'additional_synthetic_attempts': extra,
+             'authority_sha256': pin, 'ledger_sha256': document_hash(ledger), 'scope_sha256': document_hash(state)}
+        state = journal.amend_authority(expected_generation=gen, receipt=r, receipt_sha256=document_hash(r))['scope']; gen += 1
+    qualify('ptp-auto-v1', '1', 'a')
+    with pytest.raises(InputBoundaryError):          # unapproved revised configuration
+        qualify('ptp-auto-v2', '2', 'b')
+    with pytest.raises(InputBoundaryError):          # owner cap is 2 additional attempts
+        amend(['2', '3', '4'], 3)
+    amend(['2', '3'], 2)
+    with pytest.raises(InputBoundaryError):          # same configuration never twice
+        qualify('ptp-auto-v2', '1', 'b')
+    qualify('ptp-auto-v2', '2', 'b')
+    qualify('ptp-auto-v3', '3', 'c')
+    with pytest.raises(InputBoundaryError):          # allowance exhausted (1 + 2)
+        amend(['4'], 0); qualify('ptp-auto-v4', '4', 'd')
+    with pytest.raises(InputBoundaryError):          # no further synthetic allowance
+        amend(['5'], 1)
+    assert state['automatic_study']['authority'] == authority   # root never changes
