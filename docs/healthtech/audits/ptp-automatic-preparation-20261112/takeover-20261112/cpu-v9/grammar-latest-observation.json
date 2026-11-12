@@ -1,0 +1,17 @@
+{
+  "job": "ptp-auto-grammar-20261112-v9",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 360619,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-12T15:21:54.1984946Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START"
+}
