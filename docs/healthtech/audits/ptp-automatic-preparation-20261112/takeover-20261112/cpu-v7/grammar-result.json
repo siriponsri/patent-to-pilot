@@ -1,0 +1,71 @@
+{
+  "status": "PASS_GRAMMAR_ONLY",
+  "job": "ptp-auto-grammar-20261112-v7",
+  "exit_code": 0,
+  "detail": [
+    {
+      "name": "marking-valid",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE"
+    },
+    {
+      "name": "marking-abstain",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE"
+    },
+    {
+      "name": "marking-wrong-identity",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "name": "marking-labels-too-short",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "name": "marking-labels-too-long",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "name": "review-valid",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE"
+    },
+    {
+      "name": "review-uncertain",
+      "expected": true,
+      "accepted": true,
+      "reason": "COMPLETE"
+    },
+    {
+      "name": "review-missing-check",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "name": "review-paraphrased-quote",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED"
+    },
+    {
+      "name": "review-whitespace-runaway",
+      "expected": false,
+      "accepted": false,
+      "reason": "TOKEN_NOT_ALLOWED"
+    }
+  ],
+  "booked_cpu_seconds": 120,
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "whitespace_cap": 48
+}

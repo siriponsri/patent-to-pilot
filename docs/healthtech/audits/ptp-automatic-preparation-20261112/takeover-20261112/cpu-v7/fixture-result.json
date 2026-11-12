@@ -1,0 +1,13 @@
+{
+  "status": "PASS_AUTHORED_NATIVE_PIPELINE",
+  "job": "ptp-auto-native-fixture-20261112-v4",
+  "exit_code": 0,
+  "detail": {
+    "screened_candidates": 2,
+    "fallbacks": 0
+  },
+  "booked_cpu_seconds": 120,
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "whitespace_cap": 48
+}

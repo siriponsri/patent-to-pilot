@@ -1,5 +1,20 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Native v2 settled; whitespace cap fix qualified on CPU; native v3 awaits owner 2026-11-13T01:40+07:00
+
+Native SACR v2 (marking v5 compact + cap 5800) exited 1 after 1354s.
+- The memory fix worked: max prompt 2324 tokens; peak ~16.9GiB.
+- 10 queries processed: 9 USE_SCREENED_CANDIDATE, 1 flagged fallback.
+- Query index 10's review degenerated into unbounded whitespace (R6Backend cap 4096); the EOS guard refused termination.
+- Settled once at generation 63: 1354s, 21 known calls + 1 unknown.
+
+Fix: R6Backend declared max_consecutive_whitespaces (default 4096 keeps closed R6/R7 behaviour; automatic workers declare 48). CPU v7 PASS: grammar 10/10, with the review-whitespace-runaway case rejected as TOKEN_NOT_ALLOWED; native fixture v4 PASS. Suites incl. R6/R7 PASS.
+
+Next: native v3 needs OWNER APPROVAL (failed stage, no automatic rerun). Plan: same pilot-20, marking v5, review v2, input cap 5800, whitespace cap 48; freeze helper to be derived from freeze_native_sacr_v2.py with NAME v3.
+
+Totals: GPU charged 17761.61s; model_calls 159 (lower bound); CPU remaining ~31.0ks; journal generation ~65; nothing running.
+
+
 ## Native SACR v2 (owner-approved) qualified; launching 2026-11-13T00:45+07:00
 
 Owner: "Approve native v2". Marking v5 sends token texts only to the model (validation keeps offsets); input cap 5800 tokens is checked before load, and longer queries fall back but stay in the denominator. CPU v6 PASS: grammar 9/9 and native fixture v3. Bookings at generation 59.
