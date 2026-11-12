@@ -22,7 +22,7 @@ def run(tmp_path, mode):
         if stage == 'marking':
             if mode == 'bad': return response({'invalid': True})
             return response({'version': VERSION, 'query_id': 'q1', 'source_sha256': sha(source),
-                'marks': [{'role': 'action', 'start_token': 2, 'end_token': 3, 'attachment': 'explicit'}],
+                'labels': ['none', 'none', 'action', 'none'], 'uncertain_roles': [],
                 'abstraction': source})
         return response({'binding_sha256': request['binding_sha256'], 'checks': {
             k: {'status': 'screened', 'source_quote': '', 'candidate_quote': '', 'reason': 'No issue detected.'}

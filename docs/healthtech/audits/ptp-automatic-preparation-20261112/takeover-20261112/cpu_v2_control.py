@@ -2,8 +2,8 @@
 Never restart on an observation timeout."""
 from pathlib import Path
 import json, subprocess, sys
-A = Path(__file__).resolve().parent/'cpu-v2'
-kind, mode = sys.argv[1], sys.argv[2]; assert kind in ('grammar', 'fixture') and mode in ('start', 'observe')
+kind, mode = sys.argv[1], sys.argv[2]
+A = Path(__file__).resolve().parent/(sys.argv[3] if len(sys.argv) > 3 else 'cpu-v2'); assert kind in ('grammar', 'fixture') and mode in ('start', 'observe')
 j = json.loads((A/'freeze-summary.json').read_bytes())['jobs'][kind]
 base = f"from pathlib import Path\nimport json,sys\np=Path('/home/chaw/patent-to-pilot-jobs/{j['job']}')\n"
 if mode == 'start':

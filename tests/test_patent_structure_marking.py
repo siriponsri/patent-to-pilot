@@ -8,7 +8,7 @@ def example():
     text = 'The pump reduces pressure except during cleaning.'
     request = prepare(text, 'q1', 'Keep exceptions.', sha('Keep exceptions.'))
     result = {'version': VERSION, 'query_id': 'q1', 'source_sha256': sha(text),
-              'marks': [{'role': 'exception', 'start_token': 4, 'end_token': 7, 'attachment': 'explicit'}],
+              'labels': ['none'] * 4 + ['exception'] * 3, 'uncertain_roles': [],
               'abstraction': text}
     return request, result
 
@@ -22,21 +22,21 @@ def test_mark_preserves_complete_anchor_and_exact_exception():
     assert result['screening_required']
 
 
-@pytest.mark.parametrize('failure', ['wrong_source', 'reversed', 'duplicate', 'out_of_range'])
+@pytest.mark.parametrize('failure', ['wrong_source', 'short', 'long', 'unknown_label'])
 def test_invalid_mark_is_rejected(failure):
     request, output = example()
     if failure == 'wrong_source': output['source_sha256'] = 'f' * 64
-    if failure == 'reversed': output['marks'][0]['end_token'] = 3
-    if failure == 'duplicate': output['marks'].append(deepcopy(output['marks'][0]))
-    if failure == 'out_of_range': output['marks'][0]['end_token'] = 100
+    if failure == 'short': output['labels'] = output['labels'][:-1]
+    if failure == 'long': output['labels'] = output['labels'] + ['none']
+    if failure == 'unknown_label': output['labels'][0] = 'claim'
     with pytest.raises(InputBoundaryError): validate_and_render(output, request)
 
 
 def test_uncertainty_and_null_do_not_become_candidates():
     request, output = example()
-    output['marks'][0]['attachment'] = 'uncertain'
+    output['uncertain_roles'] = ['exception']
     assert not validate_and_render(output, request)['candidate_available']
-    output['marks'][0]['attachment'] = 'explicit'; output['abstraction'] = None
+    output['uncertain_roles'] = []; output['abstraction'] = None
     assert not validate_and_render(output, request)['candidate_available']
 
 
@@ -58,14 +58,16 @@ def test_request_corruption_is_not_output_rejection(field):
     with pytest.raises(RequestIntegrityError): validate_and_render(output, request)
 
 
-def test_token_bounds_are_enumerated_for_grammar_enforcement():
-    # LMFE does not enforce numeric minimum/maximum (R5); the v1 synthetic GPU smoke
-    # emitted end_token > token count. Bounds must be finite enums.
-    from patent_to_pilot.research.patent_structure_marking import prepare, sha, VERSION
+def test_labels_are_fixed_length_and_runs_become_marks():
+    # v2 smoke repeated one interval up to the item cap; v3 fixes output length to the source.
     km = 'Preserve conditions and exceptions.'
-    request = prepare('The pump stops below 5 kPa.', 'q-bounds', km, sha(km))
-    item = request['schema']['properties']['marks']['items']['properties']
-    count = len(request['payload']['tokens'])
-    assert item['start_token']['enum'] == list(range(0, count))
-    assert item['end_token']['enum'] == list(range(1, count + 1))
-    assert 'maximum' not in item['end_token'] and VERSION == 'patent-structure-marking-v2'
+    text = 'The pump stops below 5 kPa except during cleaning.'
+    request = prepare(text, 'q-bounds', km, sha(km))
+    labels = request['schema']['properties']['labels']; count = len(request['payload']['tokens'])
+    assert labels['minItems'] == labels['maxItems'] == count and VERSION == 'patent-structure-marking-v3'
+    output = {'version': VERSION, 'query_id': 'q-bounds', 'source_sha256': sha(text),
+              'labels': ['entity', 'entity', 'action', 'condition', 'condition', 'condition',
+                         'exception', 'exception', 'exception'], 'uncertain_roles': [], 'abstraction': text}
+    marks = validate_and_render(output, request)['marks']
+    assert [(m['role'], m['text']) for m in marks] == [('entity', 'The pump'), ('action', 'stops'),
+        ('condition', 'below 5 kPa'), ('exception', 'except during cleaning.')]

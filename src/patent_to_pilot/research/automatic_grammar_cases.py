@@ -11,16 +11,17 @@ SOURCE = 'The pump reduces pressure below 5 kPa except during cleaning.'
 def cases(km_text):
     request = prepare(SOURCE, 'synthetic-auto-001', km_text, sha(km_text))
     base = {'version': VERSION, 'query_id': 'synthetic-auto-001', 'source_sha256': sha(SOURCE),
-            'marks': [{'role': 'action', 'start_token': 2, 'end_token': 3, 'attachment': 'explicit'},
-                      {'role': 'condition', 'start_token': 4, 'end_token': 7, 'attachment': 'explicit'},
-                      {'role': 'exception', 'start_token': 7, 'end_token': 10, 'attachment': 'explicit'}],
+            'labels': ['none', 'none', 'action', 'operand', 'condition', 'condition', 'condition',
+                       'exception', 'exception', 'exception'], 'uncertain_roles': [],
             'abstraction': SOURCE}
-    abstain = dict(base, marks=[], abstraction=None)
+    abstain = dict(base, labels=['none'] * len(base['labels']), abstraction=None)
     invalid = dict(base, query_id='WRONG-ID')
-    out_of_range = dict(base, marks=base['marks'][:2] + [dict(base['marks'][2], end_token=len(request['payload']['tokens']) + 1)])
+    too_short = dict(base, labels=base['labels'][:-1])
+    too_long = dict(base, labels=base['labels'] + ['none'])
     rows = [('marking-valid', request, base, True), ('marking-abstain', request, abstain, True),
             ('marking-wrong-identity', request, invalid, False),
-            ('marking-end-token-out-of-range', request, out_of_range, False)]
+            ('marking-labels-too-short', request, too_short, False),
+            ('marking-labels-too-long', request, too_long, False)]
     review = prepare_review(item_id='synthetic-auto-001', source=SOURCE, candidate=SOURCE,
                             track='SACR', km_text=km_text, km_sha256=sha(km_text))
     output = {'binding_sha256': review['binding_sha256'], 'checks': {k: {
