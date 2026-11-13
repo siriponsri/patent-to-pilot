@@ -1,0 +1,37 @@
+{
+  "job": "ptp-auto-paper1-rewrite-fixture-20261113-v1",
+  "status": "FAILED_ENGINEERING_FIXTURE",
+  "docker": {
+    "Status": "exited",
+    "ExitCode": 1,
+    "OOMKilled": false,
+    "Pid": 0
+  },
+  "isolation": "PASS_BEFORE_START",
+  "receipt": {
+    "status": "FAILED_AUTHORED_PIPELINE",
+    "real_model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "exception_type": "RuntimeError",
+    "exception": "authored response violates actual grammar",
+    "wall_seconds": 15.999196466989815,
+    "cpu_seconds": 15.879651750999999,
+    "worker_peak_rss_bytes": 996745216
+  },
+  "worker_failure": {
+    "exception_type": "RuntimeError",
+    "arm": "FA",
+    "call_slots_consumed": 2,
+    "process_cpu_seconds": 16.407666049,
+    "retry": false,
+    "cost_status": "CONTROLLER_AND_DIAGNOSTICS_RECONCILIATION_REQUIRED"
+  },
+  "diagnosis": "FA query 1 passed the real grammar; FA query 2 authored output (function=\" \", whitespace-only, grammar-valid by schema) was refused token-wise by the real callback under canonical tokenization. Hypothesis (NOT verified): LMFE fused string-boundary token handling. A real model only emits allowed tokens, so this is a property of the authored double. Worker stopped and wrote failure.json (HOLD semantics) as designed.",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "cpu_booked_seconds": 120,
+  "refund": false,
+  "retry": "v2 is a NEW fixture design (INPUT_LIMIT fallback path), not a replay",
+  "observation_sha256": "9c64b181a3efea6bce766240f69c67f4525c95f9f445d035d16e32e4289fa66d"
+}

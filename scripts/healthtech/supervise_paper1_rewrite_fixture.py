@@ -11,7 +11,7 @@ from r3_engine_client import Engine, EngineError
 from supervise_r3_engine_v2 import supervise, BASE
 from supervise_automatic_grammar import configuration as grammar_configuration
 
-NAME = 'ptp-auto-paper1-rewrite-fixture-20261113-v1'
+ALLOWED = ('ptp-auto-paper1-rewrite-fixture-20261113-v1', 'ptp-auto-paper1-rewrite-fixture-20261113-v2')  # v1 FAILED (authored fixture artifact)
 
 
 def configuration(job, stop, pin, tokenizer_files):
@@ -27,7 +27,8 @@ def configuration(job, stop, pin, tokenizer_files):
 def main(pin):
     import resource
     job = Path(__file__).resolve().parent
-    if job != Path('/home/chaw/patent-to-pilot-jobs')/NAME: raise RuntimeError('fixed CPU job path required')
+    if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in ALLOWED: raise RuntimeError('fixed CPU job path required')
+    NAME = job.name
     resource.setrlimit(resource.RLIMIT_AS, (512*1024**2, 512*1024**2))
     resource.setrlimit(resource.RLIMIT_CPU, (30, 30))
     start = time.monotonic(); created = False; engine = Engine()

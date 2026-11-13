@@ -3,7 +3,10 @@
 No pretrained weights are loaded. Doubles: GPU slot/window, weight observer, model loader (authored CPU
 model that must pass the real grammar callback), CUDA telemetry, device->cpu. Real: worker main,
 declaration/package/tokenizer/decoder checks, tokenizer, R6Backend grammar+EOS, request_bound_executor,
-executor adapter (stage 'rewrite'), durable call markers and run_rewrite incl. fallback on a blank field.
+executor adapter (stage 'rewrite'), durable call markers and run_rewrite incl. the declared input-cap fallback.
+v2 (2026-11-13): v1 failed because the authored whitespace-only FA field (" ") was refused by the real grammar
+under canonical tokenization (fixture artifact; v1 retained). v2 exercises the INPUT_LIMIT fallback instead
+(FA cap 1000 with a long query 2; GR cap 5800 calls both) and records the first refused token on any violation.
 """
 from contextlib import nullcontext
 import hashlib, importlib.util, json, sys, time
@@ -13,7 +16,8 @@ from unittest.mock import patch
 sys.path.insert(0, '/code/src')
 sha = lambda b: hashlib.sha256(b).hexdigest()
 QUERIES = ({'id': 'authored-rewrite-001', 'text': 'A pump reduces line pressure below 5 kPa except during cleaning.'},
-           {'id': 'authored-rewrite-002', 'text': 'The heater is not activated during transport.'})
+           {'id': 'authored-rewrite-002', 'text': 'The heater is not activated during transport. ' * 120})
+CAPS = {'FA': 1000, 'GR': 5800}
 
 
 def main():
@@ -52,8 +56,11 @@ def main():
                 self.calls += 1
                 seq = kwargs['input_ids'][0].detach().cpu().tolist()
                 callback = kwargs.get('prefix_allowed_tokens_fn')
-                for token in self.tokenizer.encode(self.text, add_special_tokens=False) + [151645]:
+                tokens = self.tokenizer.encode(self.text, add_special_tokens=False) + [151645]
+                for i, token in enumerate(tokens):
                     if callback is not None and token not in callback(0, torch.tensor(seq, dtype=torch.long)):
+                        self.violation = {'token_index': i, 'token_id': token, 'token_text': self.tokenizer.decode([token]),
+                                          'prefix_tail': self.tokenizer.decode(tokens[max(0, i-8):i])}
                         raise RuntimeError('authored response violates actual grammar')
                     seq.append(token); self.tokens_checked += 1
                 return torch.tensor([seq], dtype=torch.long)
@@ -64,12 +71,9 @@ def main():
             head = {'version': props['version']['const'], 'query_id': qid, 'source_sha256': props['source_sha256']['const']}
             if 'abstract' in props:
                 value = dict(head, abstract='A heating or pumping device whose operation depends on a stated mode.')
-            elif qid == QUERIES[0]['id']:
+            else:
                 value = dict(head, function='Lowers fluid pressure in a conduit.', mechanism='A pumping element draws fluid.',
                              problem='Keeps pressure below a limit.', conditions='Below 5 kPa, except during cleaning.')
-            else:  # grammar-valid (minLength 1) but blank after strip -> REWRITE_REJECTED fallback
-                value = dict(head, function=' ', mechanism='A heating element is switched.',
-                             problem='Avoids heating while moved.', conditions='Not activated during transport.')
             model.text = json.dumps(value, ensure_ascii=False, separators=(',', ':'))
             return factory(backend, stage, schema, diagnostics, messages)
         executor = sacr_r6_bundle_runner.request_bound_executor
@@ -88,7 +92,7 @@ def main():
         summary = {}
         for arm in ('FA', 'GR'):
             d = {'attempt_id': 'authored-fixture-' + arm, 'arm': arm, 'stage': 'synthetic', 'maximum_calls': 2, 'queries': 2,
-                 'seconds': 1800, 'cpu_seconds': 150, 'input_token_cap': 5800, 'max_consecutive_whitespaces': 48,
+                 'seconds': 1800, 'cpu_seconds': 150, 'input_token_cap': CAPS[arm], 'max_consecutive_whitespaces': 48,
                  'force_json_field_order': True, 'files_sha256': outer['files_sha256'], 'package_sha256': outer['package_sha256'],
                  'input_manifest_sha256': sha(task), 'model_sha256': sha(identity),
                  'tokenizer_sha256': sha(Path('/models/qwen3-8b/tokenizer.json').read_bytes()),
@@ -111,21 +115,24 @@ def main():
             completion = json.loads((out/'completion.json').read_bytes())
             admitted = json.loads((out/'before-model-input-admission.json').read_bytes())
             q2 = json.loads((out/'queries/q001/result.json').read_bytes())
-            expected_used = 1 if arm == 'FA' else 2
-            if (model.calls - before != 2 or completion['call_slots_consumed'] != 2 or len(list(out.glob('call-*.json'))) != 2
-                    or admitted['over_limit'] != 0 or completion['rewrites_used'] != expected_used
-                    or (arm == 'FA' and q2['reason'] != 'REWRITE_REJECTED') or completion['semantic_certified'] is not False):
+            expected = 1 if arm == 'FA' else 2
+            if (model.calls - before != expected or completion['call_slots_consumed'] != expected
+                    or len(list(out.glob('call-*.json'))) != expected or admitted['over_limit'] != 2 - expected
+                    or completion['rewrites_used'] != expected
+                    or q2['reason'] != ('INPUT_LIMIT' if arm == 'FA' else 'REWRITE_VALIDATED')
+                    or completion['semantic_certified'] is not False):
                 raise RuntimeError('authored expectation differs for ' + arm)
             summary[arm] = {'rewrites_used': completion['rewrites_used'], 'fallbacks': completion['fallbacks'],
                             'reasons': completion['reasons'], 'max_input_tokens': admitted['max_input_tokens']}
-        if stages != ['rewrite'] * 4: raise RuntimeError('unexpected stage sequence')
+        if stages != ['rewrite'] * 3: raise RuntimeError('unexpected stage sequence')
         receipt.update(status='PASS_AUTHORED_PAPER1_REWRITE_PIPELINE', authored_backend_invocations=model.calls,
             grammar_tokens_checked=model.tokens_checked, arms=summary, decoder_sha256=d['decoder_sha256'],
             mocked_boundaries=['GPU_slot_and_window', 'model_weight_observer', 'model_loader', 'CUDA_telemetry', 'device_to_cpu'],
             actual_boundaries=['worker_main', 'declaration_package_tokenizer_decoder_checks', 'tokenizer', 'grammar_EOS',
                                'request_bound_executor', 'executor_adapter_rewrite_stage', 'call_markers', 'run_rewrite_fallback'])
     except BaseException as error:
-        receipt.update(status='FAILED_AUTHORED_PIPELINE', exception_type=type(error).__name__, exception=str(error)[:500]); raise
+        receipt.update(status='FAILED_AUTHORED_PIPELINE', exception_type=type(error).__name__, exception=str(error)[:500],
+                       grammar_violation=getattr(locals().get('model'), 'violation', None)); raise
     finally:
         receipt.update(wall_seconds=time.monotonic()-start, cpu_seconds=time.process_time()-cpu,
                        worker_peak_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024)

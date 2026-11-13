@@ -1,0 +1,58 @@
+{
+  "job": "ptp-auto-paper1-rewrite-fixture-20261113-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 1,
+    "Error": "",
+    "StartedAt": "2026-11-13T11:19:51.906646291Z",
+    "FinishedAt": "2026-11-13T11:20:10.444642903Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-paper1-rewrite-fixture-20261113-v1",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 1,
+      "Error": "",
+      "StartedAt": "2026-11-13T11:19:51.906646291Z",
+      "FinishedAt": "2026-11-13T11:20:10.444642903Z"
+    },
+    "whole_wall_seconds": 19.41726365798968,
+    "controller_cpu_seconds": 0.201271652
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "receipt": {
+    "status": "FAILED_AUTHORED_PIPELINE",
+    "real_model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "exception_type": "RuntimeError",
+    "exception": "authored response violates actual grammar",
+    "wall_seconds": 15.999196466989815,
+    "cpu_seconds": 15.879651750999999,
+    "worker_peak_rss_bytes": 996745216
+  },
+  "worker_failure": {
+    "exception_type": "RuntimeError",
+    "arm": "FA",
+    "call_slots_consumed": 2,
+    "process_cpu_seconds": 16.407666049,
+    "retry": false,
+    "cost_status": "CONTROLLER_AND_DIAGNOSTICS_RECONCILIATION_REQUIRED"
+  }
+}
