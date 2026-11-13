@@ -1,0 +1,19 @@
+{
+  "generation": 95,
+  "ledger_sha256": "1bccaeadd97994016a932b6cdf449571456fdab84c72b8e7b1bd5b64c9d4502d",
+  "cpu_remaining_seconds": 29148.153622190002,
+  "segment29_seconds": 108,
+  "package_sha256": "7fe2ba4fd3671f90bd2b82c9d611eeaf7fe25b1d153715b25eb603498b0522e6",
+  "jobs": {
+    "grammar": {
+      "job": "ptp-auto-paper1-grammar-20261113-v1",
+      "supervisor": "supervise_automatic_grammar.py",
+      "declaration_sha256": "ce45a4054f014332b708ba14395339773697e63d6602a3cf497201a59b87c76c",
+      "transport": {
+        "bytes": 1894400,
+        "sha256": "3705a46ae048d12931a37fe14724a042abb8f7c40f094f260cb6b75724667b5d",
+        "files": 236
+      }
+    }
+  }
+}
