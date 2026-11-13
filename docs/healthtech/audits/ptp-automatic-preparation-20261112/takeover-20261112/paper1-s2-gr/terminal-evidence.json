@@ -1,0 +1,94 @@
+{
+  "supervisor_terminal": {
+    "attempt_id": "ptp-auto-paper1-gr-synthetic-20261113-v1",
+    "container_name": "ptp-auto-paper1-gr-synthetic-20261113-v1",
+    "retry": false,
+    "declaration_sha256": "5c8f20ee65eb00d49d6b1ee20f9dc1af405f4a918e7816c5554c34470a5141c0",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-13T11:29:11.993011866Z",
+      "FinishedAt": "2026-11-13T11:30:24.3598944Z"
+    },
+    "whole_wall_seconds": 72.78713728499133,
+    "controller_cpu_seconds": 0.344392871,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "docker_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T11:29:11.993011866Z",
+    "FinishedAt": "2026-11-13T11:30:24.3598944Z"
+  },
+  "call_markers": [
+    "call-1.json"
+  ],
+  "normal_return_records": [
+    "backend/q000/rewrite/generation.json"
+  ],
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "arm": "GR",
+    "queries": 1,
+    "rewrites_used": 1,
+    "fallbacks": 0,
+    "reasons": {
+      "REWRITE_VALIDATED": 1
+    },
+    "call_slots_consumed": 1,
+    "wall_seconds": 69.8419977070007,
+    "process_cpu_seconds": 70.65895216,
+    "semantic_certified": false
+  },
+  "failure": null,
+  "file_sha256": {
+    "__pycache__/r3_engine_client.cpython-312.pyc": "92ba19db91447a64372f68b0b36106e29f96e435d8fc8aed2fbba3eb559146ab",
+    "__pycache__/supervise_sacr_r5_engine.cpython-312.pyc": "6b1c46b3d8376c2e49060883ff28c60f7a4032baf1d6707263477df718269145",
+    "admission.json": "6aba8925d2d3c34226c096b4b56eed5f13d10775dab7a0cfbd3582064a53d1ce",
+    "controller.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch/declaration.json": "758c6163674193876dafac09c4fc3739b605c851bb9b872571ed09af992db16a",
+    "dispatch/gates.json": "0ffddf8da1dadfa04ebcdb2971c077de113c0f4a7c7d5cf70f6d2e53c792db63",
+    "dispatch/queries.jsonl": "d9e7515ccf07c4d857898b8d48175aea177ab80dd56b43d4e5c912c80e29d40d",
+    "global-dispatch.json": "2b7615d202e7922c30dc465a3f7fce3ae617b8abf284ff9d7e3031b8aa01abda",
+    "isolation.json": "397a6595899aab0c401fabfdc6956f5b94d8cf303af7ef06e8080716188b26a8",
+    "launch.json": "e9b754f007ab3ca7f09bd1b4fe64a83114ef3946783aa41ecc775f7e0c81ec1b",
+    "out/attempt/backend/q000/rewrite/generation-binding.json": "097bb8188c0af06f244d9796f3d9ae1d5ec28179f1503388440296e956e97432",
+    "out/attempt/backend/q000/rewrite/generation.json": "9f7d159f1fc0d9747604d5b4fe2391f5b6ca641962f6c58f5092e4c97c52fbcd",
+    "out/attempt/backend/q000/rewrite/reservation.json": "30aadec4e5c3f3e733e51be3aed206254c92b17e7ce8b6b1f76eb236e082635a",
+    "out/attempt/backend/q000/rewrite-diagnostics-private/backend-dispatch.json": "27b07c6a6393942a9e5a1794b84af954dcdef69b26cf0f2742786f406bc504b6",
+    "out/attempt/backend/q000/rewrite-diagnostics-private/backend-return.json": "a0a7e13a69ce362345c0871fa4f680dcdb7ae1882fe6b6d5d66060a7fdf4c8ce",
+    "out/attempt/before-model-input-admission.json": "e25d15c6a6cf435840cbd34c1e7eaba4e8cdd1d9ec7622b785a14f2d6f7a5058",
+    "out/attempt/call-1.json": "b29ea309c5fb79ed1ed5f29f70072dc298150784119b71520ae2dd70994c85ce",
+    "out/attempt/completion.json": "e5737fcf99974bd60a9c708d912db1436e03163c32f73b9b2d4353cd143f8302",
+    "out/attempt/decisions-private.json": "506fded61c62042714da68e208dbe6ca7dff80cb1b14703c1adcc6715eaaae7f",
+    "out/attempt/grammar/q000/rewrite-grammar-private.json": "e340fbed3eb0ec8c59c3f8c15a4843080822f17efa4e959f8efb0dc3bf51bb19",
+    "out/attempt/loaded-runtime.json": "a0b12377493b0228cbcd75a4d16f4a64aa71c10d371eeb4b63fe23f044d2c704",
+    "out/attempt/queries/q000/input.json": "f18808eb233419520c027281bd067f1c9bfbc0bc6bd3471f22eae0d0e9745557",
+    "out/attempt/queries/q000/result.json": "39ce82612f55893763bf115d7311215ce1ba44ff1cc8cb87b506fdadd5949ed0",
+    "out/attempt/queries/q000/rewrite-dispatch.json": "75632fe775c974bc7c359a8f2acfacf02d99dcac4a5c9580260c5fa4d1701d8c",
+    "out/attempt/queries/q000/rewrite-generation.json": "9f7d159f1fc0d9747604d5b4fe2391f5b6ca641962f6c58f5092e4c97c52fbcd",
+    "out/attempt/queries/q000/rewrite-metrics.json": "1df799b25af00f54cc3fa85e34aa963c76b4ce1632eaa3c26d6c73938f5ba92e",
+    "out/attempt/queries/q000/rewrite-request.json": "598de0b053d691ab585b637f369502e50abe4e644816697dac251481f6429a79",
+    "out/attempt/queries/q000/rewrite-terminal.json": "abcc8215788edaa1c4c5a8f624424c177b039179e39af35fa4ec7b100c44d5db",
+    "r3_engine_client.py": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+    "supervise_paper1_rewrite.py": "b683325d3115ef57208e133299778ce6fb484f25879b75ae9354905cbd6de21c",
+    "supervise_sacr_r5_engine.py": "2f9413b5eb0c870961a923132c13afbe6f045f425d41d14679f5ffca8f0a84e3",
+    "terminal.json": "b449d73d7f342e4e8c5af86f3cb8f8bf88102f5451adf81ad3528d9dfdf724e5"
+  }
+}

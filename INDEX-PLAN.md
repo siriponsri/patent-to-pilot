@@ -1,5 +1,38 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Paper 1 S2 PASS: FA and GR synthetic GPU smokes, 1 call each, both REWRITE_VALIDATED 2026-11-13T18:35+07:00
+
+Journal authority amendment round 'paper1': both FA and GR configurations authorized, 2 synthetic attempts (both now used). Owner approval: owner-paper1-freeze-approval.json; evidence: fixture v2.
+
+Authored source: the infusion-pump synthetic text, not DAPFAM.
+- FA: ptp-auto-paper1-fa-synthetic-20261113-v1.
+  - Exit 0; 419 input / 219 output tokens; 26 s generation; 82.9 s wall.
+  - Settled once at generation 103 (83 s GPU).
+  - Output removed "infusion pump" (now "fluid delivery system") and kept 40 kPa and 10 s.
+- GR: ptp-auto-paper1-gr-synthetic-20261113-v1.
+  - Exit 0; 298 / 165 tokens; 17.5 s generation; 72.8 s wall.
+  - Settled at generation 106 (73 s GPU).
+  - Output kept the domain wording.
+- This is one illustrative example, not a rate. semantic_certified=false.
+- Summary: takeover-20261112/PAPER1-S2-SUMMARY.json.
+
+New code:
+- scripts/healthtech/supervise_paper1_rewrite.py: GPU controller, derived from the native controller.
+- freeze_paper1_s2.py: per-arm freeze; GR is frozen only after FA is settled, because the accounting gate pins the ledger.
+- native_control.py now uses the supervisor declared in the freeze summary.
+
+Totals:
+- GPU charged 22,342.6 s; fidelity remaining 208,362 s; model_calls 247 (lower bound).
+- CPU remaining ~28.4 ks.
+- Journal generation 106, IDLE. Nothing running.
+
+Next:
+1. S3 pilot-20 technical run for FA and GR. The journal stage is 'fidelity', with the predecessor being each arm's synthetic smoke. Use the same frozen pilot-20 file as SACR native v5 (b5d837f4...). Throughput and failures only; not evaluated separately.
+2. S4 full-dev: SACR 6x79 batches, plus FA and GR batches sized from the measured throughput. Planning estimate from S2: FA ~26 s/query, GR ~18 s/query, plus model load.
+3. S5 retrieval, fusion and dev evaluation.
+4. S6 owner checkpoint.
+
+
 ## Paper 1 FA/GR rewrite worker qualified on CPU (fixture v2 PASS; v1 FAILED); next is S2 synthetic GPU smoke 2026-11-13T18:25+07:00
 
 New code:

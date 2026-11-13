@@ -1,0 +1,50 @@
+{
+  "stage": "Paper 1 S2 synthetic GPU smoke (authored infusion-pump source; not DAPFAM)",
+  "date": "2026-11-13",
+  "arms": {
+    "FA": {
+      "job": "ptp-auto-paper1-fa-synthetic-20261113-v1",
+      "exit": 0,
+      "decision": "USE_REWRITE / REWRITE_VALIDATED",
+      "calls": 1,
+      "input_tokens": 419,
+      "output_tokens": 219,
+      "generation_seconds": 26.2,
+      "whole_wall_seconds": 82.9,
+      "gpu_charged_seconds": 83,
+      "settled_generation": 103,
+      "numbers_retained_share": 1.0,
+      "content_words_absent_share": 0.333,
+      "peak_gpu_bytes": 17628246016
+    },
+    "GR": {
+      "job": "ptp-auto-paper1-gr-synthetic-20261113-v1",
+      "exit": 0,
+      "decision": "USE_REWRITE / REWRITE_VALIDATED",
+      "calls": 1,
+      "input_tokens": 298,
+      "output_tokens": 165,
+      "generation_seconds": 17.5,
+      "whole_wall_seconds": 72.8,
+      "gpu_charged_seconds": 73,
+      "settled_generation": 106,
+      "numbers_retained_share": 1.0,
+      "content_words_absent_share": 0.167,
+      "peak_gpu_bytes": 17628246016
+    }
+  },
+  "observation": "FA removed the application noun (infusion pump -> fluid delivery system) and kept 40 kPa and 10 s; GR kept the domain wording. One authored example: illustrative only, not a rate and not retrieval evidence.",
+  "throughput_for_S4_planning": "~26 s (FA) and ~18 s (GR) generation per query on this example plus ~50 s model load per job; to be re-measured on pilot-20 (S3).",
+  "journal": {
+    "authority_amendment_round": "paper1 (both configurations, 2 synthetic attempts, both used)",
+    "final_generation": 106,
+    "status": "IDLE"
+  },
+  "totals_after": {
+    "gpu_charged_seconds": 22342.6,
+    "fidelity_remaining_seconds": 208362.3,
+    "model_calls_lower_bound": 247
+  },
+  "semantic_certified": false,
+  "no_human_review": true
+}

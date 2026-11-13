@@ -1,0 +1,77 @@
+{
+  "job": "ptp-auto-paper1-gr-synthetic-20261113-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T11:29:11.993011866Z",
+    "FinishedAt": "2026-11-13T11:30:24.3598944Z"
+  },
+  "terminal": {
+    "attempt_id": "ptp-auto-paper1-gr-synthetic-20261113-v1",
+    "container_name": "ptp-auto-paper1-gr-synthetic-20261113-v1",
+    "retry": false,
+    "declaration_sha256": "5c8f20ee65eb00d49d6b1ee20f9dc1af405f4a918e7816c5554c34470a5141c0",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-13T11:29:11.993011866Z",
+      "FinishedAt": "2026-11-13T11:30:24.3598944Z"
+    },
+    "whole_wall_seconds": 72.78713728499133,
+    "controller_cpu_seconds": 0.344392871,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-paper1-gr-synthetic-20261113-v1",
+    "generation": 105
+  },
+  "input_admission": {
+    "arm": "GR",
+    "input_token_cap": 5800,
+    "over_limit": 0,
+    "max_input_tokens": 298,
+    "queries": 1,
+    "model_calls": 0
+  },
+  "loaded_runtime": {
+    "model_class": "Qwen3ForCausalLM",
+    "dtype": "torch.float16",
+    "device": "cuda:0",
+    "attention": "eager"
+  },
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "arm": "GR",
+    "queries": 1,
+    "rewrites_used": 1,
+    "fallbacks": 0,
+    "reasons": {
+      "REWRITE_VALIDATED": 1
+    },
+    "call_slots_consumed": 1,
+    "wall_seconds": 69.8419977070007,
+    "process_cpu_seconds": 70.65895216,
+    "semantic_certified": false
+  },
+  "call_markers": [
+    "call-1.json"
+  ]
+}
