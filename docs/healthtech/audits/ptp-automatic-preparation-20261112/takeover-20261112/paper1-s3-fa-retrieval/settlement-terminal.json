@@ -1,0 +1,24 @@
+{
+  "attempt_id": "ptp-auto-paper1-fa-pilot-retrieval-20261113-v1",
+  "container_name": "ptp-auto-paper1-fa-pilot-retrieval-20261113-v1",
+  "declaration_sha256": "07efd674520a7e449b712cebeac96eecd261abebe7e7c967afa0bdc95fbcd935",
+  "whole_wall_seconds": 25.660315227985848,
+  "known_model_calls": 0,
+  "calls_complete": true,
+  "cost_evidence_sha256": "5d3d652b0e0d57e9e40f4c6f666bc780249165dcf4321e04c3c394af8a14ef43",
+  "aggregate_cpu_seconds": 25.248492483,
+  "aggregate_cpu_basis": "worker process_cpu + controller",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T14:18:02.466313998Z",
+    "FinishedAt": "2026-11-13T14:18:26.961508047Z"
+  }
+}

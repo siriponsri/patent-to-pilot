@@ -1,0 +1,15 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "1cca15b2fb6a5357685fafd504baba4197ea2947e56dee8b4866685c4fd1793c",
+  "evidence_sha256": "e748cc3c4c0b02c0cd50b213b35913fff684f4e1d080680eafd7bc066ee79008",
+  "add_configuration_sha256": [
+    "983885c2b38f0274d2c3194ca180f7a68d9e6883e111f73d13fb6459b420cb85",
+    "0f6218103d346af153c97e6ea43367d79005b11313af63bc6b7b6252c9c3a8cc"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "paper1-s3-pilot",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "290a5f39926bbdb624903d0dc51216af8fc06a83cec34dda612627e5ddeee276",
+  "scope_sha256": "7653390040f527ae5c7e0abcc559eab3d407a5a1bc8dcd3c4e4a54d7cae4040c",
+  "reason": "Paper 1 frozen protocol S3: pilot-20 retrieval (stage pilot, not evaluated) for FA and GR; journal predecessor for full_dev"
+}

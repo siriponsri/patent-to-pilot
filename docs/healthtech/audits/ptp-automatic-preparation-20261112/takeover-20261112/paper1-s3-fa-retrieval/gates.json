@@ -1,0 +1,46 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "3ea337dfb9a5673c74ed7357b587d36d9d408301cd5dcf347fb0abdbf0af15d6",
+    "configuration_sha256": "983885c2b38f0274d2c3194ca180f7a68d9e6883e111f73d13fb6459b420cb85",
+    "gate": "integrity",
+    "source_commit": "44fbe0bae44af304066fb576cfc37628be6ce132",
+    "files": 237,
+    "evidence": "committed blobs; paper1_retrieval_panel, paper1_controls and sacr_pilot_panel unit tests PASS; encode/rank path = B0 runner functions (frozen hashes match)"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "3ea337dfb9a5673c74ed7357b587d36d9d408301cd5dcf347fb0abdbf0af15d6",
+    "configuration_sha256": "983885c2b38f0274d2c3194ca180f7a68d9e6883e111f73d13fb6459b420cb85",
+    "gate": "isolation",
+    "evidence": "supervisor config test PASS: read-only inputs and arm outputs, no qrels/evaluation mounts, network none"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "3ea337dfb9a5673c74ed7357b587d36d9d408301cd5dcf347fb0abdbf0af15d6",
+    "configuration_sha256": "983885c2b38f0274d2c3194ca180f7a68d9e6883e111f73d13fb6459b420cb85",
+    "gate": "runtime",
+    "predecessor_settlement_sha256": "e748cc3c4c0b02c0cd50b213b35913fff684f4e1d080680eafd7bc066ee79008",
+    "sacr_pilot_retrieval_sha256": "4c614af87ce04870091d9afd4ce57900f02eaae268d204a1fa5d0a41fc8fd0fe",
+    "evidence": "read-only remote preflight: pilot file, arm decisions and B0 rankings hashes pinned; same encode path ran in the SACR pilot retrieval"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "3ea337dfb9a5673c74ed7357b587d36d9d408301cd5dcf347fb0abdbf0af15d6",
+    "configuration_sha256": "983885c2b38f0274d2c3194ca180f7a68d9e6883e111f73d13fb6459b420cb85",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 667817.3864951228,
+    "fidelity_remaining_seconds": 207322.27331997137,
+    "disk_preexisting_upper_bound_bytes": 38142123503
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "3ea337dfb9a5673c74ed7357b587d36d9d408301cd5dcf347fb0abdbf0af15d6",
+    "configuration_sha256": "983885c2b38f0274d2c3194ca180f7a68d9e6883e111f73d13fb6459b420cb85",
+    "gate": "accounting",
+    "ledger_sha256": "290a5f39926bbdb624903d0dc51216af8fc06a83cec34dda612627e5ddeee276",
+    "cpu_remaining_seconds": 28157.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}

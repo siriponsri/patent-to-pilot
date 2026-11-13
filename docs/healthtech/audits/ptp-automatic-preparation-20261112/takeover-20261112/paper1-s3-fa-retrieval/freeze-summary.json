@@ -1,0 +1,21 @@
+{
+  "status": "STAGED_QUALIFIED_NOT_LAUNCHED",
+  "job": "ptp-auto-paper1-fa-pilot-retrieval-20261113-v1",
+  "arm": "FA",
+  "supervisor": "supervise_paper1_retrieval.py",
+  "declaration_sha256": "cdd5c1b165ddec3bbe85ce27c2347e6d86f81eef744a273e46235d0e3290767b",
+  "package_sha256": "3ea337dfb9a5673c74ed7357b587d36d9d408301cd5dcf347fb0abdbf0af15d6",
+  "configuration_sha256": "983885c2b38f0274d2c3194ca180f7a68d9e6883e111f73d13fb6459b420cb85",
+  "input_sha256": "b5d837f47bf4fc497c9105cfa35b397979b15e46a9c093a0c9e9cf89e404262e",
+  "arm_used_rewrites": 20,
+  "transport": {
+    "bytes": 1945600,
+    "sha256": "38437edce100d164af442e7da156c89820b433518511a85d55befab8fa60a8b9",
+    "files": 242
+  },
+  "journal_generation": 116,
+  "ledger_sha256": "290a5f39926bbdb624903d0dc51216af8fc06a83cec34dda612627e5ddeee276",
+  "study_status": "IDLE",
+  "segment_seconds": 102,
+  "cpu_remaining_seconds": 28157.153622190002
+}

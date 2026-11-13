@@ -1,0 +1,112 @@
+{
+  "job": "ptp-auto-paper1-fa-pilot-retrieval-20261113-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T14:18:02.466313998Z",
+    "FinishedAt": "2026-11-13T14:18:26.961508047Z"
+  },
+  "terminal": {
+    "attempt_id": "ptp-auto-paper1-fa-pilot-retrieval-20261113-v1",
+    "container_name": "ptp-auto-paper1-fa-pilot-retrieval-20261113-v1",
+    "retry": false,
+    "declaration_sha256": "07efd674520a7e449b712cebeac96eecd261abebe7e7c967afa0bdc95fbcd935",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-13T14:18:02.466313998Z",
+      "FinishedAt": "2026-11-13T14:18:26.961508047Z"
+    },
+    "whole_wall_seconds": 25.660315227985848,
+    "controller_cpu_seconds": 0.292316861,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-paper1-fa-pilot-retrieval-20261113-v1",
+    "generation": 116
+  },
+  "completion": {
+    "status": "PAPER1_RANKINGS_COMPLETE_NOT_EVALUATED",
+    "stage": "pilot",
+    "queries": 20,
+    "encoded_texts": 60,
+    "anchor_check": {
+      "queries": 20,
+      "identical_family_lists": 20,
+      "reference": "B0_PINNED"
+    },
+    "panel_counts": {
+      "FA": {
+        "used": 20,
+        "fallback": 0
+      }
+    },
+    "c1_manipulation_and_truncation": {
+      "shuffle": {
+        "used_queries": 20,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.4696116269856371,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 20,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "FA": {
+        "used_queries": 20,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.3862406029754587,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 20,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "anchor_truncation": {
+        "texts": 20,
+        "truncated": 0,
+        "share": 0.0,
+        "max_length": 512
+      }
+    },
+    "query_prefix": "encode query for different document retrieval: ",
+    "encoder_max_length": 512,
+    "encode_seconds": 0.9171514329791535,
+    "wall_seconds": 8.237711475027027,
+    "process_cpu_seconds": 24.956175622,
+    "labels_used": false,
+    "model_calls": 0,
+    "files_sha256": {
+      "FA-panel-top200-private.jsonl": "b7c405e26405c06a84394d2a93b924e8e9793f0f8f7679f0112667b4caef6a43",
+      "FA-used-top200-private.jsonl": "b7c405e26405c06a84394d2a93b924e8e9793f0f8f7679f0112667b4caef6a43",
+      "anchor-top200-private.jsonl": "9d57ba54680852885a6d55893a3b081f35cc897a0c53b60b8b8f2ec4f26de8b1",
+      "reference-top200-private.jsonl": "dd766682bca7c1159f05ec1ebbeffe258158e49db21bc23c7e58b922bbae4c1e",
+      "shuffle-top200-private.jsonl": "98b9061148b9c807e502557eab89654d9b0693951d496f2dc88ad7e92c76c9eb"
+    }
+  },
+  "call_markers": []
+}
