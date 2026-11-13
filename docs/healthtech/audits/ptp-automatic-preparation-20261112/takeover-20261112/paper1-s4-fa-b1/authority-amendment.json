@@ -1,0 +1,21 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "1cca15b2fb6a5357685fafd504baba4197ea2947e56dee8b4866685c4fd1793c",
+  "evidence_sha256": "be88c7bf1cdd774bc7e5653382b66bb3bee34828de1be0e0b00678e791eaef82",
+  "add_configuration_sha256": [
+    "69d133b15a0b4dd59c72594cb9778a29c7c1be6dd5250bc7645be27f72cb1768",
+    "f32c575fe1232d585722f2cb5e40f6a5d53ec12b6c88f4458a85a1f0e5af60fd"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "paper1-s4",
+  "add_stage_envelopes": {
+    "full_dev": {
+      "seconds": 10800,
+      "maximum_calls": 158
+    }
+  },
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "5230a7eaa928081fa5c907d165e98193947c3acfc0370d80f684e400bf955a79",
+  "scope_sha256": "3d9270a937d4a5dbaedc92ab7cc0b179234c2fe454b413f21b397b5931e18e96",
+  "reason": "Paper 1 frozen protocol S4: full-dev generation; envelope 10800 s / 158 calls per job (FA, GR: 3 x 158 queries; SACR: 6 x 79 x 2 calls)"
+}

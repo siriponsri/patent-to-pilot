@@ -1,0 +1,47 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "bed9c12c6cc121a206663f3784129d8c619608cf2e2fa855a22b0079479fa367",
+    "configuration_sha256": "69d133b15a0b4dd59c72594cb9778a29c7c1be6dd5250bc7645be27f72cb1768",
+    "gate": "integrity",
+    "source_commit": "5bf1860e4d11f5eff3edfa48b9a074a91b5fb4b1",
+    "files": 235,
+    "evidence": "committed blobs; frozen FA/GR files match the Paper 1 freeze manifest; worker unchanged since S3; supervisor change = full-dev job names + controller CPU limit 900 s (measured poll cost)"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "bed9c12c6cc121a206663f3784129d8c619608cf2e2fa855a22b0079479fa367",
+    "configuration_sha256": "69d133b15a0b4dd59c72594cb9778a29c7c1be6dd5250bc7645be27f72cb1768",
+    "gate": "isolation",
+    "evidence": "same supervisor/isolation as the S3 pilot-20 runs; re-validated before start"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "bed9c12c6cc121a206663f3784129d8c619608cf2e2fa855a22b0079479fa367",
+    "configuration_sha256": "69d133b15a0b4dd59c72594cb9778a29c7c1be6dd5250bc7645be27f72cb1768",
+    "gate": "runtime",
+    "s3_summary_sha256": "be88c7bf1cdd774bc7e5653382b66bb3bee34828de1be0e0b00678e791eaef82",
+    "predecessor_settlement_sha256": "7ded060e1b66aece7e01987619696d75c90eea62df87d97293ab2801fa7574b3",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "evidence": "S3: this arm 20/20 REWRITE_VALIDATED on pilot-20, exit 0, about 23 s/query; pilot retrieval settled"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "bed9c12c6cc121a206663f3784129d8c619608cf2e2fa855a22b0079479fa367",
+    "configuration_sha256": "69d133b15a0b4dd59c72594cb9778a29c7c1be6dd5250bc7645be27f72cb1768",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 667765.3864951228,
+    "full_dev_charged_seconds": 0,
+    "disk_preexisting_upper_bound_bytes": 38678994415
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "bed9c12c6cc121a206663f3784129d8c619608cf2e2fa855a22b0079479fa367",
+    "configuration_sha256": "69d133b15a0b4dd59c72594cb9778a29c7c1be6dd5250bc7645be27f72cb1768",
+    "gate": "accounting",
+    "ledger_sha256": "5230a7eaa928081fa5c907d165e98193947c3acfc0370d80f684e400bf955a79",
+    "cpu_remaining_seconds": 27953.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}
