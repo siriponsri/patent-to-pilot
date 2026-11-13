@@ -101,5 +101,123 @@
   },
   "semantic_certified": false,
   "evaluated": false,
-  "note": "Lexical descriptives are not a fidelity certification and not a gate. No retrieval score exists for these outputs."
+  "note": "Lexical descriptives are not a fidelity certification and not a gate. No retrieval score exists for these outputs.",
+  "pilot_retrieval_not_evaluated": {
+    "FA": {
+      "job": "ptp-auto-paper1-fa-pilot-retrieval-20261113-v1",
+      "exit": 0,
+      "whole_wall_seconds": 25.660315227985848,
+      "settled_generation": 117,
+      "encoded_texts": 60,
+      "anchor_check": {
+        "queries": 20,
+        "identical_family_lists": 20,
+        "reference": "B0_PINNED"
+      },
+      "panel_counts": {
+        "FA": {
+          "used": 20,
+          "fallback": 0
+        }
+      },
+      "c1_manipulation_and_truncation": {
+        "shuffle": {
+          "used_queries": 20,
+          "identical_top_k_share": 0.0,
+          "mean_top_k_jaccard": 0.4696116269856371,
+          "depth": 200,
+          "verdict": "MOVEMENT_PRESENT",
+          "truncation": {
+            "texts": 20,
+            "truncated": 0,
+            "share": 0.0,
+            "max_length": 512
+          }
+        },
+        "FA": {
+          "used_queries": 20,
+          "identical_top_k_share": 0.0,
+          "mean_top_k_jaccard": 0.3862406029754587,
+          "depth": 200,
+          "verdict": "MOVEMENT_PRESENT",
+          "truncation": {
+            "texts": 20,
+            "truncated": 0,
+            "share": 0.0,
+            "max_length": 512
+          }
+        },
+        "anchor_truncation": {
+          "texts": 20,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "labels_used": false,
+      "model_calls": 0
+    },
+    "GR": {
+      "job": "ptp-auto-paper1-gr-pilot-retrieval-20261113-v1",
+      "exit": 0,
+      "whole_wall_seconds": 25.70149628800573,
+      "settled_generation": 120,
+      "encoded_texts": 60,
+      "anchor_check": {
+        "queries": 20,
+        "identical_family_lists": 20,
+        "reference": "B0_PINNED"
+      },
+      "panel_counts": {
+        "GR": {
+          "used": 20,
+          "fallback": 0
+        }
+      },
+      "c1_manipulation_and_truncation": {
+        "shuffle": {
+          "used_queries": 20,
+          "identical_top_k_share": 0.0,
+          "mean_top_k_jaccard": 0.4696116269856371,
+          "depth": 200,
+          "verdict": "MOVEMENT_PRESENT",
+          "truncation": {
+            "texts": 20,
+            "truncated": 0,
+            "share": 0.0,
+            "max_length": 512
+          }
+        },
+        "GR": {
+          "used_queries": 20,
+          "identical_top_k_share": 0.0,
+          "mean_top_k_jaccard": 0.71451352164958,
+          "depth": 200,
+          "verdict": "MOVEMENT_PRESENT",
+          "truncation": {
+            "texts": 20,
+            "truncated": 0,
+            "share": 0.0,
+            "max_length": 512
+          }
+        },
+        "anchor_truncation": {
+          "texts": 20,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "labels_used": false,
+      "model_calls": 0
+    }
+  },
+  "totals_after": {
+    "journal_generation": 120,
+    "gpu_charged_seconds": 23434.613504877227,
+    "gpu_remaining_seconds": 667765.3864951228,
+    "fidelity_remaining_seconds": 207322.27331997137,
+    "model_calls_lower_bound": 287
+  },
+  "c1_note": "C1 here is label-free engineering evidence on 20 queries: arm texts reached the encoder and moved the top-200. It is not a retrieval-quality result."
 }

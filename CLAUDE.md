@@ -1,5 +1,31 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Paper 1 S3 PASS: FA and GR pilot-20 technical runs + pilot retrieval settled; next is S4 full-dev 2026-11-13T21:25+07:00
+
+This section supersedes the "FA pilot-20 RUNNING" section below. Journal generation 120, IDLE, active null. Nothing running. Approved GPU idle.
+
+S3 results (throughput/failures only; NOT evaluated; semantic_certified=false). Summary: takeover-20261112/PAPER1-S3-SUMMARY.json.
+- FA pilot-20 (stage fidelity, ptp-auto-paper1-fa-pilot20-20261113-v1): exit 0; 20/20 REWRITE_VALIDATED, 0 fallbacks; 517.3 s wall; settled once at generation 110 (518 s GPU and fidelity, 20 calls complete). Mean generation 23.0 s/query (max 31.8); 527 input / 222 output tokens mean; load+overhead 57 s; peak 17.6 GB.
+- GR pilot-20 (ptp-auto-paper1-gr-pilot20-20261113-v1): exit 0; 20/20 REWRITE_VALIDATED; 521.5 s wall; settled at generation 113 (522 s). Mean generation 23.2 s/query (max 31.1); 407 / 211 tokens.
+- Lexical descriptives (not a gate, not a fidelity certificate): query content words absent from the rewrite, mean 0.65 (FA) vs 0.35 (GR); stated numbers retained, mean 0.43 (FA) and 0.40 (GR) over the 7 queries that contain numbers.
+- Pilot retrieval (stage pilot; new worker run_paper1_retrieval.py + supervise_paper1_retrieval.py; panel module paper1_retrieval_panel.py, tests PASS). One job per arm, 60 encodes each (20 anchors, 20 F-shuffle, 20 arm texts), about 26 s; settled at generations 117 (FA) and 120 (GR), 26 s GPU each, 0 generation calls.
+  - Anchor control: 20/20 re-encoded anchors identical to pinned B0, so B0_PINNED is the reference.
+  - C1 (label-free): identical-top-200 share 0.0 for FA, GR and shuffle, verdict MOVEMENT_PRESENT; mean top-200 Jaccard with B0: FA 0.39, GR 0.71, shuffle 0.47; 0 texts truncated (encoder max length 512). This is engineering evidence that arm text reached the encoder; it is not a retrieval-quality result. No qrels were mounted or read.
+
+Journal changes: segments 34-37 booked (generations 107, 111, 114, 118); authority amendments round 'paper1-s3' (FA+GR fidelity configurations, generation 108) and 'paper1-s3-pilot' (FA+GR pilot configurations, generation 115); 0 synthetic attempts added. Owner approval used: owner-paper1-freeze-approval.json.
+
+Totals: GPU charged 23,434.6 s; fidelity remaining 207,322 s; model_calls 287 (lower bound); CPU remaining about 28.05 ks.
+
+Helpers (takeover-20261112/): freeze_paper1_s3.py, freeze_paper1_s3_retrieval.py, paper1_s3_summary.py. Start/observe with native_control.py; settle with settle_synthetic.py.
+
+Next: S4 full-dev generation (474 dev queries).
+1. One authority amendment adding the full_dev envelope {seconds 10800, maximum_calls 158} (it can be defined only once) and the full_dev configurations (SACR, FA, GR).
+2. FA and GR: 3 batches x 158 queries each (maximum_calls must equal queries). Planning from S3: about 23 s/query + 57 s load, so about 3,700 s per batch; about 3.1 GPU-h per arm. Predecessor: the arm's pilot retrieval job.
+3. SACR: 6 x 79. The staged b1 dir (ptp-auto-native-sacr-fulldev-b1-20261113-v1) holds code from an older commit and its 79-query file (sha bf3bc8a3...); segment28 is booked and FULL_DEV_ACCOUNTING_INIT is done. The resume script must pin the staged code hashes (or stage a fresh job name) and then amend + qualify. Do NOT rerun freeze_fulldev.py.
+4. Disk accounting: the declared cumulative upper bound is 38.68 GB of the 40 GiB (42.95 GB) cap. 13 more S4 jobs fit only if each declares 256 MiB (not 512 MiB). The test stage (S8) will not fit under the current declared-bound method; raise this with the owner at S6/S7 (real job dirs are a few MB each).
+5. Then S5 (full-dev retrieval with the same worker, RRF, C1-C3, dev evaluation on CPU) and stop at S6 for the owner.
+
+
 ## Paper 1 S3: FA pilot-20 RUNNING (new account took over) 2026-11-13T21:00+07:00
 
 A new Claude Code account is the sole writer. Takeover checks passed: HEAD = origin/main = 05b2799, journal generation 106 IDLE, no ptp-* container, approved GPU idle, pilot-20 file sha b5d837f4... verified on the remote.

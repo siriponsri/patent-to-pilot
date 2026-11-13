@@ -1,0 +1,18 @@
+{
+  "stage": "pilot",
+  "arm": "GR",
+  "arms": {
+    "GR": {
+      "kind": "rewrite",
+      "jobs": [
+        {
+          "job": "ptp-auto-paper1-gr-pilot20-20261113-v1",
+          "queries_sha256": "b5d837f47bf4fc497c9105cfa35b397979b15e46a9c093a0c9e9cf89e404262e",
+          "decisions_sha256": "390d9e851e353ccc546fb2bb609ef16fb7fd86b86541f83eeb2ad877510b04af"
+        }
+      ]
+    }
+  },
+  "configuration_sha256": "0f6218103d346af153c97e6ea43367d79005b11313af63bc6b7b6252c9c3a8cc",
+  "package_sha256": "3ea337dfb9a5673c74ed7357b587d36d9d408301cd5dcf347fb0abdbf0af15d6"
+}

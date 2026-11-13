@@ -1,0 +1,21 @@
+{
+  "status": "STAGED_QUALIFIED_NOT_LAUNCHED",
+  "job": "ptp-auto-paper1-gr-pilot-retrieval-20261113-v1",
+  "arm": "GR",
+  "supervisor": "supervise_paper1_retrieval.py",
+  "declaration_sha256": "979977ae34bf1adf5e2a6cd2e09a1bd33f69c4eae7471b58249ba19d6d1db3b3",
+  "package_sha256": "3ea337dfb9a5673c74ed7357b587d36d9d408301cd5dcf347fb0abdbf0af15d6",
+  "configuration_sha256": "0f6218103d346af153c97e6ea43367d79005b11313af63bc6b7b6252c9c3a8cc",
+  "input_sha256": "b5d837f47bf4fc497c9105cfa35b397979b15e46a9c093a0c9e9cf89e404262e",
+  "arm_used_rewrites": 20,
+  "transport": {
+    "bytes": 1945600,
+    "sha256": "ee1f1c0d476c2c00c1de61a497a1bc82087a205c7fb72c6620fe291edad5a37b",
+    "files": 242
+  },
+  "journal_generation": 119,
+  "ledger_sha256": "837520463f68ae1dfde4dc53783c4a6c9999d88a2c2a80683c1c6fe77fba023f",
+  "study_status": "IDLE",
+  "segment_seconds": 102,
+  "cpu_remaining_seconds": 28055.153622190002
+}

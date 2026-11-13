@@ -1,0 +1,129 @@
+{
+  "supervisor_terminal": {
+    "attempt_id": "ptp-auto-paper1-gr-pilot-retrieval-20261113-v1",
+    "container_name": "ptp-auto-paper1-gr-pilot-retrieval-20261113-v1",
+    "retry": false,
+    "declaration_sha256": "8dd7bcce8f5dca24a57395e9a6459cb7f01865ba0b8c193bb133a734d3378d33",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-13T14:19:05.286663057Z",
+      "FinishedAt": "2026-11-13T14:19:29.612418364Z"
+    },
+    "whole_wall_seconds": 25.70149628800573,
+    "controller_cpu_seconds": 0.289733283,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "docker_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T14:19:05.286663057Z",
+    "FinishedAt": "2026-11-13T14:19:29.612418364Z"
+  },
+  "call_markers": [],
+  "normal_return_records": [],
+  "completion": {
+    "status": "PAPER1_RANKINGS_COMPLETE_NOT_EVALUATED",
+    "stage": "pilot",
+    "queries": 20,
+    "encoded_texts": 60,
+    "anchor_check": {
+      "queries": 20,
+      "identical_family_lists": 20,
+      "reference": "B0_PINNED"
+    },
+    "panel_counts": {
+      "GR": {
+        "used": 20,
+        "fallback": 0
+      }
+    },
+    "c1_manipulation_and_truncation": {
+      "shuffle": {
+        "used_queries": 20,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.4696116269856371,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 20,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "GR": {
+        "used_queries": 20,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.71451352164958,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 20,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "anchor_truncation": {
+        "texts": 20,
+        "truncated": 0,
+        "share": 0.0,
+        "max_length": 512
+      }
+    },
+    "query_prefix": "encode query for different document retrieval: ",
+    "encoder_max_length": 512,
+    "encode_seconds": 0.93012637400534,
+    "wall_seconds": 8.246782978007104,
+    "process_cpu_seconds": 24.838768479,
+    "labels_used": false,
+    "model_calls": 0,
+    "files_sha256": {
+      "GR-panel-top200-private.jsonl": "2074689b365b2045e6115902b5db46e594b9d5aaa5059be6ca4c9546eb82e5cd",
+      "GR-used-top200-private.jsonl": "2074689b365b2045e6115902b5db46e594b9d5aaa5059be6ca4c9546eb82e5cd",
+      "anchor-top200-private.jsonl": "ef614f2e5dc0b6075fdb83123901cfcb5b91d344d93bafc39967ecdface17fdf",
+      "reference-top200-private.jsonl": "dd766682bca7c1159f05ec1ebbeffe258158e49db21bc23c7e58b922bbae4c1e",
+      "shuffle-top200-private.jsonl": "a8f24593becf160efab22e6d56fbfa933c6d5cc31015e536c3c9f04dad7f636f"
+    }
+  },
+  "failure": null,
+  "file_sha256": {
+    "__pycache__/r3_engine_client.cpython-312.pyc": "998dc5b075c2bb13382e6ad667d83652b0aab5e43c9f6dc63634850a39e6859c",
+    "__pycache__/supervise_sacr_r5_engine.cpython-312.pyc": "5d49bcd4a29c262d744db6f974757440b37f2c6f91a55b1e13cf55c992254742",
+    "admission.json": "9df55883ea181fa0787abd0bce9648fc9445f5766551ced6cb3e1288b438cc03",
+    "controller.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch/declaration.json": "979977ae34bf1adf5e2a6cd2e09a1bd33f69c4eae7471b58249ba19d6d1db3b3",
+    "dispatch/gates.json": "c8784f4a9a11dd7d1dc5776d667041cd045c49fb831b0ac96be0e48f47af2f46",
+    "dispatch/queries.jsonl": "b5d837f47bf4fc497c9105cfa35b397979b15e46a9c093a0c9e9cf89e404262e",
+    "global-dispatch.json": "344eecedb031e97c49d47bc6c1f9d056a8f65b51247147c5f61cdfd166b9b835",
+    "isolation.json": "0f35e5dfa18e7288947c941913a4975c55e5b539e5f5baf73fa5aba5f3e79d96",
+    "launch.json": "e931b057dea6d9b7ae71a5627fe9de9b1a576921d27ece3641b4f8dd5ba749f6",
+    "out/attempt/GR-panel-top200-private.jsonl": "2074689b365b2045e6115902b5db46e594b9d5aaa5059be6ca4c9546eb82e5cd",
+    "out/attempt/GR-used-top200-private.jsonl": "2074689b365b2045e6115902b5db46e594b9d5aaa5059be6ca4c9546eb82e5cd",
+    "out/attempt/anchor-top200-private.jsonl": "ef614f2e5dc0b6075fdb83123901cfcb5b91d344d93bafc39967ecdface17fdf",
+    "out/attempt/completion.json": "161683101178b4dc78bd0f3622c9485e05796893b3475c470ae88aa816ad013b",
+    "out/attempt/reference-top200-private.jsonl": "dd766682bca7c1159f05ec1ebbeffe258158e49db21bc23c7e58b922bbae4c1e",
+    "out/attempt/shuffle-top200-private.jsonl": "a8f24593becf160efab22e6d56fbfa933c6d5cc31015e536c3c9f04dad7f636f",
+    "r3_engine_client.py": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+    "supervise_paper1_retrieval.py": "bbbbc2d674a7d03ecdda2012c1988b52f62bb5f500cd7cfc4ea965f8ca2a3ee4",
+    "supervise_sacr_r5_engine.py": "2f9413b5eb0c870961a923132c13afbe6f045f425d41d14679f5ffca8f0a84e3",
+    "terminal.json": "2e71ecc78503793f93df98c02725555e7248e68df0ca5d87834c20cc4113cbec"
+  }
+}
