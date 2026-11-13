@@ -1,0 +1,94 @@
+{
+  "supervisor_terminal": {
+    "attempt_id": "ptp-auto-paper1-fa-synthetic-20261113-v1",
+    "container_name": "ptp-auto-paper1-fa-synthetic-20261113-v1",
+    "retry": false,
+    "declaration_sha256": "48e5ce45df8d433eca8e1cd69b9bc986747cce320bfd815e7141c394910891a4",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-13T11:26:57.99126081Z",
+      "FinishedAt": "2026-11-13T11:28:20.059796475Z"
+    },
+    "whole_wall_seconds": 82.87875092600007,
+    "controller_cpu_seconds": 0.388037345,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "docker_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T11:26:57.99126081Z",
+    "FinishedAt": "2026-11-13T11:28:20.059796475Z"
+  },
+  "call_markers": [
+    "call-1.json"
+  ],
+  "normal_return_records": [
+    "backend/q000/rewrite/generation.json"
+  ],
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "arm": "FA",
+    "queries": 1,
+    "rewrites_used": 1,
+    "fallbacks": 0,
+    "reasons": {
+      "REWRITE_VALIDATED": 1
+    },
+    "call_slots_consumed": 1,
+    "wall_seconds": 79.27413430000888,
+    "process_cpu_seconds": 80.222341833,
+    "semantic_certified": false
+  },
+  "failure": null,
+  "file_sha256": {
+    "__pycache__/r3_engine_client.cpython-312.pyc": "f968cb9bba86111dc4a374879eecbe9c2df3cb3ec0b93b721a68978a022516f5",
+    "__pycache__/supervise_sacr_r5_engine.cpython-312.pyc": "c708e534345ef1514569742acfddbdd0f860585ead58c3f5f42132c6d72c0203",
+    "admission.json": "850291cfee9176993559428457eb456be588c7e1bb2e53899b8a06bd8ccb1e4e",
+    "controller.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch/declaration.json": "94cd8a9f3677643fa676e69e0756162e8e4c3851d678c764654614bec9c73248",
+    "dispatch/gates.json": "cc1708b5a0f565a17ba897712c84c75a4b0240996dd46e9994aa896505f2352e",
+    "dispatch/queries.jsonl": "e176ac0f0a863c2f12e8e36dd832e17ec70f520fb28d8f78aae02cfb21bd1af5",
+    "global-dispatch.json": "55babad71bd81b88b1bb3e59b9e4b02d7b7342ccba7bccbf537ebc68c5373454",
+    "isolation.json": "df5a2bb4e9320ec6f9a49559479980caa87a4beba20358ee3165cfc18925b444",
+    "launch.json": "8c84c0fa7fe9c792e27d7dbadb85d0fa210d4f93456db0d0eaca363a628759b0",
+    "out/attempt/backend/q000/rewrite/generation-binding.json": "6b354bebd78b884cdf14bf70fb2a052cf9493baae47c7fb34c417aac0b7f7a27",
+    "out/attempt/backend/q000/rewrite/generation.json": "351e5749ff5e4d8be6f5d23cac47b2654a315959ac3a35f5a498e4049fa8070f",
+    "out/attempt/backend/q000/rewrite/reservation.json": "155d1a81e0587cdb669efbfc4ffe80e52c412d8bfb86eda905e3046dd2246873",
+    "out/attempt/backend/q000/rewrite-diagnostics-private/backend-dispatch.json": "27b07c6a6393942a9e5a1794b84af954dcdef69b26cf0f2742786f406bc504b6",
+    "out/attempt/backend/q000/rewrite-diagnostics-private/backend-return.json": "a0a7e13a69ce362345c0871fa4f680dcdb7ae1882fe6b6d5d66060a7fdf4c8ce",
+    "out/attempt/before-model-input-admission.json": "6982de1a8cacebbc9b2e4aee6fe0b1cd68f02cc27c4968c4630e0bf5b0f0a87c",
+    "out/attempt/call-1.json": "8b205ea56b8617ff5c05de8ed8b7c09a83435e747bfef62f306b87b7547442dc",
+    "out/attempt/completion.json": "28b2464e7dac6544a0c349ecedc707b957ef9715c6917b67d4f5455384dc0d2c",
+    "out/attempt/decisions-private.json": "9e4eb2fc8da3b089bd2694c0ce9b4dfc1b3af97efc9de5c590ecf50cc66eb41b",
+    "out/attempt/grammar/q000/rewrite-grammar-private.json": "4e40d788790f03a1205ec6848b12956b2b133cc28af3b6a205e194b6e396b8fa",
+    "out/attempt/loaded-runtime.json": "a0b12377493b0228cbcd75a4d16f4a64aa71c10d371eeb4b63fe23f044d2c704",
+    "out/attempt/queries/q000/input.json": "cca729c8a99c0242677b36a9a79ad3a7e0a9eb4543f736b3c11770d2896bf2dc",
+    "out/attempt/queries/q000/result.json": "f7c18f24ac8c6a757d3518b8da77a42fda8141129dd90ad321c3a286261ba769",
+    "out/attempt/queries/q000/rewrite-dispatch.json": "71338704fa18736031f8d3341b547c4eab8a6a762af3d4b588147538d8669698",
+    "out/attempt/queries/q000/rewrite-generation.json": "351e5749ff5e4d8be6f5d23cac47b2654a315959ac3a35f5a498e4049fa8070f",
+    "out/attempt/queries/q000/rewrite-metrics.json": "bc8583c30ede5b0db949b7eb13264270620482cecf12eb6098cddef4de385524",
+    "out/attempt/queries/q000/rewrite-request.json": "f2e45ba59056ff78bc5984ec1e749a1ff5c445b17520dac59b026960da06f08f",
+    "out/attempt/queries/q000/rewrite-terminal.json": "963203be1490838ebaad5114c0e6a1d19377d1bace0f65529f65269845d6ed33",
+    "r3_engine_client.py": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+    "supervise_paper1_rewrite.py": "b683325d3115ef57208e133299778ce6fb484f25879b75ae9354905cbd6de21c",
+    "supervise_sacr_r5_engine.py": "2f9413b5eb0c870961a923132c13afbe6f045f425d41d14679f5ffca8f0a84e3",
+    "terminal.json": "e76eedde86656b6cf890650a6fed6e582b3218914cf1d887a0b092ad574aeac9"
+  }
+}

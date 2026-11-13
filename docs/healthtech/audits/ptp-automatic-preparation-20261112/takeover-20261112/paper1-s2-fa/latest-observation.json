@@ -1,0 +1,39 @@
+{
+  "job": "ptp-auto-paper1-fa-synthetic-20261113-v1",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 1867606,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T11:26:57.99126081Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-paper1-fa-synthetic-20261113-v1",
+    "generation": 102
+  },
+  "input_admission": {
+    "arm": "FA",
+    "input_token_cap": 5800,
+    "over_limit": 0,
+    "max_input_tokens": 419,
+    "queries": 1,
+    "model_calls": 0
+  },
+  "loaded_runtime": {
+    "model_class": "Qwen3ForCausalLM",
+    "dtype": "torch.float16",
+    "device": "cuda:0",
+    "attention": "eager"
+  },
+  "call_markers": [
+    "call-1.json"
+  ]
+}
