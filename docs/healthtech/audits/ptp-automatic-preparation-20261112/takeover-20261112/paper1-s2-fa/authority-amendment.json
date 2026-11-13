@@ -1,0 +1,15 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "1cca15b2fb6a5357685fafd504baba4197ea2947e56dee8b4866685c4fd1793c",
+  "evidence_sha256": "4771a2d3a9d6af6f222f5be7e6e43f2e6a136c8133c1bfe3ca96a3984bf597e4",
+  "add_configuration_sha256": [
+    "03541a7f24a3bc13af163ec759c6dfe13bd8733e012f6d1330265cce65dc4e4b",
+    "80df76a7539a163f058e6623534d41bef3049f4fb56e53754aded900af93d6b2"
+  ],
+  "additional_synthetic_attempts": 2,
+  "round": "paper1",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "9c1468eaf1370cca3a0ad5fa5cfa956e65c6745fc2f108b4bdd82848e24d500b",
+  "scope_sha256": "056a6d43638120e71ccb1d26e3c23bde9f9e0e23ad39a0252be0a452d28d3e69",
+  "reason": "Paper 1 frozen protocol S2: one synthetic smoke each for FA and GR"
+}

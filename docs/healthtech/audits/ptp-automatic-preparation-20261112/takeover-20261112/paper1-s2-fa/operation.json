@@ -1,0 +1,7 @@
+{
+  "stage": "synthetic",
+  "arm": "FA",
+  "task_sha256": "e176ac0f0a863c2f12e8e36dd832e17ec70f520fb28d8f78aae02cfb21bd1af5",
+  "configuration_sha256": "03541a7f24a3bc13af163ec759c6dfe13bd8733e012f6d1330265cce65dc4e4b",
+  "package_sha256": "8f02194442be93ed8c6e65597fe264b85af5a7590e24b03cdc9da5267125cd69"
+}
