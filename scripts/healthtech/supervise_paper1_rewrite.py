@@ -28,7 +28,7 @@ def configuration(job, stop, digest):
 def main(pin):
     import resource
     job = Path(__file__).resolve().parent
-    allowed = tuple('ptp-auto-paper1-%s-synthetic-20261113-v1' % a for a in ('fa', 'gr'))
+    allowed = tuple('ptp-auto-paper1-%s-%s-20261113-v1' % (a, s) for a in ('fa', 'gr') for s in ('synthetic', 'pilot20'))
     if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in allowed:
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))
