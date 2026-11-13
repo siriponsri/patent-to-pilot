@@ -1,0 +1,41 @@
+{
+  "stage": "Paper 1 S1 CPU grammar qualification (FA/GR)",
+  "job": "ptp-auto-paper1-grammar-20261113-v1",
+  "status": "PASS_GRAMMAR_ONLY",
+  "cases": 13,
+  "matched": 13,
+  "accepted_valid_cases": [
+    "fa-valid",
+    "fa-escaped-quote-and-newline",
+    "gr-valid"
+  ],
+  "rejections": {
+    "fa-field-too-long": "TOKEN_NOT_ALLOWED",
+    "fa-blank-field": "TOKEN_NOT_ALLOWED",
+    "fa-wrong-query-id": "TOKEN_NOT_ALLOWED",
+    "fa-extra-field": "TOKEN_NOT_ALLOWED",
+    "fa-key-order-violation": "TOKEN_NOT_ALLOWED",
+    "fa-raw-newline-in-string": "TOKEN_NOT_ALLOWED",
+    "fa-whitespace-runaway": "TOKEN_NOT_ALLOWED",
+    "gr-too-long": "TOKEN_NOT_ALLOWED",
+    "gr-wrong-version": "TOKEN_NOT_ALLOWED",
+    "gr-blank": "TOKEN_NOT_ALLOWED"
+  },
+  "docker": {
+    "Status": "exited",
+    "ExitCode": 0,
+    "OOMKilled": false,
+    "Pid": 0
+  },
+  "isolation": "PASS_BEFORE_START",
+  "worker_cpu_seconds": 58.48302755,
+  "controller_cpu_seconds": 0.257520014,
+  "whole_wall_seconds": 61.49037847199361,
+  "cpu_booked_seconds": 120,
+  "refund": false,
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "semantic_certified": false,
+  "scope": "grammar mechanics only: the frozen FA/GR schemas accept well-formed outputs (incl. escaped quotes/newlines) and reject too-long, blank, wrong-identity/version, extra-field, key-order, raw-newline and whitespace-runaway outputs. No model output quality evidence.",
+  "observation_sha256": "de812eded9b477c7c2fdd54da1dd76a8bc4dbd602e9d38b25d04069d6dcb12d6"
+}

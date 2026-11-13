@@ -1,0 +1,179 @@
+{
+  "job": "ptp-auto-paper1-grammar-20261113-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T11:12:30.036527653Z",
+    "FinishedAt": "2026-11-13T11:13:30.350079096Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-paper1-grammar-20261113-v1",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-13T11:12:30.036527653Z",
+      "FinishedAt": "2026-11-13T11:13:30.350079096Z"
+    },
+    "whole_wall_seconds": 61.49037847199361,
+    "controller_cpu_seconds": 0.257520014
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "qualification": {
+    "status": "PASS_GRAMMAR_ONLY",
+    "case_set": "paper1-rewrite",
+    "results": [
+      {
+        "name": "fa-valid",
+        "expected": true,
+        "accepted": true,
+        "reason": "COMPLETE",
+        "input_tokens": 372,
+        "output_tokens": 136,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "fa-escaped-quote-and-newline",
+        "expected": true,
+        "accepted": true,
+        "reason": "COMPLETE",
+        "input_tokens": 372,
+        "output_tokens": 136,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "fa-field-too-long",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 372,
+        "output_tokens": 190,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "fa-blank-field",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 372,
+        "output_tokens": 123,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "fa-wrong-query-id",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 372,
+        "output_tokens": 131,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "fa-extra-field",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 372,
+        "output_tokens": 139,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "fa-key-order-violation",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 372,
+        "output_tokens": 136,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "fa-raw-newline-in-string",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 372,
+        "output_tokens": 137,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "fa-whitespace-runaway",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 372,
+        "output_tokens": 141,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "gr-valid",
+        "expected": true,
+        "accepted": true,
+        "reason": "COMPLETE",
+        "input_tokens": 252,
+        "output_tokens": 104,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "gr-too-long",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 252,
+        "output_tokens": 583,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "gr-wrong-version",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 252,
+        "output_tokens": 104,
+        "model_calls": 0,
+        "schema_eos_only": true
+      },
+      {
+        "name": "gr-blank",
+        "expected": false,
+        "accepted": false,
+        "reason": "TOKEN_NOT_ALLOWED",
+        "input_tokens": 252,
+        "output_tokens": 82,
+        "model_calls": 0,
+        "schema_eos_only": true
+      }
+    ],
+    "model_calls": 0,
+    "semantic_certified": false,
+    "wall_seconds": 58.560786407993874,
+    "process_cpu_seconds": 58.48302755
+  }
+}

@@ -1,5 +1,35 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Paper 1 S1 PASS (FA/GR grammar 13/13); next is the FA/GR native worker 2026-11-13T18:20+07:00
+
+S1 CPU grammar qualification job ptp-auto-paper1-grammar-20261113-v1 is terminal.
+- Docker exited 0, no OOM, PID 0; isolation PASS_BEFORE_START; 61.5 s wall.
+- PASS_GRAMMAR_ONLY: 13 of 13 cases matched.
+  - Accepted: fa-valid, fa-escaped-quote-and-newline, gr-valid.
+  - Rejected with TOKEN_NOT_ALLOWED: FA field too long, blank field, wrong query_id, extra field, key-order violation, raw newline in string, whitespace runaway; GR too long, wrong version, blank.
+- Worker CPU 58.5 s + controller 0.26 s, against a 120 s booking (no refund). 0 model calls, 0 GPU.
+- This is grammar mechanics only, not evidence about model-output quality.
+- Receipt: takeover-20261112/paper1-s1/s1-result.json.
+
+Bookings (segment29 108 s + S1 120 s) were applied at journal generation 95, which is IDLE. Ledger 1bccaead... is mirrored locally. CPU remaining 29,148 s.
+
+Code:
+- paper1_grammar_cases.py and tests/test_paper1_grammar_cases.py.
+- qualify_automatic_grammar.py routes on declaration case_set (default unchanged).
+- supervise_automatic_grammar.py allows the S1 job name.
+- Frozen files paper1_rewrite_arms.py and r6_backend.py were verified unchanged against the freeze manifest before staging.
+
+Next:
+1. FA/GR native worker: one grammar-constrained call per query; same model/tokenizer/decoder/LMFE pins; input cap 5800; whitespace 48; field order; output = encoded text or original-query fallback. Plus a CPU fixture with a model double.
+2. Journal authority amendment adding the FA/GR configurations and stage envelopes.
+3. S2 synthetic smoke for each arm (<=2 calls, <=1800 s).
+4. S3 pilot-20 technical run.
+5. S4 full-dev for SACR/FA/GR.
+6. S5 dev retrieval, fusion and evaluation; S6 owner checkpoint.
+
+Nothing is running.
+
+
 ## Paper 1 protocol FROZEN; next is S1 CPU grammar qualification for FA/GR 2026-11-13T09:15+07:00
 
 The owner approved the freeze ("Freeze ได้เลย"; owner-paper1-freeze-approval.json).
