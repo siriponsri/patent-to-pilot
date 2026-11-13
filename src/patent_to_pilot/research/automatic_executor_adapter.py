@@ -6,7 +6,7 @@ from .sacr_generation import GenerationLimits
 from .r6_dispatch_journal import document_hash
 
 
-def adapt_reserved_executor(*, destination, executor, limits=GenerationLimits()):
+def adapt_reserved_executor(*, destination, executor, limits=GenerationLimits(), stages=('marking', 'review')):
     """executor(stage,path,messages,schema) persists original reservation/raw.
 
     The existing executor currently hardcodes GenerationLimits(); reject any
@@ -19,7 +19,7 @@ def adapt_reserved_executor(*, destination, executor, limits=GenerationLimits())
     consumed = set()
 
     def invoke(stage, request):
-        if stage not in ('marking', 'review') or stage in consumed:
+        if stage not in stages or stage in consumed:  # Paper 1 FA/GR pass stages=('rewrite',)
             raise InputBoundaryError('unknown or repeated automatic call stage')
         consumed.add(stage)
         path = root / stage
