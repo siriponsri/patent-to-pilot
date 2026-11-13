@@ -1,0 +1,87 @@
+{
+  "job": "ptp-auto-paper1-rewrite-fixture-20261113-v2",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T11:22:18.064301724Z",
+    "FinishedAt": "2026-11-13T11:22:45.982808523Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-paper1-rewrite-fixture-20261113-v2",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-13T11:22:18.064301724Z",
+      "FinishedAt": "2026-11-13T11:22:45.982808523Z"
+    },
+    "whole_wall_seconds": 28.436694686010014,
+    "controller_cpu_seconds": 0.234751874
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "receipt": {
+    "status": "PASS_AUTHORED_PAPER1_REWRITE_PIPELINE",
+    "real_model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "authored_backend_invocations": 3,
+    "grammar_tokens_checked": 318,
+    "arms": {
+      "FA": {
+        "rewrites_used": 1,
+        "fallbacks": 1,
+        "reasons": {
+          "INPUT_LIMIT": 1,
+          "REWRITE_VALIDATED": 1
+        },
+        "max_input_tokens": 1323
+      },
+      "GR": {
+        "rewrites_used": 2,
+        "fallbacks": 0,
+        "reasons": {
+          "REWRITE_VALIDATED": 2
+        },
+        "max_input_tokens": 1203
+      }
+    },
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "mocked_boundaries": [
+      "GPU_slot_and_window",
+      "model_weight_observer",
+      "model_loader",
+      "CUDA_telemetry",
+      "device_to_cpu"
+    ],
+    "actual_boundaries": [
+      "worker_main",
+      "declaration_package_tokenizer_decoder_checks",
+      "tokenizer",
+      "grammar_EOS",
+      "request_bound_executor",
+      "executor_adapter_rewrite_stage",
+      "call_markers",
+      "run_rewrite_fallback"
+    ],
+    "wall_seconds": 26.04188897900167,
+    "cpu_seconds": 25.868121630999998,
+    "worker_peak_rss_bytes": 1126838272
+  }
+}

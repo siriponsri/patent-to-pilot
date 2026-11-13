@@ -1,0 +1,17 @@
+{
+  "job": "ptp-auto-paper1-rewrite-fixture-20261113-v2",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 1845211,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T11:22:18.064301724Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START"
+}

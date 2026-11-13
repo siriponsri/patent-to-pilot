@@ -1,0 +1,61 @@
+{
+  "job": "ptp-auto-paper1-rewrite-fixture-20261113-v2",
+  "status": "PASS_AUTHORED_PAPER1_REWRITE_PIPELINE",
+  "docker": {
+    "Status": "exited",
+    "ExitCode": 0,
+    "OOMKilled": false,
+    "Pid": 0
+  },
+  "isolation": "PASS_BEFORE_START",
+  "authored_backend_invocations": 3,
+  "grammar_tokens_checked": 318,
+  "arms": {
+    "FA": {
+      "rewrites_used": 1,
+      "fallbacks": 1,
+      "reasons": {
+        "INPUT_LIMIT": 1,
+        "REWRITE_VALIDATED": 1
+      },
+      "max_input_tokens": 1323
+    },
+    "GR": {
+      "rewrites_used": 2,
+      "fallbacks": 0,
+      "reasons": {
+        "REWRITE_VALIDATED": 2
+      },
+      "max_input_tokens": 1203
+    }
+  },
+  "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+  "decoder_matches_freeze": true,
+  "worker_cpu_seconds": 25.868121630999998,
+  "controller_cpu_seconds": 0.234751874,
+  "whole_wall_seconds": 28.436694686010014,
+  "cpu_booked_seconds": 120,
+  "refund": false,
+  "real_model_calls": 0,
+  "gpu_seconds": 0,
+  "semantic_certified": false,
+  "mocked_boundaries": [
+    "GPU_slot_and_window",
+    "model_weight_observer",
+    "model_loader",
+    "CUDA_telemetry",
+    "device_to_cpu"
+  ],
+  "actual_boundaries": [
+    "worker_main",
+    "declaration_package_tokenizer_decoder_checks",
+    "tokenizer",
+    "grammar_EOS",
+    "request_bound_executor",
+    "executor_adapter_rewrite_stage",
+    "call_markers",
+    "run_rewrite_fallback"
+  ],
+  "scope": "engineering only: the actual run_paper1_rewrite worker runs FA and GR end to end with the real tokenizer, grammar/EOS guard, executor adapter (stage rewrite), call markers and INPUT_LIMIT fallback; outputs authored by a CPU double. No model-quality evidence.",
+  "observation_sha256": "26d71971c7d31ed5ac5050dc657af9a223d7cb0c61082bab74f611e5d9ade890"
+}

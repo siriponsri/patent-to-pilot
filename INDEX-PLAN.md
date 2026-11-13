@@ -1,5 +1,36 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Paper 1 FA/GR rewrite worker qualified on CPU (fixture v2 PASS; v1 FAILED); next is S2 synthetic GPU smoke 2026-11-13T18:25+07:00
+
+New code:
+- run_paper1_rewrite.py: one arm per job, 1 call/query, same pins as SACR v5, INPUT_LIMIT fallback before load.
+- paper1_rewrite_runner.py: USE_REWRITE or ORIGINAL_QUERY_FALLBACK; HOLD on exception.
+- automatic_executor_adapter.py now takes a stages parameter; the default is unchanged.
+- qualify_paper1_rewrite_pipeline.py and supervise_paper1_rewrite_fixture.py.
+- tests/test_paper1_rewrite_runner.py: 6 tests.
+
+Fixture runs:
+- Fixture v1 (ptp-auto-paper1-rewrite-fixture-20261113-v1) FAILED. Exit 1, CPU only, 0 model calls.
+  - Cause: the authored FA query-2 output used a whitespace-only field " ", and the real grammar refused its canonical tokenization. Hypothesis (unverified): LMFE fused string-boundary tokens; a property of the authored double, since a real model only emits allowed tokens.
+  - The worker stopped correctly and wrote failure.json. v1 is retained; receipt paper1-fixture/fixture-v1-result.json.
+- Fixture v2 (a new design, not a replay) PASS_AUTHORED_PAPER1_REWRITE_PIPELINE.
+  - Exit 0; isolation PASS_BEFORE_START.
+  - 3 authored invocations; 318 grammar tokens checked.
+  - FA: 1 rewrite plus 1 INPUT_LIMIT fallback (cap 1000). GR: 2 rewrites.
+  - Decoder 20232bca matches the freeze.
+  - Worker CPU 25.9 s against a 120 s booking.
+  - Receipt: paper1-fixture-v2/fixture-v2-result.json.
+
+Journal generation 99, IDLE. Ledger 5900ce8a... mirrored. CPU remaining 28,684 s. Nothing running.
+
+Next:
+1. Journal authority amendment adding the FA and GR configurations; qualify_stage synthetic per arm.
+2. S2 synthetic GPU smoke: one job per arm, <=2 calls, <=1800 s, with an authored non-DAPFAM source; settle once each.
+3. S3 pilot-20 technical run.
+4. S4 full-dev.
+5. S5, then S6 owner checkpoint.
+
+
 ## Paper 1 S1 PASS (FA/GR grammar 13/13); next is the FA/GR native worker 2026-11-13T18:20+07:00
 
 S1 CPU grammar qualification job ptp-auto-paper1-grammar-20261113-v1 is terminal.
