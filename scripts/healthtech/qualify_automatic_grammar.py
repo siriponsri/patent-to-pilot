@@ -38,12 +38,16 @@ def main():
         if hashlib.sha256(km_raw).hexdigest() != d['km_sha256']: raise RuntimeError('KM changed')
         from transformers import AutoTokenizer
         from patent_to_pilot.research.r6_backend import R6Backend
-        from patent_to_pilot.research.automatic_grammar_cases import qualify
         tokenizer = AutoTokenizer.from_pretrained(str(model),local_files_only=True)
         backend = R6Backend(tokenizer=tokenizer,output_root=out,lmfe_source_sha256=d['lmfe_source_sha256'],
                             max_consecutive_whitespaces=d.get('max_consecutive_whitespaces',4096),
                             force_json_field_order=d.get('force_json_field_order',False))
-        result = qualify(backend, km_raw.decode())
+        if d.get('case_set', 'automatic') == 'paper1-rewrite':  # Paper 1 S1: frozen FA/GR schemas
+            from patent_to_pilot.research.paper1_grammar_cases import qualify
+            result = qualify(backend)
+        else:
+            from patent_to_pilot.research.automatic_grammar_cases import qualify
+            result = qualify(backend, km_raw.decode())
         result.update(wall_seconds=time.monotonic()-started,process_cpu_seconds=time.process_time())
         (out/'qualification.json').write_text(json.dumps(result,indent=2)+'\n')
         if result['status'] != 'PASS_GRAMMAR_ONLY': raise RuntimeError('grammar cases failed')

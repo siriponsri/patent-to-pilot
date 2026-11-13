@@ -9,7 +9,7 @@ import time
 from r3_engine_client import Engine, EngineError
 from supervise_r3_engine_v2 import configuration as prior_configuration, supervise, BASE
 
-NAME = 'ptp-auto-grammar-20261112-v9'  # v1/v2 terminal PASS (marking schemas v1/v2)
+ALLOWED = ('ptp-auto-grammar-20261112-v9', 'ptp-auto-paper1-grammar-20261113-v1')  # v1-v9 terminal PASS; Paper 1 S1
 
 
 def configuration(job, stop, pin, tokenizer_files):
@@ -33,7 +33,8 @@ def configuration(job, stop, pin, tokenizer_files):
 def main(pin):
     import resource
     job=Path(__file__).resolve().parent
-    if job!=Path('/home/chaw/patent-to-pilot-jobs')/NAME: raise RuntimeError('fixed CPU job path required')
+    if job.parent!=Path('/home/chaw/patent-to-pilot-jobs') or job.name not in ALLOWED: raise RuntimeError('fixed CPU job path required')
+    NAME=job.name
     resource.setrlimit(resource.RLIMIT_AS,(512*1024**2,512*1024**2))
     resource.setrlimit(resource.RLIMIT_CPU,(30,30))
     start=time.monotonic();created=False;engine=Engine()
