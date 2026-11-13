@@ -1,5 +1,25 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Paper 1 S4 STARTED: FA/GR full-dev driver running (6 batches x 158) 2026-11-13T21:45+07:00
+
+A local background driver is running S4 generation for FA then GR: `python takeover-20261112/drive_paper1_s4.py FA:1 FA:2 FA:3 GR:1 GR:2 GR:3`. Expect about 62 min per batch, about 6.3 h in total. One GPU job at a time.
+
+Per batch the driver does: `freeze_paper1_s4.py ARM B` (segment booking, stage, qualify; the first batch also appends the authority amendment round 'paper1-s4' = full_dev envelope {10800 s, 158 calls} + FA/GR full_dev configurations) -> commit+push -> `native_control.py start` ONCE -> observe every 120 s -> verify -> `settle_synthetic.py` ONCE -> commit+push. Progress log: takeover-20261112/paper1-s4-progress.jsonl (events FROZEN, LAUNCHED, TERMINAL, SETTLED, STOPPED_OWNER_DECISION_REQUIRED, DRIVER_COMPLETE). It stops at the first anomaly and never retries.
+
+If this session died: read the last lines of paper1-s4-progress.jsonl and `git log`.
+- Last event LAUNCHED (or FROZEN with launch.json present): the remote job keeps running by itself. Do NOT start it again. Observe with `native_control.py observe paper1-s4-<arm>-b<n>`; after terminal, settle once with `settle_synthetic.py ptp-auto-paper1-<arm>-fulldev-b<n>-20261113-v1 paper1-s4-<arm>-b<n>`; commit; then rerun the driver with only the remaining batches.
+- Last event FROZEN without launch.json: start it once with native_control.py, then as above.
+- Last event SETTLED: rerun the driver with the remaining batches.
+- STOPPED_OWNER_DECISION_REQUIRED: report to the owner; a failed stage is not rerun without the owner.
+Do not book CPU or change the ledger between a freeze and its claim.
+
+Engineering fix before S4 (recorded; not a method change): the controller's CPU limit was 60 s. Measured poll cost on pilot-20 (4.7 ms + 0.029 ms per output file, one poll per second) projects to about 140 s for a 158-query batch, so the controller would have been killed mid-run. supervise_paper1_rewrite.py now gives full-dev jobs 900 s (other stages keep 60 s); declarations use cpu_seconds = 10800 + 900 (telemetry safety bound). The same problem applies to SACR batches (projected about 290 s): the staged SACR b1 dir carries the old 60 s controller and must NOT be launched as is.
+
+settle_synthetic.py: the local ledger mirror now accepts a changed full_dev_charged_seconds.
+
+After the driver completes: SACR full-dev (6 x 79) needs supervise_automatic_native.py with the same controller CPU fix, a fresh job name (the staged b1 code is stale), an authority amendment adding the SACR full_dev configuration (the envelope will already exist), and predecessor ptp-auto-sacr-pilot-retrieval-20261113-v1. About 98 s/query, about 2.2 h per batch, about 13 GPU-h. Then S5 and the S6 owner stop.
+
+
 ## Paper 1 S3 PASS: FA and GR pilot-20 technical runs + pilot retrieval settled; next is S4 full-dev 2026-11-13T21:25+07:00
 
 This section supersedes the "FA pilot-20 RUNNING" section below. Journal generation 120, IDLE, active null. Nothing running. Approved GPU idle.

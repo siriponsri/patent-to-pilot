@@ -28,11 +28,15 @@ def configuration(job, stop, digest):
 def main(pin):
     import resource
     job = Path(__file__).resolve().parent
-    allowed = tuple('ptp-auto-paper1-%s-%s-20261113-v1' % (a, s) for a in ('fa', 'gr') for s in ('synthetic', 'pilot20'))
+    allowed = tuple('ptp-auto-paper1-%s-%s-20261113-v1' % (a, s) for a in ('fa', 'gr')
+                    for s in ('synthetic', 'pilot20', 'fulldev-b1', 'fulldev-b2', 'fulldev-b3'))
     if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in allowed:
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))
-    resource.setrlimit(resource.RLIMIT_CPU, (60,60))
+    # Controller CPU grows with polls x output files (measured 4.7 ms + 0.029 ms/file per poll on pilot-20):
+    # about 140 s for a 158-query batch, so full-dev jobs get 900 s; shorter stages keep 60 s.
+    controller_cpu = 900 if '-fulldev-' in job.name else 60
+    resource.setrlimit(resource.RLIMIT_CPU, (controller_cpu,controller_cpu))
     started = time.monotonic(); claimed = False; create_sent = False
     receipt = {'attempt_id': job.name, 'container_name': job.name, 'retry': False}
     with (job / 'admission.json').open('x') as f:

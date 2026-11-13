@@ -78,7 +78,7 @@ def order(ref, val):
 for k in old:
     if k not in ('gpu_conservative_charged_seconds', 'gpu_remaining_seconds', 'fidelity_generation_charged_seconds',
                  'fidelity_generation_remaining_seconds', 'model_calls', 'model_calls_count_is_lower_bound',
-                 'gpu_stage_host_cpu_telemetry_seconds'):
+                 'gpu_stage_host_cpu_telemetry_seconds', 'full_dev_charged_seconds'):
         assert new[k] == old[k] or k == 'r6_phase0_cpu' and new[k] == old[k], k
 L.write_text(json.dumps(order(old, new), indent=2) + '\n')
 for n, x in (('terminal-evidence.json', v['evidence']), ('settlement-terminal.json', v['terminal']),
