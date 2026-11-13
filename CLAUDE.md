@@ -1,5 +1,19 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Paper 1 S3: FA pilot-20 RUNNING (new account took over) 2026-11-13T21:00+07:00
+
+A new Claude Code account is the sole writer. Takeover checks passed: HEAD = origin/main = 05b2799, journal generation 106 IDLE, no ptp-* container, approved GPU idle, pilot-20 file sha b5d837f4... verified on the remote.
+
+S3 = journal stage 'fidelity' on the frozen pilot-20 (throughput/failure only; not evaluated separately).
+- Helper: takeover-20261112/freeze_paper1_s3.py (FA|GR). The supervisor allowlist now also accepts `ptp-auto-paper1-{fa,gr}-pilot20-20261113-v1` (job-name change only).
+- FA freeze: segment34 booking (103 s) at generation 107; authority amendment round 'paper1-s3' (FA and GR fidelity configurations, 0 synthetic attempts; owner freeze approval; evidence PAPER1-S2-SUMMARY.json) at generation 108; qualify_stage at generation 109. Predecessor: the FA synthetic smoke.
+- Job ptp-auto-paper1-fa-pilot20-20261113-v1: 20 queries, 20 calls max, 3600 s; declaration 1c3e3481...; launched ONCE (controller PID 2597075); container started 2026-11-13T13:59:20Z; isolation PASS_BEFORE_START; input admission 0 over the cap, max 630 input tokens.
+
+Do NOT start it again (launch.json/admission.json exist). Observe: `python takeover-20261112/native_control.py observe paper1-s3-fa`. Settle once after terminal: `python takeover-20261112/settle_synthetic.py ptp-auto-paper1-fa-pilot20-20261113-v1 paper1-s3-fa`. Do not book CPU until it is settled.
+
+Next: settle FA; then `freeze_paper1_s3.py GR` (segment 35), start, observe, settle. Then the 'pilot' stage per arm (pilot-20 encode/retrieval job, not evaluated) as the predecessor for full_dev, and the SACR full-dev resume script.
+
+
 ## HANDOFF TO NEXT ACCOUNT: Paper 1 amendment A1 frozen; next is S3 2026-11-13T19:10+07:00
 
 This account is near its weekly limit. The ready-to-paste prompt for the next account is in takeover-20261112/NEXT-ACCOUNT-PROMPT.md.

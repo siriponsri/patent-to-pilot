@@ -1,0 +1,7 @@
+{
+  "stage": "fidelity",
+  "arm": "FA",
+  "input_sha256": "b5d837f47bf4fc497c9105cfa35b397979b15e46a9c093a0c9e9cf89e404262e",
+  "configuration_sha256": "ce71e314374de32e8d19a43832bde71c7f7b8f321681d266a251915ad037f7b3",
+  "package_sha256": "e326bfeacd41d1562d5df921d031e056af2ef126591e62419e3c86b2c7bce74b"
+}

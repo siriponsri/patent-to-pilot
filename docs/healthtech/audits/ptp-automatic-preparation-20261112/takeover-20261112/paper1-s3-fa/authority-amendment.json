@@ -1,0 +1,15 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "1cca15b2fb6a5357685fafd504baba4197ea2947e56dee8b4866685c4fd1793c",
+  "evidence_sha256": "0f251b36678f237836c9556b3232877e64da01ce4d68b237839f54fbbe18240d",
+  "add_configuration_sha256": [
+    "ce71e314374de32e8d19a43832bde71c7f7b8f321681d266a251915ad037f7b3",
+    "148e5a9dfa5b97e223ce85a74a4bd61152033c1d731806d2ed4be423f6ead2b3"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "paper1-s3",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "4037a488cca23adab3d06380444b5b4232058ec9ca51e962d9d01ca6f32efbf8",
+  "scope_sha256": "27d9d029e23343f17eff8708951a9c12c30f647fe7a379c429808e4f04cca71c",
+  "reason": "Paper 1 frozen protocol S3: pilot-20 technical run (stage fidelity) for FA and GR"
+}

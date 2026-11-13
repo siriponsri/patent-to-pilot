@@ -1,0 +1,31 @@
+{
+  "job": "ptp-auto-paper1-fa-pilot20-20261113-v1",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 2597118,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T13:59:20.011759958Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-paper1-fa-pilot20-20261113-v1",
+    "generation": 109
+  },
+  "input_admission": {
+    "arm": "FA",
+    "input_token_cap": 5800,
+    "over_limit": 0,
+    "max_input_tokens": 630,
+    "queries": 20,
+    "model_calls": 0
+  },
+  "call_markers": []
+}
