@@ -1,0 +1,105 @@
+{
+  "stage": "Paper 1 S3 technical pilot on pilot-20 (journal stage fidelity); throughput and failures only, not evaluated",
+  "input_sha256": "b5d837f47bf4fc497c9105cfa35b397979b15e46a9c093a0c9e9cf89e404262e",
+  "arms": {
+    "FA": {
+      "job": "ptp-auto-paper1-fa-pilot20-20261113-v1",
+      "exit": 0,
+      "queries": 20,
+      "rewrites_used": 20,
+      "fallbacks": 0,
+      "reasons": {
+        "REWRITE_VALIDATED": 20
+      },
+      "whole_wall_seconds": 517.2818195399886,
+      "gpu_charged_seconds": 518,
+      "settled_generation": 110,
+      "load_and_overhead_seconds": 57.45722787294653,
+      "admission": {
+        "arm": "FA",
+        "input_token_cap": 5800,
+        "over_limit": 0,
+        "max_input_tokens": 630,
+        "queries": 20,
+        "model_calls": 0
+      },
+      "calls": 20,
+      "generation_seconds": {
+        "sum": 459.8245916670421,
+        "mean": 22.991229583352105,
+        "median": 22.46950845301035,
+        "max": 31.827934811997693
+      },
+      "input_tokens": {
+        "mean": 526.65,
+        "max": 630
+      },
+      "output_tokens": {
+        "mean": 221.6,
+        "max": 284
+      },
+      "output_tokens_per_second": 9.638457969227536,
+      "peak_gpu_bytes": 17628246016,
+      "rewrite_chars": {
+        "mean": 502.85,
+        "max": 768
+      },
+      "lexical_descriptive_not_a_gate": {
+        "queries_with_numbers": 7,
+        "numbers_retained_share_mean": 0.42857142857142855,
+        "content_words_absent_share_mean": 0.6474869886540671
+      }
+    },
+    "GR": {
+      "job": "ptp-auto-paper1-gr-pilot20-20261113-v1",
+      "exit": 0,
+      "queries": 20,
+      "rewrites_used": 20,
+      "fallbacks": 0,
+      "reasons": {
+        "REWRITE_VALIDATED": 20
+      },
+      "whole_wall_seconds": 521.4981194279972,
+      "gpu_charged_seconds": 522,
+      "settled_generation": 113,
+      "load_and_overhead_seconds": 57.92354942197562,
+      "admission": {
+        "arm": "GR",
+        "input_token_cap": 5800,
+        "over_limit": 0,
+        "max_input_tokens": 510,
+        "queries": 20,
+        "model_calls": 0
+      },
+      "calls": 20,
+      "generation_seconds": {
+        "sum": 463.57457000602153,
+        "mean": 23.178728500301077,
+        "median": 21.789214938500663,
+        "max": 31.12061100799474
+      },
+      "input_tokens": {
+        "mean": 406.65,
+        "max": 510
+      },
+      "output_tokens": {
+        "mean": 211.15,
+        "max": 260
+      },
+      "output_tokens_per_second": 9.10964550955663,
+      "peak_gpu_bytes": 17628246016,
+      "rewrite_chars": {
+        "mean": 534.05,
+        "max": 834
+      },
+      "lexical_descriptive_not_a_gate": {
+        "queries_with_numbers": 7,
+        "numbers_retained_share_mean": 0.40476190476190477,
+        "content_words_absent_share_mean": 0.34575098291760425
+      }
+    }
+  },
+  "semantic_certified": false,
+  "evaluated": false,
+  "note": "Lexical descriptives are not a fidelity certification and not a gate. No retrieval score exists for these outputs."
+}

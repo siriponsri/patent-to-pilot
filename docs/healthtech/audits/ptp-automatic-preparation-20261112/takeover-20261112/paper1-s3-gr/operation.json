@@ -1,0 +1,7 @@
+{
+  "stage": "fidelity",
+  "arm": "GR",
+  "input_sha256": "b5d837f47bf4fc497c9105cfa35b397979b15e46a9c093a0c9e9cf89e404262e",
+  "configuration_sha256": "148e5a9dfa5b97e223ce85a74a4bd61152033c1d731806d2ed4be423f6ead2b3",
+  "package_sha256": "4e27557fd05387715d4392b8918304dd8d314c9b9b08a020d08ed66e7fe5452e"
+}

@@ -1,0 +1,96 @@
+{
+  "job": "ptp-auto-paper1-gr-pilot20-20261113-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-13T14:08:30.233180809Z",
+    "FinishedAt": "2026-11-13T14:17:11.195972086Z"
+  },
+  "terminal": {
+    "attempt_id": "ptp-auto-paper1-gr-pilot20-20261113-v1",
+    "container_name": "ptp-auto-paper1-gr-pilot20-20261113-v1",
+    "retry": false,
+    "declaration_sha256": "3772ff579f0978ab2930e9f44b6f4f9ada913112dd166fd784700eb5caa1eed7",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-13T14:08:30.233180809Z",
+      "FinishedAt": "2026-11-13T14:17:11.195972086Z"
+    },
+    "whole_wall_seconds": 521.4981194279972,
+    "controller_cpu_seconds": 4.641115979,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-paper1-gr-pilot20-20261113-v1",
+    "generation": 112
+  },
+  "input_admission": {
+    "arm": "GR",
+    "input_token_cap": 5800,
+    "over_limit": 0,
+    "max_input_tokens": 510,
+    "queries": 20,
+    "model_calls": 0
+  },
+  "loaded_runtime": {
+    "model_class": "Qwen3ForCausalLM",
+    "dtype": "torch.float16",
+    "device": "cuda:0",
+    "attention": "eager"
+  },
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "arm": "GR",
+    "queries": 20,
+    "rewrites_used": 20,
+    "fallbacks": 0,
+    "reasons": {
+      "REWRITE_VALIDATED": 20
+    },
+    "call_slots_consumed": 20,
+    "wall_seconds": 516.1066294199845,
+    "process_cpu_seconds": 516.086890976,
+    "semantic_certified": false
+  },
+  "call_markers": [
+    "call-1.json",
+    "call-10.json",
+    "call-11.json",
+    "call-12.json",
+    "call-13.json",
+    "call-14.json",
+    "call-15.json",
+    "call-16.json",
+    "call-17.json",
+    "call-18.json",
+    "call-19.json",
+    "call-2.json",
+    "call-20.json",
+    "call-3.json",
+    "call-4.json",
+    "call-5.json",
+    "call-6.json",
+    "call-7.json",
+    "call-8.json",
+    "call-9.json"
+  ]
+}

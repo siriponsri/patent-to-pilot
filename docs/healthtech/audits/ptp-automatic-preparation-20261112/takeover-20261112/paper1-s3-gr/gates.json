@@ -1,0 +1,48 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "4e27557fd05387715d4392b8918304dd8d314c9b9b08a020d08ed66e7fe5452e",
+    "configuration_sha256": "148e5a9dfa5b97e223ce85a74a4bd61152033c1d731806d2ed4be423f6ead2b3",
+    "gate": "integrity",
+    "source_commit": "b02095a7f7a35fccec1f7057325014f13a007e24",
+    "files": 235,
+    "evidence": "committed blobs; frozen FA/GR files match the Paper 1 freeze manifest; fixture v2 PASS; supervisor change = job-name allowlist only",
+    "fixture_sha256": "4771a2d3a9d6af6f222f5be7e6e43f2e6a136c8133c1bfe3ca96a3984bf597e4"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "4e27557fd05387715d4392b8918304dd8d314c9b9b08a020d08ed66e7fe5452e",
+    "configuration_sha256": "148e5a9dfa5b97e223ce85a74a4bd61152033c1d731806d2ed4be423f6ead2b3",
+    "gate": "isolation",
+    "evidence": "supervisor derived from native controller; re-validates isolation before start"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "4e27557fd05387715d4392b8918304dd8d314c9b9b08a020d08ed66e7fe5452e",
+    "configuration_sha256": "148e5a9dfa5b97e223ce85a74a4bd61152033c1d731806d2ed4be423f6ead2b3",
+    "gate": "runtime",
+    "s2_summary_sha256": "0f251b36678f237836c9556b3232877e64da01ce4d68b237839f54fbbe18240d",
+    "predecessor_settlement_sha256": "180118c639087a8a952b89a313ee5d96a184807575c2c41ecae70bb1cc4a6ba7",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "evidence": "S2 synthetic smoke of this arm: exit 0, 1 call, REWRITE_VALIDATED on this GPU"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "4e27557fd05387715d4392b8918304dd8d314c9b9b08a020d08ed66e7fe5452e",
+    "configuration_sha256": "148e5a9dfa5b97e223ce85a74a4bd61152033c1d731806d2ed4be423f6ead2b3",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 668339.3864951228,
+    "fidelity_remaining_seconds": 207844.27331997137,
+    "disk_preexisting_upper_bound_bytes": 37605252591
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "4e27557fd05387715d4392b8918304dd8d314c9b9b08a020d08ed66e7fe5452e",
+    "configuration_sha256": "148e5a9dfa5b97e223ce85a74a4bd61152033c1d731806d2ed4be423f6ead2b3",
+    "gate": "accounting",
+    "ledger_sha256": "4ba5487be15aac4fa6ac1e838bb9b8f2951a64eee96e9b7448f1c8060976d1d0",
+    "cpu_remaining_seconds": 28259.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}
