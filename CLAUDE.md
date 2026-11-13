@@ -1,5 +1,29 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Paper 1 S4 STOPPED: FA b1 PASS, FA b2 FAILED at query 102 (grammar refusal); owner decision needed 2026-11-14
+
+This section supersedes the "S4 STARTED" section below. The driver stopped itself (STOPPED_OWNER_DECISION_REQUIRED). Journal generation 127, IDLE, active null. No ptp-* container; approved GPU idle. Nothing running. Do NOT rerun the driver or any FA batch without the owner.
+
+S4 so far (progress log: takeover-20261112/paper1-s4-progress.jsonl):
+- Authority amendment round 'paper1-s4' applied with FA b1: full_dev envelope {10800 s, 158 calls} + FA and GR full_dev configurations.
+- FA b1 (ptp-auto-paper1-fa-fulldev-b1-20261113-v1): exit 0; 158/158 REWRITE_VALIDATED, 0 fallbacks; 3783 s wall; settled once at generation 124 (3784 s GPU, 158 calls complete). The 900 s controller CPU limit was needed (host CPU telemetry 3926 s = worker 3770 s + controller about 156 s; the old 60 s limit would have killed it).
+- FA b2 (ptp-auto-paper1-fa-fulldev-b2-20261113-v1): exit 1 after 2492 s. 101 queries REWRITE_VALIDATED; query batch-index 101 (dev file index 259) raised InputBoundaryError 'premature grammar termination refused' in the grammar callback after 267 generated tokens; 56 queries were never started. Settled once at generation 127: 2492 s GPU, 101 known calls + 1 unknown dispatch, calls_complete=false. No output repair, no retry. Receipt: takeover-20261112/paper1-s4-fa-b2/s4-fa-b2-result.json.
+  - Observed mechanism (private diagnostics stay on the remote): in the last schema field the output reached non-ASCII superscript characters, then only whitespace/newline tokens up to the whitespace cap (48); the strict EOS guard refused termination. Same class as native SACR v2. Cause hypothesis (unverified): LMFE string state after partial multi-byte UTF-8 tokens.
+  - This is an engineering failure on one query, not semantic or retrieval evidence. 1 occurrence in 260 FA full-dev calls is not a rate.
+- GR full-dev: not started. SACR full-dev: not started.
+
+Gap found: protocol section 3 says any GR/FA failure (input limit, grammar refusal, unknown backend state) produces original-query fallback for that query with every query kept in the denominator. run_paper1_rewrite.py instead stops the whole batch on any backend exception (HOLD), which strands the rest of the batch.
+
+Owner decision requested (not yet answered; no answer means no authority):
+- A (recommended): repair the worker so a grammar refusal on one query is recorded as ORIGINAL_QUERY_FALLBACK (reason GRAMMAR_REFUSED, counted and reported) and the batch continues; all other exceptions still HOLD. Qualify on the CPU fixture with an authored case. Then run one continuation job for the 56 never-started FA b2 queries (query 259 stays a fallback and is NOT regenerated), then FA b3 and GR b1-b3 with the same worker.
+- B: no code change; query 259 = fallback; continuation for the 56; every later refusal stops a batch again and needs the owner again.
+- C: stop S4 here.
+
+Totals: GPU charged 29,710.6 s; GPU remaining 661,489 s; full_dev charged 6,276 s (cap 460,800); fidelity remaining 207,322 s; model_calls 546 (lower bound, + 1 unknown dispatch here); CPU remaining about 27.85 ks. Segments booked through 39.
+
+Still to do after the decision: remaining FA/GR batches; SACR full-dev 6 x 79 (needs supervise_automatic_native.py controller CPU fix, a fresh job name, an authority amendment for the SACR full_dev configuration; the staged b1 dir must NOT be launched); S5; S6 owner stop. Disk: declared cumulative bound is now 39.2 GB of the 42.95 GB cap; raise the accounting method with the owner before S8.
+
+
 ## Paper 1 S4 STARTED: FA/GR full-dev driver running (6 batches x 158) 2026-11-13T21:45+07:00
 
 A local background driver is running S4 generation for FA then GR: `python takeover-20261112/drive_paper1_s4.py FA:1 FA:2 FA:3 GR:1 GR:2 GR:3`. Expect about 62 min per batch, about 6.3 h in total. One GPU job at a time.

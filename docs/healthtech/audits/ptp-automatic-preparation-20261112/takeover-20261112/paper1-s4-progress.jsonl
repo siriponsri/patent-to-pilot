@@ -6,3 +6,4 @@
 {"event": "LAUNCHED", "job": "ptp-auto-paper1-fa-fulldev-b2-20261113-v1", "pid": 3033487, "unix": 1794583740.0373642}
 {"event": "TERMINAL", "job": "ptp-auto-paper1-fa-fulldev-b2-20261113-v1", "ok": false, "exit": 1, "wall": 2491.827571123984, "completion": null, "worker_failure": {"exception_type": "InputBoundaryError", "arm": "FA", "call_slots_consumed": 102, "process_cpu_seconds": 2481.577477451, "retry": false, "cost_status": "CONTROLLER_AND_DIAGNOSTICS_RECONCILIATION_REQUIRED"}, "unix": 1794586284.2761083}
 {"event": "SETTLED", "job": "ptp-auto-paper1-fa-fulldev-b2-20261113-v1", "generation": 127, "study": "IDLE", "cost": {"calls_complete": false, "host_cpu_seconds_telemetry": 2564.834762755, "known_calls": 101, "seconds": 2492, "stage": "full_dev"}, "gpu_charged": 29710.613504877227, "model_calls": 546, "unix": 1794586285.780464}
+{"event": "STOPPED_OWNER_DECISION_REQUIRED", "job": "ptp-auto-paper1-fa-fulldev-b2-20261113-v1", "unix": 1794586289.3637893}

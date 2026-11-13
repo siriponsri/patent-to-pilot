@@ -1,0 +1,43 @@
+{
+  "job": "ptp-auto-paper1-fa-fulldev-b2-20261113-v1",
+  "status": "FAILED_ENGINEERING_HOLD_SETTLED_ONCE_NO_RETRY",
+  "exit": 1,
+  "whole_wall_seconds": 2491.827571123984,
+  "gpu_charged_seconds": 2492,
+  "settled_generation": 127,
+  "queries": {
+    "declared": 158,
+    "rewrite_validated": 101,
+    "hold_unresolved": 1,
+    "never_started": 56,
+    "fallbacks_recorded": 0
+  },
+  "failed_query": {
+    "batch_index": 101,
+    "dev_file_index": 259,
+    "input_tokens": 522,
+    "generated_tokens_seen": 267,
+    "stage": "grammar-callback",
+    "message": "premature grammar termination refused",
+    "last_schema_rejection": null,
+    "backend_invocations_observed": 1,
+    "backend_returns_observed": 0
+  },
+  "observed_mechanism": "Inside the last schema field the output reached non-ASCII superscript characters (multi-byte tokens), after which only whitespace/newline tokens followed until the declared whitespace cap (48); the strict EOS guard then refused termination and the worker stopped the batch (HOLD). Same class as native SACR v2.",
+  "hypothesis_unverified": "LMFE string state after partial multi-byte UTF-8 tokens; not reproduced on CPU.",
+  "not_evidence_of": "semantic quality or retrieval effect; one occurrence in 260 FA full-dev calls so far (158 + 102), not a rate estimate",
+  "known_calls": 101,
+  "unknown_dispatches": 1,
+  "calls_complete": false,
+  "private_diagnostics_remote_only": "out/attempt/backend/q101/rewrite-diagnostics-private/failure-private.json",
+  "protocol_text": "Section 3: any GR/FA failure (input limit, grammar refusal, unknown backend state) produces original-query fallback for that query; every query stays in the denominator. Freeze manifest failure_rules: backend_unknown_state = HOLD, never retried automatically.",
+  "implementation_gap": "run_paper1_rewrite.py stops the whole batch on any backend exception, so 56 queries of this batch were never started.",
+  "owner_decision_required": true,
+  "totals_after": {
+    "journal_generation": 127,
+    "gpu_charged_seconds": 29710.613504877227,
+    "gpu_remaining_seconds": 661489.3864951228,
+    "full_dev_charged_seconds": 6276,
+    "model_calls_lower_bound": 546
+  }
+}
