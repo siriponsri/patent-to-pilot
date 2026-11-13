@@ -1,0 +1,12 @@
+{
+  "status": "OWNER_APPROVED_PAPER1_AMENDMENT_A1_CONTROLS",
+  "date": "2026-11-13",
+  "owner_answer": "เพิ่ม control ก่อนครับ",
+  "context": "After reading the owner's GEPA research package (Papers A-D, IS_1/GEPA_Research_Complete_Package) and BEFORE any FA/GR output on DAPFAM existed (S1/S2 used authored non-DAPFAM text only).",
+  "controls": [
+    "C1 manipulation check: per arm, share of non-fallback queries whose top-200 equals B0, mean top-200 Jaccard, share of arm texts truncated by the encoder; identical on >95% of non-fallback queries = ENGINEERING_FAULT, stop before evaluation",
+    "C2 F-shuffle: RRF of B0 with the original TA query in a deterministic per-query word shuffle (no LLM) to estimate the fusion/ensemble effect",
+    "C3 family-overlap audit: query families present in the corpus or self-positive; sensitivity analysis excluding them"
+  ],
+  "scope": "descriptive only; H1-H3, delta 0.010, non-inferiority margins, statistics and gatekeeping order unchanged"
+}

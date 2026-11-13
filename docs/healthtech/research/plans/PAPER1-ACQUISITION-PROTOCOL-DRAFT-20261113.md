@@ -207,3 +207,31 @@ Changes after freeze are only engineering-fault repairs within existing authorit
 ## 12. Venue (owner: not fixed)
 
 Design to the stricter information-retrieval journal standard (e.g. IP&M or JASIST): a test split, a predeclared margin, a cluster-aware CI, cost and failure accounting, and controls for generic rewriting. World Patent Information remains the domain-fit fallback. Choose after results. No acceptance is promised, and nothing will be submitted, nor any publisher terms accepted, on the owner's behalf.
+
+## Amendment A1 (13 November 2026, owner-approved before any FA/GR DAPFAM output): descriptive controls
+
+Approval: [owner-paper1-controls-approval.json](../../audits/ptp-automatic-preparation-20261112/takeover-20261112/owner-paper1-controls-approval.json). Code: `src/patent_to_pilot/research/paper1_controls.py` (tests `tests/test_paper1_controls.py`). At approval time only authored non-DAPFAM text had been through FA/GR (S1, S2), so no Paper 1 outcome informed this amendment.
+
+**Motivation** (the owner's earlier GEPA studies, Papers A–D):
+- Several Paper A arms reported deltas of exactly 0 with CI [0, 0], and identical Recall@100 across raw, seed and oracle. This is consistent with rewritten text never reaching the encoder (e.g. appended text truncated). Not verified.
+- In Paper B a scrambled prompt beat the designed prompt.
+- Paper A found query/corpus family overlap.
+
+**Controls.** All are descriptive. H1–H3, δ, the margins, the statistics and the gatekeeping order are unchanged.
+
+**C1 manipulation check.** For each arm, over its non-fallback queries, report:
+- the share of queries whose top-200 list equals B0's;
+- the mean top-200 Jaccard overlap with B0;
+- the share of arm texts truncated by the encoder.
+
+If more than 95% of non-fallback queries are identical to B0, record ENGINEERING_FAULT and stop before any evaluation of that arm. Repair is an engineering fault, not a method revision.
+
+**C2 F-shuffle control.**
+- Input: the original TA query with its words in a deterministic per-query shuffle (`shuffled_query`, seed `paper1-f-shuffle-v1|query_id`). No LLM call.
+- It is encoded with the same encoder and prefix, then fused with B0 by the same RRF (k=60, depth 200).
+- It estimates how much fusing B0 with any perturbed second view helps (ensemble effect).
+- Report F-FA − F-shuffle descriptively, with the same cluster bootstrap. It is not part of the gatekeeping.
+
+**C3 family-overlap audit.** Count query families that occur in the corpus or are their own positives. Report every endpoint again excluding them, as a sensitivity analysis.
+
+**Stages.** C1 and C3 run on CPU at S5 and S8. C2 adds query encodes only (GPU, negligible) to the S5 and S8 retrieval jobs.
