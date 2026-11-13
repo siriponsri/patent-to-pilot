@@ -1,0 +1,19 @@
+{
+  "generation": 97,
+  "ledger_sha256": "ec0b1cfe6830c06f017ecb4d8a2d684a3f0dae53e3c65602c4122f178cade520",
+  "cpu_remaining_seconds": 28917.153622190002,
+  "segment30_seconds": 111,
+  "package_sha256": "f8aa3b1f68e8bf7194e8bae421df174625abb8f05a4574ff3cbd4fe2a3662f9d",
+  "jobs": {
+    "fixture": {
+      "job": "ptp-auto-paper1-rewrite-fixture-20261113-v1",
+      "supervisor": "supervise_paper1_rewrite_fixture.py",
+      "declaration_sha256": "9ffb4cb32a564bc40f961781060f2addfaff995a89432aa6424b88f389e7c2e7",
+      "transport": {
+        "bytes": 1925120,
+        "sha256": "c2e7ffb478298d69c28b278121c3200edc3a48e71cf25fea4d1f570ddf73a65c",
+        "files": 240
+      }
+    }
+  }
+}

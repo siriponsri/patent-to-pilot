@@ -1,0 +1,24 @@
+[
+  {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "owner_approval_sha256": "6e36eee5143f53b291b7e061e442f3be446d964d1b58334806680a27367661dd",
+    "evidence_sha256": "1c17437206d2bccd6e2aeb370f58195b592050a5cbc3bc8228c11e31879cf478",
+    "booking_id": "takeover-20261112-segment30",
+    "location": "local",
+    "conservative_cpu_seconds": 111,
+    "basis": "metered lines 77..86 (10.890625 s) + 100 s conservative unmetered shell/inspection allowance",
+    "prior_ledger_sha256": "1bccaeadd97994016a932b6cdf449571456fdab84c72b8e7b1bd5b64c9d4502d"
+  },
+  {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "owner_approval_sha256": "1cca15b2fb6a5357685fafd504baba4197ea2947e56dee8b4866685c4fd1793c",
+    "evidence_sha256": "f8aa3b1f68e8bf7194e8bae421df174625abb8f05a4574ff3cbd4fe2a3662f9d",
+    "booking_id": "ptp-auto-paper1-rewrite-fixture-20261113-v1",
+    "location": "remote",
+    "conservative_cpu_seconds": 120,
+    "basis": "upper bound: worker RLIMIT_CPU 90 s + controller 30 s on 1 core, wall stop 110 s; no refund",
+    "prior_ledger_sha256": "0d268710e6972495e97968b2beddc6399ab7d95984702f37390e384086df809c"
+  }
+]
