@@ -1,0 +1,34 @@
+{
+  "status": "PAPER1_AMENDMENT_A1_FROZEN",
+  "date": "2026-11-13",
+  "amends": "paper1-freeze/freeze-manifest.json",
+  "base_freeze_manifest_sha256": "00a730d94c35138b75c12c023531c7f89c09598e40566f7ae3336452de7c2559",
+  "owner_approval_sha256": "2e53a17aa577f681df5d77814d063c38190fcb2bf7281c46b67f83e87438493e",
+  "commit": "d98211faa5b8b9500ff6c183b20376a5db9f3bcf",
+  "files_sha256": {
+    "docs/healthtech/research/plans/PAPER1-ACQUISITION-PROTOCOL-DRAFT-20261113.md": "21d34e773ab705eacd9246b549a2362d4ec2aa0ba981fbd1185e705af2845b79",
+    "src/patent_to_pilot/research/paper1_controls.py": "95f1f9d6c42f8810f73aefeee1fced8fc7484d79ba6dc7e05e9f0de0a0538f23",
+    "tests/test_paper1_controls.py": "7bc8da17a2582dac064435deb52c4a14386d91315e7680645b6c9a915c6f84a5"
+  },
+  "controls": {
+    "C1": {
+      "identity_stop_share": 0.95,
+      "depth": 200
+    },
+    "C2": {
+      "shuffle_seed": "paper1-f-shuffle-v1|query_id",
+      "fusion": "RRF k=60 depth 200 with B0",
+      "confirmatory": false
+    },
+    "C3": {
+      "sensitivity": "exclude query families in corpus or self-positive"
+    }
+  },
+  "unchanged": [
+    "H1-H3",
+    "delta 0.010",
+    "non-inferiority 0.020",
+    "cluster bootstrap 10k seed 20261113",
+    "gatekeeping order"
+  ]
+}

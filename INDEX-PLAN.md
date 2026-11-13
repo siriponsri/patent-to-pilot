@@ -1,5 +1,26 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## HANDOFF TO NEXT ACCOUNT: Paper 1 amendment A1 frozen; next is S3 2026-11-13T19:10+07:00
+
+This account is near its weekly limit. The ready-to-paste prompt for the next account is in takeover-20261112/NEXT-ACCOUNT-PROMPT.md.
+
+The owner read the earlier GEPA package (IS_1/GEPA_Research_Complete_Package, Papers A-D). The owner then approved amendment A1 (owner-paper1-controls-approval.json) BEFORE any FA/GR DAPFAM output existed. A1 adds three descriptive controls; H1-H3, delta, margins and gatekeeping are unchanged:
+- C1 manipulation check: if top-200 is identical to B0 on more than 95% of non-fallback queries, that is ENGINEERING_FAULT; stop before evaluation. Also report the truncation share.
+- C2 F-shuffle: RRF of B0 with a deterministic word-shuffled TA query (no LLM).
+- C3 family-overlap sensitivity.
+
+Code: paper1_controls.py with tests/test_paper1_controls.py (3 PASS). Amendment manifest: paper1-freeze/amendment-a1.json (commit d98211f).
+
+Motivation from Paper A: exact-zero deltas with CI [0,0], and identical Recall@100 across raw/seed/oracle. This suggests the rewrite text may never have reached the encoder. That is a hypothesis, not verified. Paper B: a scrambled prompt beat the strong prompt.
+
+State: journal generation 106, IDLE, active null. Nothing running. S1, fixture v2 and S2 have PASSED.
+
+Next: S3 pilot-20 for FA and GR. Notes:
+- The configuration embeds 'stage', so each new stage needs an authority amendment adding the new config sha.
+- full_dev requires a settled 'pilot' predecessor; use a pilot-20 retrieval/encode job.
+- SACR full-dev b1 is staged but not qualified; the full_dev envelope amendment has not been applied yet. Write a resume script; do NOT rerun freeze_fulldev.py.
+
+
 ## Paper 1 S2 PASS: FA and GR synthetic GPU smokes, 1 call each, both REWRITE_VALIDATED 2026-11-13T18:35+07:00
 
 Journal authority amendment round 'paper1': both FA and GR configurations authorized, 2 synthetic attempts (both now used). Owner approval: owner-paper1-freeze-approval.json; evidence: fixture v2.
