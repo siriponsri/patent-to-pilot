@@ -103,3 +103,23 @@ def test_pilot_retrieval_mounts_are_read_only_inputs_without_qrels():
     assert not any('qrels' in str(s) or 'evaluation' in str(s) for s,_,_ in mounts)
     assert all(ro for t,ro in targets.items() if t not in ('/out','/models/.'+module.GPU+'.lock'))
     assert config['Cmd'][1]=='/code/scripts/healthtech/run_sacr_pilot_retrieval.py' and config['HostConfig']['NetworkMode']=='none'
+
+
+def test_paper1_retrieval_mounts_are_read_only_arm_outputs_without_qrels():
+    import pytest
+    scripts=Path(__file__).resolve().parents[1]/'scripts/healthtech'
+    sys.path.insert(0,str(scripts))
+    try:
+        spec=importlib.util.spec_from_file_location('paper1_retrieval_supervisor',scripts/'supervise_paper1_retrieval.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        arms={'FA':{'kind':'rewrite','jobs':[{'job':'ptp-auto-paper1-fa-pilot20-20261113-v1'}]}}
+        config,mounts=module.configuration(Path('/jobs/p'),1234,'a'*64,arms)
+        with pytest.raises(RuntimeError):
+            module.configuration(Path('/jobs/p'),1234,'a'*64,{'FA':{'jobs':[{'job':'ptp-native-baseline-20261110-v1'}]}})
+    finally: sys.path.remove(str(scripts))
+    targets={t:ro for _,t,ro in mounts}
+    assert '/models/qwen3-8b' not in targets and targets['/models/patembed-large'] and targets['/arm/FA/0/out'] and targets['/arm/FA/0/dispatch']
+    assert not any('qrels' in str(s) or 'evaluation' in str(s) for s,_,_ in mounts)
+    assert all(ro for t,ro in targets.items() if t not in ('/out','/models/.'+module.GPU+'.lock'))
+    assert config['Cmd'][1]=='/code/scripts/healthtech/run_paper1_retrieval.py' and config['HostConfig']['NetworkMode']=='none'
+    assert module.JOB_NAME.fullmatch('ptp-auto-paper1-fa-pilot-retrieval-20261113-v1') and not module.JOB_NAME.fullmatch('ptp-auto-paper1-test-retrieval-20261113-v1')
