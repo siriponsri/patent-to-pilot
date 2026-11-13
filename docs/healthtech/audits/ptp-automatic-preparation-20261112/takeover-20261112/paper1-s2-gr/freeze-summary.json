@@ -1,0 +1,19 @@
+{
+  "status": "STAGED_QUALIFIED_NOT_LAUNCHED",
+  "job": "ptp-auto-paper1-gr-synthetic-20261113-v1",
+  "arm": "GR",
+  "supervisor": "supervise_paper1_rewrite.py",
+  "declaration_sha256": "758c6163674193876dafac09c4fc3739b605c851bb9b872571ed09af992db16a",
+  "package_sha256": "8f02194442be93ed8c6e65597fe264b85af5a7590e24b03cdc9da5267125cd69",
+  "configuration_sha256": "80df76a7539a163f058e6623534d41bef3049f4fb56e53754aded900af93d6b2",
+  "transport": {
+    "bytes": 1914880,
+    "sha256": "abd0cf202c1ab7eabcdb156da53700acea0a7fc7adf7a8fdb0e7b60104f5208e",
+    "files": 239
+  },
+  "journal_generation": 105,
+  "ledger_sha256": "eae44d3772e436c2460073ae01b8845e836792910b61b37421f088f0a30fd093",
+  "study_status": "IDLE",
+  "segment_seconds": 102,
+  "cpu_remaining_seconds": 28467.153622190002
+}

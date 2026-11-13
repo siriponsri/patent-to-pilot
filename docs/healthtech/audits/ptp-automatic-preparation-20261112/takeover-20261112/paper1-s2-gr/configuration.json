@@ -1,0 +1,30 @@
+{
+  "stage": "synthetic",
+  "track": "PAPER1_GR",
+  "protocol": "PAPER1-ACQUISITION-PROTOCOL (frozen 2026-11-13)",
+  "paper1_freeze_manifest_sha256": "00a730d94c35138b75c12c023531c7f89c09598e40566f7ae3336452de7c2559",
+  "arm": {
+    "version": "paper1-generic-rewrite-v1",
+    "system_prompt_sha256": "32c41441527c5fe097f5858bdf175623f4b662164c311fb1460e6d7334538049",
+    "probe_request_sha256": "c48236cd5c00dcc6f89969546eef57391a56cda8ae073bca18fc21c228c7ffdb",
+    "max_chars": 2000,
+    "calls_per_query": 1
+  },
+  "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+  "max_new_tokens": 4096,
+  "dtype": "float16",
+  "attention": "eager",
+  "greedy": true,
+  "maximum_calls_per_query": 1,
+  "input_token_cap": 5800,
+  "max_consecutive_whitespaces": 48,
+  "force_json_field_order": true,
+  "container": {
+    "nano_cpus": 1,
+    "memory_bytes": 33285996544,
+    "network": "none",
+    "gpu": "single approved UUID"
+  },
+  "fallback": "original query on input cap / output limit / schema or blank rejection; HOLD on unknown backend state",
+  "semantic_certification": false
+}
