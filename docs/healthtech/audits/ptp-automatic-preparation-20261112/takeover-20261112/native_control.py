@@ -11,7 +11,7 @@ if mode == 'start':
     code = base + f"""import subprocess
 assert not (p/'launch.json').exists() and not (p/'admission.json').exists()
 with (p/'controller.log').open('xb') as log:
- child=subprocess.Popen(['python3',str(p/'supervise_automatic_native.py'),'{s['declaration_sha256']}'],cwd=p,stdout=log,stderr=log,start_new_session=True)
+ child=subprocess.Popen(['python3',str(p/'{s.get('supervisor','supervise_automatic_native.py')}'),'{s['declaration_sha256']}'],cwd=p,stdout=log,stderr=log,start_new_session=True)
 r={{'status':'CONTROLLER_LAUNCHED_NOT_COMPLETION','job':p.name,'pid':child.pid}}
 with (p/'launch.json').open('x') as f:json.dump(r,f)
 print(json.dumps(r))
