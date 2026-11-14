@@ -1,0 +1,8 @@
+{
+  "stage": "full_dev",
+  "track": "SACR",
+  "batch": 3,
+  "input_sha256": "bea4af3f6eebf6af298adf682e7f10942f62876752fbe1246a62e7c577476ec6",
+  "configuration_sha256": "e6544ff4737bb7c43d8ef71a195afc8f9e55d0f6063588b55c13671ff595220e",
+  "package_sha256": "6049e60a24b0e159ff41608ec93eafd40111a726be2e3b872172e761d3408076"
+}
