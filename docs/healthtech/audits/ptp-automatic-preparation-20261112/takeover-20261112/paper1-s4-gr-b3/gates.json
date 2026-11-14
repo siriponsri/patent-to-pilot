@@ -1,0 +1,48 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "b4016cb18f950c7b47f284e3dd32200c51688ea670369fc7ae4020495a35b566",
+    "configuration_sha256": "c25335633ab7ccebd63948f9a2c385bb7c43ded57110b3b12817964875201fce",
+    "gate": "integrity",
+    "source_commit": "cf0fab2c5cc09e6cf030e59030590051c148fc5e",
+    "files": 235,
+    "fixture_sha256": "56cb987d1bd3cf5bf88bcc8fc265d5d3c7953a9ccbd47663285550590f60bc9b",
+    "evidence": "committed blobs; frozen FA/GR files match the Paper 1 freeze manifest; worker/runner identical to the fixture-v3-qualified files (authored grammar refusal -> fallback, batch continues)"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "b4016cb18f950c7b47f284e3dd32200c51688ea670369fc7ae4020495a35b566",
+    "configuration_sha256": "c25335633ab7ccebd63948f9a2c385bb7c43ded57110b3b12817964875201fce",
+    "gate": "isolation",
+    "evidence": "same supervisor/isolation as the S3/S4 runs; re-validated before start"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "b4016cb18f950c7b47f284e3dd32200c51688ea670369fc7ae4020495a35b566",
+    "configuration_sha256": "c25335633ab7ccebd63948f9a2c385bb7c43ded57110b3b12817964875201fce",
+    "gate": "runtime",
+    "s3_summary_sha256": "be88c7bf1cdd774bc7e5653382b66bb3bee34828de1be0e0b00678e791eaef82",
+    "predecessor_settlement_sha256": "20c9cbfa2e366c907d35b19cddf36f4240dc9978ab8a0fc065a428183b619680",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "evidence": "S3 pilot-20 20/20 for this arm; FA full-dev b1 158/158 on this GPU"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "b4016cb18f950c7b47f284e3dd32200c51688ea670369fc7ae4020495a35b566",
+    "configuration_sha256": "c25335633ab7ccebd63948f9a2c385bb7c43ded57110b3b12817964875201fce",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 649229.3864951228,
+    "full_dev_charged_seconds": 18536,
+    "disk_preexisting_upper_bound_bytes": 40289607151
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "b4016cb18f950c7b47f284e3dd32200c51688ea670369fc7ae4020495a35b566",
+    "configuration_sha256": "c25335633ab7ccebd63948f9a2c385bb7c43ded57110b3b12817964875201fce",
+    "gate": "accounting",
+    "ledger_sha256": "18e09b09d952e141128c30760b8a23fec0c9e916dd290b9b8388e482af875dc3",
+    "cpu_remaining_seconds": 27100.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}
