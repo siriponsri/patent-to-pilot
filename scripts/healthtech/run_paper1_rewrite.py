@@ -21,7 +21,8 @@ def main():
     from patent_to_pilot.healthtech.local_execution import check_local_window, local_gpu_slot
     from patent_to_pilot.research.r7_dispatch_files import validate_worker_package, validate_deadline
     from patent_to_pilot.research.sacr_native_fidelity import write_new
-    from patent_to_pilot.research.paper1_rewrite_runner import run_rewrite, USE
+    from patent_to_pilot.research.paper1_rewrite_runner import run_rewrite, USE, classify_grammar_refusal
+    from patent_to_pilot.research.mtm_runtime import InputBoundaryError
     from patent_to_pilot.research.paper1_rewrite_arms import prepare
     from patent_to_pilot.research.automatic_executor_adapter import adapt_reserved_executor
     from patent_to_pilot.research.sacr_r6_bundle_runner import request_bound_executor
@@ -105,7 +106,14 @@ def main():
                     calls += 1
                     write_new(out / f'call-{calls}.json', {'stage': stage, 'arm': d['arm'], 'query_index': index,
                                                            'status': 'CONSUMED_BEFORE_BACKEND', 'retry': False})
-                    return adapted(stage, request)
+                    try:
+                        return adapted(stage, request)
+                    except InputBoundaryError as error:
+                        # Owner decision A (2026-11-14): a verified grammar refusal is a per-query fallback.
+                        refusal = classify_grammar_refusal(
+                            error, out / 'backend' / ('q%03d' % index) / (stage + '-diagnostics-private'))
+                        if refusal is None: raise
+                        raise refusal from error
                 # Per-query grammar directory (R6Backend writes '<stage>-grammar-private.json' exclusively).
                 backend.output_root = out / 'grammar' / ('q%03d' % index); backend.output_root.mkdir(parents=True)
                 result = run_rewrite(destination=out / 'queries' / ('q%03d' % index), arm=d['arm'], query_id=t['id'],
@@ -117,6 +125,7 @@ def main():
             write_new(out / 'completion.json', {'status': 'PIPELINE_TERMINAL', 'arm': d['arm'], 'queries': len(tasks),
                 'rewrites_used': sum(v['action'] == USE for v in decisions.values()),
                 'fallbacks': sum(v['action'] != USE for v in decisions.values()),
+                'grammar_refused': sum(v['reason'] == 'GRAMMAR_REFUSED' for v in decisions.values()),
                 'reasons': {r: sum(v['reason'] == r for v in decisions.values()) for r in reasons},
                 'call_slots_consumed': calls, 'wall_seconds': time.monotonic()-started,
                 'process_cpu_seconds': time.process_time(), 'semantic_certified': False})

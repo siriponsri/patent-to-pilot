@@ -11,7 +11,8 @@ from r3_engine_client import Engine, EngineError
 from supervise_r3_engine_v2 import supervise, BASE
 from supervise_automatic_grammar import configuration as grammar_configuration
 
-ALLOWED = ('ptp-auto-paper1-rewrite-fixture-20261113-v1', 'ptp-auto-paper1-rewrite-fixture-20261113-v2')  # v1 FAILED (authored fixture artifact)
+ALLOWED = ('ptp-auto-paper1-rewrite-fixture-20261113-v1', 'ptp-auto-paper1-rewrite-fixture-20261113-v2',  # v1 FAILED (authored fixture artifact)
+           'ptp-auto-paper1-rewrite-fixture-20261114-v3')  # v3: grammar-refusal fallback (owner decision A)
 
 
 def configuration(job, stop, pin, tokenizer_files):

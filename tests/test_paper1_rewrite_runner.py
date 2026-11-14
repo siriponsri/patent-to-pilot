@@ -71,3 +71,47 @@ def test_gr_arm_and_adapter_stage_whitelist(tmp_path):
     assert result['action'] == USE and result['text'] == 'A pump.'
     adapted = adapt_reserved_executor(destination=tmp_path / 'ad', executor=lambda *a: None)
     with pytest.raises(InputBoundaryError): adapted('rewrite', {})
+
+
+from patent_to_pilot.research.paper1_rewrite_runner import GrammarRefusal, classify_grammar_refusal, REFUSAL_MESSAGE
+
+
+def _diagnostics(path, **over):
+    record = {'stage': 'grammar-callback', 'exception_type': 'InputBoundaryError', 'message': REFUSAL_MESSAGE,
+              'message_sha256': 'x' * 64, 'backend_invocations_observed': 1, 'backend_returns_observed': 0,
+              'last_generated_prefix': {'generated_tokens_seen': 267, 'truncated': False, 'tail_token_ids': [1, 2]}}
+    record.update(over); path.mkdir(parents=True); (path / 'failure-private.json').write_text(json.dumps(record))
+    return path
+
+
+def test_classifier_requires_exception_and_diagnostics(tmp_path):
+    good = _diagnostics(tmp_path / 'ok')
+    refusal = classify_grammar_refusal(InputBoundaryError(REFUSAL_MESSAGE), good)
+    assert isinstance(refusal, GrammarRefusal) and refusal.evidence['generated_tokens_seen'] == 267
+    assert 'tail_token_ids' not in json.dumps(refusal.evidence)
+    assert classify_grammar_refusal(InputBoundaryError('grammar has no continuation'), good) is None
+    assert classify_grammar_refusal(RuntimeError(REFUSAL_MESSAGE), good) is None
+    assert classify_grammar_refusal(InputBoundaryError(REFUSAL_MESSAGE), tmp_path / 'missing') is None
+    for name, over in (('stage', {'stage': 'attempt'}), ('returned', {'backend_returns_observed': 1}),
+                       ('message', {'message': 'other'})):
+        assert classify_grammar_refusal(InputBoundaryError(REFUSAL_MESSAGE), _diagnostics(tmp_path / name, **over)) is None
+
+
+def test_verified_refusal_falls_back_and_other_errors_hold(tmp_path):
+    good = _diagnostics(tmp_path / 'diag')
+    def refused(stage, request): raise classify_grammar_refusal(InputBoundaryError(REFUSAL_MESSAGE), good)
+    result = run_rewrite(destination=tmp_path / 'q', arm='FA', query_id='q1', source=SRC, invoke=refused,
+                         admit=lambda *a: None, count_tokens=lambda m: 10, input_token_cap=5800)
+    assert result['action'] == FALLBACK and result['reason'] == 'GRAMMAR_REFUSED' and result['text'] is None
+    assert result['events'][0]['model_calls'] == 1 and not (tmp_path / 'q' / 'failure.json').exists()
+    assert json.loads((tmp_path / 'q' / 'rewrite-grammar-refused.json').read_text())['retry'] is False
+    def unverified(stage, request): raise InputBoundaryError(REFUSAL_MESSAGE)
+    with pytest.raises(InputBoundaryError):
+        run_rewrite(destination=tmp_path / 'h', arm='FA', query_id='q1', source=SRC, invoke=unverified,
+                    admit=lambda *a: None, count_tokens=lambda m: 10, input_token_cap=5800)
+    assert json.loads((tmp_path / 'h' / 'failure.json').read_text())['status'] == 'HOLD'
+    def early(*args): raise GrammarRefusal({})
+    with pytest.raises(GrammarRefusal):  # refusal before dispatch is not a fallback
+        run_rewrite(destination=tmp_path / 'e', arm='FA', query_id='q1', source=SRC, invoke=lambda *a: None,
+                    admit=early, count_tokens=lambda m: 10, input_token_cap=5800)
+    assert (tmp_path / 'e' / 'failure.json').exists()

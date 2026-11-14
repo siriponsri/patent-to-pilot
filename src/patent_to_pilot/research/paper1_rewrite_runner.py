@@ -1,7 +1,14 @@
 """Paper 1 FA/GR one-call rewrite per query (frozen protocol 2026-11-13). Controller owns admission and costs.
 
 Outcomes: USE_REWRITE (validated text to encode) or ORIGINAL_QUERY_FALLBACK (input over cap, output limit,
-schema/blank rejection). Any exception persists a HOLD marker and propagates; it is never retried here.
+schema/blank rejection, grammar refusal). Any other exception persists a HOLD marker and propagates; nothing is
+retried here.
+
+Grammar refusal (owner decision A, 2026-11-14; protocol section 3): the strict EOS guard raises
+'premature grammar termination refused' inside the grammar callback when the decoder reaches an incomplete
+JSON state where only EOS remains. The caller must prove this from the private backend diagnostics
+(classify_grammar_refusal) and raise GrammarRefusal; the query then falls back (reason GRAMMAR_REFUSED).
+The call counts as one consumed model call whose token counts are unknown.
 """
 import hashlib
 import json
@@ -14,6 +21,36 @@ from .sacr_generation_receipt import bind_generation_record
 from .r6_dispatch_journal import document_hash
 
 USE, FALLBACK = 'USE_REWRITE', 'ORIGINAL_QUERY_FALLBACK'
+REFUSAL_MESSAGE = 'premature grammar termination refused'
+
+
+class GrammarRefusal(Exception):
+    """A verified grammar refusal of one dispatched call (no normal backend return)."""
+    def __init__(self, evidence):
+        super().__init__(REFUSAL_MESSAGE)
+        self.evidence = evidence
+
+
+def classify_grammar_refusal(error, diagnostics_dir):
+    """Return GrammarRefusal only when the exception AND the private diagnostics both show a callback refusal."""
+    if not isinstance(error, InputBoundaryError) or str(error) != REFUSAL_MESSAGE:
+        return None
+    path = Path(diagnostics_dir) / 'failure-private.json'
+    if not path.is_file():
+        return None
+    try:
+        record = json.loads(path.read_bytes())
+    except ValueError:
+        return None
+    prefix = record.get('last_generated_prefix') or {}
+    if (record.get('stage') != 'grammar-callback' or record.get('message') != REFUSAL_MESSAGE
+            or record.get('exception_type') != 'InputBoundaryError'
+            or record.get('backend_invocations_observed') != 1 or record.get('backend_returns_observed') != 0
+            or type(prefix.get('generated_tokens_seen')) is not int):
+        return None
+    return GrammarRefusal({'stage': 'grammar-callback', 'message_sha256': record.get('message_sha256'),
+                           'generated_tokens_seen': prefix['generated_tokens_seen'],
+                           'failure_private_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
 
 
 def run_rewrite(*, destination, arm, query_id, source, invoke, admit, count_tokens, input_token_cap,
@@ -75,6 +112,13 @@ def run_rewrite(*, destination, arm, query_id, source, invoke, admit, count_toke
             return finish(FALLBACK, 'REWRITE_REJECTED')
         return finish(USE, 'REWRITE_VALIDATED', text)
     except BaseException as error:
-        save('failure.json', {'status': 'HOLD', 'exception_type': type(error).__name__,
-                              'unresolved_stage': active, 'events': events, 'retry': False})
-        raise
+        if not (isinstance(error, GrammarRefusal) and active == 'rewrite'):
+            save('failure.json', {'status': 'HOLD', 'exception_type': type(error).__name__,
+                                  'unresolved_stage': active, 'events': events, 'retry': False})
+            raise
+        refusal = error
+        events.append({'stage': 'rewrite', 'status': 'GRAMMAR_REFUSED', 'model_calls': 1,
+                       'input_output_tokens': 'UNKNOWN', 'evidence': refusal.evidence})
+        save('rewrite-grammar-refused.json', {'status': 'GRAMMAR_REFUSED', 'evidence': refusal.evidence,
+                                              'model_calls': 1, 'retry': False})
+        return finish(FALLBACK, 'GRAMMAR_REFUSED')

@@ -1,0 +1,14 @@
+{
+  "status": "OWNER_APPROVED_ENGINEERING_REPAIR",
+  "date": "2026-11-14",
+  "owner_answer": "A: ซ่อม worker แล้วไปต่อ",
+  "question": "How to handle the FA full-dev batch 2 failure (grammar refusal at batch index 101, dev file index 259) and the remaining batches?",
+  "decision": {
+    "worker": "a grammar refusal ('premature grammar termination refused' raised in the grammar callback, verified against the private backend diagnostics) on one query is recorded as ORIGINAL_QUERY_FALLBACK with reason GRAMMAR_REFUSED, counted and reported; the batch continues; every other exception still HOLDs and stops the batch",
+    "qualification": "CPU fixture with an authored refusal case before any GPU use of the repaired worker",
+    "fa_b2": "one continuation job for the 56 never-started queries; dev index 259 stays an original-query fallback and is NOT regenerated",
+    "then": "FA b3 and GR b1-b3 with the repaired worker"
+  },
+  "basis": "frozen protocol section 3: any FA/GR failure (input limit, grammar refusal, unknown backend state) produces original-query fallback for that query; every query stays in the denominator",
+  "unchanged": ["arms", "prompts", "schemas", "delta", "endpoints", "gatekeeping", "one GPU job at a time", "no protected test access", "no outcome-driven retry"]
+}

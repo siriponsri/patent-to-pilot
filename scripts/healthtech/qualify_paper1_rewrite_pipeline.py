@@ -7,6 +7,11 @@ executor adapter (stage 'rewrite'), durable call markers and run_rewrite incl. t
 v2 (2026-11-13): v1 failed because the authored whitespace-only FA field (" ") was refused by the real grammar
 under canonical tokenization (fixture artifact; v1 retained). v2 exercises the INPUT_LIMIT fallback instead
 (FA cap 1000 with a long query 2; GR cap 5800 calls both) and records the first refused token on any violation.
+v3 (2026-11-14, owner decision A): FA runs 3 authored queries; on query 2 the LMFE prefix function is replaced, after
+an authored valid JSON prefix, by an EOS-only allowed set (the fallback-EOS state seen live in FA full-dev b2).
+The REAL CompleteJsonEOSGuard must then raise 'premature grammar termination refused' in the grammar callback,
+the worker must classify it from the real private diagnostics as GRAMMAR_REFUSED -> original-query fallback, and
+the batch must continue with query 3. GR runs 1 authored query. Mocked boundary added: LMFE state for FA query 2.
 """
 from contextlib import nullcontext
 import hashlib, importlib.util, json, sys, time
@@ -16,8 +21,11 @@ from unittest.mock import patch
 sys.path.insert(0, '/code/src')
 sha = lambda b: hashlib.sha256(b).hexdigest()
 QUERIES = ({'id': 'authored-rewrite-001', 'text': 'A pump reduces line pressure below 5 kPa except during cleaning.'},
-           {'id': 'authored-rewrite-002', 'text': 'The heater is not activated during transport. ' * 120})
-CAPS = {'FA': 1000, 'GR': 5800}
+           {'id': 'authored-rewrite-002', 'text': 'The heater is not activated during transport.'},
+           {'id': 'authored-rewrite-003', 'text': 'A valve closes when the flow exceeds 2 L/min.'})
+CAPS = {'FA': 5800, 'GR': 5800}
+ARM_QUERIES = {'FA': QUERIES, 'GR': QUERIES[:1]}
+REFUSED = ('FA', 'authored-rewrite-002')
 
 
 def main():
@@ -44,7 +52,7 @@ def main():
         config = GenerationConfig.from_pretrained('/models/qwen3-8b', local_files_only=True)
         config.update(do_sample=False, num_beams=1, max_new_tokens=4096, use_cache=True,
                       eos_token_id=[151645, 151643], pad_token_id=151643)
-        task = '\n'.join(json.dumps(t) for t in QUERIES).encode() + b'\n'
+        tasks = {arm: '\n'.join(json.dumps(t) for t in qs).encode() + b'\n' for arm, qs in ARM_QUERIES.items()}
 
         class Qwen3ForCausalLM:
             dtype = torch.float16
@@ -64,7 +72,18 @@ def main():
                         raise RuntimeError('authored response violates actual grammar')
                     seq.append(token); self.tokens_checked += 1
                 return torch.tensor([seq], dtype=torch.long)
-        model = Qwen3ForCausalLM(); factory = R6Backend.factory; stages = []
+        model = Qwen3ForCausalLM(); factory = R6Backend.factory; grammar = R6Backend.grammar; stages = []
+        model.current_arm = None; model.refusals = 0
+        def authored_grammar(backend, stage, schema, messages):
+            callback = grammar(backend, stage, schema, messages)
+            if (model.current_arm, schema['properties']['query_id']['const']) != REFUSED: return callback
+            limit = len(backend.tokenizer.encode(model.text, add_special_tokens=False)); state = {}
+            def fallback_eos_state(batch_id, sent):
+                state.setdefault('prompt', len(sent))  # first call has no generated tokens
+                if len(sent) - state['prompt'] >= limit:
+                    model.refusals += 1; return [151645, 151643]
+                return callback(batch_id, sent)
+            return fallback_eos_state
         def authored_factory(backend, stage, schema, diagnostics, messages):
             model.tokenizer = backend.tokenizer; stages.append(stage)
             props = schema['properties']; qid = props['query_id']['const']
@@ -75,6 +94,8 @@ def main():
                 value = dict(head, function='Lowers fluid pressure in a conduit.', mechanism='A pumping element draws fluid.',
                              problem='Keeps pressure below a limit.', conditions='Below 5 kPa, except during cleaning.')
             model.text = json.dumps(value, ensure_ascii=False, separators=(',', ':'))
+            if (model.current_arm, qid) == REFUSED:
+                model.text = model.text[:model.text.index('"problem"')]  # valid but incomplete JSON prefix
             return factory(backend, stage, schema, diagnostics, messages)
         executor = sacr_r6_bundle_runner.request_bound_executor
         def cpu_executor(**kwargs):
@@ -91,7 +112,8 @@ def main():
         worker = importlib.util.module_from_spec(spec); spec.loader.exec_module(worker)
         summary = {}
         for arm in ('FA', 'GR'):
-            d = {'attempt_id': 'authored-fixture-' + arm, 'arm': arm, 'stage': 'synthetic', 'maximum_calls': 2, 'queries': 2,
+            model.current_arm = arm; task = tasks[arm]; n = len(ARM_QUERIES[arm])
+            d = {'attempt_id': 'authored-fixture-' + arm, 'arm': arm, 'stage': 'synthetic', 'maximum_calls': n, 'queries': n,
                  'seconds': 1800, 'cpu_seconds': 150, 'input_token_cap': CAPS[arm], 'max_consecutive_whitespaces': 48,
                  'force_json_field_order': True, 'files_sha256': outer['files_sha256'], 'package_sha256': outer['package_sha256'],
                  'input_manifest_sha256': sha(task), 'model_sha256': sha(identity),
@@ -107,6 +129,7 @@ def main():
                  patch.object(torch.cuda, 'reset_peak_memory_stats', return_value=None), \
                  patch.object(torch.cuda, 'max_memory_allocated', return_value=0), \
                  patch.object(R6Backend, 'factory', authored_factory), \
+                 patch.object(R6Backend, 'grammar', authored_grammar), \
                  patch.object(sacr_r6_bundle_runner, 'request_bound_executor', cpu_executor), \
                  patch.object(importlib.util, 'spec_from_file_location', observe_spec), \
                  patch.object(sys, 'argv', ['worker', str(time.monotonic() + 480), sha(draw)]):
@@ -114,22 +137,31 @@ def main():
             out = Path('/out/attempt'); out.rename('/out/attempt-' + arm); out = Path('/out/attempt-' + arm)
             completion = json.loads((out/'completion.json').read_bytes())
             admitted = json.loads((out/'before-model-input-admission.json').read_bytes())
-            q2 = json.loads((out/'queries/q001/result.json').read_bytes())
-            expected = 1 if arm == 'FA' else 2
-            if (model.calls - before != expected or completion['call_slots_consumed'] != expected
-                    or len(list(out.glob('call-*.json'))) != expected or admitted['over_limit'] != 2 - expected
-                    or completion['rewrites_used'] != expected
-                    or q2['reason'] != ('INPUT_LIMIT' if arm == 'FA' else 'REWRITE_VALIDATED')
-                    or completion['semantic_certified'] is not False):
-                raise RuntimeError('authored expectation differs for ' + arm)
+            reasons = {'FA': {'REWRITE_VALIDATED': 2, 'GRAMMAR_REFUSED': 1}, 'GR': {'REWRITE_VALIDATED': 1}}[arm]
+            check = [model.calls - before == n, completion['call_slots_consumed'] == n, len(list(out.glob('call-*.json'))) == n,
+                     admitted['over_limit'] == 0, completion['reasons'] == reasons, completion['semantic_certified'] is False,
+                     completion['grammar_refused'] == reasons.get('GRAMMAR_REFUSED', 0),
+                     not list(out.glob('queries/*/failure.json')), not (out/'failure.json').exists()]
+            if arm == 'FA':
+                q2 = json.loads((out/'queries/q001/result.json').read_bytes())
+                diag = json.loads((out/'backend/q001/rewrite-diagnostics-private/failure-private.json').read_bytes())
+                q3 = json.loads((out/'queries/q002/result.json').read_bytes())
+                check += [q2['action'] == 'ORIGINAL_QUERY_FALLBACK', q2['reason'] == 'GRAMMAR_REFUSED', q2['text'] is None,
+                          (out/'queries/q001/rewrite-grammar-refused.json').exists(), diag['stage'] == 'grammar-callback',
+                          diag['backend_returns_observed'] == 0, not (out/'backend/q001/rewrite/generation.json').exists(),
+                          q3['reason'] == 'REWRITE_VALIDATED', model.refusals == 1]
+            if not all(check): raise RuntimeError('authored expectation differs for %s: %s' % (arm, check))
             summary[arm] = {'rewrites_used': completion['rewrites_used'], 'fallbacks': completion['fallbacks'],
-                            'reasons': completion['reasons'], 'max_input_tokens': admitted['max_input_tokens']}
-        if stages != ['rewrite'] * 3: raise RuntimeError('unexpected stage sequence')
+                            'grammar_refused': completion['grammar_refused'], 'reasons': completion['reasons'],
+                            'max_input_tokens': admitted['max_input_tokens']}
+        if stages != ['rewrite'] * 4: raise RuntimeError('unexpected stage sequence')
         receipt.update(status='PASS_AUTHORED_PAPER1_REWRITE_PIPELINE', authored_backend_invocations=model.calls,
             grammar_tokens_checked=model.tokens_checked, arms=summary, decoder_sha256=d['decoder_sha256'],
-            mocked_boundaries=['GPU_slot_and_window', 'model_weight_observer', 'model_loader', 'CUDA_telemetry', 'device_to_cpu'],
+            mocked_boundaries=['GPU_slot_and_window', 'model_weight_observer', 'model_loader', 'CUDA_telemetry', 'device_to_cpu',
+                               'LMFE_fallback_EOS_state_for_FA_query_2'],
             actual_boundaries=['worker_main', 'declaration_package_tokenizer_decoder_checks', 'tokenizer', 'grammar_EOS',
-                               'request_bound_executor', 'executor_adapter_rewrite_stage', 'call_markers', 'run_rewrite_fallback'])
+                               'request_bound_executor', 'executor_adapter_rewrite_stage', 'call_markers', 'run_rewrite_fallback',
+                               'CompleteJsonEOSGuard_refusal', 'private_diagnostics', 'grammar_refusal_classification'])
     except BaseException as error:
         receipt.update(status='FAILED_AUTHORED_PIPELINE', exception_type=type(error).__name__, exception=str(error)[:500],
                        grammar_violation=getattr(locals().get('model'), 'violation', None)); raise
