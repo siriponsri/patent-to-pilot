@@ -30,6 +30,9 @@ def main(pin):
     job = Path(__file__).resolve().parent
     allowed = tuple('ptp-auto-paper1-%s-%s-20261113-v1' % (a, s) for a in ('fa', 'gr')
                     for s in ('synthetic', 'pilot20', 'fulldev-b1', 'fulldev-b2', 'fulldev-b3'))
+    # After owner decision A (2026-11-14): FA b2 continuation, FA b3 and GR b1-b3 with the refusal-fallback worker.
+    allowed += ('ptp-auto-paper1-fa-fulldev-b2c-20261114-v1', 'ptp-auto-paper1-fa-fulldev-b3-20261114-v1') + tuple(
+        'ptp-auto-paper1-gr-fulldev-b%d-20261114-v1' % b for b in (1, 2, 3))
     if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in allowed:
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))

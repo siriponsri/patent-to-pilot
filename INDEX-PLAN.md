@@ -1,5 +1,25 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Paper 1 S4 RESUMED after owner decision A: worker repaired, fixture v3 PASS; driver v2 running FA:2c FA:3 GR:1-3 2026-11-14T08:05+07:00
+
+This section supersedes the "S4 STOPPED" section below (whose FA b1/b2 facts remain valid). Owner answered "A: ซ่อม worker แล้วไปต่อ" (owner-paper1-s4-refusal-approval.json).
+
+Repair (engineering, aligns the worker to frozen protocol section 3; arms/prompts/schemas/delta/gatekeeping unchanged):
+- paper1_rewrite_runner.py: GrammarRefusal + classify_grammar_refusal(). A refusal counts only when the exception is InputBoundaryError 'premature grammar termination refused' AND the private backend diagnostics show stage grammar-callback, 1 backend invocation, 0 returns. Such a query becomes ORIGINAL_QUERY_FALLBACK, reason GRAMMAR_REFUSED (1 consumed call, tokens unknown); every other exception still HOLDs and stops the batch.
+- run_paper1_rewrite.py: classifies per query and continues; completion.json adds grammar_refused.
+- Unit tests: tests/test_paper1_rewrite_runner.py 8 tests (with the classifier and refusal/HOLD cases); paper1 suites 29 PASS.
+- CPU fixture v3 (ptp-auto-paper1-rewrite-fixture-20261114-v3): PASS_AUTHORED_PAPER1_REWRITE_PIPELINE, exit 0, 29.4 s wall. FA 3 authored queries: query 2 had an injected LMFE fallback-EOS state (declared mocked boundary); the REAL EOS guard refused, the worker classified GRAMMAR_REFUSED from the real diagnostics and continued; query 3 validated. GR 1 query. 4 invocations, 458 grammar tokens; 0 model calls/GPU. Bookings segment 40 (106 s) + 120 s at generation 129. Receipt paper1-fixture-v3/fixture-v3-result.json.
+- Configuration v2 (fallback text + grammar_refusal field) -> new config shas; the first v2 freeze appends authority amendment round 'paper1-s4-refusal' (FA and GR v2 full_dev configs; envelope unchanged).
+- supervise_paper1_rewrite.py allowlist adds ptp-auto-paper1-fa-fulldev-{b2c,b3}-20261114-v1 and ptp-auto-paper1-gr-fulldev-b{1,2,3}-20261114-v1.
+
+Running now: local background driver `python takeover-20261112/drive_paper1_s4_v2.py FA:2c FA:3 GR:1 GR:2 GR:3` (freeze_paper1_s4_v2.py per item; same FROZEN/LAUNCHED/TERMINAL/SETTLED log in paper1-s4-progress.jsonl). Expect about 25 min (FA b2c, 56 queries) + about 62 min per 158-query batch, about 4.6 h total.
+- FA:2c = dev rows 260..315 (the 56 never-started b2 queries). Dev row 259 (b2 batch index 101) stays an ORIGINAL_QUERY_FALLBACK and is NOT regenerated; S5 must read FA b2 as 101 results + row 259 fallback.
+- A grammar refusal is no longer an anomaly: settlement shows calls_complete=false with known_calls + grammar_refused == call slots; the driver checks exactly that. Any other anomaly stops it (STOPPED_OWNER_DECISION_REQUIRED).
+- If this session dies: read paper1-s4-progress.jsonl; LAUNCHED without SETTLED -> do NOT start again; observe with native_control.py observe paper1-s4-<arm>-b<item>, settle once with settle_synthetic.py <job> paper1-s4-<arm>-b<item>; then rerun drive_paper1_s4_v2.py with the remaining items.
+
+After the driver: SACR full-dev 6 x 79 (supervise_automatic_native.py needs the same 900 s controller CPU fix and an allowlist for fresh job names; do NOT launch the stale staged b1 dir; authority amendment for the SACR full_dev configuration), then S5 (retrieval, RRF, C1-C3, dev evaluation) and the S6 owner stop.
+
+
 ## Paper 1 S4 STOPPED: FA b1 PASS, FA b2 FAILED at query 102 (grammar refusal); owner decision needed 2026-11-14
 
 This section supersedes the "S4 STARTED" section below. The driver stopped itself (STOPPED_OWNER_DECISION_REQUIRED). Journal generation 127, IDLE, active null. No ptp-* container; approved GPU idle. Nothing running. Do NOT rerun the driver or any FA batch without the owner.

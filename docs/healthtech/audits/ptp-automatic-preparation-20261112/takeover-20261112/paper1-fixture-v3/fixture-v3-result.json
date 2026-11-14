@@ -1,0 +1,63 @@
+{
+  "job": "ptp-auto-paper1-rewrite-fixture-20261114-v3",
+  "status": "PASS_AUTHORED_PAPER1_REWRITE_PIPELINE",
+  "docker": {
+    "Status": "exited",
+    "ExitCode": 0,
+    "OOMKilled": false,
+    "Pid": 0
+  },
+  "isolation": "PASS_BEFORE_START",
+  "authored_backend_invocations": 4,
+  "grammar_tokens_checked": 458,
+  "arms": {
+    "FA": {
+      "rewrites_used": 2,
+      "fallbacks": 1,
+      "grammar_refused": 1,
+      "reasons": {
+        "GRAMMAR_REFUSED": 1,
+        "REWRITE_VALIDATED": 2
+      },
+      "max_input_tokens": 379
+    },
+    "GR": {
+      "rewrites_used": 1,
+      "fallbacks": 0,
+      "grammar_refused": 0,
+      "reasons": {
+        "REWRITE_VALIDATED": 1
+      },
+      "max_input_tokens": 252
+    }
+  },
+  "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+  "mocked_boundaries": [
+    "GPU_slot_and_window",
+    "model_weight_observer",
+    "model_loader",
+    "CUDA_telemetry",
+    "device_to_cpu",
+    "LMFE_fallback_EOS_state_for_FA_query_2"
+  ],
+  "actual_boundaries": [
+    "worker_main",
+    "declaration_package_tokenizer_decoder_checks",
+    "tokenizer",
+    "grammar_EOS",
+    "request_bound_executor",
+    "executor_adapter_rewrite_stage",
+    "call_markers",
+    "run_rewrite_fallback",
+    "CompleteJsonEOSGuard_refusal",
+    "private_diagnostics",
+    "grammar_refusal_classification"
+  ],
+  "real_model_calls": 0,
+  "gpu_seconds": 0,
+  "worker_cpu_seconds": 27.231142885999997,
+  "controller_cpu_seconds": 0.254561324,
+  "whole_wall_seconds": 29.427472015988315,
+  "cpu_booking": "120 s remote upper bound + segment 40 local (106 s); no refund",
+  "scope": "qualifies the worker repair (owner decision A): a verified grammar refusal in the real EOS guard becomes an ORIGINAL_QUERY_FALLBACK (GRAMMAR_REFUSED) and the batch continues; the LMFE fallback-EOS state for FA query 2 is a declared mocked boundary. Grammar mechanics and control flow only; no model-output quality claim."
+}
