@@ -1,5 +1,23 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Paper 1 S4: FA complete, GR b1-b2 settled, GR b3 RUNNING; SACR full-dev prepared 2026-11-14T17:05+07:00
+
+This section supersedes the "S4 RESUMED" section below for the current state.
+
+- FA full-dev complete (474 queries): b1 158/158, b2 101 + dev row 259 fallback, b2c 56/56 (gen 133, 1425 s), b3 158/158 (gen 136, 3878 s). 473 rewrites, 1 fallback.
+- GR b1: 158/158 validated (gen 139, 3431 s).
+- GR b2: 157 validated + 1 GRAMMAR_REFUSED fallback (first live use of owner decision A); exit 0, 3526 s. The driver session ended during polling (5 OBSERVATION_RETRY at 10:39-10:43); the job ran to completion untouched (finished 11:30). Observed and settled by hand once at generation 142 (known_calls 157 + 1 refused = 158 slots, calls_complete=false, study IDLE).
+- GR b3 (ptp-auto-paper1-gr-fulldev-b3-20261114-v1, dev rows 316..473): frozen gen 144, launched 16:43 by `drive_paper1_s4_v2.py GR:3`. If this session dies: do NOT start again; observe `native_control.py observe paper1-s4-gr-b3`, settle once with `settle_synthetic.py ptp-auto-paper1-gr-fulldev-b3-20261114-v1 paper1-s4-gr-b3`.
+
+SACR full-dev prepared (commit 8031ba5), not yet frozen:
+- supervise_automatic_native.py: fresh names ptp-auto-native-sacr-fulldev-b{1..6}-20261114-v1 and controller CPU 900 s for full-dev (60 s kept for pilot). The stale staged *-20261113-v1 b1 dir is never launched.
+- freeze_sacr_fulldev_v2.py B (resume of freeze_fulldev.py, which is NOT rerun): accounting init already done (gen 92), envelope exists; first batch appends round 'sacr-full-dev' (SACR full_dev configuration = native v5 except stage); predecessor SACR pilot retrieval; requires GR b3 settled.
+- drive_sacr_fulldev.py 1 2 3 4 5 6: about 2.2 h per batch, about 13 GPU-h. The SACR worker still HOLDs on any backend exception (decision A covered FA/GR only), so a refusal stops it and needs the owner.
+- Disk: the declared cumulative bound will reach about 42.2 GB of the 42.95 GB cap after the 6 SACR batches at 256 MiB each; nothing larger fits. S5 retrieval jobs and S8 need the owner to decide on the accounting method (real job dirs are a few MB).
+
+Next: settle GR b3 -> run drive_sacr_fulldev.py 1..6 -> S5 (retrieval of all arms, RRF, C1-C3, dev evaluation) -> S6 owner stop.
+
+
 ## Paper 1 S4 RESUMED after owner decision A: worker repaired, fixture v3 PASS; driver v2 running FA:2c FA:3 GR:1-3 2026-11-14T08:05+07:00
 
 This section supersedes the "S4 STOPPED" section below (whose FA b1/b2 facts remain valid). Owner answered "A: ซ่อม worker แล้วไปต่อ" (owner-paper1-s4-refusal-approval.json).
