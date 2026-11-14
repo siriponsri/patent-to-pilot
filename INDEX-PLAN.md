@@ -1,5 +1,12 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Owner approved disk cap 40 -> 52 GiB; applied after SACR full-dev 2026-11-14T18:20+07:00
+
+Owner: "อนุมัติขนานเพดาน budget ... คำนวณมาที" then "52 GiB" (owner-disk-cap-approval.json). Only the declared cumulative disk cap binds: about 42.17 GB after SACR; plan through S8 needs about 51.36 GB (S5 retrieval/eval, S8 test generation 20 batches, test retrieval/eval, 8 contingency jobs); 52 GiB = 55.83 GB leaves about 4.5 GB. GPU (about 221 ks of 691 ks), automatic package (about 205 ks of 576 ks), full-dev (about 70 ks of 461 ks) and CPU (about 27 ks left) are sufficient; unchanged.
+
+Not applied yet. Draft transition + 7 tests (PASS against a package copy) in takeover-20261112/disk-cap-draft/ (automatic_disk_cap.py: append-only DISK_CAP_AMENDMENT, exact chain 40->52 GiB, no other ledger field changes). Do NOT put it in src/ while the SACR driver is still freezing batches (package() refuses uncommitted src and the package hash would change mid-arm). After SACR b6 settles: copy into src/patent_to_pilot/research/ and tests/, run tests, commit, apply once at an IDLE generation, mirror the ledger.
+
+
 ## Paper 1 S4: FA and GR full-dev COMPLETE; SACR full-dev driver RUNNING (6 x 79) 2026-11-14T17:50+07:00
 
 This section supersedes the "GR b3 RUNNING" section below.
