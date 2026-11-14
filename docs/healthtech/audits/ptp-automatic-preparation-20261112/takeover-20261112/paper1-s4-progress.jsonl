@@ -36,3 +36,5 @@
 {"event": "DRIVER_COMPLETE", "items": ["GR:3"], "unix": 1794653138.0509355}
 {"event": "FROZEN", "job": "ptp-auto-native-sacr-fulldev-b1-20261114-v1", "generation": 148, "queries": 79, "dev_rows": [0, 79], "unix": 1794653192.2985816}
 {"event": "LAUNCHED", "job": "ptp-auto-native-sacr-fulldev-b1-20261114-v1", "pid": 1464855, "unix": 1794653195.6560295}
+{"event": "TERMINAL", "job": "ptp-auto-native-sacr-fulldev-b1-20261114-v1", "ok": true, "exit": 0, "wall": 7385.3299318750505, "completion": {"status": "PIPELINE_TERMINAL", "queries": 79, "screened_candidates": 79, "fallbacks": 0, "reasons": {"AUTOMATIC_SCREEN_COMPLETED": 79}, "call_slots_consumed": 158, "wall_seconds": 7380.001379299036, "process_cpu_seconds": 7372.525899788, "semantic_certified": false}, "worker_failure": null, "unix": 1794660692.4062982}
+{"event": "SETTLED", "job": "ptp-auto-native-sacr-fulldev-b1-20261114-v1", "generation": 149, "study": "IDLE", "cost": {"calls_complete": true, "host_cpu_seconds_telemetry": 7650.81639544, "known_calls": 158, "seconds": 7386, "stage": "full_dev"}, "calls_accounting_ok": true, "gpu_charged": 53077.61350487723, "model_calls": 1391, "unix": 1794660693.9072232}

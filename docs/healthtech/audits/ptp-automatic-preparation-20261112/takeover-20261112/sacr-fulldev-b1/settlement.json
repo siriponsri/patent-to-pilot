@@ -1,0 +1,187 @@
+{
+  "applied_now": true,
+  "generation": 149,
+  "study": {
+    "status": "IDLE",
+    "stage_costs": {
+      "ptp-auto-native-sacr-fulldev-b1-20261114-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 7650.81639544,
+        "known_calls": 158,
+        "seconds": 7386,
+        "stage": "full_dev"
+      },
+      "ptp-auto-native-sacr-pilot20-20261112-v1": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 261.291922179,
+        "known_calls": 0,
+        "seconds": 268,
+        "stage": "fidelity"
+      },
+      "ptp-auto-native-sacr-pilot20-20261112-v2": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 1358.301128158,
+        "known_calls": 21,
+        "seconds": 1354,
+        "stage": "fidelity"
+      },
+      "ptp-auto-native-sacr-pilot20-20261112-v3": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 1124.448011082,
+        "known_calls": 21,
+        "seconds": 1121,
+        "stage": "fidelity"
+      },
+      "ptp-auto-native-sacr-pilot20-20261112-v4": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 1318.689115422,
+        "known_calls": 25,
+        "seconds": 1313,
+        "stage": "fidelity"
+      },
+      "ptp-auto-native-sacr-pilot20-20261112-v5": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 1983.864101243,
+        "known_calls": 40,
+        "seconds": 1965,
+        "stage": "fidelity"
+      },
+      "ptp-auto-paper1-fa-fulldev-b1-20261113-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 3925.81380863,
+        "known_calls": 158,
+        "seconds": 3784,
+        "stage": "full_dev"
+      },
+      "ptp-auto-paper1-fa-fulldev-b2-20261113-v1": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 2564.834762755,
+        "known_calls": 101,
+        "seconds": 2492,
+        "stage": "full_dev"
+      },
+      "ptp-auto-paper1-fa-fulldev-b2c-20261114-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 1443.432596185,
+        "known_calls": 56,
+        "seconds": 1425,
+        "stage": "full_dev"
+      },
+      "ptp-auto-paper1-fa-fulldev-b3-20261114-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 4027.4261186629997,
+        "known_calls": 158,
+        "seconds": 3878,
+        "stage": "full_dev"
+      },
+      "ptp-auto-paper1-fa-pilot-retrieval-20261113-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 25.248492483,
+        "known_calls": 0,
+        "seconds": 26,
+        "stage": "pilot"
+      },
+      "ptp-auto-paper1-fa-pilot20-20261113-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 516.479639121,
+        "known_calls": 20,
+        "seconds": 518,
+        "stage": "fidelity"
+      },
+      "ptp-auto-paper1-fa-synthetic-20261113-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 80.610379178,
+        "known_calls": 1,
+        "seconds": 83,
+        "stage": "synthetic"
+      },
+      "ptp-auto-paper1-gr-fulldev-b1-20261114-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 3562.168940291,
+        "known_calls": 158,
+        "seconds": 3431,
+        "stage": "full_dev"
+      },
+      "ptp-auto-paper1-gr-fulldev-b2-20261114-v1": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 3661.846546287,
+        "known_calls": 157,
+        "seconds": 3526,
+        "stage": "full_dev"
+      },
+      "ptp-auto-paper1-gr-fulldev-b3-20261114-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 3861.5587486460004,
+        "known_calls": 158,
+        "seconds": 3721,
+        "stage": "full_dev"
+      },
+      "ptp-auto-paper1-gr-pilot-retrieval-20261113-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 25.128501762,
+        "known_calls": 0,
+        "seconds": 26,
+        "stage": "pilot"
+      },
+      "ptp-auto-paper1-gr-pilot20-20261113-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 520.728006955,
+        "known_calls": 20,
+        "seconds": 522,
+        "stage": "fidelity"
+      },
+      "ptp-auto-paper1-gr-synthetic-20261113-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 71.003345031,
+        "known_calls": 1,
+        "seconds": 73,
+        "stage": "synthetic"
+      },
+      "ptp-auto-sacr-pilot-retrieval-20261113-v1": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 231.04808613000205,
+        "host_cpu_telemetry_basis": "PHYSICAL_UPPER_BOUND wall x (container CPUs + controller); replaced declared-bound fallback",
+        "known_calls": 0,
+        "seconds": 26,
+        "stage": "pilot"
+      },
+      "ptp-auto-synthetic-20261112-v1": {
+        "calls_complete": false,
+        "host_cpu_seconds_telemetry": 243.572854702,
+        "known_calls": 0,
+        "seconds": 247,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v2": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 255.739112608,
+        "known_calls": 1,
+        "seconds": 259,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v3": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 74.31802920999999,
+        "known_calls": 1,
+        "seconds": 77,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v4": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 193.898080916,
+        "known_calls": 2,
+        "seconds": 198,
+        "stage": "synthetic"
+      },
+      "ptp-auto-synthetic-20261112-v5": {
+        "calls_complete": true,
+        "host_cpu_seconds_telemetry": 149.54138611500002,
+        "known_calls": 2,
+        "seconds": 153,
+        "stage": "synthetic"
+      }
+    }
+  },
+  "approved_gpu_occupied": false,
+  "ledger_sha256": "c69b650acd6f0f3155441ae350fcbe925107bc30286c320e5e7df1c4efbb9930"
+}
