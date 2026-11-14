@@ -1,0 +1,15 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "da0ca9e9bab9f35bcb5f33db3223db7fd2c6327a0651accb24f42b85c12bc15e",
+  "evidence_sha256": "56cb987d1bd3cf5bf88bcc8fc265d5d3c7953a9ccbd47663285550590f60bc9b",
+  "add_configuration_sha256": [
+    "87c1a389c319bc4e300b0fe88de22198ee947ec04e16fe8a2145c133a5756441",
+    "c25335633ab7ccebd63948f9a2c385bb7c43ded57110b3b12817964875201fce"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "paper1-s4-refusal",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "81368bf2eb11ccc69d1f310d8499b0b016286633bd37b8ce65019f88eeca9a49",
+  "scope_sha256": "df97fb4f88fa003c9a94f855f3a2732763ad8c6c7bf2cd7f8325a4cb2716e04b",
+  "reason": "owner decision A: verified grammar refusal -> per-query fallback (protocol section 3); FA/GR full_dev configuration v2"
+}

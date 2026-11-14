@@ -1,0 +1,9 @@
+{
+  "sha256": "d687c70b97fe74b03ccade02b8a311bcc46daa09d7046f8b0dec567b035300d3",
+  "queries": 56,
+  "check": {
+    "b2_results": 101,
+    "b2_hold_index": 101,
+    "b2_never_started": 56
+  }
+}
