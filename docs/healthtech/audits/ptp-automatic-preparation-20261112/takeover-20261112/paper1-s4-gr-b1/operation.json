@@ -1,0 +1,12 @@
+{
+  "stage": "full_dev",
+  "arm": "GR",
+  "item": "1",
+  "dev_rows": [
+    0,
+    158
+  ],
+  "input_sha256": "3c4697b78fe21509a7de648304c1dee371eb9d63b9f01db5ae2b107d1f2d137b",
+  "configuration_sha256": "c25335633ab7ccebd63948f9a2c385bb7c43ded57110b3b12817964875201fce",
+  "package_sha256": "b4016cb18f950c7b47f284e3dd32200c51688ea670369fc7ae4020495a35b566"
+}
