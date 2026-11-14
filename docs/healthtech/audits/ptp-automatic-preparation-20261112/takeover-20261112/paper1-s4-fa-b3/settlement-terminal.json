@@ -1,0 +1,24 @@
+{
+  "attempt_id": "ptp-auto-paper1-fa-fulldev-b3-20261114-v1",
+  "container_name": "ptp-auto-paper1-fa-fulldev-b3-20261114-v1",
+  "declaration_sha256": "f7ffcd7609cfb10b61d69236dd1793659bd119262c0c8d3a216e6f720ba1f3d7",
+  "whole_wall_seconds": 3877.9917033129896,
+  "known_model_calls": 158,
+  "calls_complete": true,
+  "cost_evidence_sha256": "4be250580a4d53f3d6c1ff5094058fe337fe25217e704584a2ca15602114a65b",
+  "aggregate_cpu_seconds": 4027.4261186629997,
+  "aggregate_cpu_basis": "worker process_cpu + controller",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-14T01:25:25.093164042Z",
+    "FinishedAt": "2026-11-14T02:30:01.80290603Z"
+  }
+}
