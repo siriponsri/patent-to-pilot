@@ -1,0 +1,9 @@
+{
+  "status": "OWNER_APPROVED_DISK_CAP_AMENDMENT",
+  "date": "2026-11-14",
+  "owner_answers": ["อนุมัติขนานเพดาน budget ได้นะครับ คำนวณมาที", "52 GiB"],
+  "change": {"ledger_key": "disk_limit_bytes_combined_incremental", "from_bytes": 42949672960, "to_bytes": 55834574848, "from": "40 GiB", "to": "52 GiB"},
+  "basis": "declared cumulative upper bound (256 MiB per GPU job, 16 MiB per CPU job) reaches about 42.17 GB after SACR full-dev; remaining plan through S8 (S5 retrieval/evaluation, S8 test generation 20 batches, test retrieval/evaluation, 8 contingency jobs) needs about 51.36 GB; 52 GiB leaves about 4.5 GB margin. Actual ptp job directories on the remote use about 1.07 GB; about 101 GB free.",
+  "unchanged": ["GPU, fidelity, full_dev and CPU caps", "no reset of any charged amount", "one GPU job at a time", "no protected test access before the owner's explicit go"],
+  "application": "append-only journal transition, applied once after SACR full-dev completes (journal IDLE); not applied yet"
+}
