@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "1f42eecf42f12e3dde67f110741c9b7364729a838022e97d077a406987bc49b9",
+  "evidence_sha256": "93bcb44d0a054516c8f43079b0dc5f7dbfe675c6fee8857ed07bea8788b159bc",
+  "add_configuration_sha256": [
+    "e6544ff4737bb7c43d8ef71a195afc8f9e55d0f6063588b55c13671ff595220e"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "sacr-full-dev",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "079b6b03a603144bc9b1aa5e6cbc950f50337bbb86bdd61440a74d754364c08c",
+  "scope_sha256": "fc2773ae3d239e3df78ff4a1e1c034cd80aa9705498c223e8f7fd55d8c7e7506",
+  "reason": "owner 'Proceed with both' + Paper 1 frozen protocol S4: SACR full-dev 6 x 79 (envelope from round paper1-s4)"
+}

@@ -1,0 +1,48 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "6049e60a24b0e159ff41608ec93eafd40111a726be2e3b872172e761d3408076",
+    "configuration_sha256": "e6544ff4737bb7c43d8ef71a195afc8f9e55d0f6063588b55c13671ff595220e",
+    "gate": "integrity",
+    "source_commit": "817748e3f96c5518ccfb4b8d30bf22a00b9251cf",
+    "files": 237,
+    "v5_sha256": "6eed566f43bec8559dc16b92e23976d24dbdd6ea7d7f1707a0664f8620400f1c",
+    "evidence": "committed blobs; worker run_automatic_native.py unchanged since native v5 (complete 20/20); supervisor change = fresh full-dev job names + controller CPU limit 900 s"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "6049e60a24b0e159ff41608ec93eafd40111a726be2e3b872172e761d3408076",
+    "configuration_sha256": "e6544ff4737bb7c43d8ef71a195afc8f9e55d0f6063588b55c13671ff595220e",
+    "gate": "isolation",
+    "evidence": "same supervisor/isolation as native v5; re-validated before start"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "6049e60a24b0e159ff41608ec93eafd40111a726be2e3b872172e761d3408076",
+    "configuration_sha256": "e6544ff4737bb7c43d8ef71a195afc8f9e55d0f6063588b55c13671ff595220e",
+    "gate": "runtime",
+    "evidence": "native v5 + SACR pilot retrieval technically valid",
+    "pilot_summary_sha256": "7f3cb0d9166aba7fb8254caa5deab718648e3bb0910fc8ff0fb8724d5f1b0216",
+    "pilot_retrieval_settlement_sha256": "93bcb44d0a054516c8f43079b0dc5f7dbfe675c6fee8857ed07bea8788b159bc",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "6049e60a24b0e159ff41608ec93eafd40111a726be2e3b872172e761d3408076",
+    "configuration_sha256": "e6544ff4737bb7c43d8ef71a195afc8f9e55d0f6063588b55c13671ff595220e",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 645508.3864951228,
+    "full_dev_charged_seconds": 22257,
+    "disk_preexisting_upper_bound_bytes": 40558042607
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "6049e60a24b0e159ff41608ec93eafd40111a726be2e3b872172e761d3408076",
+    "configuration_sha256": "e6544ff4737bb7c43d8ef71a195afc8f9e55d0f6063588b55c13671ff595220e",
+    "gate": "accounting",
+    "ledger_sha256": "079b6b03a603144bc9b1aa5e6cbc950f50337bbb86bdd61440a74d754364c08c",
+    "cpu_remaining_seconds": 26998.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}
