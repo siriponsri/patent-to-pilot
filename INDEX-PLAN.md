@@ -1877,3 +1877,18 @@ At the same checkpoint update HANDOFF and CLAUDE with one writer/state, Bangkok 
 5. Authorize only the next concrete package within remaining resources. ST2/ST3 remain conditional; no graph-scale work or final test access is granted by this index.
 
 Verification correction: initial supervisor fixture run was6PASS/1FAIL because Windows Path rendered the authored Linux mount with backslashes. Corrected fixture to PurePosixPath, leaving runtime isolation strict; rerun7PASS. The prior7PASS entry was written before inspecting test output; this correction preserves the failure history. A shell quoting edit attempt failed before mutation, then structured patch succeeded.
+
+## Paper 1 S4 SACR STOPPED: b1-b3 PASS, b4 grammar refusal at dev row 259; owner decision needed 2026-11-15T09:30+07:00
+
+This section supersedes the "SACR full-dev driver RUNNING" section below. Journal generation 158, IDLE, active null. Nothing running. Do NOT rerun the driver or any SACR batch without the owner.
+
+- b1 (gen 149): 79/79 screened, 0 fallback, 158 calls, 7386 s. b2 (gen 152): 78 screened + 1 fallback, 158 calls, 7451 s. b3 (gen 155): 79/79, 158 calls, 7876 s.
+- b4 (ptp-auto-native-sacr-fulldev-b4-20261114-v1, dev rows 237..315): exit 1 after 2034 s. 22 queries complete (44 calls); query index 22 = dev row 259 failed in the marking call: InputBoundaryError 'premature grammar termination refused', stage grammar-callback, 1 backend invocation, 0 returns, 560 generated tokens, no schema rejection. 56 queries (dev rows 260..315) never started. Settled once at gen 158: 2034 s GPU, 44 known calls + 1 unknown dispatch, calls_complete=false.
+- Dev row 259 is the same query that triggered the FA b2 refusal. Same failure class that owner decision A turned into a per-query fallback for FA/GR; decision A did not cover SACR, so the driver stopped (STOPPED_OWNER_DECISION_REQUIRED).
+- Totals: GPU charged 70,438.6 s; model_calls 1,751 (lower bound, + unknown dispatches).
+- b5 (rows 316..394) and b6 (rows 395..473) not started. Disk cap amendment (52 GiB) still not applied (planned after SACR settles).
+
+Owner decision requested:
+- A (recommended): extend decision A to SACR. Repair the SACR native worker with the same classify_grammar_refusal rule (row 259 -> ORIGINAL_QUERY_FALLBACK, reason GRAMMAR_REFUSED; every other exception still HOLDs), qualify on the CPU fixture, then a continuation job b4c for dev rows 260..315 (row 259 NOT regenerated), then b5, b6. About 1 h engineering + about 5.7 GPU-h.
+- B: no code change; row 259 recorded as fallback; continuation b4c with the current worker, then b5, b6; any later refusal stops again.
+- C: stop SACR here (S5 would compare SACR on 237 + 22 queries only, or drop F-SACR / H3).
