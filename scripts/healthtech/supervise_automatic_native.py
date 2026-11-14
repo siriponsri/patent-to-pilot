@@ -29,11 +29,15 @@ def main(pin):
     import resource
     job = Path(__file__).resolve().parent
     allowed = (tuple('ptp-auto-native-sacr-pilot20-20261112-v%d' % v for v in range(1, 6))
-               + tuple('ptp-auto-native-sacr-fulldev-b%d-20261113-v1' % b for b in range(1, 7)))
+               + tuple('ptp-auto-native-sacr-fulldev-b%d-20261113-v1' % b for b in range(1, 7))  # b1 staged stale: never launch
+               + tuple('ptp-auto-native-sacr-fulldev-b%d-20261114-v1' % b for b in range(1, 7)))
     if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in allowed:
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))
-    resource.setrlimit(resource.RLIMIT_CPU, (60,60))
+    # Controller CPU grows with polls x output files (measured on Paper 1 S4: about 156 s for a 158-call batch);
+    # a 79-query SACR batch writes about 2,200 files over about 2 h, so full-dev jobs get 900 s; pilot keeps 60 s.
+    controller_cpu = 900 if '-fulldev-' in job.name else 60
+    resource.setrlimit(resource.RLIMIT_CPU, (controller_cpu,controller_cpu))
     started = time.monotonic(); claimed = False; create_sent = False
     receipt = {'attempt_id': job.name, 'container_name': job.name, 'retry': False}
     with (job / 'admission.json').open('x') as f:
