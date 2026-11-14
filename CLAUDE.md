@@ -1,5 +1,22 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Paper 1 S4: FA and GR full-dev COMPLETE; SACR full-dev driver RUNNING (6 x 79) 2026-11-14T17:50+07:00
+
+This section supersedes the "GR b3 RUNNING" section below.
+
+- GR b3: 158/158 validated, exit 0, 3721 s; settled at generation 145.
+- FA complete: 473 rewrites + 1 fallback (dev row 259). GR complete: 473 rewrites + 1 GRAMMAR_REFUSED fallback (in b2). Every one of the 474 dev queries has an FA and a GR decision.
+- Totals after GR: GPU charged 45,691.6 s; model_calls 1,233 (lower bound).
+
+SACR full-dev: local background driver `python takeover-20261112/drive_sacr_fulldev.py 1 2 3 4 5 6` (log: paper1-s4-progress.jsonl).
+- b1 (ptp-auto-native-sacr-fulldev-b1-20261114-v1, dev rows 0..78): segment booking + authority amendment round 'sacr-full-dev' + qualify; journal generation 148; launched 17:46; isolation PASS_BEFORE_START, container running.
+- About 2.2 h per batch; all six done around 07:00 next day if nothing stops.
+- The SACR worker HOLDs on any backend exception (decision A covered FA/GR only): a refusal stops the driver (STOPPED_OWNER_DECISION_REQUIRED) and needs the owner.
+- If this session dies: read the progress log. LAUNCHED without SETTLED -> do NOT start again; observe `native_control.py observe sacr-fulldev-b<n>`, settle once `settle_synthetic.py ptp-auto-native-sacr-fulldev-b<n>-20261114-v1 sacr-fulldev-b<n>`, then rerun `drive_sacr_fulldev.py` with the remaining batch numbers.
+
+After SACR: S5 needs an owner decision on disk accounting first (declared cumulative bound reaches about 42.2 GB of 42.95 GB after SACR); then retrieval of all arms (pilot-retrieval worker on full dev), RRF, C1-C3, dev evaluation; then the S6 owner stop.
+
+
 ## Paper 1 S4: FA complete, GR b1-b2 settled, GR b3 RUNNING; SACR full-dev prepared 2026-11-14T17:05+07:00
 
 This section supersedes the "S4 RESUMED" section below for the current state.
