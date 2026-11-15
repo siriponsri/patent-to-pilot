@@ -1,0 +1,543 @@
+{
+  "status": "PAPER1_S5_DEV_COMPLETE_DESCRIPTIVE",
+  "stop": "S6 owner checkpoint (protocol section 8)",
+  "significance_claim": false,
+  "gatekeeping_applied": false,
+  "retrieval": {
+    "job": "ptp-auto-paper1-dev-fulldev-retrieval-20261115-v1",
+    "settled_generation": 181,
+    "gpu_seconds": 95,
+    "encoded_texts": 2362,
+    "reference": "REENCODED_ANCHORS (472/474 identical to pinned B0; frozen rule)",
+    "c1": {
+      "FA": "MOVEMENT_PRESENT",
+      "GR": "MOVEMENT_PRESENT",
+      "SACR": "MOVEMENT_PRESENT"
+    },
+    "c1_mean_jaccard_vs_reference": {
+      "FA": 0.414,
+      "GR": 0.749,
+      "SACR": 0.856,
+      "shuffle": 0.533
+    },
+    "panel_counts": {
+      "FA": {
+        "used": 473,
+        "fallback": 1
+      },
+      "GR": {
+        "used": 473,
+        "fallback": 1
+      },
+      "SACR": {
+        "used": 468,
+        "fallback": 6
+      }
+    }
+  },
+  "evaluation": {
+    "job": "ptp-auto-paper1-dev-eval-20261115-v1",
+    "cpu_seconds_actual": 145.2,
+    "cpu_booked": 660
+  },
+  "recall200": {
+    "OUT": {
+      "B0": 0.14772,
+      "FA": 0.13318,
+      "GR": 0.15253,
+      "SACR": 0.14904,
+      "F-shuffle": 0.14502,
+      "F-FA": 0.14707,
+      "F-GR": 0.15216,
+      "F-SACR": 0.15042
+    },
+    "IN": {
+      "B0": 0.5137,
+      "FA": 0.38885,
+      "GR": 0.50182,
+      "SACR": 0.50495,
+      "F-shuffle": 0.50078,
+      "F-FA": 0.4796,
+      "F-GR": 0.50967,
+      "F-SACR": 0.50936
+    },
+    "ALL": {
+      "B0": 0.34262,
+      "FA": 0.25612,
+      "GR": 0.33449,
+      "SACR": 0.3365,
+      "F-shuffle": 0.33217,
+      "F-FA": 0.31635,
+      "F-GR": 0.33998,
+      "F-SACR": 0.34051
+    }
+  },
+  "paired_recall200": {
+    "OUT": {
+      "H1": {
+        "mean_delta": -0.0006,
+        "ci95_descriptive": [
+          -0.0116,
+          0.0225
+        ],
+        "w_l_t": [
+          16,
+          31,
+          302
+        ],
+        "mde80_n556": 0.0141
+      },
+      "H2": {
+        "mean_delta": -0.0051,
+        "ci95_descriptive": [
+          -0.0164,
+          0.0159
+        ],
+        "w_l_t": [
+          18,
+          29,
+          302
+        ],
+        "mde80_n556": 0.0142
+      },
+      "H3": {
+        "mean_delta": -0.0033,
+        "ci95_descriptive": [
+          -0.0147,
+          0.0185
+        ],
+        "w_l_t": [
+          17,
+          36,
+          296
+        ],
+        "mde80_n556": 0.0144
+      },
+      "C2": {
+        "mean_delta": 0.002,
+        "ci95_descriptive": [
+          -0.0102,
+          0.0319
+        ],
+        "w_l_t": [
+          23,
+          29,
+          297
+        ],
+        "mde80_n556": 0.0159
+      },
+      "FA_standalone": {
+        "mean_delta": -0.0145,
+        "ci95_descriptive": [
+          -0.0379,
+          0.0176
+        ],
+        "w_l_t": [
+          31,
+          62,
+          256
+        ],
+        "mde80_n556": 0.025
+      },
+      "GR_standalone": {
+        "mean_delta": 0.0048,
+        "ci95_descriptive": [
+          -0.0133,
+          0.0189
+        ],
+        "w_l_t": [
+          22,
+          23,
+          304
+        ],
+        "mde80_n556": 0.0148
+      },
+      "SACR_standalone": {
+        "mean_delta": 0.0013,
+        "ci95_descriptive": [
+          -0.0106,
+          0.0093
+        ],
+        "w_l_t": [
+          17,
+          12,
+          320
+        ],
+        "mde80_n556": 0.0106
+      },
+      "F-GR_vs_B0": {
+        "mean_delta": 0.0044,
+        "ci95_descriptive": [
+          -0.0045,
+          0.0176
+        ],
+        "w_l_t": [
+          9,
+          14,
+          326
+        ],
+        "mde80_n556": 0.0104
+      },
+      "F-SACR_vs_B0": {
+        "mean_delta": 0.0027,
+        "ci95_descriptive": [
+          0.0002,
+          0.0084
+        ],
+        "w_l_t": [
+          10,
+          4,
+          335
+        ],
+        "mde80_n556": 0.0037
+      },
+      "F-shuffle_vs_B0": {
+        "mean_delta": -0.0027,
+        "ci95_descriptive": [
+          -0.0193,
+          0.0081
+        ],
+        "w_l_t": [
+          18,
+          26,
+          305
+        ],
+        "mde80_n556": 0.0135
+      }
+    },
+    "IN": {
+      "H1": {
+        "mean_delta": -0.0341,
+        "ci95_descriptive": [
+          -0.0444,
+          -0.0212
+        ],
+        "w_l_t": [
+          42,
+          160,
+          248
+        ],
+        "mde80_n556": 0.0129
+      },
+      "H2": {
+        "mean_delta": -0.0301,
+        "ci95_descriptive": [
+          -0.0419,
+          -0.0188
+        ],
+        "w_l_t": [
+          51,
+          154,
+          245
+        ],
+        "mde80_n556": 0.0121
+      },
+      "H3": {
+        "mean_delta": -0.0298,
+        "ci95_descriptive": [
+          -0.0397,
+          -0.0164
+        ],
+        "w_l_t": [
+          52,
+          150,
+          248
+        ],
+        "mde80_n556": 0.0129
+      },
+      "C2": {
+        "mean_delta": -0.0212,
+        "ci95_descriptive": [
+          -0.0394,
+          -0.0044
+        ],
+        "w_l_t": [
+          62,
+          132,
+          256
+        ],
+        "mde80_n556": 0.0144
+      },
+      "FA_standalone": {
+        "mean_delta": -0.1248,
+        "ci95_descriptive": [
+          -0.1679,
+          -0.0944
+        ],
+        "w_l_t": [
+          49,
+          259,
+          142
+        ],
+        "mde80_n556": 0.0259
+      },
+      "GR_standalone": {
+        "mean_delta": -0.0119,
+        "ci95_descriptive": [
+          -0.0241,
+          -0.0024
+        ],
+        "w_l_t": [
+          69,
+          106,
+          275
+        ],
+        "mde80_n556": 0.0115
+      },
+      "SACR_standalone": {
+        "mean_delta": -0.0088,
+        "ci95_descriptive": [
+          -0.0171,
+          0.0021
+        ],
+        "w_l_t": [
+          33,
+          60,
+          357
+        ],
+        "mde80_n556": 0.0098
+      },
+      "F-GR_vs_B0": {
+        "mean_delta": -0.004,
+        "ci95_descriptive": [
+          -0.009,
+          0.003
+        ],
+        "w_l_t": [
+          49,
+          59,
+          342
+        ],
+        "mde80_n556": 0.0063
+      },
+      "F-SACR_vs_B0": {
+        "mean_delta": -0.0043,
+        "ci95_descriptive": [
+          -0.0084,
+          -0.0016
+        ],
+        "w_l_t": [
+          17,
+          37,
+          396
+        ],
+        "mde80_n556": 0.0039
+      },
+      "F-shuffle_vs_B0": {
+        "mean_delta": -0.0129,
+        "ci95_descriptive": [
+          -0.0235,
+          -0.0
+        ],
+        "w_l_t": [
+          57,
+          99,
+          294
+        ],
+        "mde80_n556": 0.01
+      }
+    },
+    "ALL": {
+      "H1": {
+        "mean_delta": -0.0263,
+        "ci95_descriptive": [
+          -0.0311,
+          -0.01
+        ],
+        "w_l_t": [
+          51,
+          181,
+          242
+        ],
+        "mde80_n556": 0.0082
+      },
+      "H2": {
+        "mean_delta": -0.0236,
+        "ci95_descriptive": [
+          -0.0344,
+          -0.0104
+        ],
+        "w_l_t": [
+          62,
+          170,
+          242
+        ],
+        "mde80_n556": 0.0081
+      },
+      "H3": {
+        "mean_delta": -0.0242,
+        "ci95_descriptive": [
+          -0.0315,
+          -0.0111
+        ],
+        "w_l_t": [
+          60,
+          173,
+          241
+        ],
+        "mde80_n556": 0.0082
+      },
+      "C2": {
+        "mean_delta": -0.0158,
+        "ci95_descriptive": [
+          -0.0231,
+          0.0045
+        ],
+        "w_l_t": [
+          74,
+          151,
+          249
+        ],
+        "mde80_n556": 0.0088
+      },
+      "FA_standalone": {
+        "mean_delta": -0.0865,
+        "ci95_descriptive": [
+          -0.2125,
+          -0.0756
+        ],
+        "w_l_t": [
+          62,
+          278,
+          134
+        ],
+        "mde80_n556": 0.0186
+      },
+      "GR_standalone": {
+        "mean_delta": -0.0081,
+        "ci95_descriptive": [
+          -0.0228,
+          -0.0009
+        ],
+        "w_l_t": [
+          83,
+          120,
+          271
+        ],
+        "mde80_n556": 0.0064
+      },
+      "SACR_standalone": {
+        "mean_delta": -0.0061,
+        "ci95_descriptive": [
+          -0.02,
+          0.0009
+        ],
+        "w_l_t": [
+          47,
+          69,
+          358
+        ],
+        "mde80_n556": 0.0054
+      },
+      "F-GR_vs_B0": {
+        "mean_delta": -0.0026,
+        "ci95_descriptive": [
+          -0.0074,
+          0.0082
+        ],
+        "w_l_t": [
+          53,
+          69,
+          352
+        ],
+        "mde80_n556": 0.0039
+      },
+      "F-SACR_vs_B0": {
+        "mean_delta": -0.0021,
+        "ci95_descriptive": [
+          -0.0042,
+          0.0041
+        ],
+        "w_l_t": [
+          26,
+          41,
+          407
+        ],
+        "mde80_n556": 0.0027
+      },
+      "F-shuffle_vs_B0": {
+        "mean_delta": -0.0104,
+        "ci95_descriptive": [
+          -0.0203,
+          -0.0032
+        ],
+        "w_l_t": [
+          67,
+          117,
+          290
+        ],
+        "mde80_n556": 0.0063
+      }
+    }
+  },
+  "out_exposure_strata_vs_B0": {
+    "FA": {
+      "both": 104,
+      "arm_only": 15,
+      "reference_only": 32,
+      "neither": 198
+    },
+    "GR": {
+      "both": 132,
+      "arm_only": 9,
+      "reference_only": 4,
+      "neither": 204
+    },
+    "SACR": {
+      "both": 131,
+      "arm_only": 4,
+      "reference_only": 5,
+      "neither": 209
+    },
+    "F-shuffle": {
+      "both": 129,
+      "arm_only": 7,
+      "reference_only": 7,
+      "neither": 206
+    },
+    "F-FA": {
+      "both": 127,
+      "arm_only": 8,
+      "reference_only": 9,
+      "neither": 205
+    },
+    "F-GR": {
+      "both": 134,
+      "arm_only": 5,
+      "reference_only": 2,
+      "neither": 208
+    },
+    "F-SACR": {
+      "both": 136,
+      "arm_only": 2,
+      "reference_only": 0,
+      "neither": 211
+    }
+  },
+  "c3_audit": {
+    "queries": 474,
+    "query_families_in_corpus": 43,
+    "self_positive_queries": 10,
+    "excluded_queries": 43
+  },
+  "c3_mean_delta": {
+    "OUT": {
+      "H1": 0.0005,
+      "H2": -0.0044,
+      "H3": -0.0025,
+      "C2": 0.0027
+    },
+    "IN": {
+      "H1": -0.0352,
+      "H2": -0.0305,
+      "H3": -0.0307,
+      "C2": -0.0208
+    },
+    "ALL": {
+      "H1": -0.0271,
+      "H2": -0.024,
+      "H3": -0.0251,
+      "C2": -0.0158
+    }
+  }
+}

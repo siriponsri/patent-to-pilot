@@ -1,5 +1,22 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Paper 1 S5 COMPLETE (dev, descriptive); STOPPED at S6 owner checkpoint 2026-11-15T14:45+07:00
+
+This section supersedes the "S4 COMPLETE ... S5 RUNNING" section below. Journal generation 183, IDLE, nothing running. Summary: takeover-20261112/PAPER1-S5-SUMMARY.json.
+
+- Retrieval (ptp-auto-paper1-dev-fulldev-retrieval-20261115-v1): exit 0, 77.6 s; settled gen 181 (95 s GPU, 0 calls). C1 MOVEMENT_PRESENT for FA/GR/SACR (mean top-200 Jaccard vs reference FA 0.41, GR 0.75, SACR 0.86, shuffle 0.53; truncation <=1 text). Anchors 472/474 identical to pinned B0 -> reference = re-encoded anchors (frozen rule); B0 OUT R@200 0.1477 unchanged.
+- Evaluation (ptp-auto-paper1-dev-eval-20261115-v1, CPU, dev qrels only): 145 s CPU of 660 booked (gen 183).
+- OUT R@200 (n=349): B0 0.1477, F-FA 0.1471, F-GR 0.1522, F-SACR 0.1504, F-shuffle 0.1450; FA standalone 0.1332.
+  - F-FA - B0 = -0.0006 (descriptive CI -0.012..+0.023; 16 wins / 31 losses / 302 ties). F-FA - F-GR -0.0051, F-FA - F-SACR -0.0033, F-FA - F-shuffle +0.0020.
+- Harm (IN R@200, n=450): F-FA - B0 = -0.034 (CI -0.044..-0.021), worse than the 0.020 non-inferiority margin; ALL -0.026.
+- C3: 43 query families in corpus (10 self-positive); OUT deltas unchanged (H1 +0.0005).
+- Dev is descriptive: no significance claims, no gatekeeping verdicts. MDE (80%, n=556) for OUT about 0.014 vs delta 0.010.
+
+Owner decision (protocol section 8; the checkpoint cannot change arms/prompts/delta/endpoints/fusion/test order):
+- (a) freeze and run test S7-S8 with section 5 unchanged; or (b) stop and report dev-only.
+Nothing beyond S6 may run without the owner's explicit go plus a journal 'test' stage.
+
+
 ## Paper 1 S4 COMPLETE; disk cap 52 GiB applied; S5 full-dev retrieval RUNNING 2026-11-15T14:10+07:00
 
 This section supersedes the "SACR RESUMED (2nd)" section below.
