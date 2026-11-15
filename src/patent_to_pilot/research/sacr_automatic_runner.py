@@ -1,4 +1,10 @@
-"""Two-call prospective SACR pipeline. Controller owns live admission and costs."""
+"""Two-call prospective SACR pipeline. Controller owns live admission and costs.
+
+Grammar refusal (owner decision A extended to SACR, 2026-11-15; protocol section 3): when the caller proves from the
+private backend diagnostics that a marking or review call was refused by the strict EOS guard (classify_grammar_refusal
+raises GrammarRefusal), the query falls back to the original query (reason GRAMMAR_REFUSED; one consumed call with
+unknown tokens). Every other exception still persists a HOLD marker and propagates.
+"""
 import hashlib
 import json
 import os
@@ -10,6 +16,7 @@ from .automatic_screening import route_result
 from .sacr_generation import GenerationLimits
 from .sacr_generation_receipt import bind_generation_record
 from .r6_dispatch_journal import document_hash
+from .paper1_rewrite_runner import GrammarRefusal
 
 
 def run_query(*, destination, query_id, source, km_text, km_sha256,
@@ -23,7 +30,7 @@ def run_query(*, destination, query_id, source, km_text, km_sha256,
     limits.validate()
     request = prepare(source, query_id, km_text, km_sha256)
     out = Path(destination); out.mkdir(parents=True, exist_ok=False)
-    events = []; active = None
+    events = []; active = None; candidate = None
 
     def save(name, value):
         with (out / name).open('x', encoding='utf-8') as handle:
@@ -94,6 +101,12 @@ def run_query(*, destination, query_id, source, km_text, km_sha256,
         save('review.json', review)
         return finish(review['screening'], 'AUTOMATIC_SCREEN_COMPLETED', candidate)
     except BaseException as error:
-        save('failure.json', {'status': 'HOLD', 'exception_type': type(error).__name__,
-                             'unresolved_stage': active, 'events': events, 'retry': False})
-        raise
+        if not (isinstance(error, GrammarRefusal) and active in ('marking', 'review')):
+            save('failure.json', {'status': 'HOLD', 'exception_type': type(error).__name__,
+                                 'unresolved_stage': active, 'events': events, 'retry': False})
+            raise
+        events.append({'stage': active, 'status': 'GRAMMAR_REFUSED', 'model_calls': 1,
+                       'input_output_tokens': 'UNKNOWN', 'evidence': error.evidence})
+        save(active + '-grammar-refused.json', {'status': 'GRAMMAR_REFUSED', 'evidence': error.evidence,
+                                                'model_calls': 1, 'retry': False})
+        return finish('invalid_output', 'GRAMMAR_REFUSED', candidate)

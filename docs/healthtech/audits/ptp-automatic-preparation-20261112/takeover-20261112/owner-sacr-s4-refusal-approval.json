@@ -1,0 +1,14 @@
+{
+  "status": "OWNER_APPROVED_ENGINEERING_REPAIR",
+  "date": "2026-11-15",
+  "owner_answer": "A: ซ่อมแล้วไปต่อ",
+  "question": "SACR full-dev b4 stopped at dev row 259 (grammar refusal in the marking call, same query as the FA b2 refusal). Apply the FA/GR rule (decision A) to SACR?",
+  "decision": {
+    "worker": "a verified grammar refusal ('premature grammar termination refused' raised in the grammar callback, 1 backend invocation, 0 returns per the private backend diagnostics) in the SACR marking or review call is recorded as ORIGINAL_QUERY_FALLBACK with reason GRAMMAR_REFUSED, counted and reported; the batch continues; every other exception still HOLDs and stops the batch",
+    "qualification": "CPU fixture with authored refusal cases before any GPU use of the repaired worker",
+    "sacr_b4": "one continuation job b4c for the 56 never-started queries (dev rows 260..315); dev row 259 stays an original-query fallback and is NOT regenerated",
+    "then": "SACR b5 (rows 316..394) and b6 (rows 395..473) with the repaired worker"
+  },
+  "basis": "owner decision A for FA/GR (owner-paper1-s4-refusal-approval.json) extended to SACR; frozen protocol section 3 (failure -> original-query fallback, every query stays in the denominator)",
+  "unchanged": ["arms", "prompts", "schemas", "marking v5", "review v3", "delta", "endpoints", "gatekeeping", "one GPU job at a time", "no protected test access", "no outcome-driven retry"]
+}

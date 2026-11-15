@@ -54,3 +54,42 @@ def test_unknown_execution_is_durable_hold(tmp_path):
     failure = json.loads((tmp_path / 'q1' / 'failure.json').read_text())
     assert failure['status'] == 'HOLD' and failure['unresolved_stage'] == 'marking'
     assert not (tmp_path / 'q1' / 'result.json').exists()
+
+
+from patent_to_pilot.research.paper1_rewrite_runner import GrammarRefusal
+
+
+def refused_run(tmp_path, refused_stage, error=None):
+    source = 'The pump reduces pressure.'; calls = []
+    def invoke(stage, request):
+        calls.append(stage)
+        if stage == refused_stage:
+            raise error or GrammarRefusal({'stage': 'grammar-callback', 'generated_tokens_seen': 7})
+        if stage == 'marking':
+            return response({'version': VERSION, 'query_id': 'q1', 'source_sha256': sha(source),
+                'labels': ['none', 'none', 'action', 'none'], 'uncertain_roles': [], 'abstraction': source})
+        raise AssertionError('review must be refused in this test')
+    result = run_query(destination=tmp_path / 'q1', query_id='q1', source=source,
+                       km_text='Preserve constraints.', km_sha256=sha('Preserve constraints.'),
+                       invoke=invoke, admit=lambda *args: None, count_tokens=lambda messages: 10)
+    return result, calls
+
+
+@pytest.mark.parametrize('stage,expected_calls', [('marking', ['marking']), ('review', ['marking', 'review'])])
+def test_verified_grammar_refusal_falls_back_without_retry(tmp_path, stage, expected_calls):
+    result, calls = refused_run(tmp_path, stage)
+    assert calls == expected_calls
+    assert result['reason'] == 'GRAMMAR_REFUSED' and result['retry'] is False
+    assert result['decision']['action'] == 'ORIGINAL_QUERY_FALLBACK'
+    assert result['events'][-1]['status'] == 'GRAMMAR_REFUSED' and result['events'][-1]['model_calls'] == 1
+    assert (tmp_path / 'q1' / (stage + '-grammar-refused.json')).exists()
+    assert not (tmp_path / 'q1' / 'failure.json').exists()
+    assert (result['candidate'] is not None) == (stage == 'review')
+
+
+def test_unverified_boundary_error_still_holds(tmp_path):
+    from patent_to_pilot.research.mtm_runtime import InputBoundaryError
+    with pytest.raises(InputBoundaryError):
+        refused_run(tmp_path, 'marking', InputBoundaryError('premature grammar termination refused'))
+    failure = json.loads((tmp_path / 'q1' / 'failure.json').read_text())
+    assert failure['status'] == 'HOLD' and failure['unresolved_stage'] == 'marking'
