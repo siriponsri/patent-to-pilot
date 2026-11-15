@@ -1,0 +1,24 @@
+{
+  "attempt_id": "ptp-auto-native-sacr-fulldev-b6-20261115-v2",
+  "container_name": "ptp-auto-native-sacr-fulldev-b6-20261115-v2",
+  "declaration_sha256": "c0587f77a4c19261f71277cc0472e1e8438a93d2310251b38d500b28fab4cd71",
+  "whole_wall_seconds": 7082.251739038969,
+  "known_model_calls": 157,
+  "calls_complete": false,
+  "cost_evidence_sha256": "c06c101b4b675d19ae11a86cddf71ecf8c4dd1a4d5c4c981994bd6804964f521",
+  "aggregate_cpu_seconds": 7334.3824936050005,
+  "aggregate_cpu_basis": "worker process_cpu + controller",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-15T04:57:45.053555957Z",
+    "FinishedAt": "2026-11-15T06:55:46.6949739Z"
+  }
+}
