@@ -86,3 +86,12 @@ Script `oa/dapfam_dev_us_profile.py` (metadata columns only, dev split only; 0.5
 - Identifier gap stays: Lens ids must still be mapped to US application/publication numbers (PatentsView title+date match, needs D2) before any OA overlap is computed.
 
 Interim conclusion: relabelling DAPFAM dev with 102/103 can at best cover about half of the queries and a fraction of their (backward) pairs. The OA-derived new test set (A1) is the more promising route, and its size can only be measured once D1/D2 are retrievable.
+
+## 8. Local data reuse check (2026-11-16, at the request of the Paper 1 session)
+
+- D3: the transfer had already finished when a local copy was found. `methodology/datasets/research-only-nc/{corpus,queries}.parquet` (gitignored, 30 Oct) are byte-identical: sha256 469fe8e0... and b5ad91a6..., which equal the pinned rev 780f4011. The downloaded duplicates in `ptp-paper2-oa-dapfam-meta/` were replaced by NTFS hardlinks to the repo copy, so no extra disk is used. Section 7 numbers are unaffected (same bytes).
+- `ptp-org-adaptive-20261105/stage1/action-inputs/family-ipc3.jsonl` holds 45,336 family-to-IPC3 rows (DAPFAM Lens ids). It duplicates the IPC3 list already in the DAPFAM parquet and gives no US numbers.
+- HUPD 2017 tarball on dr-train (`scout-public-demo/raw/hupd-2017.tar.gz`, 4.4 GB) gives application number + IPC/CPC + text for 2017 filings. It could cover the citing side of a 2017+ OA slice, but not the cited patents or the 2008-2017 OA window. It does not replace D1/D2.
+- MTM BigQuery extracts carry US citation categories APP/SEA/TPO (examiner vs applicant) but no 102/103 basis, so they do not replace D1.
+- PANORAMA PAR4PC/PI4PC val+test were already local; only `panorama.parquet` (not local) was fetched.
+- D1/D2 still need the owner's USPTO.gov sign-in; no local substitute exists.
