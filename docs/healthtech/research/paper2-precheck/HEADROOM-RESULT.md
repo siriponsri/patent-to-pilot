@@ -37,6 +37,25 @@ Full aggregates: `headroom-dev-result.json`. Per-query values stay in the privat
 - So lexical BM25 does not supply the missing cross-domain candidates; the OUT exposure gap is not a "dense misses
   lexical matches" problem at this depth.
 
+## Comparison with the earlier Stage 1 dev check (5 Nov 2026)
+`docs/healthtech/audits/ptp-org-adaptive-stage1-20261105/README.md` already ran BM25 + dense RRF on DAPFAM dev. I learned
+of it only after this run; the pre-declaration was not changed and no extra runs were made.
+
+| OUT, n = 349 | Stage 1 (5 Nov) | This check |
+|---|---|---|
+| Dense baseline Recall@200 | R2 dense passages F\* 0.1618 | B0 0.1477 |
+| BM25 Recall@200 | R1 0.0717 (BM25Okapi k1 1.5, b 0.75, `\w+`, no stopwords) | 0.0690 (k1 0.9, b 0.4, `[a-z0-9]+`, 34 stopwords) |
+| RRF − dense, Recall@200 | 0.1395 − 0.1618 = −0.0223 | 0.1280 − 0.1477 = −0.0197 |
+| OUT hit@200 (dense / BM25 / RRF) | 0.407 / 0.238 / 0.384 | 0.390 / 0.235 / 0.358 |
+
+- Same split? Both use 474 dev queries with 349 OUT-eligible queries and the same title+abstract+claims document field.
+  I did not check query-ID identity against the Stage 1 split file (hash `dd76c019…`), so "same split" is likely but
+  not verified.
+- The dense baselines differ: Stage 1 R2 (F\* passages) is 0.014 higher on OUT Recall@200 than the Paper 1 B0 used here.
+- **Replication:** yes, in direction and rough size. With a different BM25 setup and a different dense baseline,
+  adding BM25 by RRF at depth 200 again lowers OUT Recall@200 by about 0.02. Two independent BM25 configurations now
+  agree that lexical fusion does not open cross-domain exposure on this dev split.
+
 ## Limitations
 - Dev only and exposed: B0 dev scores were already known (Paper 1 S5). Descriptive; no bootstrap or significance.
 - One BM25 configuration only (k1 0.9, b 0.4, fixed tokenizer/stopwords, TA query, TAC document), fixed in advance.
