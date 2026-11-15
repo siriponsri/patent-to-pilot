@@ -1,0 +1,46 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "07829e97802c2b74656065c27a9ef3ce3aef351c40b5e49b9357da01edbf5b41",
+    "configuration_sha256": "6f3c9412fd3faa924951764fbc915d3faf4394c8bb3ca09cf533cdbed2b57433",
+    "gate": "integrity",
+    "source_commit": "5efb1beee8798b610d3fa1b4e4d38b207a286f89",
+    "files": 239,
+    "evidence": "committed blobs; paper1_retrieval_panel (incl. partial_job_decisions), paper1_controls unit tests and the worker partial-load test PASS; encode/rank path = B0 runner functions (frozen hashes match)"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "07829e97802c2b74656065c27a9ef3ce3aef351c40b5e49b9357da01edbf5b41",
+    "configuration_sha256": "6f3c9412fd3faa924951764fbc915d3faf4394c8bb3ca09cf533cdbed2b57433",
+    "gate": "isolation",
+    "evidence": "supervisor config tests PASS: read-only inputs and arm outputs (3 arms, continuation jobs), no qrels/evaluation mounts, network none"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "07829e97802c2b74656065c27a9ef3ce3aef351c40b5e49b9357da01edbf5b41",
+    "configuration_sha256": "6f3c9412fd3faa924951764fbc915d3faf4394c8bb3ca09cf533cdbed2b57433",
+    "gate": "runtime",
+    "predecessor_settlement_sha256": "7ded060e1b66aece7e01987619696d75c90eea62df87d97293ab2801fa7574b3",
+    "s4_last_settlement_sha256": "d081f3af24a379455136b9889410c1336a738ce4dbcb141046a2d94b9e8d4323",
+    "evidence": "read-only remote preflight: dev query file, all 15 arm jobs (3 partial) and B0 rankings pinned; every arm covers the 474 dev queries exactly once with identical texts; same encode path ran in the S3 pilot retrievals"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "07829e97802c2b74656065c27a9ef3ce3aef351c40b5e49b9357da01edbf5b41",
+    "configuration_sha256": "6f3c9412fd3faa924951764fbc915d3faf4394c8bb3ca09cf533cdbed2b57433",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 600428.3864951228,
+    "full_dev_charged_seconds": 67337,
+    "disk_preexisting_upper_bound_bytes": 42705526255
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "07829e97802c2b74656065c27a9ef3ce3aef351c40b5e49b9357da01edbf5b41",
+    "configuration_sha256": "6f3c9412fd3faa924951764fbc915d3faf4394c8bb3ca09cf533cdbed2b57433",
+    "gate": "accounting",
+    "ledger_sha256": "f6dec053eafbd6d061c4ad8cf84b94fcf32a86a06b00ebc7fbed15efb1794cde",
+    "cpu_remaining_seconds": 25723.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}

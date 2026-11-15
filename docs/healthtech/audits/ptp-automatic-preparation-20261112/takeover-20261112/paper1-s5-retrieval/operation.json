@@ -1,0 +1,110 @@
+{
+  "stage": "full_dev",
+  "arms": {
+    "FA": {
+      "kind": "rewrite",
+      "jobs": [
+        {
+          "job": "ptp-auto-paper1-fa-fulldev-b1-20261113-v1",
+          "queries_sha256": "3c4697b78fe21509a7de648304c1dee371eb9d63b9f01db5ae2b107d1f2d137b",
+          "decisions_sha256": "8ed55f6963ba6c8b90611b4dabe1f44274317ebf918e38120ad76e4d7e15e927"
+        },
+        {
+          "job": "ptp-auto-paper1-fa-fulldev-b2-20261113-v1",
+          "queries_sha256": "24738505f00630723b2e67c0e1f5178a654c777f208bd2bbd9e6771021fffa0f",
+          "partial": {
+            "hold_index": 101,
+            "results_manifest_sha256": "25d301bf322ce69dace24639ddfee971f1bdeff5faeb91c4770346738b8e121f",
+            "failure_sha256": "e42d5a4a2a204c85d730d212bd095df6600e00adf9e0fd233122dd1ce7ab91b3"
+          }
+        },
+        {
+          "job": "ptp-auto-paper1-fa-fulldev-b2c-20261114-v1",
+          "queries_sha256": "d687c70b97fe74b03ccade02b8a311bcc46daa09d7046f8b0dec567b035300d3",
+          "decisions_sha256": "ad5db9cae7ec659345aa43ac453be324d489d524017c956436f1783571f706b3"
+        },
+        {
+          "job": "ptp-auto-paper1-fa-fulldev-b3-20261114-v1",
+          "queries_sha256": "c516c34cbaddb17a85585aaf41e2e58b976fe0fc4e4f9a29eff98ed4c95c5923",
+          "decisions_sha256": "d6f283cbd7b10fec32c62aa1c2384c03752b62aa90adb7428bbacd6caa042c39"
+        }
+      ]
+    },
+    "GR": {
+      "kind": "rewrite",
+      "jobs": [
+        {
+          "job": "ptp-auto-paper1-gr-fulldev-b1-20261114-v1",
+          "queries_sha256": "3c4697b78fe21509a7de648304c1dee371eb9d63b9f01db5ae2b107d1f2d137b",
+          "decisions_sha256": "8ed55f6963ba6c8b90611b4dabe1f44274317ebf918e38120ad76e4d7e15e927"
+        },
+        {
+          "job": "ptp-auto-paper1-gr-fulldev-b2-20261114-v1",
+          "queries_sha256": "24738505f00630723b2e67c0e1f5178a654c777f208bd2bbd9e6771021fffa0f",
+          "decisions_sha256": "c2306f3d7c40d34bd49256e6a2b74507b0f3aa4edd0402745a7a969eb7f88ad3"
+        },
+        {
+          "job": "ptp-auto-paper1-gr-fulldev-b3-20261114-v1",
+          "queries_sha256": "c516c34cbaddb17a85585aaf41e2e58b976fe0fc4e4f9a29eff98ed4c95c5923",
+          "decisions_sha256": "d6f283cbd7b10fec32c62aa1c2384c03752b62aa90adb7428bbacd6caa042c39"
+        }
+      ]
+    },
+    "SACR": {
+      "kind": "sacr",
+      "jobs": [
+        {
+          "job": "ptp-auto-native-sacr-fulldev-b1-20261114-v1",
+          "queries_sha256": "bf3bc8a373e6412e3a3f7266100f54ea12e62bd10a940f2c526f2aa5c066629d",
+          "decisions_sha256": "8eeef0dde926905616ba44c0f1ad09cbfbdb84af8f45cf2739f7522a1148908f"
+        },
+        {
+          "job": "ptp-auto-native-sacr-fulldev-b2-20261114-v1",
+          "queries_sha256": "8b8a0a98c88b93e1c8f4d07b9e8ecbe08ba2479613cadea3aa149ec4cdf98d2a",
+          "decisions_sha256": "beb779b54f1c33912f29328f1edf8d478c0bf9ebb1ef31caf6e269887347b775"
+        },
+        {
+          "job": "ptp-auto-native-sacr-fulldev-b3-20261114-v1",
+          "queries_sha256": "bea4af3f6eebf6af298adf682e7f10942f62876752fbe1246a62e7c577476ec6",
+          "decisions_sha256": "a120e957dda8f7ff0509efbfd17560c85a7f4bef3b023ad8cefbd3ea9731b394"
+        },
+        {
+          "job": "ptp-auto-native-sacr-fulldev-b4-20261114-v1",
+          "queries_sha256": "5cb46cc6c12efed047fa19be471e8b115839c44978f3f6bfbaf8beac2a0827d4",
+          "partial": {
+            "hold_index": 22,
+            "results_manifest_sha256": "b65dd1bb7f14f6ef9062998fded40fd97b1d019ff57e52ff32743d6ae33d290e",
+            "failure_sha256": "ca30dccf73504fb6ed07581cf59ba6263fefd73a552cfb91b612eadad570e2b4"
+          }
+        },
+        {
+          "job": "ptp-auto-native-sacr-fulldev-b4c-20261115-v1",
+          "queries_sha256": "d687c70b97fe74b03ccade02b8a311bcc46daa09d7046f8b0dec567b035300d3",
+          "partial": {
+            "hold_index": 20,
+            "results_manifest_sha256": "d30d389aecbaa2758c3039fe96d55629ecac406dc7998bc849586d6b387495df",
+            "failure_sha256": "646b7dfb01de76ad67be12cc681ed987ae8c48a102292b4a5bbea3b34d6fb48e"
+          }
+        },
+        {
+          "job": "ptp-auto-native-sacr-fulldev-b4d-20261115-v2",
+          "queries_sha256": "ce18ac100e935d246a7e868ef7490f45ad26df2b2684a0a2657f557078907d4e",
+          "decisions_sha256": "fb14356a35125a09083c0f1a92e7df679fd98950833b4984160625f32ca2da40"
+        },
+        {
+          "job": "ptp-auto-native-sacr-fulldev-b5-20261115-v2",
+          "queries_sha256": "f3caa0a382e2bf259cb864f79e4434fc93a02cc774be6fe3d218b098c93198a8",
+          "decisions_sha256": "c442ab3e22eea0a26f291edf23eb371f65ea3b128e6d05b25356f64380169a42"
+        },
+        {
+          "job": "ptp-auto-native-sacr-fulldev-b6-20261115-v2",
+          "queries_sha256": "90cfd25e93d2d64c8edfb89d1e712d2fdca548d6da5ecea37dde7174666e6176",
+          "decisions_sha256": "cecffe867fea9e8d2c44d74c7180942c30b0a6f770f6a5108f977dda6b26383e"
+        }
+      ]
+    }
+  },
+  "configuration_sha256": "6f3c9412fd3faa924951764fbc915d3faf4394c8bb3ca09cf533cdbed2b57433",
+  "package_sha256": "07829e97802c2b74656065c27a9ef3ce3aef351c40b5e49b9357da01edbf5b41",
+  "input_sha256": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a"
+}

@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "1cca15b2fb6a5357685fafd504baba4197ea2947e56dee8b4866685c4fd1793c",
+  "evidence_sha256": "d081f3af24a379455136b9889410c1336a738ce4dbcb141046a2d94b9e8d4323",
+  "add_configuration_sha256": [
+    "6f3c9412fd3faa924951764fbc915d3faf4394c8bb3ca09cf533cdbed2b57433"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "paper1-s5",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "f6dec053eafbd6d061c4ad8cf84b94fcf32a86a06b00ebc7fbed15efb1794cde",
+  "scope_sha256": "9e7e3f8c0c16c43db826202f908a89111b21ca52bfea763a5383024fd284128b",
+  "reason": "Paper 1 frozen protocol S5: full-dev retrieval of FA, GR and SACR (one job; stage full_dev; not evaluated)"
+}

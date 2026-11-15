@@ -1,0 +1,35 @@
+{
+  "status": "STAGED_QUALIFIED_NOT_LAUNCHED",
+  "job": "ptp-auto-paper1-dev-fulldev-retrieval-20261115-v1",
+  "supervisor": "supervise_paper1_retrieval.py",
+  "declaration_sha256": "c7214f97093960fe96799109a870402f209ef0b2a921431665670d61897d6f48",
+  "package_sha256": "07829e97802c2b74656065c27a9ef3ce3aef351c40b5e49b9357da01edbf5b41",
+  "configuration_sha256": "6f3c9412fd3faa924951764fbc915d3faf4394c8bb3ca09cf533cdbed2b57433",
+  "input_sha256": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a",
+  "arm_counts": {
+    "FA": {
+      "used": 473,
+      "fallback": 1
+    },
+    "GR": {
+      "used": 473,
+      "fallback": 1
+    },
+    "SACR": {
+      "used": 468,
+      "fallback": 6
+    }
+  },
+  "transport": {
+    "bytes": 1966080,
+    "sha256": "25f017734b6df3712cab9b2def8f793767de16758e0a57e87b5bea41aaa772ad",
+    "files": 244
+  },
+  "journal_generation": 180,
+  "ledger_sha256": "f6dec053eafbd6d061c4ad8cf84b94fcf32a86a06b00ebc7fbed15efb1794cde",
+  "study_status": "IDLE",
+  "segment": 56,
+  "segment_seconds": 103,
+  "disk_preexisting_upper_bound_bytes": 42705526255,
+  "cpu_remaining_seconds": 25723.153622190002
+}
