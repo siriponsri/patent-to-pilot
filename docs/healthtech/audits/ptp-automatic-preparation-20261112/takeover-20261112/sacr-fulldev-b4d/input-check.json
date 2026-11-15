@@ -1,0 +1,9 @@
+{
+  "sha256": "ce18ac100e935d246a7e868ef7490f45ad26df2b2684a0a2657f557078907d4e",
+  "queries": 35,
+  "check": {
+    "b4c_results": 20,
+    "b4c_hold_index": 20,
+    "b4c_never_started": 35
+  }
+}

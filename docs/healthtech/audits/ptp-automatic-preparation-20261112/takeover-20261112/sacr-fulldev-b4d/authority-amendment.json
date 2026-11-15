@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "96b6d5c99461c904d0fe9828923dba7103a0d9e3722a369b61a7b18ef793eab6",
+  "evidence_sha256": "fc76a4e3cc62ca41338fc4e7bc3901d0537a5c5f70149dcf34630013e8b3c594",
+  "add_configuration_sha256": [
+    "ed27a5b9ecd561a58ce83036b251fe3e823718ad8a912db5046a9a6c2521559d"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "sacr-full-dev-dead-end",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "f201e79938e43f3327ed3f837673ed9a64812ff4aba0ac0b71c98657ff097433",
+  "scope_sha256": "125a6fd23f9668316b853a3a0ce2e1c7b4dd19c4177aa4482439e7494f5cfd47",
+  "reason": "owner 'A: \u0e02\u0e22\u0e32\u0e22\u0e01\u0e15\u0e34\u0e01\u0e32' (2026-11-15): verified grammar dead end -> original-query fallback; SACR full-dev v3 configuration for b4d/b5/b6"
+}
