@@ -1,5 +1,19 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Paper 1 S4 SACR STOPPED again: b4c review call hit 'grammar has no continuation' at dev row 280; owner decision needed 2026-11-15T08:30+07:00
+
+This section supersedes the "SACR RESUMED" section below (its repair/fixture facts remain valid). Journal generation 164, IDLE, active null. Nothing running. Do NOT rerun the driver or any SACR batch without the owner.
+
+- b4c (ptp-auto-native-sacr-fulldev-b4c-20261115-v1, dev rows 260..315): frozen gen 163 (segment 51 + authority amendment round 'sacr-full-dev-refusal' + qualify; input check confirmed b4 had 22 results + hold at index 22 + 56 never started). exit 1 after 1991 s. 20 queries complete; query index 20 = dev row 280: marking returned normally (2329 in / 943 out tokens), then the REVIEW call raised InputBoundaryError 'grammar has no continuation' in the grammar callback (1 backend invocation, 0 returns, 239 generated tokens, no schema rejection). 35 queries (rows 281..315) never started. Settled once at gen 164: 1991 s GPU, 41 known calls + 1 unknown dispatch.
+- This is NOT the class covered by decision A ('premature grammar termination refused' = the EOS guard refusing to stop). Here the grammar reached a state with no allowed next token (dead end). The repaired worker correctly did not reclassify it and HOLDed. Mechanism hypothesis (unverified): the same LMFE string-state problem; the host has no tokenizer library, so the private prefix was not decoded.
+- Totals: GPU charged 72,429.6 s; model_calls 1,792 (lower bound, + unknown dispatches). SACR so far: 2 grammar failures in about 280 queries; FA 1/474, GR 1/474.
+
+Owner decision requested:
+- A (recommended): extend the fallback rule to 'grammar has no continuation' with the same verification (grammar-callback stage, 1 invocation, 0 returns, from the private diagnostics); add an authored dead-end case to the CPU fixture; configuration v3 + amendment; continuation b4d for rows 281..315 (row 280 = fallback, NOT regenerated); then b5, b6.
+- B: no code change; row 280 = fallback; continuation b4d with the current worker, then b5, b6; any dead-end stops again.
+- C: stop SACR here.
+
+
 ## Paper 1 S4 SACR RESUMED after owner decision A for SACR: worker repaired, fixture v7 PASS; driver running b4c 5 6 2026-11-15T07:35+07:00
 
 This section supersedes the "SACR STOPPED" section below (its b1-b4 facts remain valid). Owner answered "A: ซ่อมแล้วไปต่อ" (owner-sacr-s4-refusal-approval.json).
