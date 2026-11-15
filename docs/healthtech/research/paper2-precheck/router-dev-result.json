@@ -1,0 +1,255 @@
+{
+  "format": "ptp-paper2-router-dev-v1",
+  "split": "dev",
+  "test_split_read": false,
+  "model_calls": 0,
+  "predeclaration": {
+    "path": "docs/healthtech/research/paper2-precheck/ROUTER-PREDECLARATION.md",
+    "commit": "d8f4354224ef07db2c45bc2f699bd3b9057dfcf7",
+    "sha256": "29988987cdaaf7befb1998f0ff91d0db87cd9fda4dba3aea25ed17dd8ea31e09"
+  },
+  "script_sha256": "9e625f3616b13d58de790e7c7c2d37ca3c412992c66930380176dc58ecd1638f",
+  "inputs_sha256": {
+    "r1": "6c86ed4cdbceebaeba615008fc71f79909e6c0d4bd39995450918b15672899e1",
+    "r2": "cb53eaad6a5619b84352179710a095efe7857fb0247e848447bfdba25a7245eb",
+    "q1_dense": "5dc65b78e9401e97432c899795d643bcfb267770c180a789e817b3a1ab3642e9",
+    "q1_bm25": "7fa3dc5133a0921a31dd2929ce93784b49c51d4b6d442ec6b495386c808576d8",
+    "q2": "f2b0c10ecd8ef9201d838d3f2d017a797879ba86513a7cfd93248f6521eef0c6",
+    "q3": "1853951642df684617b52910f81c31399c00acff65860cf8a3bc790e3318a11c",
+    "split": "dd76c019ee74c8d256e182ecfb329f9235638c1ecf9d2c7b1fa8073c4958e6dc"
+  },
+  "queries": {
+    "dev": 474,
+    "out_eligible": 349,
+    "in_eligible": 450
+  },
+  "sanity": {
+    "n_out": 349,
+    "f_star_out_recall_at_200": 0.16184394000655852,
+    "one_action_oracle_out_recall_at_200": 0.25571567801845374,
+    "stage1_reference": {
+      "f_star": 0.16184394000655852,
+      "one_action_oracle": 0.25571567801845374
+    },
+    "match": true
+  },
+  "baseline": {
+    "f_star": 0.16184394000655852,
+    "one_action_oracle": 0.25571567801845374,
+    "f_star_in_recall_at_200": 0.5181978434457795,
+    "components": {
+      "out": 30,
+      "in": 37
+    },
+    "largest_component_out_queries": 269
+  },
+  "routers": {
+    "A_consensus": {
+      "out_recall_at_200": 0.13965171033641763,
+      "out_minus_f_star_component_bootstrap": {
+        "delta": -0.00012795978512464927,
+        "ci95_low": -0.02303369734802707,
+        "ci95_high": 0.02988489591400556,
+        "p_bootstrap": 0.9138,
+        "groups": 30
+      },
+      "out_minus_f_star_component_ci_bonferroni": {
+        "level": 0.9833333333333333,
+        "low": -0.02690973053778575,
+        "high": 0.03666666666666666
+      },
+      "out_minus_f_star_query_bootstrap_descriptive": {
+        "delta": -0.02219222967014091,
+        "ci95_low": -0.03876975137587058,
+        "ci95_high": -0.00591725325307342,
+        "p_bootstrap": 0.0068,
+        "groups": 349
+      },
+      "in_recall_at_200": 0.4733640006269005,
+      "in_minus_f_star_component_bootstrap": {
+        "delta": -0.05185355630028303,
+        "ci95_low": -0.08278138481698853,
+        "ci95_high": -0.020433375615396467,
+        "p_bootstrap": 0.0024,
+        "groups": 37
+      },
+      "share_of_one_action_oracle_headroom": -0.23641012875812253,
+      "actions_chosen_out_queries": {
+        "R3": 339,
+        "R2": 6,
+        "Q3": 3,
+        "Q2": 1
+      },
+      "actions_chosen_all_dev": {
+        "R3": 462,
+        "R2": 8,
+        "Q3": 3,
+        "Q2": 1
+      },
+      "switch_rate_out_queries": 0.9828080229226361,
+      "wins_losses_ties_vs_f_star": [
+        13,
+        52,
+        284
+      ]
+    },
+    "B_threshold_switch": {
+      "out_recall_at_200": 0.16184394000655852,
+      "out_minus_f_star_component_bootstrap": {
+        "delta": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "p_bootstrap": 1.0,
+        "groups": 30
+      },
+      "out_minus_f_star_component_ci_bonferroni": {
+        "level": 0.9833333333333333,
+        "low": 0.0,
+        "high": 0.0
+      },
+      "out_minus_f_star_query_bootstrap_descriptive": {
+        "delta": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "p_bootstrap": 1.0,
+        "groups": 349
+      },
+      "in_recall_at_200": 0.5181978434457795,
+      "in_minus_f_star_component_bootstrap": {
+        "delta": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "p_bootstrap": 1.0,
+        "groups": 37
+      },
+      "share_of_one_action_oracle_headroom": 0.0,
+      "actions_chosen_out_queries": {
+        "R2": 349
+      },
+      "actions_chosen_all_dev": {
+        "R2": 474
+      },
+      "switch_rate_out_queries": 0.0,
+      "wins_losses_ties_vs_f_star": [
+        0,
+        0,
+        349
+      ]
+    },
+    "C_ridge_gain": {
+      "out_recall_at_200": 0.1615143733539282,
+      "out_minus_f_star_component_bootstrap": {
+        "delta": -0.03314678144873302,
+        "ci95_low": -0.09817391480919972,
+        "ci95_high": 0.026563579959676804,
+        "p_bootstrap": 0.2806,
+        "groups": 30
+      },
+      "out_minus_f_star_component_ci_bonferroni": {
+        "level": 0.9833333333333333,
+        "low": -0.11465402959126608,
+        "high": 0.03828178997983841
+      },
+      "out_minus_f_star_query_bootstrap_descriptive": {
+        "delta": -0.0003295666526303374,
+        "ci95_low": -0.012586712159352255,
+        "ci95_high": 0.01222511809948715,
+        "p_bootstrap": 0.9586,
+        "groups": 349
+      },
+      "in_recall_at_200": 0.4947302790471005,
+      "in_minus_f_star_component_bootstrap": {
+        "delta": -0.05848374929132252,
+        "ci95_low": -0.10691797435093459,
+        "ci95_high": -0.020163356823871235,
+        "p_bootstrap": 0.0,
+        "groups": 37
+      },
+      "share_of_one_action_oracle_headroom": -0.003510818693785688,
+      "actions_chosen_out_queries": {
+        "Q3": 107,
+        "R1": 14,
+        "R3": 19,
+        "R2": 188,
+        "Q2": 19,
+        "Q1": 2
+      },
+      "actions_chosen_all_dev": {
+        "Q3": 148,
+        "R2": 244,
+        "R1": 33,
+        "R3": 26,
+        "Q2": 21,
+        "Q1": 2
+      },
+      "switch_rate_out_queries": 0.46131805157593125,
+      "wins_losses_ties_vs_f_star": [
+        13,
+        27,
+        309
+      ]
+    }
+  },
+  "verdict": {
+    "best_router": "B_threshold_switch",
+    "out_delta": 0.0,
+    "ci_low_bonferroni": 0.0,
+    "in_harm": 0.0,
+    "rule": "GO iff delta >= 0.01 and Bonferroni (0.9833) component CI low > 0 and IN delta >= -0.02",
+    "verdict": "NO_GO"
+  },
+  "fitted": {
+    "B_tau_per_fold": {
+      "0": -Infinity,
+      "1": -Infinity,
+      "2": -Infinity,
+      "3": -Infinity,
+      "4": -Infinity,
+      "all_out_queries": -Infinity
+    },
+    "C_actions_modelled_per_fold": {
+      "0": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "R1",
+        "R3"
+      ],
+      "1": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "R1",
+        "R3"
+      ],
+      "2": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "R1",
+        "R3"
+      ],
+      "3": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "R1",
+        "R3"
+      ],
+      "4": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "R1",
+        "R3"
+      ]
+    }
+  },
+  "folds": "Stage 1 Amendment 1: assign_folds(first-IPC section of OUT-eligible dev queries, k=5, seed 20261105)",
+  "bootstrap": {
+    "unit": "component (split.json)",
+    "resamples": 10000,
+    "seed": 20261105,
+    "multiplicity": "Bonferroni over 3 routers, two-sided level 0.9833"
+  }
+}
