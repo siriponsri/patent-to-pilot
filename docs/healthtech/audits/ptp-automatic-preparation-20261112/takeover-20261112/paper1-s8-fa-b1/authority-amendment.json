@@ -1,0 +1,23 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "c07b41913500241dd87c1fc944b5d3d60741f196322d8be490b633dde428439e",
+  "evidence_sha256": "99f34c44832029898fbfa8dcba6a7142e50f442bda5421e24bb7d1ec8669b119",
+  "add_configuration_sha256": [
+    "a5dba6433384608a7d11b70b9299ef34a4acf0ac7606dd9c5e48457fd7284e52",
+    "52f70d7f56b0ec0f9eab3083ebc88f4cb3c50d347b5d320fb3b46270558ba900",
+    "0ef72e4f5a1763fe0a580bba1f4cadef415d747d0c8d5ce9fa164e11942e2a52",
+    "28140096cb4bb92bcc2e3a90f95f1ee6079edc8ddcd037b8f2f5b2614555ffca"
+  ],
+  "additional_synthetic_attempts": 0,
+  "add_stage_envelopes": {
+    "test": {
+      "seconds": 10800,
+      "maximum_calls": 158
+    }
+  },
+  "round": "paper1-s7-test",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "2f0a6836420aaf39b096f3ba8e387466628d3868d42d86e76abe5ad8de063fa5",
+  "scope_sha256": "87e7d460d5e1a550fb70e5d57c65d18d426a803eb3be9a53d9927681f3876693",
+  "reason": "Paper 1 S7/S8 (owner go 2026-11-15, option a): test stage envelope + FA/GR/SACR/retrieval test configurations (full-dev configurations with stage test)"
+}
