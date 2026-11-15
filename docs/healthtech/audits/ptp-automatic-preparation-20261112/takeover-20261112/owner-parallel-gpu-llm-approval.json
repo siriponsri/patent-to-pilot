@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-11-16T06:10+07:00",
+  "owner_words_th": "monitor ต่อครับ พร้อมเสนอแผนเพื่อให้ได้ paper ที่มากกว่า boundary หรือ diagnosis paper และ อนุมัติใช้งาน GPU และ LLM ได้แบบ parallel หยุด Deep research ที่ทำอยู่ด้วยครับ",
+  "earlier_owner_words_th": ["อย่าพึ่งยึดติดกับ resource ครับ สำรวจทรัพยากรบน dr-train ก่อน เผื่อติดตั้งเพิ่มได้ และถ้าไม่พอจะใช้ runpod ครับ", "อนุญาตได้หลาย task ครับ แต่ช่วยเสนองาน parallel มาก่อน"],
+  "interpretation": "GPU and local LLM work for follow-up studies may run in parallel with the Paper 1 S8 driver (relaxes 'one GPU job at a time' for NEW work). Paper 1 frozen protocol, test access rule and S8 accounting are unchanged.",
+  "not_granted": ["paid API / RunPod spend without a concrete budget amendment the owner approves", "use of GPUs owned by other projects on dr-train without checking", "access to Paper 1 test qrels outside the single frozen evaluation", "downloads without per-item approval"],
+  "deep_research": "workflow wf_ef56184d-4df stopped at owner request; not resumed"
+}
