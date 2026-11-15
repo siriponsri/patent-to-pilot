@@ -1,5 +1,14 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Paper 1 S8 RESUMED after session restart; A2 dev design negative (not carried to test) 2026-11-15T17:50+07:00
+
+This section supersedes the "S7 FROZEN, S8 RUNNING" section below for the current state (its S7 facts remain valid).
+- The first local driver process ended with the session restart (exit 4, no traceback). The remote job FA test b1 had finished untouched: 158/158 used, 0 fallback; settled by hand ONCE at gen 187 (3794 s). Logged in paper1-s8-progress.jsonl.
+- Driver resumed: `drive_paper1_s8.py FA:2..5 GR:1..5 SACR:1..10`; FA test b2 frozen gen 189, launched ~17:00. If this session dies again: LAUNCHED without SETTLED -> do NOT start again; observe `native_control.py observe paper1-s8-<arm>-b<n>`, settle once `settle_synthetic.py <job> paper1-s8-<arm>-b<n>`, rerun the driver with the remaining items.
+- IMPORTANT: package() refuses uncommitted changes under src/ or scripts/healthtech; any uncommitted edit there makes the driver's next freeze crash. Commit code changes immediately (or edit only outside those folders) while the driver runs.
+- Owner approved preparing amendment A2 (owner-paper1-a2-prepare-approval.json) after raising the Paper 53 "diagnosis only" concern. A2 = pre-declared CPU tail fusion T-X(k) (B0 top-k kept, arm fills the tail), selection rule fixed before computing (paper1-a2/A2-PREDECLARATION.md, commit 2cd881c). Run once locally on dev (inputs hash-verified, B0 reproduces S5): NO_ADMISSIBLE_TAIL_FUSION_ON_DEV (T-FA(150) IN -0.021, OUT 0.146 vs B0 0.148). Per the rule A2 is NOT carried to test; no further variants. paper1-a2/A2-RESULT.md. H1-H3 unchanged.
+
+
 ## Paper 1 S7 FROZEN, S8 test generation driver RUNNING (owner go: option a) 2026-11-15T15:40+07:00
 
 This section supersedes the "S5 COMPLETE; STOPPED at S6" section below. Owner chose protocol section 8 option (a) (owner-paper1-test-go-approval.json; an earlier "Stop: dev-only report" click was interrupted and replaced by the owner).
