@@ -21,7 +21,7 @@ def main():
     raw = Path('/declaration.json').read_bytes()
     if hashlib.sha256(raw).hexdigest() != sys.argv[1]: raise RuntimeError('declaration changed')
     d = json.loads(raw)
-    if d.get('kind') not in ('paper1-dev-eval', 'paper1-test-eval') or d.get('model_calls') != 0 or not 1 <= d.get('cpu_seconds', 0) <= 600:
+    if d.get('kind') not in ('paper1-dev-eval', 'paper1-test-eval', 'paper1-a2-dev') or d.get('model_calls') != 0 or not 1 <= d.get('cpu_seconds', 0) <= 600:
         raise RuntimeError('CPU-only evaluation scope required')
     resource.setrlimit(resource.RLIMIT_CPU, (d['cpu_seconds'], d['cpu_seconds']))
     out = Path('/out/attempt'); out.mkdir(exist_ok=False); started = time.monotonic()
@@ -48,6 +48,17 @@ def main():
         systems = build_systems(table('reference.jsonl'), table('shuffle.jsonl'),
                                 {arm: table(arm + '-panel.jsonl') for arm in ('FA', 'GR', 'SACR')}, c1)
         if set(systems['B0']) != {q['query_id'] for q in queries}: raise RuntimeError('rankings must cover all dev queries')
+        if d['kind'] == 'paper1-a2-dev':  # A2 dev design (pre-declared candidates + selection rule), dev qrels only
+            from patent_to_pilot.research.paper1_a2 import a2_systems, a2_dev_design
+            if test: raise RuntimeError('A2 dev design is dev only')
+            a2 = a2_systems(systems['B0'], {'FA': systems['FA'], 'GR': systems['GR'], 'SACR': systems['SACR'], 'shuffle': table('shuffle.jsonl')})
+            public, private = a2_dev_design(corpus, queries, relations, a2)
+            (out / 'private-per-query.json').write_text(json.dumps(private) + '\n')
+            summary = {'status': 'PAPER1_A2_DEV_DESIGN_DESCRIPTIVE', 'split': 'dev', 'queries': len(queries), 'results': public,
+                       'protected_test_access': False, 'significance_claim': False,
+                       'process_cpu_seconds': time.process_time(), 'wall_seconds': time.monotonic() - started}
+            (out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
+            return
         public, private = evaluate_dev(corpus, queries, relations, systems)
         (out / 'private-per-query.json').write_text(json.dumps(private) + '\n')
         if test:

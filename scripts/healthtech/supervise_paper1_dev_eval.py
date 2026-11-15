@@ -11,7 +11,8 @@ from r3_engine_client import Engine, EngineError
 from supervise_r3_engine_v2 import supervise, BASE
 from supervise_automatic_grammar import configuration as grammar_configuration
 
-ALLOWED = ('ptp-auto-paper1-dev-eval-20261115-v1', 'ptp-auto-paper1-test-eval-20261115-v1')  # test = S8, run ONCE
+ALLOWED = ('ptp-auto-paper1-dev-eval-20261115-v1', 'ptp-auto-paper1-test-eval-20261115-v1',  # test = S8, run ONCE
+           'ptp-auto-paper1-a2-dev-20261115-v1')  # A2 dev design (dev qrels only)
 INPUTS = ('corpus.jsonl', 'queries.jsonl', 'qrels.jsonl', 'reference.jsonl', 'shuffle.jsonl',
           'FA-panel.jsonl', 'GR-panel.jsonl', 'SACR-panel.jsonl', 'retrieval-completion.json')
 
@@ -41,7 +42,7 @@ def main(pin):
         raw = (job/'declaration.json').read_bytes()
         if hashlib.sha256(raw).hexdigest() != pin: raise RuntimeError('declaration pin changed')
         d = json.loads(raw)
-        if d['kind'] != ('paper1-test-eval' if '-test-' in NAME else 'paper1-dev-eval') or d['cpu_seconds'] > 600: raise RuntimeError('CPU scope mismatch')
+        if d['kind'] != ('paper1-test-eval' if '-test-' in NAME else 'paper1-a2-dev' if '-a2-' in NAME else 'paper1-dev-eval') or d['cpu_seconds'] > 600: raise RuntimeError('CPU scope mismatch')
         sys.path.insert(0, str(job/'code/src'))
         from patent_to_pilot.research.r7_dispatch_files import validate_worker_package
         from patent_to_pilot.research.r6_dispatch_journal import document_hash
