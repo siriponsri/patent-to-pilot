@@ -1,0 +1,49 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "f2f976fffd90f8a230308afc2db912d14492713890aa773c316cbb4169b144a0",
+    "configuration_sha256": "ed27a5b9ecd561a58ce83036b251fe3e823718ad8a912db5046a9a6c2521559d",
+    "gate": "integrity",
+    "source_commit": "0fe70331520cc920d5d5a163b7fc8214f7e39ad3",
+    "files": 237,
+    "v5_sha256": "6eed566f43bec8559dc16b92e23976d24dbdd6ea7d7f1707a0664f8620400f1c",
+    "fixture_sha256": "fc76a4e3cc62ca41338fc4e7bc3901d0537a5c5f70149dcf34630013e8b3c594",
+    "evidence": "committed blobs; worker/runner identical to the fixture-v8-qualified files (authored refusal in marking -> GRAMMAR_REFUSED, authored dead end in review -> GRAMMAR_NO_CONTINUATION, batch continues); otherwise as SACR full-dev b1-b4c"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "f2f976fffd90f8a230308afc2db912d14492713890aa773c316cbb4169b144a0",
+    "configuration_sha256": "ed27a5b9ecd561a58ce83036b251fe3e823718ad8a912db5046a9a6c2521559d",
+    "gate": "isolation",
+    "evidence": "same supervisor/isolation as native v5; re-validated before start"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "f2f976fffd90f8a230308afc2db912d14492713890aa773c316cbb4169b144a0",
+    "configuration_sha256": "ed27a5b9ecd561a58ce83036b251fe3e823718ad8a912db5046a9a6c2521559d",
+    "gate": "runtime",
+    "evidence": "native v5 + SACR pilot retrieval technically valid",
+    "pilot_summary_sha256": "7f3cb0d9166aba7fb8254caa5deab718648e3bb0910fc8ff0fb8724d5f1b0216",
+    "pilot_retrieval_settlement_sha256": "93bcb44d0a054516c8f43079b0dc5f7dbfe675c6fee8857ed07bea8788b159bc",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "f2f976fffd90f8a230308afc2db912d14492713890aa773c316cbb4169b144a0",
+    "configuration_sha256": "ed27a5b9ecd561a58ce83036b251fe3e823718ad8a912db5046a9a6c2521559d",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 614883.3864951228,
+    "full_dev_charged_seconds": 52882,
+    "disk_preexisting_upper_bound_bytes": 42168655343
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "f2f976fffd90f8a230308afc2db912d14492713890aa773c316cbb4169b144a0",
+    "configuration_sha256": "ed27a5b9ecd561a58ce83036b251fe3e823718ad8a912db5046a9a6c2521559d",
+    "gate": "accounting",
+    "ledger_sha256": "8f9a6095dc3db6cd131a9b50280d18bdee7dc17c0ca271b842f95a3906928fda",
+    "cpu_remaining_seconds": 25929.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}
