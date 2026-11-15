@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path('/code')
 sys.path.insert(0, str(ROOT / 'src'))
-STAGE_SECONDS = {'synthetic': 1800, 'fidelity': 3600, 'full_dev': 10800}
+STAGE_SECONDS = {'synthetic': 1800, 'fidelity': 3600, 'full_dev': 10800, 'test': 10800}
 
 
 def sha(raw):

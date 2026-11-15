@@ -33,12 +33,13 @@ def main(pin):
     # After owner decision A (2026-11-14): FA b2 continuation, FA b3 and GR b1-b3 with the refusal-fallback worker.
     allowed += ('ptp-auto-paper1-fa-fulldev-b2c-20261114-v1', 'ptp-auto-paper1-fa-fulldev-b3-20261114-v1') + tuple(
         'ptp-auto-paper1-gr-fulldev-b%d-20261114-v1' % b for b in (1, 2, 3))
+    allowed += tuple('ptp-auto-paper1-%s-test-b%d-20261115-v1' % (a, b) for a in ('fa', 'gr') for b in range(1, 6))  # Paper 1 S8
     if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in allowed:
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))
     # Controller CPU grows with polls x output files (measured 4.7 ms + 0.029 ms/file per poll on pilot-20):
     # about 140 s for a 158-query batch, so full-dev jobs get 900 s; shorter stages keep 60 s.
-    controller_cpu = 900 if '-fulldev-' in job.name else 60
+    controller_cpu = 900 if ('-fulldev-' in job.name or '-test-' in job.name) else 60
     resource.setrlimit(resource.RLIMIT_CPU, (controller_cpu,controller_cpu))
     started = time.monotonic(); claimed = False; create_sent = False
     receipt = {'attempt_id': job.name, 'container_name': job.name, 'retry': False}
@@ -51,7 +52,7 @@ def main(pin):
         raw = (job / 'dispatch/declaration.json').read_bytes()
         if hashlib.sha256(raw).hexdigest() != pin: raise RuntimeError('declaration changed')
         d = json.loads(raw)
-        if (d['attempt_id'] != job.name or d.get('arm') not in ('FA', 'GR') or d['stage'] not in ('synthetic', 'fidelity', 'full_dev')
+        if (d['attempt_id'] != job.name or d.get('arm') not in ('FA', 'GR') or d['stage'] not in ('synthetic', 'fidelity', 'full_dev', 'test')
                 or d['maximum_calls'] != d['queries']):
             raise RuntimeError('Paper 1 rewrite declaration mismatch')
         sys.path.insert(0, str(job/'code/src'))

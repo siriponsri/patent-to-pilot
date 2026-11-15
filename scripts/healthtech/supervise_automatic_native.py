@@ -32,13 +32,14 @@ def main(pin):
                + tuple('ptp-auto-native-sacr-fulldev-b%d-20261113-v1' % b for b in range(1, 7))  # b1 staged stale: never launch
                + tuple('ptp-auto-native-sacr-fulldev-b%d-20261114-v1' % b for b in range(1, 7))
                + tuple('ptp-auto-native-sacr-fulldev-%s-20261115-v1' % b for b in ('b4c', 'b5', 'b6'))
-               + tuple('ptp-auto-native-sacr-fulldev-%s-20261115-v2' % b for b in ('b4d', 'b5', 'b6')))  # + dead-end fallback  # repaired worker (refusal fallback)
+               + tuple('ptp-auto-native-sacr-fulldev-%s-20261115-v2' % b for b in ('b4d', 'b5', 'b6'))
+               + tuple('ptp-auto-native-sacr-test-b%d-20261115-v1' % b for b in range(1, 11)))  # Paper 1 S8  # + dead-end fallback  # repaired worker (refusal fallback)
     if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in allowed:
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))
     # Controller CPU grows with polls x output files (measured on Paper 1 S4: about 156 s for a 158-call batch);
     # a 79-query SACR batch writes about 2,200 files over about 2 h, so full-dev jobs get 900 s; pilot keeps 60 s.
-    controller_cpu = 900 if '-fulldev-' in job.name else 60
+    controller_cpu = 900 if ('-fulldev-' in job.name or '-test-' in job.name) else 60
     resource.setrlimit(resource.RLIMIT_CPU, (controller_cpu,controller_cpu))
     started = time.monotonic(); claimed = False; create_sent = False
     receipt = {'attempt_id': job.name, 'container_name': job.name, 'retry': False}
@@ -51,7 +52,7 @@ def main(pin):
         raw = (job / 'dispatch/declaration.json').read_bytes()
         if hashlib.sha256(raw).hexdigest() != pin: raise RuntimeError('declaration changed')
         d = json.loads(raw)
-        if d['attempt_id'] != job.name or d['stage'] not in ('fidelity', 'full_dev') or d['maximum_calls'] > 2 * d['queries']:
+        if d['attempt_id'] != job.name or d['stage'] not in ('fidelity', 'full_dev', 'test') or d['maximum_calls'] > 2 * d['queries']:
             raise RuntimeError('native declaration mismatch')
         sys.path.insert(0, str(job/'code/src'))
         from patent_to_pilot.research.automatic_dispatch_journal import AutomaticDispatchJournal

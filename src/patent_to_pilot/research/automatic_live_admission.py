@@ -4,7 +4,7 @@ from .mtm_runtime import InputBoundaryError
 from .r6_dispatch_journal import document_hash
 
 GPU = 'GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089'
-GPU_STAGES = frozenset(('synthetic', 'fidelity', 'pilot', 'full_dev'))
+GPU_STAGES = frozenset(('synthetic', 'fidelity', 'pilot', 'full_dev', 'test'))
 
 
 def validate_live(receipt, declaration, ledger, generation, now):

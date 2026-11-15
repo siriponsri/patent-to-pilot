@@ -8,7 +8,7 @@ import hashlib, json, sys, time
 from pathlib import Path
 sys.path[:0] = ['/code/src', '/code/scripts/healthtech']
 sha = lambda b: hashlib.sha256(b).hexdigest()
-STAGE_SECONDS = {'pilot': 1800, 'full_dev': 10800}
+STAGE_SECONDS = {'pilot': 1800, 'full_dev': 10800, 'test': 10800}
 
 
 def load_arm(root, kind, pins):

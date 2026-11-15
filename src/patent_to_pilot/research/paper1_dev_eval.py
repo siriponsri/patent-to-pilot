@@ -120,3 +120,21 @@ def evaluate_dev(corpus, queries, relations, systems):
     public['c3_audit'] = {k: v for k, v in overlap.items() if k != 'excluded_for_sensitivity'}
     public['c3_audit']['excluded_queries'] = len(excluded)
     return public, private
+
+
+def confirmatory(public):
+    """S8 test only (protocol section 5): fixed-sequence gatekeeping H1 -> H2 -> H3 on OUT Recall@200 with the frozen
+    cluster bootstrap CIs (two-sided alpha 0.05), equivalence margin delta for interpretation, and the IN/ALL
+    non-inferiority harm check (margin 0.020) for F-FA vs B0. C2 (F-FA vs F-shuffle) stays descriptive."""
+    from .paper1_analysis import gatekeep, interpret, noninferior, GATEKEEPING, EQUIVALENCE_MARGIN, NONINFERIORITY_MARGIN
+    out = public['main']['OUT']['paired_primary']
+    cis = {step: out[step]['cluster_bootstrap_descriptive'] for step, _, _ in GATEKEEPING}
+    for step, system, reference in GATEKEEPING:
+        if (out[step]['system'], out[step]['reference']) != (system, reference):
+            raise InputBoundaryError('gatekeeping comparison mismatch')
+    harm = {p: dict(ci=public['main'][p]['paired_primary']['H1']['cluster_bootstrap_descriptive'],
+                    noninferior=noninferior(public['main'][p]['paired_primary']['H1']['cluster_bootstrap_descriptive']))
+            for p in ('IN', 'ALL')}
+    return {'gatekeeping': gatekeep(cis), 'per_step_interpretation_if_tested': {s: interpret(c) for s, c in cis.items()},
+            'cis': cis, 'equivalence_margin': EQUIVALENCE_MARGIN, 'harm_noninferiority_margin': NONINFERIORITY_MARGIN,
+            'harm_check_F-FA_vs_B0': harm, 'c2_descriptive': out['C2']['cluster_bootstrap_descriptive']}

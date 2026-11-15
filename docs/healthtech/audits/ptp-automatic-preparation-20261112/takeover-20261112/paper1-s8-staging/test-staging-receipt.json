@@ -1,0 +1,26 @@
+{
+  "receipt": {
+    "format": "ptp-dapfam-curator-receipt-v1",
+    "status": "PREPARED_NOT_ISOLATION_ATTESTED",
+    "runtime_manifest_sha256": "828360d04bb5af2ec6b440a7eb1bc4c99dc1a7dfb846327ac6e6ae936ff56611",
+    "evaluator_manifest_sha256": "487d1a7f35de0ea2f504d98bfb865c2d9000243c8e1a632639f04e8482c478c0",
+    "input_queries": 773,
+    "corpus_families": 45336,
+    "source_sha256": {
+      "corpus.parquet": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6",
+      "queries.parquet": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe",
+      "qrels_all.parquet": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74",
+      "split.json": "dd76c019ee74c8d256e182ecfb329f9235638c1ecf9d2c7b1fa8073c4958e6dc"
+    },
+    "protected_exports": 0,
+    "vector_binding": "CORPUS_BYTES_MATCH;VECTOR_AND_QUERY_BASELINE_VERIFICATION_PENDING"
+  },
+  "runtime_files_sha256": {
+    "queries-ta.jsonl": "289cdc311e0a5ecb5e3f3b443a5139f218eb9261255a3fed8638fdbb45eadc59"
+  },
+  "runtime_manifest_format": "ptp-dapfam-runtime-test-v1",
+  "private_location": "sibling _private_artifacts/healthtech/ptp-dapfam-native-test-20261115-v1",
+  "test_qrels": "test-evaluation/ sealed; not read; opened once by the final evaluator",
+  "wall_seconds": 10.6,
+  "model_calls": 0
+}

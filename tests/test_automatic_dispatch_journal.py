@@ -302,3 +302,31 @@ def test_false_cpu_overrun_cleared_only_with_physical_bound(tmp_path):
     assert out['bound'] == 25.7 * 9 and out['generation'] == 2
     with pytest.raises(InputBoundaryError):           # nothing left to clear
         journal.clear_false_cpu_overrun(expected_generation=2, receipt=r, receipt_sha256=h)
+
+
+def test_test_stage_needs_envelope_and_settled_full_dev_predecessor(tmp_path):
+    path, journal, authority, ledger, _ = setup_journal(tmp_path)
+    authority.update(stage_envelopes={'synthetic': {'seconds': 1800, 'maximum_calls': 2}}, configuration_sha256=['1'*64])
+    pin = document_hash(authority)
+    state = journal.adopt_scope(expected_generation=0, authority=authority, authority_sha256=pin)['scope']; gen = 1
+    def qualify(attempt, op, pred):
+        nonlocal state, gen
+        d = {'attempt_id': attempt, 'operation_sha256': op*64, 'stage': 'test', 'configuration_sha256': '1'*64,
+             'seconds': 1800, 'maximum_calls': 2, 'predecessor_attempt_id': pred}
+        r = {'declaration': d, 'authority_sha256': pin, 'ledger_sha256': document_hash(ledger), 'scope_sha256': document_hash(state)}
+        state = journal.qualify_stage(expected_generation=gen, receipt=r, receipt_sha256=document_hash(r))['scope']; gen += 1
+    with pytest.raises(InputBoundaryError):
+        qualify('ptp-auto-t1', 'a', 'ptp-auto-d1')                   # no test envelope
+    r = {'kind': 'AUTHORITY_AMENDMENT', 'owner_approval_sha256': 'e'*64, 'evidence_sha256': 'f'*64,
+         'add_configuration_sha256': [], 'additional_synthetic_attempts': 0, 'round': 'paper1-s7-test',
+         'add_stage_envelopes': {'test': {'seconds': 10800, 'maximum_calls': 158}},
+         'authority_sha256': pin, 'ledger_sha256': document_hash(ledger), 'scope_sha256': document_hash(state)}
+    state = journal.amend_authority(expected_generation=gen, receipt=r, receipt_sha256=document_hash(r))['scope']; gen += 1
+    with sqlite3.connect(path) as db:
+        from patent_to_pilot.research.r6_dispatch_journal import encoded
+        state['automatic_study']['stage_costs']['ptp-auto-p1'] = {'stage': 'pilot', 'calls_complete': True, 'seconds': 10}
+        state['automatic_study']['stage_costs']['ptp-auto-d1'] = {'stage': 'full_dev', 'calls_complete': True, 'seconds': 10}
+        db.execute('UPDATE head SET scope=?', (encoded(state),))
+    with pytest.raises(InputBoundaryError):
+        qualify('ptp-auto-t1', 'a', 'ptp-auto-p1')                   # predecessor must be full_dev
+    qualify('ptp-auto-t1', 'a', 'ptp-auto-d1')

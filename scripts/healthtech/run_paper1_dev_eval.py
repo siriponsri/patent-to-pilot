@@ -1,4 +1,4 @@
-"""Paper 1 S5 CPU-only dev evaluation (frozen protocol sections 5-6 + A1 C1-C3); dev qrels only.
+"""Paper 1 S5 (dev) and S8 (test, kind paper1-test-eval: + frozen confirmatory gatekeeping, run ONCE) CPU-only evaluation (frozen protocol sections 5-6 + A1 C1-C3); dev qrels only.
 
 Aggregates are public (summary.json); per-query values stay private. Descriptive only: no significance claims,
 no gatekeeping verdicts (protocol section 6). No model, no GPU, no test data.
@@ -21,7 +21,7 @@ def main():
     raw = Path('/declaration.json').read_bytes()
     if hashlib.sha256(raw).hexdigest() != sys.argv[1]: raise RuntimeError('declaration changed')
     d = json.loads(raw)
-    if d.get('kind') != 'paper1-dev-eval' or d.get('model_calls') != 0 or not 1 <= d.get('cpu_seconds', 0) <= 600:
+    if d.get('kind') not in ('paper1-dev-eval', 'paper1-test-eval') or d.get('model_calls') != 0 or not 1 <= d.get('cpu_seconds', 0) <= 600:
         raise RuntimeError('CPU-only evaluation scope required')
     resource.setrlimit(resource.RLIMIT_CPU, (d['cpu_seconds'], d['cpu_seconds']))
     out = Path('/out/attempt'); out.mkdir(exist_ok=False); started = time.monotonic()
@@ -30,7 +30,8 @@ def main():
         validate_worker_package('/code', d['files_sha256'], d['package_sha256'])
         for name in INPUTS:
             if stream_sha('/input/' + name) != d['inputs_sha256'][name]: raise RuntimeError('pinned input changed: ' + name)
-        from patent_to_pilot.research.paper1_dev_eval import build_systems, evaluate_dev
+        from patent_to_pilot.research.paper1_dev_eval import build_systems, evaluate_dev, confirmatory
+        test = d['kind'] == 'paper1-test-eval'
         def load(p): return [json.loads(l) for l in Path('/input/' + p).read_text(encoding='utf-8').splitlines() if l.strip()]
         corpus = []  # streamed: the corpus file is ~330 MB and only family IDs are needed
         with open('/input/corpus.jsonl', encoding='utf-8') as f:
@@ -49,10 +50,13 @@ def main():
         if set(systems['B0']) != {q['query_id'] for q in queries}: raise RuntimeError('rankings must cover all dev queries')
         public, private = evaluate_dev(corpus, queries, relations, systems)
         (out / 'private-per-query.json').write_text(json.dumps(private) + '\n')
-        summary = {'status': 'PAPER1_DEV_EVALUATED_DESCRIPTIVE', 'dev_queries': len(queries), 'results': public,
+        if test:
+            public['confirmatory'] = confirmatory(public)  # S8: frozen gatekeeping (protocol section 5)
+        summary = {'status': 'PAPER1_TEST_EVALUATED_ONCE' if test else 'PAPER1_DEV_EVALUATED_DESCRIPTIVE',
+                   'split': 'test' if test else 'dev', 'queries': len(queries), 'results': public,
                    'retrieval_reference': retrieval['anchor_check']['reference'], 'panel_counts': retrieval['panel_counts'],
-                   'c1': retrieval['c1_manipulation_and_truncation'], 'protected_test_access': False,
-                   'significance_claim': False, 'gatekeeping_applied': False,
+                   'c1': retrieval['c1_manipulation_and_truncation'], 'protected_test_access': test,
+                   'significance_claim': test, 'gatekeeping_applied': test,
                    'process_cpu_seconds': time.process_time(), 'wall_seconds': time.monotonic() - started}
         (out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
     except BaseException as error:

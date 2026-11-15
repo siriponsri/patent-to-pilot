@@ -49,3 +49,12 @@ def test_c3_excludes_self_positive_query():
 def test_first_positive_bin():
     assert first_positive_bin(['a', 'b'] + ['x%d' % i for i in range(60)] + ['g'], {'g'}) == '51-100'
     assert first_positive_bin(['a'], {'g'}) == 'none'
+
+
+def test_confirmatory_gatekeeping_and_harm():
+    from patent_to_pilot.research.paper1_dev_eval import confirmatory
+    corpus, queries, relations, ref, arm = _data()
+    systems = build_systems(ref, ref, {'FA': arm, 'GR': ref, 'SACR': ref}, {a: 'MOVEMENT_PRESENT' for a in ('FA', 'GR', 'SACR')})
+    c = confirmatory(evaluate_dev(corpus, queries, relations, systems)[0])
+    assert c['gatekeeping']['H1'] == 'SUPERIOR' and c['gatekeeping']['H2'] == 'SUPERIOR'
+    assert c['harm_check_F-FA_vs_B0']['IN']['noninferior'] is True

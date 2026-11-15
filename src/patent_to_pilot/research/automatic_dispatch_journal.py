@@ -12,7 +12,8 @@ from .r6_admission import digest
 from .r6_dispatch_journal import DispatchJournal, document_hash, encoded
 
 
-PREDECESSOR = {'fidelity': 'synthetic', 'pilot': 'fidelity', 'full_dev': 'pilot'}  # NATIVE-STAGES-20261112
+PREDECESSOR = {'fidelity': 'synthetic', 'pilot': 'fidelity', 'full_dev': 'pilot',
+               'test': 'full_dev'}  # NATIVE-STAGES-20261112; 'test' = Paper 1 S8 (protocol section 7, owner go 2026-11-15)
 MAX_ADDITIONAL_SYNTHETIC = 2  # per owner-approved round (round-1: "Approve, max 2"; round-2 default 2)
 
 
@@ -222,7 +223,7 @@ class AutomaticDispatchJournal(DispatchJournal):
         require(type(expected_generation) is int and expected_generation >= 0, 'invalid generation')
         require(type(declaration) is dict and type(gates) is dict, 'qualified declaration required')
         d = declaration
-        require(d.get('retry') is False and d.get('stage') in ('synthetic', 'fidelity', 'pilot', 'full_dev'),
+        require(d.get('retry') is False and d.get('stage') in ('synthetic', 'fidelity', 'pilot', 'full_dev', 'test'),
                 'unknown stage or replay')
         require(type(d.get('attempt_id')) is str and d['attempt_id'].startswith('ptp-auto-'), 'attempt identity')
         require(type(d.get('maximum_calls')) is int and d['maximum_calls'] > 0,

@@ -18,8 +18,8 @@ from supervise_sacr_r5_engine import configuration as base_configuration, superv
 
 
 JOBS = Path('/home/chaw/patent-to-pilot-jobs')
-JOB_NAME = re.compile(r'ptp-auto-paper1-(fa|gr|dev)-(pilot|fulldev)-retrieval-2026111[35]-v[1-9]')  # 20261115: S5 full-dev (FA, GR, SACR)
-ARM_JOB = re.compile(r'ptp-auto-(paper1-(fa|gr)-(pilot20|fulldev-b[1-9]c?)-2026111[34]-v[1-9]|native-sacr-(pilot20-20261112-v5|fulldev-b[1-6][cd]?-2026111[345]-v[1-9]))')
+JOB_NAME = re.compile(r'ptp-auto-paper1-(fa|gr|dev|all)-(pilot|fulldev|test)-retrieval-2026111[35]-v[1-9]')  # 20261115: S5 full-dev (FA, GR, SACR)
+ARM_JOB = re.compile(r'ptp-auto-(paper1-(fa|gr)-(pilot20|fulldev-b[1-9]c?)-2026111[34]-v[1-9]|native-sacr-(pilot20-20261112-v5|fulldev-b[1-6][cd]?-2026111[345]-v[1-9]|test-b([1-9]|10)-20261115-v[1-9])|paper1-(fa|gr)-test-b[1-5]-20261115-v[1-9])')
 FIXED = ('/code', '/out', '/deps', '/models/patembed-large', '/models/.' + GPU + '.lock', '/dispatch',
          '/vectors/passage-vectors-f32.npy', '/runtime', '/b0/rankings-top200.jsonl')
 
@@ -51,7 +51,7 @@ def main(pin):
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))
     # Controller CPU: 60 s for pilot; full-dev jobs run longer and poll once per second (S4 lesson), so 900 s.
-    limit = 900 if 'fulldev' in job.name else 60
+    limit = 900 if ('fulldev' in job.name or '-test-' in job.name) else 60
     resource.setrlimit(resource.RLIMIT_CPU, (limit, limit))
     started = time.monotonic(); claimed = False; create_sent = False
     receipt = {'attempt_id': job.name, 'container_name': job.name, 'retry': False}
@@ -64,7 +64,7 @@ def main(pin):
         raw = (job / 'dispatch/declaration.json').read_bytes()
         if hashlib.sha256(raw).hexdigest() != pin: raise RuntimeError('declaration changed')
         d = json.loads(raw)
-        if (d['attempt_id'] != job.name or d['stage'] not in ('pilot', 'full_dev') or d['maximum_calls'] != 1
+        if (d['attempt_id'] != job.name or d['stage'] not in ('pilot', 'full_dev', 'test') or d['maximum_calls'] != 1
                 or d.get('generation_calls') != 0 or type(d.get('arms')) is not dict):
             raise RuntimeError('Paper 1 retrieval declaration mismatch')
         sys.path.insert(0, str(job/'code/src'))
