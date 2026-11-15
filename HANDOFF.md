@@ -1,5 +1,16 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Paper 2 pre-checks on DAPFAM dev: all NO_GO so far; read before proposing a new idea 2026-11-16T07:00+07:00
+
+Ledger of everything already tested (do not repeat): docs/healthtech/research/paper2-precheck/README.md.
+- BM25 + RRF with dense: NO_GO (OUT R@200 -0.020, IN -0.055), replicates the 5 Nov Stage 1 result.
+- Fixed/per-section mixes of six actions (Stage 1, 5 Nov) and a citation-learned IPC class prior (6 Nov): NO_GO.
+- Per-query oracle headroom +0.094 is real, but a label-free router (3 pre-declared variants) captures 0%: NO_GO.
+- Still open: deeper pools (500-1,000) + reranker under matched budget; a new 102/103-labelled set from USPTO office actions (D1/D2 blocked by the USPTO.gov login; owner must sign in or download); harness prototype on branch claude/paper2-harness-0d504a (not merged).
+- Owner approvals this round: owner-parallel-gpu-llm-approval.json (takeover dir), paper2-precheck/owner-reencode-approval.json, paper2-precheck/owner-oa-download-approval.json.
+- Data already local (check before downloading): DAPFAM source parquets in methodology/datasets/research-only-nc/, family-ipc3 map and Stage 1 rankings in ../_private_artifacts/healthtech/ptp-org-adaptive-20261105/, PANORAMA PAR4PC/PI4PC, HUPD 2017 on dr-train.
+- S8 continues independently (detached driver PID 13984).
+
 ## Paper 1 S8: FA b1-b3 settled; driver now DETACHED (survives session restarts); owner approved parallel GPU/LLM 2026-11-16T06:10+07:00
 
 This section supersedes the "S8 RESUMED after session restart" section below for the current state.

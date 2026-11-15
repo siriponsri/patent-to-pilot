@@ -1,5 +1,16 @@
 # Patent-to-Pilot shared project memory
 
+## Paper 2 pre-checks on DAPFAM dev: all NO_GO so far; read before proposing a new idea 2026-11-16T07:00+07:00
+
+Ledger of everything already tested (do not repeat): docs/healthtech/research/paper2-precheck/README.md.
+- BM25 + RRF with dense: NO_GO (OUT R@200 -0.020, IN -0.055), replicates the 5 Nov Stage 1 result.
+- Fixed/per-section mixes of six actions (Stage 1, 5 Nov) and a citation-learned IPC class prior (6 Nov): NO_GO.
+- Per-query oracle headroom +0.094 is real, but a label-free router (3 pre-declared variants) captures 0%: NO_GO.
+- Still open: deeper pools (500-1,000) + reranker under matched budget; a new 102/103-labelled set from USPTO office actions (D1/D2 blocked by the USPTO.gov login; owner must sign in or download); harness prototype on branch claude/paper2-harness-0d504a (not merged).
+- Owner approvals this round: owner-parallel-gpu-llm-approval.json (takeover dir), paper2-precheck/owner-reencode-approval.json, paper2-precheck/owner-oa-download-approval.json.
+- Data already local (check before downloading): DAPFAM source parquets in methodology/datasets/research-only-nc/, family-ipc3 map and Stage 1 rankings in ../_private_artifacts/healthtech/ptp-org-adaptive-20261105/, PANORAMA PAR4PC/PI4PC, HUPD 2017 on dr-train.
+- S8 continues independently (detached driver PID 13984).
+
 ## Latest terminal R6 and Graph v2 checkpoint
 
 R6 calibration finished24 EOS calls but failed:23 contract-invalid and one valid semantic grading failure. Raw24/costs verified,1749 whole-stage GPU/fidelity seconds charged, journal generation1 reconciled. No automatic critic revision. Graph compact v2 CPU inspection completed100 admitted/14 technical risks among fixed114;14.728927 CPU seconds charged, no model or cards. Both jobs terminal. Prior running-state entries below are historical. See HANDOFF and audits ptp-r6-calibration-20261111 and ptp-sg-compact-v2-preparation-20261111. R7-SINGLE-CANDIDATE-CONTINUATION.md is proposed; owner decision pending, no new model authority or reservation. Preserve cumulative journal history; canonical CPU ledger advanced after the GPU snapshot and requires an explicit idle reconciliation before any future GPU declaration.
