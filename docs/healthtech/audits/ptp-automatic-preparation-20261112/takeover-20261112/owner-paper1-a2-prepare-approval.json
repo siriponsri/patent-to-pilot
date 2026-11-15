@@ -1,0 +1,7 @@
+{
+  "date": "2026-11-15",
+  "owner_words": "อนุมัติครับ",
+  "approves": "prepare amendment A2: a CPU-only, pre-specified SECONDARY fusion arm designed on dev (dev qrels only), to be frozen before the test qrels are opened; H1-H3, delta, margins, endpoints and gatekeeping unchanged",
+  "does_not_approve_yet": "freezing A2 into the test evaluation; that needs a second owner approval after the A2 document and dev design results are presented",
+  "context": "owner concern that Paper 53 was criticised as diagnosis-only; dev showed FA rescues 15 OUT queries but RRF displaces 32"
+}
