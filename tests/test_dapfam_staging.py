@@ -96,3 +96,23 @@ def test_nonpositive_annotation_preserved_only_in_dev_evaluator(tmp_path):
     r[0]["relevance_score"] = 1
     with pytest.raises(InputBoundaryError, match="annotation"):
         stage_native_dev(c, q, r, split, tmp_path / "bad", **kw)
+
+
+def test_test_split_projection_exports_only_test_side(tmp_path):
+    c, q, r, split, kw = fixture()
+    dest = tmp_path / "stage-test"
+    result = stage_native_dev(c, q, r, split, dest, split="test", **kw)
+    assert result["protected_exports"] == 0
+    assert json.loads((dest / "runtime-test/queries-ta.jsonl").read_text())["id"] == "hidden-id"
+    assert not (dest / "runtime-test/corpus.jsonl").exists() and not (dest / "runtime-dev").exists()
+    for path in dest.rglob("*"):
+        if path.is_file():
+            assert "dev title" not in path.read_text() and "MUST_NOT_EXPORT" not in path.read_text()
+    qrels = [json.loads(l) for l in (dest / "test-evaluation/qrels-test.jsonl").read_text().splitlines()]
+    assert {x["query_id"] for x in qrels} == {"hidden-id"}
+    runtime = json.loads((dest / "runtime-test/manifest.json").read_text())
+    assert runtime["split"] == "test" and runtime["corpus_sha256_verified"] == kw["expected_corpus_sha256"]
+    for path in (dest / "runtime-test").iterdir():
+        assert "relevance_score" not in path.read_text()
+    with pytest.raises(InputBoundaryError):
+        stage_native_dev(c, q, r, split, tmp_path / "x", split="train", **kw)

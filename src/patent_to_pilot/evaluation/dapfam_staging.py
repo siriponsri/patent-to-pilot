@@ -19,7 +19,12 @@ def jsonl_bytes(rows):
 def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination: Path, *,
                      source_hashes: dict, expected_dev: int, expected_protected: int,
                      expected_corpus: int, expected_corpus_sha256: str,
-                     max_output_bytes: int = 8 * 1024**3) -> dict:
+                     max_output_bytes: int = 8 * 1024**3, split: str = "dev") -> dict:
+    """split='dev' (default, unchanged) or 'test' (owner go 2026-11-15, Paper 1 S8): the chosen side is projected,
+    the other side is never exported. For 'test' the corpus is verified against the pinned bytes but not rewritten
+    (the runtime already holds it); test qrels go to a separate folder that is opened once, by the final evaluator."""
+    if split not in ("dev", "test"):
+        raise InputBoundaryError("invalid preserved split")
     if destination.exists():
         raise InputBoundaryError("preserve existing staging attempt")
     if type(max_output_bytes) is not int or max_output_bytes <= 0:
@@ -64,7 +69,7 @@ def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination
         if key in seen_queries or key not in assignment:
             raise InputBoundaryError("invalid query population")
         seen_queries.add(key)
-        if assignment[key] == "dev":
+        if assignment[key] == split:
             fields = [row[f] for f in ("title_en", "abstract_en")]
             if any(v is not None and not isinstance(v, str) for v in fields):
                 raise InputBoundaryError("invalid native TA query")
@@ -86,7 +91,7 @@ def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination
             continue  # Never export protected labels, scores, IDs or statistics.
         score, domain = float(row["relevance_score"]), row["domain_rel"]
         if not math.isfinite(score) or (score > 0 and domain not in {"IN", "OUT"}):
-            raise InputBoundaryError("invalid dev annotation")
+            raise InputBoundaryError("invalid dev annotation" if split == "dev" else "invalid test annotation")
         qrels.append({"query_id": query, "relevant_id": family, "relevance_score": score, "domain_rel": domain})
         if score > 0:
             eligible["ALL"].add(query)
@@ -96,7 +101,7 @@ def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination
     if len(corpus_payload) + len(query_payload) + len(qrel_payload) + 1024**2 > max_output_bytes:
         raise InputBoundaryError("projected output exceeds reserved bytes")
     destination.mkdir(parents=True, exist_ok=False)
-    runtime, evaluator = destination / "runtime-dev", destination / "dev-evaluation"
+    runtime, evaluator = destination / ("runtime-" + split), destination / (split + "-evaluation")
     runtime.mkdir()
     evaluator.mkdir()
     written_bytes = 0
@@ -108,19 +113,18 @@ def stage_native_dev(corpus_rows, query_rows, relations, assignment, destination
             handle.write(payload)
         written_bytes += len(payload)
         return hashlib.sha256(payload).hexdigest()
-    runtime_files = {
-        "corpus.jsonl": write(runtime / "corpus.jsonl", corpus_payload),
-        "queries-ta.jsonl": write(runtime / "queries-ta.jsonl", query_payload),
-    }
-    evaluator_files = {"qrels-dev.jsonl": write(evaluator / "qrels-dev.jsonl", qrel_payload)}
+    runtime_files = {"corpus.jsonl": write(runtime / "corpus.jsonl", corpus_payload)} if split == "dev" else {}
+    runtime_files["queries-ta.jsonl"] = write(runtime / "queries-ta.jsonl", query_payload)
+    evaluator_files = {"qrels-%s.jsonl" % split: write(evaluator / ("qrels-%s.jsonl" % split), qrel_payload)}
     common = {"dataset_revision": DATASET_REVISION, "mteb_revision": MTEB_REVISION,
-              "source_sha256": source_hashes, "split": "dev", "query_view": "TA", "corpus_view": "TAC",
+              "source_sha256": source_hashes, "split": split, "query_view": "TA", "corpus_view": "TAC",
               "input_queries": len(dev_queries), "corpus_families": len(corpus), "candidate_policy": "full"}
     common["corpus_record_newline"] = corpus_newline
     def manifest(folder, value):
         return write(folder / "manifest.json", (json.dumps(value, sort_keys=True, indent=2) + "\n").encode())
-    runtime_digest = manifest(runtime, {**common, "format": "ptp-dapfam-runtime-dev-v1", "files": runtime_files})
-    evaluator_digest = manifest(evaluator, {**common, "format": "ptp-dapfam-evaluator-dev-v1", "files": evaluator_files,
+    runtime_digest = manifest(runtime, {**common, "format": "ptp-dapfam-runtime-%s-v1" % split, "files": runtime_files,
+        **({} if split == "dev" else {"corpus_sha256_verified": expected_corpus_sha256})})
+    evaluator_digest = manifest(evaluator, {**common, "format": "ptp-dapfam-evaluator-%s-v1" % split, "files": evaluator_files,
         "eligible_queries": {p: len(v) for p, v in eligible.items()}, "runtime_manifest_sha256": runtime_digest})
     receipt = {"format": "ptp-dapfam-curator-receipt-v1", "status": "PREPARED_NOT_ISOLATION_ATTESTED",
                "runtime_manifest_sha256": runtime_digest, "evaluator_manifest_sha256": evaluator_digest,

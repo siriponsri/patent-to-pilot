@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-15",
+  "decision": "PROTOCOL_SECTION_8_OPTION_A",
+  "owner_words": "(a) freeze แล้วรัน test S7–S8 ตามแผนเดิม ... เลือกข้อมูลนี้ครับ",
+  "context": "after S5 dev summary (PAPER1-S5-SUMMARY.json); an earlier click \"Stop: dev-only report\" was interrupted by the owner and replaced by this choice",
+  "scope": "S7 freeze + S8 test (SACR, FA, GR generation on test queries, retrieval, ONE evaluation) with protocol section 5 unchanged",
+  "unchanged": [
+    "arms",
+    "prompts",
+    "delta 0.010",
+    "non-inferiority 0.020",
+    "endpoints",
+    "RRF k=60 depth 200",
+    "gatekeeping H1-H3 order"
+  ],
+  "protected_test_access": "authorized for S8 only; test qrels opened once at the final evaluation"
+}
