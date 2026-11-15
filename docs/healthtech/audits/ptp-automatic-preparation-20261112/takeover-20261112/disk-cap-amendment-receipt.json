@@ -1,0 +1,11 @@
+{
+  "kind": "DISK_CAP_AMENDMENT",
+  "owner_approval_sha256": "053f153ce9865be3487d843ba5e538573d05f30264e90aa56aaed8bf026f14ce",
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "from_bytes": 42949672960,
+  "to_bytes": 55834574848,
+  "prior_ledger_sha256": "4e52c3cc9f12f5751e8b6cc78947c3acbf3ebe149defb364f336abc969f83f09",
+  "module_sha256_lf": "58bc0e1ae91bb45f72ac4a3490e29e99c4f50301acc20b222164583849e3dd91",
+  "journal_identity": "2b7c2aae40fafff474721b87ff1531569aeaa29990f8234bea32ac2d6b744db4"
+}

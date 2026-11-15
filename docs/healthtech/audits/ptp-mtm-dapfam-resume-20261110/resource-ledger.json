@@ -10,7 +10,7 @@
   "full_dev_started": false,
   "fidelity_human_cards_issued": 0,
   "human_cards_total_limit_all_benchmarks_all_configurations": 60,
-  "disk_limit_bytes_combined_incremental": 42949672960,
+  "disk_limit_bytes_combined_incremental": 55834574848,
   "disk_note": "Existing allocations are not reset; no model/vector copies or image downloads in this continuation. Exact cumulative disk admission must be rechecked before staging.",
   "native_baseline_reservation": {
     "status": "COMPLETED_NOT_EVALUATED",
@@ -961,5 +961,14 @@
   },
   "gpu_stage_host_cpu_telemetry_seconds": 78012.869132852,
   "full_dev_accounting_init_receipt_sha256": "b6494893014ab4a21d4c4e49a0842e68a43981180b3c00d8539833a68bd7ee03",
-  "full_dev_charged_seconds": 67337
+  "full_dev_charged_seconds": 67337,
+  "disk_cap_amendments": [
+    {
+      "from_bytes": 42949672960,
+      "generation": 177,
+      "owner_approval_sha256": "053f153ce9865be3487d843ba5e538573d05f30264e90aa56aaed8bf026f14ce",
+      "receipt_sha256": "b1f8da7c76270a72e6f4e06c78776f20c831d5100481c046f99625661ceb6951",
+      "to_bytes": 55834574848
+    }
+  ]
 }

@@ -1,0 +1,9 @@
+{
+  "status": "DISK_CAP_AMENDED",
+  "generation": 177,
+  "from_bytes": 42949672960,
+  "to_bytes": 55834574848,
+  "ledger_sha256": "594c0dd3ef0d487b393d994d4c39fe85aa017b1eaea2055c5ad9cebc30641646",
+  "receipt_sha256": "b1f8da7c76270a72e6f4e06c78776f20c831d5100481c046f99625661ceb6951",
+  "other_fields_unchanged": true
+}
