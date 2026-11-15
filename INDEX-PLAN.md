@@ -1,5 +1,15 @@
 # Patent-to-Pilot: component, evidence and plan index
 
+## Paper 1 S8: FA b1-b3 settled; driver now DETACHED (survives session restarts); owner approved parallel GPU/LLM 2026-11-16T06:10+07:00
+
+This section supersedes the "S8 RESUMED after session restart" section below for the current state.
+- The previous driver ended again with a session restart (exit 4). FA test b3 had finished untouched: 158/158 used, 0 fallback, 4065 s; settled by hand ONCE at gen 193 (GPU charged 102,520.6 s; model_calls 2,651).
+- Driver restarted as a DETACHED Windows process (Start-Process, PID 13984): `drive_paper1_s8.py FA:4 FA:5 GR:1..5 SACR:1..10`; stdout/stderr in takeover-20261112/paper1-s8-driver-{stdout,stderr}.log. FA b4 frozen gen 195, launched 06:05. It keeps running when Claude sessions end; check `Get-Process -Id 13984` before starting any driver (never two drivers).
+- If the driver is gone: LAUNCHED without SETTLED -> do NOT start again; observe `native_control.py observe paper1-s8-<arm>-b<n>`, settle once `settle_synthetic.py <job> paper1-s8-<arm>-b<n>`, append TERMINAL/SETTLED to the progress log, rerun the driver (detached) with the remaining items.
+- package() still refuses uncommitted changes under src/ or scripts/healthtech: new work goes in a separate worktree/branch.
+- Owner (owner-parallel-gpu-llm-approval.json): GPU and LLM work for follow-up studies may run in parallel with S8; paid/RunPod spend still needs a concrete budget amendment; downloads need per-item approval. Deep research workflow stopped at owner request.
+- Owner asked for a plan that goes beyond a boundary/diagnosis paper (proposal in chat 2026-11-16; not frozen).
+
 ## Owner approved disk cap 40 -> 52 GiB; applied after SACR full-dev 2026-11-14T18:20+07:00
 
 Owner: "อนุมัติขนานเพดาน budget ... คำนวณมาที" then "52 GiB" (owner-disk-cap-approval.json). Only the declared cumulative disk cap binds: about 42.17 GB after SACR; plan through S8 needs about 51.36 GB (S5 retrieval/eval, S8 test generation 20 batches, test retrieval/eval, 8 contingency jobs); 52 GiB = 55.83 GB leaves about 4.5 GB. GPU (about 221 ks of 691 ks), automatic package (about 205 ks of 576 ks), full-dev (about 70 ks of 461 ks) and CPU (about 27 ks left) are sufficient; unchanged.
