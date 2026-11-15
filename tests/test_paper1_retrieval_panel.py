@@ -37,3 +37,28 @@ def test_sacr_kind_and_assemble():
     assert counts == {'used': 1, 'fallback': 2} and panel['a'] == {'families': ['z']} and panel['b'] == ref['b']
     assert anchor_check(ref, ref)['reference'] == 'B0_PINNED'
     assert anchor_check(ref, dict(ref, a={'families': []}))['reference'] == 'REENCODED_ANCHORS'
+
+
+def test_partial_job_decisions_rewrite_and_sacr():
+    from patent_to_pilot.research.paper1_retrieval_panel import partial_job_decisions, merge_sources
+    qs = [{'id': 'q%d' % i, 'text': 't%d' % i} for i in range(4)]
+    covered, dec = partial_job_decisions('rewrite', qs, [{'query_id': 'q0', 'action': 'USE_REWRITE'},
+                                                         {'query_id': 'q1', 'action': 'ORIGINAL_QUERY_FALLBACK'}], 2)
+    assert [q['id'] for q in covered] == ['q0', 'q1', 'q2'] and dec['q2']['action'] == 'ORIGINAL_QUERY_FALLBACK'
+    cont = ({'q3': {'action': 'USE_REWRITE'}})
+    d, texts = merge_sources(qs, [(covered, dec, {'q0': 'x'}), ([qs[3]], cont, {'q3': 'y'})], 'rewrite')
+    assert d == {'q0': 'USE_REWRITE', 'q1': 'ORIGINAL_QUERY_FALLBACK', 'q2': 'ORIGINAL_QUERY_FALLBACK', 'q3': 'USE_REWRITE'}
+    assert texts == {'q0': 'x', 'q3': 'y'}
+    covered, dec = partial_job_decisions('sacr', qs, [{'query_id': 'q0', 'decision': {'action': 'USE_SCREENED_CANDIDATE'}}], 1)
+    assert dec == {'q0': {'action': 'USE_SCREENED_CANDIDATE', 'reason': None},
+                   'q1': {'action': 'ORIGINAL_QUERY_FALLBACK', 'reason': 'HOLD_ENGINEERING_FAILURE_OWNER_FALLBACK'}}
+
+
+@pytest.mark.parametrize('results,hold', [([], 1), ([{'query_id': 'qX', 'action': 'USE_REWRITE'}], 1),
+                                          ([{'query_id': 'q0', 'action': 'HOLD'}], 1), ([], 4)])
+def test_partial_job_decisions_rejects(results, hold):
+    from patent_to_pilot.research.paper1_retrieval_panel import partial_job_decisions
+    from patent_to_pilot.research.mtm_runtime import InputBoundaryError
+    qs = [{'id': 'q%d' % i, 'text': 't'} for i in range(4)]
+    with pytest.raises(InputBoundaryError):
+        partial_job_decisions('rewrite', qs, results, hold)

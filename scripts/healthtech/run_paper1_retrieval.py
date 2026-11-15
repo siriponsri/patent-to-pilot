@@ -16,20 +16,37 @@ def load_arm(root, kind, pins):
     sources = []
     for k, pin in enumerate(pins):
         base = root / str(k)
-        queries_raw = (base / 'dispatch/queries.jsonl').read_bytes(); decisions_raw = (base / 'out/decisions-private.json').read_bytes()
-        if sha(queries_raw) != pin['queries_sha256'] or sha(decisions_raw) != pin['decisions_sha256']:
-            raise RuntimeError('arm job input changed')
+        queries_raw = (base / 'dispatch/queries.jsonl').read_bytes()
+        if sha(queries_raw) != pin['queries_sha256']: raise RuntimeError('arm job input changed')
         queries = [json.loads(line) for line in queries_raw.decode().splitlines() if line.strip()]
+        if 'partial' in pin:
+            # Job stopped on one query (HOLD) and wrote no decisions file; the hold query is an owner-approved
+            # original-query fallback and later queries are covered by a continuation job (S4 records).
+            from patent_to_pilot.research.paper1_retrieval_panel import partial_job_decisions
+            n = pin['partial']['hold_index']
+            raws = [(base / 'out/queries' / ('q%03d' % i) / 'result.json').read_bytes() for i in range(n)]
+            failure = (base / 'out/queries' / ('q%03d' % n) / 'failure.json').read_bytes()
+            if (sha(json.dumps([sha(r) for r in raws]).encode()) != pin['partial']['results_manifest_sha256']
+                    or sha(failure) != pin['partial']['failure_sha256'] or (base / 'out/queries' / ('q%03d' % (n + 1))).exists()
+                    or (base / 'out/decisions-private.json').exists()):
+                raise RuntimeError('partial arm job input changed')
+            queries, decisions = partial_job_decisions(kind, queries, [json.loads(r) for r in raws], n)
+        else:
+            decisions_raw = (base / 'out/decisions-private.json').read_bytes()
+            if sha(decisions_raw) != pin['decisions_sha256']: raise RuntimeError('arm job input changed')
+            decisions = json.loads(decisions_raw)
         texts = {}
         for i, q in enumerate(queries):
             folder = base / 'out/queries' / ('q%03d' % i)
+            if decisions.get(q['id'], {}).get('action') == 'ORIGINAL_QUERY_FALLBACK':
+                continue  # fallback keeps the reference ranking; no arm text is read
             if kind == 'rewrite':
                 result = json.loads((folder / 'result.json').read_bytes())
                 if result['query_id'] != q['id']: raise RuntimeError('arm result identity mismatch')
                 if result.get('text'): texts[q['id']] = result['text']
             elif (folder / 'candidate.json').exists():
                 texts[q['id']] = json.loads((folder / 'candidate.json').read_bytes()).get('selective')
-        sources.append((queries, json.loads(decisions_raw), texts))
+        sources.append((queries, decisions, texts))
     return sources
 
 

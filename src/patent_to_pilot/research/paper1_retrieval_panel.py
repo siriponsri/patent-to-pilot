@@ -69,3 +69,25 @@ def assemble(queries, texts, arm_rankings, reference_rankings):
         else:
             panel[i] = reference_rankings[i]; counts['fallback'] += 1
     return panel, counts
+
+
+def partial_job_decisions(kind, job_queries, results, hold_index):
+    """Decisions for an arm job that stopped on one query (no decisions-private.json was written).
+
+    results: parsed result.json for job queries 0..hold_index-1 (all must exist). The query at hold_index
+    raised the HOLD; under the owner decisions of 2026-11-14/15 it is an ORIGINAL_QUERY_FALLBACK and is not
+    regenerated. Queries after hold_index never started and must be covered by a continuation job.
+    Returns (covered_queries, decisions).
+    """
+    if kind not in USE_ACTIONS:
+        raise InputBoundaryError('unknown arm kind')
+    if type(hold_index) is not int or not 0 <= hold_index < len(job_queries) or len(results) != hold_index:
+        raise InputBoundaryError('partial job needs exactly one result per query before the hold')
+    decisions = {}
+    for q, r in zip(job_queries[:hold_index], results):
+        action = r.get('action') if kind == 'rewrite' else (r.get('decision') or {}).get('action')
+        if r.get('query_id') != q['id'] or action not in (USE_ACTIONS[kind], FALLBACK):
+            raise InputBoundaryError('partial job result identity or action invalid')
+        decisions[q['id']] = {'action': action, 'reason': r.get('reason')}
+    decisions[job_queries[hold_index]['id']] = {'action': FALLBACK, 'reason': 'HOLD_ENGINEERING_FAILURE_OWNER_FALLBACK'}
+    return job_queries[:hold_index + 1], decisions

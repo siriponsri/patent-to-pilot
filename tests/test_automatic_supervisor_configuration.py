@@ -123,3 +123,42 @@ def test_paper1_retrieval_mounts_are_read_only_arm_outputs_without_qrels():
     assert all(ro for t,ro in targets.items() if t not in ('/out','/models/.'+module.GPU+'.lock'))
     assert config['Cmd'][1]=='/code/scripts/healthtech/run_paper1_retrieval.py' and config['HostConfig']['NetworkMode']=='none'
     assert module.JOB_NAME.fullmatch('ptp-auto-paper1-fa-pilot-retrieval-20261113-v1') and not module.JOB_NAME.fullmatch('ptp-auto-paper1-test-retrieval-20261113-v1')
+
+
+def test_paper1_fulldev_retrieval_three_arms_with_continuations():
+    scripts=Path(__file__).resolve().parents[1]/'scripts/healthtech'
+    sys.path.insert(0,str(scripts))
+    try:
+        spec=importlib.util.spec_from_file_location('paper1_retrieval_supervisor_fd',scripts/'supervise_paper1_retrieval.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        arms={'FA':{'kind':'rewrite','jobs':[{'job':'ptp-auto-paper1-fa-fulldev-b2-20261113-v1'},{'job':'ptp-auto-paper1-fa-fulldev-b2c-20261114-v1'}]},
+              'SACR':{'kind':'sacr','jobs':[{'job':'ptp-auto-native-sacr-fulldev-b4c-20261115-v1'},{'job':'ptp-auto-native-sacr-fulldev-b4d-20261115-v2'}]}}
+        config,mounts=module.configuration(Path('/jobs/p'),1234,'a'*64,arms)
+    finally: sys.path.remove(str(scripts))
+    targets={t:ro for _,t,ro in mounts}
+    assert targets['/arm/SACR/1/out'] and targets['/arm/FA/1/dispatch']
+    assert not any('qrels' in str(s) or 'evaluation' in str(s) for s,_,_ in mounts)
+    assert module.JOB_NAME.fullmatch('ptp-auto-paper1-dev-fulldev-retrieval-20261115-v1')
+
+
+def test_paper1_retrieval_partial_arm_job(tmp_path):
+    import hashlib, json, pytest
+    scripts=Path(__file__).resolve().parents[1]/'scripts/healthtech'
+    spec=importlib.util.spec_from_file_location('paper1_retrieval_worker',scripts/'run_paper1_retrieval.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    sha=lambda b: hashlib.sha256(b).hexdigest()
+    base=tmp_path/'FA'/'0'; (base/'dispatch').mkdir(parents=True)
+    qs=[{'id':'q%d'%i,'text':'t%d'%i} for i in range(4)]
+    raw=''.join(json.dumps(q)+'\n' for q in qs).encode(); (base/'dispatch/queries.jsonl').write_bytes(raw)
+    results=[]
+    for i in range(2):
+        f=base/'out/queries'/('q%03d'%i); f.mkdir(parents=True)
+        r=json.dumps({'query_id':'q%d'%i,'action':'USE_REWRITE','text':'arm %d'%i}).encode(); (f/'result.json').write_bytes(r); results.append(r)
+    f=base/'out/queries/q002'; f.mkdir(); (f/'failure.json').write_bytes(b'{"status":"HOLD"}')
+    pin={'job':'x','queries_sha256':sha(raw),'partial':{'hold_index':2,'failure_sha256':sha(b'{"status":"HOLD"}'),
+         'results_manifest_sha256':sha(json.dumps([sha(r) for r in results]).encode())}}
+    [(covered,decisions,texts)]=module.load_arm(tmp_path/'FA','rewrite',[pin])
+    assert [q['id'] for q in covered]==['q0','q1','q2'] and texts=={'q0':'arm 0','q1':'arm 1'}
+    assert decisions['q2']['action']=='ORIGINAL_QUERY_FALLBACK'
+    (base/'out/queries/q003').mkdir()  # a started query after the hold would contradict the S4 record
+    with pytest.raises(RuntimeError): module.load_arm(tmp_path/'FA','rewrite',[pin])
