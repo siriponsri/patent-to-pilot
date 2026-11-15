@@ -1,0 +1,52 @@
+{
+  "job": "ptp-auto-native-fixture-20261115-v7",
+  "status": "PASS_AUTHORED_NATIVE_PIPELINE",
+  "docker": {
+    "Status": "exited",
+    "ExitCode": 0,
+    "OOMKilled": false,
+    "Pid": 0
+  },
+  "isolation": "PASS_BEFORE_START",
+  "authored_backend_invocations": 5,
+  "grammar_tokens_checked": 626,
+  "decision": {
+    "screened_candidates": 1,
+    "fallbacks": 2,
+    "grammar_refused": 2,
+    "reasons": {
+      "AUTOMATIC_SCREEN_COMPLETED": 1,
+      "GRAMMAR_REFUSED": 2
+    }
+  },
+  "marking_input_tokens": 1412,
+  "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+  "mocked_boundaries": [
+    "GPU_slot_and_window",
+    "model_weight_observer",
+    "model_loader",
+    "CUDA_telemetry",
+    "device_to_cpu",
+    "LMFE_fallback_EOS_state_for_q2_marking_and_q3_review"
+  ],
+  "actual_boundaries": [
+    "worker_main",
+    "declaration_package_KM_tokenizer_decoder_checks",
+    "tokenizer",
+    "grammar_EOS",
+    "request_bound_executor",
+    "executor_adapter",
+    "call_markers",
+    "run_query",
+    "CompleteJsonEOSGuard_refusal",
+    "private_diagnostics",
+    "grammar_refusal_classification"
+  ],
+  "real_model_calls": 0,
+  "gpu_seconds": 0,
+  "worker_cpu_seconds": 23.060872333,
+  "controller_cpu_seconds": 0.206605183,
+  "whole_wall_seconds": 25.42099730996415,
+  "cpu_booking": "120 s remote upper bound + segment 50 local (103 s); no refund",
+  "scope": "qualifies the SACR worker repair (owner decision A extended to SACR): a verified grammar refusal in the real EOS guard, in the marking call (query 2) and in the review call (query 3), becomes an ORIGINAL_QUERY_FALLBACK (GRAMMAR_REFUSED) and the batch continues; the LMFE fallback-EOS states are declared mocked boundaries. Grammar mechanics and control flow only; no model-output quality claim."
+}

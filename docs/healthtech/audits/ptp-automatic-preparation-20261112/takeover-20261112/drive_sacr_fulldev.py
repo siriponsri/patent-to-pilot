@@ -1,9 +1,10 @@
 """Paper 1 S4 SACR full-dev sequential driver (derived from drive_paper1_s4_v2.py): freeze_sacr_fulldev_v2 ->
 start ONCE -> wait terminal -> verify -> settle ONCE -> commit+push, for each batch in order.
 
-Usage: python drive_sacr_fulldev.py 1 2 3 4 5 6   (79 queries x <=2 calls per batch)
-The SACR worker HOLDs on ANY backend exception (owner decision A covered only the FA/GR worker), so a grammar
-refusal stops the batch and the driver; that needs the owner. Stops at the first anomaly; never retries, never
+Usage: python drive_sacr_fulldev.py 1 2 3 4 5 6   (79 queries x <=2 calls per batch; b1-b4 done)
+       python drive_sacr_fulldev.py 4c 5 6       (repaired worker, freeze_sacr_fulldev_v3.py; owner decision A for SACR)
+Items 4c/5/6: a verified grammar refusal is a per-query fallback (GRAMMAR_REFUSED), so the settlement shows
+calls_complete=false with known_calls + grammar_refused == call slots; any other anomaly stops the driver. Stops at the first anomaly; never retries, never
 restarts a launched job, settles once. Resume: launch.json present but no settlement.json -> observe with
 native_control.py and settle by hand, then rerun with the remaining batches.
 """
@@ -48,7 +49,8 @@ def observe(sub):
 for item in sys.argv[1:]:
     sub = 'sacr-fulldev-b%s' % item
     assert not (A/sub).exists(), sub + ' already frozen; resume by hand'
-    summary = json.loads(run(['python', str(A/'freeze_sacr_fulldev_v2.py'), item]).splitlines()[0])
+    freeze = 'freeze_sacr_fulldev_v3.py' if item in ('4c', '5', '6') else 'freeze_sacr_fulldev_v2.py'
+    summary = json.loads(run(['python', str(A/freeze), item]).splitlines()[0])
     name, n = summary['job'], summary['queries']
     assert summary['status'] == 'STAGED_QUALIFIED_NOT_LAUNCHED'
     log(event='FROZEN', job=name, generation=summary['journal_generation'], queries=n, dev_rows=summary['dev_rows'])
@@ -69,11 +71,12 @@ for item in sys.argv[1:]:
         wall=v['terminal'].get('whole_wall_seconds'), completion=c, worker_failure=v.get('worker_failure'))
     settled = json.loads(run(['python', str(A/'settle_synthetic.py'), name, sub]).splitlines()[0])
     cost = settled['study']['stage_costs'][name]
-    calls_ok = bool(c) and cost['calls_complete'] is True and cost['known_calls'] == c['call_slots_consumed']
+    refused = (c or {}).get('grammar_refused', 0)
+    calls_ok = bool(c) and cost['known_calls'] + refused == c['call_slots_consumed'] and (cost['calls_complete'] is True) == (refused == 0)
     log(event='SETTLED', job=name, generation=settled['generation'], study=settled['study']['status'], cost=cost, calls_accounting_ok=calls_ok,
         gpu_charged=settled['gpu_charged'], model_calls=settled['model_calls'])
     git_checkpoint('Paper 1 S4 SACR full-dev b%s settled (gen %d): %s' % (item, settled['generation'],
-                   'screened %d, fallback %d, %d calls, %d s' % (c['screened_candidates'], c['fallbacks'], c['call_slots_consumed'], cost['seconds'])
+                   'screened %d, fallback %d (refused %d), %d calls, %d s' % (c['screened_candidates'], c['fallbacks'], refused, c['call_slots_consumed'], cost['seconds'])
                    if ok and calls_ok else 'ANOMALY - stopped'))
     if not ok or not calls_ok or settled['study']['status'] != 'IDLE' or settled['approved_gpu_occupied']:
         log(event='STOPPED_OWNER_DECISION_REQUIRED', job=name); sys.exit(2)
