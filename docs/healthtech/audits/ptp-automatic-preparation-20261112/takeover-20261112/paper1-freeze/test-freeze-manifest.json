@@ -1,0 +1,211 @@
+{
+  "status": "PAPER1_TEST_FREEZE_S7",
+  "date": "2026-11-15",
+  "owner_go": "owner-paper1-test-go-approval.json",
+  "owner_go_sha256": "c07b41913500241dd87c1fc944b5d3d60741f196322d8be490b633dde428439e",
+  "frozen_commit": "30e41f1333ca38d4685b6c0d972ca4a841ced97c",
+  "base_freeze_manifest_sha256": "00a730d94c35138b75c12c023531c7f89c09598e40566f7ae3336452de7c2559",
+  "amendment_a1_sha256": "7a7a83f6873ed8fed7cf8a393ca64bc7f337880a8299ba3ec3e5fa280276a5ea",
+  "files_sha256": {
+    "docs/healthtech/research/plans/PAPER1-ACQUISITION-PROTOCOL-DRAFT-20261113.md": "21d34e773ab705eacd9246b549a2362d4ec2aa0ba981fbd1185e705af2845b79",
+    "docs/healthtech/research/plans/PATENT-STRUCTURE-KM.md": "4af3628e1b0dd0c7883c6741cbba8884063164149250125af748c1edfc8e3281",
+    "scripts/healthtech/run_automatic_native.py": "029eb4e0b352d42bb3ec3713f5ddbf6d08d3ea292e1453d20b0a9cb774454f77",
+    "scripts/healthtech/run_dapfam_native_baseline.py": "338b40ab7066738289c60e68748f68e36036666814a65a37e66940b47081653c",
+    "scripts/healthtech/run_paper1_dev_eval.py": "9bd1aa3b147b12cf79825a7cdfe0b2d283bca6f7a537b7d268d043a49085fdfb",
+    "scripts/healthtech/run_paper1_retrieval.py": "db760c4a882b84cb229c0aa88a17d7b5767131e440203f99620383cf1c73f7cc",
+    "scripts/healthtech/run_paper1_rewrite.py": "4606fa682a1173d019bce39ef08fbb6d0805315eeea7fb92585d576c7255bb22",
+    "src/patent_to_pilot/evaluation/dapfam_native.py": "4e65e59d81fbef901a87eee80d81f4df2e5b5ee1cc446a27031e9dcb0a72db34",
+    "src/patent_to_pilot/evaluation/dapfam_staging.py": "73cefba81845e7358ef30dce0c18d29b336ed82720b427194ce6e3fea1ce2abb",
+    "src/patent_to_pilot/research/automatic_dispatch_journal.py": "916745d2abcbff93529610c89356c7ace1dc51fe1673cc48e7efd3f01fbb2671",
+    "src/patent_to_pilot/research/km_automatic_review.py": "f13d1db2ee3615c3ed5ea226647e6a2875ea2cd25de80e3c49ced68fa7d04e8c",
+    "src/patent_to_pilot/research/native_dense_ranking.py": "8d7d85acafcb135cf9d05664434e0766775f6a6e9e521b0affa2c926919ca686",
+    "src/patent_to_pilot/research/paper1_analysis.py": "e1e56244ddff1a7514df0e8bf7c00eeb4fc2de3086d1d10c3797e690d6c02c10",
+    "src/patent_to_pilot/research/paper1_controls.py": "95f1f9d6c42f8810f73aefeee1fced8fc7484d79ba6dc7e05e9f0de0a0538f23",
+    "src/patent_to_pilot/research/paper1_dev_eval.py": "df643a6c231cf031a731ebf4fba8c46208254fd98d61a75d638e1b1a36c29391",
+    "src/patent_to_pilot/research/paper1_retrieval_panel.py": "2cd96b7c1a224f430c2ed5e8becd24b77bf7a4bbd1477de852c279012af3064e",
+    "src/patent_to_pilot/research/paper1_rewrite_arms.py": "1f9caa015807d86bbf0e9f24a57aba82b52b1a6887b8daaf2e6322bb5fb06b46",
+    "src/patent_to_pilot/research/paper1_rewrite_runner.py": "30cfedefb69cf9d61be4efaf964a2f5350c9bef526743cb99ea6eadadf56da33",
+    "src/patent_to_pilot/research/patent_structure_marking.py": "2aed26e59abfe17097bcb71c0d11000f14f693cd7318c515a88034b01ed1cb95",
+    "src/patent_to_pilot/research/r6_backend.py": "739e9fe8952f94c2cd1566551938e6c5d3e98b4f8317845a1ce0f00a958d08c6",
+    "src/patent_to_pilot/research/sacr_automatic_runner.py": "fed18c9ea58a51eea8ba1b4d7dc775e604c8c4740e3aaad6991b0fc4de8aecad",
+    "tests/test_paper1_frozen_arms.py": "05ec2a655e30de90eb1103da1bc0654b7a84363a40d08fcb92935cced665f33e"
+  },
+  "files_changed_since_base_freeze": {
+    "docs/healthtech/research/plans/PAPER1-ACQUISITION-PROTOCOL-DRAFT-20261113.md": {
+      "base": "065c4def7c1117e23aaf9538e963848a092c93b575a27d12a5285172833988b5",
+      "now": "21d34e773ab705eacd9246b549a2362d4ec2aa0ba981fbd1185e705af2845b79"
+    },
+    "src/patent_to_pilot/research/sacr_automatic_runner.py": {
+      "base": "4d235180893de1cfef47d68056cfe5bca65a7b113d8966f21fcddf1e1f6d4fd0",
+      "now": "fed18c9ea58a51eea8ba1b4d7dc775e604c8c4740e3aaad6991b0fc4de8aecad"
+    }
+  },
+  "changes_since_base_freeze_are_engineering_only": "owner-approved fallback rules (GRAMMAR_REFUSED 2026-11-14/15, GRAMMAR_NO_CONTINUATION 2026-11-15) in sacr_automatic_runner; journal test stage; no change to arms, prompts, schemas, delta, margins, endpoints, fusion or gatekeeping",
+  "arms": {
+    "B0": {
+      "rankings_sha256": "26cfc1e0b9aa02477ca367cb07faee65d37f5e994e1625f29facbee2e007fb29",
+      "status": "measured dev"
+    },
+    "SACR": {
+      "configuration": "native v5 (marking v5 + review v3)",
+      "native_v5_configuration_sha256": "d1fa66a2b2bb1ef79b89ec14e9e3352a8f307eda9fb815a5af3fd805f3af27f8",
+      "km_sha256": "4af3628e1b0dd0c7883c6741cbba8884063164149250125af748c1edfc8e3281",
+      "input_token_cap": 5800,
+      "max_consecutive_whitespaces": 48,
+      "force_json_field_order": true,
+      "max_calls_per_query": 2
+    },
+    "FA": {
+      "version": "paper1-functional-abstraction-v1",
+      "system_prompt_sha256": "4b84316b10ceabb2603bf1e526ee842cf3c5ec6a16b41c4bb6bd111d890dfdeb",
+      "probe_request_sha256": "dbf870bf55fc8aa9ad763f984d1cb16ebf4208b82aed8b6aa68cea73195c7679",
+      "field_max_chars": 500,
+      "fields": [
+        "function",
+        "mechanism",
+        "problem",
+        "conditions"
+      ],
+      "calls_per_query": 1
+    },
+    "GR": {
+      "version": "paper1-generic-rewrite-v1",
+      "system_prompt_sha256": "32c41441527c5fe097f5858bdf175623f4b662164c311fb1460e6d7334538049",
+      "probe_request_sha256": "c48236cd5c00dcc6f89969546eef57391a56cda8ae073bca18fc21c228c7ffdb",
+      "max_chars": 2000,
+      "calls_per_query": 1
+    },
+    "fusion": {
+      "method": "RRF",
+      "k": 60,
+      "depth": 200,
+      "ties": "better B0 rank (absent last), then family id",
+      "systems": [
+        "F-SACR",
+        "F-GR",
+        "F-FA"
+      ]
+    }
+  },
+  "generation_runtime": {
+    "model_sha256": "5b4f4a7317919979affc88df9837a6741ffa6715bf39d9516fe6cd4816ac9ac2",
+    "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "lmfe_source_sha256": {
+      "tokenenforcer.py": "1ec82ff410cdafb89b5d9455cef15d6dc4c9741b439f35752f3f5ed289990d91",
+      "tokenizerprefixtree.py": "7ac7275143ffc775902e2318cd5d16f94e672c16c541c62b380bee3f1975157e",
+      "jsonschemaparser.py": "6bc4a8a10621c6d38d70ebb5ae1dc21aaa98c0454a2e80be1896586f10dccf94",
+      "characterlevelparser.py": "3e8e1773a2ed3078e9ab44f3aacb438f9529e6fd03bee37684fc0c40a51cab0a",
+      "integrations/transformers.py": "07fa6f13d210d5c926216e467011cb110e08298bcaa2408464a389843a6d360e"
+    },
+    "input_token_cap": 5800,
+    "max_consecutive_whitespaces": 48,
+    "force_json_field_order": true
+  },
+  "retrieval_runtime": {
+    "encoder": "PatEmbed-large (MeanPoolEncoder, batch 32, tf32 off)",
+    "query_prefix": "encode query for different document retrieval: ",
+    "passage_vectors_sha256": "9a385bcfd0aab6c4c19f2a8715824922d42d328c53f0da58857b0106ed4f0137",
+    "aggregation": "rank_maxp full-universe tie sort",
+    "depth": 200,
+    "corpus_reencoding": false
+  },
+  "sacr_configuration": "native v5 (marking v5, review v3) = SACR full_dev configuration v3 except stage",
+  "sacr_full_dev_v3_configuration_sha256": "ed27a5b9ecd561a58ce83036b251fe3e823718ad8a912db5046a9a6c2521559d",
+  "fusion": {
+    "rrf_k": 60,
+    "depth": 200,
+    "ties": "better B0 rank (absent last), then family id"
+  },
+  "evaluator": {
+    "native_evaluator": "src/patent_to_pilot/evaluation/dapfam_native.py",
+    "analysis": "src/patent_to_pilot/research/paper1_dev_eval.py confirmatory()",
+    "run_once": true
+  },
+  "analysis": {
+    "primary": "OUT Recall@200 macro over eligible queries; missing output = 0",
+    "gatekeeping": [
+      [
+        "H1",
+        "F-FA",
+        "B0"
+      ],
+      [
+        "H2",
+        "F-FA",
+        "F-GR"
+      ],
+      [
+        "H3",
+        "F-FA",
+        "F-SACR"
+      ]
+    ],
+    "alpha_two_sided": 0.05,
+    "equivalence_margin": 0.01,
+    "noninferiority_margin_IN_ALL": 0.02,
+    "ci": "percentile cluster bootstrap over query-positive-target components",
+    "bootstrap_resamples": 10000,
+    "randomization_resamples": 10000,
+    "seed": 20261113,
+    "sensitivity": "query-level bootstrap + sign-flip test if largest component > 50% of queries",
+    "secondary_descriptive": [
+      "Recall@100",
+      "nDCG@10",
+      "nDCG@100",
+      "ALL/IN/OUT",
+      "exposure@200",
+      "exposure strata",
+      "rescue/displacement",
+      "wins/losses/ties",
+      "first-positive rank bins",
+      "unjudged share top-10",
+      "FA/GR lexical descriptives",
+      "failures",
+      "costs"
+    ]
+  },
+  "test_inputs": {
+    "queries": 773,
+    "queries_ta_sha256": "289cdc311e0a5ecb5e3f3b443a5139f218eb9261255a3fed8638fdbb45eadc59",
+    "runtime_manifest_sha256": "828360d04bb5af2ec6b440a7eb1bc4c99dc1a7dfb846327ac6e6ae936ff56611",
+    "evaluator_manifest_sha256": "487d1a7f35de0ea2f504d98bfb865c2d9000243c8e1a632639f04e8482c478c0",
+    "qrels": "sealed in test-evaluation/; opened once by the final evaluator",
+    "source_sha256": {
+      "corpus.parquet": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6",
+      "queries.parquet": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe",
+      "qrels_all.parquet": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74",
+      "split.json": "dd76c019ee74c8d256e182ecfb329f9235638c1ecf9d2c7b1fa8073c4958e6dc"
+    }
+  },
+  "stage_envelope_test": {
+    "seconds": 10800,
+    "maximum_calls": 158
+  },
+  "predecessor_rule": "test <- settled full_dev with complete calls",
+  "batching": {
+    "FA": "5 batches (4x158 + 141)",
+    "GR": "5 batches (4x158 + 141)",
+    "SACR": "10 batches (9x79 + 62)",
+    "order": "FA, GR, SACR, then one retrieval job, then one CPU evaluation; one GPU job at a time"
+  },
+  "failure_rules": {
+    "unusable_output": "original-query fallback; query kept in denominator",
+    "backend_unknown_state": "HOLD; never retried automatically",
+    "input_over_cap": "fallback (INPUT_LIMIT)",
+    "revision": "at most one prompt/schema revision, only for an engineering failure on authored synthetic text",
+    "outcome_driven_retry": false,
+    "grammar_refusal": "ORIGINAL_QUERY_FALLBACK (GRAMMAR_REFUSED), batch continues",
+    "grammar_dead_end": "ORIGINAL_QUERY_FALLBACK (GRAMMAR_NO_CONTINUATION), batch continues",
+    "hold": "stops the batch; owner decides; never retried automatically"
+  },
+  "disclosures": [
+    "B0 dev measured",
+    "SACR pilot-20 dev evaluated before drafting (0 OUT rescues)",
+    "R1-R7 history",
+    "Graph G2 FAIL and post-hoc owner override",
+    "new arms never run on DAPFAM at freeze",
+    "test split unopened",
+    "S5 dev results seen before this freeze (PAPER1-S5-SUMMARY.json sha256 0baf5eb24082081b6f8b06713bc06372d769eb50880e2bf9925029adb30a7592): F-FA ~ B0 on OUT, harms IN; nothing in this freeze was changed after seeing them"
+  ]
+}
