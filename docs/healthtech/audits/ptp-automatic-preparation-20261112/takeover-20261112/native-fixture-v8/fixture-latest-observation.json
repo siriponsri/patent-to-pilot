@@ -1,0 +1,17 @@
+{
+  "job": "ptp-auto-native-fixture-20261115-v8",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 220694,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-15T01:07:08.72311284Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START"
+}

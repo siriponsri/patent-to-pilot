@@ -1,0 +1,20 @@
+{
+  "generation": 166,
+  "ledger_sha256": "d1d0cccf1090c46f6635c3b802f0e4988f27fe2c7f958938771a314ca4a55677",
+  "cpu_remaining_seconds": 26133.153622190002,
+  "segment": 52,
+  "segment_seconds": 106,
+  "package_sha256": "0b13e58cbdf02e17b52904d0297eb4c8545ebcb52b3015cd4fca6f5792d2cf71",
+  "jobs": {
+    "fixture": {
+      "job": "ptp-auto-native-fixture-20261115-v8",
+      "supervisor": "supervise_automatic_native_fixture.py",
+      "declaration_sha256": "4c0bd5024a4c52de9c888b4353c346660209cd797c60d7f959f56a02cb26bd5d",
+      "transport": {
+        "bytes": 1955840,
+        "sha256": "a4e879893343089d4ae176950ea918333c49c71e22a61fe75dd5e372ea821cb4",
+        "files": 244
+      }
+    }
+  }
+}

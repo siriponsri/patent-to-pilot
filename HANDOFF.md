@@ -1,5 +1,25 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## Paper 1 S4 SACR RESUMED (2nd): dead-end fallback added, fixture v8 PASS; driver running 4d 5 6 2026-11-15T09:10+07:00
+
+This section supersedes the "SACR STOPPED again" section below (its b4c facts remain valid). Owner answered "A: ขยายกติกา" (owner-sacr-s4-dead-end-approval.json).
+
+Repair (engineering; arms/prompts/schemas/marking v5/review v3/delta/gatekeeping unchanged):
+- sacr_automatic_runner.classify_sacr_grammar_failure: verified EOS-guard refusal (kind REFUSED -> reason GRAMMAR_REFUSED) OR verified grammar dead end 'grammar has no continuation' (same checks: grammar-callback stage, 1 invocation, 0 returns -> reason GRAMMAR_NO_CONTINUATION). Both -> ORIGINAL_QUERY_FALLBACK, batch continues; every other exception HOLDs. run_automatic_native.py uses it; completion.json adds grammar_no_continuation.
+- Tests: tests/test_sacr_automatic_runner.py now 11 (targeted suites 40 PASS, 4 skipped).
+- CPU fixture v8 (ptp-auto-native-fixture-20261115-v8): PASS_AUTHORED_NATIVE_PIPELINE, exit 0; 5 invocations; q2 marking refused by the REAL guard (GRAMMAR_REFUSED), q3 review dead end raised by the REAL guard (GRAMMAR_NO_CONTINUATION), batch continued. Bookings segment 52 (106 s) + 120 s at generation 166. Receipt native-fixture-v8/fixture-v8-result.json. (Fixture v7 also PASS, refusal-only.)
+- SACR full_dev configuration v3; first v4 freeze appends authority amendment round 'sacr-full-dev-dead-end'.
+- Job names: ptp-auto-native-sacr-fulldev-{b4d,b5,b6}-20261115-v2 (allowlisted).
+
+Running now: local background driver `python takeover-20261112/drive_sacr_fulldev.py 4d 5 6` (freeze_sacr_fulldev_v4.py; log paper1-s4-progress.jsonl).
+- 4d = dev rows 281..315 (35 never-started b4c queries). Dev rows 259 and 280 stay ORIGINAL_QUERY_FALLBACK and are NOT regenerated. S5 must read SACR b4 = 22 results + row 259 fallback, b4c = 20 results + row 280 fallback, then b4d.
+- About 1 h (4d) + about 2.1 h each for b5/b6; about 5.3 h total.
+- Refusals and dead ends are no longer anomalies (known_calls + grammar_refused + grammar_no_continuation == call slots). Any other anomaly stops the driver.
+- If this session dies: read paper1-s4-progress.jsonl; LAUNCHED without SETTLED -> do NOT start again; observe `native_control.py observe sacr-fulldev-b<item>`, settle once `settle_synthetic.py ptp-auto-native-sacr-fulldev-b<item>-20261115-v2 sacr-fulldev-b<item>`, then rerun drive_sacr_fulldev.py with the remaining items.
+
+After the driver: apply the 52 GiB disk cap amendment, then S5 and the S6 owner stop.
+
+
 ## Paper 1 S4 SACR STOPPED again: b4c review call hit 'grammar has no continuation' at dev row 280; owner decision needed 2026-11-15T08:30+07:00
 
 This section supersedes the "SACR RESUMED" section below (its repair/fixture facts remain valid). Journal generation 164, IDLE, active null. Nothing running. Do NOT rerun the driver or any SACR batch without the owner.

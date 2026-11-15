@@ -1,0 +1,102 @@
+{
+  "job": "ptp-auto-native-fixture-20261115-v8",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-15T01:07:08.72311284Z",
+    "FinishedAt": "2026-11-15T01:07:33.683736421Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-native-fixture-20261115-v8",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-15T01:07:08.72311284Z",
+      "FinishedAt": "2026-11-15T01:07:33.683736421Z"
+    },
+    "whole_wall_seconds": 25.447691409033723,
+    "controller_cpu_seconds": 0.237397334
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "receipt": {
+    "status": "PASS_AUTHORED_NATIVE_PIPELINE",
+    "real_model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "authored_backend_invocations": 5,
+    "grammar_tokens_checked": 626,
+    "decision": {
+      "screened_candidates": 1,
+      "fallbacks": 2,
+      "grammar_refused": 1,
+      "grammar_no_continuation": 1,
+      "reasons": {
+        "AUTOMATIC_SCREEN_COMPLETED": 1,
+        "GRAMMAR_NO_CONTINUATION": 1,
+        "GRAMMAR_REFUSED": 1
+      }
+    },
+    "marking_input_tokens": 1412,
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "mocked_boundaries": [
+      "GPU_slot_and_window",
+      "model_weight_observer",
+      "model_loader",
+      "CUDA_telemetry",
+      "device_to_cpu",
+      "LMFE_fallback_EOS_state_for_q2_marking",
+      "LMFE_dead_end_state_for_q3_review"
+    ],
+    "actual_boundaries": [
+      "worker_main",
+      "declaration_package_KM_tokenizer_decoder_checks",
+      "tokenizer",
+      "grammar_EOS",
+      "request_bound_executor",
+      "executor_adapter",
+      "call_markers",
+      "run_query",
+      "CompleteJsonEOSGuard_refusal",
+      "private_diagnostics",
+      "grammar_refusal_classification"
+    ],
+    "wall_seconds": 23.17888227495132,
+    "cpu_seconds": 22.996194113,
+    "worker_peak_rss_bytes": 1019461632
+  },
+  "completion": {
+    "status": "PIPELINE_TERMINAL",
+    "queries": 3,
+    "screened_candidates": 1,
+    "fallbacks": 2,
+    "grammar_refused": 1,
+    "grammar_no_continuation": 1,
+    "reasons": {
+      "AUTOMATIC_SCREEN_COMPLETED": 1,
+      "GRAMMAR_NO_CONTINUATION": 1,
+      "GRAMMAR_REFUSED": 1
+    },
+    "call_slots_consumed": 5,
+    "wall_seconds": 17.795206994982436,
+    "process_cpu_seconds": 23.487244864,
+    "semantic_certified": false
+  }
+}

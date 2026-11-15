@@ -2,7 +2,8 @@
 start ONCE -> wait terminal -> verify -> settle ONCE -> commit+push, for each batch in order.
 
 Usage: python drive_sacr_fulldev.py 1 2 3 4 5 6   (79 queries x <=2 calls per batch; b1-b4 done)
-       python drive_sacr_fulldev.py 4c 5 6       (repaired worker, freeze_sacr_fulldev_v3.py; owner decision A for SACR)
+       python drive_sacr_fulldev.py 4c 5 6       (repaired worker, freeze_sacr_fulldev_v3.py; owner decision A for SACR; stopped at b4c)
+       python drive_sacr_fulldev.py 4d 5 6       (freeze_sacr_fulldev_v4.py; + grammar dead-end fallback)
 Items 4c/5/6: a verified grammar refusal is a per-query fallback (GRAMMAR_REFUSED), so the settlement shows
 calls_complete=false with known_calls + grammar_refused == call slots; any other anomaly stops the driver. Stops at the first anomaly; never retries, never
 restarts a launched job, settles once. Resume: launch.json present but no settlement.json -> observe with
@@ -49,7 +50,8 @@ def observe(sub):
 for item in sys.argv[1:]:
     sub = 'sacr-fulldev-b%s' % item
     assert not (A/sub).exists(), sub + ' already frozen; resume by hand'
-    freeze = 'freeze_sacr_fulldev_v3.py' if item in ('4c', '5', '6') else 'freeze_sacr_fulldev_v2.py'
+    freeze = {'4c': 'freeze_sacr_fulldev_v3.py', '4d': 'freeze_sacr_fulldev_v4.py', '5': 'freeze_sacr_fulldev_v4.py',
+              '6': 'freeze_sacr_fulldev_v4.py'}.get(item, 'freeze_sacr_fulldev_v2.py')
     summary = json.loads(run(['python', str(A/freeze), item]).splitlines()[0])
     name, n = summary['job'], summary['queries']
     assert summary['status'] == 'STAGED_QUALIFIED_NOT_LAUNCHED'
@@ -71,7 +73,7 @@ for item in sys.argv[1:]:
         wall=v['terminal'].get('whole_wall_seconds'), completion=c, worker_failure=v.get('worker_failure'))
     settled = json.loads(run(['python', str(A/'settle_synthetic.py'), name, sub]).splitlines()[0])
     cost = settled['study']['stage_costs'][name]
-    refused = (c or {}).get('grammar_refused', 0)
+    refused = (c or {}).get('grammar_refused', 0) + (c or {}).get('grammar_no_continuation', 0)
     calls_ok = bool(c) and cost['known_calls'] + refused == c['call_slots_consumed'] and (cost['calls_complete'] is True) == (refused == 0)
     log(event='SETTLED', job=name, generation=settled['generation'], study=settled['study']['status'], cost=cost, calls_accounting_ok=calls_ok,
         gpu_charged=settled['gpu_charged'], model_calls=settled['model_calls'])
