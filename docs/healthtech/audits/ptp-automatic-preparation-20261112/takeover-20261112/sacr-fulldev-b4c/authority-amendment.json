@@ -1,0 +1,14 @@
+{
+  "kind": "AUTHORITY_AMENDMENT",
+  "owner_approval_sha256": "90265a2d900b595aebe74a436576ae5ba26f31e32c7f79dc78a9f61a08f7ced2",
+  "evidence_sha256": "c2c974c6f4e969423aa0eedac66eba825883d695bb59ca99caee4ccbe6f2e052",
+  "add_configuration_sha256": [
+    "fda8573f45ab08cf1da6267eb263193bde87cb05a9da301724c834a1e130d861"
+  ],
+  "additional_synthetic_attempts": 0,
+  "round": "sacr-full-dev-refusal",
+  "authority_sha256": "4e2b0888c3097c62b321d449a4c1a7e373c5ef5dfa8dc5687773547e995125b5",
+  "ledger_sha256": "061aee780510359e1d9a62be31dab870f0015cc202b73692d7280c66a5e42d80",
+  "scope_sha256": "88754ceb8535e75d9816bd5137cd030912f67f419511f1b934fc9c2b7695ab4c",
+  "reason": "owner decision A extended to SACR (2026-11-15): verified grammar refusal -> original-query fallback; SACR full-dev v2 configuration for b4c/b5/b6"
+}
