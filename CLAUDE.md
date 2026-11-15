@@ -1,5 +1,21 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Paper 1 S7 FROZEN, S8 test generation driver RUNNING (owner go: option a) 2026-11-15T15:40+07:00
+
+This section supersedes the "S5 COMPLETE; STOPPED at S6" section below. Owner chose protocol section 8 option (a) (owner-paper1-test-go-approval.json; an earlier "Stop: dev-only report" click was interrupted and replaced by the owner).
+
+S7 (engineering + freeze; arms/prompts/delta/margins/endpoints/fusion/gatekeeping unchanged):
+- Test split staged ONCE locally (stage_dapfam_native_test.py, dapfam_staging split='test'): 773 test queries, corpus bytes verified, dev side not exported. Private: sibling _private_artifacts/healthtech/ptp-dapfam-native-test-20261115-v1 (runtime-test/queries-ta.jsonl sha 289cdc31...; test-evaluation/qrels-test.jsonl SEALED, not read, opened once by the final evaluator). Receipt paper1-s8-staging/test-staging-receipt.json. Only the test QUERY file was copied to remote ptp-paper1-test-inputs-20261115-v1 (read-only).
+- Journal: PREDECESSOR test <- full_dev; claim/live admission accept 'test'; workers/supervisors accept stage test, allowlist ptp-auto-paper1-{fa,gr}-test-b{1..5}-20261115-v1, ptp-auto-native-sacr-test-b{1..10}-20261115-v1, retrieval ptp-auto-paper1-all-test-retrieval-20261115-v1; controller CPU 900 s for test jobs.
+- Evaluator: paper1_dev_eval.confirmatory() = frozen gatekeep/interpret/noninferior; run_paper1_dev_eval.py kind paper1-test-eval (job ptp-auto-paper1-test-eval-20261115-v1, ONCE).
+- Freeze manifest paper1-freeze/test-freeze-manifest.json (section 11). Test configurations = the full-dev configuration files with only stage/batching changed (test_configs.py). First S8 freeze appends authority amendment round 'paper1-s7-test' (test envelope {10800 s, 158 calls} + FA/GR/SACR/retrieval test configurations).
+
+Running now: `python takeover-20261112/drive_paper1_s8.py FA:1..5 GR:1..5 SACR:1..10` (freeze_paper1_s8.py per item; log paper1-s8-progress.jsonl). Estimate: FA about 5.2 h, GR about 5 h, SACR about 20 h; about 30 h of GPU in total, one job at a time.
+- FA/GR HOLD on anything except a verified grammar refusal (decision A); SACR also falls back on a verified dead end. Any other anomaly stops the driver (STOPPED_OWNER_DECISION_REQUIRED) -> owner.
+- If this session dies: read paper1-s8-progress.jsonl; LAUNCHED without SETTLED -> do NOT start again; observe `native_control.py observe paper1-s8-<arm>-b<n>`, settle once `settle_synthetic.py <job> paper1-s8-<arm>-b<n>`, then rerun drive_paper1_s8.py with the remaining items.
+After the driver: one test retrieval job (all three arms; freeze helper still to write, derived from freeze_paper1_s5_retrieval.py with stage test), then the single CPU test evaluation, then the final owner report.
+
+
 ## Paper 1 S5 COMPLETE (dev, descriptive); STOPPED at S6 owner checkpoint 2026-11-15T14:45+07:00
 
 This section supersedes the "S4 COMPLETE ... S5 RUNNING" section below. Journal generation 183, IDLE, nothing running. Summary: takeover-20261112/PAPER1-S5-SUMMARY.json.
