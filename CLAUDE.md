@@ -1,5 +1,26 @@
 # Claude continuation instructions for Patent-to-Pilot
 
+## Paper 1 S4 COMPLETE; disk cap 52 GiB applied; S5 full-dev retrieval RUNNING 2026-11-15T14:10+07:00
+
+This section supersedes the "SACR RESUMED (2nd)" section below.
+
+S4 complete (all 474 dev queries have a decision in every arm):
+- SACR b4d: 34 screened + 1 fallback (gen 170). b5: 79/79 (gen 173, 7372 s). b6: 77 screened + 2 fallback, one of them GRAMMAR_NO_CONTINUATION (gen 176, 7083 s). Driver DRIVER_COMPLETE.
+- Arm totals: FA 473 used + 1 fallback; GR 473 + 1; SACR 468 + 6 (b2 1, b4 hold row 259, b4c hold row 280, b4d 1, b6 2).
+- Totals after S4: GPU charged 90,771.6 s; model_calls 2,177 (lower bound).
+
+Disk cap: automatic_disk_cap.py + tests in src/tests (commit 074cf6f); applied ONCE at gen 177 (apply_disk_cap.py; receipt disk-cap-amendment-receipt.json, result disk-cap-amendment-result.json): 40 -> 52 GiB, every other ledger field unchanged. Do NOT rerun (the chain is exhausted; the script refuses).
+
+S5 code (commit after 074cf6f; tests PASS):
+- run_paper1_retrieval.py: arm jobs pinned as 'partial' when an S4 job stopped on one query (FA b2 hold 101, SACR b4 hold 22, SACR b4c hold 20): result.json manifest + failure file pinned; the hold query = owner-approved ORIGINAL_QUERY_FALLBACK (paper1_retrieval_panel.partial_job_decisions); later queries come from the continuation job.
+- supervise_paper1_retrieval.py: allowlist for 20261114/15 names and b2c/b4c/b4d; controller CPU 900 s for full-dev.
+- paper1_dev_eval.py + run_paper1_dev_eval.py + supervise_paper1_dev_eval.py: CPU evaluator. B0, FA/GR/SACR panels, F-FA/F-GR/F-SACR/F-shuffle (RRF k=60 depth 200); native evaluator metrics; paired primary deltas with descriptive cluster bootstrap and paired SD/MDE (n=556); exposure strata; first-positive bins; unjudged top-10 share; C1 refusal; C3 sensitivity. No gatekeeping verdicts, no significance claims (protocol section 6).
+
+Running now: ptp-auto-paper1-dev-fulldev-retrieval-20261115-v1 (one job, FA+GR+SACR; stage full_dev, 3600 s; frozen gen 180 incl. authority amendment round 'paper1-s5'; declaration c7214f97...). Launched 14:06.
+- If this session dies: do NOT start again. Observe `native_control.py observe paper1-s5-retrieval`; settle once `settle_synthetic.py ptp-auto-paper1-dev-fulldev-retrieval-20261115-v1 paper1-s5-retrieval`.
+- Then check C1 (all three arms MOVEMENT_PRESENT; a fault stops before evaluation), run `freeze_paper1_s5_eval.py` (CPU job ptp-auto-paper1-dev-eval-20261115-v1, booking 660 s), start with cpu_v2_control.py/native_control.py using its freeze summary, then write the S6 owner summary (Thai). No protected test access.
+
+
 ## Paper 1 S4 SACR RESUMED (2nd): dead-end fallback added, fixture v8 PASS; driver running 4d 5 6 2026-11-15T09:10+07:00
 
 This section supersedes the "SACR STOPPED again" section below (its b4c facts remain valid). Owner answered "A: ขยายกติกา" (owner-sacr-s4-dead-end-approval.json).
