@@ -1,0 +1,14 @@
+{
+  "job": "ptp-auto-paper1-dev-eval-20261115-v1",
+  "supervisor": "supervise_paper1_dev_eval.py",
+  "declaration_sha256": "4d2af9b85bd979d6b99ebb37fb3a3e5f9a07d75fbf2ae0c9cf37a6ba6ebc07e1",
+  "transport": {
+    "bytes": 1945600,
+    "sha256": "f192a648489633776f0de6e2653472e5f973f17dfa5f1411b8314e3aab67238e",
+    "files": 245
+  },
+  "generation": 183,
+  "ledger_sha256": "4045d94129898d311e4d0568458308f6370da444486f175df3c1b7822a7ce174",
+  "segment": 57,
+  "cpu_remaining_seconds": 24963.153622190002
+}

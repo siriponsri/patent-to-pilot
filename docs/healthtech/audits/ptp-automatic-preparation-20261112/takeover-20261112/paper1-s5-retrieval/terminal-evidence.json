@@ -1,0 +1,171 @@
+{
+  "supervisor_terminal": {
+    "attempt_id": "ptp-auto-paper1-dev-fulldev-retrieval-20261115-v1",
+    "container_name": "ptp-auto-paper1-dev-fulldev-retrieval-20261115-v1",
+    "retry": false,
+    "declaration_sha256": "2fea0b21d0876da0e14f0c907b1fc6947beff9773c0b93b423ceaec31fb83120",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-15T07:06:48.207609196Z",
+      "FinishedAt": "2026-11-15T07:08:22.581458134Z"
+    },
+    "whole_wall_seconds": 94.99411667598179,
+    "controller_cpu_seconds": 0.422884294,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "docker_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-15T07:06:48.207609196Z",
+    "FinishedAt": "2026-11-15T07:08:22.581458134Z"
+  },
+  "call_markers": [],
+  "normal_return_records": [],
+  "completion": {
+    "status": "PAPER1_RANKINGS_COMPLETE_NOT_EVALUATED",
+    "stage": "full_dev",
+    "queries": 474,
+    "encoded_texts": 2362,
+    "anchor_check": {
+      "queries": 474,
+      "identical_family_lists": 472,
+      "reference": "REENCODED_ANCHORS"
+    },
+    "panel_counts": {
+      "FA": {
+        "used": 473,
+        "fallback": 1
+      },
+      "GR": {
+        "used": 473,
+        "fallback": 1
+      },
+      "SACR": {
+        "used": 468,
+        "fallback": 6
+      }
+    },
+    "c1_manipulation_and_truncation": {
+      "shuffle": {
+        "used_queries": 474,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.5326087318574843,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 474,
+          "truncated": 1,
+          "share": 0.002109704641350211,
+          "max_length": 512
+        }
+      },
+      "FA": {
+        "used_queries": 473,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.41424926555570013,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 473,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "GR": {
+        "used_queries": 473,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.7487696203763635,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 473,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "SACR": {
+        "used_queries": 468,
+        "identical_top_k_share": 0.002136752136752137,
+        "mean_top_k_jaccard": 0.8564414971974622,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 468,
+          "truncated": 1,
+          "share": 0.002136752136752137,
+          "max_length": 512
+        }
+      },
+      "anchor_truncation": {
+        "texts": 474,
+        "truncated": 1,
+        "share": 0.002109704641350211,
+        "max_length": 512
+      }
+    },
+    "query_prefix": "encode query for different document retrieval: ",
+    "encoder_max_length": 512,
+    "encode_seconds": 21.408825777005404,
+    "wall_seconds": 77.59475819795625,
+    "process_cpu_seconds": 94.712732486,
+    "labels_used": false,
+    "model_calls": 0,
+    "files_sha256": {
+      "FA-panel-top200-private.jsonl": "e02b7f5194d137caf9e752d222f3548fef960652d96eea4a8f264a5f769309df",
+      "FA-used-top200-private.jsonl": "4776f09ed95dc4efa37da47aa29f22cf7db03ff04dd071887da929ac913a1764",
+      "GR-panel-top200-private.jsonl": "2c8e2a6aad4e33621e4a14e2dd8554fe2803b920e7603962dc1f70a5f8f76cb7",
+      "GR-used-top200-private.jsonl": "10286301eb41ab0c2a8369d911b7be757003ff2837d4da4d8a2a536d26a6308e",
+      "SACR-panel-top200-private.jsonl": "e89a493612b58daca72b57b032172d1f73ef7072e6a3615e69b7996b59bc8f39",
+      "SACR-used-top200-private.jsonl": "6c2d3746b658615e10832a3eca9f62b8f20e6d319ae1722bea6d6cbed93f5bed",
+      "anchor-top200-private.jsonl": "1f0f738ff649a111f16292edb5c63bd27cb6b204f6bc6205dbef6e89323c61c9",
+      "reference-top200-private.jsonl": "1f0f738ff649a111f16292edb5c63bd27cb6b204f6bc6205dbef6e89323c61c9",
+      "shuffle-top200-private.jsonl": "b924fc4dd93018e8f16db4c031e5b9e2b4f5481853b5a8abb9b15d3fcf3187b4"
+    }
+  },
+  "failure": null,
+  "file_sha256": {
+    "__pycache__/r3_engine_client.cpython-312.pyc": "b27a7b1540606e51773d04ec4b6c8410ccb399542eb5d9b8e0d334eae5280b33",
+    "__pycache__/supervise_sacr_r5_engine.cpython-312.pyc": "35a9c9219067b2d8fda4a698d0e0c495f755a889bf3ae5b7797d855650531945",
+    "admission.json": "7727b552d654cfd6979a012ea8de7d80d254629b5275bbfb794f8c2519daa1d6",
+    "controller.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dispatch/declaration.json": "c7214f97093960fe96799109a870402f209ef0b2a921431665670d61897d6f48",
+    "dispatch/gates.json": "9411dfde8614d5a777cdc7c9763652bfd233a3b4d9a8498ee3fda88b4f789b81",
+    "dispatch/queries.jsonl": "6fa09d71c96b0e18f5b7986add7011d17ba6826bad753d7a0cc52a2ce5859d2a",
+    "global-dispatch.json": "d0bf3b7183764bdc033512b640d2d2f09d558aa180a81b77abb4f18d155917de",
+    "isolation.json": "45e9b25937cd93e62ac8509f1b8a8bc6623320c44aa4030607fb7ee950762b7c",
+    "launch.json": "3ff06d40413ab78e9ccfe5071da19a720e3b51739c78f00959143eee9e2b71f8",
+    "out/attempt/FA-panel-top200-private.jsonl": "e02b7f5194d137caf9e752d222f3548fef960652d96eea4a8f264a5f769309df",
+    "out/attempt/FA-used-top200-private.jsonl": "4776f09ed95dc4efa37da47aa29f22cf7db03ff04dd071887da929ac913a1764",
+    "out/attempt/GR-panel-top200-private.jsonl": "2c8e2a6aad4e33621e4a14e2dd8554fe2803b920e7603962dc1f70a5f8f76cb7",
+    "out/attempt/GR-used-top200-private.jsonl": "10286301eb41ab0c2a8369d911b7be757003ff2837d4da4d8a2a536d26a6308e",
+    "out/attempt/SACR-panel-top200-private.jsonl": "e89a493612b58daca72b57b032172d1f73ef7072e6a3615e69b7996b59bc8f39",
+    "out/attempt/SACR-used-top200-private.jsonl": "6c2d3746b658615e10832a3eca9f62b8f20e6d319ae1722bea6d6cbed93f5bed",
+    "out/attempt/anchor-top200-private.jsonl": "1f0f738ff649a111f16292edb5c63bd27cb6b204f6bc6205dbef6e89323c61c9",
+    "out/attempt/completion.json": "30f7b7286d8c23d00014b222f296279e371e1320fc9b7a0a994cf786ac53a244",
+    "out/attempt/reference-top200-private.jsonl": "1f0f738ff649a111f16292edb5c63bd27cb6b204f6bc6205dbef6e89323c61c9",
+    "out/attempt/shuffle-top200-private.jsonl": "b924fc4dd93018e8f16db4c031e5b9e2b4f5481853b5a8abb9b15d3fcf3187b4",
+    "r3_engine_client.py": "9973b2dd95bdc34e508b4a23dfadebcc8fa4b48750824de1f3263180ac066b82",
+    "supervise_paper1_retrieval.py": "ad2dfe7dba0bfbf1f1cb0cc06c5b30307cef72690155335618a6a910f543577d",
+    "supervise_sacr_r5_engine.py": "2f9413b5eb0c870961a923132c13afbe6f045f425d41d14679f5ffca8f0a84e3",
+    "terminal.json": "ea085336df6548ca1db7c5394482539817dc576ee98340afa911c25471f28e86"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "scope": "owner-approved continuation 10 Nov 2026; historical ledgers preserved",
   "gpu_limit_seconds": 691200,
-  "gpu_conservative_charged_seconds": 90771.61350487723,
-  "gpu_remaining_seconds": 600428.3864951228,
+  "gpu_conservative_charged_seconds": 90866.61350487723,
+  "gpu_remaining_seconds": 600333.3864951228,
   "charge_basis": "Whole SYN003/native baseline/SYN004/native fidelity supervisor intervals; native interrupted attempt token/call counts remain unknown, whole wall charged.",
   "model_calls": 2177,
   "cpu004_calls": 0,
@@ -666,7 +666,7 @@
         "gpu_seconds": 0
       }
     },
-    "remote_cpu_charged_seconds": 7923.8151278099995,
+    "remote_cpu_charged_seconds": 8583.81512781,
     "source_jobs": {
       "fixture": {
         "status": "TERMINAL_PASS",
@@ -717,7 +717,7 @@
         }
       }
     },
-    "local_cpu_conservative_charged_seconds": 29184,
+    "local_cpu_conservative_charged_seconds": 29284,
     "local_cpu_measured_seconds": 121.03125,
     "compact_preparation_pending_cpu_settled_seconds": 200,
     "compact_v2_local_CPU_charged_seconds": 100,
@@ -959,9 +959,9 @@
     "retry": false,
     "owner_approval_sha256": "51b0dee061c052027596003d785cf137a460c57749ab93212560fee8f5c15a2e"
   },
-  "gpu_stage_host_cpu_telemetry_seconds": 78012.869132852,
+  "gpu_stage_host_cpu_telemetry_seconds": 78108.004749632,
   "full_dev_accounting_init_receipt_sha256": "b6494893014ab4a21d4c4e49a0842e68a43981180b3c00d8539833a68bd7ee03",
-  "full_dev_charged_seconds": 67337,
+  "full_dev_charged_seconds": 67432,
   "disk_cap_amendments": [
     {
       "from_bytes": 42949672960,

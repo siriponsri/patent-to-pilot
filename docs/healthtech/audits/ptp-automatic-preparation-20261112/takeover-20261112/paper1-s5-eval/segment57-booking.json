@@ -1,0 +1,11 @@
+{
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "owner_approval_sha256": "6e36eee5143f53b291b7e061e442f3be446d964d1b58334806680a27367661dd",
+  "evidence_sha256": "4484ada2466b36e82e69da1f10cffa52838e1aa433df9265d7ae43fbb24163b1",
+  "booking_id": "takeover-20261112-segment57",
+  "location": "local",
+  "conservative_cpu_seconds": 100,
+  "basis": "metered lines 145..144 (0.000000 s) + 100 s conservative unmetered shell/inspection allowance",
+  "prior_ledger_sha256": "a3d33c9e325182d837e51ee1f825f12727c391cac696362c7ef4720a658e247c"
+}
