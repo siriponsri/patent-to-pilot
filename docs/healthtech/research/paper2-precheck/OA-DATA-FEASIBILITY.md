@@ -1,6 +1,6 @@
 # Paper 2 pre-check, stream 3: office-action data feasibility
 
-Status: DESK RESEARCH DONE (2026-11-16). No dataset downloaded. Linkage numbers NOT_RUN: they need owner-approved downloads (section 5).
+Status (2026-11-16): desk research done; owner approved D1-D4 (owner-oa-download-approval.json). D3 (DAPFAM HF metadata, hashes match the pinned manifest) and D4 (panorama.parquet, 167,031,631 B, sha256 827a3940...) downloaded. **D1 and D2 BLOCKED**: since 2026-06-18 the USPTO Open Data Portal (which now hosts both the OA dataset and PatentsView) requires a signed-in USPTO.gov account with MFA; the unauthenticated API returns 403 and the UI returns a login dialog. OA overlap numbers are therefore NOT_RUN; DAPFAM-side aggregates are in section 7.
 
 Question: can we build a legally grounded, cross-domain evaluation set from USPTO prosecution records? That means using examiner citations that back a 35 USC 102 or 103 rejection as relevance labels, split into IN/OUT by IPC domain. How large would it be?
 
@@ -73,4 +73,16 @@ Incidental: two USPTO documentation PDFs (variable tables, a working paper) were
 
 ## 6. Owner approval record
 
-Pending. See `owner-oa-download-approval.json` once answered.
+Approved 2026-11-16: D1, D2, D3, D4 (`owner-oa-download-approval.json`). Lens API and ODP API key not approved. D1/D2 need either the owner signing in to a USPTO.gov account (free, MFA) in the browser, or approval of a different source (e.g. the DataLumos archive of PatentsView); asked.
+
+## 7. DAPFAM dev aggregates (no OA data needed)
+
+Script `oa/dapfam_dev_us_profile.py` (metadata columns only, dev split only; 0.56 s CPU, receipt `oa/local-cpu.jsonl`); output `oa/dapfam-dev-us-profile.json`.
+
+- 474 dev query families: earliest-claim jurisdiction US 351 (74.1%); any US member 472 (99.6%).
+- Earliest-claim (priority) year: 2001-2005 = 249 queries (52.5%), 2006-2017 = 225; any-US and 2006-2017 = 223 (47.0%). The 2017 OA dataset covers OAs **mailed** 2008 to mid-2017, so most 2001-2004 families had their first US OA before 2008 and cannot be matched. Realistic upper bound for an OA-labelled query: about 47-58% of dev queries (2005/2006 onward), before checking that an OA with a 102/103 citation exists.
+- 9,480 dev positive pairs: IN 6,490, OUT 2,990. Both sides have a US member: IN 6,406, OUT 2,949. OUT pairs with an IPC **section** mismatch: 2,031 (68% of OUT); the other 959 OUT pairs share a section but no IPC3.
+- DAPFAM positives include forward citations (target later than query). A 102/103 examiner citation can only exist for backward-cited, earlier targets, so the OA-confirmable share of OUT pairs is further reduced.
+- Identifier gap stays: Lens ids must still be mapped to US application/publication numbers (PatentsView title+date match, needs D2) before any OA overlap is computed.
+
+Interim conclusion: relabelling DAPFAM dev with 102/103 can at best cover about half of the queries and a fraction of their (backward) pairs. The OA-derived new test set (A1) is the more promising route, and its size can only be measured once D1/D2 are retrievable.

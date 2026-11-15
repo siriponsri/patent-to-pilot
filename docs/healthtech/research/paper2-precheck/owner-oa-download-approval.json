@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-11-16T07:05+07:00",
+  "question": "ขออนุมัติดาวน์โหลดข้อมูลสำหรับ Paper 2 (stream 3) ชุดไหนบ้าง?",
+  "owner_answer": "D1 OA USPTO 0.8 GB, D2 PatentsView ~2.3 GB, D3 DAPFAM HF 1.2 GB, D4 PANORAMA (<=2 GB)",
+  "approved": {
+    "D1": {"files": ["office_actions.csv.zip", "rejections.csv.zip", "citations.csv.zip"], "source": "USPTO OCE Office Action Research Dataset 2017 (uspto.gov / ODP bulk)", "size": "79.5 + 99.3 + 623 MB", "destination": "remote /data/ptp-paper2/oa2017/"},
+    "D2": {"files": ["g_ipc_at_issue.tsv.zip", "g_application.tsv.zip", "g_patent.tsv.zip", "pg_published_application.tsv.zip"], "source": "PatentsView via USPTO ODP", "size": "about 2.3 GB total, exact sizes confirmed before transfer", "destination": "remote /data/ptp-paper2/patentsview/"},
+    "D3": {"files": ["queries.parquet", "corpus.parquet"], "source": "HF datalyes/DAPFAM_patent rev 780f4011d60297fc6e97a4119b0c516d13afea2d", "size": "62.7 MB + 1.15 GB", "destination": "local ../_private_artifacts/healthtech/ptp-paper2-oa-dapfam-meta/", "use": "dev-split metadata only; test ids never selected"},
+    "D4": {"files": ["panorama.parquet"], "source": "HF LG-AI-Research/PANORAMA", "size": "unknown; skip if over 2 GB", "destination": "remote /data/ptp-paper2/panorama/"}
+  },
+  "not_approved": ["Lens.org API token", "ODP API key"],
+  "rules": ["no paid API", "sealed DAPFAM test folder never opened", "aggregates only in repo"]
+}

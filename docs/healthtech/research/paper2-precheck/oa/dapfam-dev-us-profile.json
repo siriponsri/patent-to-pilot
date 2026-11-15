@@ -1,0 +1,36 @@
+{
+ "dev_queries": 474,
+ "dev_queries_with_metadata": 474,
+ "queries_earliest_US": 351,
+ "queries_any_US_member": 472,
+ "queries_any_US_and_year_2006_2017": 223,
+ "query_year_histogram": {
+  "2001": 55,
+  "2002": 56,
+  "2003": 35,
+  "2004": 47,
+  "2005": 56,
+  "2006": 43,
+  "2007": 33,
+  "2008": 28,
+  "2009": 21,
+  "2010": 23,
+  "2011": 21,
+  "2012": 14,
+  "2013": 12,
+  "2014": 12,
+  "2015": 8,
+  "2016": 7,
+  "2017": 3
+ },
+ "dev_positive_pairs": 9480,
+ "positive_pairs_by_domain": {
+  "IN|both_any_US": 6406,
+  "IN|not_both_US": 84,
+  "IN|same_section_overlap": 6490,
+  "OUT|both_any_US": 2949,
+  "OUT|not_both_US": 41,
+  "OUT|same_section_overlap": 959,
+  "OUT|section_mismatch": 2031
+ }
+}
