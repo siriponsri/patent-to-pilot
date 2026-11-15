@@ -10,6 +10,9 @@ after an authored valid JSON prefix the LMFE prefix function is replaced by an E
 call (the fallback-EOS state seen live in SACR full-dev b4); the REAL CompleteJsonEOSGuard must refuse, the worker
 must classify GRAMMAR_REFUSED from the real private diagnostics, fall back and continue. Query 3: same injection in
 the REVIEW call (candidate kept, query falls back). Expected 5 calls. Mocked boundary added: LMFE state for those calls.
+v8 (2026-11-15, owner 'A: ขยายกติกา'): query 3's REVIEW call instead hits a grammar DEAD END (the LMFE prefix function
+returns no allowed token after an authored valid prefix); the REAL guard must raise 'grammar has no continuation', the
+worker must classify GRAMMAR_NO_CONTINUATION from the real private diagnostics, fall back and finish the batch.
 """
 from contextlib import nullcontext
 import hashlib, importlib.util, json, sys, time
@@ -83,7 +86,8 @@ def main():
             def fallback_eos_state(batch_id, sent):
                 state.setdefault('prompt', len(sent))  # first call has no generated tokens
                 if len(sent) - state['prompt'] >= limit:
-                    model.refusals += 1; return [151645, 151643]
+                    model.refusals += 1
+                    return [] if model.current == ('review', 'authored-native-003') else [151645, 151643]
                 return callback(batch_id, sent)
             return fallback_eos_state
         def authored_factory(backend, stage, schema, diagnostics, messages):
@@ -138,9 +142,11 @@ def main():
         check = [model.calls == 5, stages == ['marking', 'review', 'marking', 'marking', 'review'],
                  completion['call_slots_consumed'] == 5, len(markers) == 5, admitted['over_limit'] == 0,
                  completion['queries'] == 3, completion['screened_candidates'] == 1, completion['fallbacks'] == 2,
-                 completion['grammar_refused'] == 2, completion['semantic_certified'] is False,
-                 completion['reasons'] == {'AUTOMATIC_SCREEN_COMPLETED': 1, 'GRAMMAR_REFUSED': 2},
-                 [r['reason'] for r in results] == ['AUTOMATIC_SCREEN_COMPLETED', 'GRAMMAR_REFUSED', 'GRAMMAR_REFUSED'],
+                 completion['grammar_refused'] == 1, completion['grammar_no_continuation'] == 1,
+                 completion['semantic_certified'] is False,
+                 completion['reasons'] == {'AUTOMATIC_SCREEN_COMPLETED': 1, 'GRAMMAR_REFUSED': 1, 'GRAMMAR_NO_CONTINUATION': 1},
+                 [r['reason'] for r in results] == ['AUTOMATIC_SCREEN_COMPLETED', 'GRAMMAR_REFUSED', 'GRAMMAR_NO_CONTINUATION'],
+                 diag3['message'] == 'grammar has no continuation',
                  results[1]['candidate'] is None, results[2]['candidate'] is not None,
                  (out/'queries/q001/marking-grammar-refused.json').exists(), (out/'queries/q002/review-grammar-refused.json').exists(),
                  diag2['stage'] == diag3['stage'] == 'grammar-callback',
@@ -150,10 +156,11 @@ def main():
             raise RuntimeError('authored refusal expectation differs: %s' % check)
         receipt.update(status='PASS_AUTHORED_NATIVE_PIPELINE', authored_backend_invocations=model.calls,
             grammar_tokens_checked=model.tokens_checked, decision={'screened_candidates': completion['screened_candidates'],
-                'fallbacks': completion['fallbacks'], 'grammar_refused': completion['grammar_refused'], 'reasons': completion['reasons']},
+                'fallbacks': completion['fallbacks'], 'grammar_refused': completion['grammar_refused'],
+                'grammar_no_continuation': completion['grammar_no_continuation'], 'reasons': completion['reasons']},
             marking_input_tokens=admitted['max_input_tokens'], decoder_sha256=d['decoder_sha256'],
             mocked_boundaries=['GPU_slot_and_window', 'model_weight_observer', 'model_loader', 'CUDA_telemetry', 'device_to_cpu',
-                               'LMFE_fallback_EOS_state_for_q2_marking_and_q3_review'],
+                               'LMFE_fallback_EOS_state_for_q2_marking', 'LMFE_dead_end_state_for_q3_review'],
             actual_boundaries=['worker_main', 'declaration_package_KM_tokenizer_decoder_checks', 'tokenizer',
                                'grammar_EOS', 'request_bound_executor', 'executor_adapter', 'call_markers', 'run_query',
                                'CompleteJsonEOSGuard_refusal', 'private_diagnostics', 'grammar_refusal_classification'])

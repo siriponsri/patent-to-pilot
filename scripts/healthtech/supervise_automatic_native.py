@@ -31,7 +31,8 @@ def main(pin):
     allowed = (tuple('ptp-auto-native-sacr-pilot20-20261112-v%d' % v for v in range(1, 6))
                + tuple('ptp-auto-native-sacr-fulldev-b%d-20261113-v1' % b for b in range(1, 7))  # b1 staged stale: never launch
                + tuple('ptp-auto-native-sacr-fulldev-b%d-20261114-v1' % b for b in range(1, 7))
-               + tuple('ptp-auto-native-sacr-fulldev-%s-20261115-v1' % b for b in ('b4c', 'b5', 'b6')))  # repaired worker (refusal fallback)
+               + tuple('ptp-auto-native-sacr-fulldev-%s-20261115-v1' % b for b in ('b4c', 'b5', 'b6'))
+               + tuple('ptp-auto-native-sacr-fulldev-%s-20261115-v2' % b for b in ('b4d', 'b5', 'b6')))  # + dead-end fallback  # repaired worker (refusal fallback)
     if job.parent != Path('/home/chaw/patent-to-pilot-jobs') or job.name not in allowed:
         raise RuntimeError('fixed native job path required')
     resource.setrlimit(resource.RLIMIT_AS, (1024**3,1024**3))

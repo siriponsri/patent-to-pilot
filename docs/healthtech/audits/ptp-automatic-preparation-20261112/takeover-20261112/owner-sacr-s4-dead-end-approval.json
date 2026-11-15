@@ -1,0 +1,14 @@
+{
+  "status": "OWNER_APPROVED_ENGINEERING_REPAIR",
+  "date": "2026-11-15",
+  "owner_answer": "A: ขยายกติกา",
+  "question": "SACR full-dev b4c stopped at dev row 280: the review call raised 'grammar has no continuation' in the grammar callback (grammar dead end, not covered by decision A). Count this class as a per-query fallback too?",
+  "decision": {
+    "worker": "a verified grammar dead end ('grammar has no continuation' raised in the grammar callback, 1 backend invocation, 0 returns per the private backend diagnostics) in the SACR marking or review call is recorded as ORIGINAL_QUERY_FALLBACK with reason GRAMMAR_NO_CONTINUATION, counted and reported separately from GRAMMAR_REFUSED; the batch continues; every other exception still HOLDs",
+    "qualification": "CPU fixture with an authored dead-end case before any GPU use of the repaired worker",
+    "sacr_b4c": "one continuation job b4d for the 35 never-started queries (dev rows 281..315); dev row 280 stays an original-query fallback and is NOT regenerated",
+    "then": "SACR b5 and b6 with the repaired worker"
+  },
+  "basis": "frozen protocol section 3 (any grammar failure -> original-query fallback, every query stays in the denominator); owner decisions A for FA/GR and SACR",
+  "unchanged": ["arms", "prompts", "schemas", "marking v5", "review v3", "delta", "endpoints", "gatekeeping", "one GPU job at a time", "no protected test access", "no outcome-driven retry"]
+}

@@ -1,6 +1,7 @@
 """Native SACR fidelity batch (NATIVE-STAGES-20261112): frozen pilot query texts, <=2 calls/query,
 global call ceiling, stop on any backend exception except a verified grammar refusal (owner decision A extended to
-SACR 2026-11-15: that query falls back with reason GRAMMAR_REFUSED and the batch continues); no corpus/qrels/evaluator mounts."""
+SACR 2026-11-15: that query falls back with reason GRAMMAR_REFUSED and the batch continues; a verified grammar dead end
+'grammar has no continuation' likewise falls back with reason GRAMMAR_NO_CONTINUATION); no corpus/qrels/evaluator mounts."""
 import hashlib
 import importlib.util
 import json
@@ -25,7 +26,7 @@ def main():
     from patent_to_pilot.research.automatic_executor_adapter import adapt_reserved_executor
     from patent_to_pilot.research.sacr_r6_bundle_runner import request_bound_executor
     from patent_to_pilot.research.r6_backend import R6Backend
-    from patent_to_pilot.research.paper1_rewrite_runner import classify_grammar_refusal
+    from patent_to_pilot.research.sacr_automatic_runner import classify_sacr_grammar_failure
     from patent_to_pilot.research.mtm_runtime import InputBoundaryError
     stop = float(sys.argv[1])
     raw = Path('/dispatch/declaration.json').read_bytes()
@@ -113,7 +114,7 @@ def main():
                     try:
                         return adapted(stage, request)
                     except InputBoundaryError as error:
-                        refusal = classify_grammar_refusal(
+                        refusal = classify_sacr_grammar_failure(
                             error, out / 'backend' / ('q%03d' % index) / (stage + '-diagnostics-private'))
                         if refusal is None: raise
                         raise refusal from error
@@ -133,6 +134,7 @@ def main():
                 'screened_candidates': actions.count('USE_SCREENED_CANDIDATE'),
                 'fallbacks': sum(a == 'ORIGINAL_QUERY_FALLBACK' for a in actions),
                 'grammar_refused': sum(v.get('reason') == 'GRAMMAR_REFUSED' for v in decisions.values()),
+                'grammar_no_continuation': sum(v.get('reason') == 'GRAMMAR_NO_CONTINUATION' for v in decisions.values()),
                 'reasons': {r: sum(v.get('reason') == r for v in decisions.values()) for r in sorted({str(v.get('reason')) for v in decisions.values()})},
                 'call_slots_consumed': calls, 'wall_seconds': time.monotonic()-started,
                 'process_cpu_seconds': time.process_time(), 'semantic_certified': False})

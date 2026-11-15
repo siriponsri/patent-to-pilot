@@ -11,7 +11,7 @@ from r3_engine_client import Engine, EngineError
 from supervise_r3_engine_v2 import supervise, BASE
 from supervise_automatic_grammar import configuration as grammar_configuration
 
-NAME = 'ptp-auto-native-fixture-20261115-v7'  # v7: grammar-refusal cases (owner decision A for SACR)
+NAME = 'ptp-auto-native-fixture-20261115-v8'  # v8: refusal + dead-end cases (owner decisions 2026-11-15)
 
 
 def configuration(job, stop, pin, tokenizer_files):

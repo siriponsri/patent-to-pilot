@@ -4,6 +4,10 @@ Grammar refusal (owner decision A extended to SACR, 2026-11-15; protocol section
 private backend diagnostics that a marking or review call was refused by the strict EOS guard (classify_grammar_refusal
 raises GrammarRefusal), the query falls back to the original query (reason GRAMMAR_REFUSED; one consumed call with
 unknown tokens). Every other exception still persists a HOLD marker and propagates.
+
+Grammar dead end (owner decision 2026-11-15, 'A: ขยายกติกา'): 'grammar has no continuation' raised by the EOS guard in
+the grammar callback (no allowed next token), verified the same way (classify_sacr_grammar_failure), falls back with
+reason GRAMMAR_NO_CONTINUATION (reported separately from GRAMMAR_REFUSED).
 """
 import hashlib
 import json
@@ -16,7 +20,35 @@ from .automatic_screening import route_result
 from .sacr_generation import GenerationLimits
 from .sacr_generation_receipt import bind_generation_record
 from .r6_dispatch_journal import document_hash
-from .paper1_rewrite_runner import GrammarRefusal
+from .paper1_rewrite_runner import GrammarRefusal, classify_grammar_refusal
+
+NO_CONTINUATION = 'grammar has no continuation'
+
+
+def classify_sacr_grammar_failure(error, diagnostics_dir):
+    """GrammarRefusal for a verified EOS-guard refusal OR a verified grammar dead end; otherwise None."""
+    refusal = classify_grammar_refusal(error, diagnostics_dir)
+    if refusal is not None:
+        refusal.evidence['kind'] = 'REFUSED'
+        return refusal
+    if not isinstance(error, InputBoundaryError) or str(error) != NO_CONTINUATION:
+        return None
+    path = Path(diagnostics_dir) / 'failure-private.json'
+    if not path.is_file():
+        return None
+    try:
+        record = json.loads(path.read_bytes())
+    except ValueError:
+        return None
+    prefix = record.get('last_generated_prefix') or {}
+    if (record.get('stage') != 'grammar-callback' or record.get('message') != NO_CONTINUATION
+            or record.get('exception_type') != 'InputBoundaryError'
+            or record.get('backend_invocations_observed') != 1 or record.get('backend_returns_observed') != 0
+            or type(prefix.get('generated_tokens_seen')) is not int):
+        return None
+    return GrammarRefusal({'stage': 'grammar-callback', 'kind': 'NO_CONTINUATION', 'message_sha256': record.get('message_sha256'),
+                           'generated_tokens_seen': prefix['generated_tokens_seen'],
+                           'failure_private_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
 
 
 def run_query(*, destination, query_id, source, km_text, km_sha256,
@@ -105,8 +137,9 @@ def run_query(*, destination, query_id, source, km_text, km_sha256,
             save('failure.json', {'status': 'HOLD', 'exception_type': type(error).__name__,
                                  'unresolved_stage': active, 'events': events, 'retry': False})
             raise
-        events.append({'stage': active, 'status': 'GRAMMAR_REFUSED', 'model_calls': 1,
+        reason = 'GRAMMAR_NO_CONTINUATION' if error.evidence.get('kind') == 'NO_CONTINUATION' else 'GRAMMAR_REFUSED'
+        events.append({'stage': active, 'status': reason, 'model_calls': 1,
                        'input_output_tokens': 'UNKNOWN', 'evidence': error.evidence})
-        save(active + '-grammar-refused.json', {'status': 'GRAMMAR_REFUSED', 'evidence': error.evidence,
+        save(active + '-grammar-refused.json', {'status': reason, 'evidence': error.evidence,
                                                 'model_calls': 1, 'retry': False})
-        return finish('invalid_output', 'GRAMMAR_REFUSED', candidate)
+        return finish('invalid_output', reason, candidate)

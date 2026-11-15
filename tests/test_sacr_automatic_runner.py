@@ -93,3 +93,36 @@ def test_unverified_boundary_error_still_holds(tmp_path):
         refused_run(tmp_path, 'marking', InputBoundaryError('premature grammar termination refused'))
     failure = json.loads((tmp_path / 'q1' / 'failure.json').read_text())
     assert failure['status'] == 'HOLD' and failure['unresolved_stage'] == 'marking'
+
+
+def _diagnostics(tmp_path, text, **change):
+    record = {'stage': 'grammar-callback', 'message': text, 'exception_type': 'InputBoundaryError',
+              'backend_invocations_observed': 1, 'backend_returns_observed': 0,
+              'last_generated_prefix': {'generated_tokens_seen': 9}, 'message_sha256': 'x'}
+    record.update(change); d = tmp_path / 'diag'; d.mkdir(exist_ok=True)
+    (d / 'failure-private.json').write_text(json.dumps(record)); return d
+
+
+def test_dead_end_is_classified_and_falls_back(tmp_path):
+    from patent_to_pilot.research.sacr_automatic_runner import classify_sacr_grammar_failure, NO_CONTINUATION
+    from patent_to_pilot.research.mtm_runtime import InputBoundaryError
+    refusal = classify_sacr_grammar_failure(InputBoundaryError(NO_CONTINUATION), _diagnostics(tmp_path, NO_CONTINUATION))
+    assert refusal is not None and refusal.evidence['kind'] == 'NO_CONTINUATION'
+    result, calls = refused_run(tmp_path / 'run', 'review', refusal)
+    assert result['reason'] == 'GRAMMAR_NO_CONTINUATION' and result['decision']['action'] == 'ORIGINAL_QUERY_FALLBACK'
+    assert calls == ['marking', 'review']
+
+
+@pytest.mark.parametrize('change', [{'backend_returns_observed': 1}, {'stage': 'decode'}, {'message': 'other'}])
+def test_dead_end_requires_matching_diagnostics(tmp_path, change):
+    from patent_to_pilot.research.sacr_automatic_runner import classify_sacr_grammar_failure, NO_CONTINUATION
+    from patent_to_pilot.research.mtm_runtime import InputBoundaryError
+    assert classify_sacr_grammar_failure(InputBoundaryError(NO_CONTINUATION), _diagnostics(tmp_path, NO_CONTINUATION, **change)) is None
+
+
+def test_refusal_kind_is_marked(tmp_path):
+    from patent_to_pilot.research.sacr_automatic_runner import classify_sacr_grammar_failure
+    from patent_to_pilot.research.mtm_runtime import InputBoundaryError
+    message = 'premature grammar termination refused'
+    refusal = classify_sacr_grammar_failure(InputBoundaryError(message), _diagnostics(tmp_path, message))
+    assert refusal.evidence['kind'] == 'REFUSED'
