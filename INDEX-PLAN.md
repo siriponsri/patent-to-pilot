@@ -1892,3 +1892,23 @@ Owner decision requested:
 - A (recommended): extend decision A to SACR. Repair the SACR native worker with the same classify_grammar_refusal rule (row 259 -> ORIGINAL_QUERY_FALLBACK, reason GRAMMAR_REFUSED; every other exception still HOLDs), qualify on the CPU fixture, then a continuation job b4c for dev rows 260..315 (row 259 NOT regenerated), then b5, b6. About 1 h engineering + about 5.7 GPU-h.
 - B: no code change; row 259 recorded as fallback; continuation b4c with the current worker, then b5, b6; any later refusal stops again.
 - C: stop SACR here (S5 would compare SACR on 237 + 22 queries only, or drop F-SACR / H3).
+
+## Paper 1 S4 SACR RESUMED after owner decision A for SACR: worker repaired, fixture v7 PASS; driver running b4c 5 6 2026-11-15T07:35+07:00
+
+This section supersedes the "SACR STOPPED" section below (its b1-b4 facts remain valid). Owner answered "A: ซ่อมแล้วไปต่อ" (owner-sacr-s4-refusal-approval.json).
+
+Repair (engineering; arms/prompts/schemas/marking v5/review v3/delta/gatekeeping unchanged):
+- sacr_automatic_runner.run_query: a GrammarRefusal (verified by classify_grammar_refusal from paper1_rewrite_runner: InputBoundaryError 'premature grammar termination refused' + private diagnostics stage grammar-callback, 1 invocation, 0 returns) in the marking or review call -> ORIGINAL_QUERY_FALLBACK, reason GRAMMAR_REFUSED (1 consumed call, tokens unknown; review refusal keeps the candidate file); every other exception still HOLDs.
+- run_automatic_native.py classifies per call and continues; completion.json adds grammar_refused.
+- tests/test_sacr_automatic_runner.py +3 tests; targeted suites 35 PASS, 4 skipped.
+- CPU fixture v7 (ptp-auto-native-fixture-20261115-v7): PASS_AUTHORED_NATIVE_PIPELINE, exit 0, 25.4 s wall; 3 authored queries, 5 invocations, 626 grammar tokens; q2 marking and q3 review refused by the REAL EOS guard (injected LMFE fallback-EOS state = declared mocked boundary), both classified GRAMMAR_REFUSED, batch continued. Bookings segment 50 (103 s) + 120 s at generation 160. Receipt native-fixture-v7/fixture-v7-result.json.
+- SACR full_dev configuration v2 (new sha); first v3 freeze appends authority amendment round 'sacr-full-dev-refusal'.
+- supervise_automatic_native.py allowlist: ptp-auto-native-sacr-fulldev-{b4c,b5,b6}-20261115-v1.
+
+Running now: local background driver `python takeover-20261112/drive_sacr_fulldev.py 4c 5 6` (freeze_sacr_fulldev_v3.py per item; log paper1-s4-progress.jsonl).
+- 4c = dev rows 260..315 (56 never-started b4 queries, maximum_calls 112). Dev row 259 stays an ORIGINAL_QUERY_FALLBACK and is NOT regenerated; S5 must read SACR b4 as 22 results + row 259 fallback + b4c.
+- About 1.5 h (4c) + about 2.1 h each (b5 rows 316..394, b6 rows 395..473); about 5.7 h in total.
+- A grammar refusal is no longer an anomaly (known_calls + grammar_refused == call slots). Any other anomaly stops the driver (STOPPED_OWNER_DECISION_REQUIRED).
+- If this session dies: read paper1-s4-progress.jsonl; LAUNCHED without SETTLED -> do NOT start again; observe `native_control.py observe sacr-fulldev-b<item>`, settle once `settle_synthetic.py ptp-auto-native-sacr-fulldev-b<item>-20261115-v1 sacr-fulldev-b<item>`, then rerun drive_sacr_fulldev.py with the remaining items.
+
+After the driver: apply the 52 GiB disk cap amendment (draft in disk-cap-draft/), then S5 (retrieval of all arms, RRF, C1-C3, dev evaluation) and the S6 owner stop.
