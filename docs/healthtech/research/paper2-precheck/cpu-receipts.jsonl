@@ -1,0 +1,1 @@
+{"command": ["python", "run_headroom_dev.py"], "cpu_seconds": 96.21875, "exit_code": 0, "file_sha256": {"run_headroom_dev.py": "4b3777ec33bef776aca95161f13f8b5194e3163fca26818dec91981f6087fe90"}, "measurement": "Windows GetProcessTimes user+kernel of direct child; grandchildren excluded", "model_calls": 0, "started_unix": 1794783908.1846552, "wall_seconds": 107.38999999995576}
