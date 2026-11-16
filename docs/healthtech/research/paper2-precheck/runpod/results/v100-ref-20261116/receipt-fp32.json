@@ -1,0 +1,99 @@
+{
+  "status": "COMPLETE",
+  "mode": "fp32",
+  "fields": "tac",
+  "host": {
+    "hostname_sha256_prefix": "f29cfccf116b",
+    "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.41",
+    "python": "3.12.15",
+    "runpod_pod_id_present": false
+  },
+  "gpu": {
+    "name": "Tesla V100-SXM2-32GB",
+    "driver": "580.178.04",
+    "memory_total_mib": 32768,
+    "memory_used_mib_at_start": 20997,
+    "uuid_sha256_prefix": "49395980b0b3",
+    "torch_name": "Tesla V100-SXM2-32GB",
+    "free_bytes_at_start": 14796980224,
+    "total_bytes": 34072559616,
+    "mem_cap_gb": 8.0
+  },
+  "software": {
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "transformers": "4.55.2",
+    "tokenizers": "0.21.4",
+    "numpy": "2.2.6",
+    "tf32_matmul": false
+  },
+  "model": {
+    "repo": "datalyes/patembed-large",
+    "revision": "2d5c0f92a3e5dc3d5415c08e612c57543c0e03ad",
+    "weights_sha256": "234ea36a876fe5d5c416c1cbaad6f7221e17861fadd6481f0b96588fdc1ca482",
+    "source": "local_dir",
+    "max_length": 512,
+    "pooling": "masked mean incl. prompt, L2"
+  },
+  "inputs": {
+    "sample_sha256": "5e9235c052ab063b2eca2b4c6794ada04d9de544de9658538e5a2ea2a1275dc3",
+    "max_docs": 1000,
+    "documents": 1000,
+    "passages": 4228,
+    "passages_sha256": "88c3e31dd89eafc0a6c6481ba3f0c86dba735402feabe3510dd31719a80a8520"
+  },
+  "sweep": [
+    {
+      "passages": 512,
+      "wall_seconds": 28.127974635979626,
+      "gpu_forward_seconds": 27.465304138183583,
+      "tokenize_seconds": 0.5442926709656604,
+      "tokens": 226726,
+      "batch_size": 8,
+      "status": "OK",
+      "passages_per_second": 18.20251925800161,
+      "peak_allocated_bytes": 1597548544,
+      "peak_reserved_bytes": 1839202304
+    },
+    {
+      "passages": 512,
+      "wall_seconds": 30.25502520002192,
+      "gpu_forward_seconds": 29.709017333984377,
+      "tokenize_seconds": 0.475782559835352,
+      "tokens": 226726,
+      "batch_size": 16,
+      "status": "OK",
+      "passages_per_second": 16.92280857857719,
+      "peak_allocated_bytes": 1807576064,
+      "peak_reserved_bytes": 2030043136
+    },
+    {
+      "passages": 512,
+      "wall_seconds": 24.647285212005954,
+      "gpu_forward_seconds": 24.221137939453126,
+      "tokenize_seconds": 0.41462841688189656,
+      "tokens": 226726,
+      "batch_size": 32,
+      "status": "OK",
+      "passages_per_second": 20.773078884590475,
+      "peak_allocated_bytes": 2227105792,
+      "peak_reserved_bytes": 2667577344
+    }
+  ],
+  "batch_size": 32,
+  "full_run": {
+    "passages": 4228,
+    "wall_seconds": 195.24527754297014,
+    "gpu_forward_seconds": 192.04970513534536,
+    "tokenize_seconds": 2.9672140338807367,
+    "tokens": 1636187,
+    "passages_per_second_wall": 21.654813131495533,
+    "passages_per_second_gpu_forward": 22.01513403532879,
+    "peak_allocated_bytes": 2228022784,
+    "peak_reserved_bytes": 2669674496
+  },
+  "model_load_seconds": 6.432087421417236,
+  "total_wall_seconds": 291.3882269859314,
+  "vectors_sha256": "50169e37ddefa910e677f086c7289d61ecdfb0b29047602470c3e7ea2ae42105"
+}

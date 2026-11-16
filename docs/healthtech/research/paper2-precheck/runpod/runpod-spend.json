@@ -1,0 +1,9 @@
+{
+  "ledger": "RunPod encoding pilot (Paper 2 open-population corpus); separate from the OpenRouter sub-ledger and the Paper 1 study ledger",
+  "approval": "owner-runpod-pilot-approval.json",
+  "hard_cap_usd": 10.0,
+  "start_rule": "do not deploy a pod if spent_usd + hourly_rate * 0.75 > 9.0 (USD 1 margin for rounding, image pull and storage)",
+  "per_pod_limit_minutes": 45,
+  "spent_usd": 0.0,
+  "pods": []
+}

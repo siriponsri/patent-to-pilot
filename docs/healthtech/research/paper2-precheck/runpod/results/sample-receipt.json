@@ -1,0 +1,22 @@
+{
+  "source": "src/ipg180102.zip",
+  "source_sha256": "a8dca2bbb5c3598d64573c97b7f762e9b42dd8faadb912ff6f58e61ce21d7d35",
+  "rule": "utility B1/B2 with title+abstract+claims; sha256(f'{seed}:{patent_id}') ascending; first n",
+  "seed": 20261116,
+  "n_requested": 10000,
+  "n_eligible": 6261,
+  "n_selected": 6261,
+  "parse_counts": {
+    "kind:S1": 630,
+    "kind:P3": 16,
+    "kind:P2": 6,
+    "kind:E1": 7,
+    "ok": 6261,
+    "not_grant:sequence-cwu": 147
+  },
+  "sample_sha256": "5e9235c052ab063b2eca2b4c6794ada04d9de544de9658538e5a2ea2a1275dc3",
+  "sample_bytes": 48303918,
+  "text_fields": "title + abstract + claims (TAC, same fields as DAPFAM)",
+  "wall_seconds": 17.23,
+  "cpu_seconds": 17.223
+}
