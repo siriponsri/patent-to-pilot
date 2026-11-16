@@ -30,9 +30,9 @@ This section supersedes the sections below for the current state. Parent writer 
 
 | Session | Branch | State | Merge rule |
 |---|---|---|---|
-| p2-oa-splits | `claude/p2-oa-splits-6f1f87` | R1 split run in progress on the remote; R2 v2 pre-declaration draft written | docs only: merge when done |
+| p2-oa-splits | merged, branch deleted | done: DEV 2011 / P2-TEST 2012 / P3-TEST 2013 (378,109 eligible tasks); open-population corpus needs start 1976/1990 for G2.0 = 5.5-6.5M units, about 175-250 V100-h fp32 (owner decision on compute); `paper2-precheck/oa/OA-SPLITS.md`, `plans/P2-OA-PREDECLARATION-DRAFT.md` | n/a |
 | p2-harness | `claude/paper2-harness-0d504a` | Harness + E0/E0-deep/E1/E2/E3 + funnel evaluator, 78 tests PASS, doubles only | touches `src/`: merge only after S8 evaluation |
-| prod-p0 | `claude/prod-p0-evidence-bedc49` | Product P0 audit, scenarios and fixes in progress | touches `src/`: merge only after S8 evaluation |
+| prod-p0 | `claude/prod-p0-evidence-bedc49` | done: P0-P2 gap audit, 42 offline scenarios (41 pass), P0 fixes; not wired to API/UI | touches `src/`: merge only after S8 evaluation |
 | p1-report-scaffold | merged (cd38e17), branch deleted | done | n/a |
 
 The folder `.claude/worktrees/p1-report-scaffold-f29529` is a leftover locked directory; delete it later.
