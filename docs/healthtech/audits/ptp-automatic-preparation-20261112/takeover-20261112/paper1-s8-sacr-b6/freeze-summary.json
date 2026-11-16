@@ -1,0 +1,28 @@
+{
+  "status": "STAGED_QUALIFIED_NOT_LAUNCHED",
+  "job": "ptp-auto-native-sacr-test-b6-20261115-v1",
+  "arm": "SACR",
+  "batch": 6,
+  "queries": 79,
+  "test_rows": [
+    395,
+    474
+  ],
+  "supervisor": "supervise_automatic_native.py",
+  "declaration_sha256": "9d1a09962b57605413b664cd80685e9261002b9dc787bcc7f0f21b6ab617fb4c",
+  "package_sha256": "e40ed0eea75c4b9e8b85e09a32259f6cf8686cbca3bd006bd2d548eacde278b5",
+  "configuration_sha256": "0ef72e4f5a1763fe0a580bba1f4cadef415d747d0c8d5ce9fa164e11942e2a52",
+  "input_sha256": "4376b08a2224168f22acdf0cb8edcc04a0313d07aa0cbd0883f964d94cbb6ed8",
+  "transport": {
+    "bytes": 1925120,
+    "sha256": "a7369ac40d37c4a83686d91b793be2d6b8ba157b92597103093bf9688a86559b",
+    "files": 243
+  },
+  "journal_generation": 231,
+  "ledger_sha256": "4ad73187e8ec8047976c59ce8d3def5773c94bcdd55b62c7d9c1ea533ba41b3b",
+  "study_status": "IDLE",
+  "segment": 73,
+  "segment_seconds": 102,
+  "disk_preexisting_upper_bound_bytes": 47000493551,
+  "cpu_remaining_seconds": 23201.153622190002
+}
