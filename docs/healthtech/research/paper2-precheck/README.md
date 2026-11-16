@@ -25,6 +25,10 @@ Label-free ways of mixing, restricting by class, or routing between the existing
 
 - Deeper pools (500 to 1,000) plus a reranker, under a matched compute budget.
 - A new, legally grounded evaluation set from USPTO office actions (102/103 labels). D1/D2 (OA Research Dataset 2017, PatentsView IPC) are blocked by the USPTO.gov login; see [OA-DATA-FEASIBILITY.md](OA-DATA-FEASIBILITY.md).
+- OA set sizing and temporal splits are done (16 Nov), with no retrieval run: [oa/OA-SPLITS.md](oa/OA-SPLITS.md).
+  - 378,109 eligible tasks. DEV 2011, P2-TEST 2012, P3-TEST 2013 (about 53-55k tasks each).
+  - The open-population corpus needs start year 1976 or 1990 to reach 80% OUT coverage, which means about 175-250 V100-h of encoding.
+  - Draft pre-declaration: `plans/P2-OA-PREDECLARATION-DRAFT.md` (not frozen).
 - An agent harness prototype exists on branch `claude/paper2-harness-0d504a` (23 CPU tests with doubles; no real backend). Not merged.
 
 ## Data already on this machine (check before downloading)
