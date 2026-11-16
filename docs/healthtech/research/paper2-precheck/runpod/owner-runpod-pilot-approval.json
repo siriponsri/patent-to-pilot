@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-11-16",
+  "owner_words_th": "อนุมัติ pilot $10",
+  "scope": "RunPod encoding-throughput pilot for the Paper 2 open-population corpus: rent RTX 4090 and A100 (Community Cloud) for under 1 h each, encode about 10k public-domain USPTO documents with PatEmbed-large in fp16, measure passages/s, and check vector parity against the V100 on a 1k subset.",
+  "hard_cap_usd": 10,
+  "expected_spend_usd": "about 2",
+  "separate_from": "the OpenRouter USD 100 sub-ledger (not approved yet); the Paper 1 study ledger",
+  "owner_actions": ["create the RunPod account", "top up the prepaid balance (10 USD)", "choose: RunPod MCP via OAuth with per-action approval, or the owner creates pods manually from prepared commands"],
+  "not_granted": ["full corpus encoding", "any spend above 10 USD", "storing an API key in the repo or in logs", "sending DAPFAM (CC BY-NC-SA) or Paper 1 test data to RunPod"]
+}
