@@ -1,11 +1,11 @@
 # Patent-to-Pilot shared project memory
 
-## TAKEOVER STATE for any Claude account 2026-11-16T17:30+07:00 (read this first)
+## TAKEOVER STATE for any Claude account 2026-11-16T18:00+07:00 (read this first; checkpoint before account switch)
 
 This section supersedes the sections below for the current state. Parent writer = the session that started the jobs below. A new account becomes sole writer only after checking that no other session is writing (Claude desktop sidebar / `git log`). Never start a second S8 driver.
 
 **1. Paper 1 S8 (frozen test stage), running unattended**
-- A detached driver (Windows process PID 13984, started with Start-Process) runs `takeover-20261112/drive_paper1_s8.py`. FA b1-b5 and GR b1-b5 are settled. SACR b1 is settled (gen 217: 76 used, 3 fallback). SACR b2 was launched at gen 219; SACR b3-b10 remain. About 2.1 h per SACR batch; generation ends around 10:00-11:00 on 17 Nov.
+- A detached driver (Windows process PID 13984, started with Start-Process) runs `takeover-20261112/drive_paper1_s8.py`. FA b1-b5 and GR b1-b5 are settled. SACR b1 and b2 are settled. SACR b3 was frozen at gen 222 and launched at 17:51 on 16 Nov; SACR b4-b10 remain. About 2.1 h per SACR batch; generation ends around 10:00-12:00 on 17 Nov.
 - Progress log: `takeover-20261112/paper1-s8-progress.jsonl`. The driver commits and pushes after every freeze and settle.
 - **Check the driver is alive:** `tasklist /FI "PID eq 13984"`.
 - **If the driver is dead:** read the last event. If it is LAUNCHED without SETTLED, do NOT start the job again. Observe it with `python takeover-20261112/native_control.py observe paper1-s8-<arm>-b<n>`. Settle ONCE with `python takeover-20261112/settle_synthetic.py <job> paper1-s8-<arm>-b<n>`. Append TERMINAL and SETTLED lines to the progress log, commit, then restart the driver DETACHED (PowerShell Start-Process) with the remaining items only.
@@ -49,6 +49,16 @@ Still needs the owner:
 - the plan v2 freeze.
 
 **6. Standing rules:** no paid API without the per-dispatch approval above; never read DAPFAM test data except through the single frozen S8 evaluation; no LLM judge; pre-declare before computing; one settle per job; report to the owner in Thai.
+
+
+**7. RunPod encoding pilot (approved, hard cap USD 10; `paper2-precheck/runpod/owner-runpod-pilot-approval.json`):**
+- The owner has a RunPod account with a USD 57 prepaid balance. The balance does NOT raise the USD 10 pilot cap.
+- Session `runpod-pilot` (started 17:50) is preparing everything under `docs/healthtech/research/paper2-precheck/runpod/`: a 10k public-domain USPTO sample on the remote at `/data/ptp-paper2/runpod-pilot/`, `encode_pilot.py`, the parity check (with a 1k V100 reference) and `RUNPOD-PILOT-RUNBOOK.md`. If it stopped half-way, read what it committed and finish from there.
+- **Pending owner decision:** how pods are created. Either (a) the owner clicks in the console following the runbook, or (b) the RunPod MCP is installed with hosted OAuth and every create/delete action needs the owner's approval. Do not rent anything until the owner chooses.
+- Pilot order: RTX 4090 Community first, then A100 SXM Community, each at most 45 min. Track spend as balance_before - balance_after and stop before USD 10.
+- After the pilot, pick the full-encoding option from the measured rates (V100 fp16 after S8, 4090 or A100). Full encoding needs a new owner approval with a USD cap.
+
+**8. Owner decisions still open:** the pod-creation method (above); the full-encoding compute option and its cap; R5 downloads (pre-grant text, PatEx-Gym 100 tasks, PatentsView continuity tables for family chains); the USD 100 OpenRouter sub-ledger and its first envelope; freezing plan v2 and `plans/P2-OA-PREDECLARATION-DRAFT.md` after the S8 report; whether to add filing years 2006-2009 as a labelled post-hoc second DEV block.
 
 ## Paper 2 pre-checks on DAPFAM dev: all NO_GO so far; read before proposing a new idea 2026-11-16T07:00+07:00
 
