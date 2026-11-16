@@ -22,6 +22,11 @@ over a label-independent population, it never changes membership):
          < task filing date (proxy for 35 USC 102(a)(2) AIA / 102(e) pre-AIA; foreign priority
          and the pre-AIA invention date are not available). A task is AIA (proxy) if its filing
          date >= 2013-03-16; transition applications cannot be identified from these files.
+  AMENDMENT 1 (after run 1, before any retrieval): run 1 kept only pre-grant publications typed
+  'utility'. PatentsView types every 2001-2004 publication 'new' (751k documents; 118k cited), so
+  run 1 silently dropped them. The population now admits pre-grant types {'utility', 'new',
+  'new-utility'}; still type and date only, never citation status. Run 1 output is kept as
+  oa-splits-v2-run1-asdeclared.json. Also added: number bins of cited patents with no record.
   Claim check: whether the first CTNF's 102/103 rejections include claim 1 (rejections.csv,
   joined on app_id + ifw_number). Amendments are not recorded in these files.
 """
@@ -77,17 +82,19 @@ for r in tsv('pg_published_application'):
     d = 'PG' + r['pgpub_id']; a = r['application_id'].zfill(8)
     doc[d] = (r['published_date'], 'A' + a, r['patent_type'] or 'utility')
     if ok(r['filing_date']): doc_fd[d] = r['filing_date']
-R = {'format': 'ptp-p2-oa-splits-v2-addons-v1', 'grant_types': dict(gtype), 'pgpub_types': dict(ptype)}
+R = {'format': 'ptp-p2-oa-splits-v2-addons-v2', 'grant_types': dict(gtype), 'pgpub_types': dict(ptype)}
 POP_TYPES = {'utility', 'reissue'}
-def in_pop(d): return d in doc and doc[d][2] in POP_TYPES
+PG_TYPES = {'utility', 'new', 'new-utility'}
+def pop_ok(d, t): return t in (PG_TYPES if d.startswith('PG') else POP_TYPES)
+def in_pop(d): return d in doc and pop_ok(d, doc[d][2])
 for d, (pd, u, t) in doc.items():
-    if t in POP_TYPES and (u not in unit_first or pd < unit_first[u]): unit_first[u] = pd
+    if pop_ok(d, t) and (u not in unit_first or pd < unit_first[u]): unit_first[u] = pd
 log('population docs', len(doc), 'units', len(unit_first))
 
 # day histograms for fast window counts
 doc_day = collections.Counter(); unit_day = collections.Counter(); unit_day_r = {r: collections.Counter() for r in RATES}
 for d, (pd, u, t) in doc.items():
-    if t in POP_TYPES: doc_day[pd] += 1
+    if pop_ok(d, t): doc_day[pd] += 1
 for u, pd in unit_first.items():
     unit_day[pd] += 1
     x = h(u)
@@ -184,6 +191,12 @@ for a, t in tasks.items():
     cc[t['split']]['joined_rejection_rows' if a in cl else 'no_rejection_row'] += 1
     cc[t['split']]['claim1_rejected_102_103'] += bool(cl.get(a))
 for s in S: S[s]['claim_check'] = dict(cc[s])
+miss = collections.Counter()
+for c in {c for _, c, _, _ in pairs if c not in doc}:
+    if c.startswith('PG'): miss['PG'] += 1
+    elif c[1:].isdigit(): miss['P<=3930270' if int(c[1:]) <= 3930270 else 'P>3930270'] += 1
+    else: miss['P_other_prefix'] += 1
+R['cited_docs_without_pv_record'] = dict(miss)
 R['splits'] = S
 R['wall_seconds'] = round(time.time() - t0, 1)
 out.write_text(json.dumps(R, indent=1), encoding='utf-8')
