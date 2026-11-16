@@ -1,0 +1,134 @@
+{
+  "notice": "Fictional authored data for offline product scenarios. No real device, company, patent, regulatory decision, or device-patent relationship. Patent numbers use leading zeros so they are not real publications.",
+  "fixture_version": "ht-p0-scenarios-v1",
+  "devices": [
+    {"source_id": "dev-flowpump-100", "device_name": "FlowPump® 100", "manufacturer": "Acme Medical, Inc.", "model": "100"},
+    {"source_id": "dev-flowpump-200", "device_name": "FlowPump 200 Pro", "manufacturer": "Beta Infusion GmbH", "model": "200 Pro"},
+    {"source_id": "dev-flowpump-brand", "device_name": "FLOWPUMP", "manufacturer": "Acme Medical, Inc.", "model": null},
+    {"source_id": "dev-glucosense", "device_name": "GlucoSense Mini", "manufacturer": "Gamma Diagnostics Ltd", "model": "Mini"},
+    {"source_id": "dev-glucosense-maker-page", "device_name": "GlucoSense Mini", "manufacturer": "Gamma Diagnostics Ltd", "model": "Mini"},
+    {"source_id": "dev-vasoline", "device_name": "VasoLine 5F Catheter", "manufacturer": null, "model": "5F"}
+  ],
+  "intake_cases": [
+    {"raw": "FlowPump", "status": "unresolved_intake", "match_ids": ["dev-flowpump-100", "dev-flowpump-200", "dev-flowpump-brand"]},
+    {"raw": "flowpump 100", "status": "resolved", "match_ids": ["dev-flowpump-100"]},
+    {"raw": "FlowPump™ 100", "status": "resolved", "match_ids": ["dev-flowpump-100"]},
+    {"raw": "  GLUCOSENSE   mini ", "status": "resolved", "match_ids": ["dev-glucosense", "dev-glucosense-maker-page"]},
+    {"raw": "Flow-Pump 100", "status": "not_found", "match_ids": []},
+    {"raw": "VasoLine", "status": "resolved", "match_ids": ["dev-vasoline"]}
+  ],
+  "parties": [
+    {"device_manufacturer": "Acme Medical, Inc.", "patent_assignee": "Beta Holdings LLC", "company_match": false},
+    {"device_manufacturer": "Acme Medical, Inc.", "patent_assignee": "ACME MEDICAL INC", "company_match": true},
+    {"device_manufacturer": "Gamma Diagnostics Ltd", "patent_assignee": "Gamma Diagnostics Holdings Ltd", "company_match": false},
+    {"device_manufacturer": "Beta Infusion GmbH", "patent_assignee": "beta infusion", "company_match": true}
+  ],
+  "patent_id_cases": [
+    {"raw": "US 0,000,101 B2", "canonical": "US0000101B2"},
+    {"raw": "us-0000101-b2", "canonical": "US0000101B2"},
+    {"raw": "US 2024/0000123 A1", "canonical": "US20240000123A1"},
+    {"raw": "EP 0 000 201 B1", "canonical": "EP0000201B1"},
+    {"raw": "US0000101A1", "canonical": "US0000101A1"}
+  ],
+  "patent_id_rejects": ["US 0000101 – B2", "0000101B2", "patent 101"],
+  "families": [
+    {"family_id": "SYNFAM-0201", "member_ids": ["US0000201A1", "EP0000201B1", "US0000201B2"], "representative_id": "US0000201B2", "source_id": "beta-family-record"}
+  ],
+  "patent_dates": [
+    {"patent_id_canonical": "US0000201A1", "filing_date": "2019-04-02", "publication_date": "2020-10-08", "source_id": "beta-family-record"},
+    {"patent_id_canonical": "US0000202B2", "filing_date": null, "publication_date": "2021-06-15", "source_id": "beta-family-record"},
+    {"patent_id_canonical": "US0000203A1", "filing_date": null, "publication_date": null, "source_id": "beta-family-record"},
+    {"patent_id_canonical": "EP0000201B1", "filing_date": "2019-04-02", "publication_date": "2027-01-06", "source_id": "beta-family-record"}
+  ],
+  "quantity_text": "The occlusion alarm triggers at 40 kPa. A legacy note says the threshold is 40. The sheath is 5F and the lumen is 1,5 mm wide; flow is 2.5 mL/h at 37 °C.",
+  "quantity_expected": [
+    {"value": "40", "unit": "kPa", "status": "unit_stated"},
+    {"value": "40", "unit": null, "status": "unit_missing"},
+    {"value": "5", "unit": "F", "status": "unit_ambiguous"},
+    {"value": "1,5", "unit": "mm", "status": "number_ambiguous"},
+    {"value": "2.5", "unit": "mL/h", "status": "unit_stated"},
+    {"value": "37", "unit": "°C", "status": "unit_stated"}
+  ],
+  "projects": {
+    "alpha": {
+      "project_id": "syn-alpha",
+      "query_id": "HT-SCN-ALPHA",
+      "device_id_raw": "K000101 (synthetic)",
+      "device_id_canonical": "K000101",
+      "comparator": "alpha-device",
+      "technical_description": "infusion pump",
+      "features_of_interest": ["occlusion sensor"],
+      "company_metadata": {},
+      "cutoff": "2026-10-30",
+      "sources": [
+        {"id": "alpha-device", "type": "regulatory_record", "date": "2026-10-01", "payload": {"k_number": "K000101", "device_name": "SYNTHETIC FlowPump 100 infusion pump", "applicant": "Acme Medical, Inc.", "decision_code": "SYNTHETIC_NOT_A_REAL_DECISION", "decision_date": "2024-03-01"}},
+        {"id": "alpha-maker-page", "type": "independent_disclosure", "date": "2026-10-02", "payload": "SYNTHETIC product page. FlowPump 100 is marked with patent US 0,000,101 B2 according to this authored page."},
+        {"id": "alpha-brochure", "type": "literature", "date": "2026-10-03", "payload": "SYNTHETIC brochure. The FlowPump 100 delivers 2.5 mL/h basal flow."}
+      ],
+      "evidence": [
+        {"kind": "field", "id": "alpha-ev-name", "source": "alpha-device", "field": "device_name"},
+        {"kind": "field", "id": "alpha-ev-applicant", "source": "alpha-device", "field": "applicant"},
+        {"kind": "span", "id": "alpha-ev-marking", "source": "alpha-maker-page", "quote": "FlowPump 100 is marked with patent US 0,000,101 B2", "evidence_kind": "patent_disclosure", "statement": "The authored product page states a patent marking for FlowPump 100."},
+        {"kind": "span", "id": "alpha-ev-flow", "source": "alpha-brochure", "quote": "delivers 2.5 mL/h basal flow", "evidence_kind": "source_fact", "statement": "The authored brochure states a basal flow rate."}
+      ],
+      "patents": [
+        {"patent_id": "US0000101B2", "title": "SYNTHETIC infusion pump with occlusion sensor", "text": "An authored infusion pump with an occlusion sensor and a pressure threshold of 40 kPa."},
+        {"patent_id": "US0000102A1", "title": "SYNTHETIC infusion pump housing", "text": "An authored infusion pump housing with a latch. No occlusion detection."},
+        {"patent_id": "US0000103B1", "title": "SYNTHETIC wound dressing", "text": "An authored absorbent wound dressing layer."}
+      ]
+    },
+    "beta": {
+      "project_id": "syn-beta",
+      "query_id": "HT-SCN-BETA",
+      "device_id_raw": "K000201 (synthetic)",
+      "device_id_canonical": "K000201",
+      "comparator": "beta-device-archive",
+      "technical_description": "balloon catheter",
+      "features_of_interest": ["radiopaque marker"],
+      "company_metadata": {"manufacturer": "Beta Infusion"},
+      "cutoff": "2026-10-30",
+      "sources": [
+        {"id": "beta-device-archive", "type": "regulatory_record", "date": "2025-01-10", "uri": "urn:synthetic:archive:beta-device", "payload": {"k_number": "K000201", "device_name": "SYNTHETIC VasoLine 5F Catheter", "applicant": "Beta Infusion GmbH", "decision_code": "SYNTHETIC_NOT_A_REAL_DECISION"}},
+        {"id": "beta-family-record", "type": "patent_document", "date": "2026-10-04", "payload": {"family_id": "SYNFAM-0201", "members": ["US0000201A1", "EP0000201B1", "US0000201B2"]}}
+      ],
+      "evidence": [
+        {"kind": "field", "id": "beta-ev-name", "source": "beta-device-archive", "field": "device_name"}
+      ],
+      "patents": [
+        {"patent_id": "US0000201A1", "title": "SYNTHETIC balloon catheter application", "text": "An authored balloon catheter with a radiopaque marker band."},
+        {"patent_id": "EP0000201B1", "title": "SYNTHETIC balloon catheter European grant", "text": "An authored balloon catheter with a radiopaque marker band, granted."},
+        {"patent_id": "US0000201B2", "title": "SYNTHETIC balloon catheter grant", "text": "An authored balloon catheter with a radiopaque marker band and a soft tip."},
+        {"patent_id": "US0000202B2", "title": "SYNTHETIC catheter hub", "text": "An authored balloon catheter hub with a luer connector."}
+      ]
+    },
+    "gamma": {
+      "project_id": "syn-gamma",
+      "query_id": "HT-SCN-GAMMA",
+      "device_id_raw": "K000301 (synthetic)",
+      "device_id_canonical": "K000301",
+      "comparator": "gamma-device-us",
+      "technical_description": "glucose sensor",
+      "features_of_interest": [],
+      "company_metadata": {},
+      "cutoff": "2026-10-30",
+      "sources": [
+        {"id": "gamma-device-us", "type": "regulatory_record", "date": "2026-09-01", "payload": {"k_number": "K000301", "device_name": "SYNTHETIC GlucoSense Mini", "applicant": "Gamma Diagnostics Ltd", "decision_code": "SYNTHETIC_NOT_A_REAL_DECISION"}},
+        {"id": "gamma-device-registry", "type": "regulatory_record", "date": "2026-09-05", "payload": {"k_number": "K000301", "device_name": "SYNTHETIC GlucoSense Mini", "applicant": "Gamma Diagnostics Holdings Ltd", "decision_code": "SYNTHETIC_NOT_A_REAL_DECISION"}}
+      ],
+      "evidence": [
+        {"kind": "field", "id": "gamma-ev-applicant-us", "source": "gamma-device-us", "field": "applicant"},
+        {"kind": "field", "id": "gamma-ev-applicant-registry", "source": "gamma-device-registry", "field": "applicant"},
+        {"kind": "field", "id": "gamma-ev-name-us", "source": "gamma-device-us", "field": "device_name"},
+        {"kind": "field", "id": "gamma-ev-name-registry", "source": "gamma-device-registry", "field": "device_name"}
+      ],
+      "patents": [
+        {"patent_id": "US0000301A1", "title": "SYNTHETIC glucose sensor patch", "text": "An authored glucose sensor patch with an enzyme layer."},
+        {"patent_id": "US0000302B2", "title": "SYNTHETIC lancet", "text": "An authored lancet spring mechanism."}
+      ]
+    }
+  },
+  "irrelevant_additions": {
+    "source": {"id": "zz-irrelevant-note", "type": "literature", "date": "2026-10-05", "payload": "SYNTHETIC unrelated note about kitchen scales and bread flour."},
+    "patent": {"patent_id": "US0000999A1", "title": "SYNTHETIC garden hose reel", "text": "An authored garden hose reel with a crank handle."}
+  }
+}
