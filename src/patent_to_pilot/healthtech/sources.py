@@ -1,7 +1,7 @@
 """Local snapshot normalization; this module never downloads or loads credentials."""
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime, time, timezone
 from typing import Any
 
 from patent_to_pilot.core.models import SourceRecord
@@ -11,10 +11,19 @@ from patent_to_pilot.healthtech.contracts import EvidenceItem, SourcePayload, So
 def source_payload(source_id: str, payload: str | dict[str, Any], *, uri: str,
                    revision: str, source_date: date, jurisdiction: str,
                    source_type: str, license_note: str, synthetic: bool,
-                   rights: SourceRights | None = None) -> SourcePayload:
+                   rights: SourceRights | None = None,
+                   created_at: datetime | None = None) -> SourcePayload:
+    """Wrap one pinned payload with its hash.
+
+    ``created_at`` defaults to midnight UTC of ``source_date`` so the same snapshot
+    always produces the same record (and the same dossier input hash). Pass an explicit
+    observation time to record when a snapshot was actually taken.
+    """
+    if created_at is None:
+        created_at = datetime.combine(source_date, time(0), tzinfo=timezone.utc)
     return SourcePayload(source=SourceRecord(record_id=source_id, source_id=source_id,
         source_type=source_type, uri=uri, version_label=revision, license_note=license_note,
-        sha256=content_hash(payload)), payload=payload, source_date=source_date,
+        sha256=content_hash(payload), created_at=created_at), payload=payload, source_date=source_date,
         jurisdiction=jurisdiction, synthetic=synthetic, rights=rights)
 
 
