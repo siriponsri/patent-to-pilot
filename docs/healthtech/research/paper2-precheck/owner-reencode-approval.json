@@ -1,0 +1,7 @@
+{
+  "recorded_at": "2026-11-16T06:30+07:00",
+  "question": "อนุญาตให้ encode corpus DAPFAM ด้วย encoder ตัวที่สองไหม?",
+  "owner_answer": "อนุญาต",
+  "scope": "Follow-up study (Paper 2 pre-check, stream 2): re-encode the DAPFAM corpus (45,336 families) with a second retriever/encoder. Lifts the 'no corpus re-encoding' rule for this scope only.",
+  "still_required": ["per-item approval of model weight downloads (name + size)", "GPU choice: shared RTX 2080 Ti or V100 alongside S8", "Paper 1 frozen protocol and test seal unchanged; dev data only"]
+}
