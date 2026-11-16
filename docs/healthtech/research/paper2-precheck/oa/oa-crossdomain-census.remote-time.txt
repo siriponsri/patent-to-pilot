@@ -1,0 +1,6 @@
+	Command being timed: "python3 -I code/oa_crossdomain_census.py raw-links dapfam-dev-meta/dapfam-dev-meta.jsonl out/census.json"
+	User time (seconds): 803.67
+	System time (seconds): 23.46
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:47.51
+	Maximum resident set size (kbytes): 7647756
+	Exit status: 0

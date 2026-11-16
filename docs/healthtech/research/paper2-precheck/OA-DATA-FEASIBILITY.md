@@ -1,6 +1,6 @@
 # Paper 2 pre-check, stream 3: office-action data feasibility
 
-Status (2026-11-16): desk research done; owner approved D1-D4 (owner-oa-download-approval.json). D3 (DAPFAM HF metadata, hashes match the pinned manifest) and D4 (panorama.parquet, 167,031,631 B, sha256 827a3940...) downloaded. **D1 and D2 BLOCKED**: since 2026-06-18 the USPTO Open Data Portal (which now hosts both the OA dataset and PatentsView) requires a signed-in USPTO.gov account with MFA; the unauthenticated API returns 403 and the UI returns a login dialog. OA overlap numbers are therefore NOT_RUN; DAPFAM-side aggregates are in section 7.
+Status (2026-11-16): DONE. All approved files (D1-D4, plus pg_ipc_at_issue added by owner amendment) downloaded and hash-verified. The census ran on the remote server; results are in section 9. Verdict: building a **new OA-derived cross-domain set is feasible and large**. **Relabelling DAPFAM dev with 102/103 is not feasible**: only 13 of 9,480 dev positive pairs are examiner 102/103 citations.
 
 Question: can we build a legally grounded, cross-domain evaluation set from USPTO prosecution records? That means using examiner citations that back a 35 USC 102 or 103 rejection as relevance labels, split into IN/OUT by IPC domain. How large would it be?
 
@@ -95,3 +95,71 @@ Interim conclusion: relabelling DAPFAM dev with 102/103 can at best cover about 
 - MTM BigQuery extracts carry US citation categories APP/SEA/TPO (examiner vs applicant) but no 102/103 basis, so they do not replace D1.
 - PANORAMA PAR4PC/PI4PC val+test were already local; only `panorama.parquet` (not local) was fetched.
 - D1/D2 still need the owner's USPTO.gov sign-in; no local substitute exists.
+
+## 9. Results (census on the remote, 2026-11-16)
+
+How the files were obtained:
+- USPTO ODP needs a USPTO.gov sign-in and a CAPTCHA. The owner signed in, solved the CAPTCHA and clicked the download links.
+- Raw copies: local `data/raw/uspto/` (gitignored) and remote `/data/ptp-paper2/{oa2017,patentsview}/`, with sha256 equal on both sides.
+- Exact sizes: citations 471,855,807 B; office_actions 83,291,311; rejections 94,662,703; g_ipc_at_issue 395,937,879; g_application 71,601,386; g_patent 232,076,712; pg_published_application 301,006,689; pg_ipc_at_issue 170,642,041.
+- `office_actions` and `rejections` are not needed for these counts, because `citations.action_type` already carries the basis. They are kept for claim-level work.
+
+Run details:
+- Script `oa/oa_crossdomain_census.py` (stdlib only). Dev metadata came from `oa/export_dapfam_dev_meta.py`, a private JSONL holding dev ids/titles/dates. It sits only in `_private_artifacts` and remote `/data/ptp-paper2/dapfam-dev-meta/` (mode 700).
+- Remote run: 803.7 s user + 23.5 s system CPU, 13:48 wall, 7.6 GB peak RSS, exit 0 (`oa/oa-crossdomain-census.remote-time.txt`).
+- Two earlier launches failed in under 1 s with FileNotFoundError: the input symlinks had been created in the home directory. No data was processed in those launches.
+- Full output: `oa/oa-crossdomain-census.json`.
+
+### A1. OA-derived set (OAs mailed 2008 to mid-2017)
+
+| Quantity | Count |
+|---|---|
+| citation rows | 58,862,278 (2,167,898 applications) |
+| rows cited in the action sentence of a 102 / 103 rejection | 2,120,731 / 10,200,151 |
+| of these, cited doc = US pre-grant pub / US patent / foreign or unparsed | 6,716,704 / 4,948,447 / 655,731 |
+| distinct (application, cited US doc) pairs with a 102/103 basis | **6,114,889** (103 only 4,590,801; 102 only 565,532; both 958,556) |
+| citing applications | 1,851,106 |
+| pairs with IPC on both sides | 5,521,348 (no IPC: 593,541) |
+
+IN/OUT cross-tab, counting only pairs with IPC on both sides:
+
+| basis | IN3 / OUT3 (DAPFAM rule) | IN4 / OUT4 | same section / section mismatch |
+|---|---|---|---|
+| 102 only | 399,656 / 106,016 | 354,201 / 151,471 | 443,468 / 62,204 |
+| 103 only | 3,082,056 / 1,074,315 | 2,593,305 / 1,563,066 | 3,501,821 / 654,550 |
+| 102 and 103 | 675,920 / 183,385 | 592,574 / 266,731 | 751,671 / 107,634 |
+| **total** | 4,157,632 / **1,363,716 (24.7%)** | 3,540,080 / 1,981,268 | 4,696,960 / **824,388 (14.9%)** |
+
+- Applications with at least one OUT3 102/103 pair: 760,158. With at least three: 145,307.
+- The most common section-mismatch directions are H->G (156,095) and G->H (128,716), then B<->G, A<->B, A<->G and B<->H (about 23-35k each).
+- Section labels come from the lexicographically first IPC of each side. 489 of the 824,388 mismatch pairs carry malformed section codes in PatentsView; this is a data quality note, and those pairs are included in the totals.
+- Compare DAPFAM: 5,193 OUT positives in total, 2,990 in dev. Even after strict filters (102 only, section mismatch: 62,204 pairs), the OA source is one to two orders of magnitude larger.
+
+Caveats:
+- Cited art is US documents only.
+- Query text (the application as filed) needs pre-grant publication text, from PatentsView `pg_published_application_abstract`/long text or ODP; not yet downloaded.
+- IPC is taken at issue/publication from PatentsView.
+- A cited doc can back a rejection of a claim set that is not the independent claim. Claim-level filtering is possible later with `rejections.claim_numbers`.
+
+### A2. DAPFAM dev linkage
+
+Method: map dev families to US documents by exact normalised title (US member, US doc dated on or after the earliest claim date). Ambiguous titles abstain. This is an approximation; precision has not been measured.
+
+- 474 dev queries: 320 mapped to US documents. 119 have any OA citation row in 2008-2017; 110 have at least one 102/103 citation.
+- 5,542 dev positive targets: 3,404 mapped.
+- 9,480 dev positive pairs:
+
+| domain | cited as 102 | cited as 103 | mapped, query has OA, not a 102/103 citation | query has no 102/103 OA | unmapped |
+|---|---|---|---|---|---|
+| IN (6,490) | 2 | 8 | 1,018 | 1,610 | 3,852 |
+| OUT (2,990) | 2 | 1 | 425 | 1,041 | 1,521 |
+
+Among pairs where the query has a 102/103 OA and both sides map, only 10/1,028 IN (1.0%) and 3/428 OUT (0.7%) are examiner 102/103 citations. Most DAPFAM positives are citations that never backed a rejection: applicant citations, citations from other family members or offices, forward citations, or OAs outside the 2008-2017 window. Title-mapping errors could lower these shares further but cannot raise them much.
+
+### Verdict
+
+1. **New OA-derived cross-domain test set: feasible.**
+   - About 1.36M OUT3 102/103 pairs over 760k applications.
+   - A test set of a few thousand queries can be drawn with strict filters: 102 only or section mismatch, at least 3 OUT pairs, filing year disjoint from the dev pool.
+   - Remaining needs: application text (published pre-grant text), a corpus design (the cited docs plus distractors), and leakage control against the encoders' training data.
+2. **102/103 relabelling of DAPFAM dev: not feasible.** 13 confirmed pairs (3 OUT) is far too few for an evaluation. DAPFAM can stay the citation-based benchmark, with a note that its positives are mostly not legally grounded rejections.
