@@ -19,6 +19,10 @@ Arms (all share the same environment, tools and budget object):
 * ``E0``      fixed retrieval: one SEARCH, then a declared fixed visit/select policy.
 * ``E0-deep`` one deep SEARCH (pool 500-1,000) + a fixed reranker hook.
 * ``E1``      fixed multi-query schedule of pre-declared query templates, RRF-fused.
+* ``E3``      claim-element deficit-aware search (CEDS): split the claim into
+              elements; each move targets the least-covered element (element
+              query, function reformulation, CPC hop, citation hop). Coverage needs
+              a visited, source-located passage with a mechanically matched quote.
 * ``E2``      ReAct agent: an injected LLM chooses actions under a strict JSON
               schema. An invalid action stops the agent; it falls back to an
               injected fixed arm (E0), and the fallback cost is reported separately.
@@ -31,6 +35,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
+import unicodedata
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any, Callable, Mapping, Protocol, Sequence
@@ -43,6 +49,7 @@ METHODS = ("dense", "bm25", "hybrid")
 BACKEND_METHODS = ("dense", "bm25")
 FIELDS = ("title", "abstract", "claims", "description")
 ACTIONS = ("SEARCH", "VISIT", "SELECT", "STOP")
+RELATIONS = ("cpc", "citation")
 STAGES = ("search", "visit", "select")
 
 STOP_SCHEDULE_COMPLETE = "SCHEDULE_COMPLETE"
@@ -51,6 +58,8 @@ STOP_BUDGET_REFUSED = "BUDGET_REFUSED"
 STOP_INVALID_ACTION = "INVALID_ACTION"
 STOP_MAX_STEPS = "MAX_STEPS"
 STOP_EMPTY_SEARCH = "EMPTY_SEARCH"
+STOP_ALL_COVERED = "ALL_COVERED"
+STOP_MOVES_EXHAUSTED = "MOVES_EXHAUSTED"
 
 RANKING_OWN = "OWN"
 RANKING_FALLBACK = "FALLBACK"
@@ -163,6 +172,9 @@ class DocumentStore(Protocol):
 
     def field_text(self, doc_id: str, field_name: str) -> str | None: ...
 
+    # Optional, used only by EXPAND (CPC / citation hops):
+    # def neighbours(self, doc_id: str, relation: str, top_n: int) -> Sequence[str]: ...
+
 
 CostFn = Callable[[Mapping[str, Any]], ActionCost]
 
@@ -184,6 +196,7 @@ def default_patex_cost_model(*, max_visit_bytes: int) -> dict[str, CostFn]:
         "SELECT": lambda a: ActionCost(actions=1, selects=1, cpu_seconds=0.001, wall_seconds=0.001),
         "RERANK": lambda a: ActionCost(actions=1, rerank_docs=a["n"], gpu_seconds=0.002 * a["n"],
                                        wall_seconds=0.002 * a["n"]),
+        "EXPAND": lambda a: ActionCost(actions=1, returned_ids=a["top_n"], cpu_seconds=0.01, wall_seconds=0.02),
     }
 
 
@@ -313,6 +326,7 @@ class _Episode:
         self.visited_fields: dict[str, set[str]] = {}
         self.visible_bytes: dict[tuple[str, str], int] = {}
         self.selections: list[dict[str, Any]] = []
+        self.excerpts: dict[str, dict[str, str]] = {}
 
     # -- accounting
     def _admit(self, action: str, args_log: Mapping[str, Any], cost: ActionCost) -> bool:
@@ -382,6 +396,7 @@ class _Episode:
             ex = _truncate_utf8(full, self.env.max_visit_bytes)
             nb = len(ex.encode("utf-8"))
             excerpts[f] = ex
+            self.excerpts.setdefault(doc_id, {})[f] = ex
             per_field[f] = {"missing": False, "bytes": nb, "full_bytes": len(full.encode("utf-8")),
                             "sha256": _sha(ex), "tokens": self.env.token_counter(ex)}
             self.visible_bytes[(doc_id, f)] = max(self.visible_bytes.get((doc_id, f), 0), nb)
@@ -431,6 +446,36 @@ class _Episode:
                       cumulative_cost=self.ledger.spent.to_dict())
         return sel
 
+    def expand(self, doc_id: str, relation: str, top_n: int) -> list[str] | None:
+        """CPC or citation hop from a visited document. Returned ids count as Search."""
+
+        if doc_id not in self.visited:
+            raise InvalidAction("UNVISITED_ID")
+        if relation not in RELATIONS:
+            raise InvalidAction("BAD_RELATION")
+        if isinstance(top_n, bool) or not isinstance(top_n, int) or not (1 <= top_n <= self.env.max_top_n):
+            raise InvalidAction("BAD_TOP_N")
+        if "EXPAND" not in self.env.cost_model or not hasattr(self.env.store, "neighbours"):
+            raise ValueError("EXPAND needs a declared cost and store.neighbours")
+        args = {"id": doc_id, "relation": relation, "top_n": top_n}
+        cost = self.env.declared_cost("EXPAND", args)
+        if not self._admit("EXPAND", args, cost):
+            return None
+        ids = _dedupe(self.env.store.neighbours(doc_id, relation, top_n))[:top_n]
+        versions = []
+        for i in ids:
+            v = self.env.store.version(i)
+            if v is None:
+                raise ValueError(f"backend returned unknown document {i}")
+            versions.append(v)
+            self.searched.setdefault(i, v)
+        if ids:
+            self.lists.append(tuple(ids))
+        self.traj.log("observation", action="EXPAND", args=args, declared_cost=cost.to_dict(),
+                      declared_seconds=cost.wall_seconds, returned_ids=list(ids), versions=versions,
+                      returned_count=len(ids), cumulative_cost=self.ledger.spent.to_dict())
+        return ids
+
     def rerank(self, reranker: Callable[[str, Sequence[str]], Sequence[str]], ids: Sequence[str]) -> list[str] | None:
         args = {"n": len(ids)}
         cost = self.env.declared_cost("RERANK", args)
@@ -469,6 +514,7 @@ class ArmResult:
     fallback_cost: ActionCost
     refusals: list[dict[str, Any]]
     trajectory: Trajectory = field(repr=False)
+    extras: dict[str, Any] = field(default_factory=dict)
 
     def funnel_record(self) -> dict[str, Any]:
         """Plain data for the evaluator (contains quotes; keep private)."""
@@ -484,7 +530,8 @@ class ArmResult:
                 "stop_reason": self.stop_reason, "stages_run": list(self.stages_run),
                 "searched": len(self.searched), "visited": len(self.visited), "selected": len(self.selections),
                 "cost": self.cost.to_dict(), "fallback_cost": self.fallback_cost.to_dict(),
-                "refusals": len(self.refusals), "trajectory_sha256": canonical_sha256(self.trajectory.records)}
+                "refusals": len(self.refusals), "trajectory_sha256": canonical_sha256(self.trajectory.records),
+                **({"extras": self.extras} if self.extras else {})}
 
 
 def _finish(ep: _Episode, arm: str, stop: str, stages: Sequence[str], pool_size: int) -> ArmResult:
@@ -822,6 +869,213 @@ class ReActArm(_ArmBase):
         return ArmResult(query.query_id, self.arm_id, list(fb.ranking), RANKING_FALLBACK, stop, fb.stages_run,
                          fb.searched, fb.visited, fb.selections, ep.ledger.spent, fb.cost,
                          list(ep.ledger.refusals), ep.traj)
+
+
+# ---------------------------------------------------------------------------
+# E3: claim-element deficit-aware search (CEDS)
+# ---------------------------------------------------------------------------
+
+RUNTIME_NORMALISATION_ID = "nfc-collapse-whitespace-strip-v1"  # same rule as the evaluator
+_WS = re.compile(r"\s+")
+
+
+def runtime_normalise(text: str) -> str:
+    return _WS.sub(" ", unicodedata.normalize("NFC", text)).strip()
+
+
+@dataclass(frozen=True)
+class ClaimElement:
+    element_id: str
+    text: str
+
+
+ElementSplitter = Callable[[str], Sequence[ClaimElement]]
+PassageExtractor = Callable[[ClaimElement, str, Mapping[str, str]], Sequence[Mapping[str, Any]]]
+Reformulator = Callable[[ClaimElement], str]
+
+CEDS_MOVES = ("element_query", "function_reformulation", "cpc_hop", "citation_hop")
+_REFUSED = object()
+_SKIPPED = object()
+
+
+def verify_passage(excerpts: Mapping[str, str], proposal: Any) -> tuple[bool, str | None]:
+    """Mechanical check of a proposed passage against the *visited* excerpt only."""
+
+    if not isinstance(proposal, Mapping) or set(proposal) != {"field", "start", "end", "quote"}:
+        return False, "BAD_SHAPE"
+    f, s0, e0, quote = proposal["field"], proposal["start"], proposal["end"], proposal["quote"]
+    if any(isinstance(x, bool) or not isinstance(x, int) for x in (s0, e0)) or not isinstance(quote, str):
+        return False, "BAD_SHAPE"
+    if not runtime_normalise(quote):
+        return False, "EMPTY_QUOTE"
+    if f not in excerpts:
+        return False, "FIELD_NOT_VISITED"
+    data = excerpts[f].encode("utf-8")
+    if not (0 <= s0 < e0 <= len(data)):
+        return False, "OUT_OF_VISIBLE"
+    try:
+        span = data[s0:e0].decode("utf-8")
+    except UnicodeDecodeError:
+        return False, "OFF_BOUNDARY"
+    if runtime_normalise(span) != runtime_normalise(quote):
+        return False, "QUOTE_MISMATCH"
+    return True, None
+
+
+class DeficitAwareArm(_ArmBase):
+    """E3 (CEDS). Split the claim into elements; each move targets the least-covered element.
+
+    An element is covered only by a passage of a VISITed document whose byte locator
+    lies in the visible excerpt and whose quote matches the span after
+    ``runtime_normalise``. The extractor may only *propose* passages. Moves per
+    element, in declared order: element query, function reformulation of that element,
+    CPC hop, citation hop (hops start from the earliest visited document not yet used
+    as a seed for that relation). Stops when every element is covered, every move is
+    spent, or the budget refuses. Reference labels are never an input.
+    """
+
+    arm_id = "E3"
+
+    def __init__(self, env: PatexEnv, budget: ArmBudget, *, splitter: ElementSplitter,
+                 extractor: PassageExtractor, reformulator: Reformulator, pool_size: int,
+                 method: str = "dense", top_n: int = 20, hop_top_n: int = 10, visit_per_move: int = 1,
+                 visit_fields: Sequence[str] = ("abstract", "claims"), moves: Sequence[str] = CEDS_MOVES,
+                 max_proposals: int = 3, max_elements: int = 20, split_cost: ActionCost = ZERO,
+                 extract_cost: ActionCost = ZERO, reformulate_cost: ActionCost = ZERO):
+        super().__init__(env, budget, pool_size=pool_size)
+        if method not in env.methods or not (1 <= top_n <= env.max_top_n) or not (1 <= hop_top_n <= env.max_top_n):
+            raise ValueError("bad E3 method/top_n")
+        if not moves or len(set(moves)) != len(moves) or any(m not in CEDS_MOVES for m in moves):
+            raise ValueError("bad E3 moves")
+        if not visit_fields or any(f not in FIELDS for f in visit_fields) or visit_per_move < 1:
+            raise ValueError("bad E3 visit settings")
+        self.splitter, self.extractor, self.reformulator = splitter, extractor, reformulator
+        self.method, self.top_n, self.hop_top_n = method, top_n, hop_top_n
+        self.visit_per_move, self.visit_fields, self.moves = visit_per_move, tuple(visit_fields), tuple(moves)
+        self.max_proposals, self.max_elements = max_proposals, max_elements
+        self.split_cost, self.extract_cost, self.reformulate_cost = split_cost, extract_cost, reformulate_cost
+
+    def _config(self) -> dict[str, Any]:
+        return {"method": self.method, "top_n": self.top_n, "hop_top_n": self.hop_top_n,
+                "visit_per_move": self.visit_per_move, "visit_fields": list(self.visit_fields),
+                "moves": list(self.moves), "max_proposals": self.max_proposals,
+                "split_cost": self.split_cost.to_dict(), "extract_cost": self.extract_cost.to_dict(),
+                "reformulate_cost": self.reformulate_cost.to_dict(), "normalisation": RUNTIME_NORMALISATION_ID}
+
+    def _move(self, ep: _Episode, target: ClaimElement, move: str, seeds_used: set[tuple[str, str]]) -> Any:
+        if move == "element_query":
+            out = ep.search(target.text, self.method, self.top_n)
+            return _REFUSED if out is None else out
+        if move == "function_reformulation":
+            if not ep._admit("REFORMULATE", {"element_id": target.element_id}, self.reformulate_cost):
+                return _REFUSED
+            text = (self.reformulator(target) or "").strip()
+            ep.traj.log("reformulation", element_id=target.element_id, text_sha256=_sha(text),
+                        cumulative_cost=ep.ledger.spent.to_dict())
+            if not text:
+                return _SKIPPED
+            out = ep.search(text, self.method, self.top_n)
+            return _REFUSED if out is None else out
+        relation = "cpc" if move == "cpc_hop" else "citation"
+        seed = next((d for d in ep.visited if (relation, d) not in seeds_used), None)
+        if seed is None:
+            return _SKIPPED
+        seeds_used.add((relation, seed))
+        out = ep.expand(seed, relation, self.hop_top_n)
+        return _REFUSED if out is None else out
+
+    def _extract(self, ep: _Episode, elements: Sequence[ClaimElement], coverage: dict[str, list[dict[str, Any]]],
+                 doc: str, rejected: dict[str, int]) -> bool:
+        """Check uncovered elements against one visited doc; SELECT it if it covers any. False = refused."""
+
+        excerpts = dict(ep.excerpts.get(doc, {}))
+        accepted: list[dict[str, Any]] = []
+        for el in elements:
+            if coverage[el.element_id]:
+                continue
+            if not ep._admit("EXTRACT", {"element_id": el.element_id, "id": doc}, self.extract_cost):
+                return False
+            proposals = list(self.extractor(el, doc, excerpts))
+            ep.traj.log("extract", element_id=el.element_id, id=doc, proposals=len(proposals),
+                        considered=min(len(proposals), self.max_proposals),
+                        cumulative_cost=ep.ledger.spent.to_dict())
+            for prop in proposals[: self.max_proposals]:
+                ok, reason = verify_passage(excerpts, prop)
+                quote = prop.get("quote") if isinstance(prop, Mapping) else None
+                ep.traj.log("coverage_check", element_id=el.element_id, id=doc, accepted=ok, reason=reason,
+                            quote_sha256=_sha(quote) if isinstance(quote, str) else None)
+                if not ok:
+                    rejected[reason] = rejected.get(reason, 0) + 1
+                    continue
+                loc = {k: prop[k] for k in ("field", "start", "end", "quote")}
+                coverage[el.element_id].append({"doc_id": doc, "field": loc["field"], "start": loc["start"],
+                                                "end": loc["end"]})
+                if loc not in accepted:
+                    accepted.append(loc)
+                break
+        if accepted and ep.select(doc, accepted[: ep.max_locations]) is None:
+            return False
+        return True
+
+    def run(self, query: Query) -> ArmResult:
+        ep = self._start(query, **self._config())
+        coverage: dict[str, list[dict[str, Any]]] = {}
+        rejected: dict[str, int] = {}
+        moves_log: list[list[str]] = []
+        elements: list[ClaimElement] = []
+        stop = STOP_BUDGET_REFUSED
+        if ep._admit("SPLIT", {"query_sha256": _sha(query.text)}, self.split_cost):
+            elements = list(self.splitter(query.text))
+            ids = [e.element_id for e in elements]
+            if (not elements or len(elements) > self.max_elements or len(set(ids)) != len(ids)
+                    or any(not isinstance(e, ClaimElement) or not e.element_id or not e.text.strip()
+                           for e in elements)):
+                raise ValueError("splitter must return 1..max_elements unique non-empty ClaimElements")
+            ep.traj.log("elements", element_ids=ids, text_sha256=[_sha(e.text) for e in elements],
+                        cumulative_cost=ep.ledger.spent.to_dict())
+            coverage = {e.element_id: [] for e in elements}
+            stop = self._loop(ep, elements, coverage, rejected, moves_log)
+        extras = {
+            "elements": len(elements),
+            "covered": sum(bool(v) for v in coverage.values()),
+            "coverage": {k: [c["doc_id"] for c in v] for k, v in coverage.items()},
+            "rejected": dict(sorted(rejected.items())),
+            "moves": moves_log,
+        }
+        ep.traj.log("coverage_summary", **extras)
+        res = _finish(ep, self.arm_id, stop, STAGES, self.pool_size)
+        res.extras = extras
+        return res
+
+    def _loop(self, ep: _Episode, elements: Sequence[ClaimElement], coverage: dict[str, list[dict[str, Any]]],
+              rejected: dict[str, int], moves_log: list[list[str]]) -> str:
+        order = {e.element_id: i for i, e in enumerate(elements)}
+        tried = {e.element_id: 0 for e in elements}
+        seeds_used: set[tuple[str, str]] = set()
+        while True:
+            uncovered = [e for e in elements if not coverage[e.element_id]]
+            if not uncovered:
+                return STOP_ALL_COVERED
+            # least covered first (uncovered = 0 passages); tie: fewest moves tried, then claim order
+            target = min(uncovered, key=lambda e: (len(coverage[e.element_id]), tried[e.element_id],
+                                                   order[e.element_id]))
+            if tried[target.element_id] >= len(self.moves):
+                return STOP_MOVES_EXHAUSTED
+            move = self.moves[tried[target.element_id]]
+            tried[target.element_id] += 1
+            moves_log.append([target.element_id, move])
+            ep.traj.log("target", element_id=target.element_id, move=move)
+            out = self._move(ep, target, move, seeds_used)
+            if out is _REFUSED:
+                return STOP_BUDGET_REFUSED
+            if out is _SKIPPED:
+                ep.traj.log("move_skipped", element_id=target.element_id, move=move)
+                continue
+            for doc in [i for i in out if i not in ep.visited][: self.visit_per_move]:
+                if ep.visit(doc, list(self.visit_fields)) is None:
+                    return STOP_BUDGET_REFUSED
+                if not self._extract(ep, elements, coverage, doc, rejected):
+                    return STOP_BUDGET_REFUSED
 
 
 # ---------------------------------------------------------------------------

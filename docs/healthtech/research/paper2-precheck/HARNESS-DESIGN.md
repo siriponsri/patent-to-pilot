@@ -148,3 +148,33 @@ Paper 1 spot checks (10) still pass.
 - nDCG@10 is not implemented yet.
 - Fallback-cost policy: still open, and must be decided before outcomes are seen.
 - Funnel records contain quotes and must stay private.
+
+## E3: claim-element deficit-aware search (CEDS), plan v2 section 5.2
+
+Status: PROTOTYPE, CPU-tested with authored doubles only (zero model calls).
+- Code: `DeficitAwareArm` in `patex_arms.py`.
+- Tests: `tests/test_ceds_arm.py` (14 passed).
+
+- **Elements:** an injected splitter turns the query text into `ClaimElement`s (1..20, unique ids, non-empty text). A declared `split_cost` is admitted first.
+- **Coverage:** an element is covered only by a passage of a **visited** document, and only after a mechanical check (`verify_passage`):
+  - the field was visited;
+  - the byte range lies inside the visible excerpt and on UTF-8 boundaries;
+  - the quote equals the span after `nfc-collapse-whitespace-strip-v1`, the same rule the evaluator uses.
+
+  An injected extractor only proposes passages. At most `max_proposals` are checked, each extractor call is costed (`extract_cost`), and rejections are counted by reason. A covering document is SELECTed with its accepted locators.
+- **Next move:** the least-covered element is chosen; ties go to the element with the fewest moves tried, then claim order. Each element walks the declared moves in order:
+  1. element query;
+  2. function reformulation (injected, costed `reformulate_cost`);
+  3. CPC hop;
+  4. citation hop.
+
+  Hops use a new env action `EXPAND(id, relation, top_n)`. It needs a visited seed (the earliest visited document not yet used for that relation) and an optional `store.neighbours`. Hop results count as the Search stage. Each move visits up to `visit_per_move` new documents.
+- **Stop reasons:** `ALL_COVERED`, `MOVES_EXHAUSTED`, `BUDGET_REFUSED`. Coverage per element, rejection counts and the move log are returned in `ArmResult.extras` (document ids and hashes only).
+- **No gold:** the arm takes only `query` and the injected functions. Tests check that a K-only id never appears in its logs or extractor inputs, and that its output is unchanged under different label sets.
+
+Not yet validated for E3:
+- a real claim splitter (independent-claim selection, claim version);
+- real extractor and reformulator prompts and their costs;
+- real CPC and citation neighbours;
+- whether coverage by keyword-like passages is meaningful;
+- the novelty check against coverage-guided search, claim charting and PatentAgentBench (plan 5.2; required before freeze).
