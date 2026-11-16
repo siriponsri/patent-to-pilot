@@ -1,0 +1,47 @@
+{
+  "integrity": {
+    "status": "PASS",
+    "package_sha256": "e40ed0eea75c4b9e8b85e09a32259f6cf8686cbca3bd006bd2d548eacde278b5",
+    "configuration_sha256": "0ef72e4f5a1763fe0a580bba1f4cadef415d747d0c8d5ce9fa164e11942e2a52",
+    "gate": "integrity",
+    "source_commit": "7cc856f979dd25f6eb13f428f62faca12d78ed5b",
+    "files": 240,
+    "fixture_sha256": "fc76a4e3cc62ca41338fc4e7bc3901d0537a5c5f70149dcf34630013e8b3c594",
+    "test_freeze_manifest_sha256": "99f34c44832029898fbfa8dcba6a7142e50f442bda5421e24bb7d1ec8669b119",
+    "evidence": "committed blobs; worker identical to the CPU-fixture-qualified file except the added test stage name (verified by reverting it); runner files identical; frozen arm files match"
+  },
+  "isolation": {
+    "status": "PASS",
+    "package_sha256": "e40ed0eea75c4b9e8b85e09a32259f6cf8686cbca3bd006bd2d548eacde278b5",
+    "configuration_sha256": "0ef72e4f5a1763fe0a580bba1f4cadef415d747d0c8d5ce9fa164e11942e2a52",
+    "gate": "isolation",
+    "evidence": "same supervisor/isolation as the S4 full-dev runs; re-validated before start"
+  },
+  "runtime": {
+    "status": "PASS",
+    "package_sha256": "e40ed0eea75c4b9e8b85e09a32259f6cf8686cbca3bd006bd2d548eacde278b5",
+    "configuration_sha256": "0ef72e4f5a1763fe0a580bba1f4cadef415d747d0c8d5ce9fa164e11942e2a52",
+    "gate": "runtime",
+    "s5_summary_sha256": "0baf5eb24082081b6f8b06713bc06372d769eb50880e2bf9925029adb30a7592",
+    "decoder_sha256": "20232bca268d86c6e4bad73eb53be74c881ad06e004eb0aaa6ddb5af831368ae",
+    "evidence": "the same configuration ran the full dev set (S4) on this GPU; S5 C1 MOVEMENT_PRESENT for this arm"
+  },
+  "resources": {
+    "status": "PASS",
+    "package_sha256": "e40ed0eea75c4b9e8b85e09a32259f6cf8686cbca3bd006bd2d548eacde278b5",
+    "configuration_sha256": "0ef72e4f5a1763fe0a580bba1f4cadef415d747d0c8d5ce9fa164e11942e2a52",
+    "gate": "resources",
+    "live_admission_required": true,
+    "gpu_remaining_seconds": 539693.3864951228,
+    "disk_preexisting_upper_bound_bytes": 46463622639
+  },
+  "accounting": {
+    "status": "PASS",
+    "package_sha256": "e40ed0eea75c4b9e8b85e09a32259f6cf8686cbca3bd006bd2d548eacde278b5",
+    "configuration_sha256": "0ef72e4f5a1763fe0a580bba1f4cadef415d747d0c8d5ce9fa164e11942e2a52",
+    "gate": "accounting",
+    "ledger_sha256": "b1fc01243a46821c24784e78b4e2e99d7fa7ede36b116c99725205a3d29ec2dd",
+    "cpu_remaining_seconds": 23405.153622190002,
+    "gpu_stage_host_cpu": "TELEMETRY_NOT_CHARGED_TO_CPU_CAP"
+  }
+}
