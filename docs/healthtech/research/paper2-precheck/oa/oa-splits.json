@@ -1,0 +1,934 @@
+{
+ "format": "ptp-p2-oa-splits-v1",
+ "rule": {
+  "temporal_key": "application filing date",
+  "complete_min_denominator": 10000,
+  "complete_frac_of_max": 0.9,
+  "min_test_tasks": 1000,
+  "mail_window": [
+   "2008-01-01",
+   "2017-12-31"
+  ],
+  "min_K": 3,
+  "min_out3": 1,
+  "sample_salt": "p2-oa-split-v1",
+  "sample_sizes": [
+   1000,
+   2000,
+   5000
+  ]
+ },
+ "completeness_by_filing_year": {
+  "1909": {
+   "den": 1,
+   "num_with_ctnf": 1,
+   "c": 1.0
+  },
+  "1911": {
+   "den": 1,
+   "num_with_ctnf": 0,
+   "c": 0.0
+  },
+  "1913": {
+   "den": 1,
+   "num_with_ctnf": 1,
+   "c": 1.0
+  },
+  "1918": {
+   "den": 3,
+   "num_with_ctnf": 0,
+   "c": 0.0
+  },
+  "1992": {
+   "den": 1,
+   "num_with_ctnf": 1,
+   "c": 1.0
+  },
+  "1994": {
+   "den": 4,
+   "num_with_ctnf": 2,
+   "c": 0.5
+  },
+  "1995": {
+   "den": 3,
+   "num_with_ctnf": 1,
+   "c": 0.3333
+  },
+  "1996": {
+   "den": 2,
+   "num_with_ctnf": 1,
+   "c": 0.5
+  },
+  "1997": {
+   "den": 5,
+   "num_with_ctnf": 2,
+   "c": 0.4
+  },
+  "1998": {
+   "den": 6,
+   "num_with_ctnf": 3,
+   "c": 0.5
+  },
+  "1999": {
+   "den": 5,
+   "num_with_ctnf": 2,
+   "c": 0.4
+  },
+  "2000": {
+   "den": 18,
+   "num_with_ctnf": 12,
+   "c": 0.6667
+  },
+  "2001": {
+   "den": 43,
+   "num_with_ctnf": 31,
+   "c": 0.7209
+  },
+  "2002": {
+   "den": 32,
+   "num_with_ctnf": 18,
+   "c": 0.5625
+  },
+  "2003": {
+   "den": 42,
+   "num_with_ctnf": 26,
+   "c": 0.619
+  },
+  "2004": {
+   "den": 66,
+   "num_with_ctnf": 48,
+   "c": 0.7273
+  },
+  "2005": {
+   "den": 1456,
+   "num_with_ctnf": 1179,
+   "c": 0.8098
+  },
+  "2006": {
+   "den": 23533,
+   "num_with_ctnf": 19083,
+   "c": 0.8109
+  },
+  "2007": {
+   "den": 61790,
+   "num_with_ctnf": 50467,
+   "c": 0.8168
+  },
+  "2008": {
+   "den": 326454,
+   "num_with_ctnf": 262672,
+   "c": 0.8046
+  },
+  "2009": {
+   "den": 309103,
+   "num_with_ctnf": 238734,
+   "c": 0.7723
+  },
+  "2010": {
+   "den": 322279,
+   "num_with_ctnf": 215139,
+   "c": 0.6676
+  },
+  "2011": {
+   "den": 347917,
+   "num_with_ctnf": 288848,
+   "c": 0.8302
+  },
+  "2012": {
+   "den": 373296,
+   "num_with_ctnf": 307317,
+   "c": 0.8233
+  },
+  "2013": {
+   "den": 394048,
+   "num_with_ctnf": 315216,
+   "c": 0.7999
+  },
+  "2014": {
+   "den": 400654,
+   "num_with_ctnf": 260861,
+   "c": 0.6511
+  },
+  "2015": {
+   "den": 401695,
+   "num_with_ctnf": 156083,
+   "c": 0.3886
+  },
+  "2016": {
+   "den": 386671,
+   "num_with_ctnf": 50587,
+   "c": 0.1308
+  },
+  "2017": {
+   "den": 323516,
+   "num_with_ctnf": 0,
+   "c": 0.0
+  },
+  "2018": {
+   "den": 130370,
+   "num_with_ctnf": 0,
+   "c": 0.0
+  },
+  "2019": {
+   "den": 1485,
+   "num_with_ctnf": 0,
+   "c": 0.0
+  },
+  "2020": {
+   "den": 2736,
+   "num_with_ctnf": 0,
+   "c": 0.0
+  }
+ },
+ "funnel": {
+  "apps_with_ctnf": 2169879,
+  "first_ctnf_mailed_2008_2017": 2169870,
+  "first_ctnf_with_ge1_us_102_103": 1795745,
+  "first_ctnf_with_ge3_us_102_103": 740853,
+  "with_ge3_and_app_ipc": 739082,
+  "with_ge1_out3": 378109,
+  "eligible_with_filing_date": 378109
+ },
+ "eligible_by_filing_year": {
+  "1995": 1,
+  "1999": 1,
+  "2000": 2,
+  "2001": 6,
+  "2003": 6,
+  "2004": 9,
+  "2005": 217,
+  "2006": 3055,
+  "2007": 8119,
+  "2008": 46608,
+  "2009": 42594,
+  "2010": 38701,
+  "2011": 52806,
+  "2012": 54074,
+  "2013": 55307,
+  "2014": 45110,
+  "2015": 24898,
+  "2016": 6595
+ },
+ "eligible_by_mail_year": {
+  "2008": 807,
+  "2009": 7905,
+  "2010": 22506,
+  "2011": 47099,
+  "2012": 57097,
+  "2013": 56238,
+  "2014": 54771,
+  "2015": 61189,
+  "2016": 59007,
+  "2017": 11490
+ },
+ "eligible_filing_x_mail_year": {
+  "1995|2010": 1,
+  "1999|2010": 1,
+  "2000|2009": 1,
+  "2000|2010": 1,
+  "2001|2008": 1,
+  "2001|2009": 2,
+  "2001|2010": 1,
+  "2001|2011": 1,
+  "2001|2012": 1,
+  "2003|2010": 2,
+  "2003|2011": 2,
+  "2003|2012": 1,
+  "2003|2013": 1,
+  "2004|2010": 1,
+  "2004|2011": 4,
+  "2004|2012": 3,
+  "2004|2013": 1,
+  "2005|2009": 18,
+  "2005|2010": 75,
+  "2005|2011": 96,
+  "2005|2012": 21,
+  "2005|2013": 6,
+  "2005|2014": 1,
+  "2006|2008": 10,
+  "2006|2009": 303,
+  "2006|2010": 884,
+  "2006|2011": 1374,
+  "2006|2012": 422,
+  "2006|2013": 51,
+  "2006|2014": 8,
+  "2006|2015": 2,
+  "2006|2016": 1,
+  "2007|2008": 62,
+  "2007|2009": 404,
+  "2007|2010": 1347,
+  "2007|2011": 3843,
+  "2007|2012": 2093,
+  "2007|2013": 314,
+  "2007|2014": 46,
+  "2007|2015": 8,
+  "2007|2016": 2,
+  "2008|2008": 734,
+  "2008|2009": 6387,
+  "2008|2010": 12610,
+  "2008|2011": 17507,
+  "2008|2012": 7469,
+  "2008|2013": 1613,
+  "2008|2014": 242,
+  "2008|2015": 33,
+  "2008|2016": 11,
+  "2008|2017": 2,
+  "2009|2009": 790,
+  "2009|2010": 5775,
+  "2009|2011": 16860,
+  "2009|2012": 13738,
+  "2009|2013": 4100,
+  "2009|2014": 1143,
+  "2009|2015": 168,
+  "2009|2016": 16,
+  "2009|2017": 4,
+  "2010|2010": 1808,
+  "2010|2011": 5313,
+  "2010|2012": 18190,
+  "2010|2013": 8458,
+  "2010|2014": 3544,
+  "2010|2015": 1290,
+  "2010|2016": 82,
+  "2010|2017": 16,
+  "2011|2011": 2099,
+  "2011|2012": 11564,
+  "2011|2013": 22487,
+  "2011|2014": 10959,
+  "2011|2015": 4516,
+  "2011|2016": 1141,
+  "2011|2017": 40,
+  "2012|2012": 3595,
+  "2012|2013": 15073,
+  "2012|2014": 20262,
+  "2012|2015": 10768,
+  "2012|2016": 4051,
+  "2012|2017": 325,
+  "2013|2013": 4134,
+  "2013|2014": 15192,
+  "2013|2015": 23980,
+  "2013|2016": 10891,
+  "2013|2017": 1110,
+  "2014|2014": 3374,
+  "2014|2015": 16862,
+  "2014|2016": 21831,
+  "2014|2017": 3043,
+  "2015|2015": 3562,
+  "2015|2016": 17052,
+  "2015|2017": 4284,
+  "2016|2016": 3929,
+  "2016|2017": 2666
+ },
+ "complete_years": [
+  "2006",
+  "2007",
+  "2008",
+  "2009",
+  "2011",
+  "2012",
+  "2013"
+ ],
+ "incomplete_years_with_eligible_tasks": {
+  "1995": 1,
+  "1999": 1,
+  "2000": 2,
+  "2001": 6,
+  "2003": 6,
+  "2004": 9,
+  "2005": 217,
+  "2010": 38701,
+  "2014": 45110,
+  "2015": 24898,
+  "2016": 6595
+ },
+ "usable_contiguous_years": [
+  "2011",
+  "2012",
+  "2013"
+ ],
+ "cut_points": {
+  "DEV": [
+   "2011"
+  ],
+  "P2-TEST": [
+   "2012"
+  ],
+  "P3-TEST": [
+   "2013"
+  ]
+ },
+ "splits": {
+  "DEV": {
+   "filing_years": [
+    "2011"
+   ],
+   "tasks": 52806,
+   "pairs": 230703,
+   "distinct_cited_docs": 211156,
+   "distinct_cited_with_pv_record": 200776,
+   "share_102_only": 0.0515,
+   "share_103_only": 0.8423,
+   "share_both": 0.1062,
+   "share_OUT3": 0.4333,
+   "share_IN3": 0.4805,
+   "share_noipc_cited": 0.2586,
+   "share_OUT4": 0.5119,
+   "share_section_mismatch": 0.2593,
+   "pair_counts": {
+    "102": 11871,
+    "102|IN3": 5689,
+    "102|NOIPC": 1254,
+    "102|OUT3": 4928,
+    "103": 194329,
+    "103|IN3": 92497,
+    "103|NOIPC": 16380,
+    "103|OUT3": 85452,
+    "IN3": 110857,
+    "IN4": 92726,
+    "NOIPC": 59661,
+    "OUT3": 99959,
+    "OUT4": 118090,
+    "SAMESEC": 151004,
+    "SECMIS": 59812,
+    "both": 24503,
+    "both|IN3": 12671,
+    "both|NOIPC": 2253,
+    "both|OUT3": 9579,
+    "pairs": 230703
+   },
+   "K_per_task": {
+    "mean": 4.37,
+    "median": 4.0,
+    "p90": 7,
+    "max": 31
+   },
+   "OUT3_per_task": {
+    "mean": 1.89,
+    "median": 2.0,
+    "p90": 3,
+    "tasks_ge3_out3": 12325
+   },
+   "unjudged_other_us_citations_per_task": {
+    "mean": 25.58,
+    "median": 9.0
+   },
+   "clusters": {
+    "art_units": 577,
+    "largest_art_unit_share": 0.0142,
+    "art_units_ge20_tasks": 498,
+    "technology_centers": 18,
+    "ipc4_primary_subclasses": 563,
+    "largest_ipc4_share": 0.1157,
+    "tasks_without_ipc4_primary": 0
+   },
+   "temporal_K_pairs": {
+    "pub_before_filing": 204052,
+    "docfiled_before_filing": 218419,
+    "pub_on_or_after_filing": 15949,
+    "pub_unknown": 10702,
+    "docfiled_unknown": 10703,
+    "docfiled_on_or_after_filing": 1581
+   },
+   "cross_split_doc_links_K_pairs": {
+    "cited_doc_not_a_task_app": 219211,
+    "cited_doc_is_task_app_in_EXCLUDED": 10386,
+    "cited_doc_is_task_app_in_DEV": 944,
+    "cited_doc_is_task_app_in_P3-TEST": 27,
+    "cited_doc_is_task_app_in_P2-TEST": 135
+   },
+   "corpus_full_window": {
+    "1to1": {
+     "docs": 422312,
+     "passages_est": 1760043,
+     "v100_fp32_hours_est": 13.4
+    },
+    "1to3": {
+     "docs": 844624,
+     "passages_est": 3520086,
+     "v100_fp32_hours_est": 26.8
+    }
+   },
+   "corpus_per_sample": {
+    "1000": {
+     "distinct_cited": 4364,
+     "pairs": 4376,
+     "out3_pairs": 1869,
+     "corpus_1to1": {
+      "docs": 8728,
+      "passages_est": 36375,
+      "v100_fp32_hours_est": 0.3
+     },
+     "corpus_1to3": {
+      "docs": 17456,
+      "passages_est": 72750,
+      "v100_fp32_hours_est": 0.6
+     }
+    },
+    "2000": {
+     "distinct_cited": 8637,
+     "pairs": 8720,
+     "out3_pairs": 3794,
+     "corpus_1to1": {
+      "docs": 17274,
+      "passages_est": 71992,
+      "v100_fp32_hours_est": 0.5
+     },
+     "corpus_1to3": {
+      "docs": 34548,
+      "passages_est": 143984,
+      "v100_fp32_hours_est": 1.1
+     }
+    },
+    "5000": {
+     "distinct_cited": 21695,
+     "pairs": 22007,
+     "out3_pairs": 9477,
+     "corpus_1to1": {
+      "docs": 43390,
+      "passages_est": 180834,
+      "v100_fp32_hours_est": 1.4
+     },
+     "corpus_1to3": {
+      "docs": 86780,
+      "passages_est": 361668,
+      "v100_fp32_hours_est": 2.8
+     }
+    }
+   }
+  },
+  "P2-TEST": {
+   "filing_years": [
+    "2012"
+   ],
+   "tasks": 54074,
+   "pairs": 236008,
+   "distinct_cited_docs": 217217,
+   "distinct_cited_with_pv_record": 207503,
+   "share_102_only": 0.0519,
+   "share_103_only": 0.8463,
+   "share_both": 0.1018,
+   "share_OUT3": 0.4264,
+   "share_IN3": 0.4949,
+   "share_noipc_cited": 0.236,
+   "share_OUT4": 0.5086,
+   "share_section_mismatch": 0.2572,
+   "pair_counts": {
+    "102": 12241,
+    "102|IN3": 5927,
+    "102|NOIPC": 1221,
+    "102|OUT3": 5093,
+    "103": 199730,
+    "103|IN3": 98047,
+    "103|NOIPC": 15273,
+    "103|OUT3": 86410,
+    "IN3": 116808,
+    "IN4": 97398,
+    "NOIPC": 55704,
+    "OUT3": 100632,
+    "OUT4": 120042,
+    "SAMESEC": 156740,
+    "SECMIS": 60700,
+    "both": 24037,
+    "both|IN3": 12834,
+    "both|NOIPC": 2074,
+    "both|OUT3": 9129,
+    "pairs": 236008
+   },
+   "K_per_task": {
+    "mean": 4.36,
+    "median": 4.0,
+    "p90": 7,
+    "max": 24
+   },
+   "OUT3_per_task": {
+    "mean": 1.86,
+    "median": 1.0,
+    "p90": 3,
+    "tasks_ge3_out3": 12049
+   },
+   "unjudged_other_us_citations_per_task": {
+    "mean": 23.85,
+    "median": 8.0
+   },
+   "clusters": {
+    "art_units": 578,
+    "largest_art_unit_share": 0.0143,
+    "art_units_ge20_tasks": 500,
+    "technology_centers": 20,
+    "ipc4_primary_subclasses": 569,
+    "largest_ipc4_share": 0.1145,
+    "tasks_without_ipc4_primary": 0
+   },
+   "temporal_K_pairs": {
+    "pub_before_filing": 211091,
+    "docfiled_before_filing": 224580,
+    "pub_on_or_after_filing": 14952,
+    "docfiled_on_or_after_filing": 1461,
+    "pub_unknown": 9965,
+    "docfiled_unknown": 9967
+   },
+   "cross_split_doc_links_K_pairs": {
+    "cited_doc_not_a_task_app": 220591,
+    "cited_doc_is_task_app_in_EXCLUDED": 11671,
+    "cited_doc_is_task_app_in_DEV": 2673,
+    "cited_doc_is_task_app_in_P2-TEST": 960,
+    "cited_doc_is_task_app_in_P3-TEST": 113
+   },
+   "corpus_full_window": {
+    "1to1": {
+     "docs": 434434,
+     "passages_est": 1810563,
+     "v100_fp32_hours_est": 13.8
+    },
+    "1to3": {
+     "docs": 868868,
+     "passages_est": 3621127,
+     "v100_fp32_hours_est": 27.6
+    }
+   },
+   "corpus_per_sample": {
+    "1000": {
+     "distinct_cited": 4360,
+     "pairs": 4375,
+     "out3_pairs": 1854,
+     "corpus_1to1": {
+      "docs": 8720,
+      "passages_est": 36342,
+      "v100_fp32_hours_est": 0.3
+     },
+     "corpus_1to3": {
+      "docs": 17440,
+      "passages_est": 72684,
+      "v100_fp32_hours_est": 0.6
+     }
+    },
+    "2000": {
+     "distinct_cited": 8773,
+     "pairs": 8821,
+     "out3_pairs": 3776,
+     "corpus_1to1": {
+      "docs": 17546,
+      "passages_est": 73125,
+      "v100_fp32_hours_est": 0.6
+     },
+     "corpus_1to3": {
+      "docs": 35092,
+      "passages_est": 146251,
+      "v100_fp32_hours_est": 1.1
+     }
+    },
+    "5000": {
+     "distinct_cited": 21709,
+     "pairs": 21900,
+     "out3_pairs": 9478,
+     "corpus_1to1": {
+      "docs": 43418,
+      "passages_est": 180950,
+      "v100_fp32_hours_est": 1.4
+     },
+     "corpus_1to3": {
+      "docs": 86836,
+      "passages_est": 361901,
+      "v100_fp32_hours_est": 2.8
+     }
+    }
+   }
+  },
+  "P3-TEST": {
+   "filing_years": [
+    "2013"
+   ],
+   "tasks": 55307,
+   "pairs": 240940,
+   "distinct_cited_docs": 220368,
+   "distinct_cited_with_pv_record": 211463,
+   "share_102_only": 0.056,
+   "share_103_only": 0.8477,
+   "share_both": 0.0963,
+   "share_OUT3": 0.4371,
+   "share_IN3": 0.4895,
+   "share_noipc_cited": 0.22,
+   "share_OUT4": 0.5224,
+   "share_section_mismatch": 0.271,
+   "pair_counts": {
+    "102": 13481,
+    "102|IN3": 6583,
+    "102|NOIPC": 1226,
+    "102|OUT3": 5672,
+    "103": 204248,
+    "103|IN3": 99240,
+    "103|NOIPC": 14605,
+    "103|OUT3": 90403,
+    "IN3": 117948,
+    "IN4": 97408,
+    "NOIPC": 53016,
+    "OUT3": 105320,
+    "OUT4": 125860,
+    "SAMESEC": 157983,
+    "SECMIS": 65285,
+    "both": 23211,
+    "both|IN3": 12125,
+    "both|NOIPC": 1841,
+    "both|OUT3": 9245,
+    "pairs": 240940
+   },
+   "K_per_task": {
+    "mean": 4.36,
+    "median": 4,
+    "p90": 6,
+    "max": 26
+   },
+   "OUT3_per_task": {
+    "mean": 1.9,
+    "median": 2,
+    "p90": 3,
+    "tasks_ge3_out3": 13152
+   },
+   "unjudged_other_us_citations_per_task": {
+    "mean": 23.8,
+    "median": 7
+   },
+   "clusters": {
+    "art_units": 569,
+    "largest_art_unit_share": 0.0111,
+    "art_units_ge20_tasks": 496,
+    "technology_centers": 18,
+    "ipc4_primary_subclasses": 557,
+    "largest_ipc4_share": 0.0968,
+    "tasks_without_ipc4_primary": 0
+   },
+   "temporal_K_pairs": {
+    "pub_before_filing": 216567,
+    "docfiled_before_filing": 230242,
+    "pub_unknown": 9157,
+    "docfiled_unknown": 9158,
+    "pub_on_or_after_filing": 15216,
+    "docfiled_on_or_after_filing": 1540
+   },
+   "cross_split_doc_links_K_pairs": {
+    "cited_doc_not_a_task_app": 221291,
+    "cited_doc_is_task_app_in_EXCLUDED": 11744,
+    "cited_doc_is_task_app_in_DEV": 4138,
+    "cited_doc_is_task_app_in_P2-TEST": 2714,
+    "cited_doc_is_task_app_in_P3-TEST": 1053
+   },
+   "corpus_full_window": {
+    "1to1": {
+     "docs": 440736,
+     "passages_est": 1836828,
+     "v100_fp32_hours_est": 14.0
+    },
+    "1to3": {
+     "docs": 881472,
+     "passages_est": 3673655,
+     "v100_fp32_hours_est": 28.0
+    }
+   },
+   "corpus_per_sample": {
+    "1000": {
+     "distinct_cited": 4409,
+     "pairs": 4411,
+     "out3_pairs": 1941,
+     "corpus_1to1": {
+      "docs": 8818,
+      "passages_est": 36750,
+      "v100_fp32_hours_est": 0.3
+     },
+     "corpus_1to3": {
+      "docs": 17636,
+      "passages_est": 73500,
+      "v100_fp32_hours_est": 0.6
+     }
+    },
+    "2000": {
+     "distinct_cited": 8810,
+     "pairs": 8828,
+     "out3_pairs": 3903,
+     "corpus_1to1": {
+      "docs": 17620,
+      "passages_est": 73434,
+      "v100_fp32_hours_est": 0.6
+     },
+     "corpus_1to3": {
+      "docs": 35240,
+      "passages_est": 146868,
+      "v100_fp32_hours_est": 1.1
+     }
+    },
+    "5000": {
+     "distinct_cited": 21750,
+     "pairs": 21972,
+     "out3_pairs": 9716,
+     "corpus_1to1": {
+      "docs": 43500,
+      "passages_est": 181292,
+      "v100_fp32_hours_est": 1.4
+     },
+     "corpus_1to3": {
+      "docs": 87000,
+      "passages_est": 362584,
+      "v100_fp32_hours_est": 2.8
+     }
+    }
+   }
+  },
+  "EXCLUDED": {
+   "filing_years": null,
+   "tasks": 215922,
+   "pairs": 938694,
+   "distinct_cited_docs": 766794,
+   "distinct_cited_with_pv_record": 726336,
+   "share_102_only": 0.0529,
+   "share_103_only": 0.8325,
+   "share_both": 0.1146,
+   "share_OUT3": 0.4273,
+   "share_IN3": 0.4817,
+   "share_noipc_cited": 0.2731,
+   "share_OUT4": 0.5058,
+   "share_section_mismatch": 0.2575,
+   "pair_counts": {
+    "102": 49631,
+    "102|IN3": 23812,
+    "102|NOIPC": 5451,
+    "102|OUT3": 20368,
+    "103": 781445,
+    "103|IN3": 373401,
+    "103|NOIPC": 69140,
+    "103|OUT3": 338904,
+    "IN3": 452162,
+    "IN4": 378450,
+    "NOIPC": 256311,
+    "OUT3": 401095,
+    "OUT4": 474807,
+    "SAMESEC": 611554,
+    "SECMIS": 241703,
+    "both": 107618,
+    "both|IN3": 54949,
+    "both|NOIPC": 10846,
+    "both|OUT3": 41823,
+    "pairs": 938694
+   },
+   "K_per_task": {
+    "mean": 4.35,
+    "median": 4.0,
+    "p90": 6,
+    "max": 51
+   },
+   "OUT3_per_task": {
+    "mean": 1.86,
+    "median": 1.0,
+    "p90": 3,
+    "tasks_ge3_out3": 48011
+   },
+   "unjudged_other_us_citations_per_task": {
+    "mean": 24.01,
+    "median": 8.0
+   },
+   "clusters": {
+    "art_units": 617,
+    "largest_art_unit_share": 0.01,
+    "art_units_ge20_tasks": 568,
+    "technology_centers": 21,
+    "ipc4_primary_subclasses": 609,
+    "largest_ipc4_share": 0.104,
+    "tasks_without_ipc4_primary": 0
+   },
+   "temporal_K_pairs": {
+    "pub_before_filing": 825828,
+    "docfiled_before_filing": 888594,
+    "pub_unknown": 43313,
+    "docfiled_unknown": 43318,
+    "pub_on_or_after_filing": 69553,
+    "docfiled_on_or_after_filing": 6782
+   },
+   "cross_split_doc_links_K_pairs": {
+    "cited_doc_not_a_task_app": 896669,
+    "cited_doc_is_task_app_in_EXCLUDED": 26296,
+    "cited_doc_is_task_app_in_P3-TEST": 4340,
+    "cited_doc_is_task_app_in_DEV": 6048,
+    "cited_doc_is_task_app_in_P2-TEST": 5341
+   },
+   "corpus_full_window": {
+    "1to1": {
+     "docs": 1533588,
+     "passages_est": 6391438,
+     "v100_fp32_hours_est": 48.7
+    },
+    "1to3": {
+     "docs": 3067176,
+     "passages_est": 12782877,
+     "v100_fp32_hours_est": 97.4
+    }
+   },
+   "corpus_per_sample": {
+    "1000": {
+     "distinct_cited": 4321,
+     "pairs": 4327,
+     "out3_pairs": 1857,
+     "corpus_1to1": {
+      "docs": 8642,
+      "passages_est": 36017,
+      "v100_fp32_hours_est": 0.3
+     },
+     "corpus_1to3": {
+      "docs": 17284,
+      "passages_est": 72033,
+      "v100_fp32_hours_est": 0.5
+     }
+    },
+    "2000": {
+     "distinct_cited": 8657,
+     "pairs": 8684,
+     "out3_pairs": 3709,
+     "corpus_1to1": {
+      "docs": 17314,
+      "passages_est": 72158,
+      "v100_fp32_hours_est": 0.5
+     },
+     "corpus_1to3": {
+      "docs": 34628,
+      "passages_est": 144317,
+      "v100_fp32_hours_est": 1.1
+     }
+    },
+    "5000": {
+     "distinct_cited": 21621,
+     "pairs": 21774,
+     "out3_pairs": 9365,
+     "corpus_1to1": {
+      "docs": 43242,
+      "passages_est": 180217,
+      "v100_fp32_hours_est": 1.4
+     },
+     "corpus_1to3": {
+      "docs": 86484,
+      "passages_est": 360434,
+      "v100_fp32_hours_est": 2.7
+     }
+    }
+   }
+  }
+ },
+ "cited_docs_shared_between_splits": {
+  "DEV&P2-TEST": 21354,
+  "DEV&P3-TEST": 20265,
+  "DEV&EXCLUDED": 58340,
+  "P2-TEST&P3-TEST": 22474,
+  "P2-TEST&EXCLUDED": 59863,
+  "P3-TEST&EXCLUDED": 59674
+ },
+ "continuation_proxy_title_ipc4_twins_across_splits": {
+  "EXCLUDED": 14655,
+  "DEV": 5047,
+  "P2-TEST": 5383,
+  "P3-TEST": 5526
+ },
+ "encoding_scale": {
+  "source": "DAPFAM stage 0 (2026-11-05), PatEmbed-large fp32, V100",
+  "passages": 188944,
+  "families": 45336,
+  "seconds": 5182.267,
+  "passages_per_doc_assumed": 4.168,
+  "passages_per_second": 36.46
+ },
+ "wall_seconds": 661.3
+}
