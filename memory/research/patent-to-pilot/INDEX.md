@@ -1,5 +1,55 @@
 # Patent-to-Pilot shared project memory
 
+## TAKEOVER STATE for any Claude account 2026-11-16T17:30+07:00 (read this first)
+
+This section supersedes the sections below for the current state. Parent writer = the session that started the jobs below. A new account becomes sole writer only after checking that no other session is writing (Claude desktop sidebar / `git log`). Never start a second S8 driver.
+
+**1. Paper 1 S8 (frozen test stage), running unattended**
+- A detached driver (Windows process PID 13984, started with Start-Process) runs `takeover-20261112/drive_paper1_s8.py`. FA b1-b5 and GR b1-b5 are settled. SACR b1 is settled (gen 217: 76 used, 3 fallback). SACR b2 was launched at gen 219; SACR b3-b10 remain. About 2.1 h per SACR batch; generation ends around 10:00-11:00 on 17 Nov.
+- Progress log: `takeover-20261112/paper1-s8-progress.jsonl`. The driver commits and pushes after every freeze and settle.
+- **Check the driver is alive:** `tasklist /FI "PID eq 13984"`.
+- **If the driver is dead:** read the last event. If it is LAUNCHED without SETTLED, do NOT start the job again. Observe it with `python takeover-20261112/native_control.py observe paper1-s8-<arm>-b<n>`. Settle ONCE with `python takeover-20261112/settle_synthetic.py <job> paper1-s8-<arm>-b<n>`. Append TERMINAL and SETTLED lines to the progress log, commit, then restart the driver DETACHED (PowerShell Start-Process) with the remaining items only.
+- **After SACR b10 settles:**
+  1. Run `takeover-20261112/freeze_paper1_s8_retrieval.py`, start the job with `native_control.py start`, observe, then settle once.
+  2. Check C1: MOVEMENT_PRESENT for FA, GR and SACR.
+  3. Run `takeover-20261112/freeze_paper1_s8_eval.py`. It opens the sealed test qrels ONCE. Start the CPU evaluation and settle once.
+  4. Render the report with `python docs/healthtech/research/paper1-report/render_paper1_test_report.py <summary.json>`. Fill the matching conclusion branch in `docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md`.
+  5. Write the Thai owner report.
+- `package()` refuses uncommitted changes under main's `src/` and `scripts/healthtech`. Keep them clean. **Do not merge branches that touch `src/` or `scripts/healthtech` into main until the last S8 freeze (the evaluation job) is done.**
+
+**2. Paper 2/3 plan v2 (proposal, NOT frozen):** `docs/healthtech/research/plans/PAPER-2-3-MERGED-PLAN-20261116.md`. It is revised after an owner-supplied external review.
+- Paper 2: an OA-derived cross-domain benchmark plus a new search method E3 (claim-element deficit-aware search).
+- Paper 3: stage-specific harness evolution, gated on integrity only.
+- The plan is frozen only after the owner sees the S8 result. Owner planning pack (untracked): `docs/owner/`.
+
+**3. Do-not-repeat ledger:** `docs/healthtech/research/paper2-precheck/README.md`. Every DAPFAM-dev acquisition pre-check so far is NO_GO.
+- OA data (USPTO OA Research Dataset 2017 + PatentsView) is downloaded and hash-verified at remote `/data/ptp-paper2/` and local `data/raw/uspto/`.
+- Census: `paper2-precheck/OA-DATA-FEASIBILITY.md` section 9. When quoting the DAPFAM 13/9,480 figure, give it only together with its mapping limits.
+
+**4. Parallel sessions and branches (merge when done; delete after merge, as the owner allows):**
+
+| Session | Branch | State | Merge rule |
+|---|---|---|---|
+| p2-oa-splits | `claude/p2-oa-splits-6f1f87` | R1 split run in progress on the remote; R2 v2 pre-declaration draft written | docs only: merge when done |
+| p2-harness | `claude/paper2-harness-0d504a` | Harness + E0/E0-deep/E1/E2/E3 + funnel evaluator, 78 tests PASS, doubles only | touches `src/`: merge only after S8 evaluation |
+| prod-p0 | `claude/prod-p0-evidence-bedc49` | Product P0 audit, scenarios and fixes in progress | touches `src/`: merge only after S8 evaluation |
+| p1-report-scaffold | merged (cd38e17), branch deleted | done | n/a |
+
+The folder `.claude/worktrees/p1-report-scaffold-f29529` is a leftover locked directory; delete it later.
+
+**5. Owner approvals on record:**
+- `owner-parallel-gpu-llm-approval.json` (takeover dir);
+- `paper2-precheck/owner-reencode-approval.json`;
+- `paper2-precheck/owner-oa-download-approval.json`.
+
+Still needs the owner:
+- R5: download pre-grant text and the PatEx-Gym 100 tasks;
+- R6: GPU choice for a corpus-encoding speed test (the shared RTX 2080 Ti, or RunPod);
+- the USD 100 OpenRouter sub-ledger and its first envelope;
+- the plan v2 freeze.
+
+**6. Standing rules:** no paid API without the per-dispatch approval above; never read DAPFAM test data except through the single frozen S8 evaluation; no LLM judge; pre-declare before computing; one settle per job; report to the owner in Thai.
+
 ## Paper 2 pre-checks on DAPFAM dev: all NO_GO so far; read before proposing a new idea 2026-11-16T07:00+07:00
 
 Ledger of everything already tested (do not repeat): docs/healthtech/research/paper2-precheck/README.md.
