@@ -162,4 +162,4 @@ Among pairs where the query has a 102/103 OA and both sides map, only 10/1,028 I
    - About 1.36M OUT3 102/103 pairs over 760k applications.
    - A test set of a few thousand queries can be drawn with strict filters: 102 only or section mismatch, at least 3 OUT pairs, filing year disjoint from the dev pool.
    - Remaining needs: application text (published pre-grant text), a corpus design (the cited docs plus distractors), and leakage control against the encoders' training data.
-2. **102/103 relabelling of DAPFAM dev: not feasible.** 13 confirmed pairs (3 OUT) is far too few for an evaluation. DAPFAM can stay the citation-based benchmark, with a note that its positives are mostly not legally grounded rejections.
+2. **102/103 relabelling of DAPFAM dev: not feasible.** 13 confirmed pairs (3 OUT) is far too few for an evaluation. DAPFAM can stay the citation-based benchmark. Wording rule (v2): say only that, under the exact-title mapping (precision unmeasured) and the 2008-2017 OA coverage, 13 pairs could be linked to an examiner 102/103 citation; do not use this as evidence about DAPFAM label quality.
