@@ -53,9 +53,11 @@ GPU use: about 362 s of wall time on the V100. S8 was not touched: SACR b3 kept 
 
 ## 3. Before renting (owner, once)
 
-1. Create the RunPod account and top up a **prepaid USD 10**.
-   - **Turn off auto-pay / auto-recharge.** The prepaid balance is then the hard cap: RunPod stops pods when the balance runs out.
-2. Option (a) or (b) below.
+1. The RunPod account already exists, with a **USD 57 prepaid balance** (owner, 2026-11-16).
+   - **The pilot cap stays USD 10.** The balance does not raise it, and it is no longer a safety net: RunPod would keep billing well past USD 10.
+   - Spend is therefore tracked as **balance_before − balance_after**, read from the console (Billing) or the API (MCP), and pods stop before cumulative pilot spend reaches USD 10 (section 6).
+   - Keep auto-pay / auto-recharge off, so the balance cannot grow during the pilot.
+2. Option (a) or (b) below. The owner has not chosen yet; both stay available.
    - For SSH/scp, add an SSH public key in RunPod → Settings → SSH Public Keys.
    - For option (b), add the public key of this PC, so the agent can copy the bundle.
 3. Never paste an API key into chat, the repo or a file. Option (b) uses OAuth instead.
@@ -78,7 +80,7 @@ GPU use: about 362 s of wall time on the V100. S8 was not touched: SACR b3 kept 
 
 ### (a) Owner clicks in the RunPod console
 
-1. Deploy: Pods → Deploy → Community Cloud → the GPU from section 4 → template above → container disk 30 GB → Deploy. **Note the time.**
+1. **Write down the balance** (Billing page) as `balance_before` and check the start rule in section 6. Then deploy: Pods → Deploy → Community Cloud → the GPU from section 4 → template above → container disk 30 GB → Deploy. **Note the time.**
 2. Upload `data/raw/runpod-pilot-bundle/runpod-pilot-bundle.tar.gz` to `/workspace`, in one of three ways:
    - Connect → JupyterLab → upload button; or
    - `scp -P <port> -i <key> runpod-pilot-bundle.tar.gz root@<public-ip>:/workspace/` (port and IP are under Connect → "SSH over exposed TCP"); or
@@ -97,32 +99,38 @@ GPU use: about 362 s of wall time on the V100. S8 was not touched: SACR b3 kept 
 4. Fetch `/workspace/results-<label>.tar.gz` and its `.sha256` (Jupyter download, scp, or `runpodctl send`) to `docs/healthtech/research/paper2-precheck/runpod/results/`.
 5. Terminate immediately: `runpodctl remove pod $RUNPOD_POD_ID` in the pod, or Terminate in the console.
    - Check in the console that the pod is gone and the balance stopped moving.
-6. Fill in the spend table (section 6) and `runpod-spend.json`.
+6. A few minutes after terminating, read the balance again as `balance_after`. Fill in the spend table (section 6) and `runpod-spend.json`: pod spend = balance_before − balance_after.
 
 ### (b) Agent via the RunPod MCP (hosted OAuth, per-action approval)
 
 1. The owner adds the hosted server to Claude Code with `claude mcp add --transport http runpod https://mcp.runpod.io/`, then runs `/mcp` → runpod → Authenticate and signs in to RunPod in the browser.
    - The server holds the session token; no key enters the repo, logs or chat.
-2. The agent lists the GPU types and live prices, checks the start rule (section 6), then asks for approval of **each** action: create pod, then terminate pod. The owner approves each tool call.
-3. The agent scp's the bundle (SSH key from step 3.2), runs the same `pod_run.sh` command over SSH, fetches the results, then calls terminate and confirms through the MCP that the pod is gone.
+2. The agent reads the account balance through the MCP (`balance_before`), lists the GPU types and live prices, and checks the start rule (section 6). It then asks for approval of **each** action: create pod, then terminate pod. The owner approves each tool call.
+3. The agent scp's the bundle (SSH key from step 3.2), runs the same `pod_run.sh` command over SSH, and fetches the results. It then calls terminate, confirms through the MCP that the pod is gone, reads `balance_after`, and records the spend.
+   - If the MCP cannot return the balance, the owner reads it from the console before and after.
 4. Tool names differ between server versions. The agent must list them after connecting and never guess.
 
 ## 6. Cost guard and spend table
 
+**Spend is measured, not estimated.** Pilot spend = `balance_before` (read before the first pod) − the current balance, from the console Billing page or the API. With the USD 57 balance, the balance itself does **not** stop anything at USD 10, so the guards below are what enforce the cap.
+
 Guards:
-- prepaid USD 10 with auto-recharge off;
 - per pod: watchdog 40 minutes after the script starts, plus about 5 minutes of deploy, so at most 45 minutes;
 - the console reminder: Terminate at Deploy + 45 minutes no matter what;
-- **start rule: do not deploy a pod if spent + hourly rate × 0.75 > USD 9.**
+- **start rule: do not deploy a pod if cumulative spend + hourly rate × 0.75 > USD 9** (USD 1 margin for rounding, image pull and billing lag);
+- **running stop:** while a pod runs, cumulative spend = (balance_before_pilot − current balance) + the running pod's elapsed minutes × rate / 60. If that reaches USD 9.5, terminate at once, even mid-run. This is deliberately conservative: it may double-count while the balance updates live;
+- after each pod, wait until the balance stops moving (a few minutes) before reading `balance_after`;
+- no network volumes and no stopped (not terminated) pods; both keep billing;
+- terminate every pod before the pilot is closed, and check that the pod list is empty.
 
-With the indicative prices, both pods at their worst case cost about USD 1.30.
+With the indicative prices, both pods at their worst case cost about USD 1.30, far below the cap.
 
-| # | Date/time (Deploy → Terminate) | GPU / image tag | USD/h | Minutes | USD | Running total | Under the start rule? |
-|---|---|---|---|---|---|---|---|
-| 1 | | RTX 4090 Community | | | | | 0 + rate × 0.75 ≤ 9 |
-| 2 | | A100 SXM Community | | | | | total + rate × 0.75 ≤ 9 |
+| # | Deploy → Terminate (date/time) | GPU / image tag | USD/h | balance_before | balance_after | Pod spend (before − after) | Cumulative pilot spend | Start rule (cum + rate × 0.75 ≤ 9)? |
+|---|---|---|---|---|---|---|---|---|
+| 1 | | RTX 4090 Community | | (≈ 57.00) | | | | |
+| 2 | | A100 SXM Community | | | | | | |
 
-Use the console billing figure, not the estimate, for the running total.
+Cumulative pilot spend = balance before pod 1 − balance after the last pod. Record the same numbers in `runpod-spend.json`.
 
 ## 7. Decision table: picking the full-encoding option
 

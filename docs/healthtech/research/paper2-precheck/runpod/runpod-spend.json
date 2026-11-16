@@ -2,8 +2,27 @@
   "ledger": "RunPod encoding pilot (Paper 2 open-population corpus); separate from the OpenRouter sub-ledger and the Paper 1 study ledger",
   "approval": "owner-runpod-pilot-approval.json",
   "hard_cap_usd": 10.0,
-  "start_rule": "do not deploy a pod if spent_usd + hourly_rate * 0.75 > 9.0 (USD 1 margin for rounding, image pull and storage)",
+  "account_prepaid_balance_usd_reported": 57.0,
+  "account_balance_note": "owner update 2026-11-16: account exists with USD 57 prepaid; the balance does not raise the USD 10 pilot cap and does not stop billing at 10",
+  "spend_method": "pod_spend = balance_before - balance_after, read from the console Billing page or the RunPod API/MCP after the balance stops moving; cumulative = balance before pod 1 - balance after the last pod",
+  "start_rule": "do not deploy a pod if cumulative_spend_usd + hourly_rate * 0.75 > 9.0",
+  "running_stop_rule": "terminate immediately if (balance_before_pilot - current_balance) + elapsed_minutes * hourly_rate / 60 >= 9.5",
   "per_pod_limit_minutes": 45,
-  "spent_usd": 0.0,
-  "pods": []
+  "balance_before_pilot_usd": null,
+  "cumulative_spend_usd": 0.0,
+  "pods": [],
+  "pod_entry_template": {
+    "label": "rtx4090 | a100sxm",
+    "gpu": null,
+    "image_tag": null,
+    "usd_per_hour": null,
+    "deployed_at": null,
+    "terminated_at": null,
+    "balance_before_usd": null,
+    "balance_after_usd": null,
+    "pod_spend_usd": null,
+    "cumulative_spend_usd": null,
+    "balance_source": "console | api",
+    "created_via": "console | mcp_oauth"
+  }
 }
