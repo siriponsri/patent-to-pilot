@@ -141,6 +141,10 @@ def run_dossier(
             errors: list[str] = []
             try:
                 hits = index.search(query, limit=min(data.per_search_limit, before.max_returned_candidates))
+            except TimeoutError:
+                hits = []
+                errors = ["local_search_timeout"]
+                failures = True
             except (ValueError, RuntimeError):
                 hits = []
                 errors = ["local_search_failed"]
@@ -154,6 +158,10 @@ def run_dossier(
                             query,
                             limit=min(data.per_search_limit, remaining_slots),
                         )
+                    except TimeoutError:
+                        # Recorded once; the reserved call is consumed and never retried.
+                        errors.append("vector_search_timeout")
+                        failures = True
                     except (ValueError, RuntimeError):
                         errors.append("vector_search_failed")
                         failures = True
