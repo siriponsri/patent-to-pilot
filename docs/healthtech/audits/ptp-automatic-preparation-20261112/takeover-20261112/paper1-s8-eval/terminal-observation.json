@@ -1,0 +1,40 @@
+{
+  "job": "ptp-auto-paper1-test-eval-20261115-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-17T03:34:53.608311983Z",
+    "FinishedAt": "2026-11-17T03:39:02.511055337Z"
+  },
+  "terminal": {
+    "model_calls": 0,
+    "gpu_seconds": 0,
+    "retry": false,
+    "attempt_id": "ptp-auto-paper1-test-eval-20261115-v1",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-17T03:34:53.608311983Z",
+      "FinishedAt": "2026-11-17T03:39:02.511055337Z"
+    },
+    "whole_wall_seconds": 249.91262147197267,
+    "controller_cpu_seconds": 0.495420386
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "call_markers": []
+}
