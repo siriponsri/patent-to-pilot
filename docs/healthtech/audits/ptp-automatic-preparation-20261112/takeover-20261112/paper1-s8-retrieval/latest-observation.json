@@ -1,0 +1,23 @@
+{
+  "job": "ptp-auto-paper1-all-test-retrieval-20261115-v1",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 2223081,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-17T03:30:59.798986445Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-paper1-all-test-retrieval-20261115-v1",
+    "generation": 246
+  },
+  "call_markers": []
+}

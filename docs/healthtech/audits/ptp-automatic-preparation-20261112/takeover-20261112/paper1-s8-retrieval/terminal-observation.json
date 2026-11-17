@@ -1,0 +1,150 @@
+{
+  "job": "ptp-auto-paper1-all-test-retrieval-20261115-v1",
+  "container_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-11-17T03:30:59.798986445Z",
+    "FinishedAt": "2026-11-17T03:33:23.759608373Z"
+  },
+  "terminal": {
+    "attempt_id": "ptp-auto-paper1-all-test-retrieval-20261115-v1",
+    "container_name": "ptp-auto-paper1-all-test-retrieval-20261115-v1",
+    "retry": false,
+    "declaration_sha256": "2591277f9243454bf669b470cf18ae13f323294eeb4c64b31a320df1d96d062a",
+    "status": "TERMINAL",
+    "container_state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-17T03:30:59.798986445Z",
+      "FinishedAt": "2026-11-17T03:33:23.759608373Z"
+    },
+    "whole_wall_seconds": 145.19246449699858,
+    "controller_cpu_seconds": 0.52773861,
+    "global_claim_consumed": true,
+    "settlement": "REQUIRES_INDEPENDENT_TERMINAL_VERIFICATION"
+  },
+  "isolation_status": "PASS_BEFORE_START",
+  "global_dispatch": {
+    "status": "CONSUMED_UNRESOLVED",
+    "attempt_id": "ptp-auto-paper1-all-test-retrieval-20261115-v1",
+    "generation": 246
+  },
+  "completion": {
+    "status": "PAPER1_RANKINGS_COMPLETE_NOT_EVALUATED",
+    "stage": "test",
+    "queries": 773,
+    "encoded_texts": 3857,
+    "anchor_check": {
+      "queries": 773,
+      "identical_family_lists": 0,
+      "reference": "REENCODED_ANCHORS"
+    },
+    "panel_counts": {
+      "FA": {
+        "used": 773,
+        "fallback": 0
+      },
+      "GR": {
+        "used": 773,
+        "fallback": 0
+      },
+      "SACR": {
+        "used": 765,
+        "fallback": 8
+      }
+    },
+    "c1_manipulation_and_truncation": {
+      "shuffle": {
+        "used_queries": 773,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.5921930274549679,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 773,
+          "truncated": 1,
+          "share": 0.00129366106080207,
+          "max_length": 512
+        }
+      },
+      "FA": {
+        "used_queries": 773,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.49513445879424095,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 773,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "GR": {
+        "used_queries": 773,
+        "identical_top_k_share": 0.0,
+        "mean_top_k_jaccard": 0.7764028664402847,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 773,
+          "truncated": 0,
+          "share": 0.0,
+          "max_length": 512
+        }
+      },
+      "SACR": {
+        "used_queries": 765,
+        "identical_top_k_share": 0.00261437908496732,
+        "mean_top_k_jaccard": 0.8708396621551553,
+        "depth": 200,
+        "verdict": "MOVEMENT_PRESENT",
+        "truncation": {
+          "texts": 765,
+          "truncated": 1,
+          "share": 0.00130718954248366,
+          "max_length": 512
+        }
+      },
+      "anchor_truncation": {
+        "texts": 773,
+        "truncated": 1,
+        "share": 0.00129366106080207,
+        "max_length": 512
+      }
+    },
+    "query_prefix": "encode query for different document retrieval: ",
+    "encoder_max_length": 512,
+    "encode_seconds": 36.65476019599009,
+    "wall_seconds": 126.71756343200104,
+    "process_cpu_seconds": 144.194247287,
+    "labels_used": false,
+    "model_calls": 0,
+    "files_sha256": {
+      "FA-panel-top200-private.jsonl": "dbc0b2ea5f1a8c3a082e9a2eda58ffc4344a6eac41395bbb988148ecedf212e8",
+      "FA-used-top200-private.jsonl": "dbc0b2ea5f1a8c3a082e9a2eda58ffc4344a6eac41395bbb988148ecedf212e8",
+      "GR-panel-top200-private.jsonl": "168820eadc2779ed2ff132b45aa4ab0ea7ae3c9311c4e2cf4306c1260a71278d",
+      "GR-used-top200-private.jsonl": "168820eadc2779ed2ff132b45aa4ab0ea7ae3c9311c4e2cf4306c1260a71278d",
+      "SACR-panel-top200-private.jsonl": "9cf56e08e77e0724066b2a80cd51184f6cbd0a463ec1b3b1b8e1d481f764d5ca",
+      "SACR-used-top200-private.jsonl": "13b99e9d3b48182c35a74616dae63d19333271fea638c171ad7b87b5cd94b1ef",
+      "anchor-top200-private.jsonl": "e43bc3ad5d8b35a0bbb7daaea7fa17bea9e9f47985571122e461459d298d2f3e",
+      "reference-top200-private.jsonl": "e43bc3ad5d8b35a0bbb7daaea7fa17bea9e9f47985571122e461459d298d2f3e",
+      "shuffle-top200-private.jsonl": "a1687d58baf8f1692adf817a3acf49c7f38b5c874b750912421fceb0b2848458"
+    }
+  },
+  "call_markers": []
+}
