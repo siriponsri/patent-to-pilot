@@ -1,0 +1,8 @@
+{
+  "job": "ptp-auto-paper1-test-eval-20261115-v1",
+  "accounting": "CPU-only job precharged at freeze (eval-booking 660 s CPU, no refund), same as the S5 dev evaluation; no journal GPU claim/settlement applies",
+  "settle_attempt": "settle_synthetic.py was run once by mistake and failed on the remote before applying (FileNotFoundError while reading GPU settlement inputs); verified afterwards: journal generation 249, study IDLE, active null, ledger 952218d8... unchanged",
+  "commit_message_correction": "commit 9502478 says \"settled\"; correct wording: evaluated once, CPU precharged, no settlement needed",
+  "worker_process_cpu_seconds": 248.565763415,
+  "wall_seconds": 248.55233100103214
+}
