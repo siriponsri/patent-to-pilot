@@ -1,0 +1,123 @@
+{
+  "stage": "test",
+  "arms": {
+    "FA": {
+      "kind": "rewrite",
+      "jobs": [
+        {
+          "job": "ptp-auto-paper1-fa-test-b1-20261115-v1",
+          "queries_sha256": "02a86ea56d8752a1e1f55a5c57fd6dd5dbd8bb7624d254599e3f911c5668f00b",
+          "decisions_sha256": "e51eb3224689f2570b0f4da53ef7fa528f8a70c07f74d229979fa43286fe1703"
+        },
+        {
+          "job": "ptp-auto-paper1-fa-test-b2-20261115-v1",
+          "queries_sha256": "0ba7842f5c4f5db7c6cb1f6ea069504d1aa32c53c0d48ecdb2454deffde68485",
+          "decisions_sha256": "df9c0cb0141d14357334606882ac447c170466e8bcd36e0421224626d2e0bf93"
+        },
+        {
+          "job": "ptp-auto-paper1-fa-test-b3-20261115-v1",
+          "queries_sha256": "32fec15a21b9dda81fc5adbeced7b4e8e9b8d4db1ae5592094778e3ed00a644e",
+          "decisions_sha256": "f32aae6a55b835165a957f47517f4e504581c1adf00219575b126417f0fc7497"
+        },
+        {
+          "job": "ptp-auto-paper1-fa-test-b4-20261115-v1",
+          "queries_sha256": "13f199d07cfaa145ce2e2b28faa9a02610696ea434341d1f7db19a884ebb19d8",
+          "decisions_sha256": "56283637ac48179a3e00f347db6bdd287db7d759805d5d18c9f60e6b98ad3ae4"
+        },
+        {
+          "job": "ptp-auto-paper1-fa-test-b5-20261115-v1",
+          "queries_sha256": "426a6a4f59c812e6f847f40d339230a3533a5c4935195626e19218efbec8cbb8",
+          "decisions_sha256": "71f170841fab90ce5027e810d704bfd3ac4604cf2d5b95a48987ec2824088531"
+        }
+      ]
+    },
+    "GR": {
+      "kind": "rewrite",
+      "jobs": [
+        {
+          "job": "ptp-auto-paper1-gr-test-b1-20261115-v1",
+          "queries_sha256": "02a86ea56d8752a1e1f55a5c57fd6dd5dbd8bb7624d254599e3f911c5668f00b",
+          "decisions_sha256": "e51eb3224689f2570b0f4da53ef7fa528f8a70c07f74d229979fa43286fe1703"
+        },
+        {
+          "job": "ptp-auto-paper1-gr-test-b2-20261115-v1",
+          "queries_sha256": "0ba7842f5c4f5db7c6cb1f6ea069504d1aa32c53c0d48ecdb2454deffde68485",
+          "decisions_sha256": "df9c0cb0141d14357334606882ac447c170466e8bcd36e0421224626d2e0bf93"
+        },
+        {
+          "job": "ptp-auto-paper1-gr-test-b3-20261115-v1",
+          "queries_sha256": "32fec15a21b9dda81fc5adbeced7b4e8e9b8d4db1ae5592094778e3ed00a644e",
+          "decisions_sha256": "f32aae6a55b835165a957f47517f4e504581c1adf00219575b126417f0fc7497"
+        },
+        {
+          "job": "ptp-auto-paper1-gr-test-b4-20261115-v1",
+          "queries_sha256": "13f199d07cfaa145ce2e2b28faa9a02610696ea434341d1f7db19a884ebb19d8",
+          "decisions_sha256": "56283637ac48179a3e00f347db6bdd287db7d759805d5d18c9f60e6b98ad3ae4"
+        },
+        {
+          "job": "ptp-auto-paper1-gr-test-b5-20261115-v1",
+          "queries_sha256": "426a6a4f59c812e6f847f40d339230a3533a5c4935195626e19218efbec8cbb8",
+          "decisions_sha256": "71f170841fab90ce5027e810d704bfd3ac4604cf2d5b95a48987ec2824088531"
+        }
+      ]
+    },
+    "SACR": {
+      "kind": "sacr",
+      "jobs": [
+        {
+          "job": "ptp-auto-native-sacr-test-b1-20261115-v1",
+          "queries_sha256": "bfe4be322b9299ebfcf7cbe5d1d30c9f547b48c5995e5dd458355a8ae325b17e",
+          "decisions_sha256": "4019baefeffd2406bbfb44c433fadf192dec9c6783d3e667c80151abcd37f6a3"
+        },
+        {
+          "job": "ptp-auto-native-sacr-test-b2-20261115-v1",
+          "queries_sha256": "abb19fccc96cdae7458bec91e56e81cfe63dd720e1214c76586b3c3d0f7a2b6b",
+          "decisions_sha256": "d9333213b152fc73f801da3edae382947f9ee35357bc86e12852d20b23caa571"
+        },
+        {
+          "job": "ptp-auto-native-sacr-test-b3-20261115-v1",
+          "queries_sha256": "378a3900665bdcaa8c161b91515bf8bdf01e3ede8c63905dc65e433cc10702ca",
+          "decisions_sha256": "d97285ae99c1d7a4e95b2e87ff4f182937e7f63d5d6a5865655cef450013ad32"
+        },
+        {
+          "job": "ptp-auto-native-sacr-test-b4-20261115-v1",
+          "queries_sha256": "87daba048282e60389b0487f3c77fd64197e67558e760e0dc554c17076d08afd",
+          "decisions_sha256": "3fa1caddd51790ee8713024e35f30c8467b551364ca6ad98b534f1cb0645a533"
+        },
+        {
+          "job": "ptp-auto-native-sacr-test-b5-20261115-v1",
+          "queries_sha256": "6950b01db0d0cc0593c8d5971cdb863e430b9bf6f4c61c768ecc92c212192168",
+          "decisions_sha256": "bb1bb65e701a147c9433cba05a6ba761c875384b876f8f3678b6cf7da4d4b673"
+        },
+        {
+          "job": "ptp-auto-native-sacr-test-b6-20261115-v1",
+          "queries_sha256": "4376b08a2224168f22acdf0cb8edcc04a0313d07aa0cbd0883f964d94cbb6ed8",
+          "decisions_sha256": "af69de15fa765c2c4f30cc6360a4933e6168f56597f9f4a7290e53608da476bf"
+        },
+        {
+          "job": "ptp-auto-native-sacr-test-b7-20261115-v1",
+          "queries_sha256": "5fd2d6b2d366420ccabab69724d586fb5c012cce049c462e954872a66adbbb9c",
+          "decisions_sha256": "2323ecf5c2d7fbd2d94618a64a6e99be5797afa12d45d93302d540f9c3a4f586"
+        },
+        {
+          "job": "ptp-auto-native-sacr-test-b8-20261115-v1",
+          "queries_sha256": "60c129ef183f171ff6d2299d345680a665062261f978dd548bad6b236c0a555e",
+          "decisions_sha256": "23f078e9236dfd72925edf07b8cd69d6f485673f8e54167709c56fe4c409ac43"
+        },
+        {
+          "job": "ptp-auto-native-sacr-test-b9-20261115-v1",
+          "queries_sha256": "b53155b7994bffcdbdf5554899032450a168fba46859be5afd133603544ff0cc",
+          "decisions_sha256": "15f3b4e8dbd56c03a0e99d064bfb1dc91a8e859739f0580569358ff60b7185fd"
+        },
+        {
+          "job": "ptp-auto-native-sacr-test-b10-20261115-v1",
+          "queries_sha256": "bb6a16b9ef7d6e6df98ad19b7d192095a9fa26a4a980c30d85d1d873f27a62e3",
+          "decisions_sha256": "a59f73966b65bd80033f4928ece6314e7666cb719d997900ff87aed10450777a"
+        }
+      ]
+    }
+  },
+  "configuration_sha256": "28140096cb4bb92bcc2e3a90f95f1ee6079edc8ddcd037b8f2f5b2614555ffca",
+  "package_sha256": "ddab5f95aa645a3caf92676c1907756864f5eafa6fe26d5ebd4df6f2fa88029a",
+  "input_sha256": "289cdc311e0a5ecb5e3f3b443a5139f218eb9261255a3fed8638fdbb45eadc59"
+}
