@@ -666,7 +666,7 @@
         "gpu_seconds": 0
       }
     },
-    "remote_cpu_charged_seconds": 8583.81512781,
+    "remote_cpu_charged_seconds": 9243.81512781,
     "source_jobs": {
       "fixture": {
         "status": "TERMINAL_PASS",
@@ -717,7 +717,7 @@
         }
       }
     },
-    "local_cpu_conservative_charged_seconds": 31556,
+    "local_cpu_conservative_charged_seconds": 31656,
     "local_cpu_measured_seconds": 121.03125,
     "compact_preparation_pending_cpu_settled_seconds": 200,
     "compact_v2_local_CPU_charged_seconds": 100,

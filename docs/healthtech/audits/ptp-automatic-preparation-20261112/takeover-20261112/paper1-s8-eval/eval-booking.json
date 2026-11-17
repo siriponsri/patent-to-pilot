@@ -1,0 +1,11 @@
+{
+  "model_calls": 0,
+  "gpu_seconds": 0,
+  "owner_approval_sha256": "1cca15b2fb6a5357685fafd504baba4197ea2947e56dee8b4866685c4fd1793c",
+  "evidence_sha256": "2479a4fe1db410beb982ce5892f021fb0b37a95662fcd43d1f20b5c7d4ee20be",
+  "booking_id": "ptp-auto-paper1-test-eval-20261115-v1",
+  "location": "remote",
+  "conservative_cpu_seconds": 660,
+  "basis": "upper bound: worker RLIMIT_CPU 600 s + controller 60 s on 1 core, wall stop 640 s; no refund (S8 test evaluation)",
+  "prior_ledger_sha256": "01f5f22000bd9bfc57aad27fdd5e72fe2b888705ba07854518e10f26159671a4"
+}
