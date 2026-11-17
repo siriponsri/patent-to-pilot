@@ -3,18 +3,12 @@
 ```text
 You are taking over Patent-to-Pilot (repo C:/Users/User/Desktop/myProject/patent-to-pilot, branch main). Report to the owner in Thai.
 
-1. Read HANDOFF.md, top section "TAKEOVER STATE ... FINAL CHECKPOINT". It overrides all older sections. Then read
-   docs/healthtech/research/paper2-precheck/README.md (do-not-repeat ledger) and
-   docs/healthtech/research/plans/PAPER-2-3-MERGED-PLAN-20261116.md.
-2. Verify: git log -5 (expect the final-checkpoint commit on top), git status (only owner untracked files:
-   uv.lock, docs/owner/, docs/healthtech/research/PATENT_TO_PILOT_RESEARCH_AND_CLAUDE_HANDOFF_2026-11-09.md, .claude/).
-   Nothing should be running: no S8 driver, no ptp-* containers on chaw@100.77.149.83.
-3. Paper 1 is DONE (H1 INCONCLUSIVE). Never re-run S8 jobs or re-open test qrels.
-   First task: fill the placeholders of docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md from
-   docs/healthtech/research/paper1-report/TEST-RESULT-TABLES.md, keep conclusion branch C, delete branches A/B,
-   and write the Thai owner report.
-4. Then ask the owner the open decisions listed in TAKEOVER STATE section 7 as ONE package
-   (RunPod method, R5 downloads, OpenRouter sub-ledger, plan v2 freeze). Do not rent, download or spend before that.
-5. Rules: pre-declare before computing; one settle per job; no LLM judge; commit only your own files;
-   do not install ai-memory (owner decision: repo memory only).
+1. Read, in this order:
+   a. docs/healthtech/research/plans/DIRECTION-20261117-BRIDGERET-HANDOFF.md (the owner's new direction + review + work order).
+   b. The owner's notes in docs/owner/owner-note-17112026/ (start with master_plan_and_go_assessment.md, then paper_1_methodology.md).
+   c. HANDOFF.md top sections (DIRECTION CHANGE, then FINAL CHECKPOINT) and docs/healthtech/research/paper2-precheck/README.md (do-not-repeat ledger).
+2. Verify: git log -5, git status (only owner untracked files), nothing running on chaw@100.77.149.83 (docker ps | grep ptp-).
+3. P1-DAPFAM is closed (H1 INCONCLUSIVE). Never re-run its jobs or re-open its test qrels.
+4. First action: send the owner ONE decision package (O1-O10, R5 text downloads with exact files and sizes, RunPod method, the proposals 1-5 in the handoff note, confirmation that fine-tuning is allowed for P1-BridgeRet). Run nothing costly before the answer.
+5. Then follow the work order in section 3 of the handoff note. Pre-declare before computing; open each test once; no LLM judge; no paid API, rental or download without a recorded approval; commit only your own files; do not install ai-memory.
 ```
