@@ -1,0 +1,32 @@
+{
+  "recorded_at": "2026-11-17",
+  "source": "owner answers in chat (AskUserQuestion, 3 rounds), after reading DIRECTION-20261117-BRIDGERET-HANDOFF.md",
+  "study": "P1-BridgeRet",
+  "decisions": {
+    "O1_train_years": "filing 2006-2009 as TRAIN (about 100,376 tasks / 440k pairs)",
+    "O2_p1_test_n": 10000,
+    "O2_p1_test_rule": "the last 10,000 tasks of filing year 2012 in reverse order of sha256('p2-oa-split-v1|' + app_id); P2-TEST takes the first n of the same order; no overlap",
+    "O3_base_model": "Snowflake/snowflake-arctic-embed-m-v2.0 (Apache-2.0); Qwen3-Embedding-0.6B only as a recorded fallback",
+    "O4_denoise": "reranker denoise (S4c); rule-only kept as an ablation",
+    "O5_dapfam_single_look": "yes, LOCAL ONLY (dr-train or this PC, never RunPod), on the frozen checkpoint, labelled external/exploratory because the DAPFAM test was opened once by P1-DAPFAM",
+    "O6_budget_tier": "A+ : USD 175 total = API 100 + GPU 75 (P1 core about 29; the P2 reranker FT is replaced by the P1 retriever)",
+    "O7_publish": "yes, after the licence check (O8): IDs, split manifests and scripts only, no patent text",
+    "O10_ft_method": "full fine-tuning by default; LoRA only as a fallback if VRAM or cost forces it, and the switch is recorded",
+    "runpod_method": "RunPod MCP via hosted OAuth; every create/delete/billing action needs the owner's approval in the client; no API key stored in files or logs",
+    "r5_text_download": "approved with a 60 GB cap: list the exact PatentsView text/claims files (pre-grant and grant) and their sizes first and record them, then download only what fits under 60 GB to dr-train /data/ptp-paper2/",
+    "fine_tuning_allowed": "yes, for P1-BridgeRet only (lifts the old 'no training' rule for this study), within Tier A+ and the pre-declaration",
+    "proposals_accepted": [
+      "1: names P1-DAPFAM (closed; keep as a short pre-registered negative report or as motivation) and P1-BridgeRet",
+      "2: unseen-doc subset reported alongside the primary result, with a pre-declared no-sign-flip rule",
+      "3: free V100 for encoding and mining; RunPod mainly for fine-tuning",
+      "4: every zero-shot baseline uses its developer-recommended query/document prompts",
+      "5: DAPFAM single look labelled external/exploratory"
+    ]
+  },
+  "still_open": {
+    "O8_licence_check": "a task, not a choice: verify the Arctic, PatentsView and OA dataset licences before any release (G1.5)",
+    "O9_OAER": "stays a secondary setting, as in plan v2; the exact AIA/pre-AIA rule text must be verified before the P2 freeze",
+    "api_first_envelope": "P1 uses no API. Before the first OpenRouter call (P2/P3), the exact model IDs, provider and per-dispatch cap still need owner approval",
+    "per_dispatch_caps": "Tier A+ is the ceiling, not permission for unbounded runs; the RunPod pilot keeps its USD 10 cap; later RunPod jobs record an expected cost and stop before it"
+  }
+}

@@ -6,7 +6,7 @@ The owner's new direction lives in `docs/owner/owner-note-17112026/` (owner-loca
 - New Paper 1 = **P1-BridgeRet**: fine-tune Arctic-embed-m-v2.0 on USPTO OA 102/103 citations (TRAIN filing 2006-2009), RRF with BM25. Evaluated on P1-TEST = the reverse-hash tail of 2012 (n1 about 8-10k), on a fixed ~1M-document corpus. Primary endpoint: OUT Recall@200 (RPD).
 - The old Paper 1 is now called **P1-DAPFAM** (closed, H1 INCONCLUSIVE).
 - Paper 2 gains arms E0-P1 / E3-P1. Paper 3 is unchanged.
-- Nothing is run yet. First step: ask the owner ONE decision package (O1-O10 + the R5 text downloads + the RunPod method + the proposals in the handoff note).
+- Owner decisions are RECORDED: `docs/healthtech/research/plans/owner-decisions-20261117-bridgeret.json`. They cover O1-O10, the RunPod MCP via OAuth, the 60 GB text download, permission to fine-tune, and proposals 1-5 accepted. Nothing is run yet. Start the work order (S0).
 - The FINAL CHECKPOINT below stays valid for everything else.
 
 ## TAKEOVER STATE for any Claude account 2026-11-17T11:30+07:00 — FINAL CHECKPOINT (read this first)

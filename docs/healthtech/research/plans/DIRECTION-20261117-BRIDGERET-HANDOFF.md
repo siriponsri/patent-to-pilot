@@ -1,6 +1,16 @@
 # Direction change 2026-11-17: Paper 1 → BridgeRet (handoff for the next agent)
 
-Status: **OWNER DIRECTION, NOT FROZEN.** Nothing in this note has been run.
+Status: **OWNER DIRECTION; OWNER DECISIONS RECORDED 2026-11-17** in [owner-decisions-20261117-bridgeret.json](owner-decisions-20261117-bridgeret.json). The study is not frozen yet, and nothing has been run.
+
+**Decided:**
+- TRAIN = filing 2006-2009; n1 = 10,000; Arctic-embed-m-v2.0; reranker denoise; full FT with a LoRA fallback.
+- DAPFAM single look: local only, labelled exploratory.
+- Budget: Tier A+ (USD 175 = API 100 + GPU 75).
+- Publish IDs, manifests and scripts after the licence check.
+- RunPod via MCP OAuth, with the owner approving each action.
+- PatentsView text download approved up to 60 GB (list the files first).
+- Fine-tuning allowed for P1-BridgeRet.
+- Proposals 1-5 all accepted.
 
 Source of the direction: the owner's planning notes in `docs/owner/owner-note-17112026/`. Those files are owner-local and untracked; do not commit or publish them without the owner's OK.
 - `master_plan_and_go_assessment.md`: read this first. Section 7 is the patch note for Paper 2/3; section 10 lists the owner decisions.
@@ -48,7 +58,7 @@ Things I would NOT change: the model choice, the TRAIN/VAL/DEV/TEST years, the n
 
 ## 3. Order of work for the next agent
 
-1. **Ask the owner ONE decision package** (in Thai). Do not run anything costly before the answer.
+1. **DONE 2026-11-17: the owner answered the decision package.** See the decisions JSON. Do not ask these questions again.
    - O1-O10 from `master_plan_and_go_assessment.md` section 10: TRAIN 2006-2009, n₁, model, denoise, DAPFAM single look, Tier (A+ recommended by the owner's note), publishing manifests, licence check, OAER, LoRA vs full FT.
    - Plus: the R5 text downloads (exact files and sizes), the RunPod pod-creation method (console or MCP via OAuth), proposals 1-5 above, and confirmation that the "no training" rule is lifted for P1.
 2. **S0:** licence checks (Arctic Apache-2.0, PatentsView, OA dataset), approved downloads, and the G1.0 coverage report (CPU on dr-train; reuse `docs/healthtech/research/paper2-precheck/oa/` scripts).
