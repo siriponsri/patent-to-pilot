@@ -12,3 +12,9 @@ Scope:`research/patent-to-pilot`. Decisions are sanitized owner directions, not 
 | HT-DEC06 /10Nov2026 | Earlier owner adopted rejected-generated-family behavior and fixed automation-first fidelity cap | PRESERVED_PROSPECTIVE_POLICY; [original decisions](../../../docs/healthtech/audits/ptp-mtm-dapfam-resume-20261110/OWNER_DECISIONS.md); implementation/review pending; 60 cards total across configurations/benchmarks, no reset |
 
 Temporal claim boundary follows the inspected evidence: modern reconstructed query and pretrained-model exposure prevent a claim of uncontaminated historical foresight. [ST2](../../../docs/healthtech/research/plans/PAPER-2-MTM.md) records exactly what a publication-constrained retrospective study can establish.
+
+
+## 2026-11-17 Paper 1 test result and closeout
+- Paper 1 S8 test evaluated once: H1 F-FA - B0 = -0.0135 [-0.0285, +0.0012] INCONCLUSIVE; H2/H3 gate closed; F-FA not non-inferior on IN/ALL. Keep manuscript conclusion branch C. Test set now exposed.
+- Paper 2/3 direction (proposal v2): OA-derived legally grounded cross-domain benchmark + within-task method E3 (CEDS); Paper 3 = stage-specific harness evolution, integrity-gated only.
+- Owner: repo memory only (no ai-memory install). RunPod pilot approved at USD 10 hard cap, not started.

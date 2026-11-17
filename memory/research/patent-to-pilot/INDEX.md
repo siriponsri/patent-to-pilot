@@ -1,64 +1,56 @@
 # Patent-to-Pilot shared project memory
 
-## TAKEOVER STATE for any Claude account 2026-11-16T18:00+07:00 (read this first; checkpoint before account switch)
+## TAKEOVER STATE for any Claude account 2026-11-17T11:30+07:00 — FINAL CHECKPOINT (read this first)
 
-This section supersedes the sections below for the current state. Parent writer = the session that started the jobs below. A new account becomes sole writer only after checking that no other session is writing (Claude desktop sidebar / `git log`). Never start a second S8 driver.
+This section supersedes every section below. The writer that produced it has stopped. Nothing is running: no S8 driver, no GPU or CPU jobs, no background tasks. A new account is the sole writer once it has checked `git log` and confirmed no other session is writing.
 
-**1. Paper 1 S8 (frozen test stage), running unattended**
-- A detached driver (Windows process PID 13984, started with Start-Process) runs `takeover-20261112/drive_paper1_s8.py`. FA b1-b5 and GR b1-b5 are settled. SACR b1 and b2 are settled. SACR b3 was frozen at gen 222 and launched at 17:51 on 16 Nov; SACR b4-b10 remain. About 2.1 h per SACR batch; generation ends around 10:00-12:00 on 17 Nov.
-- Progress log: `takeover-20261112/paper1-s8-progress.jsonl`. The driver commits and pushes after every freeze and settle.
-- **Check the driver is alive:** `tasklist /FI "PID eq 13984"`.
-- **If the driver is dead:** read the last event. If it is LAUNCHED without SETTLED, do NOT start the job again. Observe it with `python takeover-20261112/native_control.py observe paper1-s8-<arm>-b<n>`. Settle ONCE with `python takeover-20261112/settle_synthetic.py <job> paper1-s8-<arm>-b<n>`. Append TERMINAL and SETTLED lines to the progress log, commit, then restart the driver DETACHED (PowerShell Start-Process) with the remaining items only.
-- **After SACR b10 settles:**
-  1. Run `takeover-20261112/freeze_paper1_s8_retrieval.py`, start the job with `native_control.py start`, observe, then settle once.
-  2. Check C1: MOVEMENT_PRESENT for FA, GR and SACR.
-  3. Run `takeover-20261112/freeze_paper1_s8_eval.py`. It opens the sealed test qrels ONCE. Start the CPU evaluation and settle once.
-  4. Render the report with `python docs/healthtech/research/paper1-report/render_paper1_test_report.py <summary.json>`. Fill the matching conclusion branch in `docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md`.
-  5. Write the Thai owner report.
-- `package()` refuses uncommitted changes under main's `src/` and `scripts/healthtech`. Keep them clean. **Do not merge branches that touch `src/` or `scripts/healthtech` into main until the last S8 freeze (the evaluation job) is done.**
+**1. Paper 1: test stage COMPLETE, evaluated ONCE (17 Nov 2026)**
+- S8 generation finished: DRIVER_COMPLETE, FA/GR/SACR x 773 test queries. SACR had 765 used and 8 original-query fallbacks.
+- Test retrieval: settled at gen 247. C1 = MOVEMENT_PRESENT for FA/GR/SACR. Reference = re-encoded anchors (frozen rule).
+- Test evaluation (CPU, precharged 660 s, frozen at gen 249): `takeover-20261112/paper1-s8-eval/summary.json`. Accounting note: `paper1-s8-eval/SETTLEMENT-NOTE.json`. A mistaken settle_synthetic run failed before changing anything; the journal was verified at gen 249, IDLE.
+- **Results (OUT R@200, n = 556):**
+  - **H1 F-FA − B0 = −0.0135 [−0.0285, +0.0012] → INCONCLUSIVE.** H2 and H3 were not tested (the gate closed).
+  - Harm check: F-FA on IN −0.0185 [−0.0235, −0.0138] and on ALL −0.0186 [−0.0233, −0.0143]. **Not non-inferior** at the 0.020 margin.
+  - FA standalone −0.0527 [−0.0729, −0.0330].
+  - F-GR −0.0045 and F-SACR −0.0021 versus B0, both with CIs spanning 0.
+  - B0 OUT R@200 = 0.3296.
+- Tables: `docs/healthtech/research/paper1-report/TEST-RESULT-TABLES.md` (renderer `render_paper1_test_report.py`).
+- Manuscript: `docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md`. Status notes are at the top. **Keep conclusion branch C.** The placeholders are NOT filled yet; that is the next task.
+- Totals after Paper 1: GPU charged 203,732.6 s, model_calls 5,269 (a lower bound), CPU remaining about 21.9 ks, journal gen 249, IDLE.
+- **Never re-run any S8 job and never re-open the test qrels.** The test set is now exposed; it cannot select methods for Paper 2/3.
 
-**2. Paper 2/3 plan v2 (proposal, NOT frozen):** `docs/healthtech/research/plans/PAPER-2-3-MERGED-PLAN-20261116.md`. It is revised after an owner-supplied external review.
-- Paper 2: an OA-derived cross-domain benchmark plus a new search method E3 (claim-element deficit-aware search).
-- Paper 3: stage-specific harness evolution, gated on integrity only.
-- The plan is frozen only after the owner sees the S8 result. Owner planning pack (untracked): `docs/owner/`.
+**2. Paper 2/3 plan v2 (PROPOSAL, not frozen):** `docs/healthtech/research/plans/PAPER-2-3-MERGED-PLAN-20261116.md`. It was revised after an owner-supplied external review.
+- P2 pre-declaration draft: `docs/healthtech/research/plans/P2-OA-PREDECLARATION-DRAFT.md`.
+- OA splits: `docs/healthtech/research/paper2-precheck/oa/OA-SPLITS.md`. DEV 2011 / P2-TEST 2012 / P3-TEST 2013, 378,109 eligible tasks. The open-population corpus needs 5.5-7.9M documents, about 175-250 V100-h fp32.
+- Owner planning pack (untracked, owner-local): `docs/owner/`.
 
 **3. Do-not-repeat ledger:** `docs/healthtech/research/paper2-precheck/README.md`. Every DAPFAM-dev acquisition pre-check so far is NO_GO.
-- OA data (USPTO OA Research Dataset 2017 + PatentsView) is downloaded and hash-verified at remote `/data/ptp-paper2/` and local `data/raw/uspto/`.
-- Census: `paper2-precheck/OA-DATA-FEASIBILITY.md` section 9. When quoting the DAPFAM 13/9,480 figure, give it only together with its mapping limits.
+- Quote the DAPFAM 13/9,480 OA figure only together with its mapping limits.
 
-**4. Parallel sessions and branches (merge when done; delete after merge, as the owner allows):**
+**4. Code merged to main on 17 Nov:**
+- the acquisition harness with PatEx-style arms E0/E0-deep/E1/E2/E3 (CEDS) and a funnel evaluator, tested with doubles only (tests `test_acquisition_harness.py`, `test_patex_arms.py`, `test_ceds_arm.py`);
+- product P0: gap audit `docs/healthtech/product/P0-P2-GAP-AUDIT.md`, 42 offline scenarios (41 pass, 1 recorded gap), P0 fixes not yet wired to the API/UI.
+- Targeted tests pass, with 1 expected xfail.
+- Known pre-existing failures: 8 SACR r2/r3 supervisor budget tests, which also fail on the old base.
 
-| Session | Branch | State | Merge rule |
-|---|---|---|---|
-| p2-oa-splits | merged, branch deleted | done: DEV 2011 / P2-TEST 2012 / P3-TEST 2013 (378,109 eligible tasks); open-population corpus needs start 1976/1990 for G2.0 = 5.5-6.5M units, about 175-250 V100-h fp32 (owner decision on compute); `paper2-precheck/oa/OA-SPLITS.md`, `plans/P2-OA-PREDECLARATION-DRAFT.md` | n/a |
-| p2-harness | `claude/paper2-harness-0d504a` | Harness + E0/E0-deep/E1/E2/E3 + funnel evaluator, 78 tests PASS, doubles only | touches `src/`: merge only after S8 evaluation |
-| prod-p0 | `claude/prod-p0-evidence-bedc49` | done: P0-P2 gap audit, 42 offline scenarios (41 pass), P0 fixes; not wired to API/UI | touches `src/`: merge only after S8 evaluation |
-| p1-report-scaffold | merged (cd38e17), branch deleted | done | n/a |
+**5. Leftover cleanup:**
+- The local branches `claude/paper2-harness-0d504a` and `claude/prod-p0-evidence-bedc49` and the folders under `.claude/worktrees/` are locked by idle app sessions; their remote branches are already deleted. After the owner archives those sessions, run `git worktree prune` and `git branch -D` on the branches.
+- The old Codex branches/worktrees (`codex/*`) are untouched on purpose.
 
-The folder `.claude/worktrees/p1-report-scaffold-f29529` is a leftover locked directory; delete it later.
+**6. RunPod pilot (approved, hard cap USD 10):** the package and runbook are in `docs/healthtech/research/paper2-precheck/runpod/` (`RUNPOD-PILOT-RUNBOOK.md`).
+- The owner's account holds USD 57; the pilot cap stays USD 10. Nothing has been rented.
+- Pending owner choice: (a) the owner clicks in the console, or (b) the RunPod MCP via OAuth with per-action approval.
 
-**5. Owner approvals on record:**
-- `owner-parallel-gpu-llm-approval.json` (takeover dir);
-- `paper2-precheck/owner-reencode-approval.json`;
-- `paper2-precheck/owner-oa-download-approval.json`.
+**7. Owner decisions still open:**
+1. RunPod pod-creation method.
+2. Full-encoding compute option and its USD cap (after the pilot).
+3. R5 downloads: pre-grant text, PatEx-Gym 100 tasks, PatentsView continuity tables.
+4. USD 100 OpenRouter sub-ledger and its first envelope.
+5. Freeze of plan v2 + the P2 pre-declaration (now that S8 is reported).
+6. A post-hoc DEV block 2006-2009?
+7. ai-memory: the owner decided NOT to install it. Use the repo memory only.
 
-Still needs the owner:
-- R5: download pre-grant text and the PatEx-Gym 100 tasks;
-- R6: GPU choice for a corpus-encoding speed test (the shared RTX 2080 Ti, or RunPod);
-- the USD 100 OpenRouter sub-ledger and its first envelope;
-- the plan v2 freeze.
-
-**6. Standing rules:** no paid API without the per-dispatch approval above; never read DAPFAM test data except through the single frozen S8 evaluation; no LLM judge; pre-declare before computing; one settle per job; report to the owner in Thai.
-
-
-**7. RunPod encoding pilot (approved, hard cap USD 10; `paper2-precheck/runpod/owner-runpod-pilot-approval.json`):**
-- The owner has a RunPod account with a USD 57 prepaid balance. The balance does NOT raise the USD 10 pilot cap.
-- Session `runpod-pilot` (started 17:50) is preparing everything under `docs/healthtech/research/paper2-precheck/runpod/`: a 10k public-domain USPTO sample on the remote at `/data/ptp-paper2/runpod-pilot/`, `encode_pilot.py`, the parity check (with a 1k V100 reference) and `RUNPOD-PILOT-RUNBOOK.md`. If it stopped half-way, read what it committed and finish from there.
-- **Pending owner decision:** how pods are created. Either (a) the owner clicks in the console following the runbook, or (b) the RunPod MCP is installed with hosted OAuth and every create/delete action needs the owner's approval. Do not rent anything until the owner chooses.
-- Pilot order: RTX 4090 Community first, then A100 SXM Community, each at most 45 min. Track spend as balance_before - balance_after and stop before USD 10.
-- After the pilot, pick the full-encoding option from the measured rates (V100 fp16 after S8, 4090 or A100). Full encoding needs a new owner approval with a USD cap.
-
-**8. Owner decisions still open:** the pod-creation method (above); the full-encoding compute option and its cap; R5 downloads (pre-grant text, PatEx-Gym 100 tasks, PatentsView continuity tables for family chains); the USD 100 OpenRouter sub-ledger and its first envelope; freezing plan v2 and `plans/P2-OA-PREDECLARATION-DRAFT.md` after the S8 report; whether to add filing years 2006-2009 as a labelled post-hoc second DEV block.
+**8. Standing rules:** report to the owner in Thai; pre-declare before computing; one settle per job; no LLM judge; no paid API or downloads without a recorded per-item approval; commit only your own files; keep `src/` clean while any frozen driver is running.
 
 ## Paper 2 pre-checks on DAPFAM dev: all NO_GO so far; read before proposing a new idea 2026-11-16T07:00+07:00
 
