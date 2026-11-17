@@ -5,7 +5,11 @@ Working manuscript, restructured 16 November 2026. Not submission-ready.
 Status:
 - The protocol is frozen ([protocol](plans/PAPER1-ACQUISITION-PROTOCOL-DRAFT-20261113.md), amendment A1 inside it).
 - Development (dev) results are complete and descriptive (S5).
-- The test stage (S8) is running. No test result exists yet. Every test number below is a placeholder.
+- **The test stage (S8) is COMPLETE (17 Nov 2026). It was evaluated once, with 773 test queries.** Rendered tables: [paper1-report/TEST-RESULT-TABLES.md](paper1-report/TEST-RESULT-TABLES.md); summary: `docs/healthtech/audits/ptp-automatic-preparation-20261112/takeover-20261112/paper1-s8-eval/summary.json`.
+  - H1 F-FA − B0 (OUT Recall@200, n=556): **−0.0135 [−0.0285, +0.0012] → INCONCLUSIVE**. H2 and H3 were not tested (the gate closed).
+  - Harm check: F-FA − B0 on IN is −0.0185 [−0.0235, −0.0138] and on ALL −0.0186 [−0.0233, −0.0143]. Neither is non-inferior at the 0.020 margin.
+  - C1: MOVEMENT_PRESENT for all arms. C2: F-FA − F-shuffle −0.0111 [−0.0248, +0.0032]. Retrieval reference: re-encoded anchors (frozen rule).
+  - **Conclusion branch to keep: C.** The placeholders below still need to be filled from the rendered tables (next agent).
 - The earlier development-stage text of this file (R1-R7 rounds) is kept unchanged in [PAPER1-DEVELOPMENT-HISTORY.md](PAPER1-DEVELOPMENT-HISTORY.md).
 
 How to fill this draft after the single S8 test evaluation (target: within one hour):
