@@ -1,0 +1,8 @@
+{
+ "tasks": 97059,
+ "bm25_negs": 9635802,
+ "dense_negs": 17497682,
+ "dense_OUT": 8522220,
+ "dense_IN": 7492747,
+ "guard_removed": 69997
+}
