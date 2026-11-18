@@ -2,7 +2,7 @@
 
 Pod `3uakq34o52m3se` (ptp-bridgeret-pilot-v1): NVIDIA A40 48 GB, Secure, EU-SE-1, USD 0.59/h (list-gpu-types read), image
 `runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404` (torch 2.8.0+cu128). Created 14:48:32 UTC, deleted ~15:06 UTC
-(delete-pod 204; list-pods empty afterwards). Expected cost about 0.3 h x 0.59 = USD 0.18; billing read pending (lag).
+(delete-pod 204; list-pods empty afterwards). Billed USD 0.0752 (GPU 0.0745 + disk 0.0007; list-pod-billing day bucket read ~15:45 UTC, may still update).
 Billing before: USD 0 over the last 30 days (list-billing).
 
 Data sent: none. The pod downloaded Arctic @95c27414 from Hugging Face (model.safetensors sha256 3d80d472..., equal to
