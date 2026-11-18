@@ -1,0 +1,1 @@
+{"pilot": "P1-BridgeRet RunPod pilot 2026-11-18", "cap_usd": 10, "pods": [{"id": "3uakq34o52m3se", "gpu": "NVIDIA A40", "cloud": "SECURE", "dc": "EU-SE-1", "usd_per_h": 0.59, "created_utc": "2026-11-18T14:48:32Z", "deleted_utc_approx": "2026-11-18T15:06Z", "expected_usd": 0.18, "billed_usd": "PENDING_BILLING_READ"}], "billing_before_30d_usd": 0}
