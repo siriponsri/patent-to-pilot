@@ -9,6 +9,7 @@
 - Nothing run on real data, no TEST label/`pairs.tsv` read, no download/GPU/API, USD 0.
 - Approvals needed next: (1) run builder on `tasks.tsv` metadata (CPU, dr-train); (2) continuity tables download for family grouping; (3) Challenge-1M sealed-builder isolation design; (4) PatentsView claims file list must be taken from data.uspto.gov (S3 URLs 403) before the R5 download.
 - UPDATE (later 18 Nov): manifest-v1 BUILT on dr-train (owner approved): TRAIN 100,376 / VAL 2,000 / P1-DEV 26,320 / P2-DEV 26,486 / P1-TEST 10,000 / P2-TEST 44,074 / P3-TEST 55,307; A1-A4 PASS; family PENDING; sha 5f803b13..., not frozen. Owner approved continuity download (owner must download from ODP: see `docs/healthtech/research/paper1-bridgeret/CONTINUITY-DOWNLOAD-REQUEST-20261118.md`), R-05 sealed Challenge-1M builder, and renaming 18-Nov O3/O4 to P2-O3/P2-O4 (`paper1-bridgeret/owner-decisions-20261118.json`).
+- UPDATE (evening 18 Nov): owner downloaded continuity tables (ODP 2026-04-10); **manifest-v2 family-aware BUILT** (sha c8443600..., not frozen): L-B PASS, P2-TEST 43,587 after option A removed 487; P1-TEST 10,000 unchanged; seen_family stratum P1-TEST 581. See `docs/healthtech/research/paper1-bridgeret/manifest-v2/README.md`. Next: R5 claims download (54 files, 11.3 GB; `paper1-bridgeret/CLAIMS-DOWNLOAD-PLAN-20261118.md`) by owner, then query serialisation + truncation analysis.
 
 ## DIRECTION CHANGE 2026-11-17 (owner): Paper 1 -> BridgeRet. Read `docs/healthtech/research/plans/DIRECTION-20261117-BRIDGERET-HANDOFF.md` FIRST
 

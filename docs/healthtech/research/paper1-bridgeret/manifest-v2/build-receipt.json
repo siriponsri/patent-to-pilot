@@ -1,0 +1,40 @@
+{
+ "runs": [
+  {
+   "step": "continuity",
+   "script_sha256": "d28f1a802b5309db657aad08f0b4effad2626ac9450d1e72c7f3353035fdd30f",
+   "wall_s": 297.2,
+   "cpu_user_s": 293.3,
+   "max_rss_kb": 3738708,
+   "exit": 0,
+   "outputs": {
+    "related-primary.tsv": "52be8e4132a1ac94e175bba49e29f76ee0dd130e3fb3e7e723bdac3acaac08b4",
+    "related-with_provisional.tsv": "1828f47e33d94bf22cd4a99b63d32452b336fbb471a852b882babf6e7c592b28",
+    "continuity-stats.json": "b31205e7ce0ed7dcaf9d87a76da177a049d08f52222bd6467b57bfebc0ccc49c"
+   }
+  },
+  {
+   "step": "manifest-v2",
+   "wall_s": 5.16,
+   "max_rss_kb": 322688,
+   "exit": 0,
+   "build_approval_sha256": "c6124bcaea5323640c532037a54551e4ee6fbfdbb0fec2b68742d3648e64d523",
+   "outputs": {
+    "out-v2/manifest-private.json": "c6df82c67aac2085ef01a3994baf01fb9e1a6bdb84d01efa69ba88f00d04c2d0",
+    "out-v2/manifest-public.json": "f8eb881ba5177d9f0f001acca5dad0d74e09ceea2659679acdc42f2707ee9c4d"
+   },
+   "manifest_sha256": "c8443600d74fed015213237e070882efd1ddeefef7e66b6f3d6f7bb2f31e8039",
+   "frozen": false
+  }
+ ],
+ "inputs_sha256": {
+  "tasks.tsv": "35ca0424ac30a4985f022d4af8d13b63321c247ad8407cae26342cb75c504b43",
+  "g_us_rel_doc.tsv.zip": "380ede3289f1f679e664089d540c856789322069bab8956381e8a65909476ef5",
+  "pg_us_rel_doc.tsv.zip": "60785fb49e6ac9ecf4f199b07f8c4ca86974411ee016e184f9d5e401d3d67668",
+  "pg_rel_app_text.tsv.zip": "a64c195dcc4160a920bcf0697bea3bb3354450484380452425196aa031876eae",
+  "g_rel_app_text.tsv.zip": "1946296c6204ca01164b998fdafe2a09f3fe12ca279867993344821085de601e"
+ },
+ "labels_read": false,
+ "gpu": 0,
+ "usd": 0
+}

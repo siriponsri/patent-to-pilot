@@ -1,0 +1,33 @@
+{
+ "manifest_sha256": "c8443600d74fed015213237e070882efd1ddeefef7e66b6f3d6f7bb2f31e8039",
+ "block_counts": {
+  "TRAIN": 100376,
+  "VAL": 2000,
+  "P1-DEV": 26575,
+  "P2-DEV": 26231,
+  "P1-TEST": 10000,
+  "P2-TEST": 43587,
+  "P3-TEST": 55307
+ },
+ "stats": {
+  "dev_2011_imbalance": 0.006514,
+  "dev_2011_imbalance_ok": true,
+  "p2_test_removed_by_family_rule": 487,
+  "p2_test_cap": 44074
+ },
+ "notes": [
+  "SPLIT_RULE_CONFLICT: option A removed 487 P2-TEST tasks whose group intersects P1-TEST",
+  "filing years outside every block (not used): [1995, 1999, 2000, 2001, 2003, 2004, 2005, 2014, 2015, 2016]"
+ ],
+ "grouping": {
+  "source": "parent_closure",
+  "status": "FAMILY_AWARE",
+  "max_group_size": 75
+ },
+ "assertions": {
+  "A1-A4": "PASS",
+  "L-B": "PASS",
+  "A3": "PASS",
+  "L-B-xyear": "REPORT"
+ }
+}

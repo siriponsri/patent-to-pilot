@@ -1,0 +1,6 @@
+{
+ "action": "build-canonical-split-manifest",
+ "approved_by": "owner (chat 2026-11-18: 'อนุมัติรัน builder'; 'อนุมัติทั้ง 3 ข้อครับ' incl. continuity download for family grouping)",
+ "scope": "manifest-v2 = manifest-v1 rule + --related continuity/related-primary.tsv (primary continuity rule, scripts/healthtech/build_continuity_related.py @94de206); metadata only; not frozen; USD 0",
+ "related_table": "/data/ptp-paper2/manifest-v1/continuity/related-primary.tsv"
+}

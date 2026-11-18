@@ -1,0 +1,86 @@
+{
+ "rule": {
+  "primary_types": [
+   "continuation",
+   "continuation-in-part",
+   "continuing-reissue",
+   "division",
+   "reissue",
+   "substitution"
+  ],
+  "sensitivity_adds": "us-provisional-application"
+ },
+ "edge_counts": {
+  "g_us_rel_doc:continuation-in-part:A": 1733419,
+  "g_us_rel_doc:continuation-in-part:P": 183,
+  "g_us_rel_doc:continuation-in-part:W": 13891,
+  "g_us_rel_doc:continuation-in-part:X": 56231,
+  "g_us_rel_doc:continuation:A": 5288512,
+  "g_us_rel_doc:continuation:P": 1101,
+  "g_us_rel_doc:continuation:W": 125546,
+  "g_us_rel_doc:continuation:X": 228172,
+  "g_us_rel_doc:continuing-reissue:A": 3,
+  "g_us_rel_doc:division:A": 1647037,
+  "g_us_rel_doc:division:P": 344,
+  "g_us_rel_doc:division:W": 53848,
+  "g_us_rel_doc:division:X": 439,
+  "g_us_rel_doc:reissue:A": 44291,
+  "g_us_rel_doc:reissue:P": 29,
+  "g_us_rel_doc:reissue:W": 40,
+  "g_us_rel_doc:substitution:A": 1094,
+  "g_us_rel_doc:substitution:X": 72,
+  "g_us_rel_doc:us-provisional-application:A": 2349368,
+  "g_us_rel_doc:us-provisional-application:X": 216,
+  "pg_us_rel_doc:continuation-in-part:A": 1435378,
+  "pg_us_rel_doc:continuation-in-part:X": 72476,
+  "pg_us_rel_doc:continuation:A": 4635629,
+  "pg_us_rel_doc:continuation:X": 346983,
+  "pg_us_rel_doc:division:A": 1188816,
+  "pg_us_rel_doc:division:X": 484,
+  "pg_us_rel_doc:reissue:A": 490,
+  "pg_us_rel_doc:substitution:A": 177,
+  "pg_us_rel_doc:substitution:X": 45,
+  "pg_us_rel_doc:us-provisional-application:A": 3209492,
+  "pg_us_rel_doc:us-provisional-application:X": 31
+ },
+ "n_tasks": 378109,
+ "variants": {
+  "primary": {
+   "n_groups": 350857,
+   "tasks_in_multi_task_groups": 46708,
+   "max_tasks_per_group": 75,
+   "group_size_hist_cap10": {
+    "1": 331401,
+    "2": 15829,
+    "3": 2294,
+    "4": 653,
+    "5": 230,
+    "6": 137,
+    "7": 85,
+    "8": 47,
+    "9": 37,
+    "10": 144
+   },
+   "tasks_with_any_link": 131752
+  },
+  "with_provisional": {
+   "n_groups": 345945,
+   "tasks_in_multi_task_groups": 53570,
+   "max_tasks_per_group": 192,
+   "group_size_hist_cap10": {
+    "1": 324539,
+    "2": 16818,
+    "3": 2725,
+    "4": 896,
+    "5": 348,
+    "6": 199,
+    "7": 104,
+    "8": 69,
+    "9": 51,
+    "10": 196
+   },
+   "tasks_with_any_link": 192912
+  }
+ },
+ "seconds": 294.4
+}
