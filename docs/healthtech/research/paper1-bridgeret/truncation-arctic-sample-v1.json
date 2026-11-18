@@ -1,0 +1,211 @@
+{
+ "tokenizer": "/data/ptp-paper2/models/arctic-embed-m-v2.0",
+ "cap": 512,
+ "query_prompt": "query: ",
+ "salt": "ptp-trunc-v1",
+ "VAL": {
+  "n": 1919,
+  "tokens": {
+   "title": {
+    "n": 1919,
+    "p50": 17,
+    "p90": 34,
+    "p99": 55,
+    "max": 117,
+    "mean": 19.8
+   },
+   "abstract": {
+    "n": 1919,
+    "p50": 158,
+    "p90": 228,
+    "p99": 339,
+    "max": 673,
+    "mean": 160.2
+   },
+   "claim": {
+    "n": 1919,
+    "p50": 149,
+    "p90": 293,
+    "p99": 508,
+    "max": 792,
+    "mean": 170.8
+   },
+   "full": {
+    "n": 1919,
+    "p50": 330,
+    "p90": 522,
+    "p99": 801,
+    "max": 1013,
+    "mean": 349.8
+   }
+  },
+  "share_truncated": {
+   "any": 0.1084,
+   "claim": 0.1084,
+   "abstract": 0.001,
+   "title_over_cap": 0.0
+  },
+  "removed_tokens_mean_when_truncated": {
+   "claim": 120.1,
+   "abstract": 125.5
+  },
+  "variants": {
+   "first_independent": 1919
+  }
+ },
+ "P1-DEV": {
+  "n": 25626,
+  "tokens": {
+   "title": {
+    "n": 25626,
+    "p50": 18,
+    "p90": 33,
+    "p99": 53,
+    "max": 130,
+    "mean": 20.1
+   },
+   "abstract": {
+    "n": 25626,
+    "p50": 153,
+    "p90": 218,
+    "p99": 310,
+    "max": 759,
+    "mean": 153.4
+   },
+   "claim": {
+    "n": 25626,
+    "p50": 148,
+    "p90": 291,
+    "p99": 520,
+    "max": 6117,
+    "mean": 170.5
+   },
+   "full": {
+    "n": 25626,
+    "p50": 325,
+    "p90": 507,
+    "p99": 748,
+    "max": 6220,
+    "mean": 343.1
+   }
+  },
+  "share_truncated": {
+   "any": 0.0939,
+   "claim": 0.0939,
+   "abstract": 0.0005,
+   "title_over_cap": 0.0
+  },
+  "removed_tokens_mean_when_truncated": {
+   "claim": 116.7,
+   "abstract": 116.0
+  },
+  "variants": {
+   "first_independent": 25620,
+   "claim_fallback_claim1": 6
+  }
+ },
+ "TRAIN-20k": {
+  "n": 20000,
+  "tokens": {
+   "title": {
+    "n": 20000,
+    "p50": 17,
+    "p90": 32,
+    "p99": 54,
+    "max": 120,
+    "mean": 19.4
+   },
+   "abstract": {
+    "n": 20000,
+    "p50": 153,
+    "p90": 228,
+    "p99": 335,
+    "max": 755,
+    "mean": 155.6
+   },
+   "claim": {
+    "n": 20000,
+    "p50": 142,
+    "p90": 277,
+    "p99": 517,
+    "max": 2933,
+    "mean": 163.8
+   },
+   "full": {
+    "n": 20000,
+    "p50": 318,
+    "p90": 502,
+    "p99": 775,
+    "max": 3123,
+    "mean": 337.8
+   }
+  },
+  "share_truncated": {
+   "any": 0.092,
+   "claim": 0.092,
+   "abstract": 0.0006,
+   "title_over_cap": 0.0
+  },
+  "removed_tokens_mean_when_truncated": {
+   "claim": 129.7,
+   "abstract": 105.0
+  },
+  "variants": {
+   "first_independent": 19999,
+   "claim_fallback_claim1": 1
+  }
+ },
+ "CORPUS-50k": {
+  "n": 50000,
+  "tokens": {
+   "title": {
+    "n": 50000,
+    "p50": 14,
+    "p90": 27,
+    "p99": 45,
+    "max": 113,
+    "mean": 15.8
+   },
+   "abstract": {
+    "n": 50000,
+    "p50": 165,
+    "p90": 262,
+    "p99": 383,
+    "max": 13319,
+    "mean": 171.0
+   },
+   "claim": {
+    "n": 50000,
+    "p50": 169,
+    "p90": 345,
+    "p99": 648,
+    "max": 6397,
+    "mean": 198.8
+   },
+   "full": {
+    "n": 50000,
+    "p50": 354,
+    "p90": 580,
+    "p99": 911,
+    "max": 13532,
+    "mean": 381.5
+   }
+  },
+  "share_truncated": {
+   "any": 0.1672,
+   "claim": 0.1672,
+   "abstract": 0.0012,
+   "title_over_cap": 0.0
+  },
+  "removed_tokens_mean_when_truncated": {
+   "claim": 147.5,
+   "abstract": 351.7
+  },
+  "variants": {
+   "first_independent": 49974,
+   "first_independent|no_abstract": 23,
+   "claim_fallback_claim1": 3
+  }
+ },
+ "seconds": 1134.2
+}
