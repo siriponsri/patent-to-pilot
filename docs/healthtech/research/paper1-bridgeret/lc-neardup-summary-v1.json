@@ -1,0 +1,17 @@
+{
+ "VAL": {
+  "n": 1919,
+  "near_dup_in_TRAIN": 4,
+  "share": 0.0021
+ },
+ "P1-DEV": {
+  "n": 25626,
+  "near_dup_in_TRAIN": 136,
+  "share": 0.0053
+ },
+ "P2-DEV": {
+  "n": 25329,
+  "near_dup_in_TRAIN": 126,
+  "share": 0.005
+ }
+}
