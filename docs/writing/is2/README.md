@@ -10,7 +10,7 @@ combining all of it (owner instruction 19 Nov 2026). Paper 86 is allowed here an
 | `K1a-PATEMBED-RATIONALE.md` | why Paper 53 used patembed-base (Thai + English), from arXiv:2605.24297 and the model card | draft, ready for owner review |
 | B53 plan | `docs/healthtech/research/plans/B53-FIRST-STAGE-SUBSTITUTION-DRAFT.md`; readiness receipt `paper1-bridgeret/b53-readiness-20261119.json` | not frozen, NOT_RUN |
 | `PAPER86-AND-P1DAPFAM-SELECTION.md` | which Paper 86 parts enter IS2 (S1 exposure, S2 retriever ordering, S3 window accounting; S4 context only) and the one-paragraph P1-DAPFAM reference | done 19 Nov (agent, owner-delegated) |
-| Paper 86 sources | outside this repo: `C:/Users/User/Desktop/myDegree/IS/IS_2/` (published IEEE PDF), `myIS` repo | referenced only |
+| Paper 86 sources | outside this repo: `C:/Users/User/Desktop/myDegree/IS/IS_2/` (Paper 86 withdrawn from IEEE; unpublished own work), `myIS` repo | referenced only |
 
 Proposed IS2 outline (owner to confirm):
 1. Introduction: Paper 53 recap and the committee's comments.
