@@ -118,3 +118,14 @@ Private manifest (raw ids) and public view (salted-hash ids; salt only on dr-tra
    ODP requires the owner's USPTO.gov sign-in (MFA + CAPTCHA), so the owner downloads; the agent then builds manifest-v2.
 2. R-05 Challenge-1M sealed-builder isolation: approved (design binding; implementation = `sealed_corpus_union`).
 3. 18-Nov O3/O4 renamed `P2-O3` (P2 action type) and `P2-O4` (P2 E0 encoder); O1-O10 keep their 17-Nov meanings.
+
+## 9. Overnight 18->19 Nov (owner asleep; approvals in `paper1-bridgeret/owner-decisions-20261118.json` "later")
+- Frozen: manifest-v2 (`c8443600…`), P1-BridgeRet pre-declaration (commit b9b2bd0). Clarifications CL-1/CL-2 logged before the affected runs.
+- Built: Challenge-1M v1 (sealed builder, 1M units), text tables, Arctic/Qwen3/PatEmbed serialisations, hard-negative pools.
+- DEV descriptive numbers, audits, power planning and the RunPod pilot: see `paper1-bridgeret/MORNING-REPORT-20261119.md`.
+- Conflicts found overnight:
+  - R-10: the dr-train V100 is shared with an idle CIE TTS service holding 24-26.5 GB; our jobs run memory-capped beside it (one Qwen3 OOM at cap 0.12, retried at batch 8 / cap 0.15).
+  - R-11: tasks without a pre-grant publication (P1-DEV 949/26,575) have no query; they score 0 under the frozen rule.
+  - R-12: the "other citations from the same application's later actions" guard is not available in pairs-dev; mining applies K(q), own unit and exact-text guards only.
+  - R-13: full fine-tuning with 7 x 512-token negatives is ~11.5 A40-h per epoch; amendment A1 proposed (not applied).
+  - R-14: RunPod MCP has no file transfer; FT on RunPod needs a pod with our own PUBLIC_KEY env + scp from dr-train (no account change), or the V100 when the TTS frees memory.
