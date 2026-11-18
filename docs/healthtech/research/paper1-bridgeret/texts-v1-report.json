@@ -1,0 +1,31 @@
+{
+ "queries_by_block": {
+  "TRAIN": 100376,
+  "VAL": 2000,
+  "P1-DEV": 26575,
+  "P2-DEV": 26231
+ },
+ "queries_no_pgpub": 5249,
+ "query_variants": {
+  "first_independent": 149916,
+  "claim_fallback_claim1": 15,
+  "no_claims": 2
+ },
+ "corpus_variants": {
+  "first_independent": 999916,
+  "claim_fallback_claim1": 81,
+  "no_claims": 3
+ },
+ "corpus_no_abstract": 515,
+ "corpus_no_title": 0,
+ "query_no_abstract": 0,
+ "n_corpus": 1000000,
+ "claim_files": 54,
+ "seconds": 525.3,
+ "manifest_sha256": "c8443600d74fed015213237e070882efd1ddeefef7e66b6f3d6f7bb2f31e8039",
+ "corpus_units_sha256": "18b56815dff32ab90d92aa7b70a170d8d66e89bd874a622a53cd8f4b3db1edba",
+ "outputs_sha256": {
+  "queries.jsonl": "fbd21a5f4d765f0516d044e8b69bc583390fca1ea7bc428d9839797908a020e3",
+  "corpus.jsonl": "287ef7e0b823b31330a6b3ad804f4e0f99dceec0300f45ffb7d6345adc8d7a86"
+ }
+}
