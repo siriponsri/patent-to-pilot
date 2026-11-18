@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-11-19T06:45+07:00",
+  "authority": "owner AskUserQuestion 2026-11-19 (B53: 'เปิด 724 และโหลด DAPFAM ใหม่เพื่อทำ apple to apple เทียบ paper Benchmark'); recorded in owner-decisions-20261118.json 'later'",
+  "dapfam_refresh": {
+    "hf_dataset": "datalyes/DAPFAM_patent",
+    "pinned_revision": "780f4011d60297fc6e97a4119b0c516d13afea2d",
+    "hf_head_revision_checked_2026-11-19": "a59a74ce31384165065af1823a83c6f94ccafd48",
+    "head_change": "README only (commit 'Added MTEB availability and partial reproduction steps', 2025-09-10); the three data files have identical LFS sha256 at both revisions",
+    "local_files_sha256_vs_hf_lfs_oid": {
+      "corpus.parquet": ["469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6", "MATCH"],
+      "queries.parquet": ["b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe", "MATCH"],
+      "qrels_all.parquet": ["e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74", "MATCH"]
+    },
+    "conclusion": "local copy in methodology/datasets/research-only-nc/ is bit-identical to the current HF data; a fresh download would produce the same bytes, so none was made. Pin moves to a59a74ce for B53 (same data, README with the MTEB reproduction steps).",
+    "readme_facts_for_apples_to_apples": "1,247 queries / 45,336 targets; 6 in-paper MTEB tasks (ALL/IN/OUT x TA->TAC and TAC->TAC); primary nDCG@100, secondary Recall@100; paper encoder Snowflake/snowflake-arctic-embed-m-v2.0 run int8 (fp16 may differ slightly); passage-level and RRF explored separately in the paper",
+    "licence": "cc-by-nc-sa-4.0 (dataset card front matter at a59a74ce); local runs only, never RunPod"
+  },
+  "qwen3_reranker": {
+    "repo": "Qwen/Qwen3-Reranker-0.6B",
+    "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+    "location": "dr-train /data/ptp-paper2/models/qwen3-reranker-0.6b (read-only, 1.2 GB, 14 files)",
+    "sha256": {
+      "model.safetensors": "27cd75a405b9c1b46b59abfd88aaa209e6fed2a1972cde9b70e7659537c5e65b",
+      "config.json": "d479c427a9ca5295218063d4f9aca4f297ab4ac27487cca7af42c84643d51ef0",
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    "licence": "Apache-2.0 (model card)"
+  },
+  "not_done": "B53 manifest not frozen; no B53 encoding/reranking run; DAPFAM test qrels not opened yet (opened only by the frozen B53 evaluator)",
+  "cost": "USD 0; HF metadata API + 1.2 GB model download"
+}

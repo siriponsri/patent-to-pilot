@@ -1,5 +1,10 @@
 # B53 — First-Stage Substitution Study on DAPFAM (executable draft; NOT_RUN; not frozen)
 
+> **Update 19 Nov 2026 (owner decisions, `paper1-bridgeret/owner-decisions-20261118.json` 'later'):** cohort = **B53-FULL** (all
+> DAPFAM queries; 724 OUT-positive; full 1,247 for the DAPFAM-paper protocol); R-16 resolved for B53 only. DAPFAM data verified
+> bit-identical to HF head `a59a74ce` (README-only change); Qwen3-Reranker-0.6B @e61197ed downloaded to dr-train. Receipt:
+> `paper1-bridgeret/b53-readiness-20261119.json`. New arm B53.0 (apples-to-apples with the DAPFAM paper) added in §4a.
+
 Source design: owner file `owner-note-19112026/09_PAPER53_BRIDGE_AND_COMMITTEE_RESPONSE.md` (B53-0.1) and registry §5.
 This draft binds that design to assets that exist in this repo / on dr-train, so it can be frozen and run once the owner
 answers the open items in §8. Exploratory; outside every P1/P2/P3 confirmatory family; never used to train, tune or select.
@@ -7,11 +12,11 @@ answers the open items in §8. Exploratory; outside every P1/P2/P3 confirmatory 
 ## 1. What already exists (verified 19 Nov 2026)
 | Item | Value | Where |
 |---|---|---|
-| DAPFAM corpus | 45,336 families, TAC; 188,944 MaxP passages (PatEmbed passage rule) | `methodology/datasets/research-only-nc/` (CC BY-NC-SA 4.0 per repo records), native staging `audits/ptp-dapfam-native-staging-20261110` |
+| DAPFAM corpus | 45,336 families, TAC; 188,944 MaxP passages (PatEmbed passage rule) | `methodology/datasets/research-only-nc/` (CC BY-NC-SA 4.0, dataset card at `a59a74ce`; sha256 of all 3 parquet files = HF LFS oids), native staging `audits/ptp-dapfam-native-staging-20261110` |
 | Queries | native dev 474 (OUT-eligible 349); native test 773 (sealed after the single P1-DAPFAM look) | staging receipts |
 | Paper 53 cohort | 724 OUT-positive queries (692 held-out + 32 excluded); original keys/pools unrecovered | Paper 53 §IV-A (`literature-review/internal/paper53_ieee_express.pdf`) |
 | F0 encoder | datalyes/patembed-base @`244ba452908a3093be11efb8a44396652317fb14` = the Paper 53 ref. [18] revision | dr-train `research-product-o1-o4-20261031/models/patembed-base`; `audits/ht-research-product-20261031/manifest.json` |
-| Rerankers | bge-reranker-v2-m3 @`953dc6f6…` present (= Paper 53 ref. [20]); **Qwen3-Reranker-0.6B @`e61197ed45024b0ed8a2d74b80b4d909f1255473` NOT on disk** | dr-train models dir |
+| Rerankers | bge-reranker-v2-m3 @`953dc6f6…` present (= Paper 53 ref. [20]); Qwen3-Reranker-0.6B @`e61197ed45024b0ed8a2d74b80b4d909f1255473` on dr-train `/data/ptp-paper2/models/qwen3-reranker-0.6b` (weights sha `27cd75a4…`, 19 Nov) | dr-train models dir |
 | Instruction texts | Generic (13 tok) / Patent-aware (29) / Claim-focused (119) / Scrambled (113, seed 42) verbatim in Paper 53 Table I (checked visually) | Paper 53 p. 3 |
 | Prior DAPFAM first-stage evidence (dev, exposed) | B0 PatEmbed-large OUT R@200 0.1477; BM25 0.0690; RRF −0.0197 OUT / −0.0555 IN; OUT exposure @200 136/349 | `paper2-precheck/HEADROOM-RESULT.md`, `audits/ptp-native-exposure-20261111` |
 
@@ -48,7 +53,16 @@ families), in-pool oracle headroom H(q), Δ and Δ_exp, common-exposed set C (ex
 | B53.5 | F0 re-implementation exposure vs the reported 37.1% (K = 100) | descriptive, no threshold, not a replication |
 Language policy: file 09 §6 (identity = accounting; only B53.1/B53.3 support "changing the first stage changed …").
 
-## 5. Cohorts (needs owner choice, §8)
+## 4a. B53.0 — apples-to-apples with the DAPFAM benchmark paper (added 19 Nov)
+The DAPFAM paper's MTEB-compatible numbers come from 6 in-paper MTEB tasks (ALL/IN/OUT × TA→TAC and TAC→TAC), all 1,247
+queries, document-level, primary nDCG@100, secondary Recall@100, encoder Arctic-embed-m-v2.0 (paper: int8; README warns fp16 may
+differ slightly). B53.0 runs those 6 tasks with the public MTEB evaluator at the pinned MTEB commit `9242b36a…` (repo record
+`audits/ptp-method-first-r1-dapfam-20261110`): (i) Arctic fp16 = reproduction check against the paper's table (descriptive,
+no threshold); (ii) the same tasks for every first stage of §2 that has a document-level form, and for P1 S\* after P1 freezes.
+Any "beats the DAPFAM paper" statement is limited to these 6 tasks and metrics, with the int8/fp16 difference stated.
+The passage-level/RRF numbers of the paper are a different protocol and are compared only in text.
+
+## 5. Cohorts (decided 19 Nov: B53-FULL)
 - **B53-DEV (no conflict):** native dev OUT-eligible 349 queries (already exposed; P1-DAPFAM dev descriptive line).
 - **B53-FULL:** all OUT-positive queries (expected 724 = Paper 53's full cohort) — requires reading DAPFAM **test** qrels again.
 
@@ -63,8 +77,8 @@ No P1/P2/P3 TEST data. DAPFAM is evaluation-only. Results never select anything 
 CC BY-NC-SA 4.0 in repo records; owner file still says UNVERIFIED — local runs only.
 
 ## 8. Owner decisions needed before freezing (lane C)
-1. **R-16 conflict:** CLAUDE.md standing rule "never re-open the [P1-DAPFAM] test qrels" vs file 09 (B53 may use DAPFAM test). Allow B53-FULL (724) or keep B53-DEV (349) only?
-2. Download Qwen3-Reranker-0.6B @e61197ed (≈1.2 GB, Apache-2.0) to dr-train (needed for Paper 53's reranker).
+1. ~~**R-16 conflict:**~~ RESOLVED 19 Nov: B53-FULL. CLAUDE.md standing rule "never re-open the [P1-DAPFAM] test qrels" vs file 09 (B53 may use DAPFAM test). Allow B53-FULL (724) or keep B53-DEV (349) only?
+2. ~~Download Qwen3-Reranker-0.6B~~ DONE 19 Nov. @e61197ed (≈1.2 GB, Apache-2.0) to dr-train (needed for Paper 53's reranker).
 3. O16: rationale for patembed-base in Paper 53 (not found in repo; owner must write it).
 4. O17: confirm the Table I bodies above are the ones to freeze (verbatim from the published paper).
 5. Add F6 (PatEmbed-large) and/or Qwen3-Embedding zero-shot as extra first stages? (overnight OA DEV: PatEmbed-large 0.328, Qwen3 0.274, Arctic 0.225 OUT R@200).
