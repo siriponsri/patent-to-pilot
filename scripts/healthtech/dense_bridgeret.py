@@ -4,7 +4,7 @@ Encodes serialised passages once (fp16, CLS or last-token pooling, L2-normalised
 encodes queries of the named blocks with the model's query prompt, retrieves on CPU by exact inner product with the
 RPD mask (first_pub < filing date) and self-unit exclusion, writes run-<block>.tsv (top 1000).
 GPU etiquette on the shared V100: per-process memory fraction cap, small batches, flock on the shared GPU lock.
-Usage: python3 dense_bridgeret.py <model_dir> <pooling cls|last> <query_prompt> <serialised_dir> <corpus-units.tsv>
+Usage: python3 dense_bridgeret.py <model_dir> <pooling cls|last|mean> <query_prompt> <serialised_dir> <corpus-units.tsv>
        <tasks.tsv> <out_dir> <mem_fraction> BLOCK [BLOCK...]
 """
 import csv, fcntl, json, os, sys, time
@@ -13,6 +13,7 @@ from pathlib import Path
 PROTECTED = {'P1-TEST', 'P2-TEST', 'P3-TEST'}
 LOCK = '/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/.GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089.lock'
 TOPK, BS = 1000, int(os.environ.get('BS', '64'))
+DOC_PROMPT = os.environ.get('DOC_PROMPT', '')
 
 
 def main(argv):
@@ -36,7 +37,10 @@ def main(argv):
         b = tok(texts, padding=True, truncation=True, max_length=512, return_tensors='pt').to('cuda')
         with torch.inference_mode():
             h = model(**b).last_hidden_state
-            v = h[:, 0] if pooling == 'cls' else h[:, -1]
+            if pooling == 'mean':
+                m = b['attention_mask'].unsqueeze(-1).to(h.dtype); v = (h * m).sum(1) / m.sum(1)
+            else:
+                v = h[:, 0] if pooling == 'cls' else h[:, -1]
             return F.normalize(v.float(), dim=-1).half().cpu().numpy()
 
     units = []
@@ -48,7 +52,7 @@ def main(argv):
         order = sorted(range(len(texts)), key=lambda i: len(texts[i]))          # length-sorted batches
         P = np.zeros((len(texts), model.config.hidden_size), dtype=np.float16)
         for s in range(0, len(order), BS):
-            idx = order[s:s + BS]; P[idx] = enc([texts[i] for i in idx])
+            idx = order[s:s + BS]; P[idx] = enc([DOC_PROMPT + texts[i] for i in idx])
             if s % (BS * 2000) == 0:
                 print('passages', s, round(time.time() - t0, 1), flush=True)
         np.save(pfile, P); (out / 'units.json').write_text(json.dumps(units))

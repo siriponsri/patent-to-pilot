@@ -2,7 +2,8 @@
 
 passages.jsonl : unit, text, ntok, truncated(dict)     (no prompt for documents)
 queries.jsonl  : app_id, block, text, ntok, truncated  (non-TEST tasks; cap counts the query prompt)
-Usage: python3 -I serialise_bridgeret_texts.py <texts_dir> <tokenizer_dir> <query_prompt> <out_dir> [workers]
+Usage: python3 -I serialise_bridgeret_texts.py <texts_dir> <tokenizer_dir> <query_prompt> <out_dir> [workers] [doc_prompt]
+(the cap counts the prompt on both sides; the stored text excludes the prompt)
 """
 import json, multiprocessing as mp, sys
 from pathlib import Path
@@ -15,13 +16,15 @@ except ImportError:
 
 TOK = None
 PROMPT = ''
+DOC_PROMPT = ''
 
 
-def init(tok_dir, prompt):
-    global TOK, PROMPT
+def init(tok_dir, prompt, doc_prompt=''):
+    global TOK, PROMPT, DOC_PROMPT
     from transformers import AutoTokenizer
     TOK = AutoTokenizer.from_pretrained(tok_dir)
     PROMPT = prompt
+    DOC_PROMPT = doc_prompt
 
 
 def ser(args):
@@ -29,7 +32,7 @@ def ser(args):
     r = json.loads(line)
     if is_query and not r.get('doc'):
         return None
-    pre = PROMPT if is_query else ''
+    pre = PROMPT if is_query else DOC_PROMPT
     count = lambda t: len(TOK(pre + t, add_special_tokens=True)['input_ids'])
     claims = [q.ClaimRow(1, r['claim'])] if r.get('claim') else []
     s = q.serialise(r.get('title') or '(no title)', r.get('abstract'), claims, count, 512)
@@ -41,8 +44,9 @@ def ser(args):
 def main(argv):
     d, tok_dir, prompt, out = Path(argv[0]), argv[1], argv[2], Path(argv[3])
     workers = int(argv[4]) if len(argv) > 4 else 16
+    doc_prompt = argv[5] if len(argv) > 5 else ''
     out.mkdir(parents=True, exist_ok=False)
-    with mp.get_context('fork').Pool(workers, initializer=init, initargs=(tok_dir, prompt)) as pool:
+    with mp.get_context('fork').Pool(workers, initializer=init, initargs=(tok_dir, prompt, doc_prompt)) as pool:
         for name, is_q in (('queries.jsonl', True), ('passages.jsonl', False)):
             src = 'queries.jsonl' if is_q else 'corpus.jsonl'
             with open(d / src, encoding='utf-8') as f, open(out / name, 'w', encoding='utf-8') as g:
