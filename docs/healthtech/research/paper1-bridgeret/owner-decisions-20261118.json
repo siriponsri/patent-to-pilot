@@ -28,6 +28,17 @@
    "runpod_pilot": "approved to run now: the existing RunPod pilot, hard cap USD 10 (unchanged), via RunPod MCP; only USPTO public text and model weights leave dr-train/this PC; no DAPFAM, no TEST labels/queries; pod deleted at the end; price stated in the receipt before creation",
    "freeze": "approved immediately: freeze manifest-v2 (salts as proposed, VAL n=2000, imbalance tolerance 5%, family option A) and the P1-BridgeRet pre-declaration, before any DEV retrieval number; owner reviews in the morning report",
    "freeze_manifest_v2_previous": "superseded by this approval"
+  },
+  {
+   "recorded_at": "2026-11-19T06:24:41+07:00",
+   "source": "owner AskUserQuestion 2026-11-19 morning",
+   "goals_stated": "build on Paper 53; beating the DAPFAM benchmark paper is a bonus; follow Paper A -> C to a real product",
+   "backbone": "Qwen3-Embedding-0.6B @97b0c614 replaces Arctic as the P1 backbone (O3 changed; Qwen3 was the recorded fallback)",
+   "amendment_A1": "approved: k=3 mined negatives; recipe grid on the 30k-task TRAIN subset; S* retrained once on full TRAIN",
+   "ft_envelope": "P1 fine-tuning up to USD 20 on RunPod (lane B: pods inside the envelope need no per-pod question)",
+   "C2": "C2 = S* - the strongest non-trained comparator on P1-DEV OUT R@200 among the pre-registered references (currently Z-Qwen3); C3 = S* - Z-PatEmbed-large kept",
+   "B53": "use all DAPFAM queries (724 OUT-positive; full 1,247 for the DAPFAM-paper protocol); re-download DAPFAM for an apples-to-apples comparison with the DAPFAM benchmark paper; this lifts the earlier rule 'never re-open the P1-DAPFAM test qrels' for B53 only (exploratory, evaluation-only, local)",
+   "B53_reranker": "Qwen3-Reranker-0.6B @e61197ed download - interpreted as included (the chosen option carried the reranker download)"
   }
  ]
 }

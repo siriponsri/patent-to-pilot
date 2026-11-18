@@ -48,3 +48,10 @@ affected system. No retrieval number for P1-BridgeRet exists at freeze time (the
 2. DEV order: zero-shot baselines and BM25 → E0 → hard-negative mining on TRAIN → S1–S4 grid → S\* → 2×2 diagnostic.
 3. Paid compute: only the approved RunPod pilot (cap USD 10) until a fine-tuning cost estimate exists; the full fine-tuning dispatch needs its own owner cost approval inside A+ (GPU USD 75). No paid API in P1.
 4. DAPFAM single look (O5): local only, on the frozen S\*, labelled external/exploratory.
+
+## Amendments (logged before any S* or fine-tuning number; owner decisions 2026-11-19, `paper1-bridgeret/owner-decisions-20261118.json`)
+| ID | Change | Old -> new | Rationale | Statistical impact |
+|---|---|---|---|---|
+| AM-1 | Backbone | Arctic-embed-m-v2.0 -> Qwen3-Embedding-0.6B @97b0c614 (last-token pooling, left padding, instruction prompt of §3) | owner O3 change; Qwen3 was the recorded fallback; zero-shot DEV numbers were known (descriptive) when chosen | C1 becomes S* - Z-Qwen3 (same backbone); Z-Arctic stays a reported reference |
+| AM-2 | Negatives / grid (amendment A1) | k unspecified, grid on full TRAIN -> k = 3; grid on the 30k-task TRAIN subset (salt ptp-2x2-30k-v1); S* retrained once on full TRAIN; dense negatives from the backbone's own zero-shot ranks 20-200 | cost (RunPod pilot: ~11.5 A40-h per full epoch with 7 negatives) | none on the confirmatory family |
+| AM-3 | C2 | S* - E0 -> S* - (strongest pre-registered non-trained comparator on P1-DEV OUT R@200; E0, Z-Arctic, Z-Qwen3 eligible; Z-PatEmbed-large stays C3) | E0 (0.2661) is weaker than Z-Qwen3 (0.2741) on DEV; SOT defines C2 as the strongest non-trained comparator | C2 now uses Z-Qwen3 if it stays strongest; with AM-1, C1 and C2 may coincide - then the family is {C1, C3} and this is reported |
