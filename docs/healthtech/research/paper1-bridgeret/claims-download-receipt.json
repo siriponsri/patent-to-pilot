@@ -1,0 +1,355 @@
+{
+ "what": "R5 claims download (owner, ODP sign-in, 2026-11-18 19:37-20:42 local file times); plan CLAIMS-DOWNLOAD-PLAN-20261118.md approved by owner ('โหลดตามแผน')",
+ "files": 54,
+ "zip_bytes": 11280410249,
+ "unzipped_bytes": 63829850030,
+ "sizes_match_odp_inventory": true,
+ "schema": {
+  "g_claims": [
+   "patent_id",
+   "claim_sequence",
+   "claim_text",
+   "dependent",
+   "claim_number",
+   "exemplary"
+  ],
+  "pg_claims": [
+   "pgpub_id",
+   "claim_sequence",
+   "claim_text",
+   "dependent",
+   "claim_number"
+  ],
+  "notes": "dependent == '' marks an independent claim; pre-grant tables contain '(canceled)' claims to skip; read streaming from zip, no unzip to disk"
+ },
+ "running_total_downloads_gb": 14.85,
+ "cap_gb": 60,
+ "local_path": "data/raw/uspto/ (gitignored)",
+ "remote_path": "/data/ptp-paper2/patentsview/claims/",
+ "per_file": {
+  "g_claims_1976.tsv.zip": {
+   "bytes": 87377250,
+   "sha256": "a6b304d90e368431578e8e989dfc3c8fd589ff14bd321fe29eb2c36ad631d7ca",
+   "member": "g_claims_1976.tsv",
+   "member_bytes": 309970391
+  },
+  "g_claims_1977.tsv.zip": {
+   "bytes": 83355862,
+   "sha256": "35d8e5932fdc8f0b26540d2278428d97419c58e547eb135bdfd7fb272e8c8ff7",
+   "member": "g_claims_1977.tsv",
+   "member_bytes": 295079174
+  },
+  "g_claims_1978.tsv.zip": {
+   "bytes": 88110914,
+   "sha256": "019764f9227005d0532c4d3ec04a57065c46eea6d8d40a8eb9e4c19f9dd0711e",
+   "member": "g_claims_1978.tsv",
+   "member_bytes": 311645571
+  },
+  "g_claims_1979.tsv.zip": {
+   "bytes": 65753101,
+   "sha256": "6c10bd3ab321c36e09ba73be12f0e0e2961107b9b58311152c98925d59f045f8",
+   "member": "g_claims_1979.tsv",
+   "member_bytes": 232861732
+  },
+  "g_claims_1980.tsv.zip": {
+   "bytes": 83091102,
+   "sha256": "f010c34c071c2a642eeb8ef7e94e926fd2610a1f0bbd876f93c0267b4d31094f",
+   "member": "g_claims_1980.tsv",
+   "member_bytes": 292795501
+  },
+  "g_claims_1981.tsv.zip": {
+   "bytes": 89124436,
+   "sha256": "a21eb11de34bbb88c394225d1f5fcd71d62c175c2b31e21f1e6e3672fcd28855",
+   "member": "g_claims_1981.tsv",
+   "member_bytes": 314294907
+  },
+  "g_claims_1982.tsv.zip": {
+   "bytes": 78653222,
+   "sha256": "a1f363c8cdafa9f2978dca957d14fc33a7a758e1442dc926d059aa4a25f246f2",
+   "member": "g_claims_1982.tsv",
+   "member_bytes": 278656953
+  },
+  "g_claims_1983.tsv.zip": {
+   "bytes": 77572798,
+   "sha256": "4ca744b117f9c85f7ee4ff035642e2c67054a156cf5d688d6d7660645dcf351e",
+   "member": "g_claims_1983.tsv",
+   "member_bytes": 275067223
+  },
+  "g_claims_1984.tsv.zip": {
+   "bytes": 92701232,
+   "sha256": "2b5e227fab4c744b2ba8f89a1477ed4b1f60f7992615a6b0bc2638647b012ebe",
+   "member": "g_claims_1984.tsv",
+   "member_bytes": 328470349
+  },
+  "g_claims_1985.tsv.zip": {
+   "bytes": 101612550,
+   "sha256": "87692db6012b733612988dddd0b3c6ef4efc5a6d0a4f08296a83fe85f5238aec",
+   "member": "g_claims_1985.tsv",
+   "member_bytes": 360538528
+  },
+  "g_claims_1986.tsv.zip": {
+   "bytes": 102105181,
+   "sha256": "1b4d996da6a717778edea7a48f550bb82310e55ae06f7903b71e0f9f5ebfc06b",
+   "member": "g_claims_1986.tsv",
+   "member_bytes": 362445012
+  },
+  "g_claims_1987.tsv.zip": {
+   "bytes": 122108184,
+   "sha256": "dc5cd287095f4a6ff56caa22b8c91005928b9f296058bdd4a20528ec64ce19f9",
+   "member": "g_claims_1987.tsv",
+   "member_bytes": 434611644
+  },
+  "g_claims_1988.tsv.zip": {
+   "bytes": 116358291,
+   "sha256": "072a6cffbd8038e5373371ea1f408ef62cdece9010a20f314ba79369e04d9485",
+   "member": "g_claims_1988.tsv",
+   "member_bytes": 413312380
+  },
+  "g_claims_1989.tsv.zip": {
+   "bytes": 146719166,
+   "sha256": "60e2fda53edcf86e59d9e26fa8b6c445f4cc453c0139e012ef2cdee85aa92a88",
+   "member": "g_claims_1989.tsv",
+   "member_bytes": 521015079
+  },
+  "g_claims_1990.tsv.zip": {
+   "bytes": 138999848,
+   "sha256": "36e75f6f14bb7d5ddf2d40ddbfe0d5288f0388fa0db5ead183ada7a7ca4be844",
+   "member": "g_claims_1990.tsv",
+   "member_bytes": 493707436
+  },
+  "g_claims_1991.tsv.zip": {
+   "bytes": 150912884,
+   "sha256": "b16b098989466ca023a89e9048a6a9f7fda3f8127289b98743c7e461d4134abf",
+   "member": "g_claims_1991.tsv",
+   "member_bytes": 536550088
+  },
+  "g_claims_1992.tsv.zip": {
+   "bytes": 154928324,
+   "sha256": "fd72e8b85d1193f6237eb225636c9eeaeebc5578f4241865acea051d4c1ad87c",
+   "member": "g_claims_1992.tsv",
+   "member_bytes": 552985184
+  },
+  "g_claims_1993.tsv.zip": {
+   "bytes": 158731534,
+   "sha256": "1c2e3746c55c60220d19709224db2951c78671a6a66adc779a8f8347f1c86d30",
+   "member": "g_claims_1993.tsv",
+   "member_bytes": 568151683
+  },
+  "g_claims_1994.tsv.zip": {
+   "bytes": 169442256,
+   "sha256": "4af1d8d12961b58bce9794e65211b05c33a5c34a58f30d0466b0775cc8cca3df",
+   "member": "g_claims_1994.tsv",
+   "member_bytes": 610403261
+  },
+  "g_claims_1995.tsv.zip": {
+   "bytes": 173591634,
+   "sha256": "315770bbdca527bb8e01f33d22fb3f55715700ba1475c4a9f155e680718cd2b7",
+   "member": "g_claims_1995.tsv",
+   "member_bytes": 627542581
+  },
+  "g_claims_1996.tsv.zip": {
+   "bytes": 192785587,
+   "sha256": "3b9fb6a911eefce1b1a270d61a50e7afeb15fd2f967593829b4b20322b927f2f",
+   "member": "g_claims_1996.tsv",
+   "member_bytes": 698510072
+  },
+  "g_claims_1997.tsv.zip": {
+   "bytes": 200692404,
+   "sha256": "40f3463c3117410afc5c2ec8eb1db56742482c6b86c7b5b9583a896b5bea5dd6",
+   "member": "g_claims_1997.tsv",
+   "member_bytes": 723735279
+  },
+  "g_claims_1998.tsv.zip": {
+   "bytes": 271607499,
+   "sha256": "31a4ef208feedd3c7c4e5389734a93bed9f14a2ae9c7b5432c1d5ec12ab8c51c",
+   "member": "g_claims_1998.tsv",
+   "member_bytes": 977968743
+  },
+  "g_claims_1999.tsv.zip": {
+   "bytes": 283380054,
+   "sha256": "6e02747cd1fd4dd9bf1fee5ea0ac0dccd2f38a47620bf07be30f954914e953cb",
+   "member": "g_claims_1999.tsv",
+   "member_bytes": 1017685271
+  },
+  "g_claims_2000.tsv.zip": {
+   "bytes": 297684695,
+   "sha256": "1c3743693d913fe388704f5ce68b1186508b128e522733c36bb34febb3fc2a09",
+   "member": "g_claims_2000.tsv",
+   "member_bytes": 1066397845
+  },
+  "g_claims_2001.tsv.zip": {
+   "bytes": 313667616,
+   "sha256": "3e0285ce1d1e5fd13d223bef1c3f8947a54e09647187f4cc87a07b5ee320ebbd",
+   "member": "g_claims_2001.tsv",
+   "member_bytes": 1121249770
+  },
+  "g_claims_2002.tsv.zip": {
+   "bytes": 169547497,
+   "sha256": "a94785d041c59b108c2db0f54bb31d3e72da86c41acb3bfbe884822e2ee86e9f",
+   "member": "g_claims_2002.tsv",
+   "member_bytes": 1152643511
+  },
+  "g_claims_2003.tsv.zip": {
+   "bytes": 173750822,
+   "sha256": "d5f069a479cf49b5980ceb2a0bff9c29278d63f49ffb89369df5aceeb8f06d29",
+   "member": "g_claims_2003.tsv",
+   "member_bytes": 1193441070
+  },
+  "g_claims_2004.tsv.zip": {
+   "bytes": 170408310,
+   "sha256": "3ca4070441c894de558c0be245b5b1b8995e24683a3dd6177428483772fd0074",
+   "member": "g_claims_2004.tsv",
+   "member_bytes": 1180891409
+  },
+  "g_claims_2005.tsv.zip": {
+   "bytes": 157065542,
+   "sha256": "70b46679181147e5a3480e7c4e8eafe0220a17bdf371a69c2d4fa2877d146cd2",
+   "member": "g_claims_2005.tsv",
+   "member_bytes": 1057054957
+  },
+  "g_claims_2006.tsv.zip": {
+   "bytes": 191413504,
+   "sha256": "36f0e05c51c2dbf450ff2448482a52d0e9ae3777bf5608fbeb59b96be2bf0fea",
+   "member": "g_claims_2006.tsv",
+   "member_bytes": 1276821763
+  },
+  "g_claims_2007.tsv.zip": {
+   "bytes": 175568392,
+   "sha256": "c54170b143fd0a22fd9a3c4ea5e8945c3008e2fbeee76cccb52bc8b4e9b2dbb9",
+   "member": "g_claims_2007.tsv",
+   "member_bytes": 1144203544
+  },
+  "g_claims_2008.tsv.zip": {
+   "bytes": 163502374,
+   "sha256": "e20bb746dfec8f5d26c4cbb2f069186f4480c8eac56991243dff8ca6c685d7ef",
+   "member": "g_claims_2008.tsv",
+   "member_bytes": 1111821549
+  },
+  "g_claims_2009.tsv.zip": {
+   "bytes": 183284364,
+   "sha256": "0f13327165b5b9a9c00eda153cabbf21c3dde021803f36830b71e86482514aea",
+   "member": "g_claims_2009.tsv",
+   "member_bytes": 1185815260
+  },
+  "g_claims_2010.tsv.zip": {
+   "bytes": 240041341,
+   "sha256": "c9ce52e4e2e244f0a436b9182c37f0b91452a9b63c57ac4ae4cf3d9065908343",
+   "member": "g_claims_2010.tsv",
+   "member_bytes": 1561996883
+  },
+  "g_claims_2011.tsv.zip": {
+   "bytes": 245457001,
+   "sha256": "20b43ad3b2c252e2ace84a4e214c0bd3e51cdcd67ddcd11f9695b6e09c7e287d",
+   "member": "g_claims_2011.tsv",
+   "member_bytes": 1586140862
+  },
+  "g_claims_2012.tsv.zip": {
+   "bytes": 265787975,
+   "sha256": "34d732a0d310a3c614b0203be264d1d2cbb1a6cfca1e2dbcf752acd0a35493dd",
+   "member": "g_claims_2012.tsv",
+   "member_bytes": 1807414079
+  },
+  "g_claims_2013.tsv.zip": {
+   "bytes": 292322551,
+   "sha256": "d53f7feb545e7086e16899862937867231586b41e7693054a25916b68e64968f",
+   "member": "g_claims_2013.tsv",
+   "member_bytes": 1993481480
+  },
+  "pg_claims_2001.tsv.zip": {
+   "bytes": 63172297,
+   "sha256": "5e2c09cd329b04a18af2f73ae632ede3fa013227a0588648d8111e3872e8f15c",
+   "member": "pg_claims_2001.tsv",
+   "member_bytes": 424609768
+  },
+  "pg_claims_2002.tsv.zip": {
+   "bytes": 243258232,
+   "sha256": "39bd4bbad254cca153dbd48acf037e136793400667fa3954480bb8cb4fd6d5a8",
+   "member": "pg_claims_2002.tsv",
+   "member_bytes": 1727150901
+  },
+  "pg_claims_2003.tsv.zip": {
+   "bytes": 300646679,
+   "sha256": "fc2e5272fab6ca5b81ece9cf0f7859ab7ffb7fa1d3b76f369e57c14b7482600d",
+   "member": "pg_claims_2003.tsv",
+   "member_bytes": 2165242476
+  },
+  "pg_claims_2004.tsv.zip": {
+   "bytes": 318744558,
+   "sha256": "563750507a06a3dce337ea4196cfbc401b2b610e6c048838989ad096dd9b7ec2",
+   "member": "pg_claims_2004.tsv",
+   "member_bytes": 2172503857
+  },
+  "pg_claims_2005.tsv.zip": {
+   "bytes": 324100887,
+   "sha256": "33c72e5554094330daa3db209d805214ad44a5d8574d2357c1d3970bf4e31088",
+   "member": "pg_claims_2005.tsv",
+   "member_bytes": 2186074445
+  },
+  "pg_claims_2006.tsv.zip": {
+   "bytes": 312836556,
+   "sha256": "eb4bd421ef6270944a1497cf1201a4cce051119ba3ce9a7b926ea1846f70bc01",
+   "member": "pg_claims_2006.tsv",
+   "member_bytes": 2093191965
+  },
+  "pg_claims_2007.tsv.zip": {
+   "bytes": 315784025,
+   "sha256": "bc432e407b5a2d17f4131bc77ba5bedefdcd3c845b9d7827cb8e20722a629fe0",
+   "member": "pg_claims_2007.tsv",
+   "member_bytes": 2087082432
+  },
+  "pg_claims_2008.tsv.zip": {
+   "bytes": 328218314,
+   "sha256": "98c2b9db46afd76fbb6535dedc1a99309b8e03b729b6a86aae0f057b8d788365",
+   "member": "pg_claims_2008.tsv",
+   "member_bytes": 2176312419
+  },
+  "pg_claims_2009.tsv.zip": {
+   "bytes": 333150757,
+   "sha256": "8fcd3db109de92dc5600c48bf074102ae1e37882fe8f6042de1a21b7bba64dca",
+   "member": "pg_claims_2009.tsv",
+   "member_bytes": 2207071376
+  },
+  "pg_claims_2010.tsv.zip": {
+   "bytes": 340566435,
+   "sha256": "3fa8c5fe6a9efc243a2947811429908428b9de537e127d1beff47749866e46dd",
+   "member": "pg_claims_2010.tsv",
+   "member_bytes": 2239390253
+  },
+  "pg_claims_2011.tsv.zip": {
+   "bytes": 324295915,
+   "sha256": "f3907909ea6ce05217ab5941148bdccffba6700fbcffaac0e47d627b56e9ea73",
+   "member": "pg_claims_2011.tsv",
+   "member_bytes": 2144867401
+  },
+  "pg_claims_2012.tsv.zip": {
+   "bytes": 329591819,
+   "sha256": "e5eeb2788cad0e2352cdf4bad172393b38c6a77fe56e4c4ba9f9557969bedd5d",
+   "member": "pg_claims_2012.tsv",
+   "member_bytes": 2205220967
+  },
+  "pg_claims_2013.tsv.zip": {
+   "bytes": 343958054,
+   "sha256": "02d16725c2afe9b263beb24c1553219b039e26213d7963fc82346669907fc375",
+   "member": "pg_claims_2013.tsv",
+   "member_bytes": 2321763232
+  },
+  "pg_claims_2014.tsv.zip": {
+   "bytes": 375647855,
+   "sha256": "8820521fb44ef58d1a3f5330f045c6d410157d0ed6eb4558d3c8ce455a7eabf0",
+   "member": "pg_claims_2014.tsv",
+   "member_bytes": 2548751832
+  },
+  "pg_claims_2015.tsv.zip": {
+   "bytes": 377622355,
+   "sha256": "37def23151b1ee99bd9a3a278a58fd50a4d87dd553e1ebe9f25ddfb8b3f6a3ce",
+   "member": "pg_claims_2015.tsv",
+   "member_bytes": 2562025440
+  },
+  "pg_claims_2016.tsv.zip": {
+   "bytes": 379598214,
+   "sha256": "cdac7fa79f652543b5a89d80d03c7b7c9002842a176aaf1e98e937ab36f96118",
+   "member": "pg_claims_2016.tsv",
+   "member_bytes": 2591213242
+  }
+ }
+}
