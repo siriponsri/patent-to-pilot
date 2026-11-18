@@ -1,5 +1,14 @@
 # Patent-to-Pilot HealthTech Handoff
 
+## CHECKPOINT 2026-11-18 (owner set 18 Nov): reconciliation + S1 manifest code. Read `docs/healthtech/research/plans/BRIDGERET-RECONCILIATION-S0-S1-20261118.md` FIRST
+
+- Owner's newest direction: `docs/owner/owner-note-18112026/` (owner-local, untracked; SOT-0.2). 17-Nov files are decision history. Missing on disk: 04, 05, revised budget/paper_* files (`MISSING_INPUT`).
+- Verified: HEAD was `a94eb68` = origin/main; `3732056` is its ancestor (commit reconciliation resolved). dr-train idle, no PTP jobs.
+- Owner decisions of 17 Nov (O1 TRAIN 2006-2009, O2 n1 = 10,000) are binding; the 18-Nov files that still call them pending are stale (conflict R-01). 18-Nov "O3/O4" are P2 items and collide with 17-Nov O3/O4 (R-02).
+- New code: `src/patent_to_pilot/research/canonical_split_manifest.py`, `scripts/healthtech/build_canonical_split_manifest.py`, `tests/test_canonical_split_manifest.py` (17 PASS, synthetic only). Real manifest NOT_RUN.
+- Nothing run on real data, no TEST label/`pairs.tsv` read, no download/GPU/API, USD 0.
+- Approvals needed next: (1) run builder on `tasks.tsv` metadata (CPU, dr-train); (2) continuity tables download for family grouping; (3) Challenge-1M sealed-builder isolation design; (4) PatentsView claims file list must be taken from data.uspto.gov (S3 URLs 403) before the R5 download.
+
 ## DIRECTION CHANGE 2026-11-17 (owner): Paper 1 -> BridgeRet. Read `docs/healthtech/research/plans/DIRECTION-20261117-BRIDGERET-HANDOFF.md` FIRST
 
 The owner's new direction lives in `docs/owner/owner-note-17112026/` (owner-local, untracked).
