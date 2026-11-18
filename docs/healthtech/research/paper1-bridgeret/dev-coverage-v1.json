@@ -1,0 +1,44 @@
+{
+ "VAL": {
+  "tasks": 2000,
+  "tasks_with_visible_OUT_positive": 1957,
+  "tasks_no_positive_seen_in_TRAIN": 877,
+  "pairs": 8689,
+  "out_pairs": 3748,
+  "in_corpus": 8192,
+  "visible": 7745,
+  "out_in_corpus": 3744,
+  "out_visible": 3563,
+  "visible_seen_in_train": 1764,
+  "share_out_visible": 0.9506,
+  "share_visible_seen_in_train": 0.2278
+ },
+ "P1-DEV": {
+  "tasks": 26575,
+  "tasks_with_visible_OUT_positive": 25941,
+  "tasks_no_positive_seen_in_TRAIN": 12706,
+  "pairs": 116575,
+  "out_pairs": 50270,
+  "in_corpus": 110396,
+  "visible": 105479,
+  "out_in_corpus": 49982,
+  "out_visible": 48107,
+  "visible_seen_in_train": 21444,
+  "share_out_visible": 0.957,
+  "share_visible_seen_in_train": 0.2033
+ },
+ "P2-DEV": {
+  "tasks": 26231,
+  "tasks_with_visible_OUT_positive": 25355,
+  "tasks_no_positive_seen_in_TRAIN": 12495,
+  "pairs": 114128,
+  "out_pairs": 49689,
+  "in_corpus": 106368,
+  "visible": 101502,
+  "out_in_corpus": 48556,
+  "out_visible": 46650,
+  "visible_seen_in_train": 21117,
+  "share_out_visible": 0.9388,
+  "share_visible_seen_in_train": 0.208
+ }
+}
