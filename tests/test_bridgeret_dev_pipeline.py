@@ -47,3 +47,12 @@ def test_refuses_test_blocks(tmp_path):
         _load('bm25_bridgeret').main(['x', 'u', 't', str(tmp_path / 'o'), 'P1-TEST'])
     with pytest.raises(SystemExit):
         _load('eval_bridgeret_dev').main(['r', 'p', 'u', 't', 'P2-TEST', 'o'])
+
+
+def test_rrf_fuses_and_breaks_ties(tmp_path):
+    a = tmp_path / 'a.tsv'; b = tmp_path / 'b.tsv'
+    a.write_text('app_id\trank\tunit\tscore\nq\t1\tX\t9\nq\t2\tY\t8\n')
+    b.write_text('app_id\trank\tunit\tscore\nq\t1\tY\t9\nq\t2\tZ\t8\n')
+    _load('rrf_bridgeret').main([str(tmp_path / 'o.tsv'), str(a), str(b)])
+    rows = [l.split('\t') for l in (tmp_path / 'o.tsv').read_text().splitlines()[1:]]
+    assert [r[2] for r in rows] == ['Y', 'X', 'Z']        # Y in both lists wins; X (rank1) beats Z (rank2)
