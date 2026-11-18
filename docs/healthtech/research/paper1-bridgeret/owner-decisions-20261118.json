@@ -5,5 +5,29 @@
   "continuity_download": "approved: download PatentsView continuity / related-document tables (grant and pre-grant) to dr-train /data/ptp-paper2/ for family grouping (D1); list exact file names and sizes first; counts inside the 60 GB R5 cap",
   "challenge1m_isolation_R05": "approved: Challenge-1M is built by a restricted builder process that alone reads protected TEST positives and returns only the unlabelled corpus union (salted-hash order), counts and a digest of the positive set (canonical_split_manifest.sealed_corpus_union)",
   "rename_18nov_O3_O4": "approved: the 18-Nov open items O3 (P2 action type) and O4 (P2 E0 encoder) are renamed P2-O3 and P2-O4; O1-O10 keep the 17-Nov meanings"
- }
+ },
+ "later": [
+  {
+   "recorded_at": "2026-11-18T21:22:21+07:00",
+   "source": "owner AskUserQuestion 2026-11-18 evening (overnight long run until 06:00)",
+   "claims_download": "owner downloaded the 54-file R5 claims plan ('โหลดตามแผน')",
+   "approved": {
+    "hf_models": "download Snowflake/snowflake-arctic-embed-m-v2.0 @95c2741480856aa9666782eb4afe11959938017f and Qwen/Qwen3-Embedding-0.6B @97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3 to dr-train; trust_remote_code only at the pinned revision",
+    "v100": "dr-train V100: Arctic fp16/fp32 throughput+memory benchmark and zero-shot encoding on DEV/VAL only; no TEST",
+    "cpu": "dr-train CPU: query text tables, 512-token truncation analysis, BM25 on DEV, L-C/L-D audits on TRAIN/DEV",
+    "push": "push this session's commits to origin/main (no docs/owner, no raw data)",
+    "abstracts": "owner downloads g_patent_abstract + pre-grant abstract file from ODP tonight",
+    "challenge1m": "sealed builder run tonight under the R-05 design, agent-proposed composition recorded before the run"
+   },
+   "freeze_manifest_v2": "NOT approved; owner asked for a low-burden freeze plan proposal",
+   "unchanged": "no RunPod, no paid API, no TEST qrels/query text read outside the sealed builder; USD 0"
+  },
+  {
+   "recorded_at": "2026-11-18T21:23:09+07:00",
+   "source": "owner chat 2026-11-18 evening: 'อนุญาต Runpod Test ได้เลยครับ' and 'อนุมัติ Freeze แผนได้ทันที ตอนเช้ารายงานผลให้ผมพอครับ'",
+   "runpod_pilot": "approved to run now: the existing RunPod pilot, hard cap USD 10 (unchanged), via RunPod MCP; only USPTO public text and model weights leave dr-train/this PC; no DAPFAM, no TEST labels/queries; pod deleted at the end; price stated in the receipt before creation",
+   "freeze": "approved immediately: freeze manifest-v2 (salts as proposed, VAL n=2000, imbalance tolerance 5%, family option A) and the P1-BridgeRet pre-declaration, before any DEV retrieval number; owner reviews in the morning report",
+   "freeze_manifest_v2_previous": "superseded by this approval"
+  }
+ ]
 }

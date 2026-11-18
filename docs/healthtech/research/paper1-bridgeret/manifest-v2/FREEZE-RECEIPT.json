@@ -1,0 +1,14 @@
+{
+ "action": "freeze canonical split manifest-v2",
+ "authority": "owner chat 2026-11-18 evening ('อนุมัติ Freeze แผนได้ทันที'), recorded in paper1-bridgeret/owner-decisions-20261118.json",
+ "manifest_sha256": "c8443600d74fed015213237e070882efd1ddeefef7e66b6f3d6f7bb2f31e8039",
+ "frozen_files_dr_train": {
+  "/data/ptp-paper2/manifest-v1/out-v2/manifest-frozen.json": "ec4645f9eeef50aa875a7c8509f12fd73336dba3baaa19b7fd4c41628014e767",
+  "/data/ptp-paper2/manifest-v1/out-v2/manifest-public-frozen.json": "762778388a76372a962da2c151adbbbc3fe63f3f82a4d21690a3605c65b78440"
+ },
+ "fixed_constants": {"p2_oa_salt": "p2-oa-split-v1", "dev_2011_salt": "ptp-2011-dev-split-v1", "val_2010_salt": "ptp-2010-val-v1",
+  "n1": 10000, "val_n": 2000, "imbalance_tolerance": 0.05, "family_conflict_option": "A", "grouping": "US continuity primary rule (build_continuity_related.py @94de206)"},
+ "assertions": {"A1-A4": "PASS", "L-B": "PASS", "A3": "PASS", "L-B-xyear": "REPORT (P1-TEST 581 / P2-TEST 2,222 / P3-TEST 2,722 seen_family)"},
+ "test_labels_read": false,
+ "changes_after_freeze": "only through a logged amendment (old/new sha, rationale, author, statistical impact)"
+}
