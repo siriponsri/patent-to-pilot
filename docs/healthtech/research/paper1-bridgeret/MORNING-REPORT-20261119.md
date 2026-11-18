@@ -22,17 +22,24 @@ P1-DEV n = 25,941 task ที่มี OUT positive ค้นได้ (VAL n = 
 | B-BM25 | 0.1727 | 0.2529 | 0.2174 | 0.2866 | 0.0347 | 0.1794 |
 | Z-Arctic (zero-shot) | 0.2248 | 0.3588 | 0.2979 | 0.3762 | 0.0435 | 0.2583 |
 | RRF(BM25, Z-Arctic) | 0.2352 | 0.3625 | 0.3055 | 0.3820 | 0.0460 | 0.2655 |
-| Z-Qwen3 (zero-shot) | QWEN_PLACEHOLDER |
-| E0 (ตามกติกา: RRF กับ dense ที่ดีกว่าบน P1-DEV) | E0_PLACEHOLDER |
+| Z-Qwen3 (zero-shot) | **0.2741** | 0.4067 | 0.3473 | 0.4330 | 0.0563 | 0.2961 |
+| **E0** = RRF(BM25, Z-Qwen3) (เลือกอัตโนมัติตามกติกา) | 0.2661 | 0.3903 | 0.3356 | 0.4182 | 0.0510 | 0.2846 |
+| Z-PatEmbed-large (C3, optional) | กำลังรันบน V100 (เสร็จหลัง 06:00) | | | | | |
 
 Power planning (DEV): σ_diff 0.22–0.33, design effect ตาม art unit 1.0–1.46 → ถ้า S* ต่างจาก comparator แบบ dense vs lexical ต้องใช้ ~12.8k task เพื่อจับ δ = 0.010 (มากกว่า n₁ = 10,000; MDE ≈ 0.011–0.012); ถ้าต่างแบบ E0 vs Z-Arctic ใช้ ~4k ก็พอ (`power-planning-dev-v1.json`)
+
+ข้อสังเกตสำคัญ:
+- Qwen3 zero-shot ดีกว่า Arctic zero-shot ชัดเจน (+0.049 OUT R@200) ทั้งที่ O3 เลือก Arctic เป็น backbone
+- RRF กับ BM25 ทำให้ Qwen3 แย่ลง (0.274 → 0.266) → E0 ไม่ใช่ comparator ที่แข็งที่สุด แต่ C2 ที่ล็อกไว้คือ S* − E0
 
 ## 3. ค่าใช้จ่าย
 RunPod: USD 0.0752 (pod A40 ~18 นาที, list-pod-billing; pod ลบแล้ว, list-pods ว่าง). API: USD 0. ดาวน์โหลด: claims 11.28 GB + abstracts 3.3 GB + continuity 0.87 GB (รวมสะสม ~18 GB จากเพดาน 60 GB).
 
 ## 4. ต้องให้คุณตัดสินใจ (lane C)
 1. Amendment A1 + งบ fine-tuning USD 20 (`plans/P1-BRIDGERET-AMENDMENT-A1-PROPOSAL.md`)
-2. รับ light-approval protocol ไหม (`plans/OWNER-LIGHT-APPROVAL-PROTOCOL.md`)
+2. C2: คง S* − E0 ตามที่ล็อกไว้ หรือแก้เป็น S* − (comparator ไม่ฝึกที่แข็งที่สุดบน DEV = Z-Qwen3) ก่อนมีตัวเลข S* ใด ๆ
+3. backbone: คง Arctic (O3) หรือย้ายไป Qwen3-0.6B (fallback ที่บันทึกไว้; FT แพงกว่า ~2 เท่า)
+4. รับ light-approval protocol ไหม (`plans/OWNER-LIGHT-APPROVAL-PROTOCOL.md`)
 
 ## 5. ข้อจำกัด/สิ่งที่ควรรู้
 - V100 บน dr-train มี service TTS ของ CIE ถือหน่วยความจำ 26.5 GB อยู่ งานของเราจึงรันแบบจำกัดหน่วยความจำ (~3.6 GB) ข้างกัน และช้ากว่าปกติ

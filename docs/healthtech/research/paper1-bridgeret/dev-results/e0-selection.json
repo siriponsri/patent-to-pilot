@@ -1,0 +1,9 @@
+{
+ "rule": "E0 = RRF(BM25, best zero-shot dense on P1-DEV OUT R@200)",
+ "dense_P1DEV_OUT_R200": {
+  "z-arctic": 0.22479,
+  "z-qwen3": 0.27412
+ },
+ "selected_dense": "z-qwen3",
+ "E0_run": "runs/e0-qwen3"
+}
