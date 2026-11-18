@@ -1,0 +1,61 @@
+{
+ "queries (with query: prompt)": {
+  "TRAIN": {
+   "n": 97059,
+   "share_truncated": 0.0895,
+   "share_claim_cut": 0.0895,
+   "share_abstract_cut": 0.0007,
+   "mean_claim_tokens_removed_when_cut": 130.4,
+   "title_over_cap": 0,
+   "ntok_p50": 319,
+   "ntok_p90": 501,
+   "ntok_max": 512
+  },
+  "VAL": {
+   "n": 1919,
+   "share_truncated": 0.1084,
+   "share_claim_cut": 0.1084,
+   "share_abstract_cut": 0.001,
+   "mean_claim_tokens_removed_when_cut": 120.1,
+   "title_over_cap": 0,
+   "ntok_p50": 330,
+   "ntok_p90": 505,
+   "ntok_max": 512
+  },
+  "P1-DEV": {
+   "n": 25626,
+   "share_truncated": 0.0939,
+   "share_claim_cut": 0.0939,
+   "share_abstract_cut": 0.0005,
+   "mean_claim_tokens_removed_when_cut": 116.7,
+   "title_over_cap": 0,
+   "ntok_p50": 325,
+   "ntok_p90": 504,
+   "ntok_max": 512
+  },
+  "P2-DEV": {
+   "n": 25329,
+   "share_truncated": 0.0912,
+   "share_claim_cut": 0.0912,
+   "share_abstract_cut": 0.0004,
+   "mean_claim_tokens_removed_when_cut": 123.2,
+   "title_over_cap": 0,
+   "ntok_p50": 325,
+   "ntok_p90": 502,
+   "ntok_max": 512
+  }
+ },
+ "passages": {
+  "CORPUS": {
+   "n": 1000000,
+   "share_truncated": 0.1661,
+   "share_claim_cut": 0.1661,
+   "share_abstract_cut": 0.0013,
+   "mean_claim_tokens_removed_when_cut": 151.1,
+   "title_over_cap": 0,
+   "ntok_p50": 353,
+   "ntok_p90": 509,
+   "ntok_max": 512
+  }
+ }
+}
