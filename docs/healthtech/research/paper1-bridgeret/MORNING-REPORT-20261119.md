@@ -24,12 +24,13 @@ P1-DEV n = 25,941 task ที่มี OUT positive ค้นได้ (VAL n = 
 | RRF(BM25, Z-Arctic) | 0.2352 | 0.3625 | 0.3055 | 0.3820 | 0.0460 | 0.2655 |
 | Z-Qwen3 (zero-shot) | **0.2741** | 0.4067 | 0.3473 | 0.4330 | 0.0563 | 0.2961 |
 | **E0** = RRF(BM25, Z-Qwen3) (เลือกอัตโนมัติตามกติกา) | 0.2661 | 0.3903 | 0.3356 | 0.4182 | 0.0510 | 0.2846 |
-| Z-PatEmbed-large (C3, optional) | กำลังรันบน V100 (เสร็จหลัง 06:00) | | | | | |
+| Z-PatEmbed-large (C3, optional, CC BY-NC-SA, prompt MIXED ตาม CL-1) | **0.3282** | 0.4908 | 0.4180 | 0.5121 | 0.0633 | 0.3494 |
 
 Power planning (DEV): σ_diff 0.22–0.33, design effect ตาม art unit 1.0–1.46 → ถ้า S* ต่างจาก comparator แบบ dense vs lexical ต้องใช้ ~12.8k task เพื่อจับ δ = 0.010 (มากกว่า n₁ = 10,000; MDE ≈ 0.011–0.012); ถ้าต่างแบบ E0 vs Z-Arctic ใช้ ~4k ก็พอ (`power-planning-dev-v1.json`)
 
 ข้อสังเกตสำคัญ:
 - Qwen3 zero-shot ดีกว่า Arctic zero-shot ชัดเจน (+0.049 OUT R@200) ทั้งที่ O3 เลือก Arctic เป็น backbone
+- Z-PatEmbed-large (โมเดลเฉพาะสิทธิบัตร, NC) แข็งที่สุดในบรรดา zero-shot (0.328) — แต่อาจเคยเห็นสิทธิบัตรช่วงนี้ตอนฝึก (L-F ตรวจไม่ได้) และไม่อยู่ในชุดที่กติกา E0 ใช้เลือก
 - RRF กับ BM25 ทำให้ Qwen3 แย่ลง (0.274 → 0.266) → E0 ไม่ใช่ comparator ที่แข็งที่สุด แต่ C2 ที่ล็อกไว้คือ S* − E0
 
 ## 3. ค่าใช้จ่าย
