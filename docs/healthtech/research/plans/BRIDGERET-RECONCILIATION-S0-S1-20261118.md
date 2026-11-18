@@ -129,3 +129,11 @@ Private manifest (raw ids) and public view (salted-hash ids; salt only on dr-tra
   - R-12: the "other citations from the same application's later actions" guard is not available in pairs-dev; mining applies K(q), own unit and exact-text guards only.
   - R-13: full fine-tuning with 7 x 512-token negatives is ~11.5 A40-h per epoch; amendment A1 proposed (not applied).
   - R-14: RunPod MCP has no file transfer; FT on RunPod needs a pod with our own PUBLIC_KEY env + scp from dr-train (no account change), or the V100 when the TTS frees memory.
+
+## 10. Owner set 19 Nov (SOT-0.3, B53 / IS1 committee response) — read 19 Nov 06:00
+- New: `owner-note-19112026/09_PAPER53_BRIDGE_AND_COMMITTEE_RESPONSE.md` (B53 first-stage substitution on DAPFAM, O14-O17), revised P1 intro/method/manuscript, registry §5.
+- Repo-side work: `plans/IS1-COMMITTEE-RESPONSE-DRAFT.md`, `plans/B53-FIRST-STAGE-SUBSTITUTION-DRAFT.md` (bound to existing assets).
+- O17 answered from the published Paper 53 Table I (verbatim bodies, checked visually); O16 not found in repo.
+- R-15: B53 analysis numbering differs between file 09 (B53.2 = r1, B53.3 = Δ_exp with Holm, B53.4 = headroom, B53.5 = reproduction check) and registry §5 (B53.2 = headroom, B53.3 no multiplicity family, B53.4 = identity, B53.5 = proxies). Draft follows file 09.
+- R-16: CLAUDE.md FINAL CHECKPOINT rule "never re-open the test qrels" (P1-DAPFAM) vs file 09 (B53 may use DAPFAM test as non-protected). Needs owner decision before B53-FULL.
+- R-17: DAPFAM licence recorded as CC BY-NC-SA 4.0 in repo records; 19-Nov owner files still say UNVERIFIED.
