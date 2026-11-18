@@ -1,0 +1,22 @@
+[
+ {
+  "contrast": "z-arctic - bm25",
+  "n": 25941,
+  "mean_diff": 0.0521,
+  "sd_diff": 0.3341,
+  "design_effect_art_unit": 1.459,
+  "clusters": 566,
+  "n_for_delta_0.010_80pct_alpha0.05": 12782,
+  "n_holm_alpha0.025": 15479
+ },
+ {
+  "contrast": "e0-arctic - z-arctic",
+  "n": 25941,
+  "mean_diff": 0.0104,
+  "sd_diff": 0.2221,
+  "design_effect_art_unit": 1.014,
+  "clusters": 566,
+  "n_for_delta_0.010_80pct_alpha0.05": 3929,
+  "n_holm_alpha0.025": 4758
+ }
+]
