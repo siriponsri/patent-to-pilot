@@ -67,6 +67,8 @@ def main():
     for a, d in (('--tau', 0.02), ('--w-out', 1.0), ('--lr', 2e-5)):
         ap.add_argument(a, type=float, default=d)
     ap.add_argument('--max-steps', type=int, default=0)
+    ap.add_argument('--pooling', default='cls', choices=['cls', 'last'])
+    ap.add_argument('--device', required=True, choices=['cuda', 'cpu'])   # explicit: never auto-pick a shared GPU   # cls = Arctic (GTE); last = Qwen3 (EOS token)
     args = ap.parse_args()
     import torch, torch.nn.functional as F
     from transformers import AutoModel, AutoTokenizer
@@ -81,23 +83,31 @@ def main():
             ptxt[r['unit']] = r['text']
     qtxt = {json.loads(l)['app_id']: json.loads(l)['text'] for l in open(os.path.join(args.ser, 'queries.jsonl'), encoding='utf-8')}
     ex = [e for e in ex if e['app_id'] in qtxt and any(u in ptxt for u in e['pos'])]
-    cuda = torch.cuda.is_available()
-    dev = 'cuda' if cuda else 'cpu'
+    dev = args.device
+    cuda = dev == 'cuda'
     amp = torch.bfloat16 if (cuda and torch.cuda.is_bf16_supported()) else torch.float16
     import shutil
     shadow = os.path.join(args.out, 'base-shadow')       # writable view of the read-only pinned model dir
     os.makedirs(shadow)
     for f in os.listdir(args.model):
+        if f.startswith('.'):
+            continue                                       # skip .cache/.gitattributes (read-only, not needed)
         src, dst = os.path.join(args.model, f), os.path.join(shadow, f)
         if os.path.isdir(src):
-            shutil.copytree(src, dst); [os.chmod(os.path.join(dst, x), 0o644) for x in os.listdir(dst)]
+            shutil.copytree(src, dst); os.chmod(dst, 0o755); [os.chmod(os.path.join(dst, x), 0o644) for x in os.listdir(dst)]
         elif f.endswith('.safetensors') or f.endswith('.bin'):
             os.symlink(os.path.abspath(src), dst)
         else:
             shutil.copyfile(src, dst); os.chmod(dst, 0o644)
-    tok = AutoTokenizer.from_pretrained(shadow)
-    model = AutoModel.from_pretrained(shadow, trust_remote_code=True, use_memory_efficient_attention=False,
-                                      unpad_inputs=False, torch_dtype=torch.float32).to(dev)
+    if args.pooling == 'last':
+        tok = AutoTokenizer.from_pretrained(shadow, padding_side='left')
+        model = AutoModel.from_pretrained(shadow, torch_dtype=torch.float32).to(dev)
+    else:
+        tok = AutoTokenizer.from_pretrained(shadow)
+        model = AutoModel.from_pretrained(shadow, trust_remote_code=True, use_memory_efficient_attention=False,
+                                          unpad_inputs=False, torch_dtype=torch.float32).to(dev)
+    model.config.use_cache = False
+    pool = (lambda h: h[:, -1]) if args.pooling == 'last' else (lambda h: h[:, 0])
     model.gradient_checkpointing_enable(); model.train()
     steps = math.ceil(len(ex) / args.bq) if not args.max_steps else args.max_steps
     opt = torch.optim.AdamW(model.parameters(), lr=args.lr)
@@ -120,8 +130,8 @@ def main():
                 if n in ptxt:
                     docs.append(n); owner.append(i)
         with torch.autocast(dev, dtype=amp, enabled=cuda):
-            q = F.normalize(model(**enc([args.query_prompt + qtxt[e['app_id']] for e in b])).last_hidden_state[:, 0], dim=-1)
-            d = F.normalize(model(**enc([ptxt[u] for u in docs])).last_hidden_state[:, 0], dim=-1)
+            q = F.normalize(pool(model(**enc([args.query_prompt + qtxt[e['app_id']] for e in b])).last_hidden_state), dim=-1)
+            d = F.normalize(pool(model(**enc([ptxt[u] for u in docs])).last_hidden_state), dim=-1)
             logits = (q @ d.T).float() / args.tau
         mask = torch.zeros_like(logits, dtype=torch.bool)
         for i, e in enumerate(b):
