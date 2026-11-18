@@ -132,7 +132,7 @@ Private manifest (raw ids) and public view (salted-hash ids; salt only on dr-tra
 
 ## 10. Owner set 19 Nov (SOT-0.3, B53 / IS1 committee response) — read 19 Nov 06:00
 - New: `owner-note-19112026/09_PAPER53_BRIDGE_AND_COMMITTEE_RESPONSE.md` (B53 first-stage substitution on DAPFAM, O14-O17), revised P1 intro/method/manuscript, registry §5.
-- Repo-side work: `plans/IS1-COMMITTEE-RESPONSE-DRAFT.md`, `plans/B53-FIRST-STAGE-SUBSTITUTION-DRAFT.md` (bound to existing assets).
+- Repo-side work: `docs/writing/is2/COMMITTEE-RESPONSE-DRAFT.md`, `plans/B53-FIRST-STAGE-SUBSTITUTION-DRAFT.md` (bound to existing assets).
 - O17 answered from the published Paper 53 Table I (verbatim bodies, checked visually); O16 not found in repo.
 - R-15: B53 analysis numbering differs between file 09 (B53.2 = r1, B53.3 = Δ_exp with Holm, B53.4 = headroom, B53.5 = reproduction check) and registry §5 (B53.2 = headroom, B53.3 no multiplicity family, B53.4 = identity, B53.5 = proxies). Draft follows file 09.
 - R-16: CLAUDE.md FINAL CHECKPOINT rule "never re-open the test qrels" (P1-DAPFAM) vs file 09 (B53 may use DAPFAM test as non-protected). Needs owner decision before B53-FULL.

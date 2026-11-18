@@ -14,7 +14,10 @@ STUDY_FILES = [
     "scripts/healthtech/evaluate_dapfam_pool.py",
     "scripts/healthtech/run_qwen_query_actions.py",
 ]
-STUDY_DIRS = ["docs/healthtech/audits/ptp-org-adaptive-stage0-20261105"]
+STUDY_DIRS = [
+    "docs/healthtech/audits/ptp-org-adaptive-stage0-20261105",
+    "docs/writing/journal",  # journal track Papers 1-3 (owner 19 Nov 2026); IS2 track is exempt
+]
 BANNED = re.compile(
     r"paper\s*86|\barm-?0\d\b|final-?872|selection-?125|train-?(250|179)|nine-cell|journal_08|\bmyis\b"
     r"|\ba[67]\b|construction recipe|representation transfer",

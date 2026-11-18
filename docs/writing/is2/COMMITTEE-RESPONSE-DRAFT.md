@@ -24,10 +24,11 @@
 ข้อความที่ห้ามใช้: *"exposure เป็นสาเหตุที่ instruction ไม่มีผล"*, *"instruction ไม่สำคัญ"*
 
 ## สิ่งที่ยังต้องทำ (B53, ยังไม่รัน)
-แผนอยู่ใน `plans/B53-FIRST-STAGE-SUBSTITUTION-DRAFT.md`: สลับเฉพาะ first stage (patembed-base, BM25, RRF, Arctic, Qwen3/PatEmbed-large ถ้าเจ้าของอนุมัติ, S* เมื่อ P1 เสร็จ) บน DAPFAM โดยคง query, label, การ render TAC, depth, reranker และ instruction ไว้ แล้ววัด exposure และ contrast ของ instruction บนชุด query ที่ exposed ในทุก first stage (common-exposed set) — ตอบ K2a โดยตรง
+แผนอยู่ใน `docs/healthtech/research/plans/B53-FIRST-STAGE-SUBSTITUTION-DRAFT.md`: สลับเฉพาะ first stage (patembed-base, BM25, RRF, Arctic, Qwen3/PatEmbed-large ถ้าเจ้าของอนุมัติ, S* เมื่อ P1 เสร็จ) บน DAPFAM โดยคง query, label, การ render TAC, depth, reranker และ instruction ไว้ แล้ววัด exposure และ contrast ของ instruction บนชุด query ที่ exposed ในทุก first stage (common-exposed set) — ตอบ K2a โดยตรง
 
 ## K1a ที่มาของ patembed-base
-ยังไม่พบเหตุผลที่บันทึกไว้ใน repo → ต้องให้เจ้าของเขียน (O16) อย่าเดา เหตุผลที่น่าจะใช้ได้ต้องมาจากบันทึกจริงของ Paper 53 เท่านั้น
+เขียนแล้ว (19 พ.ย.): `K1a-PATEMBED-RATIONALE.md` ในโฟลเดอร์นี้ อิง arXiv:2605.24297 (ref. [15] ของ Paper 53) และ model card
+(ref. [18]) — เหตุผล 4 ข้อ + ข้อจำกัดที่เชื่อมไป K1b/K2a
 
 ## K1c ภาษาเชิงสาเหตุ
 ใช้นโยบายภาษาใน file 09 §6: สมการ Δ = π · Δ_exp เป็น accounting identity เท่านั้น; ข้อสรุปว่า "การเปลี่ยน first stage เปลี่ยน exposure" มาจาก B53.1 ซึ่งเป็นการ manipulate จริง

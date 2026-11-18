@@ -43,7 +43,7 @@ RunPod: USD 0.0752 (pod A40 ~18 นาที, list-pod-billing; pod ลบแล
 4. รับ light-approval protocol ไหม (`plans/OWNER-LIGHT-APPROVAL-PROTOCOL.md`)
 
 ## 4B. งาน DAPFAM / ตอบกรรมการ IS1 (ทำตอนเช้า 19 พ.ย. ระหว่างรอ dr-train)
-- ร่างคำตอบกรรมการ: `plans/IS1-COMMITTEE-RESPONSE-DRAFT.md` — ใช้ผลที่วัดแล้วบน DAPFAM dev (BM25 0.069, RRF −0.020 OUT, exposure 136/349) และ OA P1-DEV
+- ร่างคำตอบกรรมการ: `docs/writing/is2/COMMITTEE-RESPONSE-DRAFT.md` — ใช้ผลที่วัดแล้วบน DAPFAM dev (BM25 0.069, RRF −0.020 OUT, exposure 136/349) และ OA P1-DEV
 - ร่าง B53 ที่รันได้จริง: `plans/B53-FIRST-STAGE-SUBSTITUTION-DRAFT.md` (patembed-base revision ตรงกับ Paper 53; ข้อความ instruction ตรวจจาก Table I แล้ว)
 - ต้องตัดสินใจ: (1) เปิด DAPFAM test qrels อีกครั้งเพื่อ B53-FULL (724 query) ซึ่งขัดกฎเดิมใน CLAUDE.md หรือใช้เฉพาะ dev 349; (2) ดาวน์โหลด Qwen3-Reranker-0.6B; (3) O16 เหตุผลที่เลือก patembed-base; (4) เพิ่ม PatEmbed-large/Qwen3 เป็น first stage เพิ่มไหม
 
