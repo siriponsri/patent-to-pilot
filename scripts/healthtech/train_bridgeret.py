@@ -84,8 +84,19 @@ def main():
     cuda = torch.cuda.is_available()
     dev = 'cuda' if cuda else 'cpu'
     amp = torch.bfloat16 if (cuda and torch.cuda.is_bf16_supported()) else torch.float16
-    tok = AutoTokenizer.from_pretrained(args.model)
-    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, use_memory_efficient_attention=False,
+    import shutil
+    shadow = os.path.join(args.out, 'base-shadow')       # writable view of the read-only pinned model dir
+    os.makedirs(shadow)
+    for f in os.listdir(args.model):
+        src, dst = os.path.join(args.model, f), os.path.join(shadow, f)
+        if os.path.isdir(src):
+            shutil.copytree(src, dst); [os.chmod(os.path.join(dst, x), 0o644) for x in os.listdir(dst)]
+        elif f.endswith('.safetensors') or f.endswith('.bin'):
+            os.symlink(os.path.abspath(src), dst)
+        else:
+            shutil.copyfile(src, dst); os.chmod(dst, 0o644)
+    tok = AutoTokenizer.from_pretrained(shadow)
+    model = AutoModel.from_pretrained(shadow, trust_remote_code=True, use_memory_efficient_attention=False,
                                       unpad_inputs=False, torch_dtype=torch.float32).to(dev)
     model.gradient_checkpointing_enable(); model.train()
     steps = math.ceil(len(ex) / args.bq) if not args.max_steps else args.max_steps
@@ -129,12 +140,11 @@ def main():
             log.write(json.dumps({'step': s, 'loss': round(loss.item(), 4), 'lr': sched.get_last_lr()[0], 'sec': round(time.time() - t0, 1)}) + '\n'); log.flush()
     ck = os.path.join(args.out, 'checkpoint')
     model.save_pretrained(ck); tok.save_pretrained(ck)
-    import shutil
-    for f in os.listdir(args.model):                      # remote-code modules + pooling config travel with the weights
-        if f.endswith('.py') or f in ('modules.json', 'config_sentence_transformers.json'):
-            shutil.copy(os.path.join(args.model, f), ck)
+    for f in os.listdir(shadow):                          # remote-code modules + pooling config travel with the weights
+        if (f.endswith('.py') or f in ('modules.json', 'config_sentence_transformers.json')) and not os.path.exists(os.path.join(ck, f)):
+            shutil.copyfile(os.path.join(shadow, f), os.path.join(ck, f))
         if f == '1_Pooling':
-            shutil.copytree(os.path.join(args.model, f), os.path.join(ck, f), dirs_exist_ok=True)
+            shutil.copytree(os.path.join(shadow, f), os.path.join(ck, f), dirs_exist_ok=True)
     json.dump({**vars(args), 'n_examples': len(ex), 'steps': steps, 'seconds': round(time.time() - t0, 1), 'amp': str(amp)},
               open(os.path.join(args.out, 'train-config.json'), 'w'), indent=1)
     print('TRAIN_DONE', len(ex), steps, round(time.time() - t0, 1))
