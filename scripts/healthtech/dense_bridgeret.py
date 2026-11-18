@@ -7,12 +7,12 @@ GPU etiquette on the shared V100: per-process memory fraction cap, small batches
 Usage: python3 dense_bridgeret.py <model_dir> <pooling cls|last> <query_prompt> <serialised_dir> <corpus-units.tsv>
        <tasks.tsv> <out_dir> <mem_fraction> BLOCK [BLOCK...]
 """
-import csv, fcntl, json, sys, time
+import csv, fcntl, json, os, sys, time
 from pathlib import Path
 
 PROTECTED = {'P1-TEST', 'P2-TEST', 'P3-TEST'}
 LOCK = '/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/.GPU-277ccc57-c3e5-0731-cd49-f4f8695f7089.lock'
-TOPK, BS = 1000, 64
+TOPK, BS = 1000, int(os.environ.get('BS', '64'))
 
 
 def main(argv):
