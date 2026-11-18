@@ -1,0 +1,26 @@
+{
+ "run": "manifest-v1 build, one run",
+ "host": "dr-train",
+ "exit": 0,
+ "wall_s": 3.3,
+ "cpu_user_s": 3.11,
+ "cpu_sys_s": 0.18,
+ "max_rss_kb": 246452,
+ "inputs_sha256": {
+  "tasks.tsv": "35ca0424ac30a4985f022d4af8d13b63321c247ad8407cae26342cb75c504b43",
+  "build-approval.json": "1f778815837800060871d6de35478b20ab9bdc655913e630ad6156dd169f7bbe"
+ },
+ "code_sha256": {
+  "canonical_split_manifest.py": "3923e9e45a4fce1292e34778ca6da7192711df3a00fdcd1195ce9972c6b8bf3b",
+  "build_canonical_split_manifest.py": "59e2966612a85e7ce092892b799b960e131f5f294082512cd4decad061871d78"
+ },
+ "outputs_remote": {
+  "/data/ptp-paper2/manifest-v1/out/manifest-private.json": "27bed938278e1ab7127568cf0a75788e6d76d1ab5224c950aaf59dc2e20d69e1",
+  "/data/ptp-paper2/manifest-v1/out/manifest-public.json": "4a240a474784c024790d4ec4835bdc9e0ac144ea8a63d8901398ed3dd4c9e9ab"
+ },
+ "manifest_sha256": "5f803b13b976016498278c4868ff9ddad4dc0f0368fd7c729c1577f646a3d83f",
+ "frozen": false,
+ "labels_read": false,
+ "gpu": 0,
+ "usd": 0
+}

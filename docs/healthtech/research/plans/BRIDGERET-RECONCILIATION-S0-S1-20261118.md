@@ -92,3 +92,29 @@ serialisation and claim parser (need claims text), truncation analysis, throughp
 3. **Challenge-1M isolation design** (R-05) before any real corpus build.
 4. Optional: rename 18-Nov O3/O4 to `P2-O3`/`P2-O4` (R-02).
 5. Unchanged: RunPod pilot (≤ USD 10) dispatch needs its own go.
+
+## 8. Update 2026-11-18 (later): manifest-v1 built; three owner approvals
+
+**manifest-v1** (owner approved the build; receipt `paper1-bridgeret/manifest-v1/build-receipt.json`):
+one CPU run on dr-train, exit 0, 3.3 s wall, 246 MB RSS, metadata columns only, `pairs.tsv` and labels not read, USD 0.
+manifest_sha256 `5f803b13b976016498278c4868ff9ddad4dc0f0368fd7c729c1577f646a3d83f`, NOT frozen.
+
+| Block | Tasks |
+|---|---|
+| TRAIN (2006-2009) | 100,376 (matches the project record) |
+| VAL (2010, hash sample) | 2,000 |
+| P1-DEV / P2-DEV (2011) | 26,320 / 26,486 (imbalance 0.31 %, within ±5 %) |
+| P1-TEST (2012 tail) | 10,000 |
+| P2-TEST (2012 prefix, cap) | 44,074 |
+| P3-TEST (2013) | 55,307 |
+
+Assertions: A1-A4 (app_id disjoint) PASS, A3 PASS; L-B NOT_ASSESSABLE (`FAMILY_DISJOINTNESS_PENDING`).
+Eligible tasks with filing years outside every block (1995-2005 stragglers, 2014-2016 censored) are not used.
+Private manifest (raw ids) and public view (salted-hash ids; salt only on dr-train) stay on dr-train under
+`/data/ptp-paper2/manifest-v1/` (mode 700).
+
+**Owner approvals** (`paper1-bridgeret/owner-decisions-20261118.json`):
+1. Continuity tables download: approved. Exact list in `paper1-bridgeret/CONTINUITY-DOWNLOAD-REQUEST-20261118.md`.
+   ODP requires the owner's USPTO.gov sign-in (MFA + CAPTCHA), so the owner downloads; the agent then builds manifest-v2.
+2. R-05 Challenge-1M sealed-builder isolation: approved (design binding; implementation = `sealed_corpus_union`).
+3. 18-Nov O3/O4 renamed `P2-O3` (P2 action type) and `P2-O4` (P2 E0 encoder); O1-O10 keep their 17-Nov meanings.

@@ -1,0 +1,33 @@
+{
+ "manifest_sha256": "5f803b13b976016498278c4868ff9ddad4dc0f0368fd7c729c1577f646a3d83f",
+ "block_counts": {
+  "TRAIN": 100376,
+  "VAL": 2000,
+  "P1-DEV": 26320,
+  "P2-DEV": 26486,
+  "P1-TEST": 10000,
+  "P2-TEST": 44074,
+  "P3-TEST": 55307
+ },
+ "stats": {
+  "dev_2011_imbalance": 0.003144,
+  "dev_2011_imbalance_ok": true,
+  "p2_test_removed_by_family_rule": 0,
+  "p2_test_cap": 44074
+ },
+ "notes": [
+  "filing years outside every block (not used): [1995, 1999, 2000, 2001, 2003, 2004, 2005, 2014, 2015, 2016]",
+  "FAMILY_DISJOINTNESS_PENDING: grouping is singleton; the claim \"family-disjoint\" may not be made and the proxy audit (L-C) is mandatory"
+ ],
+ "grouping": {
+  "source": "singleton",
+  "status": "FAMILY_DISJOINTNESS_PENDING",
+  "max_group_size": 1
+ },
+ "assertions": {
+  "A1-A4": "PASS",
+  "L-B": "NOT_ASSESSABLE",
+  "A3": "PASS",
+  "L-B-xyear": "REPORT"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "action": "build-canonical-split-manifest",
+ "approved_by": "owner (chat, 2026-11-18: 'อนุมัติรัน builder')",
+ "approved_at": "2026-11-18T18:44:38+07:00",
+ "scope": "one CPU run on dr-train of build_canonical_split_manifest.py over /data/ptp-paper2/splits/private/tasks.tsv, metadata columns only (app_id, filing_date, art_unit, ipc4_primary); no pairs.tsv, no labels, no download, no GPU, USD 0; result stays unfrozen",
+ "related_table": "none (continuity tables not downloaded) -> FAMILY_DISJOINTNESS_PENDING expected",
+ "config": {
+  "n1": 10000,
+  "val_n": 2000
+ },
+ "code_sha256": {
+  "canonical_split_manifest.py": "3923e9e45a4fce1292e34778ca6da7192711df3a00fdcd1195ce9972c6b8bf3b",
+  "build_canonical_split_manifest.py": "59e2966612a85e7ce092892b799b960e131f5f294082512cd4decad061871d78"
+ }
+}

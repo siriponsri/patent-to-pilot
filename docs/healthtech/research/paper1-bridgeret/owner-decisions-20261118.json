@@ -1,0 +1,9 @@
+{
+ "recorded_at": "2026-11-18T18:45:17+07:00",
+ "source": "owner in chat 2026-11-18: 'อนุมัติทั้ง 3 ข้อครับ'",
+ "decisions": {
+  "continuity_download": "approved: download PatentsView continuity / related-document tables (grant and pre-grant) to dr-train /data/ptp-paper2/ for family grouping (D1); list exact file names and sizes first; counts inside the 60 GB R5 cap",
+  "challenge1m_isolation_R05": "approved: Challenge-1M is built by a restricted builder process that alone reads protected TEST positives and returns only the unlabelled corpus union (salted-hash order), counts and a digest of the positive set (canonical_split_manifest.sealed_corpus_union)",
+  "rename_18nov_O3_O4": "approved: the 18-Nov open items O3 (P2 action type) and O4 (P2 E0 encoder) are renamed P2-O3 and P2-O4; O1-O10 keep the 17-Nov meanings"
+ }
+}
