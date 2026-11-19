@@ -29,6 +29,10 @@ Not required for IS2: P1–P3 TEST results, SOTA wins, deployment, real users, b
 
 ## 2. Short-paper outline (≤ 10 pages, template sections)
 
+Draft v0.1: `IS2-SHORT-PAPER-DRAFT.md` (Markdown master) → `IS2-short-paper-draft.docx` built from the faculty template by
+`scripts/writing/build_is2_shortpaper_docx.py` (8 pages rendered; Stage 2 and the advisor's Thai name are [PENDING]).
+
+
 1. **บทนำ:**
    - Paper 53 found near-zero instruction effects;
    - only 37.1% of the 692 held-out queries had a known OUT family in the top 100;
