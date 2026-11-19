@@ -114,7 +114,13 @@ def main():
         if rc != 0:
             (od / 'FAILED').write_text(f'train rc={rc}'); continue
         info = {'train_seconds': round(time.time() - t0, 1)}
-        info.update(encode_and_retrieve(wd / 'checkpoint', bundle, od))
+        if c.get('encode', True):
+            info.update(encode_and_retrieve(wd / 'checkpoint', bundle, od))
+        else:                                                    # AM-5: DEV encoding on dr-train; ship an fp16 copy
+            import torch
+            from transformers import AutoModel, AutoTokenizer
+            m = AutoModel.from_pretrained(wd / 'checkpoint', torch_dtype=torch.float16)
+            m.save_pretrained(od / 'ckpt-fp16'); AutoTokenizer.from_pretrained(wd / 'checkpoint').save_pretrained(od / 'ckpt-fp16')
         if c.get('keep_checkpoint'):
             shutil.move(str(wd / 'checkpoint'), str(od / 'checkpoint'))
         shutil.rmtree(wd)
