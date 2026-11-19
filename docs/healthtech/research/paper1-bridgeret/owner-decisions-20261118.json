@@ -58,6 +58,12 @@
       "p1_23nov": "run the remaining 2 configs (S4rule-t0.02, S2-t0.05), then select S* by the frozen rule over all 5, then the full-TRAIN S* run (envelope USD 20 unchanged)",
       "b53_stage2": "1,000-pair reranker timing first; if F0-F4 x 4 instructions needs more than about 1 week of shared V100, Stage 2 = F0/F1/F2 at K=100",
       "journals": "prefer fully free (diamond) venues from the KMITL ICT list: P1 -> ECTI-CIT, P2/P3 -> TMLR, IS2 extension -> IT Journal KMUTNB (TCI group 1)"
+    },
+    {
+      "recorded_at": "2026-11-19T18:20+07:00",
+      "source": "owner AskUserQuestion 19 Nov evening",
+      "parallel_pods": "run the remaining 4 grid configs on 4 additional A40 pods in parallel, each encoding its own P1-DEV/VAL on the pod; the first pod stops after config 1",
+      "ft_envelope": "P1 fine-tuning envelope raised from USD 20 to USD 25 (total estimate ~USD 22 incl. the full-TRAIN S* run)"
     }
   ]
 }
