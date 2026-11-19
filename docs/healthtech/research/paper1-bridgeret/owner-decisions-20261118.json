@@ -50,6 +50,14 @@
       "paper53_status": "accepted; to be presented at the conference on 20 Nov 2026; DOI not yet assigned",
       "is2_template": "faculty short-paper template 'Template-short-Paper-IS1-2 (AI4BA).docx' (Thai+English abstract, 2-column A4, <=10 pages, TH SarabunPSK)",
       "journals": "use KMITL ICT journal list (owner audit CSV 19 Nov) for venue choice; owner still to pick final venues"
+    },
+    {
+      "recorded_at": "2026-11-19T16:40+07:00",
+      "source": "owner AskUserQuestion 19 Nov afternoon",
+      "p1_tonight": "3 grid configs (S2-t0.02, S1-t0.02, S3-t0.02-w1.5) then delete the pod before the owner's 04:00 shutdown",
+      "p1_23nov": "run the remaining 2 configs (S4rule-t0.02, S2-t0.05), then select S* by the frozen rule over all 5, then the full-TRAIN S* run (envelope USD 20 unchanged)",
+      "b53_stage2": "1,000-pair reranker timing first; if F0-F4 x 4 instructions needs more than about 1 week of shared V100, Stage 2 = F0/F1/F2 at K=100",
+      "journals": "prefer fully free (diamond) venues from the KMITL ICT list: P1 -> ECTI-CIT, P2/P3 -> TMLR, IS2 extension -> IT Journal KMUTNB (TCI group 1)"
     }
   ]
 }

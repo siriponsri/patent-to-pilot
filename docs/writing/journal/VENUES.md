@@ -39,10 +39,12 @@ Excluded:
 - Information Retrieval Journal is Inactive (it became Discover Computing with an APC).
 - IEEE Access and PeerJ CS are fully OA with an APC.
 
-## Proposed mapping (owner to confirm)
-| Paper | First choice | Free fallback |
-|---|---|---|
-| P1 BridgeRet | IP&M (Q1) | ECTI-CIT (Q3, diamond) |
-| P2 CEDS | Expert Systems with Applications (Q1) | TMLR (Q2, diamond) |
-| P3 EG-SHE | Knowledge-Based Systems (Q1) | TMLR (Q2, diamond) |
-| IS2 / B53 extension | ECTI-CIT (diamond) | IT Journal KMUTNB (TCI 1, Thai) |
+## Chosen mapping (owner decision 19 Nov 2026: fully free / diamond first)
+| Paper | Venue (KMITL id) | Why | Hybrid Q1 alternative if the owner later wants a higher tier |
+|---|---|---|---|
+| P1 BridgeRet | ECTI-CIT (JC-00235, Q3, diamond, Thailand) | free, Scopus Active, in the faculty list | IP&M (Q1, subscription route free) |
+| P2 CEDS | Transactions on Machine Learning Research (JC-01371, Q2, diamond) | free, accepts empirical method papers with strong evaluation | Expert Systems with Applications |
+| P3 EG-SHE | TMLR (JC-01371) | as P2 | Knowledge-Based Systems |
+| IS2 / B53 extension (Thai) | IT Journal KMUTNB (JC-01235, TCI group 1; graduation use = Yes on erp) | Thai language, free, faculty-approved | ECTI-CIT |
+
+Two papers in the same venue (TMLR) is allowed but should be spaced; ECTI-CIT stays the free fallback for P2/P3.
