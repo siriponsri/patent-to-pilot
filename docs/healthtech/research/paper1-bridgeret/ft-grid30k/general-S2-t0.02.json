@@ -1,0 +1,28 @@
+{
+ "format": "ptp-bridgeret-general-v1",
+ "amendment": "AM-6(c)",
+ "model": "ft-grid/S2-t0.02/ckpt-fp16",
+ "tasks": {
+  "scifact": {
+   "n": 300,
+   "nDCG@10": 0.60061,
+   "R@100": 0.90433,
+   "n_docs": 5183,
+   "seconds": 83.0
+  },
+  "nfcorpus": {
+   "n": 323,
+   "nDCG@10": 0.26602,
+   "R@100": 0.29465,
+   "n_docs": 3633,
+   "seconds": 59.1
+  },
+  "arguana": {
+   "n": 1406,
+   "nDCG@10": 0.51176,
+   "R@100": 0.98293,
+   "n_docs": 8674,
+   "seconds": 125.4
+  }
+ }
+}
