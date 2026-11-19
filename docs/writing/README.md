@@ -16,5 +16,5 @@ note of where the text came from.
 Shared rules: no number without a receipt or a citation; no TEST data used for selection; owner documents in `docs/owner/`
 stay owner-local and are referenced, not copied.
 
-Experiment plans and receipts stay where they are (`docs/healthtech/research/plans/`, `paper1-bridgeret/`, audits); these
+Program map and gates: `RESEARCH-ROADMAP.md`. Experiment plans and receipts stay where they are (`docs/healthtech/research/plans/`, `paper1-bridgeret/`, audits); these
 folders hold the text that will be submitted.
