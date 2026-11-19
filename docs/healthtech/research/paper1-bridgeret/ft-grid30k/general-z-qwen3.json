@@ -1,0 +1,28 @@
+{
+ "format": "ptp-bridgeret-general-v1",
+ "amendment": "AM-6(c)",
+ "model": "/data/ptp-paper2/models/qwen3-embedding-0.6b",
+ "tasks": {
+  "scifact": {
+   "n": 300,
+   "nDCG@10": 0.69722,
+   "R@100": 0.96333,
+   "n_docs": 5183,
+   "seconds": 83.2
+  },
+  "nfcorpus": {
+   "n": 323,
+   "nDCG@10": 0.36644,
+   "R@100": 0.34111,
+   "n_docs": 3633,
+   "seconds": 59.5
+  },
+  "arguana": {
+   "n": 1406,
+   "nDCG@10": 0.69516,
+   "R@100": 0.99573,
+   "n_docs": 8674,
+   "seconds": 125.5
+  }
+ }
+}

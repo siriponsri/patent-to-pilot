@@ -1,0 +1,17 @@
+{
+  "format": "ptp-runpod-spend-v1",
+  "purpose": "P1 BridgeRet AM-5 grid (5 configs on the 30k subset), owner envelope USD 30 (raised from 20/25 on 19 Nov)",
+  "source": "RunPod MCP list-pod-billing, day buckets 2026-11-17..2026-11-20, read 2026-11-19T18:52Z (billing may lag by minutes)",
+  "pods": {
+    "ndxgcuza0qg17m": {"config": "S2-t0.02", "gpu": "A40 Secure 0.59/h", "usd": 3.2216, "deleted": "2026-11-19T13:39Z"},
+    "9mgwxu1sekig06": {"config": "S1-t0.02", "usd": 3.8309, "deleted": "2026-11-19T18:4xZ after EVALUATED"},
+    "ngb20thx7juswm": {"config": "S3-t0.02-w1.5", "usd": 3.8307, "deleted": "2026-11-19T18:4xZ after EVALUATED"},
+    "z39tpqjatx5plh": {"config": "S4rule-t0.02", "usd": 3.8302, "deleted": "2026-11-19T18:4xZ after EVALUATED"},
+    "prml3cwq74plbn": {"config": "S2-t0.05", "usd": 3.8299, "deleted": "2026-11-19T18:5xZ after EVALUATED"}
+  },
+  "grid_total_usd": 18.5433,
+  "pilot_pod_3uakq34o52m3se_usd": 0.1043,
+  "envelope_usd": 30,
+  "remaining_for_full_train_sstar_usd": 11.46,
+  "list_pods_after_deletion": "empty"
+}
