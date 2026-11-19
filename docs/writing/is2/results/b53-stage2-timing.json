@@ -1,0 +1,12 @@
+{
+  "n_pairs": 1000,
+  "token_len_p50": 2852,
+  "token_len_p90": 4249,
+  "token_len_max": 6218,
+  "pairs_per_s_bs1_all": 8.07,
+  "unique_pairs_top100_F0toF4_all_queries": 274797,
+  "unique_pairs_top100_F0F1F2_all_queries": 216387,
+  "note": "labels not read; pairs sampled from F0 top-100 (seed 20261119); Generic instruction; V100 under 0.15 memory cap",
+  "projected_hours_4arms_F0toF4": 37.8,
+  "projected_hours_4arms_F0F1F2": 29.8
+}

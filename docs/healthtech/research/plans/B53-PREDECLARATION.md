@@ -77,3 +77,35 @@ reproduction check against the paper's int8 numbers. B53.0 numbers are never mix
 - Inputs: query ≤ 2,048 tokens and document ≤ 4,096 tokens, as in Paper 53. Pools: k = 100 from every core arm.
 - Endpoints: Δ_exp on C and per arm, as in file 09.
 - The same reranker and instruction bodies are used for every first stage.
+
+---
+
+# Stage 2 — reranking (FROZEN 2026-11-19, before any Stage 2 number; Stage 1 numbers were known)
+
+Size decision (owner rule 19 Nov: time first; cut to F0/F1/F2 if > ~1 week). The 1,000-pair timing
+(`docs/writing/is2/results/b53-stage2-timing.json`) measured 8.07 pairs/s at bs 1 on the shared V100. F0–F4 × 4 instructions
+on the OUT cohort is about 28 h, so the **full design** runs. Four timing attempts failed with OOM before the fix: SDPA
+`enable_gqa` has no memory-efficient kernel on the V100. This is an engineering-only change; scores are unaffected.
+- **Queries:** the 905 OUT-eligible queries. Pools: top 100 of each core arm F0–F4. Each unique (query, family) pair is
+  scored once per instruction and reused across arms.
+- **Reranker:** Qwen3-Reranker-0.6B @e61197ed, fp16, model-card pair format, score = P(yes) over {yes, no}. Query ≤ 2,048
+  and document ≤ 4,096 tokens, right-truncated (Paper 53 §III).
+- **Arms:** Generic, Patent-aware, Claim-focused, Scrambled, with bodies taken verbatim from the Paper 53 LaTeX source,
+  Table I. Scrambled = Claim-focused whitespace items shuffled with `random.Random(42)`. Re-tokenised counts are
+  13/28/113/113 versus the reported 13/29/119/113 (O17, owner to confirm).
+- **Controls:** no-rerank (first-stage order); BGE-reranker-v2-m3 @953dc6f6 plain pair (secondary ranker), same truncation.
+- **Ranking:** raw scores, descending; ties broken by first-stage rank, then family id.
+- **Endpoint:** strict OUT nDCG@100 (gain = relevance_score; ideal over all positive OUT families), as Paper 53. An
+  unexposed query scores 0.
+- **B53.3 (primary for Stage 2):**
+  - Δ_exp(F) = mean over the common-exposed set C (153 queries, exposed under all five core arms at K = 100) of
+    (Patent-aware − Generic) and (Claim-focused − Generic), for each F ∈ F0–F4.
+  - 10 contrasts in total. Paired bootstrap B = 10,000, seed 20261119, 95% CI. Holm over these 10.
+  - Wins / losses / ties are reported.
+- **Descriptive:**
+  - the same contrasts on the full OUT cohort (Δ_all) and on each arm's own exposed subset;
+  - check of the identity Δ_all = π·Δ_exp per arm (accounting, not a causal test);
+  - Scrambled − Generic; no-rerank and BGE versus Generic;
+  - share of exposed queries whose endpoint changes (Paper 53's "response rate").
+- **Language:** file 09 §6. Stage 2 can say whether instruction contrasts differ across first stages on C. It cannot say
+  that exposure causes the instruction effect.
