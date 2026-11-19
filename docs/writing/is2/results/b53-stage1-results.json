@@ -1,0 +1,278 @@
+{
+  "format": "ptp-b53-stage1-v1",
+  "predeclaration": "plans/B53-PREDECLARATION.md (274af5de)",
+  "cohorts": {
+    "OUT": 905,
+    "IN": 1217,
+    "ALL": 1247,
+    "queries": 1247
+  },
+  "arms": {
+    "F0": {
+      "pi100": 0.3712707182320442,
+      "pi200": 0.4707182320441989,
+      "pi1000": 0.7325966850828729,
+      "median_r1_exposed100": 22,
+      "share_r1_le10_exposed100": 0.28273809523809523,
+      "out_recall100": 0.15984881620364746,
+      "out_recall200": 0.24106700226566638,
+      "out_ndcg100": 0.06059387504549382,
+      "in_recall100": 0.540792162293545,
+      "in_recall200": 0.661982018709564,
+      "all_recall100": 0.4444177136238082,
+      "all_recall200": 0.5564866791410497,
+      "oracle_out_recall100": 0.24106700226566638,
+      "self_top1_queries": 135,
+      "meta": {
+        "arm": "F0",
+        "kind": "st-mixed",
+        "model_dir": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/patembed-base",
+        "query_prompt": "encode query for mixed document retrieval: ",
+        "doc_prompt": "encode document for mixed retrieval: ",
+        "truncated_queries": 1187,
+        "truncated_docs": 41793,
+        "seconds": 528.8
+      }
+    },
+    "F0-OUT": {
+      "pi100": 0.4011049723756906,
+      "pi200": 0.4895027624309392,
+      "pi1000": 0.7502762430939226,
+      "median_r1_exposed100": 19,
+      "share_r1_le10_exposed100": 0.32231404958677684,
+      "out_recall100": 0.18463944487626133,
+      "out_recall200": 0.25367733885467325,
+      "out_ndcg100": 0.07103134191664023,
+      "in_recall100": 0.5168612991367137,
+      "in_recall200": 0.6297262188316359,
+      "all_recall100": 0.4263343134634233,
+      "all_recall200": 0.5317072084112983,
+      "oracle_out_recall100": 0.25367733885467325,
+      "self_top1_queries": 135,
+      "meta": {
+        "arm": "F0-OUT",
+        "kind": "st-out",
+        "model_dir": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/patembed-base",
+        "query_prompt": "encode query for different document retrieval: ",
+        "doc_prompt": "encode document for different retrieval: ",
+        "truncated_queries": 1187,
+        "truncated_docs": 41793,
+        "seconds": 528.9
+      }
+    },
+    "F1": {
+      "pi100": 0.2662983425414365,
+      "pi200": 0.343646408839779,
+      "pi1000": 0.5480662983425414,
+      "median_r1_exposed100": 20,
+      "share_r1_le10_exposed100": 0.3112033195020747,
+      "out_recall100": 0.10691530912722094,
+      "out_recall200": 0.1478837853947325,
+      "out_ndcg100": 0.04132430120373877,
+      "in_recall100": 0.34467486090392746,
+      "in_recall200": 0.4238172263480971,
+      "all_recall100": 0.2798271406932193,
+      "all_recall200": 0.35133654103180967,
+      "oracle_out_recall100": 0.1478837853947325,
+      "self_top1_queries": 135
+    },
+    "F2": {
+      "pi100": 0.3756906077348066,
+      "pi200": 0.4685082872928177,
+      "pi1000": 0.7005524861878453,
+      "median_r1_exposed100": 24,
+      "share_r1_le10_exposed100": 0.3,
+      "out_recall100": 0.16959428521027312,
+      "out_recall200": 0.22774644714538322,
+      "out_ndcg100": 0.06262885606072335,
+      "in_recall100": 0.5189795333957563,
+      "in_recall200": 0.6271921708392526,
+      "all_recall100": 0.4244497906085717,
+      "all_recall200": 0.5238483471442573,
+      "oracle_out_recall100": 0.22774644714538322,
+      "self_top1_queries": 135
+    },
+    "F3": {
+      "pi100": 0.31712707182320443,
+      "pi200": 0.41878453038674035,
+      "pi1000": 0.6320441988950276,
+      "median_r1_exposed100": 22,
+      "share_r1_le10_exposed100": 0.313588850174216,
+      "out_recall100": 0.12449051083854293,
+      "out_recall200": 0.1940930163377267,
+      "out_ndcg100": 0.04828745965007056,
+      "in_recall100": 0.45430203151748544,
+      "in_recall200": 0.5551717704360477,
+      "all_recall100": 0.36966051857792037,
+      "all_recall200": 0.4640960527488194,
+      "oracle_out_recall100": 0.1940930163377267,
+      "self_top1_queries": 135,
+      "meta": {
+        "arm": "F3",
+        "kind": "arctic",
+        "model_dir": "/data/ptp-paper2/models/arctic-embed-m-v2.0",
+        "query_prompt": "query: ",
+        "doc_prompt": "",
+        "truncated_queries": 1216,
+        "truncated_docs": 43272,
+        "seconds": 603.4
+      }
+    },
+    "F4": {
+      "pi100": 0.33591160220994476,
+      "pi200": 0.430939226519337,
+      "pi1000": 0.6430939226519337,
+      "median_r1_exposed100": 22,
+      "share_r1_le10_exposed100": 0.3026315789473684,
+      "out_recall100": 0.1413860474242682,
+      "out_recall200": 0.1992785486573438,
+      "out_ndcg100": 0.05238643492668546,
+      "in_recall100": 0.4616096454943249,
+      "in_recall200": 0.5597189391055823,
+      "all_recall100": 0.37684665419228375,
+      "all_recall200": 0.46618996703198784,
+      "oracle_out_recall100": 0.1992785486573438,
+      "self_top1_queries": 135
+    },
+    "F6": {
+      "pi100": 0.3734806629834254,
+      "pi200": 0.47734806629834253,
+      "pi1000": 0.7325966850828729,
+      "median_r1_exposed100": 22,
+      "share_r1_le10_exposed100": 0.27514792899408286,
+      "out_recall100": 0.16643770879791955,
+      "out_recall200": 0.2494193773782146,
+      "out_ndcg100": 0.06133515474570908,
+      "in_recall100": 0.5490490809569281,
+      "in_recall200": 0.6693225358908687,
+      "all_recall100": 0.4510335917312661,
+      "all_recall200": 0.562621402477056,
+      "oracle_out_recall100": 0.2494193773782146,
+      "self_top1_queries": 135,
+      "meta": {
+        "arm": "F6",
+        "kind": "st-mixed",
+        "model_dir": "/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/models/patembed-large",
+        "query_prompt": "encode query for mixed document retrieval: ",
+        "doc_prompt": "encode document for mixed retrieval: ",
+        "truncated_queries": 1187,
+        "truncated_docs": 41793,
+        "seconds": 688.7
+      }
+    },
+    "F7": {
+      "pi100": 0.3469613259668508,
+      "pi200": 0.4298342541436464,
+      "pi1000": 0.6397790055248619,
+      "median_r1_exposed100": 22,
+      "share_r1_le10_exposed100": 0.32802547770700635,
+      "out_recall100": 0.14133167808402572,
+      "out_recall200": 0.19338463816638046,
+      "out_ndcg100": 0.057054479766267346,
+      "in_recall100": 0.4580002008899516,
+      "in_recall200": 0.5573232775354231,
+      "all_recall100": 0.37466363717366125,
+      "all_recall200": 0.46634144168225966,
+      "oracle_out_recall100": 0.19338463816638046,
+      "self_top1_queries": 135,
+      "meta": {
+        "arm": "F7",
+        "kind": "qwen3",
+        "model_dir": "/data/ptp-paper2/models/qwen3-embedding-0.6b",
+        "query_prompt": "Instruct: Given a patent, retrieve prior art patents\nQuery: ",
+        "doc_prompt": "",
+        "truncated_queries": 1206,
+        "truncated_docs": 42358,
+        "seconds": 1578.9
+      }
+    }
+  },
+  "b53_1_contrasts": {
+    "F1": {
+      "delta_pi100_vs_F0": -0.10497237569060773,
+      "ci95": [
+        -0.13591160220994475,
+        -0.07513812154696133
+      ],
+      "gained": 55,
+      "lost": 150,
+      "mcnemar_p": 2.27506933138681e-11,
+      "family": "B53.1 core (Holm)",
+      "holm_p": 9.10027732554724e-11
+    },
+    "F2": {
+      "delta_pi100_vs_F0": 0.004419889502762431,
+      "ci95": [
+        -0.015469613259668509,
+        0.02430939226519337
+      ],
+      "gained": 46,
+      "lost": 42,
+      "mcnemar_p": 0.7493290032022806,
+      "family": "B53.1 core (Holm)",
+      "holm_p": 0.7493290032022806
+    },
+    "F3": {
+      "delta_pi100_vs_F0": -0.05414364640883978,
+      "ci95": [
+        -0.07734806629834254,
+        -0.032044198895027624
+      ],
+      "gained": 34,
+      "lost": 83,
+      "mcnemar_p": 6.775655653746717e-06,
+      "family": "B53.1 core (Holm)",
+      "holm_p": 2.0326966961240152e-05
+    },
+    "F4": {
+      "delta_pi100_vs_F0": -0.03535911602209945,
+      "ci95": [
+        -0.06077348066298342,
+        -0.009944751381215469
+      ],
+      "gained": 54,
+      "lost": 86,
+      "mcnemar_p": 0.008556547961075816,
+      "family": "B53.1 core (Holm)",
+      "holm_p": 0.01711309592215163
+    },
+    "F0-OUT": {
+      "delta_pi100_vs_F0": 0.02983425414364641,
+      "ci95": [
+        0.013259668508287293,
+        0.04640883977900553
+      ],
+      "gained": 44,
+      "lost": 17,
+      "mcnemar_p": 0.0007299045109347684,
+      "family": "descriptive"
+    },
+    "F6": {
+      "delta_pi100_vs_F0": 0.0022099447513812156,
+      "ci95": [
+        -0.008839779005524863,
+        0.013259668508287293
+      ],
+      "gained": 15,
+      "lost": 13,
+      "mcnemar_p": 0.8505540192127228,
+      "family": "descriptive"
+    },
+    "F7": {
+      "delta_pi100_vs_F0": -0.02430939226519337,
+      "ci95": [
+        -0.04751381215469613,
+        -0.0011049723756906078
+      ],
+      "gained": 47,
+      "lost": 69,
+      "mcnemar_p": 0.050729556682883294,
+      "family": "descriptive"
+    }
+  },
+  "common_exposed_k100_core": 153,
+  "bootstrap": {
+    "B": 10000,
+    "seed": 20261119
+  }
+}

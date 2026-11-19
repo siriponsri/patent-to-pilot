@@ -1,0 +1,26 @@
+{
+  "format": "ptp-b53-inputs-v1",
+  "source_sha256": {
+    "corpus.parquet": "469fe8e04d8bd8775a1116eccf0983e570a03444bef9c6e14c97aabafb7526d6",
+    "queries.parquet": "b5ad91a650349a0096911fadcb7bc35a0399eb12d1470fb2601d73af5fc2bcbe",
+    "qrels_all.parquet": "e51ae4e13abee0fc7523560ecddd272bc85dc98befc8ab4466155a0c2d2d4f74"
+  },
+  "files": {
+    "corpus.jsonl": "2c0dde71bf9f3e0a8c386367bdad5c54bd8a58abffdd1f037b299f7ef0ae7021",
+    "queries.jsonl": "0c658a1307c70fd0e22ad327bc0358b061cd55f5cb5066824aba0732125246de",
+    "qrels-pos.jsonl": "897b43efa36aa83149a873dedc0ae398eb66d3ec9c63d6bec7b571e4ed1a816b"
+  },
+  "corpus": 45336,
+  "queries": 1247,
+  "positive_pairs": 24929,
+  "positive_pairs_by_domain": {
+    "IN": 19736,
+    "OUT": 5193
+  },
+  "eligible_queries": {
+    "ALL": 1247,
+    "IN": 1217,
+    "OUT": 905
+  },
+  "view": "TAC (title\\nabstract\\nclaims), queries and corpus"
+}
