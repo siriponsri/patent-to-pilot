@@ -12,7 +12,7 @@
 | # | ข้อเสนอแนะ | คำตอบใน IS2 | หลักฐาน | ป้าย | บทในเล่ม | สถานะ |
 |---|---|---|---|---|---|---|
 | K1a | อธิบายที่มาของ patembed-base ที่ใช้เป็น first stage ตัวเดียว | แยกให้ชัด: (1) เหตุผลที่บันทึกจริงใน Paper 53 คือที่มา PatenTEB/model card; (2) หลักฐานเสริมย้อนหลังที่ติดป้าย; (3) การเปรียบเทียบจริงใน B53 | `K1a-PATEMBED-RATIONALE.md` v2 | HISTORICAL RECORD + MEASURED (ต่าง cohort) | Ch.2, Ch.6 | ร่างเสร็จ; รอเจ้าของตรวจ |
-| K1b | มีเพียง 37.1% ที่มีเอกสารเกี่ยวข้องใน Top-100 → ลอง BM25/hybrid | B53 F1 = BM25, F2 = RRF(BM25, F0), F4 = RRF(BM25, F3) ที่ K=100 (หลัก) และ 200 วัด exposure, first-hit rank, zero-exposure rate | B53 protocol; ผลยังไม่รัน | DESIGNED / NOT_RUN → MEASURED เมื่อรัน | Ch.3–4 | protocol กำลังตรึง |
+| K1b | มีเพียง 37.1% ที่มีเอกสารเกี่ยวข้องใน Top-100 → ลอง BM25/hybrid | B53 F1 = BM25, F2 = RRF(BM25, F0), F4 = RRF(BM25, F3) ที่ K=100 (หลัก) และ 200 วัด exposure, first-hit rank, zero-exposure rate | B53 Stage 1 (`results/B53-STAGE1-RESULTS.md`): π@100 F0 0.371, BM25 −0.105, RRF(BM25,F0) +0.004 (ns), Arctic −0.054, RRF(BM25,Arctic) −0.035 | MEASURED | Ch.3–4 | **วัดแล้ว 19 พ.ย.** |
 | K1c | อย่าสรุปเชิงสาเหตุจากสมการย้อนใน RQ2 | ใช้ Δ_all = π·Δ_exp เป็น accounting identity เท่านั้น และใช้เฉพาะเมื่อ unexposed = 0 ทุก arm บน pool เดียวกัน ข้อสรุปว่า "เปลี่ยน first stage แล้ว exposure เปลี่ยน" มาจาก B53.1 ซึ่งเป็น intervention จริง | owner file 09 §6 language policy | METHOD | Ch.3, Ch.6 | นโยบายภาษาตกลงแล้ว |
 | K2a | IS2 ควรเปลี่ยน first stage เพื่อทดสอบว่าข้อจำกัดอยู่ที่การค้นคืนจริง | B53: เปลี่ยน **เฉพาะ** first stage โดยตรึง reranker (Qwen3-Reranker-0.6B, 4 instruction ตาม Table I + BGE plain), depth, TAC, label และ evaluator | B53 protocol + reranker ตรงกับ Paper 53 refs [19],[20] | DESIGNED → MEASURED | Ch.3–4 | protocol กำลังตรึง |
 | K2b | ผู้ตรวจสิทธิบัตรได้ประโยชน์อะไร | รายงาน proxy ที่วัดได้: zero-exposure rate (1−π), first-OUT-hit rank, review depth (K=100 เทียบ 200), cost per recovered citation พร้อม demo Solution Scout; ผลต่อผู้ใช้จริง = NOT_MEASURED + แผนสัมภาษณ์ | B53 metrics + product demo | HYPOTHESIS / NOT_USER_VALIDATED | Ch.5 | ออกแบบแล้ว |
@@ -35,4 +35,4 @@
 
 ## 4. สิ่งที่ต้องการจากเจ้าของ
 - DOI / IEEE Xplore record ของ Paper 53 (PDF มี ISBN proceedings 979-8-3195-1044-0/26 แต่ไม่มี DOI)
-- ยืนยัน Table I instruction bodies (O17) ว่าตรงกับที่จะตรึงใน B53 (ข้อความในตารางของ PDF จัดวางเลื่อนคอลัมน์ ต้องอ่านจาก source)
+- O17: bodies คัดจาก LaTeX source ของ Paper 53 (`IS_1/revision_05/source/main.tex` บรรทัด 102–105) ตรงตัวอักษร; นับ token ด้วย tokenizer ของ Qwen3-Reranker ได้ Generic 13 (ตรง), Patent-aware 28 (Table 29), Claim-focused 113 (Table 119), Scrambled 113 (ตรง) — caption ของ Table I ระบุว่าตัวเลขมาจาก submitted record และไม่ได้ tokenize ใหม่ จึงอาจมี whitespace/ขึ้นบรรทัดต่างกัน; ขอเจ้าของยืนยันว่าใช้ bodies ตาม source

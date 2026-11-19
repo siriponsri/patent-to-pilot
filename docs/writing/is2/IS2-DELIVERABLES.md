@@ -20,7 +20,7 @@ appendices and the deck, not into the 10 pages.
 |---|---|---|---|
 | D1 | Paper 53 recap + IS1 comments + limitations stated plainly | `COMMITTEE-RESPONSE-DRAFT.md` v2, Paper 53 PDF | draft |
 | D2 | Registered B53 protocol (first stage × pool depth; Stage 2: × instruction) | `plans/B53-PREDECLARATION.md` (Stage 1 frozen 274af5de) | Stage 1 frozen; Stage 2 after timing |
-| D3 | B53 results on DAPFAM: exposure, first-hit rank, conditional/full-cohort effects, CIs, limitations | dr-train `/data/ptp-paper2/b53`, aggregates → `docs/writing/is2/results/` | Stage 1 running |
+| D3 | B53 results on DAPFAM: exposure, first-hit rank, conditional/full-cohort effects, CIs, limitations | dr-train `/data/ptp-paper2/b53`, aggregates → `docs/writing/is2/results/` | Stage 1 MEASURED (3442447a); Stage 2 after timing |
 | D4 | Reproducibility pack: revisions, hashes, scripts, configs, tests, model-selection rationale, licence/BOM | `scripts/healthtech/b53_first_stage.py`, `tests/test_b53_first_stage.py`, `b53-readiness-20261119.json`, K1a v2 | partial |
 | D5 | Short Solution Scout demo + evidence-dossier walkthrough (labelled SYNTHETIC / PUBLIC SOURCE) | `frontend/healthtech-web` | storyboard pending |
 | D6 | Research outlook: BridgeRet / CEDS / EG-SHE with true status | `docs/writing/RESEARCH-ROADMAP.md` | done (v1) |
@@ -60,7 +60,7 @@ Not required for IS2: P1–P3 TEST results, SOTA wins, deployment, real users, b
 
 ## 4. Acceptance checklist (from the strategy §12; ticked only with evidence)
 - [x] K1a rationale with provenance, no invented history (K1a v2)
-- [ ] K1b BM25 and hybrid at K=100 measured (B53 Stage 1 running)
+- [x] K1b BM25 and hybrid at K=100 measured (B53 Stage 1, `results/B53-STAGE1-RESULTS.md`)
 - [x] K1c identity stated with conditions; no causal overclaim (COMMITTEE-RESPONSE v2)
 - [ ] K2a only the first stage changes in the main contrast, with reranker control (Stage 2)
 - [ ] K2b user journey + proxy metrics; real user benefit = NOT_MEASURED
