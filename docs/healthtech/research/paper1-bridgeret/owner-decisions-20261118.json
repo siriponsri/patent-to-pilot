@@ -1,69 +1,76 @@
 {
-  "recorded_at": "2026-11-18T18:45:17+07:00",
-  "source": "owner in chat 2026-11-18: 'อนุมัติทั้ง 3 ข้อครับ'",
-  "decisions": {
-    "continuity_download": "approved: download PatentsView continuity / related-document tables (grant and pre-grant) to dr-train /data/ptp-paper2/ for family grouping (D1); list exact file names and sizes first; counts inside the 60 GB R5 cap",
-    "challenge1m_isolation_R05": "approved: Challenge-1M is built by a restricted builder process that alone reads protected TEST positives and returns only the unlabelled corpus union (salted-hash order), counts and a digest of the positive set (canonical_split_manifest.sealed_corpus_union)",
-    "rename_18nov_O3_O4": "approved: the 18-Nov open items O3 (P2 action type) and O4 (P2 E0 encoder) are renamed P2-O3 and P2-O4; O1-O10 keep the 17-Nov meanings"
+ "recorded_at": "2026-11-18T18:45:17+07:00",
+ "source": "owner in chat 2026-11-18: 'อนุมัติทั้ง 3 ข้อครับ'",
+ "decisions": {
+  "continuity_download": "approved: download PatentsView continuity / related-document tables (grant and pre-grant) to dr-train /data/ptp-paper2/ for family grouping (D1); list exact file names and sizes first; counts inside the 60 GB R5 cap",
+  "challenge1m_isolation_R05": "approved: Challenge-1M is built by a restricted builder process that alone reads protected TEST positives and returns only the unlabelled corpus union (salted-hash order), counts and a digest of the positive set (canonical_split_manifest.sealed_corpus_union)",
+  "rename_18nov_O3_O4": "approved: the 18-Nov open items O3 (P2 action type) and O4 (P2 E0 encoder) are renamed P2-O3 and P2-O4; O1-O10 keep the 17-Nov meanings"
+ },
+ "later": [
+  {
+   "recorded_at": "2026-11-18T21:22:21+07:00",
+   "source": "owner AskUserQuestion 2026-11-18 evening (overnight long run until 06:00)",
+   "claims_download": "owner downloaded the 54-file R5 claims plan ('โหลดตามแผน')",
+   "approved": {
+    "hf_models": "download Snowflake/snowflake-arctic-embed-m-v2.0 @95c2741480856aa9666782eb4afe11959938017f and Qwen/Qwen3-Embedding-0.6B @97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3 to dr-train; trust_remote_code only at the pinned revision",
+    "v100": "dr-train V100: Arctic fp16/fp32 throughput+memory benchmark and zero-shot encoding on DEV/VAL only; no TEST",
+    "cpu": "dr-train CPU: query text tables, 512-token truncation analysis, BM25 on DEV, L-C/L-D audits on TRAIN/DEV",
+    "push": "push this session's commits to origin/main (no docs/owner, no raw data)",
+    "abstracts": "owner downloads g_patent_abstract + pre-grant abstract file from ODP tonight",
+    "challenge1m": "sealed builder run tonight under the R-05 design, agent-proposed composition recorded before the run"
+   },
+   "freeze_manifest_v2": "NOT approved; owner asked for a low-burden freeze plan proposal",
+   "unchanged": "no RunPod, no paid API, no TEST qrels/query text read outside the sealed builder; USD 0"
   },
-  "later": [
-    {
-      "recorded_at": "2026-11-18T21:22:21+07:00",
-      "source": "owner AskUserQuestion 2026-11-18 evening (overnight long run until 06:00)",
-      "claims_download": "owner downloaded the 54-file R5 claims plan ('โหลดตามแผน')",
-      "approved": {
-        "hf_models": "download Snowflake/snowflake-arctic-embed-m-v2.0 @95c2741480856aa9666782eb4afe11959938017f and Qwen/Qwen3-Embedding-0.6B @97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3 to dr-train; trust_remote_code only at the pinned revision",
-        "v100": "dr-train V100: Arctic fp16/fp32 throughput+memory benchmark and zero-shot encoding on DEV/VAL only; no TEST",
-        "cpu": "dr-train CPU: query text tables, 512-token truncation analysis, BM25 on DEV, L-C/L-D audits on TRAIN/DEV",
-        "push": "push this session's commits to origin/main (no docs/owner, no raw data)",
-        "abstracts": "owner downloads g_patent_abstract + pre-grant abstract file from ODP tonight",
-        "challenge1m": "sealed builder run tonight under the R-05 design, agent-proposed composition recorded before the run"
-      },
-      "freeze_manifest_v2": "NOT approved; owner asked for a low-burden freeze plan proposal",
-      "unchanged": "no RunPod, no paid API, no TEST qrels/query text read outside the sealed builder; USD 0"
-    },
-    {
-      "recorded_at": "2026-11-18T21:23:09+07:00",
-      "source": "owner chat 2026-11-18 evening: 'อนุญาต Runpod Test ได้เลยครับ' and 'อนุมัติ Freeze แผนได้ทันที ตอนเช้ารายงานผลให้ผมพอครับ'",
-      "runpod_pilot": "approved to run now: the existing RunPod pilot, hard cap USD 10 (unchanged), via RunPod MCP; only USPTO public text and model weights leave dr-train/this PC; no DAPFAM, no TEST labels/queries; pod deleted at the end; price stated in the receipt before creation",
-      "freeze": "approved immediately: freeze manifest-v2 (salts as proposed, VAL n=2000, imbalance tolerance 5%, family option A) and the P1-BridgeRet pre-declaration, before any DEV retrieval number; owner reviews in the morning report",
-      "freeze_manifest_v2_previous": "superseded by this approval"
-    },
-    {
-      "recorded_at": "2026-11-19T06:24:41+07:00",
-      "source": "owner AskUserQuestion 2026-11-19 morning",
-      "goals_stated": "build on Paper 53; beating the DAPFAM benchmark paper is a bonus; follow Paper A -> C to a real product",
-      "backbone": "Qwen3-Embedding-0.6B @97b0c614 replaces Arctic as the P1 backbone (O3 changed; Qwen3 was the recorded fallback)",
-      "amendment_A1": "approved: k=3 mined negatives; recipe grid on the 30k-task TRAIN subset; S* retrained once on full TRAIN",
-      "ft_envelope": "P1 fine-tuning up to USD 20 on RunPod (lane B: pods inside the envelope need no per-pod question)",
-      "C2": "C2 = S* - the strongest non-trained comparator on P1-DEV OUT R@200 among the pre-registered references (currently Z-Qwen3); C3 = S* - Z-PatEmbed-large kept",
-      "B53": "use all DAPFAM queries (724 OUT-positive; full 1,247 for the DAPFAM-paper protocol); re-download DAPFAM for an apples-to-apples comparison with the DAPFAM benchmark paper; this lifts the earlier rule 'never re-open the P1-DAPFAM test qrels' for B53 only (exploratory, evaluation-only, local)",
-      "B53_reranker": "Qwen3-Reranker-0.6B @e61197ed download - interpreted as included (the chosen option carried the reranker download)"
-    },
-    {
-      "recorded_at": "2026-11-19T15:40+07:00",
-      "source": "owner chat 19 Nov afternoon: 'Start the whole plan' + 'อนุมัติทั้งหมดครับ'",
-      "strategy": "owner-note-19112026/PTP_IS2_Paper53_Research_Program_University_Impact_2026-11-19.md adopted as latest strategic direction: IS2 core = B53; Papers 1-3 and Solution Scout in parallel lanes",
-      "plan_approved": "whole plan of 19 Nov (docs lane A, P1 RunPod FT within USD 20, B53 freeze + local run, P2/P3/product lanes)",
-      "b53_secondary_arms": "F6 PatEmbed-large and F7 Qwen3-Embedding-0.6B approved as declared secondary first stages (registered before any B53 number)",
-      "light_gates": "owner-facing gates reduced to 4: (1) any protected TEST opening, (2) spend beyond approved envelopes, (3) new data download / licence change, (4) external release of documents; everything else proceeds and is logged",
-      "paper53_status": "accepted; to be presented at the conference on 20 Nov 2026; DOI not yet assigned",
-      "is2_template": "faculty short-paper template 'Template-short-Paper-IS1-2 (AI4BA).docx' (Thai+English abstract, 2-column A4, <=10 pages, TH SarabunPSK)",
-      "journals": "use KMITL ICT journal list (owner audit CSV 19 Nov) for venue choice; owner still to pick final venues"
-    },
-    {
-      "recorded_at": "2026-11-19T16:40+07:00",
-      "source": "owner AskUserQuestion 19 Nov afternoon",
-      "p1_tonight": "3 grid configs (S2-t0.02, S1-t0.02, S3-t0.02-w1.5) then delete the pod before the owner's 04:00 shutdown",
-      "p1_23nov": "run the remaining 2 configs (S4rule-t0.02, S2-t0.05), then select S* by the frozen rule over all 5, then the full-TRAIN S* run (envelope USD 20 unchanged)",
-      "b53_stage2": "1,000-pair reranker timing first; if F0-F4 x 4 instructions needs more than about 1 week of shared V100, Stage 2 = F0/F1/F2 at K=100",
-      "journals": "prefer fully free (diamond) venues from the KMITL ICT list: P1 -> ECTI-CIT, P2/P3 -> TMLR, IS2 extension -> IT Journal KMUTNB (TCI group 1)"
-    },
-    {
-      "recorded_at": "2026-11-19T18:20+07:00",
-      "source": "owner AskUserQuestion 19 Nov evening",
-      "parallel_pods": "run the remaining 4 grid configs on 4 additional A40 pods in parallel, each encoding its own P1-DEV/VAL on the pod; the first pod stops after config 1",
-      "ft_envelope": "P1 fine-tuning envelope raised from USD 20 to USD 25 (total estimate ~USD 22 incl. the full-TRAIN S* run)"
-    }
-  ]
+  {
+   "recorded_at": "2026-11-18T21:23:09+07:00",
+   "source": "owner chat 2026-11-18 evening: 'อนุญาต Runpod Test ได้เลยครับ' and 'อนุมัติ Freeze แผนได้ทันที ตอนเช้ารายงานผลให้ผมพอครับ'",
+   "runpod_pilot": "approved to run now: the existing RunPod pilot, hard cap USD 10 (unchanged), via RunPod MCP; only USPTO public text and model weights leave dr-train/this PC; no DAPFAM, no TEST labels/queries; pod deleted at the end; price stated in the receipt before creation",
+   "freeze": "approved immediately: freeze manifest-v2 (salts as proposed, VAL n=2000, imbalance tolerance 5%, family option A) and the P1-BridgeRet pre-declaration, before any DEV retrieval number; owner reviews in the morning report",
+   "freeze_manifest_v2_previous": "superseded by this approval"
+  },
+  {
+   "recorded_at": "2026-11-19T06:24:41+07:00",
+   "source": "owner AskUserQuestion 2026-11-19 morning",
+   "goals_stated": "build on Paper 53; beating the DAPFAM benchmark paper is a bonus; follow Paper A -> C to a real product",
+   "backbone": "Qwen3-Embedding-0.6B @97b0c614 replaces Arctic as the P1 backbone (O3 changed; Qwen3 was the recorded fallback)",
+   "amendment_A1": "approved: k=3 mined negatives; recipe grid on the 30k-task TRAIN subset; S* retrained once on full TRAIN",
+   "ft_envelope": "P1 fine-tuning up to USD 20 on RunPod (lane B: pods inside the envelope need no per-pod question)",
+   "C2": "C2 = S* - the strongest non-trained comparator on P1-DEV OUT R@200 among the pre-registered references (currently Z-Qwen3); C3 = S* - Z-PatEmbed-large kept",
+   "B53": "use all DAPFAM queries (724 OUT-positive; full 1,247 for the DAPFAM-paper protocol); re-download DAPFAM for an apples-to-apples comparison with the DAPFAM benchmark paper; this lifts the earlier rule 'never re-open the P1-DAPFAM test qrels' for B53 only (exploratory, evaluation-only, local)",
+   "B53_reranker": "Qwen3-Reranker-0.6B @e61197ed download - interpreted as included (the chosen option carried the reranker download)"
+  },
+  {
+   "recorded_at": "2026-11-19T15:40+07:00",
+   "source": "owner chat 19 Nov afternoon: 'Start the whole plan' + 'อนุมัติทั้งหมดครับ'",
+   "strategy": "owner-note-19112026/PTP_IS2_Paper53_Research_Program_University_Impact_2026-11-19.md adopted as latest strategic direction: IS2 core = B53; Papers 1-3 and Solution Scout in parallel lanes",
+   "plan_approved": "whole plan of 19 Nov (docs lane A, P1 RunPod FT within USD 20, B53 freeze + local run, P2/P3/product lanes)",
+   "b53_secondary_arms": "F6 PatEmbed-large and F7 Qwen3-Embedding-0.6B approved as declared secondary first stages (registered before any B53 number)",
+   "light_gates": "owner-facing gates reduced to 4: (1) any protected TEST opening, (2) spend beyond approved envelopes, (3) new data download / licence change, (4) external release of documents; everything else proceeds and is logged",
+   "paper53_status": "accepted; to be presented at the conference on 20 Nov 2026; DOI not yet assigned",
+   "is2_template": "faculty short-paper template 'Template-short-Paper-IS1-2 (AI4BA).docx' (Thai+English abstract, 2-column A4, <=10 pages, TH SarabunPSK)",
+   "journals": "use KMITL ICT journal list (owner audit CSV 19 Nov) for venue choice; owner still to pick final venues"
+  },
+  {
+   "recorded_at": "2026-11-19T16:40+07:00",
+   "source": "owner AskUserQuestion 19 Nov afternoon",
+   "p1_tonight": "3 grid configs (S2-t0.02, S1-t0.02, S3-t0.02-w1.5) then delete the pod before the owner's 04:00 shutdown",
+   "p1_23nov": "run the remaining 2 configs (S4rule-t0.02, S2-t0.05), then select S* by the frozen rule over all 5, then the full-TRAIN S* run (envelope USD 20 unchanged)",
+   "b53_stage2": "1,000-pair reranker timing first; if F0-F4 x 4 instructions needs more than about 1 week of shared V100, Stage 2 = F0/F1/F2 at K=100",
+   "journals": "prefer fully free (diamond) venues from the KMITL ICT list: P1 -> ECTI-CIT, P2/P3 -> TMLR, IS2 extension -> IT Journal KMUTNB (TCI group 1)"
+  },
+  {
+   "recorded_at": "2026-11-19T18:20+07:00",
+   "source": "owner AskUserQuestion 19 Nov evening",
+   "parallel_pods": "run the remaining 4 grid configs on 4 additional A40 pods in parallel, each encoding its own P1-DEV/VAL on the pod; the first pod stops after config 1",
+   "ft_envelope": "P1 fine-tuning envelope raised from USD 20 to USD 25 (total estimate ~USD 22 incl. the full-TRAIN S* run)"
+  },
+  {
+   "recorded_at": "2026-11-19T21:35+07:00",
+   "source": "owner AskUserQuestion 19 Nov night",
+   "sstar_full_train_encode": "encode the full-TRAIN S* checkpoint (1M passages + P1-DEV/VAL queries) on the RunPod pod, not the V100, so B53 Stage 2 is not paused",
+   "ft_envelope": "P1 fine-tuning envelope raised from USD 25 to USD 30 (tonight projected ~USD 16.4; full-TRAIN S* train ~11.2 h + pod encode ~2-3 h ~= USD 8)",
+   "p1_manuscript": "do not start the Paper 1 draft tonight; wait for S* and the DEV results"
+  }
+ ]
 }
