@@ -79,6 +79,9 @@ def cmd_build(beir_dir, out_dir):
 def cmd_run(mdir, data_dir, out_json, frac):
     import fcntl, time, torch, torch.nn.functional as F
     from transformers import AutoModel, AutoTokenizer
+    # Only the approved V100 may be used (19 Nov incident: an unpinned run landed on the RTX 2080 Ti and OOM'd).
+    if torch.cuda.device_count() != 1 or 'V100' not in torch.cuda.get_device_name(0):
+        raise SystemExit('refusing: set CUDA_VISIBLE_DEVICES to the approved V100 only')
     lockf = open(LOCK, 'a'); fcntl.flock(lockf, fcntl.LOCK_EX)
     try:
         torch.cuda.set_per_process_memory_fraction(float(frac), 0)
