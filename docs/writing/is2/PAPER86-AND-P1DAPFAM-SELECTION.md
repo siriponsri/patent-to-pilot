@@ -45,7 +45,7 @@ only for its own exploratory, evaluation-only analysis (owner decision 19 Nov).
 
 ## Resulting IS2 storyline
 1. Paper 53 and the committee's comments.
-2. Why patembed-base (K1a): external benchmark + PatenTEB/model card + S2.
+2. Why patembed-base (K1a): Paper 53's own record + PatenTEB/model card; S2 as labelled retrospective context (the external 22-model preprint arXiv:2605.24297 was withdrawn 5 Nov 2026 and is not used).
 3. The exposure bottleneck (K1b): Paper 53 at 37.1% plus Paper 86 S1; P1-DAPFAM in one paragraph.
 4. B53, where only the first stage changes (K2a), plus B53.0 against the DAPFAM benchmark paper.
 5. Examiner value (K2b): proxy measures only.
