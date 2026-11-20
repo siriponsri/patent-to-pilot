@@ -55,7 +55,7 @@ Full list with sizes and reasons: [deletion-manifest.tsv](deletion-manifest.tsv)
 
 ## Waiting for the owner
 
-1. Large derived files that could be deleted to free more space. They were not deleted because they were not copied locally:
+1. Large derived files that could be deleted to free more space. They were not deleted because they were not copied locally. **Owner decision, 21 Nov 2026: keep them for now.** Revisit only when dr-train space is needed:
 
    | Files | Size | Note |
    |---|---|---|
