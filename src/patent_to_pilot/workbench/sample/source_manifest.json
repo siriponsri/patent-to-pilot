@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "program_id": "PTP-2026-11-21",
+  "goal_id": "G01",
+  "scenario_id": "THERMAL-MODULE-DEMO-01",
+  "data_origin": "synthetic_fixture",
+  "initial_sources": [
+    {
+      "source_id": "DEMO-S1",
+      "version_id": "v1",
+      "candidate_id": "CONCEPT-A",
+      "path": "sources/DEMO-S1-v1.md",
+      "sha256": "067cff896367725a24e4e08f474badcb03e3f7e8337b7c3a03a7537984ae6942",
+      "source_kind": "authored_technical_note",
+      "license": "CC0-1.0",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "source_id": "DEMO-S2",
+      "version_id": "v1",
+      "candidate_id": "CONCEPT-A",
+      "path": "sources/DEMO-S2-v1.md",
+      "sha256": "7e4f137afd311283b580e9abc1a0af1677bbeda8a1b94262ed6a65d284736617",
+      "source_kind": "authored_technical_note",
+      "license": "CC0-1.0",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "source_id": "DEMO-S3",
+      "version_id": "v1",
+      "candidate_id": "CONCEPT-A",
+      "path": "sources/DEMO-S3-v1.md",
+      "sha256": "90fb746a411662ae6907544a939db67d8ca18873888499b4aad0848269805ce8",
+      "source_kind": "authored_technical_note",
+      "license": "CC0-1.0",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "source_id": "DEMO-S4",
+      "version_id": "v1",
+      "candidate_id": "CONCEPT-B",
+      "path": "sources/DEMO-S4-v1.md",
+      "sha256": "f26342aa135b55449b155bd7f434fbacee22fcbec3f3eb50aafa65adebb59c18",
+      "source_kind": "authored_technical_note",
+      "license": "CC0-1.0",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "incoming_changes": [
+    {
+      "event_id": "CHANGE-S2-V2",
+      "event_type": "source_revision",
+      "source_id": "DEMO-S2",
+      "version_id": "v2",
+      "supersedes_version_id": "v1",
+      "candidate_id": "CONCEPT-A",
+      "path": "incoming/DEMO-S2-v2.md",
+      "sha256": "e21bd232ccb3c927d6bc42f6490af0ff3620fb6117d7cb44db53f24b60fa4fce",
+      "source_kind": "authored_technical_note",
+      "license": "CC0-1.0",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "runtime_exclusions": [
+    "test_only/**",
+    "README.md",
+    "LICENSE.md",
+    "requirements.json",
+    "source_manifest.json"
+  ],
+  "bootstrap_rule": "Import only initial_sources. Import incoming_changes only upon the corresponding change command."
+}

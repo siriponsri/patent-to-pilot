@@ -1,0 +1,122 @@
+{
+ "program_id": "PTP-2026-11-21",
+ "goal_id": "G01",
+ "status": "COMPLETE_WITH_OWNER_OBSERVATION_PENDING",
+ "repository": {
+  "path": "C:\\Users\\User\\Desktop\\myProject\\patent-to-pilot",
+  "branch": "main",
+  "base_commit": "99a5be1a",
+  "dirty_state_before": "untracked owner-local .claude/, docs/owner/, uv.lock, one 2026-11-09 handoff doc (preserved)"
+ },
+ "environment": {
+  "os": "Windows 11 10.0.26200",
+  "runtime_python": ".venv\\Scripts\\python.exe 3.12.14",
+  "sqlite": "3.53.1 (FTS5)",
+  "test_python": "system python 3.12.10 + pytest",
+  "browser": "Claude in-app browser pane (Chromium) against the real server"
+ },
+ "entry_points": {
+  "launcher": "Start-PTP.cmd",
+  "serve": ".venv\\Scripts\\python.exe scripts\\ptp_run.py [--port 8765] [--open]",
+  "doctor": "scripts\\ptp_run.py --doctor",
+  "smoke": "scripts\\ptp_run.py --smoke",
+  "cli_run": "scripts\\ptp_run.py --run",
+  "cli_change": "scripts\\ptp_run.py --apply-change CHANGE-S2-V2",
+  "backup": "scripts\\ptp_run.py --backup PATH"
+ },
+ "url": "http://127.0.0.1:8765/ (next free port up to 8784 if busy; printed by the launcher)",
+ "routes": [
+  "GET /api/health",
+  "GET /api/capabilities",
+  "GET /api/projects",
+  "POST /api/demo/bootstrap",
+  "GET /api/projects/{id}",
+  "GET /api/projects/{id}/comparison",
+  "GET /api/projects/{id}/history",
+  "POST /api/projects/{id}/runs",
+  "GET /api/projects/{id}/runs",
+  "GET /api/runs/{id}",
+  "GET /api/projects/{id}/changes",
+  "POST /api/projects/{id}/changes",
+  "GET /api/projects/{id}/sources/{sid}/versions/{vid}",
+  "GET /api/projects/{id}/sources/{sid}/versions/{vid}/passages/{pid}"
+ ],
+ "data_dir": "%LOCALAPPDATA%\\PatentToPilot\\workbench (override --data-dir / PTP_DATA_DIR)",
+ "core_identity": "patent_to_pilot.workbench.core.EvidenceCore/v1",
+ "core_code_sha256": "c41e4bdaec6cb78f3d32c428999259e923c8cde45fedbacea981d73da21f7cba",
+ "lexical": "sqlite_fts5_unicode61 (no fallback needed)",
+ "execution_mode": "live_local",
+ "data_origin": "synthetic_fixture",
+ "external_spend_usd": 0,
+ "remote_calls": 0,
+ "model_downloads": 0,
+ "tests": {
+  "g01_pytest": "16 passed",
+  "smoke": "15/15 PASS",
+  "doctor": "OK",
+  "full_suite": "only the 8 known pre-existing SACR r2/r3 supervisor failures"
+ },
+ "browser_verification": {
+  "status": "RUN",
+  "viewports": [
+   "1280x860",
+   "360x780"
+  ],
+  "steps": [
+   "open sample",
+   "run comparison",
+   "open Thai citation",
+   "close drawer (focus returned)",
+   "apply revision",
+   "change diff",
+   "historical v1 citation",
+   "run trace",
+   "providers",
+   "server restart -> recorded run"
+  ],
+  "console_errors": 0,
+  "screenshots": [
+   "screenshots/01-matrix-and-thai-citation-1280.jpg",
+   "screenshots/02-change-diff-1280.jpg",
+   "screenshots/03-matrix-360px.jpg",
+   "screenshots/04-recorded-run-after-restart-360px.jpg"
+  ]
+ },
+ "windows_verification": {
+  "cmd_launcher": "RUN via cmd.exe from another working dir with 8765 busy -> chose 8766, health OK, HTTP run completed",
+  "explorer_double_click": "NOT_RUN",
+  "default_browser_auto_open": "NOT_RUN (suppressed with PTP_NO_BROWSER in QA)"
+ },
+ "bug_found_and_fixed": "Python HTTPServer SO_REUSEADDR let a second Windows process bind an occupied port; the server now binds exclusively (regression test test_busy_port_is_never_shared)",
+ "limitations": [
+  "Bounded fixture grammar only (3 fields); not general entailment",
+  "Single sample scenario and one supported event type (source_revision)",
+  "New-document/withdrawal/effective-date events are planned, not implemented",
+  "Runs execute synchronously per request (fast for the fixture); no streaming progress",
+  "Explorer double-click and default-browser auto-open not observed by the agent"
+ ],
+ "files": {
+  "src/patent_to_pilot/workbench/__init__.py": "13313c662193def6d2cfc2666b73bbb5149a1fa862175b66fcb49aadfb871c75",
+  "src/patent_to_pilot/workbench/core.py": "4736d31bcb3fe078ade79d3f624246d067e306ff4d08b718a32c0bff611f4e07",
+  "src/patent_to_pilot/workbench/guard.py": "4efa498283e902184101ec4a2cf0ef1b3774ace7e0bce09a4b1741b0d3d07667",
+  "src/patent_to_pilot/workbench/parser.py": "5659d3b000bd2d6c6021f1725828cd022dda01ef0849702bf1a2599db25d221b",
+  "src/patent_to_pilot/workbench/sample/LICENSE.md": "dbb6a5a45c001f874a8ad5f143e25f8cb1cebc1374dadde9d42642bad49dfc51",
+  "src/patent_to_pilot/workbench/sample/incoming/DEMO-S2-v2.md": "e21bd232ccb3c927d6bc42f6490af0ff3620fb6117d7cb44db53f24b60fa4fce",
+  "src/patent_to_pilot/workbench/sample/requirements.json": "8c71860ebcb3c5222757fdb0f06b6224a669ab56f7f0359ac2622050bab2b578",
+  "src/patent_to_pilot/workbench/sample/source_manifest.json": "bf50552df9636ba32e45a5f7990d23e80d475ec3d80e8ea0817abcb557375170",
+  "src/patent_to_pilot/workbench/sample/sources/DEMO-S1-v1.md": "067cff896367725a24e4e08f474badcb03e3f7e8337b7c3a03a7537984ae6942",
+  "src/patent_to_pilot/workbench/sample/sources/DEMO-S2-v1.md": "7e4f137afd311283b580e9abc1a0af1677bbeda8a1b94262ed6a65d284736617",
+  "src/patent_to_pilot/workbench/sample/sources/DEMO-S3-v1.md": "90fb746a411662ae6907544a939db67d8ca18873888499b4aad0848269805ce8",
+  "src/patent_to_pilot/workbench/sample/sources/DEMO-S4-v1.md": "f26342aa135b55449b155bd7f434fbacee22fcbec3f3eb50aafa65adebb59c18",
+  "src/patent_to_pilot/workbench/server.py": "750d0adef48e4d8acec31b16da47887847c39144c35dcb10bfc788c9a3b61ed3",
+  "src/patent_to_pilot/workbench/static/app.css": "90555b35b4ca99e43f8c539784a0fb6bfb8a095d6c04e53120a313e63c8e3502",
+  "src/patent_to_pilot/workbench/static/app.js": "18965be461b709023b8863e56cb49a901245e839c17c284373d92355df7b54f6",
+  "src/patent_to_pilot/workbench/static/index.html": "e21def369b1ea9b6290017cad7cfb8d014c072f30caf70c47c405a0c16bff506",
+  "src/patent_to_pilot/workbench/store.py": "98a07cb8305ef391f4b136e6352a665d43affe2e71a2f5472237799e730ccdd5",
+  "scripts/ptp_run.py": "1f379871d9809a1fcc11ccb2ffb9fa920e0b635a9319b05178d4cfbcfc2e9915",
+  "Start-PTP.cmd": "37f320eeeceb97e69cdc95339ccf7a095cab66fa6a6947b1e16bdae46f241369",
+  "tests/test_ptp_g01_workbench.py": "4c37f082181eeebff69aa829ea7a707d63ff1bbcfb7e45b19d5bb1ff8bbd0f6c",
+  "tests/fixtures/ptp_g01/expected_assertions.json": "3c8870db45e8de1b781026517d1bc730e9fb4c38a6def0f328bf313f41989d6f",
+  ".gitattributes": "b9d79c4eeed50a09b0c9e4ad10771d06ca71b7b12dd72935f2094d9840acb0c7"
+ }
+}

@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0",
+  "role": "TEST_ORACLE_ONLY_DO_NOT_LOAD_AT_RUNTIME",
+  "program_id": "PTP-2026-11-21",
+  "goal_id": "G01",
+  "scenario_id": "THERMAL-MODULE-DEMO-01",
+  "interpretation": "criterion_outcome is a normalized UI/test view of this bounded fixture predicate; map it to existing repository enums explicitly. It is not scientific truth or general entailment.",
+  "initial": {
+    "current_versions": {
+      "DEMO-S1": "v1",
+      "DEMO-S2": "v1",
+      "DEMO-S3": "v1",
+      "DEMO-S4": "v1"
+    },
+    "absent_versions": [
+      "DEMO-S2@v2"
+    ],
+    "assessments": [
+      {
+        "candidate_id": "CONCEPT-A",
+        "requirement_id": "R1",
+        "criterion_outcome": "meets",
+        "citation": {
+          "source_id": "DEMO-S1",
+          "version_id": "v1",
+          "passage_id": "S1-P1"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-A",
+        "requirement_id": "R2",
+        "criterion_outcome": "meets",
+        "citation": {
+          "source_id": "DEMO-S2",
+          "version_id": "v1",
+          "passage_id": "S2-P1"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-A",
+        "requirement_id": "R3",
+        "criterion_outcome": "meets",
+        "citation": {
+          "source_id": "DEMO-S3",
+          "version_id": "v1",
+          "passage_id": "S3-P1"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-B",
+        "requirement_id": "R1",
+        "criterion_outcome": "does_not_meet",
+        "citation": {
+          "source_id": "DEMO-S4",
+          "version_id": "v1",
+          "passage_id": "S4-P1"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-B",
+        "requirement_id": "R2",
+        "criterion_outcome": "does_not_meet",
+        "citation": {
+          "source_id": "DEMO-S4",
+          "version_id": "v1",
+          "passage_id": "S4-P2"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-B",
+        "requirement_id": "R3",
+        "criterion_outcome": "unknown"
+      }
+    ]
+  },
+  "after_CHANGE_S2_V2": {
+    "current_versions": {
+      "DEMO-S1": "v1",
+      "DEMO-S2": "v2",
+      "DEMO-S3": "v1",
+      "DEMO-S4": "v1"
+    },
+    "preserved_historical_versions": [
+      "DEMO-S2@v1"
+    ],
+    "affected_requirement_keys": [
+      "CONCEPT-A/R2"
+    ],
+    "unchanged_requirement_keys": [
+      "CONCEPT-A/R1",
+      "CONCEPT-A/R3",
+      "CONCEPT-B/R1",
+      "CONCEPT-B/R2",
+      "CONCEPT-B/R3"
+    ],
+    "assessments": [
+      {
+        "candidate_id": "CONCEPT-A",
+        "requirement_id": "R1",
+        "criterion_outcome": "meets",
+        "citation": {
+          "source_id": "DEMO-S1",
+          "version_id": "v1",
+          "passage_id": "S1-P1"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-A",
+        "requirement_id": "R2",
+        "criterion_outcome": "does_not_meet",
+        "citation": {
+          "source_id": "DEMO-S2",
+          "version_id": "v2",
+          "passage_id": "S2-P1"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-A",
+        "requirement_id": "R3",
+        "criterion_outcome": "meets",
+        "citation": {
+          "source_id": "DEMO-S3",
+          "version_id": "v1",
+          "passage_id": "S3-P1"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-B",
+        "requirement_id": "R1",
+        "criterion_outcome": "does_not_meet",
+        "citation": {
+          "source_id": "DEMO-S4",
+          "version_id": "v1",
+          "passage_id": "S4-P1"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-B",
+        "requirement_id": "R2",
+        "criterion_outcome": "does_not_meet",
+        "citation": {
+          "source_id": "DEMO-S4",
+          "version_id": "v1",
+          "passage_id": "S4-P2"
+        }
+      },
+      {
+        "candidate_id": "CONCEPT-B",
+        "requirement_id": "R3",
+        "criterion_outcome": "unknown"
+      }
+    ],
+    "required_transition": "CONCEPT-A/R2 must visibly or durably pass through needs_review before the new assessment commits; a fast execution may expose this in run history rather than a long-lived screen."
+  },
+  "exact_passages": [
+    {
+      "source_id": "DEMO-S1",
+      "version_id": "v1",
+      "passage_id": "S1-P1",
+      "start_char": 235,
+      "end_char": 303,
+      "offset_unit": "unicode_code_points",
+      "quote": "Powered circulation: no.\nOperating principle: passive heat transfer.",
+      "sha256": "067cff896367725a24e4e08f474badcb03e3f7e8337b7c3a03a7537984ae6942"
+    },
+    {
+      "source_id": "DEMO-S2",
+      "version_id": "v1",
+      "passage_id": "S2-P1",
+      "start_char": 257,
+      "end_char": 339,
+      "offset_unit": "unicode_code_points",
+      "quote": "Supported temperature range: 40 to 70 °C.\nRange scope: this authored fixture only.",
+      "sha256": "7e4f137afd311283b580e9abc1a0af1677bbeda8a1b94262ed6a65d284736617"
+    },
+    {
+      "source_id": "DEMO-S3",
+      "version_id": "v1",
+      "passage_id": "S3-P1",
+      "start_char": 228,
+      "end_char": 305,
+      "offset_unit": "unicode_code_points",
+      "quote": "Independent module replacement: yes.\nชื่อโมดูลตัวอย่าง: แคปซูลกักเก็บความร้อน",
+      "sha256": "90fb746a411662ae6907544a939db67d8ca18873888499b4aad0848269805ce8"
+    },
+    {
+      "source_id": "DEMO-S4",
+      "version_id": "v1",
+      "passage_id": "S4-P1",
+      "start_char": 246,
+      "end_char": 337,
+      "offset_unit": "unicode_code_points",
+      "quote": "Powered circulation: yes.\nOperating principle: a powered pump circulates the working fluid.",
+      "sha256": "f26342aa135b55449b155bd7f434fbacee22fcbec3f3eb50aafa65adebb59c18"
+    },
+    {
+      "source_id": "DEMO-S4",
+      "version_id": "v1",
+      "passage_id": "S4-P2",
+      "start_char": 348,
+      "end_char": 430,
+      "offset_unit": "unicode_code_points",
+      "quote": "Supported temperature range: 45 to 65 °C.\nRange scope: this authored fixture only.",
+      "sha256": "f26342aa135b55449b155bd7f434fbacee22fcbec3f3eb50aafa65adebb59c18"
+    },
+    {
+      "source_id": "DEMO-S4",
+      "version_id": "v1",
+      "passage_id": "S4-P3",
+      "start_char": 441,
+      "end_char": 513,
+      "offset_unit": "unicode_code_points",
+      "quote": "The service arrangement has not been specified in this fictional source.",
+      "sha256": "f26342aa135b55449b155bd7f434fbacee22fcbec3f3eb50aafa65adebb59c18"
+    },
+    {
+      "source_id": "DEMO-S2",
+      "version_id": "v2",
+      "passage_id": "S2-P1",
+      "start_char": 289,
+      "end_char": 371,
+      "offset_unit": "unicode_code_points",
+      "quote": "Supported temperature range: 40 to 60 °C.\nRange scope: this authored fixture only.",
+      "sha256": "e21bd232ccb3c927d6bc42f6490af0ff3620fb6117d7cb44db53f24b60fa4fce"
+    },
+    {
+      "source_id": "DEMO-S2",
+      "version_id": "v2",
+      "passage_id": "S2-P2",
+      "start_char": 382,
+      "end_char": 458,
+      "offset_unit": "unicode_code_points",
+      "quote": "Revision note: the upper bound replaces the earlier authored value of 70 °C.",
+      "sha256": "e21bd232ccb3c927d6bc42f6490af0ff3620fb6117d7cb44db53f24b60fa4fce"
+    }
+  ],
+  "unicode_exact": "ชื่อโมดูลตัวอย่าง: แคปซูลกักเก็บความร้อน",
+  "invariants": [
+    "Every committed positive or negative fixture outcome carries a resolvable source-version-passage citation.",
+    "Unknown is not a negative claim and must not invent a citation.",
+    "No current search result for DEMO-S2 resolves to v1 after v2 commits.",
+    "The historical v1 citation still resolves to its original exact text after v2 commits.",
+    "Restart preserves project, runs, actions, current source pointers, historical versions, citations, and change history.",
+    "Reapplying CHANGE-S2-V2 creates no duplicate source version or inconsistent current pointer.",
+    "No runtime read of this oracle and no static serving of its directory.",
+    "No remote model request or model download."
+  ],
+  "metamorphic_numeric_cases": [
+    {
+      "lower": 40,
+      "upper": 69,
+      "unit": "degC",
+      "criterion_outcome": "does_not_meet"
+    },
+    {
+      "lower": 40,
+      "upper": 70,
+      "unit": "degC",
+      "criterion_outcome": "meets"
+    },
+    {
+      "lower": 40,
+      "upper": 71,
+      "unit": "degC",
+      "criterion_outcome": "meets"
+    },
+    {
+      "lower": 70,
+      "upper": 40,
+      "unit": "degC",
+      "criterion_outcome": "validation_error"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patent-to-Pilot Workbench</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header class="shell">
+  <div class="brand">
+    <strong>Patent-to-Pilot Workbench</strong>
+    <span id="project-title" class="muted"></span>
+  </div>
+  <div class="labels" id="labels" aria-label="Data and execution labels"></div>
+  <nav aria-label="Main">
+    <button class="tab" data-view="workbench" aria-current="page">Workbench</button>
+    <button class="tab" data-view="evidence">Evidence</button>
+    <button class="tab" data-view="runs">Runs</button>
+    <button class="tab" data-view="changes">Changes</button>
+    <button class="tab" data-view="providers">Providers</button>
+  </nav>
+</header>
+
+<div id="status" class="status" role="status" aria-live="polite"></div>
+
+<main>
+  <section id="welcome" class="view" hidden>
+    <h1>Welcome</h1>
+    <p>This sample compares two fictional concepts against three explicit requirements. The documents are invented and are processed by this local application; no account, key or model is needed.</p>
+    <button id="open-sample" class="primary">Open sample project</button>
+  </section>
+
+  <section id="view-workbench" class="view" hidden>
+    <div class="summary">
+      <div><span class="k">Project</span><span id="sum-project"></span></div>
+      <div><span class="k">Sources</span><span id="sum-sources"></span></div>
+      <div><span class="k">Last run</span><span id="sum-run"></span></div>
+    </div>
+    <h2>Mission</h2>
+    <p id="mission"></p>
+    <ol id="requirements" class="reqs"></ol>
+    <div class="actions">
+      <button id="run" class="primary">Run comparison</button>
+      <button id="apply-change">Apply sample source revision</button>
+      <a href="#" id="trace-link" hidden>Open run trace</a>
+    </div>
+    <div id="matrix-wrap"><p class="muted" id="matrix-empty">No result yet. Select <b>Run comparison</b> to run the local engine.</p></div>
+  </section>
+
+  <section id="view-evidence" class="view" hidden>
+    <h2>Sources</h2>
+    <p class="muted">Current versions are searched. Historical versions stay readable for old citations. The incoming revision is not imported until you apply it.</p>
+    <div id="sources"></div>
+  </section>
+
+  <section id="view-runs" class="view" hidden>
+    <h2>Runs</h2>
+    <div id="runs"></div>
+    <div id="run-detail"></div>
+  </section>
+
+  <section id="view-changes" class="view" hidden>
+    <h2>Changes</h2>
+    <div id="changes"></div>
+  </section>
+
+  <section id="view-providers" class="view" hidden>
+    <h2>Providers</h2>
+    <div id="providers"></div>
+  </section>
+</main>
+
+<aside id="drawer" class="drawer" role="dialog" aria-modal="false" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-head">
+    <h2 id="drawer-title">Evidence</h2>
+    <button id="drawer-close" aria-label="Close evidence">Close</button>
+  </div>
+  <div id="drawer-body"></div>
+</aside>
+<script src="/app.js"></script>
+</body>
+</html>

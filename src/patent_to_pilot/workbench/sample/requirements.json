@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "program_id": "PTP-2026-11-21",
+  "goal_id": "G01",
+  "scenario_id": "THERMAL-MODULE-DEMO-01",
+  "data_origin": "synthetic_fixture",
+  "mission": "Compare fictional concepts for a passive, independently replaceable thermal module covering 40 through 70 degrees Celsius.",
+  "candidates": [
+    {
+      "candidate_id": "CONCEPT-A",
+      "label": "Concept A"
+    },
+    {
+      "candidate_id": "CONCEPT-B",
+      "label": "Concept B"
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "R1",
+      "label": "No powered circulation",
+      "query": "Powered circulation",
+      "field": "powered_circulation",
+      "predicate": {
+        "operator": "equals",
+        "value": false
+      }
+    },
+    {
+      "requirement_id": "R2",
+      "label": "Covers 40–70 °C",
+      "query": "Supported temperature range",
+      "field": "supported_temperature_range",
+      "predicate": {
+        "operator": "contains_interval",
+        "minimum": 40,
+        "maximum": 70,
+        "unit": "degC",
+        "inclusive": true
+      }
+    },
+    {
+      "requirement_id": "R3",
+      "label": "Independently replaceable module",
+      "query": "Independent module replacement",
+      "field": "independent_module_replacement",
+      "predicate": {
+        "operator": "equals",
+        "value": true
+      }
+    }
+  ],
+  "parser_profile": "authored_fixture_fields_v1",
+  "limits": {
+    "max_acquisition_actions": 12,
+    "max_source_reads": 24,
+    "max_wall_seconds": 30
+  },
+  "provider_profile": "lexical_only",
+  "allow_remote_models": false,
+  "allow_model_downloads": false
+}

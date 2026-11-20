@@ -1,0 +1,5 @@
+
+# PTP-2026-11-21/G01 fixtures: keep exact LF bytes (manifest SHA-256 pins them)
+src/patent_to_pilot/workbench/sample/** -text
+tests/fixtures/ptp_g01/** -text
+*.cmd text eol=crlf
