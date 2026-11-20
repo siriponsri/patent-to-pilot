@@ -179,3 +179,32 @@ def test_stage2a_end_to_end_synthetic(tmp_path, monkeypatch):
         vals.append(sum(t in top for t in q['pos']['OUT']) / len(q['pos']['OUT']))
     assert dev['E1']['U0']['OUT_R@200'][0] == pytest.approx(round(float(np.mean(vals)), 5), abs=1e-5)
     assert set(res['power']) == {'D1', 'D2', 'C4'}
+
+
+def test_sensitivity_synthetic_reordered_backbone(tmp_path, monkeypatch):
+    import json, pickle
+    import am7_stage2a as S2
+    import am7_sensitivity as SE
+    prep, qd, P, pub, Q = _synthetic(tmp_path)
+    out = tmp_path / 'out'
+    monkeypatch.setattr(sys, 'argv', ['x', str(prep), str(tmp_path / 'P.f16.npy'), str(qd), str(out), '--batch', '16'])
+    S2.main()
+    units = pickle.load(open(prep / 'meta.pkl', 'rb'))['units']
+    ser = tmp_path / 'ser'; ser.mkdir()
+    order = list(range(len(units)))[::-1]                      # a different corpus row order
+    with open(ser / 'passages.jsonl', 'w') as f:
+        for i in order:
+            f.write(json.dumps({'unit': units[i], 'text': 'x'}) + '\n')
+    np.save(tmp_path / 'Pq.f16.npy', P[order].astype(np.float16))
+    bm = tmp_path / 'bm'; bm.mkdir()
+    for b, qs in Q.items():
+        with open(bm / f'run-{b}.tsv', 'w') as f:
+            f.write('app_id\trank\tunit\tscore\n')
+            for q in qs:
+                for r, i in enumerate(range(0, 300, 3)):
+                    f.write(f"{q['app']}\t{r + 1}\t{units[i]}\t{1.0 / (r + 1)}\n")
+    res = tmp_path / 'sens.json'
+    SE.main([str(prep), str(out / 'stage2a-results.json'), str(tmp_path / 'Pq.f16.npy'), str(ser), str(qd), str(bm), str(res)])
+    r = json.load(open(res))
+    main_u0 = json.load(open(out / 'stage2a-results.json'))['blocks']['P1-DEV']['E2']['U0']['MR@200'][0]
+    assert r['blocks']['P1-DEV']['U0_qwen3_MR@200'][0] == pytest.approx(main_u0, abs=1e-6)   # same vectors, reordered
