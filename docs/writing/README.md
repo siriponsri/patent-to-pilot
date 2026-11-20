@@ -1,5 +1,7 @@
 # Writing tracks (separated 19 Nov 2026, owner instruction)
 
+> **Update 21 Nov 2026 (program PTP-2026-11-21):** the journal track is consolidated into **one paper with three contributions** (goal G07). Write that manuscript under `docs/writing/journal/` so the Paper 86 guard in `tests/test_org_adaptive_terminology.py` covers it. The Paper 1-3 plan below is kept as decision history. The IS2 track is unchanged.
+
 Two tracks with different readers, rules and evidence. Never mix text, numbers or claims between them without an explicit
 note of where the text came from.
 
@@ -16,5 +18,5 @@ note of where the text came from.
 Shared rules: no number without a receipt or a citation; no TEST data used for selection; owner documents in `docs/owner/`
 stay owner-local and are referenced, not copied.
 
-Program map and gates: `RESEARCH-ROADMAP.md`. Experiment plans and receipts stay where they are (`docs/healthtech/research/plans/`, `paper1-bridgeret/`, audits); these
+Program map and gates: program PTP-2026-11-21 (see `INDEX-PLAN.md` at the repo root). Experiment plans and receipts stay where they are (`docs/healthtech/research/plans/`, `paper1-bridgeret/`, audits); these
 folders hold the text that will be submitted.

@@ -23,7 +23,7 @@ appendices and the deck, not into the 10 pages.
 | D3 | B53 results on DAPFAM: exposure, first-hit rank, conditional/full-cohort effects, CIs, limitations | dr-train `/data/ptp-paper2/b53`, aggregates → `docs/writing/is2/results/` | Stage 1 MEASURED (3442447a); Stage 2 after timing |
 | D4 | Reproducibility pack: revisions, hashes, scripts, configs, tests, model-selection rationale, licence/BOM | `scripts/healthtech/b53_first_stage.py`, `tests/test_b53_first_stage.py`, `b53-readiness-20261119.json`, K1a v2 | partial |
 | D5 | Short Solution Scout demo + evidence-dossier walkthrough (labelled SYNTHETIC / PUBLIC SOURCE) | `frontend/healthtech-web` | storyboard pending |
-| D6 | Research outlook: BridgeRet / CEDS / EG-SHE with true status | `docs/writing/RESEARCH-ROADMAP.md` | done (v1) |
+| D6 | Research outlook: BridgeRet / CEDS / EG-SHE with true status | `docs/writing/RESEARCH-ROADMAP.md` (retired 21 Nov 2026; recover from git `40780c97`; superseded by program PTP-2026-11-21) | needs update |
 
 Not required for IS2: P1–P3 TEST results, SOTA wins, deployment, real users, business returns.
 

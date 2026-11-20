@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 570" width="1040" height="570" role="img" aria-label="Architecture: a research CLI runner and the local Workbench both call one EvidenceCore. The core loops PLAN, ACQUIRE, COMMIT; ACQUIRE searches an FTS5 lexical index of current source versions; COMMIT writes a versioned SQLite evidence store. A source revision reopens affected obligations through stored dependencies. Model providers are planned for G02. Research evaluators read outputs and labels never enter the engine.">
+  <title>Patent-to-Pilot architecture: one EvidenceCore, two consumers</title>
+  <style>
+    .fg { fill: #1f2328; }
+    .mu { fill: #59636e; }
+    .ln { stroke: #57606a; }
+    .box { fill: #f6f8fa; stroke: #d0d7de; }
+    .core { fill: #effaf7; stroke: #0f766e; }
+    .node { fill: #ffffff; stroke: #0f766e; }
+    .ac { fill: #0f766e; }
+    .acl { stroke: #0f766e; }
+    .plan { fill: none; stroke: #8c959f; stroke-dasharray: 6 5; }
+    .arrow { fill: #57606a; }
+    .arrowac { fill: #0f766e; }
+    text { font-family: 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif; }
+    .t { font-size: 15px; font-weight: 600; }
+    .s { font-size: 12px; }
+    .l { font-size: 12px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .fg { fill: #e6edf3; }
+      .mu { fill: #9198a1; }
+      .ln { stroke: #8b949e; }
+      .box { fill: #161b22; stroke: #3d444d; }
+      .core { fill: #0b2622; stroke: #2dd4bf; }
+      .node { fill: #0d1117; stroke: #2dd4bf; }
+      .ac { fill: #2dd4bf; }
+      .acl { stroke: #2dd4bf; }
+      .plan { stroke: #6e7681; }
+      .arrow { fill: #8b949e; }
+      .arrowac { fill: #2dd4bf; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="arrow"/>
+    </marker>
+    <marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="arrowac"/>
+    </marker>
+  </defs>
+
+  <!-- consumers -->
+  <rect x="255" y="20" width="220" height="60" rx="10" class="box"/>
+  <text x="365" y="45" text-anchor="middle" class="t fg">Research runner</text>
+  <text x="365" y="66" text-anchor="middle" class="s mu">CLI · scripts/ptp_run.py --run</text>
+  <rect x="545" y="20" width="220" height="60" rx="10" class="box"/>
+  <text x="655" y="45" text-anchor="middle" class="t fg">Local Workbench</text>
+  <text x="655" y="66" text-anchor="middle" class="s mu">browser UI · HTTP on 127.0.0.1</text>
+  <line x1="365" y1="80" x2="365" y2="128" class="ln" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="655" y1="80" x2="655" y2="128" class="ln" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="373" y="110" class="l mu">same calls</text>
+  <text x="663" y="110" class="l mu">same calls</text>
+
+  <!-- core -->
+  <rect x="230" y="130" width="560" height="230" rx="14" class="core" stroke-width="2"/>
+  <text x="250" y="158" class="t ac">EvidenceCore</text>
+  <text x="352" y="158" class="s mu">one shared engine · one config identity</text>
+
+  <rect x="255" y="190" width="140" height="60" rx="10" class="node" stroke-width="1.6"/>
+  <text x="325" y="215" text-anchor="middle" class="t fg">PLAN</text>
+  <text x="325" y="236" text-anchor="middle" class="s mu">choose obligation</text>
+  <rect x="440" y="190" width="140" height="60" rx="10" class="node" stroke-width="1.6"/>
+  <text x="510" y="215" text-anchor="middle" class="t fg">ACQUIRE</text>
+  <text x="510" y="236" text-anchor="middle" class="s mu">search · read · reuse</text>
+  <rect x="625" y="190" width="140" height="60" rx="10" class="node" stroke-width="1.6"/>
+  <text x="695" y="215" text-anchor="middle" class="t fg">COMMIT</text>
+  <text x="695" y="236" text-anchor="middle" class="s mu">verify citation · update</text>
+
+  <line x1="395" y1="220" x2="438" y2="220" class="acl" stroke-width="1.8" marker-end="url(#aa)"/>
+  <line x1="580" y1="220" x2="623" y2="220" class="acl" stroke-width="1.8" marker-end="url(#aa)"/>
+  <path d="M695,250 V292 H325 V252" fill="none" class="acl" stroke-width="1.8" marker-end="url(#aa)"/>
+  <text x="510" y="314" text-anchor="middle" class="l mu">until all obligations are settled or the budget stops the run</text>
+
+  <!-- store -->
+  <line x1="695" y1="360" x2="695" y2="408" class="ln" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="703" y="390" class="l mu">writes (one transaction)</text>
+  <line x1="325" y1="410" x2="325" y2="362" class="ln" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="333" y="390" class="l mu">open obligations</text>
+  <rect x="230" y="410" width="560" height="80" rx="10" class="box"/>
+  <text x="510" y="442" text-anchor="middle" class="t fg">Versioned evidence store (SQLite)</text>
+  <text x="510" y="466" text-anchor="middle" class="s mu">source versions · passages · assessments · citations · dependencies · runs and actions</text>
+
+  <!-- change event -->
+  <rect x="20" y="410" width="150" height="80" rx="10" class="box"/>
+  <text x="95" y="442" text-anchor="middle" class="t fg">Source change</text>
+  <text x="95" y="466" text-anchor="middle" class="s mu">revision v1 → v2</text>
+  <line x1="170" y1="450" x2="228" y2="450" class="ln" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="199" y="440" text-anchor="middle" class="l mu">reopens</text>
+  <text x="95" y="512" text-anchor="middle" class="s mu">affected cells → needs_review</text>
+
+  <!-- right side -->
+  <rect x="850" y="190" width="170" height="60" rx="10" class="box"/>
+  <text x="935" y="215" text-anchor="middle" class="t fg">Lexical index</text>
+  <text x="935" y="236" text-anchor="middle" class="s mu">FTS5 · current versions</text>
+  <line x1="790" y1="220" x2="848" y2="220" class="ln" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="819" y="210" text-anchor="middle" class="l mu">search</text>
+
+  <rect x="850" y="280" width="170" height="60" rx="10" class="plan" stroke-width="1.6"/>
+  <text x="935" y="305" text-anchor="middle" class="t fg">Model providers</text>
+  <text x="935" y="326" text-anchor="middle" class="s mu">embed · rerank · chat (G02)</text>
+  <line x1="790" y1="310" x2="848" y2="310" class="plan" stroke-width="1.6" marker-end="url(#a)"/>
+
+  <rect x="850" y="410" width="170" height="80" rx="10" class="plan" stroke-width="1.6"/>
+  <text x="935" y="442" text-anchor="middle" class="t fg">Research evaluators</text>
+  <text x="935" y="466" text-anchor="middle" class="s mu">labels stay outside</text>
+  <line x1="790" y1="450" x2="848" y2="450" class="ln" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="819" y="440" text-anchor="middle" class="l mu">outputs</text>
+
+  <!-- legend -->
+  <line x1="230" y1="540" x2="270" y2="540" class="ln" stroke-width="1.6"/>
+  <text x="280" y="544" class="s mu">implemented in G01</text>
+  <line x1="420" y1="540" x2="460" y2="540" class="plan" stroke-width="1.6"/>
+  <text x="470" y="544" class="s mu">planned or kept outside the engine</text>
+</svg>

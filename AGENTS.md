@@ -1,68 +1,43 @@
-# Patent-to-Pilot HealthTech — execution instructions
+# Agent instructions — Patent-to-Pilot
 
-## Current research routing and mandatory index memory (owner, 10 Nov 2026)
+These rules apply to every coding agent (Claude, Codex or others) on every account. [CLAUDE.md](CLAUDE.md) carries the full
+standing rules; this file is the shared summary and must stay consistent with it.
 
-Read [MASTER-PLAN.md](MASTER-PLAN.md), [INDEX-PLAN.md](INDEX-PLAN.md) and the [shared project memory index](memory/research/patent-to-pilot/INDEX.md) with the current checkpoint. The owner selected DAPFAM-first B0/SACR/S/G; optional MTM transfer may be validation rather than a separate paper; adaptive LLM graph control is conditional last. Solution Scout remains separate. Historical GOAL/PLAN contracts and frozen evidence remain intact; a plan is not experiment authorization.
+## Start of session
 
-**Update INDEX-PLAN.md on every substantive work event:** completed/read-only step; new/changed component, configuration, result or artifact; owner decision; new/cleared blocker; failed/interrupted/uncertain attempt; before background or >10-minute work; at least every 30 minutes active; and before pause/end/account handoff. Record row ID, study, writer/role, actual status, revision/source/config hashes or manifest, inputs/permissions, output/receipt, checks and NOT_RUN, failures/unknown costs and next action. Preserve historical negative/failed evidence.
+1. Read [CLAUDE.md](CLAUDE.md), [HANDOFF.md](HANDOFF.md) and [INDEX-PLAN.md](INDEX-PLAN.md).
+2. Verify the checkout: `git status --short --branch`, `git log -3`, and that no other agent is writing the same files.
+3. The owner's program is PTP-2026-11-21 (`docs/owner/owner-note-21112026/`, owner-local). Goals are G01–G08 in that
+   namespace; older G01–G22 and HT-* identifiers in historical records keep their original meanings.
 
-At each such checkpoint update HANDOFF.md and CLAUDE.md together with the same writer/state and current evidence. Update MASTER/detailed plans when scope/design changes; memory DECISIONS/OPEN-QUESTIONS/SESSION-LOG when relevant; progress and next-actions once per completed package. All shared knowledge stays in project files under scope `research/patent-to-pilot`; no private assistant-memory sharing, session capture, secrets or protected-label content. Both agents must read the same index; filenames do not imply automatic integration.
+## One writer, one handoff
 
-The actual file is `CLAUDE.md` (the owner's `CLUADE.md` spelling refers to it; no duplicate existed). Current exact owner/runtime permissions govern publication: this three-study documentation session explicitly allows no commit/push, experiments or installations, overriding the older checkpoint-push requirement for this package. Record local-only state and resume publication only with applicable authority. Archive moves require confident supersession, provenance/link repair and unchanged access; see [archive review](archives/INDEX.md).
+- One active writer per set of files. Record ownership and running jobs in HANDOFF.md.
+- Update HANDOFF.md (current state, rewritten in place) and, when goal or evidence locations change, INDEX-PLAN.md: after a
+  finished step, an owner decision, a new blocker or a failed attempt; before background or long jobs; before ending a
+  session. Commit and push them with the work they describe.
+- If publication fails, keep local changes and record the failure; never claim a sync that did not happen.
 
-Read root [GOAL.md](GOAL.md) sections 0–4, the selected HT-W in [PLAN.md](PLAN.md), [progress](docs/healthtech/progress.json) and [next actions](memory/next-actions.md). Root GOAL/PLAN define current HealthTech scope; this file controls execution. Current owner directions and runtime permissions take precedence. Read only relevant sources and applicable `.agents/skills` instructions when present.
+## Hard limits
 
-## Mandatory cross-account handoff (owner rule, 10 Nov 2026)
-
-This rule applies to Codex and Claude on every account. At session start, read this file, the handoff rule and active checkpoint in `CLAUDE.md`, and the latest `Agent takeover state` in `HANDOFF.md`; verify the actual checkout before continuing. Chat history or account memory is not a substitute for these files.
-
-- Update **both `HANDOFF.md` and `CLAUDE.md`** after every completed step, owner decision, new blocker or failed/interrupted attempt; before any background job or work expected to exceed about 10 minutes; at least every 30 minutes during active work; and before ending, pausing or handing over a session. Even a read-only session must record its outcome and next action.
-- Keep the detailed current state in `HANDOFF.md`. Keep a matching concise active checkpoint in `CLAUDE.md`, linking to that state. Include the Bangkok timestamp, agent/session ownership without credentials, last verified pushed commit, completed and unfinished work, changed/uncommitted files, checks and evidence paths, running jobs with monitoring instructions, owner decisions and authorization limits, blockers, and the next 3–6 concrete steps. Explicitly mark unverified facts and NOT_RUN checks.
-- Commit and push both files together with the authorized work they describe to `origin main` at each checkpoint. This owner-authorized handoff publication supersedes older Normal-round no-push language for that work only. Never force-push, reset, create branches/worktrees, or stage unrelated/private files. If publication fails, preserve local changes and record the failure and recovery step in both files; do not claim synchronization.
-- A checkpoint may name the last pushed commit before its own update. The incoming agent must verify the containing checkpoint commit and remote state with Git; never invent a self-referential commit hash.
-- Multi-account continuation uses **one active writer**. Record the current owner and whether the session is active, paused or handed off. A new account must confirm the prior writer has stopped or has explicitly transferred ownership before changing shared files or starting jobs. Do not restart a recorded job without checking its status. This rule does not authorize subagents, experiments, paid calls or protected evaluation.
-
-## Current scope and task contract
-
-- Start from a named public medical device or user-selected comparator. Produce an inspectable evidence dossier for entrepreneurs/investor analysts; idea-to-comparator discovery is future work.
-- Main research candidate: device–patent known-link recovery under incomplete judgments. SciFact is a separate evidence-verification component. Pharma/Biologics are later branches.
-- Use HT-G/HT-W/HT-B/HT-T namespaces. Historical G01–G22 and B0–B4 results/protocols retain their original meanings; they are not HealthTech results. See [migration](docs/healthtech/MIGRATION.md).
-- Choose a bounded package: goal, permitted inputs, outputs, acceptance, targeted checks, stopping condition and next step. Own routine implementation/debugging within authorization. A local blocker stops its dependent branch only.
-- The owner requested a capable coding/research model. The label `gpt 5.6 luna max` in older notes is not a verified provider ID. Do not silently configure accounts or use executor labels as experiment model IDs.
-- Do not spawn agents by default. Delegate only under explicit current authorization and with isolated writers; one control plane owns execution.
+- Never open protected TEST data. Never let an exposed test set select a method.
+- No paid API, GPU rental or download without a recorded owner approval and envelope.
+- dr-train: `ssh chaw@100.77.149.83`, approved V100 only (`CUDA_VISIBLE_DEVICES=1`), one GPU job at a time. After every
+  phase, pull this project's artifacts to local, then delete remote copies that are no longer needed.
+- Pre-declare protocols, endpoints and selection rules before computing. Report failures, retries and unknown costs.
+- Paper 86 is banned in journal papers; arXiv:2605.24297 is not used as a source.
+- Never read or print `.env` or credentials; never force-push, reset, clean, rewrite history or change ACLs/global config.
+- Never edit `docs/owner/`. Commit only your own files with explicit paths.
+- Report to the owner in Thai; write code, docs and the paper in English.
 
 ## Evidence and software invariants
 
-- Preserve raw and canonical IDs, kind codes, source revision/hash, jurisdiction, date and exact locator. Do not merge patent families without a sourced mapping.
-- `retrieved_candidate` is not `disclosed_link`. Independent source provenance is needed for a disclosed link; benchmark gold without disclosure URLs cannot serve as a product citation.
-- Literal quote/field matches establish source integrity only. The legacy extractor's `SUPPORTED` means a literal match in that slice; it does not establish semantic entailment, clinical suitability, approval, FTO, patent validity or investment merit.
-- Runtime source/query/action/dossier inputs exclude evaluator labels, gold-derived queries and hidden oracles. `evaluation/healthtech` may read labels; `healthtech/engine.py` does not.
-- Freeze eligible queries, universe, cohort, cutoffs, grouping, failure/retry rules and endpoints before a final study. Include failed queries and all attempts/costs. Unlisted links are unjudged, never automatically negative.
-- Known-link recall is not exhaustive recall or an established lower bound of it. Use shared-patent/family groups and appropriate group-level uncertainty; seed repeats are not independent samples.
-- Bridge pack audit: 672 exported pairs/79 devices vs 585 completeness-qualified pairs/74 devices. These are supplied audit findings, not a local repeat. Do not treat `is_valid` as relevance or `kg_linked` as independent gold. Clarify data rights and cohort before the affected study.
-- Keep strong fixed hybrid, fixed multi-query, simple adaptive and bounded LLM controls. Current runnable methods are offline lexical HT-B0b and fixed HT-B2 only; do not relabel them adaptive or claim scientific benefit.
-
-## Permissions, privacy and release
-
-- Current Normal-round owner authorization is limited to inspection, local fixes, offline tests, and audit/handoff updates in the existing `main` checkout. Do not resume the goal, start a long run, dispatch or reserve paid work, push, merge, delete branches/worktrees, or create a new worktree in this round.
-- Never read/print `.env` or credentials, change ACL/auth/global hooks/tools, bypass access controls or touch unrelated projects. Use filesystem/shell for this task; browser/native UI belongs to concurrent AWS work.
-- Preserve provider identity, durable attempts, reservations, actual/unknown billing and existing budget journals. An offline count budget is not money. Future paid use must reuse the existing explicit adapter and ledger with conservative reservation and current exact authorization; never reset it for more attempts.
-- Scope memory to `research/patent-to-pilot`. No session-store access, automatic capture, cross-project memory or global configuration changes.
-- Keep original input pack unchanged. Third-party paper/data/code rights are separate. Publish source links/IDs/hashes and authored fixtures; do not stage paper PDFs, raw corpora, evaluator-only material or private local files.
-- Cleanup is out of scope for this Normal round. Never reset/clean, force-push, prune/gc or delete `.git` packs. Do not destroy dirty-only changes, irreplaceable untracked data or sole-copy evidence. Keep exact recovery references and measured bytes for any separately authorized future cleanup.
-- Public repository visibility does not grant a code or dataset license. Do not invent one.
-
-## Working and verification
-
-- Follow applicable global RTK prefix guidance; `rtk proxy` is available. Do not run `rtk init` or alter hooks to silence a notice. Check [tooling](docs/TOOLING_REGISTRY.md) before unfamiliar tooling.
-- Relevant user skills: `research-synthesis`, `document-ingestion`, `technical-writing`; read their SKILL.md before use. Thai deliverables follow `kien-thai` when available. Presence of an installation file does not prove live integration.
-- Test changed behavior with hand-computable positive/negative fixtures. Documentation needs link/schema checks. Run provider regressions when integrating with shared components; do not rerun paid or old scientific benchmarks as a test substitute.
-- Report actual commands and outcomes, implemented/mocked/planned/NOT_RUN boundaries, exact blockers and next action. Update progress and next-actions once per completed package. Engineering PASS never means publication readiness.
-
-
-## Project-local HealthTech audit records
-
-- For future HealthTech task audits, keep all audit reports, receipts, audit manifests, verification summaries and continuation/next-action notes needed to resume work in `docs/healthtech/audits/<run-id>/`. Follow [the audit convention](docs/healthtech/audits/README.md); do not leave a Codex or temp directory as their sole source. Existing progress and memory entry points may summarize and link to the canonical run record.
-- Tests and scratch artifacts may use temporary directories, but persist key sanitized reproduction evidence, command outcomes and source/config hashes in the run folder before handoff or cleanup. Preserve historical receipts; do not mass-migrate or overwrite them.
-- Large raw/restricted corpora, source pages, model weights, evaluator-only relations and private journals stay in permitted local storage with provenance/hashes/references in the audit manifest. Local-repo storage does not authorize public Git redistribution; never copy credentials, private paths/content or restricted raw data into staged audit files.
-- This is a project-local evidence-location rule only. It does not override higher-priority instructions, owner/runtime authority, data rights, privacy rules or scoped writer ownership, and it does not grant new acquisition/publishing permissions.
+- Keep source ID, version, content hash and exact locator on every piece of evidence. A literal quote match proves source
+  integrity, not semantic support.
+- Runtime inputs never contain evaluator labels, gold-derived queries or hidden oracles; evaluators live outside the engine.
+- Unjudged is not negative. Known-link recall is not exhaustive recall. Schema validity is not correctness.
+- Test changed behaviour with small hand-checkable fixtures. Run `python -m pytest` before committing code; the only
+  accepted pre-existing failures are the 8 SACR r2/r3 supervisor budget tests.
+- Keep audit receipts for research runs in `docs/healthtech/audits/<run-id>/` (historical convention) or the goal folder in
+  `artifacts/owner-program/PTP-2026-11-21/<goal>/`. Large or restricted data stay in `../_private_artifacts/` with hashes
+  recorded in Git.

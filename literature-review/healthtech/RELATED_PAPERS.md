@@ -1,9 +1,9 @@
 # RELATED PAPERS — Patent-to-Pilot HealthTech
 
-> Migration note, 27 October 2026: this curated library is the current HealthTech starting point. PDF links now target original publishers; no paper PDF is redistributed here. Detailed method/dataset/evaluator comparisons and direct PDF locators are in [reading notes](literature-review/healthtech/READING_NOTES.md). Release-audit counts below are source-reported pack evidence, not a locally repeated dataset audit or new retrieval result.
+> Migration note, 27 October 2026: this curated library is the current HealthTech starting point. PDF links now target original publishers; no paper PDF is redistributed here. Detailed method/dataset/evaluator comparisons and direct PDF locators are in [reading notes](READING_NOTES.md). Release-audit counts below are source-reported pack evidence, not a locally repeated dataset audit or new retrieval result.
 
 **ฉบับ:** 1.0 · **วันที่ตรวจและรวบรวม:** 27 ตุลาคม 2026 (Asia/Bangkok) <br>
-**เอกสารร่วม:** [GOAL.md](GOAL.md) · [PLAN.md](PLAN.md) · [README.md](README.md)
+**เอกสารร่วม:** [README.md](../../README.md) (GOAL/PLAN ของรอบ HealthTech ถูกถอดออกเมื่อ 21 พ.ย. 2026)
 
 ## 1. แพ็กนี้มีอะไร
 
@@ -11,7 +11,7 @@
 
 รายการนี้เป็น curated related-work collection เพื่อออกแบบโครงการ ไม่ใช่ systematic review ที่อ้างว่าค้นครบทุกงาน และไม่ใช่หลักฐานว่าได้ reproduce ผลทดลองของผู้เขียนแล้ว Notes มาจาก metadata, abstract และส่วน method/data/limitations ที่เกี่ยวข้อง โดยบันทึก reading scope รายฉบับ
 
-ไฟล์ metadata สำหรับเครื่องอยู่ที่ [paper_manifest.json](literature-review/healthtech/paper_manifest.json) และ bibliography อยู่ที่ [references.bib](literature-review/healthtech/references.bib) งาน WPI ที่เกี่ยวข้องแต่ไม่มี PDF ที่พร้อมแนบระบุเป็น citation-only และไม่นับรวมใน 27 ฉบับ
+ไฟล์ metadata สำหรับเครื่องอยู่ที่ [paper_manifest.json](paper_manifest.json) และ bibliography อยู่ที่ [references.bib](references.bib) งาน WPI ที่เกี่ยวข้องแต่ไม่มี PDF ที่พร้อมแนบระบุเป็น citation-only และไม่นับรวมใน 27 ฉบับ
 
 ## 2. Reading routes สำหรับ agent
 
@@ -558,4 +558,4 @@ Paper issue years are retained: ChEMBL is cited as 2024, BindingDB as 2025, and 
 5. ชุดนี้ไม่รวม raw benchmark datasets หรือข้อมูลภายในองค์กร
 6. ไม่ต้องเพิ่มงานอ่านทุก paper เป็น global prerequisite ของทุก work package ให้เปิดอ่านตาม decision ที่จะทำ
 
-ใช้ [pack provenance](docs/healthtech/pack-provenance.json) และ [paper manifest](literature-review/healthtech/paper_manifest.json) ตรวจรายการ/hash/size ของต้นทาง CHECKSUMS.sha256 และ PACK_MANIFEST.json ต้นฉบับยังอยู่ใน input pack ซึ่งไม่ได้แก้ไข
+ใช้ [pack provenance](../../docs/healthtech/pack-provenance.json) และ [paper manifest](paper_manifest.json) ตรวจรายการ/hash/size ของต้นทาง CHECKSUMS.sha256 และ PACK_MANIFEST.json ต้นฉบับยังอยู่ใน input pack ซึ่งไม่ได้แก้ไข

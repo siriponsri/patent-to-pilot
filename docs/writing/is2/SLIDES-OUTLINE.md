@@ -5,7 +5,7 @@ result exists on the day. Every number carries an evidence label.
 
 | # | Time | Title | Content (Thai speech) | Evidence / source | Label |
 |---|---:|---|---|---|---|
-| 1 | 0:40 | From Paper 53 to Patent-to-Pilot | near-zero instruction effect → program (Diagnose → Intervene → Discover → Acquire → Repair → Translate) | `RESEARCH-ROADMAP.md` §1 | HISTORY + PLAN |
+| 1 | 0:40 | From Paper 53 to Patent-to-Pilot | near-zero instruction effect → program (Diagnose → Intervene → Discover → Acquire → Repair → Translate) | program PTP-2026-11-21 charter (`RESEARCH-ROADMAP.md` retired 21 Nov) | HISTORY + PLAN |
 | 2 | 1:00 | What the IS1 Committee Asked Me to Fix | K1a–K2b; 37.1% (257/692) exposure at top-100 | Paper 53; IS1 evaluation | ACCEPTED (Paper 53) |
 | 3 | 1:20 | IS2 Core Experiment: B53 | F0–F4 (+F0-OUT, F6, F7); K = 100/200/1000; reranker held fixed in Stage 2; cohorts 905 OUT / 1,247 ALL | `plans/B53-PREDECLARATION.md` | DESIGNED → MEASURED [PENDING] |
 | 4 | 0:55 | What We Can and Cannot Conclude | Δ_all = π·Δ_exp is accounting; label incompleteness; re-implementation ≠ replication | COMMITTEE-RESPONSE §1 K1c | METHOD |

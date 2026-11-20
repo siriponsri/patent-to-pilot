@@ -4,7 +4,7 @@
 
 ชุดหลักปัจจุบันคือ HealthTech Pack วันที่ 27 ตุลาคม 2026 มี PDF 27 ฉบับ รวม 458 หน้า ตรวจ SHA-256 กับ CHECKSUMS ตรงทั้งหมดและอ่าน identity พร้อม method/task/evaluation passages ที่จำเป็น ไม่ใช่ systematic review และไม่ได้ reproduce ผลของบทความ
 
-- [Research library / source links](../RELATED_PAPERS.md)
+- [Research library / source links](healthtech/RELATED_PAPERS.md)
 - [Method, dataset, evaluator และ novelty threats](healthtech/READING_NOTES.md)
 - [Verified PDF identities and separate rights notes](healthtech/paper_manifest.json)
 - [BibTeX](healthtech/references.bib)
