@@ -222,3 +222,15 @@ def test_stage2a_queries_without_vector_score_zero(tmp_path, monkeypatch):
     dev = json.load(open(out / 'stage2a-results.json'))['blocks']['P1-DEV']
     assert dev['n_queries'] == 60 and dev['n_queries_with_vector'] == 55 and dev['n_cohort'] == 45
     assert dev['E1']['U0']['OUT_R@200'][1] == 60 and dev['E2']['U0']['MR@200'][1] == 45
+
+
+def test_render_synthetic(tmp_path, monkeypatch):
+    import json
+    import am7_stage2a as S2
+    import render_am7_stage2a as R
+    prep, qd, P, pub, Q = _synthetic(tmp_path)
+    out = tmp_path / 'out'
+    monkeypatch.setattr(sys, 'argv', ['x', str(prep), str(tmp_path / 'P.f16.npy'), str(qd), str(out), '--batch', '16'])
+    S2.main()
+    md = R.render(json.load(open(out / 'stage2a-results.json')))
+    assert '**A\* =' in md and '| U0 |' in md and 'Owner gate' in md
