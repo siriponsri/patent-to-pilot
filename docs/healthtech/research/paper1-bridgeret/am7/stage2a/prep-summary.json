@@ -1,0 +1,23 @@
+{
+ "format": "ptp-p1-am7-prep-v1",
+ "seconds": 748.9,
+ "n_units": 1000000,
+ "units_with_ipc": 982907,
+ "n_source_actions": 1129424,
+ "blocks": {
+  "P1-DEV": {
+   "queries": 26575,
+   "cohort": 20857,
+   "clean": 6823,
+   "queries_with_ipc": 26575,
+   "out_eval_queries": 25941
+  },
+  "VAL": {
+   "queries": 2000,
+   "cohort": 1576,
+   "clean": 538,
+   "queries_with_ipc": 2000,
+   "out_eval_queries": 1957
+  }
+ }
+}
