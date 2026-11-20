@@ -233,4 +233,4 @@ def test_render_synthetic(tmp_path, monkeypatch):
     monkeypatch.setattr(sys, 'argv', ['x', str(prep), str(tmp_path / 'P.f16.npy'), str(qd), str(out), '--batch', '16'])
     S2.main()
     md = R.render(json.load(open(out / 'stage2a-results.json')))
-    assert '**A\* =' in md and '| U0 |' in md and 'Owner gate' in md
+    assert r'**A\* =' in md and '| U0 |' in md and 'Owner gate' in md
