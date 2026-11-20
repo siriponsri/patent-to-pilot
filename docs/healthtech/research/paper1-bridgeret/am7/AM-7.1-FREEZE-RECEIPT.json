@@ -1,0 +1,34 @@
+{
+ "format": "ptp-p1-am71-freeze-v1",
+ "frozen_at_bangkok": "2026-11-20T17:56+07:00",
+ "authority": "owner chat 20 Nov 2026: \"Freeze AM 7.1 ตาม ผลรีวิว\"; review file 12_AM71_REVIEW_AND_GO_DECISION.md (owner-local, not committed)",
+ "review_file_sha256": "ea4adcf93c1e7b4f53ac94b99617bdb5fc9b3944927c0c7769331ffa58bb75b8",
+ "state_at_freeze": {
+  "E2_numbers_any_system": "NONE",
+  "AM7_or_AM71_system_numbers": "NONE",
+  "TEST_read": false,
+  "spend_usd": 0
+ },
+ "review_items_addressed": {
+  "1": "7 wording (49.5% = pair share, not anchor probability)",
+  "2": "7 IN x OUT stratified follow-up, micro + macro, headline declared",
+  "3": "1 gamma grid incl. hard filter, IPC3 rule, no-IPC fallback",
+  "4": "2 MMR = A2 relation stated; 8 power proxies",
+  "5": "3 N5 classified label-derived, AM-7 4.4 amended, coverage, windows",
+  "6": "6 complexity order + 0.010 margin + bootstrap unit",
+  "7": "5 matched decoy",
+  "8": "7 contamination wording, test-split probe not a gate",
+  "9": "7 Patently-O wording",
+  "10": "7 arXiv:2605.24297 not used as a source",
+  "section4": "3 windows; 1 N4 coverage; 7 negative-outcome path to P2; 7 citation audit pending"
+ },
+ "sha256": {
+  "docs/healthtech/research/paper1-bridgeret/am7/AM-7.1.md": "dbdb12b3afe9f19859e6b2c33e2998319ed043b376dc602bd7261e0c913d3bd7",
+  "docs/healthtech/research/paper1-bridgeret/am7/AM-7-MISSING-REFERENCE.md": "64e6131d729c1f3640c30547ceb607527e0857e5d474e6fd1769fe920f00306c",
+  "docs/healthtech/research/paper1-bridgeret/am7/panorama-combo-precision.json": "000cfaf1a0e40fd4b89990d0bd5ff3f9d3c82bf0279518cd7038edceeab48764",
+  "docs/healthtech/research/paper1-bridgeret/am7/power-proxy-dev.json": "fea75a4669f9a2761175ff6b0bc1a1c2791f671444769901d1ae1810187c0adc",
+  "scripts/healthtech/panorama_combo_precision.py": "d4624725d158b10e2c96c26081a37bd397d576c44cf834a19eebd0b311e99000",
+  "docs/healthtech/research/paper1-bridgeret/am7/AM-7.1-PROPOSAL-20261120.md": "17dee9860a50e997c43dc2ed632b374a6b2768ac8d1bd8b704edda2a85963835",
+  "docs/healthtech/research/plans/P1-BRIDGERET-PREDECLARATION.md": "f9f2c9524ed3aaaed01399647d4b1c8e3d185fc747b1bfa4149ac4e73c0a1ec4"
+ }
+}

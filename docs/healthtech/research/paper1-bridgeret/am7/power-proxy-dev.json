@@ -1,0 +1,52 @@
+{
+ "format": "ptp-p1-am71-power-proxy-v1",
+ "source": "existing P1-DEV per-query OUT_R@200 of already-reported systems (bridgeret/runs/*/eval-P1-DEV.json); no AM-7/AM-7.1 system was run",
+ "n_dev_paired": 25941,
+ "formula": "MDE = (z_0.9875 + z_0.80) * sd_diff / sqrt(N) = (2.241 + 0.842) * sd / sqrt(N); iid, art-unit design effect NOT included",
+ "pairs": [
+  {
+   "a": "S2-t0.02",
+   "b": "S4rule-t0.02",
+   "sd_diff": 0.2662,
+   "corr": 0.748,
+   "MDE": {
+    "10000": 0.0082,
+    "7600": 0.0094,
+    "2500": 0.0164
+   }
+  },
+  {
+   "a": "S2-t0.02",
+   "b": "S2-t0.05",
+   "sd_diff": 0.2019,
+   "corr": 0.854,
+   "MDE": {
+    "10000": 0.0062,
+    "7600": 0.0071,
+    "2500": 0.0124
+   }
+  },
+  {
+   "a": "Z-PatEmbed",
+   "b": "Z-Qwen3",
+   "sd_diff": 0.3406,
+   "corr": 0.639,
+   "MDE": {
+    "10000": 0.0105,
+    "7600": 0.012,
+    "2500": 0.021
+   }
+  },
+  {
+   "a": "Z-Qwen3",
+   "b": "E0-Qwen3",
+   "sd_diff": 0.2201,
+   "corr": 0.838,
+   "MDE": {
+    "10000": 0.0068,
+    "7600": 0.0078,
+    "2500": 0.0136
+   }
+  }
+ ]
+}
