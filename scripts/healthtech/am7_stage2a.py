@@ -204,6 +204,24 @@ def a_star_list(ctx, kind, param, qs, Qb, anchors, extra_remove, abar=None):
     return out
 
 
+EMPTY = np.empty(0, dtype=np.int64)
+CONTROLS = ('A*|decoy', 'A*|shuffle')
+
+
+def fill_missing(qs_all, E1, E2):
+    """AM-7 §3 / evaluator convention: a query with no output (no query text, hence no vector) scores 0."""
+    n = 0
+    for q in qs_all:
+        for name, d in E1.items():
+            if q['app'] not in d:
+                d[q['app']] = e1_metrics(EMPTY, q); n += 1
+        if 'e2' in q:
+            for name, d in E2.items():
+                if name not in CONTROLS and q['app'] not in d:
+                    d[q['app']] = e2_metrics(EMPTY, q)
+    return n
+
+
 def mean_of(d, key, apps=None):
     v = [m[key] for a, m in d.items() if (apps is None or a in apps) and m.get(key) is not None]
     return (round(float(np.mean(v)), 5), len(v)) if v else (None, 0)
@@ -226,10 +244,12 @@ def main():
         ids = json.load(open(Path(a.qdir) / f'Q-{b}.ids.json'))
         Qv = np.load(Path(a.qdir) / f'Q-{b}.f16.npy').astype(np.float32)
         R[b] = run_block(ctx, b, Qv, ids, a.batch, log) + (Qv, ids)
+    for b in BLOCKS:
+        fill_missing(ctx.Q[b], R[b][1], R[b][2])
     # ---------------- selection on P1-DEV (AM-7.1 §1, §2, §4, §6)
     rows, E1, E2, keep, aux, Qv, ids = R['P1-DEV']
-    coh = [q['app'] for q in rows if 'e2' in q]
-    au = {q['app']: q['au'] for q in rows}
+    coh = [q['app'] for q in ctx.Q['P1-DEV'] if 'e2' in q]
+    au = {q['app']: q['au'] for q in ctx.Q['P1-DEV']}
     sel = {}
     sel['A1_beta'] = L.pick_param({x: mean_of(E2[f'A1:{x:g}'], 'MR@200')[0] for x in A1_BETAS})
     sel['A2_gamma'] = L.pick_param({x: mean_of(E2[f'A2:{x:g}'], 'MR@200')[0] for x in A2_GAMMAS})
@@ -248,6 +268,8 @@ def main():
         for q in rws:
             if 'e2' in q:
                 e2['A4'][q['app']] = e2_metrics(L.rrf([kp[inc12][q['app']], kp['N5'][q['app']]], unit_rank=ctx.unit_rank), q)
+    for b in BLOCKS:
+        fill_missing(ctx.Q[b], R[b][1], R[b][2])
     pq['A4'] = per_query(E2['A4'], 'MR@200', coh)
     astar, logx = L.select_across([inc12, 'A4p', 'A4'], {k: pq[k] for k in (inc12, 'A4p', 'A4')}, clusters)
     sel['A_star'] = astar; sel['selection_log'] = log12 + logx
@@ -277,15 +299,18 @@ def main():
                 for r, q in enumerate(qe):
                     e2[f'A*|{ctl}'][q['app']] = e2_metrics(lst[r], q)
             log(b, 'phase2', s0 + len(qs))
+    missing = {b: fill_missing(ctx.Q[b], R[b][1], R[b][2]) for b in BLOCKS}
     # ---------------- report
     astar_name = astar
     res = {'format': 'ptp-p1-am7-stage2a-v1', 'descriptive_only': True, 'selection_block': 'P1-DEV', 'selection': sel,
            'blocks': {}}
     for b in BLOCKS:
-        rws, e1, e2, kp, ax, _, _ = R[b]
+        rws_v, e1, e2, kp, ax, _, _ = R[b]
+        rws = ctx.Q[b]                                   # every block query (no-vector queries scored 0)
         cohort = [q['app'] for q in rws if 'e2' in q]
         clean = {q['app'] for q in rws if q.get('e2', {}).get('clean')}
-        blk = {'n_queries': len(rws), 'n_cohort': len(cohort), 'n_clean': len(clean), 'E1': {}, 'E2': {}, 'E2_clean': {}}
+        blk = {'n_queries': len(rws), 'n_queries_with_vector': len(rws_v),
+               'n_cohort_with_vector': sum('e2' in q for q in rws_v), 'n_cohort': len(cohort), 'n_clean': len(clean), 'E1': {}, 'E2': {}, 'E2_clean': {}}
         for name in sorted(e1):
             blk['E1'][name] = {k: mean_of(e1[name], k) for k in ('OUT_R@200', 'OUT_R@1000', 'IN_R@200', 'ALL_R@200')}
         for name in sorted(e2):
@@ -314,9 +339,10 @@ def main():
                 contr[f'{ctl}_control'] = {'contrast': f'A*(q,a) - A*(q,{ctl})', 'n': len(apps), 'delta': round(m, 5),
                                            'ci95_artunit': [round(lo, 5), round(hi, 5)]}
         blk['contrasts_descriptive'] = contr
-        blk['n5_coverage'] = round(sum(1 for q in cohort if ax[q]['n5_pos'] > 0) / max(1, len(cohort)), 4)
-        blk['n5_source_actions_median'] = float(np.median([ax[q]['n5_src'] for q in cohort])) if cohort else None
-        blk['decoy_missing'] = sum(1 for q in cohort if ax[q]['decoy'] is None)
+        cv = [q for q in cohort if q in ax]
+        blk['n5_coverage'] = round(sum(1 for q in cv if ax[q]['n5_pos'] > 0) / max(1, len(cv)), 4)
+        blk['n5_source_actions_median'] = float(np.median([ax[q]['n5_src'] for q in cv])) if cv else None
+        blk['decoy_missing'] = sum(1 for q in cv if ax[q]['decoy'] is None)
         blk['queries_with_ipc'] = sum(bool(q['ipc3']) for q in rws)
         res['blocks'][b] = blk
     dev = res['blocks']['P1-DEV']

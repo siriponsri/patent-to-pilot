@@ -208,3 +208,17 @@ def test_sensitivity_synthetic_reordered_backbone(tmp_path, monkeypatch):
     r = json.load(open(res))
     main_u0 = json.load(open(out / 'stage2a-results.json'))['blocks']['P1-DEV']['E2']['U0']['MR@200'][0]
     assert r['blocks']['P1-DEV']['U0_qwen3_MR@200'][0] == pytest.approx(main_u0, abs=1e-6)   # same vectors, reordered
+
+
+def test_stage2a_queries_without_vector_score_zero(tmp_path, monkeypatch):
+    import json
+    import am7_stage2a as S2
+    prep, qd, P, pub, Q = _synthetic(tmp_path)
+    ids = json.load(open(qd / 'Q-P1-DEV.ids.json')); V = np.load(qd / 'Q-P1-DEV.f16.npy')
+    json.dump(ids[5:], open(qd / 'Q-P1-DEV.ids.json', 'w')); np.save(qd / 'Q-P1-DEV.f16.npy', V[5:])
+    out = tmp_path / 'out'
+    monkeypatch.setattr(sys, 'argv', ['x', str(prep), str(tmp_path / 'P.f16.npy'), str(qd), str(out), '--batch', '16'])
+    S2.main()
+    dev = json.load(open(out / 'stage2a-results.json'))['blocks']['P1-DEV']
+    assert dev['n_queries'] == 60 and dev['n_queries_with_vector'] == 55 and dev['n_cohort'] == 45
+    assert dev['E1']['U0']['OUT_R@200'][1] == 60 and dev['E2']['U0']['MR@200'][1] == 45
