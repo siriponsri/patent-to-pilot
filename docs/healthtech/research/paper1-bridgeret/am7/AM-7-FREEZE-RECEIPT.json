@@ -1,0 +1,19 @@
+{
+ "format": "ptp-p1-am7-freeze-v1",
+ "frozen_at_bangkok": "2026-11-20T07:30+07:00",
+ "state_at_freeze": {
+  "E2_numbers_any_system": "NONE",
+  "new_system_numbers": "NONE",
+  "TEST_read": false,
+  "check_predeclared_commit": "30a60b3c",
+  "check_outcome": "SUFFICIENT"
+ },
+ "sha256": {
+  "docs/healthtech/research/paper1-bridgeret/am7/AM-7-MISSING-REFERENCE.md": "64e6131d729c1f3640c30547ceb607527e0857e5d474e6fd1769fe920f00306c",
+  "docs/healthtech/research/paper1-bridgeret/am7/OA-COCITE-CHECK-PREDECLARATION.md": "cc48b0f05cdf0f3dba11ed3b0100b3f92d54ec5f85ec11e1ebc2fb876dc4f5f7",
+  "docs/healthtech/research/paper1-bridgeret/am7/oa-cocite-check.json": "983fec5d2110a28feaba5b5d8387b6d10a9209b722af2e022c99a34a34b0a13a",
+  "scripts/healthtech/oa_cocite_check.py": "90ae55b9f4fe64125a5694cb1e3659fa4f7e45d0551cdf73a170abccde6050fa",
+  "docs/healthtech/research/plans/P1-BRIDGERET-PREDECLARATION.md": "3a2a79fa10a3922c936ecf3f75acd738e34c260689a2b41fbfd03d2e647673ae"
+ },
+ "note": "sha256 of the pre-declaration is after the AM-7 row was appended; byte hashes of working files at commit time"
+}

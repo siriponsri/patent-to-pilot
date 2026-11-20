@@ -1,0 +1,165 @@
+{
+ "format": "ptp-p1-oa-cocite-check-v1",
+ "predeclaration": "docs/healthtech/research/paper1-bridgeret/am7/OA-COCITE-CHECK-PREDECLARATION.md",
+ "gate": {
+  "G1_P1DEV_A_eligible_min": 2000,
+  "G2_TRAIN_A_eligible_min": 10000,
+  "G3_P1DEV_clean_A_eligible_min": 500
+ },
+ "blocks": {
+  "TRAIN": {
+   "tasks": 100376,
+   "chosen_action_found": 100376,
+   "tasks_C103_ge2": 93707,
+   "A_eligible": 73897,
+   "clean": 34882,
+   "clean_A_eligible": 24265,
+   "single_103_row_A_eligible": 73741,
+   "C103_size_all_tasks": {
+    "n": 100376,
+    "mean": 3.545,
+    "p50": 3,
+    "p90": 6,
+    "max": 31
+   },
+   "OUT_targets_per_eligible": {
+    "n": 73897,
+    "mean": 1.612,
+    "p50": 1,
+    "p90": 3,
+    "max": 15
+   },
+   "IN_anchors_per_eligible": {
+    "n": 73897,
+    "mean": 2.127,
+    "p50": 2,
+    "p90": 4,
+    "max": 27
+   },
+   "n103_rows_per_action_eligible": {
+    "1": 73741,
+    "2": 156
+   },
+   "claim_numbers_present_share_eligible": 1.0,
+   "cite103_max_eligible": {
+    "n": 73897,
+    "mean": 3.369,
+    "p50": 3,
+    "p90": 5,
+    "max": 30
+   },
+   "n103_all_eligible": {
+    "n": 73897,
+    "mean": 4.503,
+    "p50": 4,
+    "p90": 7,
+    "max": 51
+   }
+  },
+  "VAL": {
+   "tasks": 2000,
+   "chosen_action_found": 2000,
+   "tasks_C103_ge2": 1907,
+   "A_eligible": 1576,
+   "clean": 716,
+   "clean_A_eligible": 538,
+   "single_103_row_A_eligible": 1574,
+   "C103_size_all_tasks": {
+    "n": 2000,
+    "mean": 3.701,
+    "p50": 3,
+    "p90": 6,
+    "max": 15
+   },
+   "OUT_targets_per_eligible": {
+    "n": 1576,
+    "mean": 1.622,
+    "p50": 1,
+    "p90": 3,
+    "max": 10
+   },
+   "IN_anchors_per_eligible": {
+    "n": 1576,
+    "mean": 2.206,
+    "p50": 2,
+    "p90": 4,
+    "max": 13
+   },
+   "n103_rows_per_action_eligible": {
+    "1": 1574,
+    "2": 2
+   },
+   "claim_numbers_present_share_eligible": 1.0,
+   "cite103_max_eligible": {
+    "n": 1576,
+    "mean": 3.4,
+    "p50": 3,
+    "p90": 5,
+    "max": 17
+   },
+   "n103_all_eligible": {
+    "n": 1576,
+    "mean": 4.519,
+    "p50": 4,
+    "p90": 7,
+    "max": 18
+   }
+  },
+  "P1-DEV": {
+   "tasks": 26575,
+   "chosen_action_found": 26575,
+   "tasks_C103_ge2": 25220,
+   "A_eligible": 20857,
+   "clean": 9116,
+   "clean_A_eligible": 6823,
+   "single_103_row_A_eligible": 20837,
+   "C103_size_all_tasks": {
+    "n": 26575,
+    "mean": 3.761,
+    "p50": 3,
+    "p90": 6,
+    "max": 18
+   },
+   "OUT_targets_per_eligible": {
+    "n": 20857,
+    "mean": 1.659,
+    "p50": 1,
+    "p90": 3,
+    "max": 11
+   },
+   "IN_anchors_per_eligible": {
+    "n": 20857,
+    "mean": 2.278,
+    "p50": 2,
+    "p90": 4,
+    "max": 17
+   },
+   "n103_rows_per_action_eligible": {
+    "1": 20837,
+    "2": 20
+   },
+   "claim_numbers_present_share_eligible": 1.0,
+   "cite103_max_eligible": {
+    "n": 20857,
+    "mean": 3.442,
+    "p50": 3,
+    "p90": 5,
+    "max": 20
+   },
+   "n103_all_eligible": {
+    "n": 20857,
+    "mean": 4.528,
+    "p50": 4,
+    "p90": 7,
+    "max": 25
+   }
+  }
+ },
+ "G1": true,
+ "G2": true,
+ "G3": true,
+ "outcome": "SUFFICIENT",
+ "P1_TEST_A_eligible_estimate_n1_10000": 7848,
+ "P1_TEST_clean_A_eligible_estimate_n1_10000": 2567,
+ "seconds": 191.1
+}
