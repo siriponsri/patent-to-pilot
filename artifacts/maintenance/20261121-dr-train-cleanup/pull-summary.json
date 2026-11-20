@@ -1,0 +1,52 @@
+{
+  "host": "chaw@100.77.149.83",
+  "roots": [
+    "/data/ptp-paper2",
+    "/home/chaw/patent-to-pilot-jobs"
+  ],
+  "max_file_mb": 50.0,
+  "operator_excluded": [
+    "/data/ptp-paper2/b53"
+  ],
+  "files_listed": 156186,
+  "copied_ok": 71541,
+  "mismatch": 0,
+  "copy_error": 0,
+  "copied_bytes": 3608932070,
+  "large_not_copied": {
+    "files": 54,
+    "bytes": 41487664529
+  },
+  "excluded": {
+    "copy": {
+      "files": 71541,
+      "bytes": 3608932070
+    },
+    "sealed_or_protected_test": {
+      "files": 49439,
+      "bytes": 894364523
+    },
+    "raw_public_dataset": {
+      "files": 91,
+      "bytes": 17479623018
+    },
+    "operator_excluded": {
+      "files": 60,
+      "bytes": 912021148
+    },
+    "model_weights": {
+      "files": 4005,
+      "bytes": 26933586202
+    },
+    "large": {
+      "files": 54,
+      "bytes": 41487664529
+    },
+    "venv_or_cache": {
+      "files": 30996,
+      "bytes": 7179860988
+    }
+  },
+  "elapsed_s": 654.1,
+  "finished_utc": "2026-11-20T21:28:19Z"
+}

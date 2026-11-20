@@ -1,0 +1,17 @@
+path	bytes	action	reason	local_copy
+/data/ptp-paper2/bridgeret/dryrun	3670939275	delete	BridgeRet trainer dry-run outputs (smoke test only); small files archived and sha256-verified; dry-run model copies not archived (base models remain in /data/ptp-paper2/models)	_private_artifacts/dr-train-archive/20261121/files/data/ptp-paper2/bridgeret/dryrun
+/data/ptp-paper2/bridgeret/ft-bundle-v1.tar.gz	857526748	delete	transport tarball duplicate; identical local copy sha256 4416ddb0...; extracted ft-bundle-v1/ kept on dr-train	_private_artifacts/healthtech/ptp-ft-bundle-v1/ft-bundle-v1.tar.gz
+/data/ptp-paper2/runpod-pilot	335301359	delete	RunPod pilot of 16 Nov finished and pod deleted; all files archived except src/ipg180102.zip (public USPTO bulk file, re-downloadable)	_private_artifacts/dr-train-archive/20261121/files/data/ptp-paper2/runpod-pilot
+/data/ptp-paper2/bridgeret/failed	5989	delete	failed-attempt logs; archived and verified	_private_artifacts/dr-train-archive/20261121/files/data/ptp-paper2/bridgeret/failed
+/data/ptp-paper2/bridgeret/am7/stage2a-v1	0	delete	killed AM-7 run, empty directory	_private_artifacts/dr-train-archive/20261121/files/data/ptp-paper2/bridgeret/am7/stage2a-v1
+/data/ptp-paper2/bridgeret/am7/stage2a-v1.KILLED	130	delete	marker of killed run; archived	_private_artifacts/dr-train-archive/20261121/files/data/ptp-paper2/bridgeret/am7/stage2a-v1.KILLED
+/data/ptp-paper2/bridgeret/runs/ft-S1-t0.02/run-P1-DEV.tsv	817289739	delete	byte-identical to bridgeret/ft-grid/S1-t0.02/run-P1-DEV.tsv.gz (gunzip sha256 verified); gz kept on dr-train	(duplicate kept on dr-train)
+/data/ptp-paper2/bridgeret/runs/ft-S1-t0.02/run-VAL.tsv	61202672	delete	byte-identical to bridgeret/ft-grid/S1-t0.02/run-VAL.tsv.gz (gunzip sha256 verified); gz kept on dr-train	(duplicate kept on dr-train)
+/data/ptp-paper2/bridgeret/runs/ft-S2-t0.05/run-P1-DEV.tsv	817289633	delete	byte-identical to bridgeret/ft-grid/S2-t0.05/run-P1-DEV.tsv.gz (gunzip sha256 verified); gz kept on dr-train	(duplicate kept on dr-train)
+/data/ptp-paper2/bridgeret/runs/ft-S2-t0.05/run-VAL.tsv	61202644	delete	byte-identical to bridgeret/ft-grid/S2-t0.05/run-VAL.tsv.gz (gunzip sha256 verified); gz kept on dr-train	(duplicate kept on dr-train)
+/data/ptp-paper2/bridgeret/runs/ft-S3-t0.02-w1.5/run-P1-DEV.tsv	817289785	delete	byte-identical to bridgeret/ft-grid/S3-t0.02-w1.5/run-P1-DEV.tsv.gz (gunzip sha256 verified); gz kept on dr-train	(duplicate kept on dr-train)
+/data/ptp-paper2/bridgeret/runs/ft-S3-t0.02-w1.5/run-VAL.tsv	61202668	delete	byte-identical to bridgeret/ft-grid/S3-t0.02-w1.5/run-VAL.tsv.gz (gunzip sha256 verified); gz kept on dr-train	(duplicate kept on dr-train)
+/data/ptp-paper2/bridgeret/runs/ft-S4rule-t0.02/run-P1-DEV.tsv	817289679	delete	byte-identical to bridgeret/ft-grid/S4rule-t0.02/run-P1-DEV.tsv.gz (gunzip sha256 verified); gz kept on dr-train	(duplicate kept on dr-train)
+/data/ptp-paper2/bridgeret/runs/ft-S4rule-t0.02/run-VAL.tsv	61202646	delete	byte-identical to bridgeret/ft-grid/S4rule-t0.02/run-VAL.tsv.gz (gunzip sha256 verified); gz kept on dr-train	(duplicate kept on dr-train)
+/data/ptp-paper2/bridgeret/ft-bundle-v1/ser/passages.jsonl	1699490753	hardlink	byte-identical to /data/ptp-paper2/bridgeret/ser-qwen3-v1/passages.jsonl; replaced by a hardlink (no data loss)	(identical file kept on dr-train)
+/data/ptp-paper2/bridgeret/ft-bundle-v1/mined-TRAIN.jsonl	865526876	hardlink	byte-identical to /data/ptp-paper2/bridgeret/mined-qwen3-v1/mined-TRAIN.jsonl; replaced by a hardlink (no data loss)	(identical file kept on dr-train)

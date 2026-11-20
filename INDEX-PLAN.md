@@ -41,7 +41,7 @@ All rows keep their original scope; none is a result of the new engine.
 | Topic | Location | Status |
 |---|---|---|
 | Paper 53 / DAPFAM comparability | [plans/DAPFAM-PAPER-COMPARABILITY.md](docs/healthtech/research/plans/DAPFAM-PAPER-COMPARABILITY.md), [plans/RELATED-WORK-AUDIT.md](docs/healthtech/research/plans/RELATED-WORK-AUDIT.md) | Audit; exact Paper 53 replication not established |
-| B53 first-stage substitution (IS2) | [plans/B53-PREDECLARATION.md](docs/healthtech/research/plans/B53-PREDECLARATION.md), [B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md) | Stage 1 measured; Stage 2 incomplete |
+| B53 first-stage substitution (IS2) | [plans/B53-PREDECLARATION.md](docs/healthtech/research/plans/B53-PREDECLARATION.md), [B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md) | Stage 1 measured; Stage 2 running on dr-train (861/905 on 21 Nov) |
 | P1-DAPFAM (old Paper 1) | [paper1-report/TEST-RESULT-TABLES.md](docs/healthtech/research/paper1-report/TEST-RESULT-TABLES.md), [PAPER1-MANUSCRIPT-DRAFT.md](docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md) | Closed, H1 inconclusive; test exposed |
 | P1-BridgeRet manifests and DEV baselines | [paper1-bridgeret/](docs/healthtech/research/paper1-bridgeret/) (`manifest-v2/`, `dev-results/`, `MORNING-REPORT-20261119.md`) | Frozen manifest; DEV descriptive |
 | P1 fine-tuning grid | [ft-grid30k/sstar-grid30k.md](docs/healthtech/research/paper1-bridgeret/ft-grid30k/sstar-grid30k.md), [P1-RETHINK-20261120.md](docs/healthtech/research/paper1-bridgeret/P1-RETHINK-20261120.md) | All configs below zero-shot; parked |
@@ -49,6 +49,7 @@ All rows keep their original scope; none is a result of the new engine.
 | DAPFAM acquisition pre-checks | [paper2-precheck/README.md](docs/healthtech/research/paper2-precheck/README.md) | All NO_GO; do not repeat |
 | Audit convention and run records | [docs/healthtech/audits/README.md](docs/healthtech/audits/README.md) | Historical receipts; tests read some of them |
 | Literature | [literature-review/](literature-review/README.md) | Curated, not a systematic review |
+| dr-train artifact archive and cleanup (21 Nov 2026) | [maintenance/20261121-dr-train-cleanup/](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md), [runbook](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md) | Small artifacts archived locally (outside git); about 21.8 GB freed on dr-train; `b53/` pending |
 
 ## 4. Writing
 

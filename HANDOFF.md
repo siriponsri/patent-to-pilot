@@ -38,22 +38,27 @@ follows it; check `git log -3` for the containing commit.
   ([TEST-RESULT-TABLES.md](docs/healthtech/research/paper1-report/TEST-RESULT-TABLES.md)). Its test qrels are exposed; never
   rerun S8 jobs.
 - **B53 (IS2 core):** Stage 1 measured 19 Nov ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)).
-  Stage 2 (reranker scoring, resumable per query) was last recorded at 69/905 queries on dr-train and is **unverified this
-  session**; check `b53/queue_b53_stage2.log` before relying on it.
+  Stage 2 (reranker scoring, resumable per query) is **still running** on the dr-train V100 (PID 2137435, 861/905 queries
+  at 21 Nov ~04:30 Bangkok; then BGE). When `b53/queue_b53_stage2.log` ends `B53_STAGE2_SCORES_DONE`, run
+  `scripts/healthtech/b53_stage2_eval.py`, then `scripts/writing/render_b53_stage2.py`, then pull `b53/` (runbook below).
 - **IS2 drafts:** [docs/writing/is2/](docs/writing/is2/) (short paper v0.1, committee response, slides outline). Advisor
   details and Stage 2 numbers are pending.
 
 ### Running jobs
 
-- None started by this session. A parallel session (`drtrain-cleanup`) is pulling and pruning this project's dr-train
-  artifacts and `../_private_artifacts`; it commits only under `artifacts/maintenance/` and `scripts/maintenance/`. Read its
-  report before starting dr-train work.
+- B53 Stage 2 on dr-train (above). Nothing else of this project runs there.
+- **21 Nov dr-train cleanup done** ([summary](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md), runbook
+  [DR-TRAIN-ARTIFACT-RUNBOOK.md](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md), script
+  `scripts/maintenance/pull_dr_train_artifacts.py`): small result files are archived and sha256-verified in
+  `../_private_artifacts/dr-train-archive/20261121/`. On dr-train, about 21.8 GB was freed: dry-run, pilot and failed
+  directories removed; duplicate FT run TSVs removed; unique run TSVs compressed in place as `run-*.tsv.gz` (read them with
+  `gunzip -c`). `b53/` is not yet archived.
 
 ### Next steps
 
 1. Start G02 from `docs/owner/owner-note-21112026/02_GOALS_AND_PHASES.md` §G02 and `product/` specs; reuse the G01 core.
 2. Ask the owner to observe the two remaining G01 launcher checks (double-click, browser auto-open).
-3. Confirm B53 Stage 2 state on dr-train (read-only) and record it here.
+3. When B53 Stage 2 finishes: evaluate, render, then pull and prune `b53/` following the runbook.
 4. After each phase, pull dr-train artifacts to local and delete remote copies that are no longer needed.
 
 ### Owner decisions pending

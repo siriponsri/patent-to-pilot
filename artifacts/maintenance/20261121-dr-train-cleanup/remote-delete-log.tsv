@@ -1,0 +1,18 @@
+status	path	bytes	reason_or_canonical
+DELETED	/data/ptp-paper2/bridgeret/dryrun	3670939275	dry-run outputs (BridgeRet trainer smoke); small files archived, weights are dry-run only
+DELETED	/data/ptp-paper2/bridgeret/ft-bundle-v1.tar.gz	857526748	transport tarball; identical local copy sha 4416ddb0 in _private_artifacts/healthtech/ptp-ft-bundle-v1; extracted ft-bundle-v1/ kept
+DELETED	/data/ptp-paper2/runpod-pilot	335301359	RunPod pilot 16 Nov finished, pod deleted; small files archived; ipg180102.zip is a public USPTO bulk file
+DELETED	/data/ptp-paper2/bridgeret/failed	5989	failed attempt logs (archived)
+DELETED	/data/ptp-paper2/bridgeret/am7/stage2a-v1	0	killed run, empty dir
+DELETED	/data/ptp-paper2/bridgeret/am7/stage2a-v1.KILLED	130	marker of killed run (archived)
+DELETED	/data/ptp-paper2/bridgeret/runs/ft-S1-t0.02/run-P1-DEV.tsv	817289739	byte-identical to ft-grid/S1-t0.02/run-P1-DEV.tsv.gz (verified gunzip sha256)
+DELETED	/data/ptp-paper2/bridgeret/runs/ft-S1-t0.02/run-VAL.tsv	61202672	byte-identical to ft-grid/S1-t0.02/run-VAL.tsv.gz (verified gunzip sha256)
+DELETED	/data/ptp-paper2/bridgeret/runs/ft-S2-t0.05/run-P1-DEV.tsv	817289633	byte-identical to ft-grid/S2-t0.05/run-P1-DEV.tsv.gz (verified gunzip sha256)
+DELETED	/data/ptp-paper2/bridgeret/runs/ft-S2-t0.05/run-VAL.tsv	61202644	byte-identical to ft-grid/S2-t0.05/run-VAL.tsv.gz (verified gunzip sha256)
+DELETED	/data/ptp-paper2/bridgeret/runs/ft-S3-t0.02-w1.5/run-P1-DEV.tsv	817289785	byte-identical to ft-grid/S3-t0.02-w1.5/run-P1-DEV.tsv.gz (verified gunzip sha256)
+DELETED	/data/ptp-paper2/bridgeret/runs/ft-S3-t0.02-w1.5/run-VAL.tsv	61202668	byte-identical to ft-grid/S3-t0.02-w1.5/run-VAL.tsv.gz (verified gunzip sha256)
+DELETED	/data/ptp-paper2/bridgeret/runs/ft-S4rule-t0.02/run-P1-DEV.tsv	817289679	byte-identical to ft-grid/S4rule-t0.02/run-P1-DEV.tsv.gz (verified gunzip sha256)
+DELETED	/data/ptp-paper2/bridgeret/runs/ft-S4rule-t0.02/run-VAL.tsv	61202646	byte-identical to ft-grid/S4rule-t0.02/run-VAL.tsv.gz (verified gunzip sha256)
+HARDLINKED	/data/ptp-paper2/bridgeret/ft-bundle-v1/ser/passages.jsonl	1699490753	/data/ptp-paper2/bridgeret/ser-qwen3-v1/passages.jsonl
+HARDLINKED	/data/ptp-paper2/bridgeret/ft-bundle-v1/mined-TRAIN.jsonl	865526876	/data/ptp-paper2/bridgeret/mined-qwen3-v1/mined-TRAIN.jsonl
+CLEANUP_DONE

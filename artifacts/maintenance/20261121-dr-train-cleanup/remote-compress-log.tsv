@@ -1,0 +1,19 @@
+status	path	bytes_before	bytes_gz	sha256_uncompressed
+OK	/data/ptp-paper2/bridgeret/runs/bm25/run-P1-DEV.tsv	842115145	280101700	f82f088967c52891d15c28dfa51581e7162bab40888109c7bf085532e8c2d17e
+OK	/data/ptp-paper2/bridgeret/runs/bm25/run-VAL.tsv	63046762	20970428	6bb2fac0fd2140457791e17d22de1bfa26ec56be950a5d988ae966390bc80197
+OK	/data/ptp-paper2/bridgeret/runs/bm25-train/run-TRAIN.tsv	3188368641	1057931267	2c0547833a1d83d6c6bfe42e196cc28567ecfdfc2d0b9c85db151c1e91bfdca0
+OK	/data/ptp-paper2/bridgeret/runs/e0-arctic/run-P1-DEV.tsv	842915559	238449438	f8855df356fa16c65b795f8f256ea3b4a23a5b059e9a25d39f3ae23270e40c2f
+OK	/data/ptp-paper2/bridgeret/runs/e0-arctic/run-VAL.tsv	63121650	17852001	4d91403eecc425153bb8d639baa3b9feac2b0e32bc2a57d076f36eb10b46ffd6
+OK	/data/ptp-paper2/bridgeret/runs/e0-qwen3/run-P1-DEV.tsv	842915483	239163640	d4fd3167fe018d42a8f452cb6dad634ced0b0f8816fc781c0d1e6b3ae013e9f3
+OK	/data/ptp-paper2/bridgeret/runs/e0-qwen3/run-VAL.tsv	63121642	17892544	1194f63d751e01dbfc6b61985e6d99f0485ffed8d7025ea2a48537bda326da82
+OK	/data/ptp-paper2/bridgeret/runs/ft-S2-t0.02/run-P1-DEV.tsv	817289617	233046043	2ecdb14f5d9b9130f87ff8e4e395e5139ef19aaca5418e894b2bb08514f275c8
+OK	/data/ptp-paper2/bridgeret/runs/ft-S2-t0.02/run-VAL.tsv	61202646	17439975	af5838f27c0a234bd4ab500aee8f5285a6ea03a6824077ac5966bfcdab62bc1b
+OK	/data/ptp-paper2/bridgeret/runs/z-arctic/run-P1-DEV.tsv	817289533	246298151	3c4ba2f9e4d4afc73b3ba20f1161ab31d5fcf1a442a5bedb7e92de5aa0b63f72
+OK	/data/ptp-paper2/bridgeret/runs/z-arctic/run-TRAIN.tsv	3095500328	930659518	822b8bc355819fd99581efdd2fa6ff56bd3572ea6e93511222fb3b382149f648
+OK	/data/ptp-paper2/bridgeret/runs/z-arctic/run-VAL.tsv	61202642	18424548	637cd5c2551d79ac826bfc52a0be371d51ff242fb3e5dbfe58f942eb24145acb
+OK	/data/ptp-paper2/bridgeret/runs/z-patembed/run-P1-DEV.tsv	817289713	248303254	e383e9af33e95854e82f76143131c4b13f5f7aff7fb56f764745179c009525db
+OK	/data/ptp-paper2/bridgeret/runs/z-patembed/run-VAL.tsv	61202672	18584450	04b5382e0a7f5a0c77ac6e672fa6e539c87e1af86b616bcd0d88a2f742f68e7f
+OK	/data/ptp-paper2/bridgeret/runs/z-qwen3/run-P1-DEV.tsv	817289359	246516209	eb88bd647d7ecde2764692baa1921cba7ee54cdff3879fab4e6e9d933955af99
+OK	/data/ptp-paper2/bridgeret/runs/z-qwen3/run-TRAIN.tsv	3095499744	931584172	af32e36457b8cd73da5a831a67d30c2876baf59c27d82ebfbd0684932e5da632
+OK	/data/ptp-paper2/bridgeret/runs/z-qwen3/run-VAL.tsv	61202636	18439774	0720392f663a4fe1511e2cc58c47cb3965f877f1669f7da33f7e3a40cc4cbfcf
+COMPRESS_DONE

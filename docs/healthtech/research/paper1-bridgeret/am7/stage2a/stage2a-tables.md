@@ -119,3 +119,8 @@ some stage-2a candidate beats both U0 and N* by >= 0.010 on P1-DEV MR@200: {'A1:
 - D1: MDE@7360 = 0.0088, MDE@7850 = 0.0086
 - D2: MDE@7360 = 0.0138, MDE@7850 = 0.0134
 - C4: MDE@9500 = 0.0094, MDE@9800 = 0.0093
+
+## Sensitivity (AM-7.1 §7, descriptive)
+
+- P1-DEV: {"n_cohort": 20114, "U0_qwen3_MR@200": [0.27149, 20114], "Astar_qwen3_MR@200": [0.2837, 20114], "D1_qwen3": {"delta": 0.01221, "ci95_artunit": [0.00866, 0.01652]}, "BM25_MR@200": [0.1705, 20114], "RRF_BM25_N5_MR@200": [0.1852, 20114], "RRF_BM25_N5_minus_BM25": {"delta": 0.0147, "ci95_artunit": [0.01106, 0.01914]}}
+- VAL: {"n_cohort": 1519, "U0_qwen3_MR@200": [0.29445, 1519], "Astar_qwen3_MR@200": [0.30224, 1519], "D1_qwen3": {"delta": 0.00779, "ci95_artunit": [0.0034, 0.01263]}, "BM25_MR@200": [0.17387, 1519], "RRF_BM25_N5_MR@200": [0.18555, 1519], "RRF_BM25_N5_minus_BM25": {"delta": 0.01169, "ci95_artunit": [0.0064, 0.01742]}}

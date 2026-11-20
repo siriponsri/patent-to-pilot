@@ -33,8 +33,11 @@ untracked: never edit, move, delete or commit anything under `docs/owner/`.**
 - **Research P1 / AM-7: parked.** Stage 2a results (DEV/VAL, descriptive) are in
   [docs/healthtech/research/paper1-bridgeret/am7/stage2a/](docs/healthtech/research/paper1-bridgeret/am7/stage2a/).
   The owner gate in AM-7 §6.4 failed, so no paid step runs without the owner.
-- **B53 / IS2:** Stage 1 measured ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)); Stage 2 was
-  last recorded incomplete on dr-train. IS2 drafts live in [docs/writing/is2/](docs/writing/is2/).
+- **B53 / IS2:** Stage 1 measured ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)); Stage 2 is
+  still running on dr-train (861/905 queries at 21 Nov ~04:30). IS2 drafts live in [docs/writing/is2/](docs/writing/is2/).
+- **21 Nov 2026 dr-train cleanup:** about 21.8 GB freed on dr-train, with small artifacts archived and verified in
+  `../_private_artifacts/dr-train-archive/20261121/`. Unique run TSVs are now `run-*.tsv.gz`. See
+  [artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md).
 
 ## 3. Standing rules (all remain in force)
 
@@ -52,7 +55,8 @@ untracked: never edit, move, delete or commit anything under `docs/owner/`.**
 7. **Update the handoff on major events:** a finished step, an owner decision, a new blocker, before long or background jobs,
    and before ending a session. Rewrite the current-state section of HANDOFF.md in place; do not append diaries.
 8. **After every phase, pull this project's dr-train artifacts to local, then delete the remote copies that are no longer
-   needed** (this project's folders only, never other users' or services' data).
+   needed** (this project's folders only, never other users' or services' data). Procedure:
+   [docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md).
 9. **Paper 86 is banned in journal papers** (never mentioned, cited or reused). It is allowed only in the IS2 track.
    `tests/test_org_adaptive_terminology.py` enforces this over `docs/writing/journal/`.
 10. **arXiv:2605.24297 is not used as a source.**
