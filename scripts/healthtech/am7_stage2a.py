@@ -125,8 +125,9 @@ def run_block(ctx, b, Qv, ids, batch, log):
         if cand is not None:
             V = ctx.P[cand]
             qsims = np.take_along_axis(S, cand, axis=1)
+            simm = np.matmul(V, np.swapaxes(V, 1, 2))
             for lam in MMR_LAMBDAS:
-                mm = L.mmr_batch(cand, V, qsims.astype(np.float32), lam)
+                mm = L.mmr_batch(cand, V, qsims.astype(np.float32), lam, sim=simm)
                 for r, q in enumerate(qs):
                     E1[f'MMR:{lam:g}'][q['app']] = e1_metrics(mm[r], q)
         else:

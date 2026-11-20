@@ -102,11 +102,12 @@ def mmr(cand, vecs, qsims, lam, depth=DEPTH):
     return cand[np.array(chosen, dtype=np.int64)]
 
 
-def mmr_batch(cands, vecs, qsims, lam, depth=DEPTH):
+def mmr_batch(cands, vecs, qsims, lam, depth=DEPTH, sim=None):
     """Batched greedy MMR: cands (b, n), vecs (b, n, d), qsims (b, n). Same rule as mmr(); argmax ties -> lowest position
     (positions follow U0 order, so ties go to the better U0 rank)."""
     b, n = cands.shape
-    sim = np.einsum('bnd,bmd->bnm', vecs, vecs, optimize=True)
+    if sim is None:
+        sim = np.matmul(vecs, np.swapaxes(vecs, 1, 2))      # batched BLAS (einsum here was ~100x slower)
     maxsim = np.zeros((b, n), dtype=np.float32)
     first = np.ones(b, dtype=bool)
     avail = np.ones((b, n), dtype=bool)
