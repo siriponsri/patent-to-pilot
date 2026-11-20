@@ -1,0 +1,18 @@
+{
+ "format": "ptp-panorama-combo-precision-v1",
+ "records": 8143,
+ "all": {
+  "actions": 5188,
+  "pairs": 21174,
+  "pair_together_share": 0.7363,
+  "pair_with_primary_share": 0.4951,
+  "macro_together_share": 0.8806
+ },
+ "filed_le_2014": {
+  "actions": 1154,
+  "pairs": 4402,
+  "pair_together_share": 0.7474,
+  "pair_with_primary_share": 0.5218,
+  "macro_together_share": 0.8792
+ }
+}
