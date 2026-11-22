@@ -29,12 +29,15 @@ untracked: never edit, move, delete or commit anything under `docs/owner/`.**
 - **G01 local Workbench vertical slice: COMPLETE** (commit `40780c97`). Status and receipts:
   [artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md).
   Only owner-observed item left: Explorer double-click of `Start-PTP.cmd` and default-browser auto-open.
-- **Next goal: G02** (provider, ingestion and dataset contracts).
+- **G02 provider, ingestion and dataset contracts: COMPLETE** (22 Nov 2026, USD 0). Status and receipts:
+  [artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md).
+- **Next goal: G03** (baselines and candidate policy on allowed DEV). Lessons for a new account:
+  [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
 - **Research P1 / AM-7: parked.** Stage 2a results (DEV/VAL, descriptive) are in
   [docs/healthtech/research/paper1-bridgeret/am7/stage2a/](docs/healthtech/research/paper1-bridgeret/am7/stage2a/).
   The owner gate in AM-7 §6.4 failed, so no paid step runs without the owner.
-- **B53 / IS2:** Stage 1 measured ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)); Stage 2 is
-  still running on dr-train (861/905 queries at 21 Nov ~04:30). IS2 drafts live in [docs/writing/is2/](docs/writing/is2/).
+- **B53 / IS2:** Stage 1 measured ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)); Stage 2
+  scoring finished on dr-train (22 Nov); evaluation and rendering are still to do. IS2 drafts live in [docs/writing/is2/](docs/writing/is2/).
 - **21 Nov 2026 dr-train cleanup:** about 21.8 GB freed on dr-train, with small artifacts archived and verified in
   `../_private_artifacts/dr-train-archive/20261121/`. Unique run TSVs are now `run-*.tsv.gz`. See
   [artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md).
@@ -64,7 +67,7 @@ untracked: never edit, move, delete or commit anything under `docs/owner/`.**
 12. No LLM judge as ground truth. Literal source match is source integrity, not semantic support.
 13. Never read or print `.env` or credentials. No force-push, `git reset --hard`, `git clean`, or history rewriting.
 
-## 4. Protected code (G01 just shipped)
+## 4. Protected code (G01 and G02 shipped)
 
 Do not change `src/patent_to_pilot/workbench/`, `scripts/ptp_run.py`, `Start-PTP.cmd`, `tests/` or
 `artifacts/owner-program/` without a goal that requires it. Run `python -m pytest` before committing code; the only accepted

@@ -66,6 +66,29 @@ CREATE TABLE IF NOT EXISTS change_events (
 """
 
 
+# G02 additions. Created in place on existing G01 stores (CREATE IF NOT EXISTS): no G01 table changes.
+SCHEMA_G02 = """
+CREATE TABLE IF NOT EXISTS provider_profiles (
+  profile_id TEXT PRIMARY KEY, role TEXT NOT NULL, adapter TEXT NOT NULL, config_json TEXT NOT NULL,
+  created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS provider_checks (
+  profile_id TEXT NOT NULL, config_sha256 TEXT NOT NULL, overall TEXT NOT NULL, result_json TEXT NOT NULL,
+  checked_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS provider_usage (
+  profile_id TEXT NOT NULL, operation TEXT NOT NULL, billable INTEGER NOT NULL, status TEXT NOT NULL,
+  usage_json TEXT, latency_ms REAL, detail TEXT, at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS index_generations (
+  generation_id TEXT PRIMARY KEY, project_id TEXT NOT NULL, profile_id TEXT NOT NULL,
+  embedding_space_id TEXT NOT NULL, identity_json TEXT NOT NULL, status TEXT NOT NULL, n_vectors INTEGER NOT NULL,
+  dimension INTEGER, vectors_path TEXT, vectors_sha256 TEXT, reused_vectors INTEGER NOT NULL DEFAULT 0,
+  embedded_vectors INTEGER NOT NULL DEFAULT 0, created_at TEXT NOT NULL, activated_at TEXT, retired_at TEXT,
+  detail_json TEXT);
+CREATE TABLE IF NOT EXISTS project_settings (
+  project_id TEXT PRIMARY KEY, retrieval_mode TEXT NOT NULL, embedding_profile_id TEXT,
+  active_generation_id TEXT, updated_at TEXT NOT NULL);
+"""
+
+
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
@@ -84,6 +107,7 @@ class Store:
         self.path = self.data_dir / "workbench.sqlite3"
         with self.connect() as con:
             con.executescript(SCHEMA)
+            con.executescript(SCHEMA_G02)
             con.execute("INSERT OR IGNORE INTO meta(key, value) VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
             stored = con.execute("SELECT value FROM meta WHERE key='schema_version'").fetchone()[0]
             if stored != SCHEMA_VERSION:

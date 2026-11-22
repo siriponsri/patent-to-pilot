@@ -269,8 +269,10 @@ def test_guard_blocks_remote_connections_and_capabilities_are_lexical_only(core)
             socket.create_connection(("203.0.113.5", 443), timeout=1)
     assert attempts
     caps = core.capabilities()
-    assert caps["lexical"]["state"] == "active" and caps["local_model"]["state"] == "disabled"
-    assert caps["api_model"]["state"] == "disabled" and not caps["remote_calls_allowed"]
+    # G02: model roles exist but nothing is configured by default; paid routes stay blocked without an envelope
+    assert caps["lexical"]["state"] == "active" and caps["local_model"]["state"] == "not_configured"
+    assert caps["api_model"]["state"] == "blocked_without_envelope"
+    assert caps["remote_calls_allowed"] == "per_profile_allow_remote"
     assert not caps["model_downloads_allowed"]
 
 

@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "program_id": "PTP-2026-11-21",
+  "goal_id": "G02",
+  "checked_date": "2026-11-22",
+  "inspection": "metadata_and_dataset_cards_only_no_rows_fetched",
+  "source_keys": {
+    "OWNER04": "docs/owner/owner-note-21112026/04_DATASETS_AND_TRANSFER.md (owner-local, untracked)",
+    "OWNERREG": "docs/owner/owner-note-21112026/config/dataset_registry.json (owner-local, untracked)",
+    "B53": "docs/writing/is2/results/B53-STAGE1-RESULTS.md",
+    "B53CODE": "scripts/healthtech/b53_first_stage.py (cmd_build, tac)",
+    "HF_INFO_DAPFAM": "https://datasets-server.huggingface.co/info?dataset=datalyes/DAPFAM_patent",
+    "HF_CARD_DAPFAM": "https://huggingface.co/datasets/datalyes/DAPFAM_patent/resolve/780f4011d60297fc6e97a4119b0c516d13afea2d/README.md",
+    "HF_INFO_GAZETTE": "https://datasets-server.huggingface.co/info?dataset=VISAI-AI/thai-gazette-evidence-retrieval",
+    "HF_CARD_GAZETTE": "https://huggingface.co/datasets/VISAI-AI/thai-gazette-evidence-retrieval/resolve/87e695ee4951ff34932804431433ac55991ec374/README.md",
+    "HF_INFO_NITI": "https://datasets-server.huggingface.co/info?dataset=VISAI-AI/nitibench-plus (HTTP 401: gated, no schema returned)",
+    "HF_CARD_NITI": "https://huggingface.co/datasets/VISAI-AI/nitibench-plus/resolve/41286bcb1eeba6721c03d581d4ca3095a1b7f7b7/README.md",
+    "G01": "artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md; src/patent_to_pilot/workbench/sample/source_manifest.json"
+  },
+  "datasets": [
+    {
+      "dataset_id": "ptp_g01_fixture",
+      "hf_repo": null,
+      "revision": null,
+      "license": "CC0-1.0",
+      "role": "g01_runtime_and_engineering_checks",
+      "development_use": true,
+      "exposure": "original_synthetic_fixture_authored_for_ptp",
+      "access": {"kind": "bundled_fixture", "acceptance_performed": null},
+      "language": "en",
+      "offset_convention": "not_applicable",
+      "local_markers": ["source_manifest.json"],
+      "bundled_path": "../sample",
+      "native_configs": [
+        {
+          "config": "source_manifest",
+          "split": null,
+          "data_files": "source_manifest.json",
+          "rows": null,
+          "evaluator_only": false,
+          "runtime_fields": ["source_id", "version_id", "candidate_id", "path", "sha256", "source_kind", "license", "valid_from", "valid_to"],
+          "evaluator_fields": [],
+          "dropped_fields": []
+        }
+      ],
+      "evaluator_only_paths": ["tests/fixtures/ptp_g01/expected_assertions.json"],
+      "runtime_excludes": ["test_only", "incoming"],
+      "unreleased_assets": [],
+      "field_name_status": {"verified": ["source_manifest"], "assumed": []},
+      "sources": {
+        "license": "G01",
+        "role": "OWNERREG",
+        "exposure": "G01",
+        "access": "G01",
+        "native_configs": "G01",
+        "runtime_excludes": "OWNERREG",
+        "evaluator_only_paths": "G01"
+      }
+    },
+    {
+      "dataset_id": "datalyes/DAPFAM_patent",
+      "hf_repo": "datalyes/DAPFAM_patent",
+      "revision": "780f4011d60297fc6e97a4119b0c516d13afea2d",
+      "license": "CC-BY-NC-SA-4.0",
+      "role": "principal_patent_benchmark",
+      "development_use": false,
+      "product_bundle_allowed": false,
+      "exposure": "previously_exposed_benchmark: B53 Stage 1 already evaluated ALL 1,247 / OUT 905 / IN 1,217 eligible queries; aggregate results known; describe as previously exposed external benchmark",
+      "exposure_counts": {"all": 1247, "out": 905, "in": 1217},
+      "access": {"kind": "public", "acceptance_performed": null},
+      "language": "en",
+      "offset_convention": "no_native_span_labels; family-level relevance only",
+      "text_views": {
+        "TA": ["title_en", "abstract_en"],
+        "TAC": ["title_en", "abstract_en", "claims_text"],
+        "FULL": ["title_en", "abstract_en", "claims_text", "description_en"]
+      },
+      "text_view_join": "newline_between_non_empty_fields",
+      "default_query_view": "TAC",
+      "default_corpus_view": "TAC",
+      "candidate_corpus": "full_corpus_for_ALL_IN_OUT; an IPC candidate mask changes the task",
+      "storage_split_is_learning_split": false,
+      "local_markers": ["corpus.parquet", "queries.parquet"],
+      "native_configs": [
+        {
+          "config": "corpus",
+          "split": "train",
+          "data_files": "corpus.parquet",
+          "rows": 45336,
+          "evaluator_only": false,
+          "id_field": "relevant_id",
+          "runtime_fields": ["relevant_id", "earliest_claim_jusrisdiction", "jurisdiction", "ipcr_codes_str", "earliest_claim_date", "earliest_claim_year", "classifications_ipcr_list_first_three_chars_list", "title_en", "abstract_en", "claims_text", "description_en"],
+          "evaluator_fields": [],
+          "dropped_fields": []
+        },
+        {
+          "config": "queries",
+          "split": "train",
+          "data_files": "queries.parquet",
+          "rows": 1247,
+          "evaluator_only": false,
+          "id_field": "query_id",
+          "runtime_fields": ["query_id", "earliest_claim_jusrisdiction", "jurisdiction", "ipcr_codes_str", "earliest_claim_date", "earliest_claim_year", "classifications_ipcr_list_first_three_chars_list", "title_en", "abstract_en", "claims_text", "description_en", "abstract_keywords"],
+          "evaluator_fields": [],
+          "dropped_fields": []
+        },
+        {
+          "config": "relations",
+          "split": "train",
+          "data_files": "qrels_all.parquet",
+          "rows": 49869,
+          "evaluator_only": true,
+          "runtime_fields": [],
+          "evaluator_fields": ["query_id", "relevant_id", "relevance_score", "domain_rel"],
+          "dropped_fields": []
+        }
+      ],
+      "partition_derivable_fields": ["ipcr_codes_str", "classifications_ipcr_list_first_three_chars_list"],
+      "unreleased_assets": [],
+      "field_name_status": {
+        "verified": ["corpus", "queries", "relations"],
+        "assumed": [],
+        "notes": "Column names verified via datasets-server /info; the source spells 'earliest_claim_jusrisdiction'. TA/TAC are PTP view definitions (B53 tac(): non-empty fields joined by newline), not defined on the card."
+      },
+      "sources": {
+        "revision": "OWNER04 §4; OWNERREG",
+        "license": "OWNER04 §10; HF_CARD_DAPFAM",
+        "role": "OWNER04 §1",
+        "development_use": "OWNER04 §4; OWNERREG",
+        "exposure": "OWNER04 §4; B53; OWNERREG",
+        "exposure_counts": "OWNER04 §4; OWNERREG",
+        "access": "OWNER04 §1",
+        "native_configs": "HF_INFO_DAPFAM; HF_CARD_DAPFAM",
+        "text_views": "OWNER04 §4; B53CODE",
+        "default_query_view": "OWNERREG",
+        "candidate_corpus": "OWNER04 §4",
+        "evaluator_fields": "OWNER04 §4 (citation-derived qrels evaluator-only)",
+        "partition_derivable_fields": "HF_CARD_DAPFAM (domain_rel from IPC 3-char overlap)"
+      }
+    },
+    {
+      "dataset_id": "VISAI-AI/thai-gazette-evidence-retrieval",
+      "hf_repo": "VISAI-AI/thai-gazette-evidence-retrieval",
+      "revision": "87e695ee4951ff34932804431433ac55991ec374",
+      "license": "CC-BY-4.0",
+      "role": "public_frozen_transfer",
+      "development_use": false,
+      "product_bundle_allowed": true,
+      "exposure": "not_exposed_in_ptp: metadata and card only; questions and qrels not inspected; native test partition is evaluation-only",
+      "access": {"kind": "public", "acceptance_performed": null},
+      "language": "th",
+      "offset_convention": "unicode_code_points_half_open (Python str indices, not bytes); corpus[corpus-id].text[start:end] == evidence_text",
+      "local_markers": ["corpus", "queries"],
+      "native_configs": [
+        {
+          "config": "corpus",
+          "split": "corpus",
+          "data_files": "corpus/corpus-*",
+          "rows": 25000,
+          "evaluator_only": false,
+          "id_field": "_id",
+          "runtime_fields": ["_id", "title", "text", "category"],
+          "evaluator_fields": [],
+          "dropped_fields": []
+        },
+        {
+          "config": "queries",
+          "split": "queries",
+          "data_files": "queries/queries-*",
+          "rows": 2000,
+          "evaluator_only": false,
+          "id_field": "_id",
+          "runtime_fields": ["_id", "text"],
+          "evaluator_fields": ["author_model", "judge_model"],
+          "withheld_fields": ["question_type"],
+          "dropped_fields": []
+        },
+        {
+          "config": "default",
+          "split": "test",
+          "data_files": "default/test-*",
+          "rows": 2594,
+          "evaluator_only": true,
+          "runtime_fields": [],
+          "evaluator_fields": ["query-id", "corpus-id", "score", "evidence_start_char", "evidence_end_char", "evidence_text", "passage_text"],
+          "dropped_fields": []
+        }
+      ],
+      "unreleased_assets": [],
+      "field_name_status": {
+        "verified": ["corpus", "queries", "default"],
+        "assumed": [],
+        "notes": "Column names verified via datasets-server /info and the pinned card. corpus.title is always empty (BEIR compatibility) and is preserved as-is."
+      },
+      "sources": {
+        "revision": "OWNER04 §3",
+        "license": "OWNER04 §3, §10; HF_CARD_GAZETTE",
+        "role": "OWNER04 §1",
+        "development_use": "OWNER04 §3.2",
+        "exposure": "OWNER04 §3.2",
+        "access": "OWNER04 §1",
+        "offset_convention": "OWNER04 §3; HF_CARD_GAZETTE",
+        "native_configs": "HF_INFO_GAZETTE; HF_CARD_GAZETTE",
+        "evaluator_fields": "OWNER04 §3.2",
+        "withheld_fields": "OWNER04 §3.2 (question_type withheld from runtime by default; release must be predeclared and identical across arms)"
+      }
+    },
+    {
+      "dataset_id": "VISAI-AI/nitibench-plus",
+      "hf_repo": "VISAI-AI/nitibench-plus",
+      "revision": "41286bcb1eeba6721c03d581d4ca3095a1b7f7b7",
+      "paper_version": "arXiv:2611.03576v3",
+      "license": "CC-BY-4.0",
+      "role": "optional_temporal_companion",
+      "development_use": false,
+      "product_bundle_allowed": false,
+      "exposure": "not_exposed_in_ptp: card metadata only; acceptance not performed; no rows downloaded",
+      "access": {"kind": "auto_gated", "acceptance_performed": false, "acceptance_record": null},
+      "language": "th",
+      "offset_convention": "no_native_character_spans; evidence is a versioned section joined by version_uri",
+      "counts": {"public_cases": 498, "public_subquestions": 1228, "public_gold_section_versions": 3253, "gold_citations": 3665, "unresolved_gold_citations": 130, "private_test_cases": 500, "private_reserve_cases": 672},
+      "allowed_named_settings": ["parametric_public_validation", "gold_cited_in_force_public_validation", "separately_declared_PTP_update_extension"],
+      "local_markers": ["validation_split.jsonl"],
+      "native_configs": [
+        {
+          "config": "validation_split",
+          "split": "validation",
+          "data_files": "validation_split.jsonl",
+          "rows": 498,
+          "evaluator_only": false,
+          "id_field": "id",
+          "runtime_fields": ["id", "court", "decision_date", "domain", "fact_pattern", "sub_questions", "question"],
+          "withheld_fields": ["question_type"],
+          "evaluator_fields": ["source_id", "title", "drift_band", "verdict", "reasoning", "citations", "law", "section", "version_uri", "valid_from", "valid_to", "current_uri"],
+          "dropped_fields": ["canary"]
+        },
+        {
+          "config": "gold_sections",
+          "split": "validation",
+          "data_files": "gold_sections.jsonl",
+          "rows": 3253,
+          "evaluator_only": true,
+          "oracle_runtime_setting": "gold_cited_in_force_public_validation",
+          "runtime_fields": [],
+          "evaluator_fields": ["version_uri", "law", "section", "valid_from", "valid_to", "current_uri", "text"],
+          "dropped_fields": ["canary"]
+        }
+      ],
+      "field_map": {
+        "case_id": "id",
+        "decision_date": "decision_date",
+        "sub_questions": "sub_questions",
+        "question": "question",
+        "question_type": "question_type",
+        "verdict": "verdict",
+        "reasoning": "reasoning",
+        "citations": "citations",
+        "law": "law",
+        "section": "section",
+        "section_text": "text"
+      },
+      "unreleased_assets": ["private_test_cases", "private_reserve_cases", "full_statute_pool", "index", "retrieval_service", "evaluation_harness"],
+      "field_name_status": {
+        "verified": ["canary", "source_id", "fact_pattern", "question_type", "law", "version_uri", "valid_from", "valid_to", "current_uri"],
+        "assumed": ["id", "court", "decision_date", "domain", "drift_band", "title", "sub_questions", "question", "verdict", "reasoning", "citations", "section", "text"],
+        "notes": "datasets-server /info returned 401 (gated). Names marked verified are spelled on the pinned card; the card describes the others without spelling them or naming the sub-question/citation containers. Adapters read names through field_map so they can be corrected after authorized access without code changes. Date formats are unspecified and kept as verbatim strings."
+      },
+      "sources": {
+        "revision": "OWNER04 §2.1; OWNERREG",
+        "license": "OWNER04 §2.1, §10; HF_CARD_NITI",
+        "role": "OWNER04 §1",
+        "development_use": "OWNERREG",
+        "exposure": "OWNER04 §2.1",
+        "access": "OWNER04 §2.1 (HF API gated: auto); HF_INFO_NITI",
+        "counts": "OWNER04 §2.1; HF_CARD_NITI (3,665 citations, 130 unresolved)",
+        "allowed_named_settings": "OWNERREG; OWNER04 §2.2",
+        "native_configs": "HF_CARD_NITI",
+        "evaluator_fields": "OWNER04 §2.2, §12.7",
+        "unreleased_assets": "OWNER04 §2.1"
+      }
+    }
+  ]
+}

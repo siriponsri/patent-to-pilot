@@ -3,3 +3,4 @@
 src/patent_to_pilot/workbench/sample/** -text
 tests/fixtures/ptp_g01/** -text
 *.cmd text eol=crlf
+tests/fixtures/ptp_g02/** -text

@@ -1,0 +1,2 @@
+{"_id": "FICT-GQ-001", "text": "หน่วยงานสมมติต้องเริ่มทดสอบเมื่อใด", "question_type": "single_source", "author_model": "fictional-author-model", "judge_model": "fictional-judge-model"}
+{"_id": "FICT-GQ-002", "text": "คำสั่งสมมติแต่งตั้งใคร และเริ่มทดสอบเมื่อใด", "question_type": "multi_source", "author_model": "fictional-author-model", "judge_model": "fictional-judge-model"}

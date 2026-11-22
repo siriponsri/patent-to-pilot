@@ -32,6 +32,7 @@ sys.path.insert(0, str(REPO / "src"))
 
 from patent_to_pilot.workbench import core as C  # noqa: E402
 from patent_to_pilot.workbench.guard import loopback_only  # noqa: E402
+from patent_to_pilot.workbench.providers import ProviderError  # noqa: E402
 from patent_to_pilot.workbench.server import STATIC_DIR, create_server  # noqa: E402
 
 DEFAULT_PORT = 8765
@@ -222,23 +223,61 @@ def main(argv=None) -> int:
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--port", type=int, default=DEFAULT_PORT)
     ap.add_argument("--data-dir")
+    g = ap.add_argument_group("G02 providers, ingestion and retrieval")
+    g.add_argument("--providers", action="store_true", help="list provider profiles and templates")
+    g.add_argument("--save-profile", metavar="JSON_FILE", help="create or update a provider profile from a JSON file")
+    g.add_argument("--check-profile", metavar="PROFILE_ID", help="run the connection check of a profile")
+    g.add_argument("--create-project", metavar="TITLE", help="create an owner project (sample requirement template)")
+    g.add_argument("--ingest", metavar="FILE", help="add a .md/.txt file to --project for --candidate")
+    g.add_argument("--project", metavar="PROJECT_ID", help="target project (default: the sample project)")
+    g.add_argument("--candidate", metavar="CANDIDATE_ID")
+    g.add_argument("--source-id", metavar="SOURCE_ID")
+    g.add_argument("--build-index", metavar="PROFILE_ID", help="build and activate a dense index generation")
+    g.add_argument("--retrieval-mode", choices=list(C.RETRIEVAL_MODES))
     args = ap.parse_args(argv)
     if args.doctor:
         return doctor(args)
     if args.smoke:
         return smoke(args)
-    if args.run or args.apply_change or args.backup:
+    g02 = (args.providers or args.save_profile or args.check_profile or args.create_project or args.ingest
+           or args.build_index or args.retrieval_mode)
+    if args.run or args.apply_change or args.backup or g02:
         core = C.EvidenceCore(Path(args.data_dir) if args.data_dir else default_data_dir())
         if args.backup:
             print(f"Backup written: {core.store.backup(args.backup)}")
             return 0
-        pid = core.bootstrap_sample()["project_id"]
-        with loopback_only():
-            out = (core.run_comparison(pid, invoked_via="cli") if args.run
-                   else core.apply_change(pid, args.apply_change, invoked_via="cli"))
+        try:
+            out = _cli_command(core, args)
+        except (C.CoreError, ProviderError) as exc:
+            print(f"Error: {exc}", file=sys.stderr)
+            return 2
         print(json.dumps(out, indent=2, ensure_ascii=False))
         return 0
     return serve(args)
+
+
+def _cli_command(core, args) -> dict:
+    if args.providers:
+        return {"profiles": core.registry.list(), "templates": core.registry.templates()}
+    if args.save_profile:
+        return core.registry.save(json.loads(Path(args.save_profile).read_text(encoding="utf-8")))
+    if args.check_profile:
+        return core.registry.check(args.check_profile)
+    if args.create_project:
+        return core.create_project(args.create_project)
+    pid = args.project or core.bootstrap_sample()["project_id"]
+    if args.ingest:
+        return core.ingest_document(pid, Path(args.ingest).name, Path(args.ingest).read_bytes(), args.candidate,
+                                    args.source_id, invoked_via="cli")
+    if args.build_index:
+        return core.build_index(pid, args.build_index, invoked_via="cli")
+    if args.retrieval_mode:
+        return core.set_retrieval_mode(pid, args.retrieval_mode, invoked_via="cli")
+    if args.run:
+        with loopback_only():  # model endpoints, if any, must be loopback for a CLI run
+            return core.run_comparison(pid, invoked_via="cli")
+    with loopback_only():
+        return core.apply_change(pid, args.apply_change, invoked_via="cli")
 
 
 if __name__ == "__main__":

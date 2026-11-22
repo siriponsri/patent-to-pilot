@@ -10,6 +10,8 @@
 <header class="shell">
   <div class="brand">
     <strong>Patent-to-Pilot Workbench</strong>
+    <label class="visually-hidden" for="project-select">Project</label>
+    <select id="project-select" hidden></select>
     <span id="project-title" class="muted"></span>
   </div>
   <div class="labels" id="labels" aria-label="Data and execution labels"></div>
@@ -29,6 +31,13 @@
     <h1>Welcome</h1>
     <p>This sample compares two fictional concepts against three explicit requirements. The documents are invented and are processed by this local application; no account, key or model is needed.</p>
     <button id="open-sample" class="primary">Open sample project</button>
+    <h2>Your own files</h2>
+    <p>Create a project, then add text or Markdown files on the Evidence page. The project uses the same three requirements as the sample; the bounded parser reads lines such as <code>Powered circulation: no.</code></p>
+    <form id="new-project-form" class="inline-form">
+      <label for="new-project-title">Project title</label>
+      <input id="new-project-title" required maxlength="120" autocomplete="off">
+      <button type="submit">Create project</button>
+    </form>
   </section>
 
   <section id="view-workbench" class="view" hidden>
@@ -50,7 +59,18 @@
 
   <section id="view-evidence" class="view" hidden>
     <h2>Sources</h2>
-    <p class="muted">Current versions are searched. Historical versions stay readable for old citations. The incoming revision is not imported until you apply it.</p>
+    <p class="muted">Current versions are searched. Historical versions stay readable for old citations.</p>
+    <form id="add-doc-form" class="card inline-form" hidden>
+      <h3>Add a document</h3>
+      <p class="muted">Plain text or Markdown (UTF-8, up to 2 MB). The same name adds a new version of that source; results that depended on it are re-checked.</p>
+      <label for="doc-file">File</label>
+      <input id="doc-file" type="file" accept=".md,.markdown,.txt" required>
+      <label for="doc-candidate">Candidate</label>
+      <select id="doc-candidate"></select>
+      <label for="doc-source-id">Source ID (optional)</label>
+      <input id="doc-source-id" maxlength="64" autocomplete="off" placeholder="derived from the file name">
+      <button type="submit">Add document</button>
+    </form>
     <div id="sources"></div>
   </section>
 
@@ -67,7 +87,30 @@
 
   <section id="view-providers" class="view" hidden>
     <h2>Providers</h2>
+    <p class="muted">Chat, embedding and rerank models are configured separately. Lexical search always works without any model. A profile is used only after its connection check passes. Keys are never entered here: a profile names an environment variable of the server process.</p>
     <div id="providers"></div>
+    <h3>Retrieval for this project</h3>
+    <div id="retrieval"></div>
+    <h3>Provider profiles</h3>
+    <div id="profiles"></div>
+    <form id="profile-form" class="card inline-form">
+      <h3>Add or edit a profile</h3>
+      <label for="pf-template">Start from</label>
+      <select id="pf-template"></select>
+      <label for="pf-id">Profile ID</label><input id="pf-id" required maxlength="64" autocomplete="off">
+      <label for="pf-role">Role</label>
+      <select id="pf-role"><option>chat</option><option>embedding</option><option>rerank</option></select>
+      <label for="pf-adapter">Adapter</label>
+      <select id="pf-adapter"><option>ollama</option><option>openai_compatible</option><option>anthropic_native</option></select>
+      <label for="pf-model">Model ID</label><input id="pf-model" required autocomplete="off">
+      <label for="pf-endpoint">Endpoint</label><input id="pf-endpoint" autocomplete="off" placeholder="adapter default">
+      <label for="pf-cred">Credential variable name</label><input id="pf-cred" autocomplete="off" placeholder="e.g. ANTHROPIC_API_KEY (name only)">
+      <label for="pf-qprefix">Query prefix (embedding)</label><input id="pf-qprefix" autocomplete="off">
+      <label class="check" for="pf-remote"><input id="pf-remote" type="checkbox"> Allow a non-local endpoint</label>
+      <label for="pf-cap">Spending cap, USD (paid routes)</label><input id="pf-cap" type="number" min="0" step="0.01" value="0">
+      <label for="pf-max">Request cap (paid routes)</label><input id="pf-max" type="number" min="0" step="1" value="0">
+      <button type="submit">Save profile</button>
+    </form>
   </section>
 </main>
 

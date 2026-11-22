@@ -1,0 +1,13 @@
+{
+  "program_id": "PTP-2026-11-21",
+  "goal_id": "G02",
+  "data_origin": "synthetic_schema_fixture_hand_authored",
+  "license": "CC0-1.0",
+  "note": "Fictional rows imitating native column names only. No native row, value or card example was copied.",
+  "generator": "rows hand-written in a throwaway authoring script; span offsets computed with Python str.index (code points)",
+  "files": {
+    "dapfam": "columns verified via datasets-server /info at the pinned revision",
+    "gazette": "columns verified via datasets-server /info and the pinned card",
+    "nitibench_plus": "only canary, source_id, fact_pattern, question_type, law, version_uri, valid_from, valid_to, current_uri are spelled on the card; other names and the sub_questions/citations containers are ASSUMED"
+  }
+}

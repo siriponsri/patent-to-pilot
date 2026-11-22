@@ -1,14 +1,16 @@
-// Patent-to-Pilot Workbench (PTP-2026-11-21/G01). All results come from the local server; nothing is computed
+// Patent-to-Pilot Workbench (PTP-2026-11-21/G01–G02). All results come from the local server; nothing is computed
 // or pre-written here. Data are rendered with textContent (no HTML injection).
 "use strict";
 
 const S = { projectId: null, project: null, comparison: null, caps: null, liveRunId: null, view: "workbench",
-  lastFocus: null };
+  lastFocus: null, retrieval: null, providers: null };
+const isSample = () => S.project && S.project.data_origin === "synthetic_fixture";
 
 const $ = (id) => document.getElementById(id);
 function el(tag, attrs = {}, ...kids) {
   const n = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue;
     if (k === "class") n.className = v;
     else if (k === "text") n.textContent = v;
     else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
@@ -44,19 +46,34 @@ function show(view) {
 function labels() {
   const L = $("labels"); L.replaceChildren();
   if (!S.projectId) return;
-  L.append(el("span", { class: "label", text: "Sample data" }));
+  L.append(el("span", { class: "label", text: isSample() ? "Sample data" : "Your files" }));
   const last = S.comparison && S.comparison.last_run;
   if (last) {
     if (S.liveRunId === last.run_id) L.append(el("span", { class: "label live", text: "Live local run" }));
     else L.append(el("span", { class: "label recorded", text: `Recorded run · ${last.run_id}` }));
   }
-  L.append(el("span", { class: "label", text: "Lexical mode" }));
+  const R = S.retrieval;
+  if (R && R.retrieval_mode === "hybrid") {
+    const fresh = R.active_freshness === "fresh";
+    L.append(el("span", { class: "label", text: `Hybrid mode · ${R.embedding_profile_id}${fresh ? "" : " · index out of date (rebuilt on next run)"}` }));
+  } else L.append(el("span", { class: "label", text: "Lexical mode" }));
+}
+
+async function loadProjectList() {
+  const { projects } = await api("GET", "/api/projects");
+  const sel = $("project-select");
+  sel.replaceChildren(...projects.map((p) => el("option", { value: p.project_id, text: `${p.title}${p.data_origin === "synthetic_fixture" ? " (sample)" : ""}` })),
+    el("option", { value: "__new", text: "Create or open another project…" }));
+  sel.hidden = !projects.length;
+  if (S.projectId) sel.value = S.projectId;
+  return projects;
 }
 
 async function loadProject() {
   S.project = await api("GET", `/api/projects/${S.projectId}`);
   S.comparison = await api("GET", `/api/projects/${S.projectId}/comparison`);
-  $("project-title").textContent = S.project.title;
+  S.retrieval = await api("GET", `/api/projects/${S.projectId}/retrieval`);
+  $("project-title").textContent = $("project-select").hidden ? S.project.title : "";
   renderWorkbench(); labels();
 }
 
@@ -73,6 +90,7 @@ function renderWorkbench() {
   $("requirements").replaceChildren(...P.mission.requirements.map((r) => el("li", { text: `${r.requirement_id} — ${r.label}` })));
   const ch = P.changes.find((c) => c.event_id === "CHANGE-S2-V2");
   const applied = ch && ch.status === "applied";
+  $("apply-change").hidden = !isSample();
   $("apply-change").disabled = !last || applied;
   $("apply-change").textContent = applied ? "Sample source revision applied" : "Apply sample source revision";
   $("trace-link").hidden = !last;
@@ -113,7 +131,7 @@ async function openCitation(sid, vid, pid, trigger) {
     $("drawer-title").textContent = `${c.source_id} · ${c.version_id} · ${c.passage_id}`;
     const badge = c.status === "current" ? el("span", { class: "pill current", text: "Current" }) : el("span", { class: "pill historical", text: `Superseded (current: ${c.current_version})` });
     body.replaceChildren(
-      el("p", {}, el("b", { text: c.title }), " ", badge, " ", el("span", { class: "pill", text: "Sample data" })),
+      el("p", {}, el("b", { text: c.title }), " ", badge, " ", el("span", { class: "pill", text: c.data_origin === "synthetic_fixture" ? "Sample data" : "Your file" })),
       el("p", { class: "muted", text: "Exact text of this stored version, served by the local application. The highlighted passage is the cited span." }),
       el("pre", { class: "source", lang: "und" }, c.text_before, el("mark", { text: c.quote }), c.text_after),
       el("h3", { text: "Used by" }),
@@ -143,7 +161,15 @@ function closeDrawer() { $("drawer").hidden = true; if (S.lastFocus && document.
 
 async function renderSources() {
   await loadProject();
+  const form = $("add-doc-form");
+  form.hidden = isSample();
+  if (!isSample()) {
+    const sel = $("doc-candidate"), keep = sel.value;
+    sel.replaceChildren(...S.project.mission.candidates.map((c) => el("option", { value: c.candidate_id, text: c.label })));
+    if (keep) sel.value = keep;
+  }
   const box = $("sources"); box.replaceChildren();
+  if (!S.project.sources.length) box.append(el("p", { class: "muted", text: "No documents yet. Add a text or Markdown file above." }));
   const by = {};
   for (const s of S.project.sources) (by[s.source_id] ||= []).push(s);
   for (const [sid, vs] of Object.entries(by)) {
@@ -155,7 +181,36 @@ async function renderSources() {
   for (const c of S.project.changes.filter((c) => c.status !== "applied"))
     box.append(el("div", { class: "card" }, el("h3", { text: `${c.source_id} · ${c.version_id}` }), el("span", { class: "pill incoming", text: "Incoming — not imported" }),
       el("p", { class: "muted", text: "This revision is not searchable and did not support any result. Apply it from the Workbench." })));
-  box.append(el("p", { class: "muted", text: `Searchable index: ${S.project.searchable_index.passages} passages from ${S.project.searchable_index.source_versions.join(", ")}.` }));
+  box.append(el("p", { class: "muted", text: `Searchable index: ${S.project.searchable_index.passages} passages from ${S.project.searchable_index.source_versions.join(", ") || "no sources"}.` }));
+}
+
+function toBase64(buf) {
+  const bytes = new Uint8Array(buf); let bin = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+
+async function addDocument(ev) {
+  ev.preventDefault();
+  const f = $("doc-file").files[0];
+  if (!f) { status("Choose a file first.", true); return; }
+  const btn = ev.submitter || ev.target.querySelector("button"); btn.disabled = true;
+  status(`Adding ${f.name}…`);
+  try {
+    const r = await api("POST", `/api/projects/${S.projectId}/documents`, { filename: f.name, content_base64: toBase64(await f.arrayBuffer()),
+      candidate_id: $("doc-candidate").value, source_id: $("doc-source-id").value.trim() || null });
+    if (r.status === "unchanged") status(`${r.source_id} · ${r.version_id} already has exactly this content; nothing changed.`);
+    else {
+      if (r.run_id) S.liveRunId = r.run_id;
+      const res = r.result || {};
+      const rechecked = (res.reacquired || []).length + (res.revalidated_by_search || []).length;
+      status(`${r.source_id} · ${r.version_id} added (${r.event_type === "source_revision" ? "new version" : "new source"}, ${r.passages} passages).` +
+        (r.run_id ? ` ${rechecked} result(s) re-checked by run ${r.run_id}.` : " Run the comparison to use it."));
+    }
+    $("doc-file").value = ""; $("doc-source-id").value = "";
+    await renderSources();
+  } catch (e) { status(`Could not add the document: ${e.message} (${e.code}).`, true); }
+  finally { btn.disabled = false; }
 }
 
 async function renderRuns() {
@@ -170,7 +225,8 @@ async function renderRuns() {
 }
 
 const ACTION_LABEL = { plan_obligation: "Plan obligation", search_current_sources: "Search current sources", read_passage: "Read passage",
-  check_criterion: "Check criterion", commit_assessment: "Commit assessment", reuse_valid_result: "Reuse valid result", error: "Error" };
+  check_criterion: "Check criterion", commit_assessment: "Commit assessment", reuse_valid_result: "Reuse valid result", error: "Error",
+  retrieval_setup: "Retrieval setup" };
 async function openRun(runId) {
   const r = await api("GET", `/api/runs/${runId}`);
   const recorded = S.liveRunId !== runId;
@@ -179,7 +235,9 @@ async function openRun(runId) {
     el("p", {}, el("span", { class: `label ${recorded ? "recorded" : "live"}`, text: recorded ? "Recorded run" : "Live local run" }),
       ` execution_mode=${r.execution_mode} · data_origin=${r.data_origin} · strategy=${r.strategy} · invoked via ${r.invoked_via} · ${r.status} (${r.stop_reason})`),
     el("p", { text: `Limits: ${r.limits.max_acquisition_actions} acquisition actions, ${r.limits.max_source_reads} source reads, ${r.limits.max_wall_seconds} s. ` +
-      `Used: ${r.counters.acquisition_actions} acquisition action(s), ${r.counters.source_reads} source read(s). No paid model calls enabled.` }),
+      `Used: ${r.counters.acquisition_actions} acquisition action(s), ${r.counters.source_reads} source read(s). ` +
+      (r.counters.retrieval_effective ? `Retrieval: ${r.counters.retrieval_effective}${r.counters.query_embeddings != null ? `, ${r.counters.query_embeddings} query embedding(s)` : ""}. ` : "Retrieval: lexical. ") +
+      `Paid model calls: ${r.counters.paid_model_calls || 0}.` + (r.counters.retrieval_note ? ` Note: ${r.counters.retrieval_note}` : "") }),
     el("p", { class: "muted mono", text: `core ${r.core_identity} · config ${r.config_sha256.slice(0, 16)}…` }),
     el("ol", { class: "trace" }, ...r.actions.map((a) => el("li", {},
       el("b", { text: ACTION_LABEL[a.action_type] || a.action_type }), a.candidate_id ? ` — ${a.candidate_id}/${a.requirement_id}` : "", a.status !== "ok" ? ` (${a.status})` : "",
@@ -191,25 +249,36 @@ async function openRun(runId) {
 async function renderChanges() {
   await loadProject();
   const box = $("changes"); box.replaceChildren();
-  for (const c of S.project.changes) {
-    const card = el("div", { class: "card" }, el("h3", { text: `${c.event_id}: ${c.source_id} ${c.supersedes_version_id} → ${c.version_id}` }),
-      el("p", { text: `Type: source revision · status: ${c.status}` }));
-    if (c.result) {
+  if (!S.project.changes.length) box.append(el("p", { class: "muted", text: "No changes yet." }));
+  for (const c of S.project.changes.slice().reverse()) {
+    const kind = CHANGE_LABEL[c.event_type] || c.event_type;
+    const what = c.event_type === "source_addition" ? `${c.source_id} · ${c.version_id} added`
+      : c.event_type === "retrieval_mode_change" ? `${c.supersedes_version_id} → ${c.version_id}`
+      : c.event_type === "index_generation_switch" ? `${c.supersedes_version_id || "none"} → ${c.source_id}`
+      : `${c.source_id} ${c.supersedes_version_id} → ${c.version_id}`;
+    const card = el("div", { class: "card" }, el("h3", { text: `${kind}: ${what}` }),
+      el("p", { class: "muted", text: `${c.event_id} · status: ${c.status}` }));
+    if (c.result && c.result.run_id) {
       const res = c.result;
       card.append(el("p", {}, "Processed by run ", el("button", { class: "cite", onclick: () => openRun(res.run_id) }, res.run_id), ` (${res.execution_strategy}).`));
-      card.append(el("h4", { text: "Affected" }));
+      if (res.retrieval) card.append(el("p", { class: "muted", text: `Retrieval during this update: ${res.retrieval.effective}` + (res.retrieval.refreshed_from ? ` (index rebuilt from ${res.retrieval.refreshed_from})` : "") + (res.retrieval.reason ? ` — ${res.retrieval.reason}` : "") }));
+      card.append(el("h4", { text: `Changed results (${res.affected.length})` }));
+      if (!res.affected.length) card.append(el("p", { class: "muted", text: "No result changed." }));
       for (const a of res.affected) {
         card.append(el("div", { class: "grid2" },
-          changeSide("Before", a.before), changeSide("After", a.after)));
+          a.before ? changeSide("Before", a.before) : el("div", { class: "card muted", text: "No earlier result" }), changeSide("After", a.after)));
       }
       card.append(el("h4", { text: "Unchanged" }),
-        el("ul", {}, ...res.revalidated_by_search.map((k) => el("li", { text: `${k}: search re-executed on the new current sources; same evidence, assessment kept.` })),
-          ...res.outside_changed_scope.map((k) => el("li", { text: `${k}: the changed source is outside this candidate's search scope; not re-run.` }))));
-    } else card.append(el("p", { class: "muted", text: "Not applied yet." }));
+        el("ul", {}, ...res.revalidated_by_search.map((k) => el("li", { text: `${k}: search re-executed; same evidence, assessment kept.` })),
+          ...res.outside_changed_scope.map((k) => el("li", { text: `${k}: not affected by this change; not re-run.` }))));
+    } else if (c.result && c.result.note) card.append(el("p", { class: "muted", text: c.result.note }));
+    else card.append(el("p", { class: "muted", text: "Not applied yet." }));
     box.append(card);
   }
-  box.append(el("p", { class: "muted", text: "Planned (not in this goal): new document, withdrawal and effective-date events." }));
+  box.append(el("p", { class: "muted", text: "Planned (not in this goal): withdrawal and effective-date events." }));
 }
+const CHANGE_LABEL = { source_revision: "Source revision", source_addition: "New source", retrieval_mode_change: "Retrieval mode",
+  index_generation_switch: "Index generation" };
 function changeSide(title, cell) {
   const c = cell.citation;
   return el("div", { class: "card" }, el("b", { text: `${title}: ${cell.candidate_id}/${cell.requirement_id}` }), " ",
@@ -218,14 +287,113 @@ function changeSide(title, cell) {
     c ? el("button", { class: "cite", onclick: (ev) => openCitation(c.source_id, c.version_id, c.passage_id, ev.currentTarget) }, `${c.source_id} · ${c.version_id}`) : null);
 }
 
+const STATE_TEXT = { active: "Active", ready: "Ready", not_configured: "Not configured", configured_not_ready: "Configured, not ready",
+  blocked_without_envelope: "Blocked (no spending envelope)", envelope_recorded: "Envelope recorded", unavailable: "Unavailable",
+  installed_not_enabled: "Installed, not enabled", unchecked: "Not checked", blocked: "Blocked", failed: "Check failed",
+  changed_since_check: "Changed since last check" };
+const st = (s) => STATE_TEXT[s] || s;
+
 async function renderProviders() {
-  S.caps = S.caps || await api("GET", "/api/capabilities");
-  const c = S.caps;
-  $("providers").replaceChildren(
-    ...[["Lexical", c.lexical], ["Local model", c.local_model], ["API model", c.api_model]].map(([n, p]) =>
-      el("div", { class: "card" }, el("h3", { text: `${n} — ${p.state === "active" ? "Active" : "Not enabled"}` }), el("p", { text: p.description }))),
-    el("p", { class: "muted", text: `Remote calls allowed: ${c.remote_calls_allowed ? "yes" : "no"} · model downloads allowed: ${c.model_downloads_allowed ? "yes" : "no"} · parser ${c.parser_profile}` }),
-    el("p", { class: "muted mono", text: `store ${c.store_path}` }));
+  const [c, P] = await Promise.all([api("GET", "/api/capabilities"), api("GET", "/api/providers")]);
+  S.caps = c; S.providers = P;
+  S.retrieval = await api("GET", `/api/projects/${S.projectId}/retrieval`);
+  const role = (n, p, extra) => el("div", { class: "card" }, el("h3", { text: `${n} — ${st(p.state)}` }),
+    el("p", { class: "muted", text: extra || (p.profiles && p.profiles.length ? p.profiles.join(", ") : "No profile.") }));
+  $("providers").replaceChildren(el("div", { class: "grid3" },
+    role("Lexical search", c.lexical, c.lexical.description), role("Chat model", c.chat), role("Embedding model", c.embedding),
+    role("Reranker", c.rerank), role("Paid API", c.api_model, c.api_model.description),
+    role("PDF ingestion", c.ingestion.pdf, c.ingestion.pdf.description)),
+    el("p", { class: "muted", text: `Model downloads allowed: ${c.model_downloads_allowed ? "yes" : "no"} · parser ${c.parser_profile} · store ${c.store_path}` }));
+  renderRetrieval(); renderProfiles();
+  const tpl = $("pf-template");
+  if (!tpl.options.length) {
+    tpl.replaceChildren(el("option", { value: "", text: "Blank profile" }), ...P.templates.map((t, i) => el("option", { value: String(i), text: t.label })));
+    tpl.addEventListener("change", () => fillProfileForm(tpl.value === "" ? {} : S.providers.templates[Number(tpl.value)]));
+  }
+}
+
+function renderRetrieval() {
+  const R = S.retrieval, box = $("retrieval");
+  const ready = S.providers.profiles.filter((p) => p.role === "embedding" && p.status === "ready");
+  const active = R.generations.find((g) => g.generation_id === R.active_generation_id);
+  const pick = el("select", { id: "idx-profile", "aria-label": "Embedding profile" }, ...ready.map((p) => el("option", { value: p.profile_id, text: p.profile_id })));
+  box.replaceChildren(el("div", { class: "card" },
+    el("p", {}, el("b", { text: `Mode: ${R.retrieval_mode === "hybrid" ? "Hybrid (lexical + dense)" : "Lexical"}` })),
+    el("p", { class: "muted", text: active ? `Active index ${active.generation_id}: ${active.n_vectors} passages, ${active.dimension} dimensions, profile ${active.profile_id} · ${R.active_freshness === "fresh" ? "matches the current sources" : "out of date: rebuilt automatically before the next hybrid search"}` : "No dense index yet." }),
+    ready.length ? el("p", {}, pick, " ", el("button", { onclick: buildIndex }, active ? "Rebuild index" : "Build index")) :
+      el("p", { class: "muted", text: "To build a dense index, add an embedding profile below and run its check." }),
+    el("p", {}, el("button", { disabled: R.retrieval_mode === "lexical" ? "" : null, onclick: () => setMode("lexical") }, "Use lexical"), " ",
+      el("button", { disabled: R.retrieval_mode === "hybrid" || !active ? "" : null, onclick: () => setMode("hybrid") }, "Use hybrid")),
+    R.generations.length > 1 ? el("details", {}, el("summary", { text: `All index generations (${R.generations.length})` }),
+      el("ul", {}, ...R.generations.map((g) => el("li", { class: "mono", text: `${g.generation_id} · ${g.status} · ${g.n_vectors} vectors · ${g.embedded_vectors} embedded, ${g.reused_vectors} reused` })))) : null));
+}
+
+function renderProfiles() {
+  const box = $("profiles"), ps = S.providers.profiles;
+  if (!ps.length) { box.replaceChildren(el("p", { class: "muted", text: "No profiles yet. Lexical mode needs none." })); return; }
+  box.replaceChildren(el("table", { class: "matrix" },
+    el("thead", {}, el("tr", {}, ...["Profile", "Role", "Model", "Where", "Status", ""].map((h) => el("th", { scope: "col", text: h })))),
+    el("tbody", {}, ...ps.map((p) => el("tr", {},
+      el("td", { text: p.profile_id }), el("td", { text: p.role }), el("td", { text: `${p.model_id} (${p.adapter})` }),
+      el("td", { text: `${p.locality}${p.paid_route ? " · paid route" : ""}${p.credential_ref ? ` · key ${p.credential_ref}: ${p.credential_present ? "set" : "not set"}` : ""}` }),
+      el("td", {}, el("span", { class: `pill ${p.status === "ready" ? "current" : "historical"}`, text: st(p.status) }),
+        p.last_check ? el("details", {}, el("summary", { text: "check details" }),
+          el("ul", {}, ...p.last_check.items.map((i) => el("li", { text: `${i.check}: ${i.state}${i.detail ? ` — ${i.detail}` : ""}` })))) : null),
+      el("td", {}, el("button", { onclick: () => checkProfile(p.profile_id) }, "Check"), " ",
+        el("button", { onclick: () => fillProfileForm(p) }, "Edit"), " ",
+        el("button", { onclick: () => deleteProfile(p.profile_id) }, "Delete")))))));
+}
+
+function fillProfileForm(p) {
+  $("pf-id").value = p.profile_id || ""; $("pf-role").value = p.role || "chat"; $("pf-adapter").value = p.adapter || "ollama";
+  $("pf-model").value = p.model_id || ""; $("pf-endpoint").value = p.endpoint || ""; $("pf-cred").value = p.credential_ref || "";
+  $("pf-qprefix").value = p.query_prefix || ""; $("pf-remote").checked = !!p.allow_remote;
+  $("pf-cap").value = p.spend_cap_usd || 0; $("pf-max").value = p.max_requests || 0;
+  $("pf-id").focus();
+}
+
+async function saveProfile(ev) {
+  ev.preventDefault();
+  const body = { profile_id: $("pf-id").value.trim(), role: $("pf-role").value, adapter: $("pf-adapter").value,
+    model_id: $("pf-model").value.trim(), credential_ref: $("pf-cred").value.trim() || null, allow_remote: $("pf-remote").checked,
+    spend_cap_usd: Number($("pf-cap").value || 0), max_requests: Number($("pf-max").value || 0) };
+  if ($("pf-endpoint").value.trim()) body.endpoint = $("pf-endpoint").value.trim();
+  if (body.role === "embedding" && $("pf-qprefix").value) body.query_prefix = $("pf-qprefix").value;
+  try { await api("POST", "/api/providers", body); status(`Profile ${body.profile_id} saved. Select Check to test it.`); await renderProviders(); }
+  catch (e) { status(`Profile not saved: ${e.message}`, true); }
+}
+
+async function checkProfile(id) {
+  status(`Checking ${id}…`);
+  try { const d = await api("POST", `/api/providers/${id}/check`, {}); status(`${id}: ${st(d.status)}.`, d.status !== "ready"); }
+  catch (e) { status(`Check failed: ${e.message}`, true); }
+  await renderProviders();
+}
+
+async function deleteProfile(id) {
+  try { await api("POST", `/api/providers/${id}/delete`, {}); status(`Profile ${id} deleted.`); }
+  catch (e) { status(`Not deleted: ${e.message}`, true); }
+  await renderProviders();
+}
+
+async function buildIndex() {
+  const pid = $("idx-profile").value; status(`Building a dense index with ${pid}…`);
+  try {
+    const r = await api("POST", `/api/projects/${S.projectId}/index`, { profile_id: pid });
+    const g = r.generation; if (r.run_id) S.liveRunId = r.run_id;
+    status(`Index ${g.generation_id} active: ${g.n_vectors} passages (${g.embedded_vectors} embedded, ${g.reused_vectors} reused).`);
+  } catch (e) { status(`Index not built: ${e.message}`, true); }
+  await renderProviders(); labels();
+}
+
+async function setMode(mode) {
+  status(`Switching to ${mode} retrieval…`);
+  try {
+    const r = await api("POST", `/api/projects/${S.projectId}/retrieval`, { mode });
+    if (r.run_id) S.liveRunId = r.run_id;
+    status(`Retrieval is now ${mode}.` + (r.run_id ? ` Results re-checked by run ${r.run_id}.` : ""));
+  } catch (e) { status(`Mode not changed: ${e.message}`, true); }
+  await loadProject(); await renderProviders();
 }
 
 async function run() {
@@ -256,23 +424,49 @@ async function openSample() {
   try {
     const r = await api("POST", "/api/demo/bootstrap", {});
     S.projectId = r.project_id;
+    await loadProjectList();
     await loadProject();
     status(r.reopened ? "Sample project reopened from the local store." : "Sample project created. Four sources imported; nothing has been run yet.");
     show("workbench");
   } catch (e) { status(`Could not open the sample: ${e.message}`, true); }
 }
 
+async function createProject(ev) {
+  ev.preventDefault();
+  const title = $("new-project-title").value.trim();
+  try {
+    const r = await api("POST", "/api/projects", { title });
+    S.projectId = r.project_id; $("new-project-title").value = "";
+    await loadProjectList(); await loadProject();
+    status(`Project "${r.title}" created. Add your documents on the Evidence page.`);
+    show("evidence");
+  } catch (e) { status(`Project not created: ${e.message}`, true); }
+}
+
+async function switchProject() {
+  const v = $("project-select").value;
+  if (v === "__new") { S.projectId = null; S.project = null; labels(); show("workbench"); status("Open the sample or create a project."); return; }
+  S.projectId = v; S.liveRunId = null;
+  await loadProject();
+  status(`Opened ${S.project.title} (recorded results).`);
+  show(S.view);
+}
+
 async function init() {
-  for (const b of document.querySelectorAll(".tab")) b.addEventListener("click", () => S.projectId ? show(b.dataset.view) : status("Open the sample project first."));
+  for (const b of document.querySelectorAll(".tab")) b.addEventListener("click", () => S.projectId ? show(b.dataset.view) : status("Open the sample or create a project first."));
   $("open-sample").addEventListener("click", openSample);
+  $("new-project-form").addEventListener("submit", createProject);
+  $("add-doc-form").addEventListener("submit", addDocument);
+  $("profile-form").addEventListener("submit", saveProfile);
+  $("project-select").addEventListener("change", switchProject);
   $("run").addEventListener("click", run);
   $("apply-change").addEventListener("click", applyChange);
   $("trace-link").addEventListener("click", (e) => { e.preventDefault(); if (S.comparison.last_run) openRun(S.comparison.last_run.run_id); });
   $("drawer-close").addEventListener("click", closeDrawer);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("drawer").hidden) closeDrawer(); });
   try {
-    const { projects } = await api("GET", "/api/projects");
-    if (projects.length) { S.projectId = projects[0].project_id; await loadProject(); status("Reopened the saved sample project (recorded results)."); }
+    const projects = await loadProjectList();
+    if (projects.length) { S.projectId = projects[0].project_id; $("project-select").value = S.projectId; await loadProject(); status(`Reopened ${S.project.title} (recorded results).`); }
   } catch (e) { status(`Server not reachable: ${e.message}`, true); }
   show("workbench");
 }

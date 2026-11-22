@@ -5,6 +5,8 @@ from the package's ``static/`` directory; source files, the store and test-only 
 """
 from __future__ import annotations
 
+import base64
+import binascii
 import json
 import mimetypes
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -15,6 +17,7 @@ import threading
 from urllib.parse import unquote, urlsplit
 
 from patent_to_pilot.workbench.core import CoreError, EvidenceCore
+from patent_to_pilot.workbench.providers import ADAPTERS, ProviderError
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 STATIC_FILES = {"/": "index.html", "/index.html": "index.html", "/app.js": "app.js", "/app.css": "app.css"}
@@ -34,7 +37,30 @@ ROUTES = [
     ("POST", rf"/api/projects/{_SEG}/changes", "apply_change"),
     ("GET", rf"/api/projects/{_SEG}/sources/{_SEG}/versions/{_SEG}", "source_version"),
     ("GET", rf"/api/projects/{_SEG}/sources/{_SEG}/versions/{_SEG}/passages/{_SEG}", "citation"),
+    # G02
+    ("GET", r"/api/providers", "providers"),
+    ("POST", r"/api/providers", "save_provider"),
+    ("POST", rf"/api/providers/{_SEG}/check", "check_provider"),
+    ("POST", rf"/api/providers/{_SEG}/delete", "delete_provider"),
+    ("GET", rf"/api/providers/{_SEG}/usage", "provider_usage"),
+    ("POST", r"/api/projects", "create_project"),
+    ("POST", rf"/api/projects/{_SEG}/documents", "ingest"),
+    ("GET", rf"/api/projects/{_SEG}/retrieval", "retrieval"),
+    ("POST", rf"/api/projects/{_SEG}/retrieval", "set_retrieval"),
+    ("POST", rf"/api/projects/{_SEG}/index", "build_index"),
 ]
+UPLOAD_LIMIT = 3_000_000  # base64 of the 2 MB ingestion limit, plus JSON overhead
+BODY_LIMIT = 65536
+
+
+def _provider_call(fn, *args):
+    try:
+        return fn(*args)
+    except ProviderError as exc:
+        status = {"config": 422, "blocked": 409, "missing_credential": 409}.get(exc.kind, 502)
+        err = CoreError(str(exc), f"provider_{exc.kind}")
+        err.status = status
+        raise err from None
 
 
 class App:
@@ -90,6 +116,58 @@ class App:
     def citation(self, _body, pid, sid, vid, passage):
         return self.core.resolve_citation(pid, sid, vid, passage)
 
+    # ---------------- G02
+    def providers(self, _body):
+        return {"profiles": self.core.registry.list(), "templates": self.core.registry.templates(),
+                "adapters": {k: {"roles": list(v["roles"]), "default_endpoint": v["default_endpoint"]}
+                             for k, v in ADAPTERS.items()}}
+
+    def save_provider(self, body):
+        with self.lock:
+            return _provider_call(self.core.registry.save, body or {})
+
+    def check_provider(self, _body, profile_id):
+        with self.lock:
+            return _provider_call(self.core.registry.check, profile_id)
+
+    def delete_provider(self, _body, profile_id):
+        with self.lock:
+            return _provider_call(self.core.registry.delete, profile_id)
+
+    def provider_usage(self, _body, profile_id):
+        _provider_call(self.core.registry.get, profile_id)
+        return {"profile_id": profile_id, "requests_counted": self.core.registry.usage_count(profile_id),
+                "events": self.core.registry.usage(profile_id)}
+
+    def create_project(self, body):
+        body = body or {}
+        with self.lock:
+            return self.core.create_project(body.get("title"), body.get("candidates"), body.get("requirements"))
+
+    def ingest(self, body, pid):
+        body = body or {}
+        try:
+            raw = base64.b64decode(body.get("content_base64") or "", validate=True)
+        except (binascii.Error, ValueError):
+            raise CoreError("content_base64 is not valid base64", "bad_base64") from None
+        filename = body.get("filename")
+        if not isinstance(filename, str) or not filename:
+            raise CoreError("filename is required", "missing_filename")
+        with self.lock:
+            return self.core.ingest_document(pid, filename, raw, body.get("candidate_id"), body.get("source_id") or None,
+                                             invoked_via="http")
+
+    def retrieval(self, _body, pid):
+        return self.core.retrieval_status(pid)
+
+    def set_retrieval(self, body, pid):
+        with self.lock:
+            return _provider_call(self.core.set_retrieval_mode, pid, (body or {}).get("mode"), "http")
+
+    def build_index(self, body, pid):
+        with self.lock:
+            return _provider_call(self.core.build_index, pid, (body or {}).get("profile_id"), "http")
+
 
 def make_handler(app: App):
     allowed_hosts = {f"{app.host}:{app.port}", f"localhost:{app.port}", f"127.0.0.1:{app.port}"}
@@ -128,7 +206,7 @@ def make_handler(app: App):
                 if not (self.headers.get("Content-Type") or "").startswith("application/json"):
                     return self._json(415, {"error": "json_required", "message": "POST requires application/json"})
                 n = int(self.headers.get("Content-Length") or 0)
-                if n > 65536:
+                if n > (UPLOAD_LIMIT if path.endswith("/documents") else BODY_LIMIT):
                     return self._json(413, {"error": "too_large", "message": "request body too large"})
                 raw = self.rfile.read(n) if n else b"{}"
                 try:

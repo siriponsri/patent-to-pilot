@@ -1,0 +1,520 @@
+{
+ "program_id": "PTP-2026-11-21",
+ "goal_id": "G02",
+ "check": "real_embedding_route",
+ "endpoint": "http://127.0.0.1:18000/v1",
+ "model": "Qwen/Qwen3-Embedding-0.6B",
+ "started": "2026-11-22T07:14:51+0700",
+ "connection_check": {
+  "status": "ready",
+  "items": [
+   {
+    "check": "endpoint_reachable",
+    "detail": "1 model(s) listed",
+    "state": "pass"
+   },
+   {
+    "check": "model_available",
+    "detail": "Qwen/Qwen3-Embedding-0.6B",
+    "state": "pass"
+   },
+   {
+    "check": "embedding",
+    "cosine": 0.783,
+    "detail": "query/document vectors of dimension 1024/1024",
+    "state": "pass"
+   },
+   {
+    "check": "embedding_query_document_semantics",
+    "detail": "query prefix 'Instruct: Given a requirement, retrieve passages that state it\\nQuery: ', document prefix '' applied by PTP",
+    "state": "pass"
+   },
+   {
+    "check": "context_limit",
+    "detail": "Bounded request sizes are used; the limit is not probed.",
+    "state": "not_checked"
+   }
+  ],
+  "facts": {
+   "dimension": 1024,
+   "model_digest": null,
+   "served_model_name": "Qwen/Qwen3-Embedding-0.6B"
+  },
+  "seconds": 0.56
+ },
+ "lexical_cells": {
+  "CONCEPT-A/R1": {
+   "outcome": "meets",
+   "citation": "DEMO-S1@v1#S1-P1"
+  },
+  "CONCEPT-A/R2": {
+   "outcome": "meets",
+   "citation": "DEMO-S2@v1#S2-P1"
+  },
+  "CONCEPT-A/R3": {
+   "outcome": "meets",
+   "citation": "DEMO-S3@v1#S3-P1"
+  },
+  "CONCEPT-B/R1": {
+   "outcome": "does_not_meet",
+   "citation": "DEMO-S4@v1#S4-P1"
+  },
+  "CONCEPT-B/R2": {
+   "outcome": "does_not_meet",
+   "citation": "DEMO-S4@v1#S4-P2"
+  },
+  "CONCEPT-B/R3": {
+   "outcome": "unknown",
+   "citation": null
+  }
+ },
+ "build_index": {
+  "generation_id": "gen-11f795ef03fe528a",
+  "embedding_space_id": "35186f417f6fe27c",
+  "n_vectors": 6,
+  "dimension": 1024,
+  "reused_vectors": 0,
+  "embedded_vectors": 6,
+  "reused_generation": false,
+  "seconds": 0.97
+ },
+ "switch_to_hybrid": {
+  "reacquired": [
+   "CONCEPT-A/R1",
+   "CONCEPT-A/R2",
+   "CONCEPT-A/R3",
+   "CONCEPT-B/R1",
+   "CONCEPT-B/R2",
+   "CONCEPT-B/R3"
+  ],
+  "revalidated_by_search": [],
+  "retrieval": {
+   "mode": "hybrid",
+   "effective": "hybrid",
+   "generation_id": "gen-11f795ef03fe528a",
+   "embedding_space_id": "35186f417f6fe27c",
+   "profile_id": "qwen3-embed",
+   "reason": null,
+   "refreshed_from": null
+  }
+ },
+ "hybrid_run": {
+  "status": "completed",
+  "counters": {
+   "acquisition_actions": 6,
+   "committed": 0,
+   "obligations_planned": 6,
+   "paid_model_calls": 0,
+   "query_embeddings": 3,
+   "remote_calls": 0,
+   "retained": 6,
+   "retrieval_effective": "hybrid",
+   "reused_after_verification": 0,
+   "source_reads": 8
+  },
+  "setup": {
+   "effective": "hybrid",
+   "embedding_space_id": "35186f417f6fe27c",
+   "generation_id": "gen-11f795ef03fe528a",
+   "mode": "hybrid",
+   "profile_id": "qwen3-embed",
+   "reason": null,
+   "refreshed_from": null
+  },
+  "hits": {
+   "CONCEPT-A/R1": [
+    {
+     "channels": {
+      "bm25": -0.677581,
+      "cosine": 0.639914,
+      "dense_rank": 1,
+      "lexical_rank": 1
+     },
+     "passage_id": "S1-P1",
+     "score": 0.032787,
+     "source_id": "DEMO-S1",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.311238,
+      "dense_rank": 2,
+      "lexical_rank": null
+     },
+     "passage_id": "S3-P1",
+     "score": 0.016129,
+     "source_id": "DEMO-S3",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.242214,
+      "dense_rank": 3,
+      "lexical_rank": null
+     },
+     "passage_id": "S2-P1",
+     "score": 0.015873,
+     "source_id": "DEMO-S2",
+     "version_id": "v1"
+    }
+   ],
+   "CONCEPT-A/R2": [
+    {
+     "channels": {
+      "bm25": -0.564999,
+      "cosine": 0.705387,
+      "dense_rank": 1,
+      "lexical_rank": 1
+     },
+     "passage_id": "S2-P1",
+     "score": 0.032787,
+     "source_id": "DEMO-S2",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.429603,
+      "dense_rank": 2,
+      "lexical_rank": null
+     },
+     "passage_id": "S1-P1",
+     "score": 0.016129,
+     "source_id": "DEMO-S1",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.427595,
+      "dense_rank": 3,
+      "lexical_rank": null
+     },
+     "passage_id": "S3-P1",
+     "score": 0.015873,
+     "source_id": "DEMO-S3",
+     "version_id": "v1"
+    }
+   ],
+   "CONCEPT-A/R3": [
+    {
+     "channels": {
+      "bm25": -1.208743,
+      "cosine": 0.690094,
+      "dense_rank": 1,
+      "lexical_rank": 1
+     },
+     "passage_id": "S3-P1",
+     "score": 0.032787,
+     "source_id": "DEMO-S3",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.287438,
+      "dense_rank": 2,
+      "lexical_rank": null
+     },
+     "passage_id": "S1-P1",
+     "score": 0.016129,
+     "source_id": "DEMO-S1",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.227754,
+      "dense_rank": 3,
+      "lexical_rank": null
+     },
+     "passage_id": "S2-P1",
+     "score": 0.015873,
+     "source_id": "DEMO-S2",
+     "version_id": "v1"
+    }
+   ],
+   "CONCEPT-B/R1": [
+    {
+     "channels": {
+      "bm25": -0.584419,
+      "cosine": 0.796505,
+      "dense_rank": 1,
+      "lexical_rank": 1
+     },
+     "passage_id": "S4-P1",
+     "score": 0.032787,
+     "source_id": "DEMO-S4",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.263959,
+      "dense_rank": 2,
+      "lexical_rank": null
+     },
+     "passage_id": "S4-P3",
+     "score": 0.016129,
+     "source_id": "DEMO-S4",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.23507,
+      "dense_rank": 3,
+      "lexical_rank": null
+     },
+     "passage_id": "S4-P2",
+     "score": 0.015873,
+     "source_id": "DEMO-S4",
+     "version_id": "v1"
+    }
+   ],
+   "CONCEPT-B/R2": [
+    {
+     "channels": {
+      "bm25": -0.564999,
+      "cosine": 0.692028,
+      "dense_rank": 1,
+      "lexical_rank": 1
+     },
+     "passage_id": "S4-P2",
+     "score": 0.032787,
+     "source_id": "DEMO-S4",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.350497,
+      "dense_rank": 2,
+      "lexical_rank": null
+     },
+     "passage_id": "S4-P1",
+     "score": 0.016129,
+     "source_id": "DEMO-S4",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.221487,
+      "dense_rank": 3,
+      "lexical_rank": null
+     },
+     "passage_id": "S4-P3",
+     "score": 0.015873,
+     "source_id": "DEMO-S4",
+     "version_id": "v1"
+    }
+   ],
+   "CONCEPT-B/R3": [
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.29819,
+      "dense_rank": 1,
+      "lexical_rank": null
+     },
+     "passage_id": "S4-P1",
+     "score": 0.016393,
+     "source_id": "DEMO-S4",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.292171,
+      "dense_rank": 2,
+      "lexical_rank": null
+     },
+     "passage_id": "S4-P3",
+     "score": 0.016129,
+     "source_id": "DEMO-S4",
+     "version_id": "v1"
+    },
+    {
+     "channels": {
+      "bm25": null,
+      "cosine": 0.221259,
+      "dense_rank": 3,
+      "lexical_rank": null
+     },
+     "passage_id": "S4-P2",
+     "score": 0.015873,
+     "source_id": "DEMO-S4",
+     "version_id": "v1"
+    }
+   ]
+  }
+ },
+ "hybrid_cells": {
+  "CONCEPT-A/R1": {
+   "outcome": "meets",
+   "citation": "DEMO-S1@v1#S1-P1"
+  },
+  "CONCEPT-A/R2": {
+   "outcome": "meets",
+   "citation": "DEMO-S2@v1#S2-P1"
+  },
+  "CONCEPT-A/R3": {
+   "outcome": "meets",
+   "citation": "DEMO-S3@v1#S3-P1"
+  },
+  "CONCEPT-B/R1": {
+   "outcome": "does_not_meet",
+   "citation": "DEMO-S4@v1#S4-P1"
+  },
+  "CONCEPT-B/R2": {
+   "outcome": "does_not_meet",
+   "citation": "DEMO-S4@v1#S4-P2"
+  },
+  "CONCEPT-B/R3": {
+   "outcome": "unknown",
+   "citation": null
+  }
+ },
+ "source_revision_under_hybrid": {
+  "seconds": 1.73,
+  "reacquired": [
+   "CONCEPT-A/R1",
+   "CONCEPT-A/R2",
+   "CONCEPT-A/R3"
+  ],
+  "revalidated_by_search": [
+   "CONCEPT-B/R1",
+   "CONCEPT-B/R2",
+   "CONCEPT-B/R3"
+  ],
+  "outside_changed_scope": [],
+  "retrieval": {
+   "mode": "hybrid",
+   "effective": "hybrid",
+   "generation_id": "gen-d3378b03281dcf29",
+   "embedding_space_id": "35186f417f6fe27c",
+   "profile_id": "qwen3-embed",
+   "reason": null,
+   "refreshed_from": "gen-11f795ef03fe528a"
+  }
+ },
+ "generations": [
+  {
+   "generation_id": "gen-11f795ef03fe528a",
+   "status": "retired",
+   "n_vectors": 6,
+   "dimension": 1024,
+   "reused_vectors": 0,
+   "embedded_vectors": 6,
+   "embedding_space_id": "35186f417f6fe27c"
+  },
+  {
+   "generation_id": "gen-d3378b03281dcf29",
+   "status": "active",
+   "n_vectors": 7,
+   "dimension": 1024,
+   "reused_vectors": 5,
+   "embedded_vectors": 2,
+   "embedding_space_id": "35186f417f6fe27c"
+  }
+ ],
+ "after_revision_cells": {
+  "CONCEPT-A/R1": {
+   "outcome": "meets",
+   "citation": "DEMO-S1@v1#S1-P1"
+  },
+  "CONCEPT-A/R2": {
+   "outcome": "does_not_meet",
+   "citation": "DEMO-S2@v2#S2-P1"
+  },
+  "CONCEPT-A/R3": {
+   "outcome": "meets",
+   "citation": "DEMO-S3@v1#S3-P1"
+  },
+  "CONCEPT-B/R1": {
+   "outcome": "does_not_meet",
+   "citation": "DEMO-S4@v1#S4-P1"
+  },
+  "CONCEPT-B/R2": {
+   "outcome": "does_not_meet",
+   "citation": "DEMO-S4@v1#S4-P2"
+  },
+  "CONCEPT-B/R3": {
+   "outcome": "unknown",
+   "citation": null
+  }
+ },
+ "thai_query_dense_top": [
+  {
+   "source_id": "DEMO-S3",
+   "version_id": "v1",
+   "passage_id": "S3-P1",
+   "cosine": 0.631418
+  },
+  {
+   "source_id": "DEMO-S1",
+   "version_id": "v1",
+   "passage_id": "S1-P1",
+   "cosine": 0.285105
+  },
+  {
+   "source_id": "DEMO-S2",
+   "version_id": "v2",
+   "passage_id": "S2-P2",
+   "cosine": 0.276697
+  }
+ ],
+ "ledger_requests": 14,
+ "usage_sample": [
+  {
+   "profile_id": "qwen3-embed",
+   "operation": "embed",
+   "billable": 1,
+   "status": "ok",
+   "usage_json": null,
+   "latency_ms": 281.0,
+   "detail": null,
+   "at": "2026-11-22T00:14:59.737Z",
+   "usage": {
+    "prompt_tokens": 36,
+    "total_tokens": 36
+   },
+   "cost_usd": "unknown"
+  },
+  {
+   "profile_id": "qwen3-embed",
+   "operation": "embed",
+   "billable": 1,
+   "status": "ok",
+   "usage_json": null,
+   "latency_ms": 187.0,
+   "detail": null,
+   "at": "2026-11-22T00:14:58.926Z",
+   "usage": {
+    "prompt_tokens": 19,
+    "total_tokens": 19
+   },
+   "cost_usd": "unknown"
+  },
+  {
+   "profile_id": "qwen3-embed",
+   "operation": "embed",
+   "billable": 1,
+   "status": "ok",
+   "usage_json": null,
+   "latency_ms": 203.0,
+   "detail": null,
+   "at": "2026-11-22T00:14:58.652Z",
+   "usage": {
+    "prompt_tokens": 19,
+    "total_tokens": 19
+   },
+   "cost_usd": "unknown"
+  }
+ ],
+ "remote_attempts_blocked": [],
+ "result": "PASS"
+}

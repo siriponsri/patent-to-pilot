@@ -4,20 +4,20 @@ This file holds the **current state only**. Rewrite the "Agent takeover state" s
 rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 [archives/HANDOFF-HISTORY-TO-20261121.md](archives/HANDOFF-HISTORY-TO-20261121.md).
 
-## Agent takeover state — 21 Nov 2026 (Asia/Bangkok)
+## Agent takeover state — 22 Nov 2026 (Asia/Bangkok)
 
 **Program:** PTP-2026-11-21, goals G01–G08 (owner package `docs/owner/owner-note-21112026/`, owner-local, untracked).
 
-**Last verified pushed base before this update:** `40780c97` (G01 Workbench). The housekeeping commit that rewrote this file
-follows it; check `git log -3` for the containing commit.
+**Last verified pushed base before this update:** `6742ce7b`. The G02 commit that rewrote this file follows it; check
+`git log -3`. Lessons for a new agent account: [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
 
 ### Goal status
 
 | Goal | Status | Evidence / next action |
 |---|---|---|
 | G01 Shared core and local vertical slice | **COMPLETE** | [G01/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md): 16 tests, smoke 15/15, browser QA at 1280/360 px, restart persistence. Owner still to observe: Explorer double-click and default-browser auto-open. |
-| G02 Provider, ingestion and dataset contracts | **NEXT** | Chat/embedding/reranking ports (Ollama, OpenAI-compatible, native Anthropic), text/Markdown ingestion, dataset registries. Lexical-only mode must stay usable. USD 0 unless the owner sets an envelope. |
-| G03 Baselines and candidate policy on allowed DEV | Not started | Needs G02. DAPFAM is not a tuning set in this program. |
+| G02 Provider, ingestion and dataset contracts | **COMPLETE** (22 Nov, USD 0) | [G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md): provider ports with Ollama / OpenAI-compatible / Anthropic adapters and policy; index generations; hybrid mode; text/MD ingestion into owner projects; dataset registry and adapters. Real route: Qwen3-Embedding-0.6B on dr-train CPU through an SSH tunnel ([receipt](artifacts/owner-program/PTP-2026-11-21/G02/REAL_EMBEDDING_ROUTE.json)). Not real-tested: paid API (no envelope), Ollama (not installed), reranker. PDF parked (needs a package approval). |
+| G03 Baselines and candidate policy on allowed DEV | **NEXT** | Uses the G02 ports. DAPFAM is not a tuning set in this program. Carry over the AM-7 lessons: always report IN and OUT, keep N4 IPC-demotion as a counterexample, treat co-citation as one action. |
 | G04 Matched patent benchmark (DAPFAM) | Not started | DAPFAM is previously exposed (B53 evaluated all 1,247 queries); report it as such. |
 | G05 Transfer and evidence maintenance | Not started | Thai Gazette public benchmark; NitiBench+ optional. |
 | G06 English-first product beta | Not started | Can run alongside G04/G05. |
@@ -38,15 +38,17 @@ follows it; check `git log -3` for the containing commit.
   ([TEST-RESULT-TABLES.md](docs/healthtech/research/paper1-report/TEST-RESULT-TABLES.md)). Its test qrels are exposed; never
   rerun S8 jobs.
 - **B53 (IS2 core):** Stage 1 measured 19 Nov ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)).
-  Stage 2 (reranker scoring, resumable per query) is **still running** on the dr-train V100 (PID 2137435, 861/905 queries
-  at 21 Nov ~04:30 Bangkok; then BGE). When `b53/queue_b53_stage2.log` ends `B53_STAGE2_SCORES_DONE`, run
-  `scripts/healthtech/b53_stage2_eval.py`, then `scripts/writing/render_b53_stage2.py`, then pull `b53/` (runbook below).
+  Stage 2 scoring **FINISHED**: `b53/queue_b53_stage2.log` ends `B53_STAGE2_SCORES_DONE` (seen 22 Nov ~07:25 Bangkok,
+  PID gone, V100 idle). Scores are in `/data/ptp-paper2/b53/stage2/scores-*.tsv`. **Next:** run
+  `scripts/healthtech/b53_stage2_eval.py`, then `scripts/writing/render_b53_stage2.py`, then pull and prune `b53/`
+  (runbook below). Not started yet.
 - **IS2 drafts:** [docs/writing/is2/](docs/writing/is2/) (short paper v0.1, committee response, slides outline). Advisor
   details and Stage 2 numbers are pending.
 
 ### Running jobs
 
-- B53 Stage 2 on dr-train (above). Nothing else of this project runs there.
+- None. B53 Stage 2 finished. The G02 embedding shim and its folder were removed from dr-train after QA, and its logs
+  are in `artifacts/owner-program/PTP-2026-11-21/G02/`.
 - **21 Nov dr-train cleanup done** ([summary](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md), runbook
   [DR-TRAIN-ARTIFACT-RUNBOOK.md](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md), script
   `scripts/maintenance/pull_dr_train_artifacts.py`): small result files are archived and sha256-verified in
@@ -56,13 +58,14 @@ follows it; check `git log -3` for the containing commit.
 
 ### Next steps
 
-1. Start G02 from `docs/owner/owner-note-21112026/02_GOALS_AND_PHASES.md` §G02 and `product/` specs; reuse the G01 core.
-2. Ask the owner to observe the two remaining G01 launcher checks (double-click, browser auto-open).
-3. When B53 Stage 2 finishes: evaluate, render, then pull and prune `b53/` following the runbook.
+1. B53 Stage 2 evaluation and rendering, then pull and prune `b53/` (scores are ready).
+2. G03 from `02_GOALS_AND_PHASES.md` §G03 and `research/METHOD_SPEC.md` / `POLICY_V0.md`, using the G02 ports.
+3. Ask the owner to observe the G01 launcher checks (double-click, browser auto-open).
 4. After each phase, pull dr-train artifacts to local and delete remote copies that are no longer needed.
 
 ### Owner decisions pending
 
-- Whether and when to resume B53 Stage 2 on the V100.
-- Any spending envelope for G02 API provider tests (default: USD 0, local/lexical only).
+- Any spending envelope for API provider use (default USD 0; Claude profiles stay blocked).
+- Optional per-item approvals: Ollama (local chat models) and `pypdf` (PDF ingestion).
+- Large derived files on dr-train: the owner chose on 21 Nov to keep them for now.
 - Two git stashes from 30 Oct 2026 (`ba92cf3a`, `5e95e5c2`) were kept; drop them only on request.
