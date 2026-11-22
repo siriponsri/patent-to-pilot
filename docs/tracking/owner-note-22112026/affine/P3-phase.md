@@ -1,6 +1,6 @@
 # P3 — Thai transfer and structural scope evaluation
 
-Phase status: **NOT_STARTED**
+Phase status: **IN_PROGRESS**
 
 **Entry rule:** Start each task only when its listed task dependencies and execution authority hold. Entry requirements describe the first available work; AFFiNE and full P0 completion do not gate research.
 
@@ -8,7 +8,7 @@ Phase status: **NOT_STARTED**
 
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
-| P3-T01 | Prepare Thai dataset/profile rights and exposure adapters | ⏳ NOT_STARTED | NOT_RUN | P3-T02; P4-T03 |
+| P3-T01 | Prepare Thai dataset/profile rights and exposure adapters | 🔄 IN_PROGRESS | NOT_RUN | P3-T02; P4-T03 |
 | P3-T02 | Build grouped source packets and independent judgments | ⏳ NOT_STARTED | NOT_RUN | P3-T04 |
 | P3-T03 | Run separate Thai text-transfer comparisons | ⏳ NOT_STARTED | NOT_RUN | P3-T05 |
 | P3-T04 | Evaluate structural scope and OCR end to end | ⏳ NOT_STARTED | NOT_RUN | P3-T05; P4-T03 |
@@ -23,6 +23,7 @@ Phase status: **NOT_STARTED**
 - **Check:** NOT_CHECKED
 - **Next:** P3-T02; P4-T03
 - **Blocker:** —
+- **Notes:** [2026-11-22] agent started (no downloads)
 
 ## P3-T02 — Build grouped source packets and independent judgments
 

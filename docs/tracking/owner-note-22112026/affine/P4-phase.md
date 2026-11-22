@@ -1,6 +1,6 @@
 # P4 — Integrated product usability and explainability
 
-Phase status: **NOT_STARTED**
+Phase status: **IN_PROGRESS**
 
 **Entry rule:** Start each task only when its listed task dependencies and execution authority hold. Entry requirements describe the first available work; AFFiNE and full P0 completion do not gate research.
 
@@ -8,7 +8,7 @@ Phase status: **NOT_STARTED**
 
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
-| P4-T01 | Extend the existing Search, Compare and Inspect workflow | ⏳ NOT_STARTED | NOT_RUN | P4-T02; P4-T03 |
+| P4-T01 | Extend the existing Search, Compare and Inspect workflow | 🔄 IN_PROGRESS | NOT_RUN | P4-T02; P4-T03 |
 | P4-T02 | Make local, API and self-hosted modes clear and usable | ⏳ NOT_STARTED | NOT_RUN | P4-T05 |
 | P4-T03 | Make source, structural scope and search provenance inspectable | ⏳ NOT_STARTED | NOT_RUN | P4-T04; P4-T05 |
 | P4-T04 | Verify selective revision against full recomputation | ⏳ NOT_STARTED | NOT_RUN | P4-T05 |
@@ -23,6 +23,7 @@ Phase status: **NOT_STARTED**
 - **Check:** NOT_CHECKED
 - **Next:** P4-T02; P4-T03
 - **Blocker:** —
+- **Notes:** [2026-11-22] agent started
 
 ## P4-T02 — Make local, API and self-hosted modes clear and usable
 

@@ -184,7 +184,7 @@
   {
    "phase_id": "P3",
    "name": "Thai transfer and structural scope evaluation",
-   "status": "NOT_STARTED",
+   "status": "IN_PROGRESS",
    "outcome": "NOT_RUN",
    "task_ids": [
     "P3-T01",
@@ -213,7 +213,7 @@
   {
    "phase_id": "P4",
    "name": "Integrated product usability and explainability",
-   "status": "NOT_STARTED",
+   "status": "IN_PROGRESS",
    "outcome": "NOT_RUN",
    "task_ids": [
     "P4-T01",
@@ -549,10 +549,10 @@
    "affine_item_id": "",
    "affine_item_url": "",
    "affine_sync_status": "NOT_SYNCED",
-   "blocker": "E1R not approved; OPENROUTER_API_KEY absent; Typhoon key/price unknown; A3r1 does not fit E1",
+   "blocker": "Waiting for owner to set OPENROUTER_API_KEY (+top-up) and TYPHOON_API_KEY in user environment; E1R approved (D11)",
    "budget_remaining_usd": null,
-   "owner_decision_pending": "Approve E1R (USD 50) or an affordable alternative; set keys; top up OpenRouter",
-   "notes": ""
+   "owner_decision_pending": "Set OPENROUTER_API_KEY, TYPHOON_API_KEY; top up OpenRouter ~USD 15",
+   "notes": "[2026-11-22] E1R approved and recorded in ledger (D11); Typhoon stays in panel (D12); PatenTEB partial audit accepted (D14)"
   },
   {
    "task_id": "P1-T02",
@@ -975,7 +975,7 @@
    "task_id": "P3-T01",
    "phase_id": "P3",
    "title": "Prepare Thai dataset/profile rights and exposure adapters",
-   "status": "NOT_STARTED",
+   "status": "IN_PROGRESS",
    "outcome": "NOT_RUN",
    "depends_on": [
     "P0-T06"
@@ -1003,7 +1003,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": ""
+   "notes": "[2026-11-22] agent started (no downloads)"
   },
   {
    "task_id": "P3-T02",
@@ -1150,7 +1150,7 @@
    "task_id": "P4-T01",
    "phase_id": "P4",
    "title": "Extend the existing Search, Compare and Inspect workflow",
-   "status": "NOT_STARTED",
+   "status": "IN_PROGRESS",
    "outcome": "NOT_RUN",
    "depends_on": [
     "P0-T06"
@@ -1178,7 +1178,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": ""
+   "notes": "[2026-11-22] agent started"
   },
   {
    "task_id": "P4-T02",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-22T19:04:26+07:00"
+ "live_updated_at": "2026-11-22T19:12:36+07:00"
 }

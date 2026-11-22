@@ -23,7 +23,8 @@ Phase status: **IN_PROGRESS**
 - **Evidence:** pending
 - **Check:** NOT_CHECKED
 - **Next:** P1-T02
-- **Blocker:** E1R not approved; OPENROUTER_API_KEY absent; Typhoon key/price unknown; A3r1 does not fit E1
+- **Blocker:** Waiting for owner to set OPENROUTER_API_KEY (+top-up) and TYPHOON_API_KEY in user environment; E1R approved (D11)
+- **Notes:** [2026-11-22] E1R approved and recorded in ledger (D11); Typhoon stays in panel (D12); PatenTEB partial audit accepted (D14)
 
 ## P1-T02 — Calibrate the complete output contract on TRAIN only
 

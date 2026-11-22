@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-22T19:04:26+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-22T19:12:36+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -41,7 +41,7 @@ Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
-| P1-T01 | Resolve paid execution prerequisites and exact scope | ⛔ BLOCKED | NOT_RUN | — | P1-T02 | E1R not approved; OPENROUTER_API_KEY absent; Typhoon key/price unknown; A3r1 does not fit E1 | NOT_SYNCED |
+| P1-T01 | Resolve paid execution prerequisites and exact scope | ⛔ BLOCKED | NOT_RUN | — | P1-T02 | Waiting for owner to set OPENROUTER_API_KEY (+top-up) and TYPHOON_API_KEY in user environment; E1R approved (D11) | NOT_SYNCED |
 | P1-T02 | Calibrate the complete output contract on TRAIN only | ⏳ NOT_STARTED | NOT_RUN | — | P1-T03 | — | NOT_SYNCED |
 | P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ⏳ NOT_STARTED | NOT_RUN | — | P1-T04 | — | NOT_SYNCED |
 | P1-T04 | Execute the declared four-model DEV pilot and spending decision | ⏳ NOT_STARTED | NOT_RUN | — | P1-T05 on GO; P1-T06 on STOP | — | NOT_SYNCED |
@@ -64,11 +64,11 @@ Phase status: **IN_PROGRESS**
 
 ## P3 — Thai transfer and structural scope evaluation
 
-Phase status: **NOT_STARTED**
+Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
-| P3-T01 | Prepare Thai dataset/profile rights and exposure adapters | ⏳ NOT_STARTED | NOT_RUN | — | P3-T02; P4-T03 | — | NOT_SYNCED |
+| P3-T01 | Prepare Thai dataset/profile rights and exposure adapters | 🔄 IN_PROGRESS | NOT_RUN | — | P3-T02; P4-T03 | — | NOT_SYNCED |
 | P3-T02 | Build grouped source packets and independent judgments | ⏳ NOT_STARTED | NOT_RUN | — | P3-T04 | — | NOT_SYNCED |
 | P3-T03 | Run separate Thai text-transfer comparisons | ⏳ NOT_STARTED | NOT_RUN | — | P3-T05 | — | NOT_SYNCED |
 | P3-T04 | Evaluate structural scope and OCR end to end | ⏳ NOT_STARTED | NOT_RUN | — | P3-T05; P4-T03 | — | NOT_SYNCED |
@@ -76,11 +76,11 @@ Phase status: **NOT_STARTED**
 
 ## P4 — Integrated product usability and explainability
 
-Phase status: **NOT_STARTED**
+Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
-| P4-T01 | Extend the existing Search, Compare and Inspect workflow | ⏳ NOT_STARTED | NOT_RUN | — | P4-T02; P4-T03 | — | NOT_SYNCED |
+| P4-T01 | Extend the existing Search, Compare and Inspect workflow | 🔄 IN_PROGRESS | NOT_RUN | — | P4-T02; P4-T03 | — | NOT_SYNCED |
 | P4-T02 | Make local, API and self-hosted modes clear and usable | ⏳ NOT_STARTED | NOT_RUN | — | P4-T05 | — | NOT_SYNCED |
 | P4-T03 | Make source, structural scope and search provenance inspectable | ⏳ NOT_STARTED | NOT_RUN | — | P4-T04; P4-T05 | — | NOT_SYNCED |
 | P4-T04 | Verify selective revision against full recomputation | ⏳ NOT_STARTED | NOT_RUN | — | P4-T05 | — | NOT_SYNCED |

@@ -39,3 +39,13 @@ Still open:
 - the Paper 53 DOI (`DOI pending` stays in the reference list);
 - E2 (later);
 - RunPod caps (D8).
+
+## Decisions of 22 Nov 2026, evening (owner in chat, answering one consolidated question)
+
+| # | Decision | Effect |
+|---|---|---|
+| D11 | **Approve E1R: USD 50 cumulative** (it includes E1 spend), notify at USD 40, hard limit USD 50, 100,000 attempted requests, no GPU rental | Recorded in the shared budget ledger (`approve --envelope E1R`), which now dispatches under E1R. Providers: OpenRouter and Typhoon. Scope: A3r1 plus bounded structural expansion and Thai checks under owner-note-22112026 |
+| D12 | **Typhoon:** the owner has an OpenTyphoon API key and reports the API as free | Typhoon2.5 stays in the A3r1 panel (4 models, 3 lineages). The owner sets `TYPHOON_API_KEY` as a user environment variable; the key never goes into chat. Zero price and free-tier status are to be confirmed from the API's usage fields during calibration. A rate limit of 200 requests/min applies |
+| D12a | **Other Thai LLMs suggested by the owner:** iApp (iapp.co.th API) and `nectec/pathumma-thaillm-8b-think-3.0.0` | Recorded as **P3 (Thai) candidates**, not added to the A3r1 panel, which is English patents. iApp needs its own key and price check under E1R. Pathumma 8B is a weight download (per-item approval at the time) and needs dr-train hosting; fp16 does not fit the free V100 memory next to the other user's service |
+| D13 | **OpenRouter:** set `OPENROUTER_API_KEY` and top up credits (about USD 15 recommended) | The owner's action. A3r1 calibration and the pilot start when the key is present |
+| D14 | **PatenTEB:** accept the partial audit | PatEmbed is reported separately with the shared-pool caveat. BM25, Qwen3 and Arctic are the main DAPFAM comparators. No further PatenTEB download |
