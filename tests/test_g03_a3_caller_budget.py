@@ -172,27 +172,32 @@ def test_calibration_selection_is_fixed_train_only_and_model_independent(a3, tmp
                  "--ledger-root", str(tmp_path / "out")])
 
 
-def _a3r1_config(tmp_path, **flags):
+def _a3r1_config(tmp_path, unpriced_typhoon=False, **flags):
     cfg = json.loads((REPO / "docs/healthtech/research/g03-dev/a3r1/a3r1-caller-config.json").read_text(
         encoding="utf-8"))
     cfg.update(flags)
+    if unpriced_typhoon:                      # the pre-freeze state: no verified Typhoon price recorded
+        for m in cfg["models"]:
+            if m["provider"] == "typhoon":
+                m["reservation_price"] = None
     p = tmp_path / "a3r1.json"
     p.write_text(json.dumps(cfg), encoding="utf-8")
     return p
 
 
-def test_tracked_a3r1_config_loads_800_tokens_and_stays_disabled(a3, tmp_path, monkeypatch):
+def test_tracked_a3r1_config_loads_800_tokens_and_disabled_flags_refuse(a3, tmp_path, monkeypatch):
+    # The tracked config was enabled at the P1-T03 freeze (23 Nov 2026); a copy with the flags off must still refuse.
     cfg = a3.load_config(REPO / "docs/healthtech/research/g03-dev/a3r1/a3r1-caller-config.json")
     assert cfg["protocol_id"] == "A3r1" and cfg["max_tokens"] == 800 and cfg["envelope"] == "E1R"
     assert sorted(cfg["models"]) == ["deepseek/deepseek-v4-flash-0731", "google/gemini-2.5-flash-lite",
                                      "qwen/qwen3-32b", "typhoon-v2.5-30b-a3b-instruct"]
-    assert cfg["execution_enabled"] is False and cfg["calibration_enabled"] is False
+    disabled = _a3r1_config(tmp_path, execution_enabled=False, calibration_enabled=False)
     rows = [{"app_id": str(i), "block": "TRAIN", "title": "t", "abstract": "a", "claim": "c"} for i in range(40)]
     q = tmp_path / "train.jsonl"
     q.write_text("".join(json.dumps(r) + "\n" for r in rows), encoding="utf-8")
     monkeypatch.setattr(a3, "_post", FakePost([]))
     with pytest.raises(SystemExit, match="calibration is disabled"):
-        a3.main(["--config", str(REPO / "docs/healthtech/research/g03-dev/a3r1/a3r1-caller-config.json"),
+        a3.main(["--config", str(disabled),
                  "--calibration", "--queries", str(q), "--model", "qwen/qwen3-32b",
                  "--ledger-root", str(tmp_path / "out"), "--budget-ledger", str(tmp_path / "l.sqlite3")])
 
@@ -222,7 +227,7 @@ def test_a3r1_calibration_is_refused_by_the_ledger_while_e1r_is_pending(a3, tmp_
 
 
 def test_typhoon_without_a_verified_price_is_never_dispatched(a3, tmp_path, monkeypatch, capsys):
-    p = _a3r1_config(tmp_path, calibration_enabled=True)
+    p = _a3r1_config(tmp_path, unpriced_typhoon=True, calibration_enabled=True)
     q = tmp_path / "train.jsonl"
     q.write_text(json.dumps({"app_id": "1", "block": "TRAIN", "title": "t", "abstract": "a", "claim": "c"}) + "\n",
                  encoding="utf-8")

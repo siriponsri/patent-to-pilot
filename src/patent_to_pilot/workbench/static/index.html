@@ -17,6 +17,8 @@
   <div class="labels" id="labels" aria-label="Data and execution labels"></div>
   <nav aria-label="Main">
     <button class="tab" data-view="workbench" aria-current="page">Workbench</button>
+    <button class="tab" data-view="search">Search</button>
+    <button class="tab" data-view="compare">Compare</button>
     <button class="tab" data-view="evidence">Evidence</button>
     <button class="tab" data-view="runs">Runs</button>
     <button class="tab" data-view="changes">Changes</button>
@@ -40,6 +42,7 @@
     </form>
     <h2>Synthetic workflow example</h2>
     <p>An authored, fictional document packet (letter, footnote, two annexes and one controlled revision) run through the local search and evidence trace in a temporary store. It shows the plumbing only; it is not a real document and not an evaluation. <a href="/api/synthetic/trace-slice" target="_blank" rel="noopener">Open the synthetic trace (JSON)</a></p>
+    <p>You can also load the same fictional packet into this store as a labelled project, to try Search, Compare (one bounded relation search) and Inspect with its original PDF pages. <button id="load-synthetic">Load synthetic relation-search example</button></p>
   </section>
 
   <section id="view-workbench" class="view" hidden>
@@ -57,6 +60,49 @@
       <a href="#" id="trace-link" hidden>Open run trace</a>
     </div>
     <div id="matrix-wrap"><p class="muted" id="matrix-empty">No result yet. Select <b>Run comparison</b> to run the local engine.</p></div>
+  </section>
+
+  <section id="view-search" class="view" hidden>
+    <h2>Search</h2>
+    <p class="muted">Searches the current versions of this project's sources on this computer. No model or network is used. Each result is the exact stored passage; select <b>Inspect source</b> to open it in its source version.</p>
+    <form id="search-form" class="search-form" role="search">
+      <label for="search-q" class="visually-hidden">Search text</label>
+      <input id="search-q" type="search" required maxlength="500" autocomplete="off" placeholder="Words to find, e.g. operating temperature">
+      <label for="search-mode" class="visually-hidden">Search mode</label>
+      <select id="search-mode">
+        <option value="terms">Any of the words (ranked)</option>
+        <option value="phrase">Exact phrase</option>
+        <option value="literal">Literal text (for Thai)</option>
+      </select>
+      <label for="search-cand" class="visually-hidden">Candidate</label>
+      <select id="search-cand"></select>
+      <button type="submit" class="primary">Search</button>
+    </form>
+    <div id="search-meta" class="muted"></div>
+    <div id="search-results"></div>
+  </section>
+
+  <section id="view-compare" class="view" hidden>
+    <h2>Compare</h2>
+    <p class="muted">Your requirements are checked against every candidate's current sources by the same local engine as the Workbench. Each requirement also shows the baseline search beside one bounded relation search, as an engineering demonstration.</p>
+    <h3>Requirements</h3>
+    <div id="req-list"></div>
+    <form id="req-form" class="card inline-form">
+      <h3 id="req-form-title">Add a requirement</h3>
+      <p class="muted">Write the requirement in your own words. The engine searches for the words and shows the best passage per candidate; it does not decide whether the passage satisfies the requirement. Thai text is kept as typed.</p>
+      <label for="req-id">Requirement ID (optional)</label>
+      <input id="req-id" maxlength="64" autocomplete="off" placeholder="assigned automatically (U1, U2, …)">
+      <label for="req-label">Requirement</label>
+      <input id="req-label" required maxlength="200" autocomplete="off">
+      <label for="req-query">Search words (optional)</label>
+      <input id="req-query" maxlength="500" autocomplete="off" placeholder="defaults to the requirement text">
+      <label for="req-match">Matching</label>
+      <select id="req-match"><option value="terms">Any of the words (ranked)</option><option value="phrase">Exact phrase</option></select>
+      <button type="submit">Save requirement</button>
+    </form>
+    <p id="req-fixed" class="muted" hidden></p>
+    <div class="actions"><button id="compare-run" class="primary">Run compare</button></div>
+    <div id="compare-results"></div>
   </section>
 
   <section id="view-evidence" class="view" hidden>

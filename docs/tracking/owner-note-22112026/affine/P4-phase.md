@@ -8,7 +8,7 @@ Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
-| P4-T01 | Extend the existing Search, Compare and Inspect workflow | 🔄 IN_PROGRESS | NOT_RUN | P4-T02; P4-T03 |
+| P4-T01 | Extend the existing Search, Compare and Inspect workflow | ✅ COMPLETE | ENGINEERING_VERIFIED | P4-T02; P4-T03 |
 | P4-T02 | Make local, API and self-hosted modes clear and usable | ⏳ NOT_STARTED | NOT_RUN | P4-T05 |
 | P4-T03 | Make source, structural scope and search provenance inspectable | ⏳ NOT_STARTED | NOT_RUN | P4-T04; P4-T05 |
 | P4-T04 | Verify selective revision against full recomputation | ⏳ NOT_STARTED | NOT_RUN | P4-T05 |
@@ -19,11 +19,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P0-T06
 - **Acceptance evidence:** Reuse existing Workbench/store; accept explicit arbitrary requirements; actual local search and baseline comparison work without paid inference.
-- **Evidence:** pending
-- **Check:** NOT_CHECKED
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P4-T01_workflow_receipt.md; src/patent_to_pilot/workbench/workflow.py; tests/test_p4_t01_workflow.py
+- **Check:** 9 new tests; workbench suites 119 pass; smoke 15/15; browser check, no console errors
 - **Next:** P4-T02; P4-T03
 - **Blocker:** —
-- **Notes:** [2026-11-22] agent started
+- **Notes:** [2026-11-22] agent started | [2026-11-23] Search (terms/phrase/literal), arbitrary requirements, Compare baseline vs bounded relation action (labelled ENGINEERING DEMO), Inspect spans + original file + honest page mapping; Thai FTS5 not segmented
 
 ## P4-T02 — Make local, API and self-hosted modes clear and usable
 

@@ -1,10 +1,12 @@
-// Patent-to-Pilot Workbench (PTP-2026-11-21/G01–G02). All results come from the local server; nothing is computed
+// Patent-to-Pilot Workbench (PTP-2026-11-21/G01–G02; P4-T01 Search, Compare and Inspect). All results come from the local server; nothing is computed
 // or pre-written here. Data are rendered with textContent (no HTML injection).
 "use strict";
 
 const S = { projectId: null, project: null, comparison: null, caps: null, liveRunId: null, view: "workbench",
   lastFocus: null, retrieval: null, providers: null };
 const isSample = () => S.project && S.project.data_origin === "synthetic_fixture";
+const isSynthetic = () => S.project && S.project.data_origin === "synthetic_demo";
+const VIEWS = ["workbench", "search", "compare", "evidence", "runs", "changes", "providers"];
 
 const $ = (id) => document.getElementById(id);
 function el(tag, attrs = {}, ...kids) {
@@ -35,8 +37,10 @@ function show(view) {
   for (const b of document.querySelectorAll(".tab")) {
     if (b.dataset.view === view) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
   }
-  for (const v of ["workbench", "evidence", "runs", "changes", "providers"]) $("view-" + v).hidden = !S.projectId || v !== view;
+  for (const v of VIEWS) $("view-" + v).hidden = !S.projectId || v !== view;
   $("welcome").hidden = !!S.projectId;
+  if (view === "search") renderSearch();
+  if (view === "compare") renderCompare();
   if (view === "evidence") renderSources();
   if (view === "runs") renderRuns();
   if (view === "changes") renderChanges();
@@ -46,7 +50,7 @@ function show(view) {
 function labels() {
   const L = $("labels"); L.replaceChildren();
   if (!S.projectId) return;
-  L.append(el("span", { class: "label", text: isSample() ? "Sample data" : "Your files" }));
+  L.append(el("span", { class: "label", text: isSample() ? "Sample data" : isSynthetic() ? "Synthetic example" : "Your files" }));
   const last = S.comparison && S.comparison.last_run;
   if (last) {
     if (S.liveRunId === last.run_id) L.append(el("span", { class: "label live", text: "Live local run" }));
@@ -77,7 +81,7 @@ async function loadProject() {
   renderWorkbench(); labels();
 }
 
-function reqLabel(rid) { return S.project.mission.requirements.find((r) => r.requirement_id === rid).label; }
+function reqLabel(rid) { const r = S.project.mission.requirements.find((x) => x.requirement_id === rid); return r ? r.label : rid; }
 
 function renderWorkbench() {
   const P = S.project, C = S.comparison;
@@ -106,7 +110,7 @@ function renderWorkbench() {
   wrap.replaceChildren(table);
 }
 
-const ICON = { meets: "✓", does_not_meet: "✕", unknown: "?", needs_review: "!" };
+const ICON = { meets: "✓", does_not_meet: "✕", unknown: "?", needs_review: "!", evidence_found: "•" };
 function cellTd(cell, req) {
   const td = el("td", { class: "cell", "data-req": `${req.requirement_id} · ${req.label}` });
   if (!cell) { td.append(el("span", { class: "muted", text: "Not assessed" })); return td; }
@@ -136,6 +140,7 @@ async function openCitation(sid, vid, pid, trigger) {
       el("pre", { class: "source", lang: "und" }, c.text_before, el("mark", { text: c.quote }), c.text_after),
       el("h3", { text: "Used by" }),
       el("ul", {}, ...c.used_by.map((u) => el("li", { text: `${u.candidate_id} / ${u.requirement_id}: ${u.outcome} (${u.state})` }))),
+      el("p", {}, el("button", { onclick: (ev) => openSpan(sid, vid, c.start_char, c.end_char, ev.currentTarget) }, "Inspect source (page and original file)")),
       el("p", {}, "Other versions: ", ...c.all_versions.map((v) => el("button", { class: "cite", onclick: () => openSource(sid, v) }, `${sid} · ${v}`))),
       el("details", {}, el("summary", { text: "Technical details" }),
         el("p", { class: "mono", text: `sha256 ${c.sha256}` }),
@@ -155,6 +160,200 @@ async function openSource(sid, vid) {
       el("details", {}, el("summary", { text: "Technical details" }), el("p", { class: "mono", text: `sha256 ${v.sha256} · imported by ${v.import_event}` })));
     $("drawer-close").focus();
   } catch (e) { body.replaceChildren(el("p", { class: "status error", text: `Could not open this source: ${e.message} (${e.code}).` })); }
+}
+
+// ---------------- P4-T01: Inspect any span of a stored source version
+async function openSpan(sid, vid, start, end, trigger) {
+  S.lastFocus = trigger || document.activeElement;
+  const body = $("drawer-body"); body.replaceChildren(el("p", { text: "Loading the source version…" }));
+  $("drawer").hidden = false; $("drawer-close").focus();
+  try {
+    const x = await api("GET", `/api/projects/${S.projectId}/sources/${sid}/versions/${vid}/spans/${start}/${end}`);
+    $("drawer-title").textContent = `Inspect · ${x.source_id} · ${x.version_id}`;
+    const badge = x.status === "current" ? el("span", { class: "pill current", text: "Current" }) : el("span", { class: "pill historical", text: `Superseded (current: ${x.current_version})` });
+    const M = x.page_mapping, O = x.original_artifact;
+    const pageInfo = M.state === "regions" ? el("div", {},
+        el("p", {}, el("b", { text: `Page ${M.pages.join(", ")}` }), ` — ${M.regions.length} recorded region(s).`),
+        el("ul", {}, ...M.regions.map((r) => el("li", { class: "mono", text: `${r.node_id} (${r.kind}): page ${r.page}, box ${r.bbox.map((v) => v.toFixed(3)).join(", ")}` }))),
+        el("p", { class: "muted", text: M.basis }))
+      : M.state === "page_only" ? el("div", {}, el("p", {}, el("b", { text: `Page ${M.pages.join("–")}` }), " (no region inside the page)."), el("p", { class: "muted", text: M.basis }))
+      : el("p", { class: "muted", text: `No page or region mapping: ${M.reason}` });
+    const origInfo = O.state === "kept"
+      ? el("p", {}, el("a", { href: O.url, target: "_blank", rel: "noopener" }, `Open the original file (${O.media_type}, ${O.size_bytes} bytes)`),
+          ` · integrity ${O.integrity}` + (O.same_bytes_as_canonical_text ? " · the original is the stored text itself" : " · stored separately from the extracted text"))
+      : el("p", { class: "muted", text: O.note });
+    body.replaceChildren(
+      el("p", {}, el("b", { text: x.title }), " ", badge, " ", el("span", { class: "pill", text: x.data_origin === "synthetic_fixture" ? "Sample data" : x.data_origin === "synthetic_demo" ? "Synthetic example" : "Your file" })),
+      el("h3", { text: "Page and region" }), pageInfo,
+      el("h3", { text: "Original file" }), origInfo,
+      el("h3", { text: "Exact text" }),
+      el("p", { class: "muted", text: "The stored text of this version; the highlighted span is the evidence. Its hash was re-checked just now." }),
+      el("pre", { class: "source", lang: "und" }, x.text_before, el("mark", { text: x.quote }), x.text_after),
+      x.passages.length ? el("p", {}, "Passages here: ", ...x.passages.map((p) => el("button", { class: "cite", onclick: (ev) => openCitation(sid, vid, p.passage_id, ev.currentTarget) }, p.passage_id))) : null,
+      el("details", {}, el("summary", { text: "Technical details" }),
+        el("p", { class: "mono", text: `sha256 ${x.sha256} (${x.stored_text_integrity})` }),
+        el("p", { class: "mono", text: `offsets ${x.start_char}–${x.end_char} (${x.offset_convention})` }),
+        el("p", { class: "mono", text: `${x.source_kind} · ${x.license} · ${x.origin_path}` }),
+        O.state === "kept" ? el("p", { class: "mono", text: `original sha256 ${O.sha256} · ${O.storage_ref}` }) : null));
+    const m = body.querySelector("mark"); if (m) m.scrollIntoView({ block: "center" });
+  } catch (e) { body.replaceChildren(el("p", { class: "status error", text: `Could not open this span: ${e.message} (${e.code}).` })); }
+}
+
+// ---------------- P4-T01: Search
+function marked(text, offset, matches) {
+  const out = []; let pos = 0;
+  for (const m of matches) {
+    const a = m.start_char - offset, b = m.end_char - offset;
+    if (b <= pos || a >= text.length) continue;
+    const s = Math.max(a, pos), e = Math.min(b, text.length);
+    out.push(text.slice(pos, s), el("mark", { text: text.slice(s, e) })); pos = e;
+  }
+  out.push(text.slice(pos));
+  return out;
+}
+
+function renderSearch() {
+  const sel = $("search-cand"), keep = sel.value;
+  sel.replaceChildren(el("option", { value: "", text: "All candidates" }), ...S.project.mission.candidates.map((c) => el("option", { value: c.candidate_id, text: c.label })));
+  sel.value = keep;
+  $("search-q").focus();
+}
+
+async function doSearch(ev) {
+  ev.preventDefault();
+  const q = $("search-q").value;
+  if (!q.trim()) { status("Type something to search for.", true); return; }
+  status("Searching the local index…");
+  try {
+    const r = await api("POST", `/api/projects/${S.projectId}/search`, { query: q, mode: $("search-mode").value, candidate_id: $("search-cand").value || null, limit: 20 });
+    $("search-meta").replaceChildren(
+      el("p", { text: `${r.result_count} result(s) from ${r.index.passages} current passages (${r.index.source_versions.join(", ") || "no sources"}). Route: ${r.route}.` + (r.fts_match ? ` Issued: ${r.fts_match}` : "") }),
+      ...r.notes.map((n) => el("p", { class: "status", text: n })));
+    $("search-results").replaceChildren(...r.results.map((h) => el("div", { class: "card result" },
+      el("h3", { text: `${h.rank}. ${h.title}` }),
+      el("p", { class: "meta", text: `${h.source_id} · ${h.version_id} · passage ${h.passage_id} · ${h.candidate_id}` + (h.score_bm25 != null ? ` · BM25 ${h.score_bm25}` : "") + ` · characters ${h.start_char}–${h.end_char}` }),
+      el("p", { class: "quote", lang: "und" }, h.snippet_truncated && h.snippet_start_char > h.start_char ? "… " : "", ...marked(h.snippet, h.snippet_start_char, h.matches), h.snippet_truncated && h.snippet_end_char < h.end_char ? " …" : ""),
+      el("button", { onclick: (e) => openSpan(h.source_id, h.version_id, h.start_char, h.end_char, e.currentTarget) }, "Inspect source"))));
+    status(`${r.result_count} result(s) for "${q}".`);
+  } catch (e) { status(`Search failed: ${e.message} (${e.code}).`, true); }
+}
+
+// ---------------- P4-T01: Compare
+async function renderCompare() {
+  try {
+    const R = await api("GET", `/api/projects/${S.projectId}/requirements`);
+    const list = $("req-list");
+    if (R.bound_requirements) list.replaceChildren(...R.bound_requirements.map((b) => el("div", { class: "card" },
+      el("b", { text: b.requirement_id }), ` — "${b.text}" (span ${b.start_char}–${b.end_char} of the question "${b.query_text}")`)));
+    else if (!R.requirements.length) list.replaceChildren(el("p", { class: "muted", text: "No requirements yet." }));
+    else list.replaceChildren(el("table", { class: "matrix" },
+      el("thead", {}, el("tr", {}, ...["ID", "Requirement", "Kind", "Search", ""].map((h) => el("th", { scope: "col", text: h })))),
+      el("tbody", {}, ...R.requirements.map((r) => el("tr", {},
+        el("td", { text: r.requirement_id }), el("td", { text: r.label }),
+        el("td", { text: r.kind === "text" ? "Free text (evidence only)" : `Bounded field: ${r.field}` }),
+        el("td", { class: "mono", text: r.fts_match }),
+        el("td", {}, R.editable && r.kind === "text" ? el("button", { onclick: () => editRequirement(r) }, "Edit") : null))))));
+    $("req-form").hidden = !R.editable;
+    $("req-fixed").hidden = R.editable; $("req-fixed").textContent = R.note || "";
+  } catch (e) { status(`Could not load requirements: ${e.message}`, true); }
+}
+
+function editRequirement(r) {
+  $("req-form-title").textContent = `Edit requirement ${r.requirement_id}`;
+  $("req-id").value = r.requirement_id; $("req-label").value = r.label; $("req-query").value = r.query === r.label ? "" : r.query;
+  $("req-match").value = r.match || "terms"; $("req-label").focus();
+}
+
+async function saveRequirement(ev) {
+  ev.preventDefault();
+  const body = { label: $("req-label").value, query: $("req-query").value || null, match: $("req-match").value };
+  if ($("req-id").value.trim()) body.requirement_id = $("req-id").value.trim();
+  try {
+    const r = await api("POST", `/api/projects/${S.projectId}/requirements`, body);
+    status(r.status === "unchanged" ? `Requirement ${r.requirement.requirement_id} is unchanged.` : `Requirement ${r.requirement.requirement_id} ${r.status}. Run compare to assess it.`);
+    $("req-form").reset(); $("req-form-title").textContent = "Add a requirement";
+    await loadProject(); await renderCompare();
+  } catch (e) { status(`Requirement not saved: ${e.message} (${e.code}).`, true); }
+}
+
+function candList(cards, newIds) {
+  if (!cards.length) return el("p", { class: "muted", text: "No candidate." });
+  return el("ol", { class: "cands" }, ...cards.map((c) => {
+    const isNew = !!(newIds && newIds.includes(c.node_id));
+    return el("li", {},
+      isNew ? el("span", { class: "pill new", text: "New" }) : null, isNew ? " " : null,
+      el("span", { class: "mono", text: c.node_id }),
+      el("div", { class: "quote", lang: "und", text: c.quote.length > 220 ? c.quote.slice(0, 220) + " …" : c.quote }),
+      el("button", { class: "cite", onclick: (e) => openSpan(c.source_id, c.version_id, c.start_char, c.end_char, e.currentTarget) }, "Inspect source"));
+  }));
+}
+
+function sideBySide(sb) {
+  return el("div", { class: "card" },
+    el("p", { class: "demo", text: sb.label }),
+    el("p", { text: sb.summary }),
+    el("div", { class: "grid2" },
+      el("div", {}, el("h4", { text: `Baseline: seed search (${sb.baseline.ids.length})` }), el("p", { class: "mono", text: `Issued: ${sb.seed_query}` }), candList(sb.baseline.candidates)),
+      el("div", {}, el("h4", { text: `With one relation search (${sb.action.after_ids.length}, ${sb.action.new_ids.length} new)` }),
+        el("p", { class: "mono", text: sb.issued_query ? `Issued: ${sb.issued_query}` : "No extra search issued." }),
+        candList(sb.action.candidates, sb.action.new_ids))),
+    el("details", {}, el("summary", { text: "How this was found" }),
+      el("ul", {},
+        el("li", { text: `Form: ${sb.form}` }), el("li", { text: `Policy: ${sb.policy.name} (sha256 ${sb.policy.sha256.slice(0, 16)}…)` }),
+        el("li", { text: `Coverage signal: ${sb.reference_detector}` }), el("li", { text: `Eligibility: ${sb.eligibility}` }),
+        el("li", { text: `Selected relation: ${sb.selected_relation || "none"}` }),
+        sb.requirement_status_before ? el("li", { text: `Runtime status (not gold): ${sb.requirement_status_before} → ${sb.requirement_status_after}` }) : null,
+        el("li", { text: `Searches: ${sb.search_calls} (budget ${sb.budget.used}/${sb.budget.limit}) · paid model calls ${sb.paid_model_calls}` }),
+        el("li", { text: sb.recorded_in_store ? `Recorded as run ${sb.run_id}.` : "Not recorded in the run history (read-only demonstration)." })),
+      sb.query_terms.length ? el("ul", {}, ...sb.query_terms.map((t) => el("li", { class: "mono", text: `"${t.text}" — ${t.origin}${t.ref_id ? ` (${t.ref_id})` : ""}` }))) : null));
+}
+
+function assessmentTable(rows) {
+  return el("table", { class: "matrix" },
+    el("thead", {}, el("tr", {}, el("th", { scope: "col", text: "Candidate" }), el("th", { scope: "col", text: "Result" }), el("th", { scope: "col", text: "Evidence" }))),
+    el("tbody", {}, ...rows.map((a) => {
+      const c = a.cell, ci = c && c.citation;
+      return el("tr", {},
+        el("th", { scope: "row", text: a.candidate_label }),
+        el("td", { class: "cell" }, c ? el("span", { class: `badge ${c.display_outcome}` }, el("span", { "aria-hidden": "true", text: ICON[c.display_outcome] }), c.label) : el("span", { class: "muted", text: "Not assessed" }),
+          c ? el("p", { text: c.explanation }) : null),
+        el("td", {}, ci ? el("div", {}, el("div", { class: "quote", lang: "und", text: ci.quote }),
+          el("button", { class: "cite", onclick: (e) => openSpan(ci.source_id, ci.version_id, ci.start_char, ci.end_char, e.currentTarget) }, `Inspect ${ci.source_id} · ${ci.version_id}`))
+          : el("span", { class: "muted", text: "No cited passage" })));
+    })));
+}
+
+async function runCompare() {
+  const b = $("compare-run"); b.disabled = true; status("Running the requirements against the current sources…");
+  try {
+    const r = await api("POST", `/api/projects/${S.projectId}/compare`, {});
+    if (r.run && r.run.run_id) S.liveRunId = r.run.run_id;
+    $("compare-results").replaceChildren(r.synthetic_label ? el("p", { class: "demo", text: r.synthetic_label }) : "",
+      el("p", { class: "muted", text: `Assessment path: ${r.assessment_path}.` + (r.run ? ` Run ${r.run.run_id} (${r.run.status}).` : "") + ` Paid model calls: ${r.paid_model_calls}.` }),
+      ...r.requirements.map((x) => {
+        const q = x.requirement;
+        return el("section", { class: "card" },
+          el("h3", { text: `${q.requirement_id} · ${q.label}` }),
+          q.fts_match ? el("p", { class: "mono muted", text: `Assessment search: ${q.fts_match}` }) : null,
+          x.assessments.length ? assessmentTable(x.assessments) : null,
+          x.runtime_assessment ? el("p", { text: `Runtime assessment (structural signal, not gold): ${x.runtime_assessment.status}; ${x.runtime_assessment.evidence.length} evidence span(s).` }) : null,
+          sideBySide(x.side_by_side));
+      }));
+    await loadProject();
+    status(`Compare finished` + (r.run ? ` (run ${r.run.run_id}).` : "."));
+  } catch (e) { status(`Compare failed: ${e.message} (${e.code}). Previous results stay available.`, true); }
+  finally { b.disabled = false; }
+}
+
+async function loadSynthetic() {
+  status("Loading the synthetic relation-search example…");
+  try {
+    const r = await api("POST", "/api/synthetic/relation-search", {});
+    S.projectId = r.project_id; S.liveRunId = r.side_by_side.run_id;
+    await loadProjectList(); await loadProject();
+    status(`${r.created ? "Synthetic example created" : "Synthetic example reopened"}: ${r.side_by_side.summary}`);
+    show("compare");
+  } catch (e) { status(`Could not load the example: ${e.message} (${e.code}).`, true); }
 }
 
 function closeDrawer() { $("drawer").hidden = true; if (S.lastFocus && document.contains(S.lastFocus)) S.lastFocus.focus(); }
@@ -455,6 +654,10 @@ async function switchProject() {
 async function init() {
   for (const b of document.querySelectorAll(".tab")) b.addEventListener("click", () => S.projectId ? show(b.dataset.view) : status("Open the sample or create a project first."));
   $("open-sample").addEventListener("click", openSample);
+  $("load-synthetic").addEventListener("click", loadSynthetic);
+  $("search-form").addEventListener("submit", doSearch);
+  $("req-form").addEventListener("submit", saveRequirement);
+  $("compare-run").addEventListener("click", runCompare);
   $("new-project-form").addEventListener("submit", createProject);
   $("add-doc-form").addEventListener("submit", addDocument);
   $("profile-form").addEventListener("submit", saveProfile);

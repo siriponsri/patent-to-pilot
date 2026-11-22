@@ -18,6 +18,7 @@ from urllib.parse import unquote, urlsplit
 
 from patent_to_pilot.workbench.core import CoreError, EvidenceCore
 from patent_to_pilot.workbench.providers import ADAPTERS, ProviderError
+from patent_to_pilot.workbench.workflow import Workflow
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 STATIC_FILES = {"/": "index.html", "/index.html": "index.html", "/app.js": "app.js", "/app.css": "app.css"}
@@ -50,6 +51,14 @@ ROUTES = [
     ("POST", rf"/api/projects/{_SEG}/index", "build_index"),
     # P0-T06: read-only synthetic workflow example (runs in a temporary store; the owner's store is not touched)
     ("GET", r"/api/synthetic/trace-slice", "trace_slice"),
+    # P4-T01: Search, Compare and Inspect on the same store and core
+    ("POST", rf"/api/projects/{_SEG}/search", "search"),
+    ("GET", rf"/api/projects/{_SEG}/requirements", "requirements"),
+    ("POST", rf"/api/projects/{_SEG}/requirements", "save_requirement"),
+    ("POST", rf"/api/projects/{_SEG}/compare", "compare"),
+    ("GET", rf"/api/projects/{_SEG}/sources/{_SEG}/versions/{_SEG}/spans/{_SEG}/{_SEG}", "inspect"),
+    ("GET", rf"/api/projects/{_SEG}/sources/{_SEG}/versions/{_SEG}/original", "original"),
+    ("POST", r"/api/synthetic/relation-search", "synthetic_relation_search"),
 ]
 UPLOAD_LIMIT = 3_000_000  # base64 of the 2 MB ingestion limit, plus JSON overhead
 BODY_LIMIT = 65536
@@ -65,10 +74,18 @@ def _provider_call(fn, *args):
         raise err from None
 
 
+class Raw:
+    """A non-JSON response (P4-T01: the stored original bytes of a source version)."""
+
+    def __init__(self, data: bytes, media_type: str, filename: str) -> None:
+        self.data, self.media_type, self.filename = data, media_type, filename
+
+
 class App:
     def __init__(self, core: EvidenceCore, host: str, port: int) -> None:
         self.core, self.host, self.port = core, host, port
         self.lock = threading.Lock()   # one state-changing core operation at a time
+        self.workflow = Workflow(core)
 
     def health(self, _body):
         return {"status": "ok", "store": str(self.core.store.path), "url": f"http://{self.host}:{self.port}/"}
@@ -175,6 +192,31 @@ class App:
         from patent_to_pilot.workbench.trace_slice import run_synthetic_slice
         return run_synthetic_slice()   # fresh temporary store per request; synthetic packet only
 
+    # ---------------- P4-T01
+    def search(self, body, pid):
+        return self.workflow.search(pid, body or {})
+
+    def requirements(self, _body, pid):
+        return self.workflow.requirements(pid)
+
+    def save_requirement(self, body, pid):
+        with self.lock:
+            return self.workflow.save_requirement(pid, body or {})
+
+    def compare(self, body, pid):
+        with self.lock:
+            return self.workflow.compare(pid, body or {}, invoked_via="http")
+
+    def inspect(self, _body, pid, sid, vid, start, end):
+        return self.workflow.inspect(pid, sid, vid, start, end)
+
+    def original(self, _body, pid, sid, vid):
+        return Raw(*self.workflow.original(pid, sid, vid))
+
+    def synthetic_relation_search(self, _body):
+        with self.lock:
+            return self.workflow.load_synthetic_example()
+
 
 def make_handler(app: App):
     allowed_hosts = {f"{app.host}:{app.port}", f"localhost:{app.port}", f"127.0.0.1:{app.port}"}
@@ -185,12 +227,14 @@ def make_handler(app: App):
         def log_message(self, fmt, *args):  # keep the owner's terminal readable
             return
 
-        def _send(self, status: int, payload: bytes, ctype: str) -> None:
+        def _send(self, status: int, payload: bytes, ctype: str, extra: dict | None = None) -> None:
             self.send_response(status)
             self.send_header("Content-Type", ctype)
             self.send_header("Content-Length", str(len(payload)))
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
+            for k, v in (extra or {}).items():
+                self.send_header(k, v)
             self.end_headers()
             self.wfile.write(payload)
 
@@ -224,7 +268,13 @@ def make_handler(app: App):
                 match = re.fullmatch(pattern, path)
                 if m == method and match:
                     try:
-                        return self._json(200, getattr(app, name)(body, *[unquote(g) for g in match.groups()]))
+                        out = getattr(app, name)(body, *[unquote(g) for g in match.groups()])
+                        if isinstance(out, Raw):  # owner-supplied bytes: shown inline, never run as a page
+                            ctype = "application/pdf" if out.media_type == "application/pdf" else "text/plain; charset=utf-8"
+                            return self._send(200, out.data, ctype, {
+                                "Content-Disposition": f'inline; filename="{out.filename}"',
+                                "Content-Security-Policy": "sandbox"})
+                        return self._json(200, out)
                     except CoreError as exc:
                         return self._json(exc.status, {"error": exc.code, "message": str(exc)})
                     except Exception as exc:  # no stack traces to the browser; details stay in the terminal

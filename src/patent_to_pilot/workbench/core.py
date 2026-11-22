@@ -36,8 +36,18 @@ RRF_K = 60
 RETRIEVAL_MODES = ("lexical", "hybrid")
 _SOURCE_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
 OUTCOME_LABELS = {"meets": "Meets", "does_not_meet": "Does not meet", "unknown": "Unknown",
-                  "needs_review": "Needs review"}
+                  "needs_review": "Needs review",
+                  # P4-T01: a free-text requirement has no bounded field to check, so the engine only reports the
+                  # matching passage; a person judges whether it satisfies the requirement.
+                  "evidence_found": "Evidence found (not judged)"}
 OFFSET_CONVENTION = "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8"
+# P4-T01: how a requirement's query becomes an FTS5 expression. "phrase" is the G01 behaviour (one exact phrase);
+# "terms" ORs the requirement's word tokens (English stopwords dropped) and lets BM25 rank the passages.
+MATCH_MODES = ("phrase", "terms")
+REQUIREMENT_KINDS = ("bounded_field", "text")
+TERM_STOPWORDS = frozenset("a an and are as at be by for from has have in is it its of on or that the this to was "
+                           "were what which with".split())
+MAX_REQUIREMENTS = 50
 
 
 class CoreError(Exception):
@@ -133,6 +143,86 @@ def fts_phrase(query: str) -> str:
     if not tokens:
         raise ValidationFailed("empty lexical query")
     return '"' + " ".join(tokens) + '"'
+
+
+def fts_terms(query: str) -> str:
+    """P4-T01: OR of the query's word tokens, each quoted (FTS5 operators stay inert). English stopwords are dropped
+    unless nothing else is left. Thai runs are kept whole (the unicode61 tokenizer does not segment Thai words)."""
+    tokens = []
+    for t in re.findall(r"\w+", query.lower(), flags=re.UNICODE):
+        if t not in tokens:
+            tokens.append(t)
+    if not tokens:
+        raise ValidationFailed("empty lexical query")
+    kept = [t for t in tokens if t not in TERM_STOPWORDS] or tokens
+    return " OR ".join(f'"{t}"' for t in kept)
+
+
+def requirement_match(req: dict) -> str:
+    """The FTS5 expression a requirement searches with (G01 requirements have no ``match`` key: phrase)."""
+    return fts_terms(req["query"]) if req.get("match") == "terms" else fts_phrase(req["query"])
+
+
+def requirement_kind(req: dict) -> str:
+    return "text" if req.get("kind") == "text" or not req.get("field") else "bounded_field"
+
+
+def normalize_requirement(r, requirement_id: str | None = None) -> dict:
+    """Validate one requirement and return its stored form.
+
+    * bounded field (G01 grammar): ``requirement_id, label, query, field, predicate`` (+ optional ``match``);
+    * free text (P4-T01): ``label`` and optional ``query`` (default: the label); no field, no predicate. The engine
+      searches with ``match`` (default ``terms``) and reports the top passage as evidence without judging it.
+    """
+    if not isinstance(r, dict):
+        raise ValidationFailed("a requirement must be an object", "bad_requirement")
+    rid = requirement_id or r.get("requirement_id")
+    if not isinstance(rid, str) or not _SOURCE_ID.match(rid):
+        raise ValidationFailed("requirement_id must be letters, digits, . _ - (max 64)", "bad_requirement_id")
+    label = r.get("label")
+    if not isinstance(label, str) or not label.strip() or len(label) > 200:
+        raise ValidationFailed("label must be 1-200 characters", "bad_requirement_label")
+    query = r.get("query")
+    if query is None or (isinstance(query, str) and not query.strip()):
+        query = label
+    if not isinstance(query, str) or len(query) > 500:
+        raise ValidationFailed("query must be text of at most 500 characters", "bad_requirement_query")
+    if not re.findall(r"\w+", query, flags=re.UNICODE):
+        raise ValidationFailed("query needs at least one word (letters or digits)", "bad_requirement_query")
+    field = r.get("field")
+    kind = r.get("kind") or ("bounded_field" if field else "text")
+    if kind not in REQUIREMENT_KINDS:
+        raise ValidationFailed(f"kind must be one of {list(REQUIREMENT_KINDS)}", "bad_requirement_kind")
+    match = r.get("match")
+    out = {"requirement_id": rid, "label": label.strip(), "query": query.strip()}
+    if kind == "text":
+        if field is not None or r.get("predicate") is not None:
+            raise ValidationFailed("a free-text requirement has no field or predicate", "bad_requirement_kind")
+        match = match or "terms"
+        if match not in MATCH_MODES:
+            raise ValidationFailed(f"match must be one of {list(MATCH_MODES)}", "bad_requirement_match")
+        out.update(kind="text", match=match)
+        return out
+    pred = r.get("predicate")
+    if field not in P.FIELD_LABELS or not isinstance(pred, dict):
+        raise ValidationFailed(f"a bounded requirement needs a field of {sorted(P.FIELD_LABELS)} and a predicate",
+                               "bad_requirement_field")
+    op = pred.get("operator")
+    if field == "supported_temperature_range":
+        nums = [pred.get("minimum"), pred.get("maximum")]
+        if op != "contains_interval" or not all(isinstance(x, (int, float)) and not isinstance(x, bool) for x in nums) \
+                or nums[0] > nums[1] or pred.get("unit") != "degC":
+            raise ValidationFailed("the temperature range needs contains_interval with minimum <= maximum and unit "
+                                   "degC", "bad_requirement_predicate")
+    elif op != "equals" or not isinstance(pred.get("value"), bool):
+        raise ValidationFailed("a yes/no field needs an equals predicate with a true/false value",
+                               "bad_requirement_predicate")
+    out.update(field=field, predicate=pred)
+    if match is not None:
+        if match not in MATCH_MODES:
+            raise ValidationFailed(f"match must be one of {list(MATCH_MODES)}", "bad_requirement_match")
+        out["match"] = match
+    return out
 
 
 # --------------------------------------------------------------------------- the core service
@@ -291,15 +381,17 @@ class EvidenceCore:
                          "passage_id": r["passage_id"], "score": round(r["score"], 6)})
         return hits
 
-    def _search(self, con, project_id: str, candidate_id: str, query: str, ctx: dict | None = None) -> list[dict]:
+    def _search(self, con, project_id: str, candidate_id: str, query: str, ctx: dict | None = None,
+                match: str | None = None) -> list[dict]:
         """Lexical (G01 behaviour, unchanged) unless the run's retrieval context is hybrid: then FTS5 and dense
         cosine over the active, fresh index generation are fused by reciprocal rank. The mode actually used is
-        written to ``ctx['last_search']`` so the caller can record it and bind the dependency."""
+        written to ``ctx['last_search']`` so the caller can record it and bind the dependency. ``match`` (P4-T01) is
+        the requirement's FTS5 expression; by default the query is one phrase (G01)."""
         if not ctx or ctx["effective"] != "hybrid":
             if ctx is not None:
                 ctx["last_search"] = "lexical"
-            return self._lexical(con, project_id, candidate_id, query, SEARCH_TOP_K)
-        lex = self._lexical(con, project_id, candidate_id, query, HYBRID_CHANNEL_K)
+            return self._lexical(con, project_id, candidate_id, query, SEARCH_TOP_K, match=match)
+        lex = self._lexical(con, project_id, candidate_id, query, HYBRID_CHANNEL_K, match=match)
         try:
             qv = ctx["query_vectors"].get(query)
             if qv is None:
@@ -310,7 +402,7 @@ class EvidenceCore:
             ctx["effective"] = "lexical_fallback"
             ctx["reason"] = f"dense channel failed during the run ({type(exc).__name__}: {exc}); lexical only from here"
             ctx["last_search"] = "lexical_fallback"
-            return self._lexical(con, project_id, candidate_id, query, SEARCH_TOP_K)
+            return self._lexical(con, project_id, candidate_id, query, SEARCH_TOP_K, match=match)
         current = self._current_versions(con, project_id)
         fused: dict[tuple, dict] = {}
         for rank, h in enumerate(lex, start=1):
@@ -441,12 +533,16 @@ class EvidenceCore:
             return seq, "deadline:max_wall_seconds"
         rid = req["requirement_id"]
         t0 = utc_now()
+        match = requirement_match(req)
+        free_text = requirement_kind(req) == "text"
         with self.store.read() as con:
-            hits = self._search(con, project_id, cand, req["query"], ctx)
+            hits = self._search(con, project_id, cand, req["query"], ctx, match=match)
             scope = self._scope(con, project_id, cand)
         counters["acquisition_actions"] += 1
-        detail = {"query": req["query"], "fts_match": fts_phrase(req["query"]), "candidate_scope": cand,
+        detail = {"query": req["query"], "fts_match": match, "candidate_scope": cand,
                   "scope_versions": [f"{s}@{v}" for s, v in scope], "hits": hits}
+        if free_text:
+            detail["requirement_kind"] = "text"
         if ctx and ctx["mode"] == "hybrid":
             detail["retrieval"] = {"used": ctx["last_search"], "generation_id": ctx["generation_id"]}
         self._action(run_id, seq, "search_current_sources", cand, rid, detail, started=t0)
@@ -462,6 +558,14 @@ class EvidenceCore:
                                 "p.version_id=? AND p.passage_id=?",
                                 (project_id, h["source_id"], h["version_id"], h["passage_id"])).fetchone()
             counters["source_reads"] += 1
+            if free_text:  # P4-T01: no bounded field to read; the top-ranked passage is reported, not judged
+                self._action(run_id, seq, "read_passage", cand, rid,
+                             {"passage": f"{h['source_id']}@{h['version_id']}#{h['passage_id']}",
+                              "requirement_kind": "text", "rule": "top lexical match is reported as evidence"},
+                             started=t0)
+                seq += 1
+                evidence = dict(p)
+                break
             r = P.read_field(p["quote"], req["field"])
             self._action(run_id, seq, "read_passage", cand, rid,
                          {"passage": f"{h['source_id']}@{h['version_id']}#{h['passage_id']}",
@@ -476,7 +580,16 @@ class EvidenceCore:
                 evidence, reading = dict(p), r
                 break
         t0 = utc_now()
-        if reading is not None:
+        cand_name = next(c["label"] for c in mission["candidates"] if c["candidate_id"] == cand)
+        if free_text:
+            if evidence is not None:
+                outcome = "evidence_found"
+                explanation = (f"Best-matching passage in {cand_name}'s current sources for the requirement terms. "
+                               "The engine does not judge whether it satisfies the requirement; review the quote.")
+            else:
+                outcome = "unknown"
+                explanation = f"No passage in {cand_name}'s current sources matches the requirement terms."
+        elif reading is not None:
             outcome, explanation = P.evaluate(req["predicate"], reading)
         else:
             outcome = "unknown"
@@ -488,7 +601,7 @@ class EvidenceCore:
             else:
                 explanation = f"No recognized '{label}' statement found in {cand_label}'s current sources."
         self._action(run_id, seq, "check_criterion", cand, rid,
-                     {"predicate": req["predicate"], "reading": None if reading is None else reading.value,
+                     {"predicate": req.get("predicate"), "reading": None if reading is None else reading.value,
                       "outcome": outcome, "explanation": explanation, "validation_issues": issues}, started=t0)
         seq += 1
         citation = None
@@ -602,7 +715,7 @@ class EvidenceCore:
         try:
             for item in reuse:  # verification search (really executed) followed by the reuse decision
                 self._action(run_id, seq, "search_current_sources", item["candidate_id"], item["requirement_id"],
-                             {"query": item["query"], "fts_match": fts_phrase(item["query"]),
+                             {"query": item["query"], "fts_match": item.get("fts_match") or fts_phrase(item["query"]),
                               "purpose": "revalidate search-scope dependency after the source change",
                               "hits": item["hits"]}, started=item["searched_at"])
                 seq += 1
@@ -776,7 +889,8 @@ class EvidenceCore:
                 with self.store.read() as con:
                     a = con.execute("SELECT * FROM assessments WHERE project_id=? AND candidate_id=? AND "
                                     "requirement_id=? AND state='current'", (project_id, *key)).fetchone()
-                    new_hits = self._search(con, project_id, key[0], reqs[key[1]]["query"], ctx)
+                    new_hits = self._search(con, project_id, key[0], reqs[key[1]]["query"], ctx,
+                                            match=requirement_match(reqs[key[1]]))
                 if a is None:
                     work.append((key[0], reqs[key[1]]))
                     continue
@@ -791,7 +905,8 @@ class EvidenceCore:
                                          ctx["embedding_space_id"], key[0], reqs[key[1]]["query"]))
                 if old_ids == new_ids:
                     reuse.append({"candidate_id": key[0], "requirement_id": key[1], "assessment_id": a["assessment_id"],
-                                  "query": reqs[key[1]]["query"], "searched_at": searched_at,
+                                  "query": reqs[key[1]]["query"], "fts_match": requirement_match(reqs[key[1]]),
+                                  "searched_at": searched_at,
                                   "verification": "search re-executed on the new current scope; identical evidence "
                                                   "passages, so the committed assessment is still valid",
                                   "hits": new_hits})
@@ -878,17 +993,19 @@ class EvidenceCore:
         if requirements is not None:
             if not isinstance(requirements, list) or not requirements:
                 raise ValidationFailed("requirements must be a non-empty list", "bad_requirements")
+            if len(requirements) > MAX_REQUIREMENTS:
+                raise ValidationFailed(f"at most {MAX_REQUIREMENTS} requirements", "bad_requirements")
+            normalized = []
             for r in requirements:
-                ok = (isinstance(r, dict) and _SOURCE_ID.match(str(r.get("requirement_id", ""))) and r.get("label")
-                      and isinstance(r.get("query"), str) and r.get("field") in P.FIELD_LABELS
-                      and isinstance(r.get("predicate"), dict)
-                      and r["predicate"].get("operator") in ("equals", "contains_interval"))
-                if not ok:
-                    raise ValidationFailed("each requirement needs requirement_id, label, query, a field of the "
-                                           f"bounded grammar {sorted(P.FIELD_LABELS)} and an equals/contains_interval "
-                                           "predicate", "bad_requirements")
-                fts_phrase(r["query"])
-            mission["requirements"] = requirements
+                try:  # P4-T01: a bounded-field requirement (G01 grammar) or an explicit free-text requirement
+                    normalized.append(normalize_requirement(r))
+                except ValidationFailed as exc:
+                    raise ValidationFailed("each requirement needs requirement_id and label, and either a field of "
+                                           f"the bounded grammar {sorted(P.FIELD_LABELS)} with an equals/"
+                                           f"contains_interval predicate or free text ({exc})", "bad_requirements") from None
+            if len({r["requirement_id"] for r in normalized}) != len(normalized):
+                raise ValidationFailed("requirement ids must be unique", "bad_requirements")
+            mission["requirements"] = normalized
         slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:24] or "project"
         project_id = f"prj-{slug}-{uuid.uuid4().hex[:6]}"
         manifest = {"scenario_id": "OWNER-PROJECT", "data_origin": "owner_files", "initial_sources": [],

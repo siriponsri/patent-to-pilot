@@ -46,6 +46,7 @@ table.matrix { width: 100%; border-collapse: collapse; background: var(--panel);
 .badge.does_not_meet { color: var(--dnm); background: var(--dnm-bg); }
 .badge.unknown { color: var(--unk); background: var(--unk-bg); }
 .badge.needs_review { color: var(--rev); background: var(--rev-bg); }
+.badge.evidence_found { color: var(--accent); background: var(--unk-bg); }
 .cell p { margin: .35rem 0; font-size: .92rem; }
 .cite { font-size: .85rem; padding: .2rem .5rem; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: .75rem; margin: .6rem 0; }
@@ -74,6 +75,15 @@ input, select { font: inherit; color: var(--ink); background: var(--panel); bord
 input[type="checkbox"] { min-height: 0; }
 .inline-form label.check { grid-column: 1 / -1; }
 #project-select { margin-top: .25rem; max-width: 22rem; }
+.search-form { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.search-form input[type="search"] { flex: 1 1 18rem; }
+.result .quote { white-space: pre-wrap; word-break: break-word; margin: .4rem 0; line-height: 1.7; }
+.result .meta { font-size: .85rem; color: var(--muted); }
+.demo { border: 1px dashed var(--rev); color: var(--rev); border-radius: 6px; padding: .35rem .6rem; font-size: .9rem; }
+.pill.new { color: var(--accent); border-color: var(--accent); font-weight: 600; }
+.cands { list-style: none; padding: 0; margin: .3rem 0; }
+.cands li { border-top: 1px solid var(--line); padding: .35rem 0; }
+.cands .quote { font-size: .92rem; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 640px) {
   main { padding: .6rem; }
