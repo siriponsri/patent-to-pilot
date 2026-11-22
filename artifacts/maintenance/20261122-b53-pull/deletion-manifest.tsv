@@ -1,0 +1,13 @@
+path	bytes	reason	local_copy
+/data/ptp-paper2/b53/inputs/corpus.jsonl	327775008	B53 finished; staged input identical to the local source (sha256 2c0dde71...)	_private_artifacts/healthtech/ptp-b53-inputs-20261119-v1/corpus.jsonl
+/data/ptp-paper2/b53/inputs/queries.jsonl	11046422	B53 finished; identical to local (sha256 0c658a13...)	_private_artifacts/healthtech/ptp-b53-inputs-20261119-v1/queries.jsonl
+/data/ptp-paper2/b53/inputs/qrels-pos.jsonl	2498093	B53 finished; identical to local (sha256 897b43ef...)	_private_artifacts/healthtech/ptp-b53-inputs-20261119-v1/qrels-pos.jsonl
+/data/ptp-paper2/b53/inputs/manifest.json	921	B53 finished; identical to local (sha256 2acd71fd...)	_private_artifacts/healthtech/ptp-b53-inputs-20261119-v1/manifest.json
+/data/ptp-paper2/b53/failed/timing-v1-oom.log	0	failed OOM timing attempt (engineering only)	_private_artifacts/dr-train-archive/20261122-b53/files/data/ptp-paper2/b53/failed/
+/data/ptp-paper2/b53/failed/timing-v1-oom.time	3876	failed OOM timing attempt	same archive (OK)
+/data/ptp-paper2/b53/failed/timing-v2-oom.log	0	failed OOM timing attempt	same archive (OK)
+/data/ptp-paper2/b53/failed/timing-v2-oom.time	6154	failed OOM timing attempt	same archive (OK)
+/data/ptp-paper2/b53/failed/timing-v3-oom.log	212	failed OOM timing attempt	same archive (OK)
+/data/ptp-paper2/b53/failed/timing-v3-oom.time	6151	failed OOM timing attempt	same archive (OK)
+/data/ptp-paper2/b53/failed/timing-v4-oom.log	212	failed OOM timing attempt	same archive (OK)
+/data/ptp-paper2/b53/failed/timing-v4-oom.time	6079	failed OOM timing attempt	same archive (OK)

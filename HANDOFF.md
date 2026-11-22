@@ -38,17 +38,21 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
   ([TEST-RESULT-TABLES.md](docs/healthtech/research/paper1-report/TEST-RESULT-TABLES.md)). Its test qrels are exposed; never
   rerun S8 jobs.
 - **B53 (IS2 core):** Stage 1 measured 19 Nov ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)).
-  Stage 2 scoring **FINISHED**: `b53/queue_b53_stage2.log` ends `B53_STAGE2_SCORES_DONE` (seen 22 Nov ~07:25 Bangkok,
-  PID gone, V100 idle). Scores are in `/data/ptp-paper2/b53/stage2/scores-*.tsv`. **Evaluation RUNNING** since
-  22 Nov ~07:50 on dr-train CPU (`python3 code/b53_stage2_eval.py inputs runs stage2 stage2-results.json`, PID 2053484,
-  script sha 93305f9e…). The log `b53/logs/stage2-eval.log` ends `EXIT 0` when done. Then run
-  `scripts/writing/render_b53_stage2.py`, write the results doc, then pull and prune `b53/` (runbook below).
+  **Stage 2 MEASURED 22 Nov** ([B53-STAGE2-RESULTS.md](docs/writing/is2/results/B53-STAGE2-RESULTS.md)):
+  - None of the 10 primary instruction contrasts on C (153 queries) is significant; Holm p ≥ 0.695, Δ between +0.001 and
+    +0.009.
+  - So the near-zero instruction effect holds under all five first stages.
+  - Scrambled ≈ Generic. BGE plain pair is worse than Qwen3 everywhere.
+  - Phase closed: [pull/prune summary](artifacts/maintenance/20261122-b53-pull/SUMMARY.md).
+  - B53 run TSVs on dr-train are now `runs/F*.tsv.gz`.
+  - `b53/inputs/` (341 MB, read-only, identical local copy) is left for an owner decision.
+  - The IS2 drafts still need the Stage 2 numbers.
 - **IS2 drafts:** [docs/writing/is2/](docs/writing/is2/) (short paper v0.1, committee response, slides outline). Advisor
   details and Stage 2 numbers are pending.
 
 ### Running jobs
 
-- B53 Stage 2 evaluation on dr-train CPU (above); no GPU is used. The G02 embedding shim and its folder were removed from dr-train after QA, and its logs
+- None. The B53 evaluation finished, and the G02 embedding shim and its folder were removed from dr-train after QA, and its logs
   are in `artifacts/owner-program/PTP-2026-11-21/G02/`.
 - **21 Nov dr-train cleanup done** ([summary](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md), runbook
   [DR-TRAIN-ARTIFACT-RUNBOOK.md](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md), script
@@ -59,7 +63,7 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ### Next steps
 
-1. B53 Stage 2 evaluation and rendering, then pull and prune `b53/` (scores are ready).
+1. Put the B53 Stage 2 numbers into the IS2 drafts (`docs/writing/is2/`), keeping the file 09 §6 wording.
 2. G03 from `02_GOALS_AND_PHASES.md` §G03 and `research/METHOD_SPEC.md` / `POLICY_V0.md`, using the G02 ports.
 3. Ask the owner to observe the G01 launcher checks (double-click, browser auto-open).
 4. After each phase, pull dr-train artifacts to local and delete remote copies that are no longer needed.
@@ -69,4 +73,5 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 - Any spending envelope for API provider use (default USD 0; Claude profiles stay blocked).
 - Optional per-item approvals: Ollama (local chat models) and `pypdf` (PDF ingestion).
 - Large derived files on dr-train: the owner chose on 21 Nov to keep them for now.
+- Whether to delete the read-only `b53/inputs/` on dr-train (341 MB; an identical local copy exists).
 - Two git stashes from 30 Oct 2026 (`ba92cf3a`, `5e95e5c2`) were kept; drop them only on request.

@@ -37,7 +37,8 @@ untracked: never edit, move, delete or commit anything under `docs/owner/`.**
   [docs/healthtech/research/paper1-bridgeret/am7/stage2a/](docs/healthtech/research/paper1-bridgeret/am7/stage2a/).
   The owner gate in AM-7 §6.4 failed, so no paid step runs without the owner.
 - **B53 / IS2:** Stage 1 measured ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)); Stage 2
-  scoring finished on dr-train (22 Nov); evaluation and rendering are still to do. IS2 drafts live in [docs/writing/is2/](docs/writing/is2/).
+  measured 22 Nov ([B53-STAGE2-RESULTS.md](docs/writing/is2/results/B53-STAGE2-RESULTS.md)): no instruction contrast is
+  significant under any of the five first stages. IS2 drafts live in [docs/writing/is2/](docs/writing/is2/).
 - **21 Nov 2026 dr-train cleanup:** about 21.8 GB freed on dr-train, with small artifacts archived and verified in
   `../_private_artifacts/dr-train-archive/20261121/`. Unique run TSVs are now `run-*.tsv.gz`. See
   [artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md).
