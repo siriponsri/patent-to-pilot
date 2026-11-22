@@ -32,7 +32,7 @@
     <p>This sample compares two fictional concepts against three explicit requirements. The documents are invented and are processed by this local application; no account, key or model is needed.</p>
     <button id="open-sample" class="primary">Open sample project</button>
     <h2>Your own files</h2>
-    <p>Create a project, then add text or Markdown files on the Evidence page. The project uses the same three requirements as the sample; the bounded parser reads lines such as <code>Powered circulation: no.</code></p>
+    <p>Create a project, then add text, Markdown or PDF files on the Evidence page. The project uses the same three requirements as the sample; the bounded parser reads lines such as <code>Powered circulation: no.</code></p>
     <form id="new-project-form" class="inline-form">
       <label for="new-project-title">Project title</label>
       <input id="new-project-title" required maxlength="120" autocomplete="off">
@@ -62,9 +62,9 @@
     <p class="muted">Current versions are searched. Historical versions stay readable for old citations.</p>
     <form id="add-doc-form" class="card inline-form" hidden>
       <h3>Add a document</h3>
-      <p class="muted">Plain text or Markdown (UTF-8, up to 2 MB). The same name adds a new version of that source; results that depended on it are re-checked.</p>
+      <p class="muted">Plain text, Markdown (UTF-8) or a PDF with a text layer, up to 2 MB. The same name adds a new version of that source; results that depended on it are re-checked.</p>
       <label for="doc-file">File</label>
-      <input id="doc-file" type="file" accept=".md,.markdown,.txt" required>
+      <input id="doc-file" type="file" accept=".md,.markdown,.txt,.pdf" required>
       <label for="doc-candidate">Candidate</label>
       <select id="doc-candidate"></select>
       <label for="doc-source-id">Source ID (optional)</label>

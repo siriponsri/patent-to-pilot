@@ -69,6 +69,14 @@ def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def _upload_path(filename: str, pdf: dict | None) -> str:
+    """Informational locator of an uploaded source; a PDF keeps its own hash and extractor as provenance."""
+    if not pdf:
+        return f"upload:{Path(filename).name}"[:200]
+    tail = f"#pdf_sha256={pdf['pdf_sha256']};pages={pdf['pages']};{pdf['rule']};pypdf={pdf['pypdf']}"
+    return f"upload:{Path(filename).name[:200 - 7 - len(tail)]}{tail}"
+
+
 def core_code_sha256() -> str:
     here = Path(__file__).resolve().parent
     h = hashlib.sha256()
@@ -907,7 +915,9 @@ class EvidenceCore:
         sid = source_id or I.slug_source_id(filename)
         if not _SOURCE_ID.match(sid):
             raise ValidationFailed("source_id must be letters, digits, . _ - (max 64)", "bad_source_id")
-        digest = sha256(raw)
+        # a PDF is stored as its canonical extracted text (ingest.py); the PDF's own hash goes into the path
+        stored = prep.get("stored_raw", raw)
+        digest = sha256(stored)
         with self.store.read() as con:
             cur = con.execute("SELECT v.version_id, v.sha256, v.candidate_id FROM current_sources c JOIN source_versions "
                               "v USING (project_id, source_id, version_id) WHERE c.project_id=? AND c.source_id=?",
@@ -923,12 +933,12 @@ class EvidenceCore:
                  "event_type": "source_revision" if cur else "source_addition", "source_id": sid,
                  "version_id": version, "supersedes_version_id": cur["version_id"] if cur else None,
                  "candidate_id": candidate_id, "source_kind": prep["source_kind"], "license": "owner_supplied",
-                 "path": f"upload:{Path(filename).name}"[:200], "sha256": digest}
-        self._import_source(project_id, entry, raw, prep["text"], prep["passages"], prep["title"])
+                 "path": _upload_path(filename, prep.get("pdf")), "sha256": digest}
+        self._import_source(project_id, entry, stored, prep["text"], prep["passages"], prep["title"])
         out = self._settle_event(project_id, entry, mission, invoked_via)
         return {"status": "ingested", "source_id": sid, "version_id": version, "sha256": digest,
                 "event_type": entry["event_type"], "passage_rule": prep["passage_rule"],
-                "passages": len(prep["passages"]), **out}
+                "passages": len(prep["passages"]), **({"pdf": prep["pdf"]} if prep.get("pdf") else {}), **out}
 
     def retrieval_status(self, project_id: str) -> dict:
         with self.store.read() as con:
@@ -1087,7 +1097,8 @@ class EvidenceCore:
                 "sha256": v["sha256"], "candidate_id": v["candidate_id"], "license": v["license"],
                 "status": "current" if current == version_id else "historical", "current_version": current,
                 "all_versions": versions, "supersedes_version_id": v["supersedes_version_id"],
-                "import_event": v["import_event"], "passages": passages, "data_origin": origin}
+                "import_event": v["import_event"], "passages": passages, "data_origin": origin,
+                "source_kind": v["source_kind"], "origin_path": v["origin_path"]}
 
     def resolve_citation(self, project_id: str, source_id: str, version_id: str, passage_id: str) -> dict:
         sv = self.source_version(project_id, source_id, version_id)

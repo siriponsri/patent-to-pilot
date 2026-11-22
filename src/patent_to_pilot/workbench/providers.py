@@ -65,6 +65,9 @@ def is_loopback_url(url: str) -> bool:
         return False
 
 
+REQUEST_OPTION_KEYS = {"reasoning", "temperature", "seed", "top_p", "provider"}
+
+
 @dataclass
 class ProviderProfile:
     profile_id: str
@@ -82,6 +85,7 @@ class ProviderProfile:
     document_prefix: str = ""
     dimensions: int | None = None
     label: str = ""
+    request_options: dict | None = None   # extra chat-body fields for openai_compatible, e.g. OpenRouter reasoning off
 
     @classmethod
     def from_dict(cls, d: dict) -> "ProviderProfile":
@@ -123,6 +127,15 @@ class ProviderProfile:
             raise ProviderError("config", "dimensions must be a positive integer or null")
         if self.role != "embedding" and (self.query_prefix or self.document_prefix or self.dimensions):
             raise ProviderError("config", "query/document prefixes and dimensions apply to embedding profiles only")
+        if self.request_options is not None:
+            if self.adapter != "openai_compatible" or self.role != "chat":
+                raise ProviderError("config", "request_options apply to openai_compatible chat profiles only")
+            if not isinstance(self.request_options, dict) or set(self.request_options) - REQUEST_OPTION_KEYS:
+                raise ProviderError("config", f"request_options keys must be among {sorted(REQUEST_OPTION_KEYS)}")
+            try:
+                json.dumps(self.request_options)
+            except (TypeError, ValueError):
+                raise ProviderError("config", "request_options must be JSON") from None
 
     @property
     def local(self) -> bool:
@@ -244,8 +257,11 @@ class ProviderClient:
             return None
         u = out.get("usage")
         if isinstance(u, dict):
-            return {k: u[k] for k in ("input_tokens", "output_tokens", "prompt_tokens", "completion_tokens",
-                                      "total_tokens") if isinstance(u.get(k), int)} or None
+            d = {k: u[k] for k in ("input_tokens", "output_tokens", "prompt_tokens", "completion_tokens",
+                                   "total_tokens") if isinstance(u.get(k), int)}
+            if isinstance(u.get("cost"), (int, float)) and not isinstance(u.get("cost"), bool):
+                d["cost_usd"] = float(u["cost"])          # OpenRouter reports the billed amount per response
+            return d or None
         if "prompt_eval_count" in out or "eval_count" in out:  # Ollama
             return {"input_tokens": out.get("prompt_eval_count"), "output_tokens": out.get("eval_count")}
         return None
@@ -288,7 +304,8 @@ class ProviderClient:
             text = (out.get("message") or {}).get("content")
         elif a == "openai_compatible":
             msgs = ([{"role": "system", "content": system}] if system else []) + messages
-            body = {"model": model, "messages": msgs, "max_tokens": max_tokens, "stream": False}
+            body = {**(self.profile.request_options or {}),
+                    "model": model, "messages": msgs, "max_tokens": max_tokens, "stream": False}
             if json_schema:
                 body["response_format"] = {"type": "json_schema",
                                            "json_schema": {"name": "ptp_output", "schema": json_schema, "strict": True}}
@@ -485,4 +502,22 @@ TEMPLATES = [
     {"profile_id": "api-claude-sonnet", "role": "chat", "adapter": "anthropic_native",
      "model_id": "claude-sonnet-5-5", "credential_ref": "ANTHROPIC_API_KEY", "allow_remote": True,
      "label": "API stronger (Claude Sonnet 5.5)"},
+    # OpenRouter (owner decisions D7/D9, envelope E1: Workbench checks <= USD 0.20 in total, so 0.05 and 20 requests
+    # each). Reasoning is switched off so thinking tokens are never billed.
+    {"profile_id": "openrouter-qwen3-7-flash", "role": "chat", "adapter": "openai_compatible", "model_id": "qwen/qwen3.7-flash",
+     "endpoint": "https://openrouter.ai/api/v1", "credential_ref": "OPENROUTER_API_KEY", "allow_remote": True,
+     "spend_cap_usd": 0.05, "max_requests": 20, "request_options": {"reasoning": {"enabled": False}, "temperature": 0},
+     "label": "OpenRouter Qwen3.7 Flash (cheapest)"},
+    {"profile_id": "openrouter-deepseek-v4-flash", "role": "chat", "adapter": "openai_compatible", "model_id": "deepseek/deepseek-v4-flash-0731",
+     "endpoint": "https://openrouter.ai/api/v1", "credential_ref": "OPENROUTER_API_KEY", "allow_remote": True,
+     "spend_cap_usd": 0.05, "max_requests": 20, "request_options": {"reasoning": {"effort": "none"}, "temperature": 0},
+     "label": "OpenRouter DeepSeek V4 Flash"},
+    {"profile_id": "openrouter-qwen3-32b", "role": "chat", "adapter": "openai_compatible", "model_id": "qwen/qwen3-32b",
+     "endpoint": "https://openrouter.ai/api/v1", "credential_ref": "OPENROUTER_API_KEY", "allow_remote": True,
+     "spend_cap_usd": 0.05, "max_requests": 20, "request_options": {"reasoning": {"enabled": False}, "temperature": 0},
+     "label": "OpenRouter Qwen3-32B (open weights)"},
+    {"profile_id": "openrouter-claude-haiku-5-5", "role": "chat", "adapter": "openai_compatible", "model_id": "anthropic/claude-haiku-5.5",
+     "endpoint": "https://openrouter.ai/api/v1", "credential_ref": "OPENROUTER_API_KEY", "allow_remote": True,
+     "spend_cap_usd": 0.05, "max_requests": 20, "request_options": {"reasoning": {"effort": "none"}, "temperature": 0},
+     "label": "OpenRouter Claude Haiku 5.5"},
 ]

@@ -381,7 +381,8 @@ def test_owner_project_ingestion_preserves_text_and_offsets(core):
         r = core.resolve_citation(pid, "concept-c-notes", "v1", p["passage_id"])
         assert sv["text"][r["start_char"]:r["end_char"]] == r["quote"]
     assert core.ingest_document(pid, "concept-c notes.md", THAI_DOC, "CONCEPT-A")["status"] == "unchanged"
-    for name, data, code in (("x.pdf", b"%PDF", "pdf_unavailable"), ("x.docx", b"abc", "unsupported_type"),
+    pdf_code = "not_pdf" if C.I.pdf_capability()["state"] == "active" else "pdf_unavailable"   # D8: pypdf optional
+    for name, data, code in (("x.pdf", b"%PDF", pdf_code), ("x.docx", b"abc", "unsupported_type"),
                              ("x.txt", "ไทย".encode("cp874"), "not_utf8"), ("x.txt", b"", "empty_file")):
         with pytest.raises(C.ValidationFailed) as e:
             core.ingest_document(pid, name, data, "CONCEPT-A")

@@ -169,7 +169,7 @@ async function renderSources() {
     if (keep) sel.value = keep;
   }
   const box = $("sources"); box.replaceChildren();
-  if (!S.project.sources.length) box.append(el("p", { class: "muted", text: "No documents yet. Add a text or Markdown file above." }));
+  if (!S.project.sources.length) box.append(el("p", { class: "muted", text: "No documents yet. Add a text, Markdown or PDF file above." }));
   const by = {};
   for (const s of S.project.sources) (by[s.source_id] ||= []).push(s);
   for (const [sid, vs] of Object.entries(by)) {
