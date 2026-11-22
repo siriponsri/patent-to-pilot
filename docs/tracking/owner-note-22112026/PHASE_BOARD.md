@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-22T18:59:34+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-22T19:04:26+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -55,8 +55,8 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
 | P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T01_content_coverage_audit.md | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) | — | NOT_SYNCED |
-| P2-T02 | Establish complete-content and stronger simple controls | ⏳ NOT_STARTED | NOT_RUN | — | P2-T04 | — | NOT_SYNCED |
-| P2-T03 | Implement one bounded source-relation search action | 🔄 IN_PROGRESS | NOT_RUN | — | P2-T04; P4-T03 | — | NOT_SYNCED |
+| P2-T02 | Establish complete-content and stronger simple controls | 🔄 IN_PROGRESS | NOT_RUN | — | P2-T04 | — | NOT_SYNCED |
+| P2-T03 | Implement one bounded source-relation search action | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T03_mechanism_spec.md; docs/tracking/owner-note-22112026/receipts/P2-T03_mechanism_verification.md; src/patent_to_pilot/workbench/relation_search.py; tests/test_p2_t03_relation_search.py | P2-T04 (after P2-T02 controls); P4-T03 | — | NOT_SYNCED |
 | P2-T04 | Screen the bounded mechanism against close matched controls | ⏳ NOT_STARTED | NOT_RUN | — | P2-T05 if viable | — | NOT_SYNCED |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | — | P2-T06 | — | NOT_SYNCED |
 | P2-T06 | Measure the primary matched retrieval comparison | ⏳ NOT_STARTED | NOT_RUN | — | P2-T07; P3-T03 | — | NOT_SYNCED |

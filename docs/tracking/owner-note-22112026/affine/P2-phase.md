@@ -9,8 +9,8 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
 | P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) |
-| P2-T02 | Establish complete-content and stronger simple controls | ⏳ NOT_STARTED | NOT_RUN | P2-T04 |
-| P2-T03 | Implement one bounded source-relation search action | 🔄 IN_PROGRESS | NOT_RUN | P2-T04; P4-T03 |
+| P2-T02 | Establish complete-content and stronger simple controls | 🔄 IN_PROGRESS | NOT_RUN | P2-T04 |
+| P2-T03 | Implement one bounded source-relation search action | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T04 (after P2-T02 controls); P4-T03 |
 | P2-T04 | Screen the bounded mechanism against close matched controls | ⏳ NOT_STARTED | NOT_RUN | P2-T05 if viable |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | P2-T06 |
 | P2-T06 | Measure the primary matched retrieval comparison | ⏳ NOT_STARTED | NOT_RUN | P2-T07; P3-T03 |
@@ -36,17 +36,18 @@ Phase status: **IN_PROGRESS**
 - **Check:** NOT_CHECKED
 - **Next:** P2-T04
 - **Blocker:** —
+- **Notes:** [2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next
 
 ## P2-T03 — Implement one bounded source-relation search action
 
 - **Status:** see the table above (single place to update)
 - **Depends on:** P0-T06
 - **Acceptance evidence:** Preserve exact query requirements; select one unresolved relation; issue one eligible global search; merge and recheck coverage; rerank against original query. Synthetic tests are clearly marked.
-- **Evidence:** pending
-- **Check:** NOT_CHECKED
-- **Next:** P2-T04; P4-T03
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P2-T03_mechanism_spec.md; docs/tracking/owner-note-22112026/receipts/P2-T03_mechanism_verification.md; src/patent_to_pilot/workbench/relation_search.py; tests/test_p2_t03_relation_search.py
+- **Check:** 19 synthetic tests; P0-T06+G01/G02 regression 110 pass; full suite only 8 known SACR failures
+- **Next:** P2-T04 (after P2-T02 controls); P4-T03
 - **Blocker:** —
-- **Notes:** [2026-11-22] relation-search operator agent started (engineering only)
+- **Notes:** [2026-11-22] relation-search operator agent started (engineering only) | [2026-11-22] policy ptp-relsel-first-unresolved/1.0.0 (sha256 e4ea084c...) to be frozen in P2-T04 protocol; reranks against original query only; synthetic packet shows plumbing only, new candidates rank below seeds
 
 ## P2-T04 — Screen the bounded mechanism against close matched controls
 

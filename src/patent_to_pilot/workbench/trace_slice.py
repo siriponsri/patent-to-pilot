@@ -702,7 +702,9 @@ class TraceSlice:
     # ------------------------------------------------------------------ actions
     def _event(self, *, action_id: str, kind: str, match: str, artifact_ids: list[str], selected: str | None,
                before: list[str], returned: list[str], assessments: list[tuple[dict, str]], relations: list[dict],
-               hypotheses: list[SearchHypothesis], index: dict, event_time: str, seq: int) -> dict:
+               hypotheses: list[SearchHypothesis], index: dict, event_time: str, seq: int,
+               eligibility_profile_id: str = ELIGIBILITY_ID, result_limit: int = RESULT_LIMIT) -> dict:
+        # P2-T03 passes its declared eligibility profile and result limit; the defaults keep P0-T06 events unchanged.
         nodes = self.nodes()
         after = before + [x for x in returned if x not in before]
         ev_ids: list[str] = []
@@ -752,8 +754,8 @@ class TraceSlice:
             "run_id": self.run_id, "mode": "synthetic_demo", "event_time": event_time,
             "original_query": {"query_id": q["query_id"], "text": q["query_text"]},
             "action": {"action_id": action_id, "kind": kind, "query_text": match, "query_artifact_ids": artifact_ids,
-                       "selected_assessment_id": selected, "route_id": ROUTE_ID, "result_limit": RESULT_LIMIT,
-                       "eligibility_profile_id": ELIGIBILITY_ID},
+                       "selected_assessment_id": selected, "route_id": ROUTE_ID, "result_limit": result_limit,
+                       "eligibility_profile_id": eligibility_profile_id},
             "index": index, "sources": sources, "nodes": node_out, "relations": relations,
             "evidence": [e.as_trace() for e in evidence], "hypotheses": [h.as_trace() for h in hypotheses],
             "candidate_delta": {"identity_unit": "node", "before_ids": before, "returned_ids": returned,
