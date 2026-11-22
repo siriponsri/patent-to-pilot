@@ -975,8 +975,8 @@
    "task_id": "P3-T01",
    "phase_id": "P3",
    "title": "Prepare Thai dataset/profile rights and exposure adapters",
-   "status": "IN_PROGRESS",
-   "outcome": "NOT_RUN",
+   "status": "COMPLETE",
+   "outcome": "ENGINEERING_VERIFIED",
    "depends_on": [
     "P0-T06"
    ],
@@ -986,9 +986,9 @@
     "docs/tracking/owner-note-22112026/receipts/P3-T01_thai_data_contract.md"
    ],
    "acceptance_evidence": "Pin allowed releases, units, licenses and prior exposure; separate Gazette, NitiBench/NitiBench+, real packets and OCR diagnostics; do not accept a gate or download without authority.",
-   "evidence_uri": "",
-   "check_result": "NOT_CHECKED",
-   "next_task": "P3-T02; P4-T03",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P3-T01_thai_data_contract.md; src/patent_to_pilot/workbench/datasets/thai_contract.py; tests/test_p3_t01_thai_contract.py",
+   "check_result": "36 new + G02 dataset tests = 63 pass; no downloads",
+   "next_task": "P3-T02 (needs per-item download approvals / packet rights)",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
    "budget_spent_usd": null,
    "budget_reserved_usd": null,
@@ -1003,7 +1003,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-22] agent started (no downloads)"
+   "notes": "[2026-11-22] agent started (no downloads) | [2026-11-23] pins: Gazette 87e695ee (CC BY 4.0, exposed), NitiBench 9f756970 (MIT), NitiBench+ 41286bcb (gated, not accepted), ThaiOCRBench ca610d1a (CC BY-SA); six separate scoreboards enforced; Gazette marked exposed + not product-bundled"
   },
   {
    "task_id": "P3-T02",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-23T06:00:40+07:00"
+ "live_updated_at": "2026-11-23T06:01:09+07:00"
 }

@@ -15,7 +15,24 @@
     "HF_CARD_GAZETTE": "https://huggingface.co/datasets/VISAI-AI/thai-gazette-evidence-retrieval/resolve/87e695ee4951ff34932804431433ac55991ec374/README.md",
     "HF_INFO_NITI": "https://datasets-server.huggingface.co/info?dataset=VISAI-AI/nitibench-plus (HTTP 401: gated, no schema returned)",
     "HF_CARD_NITI": "https://huggingface.co/datasets/VISAI-AI/nitibench-plus/resolve/41286bcb1eeba6721c03d581d4ca3095a1b7f7b7/README.md",
-    "G01": "artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md; src/patent_to_pilot/workbench/sample/source_manifest.json"
+    "G01": "artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md; src/patent_to_pilot/workbench/sample/source_manifest.json",
+    "OWNER22_DS": "docs/owner/owner-note-22112026/research/DATASET_AND_LICENSE_PLAN.md (owner-local, untracked)",
+    "OWNER22_SCORE": "docs/owner/owner-note-22112026/research/SCORE_AND_STATISTICAL_CONTRACT.md §C (owner-local, untracked)",
+    "OWNER22_MODEL": "docs/owner/owner-note-22112026/research/MODEL_AND_PROVIDER_PLAN.md §4-§6 (owner-local, untracked)",
+    "OWNER22_AUDIT": "docs/owner/owner-note-22112026/audit/RESEARCH_AUDIT_AND_LIMITS.md (owner-local, untracked)",
+    "P3T01": "docs/tracking/owner-note-22112026/receipts/P3-T01_thai_data_contract.md",
+    "HF_API_GAZETTE": "https://huggingface.co/api/datasets/VISAI-AI/thai-gazette-evidence-retrieval (read 2026-11-22: sha 87e695ee..., gated false, lastModified 2026-09-21)",
+    "HF_API_NITIPLUS": "https://huggingface.co/api/datasets/VISAI-AI/nitibench-plus (read 2026-11-22: sha 41286bcb..., gated auto, lastModified 2026-11-03)",
+    "HF_API_NITI": "https://huggingface.co/api/datasets/VISAI-AI/nitibench (read 2026-11-22: sha 9f756970..., gated false, license mit, splits ccl 3729 / tax 50 from cardData dataset_info)",
+    "HF_CARD_NITIORIG": "https://huggingface.co/datasets/VISAI-AI/nitibench/raw/9f75697075e0f5691e3b821037b908c05f1821a7/README.md (provenance and license lines only)",
+    "HF_API_STATUTE": "https://huggingface.co/api/datasets/VISAI-AI/nitibench-statute (read 2026-11-22: sha 069e774f..., gated false, license mit, split ccl 5127)",
+    "HF_API_OCR": "https://huggingface.co/api/datasets/typhoon-ai/ThaiOCRBench (read 2026-11-22: sha ca610d1a..., gated false, license cc-by-sa-4.0, single split test 2808)",
+    "HF_CARD_OCR": "https://huggingface.co/datasets/typhoon-ai/ThaiOCRBench/raw/ca610d1ab33059e721251137ab1f19f936b87648/README.md (description and license lines only)",
+    "HF_API_WANGCHANX": "https://huggingface.co/api/datasets/airesearch/WangchanX-Legal-ThaiCCL-RAG + datasets-server /size (read 2026-11-22: sha 654e1a10..., license mit, train 8211 / test 3742)",
+    "HF_MODELS_BY_DATASET": "https://huggingface.co/api/models?filter=dataset:<id> (read 2026-11-22) for the Thai datasets above",
+    "HF_CARD_TYPHOON_S_LEGAL": "https://huggingface.co/typhoon-ai/typhoon-s-4b-nitibench-ccl-legal-agent-research-preview/raw/8ce7dec94d8916d76e5d944067fb3a47bf92b640/README.md (Training Data section)",
+    "ACL_NLLP_GAZETTE": "https://aclanthology.org/2026.nllp-1.19/ (citation meta tags read 2026-11-22)",
+    "ARXIV_API": "https://export.arxiv.org/api/query?id_list=2611.03576,2601.18129,2502.10868,2511.04479 (read 2026-11-22)"
   },
   "datasets": [
     {
@@ -145,8 +162,8 @@
       "license": "CC-BY-4.0",
       "role": "public_frozen_transfer",
       "development_use": false,
-      "product_bundle_allowed": true,
-      "exposure": "not_exposed_in_ptp: metadata and card only; questions and qrels not inspected; native test partition is evaluation-only",
+      "product_bundle_allowed": false,
+      "exposure": "public_card_auto_preview_and_public_transfer: no rows downloaded or evaluated in PTP; questions and qrels not opened, but the public card page auto-displays example rows and the 22 Nov owner audit records that previews appeared during metadata reading; native test partition is evaluation-only and the next run is an exposed public transfer, not fresh confirmation",
       "access": {"kind": "public", "acceptance_performed": null},
       "language": "th",
       "offset_convention": "unicode_code_points_half_open (Python str indices, not bytes); corpus[corpus-id].text[start:end] == evidence_text",
@@ -202,7 +219,45 @@
         "offset_convention": "OWNER04 §3; HF_CARD_GAZETTE",
         "native_configs": "HF_INFO_GAZETTE; HF_CARD_GAZETTE",
         "evaluator_fields": "OWNER04 §3.2",
-        "withheld_fields": "OWNER04 §3.2 (question_type withheld from runtime by default; release must be predeclared and identical across arms)"
+        "withheld_fields": "OWNER04 §3.2 (question_type withheld from runtime by default; release must be predeclared and identical across arms)",
+        "product_bundle_allowed": "OWNER22_DS 'Release separation' (research datasets ship separately from the product; no public examples in the demo)",
+        "thai_contract": "P3T01; HF_API_GAZETTE; ACL_NLLP_GAZETTE; OWNER22_SCORE §C; OWNER22_AUDIT"
+      },
+      "thai_contract": {
+        "scoreboard": "thai_gazette_retrieval",
+        "release": {
+          "dataset_revision": "87e695ee4951ff34932804431433ac55991ec374",
+          "dataset_last_modified": "2026-09-21T16:09:25Z",
+          "paper": "Suyasri, Akarajaradwong, Chaksangchaichot. An Empirical Study of Evidence Retrieval for Retrieval Augmented Generation over the Thai Royal Gazette. Proc. NLLP Workshop 2026, pp. 212-236",
+          "paper_url": "https://aclanthology.org/2026.nllp-1.19/",
+          "paper_doi_as_printed": "10.18653/2026.nllp-1.19 (as printed in the ACL page meta tag; resolution not verified)"
+        },
+        "rights": {
+          "license": "CC-BY-4.0",
+          "license_scope": "questions, qrels and span annotations (card); the OCR notice text carries no separate license statement on the card",
+          "attribution_required": true,
+          "share_alike": false,
+          "redistribution_in_product": false,
+          "terms_url": "https://huggingface.co/datasets/VISAI-AI/thai-gazette-evidence-retrieval"
+        },
+        "gating": "none (HF API gated=false)",
+        "evaluation_unit": "query x Gazette notice (document level, qrels deduplicated by (query-id, corpus-id)); evidence span rows kept separately for span scoring",
+        "native_metric": "paper: document retrieval Recall/nDCG at the paper's cutoffs plus character-union span recall and precision (Paper §4.4); no answer labels",
+        "study_metric": "PTP proposed (not a native leaderboard): document nDCG@10 primary; Recall@20 and complete required-source coverage@20 secondary; exact span checks diagnostic; single- and multi-source shown separately",
+        "splits": {"corpus": 25000, "queries": 2000, "default/test (qrels+spans)": 2594, "query_mix": "1,500 single-source + 500 multi-source (card)", "native_dev_split": null},
+        "development_use": "none: no native DEV split; develop on synthetic schema fixtures and separately sourced material; never carve DEV from the test qrels",
+        "held_out_use": "exposed public transfer evaluation after the transferred controller, prompts, budgets and preprocessing are frozen",
+        "prior_exposure": "no rows downloaded or scored in PTP; public card page auto-previews example rows and that preview was seen during 22 Nov metadata reading (OWNER22_AUDIT); G03 protocols state Gazette is not used",
+        "training_overlap_risk": [
+          {"subject": "fine-tuned specialists", "finding": "no Hugging Face model declares this dataset (models?filter=dataset: returned none on 2026-11-22)", "risk": "low_but_unverifiable"},
+          {"subject": "general LLM / embedding pretraining", "finding": "notices come from the public Royal Gazette; web-pretrained models (Qwen, Typhoon, BGE-M3) may have seen the source notices", "risk": "unknown"},
+          {"subject": "question author / judge models", "finding": "questions were model-written and model-screened; identities are per-row evaluator fields (author_model, judge_model) not yet opened", "risk": "same-family arms may share generator style; report by family at evaluation"}
+        ],
+        "download_approval": null,
+        "blocked_pending_owner": [
+          {"kind": "download", "item": "corpus/, queries/ and default/test parquet at the pinned revision", "why": "downloads need a per-item owner approval"},
+          {"kind": "paid_call", "item": "paper-matched contextual chunk generation (DeepSeek V4 Flash), envelope E2", "why": "no envelope recorded"}
+        ]
       }
     },
     {
@@ -276,8 +331,377 @@
         "allowed_named_settings": "OWNERREG; OWNER04 §2.2",
         "native_configs": "HF_CARD_NITI",
         "evaluator_fields": "OWNER04 §2.2, §12.7",
-        "unreleased_assets": "OWNER04 §2.1"
+        "unreleased_assets": "OWNER04 §2.1",
+        "thai_contract": "P3T01; HF_API_NITIPLUS; ARXIV_API; OWNER22_DS 'NitiBench+ decision'; OWNER22_AUDIT"
+      },
+      "thai_contract": {
+        "scoreboard": "nitibench_plus",
+        "release": {
+          "dataset_revision": "41286bcb1eeba6721c03d581d4ca3095a1b7f7b7",
+          "dataset_last_modified": "2026-11-03T07:15:26Z",
+          "dataset_release_label": "v1.0, 1 November 2026 (card, per OWNER04 §2)",
+          "paper": "Akarajaradwong, Nutanong, Chaksangchaichot. NitiBench+: A Temporal Thai Legal Question Answering Benchmark Across 17 Domains",
+          "paper_url": "https://arxiv.org/abs/2611.03576v3",
+          "paper_version": "arXiv:2611.03576v3 (updated 2026-11-16)"
+        },
+        "rights": {
+          "license": "CC-BY-4.0",
+          "license_scope": "annotations per card metadata; the repository also ships a LICENSE file (not opened) and the rows carry a canary string",
+          "attribution_required": true,
+          "share_alike": false,
+          "redistribution_in_product": false,
+          "terms_url": "https://huggingface.co/datasets/VISAI-AI/nitibench-plus",
+          "use_conditions": "auto-gated access conditions not read or accepted; preserve the canary and any training-use condition; never train on or republish rows"
+        },
+        "gating": "auto (HF API gated=auto); acceptance not performed; datasets-server /info returns 401",
+        "evaluation_unit": "case with ordered sub-questions; evidence is a cited statutory section version joined by version_uri; scores aggregate sub-questions within cases and domains",
+        "native_metric": "Bar-standard answer score (primary) graded with the release's judge prompt and rubric (grading/judge_prompt.md, grading/rubric.md listed by the HF API, not opened); Citation F1 as a separate diagnostic",
+        "study_metric": "none frozen; any PTP use is a separately declared update/applicability extension. A judge-graded score may appear only as the benchmark's own labelled score, never as PTP ground truth (standing rule 12)",
+        "setting_labels": {
+          "parametric_public_validation": "parametric (no evidence supplied)",
+          "gold_cited_in_force_public_validation": "oracle_supplied evidence (tests evidence use, not discovery)",
+          "separately_declared_PTP_update_extension": "PTP extension with its own protocol",
+          "restricted_gold_section_pool": "NOT an allowed native setting: an index of released gold sections is answer-conditioned; if ever run it must be labelled restricted and never called native retrieval"
+        },
+        "splits": {"public_validation_cases": 498, "public_subquestions": 1228, "gold_section_versions": 3253, "private_test_cases": 500, "private_reserve_cases": 672},
+        "development_use": "none until gate acceptance and download are approved; even then the public validation is an evaluation set, not training data",
+        "held_out_use": "optional companion study on the 498 public validation cases under a named setting after the method is frozen; the private test and the native retrieval service are not available",
+        "prior_exposure": "card metadata only (G02 and 22 Nov audits); no acceptance, no rows downloaded",
+        "training_overlap_risk": [
+          {"subject": "fine-tuned specialists", "finding": "no Hugging Face model declares this dataset (2026-11-22)", "risk": "low_but_unverifiable"},
+          {"subject": "release date", "finding": "released 1-3 Nov 2026 with a canary string; models with earlier training cutoffs cannot contain the rows", "risk": "low for older checkpoints; unknown for later ones"},
+          {"subject": "statute text", "finding": "Thai statutes are public; NitiBench-CCL-trained specialists (Typhoon-S legal agent, WangchanX CCL models) have seen overlapping CCL statute sections", "risk": "medium for CCL-domain cases"}
+        ],
+        "download_approval": null,
+        "blocked_pending_owner": [
+          {"kind": "gate_acceptance", "item": "Hugging Face auto-gate conditions for VISAI-AI/nitibench-plus", "why": "owner must read and accept the conditions personally; the agent never accepts terms"},
+          {"kind": "download", "item": "validation_split.jsonl and gold_sections.jsonl at the pinned revision", "why": "downloads need a per-item owner approval"},
+          {"kind": "owner_decision", "item": "whether a judge-graded native score may be reported at all", "why": "standing rule 12: no LLM judge as ground truth"},
+          {"kind": "paid_call", "item": "any model run on the public validation", "why": "no envelope recorded"}
+        ]
+      }
+    },
+    {
+      "dataset_id": "VISAI-AI/nitibench",
+      "hf_repo": "VISAI-AI/nitibench",
+      "revision": "9f75697075e0f5691e3b821037b908c05f1821a7",
+      "paper_version": "arXiv:2502.10868v4; EMNLP 2025 (doi 10.18653/v1/2025.emnlp-main.1739)",
+      "license": "MIT",
+      "role": "optional_original_legal_qa_control",
+      "development_use": false,
+      "product_bundle_allowed": false,
+      "exposure": "not_exposed_in_ptp: API metadata and card provenance/license lines only (2026-11-22); no rows downloaded; both native splits are public TEST sets",
+      "access": {"kind": "public", "acceptance_performed": null},
+      "language": "th",
+      "offset_convention": "no_native_character_spans; relevance is a statutory section",
+      "local_markers": ["data/ccl-00000-of-00001.parquet", "data/tax-00000-of-00001.parquet"],
+      "native_configs": [
+        {
+          "config": "ccl",
+          "native_config_name": "default",
+          "split": "ccl",
+          "data_files": "data/ccl-*",
+          "rows": 3729,
+          "evaluator_only": false,
+          "id_field": null,
+          "runtime_fields": ["question"],
+          "evaluator_fields": ["answer", "relevant_laws", "reference_answer", "reference_laws"],
+          "dropped_fields": []
+        },
+        {
+          "config": "tax",
+          "native_config_name": "default",
+          "split": "tax",
+          "data_files": "data/tax-*",
+          "rows": 50,
+          "evaluator_only": false,
+          "id_field": null,
+          "runtime_fields": ["question"],
+          "evaluator_fields": ["answer", "relevant_laws", "reference_answer", "reference_laws"],
+          "dropped_fields": []
+        }
+      ],
+      "non_config_files": ["data/nitibench-ccl.parquet", "data/nitibench-tax.parquet"],
+      "unreleased_assets": [],
+      "field_name_status": {
+        "verified": ["question", "answer", "relevant_laws", "reference_answer", "reference_laws"],
+        "assumed": [],
+        "notes": "Names verified from cardData dataset_info via the HF API at the pinned revision. Rows carry no native identifier; adapters use a positional locator (split[index]) that is stable only at the pinned revision. Nested structure of relevant_laws is not verified."
+      },
+      "sources": {
+        "revision": "HF_API_NITI",
+        "license": "HF_API_NITI; HF_CARD_NITIORIG",
+        "role": "OWNER22_DS; OWNER04 §5",
+        "development_use": "OWNER22_DS ('public test is not a training set')",
+        "exposure": "P3T01",
+        "access": "HF_API_NITI",
+        "native_configs": "HF_API_NITI",
+        "thai_contract": "P3T01; HF_CARD_NITIORIG; HF_MODELS_BY_DATASET; HF_CARD_TYPHOON_S_LEGAL"
+      },
+      "thai_contract": {
+        "scoreboard": "nitibench_original",
+        "release": {
+          "dataset_revision": "9f75697075e0f5691e3b821037b908c05f1821a7",
+          "dataset_last_modified": "2025-11-26T21:18:08Z",
+          "paper": "NitiBench: A Comprehensive Study of LLM Framework Capabilities for Thai Legal Question Answering (EMNLP 2025)",
+          "paper_url": "https://aclanthology.org/2025.emnlp-main.1739/",
+          "paper_version": "arXiv:2502.10868v4 (updated 2025-08-21)",
+          "code_url": "https://github.com/vistec-AI/nitibench (HEAD f39657603113ad77f7f8894996ff33d407a5fd01, 2025-11-26; GitHub API reports no license)"
+        },
+        "rights": {
+          "license": "MIT",
+          "license_scope": "card declares MIT; NitiBench-CCL is derived from airesearch/WangchanX-Legal-ThaiCCL-RAG (MIT); the evaluation code repository has no license file detected by the GitHub API",
+          "attribution_required": true,
+          "share_alike": false,
+          "redistribution_in_product": false,
+          "terms_url": "https://huggingface.co/datasets/VISAI-AI/nitibench",
+          "code_reuse": "do not copy code from vistec-AI/nitibench (no detected license); do not run its setup script, which downloads test data"
+        },
+        "gating": "none (HF API gated=false)",
+        "evaluation_unit": "question -> relevant statutory section(s) (retrieval) and answer (end-to-end); CCL questions have one positive section per the WangchanX test card",
+        "native_metric": "paper retrieval metrics (hit rate / recall / MRR family) and end-to-end answer metrics that rely on an LLM judge; exact definitions to be re-verified from the paper before any freeze",
+        "study_metric": "none frozen; if used, a deterministic section-level retrieval metric only; judge-graded answer scores are never PTP ground truth",
+        "splits": {"ccl": 3729, "tax": 50, "native_train_split": "none in this repo; training data is airesearch/WangchanX-Legal-ThaiCCL-RAG train (8,211)"},
+        "development_use": "none: both splits are TEST sets; the related WangchanX train split is a separate candidate DEV source pending owner approval",
+        "held_out_use": "optional conventional legal QA control after the method is frozen; report specialist exposure next to every comparator",
+        "prior_exposure": "API metadata and the card's provenance/license lines read on 2026-11-22; no rows downloaded",
+        "training_overlap_risk": [
+          {"subject": "typhoon-ai/typhoon-s-4b-nitibench-ccl-legal-agent-research-preview", "finding": "card 'Training Data': RFT on QA tasks derived from WangchanX-Legal-ThaiCCL-RAG (CCL split) plus in-domain Thai legal text; the card does not say the CCL test was excluded", "risk": "high: specialist, not a zero-shot comparator on this benchmark family"},
+          {"subject": "models declaring WangchanX-Legal-ThaiCCL-RAG", "finding": "airesearch/WangchanX-Legal-ThaiCCL-Retriever, airesearch/LLaMa3.1-8B-Legal-ThaiCCL-Combine, VISAI-AI/nitibench-ccl-human-finetuned-bge-m3, VISAI-AI/nitibench-ccl-auto-finetuned-bge-m3, DuckerMaster/thai-legal-lora", "risk": "high: same-distribution training; do not use as an unadapted backbone"},
+          {"subject": "WangchanX test vs NitiBench-CCL", "finding": "NitiBench-CCL is derived from WangchanX-Legal-ThaiCCL-RAG (card); WangchanX test has 3,742 rows vs 3,729 here", "risk": "treat WangchanX test as the same held-out set"}
+        ],
+        "download_approval": null,
+        "blocked_pending_owner": [
+          {"kind": "download", "item": "data/ccl-* and data/tax-* at the pinned revision", "why": "downloads need a per-item owner approval"},
+          {"kind": "owner_decision", "item": "whether the original NitiBench control is needed at all (optional fallback)", "why": "OWNER04 §5 keeps it optional"}
+        ]
+      }
+    },
+    {
+      "dataset_id": "VISAI-AI/nitibench-statute",
+      "hf_repo": "VISAI-AI/nitibench-statute",
+      "revision": "069e774f015a50e801dbe2055a29be580c54a83c",
+      "license": "MIT",
+      "role": "optional_original_legal_qa_statute_corpus",
+      "development_use": false,
+      "product_bundle_allowed": false,
+      "exposure": "not_exposed_in_ptp: API metadata only (2026-11-22); no rows downloaded",
+      "access": {"kind": "public", "acceptance_performed": null},
+      "language": "th",
+      "offset_convention": "no_native_character_spans; section_content kept verbatim",
+      "local_markers": ["data/ccl-00000-of-00001.parquet"],
+      "native_configs": [
+        {
+          "config": "statute_ccl",
+          "native_config_name": "default",
+          "split": "ccl",
+          "data_files": "data/ccl-*",
+          "rows": 5127,
+          "evaluator_only": false,
+          "id_field": null,
+          "runtime_fields": ["law_code", "law_name", "section_num", "section_content", "reference"],
+          "evaluator_fields": [],
+          "dropped_fields": []
+        }
+      ],
+      "unreleased_assets": [],
+      "field_name_status": {
+        "verified": ["law_code", "law_name", "section_num", "section_content", "reference"],
+        "assumed": [],
+        "notes": "Names verified from cardData dataset_info via the HF API. No single id field; adapters key a section by (law_code, section_num). Only a CCL split is released; a Tax corpus is not in this repository."
+      },
+      "sources": {
+        "revision": "HF_API_STATUTE",
+        "license": "HF_API_STATUTE",
+        "role": "OWNER22_DS; OWNER04 §5",
+        "exposure": "P3T01",
+        "access": "HF_API_STATUTE",
+        "native_configs": "HF_API_STATUTE",
+        "thai_contract": "P3T01; HF_API_STATUTE"
+      },
+      "thai_contract": {
+        "scoreboard": "nitibench_original",
+        "release": {
+          "dataset_revision": "069e774f015a50e801dbe2055a29be580c54a83c",
+          "dataset_last_modified": "2025-11-26T21:28:47Z",
+          "paper": "NitiBench (EMNLP 2025), statute corpus companion",
+          "paper_url": "https://aclanthology.org/2025.emnlp-main.1739/"
+        },
+        "rights": {
+          "license": "MIT",
+          "license_scope": "card declares MIT; underlying Thai statute text is public law",
+          "attribution_required": true,
+          "share_alike": false,
+          "redistribution_in_product": false,
+          "terms_url": "https://huggingface.co/datasets/VISAI-AI/nitibench-statute"
+        },
+        "gating": "none (HF API gated=false)",
+        "evaluation_unit": "statutory section (law_code, section_num) as the retrieval candidate for NitiBench-CCL",
+        "native_metric": "corpus only; scored through VISAI-AI/nitibench",
+        "study_metric": "corpus only",
+        "splits": {"ccl": 5127},
+        "development_use": "none as a benchmark corpus; statute text may be indexed only together with an approved NitiBench run",
+        "held_out_use": "candidate corpus for the optional nitibench_original scoreboard",
+        "prior_exposure": "API metadata only; no rows downloaded",
+        "training_overlap_risk": [
+          {"subject": "NitiBench-CCL specialists", "finding": "same CCL statute sections back the WangchanX training data", "risk": "high for specialists, see VISAI-AI/nitibench"}
+        ],
+        "download_approval": null,
+        "blocked_pending_owner": [
+          {"kind": "download", "item": "data/ccl-* at the pinned revision", "why": "downloads need a per-item owner approval"}
+        ]
+      }
+    },
+    {
+      "dataset_id": "typhoon-ai/ThaiOCRBench",
+      "hf_repo": "typhoon-ai/ThaiOCRBench",
+      "revision": "ca610d1ab33059e721251137ab1f19f936b87648",
+      "paper_version": "arXiv:2511.04479v3; IJCNLP-AACL 2025 (card)",
+      "license": "CC-BY-SA-4.0",
+      "role": "optional_ocr_diagnostic",
+      "development_use": false,
+      "product_bundle_allowed": false,
+      "exposure": "not_exposed_in_ptp: API metadata and card description/license lines only (2026-11-22); no rows or images downloaded; the whole release is one TEST split",
+      "access": {"kind": "public", "acceptance_performed": null},
+      "language": "th",
+      "offset_convention": "not_applicable (image + question + answer)",
+      "local_markers": ["data"],
+      "native_configs": [
+        {
+          "config": "ocr_test",
+          "native_config_name": "default",
+          "split": "test",
+          "data_files": "data/test-*",
+          "rows": 2808,
+          "evaluator_only": false,
+          "id_field": "Id",
+          "runtime_fields": ["Id", "image", "Task", "question", "category"],
+          "evaluator_fields": ["answer"],
+          "dropped_fields": []
+        }
+      ],
+      "unreleased_assets": [],
+      "field_name_status": {
+        "verified": ["Id", "image", "Task", "question", "category", "answer"],
+        "assumed": [],
+        "notes": "Names verified from cardData dataset_info via the HF API. Local parquet files are named data/test-*, so the G02 path policy refuses to inspect or load them (TEST marker)."
+      },
+      "sources": {
+        "revision": "HF_API_OCR",
+        "license": "HF_API_OCR; HF_CARD_OCR",
+        "role": "OWNER22_DS; OWNER22_MODEL §5",
+        "exposure": "P3T01",
+        "access": "HF_API_OCR",
+        "native_configs": "HF_API_OCR",
+        "thai_contract": "P3T01; HF_CARD_OCR; ARXIV_API"
+      },
+      "thai_contract": {
+        "scoreboard": "ocr_diagnostics",
+        "release": {
+          "dataset_revision": "ca610d1ab33059e721251137ab1f19f936b87648",
+          "dataset_last_modified": "2025-12-02T08:28:45Z",
+          "paper": "ThaiOCRBench: A Task-Diverse Benchmark for Vision-Language Understanding in Thai (IJCNLP-AACL 2025 per card)",
+          "paper_url": "https://arxiv.org/abs/2511.04479v3",
+          "paper_version": "arXiv:2511.04479v3 (updated 2025-12-04)"
+        },
+        "rights": {
+          "license": "CC-BY-SA-4.0",
+          "license_scope": "card metadata; share-alike binds any adapted dataset or derived annotations",
+          "attribution_required": true,
+          "share_alike": true,
+          "redistribution_in_product": false,
+          "terms_url": "https://huggingface.co/datasets/typhoon-ai/ThaiOCRBench"
+        },
+        "gating": "none (HF API gated=false)",
+        "evaluation_unit": "image + question sample across 13 task types (2,808 human-annotated samples, card)",
+        "native_metric": "task-specific metrics defined in the paper; not re-verified here",
+        "study_metric": "diagnostic only; never a retrieval, scope-binding or applicability score",
+        "splits": {"test": 2808, "native_dev_split": null},
+        "development_use": "none: single TEST split; OCR parser selection must use PTP's own packet pages",
+        "held_out_use": "optional OCR diagnostic of a frozen parser profile",
+        "prior_exposure": "API metadata and card description/license lines only; no rows or images downloaded",
+        "training_overlap_risk": [
+          {"subject": "Typhoon OCR models (typhoon-ai/typhoon-ocr2-*)", "finding": "same organization as the benchmark; training exclusion of benchmark pages not checked", "risk": "unknown; disclose before comparing parsers"},
+          {"subject": "fine-tuned specialists", "finding": "no Hugging Face model declares this dataset (2026-11-22)", "risk": "low_but_unverifiable"}
+        ],
+        "download_approval": null,
+        "blocked_pending_owner": [
+          {"kind": "download", "item": "data/test-* parquet shards (images) at the pinned revision", "why": "downloads need a per-item owner approval"},
+          {"kind": "download", "item": "OCR parser weights (typhoon-ocr2-2b / 0.8b, PaddleOCR-VL-1.6)", "why": "model downloads need a per-item owner approval"}
+        ]
       }
     }
-  ]
+  ],
+  "thai_contract": {
+    "checked_date": "2026-11-22",
+    "task": "P3-T01",
+    "receipt": "docs/tracking/owner-note-22112026/receipts/P3-T01_thai_data_contract.md",
+    "rule": "Each scoreboard is its own table with its own release, unit, evaluator and exposure note. Scores are never averaged, pooled or ranked across scoreboards.",
+    "scoreboards": {
+      "thai_gazette_retrieval": {"members": ["VISAI-AI/thai-gazette-evidence-retrieval"], "kind": "public_exposed_transfer", "primary_metric": "nDCG@10 (PTP proposed)"},
+      "nitibench_original": {"members": ["VISAI-AI/nitibench", "VISAI-AI/nitibench-statute"], "kind": "optional_public_test_control", "primary_metric": null},
+      "nitibench_plus": {"members": ["VISAI-AI/nitibench-plus"], "kind": "optional_gated_companion", "primary_metric": null},
+      "supplied_document_tasks": {"members": ["PTP_supplied_document_tasks"], "kind": "evidence_supplied_no_discovery", "primary_metric": null},
+      "fresh_structural_packets": {"members": ["PTP_authorized_thai_packets"], "kind": "new_collection", "primary_metric": "required-evidence correctness and scope-binding accuracy (OWNER22_SCORE §C)"},
+      "ocr_diagnostics": {"members": ["typhoon-ai/ThaiOCRBench", "PTP_packet_ocr_diagnostics"], "kind": "diagnostic_only", "primary_metric": null}
+    },
+    "planned_resources": [
+      {
+        "resource_id": "PTP_authorized_thai_packets",
+        "scoreboard": "fresh_structural_packets",
+        "status": "NOT_COLLECTED",
+        "rights": {"license": "per_source_rights_manifest_or_original_synthetic", "redistribution_in_product": "only original synthetic packets or sources whose manifest grants it"},
+        "evaluation_unit": "source family (original, revision, translation and rendering variants kept together) x predeclared question",
+        "development_use": "separate development families (start with ten synthetic or clearly licensed packets)",
+        "held_out_use": "held-out families, and agencies/templates where feasible; questions and judgments isolated from policy design",
+        "prior_exposure": "none (not collected)",
+        "training_overlap_risk": "public Thai official documents may be in web pretraining; record source URL and date per packet",
+        "blocked_pending_owner": [
+          {"kind": "download", "item": "any real Thai document fetched from a public site (e.g. Royal Gazette, agency PDFs)", "why": "downloads need a per-item owner approval"},
+          {"kind": "rights_review", "item": "Thai patent packets", "why": "a public patent-search service is not a redistribution license"},
+          {"kind": "owner_decision", "item": "qualified legal review for ambiguous mappings", "why": "without it only evidence-binding behaviour may be claimed"}
+        ]
+      },
+      {
+        "resource_id": "PTP_supplied_document_tasks",
+        "scoreboard": "supplied_document_tasks",
+        "status": "NOT_DEFINED",
+        "rights": {"license": "inherits the supplied packet's rights manifest", "redistribution_in_product": "per packet"},
+        "evaluation_unit": "supplied document set x question (evidence is given; no global discovery)",
+        "development_use": "synthetic packets only until P3-T02 defines the task",
+        "held_out_use": "held-out packet families",
+        "prior_exposure": "none",
+        "training_overlap_risk": "as for the packets",
+        "blocked_pending_owner": [
+          {"kind": "owner_decision", "item": "task definition (P3-T02)", "why": "not yet declared"}
+        ]
+      },
+      {
+        "resource_id": "PTP_packet_ocr_diagnostics",
+        "scoreboard": "ocr_diagnostics",
+        "status": "NOT_COLLECTED",
+        "rights": {"license": "inherits the packet rights manifest", "redistribution_in_product": "per packet"},
+        "evaluation_unit": "page / region of a PTP packet (OCR edit error, layout overlap, Garuda-region accuracy)",
+        "development_use": "development packet pages only",
+        "held_out_use": "held-out packet pages, diagnostic only",
+        "prior_exposure": "none",
+        "training_overlap_risk": "not applicable to original synthetic pages",
+        "blocked_pending_owner": [
+          {"kind": "download", "item": "OCR parser weights", "why": "model downloads need a per-item owner approval"}
+        ]
+      }
+    ],
+    "related_training_resources": [
+      {
+        "resource_id": "airesearch/WangchanX-Legal-ThaiCCL-RAG",
+        "revision": "654e1a10afc44ecaee36fd739bc90078dcc62388",
+        "license": "MIT",
+        "gating": "none",
+        "splits": {"train": 8211, "test": 3742},
+        "role": "training source of NitiBench-CCL specialists; its train split is a candidate Thai legal DEV source only if the owner approves the download; its test split is treated as the NitiBench-CCL held-out set",
+        "status": "NOT_DOWNLOADED",
+        "source": "HF_API_WANGCHANX; HF_CARD_NITIORIG"
+      }
+    ]
+  }
 }

@@ -19,6 +19,8 @@ from .registry import get_config, get_dataset, load_registry
 DAPFAM = "datalyes/DAPFAM_patent"
 GAZETTE = "VISAI-AI/thai-gazette-evidence-retrieval"
 NITIBENCH_PLUS = "VISAI-AI/nitibench-plus"
+NITIBENCH = "VISAI-AI/nitibench"
+NITIBENCH_STATUTE = "VISAI-AI/nitibench-statute"
 
 
 class EvaluatorFieldRequested(PermissionError):
@@ -229,3 +231,41 @@ class NitiBenchPlusAdapter(_RuntimeAdapter):
         return SourceRecord(self.dataset_id, r.get("current_uri"), version, None, text,
                             f"{self.dataset_id}@{self.revision}:gold_sections/{version}", self.language,
                             r.get("valid_from"), r.get("valid_to"), observed_at, attrs)
+
+
+class NitiBenchAdapter(_RuntimeAdapter):
+    """Original NitiBench (public CCL/Tax TEST sets, P3-T01) question -> RequestRecord.
+
+    Native rows carry no identifier, so the request id is the positional locator ``<split>[<index>]``,
+    stable only at the pinned revision. Answers and relevant/reference laws are evaluator-only."""
+    dataset_id = NITIBENCH
+
+    def request_from_question(self, row: dict, *, split: str, index: int, include: Iterable[str] = ()) -> RequestRecord:
+        include = tuple(include)
+        p = self._project(row, split, include)  # registry config names equal the native split names
+        if isinstance(index, bool) or not isinstance(index, int) or index < 0:
+            raise MissingIdentifier(f"NitiBench {split} row needs a non-negative positional index")
+        text = p.get("question")
+        if not isinstance(text, str):
+            raise ValueError(f"NitiBench {split}[{index}] has no question text")
+        attrs = self._attrs(p, include) + (("request_id_kind", "positional_locator"),)
+        return RequestRecord(self.dataset_id, f"{split}[{index}]", text, None, None, attrs)
+
+
+class NitiBenchStatuteAdapter(_RuntimeAdapter):
+    """NitiBench statute section -> SourceRecord keyed by (law_code, section_num); text kept verbatim."""
+    dataset_id = NITIBENCH_STATUTE
+
+    def source_from_section(self, row: dict, *, observed_at: str | None = None, include: Iterable[str] = ()) -> SourceRecord:
+        include = tuple(include)
+        p = self._project(row, "statute_ccl", include)
+        code, num = p.get("law_code"), p.get("section_num")
+        if code in (None, "") or num in (None, ""):
+            raise MissingIdentifier("statute section lacks law_code or section_num")
+        text = p.get("section_content")
+        if not isinstance(text, str):
+            raise ValueError(f"statute section {code}/{num} has no section_content")
+        sid = f"{code}/{num}"
+        return SourceRecord(self.dataset_id, sid, self.revision, p.get("law_name"), text,
+                            f"{self.dataset_id}@{self.revision}:statute_ccl/{sid}", self.language,
+                            None, None, observed_at, self._attrs(p, include))

@@ -8,7 +8,7 @@ Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
-| P3-T01 | Prepare Thai dataset/profile rights and exposure adapters | 🔄 IN_PROGRESS | NOT_RUN | P3-T02; P4-T03 |
+| P3-T01 | Prepare Thai dataset/profile rights and exposure adapters | ✅ COMPLETE | ENGINEERING_VERIFIED | P3-T02 (needs per-item download approvals / packet rights) |
 | P3-T02 | Build grouped source packets and independent judgments | ⏳ NOT_STARTED | NOT_RUN | P3-T04 |
 | P3-T03 | Run separate Thai text-transfer comparisons | ⏳ NOT_STARTED | NOT_RUN | P3-T05 |
 | P3-T04 | Evaluate structural scope and OCR end to end | ⏳ NOT_STARTED | NOT_RUN | P3-T05; P4-T03 |
@@ -19,11 +19,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P0-T06
 - **Acceptance evidence:** Pin allowed releases, units, licenses and prior exposure; separate Gazette, NitiBench/NitiBench+, real packets and OCR diagnostics; do not accept a gate or download without authority.
-- **Evidence:** pending
-- **Check:** NOT_CHECKED
-- **Next:** P3-T02; P4-T03
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P3-T01_thai_data_contract.md; src/patent_to_pilot/workbench/datasets/thai_contract.py; tests/test_p3_t01_thai_contract.py
+- **Check:** 36 new + G02 dataset tests = 63 pass; no downloads
+- **Next:** P3-T02 (needs per-item download approvals / packet rights)
 - **Blocker:** —
-- **Notes:** [2026-11-22] agent started (no downloads)
+- **Notes:** [2026-11-22] agent started (no downloads) | [2026-11-23] pins: Gazette 87e695ee (CC BY 4.0, exposed), NitiBench 9f756970 (MIT), NitiBench+ 41286bcb (gated, not accepted), ThaiOCRBench ca610d1a (CC BY-SA); six separate scoreboards enforced; Gazette marked exposed + not product-bundled
 
 ## P3-T02 — Build grouped source packets and independent judgments
 
