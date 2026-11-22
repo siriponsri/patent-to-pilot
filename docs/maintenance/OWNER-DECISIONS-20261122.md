@@ -49,3 +49,10 @@ Still open:
 | D12a | **Other Thai LLMs suggested by the owner:** iApp (iapp.co.th API) and `nectec/pathumma-thaillm-8b-think-3.0.0` | Recorded as **P3 (Thai) candidates**, not added to the A3r1 panel, which is English patents. iApp needs its own key and price check under E1R. Pathumma 8B is a weight download (per-item approval at the time) and needs dr-train hosting; fp16 does not fit the free V100 memory next to the other user's service |
 | D13 | **OpenRouter:** set `OPENROUTER_API_KEY` and top up credits (about USD 15 recommended) | The owner's action. A3r1 calibration and the pilot start when the key is present |
 | D14 | **PatenTEB:** accept the partial audit | PatEmbed is reported separately with the shared-pool caveat. BM25, Qwen3 and Arctic are the main DAPFAM comparators. No further PatenTEB download |
+
+## Decision of 23 Nov 2026 (owner in chat, with the plan `PTP_Thai_Search_Structure_Requirements_Fix_Plan_20261123.md`)
+
+| # | Decision | Effect |
+|---|---|---|
+| D15 | **Use PyThaiNLP** for Thai search (the owner proposed it) | `pythainlp 5.4.0` (Apache-2.0) installed into `.venv`, declared as the optional extra `thai`. The plan's three Workbench repairs are being implemented: Thai search, Remove/Undo, then structural acquisition before assessment. The Hugging Face collection "datasets for pretrained Thai LLM" is **not downloaded**: it is pretraining data, not needed for search, and would need a per-item approval |
+
