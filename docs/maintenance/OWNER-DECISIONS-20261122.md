@@ -16,10 +16,14 @@
 - Envelope E1 = USD 8.00 / 35,000 requests, for G03 amendment 3 (LLM query expansion as new acquisition routes) and
   Workbench checks.
 - Remaining account balance ≈ USD 8.37.
-- **Awaiting the owner's yes/no on E1.**
+- **D9 (22 Nov 2026, owner in chat: "Approve E1 USD 8"): E1 APPROVED.**
+  - Cap USD 8.00; max 35,000 requests.
+  - Scope: G03 amendment 3 (LLM query expansion as new acquisition routes; pilot, then one full run) and Workbench
+    profile checks (≤ USD 0.20).
+  - Stop rules as in the proposal: no full run if the pilot shows no P1-DEV gain; stop and report at USD 6 spent.
+  - The approval covers OpenRouter only. It does not cover E2 or RunPod.
 
 Still open:
 - the Paper 53 DOI (`DOI pending` stays in the reference list);
-- E1 approval;
 - E2 (later);
 - RunPod caps (D8).

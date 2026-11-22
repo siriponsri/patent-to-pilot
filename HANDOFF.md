@@ -101,9 +101,8 @@ The order and prompt are in the handoff file §1:
 - `pypdf` yes; no local Ollama, so GPU work goes to dr-train and RunPod via MCP.
 
 **Still pending:**
-- the owner's yes/no on **OpenRouter envelope E1 = USD 8 / 35,000 requests**
-  ([proposal](docs/maintenance/API-BUDGET-PROPOSAL-20261122.md); balance ≈ USD 8.37);
-- per-job caps for RunPod;
+- per-job caps for RunPod. (OpenRouter E1 = USD 8 / 35,000 requests was **approved 22 Nov**: D9,
+  [proposal](docs/maintenance/API-BUDGET-PROPOSAL-20261122.md).)
 - the Paper 53 DOI;
 - the G01 launcher observation.
 

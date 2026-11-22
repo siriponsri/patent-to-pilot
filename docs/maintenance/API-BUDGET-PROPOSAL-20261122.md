@@ -1,7 +1,7 @@
 # OpenRouter API budget proposal (22 Nov 2026), for owner approval
 
-**Status:** PROPOSAL. Nothing has been spent: no inference call was made while preparing this, only free catalogue and
-credit reads. CLAUDE.md rule 2 requires the owner to approve a numeric cap before the first paid request.
+**Status:** **E1 APPROVED by the owner on 22 Nov 2026** (USD 8.00, 35,000 requests; OWNER-DECISIONS D9). E2 is not
+approved. Nothing has been spent yet: only free catalogue and credit reads were made.
 
 **Account state (read 22 Nov 2026 via OpenRouter `get-credits`):** total credits USD 10.00, used USD 1.63, **remaining
 ≈ USD 8.37**. This balance is a hard ceiling unless the owner adds credits.

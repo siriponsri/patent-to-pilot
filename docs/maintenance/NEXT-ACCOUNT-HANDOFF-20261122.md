@@ -77,8 +77,8 @@ Finish each step with a commit, a push and a HANDOFF update. At the end, write a
 
 ## 4. Still open with the owner
 
-- **Approval of OpenRouter envelope E1** (USD 8 / 35,000 requests; balance ≈ USD 8.37; proposal in
-  `API-BUDGET-PROPOSAL-20261122.md`). Per-job caps for RunPod (D8).
+- OpenRouter E1 (USD 8 / 35,000 requests) is **APPROVED** (D9, 22 Nov); start G03 amendment 3 when step 5 comes.
+  Per-job caps for RunPod (D8) are still open.
 - The Paper 53 DOI.
 - The G01 launcher check by Explorer double-click.
 
