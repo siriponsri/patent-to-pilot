@@ -8,7 +8,7 @@ Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
-| P2-T01 | Audit eligible content and available structural evidence | 🔄 IN_PROGRESS | NOT_RUN | P2-T02 |
+| P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) |
 | P2-T02 | Establish complete-content and stronger simple controls | ⏳ NOT_STARTED | NOT_RUN | P2-T04 |
 | P2-T03 | Implement one bounded source-relation search action | 🔄 IN_PROGRESS | NOT_RUN | P2-T04; P4-T03 |
 | P2-T04 | Screen the bounded mechanism against close matched controls | ⏳ NOT_STARTED | NOT_RUN | P2-T05 if viable |
@@ -21,11 +21,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P0-T06
 - **Acceptance evidence:** Inspect permitted manifests/index configuration for truncation, omitted sections and family aggregation; do not open protected TEST or download a new corpus.
-- **Evidence:** pending
-- **Check:** NOT_CHECKED
-- **Next:** P2-T02
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P2-T01_content_coverage_audit.md
+- **Check:** read-only audit; no TEST opened; USD 0
+- **Next:** P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first)
 - **Blocker:** —
-- **Notes:** [2026-11-22] read-only content coverage audit agent started
+- **Notes:** [2026-11-22] read-only content coverage audit agent started | [2026-11-22] content gap found: index holds title+abstract+first claim only (~12% of claim tokens); 512 cap cuts 7-17% of units; claim dependency 97.8% available; no description/CPC; outputs pulled to _private_artifacts/dr-train-archive/20261122-p2t01
 
 ## P2-T02 — Establish complete-content and stronger simple controls
 

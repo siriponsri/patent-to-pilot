@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-22T18:39:52+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-22T18:59:34+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -54,7 +54,7 @@ Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
-| P2-T01 | Audit eligible content and available structural evidence | 🔄 IN_PROGRESS | NOT_RUN | — | P2-T02 | — | NOT_SYNCED |
+| P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T01_content_coverage_audit.md | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) | — | NOT_SYNCED |
 | P2-T02 | Establish complete-content and stronger simple controls | ⏳ NOT_STARTED | NOT_RUN | — | P2-T04 | — | NOT_SYNCED |
 | P2-T03 | Implement one bounded source-relation search action | 🔄 IN_PROGRESS | NOT_RUN | — | P2-T04; P4-T03 | — | NOT_SYNCED |
 | P2-T04 | Screen the bounded mechanism against close matched controls | ⏳ NOT_STARTED | NOT_RUN | — | P2-T05 if viable | — | NOT_SYNCED |
