@@ -20,8 +20,8 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 ## Task counts
 
 - ✅ COMPLETE: 12
-- 🔄 IN_PROGRESS: 2
-- ⏳ NOT_STARTED: 19
+- 🔄 IN_PROGRESS: 3
+- ⏳ NOT_STARTED: 18
 - 🟡 PARTIAL: 2
 
 ## Phases

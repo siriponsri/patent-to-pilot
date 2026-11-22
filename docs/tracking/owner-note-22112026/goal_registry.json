@@ -627,7 +627,7 @@
    "task_id": "P1-T04",
    "phase_id": "P1",
    "title": "Execute the declared four-model DEV pilot and spending decision",
-   "status": "NOT_STARTED",
+   "status": "IN_PROGRESS",
    "outcome": "NOT_RUN",
    "depends_on": [
     "P1-T03"
@@ -656,7 +656,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": ""
+   "notes": "[2026-11-23] pilot generation started 23 Nov (4 models x 2,000 P1-DEV, E1R ledger)"
   },
   {
    "task_id": "P1-T05",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-23T06:01:09+07:00"
+ "live_updated_at": "2026-11-23T06:01:41+07:00"
 }

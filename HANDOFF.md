@@ -4,75 +4,79 @@ This file holds the **current state only**. Rewrite the "Agent takeover state" s
 rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 [archives/HANDOFF-HISTORY-TO-20261121.md](archives/HANDOFF-HISTORY-TO-20261121.md).
 
-## Agent takeover state — 22 Nov 2026 evening (Asia/Bangkok)
+## Agent takeover state — 23 Nov 2026 (Asia/Bangkok)
 
-**Plan.** Outcome-based phases **P0–P5** (owner note 22 Nov, `docs/owner/owner-note-22112026/`, owner-local).
-- Live board: [docs/tracking/owner-note-22112026/PHASE_BOARD.md](docs/tracking/owner-note-22112026/PHASE_BOARD.md).
-- Registry: `goal_registry.json`.
+**Plan.** Outcome-based **P0–P5** (owner note 22 Nov). Live board:
+[docs/tracking/owner-note-22112026/PHASE_BOARD.md](docs/tracking/owner-note-22112026/PHASE_BOARD.md).
 - Tool: `python scripts/tracking/ptp_tracker.py show|set|render`.
-- No calendar gates.
-- Status fields kept separate: `method_evidence` = not yet demonstrated; `product_readiness` = core verified, structural slice
-  in progress; `publication_readiness` = planned, unmeasured.
+- Status fields kept separate: `method_evidence` = NOT_YET_DEMONSTRATED; `product_readiness` = core verified plus synthetic
+  trace slice; `publication_readiness` = draft with results NOT_RUN.
 
-**New account?** [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md)
-(to be refreshed for P0–P5), then [AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
+### Where things stand
 
-### P0 status (details and receipts in the board)
+**P0 complete except AFFiNE.**
+- OFFLINE_READY.
+- PAID_RESEARCH_READY since 23 Nov.
+- AFFINE_READY is **blocked**:
+  - the 0.27.4 web client never opens its sync socket (server verified fine);
+  - the built-in MCP is read-only;
+  - the owner imported a snapshot into AFFiNE Desktop (local workspace);
+  - the repo board is the tracker of record ([P0-T02 receipt](docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md)).
 
-| Task | Status | Note |
-|---|---|---|
-| P0-T01 reconcile state and authority | COMPLETE | [receipt](docs/tracking/owner-note-22112026/receipts/P0-T01_state_reconciliation.md). HEAD was pin `3e5e2595` + 1 commit; no A3 effectiveness exposure |
-| P0-T02 AFFiNE install | PARTIAL | Upstream v0.27.4 self-host pinned by digest at `C:\Users\User\ptp-tools\affine-tracker` (http://127.0.0.1:3010); the owner created the admin account; backup/restore drill pending. [receipt](docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md) |
-| P0-T03 live tracker + AFFiNE mirror | PARTIAL | The local tracker is live (35 tasks). Workspace `Patent-to-Pilot — Research and Product` (id `15d6fa22-…`) exists on the server, but the web client never pushes docs (server `snapshots`/`updates` = 0). The socket join and HTTP work; load-doc returns DOC_NOT_FOUND. Claude in Chrome was not connected. The owner reported doing an import, but nothing reached the server DB. **SYNC_PENDING** |
-| P0-T04 A3r1 protocol + provider plan | COMPLETE | [amendment (PROPOSED)](docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md). A3r1 does **not** fit E1 and fits E1R. Typhoon is not on OpenRouter (own key) |
-| P0-T05 shared budget ledger | IN_PROGRESS | Background agent (ledger module, the A3 caller, the Workbench providers) |
-| P0-T06 source-bound trace slice | IN_PROGRESS | Background agent (`src/patent_to_pilot/workbench/`) |
-| P0-T07 readiness milestones | NOT_STARTED | After T05/T06 |
-| P5-T01 manuscript draft | COMPLETE | [MANUSCRIPT-DRAFT-v1.md](docs/writing/journal/MANUSCRIPT-DRAFT-v1.md), all results NOT_RUN |
+**P1 (A3r1).**
+- **P1-T01:** done. Keys present by presence check; E1R approved in the ledger (D11).
+- **P1-T02:** TRAIN calibration done. 128/128 complete, no truncation, no reasoning tokens, USD 0.0152.
+- **P1-T03:** **FROZEN** ([freeze receipt](docs/tracking/owner-note-22112026/receipts/P1-T03_freeze_receipt.json),
+  commit 8c4c23f1).
+  - Stage-B-eligible: Qwen3-32B, DeepSeek V4 Flash, Gemini 2.5 Flash-Lite. Bound totals USD 17.8–21.0, within the USD 50
+    limit.
+  - Typhoon2.5 is pilot-descriptive only (quota unconfirmed).
+- **P1-T04 is RUNNING:** pilot generation, 2,000 P1-DEV queries × 4 models.
+  - Runs on the owner PC under the E1R ledger (`../_private_artifacts/g03-a3r1/ledger/A3r1/<model>/P1-DEV.jsonl`).
+  - Then upload the ledgers to dr-train `g03-dev/a3r1/ledger/`, copy `g03_a3_routes.py`, `g03_a3_decide.py` and
+    `g03_queue_a3r1_pilot.sh` to `g03-dev/code/`, and run the queue detached (ends `G03_A3R1_PILOT_DONE`). It needs the
+    V100 lock; check that the P2-T02 GPU job is not holding it.
+  - Apply the frozen GO rule. Stage B only on GO.
 
-### Research record (preserved)
+**P2.**
+- T01 content audit: done. The index holds title + abstract + first claim only, about 12% of claim tokens.
+- T02 coverage control: protocol frozen (bd30d3f7). An agent is implementing it and launching a detached Arctic C1/C2
+  build on the dr-train V100 under `/data/ptp-paper2/p2-coverage/`.
+- T03 relation-search operator: done (32bb87d2). Its policy is to be frozen in the P2-T04 protocol.
 
-- G03 v1, A1 and A2 are PARKED ([memo](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md); corrections added 22 Nov).
-- A3r0: format smoke only (USD 0.00064).
-- B53 Stage 1–2 and B53.0 are measured.
-- PatEmbed on DAPFAM: shared family pool; training overlap unmeasured.
-- Writing corrections W1–W6: [register](docs/maintenance/WRITING-CORRECTIONS-20261122.md).
+**P3.** T01 Thai data contract done (fd3cae1a). Downloads and the NitiBench+ gate need per-item owner approval.
+
+**P4.** T01 Search/Compare/Inspect: an agent is working on it (uncommitted changes in `workbench/core.py`, `server.py`,
+`static/*` and `workflow.py` are its work).
+
+**P5.** T01 manuscript draft done.
 
 ### Money and access
 
-- **E1 is active:** USD 8 / 35,000 requests, stop at USD 6.
-- **E1R** (USD 50) is **pending the owner**.
-- `OPENROUTER_API_KEY` is not set.
-- The OpenRouter balance is about USD 8.365, so a top-up is needed before any A3r1 Stage B.
-- Typhoon needs `TYPHOON_API_KEY` and a quota answer.
+- **E1R active:** USD 50 cumulative, notify at USD 40, 100,000 requests (D11).
+- Committed before the pilot: USD 0.0159.
+- OpenRouter credits: total 20.
+- `OPENROUTER_API_KEY` and `TYPHOON_API_KEY` are set as user environment variables.
+- Typhoon is settled at USD 0 (D12).
 - RunPod: no envelope.
 
 ### Running jobs
 
-- Two background agents (P0-T05 ledger, P0-T06 trace slice), resumed after the usage-limit reset.
-- AFFiNE Docker stack (`docker compose -p ptp-affine-tracker`) running.
-- Nothing of this project runs on dr-train.
-
-### Next
-
-1. Integrate and verify T05/T06, then run the full test gate and P0-T07 readiness.
-2. AFFiNE: find why the client does not push docs (or use the owner's browser or desktop path), then mirror, read back,
-   back up and run a restore drill.
-3. Free P2/P4 tasks (P2-T01 content audit, P2-T03 relation search, P4-T01 Search/Compare/Inspect) by dependency.
-4. Ask the owner once: E1R, Typhoon key, OpenRouter key and top-up.
+- A3r1 pilot generation (local, background).
+- P2-T02 agent work (possibly a dr-train GPU job under the lock).
+- P4-T01 agent.
+- AFFiNE Docker stack (`ptp-affine-tracker`), tracker only.
 
 ### Owner decisions
 
-- D1–D10: [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md).
-- N01–N12: in the owner note. N01 keeps the name, so the repo rename permission is not used.
+- D1–D14: [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md).
+- N01–N12: in the owner note. N01 keeps the name.
 - Pending:
-  - E1R;
-  - Typhoon access;
-  - the API key;
-  - the PatenTEB option;
-  - RunPod caps;
+  - Thai dataset download approvals (P3-T02);
+  - whether to report LLM-judge-graded NitiBench scores (rule 12);
   - the Paper 53 DOI and the 37.1% denominator;
-  - the G01 launcher check.
+  - the G01 launcher check;
+  - RunPod caps.
 
 Unchanged:
 - large derived files on dr-train are kept (compressed);
