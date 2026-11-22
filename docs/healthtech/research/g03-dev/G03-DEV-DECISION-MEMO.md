@@ -73,6 +73,33 @@ The adaptive part does add recall on top of its own anchor. The anchor is the pr
 - **For the paper (STATISTICAL_PLAN §8):** if acquisition stays null, the headline can rest on the maintenance contribution
   (C2/M3). The experiment history is not rewritten.
 
+## 4a. Amendment 1 result: field obligations (M1), decided 22 Nov
+
+**Results:** [g03-dev-results-a1.json](g03-dev-results-a1.json). **Integrity:** F\* evaluated in both namespaces gives
+identical per-query values on P1-DEV and VAL.
+
+**Setup:**
+- New routes: T (PatEmbed on title+abstract) and C (PatEmbed on the first independent claim).
+- 70 fixed allocations over L, Q, P, T, C at B = 4.
+
+**Findings:**
+- The best on P1-DEV is **F1\* = Q1 + P1 + C2**, so it does use an obligation route. ALL R@200 = 0.4248, against 0.4230
+  for F\*.
+- On P1-DEV, F1\* − F\* = **+0.0018 [+0.0003, +0.0032]**: real but tiny.
+- **Principal on VAL, F1\* − F\*:**
+  - ALL **−0.0054 [−0.0107, +0.0000]**;
+  - IN −0.0078 [−0.0169, +0.0016];
+  - OUT −0.0051 [−0.0123, +0.0016].
+- **Decision (frozen rule): PARK obligation routes.** The IN and OUT lower bounds fall below −δ, so non-inferiority is not
+  shown. The DEV gain does not carry to VAL.
+
+**Descriptive:**
+- Field routes alone are weaker than the whole query: T×4 0.393 and C×4 0.381, against P×4 0.418 on P1-DEV.
+- SF-v1c (PatEmbed anchor, consensus over 5 routes) is below F1\* on both blocks: −0.011 on P1-DEV, −0.007 on VAL.
+
+**Reading:** with these encoders and a fixed RRF scorer, re-slicing the same request into field queries adds very few new
+relevant families. Effects of ±0.005 sit at the resolution limit of VAL (2,000 tasks).
+
 ## 5. Product consequence
 
 The static default for product retrieval is a fixed dense allocation fused by RRF. The DEV winner uses PatEmbed, whose
