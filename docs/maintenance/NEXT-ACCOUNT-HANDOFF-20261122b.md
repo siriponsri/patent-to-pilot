@@ -29,10 +29,10 @@ Finish each step with a commit, a push and a HANDOFF update. At the end, write a
 | Item | State | Where |
 |---|---|---|
 | G03 A2 learned selector | **PARKED** (VAL ALL +0.0017 [−0.0019, +0.0054]; IN lower −0.0060) | memo §4b, `g03-dev-results-a2.json` |
-| G03 A1 | PARKED; a mask defect in T/C routes is disclosed in §4a (cannot have helped A1) | memo §4a |
-| G03 A3 LLM query expansion | **FROZEN**, code ready, smoke OK on 4 models (USD 0.00064), pilot waiting for the API key | `G03-DEV-AMENDMENT-3-20261122.md`, `scripts/research/g03_a3_*.py`, `g03_queue_a3_pilot.sh` |
+| G03 A1 | PARKED; a mask defect in T/C routes is disclosed in §4a ~~(cannot have helped A1)~~ [correction 22 Nov 2026: direction of the defect's effect is not established; see memo §4a correction note] | memo §4a |
+| G03 A3 LLM query expansion | **FROZEN**, code ready, smoke OK on 4 models (USD 0.00064) [correction 22 Nov 2026: format-feasibility only — Haiku truncated at 400 tokens with keywords missing; panel is one Claude, two Qwen, one DeepSeek, not four independent lineages; now A3r0, to be replaced prospectively by A3r1], pilot waiting for the API key | `G03-DEV-AMENDMENT-3-20261122.md`, `scripts/research/g03_a3_*.py`, `g03_queue_a3_pilot.sh` |
 | A3 inputs | `queries-dev-val.jsonl` (P1-DEV 26,575 + VAL 2,000), `apps-pilot.json` (2,000), `apps-P1-DEV.json` (25,626), `apps-VAL.json` (1,919) | dr-train `g03-dev/a3/`, local `../_private_artifacts/g03-a3/inputs/` |
-| D3 PatenTEB | Train split **not released**; partial audit: DAPFAM is inside PatenTEB's pool (50 queries, 466 corpus families in 3 test files) | `docs/healthtech/research/b53-0/PATENTEB-OVERLAP-AUDIT-20261122.md` |
+| D3 PatenTEB | Train split **not released**; partial audit: DAPFAM is inside PatenTEB's pool (50 queries, 466 corpus families in 3 test files) [correction 22 Nov 2026: shared family pool only; training overlap unmeasured] | `docs/healthtech/research/b53-0/PATENTEB-OVERLAP-AUDIT-20261122.md` |
 | D8 PDF | pypdf 6.21.4 in `.venv`; Workbench PDF ingestion active with tests | `workbench/ingest.py`, `tests/test_ptp_g02_pdf_ingest.py` |
 | D7 profiles | 4 OpenRouter chat templates, reasoning off, USD 0.05 / 20 requests each | `workbench/providers.py`, `tests/test_ptp_g02_openrouter_profiles.py` |
 | dr-train | g03-dev pulled (826 OK) and compressed (24.44 GB freed); nothing running | `artifacts/maintenance/20261122-g03-pull/SUMMARY.md` |

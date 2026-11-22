@@ -1,5 +1,7 @@
 # IS2 short paper — DRAFT v0.2 (Thai, faculty template AI4BA), 22 Nov 2026
 
+> **หมายเหตุการแก้ไข (22 พ.ย. 2569, owner note 22112026).** ตัวเลข "37.1%" ของ Paper 53 ถูกทำเครื่องหมาย **denominator to be recovered; do not reuse** ทุกจุดด้านล่าง เพราะยังไม่ได้ตรวจตัวหาร (257/692 คำค้น) กับตารางต้นฉบับของ Paper 53 ส่วนค่า π@100 = 0.371 ของ B53 (905 คำค้น) เป็นผลวัดของ B53 เอง ไม่ใช่ตัวเลขของ Paper 53 ข้อความเดิมคงไว้ตามเดิม
+
 สถานะ: ร่าง (agent) ต้องให้เจ้าของและอาจารย์ที่ปรึกษาตรวจ
 - ตัวเลขทุกตัวมาจาก receipt ใน repo: Stage 1 ที่ `results/B53-STAGE1-RESULTS.md` และ Stage 2 ที่ `results/B53-STAGE2-RESULTS.md`
 - v0.2 (22 พ.ย. 2569): ใส่ผล Stage 2 ในบทคัดย่อ, 4.2 และ 5 แล้ว และปรับงานต่อเนื่องให้ตรงกับโปรแกรม PTP-2026-11-21
@@ -18,7 +20,7 @@
 
 ### บทคัดย่อ
 งาน IS1 พบว่าคำสั่ง (instruction) ที่ออกแบบเฉพาะสำหรับสิทธิบัตรแทบไม่เปลี่ยนคุณภาพการจัดอันดับเอกสารข้ามสาขาของ reranker เมื่อเทียบกับคำสั่งทั่วไป
-มีเพียง 257 จาก 692 คำค้น (ร้อยละ 37.1) ที่ผลค้นคืน 100 อันดับแรกของตัวค้นคืนขั้นแรกมีเอกสารข้ามสาขาที่ทราบว่าเกี่ยวข้องอยู่เลย
+มีเพียง 257 จาก 692 คำค้น (ร้อยละ 37.1) [**แก้ไข 22 พ.ย. 2569:** ตัวเลข 37.1% ของ Paper 53 ต้องกู้ตัวหารจากต้นฉบับ Paper 53 ก่อน ห้ามนำไปใช้ซ้ำ / denominator to be recovered; do not reuse] ที่ผลค้นคืน 100 อันดับแรกของตัวค้นคืนขั้นแรกมีเอกสารข้ามสาขาที่ทราบว่าเกี่ยวข้องอยู่เลย
 คณะกรรมการจึงเสนอให้ทดสอบว่าข้อจำกัดอยู่ที่ตัวค้นคืนขั้นแรกหรือไม่ งานนี้ออกแบบการทดลองแทนที่ตัวค้นคืนขั้นแรก (first-stage substitution) บนชุดข้อมูล DAPFAM
 โดยเปลี่ยนเฉพาะตัวค้นคืนขั้นแรกและตรึง reranker คำสั่ง ข้อความ และวิธีประเมินไว้ทั้งหมด
 ตัวค้นคืนที่เปรียบเทียบคือ patembed-base (ตัวเดิมของงาน IS1), BM25, Arctic-embed และการรวมผลแบบ RRF
@@ -42,7 +44,7 @@ School of Information Technology, King Mongkut's Institute of Technology Ladkrab
 
 ### Abstract
 In our IS1 study, patent-specific reranking instructions barely changed cross-domain ranking quality relative to a generic
-instruction. Only 257 of 692 queries (37.1%) had a known cross-domain (OUT) relevant family in the first-stage top 100.
+instruction. Only 257 of 692 queries (37.1%) [**correction 22 Nov 2026:** Paper 53's 37.1% — denominator to be recovered from the original Paper 53 source; do not reuse] had a known cross-domain (OUT) relevant family in the first-stage top 100.
 Following the IS1 committee, we test whether that limit lies in the first stage, with a first-stage substitution on DAPFAM. Only the
 first-stage retriever changes; the reranker, instructions, text rendering and evaluation are held fixed. We compare
 patembed-base (the IS1 first stage), BM25, Arctic-embed and their reciprocal-rank-fusion hybrids. On 905 OUT-eligible
@@ -69,10 +71,10 @@ therefore persisted under every first stage.
 ระบบค้นคืนแบบหลายขั้นตอนจะหาผู้สมัคร (candidate) ด้วยตัวค้นคืนขั้นแรกก่อน แล้วจึงจัดอันดับใหม่ด้วย reranker ที่รับคำสั่ง (instruction) ได้
 งาน IS1 (Paper 53) ศึกษาว่าคำสั่งเฉพาะด้านสิทธิบัตรช่วยการจัดอันดับเอกสารข้ามสาขาหรือไม่ ภายใต้ candidate pool ที่ตรึงไว้
 ผลคือความต่างของค่าเฉลี่ย strict OUT nDCG@100 ใกล้ศูนย์ (Patent-aware +0.0008, Claim-focused −0.0007)
-และมีเพียงร้อยละ 37.1 ของคำค้นที่ pool มีเอกสารข้ามสาขาที่ทราบว่าเกี่ยวข้อง [1]
+และมีเพียงร้อยละ 37.1 ของคำค้นที่ pool มีเอกสารข้ามสาขาที่ทราบว่าเกี่ยวข้อง [1] [**แก้ไข 22 พ.ย. 2569:** ตัวเลข 37.1% ของ Paper 53 ต้องกู้ตัวหารจากต้นฉบับ Paper 53 ก่อน ห้ามนำไปใช้ซ้ำ / denominator to be recovered; do not reuse]
 
 คณะกรรมการ IS1 ให้ข้อเสนอแนะสองข้อหลัก
-- (K1) ให้อธิบายที่มาของตัวค้นคืนขั้นแรก patembed-base และลอง BM25 หรือ hybrid เพราะ exposure เพียงร้อยละ 37.1 อาจเป็นข้อจำกัดหลัก รวมทั้งระวังการสรุปเชิงสาเหตุจากสมการแยกผล
+- (K1) ให้อธิบายที่มาของตัวค้นคืนขั้นแรก patembed-base และลอง BM25 หรือ hybrid เพราะ exposure เพียงร้อยละ 37.1 [**แก้ไข 22 พ.ย. 2569:** ตัวเลข 37.1% ของ Paper 53 ต้องกู้ตัวหารจากต้นฉบับ Paper 53 ก่อน ห้ามนำไปใช้ซ้ำ / denominator to be recovered; do not reuse] อาจเป็นข้อจำกัดหลัก รวมทั้งระวังการสรุปเชิงสาเหตุจากสมการแยกผล
 - (K2) ให้ IS2 เปลี่ยนตัวค้นคืนขั้นแรกเพื่อทดสอบว่าข้อจำกัดอยู่ตรงนั้นจริงหรือไม่ และให้อธิบายประโยชน์ต่อผู้ใช้
 
 งานนี้ตอบด้วยการทดลอง B53 ซึ่งเปลี่ยน **เฉพาะ** ตัวค้นคืนขั้นแรกบนชุดข้อมูล DAPFAM [2] และตรึงปัจจัยอื่นไว้ คำถามวิจัยมีดังนี้
@@ -167,7 +169,7 @@ OUT Recall@100 ของ F0–F4 เท่ากับ 0.160, 0.107, 0.170, 0.12
 - แขนรองแสดงทิศทางเดียวกัน: patembed-large +0.002, Qwen3-Embedding −0.024
 - การเปลี่ยนเฉพาะ prompt ของ patembed-base เป็นแบบ OUT เพิ่ม exposure 3.0 จุด (เชิงพรรณนา)
 - แม้ดูลึกถึง 1,000 อันดับ ยังมีคำค้นร้อยละ 27 ที่ไม่พบเอกสาร OUT ที่ทราบว่าเกี่ยวข้องเลย
-- ค่า π@100 ของ F0 (0.371) เท่ากับร้อยละ 37.1 ของ Paper 53 ในเชิงตัวเลข แต่กลุ่มคำค้นและขั้นตอนต่างกัน จึงไม่ถือเป็นการทำซ้ำผล
+- ค่า π@100 ของ F0 (0.371) เท่ากับร้อยละ 37.1 ของ Paper 53 ในเชิงตัวเลข แต่กลุ่มคำค้นและขั้นตอนต่างกัน จึงไม่ถือเป็นการทำซ้ำผล [**แก้ไข 22 พ.ย. 2569:** ตัวเลข 37.1% ของ Paper 53 ต้องกู้ตัวหารจากต้นฉบับ Paper 53 ก่อน ห้ามนำไปใช้ซ้ำ / denominator to be recovered; do not reuse]
 
 **4.2 ผลของคำสั่งภายใต้ตัวค้นคืนแต่ละแบบ (RQ2)**
 

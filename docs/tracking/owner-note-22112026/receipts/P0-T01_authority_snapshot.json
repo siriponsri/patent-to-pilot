@@ -1,0 +1,23 @@
+{
+ "format": "ptp-authority-snapshot-v1",
+ "recorded_at": "2026-11-22T15:30+07:00",
+ "head": "ad7982d2a4d0702e3c13e29adf79423f4cf6dcf3",
+ "owner_package_audit_pin": "3e5e2595d43df129d091c01dd4cd268f3b7b6c8d",
+ "commits_since_pin": ["ad7982d2 previous G01-G08 phase tracker + AFFiNE desktop 0.27.4 install record"],
+ "instructions": ["CLAUDE.md", "AGENTS.md", "docs/maintenance/OWNER-DECISIONS-20261122.md (D1-D10)", "docs/owner/owner-note-22112026 (N01-N12; owner-local, read-only)"],
+ "name_decision": "N01: keep Patent-to-Pilot; repository rename permission from chat not exercised",
+ "envelopes": {
+  "E1": {"status": "ACTIVE", "nominal_usd": 8.0, "stop_and_report_usd": 6.0, "max_attempted_requests": 35000,
+         "scope": "G03 A3 (pilot + one Stage B) and Workbench profile checks <= USD 0.20", "approval": "D9, 22 Nov 2026",
+         "spent_usd": 0.00064223, "attempted_requests": 4, "spend_source": "docs/healthtech/research/g03-dev/g03-dev-a3-spend.json"},
+  "E1R": {"status": "PENDING_OWNER_APPROVAL", "cumulative_usd": 50.0, "notify_usd": 40.0, "max_attempted_requests": 100000, "includes_existing_spend": true},
+  "RunPod": {"status": "NO_ENVELOPE"}
+ },
+ "openrouter_account_read": {"total_credits": 10, "total_usage": 1.63501153, "read": "2026-11-22"},
+ "credentials": {"OPENROUTER_API_KEY": "absent from the user environment (checked by presence only)"},
+ "a3_effectiveness_exposure": "NONE: no A3 DEV or VAL score exists; only 4 format-smoke calls on one TRAIN query",
+ "val_looks_in_g03": 3,
+ "gpu": "dr-train V100 device 1 only, shared GPU lock; no project job running",
+ "downloads_authorised": ["ordinary local AFFiNE installation/update and required runtime images/software"],
+ "downloads_not_authorised_without_item_approval": ["research datasets", "model weights", "paid hosting/subscriptions", "GPU rental"]
+}

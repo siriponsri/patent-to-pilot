@@ -7,8 +7,9 @@ standing rules; this file is the shared summary and must stay consistent with it
 
 1. Read [CLAUDE.md](CLAUDE.md), [HANDOFF.md](HANDOFF.md) and [INDEX-PLAN.md](INDEX-PLAN.md).
 2. Verify the checkout: `git status --short --branch`, `git log -3`, and that no other agent is writing the same files.
-3. The owner's program is PTP-2026-11-21 (`docs/owner/owner-note-21112026/`, owner-local). Goals are G01–G08 in that
-   namespace; older G01–G22 and HT-* identifiers in historical records keep their original meanings.
+3. The current plan is the outcome-based P0–P5 plan of `docs/owner/owner-note-22112026/` (owner-local). Its live state is
+   `docs/tracking/owner-note-22112026/`. Update that state only through `python scripts/tracking/ptp_tracker.py`.
+   G01–G08 (PTP-2026-11-21), G01–G22 and HT-* identifiers in historical records keep their original meanings.
 
 ## One writer, one handoff
 

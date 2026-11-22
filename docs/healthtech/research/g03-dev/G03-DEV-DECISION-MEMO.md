@@ -72,6 +72,10 @@ The adaptive part does add recall on top of its own anchor. The anchor is the pr
   amendment 2. It needs the TRAIN-block runs of every route; the PatEmbed TRAIN run does not exist yet.
 - **For the paper (STATISTICAL_PLAN §8):** if acquisition stays null, the headline can rest on the maintenance contribution
   (C2/M3). The experiment history is not rewritten.
+  - *Correction (22 Nov 2026, owner note 22112026, decision N03 and "Decision philosophy"):* superseded. A null
+    acquisition ladder does **not** produce an automatic maintenance headline; the owner's retrieval-score objective is
+    then reported as unfinished, and the next scope is decided with the owner. Maintenance remains a separate,
+    independently evidenced contribution.
 
 ## 4a. Amendment 1 result: field obligations (M1), decided 22 Nov
 
@@ -105,6 +109,17 @@ mask that `dense_bridgeret_v3.py` applies to the whole-query routes. Later-publi
 fill T and C windows. This can only have lowered T and C, so the PARK decision is not overturned by it, but the T/C numbers
 above understate a correctly masked field route. Amendment 3 applies both masks.
 
+> **Correction (22 Nov 2026, owner note 22112026, "Corrections to carry into writing"; the paragraph above is kept as
+> written).** The statements "this can only have lowered T and C" and "the T/C numbers above understate a correctly
+> masked field route" are **not established**. The missing masks change which units are eligible, how the T and C
+> windows are ranked and which units the fused RRF list can contain. An inconsistent mask can move a query's R@200 in
+> either direction (for example, an unmasked unit can displace a relevant unit, or the windows can contain different
+> relevant units than a masked route would), so no one-directional bias follows from the defect. What stands: the A1
+> decision is the recorded **PARK** under the frozen rule, with this defect disclosed; the size and sign of its effect
+> on T, C and F1\* are **unknown** (no masked re-run exists). The same sentence in the frozen
+> [amendment 3](G03-DEV-AMENDMENT-3-20261122.md) §2 ("which can only have hurt T and C") is superseded by this note;
+> the frozen file itself is not edited.
+
 ## 4b. Amendment 2 result: learned route selector (LS), decided 22 Nov
 
 **Results:** [g03-dev-results-a2.json](g03-dev-results-a2.json) (dr-train `a2.log` ends `G03_A2_DONE`; frozen at
@@ -134,6 +149,14 @@ routes wins. Together with v1 and amendment 1, three mechanisms that only re-wei
 now failed to move recall beyond ±0.005. **Owner decision D2:** keep working on acquisition with a mechanism that brings in
 *new* candidates. That is amendment 3 (LLM query expansion as new routes):
 [G03-DEV-AMENDMENT-3-20261122.md](G03-DEV-AMENDMENT-3-20261122.md), frozen before any number.
+
+> **Correction (22 Nov 2026, owner note 22112026).** (1) The amendment-3 panel (now called **A3r0**) is one Claude
+> (`claude-haiku-5.5`), two Qwen (`qwen3.7-flash`, `qwen3-32b`) and one DeepSeek (`deepseek-v4-flash-0731`) model: three
+> model families, two of the four from the same Qwen family. It is not four independent lineages and supports no
+> claim of generator diversity. (2) Its four TRAIN smoke calls show **format feasibility only**: Haiku hit the 400-token
+> cap and returned three salvaged priors without the keyword field. A3r0 has no effectiveness pilot; the prospective
+> A3r1 amendment replaces the panel and output contract before any effectiveness score. (3) A3 tests one
+> pseudo-document acquisition mechanism; a STOP or PARK for A3 blocks that Stage B, not all later acquisition research.
 
 ## 5. Product consequence
 

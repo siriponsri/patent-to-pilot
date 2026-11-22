@@ -1,5 +1,7 @@
 # B53 Stage 1 — first-stage exposure on DAPFAM (MEASURED, 19 Nov 2026)
 
+> **Correction note (22 Nov 2026, owner note 22112026, "Corrections to carry into writing").** Paper 53's "37.1%" exposure statement is marked **denominator to be recovered; do not reuse** wherever it appears below. The repository account (257/692 queries) has not been re-checked against the original Paper 53 table, and other drafts turned it into an item-level claim. B53's own measured π@100 = 0.371 (905 queries) is a separate number and is not Paper 53's figure. Text is kept as written; the markers govern.
+
 - Protocol: `docs/healthtech/research/plans/B53-PREDECLARATION.md`, frozen at 274af5de before any B53 number.
 - Code: `scripts/healthtech/b53_first_stage.py` (sha256 374e79cd…) with `tests/test_b53_first_stage.py`. Run on dr-train
   through `scripts/healthtech/queue_b53_stage1.sh`; every step exited 0.
@@ -44,7 +46,7 @@ Stage 2.
 ## What this supports (wording policy of file 09 §6)
 - **K1b:** in this setting, replacing the patembed-base first stage with BM25, Arctic, or their RRF hybrids did **not** raise
   OUT exposure at K = 100. BM25 lowered it by 10.5 points; RRF(BM25, F0) left it statistically unchanged. "Use BM25/hybrid"
-  is therefore not a fix for the 37% exposure ceiling on DAPFAM.
+  is therefore not a fix for the 37% exposure ceiling on DAPFAM (here 37% is B53's own F0 π@100 on 905 queries, not Paper 53's figure; correction 22 Nov 2026).
 - **K2a (first part):** the first stage changes exposure, both down (BM25, Arctic) and up (F0-OUT prompt +3.0 points,
   descriptive). Each of these is a real manipulation of the first stage, so B53.1 can state "changing the first stage
   changed exposure".
@@ -54,7 +56,7 @@ Stage 2.
 - **Exposure ceiling:** even at K = 1,000, 27% of OUT queries have no known OUT family under the best core arm (F0 π@1000 = 0.733).
 
 ## What it does not support
-- F0's π@100 = 0.371 numerically equals Paper 53's 37.1% (257/692). The cohort (905 vs 692), the pipeline and the keys all
+- F0's π@100 = 0.371 numerically equals Paper 53's 37.1% (257/692) [**correction 22 Nov 2026:** Paper 53's 37.1% — denominator to be recovered from the original Paper 53 source; do not reuse]. The cohort (905 vs 692), the pipeline and the keys all
   differ. Report it as a coincidence of magnitude, **not** a replication.
 - Nothing here concerns instructions yet; that is Stage 2.
 - Judgments are incomplete; "exposure" means exposure of *known* OUT families.

@@ -1,5 +1,9 @@
 # Track J: journal manuscripts (Paper 1 -> Paper 3)
 
+> **22 Nov 2026 (owner note 22112026, N09 / task P5-T01):** the program now has **one** manuscript with three linked
+> contributions: [MANUSCRIPT-DRAFT-v1.md](MANUSCRIPT-DRAFT-v1.md) (design only; every new result `NOT_RUN`). The P1–P3 table
+> below is kept as history of the earlier three-paper plan.
+
 Rules (see `../README.md`): this folder never mentions or reuses the owner's earlier unpublished conference work or its
 labels (checked by `tests/test_org_adaptive_terminology.py`). No committee-response text. Paper 53 may be cited.
 

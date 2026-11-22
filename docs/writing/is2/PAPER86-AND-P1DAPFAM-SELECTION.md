@@ -1,5 +1,7 @@
 # IS2: what to take from Paper 86 and from P1-DAPFAM (agent selection, 19 Nov 2026)
 
+> **Correction note (22 Nov 2026, owner note 22112026, "Corrections to carry into writing").** Paper 53's "37.1%" exposure statement is marked **denominator to be recovered; do not reuse** wherever it appears below. The repository account (257/692 queries) has not been re-checked against the original Paper 53 table, and other drafts turned it into an item-level claim. B53's own measured π@100 = 0.371 (905 queries) is a separate number and is not Paper 53's figure. Text is kept as written; the markers govern.
+
 Owner instruction 19 Nov: "Paper 86 ช่วยเลือกได้เลยจาก repo myIS"; "P1-DAPFAM อ้างอิงเล็กน้อยบน IS2 ได้".
 Sources read:
 - the withdrawn Paper 86 camera-ready PDF `myDegree/IS/IS_2/paper86_ieee_express.pdf` (sha256 `95be5490…`);
@@ -16,7 +18,7 @@ copyright transfer lapsed with the withdrawal before reusing large verbatim pass
 
 | # | Paper 86 content | Use in IS2 | Why |
 |---|---|---|---|
-| S1 | **Exposure diagnosis** (Table VI). The selected PatEmbed-large passage system at Top-200, strict OUT, full benchmark: 4,065 of 5,193 relevant pairs (78.3%) absent; 455 of 905 queries with no OUT hit; macro Recall@100 0.188 vs 0.260 under ideal reordering (headroom 0.072) | Ch. 3 (K1b): evidence that the first stage, not the reranker, limits OUT retrieval | Second measurement of the same bottleneck that Paper 53 found (37.1% exposed at Top-100). It comes from a different system and depth, so it is not a replication; say so |
+| S1 | **Exposure diagnosis** (Table VI). The selected PatEmbed-large passage system at Top-200, strict OUT, full benchmark: 4,065 of 5,193 relevant pairs (78.3%) absent; 455 of 905 queries with no OUT hit; macro Recall@100 0.188 vs 0.260 under ideal reordering (headroom 0.072) | Ch. 3 (K1b): evidence that the first stage, not the reranker, limits OUT retrieval | Second measurement of the same bottleneck that Paper 53 found (37.1% exposed at Top-100 [**correction 22 Nov 2026:** Paper 53's 37.1% — denominator to be recovered from the original Paper 53 source; do not reuse]). It comes from a different system and depth, so it is not a replication; say so |
 | S2 | **Retriever ordering under three construction recipes** (2026 nine-cell execution, 250 dev queries). PatEmbed (about 0.419 Recall@100) stayed ahead of Qwen3 and Arctic under every recipe; recipe spread ≤ 0.004 per retriever; all intervals include 0 | Ch. 2 (K1a): own evidence that the PatEmbed family was the strongest frozen dense first stage on DAPFAM | Supports the choice of a PatEmbed encoder. State that Paper 86 used **patembed-large**, while Paper 53 used **patembed-base** (distilled from large) |
 | S3 | **Encoder-window accounting** (§III-C, §IV-A). Logical passages exceed the 512-token PatEmbed input; 19,145 of 179,910 units needed more than one window | Ch. 2 or methods appendix: report construction and encoder together | Answers a Paper 86 reviewer's point and shapes how B53 reports its TAC rendering |
 | S4 | **Archived final-holdout system comparison** (0.442 vs 0.331 Recall@100) | One sentence of context at most, or omit | Historical records incomplete (filter and grades not recovered); several components change at once. Keep it out of the IS2 argument |
@@ -46,7 +48,7 @@ only for its own exploratory, evaluation-only analysis (owner decision 19 Nov).
 ## Resulting IS2 storyline
 1. Paper 53 and the committee's comments.
 2. Why patembed-base (K1a): Paper 53's own record + PatenTEB/model card; S2 as labelled retrospective context (the external 22-model preprint arXiv:2605.24297 was withdrawn 5 Nov 2026 and is not used).
-3. The exposure bottleneck (K1b): Paper 53 at 37.1% plus Paper 86 S1; P1-DAPFAM in one paragraph.
+3. The exposure bottleneck (K1b): Paper 53 at 37.1% [**correction 22 Nov 2026:** Paper 53's 37.1% — denominator to be recovered from the original Paper 53 source; do not reuse] plus Paper 86 S1; P1-DAPFAM in one paragraph.
 4. B53, where only the first stage changes (K2a), plus B53.0 against the DAPFAM benchmark paper.
 5. Examiner value (K2b): proxy measures only.
 6. Outlook: journal Paper 1 (BridgeRet) as the follow-on, cited without moving IS2 text into it.

@@ -1,5 +1,7 @@
 # IS2 deliverables and report plan (v1, 19 Nov 2026; scope changed 22 Nov)
 
+> **Correction note (22 Nov 2026, owner note 22112026, "Corrections to carry into writing").** Paper 53's "37.1%" exposure statement is marked **denominator to be recovered; do not reuse** wherever it appears below. The repository account (257/692 queries) has not been re-checked against the original Paper 53 table, and other drafts turned it into an item-level claim. B53's own measured π@100 = 0.371 (905 queries) is a separate number and is not Paper 53's figure. Text is kept as written; the markers govern.
+
 > **Owner decision 22 Nov 2026 (D1, D5, D6 in `docs/maintenance/OWNER-DECISIONS-20261122.md`):**
 > - IS2 becomes **"research + demo"**: Paper 53 → B53 (bridge) → G03 DEV acquisition findings (honest, including parked
 >   arms) → B53.0 native check against the DAPFAM paper → Workbench demo of selective update after a source change.
@@ -56,7 +58,7 @@ Ploysuwan (ผศ.ดร. ทัศนัย พลอยสุวรรณ); st
 
 1. **บทนำ:**
    - Paper 53 found near-zero instruction effects;
-   - only 37.1% of the 692 held-out queries had a known OUT family in the top 100;
+   - only 37.1% of the 692 held-out queries had a known OUT family in the top 100 [**correction 22 Nov 2026:** Paper 53's 37.1% — denominator to be recovered from the original Paper 53 source; do not reuse];
    - IS1 comments K1–K2;
    - research questions RQ-IS2.1–2.5.
 2. **แนวคิด ทฤษฎี และงานวิจัยที่เกี่ยวข้อง:**

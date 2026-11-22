@@ -27,6 +27,8 @@ RunPod is not needed for E1.
 | `qwen/qwen3.7-flash` | 0.03 / 0.13 | — | Cheapest current Qwen model. Tests whether a very small, cheap expander is enough (cost-effectiveness question raised by Expandorini, Sadeghi & Lin 2026). |
 | `anthropic/claude-sonnet-5.5` (optional) | 2.00 / 10.00 | 1.00 / 5.00 | The owner's **API stronger profile**. Only a small sensitivity sample (E12 "model strength"); Query2doc reports that gains grow with LLM capability. |
 
+> **Correction note (22 Nov 2026, owner note 22112026).** The four T1 models above (excluding the optional Sonnet row) are one Claude, two Qwen and one DeepSeek model: three families, with two of four from Qwen. They were chosen for research fit and cost, not as four independent lineages, and a result across them must not be described as generator diversity. The four smoke calls made under this proposal (A3r0) show format feasibility only (Haiku hit the 400-token cap; keywords missing). The cost table above is a pre-smoke estimate; the owner's later single-TRAIN-query estimates (whole pilot ≈ USD 1.2, Haiku Stage B ≈ USD 7.8) are also estimates, not price quotes or upper bounds, but together they cannot fit the USD 6 stop point.
+
 **Rules for every call:**
 - reasoning off (`reasoning_effort: none`), so thinking tokens are not billed;
 - `max_tokens` ≤ 400;

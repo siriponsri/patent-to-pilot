@@ -1,60 +1,94 @@
 # Claude instructions for Patent-to-Pilot
 
-**Program:** PTP-2026-11-21 (set by the owner on 21 Nov 2026). **Target:** IS2 presentation, March 2027.
-**Read at session start, in this order:** this file → [HANDOFF.md](HANDOFF.md) (current state) → [INDEX-PLAN.md](INDEX-PLAN.md)
-(goal and evidence index) → [AGENTS.md](AGENTS.md) (shared agent rules). Then verify the actual checkout with `git status`
-and `git log -3`; chat memory is never a substitute for these files.
+**Plan:** outcome-based phases **P0–P5** from the owner note of 22 Nov 2026 (`docs/owner/owner-note-22112026/`, owner-local).
+Phases advance only by verified deliverables and evidence, never by dates. The IS2 presentation (March 2027) is context,
+not a gate. The earlier program PTP-2026-11-21 (G01–G08) is history: G01/G02 are completed foundations, G03 records are
+preserved, and G-identifiers keep their meanings.
 
-The dated history that used to live here (Nov 2026 HealthTech, Paper 1, SACR, BridgeRet and AM-7 checkpoints) is preserved
-verbatim in [archives/HANDOFF-HISTORY-TO-20261121.md](archives/HANDOFF-HISTORY-TO-20261121.md). It is provenance, not
-instruction.
+**Read at session start, in this order:**
+1. this file;
+2. [HANDOFF.md](HANDOFF.md) (current state);
+3. the live board [docs/tracking/owner-note-22112026/PHASE_BOARD.md](docs/tracking/owner-note-22112026/PHASE_BOARD.md);
+4. [INDEX-PLAN.md](INDEX-PLAN.md) (plan and evidence index);
+5. [AGENTS.md](AGENTS.md) (shared agent rules).
+
+Then verify the checkout with `git status` and `git log -3`. Chat memory never substitutes for these files.
+
+The dated history that used to live here is preserved verbatim in
+[archives/HANDOFF-HISTORY-TO-20261121.md](archives/HANDOFF-HISTORY-TO-20261121.md). It is provenance, not instruction.
 
 ## 1. What the project is
 
-One research paper with three connected contributions, implemented by **one shared Evidence Engine** and delivered through
-two tracks:
+**Patent-to-Pilot** (keep the name; plain descriptive method names, no invented acronyms; owner N01) is one research paper
+with three linked contributions. One shared evidence engine implements it, and it is delivered through two consumers:
 
 - **Research:** frozen configurations, benchmark adapters, isolated evaluators, ablations, uncertainty and result provenance.
 - **Product:** a local Workbench (one Python server, bundled UI, SQLite, local files) that calls the same engine.
 
-Proposed contributions (novelty and performance are still to be established):
-C1 support-frontier acquisition and repair policy; C2 executable versioned evidence architecture (PLAN → ACQUIRE → COMMIT);
-C3 reproducible evaluation package (DAPFAM, Thai Gazette transfer, declared update episodes; NitiBench+ optional).
+**Proposed method** (unmeasured): source-grounded structural expansion. Keep the relation that makes evidence relevant,
+pick one unresolved requirement, and run one bounded, traceable search of the eligible corpus for new evidence.
 
-The owner's program package is in `docs/owner/owner-note-21112026/` (start at `00_START_HERE.md`). It is **owner-local and
-untracked: never edit, move, delete or commit anything under `docs/owner/`.**
+**Research objective:** a real matched retrieval-score win against strong comparators (owner N02). A UI or maintenance gain
+does not satisfy it, and there is no automatic pivot to a maintenance headline (N03).
 
-## 2. Current state (details in HANDOFF.md)
+**Report three status fields separately:**
+- `method_evidence`;
+- `product_readiness`;
+- `publication_readiness`.
 
-- **G01 local Workbench vertical slice: COMPLETE** (commit `40780c97`). Status and receipts:
-  [artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md).
-  Only owner-observed item left: Explorer double-click of `Start-PTP.cmd` and default-browser auto-open.
-- **G02 provider, ingestion and dataset contracts: COMPLETE** (22 Nov 2026, USD 0). Status and receipts:
-  [artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md).
-- **G03 in progress** (baselines and candidate policy on allowed DEV): protocol v1, amendment 1 and amendment 2 (learned
-  selector) are PARKED. Amendment 3 (LLM query expansion via OpenRouter, envelope E1) is FROZEN; its pilot waits for
-  `OPENROUTER_API_KEY`. Memo:
-  [docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md).
-- **PatEmbed on DAPFAM is "possibly contaminated"**: PatenTEB's train split is unreleased, and DAPFAM families sit inside
-  PatenTEB data ([audit](docs/healthtech/research/b53-0/PATENTEB-OVERLAP-AUDIT-20261122.md)).
-- **New account? Start at** [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md)
-  and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
-- **IS2 scope (owner, 22 Nov):** "research + demo"; B53 is the bridge. TH/EN papers are in `docs/writing/is2/paper/`
-  (to be re-scoped).
-- **Owner decisions D1–D8 (22 Nov):** [docs/maintenance/OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md):
-  - OpenRouter (several models) and RunPod via MCP are approved in principle, but each still needs a recorded USD cap
-    before the first paid call (rule 2);
-  - `pypdf` approved; no local Ollama;
-  - PatenTEB train download approved.
-- **Research P1 / AM-7: parked.** Stage 2a results (DEV/VAL, descriptive) are in
-  [docs/healthtech/research/paper1-bridgeret/am7/stage2a/](docs/healthtech/research/paper1-bridgeret/am7/stage2a/).
-  The owner gate in AM-7 §6.4 failed, so no paid step runs without the owner.
-- **B53 / IS2:** Stage 1 measured ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)); Stage 2
-  measured 22 Nov ([B53-STAGE2-RESULTS.md](docs/writing/is2/results/B53-STAGE2-RESULTS.md)): no instruction contrast is
-  significant under any of the five first stages. IS2 drafts live in [docs/writing/is2/](docs/writing/is2/).
-- **21 Nov 2026 dr-train cleanup:** about 21.8 GB freed on dr-train, with small artifacts archived and verified in
-  `../_private_artifacts/dr-train-archive/20261121/`. Unique run TSVs are now `run-*.tsv.gz`. See
-  [artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md).
+The owner packages live in `docs/owner/`, read the newest first: `owner-note-22112026/00_START_HERE.md`. They are
+**owner-local and untracked: never edit, move, delete or commit anything under `docs/owner/`.**
+
+## 2. Current state (details in HANDOFF.md and the live board)
+
+**Phases.** P0 control/readiness, P1 A3 model-panel experiment, P2 structural candidate acquisition, P3 Thai transfer,
+P4 product usability/explainability, P5 manuscript/release/IS2. The live registry is
+`docs/tracking/owner-note-22112026/goal_registry.json`; update it **only** through `python scripts/tracking/ptp_tracker.py`,
+which renders the CSV, the board and the AFFiNE pages.
+
+**Foundations (complete).**
+- G01 local Workbench: [G01/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md).
+- G02 providers, ingestion and datasets: [G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md).
+- 22 Nov add-ons:
+  - PDF text-layer ingestion (pypdf);
+  - OpenRouter chat templates with reasoning off and spend caps.
+
+**G03 history.**
+- v1, A1 and A2 are PARKED.
+- A3r0 (LLM query expansion) has a frozen protocol, but only a **format smoke** has run: 4 calls on 1 TRAIN query. There is
+  no effectiveness result.
+- A3r1 (Qwen3-32B, DeepSeek V4 Flash, Gemini 2.5 Flash-Lite, Typhoon2.5; 800-token cap) is PROPOSED:
+  [amendment](docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md).
+- Memo: [G03-DEV-DECISION-MEMO.md](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md).
+
+**Money.**
+- **E1 = USD 8 / 35,000 requests, stop-and-report at USD 6**, is approved (D9) for its original scope. Spent so far:
+  USD 0.00064.
+- **E1R** (USD 50 cumulative, notify at 40, 100,000 requests) is **PENDING owner approval** (N08).
+- A3r1 does not fit E1.
+- `OPENROUTER_API_KEY` is not set. RunPod has no envelope.
+
+**PatEmbed on DAPFAM.** The two datasets share a family pool and training overlap is unmeasured (PatenTEB's train split is
+unreleased). Report PatEmbed separately, with that caveat:
+[audit](docs/healthtech/research/b53-0/PATENTEB-OVERLAP-AUDIT-20261122.md).
+
+**Writing.**
+- One manuscript draft: [docs/writing/journal/MANUSCRIPT-DRAFT-v1.md](docs/writing/journal/MANUSCRIPT-DRAFT-v1.md).
+  Every unmeasured result is NOT_RUN.
+- Corrections register: [WRITING-CORRECTIONS-20261122.md](docs/maintenance/WRITING-CORRECTIONS-20261122.md).
+- IS2 arc (D1, D10, including Paper 86's exposure ceiling, IS2-only): [docs/writing/is2/](docs/writing/is2/).
+
+**Owner decisions.** D1–D10 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md), and
+N01–N12 are in the owner note.
+
+**AFFiNE tracker.** Self-hosted upstream v0.27.4, outside the repo (`C:\Users\User\ptp-tools\affine-tracker`,
+http://127.0.0.1:3010). It is a tracker only, never a research dependency. See
+[P0-T02 receipt](docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md).
+
+**New account?** Start at [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md)
+and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
+
+**Older parked lines.** P1/AM-7 and B53 Stage 1–2 are measured and kept with their original scope; see INDEX-PLAN §3.
 
 ## 3. Standing rules (all remain in force)
 
@@ -84,8 +118,12 @@ untracked: never edit, move, delete or commit anything under `docs/owner/`.**
 ## 4. Protected code (G01 and G02 shipped)
 
 Do not change `src/patent_to_pilot/workbench/`, `scripts/ptp_run.py`, `Start-PTP.cmd`, `tests/` or
-`artifacts/owner-program/` without a goal that requires it. Run `python -m pytest` before committing code; the only accepted
-pre-existing failures are the 8 SACR r2/r3 supervisor budget tests.
+`artifacts/owner-program/` without a goal that requires it. P0–P5 tasks count as such goals for the code they name.
+Run the test suite before committing code; the only accepted pre-existing failures are the 8 SACR r2/r3 supervisor budget
+tests.
+- `python -m pytest` uses the system Python, which has pytest but no pypdf, so the PDF tests skip.
+- For the full gate with pypdf, run:
+  `python -c "import sys; sys.path.append(r'.venv/Lib/site-packages'); import pytest; sys.exit(pytest.main(['-q']))"`
 
 ## 5. Where things are
 
@@ -93,7 +131,9 @@ pre-existing failures are the 8 SACR r2/r3 supervisor budget tests.
 |---|---|
 | Run the Workbench | `Start-PTP.cmd`, or `python scripts/ptp_run.py --doctor` / `--smoke` / `--serve` |
 | Engine and Workbench code | `src/patent_to_pilot/workbench/` (G01), legacy modules in `src/patent_to_pilot/` |
-| Goal receipts | `artifacts/owner-program/PTP-2026-11-21/<goal>/` |
+| Live plan and receipts (P0–P5) | `docs/tracking/owner-note-22112026/` (board, registry, receipts, AFFiNE pages); tool `scripts/tracking/ptp_tracker.py` |
+| Foundation receipts (G01/G02) | `artifacts/owner-program/PTP-2026-11-21/<goal>/` |
+| Budget ledger | `src/patent_to_pilot/budget/` (shared reservations for research and Workbench calls) |
 | Research evidence (frozen protocols, results, audits) | `docs/healthtech/research/`, `docs/healthtech/audits/` |
 | Writing | `docs/writing/journal/` (the one paper), `docs/writing/is2/` (IS2) |
 | Housekeeping record of 21 Nov 2026 | [docs/HOUSEKEEPING-20261121.md](docs/HOUSEKEEPING-20261121.md) |

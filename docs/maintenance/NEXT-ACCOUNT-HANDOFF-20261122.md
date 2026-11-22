@@ -1,3 +1,5 @@
+> **SUPERSEDED (22 Nov 2026):** use [NEXT-ACCOUNT-HANDOFF-20261122b.md](NEXT-ACCOUNT-HANDOFF-20261122b.md). Kept as history.
+
 # Next-account handoff, 22 Nov 2026 (v2, after the owner decisions)
 
 The owner switched accounts because of the weekly limit. Paste the prompt in §1 into a new Claude Code session opened in

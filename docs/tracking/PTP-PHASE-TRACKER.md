@@ -1,3 +1,6 @@
+> **SUPERSEDED (22 Nov 2026):** this G01–G08 tracker with calendar windows is replaced by the outcome-based P0–P5 live board
+> [owner-note-22112026/PHASE_BOARD.md](owner-note-22112026/PHASE_BOARD.md). Kept as history only.
+
 # PTP-2026-11-21 Phase Tracker
 
 ไฟล์นี้เตรียมไว้ import เข้า AFFiNE (Import → Markdown)

@@ -1,0 +1,172 @@
+{
+ "format": "ptp-provider-readiness-v1",
+ "task": "P0-T04",
+ "protocol": "A3r1 (PROPOSED, not frozen)",
+ "amendment": "docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md",
+ "retrieved_at_utc": "2026-11-22T08:46Z",
+ "method": "Free catalogue reads only: OpenRouter MCP get-model, list-model-endpoints, list-models (search), search-docs; public Typhoon documentation pages and the Hugging Face model card via WebFetch. No generation endpoint, credit endpoint or key endpoint was called; no .env or key was read.",
+ "inference_calls": 0,
+ "spend_usd": 0,
+ "price_unit": "USD per 1,000,000 tokens",
+ "credential_status_all": "credential not verified",
+ "common_contract_proposed": {
+  "max_tokens": 800,
+  "temperature": 0,
+  "seed": 20261122,
+  "reasoning": "off by each model's own switch",
+  "response_format": "not used",
+  "prompt": "A3r0 prompt verbatim",
+  "routing": "pinned per model with require_parameters=true and max_price; served provider/quantization/tier recorded per response"
+ },
+ "models": [
+  {
+   "profile_id": "qwen3_32b",
+   "provider": "openrouter",
+   "model_id": "qwen/qwen3-32b",
+   "canonical_slug": "qwen/qwen3-32b-04-28",
+   "hugging_face_id": "Qwen/Qwen3-32B",
+   "lineage": "Qwen3",
+   "knowledge_cutoff": "2025-03-31",
+   "context_length_model": 131072,
+   "top_provider": {"context_length": 40960, "max_completion_tokens": 16384},
+   "list_price": {"input": 0.08, "output": 0.28},
+   "reasoning": {"mandatory": false, "proposed_off_switch": "reasoning.enabled=false", "a3r0_smoke_reasoning_tokens": 0},
+   "supported_parameters_model": ["frequency_penalty", "include_reasoning", "logit_bias", "logprobs", "max_tokens", "min_p", "presence_penalty", "reasoning", "repetition_penalty", "response_format", "seed", "stop", "structured_outputs", "temperature", "tool_choice", "tools", "top_a", "top_k", "top_logprobs", "top_p"],
+   "controls": {"temperature": true, "seed": true, "response_format": true, "reasoning_control": true},
+   "endpoints": [
+    {"provider": "DeepInfra", "tag": "deepinfra/fp8/flex", "quantization": "fp8", "tier": "flex", "input": 0.064, "output": 0.224, "context": 40960, "max_completion": 36864, "seed": true, "response_format": true, "status": 0, "uptime_1d": 96.67},
+    {"provider": "DeepInfra", "tag": "deepinfra/fp8", "quantization": "fp8", "tier": "standard", "input": 0.08, "output": 0.28, "context": 40960, "max_completion": 16384, "seed": true, "response_format": true, "status": 0, "uptime_1d": 99.37},
+    {"provider": "DeepInfra", "tag": "deepinfra/fp8/priority", "quantization": "fp8", "tier": "priority", "input": 0.12, "output": 0.42, "context": 40960, "max_completion": 36864, "seed": true, "response_format": true, "status": 0, "uptime_1d": 99.72},
+    {"provider": "Tenstorrent", "tag": "tenstorrent/fp8", "quantization": "fp8", "input": 0.14, "output": 0.40, "context": 20000, "max_completion": 16400, "seed": true, "response_format": false, "status": 0, "uptime_1d": 97.88},
+    {"provider": "SiliconFlow", "tag": "siliconflow/fp8", "quantization": "fp8", "input": 0.14, "output": 0.57, "context": 131072, "max_completion": 117964, "seed": false, "response_format": true, "status": -2, "uptime_1d": 98.16, "note": "status -2 (degraded) at read; excluded by proposed pin"}
+   ],
+   "proposed_routing": {"only": ["DeepInfra", "Tenstorrent"], "quantizations": ["fp8"], "require_parameters": true, "max_price": {"input": 0.14, "output": 0.42}},
+   "availability": "AVAILABLE (5 endpoints; 4 healthy, SiliconFlow degraded)",
+   "access": "OpenRouter key OPENROUTER_API_KEY: credential not verified (P0-T01 recorded it absent from the user environment)",
+   "price_drift_vs_owner_config": "none (owner config 0.08/0.28)"
+  },
+  {
+   "profile_id": "deepseek_v4_flash",
+   "provider": "openrouter",
+   "model_id": "deepseek/deepseek-v4-flash-0731",
+   "canonical_slug": "deepseek/deepseek-v4-flash-20260731",
+   "hugging_face_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+   "lineage": "DeepSeek",
+   "knowledge_cutoff": null,
+   "architecture_note": "sparse MoE, 13B active of 284B total (catalogue description)",
+   "context_length_model": 1048576,
+   "top_provider": {"context_length": 1048576, "max_completion_tokens": 943718},
+   "list_price": {"input": 0.0443, "output": 0.30, "input_cache_read": 0.035},
+   "reasoning": {"mandatory": false, "default_enabled": true, "default_effort": "high", "supported_efforts": ["max", "high", "low", "none"], "proposed_off_switch": "reasoning.effort=none", "a3r0_smoke_reasoning_tokens": 0},
+   "supported_parameters_model": ["frequency_penalty", "include_reasoning", "logit_bias", "logprobs", "max_tokens", "min_p", "parallel_tool_calls", "presence_penalty", "reasoning", "reasoning_effort", "repetition_penalty", "response_format", "seed", "stop", "structured_outputs", "temperature", "tool_choice", "tools", "top_a", "top_k", "top_logprobs", "top_p"],
+   "controls": {"temperature": true, "seed": "provider-dependent (not Baidu, Relace, StreamLake, DigitalOcean, BaseTen, Venice, SiliconFlow)", "response_format": true, "reasoning_control": true},
+   "endpoint_summary": {
+    "count": 23,
+    "price_range": {"input": [0.044, 0.44], "output": [0.132, 1.32]},
+    "quantizations": ["fp4", "nvfp4", "fp8", "fp32", "unknown"],
+    "default_listed_endpoint": "Wafer wafer/us nvfp4 0.0443/0.30 (seed yes)",
+    "fp8_seed_endpoints_within_proposed_ceiling": [
+     {"provider": "DeepInfra", "tag": "deepinfra/fp8/flex", "input": 0.048, "output": 0.144, "uptime_1d": 100},
+     {"provider": "DeepInfra", "tag": "deepinfra/fp8", "input": 0.06, "output": 0.18, "uptime_1d": 98.68},
+     {"provider": "DeepInfra", "tag": "deepinfra/fp8/priority", "input": 0.09, "output": 0.27, "uptime_1d": 99.58},
+     {"provider": "Cohere", "tag": "cohere/fp8", "input": 0.11, "output": 0.22, "uptime_1d": 100},
+     {"provider": "CoreWeave", "tag": "coreweave/fp8", "input": 0.13, "output": 0.27, "context": 262144, "uptime_1d": 98.26},
+     {"provider": "Parasail", "tag": "parasail/fp8", "input": 0.14, "output": 0.28, "uptime_1d": 99.93},
+     {"provider": "Nebius", "tag": "nebius/fp8", "input": 0.14, "output": 0.28, "status": -2, "note": "degraded at read"}
+    ],
+    "excluded_examples": ["Novita fp8 0.418/1.254", "Chutes fp8 0.44/1.32", "PrimeIntellect fp4 0.44/1.32", "Alibaba 0.352/1.056 (time-of-day override)", "SiliconFlow fp8 0.22/0.66"]
+   },
+   "proposed_routing": {"quantizations": ["fp8"], "require_parameters": true, "max_price": {"input": 0.15, "output": 0.30}},
+   "availability": "AVAILABLE (23 endpoints; wide price and quantization spread, routing must be pinned)",
+   "access": "OpenRouter key OPENROUTER_API_KEY: credential not verified",
+   "price_drift_vs_owner_config": "input 0.0419 (owner config) -> 0.0443 (live list); output 0.30 unchanged"
+  },
+  {
+   "profile_id": "gemini_25_flash_lite",
+   "provider": "openrouter",
+   "model_id": "google/gemini-2.5-flash-lite",
+   "canonical_slug": "google/gemini-2.5-flash-lite",
+   "hugging_face_id": null,
+   "lineage": "Gemini",
+   "knowledge_cutoff": "2025-01-31",
+   "context_length_model": 1048576,
+   "top_provider": {"context_length": 1048576, "max_completion_tokens": 65535},
+   "list_price": {"input": 0.10, "output": 0.40, "internal_reasoning": 0.40, "input_cache_read": 0.01},
+   "reasoning": {"mandatory": false, "proposed_off_switch": "reasoning.enabled=false", "note": "internal reasoning, if any, is billed at 0.40/M; calibration must record reasoning_tokens"},
+   "supported_parameters_model": ["include_reasoning", "max_tokens", "reasoning", "response_format", "seed", "stop", "structured_outputs", "temperature", "tool_choice", "tools", "top_p"],
+   "controls": {"temperature": true, "seed": true, "response_format": true, "reasoning_control": true},
+   "endpoints": [
+    {"provider": "Google AI Studio", "tag": "google-ai-studio/flex", "tier": "flex", "input": 0.05, "output": 0.20, "max_completion": 65535, "status": 0, "uptime_1d": 100},
+    {"provider": "Google AI Studio", "tag": "google-ai-studio", "tier": "standard", "input": 0.10, "output": 0.40, "max_completion": 65535, "status": 0, "uptime_1d": 100},
+    {"provider": "Google AI Studio", "tag": "google-ai-studio/priority", "tier": "priority", "input": 0.18, "output": 0.72, "max_completion": 65535, "status": 0, "uptime_1d": 87.68}
+   ],
+   "proposed_routing": {"only": ["Google AI Studio"], "require_parameters": true, "max_price": {"input": 0.10, "output": 0.40}, "note": "excludes priority tier; served tier recorded"},
+   "availability": "AVAILABLE (single upstream, three service tiers)",
+   "access": "OpenRouter key OPENROUTER_API_KEY: credential not verified",
+   "price_drift_vs_owner_config": "none (owner config 0.10/0.40)"
+  },
+  {
+   "profile_id": "typhoon25_api",
+   "provider": "typhoon (native OpenTyphoon API)",
+   "on_openrouter": false,
+   "openrouter_search": "list-models q=typhoon, scb10x, thai: 0 results",
+   "model_id": "typhoon-v2.5-30b-a3b-instruct",
+   "canonical_slug": null,
+   "weights_card": "typhoon-ai/typhoon2.5-qwen3-30b-a3b (Apache-2.0; card usage example says scb10x/typhoon2.5-qwen3-30b-a3b; HF lists no inference provider)",
+   "lineage": "Qwen3 (Thai-adapted; card: 'based on Qwen3 30B A3B'; licence link to Qwen/Qwen3-30B-A3B-Instruct-2507; exact parent not declared)",
+   "knowledge_cutoff": null,
+   "latest_update_on_models_page": "2025-10-20",
+   "served_revision": "not exposed by the API beyond the model id",
+   "base_url": "https://api.opentyphoon.ai/v1",
+   "chat_endpoint": "POST https://api.opentyphoon.ai/v1/chat/completions (OpenAI-compatible; Authorization: Bearer <key>)",
+   "context_length": {"models_page": "128K", "api_reference_and_tokens_page": "max_tokens <= 8192 shared between prompt and completion", "conflict": true, "a3_fit": "about 1,100 prompt + 800 completion fits the stricter 8K reading"},
+   "max_completion_tokens": "<= 8192 shared with prompt (API reference); default max_tokens 150",
+   "documented_parameters": ["model", "messages", "max_tokens", "temperature (0-2, default 0.7)", "top_p", "n", "stream", "stop", "presence_penalty", "frequency_penalty", "repetition_penalty (1.0-2.0, default 1.0; card suggests 1.05)", "user"],
+   "controls": {"temperature": true, "seed": "not documented", "response_format": "not documented", "reasoning_control": "not documented; model is an instruct (non-thinking) model per card"},
+   "rate_limits": {"requests_per_second": 5, "requests_per_minute": 200, "on_exceed": "HTTP 429 rate_limit_error / rate_limit_exceeded"},
+   "pricing": {"published_per_token_price": null, "docs_statement": "free tier, 'zero cost for light usage'; no quota or terms page", "paid_option": "API Pro via Together AI (no price published)", "forecast_policy": "unknown, never 0; not dispatchable until terms recorded"},
+   "key_source": "playground.opentyphoon.ai/api-key (owner account)",
+   "proposed_key_env": "TYPHOON_API_KEY",
+   "availability": "DOCUMENTED; authenticated availability not tested",
+   "access": "credential not verified; needs its own key and owner confirmation that free-tier terms cover ~2,032 calibration+pilot and 25,545 Stage B requests, or an exact price within the approved envelope",
+   "wall_time_at_rate_limit": {"pilot_2000_min": 10, "stage_b_25545_hours": 2.1}
+  }
+ ],
+ "optional_controls_not_in_panel": [
+  {"model_id": "qwen/qwen3.7-flash", "owner_config_price": {"input": 0.03, "output": 0.13}, "live_read": false},
+  {"model_id": "anthropic/claude-haiku-5.5", "owner_config_price": {"input": 0.10, "output": 0.50}, "live_read": false, "note": "temperature/seed ignored on OpenRouter"},
+  {"model_id": "typhoon-v2.1-12b-instruct", "provider": "typhoon", "context_models_page": "56K", "rate_limits": "5 req/s, 200 req/min", "lineage": "Gemma"}
+ ],
+ "forecast": {
+  "requests_per_model": {"calibration": 32, "pilot": 2000, "stage_b": 25545},
+  "scenarios": {
+   "low": "700 input / 300 output tokens at list price",
+   "central": "870 input / 400 output tokens at list price",
+   "bound": "1,100 input / 800 output tokens at proposed max_price ceiling (hard per-request bound with pinned routing and reasoning off)"
+  },
+  "per_model_usd": {
+   "qwen3_32b":            {"calibration": {"central": 0.0058, "bound": 0.0157}, "pilot": {"low": 0.280, "central": 0.363, "bound": 0.980}, "stage_b": {"low": 3.58, "central": 4.64, "bound": 12.52}},
+   "deepseek_v4_flash":    {"calibration": {"central": 0.0051, "bound": 0.0130}, "pilot": {"low": 0.242, "central": 0.317, "bound": 0.810}, "stage_b": {"low": 3.09, "central": 4.05, "bound": 10.35}},
+   "gemini_25_flash_lite": {"calibration": {"central": 0.0079, "bound": 0.0138}, "pilot": {"low": 0.380, "central": 0.494, "bound": 0.860}, "stage_b": {"low": 4.85, "central": 6.31, "bound": 10.98}},
+   "typhoon25_api":        {"calibration": "unknown", "pilot": "unknown", "stage_b": "unknown"}
+  },
+  "three_paid_primaries_usd": {"calibration": {"central": 0.019, "bound": 0.043}, "pilot": {"central": 1.17, "bound": 2.65}},
+  "planned_total_if_selected_usd": {
+   "definition": "smoke 0.00064223 + calibration (3 paid) + pilot (3 paid) + Stage B(m) + Workbench reserve 0.20 + 15% reserve on calibration+pilot+Stage B",
+   "qwen3_32b":            {"low": 5.37, "central": 6.91, "bound": 17.69},
+   "deepseek_v4_flash":    {"low": 4.81, "central": 6.23, "bound": 15.20},
+   "gemini_25_flash_lite": {"low": 6.84, "central": 8.83, "bound": 15.93},
+   "typhoon25_api": "unknown"
+  },
+  "requests_planned_initial": {"smoke": 4, "calibration": 128, "pilot": 8000, "stage_b": 25545, "total": 33677},
+  "vs_E1": {"stop_usd": 6.0, "cap_requests": 35000, "stage_b_eligible_models_at_bound": [], "stage_b_eligible_models_at_central": [], "request_headroom": 1323, "verdict": "complete A3r1 programme NOT feasible under E1; pilot must not dispatch (amendment section 6.1)"},
+  "vs_E1R_pending": {"hard_limit_usd": 50.0, "notify_usd": 40.0, "cap_requests": 100000, "stage_b_eligible_models_at_bound": ["qwen3_32b", "deepseek_v4_flash", "gemini_25_flash_lite"], "worst_bound_usd": 17.69, "owner_allocations_met": {"calibration_1": true, "pilot_6": true, "stage_b_18": true}, "verdict": "feasible for all three paid primaries; Typhoon pending access/terms"},
+  "openrouter_balance_note": "credits total 10, usage 1.63501153 (about 8.365 left, from P0-T01/g03-dev-a3-spend.json, not re-read here); the OpenRouter-billed bound for calibration + pilot + Stage B (about 2.7 + up to 12.5) exceeds that balance, so a top-up is needed before Stage B under E1R"
+ },
+ "open_questions": [
+  "E1R approval (or an approved alternative): without it, no primary model is Stage-B-eligible and the A3r1 pilot does not dispatch.",
+  "Typhoon: owner key (TYPHOON_API_KEY) and written free-tier terms/quota covering the planned volume; otherwise declare Typhoon 'deferred (access)' at freeze and run a three-model pilot.",
+  "OPENROUTER_API_KEY presence (recorded absent by P0-T01) and an OpenRouter credit top-up before Stage B under E1R.",
+  "Denominator reconciliation: A3 manifests 25,626 P1-DEV / 1,919 VAL vs evaluator n 26,547 / 1,999 (g03-dev-gate.json)."
+ ]
+}

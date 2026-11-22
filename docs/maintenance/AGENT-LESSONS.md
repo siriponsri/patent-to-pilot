@@ -30,10 +30,22 @@ The owner switches Claude accounts when usage runs out. Read [CLAUDE.md](../../C
   released (only test splits are on Hugging Face), and DAPFAM families occur inside PatenTEB data (50 queries and 466
   corpus families in just 3 test files). So PatEmbed is "possibly contaminated" on DAPFAM; never present it as a fair
   zero-shot DAPFAM baseline ([audit](../healthtech/research/b53-0/PATENTEB-OVERLAP-AUDIT-20261122.md)).
+  - *Correction (22 Nov 2026, owner note 22112026):* the public-test overlap shows a **shared family pool**; it is not
+    an audit of the unreleased training data. Training overlap, its size and its effect on DAPFAM scores are
+    unmeasured, and the 80/10/10 split does not give an "eight times more likely" contamination odds. Keep PatEmbed as
+    a separately reported row with this caveat.
 - **G03 A2 (22 Nov):** a learned per-query selector over the same routes captures only 1.5% of the oracle headroom, and is
   PARKED. Three re-weighting/re-slicing mechanisms have now failed; only new candidate sources remain (A3).
+  - *Correction (22 Nov 2026, owner note 22112026):* A3 is one acquisition hypothesis, not the last one. Its A3r0
+    panel is one Claude, two Qwen and one DeepSeek model (not four independent lineages), and its four smoke calls are
+    format evidence only (Haiku truncated at 400 tokens, keywords missing). A3r1 is amended prospectively before any
+    effectiveness score.
 - **Check masks when you add a route.** The A1 field routes skipped the filing-date and own-unit masks that
   `dense_bridgeret_v3.py` applies. New routes must copy the masks of the route family they join.
+  - *Correction (22 Nov 2026, owner note 22112026):* do not write that such a defect "can only have hurt" the
+    method. An inconsistent mask changes eligibility, ranking and window contents, so its effect on the score can go
+    either way. Disclose the defect, keep the recorded decision, and call the size and sign of the effect unknown
+    unless a corrected re-run measures it (memo §4a correction note).
 - **G03 DEV harness:** `scripts/research/g03_*.py` reuses the precomputed P1-DEV/VAL route runs (BM25, Qwen3, PatEmbed,
   Arctic; depth 1,000) and the unchanged `eval_bridgeret_dev.py`. CPU only, about 30 minutes for a full arm grid. Its E01
   gate reproduced every single-route number exactly.

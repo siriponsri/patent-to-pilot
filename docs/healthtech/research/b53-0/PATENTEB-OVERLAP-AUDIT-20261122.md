@@ -43,6 +43,21 @@
   like DAPFAM's relevance labels. If a DAPFAM query–target pair is a training pair, PatEmbed has seen the answer.
   This cannot be checked until the training pairs are released.
 
+> **Correction (22 Nov 2026, owner note 22112026, "Corrections to carry into writing"; the first two bullets of this section are kept
+> as written).** Two inferences in this section go beyond the evidence:
+> 1. "Train overlap is likely" and "about eight times more likely to sit in train than in test" are **withdrawn**. A
+>    declared 80/10/10 split does not establish per-family inclusion probabilities, sampling independence, or which
+>    DAPFAM families or citation pairs were sampled into training. No odds or likelihood of training contamination can
+>    be derived from the split proportions.
+> 2. The public-test overlap is **not a direct audit of the unreleased training data**. What it shows is a shared
+>    family pool: 50 of 1,247 DAPFAM queries and 466 of 45,336 DAPFAM corpus families occur in 3 of 15 public PatenTEB
+>    test files. The statement that test-query families are absent from train rests on the paper's description of
+>    family-disjoint splitting, not on a check of training IDs. Training overlap, its size and its direction of effect
+>    on DAPFAM scores are **unmeasured**.
+>
+> The program consequence in §4 is unchanged: PatEmbed stays a separately reported row with this caveat, and headline
+> DAPFAM comparisons use routes without this known shared-pool link.
+
 ## 4. Consequence for the program (until the train IDs are public)
 
 - **PatEmbed stays "possibly contaminated" on DAPFAM.** B53.0's patembed-base result (nDCG@100 ALL 0.366, above every
