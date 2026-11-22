@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-22T18:36:59+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-22T18:39:52+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -29,7 +29,7 @@ Phase status: **IN_PROGRESS**
 |---|---|---|---|---|---|---|---|
 | P0-T01 | Reconcile checkout, historical results and active authority | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P0-T01_state_reconciliation.md; docs/tracking/owner-note-22112026/receipts/P0-T01_authority_snapshot.json | P0-T02; P0-T04; P0-T05; P0-T06 | — | NOT_SYNCED |
 | P0-T02 | Install or update AFFiNE from the verified repository path | 🟡 PARTIAL | NOT_RUN | docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md | P0-T03 | Owner must complete first-run admin setup at http://127.0.0.1:3010 (agent does not create accounts or enter passwords) | NOT_SYNCED |
-| P0-T03 | Create live tracking copies and mirror phases into AFFiNE | 🟡 PARTIAL | NOT_RUN | docs/tracking/owner-note-22112026/goal_registry.json; docs/tracking/owner-note-22112026/PHASE_BOARD.md | P0-T07 | AFFiNE 0.27.4 web client never opens its sync socket (client-side stall; server transport verified OK); built-in MCP is read-only, so no supported write path yet | NOT_SYNCED |
+| P0-T03 | Create live tracking copies and mirror phases into AFFiNE | 🟡 PARTIAL | NOT_RUN | docs/tracking/owner-note-22112026/goal_registry.json; docs/tracking/owner-note-22112026/PHASE_BOARD.md | P0-T07 | No supported automated write path to AFFiNE (web sync broken, MCP read-only); repo PHASE_BOARD.md is tracker of record | NOT_SYNCED |
 | P0-T04 | Prepare prospective A3r1 protocol and no-call provider plan | ✅ COMPLETE | NOT_RUN | docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md; docs/tracking/owner-note-22112026/receipts/P0-T04_proposed_protocol.md; docs/tracking/owner-note-22112026/receipts/P0-T04_provider_readiness.json | P0-T07; P1-T01 | — | NOT_SYNCED |
 | P0-T05 | Implement and verify shared budget reservation accounting | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P0-T05_ledger_verification.md; docs/tracking/owner-note-22112026/receipts/P0-T05_budget_forecast.json; src/patent_to_pilot/budget/ledger.py; tests/test_budget_ledger.py; tests/test_g03_a3_caller_budget.py | P0-T07; P1-T01 | — | NOT_SYNCED |
 | P0-T06 | Implement a source-bound synthetic search-and-trace slice | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P0-T06_synthetic_trace.json; docs/tracking/owner-note-22112026/receipts/P0-T06_trace_verification.md; src/patent_to_pilot/workbench/trace_slice.py; tests/test_p0_t06_trace_slice.py | P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03 | — | NOT_SYNCED |

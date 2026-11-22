@@ -90,3 +90,20 @@ exists.
   1. test the AFFiNE desktop app (native sync) against this server;
   2. try an older matched client/server pair on a fresh database (there is no tracker data to lose);
   3. keep the repository board as the tracker of record until AFFiNE sync works.
+
+## Owner import into AFFiNE Desktop (22 Nov 2026, 18:38 local)
+
+- The owner imported the rendered pages (`docs/tracking/owner-note-22112026/affine/*.md`) into the **AFFiNE Desktop 0.27.4
+  local workspace** `YFzAB7y6l3OuO7Rtb2xeO`. This is file metadata only: `%APPDATA%\AFFiNE\workspaces\local\…\storage.db`
+  plus its WAL (about 3.3 MB, written 18:38). The agent did not open the contents.
+- The desktop app did **not** connect to the self-hosted server: no new server socket session, and server
+  `snapshots`/`updates` = 0. The board therefore exists as an owner-visible **snapshot**.
+- **Live updates are SYNC_PENDING.** There is no supported write path:
+  - the web client's sync is broken;
+  - the built-in MCP is read-only;
+  - writing into `storage.db` or Yjs internals is prohibited.
+- After each milestone the agent re-renders `affine/*.md` and records the change in `receipts/tracker_events.jsonl`.
+  The repository board (`PHASE_BOARD.md`) is the tracker of record.
+- **Backup:** the server holds no tracker data, so a server restore drill would prove nothing about the board. The desktop
+  workspace can be backed up through the desktop app's own export. That is the owner's action, or a later GUI-automation
+  step.

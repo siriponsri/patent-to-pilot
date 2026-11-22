@@ -44,9 +44,9 @@ Phase status: **IN_PROGRESS**
 - **Depends on:** P0-T01
 - **Acceptance evidence:** Copy seeds into docs/tracking/owner-note-22112026; preserve task IDs; each AFFiNE item links evidence and next action. If AFFiNE is unavailable, local tracking is ready but synchronization remains BLOCKED.
 - **Evidence:** docs/tracking/owner-note-22112026/goal_registry.json; docs/tracking/owner-note-22112026/PHASE_BOARD.md
-- **Check:** local tracker live (35 tasks); AFFiNE mirror pending
+- **Check:** owner imported snapshot into AFFiNE Desktop local workspace YFzAB7y6l3OuO7Rtb2xeO; live updates SYNC_PENDING
 - **Next:** P0-T07
-- **Blocker:** AFFiNE 0.27.4 web client never opens its sync socket (client-side stall; server transport verified OK); built-in MCP is read-only, so no supported write path yet
+- **Blocker:** No supported automated write path to AFFiNE (web sync broken, MCP read-only); repo PHASE_BOARD.md is tracker of record
 - **Notes:** [2026-11-22] live registry initialised from seed (hashes recorded); scripts/tracking/ptp_tracker.py renders CSV, board and affine/*.md | [2026-11-22] server workspace created via UI; local test doc not synced
 
 ## P0-T04 — Prepare prospective A3r1 protocol and no-call provider plan

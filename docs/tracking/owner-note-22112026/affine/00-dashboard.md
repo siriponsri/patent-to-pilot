@@ -39,6 +39,6 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 ## Needs attention
 
 - **P0-T02** Install or update AFFiNE from the verified repository path: Owner must complete first-run admin setup at http://127.0.0.1:3010 (agent does not create accounts or enter passwords)
-- **P0-T03** Create live tracking copies and mirror phases into AFFiNE: AFFiNE 0.27.4 web client never opens its sync socket (client-side stall; server transport verified OK); built-in MCP is read-only, so no supported write path yet
+- **P0-T03** Create live tracking copies and mirror phases into AFFiNE: No supported automated write path to AFFiNE (web sync broken, MCP read-only); repo PHASE_BOARD.md is tracker of record
 - **P0-T04** Prepare prospective A3r1 protocol and no-call provider plan: E1R approval; Typhoon key/quota (TYPHOON_API_KEY) or declare deferred
 - **P1-T01** Resolve paid execution prerequisites and exact scope: E1R not approved; OPENROUTER_API_KEY absent; Typhoon key/price unknown; A3r1 does not fit E1

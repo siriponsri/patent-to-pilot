@@ -357,7 +357,7 @@
    ],
    "acceptance_evidence": "Copy seeds into docs/tracking/owner-note-22112026; preserve task IDs; each AFFiNE item links evidence and next action. If AFFiNE is unavailable, local tracking is ready but synchronization remains BLOCKED.",
    "evidence_uri": "docs/tracking/owner-note-22112026/goal_registry.json; docs/tracking/owner-note-22112026/PHASE_BOARD.md",
-   "check_result": "local tracker live (35 tasks); AFFiNE mirror pending",
+   "check_result": "owner imported snapshot into AFFiNE Desktop local workspace YFzAB7y6l3OuO7Rtb2xeO; live updates SYNC_PENDING",
    "next_task": "P0-T07",
    "budget_authority": "Owner-authorized local tracker/workspace setup and AFFiNE mirroring; no new paid service.",
    "budget_spent_usd": null,
@@ -370,9 +370,9 @@
    "affine_item_id": "",
    "affine_item_url": "",
    "affine_sync_status": "NOT_SYNCED",
-   "blocker": "AFFiNE 0.27.4 web client never opens its sync socket (client-side stall; server transport verified OK); built-in MCP is read-only, so no supported write path yet",
+   "blocker": "No supported automated write path to AFFiNE (web sync broken, MCP read-only); repo PHASE_BOARD.md is tracker of record",
    "budget_remaining_usd": null,
-   "owner_decision_pending": "Try AFFiNE desktop app against the server, or allow a fresh-DB version change",
+   "owner_decision_pending": "",
    "notes": "[2026-11-22] live registry initialised from seed (hashes recorded); scripts/tracking/ptp_tracker.py renders CSV, board and affine/*.md | [2026-11-22] server workspace created via UI; local test doc not synced"
   },
   {
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-22T18:36:59+07:00"
+ "live_updated_at": "2026-11-22T18:39:52+07:00"
 }
