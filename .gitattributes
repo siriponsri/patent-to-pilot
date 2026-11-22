@@ -4,3 +4,6 @@ src/patent_to_pilot/workbench/sample/** -text
 tests/fixtures/ptp_g01/** -text
 *.cmd text eol=crlf
 tests/fixtures/ptp_g02/** -text
+# P0-T06 synthetic packet and owner schema copy: exact bytes are pinned by SHA-256 manifests
+src/patent_to_pilot/workbench/fixtures/** -text
+src/patent_to_pilot/workbench/schemas/** -text
