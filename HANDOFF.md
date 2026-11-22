@@ -8,19 +8,23 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 **Program:** PTP-2026-11-21, goals G01–G08 (owner package `docs/owner/owner-note-21112026/`, owner-local, untracked).
 
-**ACCOUNT SWITCH CHECKPOINT, 22 Nov ~16:30:** start from
-[docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md). It has a
-paste-ready prompt, the state and the open owner items. The owner's decisions D1–D8 of 22 Nov are in
-[docs/maintenance/OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md). Lessons for a new account:
-[docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md). Verify with `git log -5`.
+**Session of 22 Nov afternoon (new account), checkpoint ~14:30 Bangkok:** the next-account task list was worked through.
+Start a new account from [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md).
+The owner's decisions D1–D9 are in [docs/maintenance/OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md).
+Lessons: [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md). Verify with `git log -8`.
+
+**Blocked on the owner (asked 22 Nov):**
+1. Set `OPENROUTER_API_KEY` as a Windows user environment variable. G03 amendment 3's pilot cannot start without it.
+2. Approve the Thai IS2 re-scope outline before the papers are rebuilt.
+3. Choose a PatenTEB option (audit §5).
 
 ### Goal status
 
 | Goal | Status | Evidence / next action |
 |---|---|---|
 | G01 Shared core and local vertical slice | **COMPLETE** | [G01/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md): 16 tests, smoke 15/15, browser QA at 1280/360 px, restart persistence. Owner still to observe: Explorer double-click and default-browser auto-open. |
-| G02 Provider, ingestion and dataset contracts | **COMPLETE** (22 Nov, USD 0) | [G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md): provider ports with Ollama / OpenAI-compatible / Anthropic adapters and policy; index generations; hybrid mode; text/MD ingestion into owner projects; dataset registry and adapters. Real route: Qwen3-Embedding-0.6B on dr-train CPU through an SSH tunnel ([receipt](artifacts/owner-program/PTP-2026-11-21/G02/REAL_EMBEDDING_ROUTE.json)). Not real-tested: paid API (no envelope), Ollama (not installed), reranker. PDF parked (needs a package approval). |
-| G03 Baselines and candidate policy on allowed DEV | **IN PROGRESS 22 Nov** | Protocol v1 decided: support_frontier_v0 **PARKED** (VAL SF\* − F\* ALL R@200 −0.020 [−0.025, −0.014]); F\* = Qwen3×2 + PatEmbed×2 ([memo](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md)). Amendment 1 (field obligations): **PARKED** (P1-DEV +0.0018; VAL −0.0054 [−0.0107, 0.000]; memo §4a). Amendment 2 (learned selector on TRAIN labels) is frozen at 8e759b8e and was **RUNNING** detached at the account switch (`/data/ptp-paper2/g03-dev/a2.log` ends `G03_A2_DONE`; the decision is in `results-a2.json`). Next: memo §4b, the G03 closing summary, then pull/prune `g03-dev`. The V100 is shared with another user's service (thaivoice, 24 GB); do not touch it. | Uses the G02 ports. DAPFAM is not a tuning set in this program. Carry over the AM-7 lessons: always report IN and OUT, keep N4 IPC-demotion as a counterexample, treat co-citation as one action. |
+| G02 Provider, ingestion and dataset contracts | **COMPLETE** (22 Nov, USD 0) + 22 Nov add-ons | [G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md): provider ports, index generations, hybrid mode, text/MD ingestion, dataset registry. **Add-on D8 (22 Nov):** `pypdf` 6.21.4 in `.venv` (extra `pdf` in pyproject); PDF text-layer ingestion (`pdf_text_layer_v1`, page markers, PDF sha256 in `origin_path`, scans/encrypted refused); tests `tests/test_ptp_g02_pdf_ingest.py`. **Add-on D7/D9:** four OpenRouter chat templates (`openrouter-*`, reasoning off, temperature 0, USD 0.05 / 20 requests each), `request_options` profile field, `cost_usd` recorded from usage; tests `tests/test_ptp_g02_openrouter_profiles.py`. A real OpenRouter Workbench check waits for `OPENROUTER_API_KEY`. |
+| G03 Baselines and candidate policy on allowed DEV | **IN PROGRESS 22 Nov** | [memo](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md). v1 support_frontier_v0 **PARKED**; F\* = Qwen3×2 + PatEmbed×2. A1 field obligations **PARKED** (§4a; a mask defect in its T/C routes is now disclosed there). **A2 learned selector PARKED** (§4b): VAL LS\* − F\* ALL +0.0017 [−0.0019, +0.0054], IN lower −0.0060 < −δ. **A3 LLM query expansion: FROZEN** ([protocol](docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3-20261122.md), commit 82ab143a; code e5a3f616). Pilot inputs ready on dr-train `g03-dev/a3/` and locally `../_private_artifacts/g03-a3/inputs/`; format smoke on 4 models done (USD 0.00064, [spend](docs/healthtech/research/g03-dev/g03-dev-a3-spend.json)). **Pilot not started: `OPENROUTER_API_KEY` not set.** | Run order in §"Next steps". The V100 is shared with another user's service (thaivoice, 24 GB); do not touch it. Always report IN and OUT; keep N4 as a counterexample. |
 | G04 Matched patent benchmark (DAPFAM) | Not started | DAPFAM is previously exposed (B53 evaluated all 1,247 queries); report it as such. |
 | G05 Transfer and evidence maintenance | Not started | Thai Gazette public benchmark; NitiBench+ optional. |
 | G06 English-first product beta | Not started | Can run alongside G04/G05. |
@@ -66,46 +70,59 @@ paste-ready prompt, the state and the open owner items. The owner's decisions D1
 
 ### Running jobs
 
-- G03 amendment 2 on dr-train (detached; see the goal table). Nothing else of this project runs.
+- **Nothing of this project runs** (22 Nov ~14:30). A2 finished (`G03_A2_DONE`); the g03-dev compression finished
+  (`COMPRESS_DONE`).
+- **G03 phase close (v1, A1, A2) done:** [pull/prune summary](artifacts/maintenance/20261122-g03-pull/SUMMARY.md).
+  - 826 small files were pulled and sha256-verified.
+  - 327 arm run TSVs were compressed in place (24.44 GB freed; `g03-dev` 36 → 13 GB).
 - B53.0 measured 22 Nov ([B53-0-RESULTS.md](docs/healthtech/research/b53-0/B53-0-RESULTS.md)): TAC→TAC consistent with
-  the DAPFAM paper in 11 of 12 cells. Caution: F0 patembed-base may overlap DAPFAM through PatenTEB.
-- The B53 evaluation finished, and the G02 embedding shim and its folder were removed from dr-train after QA, and its logs
-  are in `artifacts/owner-program/PTP-2026-11-21/G02/`.
-- **21 Nov dr-train cleanup done** ([summary](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md), runbook
-  [DR-TRAIN-ARTIFACT-RUNBOOK.md](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md), script
-  `scripts/maintenance/pull_dr_train_artifacts.py`): small result files are archived and sha256-verified in
-  `../_private_artifacts/dr-train-archive/20261121/`. On dr-train, about 21.8 GB was freed: dry-run, pilot and failed
-  directories removed; duplicate FT run TSVs removed; unique run TSVs compressed in place as `run-*.tsv.gz` (read them with
-  `gunzip -c`). `b53/` is not yet archived.
+  the DAPFAM paper in 11 of 12 cells.
+- **PatEmbed–DAPFAM (D3), 22 Nov:**
+  - The train-split audit is **blocked**: PatenTEB's train/validation sets are not released (authors' README).
+  - The partial audit found DAPFAM families inside PatenTEB data: 50 of 1,247 queries and 466 of 45,336 corpus
+    families.
+  - So PatEmbed stays "possibly contaminated" on DAPFAM.
+  - Report: [PATENTEB-OVERLAP-AUDIT-20261122.md](docs/healthtech/research/b53-0/PATENTEB-OVERLAP-AUDIT-20261122.md).
+- 21 Nov dr-train cleanup: [summary](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md), runbook
+  [DR-TRAIN-ARTIFACT-RUNBOOK.md](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md).
 
 ### Next steps
 
-The order and prompt are in the handoff file §1:
-1. G03 amendment 2. If it is parked, keep working on acquisition (D2): pre-declare a new candidate-bringing mechanism.
-2. PatenTEB overlap audit (D3, download approved).
-3. IS2 re-scope to research + demo (D1, D5, D6), Thai and English.
-4. `pypdf` and the PDF ingestion adapter (D8).
-5. OpenRouter profiles (D7).
-6. Then G04 planning.
+1. **G03 A3 pilot**, as soon as the owner sets `OPENROUTER_API_KEY`. In a new PowerShell, for each of the 4 models:
+   `python scripts/research/g03_a3_llm_expand.py --queries ../_private_artifacts/g03-a3/inputs/queries-dev-val.jsonl --apps-file ../_private_artifacts/g03-a3/inputs/apps-pilot.json --model <id> --ledger-root ../_private_artifacts/g03-a3/ledger`.
+   - Read `get-credits` before and after.
+   - Write `a3/pilot-costs.json` (model → USD from `--summary`).
+   - Upload each `ledger/<model_dir>/P1-DEV.jsonl` to dr-train `g03-dev/a3/ledger/`.
+   - Copy `g03_a3_routes.py`, `g03_a3_decide.py` and `g03_queue_a3_pilot.sh` to `g03-dev/code/`.
+   - Run `setsid nohup bash code/g03_queue_a3_pilot.sh > a3-pilot.log 2>&1 < /dev/null & disown`.
+   - It ends `G03_A3_PILOT_DONE`. Apply the GO/STOP rule (protocol §3); Stage B only on GO.
+   - Expected pilot spend ≈ USD 1–2.
+2. **IS2 re-scope (D1/D5/D6):** the Thai outline was shown to the owner 22 Nov. After approval, rebuild TH/EN with the
+   `kmitl-is-paper` and `academic-figures` skills, and update `SLIDES-OUTLINE.md` and `DEMO-STORYBOARD.md`.
+3. A real Workbench OpenRouter profile check (≤ USD 0.20; E1) once the key is set.
+4. Then G04 planning: DAPFAM headline routes are BM25, Qwen3 and Arctic; PatEmbed is reported separately with the
+   caveat.
 
 ### Owner decisions
 
-**Decided 22 Nov:** D1–D8 in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md):
+**Decided 22 Nov:** D1–D9 in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md):
 - IS2 = research + demo;
 - keep working on acquisition;
-- PatenTEB download approved;
+- PatenTEB download approved (but the train split is not public);
 - `b53/inputs` deleted;
 - byline "Tuchsanai Ploysuwan";
 - acknowledgments = AI statement only;
-- OpenRouter with several research-relevant models;
-- `pypdf` yes; no local Ollama, so GPU work goes to dr-train and RunPod via MCP.
+- OpenRouter multi-model, with E1 = USD 8 / 35,000 requests approved (D9);
+- `pypdf` yes (installed 22 Nov); no local Ollama.
 
 **Still pending:**
-- per-job caps for RunPod. (OpenRouter E1 = USD 8 / 35,000 requests was **approved 22 Nov**: D9,
-  [proposal](docs/maintenance/API-BUDGET-PROPOSAL-20261122.md).)
+- `OPENROUTER_API_KEY` in the environment;
+- the IS2 outline approval;
+- the PatenTEB option (accept the partial audit, fetch the other 12 test splits, or write to the authors);
+- RunPod per-job caps;
 - the Paper 53 DOI;
 - the G01 launcher observation.
 
 Also, unchanged:
-- large derived files on dr-train are kept (owner, 21 Nov);
+- large derived files on dr-train are kept (owner, 21 Nov), so they are compressed, not deleted;
 - two git stashes from 30 Oct 2026 (`ba92cf3a`, `5e95e5c2`) were kept; drop them only on request.

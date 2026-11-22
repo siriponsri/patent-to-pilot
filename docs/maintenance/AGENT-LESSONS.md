@@ -26,9 +26,14 @@ The owner switches Claude accounts when usage runs out. Read [CLAUDE.md](../../C
 - **B53.0 (22 Nov):** our DAPFAM TAC→TAC pipeline matches the DAPFAM paper's published BM25 and Arctic numbers within
   ±0.010 in 11 of 12 cells. Our evaluator is therefore trustworthy for G04.
 - **But patembed-base scores above everything in the DAPFAM paper** (nDCG@100 ALL 0.366). It was trained on PatenTEB,
-  which has the same source and authors as DAPFAM, so possible overlap. Do not present PatEmbed as a fair zero-shot
-  DAPFAM baseline until a family-level overlap audit is done. That audit needs the gated PatenTEB train split, which
-  requires owner approval to download.
+  which has the same source and authors as DAPFAM. **22 Nov audit:** the PatenTEB train/validation splits are not
+  released (only test splits are on Hugging Face), and DAPFAM families occur inside PatenTEB data (50 queries and 466
+  corpus families in just 3 test files). So PatEmbed is "possibly contaminated" on DAPFAM; never present it as a fair
+  zero-shot DAPFAM baseline ([audit](../healthtech/research/b53-0/PATENTEB-OVERLAP-AUDIT-20261122.md)).
+- **G03 A2 (22 Nov):** a learned per-query selector over the same routes captures only 1.5% of the oracle headroom, and is
+  PARKED. Three re-weighting/re-slicing mechanisms have now failed; only new candidate sources remain (A3).
+- **Check masks when you add a route.** The A1 field routes skipped the filing-date and own-unit masks that
+  `dense_bridgeret_v3.py` applies. New routes must copy the masks of the route family they join.
 - **G03 DEV harness:** `scripts/research/g03_*.py` reuses the precomputed P1-DEV/VAL route runs (BM25, Qwen3, PatEmbed,
   Arctic; depth 1,000) and the unchanged `eval_bridgeret_dev.py`. CPU only, about 30 minutes for a full arm grid. Its E01
   gate reproduced every single-route number exactly.

@@ -1,0 +1,22 @@
+{
+ "format": "ptp-g03-a3-spend-v1",
+ "envelope": "E1 (OWNER-DECISIONS-20261122.md D9): USD 8.00 cap, 35,000 requests; stop and report at USD 6.00",
+ "credits_reads": [
+  {"when": "2026-11-22 before amendment-3 freeze", "total_credits": 10, "total_usage": 1.6343693},
+  {"when": "2026-11-22 after format smoke calls", "total_credits": 10, "total_usage": 1.63501153}
+ ],
+ "calls": [
+  {"what": "format smoke check, 1 TRAIN query (app 12000001; not P1-DEV/VAL), frozen A3 prompt, max_tokens 400, reasoning off, via the OpenRouter MCP send-message tool",
+   "requests": 4,
+   "per_model": {
+    "qwen/qwen3.7-flash": {"generation_id": "gen-1795329088-PoXlZfInAnenuBGWdJQQ", "prompt_tokens": 697, "completion_tokens": 359, "reasoning_tokens": 0, "parse": "json"},
+    "deepseek/deepseek-v4-flash-0731": {"generation_id": "gen-1795329113-gGBoYNxyz1mZwI3WORa8", "prompt_tokens": 691, "completion_tokens": 299, "reasoning_tokens": 0, "parse": "json"},
+    "qwen/qwen3-32b": {"generation_id": "gen-1795329115-m11YdZ3VWFCW1tg0TNR7", "prompt_tokens": 695, "completion_tokens": 231, "reasoning_tokens": 0, "parse": "json"},
+    "anthropic/claude-haiku-5.5": {"generation_id": "gen-1795329125-DNL7dY9dMDeHWnCBac5N", "prompt_tokens": 1040, "completion_tokens": 400, "reasoning_tokens": 0, "parse": "salvaged (cut at max_tokens; 3 priors kept, keywords lost)"}
+   },
+   "usd_total_from_credits_delta": 0.00064223}
+ ],
+ "cumulative_usd": 0.00064223,
+ "cumulative_requests": 4,
+ "note": "Smoke calls went through the MCP tool, so they are not in the caller's JSONL ledger; the caller's 35,000-request cap leaves this margin. Pilot not started: OPENROUTER_API_KEY is not set in the owner's environment."
+}

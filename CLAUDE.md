@@ -31,10 +31,13 @@ untracked: never edit, move, delete or commit anything under `docs/owner/`.**
   Only owner-observed item left: Explorer double-click of `Start-PTP.cmd` and default-browser auto-open.
 - **G02 provider, ingestion and dataset contracts: COMPLETE** (22 Nov 2026, USD 0). Status and receipts:
   [artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md).
-- **G03 in progress** (baselines and candidate policy on allowed DEV): protocol v1 and amendment 1 are PARKED; amendment 2
-  (learned selector) was running at the 22 Nov account switch. Memo:
+- **G03 in progress** (baselines and candidate policy on allowed DEV): protocol v1, amendment 1 and amendment 2 (learned
+  selector) are PARKED. Amendment 3 (LLM query expansion via OpenRouter, envelope E1) is FROZEN; its pilot waits for
+  `OPENROUTER_API_KEY`. Memo:
   [docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md).
-- **New account? Start at** [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md)
+- **PatEmbed on DAPFAM is "possibly contaminated"**: PatenTEB's train split is unreleased, and DAPFAM families sit inside
+  PatenTEB data ([audit](docs/healthtech/research/b53-0/PATENTEB-OVERLAP-AUDIT-20261122.md)).
+- **New account? Start at** [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md)
   and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
 - **IS2 scope (owner, 22 Nov):** "research + demo"; B53 is the bridge. TH/EN papers are in `docs/writing/is2/paper/`
   (to be re-scoped).

@@ -25,7 +25,7 @@ current narrative state lives in [HANDOFF.md](HANDOFF.md). Pre-21-Nov index rows
 |---|---|---|---|
 | G01 Shared core and local vertical slice | Foundation | COMPLETE (21 Nov 2026) | [artifacts/owner-program/PTP-2026-11-21/G01/](artifacts/owner-program/PTP-2026-11-21/G01/) |
 | G02 Provider, ingestion and dataset contracts | Foundation | COMPLETE (22 Nov 2026) | [artifacts/owner-program/PTP-2026-11-21/G02/](artifacts/owner-program/PTP-2026-11-21/G02/) |
-| G03 Baselines and candidate policy on allowed DEV | Method development | IN PROGRESS (v1 and A1 PARKED; A2 running) | [docs/healthtech/research/g03-dev/](docs/healthtech/research/g03-dev/) |
+| G03 Baselines and candidate policy on allowed DEV | Method development | IN PROGRESS (v1, A1, A2 PARKED; A3 LLM expansion FROZEN, pilot waits for the API key) | [docs/healthtech/research/g03-dev/](docs/healthtech/research/g03-dev/) |
 | G04 Matched patent benchmark | Evidence | Not started | — |
 | G05 Transfer and evidence maintenance | Evidence | Not started | — |
 | G06 English-first product beta | Product and paper | Not started | — |
