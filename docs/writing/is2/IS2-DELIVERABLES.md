@@ -1,4 +1,13 @@
-# IS2 deliverables and report plan (v1, 19 Nov 2026)
+# IS2 deliverables and report plan (v1, 19 Nov 2026; scope changed 22 Nov)
+
+> **Owner decision 22 Nov 2026 (D1, D5, D6 in `docs/maintenance/OWNER-DECISIONS-20261122.md`):**
+> - IS2 becomes **"research + demo"**: Paper 53 → B53 (bridge) → G03 DEV acquisition findings (honest, including parked
+>   arms) → B53.0 native check against the DAPFAM paper → Workbench demo of selective update after a source change.
+> - English byline "Tuchsanai Ploysuwan", with the title only in footnote 2.
+> - Acknowledgments: the AI-use statement only.
+>
+> The B53-centred core claim below is now the bridge section, not the whole paper. Both editions in `paper/` are to be
+> rebuilt on the new arc.
 
 **Core claim to test:** *A controlled first-stage substitution reveals how candidate exposure constrains the measurable effects
 of reranking instructions in cross-domain patent search.* This is a research question, not a proven result.

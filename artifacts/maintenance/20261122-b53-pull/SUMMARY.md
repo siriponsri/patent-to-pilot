@@ -9,7 +9,7 @@ finished, and no B53 job is running.
 | Compress run TSVs in place (`pigz -k`, sha256 of `pigz -dc` must equal the original before the original is removed) | 8/8 OK; `runs/` went from 590 MB to 153 MB. Log on dr-train: `b53/logs/compress-runs-20261122.tsv` (also in the archive). Read with `gunzip -c F0.tsv.gz`. |
 | Pull `b53/` (excluding `inputs/`) to `../_private_artifacts/dr-train-archive/20261122-b53/` | 63 files, 211.9 MB, **63 OK, 0 mismatch, 0 error** (`pull-manifest.tsv`, `pull-summary.json`). |
 | Delete `b53/failed/` (8 OOM timing logs, all pulled OK) | Done. |
-| Delete `b53/inputs/` (byte-identical to `_private_artifacts/healthtech/ptp-b53-inputs-20261119-v1/`, all 4 sha256 equal) | **Not done.** The folder and its files are read-only (`dr-xr-sr-x`), set when the inputs were frozen on 19 Nov. I did not change permissions to get around this. Removing it frees 341 MB. Ask the owner, or run `chmod -R u+w` on it then `rm` the 4 listed files. |
+| Delete `b53/inputs/` (byte-identical to `_private_artifacts/healthtech/ptp-b53-inputs-20261119-v1/`, all 4 sha256 equal) | **Done on 22 Nov after the owner's explicit approval.** The folder had been made read-only when the inputs were frozen. Hashes were re-checked, `chmod u+w` was applied, the 4 files listed in the deletion manifest were deleted, and the folder was removed. `b53/` went from 528 MB to 203 MB. |
 
 The deletion manifest is [deletion-manifest.tsv](deletion-manifest.tsv). Only the `failed/` rows were executed.
 

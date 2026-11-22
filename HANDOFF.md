@@ -10,7 +10,8 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 **ACCOUNT SWITCH CHECKPOINT, 22 Nov ~16:30:** start from
 [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md). It has a
-paste-ready prompt, the state and the open owner items. Lessons for a new account:
+paste-ready prompt, the state and the open owner items. The owner's decisions D1–D8 of 22 Nov are in
+[docs/maintenance/OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md). Lessons for a new account:
 [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md). Verify with `git log -5`.
 
 ### Goal status
@@ -47,7 +48,7 @@ paste-ready prompt, the state and the open owner items. Lessons for a new accoun
   - Scrambled ≈ Generic. BGE plain pair is worse than Qwen3 everywhere.
   - Phase closed: [pull/prune summary](artifacts/maintenance/20261122-b53-pull/SUMMARY.md).
   - B53 run TSVs on dr-train are now `runs/F*.tsv.gz`.
-  - `b53/inputs/` (341 MB, read-only, identical local copy) is left for an owner decision.
+  - `b53/inputs/` was deleted 22 Nov after owner approval (D4); `b53/` is now 203 MB.
   - IS2 drafts updated 22 Nov:
     - short paper v0.2: Markdown + docx, 9 pages;
     - slides outline v2;
@@ -57,8 +58,11 @@ paste-ready prompt, the state and the open owner items. Lessons for a new accoun
 - **IS2 papers (22 Nov):** Thai and English editions, 8 pages each, 3 figures, in
   [docs/writing/is2/paper/](docs/writing/is2/paper/) (`IS2-paper-th/en.docx/.pdf`). Advisor: ผศ.ดร. ทัศนัย พลอยสุวรรณ.
   - Open: the Paper 53 DOI, the English byline title, and the acknowledgments line.
-  - **Owner decision 22 Nov:** the IS2 core becomes the current research program (G03, B53.0, Evidence Engine), with B53
-    as the bridge. Re-scope the papers and slides next (handoff file §1, task 2).
+  - **Owner decisions 22 Nov (D1, D5, D6):**
+    - IS2 = "research + demo" (Paper 53 → B53 bridge → G03 DEV findings → B53.0 → Workbench demo);
+    - English byline "Tuchsanai Ploysuwan", with the title in footnote 2 only;
+    - acknowledgments = AI-use statement only.
+    - Re-scope the papers and slides next.
 
 ### Running jobs
 
@@ -76,18 +80,31 @@ paste-ready prompt, the state and the open owner items. Lessons for a new accoun
 
 ### Next steps
 
-1. Collect G03 amendment 2, write memo §4b and the G03 closing summary, then pull/prune `g03-dev`.
-2. Re-scope IS2 (core = current research). Propose the outline to the owner in Thai, then rebuild the TH/EN papers.
-3. G04 planning (DAPFAM native, E04/E05 with the N4 counterexample; PatEmbed overlap caution).
-4. Owner items: see "Owner decisions pending".
+The order and prompt are in the handoff file §1:
+1. G03 amendment 2. If it is parked, keep working on acquisition (D2): pre-declare a new candidate-bringing mechanism.
+2. PatenTEB overlap audit (D3, download approved).
+3. IS2 re-scope to research + demo (D1, D5, D6), Thai and English.
+4. `pypdf` and the PDF ingestion adapter (D8).
+5. OpenRouter profiles (D7).
+6. Then G04 planning.
 
-### Owner decisions pending
+### Owner decisions
 
-- Any spending envelope for API provider use (default USD 0; Claude profiles stay blocked).
-- Optional per-item approvals: Ollama (local chat models) and `pypdf` (PDF ingestion).
-- Large derived files on dr-train: the owner chose on 21 Nov to keep them for now.
-- Whether to delete the read-only `b53/inputs/` on dr-train (341 MB; an identical local copy exists).
-- IS2: the English byline title for the advisor, the acknowledgments line, the Paper 53 DOI, and the re-scoped outline.
-- Approval to download the gated PatenTEB train split (PatEmbed–DAPFAM overlap audit).
-- G01 launcher observation (Explorer double-click, browser auto-open).
-- Two git stashes from 30 Oct 2026 (`ba92cf3a`, `5e95e5c2`) were kept; drop them only on request.
+**Decided 22 Nov:** D1–D8 in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md):
+- IS2 = research + demo;
+- keep working on acquisition;
+- PatenTEB download approved;
+- `b53/inputs` deleted;
+- byline "Tuchsanai Ploysuwan";
+- acknowledgments = AI statement only;
+- OpenRouter with several research-relevant models;
+- `pypdf` yes; no local Ollama, so GPU work goes to dr-train and RunPod via MCP.
+
+**Still pending:**
+- the USD cap and request cap for OpenRouter and per-job caps for RunPod (CLAUDE.md rule 2 needs a number);
+- the Paper 53 DOI;
+- the G01 launcher observation.
+
+Also, unchanged:
+- large derived files on dr-train are kept (owner, 21 Nov);
+- two git stashes from 30 Oct 2026 (`ba92cf3a`, `5e95e5c2`) were kept; drop them only on request.

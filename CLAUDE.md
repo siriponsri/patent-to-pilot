@@ -36,8 +36,13 @@ untracked: never edit, move, delete or commit anything under `docs/owner/`.**
   [docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md).
 - **New account? Start at** [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md)
   and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
-- **IS2 scope (owner, 22 Nov):** the core becomes the current research program; B53 is the bridge. TH/EN papers are in
-  `docs/writing/is2/paper/`.
+- **IS2 scope (owner, 22 Nov):** "research + demo"; B53 is the bridge. TH/EN papers are in `docs/writing/is2/paper/`
+  (to be re-scoped).
+- **Owner decisions D1–D8 (22 Nov):** [docs/maintenance/OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md):
+  - OpenRouter (several models) and RunPod via MCP are approved in principle, but each still needs a recorded USD cap
+    before the first paid call (rule 2);
+  - `pypdf` approved; no local Ollama;
+  - PatenTEB train download approved.
 - **Research P1 / AM-7: parked.** Stage 2a results (DEV/VAL, descriptive) are in
   [docs/healthtech/research/paper1-bridgeret/am7/stage2a/](docs/healthtech/research/paper1-bridgeret/am7/stage2a/).
   The owner gate in AM-7 §6.4 failed, so no paid step runs without the owner.
