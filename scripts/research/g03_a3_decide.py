@@ -90,14 +90,18 @@ def pilot(a):
                      'H4_K4': {n: table[n] for n in ('alloc-L0-Q0-P0-H4-K0', 'alloc-L0-Q0-P0-H0-K4') if n in table},
                      'pilot_cost_usd': costs.get(m), 'arm_table_B4': {n: table[n] for n in table
                                                                        if sum(alloc_of(n).values()) == 4}}
-    top = max(v['G_m'] for v in models.values())
-    near = [m for m, v in models.items() if top - v['G_m'] <= TIE]
+    # A3r1 (frozen at P1-T03): m* is chosen only among Stage-B-eligible models; others are reported descriptively
+    eligible = [m for m in models if not a.eligible or m in a.eligible.split(',')]
+    if not eligible:
+        raise SystemExit('no Stage-B-eligible model among the piloted models')
+    top = max(models[m]['G_m'] for m in eligible)
+    near = [m for m in eligible if top - models[m]['G_m'] <= TIE]
     mstar = min(near, key=lambda m: (models[m]['pilot_cost_usd'] if models[m]['pilot_cost_usd'] is not None
                                      else float('inf'), -models[m]['G_m']))
     d = models[mstar]['delta_vs_Fstar']['ALL_R@200']
     go = d['delta'] >= DELTA and d['ci95'][0] > 0
     res = {'format': 'ptp-g03-dev-a3-pilot', 'amendment': 'G03-DEV-AMENDMENT-3-20261122.md', 'n_pilot': len(apps),
-           'Fstar_pilot_ALL': fstar_mean, 'models': models, 'm_star': mstar,
+           'Fstar_pilot_ALL': fstar_mean, 'models': models, 'm_star': mstar, 'stage_b_eligible': eligible,
            'decision': ('GO: Stage B with ' + mstar) if go else
            'STOP: H-M3 not supported on the pilot (Delta < +0.005 or lower CI <= 0); no Stage B spend',
            'note': 'pilot Delta is optimistic (best of ~66 LLM allocations on the same queries); it only gates spending'}
@@ -149,7 +153,7 @@ def full(a):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('mode', choices=('pilot', 'full'))
-    for k in ('--evals', '--evals-root', '--models', '--apps', '--costs'):
+    for k in ('--evals', '--evals-root', '--models', '--apps', '--costs', '--eligible'):
         ap.add_argument(k)
     for k in ('--v0-evals', '--meta', '--out'):
         ap.add_argument(k, required=True)

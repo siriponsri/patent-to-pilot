@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-22T19:12:36+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-23T06:00:40+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -16,7 +16,7 @@ Rendered from `goal_registry.json` at 2026-11-22T19:12:36+07:00. Do not edit by 
 |---|---|---|
 | OFFLINE_READY | COMPLETE | docs/tracking/owner-note-22112026/receipts/P0-T07_readiness.json |
 | AFFINE_READY | BLOCKED | docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md |
-| PAID_RESEARCH_READY | BLOCKED | docs/tracking/owner-note-22112026/receipts/P0-T07_readiness.json |
+| PAID_RESEARCH_READY | COMPLETE | docs/tracking/owner-note-22112026/receipts/P1-T03_freeze_receipt.json |
 | METHOD_WIN_SUPPORTED | NOT_STARTED |  |
 | PRODUCT_RELEASE_READY | NOT_STARTED |  |
 | PUBLICATION_READY | NOT_STARTED |  |
@@ -41,9 +41,9 @@ Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
-| P1-T01 | Resolve paid execution prerequisites and exact scope | ⛔ BLOCKED | NOT_RUN | — | P1-T02 | Waiting for owner to set OPENROUTER_API_KEY (+top-up) and TYPHOON_API_KEY in user environment; E1R approved (D11) | NOT_SYNCED |
-| P1-T02 | Calibrate the complete output contract on TRAIN only | ⏳ NOT_STARTED | NOT_RUN | — | P1-T03 | — | NOT_SYNCED |
-| P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ⏳ NOT_STARTED | NOT_RUN | — | P1-T04 | — | NOT_SYNCED |
+| P1-T01 | Resolve paid execution prerequisites and exact scope | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P1-T03_freeze_receipt.json | P1-T02 | — | NOT_SYNCED |
+| P1-T02 | Calibrate the complete output contract on TRAIN only | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P1-T02_format_cost_receipt.md; docs/tracking/owner-note-22112026/receipts/P1-T02_calibration_manifest.json | P1-T03 | — | NOT_SYNCED |
+| P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P1-T03_freeze_receipt.json; docs/healthtech/research/g03-dev/a3r1/a3r1-caller-config.json | P1-T04 | — | NOT_SYNCED |
 | P1-T04 | Execute the declared four-model DEV pilot and spending decision | ⏳ NOT_STARTED | NOT_RUN | — | P1-T05 on GO; P1-T06 on STOP | — | NOT_SYNCED |
 | P1-T05 | Run one selected Stage B only after GO | ⏳ NOT_STARTED | NOT_RUN | — | P1-T06 | — | NOT_SYNCED |
 | P1-T06 | Close A3 evidence and hand off the constructive ladder | ⏳ NOT_STARTED | NOT_RUN | — | P2-T02; P2-T04; P5-T02 when evidence exists | — | NOT_SYNCED |

@@ -1,0 +1,150 @@
+{
+ "format": "ptp-a3r1-calibration-receipt-v1",
+ "recorded_at": "2026-11-23T06:00:00+07:00",
+ "block": "TRAIN",
+ "manifest_sha256": "6ef96f3218c80afe33e3545f858f0b0edc1525fe9a8beed48d1bbed5337b5d00",
+ "queries_sha256": "0b058c7b7ff06198457b553c8cc25463c506774a9575918704d5180907a2a63c",
+ "rule": "8 longest built prompts (UTF-8 bytes; ties by h) + smallest h for the rest; h = sha256(\"g03-a3r1-calibration-v1:\" + app_id); same cases for every model",
+ "app_ids": [
+  "12451978",
+  "12356151",
+  "12547424",
+  "12321074",
+  "12390353",
+  "12526231",
+  "12051431",
+  "12082091",
+  "12158215",
+  "12464426",
+  "12543160",
+  "12195163",
+  "12137372",
+  "12172635",
+  "12000696",
+  "12669078",
+  "12572525",
+  "12573303",
+  "12229081",
+  "12537595",
+  "13125341",
+  "12626286",
+  "12501310",
+  "12330335",
+  "12452435",
+  "12111858",
+  "12113688",
+  "12576388",
+  "12668772",
+  "12513447",
+  "12459353",
+  "12292636"
+ ],
+ "excluded": "12000001 (A3r0 smoke app) not in the sample",
+ "per_model": {
+  "deepseek__deepseek-v4-flash-0731": {
+   "n": 32,
+   "complete": 32,
+   "truncated": 0,
+   "reasoning_tokens": 0,
+   "usd": 0.003605,
+   "unknown_cost": 0,
+   "prompt_tokens": {
+    "mean": 548.7,
+    "p95": 777,
+    "max": 1601
+   },
+   "completion_tokens": {
+    "mean": 267.2,
+    "p95": 333,
+    "max": 376
+   },
+   "finish_reasons": [
+    "stop"
+   ],
+   "providers": [
+    "Cohere",
+    "CoreWeave",
+    "Nebius",
+    "Relace",
+    "StreamLake",
+    "Venice",
+    "Wafer"
+   ]
+  },
+  "google__gemini-2.5-flash-lite": {
+   "n": 32,
+   "complete": 32,
+   "truncated": 0,
+   "reasoning_tokens": 0,
+   "usd": 0.005633,
+   "unknown_cost": 0,
+   "prompt_tokens": {
+    "mean": 547.3,
+    "p95": 788,
+    "max": 1582
+   },
+   "completion_tokens": {
+    "mean": 303.3,
+    "p95": 348,
+    "max": 403
+   },
+   "finish_reasons": [
+    "stop"
+   ],
+   "providers": [
+    "Google AI Studio"
+   ]
+  },
+  "qwen__qwen3-32b": {
+   "n": 32,
+   "complete": 32,
+   "truncated": 0,
+   "reasoning_tokens": 0,
+   "usd": 0.005976,
+   "unknown_cost": 0,
+   "prompt_tokens": {
+    "mean": 577.6,
+    "p95": 817,
+    "max": 1788
+   },
+   "completion_tokens": {
+    "mean": 229.1,
+    "p95": 272,
+    "max": 364
+   },
+   "finish_reasons": [
+    "stop"
+   ],
+   "providers": [
+    "DeepInfra",
+    "SiliconFlow"
+   ]
+  },
+  "typhoon-v2.5-30b-a3b-instruct": {
+   "n": 32,
+   "complete": 32,
+   "truncated": 0,
+   "reasoning_tokens": 0,
+   "usd": 0,
+   "unknown_cost": 0,
+   "prompt_tokens": {
+    "mean": 573.6,
+    "p95": 813,
+    "max": 1784
+   },
+   "completion_tokens": {
+    "mean": 309.9,
+    "p95": 406,
+    "max": 453
+   },
+   "finish_reasons": [
+    "stop"
+   ],
+   "providers": [
+    "None"
+   ]
+  }
+ },
+ "calibration_total_usd": 0.015214,
+ "routing_during_calibration": "unpinned (provider chosen by OpenRouter); pins applied from P1-T03 on"
+}

@@ -1,0 +1,129 @@
+{
+ "format": "ptp-a3r1-freeze-v1",
+ "frozen_at": "2026-11-23T06:00:00+07:00",
+ "protocol": "G03-DEV-AMENDMENT-3R1-PROPOSED.md (frozen by this receipt)",
+ "effectiveness_exposure_at_freeze": "NONE: no A3 DEV/VAL score exists (only A3r0 format smoke + A3r1 TRAIN calibration)",
+ "config_path": "docs/healthtech/research/g03-dev/a3r1/a3r1-caller-config.json",
+ "config_sha256": "3d21f02e45d33783497d3a4ae42c9b4d92ceb63d6dac629475d22e1d508d4f4d",
+ "panel": [
+  "qwen/qwen3-32b",
+  "deepseek/deepseek-v4-flash-0731",
+  "google/gemini-2.5-flash-lite",
+  "typhoon-v2.5-30b-a3b-instruct"
+ ],
+ "lineages": "Qwen3 (Qwen3-32B, Typhoon2.5 Qwen3-based), DeepSeek, Gemini: 4 models / 3 lineages",
+ "max_tokens": 800,
+ "temperature": 0,
+ "seed": 20261122,
+ "prompt": "A3r0 prompt, byte-identical (test-verified)",
+ "routing_pins": {
+  "qwen/qwen3-32b": {
+   "order": [
+    "deepinfra",
+    "tenstorrent"
+   ],
+   "only": [
+    "deepinfra",
+    "tenstorrent"
+   ],
+   "allow_fallbacks": true,
+   "require_parameters": true,
+   "quantizations": [
+    "fp8"
+   ],
+   "max_price": {
+    "prompt": 0.14,
+    "completion": 0.42
+   }
+  },
+  "deepseek/deepseek-v4-flash-0731": {
+   "only": [
+    "deepinfra",
+    "cohere",
+    "coreweave",
+    "nebius",
+    "parasail"
+   ],
+   "allow_fallbacks": true,
+   "require_parameters": true,
+   "quantizations": [
+    "fp8"
+   ],
+   "max_price": {
+    "prompt": 0.15,
+    "completion": 0.3
+   }
+  },
+  "google/gemini-2.5-flash-lite": {
+   "only": [
+    "google-ai-studio"
+   ],
+   "allow_fallbacks": true,
+   "require_parameters": true,
+   "max_price": {
+    "prompt": 0.1,
+    "completion": 0.4
+   }
+  }
+ },
+ "catalogue_read": "2026-11-23 OpenRouter list-model-endpoints/get-model",
+ "failure_policy": "amendment 3R1 §5 (transport retries ≤2 from a 3% pool; content failures never retried; unknown cost pauses)",
+ "pilot": {
+  "apps": "g03-dev/a3/apps-pilot.json (2,000 P1-DEV, sha256-selected in A3r0)",
+  "models": [
+   "qwen/qwen3-32b",
+   "deepseek/deepseek-v4-flash-0731",
+   "google/gemini-2.5-flash-lite",
+   "typhoon-v2.5-30b-a3b-instruct"
+  ]
+ },
+ "stage_b": {
+  "requests_per_model": 25545,
+  "derivation": "25,626 P1-DEV with runs - 2,000 pilot (reused) + 1,919 VAL with runs",
+  "evaluated_population_note": "evaluator populations stay 26,547 P1-DEV / 1,999 VAL; queries without route runs score 0 in every arm (unchanged from A3r0)"
+ },
+ "eligibility": {
+  "qwen/qwen3-32b": {
+   "per_request_bound_usd": 0.000586,
+   "pilot_bound_usd": 1.173,
+   "stage_b_bound_usd": 14.978,
+   "planned_total_bound_usd": 20.995,
+   "format_gate": "PASS",
+   "fits_E1R_50": true,
+   "stage_b_eligible": true
+  },
+  "deepseek/deepseek-v4-flash-0731": {
+   "per_request_bound_usd": 0.00048,
+   "pilot_bound_usd": 0.96,
+   "stage_b_bound_usd": 12.265,
+   "planned_total_bound_usd": 17.876,
+   "format_gate": "PASS",
+   "fits_E1R_50": true,
+   "stage_b_eligible": true
+  },
+  "google/gemini-2.5-flash-lite": {
+   "per_request_bound_usd": 0.000478,
+   "pilot_bound_usd": 0.956,
+   "stage_b_bound_usd": 12.216,
+   "planned_total_bound_usd": 17.819,
+   "format_gate": "PASS",
+   "fits_E1R_50": true,
+   "stage_b_eligible": true
+  },
+  "typhoon-v2.5-30b-a3b-instruct": {
+   "per_request_bound_usd": 0.0,
+   "format_gate": "PASS",
+   "stage_b_eligible": false,
+   "role": "pilot-descriptive (quota unconfirmed)"
+  }
+ },
+ "envelope": {
+  "id": "E1R",
+  "hard_usd": 50,
+  "notify_usd": 40,
+  "max_requests": 100000,
+  "approval": "owner D11, ledger approval record 22 Nov 2026"
+ },
+ "effectiveness_rules": "unchanged from A3r0 (§7): GO = Delta >= +0.005 and lower CI > 0 on the 2,000 pilot apps; m* among Stage-B-eligible models; VAL principal F3* - F* with the frozen continue/revise/park rule; fourth VAL look disclosed",
+ "spend_before_pilot_usd": 0.015856
+}

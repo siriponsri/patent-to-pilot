@@ -12,17 +12,16 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 
 - **OFFLINE_READY**: COMPLETE
 - **AFFINE_READY**: BLOCKED
-- **PAID_RESEARCH_READY**: BLOCKED
+- **PAID_RESEARCH_READY**: COMPLETE
 - **METHOD_WIN_SUPPORTED**: NOT_STARTED
 - **PRODUCT_RELEASE_READY**: NOT_STARTED
 - **PUBLICATION_READY**: NOT_STARTED
 
 ## Task counts
 
-- ⛔ BLOCKED: 1
-- ✅ COMPLETE: 8
+- ✅ COMPLETE: 11
 - 🔄 IN_PROGRESS: 3
-- ⏳ NOT_STARTED: 21
+- ⏳ NOT_STARTED: 19
 - 🟡 PARTIAL: 2
 
 ## Phases
@@ -30,7 +29,7 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 | Phase | Name | Status | Tasks done |
 |---|---|---|---|
 | P0 | Control, setup and execution readiness | IN_PROGRESS | 5/7 |
-| P1 | Reproducible model-panel and A3 experiment | IN_PROGRESS | 0/6 |
+| P1 | Reproducible model-panel and A3 experiment | IN_PROGRESS | 3/6 |
 | P2 | Constructive structural candidate acquisition | IN_PROGRESS | 2/7 |
 | P3 | Thai transfer and structural scope evaluation | IN_PROGRESS | 0/5 |
 | P4 | Integrated product usability and explainability | IN_PROGRESS | 0/5 |
@@ -41,4 +40,3 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 - **P0-T02** Install or update AFFiNE from the verified repository path: Owner must complete first-run admin setup at http://127.0.0.1:3010 (agent does not create accounts or enter passwords)
 - **P0-T03** Create live tracking copies and mirror phases into AFFiNE: No supported automated write path to AFFiNE (web sync broken, MCP read-only); repo PHASE_BOARD.md is tracker of record
 - **P0-T04** Prepare prospective A3r1 protocol and no-call provider plan: E1R approval; Typhoon key/quota (TYPHOON_API_KEY) or declare deferred
-- **P1-T01** Resolve paid execution prerequisites and exact scope: Waiting for owner to set OPENROUTER_API_KEY (+top-up) and TYPHOON_API_KEY in user environment; E1R approved (D11)
