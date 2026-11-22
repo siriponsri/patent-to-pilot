@@ -34,9 +34,14 @@ Do these in order, without asking about routine choices:
    skills (sources in docs/writing/is2/paper/), and update SLIDES-OUTLINE.md and DEMO-STORYBOARD.md.
 4. D8: install pypdf into .venv, enable the G02 PDF ingestion adapter with tests (python -m pytest; only the 8 known
    SACR failures are accepted).
-5. D7: prepare OpenRouter profiles in the Workbench (openai_compatible adapter, key by env-var name OPENROUTER_API_KEY).
-   Shortlist 3–5 research-relevant models with live availability and price. Before ANY paid request, ask the owner for
-   the USD cap and request cap (not yet set). RunPod (via MCP) likewise needs a per-job USD cap.
+5. D7 / API: read docs/maintenance/API-BUDGET-PROPOSAL-20261122.md. Envelope E1 = USD 8 / 35,000 requests for
+   G03 amendment 3 (LLM query expansion as new acquisition routes). Check OWNER-DECISIONS-20261122.md for the owner's
+   approval; if not recorded, ask once in Thai. If approved: freeze G03-DEV-AMENDMENT-3 (pilot on 2,000 P1-DEV
+   queries x 4 models, then one full run with the P1-DEV-selected model, same harness, same B = 4, same final scorer,
+   same decision rule), add OpenRouter profiles in the Workbench (openai_compatible adapter, endpoint
+   https://openrouter.ai/api/v1, key from env var OPENROUTER_API_KEY set by the owner), reasoning off, max_tokens
+   <= 400, temperature 0, save every response, log usage, and obey the stop rules in the proposal. Check get-credits
+   before and after. RunPod (via MCP) needs its own per-job USD cap.
 Finish each step with a commit, a push and a HANDOFF update. At the end, write a new next-account handoff file.
 ```
 
@@ -72,7 +77,8 @@ Finish each step with a commit, a push and a HANDOFF update. At the end, write a
 
 ## 4. Still open with the owner
 
-- The USD cap and request cap for OpenRouter (D7), and per-job caps for RunPod (D8).
+- **Approval of OpenRouter envelope E1** (USD 8 / 35,000 requests; balance ≈ USD 8.37; proposal in
+  `API-BUDGET-PROPOSAL-20261122.md`). Per-job caps for RunPod (D8).
 - The Paper 53 DOI.
 - The G01 launcher check by Explorer double-click.
 
