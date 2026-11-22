@@ -8,8 +8,10 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 **Program:** PTP-2026-11-21, goals G01–G08 (owner package `docs/owner/owner-note-21112026/`, owner-local, untracked).
 
-**Last verified pushed base before this update:** `6742ce7b`. The G02 commit that rewrote this file follows it; check
-`git log -3`. Lessons for a new agent account: [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
+**ACCOUNT SWITCH CHECKPOINT, 22 Nov ~16:30:** start from
+[docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md). It has a
+paste-ready prompt, the state and the open owner items. Lessons for a new account:
+[docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md). Verify with `git log -5`.
 
 ### Goal status
 
@@ -17,7 +19,7 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 |---|---|---|
 | G01 Shared core and local vertical slice | **COMPLETE** | [G01/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md): 16 tests, smoke 15/15, browser QA at 1280/360 px, restart persistence. Owner still to observe: Explorer double-click and default-browser auto-open. |
 | G02 Provider, ingestion and dataset contracts | **COMPLETE** (22 Nov, USD 0) | [G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md): provider ports with Ollama / OpenAI-compatible / Anthropic adapters and policy; index generations; hybrid mode; text/MD ingestion into owner projects; dataset registry and adapters. Real route: Qwen3-Embedding-0.6B on dr-train CPU through an SSH tunnel ([receipt](artifacts/owner-program/PTP-2026-11-21/G02/REAL_EMBEDDING_ROUTE.json)). Not real-tested: paid API (no envelope), Ollama (not installed), reranker. PDF parked (needs a package approval). |
-| G03 Baselines and candidate policy on allowed DEV | **IN PROGRESS 22 Nov** | Protocol v1 decided: support_frontier_v0 **PARKED** (VAL SF\* − F\* ALL R@200 −0.020 [−0.025, −0.014]); F\* = Qwen3×2 + PatEmbed×2 ([memo](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md)). Amendment 1 (field obligations, M1) is frozen and **running** in `/data/ptp-paper2/g03-dev` (`a1.log` ends `G03_A1_DONE`, then `results-a1.json`): V100 encoding under the GPU lock, then CPU. Amendment 2 (learned selector on TRAIN labels) is frozen and **queued** behind it (`a2.log` ends `G03_A2_DONE`, then `results-a2.json`). The V100 is shared with another user's service (thaivoice, 24 GB); do not touch it. | Uses the G02 ports. DAPFAM is not a tuning set in this program. Carry over the AM-7 lessons: always report IN and OUT, keep N4 IPC-demotion as a counterexample, treat co-citation as one action. |
+| G03 Baselines and candidate policy on allowed DEV | **IN PROGRESS 22 Nov** | Protocol v1 decided: support_frontier_v0 **PARKED** (VAL SF\* − F\* ALL R@200 −0.020 [−0.025, −0.014]); F\* = Qwen3×2 + PatEmbed×2 ([memo](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md)). Amendment 1 (field obligations): **PARKED** (P1-DEV +0.0018; VAL −0.0054 [−0.0107, 0.000]; memo §4a). Amendment 2 (learned selector on TRAIN labels) is frozen at 8e759b8e and was **RUNNING** detached at the account switch (`/data/ptp-paper2/g03-dev/a2.log` ends `G03_A2_DONE`; the decision is in `results-a2.json`). Next: memo §4b, the G03 closing summary, then pull/prune `g03-dev`. The V100 is shared with another user's service (thaivoice, 24 GB); do not touch it. | Uses the G02 ports. DAPFAM is not a tuning set in this program. Carry over the AM-7 lessons: always report IN and OUT, keep N4 IPC-demotion as a counterexample, treat co-citation as one action. |
 | G04 Matched patent benchmark (DAPFAM) | Not started | DAPFAM is previously exposed (B53 evaluated all 1,247 queries); report it as such. |
 | G05 Transfer and evidence maintenance | Not started | Thai Gazette public benchmark; NitiBench+ optional. |
 | G06 English-first product beta | Not started | Can run alongside G04/G05. |
@@ -52,14 +54,15 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
     - deliverables;
     - committee response;
     - Workbench demo storyboard.
-  - Still pending: the advisor's Thai name/position and the DOI of Paper 53.
-- **IS2 drafts:** [docs/writing/is2/](docs/writing/is2/) (short paper v0.1, committee response, slides outline). Advisor
-  details and Stage 2 numbers are pending.
+- **IS2 papers (22 Nov):** Thai and English editions, 8 pages each, 3 figures, in
+  [docs/writing/is2/paper/](docs/writing/is2/paper/) (`IS2-paper-th/en.docx/.pdf`). Advisor: ผศ.ดร. ทัศนัย พลอยสุวรรณ.
+  - Open: the Paper 53 DOI, the English byline title, and the acknowledgments line.
+  - **Owner decision 22 Nov:** the IS2 core becomes the current research program (G03, B53.0, Evidence Engine), with B53
+    as the bridge. Re-scope the papers and slides next (handoff file §1, task 2).
 
 ### Running jobs
 
-- G03 stage 2 on dr-train CPU (above). The parallel session `is2-papers` is building the Thai and English IS2 papers in
-  `docs/writing/is2/paper/`; it commits nothing, and this session commits its files.
+- G03 amendment 2 on dr-train (detached; see the goal table). Nothing else of this project runs.
 - B53.0 measured 22 Nov ([B53-0-RESULTS.md](docs/healthtech/research/b53-0/B53-0-RESULTS.md)): TAC→TAC consistent with
   the DAPFAM paper in 11 of 12 cells. Caution: F0 patembed-base may overlap DAPFAM through PatenTEB.
 - The B53 evaluation finished, and the G02 embedding shim and its folder were removed from dr-train after QA, and its logs
@@ -73,10 +76,10 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ### Next steps
 
-1. Owner and advisor review the IS2 short paper v0.2 (`docs/writing/is2/IS2-short-paper-draft.docx`).
-2. G03 from `02_GOALS_AND_PHASES.md` §G03 and `research/METHOD_SPEC.md` / `POLICY_V0.md`, using the G02 ports.
-3. Ask the owner to observe the G01 launcher checks (double-click, browser auto-open).
-4. After each phase, pull dr-train artifacts to local and delete remote copies that are no longer needed.
+1. Collect G03 amendment 2, write memo §4b and the G03 closing summary, then pull/prune `g03-dev`.
+2. Re-scope IS2 (core = current research). Propose the outline to the owner in Thai, then rebuild the TH/EN papers.
+3. G04 planning (DAPFAM native, E04/E05 with the N4 counterexample; PatEmbed overlap caution).
+4. Owner items: see "Owner decisions pending".
 
 ### Owner decisions pending
 
@@ -84,4 +87,7 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 - Optional per-item approvals: Ollama (local chat models) and `pypdf` (PDF ingestion).
 - Large derived files on dr-train: the owner chose on 21 Nov to keep them for now.
 - Whether to delete the read-only `b53/inputs/` on dr-train (341 MB; an identical local copy exists).
+- IS2: the English byline title for the advisor, the acknowledgments line, the Paper 53 DOI, and the re-scoped outline.
+- Approval to download the gated PatenTEB train split (PatEmbed–DAPFAM overlap audit).
+- G01 launcher observation (Explorer double-click, browser auto-open).
 - Two git stashes from 30 Oct 2026 (`ba92cf3a`, `5e95e5c2`) were kept; drop them only on request.

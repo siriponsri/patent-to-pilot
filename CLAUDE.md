@@ -31,8 +31,13 @@ untracked: never edit, move, delete or commit anything under `docs/owner/`.**
   Only owner-observed item left: Explorer double-click of `Start-PTP.cmd` and default-browser auto-open.
 - **G02 provider, ingestion and dataset contracts: COMPLETE** (22 Nov 2026, USD 0). Status and receipts:
   [artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md).
-- **Next goal: G03** (baselines and candidate policy on allowed DEV). Lessons for a new account:
-  [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
+- **G03 in progress** (baselines and candidate policy on allowed DEV): protocol v1 and amendment 1 are PARKED; amendment 2
+  (learned selector) was running at the 22 Nov account switch. Memo:
+  [docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md).
+- **New account? Start at** [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122.md)
+  and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
+- **IS2 scope (owner, 22 Nov):** the core becomes the current research program; B53 is the bridge. TH/EN papers are in
+  `docs/writing/is2/paper/`.
 - **Research P1 / AM-7: parked.** Stage 2a results (DEV/VAL, descriptive) are in
   [docs/healthtech/research/paper1-bridgeret/am7/stage2a/](docs/healthtech/research/paper1-bridgeret/am7/stage2a/).
   The owner gate in AM-7 §6.4 failed, so no paid step runs without the owner.
