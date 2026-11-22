@@ -21,6 +21,17 @@ The owner switches Claude accounts when usage runs out. Read [CLAUDE.md](../../C
 - **P1-BridgeRet fine-tuning** lost to the zero-shot Qwen3/PatEmbed baselines on all 5 configs (USD 18.54 RunPod).
 - **DAPFAM acquisition ideas** already tested NO_GO: see `docs/healthtech/research/paper2-precheck/README.md`.
 - **DAPFAM is previously exposed:** B53 evaluated all 1,247 queries. It is not a tuning set and not a pristine TEST.
+- **B53 Stage 2 (22 Nov):** 0 of 10 instruction contrasts are significant under every first stage, and Scrambled ≈ Generic.
+  Instruction wording is not where the gain is.
+- **B53.0 (22 Nov):** our DAPFAM TAC→TAC pipeline matches the DAPFAM paper's published BM25 and Arctic numbers within
+  ±0.010 in 11 of 12 cells. Our evaluator is therefore trustworthy for G04.
+- **But patembed-base scores above everything in the DAPFAM paper** (nDCG@100 ALL 0.366). It was trained on PatenTEB,
+  which has the same source and authors as DAPFAM, so possible overlap. Do not present PatEmbed as a fair zero-shot
+  DAPFAM baseline until a family-level overlap audit is done. That audit needs the gated PatenTEB train split, which
+  requires owner approval to download.
+- **G03 DEV harness:** `scripts/research/g03_*.py` reuses the precomputed P1-DEV/VAL route runs (BM25, Qwen3, PatEmbed,
+  Arctic; depth 1,000) and the unchanged `eval_bridgeret_dev.py`. CPU only, about 30 minutes for a full arm grid. Its E01
+  gate reproduced every single-route number exactly.
 
 ## Environment facts
 
