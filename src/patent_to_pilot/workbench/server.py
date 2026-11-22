@@ -48,6 +48,8 @@ ROUTES = [
     ("GET", rf"/api/projects/{_SEG}/retrieval", "retrieval"),
     ("POST", rf"/api/projects/{_SEG}/retrieval", "set_retrieval"),
     ("POST", rf"/api/projects/{_SEG}/index", "build_index"),
+    # P0-T06: read-only synthetic workflow example (runs in a temporary store; the owner's store is not touched)
+    ("GET", r"/api/synthetic/trace-slice", "trace_slice"),
 ]
 UPLOAD_LIMIT = 3_000_000  # base64 of the 2 MB ingestion limit, plus JSON overhead
 BODY_LIMIT = 65536
@@ -167,6 +169,11 @@ class App:
     def build_index(self, body, pid):
         with self.lock:
             return _provider_call(self.core.build_index, pid, (body or {}).get("profile_id"), "http")
+
+    # ---------------- P0-T06
+    def trace_slice(self, _body):
+        from patent_to_pilot.workbench.trace_slice import run_synthetic_slice
+        return run_synthetic_slice()   # fresh temporary store per request; synthetic packet only
 
 
 def make_handler(app: App):

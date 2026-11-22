@@ -1,0 +1,1998 @@
+{
+ "bundle_schema": "ptp-p0-t06-trace-bundle/1",
+ "synthetic": true,
+ "label": "SYNTHETIC WORKFLOW EXAMPLE: authored fixture, not a real document and not an evaluation",
+ "task": "P0-T06",
+ "claim_boundary": "Engineering plumbing only. The packet, its layout and the synonym table are authored; the searches, pools, bindings and revision re-check are executed. No retrieval-effectiveness claim follows.",
+ "note": "Each element of 'events' is one evidence-trace event that validates against the event schema; this wrapper itself is not an evidence-trace event.",
+ "event_schema": {
+  "path": "src/patent_to_pilot/workbench/schemas/evidence_trace.schema.json",
+  "sha256": "4ec5e368a141f796611fd1e1dccef08e0e48cf11ed1d591529985a57569d40a3",
+  "copied_from": "owner note 22112026 spec/evidence_trace.schema.json"
+ },
+ "fixture": {
+  "path": "src/patent_to_pilot/workbench/fixtures/p0_t06_synthetic",
+  "manifest_sha256": "11ec3c3fcd26a5ed0d0830ba04feac3cc99b6cdf14aaa8a664c6cc28b45b15b4",
+  "packet_id": "SYN-P0T06"
+ },
+ "requirement": {
+  "project_id": "synthetic-p0-t06-trace-slice",
+  "requirement_id": "syn-req-1",
+  "query_id": "syn-question-1",
+  "query_text": "What maximum operating temperature applies to enclosure units installed at seaside sites?",
+  "start_char": 5,
+  "end_char": 88,
+  "text": "maximum operating temperature applies to enclosure units installed at seaside sites",
+  "unit": "unicode_code_points_half_open"
+ },
+ "events": [
+  {
+   "schema_version": "ptp-evidence-trace/1",
+   "trace_id": "trace:run-20261122T112504-4ff56fba:1",
+   "run_id": "run-20261122T112504-4ff56fba",
+   "mode": "synthetic_demo",
+   "event_time": "2026-11-22T11:25:04.941Z",
+   "original_query": {
+    "query_id": "syn-question-1",
+    "text": "What maximum operating temperature applies to enclosure units installed at seaside sites?"
+   },
+   "action": {
+    "action_id": "seed-1",
+    "kind": "seed_search",
+    "query_text": "\"maximum\" OR \"operating\" OR \"temperature\" OR \"enclosure\" OR \"units\" OR \"installed\" OR \"seaside\" OR \"sites\"",
+    "query_artifact_ids": [],
+    "selected_assessment_id": null,
+    "route_id": "sqlite-fts5-bm25-current-scope",
+    "result_limit": 5,
+    "eligibility_profile_id": "synthetic-packet-current-versions-only"
+   },
+   "index": {
+    "index_id": "fts5:synthetic-p0-t06-trace-slice:synthetic-corpus-2ee78d138127ec48",
+    "manifest_sha256": "ce9e329aec65909c63d3b96604fd7b5532408547036734feab711bb2dc1c8a77",
+    "corpus_revision": "synthetic-corpus-2ee78d138127ec48",
+    "encoder": null,
+    "lexical_config": {
+     "algorithm": "BM25 via SQLite FTS5 bm25() (built-in k1=1.2, b=0.75)",
+     "tokenizer_id": "fts5-unicode61",
+     "version": "sqlite-3.49.1",
+     "k1": 1.2,
+     "b": 0.75
+    },
+    "normalization_id": "fts5-unicode61-default-casefold",
+    "chunker_id": "authored-line-nodes-v1"
+   },
+   "sources": [
+    {
+     "source_id": "syn-letter",
+     "version_id": "syn-letter@v1",
+     "original_artifact": {
+      "media_type": "application/pdf",
+      "storage_ref": "sqlite:original_artifacts/synthetic-p0-t06-trace-slice/syn-letter@v1",
+      "sha256": "f5349af519093476fbad36a74833ee979992b88a0d94e34a880f6842685380c9",
+      "content_base64": "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFs1IDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nID4+CmVuZG9iago0IDAgb2JqCjw8IC9UaXRsZSAoU1lOVEhFVElDIEZJWFRVUkUgU1lOVEhFVElDIExldHRlciBFUE8tMDAxIFwoZmljdGlvbmFsXCkpIC9Qcm9kdWNlciAocGF0ZW50X3RvX3BpbG90LndvcmtiZW5jaC50cmFjZV9zbGljZSBhdXRob3JpbmcgdjEpID4+CmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9QYWdlIC9QYXJlbnQgMiAwIFIgL01lZGlhQm94IFswIDAgNjEyIDc5Ml0gL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgMyAwIFIgPj4gPj4gL0NvbnRlbnRzIDYgMCBSID4+CmVuZG9iago2IDAgb2JqCjw8IC9MZW5ndGggNTkxID4+CnN0cmVhbQpCVCAvRjEgMTEgVGYgNzIgNzA3LjAwIFRkIChTWU5USEVUSUMgRklYVFVSRSAtIE5PVCBBIFJFQUwgRE9DVU1FTlQgLSBQMC1UMDYgd29ya2Zsb3cgZXhhbXBsZSkgVGogRVQKQlQgL0YxIDExIFRmIDcyIDY4OS4wMCBUZCAoRXhhbXBsZSBQcm9jdXJlbWVudCBPZmZpY2UgXChmaWN0aW9uYWxcKSAtIExldHRlciBFUE8tMDAxKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjcxLjAwIFRkIChDbGF1c2UgNC4gRW5jbG9zdXJlIHVuaXRzIG11c3Qga2VlcCBhIG1heGltdW0gb3BlcmF0aW5nIHRlbXBlcmF0dXJlIGJlbG93IDUwIEMuWzFdKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjUzLjAwIFRkIChDbGF1c2UgNS4gRW5jbG9zdXJlIHVuaXRzIGluc3RhbGxlZCBhdCBzZWFzaWRlIHNpdGVzIGFyZSBnb3Zlcm5lZCBieSBBbm5leCBCLikgVGogRVQKQlQgL0YxIDExIFRmIDcyIDYzNS4wMCBUZCAoQ2xhdXNlIDYuIFBhY2thZ2luZyBmb2xsb3dzIEFubmV4IEEuKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNTkuMDAgVGQgKFsxXSBUaGUgQ2xhdXNlIDQgbGltaXQgaXMgbWVhc3VyZWQgYXQgdGhlIGFpciBpbnRha2Ugb2YgdGhlIHVuaXQuKSBUaiBFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA3CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAwMDY0IDAwMDAwIG4gCjAwMDAwMDAxMjEgMDAwMDAgbiAKMDAwMDAwMDIxOCAwMDAwMCBuIAowMDAwMDAwMzY4IDAwMDAwIG4gCjAwMDAwMDA0OTQgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA3IC9Sb290IDEgMCBSIC9JbmZvIDQgMCBSID4+CnN0YXJ0eHJlZgoxMTM1CiUlRU9GCg=="
+     },
+     "canonical_text": {
+      "storage_ref": "sqlite:source_versions/synthetic-p0-t06-trace-slice/syn-letter@v1",
+      "sha256": "16610d6158ccce51c340e59a536585aee7769d3db1a9da634f1710885ff7a191",
+      "normalization_id": "authored-lines-lf-formfeed-page-break-v1",
+      "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example\nExample Procurement Office (fictional) - Letter EPO-001\nClause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]\nClause 5. Enclosure units installed at seaside sites are governed by Annex B.\nClause 6. Packaging follows Annex A.\n[1] The Clause 4 limit is measured at the air intake of the unit.\n"
+     },
+     "pages": [
+      {
+       "number": 1,
+       "display_width_pt": 612.0,
+       "display_height_pt": 792.0,
+       "rotation_degrees": 0
+      }
+     ],
+     "parser_id": "authored-fixture-layout-v1",
+     "group_id": "SYN-P0T06"
+    }
+   ],
+   "nodes": [
+    {
+     "node_id": "syn-letter@v1#label",
+     "source_version_id": "syn-letter@v1",
+     "kind": "title",
+     "span": {
+      "start": 0,
+      "end": 65,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.090909,
+        0.882353,
+        0.113636
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#letterhead",
+     "source_version_id": "syn-letter@v1",
+     "kind": "heading",
+     "span": {
+      "start": 66,
+      "end": 121,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.113636,
+        0.882353,
+        0.136364
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-4",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 122,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.136364,
+        0.882353,
+        0.159091
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-5",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 205,
+      "end": 282,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.159091,
+        0.882353,
+        0.181818
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-6",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 283,
+      "end": 319,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.181818,
+        0.882353,
+        0.204545
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#footnote-1",
+     "source_version_id": "syn-letter@v1",
+     "kind": "footnote",
+     "span": {
+      "start": 320,
+      "end": 385,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.909091,
+        0.882353,
+        0.931818
+       ],
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "relations": [
+    {
+     "relation_id": "rel:qualifies:syn-letter@v1#footnote-1->syn-letter@v1#clause-4",
+     "kind": "qualifies",
+     "from_node_id": "syn-letter@v1#footnote-1",
+     "to_node_id": "syn-letter@v1#clause-4",
+     "scope_node_ids": [
+      "syn-letter@v1#clause-4"
+     ],
+     "provenance": {
+      "method": "explicit_source",
+      "evidence_ids": [
+       "ev:syn-letter@v1#footnote-1",
+       "ev:syn-letter@v1#clause-4[201:204]"
+      ]
+     }
+    }
+   ],
+   "evidence": [
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-5",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-5",
+     "span": {
+      "start": 205,
+      "end": 282,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Clause 5. Enclosure units installed at seaside sites are governed by Annex B."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-4",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-4",
+     "span": {
+      "start": 122,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Clause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]"
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#footnote-1",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#footnote-1",
+     "span": {
+      "start": 320,
+      "end": 385,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "[1] The Clause 4 limit is measured at the air intake of the unit."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-4[201:204]",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-4",
+     "span": {
+      "start": 201,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "[1]"
+    }
+   ],
+   "hypotheses": [],
+   "candidate_delta": {
+    "identity_unit": "node",
+    "before_ids": [],
+    "returned_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4"
+    ],
+    "after_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4"
+    ],
+    "new_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4"
+    ]
+   },
+   "runtime_assessments": [
+    {
+     "assessment_id": "asm-001",
+     "requirement_span": {
+      "start": 5,
+      "end": 88,
+      "unit": "unicode_code_points_half_open"
+     },
+     "status": "unresolved",
+     "evidence_ids": [
+      "ev:syn-letter@v1#clause-5",
+      "ev:syn-letter@v1#clause-4",
+      "ev:syn-letter@v1#footnote-1"
+     ],
+     "assessor_id": "deterministic-reference-coverage-v1 (synthetic slice; structural signal, not a semantic judgement)",
+     "basis": "runtime_not_gold",
+     "timing": "after_action"
+    }
+   ],
+   "cost": {
+    "currency": "USD",
+    "estimate_usd": 0,
+    "provider_reported_usd": null,
+    "invoiced_usd": null,
+    "invoice_id": null,
+    "state": "not_applicable"
+   }
+  },
+  {
+   "schema_version": "ptp-evidence-trace/1",
+   "trace_id": "trace:run-20261122T112504-4ff56fba:2",
+   "run_id": "run-20261122T112504-4ff56fba",
+   "mode": "synthetic_demo",
+   "event_time": "2026-11-22T11:25:05.222Z",
+   "original_query": {
+    "query_id": "syn-question-1",
+    "text": "What maximum operating temperature applies to enclosure units installed at seaside sites?"
+   },
+   "action": {
+    "action_id": "expansion-1",
+    "kind": "structural_expansion",
+    "query_text": "\"annex b\" OR \"installed\" OR \"seaside\" OR \"sites\" OR \"coastal\"",
+    "query_artifact_ids": [
+     "ev:syn-letter@v1#clause-5[274:281]",
+     "hyp:run-20261122T112504-4ff56fba:seaside->coastal"
+    ],
+    "selected_assessment_id": "asm-001",
+    "route_id": "sqlite-fts5-bm25-current-scope",
+    "result_limit": 5,
+    "eligibility_profile_id": "synthetic-packet-current-versions-only"
+   },
+   "index": {
+    "index_id": "fts5:synthetic-p0-t06-trace-slice:synthetic-corpus-2ee78d138127ec48",
+    "manifest_sha256": "ce9e329aec65909c63d3b96604fd7b5532408547036734feab711bb2dc1c8a77",
+    "corpus_revision": "synthetic-corpus-2ee78d138127ec48",
+    "encoder": null,
+    "lexical_config": {
+     "algorithm": "BM25 via SQLite FTS5 bm25() (built-in k1=1.2, b=0.75)",
+     "tokenizer_id": "fts5-unicode61",
+     "version": "sqlite-3.49.1",
+     "k1": 1.2,
+     "b": 0.75
+    },
+    "normalization_id": "fts5-unicode61-default-casefold",
+    "chunker_id": "authored-line-nodes-v1"
+   },
+   "sources": [
+    {
+     "source_id": "syn-annex-a",
+     "version_id": "syn-annex-a@v1",
+     "original_artifact": {
+      "media_type": "application/pdf",
+      "storage_ref": "sqlite:original_artifacts/synthetic-p0-t06-trace-slice/syn-annex-a@v1",
+      "sha256": "19a3288d0e8a6b7f052f8b57e205522e0669560af3a7272e6070fcfb4938e698",
+      "content_base64": "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFs1IDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nID4+CmVuZG9iago0IDAgb2JqCjw8IC9UaXRsZSAoU1lOVEhFVElDIEZJWFRVUkUgU1lOVEhFVElDIEFubmV4IEEgdG8gTGV0dGVyIEVQTy0wMDEgXChmaWN0aW9uYWxcKSkgL1Byb2R1Y2VyIChwYXRlbnRfdG9fcGlsb3Qud29ya2JlbmNoLnRyYWNlX3NsaWNlIGF1dGhvcmluZyB2MSkgPj4KZW5kb2JqCjUgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIgNzkyXSAvUmVzb3VyY2VzIDw8IC9Gb250IDw8IC9GMSAzIDAgUiA+PiA+PiAvQ29udGVudHMgNiAwIFIgPj4KZW5kb2JqCjYgMCBvYmoKPDwgL0xlbmd0aCAyNTEgPj4Kc3RyZWFtCkJUIC9GMSAxMSBUZiA3MiA3MDcuMDAgVGQgKFNZTlRIRVRJQyBGSVhUVVJFIC0gTk9UIEEgUkVBTCBET0NVTUVOVCAtIFAwLVQwNiB3b3JrZmxvdyBleGFtcGxlKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjg5LjAwIFRkIChBbm5leCBBLiBQYWNrYWdpbmcpIFRqIEVUCkJUIC9GMSAxMSBUZiA3MiA2NzEuMDAgVGQgKENyYXRlcyBmb3IgY29hc3RhbCBzaGlwbWVudHMgaW5jbHVkZSBhIG1vaXN0dXJlIGluZGljYXRvciBjYXJkLikgVGogRVQKZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTUgMDAwMDAgbiAKMDAwMDAwMDA2NCAwMDAwMCBuIAowMDAwMDAwMTIxIDAwMDAwIG4gCjAwMDAwMDAyMTggMDAwMDAgbiAKMDAwMDAwMDM3OSAwMDAwMCBuIAowMDAwMDAwNTA1IDAwMDAwIG4gCnRyYWlsZXIKPDwgL1NpemUgNyAvUm9vdCAxIDAgUiAvSW5mbyA0IDAgUiA+PgpzdGFydHhyZWYKODA2CiUlRU9GCg=="
+     },
+     "canonical_text": {
+      "storage_ref": "sqlite:source_versions/synthetic-p0-t06-trace-slice/syn-annex-a@v1",
+      "sha256": "4c6d9c801cc1fe6713035eff445e1a1eb66ad1834d709b39adef0c39f3304d04",
+      "normalization_id": "authored-lines-lf-formfeed-page-break-v1",
+      "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example\nAnnex A. Packaging\nCrates for coastal shipments include a moisture indicator card.\n"
+     },
+     "pages": [
+      {
+       "number": 1,
+       "display_width_pt": 612.0,
+       "display_height_pt": 792.0,
+       "rotation_degrees": 0
+      }
+     ],
+     "parser_id": "authored-fixture-layout-v1",
+     "group_id": "SYN-P0T06"
+    },
+    {
+     "source_id": "syn-annex-b",
+     "version_id": "syn-annex-b@v1",
+     "original_artifact": {
+      "media_type": "application/pdf",
+      "storage_ref": "sqlite:original_artifacts/synthetic-p0-t06-trace-slice/syn-annex-b@v1",
+      "sha256": "cc1aa3872ee337df595ea3560efc05160146dbdd6393e0b446ab82022d3ced3f",
+      "content_base64": "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFs1IDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nID4+CmVuZG9iago0IDAgb2JqCjw8IC9UaXRsZSAoU1lOVEhFVElDIEZJWFRVUkUgU1lOVEhFVElDIEFubmV4IEIgdG8gTGV0dGVyIEVQTy0wMDEgXChmaWN0aW9uYWxcKSkgL1Byb2R1Y2VyIChwYXRlbnRfdG9fcGlsb3Qud29ya2JlbmNoLnRyYWNlX3NsaWNlIGF1dGhvcmluZyB2MSkgPj4KZW5kb2JqCjUgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIgNzkyXSAvUmVzb3VyY2VzIDw8IC9Gb250IDw8IC9GMSAzIDAgUiA+PiA+PiAvQ29udGVudHMgNiAwIFIgPj4KZW5kb2JqCjYgMCBvYmoKPDwgL0xlbmd0aCAyNjUgPj4Kc3RyZWFtCkJUIC9GMSAxMSBUZiA3MiA3MDcuMDAgVGQgKFNZTlRIRVRJQyBGSVhUVVJFIC0gTk9UIEEgUkVBTCBET0NVTUVOVCAtIFAwLVQwNiB3b3JrZmxvdyBleGFtcGxlKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjg5LjAwIFRkIChBbm5leCBCLiBDb2FzdGFsIGV4Y2VwdGlvbikgVGogRVQKQlQgL0YxIDExIFRmIDcyIDY3MS4wMCBUZCAoQ29hc3RhbCBlbmNsb3N1cmVzIGZpdHRlZCB3aXRoIGEgc2FsdC1taXN0IGZpbHRlciBtYXkgcnVuIHVwIHRvIDYwIEMuKSBUaiBFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA3CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAwMDY0IDAwMDAwIG4gCjAwMDAwMDAxMjEgMDAwMDAgbiAKMDAwMDAwMDIxOCAwMDAwMCBuIAowMDAwMDAwMzc5IDAwMDAwIG4gCjAwMDAwMDA1MDUgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA3IC9Sb290IDEgMCBSIC9JbmZvIDQgMCBSID4+CnN0YXJ0eHJlZgo4MjAKJSVFT0YK"
+     },
+     "canonical_text": {
+      "storage_ref": "sqlite:source_versions/synthetic-p0-t06-trace-slice/syn-annex-b@v1",
+      "sha256": "0ae10a045eab0a06775e073b64351dd8c34302c43eb54c9beb742824b6683d7d",
+      "normalization_id": "authored-lines-lf-formfeed-page-break-v1",
+      "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example\nAnnex B. Coastal exception\nCoastal enclosures fitted with a salt-mist filter may run up to 60 C.\n"
+     },
+     "pages": [
+      {
+       "number": 1,
+       "display_width_pt": 612.0,
+       "display_height_pt": 792.0,
+       "rotation_degrees": 0
+      }
+     ],
+     "parser_id": "authored-fixture-layout-v1",
+     "group_id": "SYN-P0T06"
+    },
+    {
+     "source_id": "syn-letter",
+     "version_id": "syn-letter@v1",
+     "original_artifact": {
+      "media_type": "application/pdf",
+      "storage_ref": "sqlite:original_artifacts/synthetic-p0-t06-trace-slice/syn-letter@v1",
+      "sha256": "f5349af519093476fbad36a74833ee979992b88a0d94e34a880f6842685380c9",
+      "content_base64": "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFs1IDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nID4+CmVuZG9iago0IDAgb2JqCjw8IC9UaXRsZSAoU1lOVEhFVElDIEZJWFRVUkUgU1lOVEhFVElDIExldHRlciBFUE8tMDAxIFwoZmljdGlvbmFsXCkpIC9Qcm9kdWNlciAocGF0ZW50X3RvX3BpbG90LndvcmtiZW5jaC50cmFjZV9zbGljZSBhdXRob3JpbmcgdjEpID4+CmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9QYWdlIC9QYXJlbnQgMiAwIFIgL01lZGlhQm94IFswIDAgNjEyIDc5Ml0gL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgMyAwIFIgPj4gPj4gL0NvbnRlbnRzIDYgMCBSID4+CmVuZG9iago2IDAgb2JqCjw8IC9MZW5ndGggNTkxID4+CnN0cmVhbQpCVCAvRjEgMTEgVGYgNzIgNzA3LjAwIFRkIChTWU5USEVUSUMgRklYVFVSRSAtIE5PVCBBIFJFQUwgRE9DVU1FTlQgLSBQMC1UMDYgd29ya2Zsb3cgZXhhbXBsZSkgVGogRVQKQlQgL0YxIDExIFRmIDcyIDY4OS4wMCBUZCAoRXhhbXBsZSBQcm9jdXJlbWVudCBPZmZpY2UgXChmaWN0aW9uYWxcKSAtIExldHRlciBFUE8tMDAxKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjcxLjAwIFRkIChDbGF1c2UgNC4gRW5jbG9zdXJlIHVuaXRzIG11c3Qga2VlcCBhIG1heGltdW0gb3BlcmF0aW5nIHRlbXBlcmF0dXJlIGJlbG93IDUwIEMuWzFdKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjUzLjAwIFRkIChDbGF1c2UgNS4gRW5jbG9zdXJlIHVuaXRzIGluc3RhbGxlZCBhdCBzZWFzaWRlIHNpdGVzIGFyZSBnb3Zlcm5lZCBieSBBbm5leCBCLikgVGogRVQKQlQgL0YxIDExIFRmIDcyIDYzNS4wMCBUZCAoQ2xhdXNlIDYuIFBhY2thZ2luZyBmb2xsb3dzIEFubmV4IEEuKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNTkuMDAgVGQgKFsxXSBUaGUgQ2xhdXNlIDQgbGltaXQgaXMgbWVhc3VyZWQgYXQgdGhlIGFpciBpbnRha2Ugb2YgdGhlIHVuaXQuKSBUaiBFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA3CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAwMDY0IDAwMDAwIG4gCjAwMDAwMDAxMjEgMDAwMDAgbiAKMDAwMDAwMDIxOCAwMDAwMCBuIAowMDAwMDAwMzY4IDAwMDAwIG4gCjAwMDAwMDA0OTQgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA3IC9Sb290IDEgMCBSIC9JbmZvIDQgMCBSID4+CnN0YXJ0eHJlZgoxMTM1CiUlRU9GCg=="
+     },
+     "canonical_text": {
+      "storage_ref": "sqlite:source_versions/synthetic-p0-t06-trace-slice/syn-letter@v1",
+      "sha256": "16610d6158ccce51c340e59a536585aee7769d3db1a9da634f1710885ff7a191",
+      "normalization_id": "authored-lines-lf-formfeed-page-break-v1",
+      "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example\nExample Procurement Office (fictional) - Letter EPO-001\nClause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]\nClause 5. Enclosure units installed at seaside sites are governed by Annex B.\nClause 6. Packaging follows Annex A.\n[1] The Clause 4 limit is measured at the air intake of the unit.\n"
+     },
+     "pages": [
+      {
+       "number": 1,
+       "display_width_pt": 612.0,
+       "display_height_pt": 792.0,
+       "rotation_degrees": 0
+      }
+     ],
+     "parser_id": "authored-fixture-layout-v1",
+     "group_id": "SYN-P0T06"
+    }
+   ],
+   "nodes": [
+    {
+     "node_id": "syn-annex-a@v1#label",
+     "source_version_id": "syn-annex-a@v1",
+     "kind": "title",
+     "span": {
+      "start": 0,
+      "end": 65,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.090909,
+        0.882353,
+        0.113636
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-annex-a@v1#annex-heading",
+     "source_version_id": "syn-annex-a@v1",
+     "kind": "annex",
+     "span": {
+      "start": 66,
+      "end": 84,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.113636,
+        0.882353,
+        0.136364
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-annex-a@v1#annex-a-1",
+     "source_version_id": "syn-annex-a@v1",
+     "kind": "paragraph",
+     "span": {
+      "start": 85,
+      "end": 148,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.136364,
+        0.882353,
+        0.159091
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-annex-b@v1#label",
+     "source_version_id": "syn-annex-b@v1",
+     "kind": "title",
+     "span": {
+      "start": 0,
+      "end": 65,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.090909,
+        0.882353,
+        0.113636
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-annex-b@v1#annex-heading",
+     "source_version_id": "syn-annex-b@v1",
+     "kind": "annex",
+     "span": {
+      "start": 66,
+      "end": 92,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.113636,
+        0.882353,
+        0.136364
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-annex-b@v1#annex-b-1",
+     "source_version_id": "syn-annex-b@v1",
+     "kind": "clause",
+     "span": {
+      "start": 93,
+      "end": 162,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.136364,
+        0.882353,
+        0.159091
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#label",
+     "source_version_id": "syn-letter@v1",
+     "kind": "title",
+     "span": {
+      "start": 0,
+      "end": 65,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.090909,
+        0.882353,
+        0.113636
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#letterhead",
+     "source_version_id": "syn-letter@v1",
+     "kind": "heading",
+     "span": {
+      "start": 66,
+      "end": 121,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.113636,
+        0.882353,
+        0.136364
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-4",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 122,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.136364,
+        0.882353,
+        0.159091
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-5",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 205,
+      "end": 282,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.159091,
+        0.882353,
+        0.181818
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-6",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 283,
+      "end": 319,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.181818,
+        0.882353,
+        0.204545
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#footnote-1",
+     "source_version_id": "syn-letter@v1",
+     "kind": "footnote",
+     "span": {
+      "start": 320,
+      "end": 385,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.909091,
+        0.882353,
+        0.931818
+       ],
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "relations": [
+    {
+     "relation_id": "rel:parent_of:syn-annex-b@v1#annex-heading->syn-annex-b@v1#annex-b-1",
+     "kind": "parent_of",
+     "from_node_id": "syn-annex-b@v1#annex-heading",
+     "to_node_id": "syn-annex-b@v1#annex-b-1",
+     "scope_node_ids": [
+      "syn-annex-b@v1#annex-b-1"
+     ],
+     "provenance": {
+      "method": "parser_inferred",
+      "evidence_ids": [
+       "ev:syn-annex-b@v1#annex-heading",
+       "ev:syn-annex-b@v1#annex-b-1"
+      ],
+      "confidence": 1.0
+     }
+    },
+    {
+     "relation_id": "rel:incorporates:syn-letter@v1#clause-5->syn-annex-b@v1#annex-heading",
+     "kind": "incorporates",
+     "from_node_id": "syn-letter@v1#clause-5",
+     "to_node_id": "syn-annex-b@v1#annex-heading",
+     "scope_node_ids": [
+      "syn-annex-b@v1#annex-b-1"
+     ],
+     "provenance": {
+      "method": "explicit_source",
+      "evidence_ids": [
+       "ev:syn-letter@v1#clause-5[274:281]",
+       "ev:syn-annex-b@v1#annex-heading"
+      ]
+     }
+    },
+    {
+     "relation_id": "rel:qualifies:syn-letter@v1#footnote-1->syn-letter@v1#clause-4",
+     "kind": "qualifies",
+     "from_node_id": "syn-letter@v1#footnote-1",
+     "to_node_id": "syn-letter@v1#clause-4",
+     "scope_node_ids": [
+      "syn-letter@v1#clause-4"
+     ],
+     "provenance": {
+      "method": "explicit_source",
+      "evidence_ids": [
+       "ev:syn-letter@v1#footnote-1",
+       "ev:syn-letter@v1#clause-4[201:204]"
+      ]
+     }
+    }
+   ],
+   "evidence": [
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-5",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-5",
+     "span": {
+      "start": 205,
+      "end": 282,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Clause 5. Enclosure units installed at seaside sites are governed by Annex B."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-4",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-4",
+     "span": {
+      "start": 122,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Clause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]"
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#footnote-1",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#footnote-1",
+     "span": {
+      "start": 320,
+      "end": 385,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "[1] The Clause 4 limit is measured at the air intake of the unit."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-5[274:281]",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-5",
+     "span": {
+      "start": 274,
+      "end": 281,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Annex B"
+    },
+    {
+     "evidence_id": "ev:syn-annex-b@v1#annex-heading",
+     "kind": "source_evidence",
+     "node_id": "syn-annex-b@v1#annex-heading",
+     "span": {
+      "start": 66,
+      "end": 92,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Annex B. Coastal exception"
+    },
+    {
+     "evidence_id": "ev:syn-annex-b@v1#annex-b-1",
+     "kind": "source_evidence",
+     "node_id": "syn-annex-b@v1#annex-b-1",
+     "span": {
+      "start": 93,
+      "end": 162,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Coastal enclosures fitted with a salt-mist filter may run up to 60 C."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-4[201:204]",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-4",
+     "span": {
+      "start": 201,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "[1]"
+    }
+   ],
+   "hypotheses": [
+    {
+     "hypothesis_id": "hyp:run-20261122T112504-4ff56fba:seaside->coastal",
+     "kind": "generated_search_hypothesis",
+     "text": "coastal",
+     "generator_id": "authored-synonym-table-v1 (synthetic; deterministic; no model call)",
+     "generation_config_sha256": "b98f6adf28c2dc58723554d6d02f209b37f527f4076f520dd5603c9309b33b90",
+     "source_evidence_ids": [
+      "ev:syn-letter@v1#clause-5"
+     ]
+    }
+   ],
+   "candidate_delta": {
+    "identity_unit": "node",
+    "before_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4"
+    ],
+    "returned_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-annex-b@v1#annex-heading",
+     "syn-annex-a@v1#annex-a-1",
+     "syn-annex-b@v1#annex-b-1"
+    ],
+    "after_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4",
+     "syn-annex-b@v1#annex-heading",
+     "syn-annex-a@v1#annex-a-1",
+     "syn-annex-b@v1#annex-b-1"
+    ],
+    "new_ids": [
+     "syn-annex-b@v1#annex-heading",
+     "syn-annex-a@v1#annex-a-1",
+     "syn-annex-b@v1#annex-b-1"
+    ]
+   },
+   "runtime_assessments": [
+    {
+     "assessment_id": "asm-001",
+     "requirement_span": {
+      "start": 5,
+      "end": 88,
+      "unit": "unicode_code_points_half_open"
+     },
+     "status": "unresolved",
+     "evidence_ids": [
+      "ev:syn-letter@v1#clause-5",
+      "ev:syn-letter@v1#clause-4",
+      "ev:syn-letter@v1#footnote-1"
+     ],
+     "assessor_id": "deterministic-reference-coverage-v1 (synthetic slice; structural signal, not a semantic judgement)",
+     "basis": "runtime_not_gold",
+     "timing": "before_action"
+    },
+    {
+     "assessment_id": "asm-002",
+     "requirement_span": {
+      "start": 5,
+      "end": 88,
+      "unit": "unicode_code_points_half_open"
+     },
+     "status": "supported",
+     "evidence_ids": [
+      "ev:syn-letter@v1#clause-5",
+      "ev:syn-letter@v1#clause-5[274:281]",
+      "ev:syn-annex-b@v1#annex-heading",
+      "ev:syn-annex-b@v1#annex-b-1",
+      "ev:syn-letter@v1#clause-4",
+      "ev:syn-letter@v1#footnote-1"
+     ],
+     "assessor_id": "deterministic-reference-coverage-v1 (synthetic slice; structural signal, not a semantic judgement)",
+     "basis": "runtime_not_gold",
+     "timing": "after_action"
+    }
+   ],
+   "cost": {
+    "currency": "USD",
+    "estimate_usd": 0,
+    "provider_reported_usd": null,
+    "invoiced_usd": null,
+    "invoice_id": null,
+    "state": "not_applicable"
+   }
+  },
+  {
+   "schema_version": "ptp-evidence-trace/1",
+   "trace_id": "trace:run-20261122T112505-94382716:1",
+   "run_id": "run-20261122T112505-94382716",
+   "mode": "synthetic_demo",
+   "event_time": "2026-11-22T11:25:05.376Z",
+   "original_query": {
+    "query_id": "syn-question-1",
+    "text": "What maximum operating temperature applies to enclosure units installed at seaside sites?"
+   },
+   "action": {
+    "action_id": "replay-seed",
+    "kind": "replay_search",
+    "query_text": "\"maximum\" OR \"operating\" OR \"temperature\" OR \"enclosure\" OR \"units\" OR \"installed\" OR \"seaside\" OR \"sites\"",
+    "query_artifact_ids": [],
+    "selected_assessment_id": null,
+    "route_id": "sqlite-fts5-bm25-current-scope",
+    "result_limit": 5,
+    "eligibility_profile_id": "synthetic-packet-current-versions-only"
+   },
+   "index": {
+    "index_id": "fts5:synthetic-p0-t06-trace-slice:synthetic-corpus-2d6c31ba43d34f6f",
+    "manifest_sha256": "15dab5322ad0ee35c0ca836d8303222bf903a3aaa46e67bcf2848584eebc6867",
+    "corpus_revision": "synthetic-corpus-2d6c31ba43d34f6f",
+    "encoder": null,
+    "lexical_config": {
+     "algorithm": "BM25 via SQLite FTS5 bm25() (built-in k1=1.2, b=0.75)",
+     "tokenizer_id": "fts5-unicode61",
+     "version": "sqlite-3.49.1",
+     "k1": 1.2,
+     "b": 0.75
+    },
+    "normalization_id": "fts5-unicode61-default-casefold",
+    "chunker_id": "authored-line-nodes-v1"
+   },
+   "sources": [
+    {
+     "source_id": "syn-letter",
+     "version_id": "syn-letter@v1",
+     "original_artifact": {
+      "media_type": "application/pdf",
+      "storage_ref": "sqlite:original_artifacts/synthetic-p0-t06-trace-slice/syn-letter@v1",
+      "sha256": "f5349af519093476fbad36a74833ee979992b88a0d94e34a880f6842685380c9",
+      "content_base64": "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFs1IDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nID4+CmVuZG9iago0IDAgb2JqCjw8IC9UaXRsZSAoU1lOVEhFVElDIEZJWFRVUkUgU1lOVEhFVElDIExldHRlciBFUE8tMDAxIFwoZmljdGlvbmFsXCkpIC9Qcm9kdWNlciAocGF0ZW50X3RvX3BpbG90LndvcmtiZW5jaC50cmFjZV9zbGljZSBhdXRob3JpbmcgdjEpID4+CmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9QYWdlIC9QYXJlbnQgMiAwIFIgL01lZGlhQm94IFswIDAgNjEyIDc5Ml0gL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgMyAwIFIgPj4gPj4gL0NvbnRlbnRzIDYgMCBSID4+CmVuZG9iago2IDAgb2JqCjw8IC9MZW5ndGggNTkxID4+CnN0cmVhbQpCVCAvRjEgMTEgVGYgNzIgNzA3LjAwIFRkIChTWU5USEVUSUMgRklYVFVSRSAtIE5PVCBBIFJFQUwgRE9DVU1FTlQgLSBQMC1UMDYgd29ya2Zsb3cgZXhhbXBsZSkgVGogRVQKQlQgL0YxIDExIFRmIDcyIDY4OS4wMCBUZCAoRXhhbXBsZSBQcm9jdXJlbWVudCBPZmZpY2UgXChmaWN0aW9uYWxcKSAtIExldHRlciBFUE8tMDAxKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjcxLjAwIFRkIChDbGF1c2UgNC4gRW5jbG9zdXJlIHVuaXRzIG11c3Qga2VlcCBhIG1heGltdW0gb3BlcmF0aW5nIHRlbXBlcmF0dXJlIGJlbG93IDUwIEMuWzFdKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjUzLjAwIFRkIChDbGF1c2UgNS4gRW5jbG9zdXJlIHVuaXRzIGluc3RhbGxlZCBhdCBzZWFzaWRlIHNpdGVzIGFyZSBnb3Zlcm5lZCBieSBBbm5leCBCLikgVGogRVQKQlQgL0YxIDExIFRmIDcyIDYzNS4wMCBUZCAoQ2xhdXNlIDYuIFBhY2thZ2luZyBmb2xsb3dzIEFubmV4IEEuKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNTkuMDAgVGQgKFsxXSBUaGUgQ2xhdXNlIDQgbGltaXQgaXMgbWVhc3VyZWQgYXQgdGhlIGFpciBpbnRha2Ugb2YgdGhlIHVuaXQuKSBUaiBFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA3CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAwMDY0IDAwMDAwIG4gCjAwMDAwMDAxMjEgMDAwMDAgbiAKMDAwMDAwMDIxOCAwMDAwMCBuIAowMDAwMDAwMzY4IDAwMDAwIG4gCjAwMDAwMDA0OTQgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA3IC9Sb290IDEgMCBSIC9JbmZvIDQgMCBSID4+CnN0YXJ0eHJlZgoxMTM1CiUlRU9GCg=="
+     },
+     "canonical_text": {
+      "storage_ref": "sqlite:source_versions/synthetic-p0-t06-trace-slice/syn-letter@v1",
+      "sha256": "16610d6158ccce51c340e59a536585aee7769d3db1a9da634f1710885ff7a191",
+      "normalization_id": "authored-lines-lf-formfeed-page-break-v1",
+      "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example\nExample Procurement Office (fictional) - Letter EPO-001\nClause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]\nClause 5. Enclosure units installed at seaside sites are governed by Annex B.\nClause 6. Packaging follows Annex A.\n[1] The Clause 4 limit is measured at the air intake of the unit.\n"
+     },
+     "pages": [
+      {
+       "number": 1,
+       "display_width_pt": 612.0,
+       "display_height_pt": 792.0,
+       "rotation_degrees": 0
+      }
+     ],
+     "parser_id": "authored-fixture-layout-v1",
+     "group_id": "SYN-P0T06"
+    }
+   ],
+   "nodes": [
+    {
+     "node_id": "syn-letter@v1#label",
+     "source_version_id": "syn-letter@v1",
+     "kind": "title",
+     "span": {
+      "start": 0,
+      "end": 65,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.090909,
+        0.882353,
+        0.113636
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#letterhead",
+     "source_version_id": "syn-letter@v1",
+     "kind": "heading",
+     "span": {
+      "start": 66,
+      "end": 121,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.113636,
+        0.882353,
+        0.136364
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-4",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 122,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.136364,
+        0.882353,
+        0.159091
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-5",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 205,
+      "end": 282,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.159091,
+        0.882353,
+        0.181818
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-6",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 283,
+      "end": 319,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.181818,
+        0.882353,
+        0.204545
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#footnote-1",
+     "source_version_id": "syn-letter@v1",
+     "kind": "footnote",
+     "span": {
+      "start": 320,
+      "end": 385,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.909091,
+        0.882353,
+        0.931818
+       ],
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "relations": [
+    {
+     "relation_id": "rel:qualifies:syn-letter@v1#footnote-1->syn-letter@v1#clause-4",
+     "kind": "qualifies",
+     "from_node_id": "syn-letter@v1#footnote-1",
+     "to_node_id": "syn-letter@v1#clause-4",
+     "scope_node_ids": [
+      "syn-letter@v1#clause-4"
+     ],
+     "provenance": {
+      "method": "explicit_source",
+      "evidence_ids": [
+       "ev:syn-letter@v1#footnote-1",
+       "ev:syn-letter@v1#clause-4[201:204]"
+      ]
+     }
+    }
+   ],
+   "evidence": [
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-5",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-5",
+     "span": {
+      "start": 205,
+      "end": 282,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Clause 5. Enclosure units installed at seaside sites are governed by Annex B."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-4",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-4",
+     "span": {
+      "start": 122,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Clause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]"
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#footnote-1",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#footnote-1",
+     "span": {
+      "start": 320,
+      "end": 385,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "[1] The Clause 4 limit is measured at the air intake of the unit."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-4[201:204]",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-4",
+     "span": {
+      "start": 201,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "[1]"
+    }
+   ],
+   "hypotheses": [],
+   "candidate_delta": {
+    "identity_unit": "node",
+    "before_ids": [],
+    "returned_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4"
+    ],
+    "after_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4"
+    ],
+    "new_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4"
+    ]
+   },
+   "runtime_assessments": [
+    {
+     "assessment_id": "asm-003",
+     "requirement_span": {
+      "start": 5,
+      "end": 88,
+      "unit": "unicode_code_points_half_open"
+     },
+     "status": "unresolved",
+     "evidence_ids": [
+      "ev:syn-letter@v1#clause-5",
+      "ev:syn-letter@v1#clause-4",
+      "ev:syn-letter@v1#footnote-1"
+     ],
+     "assessor_id": "deterministic-reference-coverage-v1 (synthetic slice; structural signal, not a semantic judgement)",
+     "basis": "runtime_not_gold",
+     "timing": "after_action"
+    }
+   ],
+   "cost": {
+    "currency": "USD",
+    "estimate_usd": 0,
+    "provider_reported_usd": null,
+    "invoiced_usd": null,
+    "invoice_id": null,
+    "state": "not_applicable"
+   }
+  },
+  {
+   "schema_version": "ptp-evidence-trace/1",
+   "trace_id": "trace:run-20261122T112505-94382716:2",
+   "run_id": "run-20261122T112505-94382716",
+   "mode": "synthetic_demo",
+   "event_time": "2026-11-22T11:25:05.466Z",
+   "original_query": {
+    "query_id": "syn-question-1",
+    "text": "What maximum operating temperature applies to enclosure units installed at seaside sites?"
+   },
+   "action": {
+    "action_id": "replay-expansion",
+    "kind": "replay_search",
+    "query_text": "\"annex b\" OR \"installed\" OR \"seaside\" OR \"sites\" OR \"coastal\"",
+    "query_artifact_ids": [
+     "ev:syn-letter@v1#clause-5[274:281]",
+     "hyp:run-20261122T112505-94382716:seaside->coastal"
+    ],
+    "selected_assessment_id": "asm-003",
+    "route_id": "sqlite-fts5-bm25-current-scope",
+    "result_limit": 5,
+    "eligibility_profile_id": "synthetic-packet-current-versions-only"
+   },
+   "index": {
+    "index_id": "fts5:synthetic-p0-t06-trace-slice:synthetic-corpus-2d6c31ba43d34f6f",
+    "manifest_sha256": "15dab5322ad0ee35c0ca836d8303222bf903a3aaa46e67bcf2848584eebc6867",
+    "corpus_revision": "synthetic-corpus-2d6c31ba43d34f6f",
+    "encoder": null,
+    "lexical_config": {
+     "algorithm": "BM25 via SQLite FTS5 bm25() (built-in k1=1.2, b=0.75)",
+     "tokenizer_id": "fts5-unicode61",
+     "version": "sqlite-3.49.1",
+     "k1": 1.2,
+     "b": 0.75
+    },
+    "normalization_id": "fts5-unicode61-default-casefold",
+    "chunker_id": "authored-line-nodes-v1"
+   },
+   "sources": [
+    {
+     "source_id": "syn-annex-a",
+     "version_id": "syn-annex-a@v1",
+     "original_artifact": {
+      "media_type": "application/pdf",
+      "storage_ref": "sqlite:original_artifacts/synthetic-p0-t06-trace-slice/syn-annex-a@v1",
+      "sha256": "19a3288d0e8a6b7f052f8b57e205522e0669560af3a7272e6070fcfb4938e698",
+      "content_base64": "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFs1IDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nID4+CmVuZG9iago0IDAgb2JqCjw8IC9UaXRsZSAoU1lOVEhFVElDIEZJWFRVUkUgU1lOVEhFVElDIEFubmV4IEEgdG8gTGV0dGVyIEVQTy0wMDEgXChmaWN0aW9uYWxcKSkgL1Byb2R1Y2VyIChwYXRlbnRfdG9fcGlsb3Qud29ya2JlbmNoLnRyYWNlX3NsaWNlIGF1dGhvcmluZyB2MSkgPj4KZW5kb2JqCjUgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIgNzkyXSAvUmVzb3VyY2VzIDw8IC9Gb250IDw8IC9GMSAzIDAgUiA+PiA+PiAvQ29udGVudHMgNiAwIFIgPj4KZW5kb2JqCjYgMCBvYmoKPDwgL0xlbmd0aCAyNTEgPj4Kc3RyZWFtCkJUIC9GMSAxMSBUZiA3MiA3MDcuMDAgVGQgKFNZTlRIRVRJQyBGSVhUVVJFIC0gTk9UIEEgUkVBTCBET0NVTUVOVCAtIFAwLVQwNiB3b3JrZmxvdyBleGFtcGxlKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjg5LjAwIFRkIChBbm5leCBBLiBQYWNrYWdpbmcpIFRqIEVUCkJUIC9GMSAxMSBUZiA3MiA2NzEuMDAgVGQgKENyYXRlcyBmb3IgY29hc3RhbCBzaGlwbWVudHMgaW5jbHVkZSBhIG1vaXN0dXJlIGluZGljYXRvciBjYXJkLikgVGogRVQKZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTUgMDAwMDAgbiAKMDAwMDAwMDA2NCAwMDAwMCBuIAowMDAwMDAwMTIxIDAwMDAwIG4gCjAwMDAwMDAyMTggMDAwMDAgbiAKMDAwMDAwMDM3OSAwMDAwMCBuIAowMDAwMDAwNTA1IDAwMDAwIG4gCnRyYWlsZXIKPDwgL1NpemUgNyAvUm9vdCAxIDAgUiAvSW5mbyA0IDAgUiA+PgpzdGFydHhyZWYKODA2CiUlRU9GCg=="
+     },
+     "canonical_text": {
+      "storage_ref": "sqlite:source_versions/synthetic-p0-t06-trace-slice/syn-annex-a@v1",
+      "sha256": "4c6d9c801cc1fe6713035eff445e1a1eb66ad1834d709b39adef0c39f3304d04",
+      "normalization_id": "authored-lines-lf-formfeed-page-break-v1",
+      "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example\nAnnex A. Packaging\nCrates for coastal shipments include a moisture indicator card.\n"
+     },
+     "pages": [
+      {
+       "number": 1,
+       "display_width_pt": 612.0,
+       "display_height_pt": 792.0,
+       "rotation_degrees": 0
+      }
+     ],
+     "parser_id": "authored-fixture-layout-v1",
+     "group_id": "SYN-P0T06"
+    },
+    {
+     "source_id": "syn-annex-b",
+     "version_id": "syn-annex-b@v2",
+     "original_artifact": {
+      "media_type": "application/pdf",
+      "storage_ref": "sqlite:original_artifacts/synthetic-p0-t06-trace-slice/syn-annex-b@v2",
+      "sha256": "cc214624a665cae40c6c540ea55867866091d84fae5b3004d6890528ab445487",
+      "content_base64": "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFs1IDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nID4+CmVuZG9iago0IDAgb2JqCjw8IC9UaXRsZSAoU1lOVEhFVElDIEZJWFRVUkUgU1lOVEhFVElDIEFubmV4IEIgdG8gTGV0dGVyIEVQTy0wMDEgXChmaWN0aW9uYWxcKSwgcmV2aXNpb24gMikgL1Byb2R1Y2VyIChwYXRlbnRfdG9fcGlsb3Qud29ya2JlbmNoLnRyYWNlX3NsaWNlIGF1dGhvcmluZyB2MSkgPj4KZW5kb2JqCjUgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIgNzkyXSAvUmVzb3VyY2VzIDw8IC9Gb250IDw8IC9GMSAzIDAgUiA+PiA+PiAvQ29udGVudHMgNiAwIFIgPj4KZW5kb2JqCjYgMCBvYmoKPDwgL0xlbmd0aCAyNjUgPj4Kc3RyZWFtCkJUIC9GMSAxMSBUZiA3MiA3MDcuMDAgVGQgKFNZTlRIRVRJQyBGSVhUVVJFIC0gTk9UIEEgUkVBTCBET0NVTUVOVCAtIFAwLVQwNiB3b3JrZmxvdyBleGFtcGxlKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjg5LjAwIFRkIChBbm5leCBCLiBDb2FzdGFsIGV4Y2VwdGlvbikgVGogRVQKQlQgL0YxIDExIFRmIDcyIDY3MS4wMCBUZCAoQ29hc3RhbCBlbmNsb3N1cmVzIGZpdHRlZCB3aXRoIGEgc2FsdC1taXN0IGZpbHRlciBtYXkgcnVuIHVwIHRvIDU1IEMuKSBUaiBFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA3CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAwMDY0IDAwMDAwIG4gCjAwMDAwMDAxMjEgMDAwMDAgbiAKMDAwMDAwMDIxOCAwMDAwMCBuIAowMDAwMDAwMzkxIDAwMDAwIG4gCjAwMDAwMDA1MTcgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA3IC9Sb290IDEgMCBSIC9JbmZvIDQgMCBSID4+CnN0YXJ0eHJlZgo4MzIKJSVFT0YK"
+     },
+     "canonical_text": {
+      "storage_ref": "sqlite:source_versions/synthetic-p0-t06-trace-slice/syn-annex-b@v2",
+      "sha256": "b51b56a6b98856313cf77b57eef672beab8ca939577c0c13b98660f3a3470154",
+      "normalization_id": "authored-lines-lf-formfeed-page-break-v1",
+      "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example\nAnnex B. Coastal exception\nCoastal enclosures fitted with a salt-mist filter may run up to 55 C.\n"
+     },
+     "pages": [
+      {
+       "number": 1,
+       "display_width_pt": 612.0,
+       "display_height_pt": 792.0,
+       "rotation_degrees": 0
+      }
+     ],
+     "parser_id": "authored-fixture-layout-v1",
+     "group_id": "SYN-P0T06"
+    },
+    {
+     "source_id": "syn-letter",
+     "version_id": "syn-letter@v1",
+     "original_artifact": {
+      "media_type": "application/pdf",
+      "storage_ref": "sqlite:original_artifacts/synthetic-p0-t06-trace-slice/syn-letter@v1",
+      "sha256": "f5349af519093476fbad36a74833ee979992b88a0d94e34a880f6842685380c9",
+      "content_base64": "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFs1IDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL0ZvbnQgL1N1YnR5cGUgL1R5cGUxIC9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nID4+CmVuZG9iago0IDAgb2JqCjw8IC9UaXRsZSAoU1lOVEhFVElDIEZJWFRVUkUgU1lOVEhFVElDIExldHRlciBFUE8tMDAxIFwoZmljdGlvbmFsXCkpIC9Qcm9kdWNlciAocGF0ZW50X3RvX3BpbG90LndvcmtiZW5jaC50cmFjZV9zbGljZSBhdXRob3JpbmcgdjEpID4+CmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9QYWdlIC9QYXJlbnQgMiAwIFIgL01lZGlhQm94IFswIDAgNjEyIDc5Ml0gL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgMyAwIFIgPj4gPj4gL0NvbnRlbnRzIDYgMCBSID4+CmVuZG9iago2IDAgb2JqCjw8IC9MZW5ndGggNTkxID4+CnN0cmVhbQpCVCAvRjEgMTEgVGYgNzIgNzA3LjAwIFRkIChTWU5USEVUSUMgRklYVFVSRSAtIE5PVCBBIFJFQUwgRE9DVU1FTlQgLSBQMC1UMDYgd29ya2Zsb3cgZXhhbXBsZSkgVGogRVQKQlQgL0YxIDExIFRmIDcyIDY4OS4wMCBUZCAoRXhhbXBsZSBQcm9jdXJlbWVudCBPZmZpY2UgXChmaWN0aW9uYWxcKSAtIExldHRlciBFUE8tMDAxKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjcxLjAwIFRkIChDbGF1c2UgNC4gRW5jbG9zdXJlIHVuaXRzIG11c3Qga2VlcCBhIG1heGltdW0gb3BlcmF0aW5nIHRlbXBlcmF0dXJlIGJlbG93IDUwIEMuWzFdKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNjUzLjAwIFRkIChDbGF1c2UgNS4gRW5jbG9zdXJlIHVuaXRzIGluc3RhbGxlZCBhdCBzZWFzaWRlIHNpdGVzIGFyZSBnb3Zlcm5lZCBieSBBbm5leCBCLikgVGogRVQKQlQgL0YxIDExIFRmIDcyIDYzNS4wMCBUZCAoQ2xhdXNlIDYuIFBhY2thZ2luZyBmb2xsb3dzIEFubmV4IEEuKSBUaiBFVApCVCAvRjEgMTEgVGYgNzIgNTkuMDAgVGQgKFsxXSBUaGUgQ2xhdXNlIDQgbGltaXQgaXMgbWVhc3VyZWQgYXQgdGhlIGFpciBpbnRha2Ugb2YgdGhlIHVuaXQuKSBUaiBFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA3CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNSAwMDAwMCBuIAowMDAwMDAwMDY0IDAwMDAwIG4gCjAwMDAwMDAxMjEgMDAwMDAgbiAKMDAwMDAwMDIxOCAwMDAwMCBuIAowMDAwMDAwMzY4IDAwMDAwIG4gCjAwMDAwMDA0OTQgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA3IC9Sb290IDEgMCBSIC9JbmZvIDQgMCBSID4+CnN0YXJ0eHJlZgoxMTM1CiUlRU9GCg=="
+     },
+     "canonical_text": {
+      "storage_ref": "sqlite:source_versions/synthetic-p0-t06-trace-slice/syn-letter@v1",
+      "sha256": "16610d6158ccce51c340e59a536585aee7769d3db1a9da634f1710885ff7a191",
+      "normalization_id": "authored-lines-lf-formfeed-page-break-v1",
+      "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example\nExample Procurement Office (fictional) - Letter EPO-001\nClause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]\nClause 5. Enclosure units installed at seaside sites are governed by Annex B.\nClause 6. Packaging follows Annex A.\n[1] The Clause 4 limit is measured at the air intake of the unit.\n"
+     },
+     "pages": [
+      {
+       "number": 1,
+       "display_width_pt": 612.0,
+       "display_height_pt": 792.0,
+       "rotation_degrees": 0
+      }
+     ],
+     "parser_id": "authored-fixture-layout-v1",
+     "group_id": "SYN-P0T06"
+    }
+   ],
+   "nodes": [
+    {
+     "node_id": "syn-annex-a@v1#label",
+     "source_version_id": "syn-annex-a@v1",
+     "kind": "title",
+     "span": {
+      "start": 0,
+      "end": 65,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.090909,
+        0.882353,
+        0.113636
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-annex-a@v1#annex-heading",
+     "source_version_id": "syn-annex-a@v1",
+     "kind": "annex",
+     "span": {
+      "start": 66,
+      "end": 84,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.113636,
+        0.882353,
+        0.136364
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-annex-a@v1#annex-a-1",
+     "source_version_id": "syn-annex-a@v1",
+     "kind": "paragraph",
+     "span": {
+      "start": 85,
+      "end": 148,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.136364,
+        0.882353,
+        0.159091
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-annex-b@v2#label",
+     "source_version_id": "syn-annex-b@v2",
+     "kind": "title",
+     "span": {
+      "start": 0,
+      "end": 65,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.090909,
+        0.882353,
+        0.113636
+       ],
+       "page": 1
+      }
+     ],
+     "alignment": {
+      "confidence": 1.0,
+      "method": "fixture_anchor_match",
+      "prior_node_id": "syn-annex-b@v1#label"
+     }
+    },
+    {
+     "node_id": "syn-annex-b@v2#annex-heading",
+     "source_version_id": "syn-annex-b@v2",
+     "kind": "annex",
+     "span": {
+      "start": 66,
+      "end": 92,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.113636,
+        0.882353,
+        0.136364
+       ],
+       "page": 1
+      }
+     ],
+     "alignment": {
+      "confidence": 1.0,
+      "method": "fixture_anchor_match",
+      "prior_node_id": "syn-annex-b@v1#annex-heading"
+     }
+    },
+    {
+     "node_id": "syn-annex-b@v2#annex-b-1",
+     "source_version_id": "syn-annex-b@v2",
+     "kind": "clause",
+     "span": {
+      "start": 93,
+      "end": 162,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.136364,
+        0.882353,
+        0.159091
+       ],
+       "page": 1
+      }
+     ],
+     "alignment": {
+      "confidence": 1.0,
+      "method": "fixture_anchor_match",
+      "prior_node_id": "syn-annex-b@v1#annex-b-1"
+     }
+    },
+    {
+     "node_id": "syn-letter@v1#label",
+     "source_version_id": "syn-letter@v1",
+     "kind": "title",
+     "span": {
+      "start": 0,
+      "end": 65,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.090909,
+        0.882353,
+        0.113636
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#letterhead",
+     "source_version_id": "syn-letter@v1",
+     "kind": "heading",
+     "span": {
+      "start": 66,
+      "end": 121,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.113636,
+        0.882353,
+        0.136364
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-4",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 122,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.136364,
+        0.882353,
+        0.159091
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-5",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 205,
+      "end": 282,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.159091,
+        0.882353,
+        0.181818
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#clause-6",
+     "source_version_id": "syn-letter@v1",
+     "kind": "clause",
+     "span": {
+      "start": 283,
+      "end": 319,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.181818,
+        0.882353,
+        0.204545
+       ],
+       "page": 1
+      }
+     ]
+    },
+    {
+     "node_id": "syn-letter@v1#footnote-1",
+     "source_version_id": "syn-letter@v1",
+     "kind": "footnote",
+     "span": {
+      "start": 320,
+      "end": 385,
+      "unit": "unicode_code_points_half_open"
+     },
+     "regions": [
+      {
+       "bbox": [
+        0.117647,
+        0.909091,
+        0.882353,
+        0.931818
+       ],
+       "page": 1
+      }
+     ]
+    }
+   ],
+   "relations": [
+    {
+     "relation_id": "rel:parent_of:syn-annex-b@v2#annex-heading->syn-annex-b@v2#annex-b-1",
+     "kind": "parent_of",
+     "from_node_id": "syn-annex-b@v2#annex-heading",
+     "to_node_id": "syn-annex-b@v2#annex-b-1",
+     "scope_node_ids": [
+      "syn-annex-b@v2#annex-b-1"
+     ],
+     "provenance": {
+      "method": "parser_inferred",
+      "evidence_ids": [
+       "ev:syn-annex-b@v2#annex-heading",
+       "ev:syn-annex-b@v2#annex-b-1"
+      ],
+      "confidence": 1.0
+     }
+    },
+    {
+     "relation_id": "rel:incorporates:syn-letter@v1#clause-5->syn-annex-b@v2#annex-heading",
+     "kind": "incorporates",
+     "from_node_id": "syn-letter@v1#clause-5",
+     "to_node_id": "syn-annex-b@v2#annex-heading",
+     "scope_node_ids": [
+      "syn-annex-b@v2#annex-b-1"
+     ],
+     "provenance": {
+      "method": "explicit_source",
+      "evidence_ids": [
+       "ev:syn-letter@v1#clause-5[274:281]",
+       "ev:syn-annex-b@v2#annex-heading"
+      ]
+     }
+    },
+    {
+     "relation_id": "rel:qualifies:syn-letter@v1#footnote-1->syn-letter@v1#clause-4",
+     "kind": "qualifies",
+     "from_node_id": "syn-letter@v1#footnote-1",
+     "to_node_id": "syn-letter@v1#clause-4",
+     "scope_node_ids": [
+      "syn-letter@v1#clause-4"
+     ],
+     "provenance": {
+      "method": "explicit_source",
+      "evidence_ids": [
+       "ev:syn-letter@v1#footnote-1",
+       "ev:syn-letter@v1#clause-4[201:204]"
+      ]
+     }
+    }
+   ],
+   "evidence": [
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-5",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-5",
+     "span": {
+      "start": 205,
+      "end": 282,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Clause 5. Enclosure units installed at seaside sites are governed by Annex B."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-4",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-4",
+     "span": {
+      "start": 122,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Clause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]"
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#footnote-1",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#footnote-1",
+     "span": {
+      "start": 320,
+      "end": 385,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "[1] The Clause 4 limit is measured at the air intake of the unit."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-5[274:281]",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-5",
+     "span": {
+      "start": 274,
+      "end": 281,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Annex B"
+    },
+    {
+     "evidence_id": "ev:syn-annex-b@v2#annex-heading",
+     "kind": "source_evidence",
+     "node_id": "syn-annex-b@v2#annex-heading",
+     "span": {
+      "start": 66,
+      "end": 92,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Annex B. Coastal exception"
+    },
+    {
+     "evidence_id": "ev:syn-annex-b@v2#annex-b-1",
+     "kind": "source_evidence",
+     "node_id": "syn-annex-b@v2#annex-b-1",
+     "span": {
+      "start": 93,
+      "end": 162,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "Coastal enclosures fitted with a salt-mist filter may run up to 55 C."
+    },
+    {
+     "evidence_id": "ev:syn-letter@v1#clause-4[201:204]",
+     "kind": "source_evidence",
+     "node_id": "syn-letter@v1#clause-4",
+     "span": {
+      "start": 201,
+      "end": 204,
+      "unit": "unicode_code_points_half_open"
+     },
+     "quote": "[1]"
+    }
+   ],
+   "hypotheses": [
+    {
+     "hypothesis_id": "hyp:run-20261122T112505-94382716:seaside->coastal",
+     "kind": "generated_search_hypothesis",
+     "text": "coastal",
+     "generator_id": "authored-synonym-table-v1 (synthetic; deterministic; no model call)",
+     "generation_config_sha256": "b98f6adf28c2dc58723554d6d02f209b37f527f4076f520dd5603c9309b33b90",
+     "source_evidence_ids": [
+      "ev:syn-letter@v1#clause-5"
+     ]
+    }
+   ],
+   "candidate_delta": {
+    "identity_unit": "node",
+    "before_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4"
+    ],
+    "returned_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-annex-b@v2#annex-heading",
+     "syn-annex-a@v1#annex-a-1",
+     "syn-annex-b@v2#annex-b-1"
+    ],
+    "after_ids": [
+     "syn-letter@v1#clause-5",
+     "syn-letter@v1#clause-4",
+     "syn-annex-b@v2#annex-heading",
+     "syn-annex-a@v1#annex-a-1",
+     "syn-annex-b@v2#annex-b-1"
+    ],
+    "new_ids": [
+     "syn-annex-b@v2#annex-heading",
+     "syn-annex-a@v1#annex-a-1",
+     "syn-annex-b@v2#annex-b-1"
+    ]
+   },
+   "runtime_assessments": [
+    {
+     "assessment_id": "asm-003",
+     "requirement_span": {
+      "start": 5,
+      "end": 88,
+      "unit": "unicode_code_points_half_open"
+     },
+     "status": "unresolved",
+     "evidence_ids": [
+      "ev:syn-letter@v1#clause-5",
+      "ev:syn-letter@v1#clause-4",
+      "ev:syn-letter@v1#footnote-1"
+     ],
+     "assessor_id": "deterministic-reference-coverage-v1 (synthetic slice; structural signal, not a semantic judgement)",
+     "basis": "runtime_not_gold",
+     "timing": "before_action"
+    },
+    {
+     "assessment_id": "asm-004",
+     "requirement_span": {
+      "start": 5,
+      "end": 88,
+      "unit": "unicode_code_points_half_open"
+     },
+     "status": "supported",
+     "evidence_ids": [
+      "ev:syn-letter@v1#clause-5",
+      "ev:syn-letter@v1#clause-5[274:281]",
+      "ev:syn-annex-b@v2#annex-heading",
+      "ev:syn-annex-b@v2#annex-b-1",
+      "ev:syn-letter@v1#clause-4",
+      "ev:syn-letter@v1#footnote-1"
+     ],
+     "assessor_id": "deterministic-reference-coverage-v1 (synthetic slice; structural signal, not a semantic judgement)",
+     "basis": "runtime_not_gold",
+     "timing": "after_action"
+    }
+   ],
+   "cost": {
+    "currency": "USD",
+    "estimate_usd": 0,
+    "provider_reported_usd": null,
+    "invoiced_usd": null,
+    "invoice_id": null,
+    "state": "not_applicable"
+   }
+  }
+ ],
+ "event_checks": [
+  {
+   "trace_id": "trace:run-20261122T112504-4ff56fba:1",
+   "schema_errors": [],
+   "semantic_errors": []
+  },
+  {
+   "trace_id": "trace:run-20261122T112504-4ff56fba:2",
+   "schema_errors": [],
+   "semantic_errors": []
+  },
+  {
+   "trace_id": "trace:run-20261122T112505-94382716:1",
+   "schema_errors": [],
+   "semantic_errors": []
+  },
+  {
+   "trace_id": "trace:run-20261122T112505-94382716:2",
+   "schema_errors": [],
+   "semantic_errors": []
+  }
+ ],
+ "annex_binding": {
+  "reference": "Annex B",
+  "reference_evidence_id": "ev:syn-letter@v1#clause-5[274:281]",
+  "from_node_id": "syn-letter@v1#clause-5",
+  "bound": [
+   {
+    "relation_id": "rel:incorporates:syn-letter@v1#clause-5->syn-annex-b@v1#annex-heading",
+    "to_node_id": "syn-annex-b@v1#annex-heading",
+    "to_quote": "Annex B. Coastal exception",
+    "scope_node_ids": [
+     "syn-annex-b@v1#annex-b-1"
+    ],
+    "scope_quotes": [
+     "Coastal enclosures fitted with a salt-mist filter may run up to 60 C."
+    ]
+   }
+  ],
+  "unbound_new_candidates": [
+   "syn-annex-a@v1#annex-a-1"
+  ],
+  "query_terms": {
+   "copied_from_source": [
+    {
+     "phrase": "Annex B",
+     "evidence_id": "ev:syn-letter@v1#clause-5[274:281]"
+    }
+   ],
+   "original_anchors": [
+    "installed",
+    "seaside",
+    "sites"
+   ],
+   "hypotheses": [
+    "hyp:run-20261122T112504-4ff56fba:seaside->coastal"
+   ]
+  }
+ },
+ "revision": {
+  "event_id": "SYN-REV-ANNEX-B-V2",
+  "source_id": "syn-annex-b",
+  "from_version": "v1",
+  "to_version": "v2",
+  "description": "Controlled synthetic revision: Annex B changes its permitted temperature from 60 C to 55 C; nothing else changes.",
+  "prediction": {
+   "node_changes": {
+    "changed": [
+     "syn-annex-b@v1#annex-b-1"
+    ],
+    "unchanged_aligned": [
+     "syn-annex-b@v1#annex-heading",
+     "syn-annex-b@v1#label"
+    ],
+    "added": []
+   },
+   "recheck": {
+    "evidence": {
+     "ev:syn-annex-b@v1#annex-b-1": "recheck:cited_node_changed",
+     "ev:syn-annex-b@v1#annex-heading": "reanchor:version_superseded_text_identical",
+     "ev:syn-letter@v1#clause-5": "recheck:governed_scope_changed",
+     "ev:syn-letter@v1#clause-5[274:281]": "recheck:governed_scope_changed"
+    },
+    "relations": {
+     "rel:incorporates:syn-letter@v1#clause-5->syn-annex-b@v1#annex-heading": "rebind:endpoint_or_scope_changed",
+     "rel:parent_of:syn-annex-b@v1#annex-heading->syn-annex-b@v1#annex-b-1": "rebind:endpoint_or_scope_changed"
+    },
+    "assessments": {
+     "asm-002": "recheck:depends_on_changed_evidence_or_relation"
+    },
+    "searches": {
+     "trace:run-20261122T112504-4ff56fba:1": "replay:search_scope_contained_superseded_version",
+     "trace:run-20261122T112504-4ff56fba:2": "replay:search_scope_contained_superseded_version"
+    }
+   },
+   "retained_without_recheck": {
+    "evidence": [
+     "ev:syn-letter@v1#clause-4",
+     "ev:syn-letter@v1#clause-4[201:204]",
+     "ev:syn-letter@v1#footnote-1"
+    ],
+    "relations": [
+     "rel:qualifies:syn-letter@v1#footnote-1->syn-letter@v1#clause-4"
+    ]
+   }
+  },
+  "observed": {
+   "evidence_replaced": [
+    "ev:syn-annex-b@v1#annex-b-1",
+    "ev:syn-annex-b@v1#annex-heading"
+   ],
+   "evidence_added": [
+    "ev:syn-annex-b@v2#annex-b-1",
+    "ev:syn-annex-b@v2#annex-heading"
+   ],
+   "evidence_retained": [
+    "ev:syn-letter@v1#clause-4",
+    "ev:syn-letter@v1#clause-4[201:204]",
+    "ev:syn-letter@v1#clause-5",
+    "ev:syn-letter@v1#clause-5[274:281]",
+    "ev:syn-letter@v1#footnote-1"
+   ],
+   "relations_replaced": [
+    "rel:incorporates:syn-letter@v1#clause-5->syn-annex-b@v1#annex-heading",
+    "rel:parent_of:syn-annex-b@v1#annex-heading->syn-annex-b@v1#annex-b-1"
+   ],
+   "relations_added": [
+    "rel:incorporates:syn-letter@v1#clause-5->syn-annex-b@v2#annex-heading",
+    "rel:parent_of:syn-annex-b@v2#annex-heading->syn-annex-b@v2#annex-b-1"
+   ],
+   "relations_retained": [
+    "rel:qualifies:syn-letter@v1#footnote-1->syn-letter@v1#clause-4"
+   ],
+   "pool_before_revision": [
+    "syn-letter@v1#clause-5",
+    "syn-letter@v1#clause-4",
+    "syn-annex-b@v1#annex-heading",
+    "syn-annex-a@v1#annex-a-1",
+    "syn-annex-b@v1#annex-b-1"
+   ],
+   "pool_after_replay": [
+    "syn-letter@v1#clause-5",
+    "syn-letter@v1#clause-4",
+    "syn-annex-b@v2#annex-heading",
+    "syn-annex-a@v1#annex-a-1",
+    "syn-annex-b@v2#annex-b-1"
+   ],
+   "pool_equivalent_under_alignment": true,
+   "assessment_before": {
+    "assessment_id": "asm-002",
+    "status": "supported"
+   },
+   "assessment_after": {
+    "assessment_id": "asm-004",
+    "status": "supported"
+   },
+   "quotes_changed": {
+    "ev:syn-annex-b@v1#annex-b-1": {
+     "before": "Coastal enclosures fitted with a salt-mist filter may run up to 60 C.",
+     "after": "Coastal enclosures fitted with a salt-mist filter may run up to 55 C."
+    }
+   }
+  },
+  "prediction_covers_every_observed_change": true,
+  "replay_trace_ids": [
+   "trace:run-20261122T112505-94382716:1",
+   "trace:run-20261122T112505-94382716:2"
+  ],
+  "run_id": "run-20261122T112505-94382716"
+ },
+ "environment": {
+  "python": "3.12.10",
+  "sqlite": "3.49.1",
+  "jsonschema": "4.26.0",
+  "network": "not used",
+  "paid_calls": 0,
+  "model_calls": 0
+ },
+ "store_note": "caller-supplied store"
+}

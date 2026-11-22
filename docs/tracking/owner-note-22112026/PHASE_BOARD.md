@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-22T15:56:17+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-22T18:28:55+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -32,7 +32,7 @@ Phase status: **IN_PROGRESS**
 | P0-T03 | Create live tracking copies and mirror phases into AFFiNE | 🟡 PARTIAL | NOT_RUN | docs/tracking/owner-note-22112026/goal_registry.json; docs/tracking/owner-note-22112026/PHASE_BOARD.md | P0-T07 | Workspace 15d6fa22 created on server, but the in-app browser client does not push docs (server snapshots=0, updates=0; websocket and SharedWorker work in probes). Need owner check in own browser/desktop or permission to drive Claude in Chrome | NOT_SYNCED |
 | P0-T04 | Prepare prospective A3r1 protocol and no-call provider plan | ✅ COMPLETE | NOT_RUN | docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md; docs/tracking/owner-note-22112026/receipts/P0-T04_proposed_protocol.md; docs/tracking/owner-note-22112026/receipts/P0-T04_provider_readiness.json | P0-T07; P1-T01 | — | NOT_SYNCED |
 | P0-T05 | Implement and verify shared budget reservation accounting | 🔄 IN_PROGRESS | NOT_RUN | — | P0-T07; P1-T01 | — | NOT_SYNCED |
-| P0-T06 | Implement a source-bound synthetic search-and-trace slice | 🔄 IN_PROGRESS | NOT_RUN | — | P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03 | — | NOT_SYNCED |
+| P0-T06 | Implement a source-bound synthetic search-and-trace slice | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P0-T06_synthetic_trace.json; docs/tracking/owner-note-22112026/receipts/P0-T06_trace_verification.md; src/patent_to_pilot/workbench/trace_slice.py; tests/test_p0_t06_trace_slice.py | P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03 | — | NOT_SYNCED |
 | P0-T07 | Close free preparation and publish separate readiness milestones | ⏳ NOT_STARTED | NOT_RUN | — | P1-T01 if eligible; free P2/P4/P5 tasks by dependency | — | NOT_SYNCED |
 
 ## P1 — Reproducible model-panel and A3 experiment

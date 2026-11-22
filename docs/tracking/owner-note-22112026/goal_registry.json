@@ -434,8 +434,8 @@
    "task_id": "P0-T06",
    "phase_id": "P0",
    "title": "Implement a source-bound synthetic search-and-trace slice",
-   "status": "IN_PROGRESS",
-   "outcome": "NOT_RUN",
+   "status": "COMPLETE",
+   "outcome": "ENGINEERING_VERIFIED",
    "depends_on": [
     "P0-T01"
    ],
@@ -446,8 +446,8 @@
     "docs/tracking/owner-note-22112026/receipts/P0-T06_trace_verification.md"
    ],
    "acceptance_evidence": "Run actual local lexical search on an authored synthetic packet; resolve original bytes, spans and annex binding; record real before/after candidate membership; label synthetic data.",
-   "evidence_uri": "",
-   "check_result": "NOT_CHECKED",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P0-T06_synthetic_trace.json; docs/tracking/owner-note-22112026/receipts/P0-T06_trace_verification.md; src/patent_to_pilot/workbench/trace_slice.py; tests/test_p0_t06_trace_slice.py",
+   "check_result": "22/22 slice tests; G01/G02 69 pass; full suite only the 8 known SACR failures",
    "next_task": "P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
    "budget_spent_usd": null,
@@ -463,7 +463,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-22] parallel agent started"
+   "notes": "[2026-11-22] parallel agent started | [2026-11-22] synthetic packet only; real FTS5 seed+expansion search, annex binding, hypothesis never citable (5 guards), revision prediction = full rerun; no OCR/geometry, lexical only"
   },
   {
    "task_id": "P0-T07",
@@ -1495,5 +1495,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-22T15:56:17+07:00"
+ "live_updated_at": "2026-11-22T18:28:55+07:00"
 }

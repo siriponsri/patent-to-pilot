@@ -1,0 +1,6 @@
+SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example
+Example Procurement Office (fictional) - Letter EPO-001
+Clause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]
+Clause 5. Enclosure units installed at seaside sites are governed by Annex B.
+Clause 6. Packaging follows Annex A.
+[1] The Clause 4 limit is measured at the air intake of the unit.

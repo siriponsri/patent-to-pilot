@@ -1,0 +1,69 @@
+{
+ "layout_schema": "ptp-p0-t06-layout/1",
+ "synthetic": true,
+ "label": "SYNTHETIC WORKFLOW EXAMPLE: authored fixture, not a real document and not an evaluation",
+ "source_id": "syn-annex-b",
+ "version_id": "v1",
+ "title": "SYNTHETIC Annex B to Letter EPO-001 (fictional)",
+ "parser_id": "authored-fixture-layout-v1",
+ "normalization_id": "authored-lines-lf-formfeed-page-break-v1",
+ "original": {
+  "file": "annex_b_v1.pdf",
+  "media_type": "application/pdf",
+  "sha256": "cc1aa3872ee337df595ea3560efc05160146dbdd6393e0b446ab82022d3ced3f"
+ },
+ "canonical": {
+  "file": "annex_b_v1.canonical.txt",
+  "sha256": "0ae10a045eab0a06775e073b64351dd8c34302c43eb54c9beb742824b6683d7d"
+ },
+ "pages": [
+  {
+   "number": 1,
+   "display_width_pt": 612.0,
+   "display_height_pt": 792.0,
+   "rotation_degrees": 0
+  }
+ ],
+ "region_basis": "authored line band: full text-column width x one line height (not glyph-tight)",
+ "nodes": [
+  {
+   "anchor": "label",
+   "kind": "title",
+   "start": 0,
+   "end": 65,
+   "page": 1,
+   "bbox": [
+    0.117647,
+    0.090909,
+    0.882353,
+    0.113636
+   ]
+  },
+  {
+   "anchor": "annex-heading",
+   "kind": "annex",
+   "start": 66,
+   "end": 92,
+   "page": 1,
+   "bbox": [
+    0.117647,
+    0.113636,
+    0.882353,
+    0.136364
+   ]
+  },
+  {
+   "anchor": "annex-b-1",
+   "kind": "clause",
+   "start": 93,
+   "end": 162,
+   "page": 1,
+   "bbox": [
+    0.117647,
+    0.136364,
+    0.882353,
+    0.159091
+   ]
+  }
+ ]
+}

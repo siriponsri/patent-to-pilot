@@ -1,0 +1,80 @@
+{
+  "packet_schema": "ptp-p0-t06-synthetic-packet/1",
+  "packet_id": "SYN-P0T06",
+  "synthetic": true,
+  "label": "SYNTHETIC WORKFLOW EXAMPLE: authored fixture, not a real document and not an evaluation",
+  "data_origin": "synthetic_demo",
+  "authored_by": "P0-T06 implementation (22 Nov 2026); every organisation, letter number and value is fictional",
+  "question": {
+    "query_id": "syn-question-1",
+    "text": "What maximum operating temperature applies to enclosure units installed at seaside sites?"
+  },
+  "requirement": {
+    "requirement_id": "syn-req-1",
+    "text": "maximum operating temperature applies to enclosure units installed at seaside sites"
+  },
+  "hypothesis_generator": {
+    "generator_id": "authored-synonym-table-v1 (synthetic; deterministic; no model call)",
+    "synonyms": {"seaside": ["coastal"]}
+  },
+  "documents": [
+    {
+      "source_id": "syn-letter",
+      "version_id": "v1",
+      "file_stem": "letter_v1",
+      "title": "SYNTHETIC Letter EPO-001 (fictional)",
+      "pages": [
+        [
+          {"anchor": "label", "kind": "title", "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example"},
+          {"anchor": "letterhead", "kind": "heading", "text": "Example Procurement Office (fictional) - Letter EPO-001"},
+          {"anchor": "clause-4", "kind": "clause", "text": "Clause 4. Enclosure units must keep a maximum operating temperature below 50 C.[1]"},
+          {"anchor": "clause-5", "kind": "clause", "text": "Clause 5. Enclosure units installed at seaside sites are governed by Annex B."},
+          {"anchor": "clause-6", "kind": "clause", "text": "Clause 6. Packaging follows Annex A."},
+          {"anchor": "footnote-1", "kind": "footnote", "slot": 36, "text": "[1] The Clause 4 limit is measured at the air intake of the unit."}
+        ]
+      ]
+    },
+    {
+      "source_id": "syn-annex-a",
+      "version_id": "v1",
+      "file_stem": "annex_a_v1",
+      "title": "SYNTHETIC Annex A to Letter EPO-001 (fictional)",
+      "pages": [
+        [
+          {"anchor": "label", "kind": "title", "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example"},
+          {"anchor": "annex-heading", "kind": "annex", "text": "Annex A. Packaging"},
+          {"anchor": "annex-a-1", "kind": "paragraph", "text": "Crates for coastal shipments include a moisture indicator card."}
+        ]
+      ]
+    },
+    {
+      "source_id": "syn-annex-b",
+      "version_id": "v1",
+      "file_stem": "annex_b_v1",
+      "title": "SYNTHETIC Annex B to Letter EPO-001 (fictional)",
+      "pages": [
+        [
+          {"anchor": "label", "kind": "title", "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example"},
+          {"anchor": "annex-heading", "kind": "annex", "text": "Annex B. Coastal exception"},
+          {"anchor": "annex-b-1", "kind": "clause", "text": "Coastal enclosures fitted with a salt-mist filter may run up to 60 C."}
+        ]
+      ]
+    }
+  ],
+  "revision": {
+    "event_id": "SYN-REV-ANNEX-B-V2",
+    "description": "Controlled synthetic revision: Annex B changes its permitted temperature from 60 C to 55 C; nothing else changes.",
+    "source_id": "syn-annex-b",
+    "version_id": "v2",
+    "supersedes_version_id": "v1",
+    "file_stem": "annex_b_v2",
+    "title": "SYNTHETIC Annex B to Letter EPO-001 (fictional), revision 2",
+    "pages": [
+      [
+        {"anchor": "label", "kind": "title", "text": "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example"},
+        {"anchor": "annex-heading", "kind": "annex", "text": "Annex B. Coastal exception"},
+        {"anchor": "annex-b-1", "kind": "clause", "text": "Coastal enclosures fitted with a salt-mist filter may run up to 55 C."}
+      ]
+    ]
+  }
+}

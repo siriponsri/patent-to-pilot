@@ -1,0 +1,3 @@
+SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P0-T06 workflow example
+Annex A. Packaging
+Crates for coastal shipments include a moisture indicator card.

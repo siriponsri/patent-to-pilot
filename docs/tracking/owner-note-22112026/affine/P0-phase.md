@@ -13,7 +13,7 @@ Phase status: **IN_PROGRESS**
 | P0-T03 | Create live tracking copies and mirror phases into AFFiNE | 🟡 PARTIAL | NOT_RUN | P0-T07 |
 | P0-T04 | Prepare prospective A3r1 protocol and no-call provider plan | ✅ COMPLETE | NOT_RUN | P0-T07; P1-T01 |
 | P0-T05 | Implement and verify shared budget reservation accounting | 🔄 IN_PROGRESS | NOT_RUN | P0-T07; P1-T01 |
-| P0-T06 | Implement a source-bound synthetic search-and-trace slice | 🔄 IN_PROGRESS | NOT_RUN | P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03 |
+| P0-T06 | Implement a source-bound synthetic search-and-trace slice | ✅ COMPLETE | ENGINEERING_VERIFIED | P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03 |
 | P0-T07 | Close free preparation and publish separate readiness milestones | ⏳ NOT_STARTED | NOT_RUN | P1-T01 if eligible; free P2/P4/P5 tasks by dependency |
 
 ## P0-T01 — Reconcile checkout, historical results and active authority
@@ -76,11 +76,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P0-T01
 - **Acceptance evidence:** Run actual local lexical search on an authored synthetic packet; resolve original bytes, spans and annex binding; record real before/after candidate membership; label synthetic data.
-- **Evidence:** pending
-- **Check:** NOT_CHECKED
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P0-T06_synthetic_trace.json; docs/tracking/owner-note-22112026/receipts/P0-T06_trace_verification.md; src/patent_to_pilot/workbench/trace_slice.py; tests/test_p0_t06_trace_slice.py
+- **Check:** 22/22 slice tests; G01/G02 69 pass; full suite only the 8 known SACR failures
 - **Next:** P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03
 - **Blocker:** —
-- **Notes:** [2026-11-22] parallel agent started
+- **Notes:** [2026-11-22] parallel agent started | [2026-11-22] synthetic packet only; real FTS5 seed+expansion search, annex binding, hypothesis never citable (5 guards), revision prediction = full rerun; no OCR/geometry, lexical only
 
 ## P0-T07 — Close free preparation and publish separate readiness milestones
 

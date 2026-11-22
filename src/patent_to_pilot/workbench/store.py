@@ -89,6 +89,55 @@ CREATE TABLE IF NOT EXISTS project_settings (
 """
 
 
+# P0-T06 additions (owner note 22 Nov 2026): source-bound structure and evidence-trace records. Additive only:
+# CREATE IF NOT EXISTS on existing stores, no change to any G01/G02 table. Original bytes are kept beside the canonical
+# text that ``source_versions.raw`` already holds; nodes belong to one immutable source version; hypotheses and source
+# evidence are separate tables and an id can never be both (triggers below).
+SCHEMA_P0T06 = """
+CREATE TABLE IF NOT EXISTS original_artifacts (
+  project_id TEXT NOT NULL, source_id TEXT NOT NULL, version_id TEXT NOT NULL, media_type TEXT NOT NULL,
+  sha256 TEXT NOT NULL, size_bytes INTEGER NOT NULL, raw BLOB NOT NULL, storage_ref TEXT NOT NULL,
+  created_at TEXT NOT NULL, PRIMARY KEY (project_id, source_id, version_id));
+CREATE TABLE IF NOT EXISTS source_pages (
+  project_id TEXT NOT NULL, source_id TEXT NOT NULL, version_id TEXT NOT NULL, page INTEGER NOT NULL,
+  display_width_pt REAL NOT NULL, display_height_pt REAL NOT NULL, rotation_degrees INTEGER NOT NULL,
+  PRIMARY KEY (project_id, source_id, version_id, page));
+CREATE TABLE IF NOT EXISTS doc_nodes (
+  project_id TEXT NOT NULL, node_id TEXT NOT NULL, source_id TEXT NOT NULL, version_id TEXT NOT NULL,
+  anchor TEXT NOT NULL, kind TEXT NOT NULL, start_char INTEGER, end_char INTEGER, regions_json TEXT NOT NULL,
+  alignment_json TEXT, parser_id TEXT NOT NULL, PRIMARY KEY (project_id, node_id));
+CREATE TABLE IF NOT EXISTS doc_relations (
+  project_id TEXT NOT NULL, relation_id TEXT NOT NULL, kind TEXT NOT NULL, from_node_id TEXT NOT NULL,
+  to_node_id TEXT NOT NULL, scope_json TEXT NOT NULL, provenance_json TEXT NOT NULL, state TEXT NOT NULL,
+  created_at TEXT NOT NULL, superseded_reason TEXT, PRIMARY KEY (project_id, relation_id));
+CREATE TABLE IF NOT EXISTS source_evidence (
+  project_id TEXT NOT NULL, evidence_id TEXT NOT NULL, node_id TEXT NOT NULL, start_char INTEGER NOT NULL,
+  end_char INTEGER NOT NULL, quote TEXT NOT NULL, created_at TEXT NOT NULL, PRIMARY KEY (project_id, evidence_id));
+CREATE TABLE IF NOT EXISTS search_hypotheses (
+  project_id TEXT NOT NULL, hypothesis_id TEXT NOT NULL, text TEXT NOT NULL, generator_id TEXT NOT NULL,
+  generation_config_sha256 TEXT, source_evidence_ids_json TEXT NOT NULL, created_at TEXT NOT NULL,
+  PRIMARY KEY (project_id, hypothesis_id));
+CREATE TABLE IF NOT EXISTS bound_requirements (
+  project_id TEXT NOT NULL, requirement_id TEXT NOT NULL, query_id TEXT NOT NULL, query_text TEXT NOT NULL,
+  start_char INTEGER NOT NULL, end_char INTEGER NOT NULL, text TEXT NOT NULL, created_at TEXT NOT NULL,
+  PRIMARY KEY (project_id, requirement_id));
+CREATE TABLE IF NOT EXISTS runtime_assessments (
+  project_id TEXT NOT NULL, assessment_id TEXT NOT NULL, requirement_id TEXT NOT NULL, status TEXT NOT NULL,
+  timing TEXT NOT NULL, evidence_ids_json TEXT NOT NULL, assessor_id TEXT NOT NULL, run_id TEXT NOT NULL,
+  detail_json TEXT NOT NULL, created_at TEXT NOT NULL, PRIMARY KEY (project_id, assessment_id));
+CREATE TABLE IF NOT EXISTS trace_events (
+  project_id TEXT NOT NULL, trace_id TEXT NOT NULL, run_id TEXT NOT NULL, action_seq INTEGER NOT NULL,
+  action_kind TEXT NOT NULL, event_json TEXT NOT NULL, event_sha256 TEXT NOT NULL, created_at TEXT NOT NULL,
+  PRIMARY KEY (project_id, trace_id));
+CREATE TRIGGER IF NOT EXISTS evidence_id_is_not_hypothesis BEFORE INSERT ON source_evidence
+  WHEN EXISTS (SELECT 1 FROM search_hypotheses h WHERE h.project_id=NEW.project_id AND h.hypothesis_id=NEW.evidence_id)
+  BEGIN SELECT RAISE(ABORT, 'id already names a generated search hypothesis'); END;
+CREATE TRIGGER IF NOT EXISTS hypothesis_id_is_not_evidence BEFORE INSERT ON search_hypotheses
+  WHEN EXISTS (SELECT 1 FROM source_evidence e WHERE e.project_id=NEW.project_id AND e.evidence_id=NEW.hypothesis_id)
+  BEGIN SELECT RAISE(ABORT, 'id already names source evidence'); END;
+"""
+
+
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
@@ -108,6 +157,7 @@ class Store:
         with self.connect() as con:
             con.executescript(SCHEMA)
             con.executescript(SCHEMA_G02)
+            con.executescript(SCHEMA_P0T06)
             con.execute("INSERT OR IGNORE INTO meta(key, value) VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
             stored = con.execute("SELECT value FROM meta WHERE key='schema_version'").fetchone()[0]
             if stored != SCHEMA_VERSION:

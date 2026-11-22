@@ -273,13 +273,16 @@ class EvidenceCore:
         return {r["source_id"]: r["version_id"] for r in
                 con.execute("SELECT source_id, version_id FROM current_sources WHERE project_id=?", (project_id,))}
 
-    def _lexical(self, con, project_id: str, candidate_id: str, query: str, k: int) -> list[dict]:
+    def _lexical(self, con, project_id: str, candidate_id: str, query: str, k: int,
+                 match: str | None = None) -> list[dict]:
+        """FTS5 BM25 over the current-scope index. ``match`` (P0-T06) is an explicit FTS5 MATCH expression built by
+        the caller; by default the query is one phrase (G01 behaviour, unchanged)."""
         current = self._current_versions(con, project_id)
         rows = con.execute(
             "SELECT source_id, version_id, passage_id, bm25(passage_fts) AS score FROM passage_fts "
             "WHERE passage_fts MATCH ? AND project_id=? AND candidate_id=? "
             "ORDER BY score, source_id, version_id, passage_id LIMIT ?",
-            (fts_phrase(query), project_id, candidate_id, k)).fetchall()
+            (match if match is not None else fts_phrase(query), project_id, candidate_id, k)).fetchall()
         hits = []
         for r in rows:
             if current.get(r["source_id"]) != r["version_id"]:
@@ -693,13 +696,16 @@ class EvidenceCore:
         self._import_source(project_id, entry, raw, text)
 
     def _import_source(self, project_id: str, entry: dict, raw: bytes, text: str, passages: list[dict] | None = None,
-                       title: str | None = None) -> None:
+                       title: str | None = None, extra=None) -> None:
         """Persist a new immutable version (revision) or a new source (addition), switch the current pointer and
         index, and mark affected work, all in one transaction.
 
         * revision: citation dependents -> needs_review; search-scope dependents -> recheck_search.
         * addition: the candidate's search scope grew, so every current result for that candidate gets
-          recheck_search (a new uncited document can overturn an earlier "nothing found")."""
+          recheck_search (a new uncited document can overturn an earlier "nothing found").
+
+        ``extra(con)`` (P0-T06) writes additive records of the same version (original bytes, pages, nodes) inside the
+        same transaction, so a version is never visible without them."""
         sid, old, new = entry["source_id"], entry["supersedes_version_id"], entry["version_id"]
         with self.store.tx() as con:
             existing = con.execute("SELECT sha256 FROM source_versions WHERE project_id=? AND source_id=? AND "
@@ -711,6 +717,8 @@ class EvidenceCore:
             passages = self._insert_version(con, project_id, entry, new, raw, text, entry["event_id"], old,
                                             passages, title)
             self._make_current(con, project_id, sid, new, entry["candidate_id"], passages)
+            if extra is not None:
+                extra(con)
             now = utc_now()
             reasons = {}
             if old is None:  # source_addition
@@ -903,7 +911,7 @@ class EvidenceCore:
         same selective path as the G01 revision."""
         with self.store.read() as con:
             proj = self._project(con, project_id)
-        if proj["data_origin"] == "synthetic_fixture":
+        if proj["data_origin"] in ("synthetic_fixture", "synthetic_demo"):
             raise Conflict("the sample project is fixed; create a project for your own files", "sample_is_fixed")
         mission = proj["mission"]
         if candidate_id not in {c["candidate_id"] for c in mission["candidates"]}:
@@ -934,7 +942,14 @@ class EvidenceCore:
                  "version_id": version, "supersedes_version_id": cur["version_id"] if cur else None,
                  "candidate_id": candidate_id, "source_kind": prep["source_kind"], "license": "owner_supplied",
                  "path": _upload_path(filename, prep.get("pdf")), "sha256": digest}
-        self._import_source(project_id, entry, stored, prep["text"], prep["passages"], prep["title"])
+        media = {".pdf": "application/pdf", ".md": "text/markdown", ".markdown": "text/markdown",
+                 ".txt": "text/plain"}[Path(filename).suffix.lower()]
+
+        def keep_original(con):  # P0-T06: the uploaded bytes themselves (a PDF is otherwise only its canonical text)
+            con.execute("INSERT OR REPLACE INTO original_artifacts VALUES (?,?,?,?,?,?,?,?,?)",
+                        (project_id, sid, version, media, sha256(raw), len(raw), raw,
+                         f"sqlite:original_artifacts/{project_id}/{sid}@{version}", utc_now()))
+        self._import_source(project_id, entry, stored, prep["text"], prep["passages"], prep["title"], keep_original)
         out = self._settle_event(project_id, entry, mission, invoked_via)
         return {"status": "ingested", "source_id": sid, "version_id": version, "sha256": digest,
                 "event_type": entry["event_type"], "passage_rule": prep["passage_rule"],
@@ -1093,12 +1108,16 @@ class EvidenceCore:
             passages = [dict(p) for p in con.execute("SELECT passage_id, start_char, end_char FROM passages WHERE "
                                                      "project_id=? AND source_id=? AND version_id=? ORDER BY start_char",
                                                      (project_id, source_id, version_id))]
+            orig = con.execute("SELECT media_type, sha256, size_bytes, storage_ref FROM original_artifacts WHERE "
+                               "project_id=? AND source_id=? AND version_id=?",
+                               (project_id, source_id, version_id)).fetchone()
         return {"source_id": source_id, "version_id": version_id, "title": v["title"], "text": v["text"],
                 "sha256": v["sha256"], "candidate_id": v["candidate_id"], "license": v["license"],
                 "status": "current" if current == version_id else "historical", "current_version": current,
                 "all_versions": versions, "supersedes_version_id": v["supersedes_version_id"],
                 "import_event": v["import_event"], "passages": passages, "data_origin": origin,
-                "source_kind": v["source_kind"], "origin_path": v["origin_path"]}
+                "source_kind": v["source_kind"], "origin_path": v["origin_path"],
+                "original_artifact": dict(orig) if orig else None}
 
     def resolve_citation(self, project_id: str, source_id: str, version_id: str, passage_id: str) -> dict:
         sv = self.source_version(project_id, source_id, version_id)

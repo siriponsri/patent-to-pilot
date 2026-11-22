@@ -1,0 +1,1212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:patent-to-pilot:schema:evidence-trace:v1",
+  "title": "Patent-to-Pilot source-bound search event",
+  "description": "Runtime provenance without evaluator gold. Source evidence and generated search hypotheses are distinct types. A synthetic fixture is not a research result.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "ptp-evidence-trace/1"
+    },
+    "trace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "runtime",
+        "synthetic_demo"
+      ]
+    },
+    "event_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "original_query": {
+      "type": "object",
+      "properties": {
+        "query_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "query_id",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "action": {
+      "$ref": "#/$defs/action"
+    },
+    "index": {
+      "$ref": "#/$defs/index"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source_version"
+      },
+      "minItems": 1
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      },
+      "minItems": 1
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      },
+      "minItems": 0
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source_evidence"
+      },
+      "minItems": 0
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/search_hypothesis"
+      },
+      "minItems": 0
+    },
+    "candidate_delta": {
+      "$ref": "#/$defs/candidate_delta"
+    },
+    "runtime_assessments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/runtime_assessment"
+      },
+      "minItems": 0
+    },
+    "cost": {
+      "$ref": "#/$defs/cost"
+    }
+  },
+  "required": [
+    "schema_version",
+    "trace_id",
+    "run_id",
+    "mode",
+    "event_time",
+    "original_query",
+    "action",
+    "index",
+    "sources",
+    "nodes",
+    "relations",
+    "evidence",
+    "hypotheses",
+    "candidate_delta",
+    "runtime_assessments",
+    "cost"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "span": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unit": {
+          "const": "unicode_code_points_half_open"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "region": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "bbox": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "page",
+        "bbox"
+      ],
+      "additionalProperties": false,
+      "description": "[x0,y0,x1,y1], normalized displayed page, top-left origin; positive area is a semantic invariant."
+    },
+    "page": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "display_width_pt": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "display_height_pt": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "rotation_degrees": {
+          "enum": [
+            0,
+            90,
+            180,
+            270
+          ]
+        }
+      },
+      "required": [
+        "number",
+        "display_width_pt",
+        "display_height_pt",
+        "rotation_degrees"
+      ],
+      "additionalProperties": false
+    },
+    "original_artifact": {
+      "type": "object",
+      "properties": {
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "storage_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "content_base64": {
+          "type": "string",
+          "contentEncoding": "base64"
+        }
+      },
+      "required": [
+        "media_type",
+        "storage_ref",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "canonical_text": {
+      "type": "object",
+      "properties": {
+        "storage_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "normalization_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "storage_ref",
+        "sha256",
+        "normalization_id"
+      ],
+      "additionalProperties": false
+    },
+    "source_version": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_artifact": {
+          "$ref": "#/$defs/original_artifact"
+        },
+        "canonical_text": {
+          "$ref": "#/$defs/canonical_text"
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/page"
+          },
+          "minItems": 0
+        },
+        "parser_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "group_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source_id",
+        "version_id",
+        "original_artifact",
+        "canonical_text",
+        "pages",
+        "parser_id"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "original_artifact": {
+                "properties": {
+                  "media_type": {
+                    "const": "application/pdf"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "pages": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "alignment": {
+      "type": "object",
+      "properties": {
+        "prior_node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "prior_node_id",
+        "method",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "date": {
+      "type": "object",
+      "properties": {
+        "raw_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "role": {
+          "enum": [
+            "issue",
+            "receipt",
+            "publication",
+            "effective",
+            "referenced",
+            "unknown"
+          ]
+        },
+        "calendar": {
+          "enum": [
+            "gregorian",
+            "buddhist",
+            "unknown"
+          ]
+        },
+        "interpretation": {
+          "enum": [
+            "explicit",
+            "inferred"
+          ]
+        }
+      },
+      "required": [
+        "raw_text",
+        "normalized_date",
+        "role",
+        "calendar",
+        "interpretation"
+      ],
+      "additionalProperties": false
+    },
+    "visual_observation": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "enum": [
+            "garuda_like_emblem",
+            "seal_like_mark",
+            "signature_like_mark",
+            "logo",
+            "other"
+          ]
+        },
+        "detector_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "crop_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "label",
+        "detector_id",
+        "confidence",
+        "crop_sha256"
+      ],
+      "additionalProperties": false,
+      "description": "An observation, never an authenticity or issuer-authority decision."
+    },
+    "node": {
+      "type": "object",
+      "properties": {
+        "node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_version_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "title",
+            "heading",
+            "paragraph",
+            "clause",
+            "claim",
+            "table_cell",
+            "table_header",
+            "footnote",
+            "annex",
+            "issuer",
+            "date",
+            "visual_observation"
+          ]
+        },
+        "span": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/span"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/region"
+          },
+          "minItems": 0
+        },
+        "alignment": {
+          "$ref": "#/$defs/alignment"
+        },
+        "date": {
+          "$ref": "#/$defs/date"
+        },
+        "observation": {
+          "$ref": "#/$defs/visual_observation"
+        }
+      },
+      "required": [
+        "node_id",
+        "source_version_id",
+        "kind",
+        "span",
+        "regions"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "visual_observation"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "observation"
+            ],
+            "properties": {
+              "span": {
+                "type": "null"
+              },
+              "regions": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "span": {
+                "$ref": "#/$defs/span"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "date"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "date"
+            ]
+          }
+        }
+      ]
+    },
+    "relation": {
+      "type": "object",
+      "properties": {
+        "relation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "parent_of",
+            "inherits_from",
+            "qualifies",
+            "incorporates",
+            "governs_cell",
+            "issued_by"
+          ]
+        },
+        "from_node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to_node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope_node_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "enum": [
+                "explicit_source",
+                "parser_inferred",
+                "model_inferred",
+                "synthetic_fixture"
+              ]
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true,
+              "minItems": 1
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "method",
+            "evidence_ids"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "relation_id",
+        "kind",
+        "from_node_id",
+        "to_node_id",
+        "scope_node_ids",
+        "provenance"
+      ],
+      "additionalProperties": false
+    },
+    "source_evidence": {
+      "type": "object",
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "const": "source_evidence"
+        },
+        "node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "span": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/span"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "evidence_id",
+        "kind",
+        "node_id",
+        "span",
+        "quote"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "span": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "quote": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "quote": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "search_hypothesis": {
+      "type": "object",
+      "properties": {
+        "hypothesis_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "const": "generated_search_hypothesis"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generator_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generation_config_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "hypothesis_id",
+        "kind",
+        "text",
+        "generator_id",
+        "generation_config_sha256",
+        "source_evidence_ids"
+      ],
+      "additionalProperties": false,
+      "description": "Generated query material; cannot be used as source evidence."
+    },
+    "runtime_assessment": {
+      "type": "object",
+      "properties": {
+        "assessment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requirement_span": {
+          "$ref": "#/$defs/span"
+        },
+        "status": {
+          "enum": [
+            "supported",
+            "contradicted",
+            "unresolved"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        },
+        "assessor_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis": {
+          "const": "runtime_not_gold"
+        },
+        "timing": {
+          "enum": [
+            "before_action",
+            "after_action"
+          ]
+        }
+      },
+      "required": [
+        "assessment_id",
+        "requirement_span",
+        "status",
+        "evidence_ids",
+        "assessor_id",
+        "basis",
+        "timing"
+      ],
+      "additionalProperties": false
+    },
+    "encoder": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weight_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "precision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dimension": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "model_id",
+        "weight_revision",
+        "precision",
+        "dimension"
+      ],
+      "additionalProperties": false
+    },
+    "lexical_config": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tokenizer_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "k1": {
+          "type": "number",
+          "minimum": 0
+        },
+        "b": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "algorithm",
+        "tokenizer_id",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "index": {
+      "type": "object",
+      "properties": {
+        "index_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "corpus_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "encoder": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/encoder"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lexical_config": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/lexical_config"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "normalization_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chunker_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "index_id",
+        "manifest_sha256",
+        "corpus_revision",
+        "encoder",
+        "lexical_config",
+        "normalization_id",
+        "chunker_id"
+      ],
+      "additionalProperties": false,
+      "description": "Manifest hash covers the identity fields other than index_id and manifest_sha256; retained manifest bytes are authoritative."
+    },
+    "action": {
+      "type": "object",
+      "properties": {
+        "action_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "seed_search",
+            "structural_expansion",
+            "replay_search"
+          ]
+        },
+        "query_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "query_artifact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        },
+        "selected_assessment_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "route_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "eligibility_profile_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "action_id",
+        "kind",
+        "query_text",
+        "query_artifact_ids",
+        "selected_assessment_id",
+        "route_id",
+        "result_limit",
+        "eligibility_profile_id"
+      ],
+      "additionalProperties": false
+    },
+    "candidate_delta": {
+      "type": "object",
+      "properties": {
+        "identity_unit": {
+          "enum": [
+            "node",
+            "document",
+            "family"
+          ]
+        },
+        "before_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        },
+        "returned_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        },
+        "after_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        },
+        "new_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 0
+        }
+      },
+      "required": [
+        "identity_unit",
+        "before_ids",
+        "returned_ids",
+        "after_ids",
+        "new_ids"
+      ],
+      "additionalProperties": false,
+      "description": "Additive candidate pool event. Returned IDs are eligible, deduplicated IDs; relevance is not asserted."
+    },
+    "cost": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "const": "USD"
+        },
+        "estimate_usd": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "provider_reported_usd": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invoiced_usd": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invoice_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "state": {
+          "enum": [
+            "unbilled_estimate",
+            "provider_reported",
+            "invoiced",
+            "unknown",
+            "not_applicable"
+          ]
+        }
+      },
+      "required": [
+        "currency",
+        "estimate_usd",
+        "provider_reported_usd",
+        "invoiced_usd",
+        "invoice_id",
+        "state"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "invoiced"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "invoiced_usd": {
+                "type": "number",
+                "minimum": 0
+              },
+              "invoice_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "invoiced_usd": {
+                "type": "null"
+              },
+              "invoice_id": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "provider_reported"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "provider_reported_usd": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "not_applicable"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "provider_reported_usd": {
+                "type": "null"
+              },
+              "invoiced_usd": {
+                "type": "null"
+              },
+              "invoice_id": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "synthetic_demo"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cost": {
+            "properties": {
+              "state": {
+                "const": "not_applicable"
+              },
+              "provider_reported_usd": {
+                "type": "null"
+              },
+              "invoiced_usd": {
+                "type": "null"
+              },
+              "invoice_id": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
