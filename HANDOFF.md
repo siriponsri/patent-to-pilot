@@ -17,7 +17,7 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 |---|---|---|
 | G01 Shared core and local vertical slice | **COMPLETE** | [G01/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G01/STATUS.md): 16 tests, smoke 15/15, browser QA at 1280/360 px, restart persistence. Owner still to observe: Explorer double-click and default-browser auto-open. |
 | G02 Provider, ingestion and dataset contracts | **COMPLETE** (22 Nov, USD 0) | [G02/STATUS.md](artifacts/owner-program/PTP-2026-11-21/G02/STATUS.md): provider ports with Ollama / OpenAI-compatible / Anthropic adapters and policy; index generations; hybrid mode; text/MD ingestion into owner projects; dataset registry and adapters. Real route: Qwen3-Embedding-0.6B on dr-train CPU through an SSH tunnel ([receipt](artifacts/owner-program/PTP-2026-11-21/G02/REAL_EMBEDDING_ROUTE.json)). Not real-tested: paid API (no envelope), Ollama (not installed), reranker. PDF parked (needs a package approval). |
-| G03 Baselines and candidate policy on allowed DEV | **NEXT** | Uses the G02 ports. DAPFAM is not a tuning set in this program. Carry over the AM-7 lessons: always report IN and OUT, keep N4 IPC-demotion as a counterexample, treat co-citation as one action. |
+| G03 Baselines and candidate policy on allowed DEV | **RUNNING 22 Nov** — protocol [G03-DEV-PROTOCOL.md](docs/healthtech/research/g03-dev/G03-DEV-PROTOCOL.md) frozen at ec720914. E01 gate passed 24/24 (anchor dense = PatEmbed). Stage 2 (all allocations B=2..4 + SF-v0 policy, P1-DEV and VAL) runs on dr-train CPU in `/data/ptp-paper2/g03-dev` (`stage2.log` ends `G03_STAGE2_DONE`, then `results.json`). Then write the decision memo. | Uses the G02 ports. DAPFAM is not a tuning set in this program. Carry over the AM-7 lessons: always report IN and OUT, keep N4 IPC-demotion as a counterexample, treat co-citation as one action. |
 | G04 Matched patent benchmark (DAPFAM) | Not started | DAPFAM is previously exposed (B53 evaluated all 1,247 queries); report it as such. |
 | G05 Transfer and evidence maintenance | Not started | Thai Gazette public benchmark; NitiBench+ optional. |
 | G06 English-first product beta | Not started | Can run alongside G04/G05. |
@@ -58,7 +58,11 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ### Running jobs
 
-- None. The B53 evaluation finished, and the G02 embedding shim and its folder were removed from dr-train after QA, and its logs
+- G03 stage 2 on dr-train CPU (above). The parallel session `is2-papers` is building the Thai and English IS2 papers in
+  `docs/writing/is2/paper/`; it commits nothing, and this session commits its files.
+- B53.0 measured 22 Nov ([B53-0-RESULTS.md](docs/healthtech/research/b53-0/B53-0-RESULTS.md)): TAC→TAC consistent with
+  the DAPFAM paper in 11 of 12 cells. Caution: F0 patembed-base may overlap DAPFAM through PatenTEB.
+- The B53 evaluation finished, and the G02 embedding shim and its folder were removed from dr-train after QA, and its logs
   are in `artifacts/owner-program/PTP-2026-11-21/G02/`.
 - **21 Nov dr-train cleanup done** ([summary](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md), runbook
   [DR-TRAIN-ARTIFACT-RUNBOOK.md](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md), script
