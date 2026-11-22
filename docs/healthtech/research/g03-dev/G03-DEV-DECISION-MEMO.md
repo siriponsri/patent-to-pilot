@@ -100,6 +100,41 @@ identical per-query values on P1-DEV and VAL.
 **Reading:** with these encoders and a fixed RRF scorer, re-slicing the same request into field queries adds very few new
 relevant families. Effects of ±0.005 sit at the resolution limit of VAL (2,000 tasks).
 
+**Defect found 22 Nov (reported, not repaired):** `g03_field_routes.py` did not apply the filing-date mask or the own-unit
+mask that `dense_bridgeret_v3.py` applies to the whole-query routes. Later-published units and the query's own unit could
+fill T and C windows. This can only have lowered T and C, so the PARK decision is not overturned by it, but the T/C numbers
+above understate a correctly masked field route. Amendment 3 applies both masks.
+
+## 4b. Amendment 2 result: learned route selector (LS), decided 22 Nov
+
+**Results:** [g03-dev-results-a2.json](g03-dev-results-a2.json) (dr-train `a2.log` ends `G03_A2_DONE`; frozen at
+8e759b8e). **This is the third look at VAL in G03** (v1, amendment 1, amendment 2); DEV phase only.
+
+**Setup:** per-query choice among the 35 fixed allocations at B = 4, trained on TRAIN labels (30,000-query sample; TRAIN
+mean ALL R@200 of F\* = 0.444). Two selectors: LS-ridge and LS-hgb. No P1-DEV or VAL label was used to fit them.
+
+**Selection on P1-DEV:** LS\* = **LS-ridge** (ALL 0.4242 vs LS-hgb 0.4155; F\* 0.4230; oracle 0.5020).
+- LS-ridge captures **1.5%** of the oracle headroom on P1-DEV and 2.2% on VAL; LS-hgb captures −9.5% / −8.9% (worse than F\*).
+- LS-ridge chooses F\* itself for 59% of P1-DEV queries (15,775 / 26,547), then Q0-P4 (PatEmbed×4) for 16%.
+
+**Principal on VAL, LS\* − F\* (n = 1,999, cluster bootstrap):**
+- ALL **+0.0017 [−0.0019, +0.0054]** (wins 78, losses 65);
+- IN +0.0002 [**−0.0060**, +0.0062];
+- OUT +0.0032 [−0.0023, +0.0085].
+
+**Decision (frozen rule, protocol v1 §7): PARK the learned selector.** The ALL CI includes 0 and the IN lower bound
+(−0.0060) is below −δ = −0.005, so IN non-inferiority is not shown. Recorded by the harness as
+"PARK learned selector (IN or OUT inferior)".
+
+**Descriptive P1-DEV, LS\* − F\*:** ALL +0.0012 [+0.0002, +0.0023]; IN +0.0007 [−0.0009, +0.0023]; OUT +0.0027
+[+0.0012, +0.0043]. Real on 26,547 queries but far too small to matter.
+
+**Reading:** a selector with TRAIN labels and query-side features cannot predict which re-allocation of the same four
+routes wins. Together with v1 and amendment 1, three mechanisms that only re-weight or re-slice the existing routes have
+now failed to move recall beyond ±0.005. **Owner decision D2:** keep working on acquisition with a mechanism that brings in
+*new* candidates. That is amendment 3 (LLM query expansion as new routes):
+[G03-DEV-AMENDMENT-3-20261122.md](G03-DEV-AMENDMENT-3-20261122.md), frozen before any number.
+
 ## 5. Product consequence
 
 The static default for product retrieval is a fixed dense allocation fused by RRF. The DEV winner uses PatEmbed, whose
