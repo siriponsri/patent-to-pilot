@@ -46,7 +46,13 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
   - Phase closed: [pull/prune summary](artifacts/maintenance/20261122-b53-pull/SUMMARY.md).
   - B53 run TSVs on dr-train are now `runs/F*.tsv.gz`.
   - `b53/inputs/` (341 MB, read-only, identical local copy) is left for an owner decision.
-  - The IS2 drafts still need the Stage 2 numbers.
+  - IS2 drafts updated 22 Nov:
+    - short paper v0.2: Markdown + docx, 9 pages;
+    - slides outline v2;
+    - deliverables;
+    - committee response;
+    - Workbench demo storyboard.
+  - Still pending: the advisor's Thai name/position and the DOI of Paper 53.
 - **IS2 drafts:** [docs/writing/is2/](docs/writing/is2/) (short paper v0.1, committee response, slides outline). Advisor
   details and Stage 2 numbers are pending.
 
@@ -63,7 +69,7 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ### Next steps
 
-1. Put the B53 Stage 2 numbers into the IS2 drafts (`docs/writing/is2/`), keeping the file 09 §6 wording.
+1. Owner and advisor review the IS2 short paper v0.2 (`docs/writing/is2/IS2-short-paper-draft.docx`).
 2. G03 from `02_GOALS_AND_PHASES.md` §G03 and `research/METHOD_SPEC.md` / `POLICY_V0.md`, using the G02 ports.
 3. Ask the owner to observe the G01 launcher checks (double-click, browser auto-open).
 4. After each phase, pull dr-train artifacts to local and delete remote copies that are no longer needed.

@@ -1,33 +1,36 @@
-# Solution Scout: committee demo storyboard (60–90 s; slide 8 of the IS2 deck)
+# Workbench: committee demo storyboard (60–90 s; slide 8 of the IS2 deck) — v2, 22 Nov 2026
 
-Purpose: show K2b (what a patent searcher or R&D engineer gets) as a working translation layer. It is **not** evidence of
-user benefit; that remains NOT_MEASURED.
+Purpose: show K2b (what a searcher or R&D engineer gets) as a working evidence workflow. It follows the G08 narrative:
+live task → changed source → affected decision. It is **not** evidence of user benefit; that remains NOT_MEASURED.
 
-## Run (local only, no network calls)
-`.claude/launch.json`:
-- `scout-backend` → `scripts/healthtech/serve_http.py` on port 8787, with the public-demo bundle and rationale book;
-- `scout-frontend` → `frontend/healthtech-web/serve.mjs` on port 5178;
-- open `http://localhost:5178/scout.html`.
+## Run (local only, no network calls in lexical mode)
 
-Set-up, rights and limits: `docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md`.
-
-Licence note: the live demo encoder is patembed-large (CC BY-NC-SA 4.0), and the corpus is the public-demo HUPD-derived
-bundle (CC BY-SA 4.0, personal names removed). This is acceptable for an academic, non-commercial committee demo. Any
-commercial product build must swap to a commercially licensed encoder (roadmap §2).
+- Double-click `Start-PTP.cmd`, then open **http://127.0.0.1:8765/**. The CLI equivalent is
+  `.venv\Scripts\python.exe scripts\ptp_run.py --serve`.
+- Before the day, run `scripts\ptp_run.py --smoke` (15/15) and `--doctor`.
+- Use a fresh data directory (`--data-dir`) so the run starts with no results.
+- Owner guide: `artifacts/owner-program/PTP-2026-11-21/G02/OWNER_START.md`.
 
 ## Script (60–90 s)
+
 | t | Screen | Speech (Thai, short) | Label on screen |
 |---|---|---|---|
-| 0–10 s | Scout landing; click the recorded example "A small pump seal starts to leak …" (own field F04, F16 pre-filled; a free brief needs at least one own-field IPC class) | "เริ่มจากปัญหาทางเทคนิค ไม่ใช่ชื่อสิทธิบัตร" | REAL PUBLIC SOURCE – NOT TECHNICALLY VERIFIED |
-| 10–30 s | Two lanes: own field vs other industries | "ระบบแยกผลในสาขาเดียวกับผลจากอุตสาหกรรมอื่น — ตรงกับโจทย์ OUT ใน B53" | same |
-| 30–50 s | Open one cross-industry candidate: publication date, family, exact source passage | "ทุกข้อเสนอชี้กลับไปที่ข้อความต้นฉบับ ตรวจย้อนได้" | same |
-| 50–70 s | Transfer rationale (quote-checked) and what is not covered | "เหตุผลการถ่ายทอดเทคโนโลยีผ่านการตรวจ quote; ส่วนที่ยังไม่ครอบคลุมแสดงชัด" | same |
-| 70–90 s | Export the dossier with replay id and the human-review placeholder | "ผู้ใช้ตัดสินใจเอง ระบบไม่ใช่ legal/FTO" | HUMAN REVIEW: placeholder (no reviewer record yet) |
+| 0–10 s | Open sample project; requirements R1–R3 | "เริ่มจากโจทย์ที่ตรวจได้ 3 ข้อ ไม่ใช่การให้ AI ตัดสินเอง" | Sample data · Lexical mode |
+| 10–30 s | Run comparison → matrix; open the Thai citation | "ทุกช่องชี้กลับไปที่ข้อความต้นฉบับ ระดับเวอร์ชันและตำแหน่งตัวอักษร" | Live local run |
+| 30–55 s | Apply the sample source revision (DEMO-S2 v1 → v2) | "เมื่อแหล่งข้อมูลเปลี่ยน ระบบตรวจเฉพาะผลที่พึ่งพาแหล่งนั้น" | Changes view |
+| 55–75 s | Changes: A/R2 Meets → Does not meet; others reused; v1 citation still opens (Superseded) | "ผลที่ไม่เกี่ยวไม่ถูกคำนวณใหม่ และหลักฐานเก่ายังตรวจย้อนได้" | Superseded (current: v2) |
+| 75–90 s | Optional: Providers → Hybrid mode label; a project built from your own files | "รุ่นโมเดลและดัชนีถูกบันทึกในทุก run; ไม่มีโมเดลก็ใช้ได้" | Your files · Hybrid mode |
 
-Fallback if the backend fails on the day: the synthetic replay bundle (`--scout-replay`), labelled SYNTHETIC DEMO, or a
-screen recording made from the same build.
+**Fallback if the app fails on the day:** use the G01/G02 screenshots in `artifacts/owner-program/PTP-2026-11-21/G01|G02/screenshots/`
+or a screen recording of the same build, labelled RECORDED.
 
-## Measured before the presentation (to be filled)
-- [x] Backend and frontend start from `.claude/launch.json` on this PC. Checked 19 Nov 2026 with the recorded pump-seal example: Mode live, corpus 56,528, encode 760 ms, search 80 ms, paid calls 0; both lanes rendered (own field 10 / other industries 10), with transfer ideas and dossier download
-- [ ] One full walk-through recorded (screen capture) as the fallback
-- [ ] Every number shown on screen traced to the demo audit
+**Optional backup demo (legacy):** Solution Scout (`.claude/launch.json` → `scout-backend` + `scout-frontend`,
+`http://localhost:5178/scout.html`). It uses patembed-large (CC BY-NC-SA 4.0) and a public HUPD-derived bundle, so it is for
+academic use only. Rights and limits: `docs/healthtech/audits/ptp-scout-public-demo-20261106/README.md`.
+
+## Checked before the presentation
+
+- [x] Workbench flow verified in browser QA (G01 21 Nov; G02 22 Nov at 1280/360 px, restart persistence, 0 console errors)
+- [ ] Explorer double-click of `Start-PTP.cmd` and default-browser auto-open, observed by the owner
+- [ ] One full walk-through recorded as the fallback
+- [ ] Rehearsed within 90 s (G08)

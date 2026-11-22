@@ -19,18 +19,19 @@ appendices and the deck, not into the 10 pages.
 | # | Deliverable | Source in repo | Status |
 |---|---|---|---|
 | D1 | Paper 53 recap + IS1 comments + limitations stated plainly | `COMMITTEE-RESPONSE-DRAFT.md` v2, Paper 53 PDF | draft |
-| D2 | Registered B53 protocol (first stage × pool depth; Stage 2: × instruction) | `plans/B53-PREDECLARATION.md` (Stage 1 frozen 274af5de) | Stage 1 frozen; Stage 2 after timing |
-| D3 | B53 results on DAPFAM: exposure, first-hit rank, conditional/full-cohort effects, CIs, limitations | dr-train `/data/ptp-paper2/b53`, aggregates → `docs/writing/is2/results/` | Stage 1 MEASURED (3442447a); Stage 2 after timing |
+| D2 | Registered B53 protocol (first stage × pool depth; Stage 2: × instruction) | `plans/B53-PREDECLARATION.md` (Stage 1 frozen 274af5de; Stage 2 frozen 19 Nov) | DONE |
+| D3 | B53 results on DAPFAM: exposure, first-hit rank, conditional/full-cohort effects, CIs, limitations | `results/B53-STAGE1-RESULTS.md`, `results/B53-STAGE2-RESULTS.md` (local archive `../_private_artifacts/dr-train-archive/20261122-b53/`) | Stage 1 MEASURED (3442447a); Stage 2 MEASURED 22 Nov (7a931753) |
 | D4 | Reproducibility pack: revisions, hashes, scripts, configs, tests, model-selection rationale, licence/BOM | `scripts/healthtech/b53_first_stage.py`, `tests/test_b53_first_stage.py`, `b53-readiness-20261119.json`, K1a v2 | partial |
-| D5 | Short Solution Scout demo + evidence-dossier walkthrough (labelled SYNTHETIC / PUBLIC SOURCE) | `frontend/healthtech-web` | storyboard pending |
-| D6 | Research outlook: BridgeRet / CEDS / EG-SHE with true status | `docs/writing/RESEARCH-ROADMAP.md` (retired 21 Nov 2026; recover from git `40780c97`; superseded by program PTP-2026-11-21) | needs update |
+| D5 | Short live demo: Workbench task → changed source → affected decision (labelled SYNTHETIC / OWNER FILES) | `Start-PTP.cmd` (G01–G02) | engineering validated; rehearsal in G08 |
+| D6 | Research outlook: program PTP-2026-11-21 (C1–C3) with true status; legacy BridgeRet / CEDS / EG-SHE per `10_PAPER53_BRIDGE.md` §6 | owner package `docs/owner/owner-note-21112026/`, `INDEX-PLAN.md` | reflected in short paper v0.2 §5 and slides v2 |
 
 Not required for IS2: P1–P3 TEST results, SOTA wins, deployment, real users, business returns.
 
 ## 2. Short-paper outline (≤ 10 pages, template sections)
 
 Draft v0.1: `IS2-SHORT-PAPER-DRAFT.md` (Markdown master) → `IS2-short-paper-draft.docx` built from the faculty template by
-`scripts/writing/build_is2_shortpaper_docx.py` (8 pages rendered; Stage 2 and the advisor's Thai name are [PENDING]).
+`scripts/writing/build_is2_shortpaper_docx.py`. v0.2 (22 Nov) has 9 pages with the Stage 2 results; the advisor's Thai
+name and position are still [PENDING].
 
 
 1. **บทนำ:**
@@ -66,7 +67,7 @@ Draft v0.1: `IS2-SHORT-PAPER-DRAFT.md` (Markdown master) → `IS2-short-paper-dr
 - [x] K1a rationale with provenance, no invented history (K1a v2)
 - [x] K1b BM25 and hybrid at K=100 measured (B53 Stage 1, `results/B53-STAGE1-RESULTS.md`)
 - [x] K1c identity stated with conditions; no causal overclaim (COMMITTEE-RESPONSE v2)
-- [ ] K2a only the first stage changes in the main contrast, with reranker control (Stage 2)
+- [x] K2a only the first stage changes in the main contrast, with reranker control (Stage 2, `results/B53-STAGE2-RESULTS.md`)
 - [ ] K2b user journey + proxy metrics; real user benefit = NOT_MEASURED
 - [x] Paper 53's 257/692 kept apart from B53-FULL (905 OUT-eligible) and DAPFAM 1,247
 - [x] Paper 86 = withdrawn / unpublished, never an IEEE publication
