@@ -121,8 +121,15 @@ class ProviderRegistry:
         with self.store.read() as con:
             rows = con.execute("SELECT * FROM provider_usage WHERE profile_id=? ORDER BY rowid DESC LIMIT ?",
                                (profile_id, limit)).fetchall()
-        return [{**dict(r), "usage_json": None, "usage": json.loads(r["usage_json"]) if r["usage_json"] else None,
-                 "cost_usd": "unknown"} for r in rows]
+        out = []
+        for r in rows:
+            usage = json.loads(r["usage_json"]) if r["usage_json"] else None
+            cost = usage.get("cost_usd") if isinstance(usage, dict) else None
+            # money is reported only when the provider (or the shared budget ledger) settled it; never assumed zero
+            out.append({**dict(r), "usage_json": None, "usage": usage,
+                        "cost_usd": cost if isinstance(cost, (int, float)) and not isinstance(cost, bool)
+                        else "unknown"})
+        return out
 
     def client(self, profile_id: str, profile: ProviderProfile | None = None) -> ProviderClient:
         profile = profile or self.get(profile_id)

@@ -399,8 +399,8 @@
    "task_id": "P0-T05",
    "phase_id": "P0",
    "title": "Implement and verify shared budget reservation accounting",
-   "status": "IN_PROGRESS",
-   "outcome": "NOT_RUN",
+   "status": "COMPLETE",
+   "outcome": "ENGINEERING_VERIFIED",
    "depends_on": [
     "P0-T01"
    ],
@@ -411,8 +411,8 @@
     "docs/tracking/owner-note-22112026/receipts/P0-T05_budget_forecast.json"
    ],
    "acceptance_evidence": "Use fake provider responses to verify atomic reservations, retries, request caps, restart persistence and unknown-cost pauses; reconcile historical smoke and Workbench spend.",
-   "evidence_uri": "",
-   "check_result": "NOT_CHECKED",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P0-T05_ledger_verification.md; docs/tracking/owner-note-22112026/receipts/P0-T05_budget_forecast.json; src/patent_to_pilot/budget/ledger.py; tests/test_budget_ledger.py; tests/test_g03_a3_caller_budget.py",
+   "check_result": "17+10 new tests pass; G02 provider tests pass; full suite only 8 known SACR failures",
    "next_task": "P0-T07; P1-T01",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
    "budget_spent_usd": null,
@@ -428,7 +428,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-22] parallel agent started"
+   "notes": "[2026-11-22] parallel agent started | [2026-11-22] E1 active (stop 6); E1R configured but refuses dispatch until approved; smoke spend seeded; A3r1 does not fit E1 (cheapest Stage B list 7.31); timeouts now pause dispatch (unknown cost)"
   },
   {
    "task_id": "P0-T06",
@@ -1495,5 +1495,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-22T18:28:55+07:00"
+ "live_updated_at": "2026-11-22T18:30:54+07:00"
 }

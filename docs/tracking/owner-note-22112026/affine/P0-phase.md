@@ -12,7 +12,7 @@ Phase status: **IN_PROGRESS**
 | P0-T02 | Install or update AFFiNE from the verified repository path | 🟡 PARTIAL | NOT_RUN | P0-T03 |
 | P0-T03 | Create live tracking copies and mirror phases into AFFiNE | 🟡 PARTIAL | NOT_RUN | P0-T07 |
 | P0-T04 | Prepare prospective A3r1 protocol and no-call provider plan | ✅ COMPLETE | NOT_RUN | P0-T07; P1-T01 |
-| P0-T05 | Implement and verify shared budget reservation accounting | 🔄 IN_PROGRESS | NOT_RUN | P0-T07; P1-T01 |
+| P0-T05 | Implement and verify shared budget reservation accounting | ✅ COMPLETE | ENGINEERING_VERIFIED | P0-T07; P1-T01 |
 | P0-T06 | Implement a source-bound synthetic search-and-trace slice | ✅ COMPLETE | ENGINEERING_VERIFIED | P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03 |
 | P0-T07 | Close free preparation and publish separate readiness milestones | ⏳ NOT_STARTED | NOT_RUN | P1-T01 if eligible; free P2/P4/P5 tasks by dependency |
 
@@ -65,11 +65,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P0-T01
 - **Acceptance evidence:** Use fake provider responses to verify atomic reservations, retries, request caps, restart persistence and unknown-cost pauses; reconcile historical smoke and Workbench spend.
-- **Evidence:** pending
-- **Check:** NOT_CHECKED
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P0-T05_ledger_verification.md; docs/tracking/owner-note-22112026/receipts/P0-T05_budget_forecast.json; src/patent_to_pilot/budget/ledger.py; tests/test_budget_ledger.py; tests/test_g03_a3_caller_budget.py
+- **Check:** 17+10 new tests pass; G02 provider tests pass; full suite only 8 known SACR failures
 - **Next:** P0-T07; P1-T01
 - **Blocker:** —
-- **Notes:** [2026-11-22] parallel agent started
+- **Notes:** [2026-11-22] parallel agent started | [2026-11-22] E1 active (stop 6); E1R configured but refuses dispatch until approved; smoke spend seeded; A3r1 does not fit E1 (cheapest Stage B list 7.31); timeouts now pause dispatch (unknown cost)
 
 ## P0-T06 — Implement a source-bound synthetic search-and-trace slice
 

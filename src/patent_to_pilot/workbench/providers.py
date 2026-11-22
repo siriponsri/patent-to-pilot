@@ -17,6 +17,11 @@ Policy (checked before any socket is opened):
   envelope (``spend_cap_usd`` > 0 and ``max_requests`` > 0). Model requests are counted against ``max_requests``.
   Token usage is recorded when the provider reports it; money is "unknown" until priced (never assumed zero).
 * Nothing here downloads a model. A profile is not "usable" until its connection check passes.
+* Every billable request on a paid remote route also goes through the shared budget ledger
+  (``patent_to_pilot.budget.ledger``, P0-T05) that the research callers use: the request's conservative maximum cost is
+  reserved in the approved envelope for its provider (scope ``workbench``, plus the profile's own cap) before the socket
+  opens, then settled with the reported cost, released on an HTTP error answer, or left unknown (which pauses paid
+  dispatch until reconciled) on a timeout or unreadable answer. No approved envelope, or no known price -> blocked.
 """
 from __future__ import annotations
 
@@ -32,7 +37,9 @@ import urllib.error
 import urllib.request
 from urllib.parse import urlsplit
 
-ROLES = ("chat", "embedding", "rerank")
+from patent_to_pilot.budget import ledger as budget_ledger
+
+ROLES =("chat", "embedding", "rerank")
 ADAPTERS = {
     "ollama": {"roles": ("chat", "embedding"), "paid": False, "default_endpoint": "http://127.0.0.1:11434"},
     "openai_compatible": {"roles": ("chat", "embedding", "rerank"), "paid": "if_remote",
@@ -180,12 +187,20 @@ def l2_normalize(vec: list[float]) -> list[float]:
 class ProviderClient:
     """One profile, one client. ``ledger`` receives one event per network request (allowed, failed or blocked)."""
 
-    def __init__(self, profile: ProviderProfile, ledger=None, used_requests: int = 0) -> None:
+    def __init__(self, profile: ProviderProfile, ledger=None, used_requests: int = 0, budget=None) -> None:
         profile.validate()
         self.profile = profile
         self.ledger = ledger
         self.used_requests = used_requests
+        self.budget = budget          # a BudgetLedger; None = the shared ledger for paid remote routes
         self.last_models: dict[str, dict] = {}
+
+    def _budget_gate(self, billable: bool):
+        if not (billable and self.profile.paid):
+            return None
+        if self.budget is not None:
+            return self.budget
+        return None if self.profile.local else budget_ledger.shared_ledger()
 
     # ------------------------------------------------------------------ transport
     def _credential(self) -> str | None:
@@ -225,6 +240,22 @@ class ProviderClient:
             headers["Content-Type"] = "application/json"
             data = json.dumps(body, ensure_ascii=False).encode("utf-8")
         url = self.profile.endpoint.rstrip("/") + path
+        gate = self._budget_gate(billable)
+        reservation = None
+        if gate is not None:
+            provider = budget_ledger.provider_for_endpoint(self.profile.endpoint)
+            max_out = body.get("max_tokens") if isinstance(body, dict) else 0
+            est = budget_ledger.estimate_chat_max_usd(budget_ledger.price_for(provider, self.profile.model_id),
+                                                      len(data or b""), int(max_out or 0))
+            try:
+                reservation = gate.reserve(provider, est, scope="workbench", model=self.profile.model_id,
+                                           tag=f"workbench/{self.profile.profile_id}",
+                                           tag_usd_cap=float(self.profile.spend_cap_usd),
+                                           tag_max_requests=int(self.profile.max_requests),
+                                           detail={"operation": operation})
+            except budget_ledger.BudgetRefused as exc:
+                self._record(operation, billable, "blocked", started, detail=f"budget ledger: {exc}")
+                raise ProviderError("blocked", f"budget ledger refused the request ({exc.reason}): {exc}") from None
         handlers = [urllib.request.ProxyHandler({})] if self.profile.local else []
         opener = urllib.request.build_opener(*handlers)
         if billable and self.profile.paid:
@@ -234,22 +265,48 @@ class ProviderClient:
                              timeout=self.profile.timeout_s) as r:
                 raw = r.read()
         except urllib.error.HTTPError as exc:
+            if reservation is not None:
+                gate.release(reservation.entry_id, outcome=f"http_{exc.code}")
             snippet = exc.read()[:240].decode("utf-8", "replace")
             self._record(operation, billable, f"http_{exc.code}", started, detail=snippet)
             raise ProviderError("http_status", f"HTTP {exc.code} from {self.profile.adapter}: {snippet}") from None
         except (socket.timeout, TimeoutError):
+            if reservation is not None:   # may have been billed upstream: unknown cost pauses paid dispatch
+                gate.mark_unknown(reservation.entry_id, outcome="timeout")
             self._record(operation, billable, "timeout", started)
             raise ProviderError("timeout", f"no answer within {self.profile.timeout_s:g} s") from None
         except (urllib.error.URLError, ConnectionError, OSError) as exc:
             reason = getattr(exc, "reason", exc)
+            if reservation is not None:
+                if isinstance(reason, (ConnectionRefusedError, socket.gaierror)):
+                    gate.release(reservation.entry_id, outcome="not_sent")
+                else:
+                    gate.mark_unknown(reservation.entry_id, outcome=f"transport:{type(reason).__name__}")
             self._record(operation, billable, "unreachable", started, detail=str(reason))
             raise ProviderError("unreachable", f"cannot reach {url}: {reason}") from None
         try:
             out = json.loads(raw.decode("utf-8"))
         except (UnicodeDecodeError, json.JSONDecodeError):
+            if reservation is not None:
+                gate.mark_unknown(reservation.entry_id, outcome="bad_response")
             self._record(operation, billable, "bad_response", started)
             raise ProviderError("bad_response", "response is not JSON") from None
-        self._record(operation, billable, "ok", started, usage=self._usage(out))
+        usage = self._usage(out)
+        if reservation is not None:
+            usage = dict(usage or {})
+            cost, source = usage.get("cost_usd"), "usage.cost"
+            if cost is None:          # providers without a cost field: price x reported tokens, else unknown
+                price = budget_ledger.price_for(budget_ledger.provider_for_endpoint(self.profile.endpoint),
+                                                self.profile.model_id)
+                tin = usage.get("prompt_tokens", usage.get("input_tokens"))
+                tout = usage.get("completion_tokens", usage.get("output_tokens"))
+                if price and isinstance(tin, int) and isinstance(tout, int):
+                    cost = (tin * float(price["input"]) + tout * float(price["output"])) / 1_000_000
+                    source = "computed_from_reported_tokens"
+            fin = gate.settle(reservation.entry_id, cost, outcome="ok")
+            usage.update({"budget_entry_id": reservation.entry_id, "budget_envelope": reservation.envelope_id,
+                          "cost_source": source if fin["status"] == "settled" else "unknown"})
+        self._record(operation, billable, "ok", started, usage=usage)
         return out
 
     def _usage(self, out) -> dict | None:

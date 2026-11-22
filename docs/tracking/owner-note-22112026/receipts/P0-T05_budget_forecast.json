@@ -1,0 +1,96 @@
+{
+ "task_id": "P0-T05",
+ "kind": "budget_forecast",
+ "created": "2026-11-22",
+ "status": "PLANNING_FORECAST_NOT_OBSERVED_COST",
+ "no_paid_call_made": true,
+ "price_source": {
+  "checked": "2026-11-22",
+  "method": "OpenRouter free catalogue tool list-model-endpoints (no inference, no spend)",
+  "list_price": "owner planning price = cheapest standard endpoint, matches owner-note-22112026 03_BUDGET_AND_AUTONOMY.md",
+  "worst_endpoint_price": "maximum prompt and completion price over every endpoint OpenRouter listed for the model; the caller reserves at this price because A3r1 does not pin provider routing",
+  "typhoon": "no verified price or quota: excluded from every USD sum below and refused by the ledger (price_unknown) until verified"
+ },
+ "assumptions": {
+  "input_tokens_per_call": 1100,
+  "output_tokens_per_call": 800,
+  "source": "owner budget_plan.json planning_assumptions (planning scenario, not a measured distribution)",
+  "calibration_cases_per_model": 32,
+  "pilot_per_model": 2000,
+  "stage_b_calls_one_model": 25545,
+  "stage_b_count_basis": "25,626 - 2,000 + 1,919 from the owner package; to be re-verified against actual manifests before dispatch",
+  "retries": "not included (every retry is one more attempted request and its own reservation)",
+  "measured_request_body_bytes_dev_val": {"n": 28575, "mean": 2398, "median": 2377, "max": 4257,
+                                          "source": "../_private_artifacts/g03-a3/inputs/queries-dev-val.jsonl built with the frozen prompt (query texts only, no labels)"}
+ },
+ "historical_reconciled": {"usd": 0.00064223, "requests": 4, "what": "A3r0 format smoke via MCP, imported into the ledger as one historical E1 entry"},
+ "workbench_reconciled": {"usd": 0.0, "requests": 0, "basis": "no Workbench store at %LOCALAPPDATA%/PatentToPilot/workbench on 22 Nov 2026 and HANDOFF records that the real OpenRouter Workbench check still waits for the key; import_workbench_usage() imports any later pre-ledger rows"},
+ "per_model_usd": {
+  "qwen/qwen3-32b": {
+   "list_price_usd_per_M": {"input": 0.08, "output": 0.28},
+   "worst_endpoint_price_usd_per_M": {"input": 0.14, "output": 0.57},
+   "per_call": {"list": 0.000312, "worst": 0.00061},
+   "calibration_32": {"list": 0.009984, "worst": 0.01952},
+   "pilot_2000": {"list": 0.624, "worst": 1.22},
+   "stage_b_25545": {"list": 7.97004, "worst": 15.58245},
+   "ledger_reservation_per_attempt_at_800": {"mean_prompt": 0.00082756, "max_prompt": 0.00108782}
+  },
+  "deepseek/deepseek-v4-flash-0731": {
+   "list_price_usd_per_M": {"input": 0.0419, "output": 0.30},
+   "worst_endpoint_price_usd_per_M": {"input": 0.44, "output": 1.32},
+   "per_call": {"list": 0.00028609, "worst": 0.00154},
+   "calibration_32": {"list": 0.009155, "worst": 0.04928},
+   "pilot_2000": {"list": 0.57218, "worst": 3.08},
+   "stage_b_25545": {"list": 7.308169, "worst": 39.3393},
+   "ledger_reservation_per_attempt_at_800": {"mean_prompt": 0.00222376, "max_prompt": 0.00304172}
+  },
+  "google/gemini-2.5-flash-lite": {
+   "list_price_usd_per_M": {"input": 0.10, "output": 0.40},
+   "worst_endpoint_price_usd_per_M": {"input": 0.18, "output": 0.72},
+   "per_call": {"list": 0.00043, "worst": 0.000774},
+   "calibration_32": {"list": 0.01376, "worst": 0.024768},
+   "pilot_2000": {"list": 0.86, "worst": 1.548},
+   "stage_b_25545": {"list": 10.98435, "worst": 19.77183},
+   "ledger_reservation_per_attempt_at_800": {"mean_prompt": 0.00105372, "max_prompt": 0.00138834}
+  },
+  "typhoon-v2.5-30b-a3b-instruct": {"price": null, "cost_status": "UNVERIFIED_PRICE_OR_QUOTA", "calibration_attempts": 32, "pilot_attempts": 2000}
+ },
+ "a3r1_plan": {
+  "calibration_128_attempts_usd": {"list": 0.032899, "worst": 0.093568, "priced_attempts": 96, "unpriced_typhoon_attempts": 32},
+  "four_model_pilot_8000_calls_usd": {"list": 2.05618, "worst": 5.848, "priced_calls": 6000, "unpriced_typhoon_calls": 2000},
+  "cumulative_including_history_and_one_stage_b_usd": {
+   "if_stage_b_qwen3_32b": {"list": 10.059761, "worst": 21.52466},
+   "if_stage_b_deepseek_v4_flash": {"list": 9.39789, "worst": 45.28151},
+   "if_stage_b_gemini_25_flash_lite": {"list": 13.074071, "worst": 25.71404}
+  },
+  "attempted_requests_without_retries": {"historical": 4, "calibration": 128, "pilot": 8000, "stage_b": 25545, "total": 33677}
+ },
+ "fit_under_E1_alone": {
+  "operational_ceiling_usd": 6.00,
+  "ceiling_basis": "E1 stop-and-report threshold (hard USD 8.00 needs a recorded continue_past_stop approval)",
+  "remaining_usd_after_history": 5.99935777,
+  "request_cap": 35000,
+  "remaining_requests_after_history": 34996,
+  "calibration_fits": true,
+  "calibration_plus_pilot_fits": "yes at list prices (USD 2.09 cumulative); at worst-endpoint prices USD 5.94, which leaves USD 0.06 and is too tight to call safe",
+  "full_plan_with_one_stage_b_fits": false,
+  "why_not": "the cheapest Stage B alone (DeepSeek V4 Flash, USD 7.31 at list price) exceeds the USD 6.00 stop; even the USD 8.00 hard limit is below every cumulative total (USD 9.40-13.07 at list prices)",
+  "requests_fit": "33,677 of 35,000 before retries: 1,323 attempts of retry headroom (about 3.9%)",
+  "scope_note": "A3r1 is not named in E1's recorded scope (A3 as frozen + Workbench checks); whether A3r1 calibration may run under E1 is an owner decision"
+ },
+ "fit_under_E1R_if_approved": {
+  "hard_limit_usd": 50.00,
+  "notify_usd": 40.00,
+  "request_cap": 100000,
+  "full_plan_fits_at_list_prices": true,
+  "full_plan_fits_at_worst_endpoint_prices": "yes for every candidate (max USD 45.28 if Stage B is DeepSeek V4 Flash), but DeepSeek at worst-endpoint prices passes the USD 40 notify point and leaves little of the reserve for structural/Thai work",
+  "against_owner_allocations": "pilot list USD 2.06 vs allocation 6; Stage B list USD 7.31-10.98 vs allocation 18 (worst-endpoint DeepSeek USD 39.34 would not fit the 18 allocation)"
+ },
+ "recommendation_before_freeze": "declare OpenRouter provider.max_price (or a provider order) per model in the A3r1 config before calibration, so the ledger reservation and the realised cost are bounded by the price the protocol assumes; record it as part of the A3r1 contract, not as a later runtime tweak",
+ "limitations": [
+  "Planning scenario prices and token counts, not observed costs.",
+  "Worst-endpoint prices change as OpenRouter adds providers; they were read once on 2026-11-22.",
+  "Typhoon is unpriced and excluded from USD sums.",
+  "Retries, Workbench checks after 22 Nov, and structural/Thai work are not in these totals."
+ ]
+}

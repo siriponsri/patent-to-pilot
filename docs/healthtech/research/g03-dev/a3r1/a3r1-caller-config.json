@@ -1,0 +1,75 @@
+{
+ "format": "ptp-g03-a3-caller-config-v1",
+ "protocol_id": "A3r1",
+ "status": "PROPOSED_BEFORE_EFFECTIVENESS (not frozen; P1-T03 freezes it after TRAIN calibration and budget approval)",
+ "derived_from": [
+  "docs/owner/owner-note-22112026/config/a3r1_proposed.json (owner-local, read-only)",
+  "docs/owner/owner-note-22112026/config/model_profiles.json (owner-local, read-only)",
+  "docs/owner/owner-note-22112026/research/MODEL_AND_PROVIDER_PLAN.md section 2 and 7"
+ ],
+ "prompt": "the frozen A3r0 prompt of G03-DEV-AMENDMENT-3-20261122.md section 1 (code constants SYSTEM and USER_TEMPLATE), unchanged",
+ "max_tokens": 800,
+ "temperature": 0,
+ "seed": 20261122,
+ "budget_envelope": "E1R",
+ "execution_enabled": false,
+ "calibration_enabled": false,
+ "enable_rule": "calibration_enabled may be set true only after an owner approval record exists for budget_envelope (P1-T01); execution_enabled only after the A3r1 freeze receipt (P1-T03). The shared budget ledger refuses E1R dispatch until the owner approval is recorded, whatever these flags say.",
+ "reservation_margin": 1.0,
+ "reservation_note": "Per-attempt reservation = (UTF-8 bytes of the request body + 256 template tokens) x input price + max_tokens x output price, with the MAXIMUM endpoint price OpenRouter listed on 2026-11-22 (patent_to_pilot.budget.ledger.RESERVATION_PRICES) unless reservation_price is set here. Unknown price = no dispatch.",
+ "calibration": {
+  "block": "TRAIN",
+  "cases_per_model": 32,
+  "long_cases": 8,
+  "salt": "g03-a3r1-calibration-v1",
+  "rule": "h = sha256(salt + ':' + app_id); 8 cases with the longest built prompt in UTF-8 bytes (ties by h), then the 24 smallest h among the rest; same 32 cases for every model; input must be a TRAIN-only extract; no retrieval scoring",
+  "initial_attempts_for_4_models": 128
+ },
+ "models": [
+  {
+   "profile_id": "qwen3_32b",
+   "model_id": "qwen/qwen3-32b",
+   "provider": "openrouter",
+   "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+   "key_env": "OPENROUTER_API_KEY",
+   "reasoning": {"enabled": false},
+   "provider_routing": null,
+   "reservation_price": null
+  },
+  {
+   "profile_id": "deepseek_v4_flash",
+   "model_id": "deepseek/deepseek-v4-flash-0731",
+   "provider": "openrouter",
+   "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+   "key_env": "OPENROUTER_API_KEY",
+   "reasoning": {"effort": "none"},
+   "provider_routing": null,
+   "reservation_price": null
+  },
+  {
+   "profile_id": "gemini_25_flash_lite",
+   "model_id": "google/gemini-2.5-flash-lite",
+   "provider": "openrouter",
+   "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+   "key_env": "OPENROUTER_API_KEY",
+   "reasoning": {"enabled": false},
+   "provider_routing": null,
+   "reservation_price": null,
+   "note": "reasoning switch to be verified in TRAIN calibration (reasoning_tokens must be 0)"
+  },
+  {
+   "profile_id": "typhoon25_api",
+   "model_id": "typhoon-v2.5-30b-a3b-instruct",
+   "provider": "typhoon",
+   "endpoint": "https://api.opentyphoon.ai/v1/chat/completions",
+   "key_env": "TYPHOON_API_KEY",
+   "reasoning": null,
+   "provider_routing": null,
+   "reservation_price": null,
+   "note": "price/quota unverified: the ledger refuses dispatch (price_unknown) until a verified reservation_price is recorded here; without usage.cost the caller settles price x reported tokens (cost_source computed_from_reported_tokens); with neither, the attempt pauses as unknown cost"
+  }
+ ],
+ "open_decisions": [
+  "provider_routing: OpenRouter may route to any listed endpoint; worst-case DeepSeek V4 Flash endpoint price is about 10x the list price. Setting provider.max_price (or an explicit provider order) before the freeze would make the reservation bound and the realised cost tighter; not set here because it changes provider identity and must be declared before calibration."
+ ]
+}
