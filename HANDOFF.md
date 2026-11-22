@@ -15,7 +15,8 @@ Lessons: [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
 
 **Blocked on the owner (asked 22 Nov):**
 1. Set `OPENROUTER_API_KEY` as a Windows user environment variable. G03 amendment 3's pilot cannot start without it.
-2. Approve the Thai IS2 re-scope outline before the papers are rebuilt.
+2. IS2: the arc is decided (D10, Paper 86 exposure ceiling included; [outline v3](docs/writing/is2/IS2-OUTLINE-v3-20261122.md)).
+   Open: rebuild now with an A3 placeholder, or wait for the A3 pilot.
 3. Choose a PatenTEB option (audit §5).
 
 ### Goal status
@@ -97,15 +98,16 @@ Lessons: [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
    - Run `setsid nohup bash code/g03_queue_a3_pilot.sh > a3-pilot.log 2>&1 < /dev/null & disown`.
    - It ends `G03_A3_PILOT_DONE`. Apply the GO/STOP rule (protocol §3); Stage B only on GO.
    - Expected pilot spend ≈ USD 1–2.
-2. **IS2 re-scope (D1/D5/D6):** the Thai outline was shown to the owner 22 Nov. After approval, rebuild TH/EN with the
-   `kmitl-is-paper` and `academic-figures` skills, and update `SLIDES-OUTLINE.md` and `DEMO-STORYBOARD.md`.
+2. **IS2 re-scope (D1/D5/D6/D10):** arc fixed in [outline v3](docs/writing/is2/IS2-OUTLINE-v3-20261122.md). Rebuild
+   TH/EN with the `kmitl-is-paper` and `academic-figures` skills, and update `SLIDES-OUTLINE.md` and `DEMO-STORYBOARD.md`.
+   §6 (A3) stays a placeholder until the pilot decision.
 3. A real Workbench OpenRouter profile check (≤ USD 0.20; E1) once the key is set.
 4. Then G04 planning: DAPFAM headline routes are BM25, Qwen3 and Arctic; PatEmbed is reported separately with the
    caveat.
 
 ### Owner decisions
 
-**Decided 22 Nov:** D1–D9 in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md):
+**Decided 22 Nov:** D1–D10 in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md):
 - IS2 = research + demo;
 - keep working on acquisition;
 - PatenTEB download approved (but the train split is not public);
@@ -113,11 +115,12 @@ Lessons: [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
 - byline "Tuchsanai Ploysuwan";
 - acknowledgments = AI statement only;
 - OpenRouter multi-model, with E1 = USD 8 / 35,000 requests approved (D9);
-- `pypdf` yes (installed 22 Nov); no local Ollama.
+- `pypdf` yes (installed 22 Nov); no local Ollama;
+- D10: Paper 86's exposure ceiling enters the IS2 arc (IS2-only; unpublished; arXiv:2605.24297 not cited).
 
 **Still pending:**
 - `OPENROUTER_API_KEY` in the environment;
-- the IS2 outline approval;
+- whether to rebuild IS2 now (A3 as a placeholder) or after the A3 pilot;
 - the PatenTEB option (accept the partial audit, fetch the other 12 test splits, or write to the authors);
 - RunPod per-job caps;
 - the Paper 53 DOI;

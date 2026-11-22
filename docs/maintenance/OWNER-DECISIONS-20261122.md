@@ -23,6 +23,18 @@
   - Stop rules as in the proposal: no full run if the pilot shows no P1-DEV gain; stop and report at USD 6 spent.
   - The approval covers OpenRouter only. It does not cover E2 or RunPod.
 
+**D10 (22 Nov 2026, owner in chat: "ใส่ใน IS2"): Paper 86 enters the IS2 story arc.** This amends D1. The arc becomes
+Paper 53 → B53 (bridge) → **Paper 86 exposure ceiling** → G03 DEV (re-weighting the same routes does not help; v1/A1/A2
+parked) → A3 (new candidates via LLM expansion) → B53.0 → Workbench demo.
+- The owner asked whether to return to the Paper 86 line. The agent's assessment:
+  - Paper 86's headline (+0.111) rests on PatEmbed, which is possibly contaminated on DAPFAM;
+  - it is a diagnosis paper;
+  - its historical records are incomplete.
+  So it serves best as motivation for the acquisition work.
+- Paper 86 stays **IS2-only** (rule 9) and is presented as the owner's own **unpublished** work (withdrawn from IEEE,
+  19 Nov). arXiv:2605.24297, its ref [2], is not cited (rule 10).
+- Revised outline: [docs/writing/is2/IS2-OUTLINE-v3-20261122.md](../writing/is2/IS2-OUTLINE-v3-20261122.md).
+
 Still open:
 - the Paper 53 DOI (`DOI pending` stays in the reference list);
 - E2 (later);
