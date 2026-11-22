@@ -22,8 +22,9 @@ from multiprocessing import Pool
 from pathlib import Path
 import time
 
-ROUTES = ('L', 'Q', 'P', 'A')
+ROUTES = ('L', 'Q', 'P', 'A')                 # protocol v1 default; amendment 1 passes --routes
 RDIR = {'L': 'bm25', 'Q': 'z-qwen3', 'P': 'z-patembed', 'A': 'z-arctic'}
+ANCHOR: tuple = ()                           # set in main: ('L', dense) for v0, ('P',) for amendment 1
 WINDOW, RRF_K, FINAL_DEPTH = 200, 60, 200
 NEUTRAL_DUP = 0.5
 PROTECTED = ('P1-TEST', 'P2-TEST', 'P3-TEST')
@@ -86,7 +87,7 @@ def policy_arm(lists, budget, mode, anchor_dense):
         pool.update(win)
         actions.append(f'{r}{attempts[r]}')
 
-    for r in ('L', anchor_dense)[:budget]:
+    for r in (ANCHOR or ('L', anchor_dense))[:budget]:
         if lists[r]:
             take(r)
     while len(actions) < budget:
@@ -130,7 +131,7 @@ def run_arm(job):
 
 
 def allocations(budget):
-    return [c for c in itertools.product(range(budget + 1), repeat=4) if sum(c) == budget]
+    return [c for c in itertools.product(range(budget + 1), repeat=len(ROUTES)) if sum(c) == budget]
 
 
 def arm_name(alloc):
@@ -145,12 +146,22 @@ def main():
     ap.add_argument('--budgets', default='1')
     ap.add_argument('--policy', action='store_true', help='also build the two SF-v0 variants for each budget')
     ap.add_argument('--anchor-dense', choices=('Q', 'P', 'A'))
+    ap.add_argument('--routes', help='amendment 1: comma list LETTER=dir, dirs absolute or relative to --runs-root')
+    ap.add_argument('--anchor', help='amendment 1: comma list of anchor routes (default: L + --anchor-dense)')
+    ap.add_argument('--policy-modes', default='novelty,consensus')
     ap.add_argument('--workers', type=int, default=48)
     a = ap.parse_args()
+    global ROUTES, RDIR, ANCHOR
+    if a.routes:
+        pairs = [x.split('=', 1) for x in a.routes.split(',')]
+        ROUTES = tuple(k for k, _ in pairs)
+        RDIR = dict(pairs)
+    if a.anchor:
+        ANCHOR = tuple(a.anchor.split(','))
     if a.block in PROTECTED:
         raise SystemExit('G03 DEV never reads TEST blocks')
-    if a.policy and not a.anchor_dense:
-        raise SystemExit('--policy needs --anchor-dense (selected from the E01 gate on P1-DEV)')
+    if a.policy and not (a.anchor_dense or ANCHOR):
+        raise SystemExit('--policy needs --anchor-dense (selected from the E01 gate on P1-DEV) or --anchor')
     t0 = time.time()
     for r in ROUTES:
         DATA[r] = load_route(Path(a.runs_root) / RDIR[r] / f'run-{a.block}.tsv.gz')
@@ -163,8 +174,8 @@ def main():
         for alloc in allocations(b):
             jobs.append((arm_name(alloc), 'alloc', alloc, b, out / f'{arm_name(alloc)}.tsv'))
         if a.policy and b >= 1:
-            for mode in ('novelty', 'consensus'):
-                name = f'sf-v0{mode[0]}-B{b}'
+            for mode in a.policy_modes.split(','):
+                name = f"sf-{'v1' if ANCHOR else 'v0'}{mode[0]}-B{b}"
                 jobs.append((name, 'policy', (mode, a.anchor_dense), b, out / f'{name}.tsv'))
     jobs = [j for j in jobs if not j[4].exists()]   # resumable
     print(f'{len(jobs)} arms to build for {a.block} over {len(APPS)} queries', flush=True)
