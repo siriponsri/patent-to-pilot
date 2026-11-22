@@ -1,0 +1,28 @@
+{
+ "format": "ptp-p0-readiness-v1",
+ "recorded_at": "2026-11-22T19:30+07:00",
+ "head_at_check": "c7b1686c",
+ "milestones": {
+  "OFFLINE_READY": {"value": true,
+   "evidence": ["P0-T01 reconciliation", "P0-T04 A3r1 proposed protocol + provider readiness (no calls)", "P0-T05 shared budget ledger (27 tests)", "P0-T06 synthetic trace slice (22 tests)", "full gate below"]},
+  "AFFINE_READY": {"value": false,
+   "reason": "Server v0.27.4 healthy and workspace created, but no web client (owner's Chrome/Edge or the in-app browser) has ever opened a sync socket to the server: server log shows a single socket connection (the agent's probe); snapshots=0, updates=0. The official workspace MCP endpoint exists (copilot flag enabled 22 Nov without any AI provider key) but needs an access token, which needs owner permission."},
+  "PAID_RESEARCH_READY": {"value": false,
+   "reasons": ["E1R (USD 50) not approved; A3r1 does not fit E1 (cheapest Stage B at list price USD 7.31 > USD 6 stop)", "OPENROUTER_API_KEY absent from the user environment", "OpenRouter balance ~USD 8.365 below the A3r1 bound; top-up needed before Stage B", "Typhoon2.5 not on OpenRouter; needs TYPHOON_API_KEY and a published price/quota", "TRAIN-only calibration extract not yet prepared locally"]}
+ },
+ "status_fields": {
+  "method_evidence": "NOT_YET_DEMONSTRATED",
+  "product_readiness": "CORE_VERIFIED_PLUS_SYNTHETIC_TRACE_SLICE (engineering only; no real-document or user-task observation)",
+  "publication_readiness": "DRAFT_WITH_NOT_RUN_RESULTS"
+ },
+ "repository_gate": {
+  "command": "python -c \"import sys; sys.path.append(r'.venv/Lib/site-packages'); import pytest; sys.exit(pytest.main(['-q','-p','no:cacheprovider','-rfs']))\"",
+  "failed": 8,
+  "failed_tests": "exactly the 8 known SACR r2/r3 test_budget_cannot_use_nonfinite_inflated_or_erased_cost[nan|inflated|erased|insufficient]",
+  "skipped": "6 (sklearn missing 1; DuckDB opt-in 1; native supervisor guards 4); PDF tests ran (pypdf on path)",
+  "other_counts": "2534 passed and 1 xfailed reported by the agents' identical runs; the coordinator's -q run printed no totals line"
+ },
+ "spend": {"E1_spent_usd": 0.00064223, "E1_attempted_requests": 4, "reserved_usd": 0.0, "unknown_cost_entries": 0},
+ "blocked_tasks_not_completed_by_this_receipt": ["P0-T02 (PARTIAL: backup/restore drill pending)", "P0-T03 (PARTIAL: AFFiNE mirror SYNC_PENDING)"],
+ "next_executable": ["P2-T01 content coverage audit (free)", "P2-T03 bounded source-relation search action (free, builds on P0-T06)", "P4-T01 Search/Compare/Inspect workflow (free)", "P1-T01 only after E1R approval and keys"]
+}

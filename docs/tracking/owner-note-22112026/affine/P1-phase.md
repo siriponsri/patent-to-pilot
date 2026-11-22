@@ -1,6 +1,6 @@
 # P1 — Reproducible model-panel and A3 experiment
 
-Phase status: **NOT_STARTED**
+Phase status: **IN_PROGRESS**
 
 **Entry rule:** Start each task only when its listed task dependencies and execution authority hold. Entry requirements describe the first available work; AFFiNE and full P0 completion do not gate research.
 
@@ -8,7 +8,7 @@ Phase status: **NOT_STARTED**
 
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
-| P1-T01 | Resolve paid execution prerequisites and exact scope | ⏳ NOT_STARTED | NOT_RUN | P1-T02 |
+| P1-T01 | Resolve paid execution prerequisites and exact scope | ⛔ BLOCKED | NOT_RUN | P1-T02 |
 | P1-T02 | Calibrate the complete output contract on TRAIN only | ⏳ NOT_STARTED | NOT_RUN | P1-T03 |
 | P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ⏳ NOT_STARTED | NOT_RUN | P1-T04 |
 | P1-T04 | Execute the declared four-model DEV pilot and spending decision | ⏳ NOT_STARTED | NOT_RUN | P1-T05 on GO; P1-T06 on STOP |
@@ -23,7 +23,7 @@ Phase status: **NOT_STARTED**
 - **Evidence:** pending
 - **Check:** NOT_CHECKED
 - **Next:** P1-T02
-- **Blocker:** —
+- **Blocker:** E1R not approved; OPENROUTER_API_KEY absent; Typhoon key/price unknown; A3r1 does not fit E1
 
 ## P1-T02 — Calibrate the complete output contract on TRAIN only
 

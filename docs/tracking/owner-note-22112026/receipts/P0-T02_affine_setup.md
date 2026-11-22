@@ -57,3 +57,18 @@ exists.
    - read back the result;
    - run a backup (`pg_dump` custom format plus storage and config) and a restore drill into a separate empty target;
    - verify a restart.
+
+## Update (22 Nov 2026 evening)
+
+- The owner created the admin account. The agent created the server workspace `Patent-to-Pilot — Research and Product`
+  (id `15d6fa22-c6ab-426b-b793-17dc7427d4f1`) through the UI.
+- **Sync defect:** no web client has ever opened the sync socket. This covers the in-app browser and the owner's Chrome/Edge,
+  where the owner did a Markdown import.
+  - The server log shows exactly one socket connection, the agent's manual probe. That probe joined the workspace and got
+    `DOC_NOT_FOUND`.
+  - `snapshots` = 0 and `updates` = 0.
+  - Redis shows no failed commands; WebSocket and SharedWorker both work in probes.
+  - The import therefore lives only in the browser cache.
+- **Copilot flag:** `config.json` now has `copilot.enabled = true` to expose the official MCP endpoint
+  `/api/workspaces/:id/mcp`. No AI provider key is configured, so no paid AI can run. The endpoint answers 401 until an
+  access token exists. The previous config is kept as `config/config.json.bak-20261122`.

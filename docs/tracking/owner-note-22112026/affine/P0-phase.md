@@ -14,7 +14,7 @@ Phase status: **IN_PROGRESS**
 | P0-T04 | Prepare prospective A3r1 protocol and no-call provider plan | ✅ COMPLETE | NOT_RUN | P0-T07; P1-T01 |
 | P0-T05 | Implement and verify shared budget reservation accounting | ✅ COMPLETE | ENGINEERING_VERIFIED | P0-T07; P1-T01 |
 | P0-T06 | Implement a source-bound synthetic search-and-trace slice | ✅ COMPLETE | ENGINEERING_VERIFIED | P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03 |
-| P0-T07 | Close free preparation and publish separate readiness milestones | ⏳ NOT_STARTED | NOT_RUN | P1-T01 if eligible; free P2/P4/P5 tasks by dependency |
+| P0-T07 | Close free preparation and publish separate readiness milestones | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T01; P2-T03; P4-T01; P1-T01 after E1R+keys |
 
 ## P0-T01 — Reconcile checkout, historical results and active authority
 
@@ -87,7 +87,8 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P0-T01; P0-T04; P0-T05; P0-T06
 - **Acceptance evidence:** Run focused checks and required repository gate; report known SACR/PDF-test limitations; set OFFLINE_READY, AFFINE_READY and PAID_RESEARCH_READY separately from evidence. Unfinished material tasks stay BLOCKED/PARTIAL. Completing this readiness receipt does not complete blocked P0 tasks or authorize paid execution.
-- **Evidence:** pending
-- **Check:** NOT_CHECKED
-- **Next:** P1-T01 if eligible; free P2/P4/P5 tasks by dependency
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P0-T07_readiness.json
+- **Check:** gate: only the 8 known SACR failures; PDF tests ran
+- **Next:** P2-T01; P2-T03; P4-T01; P1-T01 after E1R+keys
 - **Blocker:** —
+- **Notes:** [2026-11-22] OFFLINE_READY true; AFFINE_READY false; PAID_RESEARCH_READY false

@@ -29,12 +29,27 @@
   "UNRESOLVED"
  ],
  "milestones": {
-  "OFFLINE_READY": "NOT_STARTED",
-  "AFFINE_READY": "NOT_STARTED",
-  "PAID_RESEARCH_READY": "NOT_STARTED",
-  "METHOD_WIN_SUPPORTED": "NOT_STARTED",
-  "PRODUCT_RELEASE_READY": "NOT_STARTED",
-  "PUBLICATION_READY": "NOT_STARTED"
+  "OFFLINE_READY": {
+   "status": "COMPLETE",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P0-T07_readiness.json"
+  },
+  "AFFINE_READY": {
+   "status": "BLOCKED",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md"
+  },
+  "PAID_RESEARCH_READY": {
+   "status": "BLOCKED",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P0-T07_readiness.json"
+  },
+  "METHOD_WIN_SUPPORTED": {
+   "status": "NOT_STARTED"
+  },
+  "PRODUCT_RELEASE_READY": {
+   "status": "NOT_STARTED"
+  },
+  "PUBLICATION_READY": {
+   "status": "NOT_STARTED"
+  }
  },
  "authority": {
   "current": {
@@ -104,7 +119,7 @@
   {
    "phase_id": "P1",
    "name": "Reproducible model-panel and A3 experiment",
-   "status": "NOT_STARTED",
+   "status": "IN_PROGRESS",
    "outcome": "NOT_RUN",
    "task_ids": [
     "P1-T01",
@@ -357,7 +372,7 @@
    "affine_sync_status": "NOT_SYNCED",
    "blocker": "Workspace 15d6fa22 created on server, but the in-app browser client does not push docs (server snapshots=0, updates=0; websocket and SharedWorker work in probes). Need owner check in own browser/desktop or permission to drive Claude in Chrome",
    "budget_remaining_usd": null,
-   "owner_decision_pending": "",
+   "owner_decision_pending": "Permission to create an AFFiNE MCP access token (local env var only)",
    "notes": "[2026-11-22] live registry initialised from seed (hashes recorded); scripts/tracking/ptp_tracker.py renders CSV, board and affine/*.md | [2026-11-22] server workspace created via UI; local test doc not synced"
   },
   {
@@ -469,8 +484,8 @@
    "task_id": "P0-T07",
    "phase_id": "P0",
    "title": "Close free preparation and publish separate readiness milestones",
-   "status": "NOT_STARTED",
-   "outcome": "NOT_RUN",
+   "status": "COMPLETE",
+   "outcome": "ENGINEERING_VERIFIED",
    "depends_on": [
     "P0-T01",
     "P0-T04",
@@ -484,9 +499,9 @@
     "docs/tracking/owner-note-22112026/receipts/P0-T07_owner_receipt.md"
    ],
    "acceptance_evidence": "Run focused checks and required repository gate; report known SACR/PDF-test limitations; set OFFLINE_READY, AFFINE_READY and PAID_RESEARCH_READY separately from evidence. Unfinished material tasks stay BLOCKED/PARTIAL. Completing this readiness receipt does not complete blocked P0 tasks or authorize paid execution.",
-   "evidence_uri": "",
-   "check_result": "NOT_CHECKED",
-   "next_task": "P1-T01 if eligible; free P2/P4/P5 tasks by dependency",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P0-T07_readiness.json",
+   "check_result": "gate: only the 8 known SACR failures; PDF tests ran",
+   "next_task": "P2-T01; P2-T03; P4-T01; P1-T01 after E1R+keys",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
    "budget_spent_usd": null,
    "budget_reserved_usd": null,
@@ -501,13 +516,13 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": ""
+   "notes": "[2026-11-22] OFFLINE_READY true; AFFINE_READY false; PAID_RESEARCH_READY false"
   },
   {
    "task_id": "P1-T01",
    "phase_id": "P1",
    "title": "Resolve paid execution prerequisites and exact scope",
-   "status": "NOT_STARTED",
+   "status": "BLOCKED",
    "outcome": "NOT_RUN",
    "depends_on": [
     "P0-T04",
@@ -534,9 +549,9 @@
    "affine_item_id": "",
    "affine_item_url": "",
    "affine_sync_status": "NOT_SYNCED",
-   "blocker": "",
+   "blocker": "E1R not approved; OPENROUTER_API_KEY absent; Typhoon key/price unknown; A3r1 does not fit E1",
    "budget_remaining_usd": null,
-   "owner_decision_pending": "",
+   "owner_decision_pending": "Approve E1R (USD 50) or an affordable alternative; set keys; top up OpenRouter",
    "notes": ""
   },
   {
@@ -1486,8 +1501,8 @@
   }
  ],
  "method_evidence": "NOT_YET_DEMONSTRATED",
- "product_readiness": "EXISTING_CORE_REUSED_NEW_SLICE_NOT_VERIFIED",
- "publication_readiness": "PLANNED_UNMEASURED",
+ "product_readiness": "CORE_VERIFIED_PLUS_SYNTHETIC_TRACE_SLICE",
+ "publication_readiness": "DRAFT_WITH_NOT_RUN_RESULTS",
  "artifact_convention": "Small receipts at docs/tracking/owner-note-22112026/receipts; link existing scientific manifests/private run outputs rather than duplicating them into docs/owner.",
  "seed_sources": {
   "config/goal_registry.json": "34734eb99cd929740aac5664369fb577de7ecd7b23c9d3034cdaacdef07c6330",
@@ -1495,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-22T18:30:54+07:00"
+ "live_updated_at": "2026-11-22T18:33:59+07:00"
 }

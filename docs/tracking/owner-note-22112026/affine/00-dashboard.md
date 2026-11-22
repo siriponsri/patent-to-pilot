@@ -5,30 +5,31 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 ## Readiness
 
 - **method_evidence**: NOT_YET_DEMONSTRATED
-- **product_readiness**: EXISTING_CORE_REUSED_NEW_SLICE_NOT_VERIFIED
-- **publication_readiness**: PLANNED_UNMEASURED
+- **product_readiness**: CORE_VERIFIED_PLUS_SYNTHETIC_TRACE_SLICE
+- **publication_readiness**: DRAFT_WITH_NOT_RUN_RESULTS
 
 ## Milestones
 
-- **OFFLINE_READY**: NOT_STARTED
-- **AFFINE_READY**: NOT_STARTED
-- **PAID_RESEARCH_READY**: NOT_STARTED
+- **OFFLINE_READY**: COMPLETE
+- **AFFINE_READY**: BLOCKED
+- **PAID_RESEARCH_READY**: BLOCKED
 - **METHOD_WIN_SUPPORTED**: NOT_STARTED
 - **PRODUCT_RELEASE_READY**: NOT_STARTED
 - **PUBLICATION_READY**: NOT_STARTED
 
 ## Task counts
 
-- ✅ COMPLETE: 5
-- ⏳ NOT_STARTED: 28
+- ⛔ BLOCKED: 1
+- ✅ COMPLETE: 6
+- ⏳ NOT_STARTED: 26
 - 🟡 PARTIAL: 2
 
 ## Phases
 
 | Phase | Name | Status | Tasks done |
 |---|---|---|---|
-| P0 | Control, setup and execution readiness | IN_PROGRESS | 4/7 |
-| P1 | Reproducible model-panel and A3 experiment | NOT_STARTED | 0/6 |
+| P0 | Control, setup and execution readiness | IN_PROGRESS | 5/7 |
+| P1 | Reproducible model-panel and A3 experiment | IN_PROGRESS | 0/6 |
 | P2 | Constructive structural candidate acquisition | NOT_STARTED | 0/7 |
 | P3 | Thai transfer and structural scope evaluation | NOT_STARTED | 0/5 |
 | P4 | Integrated product usability and explainability | NOT_STARTED | 0/5 |
@@ -39,3 +40,4 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 - **P0-T02** Install or update AFFiNE from the verified repository path: Owner must complete first-run admin setup at http://127.0.0.1:3010 (agent does not create accounts or enter passwords)
 - **P0-T03** Create live tracking copies and mirror phases into AFFiNE: Workspace 15d6fa22 created on server, but the in-app browser client does not push docs (server snapshots=0, updates=0; websocket and SharedWorker work in probes). Need owner check in own browser/desktop or permission to drive Claude in Chrome
 - **P0-T04** Prepare prospective A3r1 protocol and no-call provider plan: E1R approval; Typhoon key/quota (TYPHOON_API_KEY) or declare deferred
+- **P1-T01** Resolve paid execution prerequisites and exact scope: E1R not approved; OPENROUTER_API_KEY absent; Typhoon key/price unknown; A3r1 does not fit E1

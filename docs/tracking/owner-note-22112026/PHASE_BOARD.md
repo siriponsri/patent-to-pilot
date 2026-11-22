@@ -1,22 +1,22 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-22T18:30:54+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-22T18:33:59+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
 | Field | Value |
 |---|---|
 | method_evidence | NOT_YET_DEMONSTRATED |
-| product_readiness | EXISTING_CORE_REUSED_NEW_SLICE_NOT_VERIFIED |
-| publication_readiness | PLANNED_UNMEASURED |
+| product_readiness | CORE_VERIFIED_PLUS_SYNTHETIC_TRACE_SLICE |
+| publication_readiness | DRAFT_WITH_NOT_RUN_RESULTS |
 
 ## Milestones
 
 | Milestone | Status | Evidence |
 |---|---|---|
-| OFFLINE_READY | NOT_STARTED |  |
-| AFFINE_READY | NOT_STARTED |  |
-| PAID_RESEARCH_READY | NOT_STARTED |  |
+| OFFLINE_READY | COMPLETE | docs/tracking/owner-note-22112026/receipts/P0-T07_readiness.json |
+| AFFINE_READY | BLOCKED | docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md |
+| PAID_RESEARCH_READY | BLOCKED | docs/tracking/owner-note-22112026/receipts/P0-T07_readiness.json |
 | METHOD_WIN_SUPPORTED | NOT_STARTED |  |
 | PRODUCT_RELEASE_READY | NOT_STARTED |  |
 | PUBLICATION_READY | NOT_STARTED |  |
@@ -33,15 +33,15 @@ Phase status: **IN_PROGRESS**
 | P0-T04 | Prepare prospective A3r1 protocol and no-call provider plan | ✅ COMPLETE | NOT_RUN | docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md; docs/tracking/owner-note-22112026/receipts/P0-T04_proposed_protocol.md; docs/tracking/owner-note-22112026/receipts/P0-T04_provider_readiness.json | P0-T07; P1-T01 | — | NOT_SYNCED |
 | P0-T05 | Implement and verify shared budget reservation accounting | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P0-T05_ledger_verification.md; docs/tracking/owner-note-22112026/receipts/P0-T05_budget_forecast.json; src/patent_to_pilot/budget/ledger.py; tests/test_budget_ledger.py; tests/test_g03_a3_caller_budget.py | P0-T07; P1-T01 | — | NOT_SYNCED |
 | P0-T06 | Implement a source-bound synthetic search-and-trace slice | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P0-T06_synthetic_trace.json; docs/tracking/owner-note-22112026/receipts/P0-T06_trace_verification.md; src/patent_to_pilot/workbench/trace_slice.py; tests/test_p0_t06_trace_slice.py | P0-T07; P2-T01; P2-T03; P3-T01; P4-T01; P4-T03 | — | NOT_SYNCED |
-| P0-T07 | Close free preparation and publish separate readiness milestones | ⏳ NOT_STARTED | NOT_RUN | — | P1-T01 if eligible; free P2/P4/P5 tasks by dependency | — | NOT_SYNCED |
+| P0-T07 | Close free preparation and publish separate readiness milestones | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P0-T07_readiness.json | P2-T01; P2-T03; P4-T01; P1-T01 after E1R+keys | — | NOT_SYNCED |
 
 ## P1 — Reproducible model-panel and A3 experiment
 
-Phase status: **NOT_STARTED**
+Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
-| P1-T01 | Resolve paid execution prerequisites and exact scope | ⏳ NOT_STARTED | NOT_RUN | — | P1-T02 | — | NOT_SYNCED |
+| P1-T01 | Resolve paid execution prerequisites and exact scope | ⛔ BLOCKED | NOT_RUN | — | P1-T02 | E1R not approved; OPENROUTER_API_KEY absent; Typhoon key/price unknown; A3r1 does not fit E1 | NOT_SYNCED |
 | P1-T02 | Calibrate the complete output contract on TRAIN only | ⏳ NOT_STARTED | NOT_RUN | — | P1-T03 | — | NOT_SYNCED |
 | P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ⏳ NOT_STARTED | NOT_RUN | — | P1-T04 | — | NOT_SYNCED |
 | P1-T04 | Execute the declared four-model DEV pilot and spending decision | ⏳ NOT_STARTED | NOT_RUN | — | P1-T05 on GO; P1-T06 on STOP | — | NOT_SYNCED |
