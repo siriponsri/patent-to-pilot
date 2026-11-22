@@ -39,15 +39,16 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
   rerun S8 jobs.
 - **B53 (IS2 core):** Stage 1 measured 19 Nov ([B53-STAGE1-RESULTS.md](docs/writing/is2/results/B53-STAGE1-RESULTS.md)).
   Stage 2 scoring **FINISHED**: `b53/queue_b53_stage2.log` ends `B53_STAGE2_SCORES_DONE` (seen 22 Nov ~07:25 Bangkok,
-  PID gone, V100 idle). Scores are in `/data/ptp-paper2/b53/stage2/scores-*.tsv`. **Next:** run
-  `scripts/healthtech/b53_stage2_eval.py`, then `scripts/writing/render_b53_stage2.py`, then pull and prune `b53/`
-  (runbook below). Not started yet.
+  PID gone, V100 idle). Scores are in `/data/ptp-paper2/b53/stage2/scores-*.tsv`. **Evaluation RUNNING** since
+  22 Nov ~07:50 on dr-train CPU (`python3 code/b53_stage2_eval.py inputs runs stage2 stage2-results.json`, PID 2053484,
+  script sha 93305f9e…). The log `b53/logs/stage2-eval.log` ends `EXIT 0` when done. Then run
+  `scripts/writing/render_b53_stage2.py`, write the results doc, then pull and prune `b53/` (runbook below).
 - **IS2 drafts:** [docs/writing/is2/](docs/writing/is2/) (short paper v0.1, committee response, slides outline). Advisor
   details and Stage 2 numbers are pending.
 
 ### Running jobs
 
-- None. B53 Stage 2 finished. The G02 embedding shim and its folder were removed from dr-train after QA, and its logs
+- B53 Stage 2 evaluation on dr-train CPU (above); no GPU is used. The G02 embedding shim and its folder were removed from dr-train after QA, and its logs
   are in `artifacts/owner-program/PTP-2026-11-21/G02/`.
 - **21 Nov dr-train cleanup done** ([summary](artifacts/maintenance/20261121-dr-train-cleanup/SUMMARY.md), runbook
   [DR-TRAIN-ARTIFACT-RUNBOOK.md](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md), script
