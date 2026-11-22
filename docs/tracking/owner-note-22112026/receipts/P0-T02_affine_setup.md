@@ -72,3 +72,21 @@ exists.
 - **Copilot flag:** `config.json` now has `copilot.enabled = true` to expose the official MCP endpoint
   `/api/workspaces/:id/mcp`. No AI provider key is configured, so no paid AI can run. The endpoint answers 401 until an
   access token exists. The previous config is kept as `config/config.json.bak-20261122`.
+
+## Diagnosis (22 Nov 2026, late)
+
+- The server transport works from the page origin:
+  - engine.io polling handshake and namespace connect return `40{sid}`;
+  - direct WebSocket works;
+  - an authenticated `space:join` succeeds;
+  - a SharedWorker can open a WebSocket.
+- The 0.27.4 web client shows "Real-time connection failed: the server did not respond in time". Its nbstore worker never
+  reaches the server: one socket connection in the server lifetime, the agent's probe.
+- For self-hosted servers the worker's `SocketManager` uses `transports: ["polling","websocket"]` with an auth hook. The
+  client-side stall precedes any server contact. The root cause is not identified.
+- The built-in **MCP Server integration is documented in-app as "search and read"**, so it cannot create or update tracker
+  pages. No MCP access token was created: the owner approved one, but it cannot serve the write purpose.
+- Remaining options:
+  1. test the AFFiNE desktop app (native sync) against this server;
+  2. try an older matched client/server pair on a fresh database (there is no tracker data to lose);
+  3. keep the repository board as the tracker of record until AFFiNE sync works.

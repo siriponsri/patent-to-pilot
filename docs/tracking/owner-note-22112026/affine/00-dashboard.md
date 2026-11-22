@@ -21,7 +21,8 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 
 - ⛔ BLOCKED: 1
 - ✅ COMPLETE: 6
-- ⏳ NOT_STARTED: 26
+- 🔄 IN_PROGRESS: 2
+- ⏳ NOT_STARTED: 24
 - 🟡 PARTIAL: 2
 
 ## Phases
@@ -30,7 +31,7 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 |---|---|---|---|
 | P0 | Control, setup and execution readiness | IN_PROGRESS | 5/7 |
 | P1 | Reproducible model-panel and A3 experiment | IN_PROGRESS | 0/6 |
-| P2 | Constructive structural candidate acquisition | NOT_STARTED | 0/7 |
+| P2 | Constructive structural candidate acquisition | IN_PROGRESS | 0/7 |
 | P3 | Thai transfer and structural scope evaluation | NOT_STARTED | 0/5 |
 | P4 | Integrated product usability and explainability | NOT_STARTED | 0/5 |
 | P5 | Manuscript, artifact release and IS2 readiness | IN_PROGRESS | 1/5 |
@@ -38,6 +39,6 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 ## Needs attention
 
 - **P0-T02** Install or update AFFiNE from the verified repository path: Owner must complete first-run admin setup at http://127.0.0.1:3010 (agent does not create accounts or enter passwords)
-- **P0-T03** Create live tracking copies and mirror phases into AFFiNE: Workspace 15d6fa22 created on server, but the in-app browser client does not push docs (server snapshots=0, updates=0; websocket and SharedWorker work in probes). Need owner check in own browser/desktop or permission to drive Claude in Chrome
+- **P0-T03** Create live tracking copies and mirror phases into AFFiNE: AFFiNE 0.27.4 web client never opens its sync socket (client-side stall; server transport verified OK); built-in MCP is read-only, so no supported write path yet
 - **P0-T04** Prepare prospective A3r1 protocol and no-call provider plan: E1R approval; Typhoon key/quota (TYPHOON_API_KEY) or declare deferred
 - **P1-T01** Resolve paid execution prerequisites and exact scope: E1R not approved; OPENROUTER_API_KEY absent; Typhoon key/price unknown; A3r1 does not fit E1

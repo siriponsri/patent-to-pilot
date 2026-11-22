@@ -1,6 +1,6 @@
 # P2 — Constructive structural candidate acquisition
 
-Phase status: **NOT_STARTED**
+Phase status: **IN_PROGRESS**
 
 **Entry rule:** Start each task only when its listed task dependencies and execution authority hold. Entry requirements describe the first available work; AFFiNE and full P0 completion do not gate research.
 
@@ -8,9 +8,9 @@ Phase status: **NOT_STARTED**
 
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
-| P2-T01 | Audit eligible content and available structural evidence | ⏳ NOT_STARTED | NOT_RUN | P2-T02 |
+| P2-T01 | Audit eligible content and available structural evidence | 🔄 IN_PROGRESS | NOT_RUN | P2-T02 |
 | P2-T02 | Establish complete-content and stronger simple controls | ⏳ NOT_STARTED | NOT_RUN | P2-T04 |
-| P2-T03 | Implement one bounded source-relation search action | ⏳ NOT_STARTED | NOT_RUN | P2-T04; P4-T03 |
+| P2-T03 | Implement one bounded source-relation search action | 🔄 IN_PROGRESS | NOT_RUN | P2-T04; P4-T03 |
 | P2-T04 | Screen the bounded mechanism against close matched controls | ⏳ NOT_STARTED | NOT_RUN | P2-T05 if viable |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | P2-T06 |
 | P2-T06 | Measure the primary matched retrieval comparison | ⏳ NOT_STARTED | NOT_RUN | P2-T07; P3-T03 |
@@ -25,6 +25,7 @@ Phase status: **NOT_STARTED**
 - **Check:** NOT_CHECKED
 - **Next:** P2-T02
 - **Blocker:** —
+- **Notes:** [2026-11-22] read-only content coverage audit agent started
 
 ## P2-T02 — Establish complete-content and stronger simple controls
 
@@ -45,6 +46,7 @@ Phase status: **NOT_STARTED**
 - **Check:** NOT_CHECKED
 - **Next:** P2-T04; P4-T03
 - **Blocker:** —
+- **Notes:** [2026-11-22] relation-search operator agent started (engineering only)
 
 ## P2-T04 — Screen the bounded mechanism against close matched controls
 
