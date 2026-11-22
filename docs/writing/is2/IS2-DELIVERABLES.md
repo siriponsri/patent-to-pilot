@@ -29,9 +29,20 @@ Not required for IS2: P1–P3 TEST results, SOTA wins, deployment, real users, b
 
 ## 2. Short-paper outline (≤ 10 pages, template sections)
 
-Draft v0.1: `IS2-SHORT-PAPER-DRAFT.md` (Markdown master) → `IS2-short-paper-draft.docx` built from the faculty template by
-`scripts/writing/build_is2_shortpaper_docx.py`. v0.2 (22 Nov) has 9 pages with the Stage 2 results; the advisor's Thai
-name and position are still [PENDING].
+**Current editions (22 Nov 2026, v1.0):** two complete editions built with the `kmitl-is-paper` skill against the
+official AI4BA template, each 8 pages, with three figures made with `academic-figures` (Thai and English labels):
+
+| Edition | Word | PDF | Content module |
+|---|---|---|---|
+| Thai | [paper/IS2-paper-th.docx](paper/IS2-paper-th.docx) | [paper/IS2-paper-th.pdf](paper/IS2-paper-th.pdf) | `paper/content_th.py` |
+| English | [paper/IS2-paper-en.docx](paper/IS2-paper-en.docx) | [paper/IS2-paper-en.pdf](paper/IS2-paper-en.pdf) | `paper/content_en.py` |
+
+Every number comes from `paper/paper_numbers.py`, which reads `results/b53-stage1-results.json` and
+`results/b53-stage2-results.json`; figures are rebuilt by `paper/make_figs.py`. Rebuild an edition with
+`python <skill>/scripts/make_paper.py --content content_th.py --figdir figs_th --out IS2-paper-th.docx` from `paper/`
+(needs Microsoft Word for the PDF). The Markdown master `IS2-SHORT-PAPER-DRAFT.md` (v0.2) and the older single-file
+`IS2-short-paper-draft.docx` stay as history. Author block: Siripon Srihangpiboon and Asst. Prof. Dr. Tuchsanai
+Ploysuwan (ผศ.ดร. ทัศนัย พลอยสุวรรณ); still open: the DOI of Paper 53.
 
 
 1. **บทนำ:**

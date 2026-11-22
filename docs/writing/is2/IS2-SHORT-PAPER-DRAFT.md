@@ -4,14 +4,15 @@
 - ตัวเลขทุกตัวมาจาก receipt ใน repo: Stage 1 ที่ `results/B53-STAGE1-RESULTS.md` และ Stage 2 ที่ `results/B53-STAGE2-RESULTS.md`
 - v0.2 (22 พ.ย. 2569): ใส่ผล Stage 2 ในบทคัดย่อ, 4.2 และ 5 แล้ว และปรับงานต่อเนื่องให้ตรงกับโปรแกรม PTP-2026-11-21
 - Word ฉบับจัดตามแม่แบบคณะ: `IS2-short-paper-draft.docx` สร้างจากไฟล์นี้
-- ต้องตรวจก่อนส่ง: ชื่ออาจารย์ภาษาไทย, ตำแหน่ง, DOI ของ Paper 53
+- ชื่ออาจารย์และตำแหน่งใส่แล้ว (22 พ.ย. 2569); ยังต้องตรวจก่อนส่ง: DOI ของ Paper 53
+- ฉบับเต็มสองภาษา (ไทย/อังกฤษ) สร้างจากไฟล์นี้ใน `paper/`: `IS2-paper-th.docx/.pdf` และ `IS2-paper-en.docx/.pdf`
 
 ---
 
 ## ชื่อบทความ (TH)
 การแทนที่ตัวค้นคืนขั้นแรกเพื่อวินิจฉัยข้อจำกัดของการเปิดเผยเอกสารข้ามสาขาในการจัดอันดับสิทธิบัตรด้วยคำสั่ง
 
-ศิริพล ศรีเฮงไพบูลย์*1 และ [ชื่ออาจารย์ที่ปรึกษา ภาษาไทย]2
+ศิริพล ศรีเฮงไพบูลย์*1 และ ผศ.ดร. ทัศนัย พลอยสุวรรณ2
 คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
 เลขที่ 1 ซอยฉลองกรุง 1 แขวงลาดกระบัง เขตลาดกระบัง กรุงเทพฯ 10520
 
@@ -36,7 +37,7 @@
 ## Title (EN)
 First-Stage Substitution to Diagnose Candidate-Exposure Limits in Instruction-Driven Cross-Domain Patent Reranking
 
-Siripon Srihangpiboon*1 and Tuchsanai Ploysuwan2
+Siripon Srihangpiboon*1 and Asst. Prof. Dr. Tuchsanai Ploysuwan2
 School of Information Technology, King Mongkut's Institute of Technology Ladkrabang, 1 Chalong Krung 1 Alley, Lat Krabang, Bangkok 10520
 
 ### Abstract
@@ -59,7 +60,7 @@ therefore persisted under every first stage.
 
 \* Author's e-mail: 68076060@kmitl.ac.th
 1. Postgraduate Student, Artificial Intelligence for Business Analytics Program, School of Information Technology, KMITL
-2. [ตำแหน่ง], School of Information Technology, KMITL
+2. Assistant Professor (ผู้ช่วยศาสตราจารย์), School of Information Technology, KMITL
 
 ---
 
