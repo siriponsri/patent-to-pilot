@@ -33,7 +33,7 @@ DATA: dict[str, dict[str, list[str]]] = {}   # route -> app -> ranked units (fil
 APPS: list[str] = []
 
 
-def load_route(path: Path) -> dict[str, list[str]]:
+def load_route(path: Path, only: set | None = None) -> dict[str, list[str]]:
     intern: dict[str, str] = {}
     out: dict[str, list[tuple[int, str]]] = {}
     with gzip.open(path, 'rt', encoding='utf-8') as f:
@@ -41,6 +41,8 @@ def load_route(path: Path) -> dict[str, list[str]]:
         assert header[:3] == ['app_id', 'rank', 'unit'], header
         for line in f:
             a, r, u, _ = line.rstrip('\n').split('\t')
+            if only is not None and a not in only:
+                continue
             u = intern.setdefault(u, u)
             out.setdefault(a, []).append((int(r), u))
     return {a: [u for _, u in sorted(v)] for a, v in out.items()}
@@ -149,6 +151,7 @@ def main():
     ap.add_argument('--routes', help='amendment 1: comma list LETTER=dir, dirs absolute or relative to --runs-root')
     ap.add_argument('--anchor', help='amendment 1: comma list of anchor routes (default: L + --anchor-dense)')
     ap.add_argument('--policy-modes', default='novelty,consensus')
+    ap.add_argument('--apps-file', help='amendment 2: JSON list restricting the queries (TRAIN sample)')
     ap.add_argument('--workers', type=int, default=48)
     a = ap.parse_args()
     global ROUTES, RDIR, ANCHOR
@@ -163,10 +166,14 @@ def main():
     if a.policy and not (a.anchor_dense or ANCHOR):
         raise SystemExit('--policy needs --anchor-dense (selected from the E01 gate on P1-DEV) or --anchor')
     t0 = time.time()
+    only = set(json.loads(Path(a.apps_file).read_text())) if a.apps_file else None
     for r in ROUTES:
-        DATA[r] = load_route(Path(a.runs_root) / RDIR[r] / f'run-{a.block}.tsv.gz')
+        DATA[r] = load_route(Path(a.runs_root) / RDIR[r] / f'run-{a.block}.tsv.gz', only)
         print(f'{time.time() - t0:7.1f}s loaded {r} ({RDIR[r]}): {len(DATA[r])} queries', flush=True)
-    APPS.extend(sorted(set().union(*(DATA[r].keys() for r in ROUTES))))
+    apps = set().union(*(DATA[r].keys() for r in ROUTES))
+    if a.apps_file:
+        apps &= set(json.loads(Path(a.apps_file).read_text()))
+    APPS.extend(sorted(apps))
     out = Path(a.out) / a.block
     out.mkdir(parents=True, exist_ok=True)
     jobs = []
