@@ -73,6 +73,18 @@ def is_loopback_url(url: str) -> bool:
 
 
 REQUEST_OPTION_KEYS = {"reasoning", "temperature", "seed", "top_p", "provider"}
+_SECRET_PREFIXES = ("sk_", "pk_", "rk_", "ghp_", "gho_", "github_pat_", "hf_", "xox", "AIza")
+
+
+def looks_like_secret(name: str) -> bool:
+    """P4-T02: refuse a key pasted where a variable NAME belongs. An all-upper-case name (HF_TOKEN, OPENROUTER_API_KEY)
+    is accepted; otherwise a known key prefix, or a long mixed lower-case/digit token, is treated as a secret and
+    rejected without being echoed."""
+    if name == name.upper():
+        return False
+    if name.startswith(_SECRET_PREFIXES):
+        return True
+    return len(name) >= 24 and any(c.islower() for c in name) and any(c.isdigit() for c in name)
 
 
 @dataclass
@@ -122,7 +134,9 @@ class ProviderProfile:
             raise ProviderError("config", "endpoint must be an http(s) URL")
         if parts.username or parts.password or parts.query or parts.fragment:
             raise ProviderError("config", "endpoint must not contain credentials, a query or a fragment")
-        if self.credential_ref is not None and not _ENV.match(str(self.credential_ref)):
+        if self.credential_ref is not None and (not _ENV.match(str(self.credential_ref))
+                                                or looks_like_secret(str(self.credential_ref))):
+            # the value is never echoed back (P4-T02)
             raise ProviderError("config", "credential_ref must be an environment variable NAME, not a key")
         if self.adapter == "anthropic_native" and not self.credential_ref:
             raise ProviderError("config", "anthropic_native needs credential_ref (e.g. ANTHROPIC_API_KEY)")

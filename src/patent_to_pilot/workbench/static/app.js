@@ -3,7 +3,7 @@
 "use strict";
 
 const S = { projectId: null, project: null, comparison: null, caps: null, liveRunId: null, view: "workbench",
-  lastFocus: null, retrieval: null, providers: null, showRemoved: false, undoTimer: null };
+  lastFocus: null, retrieval: null, providers: null, showRemoved: false, undoTimer: null, mode: null };
 const isSample = () => S.project && S.project.data_origin === "synthetic_fixture";
 const isSynthetic = () => S.project && S.project.data_origin === "synthetic_demo";
 const VIEWS = ["workbench", "search", "compare", "evidence", "runs", "changes", "providers"];
@@ -56,11 +56,23 @@ function labels() {
     if (S.liveRunId === last.run_id) L.append(el("span", { class: "label live", text: "Live local run" }));
     else L.append(el("span", { class: "label recorded", text: `Recorded run · ${last.run_id}` }));
   }
-  const R = S.retrieval;
-  if (R && R.retrieval_mode === "hybrid") {
-    const fresh = R.active_freshness === "fresh";
-    L.append(el("span", { class: "label", text: `Hybrid mode · ${R.embedding_profile_id}${fresh ? "" : " · index out of date (rebuilt on next run)"}` }));
-  } else L.append(el("span", { class: "label", text: "Lexical mode" }));
+  // P4-T02: the active execution mode and exact model, from the server (no network probe)
+  const M = S.mode && S.mode.active;
+  if (M) {
+    const fallback = M.effective === "lexical_fallback";
+    const txt = `Mode: ${M.mode_text}` + (M.model_id && !fallback ? ` · ${M.model_id}` : "") +
+      (M.retrieval_mode === "hybrid" ? (fallback ? ` · hybrid requested, ${M.model_id || M.profile_id} unavailable → lexical` :
+        (M.index_fresh ? " · hybrid" : " · hybrid, index out of date (rebuilt on next run)")) : " · lexical search");
+    L.append(el("span", { class: `label mode ${fallback ? "warn" : ""}`, id: "mode-label", title: M.summary, text: txt }));
+  }
+  const miss = S.mode ? S.mode.missing.length : 0;
+  if (miss) L.append(el("button", { class: "label linkish", title: "Open Providers to see what is missing and why",
+    onclick: () => show("providers") }, `${miss} optional capabilit${miss === 1 ? "y" : "ies"} missing`));
+}
+
+async function loadMode() {
+  try { S.mode = await api("GET", S.projectId ? `/api/projects/${S.projectId}/execution-mode` : "/api/execution-mode"); }
+  catch (e) { S.mode = null; }
 }
 
 async function loadProjectList() {
@@ -77,6 +89,7 @@ async function loadProject() {
   S.project = await api("GET", `/api/projects/${S.projectId}`);
   S.comparison = await api("GET", `/api/projects/${S.projectId}/comparison`);
   S.retrieval = await api("GET", `/api/projects/${S.projectId}/retrieval`);
+  await loadMode();
   $("project-title").textContent = $("project-select").hidden ? S.project.title : "";
   renderWorkbench(); labels();
 }
@@ -586,6 +599,7 @@ async function renderProviders() {
   const [c, P] = await Promise.all([api("GET", "/api/capabilities"), api("GET", "/api/providers")]);
   S.caps = c; S.providers = P;
   S.retrieval = await api("GET", `/api/projects/${S.projectId}/retrieval`);
+  await loadMode(); renderMode(); labels();
   const role = (n, p, extra) => el("div", { class: "card" }, el("h3", { text: `${n} — ${st(p.state)}` }),
     el("p", { class: "muted", text: extra || (p.profiles && p.profiles.length ? p.profiles.join(", ") : "No profile.") }));
   $("providers").replaceChildren(el("div", { class: "grid3" },
@@ -599,6 +613,56 @@ async function renderProviders() {
     tpl.replaceChildren(el("option", { value: "", text: "Blank profile" }), ...P.templates.map((t, i) => el("option", { value: String(i), text: t.label })));
     tpl.addEventListener("change", () => fillProfileForm(tpl.value === "" ? {} : S.providers.templates[Number(tpl.value)]));
   }
+}
+
+const CRED_TEXT = { set: "Set (name only shown)", set_restart_needed: "Set for your Windows user — restart the Workbench to use it",
+  not_set: "Not set" };
+const CAP_TEXT = { available: "Available", unavailable: "Unavailable", not_configured: "Not configured" };
+
+function renderMode() {
+  const box = $("exec-mode"), M = S.mode;
+  if (!M) { box.replaceChildren(el("p", { class: "muted", text: "Execution mode not available." })); return; }
+  const A = M.active;
+  const facts = [];
+  if (A.model_id) facts.push(`Model: ${A.model_id}` + (A.served_model_name && A.served_model_name !== A.model_id ? ` (served as ${A.served_model_name})` : "") + (A.model_digest ? ` · ${A.model_digest}` : ""));
+  if (A.where) facts.push(`Endpoint: ${A.where}`);
+  if (A.last_run) facts.push(`Last run ${A.last_run.run_id}: retrieval ${A.last_run.retrieval_effective}, paid model calls ${A.last_run.paid_model_calls}, remote calls ${A.last_run.remote_calls}` + (A.last_run.retrieval_note ? ` — ${A.last_run.retrieval_note}` : ""));
+  box.replaceChildren(
+    el("div", { class: "card mode-card" },
+      el("h3", { text: `Active mode: ${A.mode_text}` + (A.requested_mode ? " (fallback)" : "") }),
+      el("p", { text: A.summary }),
+      facts.length ? el("ul", { class: "mono-list" }, ...facts.map((f) => el("li", { text: f }))) : null,
+      el("p", { class: "muted", text: `Modes: ${Object.values(M.modes).join(" · ")}. ${M.reachability_note}` })),
+    el("h3", { text: "Capabilities" }),
+    el("table", { class: "matrix" },
+      el("thead", {}, el("tr", {}, ...["Capability", "State", "Details"].map((h) => el("th", { scope: "col", text: h })))),
+      el("tbody", {}, ...M.capabilities.map((c) => el("tr", {},
+        el("td", { text: c.title + (c.optional ? " (optional)" : "") }),
+        el("td", {}, el("span", { class: `pill ${c.state === "available" ? "current" : "historical"}`, text: CAP_TEXT[c.state] || c.state })),
+        el("td", { text: [c.detail, c.use].filter(Boolean).join(" ") }))))),
+    el("h3", { text: "Missing capabilities" }),
+    M.missing.length ? el("ul", { id: "missing-list" }, ...M.missing.map((m) => el("li", { text: m })))
+      : el("p", { class: "muted", text: "Nothing is missing." }),
+    el("h3", { text: "Credentials (set once, outside the Workbench)" }),
+    el("p", { class: "muted", text: M.secrets_policy + " A key is set once as a Windows user environment variable in your own PowerShell window; every profile that names it uses it after the Workbench restarts." }),
+    el("table", { class: "matrix" },
+      el("thead", {}, el("tr", {}, ...["Variable", "State", "Used by", "Set up"].map((h) => el("th", { scope: "col", text: h })))),
+      el("tbody", {}, ...M.credentials.map((c) => el("tr", {},
+        el("td", { class: "mono", text: c.name }),
+        el("td", {}, el("span", { class: `pill ${c.state === "set" ? "current" : "historical"}`, text: CRED_TEXT[c.state] || c.state })),
+        el("td", { text: c.used_by.length ? c.used_by.join(", ") : c.purpose }),
+        el("td", {}, el("details", {}, el("summary", { text: c.state === "set" ? "Change or remove" : "How to set it once" }),
+          el("p", { text: "1. Open PowerShell (not as administrator) and run this line. It asks for the key with hidden input; the key never passes through the Workbench or the browser." }),
+          el("pre", { class: "source mono" }, c.setup.set_powershell),
+          el("button", { onclick: () => copyText(c.setup.set_powershell) }, "Copy command"),
+          el("p", { text: `2. ${c.setup.after}` }),
+          el("p", { class: "muted", text: c.setup.never }),
+          el("p", { class: "muted" }, "To remove it later: ", el("code", { text: c.setup.remove_powershell })))))))));
+}
+
+async function copyText(t) {
+  try { await navigator.clipboard.writeText(t); status("Command copied. Paste it into PowerShell; it will ask for the key."); }
+  catch (e) { status("Copy is not available here; select the command and copy it manually.", true); }
 }
 
 function renderRetrieval() {

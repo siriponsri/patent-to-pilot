@@ -62,6 +62,11 @@ ROUTES = [
     # P4-T01b: requirement Remove / Undo (same POST guards: loopback Host, same Origin, JSON body, size limit)
     ("POST", rf"/api/projects/{_SEG}/requirements/{_SEG}/archive", "archive_requirement"),
     ("POST", rf"/api/projects/{_SEG}/requirements/{_SEG}/restore", "restore_requirement"),
+    # P4-T02: execution mode, exact model, missing capabilities, credential presence (read-only, no network).
+    # There is deliberately no route that accepts a credential value.
+    ("GET", r"/api/execution-mode", "execution_mode"),
+    ("GET", rf"/api/projects/{_SEG}/execution-mode", "execution_mode"),
+    ("GET", r"/api/credentials", "credentials"),
 ]
 UPLOAD_LIMIT = 3_000_000  # base64 of the 2 MB ingestion limit, plus JSON overhead
 BODY_LIMIT = 65536
@@ -227,6 +232,16 @@ class App:
     def synthetic_relation_search(self, _body):
         with self.lock:
             return self.workflow.load_synthetic_example()
+
+    # ---------------- P4-T02
+    def execution_mode(self, _body, pid=None):
+        from patent_to_pilot.workbench.modes import execution_status
+        return execution_status(self.core, pid)
+
+    def credentials(self, _body):
+        from patent_to_pilot.workbench.modes import execution_status
+        out = execution_status(self.core)
+        return {"credentials": out["credentials"], "secrets_policy": out["secrets_policy"]}
 
 
 def make_handler(app: App):
