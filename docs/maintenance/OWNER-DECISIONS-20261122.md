@@ -65,7 +65,7 @@ Still open:
 
 | # | Decision | Effect |
 |---|---|---|
-| D20 | **RunPod envelope R1: USD 20 cap for P2-T02** (coverage control, frozen protocol bd30d3f7, memory-safe build 92465abd), started once the inputs that exist only on dr-train can be copied | Prepaid balance at approval USD 37.21. Scope: one P2-T02 run (content build, BM25-full, Arctic C1/C2 encode and retrieval) on one community GPU pod (RTX 6000 Ada or RTX 4090) plus a network volume; estimate USD 4–10. Stop and report at USD 15. Delete the pod and volume after the results are pulled. Never copy TEST splits, sealed qrels or per-query TEST outputs to RunPod. Spend is recorded in the P2-T02 receipt |
+| D20 | **RunPod envelope R1: USD 20 cap for P2-T02** (coverage control, frozen protocol bd30d3f7, memory-safe build 92465abd), started once the inputs that exist only on dr-train can be copied | Prepaid balance at approval USD 37.21. Scope: one P2-T02 run (content build, BM25-full, Arctic C1/C2 encode and retrieval) on one community GPU pod (RTX 6000 Ada or RTX 4090); estimate USD 4–10. Stop and report at USD 15. **No network volume** (owner, same day: "ผมไม่อยากเปิด Volume"): data goes onto the pod's own disk only, is uploaded after the pod is created, and is removed when the pod is deleted after the results are pulled. Nothing is pre-staged. Never copy TEST splits, sealed qrels or per-query TEST outputs to RunPod. Spend is recorded in the P2-T02 receipt |
 
 **Dry-run correction (same day).** The earlier dry run said the PatentsView sources had to be downloaded again. That was
 wrong: the owner pointed out `data/raw/uspto/` (git-ignored, 69 files, 17 GB, downloaded 16–18 Nov). It holds every
