@@ -54,6 +54,7 @@ Phase status: **IN_PROGRESS**
 - **Check:** NOT_CHECKED
 - **Next:** P4-T05
 - **Blocker:** —
+- **Notes:** [2026-11-23] P4-T01b requirement Remove/Undo lifecycle merged ff35de32 (retire/restore obligations+assessments, stale in-flight commits rejected); revision-vs-full-rerun comparison still to do
 
 ## P4-T05 — Observe clean-install and user-task success
 

@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-23T07:07:28+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-23T07:18:54+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 

@@ -1282,7 +1282,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": ""
+   "notes": "[2026-11-23] P4-T01b requirement Remove/Undo lifecycle merged ff35de32 (retire/restore obligations+assessments, stale in-flight commits rejected); revision-vs-full-rerun comparison still to do"
   },
   {
    "task_id": "P4-T05",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-23T07:07:28+07:00"
+ "live_updated_at": "2026-11-23T07:18:54+07:00"
 }
