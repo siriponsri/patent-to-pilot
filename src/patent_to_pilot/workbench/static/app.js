@@ -3,7 +3,7 @@
 "use strict";
 
 const S = { projectId: null, project: null, comparison: null, caps: null, liveRunId: null, view: "workbench",
-  lastFocus: null, retrieval: null, providers: null };
+  lastFocus: null, retrieval: null, providers: null, showRemoved: false, undoTimer: null };
 const isSample = () => S.project && S.project.data_origin === "synthetic_fixture";
 const isSynthetic = () => S.project && S.project.data_origin === "synthetic_demo";
 const VIEWS = ["workbench", "search", "compare", "evidence", "runs", "changes", "providers"];
@@ -99,6 +99,7 @@ function renderWorkbench() {
   $("apply-change").textContent = applied ? "Sample source revision applied" : "Apply sample source revision";
   $("trace-link").hidden = !last;
   const wrap = $("matrix-wrap");
+  if (!P.mission.requirements.length) { wrap.replaceChildren(el("p", { class: "muted", text: "No active requirements. Add one on the Compare page; removed requirements can be restored there." })); return; }
   if (!C.cells.length) { wrap.replaceChildren(el("p", { class: "muted", text: "No result yet. Select Run comparison to run the local engine." })); return; }
   const reqs = P.mission.requirements;
   const table = el("table", { class: "matrix" },
@@ -252,10 +253,62 @@ async function renderCompare() {
         el("td", { text: r.requirement_id }), el("td", { text: r.label }),
         el("td", { text: r.kind === "text" ? "Free text (evidence only)" : `Bounded field: ${r.field}` }),
         el("td", { class: "mono", text: r.fts_match }),
-        el("td", {}, R.editable && r.kind === "text" ? el("button", { onclick: () => editRequirement(r) }, "Edit") : null))))));
+        el("td", {}, R.editable && r.kind === "text" ? el("button", { onclick: () => editRequirement(r) }, "Edit") : null,
+          R.editable ? " " : null,
+          R.editable ? el("button", { "aria-label": `Remove requirement ${r.requirement_id}`, onclick: (e) => removeRequirement(r, e.currentTarget) }, "Remove") : null))))));
+    if (R.editable && R.removed && R.removed.length) list.append(removedList(R.removed));
     $("req-form").hidden = !R.editable;
     $("req-fixed").hidden = R.editable; $("req-fixed").textContent = R.note || "";
   } catch (e) { status(`Could not load requirements: ${e.message}`, true); }
+}
+
+// ---------------- P4-T01b: Remove / Undo (the server keeps the ID, text and history; nothing is deleted)
+function removedList(removed) {
+  const box = el("div", { class: "removed" });
+  const toggle = el("button", { "aria-expanded": String(S.showRemoved), onclick: () => { S.showRemoved = !S.showRemoved; renderCompare(); } },
+    S.showRemoved ? `Hide removed (${removed.length})` : `Show removed (${removed.length})`);
+  box.append(toggle);
+  if (S.showRemoved) box.append(el("ul", {}, ...removed.map((x) => el("li", {},
+    el("span", { text: `${x.requirement_id} — ${x.requirement.label} ` }),
+    el("span", { class: "muted", text: `(removed ${new Date(x.removed_at).toLocaleString()}) ` }),
+    el("button", { onclick: () => restoreRequirement(x.requirement_id, x.lifecycle_revision) }, "Restore")))));
+  return box;
+}
+
+async function removeRequirement(r, btn) {
+  if (btn) btn.disabled = true;   // one click is enough; a repeated request is answered "already removed"
+  try {
+    const res = await api("POST", `/api/projects/${S.projectId}/requirements/${encodeURIComponent(r.requirement_id)}/archive`,
+      { expected_revision: r.lifecycle_revision });
+    status(`Requirement ${res.requirement_id} removed. Its earlier results stay in history; Undo or Show removed brings it back.`);
+    showUndo(res.requirement_id, res.status === "removed" ? res.lifecycle_revision : null, r.label);
+    await loadProject(); await renderCompare();
+  } catch (e) {
+    status(`Requirement not removed: ${e.message} (${e.code}).`, true);
+    if (btn) btn.disabled = false;
+  }
+}
+
+async function restoreRequirement(rid, revision) {
+  hideUndo();
+  try {
+    const body = revision == null ? {} : { expected_revision: revision };
+    const res = await api("POST", `/api/projects/${S.projectId}/requirements/${encodeURIComponent(rid)}/restore`, body);
+    status(res.status === "already_active" ? `Requirement ${rid} is already active.` : `Requirement ${rid} restored. Run compare to assess it against the current sources.`);
+    await loadProject(); await renderCompare();
+  } catch (e) { status(`Requirement not restored: ${e.message} (${e.code}).`, true); }
+}
+
+function hideUndo() { const t = $("undo-toast"); if (t) t.remove(); if (S.undoTimer) { clearTimeout(S.undoTimer); S.undoTimer = null; } }
+
+function showUndo(rid, revision, label) {
+  hideUndo();
+  const t = el("div", { id: "undo-toast", class: "toast", role: "status", "aria-live": "polite" },
+    el("span", { text: `Removed ${rid}${label ? ` — ${label}` : ""}. ` }),
+    el("button", { class: "primary", onclick: () => restoreRequirement(rid, revision) }, "Undo"),
+    el("button", { "aria-label": "Dismiss", onclick: hideUndo }, "×"));
+  document.body.append(t);
+  S.undoTimer = setTimeout(hideUndo, 10000);
 }
 
 function editRequirement(r) {
@@ -423,7 +476,7 @@ async function renderRuns() {
       el("td", { text: r.stop_reason || "" }), el("td", { text: new Date(r.started_at).toLocaleString() }), el("td", { text: r.invoked_via }))))));
 }
 
-const ACTION_LABEL = { plan_obligation: "Plan obligation", search_current_sources: "Search current sources", read_passage: "Read passage",
+const ACTION_LABEL = { skip_stale_obligation: "Skipped (requirement changed or removed)", plan_obligation: "Plan obligation", search_current_sources: "Search current sources", read_passage: "Read passage",
   check_criterion: "Check criterion", commit_assessment: "Commit assessment", reuse_valid_result: "Reuse valid result", error: "Error",
   retrieval_setup: "Retrieval setup" };
 async function openRun(runId) {
@@ -477,7 +530,8 @@ async function renderChanges() {
   box.append(el("p", { class: "muted", text: "Planned (not in this goal): withdrawal and effective-date events." }));
 }
 const CHANGE_LABEL = { source_revision: "Source revision", source_addition: "New source", retrieval_mode_change: "Retrieval mode",
-  index_generation_switch: "Index generation" };
+  index_generation_switch: "Index generation", requirement_change: "Requirement", requirement_removed: "Requirement removed",
+  requirement_restored: "Requirement restored" };
 function changeSide(title, cell) {
   const c = cell.citation;
   return el("div", { class: "card" }, el("b", { text: `${title}: ${cell.candidate_id}/${cell.requirement_id}` }), " ",

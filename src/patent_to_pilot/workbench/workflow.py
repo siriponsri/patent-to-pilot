@@ -129,6 +129,10 @@ class Workflow:
                          "fts_match": requirement_match(r)})
         out = {"project_id": project_id, "editable": editable, "requirements": reqs,
                "candidates": proj["mission"]["candidates"]}
+        lifecycle = self.core.requirement_lifecycle(project_id)   # P4-T01b: revisions and removed requirements
+        for r in reqs:
+            r["lifecycle_revision"] = lifecycle["active"].get(r["requirement_id"], 0)
+        out.update(mission_revision=lifecycle["mission_revision"], removed=lifecycle["removed"])
         if not editable:
             out["note"] = ("The sample and synthetic projects are fixed so their recorded results stay reproducible. "
                            "Create a project to type your own requirements.")
@@ -152,9 +156,15 @@ class Workflow:
         mission = proj["mission"]
         reqs = list(mission["requirements"])
         rid = body.get("requirement_id")
+        with self.store.read() as con:   # P4-T01b: a removed requirement keeps its ID; it is never reused
+            removed = {r[0] for r in con.execute("SELECT requirement_id FROM requirement_lifecycle WHERE project_id=? "
+                                                 "AND state='removed'", (project_id,))}
         if rid in (None, ""):
-            taken = {r["requirement_id"] for r in reqs}
+            taken = {r["requirement_id"] for r in reqs} | removed
             rid = next(f"U{n}" for n in range(1, 10_000) if f"U{n}" not in taken)
+        elif rid in removed:
+            raise Conflict(f"requirement {rid} was removed; use Undo (restore) to bring it back. A removed ID is never "
+                           "reused for another requirement.", "requirement_removed")
         new = normalize_requirement(body, rid)
         old = next((r for r in reqs if r["requirement_id"] == rid), None)
         if old is None and len(reqs) >= MAX_REQUIREMENTS:
@@ -169,6 +179,10 @@ class Workflow:
         reopened = []
         with self.store.tx() as con:
             con.execute("UPDATE projects SET mission_json=? WHERE project_id=?", (dumps(mission), project_id))
+            # P4-T01b: every add/edit advances the requirement and mission lifecycle revisions
+            self.core._advance_lifecycle(con, project_id, new, "active",
+                                         next(i for i, r in enumerate(reqs) if r["requirement_id"] == rid), event_id, now)
+            self.core._advance_mission(con, project_id, now)
             for c in mission["candidates"]:
                 reason = f"requirement {rid} {'edited' if old else 'added'} ({event_id})"
                 if old:
@@ -188,6 +202,13 @@ class Workflow:
                          dumps(result), now, now))
         return {"status": "edited" if old else "added", "requirement": new, "fts_match": requirement_match(new),
                 "kind": requirement_kind(new), **result}
+
+    # ================================================================== requirement lifecycle (P4-T01b)
+    def archive_requirement(self, project_id: str, requirement_id: str, body: dict | None = None) -> dict:
+        return self.core.archive_requirement(project_id, requirement_id, body if isinstance(body, dict) else {})
+
+    def restore_requirement(self, project_id: str, requirement_id: str, body: dict | None = None) -> dict:
+        return self.core.restore_requirement(project_id, requirement_id, body if isinstance(body, dict) else {})
 
     # ================================================================== search
     def search(self, project_id: str, body: dict) -> dict:

@@ -84,6 +84,10 @@ input[type="checkbox"] { min-height: 0; }
 .cands { list-style: none; padding: 0; margin: .3rem 0; }
 .cands li { border-top: 1px solid var(--line); padding: .35rem 0; }
 .cands .quote { font-size: .92rem; }
+.toast { position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%); z-index: 20; display: flex;
+  gap: .5rem; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18); padding: .5rem .75rem; max-width: calc(100% - 2rem); }
+.removed { margin: .5rem 0; } .removed ul { margin: .4rem 0; padding-left: 1.2rem; } .removed li { margin: .25rem 0; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 640px) {
   main { padding: .6rem; }

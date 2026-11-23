@@ -48,6 +48,8 @@ REQUIREMENT_KINDS = ("bounded_field", "text")
 TERM_STOPWORDS = frozenset("a an and are as at be by for from has have in is it its of on or that the this to was "
                            "were what which with".split())
 MAX_REQUIREMENTS = 50
+# P4-T01b: projects whose requirements can never be removed or restored (their recorded results stay reproducible)
+LIFECYCLE_FIXED_ORIGINS = ("synthetic_fixture", "synthetic_demo")
 
 
 class CoreError(Exception):
@@ -617,7 +619,8 @@ class EvidenceCore:
                               hits, scope, citation, gen_dep)
         self._action(run_id, seq, "commit_assessment", cand, rid, result, started=t0)
         seq += 1
-        counters["committed" if result["committed"] == "new_version" else "retained"] += 1
+        key = {"new_version": "committed", "rejected_stale": "rejected_stale"}.get(result["committed"], "retained")
+        counters[key] = counters.get(key, 0) + 1   # P4-T01b: a stale in-flight result is counted, never committed
         return seq, None
 
     def _commit(self, project_id, run_id, mission, cand, req, outcome, explanation, reading, issues, hits, scope,
@@ -625,6 +628,9 @@ class EvidenceCore:
         rid = req["requirement_id"]
         req_sha = sha256(dumps(req).encode("utf-8"))
         with self.store.tx() as con:
+            stale = self._stale_requirement(con, project_id, req, run_id=run_id, cand=cand)   # P4-T01b commit recheck
+            if stale:
+                return {"committed": "rejected_stale", "reason": stale, "outcome": outcome, "requirement_sha256": req_sha}
             if citation is not None:
                 self._validate_citation(con, project_id, citation, require_current=True)
             prev = con.execute("SELECT * FROM assessments WHERE project_id=? AND candidate_id=? AND requirement_id=? "
@@ -726,10 +732,18 @@ class EvidenceCore:
                 counters["reused_after_verification"] += 1
             for cand, req in sorted(work, key=lambda x: (x[0], x[1]["requirement_id"])):
                 counters["obligations_planned"] += 1
+                with self.store.read() as con:   # P4-T01b: the lifecycle state this obligation is planned against
+                    lifecycle = self._plan_lifecycle(con, project_id, req)
                 self._action(run_id, seq, "plan_obligation", cand, req["requirement_id"],
                              {"obligation": f"{cand}/{req['requirement_id']}",
-                              "tie_break": "candidate_id, then requirement_id"})
+                              "tie_break": "candidate_id, then requirement_id", **lifecycle["record"]})
                 seq += 1
+                if lifecycle["stale"]:
+                    self._action(run_id, seq, "skip_stale_obligation", cand, req["requirement_id"],
+                                 {"reason": lifecycle["stale"]}, status="skipped")
+                    seq += 1
+                    counters["skipped_stale"] = counters.get("skipped_stale", 0) + 1
+                    continue
                 seq, stop = self._acquire_and_commit(project_id, run_id, mission, cand, req, seq, counters,
                                                      limits, deadline, ctx)
                 if stop:
@@ -850,7 +864,7 @@ class EvidenceCore:
                 con.execute("INSERT INTO assessment_events VALUES (?,?,?,?,?)",
                             (r["assessment_id"], "needs_review", f"cited {sid}@{old} superseded by {new}", None, now))
                 con.execute("UPDATE obligations SET state='needs_review', reason=?, updated_at=? WHERE project_id=? "
-                            "AND candidate_id=? AND requirement_id=?",
+                            "AND candidate_id=? AND requirement_id=? AND state!='retired'",
                             (f"cited {sid}@{old} superseded by {new} ({entry['event_id']})", now, project_id,
                              r["candidate_id"], r["requirement_id"]))
             # search-scope dependents (changed source was searched but not cited) -> recheck search
@@ -863,7 +877,7 @@ class EvidenceCore:
                     continue
                 reasons[key] = "recheck_search"
                 con.execute("UPDATE obligations SET state='recheck_search', reason=?, updated_at=? WHERE "
-                            "project_id=? AND candidate_id=? AND requirement_id=?",
+                            "project_id=? AND candidate_id=? AND requirement_id=? AND state!='retired'",
                             (f"{sid} (searched, not cited) changed to {new}", now, project_id, *key))
             con.execute("INSERT INTO change_events VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
                         (project_id, entry["event_id"], entry["event_type"], sid, new, old, sha256(raw), "imported",
@@ -882,6 +896,8 @@ class EvidenceCore:
         work, reuse, untouched = [], [], []
         # recheck_search: re-run the search; reuse the assessment only if the evidence identity is unchanged
         for key, o in sorted(obl.items()):
+            if o["state"] == "retired" or key[1] not in reqs:   # P4-T01b: removed requirements are never re-planned
+                continue
             if o["state"] in ("needs_review", "open"):
                 work.append((key[0], reqs[key[1]]))
             elif o["state"] == "recheck_search":
@@ -912,7 +928,7 @@ class EvidenceCore:
                                   "hits": new_hits})
                     with self.store.tx() as con:
                         con.execute("UPDATE obligations SET state='done', reason=?, updated_at=? WHERE project_id=? "
-                                    "AND candidate_id=? AND requirement_id=?",
+                                    "AND candidate_id=? AND requirement_id=? AND state!='retired'",
                                     (f"rechecked in {run_id}; evidence unchanged", utc_now(), project_id, *key))
                         con.execute("INSERT INTO assessment_events VALUES (?,?,?,?,?)",
                                     (a["assessment_id"], "revalidated", "search re-executed; same evidence", run_id,
@@ -1152,7 +1168,8 @@ class EvidenceCore:
             with self.store.read() as c:
                 return self.comparison(project_id, con=c)
         proj = self._project(con, project_id)
-        cells = self._cells(con, project_id)
+        active = {r["requirement_id"] for r in proj["mission"]["requirements"]}   # P4-T01b: active requirements only
+        cells = [c for c in self._cells(con, project_id) if c["requirement_id"] in active]
         current = self._current_versions(con, project_id)
         for cell in cells:
             if cell["citation"]:
@@ -1258,3 +1275,211 @@ class EvidenceCore:
                 "sha256": sv["sha256"], "start_char": s, "end_char": e, "offset_convention": OFFSET_CONVENTION,
                 "quote": p["quote"], "text_before": text[:s], "text_after": text[e:], "used_by": used,
                 "data_origin": sv["data_origin"]}
+
+    # ---------------- P4-T01b: requirement lifecycle (Remove / Undo)
+    # ``projects.mission_json`` holds the ACTIVE requirements, so planning, comparison, revision processing and the
+    # current-cell reads see only active ones. A removed requirement keeps its stable ID, snapshot and content hash in
+    # ``requirement_lifecycle``; its obligations are 'retired' and its current assessments become 'retired' history
+    # (citations and events kept). Nothing is physically deleted.
+    @staticmethod
+    def requirement_sha256(req: dict) -> str:
+        return sha256(dumps(req).encode("utf-8"))
+
+    def _lifecycle_row(self, con, project_id: str, requirement_id: str) -> dict | None:
+        r = con.execute("SELECT * FROM requirement_lifecycle WHERE project_id=? AND requirement_id=?",
+                        (project_id, requirement_id)).fetchone()
+        return dict(r) if r else None
+
+    def requirement_revision(self, con, project_id: str, requirement_id: str) -> int:
+        """Monotonic lifecycle revision of one requirement (0 = never changed since the project was created)."""
+        row = self._lifecycle_row(con, project_id, requirement_id)
+        return row["lifecycle_revision"] if row else 0
+
+    def mission_revision(self, con, project_id: str) -> int:
+        r = con.execute("SELECT revision FROM mission_lifecycle WHERE project_id=?", (project_id,)).fetchone()
+        return r[0] if r else 0
+
+    def _advance_lifecycle(self, con, project_id: str, req: dict, state: str, position: int, event_id: str,
+                           now: str) -> int:
+        rev = self.requirement_revision(con, project_id, req["requirement_id"]) + 1
+        con.execute("INSERT INTO requirement_lifecycle VALUES (?,?,?,?,?,?,?,?,?) ON CONFLICT(project_id, requirement_id) "
+                    "DO UPDATE SET state=excluded.state, lifecycle_revision=excluded.lifecycle_revision, "
+                    "content_sha256=excluded.content_sha256, snapshot_json=excluded.snapshot_json, "
+                    "position=excluded.position, updated_at=excluded.updated_at, last_event_id=excluded.last_event_id",
+                    (project_id, req["requirement_id"], state, rev, self.requirement_sha256(req), dumps(req), position,
+                     now, event_id))
+        return rev
+
+    def _advance_mission(self, con, project_id: str, now: str) -> int:
+        rev = self.mission_revision(con, project_id) + 1
+        con.execute("INSERT OR REPLACE INTO mission_lifecycle VALUES (?,?,?)", (project_id, rev, now))
+        return rev
+
+    def _stale_requirement(self, con, project_id: str, req: dict, run_id: str | None = None,
+                           cand: str | None = None) -> str | None:
+        """Why a result for ``req`` may not be committed now, or None. Checks, inside the caller's transaction:
+        the requirement is still active, its content hash is unchanged, and (when the run recorded its plan) its
+        lifecycle revision has not moved since planning (this catches remove-then-restore of identical text)."""
+        rid = req["requirement_id"]
+        mission = self._project(con, project_id)["mission"]
+        cur = next((r for r in mission["requirements"] if r["requirement_id"] == rid), None)
+        if cur is None:
+            return f"requirement {rid} is not active (removed after this work was planned)"
+        if self.requirement_sha256(cur) != self.requirement_sha256(req):
+            return f"requirement {rid} was edited after this work was planned (content hash changed)"
+        if run_id is not None:
+            plan = con.execute("SELECT detail_json FROM actions WHERE run_id=? AND action_type='plan_obligation' AND "
+                               "candidate_id=? AND requirement_id=? ORDER BY seq DESC LIMIT 1",
+                               (run_id, cand, rid)).fetchone()
+            planned = json.loads(plan[0]).get("requirement_lifecycle_revision") if plan else None
+            now_rev = self.requirement_revision(con, project_id, rid)
+            if planned is not None and now_rev != planned:
+                return (f"requirement {rid} lifecycle revision moved from {planned} to {now_rev} after this work was "
+                        "planned (removed, restored or edited in between)")
+        return None
+
+    def _plan_lifecycle(self, con, project_id: str, req: dict) -> dict:
+        return {"stale": self._stale_requirement(con, project_id, req),
+                "record": {"requirement_lifecycle_revision": self.requirement_revision(con, project_id,
+                                                                                       req["requirement_id"]),
+                           "requirement_sha256": self.requirement_sha256(req)}}
+
+    def requirement_lifecycle(self, project_id: str, con=None) -> dict:
+        """Read model: mission revision, each active requirement's lifecycle revision, and the removed ones."""
+        if con is None:
+            with self.store.read() as c:
+                return self.requirement_lifecycle(project_id, con=c)
+        proj = self._project(con, project_id)
+        rows = {r["requirement_id"]: dict(r) for r in con.execute(
+            "SELECT * FROM requirement_lifecycle WHERE project_id=?", (project_id,))}
+        removed = []
+        for rid, r in sorted(rows.items(), key=lambda x: (x[1]["updated_at"], x[0])):
+            if r["state"] == "removed":
+                removed.append({"requirement": json.loads(r["snapshot_json"]), "requirement_id": rid,
+                                "lifecycle_revision": r["lifecycle_revision"], "content_sha256": r["content_sha256"],
+                                "removed_at": r["updated_at"], "event_id": r["last_event_id"]})
+        return {"project_id": project_id, "mission_revision": self.mission_revision(con, project_id),
+                "active": {r["requirement_id"]: (rows.get(r["requirement_id"]) or {}).get("lifecycle_revision", 0)
+                           for r in proj["mission"]["requirements"]},
+                "removed": removed}
+
+    @staticmethod
+    def _expected_revision(body: dict | None) -> int | None:
+        exp = body.get("expected_revision") if isinstance(body, dict) else None
+        if exp is not None and (not isinstance(exp, int) or isinstance(exp, bool) or exp < 0):
+            raise ValidationFailed("expected_revision must be a non-negative integer", "bad_expected_revision")
+        return exp
+
+    def _lifecycle_project(self, con, project_id: str) -> dict:
+        proj = self._project(con, project_id)
+        if proj["data_origin"] in LIFECYCLE_FIXED_ORIGINS:
+            raise Conflict("the sample and synthetic projects are fixed; create a project for your own requirements",
+                           "project_is_fixed")
+        return proj
+
+    def archive_requirement(self, project_id: str, requirement_id: str, body: dict | None = None) -> dict:
+        """Remove (archive) one active requirement in one transaction. Idempotent: removing a removed requirement
+        returns ``already_removed`` and writes nothing."""
+        expected = self._expected_revision(body)
+        with self.store.tx() as con:
+            proj = self._lifecycle_project(con, project_id)
+            mission = proj["mission"]
+            reqs = list(mission["requirements"])
+            pos = next((i for i, r in enumerate(reqs) if r["requirement_id"] == requirement_id), None)
+            row = self._lifecycle_row(con, project_id, requirement_id)
+            if pos is None:
+                if row and row["state"] == "removed":
+                    return {"status": "already_removed", "requirement_id": requirement_id,
+                            "lifecycle_revision": row["lifecycle_revision"], "event_id": row["last_event_id"],
+                            "mission_revision": self.mission_revision(con, project_id)}
+                raise NotFound(f"requirement {requirement_id} not found", "requirement_not_found")
+            rev = row["lifecycle_revision"] if row else 0
+            if expected is not None and expected != rev:
+                raise Conflict(f"requirement {requirement_id} is at revision {rev}, not {expected}; reload and retry",
+                               "revision_conflict")
+            req = reqs.pop(pos)
+            now, event_id = utc_now(), self._new_event_id("REQ")
+            reason = f"requirement {requirement_id} removed ({event_id})"
+            con.execute("UPDATE projects SET mission_json=? WHERE project_id=?",
+                        (dumps({**mission, "requirements": reqs}), project_id))
+            obligations = [dict(r) for r in con.execute(
+                "SELECT candidate_id, state FROM obligations WHERE project_id=? AND requirement_id=? ORDER BY "
+                "candidate_id", (project_id, requirement_id))]
+            con.execute("UPDATE obligations SET state='retired', reason=?, updated_at=? WHERE project_id=? AND "
+                        "requirement_id=?", (reason, now, project_id, requirement_id))
+            retired = [r[0] for r in con.execute(
+                "SELECT assessment_id FROM assessments WHERE project_id=? AND requirement_id=? AND state='current' "
+                "ORDER BY candidate_id", (project_id, requirement_id))]
+            for aid in retired:   # history and citations stay; only the 'current' state is withdrawn
+                con.execute("UPDATE assessments SET state='retired' WHERE assessment_id=?", (aid,))
+                con.execute("INSERT INTO assessment_events VALUES (?,?,?,?,?)", (aid, "retired", reason, None, now))
+            new_rev = self._advance_lifecycle(con, project_id, req, "removed", pos, event_id, now)
+            mrev = self._advance_mission(con, project_id, now)
+            content = self.requirement_sha256(req)
+            result = {"event_id": event_id, "requirement_id": requirement_id, "action": "removed",
+                      "requirement": req, "content_sha256": content, "lifecycle_revision": new_rev,
+                      "previous_lifecycle_revision": rev, "mission_revision": mrev,
+                      "retired_obligations": [f"{o['candidate_id']}/{requirement_id} (was {o['state']})"
+                                              for o in obligations],
+                      "retired_assessments": retired,
+                      "note": f"Requirement {requirement_id} removed. Its earlier results stay readable in history; "
+                              "Undo restores it with the same ID and text."}
+            con.execute("INSERT INTO change_events VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (project_id, event_id, "requirement_removed", requirement_id, f"lifecycle-r{new_rev}",
+                         f"lifecycle-r{rev}", content, "applied", None, dumps(result), now, now))
+        return {"status": "removed", **result}
+
+    def restore_requirement(self, project_id: str, requirement_id: str, body: dict | None = None) -> dict:
+        """Undo: restore a removed requirement with its recorded ID and content in one transaction. Its obligations
+        are reopened by upsert (the obligation key is (project, candidate, requirement)); its retired assessments
+        stay history until a fresh run checks current sources. Idempotent: restoring an active requirement returns
+        ``already_active`` and writes nothing."""
+        expected = self._expected_revision(body)
+        with self.store.tx() as con:
+            proj = self._lifecycle_project(con, project_id)
+            mission = proj["mission"]
+            reqs = list(mission["requirements"])
+            row = self._lifecycle_row(con, project_id, requirement_id)
+            if any(r["requirement_id"] == requirement_id for r in reqs):
+                return {"status": "already_active", "requirement_id": requirement_id,
+                        "lifecycle_revision": row["lifecycle_revision"] if row else 0,
+                        "mission_revision": self.mission_revision(con, project_id)}
+            if not row or row["state"] != "removed":
+                raise NotFound(f"requirement {requirement_id} not found", "requirement_not_found")
+            if expected is not None and expected != row["lifecycle_revision"]:
+                raise Conflict(f"requirement {requirement_id} is at revision {row['lifecycle_revision']}, not "
+                               f"{expected}; reload and retry", "revision_conflict")
+            if len(reqs) >= MAX_REQUIREMENTS:
+                raise ValidationFailed(f"at most {MAX_REQUIREMENTS} requirements per project", "too_many_requirements")
+            req = json.loads(row["snapshot_json"])
+            if req.get("requirement_id") != requirement_id or self.requirement_sha256(req) != row["content_sha256"]:
+                raise ValidationFailed("stored requirement snapshot does not match its hash", "lifecycle_integrity")
+            pos = min(row["position"], len(reqs))
+            reqs.insert(pos, req)
+            now, event_id = utc_now(), self._new_event_id("REQ")
+            reason = f"requirement {requirement_id} restored ({event_id})"
+            con.execute("UPDATE projects SET mission_json=? WHERE project_id=?",
+                        (dumps({**mission, "requirements": reqs}), project_id))
+            reopened = []
+            for c in mission["candidates"]:
+                con.execute("INSERT INTO obligations VALUES (?,?,?,?,?,?) ON CONFLICT(project_id, candidate_id, "
+                            "requirement_id) DO UPDATE SET state=excluded.state, reason=excluded.reason, "
+                            "updated_at=excluded.updated_at",
+                            (project_id, c["candidate_id"], requirement_id, "open", reason, now))
+                reopened.append(f"{c['candidate_id']}/{requirement_id}")
+            historical = [r[0] for r in con.execute(
+                "SELECT assessment_id FROM assessments WHERE project_id=? AND requirement_id=? ORDER BY created_at",
+                (project_id, requirement_id))]
+            new_rev = self._advance_lifecycle(con, project_id, req, "active", pos, event_id, now)
+            mrev = self._advance_mission(con, project_id, now)
+            result = {"event_id": event_id, "requirement_id": requirement_id, "action": "restored",
+                      "requirement": req, "content_sha256": row["content_sha256"], "lifecycle_revision": new_rev,
+                      "previous_lifecycle_revision": row["lifecycle_revision"], "mission_revision": mrev,
+                      "reopened_obligations": reopened, "historical_assessments_kept": historical,
+                      "note": f"Requirement {requirement_id} restored; {len(reopened)} obligation(s) reopened. Earlier "
+                              "results stay in history; run the comparison to assess it against current sources."}
+            con.execute("INSERT INTO change_events VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (project_id, event_id, "requirement_restored", requirement_id, f"lifecycle-r{new_rev}",
+                         f"lifecycle-r{row['lifecycle_revision']}", row["content_sha256"], "applied", None,
+                         dumps(result), now, now))
+        return {"status": "restored", **result}

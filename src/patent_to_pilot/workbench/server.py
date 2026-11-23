@@ -59,6 +59,9 @@ ROUTES = [
     ("GET", rf"/api/projects/{_SEG}/sources/{_SEG}/versions/{_SEG}/spans/{_SEG}/{_SEG}", "inspect"),
     ("GET", rf"/api/projects/{_SEG}/sources/{_SEG}/versions/{_SEG}/original", "original"),
     ("POST", r"/api/synthetic/relation-search", "synthetic_relation_search"),
+    # P4-T01b: requirement Remove / Undo (same POST guards: loopback Host, same Origin, JSON body, size limit)
+    ("POST", rf"/api/projects/{_SEG}/requirements/{_SEG}/archive", "archive_requirement"),
+    ("POST", rf"/api/projects/{_SEG}/requirements/{_SEG}/restore", "restore_requirement"),
 ]
 UPLOAD_LIMIT = 3_000_000  # base64 of the 2 MB ingestion limit, plus JSON overhead
 BODY_LIMIT = 65536
@@ -202,6 +205,14 @@ class App:
     def save_requirement(self, body, pid):
         with self.lock:
             return self.workflow.save_requirement(pid, body or {})
+
+    def archive_requirement(self, body, pid, rid):
+        with self.lock:
+            return self.workflow.archive_requirement(pid, rid, body or {})
+
+    def restore_requirement(self, body, pid, rid):
+        with self.lock:
+            return self.workflow.restore_requirement(pid, rid, body or {})
 
     def compare(self, body, pid):
         with self.lock:
