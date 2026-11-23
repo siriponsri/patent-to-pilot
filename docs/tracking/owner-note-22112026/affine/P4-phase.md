@@ -10,7 +10,7 @@ Phase status: **IN_PROGRESS**
 |---|---|---|---|---|
 | P4-T01 | Extend the existing Search, Compare and Inspect workflow | ✅ COMPLETE | ENGINEERING_VERIFIED | P4-T02; P4-T03 |
 | P4-T02 | Make local, API and self-hosted modes clear and usable | ⏳ NOT_STARTED | NOT_RUN | P4-T05 |
-| P4-T03 | Make source, structural scope and search provenance inspectable | ⏳ NOT_STARTED | NOT_RUN | P4-T04; P4-T05 |
+| P4-T03 | Make source, structural scope and search provenance inspectable | ✅ COMPLETE | ENGINEERING_VERIFIED | P4-T04; plan section 8 matched comparison |
 | P4-T04 | Verify selective revision against full recomputation | ⏳ NOT_STARTED | NOT_RUN | P4-T05 |
 | P4-T05 | Observe clean-install and user-task success | ⏳ NOT_STARTED | NOT_RUN | P5-T03; P5-T04 |
 
@@ -40,10 +40,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P4-T01; P2-T03
 - **Acceptance evidence:** Resolve original page/text, scope qualifiers and actual new-candidate action; reject hypothesis-as-evidence; show source-region absence honestly.
-- **Evidence:** pending
-- **Check:** NOT_CHECKED
-- **Next:** P4-T04; P4-T05
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P4-T03_structural_acquisition_receipt.md; src/patent_to_pilot/workbench/acquisition.py; src/patent_to_pilot/workbench/structure.py; tests/test_structural_acquisition.py
+- **Check:** 15 new tests; full gate only 8 known SACR failures; smoke 15/15; browser Compare renders, no console errors
+- **Next:** P4-T04; plan section 8 matched comparison
 - **Blocker:** —
+- **Notes:** [2026-11-23] policy ptp-structural-acquisition/2.0.0 (sha 12490901...), acquisition inside assessment path with persisted receipts + scope dependencies; V1 side-by-side now opt-in; no effectiveness measured
 
 ## P4-T04 — Verify selective revision against full recomputation
 

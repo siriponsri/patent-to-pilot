@@ -21,6 +21,7 @@ import uuid
 from patent_to_pilot.workbench import ingest as I
 from patent_to_pilot.workbench import parser as P
 from patent_to_pilot.workbench import product_lexical as PL
+from patent_to_pilot.workbench import structure as S
 from patent_to_pilot.workbench.generations import GenerationError, GenerationManager
 from patent_to_pilot.workbench.profiles import ProviderRegistry
 from patent_to_pilot.workbench.providers import ProviderError
@@ -94,7 +95,7 @@ def core_code_sha256() -> str:
     here = Path(__file__).resolve().parent
     h = hashlib.sha256()
     for name in ("core.py", "parser.py", "store.py", "providers.py", "profiles.py", "generations.py", "ingest.py",
-                 "thai_analyzer.py", "product_lexical.py"):
+                 "thai_analyzer.py", "product_lexical.py", "structure.py", "acquisition.py", "relation_search.py"):
         h.update((here / name).read_bytes())
     return h.hexdigest()
 
@@ -237,6 +238,10 @@ class EvidenceCore:
         self.registry = ProviderRegistry(self.store)
         self.generations = GenerationManager(self.store, self.registry, P.PARSER_PROFILE)
         self.product_lexical = PL.ProductLexical(self.store)   # P4-T01a: Thai derivative index (additive tables)
+        # P4-T03: persisted document structure and the structural acquisition step of the assessment path
+        from patent_to_pilot.workbench import acquisition as A   # imported here: acquisition imports this module
+        self.structure = S.StructureStore(self.store)
+        self.acquisition = A.Acquisition(self)
 
     # ---------------- capabilities / identity
     def capabilities(self) -> dict:
@@ -257,6 +262,7 @@ class EvidenceCore:
             "lexical": {"state": "active", "implementation": "sqlite_fts5_unicode61",
                         "description": "Searches the local indexed text. No model required. Always available.",
                         "product_thai": PL.capability()},
+            "structural_acquisition": self._acquisition_capability(),
             "chat": role_state("chat"), "embedding": role_state("embedding"), "rerank": role_state("rerank"),
             "local_model": {**role_state("embedding", local=True),
                             "description": "A local model is used only after its connection check passes."},
@@ -269,6 +275,13 @@ class EvidenceCore:
             "parser_profile": P.PARSER_PROFILE, "offset_convention": OFFSET_CONVENTION,
             "store_path": str(self.store.path),
         }
+
+    @staticmethod
+    def _acquisition_capability() -> dict:
+        from patent_to_pilot.workbench import relation_search as R
+        return {"state": "active", "task": "P4-T03", "policy": R.POLICY_V2.name, "policy_sha256": R.POLICY_V2_SHA256,
+                "action_kinds": list(R.ACTION_KINDS), "structure_ruleset": S.RULESET, "applies_to": "owner projects",
+                "modes": ["structural", "baseline"]}
 
     # ---------------- bootstrap / import
     def _load_sample_inputs(self) -> tuple[dict, dict]:
@@ -571,8 +584,20 @@ class EvidenceCore:
             detail["retrieval"] = {"used": ctx["last_search"], "generation_id": ctx["generation_id"]}
         self._action(run_id, seq, "search_current_sources", cand, rid, detail, started=t0)
         seq += 1
+        # P4-T03: at most one structural acquisition action BEFORE the assessment is read and committed (owner
+        # projects only; the G01 sample and synthetic projects keep mode 'off'). Its receipt is persisted first.
+        acq, acq_seq = None, None
+        acq_opts = (ctx or {}).get("acquisition") or {"mode": "off"}
+        if acq_opts["mode"] in ("structural", "baseline"):
+            t0 = utc_now()
+            acq = self.acquisition.acquire(project_id, run_id, seq, cand, req, hits, acq_opts, counters)
+            self._action(run_id, seq, "structural_acquisition", cand, rid, acq["receipt"], started=t0)
+            self.acquisition.record(project_id, run_id, seq, cand, req, acq["receipt"])
+            acq_seq = seq
+            seq += 1
+        read_hits = list(hits) + (acq["read_units"] if acq else [])
         evidence, reading, issues = None, None, []
-        for h in hits:
+        for h in read_hits:
             if counters["source_reads"] >= limits["max_source_reads"]:
                 return seq, "budget_exhausted:max_source_reads"
             t0 = utc_now()
@@ -585,7 +610,8 @@ class EvidenceCore:
             if free_text:  # P4-T01: no bounded field to read; the top-ranked passage is reported, not judged
                 self._action(run_id, seq, "read_passage", cand, rid,
                              {"passage": f"{h['source_id']}@{h['version_id']}#{h['passage_id']}",
-                              "requirement_kind": "text", "rule": "top lexical match is reported as evidence"},
+                              "requirement_kind": "text", "rule": "top lexical match is reported as evidence",
+                              **({"acquired": h["acquired"]} if h.get("acquired") else {})},
                              started=t0)
                 seq += 1
                 evidence = dict(p)
@@ -593,7 +619,8 @@ class EvidenceCore:
             r = P.read_field(p["quote"], req["field"])
             self._action(run_id, seq, "read_passage", cand, rid,
                          {"passage": f"{h['source_id']}@{h['version_id']}#{h['passage_id']}",
-                          "field": req["field"], "field_status": r.status, "line": r.line, "issues": r.issues},
+                          "field": req["field"], "field_status": r.status, "line": r.line, "issues": r.issues,
+                          **({"acquired": h["acquired"]} if h.get("acquired") else {})},
                          started=t0)
             seq += 1
             if r.status == "invalid":
@@ -624,6 +651,10 @@ class EvidenceCore:
                                + "; ".join(i for x in issues for i in x["issues"]) + ".")
             else:
                 explanation = f"No recognized '{label}' statement found in {cand_label}'s current sources."
+        if acq:   # P4-T03: say when the evidence (or related context) came from the structural action
+            note = self.acquisition.explain(acq, evidence)
+            if note:
+                explanation = f"{explanation} {note}"
         self._action(run_id, seq, "check_criterion", cand, rid,
                      {"predicate": req.get("predicate"), "reading": None if reading is None else reading.value,
                       "outcome": outcome, "explanation": explanation, "validation_issues": issues}, started=t0)
@@ -637,8 +668,24 @@ class EvidenceCore:
         gen_dep = None
         if ctx and ctx.get("last_search") == "hybrid":
             gen_dep = (ctx["generation_id"], ctx["embedding_space_id"])
+        stored_hits = hits
+        extra_deps: list = []
+        if acq and acq["receipt"]["search_calls"]:
+            # the assessment now rests on the action too: its acquired units are part of the search receipt and its
+            # searched scope is a dependency, so a later source change re-runs the action instead of reusing
+            acquired = set(acq["new_units"])
+            stored_hits = list(hits) + [
+                {"source_id": s, "version_id": v, "passage_id": p,
+                 "acquired": {"action": acq["receipt"]["action"], "receipt": f"{run_id}:{acq_seq}"}}
+                for s, v, p in (self.acquisition.split_unit(u) for u in acq["receipt"]["final_ids"]
+                                if u in acquired)]
+            extra_deps = acq["deps"]
         result = self._commit(project_id, run_id, mission, cand, req, outcome, explanation, reading, issues,
-                              hits, scope, citation, gen_dep)
+                              stored_hits, scope, citation, gen_dep, extra_deps)
+        if acq:
+            self.acquisition.link(run_id, acq_seq, result)
+            result = {**result, "acquisition_receipt": {"run_id": run_id, "seq": acq_seq,
+                                                        "outcome": acq["receipt"]["outcome"]}}
         self._action(run_id, seq, "commit_assessment", cand, rid, result, started=t0)
         seq += 1
         key = {"new_version": "committed", "rejected_stale": "rejected_stale"}.get(result["committed"], "retained")
@@ -646,7 +693,7 @@ class EvidenceCore:
         return seq, None
 
     def _commit(self, project_id, run_id, mission, cand, req, outcome, explanation, reading, issues, hits, scope,
-                citation, gen_dep=None) -> dict:
+                citation, gen_dep=None, extra_deps=()) -> dict:
         rid = req["requirement_id"]
         req_sha = sha256(dumps(req).encode("utf-8"))
         with self.store.tx() as con:
@@ -655,6 +702,11 @@ class EvidenceCore:
                 return {"committed": "rejected_stale", "reason": stale, "outcome": outcome, "requirement_sha256": req_sha}
             if citation is not None:
                 self._validate_citation(con, project_id, citation, require_current=True)
+                # P4-T03: another candidate's document can never satisfy this candidate's requirement
+                owner = con.execute("SELECT candidate_id FROM source_versions WHERE project_id=? AND source_id=? AND "
+                                    "version_id=?", (project_id, citation["source_id"], citation["version_id"])).fetchone()
+                if owner is None or owner[0] != cand:
+                    raise ValidationFailed("citation source belongs to another candidate", "citation_candidate_scope")
             prev = con.execute("SELECT * FROM assessments WHERE project_id=? AND candidate_id=? AND requirement_id=? "
                                "AND state='current'", (project_id, cand, rid)).fetchone()
             prev_cit = None
@@ -671,13 +723,15 @@ class EvidenceCore:
                 # the retained assessment now also rests on this search: record any receipt it did not have yet
                 have = {(d["kind"], d["source_id"], d["version_id"]) for d in con.execute(
                     "SELECT kind, source_id, version_id FROM dependencies WHERE assessment_id=?", (prev["assessment_id"],))}
-                new_deps = [("search_scope", s, v) for s, v in scope]
+                new_deps = [("search_scope", s, v, req["query"]) for s, v in scope]
                 if gen_dep is not None:
-                    new_deps.append(("index_generation", gen_dep[0], gen_dep[1]))
-                for kind, s, v in new_deps:
+                    new_deps.append(("index_generation", gen_dep[0], gen_dep[1], req["query"]))
+                new_deps += list(extra_deps)
+                for kind, s, v, q in new_deps:
                     if (kind, s, v) not in have:
+                        have.add((kind, s, v))
                         con.execute("INSERT INTO dependencies VALUES (?,?,?,?,?,?)",
-                                    (prev["assessment_id"], kind, s, v, cand, req["query"]))
+                                    (prev["assessment_id"], kind, s, v, cand, q))
                 # keep the latest supporting search receipt, so a later recheck compares against what was
                 # actually searched last (not the search of the run that first committed the result)
                 if json.loads(prev["search_hits_json"]) != hits:
@@ -714,17 +768,27 @@ class EvidenceCore:
             if gen_dep is not None:  # dense search receipt: bound to the generation and its embedding space
                 con.execute("INSERT INTO dependencies VALUES (?,?,?,?,?,?)",
                             (aid, "index_generation", gen_dep[0], gen_dep[1], cand, req["query"]))
+            for kind, s, v, q in extra_deps:   # P4-T03: the structural action's searched scope
+                con.execute("INSERT INTO dependencies VALUES (?,?,?,?,?,?)", (aid, kind, s, v, cand, q))
             con.execute("UPDATE obligations SET state='done', reason=?, updated_at=? WHERE project_id=? AND "
                         "candidate_id=? AND requirement_id=?", (f"committed {aid}", now, project_id, cand, rid))
         return {"committed": "new_version", "assessment_id": aid, "supersedes": prev["assessment_id"] if prev else None,
                 "outcome": outcome, "citation": new_cit}
 
-    def run_comparison(self, project_id: str, invoked_via: str = "cli") -> dict:
-        """Full comparison: every candidate x requirement obligation is planned and acquired."""
+    def _acquisition_options(self, project_id: str, requested=None) -> dict:
+        with self.store.read() as con:
+            proj = self._project(con, project_id)
+        return self.acquisition.options(proj["data_origin"], proj["mission"], requested)
+
+    def run_comparison(self, project_id: str, invoked_via: str = "cli", acquisition=None) -> dict:
+        """Full comparison: every candidate x requirement obligation is planned and acquired. ``acquisition``
+        (P4-T03, owner projects): ``"structural"`` (default), ``"baseline"`` or an options object."""
         with self.store.read() as con:
             mission = self._project(con, project_id)["mission"]
+        acq = self._acquisition_options(project_id, acquisition)   # validated before the run is opened
         run_id = self._new_run(project_id, "comparison", invoked_via, "full", mission)
         ctx = self._retrieval_context(project_id)
+        ctx["acquisition"] = acq
         return self._execute(project_id, run_id, mission,
                              [(c["candidate_id"], r) for c in mission["candidates"] for r in mission["requirements"]],
                              reuse=[], ctx=ctx)
@@ -740,6 +804,13 @@ class EvidenceCore:
             self._action(run_id, seq, "retrieval_setup", None, None, self._ctx_public(ctx),
                          status="ok" if ctx["effective"] == "hybrid" else "fallback")
             seq += 1
+        acq = (ctx or {}).get("acquisition") or {"mode": "off"}
+        if acq["mode"] != "off":   # P4-T03: the declared acquisition policy, scope rules and budget of this run
+            self._action(run_id, seq, "acquisition_setup", None, None, self.acquisition.setup_record(acq))
+            seq += 1
+            counters.update(acquisition_mode=acq["mode"], acquisition_policy=acq["policy"], structural_actions=0,
+                            structural_new_units=0, same_document_context_units=0, new_document_units=0,
+                            gap_obligations=0)
         try:
             for item in reuse:  # verification search (really executed) followed by the reuse decision
                 self._action(run_id, seq, "search_current_sources", item["candidate_id"], item["requirement_id"],
@@ -912,6 +983,7 @@ class EvidenceCore:
         run_id = self._new_run(project_id, "change", invoked_via, "selective_by_dependency", mission,
                                entry["event_id"])
         ctx = self._retrieval_context(project_id)  # may rebuild a stale index generation and reopen its searches
+        ctx["acquisition"] = self._acquisition_options(project_id)   # P4-T03: owner projects re-run the action
         with self.store.read() as con:
             obl = {(r["candidate_id"], r["requirement_id"]): dict(r) for r in
                    con.execute("SELECT * FROM obligations WHERE project_id=?", (project_id,))}
@@ -930,6 +1002,12 @@ class EvidenceCore:
                     new_hits = self._search(con, project_id, key[0], reqs[key[1]]["query"], ctx,
                                             match=requirement_match(reqs[key[1]]))
                 if a is None:
+                    work.append((key[0], reqs[key[1]]))
+                    continue
+                with self.store.read() as con:   # P4-T03: a result that rests on a structural action is re-acquired
+                    acquired_dep = con.execute("SELECT 1 FROM dependencies WHERE assessment_id=? AND "
+                                               "kind='acquisition_scope'", (a["assessment_id"],)).fetchone()
+                if acquired_dep:   # (a changed scope can change what the action finds, even if the seed is equal)
                     work.append((key[0], reqs[key[1]]))
                     continue
                 old_ids = [(h["source_id"], h["version_id"], h["passage_id"]) for h in json.loads(a["search_hits_json"])]
@@ -1104,6 +1182,8 @@ class EvidenceCore:
             con.execute("INSERT OR REPLACE INTO original_artifacts VALUES (?,?,?,?,?,?,?,?,?)",
                         (project_id, sid, version, media, sha256(raw), len(raw), raw,
                          f"sqlite:original_artifacts/{project_id}/{sid}@{version}", utc_now()))
+            # P4-T03: the version's document structure, in the same transaction (never visible without it)
+            self.structure.persist(con, project_id, sid, version, prep["text"], prep["passages"], prep["source_kind"])
         self._import_source(project_id, entry, stored, prep["text"], prep["passages"], prep["title"], keep_original)
         out = self._settle_event(project_id, entry, mission, invoked_via)
         return {"status": "ingested", "source_id": sid, "version_id": version, "sha256": digest,

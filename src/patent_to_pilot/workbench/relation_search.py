@@ -323,11 +323,20 @@ POLICY_V1 = SelectionPolicy(
 POLICY_V1_SHA256 = "e4ea084cd572e4fdda37838451c9d2838f7af61bc5c68b7cec4468411265629c"
 POLICIES = {POLICY_V1.name: POLICY_V1}
 PINNED_POLICY_SHA256 = {POLICY_V1.name: POLICY_V1_SHA256}
+# P4-T03: relation_search_step / select_relation / build_query implement only the relation-search family (POLICY_V1).
+# The structural-acquisition policy (POLICY_V2, below) has its own selector and operator.
+RELATION_POLICY_NAMES = frozenset({POLICY_V1.name})
 
 
 def _require_known_policy(policy: SelectionPolicy) -> None:
     if POLICIES.get(policy.name) != policy or PINNED_POLICY_SHA256.get(policy.name) != policy.fingerprint():
         raise ValidationFailed(f"unknown, modified or unpinned selection policy {policy.name}", "policy_unknown")
+
+
+def _require_relation_policy(policy: SelectionPolicy) -> None:
+    _require_known_policy(policy)
+    if policy.name not in RELATION_POLICY_NAMES:
+        raise ValidationFailed(f"{policy.name} is not a relation-search policy", "policy_family")
 
 
 # =========================================================================== typed query material
@@ -509,7 +518,7 @@ def _validate_states(states: Iterable, qr: QueryRequirements, evidence, where: s
 def select_relation(policy: SelectionPolicy, qr: QueryRequirements, states: Sequence[RelationState],
                     pool_before: Sequence[str], evidence, attempted: Iterable[str] = ()) -> dict:
     """Apply the named policy. Returns {selected, considered (in policy order with sort keys), skipped (with reason)}."""
-    _require_known_policy(policy)
+    _require_relation_policy(policy)
     attempted = set(attempted)
     req_pos = {r.requirement_id: i for i, r in enumerate(qr.ordered())}
     pool_pos = {c: i for i, c in enumerate(pool_before)}
@@ -537,7 +546,7 @@ def select_relation(policy: SelectionPolicy, qr: QueryRequirements, states: Sequ
 def build_query(policy: SelectionPolicy, rel: RelationState, qr: QueryRequirements,
                 hypotheses: Sequence[SearchHypothesis], evidence) -> ExpansionQuery:
     """Policy Q1-Q3: typed expansion terms with provenance."""
-    _require_known_policy(policy)
+    _require_relation_policy(policy)
     raw: list[QueryTerm] = []
     if rel.reference_text:
         (ev,) = evidence.resolve([rel.reference_evidence_id])
@@ -821,6 +830,254 @@ def trace_emitter(ctx: TraceContext, evidence: EvidenceRegistry) -> Callable:
     return emit
 
 
+# =========================================================================== P4-T03: structural acquisition (policy v2)
+# Owner fix plan of 23 Nov 2026, section 5: four explicit action kinds under a NEW policy version. POLICY_V1 above stays
+# byte-identical and pinned; the v2 selector and operator below are separate functions over the same budget,
+# eligibility-mask and original-requirement rerank conventions.
+ACTION_KINDS = ("resolve_reference", "recover_context", "search_within_source", "search_eligible_corpus")
+GAP_SIGNALS = ("no_hit", "unresolved_reference", "absent_bounded_field", "user_declared_missing")
+RECEIPT_SCHEMA = "ptp-structural-acquisition-receipt/1"
+V2_CLAIM_BOUNDARY = ("Engineering mechanism only. The gap signal, the one selected action, its scope, query, new units "
+                     "and the original-requirement rerank are executed and recorded; newly acquired does not mean "
+                     "relevant, and no retrieval-effectiveness claim follows.")
+
+POLICY_V2 = SelectionPolicy(
+    policy_id="ptp-structural-acquisition",
+    version="2.0.0",
+    max_expansion_searches=1,
+    selection_rule=(
+        "G1 an evidence gap is observable only as: no_hit (the seed returned no eligible unit for an explicit active "
+        "requirement); unresolved_reference (an eligible seed unit carries an explicit parsed reference, or a "
+        "parser-exposed structural binding, whose target unit is not in the pool); absent_bounded_field (a "
+        "bounded-field requirement and no seed unit has a line for that field, parsed or invalid); "
+        "user_declared_missing (the caller names the candidate/requirement pair as missing). A free-text lexical "
+        "match is reported as evidence found (not judged); it is never a satisfaction verdict.",
+        "S1 candidate actions: resolve_reference (an explicit reference in a seed unit whose qualified target resolves "
+        "to exactly one unit outside the pool); recover_context (the parent numbered unit of the top seed unit when "
+        "that unit's heading lies in another passage, or a bound footnote or table header outside the pool); "
+        "search_within_source (gap no_hit, absent_bounded_field or user_declared_missing, when an anchor source "
+        "exists: the source of the first seed unit, else the source cited most often by the candidate's current "
+        "assessments of other active requirements, ties by source_id); search_eligible_corpus (the same gaps, over "
+        "the candidate's whole eligible scope).",
+        "S2 references resolve by qualified key (source_id, version_id, section_path): a section reference only inside "
+        "the referring source version (same annex container first, else the whole version; exact key, else the "
+        "enclosing numbered unit); an annex or schedule reference inside the version, else to exactly one other "
+        "eligible source of the same candidate holding a top-level unit with the same key; an external-instrument "
+        "reference only when exactly one eligible source of the candidate is identified by its title. Ambiguous "
+        "(more than one target), unidentified external and target-less references stay visible as non-actionable "
+        "states.",
+        "S3 order actionable candidates by (action priority resolve_reference < recover_context < "
+        "search_within_source < search_eligible_corpus; 0-based pool rank of the unit carrying the signal, len(pool) "
+        "if none; signal span start, 2**63 if none; target key; action key) and select the first. Scores, input "
+        "order, evaluator labels, randomness and model calls are not used.",
+        "S4 at most one selected action per obligation after the seed search (max_expansion_searches = 1); a run may "
+        "also cap its total number of structural actions.",
+    ),
+    query_rule=(
+        "Q1 resolve_reference and recover_context issue no text search: they fetch the passage that holds the "
+        "resolved target node from the persisted structure of that source version; the recorded query is the "
+        "verbatim reference or binding text and the qualified target key.",
+        "Q2 search_within_source and search_eligible_corpus search the product Thai index with the OR of the original "
+        "requirement's analyzer terms (English stopwords dropped, no Thai word dropped), plus the field label phrase "
+        "for a bounded-field requirement, restricted to the anchor source version or to the candidate's eligible "
+        "current source versions, fetch depth fetch_limit; when nothing matches, a bounded substring check of each "
+        "requirement term of at least 2 characters over the same scope. Without the analyzer the legacy index is "
+        "searched with the legacy terms expression.",
+        "Q3 every returned unit passes the eligibility mask (project, candidate, current source version, declared date "
+        "rule); the first result_limit eligible units are merged after the pool; only document ids absent from the "
+        "pool count as new-document gain, the other new units are same-document context gain.",
+    ),
+    rerank_rule=(
+        "R1 the reranker receives only the original requirement (RerankRequest) and the merged unit ids; score = "
+        "number of distinct original-requirement analyzer terms present in the unit.",
+        "R2 order by score descending, ties by merged-pool position (pool first, then new units in returned order).",
+        "R3 the assessor reads seed units first in seed order, then new units in rerank order; a free-text requirement "
+        "cites a new unit only when the seed found nothing and the unit's score is at least 1; a bounded field is read "
+        "by the unchanged field grammar.",
+    ),
+)
+# Frozen fingerprint of POLICY_V2.describe(); a changed rule text or parameter needs a new version and a new pin.
+POLICY_V2_SHA256 = "124909017ac6a77daa253585399a202540f2dc01756fc41d28ae6bd4815fdd89"
+POLICIES[POLICY_V2.name] = POLICY_V2
+PINNED_POLICY_SHA256[POLICY_V2.name] = POLICY_V2_SHA256
+STRUCTURAL_POLICY_NAMES = frozenset({POLICY_V2.name})
+
+
+def _require_structural_policy(policy: SelectionPolicy) -> None:
+    _require_known_policy(policy)
+    if policy.name not in STRUCTURAL_POLICY_NAMES:
+        raise ValidationFailed(f"{policy.name} is not a structural-acquisition policy", "policy_family")
+
+
+@dataclass(frozen=True)
+class ActionCandidate:
+    """One candidate structural action for one requirement (a fallible runtime signal, never gold).
+
+    ``state`` says what the signal resolved to (``resolved``, ``resolved_parent``, ``bound``, ``gap``, or a
+    non-actionable state such as ``ambiguous``, ``external_unidentified``, ``unresolved_no_target``,
+    ``resolved_in_pool``); only ``actionable`` candidates can be selected. ``anchors`` are exact source spans
+    ({source_id, version_id, start, end, text}); ``target`` describes the qualified target or the search scope."""
+    action_key: str
+    requirement_id: str
+    action: str
+    signal: str
+    state: str
+    actionable: bool
+    reason: str
+    signal_rank: int
+    signal_start: int | None = None
+    target_key: str = ""
+    anchors: tuple = ()
+    target: tuple = ()
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "anchors", tuple(self.anchors))
+        object.__setattr__(self, "target", tuple(self.target))
+        if self.action not in ACTION_KINDS:
+            raise ValidationFailed(f"{self.action_key}: action must be one of {ACTION_KINDS}", "action_kind")
+        if self.signal not in GAP_SIGNALS:
+            raise ValidationFailed(f"{self.action_key}: signal must be one of {GAP_SIGNALS}", "gap_signal")
+
+    def as_record(self) -> dict:
+        return {"action_key": self.action_key, "requirement_id": self.requirement_id, "action": self.action,
+                "signal": self.signal, "state": self.state, "actionable": self.actionable, "reason": self.reason,
+                "signal_rank": self.signal_rank, "signal_start": self.signal_start, "target_key": self.target_key,
+                "anchors": [dict(a) for a in self.anchors], "target": [dict(t) for t in self.target]}
+
+
+def select_structural_action(policy: SelectionPolicy, candidates: Sequence[ActionCandidate],
+                             attempted: Iterable[str] = ()) -> dict:
+    """Policy v2 S3: {selected, considered (policy order with sort keys), skipped (with reason)}."""
+    _require_structural_policy(policy)
+    attempted = set(attempted)
+    keys = [c.action_key for c in candidates]
+    if len(set(keys)) != len(keys):
+        raise ValidationFailed("duplicate action keys", "action_duplicate")
+    considered, skipped = [], []
+    for c in candidates:
+        if not isinstance(c, ActionCandidate):
+            raise ValidationFailed(f"{type(c).__name__} is not an ActionCandidate", "action_type")
+        if not c.actionable:
+            skipped.append({"action_key": c.action_key, "reason": f"state_{c.state}"})
+        elif c.action_key in attempted:
+            skipped.append({"action_key": c.action_key, "reason": "already_attempted"})
+        else:
+            key = (ACTION_KINDS.index(c.action), c.signal_rank,
+                   c.signal_start if c.signal_start is not None else _NO_OFFSET, c.target_key, c.action_key)
+            considered.append((key, c))
+    considered.sort(key=lambda kc: kc[0])
+    skipped.sort(key=lambda d: d["action_key"])
+    return {"selected": considered[0][1] if considered else None,
+            "considered": [{"action_key": c.action_key, "sort_key": list(k)} for k, c in considered],
+            "skipped": skipped}
+
+
+def structural_action_step(*, requirements: QueryRequirements, candidates: Sequence[ActionCandidate],
+                           pool_before: Sequence[str], execute: Callable, rerank: Callable, budget: ActionBudget,
+                           eligibility: EligibilityMask, unit_document: Callable[[str], str],
+                           gaps: Sequence[str] = (), policy: SelectionPolicy = POLICY_V2,
+                           result_limit: int = RESULT_LIMIT, fetch_limit: int | None = None,
+                           attempted: Iterable[str] = ()) -> dict:
+    """At most ONE structural action after the seed (policy v2). Pure: no store is needed.
+
+    ``execute(candidate, fetch_limit) -> {"ranked": [(unit_id, score|None), ...], "query", "scope",
+    "index_generation", ...}`` is called at most once. ``rerank(RerankRequest, merged_ids) -> {unit_id: score}`` sees
+    only the original requirement. ``unit_document(unit_id) -> document id`` separates same-document context gain from
+    new-document gain. Returns the action receipt (``RECEIPT_SCHEMA``)."""
+    if not isinstance(requirements, QueryRequirements):
+        raise ValidationFailed("requirements must be a QueryRequirements", "requirements_type")
+    if not isinstance(budget, ActionBudget) or not isinstance(eligibility, EligibilityMask):
+        raise ValidationFailed("budget and eligibility must be declared explicitly", "operator_inputs")
+    if result_limit < 1 or (fetch_limit is not None and fetch_limit < result_limit):
+        raise ValidationFailed("need 1 <= result_limit <= fetch_limit", "operator_inputs")
+    _require_structural_policy(policy)
+    bad_gaps = [g for g in gaps if g not in GAP_SIGNALS]
+    if bad_gaps:
+        raise ValidationFailed(f"unknown gap signals {bad_gaps}", "gap_signal")
+    req_fp = requirements.sha256()
+    rids = {r.requirement_id for r in requirements.requirements}
+    for c in candidates:
+        if isinstance(c, ActionCandidate) and c.requirement_id not in rids:
+            raise ValidationFailed(f"{c.action_key} names an unknown requirement", "requirement_unknown")
+    pool_before = list(pool_before)
+    if len(set(pool_before)) != len(pool_before):
+        raise ValidationFailed("pool before the action has duplicate ids", "pool_duplicate")
+    bad = [(c, eligibility.reason(c)) for c in pool_before if eligibility.reason(c)]
+    if bad:
+        raise IneligibleCandidate(f"pool before the action contains ineligible units {bad}", IneligibleCandidate.code)
+    sel = select_structural_action(policy, candidates, attempted)
+    fetch = fetch_limit or result_limit
+    record: dict = {
+        "record_schema": RECEIPT_SCHEMA, "claim_boundary": V2_CLAIM_BOUNDARY,
+        "requirement_id": requirements.requirements[0].requirement_id if len(requirements.requirements) == 1 else None,
+        "requirement_version": req_fp, "requirements": requirements.as_record(),
+        "policy_version": policy.name, "policy_sha256": policy.fingerprint(),
+        "gaps": list(gaps), "eligibility": {**eligibility.describe(), "sha256": eligibility.fingerprint(),
+                                            "trace_id": eligibility.trace_id},
+        "budget_before": budget.describe(), "result_limit": result_limit, "fetch_limit": fetch,
+        "selection": {"selected_action_key": sel["selected"].action_key if sel["selected"] else None,
+                      "considered": sel["considered"], "skipped": sel["skipped"],
+                      "candidates": [c.as_record() for c in candidates]},
+        "action": None, "action_key": None, "signal": None, "reason": None, "anchors": [], "scope": None,
+        "query": None, "index_generation": None, "search_calls": 0, "pool_before": pool_before,
+        "returned_ids": [], "excluded_ineligible": [], "new_unit_ids": [], "new_document_ids": [],
+        "same_document_unit_ids": [], "final_ids": list(pool_before), "rerank": None}
+    if sel["selected"] is None:
+        record.update(outcome="no_gap" if not candidates else "no_actionable_gap", budget_after=budget.describe())
+        return record
+    if budget.remaining < 1:
+        record.update(outcome="budget_exhausted", budget_after=budget.describe())
+        return record
+    c: ActionCandidate = sel["selected"]
+    record.update(action=c.action, action_key=c.action_key, signal=c.signal, reason=c.reason,
+                  anchors=[dict(a) for a in c.anchors])
+    # ---- the single structural action (the only call site of ``execute`` in this module)
+    budget.consume(c.action)
+    record["search_calls"] = 1
+    out = dict(execute(c, fetch) or {})
+    seen, ranked = set(), []
+    for item in out.get("ranked", []):
+        uid, score = item[0], (item[1] if len(item) > 1 else None)
+        if not isinstance(uid, str) or not uid:
+            raise ValidationFailed("action backend returned a non-string unit id", "backend_output")
+        if uid not in seen:
+            seen.add(uid)
+            ranked.append((uid, score))
+    if len(ranked) > fetch:
+        raise ValidationFailed("action backend returned more units than requested", "backend_output")
+    excluded = [{"unit_id": u, "reason": eligibility.reason(u)} for u, _ in ranked if eligibility.reason(u)]
+    returned = [u for u, _ in ranked if not eligibility.reason(u)][:result_limit]
+    after = pool_before + [u for u in returned if u not in pool_before]
+    new = [u for u in returned if u not in pool_before]
+    if any(eligibility.reason(u) for u in after):          # re-check after merging
+        raise IneligibleCandidate("merged pool contains an ineligible unit", IneligibleCandidate.code)
+    docs_before = {unit_document(u) for u in pool_before}
+    same_doc = [u for u in new if unit_document(u) in docs_before]
+    new_docs = list(dict.fromkeys(unit_document(u) for u in new if unit_document(u) not in docs_before))
+    request = RerankRequest.from_requirements(requirements)
+    scores = dict(rerank(request, tuple(after)) or {})
+    for u, s in scores.items():
+        if u not in after:
+            raise ValidationFailed(f"reranker scored {u}, which is not in the merged pool", "rerank_output")
+        if not isinstance(s, (int, float)) or isinstance(s, bool) or not math.isfinite(s):
+            raise ValidationFailed(f"reranker score for {u} is not a finite number", "rerank_output")
+    pos = {u: i for i, u in enumerate(after)}
+    order = sorted(after, key=lambda u: (0, -scores[u], pos[u]) if u in scores else (1, 0.0, pos[u]))
+    record.update(
+        scope=out.get("scope"), query=out.get("query"), index_generation=out.get("index_generation"),
+        route=out.get("route"), backend_ranked=[{"unit_id": u, "score": s} for u, s in ranked],
+        returned_ids=returned, excluded_ineligible=excluded, after_ids=after, new_unit_ids=new,
+        new_document_ids=new_docs, same_document_unit_ids=same_doc, final_ids=order,
+        rerank={"basis": request.basis, "request": {**asdict(request),
+                                                    "requirement_texts": list(request.requirement_texts)},
+                "ranking": [{"unit_id": u, "rerank_position": i + 1, "pool_position": pos[u] + 1,
+                             "score": scores.get(u), "is_new": u in new} for i, u in enumerate(order)]})
+    if requirements.sha256() != req_fp:
+        raise ValidationFailed("query requirements changed during the action", "requirements_mutated")
+    record.update(outcome="acquired" if new else "no_new_units", budget_after=budget.describe())
+    return record
+
+
 # =========================================================================== Workbench adapter
 PROJECT_ID = "synthetic-p2-t03-relation-search"
 WORKBENCH_FETCH_LIMIT = 50
@@ -1011,6 +1268,7 @@ class RelationSearchSlice(TraceSlice):
 
 def _check_pins() -> None:  # pragma: no cover - development aid: prints the fingerprint to pin
     print(json.dumps({"policy": POLICY_V1.name, "sha256": POLICY_V1.fingerprint()}))
+    print(json.dumps({"policy": POLICY_V2.name, "sha256": POLICY_V2.fingerprint()}))
 
 
 if __name__ == "__main__":  # pragma: no cover

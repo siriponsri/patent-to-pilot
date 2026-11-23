@@ -200,7 +200,11 @@ def test_compare_runs_assessment_path_and_one_bounded_relation_search_with_real_
     pid = owner_project(url, core)
     call(url, "POST", f"/api/projects/{pid}/requirements",
          {"requirement_id": "U1", "label": "Maximum operating temperature at seaside sites"})
-    st, r = call(url, "POST", f"/api/projects/{pid}/compare", {})
+    # P4-T03: the read-only V1 side-by-side is computed only on explicit request; the default Compare shows the
+    # persisted structural-acquisition receipt of the committed assessment instead (tests/test_structural_acquisition.py)
+    st, plain = call(url, "POST", f"/api/projects/{pid}/compare", {})
+    assert st == 200 and all("side_by_side" not in x and x["acquisition"] for x in plain["requirements"])
+    st, r = call(url, "POST", f"/api/projects/{pid}/compare", {"legacy_side_by_side": True})
     assert st == 200 and r["run"]["status"] == "completed" and r["paid_model_calls"] == 0
     u1 = next(x for x in r["requirements"] if x["requirement"]["requirement_id"] == "U1")
     cell = u1["assessments"][0]["cell"]

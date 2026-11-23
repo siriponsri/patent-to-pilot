@@ -10,11 +10,13 @@ call is used.
 * **Requirements** -- explicit requirements typed by the user are validated (``core.normalize_requirement``) and stored
   in the project's mission. Bounded-field requirements keep the G01 parser; free-text requirements are searched and
   their best passage is reported as evidence without any judgement. The sample and synthetic projects stay fixed.
-* **Compare** -- runs the requirement set through the existing assessment path (``EvidenceCore.run_comparison``) and,
-  per requirement, a side-by-side of the seed search (baseline) and ONE bounded relation-search action under the
-  pinned default policy (``relation_search.POLICY_V1``). For an owner project this is a project adapter of
-  ``relation_search_step`` over the project's FTS5 index with a deterministic explicit cross-reference detector; for the
-  synthetic P2-T03 packet it is ``RelationSearchSlice`` itself. Either way it is an ENGINEERING DEMO, not a result.
+* **Compare** -- runs the requirement set through the assessment path (``EvidenceCore.run_comparison``). P4-T03: for an
+  owner project that path itself takes at most one structural acquisition action per obligation (``POLICY_V2``) BEFORE
+  the assessment is committed; Compare shows the persisted action receipt linked to each committed assessment
+  (``acquisition``), and ``{"acquisition": "baseline"}`` runs the comparable no-action mode. The earlier read-only
+  side-by-side of one ``POLICY_V1`` relation search (``relation_action``) is only computed on explicit request
+  (``legacy_side_by_side``) and is labelled an ENGINEERING DEMO, never a committed improvement; the synthetic P2-T03
+  packet keeps ``RelationSearchSlice``.
 * **Inspect** -- opens any span of a stored source version, verifies the stored bytes, reports the original artifact
   and the page/region mapping where one exists (P0-T06 nodes, or ``[page N]`` markers of the PDF text layer), and says
   so plainly when no page or region mapping exists.
@@ -332,6 +334,12 @@ class Workflow:
             orig = con.execute("SELECT media_type, sha256, size_bytes, storage_ref, raw FROM original_artifacts WHERE "
                                "project_id=? AND source_id=? AND version_id=?",
                                (project_id, source_id, version_id)).fetchone()
+            # P4-T03: the persisted document structure overlapping the span (rule and confidence per node)
+            structure = {"build": self.core.structure.summary(con, project_id, source_id, version_id),
+                         "nodes": [{k: n[k] for k in ("node_key", "kind", "ident_key", "section_path", "start",
+                                                      "end", "head_text", "passage_id", "rule", "confidence")}
+                                   for n in self.core.structure.nodes(con, project_id, source_id, version_id)
+                                   if n["start"] < e and n["end"] > s]}
         if not stored_ok:
             raise ValidationFailed("stored canonical text does not match its recorded hash", "citation_integrity")
         base = f"/api/projects/{project_id}/sources/{source_id}/versions/{version_id}"
@@ -371,7 +379,8 @@ class Workflow:
                 "license": sv["license"], "sha256": sv["sha256"], "stored_text_integrity": "verified",
                 "start_char": s, "end_char": e, "offset_convention": OFFSET_CONVENTION, "quote": text[s:e],
                 "text_before": text[:s], "text_after": text[e:], "passages": passages, "nodes": nodes,
-                "page_mapping": mapping, "original_artifact": original, "origin_path": sv["origin_path"]}
+                "page_mapping": mapping, "original_artifact": original, "origin_path": sv["origin_path"],
+                "structure": structure}
 
     def original(self, project_id: str, source_id: str, version_id: str) -> tuple[bytes, str, str]:
         self.core.source_version(project_id, source_id, version_id)   # project / source / version must exist
@@ -398,9 +407,10 @@ class Workflow:
             raise ValidationFailed("unknown requirement id in requirement_ids", "unknown_requirement")
         run = None
         if body.get("run", True) and mission["requirements"]:
-            r = self.core.run_comparison(project_id, invoked_via=invoked_via)
+            # P4-T03: the structural acquisition step runs INSIDE this assessment run (before commit)
+            r = self.core.run_comparison(project_id, invoked_via=invoked_via, acquisition=body.get("acquisition"))
             run = {"run_id": r["run_id"], "status": r["status"], "stop_reason": r["stop_reason"],
-                   "counters": r["counters"]}
+                   "counters": r["counters"], "provider_dispatch": self.core.acquisition.run_usage(r["run_id"])}
         cmp_ = self.core.comparison(project_id)
         texts: dict = {}
         out = []
@@ -416,13 +426,24 @@ class Workflow:
                             con, project_id, ci["source_id"], ci["version_id"], ci["passage_id"], texts).items()
                             if k in ("quote", "title", "sha256")}}}
                     cells.append({"candidate_id": c["candidate_id"], "candidate_label": c["label"], "cell": cell})
-                out.append({"requirement": {**req, "kind": requirement_kind(req), "match": req.get("match", "phrase"),
-                                            "fts_match": requirement_match(req)},
-                            "assessments": cells, "side_by_side": self.relation_action(project_id, req)})
-        return {"task": TASK_ID, "project_id": project_id, "data_origin": proj["data_origin"], "run": run,
-                "requirements": out, "engineering_demo_label": ENGINEERING_DEMO_LABEL,
-                "assessment_path": "EvidenceCore.run_comparison (existing PLAN -> ACQUIRE -> COMMIT)",
-                "paid_model_calls": 0, "remote_calls": 0}
+                entry = {"requirement": {**req, "kind": requirement_kind(req), "match": req.get("match", "phrase"),
+                                         "fts_match": requirement_match(req)},
+                         "assessments": cells,
+                         # P4-T03: read from the persisted run trace (the receipt linked to the committed assessment)
+                         "acquisition": self.core.acquisition.trace_for(project_id, req["requirement_id"], cells)}
+                if body.get("legacy_side_by_side"):
+                    # P4-T01 read-only V1 demonstration, only on explicit request; never a committed improvement
+                    entry["side_by_side"] = self.relation_action(project_id, req)
+                out.append(entry)
+        counters = (run or {}).get("counters") or {}
+        return {"task": TASK_ID, "subtask": "P4-T03", "project_id": project_id, "data_origin": proj["data_origin"],
+                "run": run, "requirements": out, "engineering_demo_label": ENGINEERING_DEMO_LABEL,
+                "assessment_path": ("EvidenceCore.run_comparison (PLAN -> seed search -> at most one structural action "
+                                    f"under {R.POLICY_V2.name} -> assess against the original requirement -> COMMIT)"),
+                "acquisition_policy": {"name": R.POLICY_V2.name, "sha256": R.POLICY_V2_SHA256},
+                # P4-T03: the run's own counters (not constants); provider dispatch is measured in run.provider_dispatch
+                "paid_model_calls": counters.get("paid_model_calls", 0), "remote_calls": counters.get("remote_calls", 0),
+                "counters_source": "run counters of this request's run" if run else "no run in this request"}
 
     # ---------------------------------------------------------------- one bounded relation-search action
     def relation_action(self, project_id: str, req: dict) -> dict:

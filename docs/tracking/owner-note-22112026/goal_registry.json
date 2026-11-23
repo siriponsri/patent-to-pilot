@@ -1219,8 +1219,8 @@
    "task_id": "P4-T03",
    "phase_id": "P4",
    "title": "Make source, structural scope and search provenance inspectable",
-   "status": "NOT_STARTED",
-   "outcome": "NOT_RUN",
+   "status": "COMPLETE",
+   "outcome": "ENGINEERING_VERIFIED",
    "depends_on": [
     "P4-T01",
     "P2-T03"
@@ -1231,9 +1231,9 @@
     "docs/tracking/owner-note-22112026/receipts/P4-T03_explainability_receipt.md"
    ],
    "acceptance_evidence": "Resolve original page/text, scope qualifiers and actual new-candidate action; reject hypothesis-as-evidence; show source-region absence honestly.",
-   "evidence_uri": "",
-   "check_result": "NOT_CHECKED",
-   "next_task": "P4-T04; P4-T05",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P4-T03_structural_acquisition_receipt.md; src/patent_to_pilot/workbench/acquisition.py; src/patent_to_pilot/workbench/structure.py; tests/test_structural_acquisition.py",
+   "check_result": "15 new tests; full gate only 8 known SACR failures; smoke 15/15; browser Compare renders, no console errors",
+   "next_task": "P4-T04; plan section 8 matched comparison",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
    "budget_spent_usd": null,
    "budget_reserved_usd": null,
@@ -1248,7 +1248,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": ""
+   "notes": "[2026-11-23] policy ptp-structural-acquisition/2.0.0 (sha 12490901...), acquisition inside assessment path with persisted receipts + scope dependencies; V1 side-by-side now opt-in; no effectiveness measured"
   },
   {
    "task_id": "P4-T04",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-23T16:32:20+07:00"
+ "live_updated_at": "2026-11-23T16:55:07+07:00"
 }

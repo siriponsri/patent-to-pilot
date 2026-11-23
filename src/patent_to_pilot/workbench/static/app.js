@@ -366,6 +366,35 @@ function sideBySide(sb) {
       sb.query_terms.length ? el("ul", {}, ...sb.query_terms.map((t) => el("li", { class: "mono", text: `"${t.text}" — ${t.origin}${t.ref_id ? ` (${t.ref_id})` : ""}` }))) : null));
 }
 
+// P4-T03: the structural acquisition step as recorded in the run (persisted receipt), never recomputed here.
+function acquisitionTrace(items, rows) {
+  const label = (cid) => { const r = rows.find((x) => x.candidate_id === cid); return r ? r.candidate_label : cid; };
+  return el("div", { class: "card" },
+    el("h4", { text: "Extra step before the result was recorded" }),
+    ...items.map((a) => {
+      if (a.state !== "recorded") return el("p", { class: "muted", text: `${label(a.candidate_id)}: ${a.summary}` });
+      const r = a.receipt;
+      const states = (r.selection.candidates || []).filter((c) => !c.actionable && c.state !== "resolved_in_pool" && c.state !== "self_reference");
+      return el("div", {},
+        el("p", {}, el("strong", { text: `${label(a.candidate_id)}: ` }), a.summary,
+          a.mode === "baseline" ? el("span", { class: "pill", text: " baseline mode" }) : null),
+        a.new_units.length ? el("ul", { class: "cands" }, ...a.new_units.map((u) => el("li", {},
+          el("span", { class: "pill new", text: u.gain === "new_document" ? "New document" : "Same document" }), " ",
+          el("span", { class: "mono", text: u.unit_id }),
+          el("div", { class: "quote", lang: "und", text: u.quote.length > 220 ? u.quote.slice(0, 220) + " …" : u.quote }),
+          el("button", { class: "cite", onclick: (e) => openSpan(u.source_id, u.version_id, u.start_char, u.end_char, e.currentTarget) }, "Inspect source")))) : null,
+        el("details", {}, el("summary", { text: "How this was recorded" }),
+          el("ul", {},
+            el("li", { text: `Gap signals: ${r.gaps.length ? r.gaps.join(", ") : "none"}` }),
+            r.action ? el("li", { text: `Action: ${r.action} — ${r.reason}` }) : null,
+            r.query ? el("li", { class: "mono", text: `Query: ${r.query}` }) : null,
+            r.scope ? el("li", { class: "mono", text: `Scope: ${JSON.stringify(r.scope)}` }) : null,
+            el("li", { text: `Policy: ${r.policy_version} (sha256 ${r.policy_sha256.slice(0, 16)}…) · budget ${r.budget_after ? r.budget_after.used + "/" + r.budget_after.limit : "0"}` }),
+            el("li", { text: `Recorded in run ${a.run_id} (step ${a.seq}); commit: ${a.commit_status}${a.matches_current_assessment ? " (this result)" : ""}; receipt ${a.integrity}.` }),
+            ...states.map((c) => el("li", { class: "muted", text: `Not used: ${c.reason}` })))));
+    }));
+}
+
 function assessmentTable(rows) {
   return el("table", { class: "matrix" },
     el("thead", {}, el("tr", {}, el("th", { scope: "col", text: "Candidate" }), el("th", { scope: "col", text: "Result" }), el("th", { scope: "col", text: "Evidence" }))),
@@ -384,7 +413,8 @@ function assessmentTable(rows) {
 async function runCompare() {
   const b = $("compare-run"); b.disabled = true; status("Running the requirements against the current sources…");
   try {
-    const r = await api("POST", `/api/projects/${S.projectId}/compare`, {});
+    const baseline = $("compare-baseline") && $("compare-baseline").checked;
+    const r = await api("POST", `/api/projects/${S.projectId}/compare`, baseline ? { acquisition: "baseline" } : {});
     if (r.run && r.run.run_id) S.liveRunId = r.run.run_id;
     $("compare-results").replaceChildren(r.synthetic_label ? el("p", { class: "demo", text: r.synthetic_label }) : "",
       el("p", { class: "muted", text: `Assessment path: ${r.assessment_path}.` + (r.run ? ` Run ${r.run.run_id} (${r.run.status}).` : "") + ` Paid model calls: ${r.paid_model_calls}.` }),
@@ -395,7 +425,8 @@ async function runCompare() {
           q.fts_match ? el("p", { class: "mono muted", text: `Assessment search: ${q.fts_match}` }) : null,
           x.assessments.length ? assessmentTable(x.assessments) : null,
           x.runtime_assessment ? el("p", { text: `Runtime assessment (structural signal, not gold): ${x.runtime_assessment.status}; ${x.runtime_assessment.evidence.length} evidence span(s).` }) : null,
-          sideBySide(x.side_by_side));
+          x.acquisition && x.acquisition.length ? acquisitionTrace(x.acquisition, x.assessments) : null,
+          x.side_by_side ? sideBySide(x.side_by_side) : null);
       }));
     await loadProject();
     status(`Compare finished` + (r.run ? ` (run ${r.run.run_id}).` : "."));

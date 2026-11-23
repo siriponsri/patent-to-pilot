@@ -85,7 +85,7 @@
 
   <section id="view-compare" class="view" hidden>
     <h2>Compare</h2>
-    <p class="muted">Your requirements are checked against every candidate's current sources by the same local engine as the Workbench. Each requirement also shows the baseline search beside one bounded relation search, as an engineering demonstration.</p>
+    <p class="muted">Your requirements are checked against every candidate's current sources by the same local engine as the Workbench. When the first search leaves a visible gap (no match, a reference such as “ข้อ ๔(๒)” to another part, a missing field, or an item you mark as missing), the engine takes at most one extra step inside that candidate's own documents before it records the result. Each result shows that step as it was recorded.</p>
     <h3>Requirements</h3>
     <div id="req-list"></div>
     <form id="req-form" class="card inline-form">
@@ -102,7 +102,8 @@
       <button type="submit">Save requirement</button>
     </form>
     <p id="req-fixed" class="muted" hidden></p>
-    <div class="actions"><button id="compare-run" class="primary">Run compare</button></div>
+    <div class="actions"><button id="compare-run" class="primary">Run compare</button>
+      <label class="muted"><input type="checkbox" id="compare-baseline"> Baseline only (no extra step, for comparison)</label></div>
     <div id="compare-results"></div>
   </section>
 
