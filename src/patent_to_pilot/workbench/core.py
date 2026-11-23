@@ -995,21 +995,26 @@ class EvidenceCore:
             if o["state"] in ("needs_review", "open"):
                 work.append((key[0], reqs[key[1]]))
             elif o["state"] == "recheck_search":
-                searched_at = utc_now()
                 with self.store.read() as con:
                     a = con.execute("SELECT * FROM assessments WHERE project_id=? AND candidate_id=? AND "
                                     "requirement_id=? AND state='current'", (project_id, *key)).fetchone()
-                    new_hits = self._search(con, project_id, key[0], reqs[key[1]]["query"], ctx,
-                                            match=requirement_match(reqs[key[1]]))
                 if a is None:
                     work.append((key[0], reqs[key[1]]))
                     continue
                 with self.store.read() as con:   # P4-T03: a result that rests on a structural action is re-acquired
                     acquired_dep = con.execute("SELECT 1 FROM dependencies WHERE assessment_id=? AND "
                                                "kind='acquisition_scope'", (a["assessment_id"],)).fetchone()
-                if acquired_dep:   # (a changed scope can change what the action finds, even if the seed is equal)
-                    work.append((key[0], reqs[key[1]]))
+                    scope_bound = (not acquired_dep and ctx["acquisition"]["mode"] != "off"
+                                   and self._decision_depends_on_scope(con, a["assessment_id"]))
+                if acquired_dep or scope_bound:   # (a changed scope can change what the action finds, even if the
+                    work.append((key[0], reqs[key[1]]))   # seed is equal; P4-T04: or whether an action is taken)
                     continue
+                # P4-T04: the verification search runs only for a reuse candidate (it used to run before the checks
+                # above too, and was discarded and not counted when the obligation was re-acquired anyway)
+                searched_at = utc_now()
+                with self.store.read() as con:
+                    new_hits = self._search(con, project_id, key[0], reqs[key[1]]["query"], ctx,
+                                            match=requirement_match(reqs[key[1]]))
                 old_ids = [(h["source_id"], h["version_id"], h["passage_id"]) for h in json.loads(a["search_hits_json"])]
                 new_ids = [(h["source_id"], h["version_id"], h["passage_id"]) for h in new_hits]
                 if old_ids == new_ids and ctx.get("last_search") == "hybrid":
@@ -1062,6 +1067,21 @@ class EvidenceCore:
             con.execute("UPDATE change_events SET status='applied', run_id=?, result_json=?, applied_at=? WHERE "
                         "project_id=? AND event_id=?", (run_id, dumps(result), utc_now(), project_id, entry["event_id"]))
         return {"already_applied": False, "event_id": entry["event_id"], "run_id": run_id, "result": result}
+
+    @staticmethod
+    def _decision_depends_on_scope(con, assessment_id: str) -> bool:
+        """P4-T04: whether the structural-acquisition decision behind a result can change with the candidate's scope
+        even when the seed search returns the same passages. Gap detection reads only the seed pool, except that a
+        reference's resolution and the search actions' anchors and targets read the current scope. So a decision
+        with no gap and no reference candidate is scope-independent for an identical pool; any other decision (an
+        unresolved, ambiguous or in-pool reference, or a gap that took no action) must be re-acquired, as must a
+        result with no receipt at all (its decision was never recorded)."""
+        r = con.execute("SELECT receipt_json FROM acquisition_receipts WHERE assessment_id=? ORDER BY created_at DESC, "
+                        "run_id DESC, seq DESC LIMIT 1", (assessment_id,)).fetchone()
+        if r is None:
+            return True
+        rec = json.loads(r[0])
+        return bool(rec.get("gaps") or (rec.get("selection") or {}).get("candidates"))
 
     # ---------------- G02: owner projects, ingestion, providers and index generations
     def _has_completed_run(self, con, project_id: str) -> bool:
