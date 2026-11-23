@@ -195,11 +195,23 @@ def chunk_jobs(jobs):
 
 
 def mem_available_gib():
+    avail = float('inf')
     with open('/proc/meminfo') as f:
         for line in f:
             if line.startswith('MemAvailable:'):
-                return int(line.split()[1]) / 2 ** 20
-    return float('inf')
+                avail = int(line.split()[1]) / 2 ** 20
+                break
+    # amendment A1: a container (RunPod pod) sees the host's /proc/meminfo; honour its cgroup memory limit too
+    for lim_p, use_p in (('/sys/fs/cgroup/memory.max', '/sys/fs/cgroup/memory.current'),
+                         ('/sys/fs/cgroup/memory/memory.limit_in_bytes', '/sys/fs/cgroup/memory/memory.usage_in_bytes')):
+        try:
+            lim = open(lim_p).read().strip()
+            if lim != 'max' and int(lim) < 2 ** 60:
+                avail = min(avail, (int(lim) - int(open(use_p).read())) / 2 ** 30)
+            break
+        except (OSError, ValueError):
+            continue
+    return avail
 
 
 def start_watchdog(min_gib, on_low):

@@ -34,7 +34,12 @@ P1-DEV evaluator records with per-query values).
    read and not uploaded. `pairs-dev.tsv` is uploaded with its P1-DEV rows only (the evaluator filters by block, so every
    number is unchanged). No TEST block, sealed file or TEST label exists on the pod.
 4. **Device.** The pod's single GPU is device 0 (`P2T02_GPU_DEVICE=0`); the GPU lock and memory-fraction code paths run
-   as written. CPU thread and worker counts follow the pod's core count (they change speed, not outputs).
+   as written. CPU thread and worker counts follow the pod's core count (they change speed, not outputs). The content
+   build's memory watchdog drops from 24 GiB to 6 GiB free, because the pod is dedicated (it protected other dr-train
+   users) and has 50 GB RAM.
+   **Pod actually created:** `0adflwvktmsvuu`, NVIDIA A40 48 GB, Secure Cloud EU-SE-1 (no community stock for RTX 4090,
+   RTX 3090 or RTX 5000 Ada with ≥ 60 GB RAM at creation), 50 GB RAM, 9 vCPU, 150 GB container disk, USD 0.59/h.
+   The USD 15 stop therefore falls at about 25 h of pod time.
 5. **G03-dependent descriptive checks are deferred.** The "deeper original-query control" and the fusion check (protocol
    §5, descriptive only) read G03 route runs that are on dr-train. On the pod they are skipped (`P2T02_NO_G03=1`) and are
    computed later on dr-train from the pulled runs. The primary endpoints, contrasts and the decision rule are unchanged.
