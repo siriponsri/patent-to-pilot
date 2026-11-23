@@ -60,3 +60,16 @@ Still open:
 | D18 | **Thai downloads approved:** Thai Gazette evidence retrieval (CC BY 4.0), NitiBench + nitibench-statute (MIT), WangchanX-Legal-ThaiCCL-RAG train split (MIT) | Copies are kept **locally** (`../_private_artifacts/thai-data/`) **and on dr-train** for GPU work. Never committed, never product-bundled. Pin revisions per the P3-T01 contract. Test splits stay held out; NitiBench+ (gated) is not covered |
 | D19 | **P2-T02 follow-up GPU runs approved:** if Arctic shows a coverage effect, build the same complete-content index for PatEmbed and Qwen3 on the V100 | A declared amendment is written before running. One job at a time under the GPU lock, at no cost |
 
+
+## Decision of 23 Nov 2026, afternoon (owner in chat: "Approve USD 20")
+
+| # | Decision | Effect |
+|---|---|---|
+| D20 | **RunPod envelope R1: USD 20 cap for P2-T02** (coverage control, frozen protocol bd30d3f7, memory-safe build 92465abd), started once the inputs that exist only on dr-train can be copied | Prepaid balance at approval USD 37.21. Scope: one P2-T02 run (content build, BM25-full, Arctic C1/C2 encode and retrieval) on one community GPU pod (RTX 6000 Ada or RTX 4090) plus a network volume; estimate USD 4–10. Stop and report at USD 15. Delete the pod and volume after the results are pulled. Never copy TEST splits, sealed qrels or per-query TEST outputs to RunPod. Spend is recorded in the P2-T02 receipt |
+
+**Dry-run correction (same day).** The earlier dry run said the PatentsView sources had to be downloaded again. That was
+wrong: the owner pointed out `data/raw/uspto/` (git-ignored, 69 files, 17 GB, downloaded 16–18 Nov). It holds every
+claims file the corpus needs (grant units 1976–2012 inside `g_claims_1976–2013`; pre-grant units 2001–2012 inside
+`pg_claims_2001–2016`) and the four text sources of `build_bridgeret_texts.py`. No new download is needed. Only the C0
+baseline runs (`runs/z-arctic` passages and P1-DEV run, `runs/bm25` P1-DEV run), `ser-arctic-v1`,
+`texts-v1/corpus.jsonl` and `splits/private/tasks.tsv` still exist only on dr-train.

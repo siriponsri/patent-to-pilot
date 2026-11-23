@@ -58,7 +58,9 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 - OpenRouter credits: total 20.
 - `OPENROUTER_API_KEY` and `TYPHOON_API_KEY` are set as user environment variables.
 - Typhoon is settled at USD 0 (D12).
-- RunPod: no envelope.
+- **RunPod envelope R1 (D20): USD 20 for P2-T02**, stop and report at USD 15; prepaid balance USD 37.21; no pod or
+  volume exists yet. PatentsView sources are local in `data/raw/uspto/` (17 GB; no re-download needed). The C0 runs,
+  `ser-arctic-v1`, `texts-v1/corpus.jsonl` and `tasks.tsv` exist only on dr-train, so the RunPod run starts after the reset.
 
 ### Running jobs and incident (23 Nov, late morning)
 
@@ -86,7 +88,6 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
   - whether to report LLM-judge-graded NitiBench scores (rule 12);
   - the Paper 53 DOI and the 37.1% denominator;
   - the G01 launcher check;
-  - RunPod caps.
 
 Unchanged:
 - large derived files on dr-train are kept (compressed);
