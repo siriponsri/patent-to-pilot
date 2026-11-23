@@ -103,3 +103,14 @@ because Python on Windows writes CRLF line ends. After converting CRLF to LF, `c
   and library pins as §6; Arctic at `95c27414…` (ONNX files skipped); a GPU load test passed.
 - **Stop rule:** USD 15 ≈ 20.8 h of pod time, so the watcher deadline is 2026-11-24 08:30 UTC.
 - Upload: 4 parallel tar streams over SSH, about 8 MB/s measured.
+
+**Run record (second pod).**
+- **Rebuild gate PASSED** (14:15 UTC):
+  - A: corpus text byte-identical;
+  - B: unit order identical;
+  - C: BM25-C0 per query identical on 100% of queries, every mean difference 0.0;
+  - D: Arctic-C0 per query identical on 99.906% of queries, largest mean difference 0.00008.
+- **Attempt 1 of the content build was a false memory abort** (14:21 UTC, at 180/200 tokenised chunks). The cgroup
+  watchdog counted reclaimable page cache as used: anon memory was 38.5 GiB, file cache 37.7 GiB. The watchdog now
+  measures the working set (usage minus `inactive_file`, as kubelet does). Outputs are unaffected.
+- The run resumed at 14:24 UTC; the finished stages were skipped. The attempt-1 logs are kept on the pod.

@@ -202,12 +202,24 @@ def mem_available_gib():
                 avail = int(line.split()[1]) / 2 ** 20
                 break
     # amendment A1: a container (RunPod pod) sees the host's /proc/meminfo; honour its cgroup memory limit too
-    for lim_p, use_p in (('/sys/fs/cgroup/memory.max', '/sys/fs/cgroup/memory.current'),
-                         ('/sys/fs/cgroup/memory/memory.limit_in_bytes', '/sys/fs/cgroup/memory/memory.usage_in_bytes')):
+    # Working set = usage minus reclaimable inactive file cache (as kubelet counts it); page cache alone must not abort.
+    for lim_p, use_p, stat_p, key in (
+            ('/sys/fs/cgroup/memory.max', '/sys/fs/cgroup/memory.current', '/sys/fs/cgroup/memory.stat', 'inactive_file'),
+            ('/sys/fs/cgroup/memory/memory.limit_in_bytes', '/sys/fs/cgroup/memory/memory.usage_in_bytes',
+             '/sys/fs/cgroup/memory/memory.stat', 'total_inactive_file')):
         try:
             lim = open(lim_p).read().strip()
             if lim != 'max' and int(lim) < 2 ** 60:
-                avail = min(avail, (int(lim) - int(open(use_p).read())) / 2 ** 30)
+                used = int(open(use_p).read())
+                try:
+                    for line in open(stat_p):
+                        k, v = line.split()
+                        if k == key:
+                            used -= int(v)
+                            break
+                except (OSError, ValueError):
+                    pass
+                avail = min(avail, (int(lim) - used) / 2 ** 30)
             break
         except (OSError, ValueError):
             continue
