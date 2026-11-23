@@ -69,6 +69,8 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
   - Pod `jd41r4cvv171q6` (`ptp-p2t02-a1b`): RTX PRO 4500 Blackwell, US-KS-2, 94 GB RAM, 13.6 CPUs, no volume, USD 0.72/h,
     started 12:42 UTC. SSH: `ssh -i ~/.ssh/runpod_paper86_20261017 -p 14876 root@216.81.151.69`.
     Log: `/data/ptp-paper2/runpod.log`.
+  - **Launched 13:25 UTC (20:25 Bangkok)** after all 58 PatentsView files matched by sha256 (upload about 15.1 GB; one
+    reset after 18 min, resumed). Local bash watcher (no agent) checks every 10 min.
   - C0 is rebuilt on the pod and must pass the rebuild gate before C1/C2 count. Gate A already holds locally
     (corpus text byte-identical after CRLF→LF).
   - Stop at USD 15 (watcher deadline 2026-11-24 08:30 UTC). On finish: pull results to
