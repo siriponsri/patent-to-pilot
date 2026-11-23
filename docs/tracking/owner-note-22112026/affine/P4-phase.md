@@ -19,11 +19,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P0-T06
 - **Acceptance evidence:** Reuse existing Workbench/store; accept explicit arbitrary requirements; actual local search and baseline comparison work without paid inference.
-- **Evidence:** docs/tracking/owner-note-22112026/receipts/P4-T01_workflow_receipt.md; src/patent_to_pilot/workbench/workflow.py; tests/test_p4_t01_workflow.py
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P4-T01_workflow_receipt.md; docs/tracking/owner-note-22112026/receipts/P4-T01a_thai_search_receipt.md; docs/tracking/owner-note-22112026/receipts/P4-T01b_requirement_lifecycle_receipt.md
 - **Check:** 9 new tests; workbench suites 119 pass; smoke 15/15; browser check, no console errors
 - **Next:** P4-T02; P4-T03
 - **Blocker:** —
-- **Notes:** [2026-11-22] agent started | [2026-11-23] Search (terms/phrase/literal), arbitrary requirements, Compare baseline vs bounded relation action (labelled ENGINEERING DEMO), Inspect spans + original file + honest page mapping; Thai FTS5 not segmented
+- **Notes:** [2026-11-22] agent started | [2026-11-23] Search (terms/phrase/literal), arbitrary requirements, Compare baseline vs bounded relation action (labelled ENGINEERING DEMO), Inspect spans + original file + honest page mapping; Thai FTS5 not segmented | [2026-11-23] follow-ups merged: P4-T01a Thai search (PyThaiNLP 5.4.0 newmm-safe, passage_fts_th_v1, auto mode) + P4-T01b Remove/Undo; combined gate = only 8 known SACR failures; smoke 15/15
 
 ## P4-T02 — Make local, API and self-hosted modes clear and usable
 

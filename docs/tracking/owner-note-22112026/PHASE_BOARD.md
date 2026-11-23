@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-23T07:18:54+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-23T07:24:40+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -80,7 +80,7 @@ Phase status: **IN_PROGRESS**
 
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
-| P4-T01 | Extend the existing Search, Compare and Inspect workflow | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P4-T01_workflow_receipt.md; src/patent_to_pilot/workbench/workflow.py; tests/test_p4_t01_workflow.py | P4-T02; P4-T03 | — | NOT_SYNCED |
+| P4-T01 | Extend the existing Search, Compare and Inspect workflow | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P4-T01_workflow_receipt.md; docs/tracking/owner-note-22112026/receipts/P4-T01a_thai_search_receipt.md; docs/tracking/owner-note-22112026/receipts/P4-T01b_requirement_lifecycle_receipt.md | P4-T02; P4-T03 | — | NOT_SYNCED |
 | P4-T02 | Make local, API and self-hosted modes clear and usable | ⏳ NOT_STARTED | NOT_RUN | — | P4-T05 | — | NOT_SYNCED |
 | P4-T03 | Make source, structural scope and search provenance inspectable | ⏳ NOT_STARTED | NOT_RUN | — | P4-T04; P4-T05 | — | NOT_SYNCED |
 | P4-T04 | Verify selective revision against full recomputation | ⏳ NOT_STARTED | NOT_RUN | — | P4-T05 | — | NOT_SYNCED |

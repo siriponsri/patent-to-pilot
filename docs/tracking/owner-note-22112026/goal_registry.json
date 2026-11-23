@@ -1161,7 +1161,7 @@
     "docs/tracking/owner-note-22112026/receipts/P4-T01_workflow_receipt.md"
    ],
    "acceptance_evidence": "Reuse existing Workbench/store; accept explicit arbitrary requirements; actual local search and baseline comparison work without paid inference.",
-   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P4-T01_workflow_receipt.md; src/patent_to_pilot/workbench/workflow.py; tests/test_p4_t01_workflow.py",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P4-T01_workflow_receipt.md; docs/tracking/owner-note-22112026/receipts/P4-T01a_thai_search_receipt.md; docs/tracking/owner-note-22112026/receipts/P4-T01b_requirement_lifecycle_receipt.md",
    "check_result": "9 new tests; workbench suites 119 pass; smoke 15/15; browser check, no console errors",
    "next_task": "P4-T02; P4-T03",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
@@ -1178,7 +1178,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-22] agent started | [2026-11-23] Search (terms/phrase/literal), arbitrary requirements, Compare baseline vs bounded relation action (labelled ENGINEERING DEMO), Inspect spans + original file + honest page mapping; Thai FTS5 not segmented"
+   "notes": "[2026-11-22] agent started | [2026-11-23] Search (terms/phrase/literal), arbitrary requirements, Compare baseline vs bounded relation action (labelled ENGINEERING DEMO), Inspect spans + original file + honest page mapping; Thai FTS5 not segmented | [2026-11-23] follow-ups merged: P4-T01a Thai search (PyThaiNLP 5.4.0 newmm-safe, passage_fts_th_v1, auto mode) + P4-T01b Remove/Undo; combined gate = only 8 known SACR failures; smoke 15/15"
   },
   {
    "task_id": "P4-T02",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-23T07:18:54+07:00"
+ "live_updated_at": "2026-11-23T07:24:40+07:00"
 }
