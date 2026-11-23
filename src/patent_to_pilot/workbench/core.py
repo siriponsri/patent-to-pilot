@@ -20,6 +20,7 @@ import uuid
 
 from patent_to_pilot.workbench import ingest as I
 from patent_to_pilot.workbench import parser as P
+from patent_to_pilot.workbench import product_lexical as PL
 from patent_to_pilot.workbench.generations import GenerationError, GenerationManager
 from patent_to_pilot.workbench.profiles import ProviderRegistry
 from patent_to_pilot.workbench.providers import ProviderError
@@ -90,7 +91,8 @@ def _upload_path(filename: str, pdf: dict | None) -> str:
 def core_code_sha256() -> str:
     here = Path(__file__).resolve().parent
     h = hashlib.sha256()
-    for name in ("core.py", "parser.py", "store.py", "providers.py", "profiles.py", "generations.py", "ingest.py"):
+    for name in ("core.py", "parser.py", "store.py", "providers.py", "profiles.py", "generations.py", "ingest.py",
+                 "thai_analyzer.py", "product_lexical.py"):
         h.update((here / name).read_bytes())
     return h.hexdigest()
 
@@ -232,6 +234,7 @@ class EvidenceCore:
         self.sample_dir = Path(sample_dir)
         self.registry = ProviderRegistry(self.store)
         self.generations = GenerationManager(self.store, self.registry, P.PARSER_PROFILE)
+        self.product_lexical = PL.ProductLexical(self.store)   # P4-T01a: Thai derivative index (additive tables)
 
     # ---------------- capabilities / identity
     def capabilities(self) -> dict:
@@ -250,7 +253,8 @@ class EvidenceCore:
             "program_id": PROGRAM_ID, "goal_id": "G02", "core_identity": CORE_IDENTITY,
             "core_code_sha256": core_code_sha256(),
             "lexical": {"state": "active", "implementation": "sqlite_fts5_unicode61",
-                        "description": "Searches the local indexed text. No model required. Always available."},
+                        "description": "Searches the local indexed text. No model required. Always available.",
+                        "product_thai": PL.capability()},
             "chat": role_state("chat"), "embedding": role_state("embedding"), "rerank": role_state("rerank"),
             "local_model": {**role_state("embedding", local=True),
                             "description": "A local model is used only after its connection check passes."},
@@ -315,6 +319,8 @@ class EvidenceCore:
                         (project_id, source_id, version_id, p["passage_id"], candidate_id, p["quote"]))
         con.execute("INSERT OR REPLACE INTO current_sources VALUES (?,?,?,?)",
                     (project_id, source_id, version_id, utc_now()))
+        # P4-T01a: the product-profile Thai derivative follows in the same transaction (legacy index above unchanged)
+        self.product_lexical.on_source_current(con, project_id, source_id, version_id, candidate_id, passages)
 
     def bootstrap_sample(self) -> dict:
         """Create the isolated sample project, or reopen it if it already exists (never resets)."""
@@ -381,6 +387,20 @@ class EvidenceCore:
                          "passage_id": r["passage_id"], "score": round(r["score"], 6)})
         return hits
 
+    def _req_lexical(self, con, project_id: str, candidate_id: str, query: str, k: int, match: str | None,
+                     ctx: dict | None) -> list[dict]:
+        """P4-T01a: requirement matching. Owner projects use the product Thai analyzer and its derivative index when
+        PyThaiNLP is available; the G01 sample, synthetic projects and any explicit custom expression keep the legacy
+        index (unchanged)."""
+        if ctx is not None:
+            ctx.pop("last_lexical", None)
+        row = con.execute("SELECT data_origin FROM projects WHERE project_id=?", (project_id,)).fetchone()
+        if row is not None and row[0] == "owner_files":
+            hits = self.product_lexical.requirement_hits(con, project_id, candidate_id, query, k, match, ctx)
+            if hits is not None:
+                return hits
+        return self._lexical(con, project_id, candidate_id, query, k, match=match)
+
     def _search(self, con, project_id: str, candidate_id: str, query: str, ctx: dict | None = None,
                 match: str | None = None) -> list[dict]:
         """Lexical (G01 behaviour, unchanged) unless the run's retrieval context is hybrid: then FTS5 and dense
@@ -390,8 +410,8 @@ class EvidenceCore:
         if not ctx or ctx["effective"] != "hybrid":
             if ctx is not None:
                 ctx["last_search"] = "lexical"
-            return self._lexical(con, project_id, candidate_id, query, SEARCH_TOP_K, match=match)
-        lex = self._lexical(con, project_id, candidate_id, query, HYBRID_CHANNEL_K, match=match)
+            return self._req_lexical(con, project_id, candidate_id, query, SEARCH_TOP_K, match, ctx)
+        lex = self._req_lexical(con, project_id, candidate_id, query, HYBRID_CHANNEL_K, match, ctx)
         try:
             qv = ctx["query_vectors"].get(query)
             if qv is None:
@@ -402,7 +422,7 @@ class EvidenceCore:
             ctx["effective"] = "lexical_fallback"
             ctx["reason"] = f"dense channel failed during the run ({type(exc).__name__}: {exc}); lexical only from here"
             ctx["last_search"] = "lexical_fallback"
-            return self._lexical(con, project_id, candidate_id, query, SEARCH_TOP_K, match=match)
+            return self._req_lexical(con, project_id, candidate_id, query, SEARCH_TOP_K, match, ctx)
         current = self._current_versions(con, project_id)
         fused: dict[tuple, dict] = {}
         for rank, h in enumerate(lex, start=1):
@@ -543,6 +563,8 @@ class EvidenceCore:
                   "scope_versions": [f"{s}@{v}" for s, v in scope], "hits": hits}
         if free_text:
             detail["requirement_kind"] = "text"
+        if ctx and ctx.get("last_lexical"):   # P4-T01a: the representation and expressions actually searched
+            detail["lexical"] = ctx["last_lexical"]
         if ctx and ctx["mode"] == "hybrid":
             detail["retrieval"] = {"used": ctx["last_search"], "generation_id": ctx["generation_id"]}
         self._action(run_id, seq, "search_current_sources", cand, rid, detail, started=t0)

@@ -201,14 +201,16 @@ async function openSpan(sid, vid, start, end, trigger) {
 
 // ---------------- P4-T01: Search
 function marked(text, offset, matches) {
+  // server offsets are Unicode code points (not UTF-16 units): slice an array of code points (P4-T01a)
+  const cp = Array.from(text), cut = (a, b) => cp.slice(a, b).join("");
   const out = []; let pos = 0;
   for (const m of matches) {
     const a = m.start_char - offset, b = m.end_char - offset;
-    if (b <= pos || a >= text.length) continue;
-    const s = Math.max(a, pos), e = Math.min(b, text.length);
-    out.push(text.slice(pos, s), el("mark", { text: text.slice(s, e) })); pos = e;
+    if (b <= pos || a >= cp.length) continue;
+    const s = Math.max(a, pos), e = Math.min(b, cp.length);
+    out.push(cut(pos, s), el("mark", { text: cut(s, e) })); pos = e;
   }
-  out.push(text.slice(pos));
+  out.push(cut(pos, cp.length));
   return out;
 }
 
@@ -219,6 +221,8 @@ function renderSearch() {
   $("search-q").focus();
 }
 
+const ROUTE_LABEL = { identifier: "section number", all_words: "all words", any_word: "some words", phrase: "phrase", substring: "text inside a longer word", legacy_any_word: "some words (no Thai segmentation)" };
+
 async function doSearch(ev) {
   ev.preventDefault();
   const q = $("search-q").value;
@@ -227,11 +231,12 @@ async function doSearch(ev) {
   try {
     const r = await api("POST", `/api/projects/${S.projectId}/search`, { query: q, mode: $("search-mode").value, candidate_id: $("search-cand").value || null, limit: 20 });
     $("search-meta").replaceChildren(
-      el("p", { text: `${r.result_count} result(s) from ${r.index.passages} current passages (${r.index.source_versions.join(", ") || "no sources"}). Route: ${r.route}.` + (r.fts_match ? ` Issued: ${r.fts_match}` : "") }),
+      el("p", { text: `${r.result_count} result(s) from ${r.index.passages} current passages (${r.index.source_versions.join(", ") || "no sources"}). Route: ${r.route}.` + (r.fts_match ? ` Issued: ${r.fts_match}` : "") + (r.elapsed_ms != null ? ` (${r.elapsed_ms} ms)` : "") }),
+      ...(r.lexical_trace && r.lexical_trace.fallback.triggered ? [el("p", { class: "muted", text: `Bounded text check: ${r.lexical_trace.fallback.reasons.join(", ")}; ${r.lexical_trace.fallback.scanned} passages scanned, ${r.lexical_trace.fallback.returned} found.` })] : []),
       ...r.notes.map((n) => el("p", { class: "status", text: n })));
     $("search-results").replaceChildren(...r.results.map((h) => el("div", { class: "card result" },
       el("h3", { text: `${h.rank}. ${h.title}` }),
-      el("p", { class: "meta", text: `${h.source_id} · ${h.version_id} · passage ${h.passage_id} · ${h.candidate_id}` + (h.score_bm25 != null ? ` · BM25 ${h.score_bm25}` : "") + ` · characters ${h.start_char}–${h.end_char}` }),
+      el("p", { class: "meta", text: `${h.source_id} · ${h.version_id} · passage ${h.passage_id} · ${h.candidate_id}` + (h.route ? ` · ${ROUTE_LABEL[h.route] || h.route}` : "") + (h.score_bm25 != null ? ` · BM25 ${h.score_bm25}` : "") + ` · characters ${h.start_char}–${h.end_char}` }),
       el("p", { class: "quote", lang: "und" }, h.snippet_truncated && h.snippet_start_char > h.start_char ? "… " : "", ...marked(h.snippet, h.snippet_start_char, h.matches), h.snippet_truncated && h.snippet_end_char < h.end_char ? " …" : ""),
       el("button", { onclick: (e) => openSpan(h.source_id, h.version_id, h.start_char, h.end_char, e.currentTarget) }, "Inspect source"))));
     status(`${r.result_count} result(s) for "${q}".`);
