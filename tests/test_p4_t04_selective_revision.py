@@ -11,6 +11,7 @@ from pathlib import Path
 import pytest
 
 from patent_to_pilot.workbench import core as C
+from patent_to_pilot.workbench import relation_search as R
 
 _PATH = Path(__file__).resolve().parents[1] / "scripts" / "verify_selective_revision.py"
 _SPEC = importlib.util.spec_from_file_location("verify_selective_revision", _PATH)
@@ -44,8 +45,13 @@ def test_source_text_change_matches_a_full_rerun_and_reassesses_less(tmp_path):
     sel, full = rep["selective_work"], rep["full_in_place_work"]
     assert sel["obligations_reassessed"] < full["obligations_reassessed"] == 6
     assert sel["passages_indexed"] == full["passages_indexed"] < rep["full_scratch_work"]["passages_indexed"]
-    # every executed seed search is in the run counters (no hidden verification search)
-    assert sel["seed_searches"] == sel["run_counter_acquisition_actions"]
+    # every executed seed search is in the run counters (no hidden verification search; policy 2.1.0 sibling seed
+    # searches have their own counter)
+    for path in ("selective_work", "full_in_place_work", "full_scratch_work"):
+        w = rep[path]
+        assert w["seed_searches"] == w["run_counter_acquisition_actions"] + w["run_counter_sibling_seed_searches"], path
+    # D25: C2/S1 (no hit) no longer records a history-dependent anchor list, so a full rerun in place equals scratch
+    assert rep["full_in_place_vs_scratch"] == "MATCH" and rep["acquisition_policy"] == R.POLICY_V2_1.name
     zero_model_work(rep)
 
 
@@ -83,12 +89,89 @@ def test_corpus_member_removal_is_reported_as_unsupported(tmp_path):
     assert rep["verdict"] == "NOT_SUPPORTED" and "no corpus-removal operation" in rep["reason"]
 
 
-@pytest.mark.xfail(strict=True, reason="known defect (P4-T04 receipt D2): a no-hit requirement anchors its action on a "
-                                       "sibling's citation from the store's history, so the result depends on the order "
-                                       "in which results were committed, not only on the corpus")
+# --------------------------------------------------------------------------- D2 fixed by policy 2.1.0 (owner decision D25)
 def test_sibling_anchored_action_is_independent_of_history(tmp_path):
+    """Formerly the strict xfail of defect D2: selective, full-in-place and from-scratch runs now agree on d1."""
     rep = run(tmp_path, "d1-sibling-anchor-order")
-    assert rep["verdict"] == "MATCH"
+    assert rep["acquisition_policy"] == "ptp-structural-acquisition/2.1.0"
+    assert rep["verdict"] == "MATCH" and rep["full_in_place_vs_scratch"] == "MATCH"
+    assert rep["mismatch_selective_vs_in_place"] == {} and rep["missed"] == []
+    a1 = rep["cells_after"]["C1/A1"]
+    assert a1["action"] == "search_within_source" and a1["citation"].startswith("profile#p0004")
+    zero_model_work(rep)
+
+
+def test_policy_2_0_0_still_reproduces_defect_d2(tmp_path):
+    """The old rule is kept selectable for reproduction; the harness still shows the D2 history dependence under it."""
+    rep = run(tmp_path, "d1-sibling-anchor-order", policy=R.POLICY_V2.name)
+    assert rep["acquisition_policy"] == R.POLICY_V2.name
+    assert rep["verdict"] == "MISMATCH_HISTORY" and rep["full_in_place_vs_scratch"] == "MISMATCH_HISTORY"
+    d = rep["mismatch_selective_vs_scratch"]["C1/A1"]
+    assert d["citation"]["left"]["source_id"] == "profile" and d["citation"]["right"]["source_id"] == "pricing"
+
+
+ORDER_PERMUTED = [{**H.ORDER_REQUIREMENTS[0], "requirement_id": "Z1"}, H.ORDER_REQUIREMENTS[1]][::-1]
+
+
+def _order_store(tmp_path, name: str, reqs: list, policy: str | None):
+    with H.structural_policy(policy):
+        core, _m = H._new_core(tmp_path / name)
+        pid = core.create_project("P4-T04 order check", H.CANDIDATES, reqs)["project_id"]
+        for sid, cand, fn, text in H.ORDER_BASE:
+            H._ingest(core, pid, sid, cand, fn, text)
+        first = core.run_comparison(pid)
+    return core, pid, first
+
+
+def _cell(sig: dict, key: str) -> dict:
+    return {f: v for f, v in sig[key].items() if f != H.PROVENANCE}
+
+
+@pytest.mark.parametrize("policy, independent", [(None, True), (R.POLICY_V2.name, False)])
+def test_permuting_requirement_ids_does_not_change_the_evidence(tmp_path, policy, independent):
+    """The no-hit requirement sorts BEFORE its sibling (A1 < E1) in one project and AFTER it (Z1 > E1, listed first)
+    in the other: same corpus, same requirement texts. Under 2.1.0 the evidence signatures are identical."""
+    core_a, pid_a, run_a = _order_store(tmp_path, "a1-first", H.ORDER_REQUIREMENTS, policy)
+    core_z, pid_z, run_z = _order_store(tmp_path, "z1-last", ORDER_PERMUTED, policy)
+    sa, sz = H.signatures(core_a, pid_a), H.signatures(core_z, pid_z)
+    assert _cell(sa, "C1/E1") == _cell(sz, "C1/E1")
+    assert (_cell(sa, "C1/A1") == _cell(sz, "C1/Z1")) is independent
+    if independent:
+        anchors = sa["C1/A1"]["acquisition"]["anchors"]
+        assert [a["kind"] for a in anchors] == ["sibling_seed_unit"] and anchors[0]["source_id"] == "profile"
+        # E1's seed is searched for the anchor when A1 comes first, and reused from the run when it comes later
+        assert run_a["counters"]["sibling_seed_searches"] == 1
+        assert run_z["counters"].get("sibling_seed_searches", 0) == 0
+
+
+@pytest.mark.parametrize("policy, independent", [(None, True), (R.POLICY_V2.name, False)])
+def test_a_second_full_run_without_any_change_reproduces_the_first(tmp_path, policy, independent):
+    core, pid, _first = _order_store(tmp_path, "rerun", H.ORDER_REQUIREMENTS, policy)
+    before = H.signatures(core, pid)
+    with H.structural_policy(policy):
+        core.run_comparison(pid)
+    after = H.signatures(core, pid)
+    assert (H.diff(before, after) == {}) is independent
+
+
+def test_sibling_seed_anchor_never_reads_stored_results(tmp_path, monkeypatch):
+    """2.1.0 S1a reads only this run's seed hits: with every stored citation hidden from the anchor step, the receipt is
+    unchanged."""
+    core, pid, _first = _order_store(tmp_path, "hidden", H.ORDER_REQUIREMENTS, None)
+    before = H.signatures(core, pid)
+    real = core.acquisition._sibling_seed_anchor
+    seen = []
+
+    def spy(con, project_id, eligible, seeds):
+        seen.append([(rid, sorted({h["source_id"] for h in hits})) for rid, hits in seeds])
+        return real(con, project_id, eligible, seeds)
+    monkeypatch.setattr(core.acquisition, "_sibling_seed_anchor", spy)
+    with core.store.tx() as con:   # the 2.0.0 anchor input: drop every stored citation (the rerun writes new ones)
+        con.execute("DELETE FROM citations")
+    core.run_comparison(pid)
+    assert seen == [[("E1", ["profile"])]]
+    after = H.signatures(core, pid)
+    assert _cell(before, "C1/A1")["acquisition"] == _cell(after, "C1/A1")["acquisition"]
 
 
 # --------------------------------------------------------------------------- the engine rule itself

@@ -35,6 +35,13 @@ Its pin `e4ea084c…5629c` is unchanged, and its functions now refuse policies o
 It also adds a pure selector (`select_structural_action`) and a pure operator (`structural_action_step`). These reuse
 the existing `ActionBudget`, `EligibilityMask` and `RerankRequest`. Policy v2 declares the following:
 
+> **Update, 24 Nov 2026 (owner decision D25).** The default is now **`ptp-structural-acquisition/2.1.0`** (pinned
+> `b632a2ca67e5037850312789e6ca1c6d6e5abb858b4ab00390269640d7686df4`). It changes one rule only. When an obligation's
+> own seed pool is empty, the `search_within_source` anchor comes from the current seed hits of the candidate's other
+> active requirements in the same run, not from their stored citations. This fixes P4-T04 defect D2: the result no
+> longer depends on run order or store history. 2.0.0 below is unchanged, pinned and selectable for reproduction. See
+> the [P4-T04 receipt](P4-T04_revision_comparison.md) (D2).
+
 | Part | Rule (summary; full text is in the policy and its fingerprint) |
 |---|---|
 | Gap signals (G1) | `no_hit`, `unresolved_reference` (an explicit reference or a parser-exposed binding whose target is not in the pool), `absent_bounded_field`, `user_declared_missing`. A free-text lexical match stays **Evidence found (not judged)**; it never opens or closes a gap. |

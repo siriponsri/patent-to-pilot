@@ -112,6 +112,25 @@ def test_policy_v1_unchanged_and_v2_is_new_pinned_and_separate():
     assert e.value.code == "policy_family"
 
 
+def test_policy_v2_1_is_pinned_and_changes_only_the_no_hit_anchor_rule():
+    """D25: 2.1.0 is a new pinned version; 2.0.0 stays byte-identical and selectable; only S1 (anchor) changes."""
+    v2, v21 = R.POLICY_V2, R.POLICY_V2_1
+    assert v21.name == "ptp-structural-acquisition/2.1.0" and v21.max_expansion_searches == 1
+    assert v21.fingerprint() == R.POLICY_V2_1_SHA256 == R.PINNED_POLICY_SHA256[v21.name] == \
+        "b632a2ca67e5037850312789e6ca1c6d6e5abb858b4ab00390269640d7686df4"
+    assert R.POLICY_V2_SHA256 == "124909017ac6a77daa253585399a202540f2dc01756fc41d28ae6bd4815fdd89"
+    assert R.CURRENT_STRUCTURAL_POLICY is v21 and R.STRUCTURAL_POLICY_NAMES == {v2.name, v21.name}
+    assert v21.query_rule == v2.query_rule and v21.rerank_rule == v2.rerank_rule
+    assert v21.selection_rule[0] == v2.selection_rule[0] and v21.selection_rule[3:] == v2.selection_rule[2:]
+    assert "cited most often" in v2.selection_rule[1] and "cited" not in v21.selection_rule[1]
+    assert v21.selection_rule[2].startswith("S1a ") and "never read" in v21.selection_rule[2]
+    assert R.select_structural_action(v21, [])["selected"] is None      # a known structural policy
+    with pytest.raises(C.ValidationFailed) as e:
+        R.select_relation(v21, R.QueryRequirements("q", "need", (R.Requirement("r", 0, 4, "need"),)), [], [],
+                          R.EvidenceRegistry())
+    assert e.value.code == "policy_family"
+
+
 def _cand(key, action, rank, start=None, actionable=True, uid="d2@v1#p1"):
     return R.ActionCandidate(key, "r", action, "unresolved_reference" if action in ("resolve_reference",
                                                                                      "recover_context") else "no_hit",
@@ -230,7 +249,7 @@ def test_acquired_passage_changes_the_committed_assessment_quote_is_exact_and_tr
     assert a["outcome"] == "meets" and a["supersedes_id"] == b["assessment_id"]
     (rec,) = receipts(run)
     assert rec["action"] == "resolve_reference" and rec["outcome"] == "acquired"
-    assert rec["policy_version"] == R.POLICY_V2.name and rec["policy_sha256"] == R.POLICY_V2_SHA256
+    assert rec["policy_version"] == R.POLICY_V2_1.name and rec["policy_sha256"] == R.POLICY_V2_1_SHA256   # D25
     assert rec["query"] == "structural lookup: 'ข้อ ๔(๒)' -> notice@v1#ข้อ:4(2)"
     assert rec["anchors"][0]["text"] == "ข้อ ๔(๒)"
     text = core.source_version(pid, "notice", "v1")["text"]
@@ -294,7 +313,9 @@ def test_missing_requirement_is_searched_within_the_same_instrument_without_any_
     run = core.run_comparison(pid)
     (rec,) = receipts(run, rid="F1")
     assert rec["gaps"] == ["no_hit"] and rec["action"] == "search_within_source"
-    assert rec["anchors"][0]["kind"] == "sibling_citation" and rec["anchors"][0]["requirement_id"] == "E1"
+    # policy 2.1.0 (D25): the anchor is E1's current seed unit, not E1's stored citation
+    assert rec["anchors"][0]["kind"] == "sibling_seed_unit" and rec["anchors"][0]["requirement_id"] == "E1"
+    assert rec["policy_version"] == "ptp-structural-acquisition/2.1.0"
     assert rec["scope"]["source_id"] == "fees" and rec["index_generation"].startswith("passage_fts_th_v1:")
     f1 = cell(core, pid, "C1", "F1")
     assert f1["outcome"] == "evidence_found" and "does not judge" in f1["explanation"]       # never a verdict
@@ -303,6 +324,20 @@ def test_missing_requirement_is_searched_within_the_same_instrument_without_any_
     assert quote_is_exact(core, pid, f1["citation"])
     (e1,) = receipts(run, rid="E1")
     assert e1["outcome"] == "no_gap" and cell(core, pid, "C1", "E1")["outcome"] == "evidence_found"
+
+
+def test_policy_2_0_0_stays_selectable_and_keeps_its_stored_citation_anchor(tmp_path, thai):
+    """D25 keeps 2.0.0 for reproduction only: on explicit request it still anchors on the stored sibling citation."""
+    core = C.EvidenceCore(tmp_path / "store")
+    pid = project(core, [ELIG_REQ, FEE_REQ])
+    ingest(core, pid, "fees.md", FEES, sid="fees")
+    core.run_comparison(pid, acquisition="baseline")             # E1's citation now exists in the store
+    run = core.run_comparison(pid, acquisition={"policy": R.POLICY_V2.name})
+    (rec,) = receipts(run, rid="F1")
+    assert rec["policy_version"] == R.POLICY_V2.name and rec["policy_sha256"] == R.POLICY_V2_SHA256
+    assert rec["anchors"][0]["kind"] == "sibling_citation" and rec["anchors"][0]["requirement_id"] == "E1"
+    assert run["counters"]["acquisition_policy"] == R.POLICY_V2.name
+    assert "sibling_seed_searches" not in run["counters"]       # 2.0.0 never runs the S1a sibling seeds
 
 
 def test_scope_isolation_another_candidates_document_never_satisfies_this_requirement(tmp_path, thai):
@@ -422,8 +457,10 @@ def test_declared_missing_item_date_scope_and_option_validation(tmp_path, thai):
     (f1,) = receipts(run, rid="F1")
     assert all(not u.startswith("old@") for u in f1["new_unit_ids"] + f1["final_ids"])
     setup = next(a for a in run["actions"] if a["action_type"] == "acquisition_setup")["detail"]
-    assert setup["date_field"] == "effective" and setup["policy_sha256"] == R.POLICY_V2_SHA256
+    assert setup["date_field"] == "effective" and setup["policy_sha256"] == R.POLICY_V2_1_SHA256
+    assert setup["policy"] == R.POLICY_V2_1.name
     for bad, code in (({"mode": "wide"}, "bad_acquisition_mode"), ({"date_cutoff": "2026-01-01"}, "bad_acquisition_date"),
+                      ({"policy": "ptp-relsel-first-unresolved/1.0.0"}, "bad_acquisition_policy"),
                       ({"declared_missing": [{"candidate_id": "C1", "requirement_id": "NOPE"}]}, "unknown_requirement"),
                       ({"surprise": 1}, "bad_acquisition")):
         with pytest.raises(C.ValidationFailed) as e:
@@ -555,7 +592,7 @@ def test_compare_over_http_returns_the_persisted_trace_and_the_ui_renders_it(tmp
             assert tr["outcome"] == "acquired" and tr["matches_current_assessment"] and tr["mode"] == "structural"
             assert r["requirements"][0]["assessments"][0]["cell"]["outcome"] == "meets"
             assert "side_by_side" not in r["requirements"][0]
-            assert r["acquisition_policy"] == {"name": R.POLICY_V2.name, "sha256": R.POLICY_V2_SHA256}
+            assert r["acquisition_policy"] == {"name": R.POLICY_V2_1.name, "sha256": R.POLICY_V2_1_SHA256}
             js = call("GET", "/app.js")
             html = call("GET", "/")
             assert b"acquisitionTrace" in js and b"compare-baseline" in js and b'id="compare-baseline"' in html
