@@ -64,14 +64,19 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ### Running jobs and incident (23 Nov, evening)
 
-- **P2-T02 on RunPod (amendment A1) was tried and stopped before any computation.** The owner PC uploads at about
-  47 KB/s, so the 16 GB PatentsView inputs would take about four days. Pod `0adflwvktmsvuu` was deleted after about
-  26 min (estimated USD 0.26); no pod exists and there is no P2-T02 number
-  ([amendment §6](docs/healthtech/research/p2-coverage/P2-T02-AMENDMENT-A1-RUNPOD.md)). RunPod balance read
-  afterwards: USD 57.16 (higher than the USD 37.21 read earlier, so credit was added in between).
-  - Next route: dr-train after its reset (all inputs there), or dr-train → pod copy at server bandwidth.
-- **dr-train unreachable since about 07:00 on 23 Nov** (our first P2-T02 build exhausted its memory). A local watcher
-  kills only our P2-T02 processes when SSH answers. Do **not** relaunch P2-T02 on dr-train.
+- **P2-T02 runs on RunPod, second attempt** ([amendment A1 §7](docs/healthtech/research/p2-coverage/P2-T02-AMENDMENT-A1-RUNPOD.md)).
+  The first pod (EU-SE-1) was deleted because the upload route to Sweden was about 47 KB/s.
+  - Pod `jd41r4cvv171q6` (`ptp-p2t02-a1b`): RTX PRO 4500 Blackwell, US-KS-2, 94 GB RAM, 13.6 CPUs, no volume, USD 0.72/h,
+    started 12:42 UTC. SSH: `ssh -i ~/.ssh/runpod_paper86_20261017 -p 14876 root@216.81.151.69`.
+    Log: `/data/ptp-paper2/runpod.log`.
+  - C0 is rebuilt on the pod and must pass the rebuild gate before C1/C2 count. Gate A already holds locally
+    (corpus text byte-identical after CRLF→LF).
+  - Stop at USD 15 (watcher deadline 2026-11-24 08:30 UTC). On finish: pull results to
+    `../_private_artifacts/p2t02-runpod/`, write the receipt, delete the pod, read billing.
+- **dr-train:** rebooted by the admin in the evening of 23 Nov, but it stays unreachable (Tailscale online through relay
+  "sin", no ping, SSH times out). The chain script `scripts/research/drtrain_chain_20261123.sh` (A3r1 evaluation)
+  and the upload bundle `../_private_artifacts/drtrain-upload-20261123.tgz` are ready. Do **not** run P2-T02 there
+  while the RunPod run is live.
 - **A3r1 pilot generation is complete** (7,999/8,000 usable; E1R committed USD 0.785). Route building, evaluation and
   GO/STOP wait for dr-train ([receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md)).
   Stage B is automatic on GO (D16).

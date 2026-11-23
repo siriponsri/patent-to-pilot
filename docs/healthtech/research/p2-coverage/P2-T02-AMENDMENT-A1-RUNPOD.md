@@ -92,3 +92,14 @@ because Python on Windows writes CRLF line ends. After converting CRLF to LF, `c
 **byte-identical to the dr-train text**. So the local PatentsView copy reproduces the original C0 corpus text exactly
 (gate A holds), and a Linux host writes LF natively. The LF copy is kept at
 `../_private_artifacts/p2t02-local-check/texts-v1/corpus.jsonl`.
+
+## 7. Second attempt (23 Nov 2026, from 12:42 UTC): US pod
+
+- **Diagnosis of the slow upload.** The owner PC's general upload is about 6 MB/s (Cloudflare test). The 47 KB/s was
+  specific to the route to EU-SE-1. A throw-away CPU pod in US-CA-2 (`e0h0hef51lkk0f`, USD 0.06/h, deleted within
+  minutes) measured about 1.5 MB/s per stream and about 3 MB/s over 4 streams.
+- **Pod:** `jd41r4cvv171q6` (`ptp-p2t02-a1b`), NVIDIA RTX PRO 4500 Blackwell 32 GB (compute capability 12.0), Secure
+  Cloud **US-KS-2**, cgroup limits 94 GB RAM and 13.6 CPUs, 150 GB container disk, no volume, **USD 0.72/h**. Same image
+  and library pins as §6; Arctic at `95c27414…` (ONNX files skipped); a GPU load test passed.
+- **Stop rule:** USD 15 ≈ 20.8 h of pod time, so the watcher deadline is 2026-11-24 08:30 UTC.
+- Upload: 4 parallel tar streams over SSH, about 8 MB/s measured.
