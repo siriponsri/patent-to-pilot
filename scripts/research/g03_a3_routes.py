@@ -108,8 +108,11 @@ def dense_one(mdir, ledger, qpath, pfile, upath, units_p, tasks_p, out, blocks):
     import fcntl
     import numpy as np, torch, torch.nn.functional as F
     from transformers import AutoModel, AutoTokenizer
-    if torch.cuda.device_count() != 1 or 'V100' not in torch.cuda.get_device_name(0):
-        raise SystemExit('refusing: set CUDA_VISIBLE_DEVICES to the approved V100 only')
+    # dr-train default: the approved V100 only. A dedicated single-GPU RunPod pod (A3R1-AMENDMENT-RUNPOD-REBUILD.md) sets
+    # G03_A3_GPU_MATCH to that pod's GPU name; the GPU lock and the memory fraction are unchanged.
+    want = os.environ.get('G03_A3_GPU_MATCH', 'V100') or 'V100'
+    if torch.cuda.device_count() != 1 or want not in torch.cuda.get_device_name(0):
+        raise SystemExit(f'refusing: set CUDA_VISIBLE_DEVICES to the one approved GPU ({want}) only')
     t0 = time.time()
     gen = load_ledger(ledger, set(blocks))
     qtext = {}
