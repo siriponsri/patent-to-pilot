@@ -79,3 +79,10 @@ baseline runs (`runs/z-arctic` passages and P1-DEV run, `runs/bm25` P1-DEV run),
 | # | Decision | Effect |
 |---|---|---|
 | D21 | **A RunPod network volume is allowed for data that will be reused until the research closes.** This amends D20's "no network volume" | Only reusable inputs and derived indexes go on it: PatentsView sources, rebuilt C0, C1/C2 content and vectors. One-off scratch files do not. No TEST data, sealed files or credentials. Storage is billed monthly (about USD 0.07 per GB-month) and is recorded in the P2-T02 receipt and HANDOFF. The volume is deleted when the research closes or the owner asks. The running pod `jd41r4cvv171q6` sits in US-KS-2, which offers no network storage, so at the end of the run the reusable outputs move to a volume in a US data centre that does (through a cheap CPU pod), and then the GPU pod is deleted |
+
+## Decisions of 23 Nov 2026, night (owner in chat: long autonomous run, parallel pods approved; one consolidated question)
+
+| # | Decision | Effect |
+|---|---|---|
+| D22 | **RunPod envelope R2: USD 60** for parallel pods, on top of R1 (USD 20, P2-T02). Notify at USD 45 | Scope: (a) the A3r1 pilot evaluation on RunPod; (b) the D19 complete-content follow-ups (PatEmbed, Qwen3) if P2-T02 shows a coverage effect; (c) Thai GPU work for P3-T03; (d) the D21 network volume. Several pods may run at once. Each pod's hourly price is stated before creation, and each pod is deleted after use. Spend is recorded per pod in its receipt |
+| D23 | **The A3r1 pilot evaluation runs on RunPod now**, not on dr-train | Its dr-train-only inputs (Qwen3 / PatEmbed / BM25 C0 runs, PatEmbed vectors, serialised texts, G03 v0 evaluations) are rebuilt on pods under a declared amendment, with a rebuild gate against the archived records **before** the frozen GO/STOP rule is applied. The PatEmbed and Qwen3 weights are the previously approved items at their recorded revisions. Stage B still runs automatically on GO (D16), within E1R |
