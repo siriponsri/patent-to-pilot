@@ -11,8 +11,8 @@ Phase status: **IN_PROGRESS**
 | P1-T01 | Resolve paid execution prerequisites and exact scope | ✅ COMPLETE | ENGINEERING_VERIFIED | P1-T02 |
 | P1-T02 | Calibrate the complete output contract on TRAIN only | ✅ COMPLETE | ENGINEERING_VERIFIED | P1-T03 |
 | P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ✅ COMPLETE | ENGINEERING_VERIFIED | P1-T04 |
-| P1-T04 | Execute the declared four-model DEV pilot and spending decision | 🔄 IN_PROGRESS | NOT_RUN | P1-T05 on GO; P1-T06 on STOP |
-| P1-T05 | Run one selected Stage B only after GO | ⏳ NOT_STARTED | NOT_RUN | P1-T06 |
+| P1-T04 | Execute the declared four-model DEV pilot and spending decision | ✅ COMPLETE | EXPLORATORY_GAIN | P1-T05 on GO; P1-T06 on STOP |
+| P1-T05 | Run one selected Stage B only after GO | 🔄 IN_PROGRESS | NOT_RUN | Then RunPod evaluation of full P1-DEV + VAL arms, F3* selection, VAL principal under frozen rule |
 | P1-T06 | Close A3 evidence and hand off the constructive ladder | ⏳ NOT_STARTED | NOT_RUN | P2-T02; P2-T04; P5-T02 when evidence exists |
 
 ## P1-T01 — Resolve paid execution prerequisites and exact scope
@@ -56,7 +56,7 @@ Phase status: **IN_PROGRESS**
 - **Check:** NOT_CHECKED
 - **Next:** P1-T05 on GO; P1-T06 on STOP
 - **Blocker:** —
-- **Notes:** [2026-11-23] pilot generation started 23 Nov (4 models x 2,000 P1-DEV, E1R ledger) | [2026-11-23] A3r1 evaluation on RunPod (D23): pods 7fvpne0e0o2od1 (qwen3) and 5ouqfjd1xmjdsk (patembed), A100 SXM secure US-MD-1, USD 2.19/h each, started 14:40 UTC; rebuild gate before frozen GO/STOP
+- **Notes:** [2026-11-23] pilot generation started 23 Nov (4 models x 2,000 P1-DEV, E1R ledger) | [2026-11-23] A3r1 evaluation on RunPod (D23): pods 7fvpne0e0o2od1 (qwen3) and 5ouqfjd1xmjdsk (patembed), A100 SXM secure US-MD-1, USD 2.19/h each, started 14:40 UTC; rebuild gate before frozen GO/STOP | [2026-11-24] Pilot GO (frozen rule): m*=DeepSeek V4 Flash, Delta ALL R@200 +0.0245 [0.0179,0.0310], IN/OUT lower CI >0; rebuild gate passed on RunPod; optimistic pilot (spending gate only)
 
 ## P1-T05 — Run one selected Stage B only after GO
 
@@ -65,8 +65,9 @@ Phase status: **IN_PROGRESS**
 - **Acceptance evidence:** Reuse selected pilot outputs; run remaining declared DEV/VAL under reservations; disclose repeated VAL exposure and unchanged evaluator rules.
 - **Evidence:** pending
 - **Check:** NOT_CHECKED
-- **Next:** P1-T06
+- **Next:** Then RunPod evaluation of full P1-DEV + VAL arms, F3* selection, VAL principal under frozen rule
 - **Blocker:** —
+- **Notes:** [2026-11-24] Stage B running on owner PC (DeepSeek V4 Flash, 23,626 P1-DEV + 1,919 VAL; ~USD 3 expected, E1R)
 
 ## P1-T06 — Close A3 evidence and hand off the constructive ladder
 
