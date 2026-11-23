@@ -273,10 +273,12 @@ def cmd_decide(a):
                 'overall': overall,
                 'substitute_for_fusion': {k: v for k, v in (('A', arctic[0]), ('L', bm[0])) if v}}
     # deeper original-query control: the same original route at windows 1-2 (depth 400) under the G03 action model
-    g03 = Path(a.g03_evals)
     deeper = {}
+    g03 = Path(a.g03_evals) if a.g03_evals else None
+    if g03 is None:
+        deeper = {'deferred': 'G03 evals are not on this host (amendment A1); computed later on dr-train'}
     for r, c0, arms, d1, d2 in (('A', 'arctic-c0', ('arctic-c1', 'arctic-c2'), 'alloc-L0-Q0-P0-A1', 'alloc-L0-Q0-P0-A2'),
-                                ('L', 'bm25-c0', ('bm25-full',), 'alloc-L1-Q0-P0-A0', 'alloc-L2-Q0-P0-A0')):
+                                ('L', 'bm25-c0', ('bm25-full',), 'alloc-L1-Q0-P0-A0', 'alloc-L2-Q0-P0-A0')) if g03 else ():
         w1 = load_eval(g03 / f'{d1}.json')['per_query']
         w2 = load_eval(g03 / f'{d2}.json')['per_query']
         row = {'g03_arms': [d1, d2],

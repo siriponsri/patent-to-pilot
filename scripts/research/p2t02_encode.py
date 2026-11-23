@@ -37,7 +37,9 @@ PROTECTED = {'P1-TEST', 'P2-TEST', 'P3-TEST'}
 
 
 def setup(frac):
-    assert os.environ.get('CUDA_VISIBLE_DEVICES') == '1', 'V100 only: CUDA_VISIBLE_DEVICES=1'
+    # dr-train: the V100 is device 1. A dedicated single-GPU RunPod pod (amendment A1) sets P2T02_EXPECT_GPU=0.
+    want = os.environ.get('P2T02_EXPECT_GPU', '1')
+    assert os.environ.get('CUDA_VISIBLE_DEVICES') == want, f'expected CUDA_VISIBLE_DEVICES={want}'
     assert float(frac) <= 0.12
     import torch
     lockf = open(LOCK, 'a')

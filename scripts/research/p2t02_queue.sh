@@ -8,7 +8,9 @@
 # Launch: setsid nohup bash code/p2t02_queue.sh > logs/queue.log 2>&1 < /dev/null & disown
 # Smoke:  SMOKE=1 P2T02_ROOT=/data/ptp-paper2/p2-coverage/smoke bash code/p2t02_queue.sh
 set -uo pipefail
-PY=/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/venv/bin/python
+PY=${P2T02_PY:-/home/chaw/patent-to-pilot-jobs/research-product-o1-o4-20261031/venv/bin/python}
+# Amendment A1 (RunPod, one dedicated GPU, no G03 artifacts): P2T02_GPU_DEVICE=0 P2T02_NO_G03=1 P2T02_THREADS P2T02_WORKERS.
+GDEV=${P2T02_GPU_DEVICE:-1}; NO_G03=${P2T02_NO_G03:-0}; TH=${P2T02_THREADS:-16}; WK=${P2T02_WORKERS:-32}
 R=${P2T02_ROOT:-/data/ptp-paper2/p2-coverage}
 CODE=/data/ptp-paper2/p2-coverage/code
 BR=/data/ptp-paper2/bridgeret
@@ -23,8 +25,8 @@ if [ "$SMOKE" = 1 ]; then LIMIT=2000; LIMIT_Q=128; VALN=256; FORCE_FUSION=1; els
 mkdir -p "$R"/{logs,runs,evals,enc}
 cd "$R" || exit 1
 export TOKENIZERS_PARALLELISM=false PYTHONNOUSERSITE=1
-CPU="env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=16 OPENBLAS_NUM_THREADS=16 MKL_NUM_THREADS=16"
-GPU="env CUDA_VISIBLE_DEVICES=1 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True"
+CPU="env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=$TH OPENBLAS_NUM_THREADS=$TH MKL_NUM_THREADS=$TH"
+GPU="env CUDA_VISIBLE_DEVICES=$GDEV P2T02_EXPECT_GPU=$GDEV PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True"
 stamp() { echo "$1 $(date -Is)"; }
 fail() { echo "P2T02_FAILED:$1 $(date -Is)"; exit 1; }
 ev() {   # unchanged evaluator on a gzip run: $1 run.tsv.gz  $2 out.json
@@ -50,7 +52,7 @@ if [ ! -f content/manifest.json ]; then
   stamp STAGE1_BUILD_START
   rm -rf content
   $CPU /usr/bin/time -v -o logs/build.time nice -n 10 $PY "$CODE/p2t02_build_content.py" "$BR" \
-    /data/ptp-paper2/patentsview/claims content --workers 32 --tok-workers 16 --min-free-gib 24 --limit $LIMIT \
+    /data/ptp-paper2/patentsview/claims content --workers $WK --tok-workers 16 --min-free-gib 24 --limit $LIMIT \
     > logs/build.log 2>&1 || fail build
 fi
 if [ "$SMOKE" = 1 ]; then
@@ -126,8 +128,9 @@ for p in "${pids[@]}"; do wait "$p" || fail evaluate; done
 stamp STAGE9_EVAL_DONE
 
 # ---- 10. frozen contrasts, decision rule, descriptives
+G03E=(--g03-evals "$G03/evals/P1-DEV"); [ "$NO_G03" = 1 ] && G03E=()
 $CPU /usr/bin/time -v -o logs/decide.time $PY "$CODE/p2t02_analyse.py" decide --root "$R" --meta "$META" \
-  --g03-evals "$G03/evals/P1-DEV" --pairs "$C/pairs-dev.tsv" --units-tsv "$C/corpus-units.tsv" --tasks "$T" \
+  "${G03E[@]}" --pairs "$C/pairs-dev.tsv" --units-tsv "$C/corpus-units.tsv" --tasks "$T" \
   --run-arctic-c0 "$BR/runs/z-arctic/run-P1-DEV.tsv.gz" --run-bm25-c0 "$BR/runs/bm25/run-P1-DEV.tsv.gz" \
   --out results.json > logs/decide.log 2>&1 || fail decide
 stamp STAGE10_DECIDE_DONE
@@ -135,7 +138,10 @@ stamp STAGE10_DECIDE_DONE
 # ---- 11. descriptive fusion check (G03 action model, B = 4) with the qualifying arm(s) substituted
 SUB=$($PY -c 'import json,sys;d=json.load(open("results.json"))["decision"]["substitute_for_fusion"];print(json.dumps(d))')
 if [ "$FORCE_FUSION" = 1 ] && [ "$SUB" = "{}" ]; then SUB='{"A": "arctic-c1", "L": "bm25-full"}'; fi
-if [ "$SUB" != "{}" ]; then
+if [ "$NO_G03" = 1 ]; then
+  echo '{"fusion": "deferred: G03 route runs are not on this host (amendment A1); run on dr-train from the pulled runs"}' > fusion-deferred.json
+  stamp STAGE11_FUSION_DEFERRED
+elif [ "$SUB" != "{}" ]; then
   ROUTES=$($PY -c '
 import json,sys
 s=json.loads(sys.argv[1]); r=sys.argv[2]
