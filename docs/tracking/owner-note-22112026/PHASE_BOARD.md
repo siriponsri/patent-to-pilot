@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-23T20:26:30+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-23T21:32:23+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -69,7 +69,7 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
 | P3-T01 | Prepare Thai dataset/profile rights and exposure adapters | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P3-T01_thai_data_contract.md; src/patent_to_pilot/workbench/datasets/thai_contract.py; tests/test_p3_t01_thai_contract.py | P3-T02 (needs per-item download approvals / packet rights) | — | NOT_SYNCED |
-| P3-T02 | Build grouped source packets and independent judgments | 🔄 IN_PROGRESS | NOT_RUN | docs/tracking/owner-note-22112026/receipts/P3-T02_thai_data_download.md | P3-T04 | dr-train unreachable (ssh timeout) 23 Nov: local copy verified, remote copy pending | NOT_SYNCED |
+| P3-T02 | Build grouped source packets and independent judgments | 🟡 PARTIAL | NOT_RUN | docs/tracking/owner-note-22112026/receipts/P3-T02_packets_and_overlap_audit.md | Annex/table packets need authored or licensed sources; copy thai-data to the volume/pod when GPU work starts (P3-T03) | — | NOT_SYNCED |
 | P3-T03 | Run separate Thai text-transfer comparisons | ⏳ NOT_STARTED | NOT_RUN | — | P3-T05 | — | NOT_SYNCED |
 | P3-T04 | Evaluate structural scope and OCR end to end | ⏳ NOT_STARTED | NOT_RUN | — | P3-T05; P4-T03 | — | NOT_SYNCED |
 | P3-T05 | Freeze supported Thai scope and transfer claims | ⏳ NOT_STARTED | NOT_RUN | — | P4-T05; P5-T02 | — | NOT_SYNCED |

@@ -1009,7 +1009,7 @@
    "task_id": "P3-T02",
    "phase_id": "P3",
    "title": "Build grouped source packets and independent judgments",
-   "status": "IN_PROGRESS",
+   "status": "PARTIAL",
    "outcome": "NOT_RUN",
    "depends_on": [
     "P3-T01"
@@ -1021,9 +1021,9 @@
     "docs/tracking/owner-note-22112026/receipts/P3-T02_annotation_protocol.md"
    ],
    "acceptance_evidence": "Separate development and held-out families/variants; retain source rights and provenance; prioritize binding/annex/table/date tasks; label synthetic versus real; ground judgments independently of the tested policy.",
-   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P3-T02_thai_data_download.md",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P3-T02_packets_and_overlap_audit.md",
    "check_result": "NOT_CHECKED",
-   "next_task": "P3-T04",
+   "next_task": "Annex/table packets need authored or licensed sources; copy thai-data to the volume/pod when GPU work starts (P3-T03)",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
    "budget_spent_usd": null,
    "budget_reserved_usd": null,
@@ -1035,10 +1035,10 @@
    "affine_item_id": "",
    "affine_item_url": "",
    "affine_sync_status": "NOT_SYNCED",
-   "blocker": "dr-train unreachable (ssh timeout) 23 Nov: local copy verified, remote copy pending",
+   "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-23] D18 downloads done locally: Gazette 87e695ee, NitiBench 9f756970, statute 069e774f, WangchanX train 654e1a10 (17 files, sha256 = Hub oids); test splits labelled HELD_OUT; WangchanX train overlaps NitiBench-CCL -> audit before DEV use"
+   "notes": "[2026-11-23] D18 downloads done locally: Gazette 87e695ee, NitiBench 9f756970, statute 069e774f, WangchanX train 654e1a10 (17 files, sha256 = Hub oids); test splits labelled HELD_OUT; WangchanX train overlaps NitiBench-CCL -> audit before DEV use | [2026-11-23] Overlap audit + packets-v1 built (DEV 1,330 WangchanX-train items in 12 laws; held-out 3,779 NitiBench CCL+Tax, judgments sealed). WangchanX train covers 75.2% of CCL gold sections (specialist exposure). DEV has 0 annex/table items (those laws held out)"
   },
   {
    "task_id": "P3-T03",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-23T20:26:30+07:00"
+ "live_updated_at": "2026-11-23T21:32:23+07:00"
 }

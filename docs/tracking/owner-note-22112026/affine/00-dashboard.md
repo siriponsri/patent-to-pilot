@@ -21,9 +21,9 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 
 - ⛔ BLOCKED: 1
 - ✅ COMPLETE: 14
-- 🔄 IN_PROGRESS: 2
+- 🔄 IN_PROGRESS: 1
 - ⏳ NOT_STARTED: 16
-- 🟡 PARTIAL: 2
+- 🟡 PARTIAL: 3
 
 ## Phases
 
@@ -43,3 +43,4 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 - **P0-T04** Prepare prospective A3r1 protocol and no-call provider plan: E1R approval; Typhoon key/quota (TYPHOON_API_KEY) or declare deferred
 - **P1-T04** Execute the declared four-model DEV pilot and spending decision: dr-train unreachable: pilot routes/evaluation/decision pending (generation complete, USD 0.785 committed)
 - **P2-T02** Establish complete-content and stronger simple controls: D20: RunPod envelope R1 USD 20 (stop at 15) for P2-T02; starts after dr-train reset (C0 runs only there); PatentsView sources local in data/raw/uspto
+- **P3-T02** Build grouped source packets and independent judgments: PARTIAL
