@@ -9,7 +9,7 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
 | P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) |
-| P2-T02 | Establish complete-content and stronger simple controls | ⛔ BLOCKED | NOT_RUN | On dr-train reset: kill our processes, copy C0 runs + ser-arctic-v1 + texts-v1 + tasks.tsv (P1-DEV rows only) to RunPod volume, upload local claims zips, run fixed build on RunPod |
+| P2-T02 | Establish complete-content and stronger simple controls | ⛔ BLOCKED | NOT_RUN | On dr-train reset: run fixed build there, or copy inputs dr-train -> pod |
 | P2-T03 | Implement one bounded source-relation search action | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T04 (after P2-T02 controls); P4-T03 |
 | P2-T04 | Screen the bounded mechanism against close matched controls | ⏳ NOT_STARTED | NOT_RUN | P2-T05 if viable |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | P2-T06 |
@@ -34,9 +34,9 @@ Phase status: **IN_PROGRESS**
 - **Acceptance evidence:** Compare equal-content flat/structural units and deeper original-query retrieval under shared masks/budgets; record actual results and resource costs.
 - **Evidence:** docs/healthtech/research/p2-coverage/P2-T02-RUN-NOTES.md
 - **Check:** NOT_CHECKED
-- **Next:** On dr-train reset: kill our processes, copy C0 runs + ser-arctic-v1 + texts-v1 + tasks.tsv (P1-DEV rows only) to RunPod volume, upload local claims zips, run fixed build on RunPod
-- **Blocker:** First full launch OOM'd dr-train (125 GB used; our 32 forked tokenizer workers); host unreachable since ~07:00. Fix is local (workers get own chunks, gc.freeze, 16 workers, 24 GiB watchdog, serialized CPU stages). On recovery: kill our PIDs 1536690/1546555 + workers first; relaunch only after owner OK
-- **Notes:** [2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers
+- **Next:** On dr-train reset: run fixed build there, or copy inputs dr-train -> pod
+- **Blocker:** dr-train down; owner-PC upload ~47 KB/s makes the RunPod route impractical (A1 stopped, pod deleted, ~USD 0.26)
+- **Notes:** [2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers | [2026-11-23] Amendment A1: running on RunPod pod 0adflwvktmsvuu (A40, USD 0.59/h, no volume); C0 rebuilt and gated before C1/C2; envelope R1 USD 20, stop at 15
 
 ## P2-T03 — Implement one bounded source-relation search action
 

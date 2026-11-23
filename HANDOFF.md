@@ -62,22 +62,21 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
   volume** (owner): pod disk only, deleted with the pod. No pod exists yet. PatentsView sources are local in `data/raw/uspto/` (17 GB; no re-download needed). The C0 runs,
   `ser-arctic-v1`, `texts-v1/corpus.jsonl` and `tasks.tsv` exist only on dr-train, so the RunPod run starts after the reset.
 
-### Running jobs and incident (23 Nov, late morning)
+### Running jobs and incident (23 Nov, evening)
 
-- **INCIDENT: dr-train unreachable since about 07:00 Bangkok.** Our first full P2-T02 content build forked 32 tokenizer
-  workers that copied a 13 GB parent, and the host reached 125 GB used and 0 available. Other users' services were
-  probably affected.
-  - Last seen alive: our PIDs 1536690 (queue) and 1546555 (build) and about 35 workers.
-  - **On recovery, kill our processes first.** Then relaunch the memory-safe fix (commit 92465abd,
-    `docs/healthtech/research/p2-coverage/P2-T02-RUN-NOTES.md` §4) **only after the owner says OK**.
+- **P2-T02 on RunPod (amendment A1) was tried and stopped before any computation.** The owner PC uploads at about
+  47 KB/s, so the 16 GB PatentsView inputs would take about four days. Pod `0adflwvktmsvuu` was deleted after about
+  26 min (estimated USD 0.26); no pod exists and there is no P2-T02 number
+  ([amendment §6](docs/healthtech/research/p2-coverage/P2-T02-AMENDMENT-A1-RUNPOD.md)). RunPod balance read
+  afterwards: USD 57.16 (higher than the USD 37.21 read earlier, so credit was added in between).
+  - Next route: dr-train after its reset (all inputs there), or dr-train → pod copy at server bandwidth.
+- **dr-train unreachable since about 07:00 on 23 Nov** (our first P2-T02 build exhausted its memory). A local watcher
+  kills only our P2-T02 processes when SSH answers. Do **not** relaunch P2-T02 on dr-train.
 - **A3r1 pilot generation is complete** (7,999/8,000 usable; E1R committed USD 0.785). Route building, evaluation and
-  the GO/STOP decision wait for dr-train ([receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md)).
+  GO/STOP wait for dr-train ([receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md)).
   Stage B is automatic on GO (D16).
-- **Thai data** is downloaded and verified locally (`../_private_artifacts/thai-data/`); copying it to dr-train is
-  pending.
-- The structural-acquisition agent (plan §5) is working locally.
+- **Thai data** is downloaded and verified locally (`../_private_artifacts/thai-data/`); the dr-train copy is pending.
 - AFFiNE Docker stack: tracker only.
-- A local watcher fires when dr-train answers SSH again.
 
 ### Owner decisions
 

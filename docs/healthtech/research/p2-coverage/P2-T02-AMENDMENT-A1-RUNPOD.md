@@ -72,3 +72,15 @@ frozen contrasts, cluster bootstrap and decision rule. The archived C0 values ar
 
 Everything in protocol §6 still holds. In addition, a C0 that passes the gate is a reproduction within the stated
 tolerances, not a bit-identical copy of the V100 run.
+
+## 6. Outcome of the first attempt (23 Nov 2026, 10:31–10:57 UTC): stopped before any computation
+
+- Pod `0adflwvktmsvuu` was created and verified: torch 2.8.0+cu128, transformers 4.55.2, numpy 2.2.6,
+  scikit-learn 1.7.2, scipy 1.18.1; Arctic downloaded at `95c27414…` (its modelling code ships in the repository, so no
+  extra remote code is fetched); a GPU load test passed on the A40.
+- **The upload was not practical.** Measured over SSH from the owner PC: upload about **47 KB/s** (3 MB in 64 s on a
+  clean line), download about 1.6 MB/s. The 16 GB of PatentsView inputs would have taken about four days.
+- The upload was stopped and the pod **deleted** after about 26 minutes (estimated USD 0.26 at USD 0.59/h). No text was
+  built, nothing was encoded, and **no P2-T02 number exists**. `list-pods` is empty.
+- The amendment stays declared but unused. Practical routes: run on dr-train once it is reset (all inputs are there), or
+  copy from dr-train to a pod (server bandwidth), or upload from a faster network.
