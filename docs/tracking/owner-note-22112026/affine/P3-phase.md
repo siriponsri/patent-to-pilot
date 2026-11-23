@@ -9,7 +9,7 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
 | P3-T01 | Prepare Thai dataset/profile rights and exposure adapters | ✅ COMPLETE | ENGINEERING_VERIFIED | P3-T02 (needs per-item download approvals / packet rights) |
-| P3-T02 | Build grouped source packets and independent judgments | ⏳ NOT_STARTED | NOT_RUN | P3-T04 |
+| P3-T02 | Build grouped source packets and independent judgments | 🔄 IN_PROGRESS | NOT_RUN | P3-T04 |
 | P3-T03 | Run separate Thai text-transfer comparisons | ⏳ NOT_STARTED | NOT_RUN | P3-T05 |
 | P3-T04 | Evaluate structural scope and OCR end to end | ⏳ NOT_STARTED | NOT_RUN | P3-T05; P4-T03 |
 | P3-T05 | Freeze supported Thai scope and transfer claims | ⏳ NOT_STARTED | NOT_RUN | P4-T05; P5-T02 |
@@ -30,10 +30,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P3-T01
 - **Acceptance evidence:** Separate development and held-out families/variants; retain source rights and provenance; prioritize binding/annex/table/date tasks; label synthetic versus real; ground judgments independently of the tested policy.
-- **Evidence:** pending
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P3-T02_thai_data_download.md
 - **Check:** NOT_CHECKED
 - **Next:** P3-T04
-- **Blocker:** —
+- **Blocker:** dr-train unreachable (ssh timeout) 23 Nov: local copy verified, remote copy pending
+- **Notes:** [2026-11-23] D18 downloads done locally: Gazette 87e695ee, NitiBench 9f756970, statute 069e774f, WangchanX train 654e1a10 (17 files, sha256 = Hub oids); test splits labelled HELD_OUT; WangchanX train overlaps NitiBench-CCL -> audit before DEV use
 
 ## P3-T03 — Run separate Thai text-transfer comparisons
 
