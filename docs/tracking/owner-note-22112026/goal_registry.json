@@ -675,7 +675,7 @@
    "acceptance_evidence": "Reuse selected pilot outputs; run remaining declared DEV/VAL under reservations; disclose repeated VAL exposure and unchanged evaluator rules.",
    "evidence_uri": "",
    "check_result": "NOT_CHECKED",
-   "next_task": "Then RunPod evaluation of full P1-DEV + VAL arms, F3* selection, VAL principal under frozen rule",
+   "next_task": "Finish Stage B; then A3r1 full evaluation pod (D24) after owner says pods may open",
    "budget_authority": "Exact protocol must fit an explicitly approved envelope; E1R remains pending",
    "budget_spent_usd": null,
    "budget_reserved_usd": null,
@@ -690,7 +690,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-24] Stage B running on owner PC (DeepSeek V4 Flash, 23,626 P1-DEV + 1,919 VAL; ~USD 3 expected, E1R)"
+   "notes": "[2026-11-24] Stage B running on owner PC (DeepSeek V4 Flash, 23,626 P1-DEV + 1,919 VAL; ~USD 3 expected, E1R) | [2026-11-24] Stage B generating at handoff (24 Nov ~03:30): P1-DEV remainder then VAL; resumable; see NEXT-ACCOUNT-HANDOFF-20261124.md"
   },
   {
    "task_id": "P1-T06",
@@ -1267,7 +1267,7 @@
    "acceptance_evidence": "Change source text, scope edges and corpus membership; compare affected evidence with a full rerun; measure work/cost before claiming savings.",
    "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P4-T04_revision_comparison.md",
    "check_result": "NOT_CHECKED",
-   "next_task": "Owner policy choice for D2; implement source removal (D3)",
+   "next_task": "Merge D25 policy v2.1 branch worktree-agent-a6d18c2dded3f86f2 (56267477) after full gate; implement source removal (D3)",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
    "budget_spent_usd": null,
    "budget_reserved_usd": null,
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-24T02:43:53+07:00"
+ "live_updated_at": "2026-11-24T05:22:09+07:00"
 }

@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-24T02:43:53+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-24T05:22:09+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -45,7 +45,7 @@ Phase status: **IN_PROGRESS**
 | P1-T02 | Calibrate the complete output contract on TRAIN only | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P1-T02_format_cost_receipt.md; docs/tracking/owner-note-22112026/receipts/P1-T02_calibration_manifest.json | P1-T03 | — | NOT_SYNCED |
 | P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P1-T03_freeze_receipt.json; docs/healthtech/research/g03-dev/a3r1/a3r1-caller-config.json | P1-T04 | — | NOT_SYNCED |
 | P1-T04 | Execute the declared four-model DEV pilot and spending decision | ✅ COMPLETE | EXPLORATORY_GAIN | docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md | P1-T05 on GO; P1-T06 on STOP | — | NOT_SYNCED |
-| P1-T05 | Run one selected Stage B only after GO | 🔄 IN_PROGRESS | NOT_RUN | — | Then RunPod evaluation of full P1-DEV + VAL arms, F3* selection, VAL principal under frozen rule | — | NOT_SYNCED |
+| P1-T05 | Run one selected Stage B only after GO | 🔄 IN_PROGRESS | NOT_RUN | — | Finish Stage B; then A3r1 full evaluation pod (D24) after owner says pods may open | — | NOT_SYNCED |
 | P1-T06 | Close A3 evidence and hand off the constructive ladder | ⏳ NOT_STARTED | NOT_RUN | — | P2-T02; P2-T04; P5-T02 when evidence exists | — | NOT_SYNCED |
 
 ## P2 — Constructive structural candidate acquisition
@@ -83,7 +83,7 @@ Phase status: **IN_PROGRESS**
 | P4-T01 | Extend the existing Search, Compare and Inspect workflow | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P4-T01_workflow_receipt.md; docs/tracking/owner-note-22112026/receipts/P4-T01a_thai_search_receipt.md; docs/tracking/owner-note-22112026/receipts/P4-T01b_requirement_lifecycle_receipt.md | P4-T02; P4-T03 | — | NOT_SYNCED |
 | P4-T02 | Make local, API and self-hosted modes clear and usable | ✅ COMPLETE | NOT_RUN | docs/tracking/owner-note-22112026/receipts/P4-T02_provider_ux_receipt.md | P4-T05 | — | NOT_SYNCED |
 | P4-T03 | Make source, structural scope and search provenance inspectable | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P4-T03_structural_acquisition_receipt.md; src/patent_to_pilot/workbench/acquisition.py; src/patent_to_pilot/workbench/structure.py; tests/test_structural_acquisition.py | P4-T04; plan section 8 matched comparison | — | NOT_SYNCED |
-| P4-T04 | Verify selective revision against full recomputation | 🟡 PARTIAL | NOT_RUN | docs/tracking/owner-note-22112026/receipts/P4-T04_revision_comparison.md | Owner policy choice for D2; implement source removal (D3) | — | NOT_SYNCED |
+| P4-T04 | Verify selective revision against full recomputation | 🟡 PARTIAL | NOT_RUN | docs/tracking/owner-note-22112026/receipts/P4-T04_revision_comparison.md | Merge D25 policy v2.1 branch worktree-agent-a6d18c2dded3f86f2 (56267477) after full gate; implement source removal (D3) | — | NOT_SYNCED |
 | P4-T05 | Observe clean-install and user-task success | ⏳ NOT_STARTED | NOT_RUN | — | P5-T03; P5-T04 | — | NOT_SYNCED |
 
 ## P5 — Manuscript, artifact release and IS2 readiness

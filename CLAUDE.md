@@ -57,16 +57,20 @@ which renders the CSV, the board and the AFFiNE pages.
 - v1, A1 and A2 are PARKED.
 - A3r0 (LLM query expansion) has a frozen protocol, but only a **format smoke** has run: 4 calls on 1 TRAIN query. There is
   no effectiveness result.
-- A3r1 (Qwen3-32B, DeepSeek V4 Flash, Gemini 2.5 Flash-Lite, Typhoon2.5; 800-token cap) is PROPOSED:
-  [amendment](docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md).
+- A3r1 (Qwen3-32B, DeepSeek V4 Flash, Gemini 2.5 Flash-Lite, Typhoon2.5; 800-token cap) is FROZEN.
+  - Pilot: frozen rule **GO**, m\* = DeepSeek V4 Flash, Δ = +0.0245 ALL R@200. The pilot is optimistic and only gates
+    spending.
+  - Stage B ran on 24 Nov. The full evaluation (D24) is next.
+  - Documents: [amendment](docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md) and
+    [P1-T04 receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md).
+- **P2-T02 (complete-content control): COMPLETE.** Arctic C1 and BM25-full are the new representation baselines (+0.0165 /
+  +0.0223). Structure gets no credit.
 - Memo: [G03-DEV-DECISION-MEMO.md](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md).
 
-**Money.**
-- **E1 = USD 8 / 35,000 requests, stop-and-report at USD 6**, is approved (D9) for its original scope. Spent so far:
-  USD 0.00064.
-- **E1R** (USD 50 cumulative, notify at 40, 100,000 requests) is **PENDING owner approval** (N08).
-- A3r1 does not fit E1.
-- `OPENROUTER_API_KEY` is not set. RunPod has no envelope.
+**Money (24 Nov).**
+- OpenRouter **E1R** (D11; USD 50, notify 40): about USD 3.6 committed. Keys are set as user environment variables.
+- RunPod: **R1** (D20, USD 20, P2-T02): about USD 5.1 used. **R2** (D22/D24, USD 60, notify 45): about USD 9.6 used.
+- D21 allows a network volume for reused data (none exists). Use US data centres only (see the 24 Nov handoff).
 
 **PatEmbed on DAPFAM.** The two datasets share a family pool and training overlap is unmeasured (PatenTEB's train split is
 unreleased). Report PatEmbed separately, with that caveat:
@@ -78,14 +82,14 @@ unreleased). Report PatEmbed separately, with that caveat:
 - Corrections register: [WRITING-CORRECTIONS-20261122.md](docs/maintenance/WRITING-CORRECTIONS-20261122.md).
 - IS2 arc (D1, D10, including Paper 86's exposure ceiling, IS2-only): [docs/writing/is2/](docs/writing/is2/).
 
-**Owner decisions.** D1–D10 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md), and
+**Owner decisions.** D1–D25 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md), and
 N01–N12 are in the owner note.
 
 **AFFiNE tracker.** Self-hosted upstream v0.27.4, outside the repo (`C:\Users\User\ptp-tools\affine-tracker`,
 http://127.0.0.1:3010). It is a tracker only, never a research dependency. See
 [P0-T02 receipt](docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md).
 
-**New account?** Start at [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md)
+**New account?** Start at [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md)
 and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
 
 **Older parked lines.** P1/AM-7 and B53 Stage 1–2 are measured and kept with their original scope; see INDEX-PLAN §3.

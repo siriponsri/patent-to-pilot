@@ -106,3 +106,20 @@ The owner switches Claude accounts when usage runs out. Read [CLAUDE.md](../../C
 - Estimate peak memory at full scale (workers × per-worker RSS) before launch, not only from a small smoke run.
 - Watch the first minutes of a full launch.
 
+
+## RunPod and long runs (23–24 Nov 2026)
+
+- **Measure the upload route before choosing a data centre.** The owner PC uploads to EU-SE-1 at about 47 KB/s and to US
+  data centres at 3–8 MB/s (4 parallel tar streams).
+- **Containers see the host's `nproc` and `/proc/meminfo`.** Use the cgroup quota and limit, and count the working set
+  (`memory.current` minus `inactive_file`). Otherwise there are too many workers, or the build aborts falsely on page
+  cache.
+- **Windows-written file lists are CRLF.** Strip `\r` before `tar -T`, and set `pipefail` so a failed tar is not
+  reported as "upload ok".
+- **`pkill -f` with a plain pattern can kill your own ssh session.** Use `[p]attern`.
+- **A network outage mid-generation pauses the budget ledger on unknown cost.** Reconcile from the provider's usage delta
+  and resume; the caller skips finished apps.
+- **Rebuilding C0 on another GPU reproduced dr-train closely:** BM25 exactly, dense models at 99.9% per-query identity.
+  So rebuild gates with declared tolerances are a workable route when dr-train is down.
+- **Wait with bash watchers, not agents** (owner request about token use). Details are in
+  [NEXT-ACCOUNT-HANDOFF-20261124.md](NEXT-ACCOUNT-HANDOFF-20261124.md) §4.

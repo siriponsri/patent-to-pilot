@@ -4,105 +4,79 @@ This file holds the **current state only**. Rewrite the "Agent takeover state" s
 rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 [archives/HANDOFF-HISTORY-TO-20261121.md](archives/HANDOFF-HISTORY-TO-20261121.md).
 
-## Agent takeover state — 23 Nov 2026 (Asia/Bangkok)
+## Agent takeover state — 24 Nov 2026, about 03:30 (Asia/Bangkok)
+
+**Account handoff in progress.** The owner stopped this account because its weekly limit is near. Start with
+[docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md).
 
 **Plan.** Outcome-based **P0–P5** (owner note 22 Nov). Live board:
 [docs/tracking/owner-note-22112026/PHASE_BOARD.md](docs/tracking/owner-note-22112026/PHASE_BOARD.md).
 - Tool: `python scripts/tracking/ptp_tracker.py show|set|render`.
-- Status fields kept separate: `method_evidence` = NOT_YET_DEMONSTRATED; `product_readiness` = core verified plus synthetic
-  trace slice; `publication_readiness` = draft with results NOT_RUN.
+- Status fields stay separate:
+  - `method_evidence` = NOT_YET_DEMONSTRATED (the A3r1 pilot GO is a spending gate, not a result);
+  - `product_readiness` = core verified, with modes, Thai search, structural acquisition and selective revision checked;
+  - `publication_readiness` = draft with results NOT_RUN.
 
-### Where things stand
+### Phase status (35 tasks: 18 COMPLETE, 5 PARTIAL, 1 IN_PROGRESS, 11 NOT_STARTED)
 
-**P0 complete except AFFiNE.**
-- OFFLINE_READY.
-- PAID_RESEARCH_READY since 23 Nov.
-- AFFINE_READY is **blocked**:
-  - the 0.27.4 web client never opens its sync socket (server verified fine);
-  - the built-in MCP is read-only;
-  - the owner imported a snapshot into AFFiNE Desktop (local workspace);
-  - the repo board is the tracker of record ([P0-T02 receipt](docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md)).
+| Phase | Done | Open |
+|---|---|---|
+| P0 control | 5/7 | T02/T03 AFFiNE web sync blocked (the repo board is the tracker of record) |
+| P1 A3 model panel | 4/6 | T05 Stage B nearly done; T06 close A3 |
+| P2 structural acquisition | 3/7 | T04 screen vs close controls → T05 freeze → T06 matched comparison → T07 attribution |
+| P3 Thai transfer | 1/5 (+T02 PARTIAL) | T03 text-transfer comparisons, T04 structure/OCR, T05 freeze scope |
+| P4 product | 3/5 (+T04 PARTIAL) | T04 merge policy v2.1 + source removal (D3); T05 clean-install user test |
+| P5 manuscript/release/IS2 | 1/5 | T02 scoreboards, T03 artifact, T04 IS2, T05 close |
 
-**P1 (A3r1).**
-- **P1-T01:** done. Keys present by presence check; E1R approved in the ledger (D11).
-- **P1-T02:** TRAIN calibration done. 128/128 complete, no truncation, no reasoning tokens, USD 0.0152.
-- **P1-T03:** **FROZEN** ([freeze receipt](docs/tracking/owner-note-22112026/receipts/P1-T03_freeze_receipt.json),
-  commit 8c4c23f1).
-  - Stage-B-eligible: Qwen3-32B, DeepSeek V4 Flash, Gemini 2.5 Flash-Lite. Bound totals USD 17.8–21.0, within the USD 50
-    limit.
-  - Typhoon2.5 is pilot-descriptive only (quota unconfirmed).
-- **P1-T04 is RUNNING:** pilot generation, 2,000 P1-DEV queries × 4 models.
-  - Runs on the owner PC under the E1R ledger (`../_private_artifacts/g03-a3r1/ledger/A3r1/<model>/P1-DEV.jsonl`).
-  - Then upload the ledgers to dr-train `g03-dev/a3r1/ledger/`, copy `g03_a3_routes.py`, `g03_a3_decide.py` and
-    `g03_queue_a3r1_pilot.sh` to `g03-dev/code/`, and run the queue detached (ends `G03_A3R1_PILOT_DONE`). It needs the
-    V100 lock; check that the P2-T02 GPU job is not holding it.
-  - Apply the frozen GO rule. Stage B only on GO.
+### Results so far (P1-DEV unless stated; ALL R@200, cluster bootstrap by art unit)
 
-**P2.**
-- T01 content audit: done. The index holds title + abstract + first claim only, about 12% of claim tokens.
-- T02 coverage control: protocol frozen (bd30d3f7). An agent is implementing it and launching a detached Arctic C1/C2
-  build on the dr-train V100 under `/data/ptp-paper2/p2-coverage/`.
-- T03 relation-search operator: done (32bb87d2). Its policy is to be frozen in the P2-T04 protocol.
+- **P2-T02 COMPLETE** ([receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md)):
+  - Arctic C1 (complete content) − C0 = **+0.0165 [0.0144, 0.0186]**;
+  - BM25-full − C0 = **+0.0223 [0.0200, 0.0247]**;
+  - both become the new representation baselines;
+  - structure C2 − C1 = −0.0087, so it gets no credit.
+  - D19 is triggered: complete-content PatEmbed/Qwen3 (C1).
+- **P1-T04 A3r1 pilot: frozen rule GO**, m\* = DeepSeek V4 Flash, Δ = **+0.0245 [0.0179, 0.0310]** against F\* 0.4334 on
+  2,000 apps ([receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md)). This is optimistic and
+  only gates spending.
+- **P3-T02 PARTIAL:** Thai packets-v1 (DEV 1,330 / held-out 3,779). WangchanX train covers 75.2% of NitiBench-CCL gold
+  sections. DEV has no annex/table items.
+- **P4-T02 COMPLETE** (execution modes). **P4-T04 PARTIAL:** selective = full in 10/11 scenarios; D2 is fixed on an
+  unmerged branch; D3 (no source removal) is open.
 
-**P3.** T01 Thai data contract done (fd3cae1a). Downloads and the NitiBench+ gate need per-item owner approval.
+### Running or pending at handoff
 
-**P4.** T01 Search/Compare/Inspect: an agent is working on it (uncommitted changes in `workbench/core.py`, `server.py`,
-`static/*` and `workflow.py` are its work).
+- **P1-T05 Stage B** (DeepSeek V4 Flash, owner PC, E1R) was still generating at handoff: the last 1,711 P1-DEV apps,
+  then 1,919 VAL. Logs: `../_private_artifacts/g03-a3r1/stageb2-{P1-DEV,VAL}.log`. If it stopped, re-run the same
+  command; it skips finished apps (see the handoff doc).
+- **Next:** the A3r1 full evaluation on one RunPod pod (D24) with
+  [A3R1-FULL-EVAL-RUNPOD.md](docs/healthtech/research/g03-dev/A3R1-FULL-EVAL-RUNPOD.md) and runbook §"Full evaluation
+  after Stage B". **The owner said not to open pods until the new account takes over.**
+- **Unmerged branches:**
+  - `worktree-agent-a6d18c2dded3f86f2` (56267477): D25 policy v2.1. Run the full gate, then merge.
+  - `worktree-agent-aa1038afae41aaf77` (ffae7a99): WIP D19 package, not verified. Finish its tests, review, merge.
 
-**P5.** T01 manuscript draft done.
+### Money and access (24 Nov)
 
-### Money and access
-
-- **E1R active:** USD 50 cumulative, notify at USD 40, 100,000 requests (D11).
-- Committed before the pilot: USD 0.0159.
-- OpenRouter credits: total 20.
-- `OPENROUTER_API_KEY` and `TYPHOON_API_KEY` are set as user environment variables.
-- Typhoon is settled at USD 0 (D12).
-- **RunPod envelope R1 (D20): USD 20 for P2-T02**, stop and report at USD 15; prepaid balance USD 37.21; **no network
-  volume** (owner): pod disk only, deleted with the pod. No pod exists yet. PatentsView sources are local in `data/raw/uspto/` (17 GB; no re-download needed). The C0 runs,
-  `ser-arctic-v1`, `texts-v1/corpus.jsonl` and `tasks.tsv` exist only on dr-train, so the RunPod run starts after the reset.
-
-### Running jobs and incident (23 Nov, evening)
-
-- **P2-T02 runs on RunPod, second attempt** ([amendment A1 §7](docs/healthtech/research/p2-coverage/P2-T02-AMENDMENT-A1-RUNPOD.md)).
-  The first pod (EU-SE-1) was deleted because the upload route to Sweden was about 47 KB/s.
-  - Pod `jd41r4cvv171q6` (`ptp-p2t02-a1b`): RTX PRO 4500 Blackwell, US-KS-2, 94 GB RAM, 13.6 CPUs, no volume, USD 0.72/h,
-    started 12:42 UTC. SSH: `ssh -i ~/.ssh/runpod_paper86_20261017 -p 14876 root@216.81.151.69`.
-    Log: `/data/ptp-paper2/runpod.log`.
-  - **Launched 13:25 UTC (20:25 Bangkok)** after all 58 PatentsView files matched by sha256 (upload about 15.1 GB; one
-    reset after 18 min, resumed). Local bash watcher (no agent) checks every 10 min.
-  - C0 is rebuilt on the pod and must pass the rebuild gate before C1/C2 count. Gate A already holds locally
-    (corpus text byte-identical after CRLF→LF).
-  - Stop at USD 15 (watcher deadline 2026-11-24 08:30 UTC). On finish: pull results to
-    `../_private_artifacts/p2t02-runpod/`, write the receipt, delete the pod, read billing.
-- **A3r1 pilot evaluation on RunPod (D22/D23)**, package merged (`A3R1-AMENDMENT-RUNPOD-REBUILD.md`, runbook
-  `A3R1-RUNPOD-RUNBOOK.md`). Pods (A100 80 GB, Secure Cloud US-MD-1, USD 2.19/h each, started 14:40 UTC):
-  `7fvpne0e0o2od1` role qwen3 (`ssh -p 18213 root@154.54.102.54`), `5ouqfjd1xmjdsk` role patembed
-  (`ssh -p 10925 root@154.54.102.49`). Logs `/data/ptp-paper2/a3r1-<role>.log`. Next: relay to the pod that finishes
-  last, copy BM25/ser-arctic from the P2-T02 pod, pin scikit-learn 1.7.2 there, run `assemble` (gate → frozen queue →
-  GO/STOP), pull results, delete both pods.
-- **Merged 23 Nov night:** P3-T02 packets (PARTIAL), P4-T02 modes (COMPLETE), P4-T04 selective revision (PARTIAL:
-  D2 order dependence needs an owner policy choice, D3 no source removal). Gate: only the 8 SACR failures; smoke passes.
-- **dr-train:** rebooted by the admin in the evening of 23 Nov, but it stays unreachable (Tailscale online through relay
-  "sin", no ping, SSH times out). The chain script `scripts/research/drtrain_chain_20261123.sh` (A3r1 evaluation)
-  and the upload bundle `../_private_artifacts/drtrain-upload-20261123.tgz` are ready. Do **not** run P2-T02 there
-  while the RunPod run is live.
-- **A3r1 pilot generation is complete** (7,999/8,000 usable; E1R committed USD 0.785). Route building, evaluation and
-  GO/STOP wait for dr-train ([receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md)).
-  Stage B is automatic on GO (D16).
-- **Thai data** is downloaded and verified locally (`../_private_artifacts/thai-data/`); the dr-train copy is pending.
-- AFFiNE Docker stack: tracker only.
+- **E1R** (OpenRouter + Typhoon; USD 50, notify 40): committed about USD 3.6 after Stage B so far. The OpenRouter
+  account shows total usage about 5.2 of 20 credits.
+- **RunPod:** prepaid balance USD 42.39. **No pod and no volume exist.**
+  - R1 (D20, USD 20): about USD 5.1 used (P2-T02 pods).
+  - R2 (D22, USD 60, notify 45): about USD 9.6 used (A3r1 pilot pods).
+  - D21 allows a network volume for reusable data; none has been created.
+- **Upload route:** US data centres only. EU-SE-1 measured 47 KB/s from the owner PC; US measured 3–8 MB/s over 4 streams.
+- `OPENROUTER_API_KEY` and `TYPHOON_API_KEY` are user environment variables. The RunPod SSH key is
+  `~/.ssh/runpod_paper86_20261017`.
+- **dr-train:** unreachable since 23 Nov even after an admin reboot (Tailscale online through relay "sin", no ping,
+  SSH timeouts). Nothing of ours runs there. P2-T02 must not be relaunched there.
 
 ### Owner decisions
 
-- D1–D14: [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md).
-- N01–N12: in the owner note. N01 keeps the name.
-- Pending:
-  - Thai dataset download approvals (P3-T02);
-  - whether to report LLM-judge-graded NitiBench scores (rule 12);
-  - the Paper 53 DOI and the 37.1% denominator;
-  - the G01 launcher check;
+- D1–D25 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md); N01–N12 are in the owner
+  note.
+- Still open: the Paper 53 DOI and the 37.1% denominator; whether to report LLM-judge-graded NitiBench (rule 12); the G01
+  launcher check; Thai annex/table packet sources.
 
 Unchanged:
-- large derived files on dr-train are kept (compressed);
+- large derived files on dr-train are kept;
 - the two git stashes from 30 Oct 2026 are kept.

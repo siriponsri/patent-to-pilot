@@ -1,0 +1,120 @@
+# Next-account handoff — 24 Nov 2026
+
+The previous Claude account stopped at the owner's request because its weekly limit was near. This file is the entry
+point for the next account. Report to the owner in **plain Thai**. Code, docs and the paper stay English-first.
+
+## 1. Read first, in this order
+
+1. [CLAUDE.md](../../CLAUDE.md): standing rules, in force.
+2. [HANDOFF.md](../../HANDOFF.md): current state, phase table, money, running and pending work.
+3. [PHASE_BOARD.md](../tracking/owner-note-22112026/PHASE_BOARD.md): the live board. Update it only with
+   `python scripts/tracking/ptp_tracker.py`.
+4. [OWNER-DECISIONS-20261122.md](OWNER-DECISIONS-20261122.md): D1–D25. D20–D25 are new (RunPod R1/R2, volume, A3r1 on
+   RunPod, full evaluation, policy v2.1).
+5. [AGENT-LESSONS.md](AGENT-LESSONS.md) and the RunPod lessons in §4 below.
+6. The owner note `docs/owner/owner-note-22112026/00_START_HERE.md` (owner-local; read only, never edit).
+
+Then run `git status` and `git log -5`. The last pushed commit is on `main` (it ends this handoff).
+
+## 2. Ordered task list for the next account
+
+1. **Check Stage B (P1-T05).**
+   - Look at `../_private_artifacts/g03-a3r1/stageb2-P1-DEV.log` and `stageb2-VAL.log` (last line `END ...`).
+   - If incomplete or interrupted, re-run (it skips finished apps; envelope E1R):
+     ```bash
+     C=docs/healthtech/research/g03-dev/a3r1/a3r1-caller-config.json; I=../_private_artifacts/g03-a3/inputs
+     for b in P1-DEV VAL; do python scripts/research/g03_a3_llm_expand.py --config $C --queries $I/queries-dev-val.jsonl \
+       --apps-file $I/apps-$b.json --block $b --model deepseek/deepseek-v4-flash-0731 \
+       --ledger-root ../_private_artifacts/g03-a3r1/ledger --concurrency 8; done
+     ```
+   - If the ledger pauses on unknown cost (network timeouts), reconcile from the OpenRouter usage delta as on 24 Nov:
+     `PYTHONPATH=src python -m patent_to_pilot.budget.ledger reconcile --envelope E1R --entry <id> --cost-usd <x> --by agent --evidence "<how computed>"`.
+2. **A3r1 full evaluation (D24, envelope R2).**
+   - Follow [A3R1-FULL-EVAL-RUNPOD.md](../healthtech/research/g03-dev/A3R1-FULL-EVAL-RUNPOD.md) and the runbook section
+     "Full evaluation after Stage B" in [A3R1-RUNPOD-RUNBOOK.md](../healthtech/research/g03-dev/A3R1-RUNPOD-RUNBOOK.md):
+     F-1 `--check-only` (exit 0 required), stage, one US pod, `g03_a3r1_runpod.sh full`, pull, receipt, delete the pod.
+   - It yields F3\* and the frozen VAL decision (CONTINUE / REVISE / PARK). **It is the fourth G03 look at VAL**; disclose
+     it.
+   - **Confirm with the owner that pods may be opened again before creating one** (owner on 24 Nov: "ยังไม่ต้องเปิด pod").
+3. **Merge D25 (policy v2.1).**
+   - Branch `worktree-agent-a6d18c2dded3f86f2`, commit 56267477.
+   - Run the full gate:
+     `python -c "import sys; sys.path.append(r'.venv/Lib/site-packages'); import pytest; sys.exit(pytest.main(['-q']))"`.
+     Only the 8 known SACR r2/r3 failures are accepted.
+   - Run `python scripts/ptp_run.py --smoke`; it must pass.
+   - Merge, then update P4-T04 in the tracker.
+4. **Finish the D19 package (WIP).**
+   - Branch `worktree-agent-aa1038afae41aaf77`, commit ffae7a99. It is not verified: run its tests and the gate, then
+     review `P2-T02-AMENDMENT-A2-D19-FOLLOWUP.md` (C1 only for PatEmbed/Qwen3).
+   - Its cost estimate must fit what remains of R2. Ask the owner before creating pods.
+5. **Then P2-T04** (screen the bounded relation-search mechanism against close matched controls). It must now beat the
+   **new** baselines: Arctic C1 and BM25-full, plus PatEmbed/Qwen3 C1 if D19 runs.
+6. **P4-T05** (clean-install and user test with the owner), **P3-T03** (Thai text transfer; packets-v1 are ready;
+   disclose the WangchanX→NitiBench 75% section exposure), and **P5** writing from real numbers only.
+7. When dr-train returns: copy the Thai data (D18), then run the deferred descriptive P2-T02 fusion and
+   deeper-control checks.
+
+## 3. Where things are
+
+| What | Where |
+|---|---|
+| P2-T02 outputs (runs, evals, gates, logs) | `../_private_artifacts/p2t02-runpod/` |
+| A3r1 pilot outputs, relays, gate | `../_private_artifacts/g03-a3r1-runpod/` |
+| A3r1 ledgers (pilot + Stage B) | `../_private_artifacts/g03-a3r1/ledger/A3r1/<model>/{P1-DEV,VAL}.jsonl` |
+| Staging trees | `../_private_artifacts/{p2t02-runpod-stage,g03-a3r1-runpod-stage}/` |
+| PatentsView sources (17 GB, verified) | `data/raw/uspto/`, hard-linked as `../_private_artifacts/pv-links/` |
+| Rebuilt LF corpus text (sha `287ef7e0…`) | `../_private_artifacts/p2t02-local-check/texts-v1/` |
+| Thai data + packets-v1 | `../_private_artifacts/thai-data/` (packets in `packets-v1/`) |
+| dr-train archives | `../_private_artifacts/dr-train-archive/{20261121,20261122-g03}/` |
+
+## 4. RunPod lessons (23–24 Nov)
+
+- **Use US data centres only.** The owner PC uploads to EU-SE-1 at about 47 KB/s, but to the US at 3–8 MB/s over 4
+  parallel tar streams.
+- **Stock:**
+  - Community pods often vanish between the stock read and the create.
+  - Secure RTX PRO 4500 (US-KS-2, USD 0.72/h, 94 GB RAM) worked once.
+  - Secure A100 (US-MD-1, USD 2.19/h) worked.
+- **Image** `runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404`. It needs:
+  - `apt-get install -y time`;
+  - `pip install --break-system-packages "transformers==4.55.2" "tokenizers==0.21.4" "numpy==2.2.6" "scikit-learn==1.7.2" scipy "huggingface_hub<1.0"`.
+- **Upload pitfalls:**
+  - Untar with `--no-same-owner`.
+  - File lists written by Windows Python are CRLF: strip `\r` (`tr -d '\r'`) before `tar -T`.
+  - Use `set -o pipefail`.
+  - Resume uploads by comparing sizes, then verify sha256.
+- **Inside a container:**
+  - `nproc` and `/proc/meminfo` show the host. Read the cgroup (`/sys/fs/cgroup/cpu.max`, `memory.max`,
+    `memory.current` minus `inactive_file`).
+  - The P2-T02 scripts already do this.
+- **Detaching jobs:**
+  - Launch with `setsid -f bash -c "... > log 2>&1 < /dev/null"`.
+  - Never `pkill -f <pattern>` that matches your own ssh command line; use the `[p]attern` form.
+- **Watchers:** use bash loops, never an agent. That keeps token use low, at the owner's request.
+- **After every run:** pull the results, delete the pod, check that `list-pods` is empty, and read the balance.
+
+## 5. Prompt to paste into the next account
+
+```text
+Continue the Patent-to-Pilot project (repo C:\Users\User\Desktop\myProject\patent-to-pilot) from another Claude account.
+Read, in order: CLAUDE.md, HANDOFF.md, docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md, the live board
+docs/tracking/owner-note-22112026/PHASE_BOARD.md, docs/maintenance/OWNER-DECISIONS-20261122.md (D1–D25),
+docs/maintenance/AGENT-LESSONS.md. Then run git status and git log -5. Report to me in plain Thai.
+
+Do the ordered task list in NEXT-ACCOUNT-HANDOFF-20261124.md §2:
+check and finish A3r1 Stage B, then (after asking me whether pods may be opened again) run the A3r1 full evaluation on one
+US RunPod pod under D24, merge the D25 policy v2.1 branch after the full gate, finish and verify the D19 package, then
+continue with P2-T04.
+
+Standing rules:
+- never open TEST data;
+- freeze before any number;
+- no spend outside the recorded envelopes (E1R for OpenRouter, R1/R2 for RunPod);
+- state each pod's hourly price before creating it, and delete pods after use;
+- commit only your own files with explicit paths;
+- update HANDOFF and the tracker at every major event;
+- never read or print .env or API keys;
+- keep token use low: bash watchers, not agents, for waiting.
+
+Ask me with a clear multiple-choice question before any decision that is mine.
+```
