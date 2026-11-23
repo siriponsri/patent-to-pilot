@@ -82,7 +82,8 @@ def text_of(core, pid, sid, vid):
 def test_search_returns_fts5_results_whose_offsets_resolve(app):
     core, url = app
     call(url, "POST", "/api/demo/bootstrap", {})
-    st, r = call(url, "POST", f"/api/projects/{PID}/search", {"query": "supported temperature range"})
+    # P4-T01a: the default is now "auto"; the legacy unicode61 route stays available as the advanced "terms" mode
+    st, r = call(url, "POST", f"/api/projects/{PID}/search", {"query": "supported temperature range", "mode": "terms"})
     assert st == 200 and r["mode"] == "terms" and r["route"].startswith("sqlite_fts5_bm25")
     assert r["fts_match"] == '"supported" OR "temperature" OR "range"'
     assert r["result_count"] >= 2 and r["paid_model_calls"] == 0 and r["remote_calls"] == 0
@@ -115,7 +116,7 @@ def test_search_candidate_filter_literal_thai_and_validation(app):
         text = text_of(core, PID, h["source_id"], h["version_id"])
         assert [text[m["start_char"]:m["end_char"]] for m in h["matches"]] and \
             all(text[m["start_char"]:m["end_char"]] == "กักเก็บ" for m in h["matches"])
-    st, th = call(url, "POST", f"/api/projects/{PID}/search", {"query": "กักเก็บ"})
+    st, th = call(url, "POST", f"/api/projects/{PID}/search", {"query": "กักเก็บ", "mode": "terms"})
     assert any("Thai" in n for n in th["notes"])                        # the tokenizer limitation is stated
     for bad, code in (({"query": ""}, "bad_query"), ({"query": "x", "mode": "regex"}, "bad_mode"),
                       ({"query": "x", "limit": 0}, "bad_limit"), ({"query": "x", "candidate_id": "NOPE"},

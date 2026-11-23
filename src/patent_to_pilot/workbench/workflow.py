@@ -24,6 +24,7 @@ from __future__ import annotations
 import json
 import re
 
+from patent_to_pilot.workbench import product_lexical as PL
 from patent_to_pilot.workbench import relation_search as R
 from patent_to_pilot.workbench import trace_slice as T
 from patent_to_pilot.workbench.core import (OFFSET_CONVENTION, Conflict, EvidenceCore, NotFound, ValidationFailed,
@@ -32,7 +33,9 @@ from patent_to_pilot.workbench.core import (OFFSET_CONVENTION, Conflict, Evidenc
 from patent_to_pilot.workbench.store import dumps, utc_now
 
 TASK_ID = "P4-T01"
-SEARCH_MODES = ("terms", "phrase", "literal")
+# P4-T01a: "auto" (default) is the product Thai-aware route (product_lexical.auto_search); "terms", "phrase" and
+# "literal" stay as advanced options on the legacy unicode61 index, unchanged.
+SEARCH_MODES = ("auto", "terms", "phrase", "literal")
 SEARCH_LIMIT_DEFAULT, SEARCH_LIMIT_MAX = 10, 50
 MAX_QUERY_CHARS = 500
 SNIPPET_CHARS = 240
@@ -216,7 +219,7 @@ class Workflow:
         query = body.get("query")
         if not isinstance(query, str) or not query.strip() or len(query) > MAX_QUERY_CHARS:
             raise ValidationFailed(f"query must be 1-{MAX_QUERY_CHARS} characters", "bad_query")
-        mode = body.get("mode") or "terms"
+        mode = body.get("mode") or "auto"
         if mode not in SEARCH_MODES:
             raise ValidationFailed(f"mode must be one of {list(SEARCH_MODES)}", "bad_mode")
         limit = body.get("limit", SEARCH_LIMIT_DEFAULT)
@@ -226,6 +229,8 @@ class Workflow:
         cand = body.get("candidate_id") or None
         if cand is not None and cand not in {c["candidate_id"] for c in proj["mission"]["candidates"]}:
             raise ValidationFailed(f"unknown candidate {cand}", "unknown_candidate")
+        if mode == "auto":
+            return PL.auto_search(self, project_id, proj, query, cand, limit)
         notes = []
         texts: dict = {}
         with self.store.read() as con:

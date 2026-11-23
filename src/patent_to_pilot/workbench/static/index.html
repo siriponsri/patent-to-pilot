@@ -67,12 +67,13 @@
     <p class="muted">Searches the current versions of this project's sources on this computer. No model or network is used. Each result is the exact stored passage; select <b>Inspect source</b> to open it in its source version.</p>
     <form id="search-form" class="search-form" role="search">
       <label for="search-q" class="visually-hidden">Search text</label>
-      <input id="search-q" type="search" required maxlength="500" autocomplete="off" placeholder="Words to find, e.g. operating temperature">
+      <input id="search-q" type="search" required maxlength="500" autocomplete="off" placeholder="Type words in Thai or English, e.g. ระบายความร้อน or operating temperature">
       <label for="search-mode" class="visually-hidden">Search mode</label>
       <select id="search-mode">
-        <option value="terms">Any of the words (ranked)</option>
-        <option value="phrase">Exact phrase</option>
-        <option value="literal">Literal text (for Thai)</option>
+        <option value="auto" selected>Automatic (Thai and English)</option>
+        <option value="terms">Advanced: any of the words, word index without Thai segmentation</option>
+        <option value="phrase">Advanced: exact phrase, word index without Thai segmentation</option>
+        <option value="literal">Advanced: literal text</option>
       </select>
       <label for="search-cand" class="visually-hidden">Candidate</label>
       <select id="search-cand"></select>
