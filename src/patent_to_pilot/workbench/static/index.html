@@ -136,8 +136,11 @@
   </section>
 
   <section id="view-providers" class="view" hidden>
-    <h2>Providers</h2>
-    <p class="muted">Chat, embedding and rerank models are configured separately. Lexical search always works without any model. A profile is used only after its connection check passes. Keys are never entered here: a profile names an environment variable of the server process.</p>
+    <h2>Providers and execution mode</h2>
+    <p class="muted">Search, Compare and Inspect always run on this computer without any model or network. Optional models come from a self-hosted endpoint (a server you run) or an API provider. A profile is used only after its connection check passes. Keys are never entered here: a profile names an environment variable of the server process.</p>
+    <h3>Execution mode</h3>
+    <div id="exec-mode"></div>
+    <h3>Profile states (G02)</h3>
     <div id="providers"></div>
     <h3>Retrieval for this project</h3>
     <div id="retrieval"></div>

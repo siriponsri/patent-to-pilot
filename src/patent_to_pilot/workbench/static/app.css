@@ -20,6 +20,11 @@ body { margin: 0; background: var(--bg); }
 .label { font-size: .8rem; border: 1px solid var(--line); border-radius: 999px; padding: .1rem .55rem; }
 .label.live { border-color: var(--meets); color: var(--meets); }
 .label.recorded { border-color: var(--rev); color: var(--rev); }
+.label.mode { border-color: var(--accent); color: var(--accent); }
+.label.mode.warn, .label.linkish { border-color: var(--rev); color: var(--rev); }
+button.label { min-height: 0; background: transparent; font: inherit; font-size: .8rem; }
+.mode-card h3 { font-size: 1.05rem; }
+ul.mono-list { margin: .3rem 0; padding-left: 1.2rem; } ul.mono-list li { word-break: break-word; }
 nav { display: flex; flex-wrap: wrap; gap: .25rem; margin-left: auto; }
 button, .tab { font: inherit; border: 1px solid var(--line); background: var(--panel); color: var(--ink);
   border-radius: 6px; padding: .4rem .8rem; cursor: pointer; min-height: 2.25rem; }
