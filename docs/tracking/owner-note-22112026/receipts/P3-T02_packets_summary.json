@@ -1,0 +1,441 @@
+{
+ "builder": "p3t02-packets-v1",
+ "builder_sha256": "f2b969b30c27dda5d3af77786ed82aad1959696f826f1ffdf3e7c0f87f3def9f",
+ "checks": {
+  "dev_max_jaccard_to_heldout_below_threshold": true,
+  "every_item_in_one_packet": true,
+  "no_dev_judgment_on_heldout_source": true,
+  "no_dev_question_equals_heldout_normalised": true,
+  "no_law_in_both_splits": true,
+  "no_source_in_both_splits": true
+ },
+ "counts": {
+  "dev": {
+   "items": 1330,
+   "items_by_source": {
+    "airesearch/WangchanX-Legal-ThaiCCL-RAG:train": 1330
+   },
+   "items_by_synthetic_label": {
+    "synthetic_question_real_source": 1330
+   },
+   "laws": 14,
+   "packet_item_counts_desc": [
+    379,
+    312,
+    205,
+    194,
+    80,
+    52,
+    42,
+    29,
+    19,
+    7,
+    6,
+    5,
+    0,
+    0
+   ],
+   "packets": 14,
+   "packets_with_items": 12,
+   "relevant_not_in_statute_corpus": 0,
+   "relevant_per_item": {
+    "1": 870,
+    "2": 259,
+    "3": 107,
+    "4": 68,
+    "5": 26
+   },
+   "sources": 734,
+   "sources_not_in_statute_corpus": 0,
+   "task_type_any_cue": {
+    "annex": 0,
+    "binding": 519,
+    "date": 81,
+    "plain": 767,
+    "table": 0
+   },
+   "task_type_combinations": {
+    "binding": 482,
+    "binding+date": 37,
+    "date": 44,
+    "plain": 767
+   },
+   "task_type_question_cue": {
+    "annex": 0,
+    "binding": 41,
+    "date": 81,
+    "table": 0
+   }
+  },
+  "dev_exclusions": {
+   "empty_question": 0,
+   "heldout_family_quarantine": 6809,
+   "heldout_variant": 0,
+   "no_positive_judgment": 72
+  },
+  "dev_hard_negatives_dropped_heldout_law": 696,
+  "dev_max_jaccard_to_heldout": 0.4565,
+  "heldout": {
+   "items": 3779,
+   "items_by_source": {
+    "VISAI-AI/nitibench:ccl": 3729,
+    "VISAI-AI/nitibench:tax": 50
+   },
+   "items_by_synthetic_label": {
+    "real": 3779
+   },
+   "laws": 22,
+   "packet_item_counts_desc": [
+    1621,
+    529,
+    295,
+    186,
+    165,
+    153,
+    110,
+    109,
+    78,
+    74,
+    73,
+    64,
+    58,
+    48,
+    40,
+    38,
+    36,
+    36,
+    33,
+    22,
+    11,
+    0
+   ],
+   "packets": 22,
+   "packets_with_items": 21,
+   "relevant_not_in_statute_corpus": 0,
+   "relevant_per_item": {
+    "1": 3748,
+    "2": 8,
+    "3": 13,
+    "4": 5,
+    "6": 2,
+    "7": 1,
+    "9": 2
+   },
+   "sources": 4393,
+   "sources_not_in_statute_corpus": 0,
+   "task_type_any_cue": {
+    "annex": 56,
+    "binding": 1634,
+    "date": 573,
+    "plain": 1825,
+    "table": 34
+   },
+   "task_type_combinations": {
+    "annex": 13,
+    "annex+binding": 10,
+    "annex+binding+date": 2,
+    "annex+binding+date+table": 1,
+    "annex+binding+table": 3,
+    "annex+date": 1,
+    "annex+table": 26,
+    "binding": 1325,
+    "binding+date": 289,
+    "binding+table": 4,
+    "date": 280,
+    "plain": 1825
+   },
+   "task_type_question_cue": {
+    "annex": 5,
+    "binding": 124,
+    "date": 573,
+    "table": 3
+   }
+  },
+  "heldout_laws": {
+   "from_reference_laws_only": 1,
+   "total": 22,
+   "unmapped_law_name_mentions": 0
+  },
+  "inputs": {
+   "gazette_queries_audit_only": 2000,
+   "nitibench_heldout_records": 3779,
+   "wangchanx_train_records": 8211
+  }
+ },
+ "declared": {
+  "audit_only": [
+   "Thai Gazette queries (question text)"
+  ],
+  "dev_source": "WangchanX-Legal-ThaiCCL-RAG train",
+  "family_unit": "one law_code per family; item -> rank-1 gold law; DEV variants merged into one family",
+  "heldout_law_fields": [
+   "relevant_laws",
+   "reference_laws"
+  ],
+  "heldout_sources": [
+   "NitiBench ccl",
+   "NitiBench tax"
+  ],
+  "report_thresholds": [
+   0.5,
+   0.7,
+   0.8,
+   0.9
+  ],
+  "shingle_k": 5,
+  "variant_jaccard": 0.8
+ },
+ "inputs": {
+  "gazette_queries": {
+   "file": "queries/queries-00000-of-00001.parquet",
+   "license": "CC-BY-4.0",
+   "repo": "VISAI-AI/thai-gazette-evidence-retrieval",
+   "revision": "87e695ee4951ff34932804431433ac55991ec374",
+   "role": "HELD_OUT",
+   "sha256": "2763d38bc51bea49d845fd3e2a21fd07916fb7cb81bffb0e846c85d6420ab48c"
+  },
+  "niti_ccl": {
+   "file": "data/ccl-00000-of-00001.parquet",
+   "license": "MIT",
+   "repo": "VISAI-AI/nitibench",
+   "revision": "9f75697075e0f5691e3b821037b908c05f1821a7",
+   "role": "HELD_OUT",
+   "sha256": "d9b8bdf1aaeb0e3db9e4ffa26c7b832690a65983aa7a487ce0e946e0af2bc67a"
+  },
+  "niti_ccl_copy": {
+   "file": "data/nitibench-ccl.parquet",
+   "license": "MIT",
+   "repo": "VISAI-AI/nitibench",
+   "revision": "9f75697075e0f5691e3b821037b908c05f1821a7",
+   "role": "HELD_OUT",
+   "sha256": "ac28f0b16cc3ba2234b9b7aebbf69c12f461751102439b8db335b7eb73da51f2"
+  },
+  "niti_tax": {
+   "file": "data/tax-00000-of-00001.parquet",
+   "license": "MIT",
+   "repo": "VISAI-AI/nitibench",
+   "revision": "9f75697075e0f5691e3b821037b908c05f1821a7",
+   "role": "HELD_OUT",
+   "sha256": "0a6c9d39a92eaee6d1710e1ab7a537b18d214b6197ace3462c4facdc0895440b"
+  },
+  "statute": {
+   "file": "data/ccl-00000-of-00001.parquet",
+   "license": "MIT",
+   "repo": "VISAI-AI/nitibench-statute",
+   "revision": "069e774f015a50e801dbe2055a29be580c54a83c",
+   "role": "CORPUS",
+   "sha256": "f171a25878ad34f8082a9ddd9f7ec2396f0601a145f147f02ab5c444f90f9c9b"
+  },
+  "wangchanx": {
+   "file": "data/train-00000-of-00001.parquet",
+   "license": "MIT",
+   "repo": "airesearch/WangchanX-Legal-ThaiCCL-RAG",
+   "revision": "654e1a10afc44ecaee36fd739bc90078dcc62388",
+   "role": "DEV_TRAIN",
+   "sha256": "c87708fb9a040fd03117c470b81fff3769b79c7f05ba25cc04f54e0866895658"
+  }
+ },
+ "outputs_sha256": {
+  "MANIFEST.json": "cb00f98c59696cf8b8d8cf6f701e76eb907fddc380258888ffb302ac8dd60889",
+  "dev/judgments.jsonl": "877e3b464bbf93b04fd9d563137cb77f14b7f355bdb7f3365c298b4423ff0dd6",
+  "dev/packets.jsonl": "7adea502e8d1d24724498438b35475fdb3df3d8fb9b6a4628248c9c3049ddce1",
+  "dev/requests.jsonl": "86a1f2573ead59820b04d0b593f63aab9b095796424f01a68e1c6131c0a6fdb4",
+  "dev/sources.jsonl": "d5505a194b2d1cb37a457ec62bb9bbe6b6f7d9da7a88fe41fbf6539fb67e97b9",
+  "excluded.jsonl": "dac9bf1947a72ef25013381ae9173caeb92e32d59021a3a4960756c824c86550",
+  "heldout/judgments.SEALED.jsonl": "06c0760a9f1b5bdcd142a42ab526da8a9756b377a61796b43078327a33cece5e",
+  "heldout/packets.jsonl": "41f06973af233593d648b4f88dd82ec90214d73585cdd057397bcc7160c3cd57",
+  "heldout/requests.jsonl": "d706a44dfdc15b2ee68262c6bc3713e71ad2fa49659107015ca7fae8742fb7cd",
+  "heldout/sources.jsonl": "1a6cde42029eefc7287116e1973d6faa7702c4b06a7edf885e56d2c25f19c573",
+  "overlap_audit.json": "7e5a3f8bebbc7b400cce384c965d57fd7134404ce94834ae8b534062d209bcac"
+ },
+ "overlap_audit": {
+  "dev_after_split": {
+   "dev_internal_variant_pairs_0.8": 2,
+   "max_jaccard_to_any_heldout_question": 0.4565,
+   "n_dev": 1330
+  },
+  "family_components": {
+   "dev": {
+    "components": 4,
+    "items_per_component_desc": [
+     1305,
+     19,
+     6
+    ]
+   },
+   "heldout": {
+    "components": 19,
+    "items_per_component_desc": [
+     2483,
+     186,
+     165,
+     153,
+     110,
+     109,
+     78,
+     74,
+     73,
+     64,
+     58,
+     48,
+     40,
+     36,
+     36,
+     33,
+     22,
+     11
+    ]
+   },
+   "note": "items per connected component of laws linked by one item's gold; packets use one law per family"
+  },
+  "nitibench_ccl_config_vs_noncfg_copy": {
+   "n_config": 3729,
+   "n_copy": 3729,
+   "normalised_multiset_equal": true,
+   "positional_raw_differences": 7,
+   "raw_multiset_equal": false
+  },
+  "wangchanx_train_internal": {
+   "n": 8211,
+   "near_dup_pairs_0.8": 24,
+   "normalised_duplicate_groups": 8,
+   "records_in_near_dup_pairs_0.8": 45,
+   "records_in_normalised_duplicate_groups": 17
+  },
+  "wangchanx_train_vs_gazette_queries": {
+   "b_max_jaccard": {
+    "max": 0.3958,
+    "p50": 0.1084,
+    "p90": 0.1676,
+    "p99": 0.241
+   },
+   "exact": {
+    "a_in_b": 0,
+    "b_in_a": 0
+   },
+   "n_a": 8211,
+   "n_b": 2000,
+   "near_dup": {
+    "0.5": {
+     "a_with_match": 0,
+     "b_with_match": 0
+    },
+    "0.7": {
+     "a_with_match": 0,
+     "b_with_match": 0
+    },
+    "0.8": {
+     "a_with_match": 0,
+     "b_with_match": 0
+    },
+    "0.9": {
+     "a_with_match": 0,
+     "b_with_match": 0
+    }
+   },
+   "normalised": {
+    "a_in_b": 0,
+    "b_in_a": 0
+   },
+   "sources": "not comparable: Gazette evidence is notice ids, not statute sections; qrels not read"
+  },
+  "wangchanx_train_vs_nitibench_ccl": {
+   "b_max_jaccard": {
+    "max": 1.0,
+    "p50": 0.2186,
+    "p90": 0.4174,
+    "p99": 0.7639
+   },
+   "exact": {
+    "a_in_b": 4,
+    "b_in_a": 4
+   },
+   "n_a": 8211,
+   "n_b": 3729,
+   "near_dup": {
+    "0.5": {
+     "a_with_match": 196,
+     "b_with_match": 192
+    },
+    "0.7": {
+     "a_with_match": 58,
+     "b_with_match": 57
+    },
+    "0.8": {
+     "a_with_match": 31,
+     "b_with_match": 30
+    },
+    "0.9": {
+     "a_with_match": 13,
+     "b_with_match": 13
+    }
+   },
+   "normalised": {
+    "a_in_b": 7,
+    "b_in_a": 7
+   },
+   "sources": {
+    "a_records_any_positive_in_b_gold": 5934,
+    "b_items_all_gold_sections_in_a": 2806,
+    "b_items_any_gold_section_in_a": 2806,
+    "b_items_near_dup_0.8_with_shared_gold_section": 22,
+    "laws_a": 35,
+    "laws_b": 21,
+    "laws_shared": 21,
+    "sections_a": 3648,
+    "sections_b": 3582,
+    "sections_shared": 2659
+   }
+  },
+  "wangchanx_train_vs_nitibench_tax": {
+   "b_max_jaccard": {
+    "max": 0.3264,
+    "p50": 0.072,
+    "p90": 0.1191,
+    "p99": 0.2735
+   },
+   "exact": {
+    "a_in_b": 0,
+    "b_in_a": 0
+   },
+   "n_a": 8211,
+   "n_b": 50,
+   "near_dup": {
+    "0.5": {
+     "a_with_match": 0,
+     "b_with_match": 0
+    },
+    "0.7": {
+     "a_with_match": 0,
+     "b_with_match": 0
+    },
+    "0.8": {
+     "a_with_match": 0,
+     "b_with_match": 0
+    },
+    "0.9": {
+     "a_with_match": 0,
+     "b_with_match": 0
+    }
+   },
+   "normalised": {
+    "a_in_b": 0,
+    "b_in_a": 0
+   },
+   "sources": {
+    "a_records_any_positive_in_b_gold": 151,
+    "b_items_all_gold_sections_in_a": 47,
+    "b_items_any_gold_section_in_a": 50,
+    "b_items_near_dup_0.8_with_shared_gold_section": 0,
+    "laws_a": 35,
+    "laws_b": 4,
+    "laws_shared": 4,
+    "sections_a": 3648,
+    "sections_b": 59,
+    "sections_shared": 56
+   }
+  }
+ },
+ "pythainlp": "5.4.0",
+ "task": "P3-T02"
+}
