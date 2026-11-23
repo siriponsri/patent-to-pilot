@@ -55,4 +55,8 @@ Still open:
 | # | Decision | Effect |
 |---|---|---|
 | D15 | **Use PyThaiNLP** for Thai search (the owner proposed it) | `pythainlp 5.4.0` (Apache-2.0) installed into `.venv`, declared as the optional extra `thai`. The plan's three Workbench repairs are being implemented: Thai search, Remove/Undo, then structural acquisition before assessment. The Hugging Face collection "datasets for pretrained Thai LLM" is **not downloaded**: it is pretraining data, not needed for search, and would need a per-item approval |
+| D16 | **A3r1 Stage B runs automatically on a pilot GO** (frozen rule), within E1R | No further question after the pilot. On STOP, nothing more is spent. If OpenRouter credit runs short, the ledger pauses and the owner tops up |
+| D17 | **Merge and push worktree work automatically** when the full suite passes (only the 8 known SACR failures) and smoke is 15/15 | Applies to the Thai-search and Remove/Undo branches and similar verified product work |
+| D18 | **Thai downloads approved:** Thai Gazette evidence retrieval (CC BY 4.0), NitiBench + nitibench-statute (MIT), WangchanX-Legal-ThaiCCL-RAG train split (MIT) | Copies are kept **locally** (`../_private_artifacts/thai-data/`) **and on dr-train** for GPU work. Never committed, never product-bundled. Pin revisions per the P3-T01 contract. Test splits stay held out; NitiBench+ (gated) is not covered |
+| D19 | **P2-T02 follow-up GPU runs approved:** if Arctic shows a coverage effect, build the same complete-content index for PatEmbed and Qwen3 on the V100 | A declared amendment is written before running. One job at a time under the GPU lock, at no cost |
 
