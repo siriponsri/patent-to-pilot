@@ -11,7 +11,7 @@ Phase status: **IN_PROGRESS**
 | P1-T01 | Resolve paid execution prerequisites and exact scope | ✅ COMPLETE | ENGINEERING_VERIFIED | P1-T02 |
 | P1-T02 | Calibrate the complete output contract on TRAIN only | ✅ COMPLETE | ENGINEERING_VERIFIED | P1-T03 |
 | P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ✅ COMPLETE | ENGINEERING_VERIFIED | P1-T04 |
-| P1-T04 | Execute the declared four-model DEV pilot and spending decision | 🔄 IN_PROGRESS | NOT_RUN | P1-T05 on GO; P1-T06 on STOP |
+| P1-T04 | Execute the declared four-model DEV pilot and spending decision | ⛔ BLOCKED | NOT_RUN | P1-T05 on GO; P1-T06 on STOP |
 | P1-T05 | Run one selected Stage B only after GO | ⏳ NOT_STARTED | NOT_RUN | P1-T06 |
 | P1-T06 | Close A3 evidence and hand off the constructive ladder | ⏳ NOT_STARTED | NOT_RUN | P2-T02; P2-T04; P5-T02 when evidence exists |
 
@@ -52,10 +52,10 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P1-T03
 - **Acceptance evidence:** Run the same declared 2,000 DEV queries per eligible planned model; report all attempts/populations and paired results; apply frozen GO without adding a later IN/OUT rule.
-- **Evidence:** pending
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md
 - **Check:** NOT_CHECKED
 - **Next:** P1-T05 on GO; P1-T06 on STOP
-- **Blocker:** —
+- **Blocker:** dr-train unreachable: pilot routes/evaluation/decision pending (generation complete, USD 0.785 committed)
 - **Notes:** [2026-11-23] pilot generation started 23 Nov (4 models x 2,000 P1-DEV, E1R ledger)
 
 ## P1-T05 — Run one selected Stage B only after GO
