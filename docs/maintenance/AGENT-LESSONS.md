@@ -89,3 +89,20 @@ The owner switches Claude accounts when usage runs out. Read [CLAUDE.md](../../C
 - Credentials are environment-variable names only. A paid route needs `spend_cap_usd` > 0 and `max_requests` > 0.
   Unknown cost is "unknown", never 0.
 - Evaluator fields (qrels, gold spans, verdicts) never reach runtime records (`workbench/datasets/`).
+
+## Incident, 22–23 Nov 2026: our P2-T02 build exhausted dr-train memory
+
+- The first full P2-T02 content build forked 32 tokenizer workers from a parent holding about 13 GB of claims data.
+- Python's garbage collector touched the shared pages, so every worker gradually copied the parent memory.
+- The host reached 125 GB used and 0 available, and became unreachable for SSH from about 07:00 Bangkok on 23 Nov.
+- dr-train is shared, so other users' services were probably affected.
+- The 2,000-unit smoke run could not reveal this.
+
+**Rules from now on:**
+- Never fork many workers from a large parent. Send each worker its own chunk, call `gc.freeze()` before forking, and
+  recycle workers.
+- Run a memory watchdog that aborts below a free-memory floor (P2-T02 uses 24 GiB).
+- Never overlap large CPU stages on dr-train.
+- Estimate peak memory at full scale (workers × per-worker RSS) before launch, not only from a small smoke run.
+- Watch the first minutes of a full launch.
+

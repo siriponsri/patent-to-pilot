@@ -9,7 +9,7 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
 | P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) |
-| P2-T02 | Establish complete-content and stronger simple controls | 🔄 IN_PROGRESS | NOT_RUN | P2-T04 |
+| P2-T02 | Establish complete-content and stronger simple controls | ⛔ BLOCKED | NOT_RUN | P2-T04 |
 | P2-T03 | Implement one bounded source-relation search action | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T04 (after P2-T02 controls); P4-T03 |
 | P2-T04 | Screen the bounded mechanism against close matched controls | ⏳ NOT_STARTED | NOT_RUN | P2-T05 if viable |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | P2-T06 |
@@ -32,11 +32,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P2-T01; P0-T05
 - **Acceptance evidence:** Compare equal-content flat/structural units and deeper original-query retrieval under shared masks/budgets; record actual results and resource costs.
-- **Evidence:** pending
+- **Evidence:** docs/healthtech/research/p2-coverage/P2-T02-RUN-NOTES.md
 - **Check:** NOT_CHECKED
 - **Next:** P2-T04
-- **Blocker:** —
-- **Notes:** [2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next
+- **Blocker:** First full launch OOM'd dr-train (125 GB used; our 32 forked tokenizer workers); host unreachable since ~07:00. Fix is local (workers get own chunks, gc.freeze, 16 workers, 24 GiB watchdog, serialized CPU stages). On recovery: kill our PIDs 1536690/1546555 + workers first; relaunch only after owner OK
+- **Notes:** [2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers
 
 ## P2-T03 — Implement one bounded source-relation search action
 

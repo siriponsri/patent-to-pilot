@@ -764,7 +764,7 @@
    "task_id": "P2-T02",
    "phase_id": "P2",
    "title": "Establish complete-content and stronger simple controls",
-   "status": "IN_PROGRESS",
+   "status": "BLOCKED",
    "outcome": "NOT_RUN",
    "depends_on": [
     "P2-T01",
@@ -777,7 +777,7 @@
     "docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md"
    ],
    "acceptance_evidence": "Compare equal-content flat/structural units and deeper original-query retrieval under shared masks/budgets; record actual results and resource costs.",
-   "evidence_uri": "",
+   "evidence_uri": "docs/healthtech/research/p2-coverage/P2-T02-RUN-NOTES.md",
    "check_result": "NOT_CHECKED",
    "next_task": "P2-T04",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
@@ -791,10 +791,10 @@
    "affine_item_id": "",
    "affine_item_url": "",
    "affine_sync_status": "NOT_SYNCED",
-   "blocker": "",
+   "blocker": "First full launch OOM'd dr-train (125 GB used; our 32 forked tokenizer workers); host unreachable since ~07:00. Fix is local (workers get own chunks, gc.freeze, 16 workers, 24 GiB watchdog, serialized CPU stages). On recovery: kill our PIDs 1536690/1546555 + workers first; relaunch only after owner OK",
    "budget_remaining_usd": null,
-   "owner_decision_pending": "",
-   "notes": "[2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next"
+   "owner_decision_pending": "Confirm relaunch of the fixed P2-T02 job after dr-train recovers (and inform other dr-train users if needed)",
+   "notes": "[2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers"
   },
   {
    "task_id": "P2-T03",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-23T16:29:58+07:00"
+ "live_updated_at": "2026-11-23T16:32:20+07:00"
 }
