@@ -60,12 +60,22 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 - Typhoon is settled at USD 0 (D12).
 - RunPod: no envelope.
 
-### Running jobs
+### Running jobs and incident (23 Nov, late morning)
 
-- A3r1 pilot generation (local, background).
-- P2-T02 agent work (possibly a dr-train GPU job under the lock).
-- P4-T01 agent.
-- AFFiNE Docker stack (`ptp-affine-tracker`), tracker only.
+- **INCIDENT: dr-train unreachable since about 07:00 Bangkok.** Our first full P2-T02 content build forked 32 tokenizer
+  workers that copied a 13 GB parent, and the host reached 125 GB used and 0 available. Other users' services were
+  probably affected.
+  - Last seen alive: our PIDs 1536690 (queue) and 1546555 (build) and about 35 workers.
+  - **On recovery, kill our processes first.** Then relaunch the memory-safe fix (commit 92465abd,
+    `docs/healthtech/research/p2-coverage/P2-T02-RUN-NOTES.md` §4) **only after the owner says OK**.
+- **A3r1 pilot generation is complete** (7,999/8,000 usable; E1R committed USD 0.785). Route building, evaluation and
+  the GO/STOP decision wait for dr-train ([receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md)).
+  Stage B is automatic on GO (D16).
+- **Thai data** is downloaded and verified locally (`../_private_artifacts/thai-data/`); copying it to dr-train is
+  pending.
+- The structural-acquisition agent (plan §5) is working locally.
+- AFFiNE Docker stack: tracker only.
+- A local watcher fires when dr-train answers SSH again.
 
 ### Owner decisions
 
