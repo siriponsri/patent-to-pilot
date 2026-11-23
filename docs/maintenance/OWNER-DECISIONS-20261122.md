@@ -86,3 +86,10 @@ baseline runs (`runs/z-arctic` passages and P1-DEV run, `runs/bm25` P1-DEV run),
 |---|---|---|
 | D22 | **RunPod envelope R2: USD 60** for parallel pods, on top of R1 (USD 20, P2-T02). Notify at USD 45 | Scope: (a) the A3r1 pilot evaluation on RunPod; (b) the D19 complete-content follow-ups (PatEmbed, Qwen3) if P2-T02 shows a coverage effect; (c) Thai GPU work for P3-T03; (d) the D21 network volume. Several pods may run at once. Each pod's hourly price is stated before creation, and each pod is deleted after use. Spend is recorded per pod in its receipt |
 | D23 | **The A3r1 pilot evaluation runs on RunPod now**, not on dr-train | Its dr-train-only inputs (Qwen3 / PatEmbed / BM25 C0 runs, PatEmbed vectors, serialised texts, G03 v0 evaluations) are rebuilt on pods under a declared amendment, with a rebuild gate against the archived records **before** the frozen GO/STOP rule is applied. The PatEmbed and Qwen3 weights are the previously approved items at their recorded revisions. Stage B still runs automatically on GO (D16), within E1R |
+
+## Decisions of 24 Nov 2026, early morning (owner in chat, one consolidated question)
+
+| # | Decision | Effect |
+|---|---|---|
+| D24 | **R2 scope extended to the A3r1 full evaluation** after Stage B (complete P1-DEV arms, F3\* selection, VAL principal under the frozen continue/revise/park rule) | One pod under [A3R1-FULL-EVAL-RUNPOD.md](../healthtech/research/g03-dev/A3R1-FULL-EVAL-RUNPOD.md), launched when the Stage B ledgers are complete. Estimate USD 4–5.5 on an RTX PRO 4500, or USD 9–12 on an A100 |
+| D25 | **P4-T04 defect D2: fix it as structural-acquisition policy v2.1.** All seed searches run first, and anchors come from current seed hits, so results no longer depend on run order or store history | A new policy version (`ptp-structural-acquisition/2.1.0`), with tests proving order independence. The P4-T04 harness is re-run to confirm the d1 scenario now matches |
