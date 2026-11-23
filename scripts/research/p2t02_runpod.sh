@@ -15,8 +15,10 @@ T=$D/splits/private/tasks.tsv
 M=$D/models/arctic-embed-m-v2.0
 NPROC=$(nproc)
 # a container sees the host cores; use the cgroup CPU quota when there is one (amendment A1)
-Q=$(cat /sys/fs/cgroup/cpu/cpu.cfs_quota_us 2>/dev/null || echo -1); PER=$(cat /sys/fs/cgroup/cpu/cpu.cfs_period_us 2>/dev/null || echo 100000)
-if [ "$Q" -gt 0 ] 2>/dev/null; then NPROC=$(( (Q + PER - 1) / PER )); fi
+if [ -r /sys/fs/cgroup/cpu.max ]; then read -r Q PER < /sys/fs/cgroup/cpu.max            # cgroup v2: "<quota|max> <period>"
+else Q=$(cat /sys/fs/cgroup/cpu/cpu.cfs_quota_us 2>/dev/null || echo -1); PER=$(cat /sys/fs/cgroup/cpu/cpu.cfs_period_us 2>/dev/null || echo 100000); fi
+if [ "$Q" != max ] && [ "$Q" -gt 0 ] 2>/dev/null; then NPROC=$(( (Q + PER - 1) / PER )); fi
+echo "cpu quota -> NPROC=$NPROC"
 export TOKENIZERS_PARALLELISM=false PYTHONNOUSERSITE=1
 stamp() { echo "$1 $(date -Is)"; }
 fail() { echo "P2T02_RUNPOD_FAILED:$1 $(date -Is)"; exit 1; }
