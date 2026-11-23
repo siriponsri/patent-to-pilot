@@ -84,3 +84,11 @@ tolerances, not a bit-identical copy of the V100 run.
   built, nothing was encoded, and **no P2-T02 number exists**. `list-pods` is empty.
 - The amendment stays declared but unused. Practical routes: run on dr-train once it is reset (all inputs are there), or
   copy from dr-train to a pod (server bandwidth), or upload from a faster network.
+
+**Local check of gate A (same day, owner PC, CPU only, USD 0).** `build_bridgeret_texts.py` was run on the local
+PatentsView copy (54 claims files) with the P1-DEV-only manifest (single process, 86 min). Its corpus counts equal the
+archived report (no-claims 3, claim-1 fallback 81, no abstract 515, 1,000,000 units). The raw sha256 differed only
+because Python on Windows writes CRLF line ends. After converting CRLF to LF, `corpus.jsonl` has sha256 `287ef7e0…7a86`,
+**byte-identical to the dr-train text**. So the local PatentsView copy reproduces the original C0 corpus text exactly
+(gate A holds), and a Linux host writes LF natively. The LF copy is kept at
+`../_private_artifacts/p2t02-local-check/texts-v1/corpus.jsonl`.
