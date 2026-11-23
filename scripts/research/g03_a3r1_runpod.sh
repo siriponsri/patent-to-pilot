@@ -10,11 +10,17 @@
 #   assemble  (after patembed, with the Qwen3 relay and the BM25/ser-arctic copy in place) evaluate BM25 | rebuild v0 F*
 #             and the pilot population | FULL rebuild gate | then the frozen g03_queue_a3r1_pilot.sh (K routes,
 #             arms, evaluation, frozen GO/STOP decision) | pack results
-# P1-DEV only; no TEST block, sealed file or frozen manifest exists on the pod, and the preflight refuses to run if one does.
+#   full      (A3r1 full evaluation after Stage B, one pod; addendum A3R1-FULL-EVAL-RUNPOD.md; P1-DEV and VAL; own upload
+#             tree from g03_a3r1_full_inputs.py) gate part ledger (Stage B complete) | L route P1-DEV (rebuilt, or copied
+#             with the P2-T02 sha256) | evaluate L/Q/P on both blocks | v0 F* of both blocks | gate part cpu |
+#             PatEmbed vectors re-encoded (GPU) | gate part enc | the frozen g03_queue_a3r1_full.sh (H and K of m*, arms
+#             on both blocks, evaluation, g03_a3_decide.py full: F3*, VAL principal, CONTINUE/REVISE/PARK) | pack results
+# Pilot roles: P1-DEV only. Role full: P1-DEV and VAL only. No TEST block, sealed file or frozen manifest exists on the pod,
+# and the preflight refuses to run if one does.
 # Ends with G03_A3R1_RUNPOD_<ROLE>_DONE or G03_A3R1_RUNPOD_FAILED:<stage>. Resumable.
 # Launch: setsid nohup bash /data/ptp-paper2/g03-dev/code/g03_a3r1_runpod.sh <role> > /data/ptp-paper2/a3r1-<role>.log 2>&1 < /dev/null &
 set -uo pipefail
-ROLE=${1:?usage: g03_a3r1_runpod.sh qwen3|patembed|assemble|all}
+ROLE=${1:?usage: g03_a3r1_runpod.sh qwen3|patembed|assemble|all|full}
 D=/data/ptp-paper2
 BR=$D/bridgeret
 G=$D/g03-dev
@@ -53,13 +59,23 @@ python3 -c 'import torch, transformers, tokenizers, numpy; print("versions", tor
 python3 -c 'import sklearn, scipy; print("versions-cpu", sklearn.__version__, scipy.__version__)' | tee -a "$D/a3r1-versions-$ROLE.txt"
 if [ "${A3R1_ALLOW_VERSIONS:-0}" != 1 ]; then
   grep -q '^versions 2\.8\.0[+ ].* 4\.55\.2 0\.21\.4 2\.2\.6$' "$D/a3r1-versions-$ROLE.txt" || fail "preflight-library-pins (torch 2.8.0, transformers 4.55.2, tokenizers 0.21.4, numpy 2.2.6)"
+  # role full: BM25-C0 and route K use CountVectorizer; pin the versions the pilot assembly and P2-T02 used
+  if [ "$ROLE" = full ]; then
+    grep -q '^versions-cpu 1\.7\.2 1\.18\.1$' "$D/a3r1-versions-$ROLE.txt" || fail "preflight-library-pins-cpu (scikit-learn 1.7.2, scipy 1.18.1)"
+  fi
 fi
-[ "$(awk -F'\t' 'NR>1 && $2!="P1-DEV"' "$T" | wc -l)" = 0 ] || fail preflight-tasks-not-P1DEV-only
-[ "$(awk -F'\t' 'NR>1 && $2!="P1-DEV"' "$C/pairs-dev.tsv" | wc -l)" = 0 ] || fail preflight-pairs-not-P1DEV-only
+if [ "$ROLE" = full ]; then   # addendum A3R1-FULL-EVAL-RUNPOD.md: P1-DEV and VAL rows only, its own upload manifest
+  BLK_RE='^(P1-DEV|VAL)$'; BLK_NAME=P1DEV-VAL; MANIFEST=$D/MANIFEST-a3r1-full.sha256; MAN_OPT=""
+else
+  BLK_RE='^P1-DEV$'; BLK_NAME=P1DEV; MANIFEST=$D/MANIFEST-a3r1.sha256; MAN_OPT="--ignore-missing"
+fi
+[ "$(awk -F'\t' -v ok="$BLK_RE" 'NR>1 && $2 !~ ok' "$T" | wc -l)" = 0 ] || fail "preflight-tasks-not-$BLK_NAME-only"
+[ "$(awk -F'\t' -v ok="$BLK_RE" 'NR>1 && $2 !~ ok' "$C/pairs-dev.tsv" | wc -l)" = 0 ] || fail "preflight-pairs-not-$BLK_NAME-only"
 [ -z "$(find "$D/splits" "$C" "$BR" "$G" -path '*TEST*' 2>/dev/null | head -1)" ] || fail preflight-TEST-path-present
 [ ! -e "$D/manifest-v1/out-v2/manifest-frozen.json" ] || fail preflight-frozen-manifest-present
 ! grep -qE '"block": ?"P[0-9]-TEST"' "$BR/texts-v1/queries.jsonl" || fail preflight-TEST-query-present
-( cd / && sha256sum -c --quiet --ignore-missing "$D/MANIFEST-a3r1.sha256" ) || fail preflight-upload-sha256
+[ -s "$MANIFEST" ] || fail "preflight-no-upload-manifest ($MANIFEST)"
+( cd / && sha256sum -c --quiet $MAN_OPT "$MANIFEST" ) || fail preflight-upload-sha256
 mkdir -p "$JOBS/models" "$BR/logs" "$BR/evals-a3r1" "$BR/runs" "$D/out"   # $JOBS/models holds the GPU lock file of the archived scripts
 GPU_NAME=$(nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | head -1)
 GPU_MIB=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits 2>/dev/null | head -1)
@@ -78,6 +94,19 @@ gate() {   # $1 part
   python3 -I "$GC/g03_a3r1_runpod_gate.py" "$1" "$ARCH" "$BR" "$G" "$BR/logs/gate-$1.json" > "$BR/logs/gate-$1.log" 2>&1 \
     || { tail -3 "$BR/logs/gate-$1.log"; fail "rebuild-gate-$1"; }
   stamp "GATE_${1}_PASSED"
+}
+ev_blk() {   # role full, unchanged evaluator: $1 run file (.tsv or .tsv.gz), $2 block (P1-DEV or VAL), $3 output json
+  [ -s "$3" ] && return 0
+  case "$2" in P1-DEV|VAL) ;; *) fail "ev-block-refused-$2" ;; esac
+  case "$1" in
+    *.gz) python3 -I "$EV" <(zcat "$1") "$C/pairs-dev.tsv" "$C/corpus-units.tsv" "$T" "$2" "$3" > "${3%.json}.log" 2>&1 ;;
+    *) python3 -I "$EV" "$1" "$C/pairs-dev.tsv" "$C/corpus-units.tsv" "$T" "$2" "$3" > "${3%.json}.log" 2>&1 ;;
+  esac
+}
+gate_full() {   # role full: $1 part (ledger | cpu | enc) of g03_a3r1_full_gate.py
+  python3 -I "$GC/g03_a3r1_full_gate.py" "$1" "$ARCH" "$BR" "$G" "$BR/logs/gate-full-$1.json" > "$BR/logs/gate-full-$1.log" 2>&1 \
+    || { tail -3 "$BR/logs/gate-full-$1.log"; fail "rebuild-gate-full-$1"; }
+  stamp "GATE_FULL_${1}_PASSED"
 }
 # early gate A (byte-identical corpus text) before any GPU time
 python3 -I -c "
@@ -202,11 +231,99 @@ role_assemble() {
   stamp G03_A3R1_RUNPOD_ASSEMBLE_DONE
 }
 
+role_full() {   # addendum A3R1-FULL-EVAL-RUNPOD.md; one pod; P1-DEV and VAL only
+  need_gpu full
+  local FE=$BR/evals-a3r1-full b n F3 PACK p
+  mkdir -p "$FE"
+  # F0 the Stage B ledgers of m* are complete and clean (A3r1 §5 terminal statuses), before any compute
+  gate_full ledger
+  cd "$BR" || fail cd
+  # F1 L route on P1-DEV and the K-route index ser-arctic-v1: rebuilt here with the archived commands (default), or copied
+  # from a kept P2-T02 copy and checked against its recorded sha256 (A3R1_COPIED_BM25=1). Gate K0 checks the passages.
+  if [ "${A3R1_COPIED_BM25:-0}" = 1 ]; then
+    ( cd / && sha256sum -c --quiet "$ARCH/p2t02-copy.sha256" ) || fail bm25-copy-sha256
+  elif [ ! -s runs/bm25/run-P1-DEV.tsv.gz ]; then
+    python3 -I "$GC/g03_a3r1_runpod_models.py" arctic "$MA" > logs/models-arctic.json 2>&1 || fail models-arctic-pins
+    if [ ! -f logs/ser-arctic.done ]; then
+      rm -rf ser-arctic-v1
+      /usr/bin/time -v -o logs/ser.time python3 code/serialise_bridgeret_texts.py texts-v1 "$MA" 'query: ' ser-arctic-v1 "$SW" \
+        > logs/ser.log 2>&1 && touch logs/ser-arctic.done || fail ser-arctic
+    fi
+    CUDA_VISIBLE_DEVICES= /usr/bin/time -v -o logs/bm25.time python3 code/bm25_bridgeret.py ser-arctic-v1 "$C/corpus-units.tsv" "$T" \
+      runs/bm25 P1-DEV > logs/bm25.log 2>&1 && gzip -f runs/bm25/run-P1-DEV.tsv || fail bm25-c0
+  fi
+  [ -s ser-arctic-v1/passages.jsonl ] && [ -s runs/bm25/run-P1-DEV.tsv.gz ] || fail missing-bm25-or-ser-arctic
+  stamp F1_L_ROUTE_READY
+  # F2 evaluate the L, Q, P runs of both blocks (P1-DEV: rebuilt here / pilot relays; VAL: the archived dr-train runs)
+  for n in bm25 z-qwen3 z-patembed; do
+    for b in P1-DEV VAL; do ev_blk "runs/$n/run-$b.tsv.gz" "$b" "$FE/$n-$b.json" || fail "eval-$n-$b"; done
+  done
+  stamp F2_ROUTE_EVALS_DONE
+  # F3 v0 F* of both blocks from the same runs (the integrity reference of the frozen decision), F* populations
+  cd "$G" || fail cd
+  for b in P1-DEV VAL; do
+    [ -s "runs/$b/alloc-L0-Q2-P2-A0.tsv" ] || python3 -I "$GC/g03_a3r1_runpod_v0.py" "$GC" "$BR/runs" runs "$b" \
+      >> logs-a3r1-full-v0.log 2>&1 || fail "v0-fstar-$b"
+    mkdir -p "evals/$b"
+    [ -s "evals/$b/alloc-L0-Q2-P2-A0.json" ] || python3 -I "$EV" "runs/$b/alloc-L0-Q2-P2-A0.tsv" "$C/pairs-dev.tsv" \
+      "$C/corpus-units.tsv" "$T" "$b" "evals/$b/alloc-L0-Q2-P2-A0.json" > "evals/$b/alloc-L0-Q2-P2-A0.log" 2>&1 || fail "eval-v0-fstar-$b"
+  done
+  python3 -I code/g03_a3_routes.py apps runs/P1-DEV/alloc-L0-Q2-P2-A0.tsv a3/apps-P1-DEV.regen.json || fail regen-apps
+  python3 -I code/g03_a3_routes.py sample runs/P1-DEV/alloc-L0-Q2-P2-A0.tsv a3/apps-pilot.regen.json 2000 || fail regen-pilot
+  stamp F3_V0_FSTAR_DONE
+  gate_full cpu
+  # F4 PatEmbed corpus vectors for route H: the archived C0 command, both blocks, into runs/z-patembed-reenc (route P
+  # itself stays the gated pilot run on P1-DEV and the dr-train run on VAL)
+  cd "$BR" || fail cd
+  python3 -I "$GC/g03_a3r1_runpod_models.py" patembed "$PE" > logs/models-patembed.json 2>&1 || fail models-patembed-pins
+  if [ ! -f logs/serp.done ]; then
+    rm -rf ser-patembed-v1
+    /usr/bin/time -v -o logs/serp.time python3 code/serialise_bridgeret_texts_v2.py texts-v1 "$PE" "$QP" ser-patembed-v1 "$SW" "$DP" \
+      > logs/serp.log 2>&1 && touch logs/serp.done || fail ser-patembed
+  fi
+  stamp F4_SER_PATEMBED_DONE
+  if [ ! -f logs/zpe-reenc.done ]; then
+    CUDA_VISIBLE_DEVICES=0 BS=16 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True DOC_PROMPT="$DP" \
+      /usr/bin/time -v -o logs/zpe-reenc.time python3 code/dense_bridgeret_v3.py "$PE" mean "$QP" ser-patembed-v1 \
+      "$C/corpus-units.tsv" "$T" runs/z-patembed-reenc 0.15 P1-DEV VAL > logs/zpe-reenc.log 2>&1 && touch logs/zpe-reenc.done \
+      || fail encode-patembed
+  fi
+  stamp F4_PATEMBED_REENCODED
+  for b in P1-DEV VAL; do ev_blk "runs/z-patembed-reenc/run-$b.tsv" "$b" "$FE/z-patembed-reenc-$b.json" || fail "eval-reenc-$b"; done
+  gate_full enc
+  # F5 the frozen Stage B evaluation queue: H and K of m*, 75 arms per block, evaluation, g03_a3_decide.py full
+  cd "$G" || fail cd
+  TORCH_GPU=$(CUDA_VISIBLE_DEVICES=0 python3 -c 'import torch; print(torch.cuda.get_device_name(0))') || fail torch-gpu-name
+  G03_PY=$(command -v python3) G03_GPU_DEVICE=0 G03_WORKERS=$WK G03_EVAL_PAR=$EP G03_A3_GPU_MATCH="$TORCH_GPU" \
+    G03_A3R1_PASSAGES_DIR=$BR/runs/z-patembed-reenc bash "$GC/g03_queue_a3r1_full.sh" > "$G/logs-a3r1-full.log" 2>&1
+  tail -5 "$G/logs-a3r1-full.log"
+  grep -q '^G03_A3R1_FULL_DONE' "$G/logs-a3r1-full.log" || fail queue-full
+  # pack: decision, gate records, logs, H/K routes, the F3* and F* runs of both blocks, every evaluation (per query)
+  F3=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["F3_star"])' "$G/results-a3r1-full.json") || fail read-f3
+  PACK=""
+  for p in g03-dev/results-a3r1-full.json g03-dev/logs-a3r1-full.log g03-dev/logs-a3r1-full-v0.log g03-dev/a3r1/routes-full \
+      g03-dev/runs-a3r1-full/P1-DEV/arms-trace.jsonl g03-dev/runs-a3r1-full/VAL/arms-trace.jsonl \
+      g03-dev/runs-a3r1-full/P1-DEV/alloc-L0-Q2-P2-H0-K0.tsv g03-dev/runs-a3r1-full/VAL/alloc-L0-Q2-P2-H0-K0.tsv \
+      g03-dev/evals g03-dev/runs/P1-DEV/arms-trace-v0-rebuild.jsonl g03-dev/runs/VAL/arms-trace-v0-rebuild.jsonl \
+      g03-dev/a3/apps-P1-DEV.regen.json g03-dev/a3/apps-pilot.regen.json bridgeret/logs bridgeret/evals-a3r1-full \
+      bridgeret/runs/bm25/run-P1-DEV.tsv.gz; do
+    [ -e "$D/$p" ] && PACK="$PACK data/ptp-paper2/$p"
+  done
+  if [ "$F3" != alloc-L0-Q2-P2-H0-K0 ]; then
+    for b in P1-DEV VAL; do [ -e "$G/runs-a3r1-full/$b/$F3.tsv" ] && PACK="$PACK data/ptp-paper2/g03-dev/runs-a3r1-full/$b/$F3.tsv"; done
+  fi
+  ( cd / && tar -czf "$D/out/a3r1-full-results.tgz" $PACK data/ptp-paper2/a3r1-versions-full.txt \
+    && tar -czf "$D/out/a3r1-full-evals.tgz" data/ptp-paper2/g03-dev/evals-a3r1-full \
+    && sha256sum "$D"/out/a3r1-full-*.tgz > "$D/out/a3r1-full.sha256" ) || fail pack-results
+  stamp G03_A3R1_RUNPOD_FULL_DONE
+}
+
 case "$ROLE" in
   qwen3) role_qwen3 ;;
   patembed) role_patembed ;;
   assemble) role_assemble ;;
   all) role_qwen3; role_patembed; role_assemble ;;
+  full) role_full ;;
   *) fail "unknown-role-$ROLE" ;;
 esac
 stamp G03_A3R1_RUNPOD_DONE
