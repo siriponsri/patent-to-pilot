@@ -627,7 +627,7 @@
    "task_id": "P1-T04",
    "phase_id": "P1",
    "title": "Execute the declared four-model DEV pilot and spending decision",
-   "status": "BLOCKED",
+   "status": "IN_PROGRESS",
    "outcome": "NOT_RUN",
    "depends_on": [
     "P1-T03"
@@ -653,10 +653,10 @@
    "affine_item_id": "",
    "affine_item_url": "",
    "affine_sync_status": "NOT_SYNCED",
-   "blocker": "dr-train unreachable: pilot routes/evaluation/decision pending (generation complete, USD 0.785 committed)",
+   "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-23] pilot generation started 23 Nov (4 models x 2,000 P1-DEV, E1R ledger)"
+   "notes": "[2026-11-23] pilot generation started 23 Nov (4 models x 2,000 P1-DEV, E1R ledger) | [2026-11-23] A3r1 evaluation on RunPod (D23): pods 7fvpne0e0o2od1 (qwen3) and 5ouqfjd1xmjdsk (patembed), A100 SXM secure US-MD-1, USD 2.19/h each, started 14:40 UTC; rebuild gate before frozen GO/STOP"
   },
   {
    "task_id": "P1-T05",
@@ -1184,7 +1184,7 @@
    "task_id": "P4-T02",
    "phase_id": "P4",
    "title": "Make local, API and self-hosted modes clear and usable",
-   "status": "NOT_STARTED",
+   "status": "COMPLETE",
    "outcome": "NOT_RUN",
    "depends_on": [
     "P4-T01",
@@ -1196,7 +1196,7 @@
     "docs/tracking/owner-note-22112026/receipts/P4-T02_provider_ux_receipt.md"
    ],
    "acceptance_evidence": "Show active execution mode, exact model and missing capability; configure credentials securely once; missing optional endpoint does not block local search.",
-   "evidence_uri": "",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P4-T02_provider_ux_receipt.md",
    "check_result": "NOT_CHECKED",
    "next_task": "P4-T05",
    "budget_authority": "Exact protocol must fit an explicitly approved envelope; E1R remains pending",
@@ -1213,7 +1213,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": ""
+   "notes": "[2026-11-23] Mode indicator (local/API/self-hosted) with exact model; missing-capability list; name-only credential setup (Windows user env var); local search/compare/inspect verified with all optional endpoints missing; gate 8 SACR only, smoke 15/15"
   },
   {
    "task_id": "P4-T03",
@@ -1254,7 +1254,7 @@
    "task_id": "P4-T04",
    "phase_id": "P4",
    "title": "Verify selective revision against full recomputation",
-   "status": "NOT_STARTED",
+   "status": "PARTIAL",
    "outcome": "NOT_RUN",
    "depends_on": [
     "P4-T03"
@@ -1265,9 +1265,9 @@
     "docs/tracking/owner-note-22112026/receipts/P4-T04_revision_comparison.md"
    ],
    "acceptance_evidence": "Change source text, scope edges and corpus membership; compare affected evidence with a full rerun; measure work/cost before claiming savings.",
-   "evidence_uri": "",
+   "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P4-T04_revision_comparison.md",
    "check_result": "NOT_CHECKED",
-   "next_task": "P4-T05",
+   "next_task": "Owner policy choice for D2; implement source removal (D3)",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
    "budget_spent_usd": null,
    "budget_reserved_usd": null,
@@ -1282,7 +1282,7 @@
    "blocker": "",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-23] P4-T01b requirement Remove/Undo lifecycle merged ff35de32 (retire/restore obligations+assessments, stale in-flight commits rejected); revision-vs-full-rerun comparison still to do"
+   "notes": "[2026-11-23] P4-T01b requirement Remove/Undo lifecycle merged ff35de32 (retire/restore obligations+assessments, stale in-flight commits rejected); revision-vs-full-rerun comparison still to do | [2026-11-23] Selective = full-from-scratch in 10/11 runnable scenarios after fix D1 (scope-dependent reuse); D2 sibling-anchor order dependence open (policy decision); D3 no source-removal operation; work 23 vs 64 obligations re-assessed on small fixtures (not a benchmark)"
   },
   {
    "task_id": "P4-T05",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-23T21:32:23+07:00"
+ "live_updated_at": "2026-11-23T21:50:37+07:00"
 }

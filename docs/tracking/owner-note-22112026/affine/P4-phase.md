@@ -9,9 +9,9 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
 | P4-T01 | Extend the existing Search, Compare and Inspect workflow | ✅ COMPLETE | ENGINEERING_VERIFIED | P4-T02; P4-T03 |
-| P4-T02 | Make local, API and self-hosted modes clear and usable | ⏳ NOT_STARTED | NOT_RUN | P4-T05 |
+| P4-T02 | Make local, API and self-hosted modes clear and usable | ✅ COMPLETE | NOT_RUN | P4-T05 |
 | P4-T03 | Make source, structural scope and search provenance inspectable | ✅ COMPLETE | ENGINEERING_VERIFIED | P4-T04; plan section 8 matched comparison |
-| P4-T04 | Verify selective revision against full recomputation | ⏳ NOT_STARTED | NOT_RUN | P4-T05 |
+| P4-T04 | Verify selective revision against full recomputation | 🟡 PARTIAL | NOT_RUN | Owner policy choice for D2; implement source removal (D3) |
 | P4-T05 | Observe clean-install and user-task success | ⏳ NOT_STARTED | NOT_RUN | P5-T03; P5-T04 |
 
 ## P4-T01 — Extend the existing Search, Compare and Inspect workflow
@@ -30,10 +30,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P4-T01; P0-T04
 - **Acceptance evidence:** Show active execution mode, exact model and missing capability; configure credentials securely once; missing optional endpoint does not block local search.
-- **Evidence:** pending
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P4-T02_provider_ux_receipt.md
 - **Check:** NOT_CHECKED
 - **Next:** P4-T05
 - **Blocker:** —
+- **Notes:** [2026-11-23] Mode indicator (local/API/self-hosted) with exact model; missing-capability list; name-only credential setup (Windows user env var); local search/compare/inspect verified with all optional endpoints missing; gate 8 SACR only, smoke 15/15
 
 ## P4-T03 — Make source, structural scope and search provenance inspectable
 
@@ -51,11 +52,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P4-T03
 - **Acceptance evidence:** Change source text, scope edges and corpus membership; compare affected evidence with a full rerun; measure work/cost before claiming savings.
-- **Evidence:** pending
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P4-T04_revision_comparison.md
 - **Check:** NOT_CHECKED
-- **Next:** P4-T05
+- **Next:** Owner policy choice for D2; implement source removal (D3)
 - **Blocker:** —
-- **Notes:** [2026-11-23] P4-T01b requirement Remove/Undo lifecycle merged ff35de32 (retire/restore obligations+assessments, stale in-flight commits rejected); revision-vs-full-rerun comparison still to do
+- **Notes:** [2026-11-23] P4-T01b requirement Remove/Undo lifecycle merged ff35de32 (retire/restore obligations+assessments, stale in-flight commits rejected); revision-vs-full-rerun comparison still to do | [2026-11-23] Selective = full-from-scratch in 10/11 runnable scenarios after fix D1 (scope-dependent reuse); D2 sibling-anchor order dependence open (policy decision); D3 no source-removal operation; work 23 vs 64 obligations re-assessed on small fixtures (not a benchmark)
 
 ## P4-T05 — Observe clean-install and user-task success
 

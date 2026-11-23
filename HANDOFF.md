@@ -75,6 +75,14 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
     (corpus text byte-identical after CRLF→LF).
   - Stop at USD 15 (watcher deadline 2026-11-24 08:30 UTC). On finish: pull results to
     `../_private_artifacts/p2t02-runpod/`, write the receipt, delete the pod, read billing.
+- **A3r1 pilot evaluation on RunPod (D22/D23)**, package merged (`A3R1-AMENDMENT-RUNPOD-REBUILD.md`, runbook
+  `A3R1-RUNPOD-RUNBOOK.md`). Pods (A100 80 GB, Secure Cloud US-MD-1, USD 2.19/h each, started 14:40 UTC):
+  `7fvpne0e0o2od1` role qwen3 (`ssh -p 18213 root@154.54.102.54`), `5ouqfjd1xmjdsk` role patembed
+  (`ssh -p 10925 root@154.54.102.49`). Logs `/data/ptp-paper2/a3r1-<role>.log`. Next: relay to the pod that finishes
+  last, copy BM25/ser-arctic from the P2-T02 pod, pin scikit-learn 1.7.2 there, run `assemble` (gate → frozen queue →
+  GO/STOP), pull results, delete both pods.
+- **Merged 23 Nov night:** P3-T02 packets (PARTIAL), P4-T02 modes (COMPLETE), P4-T04 selective revision (PARTIAL:
+  D2 order dependence needs an owner policy choice, D3 no source removal). Gate: only the 8 SACR failures; smoke passes.
 - **dr-train:** rebooted by the admin in the evening of 23 Nov, but it stays unreachable (Tailscale online through relay
   "sin", no ping, SSH times out). The chain script `scripts/research/drtrain_chain_20261123.sh` (A3r1 evaluation)
   and the upload bundle `../_private_artifacts/drtrain-upload-20261123.tgz` are ready. Do **not** run P2-T02 there
