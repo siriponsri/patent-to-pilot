@@ -73,3 +73,9 @@ claims file the corpus needs (grant units 1976–2012 inside `g_claims_1976–20
 `pg_claims_2001–2016`) and the four text sources of `build_bridgeret_texts.py`. No new download is needed. Only the C0
 baseline runs (`runs/z-arctic` passages and P1-DEV run, `runs/bm25` P1-DEV run), `ser-arctic-v1`,
 `texts-v1/corpus.jsonl` and `splits/private/tasks.tsv` still exist only on dr-train.
+
+## Decision of 23 Nov 2026, evening (owner in chat: "ผมอนุญาตให้ใช้ volume ได้นะครับ ถ้าข้อมูลต้องใช้ซ้ำจนปิดจบการวิจัย")
+
+| # | Decision | Effect |
+|---|---|---|
+| D21 | **A RunPod network volume is allowed for data that will be reused until the research closes.** This amends D20's "no network volume" | Only reusable inputs and derived indexes go on it: PatentsView sources, rebuilt C0, C1/C2 content and vectors. One-off scratch files do not. No TEST data, sealed files or credentials. Storage is billed monthly (about USD 0.07 per GB-month) and is recorded in the P2-T02 receipt and HANDOFF. The volume is deleted when the research closes or the owner asks. The running pod `jd41r4cvv171q6` sits in US-KS-2, which offers no network storage, so at the end of the run the reusable outputs move to a volume in a US data centre that does (through a cheap CPU pod), and then the GPU pod is deleted |
