@@ -138,6 +138,20 @@ CREATE TRIGGER IF NOT EXISTS hypothesis_id_is_not_evidence BEFORE INSERT ON sear
 """
 
 
+# P4-T01b additions (requirement Remove/Undo): additive only. ``projects.mission_json`` keeps the ACTIVE requirements;
+# a removed requirement keeps its stable ID, full snapshot and content hash here. ``lifecycle_revision`` advances on
+# every add, edit, removal and restoration (also when the restored text is identical), so a result planned against an
+# earlier revision can be refused at commit. ``mission_lifecycle`` holds the project's monotonic mission revision.
+SCHEMA_P4T01B = """
+CREATE TABLE IF NOT EXISTS requirement_lifecycle (
+  project_id TEXT NOT NULL, requirement_id TEXT NOT NULL, state TEXT NOT NULL, lifecycle_revision INTEGER NOT NULL,
+  content_sha256 TEXT NOT NULL, snapshot_json TEXT NOT NULL, position INTEGER NOT NULL, updated_at TEXT NOT NULL,
+  last_event_id TEXT, PRIMARY KEY (project_id, requirement_id));
+CREATE TABLE IF NOT EXISTS mission_lifecycle (
+  project_id TEXT PRIMARY KEY, revision INTEGER NOT NULL, updated_at TEXT NOT NULL);
+"""
+
+
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
@@ -158,6 +172,7 @@ class Store:
             con.executescript(SCHEMA)
             con.executescript(SCHEMA_G02)
             con.executescript(SCHEMA_P0T06)
+            con.executescript(SCHEMA_P4T01B)
             con.execute("INSERT OR IGNORE INTO meta(key, value) VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
             stored = con.execute("SELECT value FROM meta WHERE key='schema_version'").fetchone()[0]
             if stored != SCHEMA_VERSION:
