@@ -42,6 +42,10 @@ Four PatEmbed shards completed in 1,247 seconds of C1 encoding. The fourth shard
 remaining windows are length 504. Scaling the fourth shard by tokens or squared length projects another
 84–92 minutes of encoding from that checkpoint, before retrieval, evaluation and pulling. This is a resource
 estimate and does not alter the operational deadline.
+Qwen3's first two shards completed in 1,240 seconds. The second shard took 941 seconds at 201.7 mean tokens, while
+the remaining mean was 492.0. Token scaling gives about 437 minutes of remaining encoding from that point.
+Squared-length scaling gives 1,039 minutes and extrapolates from much shorter sequences. Reassess using a later
+matched-length shard. The separate Qwen3 operational deadline and reservation remain fixed.
 
 ## Reusable lexical corpus
 
