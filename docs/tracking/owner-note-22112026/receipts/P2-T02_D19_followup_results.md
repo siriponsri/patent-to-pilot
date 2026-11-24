@@ -10,7 +10,7 @@ Both C1 evaluations are NOT_RUN.
 | Model | Pod / region | Hourly price | Start (UTC) | Reservation | Receipt |
 |---|---|---|---|---|---|
 | PatEmbed | `arm09wy8rok4qk`, Secure A100 SXM 80 GB / US-MD-1 | USD 2.19 compute, up to USD 0.03 disk budget | 2026-11-24 13:47:49 | USD 9.50 | Active |
-| Qwen3 | Secure RTX PRO 4500 Server Edition / US-KS-2 queue `cmwustzcf0083geoxv18etk77` | USD 0.72 compute, up to USD 0.03 disk budget | Queue only | USD 8.50 | QUEUED |
+| Qwen3 | Secure RTX PRO 4500 Server Edition / US-KS-2 queue `cmwustzcf0083geoxv18etk77` | USD 0.72 compute, up to USD 0.03 disk budget | Queue only | Released at expiry | NOT_RUN |
 
 Operational PatEmbed deadline 17:47:49 UTC includes transfers. The in-container timer reported armed for
 17:55:49 UTC as a fallback. SSH upload started 13:49:10 UTC. Settlement will record actual disk, compute,
@@ -32,7 +32,13 @@ and hardware expired at 14:45:36 UTC if no instance deployed. Dispatch is indepe
   PatEmbed, and a fresh US L40S catalog check returned NONE. No Qwen3 resource exists. Billing remains pending.
 - The 14:36 UTC RTX direct creation also returned HTTP 400 with the provider reporting that no matching instance
   remained. A follow-up readiness read showed NONE and the account still listed only PatEmbed. The bounded queue
-  request returned QUEUED at 14:37:38 UTC with `podId=null`.
+  request returned QUEUED at 14:37:38 UTC with `podId=null`. It reached EXPIRED at 14:45:36 UTC and still showed
+  `podId=null`. The account listed only PatEmbed.
+
+Four PatEmbed shards completed in 1,247 seconds of C1 encoding. The fourth shard averaged 461.2 tokens and the
+remaining windows are length 504. Scaling the fourth shard by tokens or squared length projects another
+84–92 minutes of encoding from that checkpoint, before retrieval, evaluation and pulling. This is a resource
+estimate and does not alter the operational deadline.
 
 ## Reusable lexical corpus
 

@@ -74,12 +74,11 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   Operational deadline 17:47:49 UTC. A best-effort in-pod termination timer is armed for 17:55:49 UTC.
   USD 9.50 is reserved. Pull checked outputs and terminate this pod.
   Private operator scripts: `../_private_artifacts/{watch,pull,upload}-ptp-d19-20261124.sh`.
-- **Qwen3 dispatch:** the earlier L40S create failed and produced no resource. Latest qualified quote is Secure US-KS-2
+- **Qwen3 awaiting stock:** the earlier L40S create failed and produced no resource. Latest qualified quote was Secure US-KS-2
   RTX PRO 4500 Blackwell Server Edition at USD 0.72/hour compute plus up to USD 0.03/hour ephemeral disk budget.
-  Reserve USD 8.50 and use a 10 h 48 min operational deadline. Combined reservation including PatEmbed is USD 18.
-  The 14:36 UTC direct create returned HTTP 400 due to vanished stock. Try a monitored queue that expires after
-  eight minutes at the same quoted configuration. Queue item `cmwustzcf0083geoxv18etk77` is QUEUED through
-  14:45:36 UTC. No Qwen3 pod existed at receipt. Verify deployment and arm the teardown watchdog promptly if it appears.
+  The direct create returned HTTP 400 due to vanished stock. The eight-minute queue
+  `cmwustzcf0083geoxv18etk77` expired at 14:45:36 UTC without a pod. Only PatEmbed is active.
+  Reprice Qwen3 within the remaining D26 allowance after actual PatEmbed settlement or a verified affordable opening.
 - **P2-T04 artifact staging:** ten non-TEST runtime and historical inputs passed transfer and SHA-256 checks on
   `/data/ptp-paper2/p2t04-run-prep-20261124`. The 30 GiB MemAvailable guard did not trigger. The lexical stream
   has been materialized and hash-checked, the two evaluator inputs are in a separate directory, and both entry
