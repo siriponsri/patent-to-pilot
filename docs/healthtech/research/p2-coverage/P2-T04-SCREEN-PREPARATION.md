@@ -86,3 +86,14 @@ baseline decision and the remainder of the input set.
 | `p2t02-runpod/p2-coverage/content/manifest.json` | `4627d4f133feaf634fca28b1ef611789351f1150632050a6f59f096ac7f98d6b` |
 | `g03-a3r1-runpod-stage/tree/data/ptp-paper2/bridgeret/texts-v1/queries.jsonl` | `46bd76d21d9e580e993d38533394b3d6318b23a8c966c88dbab6789cdd40bf02` |
 | `g03-a3r1-runpod-stage/tree/data/ptp-paper2/bridgeret/code/eval_bridgeret_dev.py` | `a6f25e52c7cc1651a777da0351f72f231deac53afab5fd936c82b85e85da8fd6` |
+| `p2t04-preflight-20261124/queries-arctic-P1-DEV.jsonl` | `7ff4645911c7079048c531d6db139cdaa19128e57f495a337c29ee6f95099956` |
+| `p2t04-preflight-20261124/a3r1-f3star-P1-DEV.tsv.gz` | `e6757311c7361a26cff4764047d7b2895477f6db3405067c7c5fc8d2839a695e` |
+| `p2t02-d19-runpod/complete-lexical-passages.jsonl.gz` | `79b53f8dc994c6124ebe1f0498563077f5e9ab0c22a580135545773c1154b94d` |
+
+The Arctic query view streams the 25,626 P1-DEV rows from the existing dr-train non-TEST serialization at
+`/data/ptp-paper2/bridgeret/ser-arctic-v1/queries.jsonl`. A single process ran with a 30 GiB MemAvailable
+watchdog. No output was staged on dr-train. The A3r1 comparator was extracted from the verified results archive,
+member `data/ptp-paper2/g03-dev/runs-a3r1-full/P1-DEV/alloc-L0-Q1-P1-H1-K1.tsv`. Its legacy C0 routes remain
+identified in the planned matched-sample evaluation. These two transfers produced no new retrieval scores.
+The recovered full-text passages match the P2-T02 manifest on decompressed bytes, allowing P2-T04 to reuse the
+content without rebuilding the claims on dr-train. See the [D19 receipt](../../../tracking/owner-note-22112026/receipts/P2-T02_D19_followup_results.md).

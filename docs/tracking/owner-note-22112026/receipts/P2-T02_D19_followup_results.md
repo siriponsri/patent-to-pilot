@@ -1,7 +1,7 @@
 # P2-T02 D19 follow-up receipt, P1-DEV
 
-**Runtime state:** PatEmbed is building complete content after the retry passed pinned weights and the C0 relay gate.
-Qwen3 NOT_RUN.
+**Runtime state:** PatEmbed passed the model content build, GPU parity checks, query encoding and Arctic reproduction.
+C1 encoding began at 14:19:17 UTC. Qwen3 NOT_RUN.
 Both C1 evaluations are NOT_RUN.
 **Protocol:** P2-T02 coverage control `bd30d3f7` with A2 declared in `ffae7a99` and verified implementation
 `d30d9d51`. D26 authorizes launch and up to USD 20 inside R2. The local stage is pinned in the
@@ -30,3 +30,12 @@ independent of any score, and the frozen A2 gates and endpoints apply unchanged.
   The retry passed W and C-R at 13:57:05 UTC, completed serialisation and determined a window of 504 at 14:01:50 UTC.
 - Qwen3's quote was lost during scheduling. The 13:54 UTC create returned HTTP 400, the account enumerated only
   PatEmbed, and a fresh US L40S catalog check returned NONE. No Qwen3 resource exists. Billing remains pending.
+
+## Reusable lexical corpus
+
+PatEmbed produced the declared content at 14:09:25 UTC. The full-text passages were streamed to
+`../_private_artifacts/p2t02-d19-runpod/complete-lexical-passages.jsonl.gz`. Decompressed SHA-256
+`72e959189cc00e53233fd87f27296bb0dfd4eef067f83c1c4126437d20d15d79` equals the archive's Arctic
+`ser-full/passages.jsonl` digest. The compressed SHA-256 is
+`79b53f8dc994c6124ebe1f0498563077f5e9ab0c22a580135545773c1154b94d` (1,587,754,946 bytes).
+This reusable representation artifact precedes any C1 effectiveness result.

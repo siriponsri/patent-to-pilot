@@ -68,11 +68,17 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   USD 0.03/hour budgeted for a 150 GB ephemeral disk. Created 13:47:49 UTC. Setup and P1-DEV upload SHA-256 passed.
   The first launch stopped before the weight check because the image enabled optional `hf_transfer`, which is absent.
   The original logs are retained. Retry with the toggle off passed the pinned weights and C0 relay gates. PatEmbed
-  serialisation finished and the declared width is 504. The complete-content build is underway.
+  serialisation finished with width 504. Complete-content build, GPU parity and query encodings passed.
+  Arctic reproduction passed and C1 encoding began 14:19:17 UTC. The complete lexical corpus was pulled to local storage
+  and matches the archived P2-T02 full-text SHA-256.
   Operational deadline 17:47:49 UTC. A best-effort in-pod termination timer is armed for 17:55:49 UTC.
   USD 9.50 is reserved. Pull checked outputs and terminate this pod.
+  Private operator scripts: `../_private_artifacts/{watch,pull,upload}-ptp-d19-20261124.sh`.
 - **Qwen3 awaiting stock:** the quoted USD 1.09/hour US-MO-1 L40S create returned HTTP 400. The account lists only
   PatEmbed, and refreshed L40S stock was NONE. The planned USD 8.50 remains available for qualifying Qwen3 stock.
+- **P2-T04 artifact staging:** copy existing pinned non-TEST runtime inputs to
+  `/data/ptp-paper2/p2t04-run-prep-20261124` on dr-train with the 30 GiB MemAvailable floor. No retrieval or scoring.
+  The P2-T04 worker owns only the evaluator-side module and its new fixture file during this staging.
 
 ### Money and access (24 Nov)
 
