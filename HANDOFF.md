@@ -4,16 +4,17 @@ This file holds the **current state only**. Rewrite the "Agent takeover state" s
 rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 [archives/HANDOFF-HISTORY-TO-20261121.md](archives/HANDOFF-HISTORY-TO-20261121.md).
 
-## Agent takeover state — 24 Nov 2026, about 08:00 (Asia/Bangkok)
+## Agent takeover state — 24 Nov 2026 (Asia/Bangkok)
 
-**Account handoff in progress.** The owner stopped this account because its weekly limit is near. Start with
-[docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md).
+**Account takeover active.** Codex owns D19 verification and P2-T04 integration in this
+session. At takeover `main` matched `origin/main` at `5891d7ea`; the existing Claude branches and owner-local files
+are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md).
 
 **Plan.** Outcome-based **P0–P5** (owner note 22 Nov). Live board:
 [docs/tracking/owner-note-22112026/PHASE_BOARD.md](docs/tracking/owner-note-22112026/PHASE_BOARD.md).
 - Tool: `python scripts/tracking/ptp_tracker.py show|set|render`.
 - Status fields stay separate:
-  - `method_evidence` = NOT_YET_DEMONSTRATED (the A3r1 pilot GO is a spending gate, not a result);
+  - `method_evidence` = NOT_YET_DEMONSTRATED (A3r1 is exploratory; a matched structural gain has not been measured);
   - `product_readiness` = core verified, with modes, Thai search, structural acquisition and selective revision checked;
   - `publication_readiness` = draft with results NOT_RUN.
 
@@ -23,9 +24,9 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 |---|---|---|
 | P0 control | 5/7 | T02/T03 AFFiNE web sync blocked (the repo board is the tracker of record) |
 | P1 A3 model panel | **6/6 COMPLETE** | A3r1 CONTINUE (exploratory) — carried into P2 |
-| P2 structural acquisition | 3/7 | T04 screen vs close controls → T05 freeze → T06 matched comparison → T07 attribution |
+| P2 structural acquisition | 3/7 (+T04 PARTIAL) | D19 follow-up → T04 screen vs close controls → T05 freeze → T06 matched comparison → T07 attribution |
 | P3 Thai transfer | 1/5 (+T02 PARTIAL) | T03 text-transfer comparisons, T04 structure/OCR, T05 freeze scope |
-| P4 product | 3/5 (+T04 PARTIAL) | T04 merge policy v2.1 + source removal (D3); T05 clean-install user test |
+| P4 product | 3/5 (+T04 PARTIAL) | T04 policy v2.1 merged; source removal (D3) and T05 clean-install user test open |
 | P5 manuscript/release/IS2 | 1/5 | T02 scoreboards, T03 artifact, T04 IS2, T05 close |
 
 ### Results so far (P1-DEV unless stated; ALL R@200, cluster bootstrap by art unit)
@@ -46,16 +47,23 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
   only gates spending.
 - **P3-T02 PARTIAL:** Thai packets-v1 (DEV 1,330 / held-out 3,779). WangchanX train covers 75.2% of NitiBench-CCL gold
   sections. DEV has no annex/table items.
-- **P4-T02 COMPLETE** (execution modes). **P4-T04 PARTIAL:** selective = full in 10/11 scenarios; D2 is fixed on an
-  unmerged branch; D3 (no source removal) is open.
+- **P4-T02 COMPLETE** (execution modes). **P4-T04 PARTIAL:** policy 2.1.0 merged at `98d6c37a`. D25's full gate
+  had exactly the eight permitted SACR failures, Workbench smoke passed 15/15 and selective/full comparisons
+  matched in all 11 supported fixtures. D3 (source removal) is open.
 
 ### Running or pending at handoff
 
 - **A3r1 is finished** (Stage B + full evaluation, pod deleted). Nothing is running. No pod exists.
-- **Next:** merge D25, finish D19, then P2-T04 (see the handoff doc). Ask the owner before opening pods.
-- **Unmerged branches:**
-  - `worktree-agent-a6d18c2dded3f86f2` (56267477): D25 policy v2.1. Run the full gate, then merge.
-  - `worktree-agent-aa1038afae41aaf77` (ffae7a99): WIP D19 package, not verified. Finish its tests, review, merge.
+- **D19 verification:** Codex owns the isolated package and combined D25/D19 gate checkouts. Targeted fixtures and
+  Bash syntax passed after pre-run corrections to the Qwen3 window guard, FP16 cosine and gate evidence. The local CPU
+  stage is preparing the P1-DEV upload lists in `../_private_artifacts/p2t02-d19-stage-20261124/`. The combined full
+  gate is running before publication and dispatch. Refresh the runner hash after its atomic-evaluation fix.
+- **D26:** the owner approved opening eligible US RunPod pods, machine selection, parallel sub-agent work and a long-run
+  goal. D19 can spend up to USD 20 within the existing R2 envelope. No pod has been opened.
+- **Parallel ownership:** the P2-T04 worker owns only new `scripts/research/p2t04_*` and `tests/test_p2t04_*`;
+  D19's read-only review is complete. Codex owns the gates, tracker, publication and RunPod.
+- **Unmerged:** D19 package branch `worktree-agent-aa1038afae41aaf77` (`ffae7a99`) plus verified pre-run corrections in
+  the isolated D19 checkout. The original Claude worktree is untouched.
 
 ### Money and access (24 Nov)
 
@@ -68,12 +76,14 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 - **Upload route:** US data centres only. EU-SE-1 measured 47 KB/s from the owner PC; US measured 3–8 MB/s over 4 streams.
 - `OPENROUTER_API_KEY` and `TYPHOON_API_KEY` are user environment variables. The RunPod SSH key is
   `~/.ssh/runpod_paper86_20261017`.
-- **dr-train is back** (rebooted 24 Nov about 06:48). Partial build deleted, Thai data copied, and the deferred P2-T02
-  checks were launched on 24 Nov (CPU, watchdog). Plan and memory-safety rules: handoff doc §2a.
+- **dr-train is back** (rebooted 24 Nov about 06:48). The partial build was deleted, Thai data copied and hashes verified,
+  and the deferred P2-T02 CPU checks completed. Deeper retrieval adds zero at R@200 and the coverage-control fusion is
+  unchanged at 0.4230 ([receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md)).
+  Memory-safety rules: next-account handoff §2a.
 
 ### Owner decisions
 
-- D1–D25 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md); N01–N12 are in the owner
+- D1–D26 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md); N01–N12 are in the owner
   note.
 - Still open: the Paper 53 DOI and the 37.1% denominator; whether to report LLM-judge-graded NitiBench (rule 12); the G01
   launcher check; Thai annex/table packet sources.

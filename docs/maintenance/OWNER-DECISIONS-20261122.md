@@ -93,3 +93,9 @@ baseline runs (`runs/z-arctic` passages and P1-DEV run, `runs/bm25` P1-DEV run),
 |---|---|---|
 | D24 | **R2 scope extended to the A3r1 full evaluation** after Stage B (complete P1-DEV arms, F3\* selection, VAL principal under the frozen continue/revise/park rule) | One pod under [A3R1-FULL-EVAL-RUNPOD.md](../healthtech/research/g03-dev/A3R1-FULL-EVAL-RUNPOD.md), launched when the Stage B ledgers are complete. Estimate USD 4–5.5 on an RTX PRO 4500, or USD 9–12 on an A100 |
 | D25 | **P4-T04 defect D2: fix it as structural-acquisition policy v2.1.** All seed searches run first, and anchors come from current seed hits, so results no longer depend on run order or store history | A new policy version (`ptp-structural-acquisition/2.1.0`), with tests proving order independence. The P4-T04 harness is re-run to confirm the d1 scenario now matches |
+
+## Decision of 24 Nov 2026, evening
+
+| # | Decision | Effect |
+|---|---|---|
+| D26 | **Approve D19 RunPod launch, parallel work and sub-agents, a long-run goal, and a USD 20 D19 cap. The agent may select the machines.** | The D19 cap replaces the USD 15 sub-cap within R2; R2 remains USD 60 with notification at USD 45. Verify US stock and fit the combined compute, disk and retry exposure within D19's USD 20 before dispatch. State each pod's hourly price before creation, pull and hash outputs and terminate after use. |

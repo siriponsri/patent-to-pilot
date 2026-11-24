@@ -292,6 +292,16 @@ invalidation stays candidate-wide (see the limitations).
   - That file passed when run alone, and the clean rerun above passed it.
 - `python scripts/ptp_run.py --smoke`: 15/15 PASS. Sample projects keep acquisition mode `off`.
 
+### Takeover verification before merge
+
+- Verified the integration of `56267477` with `5891d7ea` in a detached staging checkout. The full pypdf/PyThaiNLP
+  suite completed with exactly the eight accepted SACR supervisor cases (r2 and r3, each nan, inflated, erased and
+  insufficient), eight skips and one known xfail. The detached checkout lacked the optional owner-local package.
+- Workbench smoke passed 15/15. The author-fixture harness reproduced all 11 selective and in-place matches
+  against scratch, including d1. Corpus removal remains unsupported.
+- New harness receipt `../_private_artifacts/ptp-d25-reverification-20261124.json`, SHA-256
+  `0bd24fa77212b791972c5b83a4dda9215cb40c0b6ddbb31c4f9f9b3e440435d9`. Integrated on `main` at `98d6c37a`.
+
 ## Gate (23 Nov 2026)
 
 - New tests: `tests/test_p4_t04_selective_revision.py`: 11 passed, 1 xfailed (D2).

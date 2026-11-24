@@ -20,8 +20,8 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 ## Task counts
 
 - ✅ COMPLETE: 19
-- ⏳ NOT_STARTED: 12
-- 🟡 PARTIAL: 4
+- ⏳ NOT_STARTED: 11
+- 🟡 PARTIAL: 5
 
 ## Phases
 
@@ -39,6 +39,7 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 - **P0-T02** Install or update AFFiNE from the verified repository path: Owner must complete first-run admin setup at http://127.0.0.1:3010 (agent does not create accounts or enter passwords)
 - **P0-T03** Create live tracking copies and mirror phases into AFFiNE: No supported automated write path to AFFiNE (web sync broken, MCP read-only); repo PHASE_BOARD.md is tracker of record
 - **P0-T04** Prepare prospective A3r1 protocol and no-call provider plan: E1R approval; Typhoon key/quota (TYPHOON_API_KEY) or declare deferred
-- **P2-T02** Establish complete-content and stronger simple controls: D20: RunPod envelope R1 USD 20 (stop at 15) for P2-T02; starts after dr-train reset (C0 runs only there); PatentsView sources local in data/raw/uspto
+- **P2-T02** Establish complete-content and stronger simple controls: D26: owner approved US RunPod launch, delegated machine choice, D19 cap USD 20 within R2
+- **P2-T04** Screen the bounded mechanism against close matched controls: Comparator decisions pending D19 execution; offline runtime prep can proceed
 - **P3-T02** Build grouped source packets and independent judgments: PARTIAL
 - **P4-T04** Verify selective revision against full recomputation: PARTIAL

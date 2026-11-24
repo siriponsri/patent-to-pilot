@@ -19,7 +19,7 @@ This is a map, not a diary. Update a row when a phase, plan or evidence location
 |---|---|---|---|
 | P0 | Control, setup and execution readiness | See board | `docs/tracking/owner-note-22112026/receipts/P0-*` |
 | P1 | Reproducible model-panel and A3 experiment | See board | [A3r0 protocol](docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3-20261122.md), [A3r1 proposed](docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md) |
-| P2 | Constructive structural candidate acquisition | See board | — |
+| P2 | Constructive structural candidate acquisition | See board | [Complete-content controls](docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md), [matched-screen preparation](docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md) |
 | P3 | Thai transfer and structural scope evaluation | See board | — |
 | P4 | Integrated product usability and explainability | See board | Workbench (G01/G02 foundations) |
 | P5 | Manuscript, artifact release and IS2 readiness | See board | [MANUSCRIPT-DRAFT-v1.md](docs/writing/journal/MANUSCRIPT-DRAFT-v1.md), [IS2 outline v3](docs/writing/is2/IS2-OUTLINE-v3-20261122.md) |

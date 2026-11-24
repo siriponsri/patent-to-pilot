@@ -9,9 +9,9 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
 | P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) |
-| P2-T02 | Establish complete-content and stronger simple controls | ✅ COMPLETE | ENGINEERING_VERIFIED | D19 follow-up (PatEmbed/Qwen3 complete content) under R2 with a declared amendment |
+| P2-T02 | Establish complete-content and stronger simple controls | ✅ COMPLETE | ENGINEERING_VERIFIED | Verify package and local manifests, select and quote eligible stock, then run D19 |
 | P2-T03 | Implement one bounded source-relation search action | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T04 (after P2-T02 controls); P4-T03 |
-| P2-T04 | Screen the bounded mechanism against close matched controls | ⏳ NOT_STARTED | NOT_RUN | P2-T05 if viable |
+| P2-T04 | Screen the bounded mechanism against close matched controls | 🟡 PARTIAL | NOT_RUN | Finish D19 and freeze the executable matched P1-DEV screen before computing metrics |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | P2-T06 |
 | P2-T06 | Measure the primary matched retrieval comparison | ⏳ NOT_STARTED | NOT_RUN | P2-T07; P3-T03 |
 | P2-T07 | Attribute candidate acquisition and decide research readiness | ⏳ NOT_STARTED | NOT_RUN | P3-T03; P4 integration; P5-T02 |
@@ -33,10 +33,10 @@ Phase status: **IN_PROGRESS**
 - **Depends on:** P2-T01; P0-T05
 - **Acceptance evidence:** Compare equal-content flat/structural units and deeper original-query retrieval under shared masks/budgets; record actual results and resource costs.
 - **Evidence:** docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md
-- **Check:** NOT_CHECKED
-- **Next:** D19 follow-up (PatEmbed/Qwen3 complete content) under R2 with a declared amendment
+- **Check:** D19 targeted fixture and shell gates PASS; local P1-DEV staging in progress
+- **Next:** Verify package and local manifests, select and quote eligible stock, then run D19
 - **Blocker:** —
-- **Notes:** [2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers | [2026-11-23] Amendment A1: running on RunPod pod 0adflwvktmsvuu (A40, USD 0.59/h, no volume); C0 rebuilt and gated before C1/C2; envelope R1 USD 20, stop at 15 | [2026-11-23] A1 run live on RunPod pod jd41r4cvv171q6 (US-KS-2, USD 0.72/h) since 13:25 UTC; inputs sha256-verified; stop at USD 15 | [2026-11-24] Coverage control done on RunPod: Arctic C1-C0 +0.0165 [0.0144,0.0186], BM25-full-C0 +0.0223 [0.0200,0.0247] -> new representation baselines; structure C2-C1 -0.0087 (no credit). C0 reproduction exact. Fusion/deeper-control descriptives deferred to dr-train
+- **Notes:** [2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers | [2026-11-23] Amendment A1: running on RunPod pod 0adflwvktmsvuu (A40, USD 0.59/h, no volume); C0 rebuilt and gated before C1/C2; envelope R1 USD 20, stop at 15 | [2026-11-23] A1 run live on RunPod pod jd41r4cvv171q6 (US-KS-2, USD 0.72/h) since 13:25 UTC; inputs sha256-verified; stop at USD 15 | [2026-11-24] Coverage control done on RunPod: Arctic C1-C0 +0.0165 [0.0144,0.0186], BM25-full-C0 +0.0223 [0.0200,0.0247] -> new representation baselines; structure C2-C1 -0.0087 (no credit). C0 reproduction exact. Fusion/deeper-control descriptives deferred to dr-train | [2026-11-24] D19 uses frozen Qwen3 and PatEmbed C1 arms. Local tests found and corrected the declared Qwen3 window guard and cosine computation before any C1 score. | [2026-11-24] D26 authority received before any pod creation or new evidence.
 
 ## P2-T03 — Implement one bounded source-relation search action
 
@@ -54,10 +54,11 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P2-T02; P2-T03
 - **Acceptance evidence:** Use permitted DEV only; compare static queries, generic feedback, extractive feedback and shuffled bindings as needed; count new families and net final score, all attempted variants and costs.
-- **Evidence:** pending
-- **Check:** NOT_CHECKED
-- **Next:** P2-T05 if viable
-- **Blocker:** —
+- **Evidence:** docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md
+- **Check:** Arctic C1 and BM25-full P1-DEV runs present locally; searchable complete content needs rebuild
+- **Next:** Finish D19 and freeze the executable matched P1-DEV screen before computing metrics
+- **Blocker:** Comparator decisions pending D19 execution; offline runtime prep can proceed
+- **Notes:** [2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze.
 
 ## P2-T05 — Freeze the selected method, primary endpoint and next evaluation
 
