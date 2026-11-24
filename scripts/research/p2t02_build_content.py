@@ -25,6 +25,14 @@ special tokens inside its 512 cap).
 Outputs (<out>): units.json, c1.ids.u32 / c1.len.npy / c1.unit.npy, c2.* (same layout), ser-full/passages.jsonl
 ({unit, text}), stats.json, manifest.json (sha256 of every output and of the inputs/code).
 Usage: python p2t02_build_content.py <bridgeret_dir> <pv_claims_dir> <out_dir> [--workers 32] [--limit N]
+
+Amendment A2 (D19 follow-up, docs/healthtech/research/p2-coverage/P2-T02-AMENDMENT-A2-D19-FOLLOWUP.md): environment
+overrides only; with none set the build is byte-identical to the P2-T02 (Arctic) build.
+  P2T02_TOKDIR   tokenizer directory (default: the Arctic directory above)
+  P2T02_WIN      content tokens per window (default 510 = 512 positions minus CLS and SEP)
+  P2T02_SEG_SEP  text whose token ids (add_special_tokens=False) precede every claim segment (default empty = none;
+                 A2 uses a newline as the C0 join string)
+The overrides in force are recorded in stats.json and manifest.json.
 """
 from __future__ import annotations
 
@@ -43,8 +51,12 @@ import zipfile
 from pathlib import Path
 
 csv.field_size_limit(1 << 30)
-TOKDIR = '/data/ptp-paper2/models/arctic-embed-m-v2.0'
-WIN, PARENT = 510, 64
+TOKDIR = os.environ.get('P2T02_TOKDIR') or '/data/ptp-paper2/models/arctic-embed-m-v2.0'
+WIN, PARENT = int(os.environ.get('P2T02_WIN') or 510), 64
+SEG_SEP = os.environ.get('P2T02_SEG_SEP', '')
+OVERRIDES = {k: os.environ[k] for k in ('P2T02_TOKDIR', 'P2T02_WIN', 'P2T02_SEG_SEP') if k in os.environ}
+MAX_MODEL_POSITIONS = 512
+assert PARENT < WIN <= MAX_MODEL_POSITIONS, WIN
 CHUNK = 5000
 # copied verbatim from bridgeret_query.py (the C0 serialiser)
 CANCELLED = re.compile(r'^\s*\d*\s*\.?\s*\(\s*(canceled|cancelled|deleted|withdrawn)\s*\)\s*\.?\s*$', re.I)
@@ -58,6 +70,7 @@ NEED: set = set()
 CORPUS: list = []
 CLAIMS: dict = {}
 TOK = None
+SEP_IDS: list = []
 SHARDS: Path | None = None
 
 
@@ -116,8 +129,13 @@ def scan(path):
 
 
 # ---------------------------------------------------------------- phase B: tokenise and cut
+def sep_ids(tok, sep):
+    """Token ids of the segment separator (amendment A2); [] when no separator is set (the P2-T02 build)."""
+    return list(tok(sep, add_special_tokens=False)['input_ids']) if sep else []
+
+
 def init_tok(shards):
-    global TOK, SHARDS
+    global TOK, SHARDS, SEP_IDS
     import gc
     gc.disable()          # never traverse the inherited (frozen) parent heap: avoids copy-on-write of the claims table
     os.environ['TOKENIZERS_PARALLELISM'] = 'false'
@@ -125,6 +143,7 @@ def init_tok(shards):
     from transformers.utils import logging as hl
     hl.set_verbosity_error()
     TOK = AutoTokenizer.from_pretrained(TOKDIR)
+    SEP_IDS = sep_ids(TOK, SEG_SEP)
     SHARDS = shards
 
 
@@ -258,7 +277,7 @@ def process(job):
             full = '\n'.join([seg0] + ctexts)
             fj.write(json.dumps({'unit': unit, 'text': full}, ensure_ascii=False) + '\n')
             enc = TOK([seg0] + ctexts, add_special_tokens=False)['input_ids']
-            ids0, cids = enc[0], enc[1:]
+            ids0, cids = enc[0], ([SEP_IDS + c for c in enc[1:]] if SEP_IDS else enc[1:])
             # first independent claim of these rows must equal the texts-v1 claim (same publication check)
             fi = next((r[3] for r in rows if not r[2] and not DEPENDENCY.search(r[3])), rows[0][3] if rows else '')
             st['first_claim_mismatch'] += int(fi != (first or ''))
@@ -312,6 +331,11 @@ def process(job):
         np.save(SHARDS / f'{arm}-{cid:04d}.len.npy', np.asarray(ln, dtype=np.int32))
         np.save(SHARDS / f'{arm}-{cid:04d}.unit.npy', np.asarray(un, dtype=np.int32))
     return cid, st
+
+
+def _tok_main():
+    from transformers import AutoTokenizer
+    return AutoTokenizer.from_pretrained(TOKDIR)
 
 
 def pct(xs):
@@ -411,7 +435,8 @@ def main():
     ln1, ln2 = np.load(out / 'c1.len.npy'), np.load(out / 'c2.len.npy')
     stats = {
         'protocol': 'docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md@bd30d3f7',
-        'window_content_tokens': WIN, 'window_model_positions': WIN + 2, 'parent_context_tokens': PARENT,
+        'window_content_tokens': WIN, 'window_model_positions': MAX_MODEL_POSITIONS, 'parent_context_tokens': PARENT,
+        'env_overrides': OVERRIDES, 'segment_separator_ids': sep_ids(_tok_main(), SEG_SEP) if SEG_SEP else [],
         'units': len(units), 'docs_with_live_claims': sum(1 for c in CORPUS if c[1] in CLAIMS),
         'unit_doc_kind': {'pregrant_PG': sum(c[1].startswith('PG') for c in CORPUS),
                           'grant_P': sum(not c[1].startswith('PG') for c in CORPUS)},
@@ -429,7 +454,8 @@ def main():
                'ser-full/passages.jsonl', 'stats.json']
     man = {'script': Path(__file__).name, 'script_sha256': fsha(__file__), 'argv': sys.argv[1:],
            'inputs': {'texts-v1/corpus.jsonl': fsha(corpus_p), 'claims_files': len(files),
-                      'tokenizer': TOKDIR, 'tokenizer_json_sha256': fsha(Path(TOKDIR) / 'tokenizer.json')},
+                      'tokenizer': TOKDIR, 'tokenizer_json_sha256': fsha(Path(TOKDIR) / 'tokenizer.json'),
+                      'env_overrides': OVERRIDES},
            'outputs_sha256': {p: fsha(out / p) for p in outputs}, 'seconds': round(time.time() - t0, 1)}
     (out / 'manifest.json').write_text(json.dumps(man, indent=1))
     print(json.dumps({k: stats[k] for k in ('units', 'c1_passages', 'c2_passages', 'c1_tokens', 'c2_tokens',
