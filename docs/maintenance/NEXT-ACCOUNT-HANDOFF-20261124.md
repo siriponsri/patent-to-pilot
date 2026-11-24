@@ -79,8 +79,8 @@ Then run `git status` and `git log -5`. The last pushed commit is on `main` (it 
      passed.
   3. Uploaded the P2-T02 RunPod outputs to `/data/ptp-paper2/p2-coverage-runpod/` and started the deferred descriptive
      checks (deeper original-query control and fusion with A = Arctic C1, L = BM25-full). This is CPU only, with 8
-     workers and a 30 GiB watchdog. Check `deferred.log` there for `DEFERRED_DONE` or `DEFERRED_FAILED`.
-     Outputs: `results-with-deeper.json` and `fusion/fusion.json`. Add the descriptive numbers to the P2-T02 receipt.
+     workers and a 30 GiB watchdog. **DONE (18 min, no memory issue)**; the results are in the P2-T02 receipt: deeper
+     retrieval adds 0 at R@200, and fusion F\* is unchanged (0.4230) with Arctic C1 / BM25-full substituted.
 - **Owner choice:** D19 (PatEmbed/Qwen3 complete content) runs on **RunPod**, not dr-train.
 - **Suggested dr-train use next:**
   - free CPU jobs (evaluations, fusion, analyses);
@@ -136,9 +136,8 @@ Read, in order: CLAUDE.md, HANDOFF.md, docs/maintenance/NEXT-ACCOUNT-HANDOFF-202
 docs/tracking/owner-note-22112026/PHASE_BOARD.md, docs/maintenance/OWNER-DECISIONS-20261122.md (D1–D25),
 docs/maintenance/AGENT-LESSONS.md. Then run git status and git log -5. Report to me in plain Thai.
 
-A3r1 is finished (P1 closed: frozen rule CONTINUE, VAL +0.0213). dr-train is back (see §2a): first check
-/data/ptp-paper2/p2-coverage-runpod/deferred.log on dr-train and record the deferred P2-T02 descriptive checks.
-Then start at step 3 of the ordered task list in NEXT-ACCOUNT-HANDOFF-20261124.md §2: merge the D25 policy v2.1 branch after the full gate, finish and verify the D19
+A3r1 is finished (P1 closed: frozen rule CONTINUE, VAL +0.0213). dr-train is back and the deferred P2-T02 checks are
+recorded (see §2a). Start at step 3 of the ordered task list in NEXT-ACCOUNT-HANDOFF-20261124.md §2: merge the D25 policy v2.1 branch after the full gate, finish and verify the D19
 package and run it on RunPod (owner choice; ask me before opening pods), then continue with P2-T04 against the new
 complete-content baselines. Follow the dr-train memory-safety rules in §2a for any dr-train job.
 
