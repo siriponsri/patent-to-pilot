@@ -26,6 +26,10 @@ and say so in their first line. Nothing here measures retrieval effectiveness.
 Usage::
 
     python scripts/verify_selective_revision.py --out receipt.json [--work-dir DIR] [--scenario ID ...]
+        [--policy ptp-structural-acquisition/2.0.0]
+
+``--policy`` sets the structural-acquisition policy of every run in every path (default: the engine default,
+``ptp-structural-acquisition/2.1.0`` since owner decision D25). ``2.0.0`` reproduces the original D2 results.
 """
 from __future__ import annotations
 
@@ -43,11 +47,14 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT / "src") not in sys.path:
     sys.path.insert(0, str(ROOT / "src"))
 
+from patent_to_pilot.workbench import acquisition as A  # noqa: E402
 from patent_to_pilot.workbench import core as C  # noqa: E402
+from patent_to_pilot.workbench import relation_search as R  # noqa: E402
 from patent_to_pilot.workbench import thai_analyzer as TA  # noqa: E402
 
 TASK_ID = "P4-T04"
-HARNESS_VERSION = "ptp-p4-t04-selective-revision/1.0.0"
+# 1.1.0 (D25): --policy, the run counter of sibling seed searches (policy 2.1.0 S1a) in the work meter
+HARNESS_VERSION = "ptp-p4-t04-selective-revision/1.1.0"
 LABEL = "SYNTHETIC FIXTURE - NOT A REAL DOCUMENT - P4-T04 revision check"
 
 # --------------------------------------------------------------------------------------------------- fixtures
@@ -60,7 +67,8 @@ REQUIREMENTS = [
      "field": "supported_temperature_range",
      "predicate": {"operator": "contains_interval", "minimum": 10, "maximum": 50, "unit": "degC"}},
 ]
-# A1 sorts before E1, and A1's no-hit action anchors on the citation of a sibling requirement (P4-T03 rule)
+# A1 sorts before E1, and A1's no-hit action anchors on a sibling requirement: on its stored citation under policy
+# 2.0.0 (history-dependent, D2), on its current seed hits under policy 2.1.0 (D25)
 ORDER_REQUIREMENTS = [
     {"requirement_id": "A1", "label": "annual application fee", "match": "phrase"},
     {"requirement_id": "E1", "label": "registered company", "query": "registered company"},
@@ -151,7 +159,8 @@ SCENARIOS = [
      "changes": [("remove", "annex-b")]},
     {"id": "d1-sibling-anchor-order", "kind": "source_text", "base": "order",
      "description": "Edit an uncited member in a project where a no-hit requirement (A1) anchors its action on a "
-                    "sibling requirement's citation (E1) that sorts after it.",
+                    "sibling requirement (E1) that sorts after it (its citation under policy 2.0.0, its current seed "
+                    "hits under 2.1.0).",
      "changes": [("revise", "misc", ORDER_MISC.replace("on pallets", "on wooden pallets"))]},
 ]
 
@@ -228,6 +237,7 @@ def measured(core, meter: Meter, project_id: str, out: dict):
         passage_reads=sum(c.get("source_reads", 0) for c in counters),
         run_counter_acquisition_actions=sum(c.get("acquisition_actions", 0) for c in counters),
         run_counter_structural_actions=sum(c.get("structural_actions", 0) for c in counters),
+        run_counter_sibling_seed_searches=sum(c.get("sibling_seed_searches", 0) for c in counters),
         paid_model_calls=sum(c.get("paid_model_calls", 0) for c in counters),
         remote_calls=sum(c.get("remote_calls", 0) for c in counters),
         passages_indexed=_count(core, "SELECT COUNT(*) FROM passages WHERE project_id=?", (project_id,)) - rows["passages"],
@@ -417,7 +427,30 @@ def diff(a: dict, b: dict, provenance: bool = False) -> dict:
 
 
 # --------------------------------------------------------------------------------------------------- one scenario
-def run_scenario(sc: dict, work: Path, disable_scope_fix: bool = False) -> dict:
+@contextmanager
+def structural_policy(policy: str | None):
+    """Every run of every path (base, selective settle, full reruns) uses ``policy`` (None: the engine default)."""
+    if policy is None:
+        yield A.DEFAULT_POLICY
+        return
+    if policy not in R.STRUCTURAL_POLICY_NAMES:
+        raise ValueError(f"unknown structural policy {policy}; one of {sorted(R.STRUCTURAL_POLICY_NAMES)}")
+    old = A.DEFAULT_POLICY
+    A.DEFAULT_POLICY = policy
+    try:
+        yield policy
+    finally:
+        A.DEFAULT_POLICY = old
+
+
+def run_scenario(sc: dict, work: Path, disable_scope_fix: bool = False, policy: str | None = None) -> dict:
+    with structural_policy(policy) as used:
+        rep = _run_scenario(sc, work, disable_scope_fix)
+    rep["acquisition_policy"] = used
+    return rep
+
+
+def _run_scenario(sc: dict, work: Path, disable_scope_fix: bool = False) -> dict:
     base_docs, reqs = BASES[sc.get("base", "main")]
     work.mkdir(parents=True, exist_ok=True)
     base_dir, pid = _build_base(work, base_docs, reqs)
@@ -502,6 +535,7 @@ def _recount_store_wide(core, pid: str, out: dict) -> None:
     out["passage_reads"] = sum(c.get("source_reads", 0) for c in counters)
     out["run_counter_acquisition_actions"] = sum(c.get("acquisition_actions", 0) for c in counters)
     out["run_counter_structural_actions"] = sum(c.get("structural_actions", 0) for c in counters)
+    out["run_counter_sibling_seed_searches"] = sum(c.get("sibling_seed_searches", 0) for c in counters)
     out["paid_model_calls"] = sum(c.get("paid_model_calls", 0) for c in counters)
     out["remote_calls"] = sum(c.get("remote_calls", 0) for c in counters)
 
@@ -527,20 +561,22 @@ def environment() -> dict:
             "thai_analyzer": analyzer, "core_code_sha256": C.core_code_sha256()}
 
 
-def run_all(work_dir: Path, only: list[str] | None = None, disable_scope_fix: bool = False) -> dict:
+def run_all(work_dir: Path, only: list[str] | None = None, disable_scope_fix: bool = False,
+            policy: str | None = None) -> dict:
     scenarios = [s for s in SCENARIOS if not only or s["id"] in only]
-    reports = [run_scenario(s, work_dir / s["id"], disable_scope_fix) for s in scenarios]
+    reports = [run_scenario(s, work_dir / s["id"], disable_scope_fix, policy) for s in scenarios]
     totals = {}
     for path in ("selective_work", "full_in_place_work", "full_scratch_work"):
         keys = ("obligations_reassessed", "seed_searches", "run_counter_acquisition_actions",
-                "structural_action_searches", "passage_reads",
+                "run_counter_sibling_seed_searches", "structural_action_searches", "passage_reads",
                 "passages_indexed", "derivative_rows_written", "structure_nodes_written", "wall_seconds",
                 "paid_model_calls", "remote_calls", "provider_client_requests", "provider_usage_rows")
         totals[path] = {k: round(sum(r.get(path, {}).get(k, 0) for r in reports), 4) for k in keys}
     return {"record_schema": HARNESS_VERSION, "task": TASK_ID, "data": "authored synthetic fixtures only",
             "claim_boundary": "engineering check of the revision path; not a retrieval-effectiveness result",
             "environment": environment(), "selective_path": "pre-P4-T04 (scope fix disabled)" if disable_scope_fix
-            else "current engine", "scenarios": reports,
+            else "current engine", "acquisition_policy": policy or A.DEFAULT_POLICY,
+            "acquisition_policy_sha256": R.PINNED_POLICY_SHA256[policy or A.DEFAULT_POLICY], "scenarios": reports,
             "verdicts": {r["id"]: r["verdict"] for r in reports}, "work_totals": totals}
 
 
@@ -560,6 +596,7 @@ def markdown(rep: dict) -> str:
                      f"{j(s['over_invalidated'])} |")
     keys = [("obligations_reassessed", "obligations re-assessed"), ("seed_searches", "seed searches (measured)"),
             ("run_counter_acquisition_actions", "searches in run counters"),
+            ("run_counter_sibling_seed_searches", "sibling seed searches in run counters"),
             ("structural_action_searches", "structural action searches"), ("passage_reads", "passage reads"),
             ("passages_indexed", "passages indexed"), ("derivative_rows_written", "Thai index rows written"),
             ("structure_nodes_written", "structure nodes written"), ("wall_seconds", "wall s"),
@@ -587,6 +624,9 @@ def main(argv=None) -> int:
     ap.add_argument("--scenario", action="append", help="run only these scenario ids")
     ap.add_argument("--without-scope-fix", action="store_true",
                     help="disable the P4-T04 re-acquisition rule in the selective path (shows the original defect)")
+    ap.add_argument("--policy", choices=sorted(R.STRUCTURAL_POLICY_NAMES),
+                    help="structural-acquisition policy of every run (default: the engine default, 2.1.0 since D25; "
+                         "2.0.0 reproduces defect D2)")
     args = ap.parse_args(argv)
     tmp = None
     work = args.work_dir
@@ -594,7 +634,7 @@ def main(argv=None) -> int:
         tmp = tempfile.mkdtemp(prefix="ptp-p4t04-")
         work = Path(tmp)
     try:
-        rep = run_all(work, args.scenario, args.without_scope_fix)
+        rep = run_all(work, args.scenario, args.without_scope_fix, args.policy)
     finally:
         if tmp:
             shutil.rmtree(tmp, ignore_errors=True)

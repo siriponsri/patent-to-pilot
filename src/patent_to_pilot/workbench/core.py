@@ -279,7 +279,9 @@ class EvidenceCore:
     @staticmethod
     def _acquisition_capability() -> dict:
         from patent_to_pilot.workbench import relation_search as R
-        return {"state": "active", "task": "P4-T03", "policy": R.POLICY_V2.name, "policy_sha256": R.POLICY_V2_SHA256,
+        return {"state": "active", "task": "P4-T03", "policy": R.CURRENT_STRUCTURAL_POLICY.name,
+                "policy_sha256": R.CURRENT_STRUCTURAL_POLICY_SHA256,
+                "selectable_policies": sorted(R.STRUCTURAL_POLICY_NAMES),   # D25: 2.0.0 kept for reproduction only
                 "action_kinds": list(R.ACTION_KINDS), "structure_ruleset": S.RULESET, "applies_to": "owner projects",
                 "modes": ["structural", "baseline"]}
 
@@ -589,8 +591,10 @@ class EvidenceCore:
         acq, acq_seq = None, None
         acq_opts = (ctx or {}).get("acquisition") or {"mode": "off"}
         if acq_opts["mode"] in ("structural", "baseline"):
+            # D25 (policy 2.1.0): this run's seed hits, so a sibling's no-hit anchor reuses them (current corpus only)
+            ctx.setdefault("seed_hits", {})[(cand, rid)] = hits
             t0 = utc_now()
-            acq = self.acquisition.acquire(project_id, run_id, seq, cand, req, hits, acq_opts, counters)
+            acq = self.acquisition.acquire(project_id, run_id, seq, cand, req, hits, acq_opts, counters, ctx)
             self._action(run_id, seq, "structural_acquisition", cand, rid, acq["receipt"], started=t0)
             self.acquisition.record(project_id, run_id, seq, cand, req, acq["receipt"])
             acq_seq = seq
@@ -1015,6 +1019,7 @@ class EvidenceCore:
                 with self.store.read() as con:
                     new_hits = self._search(con, project_id, key[0], reqs[key[1]]["query"], ctx,
                                             match=requirement_match(reqs[key[1]]))
+                ctx.setdefault("seed_hits", {})[key] = new_hits   # D25: a seed searched in this run on the current corpus
                 old_ids = [(h["source_id"], h["version_id"], h["passage_id"]) for h in json.loads(a["search_hits_json"])]
                 new_ids = [(h["source_id"], h["version_id"], h["passage_id"]) for h in new_hits]
                 if old_ids == new_ids and ctx.get("last_search") == "hybrid":

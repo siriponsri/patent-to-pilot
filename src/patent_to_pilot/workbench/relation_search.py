@@ -324,7 +324,7 @@ POLICY_V1_SHA256 = "e4ea084cd572e4fdda37838451c9d2838f7af61bc5c68b7cec4468411265
 POLICIES = {POLICY_V1.name: POLICY_V1}
 PINNED_POLICY_SHA256 = {POLICY_V1.name: POLICY_V1_SHA256}
 # P4-T03: relation_search_step / select_relation / build_query implement only the relation-search family (POLICY_V1).
-# The structural-acquisition policy (POLICY_V2, below) has its own selector and operator.
+# The structural-acquisition policies (POLICY_V2 and POLICY_V2_1, below) have their own selector and operator.
 RELATION_POLICY_NAMES = frozenset({POLICY_V1.name})
 
 
@@ -900,7 +900,45 @@ POLICY_V2 = SelectionPolicy(
 POLICY_V2_SHA256 = "124909017ac6a77daa253585399a202540f2dc01756fc41d28ae6bd4815fdd89"
 POLICIES[POLICY_V2.name] = POLICY_V2
 PINNED_POLICY_SHA256[POLICY_V2.name] = POLICY_V2_SHA256
-STRUCTURAL_POLICY_NAMES = frozenset({POLICY_V2.name})
+
+# Owner decision D25 (24 Nov 2026; P4-T04 defect D2): policy 2.0.0 anchors a no-hit requirement's
+# search_within_source on the source cited by the candidate's CURRENT assessments of other requirements, which depends
+# on store history and on requirement-id order within a run. Version 2.1.0 changes only that anchor rule (S1, new S1a):
+# the anchor comes from the seed hits of the candidate's other active requirements recomputed on the current corpus
+# (all seed searches of the candidate are available before the anchor is chosen), never from stored results. Every
+# other rule is the 2.0.0 text verbatim. POLICY_V2 above stays byte-identical, pinned and selectable for reproduction.
+POLICY_V2_1 = SelectionPolicy(
+    policy_id="ptp-structural-acquisition",
+    version="2.1.0",
+    max_expansion_searches=1,
+    selection_rule=(
+        POLICY_V2.selection_rule[0],
+        "S1 candidate actions: resolve_reference (an explicit reference in a seed unit whose qualified target resolves "
+        "to exactly one unit outside the pool); recover_context (the parent numbered unit of the top seed unit when "
+        "that unit's heading lies in another passage, or a bound footnote or table header outside the pool); "
+        "search_within_source (gap no_hit, absent_bounded_field or user_declared_missing, when an anchor source "
+        "exists: the source of the first seed unit, else the sibling-seed anchor of S1a); search_eligible_corpus (the "
+        "same gaps, over the candidate's whole eligible scope).",
+        "S1a sibling-seed anchor (used only when the obligation's own eligible seed pool is empty): the seed searches "
+        "of all the candidate's other active requirements are run on the current corpus in the same run (a seed "
+        "already searched in the run is reused; stored assessments, citations and earlier runs are never read). Each "
+        "other requirement, in requirement_id order, votes once for the source version of its first eligible seed "
+        "unit (a requirement with no eligible seed unit does not vote). The anchor is the source version with the "
+        "most votes, ties by source_id, then version_id; no vote, no anchor. The recorded anchors are the voting seed "
+        "units of the anchor source in requirement_id order, at most 3. The result depends only on the current "
+        "corpus, the active requirement set and the scope rule, not on run order or store history.",
+        *POLICY_V2.selection_rule[2:],
+    ),
+    query_rule=POLICY_V2.query_rule,
+    rerank_rule=POLICY_V2.rerank_rule,
+)
+POLICY_V2_1_SHA256 = "b632a2ca67e5037850312789e6ca1c6d6e5abb858b4ab00390269640d7686df4"
+POLICIES[POLICY_V2_1.name] = POLICY_V2_1
+PINNED_POLICY_SHA256[POLICY_V2_1.name] = POLICY_V2_1_SHA256
+STRUCTURAL_POLICY_NAMES = frozenset({POLICY_V2.name, POLICY_V2_1.name})
+# The policy a Workbench run uses unless the run's acquisition options name another structural policy.
+CURRENT_STRUCTURAL_POLICY = POLICY_V2_1
+CURRENT_STRUCTURAL_POLICY_SHA256 = POLICY_V2_1_SHA256
 
 
 def _require_structural_policy(policy: SelectionPolicy) -> None:
@@ -1269,6 +1307,7 @@ class RelationSearchSlice(TraceSlice):
 def _check_pins() -> None:  # pragma: no cover - development aid: prints the fingerprint to pin
     print(json.dumps({"policy": POLICY_V1.name, "sha256": POLICY_V1.fingerprint()}))
     print(json.dumps({"policy": POLICY_V2.name, "sha256": POLICY_V2.fingerprint()}))
+    print(json.dumps({"policy": POLICY_V2_1.name, "sha256": POLICY_V2_1.fingerprint()}))
 
 
 if __name__ == "__main__":  # pragma: no cover

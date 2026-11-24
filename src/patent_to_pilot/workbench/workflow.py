@@ -11,7 +11,8 @@ call is used.
   in the project's mission. Bounded-field requirements keep the G01 parser; free-text requirements are searched and
   their best passage is reported as evidence without any judgement. The sample and synthetic projects stay fixed.
 * **Compare** -- runs the requirement set through the assessment path (``EvidenceCore.run_comparison``). P4-T03: for an
-  owner project that path itself takes at most one structural acquisition action per obligation (``POLICY_V2``) BEFORE
+  owner project that path itself takes at most one structural acquisition action per obligation (``POLICY_V2_1`` by
+  default since D25; ``POLICY_V2`` only on explicit request) BEFORE
   the assessment is committed; Compare shows the persisted action receipt linked to each committed assessment
   (``acquisition``), and ``{"acquisition": "baseline"}`` runs the comparable no-action mode. The earlier read-only
   side-by-side of one ``POLICY_V1`` relation search (``relation_action``) is only computed on explicit request
@@ -436,11 +437,15 @@ class Workflow:
                     entry["side_by_side"] = self.relation_action(project_id, req)
                 out.append(entry)
         counters = (run or {}).get("counters") or {}
+        # D25: the policy this request's run declared (2.1.0 unless the request named another), else the default
+        policy = counters.get("acquisition_policy") or R.CURRENT_STRUCTURAL_POLICY.name
+        if policy not in R.STRUCTURAL_POLICY_NAMES:
+            policy = R.CURRENT_STRUCTURAL_POLICY.name
         return {"task": TASK_ID, "subtask": "P4-T03", "project_id": project_id, "data_origin": proj["data_origin"],
                 "run": run, "requirements": out, "engineering_demo_label": ENGINEERING_DEMO_LABEL,
                 "assessment_path": ("EvidenceCore.run_comparison (PLAN -> seed search -> at most one structural action "
-                                    f"under {R.POLICY_V2.name} -> assess against the original requirement -> COMMIT)"),
-                "acquisition_policy": {"name": R.POLICY_V2.name, "sha256": R.POLICY_V2_SHA256},
+                                    f"under {policy} -> assess against the original requirement -> COMMIT)"),
+                "acquisition_policy": {"name": policy, "sha256": R.PINNED_POLICY_SHA256[policy]},
                 # P4-T03: the run's own counters (not constants); provider dispatch is measured in run.provider_dispatch
                 "paid_model_calls": counters.get("paid_model_calls", 0), "remote_calls": counters.get("remote_calls", 0),
                 "counters_source": "run counters of this request's run" if run else "no run in this request"}

@@ -6,9 +6,9 @@ project and BEFORE the assessment is read and committed:
     seed search -> observable gap? -> at most ONE scoped structural action (policy v2) -> merge + original-requirement
     rerank -> read/assess against the original requirement -> commit assessment, citation, dependencies and receipt
 
-* Gap signals and the four action kinds are those of ``relation_search.POLICY_V2`` (pinned). The pure operator
-  ``relation_search.structural_action_step`` executes the action; this module supplies the Workbench backends: the
-  persisted document structure (``structure.StructureStore``) for reference resolution and context recovery, and the
+* Gap signals and the four action kinds are those of ``relation_search.POLICY_V2`` / ``POLICY_V2_1`` (pinned). The
+  pure operator ``relation_search.structural_action_step`` executes the action; this module supplies the Workbench
+  backends: the persisted document structure (``structure.StructureStore``) for reference resolution and context recovery, and the
   product Thai index (``passage_fts_th_v1``, P4-T01a analyzer) for scoped search. Legacy ``trace_slice`` helpers and the
   frozen P0-T06 / P2 routes are not used or changed.
 * Scope: every route is restricted to the project, the obligation's candidate, the candidate's CURRENT source versions
@@ -18,6 +18,12 @@ project and BEFORE the assessment is read and committed:
   ``structural_acquisition``) linked to the assessment it fed; the UI reads these persisted receipts.
 * ``baseline`` mode runs the unchanged pre-P4-T03 path (no action); its receipt records the observed gaps only, so the two
   modes can be compared on the same store.
+* Policy version (owner decision D25, P4-T04 defect D2): runs use ``relation_search.POLICY_V2_1``
+  (``ptp-structural-acquisition/2.1.0``) by default. The only rule it changes is the anchor of a requirement whose own
+  seed pool is empty: 2.0.0 took the source cited by the candidate's stored current assessments of other requirements
+  (history- and order-dependent); 2.1.0 takes it from the seed hits of the candidate's other active requirements,
+  recomputed on the current corpus in the same run (``_sibling_seeds``). The run option
+  ``{"policy": "ptp-structural-acquisition/2.0.0"}`` still selects the old rule, for reproduction only.
 """
 from __future__ import annotations
 
@@ -31,7 +37,7 @@ from patent_to_pilot.workbench import relation_search as R
 from patent_to_pilot.workbench import structure as S
 from patent_to_pilot.workbench import thai_analyzer as TA
 from patent_to_pilot.workbench.core import (TERM_STOPWORDS, ValidationFailed, fts_phrase, fts_terms, requirement_kind,
-                                            sha256)
+                                            requirement_match, sha256)
 from patent_to_pilot.workbench.store import dumps, utc_now
 
 TASK_ID = "P4-T03"
@@ -42,7 +48,9 @@ ACTION_RESULT_LIMIT = 5
 MAX_REFERENCES = 40
 SUBSTRING_MIN_CHARS = 2
 DATE_FIELDS = ("effective", "publication")
-OPTION_KEYS = ("mode", "declared_missing", "date_cutoff", "date_field", "source_dates", "missing_date")
+OPTION_KEYS = ("mode", "declared_missing", "date_cutoff", "date_field", "source_dates", "missing_date", "policy")
+DEFAULT_POLICY = R.CURRENT_STRUCTURAL_POLICY.name     # D25: ptp-structural-acquisition/2.1.0
+SIBLING_ANCHOR_MAX = 3
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS acquisition_receipts (
   project_id TEXT NOT NULL, run_id TEXT NOT NULL, seq INTEGER NOT NULL, candidate_id TEXT NOT NULL,
@@ -129,8 +137,11 @@ class Acquisition:
         missing = raw.get("missing_date") or "exclude"
         if missing not in ("exclude", "include"):
             raise ValidationFailed("missing_date must be 'exclude' or 'include'", "bad_acquisition_date")
+        policy = raw.get("policy") or DEFAULT_POLICY
+        if policy not in R.STRUCTURAL_POLICY_NAMES:
+            raise ValidationFailed(f"policy must be one of {sorted(R.STRUCTURAL_POLICY_NAMES)}", "bad_acquisition_policy")
         limits = mission["limits"]
-        return {"mode": mode, "policy": R.POLICY_V2.name, "policy_sha256": R.POLICY_V2_SHA256,
+        return {"mode": mode, "policy": policy, "policy_sha256": R.PINNED_POLICY_SHA256[policy],
                 "structure_ruleset": S.RULESET, "structure_profile": S.PROFILE, "declared_missing": sorted(declared),
                 "date_cutoff": cutoff, "date_field": field if cutoff else None, "source_dates": dates,
                 "missing_date": missing,
@@ -140,7 +151,7 @@ class Acquisition:
     @staticmethod
     def setup_record(opts: dict) -> dict:
         return {**opts, "task": TASK_ID, "claim_boundary": R.V2_CLAIM_BOUNDARY,
-                "per_obligation_budget": R.POLICY_V2.max_expansion_searches}
+                "per_obligation_budget": R.POLICIES[opts["policy"]].max_expansion_searches}
 
     # ------------------------------------------------------------------ scope
     def _scope(self, con, project_id: str, cand: str, opts: dict):
@@ -175,9 +186,52 @@ class Acquisition:
         return {"unit_id": uid, "source_id": sid, "version_id": vid, "passage_id": pid, "start_char": r["start_char"],
                 "end_char": r["end_char"], "quote": r["quote"], "candidate_id": r["candidate_id"]}
 
+    # ------------------------------------------------------------------ policy 2.1.0 sibling-seed anchor (D25)
+    def _sibling_seeds(self, con, project_id: str, cand: str, rid: str, ctx: dict | None,
+                       counters: dict) -> list[tuple[str, list[dict]]]:
+        """Seed hits of every other active requirement of the candidate on the CURRENT corpus, in requirement_id
+        order. A seed already searched in this run (``ctx['seed_hits']``, filled by ``EvidenceCore._acquire_and_commit``
+        and by this method) is reused; any other is searched now, exactly as the obligation's own seed search would
+        (same ``EvidenceCore._search`` route, query and match expression). Stored assessments, citations and earlier
+        runs are never read, so the result does not depend on run order or store history."""
+        reqs = sorted((r for r in self.core._project(con, project_id)["mission"]["requirements"]
+                       if r["requirement_id"] != rid), key=lambda r: r["requirement_id"])
+        cache = ctx.setdefault("seed_hits", {}) if ctx is not None else {}
+        out = []
+        for r in reqs:
+            key = (cand, r["requirement_id"])
+            if key not in cache:
+                # a shallow copy keeps the caller's last_search / last_lexical (recorded for its own seed) untouched
+                local = None if ctx is None else {**ctx}
+                cache[key] = self.core._search(con, project_id, cand, r["query"], local, match=requirement_match(r))
+                counters["sibling_seed_searches"] = counters.get("sibling_seed_searches", 0) + 1
+            out.append((r["requirement_id"], cache[key]))
+        return out
+
+    def _sibling_seed_anchor(self, con, project_id: str, eligible, seeds) -> tuple[tuple | None, tuple]:
+        """Policy 2.1.0 S1a: each other requirement votes once for the source version of its first eligible seed unit;
+        most votes wins, ties by source_id then version_id; the anchors are the voting units of that source version in
+        requirement_id order (at most ``SIBLING_ANCHOR_MAX``)."""
+        allowed = set(eligible)
+        votes: dict = {}
+        for rid, hits in seeds:
+            first = next((h for h in hits if (h["source_id"], h["version_id"]) in allowed), None)
+            if first is not None:
+                votes.setdefault((first["source_id"], first["version_id"]), []).append((rid, first))
+        if not votes:
+            return None, ()
+        anchor = sorted(votes, key=lambda k: (-len(votes[k]), k[0], k[1]))[0]
+        spans = []
+        for rid, h in votes[anchor][:SIBLING_ANCHOR_MAX]:
+            u = self._unit(con, project_id, unit_id(h["source_id"], h["version_id"], h["passage_id"]))
+            spans.append({"source_id": anchor[0], "version_id": anchor[1], "start": u["start_char"],
+                          "end": u["end_char"], "text": u["quote"][:80], "kind": "sibling_seed_unit",
+                          "requirement_id": rid})
+        return anchor, tuple(spans)
+
     # ------------------------------------------------------------------ gap detection and candidate actions
     def _detect(self, con, project_id: str, cand: str, req: dict, pool: list[dict], eligible, titles: dict,
-                opts: dict) -> tuple[list[str], list[R.ActionCandidate]]:
+                opts: dict, sibling_seeds=None) -> tuple[list[str], list[R.ActionCandidate]]:
         rid = req["requirement_id"]
         pool_ids = [u["unit_id"] for u in pool]
         signals: set = set()
@@ -253,7 +307,11 @@ class Acquisition:
                 anchor = (pool[0]["source_id"], pool[0]["version_id"])
                 anchors = ({"source_id": anchor[0], "version_id": anchor[1], "start": pool[0]["start_char"],
                             "end": pool[0]["end_char"], "text": pool[0]["quote"][:80], "kind": "first_seed_unit"},)
-            else:
+            elif opts.get("policy", DEFAULT_POLICY) != R.POLICY_V2.name:
+                # policy 2.1.0 S1a (D25): vote by the current seed hits of the other active requirements
+                anchor, anchors = self._sibling_seed_anchor(con, project_id, eligible, sibling_seeds() if sibling_seeds
+                                                            else [])
+            else:   # policy 2.0.0 (kept for reproduction): stored current citations of other requirements (D2)
                 active = [r["requirement_id"] for r in self.core._project(con, project_id)["mission"]["requirements"]
                           if r["requirement_id"] != rid]
                 cited: dict = {}
@@ -398,8 +456,10 @@ class Acquisition:
 
     # ------------------------------------------------------------------ one obligation
     def acquire(self, project_id: str, run_id: str, seq: int, cand: str, req: dict, seed_hits: list[dict],
-                opts: dict, counters: dict) -> dict:
+                opts: dict, counters: dict, ctx: dict | None = None) -> dict:
+        """``ctx`` is the run's retrieval context; policy 2.1.0 keeps the run's seed hits in ``ctx['seed_hits']``."""
         rid = req["requirement_id"]
+        policy = R.POLICIES[opts.get("policy", DEFAULT_POLICY)]
         with self.store.read() as con:
             current = self.core._scope(con, project_id, cand)
         self.core.structure.ensure(project_id, current)       # stores created before P4-T03: build once, then reuse
@@ -415,13 +475,15 @@ class Acquisition:
             pool_excluded = [{"unit_id": u, "reason": mask.reason(u)} for u in seed_ids if mask.reason(u)]
             pool_ids = [u for u in seed_ids if not mask.reason(u)]
             pool = [self._unit(con, project_id, u) for u in pool_ids]
-            gaps, candidates = self._detect(con, project_id, cand, req, pool, eligible, titles, opts)
+            gaps, candidates = self._detect(
+                con, project_id, cand, req, pool, eligible, titles, opts,
+                sibling_seeds=lambda: self._sibling_seeds(con, project_id, cand, rid, ctx, counters))
             q = req["query"]
             qr = R.QueryRequirements(f"{project_id}:{cand}:{rid}", q, (R.Requirement(rid, 0, len(q), q),))
             if opts["mode"] == "baseline":
                 receipt = {"record_schema": R.RECEIPT_SCHEMA, "claim_boundary": R.V2_CLAIM_BOUNDARY,
                            "requirement_id": rid, "requirement_version": qr.sha256(), "requirements": qr.as_record(),
-                           "policy_version": R.POLICY_V2.name, "policy_sha256": R.POLICY_V2.fingerprint(),
+                           "policy_version": policy.name, "policy_sha256": policy.fingerprint(),
                            "gaps": gaps, "selection": {"selected_action_key": None, "considered": [], "skipped": [],
                                                        "candidates": [c.as_record() for c in candidates]},
                            "action": None, "action_key": None, "reason": None, "anchors": [], "scope": None,
@@ -435,7 +497,7 @@ class Acquisition:
                     requirements=qr, candidates=candidates, pool_before=pool_ids,
                     execute=lambda c, fetch: self._execute(con, project_id, cand, req, c, fetch, eligible, an, st),
                     rerank=self._rerank(con, project_id, an), budget=R.ActionBudget(1 if allowed else 0),
-                    eligibility=mask, unit_document=lambda u: split_unit(u)[0], gaps=gaps,
+                    eligibility=mask, unit_document=lambda u: split_unit(u)[0], gaps=gaps, policy=policy,
                     result_limit=ACTION_RESULT_LIMIT, fetch_limit=ACTION_FETCH_LIMIT)
                 if not allowed:
                     receipt["budget_note"] = f"run cap of {opts['max_structural_actions']} structural actions reached"
