@@ -77,8 +77,9 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
 - **Qwen3 awaiting stock:** the quoted USD 1.09/hour US-MO-1 L40S create returned HTTP 400. The account lists only
   PatEmbed, and refreshed L40S stock was NONE. The planned USD 8.50 remains available for qualifying Qwen3 stock.
 - **P2-T04 artifact staging:** ten non-TEST runtime and historical inputs passed transfer and SHA-256 checks on
-  `/data/ptp-paper2/p2t04-run-prep-20261124`. The 30 GiB MemAvailable guard did not trigger. Prepare the lexical
-  stream and evaluator-only inputs separately. Complete the comparator manifest after D19 before retrieval or scoring.
+  `/data/ptp-paper2/p2t04-run-prep-20261124`. The 30 GiB MemAvailable guard did not trigger. The lexical stream
+  has been materialized and hash-checked, the two evaluator inputs are in a separate directory, and both entry
+  points from `ff9c2048` load on dr-train. Complete the comparator manifest after D19 before retrieval or scoring.
 
 ### Money and access (24 Nov)
 

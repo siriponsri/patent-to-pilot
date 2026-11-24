@@ -93,6 +93,7 @@ baseline decision and the remainder of the input set.
 | `p2t02-d19-runpod/complete-lexical-passages.jsonl.gz` | `79b53f8dc994c6124ebe1f0498563077f5e9ab0c22a580135545773c1154b94d` |
 | `p2t04-preflight-20261124/clusters-P1-DEV.tsv` | `161fbbdecfc4d21e49849e48e5a5229cb1f69760a573ed46ed2188a0eb45cc21` |
 | `p2t04-preflight-20261124/dr-runtime-stage.json` | `c66e0d650788cbae6480c4e75390997945e9696693de515823f3faba23f549f6` |
+| `p2t04-preflight-20261124/dr-evaluation-stage.json` | `8c303997e5d4c1a6debbab646581f7c8df66ea455676b7be2dc081a60d509dca` |
 
 The Arctic query view streams the 25,626 P1-DEV rows from the existing dr-train non-TEST serialization at
 `/data/ptp-paper2/bridgeret/ser-arctic-v1/queries.jsonl`. A single process ran with a 30 GiB MemAvailable
@@ -103,6 +104,8 @@ The recovered full-text passages match the P2-T02 manifest on decompressed bytes
 content without rebuilding the claims on dr-train. See the [D19 receipt](../../../tracking/owner-note-22112026/receipts/P2-T02_D19_followup_results.md).
 The stage receipt pins the ten files transferred to `/data/ptp-paper2/p2t04-run-prep-20261124`. Relevance pairs
 and the derived art-unit TSV are evaluator inputs and do not enter the runtime stage.
+The separate receipt pins these two files and the code archive from `ff9c2048`. The materialized lexical passages
+match the archived uncompressed SHA-256. Both runtime and evaluator `--help` entry points passed on dr-train.
 
 ## Proposed freeze values for the P1-DEV screen
 
@@ -120,7 +123,7 @@ publish the manifests before running the score path.
 | Deeper original query | Use positions 201–220 of the matched original-text lexical search |
 | Assessor | First 2,500 claim characters, up to four condition spans and four anchor terms, local windows of twelve tokens, up to 28 inspected sources with the same 1,500-character cap |
 | Outcome measure | Paired ALL R@200 with examiner art-unit bootstrap. Report IN and OUT on identical metric support and count new and displaced judged positives |
-| Screen reference | The strongest mean among the close controls, seed-only rerank, complete-content fusion and individual complete-content routes, using the fixed cohort. Report all contrasts, including A3r1 F3* as a historical C0-route reference |
+| Screen reference | The strongest reported mean among the close controls, seed-only rerank, complete-content fusion and individual complete-content routes on the fixed cohort, with ties by arm ID. Report all contrasts, including A3r1 F3* as a historical C0-route reference |
 | Progression criterion | Against the screen reference, ALL improvement at least +0.010 with paired lower bound above zero, and IN/OUT paired lower bounds above −0.005. Smaller gains stay exploratory |
 
 Use exact archived Arctic query serialization only for the lexical reproduction gate. All matched arms use the

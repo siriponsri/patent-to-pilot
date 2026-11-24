@@ -849,7 +849,7 @@
    ],
    "acceptance_evidence": "Use permitted DEV only; compare static queries, generic feedback, extractive feedback and shuffled bindings as needed; count new families and net final score, all attempted variants and costs.",
    "evidence_uri": "docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md",
-   "check_result": "Combined gate accepted: 2741 passed, 9 skips, 1 known xfail, 8 known SACR failures. Ten runtime inputs verified on dr-train. Actual P1-DEV score NOT_RUN",
+   "check_result": "P1-DEV runtime inputs and separate evaluation data verified on dr-train; lexical corpus hash and both entry-point help checks PASS. Score NOT_RUN",
    "next_task": "Settle D19 and freeze P1-DEV comparator manifest before research run",
    "budget_authority": "Exact protocol must fit an explicitly approved envelope; E1R remains pending",
    "budget_spent_usd": null,
@@ -865,7 +865,7 @@
    "blocker": "Comparator decisions pending D19 execution; offline runtime prep can proceed",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze. | [2026-11-24] Arctic C1 and BM25-full retrieval run fingerprints recorded. P2-T04 adapters await full suite and frozen manifest; no DEV metrics computed. | [2026-11-24] Offline runner requires a pinned P1-DEV manifest, exact original-query BM25 parity, shared G03 seed and an isolated evaluator. | [2026-11-24] Source adapters and frozen-manifest entry point verified on authored fixtures. dr-train has sklearn 1.9.1; require exact archival BM25 parity. | [2026-11-24] Staged P1-DEV Arctic-serialised original queries under the dr-train memory watchdog and recovered the exact historical A3r1 comparator from the verified archive. | [2026-11-24] One bounded stream with 30 GiB MemAvailable guard. No new retrieval calls. | [2026-11-24] Evaluator keeps an exact P1-DEV cohort, includes empty rankings and reads judgments outside runtime. | [2026-11-24] Separate evaluator ready. Runtime manifest awaits D19 decisions and exact archive BM25 reproduction."
+   "notes": "[2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze. | [2026-11-24] Arctic C1 and BM25-full retrieval run fingerprints recorded. P2-T04 adapters await full suite and frozen manifest; no DEV metrics computed. | [2026-11-24] Offline runner requires a pinned P1-DEV manifest, exact original-query BM25 parity, shared G03 seed and an isolated evaluator. | [2026-11-24] Source adapters and frozen-manifest entry point verified on authored fixtures. dr-train has sklearn 1.9.1; require exact archival BM25 parity. | [2026-11-24] Staged P1-DEV Arctic-serialised original queries under the dr-train memory watchdog and recovered the exact historical A3r1 comparator from the verified archive. | [2026-11-24] One bounded stream with 30 GiB MemAvailable guard. No new retrieval calls. | [2026-11-24] Evaluator keeps an exact P1-DEV cohort, includes empty rankings and reads judgments outside runtime. | [2026-11-24] Separate evaluator ready. Runtime manifest awaits D19 decisions and exact archive BM25 reproduction. | [2026-11-24] Code archive ff9c2048. Complete frozen route decisions after D19. No research job has run on dr-train."
   },
   {
    "task_id": "P2-T05",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-24T21:29:53+07:00"
+ "live_updated_at": "2026-11-24T21:33:31+07:00"
 }
