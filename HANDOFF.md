@@ -64,17 +64,12 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   The combined full gate had 2,741 passed, nine skips, one known xfail and exactly the eight permitted SACR cases.
   P2-T04 benchmark execution remains NOT_RUN. See the
   [preparation record](docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md).
-- **PatEmbed pod active:** `arm09wy8rok4qk`, Secure A100 SXM 80 GB, US-MD-1, USD 2.19/hour compute plus up to
-  USD 0.03/hour budgeted for a 150 GB ephemeral disk. Created 13:47:49 UTC. Setup and P1-DEV upload SHA-256 passed.
-  The first launch stopped before the weight check because the image enabled optional `hf_transfer`, which is absent.
-  The original logs are retained. Retry with the toggle off passed the pinned weights and C0 relay gates. PatEmbed
-  serialisation finished with width 504. Complete-content build, GPU parity and query encodings passed.
-  Arctic reproduction passed and C1 encoding ran from 14:19:17 to 16:02:40 UTC. PatEmbed is retrieving C1.
-  The complete lexical corpus was pulled to local storage
-  and matches the archived P2-T02 full-text SHA-256.
-  Operational deadline 17:47:49 UTC. A best-effort in-pod termination timer is armed for 17:55:49 UTC.
-  USD 9.50 is reserved. Pull checked outputs and terminate this pod.
-  Private operator scripts: `../_private_artifacts/{watch,pull,upload}-ptp-d19-20261124.sh`.
+- **PatEmbed complete:** all A2 gates passed. C1 replaces C0 under the frozen rule, ALL R@200
+  +0.00718 [0.00505, 0.00936], from 0.41806 to 0.42523. Verified output is in
+  `../_private_artifacts/p2t02-d19-runpod/p2t02-d19-patembed-results.tgz`. The collector pulled the archive at
+  16:27:35 UTC. Scoped termination failed, so the RunPod management API deleted `arm09wy8rok4qk`. GET returned 404
+  and the pod list shows only Qwen3. The billing API still lagged through parts of the 15:00–16:00 buckets.
+  Carry a USD 6.00 provisional charge until final billing is visible. The full lexical corpus is also verified locally.
 - **Qwen3 pod active:** `10813cm5sej2s2`, Secure RTX PRO 4500 Blackwell Server Edition in US-KS-2, quoted at
   USD 0.72/hour compute plus up to USD 0.03/hour ephemeral disk. Created 24 Nov 14:58:21 UTC after capacity returned.
   Setup started. Operational deadline 25 Nov 01:46:21 UTC and best-effort in-pod timer 01:54:21 UTC.
@@ -93,7 +88,7 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
 
 - **E1R** (OpenRouter + Typhoon; USD 50, notify 40): committed USD 3.853 (33,685 attempts) after Stage B. OpenRouter
   credits: total 20, usage about 5.5.
-- **RunPod:** prepaid balance was about USD 40.6 before D19. Both D19 pods are active with USD 18 total reserved.
+- **RunPod:** prepaid balance was about USD 40.6 before D19. Only Qwen3 is active, USD 8.50 reserved.
   No network volume was created.
   - R1 (D20, USD 20): about USD 5.1 used (P2-T02 pods).
   - R2 (D22/D24, USD 60, notify 45): about USD 11.3 used (A3r1 pilot pods 9.6 + full-evaluation pod 1.7).
