@@ -4,7 +4,7 @@ This file holds the **current state only**. Rewrite the "Agent takeover state" s
 rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 [archives/HANDOFF-HISTORY-TO-20261121.md](archives/HANDOFF-HISTORY-TO-20261121.md).
 
-## Agent takeover state — 24 Nov 2026 (Asia/Bangkok)
+## Agent takeover state — 25 Nov 2026 (Asia/Bangkok)
 
 **Account takeover active.** Codex owns D19 verification and P2-T04 integration in this
 session. At takeover `main` matched `origin/main` at `5891d7ea`; the existing Claude branches and owner-local files
@@ -74,8 +74,8 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   USD 0.72/hour compute plus up to USD 0.03/hour ephemeral disk. Created 24 Nov 14:58:21 UTC after capacity returned.
   Setup started. Operational deadline 25 Nov 01:46:21 UTC and best-effort in-pod timer 01:54:21 UTC.
   USD 8.50 reserved. Pre-encode gates passed with window 511 and Qwen3 started C1 encoding at 15:20:29 UTC.
-  Shard 5 of 14 completed around 17:40 UTC. The first full-width shard took 47 minutes and projects an encode
-  end around 25 Nov 00:16 UTC before retrieval, evaluation and pull. Keep monitoring the 01:46 UTC limit.
+  Shard 10 of 14 completed around 21:35 UTC. Full-width shards remain at about 47 minutes each. The encode
+  is on track for about 25 Nov 00:16 UTC before retrieval, evaluation and pull. Keep monitoring the 01:46 UTC limit.
   The job launched with the optional fast-transfer setting off. Earlier L40S/RTX attempts and expired queue
   created no pod.
 - **D19 settlement:** both workers have Bash progress watchers. The success-only collector

@@ -50,6 +50,8 @@ Qwen3's fourth shard finished at about 16:53 UTC. It took 2,575 seconds at 467.6
 encoding from this checkpoint, then retrieval, evaluation and pull. Keep the 01:46:21 UTC operational deadline.
 Shard five was full-width and took 2,821 seconds, finishing around 17:40 UTC. Equal-length scaling of the
 remaining 2,207,946 windows projects roughly 396 minutes of remaining encoding from that point.
+Shard ten finished around 21:35 UTC at 22,468 seconds cumulative. Full-width shard timing remains on schedule.
+Two direct SSH watcher reads failed transiently around 20:00 UTC and recovered. The encode kept running.
 The provider management API remains the verified deletion path. Both in-pod Qwen3 scoped CLI self-lookup
 forms were unverified, so the in-pod timeout is only a fallback.
 
