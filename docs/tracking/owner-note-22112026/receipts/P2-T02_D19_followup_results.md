@@ -1,6 +1,7 @@
 # P2-T02 D19 follow-up receipt, P1-DEV
 
-**Runtime state:** both models passed the pre-encode gates and are encoding C1. PatEmbed began 14:19:17 UTC.
+**Runtime state:** both models passed the pre-encode gates. PatEmbed completed C1 encoding at 16:02:40 UTC and is
+retrieving C1. Its encoding began at 14:19:17 UTC.
 Qwen3 passed preflight at 15:04:46 UTC, selected its declared window of 511 at 15:07:48 UTC and began C1 encoding
 at 15:20:29 UTC.
 Both C1 evaluations are NOT_RUN.
