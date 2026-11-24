@@ -63,12 +63,16 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
 - **Parallel checkpoint:** both workers finished. Codex owns the eight new P2-T04 source and fixture files in the
   owner checkout. P2-T03/P2-T04 targeted tests passed (39 passed, 1 skipped for local scikit-learn); the
   frozen-manifest entry point has two additional passing fixtures.
-  These files await the full gate before commit. P2-T04 benchmark execution remains NOT_RUN. See the
+  Their combined full gate is running in the isolated integration checkout before commit.
+  P2-T04 benchmark execution remains NOT_RUN. See the
   [preparation record](docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md).
 - **PatEmbed pod active:** `arm09wy8rok4qk`, Secure A100 SXM 80 GB, US-MD-1, USD 2.19/hour compute plus up to
   USD 0.03/hour budgeted for a 150 GB ephemeral disk. Created 13:47:49 UTC. Setup and two-stream P1-DEV upload
   are underway. Operational deadline 17:47:49 UTC. A best-effort in-pod termination timer is armed for 17:55:49 UTC.
-  USD 9.50 is reserved, with Qwen3 pricing and dispatch pending. Pull checked outputs and terminate this pod.
+  USD 9.50 is reserved. Pull checked outputs and terminate this pod.
+- **Qwen3 planned:** US-MO-1 Secure L40S 48 GB at USD 1.09/hour compute plus up to USD 0.03/hour budgeted for the
+  150 GB ephemeral disk. A 7 h 15 min operating deadline fits the USD 8.50 reservation. Combined PatEmbed and Qwen3
+  reservations are USD 18, leaving USD 2 of the D26 cap for uncertainty. No Qwen3 resource has been created.
 
 ### Money and access (24 Nov)
 

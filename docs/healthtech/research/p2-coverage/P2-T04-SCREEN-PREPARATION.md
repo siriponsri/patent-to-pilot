@@ -59,6 +59,9 @@ resource accounting and an approved scope for any paid execution.
 - `p2t04_bm25_backend.py` implements the archived BM25-full term weights, date/self filters and corpus-order tie
   handling. It cuts a prefix of the native shortlist when an arm asks for fewer candidates. Exact reproduction
   against archived BM25-full P1-DEV rankings remains NOT_RUN. The local Python has no scikit-learn.
+- `p2t04_run_screen.py` adds a hash-bound P1-DEV runtime entry point. It requires full archived BM25 reproduction
+  on the frozen query list before the matched run, uses the existing four-window G03 fusion for the seed, writes
+  original-route and matched-arm rankings for the separate evaluator, and emits trace and runtime receipts.
 
 Bind the baseline routing, input views, sampler, arm limits, assessor settings, evaluator and resources in an executable
 manifest before any DEV measurement. The historical reproduction gate uses the archived Arctic-serialised original

@@ -8,8 +8,12 @@
 | Model | Pod / region | Hourly price | Start (UTC) | Reservation | Receipt |
 |---|---|---|---|---|---|
 | PatEmbed | `arm09wy8rok4qk`, Secure A100 SXM 80 GB / US-MD-1 | USD 2.19 compute, up to USD 0.03 disk budget | 2026-11-24 13:47:49 | USD 9.50 | Active |
-| Qwen3 | Pending pricing and remaining reservation | Pending | — | — | NOT_RUN |
+| Qwen3 | Secure L40S 48 GB / US-MO-1 selected from live US stock | USD 1.09 compute, up to USD 0.03 disk budget | Pending | USD 8.50 | NOT_RUN |
 
 Operational PatEmbed deadline 17:47:49 UTC includes transfers. The in-container timer reported armed for
 17:55:49 UTC as a fallback. SSH upload started 13:49:10 UTC. Settlement will record actual disk, compute,
 retrieval evidence, termination and any retries here.
+
+Qwen3's planned operating deadline is 7 h 15 min from creation, including transfers. This bounds the combined
+reservations at USD 18. The provider's lower-cost qualifying stock appeared after PatEmbed provisioning. Dispatch is
+independent of any score, and the frozen A2 gates and endpoints apply unchanged.

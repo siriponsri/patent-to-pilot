@@ -778,11 +778,11 @@
    ],
    "acceptance_evidence": "Compare equal-content flat/structural units and deeper original-query retrieval under shared masks/budgets; record actual results and resource costs.",
    "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md",
-   "check_result": "D19 PatEmbed pod arm09wy8rok4qk active; setup and P1-DEV upload, research gates pending",
-   "next_task": "Verify upload; run PatEmbed, pull and terminate by 17:47:49 UTC; then reprice Qwen3",
+   "check_result": "PatEmbed active; Qwen3 eligible L40S quote and USD 8.50 reservation recorded",
+   "next_task": "Run both D19 models; verify pulls and terminate by the respective deadlines",
    "budget_authority": "Existing local/resource scope only; no new spend or download implied",
    "budget_spent_usd": 0.26,
-   "budget_reserved_usd": 9.5,
+   "budget_reserved_usd": 18.0,
    "if_success": "P2-T04",
    "if_partial": "Retain strongest simple baseline and unresolved uncertainty.",
    "if_no_gain": "Do not attribute a content/index improvement to adaptive policy; proceed only to a distinct mechanism.",
@@ -792,9 +792,9 @@
    "affine_item_url": "",
    "affine_sync_status": "NOT_SYNCED",
    "blocker": "",
-   "budget_remaining_usd": 10.5,
+   "budget_remaining_usd": 2.0,
    "owner_decision_pending": "D26: owner approved US RunPod launch, delegated machine choice, D19 cap USD 20 within R2",
-   "notes": "[2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers | [2026-11-23] Amendment A1: running on RunPod pod 0adflwvktmsvuu (A40, USD 0.59/h, no volume); C0 rebuilt and gated before C1/C2; envelope R1 USD 20, stop at 15 | [2026-11-23] A1 run live on RunPod pod jd41r4cvv171q6 (US-KS-2, USD 0.72/h) since 13:25 UTC; inputs sha256-verified; stop at USD 15 | [2026-11-24] Coverage control done on RunPod: Arctic C1-C0 +0.0165 [0.0144,0.0186], BM25-full-C0 +0.0223 [0.0200,0.0247] -> new representation baselines; structure C2-C1 -0.0087 (no credit). C0 reproduction exact. Fusion/deeper-control descriptives deferred to dr-train | [2026-11-24] D19 uses frozen Qwen3 and PatEmbed C1 arms. Local tests found and corrected the declared Qwen3 window guard and cosine computation before any C1 score. | [2026-11-24] D26 authority received before any pod creation or new evidence. | [2026-11-24] Private p2t02-d19-stage-20261124 verification.json pins both rebuilt manifest digests. PatEmbed relay sidecar unavailable; preserved C0 gate and computed local archive digest. | [2026-11-24] A100 price USD 2.19/h compute with up to USD 0.03/h ephemeral disk; reserve USD 9.50, four-hour operating deadline. P1-DEV only. | [2026-11-24] D26 first pod US-MD-1, USD 2.19/h compute plus disk, started 13:47:49 UTC on 24 Nov"
+   "notes": "[2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers | [2026-11-23] Amendment A1: running on RunPod pod 0adflwvktmsvuu (A40, USD 0.59/h, no volume); C0 rebuilt and gated before C1/C2; envelope R1 USD 20, stop at 15 | [2026-11-23] A1 run live on RunPod pod jd41r4cvv171q6 (US-KS-2, USD 0.72/h) since 13:25 UTC; inputs sha256-verified; stop at USD 15 | [2026-11-24] Coverage control done on RunPod: Arctic C1-C0 +0.0165 [0.0144,0.0186], BM25-full-C0 +0.0223 [0.0200,0.0247] -> new representation baselines; structure C2-C1 -0.0087 (no credit). C0 reproduction exact. Fusion/deeper-control descriptives deferred to dr-train | [2026-11-24] D19 uses frozen Qwen3 and PatEmbed C1 arms. Local tests found and corrected the declared Qwen3 window guard and cosine computation before any C1 score. | [2026-11-24] D26 authority received before any pod creation or new evidence. | [2026-11-24] Private p2t02-d19-stage-20261124 verification.json pins both rebuilt manifest digests. PatEmbed relay sidecar unavailable; preserved C0 gate and computed local archive digest. | [2026-11-24] A100 price USD 2.19/h compute with up to USD 0.03/h ephemeral disk; reserve USD 9.50, four-hour operating deadline. P1-DEV only. | [2026-11-24] D26 first pod US-MD-1, USD 2.19/h compute plus disk, started 13:47:49 UTC on 24 Nov | [2026-11-24] Qwen3 selected Secure US-MO-1 L40S at USD 1.09/h compute plus ephemeral disk; 7h15m operating deadline."
   },
   {
    "task_id": "P2-T03",
@@ -849,7 +849,7 @@
    ],
    "acceptance_evidence": "Use permitted DEV only; compare static queries, generic feedback, extractive feedback and shuffled bindings as needed; count new families and net final score, all attempted variants and costs.",
    "evidence_uri": "docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md",
-   "check_result": "Offline matched-arm, exact-span assessor and BM25 adapter fixtures: 39 passed, 1 skipped (scikit-learn absent); live parity NOT_RUN",
+   "check_result": "Frozen-manifest integration fixtures PASS; combined full suite running. Live BM25 parity and screen NOT_RUN",
    "next_task": "Finish D19 and freeze the executable matched P1-DEV screen before computing metrics",
    "budget_authority": "Exact protocol must fit an explicitly approved envelope; E1R remains pending",
    "budget_spent_usd": null,
@@ -865,7 +865,7 @@
    "blocker": "Comparator decisions pending D19 execution; offline runtime prep can proceed",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze. | [2026-11-24] Arctic C1 and BM25-full retrieval run fingerprints recorded. P2-T04 adapters await full suite and frozen manifest; no DEV metrics computed."
+   "notes": "[2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze. | [2026-11-24] Arctic C1 and BM25-full retrieval run fingerprints recorded. P2-T04 adapters await full suite and frozen manifest; no DEV metrics computed. | [2026-11-24] Offline runner requires a pinned P1-DEV manifest, exact original-query BM25 parity, shared G03 seed and an isolated evaluator."
   },
   {
    "task_id": "P2-T05",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-24T20:49:48+07:00"
+ "live_updated_at": "2026-11-24T20:54:25+07:00"
 }
