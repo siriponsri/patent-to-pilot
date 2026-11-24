@@ -48,6 +48,10 @@ matched-length shard. The separate Qwen3 operational deadline and reservation re
 Qwen3's fourth shard finished at about 16:53 UTC. It took 2,575 seconds at 467.6 mean tokens. The remaining
 2,470,090 windows are length 511. Token and squared-length estimates give 442–480 minutes of remaining
 encoding from this checkpoint, then retrieval, evaluation and pull. Keep the 01:46:21 UTC operational deadline.
+Shard five was full-width and took 2,821 seconds, finishing around 17:40 UTC. Equal-length scaling of the
+remaining 2,207,946 windows projects roughly 396 minutes of remaining encoding from that point.
+The provider management API remains the verified deletion path. Both in-pod Qwen3 scoped CLI self-lookup
+forms were unverified, so the in-pod timeout is only a fallback.
 
 ## Reusable lexical corpus
 
