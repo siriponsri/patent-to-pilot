@@ -10,15 +10,15 @@ Both C1 evaluations are NOT_RUN.
 | Model | Pod / region | Hourly price | Start (UTC) | Reservation | Receipt |
 |---|---|---|---|---|---|
 | PatEmbed | `arm09wy8rok4qk`, Secure A100 SXM 80 GB / US-MD-1 | USD 2.19 compute, up to USD 0.03 disk budget | 2026-11-24 13:47:49 | USD 9.50 | Active |
-| Qwen3 | Secure L40S 48 GB / US-MO-1 create returned HTTP 400, account lists no Qwen3 pod | USD 1.09 compute, up to USD 0.03 disk budget | — | USD 8.50 planned | NOT_RUN |
+| Qwen3 | Secure RTX PRO 4500 Server Edition / US-KS-2 queue `cmwustzcf0083geoxv18etk77` | USD 0.72 compute, up to USD 0.03 disk budget | Queue only | USD 8.50 | QUEUED |
 
 Operational PatEmbed deadline 17:47:49 UTC includes transfers. The in-container timer reported armed for
 17:55:49 UTC as a fallback. SSH upload started 13:49:10 UTC. Settlement will record actual disk, compute,
 retrieval evidence, termination and any retries here.
 
-Qwen3's planned operating deadline is 7 h 15 min from creation, including transfers. This bounds the combined
-reservations at USD 18. The provider's lower-cost qualifying stock appeared after PatEmbed provisioning. Dispatch is
-independent of any score, and the frozen A2 gates and endpoints apply unchanged.
+Qwen3's RTX operating deadline is 10 h 48 min from pod creation, including transfers. This bounds the combined
+reservations at USD 18. When direct creation failed on transient stock, a monitored queue with the same price
+and hardware expired at 14:45:36 UTC if no instance deployed. Dispatch is independent of any score.
 
 ## Incidents before any model result
 
@@ -30,6 +30,9 @@ independent of any score, and the frozen A2 gates and endpoints apply unchanged.
   The retry passed W and C-R at 13:57:05 UTC, completed serialisation and determined a window of 504 at 14:01:50 UTC.
 - Qwen3's quote was lost during scheduling. The 13:54 UTC create returned HTTP 400, the account enumerated only
   PatEmbed, and a fresh US L40S catalog check returned NONE. No Qwen3 resource exists. Billing remains pending.
+- The 14:36 UTC RTX direct creation also returned HTTP 400 with the provider reporting that no matching instance
+  remained. A follow-up readiness read showed NONE and the account still listed only PatEmbed. The bounded queue
+  request returned QUEUED at 14:37:38 UTC with `podId=null`.
 
 ## Reusable lexical corpus
 
