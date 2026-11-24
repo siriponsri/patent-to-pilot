@@ -60,7 +60,8 @@ which renders the CSV, the board and the AFFiNE pages.
 - A3r1 (Qwen3-32B, DeepSeek V4 Flash, Gemini 2.5 Flash-Lite, Typhoon2.5; 800-token cap) is FROZEN.
   - Pilot: frozen rule **GO**, m\* = DeepSeek V4 Flash, Δ = +0.0245 ALL R@200. The pilot is optimistic and only gates
     spending.
-  - Stage B ran on 24 Nov. The full evaluation (D24) is next.
+  - Stage B and the full evaluation ran on 24 Nov: frozen rule **CONTINUE**, VAL F3\* − F\* = +0.0213 [0.0146, 0.0280].
+    This is exploratory (fourth VAL look; F\* uses C0 routes). P1 is closed.
   - Documents: [amendment](docs/healthtech/research/g03-dev/G03-DEV-AMENDMENT-3R1-PROPOSED.md) and
     [P1-T04 receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md).
 - **P2-T02 (complete-content control): COMPLETE.** Arctic C1 and BM25-full are the new representation baselines (+0.0165 /
@@ -68,8 +69,8 @@ which renders the CSV, the board and the AFFiNE pages.
 - Memo: [G03-DEV-DECISION-MEMO.md](docs/healthtech/research/g03-dev/G03-DEV-DECISION-MEMO.md).
 
 **Money (24 Nov).**
-- OpenRouter **E1R** (D11; USD 50, notify 40): about USD 3.6 committed. Keys are set as user environment variables.
-- RunPod: **R1** (D20, USD 20, P2-T02): about USD 5.1 used. **R2** (D22/D24, USD 60, notify 45): about USD 9.6 used.
+- OpenRouter **E1R** (D11; USD 50, notify 40): USD 3.85 committed. Keys are set as user environment variables.
+- RunPod: **R1** (D20, USD 20, P2-T02): about USD 5.1 used. **R2** (D22/D24, USD 60, notify 45): about USD 11.3 used.
 - D21 allows a network volume for reused data (none exists). Use US data centres only (see the 24 Nov handoff).
 
 **PatEmbed on DAPFAM.** The two datasets share a family pool and training overlap is unmeasured (PatenTEB's train split is

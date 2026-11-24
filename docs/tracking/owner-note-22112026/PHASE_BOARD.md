@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-24T05:22:09+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-24T07:47:43+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -37,7 +37,7 @@ Phase status: **IN_PROGRESS**
 
 ## P1 — Reproducible model-panel and A3 experiment
 
-Phase status: **IN_PROGRESS**
+Phase status: **COMPLETE**
 
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
@@ -45,8 +45,8 @@ Phase status: **IN_PROGRESS**
 | P1-T02 | Calibrate the complete output contract on TRAIN only | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P1-T02_format_cost_receipt.md; docs/tracking/owner-note-22112026/receipts/P1-T02_calibration_manifest.json | P1-T03 | — | NOT_SYNCED |
 | P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P1-T03_freeze_receipt.json; docs/healthtech/research/g03-dev/a3r1/a3r1-caller-config.json | P1-T04 | — | NOT_SYNCED |
 | P1-T04 | Execute the declared four-model DEV pilot and spending decision | ✅ COMPLETE | EXPLORATORY_GAIN | docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md | P1-T05 on GO; P1-T06 on STOP | — | NOT_SYNCED |
-| P1-T05 | Run one selected Stage B only after GO | 🔄 IN_PROGRESS | NOT_RUN | — | Finish Stage B; then A3r1 full evaluation pod (D24) after owner says pods may open | — | NOT_SYNCED |
-| P1-T06 | Close A3 evidence and hand off the constructive ladder | ⏳ NOT_STARTED | NOT_RUN | — | P2-T02; P2-T04; P5-T02 when evidence exists | — | NOT_SYNCED |
+| P1-T05 | Run one selected Stage B only after GO | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P1-T05_stage_b_and_full_eval.md | Finish Stage B; then A3r1 full evaluation pod (D24) after owner says pods may open | — | NOT_SYNCED |
+| P1-T06 | Close A3 evidence and hand off the constructive ladder | ✅ COMPLETE | EXPLORATORY_GAIN | docs/tracking/owner-note-22112026/receipts/P1-T05_stage_b_and_full_eval.md | Carry A3 routes into P2-T04 matched comparison against the new complete-content baselines | — | NOT_SYNCED |
 
 ## P2 — Constructive structural candidate acquisition
 

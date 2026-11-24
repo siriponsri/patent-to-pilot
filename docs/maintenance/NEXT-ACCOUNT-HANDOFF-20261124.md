@@ -1,4 +1,4 @@
-# Next-account handoff — 24 Nov 2026
+# Next-account handoff — 24 Nov 2026 (updated 08:00: A3r1 finished, P1 closed)
 
 The previous Claude account stopped at the owner's request because its weekly limit was near. This file is the entry
 point for the next account. Report to the owner in **plain Thai**. Code, docs and the paper stay English-first.
@@ -17,6 +17,10 @@ point for the next account. Report to the owner in **plain Thai**. Code, docs an
 Then run `git status` and `git log -5`. The last pushed commit is on `main` (it ends this handoff).
 
 ## 2. Ordered task list for the next account
+
+**Steps 1–2 below are DONE** (24 Nov, 08:00). Stage B is complete. The A3r1 full evaluation ran: frozen rule
+**CONTINUE**, VAL +0.0213 [0.0146, 0.0280]
+([receipt](../tracking/owner-note-22112026/receipts/P1-T05_stage_b_and_full_eval.md)). **Start at step 3.**
 
 1. **Check Stage B (P1-T05).**
    - Look at `../_private_artifacts/g03-a3r1/stageb2-P1-DEV.log` and `stageb2-VAL.log` (last line `END ...`).
@@ -101,10 +105,9 @@ Read, in order: CLAUDE.md, HANDOFF.md, docs/maintenance/NEXT-ACCOUNT-HANDOFF-202
 docs/tracking/owner-note-22112026/PHASE_BOARD.md, docs/maintenance/OWNER-DECISIONS-20261122.md (D1–D25),
 docs/maintenance/AGENT-LESSONS.md. Then run git status and git log -5. Report to me in plain Thai.
 
-Do the ordered task list in NEXT-ACCOUNT-HANDOFF-20261124.md §2:
-check and finish A3r1 Stage B, then (after asking me whether pods may be opened again) run the A3r1 full evaluation on one
-US RunPod pod under D24, merge the D25 policy v2.1 branch after the full gate, finish and verify the D19 package, then
-continue with P2-T04.
+A3r1 is finished (P1 closed: frozen rule CONTINUE, VAL +0.0213). Start at step 3 of the ordered task list in
+NEXT-ACCOUNT-HANDOFF-20261124.md §2: merge the D25 policy v2.1 branch after the full gate, finish and verify the D19
+package (ask me before opening pods), then continue with P2-T04 against the new complete-content baselines.
 
 Standing rules:
 - never open TEST data;

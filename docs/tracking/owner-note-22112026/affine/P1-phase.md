@@ -1,6 +1,6 @@
 # P1 — Reproducible model-panel and A3 experiment
 
-Phase status: **IN_PROGRESS**
+Phase status: **COMPLETE**
 
 **Entry rule:** Start each task only when its listed task dependencies and execution authority hold. Entry requirements describe the first available work; AFFiNE and full P0 completion do not gate research.
 
@@ -12,8 +12,8 @@ Phase status: **IN_PROGRESS**
 | P1-T02 | Calibrate the complete output contract on TRAIN only | ✅ COMPLETE | ENGINEERING_VERIFIED | P1-T03 |
 | P1-T03 | Freeze A3r1 eligibility, configuration and pilot manifest | ✅ COMPLETE | ENGINEERING_VERIFIED | P1-T04 |
 | P1-T04 | Execute the declared four-model DEV pilot and spending decision | ✅ COMPLETE | EXPLORATORY_GAIN | P1-T05 on GO; P1-T06 on STOP |
-| P1-T05 | Run one selected Stage B only after GO | 🔄 IN_PROGRESS | NOT_RUN | Finish Stage B; then A3r1 full evaluation pod (D24) after owner says pods may open |
-| P1-T06 | Close A3 evidence and hand off the constructive ladder | ⏳ NOT_STARTED | NOT_RUN | P2-T02; P2-T04; P5-T02 when evidence exists |
+| P1-T05 | Run one selected Stage B only after GO | ✅ COMPLETE | ENGINEERING_VERIFIED | Finish Stage B; then A3r1 full evaluation pod (D24) after owner says pods may open |
+| P1-T06 | Close A3 evidence and hand off the constructive ladder | ✅ COMPLETE | EXPLORATORY_GAIN | Carry A3 routes into P2-T04 matched comparison against the new complete-content baselines |
 
 ## P1-T01 — Resolve paid execution prerequisites and exact scope
 
@@ -63,18 +63,19 @@ Phase status: **IN_PROGRESS**
 - **Status:** see the table above (single place to update)
 - **Depends on:** P1-T04
 - **Acceptance evidence:** Reuse selected pilot outputs; run remaining declared DEV/VAL under reservations; disclose repeated VAL exposure and unchanged evaluator rules.
-- **Evidence:** pending
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P1-T05_stage_b_and_full_eval.md
 - **Check:** NOT_CHECKED
 - **Next:** Finish Stage B; then A3r1 full evaluation pod (D24) after owner says pods may open
 - **Blocker:** —
-- **Notes:** [2026-11-24] Stage B running on owner PC (DeepSeek V4 Flash, 23,626 P1-DEV + 1,919 VAL; ~USD 3 expected, E1R) | [2026-11-24] Stage B generating at handoff (24 Nov ~03:30): P1-DEV remainder then VAL; resumable; see NEXT-ACCOUNT-HANDOFF-20261124.md
+- **Notes:** [2026-11-24] Stage B running on owner PC (DeepSeek V4 Flash, 23,626 P1-DEV + 1,919 VAL; ~USD 3 expected, E1R) | [2026-11-24] Stage B generating at handoff (24 Nov ~03:30): P1-DEV remainder then VAL; resumable; see NEXT-ACCOUNT-HANDOFF-20261124.md | [2026-11-24] Stage B complete (DeepSeek V4 Flash, 25,626 P1-DEV + 1,919 VAL, all ok; E1R USD 3.85)
 
 ## P1-T06 — Close A3 evidence and hand off the constructive ladder
 
 - **Status:** see the table above (single place to update)
 - **Depends on:** P1-T04
 - **Acceptance evidence:** Attach scored result or documented Stage B skip, model eligibility, failure rates, all costs and next decision; distinguish format, exploratory gain and supported evidence.
-- **Evidence:** pending
+- **Evidence:** docs/tracking/owner-note-22112026/receipts/P1-T05_stage_b_and_full_eval.md
 - **Check:** NOT_CHECKED
-- **Next:** P2-T02; P2-T04; P5-T02 when evidence exists
+- **Next:** Carry A3 routes into P2-T04 matched comparison against the new complete-content baselines
 - **Blocker:** —
+- **Notes:** [2026-11-24] Frozen rule CONTINUE: VAL F3*-F* ALL R@200 +0.0213 [0.0146,0.0280], IN/OUT lower CI >0; F3*=L0-Q1-P1-H1-K1; 4th VAL look; F* on C0 routes (stronger C1/BM25-full controls not yet in the comparison)

@@ -4,7 +4,7 @@ This file holds the **current state only**. Rewrite the "Agent takeover state" s
 rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 [archives/HANDOFF-HISTORY-TO-20261121.md](archives/HANDOFF-HISTORY-TO-20261121.md).
 
-## Agent takeover state — 24 Nov 2026, about 03:30 (Asia/Bangkok)
+## Agent takeover state — 24 Nov 2026, about 08:00 (Asia/Bangkok)
 
 **Account handoff in progress.** The owner stopped this account because its weekly limit is near. Start with
 [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md).
@@ -17,18 +17,23 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
   - `product_readiness` = core verified, with modes, Thai search, structural acquisition and selective revision checked;
   - `publication_readiness` = draft with results NOT_RUN.
 
-### Phase status (35 tasks: 18 COMPLETE, 5 PARTIAL, 1 IN_PROGRESS, 11 NOT_STARTED)
+### Phase status (35 tasks: 20 COMPLETE, 5 PARTIAL, 10 NOT_STARTED)
 
 | Phase | Done | Open |
 |---|---|---|
 | P0 control | 5/7 | T02/T03 AFFiNE web sync blocked (the repo board is the tracker of record) |
-| P1 A3 model panel | 4/6 | T05 Stage B nearly done; T06 close A3 |
+| P1 A3 model panel | **6/6 COMPLETE** | A3r1 CONTINUE (exploratory) — carried into P2 |
 | P2 structural acquisition | 3/7 | T04 screen vs close controls → T05 freeze → T06 matched comparison → T07 attribution |
 | P3 Thai transfer | 1/5 (+T02 PARTIAL) | T03 text-transfer comparisons, T04 structure/OCR, T05 freeze scope |
 | P4 product | 3/5 (+T04 PARTIAL) | T04 merge policy v2.1 + source removal (D3); T05 clean-install user test |
 | P5 manuscript/release/IS2 | 1/5 | T02 scoreboards, T03 artifact, T04 IS2, T05 close |
 
 ### Results so far (P1-DEV unless stated; ALL R@200, cluster bootstrap by art unit)
+
+- **A3r1 CHECKPOINT (P1 closed, 24 Nov):** frozen rule **CONTINUE**. VAL F3\* − F\* = **+0.0213 [0.0146, 0.0280]**,
+  IN +0.0189, OUT +0.0225 (all lower CI > 0); F3\* = `alloc-L0-Q1-P1-H1-K1` (DeepSeek V4 Flash H+K routes)
+  ([receipt](docs/tracking/owner-note-22112026/receipts/P1-T05_stage_b_and_full_eval.md)). Exploratory: 4th VAL look;
+  F\* uses C0 routes, so the stronger complete-content controls still have to be beaten in P2.
 
 - **P2-T02 COMPLETE** ([receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md)):
   - Arctic C1 (complete content) − C0 = **+0.0165 [0.0144, 0.0186]**;
@@ -46,23 +51,19 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ### Running or pending at handoff
 
-- **P1-T05 Stage B** (DeepSeek V4 Flash, owner PC, E1R) was still generating at handoff: the last 1,711 P1-DEV apps,
-  then 1,919 VAL. Logs: `../_private_artifacts/g03-a3r1/stageb2-{P1-DEV,VAL}.log`. If it stopped, re-run the same
-  command; it skips finished apps (see the handoff doc).
-- **Next:** the A3r1 full evaluation on one RunPod pod (D24) with
-  [A3R1-FULL-EVAL-RUNPOD.md](docs/healthtech/research/g03-dev/A3R1-FULL-EVAL-RUNPOD.md) and runbook §"Full evaluation
-  after Stage B". **The owner said not to open pods until the new account takes over.**
+- **A3r1 is finished** (Stage B + full evaluation, pod deleted). Nothing is running. No pod exists.
+- **Next:** merge D25, finish D19, then P2-T04 (see the handoff doc). Ask the owner before opening pods.
 - **Unmerged branches:**
   - `worktree-agent-a6d18c2dded3f86f2` (56267477): D25 policy v2.1. Run the full gate, then merge.
   - `worktree-agent-aa1038afae41aaf77` (ffae7a99): WIP D19 package, not verified. Finish its tests, review, merge.
 
 ### Money and access (24 Nov)
 
-- **E1R** (OpenRouter + Typhoon; USD 50, notify 40): committed about USD 3.6 after Stage B so far. The OpenRouter
-  account shows total usage about 5.2 of 20 credits.
-- **RunPod:** prepaid balance USD 42.39. **No pod and no volume exist.**
+- **E1R** (OpenRouter + Typhoon; USD 50, notify 40): committed USD 3.853 (33,685 attempts) after Stage B. OpenRouter
+  credits: total 20, usage about 5.5.
+- **RunPod:** prepaid balance about USD 40.6. **No pod and no volume exist.**
   - R1 (D20, USD 20): about USD 5.1 used (P2-T02 pods).
-  - R2 (D22, USD 60, notify 45): about USD 9.6 used (A3r1 pilot pods).
+  - R2 (D22/D24, USD 60, notify 45): about USD 11.3 used (A3r1 pilot pods 9.6 + full-evaluation pod 1.7).
   - D21 allows a network volume for reusable data; none has been created.
 - **Upload route:** US data centres only. EU-SE-1 measured 47 KB/s from the owner PC; US measured 3–8 MB/s over 4 streams.
 - `OPENROUTER_API_KEY` and `TYPHOON_API_KEY` are user environment variables. The RunPod SSH key is
