@@ -75,6 +75,9 @@ xfail and the eight permitted SACR supervisor failures. The added skip is the sy
 scikit-learn CLI and adapter. The frozen-manifest entry point was exercised with an authored corpus and in-memory fixture.
 A read-only check found NumPy 2.2.6, SciPy 1.18.1 and scikit-learn 1.9.1 in the existing dr-train research environment.
 Keep that version difference visible and require the exact archived BM25 gate before using it for any screen.
+The native BM25 tie and cutoff fixture that was skipped on Windows passed on dr-train with those installed
+dependencies and the same committed implementation. The check used 1,017 authored passages, a single CPU process
+and the 30 GiB memory guard. The actual P1-DEV reproduction gate is still NOT_RUN.
 
 ### Local fingerprints, 24 Nov 2026
 
