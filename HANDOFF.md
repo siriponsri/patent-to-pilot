@@ -59,21 +59,22 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   manifest verification passed for 85 files, including 54 filtered claims archives.
   [Readiness receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_D19_readiness.md).
 - **D26:** the owner approved opening eligible US RunPod pods, machine selection, parallel sub-agent work and a long-run
-  goal. D19 can spend up to USD 20 within the existing R2 envelope. No pod has been opened.
+  goal. D19 can spend up to USD 20 within the existing R2 envelope.
 - **Parallel checkpoint:** both workers finished. Codex owns the eight new P2-T04 source and fixture files in the
   owner checkout. P2-T03/P2-T04 targeted tests passed (39 passed, 1 skipped for local scikit-learn); the
   frozen-manifest entry point has two additional passing fixtures.
   These files await the full gate before commit. P2-T04 benchmark execution remains NOT_RUN. See the
   [preparation record](docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md).
-- **Dispatch plan:** eligible lower-cost US stock was unavailable at the latest catalog check. Start PatEmbed on one
-  Secure US A100 SXM at USD 2.19/hour compute plus up to USD 0.03/hour budgeted for ephemeral disk. Allow four hours
-  including transfers, reserve USD 9.50 and recheck stock and remaining funds for Qwen3. The pod has not been created.
+- **PatEmbed pod active:** `arm09wy8rok4qk`, Secure A100 SXM 80 GB, US-MD-1, USD 2.19/hour compute plus up to
+  USD 0.03/hour budgeted for a 150 GB ephemeral disk. Created 13:47:49 UTC. Setup and two-stream P1-DEV upload
+  are underway. Operational deadline 17:47:49 UTC. A best-effort in-pod termination timer is armed for 17:55:49 UTC.
+  USD 9.50 is reserved, with Qwen3 pricing and dispatch pending. Pull checked outputs and terminate this pod.
 
 ### Money and access (24 Nov)
 
 - **E1R** (OpenRouter + Typhoon; USD 50, notify 40): committed USD 3.853 (33,685 attempts) after Stage B. OpenRouter
   credits: total 20, usage about 5.5.
-- **RunPod:** prepaid balance about USD 40.6. **No pod and no volume exist.**
+- **RunPod:** prepaid balance was about USD 40.6 before D19. One PatEmbed pod is active. No network volume was created.
   - R1 (D20, USD 20): about USD 5.1 used (P2-T02 pods).
   - R2 (D22/D24, USD 60, notify 45): about USD 11.3 used (A3r1 pilot pods 9.6 + full-evaluation pod 1.7).
   - D21 allows a network volume for reusable data; none has been created.
