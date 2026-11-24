@@ -11,7 +11,7 @@ Phase status: **IN_PROGRESS**
 | P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) |
 | P2-T02 | Establish complete-content and stronger simple controls | ✅ COMPLETE | ENGINEERING_VERIFIED | Monitor PatEmbed; recheck low-cost Qwen3 capacity and preserve the budget guard |
 | P2-T03 | Implement one bounded source-relation search action | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T04 (after P2-T02 controls); P4-T03 |
-| P2-T04 | Screen the bounded mechanism against close matched controls | 🟡 PARTIAL | NOT_RUN | Finish D19 and freeze the executable matched P1-DEV screen before computing metrics |
+| P2-T04 | Screen the bounded mechanism against close matched controls | 🟡 PARTIAL | NOT_RUN | Settle D19 and freeze P1-DEV comparator manifest before research run |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | P2-T06 |
 | P2-T06 | Measure the primary matched retrieval comparison | ⏳ NOT_STARTED | NOT_RUN | P2-T07; P3-T03 |
 | P2-T07 | Attribute candidate acquisition and decide research readiness | ⏳ NOT_STARTED | NOT_RUN | P3-T03; P4 integration; P5-T02 |
@@ -55,10 +55,10 @@ Phase status: **IN_PROGRESS**
 - **Depends on:** P2-T02; P2-T03
 - **Acceptance evidence:** Use permitted DEV only; compare static queries, generic feedback, extractive feedback and shuffled bindings as needed; count new families and net final score, all attempted variants and costs.
 - **Evidence:** docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md
-- **Check:** Frozen-manifest integration fixtures PASS; combined full suite running. Live BM25 parity and screen NOT_RUN
-- **Next:** Finish D19 and freeze the executable matched P1-DEV screen before computing metrics
+- **Check:** Combined gate accepted: 2729 passed; exact eight known failures; nine skips and one xfail. Real BM25 parity and screen NOT_RUN
+- **Next:** Settle D19 and freeze P1-DEV comparator manifest before research run
 - **Blocker:** Comparator decisions pending D19 execution; offline runtime prep can proceed
-- **Notes:** [2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze. | [2026-11-24] Arctic C1 and BM25-full retrieval run fingerprints recorded. P2-T04 adapters await full suite and frozen manifest; no DEV metrics computed. | [2026-11-24] Offline runner requires a pinned P1-DEV manifest, exact original-query BM25 parity, shared G03 seed and an isolated evaluator.
+- **Notes:** [2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze. | [2026-11-24] Arctic C1 and BM25-full retrieval run fingerprints recorded. P2-T04 adapters await full suite and frozen manifest; no DEV metrics computed. | [2026-11-24] Offline runner requires a pinned P1-DEV manifest, exact original-query BM25 parity, shared G03 seed and an isolated evaluator. | [2026-11-24] Source adapters and frozen-manifest entry point verified on authored fixtures. dr-train has sklearn 1.9.1; require exact archival BM25 parity.
 
 ## P2-T05 — Freeze the selected method, primary endpoint and next evaluation
 

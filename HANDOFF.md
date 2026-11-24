@@ -60,16 +60,15 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   [Readiness receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_D19_readiness.md).
 - **D26:** the owner approved opening eligible US RunPod pods, machine selection, parallel sub-agent work and a long-run
   goal. D19 can spend up to USD 20 within the existing R2 envelope.
-- **Parallel checkpoint:** both workers finished. Codex owns the eight new P2-T04 source and fixture files in the
-  owner checkout. P2-T03/P2-T04 targeted tests passed (39 passed, 1 skipped for local scikit-learn); the
-  frozen-manifest entry point has two additional passing fixtures.
-  Their combined full gate is running in the isolated integration checkout before commit.
-  P2-T04 benchmark execution remains NOT_RUN. See the
+- **Parallel checkpoint:** both workers finished. P2-T04 now has an offline comparator, lexical assessor, BM25 adapter
+  and hash-bound runtime entry point. The combined full gate had 2,729 passed, nine skips, one known xfail and exactly
+  the eight permitted SACR cases. P2-T04 benchmark execution remains NOT_RUN. See the
   [preparation record](docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md).
 - **PatEmbed pod active:** `arm09wy8rok4qk`, Secure A100 SXM 80 GB, US-MD-1, USD 2.19/hour compute plus up to
   USD 0.03/hour budgeted for a 150 GB ephemeral disk. Created 13:47:49 UTC. Setup and P1-DEV upload SHA-256 passed.
   The first launch stopped before the weight check because the image enabled optional `hf_transfer`, which is absent.
-  Preserve the first log and retry the same pinned weight download with that optional transfer toggle off.
+  The original logs are retained. Retry with the toggle off passed the pinned weights and C0 relay gates. PatEmbed
+  serialisation finished and the declared width is 504. The complete-content build is underway.
   Operational deadline 17:47:49 UTC. A best-effort in-pod termination timer is armed for 17:55:49 UTC.
   USD 9.50 is reserved. Pull checked outputs and terminate this pod.
 - **Qwen3 awaiting stock:** the quoted USD 1.09/hour US-MO-1 L40S create returned HTTP 400. The account lists only

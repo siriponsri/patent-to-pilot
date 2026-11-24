@@ -68,6 +68,12 @@ manifest before any DEV measurement. The historical reproduction gate uses the a
 queries. If the screen itself uses complete original query text for literal clause spans, keep that input view common
 across its arms and disclose the difference from the historical retrieval arms.
 
+The offline implementation passed the combined pypdf/PyThaiNLP gate with 2,729 passing tests, nine skips, one known
+xfail and the eight permitted SACR supervisor failures. The added skip is the synthetic test that compares the native
+scikit-learn CLI and adapter. The frozen-manifest entry point was exercised with an authored corpus and in-memory fixture.
+A read-only check found NumPy 2.2.6, SciPy 1.18.1 and scikit-learn 1.9.1 in the existing dr-train research environment.
+Keep that version difference visible and require the exact archived BM25 gate before using it for any screen.
+
 ### Local fingerprints, 24 Nov 2026
 
 These hashes identify the candidate inputs checked during preparation. The executable freeze must bind the final
