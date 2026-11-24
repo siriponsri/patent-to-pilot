@@ -45,6 +45,9 @@ Qwen3's first two shards completed in 1,240 seconds. The second shard took 941 s
 the remaining mean was 492.0. Token scaling gives about 437 minutes of remaining encoding from that point.
 Squared-length scaling gives 1,039 minutes and extrapolates from much shorter sequences. Reassess using a later
 matched-length shard. The separate Qwen3 operational deadline and reservation remain fixed.
+Qwen3's fourth shard finished at about 16:53 UTC. It took 2,575 seconds at 467.6 mean tokens. The remaining
+2,470,090 windows are length 511. Token and squared-length estimates give 442–480 minutes of remaining
+encoding from this checkpoint, then retrieval, evaluation and pull. Keep the 01:46:21 UTC operational deadline.
 
 ## Reusable lexical corpus
 

@@ -110,6 +110,11 @@ and the derived art-unit TSV are evaluator inputs and do not enter the runtime s
 The separate receipt pins these two files and the code archive from `ff9c2048`. The materialized lexical passages
 match the archived uncompressed SHA-256. Both runtime and evaluator `--help` entry points passed on dr-train.
 
+PatEmbed C1 is now selected by settled D19. Its pinned runtime route on dr-train is
+`runtime/route_P-c1/run-P1-DEV.tsv.gz` with SHA-256
+`94ced5664a9944a3ee153f99c93a35be20fd6869d6301bedcf0d1fa9b99d9d6c`, extracted from the verified D19 result
+bundle. Qwen3 selection remains pending.
+
 ## Proposed freeze values for the P1-DEV screen
 
 These are prospective execution parameters. Complete the comparator and evaluator input pins after D19 and
