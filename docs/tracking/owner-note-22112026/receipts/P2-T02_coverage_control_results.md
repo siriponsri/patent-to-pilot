@@ -69,3 +69,19 @@ Content stats: 999,997 units with live claims; 88,170 cancelled rows dropped; 0 
 - The first dr-train launch (23 Nov) exhausted host memory. See [run notes](../../../healthtech/research/p2-coverage/P2-T02-RUN-NOTES.md) §4.
 - On RunPod, the first content-build attempt was a false memory abort: page cache was counted as used. It was fixed
   (amendment A1 §7 run record) and the run resumed. No output was affected.
+
+## Deferred descriptive checks (dr-train, 24 Nov 2026, CPU, 18 min; outputs in `../_private_artifacts/p2t02-runpod/deferred-drtrain/`)
+
+These checks do not change the decision.
+- **Deeper original-query control** (the G03 action model at depth 400, i.e. windows 1–2, against depth 200):
+  - depth 400 − depth 200 = **0.0000 [0.0000, 0.0000]** for both Arctic and BM25, so extra depth adds nothing at R@200;
+  - Arctic C1 − original depth 400 = +0.0165 [0.0144, 0.0187];
+  - BM25-full − original depth 400 = +0.0223 [0.0200, 0.0247].
+  - So the coverage gain is not reproduced by simply retrieving deeper with the old index.
+  - The window-1 = C0 identity holds for BM25. It does not hold exactly for Arctic, because the RunPod C0 rebuild is
+    99.9% per-query identical, not bitwise identical.
+- **Fusion check** (F\*-style RRF, B = 4, with A = Arctic C1 and L = BM25-full substituted): the frozen F\* rule still picks
+  `alloc-L0-Q2-P2-A0` (Qwen3 + PatEmbed only), so substituted F\* = original F\* = **0.4230** ALL R@200 (IN 0.4940 / OUT
+  0.3334).
+  - Within the fused system, the stronger Arctic and BM25 indexes do not displace Qwen3 + PatEmbed.
+  - Complete-content versions of Qwen3 and PatEmbed (D19) are therefore the relevant next control.
