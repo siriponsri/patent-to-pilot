@@ -61,28 +61,31 @@ stamp "P2T02_D19_START model=$M host=$(hostname) nproc=$NPROC mem=${MEMG}G bs=$P
 [ -x /usr/bin/time ] || fail "preflight-no-GNU-time (apt-get install -y time)"
 python3 -c 'import torch, transformers, tokenizers, numpy; print("versions", torch.__version__, transformers.__version__, tokenizers.__version__, numpy.__version__)' \
   | tee logs/versions.txt || fail preflight-python
-if [ "${P2T02_D19_ALLOW_VERSIONS:-0}" != 1 ]; then
-  grep -q '^versions 2\.8\.0[+ ].* 4\.55\.2 0\.21\.4 2\.2\.6$' logs/versions.txt \
-    || fail "preflight-library-pins (torch 2.8.0, transformers 4.55.2, tokenizers 0.21.4, numpy 2.2.6)"
-fi
+( cd / && sha256sum -c --quiet "$D/MANIFEST-d19-$M.sha256" ) || fail preflight-upload-sha256
+grep -Eq '^versions 2\.8\.0(\+[^ ]+)? 4\.55\.2 0\.21\.4 2\.2\.6$' logs/versions.txt \
+  || fail "preflight-library-pins (torch 2.8.0, transformers 4.55.2, tokenizers 0.21.4, numpy 2.2.6)"
 [ "$(awk -F'\t' 'NR>1 && $2 != "P1-DEV"' "$T" | wc -l)" = 0 ] || fail preflight-tasks-not-P1DEV-only
 [ "$(awk -F'\t' 'NR>1 && $2 != "P1-DEV"' "$C/pairs-dev.tsv" | wc -l)" = 0 ] || fail preflight-pairs-not-P1DEV-only
 ! grep -qvE '"block": ?"P1-DEV"' "$BR/texts-v1/queries.jsonl" || fail preflight-queries-not-P1DEV-only
 [ -z "$(find "$D/splits" "$C" "$BR" "$P" -path '*TEST*' 2>/dev/null | head -1)" ] || fail preflight-TEST-path-present
 [ ! -e "$D/manifest-v1/out-v2/manifest-frozen.json" ] || fail preflight-frozen-manifest-present
 [ ! -e "$BR/am7/prep-v1/meta.pkl" ] || fail "preflight-meta.pkl-present (holds VAL labels; A2 uses meta-p1dev.pkl)"
-( cd / && sha256sum -c --quiet "$D/MANIFEST-d19-$M.sha256" ) || fail preflight-upload-sha256
 GPU_NAME=$(nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | head -1)
 GPU_MIB=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits 2>/dev/null | head -1)
 echo "gpu: ${GPU_NAME:-none} ${GPU_MIB:-0} MiB; disk free $(df -BG --output=avail "$D" | tail -1)"
 [ -n "$GPU_NAME" ] || fail preflight-no-gpu
-[ "${GPU_MIB:-0}" -ge 31000 ] || [ "${P2T02_D19_ALLOW_SMALL_GPU:-0}" = 1 ] || fail preflight-gpu-below-32GB
-[ "$MEMG" -ge 60 ] || [ "${P2T02_D19_ALLOW_SMALL_RAM:-0}" = 1 ] || fail "preflight-ram-below-60GB (${MEMG}G)"
+[ "${GPU_MIB:-0}" -ge 31000 ] || fail preflight-gpu-below-32GB
+[ "$MEMG" -ge 60 ] || fail "preflight-ram-below-60GB (${MEMG}G)"
+manifest_sha=$(sha256sum "$D/MANIFEST-d19-$M.sha256") || fail preflight-manifest-digest
+printf '{"passed":true,"model":"%s","block":"P1-DEV","gpu_mib":%s,"ram_gib":%s,"manifest_sha256":"%s"}\n' \
+  "$M" "$GPU_MIB" "$MEMG" "${manifest_sha%% *}" > gates/preflight.json || fail preflight-record
 stamp S0_PREFLIGHT_PASSED
 
 # ---- S1 weights at their recorded revisions (sha256 per file), Arctic for the reproduction gate
 python3 -I "$CODE/g03_a3r1_runpod_models.py" "$M" "$MD" > logs/models-$M.json 2>&1 || fail models-$M-pins
 python3 -I "$CODE/g03_a3r1_runpod_models.py" arctic "$MA" > logs/models-arctic.json 2>&1 || fail models-arctic-pins
+cp "$MD/pins-verified-$M.json" gates/weights-model.json || fail models-$M-record
+cp "$MA/pins-verified-arctic.json" gates/weights-arctic.json || fail models-arctic-record
 stamp S1_WEIGHTS_VERIFIED
 
 # ---- S2 the C0 reference (gated A3r1 relay)
@@ -173,14 +176,17 @@ stamp S9_RETRIEVE_C1_DONE
 
 # ---- S10 evaluate (unchanged evaluator, P1-DEV)
 if [ ! -s evals/$M-c1.json ]; then
-  python3 -I "$EV" <(zcat runs/$M-c1/run-P1-DEV.tsv.gz) "$C/pairs-dev.tsv" "$C/corpus-units.tsv" "$T" P1-DEV \
-    evals/$M-c1.json > evals/$M-c1.log 2>&1 || fail evaluate-c1
+  zcat runs/$M-c1/run-P1-DEV.tsv.gz \
+    | python3 -I "$EV" /dev/stdin "$C/pairs-dev.tsv" "$C/corpus-units.tsv" "$T" P1-DEV \
+        evals/$M-c1.tmp.json > evals/$M-c1.log 2>&1 || fail evaluate-c1
+  mv evals/$M-c1.tmp.json evals/$M-c1.json || fail evaluate-c1-publish
 fi
 stamp S10_EVAL_DONE
 
 # ---- S11 final gate (every part passed; the content was built with this model's window)
 python3 -I "$CODE/p2t02_d19_gate.py" final "$M" gates/gate-final.json gates/relay.json gates/content-arctic.json \
-  gates/validate.json gates/c0check.json window.json content/stats.json > logs/gate-final.log 2>&1 \
+  gates/validate.json gates/c0check.json gates/preflight.json gates/weights-model.json gates/weights-arctic.json \
+  window.json content/stats.json > logs/gate-final.log 2>&1 \
   || { tail -5 logs/gate-final.log; fail gate-final; }
 stamp S11_FINAL_GATE_PASSED
 
@@ -194,7 +200,8 @@ stamp S12_DECIDE_DONE
 
 # ---- S13 pack (results, gates, per-query evaluation, run, logs, content stats; vectors and content stay on the pod)
 du -sb content enc runs evals > logs/disk.txt 2>/dev/null
-sha256sum results-$M.json gates/*.json window.json content/manifest.json content/stats.json > logs/outputs.sha256
+sha256sum results-$M.json gates/*.json window.json content/manifest.json content/stats.json > logs/outputs.sha256 \
+  || fail pack-output-hashes
 ( cd / && tar -czf "$D/out/p2t02-d19-$M-results.tgz" "${R#/}/results-$M.json" "${R#/}/gates" "${R#/}/window.json" \
     "${R#/}/content/manifest.json" "${R#/}/content/stats.json" "${R#/}/enc/c1/encode.json" "${R#/}/evals" \
     "${R#/}/runs" "${R#/}/logs" && sha256sum "$D/out/p2t02-d19-$M-results.tgz" > "$D/out/p2t02-d19-$M-results.tgz.sha256" ) \

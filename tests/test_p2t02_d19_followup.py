@@ -101,6 +101,19 @@ def test_special_wrap_and_window():
     assert spec["head_ids"] == [] and spec["tail_ids"] == [7] and spec["window"] == 511
 
 
+@pytest.mark.parametrize("window", [511, 512])
+def test_build_accepts_qwen_window(monkeypatch, window):
+    assert _build_module(monkeypatch, P2T02_WIN=str(window)).WIN == window
+    _build_module(monkeypatch)
+
+
+def test_gate_cosine_normalizes_fp16_vectors():
+    a = np.array([[0.707, 0.707], [0.6, 0.8]], dtype=np.float16)
+    assert float((a[0].astype(np.float32) ** 2).sum()) < 0.9999
+    np.testing.assert_allclose(de.row_cosines(a, a), [1, 1])
+    np.testing.assert_allclose(de.row_cosines(a, -a), [-1, -1])
+
+
 def test_pack_batch_left_and_right():
     ids, am = de.pack_batch([np.array([5, 6], np.uint32), np.array([8], np.uint32)], [1], [2], 0, left=False)
     assert ids.tolist() == [[1, 5, 6, 2], [1, 8, 2, 0]] and am.tolist() == [[1, 1, 1, 1], [1, 1, 1, 0]]
@@ -165,16 +178,23 @@ def test_gate_relay_content_final(tmp_path):
 
     g = tmp_path / "g"
     g.mkdir()
-    for n in ("relay", "content-arctic", "validate", "c0check"):
-        (g / f"{n}.json").write_text(json.dumps({"passed": True}))
-    (g / "window.json").write_text(json.dumps({"window": 511}))
-    (g / "stats.json").write_text(json.dumps({"window_content_tokens": 511, "env_overrides": {"P2T02_WIN": "511"}}))
+    for n in ("relay", "content-arctic", "validate", "c0check", "preflight"):
+        (g / f"{n}.json").write_text(json.dumps({"passed": True, "model": "qwen3"}))
+    for n, model in (("model", "qwen3"), ("arctic", "arctic")):
+        (g / f"weights-{n}.json").write_text(json.dumps({"status": "PASS", "model": model}))
+    window = {"model": "qwen3", "model_dir": "tok", "window": 511, "max_positions": 512,
+              "segment_separator": "\n", "segment_separator_ids": [7]}
+    (g / "window.json").write_text(json.dumps(window))
+    stats = {"window_content_tokens": 511, "window_model_positions": 512, "segment_separator_ids": [7],
+             "env_overrides": {"P2T02_WIN": "511", "P2T02_TOKDIR": "tok", "P2T02_SEG_SEP": "\n"}}
+    (g / "stats.json").write_text(json.dumps(stats))
     parts = [g / f for f in ("relay.json", "content-arctic.json", "validate.json", "c0check.json", "window.json",
-                             "stats.json")]
+                             "stats.json", "preflight.json", "weights-model.json", "weights-arctic.json")]
     assert dg.final("qwen3", parts)["gate_passed"]
-    (g / "stats.json").write_text(json.dumps({"window_content_tokens": 510, "env_overrides": {}}))
+    assert not dg.final("patembed", parts)["gate_passed"]
+    assert dg.final("qwen3", parts[:-1])["missing"] == ["weights-arctic"]
+    (g / "stats.json").write_text(json.dumps(dict(stats, segment_separator_ids=[8])))
     assert not dg.final("qwen3", parts)["gate_passed"]
-    assert dg.final("qwen3", parts[:2])["missing"] == ["validate", "c0check"]
 
 
 def _zip(path, member, rows):

@@ -31,8 +31,7 @@ overrides only; with none set the build is byte-identical to the P2-T02 (Arctic)
   P2T02_TOKDIR   tokenizer directory (default: the Arctic directory above)
   P2T02_WIN      content tokens per window (default 510 = 512 positions minus CLS and SEP)
   P2T02_SEG_SEP  text whose token ids (add_special_tokens=False) precede every claim segment (default empty = none;
-                 A2 uses the C0 join string "
-")
+                 A2 uses a newline as the C0 join string)
 The overrides in force are recorded in stats.json and manifest.json.
 """
 from __future__ import annotations
@@ -56,7 +55,8 @@ TOKDIR = os.environ.get('P2T02_TOKDIR') or '/data/ptp-paper2/models/arctic-embed
 WIN, PARENT = int(os.environ.get('P2T02_WIN') or 510), 64
 SEG_SEP = os.environ.get('P2T02_SEG_SEP', '')
 OVERRIDES = {k: os.environ[k] for k in ('P2T02_TOKDIR', 'P2T02_WIN', 'P2T02_SEG_SEP') if k in os.environ}
-assert PARENT < WIN <= 510, WIN
+MAX_MODEL_POSITIONS = 512
+assert PARENT < WIN <= MAX_MODEL_POSITIONS, WIN
 CHUNK = 5000
 # copied verbatim from bridgeret_query.py (the C0 serialiser)
 CANCELLED = re.compile(r'^\s*\d*\s*\.?\s*\(\s*(canceled|cancelled|deleted|withdrawn)\s*\)\s*\.?\s*$', re.I)
@@ -435,7 +435,7 @@ def main():
     ln1, ln2 = np.load(out / 'c1.len.npy'), np.load(out / 'c2.len.npy')
     stats = {
         'protocol': 'docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md@bd30d3f7',
-        'window_content_tokens': WIN, 'window_model_positions': WIN + 2, 'parent_context_tokens': PARENT,
+        'window_content_tokens': WIN, 'window_model_positions': MAX_MODEL_POSITIONS, 'parent_context_tokens': PARENT,
         'env_overrides': OVERRIDES, 'segment_separator_ids': sep_ids(_tok_main(), SEG_SEP) if SEG_SEP else [],
         'units': len(units), 'docs_with_live_claims': sum(1 for c in CORPUS if c[1] in CLAIMS),
         'unit_doc_kind': {'pregrant_PG': sum(c[1].startswith('PG') for c in CORPUS),

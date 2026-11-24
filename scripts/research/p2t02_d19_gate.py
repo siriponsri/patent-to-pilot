@@ -9,8 +9,8 @@ Amendment: docs/healthtech/research/p2-coverage/P2-T02-AMENDMENT-A2-D19-FOLLOWUP
           reproduces every P2-T02 data output byte for byte (units.json, c1.*, c2.*, ser-full/passages.jsonl). This proves
           that the filtered claims and the A2 override code leave the P2-T02 build unchanged.
   final   <model> <out.json> <part.json>...
-          every part passed (relay, content, the model content's own unit order, window, validate, c0check) and the
-          model's C1 content was built with the window of its window.json.
+          preflight, weights, relay, content, validate and c0check passed for this model, and the model's C1 content
+          was built with the tokenizer and window in window.json.
 Exit 0 only if the part passed.
 """
 import json
@@ -53,17 +53,30 @@ def final(model, parts):
     got = {}
     for p in parts:
         d = json.loads(Path(p).read_text())
-        got[Path(p).name] = {'passed': bool(d.get('passed', d.get('gate_passed'))), 'record': d}
+        passed = d.get('passed') is True or d.get('status') == 'PASS'
+        got[Path(p).stem] = {'passed': passed, 'record': d}
     res = {'part': 'final', 'model': model, 'parts': {k: v['passed'] for k, v in got.items()},
            'records': {k: v['record'] for k, v in got.items()}}
-    win = next((v['record'] for k, v in got.items() if k.startswith('window')), None)
-    st = next((v['record'] for k, v in got.items() if k.startswith('stats')), None)
-    res['window_matches_content'] = bool(win and st and st['window_content_tokens'] == win['window']
-                                         and st.get('env_overrides', {}).get('P2T02_WIN') == str(win['window']))
-    needed = ('relay', 'content', 'validate', 'c0check')
-    res['missing'] = [n for n in needed if not any(k.startswith(n) for k in got)]
-    res['gate_passed'] = bool(not res['missing'] and res['window_matches_content']
-                              and all(v['passed'] for k, v in got.items() if not k.startswith(('window', 'stats'))))
+    win = res['records'].get('window', {})
+    st = res['records'].get('stats', {})
+    overrides = st.get('env_overrides', {})
+    res['window_matches_content'] = bool(
+        win and st and st['window_content_tokens'] == win['window']
+        and st['window_model_positions'] == win['max_positions']
+        and st['segment_separator_ids'] == win['segment_separator_ids']
+        and overrides.get('P2T02_WIN') == str(win['window'])
+        and overrides.get('P2T02_TOKDIR') == win['model_dir']
+        and overrides.get('P2T02_SEG_SEP') == win['segment_separator']
+    )
+    model_parts = ('preflight', 'weights-model', 'relay', 'validate', 'c0check', 'window')
+    needed = (*model_parts, 'weights-arctic', 'content-arctic', 'stats')
+    res['missing'] = [n for n in needed if n not in got]
+    res['model_matches'] = all(res['records'].get(n, {}).get('model') == model for n in model_parts)
+    res['gate_passed'] = bool(
+        not res['missing'] and res['window_matches_content'] and res['model_matches']
+        and res['records']['weights-arctic'].get('model') == 'arctic'
+        and all(got[n]['passed'] for n in needed if n not in ('window', 'stats'))
+    )
     return res
 
 

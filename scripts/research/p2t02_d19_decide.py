@@ -45,12 +45,15 @@ def main(argv=None):
         ap.add_argument('--' + x)
     a = ap.parse_args(argv)
     gate = json.loads(Path(a.gate).read_text())
-    if not gate.get('gate_passed'):
+    if gate.get('gate_passed') is not True or gate.get('model') != a.model:
         sys.exit('A2 gate not passed: no contrast is computed')
     root = Path(a.root)
     e0, e1 = an.load_eval(a.c0_eval), an.load_eval(a.c1_eval)
     assert e0['metrics']['ALL_R@200']['n'] == e1['metrics']['ALL_R@200']['n']
     assert e0['n_queries_run'] == e1['n_queries_run'] == 25626, (e0['n_queries_run'], e1['n_queries_run'])
+    assert e0['per_query'].keys() == e1['per_query'].keys(), 'C0 and C1 query IDs differ'
+    for app, row in e0['per_query'].items():
+        assert row.keys() == e1['per_query'][app].keys(), f'C0 and C1 metric support differs for {app}'
     clusters = an.clusters_from_meta(a.meta)
     contrast = an.paired_pq(e1['per_query'], e0['per_query'], clusters)
     decision = decide_rule(a.model, contrast)

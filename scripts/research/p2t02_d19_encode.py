@@ -117,6 +117,15 @@ def score_check(new, rec):
            'share_abs_diff_le_0.005': float(np.mean(d <= 0.005))}
     res['passed'] = bool(res['abs_diff_median'] <= 0.001 and res['share_abs_diff_le_0.005'] >= 0.99)
     return res
+
+
+def row_cosines(a, b):
+    import numpy as np
+    a, b = a.astype(np.float64), b.astype(np.float64)
+    norms = np.linalg.norm(a, axis=1) * np.linalg.norm(b, axis=1)
+    if not np.all(np.isfinite(norms) & (norms > 0)):
+        raise ValueError('cosine validation requires finite nonzero vectors')
+    return (a * b).sum(axis=1) / norms
 # ------------------------------------------------------------------
 
 
@@ -244,14 +253,15 @@ def cmd_validate(a):
         V[b] = enc_ids([seqs[i] for i in b])
         T[b] = enc_text([dp + texts[i] for i in b])
     unlock(lockf)
-    cos = (V.astype(np.float32) * T.astype(np.float32)).sum(1)
+    cos = row_cosines(V, T)
     res = {'model': a.model, 'n': len(texts), 'bs': bs, 'max_len_tokens': int(max(len(s) for s in seqs)),
            'token_identity_share': float(np.mean(same_tok)), 'first_token_mismatch': next(
                (i for i, x in enumerate(same_tok) if not x), None),
            'cos_idpath_vs_textpath': {'min': float(cos.min()), 'mean': float(cos.mean())},
            'idpath_equals_textpath_bitwise_share': float(np.mean(np.all(V == T, axis=1))),
            'seconds': round(time.time() - t0, 1)}
-    res['passed'] = bool(res['token_identity_share'] == 1.0 and res['cos_idpath_vs_textpath']['min'] > 0.9999)
+    res['passed'] = bool(len(texts) == a.n and res['token_identity_share'] == 1.0
+                         and res['cos_idpath_vs_textpath']['min'] > 0.9999)
     Path(a.out).write_text(json.dumps(res, indent=1))
     print(json.dumps(res, indent=1))
     print('VALIDATE_DONE' if res['passed'] else 'VALIDATE_FAILED', flush=True)
@@ -313,6 +323,7 @@ def cmd_c0check(a):
     res = {'model': a.model, 'reference_run': a.run, 'queries': len(sel), 'k': a.k, 'passages_encoded': len(need),
            'bs': bs, **score_check(new, rec), 'queries_with_identical_top10_order': topk_same,
            'seconds': round(time.time() - t0, 1)}
+    res['passed'] = res['passed'] and len(sel) == a.nq and all(len(v) == a.k for v in top.values())
     Path(a.out).write_text(json.dumps(res, indent=1))
     print(json.dumps(res, indent=1))
     print('C0CHECK_DONE' if res['passed'] else 'C0CHECK_FAILED', flush=True)

@@ -165,9 +165,9 @@ Basis: measured rates, not vendor figures.
 | **RTX PRO 4500 Blackwell (recommended; used for P2-T02)** | USD 0.72/h | **USD 7.3** | USD 6.2–8.7 | USD 11.6 |
 | A100 80 GB (used for A3r1) | USD 2.19/h | about USD 18 (if about 1.3× faster at BS 32) | USD 15–22 | **USD 35, over the ~USD 25 flag** |
 
-**Flag.** On RTX PRO 4500-class pods (also L40S, RTX 6000 Ada, A40 at ≤ USD 0.9/h) the follow-up stays well under USD 25
-even in the worst case. **On A100 pods the worst case is about USD 35, which exceeds the ~USD 25 line and the roughly
-USD 35 left in R2. A100 pods are used only after the owner says so.** If C2 were added (not planned), the encode hours
+**Forecast at initial freeze.** RTX PRO 4500-class pods (also L40S, RTX 6000 Ada, A40 at ≤ USD 0.9/h) fit the initial
+spend estimate. The full unrestricted A100 worst case is about USD 35. D26's dispatch terms in §9 govern machine
+selection and billing. If C2 were added (not planned), the encode hours
 would roughly double: about USD +5.5 on the RTX class, or USD +15–25 on A100s.
 
 **Storage.** No network volume by default: everything is on pod disk and goes when the pod is deleted (as in P2-T02).
@@ -197,3 +197,19 @@ volume, about 31 GB ≈ USD 2.2 per month. This needs an owner choice (runbook �
   same-software contrast.
 - Results are not transferred between models. Each model's decision stands alone.
 - PatEmbed on DAPFAM keeps its training-overlap caveat. That caveat is unrelated to this Challenge-1M P1-DEV control.
+
+## 9. Pre-run verification addendum (24 Nov 2026)
+
+The initial WIP declaration is `ffae7a99`. Before any C1 retrieval or evaluation, package verification fixed the
+window guard to accept the declared Qwen3 width of 511 or 512, and made Gate V use cosine with explicit norm
+division on the stored FP16 values. The threshold remains strictly above 0.9999. Gates V and Q require their
+full declared sample sizes. Gate F requires the preflight and both pinned-weight receipts, checks the model
+identity and binds the C1 build to the declared tokenizer, window and separator. Analysis checks that both arms
+have the same per-query metric support. These fixes enforce the original specification and leave the arms,
+endpoints and baseline decision rule as declared.
+
+The local stage is prepared for P1-DEV only. Owner decision D26 approves launch, delegates the US machine choice,
+and raises the D19 sub-cap to USD 20 within R2. This supersedes the initial D19 limits in §7 and the A100-specific
+approval prerequisite. Quote each pod's actual hourly rate before creation and reserve the combined compute, disk
+and retry exposure. Target a USD 18 operational stop to preserve headroom for provider billing lag and teardown;
+USD 20 remains the hard limit. R2 remains USD 60, with notification at USD 45. Use ephemeral pod disks for this run.

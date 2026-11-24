@@ -1,11 +1,13 @@
 # P2-T02 D19 follow-up (PatEmbed and Qwen3 complete content) on RunPod: runbook
 
 Executes [P2-T02-AMENDMENT-A2-D19-FOLLOWUP.md](P2-T02-AMENDMENT-A2-D19-FOLLOWUP.md) (owner D19, envelope R2 under D22).
-**Sub-cap:** USD 15 for this follow-up, with stop and report at USD 12. R2 itself is USD 60, notify at USD 45.
+**D26 sub-cap:** USD 20 for this follow-up, with an operational stop at USD 18 to allow teardown and billing lag.
+Account for compute, disk and retries together. R2 itself is USD 60, notify at USD 45.
 
 Before creating any pod:
 - State each pod's hourly price.
-- Use A100 pods only after the owner approves (the worst case is about USD 35; amendment §6).
+- D26 delegates machine selection. Use US stock that meets the preflight spec and fits the reservation.
+  Two unrestricted A100 runs have a worst-case estimate above the D19 cap.
 - Record the pod id, price and start and stop times in the receipt (§9).
 
 No TEST data, sealed file, VAL label, `meta.pkl` or credential goes to any pod.
@@ -57,7 +59,7 @@ Re-run it (after deleting the old stage directory) whenever a script under `scri
 
 ```bash
 apt-get update -qq && apt-get install -y -qq time            # GNU time is not in the image
-pip install -q "transformers==4.55.2" "tokenizers==0.21.4" "numpy==2.2.6" huggingface_hub
+pip install -q --break-system-packages "transformers==4.55.2" "tokenizers==0.21.4" "numpy==2.2.6" "huggingface_hub<1.0"
 python3 -c 'import torch,transformers,tokenizers,numpy;print(torch.__version__,transformers.__version__,tokenizers.__version__,numpy.__version__)'
 # must print 2.8.0+cu128 4.55.2 0.21.4 2.2.6 (the pod script refuses anything else)
 ```
@@ -70,13 +72,18 @@ Use two streams per pod. The claims zips are already compressed. The main list c
 
 ```bash
 # pod Q (host $HQ, port $PQ)
+set -o pipefail
 tar -C $ST/tree -cf - -T $ST/FILES-claims.txt | ssh -p $PQ root@$HQ 'tar -C / -xf - --no-same-owner' &
+q_claims=$!
 tar -C $ST/tree -cf - -T $ST/FILES-qwen3.txt | gzip -1 | ssh -p $PQ root@$HQ 'tar -C / -xzf - --no-same-owner' &
-wait
+q_payload=$!
+wait "$q_claims" && wait "$q_payload" || exit 1
 # pod P (host $HP, port $PP)
 tar -C $ST/tree -cf - -T $ST/FILES-claims.txt | ssh -p $PP root@$HP 'tar -C / -xf - --no-same-owner' &
+p_claims=$!
 tar -C $ST/tree -cf - -T $ST/FILES-patembed.txt | gzip -1 | ssh -p $PP root@$HP 'tar -C / -xzf - --no-same-owner' &
-wait
+p_payload=$!
+wait "$p_claims" && wait "$p_payload" || exit 1
 ```
 
 About 2.6 GB goes on the wire per pod: about 6–10 min per pod at 4–8 MB/s. Pod P may start uploading while pod Q runs.
@@ -87,8 +94,8 @@ before it starts. The weights are fetched on the pod at the pinned revisions and
 ## 4. Launch (Q and P in parallel)
 
 ```bash
-ssh -p $PQ root@$HQ 'setsid nohup bash /data/ptp-paper2/p2-coverage/code/p2t02_d19_runpod.sh qwen3 > /data/ptp-paper2/d19-qwen3.log 2>&1 < /dev/null &'
-ssh -p $PP root@$HP 'setsid nohup bash /data/ptp-paper2/p2-coverage/code/p2t02_d19_runpod.sh patembed > /data/ptp-paper2/d19-patembed.log 2>&1 < /dev/null &'
+ssh -p $PQ root@$HQ 'setsid -f bash /data/ptp-paper2/p2-coverage/code/p2t02_d19_runpod.sh qwen3 > /data/ptp-paper2/d19-qwen3.log 2>&1 < /dev/null'
+ssh -p $PP root@$HP 'setsid -f bash /data/ptp-paper2/p2-coverage/code/p2t02_d19_runpod.sh patembed > /data/ptp-paper2/d19-patembed.log 2>&1 < /dev/null'
 ```
 
 The pod defaults are `P2T02_GPU_DEVICE=0`, `P2T02_D19_BS=32` and `P2T02_D19_FRAC=0.5` (speed only; amendment §3). If
@@ -147,7 +154,13 @@ Each archive is about 0.27 GB. It holds:
 - the C1 run;
 - all logs.
 
-The content, the vectors and `ser-<m>-v1` stay on the pod and are deleted with it, unless §8 applies.
+The model-specific token windows, vectors and `ser-<m>-v1` stay on the pod and are deleted with it, unless §8 applies.
+
+For the requested P2-T04 continuation, retain one compressed copy of the complete lexical passages locally when
+the deadline allows. Read `content/manifest.json` first and require its `ser-full/passages.jsonl` digest to match
+the archived Arctic P2-T02 content manifest. Stream this existing project artifact to the private local folder,
+hash the decompressed byte stream and record its SHA-256 and transfer duration. Use one copy for both downstream
+baseline and source lookup. Keep the existing deletion deadline and do not rent additional RunPod storage for it.
 
 ## 7. Delete and record
 
