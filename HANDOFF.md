@@ -60,9 +60,9 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   [Readiness receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_D19_readiness.md).
 - **D26:** the owner approved opening eligible US RunPod pods, machine selection, parallel sub-agent work and a long-run
   goal. D19 can spend up to USD 20 within the existing R2 envelope.
-- **Parallel checkpoint:** both workers finished. P2-T04 now has an offline comparator, lexical assessor, BM25 adapter
-  and hash-bound runtime entry point. The combined full gate had 2,729 passed, nine skips, one known xfail and exactly
-  the eight permitted SACR cases. P2-T04 benchmark execution remains NOT_RUN. See the
+- **Parallel checkpoint:** both workers finished. P2-T04 now has a hash-bound runtime and separate evaluator.
+  The combined full gate had 2,741 passed, nine skips, one known xfail and exactly the eight permitted SACR cases.
+  P2-T04 benchmark execution remains NOT_RUN. See the
   [preparation record](docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md).
 - **PatEmbed pod active:** `arm09wy8rok4qk`, Secure A100 SXM 80 GB, US-MD-1, USD 2.19/hour compute plus up to
   USD 0.03/hour budgeted for a 150 GB ephemeral disk. Created 13:47:49 UTC. Setup and P1-DEV upload SHA-256 passed.
@@ -76,9 +76,9 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   Private operator scripts: `../_private_artifacts/{watch,pull,upload}-ptp-d19-20261124.sh`.
 - **Qwen3 awaiting stock:** the quoted USD 1.09/hour US-MO-1 L40S create returned HTTP 400. The account lists only
   PatEmbed, and refreshed L40S stock was NONE. The planned USD 8.50 remains available for qualifying Qwen3 stock.
-- **P2-T04 artifact staging:** copy existing pinned non-TEST runtime inputs to
-  `/data/ptp-paper2/p2t04-run-prep-20261124` on dr-train with the 30 GiB MemAvailable floor. No retrieval or scoring.
-  The P2-T04 worker owns only the evaluator-side module and its new fixture file during this staging.
+- **P2-T04 artifact staging:** ten non-TEST runtime and historical inputs passed transfer and SHA-256 checks on
+  `/data/ptp-paper2/p2t04-run-prep-20261124`. The 30 GiB MemAvailable guard did not trigger. Prepare the lexical
+  stream and evaluator-only inputs separately. Complete the comparator manifest after D19 before retrieval or scoring.
 
 ### Money and access (24 Nov)
 

@@ -62,13 +62,15 @@ resource accounting and an approved scope for any paid execution.
 - `p2t04_run_screen.py` adds a hash-bound P1-DEV runtime entry point. It requires full archived BM25 reproduction
   on the frozen query list before the matched run, uses the existing four-window G03 fusion for the seed, writes
   original-route and matched-arm rankings for the separate evaluator, and emits trace and runtime receipts.
+- `p2t04_evaluate_screen.py` uses a separate pinned P1-DEV evaluator manifest. It verifies cohort and ranking
+  integrity, keeps empty rankings in the cohort and reports paired recall, judgment-conditioned recovery and displacement.
 
 Bind the baseline routing, input views, sampler, arm limits, assessor settings, evaluator and resources in an executable
 manifest before any DEV measurement. The historical reproduction gate uses the archived Arctic-serialised original
 queries. If the screen itself uses complete original query text for literal clause spans, keep that input view common
 across its arms and disclose the difference from the historical retrieval arms.
 
-The offline implementation passed the combined pypdf/PyThaiNLP gate with 2,729 passing tests, nine skips, one known
+The offline implementation passed the combined pypdf/PyThaiNLP gate with 2,741 passing tests, nine skips, one known
 xfail and the eight permitted SACR supervisor failures. The added skip is the synthetic test that compares the native
 scikit-learn CLI and adapter. The frozen-manifest entry point was exercised with an authored corpus and in-memory fixture.
 A read-only check found NumPy 2.2.6, SciPy 1.18.1 and scikit-learn 1.9.1 in the existing dr-train research environment.
@@ -89,6 +91,8 @@ baseline decision and the remainder of the input set.
 | `p2t04-preflight-20261124/queries-arctic-P1-DEV.jsonl` | `7ff4645911c7079048c531d6db139cdaa19128e57f495a337c29ee6f95099956` |
 | `p2t04-preflight-20261124/a3r1-f3star-P1-DEV.tsv.gz` | `e6757311c7361a26cff4764047d7b2895477f6db3405067c7c5fc8d2839a695e` |
 | `p2t02-d19-runpod/complete-lexical-passages.jsonl.gz` | `79b53f8dc994c6124ebe1f0498563077f5e9ab0c22a580135545773c1154b94d` |
+| `p2t04-preflight-20261124/clusters-P1-DEV.tsv` | `161fbbdecfc4d21e49849e48e5a5229cb1f69760a573ed46ed2188a0eb45cc21` |
+| `p2t04-preflight-20261124/dr-runtime-stage.json` | `c66e0d650788cbae6480c4e75390997945e9696693de515823f3faba23f549f6` |
 
 The Arctic query view streams the 25,626 P1-DEV rows from the existing dr-train non-TEST serialization at
 `/data/ptp-paper2/bridgeret/ser-arctic-v1/queries.jsonl`. A single process ran with a 30 GiB MemAvailable
@@ -97,3 +101,34 @@ member `data/ptp-paper2/g03-dev/runs-a3r1-full/P1-DEV/alloc-L0-Q1-P1-H1-K1.tsv`.
 identified in the planned matched-sample evaluation. These two transfers produced no new retrieval scores.
 The recovered full-text passages match the P2-T02 manifest on decompressed bytes, allowing P2-T04 to reuse the
 content without rebuilding the claims on dr-train. See the [D19 receipt](../../../tracking/owner-note-22112026/receipts/P2-T02_D19_followup_results.md).
+The stage receipt pins the ten files transferred to `/data/ptp-paper2/p2t04-run-prep-20261124`. Relevance pairs
+and the derived art-unit TSV are evaluator inputs and do not enter the runtime stage.
+
+## Proposed freeze values for the P1-DEV screen
+
+These are prospective execution parameters. Complete the comparator and evaluator input pins after D19 and
+publish the manifests before running the score path.
+
+| Item | Proposed value |
+|---|---|
+| Screen cohort | 2,000 apps with archived P1-DEV query text, smallest SHA-256 of UTF-8 `ptp-p2t04-screen-v1/<app_id>`, ties by app ID |
+| Candidate eligibility | P2-T02 filing date strictly after first publication, self unit excluded, archived missing-date convention |
+| Seed | Four G03 windows, Q2/P2, RRF k=60 and the existing tie order, first 200 pooled units |
+| Complete-content route rows | Arctic C1, BM25-full, and per-model D19 qualifying C1 or explicitly retained C0 |
+| Close controls | Deeper original query, static first requirement, generic term-frequency feedback, extractive source feedback, within-query shuffled binding |
+| Common limits | Eight seed reads, 1,500 characters per source, four copied feedback terms, one lexical step up to depth 400 with at most 20 returned candidates, final depth 200 |
+| Deeper original query | Use positions 201–220 of the matched original-text lexical search |
+| Assessor | First 2,500 claim characters, up to four condition spans and four anchor terms, local windows of twelve tokens, up to 28 inspected sources with the same 1,500-character cap |
+| Outcome measure | Paired ALL R@200 with examiner art-unit bootstrap. Report IN and OUT on identical metric support and count new and displaced judged positives |
+| Screen reference | The strongest mean among the close controls, seed-only rerank, complete-content fusion and individual complete-content routes, using the fixed cohort. Report all contrasts, including A3r1 F3* as a historical C0-route reference |
+| Progression criterion | Against the screen reference, ALL improvement at least +0.010 with paired lower bound above zero, and IN/OUT paired lower bounds above −0.005. Smaller gains stay exploratory |
+
+Use exact archived Arctic query serialization only for the lexical reproduction gate. All matched arms use the
+same original query string formed from title, abstract and claim with newline joins, retaining the exact claim
+offset. The 20 returned candidates and optional post-search coverage checks are recorded. No-action cases stay in
+the declared cohort. The prospective practical margin comes from the owner score contract.
+
+One CPU stage should run at a time on dr-train. Budget up to eight numeric-library threads and a 30 GiB
+MemAvailable watchdog that targets only the project process group. The old BM25-full RSS was 12.6 GiB.
+Budget 36 GiB peak for the index, route rows and transient buffers before checking live headroom. The
+proposed route data cohort and streaming passes avoid loading the full probe ranking sets into memory.
