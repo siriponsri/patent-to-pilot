@@ -1,7 +1,7 @@
 # P2-T02 D19 follow-up receipt, P1-DEV
 
 **Runtime state:** PatEmbed passed the model content build, GPU parity checks, query encoding and Arctic reproduction.
-C1 encoding began at 14:19:17 UTC. Qwen3 pod setup is in progress.
+C1 encoding began at 14:19:17 UTC. Qwen3 uploaded and passed preflight at 15:04:46 UTC.
 Both C1 evaluations are NOT_RUN.
 **Protocol:** P2-T02 coverage control `bd30d3f7` with A2 declared in `ffae7a99` and verified implementation
 `d30d9d51`. D26 authorizes launch and up to USD 20 inside R2. The local stage is pinned in the
@@ -19,6 +19,8 @@ retrieval evidence, termination and any retries here.
 Qwen3's RTX operating deadline is 25 Nov 01:46:21 UTC, including transfers, with a fallback timer at 01:54:21 UTC.
 Combined reservations are USD 18. A fresh availability check showed capacity after the earlier monitored queue
 expired. Dispatch is independent of any score.
+Qwen3 uses the standard transfer route from its first launch. The success-only Bash collectors verify the pulled
+archive hash before requesting termination, with independent provider-side verification still required.
 
 ## Incidents before any model result
 
