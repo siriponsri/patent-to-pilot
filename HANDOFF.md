@@ -68,8 +68,8 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 - **Upload route:** US data centres only. EU-SE-1 measured 47 KB/s from the owner PC; US measured 3–8 MB/s over 4 streams.
 - `OPENROUTER_API_KEY` and `TYPHOON_API_KEY` are user environment variables. The RunPod SSH key is
   `~/.ssh/runpod_paper86_20261017`.
-- **dr-train:** unreachable since 23 Nov even after an admin reboot (Tailscale online through relay "sin", no ping,
-  SSH timeouts). Nothing of ours runs there. P2-T02 must not be relaunched there.
+- **dr-train is back** (rebooted 24 Nov about 06:48). Partial build deleted, Thai data copied, and the deferred P2-T02
+  checks were launched on 24 Nov (CPU, watchdog). Plan and memory-safety rules: handoff doc §2a.
 
 ### Owner decisions
 
