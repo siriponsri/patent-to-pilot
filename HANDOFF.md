@@ -77,8 +77,9 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
 - **Qwen3 pod active:** `10813cm5sej2s2`, Secure RTX PRO 4500 Blackwell Server Edition in US-KS-2, quoted at
   USD 0.72/hour compute plus up to USD 0.03/hour ephemeral disk. Created 24 Nov 14:58:21 UTC after capacity returned.
   Setup started. Operational deadline 25 Nov 01:46:21 UTC and best-effort in-pod timer 01:54:21 UTC.
-  USD 8.50 reserved. The verified upload and preflight passed. The job launched with the optional fast-transfer
-  setting off. Earlier L40S/RTX attempts and expired queue created no pod.
+  USD 8.50 reserved. Pre-encode gates passed with window 511 and Qwen3 started C1 encoding at 15:20:29 UTC.
+  The job launched with the optional fast-transfer setting off. Earlier L40S/RTX attempts and expired queue
+  created no pod.
 - **D19 settlement:** both workers have Bash progress watchers. The success-only collector
   `../_private_artifacts/settle-ptp-d19-on-success-20261124.sh` verifies a result archive before requesting termination
   of its assigned pod. Verify termination and provider billing independently after each collector.

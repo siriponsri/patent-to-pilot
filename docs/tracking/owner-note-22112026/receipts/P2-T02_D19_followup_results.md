@@ -1,7 +1,8 @@
 # P2-T02 D19 follow-up receipt, P1-DEV
 
-**Runtime state:** PatEmbed passed the model content build, GPU parity checks, query encoding and Arctic reproduction.
-C1 encoding began at 14:19:17 UTC. Qwen3 uploaded and passed preflight at 15:04:46 UTC.
+**Runtime state:** both models passed the pre-encode gates and are encoding C1. PatEmbed began 14:19:17 UTC.
+Qwen3 passed preflight at 15:04:46 UTC, selected its declared window of 511 at 15:07:48 UTC and began C1 encoding
+at 15:20:29 UTC.
 Both C1 evaluations are NOT_RUN.
 **Protocol:** P2-T02 coverage control `bd30d3f7` with A2 declared in `ffae7a99` and verified implementation
 `d30d9d51`. D26 authorizes launch and up to USD 20 inside R2. The local stage is pinned in the
