@@ -82,4 +82,6 @@ C1 retrieval took 1,238.4 seconds at 24.78 GiB peak RSS. The pack and provider p
 The scoped CLI termination request exited 1. Management API delete returned 204 shortly after and GET returned 404.
 Only Qwen3 remained in the account. Billing read immediately after deletion showed USD 3.80595 in posted buckets,
 ending before the actual deletion. The observed effective running rate was USD 2.211/hour. Carry USD 6.00 as a
-provisional total and reconcile posted billing after it catches up.
+provisional total and reconcile posted billing after it catches up. The subsequent provider read after the
+16:00 UTC bucket caught up reports USD 5.98138593, including USD 5.92583037 GPU and USD 0.05555556 disk.
+This replaces the provisional charge.

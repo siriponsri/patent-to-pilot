@@ -68,8 +68,8 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   +0.00718 [0.00505, 0.00936], from 0.41806 to 0.42523. Verified output is in
   `../_private_artifacts/p2t02-d19-runpod/p2t02-d19-patembed-results.tgz`. The collector pulled the archive at
   16:27:35 UTC. Scoped termination failed, so the RunPod management API deleted `arm09wy8rok4qk`. GET returned 404
-  and the pod list shows only Qwen3. The billing API still lagged through parts of the 15:00–16:00 buckets.
-  Carry a USD 6.00 provisional charge until final billing is visible. The full lexical corpus is also verified locally.
+  and the pod list shows only Qwen3. Posted PatEmbed billing after catch-up is USD 5.98139. The full lexical
+  corpus is also verified locally.
 - **Qwen3 pod active:** `10813cm5sej2s2`, Secure RTX PRO 4500 Blackwell Server Edition in US-KS-2, quoted at
   USD 0.72/hour compute plus up to USD 0.03/hour ephemeral disk. Created 24 Nov 14:58:21 UTC after capacity returned.
   Setup started. Operational deadline 25 Nov 01:46:21 UTC and best-effort in-pod timer 01:54:21 UTC.
