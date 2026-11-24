@@ -1,7 +1,7 @@
 # P2-T02 D19 follow-up receipt, P1-DEV
 
 **Runtime state:** PatEmbed passed the model content build, GPU parity checks, query encoding and Arctic reproduction.
-C1 encoding began at 14:19:17 UTC. Qwen3 NOT_RUN.
+C1 encoding began at 14:19:17 UTC. Qwen3 pod setup is in progress.
 Both C1 evaluations are NOT_RUN.
 **Protocol:** P2-T02 coverage control `bd30d3f7` with A2 declared in `ffae7a99` and verified implementation
 `d30d9d51`. D26 authorizes launch and up to USD 20 inside R2. The local stage is pinned in the
@@ -10,15 +10,15 @@ Both C1 evaluations are NOT_RUN.
 | Model | Pod / region | Hourly price | Start (UTC) | Reservation | Receipt |
 |---|---|---|---|---|---|
 | PatEmbed | `arm09wy8rok4qk`, Secure A100 SXM 80 GB / US-MD-1 | USD 2.19 compute, up to USD 0.03 disk budget | 2026-11-24 13:47:49 | USD 9.50 | Active |
-| Qwen3 | Secure RTX PRO 4500 Server Edition / US-KS-2 queue `cmwustzcf0083geoxv18etk77` | USD 0.72 compute, up to USD 0.03 disk budget | Queue only | Released at expiry | NOT_RUN |
+| Qwen3 | `10813cm5sej2s2`, Secure RTX PRO 4500 Server Edition / US-KS-2 | USD 0.72 compute, up to USD 0.03 disk budget | 2026-11-24 14:58:21 | USD 8.50 | Active |
 
 Operational PatEmbed deadline 17:47:49 UTC includes transfers. The in-container timer reported armed for
 17:55:49 UTC as a fallback. SSH upload started 13:49:10 UTC. Settlement will record actual disk, compute,
 retrieval evidence, termination and any retries here.
 
-Qwen3's RTX operating deadline is 10 h 48 min from pod creation, including transfers. This bounds the combined
-reservations at USD 18. When direct creation failed on transient stock, a monitored queue with the same price
-and hardware expired at 14:45:36 UTC if no instance deployed. Dispatch is independent of any score.
+Qwen3's RTX operating deadline is 25 Nov 01:46:21 UTC, including transfers, with a fallback timer at 01:54:21 UTC.
+Combined reservations are USD 18. A fresh availability check showed capacity after the earlier monitored queue
+expired. Dispatch is independent of any score.
 
 ## Incidents before any model result
 
