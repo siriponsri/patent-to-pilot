@@ -47,3 +47,33 @@ On dr-train, run one large CPU stage at a time, give 8–16 workers their own ch
 forking, estimate full-scale RSS, and use a 30 GiB MemAvailable watchdog restricted to the project job group.
 Use the final D19 outcome to finish the baseline manifest. R2 authorizes D19, while this screen requires its own
 resource accounting and an approved scope for any paid execution.
+
+## Offline implementation checkpoint
+
+- `p2t04_matched_screen.py` runs the common seed and arm accounting, the pinned P2-T03 relation action and native
+  depth, static, generic, extractive and shuffled controls against a caller-supplied index. It records SHA-bound
+  source offsets for submitted excerpts.
+- `p2t04_requirements.py` proposes literal-span extraction for English conditional clauses. Its provisional
+  assessor uses bounded lexical co-occurrence as a coverage signal and requires a source excerpt for an actionable
+  unresolved relation. The signal is an engineering heuristic and is not a human judgment.
+- `p2t04_bm25_backend.py` implements the archived BM25-full term weights, date/self filters and corpus-order tie
+  handling. It cuts a prefix of the native shortlist when an arm asks for fewer candidates. Exact reproduction
+  against archived BM25-full P1-DEV rankings remains NOT_RUN. The local Python has no scikit-learn.
+
+Bind the baseline routing, input views, sampler, arm limits, assessor settings, evaluator and resources in an executable
+manifest before any DEV measurement. The historical reproduction gate uses the archived Arctic-serialised original
+queries. If the screen itself uses complete original query text for literal clause spans, keep that input view common
+across its arms and disclose the difference from the historical retrieval arms.
+
+### Local fingerprints, 24 Nov 2026
+
+These hashes identify the candidate inputs checked during preparation. The executable freeze must bind the final
+baseline decision and the remainder of the input set.
+
+| Private artifact locator | SHA-256 |
+|---|---|
+| `p2t02-runpod/p2-coverage/runs/arctic-c1/run-P1-DEV.tsv.gz` | `1529d8c9b11ae19b8401be872fff70492e976a5dcdb8f7bb46ed0996667b858d` |
+| `p2t02-runpod/p2-coverage/runs/bm25-full/run-P1-DEV.tsv.gz` | `19f7d75e3e8526ceeec67665ac3ba5741bd24e3c749482328e7d1f4f3f0a5eb4` |
+| `p2t02-runpod/p2-coverage/content/manifest.json` | `4627d4f133feaf634fca28b1ef611789351f1150632050a6f59f096ac7f98d6b` |
+| `g03-a3r1-runpod-stage/tree/data/ptp-paper2/bridgeret/texts-v1/queries.jsonl` | `46bd76d21d9e580e993d38533394b3d6318b23a8c966c88dbab6789cdd40bf02` |
+| `g03-a3r1-runpod-stage/tree/data/ptp-paper2/bridgeret/code/eval_bridgeret_dev.py` | `a6f25e52c7cc1651a777da0351f72f231deac53afab5fd936c82b85e85da8fd6` |

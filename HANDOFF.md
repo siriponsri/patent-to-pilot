@@ -54,16 +54,20 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
 ### Running or pending at handoff
 
 - **A3r1 is finished** (Stage B + full evaluation, pod deleted). Nothing is running. No pod exists.
-- **D19 verification:** Codex owns the isolated package and combined D25/D19 gate checkouts. Targeted fixtures and
-  Bash syntax passed after pre-run corrections to the Qwen3 window guard, FP16 cosine and gate evidence. The local CPU
-  stage is preparing the P1-DEV upload lists in `../_private_artifacts/p2t02-d19-stage-20261124/`. The combined full
-  gate is running before publication and dispatch. Refresh the runner hash after its atomic-evaluation fix.
+- **D19 verification:** verified source `d30d9d51` merged at `563b10a8`. The combined full gate had 2,707 passed,
+  eight skips, one known xfail and exactly the eight permitted SACR failures. Local P1-DEV staging and independent
+  manifest verification passed for 85 files, including 54 filtered claims archives.
+  [Readiness receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_D19_readiness.md).
 - **D26:** the owner approved opening eligible US RunPod pods, machine selection, parallel sub-agent work and a long-run
   goal. D19 can spend up to USD 20 within the existing R2 envelope. No pod has been opened.
-- **Parallel ownership:** the P2-T04 worker owns only new `scripts/research/p2t04_*` and `tests/test_p2t04_*`;
-  D19's read-only review is complete. Codex owns the gates, tracker, publication and RunPod.
-- **Unmerged:** D19 package branch `worktree-agent-aa1038afae41aaf77` (`ffae7a99`) plus verified pre-run corrections in
-  the isolated D19 checkout. The original Claude worktree is untouched.
+- **Parallel checkpoint:** both workers finished. Codex owns the eight new P2-T04 source and fixture files in the
+  owner checkout. P2-T03/P2-T04 targeted tests passed (39 passed, 1 skipped for local scikit-learn); the
+  frozen-manifest entry point has two additional passing fixtures.
+  These files await the full gate before commit. P2-T04 benchmark execution remains NOT_RUN. See the
+  [preparation record](docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md).
+- **Dispatch plan:** eligible lower-cost US stock was unavailable at the latest catalog check. Start PatEmbed on one
+  Secure US A100 SXM at USD 2.19/hour compute plus up to USD 0.03/hour budgeted for ephemeral disk. Allow four hours
+  including transfers, reserve USD 9.50 and recheck stock and remaining funds for Qwen3. The pod has not been created.
 
 ### Money and access (24 Nov)
 

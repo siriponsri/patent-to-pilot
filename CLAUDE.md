@@ -71,6 +71,7 @@ which renders the CSV, the board and the AFFiNE pages.
 **Money (24 Nov).**
 - OpenRouter **E1R** (D11; USD 50, notify 40): USD 3.85 committed. Keys are set as user environment variables.
 - RunPod: **R1** (D20, USD 20, P2-T02): about USD 5.1 used. **R2** (D22/D24, USD 60, notify 45): about USD 11.3 used.
+- D26 approves D19 RunPod dispatch, delegates US machine selection and raises the D19 sub-cap within R2 to USD 20.
 - D21 allows a network volume for reused data (none exists). Use US data centres only (see the 24 Nov handoff).
 
 **PatEmbed on DAPFAM.** The two datasets share a family pool and training overlap is unmeasured (PatenTEB's train split is
@@ -83,7 +84,7 @@ unreleased). Report PatEmbed separately, with that caveat:
 - Corrections register: [WRITING-CORRECTIONS-20261122.md](docs/maintenance/WRITING-CORRECTIONS-20261122.md).
 - IS2 arc (D1, D10, including Paper 86's exposure ceiling, IS2-only): [docs/writing/is2/](docs/writing/is2/).
 
-**Owner decisions.** D1–D25 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md), and
+**Owner decisions.** D1–D26 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md), and
 N01–N12 are in the owner note.
 
 **AFFiNE tracker.** Self-hosted upstream v0.27.4, outside the repo (`C:\Users\User\ptp-tools\affine-tracker`,

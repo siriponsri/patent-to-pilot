@@ -9,7 +9,7 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Next |
 |---|---|---|---|---|
 | P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) |
-| P2-T02 | Establish complete-content and stronger simple controls | ✅ COMPLETE | ENGINEERING_VERIFIED | Verify package and local manifests, select and quote eligible stock, then run D19 |
+| P2-T02 | Establish complete-content and stronger simple controls | ✅ COMPLETE | ENGINEERING_VERIFIED | Launch first D19 model (PatEmbed) under D26; Qwen3 dispatch after repricing and accounting |
 | P2-T03 | Implement one bounded source-relation search action | ✅ COMPLETE | ENGINEERING_VERIFIED | P2-T04 (after P2-T02 controls); P4-T03 |
 | P2-T04 | Screen the bounded mechanism against close matched controls | 🟡 PARTIAL | NOT_RUN | Finish D19 and freeze the executable matched P1-DEV screen before computing metrics |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | P2-T06 |
@@ -33,10 +33,10 @@ Phase status: **IN_PROGRESS**
 - **Depends on:** P2-T01; P0-T05
 - **Acceptance evidence:** Compare equal-content flat/structural units and deeper original-query retrieval under shared masks/budgets; record actual results and resource costs.
 - **Evidence:** docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md
-- **Check:** D19 targeted fixture and shell gates PASS; local P1-DEV staging in progress
-- **Next:** Verify package and local manifests, select and quote eligible stock, then run D19
+- **Check:** D19 integrated at 563b10a8: full gate accepted, 2707 passed plus eight known failures; upload manifest verified
+- **Next:** Launch first D19 model (PatEmbed) under D26; Qwen3 dispatch after repricing and accounting
 - **Blocker:** —
-- **Notes:** [2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers | [2026-11-23] Amendment A1: running on RunPod pod 0adflwvktmsvuu (A40, USD 0.59/h, no volume); C0 rebuilt and gated before C1/C2; envelope R1 USD 20, stop at 15 | [2026-11-23] A1 run live on RunPod pod jd41r4cvv171q6 (US-KS-2, USD 0.72/h) since 13:25 UTC; inputs sha256-verified; stop at USD 15 | [2026-11-24] Coverage control done on RunPod: Arctic C1-C0 +0.0165 [0.0144,0.0186], BM25-full-C0 +0.0223 [0.0200,0.0247] -> new representation baselines; structure C2-C1 -0.0087 (no credit). C0 reproduction exact. Fusion/deeper-control descriptives deferred to dr-train | [2026-11-24] D19 uses frozen Qwen3 and PatEmbed C1 arms. Local tests found and corrected the declared Qwen3 window guard and cosine computation before any C1 score. | [2026-11-24] D26 authority received before any pod creation or new evidence.
+- **Notes:** [2026-11-22] protocol frozen at docs/healthtech/research/p2-coverage/P2-T02-COVERAGE-CONTROL-PROTOCOL.md; implementation next | [2026-11-23] C0 gate passed exactly on full P1-DEV before the OOM; no result numbers | [2026-11-23] Amendment A1: running on RunPod pod 0adflwvktmsvuu (A40, USD 0.59/h, no volume); C0 rebuilt and gated before C1/C2; envelope R1 USD 20, stop at 15 | [2026-11-23] A1 run live on RunPod pod jd41r4cvv171q6 (US-KS-2, USD 0.72/h) since 13:25 UTC; inputs sha256-verified; stop at USD 15 | [2026-11-24] Coverage control done on RunPod: Arctic C1-C0 +0.0165 [0.0144,0.0186], BM25-full-C0 +0.0223 [0.0200,0.0247] -> new representation baselines; structure C2-C1 -0.0087 (no credit). C0 reproduction exact. Fusion/deeper-control descriptives deferred to dr-train | [2026-11-24] D19 uses frozen Qwen3 and PatEmbed C1 arms. Local tests found and corrected the declared Qwen3 window guard and cosine computation before any C1 score. | [2026-11-24] D26 authority received before any pod creation or new evidence. | [2026-11-24] Private p2t02-d19-stage-20261124 verification.json pins both rebuilt manifest digests. PatEmbed relay sidecar unavailable; preserved C0 gate and computed local archive digest. | [2026-11-24] A100 price USD 2.19/h compute with up to USD 0.03/h ephemeral disk; reserve USD 9.50, four-hour operating deadline. P1-DEV only.
 
 ## P2-T03 — Implement one bounded source-relation search action
 
@@ -55,10 +55,10 @@ Phase status: **IN_PROGRESS**
 - **Depends on:** P2-T02; P2-T03
 - **Acceptance evidence:** Use permitted DEV only; compare static queries, generic feedback, extractive feedback and shuffled bindings as needed; count new families and net final score, all attempted variants and costs.
 - **Evidence:** docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md
-- **Check:** Arctic C1 and BM25-full P1-DEV runs present locally; searchable complete content needs rebuild
+- **Check:** Offline matched-arm, exact-span assessor and BM25 adapter fixtures: 39 passed, 1 skipped (scikit-learn absent); live parity NOT_RUN
 - **Next:** Finish D19 and freeze the executable matched P1-DEV screen before computing metrics
 - **Blocker:** Comparator decisions pending D19 execution; offline runtime prep can proceed
-- **Notes:** [2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze.
+- **Notes:** [2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze. | [2026-11-24] Arctic C1 and BM25-full retrieval run fingerprints recorded. P2-T04 adapters await full suite and frozen manifest; no DEV metrics computed.
 
 ## P2-T05 — Freeze the selected method, primary endpoint and next evaluation
 
