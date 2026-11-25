@@ -1,6 +1,6 @@
 # IS2 deliverables and report plan (v1, 19 Nov 2026; scope changed 22 Nov)
 
-> **Correction note (22 Nov 2026, owner note 22112026, "Corrections to carry into writing").** Paper 53's "37.1%" exposure statement is marked **denominator to be recovered; do not reuse** wherever it appears below. The repository account (257/692 queries) has not been re-checked against the original Paper 53 table, and other drafts turned it into an item-level claim. B53's own measured π@100 = 0.371 (905 queries) is a separate number and is not Paper 53's figure. Text is kept as written; the markers govern.
+> **Historical correction, 22 November 2026.** The authors suspended reuse of Paper 53’s 37.1% until the source table could confirm its denominator. The [later source-page check](../../evidence-scope/00-organization.md#original-source-corrections) confirms 257/692 queries. B53’s measured π@100 = 0.371 on 905 queries belongs to a separate cohort.
 
 > **Owner decision 22 Nov 2026 (D1, D5, D6 in `docs/maintenance/OWNER-DECISIONS-20261122.md`):**
 > - IS2 becomes **"research + demo"**: Paper 53 → B53 (bridge) → G03 DEV acquisition findings (honest, including parked
@@ -18,11 +18,11 @@ of reranking instructions in cross-domain patent search.* This is a research que
 given in chat on 19 Nov:
 - Thai and English titles and abstracts (about 250 words each, one paragraph);
 - two-column A4, at most 10 pages, TH SarabunPSK (title 18 bold, headings 16 bold, body 14);
-- numbered sections: 1 บทนำ, 2 แนวคิด ทฤษฎี และงานวิจัยที่เกี่ยวข้อง, 3 วิธีดำเนินการวิจัย, 4 ผลการวิจัย, 5 สรุปผลการวิจัย,
-  then กิตติกรรมประกาศ, เอกสารอ้างอิง, ภาคผนวก (optional);
-- figure captions without the word "แสดง".
+- numbered sections: 1 Introduction, 2 Concepts, Theory and Related Research, 3 Research Methods, 4 Results, 5 Conclusions;
+  then Acknowledgments, References and optional Appendices;
+- omit the introductory verb meaning “shows” from figure captions (faculty template rule).
 
-The program is AI4BA (สาขาวิชาปัญญาประดิษฐ์เพื่อการวิเคราะห์เชิงธุรกิจ). The long material (Papers 1–3, product) goes into
+The program is AI4BA (Artificial Intelligence for Business Analytics). The long material (Papers 1–3, product) goes into
 appendices and the deck, not into the 10 pages.
 
 ## 1. Minimum deliverables (all required for IS2)
@@ -53,27 +53,27 @@ Every number comes from `paper/paper_numbers.py`, which reads `results/b53-stage
 `python <skill>/scripts/make_paper.py --content content_th.py --figdir figs_th --out IS2-paper-th.docx` from `paper/`
 (needs Microsoft Word for the PDF). The Markdown master `IS2-SHORT-PAPER-DRAFT.md` (v0.2) and the older single-file
 `IS2-short-paper-draft.docx` stay as history. Author block: Siripon Srihangpiboon and Asst. Prof. Dr. Tuchsanai
-Ploysuwan (ผศ.ดร. ทัศนัย พลอยสุวรรณ); still open: the DOI of Paper 53.
+Ploysuwan, with the original Thai byline in the owner-held source. The DOI of Paper 53 remained open.
 
 
-1. **บทนำ:**
+1. **Introduction**
    - Paper 53 found near-zero instruction effects;
-   - only 37.1% of the 692 held-out queries had a known OUT family in the top 100 [**correction 22 Nov 2026:** Paper 53's 37.1% — denominator to be recovered from the original Paper 53 source; do not reuse];
+   - 257/692 held-out queries (37.1%) had a known OUT family in the top 100, as subsequently verified in the original table;
    - IS1 comments K1–K2;
    - research questions RQ-IS2.1–2.5.
-2. **แนวคิด ทฤษฎี และงานวิจัยที่เกี่ยวข้อง:**
+2. **Concepts, theory and related research**
    - DAPFAM (Array 2026), PatenTEB/patembed, BM25 and dense/hybrid retrieval, multi-stage retrieval and exposure;
    - closest work from the strategy §9.1: cross-domain reproducibility, SEARCHFORMER, PaECTER, dynamic depth.
-3. **วิธีดำเนินการวิจัย:**
+3. **Research methods**
    - DAPFAM cohorts: 905 OUT-eligible / 1,217 IN / 1,247 ALL, versus Paper 53's 692/724, which cannot be recovered;
    - arms F0–F4 (+ F0-OUT, F6, F7), K = 100/200/1000;
    - endpoints and the exposure identity (accounting only);
    - Stage 2 reranking design; statistics; isolation and licences.
-4. **ผลการวิจัย:**
+4. **Results**
    - B53.1 exposure contrasts (Holm);
    - exposure curve, first-hit rank, common-exposed set;
    - Stage 2 Δ_exp; B53.0 comparison with the DAPFAM paper.
-5. **สรุปผลการวิจัย:**
+5. **Conclusions**
    - one explicit answer per comment K1a–K2b;
    - limitations; continuation into Papers 1–3 and the prototype.
 - **Appendices:**

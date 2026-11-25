@@ -6,7 +6,7 @@
 | D2 | If G03 amendment 2 (learned selector) also does not beat F\* | **Keep working on acquisition** | Do not pivot the headline to maintenance yet. Design and pre-declare new acquisition mechanisms that bring in *new* candidates, e.g. LLM query rewriting or obligation decomposition through OpenRouter (D7), or additional candidate sources. Each is frozen before its numbers, on allowed DEV only. |
 | D3 | Download the PatenTEB train split for the PatEmbed–DAPFAM overlap audit | **Approved** | Accept the Hugging Face terms through the owner's normal account flow if a login is needed, and record the revision. Run a family-level overlap audit (DAPFAM 1,247 queries + 45,336 families vs PatenTEB train). Store only aggregates in Git. |
 | D4 | Delete the read-only `b53/inputs` on dr-train | **Approved, and done 22 Nov** | See `artifacts/maintenance/20261122-b53-pull/SUMMARY.md`. |
-| D5 | English byline for the advisor | **"Tuchsanai Ploysuwan"** in the author line; the title "Assistant Professor" goes only in footnote 2 | Thai edition: ผศ.ดร. ทัศนัย พลอยสุวรรณ, with "ผู้ช่วยศาสตราจารย์" in footnote 2. |
+| D5 | English byline for the advisor | **"Tuchsanai Ploysuwan"** in the author line; the title "Assistant Professor" goes only in footnote 2 | For the Thai edition, retain the advisor-approved local spelling and footnote title from D5 at Git revision a3fe54ba. |
 | D6 | Acknowledgments | **AI-use statement only** | Keep only the sentence declaring AI assistance (Claude) and the author's responsibility; no other thanks. |
 | D7 | Paid model API | **Use the OpenRouter API, with several models chosen for relevance to the research (not just one)** | Use G02's `openai_compatible` adapter (endpoint `https://openrouter.ai/api/v1`, `allow_remote` true, key by environment-variable name, e.g. `OPENROUTER_API_KEY`). Pick 3–5 candidate models by research fit and check their live availability and price first (examples to verify: Qwen3 family, Claude Haiku/Sonnet 5.5, DeepSeek V4 Flash, which the Thai Gazette paper used for contextualisation). **The owner has not yet set a USD amount:** CLAUDE.md rule 2 needs a recorded cap (`spend_cap_usd`, `max_requests`) before the first paid request, so ask the owner for the number. Note: the `openrouter` MCP server in Claude Code needs `/mcp` authorisation by the owner. |
 | D8 | Optional installs | **`pypdf` approved.** No local Ollama: GPU and local-model work goes to **dr-train (V100) and RunPod via MCP** | Install `pypdf` into `.venv` and enable the G02 PDF ingestion adapter, with tests. RunPod use still needs a per-job envelope (amount + scope) under CLAUDE.md rule 2; confirm the amount before creating any pod, and delete pods after use. |
@@ -23,7 +23,7 @@
   - Stop rules as in the proposal: no full run if the pilot shows no P1-DEV gain; stop and report at USD 6 spent.
   - The approval covers OpenRouter only. It does not cover E2 or RunPod.
 
-**D10 (22 Nov 2026, owner in chat: "ใส่ใน IS2"): Paper 86 enters the IS2 story arc.** This amends D1. The arc becomes
+**D10 (22 Nov 2026, owner requested inclusion in IS2): Paper 86 enters the IS2 story arc.** This amends D1. The arc becomes
 Paper 53 → B53 (bridge) → **Paper 86 exposure ceiling** → G03 DEV (re-weighting the same routes does not help; v1/A1/A2
 parked) → A3 (new candidates via LLM expansion) → B53.0 → Workbench demo.
 - The owner asked whether to return to the Paper 86 line. The agent's assessment:
@@ -65,7 +65,7 @@ Still open:
 
 | # | Decision | Effect |
 |---|---|---|
-| D20 | **RunPod envelope R1: USD 20 cap for P2-T02** (coverage control, frozen protocol bd30d3f7, memory-safe build 92465abd), started once the inputs that exist only on dr-train can be copied | Prepaid balance at approval USD 37.21. Scope: one P2-T02 run (content build, BM25-full, Arctic C1/C2 encode and retrieval) on one community GPU pod (RTX 6000 Ada or RTX 4090); estimate USD 4–10. Stop and report at USD 15. **No network volume** (owner, same day: "ผมไม่อยากเปิด Volume"): data goes onto the pod's own disk only, is uploaded after the pod is created, and is removed when the pod is deleted after the results are pulled. Nothing is pre-staged. Never copy TEST splits, sealed qrels or per-query TEST outputs to RunPod. Spend is recorded in the P2-T02 receipt |
+| D20 | **RunPod envelope R1: USD 20 cap for P2-T02** (coverage control, frozen protocol bd30d3f7, memory-safe build 92465abd), started once the inputs that exist only on dr-train can be copied | Prepaid balance at approval USD 37.21. Scope: one P2-T02 run (content build, BM25-full, Arctic C1/C2 encode and retrieval) on one community GPU pod (RTX 6000 Ada or RTX 4090); estimate USD 4–10. Stop and report at USD 15. **No network volume** (owner declined a volume at that time): data goes onto the pod's own disk only, is uploaded after the pod is created, and is removed when the pod is deleted after the results are pulled. Nothing is pre-staged. Never copy TEST splits, sealed qrels or per-query TEST outputs to RunPod. Spend is recorded in the P2-T02 receipt |
 
 **Dry-run correction (same day).** The earlier dry run said the PatentsView sources had to be downloaded again. That was
 wrong: the owner pointed out `data/raw/uspto/` (git-ignored, 69 files, 17 GB, downloaded 16–18 Nov). It holds every
@@ -74,7 +74,7 @@ claims file the corpus needs (grant units 1976–2012 inside `g_claims_1976–20
 baseline runs (`runs/z-arctic` passages and P1-DEV run, `runs/bm25` P1-DEV run), `ser-arctic-v1`,
 `texts-v1/corpus.jsonl` and `splits/private/tasks.tsv` still exist only on dr-train.
 
-## Decision of 23 Nov 2026, evening (owner in chat: "ผมอนุญาตให้ใช้ volume ได้นะครับ ถ้าข้อมูลต้องใช้ซ้ำจนปิดจบการวิจัย")
+## Decision of 23 Nov 2026, evening (owner approved a volume for data reused until the research concludes)
 
 | # | Decision | Effect |
 |---|---|---|
@@ -113,3 +113,9 @@ Progress with the documented feasibility gates. Any positive paired primary DEV 
 The owner added both phases to the current goal. Deliver the frozen research fixtures and local Workbench alpha together. D27 permissions and existing cost envelopes still apply. Hand back the phase receipts before taking up S3 or S4.
 
 During D28 the owner requested multiple real pharmaceutical patent and Thai law examples across subfields, followed by an S3 executor prompt. This session will serve as planner and auditor on the subsequent dispatch. The public examples are reserved for display and excluded from S1/S3.
+
+## D29 · Three-specialist RA Pharma program and parallel dispatch (26 November 2026)
+
+The owner selected one dossier with patent/FTO, Thai and foreign regulatory, and Thai official-correspondence specialists. Research continues IS1 under GPT 6.2 high. Product uses Claude Sonnet 5.5 medium. The owner opens each session on its own branch. The Planner may organize files, remove verified unused material, maintain HANDOFF, commit and publish the plan and branch starting points. Necessary project-local skills, harnesses, tools and MCP integrations may be downloaded. Record their provenance and rights. Existing data, spending and pod rules retain their original scope.
+
+The owner requires English-only project documentation, a professional README and logo informed by references, a repository writing skill, and mandatory documentation and memory updates after each task for all agents. Preserve historical owner quotations, original-language evidence, frozen inputs and Thai product output in their evidentiary roles. The [dispatch board](../ra-pharma/MASTER-PLAN.md) governs new work.

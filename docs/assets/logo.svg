@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96"
-     role="img" aria-labelledby="title desc">
-  <title id="title">Patent-to-Pilot</title>
-  <desc id="desc">A folded sheet forms a letter P. A mint green citation tab marks its inner edge.</desc>
-  <rect x="2" y="2" width="92" height="92" rx="21" fill="#123d38"/>
-  <rect x="2.5" y="2.5" width="91" height="91" rx="20.5" fill="none" stroke="#538379"/>
-  <path fill="#f7f5e9" fill-rule="evenodd"
-        d="M23 20h34l16 16v14L58 65H38v10l-15 7V20Zm15 14v17h15l6-6v-5l-6-6H38Z"/>
-  <path fill="#a7efbb" d="M57 20v16h16L57 20Z"/>
-  <path fill="#a7efbb" d="M41 58h13l-5 7h-8v-7Z"/>
+     role="img" aria-labelledby="ptp-title ptp-description">
+  <title id="ptp-title">Patent-to-Pilot</title>
+  <desc id="ptp-description">Three stepped document spines form a single P for the RA Pharma dossier.</desc>
+  <g fill="#258477">
+    <path d="M7 33 15 25V76L7 84Z"/>
+    <path d="M20 23 28 15V76L20 84Z"/>
+    <path fill-rule="evenodd"
+          d="M33 12H60C76 12 87 22 87 37S76 62 60 62H47V70L33 84V12ZM47 26V48H59C67 48 72 44 72 37S67 26 59 26H47Z"/>
+  </g>
 </svg>

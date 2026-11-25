@@ -1,6 +1,6 @@
-# Track J: journal manuscripts (Paper 1 -> Paper 3)
+# Journal manuscript
 
-> Current writing direction: the [synthesis phase](../../evidence-scope/05-synthesis.md) and [original-source record](../../evidence-scope/00-organization.md#original-source-corrections) govern the next revision. Dated outlines and results below retain their historical scope.
+The [RA Pharma research brief](../../ra-pharma/research/BRIEF.md) sets the active scientific question. Use the [original-source record](../../evidence-scope/00-organization.md#original-source-corrections) for IS1 and Paper 53. The [earlier synthesis plan](../../evidence-scope/05-synthesis.md) and dated outlines below preserve their historical scope. Write project documentation in English.
 
 > **22 Nov 2026 (owner note 22112026, N09 / task P5-T01):** the program now has **one** manuscript with three linked
 > contributions: [MANUSCRIPT-DRAFT-v1.md](MANUSCRIPT-DRAFT-v1.md) (design only; every new result `NOT_RUN`). The P1–P3 table
@@ -15,8 +15,7 @@ labels (checked by `tests/test_org_adaptive_terminology.py`). No committee-respo
 | P2 | CEDS (arms E0-P1 / E3-P1) | `docs/healthtech/research/plans/PAPER-2-3-MERGED-PLAN-20261116.md`, `P2-OA-PREDECLARATION-DRAFT.md` | plan, not frozen |
 | P3 | EG-SHE | same merged plan | plan, not frozen |
 
-Manuscript files go here as `paper1-bridgeret/`, `paper2-ceds/`, `paper3-eg-she/` when writing starts. Venue choice:
-`VENUES.md`.
+The former plan reserved three manuscript directories. Use the consolidated draft linked above and consult `VENUES.md` for venue history.
 
 Not in this track: the closed P1-DAPFAM study (`docs/healthtech/research/PAPER1-MANUSCRIPT-DRAFT.md`, H1 inconclusive).
 Whether it becomes an IS2 chapter is an owner decision (listed in `../is2/README.md`).

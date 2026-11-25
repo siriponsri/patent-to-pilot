@@ -13,13 +13,13 @@ live task → changed source → affected decision. It is **not** evidence of us
 
 ## Script (60–90 s)
 
-| t | Screen | Speech (Thai, short) | Label on screen |
+| Time | Screen | Spoken walkthrough (English rendering) | On-screen label |
 |---|---|---|---|
-| 0–10 s | Open sample project; requirements R1–R3 | "เริ่มจากโจทย์ที่ตรวจได้ 3 ข้อ ไม่ใช่การให้ AI ตัดสินเอง" | Sample data · Lexical mode |
-| 10–30 s | Run comparison → matrix; open the Thai citation | "ทุกช่องชี้กลับไปที่ข้อความต้นฉบับ ระดับเวอร์ชันและตำแหน่งตัวอักษร" | Live local run |
-| 30–55 s | Apply the sample source revision (DEMO-S2 v1 → v2) | "เมื่อแหล่งข้อมูลเปลี่ยน ระบบตรวจเฉพาะผลที่พึ่งพาแหล่งนั้น" | Changes view |
-| 55–75 s | Changes: A/R2 Meets → Does not meet; others reused; v1 citation still opens (Superseded) | "ผลที่ไม่เกี่ยวไม่ถูกคำนวณใหม่ และหลักฐานเก่ายังตรวจย้อนได้" | Superseded (current: v2) |
-| 75–90 s | Optional: Providers → Hybrid mode label; a project built from your own files | "รุ่นโมเดลและดัชนีถูกบันทึกในทุก run; ไม่มีโมเดลก็ใช้ได้" | Your files · Hybrid mode |
+| 0–10 s | Open the sample project and show requirements R1–R3. | “We start with three requirements the reader can check.” | Sample data · Lexical mode |
+| 10–30 s | Run the comparison, show the matrix and open the Thai citation. | “Each cell leads to the original wording, with the source version and character offsets.” | Live local run |
+| 30–55 s | Apply the sample source revision (DEMO-S2 v1 → v2). | “When a source changes, the system rechecks the results that depend on it.” | Changes view |
+| 55–75 s | Show A/R2 changing from Meets to Does not meet. Other results are reused; the superseded v1 citation still opens. | “Unrelated results are reused. We can still inspect the earlier evidence.” | Superseded (current: v2) |
+| 75–90 s | Optionally show Providers, the Hybrid mode label and a project built from local files. | “Each run records its model and index versions. The lexical workflow also works without a model.” | Your files · Hybrid mode |
 
 **Fallback if the app fails on the day:** use the G01/G02 screenshots in `artifacts/owner-program/PTP-2026-11-21/G01|G02/screenshots/`
 or a screen recording of the same build, labelled RECORDED.

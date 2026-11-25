@@ -1,6 +1,6 @@
 # Next-account handoff — 24 Nov 2026 (updated 08:00: A3r1 finished, P1 closed)
 
-> Historical dispatch. Use the [current handoff](../../HANDOFF.md) and [S0–S5 master plan](../evidence-scope/MASTER-PLAN.md) for new work. The operating procedures below retain their original scope.
+> Historical dispatch. Use the [current handoff](../../HANDOFF.md) and [RA Pharma master plan](../ra-pharma/MASTER-PLAN.md) for new work. The operating procedures below retain their original scope.
 
 The previous Claude account stopped at the owner's request because its weekly limit was near. This file is the entry
 point for the next account. Report to the owner in **plain Thai**. Code, docs and the paper stay English-first.
@@ -41,7 +41,7 @@ Then run `git status` and `git log -5`. The last pushed commit is on `main` (it 
      F-1 `--check-only` (exit 0 required), stage, one US pod, `g03_a3r1_runpod.sh full`, pull, receipt, delete the pod.
    - It yields F3\* and the frozen VAL decision (CONTINUE / REVISE / PARK). **It is the fourth G03 look at VAL**; disclose
      it.
-   - **Confirm with the owner that pods may be opened again before creating one** (owner on 24 Nov: "ยังไม่ต้องเปิด pod").
+   - **Confirm with the owner that pods may be opened again before creating one** (on 24 Nov the owner asked to defer pod creation).
 3. **Merge D25 (policy v2.1).**
    - Branch `worktree-agent-a6d18c2dded3f86f2`, commit 56267477.
    - Run the full gate:

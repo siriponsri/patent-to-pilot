@@ -1,4 +1,6 @@
-# Patent-to-Pilot master plan
+# Evidence-scope program · historical board
+
+Current dispatch moved to the [RA Pharma master plan](../ra-pharma/MASTER-PLAN.md) on 26 November 2026. This board preserves the S0–S5 phase definitions and receipts.
 
 **Effective 25 November 2026 · S0 through S4 complete at their recorded scope · Option A controlled primary NULL.**
 
@@ -8,7 +10,7 @@ A reader comparing two laws should be able to see *which exception changes the a
 
 ## Status and dispatch board
 
-Each row has one execution sheet with stable task IDs. S1 and S2 ran together. S3 and S4 can now proceed independently when dispatched. Keep this table and the task dispositions and receipt links in each phase sheet current when work resumes. Preserve prior evidence under its original identifiers.
+Each row has one execution sheet with stable task IDs. S1 and S2 ran together. S3 and S4 subsequently closed at the scopes below. Keep this table and the task dispositions and receipt links in each phase sheet current when work resumes. Preserve prior evidence under its original identifiers.
 
 | Phase | Workstream and outcome | Starts after | State | Completion evidence or next action |
 |---|---|---|---|---|
@@ -71,6 +73,6 @@ The closest-work search was conducted in SciSpace. Inspect the paper records for
 - The owner authorizes in-scope installs and dataset downloads for this direction. The organization-only checkpoint performed neither. When execution is activated, record source, version, license, intended use and digest. Third-party gated terms, new expenditure or unclear redistribution rights remain separate decisions. Historical R1/R2/E1R balances cannot be reassigned to new tasks by this plan.
 - A solo maintainer can run either lane sequentially or delegate disjoint files. Record the writer and jobs in HANDOFF. Keep one contract owner. A research finding can change a later product policy only through a versioned change and product regression check.
 
-## Prompt for the next goal
+## Closed dispatch and deferred synthesis
 
 The [S3 executor prompt](S3-EXECUTOR-PROMPT.md) records the completed S3 dispatch. S4 is independently complete at its qualified Windows level. Option A's [v2 original and independent audit](alternative-evidence/RESULTS.md) closed with a Thai controlled NULL result and diagnostic-only architecture evidence. The same evidence-opening sequence occurred in all arms on the authored packet. S5 remains pending.

@@ -2,7 +2,7 @@
 
 > **Correction note (22 Nov 2026, owner note 22112026, "Corrections to carry into writing").** Paper 53's "37.1%" exposure statement is marked **denominator to be recovered; do not reuse** wherever it appears below. The repository account (257/692 queries) has not been re-checked against the original Paper 53 table, and other drafts turned it into an item-level claim. B53's own measured π@100 = 0.371 (905 queries) is a separate number and is not Paper 53's figure. Text is kept as written; the markers govern.
 
-Owner instruction 19 Nov: "Paper 86 ช่วยเลือกได้เลยจาก repo myIS"; "P1-DAPFAM อ้างอิงเล็กน้อยบน IS2 ได้".
+On 19 November the owner delegated selection of Paper 86 material from the myIS repository and permitted a brief reference to P1-DAPFAM in IS2.
 Sources read:
 - the withdrawn Paper 86 camera-ready PDF `myDegree/IS/IS_2/paper86_ieee_express.pdf` (sha256 `95be5490…`);
 - its reviews `review_paper86.txt`;

@@ -1,20 +1,18 @@
-# Literature review — HealthTech
+# Research literature
 
-The current [closest-method and Thai-product comparison](../docs/evidence-scope/MASTER-PLAN.md#closest-alternatives-and-the-claim-worth-testing) guides the new study. The following collection records earlier research.
+Start with the [RA Pharma research brief](../docs/ra-pharma/research/BRIEF.md) for the IS1 continuity study, agent-skill comparators and reference benchmarks. The [master plan](../docs/ra-pharma/MASTER-PLAN.md) defines the scope of the research claims. The earlier [evidence-scope comparison](../docs/evidence-scope/MASTER-PLAN.md#closest-alternatives-and-the-claim-worth-testing) and [alternative-evidence audit](../docs/evidence-scope/05-alternative-evidence-literature.md) document prior design decisions.
 
-> **Current closest-work review - 10 November 2026:** [FOPNet, Yang, PHAGE and adjacent work](../docs/healthtech/research/plans/RELATED-WORK-AUDIT.md), with exact local PDF hashes/page coverage in the documentation audit. Three supplied PDFs remain local-only. Older library classifications/access limits below are historical; check newer primary records before publication claims.
+## Historical collections
 
-ชุดหลักปัจจุบันคือ HealthTech Pack วันที่ 27 ตุลาคม 2026 มี PDF 27 ฉบับ รวม 458 หน้า ตรวจ SHA-256 กับ CHECKSUMS ตรงทั้งหมดและอ่าน identity พร้อม method/task/evaluation passages ที่จำเป็น ไม่ใช่ systematic review และไม่ได้ reproduce ผลของบทความ
+The HealthTech pack of 27 October 2026 covered 27 PDFs and 458 pages. The review checked all file digests against the checksum manifest and inspected source identity, methods, tasks and evaluation passages. It was a targeted review. Results from the papers were not independently reproduced. The [10 November review](../docs/healthtech/research/plans/RELATED-WORK-AUDIT.md) covers FOPNet, Yang, PHAGE and adjacent work; the three supplied PDFs remained local.
 
-- [Research library / source links](healthtech/RELATED_PAPERS.md)
-- [Method, dataset, evaluator และ novelty threats](healthtech/READING_NOTES.md)
-- [Verified PDF identities and separate rights notes](healthtech/paper_manifest.json)
+- [Research library and source links](healthtech/RELATED_PAPERS.md)
+- [Methods, datasets, evaluators and novelty threats](healthtech/READING_NOTES.md)
+- [File identities and rights notes](healthtech/paper_manifest.json)
 - [BibTeX](healthtech/references.bib)
 - [Pack provenance](../docs/healthtech/pack-provenance.json)
-- [Additions 5 Nov 2026 (cross-domain retrieval, query reformulation)](cross-domain/ADDITIONS_20261105.md)
+- [Cross-domain retrieval and query reformulation additions, 5 November](cross-domain/ADDITIONS_20261105.md)
 
-Bridge-MedDevKG เป็น main task candidate แบบมีเงื่อนไข SciFact ประเมิน evidence component แยก; ChEMU/BioASQ/NLI4CT และ chemical resources เป็น supporting/extension tasks สิทธิ์ของ paper, code และ dataset ต้องตรวจแยก
+Bridge-MedDevKG was a conditional candidate. SciFact covered the evidence component. ChEMU, BioASQ, NLI4CT and chemical resources were possible extensions. The earlier library of 35 external PDFs and the authors' Paper 53 remained local for provenance. Public links point to source publications. Keep the authors' prior work separate from the historical external bibliography.
 
-PDF links ชี้ต้นทาง ไม่ bundle PDFs ใน public migration นี้ คลังเดิม 35 external PDFs กับ internal Paper 53 ยังอยู่ในเครื่องเพื่อรักษา provenance แต่ไม่ใช้เป็น research direction ปัจจุบันโดยอัตโนมัติ และไม่เพิ่ม Paper 53 ลง external bibliography
-
-การมี quote จริงไม่ยืนยัน semantic support, feasibility, safety, FTO หรือผลตอบแทน หากใช้ LLM/NLI judges ให้รายงานเป็น exploratory proxies ตาม calibration ที่มี
+Review paper, code and dataset permissions independently. A verified quotation establishes source integrity. Assess semantic support, feasibility, safety, freedom to operate and economic benefit separately. Report LLM or NLI judgments with their calibration and exploratory scope.

@@ -24,50 +24,17 @@ experiment. IS2 must not invent one after the fact.
 Paper 53 §VI already lists this as a limitation: "one benchmark, candidate generator, TAC rendering, primary reranker, pool
 depth of 100". It names broader retriever comparisons as future work.
 
-## Answer for the IS2 report (Thai)
+## Answer for the IS2 report
 
-**เหตุผลที่ Paper 53 ใช้ `patembed-base` (ตามที่บันทึกไว้จริง)**
+The PatenTEB group at ICUBE, INSA Strasbourg, developed the model and DAPFAM. The model card describes multi-task training on 13 patent tasks for applications including prior-art search. The base encoder distils 12 of the large encoder's 24 layers and has 193 million parameters, 768-dimensional embeddings and a 512-token input limit. The license is CC BY-NC-SA 4.0. Pinning the revision made it possible to freeze a reproducible candidate pool for paired instruction comparisons. These facts explain the encoder's role. Paper 53 reported no comparative first-stage selection experiment and identified this limitation in section VI.
 
-1. **ที่มาของโมเดล:** เป็นโมเดลตระกูล PatenTEB จากทีม ICUBE (INSA Strasbourg) ทีมเดียวกับผู้สร้าง DAPFAM [Paper 53 ref. 5, 18]
-   - model card ระบุว่าฝึกแบบ multi-task บน 13 งานด้านสิทธิบัตรของ PatenTEB
-   - ออกแบบมาสำหรับ prior-art search และ patent retrieval
-   - Paper 53 จึงเลือก encoder เฉพาะทางสิทธิบัตรที่สอดคล้องกับ benchmark ที่ใช้
-2. **ข้อมูลทางเทคนิค (จาก model card):**
-   - distilled จาก patembed-large (12 จาก 24 layers)
-   - 193M parameters, embedding 768 มิติ, รับข้อความได้ 512 tokens
-   - ใบอนุญาต CC BY-NC-SA 4.0
-   - pin revision ได้ ทำให้สร้าง candidate pool ที่ตรึงและตรวจซ้ำได้ ซึ่งเป็นเงื่อนไขของการเปรียบเทียบ instruction แบบ paired ใน Paper 53
-3. **สิ่งที่ Paper 53 ไม่ได้ทำ:** ไม่ได้เปรียบเทียบ first stage หลายตัวก่อนเลือก
-   - ข้อนี้คือข้อจำกัดที่กรรมการชี้ (K1a/K1b) และ Paper 53 ยอมรับไว้แล้วใน §VI
-   - IS2 ตอบโดยทำการเปรียบเทียบจริงใน B53 แทนการเขียนเหตุผลย้อนหลัง
-
-**หลักฐานเสริมย้อนหลังที่มีในโครงการ (ต้องติดป้ายให้ชัด ไม่ใช่เหตุผลตอนเลือก)**
-
-| หลักฐาน | สิ่งที่บอก | ป้ายสถานะ |
+| Retrospective evidence | Observation | Evidence scope |
 |---|---|---|
-| Paper 86 (งานของผู้วิจัย ยังไม่เผยแพร่ ถอนจาก IEEE) — 2026 nine-cell execution, 250 DAPFAM dev queries | PatEmbed (**large**) นำ Qwen3-Embedding-0.6B และ Arctic-embed-m-v2.0 ทุก recipe (ประมาณ 0.419 Recall@100) | HISTORICAL PROJECT RECORD; คนละรุ่นกับ base |
-| P1-DAPFAM dev (B0 = PatEmbed-large) | OUT R@200 0.1477 บน DAPFAM dev 349 queries | MEASURED / REPOSITORY RECEIPT; คนละรุ่นกับ base |
-| P1-BridgeRet P1-DEV (USPTO OA, 1M corpus) | Z-PatEmbed-large 0.3282 > Z-Qwen3 0.2741 > Z-Arctic 0.2248 OUT R@200 | MEASURED (DEV, descriptive); คนละ benchmark |
+| Paper 86 (unpublished, withdrawn from IEEE), 2026 nine-cell run on 250 DAPFAM DEV queries | PatEmbed-large led Qwen3-Embedding-0.6B and Arctic-embed-m-v2.0 under every recipe, at about 0.419 Recall@100. | HISTORICAL PROJECT RECORD; large model variant |
+| P1-DAPFAM DEV, B0 = PatEmbed-large | OUT R@200 was 0.1477 on 349 queries. | MEASURED / REPOSITORY RECEIPT; large model variant |
+| P1-BridgeRet P1-DEV, USPTO office actions, 1M corpus | OUT R@200: Z-PatEmbed-large 0.3282, Z-Qwen3 0.2741, Z-Arctic 0.2248. | MEASURED; descriptive, different benchmark |
 
-ทั้งสามแถวชี้ว่าตระกูล PatEmbed เป็น first stage dense ที่แข็งในงานแบบนี้ แต่ **ไม่มีแถวไหนวัด patembed-base บน cohort ของ Paper 53** จึงใช้เป็นบริบทได้เท่านั้น
-
-**หลักฐานตรงที่ IS2 จะผลิต:** B53 วัด F0 = patembed-base เทียบกับ BM25, RRF(BM25, F0), Arctic และ RRF(BM25, Arctic) บน DAPFAM ชุดเดียวกัน ที่ K=100/200 (รองลงไปคือ F6 PatEmbed-large และ F7 Qwen3-Embedding) ผลนี้คือคำตอบเชิงประจักษ์ของ K1a/K1b
-
-## English version
-
-Paper 53 used `datalyes/patembed-base` (model-card revision `244ba452…`) as its single first-stage encoder, citing PatenTEB
-[5] and the model card [18]. The archived text records provenance, not a comparative selection. The encoder is a
-patent-specific PatenTEB model from the group that released DAPFAM. It was trained multi-task on 13 patent tasks. It is a
-193 M-parameter, 768-dimensional, 512-token model with a pinnable revision. That allowed a frozen, reproducible candidate pool
-for the paired instruction comparison.
-
-Paper 53 did not compare first stages and names this as a limitation. Retrospective project evidence points the same way, but
-none of it measures patembed-base on the Paper 53 cohort:
-- the owner's unpublished study found PatEmbed-large ahead of Qwen3-Embedding-0.6B and Arctic-embed-m-v2.0 on 250 DAPFAM
-  development queries;
-- PatEmbed-large is also the strongest zero-shot encoder on a separate USPTO office-action development set.
-
-IS2 replaces after-the-fact justification with a direct first-stage substitution (B53).
+These results support the PatEmbed family's retrieval performance in those settings. None measures patembed-base on Paper 53's original cohort. For the empirical answer to K1a/K1b, B53 compares F0 (patembed-base) with BM25, RRF(BM25,F0), Arctic and RRF(BM25,Arctic) on the same DAPFAM cohort at depths 100 and 200. The secondary arms are F6 (PatEmbed-large) and F7 (Qwen3-Embedding).
 
 ## Sources
 - Paper 53, §III-B, §VI and refs [5], [15], [18] (`literature-review/internal/paper53_ieee_express.pdf`).

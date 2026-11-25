@@ -31,7 +31,7 @@ the author nothing. The APC listed below is the price of the optional open-acces
 | JC-01371 | Transactions on Machine Learning Research | Q2 (0.744) | **diamond, no fee** | P3 (or P2) if the contribution is methodological |
 | JC-00235 / JC-01163 | ECTI Transactions on Computer and Information Technology (Thailand) | Q3 (0.213) | **diamond, no fee** | **IS2 / B53 extended version**; P1 backup |
 | JC-00849 | Journal of Universal Computer Science | Q3 (0.308) | **diamond, no fee** | backup for any paper |
-| JC-01235 | วารสารเทคโนโลยีสารสนเทศ (IT Journal, KMUTNB) | TCI group 1 (2568–2572); not in Scopus | free per OpenAlex OA record; graduation use = Yes (erp read) | Thai-language IS2 short version |
+| JC-01235 | Information Technology Journal (IT Journal, KMUTNB) | TCI group 1 (2568–2572 Buddhist Era); absent from Scopus in the recorded lookup | No fee per the OpenAlex OA record; the ERP lookup marked graduation use as Yes | Thai-language IS2 short version |
 | JC-00859 | KMITL Science and Technology Journal → Current Applied Science and Technology (CAST) | TCI group 1 (successor) | check | backup (scope broader than IR) |
 
 Excluded:

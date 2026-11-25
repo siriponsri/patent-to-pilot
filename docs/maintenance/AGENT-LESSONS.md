@@ -1,17 +1,22 @@
-# Lessons for the next agent account (kept current; last update 25 Nov 2026)
+# Lessons for the next agent account
 
-The owner switches Claude accounts when usage runs out. Read [CLAUDE.md](../../CLAUDE.md), then
-[HANDOFF.md](../../HANDOFF.md), then this file. These lessons cost real time once; do not relearn them.
+Read [CLAUDE.md](../../CLAUDE.md), the [current handoff](../../HANDOFF.md) and the [RA Pharma plan](../ra-pharma/MASTER-PLAN.md) at takeover. The historical experiments below document failures and operating limits worth preserving.
 
 ## Working with the owner
 
-- Report in plain Thai with repository paths. Code, docs and UI stay English-first.
+- Report to the owner in plain Thai. Write project documentation, including handoffs and memory, in English. Preserve original evidence language and authentic Thai product output.
 - Make routine decisions yourself (owner doc `05_DECISIONS_AND_OWNER_AUTONOMY.md` §2). Ask only about money, gated logins
   or data-terms acceptance, destructive data operations, and publishing.
 - The owner often adds parallel tasks mid-turn. Run independent ones in their own session or subagent, verify their
   output yourself, then report.
-- The owner wants high-impact research, not another diagnosis/boundary paper like Paper 53.
-- The owner may shut the PC down at night. Long jobs must run detached on dr-train, with HANDOFF saying where they are.
+- The owner seeks a reproducible positive or architectural contribution. Report a null or negative result when that is what the frozen comparison measures.
+- For authorized long jobs, record execution location, budget, owner and recovery command in the lane handoff. Follow the dr-train memory-safety procedure before remote work.
+
+## Lessons from the November 25 closeout
+
+- S3 lost three Thai cases in one family after stopping with an incomplete scope condition. Check extraction and stopping decisions separately. [S3 results](../healthtech/audits/S3-20261125/RESULTS.md)
+- Five policies opened identical evidence on all 45 Option A requests. Check for genuine choices using development fixtures before opening a reserved set, and compare methods at equal budgets. Keep candidate eligibility and tie handling constant in an ablation. [Option A results](../evidence-scope/alternative-evidence/RESULTS.md)
+- A source hash and quote alone cannot tell whether a product result belongs to the applicant. Carry the subject, evidence role, authority and exact locator through each specialist handoff. [Evidence contract](../ra-pharma/EVIDENCE-CONTRACT.md)
 
 ## Research results that constrain new work
 
@@ -55,7 +60,7 @@ The owner switches Claude accounts when usage runs out. Read [CLAUDE.md](../../C
 **Owner PC**
 - 15.7 GB RAM, Intel UHD only: no CUDA and no Ollama.
 - `.venv` (3.12) has no numpy, torch or pyarrow; Workbench code is stdlib only.
-- Use the [D27 scope](OWNER-DECISIONS-20261122.md) for authorized installs and dataset downloads. Record exact items, terms and hashes during execution. Other downloads retain their existing approval boundary.
+- Check the [owner decisions](OWNER-DECISIONS-20261122.md) and current board before adding dependencies. Record each necessary tool or dataset, its source, version, rights, digest, intended use and validation.
 
 **dr-train** (`ssh chaw@100.77.149.83`)
 - Use the V100 only (`CUDA_VISIBLE_DEVICES=1`).
