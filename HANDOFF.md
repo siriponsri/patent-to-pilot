@@ -6,11 +6,9 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ## Agent takeover state — 25 Nov 2026 (Asia/Bangkok)
 
-**S0 complete.** The [S0–S5 master plan](docs/evidence-scope/MASTER-PLAN.md) implements the owner-approved direction. The owner authorized the prospective [questions and data design freeze](docs/evidence-scope/FREEZE.md), parallel research/product work and in-scope installs and dataset downloads. Only organization was activated. No S1–S5 run, download, install, remote job or spend was made for S0.
+**S0, S1 and S2 complete.** Under D28 the owner extended this goal from planning to implementation. [S1 receipt](docs/evidence-scope/receipts/S1-20261125.md) pins 100 authored requests in ten families, runtime/evaluator separation, a three-state primary and matched controls. There are only three reserved DEV families per language. No method score was computed. [S2 receipt](docs/evidence-scope/receipts/S2-workbench.md) records a Thai-first local reader with 23 public-source presets from ten display-only families, including pharmaceutical formulations, devices and five Thai legal families. Browser and HTTP workflows reopen exact cited spans. Product demonstrations and research families are disjoint.
 
-**Next activation:** dispatch [S1 research data](docs/evidence-scope/01-research-data.md) and [S2 product](docs/evidence-scope/02-product-workbench.md) together. The master contains the copy-ready goal for GPT 6.2 high. All S0 writing assignments (research documents, product documents, README/assets and integration) are closed on handoff. Establish one writer per lane on the next activation.
-
-**Evidence at handoff:** new method NOT_RUN; existing Workbench core verified with synthetic material; local open-data alpha NOT_RUN; publication is a design draft. S1 pins new bytes and judgments, S2 demonstrates both languages. A positive DEV point estimate may open one bounded follow-up. Null research can close with its receipt and product can progress independently. Never promote these labels to a benchmark win or real-world usage claim.
+**Next owner dispatch:** use the [S3 executor prompt](docs/evidence-scope/S3-EXECUTOR-PROMPT.md) in a separate session. This session is reserved for planning and audit on the next dispatch. S4 is eligible for separate dispatch. S5 remains pending. All D28 writers have handed back their files. No project remote job is active. S1/S2 consumed no paid envelope. Natural-document accuracy, freely worded questions, independent usability, production deployment and S3 scores remain unverified.
 
 **Inherited P0–P5 state:** the [evidence board](docs/tracking/owner-note-22112026/PHASE_BOARD.md) keeps the original IDs and measured outcomes. Update that registry only with the tracker CLI.
 
@@ -97,6 +95,6 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ### Decisions and unresolved items
 
-[D1–D27](docs/maintenance/OWNER-DECISIONS-20261122.md) record owner authority. Historical resource balances describe completed work and require matching scope for any later use. The generic new download approval does not extend a paid envelope. Read [dr-train memory safety §2a](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md) before remote work.
+[D1–D28](docs/maintenance/OWNER-DECISIONS-20261122.md) record owner authority. Historical resource balances describe completed work and require matching scope for any later use. The generic new download approval does not extend a paid envelope. Read [dr-train memory safety §2a](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md) before remote work.
 
-The [original PDF source record](docs/evidence-scope/00-organization.md#original-source-corrections) resolves Paper 53's exposure denominator. Its DOI, independent semantic judgments for natural cases, source-by-source redistribution terms for new demos, real-user adoption and submission status remain open. Existing local-only owner material and private artifacts retain their access boundaries.
+The [original PDF source record](docs/evidence-scope/00-organization.md#original-source-corrections) resolves Paper 53's exposure denominator. Its DOI, independent semantic judgments for natural cases, reuse rights for future additions beyond the S2 manifest, real-user adoption and submission status remain open. Existing local-only owner material and private artifacts retain their access boundaries.

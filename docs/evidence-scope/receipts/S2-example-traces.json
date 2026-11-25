@@ -1,0 +1,4731 @@
+[
+  {
+    "id": "8193c68d13c24156938196aa3116d226",
+    "family_id": "demo-th-eta",
+    "title_th": "ฉบับเดิม พ.ศ. ๒๕๔๔",
+    "question_th": "มาตรา ๙ (๑) กำหนดให้วิธีลงลายมือชื่อระบุใคร และแสดงอะไรเกี่ยวกับข้อความ?",
+    "source_id": "th-eta",
+    "version": "2544",
+    "domain": "thai_law",
+    "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-พ-ศ-2544.aspx",
+    "data_origin": "public_source",
+    "family_title_th": "ลายมือชื่ออิเล็กทรอนิกส์",
+    "issue_date": "2001-12-04",
+    "effective_date": "2002-04-03",
+    "example_id": "eta-2544",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:30.968Z",
+    "input_sha256": "71a89e55dd73fe6ca2bc8782a1a953155a95271e1bf27d4bab4e58adc0d5b183",
+    "source_sha256": "3ac4b8a713c05e0212cec8f1638ac94c555fbc5083b19987733c67852b68724f",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-พ-ศ-2544.aspx",
+        "sha256": "f3c3c63f9fa47ff98be99b929cf80db925082c87bd62a575f60c7cb6ec5f7e16",
+        "retrieved_utc": "2026-11-25T12:58:33.952357+00:00"
+      },
+      {
+        "url": "https://www.oie.go.th/assets/portals/1/fileups/2/files/Law_ICT/ElectronicTransactions2544.pdf",
+        "sha256": "42eded9e65c4bd2be312f42e9f75677060876cb45f538d4aa41fa8b5f75fefae",
+        "retrieved_utc": "2026-11-25T13:01:36.120675+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "identity",
+        "label_th": "ระบุตัวผู้ลงลายมือชื่อ",
+        "locator": "มาตรา ๙ (๑) · ระบุตัว",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-eta@2544#identity"
+      },
+      {
+        "id": "message",
+        "label_th": "ความเชื่อมโยงกับข้อความ",
+        "locator": "มาตรา ๙ (๑) · ข้อความ",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-eta@2544#message"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "th-eta@2544#identity",
+        "source_id": "th-eta",
+        "version": "2544",
+        "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-พ-ศ-2544.aspx",
+        "sha256": "3ac4b8a713c05e0212cec8f1638ac94c555fbc5083b19987733c67852b68724f",
+        "quote_sha256": "48bffd395c9bf18abfc4b0fe6e24ff43e3b2f0968a6391496cfc82a103e2b815",
+        "start": 0,
+        "end": 43,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๙ (๑) · ระบุตัว",
+        "kind": "section",
+        "quote": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ",
+        "meaning_th": "วิธีที่ใช้ต้องระบุได้ว่าใครเป็นเจ้าของลายมือชื่อ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "th-eta@2544#message",
+        "source_id": "th-eta",
+        "version": "2544",
+        "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-พ-ศ-2544.aspx",
+        "sha256": "3ac4b8a713c05e0212cec8f1638ac94c555fbc5083b19987733c67852b68724f",
+        "quote_sha256": "43dba36d05e554731c1595fb82a51604849fa00f7390dc242c571048b370247a",
+        "start": 44,
+        "end": 131,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๙ (๑) · ข้อความ",
+        "kind": "section",
+        "quote": "และสามารถแสดงได้ว่าเจ้าของลายมือชื่อรับรองข้อความในข้อมูลอิเล็กทรอนิกส์นั้นว่าเป็นของตน",
+        "meaning_th": "ต้องแสดงได้ว่าผู้ลงลายมือชื่อรับรองว่าข้อความนั้นเป็นของตน",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:identity",
+        "kind": "requirement",
+        "label_th": "ระบุตัวผู้ลงลายมือชื่อ"
+      },
+      {
+        "id": "req:message",
+        "kind": "requirement",
+        "label_th": "ความเชื่อมโยงกับข้อความ"
+      },
+      {
+        "id": "th-eta@2544#identity",
+        "kind": "section",
+        "label_th": "มาตรา ๙ (๑) · ระบุตัว"
+      },
+      {
+        "id": "th-eta@2544#message",
+        "kind": "section",
+        "label_th": "มาตรา ๙ (๑) · ข้อความ"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:identity",
+        "to": "th-eta@2544#identity",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-eta@2544#identity"
+      },
+      {
+        "from": "req:message",
+        "to": "th-eta@2544#message",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-eta@2544#message"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "identity",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-eta@2544#identity",
+          "th-eta@2544#message"
+        ],
+        "after": [
+          "th-eta@2544#identity",
+          "th-eta@2544#message"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "message",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-eta@2544#message",
+          "th-eta@2544#identity"
+        ],
+        "after": [
+          "th-eta@2544#message",
+          "th-eta@2544#identity"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "6d73ee51746547c8b4c5cb8d9155db2b",
+    "family_id": "demo-th-eta",
+    "title_th": "ฉบับแก้ไขที่ ๓ พ.ศ. ๒๕๖๒",
+    "question_th": "มาตรา ๙ (๑) กำหนดให้วิธีลงลายมือชื่อระบุใคร และแสดงอะไรเกี่ยวกับข้อความ?",
+    "source_id": "th-eta",
+    "version": "2562-no3",
+    "domain": "thai_law",
+    "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+    "data_origin": "public_source",
+    "family_title_th": "ลายมือชื่ออิเล็กทรอนิกส์",
+    "issue_date": "2019-04-14",
+    "effective_date": "2019-04-15",
+    "example_id": "eta-2562-no3",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.008Z",
+    "input_sha256": "2411dc1e723f69f90533364ee4001906047b100f2802129682e294f7f9fdfef8",
+    "source_sha256": "90c2dec6ad9dbd64979f42840cd0a5321c3779f72f383960f66f9d39047ad33b",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+        "sha256": "f0914f5686cbd684de5cd2877de536dfce79f23fd13564bd9e3643ba7dfdd295",
+        "retrieved_utc": "2026-11-25T12:58:33.179214+00:00"
+      },
+      {
+        "url": "https://www.etda.or.th/getattachment/fd89f39c-c28f-41ef-a3c6-9d90554a3d67/Electronic-Transactions-Act-%28No-3%29-B-E-2562.aspx",
+        "sha256": "d6f1e3bb3a5f2ce3a25dcfc1de3810b325736f79455d8878b7e0ec02bbb759ae",
+        "retrieved_utc": "2026-11-25T12:59:42.162874+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "identity",
+        "label_th": "ระบุตัวผู้ลงลายมือชื่อ",
+        "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-eta@2562-no3#identity"
+      },
+      {
+        "id": "message",
+        "label_th": "ความเชื่อมโยงกับข้อความ",
+        "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ข้อความ",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-eta@2562-no3#message"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "th-eta@2562-no3#identity",
+        "source_id": "th-eta",
+        "version": "2562-no3",
+        "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+        "sha256": "90c2dec6ad9dbd64979f42840cd0a5321c3779f72f383960f66f9d39047ad33b",
+        "quote_sha256": "48bffd395c9bf18abfc4b0fe6e24ff43e3b2f0968a6391496cfc82a103e2b815",
+        "start": 0,
+        "end": 43,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว",
+        "kind": "section",
+        "quote": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ",
+        "meaning_th": "วิธีที่ใช้ต้องระบุได้ว่าใครเป็นเจ้าของลายมือชื่อ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "th-eta@2562-no3#message",
+        "source_id": "th-eta",
+        "version": "2562-no3",
+        "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+        "sha256": "90c2dec6ad9dbd64979f42840cd0a5321c3779f72f383960f66f9d39047ad33b",
+        "quote_sha256": "851df0d6369d3532e85565fd733142830077b2e4a8e2ee5184105a4c5c0d0d2b",
+        "start": 44,
+        "end": 120,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ข้อความ",
+        "kind": "section",
+        "quote": "และสามารถแสดงเจตนาของเจ้าของลายมือชื่อเกี่ยวกับข้อความในข้อมูลอิเล็กทรอนิกส์",
+        "meaning_th": "ต้องแสดงเจตนาของผู้ลงลายมือชื่อเกี่ยวกับข้อความ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:identity",
+        "kind": "requirement",
+        "label_th": "ระบุตัวผู้ลงลายมือชื่อ"
+      },
+      {
+        "id": "req:message",
+        "kind": "requirement",
+        "label_th": "ความเชื่อมโยงกับข้อความ"
+      },
+      {
+        "id": "th-eta@2562-no3#identity",
+        "kind": "section",
+        "label_th": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว"
+      },
+      {
+        "id": "th-eta@2562-no3#message",
+        "kind": "section",
+        "label_th": "มาตรา ๗ แทนมาตรา ๙ (๑) · ข้อความ"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:identity",
+        "to": "th-eta@2562-no3#identity",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-eta@2562-no3#identity"
+      },
+      {
+        "from": "req:message",
+        "to": "th-eta@2562-no3#message",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-eta@2562-no3#message"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "identity",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-eta@2562-no3#identity",
+          "th-eta@2562-no3#message"
+        ],
+        "after": [
+          "th-eta@2562-no3#identity",
+          "th-eta@2562-no3#message"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "message",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-eta@2562-no3#message",
+          "th-eta@2562-no3#identity"
+        ],
+        "after": [
+          "th-eta@2562-no3#message",
+          "th-eta@2562-no3#identity"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "03e345c8f2114ab48270860c01c7b338",
+    "family_id": "demo-th-eta",
+    "title_th": "ลองกรณีที่หลักฐานยังไม่พอ",
+    "question_th": "มาตรา ๙ (๑) กำหนดเรื่องการระบุตัวอย่างไร และมีหลักฐานว่าใครเป็นผู้ลงนามในสัญญาตัวอย่างหรือไม่?",
+    "source_id": "th-eta",
+    "version": "2562-no3",
+    "domain": "thai_law",
+    "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+    "data_origin": "public_source",
+    "family_title_th": "ลายมือชื่ออิเล็กทรอนิกส์",
+    "issue_date": "2019-04-14",
+    "effective_date": "2019-04-15",
+    "example_id": "eta-case",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.046Z",
+    "input_sha256": "3b052961c02425dcad543b4cf60166e92723fe5e6171a0c6606833d860fce8eb",
+    "source_sha256": "90c2dec6ad9dbd64979f42840cd0a5321c3779f72f383960f66f9d39047ad33b",
+    "status": "qualified",
+    "originals": [
+      {
+        "url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+        "sha256": "f0914f5686cbd684de5cd2877de536dfce79f23fd13564bd9e3643ba7dfdd295",
+        "retrieved_utc": "2026-11-25T12:58:33.179214+00:00"
+      },
+      {
+        "url": "https://www.etda.or.th/getattachment/fd89f39c-c28f-41ef-a3c6-9d90554a3d67/Electronic-Transactions-Act-%28No-3%29-B-E-2562.aspx",
+        "sha256": "d6f1e3bb3a5f2ce3a25dcfc1de3810b325736f79455d8878b7e0ec02bbb759ae",
+        "retrieved_utc": "2026-11-25T12:59:42.162874+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 1,
+      "spent": [
+        "acquire"
+      ],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "identity",
+        "label_th": "ระบุตัวผู้ลงลายมือชื่อ",
+        "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-eta@2562-no3#identity"
+      },
+      {
+        "id": "actual-signer",
+        "label_th": "ผู้ลงนามในสัญญาตัวอย่าง",
+        "locator": "สัญญาตัวอย่าง · ชื่อผู้ลงนาม",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ยังไม่มีหลักฐานที่ตรงกับขอบเขตที่ระบุ",
+        "status": "unresolved",
+        "evidence_id": null
+      }
+    ],
+    "evidence": [
+      {
+        "id": "th-eta@2562-no3#identity",
+        "source_id": "th-eta",
+        "version": "2562-no3",
+        "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+        "sha256": "90c2dec6ad9dbd64979f42840cd0a5321c3779f72f383960f66f9d39047ad33b",
+        "quote_sha256": "48bffd395c9bf18abfc4b0fe6e24ff43e3b2f0968a6391496cfc82a103e2b815",
+        "start": 0,
+        "end": 43,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว",
+        "kind": "section",
+        "quote": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ",
+        "meaning_th": "วิธีที่ใช้ต้องระบุได้ว่าใครเป็นเจ้าของลายมือชื่อ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:identity",
+        "kind": "requirement",
+        "label_th": "ระบุตัวผู้ลงลายมือชื่อ"
+      },
+      {
+        "id": "req:actual-signer",
+        "kind": "requirement",
+        "label_th": "ผู้ลงนามในสัญญาตัวอย่าง"
+      },
+      {
+        "id": "th-eta@2562-no3#identity",
+        "kind": "section",
+        "label_th": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:identity",
+        "to": "th-eta@2562-no3#identity",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-eta@2562-no3#identity"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "identity",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-eta@2562-no3#identity",
+          "th-eta@2562-no3#message"
+        ],
+        "after": [
+          "th-eta@2562-no3#identity",
+          "th-eta@2562-no3#message"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "acquire",
+        "requirement_id": "actual-signer",
+        "reason_th": "ค้นตำแหน่งที่ระบุภายในเอกสารฉบับเดียวกัน",
+        "before": [],
+        "after": [],
+        "accepted": [],
+        "displaced": [],
+        "cost": 1
+      },
+      {
+        "action": "qualify",
+        "requirement_id": "actual-signer",
+        "reason_th": "ยังไม่มีหลักฐานที่ตรงกับขอบเขตที่ระบุ",
+        "before": [],
+        "after": [],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "2f15e047fe544961b093fcca50853653",
+    "family_id": "demo-en-paperclip",
+    "title_th": "คลิปหนีบกระดาษ · ข้อถือสิทธิที่ 3",
+    "question_th": "ข้อถือสิทธิที่ 3 สืบทอดเงื่อนไขใดเกี่ยวกับชิ้นวัสดุจากข้อ ๑ และระบุวัสดุอะไรเพิ่ม?",
+    "source_id": "US20140137391A1",
+    "version": "A1-2014-05-22",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+    "data_origin": "public_source",
+    "family_title_th": "คลิปหนีบกระดาษ",
+    "publication_claim_count": 8,
+    "selected_claim_numbers": [
+      1,
+      3,
+      4
+    ],
+    "issue_date": "2014-05-22",
+    "effective_date": null,
+    "example_id": "paperclip-3",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.061Z",
+    "input_sha256": "a7171821a78517c49c1d8c4fd1697213a3f804d53ab613deb7877652bee5eb85",
+    "source_sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+        "sha256": "38e55ce5d09e47a1a4d2f955df032f39743944d32d8f768b52a124e346c6b34e",
+        "retrieved_utc": "2026-11-25T12:58:33.979299+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US20140137391A1/en",
+        "sha256": "49abd71ca1382656db598046a97b66345f79d16e84e591ef1341617f48557bb9",
+        "retrieved_utc": "2026-11-25T12:58:32.238091+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "base",
+        "label_th": "องค์ประกอบที่สืบทอดจากข้อ ๑",
+        "locator": "claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c1"
+      },
+      {
+        "id": "material",
+        "label_th": "เงื่อนไขที่เพิ่มเกี่ยวกับวัสดุ",
+        "locator": "claim 3",
+        "parent": "claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c3"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US20140137391A1@A1-2014-05-22#c1",
+        "source_id": "US20140137391A1",
+        "version": "A1-2014-05-22",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+        "sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+        "quote_sha256": "c513de2af19ccdb4b8934fa24278607a60357b2b62530443ba1733f95a98572b",
+        "start": 0,
+        "end": 36,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 1",
+        "kind": "claim",
+        "quote": "a single piece of resilient material",
+        "meaning_th": "ข้อถือสิทธิที่ ๑ ระบุว่าใช้วัสดุยืดหยุ่นชิ้นเดียว นี่เป็นเพียงองค์ประกอบหนึ่งของข้อถือสิทธินี้",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20140137391A1@A1-2014-05-22#c3",
+        "source_id": "US20140137391A1",
+        "version": "A1-2014-05-22",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+        "sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+        "quote_sha256": "8cd8a8451e08b95c8168e3cd089b89ca00f5c00a5222cc776acb970915405de7",
+        "start": 37,
+        "end": 127,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 3",
+        "kind": "claim",
+        "quote": "The paper clip of claim 1, wherein the single piece of material comprises a wire material.",
+        "meaning_th": "ข้อถือสิทธิที่ 3 อ้างถึงข้อถือสิทธิที่ ๑ และเพิ่มเงื่อนไขว่าวัสดุชิ้นเดียวนั้นมีลวดเป็นส่วนประกอบ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "claim 1",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:base",
+        "kind": "requirement",
+        "label_th": "องค์ประกอบที่สืบทอดจากข้อ ๑"
+      },
+      {
+        "id": "req:material",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่เพิ่มเกี่ยวกับวัสดุ"
+      },
+      {
+        "id": "US20140137391A1@A1-2014-05-22#c1",
+        "kind": "claim",
+        "label_th": "claim 1"
+      },
+      {
+        "id": "US20140137391A1@A1-2014-05-22#c3",
+        "kind": "claim",
+        "label_th": "claim 3"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:base",
+        "to": "US20140137391A1@A1-2014-05-22#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c1"
+      },
+      {
+        "from": "req:material",
+        "to": "US20140137391A1@A1-2014-05-22#c3",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c3"
+      },
+      {
+        "from": "US20140137391A1@A1-2014-05-22#c3",
+        "to": "US20140137391A1@A1-2014-05-22#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c3"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "base",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20140137391A1@A1-2014-05-22#c1"
+        ],
+        "after": [
+          "US20140137391A1@A1-2014-05-22#c1"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "material",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20140137391A1@A1-2014-05-22#c3"
+        ],
+        "after": [
+          "US20140137391A1@A1-2014-05-22#c3"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "aebf96c4f8644ea9b259a8aa94e9099f",
+    "family_id": "demo-en-paperclip",
+    "title_th": "คลิปหนีบกระดาษ · ข้อถือสิทธิที่ 4",
+    "question_th": "ข้อถือสิทธิที่ 4 สืบทอดเงื่อนไขใดเกี่ยวกับชิ้นวัสดุจากข้อ ๑ และระบุวัสดุอะไรเพิ่ม?",
+    "source_id": "US20140137391A1",
+    "version": "A1-2014-05-22",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+    "data_origin": "public_source",
+    "family_title_th": "คลิปหนีบกระดาษ",
+    "publication_claim_count": 8,
+    "selected_claim_numbers": [
+      1,
+      3,
+      4
+    ],
+    "issue_date": "2014-05-22",
+    "effective_date": null,
+    "example_id": "paperclip-4",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.093Z",
+    "input_sha256": "6a1fcfbc1dd16fa6b34a714c74bcbe56564af911a803f943fadc28f8daf7b72b",
+    "source_sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+        "sha256": "38e55ce5d09e47a1a4d2f955df032f39743944d32d8f768b52a124e346c6b34e",
+        "retrieved_utc": "2026-11-25T12:58:33.979299+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US20140137391A1/en",
+        "sha256": "49abd71ca1382656db598046a97b66345f79d16e84e591ef1341617f48557bb9",
+        "retrieved_utc": "2026-11-25T12:58:32.238091+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "base",
+        "label_th": "องค์ประกอบที่สืบทอดจากข้อ ๑",
+        "locator": "claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c1"
+      },
+      {
+        "id": "material",
+        "label_th": "เงื่อนไขที่เพิ่มเกี่ยวกับวัสดุ",
+        "locator": "claim 4",
+        "parent": "claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c4"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US20140137391A1@A1-2014-05-22#c1",
+        "source_id": "US20140137391A1",
+        "version": "A1-2014-05-22",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+        "sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+        "quote_sha256": "c513de2af19ccdb4b8934fa24278607a60357b2b62530443ba1733f95a98572b",
+        "start": 0,
+        "end": 36,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 1",
+        "kind": "claim",
+        "quote": "a single piece of resilient material",
+        "meaning_th": "ข้อถือสิทธิที่ ๑ ระบุว่าใช้วัสดุยืดหยุ่นชิ้นเดียว นี่เป็นเพียงองค์ประกอบหนึ่งของข้อถือสิทธินี้",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20140137391A1@A1-2014-05-22#c4",
+        "source_id": "US20140137391A1",
+        "version": "A1-2014-05-22",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+        "sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+        "quote_sha256": "771d3912dee2d6cacd7cb418c37d2cda7d08c56ca22f8d261305e567bfb5003c",
+        "start": 128,
+        "end": 221,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 4",
+        "kind": "claim",
+        "quote": "The paper clip of claim 1, wherein the single piece of material comprises a plastic material.",
+        "meaning_th": "ข้อถือสิทธิที่ 4 อ้างถึงข้อถือสิทธิที่ ๑ และเพิ่มเงื่อนไขว่าวัสดุชิ้นเดียวนั้นมีพลาสติกเป็นส่วนประกอบ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "claim 1",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:base",
+        "kind": "requirement",
+        "label_th": "องค์ประกอบที่สืบทอดจากข้อ ๑"
+      },
+      {
+        "id": "req:material",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่เพิ่มเกี่ยวกับวัสดุ"
+      },
+      {
+        "id": "US20140137391A1@A1-2014-05-22#c1",
+        "kind": "claim",
+        "label_th": "claim 1"
+      },
+      {
+        "id": "US20140137391A1@A1-2014-05-22#c4",
+        "kind": "claim",
+        "label_th": "claim 4"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:base",
+        "to": "US20140137391A1@A1-2014-05-22#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c1"
+      },
+      {
+        "from": "req:material",
+        "to": "US20140137391A1@A1-2014-05-22#c4",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c4"
+      },
+      {
+        "from": "US20140137391A1@A1-2014-05-22#c4",
+        "to": "US20140137391A1@A1-2014-05-22#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20140137391A1@A1-2014-05-22#c4"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "base",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20140137391A1@A1-2014-05-22#c1"
+        ],
+        "after": [
+          "US20140137391A1@A1-2014-05-22#c1"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "material",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20140137391A1@A1-2014-05-22#c4"
+        ],
+        "after": [
+          "US20140137391A1@A1-2014-05-22#c4"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "3229a863885745a398a756e3ffff60f5",
+    "family_id": "demo-en-metformin",
+    "title_th": "ข้อ 3 · การลอยตัว",
+    "question_th": "ข้อ 3 สืบทอดโครงสร้างชั้นเคลือบอะไรจากข้อ ๑ และเพิ่มเงื่อนไขอะไร?",
+    "source_id": "US8323692B2",
+    "version": "B2-2012-12-04",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+    "data_origin": "public_source",
+    "family_title_th": "เมตฟอร์มินชนิดควบคุมการปลดปล่อย",
+    "publication_claim_count": 37,
+    "selected_claim_numbers": [
+      1,
+      3,
+      4,
+      7
+    ],
+    "issue_date": "2012-12-04",
+    "effective_date": null,
+    "example_id": "metformin-3",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.109Z",
+    "input_sha256": "0a4df5503763a217516de3029a5ab9feb82bc6ba38b9897d7eb8dcd51b94e671",
+    "source_sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+        "sha256": "5b3cd52b3d62151059d34aa69129ea59e341f304129bd0423f38b0476162e2de",
+        "retrieved_utc": "2026-11-25T13:10:06.067396+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US8323692B2/en",
+        "sha256": "afab86724669e8e877976e0a6ffa7f03f9664f5ef11c0afd2639334091c401b7",
+        "retrieved_utc": "2026-11-25T13:09:59.867436+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "core",
+        "label_th": "เงื่อนไขเรื่องชั้นเคลือบในข้อ ๑",
+        "locator": "claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c1"
+      },
+      {
+        "id": "feature",
+        "label_th": "ข้อจำกัดที่เพิ่ม",
+        "locator": "claim 3",
+        "parent": "claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c3"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US8323692B2@B2-2012-12-04#c1",
+        "source_id": "US8323692B2",
+        "version": "B2-2012-12-04",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+        "sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+        "quote_sha256": "d3da0070ff449866a7ebf1262b3abd10317e24b7536767e35c3ae3e925fb7ae3",
+        "start": 0,
+        "end": 67,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 1",
+        "kind": "claim",
+        "quote": "a stable controlled release monolithic coating surrounding the core",
+        "meaning_th": "ข้อ ๑ ระบุชั้นเคลือบควบคุมการปลดปล่อยแบบชั้นเดียวที่คงตัวและห่อหุ้มแกน นี่เป็นองค์ประกอบหนึ่งในหลายเงื่อนไข",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US8323692B2@B2-2012-12-04#c3",
+        "source_id": "US8323692B2",
+        "version": "B2-2012-12-04",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+        "sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+        "quote_sha256": "f03b1ac465df17059397e8720ecf791ec7cffb73a4efc7b4c068054440fbf430",
+        "start": 68,
+        "end": 188,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 3",
+        "kind": "claim",
+        "quote": "The controlled release oral dosage form of claim 1 wherein the dosage form floats when placed in an aqueous environment.",
+        "meaning_th": "ข้อ 3 อ้างข้อ ๑ และเพิ่มเงื่อนไขว่ารูปแบบยาลอยเมื่ออยู่ในสภาพแวดล้อมที่เป็นน้ำ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "claim 1",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:core",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขเรื่องชั้นเคลือบในข้อ ๑"
+      },
+      {
+        "id": "req:feature",
+        "kind": "requirement",
+        "label_th": "ข้อจำกัดที่เพิ่ม"
+      },
+      {
+        "id": "US8323692B2@B2-2012-12-04#c1",
+        "kind": "claim",
+        "label_th": "claim 1"
+      },
+      {
+        "id": "US8323692B2@B2-2012-12-04#c3",
+        "kind": "claim",
+        "label_th": "claim 3"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:core",
+        "to": "US8323692B2@B2-2012-12-04#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c1"
+      },
+      {
+        "from": "req:feature",
+        "to": "US8323692B2@B2-2012-12-04#c3",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c3"
+      },
+      {
+        "from": "US8323692B2@B2-2012-12-04#c3",
+        "to": "US8323692B2@B2-2012-12-04#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c3"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "core",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US8323692B2@B2-2012-12-04#c1",
+          "US8323692B2@B2-2012-12-04#c7"
+        ],
+        "after": [
+          "US8323692B2@B2-2012-12-04#c1",
+          "US8323692B2@B2-2012-12-04#c7"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "feature",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US8323692B2@B2-2012-12-04#c3"
+        ],
+        "after": [
+          "US8323692B2@B2-2012-12-04#c3"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "46f8270bcf644322b6250c1970693212",
+    "family_id": "demo-en-metformin",
+    "title_th": "ข้อ 4 · การขยายตัว",
+    "question_th": "ข้อ 4 สืบทอดโครงสร้างชั้นเคลือบอะไรจากข้อ ๑ และเพิ่มเงื่อนไขอะไร?",
+    "source_id": "US8323692B2",
+    "version": "B2-2012-12-04",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+    "data_origin": "public_source",
+    "family_title_th": "เมตฟอร์มินชนิดควบคุมการปลดปล่อย",
+    "publication_claim_count": 37,
+    "selected_claim_numbers": [
+      1,
+      3,
+      4,
+      7
+    ],
+    "issue_date": "2012-12-04",
+    "effective_date": null,
+    "example_id": "metformin-4",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.127Z",
+    "input_sha256": "5244dd12df666ba7f8420ea045c074cf0a56c11ad519e1a89ca4248365ec60e7",
+    "source_sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+        "sha256": "5b3cd52b3d62151059d34aa69129ea59e341f304129bd0423f38b0476162e2de",
+        "retrieved_utc": "2026-11-25T13:10:06.067396+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US8323692B2/en",
+        "sha256": "afab86724669e8e877976e0a6ffa7f03f9664f5ef11c0afd2639334091c401b7",
+        "retrieved_utc": "2026-11-25T13:09:59.867436+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "core",
+        "label_th": "เงื่อนไขเรื่องชั้นเคลือบในข้อ ๑",
+        "locator": "claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c1"
+      },
+      {
+        "id": "feature",
+        "label_th": "ข้อจำกัดที่เพิ่ม",
+        "locator": "claim 4",
+        "parent": "claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c4"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US8323692B2@B2-2012-12-04#c1",
+        "source_id": "US8323692B2",
+        "version": "B2-2012-12-04",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+        "sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+        "quote_sha256": "d3da0070ff449866a7ebf1262b3abd10317e24b7536767e35c3ae3e925fb7ae3",
+        "start": 0,
+        "end": 67,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 1",
+        "kind": "claim",
+        "quote": "a stable controlled release monolithic coating surrounding the core",
+        "meaning_th": "ข้อ ๑ ระบุชั้นเคลือบควบคุมการปลดปล่อยแบบชั้นเดียวที่คงตัวและห่อหุ้มแกน นี่เป็นองค์ประกอบหนึ่งในหลายเงื่อนไข",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US8323692B2@B2-2012-12-04#c4",
+        "source_id": "US8323692B2",
+        "version": "B2-2012-12-04",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+        "sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+        "quote_sha256": "4e2d9a408a6cb423619c628f07d56246c7638a4670516ca23c5a68a43e352ed4",
+        "start": 189,
+        "end": 310,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 4",
+        "kind": "claim",
+        "quote": "The controlled release oral dosage form of claim 1 wherein the dosage form expands when placed in an aqueous environment.",
+        "meaning_th": "ข้อ 4 อ้างข้อ ๑ และเพิ่มเงื่อนไขว่ารูปแบบยาขยายตัวเมื่ออยู่ในสภาพแวดล้อมที่เป็นน้ำ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "claim 1",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:core",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขเรื่องชั้นเคลือบในข้อ ๑"
+      },
+      {
+        "id": "req:feature",
+        "kind": "requirement",
+        "label_th": "ข้อจำกัดที่เพิ่ม"
+      },
+      {
+        "id": "US8323692B2@B2-2012-12-04#c1",
+        "kind": "claim",
+        "label_th": "claim 1"
+      },
+      {
+        "id": "US8323692B2@B2-2012-12-04#c4",
+        "kind": "claim",
+        "label_th": "claim 4"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:core",
+        "to": "US8323692B2@B2-2012-12-04#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c1"
+      },
+      {
+        "from": "req:feature",
+        "to": "US8323692B2@B2-2012-12-04#c4",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c4"
+      },
+      {
+        "from": "US8323692B2@B2-2012-12-04#c4",
+        "to": "US8323692B2@B2-2012-12-04#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c4"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "core",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US8323692B2@B2-2012-12-04#c1",
+          "US8323692B2@B2-2012-12-04#c7"
+        ],
+        "after": [
+          "US8323692B2@B2-2012-12-04#c1",
+          "US8323692B2@B2-2012-12-04#c7"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "feature",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US8323692B2@B2-2012-12-04#c4"
+        ],
+        "after": [
+          "US8323692B2@B2-2012-12-04#c4"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "25c13a8bb93e4661b08167792ed8c609",
+    "family_id": "demo-en-metformin",
+    "title_th": "ข้อ 7 · ชั้นเคลือบและตัวทำละลาย",
+    "question_th": "ข้อ 7 สืบทอดโครงสร้างชั้นเคลือบอะไรจากข้อ ๑ และเพิ่มเงื่อนไขอะไร?",
+    "source_id": "US8323692B2",
+    "version": "B2-2012-12-04",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+    "data_origin": "public_source",
+    "family_title_th": "เมตฟอร์มินชนิดควบคุมการปลดปล่อย",
+    "publication_claim_count": 37,
+    "selected_claim_numbers": [
+      1,
+      3,
+      4,
+      7
+    ],
+    "issue_date": "2012-12-04",
+    "effective_date": null,
+    "example_id": "metformin-7",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.155Z",
+    "input_sha256": "a4cc8efef50a03f3cdb209354b436f02e1b3e8fd87fdf1104d002408d29864d4",
+    "source_sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+        "sha256": "5b3cd52b3d62151059d34aa69129ea59e341f304129bd0423f38b0476162e2de",
+        "retrieved_utc": "2026-11-25T13:10:06.067396+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US8323692B2/en",
+        "sha256": "afab86724669e8e877976e0a6ffa7f03f9664f5ef11c0afd2639334091c401b7",
+        "retrieved_utc": "2026-11-25T13:09:59.867436+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "core",
+        "label_th": "เงื่อนไขเรื่องชั้นเคลือบในข้อ ๑",
+        "locator": "claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c1"
+      },
+      {
+        "id": "feature",
+        "label_th": "ข้อจำกัดที่เพิ่ม",
+        "locator": "claim 7",
+        "parent": "claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c7"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US8323692B2@B2-2012-12-04#c1",
+        "source_id": "US8323692B2",
+        "version": "B2-2012-12-04",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+        "sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+        "quote_sha256": "d3da0070ff449866a7ebf1262b3abd10317e24b7536767e35c3ae3e925fb7ae3",
+        "start": 0,
+        "end": 67,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 1",
+        "kind": "claim",
+        "quote": "a stable controlled release monolithic coating surrounding the core",
+        "meaning_th": "ข้อ ๑ ระบุชั้นเคลือบควบคุมการปลดปล่อยแบบชั้นเดียวที่คงตัวและห่อหุ้มแกน นี่เป็นองค์ประกอบหนึ่งในหลายเงื่อนไข",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US8323692B2@B2-2012-12-04#c7",
+        "source_id": "US8323692B2",
+        "version": "B2-2012-12-04",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+        "sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+        "quote_sha256": "02cf0bd5f059366f4ff698c1879d2fc057ffd9432375224bd2bc0e5ca79a4468",
+        "start": 311,
+        "end": 484,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "claim 7",
+        "kind": "claim",
+        "quote": "The controlled release oral dosage form of claim 1 wherein the stable controlled release monolithic coating is formed by a process that excludes usage of an organic solvent.",
+        "meaning_th": "ข้อ ๗ อ้างข้อ ๑ และกำหนดว่ากระบวนการทำชั้นเคลือบไม่ใช้ตัวทำละลายอินทรีย์",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "claim 1",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:core",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขเรื่องชั้นเคลือบในข้อ ๑"
+      },
+      {
+        "id": "req:feature",
+        "kind": "requirement",
+        "label_th": "ข้อจำกัดที่เพิ่ม"
+      },
+      {
+        "id": "US8323692B2@B2-2012-12-04#c1",
+        "kind": "claim",
+        "label_th": "claim 1"
+      },
+      {
+        "id": "US8323692B2@B2-2012-12-04#c7",
+        "kind": "claim",
+        "label_th": "claim 7"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:core",
+        "to": "US8323692B2@B2-2012-12-04#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c1"
+      },
+      {
+        "from": "req:feature",
+        "to": "US8323692B2@B2-2012-12-04#c7",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c7"
+      },
+      {
+        "from": "US8323692B2@B2-2012-12-04#c7",
+        "to": "US8323692B2@B2-2012-12-04#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US8323692B2@B2-2012-12-04#c7"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "core",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US8323692B2@B2-2012-12-04#c1",
+          "US8323692B2@B2-2012-12-04#c7"
+        ],
+        "after": [
+          "US8323692B2@B2-2012-12-04#c1",
+          "US8323692B2@B2-2012-12-04#c7"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "feature",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US8323692B2@B2-2012-12-04#c7"
+        ],
+        "after": [
+          "US8323692B2@B2-2012-12-04#c7"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "f7b4b636fb3e4b25845f93ed839f7c3e",
+    "family_id": "demo-th-information",
+    "title_th": "งบประมาณของปีปัจจุบัน",
+    "question_th": "แผนงานและงบประมาณปีใดอยู่ในรายการที่ให้ตรวจดู และต้องอ่านประกอบมาตราใด?",
+    "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+    "version": "BE-2540-oic",
+    "domain": "thai_law",
+    "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+    "data_origin": "public_source",
+    "family_title_th": "สิทธิขอข้อมูลข่าวสารของราชการ",
+    "issue_date": null,
+    "effective_date": null,
+    "example_id": "information-budget",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.172Z",
+    "input_sha256": "10f405474c16dfada56d056cb03319a2778e4c6f3d64777f1c84ef01bf230f4b",
+    "source_sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+        "sha256": "cba1104f402d60270e51d3f50fbc973e8dfe9646fcf8b064f09491b7eac97aa1",
+        "retrieved_utc": "2026-11-25T13:09:59.510265+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "limits",
+        "label_th": "ข้อจำกัดการเปิดเผย",
+        "locator": "มาตรา ๙ วรรคหนึ่ง",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9"
+      },
+      {
+        "id": "record",
+        "label_th": "รายการที่กฎหมายระบุ",
+        "locator": "มาตรา ๙ (๓)",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#budget"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+        "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+        "version": "BE-2540-oic",
+        "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+        "sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+        "quote_sha256": "43433955372d966880c0629972599b177877119b50eb5ff6076ec7d0d9073a2b",
+        "start": 0,
+        "end": 32,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๙ วรรคหนึ่ง",
+        "kind": "section",
+        "quote": "ภายใต้บังคับมาตรา ๑๔ และมาตรา ๑๕",
+        "meaning_th": "มาตรา ๙ ให้จัดข้อมูลบางประเภทไว้ให้ตรวจดู โดยต้องอ่านประกอบข้อจำกัดในมาตรา ๑๔ และ ๑๕",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#budget",
+        "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+        "version": "BE-2540-oic",
+        "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+        "sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+        "quote_sha256": "844e4ce4a6918f0c595118f057f334b2cdf9ae40d05f9a9d622bf662c5e31a8e",
+        "start": 33,
+        "end": 95,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๙ (๓)",
+        "kind": "section",
+        "quote": "แผนงาน โครงการ และงบประมาณรายจ่ายประจำปีของปีที่กำลังดำเนินการ",
+        "meaning_th": "รายการนี้ครอบคลุมแผนงาน โครงการ และงบประมาณรายจ่ายของปีที่กำลังดำเนินการ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:limits",
+        "kind": "requirement",
+        "label_th": "ข้อจำกัดการเปิดเผย"
+      },
+      {
+        "id": "req:record",
+        "kind": "requirement",
+        "label_th": "รายการที่กฎหมายระบุ"
+      },
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+        "kind": "section",
+        "label_th": "มาตรา ๙ วรรคหนึ่ง"
+      },
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#budget",
+        "kind": "section",
+        "label_th": "มาตรา ๙ (๓)"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:limits",
+        "to": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9"
+      },
+      {
+        "from": "req:record",
+        "to": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#budget",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#budget"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "limits",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual"
+        ],
+        "after": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "record",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#budget"
+        ],
+        "after": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#budget"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "dd2c8e9b16174685a43541c43a291d30",
+    "family_id": "demo-th-information",
+    "title_th": "คู่มือที่กระทบสิทธิของเอกชน",
+    "question_th": "คู่มือเจ้าหน้าที่แบบใดอยู่ในรายการให้ตรวจดู และการเปิดเผยมีข้อจำกัดอย่างไร?",
+    "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+    "version": "BE-2540-oic",
+    "domain": "thai_law",
+    "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+    "data_origin": "public_source",
+    "family_title_th": "สิทธิขอข้อมูลข่าวสารของราชการ",
+    "issue_date": null,
+    "effective_date": null,
+    "example_id": "information-manual",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.233Z",
+    "input_sha256": "f5baf5ba9bf0a84b0aa0734a12e52b5f51c48e348d5b91a82cd1d432594b5661",
+    "source_sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+        "sha256": "cba1104f402d60270e51d3f50fbc973e8dfe9646fcf8b064f09491b7eac97aa1",
+        "retrieved_utc": "2026-11-25T13:09:59.510265+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "limits",
+        "label_th": "ข้อจำกัดการเปิดเผย",
+        "locator": "มาตรา ๙ วรรคหนึ่ง",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9"
+      },
+      {
+        "id": "record",
+        "label_th": "รายการที่กฎหมายระบุ",
+        "locator": "มาตรา ๙ (๔)",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+        "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+        "version": "BE-2540-oic",
+        "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+        "sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+        "quote_sha256": "43433955372d966880c0629972599b177877119b50eb5ff6076ec7d0d9073a2b",
+        "start": 0,
+        "end": 32,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๙ วรรคหนึ่ง",
+        "kind": "section",
+        "quote": "ภายใต้บังคับมาตรา ๑๔ และมาตรา ๑๕",
+        "meaning_th": "มาตรา ๙ ให้จัดข้อมูลบางประเภทไว้ให้ตรวจดู โดยต้องอ่านประกอบข้อจำกัดในมาตรา ๑๔ และ ๑๕",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual",
+        "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+        "version": "BE-2540-oic",
+        "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+        "sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+        "quote_sha256": "79b14d4c2ce959b3977905989a9d8dd8187106618339075eac0529388f2d94bf",
+        "start": 96,
+        "end": 192,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๙ (๔)",
+        "kind": "section",
+        "quote": "คู่มือหรือคำสั่งเกี่ยวกับวิธีปฏิบัติงานของเจ้าหน้าที่ของรัฐ ซึ่งมีผลกระทบถึงสิทธิหน้าที่ของเอกชน",
+        "meaning_th": "รายการนี้เจาะจงคู่มือหรือคำสั่งที่กระทบสิทธิหน้าที่ของเอกชน",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:limits",
+        "kind": "requirement",
+        "label_th": "ข้อจำกัดการเปิดเผย"
+      },
+      {
+        "id": "req:record",
+        "kind": "requirement",
+        "label_th": "รายการที่กฎหมายระบุ"
+      },
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+        "kind": "section",
+        "label_th": "มาตรา ๙ วรรคหนึ่ง"
+      },
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual",
+        "kind": "section",
+        "label_th": "มาตรา ๙ (๔)"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:limits",
+        "to": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9"
+      },
+      {
+        "from": "req:record",
+        "to": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "limits",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual"
+        ],
+        "after": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9",
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "record",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual",
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#repeat"
+        ],
+        "after": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#manual",
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#repeat"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "0669b6a263e54c8b8b710b2b86cff26c",
+    "family_id": "demo-th-information",
+    "title_th": "คำขอข้อมูลอื่นจากหน่วยงาน",
+    "question_th": "ถ้าขอข้อมูลอื่นตามมาตรา ๑๑ ต้องระบุคำขออย่างไร และวรรคแรกระบุข้อยกเว้นเรื่องการขอซ้ำไว้อย่างไร?",
+    "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+    "version": "BE-2540-oic",
+    "domain": "thai_law",
+    "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+    "data_origin": "public_source",
+    "family_title_th": "สิทธิขอข้อมูลข่าวสารของราชการ",
+    "issue_date": null,
+    "effective_date": null,
+    "example_id": "information-request",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.265Z",
+    "input_sha256": "107f291d0a76a45f7b474d4ad20c7a4062f88badb4cac6e4a35d5f250c62c7f6",
+    "source_sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+        "sha256": "cba1104f402d60270e51d3f50fbc973e8dfe9646fcf8b064f09491b7eac97aa1",
+        "retrieved_utc": "2026-11-25T13:09:59.510265+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "description",
+        "label_th": "รายละเอียดคำขอ",
+        "locator": "มาตรา ๑๑ วรรคหนึ่ง · ความชัดเจน",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#request"
+      },
+      {
+        "id": "exception",
+        "label_th": "ข้อยกเว้นตามตัวบท",
+        "locator": "มาตรา ๑๑ วรรคหนึ่ง · ข้อยกเว้น",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#repeat"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#request",
+        "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+        "version": "BE-2540-oic",
+        "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+        "sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+        "quote_sha256": "ea909c2e73f36a7b8701412dcd172e820123dff8d1b7c95a33313094b058f692",
+        "start": 193,
+        "end": 249,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๑๑ วรรคหนึ่ง · ความชัดเจน",
+        "kind": "section",
+        "quote": "ระบุข้อมูลข่าวสารที่ต้องการในลักษณะที่อาจเข้าใจได้ตามควร",
+        "meaning_th": "คำขอข้อมูลอื่นตามมาตรา ๑๑ ต้องอธิบายได้พอให้เข้าใจว่ากำลังขอข้อมูลใด",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#repeat",
+        "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+        "version": "BE-2540-oic",
+        "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+        "sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+        "quote_sha256": "a9f34daa521e79bba70d48d67983b87589567fc56a380ee70224879459819ba7",
+        "start": 250,
+        "end": 309,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๑๑ วรรคหนึ่ง · ข้อยกเว้น",
+        "kind": "section",
+        "quote": "เว้นแต่ผู้นั้นขอจำนวนมากหรือบ่อยครั้งโดยไม่มีเหตุผลอันสมควร",
+        "meaning_th": "การขอจำนวนมากหรือขอบ่อยเป็นข้อยกเว้นในวรรคนี้เมื่อไม่มีเหตุผลอันสมควร",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:description",
+        "kind": "requirement",
+        "label_th": "รายละเอียดคำขอ"
+      },
+      {
+        "id": "req:exception",
+        "kind": "requirement",
+        "label_th": "ข้อยกเว้นตามตัวบท"
+      },
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#request",
+        "kind": "section",
+        "label_th": "มาตรา ๑๑ วรรคหนึ่ง · ความชัดเจน"
+      },
+      {
+        "id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#repeat",
+        "kind": "section",
+        "label_th": "มาตรา ๑๑ วรรคหนึ่ง · ข้อยกเว้น"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:description",
+        "to": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#request",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#request"
+      },
+      {
+        "from": "req:exception",
+        "to": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#repeat",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#repeat"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "description",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#request"
+        ],
+        "after": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#request"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "exception",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#repeat",
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9"
+        ],
+        "after": [
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#repeat",
+          "TH-OFFICIAL-INFORMATION-ACT@BE-2540-oic#s9"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "fe135fe389354cd39602cc91d2a700d2",
+    "family_id": "demo-th-healthlaw",
+    "title_th": "จดทะเบียนสถานประกอบการเครื่องมือแพทย์",
+    "question_th": "ใน พ.ร.บ. เครื่องมือแพทย์ฉบับ พ.ศ. ๒๕๕๑ มาตรา ๑๕ ผู้ประสงค์จะผลิตหรือนำเข้าต้องจดทะเบียนอะไร?",
+    "source_id": "th-medical-device-act",
+    "version": "2551-gazette",
+    "domain": "thai_law",
+    "source_url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+    "data_origin": "public_source",
+    "family_title_th": "กฎหมายเครื่องมือแพทย์",
+    "issue_date": "2008-03-05",
+    "effective_date": "2008-03-06",
+    "example_id": "md-establishment-2551",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.295Z",
+    "input_sha256": "b3cd67d8427d8dfeeb09a71da1c0e08dbe1d21b0495ecb26d3784b38d8423639",
+    "source_sha256": "5f51453b4bc3a4d580080cd0db6b1a6488d82a1b86598e63b7feb1178c0e7dcd",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+        "sha256": "266495aa58749fbd4f499887c344d5664107f177181f2b8e70a8809116f24ac2",
+        "retrieved_utc": "2026-11-25T13:12:16.420905+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 1
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "establishment",
+        "label_th": "สิ่งที่ผู้ประสงค์จะผลิตหรือนำเข้าต้องจดทะเบียน",
+        "locator": "มาตรา ๑๕ วรรคหนึ่ง",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-medical-device-act@2551-gazette#establishment"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "th-medical-device-act@2551-gazette#establishment",
+        "source_id": "th-medical-device-act",
+        "version": "2551-gazette",
+        "source_url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+        "sha256": "5f51453b4bc3a4d580080cd0db6b1a6488d82a1b86598e63b7feb1178c0e7dcd",
+        "quote_sha256": "af1d0ae166c53e6f2b7122c133b6d5c2a9d57a22532f6e7bf5ba508d69287064",
+        "start": 0,
+        "end": 81,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๑๕ วรรคหนึ่ง",
+        "kind": "section",
+        "quote": "ผู้ใดประสงค์จะผลิตหรือนำเข้าเครื่องมือแพทย์ต้องจดทะเบียนสถานประกอบการต่อผู้อนุญาต",
+        "meaning_th": "ผู้ประสงค์จะผลิตหรือนำเข้าเครื่องมือแพทย์ต้องจดทะเบียนสถานประกอบการตามหลักทั่วไปของมาตรานี้ การจะใช้ข้อยกเว้นต้องตรวจกรณีและเงื่อนไขในมาตรา ๒๗ เพิ่มเติม",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:establishment",
+        "kind": "requirement",
+        "label_th": "สิ่งที่ผู้ประสงค์จะผลิตหรือนำเข้าต้องจดทะเบียน"
+      },
+      {
+        "id": "th-medical-device-act@2551-gazette#establishment",
+        "kind": "section",
+        "label_th": "มาตรา ๑๕ วรรคหนึ่ง"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:establishment",
+        "to": "th-medical-device-act@2551-gazette#establishment",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-medical-device-act@2551-gazette#establishment"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "establishment",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-medical-device-act@2551-gazette#establishment",
+          "th-medical-device-act@2551-gazette#ad-permit"
+        ],
+        "after": [
+          "th-medical-device-act@2551-gazette#establishment",
+          "th-medical-device-act@2551-gazette#ad-permit"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "6eccf9e17b8641d2a82335e5d07311b1",
+    "family_id": "demo-th-healthlaw",
+    "title_th": "ตรวจเงื่อนไขก่อนโฆษณาเครื่องมือแพทย์",
+    "question_th": "ในฉบับ พ.ศ. ๒๕๕๑ มาตรา ๕๗ กล่าวถึงใบอนุญาตใด และให้กลับไปดูข้อห้ามมาตราไหน?",
+    "source_id": "th-medical-device-act",
+    "version": "2551-gazette",
+    "domain": "thai_law",
+    "source_url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+    "data_origin": "public_source",
+    "family_title_th": "กฎหมายเครื่องมือแพทย์",
+    "issue_date": "2008-03-05",
+    "effective_date": "2008-03-06",
+    "example_id": "md-advertising-2551",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.358Z",
+    "input_sha256": "7b709c6fa322e2e080b7d005ae2c4879ca2b890edf0ee5d1e772e3009f0ef6ae",
+    "source_sha256": "5f51453b4bc3a4d580080cd0db6b1a6488d82a1b86598e63b7feb1178c0e7dcd",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+        "sha256": "266495aa58749fbd4f499887c344d5664107f177181f2b8e70a8809116f24ac2",
+        "retrieved_utc": "2026-11-25T13:12:16.420905+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "ad-permit",
+        "label_th": "ใบอนุญาตก่อนโฆษณา",
+        "locator": "มาตรา ๕๗ วรรคหนึ่ง",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-medical-device-act@2551-gazette#ad-permit"
+      },
+      {
+        "id": "ad-prohibited",
+        "label_th": "ข้อห้ามที่มาตรา ๕๗ อ้างถึง",
+        "locator": "มาตรา ๕๖",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-medical-device-act@2551-gazette#ad-prohibited"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "th-medical-device-act@2551-gazette#ad-permit",
+        "source_id": "th-medical-device-act",
+        "version": "2551-gazette",
+        "source_url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+        "sha256": "5f51453b4bc3a4d580080cd0db6b1a6488d82a1b86598e63b7feb1178c0e7dcd",
+        "quote_sha256": "d8848297f9b535c51c40054950f473bf474c383a2d31c4e708442c14beff4518",
+        "start": 82,
+        "end": 160,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๕๗ วรรคหนึ่ง",
+        "kind": "section",
+        "quote": "ภายใต้บังคับมาตรา ๕๖ การโฆษณาเครื่องมือแพทย์ต้องได้รับใบอนุญาตจากผู้อนุญาตก่อน",
+        "meaning_th": "ในฉบับ พ.ศ. ๒๕๕๑ มาตรานี้กำหนดหลักว่าต้องได้ใบอนุญาตก่อนโฆษณา และให้อ่านข้อห้ามในมาตรา ๕๖ ประกอบ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "th-medical-device-act@2551-gazette#ad-prohibited",
+        "source_id": "th-medical-device-act",
+        "version": "2551-gazette",
+        "source_url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+        "sha256": "5f51453b4bc3a4d580080cd0db6b1a6488d82a1b86598e63b7feb1178c0e7dcd",
+        "quote_sha256": "83d7dcdb7a074928a768660a1a725953ff5a430375acd60a19be0caa1056b291",
+        "start": 161,
+        "end": 241,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๕๖",
+        "kind": "section",
+        "quote": "ห้ามมิให้ผู้ใดโฆษณาเครื่องมือแพทย์ตามมาตรา ๖ (๑๑) หรือเครื่องมือแพทย์ตามมาตรา ๔๖",
+        "meaning_th": "ต้องตรวจว่าเครื่องมือแพทย์อยู่ในกลุ่มที่มาตรา ๕๖ ห้ามโฆษณาหรือไม่ การอ่านตัวบทนี้ยังระบุสถานะผลิตภัณฑ์รายชิ้นไม่ได้",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:ad-permit",
+        "kind": "requirement",
+        "label_th": "ใบอนุญาตก่อนโฆษณา"
+      },
+      {
+        "id": "req:ad-prohibited",
+        "kind": "requirement",
+        "label_th": "ข้อห้ามที่มาตรา ๕๗ อ้างถึง"
+      },
+      {
+        "id": "th-medical-device-act@2551-gazette#ad-permit",
+        "kind": "section",
+        "label_th": "มาตรา ๕๗ วรรคหนึ่ง"
+      },
+      {
+        "id": "th-medical-device-act@2551-gazette#ad-prohibited",
+        "kind": "section",
+        "label_th": "มาตรา ๕๖"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:ad-permit",
+        "to": "th-medical-device-act@2551-gazette#ad-permit",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-medical-device-act@2551-gazette#ad-permit"
+      },
+      {
+        "from": "req:ad-prohibited",
+        "to": "th-medical-device-act@2551-gazette#ad-prohibited",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-medical-device-act@2551-gazette#ad-prohibited"
+      },
+      {
+        "from": "th-medical-device-act@2551-gazette#ad-permit",
+        "to": "th-medical-device-act@2551-gazette#ad-prohibited",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "th-medical-device-act@2551-gazette#ad-permit"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "ad-permit",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-medical-device-act@2551-gazette#ad-permit",
+          "th-medical-device-act@2551-gazette#establishment"
+        ],
+        "after": [
+          "th-medical-device-act@2551-gazette#ad-permit",
+          "th-medical-device-act@2551-gazette#establishment"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "ad-prohibited",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-medical-device-act@2551-gazette#ad-prohibited",
+          "th-medical-device-act@2551-gazette#establishment"
+        ],
+        "after": [
+          "th-medical-device-act@2551-gazette#ad-prohibited",
+          "th-medical-device-act@2551-gazette#establishment"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "9e0be0c608d94ddcb2432aa94a8962c8",
+    "family_id": "demo-th-drug-act",
+    "title_th": "โฆษณาขายยาอ้างสรรพคุณได้แค่ไหน",
+    "question_th": "เมื่ออ่านโฆษณาขายยา มาตรา ๘๘ (๒) ให้สังเกตอะไรเกี่ยวกับข้อความบอกสรรพคุณ?",
+    "source_id": "th-drug-act",
+    "version": "fda-consolidation-2566",
+    "domain": "thai_law",
+    "source_url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+    "data_origin": "public_source",
+    "family_title_th": "กฎหมายยา",
+    "issue_date": null,
+    "effective_date": null,
+    "example_id": "drug-claims",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.396Z",
+    "input_sha256": "c38ee29119c43e44fa020ea77cbc88d5636a0c21754fc994c89fae3a313697e2",
+    "source_sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+        "sha256": "b0422dc4923fd7723579ef2f50c62237003cfbdfd3c85de980126ac928086938",
+        "retrieved_utc": "2026-11-25T13:12:16.348128+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 1
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "claim-honesty",
+        "label_th": "ความถูกต้องของสรรพคุณที่กล่าวอ้าง",
+        "locator": "มาตรา ๘๘ (๒)",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-drug-act@fda-consolidation-2566#claim-honesty"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "th-drug-act@fda-consolidation-2566#claim-honesty",
+        "source_id": "th-drug-act",
+        "version": "fda-consolidation-2566",
+        "source_url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+        "sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+        "quote_sha256": "66dcf5e926b2fbc5c636b7ce7af7e41d392d14744a9d1366ad519c43049401b7",
+        "start": 0,
+        "end": 43,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๘๘ (๒)",
+        "kind": "section",
+        "quote": "ไม่แสดงสรรพคุณยาอันเป็นเท็จหรือเกินความจริง",
+        "meaning_th": "ในการโฆษณาขายยา ข้อนี้ห้ามกล่าวอ้างสรรพคุณที่เป็นเท็จหรือเกินจริง การพิจารณาข้อความโฆษณารายชิ้นต้องดูข้อความและหลักฐานของยานั้น",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:claim-honesty",
+        "kind": "requirement",
+        "label_th": "ความถูกต้องของสรรพคุณที่กล่าวอ้าง"
+      },
+      {
+        "id": "th-drug-act@fda-consolidation-2566#claim-honesty",
+        "kind": "section",
+        "label_th": "มาตรา ๘๘ (๒)"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:claim-honesty",
+        "to": "th-drug-act@fda-consolidation-2566#claim-honesty",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-drug-act@fda-consolidation-2566#claim-honesty"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "claim-honesty",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-drug-act@fda-consolidation-2566#claim-honesty"
+        ],
+        "after": [
+          "th-drug-act@fda-consolidation-2566#claim-honesty"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "18000c2b7220431e9ea309c5ce657b6f",
+    "family_id": "demo-th-drug-act",
+    "title_th": "โฆษณาขายยาในสื่อสิ่งพิมพ์",
+    "question_th": "สำหรับการโฆษณาขายยาทางสิ่งพิมพ์ มาตรา ๘๘ ทวิ (๑) และ (๒) กำหนดสองเรื่องอะไร?",
+    "source_id": "th-drug-act",
+    "version": "fda-consolidation-2566",
+    "domain": "thai_law",
+    "source_url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+    "data_origin": "public_source",
+    "family_title_th": "กฎหมายยา",
+    "issue_date": null,
+    "effective_date": null,
+    "example_id": "drug-print",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.465Z",
+    "input_sha256": "20b417b7c1f2618420f9c09fbd73803dab7a4a64942cbfaf75918a8bef4281a0",
+    "source_sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+        "sha256": "b0422dc4923fd7723579ef2f50c62237003cfbdfd3c85de980126ac928086938",
+        "retrieved_utc": "2026-11-25T13:12:16.348128+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 3
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "specified-media",
+        "label_th": "สื่อที่ตัวบทครอบคลุม",
+        "locator": "มาตรา ๘๘ ทวิ · สื่อที่ระบุ",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-drug-act@fda-consolidation-2566#specified-media"
+      },
+      {
+        "id": "print-approval",
+        "label_th": "ข้อความ เสียง หรือภาพที่ใช้โฆษณา",
+        "locator": "มาตรา ๘๘ ทวิ (๑)",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-drug-act@fda-consolidation-2566#print-approval"
+      },
+      {
+        "id": "print-conditions",
+        "label_th": "เงื่อนไขของผู้อนุญาต",
+        "locator": "มาตรา ๘๘ ทวิ (๒)",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-drug-act@fda-consolidation-2566#print-conditions"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "th-drug-act@fda-consolidation-2566#specified-media",
+        "source_id": "th-drug-act",
+        "version": "fda-consolidation-2566",
+        "source_url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+        "sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+        "quote_sha256": "b4549d75ba4f1cb556681867a9daa452cc39538d91b04e6057a1f08e8d85f300",
+        "start": 143,
+        "end": 251,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๘๘ ทวิ · สื่อที่ระบุ",
+        "kind": "section",
+        "quote": "การโฆษณาขายยาทางวิทยุกระจายเสียง เครื่องขยายเสียง วิทยุโทรทัศน์ ทางฉายภาพหรือภาพยนตร์ หรือทางสิ่งพิมพ์จะต้อง",
+        "meaning_th": "สิ่งพิมพ์เป็นหนึ่งในสื่อที่มาตรานี้ระบุ จึงต้องอ่านข้อ (๑) และ (๒) ประกอบ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "th-drug-act@fda-consolidation-2566#print-approval",
+        "source_id": "th-drug-act",
+        "version": "fda-consolidation-2566",
+        "source_url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+        "sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+        "quote_sha256": "54283292f96f326d6a2161a13ceba5f02b3f377f1ba31c72b62a12879c15739c",
+        "start": 44,
+        "end": 106,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๘๘ ทวิ (๑)",
+        "kind": "section",
+        "quote": "ได้รับอนุมัติข้อความ เสียง หรือภาพที่ใช้ในการโฆษณาจากผู้อนุญาต",
+        "meaning_th": "สำหรับสื่อที่มาตรานี้ระบุ เช่น สิ่งพิมพ์ ผู้โฆษณาต้องได้รับอนุมัติข้อความ เสียง หรือภาพที่ใช้ในการโฆษณา",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "th-drug-act@fda-consolidation-2566#print-conditions",
+        "source_id": "th-drug-act",
+        "version": "fda-consolidation-2566",
+        "source_url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+        "sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+        "quote_sha256": "1d24d438c31ce3e62b242c694f31aff031d61e870f16fd49b8ff99df7c7855e8",
+        "start": 107,
+        "end": 142,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๘๘ ทวิ (๒)",
+        "kind": "section",
+        "quote": "ปฏิบัติตามเงื่อนไขที่ผู้อนุญาตกำหนด",
+        "meaning_th": "เมื่อได้รับอนุมัติแล้ว ผู้โฆษณายังต้องปฏิบัติตามเงื่อนไขที่ผู้อนุญาตกำหนด",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:specified-media",
+        "kind": "requirement",
+        "label_th": "สื่อที่ตัวบทครอบคลุม"
+      },
+      {
+        "id": "req:print-approval",
+        "kind": "requirement",
+        "label_th": "ข้อความ เสียง หรือภาพที่ใช้โฆษณา"
+      },
+      {
+        "id": "req:print-conditions",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขของผู้อนุญาต"
+      },
+      {
+        "id": "th-drug-act@fda-consolidation-2566#specified-media",
+        "kind": "section",
+        "label_th": "มาตรา ๘๘ ทวิ · สื่อที่ระบุ"
+      },
+      {
+        "id": "th-drug-act@fda-consolidation-2566#print-approval",
+        "kind": "section",
+        "label_th": "มาตรา ๘๘ ทวิ (๑)"
+      },
+      {
+        "id": "th-drug-act@fda-consolidation-2566#print-conditions",
+        "kind": "section",
+        "label_th": "มาตรา ๘๘ ทวิ (๒)"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:specified-media",
+        "to": "th-drug-act@fda-consolidation-2566#specified-media",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-drug-act@fda-consolidation-2566#specified-media"
+      },
+      {
+        "from": "req:print-approval",
+        "to": "th-drug-act@fda-consolidation-2566#print-approval",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-drug-act@fda-consolidation-2566#print-approval"
+      },
+      {
+        "from": "req:print-conditions",
+        "to": "th-drug-act@fda-consolidation-2566#print-conditions",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-drug-act@fda-consolidation-2566#print-conditions"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "specified-media",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-drug-act@fda-consolidation-2566#specified-media",
+          "th-drug-act@fda-consolidation-2566#print-approval"
+        ],
+        "after": [
+          "th-drug-act@fda-consolidation-2566#specified-media",
+          "th-drug-act@fda-consolidation-2566#print-approval"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "print-approval",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-drug-act@fda-consolidation-2566#print-approval",
+          "th-drug-act@fda-consolidation-2566#print-conditions"
+        ],
+        "after": [
+          "th-drug-act@fda-consolidation-2566#print-approval",
+          "th-drug-act@fda-consolidation-2566#print-conditions"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "print-conditions",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-drug-act@fda-consolidation-2566#print-conditions",
+          "th-drug-act@fda-consolidation-2566#print-approval"
+        ],
+        "after": [
+          "th-drug-act@fda-consolidation-2566#print-conditions",
+          "th-drug-act@fda-consolidation-2566#print-approval"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "54e2f739a4b34e1db46f695bb5f30a7e",
+    "family_id": "demo-th-national-health",
+    "title_th": "ก่อนเปิดเผยข้อมูลสุขภาพ",
+    "question_th": "มาตรา ๗ จัดให้ข้อมูลสุขภาพเป็นข้อมูลประเภทใด และระบุเงื่อนไขใดเกี่ยวกับการเปิดเผย?",
+    "source_id": "th-national-health-act",
+    "version": "2550-gazette",
+    "domain": "thai_law",
+    "source_url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+    "data_origin": "public_source",
+    "family_title_th": "สิทธิด้านสุขภาพ",
+    "issue_date": "2007-03-19",
+    "effective_date": "2007-03-20",
+    "example_id": "health-confidentiality",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.482Z",
+    "input_sha256": "797e6a0b59a128624d9544c0a7ce9cbdb1de89ff6fa30f38de27e8ee578850ba",
+    "source_sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+        "sha256": "aa102590e3eeac4c4f87feee6c87e1e80d44cbe7f5a6e4762d99c5d04d6036f9",
+        "retrieved_utc": "2026-11-25T13:12:16.148394+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "confidential",
+        "label_th": "สถานะของข้อมูลสุขภาพ",
+        "locator": "มาตรา ๗ · ข้อมูลส่วนบุคคล",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-national-health-act@2550-gazette#confidential"
+      },
+      {
+        "id": "disclosure",
+        "label_th": "ข้อยกเว้นที่ระบุในตัวบท",
+        "locator": "มาตรา ๗ · เงื่อนไขการเปิดเผย",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-national-health-act@2550-gazette#disclosure"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "th-national-health-act@2550-gazette#confidential",
+        "source_id": "th-national-health-act",
+        "version": "2550-gazette",
+        "source_url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+        "sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+        "quote_sha256": "30c27c3ed59f6795fac750bd0f23ee91cadc826922a12fdd870148bf78b47c71",
+        "start": 0,
+        "end": 107,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๗ · ข้อมูลส่วนบุคคล",
+        "kind": "section",
+        "quote": "ข้อมูลด้านสุขภาพของบุคคล เป็นความลับส่วนบุคคล ผู้ใดจะนำไปเปิดเผยในประการที่น่าจะทำให้บุคคลนั้นเสียหายไม่ได้",
+        "meaning_th": "มาตรา ๗ วางหลักว่าข้อมูลสุขภาพเป็นความลับ และคุ้มครองจากการเปิดเผยที่น่าจะทำให้เจ้าของข้อมูลเสียหาย",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "th-national-health-act@2550-gazette#disclosure",
+        "source_id": "th-national-health-act",
+        "version": "2550-gazette",
+        "source_url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+        "sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+        "quote_sha256": "8439d8d37954379aece23154981420ef606d386db36b1326b549e807ae18f2a7",
+        "start": 108,
+        "end": 206,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๗ · เงื่อนไขการเปิดเผย",
+        "kind": "section",
+        "quote": "เว้นแต่การเปิดเผยนั้นเป็นไปตามความประสงค์ของบุคคลนั้นโดยตรง หรือมีกฎหมายเฉพาะบัญญัติให้ต้องเปิดเผย",
+        "meaning_th": "ข้อยกเว้นในข้อความนี้คือการเปิดเผยตามความประสงค์โดยตรงของเจ้าของข้อมูล หรือเมื่อกฎหมายเฉพาะกำหนดให้ต้องเปิดเผย",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:confidential",
+        "kind": "requirement",
+        "label_th": "สถานะของข้อมูลสุขภาพ"
+      },
+      {
+        "id": "req:disclosure",
+        "kind": "requirement",
+        "label_th": "ข้อยกเว้นที่ระบุในตัวบท"
+      },
+      {
+        "id": "th-national-health-act@2550-gazette#confidential",
+        "kind": "section",
+        "label_th": "มาตรา ๗ · ข้อมูลส่วนบุคคล"
+      },
+      {
+        "id": "th-national-health-act@2550-gazette#disclosure",
+        "kind": "section",
+        "label_th": "มาตรา ๗ · เงื่อนไขการเปิดเผย"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:confidential",
+        "to": "th-national-health-act@2550-gazette#confidential",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-national-health-act@2550-gazette#confidential"
+      },
+      {
+        "from": "req:disclosure",
+        "to": "th-national-health-act@2550-gazette#disclosure",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-national-health-act@2550-gazette#disclosure"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "confidential",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-national-health-act@2550-gazette#confidential",
+          "th-national-health-act@2550-gazette#informed-choice"
+        ],
+        "after": [
+          "th-national-health-act@2550-gazette#confidential",
+          "th-national-health-act@2550-gazette#informed-choice"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "disclosure",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-national-health-act@2550-gazette#disclosure",
+          "th-national-health-act@2550-gazette#confidential"
+        ],
+        "after": [
+          "th-national-health-act@2550-gazette#disclosure",
+          "th-national-health-act@2550-gazette#confidential"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "390656dca12d4a6ea947d1ba5f17fa8c",
+    "family_id": "demo-th-national-health",
+    "title_th": "ข้อมูลก่อนตัดสินใจรับบริการ",
+    "question_th": "มาตรา ๘ กำหนดให้แจ้งข้อมูลเพื่ออะไร และวรรคสาม (๑) กล่าวถึงเหตุเร่งด่วนแบบใด?",
+    "source_id": "th-national-health-act",
+    "version": "2550-gazette",
+    "domain": "thai_law",
+    "source_url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+    "data_origin": "public_source",
+    "family_title_th": "สิทธิด้านสุขภาพ",
+    "issue_date": "2007-03-19",
+    "effective_date": "2007-03-20",
+    "example_id": "health-informed-choice",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.496Z",
+    "input_sha256": "121495e680c1e2019d82f508c8795be5859f9f2982126cfce478bd56813533ad",
+    "source_sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+        "sha256": "aa102590e3eeac4c4f87feee6c87e1e80d44cbe7f5a6e4762d99c5d04d6036f9",
+        "retrieved_utc": "2026-11-25T13:12:16.148394+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 2
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "informed-choice",
+        "label_th": "ข้อมูลสำหรับผู้รับบริการ",
+        "locator": "มาตรา ๘ วรรคหนึ่ง",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-national-health-act@2550-gazette#informed-choice"
+      },
+      {
+        "id": "urgent",
+        "label_th": "ตัวอย่างกรณียกเว้นเมื่อจำเป็นต้องช่วยชีวิต",
+        "locator": "มาตรา ๘ วรรคสาม (๑)",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "th-national-health-act@2550-gazette#urgent"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "th-national-health-act@2550-gazette#informed-choice",
+        "source_id": "th-national-health-act",
+        "version": "2550-gazette",
+        "source_url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+        "sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+        "quote_sha256": "4ecca3cc0b6945fb51ab7920f25d7de48267407f30115a4fefefc30f179a0c9f",
+        "start": 207,
+        "end": 394,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๘ วรรคหนึ่ง",
+        "kind": "section",
+        "quote": "ในการบริการสาธารณสุข บุคลากรด้านสาธารณสุขต้องแจ้งข้อมูลด้านสุขภาพที่เกี่ยวข้องกับการให้บริการให้ผู้รับบริการทราบอย่างเพียงพอที่ผู้รับบริการจะใช้ประกอบการตัดสินใจในการรับหรือไม่รับบริการใด",
+        "meaning_th": "บุคลากรด้านสาธารณสุขต้องแจ้งข้อมูลสุขภาพที่เกี่ยวกับบริการให้เพียงพอสำหรับตัดสินใจรับหรือปฏิเสธบริการ มาตรา ๘ วรรคสามระบุกรณียกเว้นไว้",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "th-national-health-act@2550-gazette#urgent",
+        "source_id": "th-national-health-act",
+        "version": "2550-gazette",
+        "source_url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+        "sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+        "quote_sha256": "65fe8ffcac6aa67f8f8aee0ee5d94e6d340e35693231d7c0cc66dbc21015386b",
+        "start": 395,
+        "end": 490,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "มาตรา ๘ วรรคสาม (๑)",
+        "kind": "section",
+        "quote": "ผู้รับบริการอยู่ในภาวะที่เสี่ยงอันตรายถึงชีวิตและมีความจำเป็นต้องให้ความช่วยเหลือเป็นการรีบด่วน",
+        "meaning_th": "หนึ่งในกรณียกเว้นของวรรคหนึ่งต้องมีทั้งความเสี่ยงถึงชีวิตและความจำเป็นต้องช่วยโดยรีบด่วน วรรคสามยังมีข้อ (๒) สำหรับอีกกรณีหนึ่ง",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:informed-choice",
+        "kind": "requirement",
+        "label_th": "ข้อมูลสำหรับผู้รับบริการ"
+      },
+      {
+        "id": "req:urgent",
+        "kind": "requirement",
+        "label_th": "ตัวอย่างกรณียกเว้นเมื่อจำเป็นต้องช่วยชีวิต"
+      },
+      {
+        "id": "th-national-health-act@2550-gazette#informed-choice",
+        "kind": "section",
+        "label_th": "มาตรา ๘ วรรคหนึ่ง"
+      },
+      {
+        "id": "th-national-health-act@2550-gazette#urgent",
+        "kind": "section",
+        "label_th": "มาตรา ๘ วรรคสาม (๑)"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:informed-choice",
+        "to": "th-national-health-act@2550-gazette#informed-choice",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-national-health-act@2550-gazette#informed-choice"
+      },
+      {
+        "from": "req:urgent",
+        "to": "th-national-health-act@2550-gazette#urgent",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "th-national-health-act@2550-gazette#urgent"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "informed-choice",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-national-health-act@2550-gazette#informed-choice",
+          "th-national-health-act@2550-gazette#confidential"
+        ],
+        "after": [
+          "th-national-health-act@2550-gazette#informed-choice",
+          "th-national-health-act@2550-gazette#confidential"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "urgent",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "th-national-health-act@2550-gazette#urgent",
+          "th-national-health-act@2550-gazette#informed-choice"
+        ],
+        "after": [
+          "th-national-health-act@2550-gazette#urgent",
+          "th-national-health-act@2550-gazette#informed-choice"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "8e8b6a57c8cf442db72a8d09e530385f",
+    "family_id": "demo-en-pharma",
+    "title_th": "ตำรับยากลบรส · ข้อ 15 · สารกันติด",
+    "question_th": "ข้อ 15 ระบุสารกันติดชนิดใด และสืบเงื่อนไขมาจากข้อใดบ้าง?",
+    "source_id": "US20120276199A1",
+    "version": "A1-2012-11-01",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+    "data_origin": "public_source",
+    "family_title_th": "ตำรับยากลบรส",
+    "publication_claim_count": 36,
+    "selected_claim_numbers": [
+      1,
+      2,
+      15,
+      17,
+      18
+    ],
+    "issue_date": "2012-11-01",
+    "effective_date": null,
+    "example_id": "pharma-15",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.560Z",
+    "input_sha256": "ae9936464c8da614b9da7d26b92077d69465c0cce2b3e6ba829c486d8da90b79",
+    "source_sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199",
+        "sha256": "dc0556911254dfa0c087aeded1eb39f6d34a61cdd6e12d919b4f54bc5a0e1a01",
+        "retrieved_utc": "2026-11-25T13:07:45.302942+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US20120276199A1/en",
+        "sha256": "191334cab8f7db5fd103d38bf35dbde1c4287acb138df930dae3953d44076309",
+        "retrieved_utc": "2026-11-25T13:07:41.486379+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 3
+    },
+    "budget": {
+      "limit": 4,
+      "used": 1,
+      "spent": [
+        "rerank"
+      ],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "base",
+        "label_th": "ลักษณะในข้อหลัก",
+        "locator": "Claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c1"
+      },
+      {
+        "id": "parent",
+        "label_th": "เงื่อนไขที่สืบทอด",
+        "locator": "Claim 2",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "เลือกข้อความในผลค้นเดิมที่ตรงกับขอบเขต",
+        "status": "bound",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c2"
+      },
+      {
+        "id": "added",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+        "locator": "Claim 15",
+        "parent": "Claim 2",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c15"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c1",
+        "source_id": "US20120276199A1",
+        "version": "A1-2012-11-01",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+        "sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+        "quote_sha256": "81dca4301939f06f6d04cfa70ae8b0409a2716ce7ab20cc3c27b32c4bc7bd713",
+        "start": 0,
+        "end": 132,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 1",
+        "kind": "claim",
+        "quote": "1. A taste masked pharmaceutical formulation in a solid dosage form comprising an intragranular portion and an extragranular portion",
+        "meaning_th": "ข้อ 1 กล่าวถึงตำรับยาชนิดของแข็งที่มีทั้งส่วนในแกรนูลและส่วนนอกแกรนูล นี่เป็นลักษณะร่วมที่เลือกมาอ่านจากข้อหลัก",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c2",
+        "source_id": "US20120276199A1",
+        "version": "A1-2012-11-01",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+        "sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+        "quote_sha256": "f201ea2eb10e1c0acb0213c8fe750494b9f452fdf02080a8609ba77f0b1cd42d",
+        "start": 645,
+        "end": 769,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 2",
+        "kind": "claim",
+        "quote": "2. The taste masked pharmaceutical formulation of claim 1, wherein intragranular portion contains at least one antiadherent.",
+        "meaning_th": "ข้อ 2 อ้างถึงข้อ 1 และกำหนดให้ส่วนในแกรนูลมีสารกันติดอย่างน้อยหนึ่งชนิด",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c15",
+        "source_id": "US20120276199A1",
+        "version": "A1-2012-11-01",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+        "sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+        "quote_sha256": "ae20bda3121d9ea16be29be80aa81c4093291da3f61bf704bb11c536c545058d",
+        "start": 770,
+        "end": 877,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 15",
+        "kind": "claim",
+        "quote": "15. The taste masked pharmaceutical formulation of claim 2, wherein the antiadherent is magnesium stearate.",
+        "meaning_th": "ข้อ 15 อ้างถึงข้อ 2 แล้วระบุชนิดของสารกันติดว่าเป็นแมกนีเซียมสเตียเรต",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 2",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:base",
+        "kind": "requirement",
+        "label_th": "ลักษณะในข้อหลัก"
+      },
+      {
+        "id": "req:parent",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่สืบทอด"
+      },
+      {
+        "id": "req:added",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม"
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c1",
+        "kind": "claim",
+        "label_th": "Claim 1"
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c2",
+        "kind": "claim",
+        "label_th": "Claim 2"
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c15",
+        "kind": "claim",
+        "label_th": "Claim 15"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:base",
+        "to": "US20120276199A1@A1-2012-11-01#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c1"
+      },
+      {
+        "from": "req:parent",
+        "to": "US20120276199A1@A1-2012-11-01#c2",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c2"
+      },
+      {
+        "from": "req:added",
+        "to": "US20120276199A1@A1-2012-11-01#c15",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c15"
+      },
+      {
+        "from": "US20120276199A1@A1-2012-11-01#c2",
+        "to": "US20120276199A1@A1-2012-11-01#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c2"
+      },
+      {
+        "from": "US20120276199A1@A1-2012-11-01#c15",
+        "to": "US20120276199A1@A1-2012-11-01#c2",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c15"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "base",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120276199A1@A1-2012-11-01#c1"
+        ],
+        "after": [
+          "US20120276199A1@A1-2012-11-01#c1"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "rerank",
+        "requirement_id": "parent",
+        "reason_th": "เลือกข้อความในผลค้นเดิมที่ตรงกับขอบเขต",
+        "before": [
+          "US20120276199A1@A1-2012-11-01#c15",
+          "US20120276199A1@A1-2012-11-01#c2"
+        ],
+        "after": [
+          "US20120276199A1@A1-2012-11-01#c2",
+          "US20120276199A1@A1-2012-11-01#c15"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 1
+      },
+      {
+        "action": "keep",
+        "requirement_id": "added",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120276199A1@A1-2012-11-01#c15"
+        ],
+        "after": [
+          "US20120276199A1@A1-2012-11-01#c15"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "772592b5f5aa4c7b9eada450e541cef8",
+    "family_id": "demo-en-pharma",
+    "title_th": "ตำรับยากลบรส · ข้อ 18 · สารเพิ่มปริมาณ",
+    "question_th": "ข้อ 18 ระบุสารเพิ่มปริมาณกลุ่มใด และสืบเงื่อนไขมาจากข้อใดบ้าง?",
+    "source_id": "US20120276199A1",
+    "version": "A1-2012-11-01",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+    "data_origin": "public_source",
+    "family_title_th": "ตำรับยากลบรส",
+    "publication_claim_count": 36,
+    "selected_claim_numbers": [
+      1,
+      2,
+      15,
+      17,
+      18
+    ],
+    "issue_date": "2012-11-01",
+    "effective_date": null,
+    "example_id": "pharma-18",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.597Z",
+    "input_sha256": "5537552f98918a170cf8ea48c4a6544886d95d65ad728bc56911ccb8815286ef",
+    "source_sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199",
+        "sha256": "dc0556911254dfa0c087aeded1eb39f6d34a61cdd6e12d919b4f54bc5a0e1a01",
+        "retrieved_utc": "2026-11-25T13:07:45.302942+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US20120276199A1/en",
+        "sha256": "191334cab8f7db5fd103d38bf35dbde1c4287acb138df930dae3953d44076309",
+        "retrieved_utc": "2026-11-25T13:07:41.486379+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 3
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "base",
+        "label_th": "ลักษณะในข้อหลัก",
+        "locator": "Claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c1"
+      },
+      {
+        "id": "parent",
+        "label_th": "เงื่อนไขที่สืบทอด",
+        "locator": "Claim 17",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c17"
+      },
+      {
+        "id": "added",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+        "locator": "Claim 18",
+        "parent": "Claim 17",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c18"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c1",
+        "source_id": "US20120276199A1",
+        "version": "A1-2012-11-01",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+        "sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+        "quote_sha256": "81dca4301939f06f6d04cfa70ae8b0409a2716ce7ab20cc3c27b32c4bc7bd713",
+        "start": 0,
+        "end": 132,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 1",
+        "kind": "claim",
+        "quote": "1. A taste masked pharmaceutical formulation in a solid dosage form comprising an intragranular portion and an extragranular portion",
+        "meaning_th": "ข้อ 1 กล่าวถึงตำรับยาชนิดของแข็งที่มีทั้งส่วนในแกรนูลและส่วนนอกแกรนูล นี่เป็นลักษณะร่วมที่เลือกมาอ่านจากข้อหลัก",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c17",
+        "source_id": "US20120276199A1",
+        "version": "A1-2012-11-01",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+        "sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+        "quote_sha256": "6990c1f6fb741b1ee347efe884ef0c98a7cc118d5a9f757f37d8eb3ade458853",
+        "start": 878,
+        "end": 1040,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 17",
+        "kind": "claim",
+        "quote": "17. The taste masked pharmaceutical formulation of claim 1, wherein the intragranular portion comprises of at least one water soluble diluent or mixtures thereof.",
+        "meaning_th": "ข้อ 17 อ้างถึงข้อ 1 แล้วเพิ่มเงื่อนไขให้ส่วนในแกรนูลมีสารเพิ่มปริมาณที่ละลายน้ำได้อย่างน้อยหนึ่งชนิด หรือสารดังกล่าวผสมกัน",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c18",
+        "source_id": "US20120276199A1",
+        "version": "A1-2012-11-01",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+        "sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+        "quote_sha256": "e30a30ed66f2060dc58ad40d3f6d3ada3a7280da9520f1c878d2a5211873cd8f",
+        "start": 1041,
+        "end": 1275,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 18",
+        "kind": "claim",
+        "quote": "18. The taste masked pharmaceutical formulation of claim 17, wherein the diluent is selected from sugar alcohols, cellulose compounds which include crystalline celluloses and powdered celluloses, lactose, starch, and mixtures thereof.",
+        "meaning_th": "ข้อ 18 อ้างถึงข้อ 17 และระบุรายการสารเพิ่มปริมาณที่เลือกได้ ได้แก่ น้ำตาลแอลกอฮอล์ สารประกอบเซลลูโลสซึ่งรวมถึงเซลลูโลสชนิดผลึกและชนิดผง แลคโตส แป้ง หรือส่วนผสมของรายการเหล่านี้",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 17",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:base",
+        "kind": "requirement",
+        "label_th": "ลักษณะในข้อหลัก"
+      },
+      {
+        "id": "req:parent",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่สืบทอด"
+      },
+      {
+        "id": "req:added",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม"
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c1",
+        "kind": "claim",
+        "label_th": "Claim 1"
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c17",
+        "kind": "claim",
+        "label_th": "Claim 17"
+      },
+      {
+        "id": "US20120276199A1@A1-2012-11-01#c18",
+        "kind": "claim",
+        "label_th": "Claim 18"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:base",
+        "to": "US20120276199A1@A1-2012-11-01#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c1"
+      },
+      {
+        "from": "req:parent",
+        "to": "US20120276199A1@A1-2012-11-01#c17",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c17"
+      },
+      {
+        "from": "req:added",
+        "to": "US20120276199A1@A1-2012-11-01#c18",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c18"
+      },
+      {
+        "from": "US20120276199A1@A1-2012-11-01#c17",
+        "to": "US20120276199A1@A1-2012-11-01#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c17"
+      },
+      {
+        "from": "US20120276199A1@A1-2012-11-01#c18",
+        "to": "US20120276199A1@A1-2012-11-01#c17",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20120276199A1@A1-2012-11-01#c18"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "base",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120276199A1@A1-2012-11-01#c1"
+        ],
+        "after": [
+          "US20120276199A1@A1-2012-11-01#c1"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "parent",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120276199A1@A1-2012-11-01#c17",
+          "US20120276199A1@A1-2012-11-01#c18"
+        ],
+        "after": [
+          "US20120276199A1@A1-2012-11-01#c17",
+          "US20120276199A1@A1-2012-11-01#c18"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "added",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120276199A1@A1-2012-11-01#c18"
+        ],
+        "after": [
+          "US20120276199A1@A1-2012-11-01#c18"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "b96cd5d45cc0400cbf7fb54a1c1d5b7e",
+    "family_id": "demo-en-inhaler",
+    "title_th": "เครื่องสูดยาผงแห้ง · ข้อ 10 · ช่องออกร่วม",
+    "question_th": "ข้อ 10 เชื่อมทางออกของห้องทั้งสองอย่างไร และสืบโครงสร้างใดจากข้อก่อนหน้า?",
+    "source_id": "US20120145150A1",
+    "version": "A1-2012-06-14",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+    "data_origin": "public_source",
+    "family_title_th": "เครื่องสูดยาผงแห้ง",
+    "publication_claim_count": 30,
+    "selected_claim_numbers": [
+      1,
+      9,
+      10,
+      11
+    ],
+    "issue_date": "2012-06-14",
+    "effective_date": null,
+    "example_id": "inhaler-10",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.682Z",
+    "input_sha256": "8e851fb910e0233ee69d942180208796e94a1dabab38c981bc22fb4521a281d9",
+    "source_sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150",
+        "sha256": "7c70da07de773c1b873157f206d52ab97e2ef0fb9aacfa2b2de8bdc5e575b490",
+        "retrieved_utc": "2026-11-25T13:09:20.838427+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US20120145150A1/en",
+        "sha256": "8352635b2b27c73da341e8e92a72e18580c8950ca0e44729d6dea47b20883bb8",
+        "retrieved_utc": "2026-11-25T13:09:16.461394+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 3
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "base",
+        "label_th": "ลักษณะในข้อหลัก",
+        "locator": "Claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c1"
+      },
+      {
+        "id": "parent",
+        "label_th": "เงื่อนไขที่สืบทอด",
+        "locator": "Claim 9",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c9"
+      },
+      {
+        "id": "added",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+        "locator": "Claim 10",
+        "parent": "Claim 9",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c10"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c1",
+        "source_id": "US20120145150A1",
+        "version": "A1-2012-06-14",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+        "sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+        "quote_sha256": "e813f1bf8ca2f9c0a19f6bac452f02e23e983e76f5b268cdd0b5a7f974367e44",
+        "start": 651,
+        "end": 941,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 1",
+        "kind": "claim",
+        "quote": "wherein the geometry of the inhaler is such that a flow profile is generated within the chamber that causes the actuator to oscillate, thus detaching the powdered medicament from the surface of the actuator to be entrained by the air and delivered to the patient through the outlet channel.",
+        "meaning_th": "ข้อ 1 ระบุว่าอากาศที่ไหลในห้องทำให้ชิ้นส่วนที่มีผงยาเกาะอยู่สั่น ผงยาจึงหลุดและเคลื่อนไปกับอากาศทางช่องออก นี่เป็นส่วนหนึ่งของข้อหลัก",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c9",
+        "source_id": "US20120145150A1",
+        "version": "A1-2012-06-14",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+        "sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+        "quote_sha256": "ba15615ba8457c8d59c6a9b5dc65353fbdc7b086adfda5b9fac880607c4f76c9",
+        "start": 942,
+        "end": 1153,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 9",
+        "kind": "claim",
+        "quote": "9. The dry powder inhaler of claim 1, wherein the inlet channel is a first inlet channel and the chamber is a first chamber, the dry powder inhaler further comprising a second inlet channel and a second chamber.",
+        "meaning_th": "ข้อ 9 อ้างถึงข้อ 1 และเพิ่มช่องอากาศเข้าที่สองกับห้องที่สอง",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c10",
+        "source_id": "US20120145150A1",
+        "version": "A1-2012-06-14",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+        "sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+        "quote_sha256": "b6f169de0db64e7882191440d6f24e1353344479ac38c0bc5b373643212df5a2",
+        "start": 1154,
+        "end": 1303,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 10",
+        "kind": "claim",
+        "quote": "10. The dry powder inhaler of claim 9, wherein air and powdered medicament leaving the first and second chambers are delivered to the outlet channel.",
+        "meaning_th": "ข้อ 10 อ้างถึงข้อ 9 และระบุว่าอากาศกับผงยาจากห้องทั้งสองเดินทางไปยังช่องออกที่กล่าวถึงร่วมกัน",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 9",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:base",
+        "kind": "requirement",
+        "label_th": "ลักษณะในข้อหลัก"
+      },
+      {
+        "id": "req:parent",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่สืบทอด"
+      },
+      {
+        "id": "req:added",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม"
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c1",
+        "kind": "claim",
+        "label_th": "Claim 1"
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c9",
+        "kind": "claim",
+        "label_th": "Claim 9"
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c10",
+        "kind": "claim",
+        "label_th": "Claim 10"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:base",
+        "to": "US20120145150A1@A1-2012-06-14#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c1"
+      },
+      {
+        "from": "req:parent",
+        "to": "US20120145150A1@A1-2012-06-14#c9",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c9"
+      },
+      {
+        "from": "req:added",
+        "to": "US20120145150A1@A1-2012-06-14#c10",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c10"
+      },
+      {
+        "from": "US20120145150A1@A1-2012-06-14#c9",
+        "to": "US20120145150A1@A1-2012-06-14#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c9"
+      },
+      {
+        "from": "US20120145150A1@A1-2012-06-14#c10",
+        "to": "US20120145150A1@A1-2012-06-14#c9",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c10"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "base",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120145150A1@A1-2012-06-14#c1"
+        ],
+        "after": [
+          "US20120145150A1@A1-2012-06-14#c1"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "parent",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120145150A1@A1-2012-06-14#c9",
+          "US20120145150A1@A1-2012-06-14#c11"
+        ],
+        "after": [
+          "US20120145150A1@A1-2012-06-14#c9",
+          "US20120145150A1@A1-2012-06-14#c11"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "added",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120145150A1@A1-2012-06-14#c10",
+          "US20120145150A1@A1-2012-06-14#c11"
+        ],
+        "after": [
+          "US20120145150A1@A1-2012-06-14#c10",
+          "US20120145150A1@A1-2012-06-14#c11"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "f246c83795c44ed48f4bd34435ba7841",
+    "family_id": "demo-en-inhaler",
+    "title_th": "เครื่องสูดยาผงแห้ง · ข้อ 11 · ช่องออกแยก",
+    "question_th": "ข้อ 11 แยกทางออกของห้องทั้งสองอย่างไร และสืบโครงสร้างใดจากข้อก่อนหน้า?",
+    "source_id": "US20120145150A1",
+    "version": "A1-2012-06-14",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+    "data_origin": "public_source",
+    "family_title_th": "เครื่องสูดยาผงแห้ง",
+    "publication_claim_count": 30,
+    "selected_claim_numbers": [
+      1,
+      9,
+      10,
+      11
+    ],
+    "issue_date": "2012-06-14",
+    "effective_date": null,
+    "example_id": "inhaler-11",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.744Z",
+    "input_sha256": "fe853a35e37a1d9da64d2adda93dd29ae0d0754125744a01f2e9a49d3dd1cbd1",
+    "source_sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150",
+        "sha256": "7c70da07de773c1b873157f206d52ab97e2ef0fb9aacfa2b2de8bdc5e575b490",
+        "retrieved_utc": "2026-11-25T13:09:20.838427+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US20120145150A1/en",
+        "sha256": "8352635b2b27c73da341e8e92a72e18580c8950ca0e44729d6dea47b20883bb8",
+        "retrieved_utc": "2026-11-25T13:09:16.461394+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 3
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "base",
+        "label_th": "ลักษณะในข้อหลัก",
+        "locator": "Claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c1"
+      },
+      {
+        "id": "parent",
+        "label_th": "เงื่อนไขที่สืบทอด",
+        "locator": "Claim 9",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c9"
+      },
+      {
+        "id": "added",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+        "locator": "Claim 11",
+        "parent": "Claim 9",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c11"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c1",
+        "source_id": "US20120145150A1",
+        "version": "A1-2012-06-14",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+        "sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+        "quote_sha256": "e813f1bf8ca2f9c0a19f6bac452f02e23e983e76f5b268cdd0b5a7f974367e44",
+        "start": 651,
+        "end": 941,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 1",
+        "kind": "claim",
+        "quote": "wherein the geometry of the inhaler is such that a flow profile is generated within the chamber that causes the actuator to oscillate, thus detaching the powdered medicament from the surface of the actuator to be entrained by the air and delivered to the patient through the outlet channel.",
+        "meaning_th": "ข้อ 1 ระบุว่าอากาศที่ไหลในห้องทำให้ชิ้นส่วนที่มีผงยาเกาะอยู่สั่น ผงยาจึงหลุดและเคลื่อนไปกับอากาศทางช่องออก นี่เป็นส่วนหนึ่งของข้อหลัก",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c9",
+        "source_id": "US20120145150A1",
+        "version": "A1-2012-06-14",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+        "sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+        "quote_sha256": "ba15615ba8457c8d59c6a9b5dc65353fbdc7b086adfda5b9fac880607c4f76c9",
+        "start": 942,
+        "end": 1153,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 9",
+        "kind": "claim",
+        "quote": "9. The dry powder inhaler of claim 1, wherein the inlet channel is a first inlet channel and the chamber is a first chamber, the dry powder inhaler further comprising a second inlet channel and a second chamber.",
+        "meaning_th": "ข้อ 9 อ้างถึงข้อ 1 และเพิ่มช่องอากาศเข้าที่สองกับห้องที่สอง",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c11",
+        "source_id": "US20120145150A1",
+        "version": "A1-2012-06-14",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+        "sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+        "quote_sha256": "f36871ff572be51f9c25d0e0ea3cbe3940d56140a9dc9276d2cae292442a55ba",
+        "start": 1304,
+        "end": 1675,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 11",
+        "kind": "claim",
+        "quote": "11. The dry powder inhaler of claim 9, wherein the outlet channel is a first outlet channel, the dry powder inhaler further comprising a second outlet channel, and wherein air and powdered medicament leaving the first chamber are delivered to the first outlet channel, and air and powdered medicament leaving the second chamber are delivered to the second outlet channel.",
+        "meaning_th": "ข้อ 11 อ้างถึงข้อ 9 เพิ่มช่องออกที่สอง และจับคู่ห้องแรกกับช่องออกแรก ห้องที่สองกับช่องออกที่สอง",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 9",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:base",
+        "kind": "requirement",
+        "label_th": "ลักษณะในข้อหลัก"
+      },
+      {
+        "id": "req:parent",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่สืบทอด"
+      },
+      {
+        "id": "req:added",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม"
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c1",
+        "kind": "claim",
+        "label_th": "Claim 1"
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c9",
+        "kind": "claim",
+        "label_th": "Claim 9"
+      },
+      {
+        "id": "US20120145150A1@A1-2012-06-14#c11",
+        "kind": "claim",
+        "label_th": "Claim 11"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:base",
+        "to": "US20120145150A1@A1-2012-06-14#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c1"
+      },
+      {
+        "from": "req:parent",
+        "to": "US20120145150A1@A1-2012-06-14#c9",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c9"
+      },
+      {
+        "from": "req:added",
+        "to": "US20120145150A1@A1-2012-06-14#c11",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c11"
+      },
+      {
+        "from": "US20120145150A1@A1-2012-06-14#c9",
+        "to": "US20120145150A1@A1-2012-06-14#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c9"
+      },
+      {
+        "from": "US20120145150A1@A1-2012-06-14#c11",
+        "to": "US20120145150A1@A1-2012-06-14#c9",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20120145150A1@A1-2012-06-14#c11"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "base",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120145150A1@A1-2012-06-14#c1"
+        ],
+        "after": [
+          "US20120145150A1@A1-2012-06-14#c1"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "parent",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120145150A1@A1-2012-06-14#c9",
+          "US20120145150A1@A1-2012-06-14#c11"
+        ],
+        "after": [
+          "US20120145150A1@A1-2012-06-14#c9",
+          "US20120145150A1@A1-2012-06-14#c11"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "added",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20120145150A1@A1-2012-06-14#c11",
+          "US20120145150A1@A1-2012-06-14#c10"
+        ],
+        "after": [
+          "US20120145150A1@A1-2012-06-14#c11",
+          "US20120145150A1@A1-2012-06-14#c10"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "56ef8043a84d4027a91f7182f9709f08",
+    "family_id": "demo-en-blister",
+    "title_th": "บรรจุภัณฑ์ยาแบบแผง · ข้อ 3 · รอยตัดผ่านฟิล์ม",
+    "question_th": "ข้อ 3 ระบุจุดสิ้นสุดของแนวตัดอย่างไร และแนวตัดผ่านชั้นใดตามข้อที่อ้างถึง?",
+    "source_id": "US20070289893A1",
+    "version": "A1-2007-12-20",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+    "data_origin": "public_source",
+    "family_title_th": "บรรจุภัณฑ์ยาแบบแผง",
+    "publication_claim_count": 32,
+    "selected_claim_numbers": [
+      1,
+      2,
+      3,
+      7,
+      8,
+      9
+    ],
+    "issue_date": "2007-12-20",
+    "effective_date": null,
+    "example_id": "blister-3",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.762Z",
+    "input_sha256": "45d2e92be152e93ae39251963554ad1f6a56a3923050b2a5173915580012f3da",
+    "source_sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893",
+        "sha256": "9d64d8c68ae358bb03de2c26a745a07f49c5af5539e11793148c947bf3d58709",
+        "retrieved_utc": "2026-11-25T13:09:18.336087+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US20070289893A1/en",
+        "sha256": "8395b67668d7d7ca74b62827667985b91a0f9713990999f31dc75111a8893c1c",
+        "retrieved_utc": "2026-11-25T13:09:16.080103+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 3
+    },
+    "budget": {
+      "limit": 4,
+      "used": 0,
+      "spent": [],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "base",
+        "label_th": "ลักษณะในข้อหลัก",
+        "locator": "Claim 1",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c1"
+      },
+      {
+        "id": "parent",
+        "label_th": "เงื่อนไขที่สืบทอด",
+        "locator": "Claim 2",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c2"
+      },
+      {
+        "id": "added",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+        "locator": "Claim 3",
+        "parent": "Claim 2",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c3"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c1",
+        "source_id": "US20070289893A1",
+        "version": "A1-2007-12-20",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+        "sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+        "quote_sha256": "833ca8c3bcf453acfb26350de82f11746faf068353984a020b1ced94e255c79a",
+        "start": 0,
+        "end": 233,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 1",
+        "kind": "claim",
+        "quote": "1. A child-resistant blister package comprising: a first polymeric film defining a pocket for receiving a medicament therein; an impenetrable polymeric film sealed to said first polymeric film for sealing a medicament in said pocket;",
+        "meaning_th": "ข้อ 1 ระบุฟิล์มพอลิเมอร์ที่ขึ้นรูปเป็นช่องบรรจุยา และฟิล์มพอลิเมอร์อีกชั้นที่ปิดผนึกกับชั้นแรก ข้อความที่เลือกแสดงองค์ประกอบบางส่วนของข้อหลัก",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c2",
+        "source_id": "US20070289893A1",
+        "version": "A1-2007-12-20",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+        "sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+        "quote_sha256": "f137a87e21141a8af7d0529173001620e028211da6a4a1320842c2caca2d5acc",
+        "start": 926,
+        "end": 1063,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 2",
+        "kind": "claim",
+        "quote": "2. The package as defined in claim 1 wherein said die cut extends through said first polymeric film and said impenetrable polymeric film.",
+        "meaning_th": "ข้อ 2 อ้างถึงข้อ 1 และกำหนดให้แนวตัดทะลุฟิล์มพอลิเมอร์ชั้นแรกและฟิล์มพอลิเมอร์ชั้นที่กดทะลุไม่ได้",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 1",
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c3",
+        "source_id": "US20070289893A1",
+        "version": "A1-2007-12-20",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+        "sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+        "quote_sha256": "fd4ce3974512eb71bd030c304dc3ce2e010dec2586e8260e31e35c928796425c",
+        "start": 1064,
+        "end": 1163,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 3",
+        "kind": "claim",
+        "quote": "3. The package as defined in claim 2 wherein said die cut terminates before reaching said one edge.",
+        "meaning_th": "ข้อ 3 อ้างถึงข้อ 2 และเพิ่มเงื่อนไขว่าแนวตัดสิ้นสุดก่อนถึงขอบด้านที่ระบุ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 2",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:base",
+        "kind": "requirement",
+        "label_th": "ลักษณะในข้อหลัก"
+      },
+      {
+        "id": "req:parent",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่สืบทอด"
+      },
+      {
+        "id": "req:added",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม"
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c1",
+        "kind": "claim",
+        "label_th": "Claim 1"
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c2",
+        "kind": "claim",
+        "label_th": "Claim 2"
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c3",
+        "kind": "claim",
+        "label_th": "Claim 3"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:base",
+        "to": "US20070289893A1@A1-2007-12-20#c1",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c1"
+      },
+      {
+        "from": "req:parent",
+        "to": "US20070289893A1@A1-2007-12-20#c2",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c2"
+      },
+      {
+        "from": "req:added",
+        "to": "US20070289893A1@A1-2007-12-20#c3",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c3"
+      },
+      {
+        "from": "US20070289893A1@A1-2007-12-20#c2",
+        "to": "US20070289893A1@A1-2007-12-20#c1",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c2"
+      },
+      {
+        "from": "US20070289893A1@A1-2007-12-20#c3",
+        "to": "US20070289893A1@A1-2007-12-20#c2",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c3"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "base",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20070289893A1@A1-2007-12-20#c1",
+          "US20070289893A1@A1-2007-12-20#c2"
+        ],
+        "after": [
+          "US20070289893A1@A1-2007-12-20#c1",
+          "US20070289893A1@A1-2007-12-20#c2"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "parent",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20070289893A1@A1-2007-12-20#c2",
+          "US20070289893A1@A1-2007-12-20#c8"
+        ],
+        "after": [
+          "US20070289893A1@A1-2007-12-20#c2",
+          "US20070289893A1@A1-2007-12-20#c8"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "added",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20070289893A1@A1-2007-12-20#c3",
+          "US20070289893A1@A1-2007-12-20#c9"
+        ],
+        "after": [
+          "US20070289893A1@A1-2007-12-20#c3",
+          "US20070289893A1@A1-2007-12-20#c9"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      }
+    ]
+  },
+  {
+    "id": "2f45f7a402e4420d8f06c4a8d213c9e3",
+    "family_id": "demo-en-blister",
+    "title_th": "บรรจุภัณฑ์ยาแบบแผง · ข้อ 9 · รอยตัดผ่านลามิเนต",
+    "question_th": "ข้อ 9 ระบุจุดสิ้นสุดของแนวตัดอย่างไร และแนวตัดผ่านชั้นใดตามข้อที่อ้างถึง?",
+    "source_id": "US20070289893A1",
+    "version": "A1-2007-12-20",
+    "domain": "en_patent",
+    "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+    "data_origin": "public_source",
+    "family_title_th": "บรรจุภัณฑ์ยาแบบแผง",
+    "publication_claim_count": 32,
+    "selected_claim_numbers": [
+      1,
+      2,
+      3,
+      7,
+      8,
+      9
+    ],
+    "issue_date": "2007-12-20",
+    "effective_date": null,
+    "example_id": "blister-9",
+    "contract": "evidence-scope/1.0",
+    "policy": "curated-scope-reader/1.0",
+    "created_at": "2026-11-25T13:22:31.800Z",
+    "input_sha256": "5810e95a5452ccb2be6dc278d1b05b85179d1ae1c69cba1c373ba3e5af91947e",
+    "source_sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+    "status": "complete",
+    "originals": [
+      {
+        "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893",
+        "sha256": "9d64d8c68ae358bb03de2c26a745a07f49c5af5539e11793148c947bf3d58709",
+        "retrieved_utc": "2026-11-25T13:09:18.336087+00:00"
+      },
+      {
+        "url": "https://patents.google.com/patent/US20070289893A1/en",
+        "sha256": "8395b67668d7d7ca74b62827667985b91a0f9713990999f31dc75111a8893c1c",
+        "retrieved_utc": "2026-11-25T13:09:16.080103+00:00"
+      }
+    ],
+    "rights": {
+      "quote": true,
+      "export_quote": true
+    },
+    "baseline": {
+      "method": "sqlite_fts5_bm25_unicode61",
+      "depth": 2,
+      "queries": 3
+    },
+    "budget": {
+      "limit": 4,
+      "used": 1,
+      "spent": [
+        "rerank"
+      ],
+      "unit": "supplemental_actions"
+    },
+    "requirements": [
+      {
+        "id": "base",
+        "label_th": "ลักษณะในข้อหลัก",
+        "locator": "Claim 7",
+        "parent": null,
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c7"
+      },
+      {
+        "id": "parent",
+        "label_th": "เงื่อนไขที่สืบทอด",
+        "locator": "Claim 8",
+        "parent": "Claim 7",
+        "date": null,
+        "example": null,
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "status": "bound",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c8"
+      },
+      {
+        "id": "added",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+        "locator": "Claim 9",
+        "parent": "Claim 8",
+        "date": null,
+        "example": null,
+        "reason_th": "เลือกข้อความในผลค้นเดิมที่ตรงกับขอบเขต",
+        "status": "bound",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c9"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c7",
+        "source_id": "US20070289893A1",
+        "version": "A1-2007-12-20",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+        "sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+        "quote_sha256": "d8ce279b894658b6dbc125c56fa51c421448cc12a95080af424bfd6fdeffb07a",
+        "start": 1164,
+        "end": 1630,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 7",
+        "kind": "claim",
+        "quote": "7. A child-resistant blister package comprising: a first polymeric film defining a plurality of spaced-apart pockets for receiving medicaments therein; a foil layer coupled to said first polymeric film to enclose said pockets; a laminate including an impenetrable polymeric film sealed to said first polymeric film for sealing medicaments in said pockets; perforations formed through said first film and said laminate to allow separation of individual blister units;",
+        "meaning_th": "ข้อ 7 กล่าวถึงช่องบรรจุยาหลายช่องที่อยู่ห่างกัน มีชั้นฟอยล์ปิดช่อง ชั้นลามิเนต และรูปรุที่ช่วยแยกแต่ละหน่วยออกจากแผง นี่เป็นส่วนหนึ่งของข้อหลัก",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": null,
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c8",
+        "source_id": "US20070289893A1",
+        "version": "A1-2007-12-20",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+        "sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+        "quote_sha256": "3ce15ee257aca4ae6143f7a3b5994a9702df208abb301c6a1887009546212ea7",
+        "start": 2309,
+        "end": 2427,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 8",
+        "kind": "claim",
+        "quote": "8. The package as defined in claim 7 wherein said die cut extends through said first polymeric film and said laminate.",
+        "meaning_th": "ข้อ 8 อ้างถึงข้อ 7 และกำหนดให้แนวตัดทะลุฟิล์มพอลิเมอร์ชั้นแรกกับชั้นลามิเนต",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 7",
+        "date": null,
+        "example": null
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c9",
+        "source_id": "US20070289893A1",
+        "version": "A1-2007-12-20",
+        "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+        "sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+        "quote_sha256": "a17c941fa86336df9e2ecde7f1badcc1190b15c15aa2c81ea8853501591d03da",
+        "start": 2428,
+        "end": 2527,
+        "offset_convention": "unicode_code_points_zero_based_end_exclusive_on_unmodified_decoded_utf8",
+        "locator": "Claim 9",
+        "kind": "claim",
+        "quote": "9. The package as defined in claim 8 wherein said die cut terminates before reaching said one edge.",
+        "meaning_th": "ข้อ 9 อ้างถึงข้อ 8 และเพิ่มเงื่อนไขว่าแนวตัดสิ้นสุดก่อนถึงขอบด้านที่ระบุ",
+        "gloss_basis": "curated_display_translation",
+        "scope_basis": "selected_edition_and_curated_locator",
+        "parent": "Claim 8",
+        "date": null,
+        "example": null
+      }
+    ],
+    "nodes": [
+      {
+        "id": "req:base",
+        "kind": "requirement",
+        "label_th": "ลักษณะในข้อหลัก"
+      },
+      {
+        "id": "req:parent",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่สืบทอด"
+      },
+      {
+        "id": "req:added",
+        "kind": "requirement",
+        "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม"
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c7",
+        "kind": "claim",
+        "label_th": "Claim 7"
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c8",
+        "kind": "claim",
+        "label_th": "Claim 8"
+      },
+      {
+        "id": "US20070289893A1@A1-2007-12-20#c9",
+        "kind": "claim",
+        "label_th": "Claim 9"
+      }
+    ],
+    "edges": [
+      {
+        "from": "req:base",
+        "to": "US20070289893A1@A1-2007-12-20#c7",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c7"
+      },
+      {
+        "from": "req:parent",
+        "to": "US20070289893A1@A1-2007-12-20#c8",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c8"
+      },
+      {
+        "from": "req:added",
+        "to": "US20070289893A1@A1-2007-12-20#c9",
+        "type": "inferred",
+        "label_th": "ระบบจับคู่ตามขอบเขต",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c9"
+      },
+      {
+        "from": "US20070289893A1@A1-2007-12-20#c8",
+        "to": "US20070289893A1@A1-2007-12-20#c7",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c8"
+      },
+      {
+        "from": "US20070289893A1@A1-2007-12-20#c9",
+        "to": "US20070289893A1@A1-2007-12-20#c8",
+        "type": "stated",
+        "label_th": "ต้นฉบับอ้างถึง",
+        "evidence_id": "US20070289893A1@A1-2007-12-20#c9"
+      }
+    ],
+    "unresolved_relations": [],
+    "actions": [
+      {
+        "action": "keep",
+        "requirement_id": "base",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20070289893A1@A1-2007-12-20#c7",
+          "US20070289893A1@A1-2007-12-20#c8"
+        ],
+        "after": [
+          "US20070289893A1@A1-2007-12-20#c7",
+          "US20070289893A1@A1-2007-12-20#c8"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "keep",
+        "requirement_id": "parent",
+        "reason_th": "ข้อความอันดับแรกตรงกับตำแหน่งและขอบเขตที่เลือก",
+        "before": [
+          "US20070289893A1@A1-2007-12-20#c8",
+          "US20070289893A1@A1-2007-12-20#c7"
+        ],
+        "after": [
+          "US20070289893A1@A1-2007-12-20#c8",
+          "US20070289893A1@A1-2007-12-20#c7"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 0
+      },
+      {
+        "action": "rerank",
+        "requirement_id": "added",
+        "reason_th": "เลือกข้อความในผลค้นเดิมที่ตรงกับขอบเขต",
+        "before": [
+          "US20070289893A1@A1-2007-12-20#c3",
+          "US20070289893A1@A1-2007-12-20#c9"
+        ],
+        "after": [
+          "US20070289893A1@A1-2007-12-20#c9",
+          "US20070289893A1@A1-2007-12-20#c3"
+        ],
+        "accepted": [],
+        "displaced": [],
+        "cost": 1
+      }
+    ]
+  }
+]

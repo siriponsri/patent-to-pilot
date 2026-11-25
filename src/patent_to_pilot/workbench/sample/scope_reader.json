@@ -1,0 +1,1869 @@
+{
+  "examples": [
+    {
+      "id": "eta-2544",
+      "family_id": "demo-th-eta",
+      "title_th": "ฉบับเดิม พ.ศ. ๒๕๔๔",
+      "question_th": "มาตรา ๙ (๑) กำหนดให้วิธีลงลายมือชื่อระบุใคร และแสดงอะไรเกี่ยวกับข้อความ?",
+      "source_id": "th-eta",
+      "version": "2544",
+      "domain": "thai_law",
+      "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-พ-ศ-2544.aspx",
+      "data_origin": "public_source",
+      "issue_date": "2001-12-04",
+      "effective_date": "2002-04-03",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ\nและสามารถแสดงได้ว่าเจ้าของลายมือชื่อรับรองข้อความในข้อมูลอิเล็กทรอนิกส์นั้นว่าเป็นของตน",
+      "units": [
+        {
+          "id": "identity",
+          "locator": "มาตรา ๙ (๑) · ระบุตัว",
+          "quote": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ",
+          "meaning_th": "วิธีที่ใช้ต้องระบุได้ว่าใครเป็นเจ้าของลายมือชื่อ",
+          "kind": "section"
+        },
+        {
+          "id": "message",
+          "locator": "มาตรา ๙ (๑) · ข้อความ",
+          "quote": "และสามารถแสดงได้ว่าเจ้าของลายมือชื่อรับรองข้อความในข้อมูลอิเล็กทรอนิกส์นั้นว่าเป็นของตน",
+          "meaning_th": "ต้องแสดงได้ว่าผู้ลงลายมือชื่อรับรองว่าข้อความนั้นเป็นของตน",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "identity",
+          "label_th": "ระบุตัวผู้ลงลายมือชื่อ",
+          "locator": "มาตรา ๙ (๑) · ระบุตัว",
+          "query": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ"
+        },
+        {
+          "id": "message",
+          "label_th": "ความเชื่อมโยงกับข้อความ",
+          "locator": "มาตรา ๙ (๑) · ข้อความ",
+          "query": "และสามารถแสดงได้ว่าเจ้าของลายมือชื่อรับรองข้อความในข้อมูลอิเล็กทรอนิกส์นั้นว่าเป็นของตน"
+        }
+      ],
+      "canonical_sha256": "3ac4b8a713c05e0212cec8f1638ac94c555fbc5083b19987733c67852b68724f",
+      "originals": [
+        {
+          "url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-พ-ศ-2544.aspx",
+          "sha256": "f3c3c63f9fa47ff98be99b929cf80db925082c87bd62a575f60c7cb6ec5f7e16",
+          "retrieved_utc": "2026-11-25T12:58:33.952357+00:00"
+        },
+        {
+          "url": "https://www.oie.go.th/assets/portals/1/fileups/2/files/Law_ICT/ElectronicTransactions2544.pdf",
+          "sha256": "42eded9e65c4bd2be312f42e9f75677060876cb45f538d4aa41fa8b5f75fefae",
+          "retrieved_utc": "2026-11-25T13:01:36.120675+00:00"
+        }
+      ],
+      "family_title_th": "ลายมือชื่ออิเล็กทรอนิกส์"
+    },
+    {
+      "id": "eta-2562-no3",
+      "family_id": "demo-th-eta",
+      "title_th": "ฉบับแก้ไขที่ ๓ พ.ศ. ๒๕๖๒",
+      "question_th": "มาตรา ๙ (๑) กำหนดให้วิธีลงลายมือชื่อระบุใคร และแสดงอะไรเกี่ยวกับข้อความ?",
+      "source_id": "th-eta",
+      "version": "2562-no3",
+      "domain": "thai_law",
+      "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+      "data_origin": "public_source",
+      "issue_date": "2019-04-14",
+      "effective_date": "2019-04-15",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ\nและสามารถแสดงเจตนาของเจ้าของลายมือชื่อเกี่ยวกับข้อความในข้อมูลอิเล็กทรอนิกส์",
+      "units": [
+        {
+          "id": "identity",
+          "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว",
+          "quote": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ",
+          "meaning_th": "วิธีที่ใช้ต้องระบุได้ว่าใครเป็นเจ้าของลายมือชื่อ",
+          "kind": "section"
+        },
+        {
+          "id": "message",
+          "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ข้อความ",
+          "quote": "และสามารถแสดงเจตนาของเจ้าของลายมือชื่อเกี่ยวกับข้อความในข้อมูลอิเล็กทรอนิกส์",
+          "meaning_th": "ต้องแสดงเจตนาของผู้ลงลายมือชื่อเกี่ยวกับข้อความ",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "identity",
+          "label_th": "ระบุตัวผู้ลงลายมือชื่อ",
+          "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว",
+          "query": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ"
+        },
+        {
+          "id": "message",
+          "label_th": "ความเชื่อมโยงกับข้อความ",
+          "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ข้อความ",
+          "query": "และสามารถแสดงเจตนาของเจ้าของลายมือชื่อเกี่ยวกับข้อความในข้อมูลอิเล็กทรอนิกส์"
+        }
+      ],
+      "canonical_sha256": "90c2dec6ad9dbd64979f42840cd0a5321c3779f72f383960f66f9d39047ad33b",
+      "originals": [
+        {
+          "url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+          "sha256": "f0914f5686cbd684de5cd2877de536dfce79f23fd13564bd9e3643ba7dfdd295",
+          "retrieved_utc": "2026-11-25T12:58:33.179214+00:00"
+        },
+        {
+          "url": "https://www.etda.or.th/getattachment/fd89f39c-c28f-41ef-a3c6-9d90554a3d67/Electronic-Transactions-Act-%28No-3%29-B-E-2562.aspx",
+          "sha256": "d6f1e3bb3a5f2ce3a25dcfc1de3810b325736f79455d8878b7e0ec02bbb759ae",
+          "retrieved_utc": "2026-11-25T12:59:42.162874+00:00"
+        }
+      ],
+      "family_title_th": "ลายมือชื่ออิเล็กทรอนิกส์"
+    },
+    {
+      "id": "eta-case",
+      "family_id": "demo-th-eta",
+      "title_th": "ลองกรณีที่หลักฐานยังไม่พอ",
+      "question_th": "มาตรา ๙ (๑) กำหนดเรื่องการระบุตัวอย่างไร และมีหลักฐานว่าใครเป็นผู้ลงนามในสัญญาตัวอย่างหรือไม่?",
+      "source_id": "th-eta",
+      "version": "2562-no3",
+      "domain": "thai_law",
+      "source_url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+      "data_origin": "public_source",
+      "issue_date": "2019-04-14",
+      "effective_date": "2019-04-15",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ\nและสามารถแสดงเจตนาของเจ้าของลายมือชื่อเกี่ยวกับข้อความในข้อมูลอิเล็กทรอนิกส์",
+      "units": [
+        {
+          "id": "identity",
+          "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว",
+          "quote": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ",
+          "meaning_th": "วิธีที่ใช้ต้องระบุได้ว่าใครเป็นเจ้าของลายมือชื่อ",
+          "kind": "section"
+        },
+        {
+          "id": "message",
+          "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ข้อความ",
+          "quote": "และสามารถแสดงเจตนาของเจ้าของลายมือชื่อเกี่ยวกับข้อความในข้อมูลอิเล็กทรอนิกส์",
+          "meaning_th": "ต้องแสดงเจตนาของผู้ลงลายมือชื่อเกี่ยวกับข้อความ",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "identity",
+          "label_th": "ระบุตัวผู้ลงลายมือชื่อ",
+          "locator": "มาตรา ๗ แทนมาตรา ๙ (๑) · ระบุตัว",
+          "query": "ใช้วิธีการที่สามารถระบุตัวเจ้าของลายมือชื่อ"
+        },
+        {
+          "id": "actual-signer",
+          "label_th": "ผู้ลงนามในสัญญาตัวอย่าง",
+          "locator": "สัญญาตัวอย่าง · ชื่อผู้ลงนาม",
+          "query": "ผู้ลงนาม สัญญา"
+        }
+      ],
+      "canonical_sha256": "90c2dec6ad9dbd64979f42840cd0a5321c3779f72f383960f66f9d39047ad33b",
+      "originals": [
+        {
+          "url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+          "sha256": "f0914f5686cbd684de5cd2877de536dfce79f23fd13564bd9e3643ba7dfdd295",
+          "retrieved_utc": "2026-11-25T12:58:33.179214+00:00"
+        },
+        {
+          "url": "https://www.etda.or.th/getattachment/fd89f39c-c28f-41ef-a3c6-9d90554a3d67/Electronic-Transactions-Act-%28No-3%29-B-E-2562.aspx",
+          "sha256": "d6f1e3bb3a5f2ce3a25dcfc1de3810b325736f79455d8878b7e0ec02bbb759ae",
+          "retrieved_utc": "2026-11-25T12:59:42.162874+00:00"
+        }
+      ],
+      "family_title_th": "ลายมือชื่ออิเล็กทรอนิกส์"
+    },
+    {
+      "id": "paperclip-3",
+      "family_id": "demo-en-paperclip",
+      "title_th": "คลิปหนีบกระดาษ · ข้อถือสิทธิที่ 3",
+      "question_th": "ข้อถือสิทธิที่ 3 สืบทอดเงื่อนไขใดเกี่ยวกับชิ้นวัสดุจากข้อ ๑ และระบุวัสดุอะไรเพิ่ม?",
+      "source_id": "US20140137391A1",
+      "version": "A1-2014-05-22",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+      "issue_date": "2014-05-22",
+      "effective_date": null,
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "a single piece of resilient material\nThe paper clip of claim 1, wherein the single piece of material comprises a wire material.\nThe paper clip of claim 1, wherein the single piece of material comprises a plastic material.",
+      "units": [
+        {
+          "id": "c1",
+          "locator": "claim 1",
+          "quote": "a single piece of resilient material",
+          "meaning_th": "ข้อถือสิทธิที่ ๑ ระบุว่าใช้วัสดุยืดหยุ่นชิ้นเดียว นี่เป็นเพียงองค์ประกอบหนึ่งของข้อถือสิทธินี้",
+          "kind": "claim"
+        },
+        {
+          "id": "c3",
+          "locator": "claim 3",
+          "quote": "The paper clip of claim 1, wherein the single piece of material comprises a wire material.",
+          "meaning_th": "ข้อถือสิทธิที่ 3 อ้างถึงข้อถือสิทธิที่ ๑ และเพิ่มเงื่อนไขว่าวัสดุชิ้นเดียวนั้นมีลวดเป็นส่วนประกอบ",
+          "kind": "claim",
+          "parent": "claim 1"
+        },
+        {
+          "id": "c4",
+          "locator": "claim 4",
+          "quote": "The paper clip of claim 1, wherein the single piece of material comprises a plastic material.",
+          "meaning_th": "ข้อถือสิทธิที่ 4 อ้างถึงข้อถือสิทธิที่ ๑ และเพิ่มเงื่อนไขว่าวัสดุชิ้นเดียวนั้นมีพลาสติกเป็นส่วนประกอบ",
+          "kind": "claim",
+          "parent": "claim 1"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "base",
+          "label_th": "องค์ประกอบที่สืบทอดจากข้อ ๑",
+          "locator": "claim 1",
+          "query": "resilient"
+        },
+        {
+          "id": "material",
+          "label_th": "เงื่อนไขที่เพิ่มเกี่ยวกับวัสดุ",
+          "locator": "claim 3",
+          "query": "wire",
+          "parent": "claim 1"
+        }
+      ],
+      "canonical_sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+      "originals": [
+        {
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+          "sha256": "38e55ce5d09e47a1a4d2f955df032f39743944d32d8f768b52a124e346c6b34e",
+          "retrieved_utc": "2026-11-25T12:58:33.979299+00:00"
+        },
+        {
+          "url": "https://patents.google.com/patent/US20140137391A1/en",
+          "sha256": "49abd71ca1382656db598046a97b66345f79d16e84e591ef1341617f48557bb9",
+          "retrieved_utc": "2026-11-25T12:58:32.238091+00:00"
+        }
+      ],
+      "family_title_th": "คลิปหนีบกระดาษ",
+      "publication_claim_count": 8,
+      "selected_claim_numbers": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "paperclip-4",
+      "family_id": "demo-en-paperclip",
+      "title_th": "คลิปหนีบกระดาษ · ข้อถือสิทธิที่ 4",
+      "question_th": "ข้อถือสิทธิที่ 4 สืบทอดเงื่อนไขใดเกี่ยวกับชิ้นวัสดุจากข้อ ๑ และระบุวัสดุอะไรเพิ่ม?",
+      "source_id": "US20140137391A1",
+      "version": "A1-2014-05-22",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+      "issue_date": "2014-05-22",
+      "effective_date": null,
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "a single piece of resilient material\nThe paper clip of claim 1, wherein the single piece of material comprises a wire material.\nThe paper clip of claim 1, wherein the single piece of material comprises a plastic material.",
+      "units": [
+        {
+          "id": "c1",
+          "locator": "claim 1",
+          "quote": "a single piece of resilient material",
+          "meaning_th": "ข้อถือสิทธิที่ ๑ ระบุว่าใช้วัสดุยืดหยุ่นชิ้นเดียว นี่เป็นเพียงองค์ประกอบหนึ่งของข้อถือสิทธินี้",
+          "kind": "claim"
+        },
+        {
+          "id": "c3",
+          "locator": "claim 3",
+          "quote": "The paper clip of claim 1, wherein the single piece of material comprises a wire material.",
+          "meaning_th": "ข้อถือสิทธิที่ 3 อ้างถึงข้อถือสิทธิที่ ๑ และเพิ่มเงื่อนไขว่าวัสดุชิ้นเดียวนั้นมีลวดเป็นส่วนประกอบ",
+          "kind": "claim",
+          "parent": "claim 1"
+        },
+        {
+          "id": "c4",
+          "locator": "claim 4",
+          "quote": "The paper clip of claim 1, wherein the single piece of material comprises a plastic material.",
+          "meaning_th": "ข้อถือสิทธิที่ 4 อ้างถึงข้อถือสิทธิที่ ๑ และเพิ่มเงื่อนไขว่าวัสดุชิ้นเดียวนั้นมีพลาสติกเป็นส่วนประกอบ",
+          "kind": "claim",
+          "parent": "claim 1"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "base",
+          "label_th": "องค์ประกอบที่สืบทอดจากข้อ ๑",
+          "locator": "claim 1",
+          "query": "resilient"
+        },
+        {
+          "id": "material",
+          "label_th": "เงื่อนไขที่เพิ่มเกี่ยวกับวัสดุ",
+          "locator": "claim 4",
+          "query": "plastic",
+          "parent": "claim 1"
+        }
+      ],
+      "canonical_sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+      "originals": [
+        {
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+          "sha256": "38e55ce5d09e47a1a4d2f955df032f39743944d32d8f768b52a124e346c6b34e",
+          "retrieved_utc": "2026-11-25T12:58:33.979299+00:00"
+        },
+        {
+          "url": "https://patents.google.com/patent/US20140137391A1/en",
+          "sha256": "49abd71ca1382656db598046a97b66345f79d16e84e591ef1341617f48557bb9",
+          "retrieved_utc": "2026-11-25T12:58:32.238091+00:00"
+        }
+      ],
+      "family_title_th": "คลิปหนีบกระดาษ",
+      "publication_claim_count": 8,
+      "selected_claim_numbers": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "metformin-3",
+      "family_id": "demo-en-metformin",
+      "family_title_th": "เมตฟอร์มินชนิดควบคุมการปลดปล่อย",
+      "title_th": "ข้อ 3 · การลอยตัว",
+      "question_th": "ข้อ 3 สืบทอดโครงสร้างชั้นเคลือบอะไรจากข้อ ๑ และเพิ่มเงื่อนไขอะไร?",
+      "source_id": "US8323692B2",
+      "version": "B2-2012-12-04",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "issue_date": "2012-12-04",
+      "effective_date": null,
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "a stable controlled release monolithic coating surrounding the core\nThe controlled release oral dosage form of claim 1 wherein the dosage form floats when placed in an aqueous environment.\nThe controlled release oral dosage form of claim 1 wherein the dosage form expands when placed in an aqueous environment.\nThe controlled release oral dosage form of claim 1 wherein the stable controlled release monolithic coating is formed by a process that excludes usage of an organic solvent.",
+      "units": [
+        {
+          "id": "c1",
+          "locator": "claim 1",
+          "quote": "a stable controlled release monolithic coating surrounding the core",
+          "meaning_th": "ข้อ ๑ ระบุชั้นเคลือบควบคุมการปลดปล่อยแบบชั้นเดียวที่คงตัวและห่อหุ้มแกน นี่เป็นองค์ประกอบหนึ่งในหลายเงื่อนไข",
+          "kind": "claim"
+        },
+        {
+          "id": "c3",
+          "locator": "claim 3",
+          "quote": "The controlled release oral dosage form of claim 1 wherein the dosage form floats when placed in an aqueous environment.",
+          "meaning_th": "ข้อ 3 อ้างข้อ ๑ และเพิ่มเงื่อนไขว่ารูปแบบยาลอยเมื่ออยู่ในสภาพแวดล้อมที่เป็นน้ำ",
+          "kind": "claim",
+          "parent": "claim 1"
+        },
+        {
+          "id": "c4",
+          "locator": "claim 4",
+          "quote": "The controlled release oral dosage form of claim 1 wherein the dosage form expands when placed in an aqueous environment.",
+          "meaning_th": "ข้อ 4 อ้างข้อ ๑ และเพิ่มเงื่อนไขว่ารูปแบบยาขยายตัวเมื่ออยู่ในสภาพแวดล้อมที่เป็นน้ำ",
+          "kind": "claim",
+          "parent": "claim 1"
+        },
+        {
+          "id": "c7",
+          "locator": "claim 7",
+          "quote": "The controlled release oral dosage form of claim 1 wherein the stable controlled release monolithic coating is formed by a process that excludes usage of an organic solvent.",
+          "meaning_th": "ข้อ ๗ อ้างข้อ ๑ และกำหนดว่ากระบวนการทำชั้นเคลือบไม่ใช้ตัวทำละลายอินทรีย์",
+          "kind": "claim",
+          "parent": "claim 1"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "core",
+          "label_th": "เงื่อนไขเรื่องชั้นเคลือบในข้อ ๑",
+          "locator": "claim 1",
+          "query": "monolithic"
+        },
+        {
+          "id": "feature",
+          "label_th": "ข้อจำกัดที่เพิ่ม",
+          "locator": "claim 3",
+          "query": "floats",
+          "parent": "claim 1"
+        }
+      ],
+      "canonical_sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+      "originals": [
+        {
+          "sha256": "5b3cd52b3d62151059d34aa69129ea59e341f304129bd0423f38b0476162e2de",
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+          "retrieved_utc": "2026-11-25T13:10:06.067396+00:00"
+        },
+        {
+          "sha256": "afab86724669e8e877976e0a6ffa7f03f9664f5ef11c0afd2639334091c401b7",
+          "url": "https://patents.google.com/patent/US8323692B2/en",
+          "retrieved_utc": "2026-11-25T13:09:59.867436+00:00"
+        }
+      ],
+      "publication_claim_count": 37,
+      "selected_claim_numbers": [
+        1,
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "id": "metformin-4",
+      "family_id": "demo-en-metformin",
+      "family_title_th": "เมตฟอร์มินชนิดควบคุมการปลดปล่อย",
+      "title_th": "ข้อ 4 · การขยายตัว",
+      "question_th": "ข้อ 4 สืบทอดโครงสร้างชั้นเคลือบอะไรจากข้อ ๑ และเพิ่มเงื่อนไขอะไร?",
+      "source_id": "US8323692B2",
+      "version": "B2-2012-12-04",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "issue_date": "2012-12-04",
+      "effective_date": null,
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "a stable controlled release monolithic coating surrounding the core\nThe controlled release oral dosage form of claim 1 wherein the dosage form floats when placed in an aqueous environment.\nThe controlled release oral dosage form of claim 1 wherein the dosage form expands when placed in an aqueous environment.\nThe controlled release oral dosage form of claim 1 wherein the stable controlled release monolithic coating is formed by a process that excludes usage of an organic solvent.",
+      "units": [
+        {
+          "id": "c1",
+          "locator": "claim 1",
+          "quote": "a stable controlled release monolithic coating surrounding the core",
+          "meaning_th": "ข้อ ๑ ระบุชั้นเคลือบควบคุมการปลดปล่อยแบบชั้นเดียวที่คงตัวและห่อหุ้มแกน นี่เป็นองค์ประกอบหนึ่งในหลายเงื่อนไข",
+          "kind": "claim"
+        },
+        {
+          "id": "c3",
+          "locator": "claim 3",
+          "quote": "The controlled release oral dosage form of claim 1 wherein the dosage form floats when placed in an aqueous environment.",
+          "meaning_th": "ข้อ 3 อ้างข้อ ๑ และเพิ่มเงื่อนไขว่ารูปแบบยาลอยเมื่ออยู่ในสภาพแวดล้อมที่เป็นน้ำ",
+          "kind": "claim",
+          "parent": "claim 1"
+        },
+        {
+          "id": "c4",
+          "locator": "claim 4",
+          "quote": "The controlled release oral dosage form of claim 1 wherein the dosage form expands when placed in an aqueous environment.",
+          "meaning_th": "ข้อ 4 อ้างข้อ ๑ และเพิ่มเงื่อนไขว่ารูปแบบยาขยายตัวเมื่ออยู่ในสภาพแวดล้อมที่เป็นน้ำ",
+          "kind": "claim",
+          "parent": "claim 1"
+        },
+        {
+          "id": "c7",
+          "locator": "claim 7",
+          "quote": "The controlled release oral dosage form of claim 1 wherein the stable controlled release monolithic coating is formed by a process that excludes usage of an organic solvent.",
+          "meaning_th": "ข้อ ๗ อ้างข้อ ๑ และกำหนดว่ากระบวนการทำชั้นเคลือบไม่ใช้ตัวทำละลายอินทรีย์",
+          "kind": "claim",
+          "parent": "claim 1"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "core",
+          "label_th": "เงื่อนไขเรื่องชั้นเคลือบในข้อ ๑",
+          "locator": "claim 1",
+          "query": "monolithic"
+        },
+        {
+          "id": "feature",
+          "label_th": "ข้อจำกัดที่เพิ่ม",
+          "locator": "claim 4",
+          "query": "expands",
+          "parent": "claim 1"
+        }
+      ],
+      "canonical_sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+      "originals": [
+        {
+          "sha256": "5b3cd52b3d62151059d34aa69129ea59e341f304129bd0423f38b0476162e2de",
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+          "retrieved_utc": "2026-11-25T13:10:06.067396+00:00"
+        },
+        {
+          "sha256": "afab86724669e8e877976e0a6ffa7f03f9664f5ef11c0afd2639334091c401b7",
+          "url": "https://patents.google.com/patent/US8323692B2/en",
+          "retrieved_utc": "2026-11-25T13:09:59.867436+00:00"
+        }
+      ],
+      "publication_claim_count": 37,
+      "selected_claim_numbers": [
+        1,
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "id": "metformin-7",
+      "family_id": "demo-en-metformin",
+      "family_title_th": "เมตฟอร์มินชนิดควบคุมการปลดปล่อย",
+      "title_th": "ข้อ 7 · ชั้นเคลือบและตัวทำละลาย",
+      "question_th": "ข้อ 7 สืบทอดโครงสร้างชั้นเคลือบอะไรจากข้อ ๑ และเพิ่มเงื่อนไขอะไร?",
+      "source_id": "US8323692B2",
+      "version": "B2-2012-12-04",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "issue_date": "2012-12-04",
+      "effective_date": null,
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "a stable controlled release monolithic coating surrounding the core\nThe controlled release oral dosage form of claim 1 wherein the dosage form floats when placed in an aqueous environment.\nThe controlled release oral dosage form of claim 1 wherein the dosage form expands when placed in an aqueous environment.\nThe controlled release oral dosage form of claim 1 wherein the stable controlled release monolithic coating is formed by a process that excludes usage of an organic solvent.",
+      "units": [
+        {
+          "id": "c1",
+          "locator": "claim 1",
+          "quote": "a stable controlled release monolithic coating surrounding the core",
+          "meaning_th": "ข้อ ๑ ระบุชั้นเคลือบควบคุมการปลดปล่อยแบบชั้นเดียวที่คงตัวและห่อหุ้มแกน นี่เป็นองค์ประกอบหนึ่งในหลายเงื่อนไข",
+          "kind": "claim"
+        },
+        {
+          "id": "c3",
+          "locator": "claim 3",
+          "quote": "The controlled release oral dosage form of claim 1 wherein the dosage form floats when placed in an aqueous environment.",
+          "meaning_th": "ข้อ 3 อ้างข้อ ๑ และเพิ่มเงื่อนไขว่ารูปแบบยาลอยเมื่ออยู่ในสภาพแวดล้อมที่เป็นน้ำ",
+          "kind": "claim",
+          "parent": "claim 1"
+        },
+        {
+          "id": "c4",
+          "locator": "claim 4",
+          "quote": "The controlled release oral dosage form of claim 1 wherein the dosage form expands when placed in an aqueous environment.",
+          "meaning_th": "ข้อ 4 อ้างข้อ ๑ และเพิ่มเงื่อนไขว่ารูปแบบยาขยายตัวเมื่ออยู่ในสภาพแวดล้อมที่เป็นน้ำ",
+          "kind": "claim",
+          "parent": "claim 1"
+        },
+        {
+          "id": "c7",
+          "locator": "claim 7",
+          "quote": "The controlled release oral dosage form of claim 1 wherein the stable controlled release monolithic coating is formed by a process that excludes usage of an organic solvent.",
+          "meaning_th": "ข้อ ๗ อ้างข้อ ๑ และกำหนดว่ากระบวนการทำชั้นเคลือบไม่ใช้ตัวทำละลายอินทรีย์",
+          "kind": "claim",
+          "parent": "claim 1"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "core",
+          "label_th": "เงื่อนไขเรื่องชั้นเคลือบในข้อ ๑",
+          "locator": "claim 1",
+          "query": "monolithic"
+        },
+        {
+          "id": "feature",
+          "label_th": "ข้อจำกัดที่เพิ่ม",
+          "locator": "claim 7",
+          "query": "solvent",
+          "parent": "claim 1"
+        }
+      ],
+      "canonical_sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+      "originals": [
+        {
+          "sha256": "5b3cd52b3d62151059d34aa69129ea59e341f304129bd0423f38b0476162e2de",
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+          "retrieved_utc": "2026-11-25T13:10:06.067396+00:00"
+        },
+        {
+          "sha256": "afab86724669e8e877976e0a6ffa7f03f9664f5ef11c0afd2639334091c401b7",
+          "url": "https://patents.google.com/patent/US8323692B2/en",
+          "retrieved_utc": "2026-11-25T13:09:59.867436+00:00"
+        }
+      ],
+      "publication_claim_count": 37,
+      "selected_claim_numbers": [
+        1,
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "id": "information-budget",
+      "family_id": "demo-th-information",
+      "family_title_th": "สิทธิขอข้อมูลข่าวสารของราชการ",
+      "title_th": "งบประมาณของปีปัจจุบัน",
+      "question_th": "แผนงานและงบประมาณปีใดอยู่ในรายการที่ให้ตรวจดู และต้องอ่านประกอบมาตราใด?",
+      "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+      "version": "BE-2540-oic",
+      "domain": "thai_law",
+      "data_origin": "public_source",
+      "issue_date": null,
+      "effective_date": null,
+      "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ภายใต้บังคับมาตรา ๑๔ และมาตรา ๑๕\nแผนงาน โครงการ และงบประมาณรายจ่ายประจำปีของปีที่กำลังดำเนินการ\nคู่มือหรือคำสั่งเกี่ยวกับวิธีปฏิบัติงานของเจ้าหน้าที่ของรัฐ ซึ่งมีผลกระทบถึงสิทธิหน้าที่ของเอกชน\nระบุข้อมูลข่าวสารที่ต้องการในลักษณะที่อาจเข้าใจได้ตามควร\nเว้นแต่ผู้นั้นขอจำนวนมากหรือบ่อยครั้งโดยไม่มีเหตุผลอันสมควร",
+      "units": [
+        {
+          "id": "s9",
+          "locator": "มาตรา ๙ วรรคหนึ่ง",
+          "quote": "ภายใต้บังคับมาตรา ๑๔ และมาตรา ๑๕",
+          "meaning_th": "มาตรา ๙ ให้จัดข้อมูลบางประเภทไว้ให้ตรวจดู โดยต้องอ่านประกอบข้อจำกัดในมาตรา ๑๔ และ ๑๕",
+          "kind": "section"
+        },
+        {
+          "id": "budget",
+          "locator": "มาตรา ๙ (๓)",
+          "quote": "แผนงาน โครงการ และงบประมาณรายจ่ายประจำปีของปีที่กำลังดำเนินการ",
+          "meaning_th": "รายการนี้ครอบคลุมแผนงาน โครงการ และงบประมาณรายจ่ายของปีที่กำลังดำเนินการ",
+          "kind": "section"
+        },
+        {
+          "id": "manual",
+          "locator": "มาตรา ๙ (๔)",
+          "quote": "คู่มือหรือคำสั่งเกี่ยวกับวิธีปฏิบัติงานของเจ้าหน้าที่ของรัฐ ซึ่งมีผลกระทบถึงสิทธิหน้าที่ของเอกชน",
+          "meaning_th": "รายการนี้เจาะจงคู่มือหรือคำสั่งที่กระทบสิทธิหน้าที่ของเอกชน",
+          "kind": "section"
+        },
+        {
+          "id": "request",
+          "locator": "มาตรา ๑๑ วรรคหนึ่ง · ความชัดเจน",
+          "quote": "ระบุข้อมูลข่าวสารที่ต้องการในลักษณะที่อาจเข้าใจได้ตามควร",
+          "meaning_th": "คำขอข้อมูลอื่นตามมาตรา ๑๑ ต้องอธิบายได้พอให้เข้าใจว่ากำลังขอข้อมูลใด",
+          "kind": "section"
+        },
+        {
+          "id": "repeat",
+          "locator": "มาตรา ๑๑ วรรคหนึ่ง · ข้อยกเว้น",
+          "quote": "เว้นแต่ผู้นั้นขอจำนวนมากหรือบ่อยครั้งโดยไม่มีเหตุผลอันสมควร",
+          "meaning_th": "การขอจำนวนมากหรือขอบ่อยเป็นข้อยกเว้นในวรรคนี้เมื่อไม่มีเหตุผลอันสมควร",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "limits",
+          "label_th": "ข้อจำกัดการเปิดเผย",
+          "locator": "มาตรา ๙ วรรคหนึ่ง",
+          "query": "ภายใต้บังคับมาตรา"
+        },
+        {
+          "id": "record",
+          "label_th": "รายการที่กฎหมายระบุ",
+          "locator": "มาตรา ๙ (๓)",
+          "query": "โครงการ"
+        }
+      ],
+      "canonical_sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+      "originals": [
+        {
+          "sha256": "cba1104f402d60270e51d3f50fbc973e8dfe9646fcf8b064f09491b7eac97aa1",
+          "url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+          "retrieved_utc": "2026-11-25T13:09:59.510265+00:00"
+        }
+      ]
+    },
+    {
+      "id": "information-manual",
+      "family_id": "demo-th-information",
+      "family_title_th": "สิทธิขอข้อมูลข่าวสารของราชการ",
+      "title_th": "คู่มือที่กระทบสิทธิของเอกชน",
+      "question_th": "คู่มือเจ้าหน้าที่แบบใดอยู่ในรายการให้ตรวจดู และการเปิดเผยมีข้อจำกัดอย่างไร?",
+      "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+      "version": "BE-2540-oic",
+      "domain": "thai_law",
+      "data_origin": "public_source",
+      "issue_date": null,
+      "effective_date": null,
+      "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ภายใต้บังคับมาตรา ๑๔ และมาตรา ๑๕\nแผนงาน โครงการ และงบประมาณรายจ่ายประจำปีของปีที่กำลังดำเนินการ\nคู่มือหรือคำสั่งเกี่ยวกับวิธีปฏิบัติงานของเจ้าหน้าที่ของรัฐ ซึ่งมีผลกระทบถึงสิทธิหน้าที่ของเอกชน\nระบุข้อมูลข่าวสารที่ต้องการในลักษณะที่อาจเข้าใจได้ตามควร\nเว้นแต่ผู้นั้นขอจำนวนมากหรือบ่อยครั้งโดยไม่มีเหตุผลอันสมควร",
+      "units": [
+        {
+          "id": "s9",
+          "locator": "มาตรา ๙ วรรคหนึ่ง",
+          "quote": "ภายใต้บังคับมาตรา ๑๔ และมาตรา ๑๕",
+          "meaning_th": "มาตรา ๙ ให้จัดข้อมูลบางประเภทไว้ให้ตรวจดู โดยต้องอ่านประกอบข้อจำกัดในมาตรา ๑๔ และ ๑๕",
+          "kind": "section"
+        },
+        {
+          "id": "budget",
+          "locator": "มาตรา ๙ (๓)",
+          "quote": "แผนงาน โครงการ และงบประมาณรายจ่ายประจำปีของปีที่กำลังดำเนินการ",
+          "meaning_th": "รายการนี้ครอบคลุมแผนงาน โครงการ และงบประมาณรายจ่ายของปีที่กำลังดำเนินการ",
+          "kind": "section"
+        },
+        {
+          "id": "manual",
+          "locator": "มาตรา ๙ (๔)",
+          "quote": "คู่มือหรือคำสั่งเกี่ยวกับวิธีปฏิบัติงานของเจ้าหน้าที่ของรัฐ ซึ่งมีผลกระทบถึงสิทธิหน้าที่ของเอกชน",
+          "meaning_th": "รายการนี้เจาะจงคู่มือหรือคำสั่งที่กระทบสิทธิหน้าที่ของเอกชน",
+          "kind": "section"
+        },
+        {
+          "id": "request",
+          "locator": "มาตรา ๑๑ วรรคหนึ่ง · ความชัดเจน",
+          "quote": "ระบุข้อมูลข่าวสารที่ต้องการในลักษณะที่อาจเข้าใจได้ตามควร",
+          "meaning_th": "คำขอข้อมูลอื่นตามมาตรา ๑๑ ต้องอธิบายได้พอให้เข้าใจว่ากำลังขอข้อมูลใด",
+          "kind": "section"
+        },
+        {
+          "id": "repeat",
+          "locator": "มาตรา ๑๑ วรรคหนึ่ง · ข้อยกเว้น",
+          "quote": "เว้นแต่ผู้นั้นขอจำนวนมากหรือบ่อยครั้งโดยไม่มีเหตุผลอันสมควร",
+          "meaning_th": "การขอจำนวนมากหรือขอบ่อยเป็นข้อยกเว้นในวรรคนี้เมื่อไม่มีเหตุผลอันสมควร",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "limits",
+          "label_th": "ข้อจำกัดการเปิดเผย",
+          "locator": "มาตรา ๙ วรรคหนึ่ง",
+          "query": "ภายใต้บังคับมาตรา"
+        },
+        {
+          "id": "record",
+          "label_th": "รายการที่กฎหมายระบุ",
+          "locator": "มาตรา ๙ (๔)",
+          "query": "คู่มือ"
+        }
+      ],
+      "canonical_sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+      "originals": [
+        {
+          "sha256": "cba1104f402d60270e51d3f50fbc973e8dfe9646fcf8b064f09491b7eac97aa1",
+          "url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+          "retrieved_utc": "2026-11-25T13:09:59.510265+00:00"
+        }
+      ]
+    },
+    {
+      "id": "information-request",
+      "family_id": "demo-th-information",
+      "family_title_th": "สิทธิขอข้อมูลข่าวสารของราชการ",
+      "title_th": "คำขอข้อมูลอื่นจากหน่วยงาน",
+      "question_th": "ถ้าขอข้อมูลอื่นตามมาตรา ๑๑ ต้องระบุคำขออย่างไร และวรรคแรกระบุข้อยกเว้นเรื่องการขอซ้ำไว้อย่างไร?",
+      "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+      "version": "BE-2540-oic",
+      "domain": "thai_law",
+      "data_origin": "public_source",
+      "issue_date": null,
+      "effective_date": null,
+      "source_url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ภายใต้บังคับมาตรา ๑๔ และมาตรา ๑๕\nแผนงาน โครงการ และงบประมาณรายจ่ายประจำปีของปีที่กำลังดำเนินการ\nคู่มือหรือคำสั่งเกี่ยวกับวิธีปฏิบัติงานของเจ้าหน้าที่ของรัฐ ซึ่งมีผลกระทบถึงสิทธิหน้าที่ของเอกชน\nระบุข้อมูลข่าวสารที่ต้องการในลักษณะที่อาจเข้าใจได้ตามควร\nเว้นแต่ผู้นั้นขอจำนวนมากหรือบ่อยครั้งโดยไม่มีเหตุผลอันสมควร",
+      "units": [
+        {
+          "id": "s9",
+          "locator": "มาตรา ๙ วรรคหนึ่ง",
+          "quote": "ภายใต้บังคับมาตรา ๑๔ และมาตรา ๑๕",
+          "meaning_th": "มาตรา ๙ ให้จัดข้อมูลบางประเภทไว้ให้ตรวจดู โดยต้องอ่านประกอบข้อจำกัดในมาตรา ๑๔ และ ๑๕",
+          "kind": "section"
+        },
+        {
+          "id": "budget",
+          "locator": "มาตรา ๙ (๓)",
+          "quote": "แผนงาน โครงการ และงบประมาณรายจ่ายประจำปีของปีที่กำลังดำเนินการ",
+          "meaning_th": "รายการนี้ครอบคลุมแผนงาน โครงการ และงบประมาณรายจ่ายของปีที่กำลังดำเนินการ",
+          "kind": "section"
+        },
+        {
+          "id": "manual",
+          "locator": "มาตรา ๙ (๔)",
+          "quote": "คู่มือหรือคำสั่งเกี่ยวกับวิธีปฏิบัติงานของเจ้าหน้าที่ของรัฐ ซึ่งมีผลกระทบถึงสิทธิหน้าที่ของเอกชน",
+          "meaning_th": "รายการนี้เจาะจงคู่มือหรือคำสั่งที่กระทบสิทธิหน้าที่ของเอกชน",
+          "kind": "section"
+        },
+        {
+          "id": "request",
+          "locator": "มาตรา ๑๑ วรรคหนึ่ง · ความชัดเจน",
+          "quote": "ระบุข้อมูลข่าวสารที่ต้องการในลักษณะที่อาจเข้าใจได้ตามควร",
+          "meaning_th": "คำขอข้อมูลอื่นตามมาตรา ๑๑ ต้องอธิบายได้พอให้เข้าใจว่ากำลังขอข้อมูลใด",
+          "kind": "section"
+        },
+        {
+          "id": "repeat",
+          "locator": "มาตรา ๑๑ วรรคหนึ่ง · ข้อยกเว้น",
+          "quote": "เว้นแต่ผู้นั้นขอจำนวนมากหรือบ่อยครั้งโดยไม่มีเหตุผลอันสมควร",
+          "meaning_th": "การขอจำนวนมากหรือขอบ่อยเป็นข้อยกเว้นในวรรคนี้เมื่อไม่มีเหตุผลอันสมควร",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "description",
+          "label_th": "รายละเอียดคำขอ",
+          "locator": "มาตรา ๑๑ วรรคหนึ่ง · ความชัดเจน",
+          "query": "ระบุข้อมูลข่าวสาร"
+        },
+        {
+          "id": "exception",
+          "label_th": "ข้อยกเว้นตามตัวบท",
+          "locator": "มาตรา ๑๑ วรรคหนึ่ง · ข้อยกเว้น",
+          "query": "บ่อยครั้ง"
+        }
+      ],
+      "canonical_sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+      "originals": [
+        {
+          "sha256": "cba1104f402d60270e51d3f50fbc973e8dfe9646fcf8b064f09491b7eac97aa1",
+          "url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+          "retrieved_utc": "2026-11-25T13:09:59.510265+00:00"
+        }
+      ]
+    },
+    {
+      "family_id": "demo-th-healthlaw",
+      "family_title_th": "กฎหมายเครื่องมือแพทย์",
+      "source_id": "th-medical-device-act",
+      "version": "2551-gazette",
+      "issue_date": "2008-03-05",
+      "effective_date": "2008-03-06",
+      "id": "md-establishment-2551",
+      "title_th": "จดทะเบียนสถานประกอบการเครื่องมือแพทย์",
+      "question_th": "ใน พ.ร.บ. เครื่องมือแพทย์ฉบับ พ.ศ. ๒๕๕๑ มาตรา ๑๕ ผู้ประสงค์จะผลิตหรือนำเข้าต้องจดทะเบียนอะไร?",
+      "domain": "thai_law",
+      "data_origin": "public_source",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ผู้ใดประสงค์จะผลิตหรือนำเข้าเครื่องมือแพทย์ต้องจดทะเบียนสถานประกอบการต่อผู้อนุญาต\nภายใต้บังคับมาตรา ๕๖ การโฆษณาเครื่องมือแพทย์ต้องได้รับใบอนุญาตจากผู้อนุญาตก่อน\nห้ามมิให้ผู้ใดโฆษณาเครื่องมือแพทย์ตามมาตรา ๖ (๑๑) หรือเครื่องมือแพทย์ตามมาตรา ๔๖",
+      "units": [
+        {
+          "id": "establishment",
+          "locator": "มาตรา ๑๕ วรรคหนึ่ง",
+          "quote": "ผู้ใดประสงค์จะผลิตหรือนำเข้าเครื่องมือแพทย์ต้องจดทะเบียนสถานประกอบการต่อผู้อนุญาต",
+          "meaning_th": "ผู้ประสงค์จะผลิตหรือนำเข้าเครื่องมือแพทย์ต้องจดทะเบียนสถานประกอบการตามหลักทั่วไปของมาตรานี้ การจะใช้ข้อยกเว้นต้องตรวจกรณีและเงื่อนไขในมาตรา ๒๗ เพิ่มเติม",
+          "kind": "section"
+        },
+        {
+          "id": "ad-permit",
+          "locator": "มาตรา ๕๗ วรรคหนึ่ง",
+          "quote": "ภายใต้บังคับมาตรา ๕๖ การโฆษณาเครื่องมือแพทย์ต้องได้รับใบอนุญาตจากผู้อนุญาตก่อน",
+          "meaning_th": "ในฉบับ พ.ศ. ๒๕๕๑ มาตรานี้กำหนดหลักว่าต้องได้ใบอนุญาตก่อนโฆษณา และให้อ่านข้อห้ามในมาตรา ๕๖ ประกอบ",
+          "kind": "section",
+          "references": [
+            "มาตรา ๕๖"
+          ]
+        },
+        {
+          "id": "ad-prohibited",
+          "locator": "มาตรา ๕๖",
+          "quote": "ห้ามมิให้ผู้ใดโฆษณาเครื่องมือแพทย์ตามมาตรา ๖ (๑๑) หรือเครื่องมือแพทย์ตามมาตรา ๔๖",
+          "meaning_th": "ต้องตรวจว่าเครื่องมือแพทย์อยู่ในกลุ่มที่มาตรา ๕๖ ห้ามโฆษณาหรือไม่ การอ่านตัวบทนี้ยังระบุสถานะผลิตภัณฑ์รายชิ้นไม่ได้",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "establishment",
+          "label_th": "สิ่งที่ผู้ประสงค์จะผลิตหรือนำเข้าต้องจดทะเบียน",
+          "locator": "มาตรา ๑๕ วรรคหนึ่ง",
+          "query": "ผู้ใดประสงค์จะผลิตหรือนำเข้าเครื่องมือแพทย์ต้องจดทะเบียนสถานประกอบการต่อผู้อนุญาต"
+        }
+      ],
+      "source_url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+      "canonical_sha256": "5f51453b4bc3a4d580080cd0db6b1a6488d82a1b86598e63b7feb1178c0e7dcd",
+      "originals": [
+        {
+          "url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+          "sha256": "266495aa58749fbd4f499887c344d5664107f177181f2b8e70a8809116f24ac2",
+          "retrieved_utc": "2026-11-25T13:12:16.420905+00:00"
+        }
+      ]
+    },
+    {
+      "family_id": "demo-th-healthlaw",
+      "family_title_th": "กฎหมายเครื่องมือแพทย์",
+      "source_id": "th-medical-device-act",
+      "version": "2551-gazette",
+      "issue_date": "2008-03-05",
+      "effective_date": "2008-03-06",
+      "id": "md-advertising-2551",
+      "title_th": "ตรวจเงื่อนไขก่อนโฆษณาเครื่องมือแพทย์",
+      "question_th": "ในฉบับ พ.ศ. ๒๕๕๑ มาตรา ๕๗ กล่าวถึงใบอนุญาตใด และให้กลับไปดูข้อห้ามมาตราไหน?",
+      "domain": "thai_law",
+      "data_origin": "public_source",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ผู้ใดประสงค์จะผลิตหรือนำเข้าเครื่องมือแพทย์ต้องจดทะเบียนสถานประกอบการต่อผู้อนุญาต\nภายใต้บังคับมาตรา ๕๖ การโฆษณาเครื่องมือแพทย์ต้องได้รับใบอนุญาตจากผู้อนุญาตก่อน\nห้ามมิให้ผู้ใดโฆษณาเครื่องมือแพทย์ตามมาตรา ๖ (๑๑) หรือเครื่องมือแพทย์ตามมาตรา ๔๖",
+      "units": [
+        {
+          "id": "establishment",
+          "locator": "มาตรา ๑๕ วรรคหนึ่ง",
+          "quote": "ผู้ใดประสงค์จะผลิตหรือนำเข้าเครื่องมือแพทย์ต้องจดทะเบียนสถานประกอบการต่อผู้อนุญาต",
+          "meaning_th": "ผู้ประสงค์จะผลิตหรือนำเข้าเครื่องมือแพทย์ต้องจดทะเบียนสถานประกอบการตามหลักทั่วไปของมาตรานี้ การจะใช้ข้อยกเว้นต้องตรวจกรณีและเงื่อนไขในมาตรา ๒๗ เพิ่มเติม",
+          "kind": "section"
+        },
+        {
+          "id": "ad-permit",
+          "locator": "มาตรา ๕๗ วรรคหนึ่ง",
+          "quote": "ภายใต้บังคับมาตรา ๕๖ การโฆษณาเครื่องมือแพทย์ต้องได้รับใบอนุญาตจากผู้อนุญาตก่อน",
+          "meaning_th": "ในฉบับ พ.ศ. ๒๕๕๑ มาตรานี้กำหนดหลักว่าต้องได้ใบอนุญาตก่อนโฆษณา และให้อ่านข้อห้ามในมาตรา ๕๖ ประกอบ",
+          "kind": "section",
+          "references": [
+            "มาตรา ๕๖"
+          ]
+        },
+        {
+          "id": "ad-prohibited",
+          "locator": "มาตรา ๕๖",
+          "quote": "ห้ามมิให้ผู้ใดโฆษณาเครื่องมือแพทย์ตามมาตรา ๖ (๑๑) หรือเครื่องมือแพทย์ตามมาตรา ๔๖",
+          "meaning_th": "ต้องตรวจว่าเครื่องมือแพทย์อยู่ในกลุ่มที่มาตรา ๕๖ ห้ามโฆษณาหรือไม่ การอ่านตัวบทนี้ยังระบุสถานะผลิตภัณฑ์รายชิ้นไม่ได้",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "ad-permit",
+          "label_th": "ใบอนุญาตก่อนโฆษณา",
+          "locator": "มาตรา ๕๗ วรรคหนึ่ง",
+          "query": "ภายใต้บังคับมาตรา ๕๖ การโฆษณาเครื่องมือแพทย์ต้องได้รับใบอนุญาตจากผู้อนุญาตก่อน"
+        },
+        {
+          "id": "ad-prohibited",
+          "label_th": "ข้อห้ามที่มาตรา ๕๗ อ้างถึง",
+          "locator": "มาตรา ๕๖",
+          "query": "ห้ามมิให้ผู้ใดโฆษณาเครื่องมือแพทย์ตามมาตรา ๖ (๑๑) หรือเครื่องมือแพทย์ตามมาตรา ๔๖"
+        }
+      ],
+      "source_url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+      "canonical_sha256": "5f51453b4bc3a4d580080cd0db6b1a6488d82a1b86598e63b7feb1178c0e7dcd",
+      "originals": [
+        {
+          "url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+          "sha256": "266495aa58749fbd4f499887c344d5664107f177181f2b8e70a8809116f24ac2",
+          "retrieved_utc": "2026-11-25T13:12:16.420905+00:00"
+        }
+      ]
+    },
+    {
+      "family_id": "demo-th-drug-act",
+      "family_title_th": "กฎหมายยา",
+      "source_id": "th-drug-act",
+      "version": "fda-consolidation-2566",
+      "issue_date": null,
+      "effective_date": null,
+      "id": "drug-claims",
+      "title_th": "โฆษณาขายยาอ้างสรรพคุณได้แค่ไหน",
+      "question_th": "เมื่ออ่านโฆษณาขายยา มาตรา ๘๘ (๒) ให้สังเกตอะไรเกี่ยวกับข้อความบอกสรรพคุณ?",
+      "domain": "thai_law",
+      "data_origin": "public_source",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ไม่แสดงสรรพคุณยาอันเป็นเท็จหรือเกินความจริง\nได้รับอนุมัติข้อความ เสียง หรือภาพที่ใช้ในการโฆษณาจากผู้อนุญาต\nปฏิบัติตามเงื่อนไขที่ผู้อนุญาตกำหนด\nการโฆษณาขายยาทางวิทยุกระจายเสียง เครื่องขยายเสียง วิทยุโทรทัศน์ ทางฉายภาพหรือภาพยนตร์ หรือทางสิ่งพิมพ์จะต้อง",
+      "units": [
+        {
+          "id": "claim-honesty",
+          "locator": "มาตรา ๘๘ (๒)",
+          "quote": "ไม่แสดงสรรพคุณยาอันเป็นเท็จหรือเกินความจริง",
+          "meaning_th": "ในการโฆษณาขายยา ข้อนี้ห้ามกล่าวอ้างสรรพคุณที่เป็นเท็จหรือเกินจริง การพิจารณาข้อความโฆษณารายชิ้นต้องดูข้อความและหลักฐานของยานั้น",
+          "kind": "section"
+        },
+        {
+          "id": "print-approval",
+          "locator": "มาตรา ๘๘ ทวิ (๑)",
+          "quote": "ได้รับอนุมัติข้อความ เสียง หรือภาพที่ใช้ในการโฆษณาจากผู้อนุญาต",
+          "meaning_th": "สำหรับสื่อที่มาตรานี้ระบุ เช่น สิ่งพิมพ์ ผู้โฆษณาต้องได้รับอนุมัติข้อความ เสียง หรือภาพที่ใช้ในการโฆษณา",
+          "kind": "section"
+        },
+        {
+          "id": "print-conditions",
+          "locator": "มาตรา ๘๘ ทวิ (๒)",
+          "quote": "ปฏิบัติตามเงื่อนไขที่ผู้อนุญาตกำหนด",
+          "meaning_th": "เมื่อได้รับอนุมัติแล้ว ผู้โฆษณายังต้องปฏิบัติตามเงื่อนไขที่ผู้อนุญาตกำหนด",
+          "kind": "section"
+        },
+        {
+          "id": "specified-media",
+          "locator": "มาตรา ๘๘ ทวิ · สื่อที่ระบุ",
+          "quote": "การโฆษณาขายยาทางวิทยุกระจายเสียง เครื่องขยายเสียง วิทยุโทรทัศน์ ทางฉายภาพหรือภาพยนตร์ หรือทางสิ่งพิมพ์จะต้อง",
+          "meaning_th": "สิ่งพิมพ์เป็นหนึ่งในสื่อที่มาตรานี้ระบุ จึงต้องอ่านข้อ (๑) และ (๒) ประกอบ",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "claim-honesty",
+          "label_th": "ความถูกต้องของสรรพคุณที่กล่าวอ้าง",
+          "locator": "มาตรา ๘๘ (๒)",
+          "query": "ไม่แสดงสรรพคุณยาอันเป็นเท็จหรือเกินความจริง"
+        }
+      ],
+      "source_url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+      "canonical_sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+      "originals": [
+        {
+          "url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+          "sha256": "b0422dc4923fd7723579ef2f50c62237003cfbdfd3c85de980126ac928086938",
+          "retrieved_utc": "2026-11-25T13:12:16.348128+00:00"
+        }
+      ]
+    },
+    {
+      "family_id": "demo-th-drug-act",
+      "family_title_th": "กฎหมายยา",
+      "source_id": "th-drug-act",
+      "version": "fda-consolidation-2566",
+      "issue_date": null,
+      "effective_date": null,
+      "id": "drug-print",
+      "title_th": "โฆษณาขายยาในสื่อสิ่งพิมพ์",
+      "question_th": "สำหรับการโฆษณาขายยาทางสิ่งพิมพ์ มาตรา ๘๘ ทวิ (๑) และ (๒) กำหนดสองเรื่องอะไร?",
+      "domain": "thai_law",
+      "data_origin": "public_source",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ไม่แสดงสรรพคุณยาอันเป็นเท็จหรือเกินความจริง\nได้รับอนุมัติข้อความ เสียง หรือภาพที่ใช้ในการโฆษณาจากผู้อนุญาต\nปฏิบัติตามเงื่อนไขที่ผู้อนุญาตกำหนด\nการโฆษณาขายยาทางวิทยุกระจายเสียง เครื่องขยายเสียง วิทยุโทรทัศน์ ทางฉายภาพหรือภาพยนตร์ หรือทางสิ่งพิมพ์จะต้อง",
+      "units": [
+        {
+          "id": "claim-honesty",
+          "locator": "มาตรา ๘๘ (๒)",
+          "quote": "ไม่แสดงสรรพคุณยาอันเป็นเท็จหรือเกินความจริง",
+          "meaning_th": "ในการโฆษณาขายยา ข้อนี้ห้ามกล่าวอ้างสรรพคุณที่เป็นเท็จหรือเกินจริง การพิจารณาข้อความโฆษณารายชิ้นต้องดูข้อความและหลักฐานของยานั้น",
+          "kind": "section"
+        },
+        {
+          "id": "print-approval",
+          "locator": "มาตรา ๘๘ ทวิ (๑)",
+          "quote": "ได้รับอนุมัติข้อความ เสียง หรือภาพที่ใช้ในการโฆษณาจากผู้อนุญาต",
+          "meaning_th": "สำหรับสื่อที่มาตรานี้ระบุ เช่น สิ่งพิมพ์ ผู้โฆษณาต้องได้รับอนุมัติข้อความ เสียง หรือภาพที่ใช้ในการโฆษณา",
+          "kind": "section"
+        },
+        {
+          "id": "print-conditions",
+          "locator": "มาตรา ๘๘ ทวิ (๒)",
+          "quote": "ปฏิบัติตามเงื่อนไขที่ผู้อนุญาตกำหนด",
+          "meaning_th": "เมื่อได้รับอนุมัติแล้ว ผู้โฆษณายังต้องปฏิบัติตามเงื่อนไขที่ผู้อนุญาตกำหนด",
+          "kind": "section"
+        },
+        {
+          "id": "specified-media",
+          "locator": "มาตรา ๘๘ ทวิ · สื่อที่ระบุ",
+          "quote": "การโฆษณาขายยาทางวิทยุกระจายเสียง เครื่องขยายเสียง วิทยุโทรทัศน์ ทางฉายภาพหรือภาพยนตร์ หรือทางสิ่งพิมพ์จะต้อง",
+          "meaning_th": "สิ่งพิมพ์เป็นหนึ่งในสื่อที่มาตรานี้ระบุ จึงต้องอ่านข้อ (๑) และ (๒) ประกอบ",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "specified-media",
+          "label_th": "สื่อที่ตัวบทครอบคลุม",
+          "locator": "มาตรา ๘๘ ทวิ · สื่อที่ระบุ",
+          "query": "การโฆษณาขายยาทางวิทยุกระจายเสียง เครื่องขยายเสียง วิทยุโทรทัศน์ ทางฉายภาพหรือภาพยนตร์ หรือทางสิ่งพิมพ์จะต้อง"
+        },
+        {
+          "id": "print-approval",
+          "label_th": "ข้อความ เสียง หรือภาพที่ใช้โฆษณา",
+          "locator": "มาตรา ๘๘ ทวิ (๑)",
+          "query": "ได้รับอนุมัติข้อความ เสียง หรือภาพที่ใช้ในการโฆษณาจากผู้อนุญาต"
+        },
+        {
+          "id": "print-conditions",
+          "label_th": "เงื่อนไขของผู้อนุญาต",
+          "locator": "มาตรา ๘๘ ทวิ (๒)",
+          "query": "ปฏิบัติตามเงื่อนไขที่ผู้อนุญาตกำหนด"
+        }
+      ],
+      "source_url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+      "canonical_sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+      "originals": [
+        {
+          "url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+          "sha256": "b0422dc4923fd7723579ef2f50c62237003cfbdfd3c85de980126ac928086938",
+          "retrieved_utc": "2026-11-25T13:12:16.348128+00:00"
+        }
+      ]
+    },
+    {
+      "family_id": "demo-th-national-health",
+      "family_title_th": "สิทธิด้านสุขภาพ",
+      "source_id": "th-national-health-act",
+      "version": "2550-gazette",
+      "issue_date": "2007-03-19",
+      "effective_date": "2007-03-20",
+      "id": "health-confidentiality",
+      "title_th": "ก่อนเปิดเผยข้อมูลสุขภาพ",
+      "question_th": "มาตรา ๗ จัดให้ข้อมูลสุขภาพเป็นข้อมูลประเภทใด และระบุเงื่อนไขใดเกี่ยวกับการเปิดเผย?",
+      "domain": "thai_law",
+      "data_origin": "public_source",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ข้อมูลด้านสุขภาพของบุคคล เป็นความลับส่วนบุคคล ผู้ใดจะนำไปเปิดเผยในประการที่น่าจะทำให้บุคคลนั้นเสียหายไม่ได้\nเว้นแต่การเปิดเผยนั้นเป็นไปตามความประสงค์ของบุคคลนั้นโดยตรง หรือมีกฎหมายเฉพาะบัญญัติให้ต้องเปิดเผย\nในการบริการสาธารณสุข บุคลากรด้านสาธารณสุขต้องแจ้งข้อมูลด้านสุขภาพที่เกี่ยวข้องกับการให้บริการให้ผู้รับบริการทราบอย่างเพียงพอที่ผู้รับบริการจะใช้ประกอบการตัดสินใจในการรับหรือไม่รับบริการใด\nผู้รับบริการอยู่ในภาวะที่เสี่ยงอันตรายถึงชีวิตและมีความจำเป็นต้องให้ความช่วยเหลือเป็นการรีบด่วน",
+      "units": [
+        {
+          "id": "confidential",
+          "locator": "มาตรา ๗ · ข้อมูลส่วนบุคคล",
+          "quote": "ข้อมูลด้านสุขภาพของบุคคล เป็นความลับส่วนบุคคล ผู้ใดจะนำไปเปิดเผยในประการที่น่าจะทำให้บุคคลนั้นเสียหายไม่ได้",
+          "meaning_th": "มาตรา ๗ วางหลักว่าข้อมูลสุขภาพเป็นความลับ และคุ้มครองจากการเปิดเผยที่น่าจะทำให้เจ้าของข้อมูลเสียหาย",
+          "kind": "section"
+        },
+        {
+          "id": "disclosure",
+          "locator": "มาตรา ๗ · เงื่อนไขการเปิดเผย",
+          "quote": "เว้นแต่การเปิดเผยนั้นเป็นไปตามความประสงค์ของบุคคลนั้นโดยตรง หรือมีกฎหมายเฉพาะบัญญัติให้ต้องเปิดเผย",
+          "meaning_th": "ข้อยกเว้นในข้อความนี้คือการเปิดเผยตามความประสงค์โดยตรงของเจ้าของข้อมูล หรือเมื่อกฎหมายเฉพาะกำหนดให้ต้องเปิดเผย",
+          "kind": "section"
+        },
+        {
+          "id": "informed-choice",
+          "locator": "มาตรา ๘ วรรคหนึ่ง",
+          "quote": "ในการบริการสาธารณสุข บุคลากรด้านสาธารณสุขต้องแจ้งข้อมูลด้านสุขภาพที่เกี่ยวข้องกับการให้บริการให้ผู้รับบริการทราบอย่างเพียงพอที่ผู้รับบริการจะใช้ประกอบการตัดสินใจในการรับหรือไม่รับบริการใด",
+          "meaning_th": "บุคลากรด้านสาธารณสุขต้องแจ้งข้อมูลสุขภาพที่เกี่ยวกับบริการให้เพียงพอสำหรับตัดสินใจรับหรือปฏิเสธบริการ มาตรา ๘ วรรคสามระบุกรณียกเว้นไว้",
+          "kind": "section"
+        },
+        {
+          "id": "urgent",
+          "locator": "มาตรา ๘ วรรคสาม (๑)",
+          "quote": "ผู้รับบริการอยู่ในภาวะที่เสี่ยงอันตรายถึงชีวิตและมีความจำเป็นต้องให้ความช่วยเหลือเป็นการรีบด่วน",
+          "meaning_th": "หนึ่งในกรณียกเว้นของวรรคหนึ่งต้องมีทั้งความเสี่ยงถึงชีวิตและความจำเป็นต้องช่วยโดยรีบด่วน วรรคสามยังมีข้อ (๒) สำหรับอีกกรณีหนึ่ง",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "confidential",
+          "label_th": "สถานะของข้อมูลสุขภาพ",
+          "locator": "มาตรา ๗ · ข้อมูลส่วนบุคคล",
+          "query": "ข้อมูลด้านสุขภาพของบุคคล เป็นความลับส่วนบุคคล ผู้ใดจะนำไปเปิดเผยในประการที่น่าจะทำให้บุคคลนั้นเสียหายไม่ได้"
+        },
+        {
+          "id": "disclosure",
+          "label_th": "ข้อยกเว้นที่ระบุในตัวบท",
+          "locator": "มาตรา ๗ · เงื่อนไขการเปิดเผย",
+          "query": "เว้นแต่การเปิดเผยนั้นเป็นไปตามความประสงค์ของบุคคลนั้นโดยตรง หรือมีกฎหมายเฉพาะบัญญัติให้ต้องเปิดเผย"
+        }
+      ],
+      "source_url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+      "canonical_sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+      "originals": [
+        {
+          "url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+          "sha256": "aa102590e3eeac4c4f87feee6c87e1e80d44cbe7f5a6e4762d99c5d04d6036f9",
+          "retrieved_utc": "2026-11-25T13:12:16.148394+00:00"
+        }
+      ]
+    },
+    {
+      "family_id": "demo-th-national-health",
+      "family_title_th": "สิทธิด้านสุขภาพ",
+      "source_id": "th-national-health-act",
+      "version": "2550-gazette",
+      "issue_date": "2007-03-19",
+      "effective_date": "2007-03-20",
+      "id": "health-informed-choice",
+      "title_th": "ข้อมูลก่อนตัดสินใจรับบริการ",
+      "question_th": "มาตรา ๘ กำหนดให้แจ้งข้อมูลเพื่ออะไร และวรรคสาม (๑) กล่าวถึงเหตุเร่งด่วนแบบใด?",
+      "domain": "thai_law",
+      "data_origin": "public_source",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "text": "ข้อมูลด้านสุขภาพของบุคคล เป็นความลับส่วนบุคคล ผู้ใดจะนำไปเปิดเผยในประการที่น่าจะทำให้บุคคลนั้นเสียหายไม่ได้\nเว้นแต่การเปิดเผยนั้นเป็นไปตามความประสงค์ของบุคคลนั้นโดยตรง หรือมีกฎหมายเฉพาะบัญญัติให้ต้องเปิดเผย\nในการบริการสาธารณสุข บุคลากรด้านสาธารณสุขต้องแจ้งข้อมูลด้านสุขภาพที่เกี่ยวข้องกับการให้บริการให้ผู้รับบริการทราบอย่างเพียงพอที่ผู้รับบริการจะใช้ประกอบการตัดสินใจในการรับหรือไม่รับบริการใด\nผู้รับบริการอยู่ในภาวะที่เสี่ยงอันตรายถึงชีวิตและมีความจำเป็นต้องให้ความช่วยเหลือเป็นการรีบด่วน",
+      "units": [
+        {
+          "id": "confidential",
+          "locator": "มาตรา ๗ · ข้อมูลส่วนบุคคล",
+          "quote": "ข้อมูลด้านสุขภาพของบุคคล เป็นความลับส่วนบุคคล ผู้ใดจะนำไปเปิดเผยในประการที่น่าจะทำให้บุคคลนั้นเสียหายไม่ได้",
+          "meaning_th": "มาตรา ๗ วางหลักว่าข้อมูลสุขภาพเป็นความลับ และคุ้มครองจากการเปิดเผยที่น่าจะทำให้เจ้าของข้อมูลเสียหาย",
+          "kind": "section"
+        },
+        {
+          "id": "disclosure",
+          "locator": "มาตรา ๗ · เงื่อนไขการเปิดเผย",
+          "quote": "เว้นแต่การเปิดเผยนั้นเป็นไปตามความประสงค์ของบุคคลนั้นโดยตรง หรือมีกฎหมายเฉพาะบัญญัติให้ต้องเปิดเผย",
+          "meaning_th": "ข้อยกเว้นในข้อความนี้คือการเปิดเผยตามความประสงค์โดยตรงของเจ้าของข้อมูล หรือเมื่อกฎหมายเฉพาะกำหนดให้ต้องเปิดเผย",
+          "kind": "section"
+        },
+        {
+          "id": "informed-choice",
+          "locator": "มาตรา ๘ วรรคหนึ่ง",
+          "quote": "ในการบริการสาธารณสุข บุคลากรด้านสาธารณสุขต้องแจ้งข้อมูลด้านสุขภาพที่เกี่ยวข้องกับการให้บริการให้ผู้รับบริการทราบอย่างเพียงพอที่ผู้รับบริการจะใช้ประกอบการตัดสินใจในการรับหรือไม่รับบริการใด",
+          "meaning_th": "บุคลากรด้านสาธารณสุขต้องแจ้งข้อมูลสุขภาพที่เกี่ยวกับบริการให้เพียงพอสำหรับตัดสินใจรับหรือปฏิเสธบริการ มาตรา ๘ วรรคสามระบุกรณียกเว้นไว้",
+          "kind": "section"
+        },
+        {
+          "id": "urgent",
+          "locator": "มาตรา ๘ วรรคสาม (๑)",
+          "quote": "ผู้รับบริการอยู่ในภาวะที่เสี่ยงอันตรายถึงชีวิตและมีความจำเป็นต้องให้ความช่วยเหลือเป็นการรีบด่วน",
+          "meaning_th": "หนึ่งในกรณียกเว้นของวรรคหนึ่งต้องมีทั้งความเสี่ยงถึงชีวิตและความจำเป็นต้องช่วยโดยรีบด่วน วรรคสามยังมีข้อ (๒) สำหรับอีกกรณีหนึ่ง",
+          "kind": "section"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "informed-choice",
+          "label_th": "ข้อมูลสำหรับผู้รับบริการ",
+          "locator": "มาตรา ๘ วรรคหนึ่ง",
+          "query": "ในการบริการสาธารณสุข บุคลากรด้านสาธารณสุขต้องแจ้งข้อมูลด้านสุขภาพที่เกี่ยวข้องกับการให้บริการให้ผู้รับบริการทราบอย่างเพียงพอที่ผู้รับบริการจะใช้ประกอบการตัดสินใจในการรับหรือไม่รับบริการใด"
+        },
+        {
+          "id": "urgent",
+          "label_th": "ตัวอย่างกรณียกเว้นเมื่อจำเป็นต้องช่วยชีวิต",
+          "locator": "มาตรา ๘ วรรคสาม (๑)",
+          "query": "ผู้รับบริการอยู่ในภาวะที่เสี่ยงอันตรายถึงชีวิตและมีความจำเป็นต้องให้ความช่วยเหลือเป็นการรีบด่วน"
+        }
+      ],
+      "source_url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+      "canonical_sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+      "originals": [
+        {
+          "url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+          "sha256": "aa102590e3eeac4c4f87feee6c87e1e80d44cbe7f5a6e4762d99c5d04d6036f9",
+          "retrieved_utc": "2026-11-25T13:12:16.148394+00:00"
+        }
+      ]
+    },
+    {
+      "id": "pharma-15",
+      "family_id": "demo-en-pharma",
+      "family_title_th": "ตำรับยากลบรส",
+      "title_th": "ตำรับยากลบรส · ข้อ 15 · สารกันติด",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "source_id": "US20120276199A1",
+      "version": "A1-2012-11-01",
+      "issue_date": "2012-11-01",
+      "effective_date": null,
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+      "originals": [
+        {
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199",
+          "sha256": "dc0556911254dfa0c087aeded1eb39f6d34a61cdd6e12d919b4f54bc5a0e1a01",
+          "retrieved_utc": "2026-11-25T13:07:45.302942+00:00"
+        },
+        {
+          "url": "https://patents.google.com/patent/US20120276199A1/en",
+          "sha256": "191334cab8f7db5fd103d38bf35dbde1c4287acb138df930dae3953d44076309",
+          "retrieved_utc": "2026-11-25T13:07:41.486379+00:00"
+        }
+      ],
+      "canonical_sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+      "text": "1. A taste masked pharmaceutical formulation in a solid dosage form comprising an intragranular portion and an extragranular portion, wherein said intragranular portion comprises an active agent, at least two granulating aids in a ratio ranging from about 1:10 to about 10:1, and optionally one or more other pharmaceutically acceptable excipients; and said extragranular portion comprises an effervescent couple and one or more additional pharmaceutically acceptable excipients, wherein the effervescent couple consists essentially of an acidic substance and a basic substance in which the acidic substance is present in a molar excess amount.\n2. The taste masked pharmaceutical formulation of claim 1, wherein intragranular portion contains at least one antiadherent.\n15. The taste masked pharmaceutical formulation of claim 2, wherein the antiadherent is magnesium stearate.\n17. The taste masked pharmaceutical formulation of claim 1, wherein the intragranular portion comprises of at least one water soluble diluent or mixtures thereof.\n18. The taste masked pharmaceutical formulation of claim 17, wherein the diluent is selected from sugar alcohols, cellulose compounds which include crystalline celluloses and powdered celluloses, lactose, starch, and mixtures thereof.",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "units": [
+        {
+          "id": "c1",
+          "locator": "Claim 1",
+          "kind": "claim",
+          "quote": "1. A taste masked pharmaceutical formulation in a solid dosage form comprising an intragranular portion and an extragranular portion",
+          "meaning_th": "ข้อ 1 กล่าวถึงตำรับยาชนิดของแข็งที่มีทั้งส่วนในแกรนูลและส่วนนอกแกรนูล นี่เป็นลักษณะร่วมที่เลือกมาอ่านจากข้อหลัก"
+        },
+        {
+          "id": "c2",
+          "locator": "Claim 2",
+          "kind": "claim",
+          "quote": "2. The taste masked pharmaceutical formulation of claim 1, wherein intragranular portion contains at least one antiadherent.",
+          "meaning_th": "ข้อ 2 อ้างถึงข้อ 1 และกำหนดให้ส่วนในแกรนูลมีสารกันติดอย่างน้อยหนึ่งชนิด",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "c15",
+          "locator": "Claim 15",
+          "kind": "claim",
+          "quote": "15. The taste masked pharmaceutical formulation of claim 2, wherein the antiadherent is magnesium stearate.",
+          "meaning_th": "ข้อ 15 อ้างถึงข้อ 2 แล้วระบุชนิดของสารกันติดว่าเป็นแมกนีเซียมสเตียเรต",
+          "parent": "Claim 2"
+        },
+        {
+          "id": "c17",
+          "locator": "Claim 17",
+          "kind": "claim",
+          "quote": "17. The taste masked pharmaceutical formulation of claim 1, wherein the intragranular portion comprises of at least one water soluble diluent or mixtures thereof.",
+          "meaning_th": "ข้อ 17 อ้างถึงข้อ 1 แล้วเพิ่มเงื่อนไขให้ส่วนในแกรนูลมีสารเพิ่มปริมาณที่ละลายน้ำได้อย่างน้อยหนึ่งชนิด หรือสารดังกล่าวผสมกัน",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "c18",
+          "locator": "Claim 18",
+          "kind": "claim",
+          "quote": "18. The taste masked pharmaceutical formulation of claim 17, wherein the diluent is selected from sugar alcohols, cellulose compounds which include crystalline celluloses and powdered celluloses, lactose, starch, and mixtures thereof.",
+          "meaning_th": "ข้อ 18 อ้างถึงข้อ 17 และระบุรายการสารเพิ่มปริมาณที่เลือกได้ ได้แก่ น้ำตาลแอลกอฮอล์ สารประกอบเซลลูโลสซึ่งรวมถึงเซลลูโลสชนิดผลึกและชนิดผง แลคโตส แป้ง หรือส่วนผสมของรายการเหล่านี้",
+          "parent": "Claim 17"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "base",
+          "label_th": "ลักษณะในข้อหลัก",
+          "locator": "Claim 1",
+          "query": "solid dosage form"
+        },
+        {
+          "id": "parent",
+          "label_th": "เงื่อนไขที่สืบทอด",
+          "locator": "Claim 2",
+          "query": "antiadherent",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "added",
+          "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+          "locator": "Claim 15",
+          "query": "magnesium stearate",
+          "parent": "Claim 2"
+        }
+      ],
+      "publication_claim_count": 36,
+      "selected_claim_numbers": [
+        1,
+        2,
+        15,
+        17,
+        18
+      ],
+      "question_th": "ข้อ 15 ระบุสารกันติดชนิดใด และสืบเงื่อนไขมาจากข้อใดบ้าง?"
+    },
+    {
+      "id": "pharma-18",
+      "family_id": "demo-en-pharma",
+      "family_title_th": "ตำรับยากลบรส",
+      "title_th": "ตำรับยากลบรส · ข้อ 18 · สารเพิ่มปริมาณ",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "source_id": "US20120276199A1",
+      "version": "A1-2012-11-01",
+      "issue_date": "2012-11-01",
+      "effective_date": null,
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199#page=17",
+      "originals": [
+        {
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199",
+          "sha256": "dc0556911254dfa0c087aeded1eb39f6d34a61cdd6e12d919b4f54bc5a0e1a01",
+          "retrieved_utc": "2026-11-25T13:07:45.302942+00:00"
+        },
+        {
+          "url": "https://patents.google.com/patent/US20120276199A1/en",
+          "sha256": "191334cab8f7db5fd103d38bf35dbde1c4287acb138df930dae3953d44076309",
+          "retrieved_utc": "2026-11-25T13:07:41.486379+00:00"
+        }
+      ],
+      "canonical_sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+      "text": "1. A taste masked pharmaceutical formulation in a solid dosage form comprising an intragranular portion and an extragranular portion, wherein said intragranular portion comprises an active agent, at least two granulating aids in a ratio ranging from about 1:10 to about 10:1, and optionally one or more other pharmaceutically acceptable excipients; and said extragranular portion comprises an effervescent couple and one or more additional pharmaceutically acceptable excipients, wherein the effervescent couple consists essentially of an acidic substance and a basic substance in which the acidic substance is present in a molar excess amount.\n2. The taste masked pharmaceutical formulation of claim 1, wherein intragranular portion contains at least one antiadherent.\n15. The taste masked pharmaceutical formulation of claim 2, wherein the antiadherent is magnesium stearate.\n17. The taste masked pharmaceutical formulation of claim 1, wherein the intragranular portion comprises of at least one water soluble diluent or mixtures thereof.\n18. The taste masked pharmaceutical formulation of claim 17, wherein the diluent is selected from sugar alcohols, cellulose compounds which include crystalline celluloses and powdered celluloses, lactose, starch, and mixtures thereof.",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "units": [
+        {
+          "id": "c1",
+          "locator": "Claim 1",
+          "kind": "claim",
+          "quote": "1. A taste masked pharmaceutical formulation in a solid dosage form comprising an intragranular portion and an extragranular portion",
+          "meaning_th": "ข้อ 1 กล่าวถึงตำรับยาชนิดของแข็งที่มีทั้งส่วนในแกรนูลและส่วนนอกแกรนูล นี่เป็นลักษณะร่วมที่เลือกมาอ่านจากข้อหลัก"
+        },
+        {
+          "id": "c2",
+          "locator": "Claim 2",
+          "kind": "claim",
+          "quote": "2. The taste masked pharmaceutical formulation of claim 1, wherein intragranular portion contains at least one antiadherent.",
+          "meaning_th": "ข้อ 2 อ้างถึงข้อ 1 และกำหนดให้ส่วนในแกรนูลมีสารกันติดอย่างน้อยหนึ่งชนิด",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "c15",
+          "locator": "Claim 15",
+          "kind": "claim",
+          "quote": "15. The taste masked pharmaceutical formulation of claim 2, wherein the antiadherent is magnesium stearate.",
+          "meaning_th": "ข้อ 15 อ้างถึงข้อ 2 แล้วระบุชนิดของสารกันติดว่าเป็นแมกนีเซียมสเตียเรต",
+          "parent": "Claim 2"
+        },
+        {
+          "id": "c17",
+          "locator": "Claim 17",
+          "kind": "claim",
+          "quote": "17. The taste masked pharmaceutical formulation of claim 1, wherein the intragranular portion comprises of at least one water soluble diluent or mixtures thereof.",
+          "meaning_th": "ข้อ 17 อ้างถึงข้อ 1 แล้วเพิ่มเงื่อนไขให้ส่วนในแกรนูลมีสารเพิ่มปริมาณที่ละลายน้ำได้อย่างน้อยหนึ่งชนิด หรือสารดังกล่าวผสมกัน",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "c18",
+          "locator": "Claim 18",
+          "kind": "claim",
+          "quote": "18. The taste masked pharmaceutical formulation of claim 17, wherein the diluent is selected from sugar alcohols, cellulose compounds which include crystalline celluloses and powdered celluloses, lactose, starch, and mixtures thereof.",
+          "meaning_th": "ข้อ 18 อ้างถึงข้อ 17 และระบุรายการสารเพิ่มปริมาณที่เลือกได้ ได้แก่ น้ำตาลแอลกอฮอล์ สารประกอบเซลลูโลสซึ่งรวมถึงเซลลูโลสชนิดผลึกและชนิดผง แลคโตส แป้ง หรือส่วนผสมของรายการเหล่านี้",
+          "parent": "Claim 17"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "base",
+          "label_th": "ลักษณะในข้อหลัก",
+          "locator": "Claim 1",
+          "query": "solid dosage form"
+        },
+        {
+          "id": "parent",
+          "label_th": "เงื่อนไขที่สืบทอด",
+          "locator": "Claim 17",
+          "query": "water soluble diluent",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "added",
+          "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+          "locator": "Claim 18",
+          "query": "lactose starch",
+          "parent": "Claim 17"
+        }
+      ],
+      "publication_claim_count": 36,
+      "selected_claim_numbers": [
+        1,
+        2,
+        15,
+        17,
+        18
+      ],
+      "question_th": "ข้อ 18 ระบุสารเพิ่มปริมาณกลุ่มใด และสืบเงื่อนไขมาจากข้อใดบ้าง?"
+    },
+    {
+      "id": "inhaler-10",
+      "family_id": "demo-en-inhaler",
+      "family_title_th": "เครื่องสูดยาผงแห้ง",
+      "title_th": "เครื่องสูดยาผงแห้ง · ข้อ 10 · ช่องออกร่วม",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "source_id": "US20120145150A1",
+      "version": "A1-2012-06-14",
+      "issue_date": "2012-06-14",
+      "effective_date": null,
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+      "originals": [
+        {
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150",
+          "sha256": "7c70da07de773c1b873157f206d52ab97e2ef0fb9aacfa2b2de8bdc5e575b490",
+          "retrieved_utc": "2026-11-25T13:09:20.838427+00:00"
+        },
+        {
+          "url": "https://patents.google.com/patent/US20120145150A1/en",
+          "sha256": "8352635b2b27c73da341e8e92a72e18580c8950ca0e44729d6dea47b20883bb8",
+          "retrieved_utc": "2026-11-25T13:09:16.461394+00:00"
+        }
+      ],
+      "canonical_sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+      "text": "1. A dry powder inhaler, comprising: an inlet channel through which air enters the inhaler; a chamber that receives air from the inlet channel, the chamber being of a size and shape to contain an actuator to which a powdered medicament is adhered; a retaining member disposed at an end of the chamber opposite the inlet channel, the retaining member having one or more openings sized to permit air and the powdered medicament to pass through the retaining member, and to prevent the actuator from passing through the retaining member; and an outlet channel through which air and the powdered medicament leave the inhaler to be delivered to a patient; wherein the geometry of the inhaler is such that a flow profile is generated within the chamber that causes the actuator to oscillate, thus detaching the powdered medicament from the surface of the actuator to be entrained by the air and delivered to the patient through the outlet channel.\n9. The dry powder inhaler of claim 1, wherein the inlet channel is a first inlet channel and the chamber is a first chamber, the dry powder inhaler further comprising a second inlet channel and a second chamber.\n10. The dry powder inhaler of claim 9, wherein air and powdered medicament leaving the first and second chambers are delivered to the outlet channel.\n11. The dry powder inhaler of claim 9, wherein the outlet channel is a first outlet channel, the dry powder inhaler further comprising a second outlet channel, and wherein air and powdered medicament leaving the first chamber are delivered to the first outlet channel, and air and powdered medicament leaving the second chamber are delivered to the second outlet channel.",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "units": [
+        {
+          "id": "c1",
+          "locator": "Claim 1",
+          "kind": "claim",
+          "quote": "wherein the geometry of the inhaler is such that a flow profile is generated within the chamber that causes the actuator to oscillate, thus detaching the powdered medicament from the surface of the actuator to be entrained by the air and delivered to the patient through the outlet channel.",
+          "meaning_th": "ข้อ 1 ระบุว่าอากาศที่ไหลในห้องทำให้ชิ้นส่วนที่มีผงยาเกาะอยู่สั่น ผงยาจึงหลุดและเคลื่อนไปกับอากาศทางช่องออก นี่เป็นส่วนหนึ่งของข้อหลัก"
+        },
+        {
+          "id": "c9",
+          "locator": "Claim 9",
+          "kind": "claim",
+          "quote": "9. The dry powder inhaler of claim 1, wherein the inlet channel is a first inlet channel and the chamber is a first chamber, the dry powder inhaler further comprising a second inlet channel and a second chamber.",
+          "meaning_th": "ข้อ 9 อ้างถึงข้อ 1 และเพิ่มช่องอากาศเข้าที่สองกับห้องที่สอง",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "c10",
+          "locator": "Claim 10",
+          "kind": "claim",
+          "quote": "10. The dry powder inhaler of claim 9, wherein air and powdered medicament leaving the first and second chambers are delivered to the outlet channel.",
+          "meaning_th": "ข้อ 10 อ้างถึงข้อ 9 และระบุว่าอากาศกับผงยาจากห้องทั้งสองเดินทางไปยังช่องออกที่กล่าวถึงร่วมกัน",
+          "parent": "Claim 9"
+        },
+        {
+          "id": "c11",
+          "locator": "Claim 11",
+          "kind": "claim",
+          "quote": "11. The dry powder inhaler of claim 9, wherein the outlet channel is a first outlet channel, the dry powder inhaler further comprising a second outlet channel, and wherein air and powdered medicament leaving the first chamber are delivered to the first outlet channel, and air and powdered medicament leaving the second chamber are delivered to the second outlet channel.",
+          "meaning_th": "ข้อ 11 อ้างถึงข้อ 9 เพิ่มช่องออกที่สอง และจับคู่ห้องแรกกับช่องออกแรก ห้องที่สองกับช่องออกที่สอง",
+          "parent": "Claim 9"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "base",
+          "label_th": "ลักษณะในข้อหลัก",
+          "locator": "Claim 1",
+          "query": "oscillate actuator"
+        },
+        {
+          "id": "parent",
+          "label_th": "เงื่อนไขที่สืบทอด",
+          "locator": "Claim 9",
+          "query": "second inlet channel",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "added",
+          "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+          "locator": "Claim 10",
+          "query": "leaving first second chambers",
+          "parent": "Claim 9"
+        }
+      ],
+      "publication_claim_count": 30,
+      "selected_claim_numbers": [
+        1,
+        9,
+        10,
+        11
+      ],
+      "question_th": "ข้อ 10 เชื่อมทางออกของห้องทั้งสองอย่างไร และสืบโครงสร้างใดจากข้อก่อนหน้า?"
+    },
+    {
+      "id": "inhaler-11",
+      "family_id": "demo-en-inhaler",
+      "family_title_th": "เครื่องสูดยาผงแห้ง",
+      "title_th": "เครื่องสูดยาผงแห้ง · ข้อ 11 · ช่องออกแยก",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "source_id": "US20120145150A1",
+      "version": "A1-2012-06-14",
+      "issue_date": "2012-06-14",
+      "effective_date": null,
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150#page=27",
+      "originals": [
+        {
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150",
+          "sha256": "7c70da07de773c1b873157f206d52ab97e2ef0fb9aacfa2b2de8bdc5e575b490",
+          "retrieved_utc": "2026-11-25T13:09:20.838427+00:00"
+        },
+        {
+          "url": "https://patents.google.com/patent/US20120145150A1/en",
+          "sha256": "8352635b2b27c73da341e8e92a72e18580c8950ca0e44729d6dea47b20883bb8",
+          "retrieved_utc": "2026-11-25T13:09:16.461394+00:00"
+        }
+      ],
+      "canonical_sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+      "text": "1. A dry powder inhaler, comprising: an inlet channel through which air enters the inhaler; a chamber that receives air from the inlet channel, the chamber being of a size and shape to contain an actuator to which a powdered medicament is adhered; a retaining member disposed at an end of the chamber opposite the inlet channel, the retaining member having one or more openings sized to permit air and the powdered medicament to pass through the retaining member, and to prevent the actuator from passing through the retaining member; and an outlet channel through which air and the powdered medicament leave the inhaler to be delivered to a patient; wherein the geometry of the inhaler is such that a flow profile is generated within the chamber that causes the actuator to oscillate, thus detaching the powdered medicament from the surface of the actuator to be entrained by the air and delivered to the patient through the outlet channel.\n9. The dry powder inhaler of claim 1, wherein the inlet channel is a first inlet channel and the chamber is a first chamber, the dry powder inhaler further comprising a second inlet channel and a second chamber.\n10. The dry powder inhaler of claim 9, wherein air and powdered medicament leaving the first and second chambers are delivered to the outlet channel.\n11. The dry powder inhaler of claim 9, wherein the outlet channel is a first outlet channel, the dry powder inhaler further comprising a second outlet channel, and wherein air and powdered medicament leaving the first chamber are delivered to the first outlet channel, and air and powdered medicament leaving the second chamber are delivered to the second outlet channel.",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "units": [
+        {
+          "id": "c1",
+          "locator": "Claim 1",
+          "kind": "claim",
+          "quote": "wherein the geometry of the inhaler is such that a flow profile is generated within the chamber that causes the actuator to oscillate, thus detaching the powdered medicament from the surface of the actuator to be entrained by the air and delivered to the patient through the outlet channel.",
+          "meaning_th": "ข้อ 1 ระบุว่าอากาศที่ไหลในห้องทำให้ชิ้นส่วนที่มีผงยาเกาะอยู่สั่น ผงยาจึงหลุดและเคลื่อนไปกับอากาศทางช่องออก นี่เป็นส่วนหนึ่งของข้อหลัก"
+        },
+        {
+          "id": "c9",
+          "locator": "Claim 9",
+          "kind": "claim",
+          "quote": "9. The dry powder inhaler of claim 1, wherein the inlet channel is a first inlet channel and the chamber is a first chamber, the dry powder inhaler further comprising a second inlet channel and a second chamber.",
+          "meaning_th": "ข้อ 9 อ้างถึงข้อ 1 และเพิ่มช่องอากาศเข้าที่สองกับห้องที่สอง",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "c10",
+          "locator": "Claim 10",
+          "kind": "claim",
+          "quote": "10. The dry powder inhaler of claim 9, wherein air and powdered medicament leaving the first and second chambers are delivered to the outlet channel.",
+          "meaning_th": "ข้อ 10 อ้างถึงข้อ 9 และระบุว่าอากาศกับผงยาจากห้องทั้งสองเดินทางไปยังช่องออกที่กล่าวถึงร่วมกัน",
+          "parent": "Claim 9"
+        },
+        {
+          "id": "c11",
+          "locator": "Claim 11",
+          "kind": "claim",
+          "quote": "11. The dry powder inhaler of claim 9, wherein the outlet channel is a first outlet channel, the dry powder inhaler further comprising a second outlet channel, and wherein air and powdered medicament leaving the first chamber are delivered to the first outlet channel, and air and powdered medicament leaving the second chamber are delivered to the second outlet channel.",
+          "meaning_th": "ข้อ 11 อ้างถึงข้อ 9 เพิ่มช่องออกที่สอง และจับคู่ห้องแรกกับช่องออกแรก ห้องที่สองกับช่องออกที่สอง",
+          "parent": "Claim 9"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "base",
+          "label_th": "ลักษณะในข้อหลัก",
+          "locator": "Claim 1",
+          "query": "oscillate actuator"
+        },
+        {
+          "id": "parent",
+          "label_th": "เงื่อนไขที่สืบทอด",
+          "locator": "Claim 9",
+          "query": "second inlet channel",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "added",
+          "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+          "locator": "Claim 11",
+          "query": "second outlet channel",
+          "parent": "Claim 9"
+        }
+      ],
+      "publication_claim_count": 30,
+      "selected_claim_numbers": [
+        1,
+        9,
+        10,
+        11
+      ],
+      "question_th": "ข้อ 11 แยกทางออกของห้องทั้งสองอย่างไร และสืบโครงสร้างใดจากข้อก่อนหน้า?"
+    },
+    {
+      "id": "blister-3",
+      "family_id": "demo-en-blister",
+      "family_title_th": "บรรจุภัณฑ์ยาแบบแผง",
+      "title_th": "บรรจุภัณฑ์ยาแบบแผง · ข้อ 3 · รอยตัดผ่านฟิล์ม",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "source_id": "US20070289893A1",
+      "version": "A1-2007-12-20",
+      "issue_date": "2007-12-20",
+      "effective_date": null,
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+      "originals": [
+        {
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893",
+          "sha256": "9d64d8c68ae358bb03de2c26a745a07f49c5af5539e11793148c947bf3d58709",
+          "retrieved_utc": "2026-11-25T13:09:18.336087+00:00"
+        },
+        {
+          "url": "https://patents.google.com/patent/US20070289893A1/en",
+          "sha256": "8395b67668d7d7ca74b62827667985b91a0f9713990999f31dc75111a8893c1c",
+          "retrieved_utc": "2026-11-25T13:09:16.080103+00:00"
+        }
+      ],
+      "canonical_sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+      "text": "1. A child-resistant blister package comprising: a first polymeric film defining a pocket for receiving a medicament therein; an impenetrable polymeric film sealed to said first polymeric film for sealing a medicament in said pocket; an unsealed area between said first polymeric film and said impenetrable polymeric film, said unsealed area extending along one edge of said blister pack; and a die cut extending at an acute angle to adjacent edges of said blister pack and having only one end intersecting and extending into said unsealed area and an opposite end extending toward one edge of said blister pack adjacent said edge on which said unsealed area is located, wherein said package can be opened by tearing the die cut to remove a corner of the blister pack to expose a tab which can be gripped for peeling the impenetrable polymeric film from said package to allow a medicament to be pushed through the foil layer.\n2. The package as defined in claim 1 wherein said die cut extends through said first polymeric film and said impenetrable polymeric film.\n3. The package as defined in claim 2 wherein said die cut terminates before reaching said one edge.\n7. A child-resistant blister package comprising: a first polymeric film defining a plurality of spaced-apart pockets for receiving medicaments therein; a foil layer coupled to said first polymeric film to enclose said pockets; a laminate including an impenetrable polymeric film sealed to said first polymeric film for sealing medicaments in said pockets; perforations formed through said first film and said laminate to allow separation of individual blister units; a plurality of unsealed areas between said first polymeric film and said laminate and located between pairs of adjacent blister units; and a die cut extending at an acute angle to adjacent edges of each blister unit and having only one end extending into said unsealed area and an opposite end extending toward one edge of said blister unit adjacent said edge on which said unsealed area is located, wherein said blister unit can be opened by tearing the die cut at the unsealed area to remove a corner of the blister unit to expose a tab which can be gripped for peeling the impenetrable polymeric film from said unit to allow a medicament to be pushed through the foil layer.\n8. The package as defined in claim 7 wherein said die cut extends through said first polymeric film and said laminate.\n9. The package as defined in claim 8 wherein said die cut terminates before reaching said one edge.",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "units": [
+        {
+          "id": "c1",
+          "locator": "Claim 1",
+          "kind": "claim",
+          "quote": "1. A child-resistant blister package comprising: a first polymeric film defining a pocket for receiving a medicament therein; an impenetrable polymeric film sealed to said first polymeric film for sealing a medicament in said pocket;",
+          "meaning_th": "ข้อ 1 ระบุฟิล์มพอลิเมอร์ที่ขึ้นรูปเป็นช่องบรรจุยา และฟิล์มพอลิเมอร์อีกชั้นที่ปิดผนึกกับชั้นแรก ข้อความที่เลือกแสดงองค์ประกอบบางส่วนของข้อหลัก"
+        },
+        {
+          "id": "c2",
+          "locator": "Claim 2",
+          "kind": "claim",
+          "quote": "2. The package as defined in claim 1 wherein said die cut extends through said first polymeric film and said impenetrable polymeric film.",
+          "meaning_th": "ข้อ 2 อ้างถึงข้อ 1 และกำหนดให้แนวตัดทะลุฟิล์มพอลิเมอร์ชั้นแรกและฟิล์มพอลิเมอร์ชั้นที่กดทะลุไม่ได้",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "c3",
+          "locator": "Claim 3",
+          "kind": "claim",
+          "quote": "3. The package as defined in claim 2 wherein said die cut terminates before reaching said one edge.",
+          "meaning_th": "ข้อ 3 อ้างถึงข้อ 2 และเพิ่มเงื่อนไขว่าแนวตัดสิ้นสุดก่อนถึงขอบด้านที่ระบุ",
+          "parent": "Claim 2"
+        },
+        {
+          "id": "c7",
+          "locator": "Claim 7",
+          "kind": "claim",
+          "quote": "7. A child-resistant blister package comprising: a first polymeric film defining a plurality of spaced-apart pockets for receiving medicaments therein; a foil layer coupled to said first polymeric film to enclose said pockets; a laminate including an impenetrable polymeric film sealed to said first polymeric film for sealing medicaments in said pockets; perforations formed through said first film and said laminate to allow separation of individual blister units;",
+          "meaning_th": "ข้อ 7 กล่าวถึงช่องบรรจุยาหลายช่องที่อยู่ห่างกัน มีชั้นฟอยล์ปิดช่อง ชั้นลามิเนต และรูปรุที่ช่วยแยกแต่ละหน่วยออกจากแผง นี่เป็นส่วนหนึ่งของข้อหลัก"
+        },
+        {
+          "id": "c8",
+          "locator": "Claim 8",
+          "kind": "claim",
+          "quote": "8. The package as defined in claim 7 wherein said die cut extends through said first polymeric film and said laminate.",
+          "meaning_th": "ข้อ 8 อ้างถึงข้อ 7 และกำหนดให้แนวตัดทะลุฟิล์มพอลิเมอร์ชั้นแรกกับชั้นลามิเนต",
+          "parent": "Claim 7"
+        },
+        {
+          "id": "c9",
+          "locator": "Claim 9",
+          "kind": "claim",
+          "quote": "9. The package as defined in claim 8 wherein said die cut terminates before reaching said one edge.",
+          "meaning_th": "ข้อ 9 อ้างถึงข้อ 8 และเพิ่มเงื่อนไขว่าแนวตัดสิ้นสุดก่อนถึงขอบด้านที่ระบุ",
+          "parent": "Claim 8"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "base",
+          "label_th": "ลักษณะในข้อหลัก",
+          "locator": "Claim 1",
+          "query": "pocket impenetrable polymeric film"
+        },
+        {
+          "id": "parent",
+          "label_th": "เงื่อนไขที่สืบทอด",
+          "locator": "Claim 2",
+          "query": "die cut impenetrable polymeric film",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "added",
+          "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+          "locator": "Claim 3",
+          "query": "terminates before edge",
+          "parent": "Claim 2"
+        }
+      ],
+      "publication_claim_count": 32,
+      "selected_claim_numbers": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "question_th": "ข้อ 3 ระบุจุดสิ้นสุดของแนวตัดอย่างไร และแนวตัดผ่านชั้นใดตามข้อที่อ้างถึง?"
+    },
+    {
+      "id": "blister-9",
+      "family_id": "demo-en-blister",
+      "family_title_th": "บรรจุภัณฑ์ยาแบบแผง",
+      "title_th": "บรรจุภัณฑ์ยาแบบแผง · ข้อ 9 · รอยตัดผ่านลามิเนต",
+      "domain": "en_patent",
+      "data_origin": "public_source",
+      "source_id": "US20070289893A1",
+      "version": "A1-2007-12-20",
+      "issue_date": "2007-12-20",
+      "effective_date": null,
+      "source_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893#page=6",
+      "originals": [
+        {
+          "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893",
+          "sha256": "9d64d8c68ae358bb03de2c26a745a07f49c5af5539e11793148c947bf3d58709",
+          "retrieved_utc": "2026-11-25T13:09:18.336087+00:00"
+        },
+        {
+          "url": "https://patents.google.com/patent/US20070289893A1/en",
+          "sha256": "8395b67668d7d7ca74b62827667985b91a0f9713990999f31dc75111a8893c1c",
+          "retrieved_utc": "2026-11-25T13:09:16.080103+00:00"
+        }
+      ],
+      "canonical_sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+      "text": "1. A child-resistant blister package comprising: a first polymeric film defining a pocket for receiving a medicament therein; an impenetrable polymeric film sealed to said first polymeric film for sealing a medicament in said pocket; an unsealed area between said first polymeric film and said impenetrable polymeric film, said unsealed area extending along one edge of said blister pack; and a die cut extending at an acute angle to adjacent edges of said blister pack and having only one end intersecting and extending into said unsealed area and an opposite end extending toward one edge of said blister pack adjacent said edge on which said unsealed area is located, wherein said package can be opened by tearing the die cut to remove a corner of the blister pack to expose a tab which can be gripped for peeling the impenetrable polymeric film from said package to allow a medicament to be pushed through the foil layer.\n2. The package as defined in claim 1 wherein said die cut extends through said first polymeric film and said impenetrable polymeric film.\n3. The package as defined in claim 2 wherein said die cut terminates before reaching said one edge.\n7. A child-resistant blister package comprising: a first polymeric film defining a plurality of spaced-apart pockets for receiving medicaments therein; a foil layer coupled to said first polymeric film to enclose said pockets; a laminate including an impenetrable polymeric film sealed to said first polymeric film for sealing medicaments in said pockets; perforations formed through said first film and said laminate to allow separation of individual blister units; a plurality of unsealed areas between said first polymeric film and said laminate and located between pairs of adjacent blister units; and a die cut extending at an acute angle to adjacent edges of each blister unit and having only one end extending into said unsealed area and an opposite end extending toward one edge of said blister unit adjacent said edge on which said unsealed area is located, wherein said blister unit can be opened by tearing the die cut at the unsealed area to remove a corner of the blister unit to expose a tab which can be gripped for peeling the impenetrable polymeric film from said unit to allow a medicament to be pushed through the foil layer.\n8. The package as defined in claim 7 wherein said die cut extends through said first polymeric film and said laminate.\n9. The package as defined in claim 8 wherein said die cut terminates before reaching said one edge.",
+      "rights": {
+        "quote": true,
+        "export_quote": true
+      },
+      "units": [
+        {
+          "id": "c1",
+          "locator": "Claim 1",
+          "kind": "claim",
+          "quote": "1. A child-resistant blister package comprising: a first polymeric film defining a pocket for receiving a medicament therein; an impenetrable polymeric film sealed to said first polymeric film for sealing a medicament in said pocket;",
+          "meaning_th": "ข้อ 1 ระบุฟิล์มพอลิเมอร์ที่ขึ้นรูปเป็นช่องบรรจุยา และฟิล์มพอลิเมอร์อีกชั้นที่ปิดผนึกกับชั้นแรก ข้อความที่เลือกแสดงองค์ประกอบบางส่วนของข้อหลัก"
+        },
+        {
+          "id": "c2",
+          "locator": "Claim 2",
+          "kind": "claim",
+          "quote": "2. The package as defined in claim 1 wherein said die cut extends through said first polymeric film and said impenetrable polymeric film.",
+          "meaning_th": "ข้อ 2 อ้างถึงข้อ 1 และกำหนดให้แนวตัดทะลุฟิล์มพอลิเมอร์ชั้นแรกและฟิล์มพอลิเมอร์ชั้นที่กดทะลุไม่ได้",
+          "parent": "Claim 1"
+        },
+        {
+          "id": "c3",
+          "locator": "Claim 3",
+          "kind": "claim",
+          "quote": "3. The package as defined in claim 2 wherein said die cut terminates before reaching said one edge.",
+          "meaning_th": "ข้อ 3 อ้างถึงข้อ 2 และเพิ่มเงื่อนไขว่าแนวตัดสิ้นสุดก่อนถึงขอบด้านที่ระบุ",
+          "parent": "Claim 2"
+        },
+        {
+          "id": "c7",
+          "locator": "Claim 7",
+          "kind": "claim",
+          "quote": "7. A child-resistant blister package comprising: a first polymeric film defining a plurality of spaced-apart pockets for receiving medicaments therein; a foil layer coupled to said first polymeric film to enclose said pockets; a laminate including an impenetrable polymeric film sealed to said first polymeric film for sealing medicaments in said pockets; perforations formed through said first film and said laminate to allow separation of individual blister units;",
+          "meaning_th": "ข้อ 7 กล่าวถึงช่องบรรจุยาหลายช่องที่อยู่ห่างกัน มีชั้นฟอยล์ปิดช่อง ชั้นลามิเนต และรูปรุที่ช่วยแยกแต่ละหน่วยออกจากแผง นี่เป็นส่วนหนึ่งของข้อหลัก"
+        },
+        {
+          "id": "c8",
+          "locator": "Claim 8",
+          "kind": "claim",
+          "quote": "8. The package as defined in claim 7 wherein said die cut extends through said first polymeric film and said laminate.",
+          "meaning_th": "ข้อ 8 อ้างถึงข้อ 7 และกำหนดให้แนวตัดทะลุฟิล์มพอลิเมอร์ชั้นแรกกับชั้นลามิเนต",
+          "parent": "Claim 7"
+        },
+        {
+          "id": "c9",
+          "locator": "Claim 9",
+          "kind": "claim",
+          "quote": "9. The package as defined in claim 8 wherein said die cut terminates before reaching said one edge.",
+          "meaning_th": "ข้อ 9 อ้างถึงข้อ 8 และเพิ่มเงื่อนไขว่าแนวตัดสิ้นสุดก่อนถึงขอบด้านที่ระบุ",
+          "parent": "Claim 8"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "base",
+          "label_th": "ลักษณะในข้อหลัก",
+          "locator": "Claim 7",
+          "query": "spaced pockets perforations laminate"
+        },
+        {
+          "id": "parent",
+          "label_th": "เงื่อนไขที่สืบทอด",
+          "locator": "Claim 8",
+          "query": "die cut laminate",
+          "parent": "Claim 7"
+        },
+        {
+          "id": "added",
+          "label_th": "เงื่อนไขที่ข้อย่อยเพิ่ม",
+          "locator": "Claim 9",
+          "query": "terminates before edge",
+          "parent": "Claim 8"
+        }
+      ],
+      "publication_claim_count": 32,
+      "selected_claim_numbers": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "question_th": "ข้อ 9 ระบุจุดสิ้นสุดของแนวตัดอย่างไร และแนวตัดผ่านชั้นใดตามข้อที่อ้างถึง?"
+    }
+  ]
+}

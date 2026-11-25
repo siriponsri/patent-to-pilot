@@ -1,6 +1,6 @@
 # Patent-to-Pilot master plan
 
-**Effective 25 November 2026 · Organization complete · Implementation awaits a new owner goal.**
+**Effective 25 November 2026 · S0, S1 and S2 complete · S3 is ready for a separate executor.**
 
 Build a Thai-first reader that explains a legal provision or patent claim, shows the source of each condition and lets a reader see which conclusions change when the edition or claim changes. Study the same engine under a fixed search budget. Its hardest case is a plausible explanation assembled from real passages that refer to different editions, tables or embodiments.
 
@@ -8,18 +8,18 @@ A reader comparing two laws should be able to see *which exception changes the a
 
 ## Status and dispatch board
 
-Each row has one execution sheet with stable task IDs. Phase numbers express dependencies. S1 and S2 can start in the same session. S3 and S4 can subsequently proceed independently. Keep this table and the task dispositions and receipt links in each phase sheet current when work resumes. Preserve prior evidence under its original identifiers.
+Each row has one execution sheet with stable task IDs. S1 and S2 ran together. S3 and S4 can now proceed independently when dispatched. Keep this table and the task dispositions and receipt links in each phase sheet current when work resumes. Preserve prior evidence under its original identifiers.
 
 | Phase | Workstream and outcome | Starts after | State | Completion evidence or next action |
 |---|---|---|---|---|
 | [S0 · Organization](00-organization.md) | Governance, baseline inventory, prospective freeze, documentation and handoff | Owner direction | **COMPLETE** | This package and the S0 acceptance record |
-| [S1 · Research data](01-research-data.md) | Authorized input manifests, family isolation, three-state fixtures, comparator design | S0 and a new execution goal | **NOT_STARTED** | Pin eligible bytes and fixture assignments before scores |
-| [S2 · Product workbench](02-product-workbench.md) | An end-to-end Thai-law and English-patent reading path using one shared contract | S0 and a new execution goal | **NOT_STARTED** | Start on shareable examples and existing Workbench |
+| [S1 · Research data](01-research-data.md) | Authorized input manifests, family isolation, three-state fixtures, comparator design | S0 and D28 | **COMPLETE** | [Frozen packet, rights, scorer and comparator](receipts/S1-20261125.md) |
+| [S2 · Product workbench](02-product-workbench.md) | An end-to-end Thai-law and English-patent reading path using one shared contract | S0 and D28 | **COMPLETE** | [Local alpha, ten public families and 23 saved traces](receipts/S2-workbench.md) |
 | [S3 · Research evaluation](03-research-evaluation.md) | Matched DEV experiment, error attribution and independent result labels | S1 | **NOT_STARTED** | Use the shared contract and frozen fixtures. A polished UI is optional |
 | [S4 · Product validation](04-product-release.md) | Reproducible local alpha, rights, installation and usability evidence | S2 | **NOT_STARTED** | Validate both demonstrations independently of S3 scores |
 | [S5 · Synthesis and handoff](05-synthesis.md) | Research package, IS2 narrative and product release decision | Either finished lane for its own draft; both dispositions for closure | **NOT_STARTED** | Publish only evidence that each track actually obtained |
 
-The [prospective freeze](FREEZE.md) governs S1 and S3. The new primary is controlled Thai DEV scope-complete success under a maximum of four retrieval actions and eight returned evidence units. English patent transfer is reported separately. Global patent-family retrieval remains a distinct benchmark objective. It fixes the questions, dataset roles, comparison and decision design. S1 will produce the immutable file lists, revisions and hashes for any new inputs. The [historical P0–P5 board](../tracking/owner-note-22112026/PHASE_BOARD.md) retains its 35 original tasks and their outcomes. The [handoff](../../HANDOFF.md) records the next writer, last verified checkpoint and accounting context.
+The [prospective freeze](FREEZE.md) governs S1 and S3. The new primary is controlled Thai DEV scope-complete success under a maximum of four retrieval actions and eight returned evidence units. English patent transfer is reported separately. Global patent-family retrieval remains a distinct benchmark objective. It fixes the questions, dataset roles, comparison and decision design. S1 pinned its immutable file lists, revisions and hashes in the [release manifest](research/manifest.json). The [historical P0–P5 board](../tracking/owner-note-22112026/PHASE_BOARD.md) retains its 35 original tasks and their outcomes. The [handoff](../../HANDOFF.md) records the next writer, last verified checkpoint and accounting context.
 
 ## What both tracks implement
 
@@ -73,6 +73,4 @@ The closest-work search was conducted in SciSpace. Inspect the paper records for
 
 ## Prompt for the next goal
 
-Use on the owner’s next activation. For a bounded first goal, complete S1 and S2 and then hand off the resulting evidence.
-
-> GPT 6.2 high: Execute S1 and S2 of the Patent-to-Pilot master plan in parallel. Read CLAUDE.md, HANDOFF.md, docs/evidence-scope/MASTER-PLAN.md, docs/evidence-scope/FREEZE.md, docs/evidence-scope/01-research-data.md and docs/evidence-scope/02-product-workbench.md first. Verify git status, recent commits and writer ownership. Research owns permitted inputs, rights, splits and three-state fixtures. Product owns the existing Workbench, Thai legal and English patent demonstrations and trace rendering. Agree on one trace contract. Use the owner's in-scope install/download approval and record exact versions, rights and hashes. Never open protected TEST, credential files or keys. Obtain the required pod approval, quote its price first and stay inside a recorded envelope. Follow the dr-train memory rules if used. Keep all scores behind their protocol freeze. Capture negative or partial results honestly. Update phase tasks, the master board, HANDOFF and the tracker at material events, commit only explicit owned paths, verify and publish. Report in Thai with per-lane evidence, costs, blockers and the next eligible phase. Stop after S1/S2 dispositions; S3/S4 belong to the next dispatch.
+Use the [S3 executor prompt](S3-EXECUTOR-PROMPT.md) in a separate GPT 6.2 high session. The current session is the owner's planning and audit point. S3 can start on the controlled pilot once dispatched. S4 is eligible for separate dispatch and S5 remains pending.

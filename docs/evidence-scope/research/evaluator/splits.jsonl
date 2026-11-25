@@ -1,0 +1,10 @@
+{"family_id":"s1-bell","lane":"dev","lineages":["original-bell","template-bell"]}
+{"family_id":"s1-dial","lane":"dev","lineages":["original-dial","template-dial"]}
+{"family_id":"s1-fern","lane":"dev","lineages":["original-fern","template-fern"]}
+{"family_id":"s1-fold","lane":"proposal","lineages":["original-fold","template-fold"]}
+{"family_id":"s1-frame","lane":"dev","lineages":["original-frame","template-frame"]}
+{"family_id":"s1-kiln","lane":"selection","lineages":["original-kiln","template-kiln"]}
+{"family_id":"s1-loom","lane":"dev","lineages":["original-loom","template-loom"]}
+{"family_id":"s1-reed","lane":"proposal","lineages":["original-reed","template-reed"]}
+{"family_id":"s1-spool","lane":"selection","lineages":["original-spool","template-spool"]}
+{"family_id":"s1-tray","lane":"dev","lineages":["original-tray","template-tray"]}

@@ -1,0 +1,361 @@
+{
+  "raw_artifact_dir": "../_private_artifacts/evidence-scope-s2",
+  "originals": {
+    "original": {
+      "url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-พ-ศ-2544.aspx",
+      "file": "original.html",
+      "sha256": "f3c3c63f9fa47ff98be99b929cf80db925082c87bd62a575f60c7cb6ec5f7e16",
+      "bytes": 1188651,
+      "retrieved_utc": "2026-11-25T12:58:33.952357+00:00"
+    },
+    "third": {
+      "url": "https://www.etda.or.th/th/Useful-Resource/กฏหมาย-HTML/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส/พระราชบญญตวาดวยธรกรรมทางอเลกทรอนกส-(ฉบบท-3)-พ-ศ-2562.aspx",
+      "file": "third.html",
+      "sha256": "f0914f5686cbd684de5cd2877de536dfce79f23fd13564bd9e3643ba7dfdd295",
+      "bytes": 619742,
+      "retrieved_utc": "2026-11-25T12:58:33.179214+00:00"
+    },
+    "patent": {
+      "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20140137391",
+      "file": "patent.pdf",
+      "sha256": "38e55ce5d09e47a1a4d2f955df032f39743944d32d8f768b52a124e346c6b34e",
+      "bytes": 429991,
+      "retrieved_utc": "2026-11-25T12:58:33.979299+00:00"
+    },
+    "claims": {
+      "url": "https://patents.google.com/patent/US20140137391A1/en",
+      "file": "claims.html",
+      "sha256": "49abd71ca1382656db598046a97b66345f79d16e84e591ef1341617f48557bb9",
+      "bytes": 197772,
+      "retrieved_utc": "2026-11-25T12:58:32.238091+00:00"
+    },
+    "third_gazette": {
+      "url": "https://www.etda.or.th/getattachment/fd89f39c-c28f-41ef-a3c6-9d90554a3d67/Electronic-Transactions-Act-%28No-3%29-B-E-2562.aspx",
+      "file": "third.pdf",
+      "sha256": "d6f1e3bb3a5f2ce3a25dcfc1de3810b325736f79455d8878b7e0ec02bbb759ae",
+      "bytes": 202096,
+      "retrieved_utc": "2026-11-25T12:59:42.162874+00:00"
+    },
+    "original_gazette": {
+      "url": "https://www.oie.go.th/assets/portals/1/fileups/2/files/Law_ICT/ElectronicTransactions2544.pdf",
+      "file": "original.pdf",
+      "sha256": "42eded9e65c4bd2be312f42e9f75677060876cb45f538d4aa41fa8b5f75fefae",
+      "bytes": 112765,
+      "retrieved_utc": "2026-11-25T13:01:36.120675+00:00"
+    },
+    "metformin.pdf": {
+      "file": "metformin.pdf",
+      "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8323692",
+      "bytes": 3293474,
+      "sha256": "5b3cd52b3d62151059d34aa69129ea59e341f304129bd0423f38b0476162e2de",
+      "retrieved_utc": "2026-11-25T13:10:06.067396+00:00"
+    },
+    "metformin.html": {
+      "file": "metformin.html",
+      "url": "https://patents.google.com/patent/US8323692B2/en",
+      "bytes": 1228017,
+      "sha256": "afab86724669e8e877976e0a6ffa7f03f9664f5ef11c0afd2639334091c401b7",
+      "retrieved_utc": "2026-11-25T13:09:59.867436+00:00"
+    },
+    "info.pdf": {
+      "file": "info.pdf",
+      "url": "https://infocenter.oic.go.th/upload/cms/1741925863_1327.pdf",
+      "bytes": 137611,
+      "sha256": "cba1104f402d60270e51d3f50fbc973e8dfe9646fcf8b064f09491b7eac97aa1",
+      "retrieved_utc": "2026-11-25T13:09:59.510265+00:00"
+    },
+    "healthlaw-md": {
+      "url": "https://dep.kpo.go.th/law/raberb/other/supply-2551.pdf",
+      "file": "healthlaw-md.pdf",
+      "sha256": "266495aa58749fbd4f499887c344d5664107f177181f2b8e70a8809116f24ac2",
+      "bytes": 356876,
+      "retrieved_utc": "2026-11-25T13:12:16.420905+00:00"
+    },
+    "healthlaw-drug": {
+      "url": "https://laws.fda.moph.go.th/media.php?id=483615695133876224&name=1.+%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A2%E0%B8%B2+%E0%B8%9E.%E0%B8%A8.+2510.pdf",
+      "file": "healthlaw-drug.pdf",
+      "sha256": "b0422dc4923fd7723579ef2f50c62237003cfbdfd3c85de980126ac928086938",
+      "bytes": 444272,
+      "retrieved_utc": "2026-11-25T13:12:16.348128+00:00"
+    },
+    "healthlaw-health": {
+      "url": "https://www.cdd.go.th/file/get/file/1.2024120723a1fc47f8c742b95112e971fcbe212e000713.pdf",
+      "file": "healthlaw-health.pdf",
+      "sha256": "aa102590e3eeac4c4f87feee6c87e1e80d44cbe7f5a6e4762d99c5d04d6036f9",
+      "bytes": 162044,
+      "retrieved_utc": "2026-11-25T13:12:16.148394+00:00"
+    },
+    "pharma_pdf": {
+      "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120276199",
+      "file": "pharma.pdf",
+      "sha256": "dc0556911254dfa0c087aeded1eb39f6d34a61cdd6e12d919b4f54bc5a0e1a01",
+      "bytes": 1420682,
+      "retrieved_utc": "2026-11-25T13:07:45.302942+00:00"
+    },
+    "pharma_claims": {
+      "url": "https://patents.google.com/patent/US20120276199A1/en",
+      "file": "pharma-claims.html",
+      "sha256": "191334cab8f7db5fd103d38bf35dbde1c4287acb138df930dae3953d44076309",
+      "bytes": 666351,
+      "retrieved_utc": "2026-11-25T13:07:41.486379+00:00"
+    },
+    "pharma_uspto_terms": {
+      "url": "https://www.uspto.gov/terms-use-uspto-websites",
+      "file": "pharma-uspto-terms.html",
+      "sha256": "f2aaa64599524b8a602c7eafb1ac0096cf677b8675d87e8e64d7afe09ecd3a64",
+      "bytes": 144328,
+      "retrieved_utc": "2026-11-25T13:07:41.843110+00:00"
+    },
+    "inhaler_pdf": {
+      "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20120145150",
+      "file": "inhaler.pdf",
+      "sha256": "7c70da07de773c1b873157f206d52ab97e2ef0fb9aacfa2b2de8bdc5e575b490",
+      "bytes": 1761605,
+      "retrieved_utc": "2026-11-25T13:09:20.838427+00:00"
+    },
+    "inhaler_claims": {
+      "url": "https://patents.google.com/patent/US20120145150A1/en",
+      "file": "inhaler-claims.html",
+      "sha256": "8352635b2b27c73da341e8e92a72e18580c8950ca0e44729d6dea47b20883bb8",
+      "bytes": 1281291,
+      "retrieved_utc": "2026-11-25T13:09:16.461394+00:00"
+    },
+    "blister_pdf": {
+      "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20070289893",
+      "file": "blister.pdf",
+      "sha256": "9d64d8c68ae358bb03de2c26a745a07f49c5af5539e11793148c947bf3d58709",
+      "bytes": 436555,
+      "retrieved_utc": "2026-11-25T13:09:18.336087+00:00"
+    },
+    "blister_claims": {
+      "url": "https://patents.google.com/patent/US20070289893A1/en",
+      "file": "blister-claims.html",
+      "sha256": "8395b67668d7d7ca74b62827667985b91a0f9713990999f31dc75111a8893c1c",
+      "bytes": 297127,
+      "retrieved_utc": "2026-11-25T13:09:16.080103+00:00"
+    }
+  },
+  "display_sources": [
+    {
+      "example_id": "eta-2544",
+      "source_id": "th-eta",
+      "version": "2544",
+      "canonical_sha256": "3ac4b8a713c05e0212cec8f1638ac94c555fbc5083b19987733c67852b68724f",
+      "input_records": [
+        "original",
+        "original_gazette"
+      ]
+    },
+    {
+      "example_id": "eta-2562-no3",
+      "source_id": "th-eta",
+      "version": "2562-no3",
+      "canonical_sha256": "90c2dec6ad9dbd64979f42840cd0a5321c3779f72f383960f66f9d39047ad33b",
+      "input_records": [
+        "third",
+        "third_gazette"
+      ]
+    },
+    {
+      "example_id": "eta-case",
+      "source_id": "th-eta",
+      "version": "2562-no3",
+      "canonical_sha256": "90c2dec6ad9dbd64979f42840cd0a5321c3779f72f383960f66f9d39047ad33b",
+      "input_records": [
+        "third",
+        "third_gazette"
+      ]
+    },
+    {
+      "example_id": "paperclip-3",
+      "source_id": "US20140137391A1",
+      "version": "A1-2014-05-22",
+      "canonical_sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+      "input_records": [
+        "patent",
+        "claims"
+      ]
+    },
+    {
+      "example_id": "paperclip-4",
+      "source_id": "US20140137391A1",
+      "version": "A1-2014-05-22",
+      "canonical_sha256": "978966eee0daf24b5aac692eb625f40817a01e0a427d9c1c57dbd536dc85f00f",
+      "input_records": [
+        "patent",
+        "claims"
+      ]
+    },
+    {
+      "example_id": "metformin-3",
+      "source_id": "US8323692B2",
+      "version": "B2-2012-12-04",
+      "canonical_sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+      "input_records": [
+        "metformin.pdf",
+        "metformin.html"
+      ]
+    },
+    {
+      "example_id": "metformin-4",
+      "source_id": "US8323692B2",
+      "version": "B2-2012-12-04",
+      "canonical_sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+      "input_records": [
+        "metformin.pdf",
+        "metformin.html"
+      ]
+    },
+    {
+      "example_id": "metformin-7",
+      "source_id": "US8323692B2",
+      "version": "B2-2012-12-04",
+      "canonical_sha256": "8f36416071b752820339e42e1b98517bc332b52c675fd2f9e10c97e417230233",
+      "input_records": [
+        "metformin.pdf",
+        "metformin.html"
+      ]
+    },
+    {
+      "example_id": "information-budget",
+      "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+      "version": "BE-2540-oic",
+      "canonical_sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+      "input_records": [
+        "info.pdf"
+      ]
+    },
+    {
+      "example_id": "information-manual",
+      "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+      "version": "BE-2540-oic",
+      "canonical_sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+      "input_records": [
+        "info.pdf"
+      ]
+    },
+    {
+      "example_id": "information-request",
+      "source_id": "TH-OFFICIAL-INFORMATION-ACT",
+      "version": "BE-2540-oic",
+      "canonical_sha256": "ebbd315405d0955c1fe2c887cc1c4510445b02b8605b57dcb4587a24c27ae503",
+      "input_records": [
+        "info.pdf"
+      ]
+    },
+    {
+      "example_id": "md-establishment-2551",
+      "source_id": "th-medical-device-act",
+      "version": "2551-gazette",
+      "canonical_sha256": "5f51453b4bc3a4d580080cd0db6b1a6488d82a1b86598e63b7feb1178c0e7dcd",
+      "input_records": [
+        "healthlaw-md"
+      ]
+    },
+    {
+      "example_id": "md-advertising-2551",
+      "source_id": "th-medical-device-act",
+      "version": "2551-gazette",
+      "canonical_sha256": "5f51453b4bc3a4d580080cd0db6b1a6488d82a1b86598e63b7feb1178c0e7dcd",
+      "input_records": [
+        "healthlaw-md"
+      ]
+    },
+    {
+      "example_id": "drug-claims",
+      "source_id": "th-drug-act",
+      "version": "fda-consolidation-2566",
+      "canonical_sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+      "input_records": [
+        "healthlaw-drug"
+      ]
+    },
+    {
+      "example_id": "drug-print",
+      "source_id": "th-drug-act",
+      "version": "fda-consolidation-2566",
+      "canonical_sha256": "75cbe93ec8467c6a5b1b7975f8ac6bf31122b5fdd85f47dd07f638cee301cc38",
+      "input_records": [
+        "healthlaw-drug"
+      ]
+    },
+    {
+      "example_id": "health-confidentiality",
+      "source_id": "th-national-health-act",
+      "version": "2550-gazette",
+      "canonical_sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+      "input_records": [
+        "healthlaw-health"
+      ]
+    },
+    {
+      "example_id": "health-informed-choice",
+      "source_id": "th-national-health-act",
+      "version": "2550-gazette",
+      "canonical_sha256": "f90c078f720e2ca78672242b43f6dba7084193c1a1568d39a1f19903a90f78d4",
+      "input_records": [
+        "healthlaw-health"
+      ]
+    },
+    {
+      "example_id": "pharma-15",
+      "source_id": "US20120276199A1",
+      "version": "A1-2012-11-01",
+      "canonical_sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+      "input_records": [
+        "pharma_pdf",
+        "pharma_claims"
+      ]
+    },
+    {
+      "example_id": "pharma-18",
+      "source_id": "US20120276199A1",
+      "version": "A1-2012-11-01",
+      "canonical_sha256": "6626d72834cbe26024855c4e018c8a2b1a90b0914313cf465ae9d1502019440c",
+      "input_records": [
+        "pharma_pdf",
+        "pharma_claims"
+      ]
+    },
+    {
+      "example_id": "inhaler-10",
+      "source_id": "US20120145150A1",
+      "version": "A1-2012-06-14",
+      "canonical_sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+      "input_records": [
+        "inhaler_pdf",
+        "inhaler_claims"
+      ]
+    },
+    {
+      "example_id": "inhaler-11",
+      "source_id": "US20120145150A1",
+      "version": "A1-2012-06-14",
+      "canonical_sha256": "6ca02af1ebf946e76e2f96f58d020aa56374a477be4c2d548fc6f624d2578a55",
+      "input_records": [
+        "inhaler_pdf",
+        "inhaler_claims"
+      ]
+    },
+    {
+      "example_id": "blister-3",
+      "source_id": "US20070289893A1",
+      "version": "A1-2007-12-20",
+      "canonical_sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+      "input_records": [
+        "blister_pdf",
+        "blister_claims"
+      ]
+    },
+    {
+      "example_id": "blister-9",
+      "source_id": "US20070289893A1",
+      "version": "A1-2007-12-20",
+      "canonical_sha256": "f3e34dd622bdaae88bcab4aa984ccabbe689563b6cdf28bedfb09cc5f87a4a29",
+      "input_records": [
+        "blister_pdf",
+        "blister_claims"
+      ]
+    }
+  ]
+}

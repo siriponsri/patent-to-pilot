@@ -6,7 +6,7 @@ const S = { projectId: null, project: null, comparison: null, caps: null, liveRu
   lastFocus: null, retrieval: null, providers: null, showRemoved: false, undoTimer: null, mode: null };
 const isSample = () => S.project && S.project.data_origin === "synthetic_fixture";
 const isSynthetic = () => S.project && S.project.data_origin === "synthetic_demo";
-const VIEWS = ["workbench", "search", "compare", "evidence", "runs", "changes", "providers"];
+const VIEWS = ["scope", "workbench", "search", "compare", "evidence", "runs", "changes", "providers"];
 
 const $ = (id) => document.getElementById(id);
 function el(tag, attrs = {}, ...kids) {
@@ -37,8 +37,10 @@ function show(view) {
   for (const b of document.querySelectorAll(".tab")) {
     if (b.dataset.view === view) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
   }
-  for (const v of VIEWS) $("view-" + v).hidden = !S.projectId || v !== view;
-  $("welcome").hidden = !!S.projectId;
+  for (const v of VIEWS) $("view-" + v).hidden = v !== view || (!S.projectId && v !== "scope");
+  $("welcome").hidden = !!S.projectId || view === "scope";
+  $("labels").hidden = view === "scope";
+  if (view === "scope") scopeReader.open();
   if (view === "search") renderSearch();
   if (view === "compare") renderCompare();
   if (view === "evidence") renderSources();
@@ -806,7 +808,12 @@ async function switchProject() {
 }
 
 async function init() {
-  for (const b of document.querySelectorAll(".tab")) b.addEventListener("click", () => S.projectId ? show(b.dataset.view) : status("Open the sample or create a project first."));
+  scopeReader.init();
+  for (const b of document.querySelectorAll(".tab")) b.addEventListener("click", () => {
+    if (S.projectId || ["workbench", "scope"].includes(b.dataset.view)) { status(""); show(b.dataset.view); }
+    else status("Open the sample or create a project first.");
+  });
+  for (const b of document.querySelectorAll("[data-open-scope]")) b.addEventListener("click", () => { status(""); show("scope"); });
   $("open-sample").addEventListener("click", openSample);
   $("load-synthetic").addEventListener("click", loadSynthetic);
   $("search-form").addEventListener("submit", doSearch);

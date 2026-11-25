@@ -16,6 +16,7 @@
   </div>
   <div class="labels" id="labels" aria-label="Data and execution labels"></div>
   <nav aria-label="Main">
+    <button class="tab" data-view="scope" lang="th">อ่านเอกสาร</button>
     <button class="tab" data-view="workbench" aria-current="page">Workbench</button>
     <button class="tab" data-view="search">Search</button>
     <button class="tab" data-view="compare">Compare</button>
@@ -30,6 +31,11 @@
 
 <main>
   <section id="welcome" class="view" hidden>
+    <div class="scope-entry" lang="th">
+      <h2>อ่านกฎหมายไทยและสิทธิบัตร</h2>
+      <p>ลองถามจากเอกสารตัวอย่าง เปรียบเทียบสองฉบับ แล้วเปิดข้อความต้นฉบับที่รองรับแต่ละข้อ</p>
+      <button class="primary" data-open-scope>เปิดโต๊ะอ่านเอกสาร</button>
+    </div>
     <h1>Welcome</h1>
     <p>This sample compares two fictional concepts against three explicit requirements. The documents are invented and are processed by this local application; no account, key or model is needed.</p>
     <button id="open-sample" class="primary">Open sample project</button>
@@ -43,6 +49,25 @@
     <h2>Synthetic workflow example</h2>
     <p>An authored, fictional document packet (letter, footnote, two annexes and one controlled revision) run through the local search and evidence trace in a temporary store. It shows the plumbing only; it is not a real document and not an evaluation. <a href="/api/synthetic/trace-slice" target="_blank" rel="noopener">Open the synthetic trace (JSON)</a></p>
     <p>You can also load the same fictional packet into this store as a labelled project, to try Search, Compare (one bounded relation search) and Inspect with its original PDF pages. <button id="load-synthetic">Load synthetic relation-search example</button></p>
+  </section>
+
+  <section id="view-scope" class="view" lang="th" aria-labelledby="scope-title" hidden>
+    <h1 id="scope-title">โต๊ะอ่านเอกสาร</h1>
+    <p>อ่านคำอธิบายภาษาไทยคู่กับต้นฉบับ แล้วดูว่าข้อสรุปใดเปลี่ยนเมื่อเลือกฉบับหรือข้อถือสิทธิอื่น</p>
+    <form id="scope-form" class="card scope-controls">
+      <label>ชุดเอกสาร<select id="scope-family" required></select></label>
+      <label>ฉบับหรือข้อถือสิทธิ<select id="scope-example" required></select></label>
+      <label class="scope-question">คำถามภาษาไทย<input id="scope-question" maxlength="500" required aria-describedby="scope-help"></label>
+      <p id="scope-help" class="muted">รุ่นทดลองนี้รองรับคำถามตัวอย่างของแต่ละชุดเอกสาร</p>
+      <div class="actions"><button class="primary" id="scope-submit" type="submit">อ่านพร้อมหลักฐาน</button>
+        <button type="button" id="scope-restore">ใช้คำถามตัวอย่าง</button></div>
+    </form>
+    <div id="scope-notice" class="scope-notice" role="status" aria-live="polite"></div>
+    <details id="scope-history"><summary>เปิดผลที่บันทึกไว้</summary>
+      <form id="scope-reopen" class="search-form"><label for="scope-runs">ผลการอ่านในเครื่องนี้</label>
+        <select id="scope-runs"></select><button type="submit">เปิดผลเดิม</button></form>
+    </details>
+    <article id="scope-result" hidden aria-label="ผลการอ่านเอกสาร"></article>
   </section>
 
   <section id="view-workbench" class="view" hidden>
@@ -63,6 +88,7 @@
   </section>
 
   <section id="view-search" class="view" hidden>
+    <button data-open-scope lang="th">อ่านตัวอย่างกฎหมายและสิทธิบัตรพร้อมหลักฐาน</button>
     <h2>Search</h2>
     <p class="muted">Searches the current versions of this project's sources on this computer. No model or network is used. Each result is the exact stored passage; select <b>Inspect source</b> to open it in its source version.</p>
     <form id="search-form" class="search-form" role="search">
@@ -84,6 +110,7 @@
   </section>
 
   <section id="view-compare" class="view" hidden>
+    <button data-open-scope lang="th">เปรียบเทียบฉบับหรือข้อถือสิทธิในโต๊ะอ่านเอกสาร</button>
     <h2>Compare</h2>
     <p class="muted">Your requirements are checked against every candidate's current sources by the same local engine as the Workbench. When the first search leaves a visible gap (no match, a reference such as “ข้อ ๔(๒)” to another part, a missing field, or an item you mark as missing), the engine takes at most one extra step inside that candidate's own documents before it records the result. Each result shows that step as it was recorded.</p>
     <h3>Requirements</h3>
@@ -174,6 +201,7 @@
   </div>
   <div id="drawer-body"></div>
 </aside>
+<script src="/scope.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>

@@ -18,12 +18,17 @@ from urllib.parse import unquote, urlsplit
 
 from patent_to_pilot.workbench.core import CoreError, EvidenceCore
 from patent_to_pilot.workbench.providers import ADAPTERS, ProviderError
+from patent_to_pilot.workbench.scope_reader import ScopeReader
 from patent_to_pilot.workbench.workflow import Workflow
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
-STATIC_FILES = {"/": "index.html", "/index.html": "index.html", "/app.js": "app.js", "/app.css": "app.css"}
+STATIC_FILES = {"/": "index.html", "/index.html": "index.html", "/app.js": "app.js", "/app.css": "app.css",
+                "/scope.js": "scope.js"}
 _SEG = r"([A-Za-z0-9._-]+)"
 ROUTES = [
+    ("GET", r"/api/scope/catalog", "scope_catalog"),
+    ("POST", r"/api/scope/run", "scope_run"),
+    ("GET", rf"/api/scope/run/{_SEG}", "scope_replay"),
     ("GET", r"/api/health", "health"),
     ("GET", r"/api/capabilities", "capabilities"),
     ("GET", r"/api/projects", "projects"),
@@ -94,6 +99,17 @@ class App:
         self.core, self.host, self.port = core, host, port
         self.lock = threading.Lock()   # one state-changing core operation at a time
         self.workflow = Workflow(core)
+        self.scope_reader = ScopeReader(core.store)
+
+    def scope_catalog(self, _body):
+        return self.scope_reader.catalog()
+
+    def scope_run(self, body):
+        with self.lock:
+            return self.scope_reader.run(body)
+
+    def scope_replay(self, _body, run_id):
+        return self.scope_reader.replay(run_id)
 
     def health(self, _body):
         return {"status": "ok", "store": str(self.core.store.path), "url": f"http://{self.host}:{self.port}/"}

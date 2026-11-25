@@ -1,0 +1,36 @@
+{"cases":["04269f7f7d7f499d22","1b3f7f5cc77e96b4fa"],"edit":"changing","pair_id":"a2fc03ce218638fad2","rationale":"changed request selects a different documented scope"}
+{"cases":["0442742ae287e06a07","4aff3311a45a631d64"],"edit":"invariant","pair_id":"8f73bf09a8212a6427","rationale":"wording preserves the referenced scope"}
+{"cases":["117c284cc20707a868","0d7485b05b7abefcff"],"edit":"invariant","pair_id":"2ab05db64abfcb47ec","rationale":"wording preserves the referenced scope"}
+{"cases":["117c284cc20707a868","17d3693412e86a0bb6"],"edit":"changing","pair_id":"a34af5121b844d2e4d","rationale":"changed request selects a different documented scope"}
+{"cases":["28d3d250280c1e8de9","763271fe86978caf30"],"edit":"changing","pair_id":"c43eedef836cf16b8d","rationale":"changed request selects a different documented scope"}
+{"cases":["2f106acb38a6955769","2d863b3f95f47b8a58"],"edit":"invariant","pair_id":"0a8459dcbdb6c6c6c6","rationale":"wording preserves the referenced scope"}
+{"cases":["2f106acb38a6955769","91fad1d28003225027"],"edit":"changing","pair_id":"1c2873a7e2899dce96","rationale":"changed request selects a different documented scope"}
+{"cases":["333216a9271eca27ae","1b3f7f5cc77e96b4fa"],"edit":"invariant","pair_id":"465ffa1c85f29cef3b","rationale":"wording preserves the referenced scope"}
+{"cases":["373342642202a7fcc1","f03bae725d6722c4c5"],"edit":"invariant","pair_id":"21ad5d83cca2811f39","rationale":"wording preserves the referenced scope"}
+{"cases":["42bccfc250ee82e1fd","6cbee6232490ae100c"],"edit":"invariant","pair_id":"63c71c3595e72ec38b","rationale":"wording preserves the referenced scope"}
+{"cases":["46f9f1523bbf9b3eed","7b93ec2ba8f648588d"],"edit":"changing","pair_id":"11851d3a88fd078e63","rationale":"changed request selects a different documented scope"}
+{"cases":["4b34f81e6c5e23e2e8","6c70976cdbbc2533c9"],"edit":"invariant","pair_id":"5c6a5469de38998c7b","rationale":"wording preserves the referenced scope"}
+{"cases":["4eb171f795dcdb1009","1933d637c4c9c13880"],"edit":"changing","pair_id":"985718484ea49cdddb","rationale":"changed request selects a different documented scope"}
+{"cases":["4eb171f795dcdb1009","f758ff5daf57d851a9"],"edit":"invariant","pair_id":"de535561964f63896d","rationale":"wording preserves the referenced scope"}
+{"cases":["551dd094a5111b9c92","61eb3ec15dfc6e340c"],"edit":"changing","pair_id":"00d5cd9b2fe2cd8d2c","rationale":"changed request selects a different documented scope"}
+{"cases":["551dd094a5111b9c92","bb445622e0d43d7b75"],"edit":"invariant","pair_id":"3d4637c7c4aba11346","rationale":"wording preserves the referenced scope"}
+{"cases":["6568e2e60de67c4292","665d3058b9343ce0ad"],"edit":"changing","pair_id":"ec8955479817d2d1bc","rationale":"changed request selects a different documented scope"}
+{"cases":["7e4765eb0901e41fb5","41476a15e0de744df2"],"edit":"changing","pair_id":"8c73668cd66c026726","rationale":"changed request selects a different documented scope"}
+{"cases":["87552e599047f3adbe","15dde0f4ae22995ada"],"edit":"changing","pair_id":"6549926de3885d92e0","rationale":"changed request selects a different documented scope"}
+{"cases":["87552e599047f3adbe","60b6f7bd7fdf776fe7"],"edit":"invariant","pair_id":"6112def44d75156138","rationale":"wording preserves the referenced scope"}
+{"cases":["8fb657911282aca6d2","665d3058b9343ce0ad"],"edit":"invariant","pair_id":"9d78140bf2d84081b6","rationale":"wording preserves the referenced scope"}
+{"cases":["a908f720f5088f3f88","7bf8f9f6355a508c95"],"edit":"changing","pair_id":"225676ea313efb121e","rationale":"changed request selects a different documented scope"}
+{"cases":["a908f720f5088f3f88","ee2ec03cb5cef9b54b"],"edit":"invariant","pair_id":"7fa5ffc4de7d64daa6","rationale":"wording preserves the referenced scope"}
+{"cases":["abe9d00e84952d137b","f03bae725d6722c4c5"],"edit":"changing","pair_id":"ac116c92df89ef8cb7","rationale":"changed request selects a different documented scope"}
+{"cases":["b08eff1eaf4d225a5c","609d8384993c29f1ba"],"edit":"changing","pair_id":"7cce61dc1edf86676a","rationale":"changed request selects a different documented scope"}
+{"cases":["b08eff1eaf4d225a5c","e7fa9587ad8e357733"],"edit":"invariant","pair_id":"4713442a95d8405b46","rationale":"wording preserves the referenced scope"}
+{"cases":["b53b0848a9236ff7ef","5f82792e85bfbbafb7"],"edit":"changing","pair_id":"b0f6a10b8eaaf35d81","rationale":"changed request selects a different documented scope"}
+{"cases":["b53b0848a9236ff7ef","6735b2ae89f0532e56"],"edit":"invariant","pair_id":"72cd907b94202aa8dc","rationale":"wording preserves the referenced scope"}
+{"cases":["bba2ad3559e142d969","763271fe86978caf30"],"edit":"invariant","pair_id":"6b0ed3c978d2e5ce6c","rationale":"wording preserves the referenced scope"}
+{"cases":["dc3120a3b7115d0a09","6cbee6232490ae100c"],"edit":"changing","pair_id":"96126d9b7f5fe3e267","rationale":"changed request selects a different documented scope"}
+{"cases":["de892941c4ed2719a7","7b93ec2ba8f648588d"],"edit":"invariant","pair_id":"b5ccd98dd8bd273f0e","rationale":"wording preserves the referenced scope"}
+{"cases":["e2453b151b301f502e","396c1bb5cd53a25067"],"edit":"changing","pair_id":"0b2371fe598b8ba043","rationale":"changed request selects a different documented scope"}
+{"cases":["e2453b151b301f502e","9b5d2b75fdec5f5245"],"edit":"invariant","pair_id":"02c9ad926d164ec210","rationale":"wording preserves the referenced scope"}
+{"cases":["ea16691454aafd7f99","41476a15e0de744df2"],"edit":"invariant","pair_id":"e7ec36c25b54816f84","rationale":"wording preserves the referenced scope"}
+{"cases":["fae39c6121d4386093","4aff3311a45a631d64"],"edit":"changing","pair_id":"6fb4ba3186bebf3b34","rationale":"changed request selects a different documented scope"}
+{"cases":["fde6310f3f26c0dab3","6c70976cdbbc2533c9"],"edit":"changing","pair_id":"5d32d7656e614adee1","rationale":"changed request selects a different documented scope"}

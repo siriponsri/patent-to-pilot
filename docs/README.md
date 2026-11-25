@@ -9,6 +9,7 @@ locations: when a location changes, update it here and in INDEX-PLAN.md.
 | Need | Location |
 |---|---|
 | Master plan, phase status, next-goal prompt | [S0–S5 master plan](evidence-scope/MASTER-PLAN.md) |
+| Closed S1/S2 and next executor | [Controlled research packet](evidence-scope/receipts/S1-20261125.md) · [Workbench alpha](evidence-scope/receipts/S2-workbench.md) · [S3 prompt](evidence-scope/S3-EXECUTOR-PROMPT.md) |
 | Frozen questions, data roles and primary comparison | [Research freeze](evidence-scope/FREEZE.md) |
 | Project overview, quick start, testing | [README.md](../README.md) |
 | Current state, blockers, running jobs, next steps | [HANDOFF.md](../HANDOFF.md) |

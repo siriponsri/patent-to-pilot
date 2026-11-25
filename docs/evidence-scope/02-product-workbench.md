@@ -1,6 +1,6 @@
 # S2 · Thai-first evidence Workbench
 
-**Status:** NOT_STARTED. **Lane:** Product. **Entry:** S0 handoff. Start alongside S1. **Exit:** a local alpha receipt and a versioned example trace for S4. GPT 6.2 high can execute these tasks after the owner activates a new implementation goal.
+**Status:** COMPLETE (D28). **Lane:** Product. **Entry:** S0 handoff. Start alongside S1. **Exit:** a local alpha receipt and a versioned example trace for S4. [Execution receipt](receipts/S2-workbench.md) · [Public samples](receipts/S2-sources.md) · [Saved exports](receipts/S2-example-traces.json).
 
 The [master plan](MASTER-PLAN.md) defines the shared evidence contract. The [research freeze](FREEZE.md) governs research inputs. S2 owns product behavior and display-only sample material. Give S1 the contract version and fixture IDs as soon as they exist. Research labels stay in the evaluator. S2 can ship a deterministic local policy while S3 measures alternatives.
 
@@ -19,7 +19,7 @@ A Thai reader selects a legal document or an English patent, asks a question in 
 
 ## Work packages
 
-| Task | Implementation and decision | Acceptance evidence for the future receipt |
+| Task | Implementation and decision | Acceptance evidence |
 |---|---|---|
 | **S2-T01 · Select two demo families** | Select one real Thai act with a prior version and amendment, and an English patent publication with a dependent claim. Assign display-only family IDs; keep the entire family out of policy tuning and evaluation. Start with the candidates below. Track original URL, publisher, document ID and edition, retrieval timestamp, SHA-256 of original and canonical text, exact page or section locator, license evidence, permitted use and attribution for every asset. | Each selector entry resolves to a version. The manifest distinguishes permission to download, inspect, quote, redistribute documents, and redistribute derivatives. If bundling is unresolved, ship the link/import recipe where allowed and continue offline work with the existing fictional material. Describe exactly which paths work offline. |
 | **S2-T02 · Preserve structures and locators** | Map Thai sections, paragraphs, explicit cross-references and commencement clauses; map English claims to their stated parent and retain qualifiers. Identify issue and effective dates separately, including transitional provisions. Model table/footnote bindings only where the source exposes an unambiguous header or locator. Preserve original English, Thai numbers and raw offsets; keep normalized values for search. | Small fixtures exercise a Thai digit, two editions with identical section numbers, one missing effective date, a dependent claim, separate embodiments, and a referenced table. Offset inspection reproduces the recorded span. A text-layer PDF does not acquire invented coordinates or cell bindings. |
@@ -45,14 +45,14 @@ A Thai reader selects a legal document or an English patent, asks a question in 
 
 Start S4 on the first reproducible local slice. For **engineering alpha**, one end-to-end path per domain on rights-cleared or visibly fictional packets, resolving citations, a replayable trace, and a recorded failure/abstention example suffice. A missing lawful source bundle or unavailable independent reviewer is a named deferral; the receipt must name the actual sample type and cannot claim a real public-data demonstration on fixtures alone. A full public-data demo in S4 requires real sources or a verified permitted import path in both domains.
 
-At activation use an isolated project directory or the launcher's fresh-store smoke mode. Record focused regression results and the project's normal code gate on implementation changes. On interruption, resume the first task missing its receipt, reuse pinned assets, and preserve earlier traces. Proposed future output: `docs/evidence-scope/receipts/S2-workbench.md` with launch command, commit, source manifests, trace/export references, test results and scope limits. Large originals stay in the authorized local artifact store. S0 creates the plan only.
+The [S2 receipt](receipts/S2-workbench.md) records normal-entrypoint checks, the code gate and replay instructions. Raw captures are private and pinned. Use a new data directory for independent reproduction, or reuse the same directory to reopen an existing trace. S4 owns the clean-install and user-validation gate.
 
 ## Dispatch status
 
 | Task | State | Receipt |
 |---|---|---|
-| S2-T01 | NOT_STARTED | Pending |
-| S2-T02 | NOT_STARTED | Pending |
-| S2-T03 | NOT_STARTED | Pending |
-| S2-T04 | NOT_STARTED | Pending |
-| S2-T05 | NOT_STARTED | Pending |
+| S2-T01 | COMPLETE | [Sources and reuse](receipts/S2-sources.md) |
+| S2-T02 | COMPLETE | [Source spans and version tests](../../tests/test_scope_reader.py) |
+| S2-T03 | COMPLETE | [Action and abstention checks](../../tests/test_scope_reader.py) |
+| S2-T04 | COMPLETE | [Chromium workflow](../../tests/test_scope_reader_browser.py) |
+| S2-T05 | COMPLETE | [Replay and dispatch](receipts/S2-workbench.md) |

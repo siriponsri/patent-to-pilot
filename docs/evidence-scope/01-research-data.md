@@ -1,6 +1,6 @@
 # S1 · Research data and controls
 
-**Status:** NOT_STARTED. **Track:** research. **Entry:** S0 documentation checkpoint and a later execution goal. **Can start alongside:** S2. **Consumer:** S3. [Master plan](MASTER-PLAN.md) · [Research freeze](FREEZE.md) · [Matched evaluation](03-research-evaluation.md).
+**Status:** COMPLETE for the controlled pilot under the owner's S1+S2 execution goal, 25 November 2026. **Track:** research. **Consumer:** S3. [Closure and limitations](receipts/S1-20261125.md) · [Master plan](MASTER-PLAN.md) · [Research freeze](FREEZE.md) · [Matched evaluation](03-research-evaluation.md).
 
 ## Mission for the next executor
 
@@ -57,7 +57,7 @@ Write a timestamped S1 receipt listing the checks that passed and the exact unve
 
 | Task | State | Receipt |
 |---|---|---|
-| S1-T01 | NOT_STARTED | Pending |
-| S1-T02 | NOT_STARTED | Pending |
-| S1-T03 | NOT_STARTED | Pending |
-| S1-T04 | NOT_STARTED | Pending |
+| S1-T01 | PASS | [Rights and private verification](research/RIGHTS.md) |
+| S1-T02 | PASS | [Runtime release manifest](research/manifest.json) |
+| S1-T03 | PASS | [Controlled pairs, provenance and checks](receipts/S1-20261125.md) |
+| S1-T04 | PASS | [Prospective control contract](research/MEASUREMENT.md) |

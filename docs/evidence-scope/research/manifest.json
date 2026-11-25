@@ -1,0 +1,243 @@
+{
+  "counts": [
+    {
+      "count": 9,
+      "lane": "dev",
+      "language": "en",
+      "state": "displaced"
+    },
+    {
+      "count": 3,
+      "lane": "dev",
+      "language": "en",
+      "state": "finite_unanswerable"
+    },
+    {
+      "count": 9,
+      "lane": "dev",
+      "language": "en",
+      "state": "outside"
+    },
+    {
+      "count": 9,
+      "lane": "dev",
+      "language": "en",
+      "state": "present"
+    },
+    {
+      "count": 9,
+      "lane": "dev",
+      "language": "th",
+      "state": "displaced"
+    },
+    {
+      "count": 3,
+      "lane": "dev",
+      "language": "th",
+      "state": "finite_unanswerable"
+    },
+    {
+      "count": 9,
+      "lane": "dev",
+      "language": "th",
+      "state": "outside"
+    },
+    {
+      "count": 9,
+      "lane": "dev",
+      "language": "th",
+      "state": "present"
+    },
+    {
+      "count": 3,
+      "lane": "proposal",
+      "language": "en",
+      "state": "displaced"
+    },
+    {
+      "count": 1,
+      "lane": "proposal",
+      "language": "en",
+      "state": "finite_unanswerable"
+    },
+    {
+      "count": 3,
+      "lane": "proposal",
+      "language": "en",
+      "state": "outside"
+    },
+    {
+      "count": 3,
+      "lane": "proposal",
+      "language": "en",
+      "state": "present"
+    },
+    {
+      "count": 3,
+      "lane": "proposal",
+      "language": "th",
+      "state": "displaced"
+    },
+    {
+      "count": 1,
+      "lane": "proposal",
+      "language": "th",
+      "state": "finite_unanswerable"
+    },
+    {
+      "count": 3,
+      "lane": "proposal",
+      "language": "th",
+      "state": "outside"
+    },
+    {
+      "count": 3,
+      "lane": "proposal",
+      "language": "th",
+      "state": "present"
+    },
+    {
+      "count": 3,
+      "lane": "selection",
+      "language": "en",
+      "state": "displaced"
+    },
+    {
+      "count": 1,
+      "lane": "selection",
+      "language": "en",
+      "state": "finite_unanswerable"
+    },
+    {
+      "count": 3,
+      "lane": "selection",
+      "language": "en",
+      "state": "outside"
+    },
+    {
+      "count": 3,
+      "lane": "selection",
+      "language": "en",
+      "state": "present"
+    },
+    {
+      "count": 3,
+      "lane": "selection",
+      "language": "th",
+      "state": "displaced"
+    },
+    {
+      "count": 1,
+      "lane": "selection",
+      "language": "th",
+      "state": "finite_unanswerable"
+    },
+    {
+      "count": 3,
+      "lane": "selection",
+      "language": "th",
+      "state": "outside"
+    },
+    {
+      "count": 3,
+      "lane": "selection",
+      "language": "th",
+      "state": "present"
+    }
+  ],
+  "files": {
+    "evaluator/dev/labels.jsonl": {
+      "bytes": 14950,
+      "sha256": "996dd68b00d69a871e67680e5109d30894cc4d0c47ea4e7c5737f2f60d8015b9"
+    },
+    "evaluator/dev/pairs.jsonl": {
+      "bytes": 5886,
+      "sha256": "6f1f85864aa2672a446fd0c6651818d6174e0bc8c3fd77eb153c679c1d02a669"
+    },
+    "evaluator/proposal/labels.jsonl": {
+      "bytes": 4865,
+      "sha256": "13ae8c51c44fa38fc3c3294257d24172c926b5cdfbe3cd349f80e53f971c7146"
+    },
+    "evaluator/proposal/pairs.jsonl": {
+      "bytes": 1962,
+      "sha256": "8d659af791d7189e92b213c97560209daf92ff488e79ca20997f2e72599764a8"
+    },
+    "evaluator/selection/labels.jsonl": {
+      "bytes": 5070,
+      "sha256": "66c5f1e506c4818886eea90504266924ff9979194fa94986709d49d173deaa9a"
+    },
+    "evaluator/selection/pairs.jsonl": {
+      "bytes": 1962,
+      "sha256": "e264b063c18aea5608c26c9bec153095f90f0b2aefd8c0e1cfd723ab9a53e9f1"
+    },
+    "evaluator/splits.jsonl": {
+      "bytes": 848,
+      "sha256": "8d9032487796d520233671b80d96310ff36547f2109ec29c86f35f9ee3b6298c"
+    },
+    "runtime/dev/edges.jsonl": {
+      "bytes": 2763,
+      "sha256": "7145a9d77ade50522c414f58c09630fa651843d32e1c1a78c39bb75133513b1b"
+    },
+    "runtime/dev/requests.jsonl": {
+      "bytes": 18054,
+      "sha256": "968a1129ec8b707931b0bc06278cb4a36d11e5f25ab0e1d3639c353d3a616ee2"
+    },
+    "runtime/dev/sources.jsonl": {
+      "bytes": 5852,
+      "sha256": "8d0b1aceff2432905f6d0e1b2509c361869d248de6783e0bfe2a6e542ed93dc2"
+    },
+    "runtime/dev/units.jsonl": {
+      "bytes": 15735,
+      "sha256": "1bfe42030f9249103d9633f1a7b5598b07bab154aa8abd134a49c2cbacf8a7f7"
+    },
+    "runtime/proposal/edges.jsonl": {
+      "bytes": 894,
+      "sha256": "c0adf657d93ccdd0e4382095e338694363a3cf164243c17c80a6926b23718dfe"
+    },
+    "runtime/proposal/requests.jsonl": {
+      "bytes": 6057,
+      "sha256": "c9b3a07561d62a334a58306d839809b8a00fc97cbb7f74f578721787124dd751"
+    },
+    "runtime/proposal/sources.jsonl": {
+      "bytes": 1756,
+      "sha256": "901ce06acf6d8610655ba922f10011d6b5909e72f0b81ea1be0b3d1da6b9374e"
+    },
+    "runtime/proposal/units.jsonl": {
+      "bytes": 5043,
+      "sha256": "6025af5da499f6f95a484e219176c3177116f633f8ca7116a7de5c818717c385"
+    },
+    "runtime/selection/edges.jsonl": {
+      "bytes": 891,
+      "sha256": "85a2235bf95ea4adba5de1020c35c280fccb55c29262760b09a4a512e7e4ddcf"
+    },
+    "runtime/selection/requests.jsonl": {
+      "bytes": 5776,
+      "sha256": "734c730163f5eccf9884680bf1b5eb0f6122f9188f638d6dbb7c98558249c02b"
+    },
+    "runtime/selection/sources.jsonl": {
+      "bytes": 1870,
+      "sha256": "71e746b0cb7c1b8d1350db01ca326bf50e02ccc89be10ee30af95ca1aa309221"
+    },
+    "runtime/selection/units.jsonl": {
+      "bytes": 5170,
+      "sha256": "aec5d292df42dc307f5eed1fb5cca9d7c0d373ce8bc1d4a0bb3f529c60c3f112"
+    }
+  },
+  "limits": {
+    "actions": 4,
+    "candidate_depth": 6,
+    "elapsed_ms": 30000,
+    "inspected": 24,
+    "model_tokens": 0,
+    "returned": 8
+  },
+  "protocol_lf_sha256": {
+    "docs/evidence-scope/research/MEASUREMENT.md": "044fa06cf23ea04d6767f4f060ebbceadbc5175e9b559cb9b367559a1b96e440",
+    "docs/evidence-scope/research/RIGHTS.md": "de55437b640bb9cea2a34370361cc7f9d635b0d70ee36254612694aa5fb8e6ec",
+    "scripts/research/s1_material.py": "d28758c4be1e2fe22cd7608d3d219ae521d441922c642f2f41847576f2621ee1",
+    "scripts/research/s1_packet.py": "53300355ed15b1c19c3dca09485950301ae61bfb9fcc19c59ca7dd430fa96919",
+    "scripts/research/s1_scorer.py": "a06271dc0b771f164cd4637074dc1a063254a3e3150bb8633eb33397e89cf036"
+  },
+  "revision": "S1-v1",
+  "seed": 20261125
+}

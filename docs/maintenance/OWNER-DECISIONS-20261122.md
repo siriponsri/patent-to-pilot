@@ -107,3 +107,9 @@ The owner approved the direction developed from the IS1 and Paper 53 review, the
 Freeze the research questions and dataset design now. The owner approves installing needed dependencies and acquiring additional in-scope datasets. Record file-level sources, versions, licenses, access basis and hashes when materialized. This approval supersedes the former per-item owner confirmation for these in-scope installs/downloads. It grants no new paid service envelope, gated third-party terms or redistribution rights. Never open protected TEST, sealed judgments or credentials. Pod price, prior creation approval and cleanup requirements continue.
 
 Progress with the documented feasibility gates. Any positive paired primary DEV estimate permits one bounded follow-up. A supported scientific gain needs matched and uncertainty-qualified evidence. A local engineering alpha can proceed independently of that result. Preserve negative findings, historical gates and exact old task identities. See the [new plan](../evidence-scope/MASTER-PLAN.md) and [freeze](../evidence-scope/FREEZE.md).
+
+## D28 · Execute S1 and S2 in this goal
+
+The owner added both phases to the current goal. Deliver the frozen research fixtures and local Workbench alpha together. D27 permissions and existing cost envelopes still apply. Hand back the phase receipts before taking up S3 or S4.
+
+During D28 the owner requested multiple real pharmaceutical patent and Thai law examples across subfields, followed by an S3 executor prompt. This session will serve as planner and auditor on the subsequent dispatch. The public examples are reserved for display and excluded from S1/S3.

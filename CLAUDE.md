@@ -1,6 +1,6 @@
 # Claude instructions for Patent-to-Pilot
 
-**Plan:** the [S0–S5 master plan](docs/evidence-scope/MASTER-PLAN.md) and its [research and data freeze](docs/evidence-scope/FREEZE.md) govern new work. S0 is documentation complete. Wait for the next execution goal to start S1 and S2 in parallel. The P0–P5 owner program of 22 Nov 2026 remains the provenance of the existing measurements and software.
+**Plan:** the [S0–S5 master plan](docs/evidence-scope/MASTER-PLAN.md) and its [research and data freeze](docs/evidence-scope/FREEZE.md) govern new work. S0 is documentation complete. D28 activates S1 and S2 together. Consult the master board for their disposition. The P0–P5 owner program of 22 Nov 2026 remains the provenance of the existing measurements and software.
 Phases advance by scoped deliverables. A documented null result can close a research phase and the product can advance independently. The IS2 presentation (March 2027) is context,
 not a gate. The earlier program PTP-2026-11-21 (G01–G08) is history: G01/G02 are completed foundations, G03 records are
 preserved, and G-identifiers keep their meanings.

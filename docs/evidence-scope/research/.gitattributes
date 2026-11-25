@@ -1,0 +1,3 @@
+# Bytes in the S1 manifest must survive Windows checkouts.
+*.jsonl text eol=lf
+*.json text eol=lf

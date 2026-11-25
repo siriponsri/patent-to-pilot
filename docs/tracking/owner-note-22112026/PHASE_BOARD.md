@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-25T19:46:25+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-25T20:18:21+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -57,7 +57,7 @@ Phase status: **IN_PROGRESS**
 | P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T01_content_coverage_audit.md | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) | — | NOT_SYNCED |
 | P2-T02 | Establish complete-content and stronger simple controls | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md; docs/tracking/owner-note-22112026/receipts/P2-T02_D19_followup_results.md | Use both D19 C1 routes in frozen P2-T04 | — | NOT_SYNCED |
 | P2-T03 | Implement one bounded source-relation search action | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T03_mechanism_spec.md; docs/tracking/owner-note-22112026/receipts/P2-T03_mechanism_verification.md; src/patent_to_pilot/workbench/relation_search.py; tests/test_p2_t03_relation_search.py | P2-T04 (after P2-T02 controls); P4-T03 | — | NOT_SYNCED |
-| P2-T04 | Screen the bounded mechanism against close matched controls | ✅ COMPLETE | NO_GAIN | docs/tracking/owner-note-22112026/receipts/P2-T04_results.md; docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md; docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md | Park this arm. Next execution starts with S1 and S2 under docs/evidence-scope/MASTER-PLAN.md after the new goal. P2-T05 remains NOT_RUN. | — | NOT_SYNCED |
+| P2-T04 | Screen the bounded mechanism against close matched controls | ✅ COMPLETE | NO_GAIN | docs/tracking/owner-note-22112026/receipts/P2-T04_results.md; docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md; docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md | D28 S1 and S2 closed. New controlled S3 evaluation is ready for a separate dispatch. Inherited P2 arm remains parked. | — | NOT_SYNCED |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | — | P2-T06 | — | NOT_SYNCED |
 | P2-T06 | Measure the primary matched retrieval comparison | ⏳ NOT_STARTED | NOT_RUN | — | P2-T07; P3-T03 | — | NOT_SYNCED |
 | P2-T07 | Attribute candidate acquisition and decide research readiness | ⏳ NOT_STARTED | NOT_RUN | — | P3-T03; P4 integration; P5-T02 | — | NOT_SYNCED |

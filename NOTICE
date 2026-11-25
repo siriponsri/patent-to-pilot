@@ -11,3 +11,6 @@ downloads or reads. They keep their own terms, for example:
 - PatEmbed (CC BY-NC-SA 4.0)
 - Qwen3 (Apache-2.0)
 None of these datasets or weights is redistributed in this repository.
+
+The public-source excerpts in src/patent_to_pilot/workbench/sample/scope_reader.json
+are attributed separately in docs/evidence-scope/receipts/S2-sources.md.
