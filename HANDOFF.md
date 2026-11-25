@@ -18,13 +18,13 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   - `product_readiness` = core verified, with modes, Thai search, structural acquisition and selective revision checked;
   - `publication_readiness` = draft with results NOT_RUN.
 
-### Phase status (35 tasks: 20 COMPLETE, 5 PARTIAL, 10 NOT_STARTED)
+### Phase status (35 tasks: 19 COMPLETE, 4 PARTIAL, 1 BLOCKED, 11 NOT_STARTED)
 
 | Phase | Done | Open |
 |---|---|---|
 | P0 control | 5/7 | T02/T03 AFFiNE web sync blocked (the repo board is the tracker of record) |
 | P1 A3 model panel | **6/6 COMPLETE** | A3r1 CONTINUE (exploratory) — carried into P2 |
-| P2 structural acquisition | 3/7 (+T04 PARTIAL) | D19 follow-up → T04 screen vs close controls → T05 freeze → T06 matched comparison → T07 attribution |
+| P2 structural acquisition | 3/7 (+T04 BLOCKED) | D19 complete; T04 BM25 reproduction gate blocked → T05 freeze → T06 matched comparison → T07 attribution |
 | P3 Thai transfer | 1/5 (+T02 PARTIAL) | T03 text-transfer comparisons, T04 structure/OCR, T05 freeze scope |
 | P4 product | 3/5 (+T04 PARTIAL) | T04 policy v2.1 merged; source removal (D3) and T05 clean-install user test open |
 | P5 manuscript/release/IS2 | 1/5 | T02 scoreboards, T03 artifact, T04 IS2, T05 close |
@@ -84,8 +84,10 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   freeze was published in `d46ac2aa`. Attempt 1 stopped at 00:53:13 UTC after 213 exact BM25 matches and one
   mismatch. The evaluator never started and the matched score is NOT_RUN. The three attempt logs were pulled and
   hash-verified. The gate-only diagnostic isolated the difference to the final top-1000 slot, where the displayed
-  score ties. A synthetic tie verified that AVX2 selection can affect the cutoff on dr-train. The next guarded
-  replay disables AVX2 and retains the exact frozen gate. This replay needs no dependency download.
+  score ties. A synthetic tie verified that AVX2 selection can affect the cutoff on dr-train. The guarded scalar
+  replay stopped at the same app, and its logs are verified locally. No project job is active. The next exact
+  replay needs the owner's download decision for the archived scikit-learn wheel. A tied-cutoff amendment also
+  needs owner approval and a prospective freeze.
   [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md),
   [execution receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md).
 
