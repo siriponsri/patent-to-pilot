@@ -18,13 +18,13 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   - `product_readiness` = core verified, with modes, Thai search, structural acquisition and selective revision checked;
   - `publication_readiness` = draft with results NOT_RUN.
 
-### Phase status (35 tasks: 19 COMPLETE, 4 PARTIAL, 1 BLOCKED, 11 NOT_STARTED)
+### Phase status (35 tasks: 19 COMPLETE, 4 PARTIAL, 1 IN_PROGRESS, 11 NOT_STARTED)
 
 | Phase | Done | Open |
 |---|---|---|
 | P0 control | 5/7 | T02/T03 AFFiNE web sync blocked (the repo board is the tracker of record) |
 | P1 A3 model panel | **6/6 COMPLETE** | A3r1 CONTINUE (exploratory) — carried into P2 |
-| P2 structural acquisition | 3/7 (+T04 BLOCKED) | D19 complete; await owner decision on T04 cutoff-tie gate → T05 freeze → T06 matched comparison → T07 attribution |
+| P2 structural acquisition | 3/7 (+T04 IN_PROGRESS) | D19 complete; T04 cutoff-tie amendment approved → T05 freeze → T06 matched comparison → T07 attribution |
 | P3 Thai transfer | 1/5 (+T02 PARTIAL) | T03 text-transfer comparisons, T04 structure/OCR, T05 freeze scope |
 | P4 product | 3/5 (+T04 PARTIAL) | T04 policy v2.1 merged; source removal (D3) and T05 clean-install user test open |
 | P5 manuscript/release/IS2 | 1/5 | T02 scoreboards, T03 artifact, T04 IS2, T05 close |
@@ -89,9 +89,9 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   1.7.2 PyPI wheel for one isolated dr-train replay. The approved hash, import from the isolated overlay, and
   existing installation were verified. The guarded replay stopped at 10:22:12 UTC at the same first mismatch.
   Its logs are hash-verified locally. The census checked all 2,000 frozen apps. Ordered top-200 rows and displayed
-  scores were exact for all apps. Four top-1000 lists differed only at a verified cutoff tie. The exact archive gate
-  failed and the matched evaluation is NOT_RUN. The owner decision on a prospective cutoff-tie gate amendment is
-  pending. No paid compute or project process remains active.
+  scores were exact for all apps. Four top-1000 lists differed only at a verified cutoff tie. The original archive
+  gate failed and the matched evaluation is NOT_RUN. The owner approved the prospective cutoff-tie amendment and
+  CPU execution on dr-train. Verify the amended gate, then run under the new manifest pins and original score rule.
   [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md),
   [execution receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md).
 

@@ -87,3 +87,27 @@ def test_frozen_runtime_reproduces_bm25_and_writes_all_arms(tmp_path, monkeypatc
 def test_rejects_protected_path_before_open(tmp_path):
     with pytest.raises(ValueError, match="protected or credential"):
         screen.checked_digest(tmp_path / "P1-TEST" / "absent.tsv", "0" * 64)
+
+
+@pytest.mark.parametrize("difference", ["tie", "raw", "display", "eligibility", "prefix", "top200", "short"])
+def test_cutoff_exception_requires_a_proved_tie_below_top200(difference):
+    ranked = [(f"u{i}", 2.0) for i in range(screen.TOPK - 1)] + [("current", 1.0)]
+    if difference == "top200":
+        ranked[screen.FINAL_DEPTH - 1:] = [(unit, 1.0) for unit, _ in ranked[screen.FINAL_DEPTH - 1:]]
+    reproduced = [(i, unit, f"{score:.4f}") for i, (unit, score) in enumerate(ranked, 1)]
+    archived = reproduced[:-1] + [(screen.TOPK, "historical", "1.0000")]
+    if difference == "display":
+        archived[-1] = (screen.TOPK, "historical", "1.0001")
+    elif difference == "prefix":
+        archived[screen.TOPK - 2] = (screen.TOPK - 1, "other", "2.0000")
+    elif difference == "short":
+        archived.pop()
+    mask = EligibilityMask("fixture", exclude_ids={"historical"} if difference == "eligibility" else set())
+
+    class Index:
+        def rerank(self, request, units):
+            assert request == "archived query" and units == ["historical"]
+            return {"historical": 1.00001 if difference == "raw" else 1.0}
+
+    result = screen.same_cutoff_tie(archived, reproduced, ranked, Index(), "archived query", mask)
+    assert result is (difference == "tie")

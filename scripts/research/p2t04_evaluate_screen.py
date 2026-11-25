@@ -19,7 +19,8 @@ from pathlib import Path
 from patent_to_pilot.workbench.relation_search import POLICY_V1_SHA256
 from scripts.research.p2t02_analyse import B, KINDS, SEED, cluster_bootstrap, overlap_stats
 from scripts.research.p2t04_run_screen import (
-    ARMS, BLOCK, FINAL_DEPTH, INPUTS, ROUTES, checked_digest, checked_path, dev_records, selected_records,
+    ARMS, BLOCK, BM25_EXACT, FINAL_DEPTH, INPUTS, ROUTES, bm25_gate_mode, checked_digest, checked_path,
+    dev_records, selected_records,
 )
 
 SCHEMA = "ptp-p2t04-evaluation/1"
@@ -180,11 +181,17 @@ def evaluate(manifest_path: Path, freeze_sha: str, run_dir: Path, out: Path) -> 
     run_dir = checked_path(run_dir)
     runtime = _json(run_dir / "runtime.json")
     reproduction = _json(run_dir / "bm25-reproduction.json")
+    gate_mode = bm25_gate_mode(runtime_manifest)
     if runtime["block"] != BLOCK or runtime["manifest_sha256"] != runtime_sha or runtime["query_count"] != len(apps):
         raise ValueError("completed runtime receipt does not match the frozen cohort")
     if (reproduction["status"] != "PASS" or reproduction["manifest_sha256"] != runtime_sha
-            or reproduction["queries"] != len(apps)):
+            or reproduction["queries"] != len(apps) or reproduction.get("mode", BM25_EXACT) != gate_mode):
         raise ValueError("BM25-full reproduction gate did not pass for the frozen cohort")
+    if "mode" in reproduction:
+        exact, ties = reproduction.get("exact_queries"), reproduction.get("cutoff_ties")
+        if (type(exact) is not int or type(ties) is not int or min(exact, ties) < 0
+                or exact + ties != len(apps) or (gate_mode == BM25_EXACT and ties != 0)):
+            raise ValueError("invalid BM25-full reproduction counts for the frozen gate")
 
     units_path = _pinned(runtime_path.parent, runtime_manifest["inputs"]["units"])
     tasks_path = _pinned(runtime_path.parent, runtime_manifest["inputs"]["tasks"])

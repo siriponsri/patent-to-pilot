@@ -139,6 +139,8 @@ def test_frozen_cohort_matches_original_scorer_and_retains_empty_rankings(tmp_pa
         ("missing_clusters", "cover every frozen query"),
         ("unproven_empty_archive", r"archived F3\* query coverage"),
         ("failed_reproduction", "reproduction gate did not pass"),
+        ("different_reproduction_mode", "reproduction gate did not pass"),
+        ("invalid_reproduction_counts", "invalid BM25-full reproduction counts"),
         ("changed_baseline", "differs from the frozen archive"),
     ],
 )
@@ -167,6 +169,12 @@ def test_refuses_unfrozen_or_incomplete_inputs(tmp_path, problem, message):
         manifest[evaluator.F3_NAME] = {"ranking": _pin(archive)}
     elif problem == "failed_reproduction":
         _json(run_dir / "bm25-reproduction.json", {"status": "FAIL"})
+    elif problem in {"different_reproduction_mode", "invalid_reproduction_counts"}:
+        gate_path = run_dir / "bm25-reproduction.json"
+        gate = json.loads(gate_path.read_text(encoding="utf-8"))
+        gate.update(mode=screen.BM25_CUTOFF_TIE if problem == "different_reproduction_mode" else screen.BM25_EXACT,
+                    exact_queries=2, cutoff_ties=1)
+        _json(gate_path, gate)
     elif problem == "changed_baseline":
         _rank(run_dir / "original_Q.tsv", {"a": ["in-a"], "b": ["out-b"], "c": ["other"]})
     pin = _json(tmp_path / "freeze.json", manifest)

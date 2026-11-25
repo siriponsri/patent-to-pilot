@@ -43,3 +43,34 @@ Run one CPU stage at a time on dr-train with up to eight numeric-library threads
 restricted to the project job group. Estimated peak is 36 GiB. Prelaunch read showed about 118 GiB MemAvailable
 and 985 GB free disk. Both runtime and evaluator require their recorded manifest hashes. No paid work is planned.
 The final transfer verified the Qwen3 C1 route, both manifests and the launcher on dr-train before benchmark execution.
+
+## Owner-approved cutoff amendment, 25 Nov 2026
+
+**State at amendment:** matched-screen rankings and scores NOT_RUN. The preceding exact gate failed. Its separate
+lexical census found 1,996 exact top-1000 runs and four differences confined to a verified score tie at the cutoff.
+All 2,000 ordered top-200 prefixes and displayed scores were exact. The owner chose A and authorized one CPU-only
+matched run under the following prospective validation rule.
+
+Accept exact reproduction by default. For an unequal top-1000 pair under `verified-cutoff-tie/1`, require both
+lists to have 1,000 rows. Compute the finite, positive raw cutoff score from the rebuilt rank 1,000 and find its tied
+suffix. Require identical rows including displayed scores above the suffix, including all ranks 1 to 200. Require
+every archived suffix unit to be eligible under the same filing-date and self-unit rules, with a rebuilt raw score
+exactly equal to the cutoff and the matching four-decimal archived score. Reject every other difference. Record
+exact and accepted-tie query counts, and bind the evaluator to the selected gate and counts.
+
+| Amendment pin | SHA-256 |
+|---|---|
+| Runtime manifest `runtime-cutoff-v1.json` | `d3b7826783d53e958280f3c5150e0fb80a1264e9b315493e2f6e2f6f37f9a407` |
+| Evaluator manifest `evaluator-cutoff-v1.json` | `5e16c2f3e77fece4fc97a8d2563d34aab39a25f420de2431d6fdac19ce681da8` |
+| Launcher `launch-cutoff-v1.sh` | `0267033ecfe024ed421a10281ea7888ca2a63d5e51aef81afbd815492bd95343` |
+| Runtime module `p2t04_run_screen.py` | `7d1aa3d397d896b82541144726d837b69737f3102e1ef3a97159eff424b06c1d` |
+| Evaluator module `p2t04_evaluate_screen.py` | `35d0258101608ba332317895bd2fb93ec4463668ffff5ae5072ba5c38f8b0f73` |
+
+The runtime manifest adds only the gate field, and the evaluator manifest updates only its runtime reference.
+The same cohort, archives, candidate acquisition, evaluator, controls, bootstrap and progression rule apply.
+The run uses the verified scikit-learn 1.7.2 overlay, existing NumPy 2.2.6 and SciPy 1.18.1, default AVX2,
+one guarded CPU group at a time and the original memory limits. RunPod spend for P2-T04 is USD 0.
+
+The targeted runner and evaluator fixtures passed. The full pypdf/PyThaiNLP test gate reported only the eight
+known SACR r2/r3 budget supervisor failures allowed by `AGENTS.md`. The remote staged files matched all five
+pins and both entry points loaded without reading benchmark inputs.

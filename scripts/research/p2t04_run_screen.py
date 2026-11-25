@@ -9,12 +9,13 @@ import json
 import re
 from array import array
 from contextlib import ExitStack
+from math import isfinite
 from pathlib import Path
 from time import perf_counter
 
 from patent_to_pilot.workbench.relation_search import POLICY_V1_SHA256, RerankRequest
 from scripts.research.g03_route_acquisition import FINAL_DEPTH, ROUTES, WINDOW, final_ranking
-from scripts.research.p2t04_bm25_backend import BM25FullIndex
+from scripts.research.p2t04_bm25_backend import BM25FullIndex, TOPK
 from scripts.research.p2t04_matched_screen import ScreenLimits, SourceUnit, run_matched_query
 from scripts.research.p2t04_requirements import AssessorLimits, LexicalAssessor, extract_requirements
 
@@ -25,6 +26,15 @@ ARMS = (
 )
 INPUTS = {"queries", "bm25_queries", "tasks", "units", "full_passages", *("route_" + route for route in ROUTES)}
 FORBIDDEN = re.compile(r"(?:^|[/\\_.-])(?:P[123]-TEST|sealed|\.env)(?:$|[/\\_.-])", re.IGNORECASE)
+BM25_EXACT = "exact/1"
+BM25_CUTOFF_TIE = "verified-cutoff-tie/1"
+
+
+def bm25_gate_mode(manifest):
+    mode = manifest.get("bm25_gate", BM25_EXACT)
+    if mode not in (BM25_EXACT, BM25_CUTOFF_TIE):
+        raise ValueError("unknown frozen BM25 reproduction gate")
+    return mode
 
 
 def checked_path(path: Path) -> Path:
@@ -116,6 +126,26 @@ def write_row_set(stream, app, ids):
         stream.write(f"{app}\t{rank}\t{unit_id}\t0\n")
 
 
+def same_cutoff_tie(archived, reproduced, ranked, index, request, eligibility):
+    """Allow only an eligible raw-score tie in the native top-1000 cutoff suffix."""
+    if len(archived) != TOPK or len(ranked) != TOPK:
+        return False
+    cutoff = ranked[-1][1]
+    if not isfinite(cutoff) or cutoff <= 0:
+        return False
+    start = TOPK - 1
+    while start and ranked[start - 1][1] == cutoff:
+        start -= 1
+    if start < FINAL_DEPTH or archived[:start] != reproduced[:start]:
+        return False
+    displayed = f"{cutoff:.4f}"
+    units = [unit for _, unit, _ in archived[start:]]
+    if any(score != displayed or eligibility.reason(unit) is not None for _, unit, score in archived[start:]):
+        return False
+    scores = index.rerank(request, units)
+    return all(scores.get(unit) == cutoff for unit in units)
+
+
 def run(manifest_path: Path, freeze_sha: str, out: Path):
     started = perf_counter()
     manifest_path = checked_digest(manifest_path, freeze_sha)
@@ -125,6 +155,7 @@ def run(manifest_path: Path, freeze_sha: str, out: Path):
         or manifest["policy_sha256"] != POLICY_V1_SHA256 or manifest["inputs"].keys() != INPUTS
     ):
         raise ValueError("manifest must pin the P1-DEV screen, policy, and exact runtime input roles")
+    gate_mode = bm25_gate_mode(manifest)
     query_ids = manifest["query_ids"]
     apps = set(query_ids)
     if not apps or len(apps) != len(query_ids):
@@ -161,16 +192,23 @@ def run(manifest_path: Path, freeze_sha: str, out: Path):
         index = BM25FullIndex(passages.rows(), dates)
         index_seconds = perf_counter() - index_started
         gate_started = perf_counter()
+        cutoff_ties = 0
         for app in query_ids:
             eligibility = index.eligibility_for(app, tasks[app]["filing_date"])
             request = RerankRequest(app, bm25_queries[app]["text"], ())
-            reproduced = [
-                (i, unit, f"{score:.4f}") for i, (unit, score) in enumerate(index.original(request, eligibility), 1)
-            ]
-            if reproduced != route_rows["L"].get(app, []):
+            ranked = index.original(request, eligibility)
+            reproduced = [(i, unit, f"{score:.4f}") for i, (unit, score) in enumerate(ranked, 1)]
+            archived = route_rows["L"].get(app, [])
+            if reproduced == archived:
+                continue
+            if gate_mode != BM25_CUTOFF_TIE or not same_cutoff_tie(
+                archived, reproduced, ranked, index, request, eligibility,
+            ):
                 raise RuntimeError(f"archived BM25-full reproduction failed for frozen app {app}")
+            cutoff_ties += 1
         (work / "bm25-reproduction.json").write_text(
             json.dumps({"status": "PASS", "queries": len(apps), "manifest_sha256": freeze_sha,
+                        "mode": gate_mode, "exact_queries": len(apps) - cutoff_ties, "cutoff_ties": cutoff_ties,
                         "wall_seconds": perf_counter() - gate_started}) + "\n",
             encoding="utf-8",
         )
