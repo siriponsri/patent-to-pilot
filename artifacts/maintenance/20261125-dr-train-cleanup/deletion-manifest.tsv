@@ -1,0 +1,7 @@
+path	bytes	reason	local_copy
+/data/ptp-paper2/p2t04-run-prep-20261124/screen-v1-cutoff-tie/rankings/trace.jsonl	145454828	Raw trace superseded by gzip verified against evaluator SHA-256	../_private_artifacts/p2t04-preflight-20261124/screen-v1-cutoff-tie/rankings/trace.jsonl.gz
+/data/ptp-paper2/p2t04-run-prep-20261124/stage-cutoff-v1/runtime-cutoff-v1.json	34944	Copy staged for installation; canonical copy under freeze	../_private_artifacts/p2t04-preflight-20261124/freeze-cutoff-v1/runtime-cutoff-v1.json
+/data/ptp-paper2/p2t04-run-prep-20261124/stage-cutoff-v1/evaluator-cutoff-v1.json	1012	Copy staged for installation; canonical copy under freeze	../_private_artifacts/p2t04-preflight-20261124/freeze-cutoff-v1/evaluator-cutoff-v1.json
+/data/ptp-paper2/p2t04-run-prep-20261124/stage-cutoff-v1/launch-cutoff-v1.sh	1981	Copy staged for installation; canonical copy under freeze	../_private_artifacts/p2t04-preflight-20261124/freeze-cutoff-v1/launch-cutoff-v1.sh
+/data/ptp-paper2/p2t04-run-prep-20261124/stage-cutoff-v1/p2t04_run_screen.py	12015	Copy staged for installation; checked against committed runtime blob	scripts/research/p2t04_run_screen.py
+/data/ptp-paper2/p2t04-run-prep-20261124/stage-cutoff-v1/p2t04_evaluate_screen.py	13626	Copy staged for installation; checked against committed evaluator blob	scripts/research/p2t04_evaluate_screen.py
