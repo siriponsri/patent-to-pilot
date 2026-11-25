@@ -1,0 +1,54 @@
+{
+  "arms": [
+    "static",
+    "rerank",
+    "complete_first",
+    "coverage",
+    "scope"
+  ],
+  "ceilings": {
+    "actions": 4,
+    "candidate_depth": 6,
+    "elapsed_ms": 30000,
+    "inspected": 24,
+    "model_tokens": 0,
+    "returned": 8
+  },
+  "environment": {
+    "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "implementation": "CPython",
+    "logical_cpus": 12,
+    "machine": "AMD64",
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "query_threads": 1,
+    "timer": {
+      "adjustable": false,
+      "implementation": "QueryPerformanceCounter()",
+      "monotonic": true,
+      "resolution": 1e-07
+    },
+    "unicode": "15.0.0",
+    "workers": 1
+  },
+  "files_lf_sha256": {
+    "docs/evidence-scope/FREEZE.md": "e7ba7d7320ca2ab8f447f1dfb1b10d9728e98003f7300be688b52ae4c1d0a1f3",
+    "docs/evidence-scope/research/MEASUREMENT.md": "044fa06cf23ea04d6767f4f060ebbceadbc5175e9b559cb9b367559a1b96e440",
+    "scripts/research/s1_scorer.py": "a06271dc0b771f164cd4637074dc1a063254a3e3150bb8633eb33397e89cf036",
+    "scripts/research/s3_policy.py": "1c57377cbd859bf2be290a0aa2f3c0ec0713528e956e92a52e62da6676940c29",
+    "scripts/research/s3_run.py": "0377fa61197ae4ce15d5923b87fd77a47f982e6e3ce85fe33078ee80b4c8581a",
+    "scripts/research/s3_trace.py": "8407f4341ee9018086718b0f1112c4286e879fb612ff3354fb1b0f4c37fac128",
+    "tests/test_s3_policy.py": "883bbc55cca291e0f803a7e7ffc484efc195616b89c958ff714eb934110a797c"
+  },
+  "frozen_utc": "2026-11-25T13:35:16.424464+00:00",
+  "primary": [
+    "scope",
+    "coverage"
+  ],
+  "primary_language": "th",
+  "replicates": 10000,
+  "resampling_seed": 20261125,
+  "revision": "S3-fixed-v1",
+  "s1_manifest_sha256": "e0b9aa0b9b0c0219390f2dfaf85b8f978f4f83120fa01ce18eee5c67de3d89ac",
+  "transfer_language": "en"
+}

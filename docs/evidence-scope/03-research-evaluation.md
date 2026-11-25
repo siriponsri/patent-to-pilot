@@ -1,6 +1,6 @@
 # S3 · Matched research evaluation
 
-**Status:** planned, all new arms NOT_RUN. **Track:** research. **Entry:** an S1 controlled pilot and frozen measurement packet. **Runs alongside:** S2/S4 product work. **Consumer:** S5. [Master plan](MASTER-PLAN.md) · [Data phase](01-research-data.md) · [Frozen questions and decision rules](FREEZE.md).
+**Status:** executor active, S1 verified, all S3 arms NOT_RUN. **Track:** research. **Entry:** an S1 controlled pilot and frozen measurement packet. **Consumer:** S5. [Master plan](MASTER-PLAN.md) · [Data phase](01-research-data.md) · [Frozen questions and decision rules](FREEZE.md).
 
 ## S3-T01 · Implement the decision and replay contract
 
@@ -58,8 +58,8 @@ The receipt contains manifest and policy hashes, deviations, resource bookings, 
 
 | Task | State | Receipt |
 |---|---|---|
-| S3-T01 | NOT_STARTED | Pending |
-| S3-T02 | NOT_STARTED | Pending |
+| S3-T01 | COMPLETE | S1 verification and 13 independent S3 checks. See [preregistration](../healthtech/audits/S3-20261125/PREREGISTRATION.md) |
+| S3-T02 | COMPLETE | [Frozen nomination, code, inputs and ceilings](../healthtech/audits/S3-20261125/freeze.json) |
 | S3-T03 | NOT_STARTED | Pending |
-| S3-T04 | NOT_STARTED | Pending |
+| S3-T04 | COMPLETE | [Eligibility, historical metrics and NOT_RUN cells](../healthtech/audits/S3-20261125/BRIDGE.md) |
 | S3-T05 | NOT_STARTED | Pending |

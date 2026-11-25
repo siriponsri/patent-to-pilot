@@ -15,7 +15,7 @@ Each row has one execution sheet with stable task IDs. S1 and S2 ran together. S
 | [S0 · Organization](00-organization.md) | Governance, baseline inventory, prospective freeze, documentation and handoff | Owner direction | **COMPLETE** | This package and the S0 acceptance record |
 | [S1 · Research data](01-research-data.md) | Authorized input manifests, family isolation, three-state fixtures, comparator design | S0 and D28 | **COMPLETE** | [Frozen packet, rights, scorer and comparator](receipts/S1-20261125.md) |
 | [S2 · Product workbench](02-product-workbench.md) | An end-to-end Thai-law and English-patent reading path using one shared contract | S0 and D28 | **COMPLETE** | [Local alpha, ten public families and 23 saved traces](receipts/S2-workbench.md) |
-| [S3 · Research evaluation](03-research-evaluation.md) | Matched DEV experiment, error attribution and independent result labels | S1 | **NOT_STARTED** | Use the shared contract and frozen fixtures. A polished UI is optional |
+| [S3 · Research evaluation](03-research-evaluation.md) | Matched DEV experiment, error attribution and independent result labels | S1 | **IN_PROGRESS** | [Prospective lock](../healthtech/audits/S3-20261125/PREREGISTRATION.md) ready. Reserved DEV is NOT_RUN |
 | [S4 · Product validation](04-product-release.md) | Reproducible local alpha, rights, installation and usability evidence | S2 | **NOT_STARTED** | Validate both demonstrations independently of S3 scores |
 | [S5 · Synthesis and handoff](05-synthesis.md) | Research package, IS2 narrative and product release decision | Either finished lane for its own draft; both dispositions for closure | **NOT_STARTED** | Publish only evidence that each track actually obtained |
 

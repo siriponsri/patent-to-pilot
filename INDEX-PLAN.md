@@ -2,7 +2,7 @@
 
 Start with the [master plan and live S0–S5 board](docs/evidence-scope/MASTER-PLAN.md), the [prospective freeze](docs/evidence-scope/FREEZE.md) and [HANDOFF](HANDOFF.md). The phase sheets contain tasks and dependencies for GPT 6.2 high. The earlier [P0–P5 board](docs/tracking/owner-note-22112026/PHASE_BOARD.md) retains historical task state and is rendered by `scripts/tracking/ptp_tracker.py`.
 
-S1 delivered the [controlled data and scorer](docs/evidence-scope/receipts/S1-20261125.md). S2 delivered the [local alpha](docs/evidence-scope/receipts/S2-workbench.md) and [public-source inventory](docs/evidence-scope/receipts/S2-sources.md). The [S3 executor prompt](docs/evidence-scope/S3-EXECUTOR-PROMPT.md) is ready.
+S1 delivered the [controlled data and scorer](docs/evidence-scope/receipts/S1-20261125.md). S2 delivered the [local alpha](docs/evidence-scope/receipts/S2-workbench.md) and [public-source inventory](docs/evidence-scope/receipts/S2-sources.md). S3 is active with a [preregistration and reproduction commands](docs/healthtech/audits/S3-20261125/PREREGISTRATION.md), [machine lock](docs/healthtech/audits/S3-20261125/freeze.json) and [continuity matrix](docs/healthtech/audits/S3-20261125/BRIDGE.md).
 
 ## 1. Owner inputs (owner-local, untracked, read-only)
 
