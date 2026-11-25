@@ -4,9 +4,9 @@ The owner approved resumption through 04:00 Asia/Bangkok on 26 November 2026 (21
 
 The owner also permitted in-scope auxiliary work on dr-train and OpenRouter within existing rules. Ancillary OpenRouter activity would require checking the actual E1R cumulative ledger, reservations and attempted-request count, the specific model price, and a bounded booking before calls. The current E1R limits are USD 40 notification, USD 50 hard cumulative spend and 100,000 attempted requests. The prior cumulative amount was not re-audited because this dispatch did not book or call a provider. dr-train requires the documented §2a memory safeguards, approved V100 if using a GPU, one GPU job at a time and verified local transfer before remote cleanup. No new pod authority or budget was created.
 
-| Resource | Work booked in this dispatch | Actual at prospective checkpoint |
+| Resource | Work booked in this dispatch | Actual at closeout |
 |---|---|---|
-| Local CPU | Repository QA, launch and restore checks, fixture validation, one held original if cleared | Fixture QA and candidate validation are local. Held execution NOT_RUN. Per-case elapsed, CPU, graph and inspection counts are recorded by the frozen runner. |
+| Local CPU | Repository QA, launch and restore checks, fixture validation, one held original if cleared | Complete on the local machine. The single sealed original validated 225 traces and recorded 790 actions, 3,250 inspections and 865 edge reads. Captured subprocess wall time totaled 333.8184 ms including launch overhead. The [results](RESULTS.md) link precise ledgers. No original retry and no job remains active. |
 | OpenRouter | 0 calls and 0 token allocation for the experiment | 0 new calls, tokens, reservations or spend |
 | dr-train and GPU | None | No connection, job, transfer or attributable remote resource use |
 | RunPod | None | No pods, bookings or new spending |

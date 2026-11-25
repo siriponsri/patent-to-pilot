@@ -1,6 +1,6 @@
 # Patent-to-Pilot master plan
 
-**Effective 25 November 2026 · S0 through S4 complete at their recorded scope · Alternative-evidence follow-up awaits independent release.**
+**Effective 25 November 2026 · S0 through S4 complete at their recorded scope · Option A controlled primary NULL.**
 
 Build a Thai-first reader that explains a legal provision or patent claim, shows the source of each condition and lets a reader see which conclusions change when the edition or claim changes. Study the same engine under a fixed search budget. Its hardest case is a plausible explanation assembled from real passages that refer to different editions, tables or embodiments.
 
@@ -73,4 +73,4 @@ The closest-work search was conducted in SciSpace. Inspect the paper records for
 
 ## Prompt for the next goal
 
-The [S3 executor prompt](S3-EXECUTOR-PROMPT.md) records the completed dispatch. S4 is independently complete at its qualified Windows level. The separate [alternative-evidence follow-up](05-alternative-evidence-literature.md) has a [v2 prospective lock](alternative-evidence/freeze.json) that requires independent release of the exact published revision before the single original. S5 remains pending.
+The [S3 executor prompt](S3-EXECUTOR-PROMPT.md) records the completed S3 dispatch. S4 is independently complete at its qualified Windows level. Option A's [v2 original and independent audit](alternative-evidence/RESULTS.md) closed with a Thai controlled NULL result and diagnostic-only architecture evidence. The same evidence-opening sequence occurred in all arms on the authored packet. S5 remains pending.
