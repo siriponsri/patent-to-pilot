@@ -90,3 +90,17 @@ scores were exact for all 2,000. All three census logs were pulled and hash-veri
 The exact archive gate is **FAIL**. The matched screen and evaluator are **NOT_RUN**. No process remains active.
 Spend was USD 0. The owner was asked whether to prospectively amend the gate only for verified cutoff ties or
 keep the exact gate and hold execution. The original progression rule and frozen inputs remain in force.
+
+## Amended CPU run
+
+The owner chose the cutoff-only exception, published before execution in `b4e0f903`. The guarded CPU run started
+at 10:53:36 UTC with 123,916,248 KiB MemAvailable. The actual gate passed all 2,000 queries, including 1,996
+exact lists and four accepted cutoff ties. Gate wall time was 135.052 seconds and its SHA-256 was
+`098e0a6112207b878a38601caa216bbea5f85df280c0911404a473e8b1c72f07`.
+
+The matched runtime finished at 11:16:03 UTC and the separate evaluator finished at 11:19:38 UTC. All 22 files
+matched `pull.sha256` in the local result folder. The decompressed trace matched the evaluation digest.
+The [result receipt](P2-T04_results.md) records the frozen NO_GAIN decision. Cleanup freed
+145,518,406 bytes across the raw trace and five duplicate staging files after local verification. The compressed
+trace and canonical run and freeze files remain on dr-train.
+[Deletion manifest](../../../../artifacts/maintenance/20261125-dr-train-cleanup/deletion-manifest.tsv).

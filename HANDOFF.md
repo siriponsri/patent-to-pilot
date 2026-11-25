@@ -6,25 +6,25 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ## Agent takeover state — 25 Nov 2026 (Asia/Bangkok)
 
-**Account takeover active.** Codex owns D19 verification and P2-T04 integration in this
-session. At takeover `main` matched `origin/main` at `5891d7ea`; the existing Claude branches and owner-local files
-are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md).
+**Account takeover complete through P2-T04.** D25, D19 and the P2-T04 screen are verified and recorded on `main`.
+At takeover `main` matched `origin/main` at `5891d7ea`; the existing Claude branches and owner-local files are
+preserved. See the [next-account handoff](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md).
 
 **Plan.** Outcome-based **P0–P5** (owner note 22 Nov). Live board:
 [docs/tracking/owner-note-22112026/PHASE_BOARD.md](docs/tracking/owner-note-22112026/PHASE_BOARD.md).
 - Tool: `python scripts/tracking/ptp_tracker.py show|set|render`.
 - Status fields stay separate:
-  - `method_evidence` = NOT_YET_DEMONSTRATED (A3r1 is exploratory; a matched structural gain has not been measured);
+  - `method_evidence` = NOT_YET_DEMONSTRATED (A3r1 is exploratory; the P2-T04 arm returned NO_GAIN);
   - `product_readiness` = core verified, with modes, Thai search, structural acquisition and selective revision checked;
-  - `publication_readiness` = draft with results NOT_RUN.
+  - `publication_readiness` = draft; publication checks remain open.
 
-### Phase status (35 tasks: 19 COMPLETE, 4 PARTIAL, 1 IN_PROGRESS, 11 NOT_STARTED)
+### Phase status (35 tasks: 20 COMPLETE, 4 PARTIAL, 11 NOT_STARTED)
 
 | Phase | Done | Open |
 |---|---|---|
 | P0 control | 5/7 | T02/T03 AFFiNE web sync blocked (the repo board is the tracker of record) |
 | P1 A3 model panel | **6/6 COMPLETE** | A3r1 CONTINUE (exploratory) — carried into P2 |
-| P2 structural acquisition | 3/7 (+T04 IN_PROGRESS) | D19 complete; T04 cutoff-tie amendment approved → T05 freeze → T06 matched comparison → T07 attribution |
+| P2 structural acquisition | 4/7 | T04 NO_GAIN; screened arm parked. A viable hypothesis is required before T05. |
 | P3 Thai transfer | 1/5 (+T02 PARTIAL) | T03 text-transfer comparisons, T04 structure/OCR, T05 freeze scope |
 | P4 product | 3/5 (+T04 PARTIAL) | T04 policy v2.1 merged; source removal (D3) and T05 clean-install user test open |
 | P5 manuscript/release/IS2 | 1/5 | T02 scoreboards, T03 artifact, T04 IS2, T05 close |
@@ -41,7 +41,11 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   - BM25-full − C0 = **+0.0223 [0.0200, 0.0247]**;
   - both become the new representation baselines;
   - structure C2 − C1 = −0.0087, so it gets no credit.
-  - D19 is triggered: complete-content PatEmbed/Qwen3 (C1).
+  - D19 selected complete-content PatEmbed and Qwen3 (C1).
+- **P2-T04 COMPLETE, NO_GAIN.** The unresolved-relation arm yielded ALL R@200 0.44372 against 0.44998 for the
+  strongest eligible reference, complete-content fusion. Paired change was −0.00626 [−0.00902, −0.00369]. The frozen
+  progression rule failed. Park this arm. P2-T05 confirmation remains NOT_RUN.
+  [Matched screen result](docs/tracking/owner-note-22112026/receipts/P2-T04_results.md).
 - **P1-T04 A3r1 pilot: frozen rule GO**, m\* = DeepSeek V4 Flash, Δ = **+0.0245 [0.0179, 0.0310]** against F\* 0.4334 on
   2,000 apps ([receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md)). This is optimistic and
   only gates spending.
@@ -60,10 +64,6 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   [Readiness receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_D19_readiness.md).
 - **D26:** the owner approved opening eligible US RunPod pods, machine selection, parallel sub-agent work and a long-run
   goal. D19 can spend up to USD 20 within the existing R2 envelope.
-- **Parallel checkpoint:** both workers finished. P2-T04 now has a hash-bound runtime and separate evaluator.
-  The combined full gate had 2,741 passed, nine skips, one known xfail and exactly the eight permitted SACR cases.
-  P2-T04 benchmark execution remains NOT_RUN. See the
-  [preparation record](docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md).
 - **PatEmbed complete:** all A2 gates passed. C1 replaces C0 under the frozen rule, ALL R@200
   +0.00718 [0.00505, 0.00936], from 0.41806 to 0.42523. Verified output is in
   `../_private_artifacts/p2t02-d19-runpod/p2t02-d19-patembed-results.tgz`. The collector pulled the archive at
@@ -76,24 +76,11 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   API deleted `10813cm5sej2s2` at about 25 Nov 00:34:53 UTC. GET returned 404 and the account pod list is empty.
   RunPod posted USD 7.07229 across both UTC billing days, including the closing period through deletion.
 - **D19 complete:** both model baselines are C1. The gains are complete-content representation controls.
-- **P2-T04 artifact staging:** ten non-TEST runtime and historical inputs passed transfer and SHA-256 checks on
-  `/data/ptp-paper2/p2t04-run-prep-20261124`. The 30 GiB MemAvailable guard did not trigger. The lexical stream
-  has been materialized and hash-checked, the two evaluator inputs are in a separate directory, and both entry
-  points from `ff9c2048` load on dr-train. Both C1 rankings, the frozen manifests and the CPU launcher passed
-  transfer and SHA-256 verification. The frozen P1-DEV CPU screen started at 00:40:48 UTC on 25 Nov after the
-  freeze was published in `d46ac2aa`. Attempt 1 stopped at 00:53:13 UTC after 213 exact BM25 matches and one
-  mismatch. The evaluator never started and the matched score is NOT_RUN. The three attempt logs were pulled and
-  hash-verified. The gate-only diagnostic isolated the difference to the final top-1000 slot, where the displayed
-  score ties. A synthetic tie verified that AVX2 selection can affect the cutoff on dr-train. The guarded scalar
-  replay stopped at the same app, and its logs are verified locally. The owner approved the exact scikit-learn
-  1.7.2 PyPI wheel for one isolated dr-train replay. The approved hash, import from the isolated overlay, and
-  existing installation were verified. The guarded replay stopped at 10:22:12 UTC at the same first mismatch.
-  Its logs are hash-verified locally. The census checked all 2,000 frozen apps. Ordered top-200 rows and displayed
-  scores were exact for all apps. Four top-1000 lists differed only at a verified cutoff tie. The original archive
-  gate failed and the matched evaluation is NOT_RUN. The owner approved the prospective cutoff-tie amendment and
-  CPU execution on dr-train. The approved gate was published at `b4e0f903`. The guarded run began at 10:53:36 UTC
-  on 25 Nov and writes to `screen-v1-cutoff-tie/` with `driver-cutoff-v1.log`. The original score rule applies.
-  [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md),
+- **P2-T04 closed:** the owner-approved gate at `b4e0f903` passed all 2,000 BM25 lists (1,996 exact and four
+  verified cutoff ties). Runtime and independent evaluator completed at 11:19:38 UTC on 25 Nov. All 22 returned
+  file digests verified in `../_private_artifacts/p2t04-preflight-20261124/screen-v1-cutoff-tie/`. The raw trace was
+  replaced by its verified gzip copy and duplicate staging files were pruned. There is no active project job.
+  [Frozen protocol](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md) and
   [execution receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md).
 
 ### Money and access (25 Nov)

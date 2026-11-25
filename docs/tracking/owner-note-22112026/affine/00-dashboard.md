@@ -19,8 +19,7 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 
 ## Task counts
 
-- ✅ COMPLETE: 19
-- 🔄 IN_PROGRESS: 1
+- ✅ COMPLETE: 20
 - ⏳ NOT_STARTED: 11
 - 🟡 PARTIAL: 4
 
@@ -30,7 +29,7 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 |---|---|---|---|
 | P0 | Control, setup and execution readiness | IN_PROGRESS | 5/7 |
 | P1 | Reproducible model-panel and A3 experiment | COMPLETE | 6/6 |
-| P2 | Constructive structural candidate acquisition | IN_PROGRESS | 3/7 |
+| P2 | Constructive structural candidate acquisition | IN_PROGRESS | 4/7 |
 | P3 | Thai transfer and structural scope evaluation | IN_PROGRESS | 1/5 |
 | P4 | Integrated product usability and explainability | IN_PROGRESS | 3/5 |
 | P5 | Manuscript, artifact release and IS2 readiness | IN_PROGRESS | 1/5 |
