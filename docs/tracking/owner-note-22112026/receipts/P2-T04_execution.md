@@ -79,3 +79,14 @@ inputs and omit judgments, matched ranking generation and scoring. The original 
 The census script SHA-256 is `b1e1686c717050bdd87cc565ad9660c9933d7487663fb4346b19b9e0bc0e58b5` and the launcher
 SHA-256 is `6b555d56ca4d6b306b9f97812a1a8299eb631967b16f8eb04ff8587805c888c7`. Output is under
 `diagnostics-cutoff-census/`, with one CPU process group, the 30 GiB memory floor and the 36 GiB planning estimate.
+
+The census completed from 10:25:18 to 10:37:49 UTC, with 4,871,484 KiB peak RSS and no watchdog abort. It checked
+all 2,000 frozen apps. Ordered top-1000 rows and displayed scores were exact for 1,996 apps, and four differed only
+at the tied cutoff under the predeclared check. There were zero other mismatches. Ordered top-200 rows and displayed
+scores were exact for all 2,000. All three census logs were pulled and hash-verified under
+`../_private_artifacts/p2t04-preflight-20261124/diagnostics-cutoff-census/`. The census log digest is
+`97b5900e9d67f065a3610c029414dabb1293418e32b9d192db3d27be41ce6b90`.
+
+The exact archive gate is **FAIL**. The matched screen and evaluator are **NOT_RUN**. No process remains active.
+Spend was USD 0. The owner was asked whether to prospectively amend the gate only for verified cutoff ties or
+keep the exact gate and hold execution. The original progression rule and frozen inputs remain in force.
