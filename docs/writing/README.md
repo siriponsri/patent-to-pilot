@@ -1,5 +1,7 @@
 # Writing tracks (separated 19 Nov 2026, owner instruction)
 
+> Current writing direction: the [synthesis phase](../evidence-scope/05-synthesis.md) and [original-source record](../evidence-scope/00-organization.md#original-source-corrections) govern the next revision. Dated outlines and results below retain their historical scope.
+
 > **Update 21 Nov 2026 (program PTP-2026-11-21):** the journal track is consolidated into **one paper with three contributions** (goal G07). Write that manuscript under `docs/writing/journal/` so the Paper 86 guard in `tests/test_org_adaptive_terminology.py` covers it. The Paper 1-3 plan below is kept as decision history. The IS2 track is unchanged.
 
 Two tracks with different readers, rules and evidence. Never mix text, numbers or claims between them without an explicit

@@ -1,5 +1,7 @@
 # Track IS2: Independent Study 2 (KMITL)
 
+> Current writing direction: the [synthesis phase](../../evidence-scope/05-synthesis.md) and [original-source record](../../evidence-scope/00-organization.md#original-source-corrections) govern the next revision. Dated outlines and results below retain their historical scope.
+
 Purpose: one IS2 report that (a) answers the IS1 committee's comments on Paper 53, (b) reports the B53 first-stage
 substitution study on DAPFAM, and (c) incorporates the owner's earlier unpublished conference work (Paper 86), possibly
 combining all of it (owner instruction 19 Nov 2026). Paper 86 is allowed here and only here.

@@ -1,5 +1,7 @@
 # Next-account handoff, 22 Nov 2026 (b, after the afternoon session)
 
+> Historical dispatch. Use the [current handoff](../../HANDOFF.md) and [S0–S5 master plan](../evidence-scope/MASTER-PLAN.md) for new work. The operating procedures below retain their original scope.
+
 Paste the prompt in §1 into a new Claude Code session opened in `C:\Users\User\Desktop\myProject\patent-to-pilot`.
 It replaces [NEXT-ACCOUNT-HANDOFF-20261122.md](NEXT-ACCOUNT-HANDOFF-20261122.md), whose task list is done or blocked.
 

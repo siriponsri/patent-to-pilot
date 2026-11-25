@@ -7,8 +7,8 @@ standing rules; this file is the shared summary and must stay consistent with it
 
 1. Read [CLAUDE.md](CLAUDE.md), [HANDOFF.md](HANDOFF.md) and [INDEX-PLAN.md](INDEX-PLAN.md).
 2. Verify the checkout: `git status --short --branch`, `git log -3`, and that no other agent is writing the same files.
-3. The current plan is the outcome-based P0–P5 plan of `docs/owner/owner-note-22112026/` (owner-local). Its live state is
-   `docs/tracking/owner-note-22112026/`. Update that state only through `python scripts/tracking/ptp_tracker.py`.
+3. Follow the [S0–S5 master plan](docs/evidence-scope/MASTER-PLAN.md), the [prospective freeze](docs/evidence-scope/FREEZE.md) and the assigned phase sheet. The master dispatch board tracks the S phases. S1/S2 and then S3/S4 are parallel lanes. Execution requires the owner's next goal.
+   The inherited P0–P5 registry stays in `docs/tracking/owner-note-22112026/`. Update it only through `python scripts/tracking/ptp_tracker.py`.
    G01–G08 (PTP-2026-11-21), G01–G22 and HT-* identifiers in historical records keep their original meanings.
 
 ## One writer, one handoff
@@ -22,7 +22,7 @@ standing rules; this file is the shared summary and must stay consistent with it
 ## Hard limits
 
 - Never open protected TEST data. Never let an exposed test set select a method.
-- No paid API, GPU rental or download without a recorded owner approval and envelope.
+- Use paid APIs or GPU rental only within a recorded, applicable envelope. State the pod price and obtain owner approval before creation. Delete it after use. D27 authorizes necessary in-scope installs and dataset downloads for the new direction. Record each item, version, use rights and hash; gated terms and scope changes require their own decision.
 - dr-train: `ssh chaw@100.77.149.83`, approved V100 only (`CUDA_VISIBLE_DEVICES=1`), one GPU job at a time. After every
   phase, pull this project's artifacts to local, then delete remote copies that are no longer needed.
 - Pre-declare protocols, endpoints and selection rules before computing. Report failures, retries and unknown costs.

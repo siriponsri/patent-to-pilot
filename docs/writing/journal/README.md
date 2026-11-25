@@ -1,5 +1,7 @@
 # Track J: journal manuscripts (Paper 1 -> Paper 3)
 
+> Current writing direction: the [synthesis phase](../../evidence-scope/05-synthesis.md) and [original-source record](../../evidence-scope/00-organization.md#original-source-corrections) govern the next revision. Dated outlines and results below retain their historical scope.
+
 > **22 Nov 2026 (owner note 22112026, N09 / task P5-T01):** the program now has **one** manuscript with three linked
 > contributions: [MANUSCRIPT-DRAFT-v1.md](MANUSCRIPT-DRAFT-v1.md) (design only; every new result `NOT_RUN`). The P1–P3 table
 > below is kept as history of the earlier three-paper plan.

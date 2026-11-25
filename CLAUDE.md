@@ -1,14 +1,14 @@
 # Claude instructions for Patent-to-Pilot
 
-**Plan:** outcome-based phases **P0–P5** from the owner note of 22 Nov 2026 (`docs/owner/owner-note-22112026/`, owner-local).
-Phases advance only by verified deliverables and evidence, never by dates. The IS2 presentation (March 2027) is context,
+**Plan:** the [S0–S5 master plan](docs/evidence-scope/MASTER-PLAN.md) and its [research and data freeze](docs/evidence-scope/FREEZE.md) govern new work. S0 is documentation complete. Wait for the next execution goal to start S1 and S2 in parallel. The P0–P5 owner program of 22 Nov 2026 remains the provenance of the existing measurements and software.
+Phases advance by scoped deliverables. A documented null result can close a research phase and the product can advance independently. The IS2 presentation (March 2027) is context,
 not a gate. The earlier program PTP-2026-11-21 (G01–G08) is history: G01/G02 are completed foundations, G03 records are
 preserved, and G-identifiers keep their meanings.
 
 **Read at session start, in this order:**
 1. this file;
 2. [HANDOFF.md](HANDOFF.md) (current state);
-3. the live board [docs/tracking/owner-note-22112026/PHASE_BOARD.md](docs/tracking/owner-note-22112026/PHASE_BOARD.md);
+3. the [master dispatch board and phase sheets](docs/evidence-scope/MASTER-PLAN.md), then the [P0–P5 evidence board](docs/tracking/owner-note-22112026/PHASE_BOARD.md) when following inherited tasks;
 4. [INDEX-PLAN.md](INDEX-PLAN.md) (plan and evidence index);
 5. [AGENTS.md](AGENTS.md) (shared agent rules).
 
@@ -25,8 +25,7 @@ with three linked contributions. One shared evidence engine implements it, and i
 - **Research:** frozen configurations, benchmark adapters, isolated evaluators, ablations, uncertainty and result provenance.
 - **Product:** a local Workbench (one Python server, bundled UI, SQLite, local files) that calls the same engine.
 
-**Proposed method** (unmeasured): source-grounded structural expansion. Keep the relation that makes evidence relevant,
-pick one unresolved requirement, and run one bounded, traceable search of the eligible corpus for new evidence.
+**Proposed method** (unmeasured): track whether evidence for each requirement applies in the same scope. Use a bounded controller to keep the ranking, rerank, acquire missing evidence or qualify the explanation. Compare coverage control plus compatibility reranking against the new controller. The earlier single unresolved-relation arm closed with NO_GAIN.
 
 **Research objective:** a real matched retrieval-score win against strong comparators (owner N02). A UI or maintenance gain
 does not satisfy it, and there is no automatic pivot to a maintenance headline (N03).
@@ -41,7 +40,7 @@ The owner packages live in `docs/owner/`, read the newest first: `owner-note-221
 
 ## 2. Current state (details in HANDOFF.md and the live board)
 
-**Phases.** P0 control/readiness, P1 A3 model-panel experiment, P2 structural candidate acquisition, P3 Thai transfer,
+**Inherited phases.** P0 control/readiness, P1 A3 model-panel experiment, P2 structural candidate acquisition, P3 Thai transfer,
 P4 product usability/explainability, P5 manuscript/release/IS2. The live registry is
 `docs/tracking/owner-note-22112026/goal_registry.json`; update it **only** through `python scripts/tracking/ptp_tracker.py`,
 which renders the CSV, the board and the AFFiNE pages.
@@ -84,15 +83,14 @@ unreleased). Report PatEmbed separately, with that caveat:
 - Corrections register: [WRITING-CORRECTIONS-20261122.md](docs/maintenance/WRITING-CORRECTIONS-20261122.md).
 - IS2 arc (D1, D10, including Paper 86's exposure ceiling, IS2-only): [docs/writing/is2/](docs/writing/is2/).
 
-**Owner decisions.** D1–D26 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md), and
+**Owner decisions.** D1–D27 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md), and
 N01–N12 are in the owner note.
 
 **AFFiNE tracker.** Self-hosted upstream v0.27.4, outside the repo (`C:\Users\User\ptp-tools\affine-tracker`,
 http://127.0.0.1:3010). It is a tracker only, never a research dependency. See
 [P0-T02 receipt](docs/tracking/owner-note-22112026/receipts/P0-T02_affine_setup.md).
 
-**New account?** Start at [docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md)
-and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
+**New account?** Start at the [current handoff](HANDOFF.md) and [master plan](docs/evidence-scope/MASTER-PLAN.md). For dr-train use [the dated handoff §2a](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md) and [agent lessons](docs/maintenance/AGENT-LESSONS.md).
 
 **Older parked lines.** P1/AM-7 and B53 Stage 1–2 are measured and kept with their original scope; see INDEX-PLAN §3.
 
@@ -100,8 +98,7 @@ and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
 
 1. **Never open protected TEST data** (research TEST splits, sealed qrels, per-query TEST outputs). Exposed sets stay exposed;
    they never select methods.
-2. **No paid API, RunPod or other GPU rental without an owner envelope** (a recorded amount and scope). Downloads need a
-   per-item owner approval.
+2. **No paid API, RunPod or other GPU rental without an owner envelope** (a recorded amount and scope). Quote each pod's hourly rate before creation, get owner approval, and delete the pod after use. D27 approves in-scope installs and dataset downloads for S1–S5. Record each item's revision, rights and digest. Earlier per-item download rules still apply outside that scope.
 3. **dr-train:** reach it as `ssh chaw@100.77.149.83`. Use only the approved V100, always with `CUDA_VISIBLE_DEVICES=1`.
    GPU0 (RTX 2080 Ti) is not approved. One GPU job at a time, under the shared GPU lock.
 4. **Pre-declare before computing.** Freeze the protocol, endpoints and selection rule before any number exists; one settle
@@ -110,7 +107,7 @@ and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
    original language.
 6. **Commit only your own files**, with explicit paths (never `git add -A`). Push to `origin main` after a verified package.
 7. **Update the handoff on major events:** a finished step, an owner decision, a new blocker, before long or background jobs,
-   and before ending a session. Rewrite the current-state section of HANDOFF.md in place; do not append diaries.
+   and before ending a session. Rewrite the current-state section of HANDOFF.md in place; update the S dispatch board and the applicable phase task state. Update inherited P rows only with the tracker CLI.
 8. **After every phase, pull this project's dr-train artifacts to local, then delete the remote copies that are no longer
    needed** (this project's folders only, never other users' or services' data). Procedure:
    [docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md](docs/maintenance/DR-TRAIN-ARTIFACT-RUNBOOK.md).
@@ -124,7 +121,7 @@ and [docs/maintenance/AGENT-LESSONS.md](docs/maintenance/AGENT-LESSONS.md).
 ## 4. Protected code (G01 and G02 shipped)
 
 Do not change `src/patent_to_pilot/workbench/`, `scripts/ptp_run.py`, `Start-PTP.cmd`, `tests/` or
-`artifacts/owner-program/` without a goal that requires it. P0–P5 tasks count as such goals for the code they name.
+`artifacts/owner-program/` without a goal that requires it. An activated S execution phase or an authorized P task provides scope for the code it names.
 Run the test suite before committing code; the only accepted pre-existing failures are the 8 SACR r2/r3 supervisor budget
 tests.
 - `python -m pytest` uses the system Python, which has pytest but no pypdf, so the PDF tests skip.
@@ -137,7 +134,8 @@ tests.
 |---|---|
 | Run the Workbench | `Start-PTP.cmd`, or `python scripts/ptp_run.py --doctor` / `--smoke` / `--serve` |
 | Engine and Workbench code | `src/patent_to_pilot/workbench/` (G01), legacy modules in `src/patent_to_pilot/` |
-| Live plan and receipts (P0–P5) | `docs/tracking/owner-note-22112026/` (board, registry, receipts, AFFiNE pages); tool `scripts/tracking/ptp_tracker.py` |
+| Active S0–S5 plan and freeze | [Master plan](docs/evidence-scope/MASTER-PLAN.md) and [prospective freeze](docs/evidence-scope/FREEZE.md) |
+| Inherited plan and receipts (P0–P5) | `docs/tracking/owner-note-22112026/` (board, registry, receipts, AFFiNE pages); tool `scripts/tracking/ptp_tracker.py` |
 | Foundation receipts (G01/G02) | `artifacts/owner-program/PTP-2026-11-21/<goal>/` |
 | Budget ledger | `src/patent_to_pilot/budget/` (shared reservations for research and Workbench calls) |
 | Research evidence (frozen protocols, results, audits) | `docs/healthtech/research/`, `docs/healthtech/audits/` |

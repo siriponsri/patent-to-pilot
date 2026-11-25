@@ -1,5 +1,7 @@
 # Manuscript draft v1: one paper, three linked contributions
 
+> Current writing direction: the [synthesis phase](../../evidence-scope/05-synthesis.md) and [original-source record](../../evidence-scope/00-organization.md#original-source-corrections) govern the next revision. Dated outlines and results below retain their historical scope.
+
 **Status:** DRAFT v1, 22 Nov 2026 (owner task P5-T01, program owner-note-22112026). Background, method and evaluation design
 only. **No new result exists.** Every cell for the proposed method is `NOT_RUN`. Historical results appear only in §8.2 with
 their recorded status (PARKED, FORMAT_SMOKE_ONLY or MEASURED_EXPLORATORY) and a link to the receipt.
@@ -54,8 +56,7 @@ clause incorporates, or a footnote that restricts one row of a table.
 
 **Continuity with our prior work.** Paper 53 ("Diagnosing Near-Zero Instruction Effects in Cross-Domain Patent Reranking",
 Srihangpiboon and Ploysuwan, iSAI-NLP 2026 program [P53]; DOI not verified) studied instruction changes **after** a candidate
-pool had been formed and found near-zero effects. Its query-level exposure statistic is not restated here: its original
-denominator is still being recovered, and it is not reused until then. Our re-implemented first-stage substitution (B53)
+pool had been formed and found near-zero effects. The source reports 257 of 692 query pools with at least one known OUT-relevant family in the first 100 ranks (Fig. 3). Our re-implemented first-stage substitution (B53)
 measured exposure directly and found that no tested first-stage substitution raised exposure at K = 100 and no instruction
 contrast was significant under any of five first stages (§8.2; exploratory, previously exposed benchmark, not a replication).
 The present work changes the question from *how the pool is reordered* to *what can enter the pool*.
@@ -456,7 +457,7 @@ records them; the others are completed from the verified record before submissio
 1. Every §8.1 cell (P1, DAPFAM, Thai, contribution 1, contribution 3, user tasks).
 2. `[CITATION NEEDED]` items in §2 (DAPFAM paper, PatenTEB/PatEmbed, Arctic, BM25, RRF, Challenge-1M source, Thai Gazette
    paper) and missing author lists in §11.
-3. Paper 53 DOI and proceedings record; recovery of its original exposure denominator before any reuse.
+3. Paper 53 DOI and proceedings record; verify the published bibliographic entry against the submitted source.
 4. Frozen selection rule for "which unresolved relation" (§4.2 step 4) and the frozen A3r1 configuration.
 5. Figure 1 redrawn; results figures only from versioned run artifacts.
 6. Venue choice and target length (see `VENUES.md`); author/affiliation block.

@@ -6,17 +6,13 @@ rule 7 in [CLAUDE.md](CLAUDE.md)). Older checkpoints are archived in
 
 ## Agent takeover state — 25 Nov 2026 (Asia/Bangkok)
 
-**Account takeover complete through P2-T04.** D25, D19 and the P2-T04 screen are verified and recorded on `main`.
-At takeover `main` matched `origin/main` at `5891d7ea`; the existing Claude branches and owner-local files are
-preserved. See the [next-account handoff](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md).
+**S0 complete.** The [S0–S5 master plan](docs/evidence-scope/MASTER-PLAN.md) implements the owner-approved direction. The owner authorized the prospective [questions and data design freeze](docs/evidence-scope/FREEZE.md), parallel research/product work and in-scope installs and dataset downloads. Only organization was activated. No S1–S5 run, download, install, remote job or spend was made for S0.
 
-**Plan.** Outcome-based **P0–P5** (owner note 22 Nov). Live board:
-[docs/tracking/owner-note-22112026/PHASE_BOARD.md](docs/tracking/owner-note-22112026/PHASE_BOARD.md).
-- Tool: `python scripts/tracking/ptp_tracker.py show|set|render`.
-- Status fields stay separate:
-  - `method_evidence` = NOT_YET_DEMONSTRATED (A3r1 is exploratory; the P2-T04 arm returned NO_GAIN);
-  - `product_readiness` = core verified, with modes, Thai search, structural acquisition and selective revision checked;
-  - `publication_readiness` = draft; publication checks remain open.
+**Next activation:** dispatch [S1 research data](docs/evidence-scope/01-research-data.md) and [S2 product](docs/evidence-scope/02-product-workbench.md) together. The master contains the copy-ready goal for GPT 6.2 high. All S0 writing assignments (research documents, product documents, README/assets and integration) are closed on handoff. Establish one writer per lane on the next activation.
+
+**Evidence at handoff:** new method NOT_RUN; existing Workbench core verified with synthetic material; local open-data alpha NOT_RUN; publication is a design draft. S1 pins new bytes and judgments, S2 demonstrates both languages. A positive DEV point estimate may open one bounded follow-up. Null research can close with its receipt and product can progress independently. Never promote these labels to a benchmark win or real-world usage claim.
+
+**Inherited P0–P5 state:** the [evidence board](docs/tracking/owner-note-22112026/PHASE_BOARD.md) keeps the original IDs and measured outcomes. Update that registry only with the tracker CLI.
 
 ### Phase status (35 tasks: 20 COMPLETE, 4 PARTIAL, 11 NOT_STARTED)
 
@@ -49,21 +45,20 @@ preserved. See the [next-account handoff](docs/maintenance/NEXT-ACCOUNT-HANDOFF-
 - **P1-T04 A3r1 pilot: frozen rule GO**, m\* = DeepSeek V4 Flash, Δ = **+0.0245 [0.0179, 0.0310]** against F\* 0.4334 on
   2,000 apps ([receipt](docs/tracking/owner-note-22112026/receipts/P1-T04_pilot_generation.md)). This is optimistic and
   only gates spending.
-- **P3-T02 PARTIAL:** Thai packets-v1 (DEV 1,330 / held-out 3,779). WangchanX train covers 75.2% of NitiBench-CCL gold
-  sections. DEV has no annex/table items.
+- **P3-T02 PARTIAL:** Thai packets-v1 (DEV 1,330 / held-out 3,779). 75.2% of NitiBench-CCL questions have a gold section that was a WangchanX train positive. DEV has no annex/table items.
 - **P4-T02 COMPLETE** (execution modes). **P4-T04 PARTIAL:** policy 2.1.0 merged at `98d6c37a`. D25's full gate
   had exactly the eight permitted SACR failures, Workbench smoke passed 15/15 and selective/full comparisons
   matched in all 11 supported fixtures. D3 (source removal) is open.
 
-### Running or pending at handoff
+### Inherited execution receipts through P2-T04
 
-- **A3r1 is finished** (Stage B + full evaluation, pod deleted). Nothing is running. No pod exists.
+- **A3r1 finished** (Stage B + full evaluation; its pod was deleted).
 - **D19 verification:** verified source `d30d9d51` merged at `563b10a8`. The combined full gate had 2,707 passed,
   eight skips, one known xfail and exactly the eight permitted SACR failures. Local P1-DEV staging and independent
   manifest verification passed for 85 files, including 54 filtered claims archives.
   [Readiness receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_D19_readiness.md).
 - **D26:** the owner approved opening eligible US RunPod pods, machine selection, parallel sub-agent work and a long-run
-  goal. D19 can spend up to USD 20 within the existing R2 envelope.
+  goal. D19 operated under a sub-cap of USD 20 within the existing R2 envelope.
 - **PatEmbed complete:** all A2 gates passed. C1 replaces C0 under the frozen rule, ALL R@200
   +0.00718 [0.00505, 0.00936], from 0.41806 to 0.42523. Verified output is in
   `../_private_artifacts/p2t02-d19-runpod/p2t02-d19-patembed-results.tgz`. The collector pulled the archive at
@@ -83,7 +78,7 @@ preserved. See the [next-account handoff](docs/maintenance/NEXT-ACCOUNT-HANDOFF-
   [Frozen protocol](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md) and
   [execution receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md).
 
-### Money and access (25 Nov)
+### Historical resource checkpoint (25 Nov, before S0)
 
 - **E1R** (OpenRouter + Typhoon; USD 50, notify 40): committed USD 3.853 (33,685 attempts) after Stage B. OpenRouter
   credits: total 20, usage about 5.5.
@@ -100,13 +95,8 @@ preserved. See the [next-account handoff](docs/maintenance/NEXT-ACCOUNT-HANDOFF-
   unchanged at 0.4230 ([receipt](docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md)).
   Memory-safety rules: next-account handoff §2a.
 
-### Owner decisions
+### Decisions and unresolved items
 
-- D1–D26 are in [OWNER-DECISIONS-20261122.md](docs/maintenance/OWNER-DECISIONS-20261122.md); N01–N12 are in the owner
-  note.
-- Still open: the Paper 53 DOI and the 37.1% denominator; whether to report LLM-judge-graded NitiBench (rule 12); the G01
-  launcher check; Thai annex/table packet sources.
+[D1–D27](docs/maintenance/OWNER-DECISIONS-20261122.md) record owner authority. Historical resource balances describe completed work and require matching scope for any later use. The generic new download approval does not extend a paid envelope. Read [dr-train memory safety §2a](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md) before remote work.
 
-Unchanged:
-- large derived files on dr-train are kept;
-- the two git stashes from 30 Oct 2026 are kept.
+The [original PDF source record](docs/evidence-scope/00-organization.md#original-source-corrections) resolves Paper 53's exposure denominator. Its DOI, independent semantic judgments for natural cases, source-by-source redistribution terms for new demos, real-user adoption and submission status remain open. Existing local-only owner material and private artifacts retain their access boundaries.

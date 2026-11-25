@@ -8,22 +8,24 @@ locations: when a location changes, update it here and in INDEX-PLAN.md.
 
 | Need | Location |
 |---|---|
+| Master plan, phase status, next-goal prompt | [S0–S5 master plan](evidence-scope/MASTER-PLAN.md) |
+| Frozen questions, data roles and primary comparison | [Research freeze](evidence-scope/FREEZE.md) |
 | Project overview, quick start, testing | [README.md](../README.md) |
 | Current state, blockers, running jobs, next steps | [HANDOFF.md](../HANDOFF.md) |
 | Plans, goals and evidence locations | [INDEX-PLAN.md](../INDEX-PLAN.md) |
 | Rules for every contributor and agent | [AGENTS.md](../AGENTS.md), [CLAUDE.md](../CLAUDE.md) |
-| Starting on a new account | [maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md](maintenance/NEXT-ACCOUNT-HANDOFF-20261122b.md), [maintenance/AGENT-LESSONS.md](maintenance/AGENT-LESSONS.md) |
+| Starting on a new account | [current handoff](../HANDOFF.md), [maintenance/AGENT-LESSONS.md](maintenance/AGENT-LESSONS.md) |
 
 ## Plans and tracking
 
 | What | Location | Notes |
 |---|---|---|
-| Live phase board (P0–P5) | [tracking/owner-note-22112026/PHASE_BOARD.md](tracking/owner-note-22112026/PHASE_BOARD.md) | Rendered from the registry; status and research outcome are separate fields |
+| Inherited P0–P5 board | [tracking/owner-note-22112026/PHASE_BOARD.md](tracking/owner-note-22112026/PHASE_BOARD.md) | Rendered from the registry; status and research outcome are separate fields |
 | Goal and task registry | [tracking/owner-note-22112026/goal_registry.json](tracking/owner-note-22112026/goal_registry.json), [phase_tasks.csv](tracking/owner-note-22112026/phase_tasks.csv) | Machine-readable source of the board |
 | Task receipts | [tracking/owner-note-22112026/receipts/](tracking/owner-note-22112026/receipts/) | Small receipts; large or restricted outputs stay in `../_private_artifacts/` |
 | AFFiNE page sources | [tracking/owner-note-22112026/affine/](tracking/owner-note-22112026/affine/) | Projection of the registry for the AFFiNE workspace; AFFiNE is never a research dependency |
 | Earlier goal tracker (G01–G08) | [tracking/PTP-PHASE-TRACKER.md](tracking/PTP-PHASE-TRACKER.md) | Superseded by the P0–P5 board; kept as history |
-| Owner decisions | [maintenance/OWNER-DECISIONS-20261122.md](maintenance/OWNER-DECISIONS-20261122.md) | D1–D10 |
+| Owner decisions | [maintenance/OWNER-DECISIONS-20261122.md](maintenance/OWNER-DECISIONS-20261122.md) | D1–D27 |
 | Spending proposals and records | [maintenance/API-BUDGET-PROPOSAL-20261122.md](maintenance/API-BUDGET-PROPOSAL-20261122.md), [healthtech/research/g03-dev/g03-dev-a3-spend.json](healthtech/research/g03-dev/g03-dev-a3-spend.json) | No paid call without a recorded owner envelope |
 
 The owner's program packages (`docs/owner/`) are owner-local, untracked and read-only. They are not part of the published

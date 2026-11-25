@@ -1,4 +1,4 @@
-# Lessons for the next agent account (kept current; last update 22 Nov 2026)
+# Lessons for the next agent account (kept current; last update 25 Nov 2026)
 
 The owner switches Claude accounts when usage runs out. Read [CLAUDE.md](../../CLAUDE.md), then
 [HANDOFF.md](../../HANDOFF.md), then this file. These lessons cost real time once; do not relearn them.
@@ -55,7 +55,7 @@ The owner switches Claude accounts when usage runs out. Read [CLAUDE.md](../../C
 **Owner PC**
 - 15.7 GB RAM, Intel UHD only: no CUDA and no Ollama.
 - `.venv` (3.12) has no numpy, torch or pyarrow; Workbench code is stdlib only.
-- Model or package downloads need a per-item owner approval.
+- Use the [D27 scope](OWNER-DECISIONS-20261122.md) for authorized installs and dataset downloads. Record exact items, terms and hashes during execution. Other downloads retain their existing approval boundary.
 
 **dr-train** (`ssh chaw@100.77.149.83`)
 - Use the V100 only (`CUDA_VISIBLE_DEVICES=1`).

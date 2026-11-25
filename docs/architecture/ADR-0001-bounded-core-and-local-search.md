@@ -1,5 +1,7 @@
 # ADR-0001 — Bounded typed core and local lexical retrieval
 
+The implementation baseline below supports the [planned evidence-scope architecture](../evidence-scope/MASTER-PLAN.md#what-both-tracks-implement).
+
 > Historical goal IDs (G04/G07/G08) below belong to the pre-2026-11-21 namespace, not to program PTP-2026-11-21. The FTS5 lexical decision still underpins the G01 Workbench.
 
 Status: accepted for the G04/G07/G08 development slice

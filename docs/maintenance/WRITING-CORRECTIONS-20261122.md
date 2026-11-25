@@ -1,5 +1,7 @@
 # Writing corrections register (22 Nov 2026)
 
+**25 November update to W3.** [PDF identities, page locators and denominators](../evidence-scope/00-organization.md#original-source-corrections) resolve the original Paper 53 statistic. Older generated figures and drafts still require a deliberate S5 revision; keep the 692, 725 and 905 cohorts separate.
+
 **Source:** owner note 22112026, `01_OWNER_DIRECTION_AND_DECISIONS.md` § "Corrections to carry into writing" and
 `audit/CURRENT_REPOSITORY_AUDIT.md` § "Corrections needed in source documents" (owner-local, read-only).
 **Method:** each correction is a dated note or a struck-through phrase next to the original text. No history is rewritten and

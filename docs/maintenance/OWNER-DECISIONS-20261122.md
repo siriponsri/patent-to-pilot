@@ -99,3 +99,11 @@ baseline runs (`runs/z-arctic` passages and P1-DEV run, `runs/bm25` P1-DEV run),
 | # | Decision | Effect |
 |---|---|---|
 | D26 | **Approve D19 RunPod launch, parallel work and sub-agents, a long-run goal, and a USD 20 D19 cap. The agent may select the machines.** | The D19 cap replaces the USD 15 sub-cap within R2; R2 remains USD 60 with notification at USD 45. Verify US stock and fit the combined compute, disk and retry exposure within D19's USD 20 before dispatch. State each pod's hourly price before creation, pull and hash outputs and terminate after use. |
+
+## D27 · Evidence-scope program (25 November 2026)
+
+The owner approved the direction developed from the IS1 and Paper 53 review, the Thai market survey and the evidence-scope gap analysis. Organize the project now, write the master and phase plans, design the README and assets, and hand back a new execution-goal prompt. New product and research work may run in parallel after activation. S0 is the only active deliverable in this handoff.
+
+Freeze the research questions and dataset design now. The owner approves installing needed dependencies and acquiring additional in-scope datasets. Record file-level sources, versions, licenses, access basis and hashes when materialized. This approval supersedes the former per-item owner confirmation for these in-scope installs/downloads. It grants no new paid service envelope, gated third-party terms or redistribution rights. Never open protected TEST, sealed judgments or credentials. Pod price, prior creation approval and cleanup requirements continue.
+
+Progress with the documented feasibility gates. Any positive paired primary DEV estimate permits one bounded follow-up. A supported scientific gain needs matched and uncertainty-qualified evidence. A local engineering alpha can proceed independently of that result. Preserve negative findings, historical gates and exact old task identities. See the [new plan](../evidence-scope/MASTER-PLAN.md) and [freeze](../evidence-scope/FREEZE.md).
