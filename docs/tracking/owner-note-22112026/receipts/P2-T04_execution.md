@@ -60,3 +60,22 @@ offline installation passed a CountVectorizer import and synthetic check under P
 NumPy 2.2.6 and SciPy 1.18.1 with AVX2 active. A separate import showed the existing scikit-learn 1.9.1 intact.
 The guarded run started at 10:09:21 UTC on 25 Nov with both frozen digests and the launcher reverified. The host
 had 123,949,788 KiB MemAvailable and 985 GB free disk. There was no concurrent project process.
+
+The replay stopped at 10:22:12 UTC on the same first mismatch (`13200810`). Elapsed time was 12 min 49 s and
+peak RSS was 6,090,208 KiB. No watchdog abort occurred. The evaluator never started and the matched score is
+NOT_RUN. The driver log, exact error and GNU time receipt were pulled and hash-verified in
+`../_private_artifacts/p2t04-preflight-20261124/screen-v1-sklearn172/`. Installing 1.7.2 did not clear the gate.
+
+## Gate-only cutoff census
+
+Use the same isolated install and the same frozen 2,000 apps to assess the scope of the mismatch. Count exact
+ordered top-1000 rows, differences confined to the cutoff score tie, other differences and exact ordered top-200
+rows. Count a difference as a cutoff tie only when both lists have 1,000 rows, the prefixes up to the tied suffix
+are identical and cover the top 200, and every unit in either suffix is eligible and has the same recomputed raw
+cutoff score and matching displayed score. The archive stores displayed scores. Report the scope of exact
+reproduction without inferring the old hardware's raw arithmetic. Open only the five pinned lexical runtime
+inputs and omit judgments, matched ranking generation and scoring. The original exact gate remains required.
+
+The census script SHA-256 is `b1e1686c717050bdd87cc565ad9660c9933d7487663fb4346b19b9e0bc0e58b5` and the launcher
+SHA-256 is `6b555d56ca4d6b306b9f97812a1a8299eb631967b16f8eb04ff8587805c888c7`. Output is under
+`diagnostics-cutoff-census/`, with one CPU process group, the 30 GiB memory floor and the 36 GiB planning estimate.

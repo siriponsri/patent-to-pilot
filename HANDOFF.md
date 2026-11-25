@@ -87,9 +87,10 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   score ties. A synthetic tie verified that AVX2 selection can affect the cutoff on dr-train. The guarded scalar
   replay stopped at the same app, and its logs are verified locally. The owner approved the exact scikit-learn
   1.7.2 PyPI wheel for one isolated dr-train replay. The approved hash, import from the isolated overlay, and
-  existing installation were verified. The guarded replay started at 10:09:21 UTC on 25 Nov in
-  `screen-v1-sklearn172/` with `driver-sklearn172.log`. It retains the exact archive gate and frozen digests.
-  No paid compute is in scope.
+  existing installation were verified. The guarded replay stopped at 10:22:12 UTC at the same first mismatch.
+  Its logs are hash-verified locally. The matched evaluation is NOT_RUN. A single gate-only census will measure
+  cutoff ties and ordered top-200 agreement across the frozen cohort, using only lexical runtime inputs.
+  No paid compute is in scope. The exact gate remains required for matched evaluation.
   [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md),
   [execution receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md).
 
