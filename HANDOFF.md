@@ -91,7 +91,8 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   Its logs are hash-verified locally. The census checked all 2,000 frozen apps. Ordered top-200 rows and displayed
   scores were exact for all apps. Four top-1000 lists differed only at a verified cutoff tie. The original archive
   gate failed and the matched evaluation is NOT_RUN. The owner approved the prospective cutoff-tie amendment and
-  CPU execution on dr-train. Verify the amended gate, then run under the new manifest pins and original score rule.
+  CPU execution on dr-train. The approved gate was published at `b4e0f903`. The guarded run began at 10:53:36 UTC
+  on 25 Nov and writes to `screen-v1-cutoff-tie/` with `driver-cutoff-v1.log`. The original score rule applies.
   [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md),
   [execution receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md).
 
