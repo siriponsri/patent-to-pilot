@@ -35,6 +35,21 @@ and use `screen-v1-scalar/` and `driver-scalar.log`. Launcher SHA-256 is
 The replay ran from 01:13:41 to 01:26:02 UTC and failed the same exact gate at app `13200810`. Runtime was 12 min
 20 s, with peak RSS 6,098,120 KiB and no memory abort. No matched rankings or metrics were produced. The driver,
 runtime log and time receipt were pulled and hash-verified in `../_private_artifacts/p2t04-preflight-20261124/screen-v1-scalar/`.
-The dr-train job is stopped. The P2-T04 result is NOT_RUN. An exact retry with the historic scikit-learn 1.7.2
-wheel requires explicit download approval. Any alternative tied-cutoff rule needs a separate owner decision and
-prospective freeze. The current exact gate is still in force.
+The dr-train job stopped after the scalar replay. The P2-T04 result is NOT_RUN. Any alternative tied-cutoff rule
+needs a separate owner decision and prospective freeze. The current exact gate is still in force.
+
+## Owner-approved historic scikit-learn replay
+
+On 25 Nov the owner chose A and approved the single Linux x86-64 CPython 3.12 scikit-learn 1.7.2 wheel from PyPI
+for an isolated dr-train install. The approved wheel is `scikit_learn-1.7.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl`,
+SHA-256 `e5bf3d930aee75a65478df91ac1225ff89cd28e9ac7bd1196853a9229b6adb0b`.
+[PyPI release file and checksum](https://pypi.org/project/scikit-learn/1.7.2/#scikit_learn-1.7.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl).
+Install the pinned wheel without dependencies to the project-specific `overlay-sklearn172/`. Import from that overlay
+only in this replay. Use the original dr-train CPU dispatch and installed NumPy 2.2.6 and SciPy 1.18.1. Verify these
+versions and the imported module location before starting. No pod or paid service is in scope.
+
+Keep the frozen manifests, original 2,000-app cohort, reference rankings, all-score exact gate and progression rule.
+The isolated launcher SHA-256 is `061a5b36d9d2c1ab5073795e226673289fed0f92ae02eb74cdde13e29e9cdc3c`. It runs one
+CPU process group at a time and applies the 30 GiB MemAvailable guard with the same 36 GiB planning estimate. It
+writes to `screen-v1-sklearn172/` with `driver-sklearn172.log`. If the gate fails, preserve the attempt and report
+NOT_RUN for the matched evaluation. The original pod's CPU dispatch remains unknown.
