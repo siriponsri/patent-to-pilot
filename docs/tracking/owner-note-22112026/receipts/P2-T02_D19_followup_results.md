@@ -1,8 +1,7 @@
 # P2-T02 D19 follow-up receipt, P1-DEV
 
-**Runtime state:** PatEmbed complete, all gates PASS and the pod deleted. Qwen3 C1 encoding active and Qwen3
-evaluation NOT_RUN. Qwen3 passed preflight at 15:04:46 UTC, selected window 511 at 15:07:48 UTC and began C1
-encoding at 15:20:29 UTC.
+**Runtime state:** PatEmbed complete, all gates PASS and the pod deleted. Qwen3 completed all 14 C1 encode shards at
+25 Nov 00:16:19 UTC, and retrieval is running. Qwen3 evaluation remains NOT_RUN at this checkpoint.
 **Protocol:** P2-T02 coverage control `bd30d3f7` with A2 declared in `ffae7a99` and verified implementation
 `d30d9d51`. D26 authorizes launch and up to USD 20 inside R2. The local stage is pinned in the
 [D19 readiness receipt](P2-T02_D19_readiness.md).
@@ -52,6 +51,7 @@ Shard five was full-width and took 2,821 seconds, finishing around 17:40 UTC. Eq
 remaining 2,207,946 windows projects roughly 396 minutes of remaining encoding from that point.
 Shard ten finished around 21:35 UTC at 22,468 seconds cumulative. Full-width shard timing remains on schedule.
 Two direct SSH watcher reads failed transiently around 20:00 UTC and recovered. The encode kept running.
+Qwen3 C1 encoding finished at 00:16:19 UTC. The encoder logged 32,148 seconds total, including the final merge.
 The provider management API remains the verified deletion path. Both in-pod Qwen3 scoped CLI self-lookup
 forms were unverified, so the in-pod timeout is only a fallback.
 

@@ -74,8 +74,8 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   USD 0.72/hour compute plus up to USD 0.03/hour ephemeral disk. Created 24 Nov 14:58:21 UTC after capacity returned.
   Setup started. Operational deadline 25 Nov 01:46:21 UTC and best-effort in-pod timer 01:54:21 UTC.
   USD 8.50 reserved. Pre-encode gates passed with window 511 and Qwen3 started C1 encoding at 15:20:29 UTC.
-  Shard 10 of 14 completed around 21:35 UTC. Full-width shards remain at about 47 minutes each. The encode
-  is on track for about 25 Nov 00:16 UTC before retrieval, evaluation and pull. Keep monitoring the 01:46 UTC limit.
+  All 14 shards completed and C1 encoding exited at 25 Nov 00:16:19 UTC. Retrieval, evaluation and the
+  verified pull are next. Keep monitoring the 01:46 UTC limit.
   The job launched with the optional fast-transfer setting off. Earlier L40S/RTX attempts and expired queue
   created no pod.
 - **D19 settlement:** both workers have Bash progress watchers. The success-only collector
