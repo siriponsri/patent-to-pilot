@@ -1,0 +1,664 @@
+{
+  "sources": [
+    {
+      "source_id": "ae-en-shutter-latch-doc",
+      "version": "1",
+      "language": "en",
+      "family_id": "ae-en-shutter-latch",
+      "text": "Claim 1. A folding shutter with a frame under a stone lintel and a draw latch.\n\nClaim 2. The folding shutter of claim 1 configured for the quarry application.\n\nClaim 3. The folding shutter of claim 2, wherein the draw latch has a keeper in the form of a hooked tab.\n\nClaim 4. A folding shutter for the orchard application, with a frame under a stone lintel and a draw latch having a keeper in the form of a hooked tab.\n\nClaim 5. The folding shutter of claim 4, including a locator notch on the frame.\n\nClaim 6. A folding shutter for the mill application, with a frame under a timber lintel and a draw latch having a keeper in the form of a flat plate.\n",
+      "sha256": "4642358fbd6233b4142f3b5f63d4cbd23fffa2c2f7ca32d76c4140dcd1caf15b"
+    },
+    {
+      "source_id": "ae-en-map-cabinet-doc",
+      "version": "1",
+      "language": "en",
+      "family_id": "ae-en-map-cabinet",
+      "text": "[12] In the wall unit, the drawing drawer uses a stop described under [13]. The wall unit takes a shallow drawer.\n\n[13] The stop for the drawer is a cork pad secured to the rear rail.\n\n[21] In the bench unit, the shallow drawer has the stop called out in drawing note D.\n\nNote D. Stop at the inner end of the runner: cork pad.\n\nNote F. The feet carry a maker's stamp.\n",
+      "sha256": "4aaaa11cfa2b33a94ae2e7fb43cfbd48d5659d6f9f3cd56d92e8c906020e9aca"
+    },
+    {
+      "source_id": "ae-en-tile-rack-doc",
+      "version": "Amber",
+      "language": "en",
+      "family_id": "ae-en-tile-rack",
+      "text": "Section 2. This specification covers the indoor rack.\n\nSection 5. Issue Amber specifies a birch board for each shelf in the installation specified in section 2.\n",
+      "sha256": "adc9c787f0cebd188eba1fbef4d1b59d9de1ca58e8738ccc119962946acb8659"
+    },
+    {
+      "source_id": "ae-en-tile-rack-doc",
+      "version": "Slate",
+      "language": "en",
+      "family_id": "ae-en-tile-rack",
+      "text": "Section 5. Issue Slate replaces section 5 of Issue Amber. Retain the scope defined in section 2 of Issue Amber. Use the shelf stock shown at note S.\n\nNote S. Shelf stock for this issue: glazed clay slab.\n\nSection 7. Fit the shop badge to the outside edge.\n",
+      "sha256": "2cb04d66137e2e81214ac3f7d6dab5cc6a35519477f54b0df425b4b58015b529"
+    },
+    {
+      "source_id": "ae-en-spindle-gauge-doc",
+      "version": "1",
+      "language": "en",
+      "family_id": "ae-en-spindle-gauge",
+      "text": "Section 8. For the guide spindle, use the shaft diameter given in dimension callout B.\n\nDimension callout B. Shaft diameter: six millimetres.\n\nSection 9. The handle sits above the plate.\n\nDimension callout H. Plate width: forty millimetres.\n",
+      "sha256": "bcbfa99de28ca2bcf8c9db25980abd9ec661ac9249777034653d1becfb341ffa"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "ae-en-shutter-latch-1",
+      "source_id": "ae-en-shutter-latch-doc",
+      "version": "1",
+      "sha256": "4642358fbd6233b4142f3b5f63d4cbd23fffa2c2f7ca32d76c4140dcd1caf15b",
+      "locator": "Claim 1",
+      "char_start": 0,
+      "char_end": 78,
+      "unit_sha256": "3cc77d2f637afe28c11440ab0bf4c0c10dc0e7474fd0a519a1baf9ae12c9505d",
+      "text": "Claim 1. A folding shutter with a frame under a stone lintel and a draw latch.",
+      "family_id": "ae-en-shutter-latch",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "lintel": "stone lintel"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-shutter-latch-2",
+      "source_id": "ae-en-shutter-latch-doc",
+      "version": "1",
+      "sha256": "4642358fbd6233b4142f3b5f63d4cbd23fffa2c2f7ca32d76c4140dcd1caf15b",
+      "locator": "Claim 2",
+      "char_start": 80,
+      "char_end": 158,
+      "unit_sha256": "420bae44abdecc9f15cb6d41db15190672dd2d48f3c1969d09566860b33f4236",
+      "text": "Claim 2. The folding shutter of claim 1 configured for the quarry application.",
+      "family_id": "ae-en-shutter-latch",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "application": "quarry application"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-shutter-latch-3",
+      "source_id": "ae-en-shutter-latch-doc",
+      "version": "1",
+      "sha256": "4642358fbd6233b4142f3b5f63d4cbd23fffa2c2f7ca32d76c4140dcd1caf15b",
+      "locator": "Claim 3",
+      "char_start": 160,
+      "char_end": 265,
+      "unit_sha256": "f21a1aeb9039ca8fce260e71ecc749f2540928752a22cc4242f137c0dae9a820",
+      "text": "Claim 3. The folding shutter of claim 2, wherein the draw latch has a keeper in the form of a hooked tab.",
+      "family_id": "ae-en-shutter-latch",
+      "root": true,
+      "topic": "keeper shape",
+      "facts": {},
+      "answer": "hooked tab"
+    },
+    {
+      "unit_id": "ae-en-shutter-latch-4",
+      "source_id": "ae-en-shutter-latch-doc",
+      "version": "1",
+      "sha256": "4642358fbd6233b4142f3b5f63d4cbd23fffa2c2f7ca32d76c4140dcd1caf15b",
+      "locator": "Claim 4",
+      "char_start": 267,
+      "char_end": 418,
+      "unit_sha256": "474cdb45c5851d3cae35360f06218116c1ca8ff6ee8e8fb57ca356a5fd772c67",
+      "text": "Claim 4. A folding shutter for the orchard application, with a frame under a stone lintel and a draw latch having a keeper in the form of a hooked tab.",
+      "family_id": "ae-en-shutter-latch",
+      "root": true,
+      "topic": "keeper shape",
+      "facts": {
+        "application": "orchard application",
+        "lintel": "stone lintel"
+      },
+      "answer": "hooked tab"
+    },
+    {
+      "unit_id": "ae-en-shutter-latch-5",
+      "source_id": "ae-en-shutter-latch-doc",
+      "version": "1",
+      "sha256": "4642358fbd6233b4142f3b5f63d4cbd23fffa2c2f7ca32d76c4140dcd1caf15b",
+      "locator": "Claim 5",
+      "char_start": 420,
+      "char_end": 500,
+      "unit_sha256": "fa57d6690c501ef5a32e98503ac75479c17b3ec1cb1acaf79b7544cbd44d750d",
+      "text": "Claim 5. The folding shutter of claim 4, including a locator notch on the frame.",
+      "family_id": "ae-en-shutter-latch",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-shutter-latch-6",
+      "source_id": "ae-en-shutter-latch-doc",
+      "version": "1",
+      "sha256": "4642358fbd6233b4142f3b5f63d4cbd23fffa2c2f7ca32d76c4140dcd1caf15b",
+      "locator": "Claim 6",
+      "char_start": 502,
+      "char_end": 651,
+      "unit_sha256": "ddbce2584a525b2c83f590791d524ce8684431f9a206491fe6c05f460cd1fd7c",
+      "text": "Claim 6. A folding shutter for the mill application, with a frame under a timber lintel and a draw latch having a keeper in the form of a flat plate.",
+      "family_id": "ae-en-shutter-latch",
+      "root": true,
+      "topic": "keeper shape",
+      "facts": {
+        "application": "mill application",
+        "lintel": "timber lintel"
+      },
+      "answer": "flat plate"
+    },
+    {
+      "unit_id": "ae-en-map-cabinet-slot",
+      "source_id": "ae-en-map-cabinet-doc",
+      "version": "1",
+      "sha256": "4aaaa11cfa2b33a94ae2e7fb43cfbd48d5659d6f9f3cd56d92e8c906020e9aca",
+      "locator": "Description §12",
+      "char_start": 0,
+      "char_end": 113,
+      "unit_sha256": "6e85bf2c66643cff1ebe2619ec5b4c3fefbcd41bab7086563dcbb33f02c90a49",
+      "text": "[12] In the wall unit, the drawing drawer uses a stop described under [13]. The wall unit takes a shallow drawer.",
+      "family_id": "ae-en-map-cabinet",
+      "root": true,
+      "topic": "drawer stop",
+      "facts": {
+        "unit": "wall unit",
+        "drawer": "shallow drawer"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-map-cabinet-pad",
+      "source_id": "ae-en-map-cabinet-doc",
+      "version": "1",
+      "sha256": "4aaaa11cfa2b33a94ae2e7fb43cfbd48d5659d6f9f3cd56d92e8c906020e9aca",
+      "locator": "Description §13",
+      "char_start": 115,
+      "char_end": 183,
+      "unit_sha256": "e2079888b59ea9e625015454af1ca35533eb7585e85cb9acfc4366c5bc6c0112",
+      "text": "[13] The stop for the drawer is a cork pad secured to the rear rail.",
+      "family_id": "ae-en-map-cabinet",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": "cork pad"
+    },
+    {
+      "unit_id": "ae-en-map-cabinet-table",
+      "source_id": "ae-en-map-cabinet-doc",
+      "version": "1",
+      "sha256": "4aaaa11cfa2b33a94ae2e7fb43cfbd48d5659d6f9f3cd56d92e8c906020e9aca",
+      "locator": "Description §21",
+      "char_start": 185,
+      "char_end": 270,
+      "unit_sha256": "d0aee87851e9b53ebef5f2b61796cef84f7c6bcbb511191e7e87c36bba26b1db",
+      "text": "[21] In the bench unit, the shallow drawer has the stop called out in drawing note D.",
+      "family_id": "ae-en-map-cabinet",
+      "root": true,
+      "topic": "drawer stop",
+      "facts": {
+        "unit": "bench unit",
+        "drawer": "shallow drawer"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-map-cabinet-d",
+      "source_id": "ae-en-map-cabinet-doc",
+      "version": "1",
+      "sha256": "4aaaa11cfa2b33a94ae2e7fb43cfbd48d5659d6f9f3cd56d92e8c906020e9aca",
+      "locator": "Drawing note D",
+      "char_start": 272,
+      "char_end": 326,
+      "unit_sha256": "d03877b329b3bb8a4bdcea186b8ac8273b38a42894873129e589b1dabc3c80c1",
+      "text": "Note D. Stop at the inner end of the runner: cork pad.",
+      "family_id": "ae-en-map-cabinet",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": "cork pad"
+    },
+    {
+      "unit_id": "ae-en-map-cabinet-foot",
+      "source_id": "ae-en-map-cabinet-doc",
+      "version": "1",
+      "sha256": "4aaaa11cfa2b33a94ae2e7fb43cfbd48d5659d6f9f3cd56d92e8c906020e9aca",
+      "locator": "Drawing note F",
+      "char_start": 328,
+      "char_end": 367,
+      "unit_sha256": "6a9459e846715dec6b167f82d6864ed83689e5ca22920e5c74374a3ba9b59505",
+      "text": "Note F. The feet carry a maker's stamp.",
+      "family_id": "ae-en-map-cabinet",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-tile-rack-install",
+      "source_id": "ae-en-tile-rack-doc",
+      "version": "Amber",
+      "sha256": "adc9c787f0cebd188eba1fbef4d1b59d9de1ca58e8738ccc119962946acb8659",
+      "locator": "Issue Amber §2",
+      "char_start": 0,
+      "char_end": 53,
+      "unit_sha256": "78e002fba622a405e95120cecbbcffba983b16bb6a172c136cc0ae5e21d5c08a",
+      "text": "Section 2. This specification covers the indoor rack.",
+      "family_id": "ae-en-tile-rack",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "installation": "indoor rack"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-tile-rack-old",
+      "source_id": "ae-en-tile-rack-doc",
+      "version": "Amber",
+      "sha256": "adc9c787f0cebd188eba1fbef4d1b59d9de1ca58e8738ccc119962946acb8659",
+      "locator": "Issue Amber §5",
+      "char_start": 55,
+      "char_end": 160,
+      "unit_sha256": "522593aa9937c60932ef938734b8851b795f8fd07e56bf8150522f6591dca3f7",
+      "text": "Section 5. Issue Amber specifies a birch board for each shelf in the installation specified in section 2.",
+      "family_id": "ae-en-tile-rack",
+      "root": true,
+      "topic": "shelf material",
+      "facts": {
+        "edition": "Issue Amber"
+      },
+      "answer": "birch board"
+    },
+    {
+      "unit_id": "ae-en-tile-rack-new",
+      "source_id": "ae-en-tile-rack-doc",
+      "version": "Slate",
+      "sha256": "2cb04d66137e2e81214ac3f7d6dab5cc6a35519477f54b0df425b4b58015b529",
+      "locator": "Issue Slate §5",
+      "char_start": 0,
+      "char_end": 148,
+      "unit_sha256": "2c3b1d01a21fa7b6a79cf75190921dd54d59c2735ed5fa19229ed94c7b7e33da",
+      "text": "Section 5. Issue Slate replaces section 5 of Issue Amber. Retain the scope defined in section 2 of Issue Amber. Use the shelf stock shown at note S.",
+      "family_id": "ae-en-tile-rack",
+      "root": true,
+      "topic": "shelf material",
+      "facts": {
+        "edition": "Issue Slate"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-tile-rack-note",
+      "source_id": "ae-en-tile-rack-doc",
+      "version": "Slate",
+      "sha256": "2cb04d66137e2e81214ac3f7d6dab5cc6a35519477f54b0df425b4b58015b529",
+      "locator": "Issue Slate Note S",
+      "char_start": 150,
+      "char_end": 203,
+      "unit_sha256": "231a2585f78be09dc6903f3cf0a02ee6ffe1cad7672ecdcbdd2e99b878cc779f",
+      "text": "Note S. Shelf stock for this issue: glazed clay slab.",
+      "family_id": "ae-en-tile-rack",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": "glazed clay slab"
+    },
+    {
+      "unit_id": "ae-en-tile-rack-badge",
+      "source_id": "ae-en-tile-rack-doc",
+      "version": "Slate",
+      "sha256": "2cb04d66137e2e81214ac3f7d6dab5cc6a35519477f54b0df425b4b58015b529",
+      "locator": "Issue Slate §7",
+      "char_start": 205,
+      "char_end": 255,
+      "unit_sha256": "60b655cfe4c2160b9824cf4e4b0604fc5b51d42121f511be5c6e20db09c5d7b3",
+      "text": "Section 7. Fit the shop badge to the outside edge.",
+      "family_id": "ae-en-tile-rack",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-spindle-gauge-rule",
+      "source_id": "ae-en-spindle-gauge-doc",
+      "version": "1",
+      "sha256": "bcbfa99de28ca2bcf8c9db25980abd9ec661ac9249777034653d1becfb341ffa",
+      "locator": "Drawing §8",
+      "char_start": 0,
+      "char_end": 86,
+      "unit_sha256": "34f9ac8dcc1478c3ca498f49f571bbf270901d5c01aea82c94fc13dfea16671f",
+      "text": "Section 8. For the guide spindle, use the shaft diameter given in dimension callout B.",
+      "family_id": "ae-en-spindle-gauge",
+      "root": true,
+      "topic": "shaft diameter",
+      "facts": {
+        "component": "guide spindle"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-spindle-gauge-size",
+      "source_id": "ae-en-spindle-gauge-doc",
+      "version": "1",
+      "sha256": "bcbfa99de28ca2bcf8c9db25980abd9ec661ac9249777034653d1becfb341ffa",
+      "locator": "Callout B",
+      "char_start": 88,
+      "char_end": 141,
+      "unit_sha256": "6d54c441a8623138c9cf29ca1a8da8a43749f5671f190185f1182851bd566da4",
+      "text": "Dimension callout B. Shaft diameter: six millimetres.",
+      "family_id": "ae-en-spindle-gauge",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": "six millimetres"
+    },
+    {
+      "unit_id": "ae-en-spindle-gauge-handle",
+      "source_id": "ae-en-spindle-gauge-doc",
+      "version": "1",
+      "sha256": "bcbfa99de28ca2bcf8c9db25980abd9ec661ac9249777034653d1becfb341ffa",
+      "locator": "Drawing §9",
+      "char_start": 143,
+      "char_end": 186,
+      "unit_sha256": "7933358ef63716469d7336d8b69f49c98f1fd1e30c5df941031d9c9e28abeeb6",
+      "text": "Section 9. The handle sits above the plate.",
+      "family_id": "ae-en-spindle-gauge",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-spindle-gauge-plate",
+      "source_id": "ae-en-spindle-gauge-doc",
+      "version": "1",
+      "sha256": "bcbfa99de28ca2bcf8c9db25980abd9ec661ac9249777034653d1becfb341ffa",
+      "locator": "Callout H",
+      "char_start": 188,
+      "char_end": 240,
+      "unit_sha256": "2eb64b5625fc51bd704d7213a35a7387cf589c5b3e99e0494af94847d871589b",
+      "text": "Dimension callout H. Plate width: forty millimetres.",
+      "family_id": "ae-en-spindle-gauge",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    }
+  ],
+  "edges": [
+    {
+      "from": "ae-en-shutter-latch-2",
+      "to": "ae-en-shutter-latch-1",
+      "kind": "dependency",
+      "basis": "of claim 1"
+    },
+    {
+      "from": "ae-en-shutter-latch-3",
+      "to": "ae-en-shutter-latch-2",
+      "kind": "dependency",
+      "basis": "of claim 2"
+    },
+    {
+      "from": "ae-en-shutter-latch-5",
+      "to": "ae-en-shutter-latch-4",
+      "kind": "dependency",
+      "basis": "of claim 4"
+    },
+    {
+      "from": "ae-en-map-cabinet-slot",
+      "to": "ae-en-map-cabinet-pad",
+      "kind": "reference",
+      "basis": "described under [13]"
+    },
+    {
+      "from": "ae-en-map-cabinet-table",
+      "to": "ae-en-map-cabinet-d",
+      "kind": "reference",
+      "basis": "in drawing note D"
+    },
+    {
+      "from": "ae-en-tile-rack-old",
+      "to": "ae-en-tile-rack-install",
+      "kind": "applicability",
+      "basis": "installation specified in section 2"
+    },
+    {
+      "from": "ae-en-tile-rack-new",
+      "to": "ae-en-tile-rack-install",
+      "kind": "amendment",
+      "basis": "Retain the scope defined in section 2 of Issue Amber"
+    },
+    {
+      "from": "ae-en-tile-rack-new",
+      "to": "ae-en-tile-rack-note",
+      "kind": "reference",
+      "basis": "shown at note S"
+    },
+    {
+      "from": "ae-en-spindle-gauge-rule",
+      "to": "ae-en-spindle-gauge-size",
+      "kind": "reference",
+      "basis": "given in dimension callout B"
+    }
+  ],
+  "requests": [
+    {
+      "case_id": "ae-en-shutter-latch-c1",
+      "family_id": "ae-en-shutter-latch",
+      "language": "en",
+      "question": "What is the keeper shape for the orchard application with a stone lintel?",
+      "topic": "keeper shape",
+      "conditions": {
+        "application": "orchard application",
+        "lintel": "stone lintel"
+      },
+      "seed": [
+        "ae-en-shutter-latch-4",
+        "ae-en-shutter-latch-2",
+        "ae-en-shutter-latch-3",
+        "ae-en-shutter-latch-5",
+        "ae-en-shutter-latch-6"
+      ]
+    },
+    {
+      "case_id": "ae-en-shutter-latch-c2",
+      "family_id": "ae-en-shutter-latch",
+      "language": "en",
+      "question": "What is the keeper shape for the quarry application with a stone lintel?",
+      "topic": "keeper shape",
+      "conditions": {
+        "application": "quarry application",
+        "lintel": "stone lintel"
+      },
+      "seed": [
+        "ae-en-shutter-latch-4",
+        "ae-en-shutter-latch-2",
+        "ae-en-shutter-latch-3",
+        "ae-en-shutter-latch-5",
+        "ae-en-shutter-latch-6"
+      ]
+    },
+    {
+      "case_id": "ae-en-shutter-latch-c3",
+      "family_id": "ae-en-shutter-latch",
+      "language": "en",
+      "question": "For a quarry application with a stone lintel, what shape does the draw-latch keeper have?",
+      "topic": "keeper shape",
+      "conditions": {
+        "application": "quarry application",
+        "lintel": "stone lintel"
+      },
+      "seed": [
+        "ae-en-shutter-latch-4",
+        "ae-en-shutter-latch-2",
+        "ae-en-shutter-latch-3",
+        "ae-en-shutter-latch-5",
+        "ae-en-shutter-latch-6"
+      ]
+    },
+    {
+      "case_id": "ae-en-shutter-latch-c4",
+      "family_id": "ae-en-shutter-latch",
+      "language": "en",
+      "question": "Which keeper form is specified when the shutter is in the quarry application under a stone lintel?",
+      "topic": "keeper shape",
+      "conditions": {
+        "application": "quarry application",
+        "lintel": "stone lintel"
+      },
+      "seed": [
+        "ae-en-shutter-latch-4",
+        "ae-en-shutter-latch-2",
+        "ae-en-shutter-latch-3",
+        "ae-en-shutter-latch-5",
+        "ae-en-shutter-latch-6"
+      ]
+    },
+    {
+      "case_id": "ae-en-shutter-latch-c5",
+      "family_id": "ae-en-shutter-latch",
+      "language": "en",
+      "question": "What is the keeper shape for the quarry application with a timber lintel?",
+      "topic": "keeper shape",
+      "conditions": {
+        "application": "quarry application",
+        "lintel": "timber lintel"
+      },
+      "seed": [
+        "ae-en-shutter-latch-4",
+        "ae-en-shutter-latch-2",
+        "ae-en-shutter-latch-3",
+        "ae-en-shutter-latch-5",
+        "ae-en-shutter-latch-6"
+      ]
+    },
+    {
+      "case_id": "ae-en-map-cabinet-c1",
+      "family_id": "ae-en-map-cabinet",
+      "language": "en",
+      "question": "What stops the shallow drawer in the wall unit?",
+      "topic": "drawer stop",
+      "conditions": {
+        "unit": "wall unit",
+        "drawer": "shallow drawer"
+      },
+      "seed": [
+        "ae-en-map-cabinet-slot",
+        "ae-en-map-cabinet-pad",
+        "ae-en-map-cabinet-table"
+      ]
+    },
+    {
+      "case_id": "ae-en-map-cabinet-c2",
+      "family_id": "ae-en-map-cabinet",
+      "language": "en",
+      "question": "What stops the shallow drawer in the bench unit?",
+      "topic": "drawer stop",
+      "conditions": {
+        "unit": "bench unit",
+        "drawer": "shallow drawer"
+      },
+      "seed": [
+        "ae-en-map-cabinet-slot",
+        "ae-en-map-cabinet-pad",
+        "ae-en-map-cabinet-table"
+      ]
+    },
+    {
+      "case_id": "ae-en-map-cabinet-c3",
+      "family_id": "ae-en-map-cabinet",
+      "language": "en",
+      "question": "For the bench unit and its shallow drawer, what part serves as the drawer stop?",
+      "topic": "drawer stop",
+      "conditions": {
+        "unit": "bench unit",
+        "drawer": "shallow drawer"
+      },
+      "seed": [
+        "ae-en-map-cabinet-slot",
+        "ae-en-map-cabinet-pad",
+        "ae-en-map-cabinet-table"
+      ]
+    },
+    {
+      "case_id": "ae-en-map-cabinet-c4",
+      "family_id": "ae-en-map-cabinet",
+      "language": "en",
+      "question": "Which component limits travel of the shallow drawer in the bench unit?",
+      "topic": "drawer stop",
+      "conditions": {
+        "unit": "bench unit",
+        "drawer": "shallow drawer"
+      },
+      "seed": [
+        "ae-en-map-cabinet-slot",
+        "ae-en-map-cabinet-pad",
+        "ae-en-map-cabinet-table"
+      ]
+    },
+    {
+      "case_id": "ae-en-tile-rack-c1",
+      "family_id": "ae-en-tile-rack",
+      "language": "en",
+      "question": "For the indoor rack under Issue Slate, what material is specified for the shelf?",
+      "topic": "shelf material",
+      "conditions": {
+        "edition": "Issue Slate",
+        "installation": "indoor rack"
+      },
+      "seed": [
+        "ae-en-tile-rack-new",
+        "ae-en-tile-rack-old",
+        "ae-en-tile-rack-note"
+      ]
+    },
+    {
+      "case_id": "ae-en-tile-rack-c2",
+      "family_id": "ae-en-tile-rack",
+      "language": "en",
+      "question": "For the indoor rack under Issue Amber, what material is specified for the shelf?",
+      "topic": "shelf material",
+      "conditions": {
+        "edition": "Issue Amber",
+        "installation": "indoor rack"
+      },
+      "seed": [
+        "ae-en-tile-rack-new",
+        "ae-en-tile-rack-old",
+        "ae-en-tile-rack-note"
+      ]
+    },
+    {
+      "case_id": "ae-en-spindle-gauge-c1",
+      "family_id": "ae-en-spindle-gauge",
+      "language": "en",
+      "question": "What shaft diameter is specified for the guide spindle?",
+      "topic": "shaft diameter",
+      "conditions": {
+        "component": "guide spindle"
+      },
+      "seed": [
+        "ae-en-spindle-gauge-size",
+        "ae-en-spindle-gauge-rule",
+        "ae-en-spindle-gauge-handle"
+      ]
+    },
+    {
+      "case_id": "ae-en-spindle-gauge-c2",
+      "family_id": "ae-en-spindle-gauge",
+      "language": "en",
+      "question": "How wide across is the shaft of the guide spindle?",
+      "topic": "shaft diameter",
+      "conditions": {
+        "component": "guide spindle"
+      },
+      "seed": [
+        "ae-en-spindle-gauge-size",
+        "ae-en-spindle-gauge-rule",
+        "ae-en-spindle-gauge-handle"
+      ]
+    }
+  ]
+}

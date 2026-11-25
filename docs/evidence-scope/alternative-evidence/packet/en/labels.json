@@ -1,0 +1,296 @@
+{
+  "cases": [
+    {
+      "case_id": "ae-en-shutter-latch-c1",
+      "family_id": "ae-en-shutter-latch",
+      "status": "ANSWERABLE",
+      "decision": "hooked tab",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-shutter-latch-4"
+          ],
+          "permitted": [
+            "ae-en-shutter-latch-4"
+          ]
+        }
+      ],
+      "stratum": "sibling_dependency"
+    },
+    {
+      "case_id": "ae-en-shutter-latch-c2",
+      "family_id": "ae-en-shutter-latch",
+      "status": "ANSWERABLE",
+      "decision": "hooked tab",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-shutter-latch-3",
+            "ae-en-shutter-latch-2",
+            "ae-en-shutter-latch-1"
+          ],
+          "permitted": [
+            "ae-en-shutter-latch-3",
+            "ae-en-shutter-latch-2",
+            "ae-en-shutter-latch-1"
+          ]
+        }
+      ],
+      "stratum": "sibling_dependency"
+    },
+    {
+      "case_id": "ae-en-shutter-latch-c3",
+      "family_id": "ae-en-shutter-latch",
+      "status": "ANSWERABLE",
+      "decision": "hooked tab",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-shutter-latch-3",
+            "ae-en-shutter-latch-2",
+            "ae-en-shutter-latch-1"
+          ],
+          "permitted": [
+            "ae-en-shutter-latch-3",
+            "ae-en-shutter-latch-2",
+            "ae-en-shutter-latch-1"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-en-shutter-latch-c4",
+      "family_id": "ae-en-shutter-latch",
+      "status": "ANSWERABLE",
+      "decision": "hooked tab",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-shutter-latch-3",
+            "ae-en-shutter-latch-2",
+            "ae-en-shutter-latch-1"
+          ],
+          "permitted": [
+            "ae-en-shutter-latch-3",
+            "ae-en-shutter-latch-2",
+            "ae-en-shutter-latch-1"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-en-shutter-latch-c5",
+      "family_id": "ae-en-shutter-latch",
+      "status": "FINITE_UNANSWERABLE",
+      "decision": "ABSTAIN",
+      "witness_assignments": [],
+      "stratum": "finite_scope_combination"
+    },
+    {
+      "case_id": "ae-en-map-cabinet-c1",
+      "family_id": "ae-en-map-cabinet",
+      "status": "ANSWERABLE",
+      "decision": "cork pad",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-map-cabinet-slot",
+            "ae-en-map-cabinet-pad"
+          ],
+          "permitted": [
+            "ae-en-map-cabinet-slot",
+            "ae-en-map-cabinet-pad"
+          ]
+        }
+      ],
+      "stratum": "same_answer_distinct_witness"
+    },
+    {
+      "case_id": "ae-en-map-cabinet-c2",
+      "family_id": "ae-en-map-cabinet",
+      "status": "ANSWERABLE",
+      "decision": "cork pad",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-map-cabinet-table",
+            "ae-en-map-cabinet-d"
+          ],
+          "permitted": [
+            "ae-en-map-cabinet-table",
+            "ae-en-map-cabinet-d"
+          ]
+        }
+      ],
+      "stratum": "same_answer_distinct_witness"
+    },
+    {
+      "case_id": "ae-en-map-cabinet-c3",
+      "family_id": "ae-en-map-cabinet",
+      "status": "ANSWERABLE",
+      "decision": "cork pad",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-map-cabinet-table",
+            "ae-en-map-cabinet-d"
+          ],
+          "permitted": [
+            "ae-en-map-cabinet-table",
+            "ae-en-map-cabinet-d"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-en-map-cabinet-c4",
+      "family_id": "ae-en-map-cabinet",
+      "status": "ANSWERABLE",
+      "decision": "cork pad",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-map-cabinet-table",
+            "ae-en-map-cabinet-d"
+          ],
+          "permitted": [
+            "ae-en-map-cabinet-table",
+            "ae-en-map-cabinet-d"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-en-tile-rack-c1",
+      "family_id": "ae-en-tile-rack",
+      "status": "ANSWERABLE",
+      "decision": "glazed clay slab",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-tile-rack-new",
+            "ae-en-tile-rack-install",
+            "ae-en-tile-rack-note"
+          ],
+          "permitted": [
+            "ae-en-tile-rack-new",
+            "ae-en-tile-rack-install",
+            "ae-en-tile-rack-note"
+          ]
+        }
+      ],
+      "stratum": "edition_incorporation"
+    },
+    {
+      "case_id": "ae-en-tile-rack-c2",
+      "family_id": "ae-en-tile-rack",
+      "status": "ANSWERABLE",
+      "decision": "birch board",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-tile-rack-old",
+            "ae-en-tile-rack-install"
+          ],
+          "permitted": [
+            "ae-en-tile-rack-old",
+            "ae-en-tile-rack-install"
+          ]
+        }
+      ],
+      "stratum": "edition_incorporation"
+    },
+    {
+      "case_id": "ae-en-spindle-gauge-c1",
+      "family_id": "ae-en-spindle-gauge",
+      "status": "ANSWERABLE",
+      "decision": "six millimetres",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-spindle-gauge-rule",
+            "ae-en-spindle-gauge-size"
+          ],
+          "permitted": [
+            "ae-en-spindle-gauge-rule",
+            "ae-en-spindle-gauge-size"
+          ]
+        }
+      ],
+      "stratum": "direct_reference"
+    },
+    {
+      "case_id": "ae-en-spindle-gauge-c2",
+      "family_id": "ae-en-spindle-gauge",
+      "status": "ANSWERABLE",
+      "decision": "six millimetres",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-spindle-gauge-rule",
+            "ae-en-spindle-gauge-size"
+          ],
+          "permitted": [
+            "ae-en-spindle-gauge-rule",
+            "ae-en-spindle-gauge-size"
+          ]
+        }
+      ],
+      "stratum": "direct_reference"
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": "ae-en-shutter-latch-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-en-shutter-latch-c2",
+        "ae-en-shutter-latch-c1"
+      ]
+    },
+    {
+      "pair_id": "ae-en-shutter-latch-p2",
+      "kind": "invariant",
+      "cases": [
+        "ae-en-shutter-latch-c3",
+        "ae-en-shutter-latch-c4"
+      ]
+    },
+    {
+      "pair_id": "ae-en-map-cabinet-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-en-map-cabinet-c1",
+        "ae-en-map-cabinet-c2"
+      ]
+    },
+    {
+      "pair_id": "ae-en-map-cabinet-p2",
+      "kind": "invariant",
+      "cases": [
+        "ae-en-map-cabinet-c3",
+        "ae-en-map-cabinet-c4"
+      ]
+    },
+    {
+      "pair_id": "ae-en-tile-rack-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-en-tile-rack-c1",
+        "ae-en-tile-rack-c2"
+      ]
+    },
+    {
+      "pair_id": "ae-en-spindle-gauge-p1",
+      "kind": "invariant",
+      "cases": [
+        "ae-en-spindle-gauge-c1",
+        "ae-en-spindle-gauge-c2"
+      ]
+    }
+  ]
+}

@@ -2,9 +2,11 @@
 
 from contextlib import contextmanager
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
+from urllib.parse import urlsplit
 
 import pytest
 
@@ -38,6 +40,12 @@ def run_result(page, action):
     return trace
 
 
+def check_export(page, trace):
+    with page.expect_download() as download:
+        page.get_by_role("button", name="ส่งออกผลและหลักฐาน (JSON)").click()
+    assert json.loads(download.value.path().read_text(encoding="utf-8")) == trace
+
+
 def check_health_and_pharma_citations(page):
     family = page.locator("#scope-family")
     for group, family_id, name in [("กฎหมายไทย", "demo-th-eta", "ลายมือชื่อ"),
@@ -60,8 +68,20 @@ def check_health_and_pharma_citations(page):
     assert page.locator(".scope-quote").inner_text() == provision["quote"]
     assert provision["sha256"] in page.locator("#drawer-body").inner_text()
     page.keyboard.press("Escape")
-    run_result(page, lambda: family.select_option("demo-en-pharma"))
+    edge = page.locator(".scope-connection.stated").filter(has_text="มาตรา ๕๗").filter(has_text="มาตรา ๕๖")
+    edge.locator(".scope-edge").click()
+    assert page.locator(".scope-quote").inner_text() == provision["quote"]
+    page.keyboard.press("Escape")
+    first = run_result(page, lambda: family.select_option("demo-en-pharma"))
+    assert first["example_id"] == "pharma-15"
     pharma = run_result(page, lambda: page.locator("#scope-example").select_option("pharma-18"))
+    assert first["source_sha256"] == pharma["source_sha256"]
+    assert {ev["locator"] for ev in first["evidence"]} == {"Claim 15", "Claim 2", "Claim 1"}
+    assert {ev["locator"] for ev in pharma["evidence"]} == {"Claim 18", "Claim 17", "Claim 1"}
+    changes = page.locator(".scope-changes")
+    assert "คงเดิม" in changes.inner_text()
+    assert "เปลี่ยน" in changes.inner_text()
+    check_export(page, pharma)
     for child, parent in [("Claim 18", "Claim 17"), ("Claim 17", "Claim 1")]:
         row = page.locator(".scope-connection.stated").filter(
             has=page.get_by_role("button", name=child, exact=True)
@@ -89,6 +109,9 @@ def check_health_and_pharma_citations(page):
             assert trace["question_th"] in page.locator("#scope-result").inner_text()
             if family_id == "demo-en-metformin":
                 assert "ทั้งหมด 37 ข้อ · ชุดตัวอย่างคัดข้อ 1, 3, 4, 7" in page.locator("#scope-result").inner_text()
+            if preset == "drug-print":
+                assert trace["effective_date"] is None
+                assert "วันมีผล ยังไม่ทราบ" in page.locator("#scope-result").inner_text()
             if trace["evidence"]:
                 page.locator(".scope-answers button").first.click()
                 assert page.locator(".scope-quote").inner_text() == trace["evidence"][0]["quote"]
@@ -100,13 +123,16 @@ def check_health_and_pharma_citations(page):
 def test_scope_reader_keyboard_compare_export_restart(tmp_path):
     playwright = pytest.importorskip("playwright.sync_api")
     with playwright.sync_playwright() as driver:
-        executable = Path(driver.chromium.executable_path)
+        executable = Path(os.environ.get("PLAYWRIGHT_CHROMIUM_EXECUTABLE") or driver.chromium.executable_path)
         if not executable.is_file():
             pytest.skip("Local Playwright Chromium is unavailable")
         browser = driver.chromium.launch(executable_path=str(executable))
         page = browser.new_page()
         errors = []
+        remote_requests = []
         page.on("pageerror", lambda err: errors.append(str(err)))
+        page.route("**/*", lambda route: route.continue_() if urlsplit(route.request.url).hostname == "127.0.0.1"
+                   else (remote_requests.append(route.request.url), route.abort()))
         with workbench(tmp_path / "store") as url:
             page.goto(url)
             page.get_by_role("button", name="เปิดโต๊ะอ่านเอกสาร").click()
@@ -117,6 +143,8 @@ def test_scope_reader_keyboard_compare_export_restart(tmp_path):
             page.get_by_role("button", name="ใช้คำถามตัวอย่าง").click()
             old = run_result(page, lambda: page.locator("#scope-submit").click())
             new = run_result(page, lambda: page.locator("#scope-example").select_option("eta-2562-no3"))
+            assert "วันประกาศ 2019-04-14 · วันมีผล 2019-04-15" in page.locator("#scope-result").inner_text()
+            check_export(page, new)
             changes = page.locator(".scope-changes")
             assert "คงเดิม" in changes.locator("li").nth(0).inner_text()
             assert "เปลี่ยน" in changes.locator("li").nth(1).inner_text()
@@ -128,6 +156,8 @@ def test_scope_reader_keyboard_compare_export_restart(tmp_path):
             qualified = run_result(page, lambda: page.locator("#scope-example").select_option("eta-case"))
             assert qualified["status"] == "qualified"
             assert "ยังยืนยันไม่ได้" in page.locator(".scope-answers").inner_text()
+            assert [item["status"] for item in qualified["requirements"]] == ["bound", "unresolved"]
+            assert qualified["evidence"][0]["quote"]
             run_result(page, lambda: page.locator("#scope-family").select_option("demo-en-paperclip"))
             patent = run_result(page, lambda: page.locator("#scope-example").select_option("paperclip-4"))
             assert "คงเดิม" in changes.locator("li").nth(0).inner_text()
@@ -146,9 +176,7 @@ def test_scope_reader_keyboard_compare_export_restart(tmp_path):
             page.locator(".scope-links").get_by_text("ต้นฉบับระบุ", exact=False).first.click()
             assert page.locator(".scope-quote").inner_text() == span["quote"]
             page.keyboard.press("Escape")
-            with page.expect_download() as download:
-                page.get_by_role("button", name="ส่งออกผลและหลักฐาน (JSON)").click()
-            assert json.loads(download.value.path().read_text(encoding="utf-8")) == patent
+            check_export(page, patent)
             check_health_and_pharma_citations(page)
             page.get_by_role("button", name="Workbench", exact=True).click()
             page.get_by_role("button", name="Open sample project").wait_for()
@@ -159,9 +187,11 @@ def test_scope_reader_keyboard_compare_export_restart(tmp_path):
             page.locator("#scope-runs").select_option(old["id"])
             page.get_by_role("button", name="เปิดผลเดิม", exact=True).click()
             page.locator("#scope-result").get_by_text(old["id"], exact=False).wait_for()
+            assert "ผลจากประวัติ" in page.locator("#scope-result").inner_text()
             assert page.locator("#scope-example").input_value() == old["example_id"]
             page.locator(".scope-answers button").first.click()
             assert page.locator(".scope-quote").inner_text() == old["evidence"][0]["quote"]
             assert old["evidence"][0]["sha256"] in page.locator("#drawer-body").inner_text()
         assert not errors
+        assert not remote_requests
         browser.close()

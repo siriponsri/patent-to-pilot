@@ -1,0 +1,9 @@
+# S4 local validation protocol
+
+Base `2dff214f7a05354186812c20e31b582390058dc4`. Use a fresh Windows Python 3.12 virtual environment with system site packages disabled, a dedicated fresh data directory and the checkout launcher. Verify FTS5, dependencies, optional-package behavior and the occupied port path. Test app-server egress with the repository socket guard and observe browser requests separately. Machine-wide disconnection requires separate evidence.
+
+- Patent journey uses `demo-en-pharma` presets `pharma-15` and `pharma-18`, selected for their non-overlapping dependent branches and shared claim 1. Compare the displayed features, two edge hops per branch, original English, Thai gloss, canonical source offsets and saved JSON.
+- Thai law journey uses `demo-th-eta` presets `eta-2544`, `eta-2562-no3` and `eta-case`. Inspect publication and commencement, compare retained identification with changed intent wording, and require the absent signer to remain unresolved. Check an explicit legal reference if exposed by the graph. Check that source version changes do not rewrite a saved run.
+- Compare exports to same-run responses and persisted replay. Match displayed quotations to canonical source slices and validate available upstream originals against the S2 pins. Run the same questions in the same locale. Keep captures and licensed originals private.
+- Check invalid targets, unknown effective date, broken reader bundle, immutable source identity, historical replay, actual supported source revision and SQLite backup restoration. Replay old citations independently of the latest source. Run the selective revision harness on its authored fixtures. Record D3 if withdrawal remains unsupported.
+- Pass local technical alpha gates only on observed launcher and browser results. Record separate evidence for the public-data demo, external usability and publication. No scored data, model, provider, external user or remote compute enters this validation.

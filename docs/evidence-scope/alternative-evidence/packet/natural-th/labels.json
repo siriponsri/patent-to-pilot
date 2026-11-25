@@ -1,0 +1,77 @@
+{
+  "cases": [
+    {
+      "case_id": "ae-th-bueng-kan-act-c1",
+      "family_id": "ae-th-bueng-kan-act",
+      "status": "ANSWERABLE",
+      "decision": "จังหวัดบึงกาฬ",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-bueng-kan-act-s5",
+            "ae-th-bueng-kan-act-s3"
+          ],
+          "permitted": [
+            "ae-th-bueng-kan-act-s5",
+            "ae-th-bueng-kan-act-s3"
+          ]
+        }
+      ],
+      "stratum": "natural_cross_reference"
+    },
+    {
+      "case_id": "ae-th-bueng-kan-act-c2",
+      "family_id": "ae-th-bueng-kan-act",
+      "status": "ANSWERABLE",
+      "decision": "องค์การบริหารส่วนจังหวัดบึงกาฬ",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-bueng-kan-act-s7",
+            "ae-th-bueng-kan-act-s3"
+          ],
+          "permitted": [
+            "ae-th-bueng-kan-act-s7",
+            "ae-th-bueng-kan-act-s3"
+          ]
+        }
+      ],
+      "stratum": "natural_cross_reference"
+    },
+    {
+      "case_id": "ae-th-bueng-kan-act-c3",
+      "family_id": "ae-th-bueng-kan-act",
+      "status": "ANSWERABLE",
+      "decision": "อำเภอเมืองบึงกาฬ",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-bueng-kan-act-s4"
+          ],
+          "permitted": [
+            "ae-th-bueng-kan-act-s4"
+          ]
+        }
+      ],
+      "stratum": "natural_direct_text"
+    },
+    {
+      "case_id": "ae-th-bueng-kan-act-c4",
+      "family_id": "ae-th-bueng-kan-act",
+      "status": "UNADJUDICATED",
+      "decision": "ABSTAIN",
+      "witness_assignments": [],
+      "stratum": "natural_unadjudicated"
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": "ae-th-bueng-kan-act-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-th-bueng-kan-act-c1",
+        "ae-th-bueng-kan-act-c2"
+      ]
+    }
+  ]
+}

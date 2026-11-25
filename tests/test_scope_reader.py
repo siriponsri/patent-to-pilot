@@ -165,6 +165,29 @@ def test_bad_offsets_fail_before_any_trace():
         sr._evaluate(entry, 4)
 
 
+def test_broken_bundle_blocks_new_runs_but_keeps_history(tmp_path, monkeypatch):
+    bundle = tmp_path / "bundle.json"
+    monkeypatch.setattr(sr, "BUNDLE", bundle)
+    bundle.write_text(json.dumps({"examples": [exhibit()]}), encoding="utf-8")
+    with serving(tmp_path / "store") as url:
+        saved = request(url, "/api/scope/run", {"example_id": "old"})
+        for contents, error in [(None, "missing_bundle"), ("{", "invalid_bundle"),
+                                ('{"examples":null}', "invalid_bundle")]:
+            if contents is None:
+                bundle.unlink()
+            else:
+                bundle.write_text(contents, encoding="utf-8")
+            catalog = request(url, "/api/scope/catalog")
+            assert catalog["examples"] == []
+            assert catalog["bundle_error"]["code"] == error
+            assert [item["id"] for item in catalog["runs"]] == [saved["id"]]
+            with pytest.raises(HTTPError) as err:
+                request(url, "/api/scope/run", {"example_id": "old"})
+            assert err.value.code == 409
+            assert json.load(err.value)["error"] == error
+            assert request(url, "/api/scope/run/" + saved["id"]) == saved
+
+
 def test_reference_boundaries_follow_thai_provision_numbers_and_english_words():
     assert sr._mentions("ภายใต้บังคับมาตรา ๕๖การโฆษณา", "มาตรา 56")
     assert sr._mentions("ตามมาตรา๕๖/๑ให้ดำเนินการ", "มาตรา 56/1")

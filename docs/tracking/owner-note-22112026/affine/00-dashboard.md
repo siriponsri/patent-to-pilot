@@ -5,7 +5,7 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 ## Readiness
 
 - **method_evidence**: CONTROLLED_THAI_DEV_NEGATIVE
-- **product_readiness**: CORE_VERIFIED_PLUS_SYNTHETIC_TRACE_SLICE
+- **product_readiness**: WINDOWS_LOCAL_ALPHA_AND_LOCAL_PUBLIC_DATA_DEMO_READY_FOR_REVIEW
 - **publication_readiness**: DRAFT_WITH_NOT_RUN_RESULTS
 
 ## Milestones

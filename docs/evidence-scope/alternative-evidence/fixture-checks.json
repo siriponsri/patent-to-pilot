@@ -1,0 +1,1131 @@
+{
+  "full_fixture_checks_sha256": "f3fb487f1f2d696d999860a3bad75657f6820d0ca72a2d996e5f1c5313f345f0",
+  "meter_columns": [
+    "actions",
+    "inspections",
+    "graph_reads"
+  ],
+  "private_root": "../_private_artifacts/ptp-alt-evidence-20261125/fixtures-v3",
+  "rows": [
+    {
+      "arms": {
+        "assignments": {
+          "disposition": "keep",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "prior",
+              "west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        },
+        "coverage": {
+          "disposition": "keep",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "prior",
+              "west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        },
+        "follow_reference": {
+          "disposition": "keep",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "prior",
+              "west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        },
+        "no_disagreement": {
+          "disposition": "keep",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "prior",
+              "west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        },
+        "premise": {
+          "disposition": "keep",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "prior",
+              "west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        }
+      },
+      "case_id": "alt-fixture-keep-q",
+      "family_id": "alt-fixture-keep",
+      "status": "ANSWERABLE"
+    },
+    {
+      "arms": {
+        "assignments": {
+          "disposition": "rerank",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "west",
+              "prior",
+              "east"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        },
+        "coverage": {
+          "disposition": "rerank",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "west",
+              "prior",
+              "east"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        },
+        "follow_reference": {
+          "disposition": "rerank",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "west",
+              "prior",
+              "east"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        },
+        "no_disagreement": {
+          "disposition": "rerank",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "west",
+              "prior",
+              "east"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        },
+        "premise": {
+          "disposition": "rerank",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "west",
+              "prior",
+              "east"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [],
+          "trace_valid": true,
+          "usage": [
+            2,
+            6,
+            1
+          ]
+        }
+      },
+      "case_id": "alt-fixture-rerank-q",
+      "family_id": "alt-fixture-rerank",
+      "status": "ANSWERABLE"
+    },
+    {
+      "arms": {
+        "assignments": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [
+            "prior"
+          ],
+          "trace_valid": true,
+          "usage": [
+            4,
+            11,
+            2
+          ]
+        },
+        "coverage": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [
+            "prior"
+          ],
+          "trace_valid": true,
+          "usage": [
+            4,
+            11,
+            2
+          ]
+        },
+        "follow_reference": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [
+            "prior"
+          ],
+          "trace_valid": true,
+          "usage": [
+            4,
+            11,
+            2
+          ]
+        },
+        "no_disagreement": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [
+            "prior"
+          ],
+          "trace_valid": true,
+          "usage": [
+            4,
+            11,
+            2
+          ]
+        },
+        "premise": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "prior"
+          ],
+          "targets": [
+            "prior"
+          ],
+          "trace_valid": true,
+          "usage": [
+            4,
+            11,
+            2
+          ]
+        }
+      },
+      "case_id": "alt-fixture-acquire-q",
+      "family_id": "alt-fixture-acquire",
+      "status": "ANSWERABLE"
+    },
+    {
+      "arms": {
+        "assignments": {
+          "disposition": "abstain",
+          "hit": 1,
+          "response": "ABSTAIN",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [],
+          "targets": [
+            null,
+            null
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            19,
+            3
+          ]
+        },
+        "coverage": {
+          "disposition": "abstain",
+          "hit": 1,
+          "response": "ABSTAIN",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [],
+          "targets": [
+            null,
+            null
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            19,
+            3
+          ]
+        },
+        "follow_reference": {
+          "disposition": "abstain",
+          "hit": 1,
+          "response": "ABSTAIN",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [],
+          "targets": [
+            null,
+            null
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            19,
+            3
+          ]
+        },
+        "no_disagreement": {
+          "disposition": "abstain",
+          "hit": 1,
+          "response": "ABSTAIN",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [],
+          "targets": [
+            null,
+            null
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            19,
+            3
+          ]
+        },
+        "premise": {
+          "disposition": "abstain",
+          "hit": 1,
+          "response": "ABSTAIN",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "noise"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "prior"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [],
+          "targets": [
+            null,
+            null
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            19,
+            3
+          ]
+        }
+      },
+      "case_id": "alt-fixture-abstain-q",
+      "family_id": "alt-fixture-abstain",
+      "status": "FINITE_UNANSWERABLE"
+    },
+    {
+      "arms": {
+        "assignments": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "bad-a",
+              "bad-b",
+              "good-b",
+              "good"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "99-west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "good"
+          ],
+          "targets": [
+            "99-west"
+          ],
+          "trace_valid": true,
+          "usage": [
+            4,
+            20,
+            8
+          ]
+        },
+        "coverage": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "bad-a",
+              "bad-b",
+              "good-b",
+              "good"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "99-west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "good"
+          ],
+          "targets": [
+            "99-west"
+          ],
+          "trace_valid": true,
+          "usage": [
+            4,
+            20,
+            8
+          ]
+        },
+        "follow_reference": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "bad-a",
+              "bad-b",
+              "good-b",
+              "good"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "00-a"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "99-west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "good"
+          ],
+          "targets": [
+            "00-a",
+            "99-west"
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            33,
+            12
+          ]
+        },
+        "no_disagreement": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "bad-a",
+              "bad-b",
+              "good-b",
+              "good"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "00-a"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "99-west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "good"
+          ],
+          "targets": [
+            "00-a",
+            "99-west"
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            33,
+            12
+          ]
+        },
+        "premise": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "bad-a",
+              "bad-b",
+              "good-b",
+              "good"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "00-a"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "99-west"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "good"
+          ],
+          "targets": [
+            "00-a",
+            "99-west"
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            33,
+            12
+          ]
+        }
+      },
+      "case_id": "alt-fixture-same-answer-q",
+      "family_id": "alt-fixture-same-answer",
+      "status": "ANSWERABLE"
+    },
+    {
+      "arms": {
+        "assignments": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "schedule-index"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "registry"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "registry",
+            "schedule-index"
+          ],
+          "targets": [
+            "schedule-index",
+            "registry"
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            21,
+            5
+          ]
+        },
+        "coverage": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "schedule-index"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "registry"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "registry",
+            "schedule-index"
+          ],
+          "targets": [
+            "schedule-index",
+            "registry"
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            21,
+            5
+          ]
+        },
+        "follow_reference": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "schedule-index"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "registry"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "registry",
+            "schedule-index"
+          ],
+          "targets": [
+            "schedule-index",
+            "registry"
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            21,
+            5
+          ]
+        },
+        "no_disagreement": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "schedule-index"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "registry"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "registry",
+            "schedule-index"
+          ],
+          "targets": [
+            "schedule-index",
+            "registry"
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            21,
+            5
+          ]
+        },
+        "premise": {
+          "disposition": "acquire",
+          "hit": 1,
+          "response": "nine days",
+          "sequence": [
+            [
+              "seed",
+              "east",
+              "west"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "schedule-index"
+            ],
+            [
+              "rerank"
+            ],
+            [
+              "acquire",
+              "registry"
+            ],
+            [
+              "rerank"
+            ]
+          ],
+          "support": [
+            "east",
+            "registry",
+            "schedule-index"
+          ],
+          "targets": [
+            "schedule-index",
+            "registry"
+          ],
+          "trace_valid": true,
+          "usage": [
+            6,
+            21,
+            5
+          ]
+        }
+      },
+      "case_id": "alt-fixture-two-hops-q",
+      "family_id": "alt-fixture-two-hops",
+      "status": "ANSWERABLE"
+    }
+  ],
+  "trace_sha256": {
+    "alt-fixture-abstain": "6ef7e7a5f22749119a96f1c1e322cca0d125728974ced307a7cb232c6f056908",
+    "alt-fixture-acquire": "77a731d6c309e8b8257ad955b74bc9480d4a1c6fa70e656466595ac8b1eac87f",
+    "alt-fixture-keep": "eb6b9d2a4ddd280c4577c355439557f79ce2b6c7a7347501ca2bcf8688d14cb2",
+    "alt-fixture-rerank": "69e78f3c25b6f5298ab8be3b2a1ef8a71a46723cad9d160fd718e10d7d162b82",
+    "alt-fixture-same-answer": "0bb1b12de33c34e7f1a4b6ffee169054756b0572642ca4dac5e795cb5c1f31e3",
+    "alt-fixture-two-hops": "ccbac0858effee0ea98ec4584f36a58fcb729aeabd80300b1d972a6003c6ae0d"
+  },
+  "version": "v3"
+}

@@ -1,0 +1,554 @@
+{
+  "cases": [
+    {
+      "case_id": "ae-th-basketry-c1",
+      "family_id": "ae-th-basketry",
+      "status": "ANSWERABLE",
+      "decision": "โต๊ะริมประตู",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-basketry-3",
+            "ae-th-basketry-a"
+          ],
+          "permitted": [
+            "ae-th-basketry-3",
+            "ae-th-basketry-a"
+          ]
+        }
+      ],
+      "stratum": "same_answer_distinct_witness"
+    },
+    {
+      "case_id": "ae-th-basketry-c2",
+      "family_id": "ae-th-basketry",
+      "status": "ANSWERABLE",
+      "decision": "โต๊ะริมประตู",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-basketry-4",
+            "ae-th-basketry-b"
+          ],
+          "permitted": [
+            "ae-th-basketry-4",
+            "ae-th-basketry-b"
+          ]
+        }
+      ],
+      "stratum": "same_answer_distinct_witness"
+    },
+    {
+      "case_id": "ae-th-basketry-c3",
+      "family_id": "ae-th-basketry",
+      "status": "ANSWERABLE",
+      "decision": "โต๊ะริมประตู",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-basketry-4",
+            "ae-th-basketry-b"
+          ],
+          "permitted": [
+            "ae-th-basketry-4",
+            "ae-th-basketry-b"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-th-basketry-c4",
+      "family_id": "ae-th-basketry",
+      "status": "ANSWERABLE",
+      "decision": "โต๊ะริมประตู",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-basketry-4",
+            "ae-th-basketry-b"
+          ],
+          "permitted": [
+            "ae-th-basketry-4",
+            "ae-th-basketry-b"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-th-darkroom-c1",
+      "family_id": "ae-th-darkroom",
+      "status": "ANSWERABLE",
+      "decision": "สิบเจ็ดนาฬิกา",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-darkroom-morning",
+            "ae-th-darkroom-indigo"
+          ],
+          "permitted": [
+            "ae-th-darkroom-morning",
+            "ae-th-darkroom-indigo"
+          ]
+        }
+      ],
+      "stratum": "same_answer_distinct_witness"
+    },
+    {
+      "case_id": "ae-th-darkroom-c2",
+      "family_id": "ae-th-darkroom",
+      "status": "ANSWERABLE",
+      "decision": "สิบเจ็ดนาฬิกา",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-darkroom-evening",
+            "ae-th-darkroom-book"
+          ],
+          "permitted": [
+            "ae-th-darkroom-evening",
+            "ae-th-darkroom-book"
+          ]
+        }
+      ],
+      "stratum": "same_answer_distinct_witness"
+    },
+    {
+      "case_id": "ae-th-darkroom-c3",
+      "family_id": "ae-th-darkroom",
+      "status": "ANSWERABLE",
+      "decision": "สิบเจ็ดนาฬิกา",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-darkroom-morning",
+            "ae-th-darkroom-indigo"
+          ],
+          "permitted": [
+            "ae-th-darkroom-morning",
+            "ae-th-darkroom-indigo"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-th-darkroom-c4",
+      "family_id": "ae-th-darkroom",
+      "status": "ANSWERABLE",
+      "decision": "สิบเจ็ดนาฬิกา",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-darkroom-morning",
+            "ae-th-darkroom-indigo"
+          ],
+          "permitted": [
+            "ae-th-darkroom-morning",
+            "ae-th-darkroom-indigo"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-th-rain-gauge-c1",
+      "family_id": "ae-th-rain-gauge",
+      "status": "ANSWERABLE",
+      "decision": "วงแหวนเกลียว",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-rain-gauge-3"
+          ],
+          "permitted": [
+            "ae-th-rain-gauge-3"
+          ]
+        }
+      ],
+      "stratum": "sibling_dependency"
+    },
+    {
+      "case_id": "ae-th-rain-gauge-c2",
+      "family_id": "ae-th-rain-gauge",
+      "status": "ANSWERABLE",
+      "decision": "วงแหวนเกลียว",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-rain-gauge-2",
+            "ae-th-rain-gauge-1"
+          ],
+          "permitted": [
+            "ae-th-rain-gauge-2",
+            "ae-th-rain-gauge-1"
+          ]
+        }
+      ],
+      "stratum": "sibling_dependency"
+    },
+    {
+      "case_id": "ae-th-rain-gauge-c3",
+      "family_id": "ae-th-rain-gauge",
+      "status": "FINITE_UNANSWERABLE",
+      "decision": "ABSTAIN",
+      "witness_assignments": [],
+      "stratum": "finite_scope_combination"
+    },
+    {
+      "case_id": "ae-th-weir-c1",
+      "family_id": "ae-th-weir",
+      "status": "ANSWERABLE",
+      "decision": "เช้าวันพุธ",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-weir-old",
+            "ae-th-weir-site"
+          ],
+          "permitted": [
+            "ae-th-weir-old",
+            "ae-th-weir-site"
+          ]
+        }
+      ],
+      "stratum": "edition_incorporation"
+    },
+    {
+      "case_id": "ae-th-weir-c2",
+      "family_id": "ae-th-weir",
+      "status": "ANSWERABLE",
+      "decision": "เช้าวันพุธ",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-weir-new",
+            "ae-th-weir-schedule",
+            "ae-th-weir-site"
+          ],
+          "permitted": [
+            "ae-th-weir-new",
+            "ae-th-weir-schedule",
+            "ae-th-weir-site"
+          ]
+        }
+      ],
+      "stratum": "edition_incorporation"
+    },
+    {
+      "case_id": "ae-th-weir-c3",
+      "family_id": "ae-th-weir",
+      "status": "ANSWERABLE",
+      "decision": "เช้าวันพุธ",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-weir-new",
+            "ae-th-weir-schedule",
+            "ae-th-weir-site"
+          ],
+          "permitted": [
+            "ae-th-weir-new",
+            "ae-th-weir-schedule",
+            "ae-th-weir-site"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-th-weir-c4",
+      "family_id": "ae-th-weir",
+      "status": "ANSWERABLE",
+      "decision": "เช้าวันพุธ",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-weir-new",
+            "ae-th-weir-schedule",
+            "ae-th-weir-site"
+          ],
+          "permitted": [
+            "ae-th-weir-new",
+            "ae-th-weir-schedule",
+            "ae-th-weir-site"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-th-lantern-maps-c1",
+      "family_id": "ae-th-lantern-maps",
+      "status": "ANSWERABLE",
+      "decision": "โรงเก็บสี",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-lantern-maps-e",
+            "ae-th-lantern-maps-train",
+            "ae-th-lantern-maps-string"
+          ],
+          "permitted": [
+            "ae-th-lantern-maps-e",
+            "ae-th-lantern-maps-train",
+            "ae-th-lantern-maps-string"
+          ]
+        }
+      ],
+      "stratum": "changed_conclusion"
+    },
+    {
+      "case_id": "ae-th-lantern-maps-c2",
+      "family_id": "ae-th-lantern-maps",
+      "status": "ANSWERABLE",
+      "decision": "ศาลาเหนือ",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-lantern-maps-d",
+            "ae-th-lantern-maps-trip",
+            "ae-th-lantern-maps-star"
+          ],
+          "permitted": [
+            "ae-th-lantern-maps-d",
+            "ae-th-lantern-maps-trip",
+            "ae-th-lantern-maps-star"
+          ]
+        }
+      ],
+      "stratum": "changed_conclusion"
+    },
+    {
+      "case_id": "ae-th-lantern-maps-c3",
+      "family_id": "ae-th-lantern-maps",
+      "status": "FINITE_UNANSWERABLE",
+      "decision": "ABSTAIN",
+      "witness_assignments": [],
+      "stratum": "finite_scope_combination"
+    },
+    {
+      "case_id": "ae-th-seed-storage-c1",
+      "family_id": "ae-th-seed-storage",
+      "status": "ANSWERABLE",
+      "decision": "ชั้นไม้ล่าง",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-seed-storage-keeper",
+            "ae-th-seed-storage-loan"
+          ],
+          "permitted": [
+            "ae-th-seed-storage-keeper",
+            "ae-th-seed-storage-loan"
+          ]
+        },
+        {
+          "required": [
+            "ae-th-seed-storage-sign",
+            "ae-th-seed-storage-loan"
+          ],
+          "permitted": [
+            "ae-th-seed-storage-sign",
+            "ae-th-seed-storage-loan"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-th-seed-storage-c2",
+      "family_id": "ae-th-seed-storage",
+      "status": "ANSWERABLE",
+      "decision": "ชั้นไม้ล่าง",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-seed-storage-keeper",
+            "ae-th-seed-storage-loan"
+          ],
+          "permitted": [
+            "ae-th-seed-storage-keeper",
+            "ae-th-seed-storage-loan"
+          ]
+        },
+        {
+          "required": [
+            "ae-th-seed-storage-sign",
+            "ae-th-seed-storage-loan"
+          ],
+          "permitted": [
+            "ae-th-seed-storage-sign",
+            "ae-th-seed-storage-loan"
+          ]
+        }
+      ],
+      "stratum": "invariant_wording"
+    },
+    {
+      "case_id": "ae-th-pencil-library-c1",
+      "family_id": "ae-th-pencil-library",
+      "status": "ANSWERABLE",
+      "decision": "สามวัน",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-pencil-library-rule",
+            "ae-th-pencil-library-slip"
+          ],
+          "permitted": [
+            "ae-th-pencil-library-rule",
+            "ae-th-pencil-library-slip"
+          ]
+        }
+      ],
+      "stratum": "direct_reference"
+    },
+    {
+      "case_id": "ae-th-pencil-library-c2",
+      "family_id": "ae-th-pencil-library",
+      "status": "ANSWERABLE",
+      "decision": "สามวัน",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-pencil-library-rule",
+            "ae-th-pencil-library-slip"
+          ],
+          "permitted": [
+            "ae-th-pencil-library-rule",
+            "ae-th-pencil-library-slip"
+          ]
+        }
+      ],
+      "stratum": "direct_reference"
+    },
+    {
+      "case_id": "ae-th-ferry-crates-c1",
+      "family_id": "ae-th-ferry-crates",
+      "status": "ANSWERABLE",
+      "decision": "ประตูเขียว",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-ferry-crates-notice",
+            "ae-th-ferry-crates-pier"
+          ],
+          "permitted": [
+            "ae-th-ferry-crates-notice",
+            "ae-th-ferry-crates-pier"
+          ]
+        }
+      ],
+      "stratum": "changed_conclusion"
+    },
+    {
+      "case_id": "ae-th-ferry-crates-c2",
+      "family_id": "ae-th-ferry-crates",
+      "status": "ANSWERABLE",
+      "decision": "ประตูฟ้า",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-th-ferry-crates-post"
+          ],
+          "permitted": [
+            "ae-th-ferry-crates-post"
+          ]
+        }
+      ],
+      "stratum": "changed_conclusion"
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": "ae-th-basketry-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-th-basketry-c1",
+        "ae-th-basketry-c2"
+      ]
+    },
+    {
+      "pair_id": "ae-th-basketry-p2",
+      "kind": "invariant",
+      "cases": [
+        "ae-th-basketry-c3",
+        "ae-th-basketry-c4"
+      ]
+    },
+    {
+      "pair_id": "ae-th-darkroom-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-th-darkroom-c1",
+        "ae-th-darkroom-c2"
+      ]
+    },
+    {
+      "pair_id": "ae-th-darkroom-p2",
+      "kind": "invariant",
+      "cases": [
+        "ae-th-darkroom-c3",
+        "ae-th-darkroom-c4"
+      ]
+    },
+    {
+      "pair_id": "ae-th-rain-gauge-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-th-rain-gauge-c1",
+        "ae-th-rain-gauge-c2"
+      ]
+    },
+    {
+      "pair_id": "ae-th-weir-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-th-weir-c2",
+        "ae-th-weir-c1"
+      ]
+    },
+    {
+      "pair_id": "ae-th-weir-p2",
+      "kind": "invariant",
+      "cases": [
+        "ae-th-weir-c3",
+        "ae-th-weir-c4"
+      ]
+    },
+    {
+      "pair_id": "ae-th-lantern-maps-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-th-lantern-maps-c1",
+        "ae-th-lantern-maps-c2"
+      ]
+    },
+    {
+      "pair_id": "ae-th-seed-storage-p1",
+      "kind": "invariant",
+      "cases": [
+        "ae-th-seed-storage-c1",
+        "ae-th-seed-storage-c2"
+      ]
+    },
+    {
+      "pair_id": "ae-th-pencil-library-p1",
+      "kind": "invariant",
+      "cases": [
+        "ae-th-pencil-library-c1",
+        "ae-th-pencil-library-c2"
+      ]
+    },
+    {
+      "pair_id": "ae-th-ferry-crates-p1",
+      "kind": "changing",
+      "cases": [
+        "ae-th-ferry-crates-c1",
+        "ae-th-ferry-crates-c2"
+      ]
+    }
+  ]
+}

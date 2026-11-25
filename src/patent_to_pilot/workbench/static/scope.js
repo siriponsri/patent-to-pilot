@@ -76,7 +76,8 @@ const scopeReader = (() => {
       $("scope-family").replaceChildren(...familyOptions(catalog.examples));
       loadQuestions();
       setHistory();
-      notice(catalog.examples.length ? "" : "ยังไม่มีชุดเอกสารในเครื่องนี้");
+      notice(catalog.bundle_error?.message || (catalog.examples.length ? "" : "ยังไม่มีชุดเอกสารในเครื่องนี้"),
+        Boolean(catalog.bundle_error));
     } catch (e) { catalog = null; notice("เปิดรายการเอกสารไม่ได้ · " + e.message, true); }
     finally { loading = null; controls(false); }
   }
@@ -180,11 +181,12 @@ const scopeReader = (() => {
     const a = el("a", {download: "scope-" + trace.id + ".json", href: "/api/scope/run/" + encodeURIComponent(trace.id)});
     document.body.append(a); a.click(); a.remove();
   }
-  function render(trace, previous) {
+  function render(trace, previous, replayed) {
     const result = $("scope-result");
     const summary = el("section", {class: "card"}, el("h2", {text: trace.title_th}), el("p", {text: trace.question_th}),
       el("p", {class: "muted", text: [trace.family_title_th, origin(trace.data_origin), trace.source_id, trace.version].filter(Boolean).join(" · ")}),
       el("strong", {text: trace.status === "complete" ? "พบหลักฐานครบตามคำถามตัวอย่าง" : "พบหลักฐานเพียงบางส่วน"}));
+    if (replayed) summary.append(el("p", {text: "ผลจากประวัติ · แสดงหลักฐานตามฉบับที่บันทึกไว้"}));
     if (!/patent/i.test(trace.domain)) summary.append(el("p", {class: "muted"},
       "ข้อมูลกำกับฉบับ · วันประกาศ " + (trace.issue_date || "ยังไม่ทราบ") + " · วันมีผล " + (trace.effective_date || "ยังไม่ทราบ") + " ",
       sourceLink(trace.source_url)));
@@ -229,7 +231,7 @@ const scopeReader = (() => {
         loadQuestions(trace.example_id);
         $("scope-question").value = trace.question_th;
       }
-      render(trace, previous);
+      render(trace, id ? null : previous, Boolean(id));
       current = trace;
       if (!byId(catalog.runs, trace.id)) catalog.runs.unshift({id: trace.id, example_id: trace.example_id, version: trace.version});
       setHistory();

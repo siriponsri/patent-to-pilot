@@ -1,0 +1,1265 @@
+{
+  "sources": [
+    {
+      "source_id": "ae-th-basketry-doc",
+      "version": "1",
+      "language": "th",
+      "family_id": "ae-th-basketry",
+      "text": "ข้อ ๓ งานยืมตะกร้าไปจัดแสดงให้ส่งที่โต๊ะริมประตู จุดรับนี้ใช้กับผู้ส่งตามบัญชี ก เท่านั้น\n\nข้อ ๔ งานฝากตะกร้าเพื่อสาธิตให้ส่งที่โต๊ะริมประตู จุดรับนี้ใช้กับผู้ส่งตามบัญชี ข เท่านั้น\n\nบัญชี ก ผู้ส่งที่ลงทะเบียนในประเภทโรงเรียนใช้ช่องทางยืมตะกร้าไปจัดแสดง\n\nบัญชี ข ผู้ส่งที่ลงทะเบียนในประเภทกลุ่มช่างจักสานใช้ช่องทางฝากตะกร้าเพื่อสาธิต\n\nข้อ ๖ เจ้าหน้าที่ตรวจสภาพตะกร้าก่อนนำเข้าหอ\n",
+      "sha256": "0845a3ba79d87ddabb33c878b132d47d702be1ed4a017c44eff965103df19f4e"
+    },
+    {
+      "source_id": "ae-th-darkroom-doc",
+      "version": "1",
+      "language": "th",
+      "family_id": "ae-th-darkroom",
+      "text": "บัตรฟิล์ม ๑ กำหนดเวลาส่งฟิล์มของกะเช้าไว้ในตารางสีครามช่อง ก\n\nบัตรฟิล์ม ๒ กำหนดเวลาส่งฟิล์มของกะบ่ายไว้ในสมุดฉายภาพบรรทัด ๒\n\nตารางสีคราม ช่อง ก ส่งฟิล์มภายในสิบเจ็ดนาฬิกา\n\nสมุดฉายภาพ บรรทัด ๒ ปิดรับฟิล์มเวลา สิบเจ็ดนาฬิกา\n\nบัตรอุปกรณ์ เมื่อปิดห้องให้เก็บคีมลงกล่อง\n",
+      "sha256": "b415b7a1fc6a5422b272d67aad7e9eb38018e12327ecc2eb270a51b0965135fd"
+    },
+    {
+      "source_id": "ae-th-rain-gauge-doc",
+      "version": "1",
+      "language": "th",
+      "family_id": "ae-th-rain-gauge",
+      "text": "ข้อถือสิทธิ ๑ ฐานมาตรวัดฝนรุ่นกรวดสำหรับพื้นคอนกรีต\n\nข้อถือสิทธิ ๒ ฐานตามข้อถือสิทธิ ๑ มีตัวยึดกระบอกเป็นวงแหวนเกลียว\n\nข้อถือสิทธิ ๓ ฐานมาตรวัดฝนรุ่นใบไม้สำหรับพื้นคอนกรีต ใช้ตัวยึดกระบอกแบบวงแหวนเกลียว\n\nข้อถือสิทธิ ๔ ฐานตามข้อถือสิทธิ ๑ มียางรองใต้ขา\n\nข้อถือสิทธิ ๕ ฐานมาตรวัดฝนรุ่นสายฝนสำหรับพื้นไม้ ใช้ตัวยึดกระบอกแบบเหล็กแผ่นพับ\n",
+      "sha256": "9d9ba8a9e34010f5c1b7cfb8e3d752f14273922f5006a83b3620aca236ed6f8e"
+    },
+    {
+      "source_id": "ae-th-weir-doc",
+      "version": "คราม",
+      "language": "th",
+      "family_id": "ae-th-weir",
+      "text": "ข้อ ๒ ฉบับคราม ให้เปิดช่องระบายเช้าวันพุธตามเงื่อนไขข้อ ๑\n\nข้อ ๑ คู่มือนี้ใช้เฉพาะอ่างตะวันออก\n",
+      "sha256": "81a613c7d49f4f7ffd1edcf2b8c3960f407e86423d297975e68b1814e73102b5"
+    },
+    {
+      "source_id": "ae-th-weir-doc",
+      "version": "เทา",
+      "language": "th",
+      "family_id": "ae-th-weir",
+      "text": "ข้อ ๔ ฉบับเทา ยกเลิกข้อ ๒ ของฉบับคราม ให้ใช้เวลาตามช่อง ต ในใบแนบ และคงเขตอ่างตามข้อ ๑ ของฉบับครามไว้\n\nใบแนบ ช่อง ต เวลาเปิดช่องระบายคือเช้าวันพุธ\n\nข้อ ๕ ให้เก็บสมุดเวรไว้ใกล้มาตรวัด\n",
+      "sha256": "cf11046168cc4e2cb266eda8eec5622adb3bf7c311def4d549d7cbc9d07ed11c"
+    },
+    {
+      "source_id": "ae-th-lantern-maps-doc",
+      "version": "1",
+      "language": "th",
+      "family_id": "ae-th-lantern-maps",
+      "text": "ข้อ ๘ ชุดโคมประเภทออกเดินให้คืนที่ศาลาเหนือ ผู้คืนต้องอยู่ในรอบที่บันทึกไว้ในใบเดินทาง\n\nข้อ ๙ ชุดโคมประเภทซ้อมให้คืนที่โรงเก็บสี ผู้คืนต้องอยู่ในรอบที่บันทึกไว้ในใบฝึก\n\nใบเดินทาง ให้ดูเวลาคืนในตารางบัตรดาว\n\nใบฝึก ให้ดูเวลาคืนที่บัตรบนสายคล้องผ้า\n\nตารางบัตรดาว กำหนดเวลาคืนเป็นรอบบ่าย\n\nบัตรบนสายคล้องผ้า กำหนดเวลาคืนเป็นรอบบ่าย\n\nข้อ ๑๐ ชุดโคมประเภทสำรองรอบหัวค่ำให้คืนที่หอหน้าลาน\n",
+      "sha256": "9ee57b1c48fe33042a0906ee139551656bd218992ecaf9ce6322f4a3e2b705bd"
+    },
+    {
+      "source_id": "ae-th-seed-storage-doc",
+      "version": "1",
+      "language": "th",
+      "family_id": "ae-th-seed-storage",
+      "text": "หน้าคลัง บรรทัด ๓ ซองฝากชั่วคราวต้องวางที่ชั้นไม้ล่าง ให้ตรวจลักษณะซองจากใบรับฝาก\n\nป้ายหน้าโต๊ะ ซองฝากชั่วคราวต้องวางที่ชั้นไม้ล่าง ใช้คำจำกัดความตามใบรับฝาก\n\nใบรับฝาก ซองฝากชั่วคราวคือซองที่ประทับตราวงกลม\n\nหน้าคลัง บรรทัด ๔ ซองฝากถาวรที่มีตราสามเหลี่ยมวางที่ตู้เหล็ก\n\nท้ายสมุด ตรวจจำนวนซองก่อนปิดคลัง\n",
+      "sha256": "602bdb8170656c807f1ccb4f4d25ef3e806c30aa090397d21da94f9350d8aead"
+    },
+    {
+      "source_id": "ae-th-pencil-library-doc",
+      "version": "1",
+      "language": "th",
+      "family_id": "ae-th-pencil-library",
+      "text": "ข้อ ค กำหนดจำนวนวันที่ยืมได้สำหรับชุดดินสอสีในใบกำหนดคืน\n\nใบกำหนดคืน ระยะเวลายืมสามวัน\n\nข้อ ง ให้เหลาดินสอเมื่อปลายทู่\n\nช่องสำรอง สำหรับจดรายการสีที่หาย\n",
+      "sha256": "f8b81a39f86dffd028243f5ecaf17a4f2b75eb4032206f6ac60f271178772ba6"
+    },
+    {
+      "source_id": "ae-th-ferry-crates-doc",
+      "version": "ใบตอง",
+      "language": "th",
+      "family_id": "ae-th-ferry-crates",
+      "text": "ข้อ ๑ ฉบับใบตอง ลังขนาดเล็กให้ส่งที่ประตูฟ้า\n",
+      "sha256": "41bb1cc2a2fa8a7e800a3de6461ff68181bdf92b424ce62b247f51f0ed54ddaf"
+    },
+    {
+      "source_id": "ae-th-ferry-crates-doc",
+      "version": "กาบกล้วย",
+      "language": "th",
+      "family_id": "ae-th-ferry-crates",
+      "text": "ข้อ ๓ ฉบับกาบกล้วย ให้ยกเลิกข้อ ๑ ของฉบับใบตอง ลังขนาดเล็กให้ส่งที่ประตูตามประกาศท่า\n\nข้อ ๔ เมื่อได้ยินกระดิ่งให้หยุดขนลังชั่วคราว\n",
+      "sha256": "c25031e4d7b12c0ec270b4312b0e4b2bfb0fa4853a41219b9371a381975d3cbe"
+    },
+    {
+      "source_id": "ae-th-ferry-crates-pier",
+      "version": "1",
+      "language": "th",
+      "family_id": "ae-th-ferry-crates",
+      "text": "ประกาศท่า ช่อง ๒ ประตูส่งลังคือประตูเขียว\n",
+      "sha256": "53d028021fdb14fd0e112626a93af28e5a305b96b4ecf77cd33af9c5ef1c528d"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "ae-th-basketry-3",
+      "source_id": "ae-th-basketry-doc",
+      "version": "1",
+      "sha256": "0845a3ba79d87ddabb33c878b132d47d702be1ed4a017c44eff965103df19f4e",
+      "locator": "ข้อ ๓",
+      "char_start": 0,
+      "char_end": 89,
+      "unit_sha256": "c5d089a6062940049e1c7622335c085e814c0654e90bab2729958e00a9f968fc",
+      "text": "ข้อ ๓ งานยืมตะกร้าไปจัดแสดงให้ส่งที่โต๊ะริมประตู จุดรับนี้ใช้กับผู้ส่งตามบัญชี ก เท่านั้น",
+      "family_id": "ae-th-basketry",
+      "root": true,
+      "topic": "จุดรับตะกร้า",
+      "facts": {},
+      "answer": "โต๊ะริมประตู"
+    },
+    {
+      "unit_id": "ae-th-basketry-4",
+      "source_id": "ae-th-basketry-doc",
+      "version": "1",
+      "sha256": "0845a3ba79d87ddabb33c878b132d47d702be1ed4a017c44eff965103df19f4e",
+      "locator": "ข้อ ๔",
+      "char_start": 91,
+      "char_end": 181,
+      "unit_sha256": "da47b80eb7df36fcdb34675120a8f5ccf95a6b13364332e56bef2f535b8630b7",
+      "text": "ข้อ ๔ งานฝากตะกร้าเพื่อสาธิตให้ส่งที่โต๊ะริมประตู จุดรับนี้ใช้กับผู้ส่งตามบัญชี ข เท่านั้น",
+      "family_id": "ae-th-basketry",
+      "root": true,
+      "topic": "จุดรับตะกร้า",
+      "facts": {},
+      "answer": "โต๊ะริมประตู"
+    },
+    {
+      "unit_id": "ae-th-basketry-a",
+      "source_id": "ae-th-basketry-doc",
+      "version": "1",
+      "sha256": "0845a3ba79d87ddabb33c878b132d47d702be1ed4a017c44eff965103df19f4e",
+      "locator": "บัญชี ก",
+      "char_start": 183,
+      "char_end": 253,
+      "unit_sha256": "fb882d0eaed05f88294db11c4bc89dedb5c647b03f26f5143af1d50dc7c9d789",
+      "text": "บัญชี ก ผู้ส่งที่ลงทะเบียนในประเภทโรงเรียนใช้ช่องทางยืมตะกร้าไปจัดแสดง",
+      "family_id": "ae-th-basketry",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "sender_type": "โรงเรียน"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-basketry-b",
+      "source_id": "ae-th-basketry-doc",
+      "version": "1",
+      "sha256": "0845a3ba79d87ddabb33c878b132d47d702be1ed4a017c44eff965103df19f4e",
+      "locator": "บัญชี ข",
+      "char_start": 255,
+      "char_end": 333,
+      "unit_sha256": "b98f712da4250a598617fb760f505bb87fae8c2e3111e6e5f89c2174dfc8cd7b",
+      "text": "บัญชี ข ผู้ส่งที่ลงทะเบียนในประเภทกลุ่มช่างจักสานใช้ช่องทางฝากตะกร้าเพื่อสาธิต",
+      "family_id": "ae-th-basketry",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "sender_type": "กลุ่มช่างจักสาน"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-basketry-6",
+      "source_id": "ae-th-basketry-doc",
+      "version": "1",
+      "sha256": "0845a3ba79d87ddabb33c878b132d47d702be1ed4a017c44eff965103df19f4e",
+      "locator": "ข้อ ๖",
+      "char_start": 335,
+      "char_end": 378,
+      "unit_sha256": "d7e91f81d70e7e56b874967b3d076d09825d5fd81309eb997057fbdd3b0f8104",
+      "text": "ข้อ ๖ เจ้าหน้าที่ตรวจสภาพตะกร้าก่อนนำเข้าหอ",
+      "family_id": "ae-th-basketry",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-darkroom-morning",
+      "source_id": "ae-th-darkroom-doc",
+      "version": "1",
+      "sha256": "b415b7a1fc6a5422b272d67aad7e9eb38018e12327ecc2eb270a51b0965135fd",
+      "locator": "บัตรฟิล์ม ๑",
+      "char_start": 0,
+      "char_end": 60,
+      "unit_sha256": "a8543d93608237e8125b171c64332636f045d90e00c79dd97caa25fc76434d01",
+      "text": "บัตรฟิล์ม ๑ กำหนดเวลาส่งฟิล์มของกะเช้าไว้ในตารางสีครามช่อง ก",
+      "family_id": "ae-th-darkroom",
+      "root": true,
+      "topic": "เวลาส่งฟิล์ม",
+      "facts": {
+        "shift": "กะเช้า"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-darkroom-evening",
+      "source_id": "ae-th-darkroom-doc",
+      "version": "1",
+      "sha256": "b415b7a1fc6a5422b272d67aad7e9eb38018e12327ecc2eb270a51b0965135fd",
+      "locator": "บัตรฟิล์ม ๒",
+      "char_start": 62,
+      "char_end": 123,
+      "unit_sha256": "a4c3e09e1fff553c362853cd5e467377e261391c150921cbdad6046e3312ee45",
+      "text": "บัตรฟิล์ม ๒ กำหนดเวลาส่งฟิล์มของกะบ่ายไว้ในสมุดฉายภาพบรรทัด ๒",
+      "family_id": "ae-th-darkroom",
+      "root": true,
+      "topic": "เวลาส่งฟิล์ม",
+      "facts": {
+        "shift": "กะบ่าย"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-darkroom-indigo",
+      "source_id": "ae-th-darkroom-doc",
+      "version": "1",
+      "sha256": "b415b7a1fc6a5422b272d67aad7e9eb38018e12327ecc2eb270a51b0965135fd",
+      "locator": "ตารางสีคราม ช่อง ก",
+      "char_start": 125,
+      "char_end": 170,
+      "unit_sha256": "50aed46d0df9f9b3003f2725be8b47057abcc54b5b75912c8f1e4d73185497d7",
+      "text": "ตารางสีคราม ช่อง ก ส่งฟิล์มภายในสิบเจ็ดนาฬิกา",
+      "family_id": "ae-th-darkroom",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": "สิบเจ็ดนาฬิกา"
+    },
+    {
+      "unit_id": "ae-th-darkroom-book",
+      "source_id": "ae-th-darkroom-doc",
+      "version": "1",
+      "sha256": "b415b7a1fc6a5422b272d67aad7e9eb38018e12327ecc2eb270a51b0965135fd",
+      "locator": "สมุดฉายภาพ บรรทัด ๒",
+      "char_start": 172,
+      "char_end": 221,
+      "unit_sha256": "d8b83321318128930f8b4d31272b7b7456d322fd6af203cd8177bb95134d7372",
+      "text": "สมุดฉายภาพ บรรทัด ๒ ปิดรับฟิล์มเวลา สิบเจ็ดนาฬิกา",
+      "family_id": "ae-th-darkroom",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": "สิบเจ็ดนาฬิกา"
+    },
+    {
+      "unit_id": "ae-th-darkroom-wrap",
+      "source_id": "ae-th-darkroom-doc",
+      "version": "1",
+      "sha256": "b415b7a1fc6a5422b272d67aad7e9eb38018e12327ecc2eb270a51b0965135fd",
+      "locator": "บัตรอุปกรณ์",
+      "char_start": 223,
+      "char_end": 264,
+      "unit_sha256": "eaee40a1d254613d244a1eb063f1036d276019ff18016fabbdd12fd3fdfdc38e",
+      "text": "บัตรอุปกรณ์ เมื่อปิดห้องให้เก็บคีมลงกล่อง",
+      "family_id": "ae-th-darkroom",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-rain-gauge-1",
+      "source_id": "ae-th-rain-gauge-doc",
+      "version": "1",
+      "sha256": "9d9ba8a9e34010f5c1b7cfb8e3d752f14273922f5006a83b3620aca236ed6f8e",
+      "locator": "ข้อถือสิทธิ ๑",
+      "char_start": 0,
+      "char_end": 51,
+      "unit_sha256": "bf07639f3c622a37a9aba0fbc0f7bcfa1a428d6a0d3531109889a55839b2cdef",
+      "text": "ข้อถือสิทธิ ๑ ฐานมาตรวัดฝนรุ่นกรวดสำหรับพื้นคอนกรีต",
+      "family_id": "ae-th-rain-gauge",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "model": "รุ่นกรวด",
+        "surface": "พื้นคอนกรีต"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-rain-gauge-2",
+      "source_id": "ae-th-rain-gauge-doc",
+      "version": "1",
+      "sha256": "9d9ba8a9e34010f5c1b7cfb8e3d752f14273922f5006a83b3620aca236ed6f8e",
+      "locator": "ข้อถือสิทธิ ๒",
+      "char_start": 53,
+      "char_end": 117,
+      "unit_sha256": "29bc5747168309b641f57c15191bf1dc6d61dd123528e5f2e2e5db444f17a7c9",
+      "text": "ข้อถือสิทธิ ๒ ฐานตามข้อถือสิทธิ ๑ มีตัวยึดกระบอกเป็นวงแหวนเกลียว",
+      "family_id": "ae-th-rain-gauge",
+      "root": true,
+      "topic": "ตัวยึดกระบอก",
+      "facts": {},
+      "answer": "วงแหวนเกลียว"
+    },
+    {
+      "unit_id": "ae-th-rain-gauge-3",
+      "source_id": "ae-th-rain-gauge-doc",
+      "version": "1",
+      "sha256": "9d9ba8a9e34010f5c1b7cfb8e3d752f14273922f5006a83b3620aca236ed6f8e",
+      "locator": "ข้อถือสิทธิ ๓",
+      "char_start": 119,
+      "char_end": 202,
+      "unit_sha256": "9aa891d333a4f706d9002fd980918a77cef0d217b0b10fd5d7ba844404487213",
+      "text": "ข้อถือสิทธิ ๓ ฐานมาตรวัดฝนรุ่นใบไม้สำหรับพื้นคอนกรีต ใช้ตัวยึดกระบอกแบบวงแหวนเกลียว",
+      "family_id": "ae-th-rain-gauge",
+      "root": true,
+      "topic": "ตัวยึดกระบอก",
+      "facts": {
+        "model": "รุ่นใบไม้",
+        "surface": "พื้นคอนกรีต"
+      },
+      "answer": "วงแหวนเกลียว"
+    },
+    {
+      "unit_id": "ae-th-rain-gauge-4",
+      "source_id": "ae-th-rain-gauge-doc",
+      "version": "1",
+      "sha256": "9d9ba8a9e34010f5c1b7cfb8e3d752f14273922f5006a83b3620aca236ed6f8e",
+      "locator": "ข้อถือสิทธิ ๔",
+      "char_start": 204,
+      "char_end": 251,
+      "unit_sha256": "eeaa881d087db3c8f96a91d87a828de17892ae3a863096a8e609164b7f71080f",
+      "text": "ข้อถือสิทธิ ๔ ฐานตามข้อถือสิทธิ ๑ มียางรองใต้ขา",
+      "family_id": "ae-th-rain-gauge",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-rain-gauge-5",
+      "source_id": "ae-th-rain-gauge-doc",
+      "version": "1",
+      "sha256": "9d9ba8a9e34010f5c1b7cfb8e3d752f14273922f5006a83b3620aca236ed6f8e",
+      "locator": "ข้อถือสิทธิ ๕",
+      "char_start": 253,
+      "char_end": 332,
+      "unit_sha256": "a9139209bb9c26d9a93f2bfe06f0dbde819f902061b0ca3ad8e8565dc2e73cbe",
+      "text": "ข้อถือสิทธิ ๕ ฐานมาตรวัดฝนรุ่นสายฝนสำหรับพื้นไม้ ใช้ตัวยึดกระบอกแบบเหล็กแผ่นพับ",
+      "family_id": "ae-th-rain-gauge",
+      "root": true,
+      "topic": "ตัวยึดกระบอก",
+      "facts": {
+        "model": "รุ่นสายฝน",
+        "surface": "พื้นไม้"
+      },
+      "answer": "เหล็กแผ่นพับ"
+    },
+    {
+      "unit_id": "ae-th-weir-old",
+      "source_id": "ae-th-weir-doc",
+      "version": "คราม",
+      "sha256": "81a613c7d49f4f7ffd1edcf2b8c3960f407e86423d297975e68b1814e73102b5",
+      "locator": "ฉบับคราม ข้อ ๒",
+      "char_start": 0,
+      "char_end": 57,
+      "unit_sha256": "78404fba778fa73db376abc8088313f8937e764afa2b1cba34f4bb3820058ee7",
+      "text": "ข้อ ๒ ฉบับคราม ให้เปิดช่องระบายเช้าวันพุธตามเงื่อนไขข้อ ๑",
+      "family_id": "ae-th-weir",
+      "root": true,
+      "topic": "ช่วงเปิดช่องระบาย",
+      "facts": {
+        "edition": "ฉบับคราม"
+      },
+      "answer": "เช้าวันพุธ"
+    },
+    {
+      "unit_id": "ae-th-weir-site",
+      "source_id": "ae-th-weir-doc",
+      "version": "คราม",
+      "sha256": "81a613c7d49f4f7ffd1edcf2b8c3960f407e86423d297975e68b1814e73102b5",
+      "locator": "ฉบับคราม ข้อ ๑",
+      "char_start": 59,
+      "char_end": 94,
+      "unit_sha256": "b74c994605f44d08ff2f2c2dbb8ea614b217d4d2b2e6b741c7432c689764b0cb",
+      "text": "ข้อ ๑ คู่มือนี้ใช้เฉพาะอ่างตะวันออก",
+      "family_id": "ae-th-weir",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "basin": "อ่างตะวันออก"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-weir-new",
+      "source_id": "ae-th-weir-doc",
+      "version": "เทา",
+      "sha256": "cf11046168cc4e2cb266eda8eec5622adb3bf7c311def4d549d7cbc9d07ed11c",
+      "locator": "ฉบับเทา ข้อ ๔",
+      "char_start": 0,
+      "char_end": 101,
+      "unit_sha256": "b290dd28ee9c1655eb1df97a0268322bb2d093d67004b3d321e736f099c899b5",
+      "text": "ข้อ ๔ ฉบับเทา ยกเลิกข้อ ๒ ของฉบับคราม ให้ใช้เวลาตามช่อง ต ในใบแนบ และคงเขตอ่างตามข้อ ๑ ของฉบับครามไว้",
+      "family_id": "ae-th-weir",
+      "root": true,
+      "topic": "ช่วงเปิดช่องระบาย",
+      "facts": {
+        "edition": "ฉบับเทา"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-weir-schedule",
+      "source_id": "ae-th-weir-doc",
+      "version": "เทา",
+      "sha256": "cf11046168cc4e2cb266eda8eec5622adb3bf7c311def4d549d7cbc9d07ed11c",
+      "locator": "ฉบับเทา ใบแนบ ช่อง ต",
+      "char_start": 103,
+      "char_end": 146,
+      "unit_sha256": "080db339cefe1079f26bce243f981552f7e0ee06ec0ce5f0b4c20afd8da584e1",
+      "text": "ใบแนบ ช่อง ต เวลาเปิดช่องระบายคือเช้าวันพุธ",
+      "family_id": "ae-th-weir",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": "เช้าวันพุธ"
+    },
+    {
+      "unit_id": "ae-th-weir-log",
+      "source_id": "ae-th-weir-doc",
+      "version": "เทา",
+      "sha256": "cf11046168cc4e2cb266eda8eec5622adb3bf7c311def4d549d7cbc9d07ed11c",
+      "locator": "ฉบับเทา ข้อ ๕",
+      "char_start": 148,
+      "char_end": 182,
+      "unit_sha256": "91b8f11087f7b1e6bad052613137f232d85f8e80dafaaad9f1744d85e253b51a",
+      "text": "ข้อ ๕ ให้เก็บสมุดเวรไว้ใกล้มาตรวัด",
+      "family_id": "ae-th-weir",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-lantern-maps-d",
+      "source_id": "ae-th-lantern-maps-doc",
+      "version": "1",
+      "sha256": "9ee57b1c48fe33042a0906ee139551656bd218992ecaf9ce6322f4a3e2b705bd",
+      "locator": "ข้อ ๘",
+      "char_start": 0,
+      "char_end": 86,
+      "unit_sha256": "4751e739c92e4cabe94fce53e664eec3b22ad4c1280ef682faebd1af4a3766b2",
+      "text": "ข้อ ๘ ชุดโคมประเภทออกเดินให้คืนที่ศาลาเหนือ ผู้คืนต้องอยู่ในรอบที่บันทึกไว้ในใบเดินทาง",
+      "family_id": "ae-th-lantern-maps",
+      "root": true,
+      "topic": "สถานที่คืนชุดโคม",
+      "facts": {
+        "kit_type": "ออกเดิน"
+      },
+      "answer": "ศาลาเหนือ"
+    },
+    {
+      "unit_id": "ae-th-lantern-maps-e",
+      "source_id": "ae-th-lantern-maps-doc",
+      "version": "1",
+      "sha256": "9ee57b1c48fe33042a0906ee139551656bd218992ecaf9ce6322f4a3e2b705bd",
+      "locator": "ข้อ ๙",
+      "char_start": 88,
+      "char_end": 167,
+      "unit_sha256": "11a98e383ae823f306e0f852d771d102593246650da03fec0c43c5074b6c2747",
+      "text": "ข้อ ๙ ชุดโคมประเภทซ้อมให้คืนที่โรงเก็บสี ผู้คืนต้องอยู่ในรอบที่บันทึกไว้ในใบฝึก",
+      "family_id": "ae-th-lantern-maps",
+      "root": true,
+      "topic": "สถานที่คืนชุดโคม",
+      "facts": {
+        "kit_type": "ซ้อม"
+      },
+      "answer": "โรงเก็บสี"
+    },
+    {
+      "unit_id": "ae-th-lantern-maps-trip",
+      "source_id": "ae-th-lantern-maps-doc",
+      "version": "1",
+      "sha256": "9ee57b1c48fe33042a0906ee139551656bd218992ecaf9ce6322f4a3e2b705bd",
+      "locator": "ใบเดินทาง",
+      "char_start": 169,
+      "char_end": 205,
+      "unit_sha256": "e951c18d273df92917c587800536a6f60d8030ef9ccfb6b4aaf0b6a400774476",
+      "text": "ใบเดินทาง ให้ดูเวลาคืนในตารางบัตรดาว",
+      "family_id": "ae-th-lantern-maps",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-lantern-maps-train",
+      "source_id": "ae-th-lantern-maps-doc",
+      "version": "1",
+      "sha256": "9ee57b1c48fe33042a0906ee139551656bd218992ecaf9ce6322f4a3e2b705bd",
+      "locator": "ใบฝึก",
+      "char_start": 207,
+      "char_end": 245,
+      "unit_sha256": "be255091f749934ea121740fada09e24887d83a4a7341244cb5cff5f882dff24",
+      "text": "ใบฝึก ให้ดูเวลาคืนที่บัตรบนสายคล้องผ้า",
+      "family_id": "ae-th-lantern-maps",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-lantern-maps-star",
+      "source_id": "ae-th-lantern-maps-doc",
+      "version": "1",
+      "sha256": "9ee57b1c48fe33042a0906ee139551656bd218992ecaf9ce6322f4a3e2b705bd",
+      "locator": "ตารางบัตรดาว",
+      "char_start": 247,
+      "char_end": 283,
+      "unit_sha256": "06d8b17b52f4cb3c6d59e9e2cd025217e517874172db8fbf7bbbff0b39554191",
+      "text": "ตารางบัตรดาว กำหนดเวลาคืนเป็นรอบบ่าย",
+      "family_id": "ae-th-lantern-maps",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "session": "รอบบ่าย"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-lantern-maps-string",
+      "source_id": "ae-th-lantern-maps-doc",
+      "version": "1",
+      "sha256": "9ee57b1c48fe33042a0906ee139551656bd218992ecaf9ce6322f4a3e2b705bd",
+      "locator": "บัตรบนสายคล้องผ้า",
+      "char_start": 285,
+      "char_end": 326,
+      "unit_sha256": "d1708c1e0b6f6a04686306425c3a7eb830509b2a594fe3d13ccad334e5b4a5a5",
+      "text": "บัตรบนสายคล้องผ้า กำหนดเวลาคืนเป็นรอบบ่าย",
+      "family_id": "ae-th-lantern-maps",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "session": "รอบบ่าย"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-lantern-maps-spare",
+      "source_id": "ae-th-lantern-maps-doc",
+      "version": "1",
+      "sha256": "9ee57b1c48fe33042a0906ee139551656bd218992ecaf9ce6322f4a3e2b705bd",
+      "locator": "ข้อ ๑๐",
+      "char_start": 328,
+      "char_end": 379,
+      "unit_sha256": "50888e7746c4031b0752333130f1ffb900c7a236e5c781931f4b845dc7733644",
+      "text": "ข้อ ๑๐ ชุดโคมประเภทสำรองรอบหัวค่ำให้คืนที่หอหน้าลาน",
+      "family_id": "ae-th-lantern-maps",
+      "root": true,
+      "topic": "สถานที่คืนชุดโคม",
+      "facts": {
+        "kit_type": "สำรอง",
+        "session": "รอบหัวค่ำ"
+      },
+      "answer": "หอหน้าลาน"
+    },
+    {
+      "unit_id": "ae-th-seed-storage-keeper",
+      "source_id": "ae-th-seed-storage-doc",
+      "version": "1",
+      "sha256": "602bdb8170656c807f1ccb4f4d25ef3e806c30aa090397d21da94f9350d8aead",
+      "locator": "หน้าคลัง บรรทัด ๓",
+      "char_start": 0,
+      "char_end": 81,
+      "unit_sha256": "8beccc0cd57bce551a89db3a8e1c5174d2f7f5a5f98fbfbe49d9e0a006c721a5",
+      "text": "หน้าคลัง บรรทัด ๓ ซองฝากชั่วคราวต้องวางที่ชั้นไม้ล่าง ให้ตรวจลักษณะซองจากใบรับฝาก",
+      "family_id": "ae-th-seed-storage",
+      "root": true,
+      "topic": "ชั้นวางซอง",
+      "facts": {},
+      "answer": "ชั้นไม้ล่าง"
+    },
+    {
+      "unit_id": "ae-th-seed-storage-sign",
+      "source_id": "ae-th-seed-storage-doc",
+      "version": "1",
+      "sha256": "602bdb8170656c807f1ccb4f4d25ef3e806c30aa090397d21da94f9350d8aead",
+      "locator": "ป้ายหน้าโต๊ะ",
+      "char_start": 83,
+      "char_end": 157,
+      "unit_sha256": "b48228c0647e33fd30ce714ad1d1df281d5a42a71d014170d8bc748722a5176e",
+      "text": "ป้ายหน้าโต๊ะ ซองฝากชั่วคราวต้องวางที่ชั้นไม้ล่าง ใช้คำจำกัดความตามใบรับฝาก",
+      "family_id": "ae-th-seed-storage",
+      "root": true,
+      "topic": "ชั้นวางซอง",
+      "facts": {},
+      "answer": "ชั้นไม้ล่าง"
+    },
+    {
+      "unit_id": "ae-th-seed-storage-loan",
+      "source_id": "ae-th-seed-storage-doc",
+      "version": "1",
+      "sha256": "602bdb8170656c807f1ccb4f4d25ef3e806c30aa090397d21da94f9350d8aead",
+      "locator": "ใบรับฝาก",
+      "char_start": 159,
+      "char_end": 205,
+      "unit_sha256": "5f101b9763e957357c8c1765ac04a613cdbc26e6f957e33f0cef5c6b35b2d514",
+      "text": "ใบรับฝาก ซองฝากชั่วคราวคือซองที่ประทับตราวงกลม",
+      "family_id": "ae-th-seed-storage",
+      "root": false,
+      "topic": null,
+      "facts": {
+        "stamp": "ตราวงกลม"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-seed-storage-long",
+      "source_id": "ae-th-seed-storage-doc",
+      "version": "1",
+      "sha256": "602bdb8170656c807f1ccb4f4d25ef3e806c30aa090397d21da94f9350d8aead",
+      "locator": "หน้าคลัง บรรทัด ๔",
+      "char_start": 207,
+      "char_end": 267,
+      "unit_sha256": "4f3d2b0ee863d9e8bfa9740dc512bf426e75453866aee0f52429f9f2c30ac3ed",
+      "text": "หน้าคลัง บรรทัด ๔ ซองฝากถาวรที่มีตราสามเหลี่ยมวางที่ตู้เหล็ก",
+      "family_id": "ae-th-seed-storage",
+      "root": true,
+      "topic": "ชั้นวางซอง",
+      "facts": {
+        "stamp": "ตราสามเหลี่ยม"
+      },
+      "answer": "ตู้เหล็ก"
+    },
+    {
+      "unit_id": "ae-th-seed-storage-note",
+      "source_id": "ae-th-seed-storage-doc",
+      "version": "1",
+      "sha256": "602bdb8170656c807f1ccb4f4d25ef3e806c30aa090397d21da94f9350d8aead",
+      "locator": "ท้ายสมุด",
+      "char_start": 269,
+      "char_end": 301,
+      "unit_sha256": "68b5f1727bc14cd8477c791b4ecf0216a70393cd8f1b513fc8d76f982231bdbd",
+      "text": "ท้ายสมุด ตรวจจำนวนซองก่อนปิดคลัง",
+      "family_id": "ae-th-seed-storage",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-pencil-library-rule",
+      "source_id": "ae-th-pencil-library-doc",
+      "version": "1",
+      "sha256": "f8b81a39f86dffd028243f5ecaf17a4f2b75eb4032206f6ac60f271178772ba6",
+      "locator": "ข้อ ค",
+      "char_start": 0,
+      "char_end": 56,
+      "unit_sha256": "4c8e63201fb73b937b2caaecac8cd05fa29a34153df092e665ac34f336d5c94d",
+      "text": "ข้อ ค กำหนดจำนวนวันที่ยืมได้สำหรับชุดดินสอสีในใบกำหนดคืน",
+      "family_id": "ae-th-pencil-library",
+      "root": true,
+      "topic": "จำนวนวันที่ยืมได้",
+      "facts": {
+        "item": "ชุดดินสอสี"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-pencil-library-slip",
+      "source_id": "ae-th-pencil-library-doc",
+      "version": "1",
+      "sha256": "f8b81a39f86dffd028243f5ecaf17a4f2b75eb4032206f6ac60f271178772ba6",
+      "locator": "ใบกำหนดคืน",
+      "char_start": 58,
+      "char_end": 86,
+      "unit_sha256": "84b28c09ab62edc6f2aa7ea197b84401e620661a02a435aa7a2156a613cf3f09",
+      "text": "ใบกำหนดคืน ระยะเวลายืมสามวัน",
+      "family_id": "ae-th-pencil-library",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": "สามวัน"
+    },
+    {
+      "unit_id": "ae-th-pencil-library-clean",
+      "source_id": "ae-th-pencil-library-doc",
+      "version": "1",
+      "sha256": "f8b81a39f86dffd028243f5ecaf17a4f2b75eb4032206f6ac60f271178772ba6",
+      "locator": "ข้อ ง",
+      "char_start": 88,
+      "char_end": 118,
+      "unit_sha256": "c86acf02a2000b1348c47a0a8ab79bfbaf4fac8b8aea54e3312a83641c28e88f",
+      "text": "ข้อ ง ให้เหลาดินสอเมื่อปลายทู่",
+      "family_id": "ae-th-pencil-library",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-pencil-library-spare",
+      "source_id": "ae-th-pencil-library-doc",
+      "version": "1",
+      "sha256": "f8b81a39f86dffd028243f5ecaf17a4f2b75eb4032206f6ac60f271178772ba6",
+      "locator": "ช่องสำรอง",
+      "char_start": 120,
+      "char_end": 152,
+      "unit_sha256": "b37b26692c35d265242f6a8fafcb51a1c7a418d22b722d9893a5a1631bec17e4",
+      "text": "ช่องสำรอง สำหรับจดรายการสีที่หาย",
+      "family_id": "ae-th-pencil-library",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-ferry-crates-post",
+      "source_id": "ae-th-ferry-crates-doc",
+      "version": "ใบตอง",
+      "sha256": "41bb1cc2a2fa8a7e800a3de6461ff68181bdf92b424ce62b247f51f0ed54ddaf",
+      "locator": "ฉบับใบตอง ข้อ ๑",
+      "char_start": 0,
+      "char_end": 44,
+      "unit_sha256": "a0cafa2ee54b9ea7b1856cd4bb4f8ccaa56b33ac96875503f997a67d1de408d5",
+      "text": "ข้อ ๑ ฉบับใบตอง ลังขนาดเล็กให้ส่งที่ประตูฟ้า",
+      "family_id": "ae-th-ferry-crates",
+      "root": true,
+      "topic": "ประตูส่งลัง",
+      "facts": {
+        "edition": "ฉบับใบตอง",
+        "crate_size": "ลังขนาดเล็ก"
+      },
+      "answer": "ประตูฟ้า"
+    },
+    {
+      "unit_id": "ae-th-ferry-crates-notice",
+      "source_id": "ae-th-ferry-crates-doc",
+      "version": "กาบกล้วย",
+      "sha256": "c25031e4d7b12c0ec270b4312b0e4b2bfb0fa4853a41219b9371a381975d3cbe",
+      "locator": "ฉบับกาบกล้วย ข้อ ๓",
+      "char_start": 0,
+      "char_end": 84,
+      "unit_sha256": "bf14f5a562d7f113e3c81d6875b8b972aa8d0965128121b8bc4bd766581422e5",
+      "text": "ข้อ ๓ ฉบับกาบกล้วย ให้ยกเลิกข้อ ๑ ของฉบับใบตอง ลังขนาดเล็กให้ส่งที่ประตูตามประกาศท่า",
+      "family_id": "ae-th-ferry-crates",
+      "root": true,
+      "topic": "ประตูส่งลัง",
+      "facts": {
+        "edition": "ฉบับกาบกล้วย",
+        "crate_size": "ลังขนาดเล็ก"
+      },
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-ferry-crates-bell",
+      "source_id": "ae-th-ferry-crates-doc",
+      "version": "กาบกล้วย",
+      "sha256": "c25031e4d7b12c0ec270b4312b0e4b2bfb0fa4853a41219b9371a381975d3cbe",
+      "locator": "ฉบับกาบกล้วย ข้อ ๔",
+      "char_start": 86,
+      "char_end": 130,
+      "unit_sha256": "8d49e5618cc2ac72bd75e23026646fe40a7487e02a2ed97a86969c12f9114f42",
+      "text": "ข้อ ๔ เมื่อได้ยินกระดิ่งให้หยุดขนลังชั่วคราว",
+      "family_id": "ae-th-ferry-crates",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-th-ferry-crates-pier",
+      "source_id": "ae-th-ferry-crates-pier",
+      "version": "1",
+      "sha256": "53d028021fdb14fd0e112626a93af28e5a305b96b4ecf77cd33af9c5ef1c528d",
+      "locator": "ประกาศท่า ช่อง ๒",
+      "char_start": 0,
+      "char_end": 41,
+      "unit_sha256": "04ac9f350d3a11f6d1d0001b1ad02c0a51fcf1e5e41ec88414467ebec466a7f6",
+      "text": "ประกาศท่า ช่อง ๒ ประตูส่งลังคือประตูเขียว",
+      "family_id": "ae-th-ferry-crates",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": "ประตูเขียว"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ae-th-basketry-3",
+      "to": "ae-th-basketry-a",
+      "kind": "applicability",
+      "basis": "ผู้ส่งตามบัญชี ก"
+    },
+    {
+      "from": "ae-th-basketry-4",
+      "to": "ae-th-basketry-b",
+      "kind": "applicability",
+      "basis": "ผู้ส่งตามบัญชี ข"
+    },
+    {
+      "from": "ae-th-darkroom-morning",
+      "to": "ae-th-darkroom-indigo",
+      "kind": "reference",
+      "basis": "ตารางสีครามช่อง ก"
+    },
+    {
+      "from": "ae-th-darkroom-evening",
+      "to": "ae-th-darkroom-book",
+      "kind": "reference",
+      "basis": "สมุดฉายภาพบรรทัด ๒"
+    },
+    {
+      "from": "ae-th-rain-gauge-2",
+      "to": "ae-th-rain-gauge-1",
+      "kind": "dependency",
+      "basis": "ตามข้อถือสิทธิ ๑"
+    },
+    {
+      "from": "ae-th-rain-gauge-4",
+      "to": "ae-th-rain-gauge-1",
+      "kind": "dependency",
+      "basis": "ตามข้อถือสิทธิ ๑"
+    },
+    {
+      "from": "ae-th-weir-old",
+      "to": "ae-th-weir-site",
+      "kind": "applicability",
+      "basis": "ตามเงื่อนไขข้อ ๑"
+    },
+    {
+      "from": "ae-th-weir-new",
+      "to": "ae-th-weir-schedule",
+      "kind": "reference",
+      "basis": "ตามช่อง ต ในใบแนบ"
+    },
+    {
+      "from": "ae-th-weir-new",
+      "to": "ae-th-weir-site",
+      "kind": "amendment",
+      "basis": "คงเขตอ่างตามข้อ ๑ ของฉบับครามไว้"
+    },
+    {
+      "from": "ae-th-lantern-maps-d",
+      "to": "ae-th-lantern-maps-trip",
+      "kind": "applicability",
+      "basis": "ในใบเดินทาง"
+    },
+    {
+      "from": "ae-th-lantern-maps-e",
+      "to": "ae-th-lantern-maps-train",
+      "kind": "applicability",
+      "basis": "ในใบฝึก"
+    },
+    {
+      "from": "ae-th-lantern-maps-trip",
+      "to": "ae-th-lantern-maps-star",
+      "kind": "qualification",
+      "basis": "ในตารางบัตรดาว"
+    },
+    {
+      "from": "ae-th-lantern-maps-train",
+      "to": "ae-th-lantern-maps-string",
+      "kind": "qualification",
+      "basis": "ที่บัตรบนสายคล้องผ้า"
+    },
+    {
+      "from": "ae-th-seed-storage-keeper",
+      "to": "ae-th-seed-storage-loan",
+      "kind": "qualification",
+      "basis": "จากใบรับฝาก"
+    },
+    {
+      "from": "ae-th-seed-storage-sign",
+      "to": "ae-th-seed-storage-loan",
+      "kind": "applicability",
+      "basis": "ตามใบรับฝาก"
+    },
+    {
+      "from": "ae-th-pencil-library-rule",
+      "to": "ae-th-pencil-library-slip",
+      "kind": "reference",
+      "basis": "ในใบกำหนดคืน"
+    },
+    {
+      "from": "ae-th-ferry-crates-notice",
+      "to": "ae-th-ferry-crates-pier",
+      "kind": "reference",
+      "basis": "ตามประกาศท่า"
+    }
+  ],
+  "requests": [
+    {
+      "case_id": "ae-th-basketry-c1",
+      "family_id": "ae-th-basketry",
+      "language": "th",
+      "question": "ถ้าผู้ส่งเป็นโรงเรียน ต้องส่งตะกร้าที่จุดรับใด",
+      "topic": "จุดรับตะกร้า",
+      "conditions": {
+        "sender_type": "โรงเรียน"
+      },
+      "seed": [
+        "ae-th-basketry-3",
+        "ae-th-basketry-a",
+        "ae-th-basketry-4"
+      ]
+    },
+    {
+      "case_id": "ae-th-basketry-c2",
+      "family_id": "ae-th-basketry",
+      "language": "th",
+      "question": "ถ้าผู้ส่งเป็นกลุ่มช่างจักสาน ต้องส่งตะกร้าที่จุดรับใด",
+      "topic": "จุดรับตะกร้า",
+      "conditions": {
+        "sender_type": "กลุ่มช่างจักสาน"
+      },
+      "seed": [
+        "ae-th-basketry-3",
+        "ae-th-basketry-a",
+        "ae-th-basketry-4"
+      ]
+    },
+    {
+      "case_id": "ae-th-basketry-c3",
+      "family_id": "ae-th-basketry",
+      "language": "th",
+      "question": "ผู้ส่งที่ลงทะเบียนเป็นกลุ่มช่างจักสานส่งตะกร้าได้ตรงไหน",
+      "topic": "จุดรับตะกร้า",
+      "conditions": {
+        "sender_type": "กลุ่มช่างจักสาน"
+      },
+      "seed": [
+        "ae-th-basketry-3",
+        "ae-th-basketry-a",
+        "ae-th-basketry-4"
+      ]
+    },
+    {
+      "case_id": "ae-th-basketry-c4",
+      "family_id": "ae-th-basketry",
+      "language": "th",
+      "question": "ถ้าประเภทผู้ส่งในทะเบียนคือกลุ่มช่างจักสาน จุดรับตะกร้าอยู่ที่ใด",
+      "topic": "จุดรับตะกร้า",
+      "conditions": {
+        "sender_type": "กลุ่มช่างจักสาน"
+      },
+      "seed": [
+        "ae-th-basketry-3",
+        "ae-th-basketry-a",
+        "ae-th-basketry-4"
+      ]
+    },
+    {
+      "case_id": "ae-th-darkroom-c1",
+      "family_id": "ae-th-darkroom",
+      "language": "th",
+      "question": "กะเช้าส่งฟิล์มได้ถึงกี่โมง",
+      "topic": "เวลาส่งฟิล์ม",
+      "conditions": {
+        "shift": "กะเช้า"
+      },
+      "seed": [
+        "ae-th-darkroom-evening",
+        "ae-th-darkroom-morning",
+        "ae-th-darkroom-book"
+      ]
+    },
+    {
+      "case_id": "ae-th-darkroom-c2",
+      "family_id": "ae-th-darkroom",
+      "language": "th",
+      "question": "กะบ่ายส่งฟิล์มได้ถึงกี่โมง",
+      "topic": "เวลาส่งฟิล์ม",
+      "conditions": {
+        "shift": "กะบ่าย"
+      },
+      "seed": [
+        "ae-th-darkroom-evening",
+        "ae-th-darkroom-morning",
+        "ae-th-darkroom-book"
+      ]
+    },
+    {
+      "case_id": "ae-th-darkroom-c3",
+      "family_id": "ae-th-darkroom",
+      "language": "th",
+      "question": "ถึงเวลาใดจึงปิดรับฟิล์มสำหรับกะเช้า",
+      "topic": "เวลาส่งฟิล์ม",
+      "conditions": {
+        "shift": "กะเช้า"
+      },
+      "seed": [
+        "ae-th-darkroom-evening",
+        "ae-th-darkroom-morning",
+        "ae-th-darkroom-book"
+      ]
+    },
+    {
+      "case_id": "ae-th-darkroom-c4",
+      "family_id": "ae-th-darkroom",
+      "language": "th",
+      "question": "กะเช้ามีเวลาส่งฟิล์มช้าสุดเมื่อใด",
+      "topic": "เวลาส่งฟิล์ม",
+      "conditions": {
+        "shift": "กะเช้า"
+      },
+      "seed": [
+        "ae-th-darkroom-evening",
+        "ae-th-darkroom-morning",
+        "ae-th-darkroom-book"
+      ]
+    },
+    {
+      "case_id": "ae-th-rain-gauge-c1",
+      "family_id": "ae-th-rain-gauge",
+      "language": "th",
+      "question": "รุ่นใบไม้ใช้ตัวยึดกระบอกชนิดใดบนพื้นคอนกรีต",
+      "topic": "ตัวยึดกระบอก",
+      "conditions": {
+        "model": "รุ่นใบไม้",
+        "surface": "พื้นคอนกรีต"
+      },
+      "seed": [
+        "ae-th-rain-gauge-3",
+        "ae-th-rain-gauge-2",
+        "ae-th-rain-gauge-4",
+        "ae-th-rain-gauge-5"
+      ]
+    },
+    {
+      "case_id": "ae-th-rain-gauge-c2",
+      "family_id": "ae-th-rain-gauge",
+      "language": "th",
+      "question": "รุ่นกรวดใช้ตัวยึดกระบอกชนิดใดบนพื้นคอนกรีต",
+      "topic": "ตัวยึดกระบอก",
+      "conditions": {
+        "model": "รุ่นกรวด",
+        "surface": "พื้นคอนกรีต"
+      },
+      "seed": [
+        "ae-th-rain-gauge-3",
+        "ae-th-rain-gauge-2",
+        "ae-th-rain-gauge-4",
+        "ae-th-rain-gauge-5"
+      ]
+    },
+    {
+      "case_id": "ae-th-rain-gauge-c3",
+      "family_id": "ae-th-rain-gauge",
+      "language": "th",
+      "question": "รุ่นกรวดใช้ตัวยึดกระบอกชนิดใดบนพื้นไม้",
+      "topic": "ตัวยึดกระบอก",
+      "conditions": {
+        "model": "รุ่นกรวด",
+        "surface": "พื้นไม้"
+      },
+      "seed": [
+        "ae-th-rain-gauge-3",
+        "ae-th-rain-gauge-2",
+        "ae-th-rain-gauge-4",
+        "ae-th-rain-gauge-5"
+      ]
+    },
+    {
+      "case_id": "ae-th-weir-c1",
+      "family_id": "ae-th-weir",
+      "language": "th",
+      "question": "ตามฉบับคราม อ่างตะวันออกเปิดช่องระบายช่วงใด",
+      "topic": "ช่วงเปิดช่องระบาย",
+      "conditions": {
+        "edition": "ฉบับคราม",
+        "basin": "อ่างตะวันออก"
+      },
+      "seed": [
+        "ae-th-weir-old",
+        "ae-th-weir-new",
+        "ae-th-weir-site"
+      ]
+    },
+    {
+      "case_id": "ae-th-weir-c2",
+      "family_id": "ae-th-weir",
+      "language": "th",
+      "question": "ตามฉบับเทา อ่างตะวันออกเปิดช่องระบายช่วงใด",
+      "topic": "ช่วงเปิดช่องระบาย",
+      "conditions": {
+        "edition": "ฉบับเทา",
+        "basin": "อ่างตะวันออก"
+      },
+      "seed": [
+        "ae-th-weir-old",
+        "ae-th-weir-new",
+        "ae-th-weir-site"
+      ]
+    },
+    {
+      "case_id": "ae-th-weir-c3",
+      "family_id": "ae-th-weir",
+      "language": "th",
+      "question": "ฉบับเทาระบุให้เปิดช่องระบายของอ่างตะวันออกตอนไหน",
+      "topic": "ช่วงเปิดช่องระบาย",
+      "conditions": {
+        "edition": "ฉบับเทา",
+        "basin": "อ่างตะวันออก"
+      },
+      "seed": [
+        "ae-th-weir-old",
+        "ae-th-weir-new",
+        "ae-th-weir-site"
+      ]
+    },
+    {
+      "case_id": "ae-th-weir-c4",
+      "family_id": "ae-th-weir",
+      "language": "th",
+      "question": "สำหรับอ่างตะวันออก ช่วงเปิดช่องระบายตามฉบับเทาคือช่วงใด",
+      "topic": "ช่วงเปิดช่องระบาย",
+      "conditions": {
+        "edition": "ฉบับเทา",
+        "basin": "อ่างตะวันออก"
+      },
+      "seed": [
+        "ae-th-weir-old",
+        "ae-th-weir-new",
+        "ae-th-weir-site"
+      ]
+    },
+    {
+      "case_id": "ae-th-lantern-maps-c1",
+      "family_id": "ae-th-lantern-maps",
+      "language": "th",
+      "question": "ชุดโคมประเภทซ้อมรอบบ่ายต้องคืนที่ใด",
+      "topic": "สถานที่คืนชุดโคม",
+      "conditions": {
+        "kit_type": "ซ้อม",
+        "session": "รอบบ่าย"
+      },
+      "seed": [
+        "ae-th-lantern-maps-e",
+        "ae-th-lantern-maps-d",
+        "ae-th-lantern-maps-train",
+        "ae-th-lantern-maps-string",
+        "ae-th-lantern-maps-spare"
+      ]
+    },
+    {
+      "case_id": "ae-th-lantern-maps-c2",
+      "family_id": "ae-th-lantern-maps",
+      "language": "th",
+      "question": "ชุดโคมประเภทออกเดินรอบบ่ายต้องคืนที่ใด",
+      "topic": "สถานที่คืนชุดโคม",
+      "conditions": {
+        "kit_type": "ออกเดิน",
+        "session": "รอบบ่าย"
+      },
+      "seed": [
+        "ae-th-lantern-maps-e",
+        "ae-th-lantern-maps-d",
+        "ae-th-lantern-maps-train",
+        "ae-th-lantern-maps-string",
+        "ae-th-lantern-maps-spare"
+      ]
+    },
+    {
+      "case_id": "ae-th-lantern-maps-c3",
+      "family_id": "ae-th-lantern-maps",
+      "language": "th",
+      "question": "ชุดโคมประเภทซ้อมรอบหัวค่ำต้องคืนที่ใด",
+      "topic": "สถานที่คืนชุดโคม",
+      "conditions": {
+        "kit_type": "ซ้อม",
+        "session": "รอบหัวค่ำ"
+      },
+      "seed": [
+        "ae-th-lantern-maps-e",
+        "ae-th-lantern-maps-d",
+        "ae-th-lantern-maps-train",
+        "ae-th-lantern-maps-string",
+        "ae-th-lantern-maps-spare"
+      ]
+    },
+    {
+      "case_id": "ae-th-seed-storage-c1",
+      "family_id": "ae-th-seed-storage",
+      "language": "th",
+      "question": "ซองที่ประทับตราวงกลมต้องวางไว้ตรงไหน",
+      "topic": "ชั้นวางซอง",
+      "conditions": {
+        "stamp": "ตราวงกลม"
+      },
+      "seed": [
+        "ae-th-seed-storage-keeper",
+        "ae-th-seed-storage-long",
+        "ae-th-seed-storage-sign"
+      ]
+    },
+    {
+      "case_id": "ae-th-seed-storage-c2",
+      "family_id": "ae-th-seed-storage",
+      "language": "th",
+      "question": "ต้องใช้ชั้นวางใดสำหรับซองที่มีตราวงกลม",
+      "topic": "ชั้นวางซอง",
+      "conditions": {
+        "stamp": "ตราวงกลม"
+      },
+      "seed": [
+        "ae-th-seed-storage-keeper",
+        "ae-th-seed-storage-long",
+        "ae-th-seed-storage-sign"
+      ]
+    },
+    {
+      "case_id": "ae-th-pencil-library-c1",
+      "family_id": "ae-th-pencil-library",
+      "language": "th",
+      "question": "ยืมชุดดินสอสีได้นานเท่าไร",
+      "topic": "จำนวนวันที่ยืมได้",
+      "conditions": {
+        "item": "ชุดดินสอสี"
+      },
+      "seed": [
+        "ae-th-pencil-library-rule",
+        "ae-th-pencil-library-slip"
+      ]
+    },
+    {
+      "case_id": "ae-th-pencil-library-c2",
+      "family_id": "ae-th-pencil-library",
+      "language": "th",
+      "question": "หอกำหนดให้ยืมชุดดินสอสีได้กี่วัน",
+      "topic": "จำนวนวันที่ยืมได้",
+      "conditions": {
+        "item": "ชุดดินสอสี"
+      },
+      "seed": [
+        "ae-th-pencil-library-rule",
+        "ae-th-pencil-library-slip"
+      ]
+    },
+    {
+      "case_id": "ae-th-ferry-crates-c1",
+      "family_id": "ae-th-ferry-crates",
+      "language": "th",
+      "question": "ลังขนาดเล็กใช้ประตูไหนตามฉบับกาบกล้วย",
+      "topic": "ประตูส่งลัง",
+      "conditions": {
+        "edition": "ฉบับกาบกล้วย",
+        "crate_size": "ลังขนาดเล็ก"
+      },
+      "seed": [
+        "ae-th-ferry-crates-notice",
+        "ae-th-ferry-crates-post",
+        "ae-th-ferry-crates-bell"
+      ]
+    },
+    {
+      "case_id": "ae-th-ferry-crates-c2",
+      "family_id": "ae-th-ferry-crates",
+      "language": "th",
+      "question": "ลังขนาดเล็กใช้ประตูไหนตามฉบับใบตอง",
+      "topic": "ประตูส่งลัง",
+      "conditions": {
+        "edition": "ฉบับใบตอง",
+        "crate_size": "ลังขนาดเล็ก"
+      },
+      "seed": [
+        "ae-th-ferry-crates-notice",
+        "ae-th-ferry-crates-post",
+        "ae-th-ferry-crates-bell"
+      ]
+    }
+  ]
+}

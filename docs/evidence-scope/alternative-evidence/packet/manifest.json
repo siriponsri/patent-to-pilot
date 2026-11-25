@@ -1,0 +1,171 @@
+{
+  "revision": "option-a-author-packet-v1",
+  "baseline_commit": "2dff214f",
+  "scope": "preparation_only",
+  "independent_audit": "PENDING",
+  "policy_execution": "NOT_RUN",
+  "scoring": "NOT_RUN",
+  "independence": {
+    "assignment": "Purpose-built fictional and public-source families assigned by origin and language; no RNG; no translations across lanes.",
+    "baseline_check": "S1 proposal, selection and DEV family IDs, source IDs and source digests (including normalized text); S2 canonical and raw source IDs/digests where available. The existing S3 controlled cohort used S1 DEV families.",
+    "limits": "Author-created lineages and a committed baseline comparison. Runtime isolation and disjointness from parent-authored development data remain for independent audit. No exhaustive third-party or protected-corpus overlap claim."
+  },
+  "lanes": {
+    "th": {
+      "role": "reserved_controlled",
+      "family_ids": [
+        "ae-th-basketry",
+        "ae-th-darkroom",
+        "ae-th-ferry-crates",
+        "ae-th-lantern-maps",
+        "ae-th-pencil-library",
+        "ae-th-rain-gauge",
+        "ae-th-seed-storage",
+        "ae-th-weir"
+      ],
+      "counts": {
+        "families": 8,
+        "sources": 11,
+        "units": 40,
+        "edges": 17,
+        "cases": 24,
+        "status": {
+          "ANSWERABLE": 22,
+          "FINITE_UNANSWERABLE": 2,
+          "UNADJUDICATED": 0
+        },
+        "pairs": {
+          "changing": 6,
+          "invariant": 5
+        },
+        "changing_pairs_same_answer": 4
+      }
+    },
+    "en": {
+      "role": "reserved_controlled",
+      "family_ids": [
+        "ae-en-map-cabinet",
+        "ae-en-shutter-latch",
+        "ae-en-spindle-gauge",
+        "ae-en-tile-rack"
+      ],
+      "counts": {
+        "families": 4,
+        "sources": 5,
+        "units": 20,
+        "edges": 9,
+        "cases": 13,
+        "status": {
+          "ANSWERABLE": 12,
+          "FINITE_UNANSWERABLE": 1,
+          "UNADJUDICATED": 0
+        },
+        "pairs": {
+          "changing": 3,
+          "invariant": 3
+        },
+        "changing_pairs_same_answer": 2
+      }
+    },
+    "natural-th": {
+      "role": "natural_diagnostic",
+      "family_ids": [
+        "ae-th-bueng-kan-act"
+      ],
+      "counts": {
+        "families": 1,
+        "sources": 1,
+        "units": 6,
+        "edges": 2,
+        "cases": 4,
+        "status": {
+          "ANSWERABLE": 3,
+          "FINITE_UNANSWERABLE": 0,
+          "UNADJUDICATED": 1
+        },
+        "pairs": {
+          "changing": 1,
+          "invariant": 0
+        },
+        "changing_pairs_same_answer": 0
+      }
+    },
+    "natural-en": {
+      "role": "natural_diagnostic",
+      "family_ids": [
+        "ae-en-usc-44-depositories"
+      ],
+      "counts": {
+        "families": 1,
+        "sources": 4,
+        "units": 4,
+        "edges": 0,
+        "cases": 4,
+        "status": {
+          "ANSWERABLE": 3,
+          "FINITE_UNANSWERABLE": 0,
+          "UNADJUDICATED": 1
+        },
+        "pairs": {
+          "changing": 0,
+          "invariant": 1
+        },
+        "changing_pairs_same_answer": 0
+      }
+    }
+  },
+  "files": {
+    ".gitattributes": {
+      "bytes": 14,
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    "AUTHORSHIP.md": {
+      "bytes": 5829,
+      "sha256": "5739ff88927648daf52a2f5df20ee54d1500a217fb1f4c63a7f9653ccd0709cf"
+    },
+    "en/labels.json": {
+      "bytes": 7280,
+      "sha256": "b37d14cb503fcd939d5af1cd955995be1805c7d660dadc661d8364dd4abefe9d"
+    },
+    "en/runtime.json": {
+      "bytes": 23502,
+      "sha256": "16824608bc39eeb79a3b511117deffdcde1779bf8c5028323de7e7db29e4b15e"
+    },
+    "HANDOFF.md": {
+      "bytes": 3482,
+      "sha256": "18a8fabf518f6ae4fe3129ad1921c95080cd9afe1ad1f537b75a9340979b71c1"
+    },
+    "natural-en/labels.json": {
+      "bytes": 1918,
+      "sha256": "9662b8634c3d0cb1411f01ef9a69081d74e31ea3ec8b84539cae97f1caf076f1"
+    },
+    "natural-en/runtime.json": {
+      "bytes": 8343,
+      "sha256": "00879ffd08a1102b104fd90ab359d9c3e65ffb3dc279dc49d8c2072af735b09f"
+    },
+    "natural-th/labels.json": {
+      "bytes": 1973,
+      "sha256": "a514f2edaa2468289fbb41c938f8dc523ffdf3775fbddba1ff2bb2b6465aa8cd"
+    },
+    "natural-th/runtime.json": {
+      "bytes": 12454,
+      "sha256": "cac2ac309246aa9bc8c1bb3692d422e9e6a13b1e6a75f3489c45688e12affaae"
+    },
+    "RIGHTS.md": {
+      "bytes": 4666,
+      "sha256": "7c6bc238a17cb12df7d5ca934cde7b45ed5d44518d2ee4a30057625cad2ade10"
+    },
+    "th/labels.json": {
+      "bytes": 13765,
+      "sha256": "66e03359024c4ee1cd18e90257067be539ec4dca306124fa841e123d828fb7ce"
+    },
+    "th/runtime.json": {
+      "bytes": 56056,
+      "sha256": "7811e0eba6222928990b040c5e3df34396a48a2de3e539bfbf3bf600ce85317e"
+    },
+    "verify_packet.py": {
+      "bytes": 11723,
+      "sha256": "eed299b0aaf8f9e96f4430ab49cd7c2d338c68a9b5e67e9ba64e874d6df5068c"
+    }
+  }
+}

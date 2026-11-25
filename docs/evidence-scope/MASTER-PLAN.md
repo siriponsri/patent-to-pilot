@@ -1,6 +1,6 @@
 # Patent-to-Pilot master plan
 
-**Effective 25 November 2026 · S0 through S3 complete · S4 awaits separate dispatch.**
+**Effective 25 November 2026 · S0 through S4 complete at their recorded scope · Alternative-evidence follow-up awaits independent release.**
 
 Build a Thai-first reader that explains a legal provision or patent claim, shows the source of each condition and lets a reader see which conclusions change when the edition or claim changes. Study the same engine under a fixed search budget. Its hardest case is a plausible explanation assembled from real passages that refer to different editions, tables or embodiments.
 
@@ -16,7 +16,7 @@ Each row has one execution sheet with stable task IDs. S1 and S2 ran together. S
 | [S1 · Research data](01-research-data.md) | Authorized input manifests, family isolation, three-state fixtures, comparator design | S0 and D28 | **COMPLETE** | [Frozen packet, rights, scorer and comparator](receipts/S1-20261125.md) |
 | [S2 · Product workbench](02-product-workbench.md) | An end-to-end Thai-law and English-patent reading path using one shared contract | S0 and D28 | **COMPLETE** | [Local alpha, ten public families and 23 saved traces](receipts/S2-workbench.md) |
 | [S3 · Research evaluation](03-research-evaluation.md) | Matched DEV experiment, error attribution and independent result labels | S1 | **COMPLETE** | [NEGATIVE Thai primary](../healthtech/audits/S3-20261125/RESULTS.md). Uninformative English transfer |
-| [S4 · Product validation](04-product-release.md) | Reproducible local alpha, rights, installation and usability evidence | S2 | **NOT_STARTED** | Validate both demonstrations independently of S3 scores |
+| [S4 · Product validation](04-product-release.md) | Reproducible local alpha, rights, installation and usability evidence | S2 | **COMPLETE** | [Windows local alpha and local public-data demo READY_FOR_REVIEW](receipts/S4-integrated-verification.md) |
 | [S5 · Synthesis and handoff](05-synthesis.md) | Research package, IS2 narrative and product release decision | Either finished lane for its own draft; both dispositions for closure | **NOT_STARTED** | Publish only evidence that each track actually obtained |
 
 The [prospective freeze](FREEZE.md) governs S1 and S3. The new primary is controlled Thai DEV scope-complete success under a maximum of four retrieval actions and eight returned evidence units. English patent transfer is reported separately. Global patent-family retrieval remains a distinct benchmark objective. It fixes the questions, dataset roles, comparison and decision design. S1 pinned its immutable file lists, revisions and hashes in the [release manifest](research/manifest.json). The [historical P0–P5 board](../tracking/owner-note-22112026/PHASE_BOARD.md) retains its 35 original tasks and their outcomes. The [handoff](../../HANDOFF.md) records the next writer, last verified checkpoint and accounting context.
@@ -73,4 +73,4 @@ The closest-work search was conducted in SciSpace. Inspect the paper records for
 
 ## Prompt for the next goal
 
-The [S3 executor prompt](S3-EXECUTOR-PROMPT.md) records the completed dispatch. The prospective and post-run checkpoints were independently reviewed. S4 is eligible for separate dispatch and S5 remains pending.
+The [S3 executor prompt](S3-EXECUTOR-PROMPT.md) records the completed dispatch. S4 is independently complete at its qualified Windows level. The separate [alternative-evidence follow-up](05-alternative-evidence-literature.md) has a [v2 prospective lock](alternative-evidence/freeze.json) that requires independent release of the exact published revision before the single original. S5 remains pending.

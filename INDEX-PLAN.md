@@ -4,6 +4,8 @@ Start with the [master plan and live S0–S5 board](docs/evidence-scope/MASTER-P
 
 S1 delivered the [controlled data and scorer](docs/evidence-scope/receipts/S1-20261125.md). S2 delivered the [local alpha](docs/evidence-scope/receipts/S2-workbench.md) and [public-source inventory](docs/evidence-scope/receipts/S2-sources.md). S3 closed NEGATIVE on controlled Thai DEV with uninformative English transfer. See the [preregistration](docs/healthtech/audits/S3-20261125/PREREGISTRATION.md), [machine lock](docs/healthtech/audits/S3-20261125/freeze.json), [execution receipt](docs/healthtech/audits/S3-20261125/RESULTS.md), [machine result](docs/healthtech/audits/S3-20261125/results.json) and [continuity matrix](docs/healthtech/audits/S3-20261125/BRIDGE.md).
 
+Option A adds a [research protocol](docs/evidence-scope/alternative-evidence/PROTOCOL.md), [prospective v2 lock](docs/evidence-scope/alternative-evidence/freeze.json), [closest-work audit](docs/evidence-scope/05-alternative-evidence-literature.md), [fresh packet manifest](docs/evidence-scope/alternative-evidence/packet/manifest.json) and [development fixture traces](docs/evidence-scope/alternative-evidence/fixture-checks.json). The next research gate is independent clearance before the single canonical held run. [S4 product validation](docs/evidence-scope/04-product-release.md) has separate [integrated verification](docs/evidence-scope/receipts/S4-integrated-verification.md) for the Windows alpha.
+
 ## 1. Owner inputs (owner-local, untracked, read-only)
 
 | Package | Use |

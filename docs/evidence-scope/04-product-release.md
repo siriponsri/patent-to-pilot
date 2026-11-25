@@ -1,6 +1,6 @@
 # S4 · Validate and release the Thai-first Workbench
 
-**Status:** NOT_STARTED. **Lane:** Product. **Entry:** the reproducible S2 alpha. **Exit:** evidence for a named distribution state and a handoff to S5. [Master plan](MASTER-PLAN.md) · [S2 Workbench](02-product-workbench.md) · [Research freeze](FREEZE.md)
+**Status:** COMPLETE for the local Windows alpha. **Lane:** Product. **Entry:** the reproducible S2 alpha. **Exit:** local public-data demonstration ready for review and evidence for S5. [Release receipt](receipts/S4-product-release.md) · [Pinned manifest](receipts/S4-release-manifest.json) · [Master plan](MASTER-PLAN.md) · [S2 Workbench](02-product-workbench.md) · [Research freeze](FREEZE.md)
 
 This phase can proceed while S3 evaluates research. Pin the S2 policy used for the release candidate. Publish its measured engineering and user outcomes separately from retrieval comparisons. An eligible lexical or deterministic release can proceed while an optimized policy is still being evaluated.
 
@@ -47,16 +47,16 @@ The softer progression gate applies to continued delivery. Missing source rights
 
 ## Reporting, restart and handoff
 
-Write the proposed future receipt to `docs/evidence-scope/receipts/S4-product-release.md` and record the chosen release level, exact supported paths, evidence links, distribution state, issue ownership and next action. Keep large captures and licensed originals outside Git. Record opt-in provider cost from the ledger if actually measured. Treat unknown cost as unknown.
+The [release receipt](receipts/S4-product-release.md) records the chosen level, exact supported paths, evidence, distribution state and S5 handoff. Large captures and upstream originals are outside Git.
 
-If the clean-install or source-path check fails, keep the failure and affected version, make the smallest repair, and rerun the failed path plus its dependent journeys from a fresh store. Preserve original reports and already pinned inputs. After S4, give S5 the reproducible launch instructions, release manifest, availability state, graph/export artifact references and the boundary between observed and anticipated impact. This phase plan records no execution or release.
+The validation exercised the local source checkout, with supported recovery through SQLite backup and a tested rebuild from retained owner sources. D3 in-place withdrawal stays open. Public distribution and independent user or field evaluation are NOT_RUN.
 
 ## Dispatch status
 
 | Task | State | Receipt |
 |---|---|---|
-| S4-T01 | NOT_STARTED | Pending |
-| S4-T02 | NOT_STARTED | Pending |
-| S4-T03 | NOT_STARTED | Pending |
-| S4-T04 | NOT_STARTED | Pending |
-| S4-T05 | NOT_STARTED | Pending |
+| S4-T01 | COMPLETE | [Source checkout scope, rights and manifest](receipts/S4-product-release.md#install-and-launch) |
+| S4-T02 | COMPLETE | [Clean Windows launch, offline scope and restart](receipts/S4-product-release.md#run-commands-and-retained-evidence) |
+| S4-T03 | COMPLETE | [Public patent and Thai legal presets, graph and export](receipts/S4-product-release.md#journeys-and-scope) |
+| S4-T04 | COMPLETE | [Supported revision, historical replay, backup and rebuild](receipts/S4-product-release.md#rights-and-recovery) |
+| S4-T05 | COMPLETE | [Local alpha ready for review](receipts/S4-product-release.md) |

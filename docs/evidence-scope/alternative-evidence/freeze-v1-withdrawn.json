@@ -1,0 +1,139 @@
+{
+  "arms": [
+    "assignments",
+    "premise",
+    "no_disagreement",
+    "follow_reference",
+    "coverage"
+  ],
+  "environment": {
+    "available_cpus": 12,
+    "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "threads": 1,
+    "timer": {
+      "adjustable": false,
+      "implementation": "QueryPerformanceCounter()",
+      "monotonic": true,
+      "resolution": 1e-07
+    },
+    "unicode": "15.0.0",
+    "workers": 1
+  },
+  "files_lf_sha256": {
+    "docs/evidence-scope/05-alternative-evidence-literature.md": "e0f042be93184574c8108c453d5cb1215f7a740d483d3ced09909ab1f35cfda8",
+    "docs/evidence-scope/alternative-evidence/PROTOCOL.md": "ac45ff508af5a00fa8a7b1987a4cc58bcb351c4b15c8a7da4f33dd5a45e612e0",
+    "docs/evidence-scope/alternative-evidence/fixture-checks.json": "1de0e89016ddc2ca70abe9fc89374bdf6a1f8504f67bcd3bb6df6645834ac0a8",
+    "docs/evidence-scope/alternative-evidence/packet/.gitattributes": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9",
+    "docs/evidence-scope/alternative-evidence/packet/AUTHORSHIP.md": "5739ff88927648daf52a2f5df20ee54d1500a217fb1f4c63a7f9653ccd0709cf",
+    "docs/evidence-scope/alternative-evidence/packet/HANDOFF.md": "18a8fabf518f6ae4fe3129ad1921c95080cd9afe1ad1f537b75a9340979b71c1",
+    "docs/evidence-scope/alternative-evidence/packet/RIGHTS.md": "7c6bc238a17cb12df7d5ca934cde7b45ed5d44518d2ee4a30057625cad2ade10",
+    "docs/evidence-scope/alternative-evidence/packet/en/labels.json": "b37d14cb503fcd939d5af1cd955995be1805c7d660dadc661d8364dd4abefe9d",
+    "docs/evidence-scope/alternative-evidence/packet/en/runtime.json": "16824608bc39eeb79a3b511117deffdcde1779bf8c5028323de7e7db29e4b15e",
+    "docs/evidence-scope/alternative-evidence/packet/manifest.json": "4a9ae5d2db9526e97fdf66dc922e2334b3f80930430fb335599f254892c08df5",
+    "docs/evidence-scope/alternative-evidence/packet/natural-en/labels.json": "9662b8634c3d0cb1411f01ef9a69081d74e31ea3ec8b84539cae97f1caf076f1",
+    "docs/evidence-scope/alternative-evidence/packet/natural-en/runtime.json": "00879ffd08a1102b104fd90ab359d9c3e65ffb3dc279dc49d8c2072af735b09f",
+    "docs/evidence-scope/alternative-evidence/packet/natural-th/labels.json": "a514f2edaa2468289fbb41c938f8dc523ffdf3775fbddba1ff2bb2b6465aa8cd",
+    "docs/evidence-scope/alternative-evidence/packet/natural-th/runtime.json": "cac2ac309246aa9bc8c1bb3692d422e9e6a13b1e6a75f3489c45688e12affaae",
+    "docs/evidence-scope/alternative-evidence/packet/th/labels.json": "66e03359024c4ee1cd18e90257067be539ec4dca306124fa841e123d828fb7ce",
+    "docs/evidence-scope/alternative-evidence/packet/th/runtime.json": "7811e0eba6222928990b040c5e3df34396a48a2de3e539bfbf3bf600ce85317e",
+    "docs/evidence-scope/alternative-evidence/packet/verify_packet.py": "eed299b0aaf8f9e96f4430ab49cd7c2d338c68a9b5e67e9ba64e874d6df5068c",
+    "scripts/research/alt_evaluate.py": "90aec5eb46141b6746c3c7f4cbb54e9b8bdd5ff1d7234d5684cc168855adce81",
+    "scripts/research/alt_experiment.py": "aa3243334cb44ea5d9957dc0aec614297cf46464c88c987e2f5cc20279231301",
+    "scripts/research/alt_policy.py": "f3b05962f51cfc348c4a2c85ffd5f25fe88125c7a44009c3a5fb628446aac959",
+    "tests/test_alt_policy.py": "6ab6ebb52091177ee3bebd0e1d192a2159d0f60c8d2ee15d52174001f7e92e67"
+  },
+  "frozen_utc": "2026-11-25T14:40:33.334058+00:00",
+  "limits": {
+    "actions": 8,
+    "depth": 12,
+    "elapsed_ms": 30000,
+    "graph_reads": 96,
+    "inspections": 96,
+    "model_tokens": 0,
+    "returned": 8
+  },
+  "minimum_delta": 0.05,
+  "packet_counts": {
+    "en": {
+      "cases": 13,
+      "families": 4,
+      "pairs": {
+        "changing": 3,
+        "invariant": 3
+      },
+      "statuses": {
+        "ANSWERABLE": 12,
+        "FINITE_UNANSWERABLE": 1
+      },
+      "strata": {
+        "direct_reference": 2,
+        "edition_incorporation": 2,
+        "finite_scope_combination": 1,
+        "invariant_wording": 4,
+        "same_answer_distinct_witness": 2,
+        "sibling_dependency": 2
+      }
+    },
+    "natural-en": {
+      "cases": 4,
+      "families": 1,
+      "pairs": {
+        "invariant": 1
+      },
+      "statuses": {
+        "ANSWERABLE": 3,
+        "UNADJUDICATED": 1
+      },
+      "strata": {
+        "natural_direct_text": 3,
+        "natural_unadjudicated": 1
+      }
+    },
+    "natural-th": {
+      "cases": 4,
+      "families": 1,
+      "pairs": {
+        "changing": 1
+      },
+      "statuses": {
+        "ANSWERABLE": 3,
+        "UNADJUDICATED": 1
+      },
+      "strata": {
+        "natural_cross_reference": 2,
+        "natural_direct_text": 1,
+        "natural_unadjudicated": 1
+      }
+    },
+    "th": {
+      "cases": 24,
+      "families": 8,
+      "pairs": {
+        "changing": 6,
+        "invariant": 5
+      },
+      "statuses": {
+        "ANSWERABLE": 22,
+        "FINITE_UNANSWERABLE": 2
+      },
+      "strata": {
+        "changed_conclusion": 4,
+        "direct_reference": 2,
+        "edition_incorporation": 2,
+        "finite_scope_combination": 2,
+        "invariant_wording": 8,
+        "same_answer_distinct_witness": 4,
+        "sibling_dependency": 2
+      }
+    }
+  },
+  "primary": [
+    "assignments",
+    "premise"
+  ],
+  "protocol": "alternative-evidence-v1",
+  "resamples": 10000,
+  "seed": 20261125
+}

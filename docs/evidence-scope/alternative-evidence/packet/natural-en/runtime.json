@@ -1,0 +1,167 @@
+{
+  "sources": [
+    {
+      "source_id": "ae-en-usc-44-depositories-usc-1901",
+      "version": "through-PL119-120",
+      "language": "en",
+      "family_id": "ae-en-usc-44-depositories",
+      "text": "“Government publication” as used in this chapter, means informational matter which is published as an individual document at Government expense, or as required by law.\n",
+      "sha256": "0fe0f2002a7459591c00ce54ba3ad965a8b71221929be45d575d443762bffbac"
+    },
+    {
+      "source_id": "ae-en-usc-44-depositories-usc-1902",
+      "version": "through-PL119-120",
+      "language": "en",
+      "family_id": "ae-en-usc-44-depositories",
+      "text": "Each component of the Government shall furnish the Superintendent of Documents a list of such publications it issued during the previous month, that were obtained from sources other than the Government Publishing Office.\n",
+      "sha256": "d471fb1611701bbf7c8c4058ba7457a03edd890359e98d6c135c17a32a5aafef"
+    },
+    {
+      "source_id": "ae-en-usc-44-depositories-usc-1903",
+      "version": "through-PL119-120",
+      "language": "en",
+      "family_id": "ae-en-usc-44-depositories",
+      "text": "The cost of printing and binding those publications distributed to depository libraries obtained elsewhere than from the Government Publishing Office, shall be borne by components of the Government responsible for their issuance; those requisitioned from the Government Publishing Office shall be charged to appropriations provided the Superintendent of Documents for that purpose.\n",
+      "sha256": "456008d41b1dc780c328053ee2bd1abde469044289ff83498c029f4ec12d9d53"
+    },
+    {
+      "source_id": "ae-en-usc-44-depositories-usc-1904",
+      "version": "through-PL119-120",
+      "language": "en",
+      "family_id": "ae-en-usc-44-depositories",
+      "text": "The Superintendent of Documents shall currently issue a classified list of Government publications in suitable form, containing annotations of contents and listed by item identification numbers to facilitate the selection of only those publications needed by depository libraries.\n",
+      "sha256": "0b1dc27e48612de52395b4462a3f62424ce4f4267cd2563f9bb185e5c27e06c9"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "ae-en-usc-44-depositories-s1901",
+      "source_id": "ae-en-usc-44-depositories-usc-1901",
+      "version": "through-PL119-120",
+      "sha256": "0fe0f2002a7459591c00ce54ba3ad965a8b71221929be45d575d443762bffbac",
+      "locator": "44 U.S.C. § 1901, statutory body",
+      "char_start": 0,
+      "char_end": 167,
+      "unit_sha256": "b6d703d0994c42af8f459b25707d6464cd247c348da9e1440a0ffd48874f95b4",
+      "text": "“Government publication” as used in this chapter, means informational matter which is published as an individual document at Government expense, or as required by law.",
+      "family_id": "ae-en-usc-44-depositories",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-usc-44-depositories-s1902",
+      "source_id": "ae-en-usc-44-depositories-usc-1902",
+      "version": "through-PL119-120",
+      "sha256": "d471fb1611701bbf7c8c4058ba7457a03edd890359e98d6c135c17a32a5aafef",
+      "locator": "44 U.S.C. § 1902, second sentence",
+      "char_start": 0,
+      "char_end": 220,
+      "unit_sha256": "2ce0af067da4ab1749226b2b33ae0aabc9b2c19137cb825ee7742777bfe53415",
+      "text": "Each component of the Government shall furnish the Superintendent of Documents a list of such publications it issued during the previous month, that were obtained from sources other than the Government Publishing Office.",
+      "family_id": "ae-en-usc-44-depositories",
+      "root": false,
+      "topic": null,
+      "facts": {},
+      "answer": null
+    },
+    {
+      "unit_id": "ae-en-usc-44-depositories-elsewhere",
+      "source_id": "ae-en-usc-44-depositories-usc-1903",
+      "version": "through-PL119-120",
+      "sha256": "456008d41b1dc780c328053ee2bd1abde469044289ff83498c029f4ec12d9d53",
+      "locator": "44 U.S.C. § 1903, final paragraph",
+      "char_start": 0,
+      "char_end": 381,
+      "unit_sha256": "151cf8173ea22137e33fc994c34fce9e729f3f54fbb54bf25e9c472536d5a516",
+      "text": "The cost of printing and binding those publications distributed to depository libraries obtained elsewhere than from the Government Publishing Office, shall be borne by components of the Government responsible for their issuance; those requisitioned from the Government Publishing Office shall be charged to appropriations provided the Superintendent of Documents for that purpose.",
+      "family_id": "ae-en-usc-44-depositories",
+      "root": true,
+      "topic": "printing and binding cost",
+      "facts": {
+        "source_of_publication": "obtained elsewhere than from the Government Publishing Office"
+      },
+      "answer": "components of the Government responsible for their issuance"
+    },
+    {
+      "unit_id": "ae-en-usc-44-depositories-s1904",
+      "source_id": "ae-en-usc-44-depositories-usc-1904",
+      "version": "through-PL119-120",
+      "sha256": "0b1dc27e48612de52395b4462a3f62424ce4f4267cd2563f9bb185e5c27e06c9",
+      "locator": "44 U.S.C. § 1904, first sentence",
+      "char_start": 0,
+      "char_end": 280,
+      "unit_sha256": "579732a3111de4e2b197012a23d4a1179170d0d9487f339e2095cee2995121e8",
+      "text": "The Superintendent of Documents shall currently issue a classified list of Government publications in suitable form, containing annotations of contents and listed by item identification numbers to facilitate the selection of only those publications needed by depository libraries.",
+      "family_id": "ae-en-usc-44-depositories",
+      "root": true,
+      "topic": "classified list organization",
+      "facts": {
+        "list_type": "classified list of Government publications"
+      },
+      "answer": "item identification numbers"
+    }
+  ],
+  "edges": [],
+  "requests": [
+    {
+      "case_id": "ae-en-usc-44-depositories-c1",
+      "family_id": "ae-en-usc-44-depositories",
+      "language": "en",
+      "question": "Under 44 U.S.C. § 1903, who bears the printing and binding cost for publications distributed to depository libraries and obtained elsewhere than from the Government Publishing Office?",
+      "topic": "printing and binding cost",
+      "conditions": {
+        "source_of_publication": "obtained elsewhere than from the Government Publishing Office"
+      },
+      "seed": [
+        "ae-en-usc-44-depositories-elsewhere",
+        "ae-en-usc-44-depositories-s1902",
+        "ae-en-usc-44-depositories-s1904"
+      ]
+    },
+    {
+      "case_id": "ae-en-usc-44-depositories-c2",
+      "family_id": "ae-en-usc-44-depositories",
+      "language": "en",
+      "question": "For depository-library publications obtained elsewhere than from the Government Publishing Office, whose responsibility is paying for the printing and binding under 44 U.S.C. § 1903?",
+      "topic": "printing and binding cost",
+      "conditions": {
+        "source_of_publication": "obtained elsewhere than from the Government Publishing Office"
+      },
+      "seed": [
+        "ae-en-usc-44-depositories-elsewhere",
+        "ae-en-usc-44-depositories-s1902",
+        "ae-en-usc-44-depositories-s1904"
+      ]
+    },
+    {
+      "case_id": "ae-en-usc-44-depositories-c3",
+      "family_id": "ae-en-usc-44-depositories",
+      "language": "en",
+      "question": "Under 44 U.S.C. § 1904, by what identifiers are entries in the classified list of Government publications listed?",
+      "topic": "classified list organization",
+      "conditions": {
+        "list_type": "classified list of Government publications"
+      },
+      "seed": [
+        "ae-en-usc-44-depositories-elsewhere",
+        "ae-en-usc-44-depositories-s1902",
+        "ae-en-usc-44-depositories-s1904"
+      ]
+    },
+    {
+      "case_id": "ae-en-usc-44-depositories-c4",
+      "family_id": "ae-en-usc-44-depositories",
+      "language": "en",
+      "question": "Under 44 U.S.C. Chapter 19, who covers the cost of preparing digital-only publications for depository libraries?",
+      "topic": "printing and binding cost",
+      "conditions": {},
+      "seed": [
+        "ae-en-usc-44-depositories-elsewhere",
+        "ae-en-usc-44-depositories-s1902",
+        "ae-en-usc-44-depositories-s1904"
+      ]
+    }
+  ]
+}

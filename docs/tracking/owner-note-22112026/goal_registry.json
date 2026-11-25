@@ -1501,7 +1501,7 @@
   }
  ],
  "method_evidence": "CONTROLLED_THAI_DEV_NEGATIVE",
- "product_readiness": "CORE_VERIFIED_PLUS_SYNTHETIC_TRACE_SLICE",
+ "product_readiness": "WINDOWS_LOCAL_ALPHA_AND_LOCAL_PUBLIC_DATA_DEMO_READY_FOR_REVIEW",
  "publication_readiness": "DRAFT_WITH_NOT_RUN_RESULTS",
  "artifact_convention": "Small receipts at docs/tracking/owner-note-22112026/receipts; link existing scientific manifests/private run outputs rather than duplicating them into docs/owner.",
  "seed_sources": {
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-25T20:44:54+07:00"
+ "live_updated_at": "2026-11-25T21:49:05+07:00"
 }

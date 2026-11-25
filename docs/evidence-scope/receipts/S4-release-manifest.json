@@ -1,0 +1,630 @@
+{
+  "base_commit": "2dff214f7a05354186812c20e31b582390058dc4",
+  "app_version": "0.1.0",
+  "candidate_sha256": "47e3286fc92e39bbad7e572b3b0a8174b5327d58924109a38cc9fcbfb55a3fc3",
+  "candidate_hash_rule": "SHA-256 over UTF-8 lines <file-sha256><two spaces><repo-relative-path><LF> sorted by path. File digests are over canonical Git blob bytes, with checkout line-ending conversion removed. Full revision is the Git commit containing this manifest.",
+  "candidate_files": {
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "NOTICE": "4aeb0a653aec2bd778d23889807306fdc433b8b14cf3c376ce7fb816bb64c49d",
+    "Start-PTP.cmd": "3ec125e21657a168129494c14636fae1da426f58d619545b89ad7df53b099340",
+    "docs/evidence-scope/receipts/S2-health-law-source.md": "7c21b0f3c8fdb1e933521b2ee26d1fe66072574622352abf1a26ceb85f662d25",
+    "docs/evidence-scope/receipts/S2-pharma-source.md": "ea0d5bb98e3fc17b91951bee9f84e305ddafe73c7188f472ba2ed18900e5c77c",
+    "docs/evidence-scope/receipts/S2-sources.json": "662d4e0ccca792b58240300ff9126f18e300ad37828fba0f212f75f1353825f4",
+    "docs/evidence-scope/receipts/S2-sources.md": "4bddc9c53897aec2829a12cf21494d64df287eeb1a5b47cc2a6d8e0a7e987b5d",
+    "docs/evidence-scope/receipts/S4_verify_local.py": "5544c4c96f9558f6f64021efe3f81cc0940dd87a068734b0ff91c38f316af870",
+    "pyproject.toml": "24503854e83423bbbe381ee22cf09ac672a1cca6bd58dc1b1d0d17631ab089b2",
+    "scripts/ptp_run.py": "b9ddb79ef1900a27dbb34c737b0e13cc1bffc85b4f22e7bff2d0c41a6c0bba40",
+    "src/patent_to_pilot/workbench/sample/LICENSE.md": "b893fd579b93764d0caea6e77b571e4f249ac926b5761ca53fe3b3ec47c59cb2",
+    "src/patent_to_pilot/workbench/sample/scope_reader.json": "8cccf39a92b902bdf9305d101fa7aa0f2620f043799be3d5c03768648f56a454",
+    "src/patent_to_pilot/workbench/sample/source_manifest.json": "bf50552df9636ba32e45a5f7990d23e80d475ec3d80e8ea0817abcb557375170",
+    "src/patent_to_pilot/workbench/scope_reader.py": "0dd42c7bd274ed8b550015ebf58a43f175a6cdd0a30c7a66a6d83fbb7199e2bd",
+    "src/patent_to_pilot/workbench/server.py": "69bfbbabe7d97c9b740f1fd639dc282e1daac6c4cb387060a7d9bb7924820a99",
+    "src/patent_to_pilot/workbench/static/app.css": "b98a45b30546ab11d1efee7a45be89ab97a9a79ca5f0b428c4b52657e16fafe6",
+    "src/patent_to_pilot/workbench/static/app.js": "d982d11c53e1f852c9a629bc399feb4759881ba3aeb187a730e93be864afb95b",
+    "src/patent_to_pilot/workbench/static/index.html": "ed7d1d2164484b9e9673057f9b8f15378f66b45b158721089013b36ae71aec5e",
+    "src/patent_to_pilot/workbench/static/scope.js": "da2069c058d56d019b07166a1275aac75a062e31b5780a4f6951e24d12c18afd",
+    "tests/test_scope_reader.py": "718ef2c4f45125964f8dbed4528c80e25e2a02e13bee93757b1c0b95208717ae",
+    "tests/test_scope_reader_browser.py": "524c037ce024a876de86144ff413162ea0c417643337e2a6ae1f5d87079eed28"
+  },
+  "distribution": "local Windows checkout alpha; no deployed or public release artifact",
+  "environment": {
+    "os": "Windows 11 build 26200 x64",
+    "python": "CPython 3.12.10",
+    "pip": "25.0.1 from ensurepip",
+    "sqlite": "3.49.1",
+    "fts": "FTS5 unicode61",
+    "system_site_packages": false
+  },
+  "execution": {
+    "reader": "curated-scope-reader/1.0",
+    "contract": "evidence-scope/1.0",
+    "comparison_structural_policy": "ptp-structural-acquisition/2.1.0",
+    "model_assets": [],
+    "external_providers_used": [],
+    "ocr": false
+  },
+  "rights": {
+    "code": "Apache-2.0 (LICENSE, NOTICE scope)",
+    "fictional_sample": "CC0-1.0",
+    "public_excerpts": "S2-sources.md, S2-pharma-source.md and S2-health-law-source.md, source-by-source only",
+    "originals": "S2 pinned primary publisher captures kept separately; no full PDF, HTML or figures in the demo pack",
+    "wheel_files": "Upstream notices in each wheel; downloaded separately, not included in the checkout",
+    "model_weights": "None bundled or executed"
+  },
+  "playwright_browser": {
+    "revision": 1228,
+    "version": "149.0.7827.55",
+    "already_present": true,
+    "exe_sha256": "b798f9e53a98d29eb7f36f8c409f905d3184780a04d2bcb56989067194784bd1"
+  },
+  "wheel_manifest": [
+    {
+      "filename": "annotated_types-0.8.0-py3-none-any.whl",
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "group": "base runtime",
+      "bytes": 13427,
+      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+      "source": "https://pypi.org/project/annotated-types/0.8.0/",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_notice_paths": [
+        "annotated_types-0.8.0.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "attrs-26.1.0-py3-none-any.whl",
+      "name": "attrs",
+      "version": "26.1.0",
+      "group": "base runtime",
+      "bytes": 67548,
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+      "source": "https://pypi.org/project/attrs/26.1.0/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "attrs-26.1.0.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "beautifulsoup4-4.15.0-py3-none-any.whl",
+      "name": "beautifulsoup4",
+      "version": "4.15.0",
+      "group": "repository-wide QA",
+      "bytes": 109924,
+      "sha256": "d6f88de62e1d4e38ecb1077eb9724cd0eff29d2a08ca16a401e9b9e93f117cf9",
+      "source": "https://pypi.org/project/beautifulsoup4/4.15.0/",
+      "license_expression": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_notice_paths": [
+        "beautifulsoup4-4.15.0.dist-info/licenses/AUTHORS",
+        "beautifulsoup4-4.15.0.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "colorama-0.4.6-py2.py3-none-any.whl",
+      "name": "colorama",
+      "version": "0.4.6",
+      "group": "product QA",
+      "bytes": 25335,
+      "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6",
+      "source": "https://pypi.org/project/colorama/0.4.6/",
+      "license_expression": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "license_notice_paths": [
+        "colorama-0.4.6.dist-info/licenses/LICENSE.txt"
+      ]
+    },
+    {
+      "filename": "flatbuffers-25.12.19-py2.py3-none-any.whl",
+      "name": "flatbuffers",
+      "version": "25.12.19",
+      "group": "repository-wide QA",
+      "bytes": 26661,
+      "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4",
+      "source": "https://pypi.org/project/flatbuffers/25.12.19/",
+      "license_expression": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "license_notice_paths": []
+    },
+    {
+      "filename": "greenlet-3.5.6-cp312-cp312-win_amd64.whl",
+      "name": "greenlet",
+      "version": "3.5.6",
+      "group": "product QA",
+      "bytes": 324203,
+      "sha256": "7ac4abb3877c43af320392c664774eef6fa2cc063c79a55fc02d844a3cbe7395",
+      "source": "https://pypi.org/project/greenlet/3.5.6/",
+      "license_expression": "MIT AND PSF-2.0",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "greenlet-3.5.6.dist-info/licenses/LICENSE",
+        "greenlet-3.5.6.dist-info/licenses/LICENSE.PSF"
+      ]
+    },
+    {
+      "filename": "iniconfig-2.3.1-py3-none-any.whl",
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "group": "product QA",
+      "bytes": 7552,
+      "sha256": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7",
+      "source": "https://pypi.org/project/iniconfig/2.3.1/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "iniconfig-2.3.1.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "jsonschema-4.26.0-py3-none-any.whl",
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "group": "base runtime",
+      "bytes": 90630,
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce",
+      "source": "https://pypi.org/project/jsonschema/4.26.0/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "jsonschema-4.26.0.dist-info/licenses/COPYING"
+      ]
+    },
+    {
+      "filename": "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "group": "base runtime",
+      "bytes": 18437,
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe",
+      "source": "https://pypi.org/project/jsonschema-specifications/2025.9.1/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "jsonschema_specifications-2025.9.1.dist-info/licenses/COPYING"
+      ]
+    },
+    {
+      "filename": "networkx-3.7-py3-none-any.whl",
+      "name": "networkx",
+      "version": "3.7",
+      "group": "repository-wide QA",
+      "bytes": 2142205,
+      "sha256": "e3fd2c13a7814cee3746340d8d7f8598a67f16a58bf47fb7f8793fab6efca1b0",
+      "source": "https://pypi.org/project/networkx/3.7/",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "networkx-3.7.dist-info/licenses/LICENSE.txt"
+      ]
+    },
+    {
+      "filename": "numpy-2.5.5-cp312-cp312-win_amd64.whl",
+      "name": "numpy",
+      "version": "2.5.5",
+      "group": "repository-wide QA",
+      "bytes": 12580189,
+      "sha256": "919eb420662b0b4ba34889df503f3d5329775b0c1d5f7e5f5af4fba8315b1e30",
+      "source": "https://pypi.org/project/numpy/2.5.5/",
+      "license_expression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "numpy-2.5.5.dist-info/licenses/",
+        "numpy-2.5.5.dist-info/licenses/numpy/",
+        "numpy-2.5.5.dist-info/licenses/LICENSE.txt",
+        "numpy-2.5.5.dist-info/licenses/numpy/fft/",
+        "numpy-2.5.5.dist-info/licenses/numpy/linalg/",
+        "numpy-2.5.5.dist-info/licenses/numpy/ma/",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/",
+        "numpy-2.5.5.dist-info/licenses/numpy/fft/pocketfft/",
+        "numpy-2.5.5.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+        "numpy-2.5.5.dist-info/licenses/numpy/linalg/lapack_lite/",
+        "numpy-2.5.5.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+        "numpy-2.5.5.dist-info/licenses/numpy/ma/LICENSE",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/LICENSE.md",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/distributions/",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/mt19937/",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/pcg64/",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/philox/",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/sfc64/",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/splitmix64/",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+        "numpy-2.5.5.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/include/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/include/numpy/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/include/numpy/libdivide/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/common/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/highway/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/multiarray/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/npysort/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/umath/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/umath/svml/",
+        "numpy-2.5.5.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE"
+      ]
+    },
+    {
+      "filename": "onnxruntime-1.32.0-cp312-cp312-win_amd64.whl",
+      "name": "onnxruntime",
+      "version": "1.32.0",
+      "group": "repository-wide QA",
+      "bytes": 16698767,
+      "sha256": "efe7456952c243a05a53d5b8732953625144642c2f3989094277f6217f0c0c40",
+      "source": "https://pypi.org/project/onnxruntime/1.32.0/",
+      "license_expression": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_notice_paths": []
+    },
+    {
+      "filename": "packaging-26.4-py3-none-any.whl",
+      "name": "packaging",
+      "version": "26.4",
+      "group": "product QA",
+      "bytes": 140049,
+      "sha256": "81383611a09c1bc0b08b76e0fd5829d7c6824c65b27a6aee339da133f4233ea2",
+      "source": "https://pypi.org/project/packaging/26.4/",
+      "license_expression": "Apache-2.0 OR BSD-2-Clause",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "packaging-26.4.dist-info/licenses/LICENSE",
+        "packaging-26.4.dist-info/licenses/LICENSE.APACHE",
+        "packaging-26.4.dist-info/licenses/LICENSE.BSD"
+      ]
+    },
+    {
+      "filename": "playwright-1.60.0-py3-none-win_amd64.whl",
+      "name": "playwright",
+      "version": "1.60.0",
+      "group": "product QA",
+      "bytes": 37902159,
+      "sha256": "9566821ce6030a1f9e7146a24e19355ab0d98805fd0f9be50bb3d8fef1750c02",
+      "source": "https://pypi.org/project/playwright/1.60.0/",
+      "license_expression": "Apache-2.0",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "playwright-1.60.0.dist-info/licenses/",
+        "playwright-1.60.0.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "pluggy-1.7.0-py3-none-any.whl",
+      "name": "pluggy",
+      "version": "1.7.0",
+      "group": "product QA",
+      "bytes": 27082,
+      "sha256": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec",
+      "source": "https://pypi.org/project/pluggy/1.7.0/",
+      "license_expression": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_notice_paths": [
+        "pluggy-1.7.0.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "protobuf-7.36.2-cp310-abi3-win_amd64.whl",
+      "name": "protobuf",
+      "version": "7.36.2",
+      "group": "repository-wide QA",
+      "bytes": 456514,
+      "sha256": "a300819d441e078a5608c0d3c709796bb548136058fda017ae51d425b44fd353",
+      "source": "https://pypi.org/project/protobuf/7.36.2/",
+      "license_expression": null,
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "protobuf-7.36.2.dist-info/LICENSE"
+      ]
+    },
+    {
+      "filename": "psutil-7.2.2-cp37-abi3-win_amd64.whl",
+      "name": "psutil",
+      "version": "7.2.2",
+      "group": "repository-wide QA",
+      "bytes": 137737,
+      "sha256": "eb7e81434c8d223ec4a219b5fc1c47d0417b12be7ea866e24fb5ad6e84b3d988",
+      "source": "https://pypi.org/project/psutil/7.2.2/",
+      "license_expression": null,
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "psutil-7.2.2.dist-info/LICENSE"
+      ]
+    },
+    {
+      "filename": "pyarrow-26.0.1-cp312-cp312-win_amd64.whl",
+      "name": "pyarrow",
+      "version": "26.0.1",
+      "group": "repository-wide QA",
+      "bytes": 29078866,
+      "sha256": "9379f0d1056cad6866c4697aec83a15830202ec7e0bd52f8bd508b316260fa61",
+      "source": "https://pypi.org/project/pyarrow/26.0.1/",
+      "license_expression": "Apache-2.0",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "pyarrow-26.0.1.dist-info/licenses/",
+        "pyarrow-26.0.1.dist-info/licenses/LICENSE.txt",
+        "pyarrow-26.0.1.dist-info/licenses/NOTICE.txt"
+      ]
+    },
+    {
+      "filename": "pydantic-2.14.4-py3-none-any.whl",
+      "name": "pydantic",
+      "version": "2.14.4",
+      "group": "base runtime",
+      "bytes": 494865,
+      "sha256": "653a2ad9f6d8858529c77c72717d0ea991d6c6837fe683246b2f4b2bbfc3fadc",
+      "source": "https://pypi.org/project/pydantic/2.14.4/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "pydantic-2.14.4.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "pydantic_core-2.50.5-cp312-cp312-win_amd64.whl",
+      "name": "pydantic_core",
+      "version": "2.50.5",
+      "group": "base runtime",
+      "bytes": 2269672,
+      "sha256": "baa107902f8e38011a5f79836d905eb6bfaac1d4b0bd09fc86509b711d0b09c8",
+      "source": "https://pypi.org/project/pydantic_core/2.50.5/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "pydantic_core-2.50.5.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "pyee-13.0.1-py3-none-any.whl",
+      "name": "pyee",
+      "version": "13.0.1",
+      "group": "product QA",
+      "bytes": 15659,
+      "sha256": "af2f8fede4171ef667dfded53f96e2ed0d6e6bd7ee3bb46437f77e3b57689228",
+      "source": "https://pypi.org/project/pyee/13.0.1/",
+      "license_expression": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_notice_paths": [
+        "pyee-13.0.1.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "name": "Pygments",
+      "version": "2.21.0",
+      "group": "product QA",
+      "bytes": 1250147,
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "source": "https://pypi.org/project/Pygments/2.21.0/",
+      "license_expression": "BSD-2-Clause",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "pygments-2.21.0.dist-info/licenses/AUTHORS",
+        "pygments-2.21.0.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "pymupdf-2.1-cp311-abi3-win_amd64.whl",
+      "name": "pymupdf",
+      "version": "2.1",
+      "group": "repository-wide QA",
+      "bytes": 63020050,
+      "sha256": "e1122bbc3a1212396f0d70d19f78e084991b59ebdfc9d846c28ca8b509de01ad",
+      "source": "https://pypi.org/project/pymupdf/2.1/",
+      "license_expression": null,
+      "license_classifiers": [],
+      "license_notice_paths": []
+    },
+    {
+      "filename": "pymupdf4llm-2.1-py3-none-any.whl",
+      "name": "pymupdf4llm",
+      "version": "2.1",
+      "group": "repository-wide QA",
+      "bytes": 1023,
+      "sha256": "2fe8bb344444c6a8ef41fd745d2d10f6da59df6e104ef20f35d51dd26914b5fb",
+      "source": "https://pypi.org/project/pymupdf4llm/2.1/",
+      "license_expression": null,
+      "license_classifiers": [],
+      "license_notice_paths": []
+    },
+    {
+      "filename": "pymupdf_layout-2.1-py3-none-any.whl",
+      "name": "pymupdf_layout",
+      "version": "2.1",
+      "group": "repository-wide QA",
+      "bytes": 1044,
+      "sha256": "e7e00bc50ec9113d36bdbb0dd5cdafa5f4d61e22e598960fc187ee4f721f5095",
+      "source": "https://pypi.org/project/pymupdf_layout/2.1/",
+      "license_expression": null,
+      "license_classifiers": [],
+      "license_notice_paths": []
+    },
+    {
+      "filename": "pypdf-6.21.4-py3-none-any.whl",
+      "name": "pypdf",
+      "version": "6.21.4",
+      "group": "optional runtime",
+      "bytes": 410430,
+      "sha256": "33e4fb41ca352810eb4e9838aa0d82d6888a5f8bf682f43e99cce5faa666255c",
+      "source": "https://pypi.org/project/pypdf/6.21.4/",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "pypdf-6.21.4.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "pytest-8.4.2-py3-none-any.whl",
+      "name": "pytest",
+      "version": "8.4.2",
+      "group": "product QA",
+      "bytes": 365750,
+      "sha256": "872f880de3fc3a5bdc88a11b39c9710c3497a547cfa9320bc3c5e62fbf272e79",
+      "source": "https://pypi.org/project/pytest/8.4.2/",
+      "license_expression": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_notice_paths": [
+        "pytest-8.4.2.dist-info/licenses/AUTHORS",
+        "pytest-8.4.2.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "pythainlp-5.4.0-py3-none-any.whl",
+      "name": "pythainlp",
+      "version": "5.4.0",
+      "group": "optional runtime",
+      "bytes": 21936258,
+      "sha256": "9239753df877202da1a50dd2842d9569eff764034f31f20222b3df4def5df193",
+      "source": "https://pypi.org/project/pythainlp/5.4.0/",
+      "license_expression": "Apache-2.0",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "pythainlp-5.4.0.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "pyyaml-6.0.4-cp312-cp312-win_amd64.whl",
+      "name": "PyYAML",
+      "version": "6.0.4",
+      "group": "repository-wide QA",
+      "bytes": 154452,
+      "sha256": "131d11bd9b60d705a6388366d77ed67850995a4d2be85fe149785a257c17e531",
+      "source": "https://pypi.org/project/PyYAML/6.0.4/",
+      "license_expression": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_notice_paths": [
+        "pyyaml-6.0.4.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "referencing-0.37.0-py3-none-any.whl",
+      "name": "referencing",
+      "version": "0.37.0",
+      "group": "base runtime",
+      "bytes": 26766,
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231",
+      "source": "https://pypi.org/project/referencing/0.37.0/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "referencing-0.37.0.dist-info/licenses/COPYING"
+      ]
+    },
+    {
+      "filename": "rpds_py-2026.9.1-cp312-cp312-win_amd64.whl",
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "group": "base runtime",
+      "bytes": 222923,
+      "sha256": "5ce8943f79c2210f7abcc28e86367b03b28d95027fd01c46d2472373ae70c86f",
+      "source": "https://pypi.org/project/rpds-py/2026.9.1/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "rpds_py-2026.9.1.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "soupsieve-4.1.3-py3-none-any.whl",
+      "name": "soupsieve",
+      "version": "4.1.3",
+      "group": "repository-wide QA",
+      "bytes": 59792,
+      "sha256": "7a390d1a57d1ab7bb228531e9b8a750a5ebf87db774e0ef6faeeac057d22a5bf",
+      "source": "https://pypi.org/project/soupsieve/4.1.3/",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_notice_paths": [
+        "soupsieve-4.1.3.dist-info/licenses/LICENSE.md"
+      ]
+    },
+    {
+      "filename": "tabulate-0.10.0-py3-none-any.whl",
+      "name": "tabulate",
+      "version": "0.10.0",
+      "group": "repository-wide QA",
+      "bytes": 39814,
+      "sha256": "f0b0622e567335c8fabaaa659f1b33bcb6ddfe2e496071b743aa113f8774f2d3",
+      "source": "https://pypi.org/project/tabulate/0.10.0/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "tabulate-0.10.0.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "group": "base runtime",
+      "bytes": 45571,
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "source": "https://pypi.org/project/typing_extensions/4.16.0/",
+      "license_expression": "PSF-2.0",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "typing_inspection-0.4.5-py3-none-any.whl",
+      "name": "typing-inspection",
+      "version": "0.4.5",
+      "group": "base runtime",
+      "bytes": 14874,
+      "sha256": "bc210535442b39e1bf2805e0c7a17dfd6a4ace760c84c7f7d16245d23a6b1c39",
+      "source": "https://pypi.org/project/typing-inspection/0.4.5/",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "typing_inspection-0.4.5.dist-info/licenses/LICENSE"
+      ]
+    },
+    {
+      "filename": "tzdata-2026.6-py2.py3-none-any.whl",
+      "name": "tzdata",
+      "version": "2026.6",
+      "group": "optional runtime",
+      "bytes": 348210,
+      "sha256": "0a10eec6e13ef16b627fabed9a5f2ba61a62b1c67f327305f4e7e412a70b4aec",
+      "source": "https://pypi.org/project/tzdata/2026.6/",
+      "license_expression": null,
+      "license_classifiers": [],
+      "license_notice_paths": [
+        "tzdata-2026.6.dist-info/licenses/LICENSE",
+        "tzdata-2026.6.dist-info/licenses/licenses/LICENSE_APACHE"
+      ]
+    }
+  ]
+}

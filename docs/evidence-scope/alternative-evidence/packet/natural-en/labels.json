@@ -1,0 +1,73 @@
+{
+  "cases": [
+    {
+      "case_id": "ae-en-usc-44-depositories-c1",
+      "family_id": "ae-en-usc-44-depositories",
+      "status": "ANSWERABLE",
+      "decision": "components of the Government responsible for their issuance",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-usc-44-depositories-elsewhere"
+          ],
+          "permitted": [
+            "ae-en-usc-44-depositories-elsewhere"
+          ]
+        }
+      ],
+      "stratum": "natural_direct_text"
+    },
+    {
+      "case_id": "ae-en-usc-44-depositories-c2",
+      "family_id": "ae-en-usc-44-depositories",
+      "status": "ANSWERABLE",
+      "decision": "components of the Government responsible for their issuance",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-usc-44-depositories-elsewhere"
+          ],
+          "permitted": [
+            "ae-en-usc-44-depositories-elsewhere"
+          ]
+        }
+      ],
+      "stratum": "natural_direct_text"
+    },
+    {
+      "case_id": "ae-en-usc-44-depositories-c3",
+      "family_id": "ae-en-usc-44-depositories",
+      "status": "ANSWERABLE",
+      "decision": "item identification numbers",
+      "witness_assignments": [
+        {
+          "required": [
+            "ae-en-usc-44-depositories-s1904"
+          ],
+          "permitted": [
+            "ae-en-usc-44-depositories-s1904"
+          ]
+        }
+      ],
+      "stratum": "natural_direct_text"
+    },
+    {
+      "case_id": "ae-en-usc-44-depositories-c4",
+      "family_id": "ae-en-usc-44-depositories",
+      "status": "UNADJUDICATED",
+      "decision": "ABSTAIN",
+      "witness_assignments": [],
+      "stratum": "natural_unadjudicated"
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": "ae-en-usc-44-depositories-p1",
+      "kind": "invariant",
+      "cases": [
+        "ae-en-usc-44-depositories-c1",
+        "ae-en-usc-44-depositories-c2"
+      ]
+    }
+  ]
+}

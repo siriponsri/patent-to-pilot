@@ -208,7 +208,14 @@ class ScopeReader:
                         "(source_id TEXT, version TEXT, digest TEXT NOT NULL, PRIMARY KEY(source_id, version))")
 
     def _examples(self):
-        entries = json.loads(BUNDLE.read_text(encoding="utf-8-sig"))["examples"]
+        try:
+            entries = json.loads(BUNDLE.read_text(encoding="utf-8-sig"))["examples"]
+        except FileNotFoundError:
+            raise Conflict("ไม่พบชุดเอกสารตัวอย่าง โปรดคืนไฟล์จากรุ่นที่ติดตั้ง", "missing_bundle") from None
+        except (OSError, ValueError, KeyError, TypeError):
+            raise Conflict("อ่านชุดเอกสารตัวอย่างไม่ได้ โปรดคืนไฟล์จากรุ่นที่ติดตั้ง", "invalid_bundle") from None
+        if not isinstance(entries, list):
+            raise Conflict("ชุดเอกสารตัวอย่างมีรูปแบบไม่ถูกต้อง", "invalid_bundle")
         seen, editions = set(), {}
         for entry in entries:
             key = (entry["source_id"], entry["version"])
@@ -223,7 +230,11 @@ class ScopeReader:
     def catalog(self):
         with self.store.read() as con:
             runs = [dict(row) for row in con.execute("SELECT id, example_id, version FROM reader_runs ORDER BY rowid DESC")]
-        return {"examples": [_header(entry) for entry in self._examples()], "runs": runs}
+        try:
+            examples = [_header(entry) for entry in self._examples()]
+        except Conflict as exc:
+            return {"examples": [], "runs": runs, "bundle_error": {"code": exc.code, "message": str(exc)}}
+        return {"examples": examples, "runs": runs}
 
     def run(self, body):
         if not isinstance(body, dict) or set(body) - {"example_id", "budget", "question_th"}:
