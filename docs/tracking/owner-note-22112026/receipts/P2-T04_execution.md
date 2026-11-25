@@ -53,3 +53,10 @@ The isolated launcher SHA-256 is `061a5b36d9d2c1ab5073795e226673289fed0f92ae02eb
 CPU process group at a time and applies the 30 GiB MemAvailable guard with the same 36 GiB planning estimate. It
 writes to `screen-v1-sklearn172/` with `driver-sklearn172.log`. If the gate fails, preserve the attempt and report
 NOT_RUN for the matched evaluation. The original pod's CPU dispatch remains unknown.
+
+The initial SSH transfer and install connection timed out during Tailscale startup. After the client reported
+Running, the approved local wheel and launcher transferred and both matched their pinned hashes on dr-train. The
+offline installation passed a CountVectorizer import and synthetic check under Python 3.12.3, scikit-learn 1.7.2,
+NumPy 2.2.6 and SciPy 1.18.1 with AVX2 active. A separate import showed the existing scikit-learn 1.9.1 intact.
+The guarded run started at 10:09:21 UTC on 25 Nov with both frozen digests and the launcher reverified. The host
+had 123,949,788 KiB MemAvailable and 985 GB free disk. There was no concurrent project process.

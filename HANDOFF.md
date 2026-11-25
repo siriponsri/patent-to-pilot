@@ -86,8 +86,10 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   hash-verified. The gate-only diagnostic isolated the difference to the final top-1000 slot, where the displayed
   score ties. A synthetic tie verified that AVX2 selection can affect the cutoff on dr-train. The guarded scalar
   replay stopped at the same app, and its logs are verified locally. The owner approved the exact scikit-learn
-  1.7.2 PyPI wheel for one isolated dr-train replay. The prelaunch check will verify the wheel and import location.
-  The runtime and evaluator digests and the exact archive gate remain frozen. No paid compute is in scope.
+  1.7.2 PyPI wheel for one isolated dr-train replay. The approved hash, import from the isolated overlay, and
+  existing installation were verified. The guarded replay started at 10:09:21 UTC on 25 Nov in
+  `screen-v1-sklearn172/` with `driver-sklearn172.log`. It retains the exact archive gate and frozen digests.
+  No paid compute is in scope.
   [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md),
   [execution receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md).
 
