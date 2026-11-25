@@ -20,8 +20,9 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 ## Task counts
 
 - ✅ COMPLETE: 19
+- 🔄 IN_PROGRESS: 1
 - ⏳ NOT_STARTED: 11
-- 🟡 PARTIAL: 5
+- 🟡 PARTIAL: 4
 
 ## Phases
 
@@ -40,6 +41,5 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 - **P0-T03** Create live tracking copies and mirror phases into AFFiNE: No supported automated write path to AFFiNE (web sync broken, MCP read-only); repo PHASE_BOARD.md is tracker of record
 - **P0-T04** Prepare prospective A3r1 protocol and no-call provider plan: E1R approval; Typhoon key/quota (TYPHOON_API_KEY) or declare deferred
 - **P2-T02** Establish complete-content and stronger simple controls: D26: owner approved US RunPod launch, delegated machine choice, D19 cap USD 20 within R2
-- **P2-T04** Screen the bounded mechanism against close matched controls: PARTIAL
 - **P3-T02** Build grouped source packets and independent judgments: PARTIAL
 - **P4-T04** Verify selective revision against full recomputation: PARTIAL

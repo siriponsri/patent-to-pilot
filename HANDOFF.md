@@ -80,8 +80,10 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   `/data/ptp-paper2/p2t04-run-prep-20261124`. The 30 GiB MemAvailable guard did not trigger. The lexical stream
   has been materialized and hash-checked, the two evaluator inputs are in a separate directory, and both entry
   points from `ff9c2048` load on dr-train. Both C1 rankings, the frozen manifests and the CPU launcher passed
-  transfer and SHA-256 verification. The next job is the frozen P1-DEV screen on CPU with a 30 GiB watchdog and
-  exact BM25 reproduction before any matched scores. [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md).
+  transfer and SHA-256 verification. The frozen P1-DEV CPU screen started at 00:40:48 UTC on 25 Nov after the
+  freeze was published in `d46ac2aa`. It requires exact BM25 reproduction before any matched scores. The one
+  active project job uses the 30 GiB watchdog and writes `driver.log` and `screen-v1/` under that dr-train root.
+  [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md).
 
 ### Money and access (25 Nov)
 
