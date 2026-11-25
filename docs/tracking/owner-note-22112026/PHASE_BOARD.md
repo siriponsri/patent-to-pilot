@@ -1,12 +1,12 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-25T20:18:21+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-25T20:44:54+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
 | Field | Value |
 |---|---|
-| method_evidence | NOT_YET_DEMONSTRATED |
+| method_evidence | CONTROLLED_THAI_DEV_NEGATIVE |
 | product_readiness | CORE_VERIFIED_PLUS_SYNTHETIC_TRACE_SLICE |
 | publication_readiness | DRAFT_WITH_NOT_RUN_RESULTS |
 

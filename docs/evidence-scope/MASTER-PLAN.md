@@ -1,6 +1,6 @@
 # Patent-to-Pilot master plan
 
-**Effective 25 November 2026 · S0, S1 and S2 complete · S3 is ready for a separate executor.**
+**Effective 25 November 2026 · S0 through S3 complete · S4 awaits separate dispatch.**
 
 Build a Thai-first reader that explains a legal provision or patent claim, shows the source of each condition and lets a reader see which conclusions change when the edition or claim changes. Study the same engine under a fixed search budget. Its hardest case is a plausible explanation assembled from real passages that refer to different editions, tables or embodiments.
 
@@ -15,7 +15,7 @@ Each row has one execution sheet with stable task IDs. S1 and S2 ran together. S
 | [S0 · Organization](00-organization.md) | Governance, baseline inventory, prospective freeze, documentation and handoff | Owner direction | **COMPLETE** | This package and the S0 acceptance record |
 | [S1 · Research data](01-research-data.md) | Authorized input manifests, family isolation, three-state fixtures, comparator design | S0 and D28 | **COMPLETE** | [Frozen packet, rights, scorer and comparator](receipts/S1-20261125.md) |
 | [S2 · Product workbench](02-product-workbench.md) | An end-to-end Thai-law and English-patent reading path using one shared contract | S0 and D28 | **COMPLETE** | [Local alpha, ten public families and 23 saved traces](receipts/S2-workbench.md) |
-| [S3 · Research evaluation](03-research-evaluation.md) | Matched DEV experiment, error attribution and independent result labels | S1 | **IN_PROGRESS** | [Prospective lock](../healthtech/audits/S3-20261125/PREREGISTRATION.md) ready. Reserved DEV is NOT_RUN |
+| [S3 · Research evaluation](03-research-evaluation.md) | Matched DEV experiment, error attribution and independent result labels | S1 | **COMPLETE** | [NEGATIVE Thai primary](../healthtech/audits/S3-20261125/RESULTS.md). Uninformative English transfer |
 | [S4 · Product validation](04-product-release.md) | Reproducible local alpha, rights, installation and usability evidence | S2 | **NOT_STARTED** | Validate both demonstrations independently of S3 scores |
 | [S5 · Synthesis and handoff](05-synthesis.md) | Research package, IS2 narrative and product release decision | Either finished lane for its own draft; both dispositions for closure | **NOT_STARTED** | Publish only evidence that each track actually obtained |
 
@@ -73,4 +73,4 @@ The closest-work search was conducted in SciSpace. Inspect the paper records for
 
 ## Prompt for the next goal
 
-Use the [S3 executor prompt](S3-EXECUTOR-PROMPT.md) in a separate GPT 6.2 high session. The current session is the owner's planning and audit point. S3 can start on the controlled pilot once dispatched. S4 is eligible for separate dispatch and S5 remains pending.
+The [S3 executor prompt](S3-EXECUTOR-PROMPT.md) records the completed dispatch. The prospective and post-run checkpoints were independently reviewed. S4 is eligible for separate dispatch and S5 remains pending.

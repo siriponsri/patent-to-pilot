@@ -4,7 +4,7 @@ Tracker projection of the live registry in the repository (`docs/tracking/owner-
 
 ## Readiness
 
-- **method_evidence**: NOT_YET_DEMONSTRATED
+- **method_evidence**: CONTROLLED_THAI_DEV_NEGATIVE
 - **product_readiness**: CORE_VERIFIED_PLUS_SYNTHETIC_TRACE_SLICE
 - **publication_readiness**: DRAFT_WITH_NOT_RUN_RESULTS
 

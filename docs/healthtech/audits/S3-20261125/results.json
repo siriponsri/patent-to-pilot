@@ -1,0 +1,1126 @@
+{
+  "preregistration_commit": "e42b6254e3211d5ed252e6d940b18edc35e86174",
+  "disposition": "NEGATIVE",
+  "private_root": "../_private_artifacts/ptp-s3-20261125",
+  "private_sha256": {
+    "original-captures.json": "69b6d0b756ae359b0bd9fc31e9541840bab8d1c2752d90e939f55cd2d8f6b48a",
+    "th/case-results.json": "206a7d39394ccff45aa555dd046e24310cfd333b75d50af97f260989a58bc05a",
+    "th/summary.json": "2ff329989629f7194dba968d84896a029560e748f2213478814b9504dbc51169",
+    "en/case-results.json": "ff6052c229aa5a6516846e618a0faafd407d9d396fe1aa06bdcb346c84fb21dd",
+    "en/summary.json": "95c8094ec5cbca340d3a64c4d6fbc93a4667de87696588140fe5fc6e01fee887"
+  },
+  "seal": {
+    "en": {
+      "capsule.json": "5e56d98c88abdbb40cabbc35bbabf428b8740a20973a1596d8f7da2da085977b",
+      "capture.json": "779c982e98f3ef0984d0af66cf4aa3feb4c0d5fdb08cfce1cb1ed6f054721c0e",
+      "launch.json": "bd28baaa44bd45813606e1c3d7827ca49f54a7aff3306494766956c2477b0448",
+      "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "trace.jsonl": "8dda29bc96d03391d4bb846156cb3638d5c81e3dc340019247680c1e04d4f10f"
+    },
+    "freeze_sha256": "32c176a78159db6d99a9a01c8b3a61ae823cade479ae697d8066a0b82cc9ac64",
+    "sealed_utc": "2026-11-25T13:43:18.418652+00:00",
+    "th": {
+      "capsule.json": "540dd1e47b1ef50ded113d5086952405fde13a40145321762150414f5db8ad36",
+      "capture.json": "aa41f0332f5caaa2b1a13bceec97490c9ce26ca9f88131e7d7f96e4c858ea1da",
+      "launch.json": "91a57d87580b2e4931b899ddeef9ab40a17a644d85b972791c19f136e7bda7a6",
+      "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "trace.jsonl": "860d5b4d99b7e8c29b704fe95ff5a3da253779ea6e0e56a2ba947bd5cd1d41f6"
+    }
+  },
+  "results": {
+    "th": {
+      "capture": {
+        "ended_utc": "2026-11-25T13:43:17.507547+00:00",
+        "returncode": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "subprocess_elapsed_ns": 191808100,
+        "trace_sha256": "860d5b4d99b7e8c29b704fe95ff5a3da253779ea6e0e56a2ba947bd5cd1d41f6"
+      },
+      "delta": -0.1111111111111111,
+      "excluded": 0,
+      "failures": [],
+      "families": {
+        "s1-bell": {
+          "complete_first": 5,
+          "coverage": 6,
+          "delta": -0.3333333333333333,
+          "n": 9,
+          "paired": {
+            "both_correct": 3,
+            "both_failed": 3,
+            "improved": 0,
+            "worsened": 3
+          },
+          "rerank": 6,
+          "scope": 3,
+          "states": {
+            "displaced": {
+              "complete_first": 2,
+              "coverage": 3,
+              "delta": -1,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 0,
+                "improved": 0,
+                "worsened": 3
+              },
+              "rerank": 3,
+              "scope": 0,
+              "static": 0
+            },
+            "outside": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "present": {
+              "complete_first": 3,
+              "coverage": 3,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 3,
+                "both_failed": 0,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 3,
+              "scope": 3,
+              "static": 3
+            }
+          },
+          "static": 3
+        },
+        "s1-fern": {
+          "complete_first": 0,
+          "coverage": 0,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 9,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 0,
+          "scope": 0,
+          "states": {
+            "displaced": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "outside": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "present": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            }
+          },
+          "static": 0
+        },
+        "s1-loom": {
+          "complete_first": 0,
+          "coverage": 0,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 9,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 0,
+          "scope": 0,
+          "states": {
+            "displaced": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "outside": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "present": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            }
+          },
+          "static": 0
+        }
+      },
+      "finite": {
+        "complete_first": 3,
+        "coverage": 3,
+        "delta": 0,
+        "n": 3,
+        "paired": {
+          "both_correct": 3,
+          "both_failed": 0,
+          "improved": 0,
+          "worsened": 0
+        },
+        "rerank": 3,
+        "scope": 3,
+        "static": 3
+      },
+      "ingestion": {
+        "bytes": 25863,
+        "cpu_ns": 0,
+        "elapsed_ns": 1176200,
+        "kind": "ingestion"
+      },
+      "interval": [
+        -0.3333333333333333,
+        0
+      ],
+      "launch": {
+        "environment": {
+          "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+          "implementation": "CPython",
+          "logical_cpus": 12,
+          "machine": "AMD64",
+          "os": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+          "query_threads": 1,
+          "timer": {
+            "adjustable": false,
+            "implementation": "QueryPerformanceCounter()",
+            "monotonic": true,
+            "resolution": 1e-7
+          },
+          "unicode": "15.0.0",
+          "workers": 1
+        },
+        "freeze_sha256": "32c176a78159db6d99a9a01c8b3a61ae823cade479ae697d8066a0b82cc9ac64",
+        "lane": "dev",
+        "language": "th",
+        "launched_utc": "2026-11-25T13:43:17.239488+00:00",
+        "mode": "run"
+      },
+      "pairs": {
+        "changing": {
+          "complete_first": 1,
+          "coverage": 2,
+          "n": 9,
+          "rerank": 2,
+          "scope": 0,
+          "static": 0
+        },
+        "invariant": {
+          "complete_first": 2,
+          "coverage": 2,
+          "n": 9,
+          "rerank": 2,
+          "scope": 1,
+          "static": 1
+        }
+      },
+      "resources": {
+        "complete_first": {
+          "abstentions": 25,
+          "actions": 60,
+          "answers": 5,
+          "cpu_ns": 0,
+          "elapsed_ns": 10117200,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 6,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 7,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 6,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 0,
+          "inspected": 240,
+          "model_tokens": 0,
+          "returned": 10,
+          "stops": {
+            "fixed_pool": 30
+          },
+          "trace_valid": 30
+        },
+        "coverage": {
+          "abstentions": 24,
+          "actions": 81,
+          "answers": 6,
+          "cpu_ns": 0,
+          "elapsed_ns": 18494400,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 9,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 6,
+              "actions": 24,
+              "incompatible": 0,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 24,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 6,
+              "actions": 24,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 0,
+          "inspected": 387,
+          "model_tokens": 0,
+          "returned": 12,
+          "stops": {
+            "coverage_complete": 9,
+            "coverage_no_increase": 21
+          },
+          "trace_valid": 30
+        },
+        "rerank": {
+          "abstentions": 24,
+          "actions": 60,
+          "answers": 6,
+          "cpu_ns": 15625000,
+          "elapsed_ns": 10738500,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 6,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 6,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 6,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 0,
+          "inspected": 240,
+          "model_tokens": 0,
+          "returned": 12,
+          "stops": {
+            "fixed_pool": 30
+          },
+          "trace_valid": 30
+        },
+        "scope": {
+          "abstentions": 24,
+          "actions": 72,
+          "answers": 6,
+          "cpu_ns": 0,
+          "elapsed_ns": 13700900,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 9,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 6,
+              "actions": 21,
+              "incompatible": 3,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 21,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 6,
+              "actions": 21,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 3,
+          "inspected": 372,
+          "model_tokens": 0,
+          "returned": 12,
+          "stops": {
+            "leading_assignment_supported": 6,
+            "unresolved_after_actions": 24
+          },
+          "trace_valid": 30
+        },
+        "static": {
+          "abstentions": 24,
+          "actions": 30,
+          "answers": 6,
+          "cpu_ns": 15625000,
+          "elapsed_ns": 4635200,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 3,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 6,
+              "actions": 9,
+              "incompatible": 3,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 9,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 6,
+              "actions": 9,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 3,
+          "inspected": 120,
+          "model_tokens": 0,
+          "returned": 12,
+          "stops": {
+            "static_seed": 30
+          },
+          "trace_valid": 30
+        }
+      },
+      "states": {
+        "displaced": {
+          "complete_first": 2,
+          "coverage": 3,
+          "delta": -0.3333333333333333,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 6,
+            "improved": 0,
+            "worsened": 3
+          },
+          "rerank": 3,
+          "scope": 0,
+          "static": 0
+        },
+        "outside": {
+          "complete_first": 0,
+          "coverage": 0,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 9,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 0,
+          "scope": 0,
+          "static": 0
+        },
+        "present": {
+          "complete_first": 3,
+          "coverage": 3,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 3,
+            "both_failed": 6,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 3,
+          "scope": 3,
+          "static": 3
+        }
+      },
+      "total": {
+        "complete_first": 5,
+        "coverage": 6,
+        "delta": -0.1111111111111111,
+        "n": 27,
+        "paired": {
+          "both_correct": 3,
+          "both_failed": 21,
+          "improved": 0,
+          "worsened": 3
+        },
+        "rerank": 6,
+        "scope": 3,
+        "static": 3
+      }
+    },
+    "en": {
+      "capture": {
+        "ended_utc": "2026-11-25T13:43:18.141892+00:00",
+        "returncode": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "subprocess_elapsed_ns": 228200800,
+        "trace_sha256": "8dda29bc96d03391d4bb846156cb3638d5c81e3dc340019247680c1e04d4f10f"
+      },
+      "delta": 0,
+      "excluded": 0,
+      "failures": [],
+      "families": {
+        "s1-dial": {
+          "complete_first": 0,
+          "coverage": 0,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 9,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 0,
+          "scope": 0,
+          "states": {
+            "displaced": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "outside": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "present": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            }
+          },
+          "static": 0
+        },
+        "s1-frame": {
+          "complete_first": 0,
+          "coverage": 0,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 9,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 0,
+          "scope": 0,
+          "states": {
+            "displaced": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "outside": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "present": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            }
+          },
+          "static": 0
+        },
+        "s1-tray": {
+          "complete_first": 0,
+          "coverage": 0,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 9,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 0,
+          "scope": 0,
+          "states": {
+            "displaced": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "outside": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            },
+            "present": {
+              "complete_first": 0,
+              "coverage": 0,
+              "delta": 0,
+              "n": 3,
+              "paired": {
+                "both_correct": 0,
+                "both_failed": 3,
+                "improved": 0,
+                "worsened": 0
+              },
+              "rerank": 0,
+              "scope": 0,
+              "static": 0
+            }
+          },
+          "static": 0
+        }
+      },
+      "finite": {
+        "complete_first": 3,
+        "coverage": 3,
+        "delta": 0,
+        "n": 3,
+        "paired": {
+          "both_correct": 3,
+          "both_failed": 0,
+          "improved": 0,
+          "worsened": 0
+        },
+        "rerank": 3,
+        "scope": 3,
+        "static": 3
+      },
+      "ingestion": {
+        "bytes": 18242,
+        "cpu_ns": 0,
+        "elapsed_ns": 1252700,
+        "kind": "ingestion"
+      },
+      "interval": [
+        0,
+        0
+      ],
+      "launch": {
+        "environment": {
+          "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+          "implementation": "CPython",
+          "logical_cpus": 12,
+          "machine": "AMD64",
+          "os": "Windows-11-10.0.26200-SP0",
+          "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+          "query_threads": 1,
+          "timer": {
+            "adjustable": false,
+            "implementation": "QueryPerformanceCounter()",
+            "monotonic": true,
+            "resolution": 1e-7
+          },
+          "unicode": "15.0.0",
+          "workers": 1
+        },
+        "freeze_sha256": "32c176a78159db6d99a9a01c8b3a61ae823cade479ae697d8066a0b82cc9ac64",
+        "lane": "dev",
+        "language": "en",
+        "launched_utc": "2026-11-25T13:43:17.836071+00:00",
+        "mode": "run"
+      },
+      "pairs": {
+        "changing": {
+          "complete_first": 0,
+          "coverage": 0,
+          "n": 9,
+          "rerank": 0,
+          "scope": 0,
+          "static": 0
+        },
+        "invariant": {
+          "complete_first": 0,
+          "coverage": 0,
+          "n": 9,
+          "rerank": 0,
+          "scope": 0,
+          "static": 0
+        }
+      },
+      "resources": {
+        "complete_first": {
+          "abstentions": 30,
+          "actions": 60,
+          "answers": 0,
+          "cpu_ns": 15625000,
+          "elapsed_ns": 8533100,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 6,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 9,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 9,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 0,
+          "inspected": 240,
+          "model_tokens": 0,
+          "returned": 0,
+          "stops": {
+            "fixed_pool": 30
+          },
+          "trace_valid": 30
+        },
+        "coverage": {
+          "abstentions": 30,
+          "actions": 90,
+          "answers": 0,
+          "cpu_ns": 15625000,
+          "elapsed_ns": 17499300,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 9,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 9,
+              "actions": 27,
+              "incompatible": 0,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 27,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 9,
+              "actions": 27,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 0,
+          "inspected": 450,
+          "model_tokens": 0,
+          "returned": 0,
+          "stops": {
+            "coverage_no_increase": 30
+          },
+          "trace_valid": 30
+        },
+        "rerank": {
+          "abstentions": 30,
+          "actions": 60,
+          "answers": 0,
+          "cpu_ns": 15625000,
+          "elapsed_ns": 9220700,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 6,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 9,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 9,
+              "actions": 18,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 0,
+          "inspected": 240,
+          "model_tokens": 0,
+          "returned": 0,
+          "stops": {
+            "fixed_pool": 30
+          },
+          "trace_valid": 30
+        },
+        "scope": {
+          "abstentions": 30,
+          "actions": 90,
+          "answers": 0,
+          "cpu_ns": 15625000,
+          "elapsed_ns": 13584100,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 9,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 9,
+              "actions": 27,
+              "incompatible": 0,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 27,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 9,
+              "actions": 27,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 0,
+          "inspected": 480,
+          "model_tokens": 0,
+          "returned": 0,
+          "stops": {
+            "unresolved_after_actions": 30
+          },
+          "trace_valid": 30
+        },
+        "static": {
+          "abstentions": 30,
+          "actions": 30,
+          "answers": 0,
+          "cpu_ns": 0,
+          "elapsed_ns": 4886700,
+          "expected": 30,
+          "failures": 0,
+          "groups": {
+            "None": {
+              "abstentions": 3,
+              "actions": 3,
+              "incompatible": 0,
+              "n": 3
+            },
+            "displaced": {
+              "abstentions": 9,
+              "actions": 9,
+              "incompatible": 0,
+              "n": 9
+            },
+            "outside": {
+              "abstentions": 9,
+              "actions": 9,
+              "incompatible": 0,
+              "n": 9
+            },
+            "present": {
+              "abstentions": 9,
+              "actions": 9,
+              "incompatible": 0,
+              "n": 9
+            }
+          },
+          "incompatible": 0,
+          "inspected": 120,
+          "model_tokens": 0,
+          "returned": 0,
+          "stops": {
+            "static_seed": 30
+          },
+          "trace_valid": 30
+        }
+      },
+      "states": {
+        "displaced": {
+          "complete_first": 0,
+          "coverage": 0,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 9,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 0,
+          "scope": 0,
+          "static": 0
+        },
+        "outside": {
+          "complete_first": 0,
+          "coverage": 0,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 9,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 0,
+          "scope": 0,
+          "static": 0
+        },
+        "present": {
+          "complete_first": 0,
+          "coverage": 0,
+          "delta": 0,
+          "n": 9,
+          "paired": {
+            "both_correct": 0,
+            "both_failed": 9,
+            "improved": 0,
+            "worsened": 0
+          },
+          "rerank": 0,
+          "scope": 0,
+          "static": 0
+        }
+      },
+      "total": {
+        "complete_first": 0,
+        "coverage": 0,
+        "delta": 0,
+        "n": 27,
+        "paired": {
+          "both_correct": 0,
+          "both_failed": 27,
+          "improved": 0,
+          "worsened": 0
+        },
+        "rerank": 0,
+        "scope": 0,
+        "static": 0
+      }
+    }
+  }
+}
