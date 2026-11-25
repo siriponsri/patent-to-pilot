@@ -1,7 +1,7 @@
 # P2-T02 D19 follow-up receipt, P1-DEV
 
-**Runtime state:** PatEmbed complete, all gates PASS and the pod deleted. Qwen3 completed all 14 C1 encode shards at
-25 Nov 00:16:19 UTC, and retrieval is running. Qwen3 evaluation remains NOT_RUN at this checkpoint.
+**Runtime state:** both models completed and all gates passed. Both result bundles were verified and both pods were
+deleted. Qwen3 billing still awaits the last posted bucket.
 **Protocol:** P2-T02 coverage control `bd30d3f7` with A2 declared in `ffae7a99` and verified implementation
 `d30d9d51`. D26 authorizes launch and up to USD 20 inside R2. The local stage is pinned in the
 [D19 readiness receipt](P2-T02_D19_readiness.md).
@@ -9,7 +9,7 @@
 | Model | Pod / region | Hourly price | Start (UTC) | Reservation | Receipt |
 |---|---|---|---|---|---|
 | PatEmbed | `arm09wy8rok4qk`, Secure A100 SXM 80 GB / US-MD-1 | USD 2.19 compute, up to USD 0.03 disk budget | 2026-11-24 13:47:49 | Released at deletion | PASS, deleted |
-| Qwen3 | `10813cm5sej2s2`, Secure RTX PRO 4500 Server Edition / US-KS-2 | USD 0.72 compute, up to USD 0.03 disk budget | 2026-11-24 14:58:21 | USD 8.50 | Active |
+| Qwen3 | `10813cm5sej2s2`, Secure RTX PRO 4500 Server Edition / US-KS-2 | USD 0.72 compute, up to USD 0.03 disk budget | 2026-11-24 14:58:21 | Released at deletion | PASS, deleted |
 
 Operational PatEmbed deadline 17:47:49 UTC includes transfers. The in-container timer reported armed for
 17:55:49 UTC as a fallback. SSH upload started 13:49:10 UTC. Settlement will record actual disk, compute,
@@ -91,3 +91,30 @@ ending before the actual deletion. The observed effective running rate was USD 2
 provisional total and reconcile posted billing after it catches up. The subsequent provider read after the
 16:00 UTC bucket caught up reports USD 5.98138593, including USD 5.92583037 GPU and USD 0.05555556 disk.
 This replaces the provisional charge.
+
+## Qwen3 settled result
+
+Bundle `../_private_artifacts/p2t02-d19-runpod/p2t02-d19-qwen3-results.tgz`, SHA-256
+`1f64625c0d6d47c5d8f8f96815ba7bd299fc85f3250a9a1432d1707f9d108321`. The frozen analysis is bundle member
+`data/ptp-paper2/p2-coverage/d19/qwen3/results-qwen3.json`. All gates passed. V checked 2,048 passages with
+100% token identity and minimum cosine 1.0000. Q checked 256 queries and their first 50 units, with median score
+difference 0.00013 and 100% of differences at most 0.005. The final gate binds the 511-token window to the build.
+
+| P1-DEV Qwen3 | ALL R@200 | IN R@200 | OUT R@200 | ALL R@1000 | OUT MRR |
+|---|---:|---:|---:|---:|---:|
+| C0 | 0.34736 | 0.40677 | 0.27408 | 0.51994 | 0.07185 |
+| C1 | 0.35941 | 0.41794 | 0.28439 | 0.53721 | 0.07482 |
+| C1 − C0 [95% CI] | +0.01205 [0.01007, 0.01409] | +0.01117 [0.00806, 0.01434] | +0.01030 [0.00729, 0.01323] | — | — |
+
+The frozen rule selects **Qwen3 C1**. The evaluator scored 26,547 eligible ALL queries and retrieval ran for
+25,626 with text. At 200, C1 newly retrieved 5,229 ALL judged positives and displaced 4,004.
+
+Content build took 292.0 seconds at 14.69 GiB peak RSS. C1 encode took 32,149.0 seconds at 28.02 GiB peak RSS and
+retrieval took 660.8 seconds at 25.84 GiB peak RSS. Gates finished 25 Nov 00:27:47 UTC and the result pack
+finished at 00:28:47. The archive pull verified 00:30:13. Scoped CLI termination exited 1. Management API delete
+returned 204 at about 00:34:53 UTC and a subsequent GET returned 404. The account pod list was empty.
+
+The first Qwen3 post-teardown read showed USD 6.33205 in the 24 Nov billing bucket. The 25 Nov closing bucket
+had yet to post. The observed live rate was USD 0.741/hour and the conservative carry is USD 7.20 until posted
+billing catches up. D19 posted PatEmbed plus provisional Qwen3 is USD 13.18 of the USD 20 sub-cap, inside R2.
+Both complete-content dense representations go into the P2-T04 freeze alongside Arctic C1 and BM25-full.

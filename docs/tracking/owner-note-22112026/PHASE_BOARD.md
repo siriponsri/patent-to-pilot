@@ -1,6 +1,6 @@
 # Phase board (live)
 
-Rendered from `goal_registry.json` at 2026-11-25T07:19:00+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
+Rendered from `goal_registry.json` at 2026-11-25T07:40:23+07:00. Do not edit by hand; use `python scripts/tracking/ptp_tracker.py set ...`. Status and research outcome are separate fields.
 
 ## Readiness
 
@@ -55,9 +55,9 @@ Phase status: **IN_PROGRESS**
 | Task | Title | Status | Outcome | Evidence | Next | Blocker | AFFiNE |
 |---|---|---|---|---|---|---|---|
 | P2-T01 | Audit eligible content and available structural evidence | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T01_content_coverage_audit.md | P2-T02 (claims-complete rebuild vs equal-content control; Arctic/BM25 pilot first) | — | NOT_SYNCED |
-| P2-T02 | Establish complete-content and stronger simple controls | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md | Finish Qwen3 then pin the effective representation baselines for P2-T04 | — | NOT_SYNCED |
+| P2-T02 | Establish complete-content and stronger simple controls | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T02_coverage_control_results.md; docs/tracking/owner-note-22112026/receipts/P2-T02_D19_followup_results.md | Use both D19 C1 routes in frozen P2-T04 | — | NOT_SYNCED |
 | P2-T03 | Implement one bounded source-relation search action | ✅ COMPLETE | ENGINEERING_VERIFIED | docs/tracking/owner-note-22112026/receipts/P2-T03_mechanism_spec.md; docs/tracking/owner-note-22112026/receipts/P2-T03_mechanism_verification.md; src/patent_to_pilot/workbench/relation_search.py; tests/test_p2_t03_relation_search.py | P2-T04 (after P2-T02 controls); P4-T03 | — | NOT_SYNCED |
-| P2-T04 | Screen the bounded mechanism against close matched controls | 🟡 PARTIAL | NOT_RUN | docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md | Settle D19 and freeze P1-DEV comparator manifest before research run | Comparator decisions pending D19 execution; offline runtime prep can proceed | NOT_SYNCED |
+| P2-T04 | Screen the bounded mechanism against close matched controls | 🟡 PARTIAL | NOT_RUN | docs/healthtech/research/p2-coverage/P2-T04-SCREEN-PREPARATION.md; docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md | Run frozen P1-DEV 2,000-app CPU comparison after exact BM25-full parity | — | NOT_SYNCED |
 | P2-T05 | Freeze the selected method, primary endpoint and next evaluation | ⏳ NOT_STARTED | NOT_RUN | — | P2-T06 | — | NOT_SYNCED |
 | P2-T06 | Measure the primary matched retrieval comparison | ⏳ NOT_STARTED | NOT_RUN | — | P2-T07; P3-T03 | — | NOT_SYNCED |
 | P2-T07 | Attribute candidate acquisition and decide research readiness | ⏳ NOT_STARTED | NOT_RUN | — | P3-T03; P4 integration; P5-T02 | — | NOT_SYNCED |

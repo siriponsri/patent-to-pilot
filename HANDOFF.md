@@ -68,32 +68,27 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   +0.00718 [0.00505, 0.00936], from 0.41806 to 0.42523. Verified output is in
   `../_private_artifacts/p2t02-d19-runpod/p2t02-d19-patembed-results.tgz`. The collector pulled the archive at
   16:27:35 UTC. Scoped termination failed, so the RunPod management API deleted `arm09wy8rok4qk`. GET returned 404
-  and the pod list shows only Qwen3. Posted PatEmbed billing after catch-up is USD 5.98139. The full lexical
+  and the pod list confirmed removal. Posted PatEmbed billing after catch-up is USD 5.98139. The full lexical
   corpus is also verified locally.
-- **Qwen3 pod active:** `10813cm5sej2s2`, Secure RTX PRO 4500 Blackwell Server Edition in US-KS-2, quoted at
-  USD 0.72/hour compute plus up to USD 0.03/hour ephemeral disk. Created 24 Nov 14:58:21 UTC after capacity returned.
-  Setup started. Operational deadline 25 Nov 01:46:21 UTC and best-effort in-pod timer 01:54:21 UTC.
-  USD 8.50 reserved. Pre-encode gates passed with window 511 and Qwen3 started C1 encoding at 15:20:29 UTC.
-  All 14 shards completed and C1 encoding exited at 25 Nov 00:16:19 UTC. Retrieval, evaluation and the
-  verified pull are next. Keep monitoring the 01:46 UTC limit.
-  The job launched with the optional fast-transfer setting off. Earlier L40S/RTX attempts and expired queue
-  created no pod.
-- **D19 settlement:** both workers have Bash progress watchers. The success-only collector
-  `../_private_artifacts/settle-ptp-d19-on-success-20261124.sh` verifies a result archive before requesting termination
-  of its assigned pod. The PatEmbed scoped CLI failed and Qwen3 scoped CLI self-lookup is unverified.
-  Keep the management API ready for immediate deletion after a verified pull or at the operational deadline.
+- **Qwen3 complete:** all A2 gates passed. C1 replaces C0 under the frozen rule, ALL R@200
+  +0.01205 [0.01007, 0.01409], from 0.34736 to 0.35941. Verified archive
+  `../_private_artifacts/p2t02-d19-runpod/p2t02-d19-qwen3-results.tgz`. The scoped termination failed, so management
+  API deleted `10813cm5sej2s2` at about 25 Nov 00:34:53 UTC. GET returned 404 and the account pod list is empty.
+  The Qwen3 billing API still lagged the final bucket. Carry USD 7.20 provisionally and reconcile after the update.
+- **D19 complete:** both model baselines are C1. The gains are complete-content representation controls.
 - **P2-T04 artifact staging:** ten non-TEST runtime and historical inputs passed transfer and SHA-256 checks on
   `/data/ptp-paper2/p2t04-run-prep-20261124`. The 30 GiB MemAvailable guard did not trigger. The lexical stream
   has been materialized and hash-checked, the two evaluator inputs are in a separate directory, and both entry
-  points from `ff9c2048` load on dr-train. The verified PatEmbed C1 ranking is staged. Complete the comparator
-  manifest after Qwen3 before retrieval or scoring.
+  points from `ff9c2048` load on dr-train. Both C1 rankings, the frozen manifests and the CPU launcher passed
+  transfer and SHA-256 verification. The next job is the frozen P1-DEV screen on CPU with a 30 GiB watchdog and
+  exact BM25 reproduction before any matched scores. [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md).
 
-### Money and access (24 Nov)
+### Money and access (25 Nov)
 
 - **E1R** (OpenRouter + Typhoon; USD 50, notify 40): committed USD 3.853 (33,685 attempts) after Stage B. OpenRouter
   credits: total 20, usage about 5.5.
-- **RunPod:** prepaid balance was about USD 40.6 before D19. Only Qwen3 is active, USD 8.50 reserved.
-  No network volume was created.
+- **RunPod:** prepaid balance was USD 27.58 after both pods were deleted. Neither pod remains active.
+  No network volume was created. D19 is about USD 13.18 on the provisional Qwen3 charge, within USD 20/R2.
   - R1 (D20, USD 20): about USD 5.1 used (P2-T02 pods).
   - R2 (D22/D24, USD 60, notify 45): about USD 11.3 used (A3r1 pilot pods 9.6 + full-evaluation pod 1.7).
   - D21 allows a network volume for reusable data; none has been created.
