@@ -850,7 +850,7 @@
    "acceptance_evidence": "Use permitted DEV only; compare static queries, generic feedback, extractive feedback and shuffled bindings as needed; count new families and net final score, all attempted variants and costs.",
    "evidence_uri": "docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md; docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md",
    "check_result": "2026-11-25",
-   "next_task": "Diagnose first exact BM25 archive mismatch before rerunning frozen gate",
+   "next_task": "Diagnose the exact BM25 mismatch; verify whether an isolated original dependency is needed",
    "budget_authority": "Exact protocol must fit an explicitly approved envelope; E1R remains pending",
    "budget_spent_usd": null,
    "budget_reserved_usd": null,
@@ -862,10 +862,10 @@
    "affine_item_id": "",
    "affine_item_url": "",
    "affine_sync_status": "NOT_SYNCED",
-   "blocker": "Attempt 1 archive BM25 reproduction failed; evaluator never started",
+   "blocker": "213 exact matches before archive mismatch at query 214; no matched metrics",
    "budget_remaining_usd": null,
    "owner_decision_pending": "",
-   "notes": "[2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze. | [2026-11-24] Arctic C1 and BM25-full retrieval run fingerprints recorded. P2-T04 adapters await full suite and frozen manifest; no DEV metrics computed. | [2026-11-24] Offline runner requires a pinned P1-DEV manifest, exact original-query BM25 parity, shared G03 seed and an isolated evaluator. | [2026-11-24] Source adapters and frozen-manifest entry point verified on authored fixtures. dr-train has sklearn 1.9.1; require exact archival BM25 parity. | [2026-11-24] Staged P1-DEV Arctic-serialised original queries under the dr-train memory watchdog and recovered the exact historical A3r1 comparator from the verified archive. | [2026-11-24] One bounded stream with 30 GiB MemAvailable guard. No new retrieval calls. | [2026-11-24] Evaluator keeps an exact P1-DEV cohort, includes empty rankings and reads judgments outside runtime. | [2026-11-24] Separate evaluator ready. Runtime manifest awaits D19 decisions and exact archive BM25 reproduction. | [2026-11-24] Code archive ff9c2048. Complete frozen route decisions after D19. No research job has run on dr-train. | [2026-11-24] The Windows sklearn skip was exercised with actual dr-train backend dependencies using one CPU process and the 30 GiB guard. | [2026-11-25] [2026-11-25] D19 C1 controls and frozen runtime/evaluator manifests verified on dr-train. No matched rankings or scores yet. | [2026-11-25] [2026-11-25] The frozen CPU launcher started at 00:40:48 UTC. One guarded process group; no RunPod spend. | [2026-11-25] [2026-11-25] First frozen app differs. Zero matched scores; no memory abort or paid spend."
+   "notes": "[2026-11-24] D26 authorizes parallel synthetic runtime preparation; no research scoring before freeze. | [2026-11-24] Arctic C1 and BM25-full retrieval run fingerprints recorded. P2-T04 adapters await full suite and frozen manifest; no DEV metrics computed. | [2026-11-24] Offline runner requires a pinned P1-DEV manifest, exact original-query BM25 parity, shared G03 seed and an isolated evaluator. | [2026-11-24] Source adapters and frozen-manifest entry point verified on authored fixtures. dr-train has sklearn 1.9.1; require exact archival BM25 parity. | [2026-11-24] Staged P1-DEV Arctic-serialised original queries under the dr-train memory watchdog and recovered the exact historical A3r1 comparator from the verified archive. | [2026-11-24] One bounded stream with 30 GiB MemAvailable guard. No new retrieval calls. | [2026-11-24] Evaluator keeps an exact P1-DEV cohort, includes empty rankings and reads judgments outside runtime. | [2026-11-24] Separate evaluator ready. Runtime manifest awaits D19 decisions and exact archive BM25 reproduction. | [2026-11-24] Code archive ff9c2048. Complete frozen route decisions after D19. No research job has run on dr-train. | [2026-11-24] The Windows sklearn skip was exercised with actual dr-train backend dependencies using one CPU process and the 30 GiB guard. | [2026-11-25] [2026-11-25] D19 C1 controls and frozen runtime/evaluator manifests verified on dr-train. No matched rankings or scores yet. | [2026-11-25] [2026-11-25] The frozen CPU launcher started at 00:40:48 UTC. One guarded process group; no RunPod spend. | [2026-11-25] [2026-11-25] First frozen app differs. Zero matched scores; no memory abort or paid spend. | [2026-11-25] [2026-11-25] Attempt logs pulled and hash-verified. Scoped diagnostic v2 started 01:00:12 UTC; per-item approval requested for the original scikit-learn wheel."
   },
   {
    "task_id": "P2-T05",
@@ -1510,5 +1510,5 @@
   "tracking/PHASE_BOARD.md": "1bb1aed7e53a2d08274565f2fb3ff4084932bfaf703620cbc018a2b0ecc46f8a"
  },
  "seed_root": "docs/owner/owner-note-22112026 (owner-local, untracked, read-only)",
- "live_updated_at": "2026-11-25T07:57:15+07:00"
+ "live_updated_at": "2026-11-25T08:02:50+07:00"
 }

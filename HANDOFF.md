@@ -81,9 +81,10 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   has been materialized and hash-checked, the two evaluator inputs are in a separate directory, and both entry
   points from `ff9c2048` load on dr-train. Both C1 rankings, the frozen manifests and the CPU launcher passed
   transfer and SHA-256 verification. The frozen P1-DEV CPU screen started at 00:40:48 UTC on 25 Nov after the
-  freeze was published in `d46ac2aa`. Attempt 1 stopped at 00:53:13 UTC on the first archived BM25 reproduction
-  mismatch. The evaluator never started and the matched score is NOT_RUN. Preserve `driver.log` and `screen-v1/`
-  under that dr-train root and diagnose the exact mismatch under the 30 GiB watchdog before retry.
+  freeze was published in `d46ac2aa`. Attempt 1 stopped at 00:53:13 UTC after 213 exact BM25 matches and one
+  mismatch. The evaluator never started and the matched score is NOT_RUN. The three attempt logs were pulled and
+  hash-verified. One gate-only CPU diagnostic runs under the 30 GiB watchdog in `diagnostics-v2/` on dr-train.
+  A download decision is pending for the archived scikit-learn version. The shared environment is intact.
   [Freeze receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_frozen_protocol.md),
   [execution receipt](docs/tracking/owner-note-22112026/receipts/P2-T04_execution.md).
 
