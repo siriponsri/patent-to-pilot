@@ -74,7 +74,7 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
   +0.01205 [0.01007, 0.01409], from 0.34736 to 0.35941. Verified archive
   `../_private_artifacts/p2t02-d19-runpod/p2t02-d19-qwen3-results.tgz`. The scoped termination failed, so management
   API deleted `10813cm5sej2s2` at about 25 Nov 00:34:53 UTC. GET returned 404 and the account pod list is empty.
-  The Qwen3 billing API still lagged the final bucket. Carry USD 7.20 provisionally and reconcile after the update.
+  RunPod posted USD 7.07229 across both UTC billing days, including the closing period through deletion.
 - **D19 complete:** both model baselines are C1. The gains are complete-content representation controls.
 - **P2-T04 artifact staging:** ten non-TEST runtime and historical inputs passed transfer and SHA-256 checks on
   `/data/ptp-paper2/p2t04-run-prep-20261124`. The 30 GiB MemAvailable guard did not trigger. The lexical stream
@@ -96,9 +96,9 @@ are preserved. Ordered instructions: [next-account handoff](docs/maintenance/NEX
 - **E1R** (OpenRouter + Typhoon; USD 50, notify 40): committed USD 3.853 (33,685 attempts) after Stage B. OpenRouter
   credits: total 20, usage about 5.5.
 - **RunPod:** prepaid balance was USD 27.58 after both pods were deleted. Neither pod remains active.
-  No network volume was created. D19 is about USD 13.18 on the provisional Qwen3 charge, within USD 20/R2.
+  No network volume was created. D19 posted USD 13.05367 of the USD 20 sub-cap. USD 6.94633 remained.
   - R1 (D20, USD 20): about USD 5.1 used (P2-T02 pods).
-  - R2 (D22/D24, USD 60, notify 45): about USD 11.3 used (A3r1 pilot pods 9.6 + full-evaluation pod 1.7).
+  - R2 (D22/D24/D26, USD 60, notify 45): about USD 24.35 used (A3r1 about 11.30 and D19 13.05367).
   - D21 allows a network volume for reusable data; none has been created.
 - **Upload route:** US data centres only. EU-SE-1 measured 47 KB/s from the owner PC; US measured 3–8 MB/s over 4 streams.
 - `OPENROUTER_API_KEY` and `TYPHOON_API_KEY` are user environment variables. The RunPod SSH key is

@@ -1,7 +1,7 @@
 # P2-T02 D19 follow-up receipt, P1-DEV
 
 **Runtime state:** both models completed and all gates passed. Both result bundles were verified and both pods were
-deleted. Qwen3 billing still awaits the last posted bucket.
+deleted. Billing is reconciled for both pods.
 **Protocol:** P2-T02 coverage control `bd30d3f7` with A2 declared in `ffae7a99` and verified implementation
 `d30d9d51`. D26 authorizes launch and up to USD 20 inside R2. The local stage is pinned in the
 [D19 readiness receipt](P2-T02_D19_readiness.md).
@@ -114,7 +114,9 @@ retrieval took 660.8 seconds at 25.84 GiB peak RSS. Gates finished 25 Nov 00:27:
 finished at 00:28:47. The archive pull verified 00:30:13. Scoped CLI termination exited 1. Management API delete
 returned 204 at about 00:34:53 UTC and a subsequent GET returned 404. The account pod list was empty.
 
-The first Qwen3 post-teardown read showed USD 6.33205 in the 24 Nov billing bucket. The 25 Nov closing bucket
-had yet to post. The observed live rate was USD 0.741/hour and the conservative carry is USD 7.20 until posted
-billing catches up. D19 posted PatEmbed plus provisional Qwen3 is USD 13.18 of the USD 20 sub-cap, inside R2.
+The first Qwen3 post-teardown read showed USD 6.33205 in the 24 Nov billing bucket while the 25 Nov bucket was
+pending. At 01:30 UTC on 25 Nov the RunPod pod billing API showed USD 6.640114804264158 for 24 Nov and
+USD 0.43217097769957036 for the closing period on 25 Nov. Qwen3 posted USD 7.072285781963728. With PatEmbed at
+USD 5.981385927647352, D19 posted USD 13.05367170961108, leaving USD 6.94632829038892 of the USD 20 sub-cap
+within R2. Both reservations are released. The account pod list was empty, including cluster-member pods.
 Both complete-content dense representations go into the P2-T04 freeze alongside Arctic C1 and BM25-full.
