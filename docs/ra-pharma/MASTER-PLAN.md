@@ -15,7 +15,7 @@ Owner decision of 26 November 2026. Patent-to-Pilot keeps its repository name. T
 
 The [current architecture review](READING-ARCHITECTURE-REVIEW.md) connects reading depth to branch-specific evidence and missing-item requests. The EPO source preflight is published on the Research branch. Complete exclusion coverage is still missing. The first branch-reading check uses exposed developer material.
 
-Under D31 the Research Executor is preparing a separate public Thai correspondence pilot. The Planner reviews enrollment, independent answer locators and matched controls before release. The six handoff cases and the 12 synthetic dossiers above stay closed.
+Under D31 the Research Executor is preparing a separate public Thai correspondence pilot. The [independent source key and audit](THAI-INQUIRY-AUDIT.md) cover 11 inquiry issues in seven official opinions. The Planner reviews enrollment, answer locators and matched controls before release. The six handoff cases and the 12 synthetic dossiers above stay closed.
 
 For a fictional taste-masked tablet, the patent agent compares the product facts with inherited and added claim limitations. A country-specific FTO evidence file records the missing legal-status checks. The regulatory agent maps applicable Thai registration requirements to the applicant's evidence and identifies missing attachments. The correspondence agent reads the questions on a sample incoming letter and drafts a reply in the sender's template. A reviewer can open the precise page behind a sentence, see which product it describes, and decide whether to sign. The product operator controls issuance.
 
