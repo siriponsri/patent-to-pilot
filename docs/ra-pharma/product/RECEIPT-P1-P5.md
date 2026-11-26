@@ -41,10 +41,10 @@ The [owner walkthrough](../../../examples/ra_pharma/README.md) gives the exact c
 | Check | Command or route | Result |
 |---|---|---|
 | Product tests | `python -m pytest tests/ra_pharma_product -o addopts=` (QA venv, Chromium 1228) | 15 passed: 14 engine tests and the browser walkthrough through `scripts/ptp_run.py --serve`, with every non-loopback request blocked (none observed), restart, `--backup` and serving the restored copy |
-| Workbench regressions | Existing UI, scope reader, G01, G02, P4 suites | 130 passed after one fix: the G01 oracle guard reads each `static/*` entry as text, so the fonts moved to `workbench/fonts/` |
+| Workbench regressions | Existing UI, scope reader, G01, G02, P4 suites | The first run failed one G01 oracle guard, which reads each `static/*` entry as text. The fonts moved to `workbench/fonts/`; the guard and all other suites passed in the full gate |
 | Normal launcher | `Start-PTP.cmd --data-dir <fresh> --port 18931` with `PTP_NO_BROWSER=1` | Served by the repository `.venv` (pypdf 6.21.4); catalog, build, Sarabun font (`font/ttf`, 90,220 bytes) and DOCX download (attachment) responded. Doctor exit 0; smoke 15/15 |
 | Scripted walkthrough with rendering | `examples/ra_pharma/walkthrough.py <out> --render` | Exit 0. Replays 1, 2, 3 and 6 all matched. HTML print (Chromium) and DOCX (LibreOffice) each rendered one A4 page with embedded Sarabun and the operator's edited number |
-| Full repository gate | `python -m pytest -o addopts= -q --tb=short --basetemp %TEMP%\rp1` with `PYTHONPATH=<S4 qa-sites>` | GATE_RESULT |
+| Full repository gate | `python -m pytest -o addopts= -q --tb=short --basetemp %TEMP%\rp1` with `PYTHONPATH=<S4 qa-sites>` | Exit 1 under the standing policy: 2,809 passed, 8 failed, 7 skipped, 1 xfailed in 450.72 s (12:35:49–12:43:23 UTC). All eight failures are the documented SACR r2/r3 budget cases. `pytest.log` SHA-256 `9eed23b1…b6ab`. The run started before the licensor-reply test was added; the final `tests/ra_pharma_product` rerun passed 15 of 15 |
 
 Evidence is in `../_private_artifacts/ptp-ra-product-20261126/`: `walkthrough-r1/summary.json` (`0548f4f7…7636`), `reply.docx` (`223ff3e3…f0`), `reply-html.pdf` (`d5dab29b…601d`), `docx-render/reply.pdf` (`d71310af…8326`), `launcher-r1/` doctor and smoke logs, `qa-full-r1/pytest.log`, and the source captures in `sources/`.
 

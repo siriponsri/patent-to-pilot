@@ -9,7 +9,7 @@
 - **Changed entrypoints:** new modules `workbench/dossier.py`, `letters.py`, `skill_eval.py`; routes under `/api/dossier/` in `server.py`; `static/dossier.js` plus tab markup in `index.html`, hooks in `app.js` and styles in `app.css`; fonts in `workbench/fonts/`. The launcher scripts are unchanged.
 - **Demo inputs:** [`sample/ra_pharma/`](../../../src/patent_to_pilot/workbench/sample/ra_pharma/README.md); fictional PDFs built by `examples/ra_pharma/build_fixtures.py`; public excerpts with digests and rights notes in `pack.json`. Source captures are private in `../_private_artifacts/ptp-ra-product-20261126/sources/`.
 - **Store:** five new SQLite tables (`dossier_snapshots`, `dossier_blobs`, `dossier_letters`, `dossier_skills`, `dossier_skill_events`) in the existing Workbench store, so `--backup` covers them. Fresh stores start at skill 1.0.0 by design; the walkthrough performs the promotion.
-- **QA:** product tests 15 passed; full gate recorded in the receipt with its exact environment.
+- **QA:** product tests 15 passed. Full gate: 2,809 passed and only the 8 standing SACR budget failures (raw exit 1), environment in the receipt. Deliverables commit `0c77258b`.
 
 ## Open decisions and next actions
 
