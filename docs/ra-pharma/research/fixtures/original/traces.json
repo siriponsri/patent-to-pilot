@@ -1,0 +1,3989 @@
+{
+  "cpu_seconds": 0.0,
+  "traces": [
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 106,
+              "inspections": 2,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "a3be0447b2f61815d8436dea7e2d41e983d6b6631385a409367eb1e0e4819ec8",
+              "source_id": "d01-doc01",
+              "version": "d01-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d01",
+            "evidence_role": "patent_disclosure",
+            "item_id": "d01/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 106,
+                "inspections": 2,
+                "issuer": "Patent publication office",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "a3be0447b2f61815d8436dea7e2d41e983d6b6631385a409367eb1e0e4819ec8",
+                "source_id": "d01-doc01",
+                "source_owner": "Patent publication office",
+                "version": "d01-ed02"
+              }
+            ],
+            "statement": "Finding 10",
+            "status": "supported",
+            "subject_id": "d01-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d01/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d01/evidence"
+            ],
+            "dossier_id": "d01",
+            "evidence_role": "applicant_result",
+            "item_id": "d01/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d01-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d01/fixed"
+          },
+          "stop": "topic"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 2,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 2, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "e0d7e544b0ed3168fff4d90f8c4881d1b5d8f81b44cc19bf5148739cbf8814ab",
+              "source_id": "d01-doc02",
+              "version": "d01-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d01",
+            "evidence_role": "applicant_result",
+            "item_id": "d01/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "e0d7e544b0ed3168fff4d90f8c4881d1b5d8f81b44cc19bf5148739cbf8814ab",
+                "source_id": "d01-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d01-ed02"
+              }
+            ],
+            "statement": "Finding 10",
+            "status": "supported",
+            "subject_id": "d01-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d01/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d01/evidence"
+            ],
+            "dossier_id": "d01",
+            "evidence_role": "applicant_result",
+            "item_id": "d01/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "e0d7e544b0ed3168fff4d90f8c4881d1b5d8f81b44cc19bf5148739cbf8814ab",
+                "source_id": "d01-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d01-ed02"
+              }
+            ],
+            "statement": "Finding 10",
+            "status": "supported",
+            "subject_id": "d01-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d01/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 2,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 2, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "e0d7e544b0ed3168fff4d90f8c4881d1b5d8f81b44cc19bf5148739cbf8814ab",
+              "source_id": "d01-doc02",
+              "version": "d01-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d01",
+            "evidence_role": "applicant_result",
+            "item_id": "d01/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "e0d7e544b0ed3168fff4d90f8c4881d1b5d8f81b44cc19bf5148739cbf8814ab",
+                "source_id": "d01-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d01-ed02"
+              }
+            ],
+            "statement": "Finding 10",
+            "status": "supported",
+            "subject_id": "d01-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d01/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d01/evidence"
+            ],
+            "dossier_id": "d01",
+            "evidence_role": "applicant_result",
+            "item_id": "d01/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "e0d7e544b0ed3168fff4d90f8c4881d1b5d8f81b44cc19bf5148739cbf8814ab",
+                "source_id": "d01-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d01-ed02"
+              }
+            ],
+            "statement": "Finding 10",
+            "status": "supported",
+            "subject_id": "d01-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d01/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 2,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 2, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "e0d7e544b0ed3168fff4d90f8c4881d1b5d8f81b44cc19bf5148739cbf8814ab",
+              "source_id": "d01-doc02",
+              "version": "d01-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d01",
+            "evidence_role": "applicant_result",
+            "item_id": "d01/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "e0d7e544b0ed3168fff4d90f8c4881d1b5d8f81b44cc19bf5148739cbf8814ab",
+                "source_id": "d01-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d01-ed02"
+              }
+            ],
+            "statement": "Finding 10",
+            "status": "supported",
+            "subject_id": "d01-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d01/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d01/evidence"
+            ],
+            "dossier_id": "d01",
+            "evidence_role": "applicant_result",
+            "item_id": "d01/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "e0d7e544b0ed3168fff4d90f8c4881d1b5d8f81b44cc19bf5148739cbf8814ab",
+                "source_id": "d01-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d01-ed02"
+              }
+            ],
+            "statement": "Finding 10",
+            "status": "supported",
+            "subject_id": "d01-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d01/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 106,
+              "inspections": 2,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "a3be0447b2f61815d8436dea7e2d41e983d6b6631385a409367eb1e0e4819ec8",
+              "source_id": "d01-doc01",
+              "version": "d01-ed02"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d01",
+            "evidence_role": "applicant_result",
+            "item_id": "d01/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d01-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d01/single"
+          },
+          "stop": "topic"
+        }
+      },
+      "case": "d01"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 105,
+              "inspections": 2,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "7ab1703286adb0af4b43ea4073c8d6f72e0379f858102bb1e12e032712c7a591",
+              "source_id": "d02-doc01",
+              "version": "d02-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d02",
+            "evidence_role": "claim_limitation",
+            "item_id": "d02/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 105,
+                "inspections": 2,
+                "issuer": "Patent publication office",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "7ab1703286adb0af4b43ea4073c8d6f72e0379f858102bb1e12e032712c7a591",
+                "source_id": "d02-doc01",
+                "source_owner": "Patent publication office",
+                "version": "d02-ed02"
+              }
+            ],
+            "statement": "Finding 11",
+            "status": "supported",
+            "subject_id": "d02-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d02/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d02/evidence"
+            ],
+            "dossier_id": "d02",
+            "evidence_role": "claim_limitation",
+            "item_id": "d02/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "claim_limitation"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d02-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d02/fixed"
+          },
+          "stop": "topic"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 105,
+              "inspections": 2,
+              "issuer": "Patent publication office",
+              "locator": "p. 2, paragraph 1",
+              "route": "claim_parent",
+              "routes_available": [
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "36f095f652d8cb4086e28fd31277fe6f6f2362a9cec21f899ed7e34a06d3d297",
+              "source_id": "d02-doc02",
+              "version": "d02-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d02",
+            "evidence_role": "claim_limitation",
+            "item_id": "d02/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 105,
+                "inspections": 2,
+                "issuer": "Patent publication office",
+                "locator": "p. 2, paragraph 1",
+                "route": "claim_parent",
+                "routes_available": [
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "36f095f652d8cb4086e28fd31277fe6f6f2362a9cec21f899ed7e34a06d3d297",
+                "source_id": "d02-doc02",
+                "source_owner": "Patent publication office",
+                "version": "d02-ed02"
+              }
+            ],
+            "statement": "Finding 11",
+            "status": "supported",
+            "subject_id": "d02-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d02/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d02/evidence"
+            ],
+            "dossier_id": "d02",
+            "evidence_role": "claim_limitation",
+            "item_id": "d02/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 105,
+                "inspections": 2,
+                "issuer": "Patent publication office",
+                "locator": "p. 2, paragraph 1",
+                "route": "claim_parent",
+                "routes_available": [
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "36f095f652d8cb4086e28fd31277fe6f6f2362a9cec21f899ed7e34a06d3d297",
+                "source_id": "d02-doc02",
+                "source_owner": "Patent publication office",
+                "version": "d02-ed02"
+              }
+            ],
+            "statement": "Finding 11",
+            "status": "supported",
+            "subject_id": "d02-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d02/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 105,
+              "inspections": 2,
+              "issuer": "Patent publication office",
+              "locator": "p. 2, paragraph 1",
+              "route": "claim_parent",
+              "routes_available": [
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "36f095f652d8cb4086e28fd31277fe6f6f2362a9cec21f899ed7e34a06d3d297",
+              "source_id": "d02-doc02",
+              "version": "d02-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d02",
+            "evidence_role": "claim_limitation",
+            "item_id": "d02/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 105,
+                "inspections": 2,
+                "issuer": "Patent publication office",
+                "locator": "p. 2, paragraph 1",
+                "route": "claim_parent",
+                "routes_available": [
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "36f095f652d8cb4086e28fd31277fe6f6f2362a9cec21f899ed7e34a06d3d297",
+                "source_id": "d02-doc02",
+                "source_owner": "Patent publication office",
+                "version": "d02-ed02"
+              }
+            ],
+            "statement": "Finding 11",
+            "status": "supported",
+            "subject_id": "d02-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d02/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d02/evidence"
+            ],
+            "dossier_id": "d02",
+            "evidence_role": "claim_limitation",
+            "item_id": "d02/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 105,
+                "inspections": 2,
+                "issuer": "Patent publication office",
+                "locator": "p. 2, paragraph 1",
+                "route": "claim_parent",
+                "routes_available": [
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "36f095f652d8cb4086e28fd31277fe6f6f2362a9cec21f899ed7e34a06d3d297",
+                "source_id": "d02-doc02",
+                "source_owner": "Patent publication office",
+                "version": "d02-ed02"
+              }
+            ],
+            "statement": "Finding 11",
+            "status": "supported",
+            "subject_id": "d02-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d02/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 105,
+              "inspections": 2,
+              "issuer": "Patent publication office",
+              "locator": "p. 2, paragraph 1",
+              "route": "claim_parent",
+              "routes_available": [
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "36f095f652d8cb4086e28fd31277fe6f6f2362a9cec21f899ed7e34a06d3d297",
+              "source_id": "d02-doc02",
+              "version": "d02-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d02",
+            "evidence_role": "claim_limitation",
+            "item_id": "d02/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 105,
+                "inspections": 2,
+                "issuer": "Patent publication office",
+                "locator": "p. 2, paragraph 1",
+                "route": "claim_parent",
+                "routes_available": [
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "36f095f652d8cb4086e28fd31277fe6f6f2362a9cec21f899ed7e34a06d3d297",
+                "source_id": "d02-doc02",
+                "source_owner": "Patent publication office",
+                "version": "d02-ed02"
+              }
+            ],
+            "statement": "Finding 11",
+            "status": "supported",
+            "subject_id": "d02-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d02/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d02/evidence"
+            ],
+            "dossier_id": "d02",
+            "evidence_role": "claim_limitation",
+            "item_id": "d02/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 105,
+                "inspections": 2,
+                "issuer": "Patent publication office",
+                "locator": "p. 2, paragraph 1",
+                "route": "claim_parent",
+                "routes_available": [
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "36f095f652d8cb4086e28fd31277fe6f6f2362a9cec21f899ed7e34a06d3d297",
+                "source_id": "d02-doc02",
+                "source_owner": "Patent publication office",
+                "version": "d02-ed02"
+              }
+            ],
+            "statement": "Finding 11",
+            "status": "supported",
+            "subject_id": "d02-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d02/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 105,
+              "inspections": 2,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "7ab1703286adb0af4b43ea4073c8d6f72e0379f858102bb1e12e032712c7a591",
+              "source_id": "d02-doc01",
+              "version": "d02-ed02"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d02",
+            "evidence_role": "claim_limitation",
+            "item_id": "d02/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "claim_limitation"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d02-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d02/single"
+          },
+          "stop": "topic"
+        }
+      },
+      "case": "d02"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 2,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper",
+                "legal_reference"
+              ],
+              "sha256": "9845b9f878eea5907899916d2699805dbf471255cf7de8ab2e4c3432603c3fbe",
+              "source_id": "d03-doc01",
+              "version": "d03-ed01"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d03",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d03/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 2,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper",
+                  "legal_reference"
+                ],
+                "sha256": "9845b9f878eea5907899916d2699805dbf471255cf7de8ab2e4c3432603c3fbe",
+                "source_id": "d03-doc01",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d03-ed01"
+              }
+            ],
+            "statement": "Finding 12",
+            "status": "supported",
+            "subject_id": "d03-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d03/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d03/evidence"
+            ],
+            "dossier_id": "d03",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d03/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d03-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d03/fixed"
+          },
+          "stop": "topic"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 2,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 2, paragraph 1",
+              "route": "legal_reference",
+              "routes_available": [
+                "deeper",
+                "legal_reference"
+              ],
+              "sha256": "3d52c851a39c58d97a7c3e71b654216b7bc4027accc9ed00aa07dad9496e15f3",
+              "source_id": "d03-doc02",
+              "version": "d03-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d03",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d03/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 2,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 2, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "deeper",
+                  "legal_reference"
+                ],
+                "sha256": "3d52c851a39c58d97a7c3e71b654216b7bc4027accc9ed00aa07dad9496e15f3",
+                "source_id": "d03-doc02",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d03-ed02"
+              }
+            ],
+            "statement": "Finding 12",
+            "status": "supported",
+            "subject_id": "d03-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d03/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d03/evidence"
+            ],
+            "dossier_id": "d03",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d03/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 2,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 2, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "deeper",
+                  "legal_reference"
+                ],
+                "sha256": "3d52c851a39c58d97a7c3e71b654216b7bc4027accc9ed00aa07dad9496e15f3",
+                "source_id": "d03-doc02",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d03-ed02"
+              }
+            ],
+            "statement": "Finding 12",
+            "status": "supported",
+            "subject_id": "d03-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d03/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 2,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 2, paragraph 1",
+              "route": "legal_reference",
+              "routes_available": [
+                "deeper",
+                "legal_reference"
+              ],
+              "sha256": "3d52c851a39c58d97a7c3e71b654216b7bc4027accc9ed00aa07dad9496e15f3",
+              "source_id": "d03-doc02",
+              "version": "d03-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d03",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d03/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 2,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 2, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "deeper",
+                  "legal_reference"
+                ],
+                "sha256": "3d52c851a39c58d97a7c3e71b654216b7bc4027accc9ed00aa07dad9496e15f3",
+                "source_id": "d03-doc02",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d03-ed02"
+              }
+            ],
+            "statement": "Finding 12",
+            "status": "supported",
+            "subject_id": "d03-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d03/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d03/evidence"
+            ],
+            "dossier_id": "d03",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d03/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 2,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 2, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "deeper",
+                  "legal_reference"
+                ],
+                "sha256": "3d52c851a39c58d97a7c3e71b654216b7bc4027accc9ed00aa07dad9496e15f3",
+                "source_id": "d03-doc02",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d03-ed02"
+              }
+            ],
+            "statement": "Finding 12",
+            "status": "supported",
+            "subject_id": "d03-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d03/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 2,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 2, paragraph 1",
+              "route": "legal_reference",
+              "routes_available": [
+                "deeper",
+                "legal_reference"
+              ],
+              "sha256": "3d52c851a39c58d97a7c3e71b654216b7bc4027accc9ed00aa07dad9496e15f3",
+              "source_id": "d03-doc02",
+              "version": "d03-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d03",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d03/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 2,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 2, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "deeper",
+                  "legal_reference"
+                ],
+                "sha256": "3d52c851a39c58d97a7c3e71b654216b7bc4027accc9ed00aa07dad9496e15f3",
+                "source_id": "d03-doc02",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d03-ed02"
+              }
+            ],
+            "statement": "Finding 12",
+            "status": "supported",
+            "subject_id": "d03-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d03/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d03/evidence"
+            ],
+            "dossier_id": "d03",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d03/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 2,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 2, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "deeper",
+                  "legal_reference"
+                ],
+                "sha256": "3d52c851a39c58d97a7c3e71b654216b7bc4027accc9ed00aa07dad9496e15f3",
+                "source_id": "d03-doc02",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d03-ed02"
+              }
+            ],
+            "statement": "Finding 12",
+            "status": "supported",
+            "subject_id": "d03-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d03/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 2,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper",
+                "legal_reference"
+              ],
+              "sha256": "9845b9f878eea5907899916d2699805dbf471255cf7de8ab2e4c3432603c3fbe",
+              "source_id": "d03-doc01",
+              "version": "d03-ed01"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d03",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d03/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d03-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d03/single"
+          },
+          "stop": "topic"
+        }
+      },
+      "case": "d03"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 103,
+              "inspections": 2,
+              "issuer": "Fictional review office",
+              "locator": "p. 1, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "409037b26c93195865058812f6686f5c4e66b531ab929b2fa185e218f628e073",
+              "source_id": "d04-doc01",
+              "version": "d04-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d04",
+            "evidence_role": "incoming_request",
+            "item_id": "d04/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 2,
+                "issuer": "Fictional review office",
+                "locator": "p. 1, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "409037b26c93195865058812f6686f5c4e66b531ab929b2fa185e218f628e073",
+                "source_id": "d04-doc01",
+                "source_owner": "Fictional review office",
+                "version": "d04-ed02"
+              }
+            ],
+            "statement": "Finding 13",
+            "status": "supported",
+            "subject_id": "d04-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d04/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d04/evidence"
+            ],
+            "dossier_id": "d04",
+            "evidence_role": "incoming_request",
+            "item_id": "d04/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "incoming_request"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d04-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d04/fixed"
+          },
+          "stop": "topic"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 103,
+              "inspections": 2,
+              "issuer": "Fictional review office",
+              "locator": "p. 2, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "753586f22b69215d2b799cf0e8209146302b87c05cce9f27ae253f67ff2bcf56",
+              "source_id": "d04-doc02",
+              "version": "d04-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d04",
+            "evidence_role": "incoming_request",
+            "item_id": "d04/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 2,
+                "issuer": "Fictional review office",
+                "locator": "p. 2, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "753586f22b69215d2b799cf0e8209146302b87c05cce9f27ae253f67ff2bcf56",
+                "source_id": "d04-doc02",
+                "source_owner": "Fictional review office",
+                "version": "d04-ed02"
+              }
+            ],
+            "statement": "Finding 13",
+            "status": "supported",
+            "subject_id": "d04-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d04/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d04/evidence"
+            ],
+            "dossier_id": "d04",
+            "evidence_role": "incoming_request",
+            "item_id": "d04/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 2,
+                "issuer": "Fictional review office",
+                "locator": "p. 2, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "753586f22b69215d2b799cf0e8209146302b87c05cce9f27ae253f67ff2bcf56",
+                "source_id": "d04-doc02",
+                "source_owner": "Fictional review office",
+                "version": "d04-ed02"
+              }
+            ],
+            "statement": "Finding 13",
+            "status": "supported",
+            "subject_id": "d04-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d04/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 103,
+              "inspections": 2,
+              "issuer": "Fictional review office",
+              "locator": "p. 2, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "753586f22b69215d2b799cf0e8209146302b87c05cce9f27ae253f67ff2bcf56",
+              "source_id": "d04-doc02",
+              "version": "d04-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d04",
+            "evidence_role": "incoming_request",
+            "item_id": "d04/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 2,
+                "issuer": "Fictional review office",
+                "locator": "p. 2, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "753586f22b69215d2b799cf0e8209146302b87c05cce9f27ae253f67ff2bcf56",
+                "source_id": "d04-doc02",
+                "source_owner": "Fictional review office",
+                "version": "d04-ed02"
+              }
+            ],
+            "statement": "Finding 13",
+            "status": "supported",
+            "subject_id": "d04-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d04/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d04/evidence"
+            ],
+            "dossier_id": "d04",
+            "evidence_role": "incoming_request",
+            "item_id": "d04/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 2,
+                "issuer": "Fictional review office",
+                "locator": "p. 2, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "753586f22b69215d2b799cf0e8209146302b87c05cce9f27ae253f67ff2bcf56",
+                "source_id": "d04-doc02",
+                "source_owner": "Fictional review office",
+                "version": "d04-ed02"
+              }
+            ],
+            "statement": "Finding 13",
+            "status": "supported",
+            "subject_id": "d04-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d04/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 103,
+              "inspections": 2,
+              "issuer": "Fictional review office",
+              "locator": "p. 2, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "753586f22b69215d2b799cf0e8209146302b87c05cce9f27ae253f67ff2bcf56",
+              "source_id": "d04-doc02",
+              "version": "d04-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d04",
+            "evidence_role": "incoming_request",
+            "item_id": "d04/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 2,
+                "issuer": "Fictional review office",
+                "locator": "p. 2, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "753586f22b69215d2b799cf0e8209146302b87c05cce9f27ae253f67ff2bcf56",
+                "source_id": "d04-doc02",
+                "source_owner": "Fictional review office",
+                "version": "d04-ed02"
+              }
+            ],
+            "statement": "Finding 13",
+            "status": "supported",
+            "subject_id": "d04-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d04/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d04/evidence"
+            ],
+            "dossier_id": "d04",
+            "evidence_role": "incoming_request",
+            "item_id": "d04/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 2,
+                "issuer": "Fictional review office",
+                "locator": "p. 2, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "753586f22b69215d2b799cf0e8209146302b87c05cce9f27ae253f67ff2bcf56",
+                "source_id": "d04-doc02",
+                "source_owner": "Fictional review office",
+                "version": "d04-ed02"
+              }
+            ],
+            "statement": "Finding 13",
+            "status": "supported",
+            "subject_id": "d04-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d04/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 103,
+              "inspections": 2,
+              "issuer": "Fictional review office",
+              "locator": "p. 1, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "409037b26c93195865058812f6686f5c4e66b531ab929b2fa185e218f628e073",
+              "source_id": "d04-doc01",
+              "version": "d04-ed02"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d04",
+            "evidence_role": "incoming_request",
+            "item_id": "d04/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "incoming_request"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d04-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d04/single"
+          },
+          "stop": "topic"
+        }
+      },
+      "case": "d04"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 106,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+              "source_id": "d05-doc01",
+              "version": "d05-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d05",
+            "evidence_role": "patent_disclosure",
+            "item_id": "d05/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 106,
+                "inspections": 1,
+                "issuer": "Patent publication office",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+                "source_id": "d05-doc01",
+                "source_owner": "Patent publication office",
+                "version": "d05-ed02"
+              }
+            ],
+            "statement": "Finding 14",
+            "status": "supported",
+            "subject_id": "d05-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d05/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d05/evidence"
+            ],
+            "dossier_id": "d05",
+            "evidence_role": "applicant_result",
+            "item_id": "d05/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d05-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d05/fixed"
+          },
+          "stop": "topic"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 106,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+              "source_id": "d05-doc01",
+              "version": "d05-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d05",
+            "evidence_role": "patent_disclosure",
+            "item_id": "d05/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 106,
+                "inspections": 1,
+                "issuer": "Patent publication office",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+                "source_id": "d05-doc01",
+                "source_owner": "Patent publication office",
+                "version": "d05-ed02"
+              }
+            ],
+            "statement": "Finding 14",
+            "status": "supported",
+            "subject_id": "d05-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d05/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d05/evidence"
+            ],
+            "dossier_id": "d05",
+            "evidence_role": "applicant_result",
+            "item_id": "d05/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d05-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d05/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 106,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+              "source_id": "d05-doc01",
+              "version": "d05-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d05",
+            "evidence_role": "patent_disclosure",
+            "item_id": "d05/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 106,
+                "inspections": 1,
+                "issuer": "Patent publication office",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+                "source_id": "d05-doc01",
+                "source_owner": "Patent publication office",
+                "version": "d05-ed02"
+              }
+            ],
+            "statement": "Finding 14",
+            "status": "supported",
+            "subject_id": "d05-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d05/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d05/evidence"
+            ],
+            "dossier_id": "d05",
+            "evidence_role": "applicant_result",
+            "item_id": "d05/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 106,
+                "inspections": 1,
+                "issuer": "Patent publication office",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+                "source_id": "d05-doc01",
+                "source_owner": "Patent publication office",
+                "version": "d05-ed02"
+              }
+            ],
+            "statement": "Finding 14",
+            "status": "supported",
+            "subject_id": "d05-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d05/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 106,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+              "source_id": "d05-doc01",
+              "version": "d05-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d05",
+            "evidence_role": "patent_disclosure",
+            "item_id": "d05/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 106,
+                "inspections": 1,
+                "issuer": "Patent publication office",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+                "source_id": "d05-doc01",
+                "source_owner": "Patent publication office",
+                "version": "d05-ed02"
+              }
+            ],
+            "statement": "Finding 14",
+            "status": "supported",
+            "subject_id": "d05-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d05/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d05/evidence"
+            ],
+            "dossier_id": "d05",
+            "evidence_role": "applicant_result",
+            "item_id": "d05/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d05-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d05/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 106,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "8fa3a39e6614fcfb7c3ed5456d45d9bc7f8c6f7259f3d6ed135b8b625e19dd34",
+              "source_id": "d05-doc01",
+              "version": "d05-ed02"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d05",
+            "evidence_role": "applicant_result",
+            "item_id": "d05/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d05-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d05/single"
+          },
+          "stop": "topic"
+        }
+      },
+      "case": "d05"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+              "source_id": "d06-doc01",
+              "version": "d06-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d06",
+            "evidence_role": "applicant_result",
+            "item_id": "d06/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+                "source_id": "d06-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d06-ed02"
+              }
+            ],
+            "statement": "Finding 15",
+            "status": "supported",
+            "subject_id": "d06-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d06/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d06/evidence"
+            ],
+            "dossier_id": "d06",
+            "evidence_role": "applicant_result",
+            "item_id": "d06/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+                "source_id": "d06-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d06-ed02"
+              }
+            ],
+            "statement": "Finding 15",
+            "status": "supported",
+            "subject_id": "d06-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d06/fixed"
+          },
+          "stop": "topic"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+              "source_id": "d06-doc01",
+              "version": "d06-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d06",
+            "evidence_role": "applicant_result",
+            "item_id": "d06/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+                "source_id": "d06-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d06-ed02"
+              }
+            ],
+            "statement": "Finding 15",
+            "status": "supported",
+            "subject_id": "d06-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d06/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d06/evidence"
+            ],
+            "dossier_id": "d06",
+            "evidence_role": "applicant_result",
+            "item_id": "d06/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+                "source_id": "d06-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d06-ed02"
+              }
+            ],
+            "statement": "Finding 15",
+            "status": "supported",
+            "subject_id": "d06-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d06/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+              "source_id": "d06-doc01",
+              "version": "d06-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d06",
+            "evidence_role": "applicant_result",
+            "item_id": "d06/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+                "source_id": "d06-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d06-ed02"
+              }
+            ],
+            "statement": "Finding 15",
+            "status": "supported",
+            "subject_id": "d06-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d06/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d06/evidence"
+            ],
+            "dossier_id": "d06",
+            "evidence_role": "applicant_result",
+            "item_id": "d06/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+                "source_id": "d06-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d06-ed02"
+              }
+            ],
+            "statement": "Finding 15",
+            "status": "supported",
+            "subject_id": "d06-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d06/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+              "source_id": "d06-doc01",
+              "version": "d06-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d06",
+            "evidence_role": "applicant_result",
+            "item_id": "d06/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+                "source_id": "d06-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d06-ed02"
+              }
+            ],
+            "statement": "Finding 15",
+            "status": "supported",
+            "subject_id": "d06-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d06/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d06/evidence"
+            ],
+            "dossier_id": "d06",
+            "evidence_role": "applicant_result",
+            "item_id": "d06/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+                "source_id": "d06-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d06-ed02"
+              }
+            ],
+            "statement": "Finding 15",
+            "status": "supported",
+            "subject_id": "d06-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d06/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+              "source_id": "d06-doc01",
+              "version": "d06-ed02"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d06",
+            "evidence_role": "applicant_result",
+            "item_id": "d06/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "deeper"
+                ],
+                "sha256": "a47d0463c942e0e083a87050de327bc259240f781986557c8f1fea5ffae3ce64",
+                "source_id": "d06-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d06-ed02"
+              }
+            ],
+            "statement": "Finding 15",
+            "status": "supported",
+            "subject_id": "d06-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d06/single"
+          },
+          "stop": "topic"
+        }
+      },
+      "case": "d06"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 2,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "53039fcd309f9697c622baf780c7d47fb86ebb8acac324398bc3247a7e9fdfb9",
+              "source_id": "d07-doc01",
+              "version": "d07-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d07",
+            "evidence_role": "applicant_result",
+            "item_id": "d07/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "53039fcd309f9697c622baf780c7d47fb86ebb8acac324398bc3247a7e9fdfb9",
+                "source_id": "d07-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d07-ed02"
+              }
+            ],
+            "statement": "Finding 16",
+            "status": "supported",
+            "subject_id": "d07-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d07/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d07/evidence"
+            ],
+            "dossier_id": "d07",
+            "evidence_role": "applicant_result",
+            "item_id": "d07/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "53039fcd309f9697c622baf780c7d47fb86ebb8acac324398bc3247a7e9fdfb9",
+                "source_id": "d07-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d07-ed02"
+              }
+            ],
+            "statement": "Finding 16",
+            "status": "supported",
+            "subject_id": "d07-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d07/fixed"
+          },
+          "stop": "topic"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 2,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 2, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "d9f45a999e8434c8f9d1b2415f15007bbc3bf1f6eeabc8ac1717dad67d1a9162",
+              "source_id": "d07-doc02",
+              "version": "d07-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d07",
+            "evidence_role": "applicant_result",
+            "item_id": "d07/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "d9f45a999e8434c8f9d1b2415f15007bbc3bf1f6eeabc8ac1717dad67d1a9162",
+                "source_id": "d07-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d07-ed02"
+              }
+            ],
+            "statement": "Finding 16",
+            "status": "supported",
+            "subject_id": "d07-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d07/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d07/evidence"
+            ],
+            "dossier_id": "d07",
+            "evidence_role": "applicant_result",
+            "item_id": "d07/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d07-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d07/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 2,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 2, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "d9f45a999e8434c8f9d1b2415f15007bbc3bf1f6eeabc8ac1717dad67d1a9162",
+              "source_id": "d07-doc02",
+              "version": "d07-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d07",
+            "evidence_role": "applicant_result",
+            "item_id": "d07/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "d9f45a999e8434c8f9d1b2415f15007bbc3bf1f6eeabc8ac1717dad67d1a9162",
+                "source_id": "d07-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d07-ed02"
+              }
+            ],
+            "statement": "Finding 16",
+            "status": "supported",
+            "subject_id": "d07-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d07/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d07/evidence"
+            ],
+            "dossier_id": "d07",
+            "evidence_role": "applicant_result",
+            "item_id": "d07/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "d9f45a999e8434c8f9d1b2415f15007bbc3bf1f6eeabc8ac1717dad67d1a9162",
+                "source_id": "d07-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d07-ed02"
+              }
+            ],
+            "statement": "Finding 16",
+            "status": "supported",
+            "subject_id": "d07-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d07/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 2,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 2, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "d9f45a999e8434c8f9d1b2415f15007bbc3bf1f6eeabc8ac1717dad67d1a9162",
+              "source_id": "d07-doc02",
+              "version": "d07-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d07",
+            "evidence_role": "applicant_result",
+            "item_id": "d07/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 2, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "d9f45a999e8434c8f9d1b2415f15007bbc3bf1f6eeabc8ac1717dad67d1a9162",
+                "source_id": "d07-doc02",
+                "source_owner": "Sponsor laboratory",
+                "version": "d07-ed02"
+              }
+            ],
+            "statement": "Finding 16",
+            "status": "supported",
+            "subject_id": "d07-subject02",
+            "task": "supply bounded statement",
+            "trace_id": "d07/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d07/evidence"
+            ],
+            "dossier_id": "d07",
+            "evidence_role": "applicant_result",
+            "item_id": "d07/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d07-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d07/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 98,
+              "inspections": 2,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "53039fcd309f9697c622baf780c7d47fb86ebb8acac324398bc3247a7e9fdfb9",
+              "source_id": "d07-doc01",
+              "version": "d07-ed02"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d07",
+            "evidence_role": "applicant_result",
+            "item_id": "d07/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 98,
+                "inspections": 2,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "deeper"
+                ],
+                "sha256": "53039fcd309f9697c622baf780c7d47fb86ebb8acac324398bc3247a7e9fdfb9",
+                "source_id": "d07-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d07-ed02"
+              }
+            ],
+            "statement": "Finding 16",
+            "status": "supported",
+            "subject_id": "d07-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d07/single"
+          },
+          "stop": "topic"
+        }
+      },
+      "case": "d07"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 1,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 1, paragraph 1",
+              "route": "legal_reference",
+              "routes_available": [
+                "legal_reference"
+              ],
+              "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+              "source_id": "d08-doc01",
+              "version": "d08-ed01"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d08",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d08/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 1,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 1, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "legal_reference"
+                ],
+                "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+                "source_id": "d08-doc01",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d08-ed01"
+              }
+            ],
+            "statement": "Finding 17",
+            "status": "supported",
+            "subject_id": "d08-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d08/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d08/evidence"
+            ],
+            "dossier_id": "d08",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d08/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d08-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d08/fixed"
+          },
+          "stop": "topic"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 1,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 1, paragraph 1",
+              "route": "legal_reference",
+              "routes_available": [
+                "legal_reference"
+              ],
+              "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+              "source_id": "d08-doc01",
+              "version": "d08-ed01"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d08",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d08/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 1,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 1, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "legal_reference"
+                ],
+                "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+                "source_id": "d08-doc01",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d08-ed01"
+              }
+            ],
+            "statement": "Finding 17",
+            "status": "supported",
+            "subject_id": "d08-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d08/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d08/evidence"
+            ],
+            "dossier_id": "d08",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d08/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d08-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d08/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 1,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 1, paragraph 1",
+              "route": "legal_reference",
+              "routes_available": [
+                "legal_reference"
+              ],
+              "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+              "source_id": "d08-doc01",
+              "version": "d08-ed01"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d08",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d08/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 1,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 1, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "legal_reference"
+                ],
+                "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+                "source_id": "d08-doc01",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d08-ed01"
+              }
+            ],
+            "statement": "Finding 17",
+            "status": "supported",
+            "subject_id": "d08-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d08/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d08/evidence"
+            ],
+            "dossier_id": "d08",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d08/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 1,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 1, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "legal_reference"
+                ],
+                "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+                "source_id": "d08-doc01",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d08-ed01"
+              }
+            ],
+            "statement": "Finding 17",
+            "status": "supported",
+            "subject_id": "d08-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d08/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 1,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 1, paragraph 1",
+              "route": "legal_reference",
+              "routes_available": [
+                "legal_reference"
+              ],
+              "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+              "source_id": "d08-doc01",
+              "version": "d08-ed01"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d08",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d08/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 115,
+                "inspections": 1,
+                "issuer": "Fictional reviewing authority",
+                "locator": "p. 1, paragraph 1",
+                "route": "legal_reference",
+                "routes_available": [
+                  "legal_reference"
+                ],
+                "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+                "source_id": "d08-doc01",
+                "source_owner": "Fictional reviewing authority",
+                "version": "d08-ed01"
+              }
+            ],
+            "statement": "Finding 17",
+            "status": "supported",
+            "subject_id": "d08-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d08/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d08/evidence"
+            ],
+            "dossier_id": "d08",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d08/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d08-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d08/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 115,
+              "inspections": 1,
+              "issuer": "Fictional reviewing authority",
+              "locator": "p. 1, paragraph 1",
+              "route": "legal_reference",
+              "routes_available": [
+                "legal_reference"
+              ],
+              "sha256": "fce036e204445d1abc7bf192ee37f51d368d29972848cfa4975905beadbc2cf5",
+              "source_id": "d08-doc01",
+              "version": "d08-ed01"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d08",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d08/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d08-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d08/single"
+          },
+          "stop": "topic"
+        }
+      },
+      "case": "d08"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 107,
+              "inspections": 3,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "claim_parent",
+              "routes_available": [
+                "attachment",
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "3027b53a45f2515519e2ba5c42937360e64626eef0390a8273af15094d67b5c7",
+              "source_id": "d09-doc01",
+              "version": "d09-ed02"
+            },
+            {
+              "bytes": 107,
+              "inspections": 2,
+              "issuer": "Patent publication office",
+              "locator": "p. 2, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "3027b53a45f2515519e2ba5c42937360e64626eef0390a8273af15094d67b5c7",
+              "source_id": "d09-doc02",
+              "version": "d09-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d09",
+            "evidence_role": "incoming_request",
+            "item_id": "d09/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "incoming_request"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d09-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d09/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d09",
+            "evidence_role": "incoming_request",
+            "item_id": "d09/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "incoming_request"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d09-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d09/fixed"
+          },
+          "stop": "exhausted"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 103,
+              "inspections": 3,
+              "issuer": "Fictional review office",
+              "locator": "p. 3, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "658e36772db7fd5397c2b09493a891319748583eebfd2deec40f465d53a837d1",
+              "source_id": "d09-doc03",
+              "version": "d09-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d09",
+            "evidence_role": "incoming_request",
+            "item_id": "d09/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 3,
+                "issuer": "Fictional review office",
+                "locator": "p. 3, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "658e36772db7fd5397c2b09493a891319748583eebfd2deec40f465d53a837d1",
+                "source_id": "d09-doc03",
+                "source_owner": "Fictional review office",
+                "version": "d09-ed02"
+              }
+            ],
+            "statement": "Finding 18",
+            "status": "supported",
+            "subject_id": "d09-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d09/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d09/evidence"
+            ],
+            "dossier_id": "d09",
+            "evidence_role": "incoming_request",
+            "item_id": "d09/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 3,
+                "issuer": "Fictional review office",
+                "locator": "p. 3, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "658e36772db7fd5397c2b09493a891319748583eebfd2deec40f465d53a837d1",
+                "source_id": "d09-doc03",
+                "source_owner": "Fictional review office",
+                "version": "d09-ed02"
+              }
+            ],
+            "statement": "Finding 18",
+            "status": "supported",
+            "subject_id": "d09-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d09/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 103,
+              "inspections": 3,
+              "issuer": "Fictional review office",
+              "locator": "p. 3, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "658e36772db7fd5397c2b09493a891319748583eebfd2deec40f465d53a837d1",
+              "source_id": "d09-doc03",
+              "version": "d09-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d09",
+            "evidence_role": "incoming_request",
+            "item_id": "d09/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 3,
+                "issuer": "Fictional review office",
+                "locator": "p. 3, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "658e36772db7fd5397c2b09493a891319748583eebfd2deec40f465d53a837d1",
+                "source_id": "d09-doc03",
+                "source_owner": "Fictional review office",
+                "version": "d09-ed02"
+              }
+            ],
+            "statement": "Finding 18",
+            "status": "supported",
+            "subject_id": "d09-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d09/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d09/evidence"
+            ],
+            "dossier_id": "d09",
+            "evidence_role": "incoming_request",
+            "item_id": "d09/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 3,
+                "issuer": "Fictional review office",
+                "locator": "p. 3, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "658e36772db7fd5397c2b09493a891319748583eebfd2deec40f465d53a837d1",
+                "source_id": "d09-doc03",
+                "source_owner": "Fictional review office",
+                "version": "d09-ed02"
+              }
+            ],
+            "statement": "Finding 18",
+            "status": "supported",
+            "subject_id": "d09-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d09/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 103,
+              "inspections": 3,
+              "issuer": "Fictional review office",
+              "locator": "p. 3, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "attachment",
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "658e36772db7fd5397c2b09493a891319748583eebfd2deec40f465d53a837d1",
+              "source_id": "d09-doc03",
+              "version": "d09-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d09",
+            "evidence_role": "incoming_request",
+            "item_id": "d09/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 3,
+                "issuer": "Fictional review office",
+                "locator": "p. 3, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "658e36772db7fd5397c2b09493a891319748583eebfd2deec40f465d53a837d1",
+                "source_id": "d09-doc03",
+                "source_owner": "Fictional review office",
+                "version": "d09-ed02"
+              }
+            ],
+            "statement": "Finding 18",
+            "status": "supported",
+            "subject_id": "d09-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d09/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d09/evidence"
+            ],
+            "dossier_id": "d09",
+            "evidence_role": "incoming_request",
+            "item_id": "d09/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 103,
+                "inspections": 3,
+                "issuer": "Fictional review office",
+                "locator": "p. 3, paragraph 1",
+                "route": "deeper",
+                "routes_available": [
+                  "attachment",
+                  "claim_parent",
+                  "deeper"
+                ],
+                "sha256": "658e36772db7fd5397c2b09493a891319748583eebfd2deec40f465d53a837d1",
+                "source_id": "d09-doc03",
+                "source_owner": "Fictional review office",
+                "version": "d09-ed02"
+              }
+            ],
+            "statement": "Finding 18",
+            "status": "supported",
+            "subject_id": "d09-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d09/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 107,
+              "inspections": 3,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "claim_parent",
+              "routes_available": [
+                "attachment",
+                "claim_parent",
+                "deeper"
+              ],
+              "sha256": "3027b53a45f2515519e2ba5c42937360e64626eef0390a8273af15094d67b5c7",
+              "source_id": "d09-doc01",
+              "version": "d09-ed02"
+            },
+            {
+              "bytes": 107,
+              "inspections": 2,
+              "issuer": "Patent publication office",
+              "locator": "p. 2, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment",
+                "deeper"
+              ],
+              "sha256": "3027b53a45f2515519e2ba5c42937360e64626eef0390a8273af15094d67b5c7",
+              "source_id": "d09-doc02",
+              "version": "d09-ed02"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d09",
+            "evidence_role": "incoming_request",
+            "item_id": "d09/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "incoming_request"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d09-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d09/single"
+          },
+          "stop": "exhausted"
+        }
+      },
+      "case": "d09"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 108,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "b34aacac7eb0d758696cf3bdac3fed7f848da6e0c142887cfcf022cd89536322",
+              "source_id": "d10-doc01",
+              "version": "d10-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d10",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d10/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d10-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d10/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d10",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d10/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d10-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d10/fixed"
+          },
+          "stop": "exhausted"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 108,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "b34aacac7eb0d758696cf3bdac3fed7f848da6e0c142887cfcf022cd89536322",
+              "source_id": "d10-doc01",
+              "version": "d10-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d10",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d10/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d10-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d10/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d10",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d10/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d10-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d10/learned"
+          },
+          "stop": "exhausted"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 108,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "b34aacac7eb0d758696cf3bdac3fed7f848da6e0c142887cfcf022cd89536322",
+              "source_id": "d10-doc01",
+              "version": "d10-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d10",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d10/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d10-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d10/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d10",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d10/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d10-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d10/learned_unverified"
+          },
+          "stop": "exhausted"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 108,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "b34aacac7eb0d758696cf3bdac3fed7f848da6e0c142887cfcf022cd89536322",
+              "source_id": "d10-doc01",
+              "version": "d10-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "regulatory",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d10",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d10/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d10-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d10/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d10",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d10/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d10-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d10/learned_without_role"
+          },
+          "stop": "exhausted"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 108,
+              "inspections": 1,
+              "issuer": "Patent publication office",
+              "locator": "p. 1, paragraph 1",
+              "route": "deeper",
+              "routes_available": [
+                "deeper"
+              ],
+              "sha256": "b34aacac7eb0d758696cf3bdac3fed7f848da6e0c142887cfcf022cd89536322",
+              "source_id": "d10-doc01",
+              "version": "d10-ed02"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d10",
+            "evidence_role": "regulatory_requirement",
+            "item_id": "d10/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "regulatory_requirement"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d10-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d10/single"
+          },
+          "stop": "exhausted"
+        }
+      },
+      "case": "d10"
+    },
+    {
+      "arms": {
+        "fixed": {
+          "actions": [
+            {
+              "bytes": 99,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment"
+              ],
+              "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+              "source_id": "d11-doc01",
+              "version": "d11-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d11",
+            "evidence_role": "patent_disclosure",
+            "item_id": "d11/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 99,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment"
+                ],
+                "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+                "source_id": "d11-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d11-ed02"
+              }
+            ],
+            "statement": "Finding 55",
+            "status": "supported",
+            "subject_id": "d11-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d11/fixed"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d11/evidence"
+            ],
+            "dossier_id": "d11",
+            "evidence_role": "applicant_result",
+            "item_id": "d11/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d11-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d11/fixed"
+          },
+          "stop": "topic"
+        },
+        "learned": {
+          "actions": [
+            {
+              "bytes": 99,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment"
+              ],
+              "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+              "source_id": "d11-doc01",
+              "version": "d11-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d11",
+            "evidence_role": "patent_disclosure",
+            "item_id": "d11/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 99,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment"
+                ],
+                "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+                "source_id": "d11-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d11-ed02"
+              }
+            ],
+            "statement": "Finding 55",
+            "status": "supported",
+            "subject_id": "d11-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d11/learned"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d11/evidence"
+            ],
+            "dossier_id": "d11",
+            "evidence_role": "applicant_result",
+            "item_id": "d11/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d11-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d11/learned"
+          },
+          "stop": "topic"
+        },
+        "learned_unverified": {
+          "actions": [
+            {
+              "bytes": 99,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment"
+              ],
+              "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+              "source_id": "d11-doc01",
+              "version": "d11-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d11",
+            "evidence_role": "patent_disclosure",
+            "item_id": "d11/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 99,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment"
+                ],
+                "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+                "source_id": "d11-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d11-ed02"
+              }
+            ],
+            "statement": "Finding 55",
+            "status": "supported",
+            "subject_id": "d11-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d11/learned_unverified"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d11/evidence"
+            ],
+            "dossier_id": "d11",
+            "evidence_role": "applicant_result",
+            "item_id": "d11/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 99,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment"
+                ],
+                "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+                "source_id": "d11-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d11-ed02"
+              }
+            ],
+            "statement": "Finding 55",
+            "status": "supported",
+            "subject_id": "d11-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d11/learned_unverified"
+          },
+          "stop": "topic"
+        },
+        "learned_without_role": {
+          "actions": [
+            {
+              "bytes": 99,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment"
+              ],
+              "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+              "source_id": "d11-doc01",
+              "version": "d11-ed02"
+            }
+          ],
+          "evidence": {
+            "agent": "patent",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d11",
+            "evidence_role": "patent_disclosure",
+            "item_id": "d11/evidence",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 99,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment"
+                ],
+                "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+                "source_id": "d11-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d11-ed02"
+              }
+            ],
+            "statement": "Finding 55",
+            "status": "supported",
+            "subject_id": "d11-subject01",
+            "task": "supply bounded statement",
+            "trace_id": "d11/learned_without_role"
+          },
+          "outgoing": {
+            "agent": "correspondence",
+            "as_of": "2026-11-26",
+            "depends_on": [
+              "d11/evidence"
+            ],
+            "dossier_id": "d11",
+            "evidence_role": "applicant_result",
+            "item_id": "d11/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [],
+            "schema_version": "ra-pharma/1",
+            "sources": [
+              {
+                "bytes": 99,
+                "inspections": 1,
+                "issuer": "Sponsor laboratory",
+                "locator": "p. 1, paragraph 1",
+                "route": "attachment",
+                "routes_available": [
+                  "attachment"
+                ],
+                "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+                "source_id": "d11-doc01",
+                "source_owner": "Sponsor laboratory",
+                "version": "d11-ed02"
+              }
+            ],
+            "statement": "Finding 55",
+            "status": "supported",
+            "subject_id": "d11-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d11/learned_without_role"
+          },
+          "stop": "topic"
+        },
+        "single": {
+          "actions": [
+            {
+              "bytes": 99,
+              "inspections": 1,
+              "issuer": "Sponsor laboratory",
+              "locator": "p. 1, paragraph 1",
+              "route": "attachment",
+              "routes_available": [
+                "attachment"
+              ],
+              "sha256": "e123f786461ef1a6d909e9a9167c04a0f19a3aa35a85c581fd721ada27abc9c1",
+              "source_id": "d11-doc01",
+              "version": "d11-ed02"
+            }
+          ],
+          "evidence": null,
+          "outgoing": {
+            "agent": "single",
+            "as_of": "2026-11-26",
+            "depends_on": [],
+            "dossier_id": "d11",
+            "evidence_role": "applicant_result",
+            "item_id": "d11/outgoing",
+            "jurisdiction": "fictional-jurisdiction",
+            "missing": [
+              "applicant_result"
+            ],
+            "schema_version": "ra-pharma/1",
+            "sources": [],
+            "statement": null,
+            "status": "missing",
+            "subject_id": "d11-subject01",
+            "task": "draft bounded outgoing assertion",
+            "trace_id": "d11/single"
+          },
+          "stop": "topic"
+        }
+      },
+      "case": "d11"
+    }
+  ],
+  "wall_seconds": 0.02356159989722073
+}
