@@ -31,3 +31,7 @@ Do not infer unseen family lineage from a late publication. Historic manifests s
 The author-provided TeamLab documentation describes a mixed parsed corpus and separate index and cohort products. Directory metadata identified no directly addressable development-only text asset. Do not open that corpus to extract a development slice if it would expose its evaluation or reserve contents.
 
 The Planner independently recovered the original branch counts and identified an unrecognized cross-reference class. The fixture recognizer misses cross-references phrased as item numbers or preceding paragraphs. Keep this exact-source implementation separate from a broader parser that can abstain on these patterns. The owner parked exclusion searches and left all eight IS1 successor cells NOT_RUN.
+
+## Issuer-shaped handoff · 26 November 2026
+
+[Development result](handoff-conformance/RECEIPT.md) established a scope-conformance contract when key fields are visible. Leading-zero sequence strings survive Word run concatenation. A patent chart is valid context and never supplies missing applicant results. Exact lookup and typed handoff tied. Keep the exact-key verifier, and report false abstention as well as false supports. The second valid equivalent witness is optional after a correct reply. Future architecture comparisons need genuinely incomplete descriptors and observable competing actions.

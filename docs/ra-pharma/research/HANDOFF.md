@@ -25,3 +25,9 @@ The owner decision relayed by the Planner parks further exclusion searches. No f
 [EP2298134 A1 conformance](claim-branch/RECEIPT.md) passed on one exposed development document and tied the cache-aware baseline at four reads. The specialist kept both dependency alternatives and resolved three pending rows with one parent opening. This rescheduling offered no unique-read savings because both readers had the same required closure and cache. The cap and unavailable-parent probes gave exact missing items. Keep this document and known aliases out of future held roles.
 
 The [claim probe](../../../scripts/research/ra_pharma/claim_branch_probe.py) is a fixed, local conformance tool, separate from the original R3 harness. [Claim freeze](claim-branch/freeze.json) pins it. Two focused tests passed. Full code QA satisfies the standing eight-failure exception policy. Source, original trace and QA log are under the private claim branch directory named in the receipt. The archived R2 primary remains unchanged, and no IS1 or R4 reserved run is released.
+
+## Issuer-shaped handoff conformance · 26 November 2026
+
+[Handoff receipt](handoff-conformance/RECEIPT.md) records a tie against the exact composite-key control at three correct replies, three correct abstentions and three logical record opens. The shared verifier stopped all unsafe ID-only choices. Raw issuer DOCX and original trace are private. The full code gate meets the eight-failure exception policy.
+
+Next, use the separately authored two-read interruption protocol. Compare genuinely competing locator-first and nearest-complete actions. R4 reserved DEV remains NOT_RUN. This work is isolated from Product files.

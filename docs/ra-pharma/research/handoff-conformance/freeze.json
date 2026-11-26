@@ -1,0 +1,17 @@
+{
+  "scope": "one exposed structural source and six authored development cases",
+  "base": "aa99b8594496b5d42528007ed6dd64e0d8aa65b5",
+  "capture_inputs": {
+    "docs/ra-pharma/research/handoff-conformance/PROTOCOL.md": "30d03355a442fdcbe1f607b1fe31244c213aab9a2df2d6ae0807ce1518f586fd",
+    "docs/ra-pharma/research/handoff-conformance/runtime.json": "93a0f48f59448c6236bbc0e1400bf69258141bbb3340dc6fb38c947d83be6367",
+    "scripts/research/ra_pharma/handoff_probe.py": "4a46bc53cdd0e25350d55f943f3a778a0c0d71804b2194cac4cabb4e86845fa3",
+    "scripts/research/ra_pharma/handoff_score.py": "097dae0bd03a12cace825800c3fecfcb7cd73199b8e733c9ad91a1d7c4abc8e5"
+  },
+  "evaluator_key": {
+    "docs/ra-pharma/research/handoff-conformance/conformance-key.json": "aedc4fa5a4f7dc681fc6b4e95e442d22bdb2d8376f78199daedd943716ba8d43"
+  },
+  "issuer_docx_sha256": "cf7a4e45068858898004c37139e3799c7551aa8beea6b7c32c9f54b1f8a2b2e6",
+  "patent_original_sha256": "d816042c9e42e874c00dfa4c455c60139c3d268e5672a09a04724c81103b1156",
+  "cap": 2,
+  "output_basename": "original.json"
+}
