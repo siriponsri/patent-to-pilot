@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## Option A local development · 26 November 2026
+
+The Planner relayed owner approval for the unchanged-source historical task and solo-operator pilot. [Protocol and pinned packet](option-a/PROTOCOL.md) · [Thai prompts](option-a/OPERATOR-PACKET.md) · [Local receipt and ledger](option-a/RECEIPT.md). Hashes, extracted pages and both sealed 253/2540 traces were checked without executing D31 again. Exact adds the sections 80/82 route but cuts off before the sequence is explicit. Both retained answers are incomplete on the new exposed semantic reading. Historical scores are preserved. The authored rubric check covered paraphrase, alternative passage, wrong attribution, contradiction, partial, abstention and unknown.
+
+Full-context and hybrid RAG remain NOT_RUN because a usable pinned local model was unavailable in the checked runtime. ChatGPT Pro, NotebookLM, actual import and operator timing remain NOT_RUN. Planner owns access, transfer terms and independent review. On an eligible local runtime the next research step is direct full-context with the same checklist and pinned zero/few-shot inputs before any candidate. No fresh confirmation on D31. This is a documentation-only closeout with the code suite NOT_RUN.
+
 ## D32–D33 feasibility handback · 26 November 2026
 
 [Feasibility brief](FEASIBILITY.md) is ready for Planner/Reviewer. Narrow the first question to completeness of supported historical answers. In the closed page-2 study, each arm linked 7/7 adjudicated issues and completed 0/7 under the exact extract scorer. The worked first-pilot example verifies a missing substantive qualification against the retained source. The brief proposes actual ChatGPT Pro and NotebookLM workflows, a full-context checklist and hybrid RAG baseline, and one matched ablation.

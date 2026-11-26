@@ -1,5 +1,11 @@
 # Research memory
 
+## Option A development · 26 November 2026
+
+In the [read-only baseline review](option-a/RECEIPT.md) of 253/2540, page 4 [360,720) conveyed the route under sections 80 and 82 while cutting off before the sequence was explicit. This can pass the historical exact proxy and still leave a usable answer incomplete. Keep the original score and the exposed semantic finding together. Verification and the authored rehearsal leave model efficacy and blind agreement unmeasured.
+
+The [operator packet](option-a/OPERATOR-PACKET.md) has common Thai zero/few-shot instructions. The three pinned PDF hashes and seven local page mappings passed. Product import and time still need cleared accounts and file use. A matching local model was unavailable. Start with full context on the first released usable runtime, and keep every D31 family out of fresh confirmation.
+
 ## D32–D33 feasibility · 26 November 2026
 
 The [feasibility brief](FEASIBILITY.md) separates provenance, exact extract coverage and semantic completeness. The exposed OCS 253/2540 lexical output links the correct opinion but omits the regulatory route in the page-4 conclusion. Use this as diagnostic evidence. Keep the 0/7 page-2 exact score and its unjudged eighth issue separate from future blind semantic adjudication.
