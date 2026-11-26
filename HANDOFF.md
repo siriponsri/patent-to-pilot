@@ -2,6 +2,8 @@
 
 ## Planner handback · 26 November 2026
 
+**Research update.** The [Planner audit](docs/ra-pharma/RESEARCH-AUDIT-20261126.md) accepted the first research handback for engineering and feasibility at `d956473c`. The eight IS1 cells and R4 transfer remain unmeasured. The existing Research Executor has been dispatched to assemble the next eligible input package. The dispatch table below describes the original starting allocation.
+
 **RA Pharma is the active program.** The owner will open two sessions in separate branch checkouts. Both start from the same planning commit on origin. No executor, new research score, pod, deployment or paid booking was started in this dispatch. The existing demo is the Windows S4 reader. The new three-agent dossier is ready for implementation.
 
 | Lane | Assigned session | First action and writable record |

@@ -1,5 +1,9 @@
 # Project memory
 
+## 2026-11-26 · Research feasibility review
+
+The [Planner audit](RESEARCH-AUDIT-20261126.md) reproduced the sealed R3 synthetic results and identified a harmful-stop false positive for a separate multi-witness probe. Preserve the original. An improvement on echoed templates cannot support transfer. The next Research assignment targets eligible inputs and a prospective corrected scorer.
+
 This version-controlled record gives Claude and Codex the same project history. The Planner maintains shared decisions. The [research memory](research/MEMORY.md) and [product memory](product/MEMORY.md) accept concurrent task closeouts.
 
 ## 2026-11-26 · Planner dispatch

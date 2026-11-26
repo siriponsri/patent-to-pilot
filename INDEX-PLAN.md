@@ -1,5 +1,7 @@
 # Index: plan and evidence
 
+The [first RA Pharma Research audit](docs/ra-pharma/RESEARCH-AUDIT-20261126.md) records the accepted fixture, the outstanding IS1 and R4 measurements, and the next executor dispatch.
+
 Start with the [RA Pharma dispatch board](docs/ra-pharma/MASTER-PLAN.md), [evidence contract](docs/ra-pharma/EVIDENCE-CONTRACT.md), [project memory](docs/ra-pharma/MEMORY.md) and [current handoff](HANDOFF.md). The [research brief](docs/ra-pharma/research/BRIEF.md) and [product brief](docs/ra-pharma/product/BRIEF.md) assign separate branches. The [S0–S5 board](docs/evidence-scope/MASTER-PLAN.md), [S freeze](docs/evidence-scope/FREEZE.md) and [P0–P5 board](docs/tracking/owner-note-22112026/PHASE_BOARD.md) preserve their historical scopes.
 
 S1 delivered the [controlled data and scorer](docs/evidence-scope/receipts/S1-20261125.md). S2 delivered the [local alpha](docs/evidence-scope/receipts/S2-workbench.md) and [public-source inventory](docs/evidence-scope/receipts/S2-sources.md). S3 closed NEGATIVE on controlled Thai DEV with uninformative English transfer. See the [preregistration](docs/healthtech/audits/S3-20261125/PREREGISTRATION.md), [machine lock](docs/healthtech/audits/S3-20261125/freeze.json), [execution receipt](docs/healthtech/audits/S3-20261125/RESULTS.md), [machine result](docs/healthtech/audits/S3-20261125/results.json) and [continuity matrix](docs/healthtech/audits/S3-20261125/BRIDGE.md).
