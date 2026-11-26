@@ -51,3 +51,7 @@ Research published the brief at `e5e8d61f`. Planner verified the worked example 
 ## Option A import checkpoint
 
 D34 approved unchanged-source checking. Research published the exposed packet at `da974bcc`. Only the three derivatives pinned in the [import receipt](docs/ra-pharma/OPTION-A-IMPORT.md) are prepared for prospective product comparison. Authenticated URL, actual import and commercial outputs remain unverified. No fresh outcome or paid job.
+
+## Commercial pilot handback
+
+Both live tools returned the missing legal sequence on the single exposed zero-shot case. Planner checked the reported page against B.pdf and opened citation 7 inside the notebook. ChatGPT showed Extra High before submission and a quota notice after responding. No blinded score or matched few-shot result. [Receipt and configuration limits](docs/ra-pharma/OPTION-A-IMPORT.md#first-commercial-zero-shot-observation).

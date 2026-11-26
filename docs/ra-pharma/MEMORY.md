@@ -47,3 +47,7 @@ The page-4 qualification in exposed opinion 253/2540 was already recovered by ex
 ## Check the full PDF container before service import
 
 All three official PDFs contained an embedded XML file. Removing the name-tree entry alone left an associated-file reference. Page copying changed canonical text. Verify file objects, canonical text and rendered appearance for every page before pinning an input derivative for both arms. Finding the correct answer page also left a truncated conclusion under the semantic rubric. [Case, benchmark and integrity checks](OPTION-A-IMPORT.md).
+
+## Commercial tools recovered the known historical omission
+
+A successful matched zero-shot example changes the research decision. Keep the checklist and commercial products as strong baselines. Capture both pre-submit effort and post-answer controls, preserve quota notices and verify citation targets. An observation timestamp includes interleaved operator work. [Source, benchmark and receipt](OPTION-A-IMPORT.md#first-commercial-zero-shot-observation).

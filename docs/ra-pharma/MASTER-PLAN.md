@@ -49,4 +49,6 @@ The [S4 receipt](../evidence-scope/receipts/S4-integrated-verification.md) estab
 
 The [feasibility review](RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoint) is complete. The owner selected unchanged-source checking. New baselines remain NOT_RUN.
 
-The owner approved unchanged-source checking. The [Option A checkpoint](OPTION-A-IMPORT.md) supersedes the earlier pending choice. Commercial runs remain NOT_RUN.
+The owner approved unchanged-source checking. The [Option A checkpoint](OPTION-A-IMPORT.md) supersedes the earlier pending choice. The first exposed zero-shot run is recorded below.
+
+The [first live zero-shot observation](OPTION-A-IMPORT.md#first-commercial-zero-shot-observation) is complete on exposed material. Both tools recovered the material qualification. Fresh confirmation, the same-model mechanism comparison and human time savings remain unmeasured.
