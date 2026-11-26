@@ -49,3 +49,7 @@ The [D31 receipt](official-correspondence/RECEIPT.md) records a primary NULL on 
 The Planner released the exact prospective commit `6fa6fb4d1b254b7a2c96ea7d21cce79a90fa33d0` and independently reproduced the sealed original result. Preserve both the [held v1](official-correspondence/freeze-v1-hold.json) and [v2](official-correspondence/freeze.json). The ordinary code gate passed with only the eight standing failures after a test-only timing correction explicitly assigned to this lane. [Intake and gate](official-correspondence/INTAKE.md)
 
 The next assigned study uses this closed first page as exposed training and the official Drug Act index page 2 alone for a separately enrolled follow-up. Exclude earlier and related matters before retrieval. Prove admission, register the training rule and strong same-page comparator, and obtain a separate independent key and exact release. The later search pages and future evidence are unobserved at this checkpoint. IS1, R4 reserved transfer and applicant filing stay parked.
+
+## D31 page-2 follow-up · before intake
+
+The [registration](official-correspondence/page2/PREREGISTRATION.md) freezes the exact official page, title-only separation rules, three-family floor, acquisition caps, same-page comparison and one-configuration training budget. No page-2 request, PDF open or fresh outcome has occurred. The closed D31 original is the only training cohort.
