@@ -2,6 +2,8 @@
 
 ## Current research-first handoff
 
+The first overnight checkpoint released Phase 1 and prospective metadata intake for Phase 2. A new scored comparison awaits an exact packet review. The [decision and source check](docs/ra-pharma/ip-pharma/OVERNIGHT-REVIEW.md#next-research-breakpoint) include the scope of the one-source budget.
+
 The owner released the [overnight IP Pharma research loop](docs/ra-pharma/ip-pharma/OVERNIGHT-REVIEW.md) through 05:00 Bangkok on 27 November. Phase 1 was sent to Research. Planner independently pinned the FDA product label and public chemistry review. Follow the dated review file for the next handback.
 
 **Current portfolio proposal, 26 November.** Start with the [IP Pharma report and two pilot receipts](docs/ra-pharma/ip-pharma/REPORT.md). The owner wants a portfolio dossier and has no validated customer pain point. The Planner reviewed ten implementations and the full owner KM, recorded a shared source graph, and completed two separately frozen public-data engineering pilots. Phase 1 is proposed for Research. It would connect the US worked case to a Thai evidence request and identify whether a meaningful adaptive comparison is possible. Both product inference and any Thai status conclusion remain unverified. [PatentAgentBench](https://arxiv.org/abs/2610.35031) · [Direct competitor](https://github.com/Peter-McCann-Strain/chemical-patent-analysis)

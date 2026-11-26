@@ -1,5 +1,7 @@
 # Project memory
 
+For the overnight [one-source comparison](ip-pharma/OVERNIGHT-REVIEW.md#next-research-breakpoint), use source availability and document role for admission. Selecting matters because their observed answers distinguish the two policies would bias the comparison. Preserve acquired but unjudged matters and ties.
+
 The [overnight review](ip-pharma/OVERNIGHT-REVIEW.md) records the owner release, executor assignment and two additional pinned FDA sources. When mapping an amount from a label to an inherited patent claim, verify that the numerator, denominator and subject coincide. Keep a product fact in the dossier even if another claim limitation remains unresolved.
 
 ## IP Pharma portfolio and shared research KM
