@@ -13,6 +13,10 @@
 
 The [master board](docs/ra-pharma/MASTER-PLAN.md) assigns paths; the [contract](docs/ra-pharma/EVIDENCE-CONTRACT.md) defines evidence role, subject, authority, source and missing items. The Planner integrates common files and owns [project memory](docs/ra-pharma/MEMORY.md). Update the affected documentation, handoff and memory in English at each closeout. Address the owner in Thai.
 
+## Active Planner and Research review
+
+The [architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md) defines the branch-aware reading comparison and its cached control. The [published input review](https://github.com/siriponsri/patent-to-pilot/tree/7f5d799ce561d183bdecc82a86935698e83b5eca/docs/ra-pharma/research/successor) established a usable EPO metadata route. Historic family exclusions remain incomplete. The eight IS1 successor cells and R4 remain unmeasured. The next engineering checkpoint examines a single publisher-documented EP XML example.
+
 ## Verified starting evidence
 
 - S0–S4 closed at their documented scope. S3 Thai was negative, 3/27 vs 6/27. Option A was null, 22/22 in every arm on the Thai answerable set. All five arms followed the same evidence sequence on 45 requests. The sealed evaluations are closed. [S3](docs/healthtech/audits/S3-20261125/RESULTS.md) · [Option A](docs/evidence-scope/alternative-evidence/RESULTS.md)

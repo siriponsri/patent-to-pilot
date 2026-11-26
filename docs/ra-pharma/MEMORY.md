@@ -1,5 +1,9 @@
 # Project memory
 
+## 2026-11-26 · Patent source and architecture review
+
+The Planner checked ten input and provenance digests against the [published EPO preflight](https://github.com/siriponsri/patent-to-pilot/tree/7f5d799ce561d183bdecc82a86935698e83b5eca/docs/ra-pharma/research/successor). A public bibliographic source can support a new retrieval study when the family exclusion gate clears. Its license and fields do not extend automatically to claim text. The study has zero measured cells. For the [branch-reading design](READING-ARCHITECTURE-REVIEW.md), use a cache-aware comparator. A different traversal order cannot reduce the number of distinct mandatory passages that must be opened.
+
 ## 2026-11-26 · Research feasibility review
 
 The [Planner audit](RESEARCH-AUDIT-20261126.md) reproduced the sealed R3 synthetic results and identified a harmful-stop false positive for a separate multi-witness probe. Preserve the original. An improvement on echoed templates cannot support transfer. The next Research assignment targets eligible inputs and a prospective corrected scorer.

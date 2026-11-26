@@ -1,5 +1,7 @@
 # Index: plan and evidence
 
+The [active reading architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md) records the proposed mechanism, closest prior work, control and conditions for a measurable benefit.
+
 The [first RA Pharma Research audit](docs/ra-pharma/RESEARCH-AUDIT-20261126.md) records the accepted fixture, the outstanding IS1 and R4 measurements, and the next executor dispatch.
 
 Start with the [RA Pharma dispatch board](docs/ra-pharma/MASTER-PLAN.md), [evidence contract](docs/ra-pharma/EVIDENCE-CONTRACT.md), [project memory](docs/ra-pharma/MEMORY.md) and [current handoff](HANDOFF.md). The [research brief](docs/ra-pharma/research/BRIEF.md) and [product brief](docs/ra-pharma/product/BRIEF.md) assign separate branches. The [S0–S5 board](docs/evidence-scope/MASTER-PLAN.md), [S freeze](docs/evidence-scope/FREEZE.md) and [P0–P5 board](docs/tracking/owner-note-22112026/PHASE_BOARD.md) preserve their historical scopes.

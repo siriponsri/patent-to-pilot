@@ -13,6 +13,8 @@ Owner decision of 26 November 2026. Patent-to-Pilot keeps its repository name. T
 
 ### From one question to one letter
 
+The [current architecture review](READING-ARCHITECTURE-REVIEW.md) connects reading depth to branch-specific evidence and missing-item requests. The EPO source preflight is published on the Research branch. Complete exclusion coverage is still missing. The first branch-reading check uses exposed developer material.
+
 For a fictional taste-masked tablet, the patent agent compares the product facts with inherited and added claim limitations. A country-specific FTO evidence file records the missing legal-status checks. The regulatory agent maps applicable Thai registration requirements to the applicant's evidence and identifies missing attachments. The correspondence agent reads the questions on a sample incoming letter and drafts a reply in the sender's template. A reviewer can open the precise page behind a sentence, see which product it describes, and decide whether to sign. The product operator controls issuance.
 
 The first demo covers Thai correspondence, an English patent and Thai registration guidance alongside an English ASEAN source. Foreign legal support is organized by authority, jurisdiction and effective date. A regional guideline or a US patent publication alone cannot establish the law or patent status in Thailand. A foreign-country regulatory pack is a later extension with its own official sources and fixtures.
