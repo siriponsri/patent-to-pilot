@@ -1,0 +1,20 @@
+{
+  "scope": "one exposed CPU development conformance check only",
+  "inputs": {
+    "docs/ra-pharma/research/claim-branch/PROTOCOL.md": "d7c9d7e4f26447bee2c313e8ef57b3950c1364b5bd1216bb03eb1e6edc0c4719",
+    "docs/ra-pharma/research/claim-branch/conformance-key.json": "15599df75010aceec7fa6995c8cd85bd156a5c79d43ec0b1ddcbfc0cf0456f2b",
+    "scripts/research/ra_pharma/claim_branch_probe.py": "0ca1329169baed50ae57905bf802d8bd4592fae5d8cbdba7455589f09ff9c9bc"
+  },
+  "source_sha256": "e03018f582e9f5dcbb936c38755c6f54250eef73661376d33d4fea420fd95f0b",
+  "output_basename": "original.json",
+  "targets": [
+    2,
+    3,
+    4
+  ],
+  "cap": 4,
+  "failure_probes": [
+    "one-read cap",
+    "passage 1 marked unavailable"
+  ]
+}

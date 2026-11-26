@@ -1,6 +1,6 @@
 # IS1 successor admission and study plan
 
-**Source preflight PASS. Reserved data admission BLOCKED. All eight measurements NOT_RUN.** EPO Linked Open EP Data is the preferred source for a new English title-and-abstract study. It exposes DOCDB simple family IDs, inventive IPC and direct recorded patent links. A bounded live count hit its 1,001-family cap for two issue dates before exclusions. The held population, usable links after filtering and disjointness are outstanding. [Machine receipt](source-preflight.json).
+**Source preflight PASS. Reserved data admission BLOCKED. All eight measurements NOT_RUN.** EPO Linked Open EP Data is the preferred source for a new English title-and-abstract study. It exposes DOCDB simple family IDs, inventive IPC and direct recorded patent links. A bounded live count hit its 1,001-family cap for two issue dates before exclusions. The held population, usable links after filtering and disjointness are outstanding. The owner has parked further exclusion searches. No legacy family list or custodian is available. [Machine receipt](source-preflight.json).
 
 ## Source decisions
 
