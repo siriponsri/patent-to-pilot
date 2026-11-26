@@ -19,6 +19,8 @@ The Product session now holds the original project checkout. Planner uses the de
 
 For D31, the [Thai inquiry audit](docs/ra-pharma/THAI-INQUIRY-AUDIT.md) verifies the sealed original on 11 issues across seven official opinions. Adaptive and exact page routing tied 3/11, and each linked 10/11 correctly. Four incomplete issues already had sufficient evidence on open pages. The follow-up targets extract selection on the second index page under a new lock.
 
+Second-page intake retained four distinct public matters. Seven of eight issue rows have a usable independent answer key. The private key is frozen. Both controls and the candidate use identical pages and output limits.
+
 The owner confirmed no historic family list is available and parked all eight IS1 cells as NOT_RUN. Preserve the [EPO preflight](https://github.com/siriponsri/patent-to-pilot/tree/7f5d799ce561d183bdecc82a86935698e83b5eca/docs/ra-pharma/research/successor). The Planner verified patent branch reconstruction, six issuer-shaped handoff cases and a separate two-read comparison on 12 authored dossiers. The latter tied at 15/24 safe rows with a penalty for the forecast at early interruption. The next data question is whether a public, versioned source can distinguish a valid referenced attachment from a stale one before the next read. R4 natural transfer remains unmeasured. See the [architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md).
 
 ## Verified starting evidence
