@@ -2,6 +2,8 @@
 
 ## Current research-first handoff
 
+The owner's [eight-idea results report](docs/ra-pharma/ip-pharma/EIGHT-IDEA-RESULTS.md) consolidates measured outcomes, historical controls, unresolved evidence and product decisions after the closed overnight loop.
+
 **Current overnight disposition.** The [final Planner audit](docs/ra-pharma/ip-pharma/OVERNIGHT-REVIEW.md#owner-handback) accepts the ELIQUIS engineering dossier and closes both the three-case intake and same-case access recovery. No eligible fresh pair, policy execution or comparative score. Preserve the 05:00 owner report and all originals.
 
 Planner accepted the [offline Phase 1 dossier and Thai internal draft](https://github.com/siriponsri/patent-to-pilot/blob/944b5a2f01289ee3c2235419dbf139aa9657ec65/docs/ra-pharma/research/ip-pharma/ELIQUIS-DOSSIER.md). The first fresh intake selected three, admitted zero and scored zero. A separate same-case metadata recovery went back to Research. The [review receipt](docs/ra-pharma/ip-pharma/OVERNIGHT-REVIEW.md#phase-1-reviewed-and-first-intake-closed) explains the GOMEKLI edition mismatch.

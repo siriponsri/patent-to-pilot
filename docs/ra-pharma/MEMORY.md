@@ -1,5 +1,7 @@
 # Project memory
 
+Use the [final eight-idea results](ip-pharma/EIGHT-IDEA-RESULTS.md) to distinguish eight design proposals from the separate eight unmeasured IS1 successor cells. Both fresh intake passes address the same three product keys. The reported accuracy denominator stays empty.
+
 The [same-case recovery audit](ip-pharma/OVERNIGHT-REVIEW.md#owner-handback) verified all seven files. Exact product identity was available in three cases, package-level quality metadata in one, and exact-edition pairs in zero. Keep admission counts separate from performance denominators; preserve NOT_RUN for the learned and fixed policies.
 
 A Drugs@FDA overview or static link parser can miss a real quality review. The GOMEKLI official package sets its document links through the page's display configuration. Its 2025 combined NDA review still needs an explicit product binding before use for a 2026 strength or form. Preserve both the first access failure and the edition limit. [Reproduction and discovery receipt](ip-pharma/OVERNIGHT-REVIEW.md#phase-1-reviewed-and-first-intake-closed)
