@@ -1,5 +1,11 @@
 # Research memory
 
+## IP Pharma Phase 1 · 26 November 2026
+
+The [replayed dossier](ip-pharma/ELIQUIS-DOSSIER.md) distinguishes ingredient identity, the exact US product listing and dependent claim limitations. The FDA label gives dose per capsule. The quality review adds bead form and distinguishes redacted fields. For claim 30, dose cannot supply treated-core weight fraction, surface distribution or manufacturing process. Keep PCT and EP leads separate from Thai national facts. WIPO/EPO/DIP reachability and index visibility did not verify a TH member, and they cannot establish its absence.
+
+The [prospective intake](ip-pharma/NEXT-SOURCE-INTAKE.md) selected three fresh NDA rows before FDA link inspection. None supplied a verified label/chemistry pair. Stop without scoring or replacements. Future enrollment uses only metadata, rights, family separation and source accessibility, with the blind evaluator independent of selection and runtime. Keep exact fixed routing and cached traversal as the controls. The Option A commercial observations are in the separate [Planner record](https://github.com/siriponsri/patent-to-pilot/blob/2b4188e1/docs/ra-pharma/OPTION-A-IMPORT.md), under their own exposed-cohort scope.
+
 ## Option A development · 26 November 2026
 
 In the [read-only baseline review](option-a/RECEIPT.md) of 253/2540, page 4 [360,720) conveyed the route under sections 80 and 82 while cutting off before the sequence was explicit. This can pass the historical exact proxy and still leave a usable answer incomplete. Keep the original score and the exposed semantic finding together. Verification and the authored rehearsal leave model efficacy and blind agreement unmeasured.

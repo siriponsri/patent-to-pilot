@@ -1,5 +1,13 @@
 # Research lane handoff
 
+## IP Pharma Phase 1 and metadata intake · 26 November 2026
+
+[ELIQUIS SPRINKLE dossier](ip-pharma/ELIQUIS-DOSSIER.md) passed offline replay on exact Orange Book rows, the four-edge US claim path and the FDA label/chemistry locators. The chemistry review adds the bead observation but redacts quantitative and manufacturing evidence. The one bounded WIPO/EPO/DIP pass did not establish a Thai member or status. The [Thai request](ip-pharma/ELIQUIS-INTERNAL-REQUEST.md) is internal product content and was not sent. Retained added FDA PDFs and digests are recorded in the dossier. Source mirror, rights, extraction and access limitations remain explicit.
+
+Phase 2 [metadata intake](ip-pharma/NEXT-SOURCE-INTAKE.md) stopped at 3 selected, 2 accessible overviews, 0 verified two-source packets. The exact source-order comparator and resource caps are prospective. Candidate execution, independent scoring and any fresh benchmark remain NOT_RUN under the Planner hold. No backfill, pods, paid inference, external filing, protected data or Product changes. The checkout started at clean published `da974bcc`, the Planner materials were inspected at `2b4188e1`, and publication is the research commit containing this handoff. Documentation and replay checks were run. The code suite was NOT_RUN for this documentation-only closeout.
+
+Option A remains a separate track. The [Planner commercial receipt](https://github.com/siriponsri/patent-to-pilot/blob/2b4188e1/docs/ra-pharma/OPTION-A-IMPORT.md) records exposed zero-shot responses recovering the sequence in both interfaces, and a saved ChatGPT repeat. Actual serving configuration, independent blind adjudication and RA operator timing remain unverified. Matched few-shot and same-model local full-context/hybrid comparisons remain NOT_RUN. Keep the original [local Option A receipt](option-a/RECEIPT.md) as the earlier checkpoint.
+
 ## Option A local development · 26 November 2026
 
 The Planner relayed owner approval for the unchanged-source historical task and solo-operator pilot. [Protocol and pinned packet](option-a/PROTOCOL.md) · [Thai prompts](option-a/OPERATOR-PACKET.md) · [Local receipt and ledger](option-a/RECEIPT.md). Hashes, extracted pages and both sealed 253/2540 traces were checked without executing D31 again. Exact adds the sections 80/82 route but cuts off before the sequence is explicit. Both retained answers are incomplete on the new exposed semantic reading. Historical scores are preserved. The authored rubric check covered paraphrase, alternative passage, wrong attribution, contradiction, partial, abstention and unknown.
