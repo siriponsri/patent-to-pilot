@@ -47,3 +47,7 @@ Verify the assigned branch and runtime settings, worktree status and origin revi
 ## Feasibility handback
 
 Research published the brief at `e5e8d61f`. Planner verified the worked example and accepted the brief for scope selection. The [review and owner checkpoint](docs/ra-pharma/RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoint) precedes any new experiment.
+
+## Option A import checkpoint
+
+D34 approved unchanged-source checking. Research published the exposed packet at `da974bcc`. Only the three derivatives pinned in the [import receipt](docs/ra-pharma/OPTION-A-IMPORT.md) are prepared for prospective product comparison. Authenticated URL, actual import and commercial outputs remain unverified. No fresh outcome or paid job.

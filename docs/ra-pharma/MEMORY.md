@@ -43,3 +43,7 @@ This version-controlled record gives Claude and Codex the same project history. 
 ## Feasibility review lesson
 
 The page-4 qualification in exposed opinion 253/2540 was already recovered by exact lookup. Keep that control, score equivalent evidence, and distinguish a solo pilot from independent human validation. [Verified case and comparator](RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoint).
+
+## Check the full PDF container before service import
+
+All three official PDFs contained an embedded XML file. Removing the name-tree entry alone left an associated-file reference. Page copying changed canonical text. Verify file objects, canonical text and rendered appearance for every page before pinning an input derivative for both arms. Finding the correct answer page also left a truncated conclusion under the semantic rubric. [Case, benchmark and integrity checks](OPTION-A-IMPORT.md).

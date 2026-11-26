@@ -47,4 +47,6 @@ The [S4 receipt](../evidence-scope/receipts/S4-integrated-verification.md) estab
 
 ## Current research checkpoint
 
-The [feasibility review](RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoint) is complete. Owner selection of unchanged-source checking or deferral for genuine revision pairs is pending. New baselines remain NOT_RUN.
+The [feasibility review](RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoint) is complete. The owner selected unchanged-source checking. New baselines remain NOT_RUN.
+
+The owner approved unchanged-source checking. The [Option A checkpoint](OPTION-A-IMPORT.md) supersedes the earlier pending choice. Commercial runs remain NOT_RUN.

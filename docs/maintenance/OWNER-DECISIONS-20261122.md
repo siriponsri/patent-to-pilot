@@ -135,3 +135,7 @@ For every Planner assignment, proposal or substantive claim, cite a relevant pri
 ## D33 · Research first and bounded architecture search
 
 The owner selected GPT 6.2 Sol with medium effort for the next Research Executor. Planner/Reviewer owns MCP evidence discovery and owner consultation. Compare zero-shot and few-shot generation, general RAG, ChatGPT Pro and NotebookLM. Defer further Product work until the architecture has research support. The [research-first plan](../ra-pharma/RESEARCH-FIRST.md) proposes a bounded autoresearch loop. Dataset, endpoint, numerical thresholds and release remain prospective.
+
+## D34 · Start the unchanged-source pilot
+
+The owner selected Option A, authorized the Planner/Research Executor loop and offered an authenticated Chrome browser for Planner operation. Separate system time from human work. New Product development remains deferred. The [input checkpoint](../ra-pharma/OPTION-A-IMPORT.md) records the exact practice packet and open product access checks.
