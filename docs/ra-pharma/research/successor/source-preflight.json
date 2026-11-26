@@ -1,0 +1,152 @@
+{
+  "schema": "ptp-is1-successor/source-preflight-1",
+  "date": "2026-11-26",
+  "research_base": "d956473c2c05d111ac18ff95ed3c414e460c6ec9",
+  "source": {
+    "publisher": "European Patent Office",
+    "product": "Linked Open EP Data",
+    "license": "CC BY 4.0",
+    "rights_and_fair_use": "https://www.epo.org/en/searching-for-patents/data/linked-open-data",
+    "format": "N-Triples (gzip)",
+    "download_disposition": "listed and range checked; bulk data not downloaded"
+  },
+  "publisher_listing": {
+    "url": "https://data.epo.org/linked-data/api/datasets",
+    "status": 200,
+    "bytes": 52845,
+    "sha256": "895fe9521e6c0fbb5ab1970c62d380258144e16bce34fc95149681efba50eabe",
+    "snapshot": "2026-W48",
+    "listed_publication_date": "2026-11-24",
+    "shards": 99,
+    "sum_listed_publisher_mb": 10346.5,
+    "all_listed_checksum_links_point_to": "full_part01.nt.gz.sha512",
+    "correct_checksum_rule": "publisher fileName matched to fileName + .sha512 at the same path; checked first and last only",
+    "matched_checksum_examples": [
+      {
+        "file": "full_part01.nt.gz",
+        "compressed_bytes_from_content_range": 79273596,
+        "sha512": "b498d383c5b5110953d942b7a7a414a5c2dd47e73647a99fafca7b517d6972098624f2feef5902650b347b01d0d5afb2544059d2abc41ee139eed5dd8b4b7549"
+      },
+      {
+        "file": "full_part99.nt.gz",
+        "compressed_bytes_from_content_range": 37189728,
+        "sha512": "291f3378b5a7b37a0d3e2b8b60ffb1f57d1ca39b55ad6bb16ddd63dc3e8ae634a6935312d2d63c4b42f6c31f5d9222c9cbedb21d6f98212b47b3ddb342d2e7"
+      }
+    ],
+    "range_probe": {
+      "compressed_bytes_per_probe": 8192,
+      "parts": [
+        1,
+        2,
+        50,
+        98,
+        99
+      ],
+      "status": 206,
+      "sha256_prefix_part01": "fd6b5c98035692d87935804e23262ad945dc4508ad45b69f275cd064de5fb7b2",
+      "scope": "gzip prefix and RDF application/publication types only; chunk boundaries do not define date coverage or complete joins"
+    },
+    "failures": [
+      "initial short listing read timed out; bounded retry returned 200",
+      "publisher alternate lod.apps.epo.org host returned 403; no bypass",
+      "legacy unprefixed item URLs returned 404; official /linked-data path worked",
+      "legacy guessed USPTO DTD path returned 404; official XML Resources points to data.uspto.gov"
+    ]
+  },
+  "api_probes": [
+    {
+      "locator": "GET https://data.epo.org/linked-data/query, published example EP 1000000 A1; EPO SampleQueries_v1.2.pdf §2.2",
+      "status": 200,
+      "bytes": 2234,
+      "sha256": "8c833bc43184e39da6c295130256d2c9f4335469cc72e0f9e70cd2abde090c1a",
+      "fields": [
+        "DOCDB family URI",
+        "inventive IPC URI",
+        "English title language",
+        "English abstract present"
+      ]
+    },
+    {
+      "locator": "GET https://data.epo.org/linked-data/query, published example EP 0009552 A3; EPO SampleQueries_v1.2.pdf §2.4",
+      "status": 200,
+      "bytes": 1168,
+      "sha256": "9c4eae41b444a4a573f14a282498ba962554e4c00356daec46b254cbf8e7cb2d",
+      "direct_citation_fields": [
+        "direct publication URI",
+        "optional target application/family",
+        "optional target inventive IPC"
+      ],
+      "returned_rows": 5,
+      "observed": "One distinct EP target resolved with two IPC rows; three non-EP publications unresolved in the bounded response"
+    },
+    {
+      "locator": "GET https://data.epo.org/linked-data/query, two fixed issue dates 2026-08-19 and 2026-08-26",
+      "status": 200,
+      "bytes": 245,
+      "sha256": "705428e3542676a6830dd10bc58be3633fc2a9d95bb9ee71c32eed9edbb3bb56",
+      "aggregate": "COUNT over subselect LIMIT 1001, distinct EP A1/A2 DOCDB families with inventive IPC, explicit English title and abstract",
+      "clipped_count": 1001,
+      "universe": "live reference API before exclusion, no label or document text in response; not a held corpus"
+    }
+  ],
+  "exposed_metadata_sample": {
+    "query": "epo-sandbox-metadata.rq",
+    "query_sha256": "3324110fff148799e8755b3ef4dcf27e152033dc254161257ca74ba0065b1379",
+    "source_endpoint": "https://data.epo.org/linked-data/query",
+    "families": 24,
+    "bytes": 9375,
+    "sha256": "b81ef1cc14edbe0f22bef625f4ef8533378bb51073f5196d8bce4261036b88ac",
+    "family_list_sha256": "753753272378a5726dfbf9064363de29929c5daa2c7f1529db58d035bf598ddd",
+    "local_base": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-is1-successor-preflight-20261126",
+    "raw": "epo-sandbox-metadata.json",
+    "exclude_file": "epo-sandbox-exclude-families.txt",
+    "wall_seconds": 2.871,
+    "applied_disposition": "exposed metadata, exclude from candidate and query held roles; unknown prior overlap, no text, labels or outcomes"
+  },
+  "repository_provenance": [
+    {
+      "path": "docs/evidence-scope/receipts/S2-sources.json",
+      "checkout_sha256": "c4028a6c26a9eb8bada9976a4b8dca1903755bb5d3867b453d1e4315e068c27f"
+    },
+    {
+      "path": "docs/evidence-scope/receipts/S4-release-manifest.json",
+      "checkout_sha256": "f595b5c9f990dbed7a2ba6f0830e702ddd53022c89e3938b56a608389504c8df"
+    },
+    {
+      "path": "docs/evidence-scope/research/manifest.json",
+      "checkout_sha256": "e0b9aa0b9b0c0219390f2dfaf85b8f978f4f83120fa01ce18eee5c67de3d89ac"
+    },
+    {
+      "path": "docs/evidence-scope/alternative-evidence/packet/manifest.json",
+      "checkout_sha256": "4a9ae5d2db9526e97fdf66dc922e2334b3f80930430fb335599f254892c08df5"
+    },
+    {
+      "path": "data/manifests/g03-metadata-receipt.json",
+      "checkout_sha256": "9af15210e424b683dd7f7542b917fa40c1e318885f4062a347a7765d6610a1f9"
+    },
+    {
+      "path": "docs/healthtech/research/paper1-bridgeret/b53-readiness-20261119.json",
+      "checkout_sha256": "55ae8b14c66e7db77a4fc01c7a18b765f2d7c38bce675e9d0bd9d62f61af0a45"
+    },
+    {
+      "path": "docs/healthtech/research/paper1-bridgeret/manifest-v2/FREEZE-RECEIPT.json",
+      "checkout_sha256": "7e2809a122f0c78ac0f67aeb63e9b6376f51c4815e5b14c3b746f6528ac2dcac"
+    }
+  ],
+  "admission": {
+    "reserved_queries": 0,
+    "released_benchmark_cells": 0,
+    "status": "BLOCKED_EXCLUSION_COVERAGE",
+    "score": "NOT_RUN",
+    "code_and_runner": "NOT_RUN pending corpus admission; no runtime model job authorized"
+  },
+  "resources": {
+    "paid_usd": 0,
+    "model_calls": 0,
+    "gpu_jobs": 0,
+    "archive_parts_fully_downloaded": 0,
+    "protected_test_accesses": 0,
+    "whole_activity_wall_and_cpu": "unmeasured",
+    "observed_c_drive_free_bytes": 59151388672
+  }
+}

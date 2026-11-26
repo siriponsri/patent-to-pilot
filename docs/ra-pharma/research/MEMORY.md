@@ -17,3 +17,9 @@ The [independent review](PRE-RUN-REVIEW.md) required a separate evidence-role ab
 The R4 natural transfer release is still absent. A fresh paper-style reference or natural dossier pack needs independently verified rights, family separation, adjudication and an exact release. The R3 retained lock pins one synthetic original, with its own output path. Hold-out research does not inherit that permission.
 
 For full Windows QA, use the S4 validation interpreter with the existing QA overlay. The first run used the launcher-only overlay and introduced missing SciPy/rank-bm25 errors. Use a fresh short basetemp and retain the failed log alongside final candidate evidence.
+
+## IS1 successor intake · 26 November 2026
+
+[Linked Open EP Data preflight](successor/README.md) established a concrete official resource with permissive terms, usable bibliographic fields and a known-link structure. A clipped pre-exclusion count cannot stand in for eligible query/candidate counts. The EPO listing repeats part 01's checksum URL for every part. Use the matching filename SHA-512, record every verification and stop any intake on unresolved integrity. Prefix samples cross entity types, so avoid assuming date-complete archive shards. Live SPARQL is a rolling view and a small schema probe has separate provenance from week 48 archive content.
+
+Do not infer unseen family lineage from a late publication. Historic manifests supply partial exposure evidence. For the remaining unknowns use a versioned exclusion-only crosswalk, custodian anti-join or genuinely complete dated lineage bounds. Keep the small August 2021 exposure-only sample out of held roles. No reserved score or source-label promotion is permitted at this checkpoint. [R4 inventory](successor/R4.md) records the early-stop alternative-witness guard for future scorers.
