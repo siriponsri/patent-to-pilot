@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## IP Pharma exact-key access recovery · 26 November 2026
+
+The [separate recovery protocol](ip-pharma/ACCESS-RECOVERY-PROTOCOL.md) was published before acquisition at `131db60a6b63ad82d5034831df14c50be4d7b64f`. [Recovery receipt and private manifest hashes](ip-pharma/ACCESS-RECOVERY-RECEIPT.md) recorded three exact matches and one original FDA quality-review lead. GOMEKLI's February 2025 package does not establish coverage of the July 2026 product 002 row. The other two exact applications surfaced label and letter only in the bounded pass. Recovery closed at zero qualified, preserving the original Phase 2 stop and its 400 response.
+
+No document PDF body or evaluator data was opened. No policy, trial or score was run. Publication is the lane commit containing this receipt. Send metadata, edition and access observations to Planner for independent review. Any future packet needs exact product/edition evidence and a separate release. Code tests were NOT_RUN for the documentation-only iteration.
+
 ## IP Pharma Phase 1 and metadata intake · 26 November 2026
 
 [ELIQUIS SPRINKLE dossier](ip-pharma/ELIQUIS-DOSSIER.md) passed offline replay on exact Orange Book rows, the four-edge US claim path and the FDA label/chemistry locators. The chemistry review adds the bead observation but redacts quantitative and manufacturing evidence. The one bounded WIPO/EPO/DIP pass did not establish a Thai member or status. The [Thai request](ip-pharma/ELIQUIS-INTERNAL-REQUEST.md) is internal product content and was not sent. Retained added FDA PDFs and digests are recorded in the dossier. Source mirror, rights, extraction and access limitations remain explicit.

@@ -1,5 +1,9 @@
 # Research memory
 
+## IP Pharma metadata recovery · 26 November 2026
+
+[Recovery](ip-pharma/ACCESS-RECOVERY-RECEIPT.md) through openFDA resolved all three exact product identities. FDA approval-package display configuration is sometimes inline JavaScript. Inspect enabled fields on the retained HTML before claiming that a loading placeholder hides all review metadata. The enabled GOMEKLI chemistry link belongs to a combined original package predating the selected 3MG product 002 row. Keep review existence, exact-subject applicability and file accessibility separate. The original Phase 2 result is immutable. No fresh cases or comparisons were run.
+
 ## IP Pharma Phase 1 · 26 November 2026
 
 The [replayed dossier](ip-pharma/ELIQUIS-DOSSIER.md) distinguishes ingredient identity, the exact US product listing and dependent claim limitations. The FDA label gives dose per capsule. The quality review adds bead form and distinguishes redacted fields. For claim 30, dose cannot supply treated-core weight fraction, surface distribution or manufacturing process. Keep PCT and EP leads separate from Thai national facts. WIPO/EPO/DIP reachability and index visibility did not verify a TH member, and they cannot establish its absence.
