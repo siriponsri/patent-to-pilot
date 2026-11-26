@@ -1,0 +1,796 @@
+{
+  "version": "2026-11-26.1",
+  "scope": "Shared research knowledge and one public FDA listing illustration. No adjudicated Thai status or claim-support edges.",
+  "nodes": [
+    {
+      "id": "idea:A",
+      "type": "proposal",
+      "label": "Exposure-aware search"
+    },
+    {
+      "id": "idea:B",
+      "type": "proposal",
+      "label": "Cross-domain query abstraction"
+    },
+    {
+      "id": "idea:C",
+      "type": "proposal",
+      "label": "Claim-element evidence"
+    },
+    {
+      "id": "idea:D",
+      "type": "proposal",
+      "label": "Jurisdiction and status"
+    },
+    {
+      "id": "idea:E",
+      "type": "proposal",
+      "label": "Funnel diagnostics"
+    },
+    {
+      "id": "idea:F",
+      "type": "proposal",
+      "label": "Validated reranker selection"
+    },
+    {
+      "id": "idea:G",
+      "type": "proposal",
+      "label": "Replay and provenance"
+    },
+    {
+      "id": "idea:H",
+      "type": "proposal",
+      "label": "Task-specific evaluation"
+    },
+    {
+      "id": "km:a_nonfactoid.pdf",
+      "type": "paper",
+      "label": "Non-factoid patent QA",
+      "owner_file": "a_nonfactoid.pdf",
+      "sha256": "3fb7dd309895cf7915b9b7d0973c03ea6c93baac61ec1a168b902b17f7d75a4d",
+      "url": "https://doi.org/10.1016/j.eswa.2021.114910",
+      "locator": "abstract; retrieval and diversity evaluation"
+    },
+    {
+      "id": "km:advancing_patent_law.pdf",
+      "type": "paper",
+      "label": "Human-in-the-loop patent work",
+      "owner_file": "advancing_patent_law.pdf",
+      "sha256": "ce50f171748dc5df45019c6b5340ea4a70e17bfe9b5c938ebf427f11a98fa7a4",
+      "url": "https://doi.org/10.1016/j.wpi.2025.102341",
+      "locator": "abstract; proposed human review framework"
+    },
+    {
+      "id": "km:automating-the-search-for-a-patent-s-prior-art-with-a-full-572jr0lvd5.pdf",
+      "type": "paper",
+      "label": "Helmers et al., expert-assessed prior-art search",
+      "owner_file": "automating-the-search-for-a-patent-s-prior-art-with-a-full-572jr0lvd5.pdf",
+      "sha256": "0de152acc46e23c5e15e57d856016adcc8559840ee38e814e8550e3593fad27f",
+      "url": "https://doi.org/10.1371/journal.pone.0212103",
+      "locator": "methods and expert-assessed full-text retrieval comparison"
+    },
+    {
+      "id": "km:bert_based_fto.pdf",
+      "type": "paper",
+      "label": "Freunek and Bodmer, BERT-based FTO",
+      "owner_file": "bert_based_fto.pdf",
+      "sha256": "62a5223a34bfec5f5ec8fea58cf04149db8f9c566af1de78081f5a0e5996decf",
+      "url": "https://arxiv.org/abs/2105.00817",
+      "locator": "evaluation on five inventions in G06T"
+    },
+    {
+      "id": "km:bio_ai_agent.pdf",
+      "type": "paper",
+      "label": "Domain agent engineering analogy",
+      "owner_file": "bio_ai_agent.pdf",
+      "sha256": "bc51987d5f9042482e92dae0800316487868f73104beaa94c030cf521d2f0553",
+      "url": "https://arxiv.org/abs/2511.08649",
+      "locator": "abstract; outside the IP benchmark scope"
+    },
+    {
+      "id": "km:efficient-patent-searching-using-graph-transformers-wohfh9g4ij5l.pdf",
+      "type": "paper",
+      "label": "Daniell et al., graph-transformer patent retrieval",
+      "owner_file": "efficient-patent-searching-using-graph-transformers-wohfh9g4ij5l.pdf",
+      "sha256": "5924910b08d56a638904285d6ec44a2f2490c0704ed57bfd694e086863ef893e",
+      "url": "https://arxiv.org/abs/2508.10496",
+      "locator": "methods; examiner-citation supervision"
+    },
+    {
+      "id": "km:electronics-15-02449-v2.pdf",
+      "type": "paper",
+      "label": "Guo and Duan, DIKWP claim and purpose reasoning",
+      "owner_file": "electronics-15-02449-v2.pdf",
+      "sha256": "15317214b198d59aca07cebbcdcf274259d46a0d2091377db37ff564c30648d4",
+      "url": "https://doi.org/10.3390/electronics15112449",
+      "locator": "sections 5–6; keyword and ontology controls"
+    },
+    {
+      "id": "km:grounded_revision.pdf",
+      "type": "paper",
+      "label": "Grounded claim revision",
+      "owner_file": "grounded_revision.pdf",
+      "sha256": "454a54d51d5c660741f86d9cc8856affedb50d92d62dfe6d28b9efbf7e7f520f",
+      "url": "https://arxiv.org/abs/2609.36550",
+      "locator": "revision evaluation; examiner targets versus inherited language"
+    },
+    {
+      "id": "km:intelligent-system-for-automated-molecular-patent.pdf",
+      "type": "paper",
+      "label": "PatentFinder",
+      "owner_file": "intelligent-system-for-automated-molecular-patent.pdf",
+      "sha256": "96dfd4f0b6391862950fb5e666af9c3aac660d2ea2550f0ba2f720dc27d897f0",
+      "url": "https://arxiv.org/abs/2412.07819",
+      "locator": "pp. 3–4; MolPatent-240"
+    },
+    {
+      "id": "km:large_llm.pdf",
+      "type": "paper",
+      "label": "Pearce, RepRap prior art and obviousness",
+      "owner_file": "large_llm.pdf",
+      "sha256": "0a59bab867ec9277cf2030bdfc71e8197fd489ad51621dc13f6f954f43161f9b",
+      "url": "https://doi.org/10.1016/j.wpi.2026.102513",
+      "locator": "case study; RepRap prior art"
+    },
+    {
+      "id": "km:novel_or_not.pdf",
+      "type": "paper",
+      "label": "PatEx-Gym",
+      "owner_file": "novel_or_not.pdf",
+      "sha256": "271c79aa28116b96aae0cfdd9f4001bab22dfb0a64df55d3c5385e6174a3aa13",
+      "url": "https://arxiv.org/abs/2610.33503",
+      "locator": "trajectory and prior-art/novelty evaluation"
+    },
+    {
+      "id": "km:panorama.pdf",
+      "type": "paper",
+      "label": "PANORAMA",
+      "owner_file": "panorama.pdf",
+      "sha256": "7a44404aff52b17bffd8b3b944dcb145429c60441d53275d943224c4cc57e2f7",
+      "url": "https://arxiv.org/abs/2510.24774",
+      "locator": "benchmark tasks; official examiner decision trails"
+    },
+    {
+      "id": "km:patentagentbench.pdf",
+      "type": "paper",
+      "label": "PatentAgentBench",
+      "owner_file": "patentagentbench.pdf",
+      "sha256": "d2b3a9dcae72e06da9e59c7aac0686affe8e405e115ce08a004eb98dd852e389",
+      "url": "https://arxiv.org/abs/2610.35031",
+      "locator": "pp. 6–8; court-derived FTO and claim-charting tasks"
+    },
+    {
+      "id": "km:proartsearch.pdf",
+      "type": "paper",
+      "label": "PROARTSearch",
+      "owner_file": "proartsearch.pdf",
+      "sha256": "3a6ba1ba7f465ab3a10166780128e278dc4e928ec53683536963a37ec6642d42",
+      "url": "https://arxiv.org/abs/2009.09132",
+      "locator": "prior-art reranking with generated text; evaluation"
+    },
+    {
+      "id": "km:using-design-database-structures-to-characterize-freedom-to-340r01lgku.pdf",
+      "type": "paper",
+      "label": "Fu et al., pharmaceutical FTO case study",
+      "owner_file": "using-design-database-structures-to-characterize-freedom-to-340r01lgku.pdf",
+      "sha256": "35cded2aca803ce701659381e16054be7c21a1ab3cd649249a4f0bd08afcfd14",
+      "url": "https://iced.designsociety.org/publication/34865/using_design_database_structures_to_characterize_freedom-to-operate_in_a_design_space_a_legal_case_study",
+      "locator": "pp. 3–4, 8, 10; expert comparison on a fabricated formulation"
+    },
+    {
+      "id": "km:US20060173903A1.pdf",
+      "type": "published_patent",
+      "label": "Automated claim charts",
+      "owner_file": "US20060173903A1.pdf",
+      "sha256": "9f9281a071ca80babcac3c10970b89fb6a85e002ee83ea071c2746addf4d25d0",
+      "url": "https://patents.google.com/patent/US20060173903A1/en",
+      "locator": "abstract and document identity; charting systems"
+    },
+    {
+      "id": "km:US20090083049A1.pdf",
+      "type": "published_patent",
+      "label": "Product-characteristic evidence pieces",
+      "owner_file": "US20090083049A1.pdf",
+      "sha256": "3c032a7a37c4f4daa4dfa95f992dd2481ee5cffd085d2e31a439b8f465f6d7f2",
+      "url": "https://patents.google.com/patent/US20090083049A1/en",
+      "locator": "abstract and document identity; charting systems"
+    },
+    {
+      "id": "km:US20120102427A1.pdf",
+      "type": "published_patent",
+      "label": "Interactive claim charts",
+      "owner_file": "US20120102427A1.pdf",
+      "sha256": "da76d0a020c67853d5acb9d4b8da802c917dbacfda5467b52b0b7a6d6b3b1769",
+      "url": "https://patents.google.com/patent/US20120102427A1/en",
+      "locator": "abstract and document identity; charting systems"
+    },
+    {
+      "id": "km:US9541977.pdf",
+      "type": "published_patent",
+      "label": "Context-associated charts",
+      "owner_file": "US9541977.pdf",
+      "sha256": "f171bde2972100e02eb42f55adb133e65d152de670ad25a4343d7ec5ff85520b",
+      "url": "https://patents.google.com/patent/US9541977B1/en",
+      "locator": "abstract and document identity; charting systems"
+    },
+    {
+      "id": "km:fto_agentic_ideas_and_gaps.md",
+      "type": "proposal_document",
+      "label": "Owner proposal A–H",
+      "owner_file": "fto_agentic_ideas_and_gaps.md",
+      "sha256": "550d96729a112646804e1d119f9a887a8fe7374f42985d9347dba95b1571fe27",
+      "url": null,
+      "locator": "sections 0–5; hypotheses and historical reported numbers"
+    },
+    {
+      "id": "km:combined_fto_llm_results_r2.csv",
+      "type": "discovery_index",
+      "label": "Owner literature discovery export",
+      "owner_file": "combined_fto_llm_results_r2.csv",
+      "sha256": "73f5c5088f4255f5ff5faf26b1f9c4284f678ad118b5fda2b4bfb057e99e2349",
+      "url": null,
+      "locator": "bibliography; title, abstract, DOI and discovery channel"
+    },
+    {
+      "id": "repo:sofean-mso/Patent-Deep-Research",
+      "type": "repository",
+      "revision": "56d1d89e083aa3188734307ddfcd99295d46f2cd",
+      "locator": "src/agents/graph.py",
+      "url": "https://github.com/sofean-mso/Patent-Deep-Research/blob/56d1d89e083aa3188734307ddfcd99295d46f2cd/src/agents/graph.py",
+      "license_observed": "Apache-2.0",
+      "detail": "Plan, retrieve with Vespa, reflect, repeat or stop. Also inspect passage_chat_graph.py. Use its bounded reflect/search loop as an open comparator."
+    },
+    {
+      "id": "repo:pqaidevteam/pqai",
+      "type": "repository",
+      "revision": "56342aaac5d9bf626f9413e5e49819e70709ce2f",
+      "locator": "core/index_selection.py",
+      "url": "https://github.com/pqaidevteam/pqai/blob/56342aaac5d9bf626f9413e5e49819e70709ce2f/core/index_selection.py",
+      "license_observed": "MIT",
+      "detail": "Subclass selection plus optional reranking in core/reranking.py. Borrow the retrieval decomposition. Indices and weights need separate rights."
+    },
+    {
+      "id": "repo:ip-tools/patzilla",
+      "type": "repository",
+      "revision": "4732de714c38382f608741a50dbd1fec867837a0",
+      "locator": "patzilla/access/epo/ops/api.py",
+      "url": "https://github.com/ip-tools/patzilla/blob/4732de714c38382f608741a50dbd1fec867837a0/patzilla/access/epo/ops/api.py",
+      "license_observed": "AGPL-3.0 and EUPL-1.2 notices",
+      "detail": "EPO OPS family navigation and publication substitution. Study the UI and family navigation. Check notices before embedding code."
+    },
+    {
+      "id": "repo:patsnap/patent-literature-search-mcp",
+      "type": "repository",
+      "revision": "799f58a28dc33561a9fc5ee55ce3a089515d2cfa",
+      "locator": "src/server.js",
+      "url": "https://github.com/patsnap/patent-literature-search-mcp/blob/799f58a28dc33561a9fc5ee55ce3a089515d2cfa/src/server.js",
+      "license_observed": "Apache-2.0 wrapper",
+      "detail": "Separate search and fetch operations delegate to the remote service. A transport license does not grant service access or redistribution."
+    },
+    {
+      "id": "repo:Peter-McCann-Strain/chemical-patent-analysis",
+      "type": "repository",
+      "revision": "e50f08614cb272ceff1bfffb1ffbf83fb087b376",
+      "locator": "praviar_pipeline/src/praviar_pipeline/models/report_evidence_graph.py",
+      "url": "https://github.com/Peter-McCann-Strain/chemical-patent-analysis/blob/e50f08614cb272ceff1bfffb1ffbf83fb087b376/praviar_pipeline/src/praviar_pipeline/models/report_evidence_graph.py",
+      "license_observed": "Apache-2.0 code",
+      "detail": "MatterGraph, chemical search, claim parsing, primary-source status and conclusion-specific reassessment. Closest open architecture. Review MODEL_LICENSES.md separately."
+    },
+    {
+      "id": "repo:mjtiv/patent-claim-mapper",
+      "type": "repository",
+      "revision": "799010657392423ca0187b91910deb468c6f1b9c",
+      "locator": "patent_claim_analysis_1.5.py",
+      "url": "https://github.com/mjtiv/patent-claim-mapper/blob/799010657392423ca0187b91910deb468c6f1b9c/patent_claim_analysis_1.5.py",
+      "license_observed": "MIT",
+      "detail": "Scrape a publication, find likely independent claims, request JSON per claim and export an element chart. A targeted synthetic example is a demo."
+    },
+    {
+      "id": "repo:Lawless-Inc/priorbit",
+      "type": "repository",
+      "revision": "d6753fc1bb4fa55be2c060140297eca1f45eaf00",
+      "locator": "skills/priorbit/SKILL.md",
+      "url": "https://github.com/Lawless-Inc/priorbit/blob/d6753fc1bb4fa55be2c060140297eca1f45eaf00/skills/priorbit/SKILL.md",
+      "license_observed": "MIT public client/skill",
+      "detail": "US-first playbook with product/claim locators, element state, legal status and family navigation. Full service is hosted. Do not equate client inspection with a paid product run."
+    },
+    {
+      "id": "repo:Fraunhofer-ITMP/PEMT",
+      "type": "repository",
+      "revision": "f7dc93885ef390fe84c5bd939ee0f1a34c4c675c",
+      "locator": "src/pemt/surechembl.py",
+      "url": "https://github.com/Fraunhofer-ITMP/PEMT/blob/f7dc93885ef390fe84c5bd939ee0f1a34c4c675c/src/pemt/surechembl.py",
+      "license_observed": "MIT code",
+      "detail": "SureChEMBL chemical/gene-to-document candidates with classification filters. A document mention is a discovery edge."
+    },
+    {
+      "id": "repo:asobl/awesome-patent-tools",
+      "type": "repository",
+      "revision": "eb43c1cf7d09eb0c155b4b1597a648121771da85",
+      "locator": "README.md",
+      "url": "https://github.com/asobl/awesome-patent-tools/blob/eb43c1cf7d09eb0c155b4b1597a648121771da85/README.md",
+      "license_observed": "MIT index",
+      "detail": "Tool discovery and service inventory. Each linked entry needs its own terms."
+    },
+    {
+      "id": "repo:mahesh-maan/awesome-patent-retrieval",
+      "type": "repository",
+      "revision": "47799e9089bf4d0cb31fefdfeb49b5b9c6b4d11e",
+      "locator": "README.md",
+      "url": "https://github.com/mahesh-maan/awesome-patent-retrieval/blob/47799e9089bf4d0cb31fefdfeb49b5b9c6b4d11e/README.md",
+      "license_observed": "No repository license identified",
+      "detail": "Dataset and system leads including PatentMatch. Cite links and check the originating dataset."
+    },
+    {
+      "id": "source:fda",
+      "type": "issuer_snapshot",
+      "url": "https://www.fda.gov/media/76860/download?attachment",
+      "sha256": "d4dbc9d85df4fbd78c5e448f130a55b05054f529d2054a46df10735437792241",
+      "locator": "products.txt and patent.txt"
+    },
+    {
+      "id": "product:202155-001",
+      "label": "ELIQUIS 2.5MG",
+      "type": "product",
+      "source": "source:fda",
+      "locator": "products.txt data on line 34469"
+    },
+    {
+      "id": "product:220073-001",
+      "label": "ELIQUIS SPRINKLE 0.15MG",
+      "type": "product",
+      "source": "source:fda",
+      "locator": "products.txt data on line 9053"
+    },
+    {
+      "id": "patent:US11896586",
+      "label": "US patent identifier as listed",
+      "type": "patent",
+      "source": "source:fda",
+      "locator": "patent.txt line 7130"
+    },
+    {
+      "id": "ingredient:apixaban",
+      "label": "Apixaban",
+      "type": "ingredient",
+      "source": "source:fda",
+      "locator": "products.txt ingredient"
+    },
+    {
+      "id": "receipt:fda",
+      "type": "engineering_receipt",
+      "sha256": "c7b1081d91d80f128a600f12fc9018ef838286bd90403be182c42b4761b7e40e",
+      "locator": "FDA-PILOT.md; REPORT.md, FDA results"
+    },
+    {
+      "id": "question:thai-status",
+      "type": "unresolved_question",
+      "label": "Thai national status on the review date",
+      "jurisdiction": "TH"
+    },
+    {
+      "id": "output:thai-draft",
+      "type": "proposed_output",
+      "label": "Draft request for the missing national record"
+    },
+    {
+      "id": "grant:US11896586B2",
+      "type": "grant_representation",
+      "source": "Google Patents",
+      "url": "https://patents.google.com/patent/US11896586B2/en#claims",
+      "sha256": "dab046852767298848a2b864f40d49fe518aaee55aa5592c760b18c9f3e7ded8",
+      "locator": "Claims (45)"
+    },
+    {
+      "id": "receipt:claims",
+      "type": "engineering_receipt",
+      "sha256": "7b92999c537a817f9898364fcfa60a48c8fe6dc3ebf85f68925f16b4ed6cd287",
+      "locator": "CLAIM-PILOT.md; REPORT.md, claim results"
+    },
+    {
+      "id": "claim:US11896586B2:45",
+      "type": "numbered_claim",
+      "source": "grant:US11896586B2",
+      "locator": "CLM-00045"
+    },
+    {
+      "id": "claim:US11896586B2:44",
+      "type": "numbered_claim",
+      "source": "grant:US11896586B2",
+      "locator": "CLM-00044"
+    },
+    {
+      "id": "claim:US11896586B2:39",
+      "type": "numbered_claim",
+      "source": "grant:US11896586B2",
+      "locator": "CLM-00039"
+    },
+    {
+      "id": "claim:US11896586B2:33",
+      "type": "numbered_claim",
+      "source": "grant:US11896586B2",
+      "locator": "CLM-00033"
+    },
+    {
+      "id": "claim:US11896586B2:30",
+      "type": "numbered_claim",
+      "source": "grant:US11896586B2",
+      "locator": "CLM-00030"
+    },
+    {
+      "id": "work:IS1",
+      "type": "owner_work",
+      "sha256": "9614946d6dd6f4cd2e849e1e9872cc1f0e108eecbe90d2f0316f263e9ae85e14",
+      "locator": "owner IS1 revised PDF; retrieval study, see linked bridge",
+      "url": "../../healthtech/audits/S3-20261125/BRIDGE.md"
+    },
+    {
+      "id": "work:paper53",
+      "type": "owner_work",
+      "sha256": "09d580402a49739baedb2281be16ba0a275a1c5ecdb711dfb21c93c8aba3ddbe",
+      "locator": "pp. 1, 6, historical reported aggregates"
+    },
+    {
+      "id": "benchmark:molpatent",
+      "type": "benchmark",
+      "label": "MolPatent-240; molecular membership",
+      "url": "https://arxiv.org/abs/2412.07819",
+      "locator": "evaluation"
+    },
+    {
+      "id": "benchmark:fto",
+      "type": "benchmark",
+      "label": "PatentAgentBench court-derived FTO subset",
+      "url": "https://arxiv.org/abs/2610.35031",
+      "locator": "pp. 6–8"
+    },
+    {
+      "id": "paper:dexa",
+      "type": "paper",
+      "label": "Sofean and Aras, patent deep research",
+      "url": "https://doi.org/10.1007/978-3-032-34374-1_20",
+      "locator": "DEXA 2026, pp. 271–285"
+    }
+  ],
+  "edges": [
+    {
+      "from": "km:a_nonfactoid.pdf",
+      "relation": "informs",
+      "to": "idea:B",
+      "status": "reviewed_context",
+      "locator": "abstract; retrieval and diversity evaluation"
+    },
+    {
+      "from": "km:advancing_patent_law.pdf",
+      "relation": "informs",
+      "to": "idea:G",
+      "status": "reviewed_context",
+      "locator": "abstract; proposed human review framework"
+    },
+    {
+      "from": "km:automating-the-search-for-a-patent-s-prior-art-with-a-full-572jr0lvd5.pdf",
+      "relation": "informs",
+      "to": "idea:H",
+      "status": "reviewed_context",
+      "locator": "methods and expert-assessed full-text retrieval comparison"
+    },
+    {
+      "from": "km:bert_based_fto.pdf",
+      "relation": "informs",
+      "to": "idea:C",
+      "status": "reviewed_context",
+      "locator": "evaluation on five inventions in G06T"
+    },
+    {
+      "from": "km:bio_ai_agent.pdf",
+      "relation": "informs",
+      "to": "idea:G",
+      "status": "reviewed_context",
+      "locator": "abstract; outside the IP benchmark scope"
+    },
+    {
+      "from": "km:efficient-patent-searching-using-graph-transformers-wohfh9g4ij5l.pdf",
+      "relation": "informs",
+      "to": "idea:A",
+      "status": "reviewed_context",
+      "locator": "methods; examiner-citation supervision"
+    },
+    {
+      "from": "km:electronics-15-02449-v2.pdf",
+      "relation": "informs",
+      "to": "idea:C",
+      "status": "reviewed_context",
+      "locator": "sections 5–6; keyword and ontology controls"
+    },
+    {
+      "from": "km:grounded_revision.pdf",
+      "relation": "informs",
+      "to": "idea:E",
+      "status": "reviewed_context",
+      "locator": "revision evaluation; examiner targets versus inherited language"
+    },
+    {
+      "from": "km:intelligent-system-for-automated-molecular-patent.pdf",
+      "relation": "informs",
+      "to": "idea:C",
+      "status": "reviewed_context",
+      "locator": "pp. 3–4; MolPatent-240"
+    },
+    {
+      "from": "km:large_llm.pdf",
+      "relation": "informs",
+      "to": "idea:H",
+      "status": "reviewed_context",
+      "locator": "case study; RepRap prior art"
+    },
+    {
+      "from": "km:novel_or_not.pdf",
+      "relation": "informs",
+      "to": "idea:E",
+      "status": "reviewed_context",
+      "locator": "trajectory and prior-art/novelty evaluation"
+    },
+    {
+      "from": "km:panorama.pdf",
+      "relation": "informs",
+      "to": "idea:E",
+      "status": "reviewed_context",
+      "locator": "benchmark tasks; official examiner decision trails"
+    },
+    {
+      "from": "km:patentagentbench.pdf",
+      "relation": "informs",
+      "to": "idea:H",
+      "status": "reviewed_context",
+      "locator": "pp. 6–8; court-derived FTO and claim-charting tasks"
+    },
+    {
+      "from": "km:proartsearch.pdf",
+      "relation": "informs",
+      "to": "idea:F",
+      "status": "reviewed_context",
+      "locator": "prior-art reranking with generated text; evaluation"
+    },
+    {
+      "from": "km:using-design-database-structures-to-characterize-freedom-to-340r01lgku.pdf",
+      "relation": "informs",
+      "to": "idea:H",
+      "status": "reviewed_context",
+      "locator": "pp. 3–4, 8, 10; expert comparison on a fabricated formulation"
+    },
+    {
+      "from": "km:US20060173903A1.pdf",
+      "relation": "informs",
+      "to": "idea:C",
+      "status": "reviewed_context",
+      "locator": "abstract and document identity; charting systems"
+    },
+    {
+      "from": "km:US20090083049A1.pdf",
+      "relation": "informs",
+      "to": "idea:C",
+      "status": "reviewed_context",
+      "locator": "abstract and document identity; charting systems"
+    },
+    {
+      "from": "km:US20120102427A1.pdf",
+      "relation": "informs",
+      "to": "idea:C",
+      "status": "reviewed_context",
+      "locator": "abstract and document identity; charting systems"
+    },
+    {
+      "from": "km:US9541977.pdf",
+      "relation": "informs",
+      "to": "idea:C",
+      "status": "reviewed_context",
+      "locator": "abstract and document identity; charting systems"
+    },
+    {
+      "from": "km:fto_agentic_ideas_and_gaps.md",
+      "relation": "informs",
+      "to": "idea:A",
+      "status": "reviewed_context",
+      "locator": "sections 0–5; hypotheses and historical reported numbers"
+    },
+    {
+      "from": "km:combined_fto_llm_results_r2.csv",
+      "relation": "informs",
+      "to": "idea:H",
+      "status": "reviewed_context",
+      "locator": "bibliography; title, abstract, DOI and discovery channel"
+    },
+    {
+      "from": "repo:sofean-mso/Patent-Deep-Research",
+      "relation": "comparison_for",
+      "to": "idea:A",
+      "status": "source_inspected"
+    },
+    {
+      "from": "repo:pqaidevteam/pqai",
+      "relation": "comparison_for",
+      "to": "idea:B",
+      "status": "source_inspected"
+    },
+    {
+      "from": "repo:ip-tools/patzilla",
+      "relation": "comparison_for",
+      "to": "idea:D",
+      "status": "source_inspected"
+    },
+    {
+      "from": "repo:patsnap/patent-literature-search-mcp",
+      "relation": "comparison_for",
+      "to": "idea:A",
+      "status": "source_inspected"
+    },
+    {
+      "from": "repo:Peter-McCann-Strain/chemical-patent-analysis",
+      "relation": "comparison_for",
+      "to": "idea:C",
+      "status": "source_inspected"
+    },
+    {
+      "from": "repo:mjtiv/patent-claim-mapper",
+      "relation": "comparison_for",
+      "to": "idea:C",
+      "status": "source_inspected"
+    },
+    {
+      "from": "repo:Lawless-Inc/priorbit",
+      "relation": "comparison_for",
+      "to": "idea:D",
+      "status": "source_inspected"
+    },
+    {
+      "from": "repo:Fraunhofer-ITMP/PEMT",
+      "relation": "comparison_for",
+      "to": "idea:B",
+      "status": "source_inspected"
+    },
+    {
+      "from": "repo:asobl/awesome-patent-tools",
+      "relation": "comparison_for",
+      "to": "idea:G",
+      "status": "source_inspected"
+    },
+    {
+      "from": "repo:mahesh-maan/awesome-patent-retrieval",
+      "relation": "comparison_for",
+      "to": "idea:H",
+      "status": "source_inspected"
+    },
+    {
+      "from": "product:202155-001",
+      "relation": "has_ingredient",
+      "to": "ingredient:apixaban",
+      "source": "source:fda",
+      "locator": "products.txt line 34469",
+      "status": "issuer_record"
+    },
+    {
+      "from": "product:220073-001",
+      "relation": "has_ingredient",
+      "to": "ingredient:apixaban",
+      "source": "source:fda",
+      "locator": "products.txt line 9053",
+      "status": "issuer_record"
+    },
+    {
+      "from": "product:220073-001",
+      "relation": "listed_with",
+      "to": "patent:US11896586",
+      "source": "source:fda",
+      "locator": "patent.txt line 7130",
+      "jurisdiction": "US",
+      "status": "issuer_record"
+    },
+    {
+      "from": "receipt:fda",
+      "relation": "checks_listing_identity_for",
+      "to": "idea:D",
+      "status": "measured_engineering_only"
+    },
+    {
+      "from": "output:thai-draft",
+      "relation": "requests_evidence_for",
+      "to": "question:thai-status",
+      "status": "proposed"
+    },
+    {
+      "from": "claim:US11896586B2:45",
+      "relation": "explicitly_refers_to",
+      "to": "claim:US11896586B2:44",
+      "source": "grant:US11896586B2",
+      "locator": "claim 45",
+      "status": "source_checked"
+    },
+    {
+      "from": "claim:US11896586B2:44",
+      "relation": "explicitly_refers_to",
+      "to": "claim:US11896586B2:39",
+      "source": "grant:US11896586B2",
+      "locator": "claim 44",
+      "status": "source_checked"
+    },
+    {
+      "from": "claim:US11896586B2:39",
+      "relation": "explicitly_refers_to",
+      "to": "claim:US11896586B2:33",
+      "source": "grant:US11896586B2",
+      "locator": "claim 39",
+      "status": "source_checked"
+    },
+    {
+      "from": "claim:US11896586B2:33",
+      "relation": "explicitly_refers_to",
+      "to": "claim:US11896586B2:30",
+      "source": "grant:US11896586B2",
+      "locator": "claim 33",
+      "status": "source_checked"
+    },
+    {
+      "from": "patent:US11896586",
+      "relation": "resolved_document",
+      "to": "grant:US11896586B2",
+      "source": "grant:US11896586B2",
+      "locator": "US publication identity",
+      "status": "source_checked"
+    },
+    {
+      "from": "grant:US11896586B2",
+      "relation": "contains",
+      "to": "claim:US11896586B2:45",
+      "locator": "CLM-00045",
+      "status": "source_checked"
+    },
+    {
+      "from": "receipt:claims",
+      "relation": "checks_explicit_ancestry_for",
+      "to": "idea:C",
+      "status": "measured_engineering_only"
+    },
+    {
+      "from": "work:IS1",
+      "relation": "background_for",
+      "to": "work:paper53",
+      "status": "historic_work",
+      "locator": "IS1 bridge"
+    },
+    {
+      "from": "work:paper53",
+      "relation": "motivates",
+      "to": "idea:A",
+      "status": "historical_aggregate",
+      "locator": "257/692 reported exposed pools"
+    },
+    {
+      "from": "work:paper53",
+      "relation": "motivates",
+      "to": "idea:E",
+      "status": "historical_aggregate",
+      "locator": "fixed-pool accounting"
+    },
+    {
+      "from": "km:patentagentbench.pdf",
+      "relation": "defines",
+      "to": "benchmark:fto",
+      "status": "paper_reported",
+      "locator": "FTO retrieval task"
+    },
+    {
+      "from": "km:intelligent-system-for-automated-molecular-patent.pdf",
+      "relation": "defines",
+      "to": "benchmark:molpatent",
+      "status": "paper_reported",
+      "locator": "pp. 3–4"
+    },
+    {
+      "from": "paper:dexa",
+      "relation": "describes",
+      "to": "repo:sofean-mso/Patent-Deep-Research",
+      "status": "source_inspected",
+      "locator": "document and passage agent graphs"
+    }
+  ]
+}

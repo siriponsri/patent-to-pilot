@@ -1,5 +1,7 @@
 # Index: plan and evidence
 
+The current [IP Pharma portfolio and research proposal](docs/ra-pharma/ip-pharma/REPORT.md) covers eight ideas, ten repositories, two public-data pilots and a [shared KM graph](docs/ra-pharma/ip-pharma/knowledge-graph.json). The earlier programs below retain their original evidence scope.
+
 The [research-first study and startup prompt](docs/ra-pharma/RESEARCH-FIRST.md) govern the next session.
 
 The [Thai inquiry audit](docs/ra-pharma/THAI-INQUIRY-AUDIT.md) records independent validation for both D31 cohorts. The [Planner dispatch rule](docs/ra-pharma/MASTER-PLAN.md#planner-dispatch-evidence) applies to research and product.

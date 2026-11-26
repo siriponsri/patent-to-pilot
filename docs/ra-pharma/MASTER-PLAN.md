@@ -47,6 +47,8 @@ The [S4 receipt](../evidence-scope/receipts/S4-integrated-verification.md) estab
 
 ## Current research checkpoint
 
+For the new owner-requested IP Pharma portfolio direction, the [architecture report](ip-pharma/REPORT.md) is the current proposal. Landscape and public engineering pilots are complete. The proposed next Research deliverable is one pharmaceutical dossier showing the exact listing, grant ancestry and missing Thai evidence. Fresh comparative evaluation, customer validation and Product implementation are pending. Compare the architecture against [PatentAgentBench](https://arxiv.org/abs/2610.35031), [Priorbit](https://github.com/Lawless-Inc/priorbit) and the exact-checklist control. The entries below preserve the earlier unchanged-source pilot.
+
 The [feasibility review](RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoint) is complete. The owner selected unchanged-source checking. New baselines remain NOT_RUN.
 
 The owner approved unchanged-source checking. The [Option A checkpoint](OPTION-A-IMPORT.md) supersedes the earlier pending choice. The first exposed zero-shot run is recorded below.

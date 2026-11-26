@@ -1,5 +1,9 @@
 # Project memory
 
+## IP Pharma portfolio and shared research KM
+
+The [eight-idea review](ip-pharma/REPORT.md) supersedes choosing an architecture from Thai letter QA alone. [Shared graph](ip-pharma/knowledge-graph.json) records all owner sources, ten pinned repositories and a worked US example. Same-ingredient aggregation introduced 48 extra FDA listing pairs on the fixed panel. Assign an exact product key before asserting a listing. On US11896586B2 a one-hop reader recovered complete ancestors for 13/45 claims and plain traversal recovered 45/45. Claims in one grant are correlated. Measure the next evidence choice against exact joins and cached walks. PatentAgentBench already includes FTO, and a close competitor already tracks affected conclusions. Retain missing Thai national status explicitly, and preserve old nulls and the eight unopened IS1 cells. [Benchmark](https://arxiv.org/abs/2610.35031) · [Competitor](https://github.com/Peter-McCann-Strain/chemical-patent-analysis)
+
 ## Research-first baseline decision
 
 The closed Thai readers found the correct source while missing required qualifications. The next research question starts with strong full-context, few-shot and commercial notebook workflows. A closed-source product comparison measures the entire workflow. A matched same-model comparison is needed to attribute an outcome to a reading policy. The old cases can diagnose errors but cannot confirm a new method. Product work follows review. [Research plan, evidence and comparators](RESEARCH-FIRST.md).
