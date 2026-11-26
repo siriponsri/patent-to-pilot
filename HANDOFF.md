@@ -15,7 +15,7 @@ The [master board](docs/ra-pharma/MASTER-PLAN.md) assigns paths; the [contract](
 
 ## Active Planner and Research review
 
-The [architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md) defines the branch-aware reading comparison and its cached control. The [published input review](https://github.com/siriponsri/patent-to-pilot/tree/7f5d799ce561d183bdecc82a86935698e83b5eca/docs/ra-pharma/research/successor) established a usable EPO metadata route. Historic family exclusions remain incomplete. The eight IS1 successor cells and R4 remain unmeasured. The next engineering checkpoint examines a single publisher-documented EP XML example.
+The owner confirmed no historic family list is available and parked all eight IS1 cells as NOT_RUN. Preserve the [EPO preflight](https://github.com/siriponsri/patent-to-pilot/tree/7f5d799ce561d183bdecc82a86935698e83b5eca/docs/ra-pharma/research/successor). Architecture work continues. The Planner verified five dependency paths in the exposed EP2298134 A1 example. All three readers opened four claims. The next checkpoint is a versioned handoff through a Thai FDA tracking row, assessed against a composite-key lookup. R4 natural transfer remains unmeasured. See the [architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md).
 
 ## Verified starting evidence
 

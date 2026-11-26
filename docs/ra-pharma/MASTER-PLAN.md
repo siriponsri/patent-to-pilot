@@ -7,7 +7,7 @@ Owner decision of 26 November 2026. Patent-to-Pilot keeps its repository name. T
 | Milestone | Writer and branch | Starting state | Inspect at handback |
 |---|---|---|---|
 | Planning and common evidence interface | Planner on main | Prepared | This board, [handoff contract](EVIDENCE-CONTRACT.md), both lane briefs and branch pointers |
-| IS1 continuity and adaptive reading study | GPT 6.2 high on `research/ra-pharma` | R1 inventory and R2 design reviewed, R3 engineering accepted; IS1 scores and R4 NOT_RUN. Next input package dispatched | [Research tasks](research/BRIEF.md) and [Planner audit of published lane](RESEARCH-AUDIT-20261126.md) |
+| IS1 continuity and adaptive reading study | GPT 6.2 high on `research/ra-pharma` | Owner parked all eight IS1 scores. Architecture continues on exposed patent and Thai FDA sources. R4 transfer remains NOT_RUN. | [Research tasks](research/BRIEF.md), [Planner audit](RESEARCH-AUDIT-20261126.md) and [architecture review](READING-ARCHITECTURE-REVIEW.md) |
 | Three-specialist local dossier | Claude Sonnet 5.5 medium on `product/ra-pharma` | Ready to start; new workflow NOT_RUN | [Product tasks](product/BRIEF.md) and [product handoff](product/HANDOFF.md) |
 | Integration and claim review | Planner on main after lane receipts | Pending | Verify branch heads, evidence compatibility, clean launch, rights and the suite on the integrated revision |
 

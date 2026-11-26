@@ -119,3 +119,7 @@ During D28 the owner requested multiple real pharmaceutical patent and Thai law 
 The owner selected one dossier with patent/FTO, Thai and foreign regulatory, and Thai official-correspondence specialists. Research continues IS1 under GPT 6.2 high. Product uses Claude Sonnet 5.5 medium. The owner opens each session on its own branch. The Planner may organize files, remove verified unused material, maintain HANDOFF, commit and publish the plan and branch starting points. Necessary project-local skills, harnesses, tools and MCP integrations may be downloaded. Record their provenance and rights. Existing data, spending and pod rules retain their original scope.
 
 The owner requires English-only project documentation, a professional README and logo informed by references, a repository writing skill, and mandatory documentation and memory updates after each task for all agents. Preserve historical owner quotations, original-language evidence, frozen inputs and Thai product output in their evidentiary roles. The [dispatch board](../ra-pharma/MASTER-PLAN.md) governs new work.
+
+## D30 · Park the eight IS1 cells and continue the architecture study (26 November 2026)
+
+The owner confirmed the historical patent family exclusion list is unavailable. Keep the four instructions at two depths as NOT_RUN. The Planner and Research Executor continue the [architecture study](../ra-pharma/READING-ARCHITECTURE-REVIEW.md) using scoped, traceable evidence. Preserve the published EPO source preflight for a future cohort with demonstrable eligibility.
