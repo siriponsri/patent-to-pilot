@@ -15,6 +15,8 @@ The [master board](docs/ra-pharma/MASTER-PLAN.md) assigns paths; the [contract](
 
 ## Active Planner and Research review
 
+The Product session now holds the original project checkout. Planner uses the dedicated local worktree `../_worktrees/ptp-ra-pharma-planner` on main, and Research retains its own checkout.
+
 For D31, the [Thai inquiry audit](docs/ra-pharma/THAI-INQUIRY-AUDIT.md) pins the independently prepared source key for 11 issues across seven genuine public opinions. One enrolled PDF was unavailable. The original remains behind the exact pre-run lock review.
 
 The owner confirmed no historic family list is available and parked all eight IS1 cells as NOT_RUN. Preserve the [EPO preflight](https://github.com/siriponsri/patent-to-pilot/tree/7f5d799ce561d183bdecc82a86935698e83b5eca/docs/ra-pharma/research/successor). The Planner verified patent branch reconstruction, six issuer-shaped handoff cases and a separate two-read comparison on 12 authored dossiers. The latter tied at 15/24 safe rows with a penalty for the forecast at early interruption. The next data question is whether a public, versioned source can distinguish a valid referenced attachment from a stale one before the next read. R4 natural transfer remains unmeasured. See the [architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md).

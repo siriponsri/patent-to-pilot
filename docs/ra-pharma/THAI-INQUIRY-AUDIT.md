@@ -20,3 +20,7 @@ The Planner verified all seven PDF checksums, the enrollment and corpus pins, an
 | Independent key | `4ae8e66db55ce2c30e5b561922bec6db9ff5c6f32d685b7eaab9f3c0f5ea8981` |
 
 The Research lane owns the protocol, policies, original output and scorer. The Planner owns the separate reference key and exact pre-run release. Frozen IS1 measurements remain parked. Public case attribution and natural applicant-file completeness have separate evidence requirements.
+
+## Diagnostic registered before scoring
+
+After sealing the original, the Planner will test whether changing page order could repair a miss, using the independent key solely for diagnosis. Grant the diagnostic the correct opinion. Enumerate the common index's permitted answer windows and ask whether one or two non-overlapping windows could cover all required occurrences within the page budget. Then restrict that enumeration to the pages actually opened by the adaptive reader. Classify each issue in this order: complete under the primary rule, no covering set anywhere in the common window inventory, correct identity unavailable in its trace, covering set only outside the opened pages, or covering set already open but not selected. The first missing condition has priority if several apply. The ceiling is an optimistic bound. It may overestimate what three charged reads could establish when a separate header verification is required. Use it to decide which component deserves a fresh experiment. The primary endpoint and denominator are unchanged.
