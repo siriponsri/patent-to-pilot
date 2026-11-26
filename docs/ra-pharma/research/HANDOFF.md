@@ -40,4 +40,8 @@ Next, use the separately authored two-read interruption protocol. Compare genuin
 
 ## Historical OCS source-binding closeout · 26 November 2026
 
-The [OCS correspondence verification](interruption/NATURAL-PREFLIGHT.md#historical-ocs-correspondence-source-binding) binds Opinion 344/2532 to Ministry letter 0701/2205 and the historical Council response using the direct PDF. The page-1 visual and embedded text agree. The previous secondary transcription discrepancy was not reproduced in the current web rendering. This exposed correspondence evidence supports a source-binding check. The research endpoint stays pending owner decision and R4 remains NOT_RUN.
+The [OCS correspondence verification](interruption/NATURAL-PREFLIGHT.md#historical-ocs-correspondence-source-binding) binds Opinion 344/2532 to Ministry letter 0701/2205 and the historical Council response using the direct PDF. The page-1 visual and embedded text agree. A web-open view agreed with the PDF and a separate web-search rendering reproduced the discrepancy. This exposed correspondence evidence supports a source-binding check. The research endpoint stays pending owner decision and R4 remains NOT_RUN.
+
+## D31 official correspondence pilot · prospective checkpoint
+
+The owner selected historically anchored request-to-opinion-to-disposition linkage as a separate primary. The [prospective protocol](official-correspondence/PROTOCOL.md) and [freeze](official-correspondence/freeze.json) pin eight attempted acquisitions, seven retained public PDFs and eleven separately keyed issues. The underlying incoming letters are recited in the opinions. Exact-commit independent release remains pending. No policy original or outcomes exist at this checkpoint. IS1 and applicant filing research stay parked.

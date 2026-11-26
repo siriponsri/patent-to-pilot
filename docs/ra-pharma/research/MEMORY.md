@@ -45,3 +45,9 @@ The [fresh controlled original](interruption/RECEIPT.md) changed the first read 
 ## Historical OCS source provenance · 26 November 2026
 
 The [OCS source-binding check](interruption/NATURAL-PREFLIGHT.md#historical-ocs-correspondence-source-binding) confirmed that visual and embedded readings of the canonical page agree on both routing identifiers. Keep the reported earlier secondary transcription discrepancy separate from source errors, and leave its cause unknown. Keep the interagency inquiry and historical response separate from an applicant filing and independently keyed attachment. An endpoint change belongs to an owner decision.
+
+## D31 Thai official correspondence · prospective checkpoint
+
+The [D31 intake](official-correspondence/INTAKE.md) held sampling to first-page official title metadata before acquisition. Keep the byte-cap failure in the acquisition denominator. The linked protocol evaluates historical issue-level disposition with the incoming request as recited by the opinion. No separate incoming originals were verified. An actual procedural reply is eligible even if the issuer declines to answer on the merits.
+
+The [held v1 lock](official-correspondence/freeze-v1-hold.json) preserves two pre-run findings. A two-span output cap can accommodate more than two independently required fragments. Move any unopened-page ranking features into the common metered index and keep query-time views descriptor-only until a page is opened. The [v2 lock](official-correspondence/freeze.json) is eligible for independent exact-revision review. The policy and outcome tally remain NOT_RUN at this checkpoint.
