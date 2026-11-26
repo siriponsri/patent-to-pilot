@@ -1,5 +1,7 @@
 # Project memory
 
+The [same-case recovery audit](ip-pharma/OVERNIGHT-REVIEW.md#owner-handback) verified all seven files. Exact product identity was available in three cases, package-level quality metadata in one, and exact-edition pairs in zero. Keep admission counts separate from performance denominators; preserve NOT_RUN for the learned and fixed policies.
+
 A Drugs@FDA overview or static link parser can miss a real quality review. The GOMEKLI official package sets its document links through the page's display configuration. Its 2025 combined NDA review still needs an explicit product binding before use for a 2026 strength or form. Preserve both the first access failure and the edition limit. [Reproduction and discovery receipt](ip-pharma/OVERNIGHT-REVIEW.md#phase-1-reviewed-and-first-intake-closed)
 
 For the overnight [one-source comparison](ip-pharma/OVERNIGHT-REVIEW.md#next-research-breakpoint), use source availability and document role for admission. Selecting matters because their observed answers distinguish the two policies would bias the comparison. Preserve acquired but unjudged matters and ties.

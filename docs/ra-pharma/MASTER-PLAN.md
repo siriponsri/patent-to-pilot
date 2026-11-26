@@ -47,7 +47,7 @@ The [S4 receipt](../evidence-scope/receipts/S4-integrated-verification.md) estab
 
 ## Current research checkpoint
 
-Overnight Phase 1 closed at its portfolio scope; the dossier replay passed on Planner's machine. Phase 2's original intake closed with zero admissions. Metadata recovery for the same three cases is in progress. The [Planner review](ip-pharma/OVERNIGHT-REVIEW.md#phase-1-reviewed-and-first-intake-closed) records the exact boundary before any fresh scoring.
+Overnight Phase 1 closed at its portfolio scope; the dossier replay passed on Planner's machine. Both the original three-case intake and same-case metadata recovery closed with zero admissions. The [final Planner review](ip-pharma/OVERNIGHT-REVIEW.md#owner-handback) records the verified artifacts and the reason no fresh policy comparison ran.
 
 For the new owner-requested IP Pharma portfolio direction, the [architecture report](ip-pharma/REPORT.md) is the current proposal. Landscape and public engineering pilots are complete. The proposed next Research deliverable is one pharmaceutical dossier showing the exact listing, grant ancestry and missing Thai evidence. Fresh comparative evaluation, customer validation and Product implementation are pending. Compare the architecture against [PatentAgentBench](https://arxiv.org/abs/2610.35031), [Priorbit](https://github.com/Lawless-Inc/priorbit) and the exact-checklist control. The entries below preserve the earlier unchanged-source pilot.
 
