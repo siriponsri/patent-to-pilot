@@ -44,3 +44,7 @@ The owner authorizes necessary project-local skills, harnesses, tools and MCP in
 ## Evidence carried forward
 
 The [S4 receipt](../evidence-scope/receipts/S4-integrated-verification.md) establishes the existing Windows reader, source verification and recovery. The [IS1 bridge](../healthtech/audits/S3-20261125/BRIDGE.md) identifies the unrun depth matrix. [S3](../healthtech/audits/S3-20261125/RESULTS.md) closed negative and [Option A](../evidence-scope/alternative-evidence/RESULTS.md) closed null. Neither run measured the three-agent system. The former [S board](../evidence-scope/MASTER-PLAN.md) and P registry remain evidence indexes. S5 synthesis is deferred. Research, product readiness and publication readiness are reported separately.
+
+## Current research checkpoint
+
+The [feasibility review](RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoint) is complete. Owner selection of unchanged-source checking or deferral for genuine revision pairs is pending. New baselines remain NOT_RUN.

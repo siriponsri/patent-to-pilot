@@ -43,3 +43,7 @@ The [copy-ready session prompts](docs/ra-pharma/SESSION-PROMPTS.md) include task
 Planning-package checks passed on Windows: Workbench doctor, 15 smoke checks, both skill validators, two journal terminology tests, English prose scan and relative link checks on the edited documentation. This dispatch changed documentation and artwork. The integrated full-suite evidence above applies to S4.
 
 Verify the assigned branch and runtime settings, worktree status and origin revision. Inspect the assigned lane handoff for later work. Historical S5 synthesis is deferred. No open service, new data license or paid research allocation is implied by the tool-install authorization. Check dr-train procedures in the [dated runbook, section 2a](docs/maintenance/NEXT-ACCOUNT-HANDOFF-20261124.md) before any relevant job.
+
+## Feasibility handback
+
+Research published the brief at `e5e8d61f`. Planner verified the worked example and accepted the brief for scope selection. The [review and owner checkpoint](docs/ra-pharma/RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoint) precedes any new experiment.

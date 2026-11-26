@@ -39,3 +39,7 @@ This version-controlled record gives Claude and Codex the same project history. 
 - Cleanup retains frozen data, dated evidence and owner files. The root handoff now directs historical accounting to its exact Git revision. The project writing skill and English navigation are reusable in either session. No new dataset, runtime plugin, paid service or model was needed to publish the planning package.
 - Removed 36 ignored Python bytecode files (771,416 bytes) from the research scripts cache after verifying that each source module exists. The six tracked historical data manifests were retained. The new repository mark represents three document spines and has SVG and transparent PNG editions.
 - Both project skill entrypoints passed the skill validator. The Windows Workbench doctor reported OK, the local smoke passed all 15 checks and both journal terminology tests passed. The new English IS2 paper preserves the numerical table rows and references; the older faculty-template exporter still requires the historical bilingual source. Keep the active English edition distinct from evidence, source-language forms and archived records.
+
+## Feasibility review lesson
+
+The page-4 qualification in exposed opinion 253/2540 was already recovered by exact lookup. Keep that control, score equivalent evidence, and distinguish a solo pilot from independent human validation. [Verified case and comparator](RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoint).
