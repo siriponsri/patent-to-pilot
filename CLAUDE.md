@@ -2,7 +2,7 @@
 
 ## Start here
 
-Read [HANDOFF](HANDOFF.md), [INDEX-PLAN](INDEX-PLAN.md), the [RA Pharma plan](docs/ra-pharma/MASTER-PLAN.md) and [AGENTS](AGENTS.md). Verify repository, branch, remote, last three commits and other active writers. Research uses GPT 6.2 high on `research/ra-pharma`. Product uses Claude Sonnet 5.5 medium on `product/ra-pharma`. Each session uses its own checkout.
+Read [HANDOFF](HANDOFF.md), [INDEX-PLAN](INDEX-PLAN.md), the [RA Pharma plan](docs/ra-pharma/MASTER-PLAN.md) and [AGENTS](AGENTS.md). Verify repository, branch, remote, last three commits and other active writers. The next Research Executor uses GPT 6.2 Sol at medium reasoning effort on `research/ra-pharma`. Product uses Claude Sonnet 5.5 medium on `product/ra-pharma`. Each session uses its own checkout. The [research-first plan](docs/ra-pharma/RESEARCH-FIRST.md) defers new Product work until architecture review.
 
 ## Current mandate
 

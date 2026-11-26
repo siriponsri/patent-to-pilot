@@ -2,7 +2,9 @@
 
 Open two independent checkouts from the published origin branches. Select the named model and reasoning level in the client. Paste the corresponding prompt. Each session records its own actual base and checks for later commits when it starts.
 
-## Research · GPT 6.2 high
+Current research startup is in the [research-first plan](RESEARCH-FIRST.md#read-only-starting-prompt). The prompts below document the earlier parallel dispatch.
+
+## Original Research · GPT 6.2 high
 
 > Work as Research Executor for Patent-to-Pilot on the existing research/ra-pharma branch in its own checkout, with GPT 6.2 high. Verify the checkout, base and requested runtime. Read CLAUDE.md, AGENTS.md, HANDOFF.md, INDEX-PLAN.md, docs/ra-pharma/MASTER-PLAN.md, EVIDENCE-CONTRACT.md in that directory, and research/BRIEF.md, HANDOFF.md and MEMORY.md within it. Own R1–R5 and the research paths on the board. Begin with IS1 input eligibility and a prospective depth-by-instruction and adaptive-reading protocol. Use unexposed authorized DEV only, matched controls, independent pre-run review and sealed receipts. Report a documented NOT_RUN when an input or release gate is missing. Keep the product display families out of method selection. At every task close use the repository writing skill, update affected English docs, your lane handoff and memory, commit explicit paths and push your branch. Report results, limitations, costs, verified SHA and the next decision in Thai to the Planner. Leave main and the product branch to their owners.
 

@@ -1,5 +1,9 @@
 # Project memory
 
+## Research-first baseline decision
+
+The closed Thai readers found the correct source while missing required qualifications. The next research question starts with strong full-context, few-shot and commercial notebook workflows. A closed-source product comparison measures the entire workflow. A matched same-model comparison is needed to attribute an outcome to a reading policy. The old cases can diagnose errors but cannot confirm a new method. Product work follows review. [Research plan, evidence and comparators](RESEARCH-FIRST.md).
+
 ## 2026-11-26 · Planner evidence and Thai inquiry closeout
 
 For every Planner assignment, proposal or substantive claim, cite a relevant primary research paper and identify a benchmark or named competitor. Link both sources and explain which task, metric or product workflow they support. Distinguish a measured head-to-head result from an external reference or an untested hypothesis. This is the owner's standing instruction under D32. In the follow-up, role-sensitive selection changed three of seven adjudicated extracts. All seven issues linked to the right opinion, yet none had complete support under any reader. Preserve separate product states for a located document and reviewed answer evidence. The eighth issue remains unjudged. [LegalSeg](https://aclanthology.org/2025.findings-naacl.63/) · [Thai comparator and audit](THAI-INQUIRY-AUDIT.md#second-page-result-and-independent-verification).

@@ -1,14 +1,14 @@
 # RA Pharma Workbench
 
-Owner decision of 26 November 2026. Patent-to-Pilot keeps its repository name. The product is a Thai-first regulatory affairs workbench for a solo operator. Three specialists work from one product dossier and produce a patent claim chart, a registration evidence checklist and an editable letter. The research question is whether learned reading actions and evidence handoffs improve results on unseen dossiers under a matched budget. The owner starts two separate sessions. This dispatch publishes their starting materials.
+Owner decision of 26 November 2026. Patent-to-Pilot keeps its repository name. The product is a Thai-first regulatory affairs workbench for a solo operator. Three specialists work from one product dossier and produce a patent claim chart, a registration evidence checklist and an editable letter. The research question is whether learned reading actions and evidence handoffs improve results on unseen dossiers under a matched budget. The next phase prioritizes architecture research. The [research-first study](RESEARCH-FIRST.md) governs active work.
 
 ## Dispatch board
 
 | Milestone | Writer and branch | Starting state | Inspect at handback |
 |---|---|---|---|
 | Planning and common evidence interface | Planner on main | Prepared | This board, [handoff contract](EVIDENCE-CONTRACT.md), both lane briefs and branch pointers |
-| IS1 continuity and adaptive reading study | GPT 6.2 high on `research/ra-pharma` | Owner parked all eight IS1 scores. Patent and Thai FDA conformance reviewed. Two-read dossier comparison tied 15/24. R4 natural transfer remains NOT_RUN. | [Research tasks](research/BRIEF.md), [Planner audit](RESEARCH-AUDIT-20261126.md) and [architecture review](READING-ARCHITECTURE-REVIEW.md) |
-| Three-specialist local dossier | Claude Sonnet 5.5 medium on `product/ra-pharma` | Ready to start; new workflow NOT_RUN | [Product tasks](product/BRIEF.md) and [product handoff](product/HANDOFF.md) |
+| IS1 continuity and adaptive reading study | GPT 6.2 Sol, medium for the next session on `research/ra-pharma` | Owner parked all eight IS1 scores. Patent and Thai FDA conformance reviewed. Two-read dossier comparison tied 15/24. R4 natural transfer remains NOT_RUN. | [Research tasks](research/BRIEF.md), [Planner audit](RESEARCH-AUDIT-20261126.md) and [architecture review](READING-ARCHITECTURE-REVIEW.md) |
+| Three-specialist local dossier | Claude Sonnet 5.5 medium on `product/ra-pharma` | P1–P5 local demo published. Further development deferred until research review | [Product tasks](product/BRIEF.md) and [product handoff](product/HANDOFF.md) |
 | Integration and claim review | Planner on main after lane receipts | Pending | Verify branch heads, evidence compatibility, clean launch, rights and the suite on the integrated revision |
 
 ### From one question to one letter
@@ -29,7 +29,7 @@ For every Planner assignment, proposal or substantive claim, cite a relevant pri
 
 ## Concurrent work
 
-Use the [two session prompts](SESSION-PROMPTS.md). At every task close each writer updates the affected English documentation, their HANDOFF and their lane MEMORY.md. Use the [repository writing skill](../../.agents/skills/ra-pharma-writing/SKILL.md). The [shared memory](MEMORY.md) carries accepted lessons across the two branches.
+Use the [research-first start](RESEARCH-FIRST.md#read-only-starting-prompt). The [original lane prompts](SESSION-PROMPTS.md) document the initial allocation. At every task close each writer updates the affected English documentation, their HANDOFF and their lane MEMORY.md. Use the [repository writing skill](../../.agents/skills/ra-pharma-writing/SKILL.md). The [shared memory](MEMORY.md) carries accepted lessons across the two branches.
 
 Use one checkout per branch, based on the published planning revision. Check the selected branch, model and effort at startup. An unavailable requested configuration goes back to the owner. On a lane branch, update its HANDOFF at each decision, failure, before a long job and at closeout. That is the branch's project handoff. Push only that lane to origin. The Planner owns the root handoff, board, shared interface, tool configuration shared by the lanes and integration into main. Propose a change to the interface in the lane handoff with a fixture showing the need. Both lanes may continue with the published version while the Planner reviews the proposal.
 

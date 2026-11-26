@@ -131,3 +131,7 @@ The owner selected public Thai legal inquiries as the next primary research task
 ## D32 · Require a paper and a comparator for Planner work (26 November 2026)
 
 For every Planner assignment, proposal or substantive claim, cite a relevant primary research paper and identify a benchmark or named competitor. Link both sources and explain which task, metric or product workflow they support. Distinguish a measured head-to-head result from an external reference or an untested hypothesis. For a comparison across jurisdictions or languages, specify the difference in scope. An owner decision, source hash or receipt remains the authority for its own facts.
+
+## D33 · Research first and bounded architecture search
+
+The owner selected GPT 6.2 Sol with medium effort for the next Research Executor. Planner/Reviewer owns MCP evidence discovery and owner consultation. Compare zero-shot and few-shot generation, general RAG, ChatGPT Pro and NotebookLM. Defer further Product work until the architecture has research support. The [research-first plan](../ra-pharma/RESEARCH-FIRST.md) proposes a bounded autoresearch loop. Dataset, endpoint, numerical thresholds and release remain prospective.

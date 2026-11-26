@@ -1,5 +1,7 @@
 # Index: plan and evidence
 
+The [research-first study and startup prompt](docs/ra-pharma/RESEARCH-FIRST.md) govern the next session.
+
 The [Thai inquiry audit](docs/ra-pharma/THAI-INQUIRY-AUDIT.md) records independent validation for both D31 cohorts. The [Planner dispatch rule](docs/ra-pharma/MASTER-PLAN.md#planner-dispatch-evidence) applies to research and product.
 
 The [active reading architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md) records the mechanism, closest prior work, patent and Thai source checks, six handoff cases and the separate two-read dossier comparison. [D30](docs/maintenance/OWNER-DECISIONS-20261122.md) parks the eight IS1 cells.

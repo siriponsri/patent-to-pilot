@@ -1,5 +1,9 @@
 # Patent-to-Pilot handoff
 
+## Current research-first handoff
+
+Start the next research session on `research/ra-pharma` with GPT 6.2 Sol at medium reasoning effort. The [survey, proposed experiments and startup prompt](docs/ra-pharma/RESEARCH-FIRST.md) supersede the original parallel dispatch below. Research is published at `93f3705e`. Product P1–P5 is a local demo at `b690f9f9`. Further Product development is deferred. The next owner critique concerns the task and meaningful benefit before a new freeze. No new benchmark has run.
+
 ## Planner handback · 26 November 2026
 
 **Research update.** The [Planner audit](docs/ra-pharma/RESEARCH-AUDIT-20261126.md) accepted the first research handback for engineering and feasibility at `d956473c`. The eight IS1 cells and R4 transfer remain unmeasured. Both D31 cohorts are closed. D32 requires a primary paper and a benchmark or named competitor for every Planner assignment, proposal and substantive claim. The dispatch table below describes the original starting allocation.
