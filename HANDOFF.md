@@ -2,6 +2,8 @@
 
 ## Current research-first handoff
 
+Planner accepted the [offline Phase 1 dossier and Thai internal draft](https://github.com/siriponsri/patent-to-pilot/blob/944b5a2f01289ee3c2235419dbf139aa9657ec65/docs/ra-pharma/research/ip-pharma/ELIQUIS-DOSSIER.md). The first fresh intake selected three, admitted zero and scored zero. A separate same-case metadata recovery went back to Research. The [review receipt](docs/ra-pharma/ip-pharma/OVERNIGHT-REVIEW.md#phase-1-reviewed-and-first-intake-closed) explains the GOMEKLI edition mismatch.
+
 The first overnight checkpoint released Phase 1 and prospective metadata intake for Phase 2. A new scored comparison awaits an exact packet review. The [decision and source check](docs/ra-pharma/ip-pharma/OVERNIGHT-REVIEW.md#next-research-breakpoint) include the scope of the one-source budget.
 
 The owner released the [overnight IP Pharma research loop](docs/ra-pharma/ip-pharma/OVERNIGHT-REVIEW.md) through 05:00 Bangkok on 27 November. Phase 1 was sent to Research. Planner independently pinned the FDA product label and public chemistry review. Follow the dated review file for the next handback.
