@@ -123,3 +123,7 @@ The owner requires English-only project documentation, a professional README and
 ## D30 · Park the eight IS1 cells and continue the architecture study (26 November 2026)
 
 The owner confirmed the historical patent family exclusion list is unavailable. Keep the four instructions at two depths as NOT_RUN. The Planner and Research Executor continue the [architecture study](../ra-pharma/READING-ARCHITECTURE-REVIEW.md) using scoped, traceable evidence. Preserve the published EPO source preflight for a future cohort with demonstrable eligibility.
+
+## D31 · Evaluate attribution of historical Thai public inquiries (26 November 2026)
+
+The owner selected public Thai legal inquiries as the next primary research task. Across multiple matters, trace the incoming letter to the official response and identify where that response answers the issue. Use the authentic documents and a separate reference key. Opinion 344/2532 is an exposed development example. The applicant-dossier completeness endpoint remains unmeasured. The [architecture review](../ra-pharma/READING-ARCHITECTURE-REVIEW.md) records the preceding comparisons and the reason for choosing this endpoint.

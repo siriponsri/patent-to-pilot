@@ -1,6 +1,6 @@
 # Index: plan and evidence
 
-The [active reading architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md) records the proposed mechanism, closest prior work, control and conditions for a measurable benefit.
+The [active reading architecture review](docs/ra-pharma/READING-ARCHITECTURE-REVIEW.md) records the mechanism, closest prior work, patent and Thai source checks, six handoff cases and the separate two-read dossier comparison. [D30](docs/maintenance/OWNER-DECISIONS-20261122.md) parks the eight IS1 cells.
 
 The [first RA Pharma Research audit](docs/ra-pharma/RESEARCH-AUDIT-20261126.md) records the accepted fixture, the outstanding IS1 and R4 measurements, and the next executor dispatch.
 
