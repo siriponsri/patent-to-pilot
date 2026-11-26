@@ -1,5 +1,7 @@
 # Project memory
 
+The [overnight review](ip-pharma/OVERNIGHT-REVIEW.md) records the owner release, executor assignment and two additional pinned FDA sources. When mapping an amount from a label to an inherited patent claim, verify that the numerator, denominator and subject coincide. Keep a product fact in the dossier even if another claim limitation remains unresolved.
+
 ## IP Pharma portfolio and shared research KM
 
 The [eight-idea review](ip-pharma/REPORT.md) supersedes choosing an architecture from Thai letter QA alone. [Shared graph](ip-pharma/knowledge-graph.json) records all owner sources, ten pinned repositories and a worked US example. Same-ingredient aggregation introduced 48 extra FDA listing pairs on the fixed panel. Assign an exact product key before asserting a listing. On US11896586B2 a one-hop reader recovered complete ancestors for 13/45 claims and plain traversal recovered 45/45. Claims in one grant are correlated. Measure the next evidence choice against exact joins and cached walks. PatentAgentBench already includes FTO, and a close competitor already tracks affected conclusions. Retain missing Thai national status explicitly, and preserve old nulls and the eight unopened IS1 cells. [Benchmark](https://arxiv.org/abs/2610.35031) · [Competitor](https://github.com/Peter-McCann-Strain/chemical-patent-analysis)

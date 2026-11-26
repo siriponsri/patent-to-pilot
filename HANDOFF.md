@@ -2,6 +2,8 @@
 
 ## Current research-first handoff
 
+The owner released the [overnight IP Pharma research loop](docs/ra-pharma/ip-pharma/OVERNIGHT-REVIEW.md) through 05:00 Bangkok on 27 November. Phase 1 was sent to Research. Planner independently pinned the FDA product label and public chemistry review. Follow the dated review file for the next handback.
+
 **Current portfolio proposal, 26 November.** Start with the [IP Pharma report and two pilot receipts](docs/ra-pharma/ip-pharma/REPORT.md). The owner wants a portfolio dossier and has no validated customer pain point. The Planner reviewed ten implementations and the full owner KM, recorded a shared source graph, and completed two separately frozen public-data engineering pilots. Phase 1 is proposed for Research. It would connect the US worked case to a Thai evidence request and identify whether a meaningful adaptive comparison is possible. Both product inference and any Thai status conclusion remain unverified. [PatentAgentBench](https://arxiv.org/abs/2610.35031) · [Direct competitor](https://github.com/Peter-McCann-Strain/chemical-patent-analysis)
 
 Start the next research session on `research/ra-pharma` with GPT 6.2 Sol at medium reasoning effort. The [survey, proposed experiments and startup prompt](docs/ra-pharma/RESEARCH-FIRST.md) supersede the original parallel dispatch below. Research is published at `93f3705e`. Product P1–P5 is a local demo at `b690f9f9`. Further Product development is deferred. The next owner critique concerns the task and meaningful benefit before a new freeze. No new benchmark has run.
