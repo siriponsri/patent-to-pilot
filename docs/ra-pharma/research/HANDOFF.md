@@ -1,5 +1,15 @@
 # Research lane handoff
 
+## D32–D33 feasibility handback · 26 November 2026
+
+[Feasibility brief](FEASIBILITY.md) is ready for Planner/Reviewer. Narrow the first question to completeness of supported historical answers. In the closed page-2 study, each arm linked 7/7 adjudicated issues and completed 0/7 under the exact extract scorer. The worked first-pilot example verifies a missing substantive qualification against the retained source. The brief proposes actual ChatGPT Pro and NotebookLM workflows, a full-context checklist and hybrid RAG baseline, and one matched ablation.
+
+The clean lane and live remote started at `93f3705e38907bc2ee0c12a7471b0bc683ca6eef`. This assignment used GPT 6.2 Sol, medium effort under D33. Publication is the lane commit containing the brief and these handoff updates. The Planner owns independent review, literature and benchmark discovery, access and rights checks, and owner consultation. Ask whether unchanged-source completeness alone merits a study. No genuine revision pairs were admitted. Both products, all new inference cells and all eight historical IS1 cells remain NOT_RUN. There were no new external jobs, source uploads, official index requests or paid work. Existing seals and Product were preserved.
+
+Resume only against a separate prospective release with a family-disjoint packet, independent semantic key, comparators, caps and exact revision. This was a documentation-only change. The full code suite was NOT_RUN for this handback.
+
+## Earlier research checkpoints
+
 The Research Executor used GPT 6.2 Sol high in the separate `research/ra-pharma` checkout. The incoming local, tracking and live remote revision was `2085e4be693cdb12cb60deb1e2a4139eea84063a`. The prospective checkpoint was published and verified at `b5584589e32bc90b2b38cc43a97240b388342eff`. The Planner owns shared documents and main.
 
 | Task | Disposition |

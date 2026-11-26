@@ -1,5 +1,11 @@
 # Research memory
 
+## D32–D33 feasibility · 26 November 2026
+
+The [feasibility brief](FEASIBILITY.md) separates provenance, exact extract coverage and semantic completeness. The exposed OCS 253/2540 lexical output links the correct opinion but omits the regulatory route in the page-4 conclusion. Use this as diagnostic evidence. Keep the 0/7 page-2 exact score and its unjudged eighth issue separate from future blind semantic adjudication.
+
+Use the same cleared packet and strong checklist prompts for actual ChatGPT Pro, NotebookLM and architecture baselines. Pin an independent key that accepts equivalent wording and alternative evidence. A persistent condition-to-passage ledger earns a trial only if simpler workflows leave consequential omissions. The reviewed sources yielded no admitted genuine revision pair. The OCS reconsideration link is an acquisition lead. Keep authored edits at engineering scope and all eight historical IS1 cells NOT_RUN. Planner/Reviewer owns the next decision and release.
+
 ## Published starting point
 
 Paper 53 and the IS1 post-hoc analysis have different denominators. Use the [matched-depth bridge](../../healthtech/audits/S3-20261125/BRIDGE.md) to label a new reference. [Handoff](HANDOFF.md) records the task state.
