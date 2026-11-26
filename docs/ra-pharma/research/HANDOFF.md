@@ -50,6 +50,8 @@ The Planner released the exact prospective commit `6fa6fb4d1b254b7a2c96ea7d21cce
 
 The next assigned study uses this closed first page as exposed training and the official Drug Act index page 2 alone for a separately enrolled follow-up. Exclude earlier and related matters before retrieval. Prove admission, register the training rule and strong same-page comparator, and obtain a separate independent key and exact release. The later search pages and future evidence are unobserved at this checkpoint. IS1, R4 reserved transfer and applicant filing stay parked.
 
-## D31 page-2 follow-up · before intake
+## ## D31 page-2 follow-up · intake and training
 
-The [registration](official-correspondence/page2/PREREGISTRATION.md) freezes the exact official page, title-only separation rules, three-family floor, acquisition caps, same-page comparison and one-configuration training budget. No page-2 request, PDF open or fresh outcome has occurred. The closed D31 original is the only training cohort.
+The [registration](official-correspondence/page2/PREREGISTRATION.md) freezes the exact official page, title-only separation rules, three-family floor, caps, same-page comparison and one-configuration training budget. Page 2 yielded ten title rows, seven eligible URLs and four retained PDFs totaling nineteen pages. Preserve the two known exposures, one unresolved family relation and three acquisition failures in the [intake receipt](official-correspondence/page2/INTAKE.md). All original D31 evidence is exposed training.
+
+The lone issue-conditioned rule changed the selected spans on 6/11 exposed D31 issues at matched opens. Complete answers dropped from 3/11 under lexical/diversity to 2/11. Retain that negative development result and the preregistered comparison. No candidate tuning or additional case was attempted. Independent review confirmed four distinct families, seven adjudicated issues and one unknown. The [release candidate freeze](official-correspondence/page2/freeze.json) pins the separate queries and key. Exact release remains pending. Fresh original and score are NOT_RUN.

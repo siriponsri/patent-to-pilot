@@ -54,6 +54,10 @@ The [sealed outcome](official-correspondence/RECEIPT.md) is NULL. Exact and adap
 
 The unchanged vector HTTP test's fixed wait-free poll count intermittently ended before the worker finished. The Planner assigned temporary ownership for a bounded monotonic wait with short yields. Retain both original gate failures and the ordinary corrected full gate in [intake](official-correspondence/INTAKE.md). This was a QA-only change outside the research lock.
 
-## D31 page-2 follow-up · before intake
+## ## D31 page-2 follow-up · intake and training
 
-Keep the [frozen enrollment rules](official-correspondence/page2/PREREGISTRATION.md) separate from case dispositions. Open only the selected official index page and isolate its title, ID and link metadata from snippets. Cross-check all prior exposed entries, including failed acquisitions, before requesting PDFs. Stop below three independently keyed families and do not sample a later page.
+The [frozen enrollment rules](official-correspondence/page2/PREREGISTRATION.md) keep sampling separate from methods and keying. The ten title rows yielded seven eligible attempts and four retained PDFs. Exact publisher links can return HTTP 200 HTML. Record the body type and capped body count before attempting extraction. Retain the ambiguous family exclusion and all capped or non-PDF requests with unknown issue counts.
+
+The [training receipt](official-correspondence/page2/INTAKE.md#one-exposed-training-replay) distinguishes a changed decision from a gain. Issue-conditioned paired extraction changed six choices on the closed D31 pages and lost one previously complete answer against lexical/diversity. Preserve that failure and the one-configuration prospective budget. Fresh queries and the key remain independent of runtime and no page-2 result exists at this checkpoint.
+
+The [independent page-2 scorer hold](official-correspondence/page2/INTAKE.md#prospective-evaluator-hold-and-qa) identified an aggregate that placed unjudged rows among failures. Preserve all unknowns in coverage, cost and issued-status ledgers. Sum the paired correctness table only over adjudicated issues and mark extract differences with their specific denominator.
