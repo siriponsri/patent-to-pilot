@@ -35,3 +35,9 @@ The Planner independently recovered the original branch counts and identified an
 ## Issuer-shaped handoff · 26 November 2026
 
 [Development result](handoff-conformance/RECEIPT.md) established a scope-conformance contract when key fields are visible. Leading-zero sequence strings survive Word run concatenation. A patent chart is valid context and never supplies missing applicant results. Exact lookup and typed handoff tied. Keep the exact-key verifier, and report false abstention as well as false supports. The second valid equivalent witness is optional after a correct reply. Future architecture comparisons need genuinely incomplete descriptors and observable competing actions.
+
+## Interruption and natural metadata · 26 November 2026
+
+The [fresh controlled original](interruption/RECEIPT.md) changed the first read but tied at two opens. It completed fewer rows if interrupted after one read. Locator bundles helped when current and cost one otherwise-correct row when stale. The initial observable state was the same in the paired layout types. Without a real predictive feature or justified prevalence, the balanced design has no expected advantage. Record prefix completion and candidate-planning overhead beside full-budget outcomes.
+
+[Thai registry feasibility](interruption/NATURAL-PREFLIGHT.md) distinguished verified product-specific metadata association from a dossier evidence key. Public release links and displayed dates can support role/version lookup. Missing dates remain unknown. Catalogue visibility, WSDL documentation and indexed pages do not establish downloadable reuse rights, a verified service data response or independently keyed applicant correspondence. Research stopped before natural scoring.

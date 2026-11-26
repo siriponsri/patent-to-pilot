@@ -31,3 +31,9 @@ The [claim probe](../../../scripts/research/ra_pharma/claim_branch_probe.py) is 
 [Handoff receipt](handoff-conformance/RECEIPT.md) records a tie against the exact composite-key control at three correct replies, three correct abstentions and three logical record opens. The shared verifier stopped all unsafe ID-only choices. Raw issuer DOCX and original trace are private. The full code gate meets the eight-failure exception policy.
 
 Next, use the separately authored two-read interruption protocol. Compare genuinely competing locator-first and nearest-complete actions. R4 reserved DEV remains NOT_RUN. This work is isolated from Product files.
+
+## Interruption and natural metadata closeout · 26 November 2026
+
+[Interruption receipt](interruption/RECEIPT.md) reports a verified controlled NULL at two actions, 15/24 safe rows in all three arms, and a first-action disadvantage, 3 versus 9. Independent review verified the exact one-time release and raw replay. No method promotion. The author-defined valid and stale layouts are initially indistinguishable after discounting opaque labels. A useful natural follow-up would require a real discriminating observation and independent support, which was not established.
+
+[Registry metadata preflight](interruption/NATURAL-PREFLIGHT.md) found a product-specific public registration with role and dated artifact associations. The exact metadata lookup saturates on that example. No rights-cleared natural task packet, applicant question/artifact pairing or direct reliable data export was demonstrated. Stop at this metadata boundary. No IS1 or R4 run is released. Full code QA satisfies the eight-failure exception policy.

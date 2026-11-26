@@ -1,0 +1,19 @@
+{
+  "scope": "single one-time exposed engineering capture",
+  "base": "a523e5422a2faef046772d6fcfd02d3990d5e61c",
+  "directory": "C:/Users/User/Desktop/myProject/_private_artifacts/ptp-interruption-dev-20261126",
+  "cap": 2,
+  "seed": 2026112603,
+  "capture_inputs": {
+    "docs/ra-pharma/research/interruption/PROTOCOL.md": "2a67c7c702627971f57c6483be51585e18dc98c2ec1b393deae7048b7d84ded2",
+    "scripts/research/ra_pharma/interruption_material.py": "26bb491a76134d80d9937899ba814bc113c486d5a9738fd844c4f0b7de5d3143",
+    "scripts/research/ra_pharma/interruption_probe.py": "2d99a989bb18b280a5a2bad15b8b73c0997d255408fd9005da44549247375e08"
+  },
+  "scorer": {
+    "path": "scripts/research/ra_pharma/interruption_score.py",
+    "sha256": "f23f9cfa67e4f71cf3ffcd135794450f7ebec5383ee93305562bfb3fcafc564e"
+  },
+  "runtime_sha256": "8fd3e6fa6a7d54e8524c517d3cd8a18ca93be0623ccdbea82fb05811c6eb9edb",
+  "key_sha256": "6bfcda4e78433eab180358191a63e5d06d7b1a84de91f59e71f159c710332a88",
+  "release": "authorized exposed-only engineering fixture; no reserved DEV"
+}
