@@ -55,3 +55,5 @@ D34 approved unchanged-source checking. Research published the exposed packet at
 ## Commercial pilot handback
 
 Both live tools returned the missing legal sequence on the single exposed zero-shot case. Planner checked the reported page against B.pdf and opened citation 7 inside the notebook. ChatGPT showed Extra High before submission and a quota notice after responding. No blinded score or matched few-shot result. [Receipt and configuration limits](docs/ra-pharma/OPTION-A-IMPORT.md#first-commercial-zero-shot-observation).
+
+The owner requested one repeat and preservation of the chats. The saved repeat and notebook were reopened and private evidence hashes verified. The first temporary chat remains documented only by observations. [Repeat receipt](docs/ra-pharma/OPTION-A-IMPORT.md#owner-requested-repeat-and-chat-preservation).

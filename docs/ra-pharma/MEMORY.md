@@ -51,3 +51,7 @@ All three official PDFs contained an embedded XML file. Removing the name-tree e
 ## Commercial tools recovered the known historical omission
 
 A successful matched zero-shot example changes the research decision. Keep the checklist and commercial products as strong baselines. Capture both pre-submit effort and post-answer controls, preserve quota notices and verify citation targets. An observation timestamp includes interleaved operator work. [Source, benchmark and receipt](OPTION-A-IMPORT.md#first-commercial-zero-shot-observation).
+
+## Preserve chat evidence prospectively
+
+Temporary-chat URLs may redirect home when reopened. For an owner-authorized durable benchmark record, confirm the storage choice before sending, capture the pre-submit selection, and verify the saved conversation from a second tab before closing it. The retry on the same case adds a reproducibility observation only. [Receipt, comparator and manifest](OPTION-A-IMPORT.md#owner-requested-repeat-and-chat-preservation).

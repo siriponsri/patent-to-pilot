@@ -52,3 +52,5 @@ The [feasibility review](RESEARCH-FIRST.md#feasibility-review-and-owner-checkpoi
 The owner approved unchanged-source checking. The [Option A checkpoint](OPTION-A-IMPORT.md) supersedes the earlier pending choice. The first exposed zero-shot run is recorded below.
 
 The [first live zero-shot observation](OPTION-A-IMPORT.md#first-commercial-zero-shot-observation) is complete on exposed material. Both tools recovered the material qualification. Fresh confirmation, the same-model mechanism comparison and human time savings remain unmeasured.
+
+The [owner-requested repeat](OPTION-A-IMPORT.md#owner-requested-repeat-and-chat-preservation) reproduced the material answer on the same issue. Private chat preservation is verified. No new family was enrolled.
