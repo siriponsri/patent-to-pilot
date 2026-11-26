@@ -1,0 +1,35 @@
+{
+  "fixture_id": "dev-inhaler-fpf",
+  "purpose": "Development family for evidence-role skill changes. Distinct product, patent and test from the taste-masked tablet dossier. Runtime-shaped inputs only; expected outcomes are in expected.json.",
+  "data_origin": "synthetic_applicant_with_public_patent_excerpt",
+  "dossier": {
+    "applicant": {"name_th": "บริษัท ตัวอย่างพัลโม จำกัด (สมมติ)"},
+    "product": {"name_match_th": ["ซัลบูแอร์ ดีพีไอ 100 ไมโครกรัม"]}
+  },
+  "task": {
+    "task_id": "applicant-fpf", "label_th": "สัดส่วนอนุภาคละเอียดของผลิตภัณฑ์ผู้ยื่น",
+    "terms": ["fine particle fraction", "FPF", "สัดส่วนอนุภาคละเอียด"],
+    "value_patterns": ["Fine Particle Fraction \\(%\\)\\s+Salbutamol Sulphate\\s+([0-9]+(?:\\.[0-9]+)?)",
+                       "สัดส่วนอนุภาคละเอียด \\(FPF\\)[^0-9]{0,40}?([0-9]+(?:\\.[0-9]+)?)"]
+  },
+  "passages": [
+    {"passage_id": "US20120145150A1#table-1", "source_kind": "patent",
+     "owner_name": "USPTO (publication); applicant named in the publication",
+     "subject_text": "Single-chamber dry powder inhaler of US20120145150A1",
+     "source_note": "US20120145150A1 (A1, 2012-06-14), paragraph [0109] and Table 1, Google Patents transcript SHA-256 8352635b2b27c73da341e8e92a72e18580c8950ca0e44729d6dea47b20883bb8",
+     "text": "[0109] The embodiment of FIG. 7 was measured to have a flow resistance of about 0.059 (cmH 2 O) 0.5 /L min −1 . Its performance was tested in vitro using a cascade impactor, at a volumetric flow rate of 90 L min −1 , which corresponds to approximately a 2 kPa pressure drop across the inhaler. Several medicaments were tested, and results are shown below in Table 1.\nTABLE 1 Fine particle fractions (FPF) values of the dose delivered from the single-chamber dry powder inhaler\nAPI Fine Particle Fraction (%) Salbutamol Sulphate 84.2 (0.9)"},
+    {"passage_id": "applicant-apsd#page-1", "source_kind": "applicant_document",
+     "owner_name": "บริษัท ตัวอย่างพัลโม จำกัด (สมมติ)", "subject_text": "ซัลบูแอร์ ดีพีไอ 100 ไมโครกรัม (สมมติ)",
+     "edition": "1.0", "report_id": "APSD-0032",
+     "text": "รายงาน APSD-0032 ฉบับที่ 1.0\nผู้จัดทำ: บริษัท ตัวอย่างพัลโม จำกัด (สมมติ)\nผลิตภัณฑ์: ซัลบูแอร์ ดีพีไอ 100 ไมโครกรัม (สมมติ)\nสัดส่วนอนุภาคละเอียด (FPF) ของรุ่นการผลิต PB-0412 เท่ากับ 31.4%"},
+    {"passage_id": "applicant-other-product#page-1", "source_kind": "applicant_document",
+     "owner_name": "บริษัท ตัวอย่างพัลโม จำกัด (สมมติ)", "subject_text": "บูดีแอร์ ดีพีไอ 200 ไมโครกรัม (สมมติ)",
+     "edition": "2.0", "report_id": "APSD-0019",
+     "text": "รายงาน APSD-0019 ฉบับที่ 2.0\nผู้จัดทำ: บริษัท ตัวอย่างพัลโม จำกัด (สมมติ)\nผลิตภัณฑ์: บูดีแอร์ ดีพีไอ 200 ไมโครกรัม (สมมติ)\nสัดส่วนอนุภาคละเอียด (FPF) ของรุ่นการผลิต BD-0101 เท่ากับ 28.9%"}
+  ],
+  "cases": [
+    {"case_id": "dev-patent-only", "passages": ["US20120145150A1#table-1"]},
+    {"case_id": "dev-patent-then-applicant", "passages": ["US20120145150A1#table-1", "applicant-apsd#page-1"]},
+    {"case_id": "dev-other-product", "passages": ["applicant-other-product#page-1"]}
+  ]
+}

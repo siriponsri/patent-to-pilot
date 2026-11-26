@@ -1,0 +1,11 @@
+{
+  "purpose": "Evaluator labels for evidence-role skill tests. Read only by skill_eval; never by the dossier runtime.",
+  "authored_by": "Product lane, 2026-11-26, from the evidence contract acceptance fixture",
+  "cases": {
+    "dev-patent-only": {"accepted": [], "why": "A patent example is not the applicant's result."},
+    "dev-patent-then-applicant": {"accepted": ["applicant-apsd#page-1"], "why": "Only the applicant report for this product supports the item."},
+    "dev-other-product": {"accepted": [], "why": "An applicant report about a different product does not support this product."},
+    "main-no-report": {"accepted": [], "why": "Regression on the dossier: without the applicant report the item stays missing."},
+    "main-report-1.1": {"accepted": ["applicant-dissolution-report-1.1#page-2"], "why": "Regression on the dossier: the applicant report page supports the item."}
+  }
+}

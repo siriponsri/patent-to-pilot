@@ -16,16 +16,37 @@ import socket
 import threading
 from urllib.parse import unquote, urlsplit
 
-from patent_to_pilot.workbench.core import CoreError, EvidenceCore
+from patent_to_pilot.workbench.core import CoreError, EvidenceCore, NotFound
+from patent_to_pilot.workbench.dossier import DossierService
 from patent_to_pilot.workbench.providers import ADAPTERS, ProviderError
 from patent_to_pilot.workbench.scope_reader import ScopeReader
 from patent_to_pilot.workbench.workflow import Workflow
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 STATIC_FILES = {"/": "index.html", "/index.html": "index.html", "/app.js": "app.js", "/app.css": "app.css",
-                "/scope.js": "scope.js"}
+                "/scope.js": "scope.js", "/dossier.js": "dossier.js"}
+FONT_DIR = Path(__file__).resolve().parent / "fonts"   # Sarabun, SIL Open Font License 1.1 (fonts/OFL.txt)
+FONT_FILES = {"/fonts/Sarabun-Regular.ttf": "Sarabun-Regular.ttf", "/fonts/Sarabun-Bold.ttf": "Sarabun-Bold.ttf",
+              "/fonts/OFL.txt": "OFL.txt"}
+DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 _SEG = r"([A-Za-z0-9._-]+)"
 ROUTES = [
+    # RA Pharma dossier (product lane P1-P5)
+    ("GET", r"/api/dossier/catalog", "dossier_catalog"),
+    ("POST", r"/api/dossier/snapshots", "dossier_build"),
+    ("GET", rf"/api/dossier/snapshots/{_SEG}", "dossier_snapshot"),
+    ("GET", rf"/api/dossier/snapshots/{_SEG}/verify", "dossier_verify"),
+    ("GET", rf"/api/dossier/diff/{_SEG}/{_SEG}", "dossier_diff"),
+    ("GET", rf"/api/dossier/snapshots/{_SEG}/letter", "dossier_letter"),
+    ("POST", rf"/api/dossier/snapshots/{_SEG}/letter", "dossier_save_letter"),
+    ("GET", rf"/api/dossier/snapshots/{_SEG}/export/{_SEG}", "dossier_export"),
+    ("GET", rf"/api/dossier/snapshots/{_SEG}/items/{_SEG}/sources/([0-9]+)", "dossier_page"),
+    ("GET", rf"/api/dossier/files/([0-9a-f]{{64}})", "dossier_file"),
+    ("GET", rf"/api/dossier/documents/{_SEG}", "dossier_document"),
+    ("POST", r"/api/dossier/skills/corrections", "dossier_correct"),
+    ("POST", r"/api/dossier/skills/proposals", "dossier_propose"),
+    ("POST", r"/api/dossier/skills/evaluations", "dossier_evaluate"),
+    ("POST", r"/api/dossier/skills/promotions", "dossier_promote"),
     ("GET", r"/api/scope/catalog", "scope_catalog"),
     ("POST", r"/api/scope/run", "scope_run"),
     ("GET", rf"/api/scope/run/{_SEG}", "scope_replay"),
@@ -90,8 +111,8 @@ def _provider_call(fn, *args):
 class Raw:
     """A non-JSON response (P4-T01: the stored original bytes of a source version)."""
 
-    def __init__(self, data: bytes, media_type: str, filename: str) -> None:
-        self.data, self.media_type, self.filename = data, media_type, filename
+    def __init__(self, data: bytes, media_type: str, filename: str, disposition: str = "inline") -> None:
+        self.data, self.media_type, self.filename, self.disposition = data, media_type, filename, disposition
 
 
 class App:
@@ -100,6 +121,65 @@ class App:
         self.lock = threading.Lock()   # one state-changing core operation at a time
         self.workflow = Workflow(core)
         self.scope_reader = ScopeReader(core.store)
+        self.dossier = DossierService(core.store)
+
+    # ---------------- RA Pharma dossier
+    def dossier_catalog(self, _body):
+        return self.dossier.catalog()
+
+    def dossier_build(self, body):
+        with self.lock:
+            return self.dossier.build(body)
+
+    def dossier_snapshot(self, _body, sid):
+        return self.dossier.snapshot(sid)
+
+    def dossier_verify(self, _body, sid):
+        return self.dossier.verify(sid)
+
+    def dossier_diff(self, _body, a, b):
+        return self.dossier.diff(a, b)
+
+    def dossier_letter(self, _body, sid):
+        return self.dossier.letter(sid)
+
+    def dossier_save_letter(self, body, sid):
+        with self.lock:
+            return self.dossier.save_letter(sid, body)
+
+    def dossier_export(self, _body, sid, fmt):
+        data, media, name = self.dossier.export(sid, fmt)
+        return Raw(data, media, name, "attachment" if fmt == "docx" else "inline")
+
+    def dossier_page(self, _body, sid, item_id, index):
+        return self.dossier.page(sid, item_id, int(index))
+
+    def dossier_file(self, _body, digest):
+        name, data = self.dossier.blob(digest)
+        return Raw(data, "application/pdf", name + ".pdf")
+
+    def dossier_document(self, _body, doc_id):
+        pack = self.dossier.pack()
+        doc = next((d for d in pack["documents"] if d["doc_id"] == doc_id), None)
+        if doc is None:
+            raise NotFound("ไม่พบเอกสารนี้ในแฟ้มตัวอย่าง", "unknown_document")
+        return Raw((self.dossier.pack_dir / doc["file"]).read_bytes(), "application/pdf", doc_id + ".pdf")
+
+    def dossier_correct(self, body):
+        with self.lock:
+            return self.dossier.correct(body)
+
+    def dossier_propose(self, body):
+        with self.lock:
+            return self.dossier.propose(body)
+
+    def dossier_evaluate(self, body):
+        with self.lock:
+            return self.dossier.evaluate(body)
+
+    def dossier_promote(self, body):
+        with self.lock:
+            return self.dossier.promote(body)
 
     def scope_catalog(self, _body):
         return self.scope_reader.catalog()
@@ -287,9 +367,10 @@ def make_handler(app: App):
             if self.headers.get("Host") not in allowed_hosts:
                 return self._json(403, {"error": "forbidden_host", "message": "loopback host required"})
             path = urlsplit(self.path).path
-            if method == "GET" and path in STATIC_FILES:
-                f = STATIC_DIR / STATIC_FILES[path]
-                ctype = (mimetypes.guess_type(f.name)[0] or "text/plain") + "; charset=utf-8"
+            if method == "GET" and (path in STATIC_FILES or path in FONT_FILES):
+                f = STATIC_DIR / STATIC_FILES[path] if path in STATIC_FILES else FONT_DIR / FONT_FILES[path]
+                ctype = mimetypes.guess_type(f.name)[0] or "text/plain"
+                ctype = "font/ttf" if f.suffix == ".ttf" else ctype + "; charset=utf-8"
                 return self._send(200, f.read_bytes(), ctype)
             body = None
             if method == "POST":
@@ -312,10 +393,13 @@ def make_handler(app: App):
                     try:
                         out = getattr(app, name)(body, *[unquote(g) for g in match.groups()])
                         if isinstance(out, Raw):  # owner-supplied bytes: shown inline, never run as a page
-                            ctype = "application/pdf" if out.media_type == "application/pdf" else "text/plain; charset=utf-8"
+                            ctype = {"application/pdf": "application/pdf", DOCX: DOCX,
+                                     "text/html": "text/html; charset=utf-8"}.get(out.media_type, "text/plain; charset=utf-8")
+                            # Generated letter HTML may load the bundled font but never runs script.
+                            csp = "sandbox allow-same-origin; script-src 'none'" if out.media_type == "text/html" else "sandbox"
                             return self._send(200, out.data, ctype, {
-                                "Content-Disposition": f'inline; filename="{out.filename}"',
-                                "Content-Security-Policy": "sandbox"})
+                                "Content-Disposition": f'{out.disposition}; filename="{out.filename}"',
+                                "Content-Security-Policy": csp})
                         return self._json(200, out)
                     except CoreError as exc:
                         return self._json(exc.status, {"error": exc.code, "message": str(exc)})

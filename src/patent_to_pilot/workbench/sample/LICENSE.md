@@ -6,6 +6,8 @@ The original fictional source documents, scenario text, manifest, requirement sp
 
 The dedication excludes `scope_reader.json`, which contains attributed public-source excerpts. See the [scope reader source and reuse record](../../../../docs/evidence-scope/receipts/S2-sources.md).
 
+It also excludes the attributed public excerpts in `ra_pharma/pack.json` (patent, ASEAN/Thai FDA and Office of the Prime Minister text) and the patent passage in `ra_pharma/dev/inhaler-dev.json`. The fictional RA Pharma documents, applicant data and evaluator labels in `ra_pharma/` are covered. See the [RA Pharma pack record](ra_pharma/README.md).
+
 The fictional materials contain no copied external dataset passages. They describe fictional concepts and illustrative statements, not actual experiments, patents, organizations, technical validation, or professional advice. They must remain identified as fixtures when demonstrated.
 
 This notice covers this fixture directory only. It does not change the license of the surrounding repository, third-party dependencies, models, datasets, or existing project documents.

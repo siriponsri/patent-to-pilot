@@ -138,3 +138,45 @@ input[type="checkbox"] { min-height: 0; }
   .matrix th[scope="row"] { background: var(--bg); }
   .matrix td::before { content: attr(data-req); display: block; font-size: .78rem; color: var(--muted); }
 }
+
+/* RA Pharma dossier */
+@font-face { font-family: Sarabun; src: url('/fonts/Sarabun-Regular.ttf'); }
+@font-face { font-family: Sarabun; font-weight: 700; src: url('/fonts/Sarabun-Bold.ttf'); }
+#view-dossier { max-width: 70rem; margin-inline: auto; }
+.dossier-controls { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1rem; padding: 1rem; }
+.dossier-controls label { display: grid; gap: .2rem; font-weight: 600; }
+.dossier-controls select { width: 100%; font-weight: normal; }
+.dossier-controls fieldset { grid-column: 1 / -1; border: 1px solid var(--line); border-radius: 6px; }
+.dossier-controls fieldset label { display: flex; gap: .4rem; font-weight: normal; align-items: center; }
+.dossier-controls .actions { grid-column: 1 / -1; margin: 0; }
+#dossier-notice:not(:empty) { margin-block: .6rem; color: var(--muted); }
+#dossier-notice.error { color: var(--rev); }
+.dossier-nav { display: flex; flex-wrap: wrap; gap: .3rem .9rem; margin: .6rem 0;
+  padding: .45rem .7rem; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+.dossier-nav[hidden] { display: none; }
+.dossier-nav a { color: var(--accent); }
+#dossier-result section { margin-block: 1.4rem; }
+#dossier-result h2 { border-bottom: 1px solid var(--line); padding-bottom: .2rem; }
+.status-badge { display: inline-block; font-weight: 600; border-radius: 6px; padding: .05rem .45rem; font-size: .88rem; }
+.status-badge.supported, .status-badge.meets, .status-badge.read { color: var(--meets); background: var(--meets-bg); }
+.status-badge.missing, .status-badge.does_not_meet, .status-badge.conflict { color: var(--dnm); background: var(--dnm-bg); }
+.status-badge.needs_review, .status-badge.uncertain, .status-badge.absent { color: var(--rev); background: var(--rev-bg); }
+.ev-link { font-size: .85rem; padding: .15rem .5rem; min-height: 0; }
+.quote-en { white-space: pre-wrap; font-family: ui-serif, Georgia, serif; }
+.letter-sheet { background: #fff; color: #000; border: 1px solid var(--line); padding: 1.5rem 1.2rem 1.5rem 2rem; max-width: 46rem;
+  font-family: Sarabun, "TH Sarabun New", system-ui, sans-serif; }
+.letter-block { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: .4rem; align-items: start; }
+.letter-block textarea { width: 100%; font: inherit; color: inherit; background: transparent; border: 1px dashed transparent;
+  resize: vertical; padding: .1rem .25rem; field-sizing: content; min-height: 1.8rem; }
+.letter-block textarea:hover, .letter-block textarea:focus { border-color: #999; }
+.letter-block.edited textarea { background: #fff8db; }
+.letter-block.signer textarea { background: #eef4ff; }
+.letter-block.blocking textarea { background: #fde8e4; }
+.letter-block .ev-link { color: #1f5fbf; background: #fff; border-color: #c9ced6; }
+.dossier-evidence { position: fixed; right: 1rem; bottom: 1rem; z-index: 15; width: min(38rem, calc(100vw - 2rem));
+  max-height: 70vh; overflow: auto; border-color: var(--accent); box-shadow: 0 4px 16px rgba(0,0,0,.2); margin: 0; }
+.dossier-evidence[hidden] { display: none; }
+.page-text { white-space: pre-wrap; font-size: .92rem; background: var(--bg); padding: .6rem; border-radius: 6px; }
+.page-text mark { background: #ffe58a; color: #000; }
+@media (max-width: 38rem) { .dossier-controls { grid-template-columns: minmax(0, 1fr); } .letter-block { grid-template-columns: 1fr; } }
+.dossier-controls [hidden] { display: none; }
