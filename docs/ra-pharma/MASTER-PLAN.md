@@ -15,13 +15,17 @@ Owner decision of 26 November 2026. Patent-to-Pilot keeps its repository name. T
 
 The [current architecture review](READING-ARCHITECTURE-REVIEW.md) connects reading depth to branch-specific evidence and missing-item requests. The EPO source preflight is published on the Research branch. Complete exclusion coverage is still missing. The first branch-reading check uses exposed developer material.
 
-The [D31 independent source key and audit](THAI-INQUIRY-AUDIT.md) cover 11 inquiry issues in seven official opinions. The sealed primary tied at 3/11 complete answers. One follow-up on a fresh index page tests answer extraction under the same source and output budget. The six handoff cases and 12 synthetic dossiers stay closed.
+The [D31 independent source key and audit](THAI-INQUIRY-AUDIT.md) cover 11 inquiry issues in seven official opinions. The sealed primary tied at 3/11 complete answers. The closed follow-up linked 7/7 adjudicated issues in four new opinions. All three selectors returned incomplete extracts on those seven. One further issue was unjudged. The six handoff cases and 12 synthetic dossiers stay closed.
 
 For a fictional taste-masked tablet, the patent agent compares the product facts with inherited and added claim limitations. A country-specific FTO evidence file records the missing legal-status checks. The regulatory agent maps applicable Thai registration requirements to the applicant's evidence and identifies missing attachments. The correspondence agent reads the questions on a sample incoming letter and drafts a reply in the sender's template. A reviewer can open the precise page behind a sentence, see which product it describes, and decide whether to sign. The product operator controls issuance.
 
 The first demo covers Thai correspondence, an English patent and Thai registration guidance alongside an English ASEAN source. Foreign legal support is organized by authority, jurisdiction and effective date. A regional guideline or a US patent publication alone cannot establish the law or patent status in Thailand. A foreign-country regulatory pack is a later extension with its own official sources and fixtures.
 
 The learning loop records a corrected decision, proposes a versioned change to a reading skill, tests it on different development families and checks regressions before promotion. Keep the old version for replay. Preserve the identity of the model, prompts, tools, skill and harness in each trace. A static demonstration of this loop earns an engineering result. A claim of transfer requires the research comparison.
+
+## Planner dispatch evidence
+
+For every Planner assignment, proposal or substantive claim, cite a relevant primary research paper and identify a benchmark or named competitor. Link both sources and explain which task, metric or product workflow they support. Distinguish a measured head-to-head result from an external reference or an untested hypothesis. For example, rhetorical-role tagging in Indian judgments informed a hypothesis about selecting conclusions and qualifications. The actual Thai comparison measured complete answers under identical page and extract budgets. [LegalSeg](https://aclanthology.org/2025.findings-naacl.63/) · [Matched Thai benchmark](https://github.com/siriponsri/patent-to-pilot/blob/93f3705e38907bc2ee0c12a7471b0bc683ca6eef/docs/ra-pharma/research/official-correspondence/page2/RECEIPT.md).
 
 ## Concurrent work
 

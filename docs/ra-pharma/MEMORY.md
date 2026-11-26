@@ -1,5 +1,9 @@
 # Project memory
 
+## 2026-11-26 · Planner evidence and Thai inquiry closeout
+
+For every Planner assignment, proposal or substantive claim, cite a relevant primary research paper and identify a benchmark or named competitor. Link both sources and explain which task, metric or product workflow they support. Distinguish a measured head-to-head result from an external reference or an untested hypothesis. This is the owner's standing instruction under D32. In the follow-up, role-sensitive selection changed three of seven adjudicated extracts. All seven issues linked to the right opinion, yet none had complete support under any reader. Preserve separate product states for a located document and reviewed answer evidence. The eighth issue remains unjudged. [LegalSeg](https://aclanthology.org/2025.findings-naacl.63/) · [Thai comparator and audit](THAI-INQUIRY-AUDIT.md#second-page-result-and-independent-verification).
+
 ## 2026-11-26 · Patent source and architecture review
 
 Registry metadata paired a Thai drug product with two document audiences. It did not pair a filing with its actual incoming request and reply. A historical Council of State medical-device opinion does contain an inquiry and its answer. Its official page-one reference digits differ from the web tool's transcription. When identifiers disagree, record both and check the issuer PDF and visual locator before a draft cites the file. This example is exposed. Switching the research endpoint from applicant evidence to attribution of a public inquiry needs an owner decision. [Evidence and source hash](READING-ARCHITECTURE-REVIEW.md#natural-evidence-and-the-next-research-decision).

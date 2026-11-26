@@ -12,6 +12,10 @@ standing rules; this file is the shared summary and must stay consistent with it
 5. Maintain one writer per path. Each executor owns its lane HANDOFF.md and MEMORY.md under `docs/ra-pharma/`; update the handoff at major events and before long jobs. The Planner maintains the root HANDOFF, INDEX-PLAN, [shared memory](docs/ra-pharma/MEMORY.md) and master board. Update the inherited P registry only through `python scripts/tracking/ptp_tracker.py`.
 6. Record failed publication locally. Verify the remote revision before reporting a push.
 
+## Planner evidence
+
+For every Planner assignment, proposal or substantive claim, cite a relevant primary research paper and identify a benchmark or named competitor. Link both sources and explain which task, metric or product workflow they support. Distinguish a measured head-to-head result from an external reference or an untested hypothesis. [Owner decision D32](docs/maintenance/OWNER-DECISIONS-20261122.md#d32--require-a-paper-and-a-comparator-for-planner-work-26-november-2026).
+
 ## Hard limits
 
 - Never open protected TEST data. Never let an exposed test set select a method.

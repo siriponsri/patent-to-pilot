@@ -127,3 +127,7 @@ The owner confirmed the historical patent family exclusion list is unavailable. 
 ## D31 · Evaluate attribution of historical Thai public inquiries (26 November 2026)
 
 The owner selected public Thai legal inquiries as the next primary research task. Across multiple matters, trace the incoming letter to the official response and identify where that response answers the issue. Use the authentic documents and a separate reference key. Opinion 344/2532 is an exposed development example. The applicant-dossier completeness endpoint remains unmeasured. The [architecture review](../ra-pharma/READING-ARCHITECTURE-REVIEW.md) records the preceding comparisons and the reason for choosing this endpoint.
+
+## D32 · Require a paper and a comparator for Planner work (26 November 2026)
+
+For every Planner assignment, proposal or substantive claim, cite a relevant primary research paper and identify a benchmark or named competitor. Link both sources and explain which task, metric or product workflow they support. Distinguish a measured head-to-head result from an external reference or an untested hypothesis. For a comparison across jurisdictions or languages, specify the difference in scope. An owner decision, source hash or receipt remains the authority for its own facts.
