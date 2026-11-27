@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96"
      role="img" aria-labelledby="ptp-title ptp-description">
   <title id="ptp-title">Patent-to-Pilot</title>
-  <desc id="ptp-description">Three stepped document spines form a single P for the RA Pharma dossier.</desc>
-  <g fill="#258477">
-    <path d="M7 33 15 25V76L7 84Z"/>
-    <path d="M20 23 28 15V76L20 84Z"/>
-    <path fill-rule="evenodd"
-          d="M33 12H60C76 12 87 22 87 37S76 62 60 62H47V70L33 84V12ZM47 26V48H59C67 48 72 44 72 37S67 26 59 26H47Z"/>
-  </g>
+  <desc id="ptp-description">A source document with dated evidence lines; the last line leaves the page as a forward arrow, from patent record to pilot decision.</desc>
+  <rect width="96" height="96" rx="22" fill="#1f2a44"/>
+  <path d="M26 18H56L70 32V78H26Z" fill="#f7f7f4"/>
+  <path d="M56 18V32H70Z" fill="#c9d1dd"/>
+  <rect x="34" y="38" width="26" height="4.5" rx="2.25" fill="#1f2a44" opacity="0.55"/>
+  <rect x="34" y="48" width="18" height="4.5" rx="2.25" fill="#1f2a44" opacity="0.55"/>
+  <path d="M34 58.5H72V53L84 61.25 72 69.5V64H34Z" fill="#14b8a6"/>
 </svg>
