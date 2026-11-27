@@ -52,6 +52,7 @@ def with_edition_features(row, source):
 def m3_policy(row, horizon, probability, hi):
     asof = row["asof"]
     return graph.decide(asof.snapshot, row["t"], horizon, probability, lo=1 - hi, hi=hi,
+                        graph_version=getattr(asof, "graph_version", "v1"),
                         challenge_evidence=asof.challenge.state if asof.challenge else None)
 
 

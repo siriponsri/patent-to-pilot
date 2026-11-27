@@ -1,0 +1,833 @@
+{
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 20261127,
+  "code_sha256_lf": {
+    "loe_bench/evidence_graph.py": "efdd626b292973f394a30f2884593592d0d3c8be69e98b6584fb40e21f244e01",
+    "loe_bench/regulatory_graph.py": "dbf13d1d641efd776c7849bc025f9a74dca1d413cbfab785c028fe797ab19e5b",
+    "loe_bench/review_metrics.py": "e524216bc58673852f92991f7d90f1c92d9f6f8221545c50704232ddbd98830a",
+    "loe_bench/t2_features.py": "fde22235cc04d71b648f8ce019c1613a290570fbd09c6cccebdaf44cb13846f7",
+    "scripts/k22_dev_run.py": "5cb56898c7b2b8934ca2bdca1811eb4d5e4b61f45c5de33cc793df6d3fec52a8"
+  },
+  "decision": "RETAIN_V1",
+  "development_observed_through": "2016-01-01",
+  "gates": {
+    "fewer_contested": true,
+    "recall_gain_12_ge_minus_0.02": true,
+    "recall_gain_24_ge_0.02": false
+  },
+  "horizons": {
+    "12": {
+      "actions": {
+        "M1": {
+          "clear": {
+            "events": 23,
+            "rows": 1479
+          },
+          "flag": {
+            "events": 0,
+            "rows": 0
+          },
+          "refer": {
+            "events": 67,
+            "rows": 682
+          }
+        },
+        "M3_v1": {
+          "clear": {
+            "events": 33,
+            "rows": 1582
+          },
+          "flag": {
+            "events": 0,
+            "rows": 0
+          },
+          "refer": {
+            "events": 57,
+            "rows": 579
+          }
+        },
+        "M3_v2": {
+          "clear": {
+            "events": 22,
+            "rows": 1443
+          },
+          "flag": {
+            "events": 0,
+            "rows": 0
+          },
+          "refer": {
+            "events": 68,
+            "rows": 718
+          }
+        }
+      },
+      "contrasts": {
+        "M3_v1_minus_M1": {
+          "average_precision": {
+            "ci95": [
+              -0.040723591365901896,
+              0.0184310260663822
+            ],
+            "invalid_draws": 0,
+            "point": -0.011898879049780209,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.007792668180401972,
+              0.056840923651664224
+            ],
+            "invalid_draws": 0,
+            "point": 0.0224433132808885,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              -0.009302325581395349,
+              0.00696055684454755
+            ],
+            "invalid_draws": 0,
+            "point": 0.0,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              -0.04349020544672716,
+              0.03192347288949891
+            ],
+            "invalid_draws": 0,
+            "point": 0.0,
+            "valid_draws": 2000
+          }
+        },
+        "M3_v2_minus_M1": {
+          "average_precision": {
+            "ci95": [
+              -0.007387582269290904,
+              0.02924183279795519
+            ],
+            "invalid_draws": 0,
+            "point": 0.006368260561961936,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.013225660137204982,
+              0.01929539769231658
+            ],
+            "invalid_draws": 0,
+            "point": 0.0037019898195280176,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              -0.007009345794392524,
+              0.01154801235993498
+            ],
+            "invalid_draws": 0,
+            "point": 0.0023255813953488302,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              -0.03614457831325302,
+              0.053195035460992905
+            ],
+            "invalid_draws": 0,
+            "point": 0.011111111111111072,
+            "valid_draws": 2000
+          }
+        },
+        "M3_v2_minus_M3_v1": {
+          "average_precision": {
+            "ci95": [
+              -0.013726836560633407,
+              0.04955297734050009
+            ],
+            "invalid_draws": 0,
+            "point": 0.018267139611742145,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.05225732893971378,
+              0.012044704477366584
+            ],
+            "invalid_draws": 0,
+            "point": -0.018741323461360482,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              -0.004728412490336465,
+              0.011764705882352955
+            ],
+            "invalid_draws": 0,
+            "point": 0.0023255813953488302,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              -0.027033169533169588,
+              0.05882352941176472
+            ],
+            "invalid_draws": 0,
+            "point": 0.011111111111111072,
+            "valid_draws": 2000
+          }
+        }
+      },
+      "distinct_event_drugs_expected_captured": {
+        "M1": 55.0,
+        "M3_v1": 55.0,
+        "M3_v2": 56.0
+      },
+      "drug_clusters": 609,
+      "event_drugs": 90,
+      "event_rows": 90,
+      "levels": {
+        "M1": {
+          "average_precision": {
+            "ci95": [
+              0.14135956568811542,
+              0.2940983597589039
+            ],
+            "invalid_draws": 0,
+            "point": 0.20049944725601956,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              0.21853493262283027,
+              0.31132086554830474
+            ],
+            "invalid_draws": 0,
+            "point": 0.2642295233688107,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              0.09817244911022915,
+              0.1585081585081585
+            ],
+            "invalid_draws": 0,
+            "point": 0.12790697674418605,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              0.5060240963855421,
+              0.7126436781609196
+            ],
+            "invalid_draws": 0,
+            "point": 0.6111111111111112,
+            "valid_draws": 2000
+          }
+        },
+        "M3_v1": {
+          "average_precision": {
+            "ci95": [
+              0.13492143699450318,
+              0.28106458614083674
+            ],
+            "invalid_draws": 0,
+            "point": 0.18860056820623936,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              0.23656779136158276,
+              0.34037585705977397
+            ],
+            "invalid_draws": 0,
+            "point": 0.2866728366496992,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              0.0979020979020979,
+              0.15741339869281043
+            ],
+            "invalid_draws": 0,
+            "point": 0.12790697674418605,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              0.5,
+              0.7073170731707317
+            ],
+            "invalid_draws": 0,
+            "point": 0.6111111111111112,
+            "valid_draws": 2000
+          }
+        },
+        "M3_v2": {
+          "average_precision": {
+            "ci95": [
+              0.14517917908247555,
+              0.3016567801123664
+            ],
+            "invalid_draws": 0,
+            "point": 0.2068677078179815,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              0.22400438394093214,
+              0.3135719050314206
+            ],
+            "invalid_draws": 0,
+            "point": 0.26793151318833874,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              0.09907264685629535,
+              0.16037735849056603
+            ],
+            "invalid_draws": 0,
+            "point": 0.13023255813953488,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              0.5180616583982991,
+              0.7159090909090909
+            ],
+            "invalid_draws": 0,
+            "point": 0.6222222222222222,
+            "valid_draws": 2000
+          }
+        }
+      },
+      "rows": 2161,
+      "slots_by_cutoff": {
+        "2012-01-01": 106,
+        "2013-01-01": 107,
+        "2014-01-01": 108,
+        "2015-01-01": 109
+      },
+      "training_cutoffs": [
+        "2010-01-01"
+      ],
+      "training_rows": 547,
+      "verdicts": {
+        "v1": {
+          "BLOCKED": 584,
+          "CONTESTED": 1490,
+          "OPEN": 87
+        },
+        "v2": {
+          "BLOCKED": 295,
+          "CONTESTED": 781,
+          "OPEN": 1085
+        }
+      }
+    },
+    "24": {
+      "actions": {
+        "M1": {
+          "clear": {
+            "events": 0,
+            "rows": 41
+          },
+          "flag": {
+            "events": 0,
+            "rows": 2
+          },
+          "refer": {
+            "events": 91,
+            "rows": 1040
+          }
+        },
+        "M3_v1": {
+          "clear": {
+            "events": 7,
+            "rows": 205
+          },
+          "flag": {
+            "events": 1,
+            "rows": 1
+          },
+          "refer": {
+            "events": 83,
+            "rows": 877
+          }
+        },
+        "M3_v2": {
+          "clear": {
+            "events": 1,
+            "rows": 96
+          },
+          "flag": {
+            "events": 0,
+            "rows": 0
+          },
+          "refer": {
+            "events": 90,
+            "rows": 987
+          }
+        }
+      },
+      "contrasts": {
+        "M3_v1_minus_M1": {
+          "average_precision": {
+            "ci95": [
+              -0.016799590956030692,
+              0.024626794886265443
+            ],
+            "invalid_draws": 0,
+            "point": 0.006095372687355799,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.057090239410681365,
+              0.036580532535297715
+            ],
+            "invalid_draws": 0,
+            "point": -0.012465373961218829,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              -0.009259259259259245,
+              0.04629629629629631
+            ],
+            "invalid_draws": 0,
+            "point": 0.023255813953488386,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              -0.02000505050505047,
+              0.11249999999999993
+            ],
+            "invalid_draws": 0,
+            "point": 0.05494505494505497,
+            "valid_draws": 2000
+          }
+        },
+        "M3_v2_minus_M1": {
+          "average_precision": {
+            "ci95": [
+              -0.008958776869471824,
+              0.02030967529546879
+            ],
+            "invalid_draws": 0,
+            "point": 0.007339512079093141,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.03215398923651628,
+              0.004664791702838151
+            ],
+            "invalid_draws": 0,
+            "point": -0.01708217913204063,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              -0.013953488372093037,
+              0.041860465116279055
+            ],
+            "invalid_draws": 0,
+            "point": 0.018604651162790697,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              -0.03448275862068967,
+              0.101123595505618
+            ],
+            "invalid_draws": 0,
+            "point": 0.043956043956043966,
+            "valid_draws": 2000
+          }
+        },
+        "M3_v2_minus_M3_v1": {
+          "average_precision": {
+            "ci95": [
+              -0.024158262216007195,
+              0.025421766594458373
+            ],
+            "invalid_draws": 0,
+            "point": 0.0012441393917373422,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              -0.0490916413708898,
+              0.03647444784120579
+            ],
+            "invalid_draws": 0,
+            "point": -0.004616805170821803,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              -0.03271028037383178,
+              0.02314814814814814
+            ],
+            "invalid_draws": 0,
+            "point": -0.004651162790697688,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              -0.08237745098039219,
+              0.05747126436781608
+            ],
+            "invalid_draws": 0,
+            "point": -0.010989010989011005,
+            "valid_draws": 2000
+          }
+        }
+      },
+      "distinct_event_drugs_expected_captured": {
+        "M1": 32.0,
+        "M3_v1": 35.0,
+        "M3_v2": 37.0
+      },
+      "drug_clusters": 561,
+      "event_drugs": 67,
+      "event_rows": 91,
+      "levels": {
+        "M1": {
+          "average_precision": {
+            "ci95": [
+              0.14621256361634372,
+              0.3213073992117174
+            ],
+            "invalid_draws": 0,
+            "point": 0.2157956377194362,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              0.4746537933409288,
+              0.4883845101320011
+            ],
+            "invalid_draws": 0,
+            "point": 0.481994459833795,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              0.12558139534883722,
+              0.25119106037977373
+            ],
+            "invalid_draws": 0,
+            "point": 0.18604651162790697,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              0.3333333333333333,
+              0.5581470854726668
+            ],
+            "invalid_draws": 0,
+            "point": 0.43956043956043955,
+            "valid_draws": 2000
+          }
+        },
+        "M3_v1": {
+          "average_precision": {
+            "ci95": [
+              0.15076540266635302,
+              0.3294269115104908
+            ],
+            "invalid_draws": 0,
+            "point": 0.221891010406792,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              0.42311056725309976,
+              0.519355285085109
+            ],
+            "invalid_draws": 0,
+            "point": 0.4695290858725762,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              0.14351851851851852,
+              0.27443887347983775
+            ],
+            "invalid_draws": 0,
+            "point": 0.20930232558139536,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              0.37345149830089586,
+              0.6027655724993537
+            ],
+            "invalid_draws": 0,
+            "point": 0.4945054945054945,
+            "valid_draws": 2000
+          }
+        },
+        "M3_v2": {
+          "average_precision": {
+            "ci95": [
+              0.15356340894034823,
+              0.32947350226673916
+            ],
+            "invalid_draws": 0,
+            "point": 0.22313514979852933,
+            "valid_draws": 2000
+          },
+          "decision_loss": {
+            "ci95": [
+              0.448338290862133,
+              0.48670782939324625
+            ],
+            "invalid_draws": 0,
+            "point": 0.4649122807017544,
+            "valid_draws": 2000
+          },
+          "precision20": {
+            "ci95": [
+              0.1388888888888889,
+              0.26851851851851855
+            ],
+            "invalid_draws": 0,
+            "point": 0.20465116279069767,
+            "valid_draws": 2000
+          },
+          "recall20": {
+            "ci95": [
+              0.36247364457831327,
+              0.5882352941176471
+            ],
+            "invalid_draws": 0,
+            "point": 0.4835164835164835,
+            "valid_draws": 2000
+          }
+        }
+      },
+      "rows": 1083,
+      "slots_by_cutoff": {
+        "2013-01-01": 107,
+        "2014-01-01": 108
+      },
+      "training_cutoffs": [
+        "2010-01-01"
+      ],
+      "training_rows": 547,
+      "verdicts": {
+        "v1": {
+          "BLOCKED": 181,
+          "CONTESTED": 847,
+          "OPEN": 55
+        },
+        "v2": {
+          "BLOCKED": 72,
+          "CONTESTED": 433,
+          "OPEN": 578
+        }
+      }
+    }
+  },
+  "numpy": "2.5.4",
+  "pooled_contested": {
+    "v1": 2337,
+    "v2": 1214
+  },
+  "python": "3.12.10",
+  "raw_features_matched": true,
+  "role": "DEVELOPMENT_ONLY",
+  "sources": {
+    "court_manifest": {
+      "file": "E7_sources.json",
+      "sha256": "e7ab32b01e05180b164081b422ded6ae226b40a20f147733285aa42aa7c925e2"
+    },
+    "gsrs": {
+      "file": "dump-public-2026-08-06.gsrs",
+      "sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad"
+    },
+    "ob_manifest": {
+      "file": "OB_EDITIONS.json",
+      "sha256": "526ed04cc517f1221bb2ce7b3f03e3bd13e86a7cc6a1db5f936e26a1aaecaf1d"
+    },
+    "orange_book_coverage": {
+      "2010-01-01": {
+        "age_days": 77,
+        "availability_proof": {
+          "date": "2009-11-04",
+          "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20091104091455"
+        },
+        "chosen_edition": "2009-10-16",
+        "freshness_floor": "2009-07-01",
+        "latest_proven_age_days": 77,
+        "latest_proven_availability": {
+          "date": "2009-11-04",
+          "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20091104091455"
+        },
+        "latest_proven_edition": "2009-10-16",
+        "source": {
+          "file": "ob_20091104091455.zip",
+          "kind": "fda_zip",
+          "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2011-01-01": {
+        "age_days": null,
+        "availability_proof": null,
+        "chosen_edition": null,
+        "freshness_floor": "2010-07-01",
+        "latest_proven_age_days": 375,
+        "latest_proven_availability": {
+          "date": "2010-01-13",
+          "edition_sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20100113002223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20100113002223"
+        },
+        "latest_proven_edition": "2009-12-22",
+        "source": null,
+        "status": "STALE"
+      },
+      "2012-01-01": {
+        "age_days": 18,
+        "availability_proof": {
+          "date": "2011-12-29",
+          "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20111229223919"
+        },
+        "chosen_edition": "2011-12-14",
+        "freshness_floor": "2011-07-01",
+        "latest_proven_age_days": 18,
+        "latest_proven_availability": {
+          "date": "2011-12-29",
+          "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20111229223919"
+        },
+        "latest_proven_edition": "2011-12-14",
+        "source": {
+          "file": "ob_20111229223919.zip",
+          "kind": "fda_zip",
+          "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2013-01-01": {
+        "age_days": 106,
+        "availability_proof": {
+          "date": "2012-09-21",
+          "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20120921215526"
+        },
+        "chosen_edition": "2012-09-17",
+        "freshness_floor": "2012-07-01",
+        "latest_proven_age_days": 106,
+        "latest_proven_availability": {
+          "date": "2012-09-21",
+          "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20120921215526"
+        },
+        "latest_proven_edition": "2012-09-17",
+        "source": {
+          "file": "ob_20120921215526.zip",
+          "kind": "fda_zip",
+          "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2014-01-01": {
+        "age_days": 124,
+        "availability_proof": {
+          "date": "2013-09-06",
+          "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20130906105914"
+        },
+        "chosen_edition": "2013-08-30",
+        "freshness_floor": "2013-07-01",
+        "latest_proven_age_days": 124,
+        "latest_proven_availability": {
+          "date": "2013-09-06",
+          "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20130906105914"
+        },
+        "latest_proven_edition": "2013-08-30",
+        "source": {
+          "file": "ob_20130906105914.zip",
+          "kind": "fda_zip",
+          "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2015-01-01": {
+        "age_days": 113,
+        "availability_proof": {
+          "date": "2014-09-15",
+          "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20140915104404"
+        },
+        "chosen_edition": "2014-09-10",
+        "freshness_floor": "2014-07-01",
+        "latest_proven_age_days": 113,
+        "latest_proven_availability": {
+          "date": "2014-09-15",
+          "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20140915104404"
+        },
+        "latest_proven_edition": "2014-09-10",
+        "source": {
+          "file": "ob_20140915104404.zip",
+          "kind": "fda_zip",
+          "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      }
+    },
+    "piv_manifest": {
+      "file": "PIV_EDITIONS.json",
+      "sha256": "28b39cd1eedd9094425c549cf79ec398226e5029c0a9b90fa1001e31a2933499"
+    },
+    "s0_files": {
+      "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+      "ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+      "ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+      "ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+      "ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f"
+    },
+    "s0_manifest": {
+      "file": "S0_INPUT_MANIFEST.json",
+      "sha256": "f6d827361582f3aa5ad79621f784fc1b3260e5ff91c068194323c88d5ed871ff"
+    }
+  }
+}

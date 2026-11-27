@@ -27,6 +27,7 @@ class AsOfFeatures:
     edition_status: str
     challenge: ChallengeEvidence | None = None
     edition_source: dict | None = None
+    graph_version: str = "v1"
 
 
 def edition_coverage(history: OBHistory, cutoff: date) -> dict:
@@ -61,6 +62,7 @@ class _EditionIndex:
         if edition.protection_only and linker is None:
             raise ValueError("annual Orange Book features require the FIX2c identity crosswalk")
         self.by_key = defaultdict(set)
+        self.edition = edition
         self.linked_products = defaultdict(list)
         self.patents = defaultdict(list)
         self.exclusivities = defaultdict(list)
@@ -131,6 +133,17 @@ class _EditionIndex:
         return ([p for product_id in sorted(ids) for p in self.patents.get(product_id, ())],
                 [e for product_id in sorted(ids) for e in self.exclusivities.get(product_id, ())])
 
+    def original_approvals(self, exclusivities):
+        approvals = {}
+        for application in {row["appl_no"] for row in exclusivities if row["code"] in {"NCE", "NCE*"}}:
+            approvals[application] = min(
+                (p for p in self.edition.by_appl.get(application, ())
+                 if p["appl_type"] in ("N", "") and p["approval_date"] is not None
+                 and p["approval_date"] <= self.edition.edition_date),
+                key=lambda p: p["approval_date"], default=None,
+            )
+        return approvals
+
 
 def _complete_dates(records):
     dates = [row["expiry"] for row in records]
@@ -145,9 +158,11 @@ def _remaining(records, cutoff):
 
 
 class AsOfBuilder:
-    def __init__(self, history: OBHistory, *, key_mode=None, gsrs_path=None, linker=None, challenge=None):
+    def __init__(self, history: OBHistory, *, key_mode=None, gsrs_path=None, linker=None, challenge=None,
+                 graph_version="v1"):
         self.history = history
         self.challenge = challenge
+        self.graph_version = graph_version
         self._indexes = {}
         if key_mode is None:
             key_mode = "moiety" if linker or history.data_dir is not None or gsrs_path else "legacy"
@@ -185,7 +200,8 @@ class AsOfBuilder:
         if source is not None:
             if source not in self._indexes:
                 self._indexes[source] = _EditionIndex(self.history.load_source(source), self.registry, self.linker)
-            patents, exclusivities = self._indexes[source].records(key)
+            index = self._indexes[source]
+            patents, exclusivities = index.records(key)
             if patents is None:
                 status = "NOT_LISTED"
             else:
@@ -202,6 +218,9 @@ class AsOfBuilder:
                     years_since_earliest_patent_submission=years_between(min(submitted), cutoff) if submitted else None,
                 )
                 snapshot = {"patent_exp": patent_dates, "excl_exp": _complete_dates(exclusivities)}
+                if self.graph_version == "v2":
+                    snapshot.update(regulatory={"patents": patents, "exclusivities": exclusivities,
+                                                "original_approvals": index.original_approvals(exclusivities)})
         x = dict(base_features)
         for name, value in values.items():
             x[name] = 0.0 if value is None else float(value)
@@ -210,5 +229,8 @@ class AsOfBuilder:
         state = challenge.state if challenge is not None else None
         if challenge is not None:
             x.update(challenge_present=float(state == T3.TRUE), challenge_missing=float(state == T3.UNKNOWN))
-        verdict = verdict_label(build_assignment(snapshot, cutoff, horizon, challenge_evidence=state))
-        return AsOfFeatures(x, snapshot, verdict, status, challenge, coverage["source"])
+            if self.graph_version == "v2":
+                snapshot["challenge_witnesses"] = challenge.witnesses
+        verdict = verdict_label(build_assignment(snapshot, cutoff, horizon, challenge_evidence=state,
+                                                 graph_version=self.graph_version))
+        return AsOfFeatures(x, snapshot, verdict, status, challenge, coverage["source"], self.graph_version)

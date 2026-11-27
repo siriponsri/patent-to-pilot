@@ -129,7 +129,8 @@ class RankedPrediction:
 def assignment(row, horizon):
     evidence = row["asof"]
     return graph.build_assignment(evidence.snapshot, row["t"], horizon,
-                                  evidence.challenge.state if evidence.challenge else None)
+                                  evidence.challenge.state if evidence.challenge else None,
+                                  graph_version=getattr(evidence, "graph_version", "v1"))
 
 
 def discounted(prediction, inputs, arm):
@@ -144,7 +145,8 @@ def emitted(probability, row, horizon, arm):
     if arm == "M3":
         evidence = row["asof"]
         action = graph.decide(evidence.snapshot, row["t"], horizon, probability, lo=t2.LO, hi=t2.HI,
-                              challenge_evidence=evidence.challenge.state if evidence.challenge else None)["action"]
+                              challenge_evidence=evidence.challenge.state if evidence.challenge else None,
+                              graph_version=getattr(evidence, "graph_version", "v1"))["action"]
     else:
         action = t2._flat_action(probability)
     return t2.Prediction(probability, action)
@@ -158,7 +160,7 @@ def model_inputs(rows, age, arm, flags):
     return inputs
 
 
-def raw_predictions(train, validation, horizon, flags, observed_through, *, extra_features=()):
+def raw_predictions(train, validation, horizon, flags, observed_through, *, extra_features=(), arms=ARMS):
     """Fit the current matched model using only eligible TRAIN labels."""
     age = AgeHazardTable().fit(train).predict(validation)
     hazard = "K09" in flags
@@ -178,7 +180,7 @@ def raw_predictions(train, validation, horizon, flags, observed_through, *, extr
         features += ("second_interval",)
 
     probabilities = {}
-    for arm in ARMS:
+    for arm in arms:
         columns = features + (t2.VERDICT_FEATURES if arm == "M3" else ())
         tr = model_inputs(model_train, train_age, arm, flags)
         va = model_inputs(model_validation, val_age, arm, flags)
