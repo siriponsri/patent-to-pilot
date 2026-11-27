@@ -1,0 +1,676 @@
+{
+ "generated": "2026-11-27",
+ "source": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/<year>/purplebook-search-<month>-data-download.csv",
+ "missing_or_unparsed_months": [
+  "2020-01",
+  "2020-02",
+  "2020-03",
+  "2026-11"
+ ],
+ "files": [
+  {
+   "month": "2020-01",
+   "route": "fail",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-january-data-download.csv",
+   "sha256": null,
+   "rows": null,
+   "note": "HTTP 404 at FDA URL; Wayback has no snapshot"
+  },
+  {
+   "month": "2020-02",
+   "route": "not_csv",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-february-data-download.csv",
+   "sha256": null,
+   "rows": null,
+   "note": "HTTP 200 but legacy layout with no 'Purple Book' title line; not saved or parsed"
+  },
+  {
+   "month": "2020-03",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-march-data-download.csv",
+   "sha256": "748b868e3194e685b862883ec4afb41f3ffc9c6d82232543223c5a69bcb7e290",
+   "rows": 0,
+   "note": "downloaded; legacy layout (no N/R/U header), 0 rows parsed"
+  },
+  {
+   "month": "2020-04",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-april-data-download.csv",
+   "sha256": "2073e9f58cf1218ee7a894c96a00de85e54140aa7af197da5284494c9c2ad3ad",
+   "rows": 90,
+   "note": ""
+  },
+  {
+   "month": "2020-05",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-may-data-download.csv",
+   "sha256": "f573d54ebb66c6ed987d722845b2f066d2523970e4f222f3f8682b65bfcd2b73",
+   "rows": 1364,
+   "note": ""
+  },
+  {
+   "month": "2020-06",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-june-data-download.csv",
+   "sha256": "70e0e123e2d2b77900b96ad2ddc3b5ccc1d98923e8b378f2ee8ad9991c37d6fd",
+   "rows": 761,
+   "note": ""
+  },
+  {
+   "month": "2020-07",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-july-data-download.csv",
+   "sha256": "75037e725e7c713a5a88861f52f8903c0c51f8f023cc29d1148c46a97aea6f93",
+   "rows": 759,
+   "note": ""
+  },
+  {
+   "month": "2020-08",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-august-data-download.csv",
+   "sha256": "c14993928140adbabf9e5b9ff53a32307436e2c3c8fa394ad353cd4fcb37f506",
+   "rows": 2664,
+   "note": ""
+  },
+  {
+   "month": "2020-09",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-september-data-download.csv",
+   "sha256": "6c6b6c2b0208ab90795d7fb1f69298e6d409af89493cf0eed2e238c9e01822d2",
+   "rows": 1642,
+   "note": ""
+  },
+  {
+   "month": "2020-10",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-october-data-download.csv",
+   "sha256": "714cfa57472d836fee4102130c048f28696812ec4dd11654ca08c4f1162e3cca",
+   "rows": 1709,
+   "note": ""
+  },
+  {
+   "month": "2020-11",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-november-data-download.csv",
+   "sha256": "78b05e5f16a6422d8377d713bfa91bb7d124287f5bc8d73f1f4426ab744268d8",
+   "rows": 1617,
+   "note": ""
+  },
+  {
+   "month": "2020-12",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2020/purplebook-search-december-data-download.csv",
+   "sha256": "d6d24adf929673f0c6aaaa2e4e27929c17ffa3529da64484ae0cce20737d8c68",
+   "rows": 1616,
+   "note": ""
+  },
+  {
+   "month": "2021-01",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-january-data-download.csv",
+   "sha256": "06e88ba7daa8617353105e8d3385e20e40788ee68b208f2086b2738ca5660a74",
+   "rows": 1626,
+   "note": ""
+  },
+  {
+   "month": "2021-02",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-february-data-download.csv",
+   "sha256": "73b828950a6463ea2b9ca38c5ec6fbaf60102d146b0784adf657e98624207b0f",
+   "rows": 1622,
+   "note": ""
+  },
+  {
+   "month": "2021-03",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-march-data-download.csv",
+   "sha256": "dd65e7918ed2beac85b8654309e38385971ea23234d0d7853d2b3a81c09cdf4c",
+   "rows": 1658,
+   "note": ""
+  },
+  {
+   "month": "2021-04",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-april-data-download.csv",
+   "sha256": "f21143793617e36209e7066fafe746df1cb0c4533cc40f71ca33e41ee63a30a1",
+   "rows": 1685,
+   "note": ""
+  },
+  {
+   "month": "2021-05",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-may-data-download.csv",
+   "sha256": "154423c4ae517f9cde90e8179e51f6d14947575544747526f8dc59f95f71de64",
+   "rows": 2533,
+   "note": ""
+  },
+  {
+   "month": "2021-06",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-june-data-download.csv",
+   "sha256": "1b853747364bb7e1ad44878dfa381376bbbd04ac00c58a345893da0be381d460",
+   "rows": 1689,
+   "note": ""
+  },
+  {
+   "month": "2021-07",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-july-data-download.csv",
+   "sha256": "41ab434aea9dc143987cb3291412ad6099a9a6a101f99b1aafa98996ddb07db0",
+   "rows": 1673,
+   "note": ""
+  },
+  {
+   "month": "2021-08",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-august-data-download.csv",
+   "sha256": "02e3d17b11e6400c276d8a1d8f3192772d57c18e619a0d4eb9b7cfc45f3e6a99",
+   "rows": 1671,
+   "note": ""
+  },
+  {
+   "month": "2021-09",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-september-data-download.csv",
+   "sha256": "91013e0ffea489d07a623ab7f7a048c25d92245df1963af89303078782d7da41",
+   "rows": 1791,
+   "note": ""
+  },
+  {
+   "month": "2021-10",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-october-data-download.csv",
+   "sha256": "810bcee4a6fb12f145d012bf4ec3a8ac47fcf88f55e1b0f66657677a84d99249",
+   "rows": 1665,
+   "note": ""
+  },
+  {
+   "month": "2021-11",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-november-data-download.csv",
+   "sha256": "f1e9b615226298fd937ff83e583411968f0cf2908c6e0c31750a816bdadade2c",
+   "rows": 1663,
+   "note": ""
+  },
+  {
+   "month": "2021-12",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2021/purplebook-search-december-data-download.csv",
+   "sha256": "84e4633dc0141a88a5aec33b1a108b92a3be2049acb398926ae00809d3c55ac5",
+   "rows": 1676,
+   "note": ""
+  },
+  {
+   "month": "2022-01",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-january-data-download.csv",
+   "sha256": "c9206a4bf6d31836a4c00211ce94989bb4302330b8c66499c8ebb04d9bc2ca6a",
+   "rows": 1763,
+   "note": ""
+  },
+  {
+   "month": "2022-02",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-february-data-download.csv",
+   "sha256": "d594e37808cbde6fc90669d127ba5d5d41ce885a858008a29760e42b2adb5b57",
+   "rows": 1716,
+   "note": ""
+  },
+  {
+   "month": "2022-03",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-march-data-download.csv",
+   "sha256": "0ecd1dd5ddc8637faba2bc177dae8bdbd5398340fb532f12ed94e522e1f017e4",
+   "rows": 1741,
+   "note": ""
+  },
+  {
+   "month": "2022-04",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-april-data-download.csv",
+   "sha256": "633a84e841a86bf1ec27483d02e86db06e291a0bbf0d175ffa8af87911cc9fe6",
+   "rows": 1723,
+   "note": ""
+  },
+  {
+   "month": "2022-05",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-may-data-download.csv",
+   "sha256": "38c86f85cebc1997009ed4424aa462a8e7139f22a8b2b0511c29e3473301ee46",
+   "rows": 1791,
+   "note": ""
+  },
+  {
+   "month": "2022-06",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-june-data-download.csv",
+   "sha256": "17e0192c59f46eb8dccbafca31a8adcc7277e51b64a27598ee9ad7ffe521bc0e",
+   "rows": 1769,
+   "note": ""
+  },
+  {
+   "month": "2022-07",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-july-data-download.csv",
+   "sha256": "0b94486372fb2015a988774bf9dae47d011b71a2be4576f3612b7ae1aeb9ccdc",
+   "rows": 1757,
+   "note": ""
+  },
+  {
+   "month": "2022-08",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-august-data-download.csv",
+   "sha256": "d753f1c73b1abe8565c8b3d7d60961e0ea892d0bfaf919f8981244ecce8d18d3",
+   "rows": 1847,
+   "note": ""
+  },
+  {
+   "month": "2022-09",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-september-data-download.csv",
+   "sha256": "4d31b6f95baf1fe6c4202267c9bf5ca4761ed1f37253c6b58e30df7f50e79b92",
+   "rows": 1823,
+   "note": ""
+  },
+  {
+   "month": "2022-10",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-october-data-download.csv",
+   "sha256": "f5614b86e27a808a7bf53beceab1ec9e028ce14c5948e49f6e928a7e2c2a968e",
+   "rows": 1811,
+   "note": ""
+  },
+  {
+   "month": "2022-11",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-november-data-download.csv",
+   "sha256": "cb4d88814435ca79f090807a72ede9360c9eed726d8ddb24c600d823f40b7723",
+   "rows": 1808,
+   "note": ""
+  },
+  {
+   "month": "2022-12",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2022/purplebook-search-december-data-download.csv",
+   "sha256": "7a12a6d87de5a06dd0eb594614e7a865a70d9f297530b7668fe22ff86c1a18d1",
+   "rows": 1823,
+   "note": ""
+  },
+  {
+   "month": "2023-01",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-january-data-download.csv",
+   "sha256": "d7f9b5cc4203f146ac8285101b19fa0b2acada64f29796ad296b57d9981476a5",
+   "rows": 1840,
+   "note": ""
+  },
+  {
+   "month": "2023-02",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-february-data-download.csv",
+   "sha256": "496fbccf3e0ec9dbc2d535c71aef842db5fa777e874739e7a158007a10567fb4",
+   "rows": 1915,
+   "note": ""
+  },
+  {
+   "month": "2023-03",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-march-data-download.csv",
+   "sha256": "2c9eb4702e2eda7e563539db2a5546f203a45f9366d7c52cd0d666f9cc2fecbd",
+   "rows": 1949,
+   "note": ""
+  },
+  {
+   "month": "2023-04",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-april-data-download.csv",
+   "sha256": "bbc4276e4f329352374c44bf1544b69e477fd6e8a83974e16bda90bcdd66ccd8",
+   "rows": 1878,
+   "note": ""
+  },
+  {
+   "month": "2023-05",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-may-data-download.csv",
+   "sha256": "f27b2c7c2491719bede702c5ea32e833ae1614a1a94fe305d50db9bfc3616788",
+   "rows": 1926,
+   "note": ""
+  },
+  {
+   "month": "2023-06",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-june-data-download.csv",
+   "sha256": "2b8b25c425d1e5e5fc19cd9333a7cacfc858d7d3a67f88c485c007af51f862c5",
+   "rows": 1944,
+   "note": ""
+  },
+  {
+   "month": "2023-07",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-july-data-download.csv",
+   "sha256": "fd845387642e44cdac1c2a22d69c0b5ea1d18bec669f716008ad7742cc24b657",
+   "rows": 1953,
+   "note": ""
+  },
+  {
+   "month": "2023-08",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-august-data-download.csv",
+   "sha256": "eaebb47c8c8bcbcf1a15b2325d390ed543d771f5710ed8c4e8919e6434dfe328",
+   "rows": 1916,
+   "note": ""
+  },
+  {
+   "month": "2023-09",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-september-data-download.csv",
+   "sha256": "8a03204cc3ed02e895f4dfa1c7c0440c4b06516a3efa69ad84cf2d207e9537df",
+   "rows": 1912,
+   "note": ""
+  },
+  {
+   "month": "2023-10",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-october-data-download.csv",
+   "sha256": "a70aea4a7a1cfea36b87cf14e28cee5c93dbbd99a73e516a93c48c000cec747d",
+   "rows": 1952,
+   "note": ""
+  },
+  {
+   "month": "2023-11",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-november-data-download.csv",
+   "sha256": "70f8e7281690ff4f53eed2a0df5ebfda374b192f328852ea0d8b8837a594335b",
+   "rows": 1960,
+   "note": ""
+  },
+  {
+   "month": "2023-12",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2023/purplebook-search-december-data-download.csv",
+   "sha256": "a34ab9bdac3f406f18ab67ba99b9ca62d99f64169edbbd91ae363d242b524e48",
+   "rows": 1932,
+   "note": ""
+  },
+  {
+   "month": "2024-01",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-january-data-download.csv",
+   "sha256": "44697d37bddc72f0c9ff24ecce159507fbed7c21c17de0d4deca7427dc8bbff0",
+   "rows": 1949,
+   "note": ""
+  },
+  {
+   "month": "2024-02",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-february-data-download.csv",
+   "sha256": "d377196c13793ee597d67390dc58860eb6fc18f439ecc6d407d2b6b30e0c4729",
+   "rows": 1954,
+   "note": ""
+  },
+  {
+   "month": "2024-03",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-march-data-download.csv",
+   "sha256": "d0850c8a9c6b1a14c9263583e8c1c5f122c5608744925ae770b9f0b42b8e2168",
+   "rows": 1978,
+   "note": ""
+  },
+  {
+   "month": "2024-04",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-april-data-download.csv",
+   "sha256": "f65cd481e31939a7714b22f36349015a1738279b18019a98e541f3072441cc2f",
+   "rows": 1971,
+   "note": ""
+  },
+  {
+   "month": "2024-05",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-may-data-download.csv",
+   "sha256": "4d08f925bcdeee4c26158d3aa73d2e220f56bc70cc7af8e312e63266c2a13e26",
+   "rows": 1966,
+   "note": ""
+  },
+  {
+   "month": "2024-06",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-june-data-download.csv",
+   "sha256": "4bb7c84211a1df07b4eb6771e95e9db77f0d717e02f5ff19938e02b4de00a356",
+   "rows": 1979,
+   "note": ""
+  },
+  {
+   "month": "2024-07",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-july-data-download.csv",
+   "sha256": "658b94c9b73e6215b5ffdc34c9808b11c7a212b2af7ad16998ae6cd12d560859",
+   "rows": 2033,
+   "note": ""
+  },
+  {
+   "month": "2024-08",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-august-data-download.csv",
+   "sha256": "88a11052a7e8abb9b64d49e4e3d3597f12f405b4756dec38a0c8c566389cbd73",
+   "rows": 2072,
+   "note": ""
+  },
+  {
+   "month": "2024-09",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-september-data-download.csv",
+   "sha256": "08e54c37dcddd2f715f1779bdd7990615d379cec2042cdca312e5c33d5bdcc53",
+   "rows": 2028,
+   "note": ""
+  },
+  {
+   "month": "2024-10",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-october-data-download.csv",
+   "sha256": "bc006fa798954b58bde5b634cd2cc50b94227a89b6ad2bd1e25ee65481a1c0dd",
+   "rows": 2031,
+   "note": ""
+  },
+  {
+   "month": "2024-11",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-november-data-download.csv",
+   "sha256": "615edc79e59e481afac79b5d71c0cdb4a70bd8fc9f38430e5cef3a8a0e54d369",
+   "rows": 2052,
+   "note": ""
+  },
+  {
+   "month": "2024-12",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2024/purplebook-search-december-data-download.csv",
+   "sha256": "6f39849ec395d2d0382d194676268728a47bf9dd4f97bd31c9c8a36be8bc0db5",
+   "rows": 2072,
+   "note": ""
+  },
+  {
+   "month": "2025-01",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-january-data-download.csv",
+   "sha256": "64f23def8986bfbae5a1e80cdb161705f2729c6aee7e6a1bcfd19c58380bdd41",
+   "rows": 2082,
+   "note": ""
+  },
+  {
+   "month": "2025-02",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-february-data-download.csv",
+   "sha256": "d0ff84ce7cc0d937006dc2158e3322f98a6393faa50c5f9baf1021b089d5326c",
+   "rows": 2086,
+   "note": ""
+  },
+  {
+   "month": "2025-03",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-march-data-download.csv",
+   "sha256": "43d0e822f0add805713eede24b4ed35010d7107b7eff5b947b13ae2dbce9d7a4",
+   "rows": 2090,
+   "note": ""
+  },
+  {
+   "month": "2025-04",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-april-data-download.csv",
+   "sha256": "07580022e89d1c95695787460ce24359debd1dbde6d0c41e084d8a0b985224f8",
+   "rows": 2076,
+   "note": ""
+  },
+  {
+   "month": "2025-05",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-may-data-download.csv",
+   "sha256": "f9ecc0f5d909714c265927cd8fc9ceac10133abb4fe6162f95887d7cd9a665fc",
+   "rows": 2132,
+   "note": ""
+  },
+  {
+   "month": "2025-06",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-june-data-download.csv",
+   "sha256": "b70a24411abc7254dd7463770738551517eb9488635b9dda704f9858c536e251",
+   "rows": 2118,
+   "note": ""
+  },
+  {
+   "month": "2025-07",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-july-data-download.csv",
+   "sha256": "b985c2ecec1e9f41f5601ec3ffc432c5b59173a085389b2e832fad62ce5c2aea",
+   "rows": 2126,
+   "note": ""
+  },
+  {
+   "month": "2025-08",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-august-data-download.csv",
+   "sha256": "538342547ce60cd7b0ea6eb06b1906bc37afe8c1a7326618c6793adf8e5af744",
+   "rows": 2135,
+   "note": ""
+  },
+  {
+   "month": "2025-09",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-september-data-download.csv",
+   "sha256": "a1039a467d2ec9660d8289498c89e4ad853372ebc44574eba9375337dbac110f",
+   "rows": 2143,
+   "note": ""
+  },
+  {
+   "month": "2025-10",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-october-data-download.csv",
+   "sha256": "6ede3bfcd2305f1eb2e8d037066d43a9cdc3b915214a85d589f9d279cf447d88",
+   "rows": 2131,
+   "note": ""
+  },
+  {
+   "month": "2025-11",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-november-data-download.csv",
+   "sha256": "3154376bb990e9387ed1ffe7ec9a51c1d64e8b594240bc6d33cd5a1c4295c5ef",
+   "rows": 2160,
+   "note": ""
+  },
+  {
+   "month": "2025-12",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2025/purplebook-search-december-data-download.csv",
+   "sha256": "9f1e83004919f5efadf1c1b3ee6070577eeeb758610776122e1221060ba9f880",
+   "rows": 2182,
+   "note": ""
+  },
+  {
+   "month": "2026-01",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-january-data-download.csv",
+   "sha256": "ba2ab2ebcdbbba292b13aacac3bdbad96e2368e2954cb4c96e5e9b02932c619c",
+   "rows": 2166,
+   "note": ""
+  },
+  {
+   "month": "2026-02",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-february-data-download.csv",
+   "sha256": "61e1a9880970679b3f247e0d1aeb9c0c7bf31a3e2c6c3890516d6b3a70298a06",
+   "rows": 2184,
+   "note": ""
+  },
+  {
+   "month": "2026-03",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-march-data-download.csv",
+   "sha256": "de84e29f1c1a6d350a8059518416d3e08c4bee88eb0f0735341153cfa2db8106",
+   "rows": 2202,
+   "note": ""
+  },
+  {
+   "month": "2026-04",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-april-data-download.csv",
+   "sha256": "8591d663983d20314071c46b32e5fec18e5ac4cec1ca25ccad720c7b1e41045a",
+   "rows": 2254,
+   "note": ""
+  },
+  {
+   "month": "2026-05",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-may-data-download.csv",
+   "sha256": "7b48048778a40a1cb7dc8e985aa0993d9808d9b667376743271519cadcf06ac1",
+   "rows": 2269,
+   "note": ""
+  },
+  {
+   "month": "2026-06",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-june-data-download.csv",
+   "sha256": "9a097805af330f09b50d91f414de8306ea064df9a431d9e3754132960516c3db",
+   "rows": 2228,
+   "note": ""
+  },
+  {
+   "month": "2026-07",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-july-data-download.csv",
+   "sha256": "7d125140e31aad0110936d32929c9a331659801fdf76bd5c8d670e66588fbc44",
+   "rows": 2280,
+   "note": ""
+  },
+  {
+   "month": "2026-08",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-august-data-download.csv",
+   "sha256": "53b21871b4cd439abd6bb2fafa4447df0dd44e2da3cfcf51550298aef9afe2b5",
+   "rows": 2271,
+   "note": ""
+  },
+  {
+   "month": "2026-09",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-september-data-download.csv",
+   "sha256": "b9d04a8b1ea9c6605fdeff01127f0de32cb092534a40441b036e39c9665974e6",
+   "rows": 2271,
+   "note": ""
+  },
+  {
+   "month": "2026-10",
+   "route": "direct",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-october-data-download.csv",
+   "sha256": "f688373c4f1fd274fbfad55d2f7228d00dcea54672f2f17348c5c107ab9fadf1",
+   "rows": 2270,
+   "note": ""
+  },
+  {
+   "month": "2026-11",
+   "route": "fail",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-november-data-download.csv",
+   "sha256": null,
+   "rows": null,
+   "note": "HTTP 404: not yet published"
+  }
+ ]
+}
