@@ -139,3 +139,13 @@ The owner selected GPT 6.2 Sol with medium effort for the next Research Executor
 ## D34 · Start the unchanged-source pilot
 
 The owner selected Option A, authorized the Planner/Research Executor loop and offered an authenticated Chrome browser for Planner operation. Separate system time from human work. New Product development remains deferred. The [input checkpoint](../ra-pharma/OPTION-A-IMPORT.md) records the exact practice packet and open product access checks.
+
+## D35 · Plan B v2 Section 9 items 1–5 (27 November 2026)
+
+1. Approve B1 v2 with descriptive claim and document metadata, the existing deterministic prefix of up to 24 groups and zero new service charges.
+2. Approve machine counting of public redaction markers. Preserve missing text as NA, log full-text processing and prohibit reconstruction.
+3. Approve B1-ext existence and identity metadata only, one query per optional class per matter for other regulator assessments, prosecution and public litigation.
+4. Accept an engineering-only route initially if independent reviewers are unavailable. B2–B4 still require separate release.
+5. Disqualify any future Arm C that exceeds the fixed checklist on unsupported issued assertions at matter or element level (G1), or on false definite states on independently judged unknown matters (G2). Solo checks are provisional.
+
+The owner designated GPT 6.2 Sol medium for Research and Opus 5.5 medium for Product. Product implementation is held. [Review and release](../ra-pharma/ip-pharma/B1-PLANNER.md)

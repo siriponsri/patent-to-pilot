@@ -1,4 +1,6 @@
-# Project memory
+#
+**Current decision, 27 November.** D35 releases B1 v2 and B1-ext. Two FDA archives are pinned. Family mapping and exclusion verification precede any prefix. The prior proposal and handbacks below are historical. [Planner review and Research dispatch](ip-pharma/B1-PLANNER.md)
+ Project memory
 
 The [Plan B design](ip-pharma/PLAN-B-RESEARCH.md) proposes testing source availability and exact edition first, then separating one-open-answerable cases from cases requiring both sources in a blind evaluation. The owner requested planning only. No cohort was enrolled.
 

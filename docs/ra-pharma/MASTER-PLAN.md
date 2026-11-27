@@ -1,4 +1,6 @@
-# RA Pharma Workbench
+#
+**Current decision, 27 November.** D35 releases B1 v2 and B1-ext. Two FDA archives are pinned. Family mapping and exclusion verification precede any prefix. The prior proposal and handbacks below are historical. [Planner review and Research dispatch](ip-pharma/B1-PLANNER.md)
+ RA Pharma Workbench
 
 Owner decision of 26 November 2026. Patent-to-Pilot keeps its repository name. The product is a Thai-first regulatory affairs workbench for a solo operator. Three specialists work from one product dossier and produce a patent claim chart, a registration evidence checklist and an editable letter. The research question is whether learned reading actions and evidence handoffs improve results on unseen dossiers under a matched budget. The next phase prioritizes architecture research. The [research-first study](RESEARCH-FIRST.md) governs active work.
 
@@ -8,7 +10,7 @@ Owner decision of 26 November 2026. Patent-to-Pilot keeps its repository name. T
 |---|---|---|---|
 | Planning and common evidence interface | Planner on main | Prepared | This board, [handoff contract](EVIDENCE-CONTRACT.md), both lane briefs and branch pointers |
 | IS1 continuity and adaptive reading study | GPT 6.2 Sol, medium for the next session on `research/ra-pharma` | Owner parked all eight IS1 scores. Patent and Thai FDA conformance reviewed. Two-read dossier comparison tied 15/24. R4 natural transfer remains NOT_RUN. | [Research tasks](research/BRIEF.md), [Planner audit](RESEARCH-AUDIT-20261126.md) and [architecture review](READING-ARCHITECTURE-REVIEW.md) |
-| Three-specialist local dossier | Claude Sonnet 5.5 medium on `product/ra-pharma` | P1–P5 local demo published. Further development deferred until research review | [Product tasks](product/BRIEF.md) and [product handoff](product/HANDOFF.md) |
+| Three-specialist local dossier | Claude Opus 5.5 medium on `product/ra-pharma` | P1–P5 local demo published. Further development deferred until research review | [Product tasks](product/BRIEF.md) and [product handoff](product/HANDOFF.md) |
 | Integration and claim review | Planner on main after lane receipts | Pending | Verify branch heads, evidence compatibility, clean launch, rights and the suite on the integrated revision |
 
 ### From one question to one letter

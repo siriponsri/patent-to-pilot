@@ -1,4 +1,6 @@
-# Index: plan and evidence
+#
+**Current decision, 27 November.** D35 releases B1 v2 and B1-ext. Two FDA archives are pinned. Family mapping and exclusion verification precede any prefix. The prior proposal and handbacks below are historical. [Planner review and Research dispatch](docs/ra-pharma/ip-pharma/B1-PLANNER.md)
+ Index: plan and evidence
 
 The current [IP Pharma portfolio and research proposal](docs/ra-pharma/ip-pharma/REPORT.md) covers eight ideas, ten repositories, two public-data pilots and a [shared KM graph](docs/ra-pharma/ip-pharma/knowledge-graph.json). The earlier programs below retain their original evidence scope.
 

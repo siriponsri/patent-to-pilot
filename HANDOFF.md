@@ -1,4 +1,6 @@
-# Patent-to-Pilot handoff
+#
+**Current decision, 27 November.** D35 releases B1 v2 and B1-ext. Two FDA archives are pinned. Family mapping and exclusion verification precede any prefix. The prior proposal and handbacks below are historical. [Planner review and Research dispatch](docs/ra-pharma/ip-pharma/B1-PLANNER.md)
+ Patent-to-Pilot handoff
 
 ## Current research-first handoff
 
