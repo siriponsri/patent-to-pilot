@@ -1,5 +1,5 @@
 #
-**D38 approved.** [Planner impact review and Research brief](docs/ra-pharma/ip-pharma/D38-IMPACT-REVIEW.md). Two synthetic inventories only. Product value and operator performance remain unmeasured.
+**D38 closed after independent review.** [Planner impact review and handback](docs/ra-pharma/ip-pharma/D38-IMPACT-REVIEW.md). Two ties on two synthetic inventories. Keep the checklist and park the proposed Product feature. Operator benefit remains unmeasured.
 
 **D36 reviewed.** Prioritize a synthetic rituximab evidence-readiness desk check for owner decision. Generic formulation and Thai market sizing are parked. [Planner review](docs/ra-pharma/ip-pharma/D36-REVIEW.md)
 
