@@ -1,0 +1,1202 @@
+{
+  "challenge_leaf_coverage_by_cutoff": {
+    "2010-01-01": {
+      "FALSE": 473,
+      "TRUE": 74,
+      "UNKNOWN": 0
+    },
+    "2011-01-01": {
+      "FALSE": 448,
+      "TRUE": 86,
+      "UNKNOWN": 0
+    },
+    "2012-01-01": {
+      "FALSE": 444,
+      "TRUE": 89,
+      "UNKNOWN": 0
+    },
+    "2013-01-01": {
+      "FALSE": 0,
+      "TRUE": 1,
+      "UNKNOWN": 538
+    },
+    "2014-01-01": {
+      "FALSE": 0,
+      "TRUE": 1,
+      "UNKNOWN": 543
+    },
+    "2015-01-01": {
+      "FALSE": 0,
+      "TRUE": 2,
+      "UNKNOWN": 543
+    },
+    "2016-01-01": {
+      "FALSE": 0,
+      "TRUE": 2,
+      "UNKNOWN": 544
+    }
+  },
+  "edgar": {
+    "reason": "A bounded sponsor universe and deterministic product-specific disclosure extraction were outside this run.",
+    "status": "NOT_RUN"
+  },
+  "entities": 2445,
+  "horizons": {
+    "12": {
+      "arms": {
+        "B1": {
+          "answered": 2161,
+          "aurc80": 0.018574678709720478,
+          "aurc80_status": "evaluated",
+          "brier": 0.039073177847496275,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.02735392049691628,
+              "rows": 590
+            },
+            "CONTESTED": {
+              "brier": 0.0424751411563969,
+              "rows": 1543
+            },
+            "OPEN": {
+              "brier": 0.09854219396208662,
+              "rows": 28
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.0054705390852075935,
+          "ece_bin_counts": [
+            1939,
+            222,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M1": {
+          "answered": 2146,
+          "aurc80": 0.015023701904992854,
+          "aurc80_status": "evaluated",
+          "brier": 0.038056595773844175,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.02703189795010166,
+              "rows": 590
+            },
+            "CONTESTED": {
+              "brier": 0.04110769307869061,
+              "rows": 1543
+            },
+            "OPEN": {
+              "brier": 0.10222547343920248,
+              "rows": 28
+            }
+          },
+          "coverage": 0.993058769088385,
+          "ece": 0.0057307150226440775,
+          "ece_bin_counts": [
+            1990,
+            138,
+            29,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M2": {
+          "answered": 2161,
+          "aurc80": 0.03857316423707416,
+          "aurc80_status": "evaluated",
+          "brier": 0.039976575821171666,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.02800428000090139,
+              "rows": 590
+            },
+            "CONTESTED": {
+              "brier": 0.04339840077198509,
+              "rows": 1543
+            },
+            "OPEN": {
+              "brier": 0.10368295563739803,
+              "rows": 28
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.001570442176758725,
+          "ece_bin_counts": [
+            2133,
+            28,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M3": {
+          "answered": 2146,
+          "aurc80": 0.014144851337756092,
+          "aurc80_status": "evaluated",
+          "brier": 0.03810985149078537,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.026810238139034954,
+              "rows": 590
+            },
+            "CONTESTED": {
+              "brier": 0.041055008197840456,
+              "rows": 1543
+            },
+            "OPEN": {
+              "brier": 0.11390967572459766,
+              "rows": 28
+            }
+          },
+          "coverage": 0.993058769088385,
+          "ece": 0.005634207054930306,
+          "ece_bin_counts": [
+            1992,
+            135,
+            27,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "open_actions": {
+        "m3_predict_no_entry": 20,
+        "package_ensemble_predict_no_entry_on_same_open_rows": 28,
+        "rows": 28
+      },
+      "paired_aurc80": {
+        "M1_minus_B1": {
+          "ci95": [
+            -0.008726934384264144,
+            0.0013126609818861802
+          ],
+          "delta": -0.003550976804727624,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_B1": {
+          "ci95": [
+            -0.009398866288873542,
+            0.00025798430017306626
+          ],
+          "delta": -0.004429827371964385,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_M1": {
+          "ci95": [
+            -0.002219221595396158,
+            0.0005932793261782063
+          ],
+          "delta": -0.0008788505672367615,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        }
+      },
+      "status": "DEVELOPMENT_ONLY",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 547,
+      "tuning": {
+        "M1": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.03916749438335969
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.038820708600554914
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.038056595773844175
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        },
+        "M3": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.03892945401809779
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.03860715882611349
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.03810985149078537
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        }
+      },
+      "validation_cutoffs": [
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01"
+      ],
+      "validation_drug_clusters": 609,
+      "validation_event_clusters": 90,
+      "validation_rows": 2161,
+      "validation_verdicts": {
+        "BLOCKED": 590,
+        "CONTESTED": 1543,
+        "OPEN": 28
+      },
+      "verdicts_by_cutoff": {
+        "2010-01-01": {
+          "BLOCKED": 238,
+          "CONTESTED": 288,
+          "OPEN": 21
+        },
+        "2012-01-01": {
+          "BLOCKED": 209,
+          "CONTESTED": 299,
+          "OPEN": 25
+        },
+        "2013-01-01": {
+          "BLOCKED": 117,
+          "CONTESTED": 421,
+          "OPEN": 1
+        },
+        "2014-01-01": {
+          "BLOCKED": 130,
+          "CONTESTED": 412,
+          "OPEN": 2
+        },
+        "2015-01-01": {
+          "BLOCKED": 134,
+          "CONTESTED": 411,
+          "OPEN": 0
+        }
+      }
+    },
+    "24": {
+      "arms": {
+        "B1": {
+          "answered": 1083,
+          "aurc80": 0.02933012359928259,
+          "aurc80_status": "evaluated",
+          "brier": 0.07304651880688705,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.03525588461629264,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.0787713857676629,
+              "rows": 890
+            },
+            "OPEN": {
+              "brier": 0.218460951590811,
+              "rows": 12
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.007294184562045728,
+          "ece_bin_counts": [
+            760,
+            259,
+            64,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M1": {
+          "answered": 1026,
+          "aurc80": 0.02202976797490457,
+          "aurc80_status": "evaluated",
+          "brier": 0.07042736671627775,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.037583352841696865,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.07533726247410151,
+              "rows": 890
+            },
+            "OPEN": {
+              "brier": 0.20167397395261025,
+              "rows": 12
+            }
+          },
+          "coverage": 0.9473684210526315,
+          "ece": 0.014383704993860784,
+          "ece_bin_counts": [
+            742,
+            240,
+            74,
+            16,
+            9,
+            2,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M2": {
+          "answered": 1075,
+          "aurc80": 0.07383708082130383,
+          "aurc80_status": "evaluated",
+          "brier": 0.07718210644758704,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.03753025651848612,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.0828828599011546,
+              "rows": 890
+            },
+            "OPEN": {
+              "brier": 0.25245829507193146,
+              "rows": 12
+            }
+          },
+          "coverage": 0.9926131117266851,
+          "ece": 0.00669145754203388,
+          "ece_bin_counts": [
+            1071,
+            2,
+            2,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M3": {
+          "answered": 1028,
+          "aurc80": 0.023022572973192223,
+          "aurc80_status": "evaluated",
+          "brier": 0.06979580130788265,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.036278027202784946,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.07483814541995323,
+              "rows": 890
+            },
+            "OPEN": {
+              "brier": 0.20138170574787181,
+              "rows": 12
+            }
+          },
+          "coverage": 0.9492151431209603,
+          "ece": 0.011386282022725838,
+          "ece_bin_counts": [
+            734,
+            246,
+            74,
+            18,
+            9,
+            2,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "open_actions": {
+        "m3_predict_no_entry": 6,
+        "package_ensemble_predict_no_entry_on_same_open_rows": 11,
+        "rows": 12
+      },
+      "paired_aurc80": {
+        "M1_minus_B1": {
+          "ci95": [
+            -0.015479467367792338,
+            0.000249024312361186
+          ],
+          "delta": -0.0073003556243780195,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_B1": {
+          "ci95": [
+            -0.016008764008400525,
+            0.003968936247639991
+          ],
+          "delta": -0.006307550626090366,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_M1": {
+          "ci95": [
+            -0.002126956641013346,
+            0.006166480733140415
+          ],
+          "delta": 0.0009928049982876538,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        }
+      },
+      "status": "DEVELOPMENT_ONLY",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 547,
+      "tuning": {
+        "M1": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.07436416399128573
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.07339559653725054
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.07042736671627775
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        },
+        "M3": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.07286096618418901
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.07184807253637555
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.06979580130788265
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        }
+      },
+      "validation_cutoffs": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
+      "validation_drug_clusters": 561,
+      "validation_event_clusters": 67,
+      "validation_rows": 1083,
+      "validation_verdicts": {
+        "BLOCKED": 181,
+        "CONTESTED": 890,
+        "OPEN": 12
+      },
+      "verdicts_by_cutoff": {
+        "2010-01-01": {
+          "BLOCKED": 209,
+          "CONTESTED": 303,
+          "OPEN": 35
+        },
+        "2013-01-01": {
+          "BLOCKED": 88,
+          "CONTESTED": 447,
+          "OPEN": 4
+        },
+        "2014-01-01": {
+          "BLOCKED": 93,
+          "CONTESTED": 443,
+          "OPEN": 8
+        }
+      }
+    }
+  },
+  "input_sha256": {
+    "court_manifest": {
+      "file": "E7_sources.json",
+      "sha256": "c2e7ad988d860fb684cffffb4607ba1d1aca575f8209e4fc18d8ee47d3709c6f"
+    },
+    "gsrs": {
+      "file": "dump-public-2026-08-06.gsrs",
+      "sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad"
+    },
+    "ob_manifest": {
+      "file": "OB_EDITIONS.json",
+      "sha256": "526ed04cc517f1221bb2ce7b3f03e3bd13e86a7cc6a1db5f936e26a1aaecaf1d"
+    },
+    "piv_manifest": {
+      "file": "PIV_EDITIONS.json",
+      "sha256": "28b39cd1eedd9094425c549cf79ec398226e5029c0a9b90fa1001e31a2933499"
+    },
+    "s0_files": {
+      "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+      "ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+      "ob_anda_2020plus.jsonl": "9f8752a5afb834feb59e635dd00be17e2f089ab36447b191de06eaccf3a51b54",
+      "ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+      "ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+      "ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f"
+    },
+    "s0_manifest": {
+      "file": "S0_INPUT_MANIFEST.json",
+      "sha256": "f6d827361582f3aa5ad79621f784fc1b3260e5ff91c068194323c88d5ed871ff"
+    }
+  },
+  "key_mode": "moiety",
+  "orange_book_coverage": {
+    "2010-01-01": {
+      "age_days": 77,
+      "availability_proof": {
+        "date": "2009-11-04",
+        "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20091104091455"
+      },
+      "chosen_edition": "2009-10-16",
+      "freshness_floor": "2009-07-01",
+      "latest_proven_age_days": 77,
+      "latest_proven_availability": {
+        "date": "2009-11-04",
+        "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20091104091455"
+      },
+      "latest_proven_edition": "2009-10-16",
+      "source": {
+        "file": "ob_20091104091455.zip",
+        "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2011-01-01": {
+      "age_days": null,
+      "availability_proof": null,
+      "chosen_edition": null,
+      "freshness_floor": "2010-07-01",
+      "latest_proven_age_days": 375,
+      "latest_proven_availability": {
+        "date": "2010-01-13",
+        "edition_sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20100113002223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20100113002223"
+      },
+      "latest_proven_edition": "2009-12-22",
+      "source": null,
+      "status": "STALE",
+      "used_in_split": false
+    },
+    "2012-01-01": {
+      "age_days": 18,
+      "availability_proof": {
+        "date": "2011-12-29",
+        "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20111229223919"
+      },
+      "chosen_edition": "2011-12-14",
+      "freshness_floor": "2011-07-01",
+      "latest_proven_age_days": 18,
+      "latest_proven_availability": {
+        "date": "2011-12-29",
+        "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20111229223919"
+      },
+      "latest_proven_edition": "2011-12-14",
+      "source": {
+        "file": "ob_20111229223919.zip",
+        "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2013-01-01": {
+      "age_days": 106,
+      "availability_proof": {
+        "date": "2012-09-21",
+        "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20120921215526"
+      },
+      "chosen_edition": "2012-09-17",
+      "freshness_floor": "2012-07-01",
+      "latest_proven_age_days": 106,
+      "latest_proven_availability": {
+        "date": "2012-09-21",
+        "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20120921215526"
+      },
+      "latest_proven_edition": "2012-09-17",
+      "source": {
+        "file": "ob_20120921215526.zip",
+        "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2014-01-01": {
+      "age_days": 124,
+      "availability_proof": {
+        "date": "2013-09-06",
+        "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20130906105914"
+      },
+      "chosen_edition": "2013-08-30",
+      "freshness_floor": "2013-07-01",
+      "latest_proven_age_days": 124,
+      "latest_proven_availability": {
+        "date": "2013-09-06",
+        "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20130906105914"
+      },
+      "latest_proven_edition": "2013-08-30",
+      "source": {
+        "file": "ob_20130906105914.zip",
+        "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2015-01-01": {
+      "age_days": 113,
+      "availability_proof": {
+        "date": "2014-09-15",
+        "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20140915104404"
+      },
+      "chosen_edition": "2014-09-10",
+      "freshness_floor": "2014-07-01",
+      "latest_proven_age_days": 113,
+      "latest_proven_availability": {
+        "date": "2014-09-15",
+        "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20140915104404"
+      },
+      "latest_proven_edition": "2014-09-10",
+      "source": {
+        "file": "ob_20140915104404.zip",
+        "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2016-01-01": {
+      "age_days": 105,
+      "availability_proof": {
+        "date": "2015-10-06",
+        "edition_sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20151006063349id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20151006063349"
+      },
+      "chosen_edition": "2015-09-18",
+      "freshness_floor": "2015-07-01",
+      "latest_proven_age_days": 105,
+      "latest_proven_availability": {
+        "date": "2015-10-06",
+        "edition_sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20151006063349id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20151006063349"
+      },
+      "latest_proven_edition": "2015-09-18",
+      "source": {
+        "file": "ob_20151006063349.zip",
+        "sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": false
+    }
+  },
+  "protocol": {
+    "base": "FIX2c/T2b",
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 20261127,
+    "coverage_target": 0.8,
+    "drug_key_calibration_folds": 5,
+    "hi": 0.75,
+    "l2_grid": [
+      1.0,
+      10.0,
+      100.0
+    ],
+    "lo": 0.25,
+    "shared_challenge_features": [
+      "challenge_present",
+      "challenge_missing"
+    ]
+  },
+  "sealed_test_start": "2017-01-01",
+  "source_linkage_by_cutoff": {
+    "2010-01-01": {
+      "FDA_PIV": {
+        "dated_witness_rows": 348,
+        "edition": {
+          "captured": "20090827050640",
+          "file": "a3e21f188d7bb0573ddece7f5572cf88a13845cbfc15eca4fc1311591cc5330f.pdf",
+          "sha256": "a3e21f188d7bb0573ddece7f5572cf88a13845cbfc15eca4fc1311591cc5330f",
+          "url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+          "version": "2009-08-18",
+          "wayback_url": "https://web.archive.org/web/20090827050640id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf"
+        },
+        "match_rate": 0.9574468085106383,
+        "matched_rows": 585,
+        "rows": 611,
+        "status": "FRESH",
+        "unmatched_examples": [
+          {
+            "form": "Ophthalmic Solution",
+            "ingredient": "Betaxolol",
+            "locator": "PDF table row object 10718"
+          },
+          {
+            "form": "Chewable Tablets",
+            "ingredient": "Calcium Carbonate/ Famotadine/ Magnesium Hydroxide",
+            "locator": "PDF table row object 10844"
+          },
+          {
+            "form": "Tablets",
+            "ingredient": "Carisoprodol/ Aspirin/ Codeine",
+            "locator": "PDF table row object 10953"
+          },
+          {
+            "form": "Extended-release Tablets",
+            "ingredient": "Cetirizine Hydrochloride and Pseudoephedrine",
+            "locator": "PDF table row object 11008"
+          },
+          {
+            "form": "Tablets",
+            "ingredient": "Conjugated Estrogen (Synthetic A)",
+            "locator": "PDF table row object 11135"
+          }
+        ]
+      },
+      "RAI_COURT": {
+        "admitted_case_key_pairs": 0,
+        "admitted_rows": 0,
+        "corroborated_rows": 0,
+        "match_rate": null,
+        "matched_rows": 0,
+        "rows": 0,
+        "unmatched_examples": []
+      }
+    },
+    "2011-01-01": {
+      "FDA_PIV": {
+        "dated_witness_rows": 449,
+        "edition": {
+          "captured": "20101214040734",
+          "file": "324005e2507c9da03de5f72bcb89ce335984a0b88b18ac59ac093d81fb788969.pdf",
+          "sha256": "324005e2507c9da03de5f72bcb89ce335984a0b88b18ac59ac093d81fb788969",
+          "url": "http://www.fda.gov:80/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf",
+          "version": "2010-12-10",
+          "wayback_url": "https://web.archive.org/web/20101214040734id_/http://www.fda.gov:80/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM154350.pdf"
+        },
+        "match_rate": 0.9475862068965517,
+        "matched_rows": 687,
+        "rows": 725,
+        "status": "FRESH",
+        "unmatched_examples": [
+          {
+            "form": "Ophthalmic Solution",
+            "ingredient": "Travoprost (Preserved)",
+            "locator": "PDF table row object 739"
+          },
+          {
+            "form": "Tablets",
+            "ingredient": "Terfenadine",
+            "locator": "PDF table row object 1065"
+          },
+          {
+            "form": "Tablets",
+            "ingredient": "Sodium Phosphate Monobasic Monohydrate and Sodium PhosphateDibasic Anhydrous, USP",
+            "locator": "PDF table row object 1368"
+          },
+          {
+            "form": "Oral Solution",
+            "ingredient": "Pregablin",
+            "locator": "PDF table row object 2150"
+          },
+          {
+            "form": "Extended-release Capsules",
+            "ingredient": "Propafenone",
+            "locator": "PDF table row object 2151"
+          }
+        ]
+      },
+      "RAI_COURT": {
+        "admitted_case_key_pairs": 0,
+        "admitted_rows": 0,
+        "corroborated_rows": 0,
+        "match_rate": 0.0,
+        "matched_rows": 0,
+        "rows": 1,
+        "unmatched_examples": [
+          {
+            "brands": "",
+            "court": "D.N.J.",
+            "docket": "2:11-cv-00001",
+            "ingredients": "",
+            "locator": "TSV line 8491"
+          }
+        ]
+      }
+    },
+    "2012-01-01": {
+      "FDA_PIV": {
+        "dated_witness_rows": 526,
+        "edition": {
+          "captured": "20111222183218",
+          "file": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b.pdf",
+          "sha256": "1bc16f687bd4381864bf1e897878d46279e95846efd2594bb428212a8036e55b",
+          "url": "http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf",
+          "version": "2011-12-19",
+          "wayback_url": "https://web.archive.org/web/20111222183218id_/http://www.fda.gov/downloads/Drugs/DevelopmentApprovalProcess/HowDrugsareDevelopedandApproved/ApprovalApplications/AbbreviatedNewDrugApplicationANDAGenerics/UCM261594.pdf"
+        },
+        "match_rate": 0.9454770755885997,
+        "matched_rows": 763,
+        "rows": 807,
+        "status": "FRESH",
+        "unmatched_examples": [
+          {
+            "form": "Tablets",
+            "ingredient": "Terfenadine",
+            "locator": "PDF table row object 889"
+          },
+          {
+            "form": "Ophthalmic Solution",
+            "ingredient": "Travoprost (Preserved)",
+            "locator": "PDF table row object 883"
+          },
+          {
+            "form": "Tablets",
+            "ingredient": "Sodium Phosphate Monobasic Monohydrate",
+            "locator": "PDF table row object 1217"
+          },
+          {
+            "form": "Oral Solution",
+            "ingredient": "Sodium Sulfate, Potassium Sulfate and Magnesium",
+            "locator": "PDF table row object 1218"
+          },
+          {
+            "form": "Oral Solution",
+            "ingredient": "Pregablin",
+            "locator": "PDF table row object 2304"
+          }
+        ]
+      },
+      "RAI_COURT": {
+        "admitted_case_key_pairs": 2,
+        "admitted_rows": 3,
+        "corroborated_rows": 3,
+        "match_rate": 0.07150863035193902,
+        "matched_rows": 638,
+        "rows": 8922,
+        "unmatched_examples": [
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 2"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 3"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 4"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 5"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 6"
+          }
+        ]
+      }
+    },
+    "2013-01-01": {
+      "FDA_PIV": {
+        "status": "NO_FRESH_EDITION"
+      },
+      "RAI_COURT": {
+        "admitted_case_key_pairs": 4,
+        "admitted_rows": 9,
+        "corroborated_rows": 9,
+        "match_rate": 0.049912394986297674,
+        "matched_rows": 1111,
+        "rows": 22259,
+        "unmatched_examples": [
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 2"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 3"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 4"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 5"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 6"
+          }
+        ]
+      }
+    },
+    "2014-01-01": {
+      "FDA_PIV": {
+        "status": "NO_FRESH_EDITION"
+      },
+      "RAI_COURT": {
+        "admitted_case_key_pairs": 4,
+        "admitted_rows": 9,
+        "corroborated_rows": 9,
+        "match_rate": 0.04927047038327526,
+        "matched_rows": 1810,
+        "rows": 36736,
+        "unmatched_examples": [
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 2"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 3"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 4"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 5"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 6"
+          }
+        ]
+      }
+    },
+    "2015-01-01": {
+      "FDA_PIV": {
+        "status": "NO_FRESH_EDITION"
+      },
+      "RAI_COURT": {
+        "admitted_case_key_pairs": 6,
+        "admitted_rows": 32,
+        "corroborated_rows": 32,
+        "match_rate": 0.05932791637744478,
+        "matched_rows": 2906,
+        "rows": 48982,
+        "unmatched_examples": [
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 2"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 3"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 4"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 5"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 6"
+          }
+        ]
+      }
+    },
+    "2016-01-01": {
+      "FDA_PIV": {
+        "status": "NO_FRESH_EDITION"
+      },
+      "RAI_COURT": {
+        "admitted_case_key_pairs": 7,
+        "admitted_rows": 40,
+        "corroborated_rows": 40,
+        "match_rate": 0.06951024275492534,
+        "matched_rows": 4255,
+        "rows": 61214,
+        "unmatched_examples": [
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 2"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 3"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 4"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 5"
+          },
+          {
+            "brands": "",
+            "court": "S.D.Ohio",
+            "docket": "1:11-cv-00871",
+            "ingredients": "",
+            "locator": "TSV line 6"
+          }
+        ]
+      }
+    }
+  },
+  "status": "DEVELOPMENT_ONLY",
+  "witnesses_file": "E7_witnesses.json"
+}
