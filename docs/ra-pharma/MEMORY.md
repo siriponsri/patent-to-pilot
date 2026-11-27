@@ -1,5 +1,7 @@
 #
 
+A [five-file SciSpace consultation](scispace-consultation/01-PROMPT.md) packages the merged evidence and asks for a next-study decision. Prepared for owner submission; no external dispatch or experiment.
+
 The [research handover](research-handover/README.md) indexes the merged evidence at 830457e6. The owner archive includes 93 original Markdown files, three guides and a Thai owner summary.
 
 ## Research history integrated on main
