@@ -39,3 +39,8 @@
     - The Rai et al. CC0 court table (filings 2011–2020) and EDGAR sponsor filings can fill the gaps.
     - The FDA First Generic list is RED, because it reveals the outcome.
   - Next: E7 builds the combined challenge leaf, and T4 runs the power simulation in parallel.
+- **27 Nov, T4 merged but not accepted.**
+  - Results: simulated power about 100% at Δ = −0.010 even with 30 event clusters; MDE 0.0039; H1 type-I 2.75% (MC CI 1.54–4.86%).
+  - Concern: power looks optimistic. The development bootstrap CI half-width for M3−B1 at 24 months is about 0.01 across 66 validation event clusters, and the generator was never checked against it. T4b must reproduce the empirical development SE first.
+  - Incident 1, disclosed: the first preflight decoded mixed-period public ANDA records, including test-period approvals, to build an application index. Only application numbers and types were used. No outcome output or test metric was produced. The final runner filters before decoding, and the seal was unchanged.
+  - Incident 2: the executor stopped a local Python worker (PID 27976) before confirming it owned the process. Lesson for executor cards: never stop a process you did not start and verify.
