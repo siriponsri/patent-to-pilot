@@ -75,7 +75,9 @@ If the gate fails, C′ is reported as feasibility evidence and confirmation res
 
 **Owner approval (27 November 2026).** The owner approved this design and the full, open disclosure of the earlier exposure in the preregistration and the manuscript.
 
-## Proposed confirmatory criteria v2 (main planner, 27 November 2026, awaiting owner approval)
+## Confirmatory criteria v2 (main planner proposal, owner-approved 27 November 2026)
+
+The v2 criteria supersede the single CP1 primary endpoint and the Holm family. T4 and T5 must implement them.
 
 The owner authorized the main planner to propose better criteria grounded in verified references. This proposal uses development (validation) evidence only. The test set remains sealed.
 
@@ -163,7 +165,7 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | FIX2b | Close FIX2 false splits (name-to-UNII lookup, union-find), fresh audit with seed 20261130 | GPT-6.2 Sol high | FIX2 | dispatched |
 | 2 | E6 | As-of FDA Paragraph IV certification list for the challenge leaf | GPT-6.2 Sol high | T2b | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
-| 2 | — | T5 preregistration draft, then co-reviewer | Sonnet, then GPT | T4 | waiting |
+| 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
 | 3 | — | G3b prediction freeze, T3 ablation, T9 re-score, T12 table builder, L1 arm run | Sonnet | G2 | waiting |
 | 3 | — | Thai-context demo | Claude | E5, G3b | waiting |
