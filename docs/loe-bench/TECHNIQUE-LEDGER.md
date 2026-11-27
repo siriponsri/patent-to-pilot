@@ -34,3 +34,7 @@ IDEA · QUEUED · TRIED-DEV (result on validation) · ADOPTED · REJECTED (reaso
 | K15 | Selective and verdict-specific calibration | CP3; arXiv 2208.12084 | M3 policy (M1 same budget) | None | IDEA | Only 10 OPEN validation rows |
 | K16 | Learning to defer | CP3; arXiv 2006.01862 | both | Needs analyst decisions | IDEA, needs owner decision for reviewer data | — |
 | K17 | Cost-aware evidence acquisition (VoI per review minute) | CP3 | M3 workflow | Needs review logs | IDEA (outside H1/H2) | — |
+| K18 | AUGRC as a secondary selective metric next to AURC80, with an MSP/SRmax confidence baseline | SciSpace report (owner, 27 Nov), section 2 | reporting only | None | IDEA (secondary metric; decide in T5) | — |
+| K19 | As-of FDA product-specific guidance (PSG) availability and date as a feature | SciSpace Table 1; Hopefl et al. 2025, doi:10.1111/cts.70365 (used PSG availability lagged 1 year) | M1, M3 | Survivorship of revised or withdrawn PSGs (verify with Wayback) | QUEUED (E9) | — |
+| K20 | NBER Orange Book Dataset 1985–2016 (annual editions) to extend as-of features before 2009 and fill 2011 | SciSpace D3; Durvasula, Hemphill, Sampat et al., Res Policy 2023, doi:10.1016/j.respol.2023.104791 | all (larger training window) | Edition-year availability rule needed | QUEUED (E8) | — |
+| K21 | Open demand proxy from Medicaid SDUD, vintage by posting date | SciSpace idea 3 | M1, M3 | Suppression and later revisions | IDEA, needs owner decision (overlaps K11) | — |

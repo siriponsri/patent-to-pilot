@@ -121,6 +121,7 @@ The Westfall & Krishen (2001) gatekeeping reference could not be verified, so it
 | Abstention and AURC as the main metric | [Geifman & El-Yaniv 2017, selective classification](https://arxiv.org/abs/1705.08500); [Geifman et al. 2019, AURC](https://arxiv.org/abs/1805.08206) | B1 age-hazard table. The exposed smoke AURC is 0.0449. | External reference. Head-to-head comparison not yet run. |
 | Prospective freeze as the strongest evidence | [Karger et al. 2024, ForecastBench](https://arxiv.org/abs/2409.19839) | Track A against B1 and B3 | Untested hypothesis |
 | Leakage control in time splits | [Kapoor & Narayanan 2023, leakage in ML-based science](https://arxiv.org/abs/2207.07048) | Track C against C′ | Design rule |
+| Closest recent competitor study (forward time-split) | [Hopefl et al. 2025, Clin Transl Sci, doi:10.1111/cts.70365](https://doi.org/10.1111/cts.70365): random survival forest vs Cox/AFT for first ANDA **submission** in orphan drugs; C-index 0.675–0.754; uses closed IQVIA sales and FDA-internal complexity | LOE-Bench differs: open-only as-of inputs, first final **approval**, abstention and AURC | External reference (SciSpace full-text read, owner report 27 Nov) |
 | First generic entry prediction | [CPT 2019 first-ANDA prediction](https://doi.org/10.1002/cpt.1479); [Value in Health 2018](https://doi.org/10.1016/j.jval.2018.04.1827) | DrugPatentWatch generic-entry prediction (vendor) | External reference |
 | Biosimilar entry | [CPT 2020 biosimilar vs generic onset](https://doi.org/10.1002/cpt.1981) | Track B descriptive | External reference |
 
@@ -168,6 +169,8 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | FIX2c | Merge the moiety key with T2b, link OB aliases, rerun development | GPT-6.2 Sol high | FIX2b | merged: NDA links 95.9–99.6% per edition. Development at 24 months: M3−B1 −0.0072 (CI −0.0162 to +0.0010); M3−M1 −0.0001 |
 | 2 | E7 | Combined as-of challenge leaf (FDA PIV list + Rai court filings + EDGAR) on moiety keys | GPT-6.2 Sol high | FIX2c, E6, E6-alt | merged: closed-world at 3 cutoffs; Rai name-linked pairs 7; EDGAR NOT_RUN; development CIs include 0 |
 | 2 | E7b | Relink Rai cases to drugs through Orange Book patent numbers (as-of editions) | GPT-6.2 Sol high | E7 | merged: development M1−B1 at 24 months −0.0096 (CI below 0); M3−M1 about 0 |
+| 2 | E8 | Ingest the NBER Orange Book Dataset 1985–2016 (K20) to extend the training window | GPT-6.2 Sol high | — | dispatched |
+| 2 | E9 | As-of FDA product-specific guidance dates (K19) | GPT-6.2 Sol high | — | dispatched |
 | 2 | DEVX | Fixed-order development trials of K07, K09, K10, K08 and K06 under one budget | GPT-6.2 Sol high | E7b | dispatched |
 | 2 | T4 | Power simulation for criteria v2 (H1 at Δ = −0.010) from the development structure | GPT-6.2 Sol xhigh | FIX2c | merged but NOT ACCEPTED: power about 100% even with 30 clusters, MDE 0.0039, which looks optimistic beside the development CI half-width of about 0.01; type-I 2.75% (MC CI 1.54–4.86%) |
 | 2 | T4b | Calibrate generator variance against the empirical development bootstrap; firm up type-I | GPT-6.2 Sol xhigh | T4 | dispatched |
