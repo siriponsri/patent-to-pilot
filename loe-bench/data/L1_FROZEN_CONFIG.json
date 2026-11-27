@@ -1,0 +1,162 @@
+{
+  "arm": "L1",
+  "decoder": {
+    "batch_size": 8,
+    "do_sample": false,
+    "dtype": "float16",
+    "max_new_tokens": 160,
+    "memory_fraction": 0.9,
+    "num_beams": 1,
+    "pad_token": "tokenizer EOS",
+    "padding_side": "left",
+    "seed": 20261127
+  },
+  "development_input": {
+    "cutoffs": {
+      "12": [
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01"
+      ],
+      "24": [
+        "2013-01-01",
+        "2014-01-01"
+      ]
+    },
+    "fields": [
+      "entity",
+      "horizon_months",
+      "t0"
+    ],
+    "frozen_pipeline_lf_sha256": "d40119189b9e3b3b319f16449ac672766d46de2272dd9579eadaa8d23eb27c39",
+    "name": "pinned GSRS display name then preferred then lexical; native fallback names",
+    "order": "horizon, cutoff, frozen active-moiety key",
+    "rows": 3244,
+    "sha256": "b4fcbb06eac119cb1433c9b7855e0f38160313d1c74da937d1b41b2cf9a57837"
+  },
+  "evaluation": {
+    "ap": "pooled grouped native score AP",
+    "bootstrap": {
+      "draws": 2000,
+      "interval": "two-sided 95% percentile",
+      "seed_per_horizon": 20261127,
+      "unit": "whole drug with common draws for all arms"
+    },
+    "comparators": [
+      "B1",
+      "M3"
+    ],
+    "queue": "per-cutoff floor(N/5), expected boundary ties",
+    "require_full_roster": true,
+    "risk": "p_entry including schema-valid abstentions; ignore action for ranking"
+  },
+  "harness_lf_sha256": {
+    "loe_bench/llm_arm.py": "a0f3681e0ceba5d6128900f7fc2cf4243d5522821b7118b49bcddd0216d4dca6",
+    "scripts/l1dev_protocol.py": "6c0c91c9792838792027d8f303fe80c4cca7a65f1703158d1931d06e74eb4ac0",
+    "scripts/runpod_l1dev.py": "90a72ee607bef5987f7bed8a1fd6e8d7571fee86c3e02f5150829eb9a31fec2b"
+  },
+  "image": {
+    "license_evidence": "Torch is included in the image; dependency wheel rights are recorded below.",
+    "publisher_amd64_digest": "sha256:4d1721e62b56d345c83b4fd6090664be6daf9312caab5b2e76f23d8231941851",
+    "publisher_index_digest": "sha256:0a360022e8de4375af99430f84e8b38951acc397252163a37ceac7204d01be35",
+    "tag": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404"
+  },
+  "model": {
+    "files": [
+      {
+        "bytes": 11343,
+        "name": "LICENSE",
+        "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+      },
+      {
+        "bytes": 6240,
+        "name": "README.md",
+        "sha256": "f366f33bbf6bcadbb7d87f0a21a7b65584a56b8d58b0743c77c88bee625b93a6"
+      },
+      {
+        "bytes": 663,
+        "name": "config.json",
+        "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c"
+      },
+      {
+        "bytes": 243,
+        "name": "generation_config.json",
+        "sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f"
+      },
+      {
+        "bytes": 1671839,
+        "name": "merges.txt",
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "bytes": 3945441440,
+        "name": "model-00001-of-00004.safetensors",
+        "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+      },
+      {
+        "bytes": 3864726352,
+        "name": "model-00002-of-00004.safetensors",
+        "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+      },
+      {
+        "bytes": 3864726424,
+        "name": "model-00003-of-00004.safetensors",
+        "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+      },
+      {
+        "bytes": 3556377672,
+        "name": "model-00004-of-00004.safetensors",
+        "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+      },
+      {
+        "bytes": 27752,
+        "name": "model.safetensors.index.json",
+        "sha256": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028"
+      },
+      {
+        "bytes": 7031645,
+        "name": "tokenizer.json",
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "bytes": 7305,
+        "name": "tokenizer_config.json",
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+      },
+      {
+        "bytes": 2776833,
+        "name": "vocab.json",
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "id": "Qwen/Qwen2.5-7B-Instruct",
+    "license": "Apache-2.0",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "parser": {
+    "entrypoint": "loe_bench.llm_arm.parse_response",
+    "invalid": "abstain; tie below all valid native scores for queue and AP",
+    "schema": [
+      "p_entry",
+      "action",
+      "missing_evidence"
+    ]
+  },
+  "prompt": {
+    "chat_template": "pinned tokenizer; add_generation_prompt=true; enable_thinking=false",
+    "source_lf_sha256": "a0f3681e0ceba5d6128900f7fc2cf4243d5522821b7118b49bcddd0216d4dca6",
+    "system_utf8_sha256": "d38691696321eede3e21bb588574976cdfef853ce517c8bb33eb076f948d9592",
+    "template_utf8_sha256": "fd81ff2991b4d03389a3140bede1c8e53932f356659309b921308b4b3c0dc852"
+  },
+  "quality_gate": {
+    "minimum_schema_valid": 180,
+    "rows": 200
+  },
+  "role": "secondary exploratory",
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.55.2"
+  },
+  "status": "FROZEN_FOR_DEVELOPMENT_RUN"
+}
