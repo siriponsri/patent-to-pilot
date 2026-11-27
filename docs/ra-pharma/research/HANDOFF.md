@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## B1 preflight · 27 November 2026
+
+**BLOCKED_FRAME** under D35 and DT-06. Both retained FDA archives match the frozen dispatch hashes and pass CRC. The preflight could not pin a dated local US grant-to-family crosswalk and coverage-attested exposed-family exclusions. Selection, lookups, admission and B1-ext are NOT_RUN, with no cohort denominator. No new charges. See the [B1 receipt](ip-pharma/b1/B1-RECEIPT.md) for source rights, checks and unresolved coverage.
+
+Resume at Planner review of the missing crosswalk and exclusion boundary. Require a complete published prospective lock and selector review before any lookup. B2–B4 remain held. Publication is the commit containing this handoff on `research/ra-pharma`, to be verified against the live origin ref.
+
 ## IP Pharma exact-key access recovery · 26 November 2026
 
 The [separate recovery protocol](ip-pharma/ACCESS-RECOVERY-PROTOCOL.md) was published before acquisition at `131db60a6b63ad82d5034831df14c50be4d7b64f`. [Recovery receipt and private manifest hashes](ip-pharma/ACCESS-RECOVERY-RECEIPT.md) recorded three exact matches and one original FDA quality-review lead. GOMEKLI's February 2025 package does not establish coverage of the July 2026 product 002 row. The other two exact applications surfaced label and letter only in the bounded pass. Recovery closed at zero qualified, preserving the original Phase 2 stop and its 400 response.

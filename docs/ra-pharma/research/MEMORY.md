@@ -1,5 +1,9 @@
 # Research memory
 
+## B1 frame preflight · 27 November 2026
+
+FDA's original submissions and exact product listings passed archive verification. They do not carry general family IDs. The local evidence supplies partial exposure seeds, including the EPO development sample, without complete exclusion coverage. EPO DOCDB is a possible zero-price family source subject to its terms and usable snapshot access. A provider crosswalk alone cannot enumerate prior project exposures. The [B1 receipt](ip-pharma/b1/B1-RECEIPT.md) records BLOCKED_FRAME, including the unresolved portal/manifest check and no case lookup. Require both inputs in one declared namespace, with auditable treatment of unmatched identities, before freezing the selector.
+
 ## IP Pharma metadata recovery · 26 November 2026
 
 [Recovery](ip-pharma/ACCESS-RECOVERY-RECEIPT.md) through openFDA resolved all three exact product identities. FDA approval-package display configuration is sometimes inline JavaScript. Inspect enabled fields on the retained HTML before claiming that a loading placeholder hides all review metadata. The enabled GOMEKLI chemistry link belongs to a combined original package predating the selected 3MG product 002 row. Keep review existence, exact-subject applicability and file accessibility separate. The original Phase 2 result is immutable. No fresh cases or comparisons were run.
