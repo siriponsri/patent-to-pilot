@@ -167,7 +167,8 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | E6-alt | Alternative challenge sources (litigation dockets and others) | GPT-6.2 Astra high | E6 | merged: EDGAR filings GREEN; Rai et al. CC0 court table (filings 2011–2020) AMBER, usable to fill the 2013–2016 gap |
 | 2 | FIX2c | Merge the moiety key with T2b, link OB aliases, rerun development | GPT-6.2 Sol high | FIX2b | merged: NDA links 95.9–99.6% per edition. Development at 24 months: M3−B1 −0.0072 (CI −0.0162 to +0.0010); M3−M1 −0.0001 |
 | 2 | E7 | Combined as-of challenge leaf (FDA PIV list + Rai court filings + EDGAR) on moiety keys | GPT-6.2 Sol high | FIX2c, E6, E6-alt | merged: closed-world at 3 cutoffs; Rai name-linked pairs 7; EDGAR NOT_RUN; development CIs include 0 |
-| 2 | E7b | Relink Rai cases to drugs through Orange Book patent numbers (as-of editions) | GPT-6.2 Sol high | E7 | dispatched |
+| 2 | E7b | Relink Rai cases to drugs through Orange Book patent numbers (as-of editions) | GPT-6.2 Sol high | E7 | merged: development M1−B1 at 24 months −0.0096 (CI below 0); M3−M1 about 0 |
+| 2 | DEVX | Fixed-order development trials of K07, K09, K10, K08 and K06 under one budget | GPT-6.2 Sol high | E7b | dispatched |
 | 2 | T4 | Power simulation for criteria v2 (H1 at Δ = −0.010) from the development structure | GPT-6.2 Sol xhigh | FIX2c | merged but NOT ACCEPTED: power about 100% even with 30 clusters, MDE 0.0039, which looks optimistic beside the development CI half-width of about 0.01; type-I 2.75% (MC CI 1.54–4.86%) |
 | 2 | T4b | Calibrate generator variance against the empirical development bootstrap; firm up type-I | GPT-6.2 Sol xhigh | T4 | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
