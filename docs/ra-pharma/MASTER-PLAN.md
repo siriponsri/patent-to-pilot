@@ -4,7 +4,7 @@ Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and
 
 Owner authorized impact-driven redirection within D39. The [Planner field evidence review](ip-pharma/D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.
 
-**Owner approved option A.** [D39 public opportunity discovery](ip-pharma/D39-DECISION-REQUEST.md) authorizes up to twelve batches. Batch 2 reviewed at bfd33fd2: eight screened, zero promoted, Thai applicability unknown. Batch 3 released. Product held.
+**Owner approved option A.** [D39 public opportunity discovery](ip-pharma/D39-DECISION-REQUEST.md) authorizes up to twelve batches. Batch 2 reviewed at bfd33fd2: eight screened, zero promoted, Thai applicability unknown. Batch 3 independently verified BLOCKED_FRAME at 0590dbcc. Batch 4 Thai biologics procurement screen released. Product held.
 **D38 closed after independent review.** [Planner impact review and handback](ip-pharma/D38-IMPACT-REVIEW.md). Two ties on two synthetic inventories. Keep the checklist and park the proposed Product feature. Operator benefit remains unmeasured.
 
 **D36 reviewed.** Prioritize a synthetic rituximab evidence-readiness desk check for owner decision. Generic formulation and Thai market sizing are parked. [Planner review](ip-pharma/D36-REVIEW.md)
