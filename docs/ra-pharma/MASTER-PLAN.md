@@ -1,5 +1,5 @@
 #
-**B1E v1.0 • APPROVED under D37.** The owner approved the [prospective decision request](ip-pharma/B1E-AMENDMENT.md). Original B1 closed at BLOCKED_FRAME. D36 has a separate portfolio brief. The verified [24-group prefix and Research release](ip-pharma/b1e/README.md) follow the prospective selector lock.
+**D37 closed after independent review.** Original labels 24/24, locally usable exact-edition pairs 22/24. One processing deviation and one unresolved formulation. All optional checks NOT_CHECKED. [Planner handback](ip-pharma/b1e/PLANNER-REVIEW.md)
 
 **B1 review, 27 November.** BLOCKED_FRAME accepted. Both FDA ZIPs passed verification. Family mapping and exposure coverage could not be established before selection. B1-ext and scoring are NOT_RUN. [Independent review](ip-pharma/PLANNER-REVIEW.md)
  RA Pharma Workbench
