@@ -98,6 +98,7 @@ The simulation completed with exit 0 in 3,596.3 seconds using Python 3.12.10, Nu
 - The candidate roster counts NDA/NME availability. Prior generic entry and the exact C′ evaluation eligibility remain unknown. Histories impose synthetic first approvals and approximate age progression from development. The scenario effects are imposed rank interventions.
 - The exact H1 and H3 nulls preserve the ordering of different B1 score blocks. They create discordant queues within the boundary blocks and verify equality of expected recall. The type-I estimate therefore addresses this null design. A null with broad cross-block disagreement or different temporal drift remains unmeasured.
 - The adverse age cell emitted a diagnostic divide warning for a cutoff with zero event rows. Its annual recall was serialized as `null`. Pooled power had defined denominators in all 5,000 datasets. The reporting guard now emits the same annual `null` directly.
+- The initial Git push of `83b5a13115a278242b9c5fe2ae3e55fc0022c694` returned `[remote rejected] (failed)` on `origin/loe/T4c`. The remote ref was absent on the immediate `git ls-remote` check. The simulation and its artifact were retained locally for a normal retry.
 
 ## Next action
 
