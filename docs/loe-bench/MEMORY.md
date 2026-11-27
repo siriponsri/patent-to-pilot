@@ -64,3 +64,8 @@
   - The H2 swing (−1.1 to +5.5 pp) is explained by REG's fix of undated PIV rows in the training features. It is not a script bug, since both scripts agree on identical data.
   - Frozen development values: H2 at 24 months +5.49 pp [−2.00, +11.25].
   - Lesson: H2 is sensitive to how challenge evidence is coded, so the preregistration must state this.
+- **28 Nov, overnight close.**
+  - Preregistration v1 is ready for the owner. α is 0.025.
+  - L1 (an off-the-shelf 7B LLM given one-shot label-free evidence) is worse than the age clock at both horizons. This supports the claim that structured as-of evidence beats prompting, which matches the Paper 53 lesson.
+  - GPU spend so far is about USD 0.53 of 20.
+  - Next: the owner submits to OSF, the main planner writes PREREG_LOCK, then the C′ gate, C′ scoring and the Track A freeze before 2027-01-31.

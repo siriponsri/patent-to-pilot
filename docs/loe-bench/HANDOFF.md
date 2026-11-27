@@ -11,20 +11,13 @@ Owner of this file: the main planner (Claude Opus). Branch: `research/loe-bench`
 - **Development signal (validation only).** At 24 months, M1 and M3 beat B1 by about 0.007–0.010 in AURC80. M3 against M1 is about 0. The graph does not yet add value over the matched model.
 - **Disclosed incidents (T4).** A preflight decoded test-period ANDA records for an index, with no outputs. An executor also stopped a process it had not verified as its own. Both are recorded in MEMORY.
 
-## Running (overnight 27→28 Nov; the owner returns 28 Nov 06:00 Bangkok)
+## Overnight results (27→28 Nov)
 
-- **T4c:** power and type-I for recall@20%. It selects α by the pre-declared rule.
-- **FREEZE:** reconciles the H2 swing (T1v3 −1.1 pp vs K22 +5.5 pp), builds the canonical deterministic runner, and writes `FROZEN_CONFIG.json`.
-
-## Overnight autonomous plan (owner-authorized "continue")
-
-1. Review and merge T4c and FREEZE.
-2. Dispatch T5, the preregistration draft on GPT-6.2 Sol high, built on criteria v3. It must include the exposure disclosure, the H2 fragility note, the no-expert limitation, the auto-clear finding and the α choice.
-3. Have the co-planner (Astra) critique T5, then the main planner revises and reviews.
-4. Prepare the G3b Track A prediction-freeze script, without running it on outcomes.
-5. Write the owner packet in Thai: what to submit on OSF and how.
-
-Do not create PREREG_LOCK.json, unseal the test, or rent a GPU without owner approval.
+- **T4c.** α = 0.025 by rule. H1 power at 75 event clusters is 50% at +10 pp and 85% at +15 pp, with MDE80 about +14 pp.
+- **FREEZE.** FROZEN_FOR_PREREG (config sha256 `3a6a66f9…c68`). The H2 swing is explained by the REG PIV fix.
+- **Preregistration v1.** Merged after CP5 and T5b. Owner placeholders and OSF submission remain ([procedure](OSF-SUBMISSION.md)).
+- **LLM arm (L1, Qwen2.5-7B on L4).** Ran on development data. Recall is below B1 and M3 at both horizons. L1 is pinned as an exploratory arm.
+- **GPU spend.** About USD 0.53 of the USD 20 envelope. Volume `8n6rnzljwg` is kept at USD 2.10 a month, and every pod is deleted.
 
 ## Next action
 
