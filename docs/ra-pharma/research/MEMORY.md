@@ -1,5 +1,11 @@
 # Research memory
 
+## D36 desk research · 27 November 2026
+
+The [D36 receipt](ip-pharma/d36/EVIDENCE.md) recovers the public source bindings and rights-stop output after the interrupted first run. Research recommends independent review of one CMC evidence-readiness question. CT-P10 can show which structure and function evidence to ask for. A candidate finding requires an attributable proposed-product and US-reference comparison. Compare the proposed evidence row with the existing manual checklist before claiming a workflow benefit.
+
+The Thai registry, hospital plan and NHSO access table have distinct units and source roles. A brand-coded paid-claims series with matched payer, period and denominator is still missing. Keep share and spend unknown. The broad oral/enteral rivaroxaban gap parks because an existing label addresses gastric access, while the post-pyloric exposure constraint has no verified site-level use case.
+
 ## D37 B1E source feasibility · 27 November 2026
 
 The [B1E receipt](ip-pharma/b1e/RECEIPT.md) records 24 exact keys and original labels and 22 locally usable pairs. An issuer-delivered PDF carried a confidentiality notice and was discarded. Check cover and scope-page rights before retention and text-layer processing. A shared 1,000 mg label did not make the redacted quality-review formulation exact. Keep scope, edition and rights separate. A visual scope table can establish identity when the PDF glyph mapping is garbled, while the literal marker proxy stays limited to the existing text layer.

@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## D36 opportunity briefs · 27 November 2026
+
+Research desk review complete on `research/ra-pharma`. The [source and execution receipt](ip-pharma/d36/EVIDENCE.md) records primary locators, rights and provenance limits, the synthetic stop check and recovery after the original OS 11001 interruption. New service charges were USD 0. The [comparative recommendation](ip-pharma/d36/RECOMMENDATION.md) advances the rituximab applicant evidence-readiness question to independent Planner review and parks broad rivaroxaban formulation work and Thai rituximab market sizing.
+
+Planner owns the next check of Moore Table 2, Lee Fig. 5A/B, FDA September 2025 guidance § VI, ASPE Tables 1–3 and 5, and Thai procurement item 668 and NHSO Table 2-14. The operator test, Product decision and B2–B4 are NOT_RUN here.
+
 ## D37 B1E intake · 27 November 2026
 
 Execution complete. The [B1E receipt](ip-pharma/b1e/RECEIPT.md) and per-rank ledgers record 24 exact keys and original labels, 22 same-edition locally usable pairs, one unresolved formulation and one rights hold whose local copy was discarded. The frozen prefix replay matched byte for byte before dispatch. All 96 required requests settled within their caps. Optional slots were NOT_CHECKED. New service charges were USD 0. Original B1 remains BLOCKED_FRAME and B2–B4 remain NOT_RUN. D36 has separate authority.
