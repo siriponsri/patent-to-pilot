@@ -26,6 +26,24 @@ The earliest 12-month label is due in November 2027. The IS2 report presents Tra
 
 **Negative-result plan.** If ΔAURC CIs include zero at both horizons, report it honestly and submit the benchmark as a data descriptor. Results remain publishable either way.
 
+## CP1 co-planner review, adopted 27 November 2026
+
+GPT-6.2 Sol (medium, read-only, commit 5f34a509) reviewed the design and code. Its full review text is in the CP1 child thread. The Orchestrator adopted these changes:
+
+1. **Evidence roles.** Track C (current-snapshot retrospective) becomes exploratory only. Track C′ (as-of historical Orange Book editions) is the IS2 confirmatory set, but only if it passes a coverage gate. The gate counts separable train, calibration and test periods and the number of drug groups with events. Track A becomes the prospective replication. If C′ fails the gate, IS2 reports benchmark feasibility together with the frozen protocol.
+2. **Single primary endpoint.** Paired ΔAURC = AURC(M3) − AURC(M1) at 24 months on C′, computed on identical rows with a policy-derived ranking score. It passes if the upper CI bound is below 0, and the result is also reported against a minimum useful effect declared in advance. Only B1, M1 and M3 are confirmatory arms. The 12- and 36-month horizons and the other arms are secondary within a Holm family. VoI is evaluated separately as evidence cost per resolved case, compared with a checklist under an equal budget.
+3. **Label definition.** The event is the first *final* FDA approval. Tentative approvals and authorized generics are excluded. A sample is cross-checked against the FDA first-generic lists. 351(k) approvals are grouped by reference product.
+4. **G3a/G3b.** G3a also freezes the cohort definition and the publication-date evidence for each source. G3b locks code, model, policy and hashed predictions with an external timestamp, before a declared deadline.
+5. **Code defects found by static review** (to be fixed in card FIX1 before any Wave 2 modeling):
+   - `dataset.py`: the NME, orphan, priority and route flags aggregate records approved after the cutoff, which leaks into both features and the `only_nme` cohort filter.
+   - `dataset.py`: `build_samples` keeps positives whose follow-up window is incomplete but drops such negatives, and it admits approvals after `data_end`.
+   - `dataset.py`: `time_split` accepts `t_end == test_first_cutoff` and overlapping boundaries.
+   - `metrics.py`: AURC ranks by max(p, 1−p) at a fixed 0.5 threshold, ignores the graph action, and depends on row order when scores tie. The bootstrap evaluates one arm only, with no paired difference.
+   - `evidence_graph.decide`: `all([])` returns TRUE when items are missing, and BLOCKED forces a negative prediction.
+   - `voi.py`: the reveal probability (0.3) and the prior truth (0.5) are conflated.
+   - `trackA_freeze.py`: it can train on outcomes after t0 when the raw data is newer than t0, `data_end` is not a completeness check, and `snapshot_features` ignores t0.
+6. **Wave 2 card order and acceptance.** FIX1 comes first. T7 then becomes a stratified audit of 100 development cases with FDA locators and false-merge and false-split rates. T2 compares pooled verdict and missingness features against M1 with a future-invariance test. T1 runs after T2 on a separate validation slice. T4 simulates paired ΔAURC under a cluster structure, including a type-I check. T5 waits for T7, T2, T1, T4 and the C′ gate.
+
 ## Planner evidence (D32)
 
 | Claim or task | Primary paper | Benchmark or competitor | Status |
