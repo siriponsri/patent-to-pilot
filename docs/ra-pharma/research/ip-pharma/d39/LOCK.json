@@ -1,0 +1,22 @@
+{
+  "schema_version": "ptp-d39-lock/1",
+  "decision": "D39",
+  "batch": 1,
+  "status": "FROZEN_HOLD_FOR_PLANNER_RELEASE",
+  "lane": "research/ra-pharma",
+  "owner_approval_commit": "8fc48b581693699cfd537905a204312412b3fc4f",
+  "planner_impact_commit": "c83cce87a948c8940a20f03bfcc75ab96741ceca",
+  "owner_decision_path": "docs/ra-pharma/ip-pharma/D39-DECISION-REQUEST.md",
+  "protocol_path": "docs/ra-pharma/research/ip-pharma/d39/PROTOCOL.md",
+  "protocol_sha256": "51eb4fa4dc187f14a398a4e52913d3a1c7f15bac0c684bfa8d53fb9c97eed238",
+  "evidence_cutoff": "2026-11-27 Asia/Bangkok inclusive",
+  "next_batch": 2,
+  "next_release_requires": [
+    "Independent Planner review",
+    "Exact published Research commit",
+    "Exact lock path",
+    "Explicit Batch 2 release"
+  ],
+  "candidate_accesses_batch_1": 0,
+  "incremental_service_charges_usd": 0
+}

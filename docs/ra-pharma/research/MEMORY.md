@@ -1,5 +1,9 @@
 # Research memory
 
+## D39 prospective discovery lock · 27 November 2026
+
+The [protocol](ip-pharma/d39/PROTOCOL.md) fixes how to spend the first discovery passes before any fresh candidate is named. The [lock](ip-pharma/d39/LOCK.json) points to the original approval, impact criteria and exact protocol digest. The unit of interest is a consequential user decision with a source-backed disconfirmation, including a reproducible negative when the incumbent already resolves it. Keep Thai registration, US corroboration, institutional plans and payer utilization distinct. Discovery prefixes, nearest-publication checks, matches and operator effects are unmeasured. Independent Planner release is the next checkpoint.
+
 ## D38 matched paper comparison · 27 November 2026
 
 The [four-cell receipt](ip-pharma/d38/COMPARISON.md) documents equivalent dispositions and traceability at matched access on two exposed synthetic snapshots. The signed-off direct comparison changes document routing while the interpretation of its qualitative difference remains open. CT-P10 stayed contextual. The manual checklist already carries the relevant source and request fields. Retain it under the frozen rule, pending independent Planner review. This exercise supplied no operator or scientific outcome evidence.

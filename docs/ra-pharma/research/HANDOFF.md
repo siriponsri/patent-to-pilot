@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## D39 Batch 1 · 27 November 2026
+
+Batch 1 closed at prospective freeze in the commit containing [LOCK.json](ip-pharma/d39/LOCK.json) and [PROTOCOL.md](ip-pharma/d39/PROTOCOL.md). Owner option A and the publication and practical impact criteria are pinned to Planner revisions. The protocol fixes initial source frames, sampling and duplicate rules, access caps, promotion and early stops, and an equal-access comparison against the strong manual incumbent. Source availability for the future discovery batches is unverified.
+
+Next action belongs to the Planner. Verify the exact remote Research commit and its lock digest, review the frame and comparison, then record release or correction before Batch 2 candidate work. Candidate naming, screening, retrieval and comparisons are NOT_RUN. Incremental service charges USD 0. Product and the earlier IP Pharma B2–B4 remain held. Documentation checks are the applicable local gate.
+
 ## D38 paper comparison · 27 November 2026
 
 Four cells complete. Both forms requested the same attributable functional report for A and routed the same signed-off report for scientific review in B. The [comparison and receipts](ip-pharma/d38/COMPARISON.md) record the tie, exposure, presentation deviation, unresolved scientific interpretation and USD 0 incremental service charges. The [frozen protocol](ip-pharma/d38/PROTOCOL.md) was published as `315f9cbabd216b7e46397d5c66ec126a3a8cf0ac` before execution.
