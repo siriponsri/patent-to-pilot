@@ -1,4 +1,4 @@
-"""Reproduce the T2b development summary using verified local FDA source files."""
+"""Run the T2b development protocol with legacy or FIX2c active-moiety keys."""
 import argparse
 import hashlib
 import json
@@ -13,7 +13,9 @@ sys.path.insert(0, str(ROOT))
 from loe_bench import t2
 from loe_bench.common import add_months
 from loe_bench.dataset import build_entities, build_samples
-from loe_bench.ob_history import DEFAULT_DIR, OBHistory
+from loe_bench.moiety import GSRS_FILE, GSRS_SHA256, ORANGE_FILES
+from loe_bench.ob_history import DEFAULT_DIR, OBHistory, load_edition
+from loe_bench.ob_linkage import HistoricalMoietyLinker
 from loe_bench.seal import TEST_FIRST
 from loe_bench.t2_features import AsOfBuilder, edition_coverage
 
@@ -30,14 +32,18 @@ def _manifest(path):
     return json.loads(content), {"file": path.name, "sha256": hashlib.sha256(content).hexdigest()}
 
 
-def run(raw, ob_dir, ob_manifest):
+def run(raw, ob_dir, ob_manifest, *, key_mode="legacy", gsrs_path=None):
     splits = {h: t2.development_split(h) for h in t2.HORIZONS}
     cutoffs = sorted({d for train, validation in splits.values() for d in (*train, *validation)})
     t2.require_development_cutoffs(cutoffs)
     source_manifest, s0_ref = _manifest(ROOT / "data" / "S0_INPUT_MANIFEST.json")
     data_end = date.fromisoformat(source_manifest["t0"])
     source_files = {item["raw_file"]: item["sha256"] for item in source_manifest["files"]}
-    raw_hashes = {name: source_files[name] for name in ("df_nda.jsonl", "df_anda.jsonl")}
+    raw_names = ("df_nda.jsonl", "df_anda.jsonl")
+    if key_mode == "moiety":
+        raw_names += ORANGE_FILES
+        gsrs_path = gsrs_path or raw.resolve().parent / "moiety" / GSRS_FILE
+    raw_hashes = {name: source_files[name] for name in raw_names}
     for name, sha in raw_hashes.items():
         _verify(raw / name, sha)
 
@@ -52,8 +58,23 @@ def run(raw, ob_dir, ob_manifest):
             _verify(ob_dir / selected["file"], selected["sha256"])
             edition_hashes[selected["sha256"]] = selected
 
-    builder = AsOfBuilder(history)
-    entities = build_entities(str(raw))
+    entities = build_entities(raw, key_mode=key_mode, gsrs_path=gsrs_path)
+    linker = HistoricalMoietyLinker(raw, entities, gsrs_path=gsrs_path) if key_mode == "moiety" else None
+    builder = AsOfBuilder(history, key_mode=key_mode, linker=linker)
+    historical_linkage = []
+    if linker is not None:
+        for entry in sorted(editions["editions"], key=lambda item: item["edition_date"]):
+            edition_date = date.fromisoformat(entry["edition_date"])
+            if edition_date >= TEST_FIRST:
+                continue
+            path = ob_dir / entry["file"]
+            if entry["sha256"] not in edition_hashes:
+                _verify(path, entry["sha256"])
+            edition = load_edition(path, edition_date)
+            historical_linkage.append({
+                **{key: entry.get(key) for key in ("file", "edition_date", "sha256", "source_url", "wayback_ts")},
+                **builder.edition_linkage(edition),
+            })
     results = {}
     for horizon, (train_cutoffs, val_cutoffs) in splits.items():
         result = {
@@ -84,7 +105,7 @@ def run(raw, ob_dir, ob_manifest):
                       verdicts_by_cutoff={**train_verdicts, **val_verdicts},
                       **t2.evaluate(train, validation, horizon))
 
-    return {
+    summary = {
         "scope": "T2b development only. No protected cutoffs built or scored.",
         "input_sha256": {"s0_manifest": s0_ref, "drugs_fda": raw_hashes,
                          "ob_manifest": ob_ref, "used_edition_zips": list(edition_hashes.values())},
@@ -98,6 +119,15 @@ def run(raw, ob_dir, ob_manifest):
                                 "calibration": "fixed sigmoid on logits, held-out validation drug folds"}},
         "horizons": results,
     }
+    if linker is not None:
+        summary.update(status="DEVELOPMENT_ONLY", key_mode=key_mode, entities=len(entities),
+                       scope="FIX2c development only. No protected cutoffs built or scored.",
+                       historical_nda_linkage=historical_linkage)
+        summary["input_sha256"]["orange_book_current_identity_sources"] = {
+            name: raw_hashes.pop(name) for name in ORANGE_FILES
+        }
+        summary["input_sha256"]["gsrs"] = {"file": gsrs_path.name, "sha256": GSRS_SHA256}
+    return summary
 
 
 def main():
@@ -105,9 +135,11 @@ def main():
     parser.add_argument("--raw", type=Path, required=True, help="Directory with S0 Drugs@FDA JSONL files")
     parser.add_argument("--ob-dir", type=Path, default=Path(DEFAULT_DIR))
     parser.add_argument("--ob-manifest", type=Path, default=ROOT / "data" / "OB_EDITIONS.json")
+    parser.add_argument("--key-mode", choices=("legacy", "moiety"), default="legacy")
+    parser.add_argument("--gsrs", type=Path)
     args = parser.parse_args()
-    summary = run(args.raw, args.ob_dir, args.ob_manifest)
-    output = ROOT / "data" / "T2b_dev_summary.json"
+    summary = run(args.raw, args.ob_dir, args.ob_manifest, key_mode=args.key_mode, gsrs_path=args.gsrs)
+    output = ROOT / "data" / ("FIX2c_dev_summary.json" if args.key_mode == "moiety" else "T2b_dev_summary.json")
     output.write_text(json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
     print(output)
 

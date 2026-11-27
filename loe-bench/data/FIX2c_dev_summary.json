@@ -1,0 +1,1251 @@
+{
+  "edition_coverage": {
+    "2010-01-01": {
+      "age_days": 77,
+      "availability_proof": {
+        "date": "2009-11-04",
+        "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20091104091455"
+      },
+      "chosen_edition": "2009-10-16",
+      "freshness_floor": "2009-07-01",
+      "latest_proven_age_days": 77,
+      "latest_proven_availability": {
+        "date": "2009-11-04",
+        "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20091104091455"
+      },
+      "latest_proven_edition": "2009-10-16",
+      "source": {
+        "file": "ob_20091104091455.zip",
+        "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2011-01-01": {
+      "age_days": null,
+      "availability_proof": null,
+      "chosen_edition": null,
+      "freshness_floor": "2010-07-01",
+      "latest_proven_age_days": 375,
+      "latest_proven_availability": {
+        "date": "2010-01-13",
+        "edition_sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20100113002223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20100113002223"
+      },
+      "latest_proven_edition": "2009-12-22",
+      "source": null,
+      "status": "STALE",
+      "used_in_split": false
+    },
+    "2012-01-01": {
+      "age_days": 18,
+      "availability_proof": {
+        "date": "2011-12-29",
+        "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20111229223919"
+      },
+      "chosen_edition": "2011-12-14",
+      "freshness_floor": "2011-07-01",
+      "latest_proven_age_days": 18,
+      "latest_proven_availability": {
+        "date": "2011-12-29",
+        "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20111229223919"
+      },
+      "latest_proven_edition": "2011-12-14",
+      "source": {
+        "file": "ob_20111229223919.zip",
+        "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2013-01-01": {
+      "age_days": 106,
+      "availability_proof": {
+        "date": "2012-09-21",
+        "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20120921215526"
+      },
+      "chosen_edition": "2012-09-17",
+      "freshness_floor": "2012-07-01",
+      "latest_proven_age_days": 106,
+      "latest_proven_availability": {
+        "date": "2012-09-21",
+        "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20120921215526"
+      },
+      "latest_proven_edition": "2012-09-17",
+      "source": {
+        "file": "ob_20120921215526.zip",
+        "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2014-01-01": {
+      "age_days": 124,
+      "availability_proof": {
+        "date": "2013-09-06",
+        "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20130906105914"
+      },
+      "chosen_edition": "2013-08-30",
+      "freshness_floor": "2013-07-01",
+      "latest_proven_age_days": 124,
+      "latest_proven_availability": {
+        "date": "2013-09-06",
+        "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20130906105914"
+      },
+      "latest_proven_edition": "2013-08-30",
+      "source": {
+        "file": "ob_20130906105914.zip",
+        "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2015-01-01": {
+      "age_days": 113,
+      "availability_proof": {
+        "date": "2014-09-15",
+        "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20140915104404"
+      },
+      "chosen_edition": "2014-09-10",
+      "freshness_floor": "2014-07-01",
+      "latest_proven_age_days": 113,
+      "latest_proven_availability": {
+        "date": "2014-09-15",
+        "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20140915104404"
+      },
+      "latest_proven_edition": "2014-09-10",
+      "source": {
+        "file": "ob_20140915104404.zip",
+        "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2016-01-01": {
+      "age_days": 105,
+      "availability_proof": {
+        "date": "2015-10-06",
+        "edition_sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20151006063349id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20151006063349"
+      },
+      "chosen_edition": "2015-09-18",
+      "freshness_floor": "2015-07-01",
+      "latest_proven_age_days": 105,
+      "latest_proven_availability": {
+        "date": "2015-10-06",
+        "edition_sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20151006063349id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20151006063349"
+      },
+      "latest_proven_edition": "2015-09-18",
+      "source": {
+        "file": "ob_20151006063349.zip",
+        "sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": false
+    }
+  },
+  "entities": 2445,
+  "historical_nda_linkage": [
+    {
+      "conflicting_product_identity": 8,
+      "edition_date": "2009-06-09",
+      "file": "ob_20090710171813.zip",
+      "ingredient": 7409,
+      "link_rate": 0.9956995027550061,
+      "matched": 7409,
+      "no_entity_match": 24,
+      "non_nda": 16068,
+      "sha256": "6ddbe5098de93c127bca1dbddf58f59eb020c877100db7e378ec69c36ad2542f",
+      "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 7441,
+      "unknown_application_type": 626,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "019952",
+          "ingredient": "HEPARIN SODIUM",
+          "product_no": "001",
+          "products_data_row": 11567,
+          "trade_name": "HEPARIN SODIUM 20,000 UNITS IN DEXTROSE 5% IN PLASTIC CONTAINER"
+        },
+        "no_entity_match": {
+          "appl_no": "022314",
+          "ingredient": "AMLODIPINE; HYDROCHLOROTHIAZIDE; VALSARTAN",
+          "product_no": "003",
+          "products_data_row": 1737,
+          "trade_name": "EXFORGE HCT"
+        }
+      },
+      "wayback_ts": "20090710171813"
+    },
+    {
+      "conflicting_product_identity": 9,
+      "edition_date": "2009-10-16",
+      "file": "ob_20091104091455.zip",
+      "ingredient": 7484,
+      "link_rate": 0.995609950778236,
+      "matched": 7484,
+      "no_entity_match": 24,
+      "non_nda": 16378,
+      "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+      "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 7517,
+      "unknown_application_type": 620,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "022371",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "product_no": "001",
+          "products_data_row": 2579,
+          "trade_name": "ASTEPRO"
+        },
+        "no_entity_match": {
+          "appl_no": "022314",
+          "ingredient": "AMLODIPINE; HYDROCHLOROTHIAZIDE; VALSARTAN",
+          "product_no": "003",
+          "products_data_row": 1750,
+          "trade_name": "EXFORGE HCT"
+        }
+      },
+      "wayback_ts": "20091104091455"
+    },
+    {
+      "conflicting_product_identity": 9,
+      "edition_date": "2009-12-22",
+      "file": "ob_20100113002223.zip",
+      "ingredient": 7522,
+      "link_rate": 0.9587050726484833,
+      "matched": 7522,
+      "no_entity_match": 315,
+      "non_nda": 16799,
+      "sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+      "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 7846,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "022371",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "product_no": "001",
+          "products_data_row": 2587,
+          "trade_name": "ASTEPRO"
+        },
+        "no_entity_match": {
+          "appl_no": "017835",
+          "ingredient": "ALBUMIN CHROMATED CR-51 SERUM",
+          "product_no": "001",
+          "products_data_row": 669,
+          "trade_name": "CHROMALBIN"
+        }
+      },
+      "wayback_ts": "20100113002223"
+    },
+    {
+      "conflicting_product_identity": 7,
+      "edition_date": "2011-03-18",
+      "file": "ob_20110401201026.zip",
+      "ingredient": 7741,
+      "link_rate": 0.9604218362282878,
+      "matched": 7741,
+      "no_entity_match": 312,
+      "non_nda": 17859,
+      "sha256": "807dd86c2de50a61ca450e2c9e9ab2e68e73baa70d43e1bfd8e61f961519878d",
+      "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 8060,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "022371",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "product_no": "001",
+          "products_data_row": 2760,
+          "trade_name": "ASTEPRO"
+        },
+        "no_entity_match": {
+          "appl_no": "017835",
+          "ingredient": "ALBUMIN CHROMATED CR-51 SERUM",
+          "product_no": "001",
+          "products_data_row": 685,
+          "trade_name": "CHROMALBIN"
+        }
+      },
+      "wayback_ts": "20110401201026"
+    },
+    {
+      "conflicting_product_identity": 7,
+      "edition_date": "2011-12-14",
+      "file": "ob_20111229223919.zip",
+      "ingredient": 7867,
+      "link_rate": 0.9610310285853897,
+      "matched": 7867,
+      "no_entity_match": 312,
+      "non_nda": 18600,
+      "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+      "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 8186,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "022371",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "product_no": "001",
+          "products_data_row": 2806,
+          "trade_name": "ASTEPRO"
+        },
+        "no_entity_match": {
+          "appl_no": "017835",
+          "ingredient": "ALBUMIN CHROMATED CR-51 SERUM",
+          "product_no": "001",
+          "products_data_row": 693,
+          "trade_name": "CHROMALBIN"
+        }
+      },
+      "wayback_ts": "20111229223919"
+    },
+    {
+      "conflicting_product_identity": 7,
+      "edition_date": "2012-01-17",
+      "file": "ob_20120126210607.zip",
+      "ingredient": 7888,
+      "link_rate": 0.9613650213284582,
+      "matched": 7888,
+      "no_entity_match": 310,
+      "non_nda": 18652,
+      "sha256": "3e6877b6b2cf21193c2ab61bd0f0f85dc5fb7ecc565defe2f24744194dd4a17b",
+      "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 8205,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "022371",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "product_no": "001",
+          "products_data_row": 2814,
+          "trade_name": "ASTEPRO"
+        },
+        "no_entity_match": {
+          "appl_no": "017835",
+          "ingredient": "ALBUMIN CHROMATED CR-51 SERUM",
+          "product_no": "001",
+          "products_data_row": 694,
+          "trade_name": "CHROMALBIN"
+        }
+      },
+      "wayback_ts": "20120126210607"
+    },
+    {
+      "conflicting_product_identity": 7,
+      "edition_date": "2012-09-17",
+      "file": "ob_20120921215526.zip",
+      "ingredient": 8010,
+      "link_rate": 0.9606620292636123,
+      "matched": 8010,
+      "no_entity_match": 321,
+      "non_nda": 19368,
+      "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+      "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 8338,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "022371",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "product_no": "001",
+          "products_data_row": 2854,
+          "trade_name": "ASTEPRO"
+        },
+        "no_entity_match": {
+          "appl_no": "017835",
+          "ingredient": "ALBUMIN CHROMATED CR-51 SERUM",
+          "product_no": "001",
+          "products_data_row": 714,
+          "trade_name": "CHROMALBIN"
+        }
+      },
+      "wayback_ts": "20120921215526"
+    },
+    {
+      "conflicting_product_identity": 7,
+      "edition_date": "2013-01-18",
+      "file": "ob_20130130220223.zip",
+      "ingredient": 8071,
+      "link_rate": 0.9601475136807043,
+      "matched": 8071,
+      "no_entity_match": 328,
+      "non_nda": 19727,
+      "sha256": "9fa45df9a830dcf000314d9894e6c2fada38d1ce707b8d39a46800e54ed4c4ea",
+      "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 8406,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "022371",
+          "ingredient": "AZELASTINE HYDROCHLORIDE",
+          "product_no": "001",
+          "products_data_row": 2872,
+          "trade_name": "ASTEPRO"
+        },
+        "no_entity_match": {
+          "appl_no": "017835",
+          "ingredient": "ALBUMIN CHROMATED CR-51 SERUM",
+          "product_no": "001",
+          "products_data_row": 718,
+          "trade_name": "CHROMALBIN"
+        }
+      },
+      "wayback_ts": "20130130220223"
+    },
+    {
+      "conflicting_product_identity": 7,
+      "edition_date": "2013-08-30",
+      "file": "ob_20130906105914.zip",
+      "ingredient": 8172,
+      "link_rate": 0.9605077574047954,
+      "matched": 8172,
+      "no_entity_match": 329,
+      "non_nda": 20297,
+      "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+      "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 8508,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "019952",
+          "ingredient": "HEPARIN SODIUM",
+          "product_no": "001",
+          "products_data_row": 7901,
+          "trade_name": "HEPARIN SODIUM 20,000 UNITS IN DEXTROSE 5% IN PLASTIC CONTAINER"
+        },
+        "no_entity_match": {
+          "appl_no": "020725",
+          "ingredient": "PANCRELIPASE (AMYLASE;LIPASE;PROTEASE)",
+          "product_no": "002",
+          "products_data_row": 195,
+          "trade_name": "CREON"
+        }
+      },
+      "wayback_ts": "20130906105914"
+    },
+    {
+      "conflicting_product_identity": 8,
+      "edition_date": "2014-09-10",
+      "file": "ob_20140915104404.zip",
+      "ingredient": 8353,
+      "link_rate": 0.9609986194201565,
+      "matched": 8353,
+      "no_entity_match": 331,
+      "non_nda": 21114,
+      "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+      "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 8692,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "204977",
+          "ingredient": "OMEGA-3-ACID ETHYL ESTERS",
+          "product_no": "001",
+          "products_data_row": 2652,
+          "trade_name": "OMTRYG"
+        },
+        "no_entity_match": {
+          "appl_no": "020725",
+          "ingredient": "PANCRELIPASE (AMYLASE;LIPASE;PROTEASE)",
+          "product_no": "002",
+          "products_data_row": 242,
+          "trade_name": "CREON"
+        }
+      },
+      "wayback_ts": "20140915104404"
+    },
+    {
+      "conflicting_product_identity": 9,
+      "edition_date": "2015-01-16",
+      "file": "ob_20150206095621.zip",
+      "ingredient": 8420,
+      "link_rate": 0.9611872146118722,
+      "matched": 8420,
+      "no_entity_match": 331,
+      "non_nda": 21393,
+      "sha256": "f5ca885cdffc9af0ea65a9975fa60a7b9670369365e48b73a3fcc9a71f75c498",
+      "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 8760,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "204977",
+          "ingredient": "OMEGA-3-ACID ETHYL ESTERS",
+          "product_no": "001",
+          "products_data_row": 2684,
+          "trade_name": "OMTRYG"
+        },
+        "no_entity_match": {
+          "appl_no": "020725",
+          "ingredient": "PANCRELIPASE (AMYLASE;LIPASE;PROTEASE)",
+          "product_no": "002",
+          "products_data_row": 247,
+          "trade_name": "CREON"
+        }
+      },
+      "wayback_ts": "20150206095621"
+    },
+    {
+      "conflicting_product_identity": 9,
+      "edition_date": "2015-09-18",
+      "file": "ob_20151006063349.zip",
+      "ingredient": 8547,
+      "link_rate": 0.9609849336631437,
+      "matched": 8547,
+      "no_entity_match": 338,
+      "non_nda": 22018,
+      "sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+      "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 8894,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "204977",
+          "ingredient": "OMEGA-3-ACID ETHYL ESTERS",
+          "product_no": "001",
+          "products_data_row": 2787,
+          "trade_name": "OMTRYG"
+        },
+        "no_entity_match": {
+          "appl_no": "020725",
+          "ingredient": "PANCRELIPASE (AMYLASE;LIPASE;PROTEASE)",
+          "product_no": "002",
+          "products_data_row": 259,
+          "trade_name": "CREON"
+        }
+      },
+      "wayback_ts": "20151006063349"
+    },
+    {
+      "conflicting_product_identity": 9,
+      "edition_date": "2016-03-18",
+      "file": "ob_20160407115331.zip",
+      "ingredient": 8659,
+      "link_rate": 0.9609366330041061,
+      "matched": 8659,
+      "no_entity_match": 343,
+      "non_nda": 22652,
+      "sha256": "dc1234836c9606204b74195bb9e225ee767a70c97470ae8327e557889bd2fa2c",
+      "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 9011,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "204977",
+          "ingredient": "OMEGA-3-ACID ETHYL ESTERS",
+          "product_no": "001",
+          "products_data_row": 2879,
+          "trade_name": "OMTRYG"
+        },
+        "no_entity_match": {
+          "appl_no": "020725",
+          "ingredient": "PANCRELIPASE (AMYLASE;LIPASE;PROTEASE)",
+          "product_no": "002",
+          "products_data_row": 273,
+          "trade_name": "CREON"
+        }
+      },
+      "wayback_ts": "20160407115331"
+    },
+    {
+      "conflicting_product_identity": 8,
+      "edition_date": "2016-12-16",
+      "file": "ob_20170111194915.zip",
+      "ingredient": 8785,
+      "link_rate": 0.9618964195773568,
+      "matched": 8785,
+      "no_entity_match": 340,
+      "non_nda": 23653,
+      "sha256": "2946eff51bafb53914cbdb302aed17c6742057d7ab3d01618d0900628465d441",
+      "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+      "total_nda": 9133,
+      "unmatched_examples": {
+        "conflicting_product_identity": {
+          "appl_no": "019952",
+          "ingredient": "HEPARIN SODIUM",
+          "product_no": "001",
+          "products_data_row": 8720,
+          "trade_name": "HEPARIN SODIUM 20,000 UNITS IN DEXTROSE 5% IN PLASTIC CONTAINER"
+        },
+        "no_entity_match": {
+          "appl_no": "020725",
+          "ingredient": "PANCRELIPASE (AMYLASE;LIPASE;PROTEASE)",
+          "product_no": "002",
+          "products_data_row": 285,
+          "trade_name": "CREON"
+        }
+      },
+      "wayback_ts": "20170111194915"
+    }
+  ],
+  "horizons": {
+    "12": {
+      "arms": {
+        "B1": {
+          "answered": 2161,
+          "aurc80": 0.018574678709720478,
+          "aurc80_status": "evaluated",
+          "brier": 0.039073177847496275,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.027810005104377585,
+              "rows": 500
+            },
+            "CONTESTED": {
+              "brier": 0.04194454802159161,
+              "rows": 1658
+            },
+            "OPEN": {
+              "brier": 0.32935805215059016,
+              "rows": 3
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.0054705390852075935,
+          "ece_bin_counts": [
+            1939,
+            222,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M1": {
+          "answered": 2159,
+          "aurc80": 0.014621411040045725,
+          "aurc80_status": "evaluated",
+          "brier": 0.038386697267632254,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.02790875903605182,
+              "rows": 500
+            },
+            "CONTESTED": {
+              "brier": 0.041080381213155256,
+              "rows": 1658
+            },
+            "OPEN": {
+              "brier": 0.2960004086386575,
+              "rows": 3
+            }
+          },
+          "coverage": 0.999074502545118,
+          "ece": 0.004525483669900912,
+          "ece_bin_counts": [
+            1949,
+            198,
+            14,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M2": {
+          "answered": 2159,
+          "aurc80": 0.04066601275734768,
+          "aurc80_status": "evaluated",
+          "brier": 0.04001882497962048,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.029121182729073162,
+              "rows": 500
+            },
+            "CONTESTED": {
+              "brier": 0.042736784931497754,
+              "rows": 1658
+            },
+            "OPEN": {
+              "brier": 0.3541666666666667,
+              "rows": 3
+            }
+          },
+          "coverage": 0.999074502545118,
+          "ece": 0.0020110656860498964,
+          "ece_bin_counts": [
+            2158,
+            0,
+            1,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M3": {
+          "answered": 2160,
+          "aurc80": 0.014235804776392023,
+          "aurc80_status": "evaluated",
+          "brier": 0.0383699843027441,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.02785532734534674,
+              "rows": 500
+            },
+            "CONTESTED": {
+              "brier": 0.0410714035429422,
+              "rows": 1658
+            },
+            "OPEN": {
+              "brier": 0.2978284437861625,
+              "rows": 3
+            }
+          },
+          "coverage": 0.999537251272559,
+          "ece": 0.004542400511978884,
+          "ece_bin_counts": [
+            1947,
+            205,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "open_actions": {
+        "m3_predict_no_entry": 3,
+        "package_ensemble_predict_no_entry_on_same_open_rows": 3,
+        "rows": 3
+      },
+      "paired_aurc80": {
+        "M1_minus_B1": {
+          "ci95": [
+            -0.009845169637893687,
+            0.001629770484982078
+          ],
+          "delta": -0.003953267669674753,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_B1": {
+          "ci95": [
+            -0.00996621667855374,
+            0.0010014445816240482
+          ],
+          "delta": -0.0043388739333284545,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_M1": {
+          "ci95": [
+            -0.0010960628511595683,
+            0.00044418187231555495
+          ],
+          "delta": -0.00038560626365370144,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        }
+      },
+      "row_coverage_by_cutoff": {
+        "2010-01-01": {
+          "FRESH": 543,
+          "NOT_LISTED": 4
+        },
+        "2012-01-01": {
+          "FRESH": 531,
+          "NOT_LISTED": 2
+        },
+        "2013-01-01": {
+          "FRESH": 524,
+          "NOT_LISTED": 15
+        },
+        "2014-01-01": {
+          "FRESH": 533,
+          "NOT_LISTED": 11
+        },
+        "2015-01-01": {
+          "FRESH": 537,
+          "NOT_LISTED": 8
+        }
+      },
+      "sealed_test_start": "2017-01-01",
+      "status": "DEVELOPMENT_ONLY",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 547,
+      "tuning": {
+        "M1": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.039008149353677246
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.03882384668559986
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.038386697267632254
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        },
+        "M3": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.03901373184095346
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.03882405096800866
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.0383699843027441
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        }
+      },
+      "validation_cutoffs": [
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01"
+      ],
+      "validation_drug_clusters": 609,
+      "validation_event_clusters": 90,
+      "validation_rows": 2161,
+      "validation_verdicts": {
+        "BLOCKED": 500,
+        "CONTESTED": 1658,
+        "OPEN": 3
+      },
+      "verdicts_by_cutoff": {
+        "2010-01-01": {
+          "BLOCKED": 122,
+          "CONTESTED": 425,
+          "OPEN": 0
+        },
+        "2012-01-01": {
+          "BLOCKED": 119,
+          "CONTESTED": 412,
+          "OPEN": 2
+        },
+        "2013-01-01": {
+          "BLOCKED": 117,
+          "CONTESTED": 422,
+          "OPEN": 0
+        },
+        "2014-01-01": {
+          "BLOCKED": 130,
+          "CONTESTED": 413,
+          "OPEN": 1
+        },
+        "2015-01-01": {
+          "BLOCKED": 134,
+          "CONTESTED": 411,
+          "OPEN": 0
+        }
+      }
+    },
+    "24": {
+      "arms": {
+        "B1": {
+          "answered": 1083,
+          "aurc80": 0.02933012359928259,
+          "aurc80_status": "evaluated",
+          "brier": 0.07304651880688705,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.03525588461629264,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.07861817407931328,
+              "rows": 892
+            },
+            "OPEN": {
+              "brier": 0.260065347356226,
+              "rows": 10
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.007294184562045728,
+          "ece_bin_counts": [
+            760,
+            259,
+            64,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M1": {
+          "answered": 1023,
+          "aurc80": 0.022234373891324096,
+          "aurc80_status": "evaluated",
+          "brier": 0.06982179438526068,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.038723139217740184,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.07455134377681834,
+              "rows": 892
+            },
+            "OPEN": {
+              "brier": 0.21083164719043848,
+              "rows": 10
+            }
+          },
+          "coverage": 0.9445983379501385,
+          "ece": 0.016749491375010115,
+          "ece_bin_counts": [
+            743,
+            237,
+            72,
+            19,
+            8,
+            4,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M2": {
+          "answered": 1075,
+          "aurc80": 0.07356962982128956,
+          "aurc80_status": "evaluated",
+          "brier": 0.07720660077432873,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.03753025651848612,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.0827091782775413,
+              "rows": 892
+            },
+            "OPEN": {
+              "brier": 0.3045185185185185,
+              "rows": 10
+            }
+          },
+          "coverage": 0.9926131117266851,
+          "ece": 0.006353803264838282,
+          "ece_bin_counts": [
+            1073,
+            0,
+            2,
+            2,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M3": {
+          "answered": 1056,
+          "aurc80": 0.022099684749344414,
+          "aurc80_status": "evaluated",
+          "brier": 0.07116183430305911,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.036366115217572964,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.07511265443977193,
+              "rows": 892
+            },
+            "OPEN": {
+              "brier": 0.348551193555576,
+              "rows": 10
+            }
+          },
+          "coverage": 0.9750692520775623,
+          "ece": 0.02105768531162519,
+          "ece_bin_counts": [
+            759,
+            247,
+            54,
+            12,
+            3,
+            1,
+            0,
+            4,
+            2,
+            1
+          ]
+        }
+      },
+      "open_actions": {
+        "m3_predict_no_entry": 0,
+        "package_ensemble_predict_no_entry_on_same_open_rows": 9,
+        "rows": 10
+      },
+      "paired_aurc80": {
+        "M1_minus_B1": {
+          "ci95": [
+            -0.016259404329680188,
+            0.0014237076507452352
+          ],
+          "delta": -0.007095749707958492,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_B1": {
+          "ci95": [
+            -0.016242408876603966,
+            0.0010341285444893829
+          ],
+          "delta": -0.007230438849938174,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_M1": {
+          "ci95": [
+            -0.0014525587312955064,
+            0.0011005967218859838
+          ],
+          "delta": -0.00013468914197968182,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        }
+      },
+      "row_coverage_by_cutoff": {
+        "2010-01-01": {
+          "FRESH": 543,
+          "NOT_LISTED": 4
+        },
+        "2013-01-01": {
+          "FRESH": 524,
+          "NOT_LISTED": 15
+        },
+        "2014-01-01": {
+          "FRESH": 533,
+          "NOT_LISTED": 11
+        }
+      },
+      "sealed_test_start": "2017-01-01",
+      "status": "DEVELOPMENT_ONLY",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 547,
+      "tuning": {
+        "M1": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.07135029029990263
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.07085921120896665
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.06982179438526068
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        },
+        "M3": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.07234940101506511
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.07197233174863135
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.07116183430305911
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        }
+      },
+      "validation_cutoffs": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
+      "validation_drug_clusters": 561,
+      "validation_event_clusters": 67,
+      "validation_rows": 1083,
+      "validation_verdicts": {
+        "BLOCKED": 181,
+        "CONTESTED": 892,
+        "OPEN": 10
+      },
+      "verdicts_by_cutoff": {
+        "2010-01-01": {
+          "BLOCKED": 81,
+          "CONTESTED": 464,
+          "OPEN": 2
+        },
+        "2013-01-01": {
+          "BLOCKED": 88,
+          "CONTESTED": 448,
+          "OPEN": 3
+        },
+        "2014-01-01": {
+          "BLOCKED": 93,
+          "CONTESTED": 444,
+          "OPEN": 7
+        }
+      }
+    },
+    "36": {
+      "reason": "No non-empty train/validation split satisfies strict embargo.",
+      "sealed_test_start": "2017-01-01",
+      "status": "NOT_RUN",
+      "train_cutoffs": [],
+      "validation_cutoffs": []
+    }
+  },
+  "input_sha256": {
+    "drugs_fda": {
+      "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61"
+    },
+    "gsrs": {
+      "file": "dump-public-2026-08-06.gsrs",
+      "sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad"
+    },
+    "ob_manifest": {
+      "file": "OB_EDITIONS.json",
+      "sha256": "526ed04cc517f1221bb2ce7b3f03e3bd13e86a7cc6a1db5f936e26a1aaecaf1d"
+    },
+    "orange_book_current_identity_sources": {
+      "ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+      "ob_anda_2020plus.jsonl": "9f8752a5afb834feb59e635dd00be17e2f089ab36447b191de06eaccf3a51b54",
+      "ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+      "ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+      "ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f"
+    },
+    "s0_manifest": {
+      "file": "S0_INPUT_MANIFEST.json",
+      "sha256": "f6d827361582f3aa5ad79621f784fc1b3260e5ff91c068194323c88d5ed871ff"
+    },
+    "used_edition_zips": [
+      {
+        "file": "ob_20091104091455.zip",
+        "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "file": "ob_20111229223919.zip",
+        "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "file": "ob_20120921215526.zip",
+        "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "file": "ob_20130906105914.zip",
+        "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "file": "ob_20140915104404.zip",
+        "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      }
+    ]
+  },
+  "key_mode": "moiety",
+  "protocol": {
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 20261127,
+    "coverage_target": 0.8,
+    "drug_key_calibration_folds": 5,
+    "hi": 0.75,
+    "lo": 0.25,
+    "tuning": {
+      "age_table_fit": "train_only",
+      "arms": [
+        "M1",
+        "M3"
+      ],
+      "calibration": "fixed sigmoid on logits, held-out validation drug folds",
+      "l2_grid": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "selection": "lowest cross-calibrated validation Brier, then lowest L2",
+      "shared_feature": "b1_age_hazard_logit"
+    },
+    "useful_delta_at_most": -0.01
+  },
+  "scope": "FIX2c development only. No protected cutoffs built or scored.",
+  "status": "DEVELOPMENT_ONLY"
+}

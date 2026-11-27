@@ -176,6 +176,7 @@ class OBHistory:
         sources = (item if isinstance(item, EditionSource) else EditionSource(*item) for item in editions)
         self._ed = sorted(sources, key=lambda source: source.edition_date)
         self._cache = {}
+        self.data_dir = None
 
     @classmethod
     def from_manifest(cls, manifest_path: str, data_dir: str = DEFAULT_DIR):
@@ -192,7 +193,9 @@ class OBHistory:
             identity = {name: entry[name] for name in ("file", "sha256", "source_url")}
             sources.append(EditionSource(d, lambda p=path, d=d: load_edition(p, d), identity,
                                          _availability_proofs(entry, manifest.get("e2b", {}))))
-        return cls(sources)
+        history = cls(sources)
+        history.data_dir = data_dir
+        return history
 
     def edition_dates(self) -> List[date]:
         return [source.edition_date for source in self._ed]

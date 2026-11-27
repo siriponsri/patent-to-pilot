@@ -1,0 +1,121 @@
+{
+  "input_sha256": {
+    "ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f",
+    "ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+    "ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+    "ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+    "ob_anda_2020plus.jsonl": "9f8752a5afb834feb59e635dd00be17e2f089ab36447b191de06eaccf3a51b54",
+    "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+    "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6"
+  },
+  "gsrs_sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad",
+  "legacy": {
+    "entity_count": 2520,
+    "nme_cohort_2014_01_01": 1092,
+    "development_keys": 1783,
+    "low_confidence_keys": 0,
+    "row_counts": {
+      "12": {
+        "all_development_cutoffs": 11992,
+        "window_ends_before_seal": 11425
+      },
+      "24": {
+        "all_development_cutoffs": 11992,
+        "window_ends_before_seal": 10861
+      },
+      "36": {
+        "all_development_cutoffs": 11992,
+        "window_ends_before_seal": 10299
+      }
+    }
+  },
+  "moiety": {
+    "entity_count": 2504,
+    "nme_cohort_2014_01_01": 1070,
+    "development_keys": 1771,
+    "low_confidence_keys": 268,
+    "row_counts": {
+      "12": {
+        "all_development_cutoffs": 11756,
+        "window_ends_before_seal": 11205
+      },
+      "24": {
+        "all_development_cutoffs": 11756,
+        "window_ends_before_seal": 10654
+      },
+      "36": {
+        "all_development_cutoffs": 11756,
+        "window_ends_before_seal": 10104
+      }
+    }
+  },
+  "fresh_seed": 20261129,
+  "fresh_frame": 1661,
+  "excluded_overlap": 110,
+  "draw_replacements": {
+    "U:JHC049LO86": "U:8W8T17847W",
+    "U:9F388J00UK": "U:33E86K87QN"
+  },
+  "fresh_draw": [
+    "E:AMMONIUM LACTATE",
+    "U:82VFR53I78",
+    "U:OCY3U280Y3",
+    "U:4TI98Z838E|U:T18F433X4S",
+    "U:1306V2B0Q8",
+    "E:POTASSIUM CHLORIDE|E:POTASSIUM LACTATE|E:SODIUM CHLORIDE|E:SODIUM PHOSPHATE MONOBASIC|U:5SL0G7R0OK",
+    "U:7AJO3BO7QN",
+    "U:53AH36668S",
+    "U:S65743JHBS",
+    "U:WBZ6M63TEE",
+    "U:13S1S8SF37|U:7A314HQM0I",
+    "U:232HYX66HC",
+    "U:KR87B45RGH",
+    "E:CALCIUM CHLORIDE|E:MAGNESIUM CHLORIDE|E:POTASSIUM CHLORIDE|E:SODIUM ACETATE|E:SODIUM CHLORIDE|E:SODIUM LACTATE|U:5SL0G7R0OK",
+    "NICOTINE POLACRILEX",
+    "U:9KY0QXD6LI",
+    "U:0K47UL67F2",
+    "ENFLURANE",
+    "U:395575MZO7",
+    "U:721M9407IY",
+    "U:COF19H7WBK",
+    "U:BI6GY4U9CW",
+    "POLYTHIAZIDE",
+    "U:XK134822Z0",
+    "U:M32RH9MFGP",
+    "U:JU9YAX04C7",
+    "AMLODIPINE BESYLATE",
+    "U:JX56W9N61Q",
+    "U:FYY3R43WGO",
+    "U:K72T3FS567",
+    "U:X7WDT95N5C",
+    "U:3ASP8Q3768|U:6RZ6XEZ3CR",
+    "U:8W8T17847W",
+    "U:8GTS82S83M|U:WK2XYI10QM",
+    "AMLODIPINE BESYLATE|U:JRM708L703",
+    "U:36S3EQV54C",
+    "U:9ZOQ3TZI87",
+    "U:R3UK8X3U3D",
+    "U:77W477J15H",
+    "ETODOLAC",
+    "DULOXETINE HYDROCHLORIDE",
+    "U:G1LN9045DK",
+    "U:8B1QWR724A|U:Q0MQD1073Q",
+    "U:ADC79EK5Q8",
+    "ABACAVIR SULFATE|U:2T8Q726O95",
+    "U:9Y8NXQ24VQ",
+    "U:N2GI8B1GK7",
+    "U:EH28UP18IF",
+    "U:4O5J85GJJB",
+    "U:G6N3J05W84",
+    "CHLORPHENIRAMINE MALEATE|IBUPROFEN|U:7CUC9DDI9F",
+    "U:J2R869A8YF",
+    "U:2PU6O23V1G",
+    "U:XPA88EAP6V",
+    "VERARD",
+    "U:HD2D469W6U",
+    "E:MAGNESIUM CHLORIDE|E:POTASSIUM PHOSPHATE DIBASIC|E:SODIUM ACETATE|E:SODIUM CHLORIDE|U:0O72R8RF8A|U:5SL0G7R0OK",
+    "U:T795873AJP",
+    "U:65UEH262IS",
+    "U:33E86K87QN"
+  ]
+}
