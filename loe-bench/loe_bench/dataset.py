@@ -13,6 +13,7 @@ from typing import Dict, List, Optional
 
 from .common import (add_months, ingredient_key, parse_yyyymmdd, read_jsonl, years_between)
 from .moiety import drug_product, orange_products, registry_for
+from .moiety_linkage import link_compositions
 
 
 @dataclass
@@ -25,6 +26,7 @@ class Entity:
     sponsors: set = field(default_factory=set)
     nda_dates: List[date] = field(default_factory=list)
     key_confidence: str = "LEGACY"
+    key_aliases: tuple[str, ...] = ()
 
     @property
     def nme(self) -> bool:
@@ -63,20 +65,30 @@ def _original_products(rec: dict, approved: Optional[date]) -> list:
     return products
 
 
-def _original_compositions(rec, approved, registry, orange):
-    groups = defaultdict(list)
+def _original_moieties(rec, approved, registry, orange, *, reconcile_resin=False):
     for product in _original_products(rec, approved):
         app = rec.get("application_number") or ""
         number = str(product.get("product_number") or "").zfill(3)
         evidence = orange.get((app, number))
-        composition = drug_product(registry, rec, product, evidence[0] if evidence else None)
+        composition = drug_product(registry, rec, product, evidence[0] if evidence else None,
+                                   reconcile_resin=reconcile_resin)
         if composition.key:
             # Accept cross-source dates only when both sources agree on the
             # product's composition with the same applicable label scope.
             date_in_ob = (evidence[1] if evidence and composition.parts ==
-                          drug_product(registry, rec, evidence[0]).parts else None)
+                          drug_product(registry, rec, evidence[0],
+                                       reconcile_resin=reconcile_resin).parts else None)
             when = parse_yyyymmdd(product.get("approval_date")) or date_in_ob
-            groups[composition.key].append((composition, when))
+            yield composition, when
+
+
+def _original_compositions(rec, approved, registry, orange, linkage=None):
+    groups = defaultdict(list)
+    for composition, when in _original_moieties(
+        rec, approved, registry, orange, reconcile_resin=linkage is not None
+    ):
+        key = linkage.key(composition.key) if linkage else composition.key
+        groups[key].append((composition, when))
     for key, products in groups.items():
         compatible = [when for _, when in products
                       if when is not None and approved is not None and when <= approved]
@@ -84,20 +96,41 @@ def _original_compositions(rec, approved, registry, orange):
         yield key, when, any(composition.low_confidence for composition, _ in products)
 
 
+def build_moiety_linkage(raw_dir, registry, orange):
+    def compositions():
+        for filename in ("df_nda.jsonl", "df_anda.jsonl"):
+            for rec in read_jsonl(os.path.join(raw_dir, filename)):
+                approved = min((when for when, _ in _final_originals(rec)), default=None)
+                for composition, _ in _original_moieties(rec, approved, registry, orange,
+                                                        reconcile_resin=True):
+                    yield composition
+                    # Preserve the native-only spelling for historical editions
+                    # when it describes the same full native ingredient set.
+                    native = registry.composition(composition.names)
+                    if native.key and native.names == composition.names:
+                        yield native
+    return link_compositions(compositions())
+
+
 def build_entities(raw_dir: str, *, key_mode: str = "moiety", gsrs_path=None) -> Dict[str, Entity]:
-    """Use active moieties by default or select `key_mode="legacy"` for replay.
+    """Use FIX2b active moieties or select `key_mode="fix2"` or `"legacy"` for replay.
 
     Look for the pinned GSRS export in the sibling moiety directory unless a
     path is supplied. Without that file, every name fallback is low confidence.
     """
-    if key_mode not in {"moiety", "legacy"}:
+    if key_mode not in {"moiety", "fix2", "legacy"}:
         raise ValueError(f"unsupported entity key mode: {key_mode}")
-    registry = registry_for(raw_dir, gsrs_path) if key_mode == "moiety" else None
+    registry = registry_for(raw_dir, gsrs_path) if key_mode != "legacy" else None
     orange = orange_products(raw_dir) if registry is not None else {}
+    linkage = build_moiety_linkage(raw_dir, registry, orange) if key_mode == "moiety" else None
+    aliases = defaultdict(list)
+    if linkage:
+        for alias, key in linkage.canonical.items():
+            aliases[key].append(alias)
 
     def compositions(rec, approved):
         if registry is not None:
-            yield from _original_compositions(rec, approved, registry, orange)
+            yield from _original_compositions(rec, approved, registry, orange, linkage)
         else:
             key = ingredient_key(_original_products(rec, approved))
             if key:
@@ -106,7 +139,8 @@ def build_entities(raw_dir: str, *, key_mode: str = "moiety", gsrs_path=None) ->
     def route_key(rec, product):
         if registry is None:
             return ingredient_key([product])
-        return drug_product(registry, rec, product).key
+        key = drug_product(registry, rec, product, reconcile_resin=linkage is not None).key
+        return linkage.key(key) if linkage else key
 
     ents: Dict[str, Entity] = {}
     for rec in read_jsonl(os.path.join(raw_dir, "df_nda.jsonl")):
@@ -115,7 +149,8 @@ def build_entities(raw_dir: str, *, key_mode: str = "moiety", gsrs_path=None) ->
         original_keys = ({route_key(rec, p) for p in _original_products(rec, d)}
                          if registry is None else set())
         for key, approved, low in compositions(rec, d):
-            e = ents.setdefault(key, Entity(key, key_confidence="GSRS" if registry else "LEGACY"))
+            e = ents.setdefault(key, Entity(key, key_confidence="GSRS" if registry else "LEGACY",
+                                            key_aliases=tuple(sorted(aliases[key]))))
             if low:
                 e.key_confidence = "LOW_CONFIDENCE"
             e.n_nda_apps += 1
@@ -239,6 +274,7 @@ def snapshot_features(raw_dir: str, t0: date, ents: Dict[str, Entity], *, gsrs_p
     out: Dict[str, dict] = {}
     legacy = all(e.key_confidence == "LEGACY" for e in ents.values())
     registry = None if legacy else registry_for(raw_dir, gsrs_path)
+    canonical = {alias: e.key for e in ents.values() for alias in e.key_aliases}
     for rec in read_jsonl(os.path.join(raw_dir, "ob_nda.jsonl")):
         approved = parse_yyyymmdd(rec.get("approval_date"))
         if approved is None and rec.get("approved_prior_to_1982") is True:
@@ -253,7 +289,7 @@ def snapshot_features(raw_dir: str, t0: date, ents: Dict[str, Entity], *, gsrs_p
                 prods.append(p)
         keys = ({ingredient_key(prods)} if legacy else
                 {registry.product(p, p.get("openfda") or rec.get("openfda")).key for p in prods})
-        for key in sorted(keys):
+        for key in sorted({canonical.get(key, key) for key in keys}):
             e = ents.get(key)
             if e is None or e.nda_first is None or e.nda_first > t0:
                 continue

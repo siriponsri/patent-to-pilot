@@ -57,6 +57,7 @@ def product_names(product):
 class Composition:
     parts: frozenset
     low_confidence: bool = False
+    names: frozenset = frozenset()
 
     @property
     def key(self):
@@ -103,6 +104,7 @@ class Registry:
         return next(iter(choices)) if len(choices) == 1 else None
 
     def composition(self, names, unii=()):
+        names = tuple(names)
         hints = {code for code in unii if UNII.fullmatch(code)}
         parts, low = set(), False
         for name in names:
@@ -139,9 +141,10 @@ class Registry:
                 stripped = "WATER"
             if stripped:
                 parts.update(self.known(stripped, hints) or {stripped})
-        return Composition(frozenset(parts), low)
+        normalized = {electrolyte_name(name) or name_form(name) for name in names}
+        return Composition(frozenset(parts), low, frozenset(normalized - {""}))
 
-    def product(self, product, annotation=None):
+    def product(self, product, annotation=None, *, reconcile_resin=False):
         """Use labels only when tied to a product, never as an unscoped union."""
         annotation = annotation or {}
         hints = annotation.get("unii") or []
@@ -149,9 +152,15 @@ class Registry:
         native = self.composition(names, hints)
         substances = annotation.get("substance_name") or []
         if (len(names) == len(substances) == len(hints) == 1 and len(native.parts) == 1
-                and native.low_confidence and name_form(names[0]) == name_form(substances[0])
+                and native.low_confidence
                 and hints[0] in self.targets and not self.ids(names[0])):
-            return Composition(self.from_ids(hints))
+            ingredient, label = name_form(names[0]), name_form(substances[0])
+            # A polacrilex resin can be listed as the native ingredient while
+            # the singleton label identifies its active moiety (FIX2 nicotine SPL).
+            resin = (reconcile_resin and ingredient == label + " POLACRILEX"
+                     and hints[0] in self.ids(label))
+            if ingredient == label or resin:
+                return Composition(self.from_ids(hints), names=native.names)
         brand = name_form(product.get("brand_name"))
         label_brands = [name_form(name) for name in annotation.get("brand_name") or []]
         if not substances or len(annotation.get("spl_id") or []) != 1 or not brand:
@@ -179,9 +188,9 @@ class Registry:
         return self.product(product, product.get("openfda"))
 
 
-def drug_product(registry, record, product, orange=None):
+def drug_product(registry, record, product, orange=None, *, reconcile_resin=False):
     annotation = product.get("openfda") or record.get("openfda") or {}
-    native = registry.product(product, annotation)
+    native = registry.product(product, annotation, reconcile_resin=reconcile_resin)
     if orange is None:
         return native
     listed = registry.orange_book(orange)

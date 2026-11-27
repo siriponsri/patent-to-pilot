@@ -109,7 +109,7 @@ def main():
     data_end, digests = pinned_inputs(args.raw_dir)
     registry = registry_for(args.raw_dir, args.gsrs)
     legacy = build_entities(args.raw_dir, key_mode="legacy")
-    moiety = build_entities(args.raw_dir, gsrs_path=args.gsrs)
+    moiety = build_entities(args.raw_dir, key_mode="fix2", gsrs_path=args.gsrs)
     by_app, by_key, by_screen = evidence(args.raw_dir, registry)
     with (DATA / "T7_ingredient_audit.csv").open(encoding="utf-8", newline="") as stream:
         design = list(csv.DictReader(stream))

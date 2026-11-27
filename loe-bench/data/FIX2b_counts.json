@@ -1,0 +1,136 @@
+{
+  "input_sha256": {
+    "ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f",
+    "ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+    "ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+    "ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+    "ob_anda_2020plus.jsonl": "9f8752a5afb834feb59e635dd00be17e2f089ab36447b191de06eaccf3a51b54",
+    "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+    "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6"
+  },
+  "gsrs_sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad",
+  "counts": {
+    "legacy": {
+      "entities": 2520,
+      "nme_2014": 1092,
+      "rows": {
+        "12": {
+          "all_development_cutoffs": 11992,
+          "window_ends_before_seal": 11425
+        },
+        "24": {
+          "all_development_cutoffs": 11992,
+          "window_ends_before_seal": 10861
+        },
+        "36": {
+          "all_development_cutoffs": 11992,
+          "window_ends_before_seal": 10299
+        }
+      }
+    },
+    "fix2": {
+      "entities": 2504,
+      "nme_2014": 1070,
+      "rows": {
+        "12": {
+          "all_development_cutoffs": 11756,
+          "window_ends_before_seal": 11205
+        },
+        "24": {
+          "all_development_cutoffs": 11756,
+          "window_ends_before_seal": 10654
+        },
+        "36": {
+          "all_development_cutoffs": 11756,
+          "window_ends_before_seal": 10104
+        }
+      }
+    },
+    "fix2b": {
+      "entities": 2445,
+      "nme_2014": 1070,
+      "rows": {
+        "12": {
+          "all_development_cutoffs": 11694,
+          "window_ends_before_seal": 11148
+        },
+        "24": {
+          "all_development_cutoffs": 11694,
+          "window_ends_before_seal": 10603
+        },
+        "36": {
+          "all_development_cutoffs": 11694,
+          "window_ends_before_seal": 10059
+        }
+      }
+    }
+  },
+  "fresh_seed": 20261130,
+  "eligible": 1728,
+  "excluded": 167,
+  "fresh_frame": 1561,
+  "fresh_draw": [
+    "U:ZS9KD92H6V",
+    "U:1L4806J2QF|U:W9WZN9A0GM",
+    "U:L4YEB44I46",
+    "POLYTHIAZIDE|U:XM03YJ541D",
+    "U:6X4F561V3W",
+    "U:7662KG2R6K",
+    "U:5Y5F15120W",
+    "U:0E43V0BB57",
+    "U:WRE554RFEZ",
+    "U:RRW32X4U1F",
+    "U:XFX1A5KJ3V",
+    "U:R4Z9X1N2ND",
+    "U:Q0MQD1073Q",
+    "U:SI86V6QNEG",
+    "U:2919279Q3W",
+    "U:68QN45K12N",
+    "ACETIC ACID GLACIAL|U:WI4X0X7BPJ",
+    "U:RMW9V5RW38",
+    "U:3G6A5W338E",
+    "U:0J48LPH2TH|U:2KH13Z0S0Y",
+    "U:Y8335394RO|U:YKH834O4BH",
+    "U:QFP0P1DV7Z",
+    "U:46627O600J",
+    "U:72YY86EA29",
+    "U:P10582JYYK",
+    "U:7SEV7J4R1U",
+    "U:51086HBW8G",
+    "U:01K63SUP8D",
+    "U:KZW0R0686Q",
+    "U:F93UJX4SWT",
+    "U:K3GDH6OH08",
+    "U:O7M2E4264D",
+    "E:CALCIUM CHLORIDE|E:SODIUM CHLORIDE|E:SODIUM LACTATE|U:5SL0G7R0OK",
+    "U:003N66TS6T",
+    "U:38LVP0K73A",
+    "U:88755TAZ87",
+    "U:6RZ6XEZ3CR",
+    "U:39J1LGJ30J",
+    "U:30IW36W5B2",
+    "TECHNETIUM TC 99M LIDOFENIN KIT",
+    "U:3QN8BYN5QF",
+    "U:36B82AMQ7N|U:RP4A60D26L",
+    "U:7355X3ROTS|U:ITX08688JL",
+    "U:0F65R8P09N",
+    "U:4Z8R6ORS6L",
+    "U:LER583670J",
+    "U:V0M92G2U26",
+    "U:67P356D8GH",
+    "U:57Y76R9ATQ|U:8R78F6L9VO",
+    "U:JMS50MPO89",
+    "U:19O2GP3B7Q",
+    "TECHNETIUM TC 99M OXIDRONATE KIT",
+    "U:OAY8ORS3CQ",
+    "U:S239O2OOV3",
+    "U:57Y76R9ATQ",
+    "U:9U7D5QH5AE",
+    "U:H6EP7W5457",
+    "U:6OEV9DX57Y",
+    "U:15KFG88UOJ",
+    "U:5E8K9I0O4U|U:WI4X0X7BPJ"
+  ],
+  "canonical_alias_count": 176,
+  "conflict_count": 0
+}
