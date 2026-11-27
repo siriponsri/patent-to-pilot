@@ -1,0 +1,12 @@
+{
+  "task": "T10-E4",
+  "status": "BLOCKED_REMOTE_UNREACHABLE",
+  "date": "2026-11-27",
+  "blocker": "dr-train (100.77.149.83) timed out on ssh (3 attempts) and `tailscale ping` got no reply; tailscale status: offline, last seen 1d ago.",
+  "gpu_smoke": null,
+  "local_checks": {"unit_tests": "20 passed (16 existing + 4 new, mock model)"},
+  "smoke_input_plan": {"source": "loe-bench/data/trackA_S0_example.csv", "rows": 20, "sampling": "random.seed(1) sample of 20 rows, sorted by entity",
+    "columns_passed": ["entity", "t0", "horizon_months", "rule_baseline"], "columns_dropped": ["p_model", "verdict", "action", "next_evidence"]},
+  "model": null,
+  "model_note": "Not selected: inventory impossible. Shared V100 caveat: another service holds about 24 GB, so only about 8 GB is free; an 8B model in fp16 (about 16 GB) will not fit. Candidate: Qwen3-4B-Instruct or Qwen3-1.7B in fp16, subject to a live nvidia-smi check."
+}
