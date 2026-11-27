@@ -171,3 +171,5 @@ The owner approved up to twelve sequential public desk-research batches, Thailan
 Owner authorized impact-driven redirection within D39. The [Planner field evidence review](../ra-pharma/ip-pharma/D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.
 
 Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and an independently scorable local AI workflow. See the D39 protocol amendment on main. All three platform checks remain NOT_RUN.
+
+D39 closed after Batch 4 under the approved early stop. Empty deep-review queue at e495570d. Batches 5-12 and platform comparisons NOT_RUN.
