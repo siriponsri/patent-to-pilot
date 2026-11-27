@@ -1,0 +1,1265 @@
+{
+  "code_commit_sha": "b5903719f0dc9af9c0f96f0dae300e297d678b56",
+  "family": {
+    "H1": {
+      "ci95": [
+        0.13356580695290377,
+        0.35368506493506485
+      ],
+      "contrast": "M3-B1",
+      "estimate": 0.24084249084249088,
+      "horizon": 24,
+      "undefined_draws": 0
+    },
+    "H2": {
+      "ci95": [
+        -0.04672897196261683,
+        0.033333333333333326
+      ],
+      "contrast": "M3-M1",
+      "estimate": -0.010989010989011061,
+      "horizon": 24,
+      "undefined_draws": 0
+    },
+    "H3": {
+      "ci95": [
+        0.05636263415595447,
+        0.2601863933668075
+      ],
+      "contrast": "M3-B1",
+      "estimate": 0.1522222222222222,
+      "horizon": 12,
+      "undefined_draws": 0
+    }
+  },
+  "horizons": {
+    "12": {
+      "drugs": 609,
+      "policy": {
+        "B1": {
+          "blocked_conflict_referrals": 0,
+          "by_cutoff": {
+            "2012-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                0.005380861111917521,
+                0.37425911945450446
+              ],
+              "clear_event_rate": 0.08695652173913043,
+              "clear_rate": 0.043151969981238276,
+              "clear_rows": 23,
+              "cleared_event_fraction": 0.08695652173913043,
+              "events": 23,
+              "flag_events": 2,
+              "flag_precision": 0.017391304347826087,
+              "flag_recall": 0.08695652173913043,
+              "flag_rows": 115,
+              "missed_events": 2,
+              "refer_events": 19,
+              "refer_rate": 0.7410881801125704,
+              "refer_rows": 395,
+              "rows": 533
+            },
+            "2013-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                0.007734987848381437,
+                0.5379974842158501
+              ],
+              "clear_event_rate": 0.125,
+              "clear_rate": 0.029684601113172542,
+              "clear_rows": 16,
+              "cleared_event_fraction": 0.11764705882352941,
+              "events": 17,
+              "flag_events": 0,
+              "flag_precision": 0.0,
+              "flag_recall": 0.0,
+              "flag_rows": 129,
+              "missed_events": 2,
+              "refer_events": 15,
+              "refer_rate": 0.7309833024118738,
+              "refer_rows": 394,
+              "rows": 539
+            },
+            "2014-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                0.0409649820904283,
+                0.7132159604339534
+              ],
+              "clear_event_rate": 0.23529411764705882,
+              "clear_rate": 0.03125,
+              "clear_rows": 17,
+              "cleared_event_fraction": 0.16666666666666666,
+              "events": 24,
+              "flag_events": 8,
+              "flag_precision": 0.05063291139240506,
+              "flag_recall": 0.3333333333333333,
+              "flag_rows": 158,
+              "missed_events": 4,
+              "refer_events": 12,
+              "refer_rate": 0.6783088235294118,
+              "refer_rows": 369,
+              "rows": 544
+            },
+            "2015-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                0.011250891415827545,
+                0.7825417952230548
+              ],
+              "clear_event_rate": 0.18181818181818182,
+              "clear_rate": 0.02018348623853211,
+              "clear_rows": 11,
+              "cleared_event_fraction": 0.07692307692307693,
+              "events": 26,
+              "flag_events": 2,
+              "flag_precision": 0.013793103448275862,
+              "flag_recall": 0.07692307692307693,
+              "flag_rows": 145,
+              "missed_events": 2,
+              "refer_events": 22,
+              "refer_rate": 0.7137614678899082,
+              "refer_rows": 389,
+              "rows": 545
+            }
+          },
+          "clear_event_ci95": [
+            0.05481988877556727,
+            0.3165037945367434
+          ],
+          "clear_event_rate": 0.14925373134328357,
+          "clear_rate": 0.031004164738546967,
+          "clear_rows": 67,
+          "cleared_event_fraction": 0.1111111111111111,
+          "events": 90,
+          "flag_events": 12,
+          "flag_precision": 0.021937842778793418,
+          "flag_recall": 0.13333333333333333,
+          "flag_rows": 547,
+          "missed_events": 10,
+          "refer_events": 68,
+          "refer_rate": 0.7158722813512263,
+          "refer_rows": 1547,
+          "rows": 2161
+        },
+        "M1": {
+          "blocked_conflict_referrals": 0,
+          "by_cutoff": {
+            "2012-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                9.100742052835725e-05,
+                0.06442787638175392
+              ],
+              "clear_event_rate": 0.00980392156862745,
+              "clear_rate": 0.19136960600375236,
+              "clear_rows": 102,
+              "cleared_event_fraction": 0.043478260869565216,
+              "events": 23,
+              "flag_events": 16,
+              "flag_precision": 0.1509433962264151,
+              "flag_recall": 0.6956521739130435,
+              "flag_rows": 106,
+              "missed_events": 1,
+              "refer_events": 6,
+              "refer_rate": 0.6097560975609756,
+              "refer_rows": 325,
+              "rows": 533
+            },
+            "2013-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                0.0,
+                0.03415629124179571
+              ],
+              "clear_event_rate": 0.0,
+              "clear_rate": 0.20037105751391465,
+              "clear_rows": 108,
+              "cleared_event_fraction": 0.0,
+              "events": 17,
+              "flag_events": 8,
+              "flag_precision": 0.11594202898550725,
+              "flag_recall": 0.47058823529411764,
+              "flag_rows": 69,
+              "missed_events": 0,
+              "refer_events": 9,
+              "refer_rate": 0.6716141001855288,
+              "refer_rows": 362,
+              "rows": 539
+            },
+            "2014-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                7.546956824302795e-05,
+                0.05342799504828373
+              ],
+              "clear_event_rate": 0.008130081300813009,
+              "clear_rate": 0.2261029411764706,
+              "clear_rows": 123,
+              "cleared_event_fraction": 0.041666666666666664,
+              "events": 24,
+              "flag_events": 11,
+              "flag_precision": 0.1506849315068493,
+              "flag_recall": 0.4583333333333333,
+              "flag_rows": 73,
+              "missed_events": 1,
+              "refer_events": 12,
+              "refer_rate": 0.6397058823529411,
+              "refer_rows": 348,
+              "rows": 544
+            },
+            "2015-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                7.195935576660805e-05,
+                0.05094297202278216
+              ],
+              "clear_event_rate": 0.007751937984496124,
+              "clear_rate": 0.23669724770642203,
+              "clear_rows": 129,
+              "cleared_event_fraction": 0.038461538461538464,
+              "events": 26,
+              "flag_events": 16,
+              "flag_precision": 0.20253164556962025,
+              "flag_recall": 0.6153846153846154,
+              "flag_rows": 79,
+              "missed_events": 1,
+              "refer_events": 9,
+              "refer_rate": 0.618348623853211,
+              "refer_rows": 337,
+              "rows": 545
+            }
+          },
+          "clear_event_ci95": [
+            1.7509585834789806e-05,
+            0.051932819573284494
+          ],
+          "clear_event_rate": 0.006493506493506494,
+          "clear_rate": 0.21378991207774178,
+          "clear_rows": 462,
+          "cleared_event_fraction": 0.03333333333333333,
+          "events": 90,
+          "flag_events": 51,
+          "flag_precision": 0.1559633027522936,
+          "flag_recall": 0.5666666666666667,
+          "flag_rows": 327,
+          "missed_events": 3,
+          "refer_events": 36,
+          "refer_rate": 0.6348912540490513,
+          "refer_rows": 1372,
+          "rows": 2161
+        },
+        "M3": {
+          "blocked_conflict_referrals": 156,
+          "by_cutoff": {
+            "2012-01-01": {
+              "blocked_conflict_referrals": 77,
+              "clear_event_ci95": [
+                7.252153823353468e-05,
+                0.05134096399171015
+              ],
+              "clear_event_rate": 0.0078125,
+              "clear_rate": 0.2401500938086304,
+              "clear_rows": 128,
+              "cleared_event_fraction": 0.043478260869565216,
+              "events": 23,
+              "flag_events": 14,
+              "flag_precision": 0.1346153846153846,
+              "flag_recall": 0.6086956521739131,
+              "flag_rows": 104,
+              "missed_events": 1,
+              "refer_events": 8,
+              "refer_rate": 0.5647279549718575,
+              "refer_rows": 301,
+              "rows": 533
+            },
+            "2013-01-01": {
+              "blocked_conflict_referrals": 23,
+              "clear_event_ci95": [
+                0.0,
+                0.02927682106439632
+              ],
+              "clear_event_rate": 0.0,
+              "clear_rate": 0.23376623376623376,
+              "clear_rows": 126,
+              "cleared_event_fraction": 0.0,
+              "events": 17,
+              "flag_events": 13,
+              "flag_precision": 0.08387096774193549,
+              "flag_recall": 0.7647058823529411,
+              "flag_rows": 155,
+              "missed_events": 0,
+              "refer_events": 4,
+              "refer_rate": 0.47866419294990725,
+              "refer_rows": 258,
+              "rows": 539
+            },
+            "2014-01-01": {
+              "blocked_conflict_referrals": 33,
+              "clear_event_ci95": [
+                6.876116217698103e-05,
+                0.04867883993288073
+              ],
+              "clear_event_rate": 0.007407407407407408,
+              "clear_rate": 0.24816176470588236,
+              "clear_rows": 135,
+              "cleared_event_fraction": 0.041666666666666664,
+              "events": 24,
+              "flag_events": 14,
+              "flag_precision": 0.09655172413793103,
+              "flag_recall": 0.5833333333333334,
+              "flag_rows": 145,
+              "missed_events": 1,
+              "refer_events": 9,
+              "refer_rate": 0.4852941176470588,
+              "refer_rows": 264,
+              "rows": 544
+            },
+            "2015-01-01": {
+              "blocked_conflict_referrals": 23,
+              "clear_event_ci95": [
+                6.58351552758329e-05,
+                0.04660739993573687
+              ],
+              "clear_event_rate": 0.0070921985815602835,
+              "clear_rate": 0.25871559633027524,
+              "clear_rows": 141,
+              "cleared_event_fraction": 0.038461538461538464,
+              "events": 26,
+              "flag_events": 15,
+              "flag_precision": 0.11278195488721804,
+              "flag_recall": 0.5769230769230769,
+              "flag_rows": 133,
+              "missed_events": 1,
+              "refer_events": 10,
+              "refer_rate": 0.4972477064220184,
+              "refer_rows": 271,
+              "rows": 545
+            }
+          },
+          "clear_event_ci95": [
+            1.526307293523187e-05,
+            0.045269740835580066
+          ],
+          "clear_event_rate": 0.005660377358490566,
+          "clear_rate": 0.24525682554372977,
+          "clear_rows": 530,
+          "cleared_event_fraction": 0.03333333333333333,
+          "events": 90,
+          "flag_events": 56,
+          "flag_precision": 0.1042830540037244,
+          "flag_recall": 0.6222222222222222,
+          "flag_rows": 537,
+          "missed_events": 3,
+          "refer_events": 31,
+          "refer_rate": 0.5062471078204535,
+          "refer_rows": 1094,
+          "rows": 2161
+        }
+      },
+      "queue": {
+        "arms": {
+          "B1": {
+            "cutoffs": [
+              {
+                "allocated_slots": 106,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 12.0
+              },
+              {
+                "allocated_slots": 107,
+                "boundary_tie_rows": 27,
+                "expected_queued_events": 8.0
+              },
+              {
+                "allocated_slots": 108,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 9.0
+              },
+              {
+                "allocated_slots": 109,
+                "boundary_tie_rows": 30,
+                "expected_queued_events": 14.3
+              }
+            ],
+            "distinct_event_drug_capture": 0.4811111111111111,
+            "expected_captured_event_drugs": 43.3,
+            "expected_queued_events": 43.3,
+            "precision": 0.10069767441860464,
+            "recall": 0.4811111111111111
+          },
+          "M1": {
+            "cutoffs": [
+              {
+                "allocated_slots": 106,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 16.0
+              },
+              {
+                "allocated_slots": 107,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 9.0
+              },
+              {
+                "allocated_slots": 108,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 14.0
+              },
+              {
+                "allocated_slots": 109,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 18.0
+              }
+            ],
+            "distinct_event_drug_capture": 0.6333333333333333,
+            "expected_captured_event_drugs": 57.0,
+            "expected_queued_events": 57.0,
+            "precision": 0.1325581395348837,
+            "recall": 0.6333333333333333
+          },
+          "M3": {
+            "cutoffs": [
+              {
+                "allocated_slots": 106,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 16.0
+              },
+              {
+                "allocated_slots": 107,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 10.0
+              },
+              {
+                "allocated_slots": 108,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 13.0
+              },
+              {
+                "allocated_slots": 109,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 18.0
+              }
+            ],
+            "distinct_event_drug_capture": 0.6333333333333333,
+            "expected_captured_event_drugs": 57.0,
+            "expected_queued_events": 57.0,
+            "precision": 0.1325581395348837,
+            "recall": 0.6333333333333333
+          }
+        },
+        "contrasts": {
+          "M1-B1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.06135204081632664,
+                0.2604226502664002
+              ],
+              "estimate": 0.1522222222222222,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.012275356899254483,
+                0.05529360144484344
+              ],
+              "estimate": 0.031860465116279074,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.06135204081632664,
+                0.2604226502664002
+              ],
+              "estimate": 0.1522222222222222,
+              "undefined_draws": 0
+            }
+          },
+          "M3-B1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.05636263415595436,
+                0.2601863933668075
+              ],
+              "estimate": 0.1522222222222222,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.011741742893329573,
+                0.054583421002744326
+              ],
+              "estimate": 0.031860465116279074,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.05636263415595447,
+                0.2601863933668075
+              ],
+              "estimate": 0.1522222222222222,
+              "undefined_draws": 0
+            }
+          },
+          "M3-M1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                -0.04707282913165261,
+                0.03296703296703296
+              ],
+              "estimate": 0.0,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.009389671361502344,
+                0.0069767441860465185
+              ],
+              "estimate": 0.0,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.04707282913165261,
+                0.03296703296703296
+              ],
+              "estimate": 0.0,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "cutoffs": [
+          {
+            "capacity": 106,
+            "cutoff": "2012-01-01",
+            "rows": 533
+          },
+          {
+            "capacity": 107,
+            "cutoff": "2013-01-01",
+            "rows": 539
+          },
+          {
+            "capacity": 108,
+            "cutoff": "2014-01-01",
+            "rows": 544
+          },
+          {
+            "capacity": 109,
+            "cutoff": "2015-01-01",
+            "rows": 545
+          }
+        ],
+        "event_drugs": 90,
+        "event_rows": 90,
+        "levels": {
+          "B1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.37999367088607594,
+                0.582299935389067
+              ],
+              "estimate": 0.4811111111111111,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.0740045325423638,
+                0.12841378177309198
+              ],
+              "estimate": 0.10069767441860464,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.37999367088607594,
+                0.5822999353890669
+              ],
+              "estimate": 0.4811111111111111,
+              "undefined_draws": 0
+            }
+          },
+          "M1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.5416544117647059,
+                0.7333333333333333
+              ],
+              "estimate": 0.6333333333333333,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.10439629627645038,
+                0.1650943396226415
+              ],
+              "estimate": 0.1325581395348837,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.5416544117647059,
+                0.7333333333333333
+              ],
+              "estimate": 0.6333333333333333,
+              "undefined_draws": 0
+            }
+          },
+          "M3": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.5325587843833186,
+                0.7353025693035835
+              ],
+              "estimate": 0.6333333333333333,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.10304449648711944,
+                0.16436070261437905
+              ],
+              "estimate": 0.1325581395348837,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.5325587843833186,
+                0.7353025693035835
+              ],
+              "estimate": 0.6333333333333333,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "queue_slots": 430,
+        "undefined_draws": 0
+      },
+      "rows": 2161
+    },
+    "24": {
+      "drugs": 561,
+      "policy": {
+        "B1": {
+          "blocked_conflict_referrals": 0,
+          "by_cutoff": {
+            "2013-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": null,
+              "clear_event_rate": null,
+              "clear_rate": 0.0,
+              "clear_rows": 0,
+              "cleared_event_fraction": 0.0,
+              "events": 41,
+              "flag_events": 15,
+              "flag_precision": 0.22058823529411764,
+              "flag_recall": 0.36585365853658536,
+              "flag_rows": 68,
+              "missed_events": 0,
+              "refer_events": 26,
+              "refer_rate": 0.8738404452690167,
+              "refer_rows": 471,
+              "rows": 539
+            },
+            "2014-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": null,
+              "clear_event_rate": null,
+              "clear_rate": 0.0,
+              "clear_rows": 0,
+              "cleared_event_fraction": 0.0,
+              "events": 50,
+              "flag_events": 8,
+              "flag_precision": 0.13333333333333333,
+              "flag_recall": 0.16,
+              "flag_rows": 60,
+              "missed_events": 0,
+              "refer_events": 42,
+              "refer_rate": 0.8897058823529411,
+              "refer_rows": 484,
+              "rows": 544
+            }
+          },
+          "clear_event_ci95": null,
+          "clear_event_rate": null,
+          "clear_rate": 0.0,
+          "clear_rows": 0,
+          "cleared_event_fraction": 0.0,
+          "events": 91,
+          "flag_events": 23,
+          "flag_precision": 0.1796875,
+          "flag_recall": 0.25274725274725274,
+          "flag_rows": 128,
+          "missed_events": 0,
+          "refer_events": 68,
+          "refer_rate": 0.8818097876269622,
+          "refer_rows": 955,
+          "rows": 1083
+        },
+        "M1": {
+          "blocked_conflict_referrals": 0,
+          "by_cutoff": {
+            "2013-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                8.595145272122629e-05,
+                0.06084854991610092
+              ],
+              "clear_event_rate": 0.009259259259259259,
+              "clear_rate": 0.20037105751391465,
+              "clear_rows": 108,
+              "cleared_event_fraction": 0.024390243902439025,
+              "events": 41,
+              "flag_events": 22,
+              "flag_precision": 0.3283582089552239,
+              "flag_recall": 0.5365853658536586,
+              "flag_rows": 67,
+              "missed_events": 1,
+              "refer_events": 18,
+              "refer_rate": 0.6753246753246753,
+              "refer_rows": 364,
+              "rows": 539
+            },
+            "2014-01-01": {
+              "blocked_conflict_referrals": 0,
+              "clear_event_ci95": [
+                0.0010228083105297769,
+                0.07114016320209589
+              ],
+              "clear_event_rate": 0.01652892561983471,
+              "clear_rate": 0.22242647058823528,
+              "clear_rows": 121,
+              "cleared_event_fraction": 0.04,
+              "events": 50,
+              "flag_events": 28,
+              "flag_precision": 0.4,
+              "flag_recall": 0.56,
+              "flag_rows": 70,
+              "missed_events": 2,
+              "refer_events": 20,
+              "refer_rate": 0.6488970588235294,
+              "refer_rows": 353,
+              "rows": 544
+            }
+          },
+          "clear_event_ci95": [
+            0.0004256595665569022,
+            0.06662465681358654
+          ],
+          "clear_event_rate": 0.013100436681222707,
+          "clear_rate": 0.21144967682363805,
+          "clear_rows": 229,
+          "cleared_event_fraction": 0.03296703296703297,
+          "events": 91,
+          "flag_events": 50,
+          "flag_precision": 0.36496350364963503,
+          "flag_recall": 0.5494505494505495,
+          "flag_rows": 137,
+          "missed_events": 3,
+          "refer_events": 38,
+          "refer_rate": 0.6620498614958449,
+          "refer_rows": 717,
+          "rows": 1083
+        },
+        "M3": {
+          "blocked_conflict_referrals": 26,
+          "by_cutoff": {
+            "2013-01-01": {
+              "blocked_conflict_referrals": 15,
+              "clear_event_ci95": [
+                8.28817579811825e-05,
+                0.058675387419097315
+              ],
+              "clear_event_rate": 0.008928571428571428,
+              "clear_rate": 0.2077922077922078,
+              "clear_rows": 112,
+              "cleared_event_fraction": 0.024390243902439025,
+              "events": 41,
+              "flag_events": 33,
+              "flag_precision": 0.22916666666666666,
+              "flag_recall": 0.8048780487804879,
+              "flag_rows": 144,
+              "missed_events": 1,
+              "refer_events": 7,
+              "refer_rate": 0.5250463821892394,
+              "refer_rows": 283,
+              "rows": 539
+            },
+            "2014-01-01": {
+              "blocked_conflict_referrals": 11,
+              "clear_event_ci95": [
+                0.00099806294817825,
+                0.06941903022140002
+              ],
+              "clear_event_rate": 0.016129032258064516,
+              "clear_rate": 0.22794117647058823,
+              "clear_rows": 124,
+              "cleared_event_fraction": 0.04,
+              "events": 50,
+              "flag_events": 33,
+              "flag_precision": 0.2129032258064516,
+              "flag_recall": 0.66,
+              "flag_rows": 155,
+              "missed_events": 2,
+              "refer_events": 15,
+              "refer_rate": 0.48713235294117646,
+              "refer_rows": 265,
+              "rows": 544
+            }
+          },
+          "clear_event_ci95": [
+            0.000413034070938689,
+            0.06464850173860728
+          ],
+          "clear_event_rate": 0.012711864406779662,
+          "clear_rate": 0.21791320406278855,
+          "clear_rows": 236,
+          "cleared_event_fraction": 0.03296703296703297,
+          "events": 91,
+          "flag_events": 66,
+          "flag_precision": 0.22073578595317725,
+          "flag_recall": 0.7252747252747253,
+          "flag_rows": 299,
+          "missed_events": 3,
+          "refer_events": 22,
+          "refer_rate": 0.5060018467220684,
+          "refer_rows": 548,
+          "rows": 1083
+        }
+      },
+      "queue": {
+        "arms": {
+          "B1": {
+            "cutoffs": [
+              {
+                "allocated_slots": 107,
+                "boundary_tie_rows": 24,
+                "expected_queued_events": 20.249999999999996
+              },
+              {
+                "allocated_slots": 108,
+                "boundary_tie_rows": 12,
+                "expected_queued_events": 15.833333333333332
+              }
+            ],
+            "distinct_event_drug_capture": 0.4639303482587065,
+            "expected_captured_event_drugs": 31.083333333333336,
+            "expected_queued_events": 36.08333333333333,
+            "precision": 0.16782945736434107,
+            "recall": 0.39652014652014644
+          },
+          "M1": {
+            "cutoffs": [
+              {
+                "allocated_slots": 107,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 27.0
+              },
+              {
+                "allocated_slots": 108,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 32.0
+              }
+            ],
+            "distinct_event_drug_capture": 0.6716417910447762,
+            "expected_captured_event_drugs": 45.0,
+            "expected_queued_events": 59.0,
+            "precision": 0.2744186046511628,
+            "recall": 0.6483516483516484
+          },
+          "M3": {
+            "cutoffs": [
+              {
+                "allocated_slots": 107,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 26.0
+              },
+              {
+                "allocated_slots": 108,
+                "boundary_tie_rows": 0,
+                "expected_queued_events": 32.0
+              }
+            ],
+            "distinct_event_drug_capture": 0.6567164179104478,
+            "expected_captured_event_drugs": 44.0,
+            "expected_queued_events": 58.0,
+            "precision": 0.26976744186046514,
+            "recall": 0.6373626373626373
+          }
+        },
+        "contrasts": {
+          "M1-B1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.07435855041060191,
+                0.3344063156382317
+              ],
+              "estimate": 0.20771144278606968,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.05709081571696782,
+                0.16066906356873148
+              ],
+              "estimate": 0.10658914728682173,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.14254940470921482,
+                0.3620997887981582
+              ],
+              "estimate": 0.25183150183150194,
+              "undefined_draws": 0
+            }
+          },
+          "M3-B1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.06843072755417955,
+                0.3202774213133528
+              ],
+              "estimate": 0.19278606965174128,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.05433752769523045,
+                0.1552461177320332
+              ],
+              "estimate": 0.10193798449612407,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.13356580695290377,
+                0.35368506493506485
+              ],
+              "estimate": 0.24084249084249088,
+              "undefined_draws": 0
+            }
+          },
+          "M3-M1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                -0.06153846153846154,
+                0.04226861167002009
+              ],
+              "estimate": -0.014925373134328401,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                -0.01869158878504673,
+                0.013953488372093037
+              ],
+              "estimate": -0.0046511627906976605,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                -0.04672897196261683,
+                0.033333333333333326
+              ],
+              "estimate": -0.010989010989011061,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "cutoffs": [
+          {
+            "capacity": 107,
+            "cutoff": "2013-01-01",
+            "rows": 539
+          },
+          {
+            "capacity": 108,
+            "cutoff": "2014-01-01",
+            "rows": 544
+          }
+        ],
+        "event_drugs": 67,
+        "event_rows": 91,
+        "levels": {
+          "B1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.3489438281625782,
+                0.5864389252750007
+              ],
+              "estimate": 0.4639303482587065,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.11380217394236086,
+                0.22322971723044385
+              ],
+              "estimate": 0.16782945736434107,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.30095078329989194,
+                0.49224785018902656
+              ],
+              "estimate": 0.39652014652014644,
+              "undefined_draws": 0
+            }
+          },
+          "M1": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.5555555555555556,
+                0.7826863354037263
+              ],
+              "estimate": 0.6716417910447762,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.20091121495327102,
+                0.35348837209302325
+              ],
+              "estimate": 0.2744186046511628,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.5312403549382716,
+                0.7558139534883721
+              ],
+              "estimate": 0.6483516483516484,
+              "undefined_draws": 0
+            }
+          },
+          "M3": {
+            "distinct_event_drug_capture": {
+              "ci95": [
+                0.5499823943661972,
+                0.772763929618768
+              ],
+              "estimate": 0.6567164179104478,
+              "undefined_draws": 0
+            },
+            "precision": {
+              "ci95": [
+                0.19907407407407407,
+                0.3488372093023256
+              ],
+              "estimate": 0.26976744186046514,
+              "undefined_draws": 0
+            },
+            "recall": {
+              "ci95": [
+                0.5294117647058824,
+                0.75
+              ],
+              "estimate": 0.6373626373626373,
+              "undefined_draws": 0
+            }
+          }
+        },
+        "queue_slots": 215,
+        "undefined_draws": 0
+      },
+      "rows": 1083
+    }
+  },
+  "input_sha256": {
+    "court_manifest": {
+      "file": "E7_sources.json",
+      "sha256": "e7ab32b01e05180b164081b422ded6ae226b40a20f147733285aa42aa7c925e2"
+    },
+    "gsrs": {
+      "file": "dump-public-2026-08-06.gsrs",
+      "sha256": "07be61aea161cd212545c6cc1057a376bdbefcfc634da7ab1b4903b99f7bacad"
+    },
+    "ob_manifest": {
+      "file": "OB_EDITIONS.json",
+      "sha256": "526ed04cc517f1221bb2ce7b3f03e3bd13e86a7cc6a1db5f936e26a1aaecaf1d"
+    },
+    "orange_book_coverage": {
+      "2010-01-01": {
+        "age_days": 77,
+        "availability_proof": {
+          "date": "2009-11-04",
+          "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20091104091455"
+        },
+        "chosen_edition": "2009-10-16",
+        "freshness_floor": "2009-07-01",
+        "latest_proven_age_days": 77,
+        "latest_proven_availability": {
+          "date": "2009-11-04",
+          "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20091104091455"
+        },
+        "latest_proven_edition": "2009-10-16",
+        "source": {
+          "file": "ob_20091104091455.zip",
+          "kind": "fda_zip",
+          "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2011-01-01": {
+        "age_days": null,
+        "availability_proof": null,
+        "chosen_edition": null,
+        "freshness_floor": "2010-07-01",
+        "latest_proven_age_days": 375,
+        "latest_proven_availability": {
+          "date": "2010-01-13",
+          "edition_sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20100113002223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20100113002223"
+        },
+        "latest_proven_edition": "2009-12-22",
+        "source": null,
+        "status": "STALE"
+      },
+      "2012-01-01": {
+        "age_days": 18,
+        "availability_proof": {
+          "date": "2011-12-29",
+          "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20111229223919"
+        },
+        "chosen_edition": "2011-12-14",
+        "freshness_floor": "2011-07-01",
+        "latest_proven_age_days": 18,
+        "latest_proven_availability": {
+          "date": "2011-12-29",
+          "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20111229223919"
+        },
+        "latest_proven_edition": "2011-12-14",
+        "source": {
+          "file": "ob_20111229223919.zip",
+          "kind": "fda_zip",
+          "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2013-01-01": {
+        "age_days": 106,
+        "availability_proof": {
+          "date": "2012-09-21",
+          "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20120921215526"
+        },
+        "chosen_edition": "2012-09-17",
+        "freshness_floor": "2012-07-01",
+        "latest_proven_age_days": 106,
+        "latest_proven_availability": {
+          "date": "2012-09-21",
+          "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20120921215526"
+        },
+        "latest_proven_edition": "2012-09-17",
+        "source": {
+          "file": "ob_20120921215526.zip",
+          "kind": "fda_zip",
+          "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2014-01-01": {
+        "age_days": 124,
+        "availability_proof": {
+          "date": "2013-09-06",
+          "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20130906105914"
+        },
+        "chosen_edition": "2013-08-30",
+        "freshness_floor": "2013-07-01",
+        "latest_proven_age_days": 124,
+        "latest_proven_availability": {
+          "date": "2013-09-06",
+          "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20130906105914"
+        },
+        "latest_proven_edition": "2013-08-30",
+        "source": {
+          "file": "ob_20130906105914.zip",
+          "kind": "fda_zip",
+          "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+          "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      },
+      "2015-01-01": {
+        "age_days": 113,
+        "availability_proof": {
+          "date": "2014-09-15",
+          "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20140915104404"
+        },
+        "chosen_edition": "2014-09-10",
+        "freshness_floor": "2014-07-01",
+        "latest_proven_age_days": 113,
+        "latest_proven_availability": {
+          "date": "2014-09-15",
+          "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "kind": "wayback",
+          "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+          "wayback_ts": "20140915104404"
+        },
+        "latest_proven_edition": "2014-09-10",
+        "source": {
+          "file": "ob_20140915104404.zip",
+          "kind": "fda_zip",
+          "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+          "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+        },
+        "status": "FRESH"
+      }
+    },
+    "piv_manifest": {
+      "file": "PIV_EDITIONS.json",
+      "sha256": "28b39cd1eedd9094425c549cf79ec398226e5029c0a9b90fa1001e31a2933499"
+    },
+    "s0_files": {
+      "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61",
+      "ob_anda_2010s.jsonl": "3e1f1fd7942ebc181db70c129a17ce524b8b8468abd0bef08493ce6c685d8aaf",
+      "ob_anda_pre1982.jsonl": "a6a21eb1bd87fc0059fec90fb1b79afc3f03025ffdb735c13dd9bf6cd8102cb2",
+      "ob_anda_to2009.jsonl": "5ae88b913d442c7504a3103b18bd962053bed36e915b52d08f14e95948b9b66d",
+      "ob_nda.jsonl": "395be13e1f80a79b0eb3dbb17db7d92a500bb2ac039138c099b2fe3386b0457f"
+    },
+    "s0_manifest": {
+      "file": "S0_INPUT_MANIFEST.json",
+      "sha256": "f6d827361582f3aa5ad79621f784fc1b3260e5ff91c068194323c88d5ed871ff"
+    }
+  },
+  "protocol_sha256": "d3a1614cd3382b4228332d441bc4fb235691e913ffb7d9e9bdcd8f486b21feef",
+  "runtime": {
+    "numpy": "2.5.4",
+    "python": "3.12.10"
+  },
+  "status": "DEVELOPMENT_ONLY"
+}
