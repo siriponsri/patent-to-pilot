@@ -18,3 +18,10 @@
   - What happened: the executor stopped after one record lookup. It wrote no output and made no commit. Its shell hash helper (`rtk` with Get-FileHash) also failed.
   - Decision: retry T7 on GPT-6.2 Sol high with a stepwise card. The card uses local openFDA UNII and substance fields as locators, and Python hashlib for hashes.
   - Lesson: Luna is not reliable for open-ended adjudication cards. Reserve it for fully scripted, mechanical cards.
+- **27 Nov, T7 merged.**
+  - Result: 100 stratified development keys gave 65 correct, 13 false merges, 9 false splits and 13 unresolved.
+  - The main planner weighted these by stratum: about 11% of the 1,783 development keys are wrong and about 6% are unresolved. Of the 12 evaluable error cases, 8 change a first-approval date.
+  - Decision: replace the string-normalized key with a systematic active-moiety key (FIX2) instead of hand overrides. The post-fix error rate must come from a fresh audit sample, not from the T7 sample used to design the fix.
+- **27 Nov, E2b and T2 merged.**
+  - E2b: 31 editions; 15 of 16 cutoffs now have a fresh edition.
+  - T2: the test seal works. Validation-only results were uninformative because the stale editions put every row into CONTESTED. T2b reruns with availability-proven editions and a shared age base.

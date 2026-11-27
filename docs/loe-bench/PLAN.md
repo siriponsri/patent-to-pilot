@@ -117,9 +117,11 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 1 | CP1 | Co-planner critique of design, hypotheses and novelty | GPT-6.2 Sol medium | none | adopted (see CP1 section) |
 | 2 | FIX1 | Fix CP1 code defects with leakage, censoring and tie tests | GPT-6.2 Sol xhigh | CP1 | merged: 51 tests, 17 regression tests; repo pytest only the 8 accepted SACR failures |
 | 2 | CP2 | C′ design: split given editions from 2009-06, exposure of shared labels, coverage gate, minimum useful effect | GPT-6.2 Astra high | FIX1 | decided (see CP2 section) |
-| 2 | T7 | Stratified ingredient-key audit | GPT-6.2 Sol high (Luna attempt failed) | FIX1 | dispatched |
-| 2 | E2b | Backfill Orange Book editions per CP2 list | GPT-6.2 Sol high | CP2 | dispatched |
-| 2 | T2 | M1/M2/M3 arms, as-of features, test seal, development validation only | GPT-6.2 Sol high | FIX1, CP2 | dispatched |
+| 2 | T7 | Stratified ingredient-key audit | GPT-6.2 Sol high (Luna attempt failed) | FIX1 | merged: 22/100 sampled keys wrong; the population-weighted estimate is about 11% wrong and about 6% unresolved |
+| 2 | FIX2 | Systematic active-moiety key (UNII-based) plus a fresh post-fix audit | GPT-6.2 Sol high | T7 | dispatched |
+| 2 | E2b | Backfill Orange Book editions per CP2 list | GPT-6.2 Sol high | CP2 | merged: 15/16 cutoffs fresh; 2011-01-01 has no edition |
+| 2 | T2 | M1/M2/M3 arms, as-of features, test seal, development validation only | GPT-6.2 Sol high | FIX1, CP2 | merged: seal works; stale editions gave 0 OPEN rows |
+| 2 | T2b | Rerun with availability-proven editions and a shared age base | GPT-6.2 Sol high | E2b | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
 | 2 | — | T5 preregistration draft, then co-reviewer | Sonnet, then GPT | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
