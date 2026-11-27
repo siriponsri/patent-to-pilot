@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## D39 Batch 2 · 27 November 2026
+
+Executed the exact Planner release on the published research lock. The retained Orange Book hash matched and the eight-key prefix was frozen before detail work. The [Batch 2 receipt](ip-pharma/d39/BATCH2-RECEIPT.md) records one US-only alfuzosin evidence request, four rejections, three blocked decisions and zero promotions. Thai FDA NDI timed out twice. Thai applicability is unknown for all eight. The manual label and literature review supports the same action as the evidence record in the author-only alfuzosin walkthrough. A matched comparison and operator validation remain NOT_RUN.
+
+The [frozen prefix](ip-pharma/d39/BATCH2-PREFIX.json) and [access ledger](ip-pharma/d39/BATCH2-ACCESSES.jsonl) record 56 logical detail accesses and 59 attempts, including three retries. Incremental service spend was USD 0. Planner owns review and any prospective next release. Check Uroxatral §§2 and 12.3 and Imam et al., Abstract, before carrying the US evidence question forward. Confirm a Thai comparator and user context separately before advancing a Thai pre-submission question. Product and further batches remain held.
+
 ## D39 Batch 1 · 27 November 2026
 
 Batch 1 closed at prospective freeze in the commit containing [LOCK.json](ip-pharma/d39/LOCK.json) and [PROTOCOL.md](ip-pharma/d39/PROTOCOL.md). Owner option A and the publication and practical impact criteria are pinned to Planner revisions. The protocol fixes initial source frames, sampling and duplicate rules, access caps, promotion and early stops, and an equal-access comparison against the strong manual incumbent. Source availability for the future discovery batches is unverified.

@@ -1,5 +1,9 @@
 # Research memory
 
+## D39 Batch 2 generic screen · 27 November 2026
+
+The [receipt](ip-pharma/d39/BATCH2-RECEIPT.md) confirms the locked Orange Book prefix and eight screened keys. Exact application matching alone can return an authorized generic or a differently labeled strength, as the acetaminophen combination demonstrated. At future released screens, check proprietary identity, strength and edition before terminating the displayed-prefix review. Preserve a censored source slot separately from an empty query result. The Thai interface and the linked primary full texts were blocked. The only listed question was a US-bounded request for alfuzosin comparative exposure evidence, which the manual workflow also reaches. Zero promoted, Thai applicability unknown, USD 0. Planner review is the next checkpoint.
+
 ## D39 prospective discovery lock · 27 November 2026
 
 The [protocol](ip-pharma/d39/PROTOCOL.md) fixes how to spend the first discovery passes before any fresh candidate is named. The [lock](ip-pharma/d39/LOCK.json) points to the original approval, impact criteria and exact protocol digest. The unit of interest is a consequential user decision with a source-backed disconfirmation, including a reproducible negative when the incumbent already resolves it. Keep Thai registration, US corroboration, institutional plans and payer utilization distinct. Discovery prefixes, nearest-publication checks, matches and operator effects are unmeasured. Independent Planner release is the next checkpoint.
