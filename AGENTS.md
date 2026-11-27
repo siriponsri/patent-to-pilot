@@ -7,7 +7,7 @@ standing rules; this file is the shared summary and must stay consistent with it
 
 1. Read [CLAUDE.md](CLAUDE.md), [HANDOFF.md](HANDOFF.md) and [INDEX-PLAN.md](INDEX-PLAN.md).
 2. Verify the checkout: `git status --short --branch`, `git log -3`, and that no other agent is writing the same files.
-3. Follow the [RA Pharma plan and ownership board](docs/ra-pharma/MASTER-PLAN.md), [evidence contract](docs/ra-pharma/EVIDENCE-CONTRACT.md) and your assigned brief. The next Research Executor uses GPT 6.2 Sol with medium reasoning effort. New Product work waits for the review in the [research-first plan](docs/ra-pharma/RESEARCH-FIRST.md). Claude Opus 5.5 medium owns Product. Use the published lane branch in its own checkout. The Planner owns main.
+3. D40 (27 Nov 2026) makes [LOE-Bench](docs/loe-bench/PLAN.md) the active program; executors follow its task cards and protocol. For RA Pharma history follow the [RA Pharma plan and ownership board](docs/ra-pharma/MASTER-PLAN.md), [evidence contract](docs/ra-pharma/EVIDENCE-CONTRACT.md) and your assigned brief. The next Research Executor uses GPT 6.2 Sol with medium reasoning effort. New Product work waits for the review in the [research-first plan](docs/ra-pharma/RESEARCH-FIRST.md). Claude Opus 5.5 medium owns Product. Use the published lane branch in its own checkout. The Planner owns main.
 4. Read the applicable project memory before work and use the [documentation skill](.agents/skills/ra-pharma-writing/SKILL.md). At every task close update all affected English documentation, the responsible HANDOFF and project memory, including failed attempts and blockers. Commit these with explicit paths and push your branch. A chat summary alone cannot close a task.
 5. Maintain one writer per path. Each executor owns its lane HANDOFF.md and MEMORY.md under `docs/ra-pharma/`; update the handoff at major events and before long jobs. The Planner maintains the root HANDOFF, INDEX-PLAN, [shared memory](docs/ra-pharma/MEMORY.md) and master board. Update the inherited P registry only through `python scripts/tracking/ptp_tracker.py`.
 6. Record failed publication locally. Verify the remote revision before reporting a push.
@@ -25,7 +25,7 @@ For every Planner assignment, proposal or substantive claim, cite a relevant pri
 - Pre-declare protocols, endpoints and selection rules before computing. Report failures, retries and unknown costs.
 - Paper 86 is banned in journal papers; arXiv:2605.24297 is not used as a source.
 - Never read or print `.env` or credentials; never force-push, reset, clean, rewrite history or change ACLs/global config.
-- Never edit `docs/owner/`. Commit only your own files with explicit paths.
+- Never edit `docs/owner/` (D40: only the Orchestrator may copy or manage files there). Commit only your own files with explicit paths.
 - Report to the owner in Thai. All authored project documentation, including receipts and memory, is in English. Preserve original evidence and Thai product content.
 
 ## Evidence and software invariants

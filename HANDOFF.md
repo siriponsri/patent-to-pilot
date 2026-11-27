@@ -1,4 +1,8 @@
-#
+# Patent-to-Pilot handoff
+
+## D40 · LOE-Bench is the active program (27 November 2026)
+
+The owner replaced the RA Pharma mandate with [LOE-Bench](docs/loe-bench/PLAN.md). RA Pharma becomes the Thai-context demo layer. Wave 1 dispatch, roles and status are recorded in the [lane handoff](docs/loe-bench/HANDOFF.md). The decision is recorded in [D40](docs/maintenance/OWNER-DECISIONS-20261122.md#d40--loe-bench-becomes-the-active-program-27-november-2026). No research result exists yet.
 
 A [five-file SciSpace consultation](docs/ra-pharma/scispace-consultation/01-PROMPT.md) covers the earliest tracked G02 freeze through HealthTech, patent retrieval, Solution Scout, local model work, Thai RA and D39, and asks for a next-study decision. Prepared for owner submission; no external dispatch or experiment.
 

@@ -1,0 +1,5 @@
+train=10861 test=4162 embargo_dropped=0 test_prev=0.121
+B0_base_rate     Brier=0.1064 [0.0958,0.1187] ECE=0.0179 AUROC=0.500 AURC=0.1279
+B1_age_table     Brier=0.0985 [0.0887,0.1114] ECE=0.0398 AUROC=0.771 AURC=0.0449
+B2_logistic      Brier=0.1040 [0.0948,0.1172] ECE=0.0400 AUROC=0.664 AURC=0.0722
+NOTE: smoke run only. Not a result. See docs/01 for the preregistered protocol.

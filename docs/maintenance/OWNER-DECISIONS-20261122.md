@@ -173,3 +173,13 @@ Owner authorized impact-driven redirection within D39. The [Planner field eviden
 Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and an independently scorable local AI workflow. See the D39 protocol amendment on main. All three platform checks remain NOT_RUN.
 
 D39 closed after Batch 4 under the approved early stop. Empty deep-review queue at e495570d. Batches 5-12 and platform comparisons NOT_RUN.
+
+## D40 · LOE-Bench becomes the active program (27 November 2026)
+
+The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md). LOE-Bench forecasts generic and biosimilar entry from open regulatory data, using abstention-aware, evidence-traced prediction. RA Pharma is not discarded. The program must include a Thai-context demo, and the owner considers D40 to cover RA Pharma's scope. All data must be open, because the owner holds no proprietary data.
+
+- The owner delegated the evidence design (test exposure and the Track A clock) to the Orchestrator, choosing for maximum impact and minimum reviewer objection. See [PLAN.md](../loe-bench/PLAN.md#evidence-design-orchestrator-recommendation-owner-delegated).
+- The Orchestrator alone may copy and manage files in `docs/owner/`. Other agents still never edit that folder.
+- The owner approved T10, the LLM arm, on dr-train under the standing V100 rules. Purple Book access is to be verified with open sources only.
+- Roles: Claude Opus 5.5 is Orchestrator, GPT-6.2 Sol medium is co-planner and co-reviewer, and Claude Sonnet 5.5 executes at low token cost.
+- The owner-only items from the package are deferred to a document pack after the research closes: expert review of exclusivity assumptions, journal quartile and APC checks, the OSF account, customer discovery and the Paper 53 venue.

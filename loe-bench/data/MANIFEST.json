@@ -1,0 +1,61 @@
+{
+  "fetched_at_utc": "2026-11-27T09:43:27.763084+00:00",
+  "files": [
+    {
+      "name": "ob_nda",
+      "endpoint": "orangebook",
+      "query": "products.application_type:N",
+      "records": 10922,
+      "sha256": "8c7360a91bb0b6a6a967d3d3ba74c1855fbe4e48e09c682760934acf430633a1"
+    },
+    {
+      "name": "ob_anda_pre1982",
+      "endpoint": "orangebook",
+      "query": "products.application_type:A+AND+approved_prior_to_1982:true",
+      "records": 3196,
+      "sha256": "0b9ba81d66cf5415a78c7a538b93a6c881af1e72b9441e4f6c8dbb1a1d71508d"
+    },
+    {
+      "name": "ob_anda_to2009",
+      "endpoint": "orangebook",
+      "query": "products.application_type:A+AND+approval_date:[19000101+TO+20091231]",
+      "records": 13595,
+      "sha256": "0e31e0796b1810ae15768a85eea6c27cb6268136210f483cd3d5271765eb56d2"
+    },
+    {
+      "name": "ob_anda_2010s",
+      "endpoint": "orangebook",
+      "query": "products.application_type:A+AND+approval_date:[20100101+TO+20191231]",
+      "records": 11576,
+      "sha256": "cd17b786ebf196143e96198d9dda58cc58314561cd05f99a91c46d87a16860f9"
+    },
+    {
+      "name": "ob_anda_2020plus",
+      "endpoint": "orangebook",
+      "query": "products.application_type:A+AND+approval_date:[20200101+TO+20991231]",
+      "records": 9701,
+      "sha256": "b442c36dfdc8150aacdd8fc329524fd507ade4da75d19866e9baee477c69520c"
+    },
+    {
+      "name": "df_nda",
+      "endpoint": "drugsfda",
+      "query": "application_number:NDA*",
+      "records": 5921,
+      "sha256": "d9cf38d09dbc994af25022949a96e25d059f4259c2be36d190676c037559b9a9"
+    },
+    {
+      "name": "df_anda",
+      "endpoint": "drugsfda",
+      "query": "application_number:ANDA*",
+      "records": 23072,
+      "sha256": "8913ab268c67cd996d79e9949c578aee8aab4d781b6b81435bb703a2fc64cbb5"
+    },
+    {
+      "name": "df_bla",
+      "endpoint": "drugsfda",
+      "query": "application_number:BLA*",
+      "records": 488,
+      "sha256": "8f952cb9a271ce6729e9659557869273e5ce5563df4ce0a07fb4be7e09aa791e"
+    }
+  ]
+}
