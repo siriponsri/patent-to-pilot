@@ -1,5 +1,11 @@
 # Research memory
 
+## D38 matched paper comparison · 27 November 2026
+
+The [four-cell receipt](ip-pharma/d38/COMPARISON.md) documents equivalent dispositions and traceability at matched access on two exposed synthetic snapshots. The signed-off direct comparison changes document routing while the interpretation of its qualitative difference remains open. CT-P10 stayed contextual. The manual checklist already carries the relevant source and request fields. Retain it under the frozen rule, pending independent Planner review. This exercise supplied no operator or scientific outcome evidence.
+
+Use ordered file display when execution order is frozen. A parallel multi-file display can reorder the visible output even with ordered path arguments. Log such deviations and keep the original fills.
+
 ## D36 desk research · 27 November 2026
 
 The [D36 receipt](ip-pharma/d36/EVIDENCE.md) recovers the public source bindings and rights-stop output after the interrupted first run. Research recommends independent review of one CMC evidence-readiness question. CT-P10 can show which structure and function evidence to ask for. A candidate finding requires an attributable proposed-product and US-reference comparison. Compare the proposed evidence row with the existing manual checklist before claiming a workflow benefit.

@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## D38 paper comparison · 27 November 2026
+
+Four cells complete. Both forms requested the same attributable functional report for A and routed the same signed-off report for scientific review in B. The [comparison and receipts](ip-pharma/d38/COMPARISON.md) record the tie, exposure, presentation deviation, unresolved scientific interpretation and USD 0 incremental service charges. The [frozen protocol](ip-pharma/d38/PROTOCOL.md) was published as `315f9cbabd216b7e46397d5c66ec126a3a8cf0ac` before execution.
+
+Resume at independent Planner review of the two commits, rubric and four traces. The frozen tie rule keeps the manual checklist. Product implementation, operator evaluation and B2–B4 are NOT_RUN. The publication revision is the lane commit containing this section.
+
 ## D36 opportunity briefs · 27 November 2026
 
 Research desk review complete on `research/ra-pharma`. The [source and execution receipt](ip-pharma/d36/EVIDENCE.md) records primary locators, rights and provenance limits, the synthetic stop check and recovery after the original OS 11001 interruption. New service charges were USD 0. The [comparative recommendation](ip-pharma/d36/RECOMMENDATION.md) advances the rituximab applicant evidence-readiness question to independent Planner review and parks broad rivaroxaban formulation work and Thai rituximab market sizing.
