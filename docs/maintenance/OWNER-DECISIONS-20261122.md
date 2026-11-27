@@ -193,3 +193,8 @@ The owner replaced the RA Pharma mandate with [LOE-Bench](../loe-bench/PLAN.md).
   - Secondary endpoints: AP, decision loss and the v2 metrics.
 
   The owner asked that reasons and references be recorded, and stated that no external domain expert is available. Regulatory assumptions will instead be verified against primary sources (REG) and disclosed as a limitation.
+- 27 Nov 2026, GPU envelope: the owner approved the T10 LLM arm on RunPod with a **cap of USD 20** total, covering pods and storage, and allowing for an RTX 4090 not being available.
+  - First stage: an executor creates and deletes a test pod to validate the setup and estimate upload time.
+  - Inputs may be pre-staged. The plan is a network volume, so no pod sits idle.
+  - Every pod's rate, start, stop and cost is logged, and pods are deleted after each stage.
+  - The LLM arm is secondary and non-confirmatory. Its configuration must be frozen before the test unlock.
