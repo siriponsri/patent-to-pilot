@@ -48,3 +48,7 @@
   - Each annual edition is usable only from Jan 1 of the following year. Its content is about 12 months old at the cutoff, against 6 months or less for the Wayback ZIPs used in validation and test.
   - Licence: NBER site terms (effective 1 Aug 2026) allow limited personal, non-commercial access and restrict redistribution. Raw files stay in `_private_artifacts`. A data descriptor may publish only code and download instructions. Commercial product use needs separate clearance, to go in the owner document pack.
   - Next: decide on development data whether the longer but staler training window helps. The staleness mismatch is a shift to test.
+- **27 Nov, K20T1 merged: K20 rejected and T1 failed acceptance.**
+  - Finding: with event prevalence of about 4–7%, max(p, 1−p) confidence ranks confident NO-ENTRY calls first. At 90% coverage every answered row predicts no entry, so the system never flags a likely entry. AURC80 can therefore reward a near-trivial policy. Reviewers would likely raise this.
+  - Decision: CP4 (Astra high) proposes metric and policy options under class imbalance. Candidates include cost-weighted selective risk, referral-budget recall of entries, AP or AUROC of entry risk, and asymmetric thresholds. The owner then decides before T5.
+  - Pending owner decision: α = 0.020 per step (T4b).
