@@ -142,6 +142,8 @@ Each step uses a paired whole-drug cluster bootstrap with at least 2,000 draws (
 
 **Policy.** Asymmetric thresholds: auto-clear when p ≤ lo and flag entry when p ≥ hi, with lo and hi chosen on an inner development slice to meet the review budget and an auto-clear safety target. The symmetric lo = 1 − hi rule is retired.
 
+**Auto-clear decision (main planner, after T1v3).** No arm can auto-clear safely: the upper 95% bound of missed events among auto-cleared rows exceeds 3% everywhere. The primary endpoint ranks the queue before any action, so it is unaffected. Auto-clear is therefore **not part of the recommended workflow**. It is reported as a secondary safety analysis, and every non-queued case stays with the evaluator's normal process. The FREEZE card therefore requires only acceptance items (a) queue capacity and (c) defined endpoints. Item (b) becomes a reported secondary result. This is itself a finding: the tool can prioritize review, but it cannot yet safely replace it.
+
 **No external domain expert (owner statement, 27 Nov 2026).** The planned expert review of exclusivity and patent assumptions (G6) cannot take place. Mitigation:
 
 - An executor verifies every regulatory rule the code uses against primary legal and FDA sources: NCE 5-year exclusivity, 30-month stay, 180-day exclusivity, pediatric exclusivity, and the 12-year reference-product exclusivity for biologics.
@@ -213,7 +215,7 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | — | (Superseded by the separate T7, T2, T4 and T1 rows. Executors are GPT models from Wave 2.) | — | — | superseded |
 | 2 | K20+T1 | Long-window trial (pre-declared rule), then threshold and policy freeze | GPT-6.2 Sol high | E8, T4b | merged: K20 rejected. T1 failed acceptance: coverage targets met at 3/12, and every confident answer is NO ENTRY (class imbalance) |
 | 2 | CP4 | Co-planner: metric and policy redesign under about 5% prevalence (criteria v3 options) | GPT-6.2 Astra high | K20T1 | merged; criteria v3 owner-approved |
-| 2 | T1v3 | Asymmetric policy freeze (lo/hi) for the review budget and auto-clear safety, with native-score queues | GPT-6.2 Sol high | CP4 | dispatched |
+| 2 | T1v3 | Asymmetric policy freeze (lo/hi) for the review budget and auto-clear safety, with native-score queues | GPT-6.2 Sol high | CP4 | merged. The v3 endpoint is implemented and every queue is exactly at capacity. Development: H1 +24.1 pp [+13.4, +35.4]; H2 −1.1 pp [−4.7, +3.3]; H3 +15.2 pp [+5.6, +26.0]. Auto-clear safety failed: the upper bound exceeds 3% in every arm |
 | 2 | T4c | Power and type-I for recall@20% (applies the α rule) | GPT-6.2 Sol xhigh | CP4 | dispatched |
 | 2 | K22 | Legally faithful graph trial (M3 only, pre-declared rule) | GPT-6.2 Sol xhigh | REG | dispatched |
 | 2 | FREEZE | Rebuild the frozen config on merged code (REG fix, K22 decision); T1v3 rule unchanged | GPT-6.2 Sol high | T1v3, K22 | waiting |

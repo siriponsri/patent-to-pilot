@@ -52,3 +52,8 @@
   - Finding: with event prevalence of about 4–7%, max(p, 1−p) confidence ranks confident NO-ENTRY calls first. At 90% coverage every answered row predicts no entry, so the system never flags a likely entry. AURC80 can therefore reward a near-trivial policy. Reviewers would likely raise this.
   - Decision: CP4 (Astra high) proposes metric and policy options under class imbalance. Candidates include cost-weighted selective risk, referral-budget recall of entries, AP or AUROC of entry risk, and asymmetric thresholds. The owner then decides before T5.
   - Pending owner decision: α = 0.020 per step (T4b).
+- **27 Nov, T1v3 merged.**
+  - Development results for v3: H1 +24.1 pp, H2 −1.1 pp, H3 +15.2 pp. Queues are exactly at capacity.
+  - Auto-clear safety failed in every arm: the upper 95% bound of missed events exceeds 3%.
+  - Decision: drop auto-clear from the recommended workflow and report it as a secondary safety analysis. FREEZE acceptance becomes queue capacity plus defined endpoints.
+  - REG's PIV fix and the K22 outcome must be in the final frozen config.
