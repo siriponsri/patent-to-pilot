@@ -1,5 +1,5 @@
 #
-**Active D36 assignment.** Research owns three public-evidence opportunity briefs. Planner owns the independent review and priority recommendation. [Dispatch and decision rule](docs/ra-pharma/ip-pharma/D36-DISPATCH.md)
+**D36 reviewed.** Prioritize a synthetic rituximab evidence-readiness desk check for owner decision. Generic formulation and Thai market sizing are parked. [Planner review](docs/ra-pharma/ip-pharma/D36-REVIEW.md)
 
 The [remaining phase proposal](docs/ra-pharma/ip-pharma/REMAINING-PHASES.md) recommends D36 opportunity discovery next and maps the separate research and Product decisions through M7. Execution status follows the D37 review below.
 
