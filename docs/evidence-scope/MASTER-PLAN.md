@@ -1,6 +1,6 @@
 # Evidence-scope program · historical board
 
-Current dispatch moved to the [RA Pharma master plan](../ra-pharma/MASTER-PLAN.md) on 26 November 2026. This board preserves the S0–S5 phase definitions and receipts.
+Current dispatch moved to the [RA Pharma master plan](../ra-pharma/MASTER-PLAN.md) on 26 November 2026, then to the [LOE-Bench plan](../loe-bench/PLAN.md) under D40 on 27 November 2026. This board preserves the S0–S5 phase definitions and receipts.
 
 **Effective 25 November 2026 · S0 through S4 complete at their recorded scope · Option A controlled primary NULL.**
 

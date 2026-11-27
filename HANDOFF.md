@@ -2,31 +2,7 @@
 
 ## D40 · LOE-Bench is the active program (27 November 2026)
 
-The owner replaced the RA Pharma mandate with [LOE-Bench](docs/loe-bench/PLAN.md). RA Pharma becomes the Thai-context demo layer. Wave 1 dispatch, roles and status are recorded in the [lane handoff](docs/loe-bench/HANDOFF.md). The decision is recorded in [D40](docs/maintenance/OWNER-DECISIONS-20261122.md#d40--loe-bench-becomes-the-active-program-27-november-2026). No research result exists yet.
-
-A [five-file SciSpace consultation](docs/ra-pharma/scispace-consultation/01-PROMPT.md) covers the earliest tracked G02 freeze through HealthTech, patent retrieval, Solution Scout, local model work, Thai RA and D39, and asks for a next-study decision. Prepared for owner submission; no external dispatch or experiment.
-
-The [research handover](docs/ra-pharma/research-handover/README.md) indexes the merged evidence at 830457e6. The owner archive includes 93 original Markdown files, three guides and a Thai owner summary.
-
-**Research integrated on main.** The [project memory](docs/ra-pharma/MEMORY.md) records the merged Research revision and D39 closeout. The [frozen queue](docs/ra-pharma/research/ip-pharma/d39/BATCH4-QUEUE.json) and original Research receipts are now available in this checkout.
-
-Owner requires demonstrable differentiation from both ChatGPT and NotebookLM and an independently scorable local AI workflow. See the D39 protocol amendment on main. All three platform checks remain NOT_RUN.
-
-Owner authorized impact-driven redirection within D39. The [Planner field evidence review](docs/ra-pharma/ip-pharma/D39-FIELD-EVIDENCE.md) prioritizes the Thai pre-submission decision and documents the separate patent-to-counsel workflow. Batch releases remain prospective.
-
-**Owner approved option A.** [D39 public opportunity discovery](docs/ra-pharma/ip-pharma/D39-DECISION-REQUEST.md) authorizes up to twelve batches. Batch 2 reviewed at bfd33fd2: eight screened, zero promoted, Thai applicability unknown. Batch 3 independently verified BLOCKED_FRAME at 0590dbcc. D39 closed after Batch 4 under the approved early stop. Empty deep-review queue at e495570d. Batches 5-12 and platform comparisons NOT_RUN. Product held.
-**D38 closed after independent review.** [Planner impact review and handback](docs/ra-pharma/ip-pharma/D38-IMPACT-REVIEW.md). Two ties on two synthetic inventories. Keep the checklist and park the proposed Product feature. Operator benefit remains unmeasured.
-
-**D36 reviewed.** Prioritize a synthetic rituximab evidence-readiness desk check for owner decision. Generic formulation and Thai market sizing are parked. [Planner review](docs/ra-pharma/ip-pharma/D36-REVIEW.md)
-
-The [remaining phase proposal](docs/ra-pharma/ip-pharma/REMAINING-PHASES.md) recommends D36 opportunity discovery next and maps the separate research and Product decisions through M7. Execution status follows the D37 review below.
-
-**D37 closed after independent review.** Original labels 24/24, locally usable exact-edition pairs 22/24. One processing deviation and one unresolved formulation. All optional checks NOT_CHECKED. [Planner handback](docs/ra-pharma/ip-pharma/b1e/PLANNER-REVIEW.md)
-
-**Portfolio direction (D36, 27 November).** Explore generic pharma and biologics for drug discovery and biologics market research. US sources illustrate the evidence available. Target market and segment remain open. D35 preflight has closed. [Questions and benchmarks](docs/ra-pharma/MASTER-PLAN.md#discovery-and-market-research)
-
-**B1 review, 27 November.** BLOCKED_FRAME accepted. Both FDA ZIPs passed verification. Family mapping and exposure coverage could not be established before selection. B1-ext and scoring are NOT_RUN. [Independent review](docs/ra-pharma/ip-pharma/PLANNER-REVIEW.md)
- Patent-to-Pilot handoff
+The owner replaced the RA Pharma mandate with [LOE-Bench](docs/loe-bench/PLAN.md). RA Pharma becomes the Thai-context demo layer. Current state, roles and next actions are in the [lane handoff](docs/loe-bench/HANDOFF.md). Decisions D40 and later are in the [register](docs/maintenance/OWNER-DECISIONS-20261122.md#d40--loe-bench-becomes-the-active-program-27-november-2026). Wave 2 is development only. The test is sealed, and no confirmatory result exists. The sections below are historical RA Pharma and earlier handoffs.
 
 ## Current research-first handoff
 

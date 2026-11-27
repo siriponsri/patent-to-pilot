@@ -6,7 +6,7 @@ D40 replaces the RA Pharma mandate as the active program. RA Pharma is folded in
 
 ## Evidence design (Orchestrator recommendation, owner-delegated)
 
-The owner has no proprietary data, so every source must be open. The design below aims at the highest credible impact with the fewest avoidable reviewer objections.
+The owner has no proprietary data, so every source must be publicly accessible. Public access does not imply open reuse: record each source's terms. For example, NBER restricts redistribution and commercial use (E8). The design below aims at the highest credible impact with the fewest avoidable reviewer objections.
 
 | Tier | Track | Role | Why reviewers accept it |
 |---|---|---|---|
@@ -175,9 +175,11 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 2 | DOCS | Project-wide documentation review | GPT-6.2 Sol high | — | dispatched |
 | 2 | T4 | Power simulation for criteria v2 (H1 at Δ = −0.010) from the development structure | GPT-6.2 Sol xhigh | FIX2c | merged but NOT ACCEPTED: power about 100% even with 30 clusters, MDE 0.0039, which looks optimistic beside the development CI half-width of about 0.01; type-I 2.75% (MC CI 1.54–4.86%) |
 | 2 | T4b | Calibrate generator variance against the empirical development bootstrap; firm up type-I | GPT-6.2 Sol xhigh | T4 | dispatched |
-| 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
+| 2 | — | (Superseded by the separate T7, T2, T4 and T1 rows. Executors are GPT models from Wave 2.) | — | — | superseded |
+| 2 | T1 | Threshold and abstention-policy calibration on development data | GPT-6.2 Sol high | DEVX, T4b | waiting |
+| 2 | K20 | Trial: long NBER training window (stale editions) vs short fresh window | GPT-6.2 Sol high | E8, T4b | waiting |
 | 2 | — | T5 preregistration draft (criteria v2), reviewed by the main planner | GPT-6.2 Sol high, then Claude | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
-| 3 | — | G3b prediction freeze, T3 ablation, T9 re-score, T12 table builder, L1 arm run | Sonnet | G2 | waiting |
-| 3 | — | Thai-context demo | Claude | E5, G3b | waiting |
-| End | — | Owner document pack: expert review, journal check, customer discovery, OSF steps, Paper 53 venue | Orchestrator | G5 | waiting |
+| 3 | — | G3b prediction freeze, T3 ablation (GPT-6.2 Sol xhigh), T9 re-score and T12 table builder (GPT-6 Luna high, scripted), L1 arm run (GPU proposal to the owner first) | GPT | G2 | waiting |
+| 3 | — | Thai-context demo | GPT-6.2 Sol high, reviewed by Claude | E5, G3b | waiting |
+| End | — | Owner document pack: expert review, journal check, customer discovery, OSF steps, Paper 53 venue, NBER commercial-use clearance, Thai data access | Main planner | G5 | waiting |
