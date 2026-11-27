@@ -44,6 +44,35 @@ GPT-6.2 Sol (medium, read-only, commit 5f34a509) reviewed the design and code. I
    - `trackA_freeze.py`: it can train on outcomes after t0 when the raw data is newer than t0, `data_end` is not a completeness check, and `snapshot_features` ignores t0.
 6. **Wave 2 card order and acceptance.** FIX1 comes first. T7 then becomes a stratified audit of 100 development cases with FDA locators and false-merge and false-split rates. T2 compares pooled verdict and missingness features against M1 with a future-invariance test. T1 runs after T2 on a separate validation slice. T4 simulates paired ΔAURC under a cluster structure, including a type-I check. T5 waits for T7, T2, T1, T4 and the C′ gate.
 
+## CP2 co-planner review and main-planner decision, 27 November 2026
+
+GPT-6.2 Astra (high, read-only) proposed a strictly clean C′ test, made up of drugs first approved after 1 January 2023, with the 24-month horizon and a cutoff of 2024 only. It also proposed a gate of at least 50 event-bearing drug clusters, edition freshness within six months, a backfill of missing editions, an endpoint normalized over a common 0–80% coverage range, a useful effect of Δ ≤ −0.010, and T4 with at least 5,000 simulations per scenario.
+
+**Main-planner decision.** The strict clean cohort is adopted only as a descriptive sensitivity subset, not as the primary test. The cohort consists of NMEs approved in 2023, and five-year NCE exclusivity blocks ANDA approval within that window by design, so the cohort cannot reach 50 event clusters. Making it primary would guarantee an empty confirmation. That conclusion follows from regulatory structure, and no data were inspected.
+
+The primary retrospective test is therefore **C′ at 24 months over the test cutoffs 2017 and later that the editions cover**, with a disclosed exposure:
+
+- The earlier exposure was limited to aggregate B0–B2 scores at 36 months and aggregate test prevalence.
+- No proposed arm has been scored.
+- No per-row output was inspected.
+- No selection used the test set.
+
+This follows the argument that reusing a test set without adaptive selection produces little overfitting ([Recht et al. 2019](https://proceedings.mlr.press/v97/recht19a.html)). The confirmatory test is now sealed in code. Any metric on cutoffs from 2017-01-01 onward requires the hash of the submitted preregistration. Track A remains the fully clean prospective confirmation.
+
+**Adopted from CP2:**
+
+- annual cutoffs from 2010-01-01
+- the strict split rule (earlier cutoff + h < next partition start)
+- the edition freshness requirement (within six months before each cutoff) and the backfill list
+- cluster-resampled paired bootstrap
+- AURC normalized over a common 0–80% coverage range, with both arms required to reach 80%
+- useful effect Δ ≤ −0.010, reported alongside the CI < 0 superiority rule
+- T4 design with at least 5,000 simulations per scenario
+- M1 fairness: same rows, evidence, missingness, probability model, calibration and tuning budget, plus a confidence-ranked abstention policy
+- a minimum of 50 event-bearing clusters as the gate for the primary test
+
+If the gate fails, C′ is reported as feasibility evidence and confirmation rests with Track A.
+
 ## Planner evidence (D32)
 
 | Claim or task | Primary paper | Benchmark or competitor | Status |
@@ -85,8 +114,10 @@ The co-planner verifies and extends this table. Every paper in the [package ledg
 | 1 | E5 | Thai open-data feasibility for the Thai-context demo | Sonnet low | none | merged: no Thai sample retrieved; curated-link demo recommended |
 | 1 | CP1 | Co-planner critique of design, hypotheses and novelty | GPT-6.2 Sol medium | none | adopted (see CP1 section) |
 | 2 | FIX1 | Fix CP1 code defects with leakage, censoring and tie tests | GPT-6.2 Sol xhigh | CP1 | merged: 51 tests, 17 regression tests; repo pytest only the 8 accepted SACR failures |
-| 2 | CP2 | C′ design: split given editions from 2009-06, exposure of shared labels, coverage gate, minimum useful effect | GPT-6.2 Astra high | FIX1 | dispatched |
-| 2 | T7 | Stratified ingredient-key audit | GPT-6 Luna high | FIX1 | dispatched |
+| 2 | CP2 | C′ design: split given editions from 2009-06, exposure of shared labels, coverage gate, minimum useful effect | GPT-6.2 Astra high | FIX1 | decided (see CP2 section) |
+| 2 | T7 | Stratified ingredient-key audit | GPT-6.2 Sol high (Luna attempt failed) | FIX1 | dispatched |
+| 2 | E2b | Backfill Orange Book editions per CP2 list | GPT-6.2 Sol high | CP2 | dispatched |
+| 2 | T2 | M1/M2/M3 arms, as-of features, test seal, development validation only | GPT-6.2 Sol high | FIX1, CP2 | dispatched |
 | 2 | — | T7 ingredient audit, T1 thresholds, T2 OPEN-conditional model, T4 power simulation (train and validation only) | Sonnet | E1, E2 | waiting |
 | 2 | — | T5 preregistration draft, then co-reviewer | Sonnet, then GPT | T4 | waiting |
 | G2 | — | Owner approves criteria and submits to OSF | Owner | T5 | waiting |
