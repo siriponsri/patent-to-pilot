@@ -14,23 +14,30 @@ from datetime import date
 from typing import Dict, Optional
 
 from .common import add_months
-from .kleene import And, Leaf, Or, T3, analyze, evaluate
+from .kleene import And, Leaf, Or, T3, evaluate, rank_unknown_for_request
 from .voi import voi
 
 ROOT = And((Leaf("L_excl"), Or((Leaf("L_pat"), Leaf("L_challenge")))))
+PREDICT_ENTRY = "PREDICT_ENTRY"
+PREDICT_NO_ENTRY = "PREDICT_NO_ENTRY"
+ABSTAIN = "ABSTAIN_REFER_TO_EVALUATOR"
+DEFAULT_REVEAL_PROBABILITIES = {"L_challenge": 0.3, "L_excl": 0.5, "L_pat": 0.5}
+
+
+def _clock_state(dates, end: date) -> T3:
+    if not dates:
+        return T3.UNKNOWN
+    return T3.TRUE if all(d <= end for d in dates) else T3.FALSE
 
 
 def build_assignment(snap: dict, t: date, horizon_months: int,
                      challenge_evidence: Optional[T3] = None) -> Dict[str, T3]:
     end = add_months(t, horizon_months)
-    excl = snap.get("excl_exp", [])
-    pat = snap.get("patent_exp", [])
-    a = {
-        "L_excl": T3.TRUE if all(d <= end for d in excl) else T3.FALSE,
-        "L_pat": T3.TRUE if all(d <= end for d in pat) else T3.FALSE,
+    return {
+        "L_excl": _clock_state(snap.get("excl_exp"), end),
+        "L_pat": _clock_state(snap.get("patent_exp"), end),
         "L_challenge": challenge_evidence if challenge_evidence is not None else T3.UNKNOWN,
     }
-    return a
 
 
 def verdict_label(a: Dict[str, T3]) -> str:
@@ -38,24 +45,37 @@ def verdict_label(a: Dict[str, T3]) -> str:
 
 
 def decide(snap: dict, t: date, horizon_months: int, p_model: float,
-           lo: float = 0.25, hi: float = 0.75, p_leaf: Optional[Dict[str, float]] = None) -> dict:
-    """Selective decision: structure first, then calibrated probability, abstain in the grey zone.
-    CONTESTED verdicts are always routed to 'ABSTAIN_REFER' unless the model is confident
-    (p<=lo or p>=hi). BLOCKED is final unless exclusivity data are wrong (flag for audit)."""
+           lo: float = 0.25, hi: float = 0.75,
+           reveal_probabilities: Optional[Dict[str, float]] = None, *,
+           prior_truth_probability: float = 0.5, blocked_conflict_action: str = ABSTAIN) -> dict:
+    """Use the configured conflict action for BLOCKED with p_model >= hi.
+
+    The default refers conflicts to the evaluator. Other BLOCKED rows predict
+    no entry. OPEN and CONTESTED use the probability thresholds.
+    """
+    if not (0 <= lo < hi <= 1 and 0 <= p_model <= 1):
+        raise ValueError("require 0 <= lo < hi <= 1 and p_model in [0, 1]")
+    if blocked_conflict_action not in (ABSTAIN, PREDICT_ENTRY, PREDICT_NO_ENTRY):
+        raise ValueError("invalid BLOCKED conflict action")
     a = build_assignment(snap, t, horizon_months)
-    res = analyze(ROOT, a)
     v = verdict_label(a)
+    conflict = v == "BLOCKED" and p_model >= hi
     if v == "BLOCKED":
-        action = "PREDICT_NO_ENTRY"
+        action = blocked_conflict_action if conflict else PREDICT_NO_ENTRY
     elif p_model >= hi:
-        action = "PREDICT_ENTRY"
+        action = PREDICT_ENTRY
     elif p_model <= lo:
-        action = "PREDICT_NO_ENTRY"
+        action = PREDICT_NO_ENTRY
     else:
-        action = "ABSTAIN_REFER_TO_EVALUATOR"
+        action = ABSTAIN
     next_evidence = None
-    if res["unknown_leaves"]:
-        pl = p_leaf or {"L_challenge": 0.3, "L_excl": 0.5, "L_pat": 0.5}
-        next_evidence = {"leaf": res["unknown_leaves"][0], "voi_bits": voi(ROOT, pl, a, 0.5)}
-    return {"verdict": v, "action": action, "p_model": p_model, "next_evidence": next_evidence,
+    ranked = rank_unknown_for_request(ROOT, a)
+    if ranked:
+        leaf, _ = ranked[0]
+        rates = DEFAULT_REVEAL_PROBABILITIES if reveal_probabilities is None else reveal_probabilities
+        bits = voi(ROOT, reveal_probabilities={leaf: rates.get(leaf, 0.0)}, assign=a,
+                   prior_truth_probability=prior_truth_probability)
+        next_evidence = {"leaf": leaf, "voi_bits": bits}
+    return {"verdict": v, "action": action, "p_model": p_model, "conflict": conflict,
+            "next_evidence": next_evidence,
             "trace": {k: v_.name for k, v_ in a.items()}}

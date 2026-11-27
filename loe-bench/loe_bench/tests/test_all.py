@@ -33,7 +33,8 @@ def synth_raw(d):
     _w(d, "df_nda.jsonl", [nda("1", "ALPHAZOLE HYDROCHLORIDE", "20050101"), nda("2", "BETAMAB", "20100101"),
                            nda("3", "GAMMAPRIL", "20150101"), nda("4", "OLDMED", "19700101", cls="TYPE 7")])
     _w(d, "df_anda.jsonl", [anda("9", "ALPHAZOLE", "20100601"), anda("10", "BETAMAB", "20300101")])
-    _w(d, "ob_nda.jsonl", [{"products": [{"active_ingredients": [{"name": "GAMMAPRIL"}], "marketing_status": "HUMAN PRESCRIPTION DRUG"}],
+    _w(d, "ob_nda.jsonl", [{"approval_date": "20150101",
+                            "products": [{"active_ingredients": [{"name": "GAMMAPRIL"}], "marketing_status": "HUMAN PRESCRIPTION DRUG"}],
                             "patents": [{"expiration_date": "20310101"}], "exclusivity": [{"exclusivity_code": "NCE", "exclusivity_expiration_date": "20200101"}]}])
 
 
@@ -69,7 +70,7 @@ class TestDataset(unittest.TestCase):
         self.assertNotIn(("ALPHAZOLE", 2012), by)             # already had ANDA at cutoff
         self.assertEqual(by[("BETAMAB", 2012)]["y"], 0)       # ANDA 2030 not within window, window before data end
         self.assertNotIn(("OLDMED", 2008), by)                # only_nme=True
-        # censoring: window beyond data_end with y=0 is dropped
+        # censoring: every window beyond data_end is dropped
         rows2 = build_samples(self.ents, [date(2019, 1, 1)], 36, end)
         self.assertEqual([r for r in rows2 if r["key"] == "BETAMAB"], [])
 
@@ -83,7 +84,7 @@ class TestDataset(unittest.TestCase):
     def test_embargo(self):
         rows = build_samples(self.ents, [date(2008, 1, 1), date(2010, 1, 1), date(2012, 1, 1)], 36, date(2030, 1, 1))
         tr, te, dropped = time_split(rows, date(2010, 1, 1), date(2011, 1, 1))
-        self.assertTrue(all(r["t_end"] <= date(2011, 1, 1) for r in tr))
+        self.assertTrue(all(r["t_end"] < date(2011, 1, 1) for r in tr))
         self.assertTrue(dropped > 0)
 
     def test_snapshot(self):
@@ -100,7 +101,7 @@ class TestMetrics(unittest.TestCase):
         self.assertAlmostEqual(brier([0.5, 0.5], [1, 0]), 0.25)
         self.assertAlmostEqual(auroc([0.1, 0.2, 0.8, 0.9], [0, 0, 1, 1]), 1.0)
         self.assertAlmostEqual(auroc([0.5, 0.5, 0.5, 0.5], [0, 1, 0, 1]), 0.5)
-        self.assertAlmostEqual(ece([0.8] * 10, [1] * 8 + [0] * 2), 0.0)
+        self.assertAlmostEqual(ece([0.8] * 10, [1] * 8 + [0] * 2).ece, 0.0)
 
     def test_selective(self):
         p = [0.05, 0.5, 0.95, 0.5]
@@ -153,17 +154,17 @@ class TestEvidenceGraph(unittest.TestCase):
         self.assertEqual(verdict_label(build_assignment(contested, self.t, 24)), "CONTESTED")
         self.assertEqual(verdict_label(build_assignment(blocked, self.t, 24)), "BLOCKED")
 
-    def test_blocked_is_final_and_contested_abstains(self):
+    def test_blocked_predicts_no_entry_without_conflict_and_contested_abstains(self):
         blocked = {"excl_exp": [date(2029, 1, 1)], "patent_exp": []}
-        self.assertEqual(decide(blocked, self.t, 24, 0.99)["action"], "PREDICT_NO_ENTRY")
-        contested = {"excl_exp": [], "patent_exp": [date(2031, 1, 1)]}
+        self.assertEqual(decide(blocked, self.t, 24, 0.5)["action"], "PREDICT_NO_ENTRY")
+        contested = {"excl_exp": [self.t], "patent_exp": [date(2031, 1, 1)]}
         d = decide(contested, self.t, 24, 0.5)
         self.assertEqual(d["action"], "ABSTAIN_REFER_TO_EVALUATOR")
         self.assertEqual(d["next_evidence"]["leaf"], "L_challenge")
         self.assertGreater(d["next_evidence"]["voi_bits"], 0)
 
     def test_challenge_evidence_resolves(self):
-        s = {"excl_exp": [], "patent_exp": [date(2031, 1, 1)]}
+        s = {"excl_exp": [self.t], "patent_exp": [date(2031, 1, 1)]}
         a = build_assignment(s, self.t, 24, challenge_evidence=T3.TRUE)   # e.g. documented settlement licence date
         self.assertEqual(verdict_label(a), "OPEN")
 

@@ -27,7 +27,7 @@ def main():
     for m in (BaseRate(), AgeHazardTable(), Logistic()):
         p = m.fit(train).predict(test)
         lo, hi = cluster_bootstrap_ci(brier, p, y, g, n_boot=100)
-        print(f"{m.name:16s} Brier={brier(p,y):.4f} [{lo:.4f},{hi:.4f}] ECE={ece(p,y):.4f} AUROC={auroc(p,y):.3f} AURC={aurc(p,y):.4f}")
+        print(f"{m.name:16s} Brier={brier(p,y):.4f} [{lo:.4f},{hi:.4f}] ECE={ece(p,y).ece:.4f} AUROC={auroc(p,y):.3f} AURC={aurc(p,y):.4f}")
     print("NOTE: smoke run only. Not a result. See docs/01 for the preregistered protocol.")
 
 
