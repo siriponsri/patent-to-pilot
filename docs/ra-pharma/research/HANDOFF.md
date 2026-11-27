@@ -1,5 +1,11 @@
 # Research lane handoff
 
+## D37 B1E intake · 27 November 2026
+
+Execution complete. The [B1E receipt](ip-pharma/b1e/RECEIPT.md) and per-rank ledgers record 24 exact keys and original labels, 22 same-edition locally usable pairs, one unresolved formulation and one rights hold whose local copy was discarded. The frozen prefix replay matched byte for byte before dispatch. All 96 required requests settled within their caps. Optional slots were NOT_CHECKED. New service charges were USD 0. Original B1 remains BLOCKED_FRAME and B2–B4 remain NOT_RUN. D36 has separate authority.
+
+Resume at independent Planner review of the published Research revision and offline audit of all 24 rows. Review the notice and the formulation exclusion before accepting the funnel. Use the linked private digests and saved responses. The intake is closed and every selected group is exposed development material.
+
 ## B1 preflight · 27 November 2026
 
 **BLOCKED_FRAME** under D35 and DT-06. Both retained FDA archives match the frozen dispatch hashes and pass CRC. The preflight could not pin a dated local US grant-to-family crosswalk and coverage-attested exposed-family exclusions. Selection, lookups, admission and B1-ext are NOT_RUN, with no cohort denominator. No new charges. See the [B1 receipt](ip-pharma/b1/B1-RECEIPT.md) for source rights, checks and unresolved coverage.
