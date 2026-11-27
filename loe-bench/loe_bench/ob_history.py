@@ -11,7 +11,7 @@ import re
 import zipfile
 from dataclasses import dataclass, field
 from datetime import date, datetime
-from typing import Dict, List, Optional
+from typing import Callable, Dict, List, Optional
 
 from loe_bench.common import norm_ingredient
 
@@ -140,39 +140,84 @@ def _iso(d):
     return d.isoformat() if d else None
 
 
+@dataclass(frozen=True, eq=False)
+class EditionSource:
+    edition_date: date
+    loader: Callable[[], Edition]
+    identity: Optional[dict] = None
+    availability: tuple = ()
+
+
+def _availability_proofs(entry, audit):
+    sha = entry["sha256"]
+    proofs = []
+    for capture in (entry, *audit.get("additional_captures", {}).get(sha, ())):
+        timestamp = capture.get("wayback_ts")
+        if not timestamp or not re.fullmatch(r"[0-9]{14}", timestamp):
+            continue
+        captured = datetime.strptime(timestamp, "%Y%m%d%H%M%S").date()
+        proofs.append(dict(kind="wayback", date=captured.isoformat(), wayback_ts=timestamp,
+                           url=capture.get("wayback_url"), edition_sha256=sha))
+    for record in audit.get("fda_publication_records", ()):
+        # A listing at a shared download URL cannot identify the exact ZIP bytes.
+        if record.get("edition_sha256") != sha:
+            continue
+        published = date.fromisoformat(record["publication_date"])
+        proofs.append(dict(kind="fda_publication", date=published.isoformat(), url=record["source_url"],
+                           html_sha256=record["html_sha256"], locator=record["locator"],
+                           edition_sha256=sha))
+    return tuple(sorted(proofs, key=lambda proof: proof["date"]))
+
+
 class OBHistory:
-    """editions: list of (edition_date, loader) where loader() returns an Edition."""
+    """Store edition sources or legacy (edition_date, loader) pairs without publication proof."""
 
     def __init__(self, editions):
-        self._ed = sorted(editions, key=lambda e: e[0])
+        sources = (item if isinstance(item, EditionSource) else EditionSource(*item) for item in editions)
+        self._ed = sorted(sources, key=lambda source: source.edition_date)
         self._cache = {}
 
     @classmethod
     def from_manifest(cls, manifest_path: str, data_dir: str = DEFAULT_DIR):
         with open(manifest_path, encoding="utf-8") as f:
             m = json.load(f)
-        eds = []
-        for e in m["editions"]:
-            d = date.fromisoformat(e["edition_date"])
-            eds.append((d, (lambda p=os.path.join(data_dir, e["file"]), d=d: load_edition(p, d))))
-        return cls(eds)
+        return cls.from_records(m, data_dir)
+
+    @classmethod
+    def from_records(cls, manifest, data_dir: str = DEFAULT_DIR):
+        sources = []
+        for entry in manifest["editions"]:
+            d = date.fromisoformat(entry["edition_date"])
+            path = os.path.join(data_dir, entry["file"])
+            identity = {name: entry[name] for name in ("file", "sha256", "source_url")}
+            sources.append(EditionSource(d, lambda p=path, d=d: load_edition(p, d), identity,
+                                         _availability_proofs(entry, manifest.get("e2b", {}))))
+        return cls(sources)
 
     def edition_dates(self) -> List[date]:
-        return [d for d, _ in self._ed]
+        return [source.edition_date for source in self._ed]
+
+    def available_source_asof(self, cutoff: date):
+        """Find the latest source with exact-edition publication evidence by the UTC cutoff date."""
+        cutoff_iso = cutoff.isoformat()
+        for source in reversed(self._ed):
+            if source.edition_date <= cutoff:
+                for proof in source.availability:
+                    if proof["date"] <= cutoff_iso:
+                        return source, proof
+        return None, None
+
+    def load_source(self, source: EditionSource) -> Edition:
+        if source not in self._cache:
+            self._cache[source] = source.loader()
+        return self._cache[source]
 
     def edition_asof(self, cutoff: date) -> Optional[Edition]:
         """Latest edition with edition_date <= cutoff, else None. Later editions are never loaded."""
-        chosen = None
-        for d, loader in self._ed:
-            if d <= cutoff:
-                chosen = (d, loader)
-            else:
-                break
-        if chosen is None:
-            return None
-        if chosen[0] not in self._cache:
-            self._cache[chosen[0]] = chosen[1]()
-        return self._cache[chosen[0]]
+        for source in reversed(self._ed):
+            if source.edition_date <= cutoff:
+                return self.load_source(source)
+        return None
 
     def features_asof(self, key: str, cutoff: date) -> dict:
         """key: Appl_No (digits only, e.g. '020571') or an ingredient key ('A|B', 'A;B' or raw name)."""

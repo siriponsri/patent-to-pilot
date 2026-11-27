@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 from loe_bench import evidence_graph as graph, seal, t2
 from loe_bench.dataset import Entity, features_at
-from loe_bench.ob_history import Edition, OBHistory
+from loe_bench.ob_history import Edition, EditionSource, OBHistory
 from loe_bench.t2_features import AsOfBuilder, OB_FEATURES, edition_coverage
 
 
@@ -26,7 +26,14 @@ def exclusivity(product_no, code, expiry):
 
 
 def history(products, patents, exclusivities, later=()):
-    return OBHistory([(ED, lambda: Edition(ED, products, patents, exclusivities)), *later])
+    source = EditionSource(ED, lambda: Edition(ED, products, patents, exclusivities),
+                           availability=({"date": ED.isoformat()},))
+    return OBHistory([source, *later])
+
+
+def manifest_entry(when, timestamp, token):
+    return dict(edition_date=when, wayback_ts=timestamp, file=f"{token}.zip", sha256=token * 64,
+                source_url="https://www.fda.gov/ob.zip", wayback_url="https://web.archive.org/ob.zip")
 
 
 def features(archive, key="DRUG"):
@@ -66,11 +73,12 @@ class AsOfTests(unittest.TestCase):
                            patents + [patent("001", "B", date(2030, 1, 1), later),
                                       patent("002", "C", date(2030, 1, 1))],
                            exclusivities + [exclusivity("002", "NCE", date(2030, 1, 1))],
-                           [(later, refuse_load)])
+                           [EditionSource(later, refuse_load, availability=({"date": T.isoformat()},))])
         self.assertEqual(features(extended), base)
 
     def test_stale_missing_and_unlisted_are_unknown(self):
-        stale = OBHistory([(date(2013, 6, 30), lambda: self.fail("stale edition was loaded"))])
+        stale = OBHistory([EditionSource(date(2013, 6, 30), lambda: self.fail("stale edition was loaded"),
+                                         availability=({"date": "2013-07-01"},))])
         for archive, status in ((stale, "STALE"), (OBHistory([]), "MISSING"),
                                 (history([], [], []), "NOT_LISTED")):
             with self.subTest(status=status):
@@ -79,6 +87,53 @@ class AsOfTests(unittest.TestCase):
                 self.assertEqual(row.verdict, "CONTESTED")
                 self.assertTrue(all(row.x[f"{f}_missing"] == 1 for f in OB_FEATURES))
         self.assertEqual(edition_coverage(stale, T)["freshness_floor"], ED.isoformat())
+        self.assertIsNone(edition_coverage(stale, T)["chosen_edition"])
+
+    def test_dated_but_captured_after_cutoff_is_never_loaded(self):
+        timely = manifest_entry("2013-07-01", "20140101235959", "a")
+        late = manifest_entry("2013-12-31", "20140102000000", "b")
+        archive = OBHistory.from_records({"editions": [late, timely]}, "")
+        with patch("loe_bench.ob_history.load_edition", return_value=Edition(ED, [product("001")], [], [])) as load:
+            self.assertEqual(features(archive).edition_status, "FRESH")
+            load.assert_called_once_with("a.zip", ED)
+        coverage = edition_coverage(archive, T)
+        self.assertEqual(coverage["chosen_edition"], ED.isoformat())
+        self.assertEqual(coverage["availability_proof"]["wayback_ts"], timely["wayback_ts"])
+        late_only = OBHistory.from_records({"editions": [late]}, "")
+        with patch("loe_bench.ob_history.load_edition", side_effect=AssertionError):
+            row = features(late_only)
+        self.assertEqual(row.edition_status, "MISSING")
+        self.assertEqual(row.verdict, "CONTESTED")
+        self.assertTrue(all(row.x[f"{f}_missing"] == 1 for f in OB_FEATURES))
+
+    def test_fda_publication_requires_exact_zip_link_and_timely_date(self):
+        entry = manifest_entry("2013-12-30", "20140102000000", "a")
+        record = dict(source_url="https://www.fda.gov/edition", html_sha256="c" * 64, locator="Versioned release")
+        for sha, published, expected in ((None, "2013-12-31", "MISSING"),
+                                         (entry["sha256"], "2014-01-02", "MISSING"),
+                                         (entry["sha256"], "2014-01-01", "FRESH")):
+            with self.subTest(sha=sha, published=published):
+                records = {"editions": [entry], "e2b": {"fda_publication_records": [
+                    dict(record, edition_sha256=sha, publication_date=published)]}}
+                coverage = edition_coverage(OBHistory.from_records(records), T)
+                self.assertEqual(coverage["status"], expected)
+                if expected == "FRESH":
+                    self.assertEqual(coverage["availability_proof"]["kind"], "fda_publication")
+                    self.assertEqual(coverage["availability_proof"]["locator"], record["locator"])
+
+    def test_additional_capture_uses_exact_hash_even_with_same_date_editions(self):
+        timely = manifest_entry("2013-12-30", "20140103000000", "a")
+        dubious = manifest_entry("2013-12-30", "20140105000000", "b")
+        capture = {"wayback_ts": "20131231000000", "wayback_url": "https://web.archive.org/earlier"}
+        archive = OBHistory.from_records({"editions": [timely, dubious], "e2b": {
+            "additional_captures": {timely["sha256"]: [capture]}}}, "")
+        coverage = edition_coverage(archive, T)
+        self.assertEqual(coverage["availability_proof"]["wayback_ts"], capture["wayback_ts"])
+        self.assertEqual(coverage["source"]["sha256"], timely["sha256"])
+        with patch("loe_bench.ob_history.load_edition", return_value=Edition(ED, [], [], [])) as load:
+            archive.edition_asof(T)
+            features(archive)
+            self.assertEqual([call.args[0] for call in load.call_args_list], ["b.zip", "a.zip"])
 
     def test_no_record_and_incomplete_expiry_have_distinct_missingness(self):
         empty = features(history([product("001")], [], []))
@@ -113,7 +168,7 @@ class DevelopmentTests(unittest.TestCase):
         self.assertTrue(math.isnan(t2._aurc80(predictions, labels)))
 
     def test_evaluation_rejects_protected_before_fitting(self):
-        with patch.object(type(seal.LOCK_PATH), "read_text", side_effect=FileNotFoundError), patch.object(
+        with patch.object(type(seal.LOCK_PATH), "read_text", side_effect=AssertionError), patch.object(
             t2, "Logistic", side_effect=AssertionError
         ), self.assertRaises(seal.TestSealError):
             t2.evaluate([], [{"t": seal.TEST_FIRST}], 24)
@@ -145,8 +200,17 @@ class DevelopmentTests(unittest.TestCase):
         probabilities = {"M1": [0.1, 0.2, 0.4], "M2": [0.1, 0.2, 0.4], "M3": [0.1, 0.8, 0.1]}
         with patch.object(t2, "_cross_calibrate", return_value=probabilities), patch.object(
             t2, "paired_cluster_bootstrap_ci", side_effect=AssertionError
-        ):
+        ), patch.object(t2, "_inputs", wraps=t2._inputs) as inputs:
             result = t2.evaluate(train, validation, 24)
+        for arm in ("M1", "M3"):
+            self.assertEqual(result["tuning"][arm]["configurations_tried"], 3)
+            self.assertEqual(result["tuning"][arm]["selected_l2"], 1.0)
+            self.assertEqual([item["l2"] for item in result["tuning"][arm]["candidates"]], list(t2.L2_GRID))
+        # Both arms see the same TRAIN-derived age signal, despite a positive validation row.
+        for call in inputs.call_args_list:
+            rows, age_probabilities, _ = call.args
+            self.assertEqual(age_probabilities, [0.0] * len(rows))
+        self.assertEqual(result["validation_verdicts"], {"OPEN": 1, "BLOCKED": 1, "CONTESTED": 1})
         self.assertEqual(result["arms"]["M3"]["coverage"], 2 / 3)
         self.assertEqual(result["arms"]["M3"]["by_verdict"]["BLOCKED"]["rows"], 1)
         self.assertAlmostEqual(result["arms"]["M3"]["by_verdict"]["BLOCKED"]["brier"], 0.04)

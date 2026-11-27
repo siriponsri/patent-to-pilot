@@ -1,5 +1,4 @@
 """Build shared C-prime features and graph inputs from a single as-of edition."""
-from bisect import bisect_right
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date
@@ -25,16 +24,25 @@ class AsOfFeatures:
 
 
 def edition_coverage(history: OBHistory, cutoff: date) -> dict:
-    dates = history.edition_dates()
-    index = bisect_right(dates, cutoff) - 1
-    chosen = dates[index] if index >= 0 else None
+    return _edition_selection(history, cutoff)[1]
+
+
+def _edition_selection(history, cutoff):
+    source, proof = history.available_source_asof(cutoff)
     earliest = add_months(cutoff, -6)
-    status = "MISSING" if chosen is None else "STALE" if chosen < earliest else "FRESH"
-    return {
+    latest = source.edition_date if source else None
+    status = "MISSING" if latest is None else "STALE" if latest < earliest else "FRESH"
+    chosen = source if status == "FRESH" else None
+    return chosen, {
         "status": status,
-        "latest_edition": chosen.isoformat() if chosen else None,
-        "age_days": (cutoff - chosen).days if chosen else None,
+        "chosen_edition": latest.isoformat() if chosen else None,
+        "age_days": (cutoff - latest).days if chosen else None,
+        "availability_proof": proof if chosen else None,
+        "source": chosen.identity if chosen else None,
         "freshness_floor": earliest.isoformat(),
+        "latest_proven_edition": latest.isoformat() if latest else None,
+        "latest_proven_age_days": (cutoff - latest).days if latest else None,
+        "latest_proven_availability": proof,
     }
 
 
@@ -84,15 +92,14 @@ class AsOfBuilder:
         self._indexes = {}
 
     def build(self, key: str, cutoff: date, horizon: int, base_features: dict) -> AsOfFeatures:
-        coverage = edition_coverage(self.history, cutoff)
+        source, coverage = _edition_selection(self.history, cutoff)
         status = coverage["status"]
         values = dict.fromkeys(OB_FEATURES)
         snapshot = {}
-        if status == "FRESH":
-            edition_date = coverage["latest_edition"]
-            if edition_date not in self._indexes:
-                self._indexes[edition_date] = _EditionIndex(self.history.edition_asof(cutoff))
-            patents, exclusivities = self._indexes[edition_date].records(key)
+        if source is not None:
+            if source not in self._indexes:
+                self._indexes[source] = _EditionIndex(self.history.load_source(source))
+            patents, exclusivities = self._indexes[source].records(key)
             if patents is None:
                 status = "NOT_LISTED"
             else:

@@ -1,4 +1,4 @@
-"""Reproduce the T2 development summary using verified local FDA source files."""
+"""Reproduce the T2b development summary using verified local FDA source files."""
 import argparse
 import hashlib
 import json
@@ -14,7 +14,7 @@ from loe_bench import t2
 from loe_bench.common import add_months
 from loe_bench.dataset import build_entities, build_samples
 from loe_bench.ob_history import DEFAULT_DIR, OBHistory
-from loe_bench.seal import TEST_FIRST, require_cutoffs
+from loe_bench.seal import TEST_FIRST
 from loe_bench.t2_features import AsOfBuilder, edition_coverage
 
 
@@ -33,7 +33,7 @@ def _manifest(path):
 def run(raw, ob_dir, ob_manifest):
     splits = {h: t2.development_split(h) for h in t2.HORIZONS}
     cutoffs = sorted({d for train, validation in splits.values() for d in (*train, *validation)})
-    require_cutoffs(cutoffs)
+    t2.require_development_cutoffs(cutoffs)
     source_manifest, s0_ref = _manifest(ROOT / "data" / "S0_INPUT_MANIFEST.json")
     data_end = date.fromisoformat(source_manifest["t0"])
     source_files = {item["raw_file"]: item["sha256"] for item in source_manifest["files"]}
@@ -42,15 +42,15 @@ def run(raw, ob_dir, ob_manifest):
         _verify(raw / name, sha)
 
     editions, ob_ref = _manifest(ob_manifest)
-    history = OBHistory.from_manifest(str(ob_manifest), str(ob_dir))
-    coverage = {cutoff.isoformat(): edition_coverage(history, cutoff) for cutoff in cutoffs}
-    by_date = {entry["edition_date"]: entry for entry in editions["editions"]}
-    selected = sorted({item["latest_edition"] for item in coverage.values() if item["status"] == "FRESH"})
+    history = OBHistory.from_records(editions, str(ob_dir))
+    coverage = {cutoff.isoformat(): dict(edition_coverage(history, cutoff), used_in_split=cutoff in cutoffs)
+                for cutoff in t2.DEVELOPMENT_CUTOFFS}
     edition_hashes = {}
-    for when in selected:
-        entry = by_date[when]
-        _verify(ob_dir / entry["file"], entry["sha256"])
-        edition_hashes[when] = {field: entry[field] for field in ("file", "sha256", "source_url")}
+    for cutoff in cutoffs:
+        selected = coverage[cutoff.isoformat()]["source"]
+        if selected and selected["sha256"] not in edition_hashes:
+            _verify(ob_dir / selected["file"], selected["sha256"])
+            edition_hashes[selected["sha256"]] = selected
 
     builder = AsOfBuilder(history)
     entities = build_entities(str(raw))
@@ -71,23 +71,31 @@ def run(raw, ob_dir, ob_manifest):
         for dates in (train_cutoffs, val_cutoffs):
             rows = build_samples(entities, dates, horizon, data_end, only_nme=True)
             counts = {cutoff.isoformat(): Counter() for cutoff in dates}
+            verdicts = {cutoff.isoformat(): dict.fromkeys(t2.VERDICTS, 0) for cutoff in dates}
             for row in rows:
                 row["asof"] = builder.build(row["key"], row["t"], horizon, row["x"])
-                counts[row["t"].isoformat()][row["asof"].edition_status] += 1
-            partitions.append((rows, counts))
-        (train, train_counts), (validation, val_counts) = partitions
+                cutoff = row["t"].isoformat()
+                counts[cutoff][row["asof"].edition_status] += 1
+                verdicts[cutoff][row["asof"].verdict] += 1
+            partitions.append((rows, counts, verdicts))
+        (train, train_counts, train_verdicts), (validation, val_counts, val_verdicts) = partitions
         result.update(status="DEVELOPMENT_ONLY", train_rows=len(train),
                       row_coverage_by_cutoff={**train_counts, **val_counts},
+                      verdicts_by_cutoff={**train_verdicts, **val_verdicts},
                       **t2.evaluate(train, validation, horizon))
 
     return {
-        "scope": "T2 development only. No protected cutoffs built or scored.",
+        "scope": "T2b development only. No protected cutoffs built or scored.",
         "input_sha256": {"s0_manifest": s0_ref, "drugs_fda": raw_hashes,
-                         "ob_manifest": ob_ref, "used_edition_zips_by_date": edition_hashes},
+                         "ob_manifest": ob_ref, "used_edition_zips": list(edition_hashes.values())},
         "edition_coverage": coverage,
         "protocol": {"coverage_target": t2.COMMON_COVERAGE, "lo": t2.LO, "hi": t2.HI,
                      "drug_key_calibration_folds": t2.FOLDS, "bootstrap_draws": t2.BOOTSTRAP_DRAWS,
-                     "bootstrap_seed": t2.BOOTSTRAP_SEED, "useful_delta_at_most": -0.01},
+                     "bootstrap_seed": t2.BOOTSTRAP_SEED, "useful_delta_at_most": -0.01,
+                     "tuning": {"arms": ["M1", "M3"], "l2_grid": t2.L2_GRID,
+                                "shared_feature": t2.AGE_SIGNAL, "age_table_fit": "train_only",
+                                "selection": "lowest cross-calibrated validation Brier, then lowest L2",
+                                "calibration": "fixed sigmoid on logits, held-out validation drug folds"}},
         "horizons": results,
     }
 
@@ -99,7 +107,7 @@ def main():
     parser.add_argument("--ob-manifest", type=Path, default=ROOT / "data" / "OB_EDITIONS.json")
     args = parser.parse_args()
     summary = run(args.raw, args.ob_dir, args.ob_manifest)
-    output = ROOT / "data" / "T2_dev_summary.json"
+    output = ROOT / "data" / "T2b_dev_summary.json"
     output.write_text(json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
     print(output)
 

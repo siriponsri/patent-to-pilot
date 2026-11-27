@@ -1,0 +1,813 @@
+{
+  "edition_coverage": {
+    "2010-01-01": {
+      "age_days": 77,
+      "availability_proof": {
+        "date": "2009-11-04",
+        "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20091104091455"
+      },
+      "chosen_edition": "2009-10-16",
+      "freshness_floor": "2009-07-01",
+      "latest_proven_age_days": 77,
+      "latest_proven_availability": {
+        "date": "2009-11-04",
+        "edition_sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20091104091455id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20091104091455"
+      },
+      "latest_proven_edition": "2009-10-16",
+      "source": {
+        "file": "ob_20091104091455.zip",
+        "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2011-01-01": {
+      "age_days": null,
+      "availability_proof": null,
+      "chosen_edition": null,
+      "freshness_floor": "2010-07-01",
+      "latest_proven_age_days": 375,
+      "latest_proven_availability": {
+        "date": "2010-01-13",
+        "edition_sha256": "2c070da10b453708dbb66f223d7242aa5af556c11a729daa8631e22fdeeaaa3b",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20100113002223id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20100113002223"
+      },
+      "latest_proven_edition": "2009-12-22",
+      "source": null,
+      "status": "STALE",
+      "used_in_split": false
+    },
+    "2012-01-01": {
+      "age_days": 18,
+      "availability_proof": {
+        "date": "2011-12-29",
+        "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20111229223919"
+      },
+      "chosen_edition": "2011-12-14",
+      "freshness_floor": "2011-07-01",
+      "latest_proven_age_days": 18,
+      "latest_proven_availability": {
+        "date": "2011-12-29",
+        "edition_sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20111229223919id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20111229223919"
+      },
+      "latest_proven_edition": "2011-12-14",
+      "source": {
+        "file": "ob_20111229223919.zip",
+        "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2013-01-01": {
+      "age_days": 106,
+      "availability_proof": {
+        "date": "2012-09-21",
+        "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20120921215526"
+      },
+      "chosen_edition": "2012-09-17",
+      "freshness_floor": "2012-07-01",
+      "latest_proven_age_days": 106,
+      "latest_proven_availability": {
+        "date": "2012-09-21",
+        "edition_sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20120921215526id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20120921215526"
+      },
+      "latest_proven_edition": "2012-09-17",
+      "source": {
+        "file": "ob_20120921215526.zip",
+        "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2014-01-01": {
+      "age_days": 124,
+      "availability_proof": {
+        "date": "2013-09-06",
+        "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20130906105914"
+      },
+      "chosen_edition": "2013-08-30",
+      "freshness_floor": "2013-07-01",
+      "latest_proven_age_days": 124,
+      "latest_proven_availability": {
+        "date": "2013-09-06",
+        "edition_sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20130906105914id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20130906105914"
+      },
+      "latest_proven_edition": "2013-08-30",
+      "source": {
+        "file": "ob_20130906105914.zip",
+        "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2015-01-01": {
+      "age_days": 113,
+      "availability_proof": {
+        "date": "2014-09-15",
+        "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20140915104404"
+      },
+      "chosen_edition": "2014-09-10",
+      "freshness_floor": "2014-07-01",
+      "latest_proven_age_days": 113,
+      "latest_proven_availability": {
+        "date": "2014-09-15",
+        "edition_sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20140915104404id_/https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20140915104404"
+      },
+      "latest_proven_edition": "2014-09-10",
+      "source": {
+        "file": "ob_20140915104404.zip",
+        "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": true
+    },
+    "2016-01-01": {
+      "age_days": 105,
+      "availability_proof": {
+        "date": "2015-10-06",
+        "edition_sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20151006063349id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20151006063349"
+      },
+      "chosen_edition": "2015-09-18",
+      "freshness_floor": "2015-07-01",
+      "latest_proven_age_days": 105,
+      "latest_proven_availability": {
+        "date": "2015-10-06",
+        "edition_sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "kind": "wayback",
+        "url": "https://web.archive.org/web/20151006063349id_/http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip",
+        "wayback_ts": "20151006063349"
+      },
+      "latest_proven_edition": "2015-09-18",
+      "source": {
+        "file": "ob_20151006063349.zip",
+        "sha256": "7695fb9da60a8e3d89a98b137f0e6be5e21d292795417ae7edb322562506f736",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      "status": "FRESH",
+      "used_in_split": false
+    }
+  },
+  "horizons": {
+    "12": {
+      "arms": {
+        "B1": {
+          "answered": 2231,
+          "aurc80": 0.017482333067463184,
+          "aurc80_status": "evaluated",
+          "brier": 0.03753610003248014,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.027250562609871787,
+              "rows": 506
+            },
+            "CONTESTED": {
+              "brier": 0.040032516882194745,
+              "rows": 1723
+            },
+            "OPEN": {
+              "brier": 0.48911395192325957,
+              "rows": 2
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.005143141848054171,
+          "ece_bin_counts": [
+            2001,
+            230,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M1": {
+          "answered": 2227,
+          "aurc80": 0.01298917751843183,
+          "aurc80_status": "evaluated",
+          "brier": 0.03683733717530098,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.02734575296303745,
+              "rows": 506
+            },
+            "CONTESTED": {
+              "brier": 0.039171892271123054,
+              "rows": 1723
+            },
+            "OPEN": {
+              "brier": 0.42698892782725356,
+              "rows": 2
+            }
+          },
+          "coverage": 0.9982070820259973,
+          "ece": 0.004443508996248869,
+          "ece_bin_counts": [
+            2030,
+            187,
+            12,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M2": {
+          "answered": 2229,
+          "aurc80": 0.040813657420817134,
+          "aurc80_status": "evaluated",
+          "brier": 0.038358127119609654,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.028848683399289997,
+              "rows": 506
+            },
+            "CONTESTED": {
+              "brier": 0.04067943059484592,
+              "rows": 1723
+            },
+            "OPEN": {
+              "brier": 0.4444444444444445,
+              "rows": 2
+            }
+          },
+          "coverage": 0.9991035410129987,
+          "ece": 0.0016336334718323154,
+          "ece_bin_counts": [
+            2229,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "M3": {
+          "answered": 2228,
+          "aurc80": 0.012671526368309776,
+          "aurc80_status": "evaluated",
+          "brier": 0.0368282059208072,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.027303713902761886,
+              "rows": 506
+            },
+            "CONTESTED": {
+              "brier": 0.039168905285274246,
+              "rows": 1723
+            },
+            "OPEN": {
+              "brier": 0.43001218399791047,
+              "rows": 2
+            }
+          },
+          "coverage": 0.9986553115194979,
+          "ece": 0.00511421914895721,
+          "ece_bin_counts": [
+            2029,
+            189,
+            11,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "open_actions": {
+        "m3_predict_no_entry": 2,
+        "package_ensemble_predict_no_entry_on_same_open_rows": 2,
+        "rows": 2
+      },
+      "paired_aurc80": {
+        "M1_minus_B1": {
+          "ci95": [
+            -0.010086776257914952,
+            0.0006237883225397381
+          ],
+          "delta": -0.004493155549031354,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_B1": {
+          "ci95": [
+            -0.010154648488186833,
+            0.00018327609725466223
+          ],
+          "delta": -0.004810806699153408,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_M1": {
+          "ci95": [
+            -0.0009190988388143063,
+            0.00027122274458821205
+          ],
+          "delta": -0.00031765115012205407,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        }
+      },
+      "row_coverage_by_cutoff": {
+        "2010-01-01": {
+          "FRESH": 549,
+          "NOT_LISTED": 13
+        },
+        "2012-01-01": {
+          "FRESH": 541,
+          "NOT_LISTED": 8
+        },
+        "2013-01-01": {
+          "FRESH": 534,
+          "NOT_LISTED": 22
+        },
+        "2014-01-01": {
+          "FRESH": 545,
+          "NOT_LISTED": 17
+        },
+        "2015-01-01": {
+          "FRESH": 550,
+          "NOT_LISTED": 14
+        }
+      },
+      "sealed_test_start": "2017-01-01",
+      "status": "DEVELOPMENT_ONLY",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 562,
+      "tuning": {
+        "M1": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.03748022885541578
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.037296431381291295
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.03683733717530098
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        },
+        "M3": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.03748378731743603
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.03729872660338611
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.0368282059208072
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        }
+      },
+      "validation_cutoffs": [
+        "2012-01-01",
+        "2013-01-01",
+        "2014-01-01",
+        "2015-01-01"
+      ],
+      "validation_drug_clusters": 628,
+      "validation_event_clusters": 89,
+      "validation_rows": 2231,
+      "validation_verdicts": {
+        "BLOCKED": 506,
+        "CONTESTED": 1723,
+        "OPEN": 2
+      },
+      "verdicts_by_cutoff": {
+        "2010-01-01": {
+          "BLOCKED": 120,
+          "CONTESTED": 442,
+          "OPEN": 0
+        },
+        "2012-01-01": {
+          "BLOCKED": 123,
+          "CONTESTED": 425,
+          "OPEN": 1
+        },
+        "2013-01-01": {
+          "BLOCKED": 117,
+          "CONTESTED": 439,
+          "OPEN": 0
+        },
+        "2014-01-01": {
+          "BLOCKED": 130,
+          "CONTESTED": 431,
+          "OPEN": 1
+        },
+        "2015-01-01": {
+          "BLOCKED": 136,
+          "CONTESTED": 428,
+          "OPEN": 0
+        }
+      }
+    },
+    "24": {
+      "arms": {
+        "B1": {
+          "answered": 1118,
+          "aurc80": 0.02882799076125053,
+          "aurc80_status": "evaluated",
+          "brier": 0.07027344898280341,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.03427712644488385,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.07525261876591338,
+              "rows": 927
+            },
+            "OPEN": {
+              "brier": 0.2602378480248523,
+              "rows": 10
+            }
+          },
+          "coverage": 1.0,
+          "ece": 0.004037984572445037,
+          "ece_bin_counts": [
+            786,
+            264,
+            68,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M1": {
+          "answered": 1064,
+          "aurc80": 0.021562516240189743,
+          "aurc80_status": "evaluated",
+          "brier": 0.06778975557447539,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.03424934402967371,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.07255085794084258,
+              "rows": 927
+            },
+            "OPEN": {
+              "brier": 0.23351701517314694,
+              "rows": 10
+            }
+          },
+          "coverage": 0.9516994633273703,
+          "ece": 0.006741857205324803,
+          "ece_bin_counts": [
+            778,
+            238,
+            72,
+            19,
+            8,
+            3,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M2": {
+          "answered": 1112,
+          "aurc80": 0.07758172563786482,
+          "aurc80_status": "evaluated",
+          "brier": 0.0749285776529284,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.037344304288521125,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.07945362108112229,
+              "rows": 927
+            },
+            "OPEN": {
+              "brier": 0.33573239975512703,
+              "rows": 10
+            }
+          },
+          "coverage": 0.9946332737030411,
+          "ece": 0.006339633159880322,
+          "ece_bin_counts": [
+            1108,
+            4,
+            0,
+            1,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "M3": {
+          "answered": 1111,
+          "aurc80": 0.025604533397193926,
+          "aurc80_status": "evaluated",
+          "brier": 0.07129641676761776,
+          "by_verdict": {
+            "BLOCKED": {
+              "brier": 0.03454239537645026,
+              "rows": 181
+            },
+            "CONTESTED": {
+              "brier": 0.07406204022107896,
+              "rows": 927
+            },
+            "OPEN": {
+              "brier": 0.4801709098118973,
+              "rows": 10
+            }
+          },
+          "coverage": 0.9937388193202147,
+          "ece": 0.03249961492854696,
+          "ece_bin_counts": [
+            818,
+            274,
+            16,
+            0,
+            0,
+            0,
+            2,
+            4,
+            2,
+            2
+          ]
+        }
+      },
+      "open_actions": {
+        "m3_predict_no_entry": 0,
+        "package_ensemble_predict_no_entry_on_same_open_rows": 10,
+        "rows": 10
+      },
+      "paired_aurc80": {
+        "M1_minus_B1": {
+          "ci95": [
+            -0.015308054029556692,
+            -4.19385780106446e-05
+          ],
+          "delta": -0.007265474521060786,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_B1": {
+          "ci95": [
+            -0.011948311969595242,
+            0.005423435325186972
+          ],
+          "delta": -0.0032234573640566033,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        },
+        "M3_minus_M1": {
+          "ci95": [
+            -0.00010183564357455627,
+            0.009899866396140922
+          ],
+          "delta": 0.004042017157004182,
+          "invalid_draws": 0,
+          "status": "evaluated",
+          "valid_draws": 2000
+        }
+      },
+      "row_coverage_by_cutoff": {
+        "2010-01-01": {
+          "FRESH": 549,
+          "NOT_LISTED": 13
+        },
+        "2013-01-01": {
+          "FRESH": 534,
+          "NOT_LISTED": 22
+        },
+        "2014-01-01": {
+          "FRESH": 545,
+          "NOT_LISTED": 17
+        }
+      },
+      "sealed_test_start": "2017-01-01",
+      "status": "DEVELOPMENT_ONLY",
+      "train_cutoffs": [
+        "2010-01-01"
+      ],
+      "train_rows": 562,
+      "tuning": {
+        "M1": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.07000633301663325
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.0694207429160365
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.06778975557447539
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        },
+        "M3": {
+          "candidates": [
+            {
+              "l2": 1.0,
+              "validation_brier": 0.07231144517223746
+            },
+            {
+              "l2": 10.0,
+              "validation_brier": 0.07161686628514526
+            },
+            {
+              "l2": 100.0,
+              "validation_brier": 0.07129641676761776
+            }
+          ],
+          "configurations_tried": 3,
+          "selected_l2": 100.0
+        }
+      },
+      "validation_cutoffs": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
+      "validation_drug_clusters": 579,
+      "validation_event_clusters": 66,
+      "validation_rows": 1118,
+      "validation_verdicts": {
+        "BLOCKED": 181,
+        "CONTESTED": 927,
+        "OPEN": 10
+      },
+      "verdicts_by_cutoff": {
+        "2010-01-01": {
+          "BLOCKED": 81,
+          "CONTESTED": 480,
+          "OPEN": 1
+        },
+        "2013-01-01": {
+          "BLOCKED": 87,
+          "CONTESTED": 466,
+          "OPEN": 3
+        },
+        "2014-01-01": {
+          "BLOCKED": 94,
+          "CONTESTED": 461,
+          "OPEN": 7
+        }
+      }
+    },
+    "36": {
+      "reason": "No non-empty train/validation split satisfies strict embargo.",
+      "sealed_test_start": "2017-01-01",
+      "status": "NOT_RUN",
+      "train_cutoffs": [],
+      "validation_cutoffs": []
+    }
+  },
+  "input_sha256": {
+    "drugs_fda": {
+      "df_anda.jsonl": "9dbd25202e6abe12d468e9aaf67de96a3452b5389221ac150b50e4f7ddb193a6",
+      "df_nda.jsonl": "8df16f70fbfa3b7f2d8d422699af079b7ed73530ef4ca258ad6e27f4ef4d8b61"
+    },
+    "ob_manifest": {
+      "file": "OB_EDITIONS.json",
+      "sha256": "526ed04cc517f1221bb2ce7b3f03e3bd13e86a7cc6a1db5f936e26a1aaecaf1d"
+    },
+    "s0_manifest": {
+      "file": "S0_INPUT_MANIFEST.json",
+      "sha256": "f6d827361582f3aa5ad79621f784fc1b3260e5ff91c068194323c88d5ed871ff"
+    },
+    "used_edition_zips": [
+      {
+        "file": "ob_20091104091455.zip",
+        "sha256": "b111f4a516428a7198a70ee5247332f4ffed6a4a1bdc80a983a4a27d40e4ca13",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "file": "ob_20111229223919.zip",
+        "sha256": "ba3369151cb206a335470f6cf1ae2d3095afc7c4606d314384737beade36d6a3",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "file": "ob_20120921215526.zip",
+        "sha256": "a0d9b654bc89e007f9f1db173ab829f01df5a041ddecb5ae31c0b194d98bf000",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "file": "ob_20130906105914.zip",
+        "sha256": "ef3480d71564c919864dad734464306880b34355d09aa16675aaf86786f34c6e",
+        "source_url": "http://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      },
+      {
+        "file": "ob_20140915104404.zip",
+        "sha256": "ebe060c313165f2d5b68202cc15ba49cbb860764ac2d38dd3be9d7a25aa78fa2",
+        "source_url": "https://www.fda.gov/downloads/Drugs/InformationOnDrugs/UCM163762.zip"
+      }
+    ]
+  },
+  "protocol": {
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 20261127,
+    "coverage_target": 0.8,
+    "drug_key_calibration_folds": 5,
+    "hi": 0.75,
+    "lo": 0.25,
+    "tuning": {
+      "age_table_fit": "train_only",
+      "arms": [
+        "M1",
+        "M3"
+      ],
+      "calibration": "fixed sigmoid on logits, held-out validation drug folds",
+      "l2_grid": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "selection": "lowest cross-calibrated validation Brier, then lowest L2",
+      "shared_feature": "b1_age_hazard_logit"
+    },
+    "useful_delta_at_most": -0.01
+  },
+  "scope": "T2b development only. No protected cutoffs built or scored."
+}
