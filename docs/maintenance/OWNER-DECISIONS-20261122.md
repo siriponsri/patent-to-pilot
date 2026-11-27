@@ -149,3 +149,7 @@ The owner selected Option A, authorized the Planner/Research Executor loop and o
 5. Disqualify any future Arm C that exceeds the fixed checklist on unsupported issued assertions at matter or element level (G1), or on false definite states on independently judged unknown matters (G2). Solo checks are provisional.
 
 The owner designated GPT 6.2 Sol medium for Research and Opus 5.5 medium for Product. Product implementation is held. [Review and release](../ra-pharma/ip-pharma/B1-PLANNER.md)
+
+## D36 · Generic pharmaceuticals, biologic discovery and biologics markets (27 November 2026)
+
+The owner prioritizes exploration of generic pharmaceuticals and follow-on biologics for drug discovery, alongside biologics market research. The Planner interprets follow-on biologics as biosimilars when the jurisdiction identifies a reference relationship. Novel target or indication hypotheses have a separate evidence question. This direction applies to portfolio discovery. D35 still governs the current oral small-molecule intake, exclusions and budget. [Research questions and public comparators](../ra-pharma/MASTER-PLAN.md#discovery-and-market-research)

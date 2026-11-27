@@ -1,4 +1,6 @@
 #
+**Portfolio direction (D36, 27 November).** Explore generic pharma and biologics for drug discovery and biologics market research. US sources illustrate the evidence available. Target market and segment remain open. The published D35 Research dispatch continues. [Questions and benchmarks](docs/ra-pharma/MASTER-PLAN.md#discovery-and-market-research)
+
 **Current decision, 27 November.** D35 releases B1 v2 and B1-ext. Two FDA archives are pinned. Family mapping and exclusion verification precede any prefix. The prior proposal and handbacks below are historical. [Planner review and Research dispatch](docs/ra-pharma/ip-pharma/B1-PLANNER.md)
  Patent-to-Pilot handoff
 
