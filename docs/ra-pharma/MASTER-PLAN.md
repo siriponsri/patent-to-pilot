@@ -1,4 +1,6 @@
 #
+The [remaining phase proposal](ip-pharma/REMAINING-PHASES.md) recommends D36 opportunity discovery next and maps the separate research and Product decisions through M7. Execution status follows the D37 review below.
+
 **D37 closed after independent review.** Original labels 24/24, locally usable exact-edition pairs 22/24. One processing deviation and one unresolved formulation. All optional checks NOT_CHECKED. [Planner handback](ip-pharma/b1e/PLANNER-REVIEW.md)
 
 **B1 review, 27 November.** BLOCKED_FRAME accepted. Both FDA ZIPs passed verification. Family mapping and exposure coverage could not be established before selection. B1-ext and scoring are NOT_RUN. [Independent review](ip-pharma/PLANNER-REVIEW.md)
